@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DermNotes · 皮膚科筆記與衛教</title>
-    <link>https://chendermatologist.com/blog/</link>
-    <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://chendermatologist.vercel.app/blog/</link>
+    <atom:link href="https://chendermatologist.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>皮膚科 R2 醫師的衛教文章與學習筆記 — Bilingual dermatology patient education and resident notes.</description>
     <language>zh-TW</language>
     <lastBuildDate>Fri, 02 May 2026 10:00:00 +0800</lastBuildDate>
 
     <item>
       <title>口服 A 酸完整衛教 — 給民眾</title>
-      <link>https://chendermatologist.com/blog/isotretinoin-patient</link>
-      <guid>https://chendermatologist.com/blog/isotretinoin-patient</guid>
+      <link>https://chendermatologist.vercel.app/blog/isotretinoin-patient</link>
+      <guid>https://chendermatologist.vercel.app/blog/isotretinoin-patient</guid>
       <pubDate>Fri, 02 May 2026 10:00:00 +0800</pubDate>
       <description>適合誰吃 / 累積劑量 / 副作用 / 嘴唇乾肝指數 / 女性避孕 / 雷射禁忌 / 復發率 — 診間最常被問的問題一次答完。</description>
     </item>
 
     <item>
       <title>外用酸類完整衛教 — A 酸 / A 醇 / 杜鵑花酸 / 果酸 / 水楊酸</title>
-      <link>https://chendermatologist.com/blog/topical-acids-patient</link>
-      <guid>https://chendermatologist.com/blog/topical-acids-patient</guid>
+      <link>https://chendermatologist.vercel.app/blog/topical-acids-patient</link>
+      <guid>https://chendermatologist.vercel.app/blog/topical-acids-patient</guid>
       <pubDate>Fri, 02 May 2026 10:00:00 +0800</pubDate>
       <description>五大塗抹酸類各做什麼、適合誰、不能跟誰一起用、孕婦能不能用、會不會反黑爆痘。</description>
     </item>
 
     <item>
       <title>Oral Isotretinoin — 完整臨床學理整理(學習筆記)</title>
-      <link>https://chendermatologist.com/blog/isotretinoin-clinical</link>
-      <guid>https://chendermatologist.com/blog/isotretinoin-clinical</guid>
+      <link>https://chendermatologist.vercel.app/blog/isotretinoin-clinical</link>
+      <guid>https://chendermatologist.vercel.app/blog/isotretinoin-clinical</guid>
       <pubDate>Fri, 02 May 2026 10:00:00 +0800</pubDate>
       <description>13-cis-RA 藥理、四大機轉、累積劑量證據、副作用全光譜、IBD 與 depression 爭議、AAD 2024 acne 指引整理 — R2 必備。</description>
     </item>
 
     <item>
       <title>Topical Retinoids &amp; Acid Actives — 完整整理(學習筆記)</title>
-      <link>https://chendermatologist.com/blog/topical-acids-clinical</link>
-      <guid>https://chendermatologist.com/blog/topical-acids-clinical</guid>
+      <link>https://chendermatologist.vercel.app/blog/topical-acids-clinical</link>
+      <guid>https://chendermatologist.vercel.app/blog/topical-acids-clinical</guid>
       <pubDate>Fri, 02 May 2026 10:00:00 +0800</pubDate>
       <description>Tretinoin / Adapalene / Tazarotene / Trifarotene / Retinaldehyde / Retinol 各代差別、Azelaic 雙機轉、AHA pH 滲透、BHA 親脂、孕期安全。</description>
     </item>

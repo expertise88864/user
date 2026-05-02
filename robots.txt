@@ -5,4 +5,4 @@ Allow: /
 User-agent: Mediapartners-Google
 Allow: /
 
-Sitemap: https://chendermatologist.com/sitemap.xml
+Sitemap: https://chendermatologist.vercel.app/sitemap.xml
