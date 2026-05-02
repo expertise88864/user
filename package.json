@@ -1,0 +1,10 @@
+{
+  "name": "dermnotes",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "DermNotes — Dermatology R2 study notes & patient education site (Traditional Chinese / English bilingual, multi-language).",
+  "engines": {
+    "node": ">=18"
+  }
+}

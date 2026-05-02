@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#f0fbfa"/><stop offset="1" stop-color="#cdebe7"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#14b8a6"/><stop offset="0.55" stop-color="#0e7c86"/><stop offset="1" stop-color="#0c5159"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <g fill="none" stroke="url(#teal)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <!-- skin cross-section layered curves -->
+    <path d="M70 170 Q256 120 442 170"/>
+    <path d="M70 230 Q256 190 442 230"/>
+    <path d="M70 290 Q256 260 442 290"/>
+    <!-- caduceus-like vertical with leaf -->
+    <path d="M256 110 L256 410"/>
+    <path d="M256 180 Q200 220 220 280 Q256 320 256 320"/>
+    <path d="M256 180 Q312 220 292 280 Q256 320 256 320"/>
+  </g>
+  <circle cx="256" cy="400" r="14" fill="url(#teal)"/>
+</svg>

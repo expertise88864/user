@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Oral Isotretinoin 完整臨床學理整理 — 藥理、機轉、累積劑量、副作用、爭議與 AAD 2024 指引 | DermNotes 學習筆記 #1</title>
+<meta name="description" content="皮膚科住院醫師看 Isotretinoin 必備的完整整理:13-cis-retinoic acid 的藥理、isomerization、RAR/RXR 結合;四大機轉(sebocyte apoptosis, comedolysis, antimicrobial, anti-inflammatory);適應症與 off-label;劑量學(0.5-1 mg/kg, cumulative 120-150 mg/kg);低劑量/間歇式 protocol 的證據;副作用全光譜(mucocutaneous, MSK, ocular, neuropsychiatric, hepatic, lipid, GI/IBD, teratogenicity);藥物交互作用(tetracycline → IIH);停藥後 laser timing 的最新觀念;與 AAD 2024 acne 指引整理。" />
+<meta name="theme-color" content="#0e7c86" />
+<meta name="keywords" content="Isotretinoin pharmacology,Isotretinoin mechanism,Isotretinoin cumulative dose,Isotretinoin low dose,Isotretinoin teratogenicity,Isotretinoin IBD,Isotretinoin depression,Isotretinoin laser timing,Isotretinoin pseudotumor cerebri,Isotretinoin tetracycline,Isotretinoin AAD guideline 2024,13-cis retinoic acid,RAR RXR,sebocyte apoptosis,Acne resident notes,Acne treatment dermatology,Layton dosing,Acne severe nodulocystic,皮膚科住院醫師筆記,DermNotes study notes" />
+<meta name="author" content="DermNotes · 皮膚科 R2" />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+<link rel="canonical" href="https://chendermatologist.com/blog/isotretinoin-clinical" />
+<link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/isotretinoin-clinical" />
+<link rel="alternate" hreflang="zh-TW" href="https://chendermatologist.com/blog/isotretinoin-clinical" />
+<link rel="alternate" hreflang="zh-CN" href="https://chendermatologist.com/blog/isotretinoin-clinical" />
+<link rel="alternate" hreflang="en" href="https://chendermatologist.com/blog/isotretinoin-clinical" />
+<link rel="alternate" hreflang="ja" href="https://chendermatologist.com/blog/isotretinoin-clinical" />
+<link rel="alternate" hreflang="ko" href="https://chendermatologist.com/blog/isotretinoin-clinical" />
+<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+<link rel="alternate" type="application/rss+xml" title="DermNotes RSS" href="/blog/feed.xml" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Oral Isotretinoin 完整臨床學理整理 | DermNotes 學習筆記" />
+<meta property="og:description" content="13-cis-RA 藥理、四大機轉、累積劑量證據、副作用全光譜、IBD/depression 爭議、AAD 2024 整理。" />
+<meta property="og:image" content="https://chendermatologist.com/icon.svg" />
+
+<!-- AdSense placeholder -->
+<!--
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  :root{ --bg:#f5fbfa; --ink:#0f172a; --ink-2:#334155; --muted:#64748b; --teal:#0e7c86; --teal-deep:#0c5159; --teal-bright:#14b8a6; --mint-soft:#d4f1ee; --border:#d4eae6; --line:#e5f3ef; }
+  html,body{ background:var(--bg); color:var(--ink); }
+  body::before{ content:''; position:fixed; inset:0; pointer-events:none; z-index:-1;
+    background: radial-gradient(800px 500px at 12% -8%, rgba(20,184,166,.16), transparent 60%),
+                linear-gradient(180deg,#f5fbfa 0%, #fbffff 40%, #f5fbfa 100%); }
+  .teal-text{ background:linear-gradient(180deg,#14b8a6 0%, #0c5159 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .card{ background:#fff; border:1px solid var(--border); border-radius:18px; box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(12,81,89,.18); }
+  .lang-toggle{ display:inline-flex; border:1px solid var(--border); border-radius:9999px; overflow:hidden; background:#fff; }
+  .lang-toggle button{ padding:6px 12px; font-size:12px; font-weight:600; color:var(--muted); }
+  .lang-toggle button.active{ background:linear-gradient(180deg,#14b8a6,#0c5159); color:#fff; }
+  .ad-slot{ border:1px dashed var(--border); border-radius:14px; background:#fff; color:var(--muted); font-size:11px; letter-spacing:.18em; text-transform:uppercase; display:flex; align-items:center; justify-content:center; }
+
+  .prose-zh,.prose-en{ line-height:1.9; font-size:16px; }
+  .prose-zh{ font-family:'Noto Serif TC','Microsoft JhengHei',Georgia,serif; }
+  .prose-zh h2,.prose-en h2{ font-family:'Noto Serif TC',Georgia,serif; font-weight:700; font-size:24px; margin:42px 0 12px; color:var(--ink); border-left:3px solid var(--teal); padding-left:14px; }
+  .prose-zh h3,.prose-en h3{ font-weight:700; font-size:18px; margin:24px 0 8px; color:var(--ink); }
+  .prose-zh p,.prose-en p{ margin:14px 0; color:var(--ink-2); }
+  .prose-zh ul,.prose-en ul{ margin:14px 0 14px 22px; list-style:disc; color:var(--ink-2); }
+  .prose-zh ol,.prose-en ol{ margin:14px 0 14px 22px; list-style:decimal; color:var(--ink-2); }
+  .prose-zh li,.prose-en li{ margin:6px 0; }
+  .prose-zh strong,.prose-en strong{ color:var(--ink); font-weight:700; }
+  .prose-zh em,.prose-en em{ font-style:normal; color:var(--teal-deep); font-weight:600; }
+  .prose-zh blockquote{ margin:22px 0; padding:16px 20px; background:var(--mint-soft); border-left:3px solid var(--teal); border-radius:0 12px 12px 0; color:var(--ink); }
+  .prose-zh blockquote p{ margin:0; }
+  .prose-zh code,.prose-en code{ font-family:'JetBrains Mono',Menlo,monospace; font-size:14px; background:#f0fdfa; color:#0c5159; padding:2px 7px; border-radius:6px; border:1px solid #ccfbf1; }
+  .prose-zh a,.prose-en a{ color:var(--teal-deep); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
+
+  table.dn{ width:100%; border-collapse:collapse; margin:18px 0; font-size:14px; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 1px 2px rgba(15,23,42,.04), 0 8px 18px -10px rgba(12,81,89,.18); }
+  table.dn th, table.dn td{ padding:10px 12px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.dn th{ background:#ecfeff; color:var(--teal-deep); font-weight:700; font-size:13px; letter-spacing:.04em; }
+  table.dn tr:last-child td{ border-bottom:0; }
+
+  .pearl{ border-left:3px solid #16a34a; background:#f0fdf4; padding:12px 16px; border-radius:0 10px 10px 0; margin:16px 0; font-size:14px; color:#14532d; }
+  .pearl::before{ content:'💎 PEARL — '; font-weight:700; color:#16a34a; }
+  .warn{ border-left:3px solid #dc2626; background:#fef2f2; padding:12px 16px; border-radius:0 10px 10px 0; margin:16px 0; font-size:14px; color:#7f1d1d; }
+  .warn::before{ content:'⚠️ WARNING — '; font-weight:700; color:#dc2626; }
+
+  .toc{ background:#fff; border:1px solid var(--border); border-radius:14px; padding:14px 18px; margin:14px 0 24px; }
+  .toc h4{ font-size:13px; color:var(--teal-deep); letter-spacing:.1em; margin:0 0 8px; font-weight:700; text-transform:uppercase; }
+  .toc ol{ margin:0; padding:0 0 0 18px; font-size:13.5px; color:var(--ink-2); }
+  .toc ol li{ margin:4px 0; }
+  .toc ol li a{ color:var(--teal-deep); text-decoration:none; }
+  .toc ol li a:hover{ text-decoration:underline; }
+
+  @media (max-width:640px){ .hide-sm{display:none} .prose-zh,.prose-en{font-size:15.5px} .prose-zh h2,.prose-en h2{font-size:21px} table.dn{font-size:12.5px} table.dn th,table.dn td{padding:7px 9px} }
+</style>
+
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"Article","headline":"Oral Isotretinoin 完整臨床學理整理","description":"皮膚科住院醫師 Isotretinoin 完整 study notes。","datePublished":"2026-05-02","dateModified":"2026-05-02","author":{"@type":"Person","name":"DermNotes — Dermatology R2"},"publisher":{"@type":"Organization","name":"DermNotes","logo":{"@type":"ImageObject","url":"https://chendermatologist.com/icon.svg"}},"image":"https://chendermatologist.com/icon.svg","mainEntityOfPage":"https://chendermatologist.com/blog/isotretinoin-clinical" }
+</script>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://chendermatologist.com/"},{"@type":"ListItem","position":2,"name":"部落格","item":"https://chendermatologist.com/blog/"},{"@type":"ListItem","position":3,"name":"Isotretinoin 臨床整理","item":"https://chendermatologist.com/blog/isotretinoin-clinical"}]}
+</script>
+</head>
+<body class="font-sans antialiased text-ink-900">
+
+<header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--border)]" style="background:rgba(245,251,250,.85)">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3">
+      <img src="/icon.svg" alt="DermNotes" class="w-9 h-9 rounded-lg" />
+      <span class="leading-none">
+        <span class="block font-display font-semibold text-[18px] teal-text tracking-wide">DermNotes</span>
+        <span class="block mt-1 text-[10px] uppercase tracking-[0.22em] text-ink-500 hide-sm">學習筆記 / Study Notes</span>
+      </span>
+    </a>
+    <div class="flex items-center gap-3">
+      <a href="/blog/" class="text-xs uppercase tracking-[.18em] text-ink-700 hide-sm" data-zh="← 文章索引" data-en="← Index">← 文章索引</a>
+      <div class="lang-toggle" id="langToggle">
+        <button data-lang="zh" class="active">中文</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="pt-12 sm:pt-16 pb-6">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <div class="text-[11px] uppercase tracking-[.24em] text-teal-700 mb-3 font-semibold"><span data-zh="學習筆記 · 醫師版 · 第 1 篇" data-en="Study Notes · #1">學習筆記 · 醫師版 · 第 1 篇</span></div>
+    <h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">
+      <span data-zh="Oral Isotretinoin" data-en="Oral Isotretinoin">Oral Isotretinoin</span><br/>
+      <span class="teal-text" data-zh="完整臨床學理整理 — R2 必備" data-en="A clinician's complete write-up">完整臨床學理整理 — R2 必備</span>
+    </h1>
+    <p class="mt-6 text-[15.5px] sm:text-[17px] text-ink-700 leading-[1.9]"
+       data-zh="這是給住院醫師(R1-R3)、皮膚科同仁、和對藥理有興趣的讀者的完整整理。內容涵蓋:13-cis-RA 的<strong>藥理與 isomerization</strong>、<strong>四大機轉</strong>(sebocyte apoptosis、comedolysis、antimicrobial、anti-inflammatory)、<strong>適應症與 off-label</strong>、<strong>劑量學</strong>(累積劑量證據、低劑量與間歇 protocol)、<strong>副作用全光譜</strong>(mucocutaneous、MSK、ocular、neuropsych、hepatic、lipid、IBD 爭議、teratogenicity)、<strong>藥物交互作用</strong>(tetracycline → IIH)、<strong>停藥後 laser timing</strong> 的最新證據、以及 <strong>2024 AAD acne guideline</strong> 整理。"
+       data-en="A study-grade write-up for residents and dermatology clinicians. Covers pharmacology of 13-cis-RA, the four mechanisms (sebocyte apoptosis, comedolysis, antimicrobial, anti-inflammatory), full indication list including off-label, dose science (cumulative-dose evidence, low-dose protocols, intermittent regimens), full AE spectrum, drug interactions, post-iso laser timing, and AAD 2024 acne guideline integration.">
+    </p>
+  </div>
+</section>
+
+<section class="max-w-3xl mx-auto px-5 sm:px-8 my-2"><div class="ad-slot h-20 sm:h-24" data-zh="廣告位" data-en="Ad slot">廣告位</div></section>
+
+<article class="max-w-3xl mx-auto px-5 sm:px-8 mt-2 mb-16">
+
+<div class="toc">
+  <h4>本篇大綱 / Contents</h4>
+  <ol>
+    <li><a href="#pharm">Pharmacology — 13-cis-RA 與 isomerization</a></li>
+    <li><a href="#mech">四大作用機轉</a></li>
+    <li><a href="#ind">適應症與 off-label uses</a></li>
+    <li><a href="#dose">劑量學 — 累積劑量、低劑量、間歇</a></li>
+    <li><a href="#workup">Pre-treatment workup &amp; monitoring</a></li>
+    <li><a href="#ae">副作用全光譜</a></li>
+    <li><a href="#preg">致畸性與避孕規範</a></li>
+    <li><a href="#di">Drug interactions</a></li>
+    <li><a href="#laser">停藥後 laser / 手術 timing</a></li>
+    <li><a href="#controversy">爭議:Depression、IBD、Hyperostosis</a></li>
+    <li><a href="#aad">AAD 2024 acne guideline 整理</a></li>
+    <li><a href="#pearls">Pearls &amp; references</a></li>
+  </ol>
+</div>
+
+<div id="proseZh" class="prose-zh">
+
+<h2 id="pharm">Pharmacology — 13-cis-RA 與 isomerization</h2>
+<p>Isotretinoin 是 <code>13-cis-retinoic acid</code>,屬於第一代 retinoid(non-aromatic monoaromatic),與內生性 vitamin A 代謝物 <code>all-trans retinoic acid (ATRA, tretinoin)</code> 互為 <strong>cis-trans isomer</strong>。</p>
+<ul>
+  <li><strong>口服吸收</strong>:脂溶性,<strong>食物(尤其脂肪)可使 AUC 增加 1.5-2 倍</strong>。新一代 lidose / micronized 配方(Absorica、Acnotin XR)降低食物影響。</li>
+  <li><strong>分布</strong>:Vd 高、強烈與血漿 albumin 結合(>99%)。</li>
+  <li><strong>代謝</strong>:肝臟 CYP2C8/2C9/3A4 代謝為主要活性產物 <code>4-oxo-isotretinoin</code>;部分 isomerization 為 ATRA 及 9-cis-RA。</li>
+  <li><strong>半衰期</strong>:isotretinoin ~ 21 hr,4-oxo-iso ~ 24 hr → 一日一次或二次 dosing 即可。</li>
+  <li><strong>排除</strong>:腎與膽汁雙路徑。</li>
+</ul>
+<p>核受體層面,所有 retinoid 透過 <code>RAR (α/β/γ)</code> 與 <code>RXR (α/β/γ)</code> heterodimer 結合 retinoic acid response element (RARE) 改變基因轉錄。<strong>13-cis-RA 自身對 RAR 的親和力低</strong>,療效大部分來自其於體內 isomerize 為 ATRA 與 4-oxo 衍生物。</p>
+
+<h2 id="mech">四大作用機轉</h2>
+<p>痘痘有四個 pathogenic pillars,Isotretinoin 是<strong>唯一同時擊中所有四個</strong>的藥物:</p>
+<table class="dn">
+<thead><tr><th>機轉</th><th>分子層面</th><th>臨床意義</th></tr></thead>
+<tbody>
+<tr><td>1. 皮脂腺萎縮 + sebocyte apoptosis</td><td>透過 NLRP3-independent FoxO/p53 axis 誘導 sebocyte apoptosis;sebum production ↓ 80-90%</td><td>3-4 週起油脂顯著減少;為療效核心</td></tr>
+<tr><td>2. Comedolysis (normalize keratinization)</td><td>透過 RAR-mediated 改變 K6/K16/profilaggrin 表達,降低 hyperkeratosis</td><td>粉刺數量下降</td></tr>
+<tr><td>3. Antimicrobial (vs <em>C. acnes</em>)</td><td>不直接殺菌,但因 sebum ↓ + microenvironment 改變而 <em>C. acnes</em> 計數降低</td><td>不易產生抗藥性 — 與口服抗生素的關鍵差異</td></tr>
+<tr><td>4. Anti-inflammatory</td><td>降低 TLR-2 表達、減少 IL-1α / IL-8 / MMPs / neutrophil chemotaxis</td><td>結節囊腫發炎快速消退</td></tr>
+</tbody>
+</table>
+
+<div class="pearl">Isotretinoin 是<strong>唯一</strong>能同時 hit 所有四個 pathogenic pillars 的藥;這也是它「持久性 remission」可能的原因 — 皮脂腺體積真正縮小,而非短暫抑制。</div>
+
+<h2 id="ind">適應症與 off-label uses</h2>
+<h3>FDA / 健保通用適應症</h3>
+<ul>
+  <li>嚴重 nodulocystic acne 對其他治療無效</li>
+  <li>治療失敗的中度 acne(antibiotic ± topical retinoid 3-6 個月)</li>
+  <li>有顯著 scarring 風險或 PIH 的中度 acne(AAD 2024 已將適應症擴大,不再強求 nodular)</li>
+</ul>
+<h3>常見 off-label uses</h3>
+<ul>
+  <li><strong>Recalcitrant rosacea</strong>(尤其 phymatous、papulopustular):低劑量 5-20 mg/day</li>
+  <li><strong>Hidradenitis suppurativa</strong>:單藥效果有限,常作為 adjunct 或 transition 至生物製劑</li>
+  <li><strong>Gram-negative folliculitis</strong>:抗生素無效時的下一線</li>
+  <li><strong>Pyoderma faciale (rosacea fulminans)</strong>:steroid + 低劑量 iso</li>
+  <li><strong>Sebaceous hyperplasia</strong></li>
+  <li><strong>Disorders of cornification</strong>:Darier disease、ichthyoses(較常用 acitretin,但 iso 有時可)</li>
+  <li><strong>SCC / actinic keratosis chemoprevention</strong>(高風險族群,如器官移植後)</li>
+  <li><strong>Neuroblastoma maintenance</strong>(高劑量,腫瘤科適應症)</li>
+</ul>
+
+<h2 id="dose">劑量學 — 累積劑量、低劑量、間歇</h2>
+
+<h3>標準 protocol(經典 Layton-style)</h3>
+<ul>
+  <li><strong>Starting dose</strong>:0.5 mg/kg/day × 1 個月 → 評估耐受度</li>
+  <li><strong>Titrate up</strong>:1.0 mg/kg/day × 後續療程</li>
+  <li><strong>Cumulative target</strong>:120–150 mg/kg(歷史 Plewig &amp; Kligman 提出,30 年 standard)</li>
+  <li><strong>Total duration</strong>:約 6–9 個月</li>
+</ul>
+
+<h3>低劑量(low-dose)protocol</h3>
+<ul>
+  <li>0.1–0.4 mg/kg/day(常見:每天 10-20 mg 固定劑量)</li>
+  <li>Meta-analysis(Rasi 2014, Borghi 2011)顯示 efficacy 與 standard dose 相近,但 mucocutaneous AE 顯著降低、生活品質較佳。</li>
+  <li>缺點:<strong>relapse rate 較高</strong>(部分研究 30-50%,vs standard 20-30%)。</li>
+  <li>常用於:成人女性持續性 acne、low-grade inflammation、患者強烈要求美觀。</li>
+</ul>
+
+<h3>間歇式(intermittent) — 每週 1 次或每月 1 週</h3>
+<p>歷史上有 Akman 等 protocol(每月吃 1 週),效果與成本介於 daily 與 low-dose 之間。臨床現況不普遍,reserve 給特殊耐受性差或長期維持的病人。</p>
+
+<h3>累積劑量證據的更新</h3>
+<p>近年 cohort(Blasiak 2013、Borghi 2014)顯示 <strong>cumulative dose 達到 220 mg/kg 以上的病人 5 年復發率比 120 mg/kg 組顯著降低(~20% vs ~40%)</strong>,因此 AAD 2024 提到 <strong>更高的 cumulative dose 可能進一步降低復發</strong>,但需與副作用權衡。實務上目標仍多為 120–150 mg/kg,部分中心提高至 180–220。</p>
+
+<table class="dn">
+<thead><tr><th>Protocol</th><th>Daily dose</th><th>Duration</th><th>Cumulative target</th><th>適合族群</th></tr></thead>
+<tbody>
+<tr><td>Standard</td><td>0.5–1 mg/kg/day</td><td>6–9 月</td><td>120–150 mg/kg</td><td>典型 nodulocystic / scarring acne</td></tr>
+<tr><td>High cumulative</td><td>0.5–1 mg/kg/day</td><td>9–12 月</td><td>180–220 mg/kg</td><td>relapse 高風險(青少年男性、嚴重)</td></tr>
+<tr><td>Low-dose</td><td>0.1–0.4 mg/kg/day(10–20 mg/day)</td><td>6–12 月</td><td>~120 mg/kg(較難達)</td><td>成人女性、輕中度持續性、rosacea-like</td></tr>
+<tr><td>Intermittent</td><td>0.5 mg/kg × 1 週/月</td><td>6 月</td><td>較低</td><td>耐受性差、特殊狀況</td></tr>
+</tbody>
+</table>
+
+<h2 id="workup">Pre-treatment workup &amp; monitoring</h2>
+<h3>Baseline</h3>
+<ul>
+  <li><strong>LFT (ALT, AST)</strong></li>
+  <li><strong>Lipid panel</strong>(TG, total cholesterol, ± HDL/LDL)— 空腹理想</li>
+  <li><strong>β-hCG (女性 child-bearing potential, CBP)</strong>:用藥前 1 週內驗</li>
+  <li>Optional:CBC、Cr、glucose(根據病人 comorbidity)</li>
+  <li>確認近 1 個月內未使用 tetracyclines</li>
+  <li>女性 CBP:確認 <strong>2 種以上避孕方式</strong>已啟動 ≥ 1 個月</li>
+</ul>
+
+<h3>Follow-up cadence</h3>
+<ul>
+  <li>傳統:<strong>每月 1 次</strong> LFT + lipid + β-hCG(女性)</li>
+  <li>2017 後多 cohort 證據(Lee 2016, Hansen 2016)支持「<strong>routine monthly labs 對於低風險、年輕、無 comorbidity 病人 yield 極低</strong>」</li>
+  <li>AAD 2024 建議:<strong>baseline + 第 2 個月再驗 1 次,後續穩定者可拉長間隔</strong>(尤其是未懷孕風險男性)</li>
+  <li>女性 β-hCG:依然建議 <strong>每月 1 次</strong>,療程結束後再驗 1 次,直到停藥後 ≥ 1 個月。</li>
+</ul>
+
+<h2 id="ae">副作用全光譜</h2>
+
+<h3>Mucocutaneous(>80%)</h3>
+<ul>
+  <li><strong>Cheilitis</strong>(嘴唇炎)~ 90-100% — 最具特徵性;處置:無香料 occlusive lip balm、aquaphor。</li>
+  <li><strong>Xerosis、retinoid dermatitis</strong></li>
+  <li><strong>Epistaxis</strong>(鼻黏膜乾)~ 30-50% — 鼻內薄擦凡士林、saline spray。</li>
+  <li><strong>Telogen effluvium</strong> — 一般 mild、reversible。高累積劑量可能更顯著。</li>
+  <li><strong>Initial flare</strong> — 較高劑量或短期內加藥較常見。處置:暫時加 oral steroid(prednisolone 0.5 mg/kg × 2-4 週)。</li>
+  <li><strong>Acne fulminans</strong>:罕見但嚴重 — 啟動 iso 後突發 ulcerative、systemic 發炎。處置:立刻減量或暫停、加 systemic steroid,改 slow-restart。</li>
+  <li><strong>Pyogenic granuloma-like granulation tissue</strong>(尤其指甲/趾甲周圍)</li>
+</ul>
+
+<h3>Ocular</h3>
+<ul>
+  <li>Dry eye、blepharoconjunctivitis、減少 night vision、contact lens 不耐</li>
+  <li>建議療程中 <strong>暫停軟式隱形眼鏡</strong>、artificial tears 補充</li>
+</ul>
+
+<h3>MSK</h3>
+<ul>
+  <li><strong>Myalgia / arthralgia</strong> ~ 15-30%;CK 輕度上升常見(劇烈運動者更高)</li>
+  <li><strong>DISH (diffuse idiopathic skeletal hyperostosis)、premature epiphyseal closure</strong> — <strong>多年高劑量</strong>(腫瘤科 dosing 或長期 acitretin)才較顯著;<strong>標準 acne 療程罕見</strong>。建議:小於 16 歲青少年若需 prolonged 療程,告知家長並衡量 risk;routine 影像不需。</li>
+  <li>避免 marathon、heavy lifting</li>
+</ul>
+
+<h3>CNS</h3>
+<ul>
+  <li><strong>Headache</strong>;若搭配 tetracycline → <strong>pseudotumor cerebri (IIH)</strong> 風險上升 → <strong>絕對 contraindication</strong></li>
+  <li>頭痛 + visual change → fundoscopy + 神經科會診</li>
+</ul>
+
+<h3>Hepatic</h3>
+<ul>
+  <li>ALT/AST 輕度升高 ~ 10-15%,通常 &lt; 3× ULN,reversible</li>
+  <li>&gt; 3× ULN → reduce dose;&gt; 5× ULN → hold</li>
+</ul>
+
+<h3>Lipid</h3>
+<ul>
+  <li>TG 上升 ~ 25%;total cholesterol ~ 7-10%</li>
+  <li>TG &gt; 500 mg/dL → reduce dose / 飲食 / fenofibrate;&gt; 800 mg/dL → hold(pancreatitis 風險)</li>
+</ul>
+
+<h3>GI</h3>
+<ul>
+  <li>Abdominal pain、bloating</li>
+  <li>IBD 議題:<strong>過去 case-control 研究曾建議 association,但 2018 以後大型 cohort(Wright 2021、Lee 2016 et al.)及 systematic reviews 並未支持 causal link</strong>。Acne 患者本身 baseline IBD 發生率即略高於一般人。</li>
+</ul>
+
+<h3>Neuropsychiatric</h3>
+<ul>
+  <li>Depression / anxiety / suicidality 議題已歷時多年。<strong>近年 large meta-analyses(Huang 2017、Ludot 2024)未支持因果關聯</strong>;部分研究反而顯示 acne 改善後 depression scale 下降。</li>
+  <li>實務:詢問 baseline mental health;有 active major depression 者謹慎、監測 PHQ-9;出現症狀立即停藥評估。</li>
+</ul>
+
+<h3>Teratogenicity (FDA Category X)</h3>
+<ul>
+  <li><strong>Retinoid embryopathy</strong>:CNS(microcephaly、hydrocephalus)、craniofacial、cardiac(septal defects)、thymus、limb,流產風險顯著上升。</li>
+  <li>女性育齡:<strong>2 種避孕方式 ≥ 1 月 before、整個療程、停藥 ≥ 1 月</strong>(US iPLEDGE programme 規範)。台灣無 iPLEDGE 但概念相同。</li>
+  <li><strong>不可捐血</strong>:用藥期間 + 停藥後 1 個月。</li>
+</ul>
+
+<div class="warn">受孕暴露 → 立即停藥、會診婦產科、考量 prenatal counseling。Isotretinoin 半衰期短,但代謝物 4-oxo 較長,故避孕需延長至停藥後 1 個月。</div>
+
+<h2 id="preg">致畸性與避孕規範細節</h2>
+<table class="dn">
+<thead><tr><th>避孕方式</th><th>單獨可否</th><th>備註</th></tr></thead>
+<tbody>
+<tr><td>Combined OCP</td><td>可作為 1°,但需配 2°</td><td>有 break-through 風險;需衛教</td></tr>
+<tr><td>Progestin-only mini-pill</td><td>不建議單獨</td><td>避孕效率較低</td></tr>
+<tr><td>Hormonal IUD / Cu IUD</td><td>可作為 1°,recommended</td><td>失敗率最低</td></tr>
+<tr><td>Implant (Implanon)</td><td>可作為 1°</td><td>同上</td></tr>
+<tr><td>DMPA injection</td><td>可作為 1°</td><td>同上</td></tr>
+<tr><td>Barrier (condom / diaphragm)</td><td>不建議單獨;適合作為 2°</td><td>失敗率高</td></tr>
+<tr><td>Tubal ligation / partner vasectomy</td><td>可作為單一 method</td><td>已絕育者</td></tr>
+<tr><td>絕對禁慾</td><td>可,但 reliability 取決於 commitment</td><td>需明確紀錄</td></tr>
+</tbody>
+</table>
+
+<h2 id="di">藥物交互作用</h2>
+<ul>
+  <li><strong>Tetracyclines (doxycycline, minocycline, tetracycline)</strong> → IIH(pseudotumor cerebri)<strong>絕對禁忌</strong>。Iso 開始前停 ≥ 2 週。</li>
+  <li><strong>Vitamin A 高劑量補充</strong> → hypervitaminosis A,additive toxicity。</li>
+  <li><strong>Methotrexate</strong> → hepatotoxicity 累加。</li>
+  <li><strong>Phenytoin、corticosteroids</strong>(長期) → 骨質流失累加。</li>
+  <li><strong>St. John's Wort</strong> → 降低 hormonal contraception efficacy → 致畸風險。</li>
+  <li><strong>Progestin-only mini-pill</strong> → iso 不建議單用。</li>
+  <li>CYP3A4 inducers/inhibitors:臨床顯著性不大,因 iso 有多個代謝路徑。</li>
+</ul>
+
+<h2 id="laser">停藥後 laser / 手術 timing(更新觀念)</h2>
+<p>傳統 1986 年 Zachariae case series 建議停藥後 6-12 個月再做 ablative procedures;此後 6 個月成 dogma。</p>
+<p><strong>2017 ASDS expert panel(Waldman 2017)、2024 多份 systematic reviews 已重新審視:</strong></p>
+<ul>
+  <li><strong>Manual dermabrasion + fully ablative laser resurfacing</strong>:仍建議停藥 ≥ 6 個月 — 證據最弱,case reports 真的有 hypertrophic scar。</li>
+  <li><strong>Superficial chemical peels、microdermabrasion、non-ablative fractional laser、vascular laser (PDL)、hair removal laser、IPL</strong>:<strong>不需要 6 個月 wait</strong>;可在 iso 治療中或停藥後立即進行。</li>
+  <li><strong>Microneedling</strong>:<strong>近期證據(Mysore 2017 et al.)支持治療中或停藥後即可,不影響 wound healing</strong>。</li>
+  <li><strong>Wax depilation</strong>:仍建議停藥 ≥ 6 個月(skin fragility)。</li>
+</ul>
+<div class="pearl">「停藥後 6 個月才能做任何 procedure」這個規定 outdated。實務應依 procedure 種類分層判斷,並文件化告知病人。</div>
+
+<h2 id="controversy">爭議題目整理</h2>
+
+<h3>1. Depression / suicidality</h3>
+<p>大型 meta-analysis(Huang &amp; Cheng 2017,JAMA Derm 2024 update)<strong>未證實 causal relationship</strong>;部分研究顯示痤瘡改善後 depression scale 下降。台灣健保仍要求告知與簽署同意書。Practice:baseline screen + 持續詢問。</p>
+
+<h3>2. IBD</h3>
+<p>2010 年代之 case-control 研究曾報導 odds ratio ~ 1.7,但<strong>近年 propensity-matched cohorts(Wright 2021、Etminan 2013、Crockett 2010 reanalysis)未支持 causal association</strong>。Acne 本身與 IBD 共有 immune dysregulation。Practice:有 IBD family history 不需 absolute avoidance,但密切監測 GI symptoms。</p>
+
+<h3>3. DISH / hyperostosis</h3>
+<p>臨床顯著 hyperostosis 主要見於 <strong>長期高劑量(腫瘤科 neuroblastoma protocol、慢性 Darier 維持)</strong>;標準 acne course(6-9 個月)<strong>顯著 DISH 罕見</strong>。Routine bone imaging 不需。</p>
+
+<h3>4. Erectile dysfunction / sexual side effects</h3>
+<p>個案報告與小型研究有提及性慾下降、ED;機轉未明,可能與 sebum / mucocutaneous dryness 或 androgen 代謝有關。Practice:詢問、回報、必要時減量。</p>
+
+<h2 id="aad">AAD 2024 acne guideline 整理(Isotretinoin 段落要點)</h2>
+<ul>
+  <li>對於 <strong>severe acne</strong> 與 <strong>treatment-resistant 中度 acne</strong>:<strong>strong recommendation, high quality evidence</strong>。</li>
+  <li>對於 <strong>scarring 或 PIH 風險高的 moderate acne</strong>:適應症放寬,可作為 first-line 或 early second-line。</li>
+  <li>支持 <strong>低劑量 protocol</strong> 作為合理選項,but 復發率較高需告知。</li>
+  <li>支持 <strong>cumulative dose ≥ 120 mg/kg</strong>;近年資料支持較高累積劑量(180–220 mg/kg)可進一步降低復發。</li>
+  <li>建議 baseline + 第 2 個月 LFT/lipid;低風險者後續間隔可拉長。</li>
+  <li>女性 CBP β-hCG 每月仍建議。</li>
+  <li>Tetracycline 合併 → 禁忌。</li>
+  <li>Post-iso laser timing 採分層建議。</li>
+  <li>Mental health screening 建議 at baseline,but 不支持「iso 直接造成 depression」的 causal claim。</li>
+</ul>
+
+<h2 id="pearls">Pearls &amp; references</h2>
+
+<div class="pearl">Take with a fatty meal — 食物使 AUC 增加 1.5-2 倍。新一代 lidose 配方降低 food effect,但仍建議 with food。</div>
+<div class="pearl">Initial flare 發生 → 不要 panic,加 oral prednisolone 0.5 mg/kg × 2-4 週並繼續(或先暫停 1-2 週後 slow restart)。</div>
+<div class="pearl">高 TG 病人:fenofibrate 比 statin 更直接降 TG;omega-3 4 g/day 也有效;同時飲食衛教(限糖、限酒)。</div>
+<div class="pearl">Cheilitis 屬於 PD pharmacodynamic marker — 反映 dose adequacy。完全沒有 cheilitis 表示劑量可能不足。</div>
+<div class="pearl">復發 predictors:青少年男性、女性 PCOS、polycystic 表現嚴重、未達 cumulative dose、皮脂分泌超強型。可考慮提高 cumulative dose 或 post-treatment low-dose maintenance(每週 10-20 mg)。</div>
+
+<h3>Key references</h3>
+<ul>
+  <li>Reynolds RV, Yeung H, Cheng CE, et al. <em>Guidelines of care for the management of acne vulgaris.</em> AAD 2024.</li>
+  <li>Layton AM. <em>The use of isotretinoin in acne.</em> Dermato-Endocrinology 2009.</li>
+  <li>Plewig G, Kligman AM. <em>Acne and Rosacea</em> (textbook reference for cumulative dose history).</li>
+  <li>Borghi A, et al. <em>Low-dose isotretinoin in mild-to-moderate acne.</em> JEADV 2011.</li>
+  <li>Rasi A, et al. <em>Comparative efficacy of conventional vs. low-dose isotretinoin.</em> 2014.</li>
+  <li>Blasiak RC, et al. <em>High-dose isotretinoin and risk of relapse.</em> JAMA Derm 2013.</li>
+  <li>Waldman A, et al. <em>ASDS guidelines: safety of laser/energy-based devices in patients on or recently treated with isotretinoin.</em> Dermatologic Surgery 2017.</li>
+  <li>Huang YC, Cheng YC. <em>Isotretinoin and depression: meta-analysis.</em> J Am Acad Dermatol 2017.</li>
+  <li>Wright S, et al. <em>Isotretinoin and IBD risk: propensity-matched cohort.</em> 2021.</li>
+  <li>Mysore V, et al. <em>Microneedling and isotretinoin.</em> J Cutan Aesthet Surg 2017.</li>
+</ul>
+
+<blockquote><p><strong>給民眾的口語版本:</strong>本主題的患者衛教版在 <a href="/blog/isotretinoin-patient">口服 A 酸完整衛教</a>。可以直接傳給診間病人。</p></blockquote>
+
+</div><!-- /proseZh -->
+
+<div id="proseEn" class="prose-en" style="display:none;">
+  <p><em>(Full English version coming soon. The Chinese write-up above is structured around: pharmacology of 13-cis-RA and isomerization, the four mechanisms (sebocyte apoptosis, comedolysis, antimicrobial, anti-inflammatory), full indication list including off-label uses, dosing science (cumulative target 120–150 mg/kg with newer evidence supporting 180–220 for high-relapse risk), low-dose and intermittent protocols, full AE spectrum (mucocutaneous, ocular, MSK, hepatic, lipid, GI/IBD, neuropsychiatric, teratogenicity), drug interactions (tetracyclines and IIH), updated post-iso laser timing per ASDS 2017 / AAD 2024, controversies on depression/IBD/hyperostosis, and AAD 2024 acne guideline integration with key references.)</em></p>
+</div>
+
+</article>
+
+<section class="max-w-3xl mx-auto px-5 sm:px-8 mt-2 mb-10"><div class="ad-slot h-20 sm:h-24" data-zh="廣告位" data-en="Ad slot">廣告位</div></section>
+
+<section class="max-w-3xl mx-auto px-5 sm:px-8 mb-16">
+  <div class="text-[11px] uppercase tracking-[.22em] text-teal-700 font-semibold mb-3" data-zh="延伸閱讀" data-en="Related">延伸閱讀</div>
+  <div class="grid sm:grid-cols-2 gap-4">
+    <a href="/blog/isotretinoin-patient" class="card p-5 block">
+      <div class="text-[11px] text-teal-700 font-semibold uppercase tracking-[.18em]" data-zh="衛教 · 民眾版" data-en="Patient education">衛教 · 民眾版</div>
+      <div class="font-display font-bold text-[17px] mt-2">口服 A 酸完整衛教 — 給民眾</div>
+      <div class="text-[13px] text-ink-500 mt-2">同主題的口語衛教版,可直接傳給診間病人。</div>
+    </a>
+    <a href="/blog/topical-acids-clinical" class="card p-5 block">
+      <div class="text-[11px] text-teal-700 font-semibold uppercase tracking-[.18em]" data-zh="學習筆記 · 醫師版" data-en="Study notes">學習筆記 · 醫師版</div>
+      <div class="font-display font-bold text-[17px] mt-2">Topical Retinoids &amp; Acid Actives 完整整理</div>
+      <div class="text-[13px] text-ink-500 mt-2">外用 retinoid 4 代差別、AHA pH/penetration、azelaic 雙機轉、孕期安全表。</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-[var(--border)] bg-mint-50/60">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8 py-8 text-[12.5px] text-ink-500 flex flex-wrap items-center justify-between gap-3">
+    <div>© <span id="yr">2026</span> DermNotes — <span data-zh="本站僅作教育參考,不構成醫療建議。" data-en="Educational use only — not medical advice.">本站僅作教育參考,不構成醫療建議。</span></div>
+    <div class="flex gap-4">
+      <a class="hover:text-teal-700" href="/" data-zh="首頁" data-en="Home">首頁</a>
+      <a class="hover:text-teal-700" href="/blog/" data-zh="部落格" data-en="Blog">部落格</a>
+      <a class="hover:text-teal-700" href="/blog/feed.xml">RSS</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/blog/blog-shared.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.DN) DN.initBlog({ proseZh:'proseZh', proseEn:'proseEn' });
+  });
+</script>
+</body>
+</html>

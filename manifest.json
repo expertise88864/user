@@ -1,0 +1,27 @@
+{
+  "name": "DermNotes · 皮膚科筆記與衛教",
+  "short_name": "DermNotes",
+  "description": "皮膚科 R2 醫師的學習筆記與病人衛教 — Dermatology R2 Resident Notes & Patient Education.",
+  "lang": "zh-TW",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f5fbfa",
+  "theme_color": "#0e7c86",
+  "categories": ["medical", "education", "health", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    { "name": "口服A酸衛教", "short_name": "A酸衛教", "url": "/blog/isotretinoin-patient" },
+    { "name": "外用酸類衛教", "short_name": "外用酸類", "url": "/blog/topical-acids-patient" },
+    { "name": "Isotretinoin 學理", "short_name": "Iso 筆記", "url": "/blog/isotretinoin-clinical" },
+    { "name": "外用酸類學理", "short_name": "酸類筆記", "url": "/blog/topical-acids-clinical" }
+  ]
+}

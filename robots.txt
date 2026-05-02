@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# AdSense crawler — keep allowed even before activation
+User-agent: Mediapartners-Google
+Allow: /
+
+Sitemap: https://chendermatologist.com/sitemap.xml

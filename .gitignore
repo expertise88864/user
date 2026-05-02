@@ -1,0 +1,31 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+.vscode/
+.idea/
+
+# Logs / temp
+*.log
+*.tmp
+npm-debug.log*
+yarn-error.log
+
+# Local env / secrets — NEVER commit
+.env
+.env.*
+*.pem
+*.key
+
+# Node — currently unused but reserved
+node_modules/
+.pnp/
+.pnp.js
+.next/
+.cache/
+dist/
+build/
+
+# Vercel
+.vercel

@@ -1,0 +1,3 @@
+# Google AdSense — replace ca-pub-XXXXXXXXXXXXXXXX with your real publisher ID after AdSense approval.
+# Until then this file is a no-op placeholder so the structure is in place.
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
