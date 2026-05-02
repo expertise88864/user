@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>後台編輯 · ChenDermatologist Admin</title>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="theme-color" content="#0e7c86" />
+<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; height:100%; font-family:'Inter','Noto Sans TC','Microsoft JhengHei',sans-serif; background:#f5fbfa; color:#0f172a; }
+  :root{ --teal:#0e7c86; --teal-deep:#0c5159; --teal-bright:#14b8a6; --mint-soft:#d4f1ee; --border:#d4eae6; --line:#e5f3ef; --ink:#0f172a; --ink-2:#334155; --muted:#64748b; }
+  .teal-text{ background:linear-gradient(180deg,#14b8a6 0%, #0c5159 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  header{ position:sticky; top:0; z-index:50; background:rgba(245,251,250,.95); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); padding:10px 18px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+  header .brand{ font-weight:700; font-size:16px; letter-spacing:.02em; }
+  header .right{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-size:13px; }
+  header a{ color:var(--teal-deep); text-decoration:none; font-weight:600; }
+  header .pat-status{ font-size:12px; color:var(--muted); padding:3px 10px; border-radius:9999px; border:1px solid var(--border); background:#fff; }
+  header .pat-status.ok{ color:#065f46; border-color:#a7f3d0; background:#ecfdf5; }
+  header .pat-status.no{ color:#7f1d1d; border-color:#fca5a5; background:#fef2f2; }
+
+  main{ display:grid; grid-template-columns:280px 1fr; gap:0; height:calc(100vh - 56px); }
+  @media (max-width:760px){ main{ grid-template-columns:1fr; height:auto; } #sidebar{ height:auto; max-height:300px; } }
+
+  #sidebar{ background:#fff; border-right:1px solid var(--border); overflow-y:auto; padding:14px; }
+  #sidebar h2{ font-size:11px; text-transform:uppercase; letter-spacing:.18em; color:var(--teal-deep); margin:6px 0 10px; }
+  #sidebar .file-list{ display:flex; flex-direction:column; gap:2px; }
+  #sidebar .file-item{ font-size:13px; padding:7px 10px; border-radius:6px; cursor:pointer; color:var(--ink-2); display:flex; align-items:center; gap:6px; }
+  #sidebar .file-item:hover{ background:var(--mint-soft); color:var(--teal-deep); }
+  #sidebar .file-item.active{ background:var(--mint-soft); color:var(--teal-deep); font-weight:600; }
+  #sidebar .file-item small{ color:var(--muted); font-size:11px; margin-left:auto; }
+  #sidebar .new-row{ margin-top:14px; padding-top:14px; border-top:1px dashed var(--line); }
+  #sidebar .new-row input{ width:100%; padding:6px 8px; font-size:12px; border:1px solid var(--border); border-radius:6px; }
+  #sidebar .new-row button{ width:100%; margin-top:6px; padding:6px; background:#fff; border:1px solid var(--border); border-radius:6px; cursor:pointer; font-size:12px; color:var(--teal-deep); font-weight:600; }
+  #sidebar .new-row button:hover{ border-color:var(--teal); }
+
+  #editor{ display:flex; flex-direction:column; height:100%; min-height:0; background:#f5fbfa; }
+  .toolbar{ padding:10px 14px; border-bottom:1px solid var(--border); background:#fff; display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .toolbar input.path{ font-family:'JetBrains Mono',monospace; font-size:12.5px; padding:6px 10px; border:1px solid var(--border); border-radius:6px; flex:1; min-width:180px; color:var(--ink); }
+  .toolbar button{ padding:6px 12px; font-size:12.5px; border-radius:6px; border:1px solid var(--border); background:#fff; cursor:pointer; font-weight:600; color:var(--ink-2); }
+  .toolbar button.primary{ background:linear-gradient(180deg,#14b8a6,#0c5159); color:#fff; border:1px solid var(--teal-deep); }
+  .toolbar button:hover{ border-color:var(--teal); }
+  .toolbar .group{ display:flex; gap:8px; }
+  .toolbar .grow{ flex:1; }
+  .toolbar label.upload{ display:inline-block; padding:6px 12px; font-size:12.5px; border:1px dashed var(--teal); border-radius:6px; background:#ecfeff; color:var(--teal-deep); cursor:pointer; font-weight:600; }
+  .toolbar label.upload input{ display:none; }
+
+  .panes{ flex:1; display:grid; grid-template-rows:1fr; min-height:0; }
+  .panes.split{ grid-template-columns:1fr 1fr; }
+  textarea.editor{ width:100%; height:100%; padding:14px 18px; font-family:'JetBrains Mono',Menlo,monospace; font-size:13px; line-height:1.65; border:none; outline:none; background:#fff; color:#0f172a; resize:none; }
+  iframe.preview{ width:100%; height:100%; border:none; background:#fff; border-left:1px solid var(--border); }
+
+  .statusbar{ padding:6px 14px; font-size:11.5px; background:#fff; border-top:1px solid var(--border); color:var(--muted); display:flex; gap:14px; flex-wrap:wrap; }
+  .statusbar .ok{ color:#065f46; }
+  .statusbar .err{ color:#7f1d1d; }
+
+  /* PAT Modal */
+  .modal-bg{ position:fixed; inset:0; background:rgba(15,23,42,.42); display:flex; align-items:center; justify-content:center; z-index:100; padding:18px; }
+  .modal{ background:#fff; border-radius:16px; padding:28px; max-width:520px; width:100%; box-shadow:0 24px 50px -16px rgba(12,81,89,.5); }
+  .modal h2{ margin:0 0 8px; font-size:22px; color:var(--ink); }
+  .modal p{ margin:8px 0; font-size:14px; line-height:1.7; color:var(--ink-2); }
+  .modal input{ width:100%; padding:10px 12px; font-size:13px; font-family:'JetBrains Mono',monospace; border:1px solid var(--border); border-radius:8px; margin:10px 0; }
+  .modal button{ padding:10px 16px; background:linear-gradient(180deg,#14b8a6,#0c5159); color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; }
+  .modal a{ color:var(--teal-deep); font-weight:600; }
+  .modal small{ color:var(--muted); font-size:12px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <span class="teal-text">ChenDermatologist</span> · <span style="font-weight:500;color:#64748b">後台編輯</span>
+  </div>
+  <div class="right">
+    <span id="patStatus" class="pat-status no">未登入</span>
+    <button id="togglePreview" style="padding:5px 10px;font-size:12px;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;font-weight:600;color:var(--ink-2)">分隔預覽</button>
+    <button id="logoutBtn" style="padding:5px 10px;font-size:12px;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;color:#7f1d1d">清除 PAT</button>
+    <a href="/" target="_blank" rel="noopener">← 回首頁</a>
+  </div>
+</header>
+
+<main>
+  <aside id="sidebar">
+    <h2>檔案 / Files</h2>
+    <div id="fileList" class="file-list"></div>
+
+    <div class="new-row">
+      <h2 style="margin-bottom:6px">新文章</h2>
+      <input id="newFileName" placeholder="例: my-new-article" />
+      <button id="newFileBtn">+ 從範本建立</button>
+    </div>
+
+    <div class="new-row">
+      <h2 style="margin-bottom:6px">圖片庫</h2>
+      <div style="font-size:11.5px;color:var(--muted);line-height:1.5">已上傳的圖片放在 <code style="font-family:'JetBrains Mono',monospace;font-size:11px">/blog/images/</code>。在文章內以 <code style="font-family:'JetBrains Mono',monospace;font-size:11px">&lt;img src="/blog/images/檔名"&gt;</code> 引用。</div>
+    </div>
+  </aside>
+
+  <section id="editor">
+    <div class="toolbar">
+      <input id="pathInput" class="path" placeholder="blog/xxx.html" readonly />
+      <label class="upload">
+        🖼 上傳圖片
+        <input type="file" id="imageInput" accept="image/*" multiple />
+      </label>
+      <div class="grow"></div>
+      <button id="reloadBtn">重新讀取</button>
+      <button id="saveBtn" class="primary">💾 儲存並推送</button>
+    </div>
+    <div id="panes" class="panes">
+      <textarea id="content" class="editor" placeholder="先從左邊選一個檔案 ⋯⋯"></textarea>
+    </div>
+    <div class="statusbar">
+      <span id="status">尚未載入檔案</span>
+      <span class="grow" style="flex:1"></span>
+      <span id="shaInfo"></span>
+    </div>
+  </section>
+</main>
+
+<!-- PAT Modal (shown if no token) -->
+<div id="patModal" class="modal-bg" style="display:none">
+  <div class="modal">
+    <h2>輸入 GitHub Personal Access Token</h2>
+    <p>後台用 GitHub API 直接寫進你的 repo(<code style="font-family:'JetBrains Mono',monospace">expertise88864/user</code>)。需要 PAT 一次,儲存在你瀏覽器的 localStorage,不會傳到任何第三方。</p>
+    <p><strong>怎麼產生 PAT?</strong><br/>① 開 <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">https://github.com/settings/tokens</a><br/>② 點「Generate new token (classic)」<br/>③ 名字隨便填,Expiration 選 90 days 或 No expiration<br/>④ <strong>勾選 <code style="font-family:'JetBrains Mono',monospace">repo</code> 全部權限</strong><br/>⑤ Generate → 複製 token 貼下面(只會顯示一次,離開頁面就看不到)</p>
+    <input id="patInput" type="password" placeholder="ghp_..." autocomplete="off" />
+    <div style="display:flex;gap:8px;align-items:center">
+      <button id="patSave">儲存並登入</button>
+      <small>token 只會存在這個瀏覽器</small>
+    </div>
+  </div>
+</div>
+
+<script>
+const REPO = 'expertise88864/user';
+const BRANCH = 'main';
+let PAT = '';
+let CURRENT_FILE = null;
+let CURRENT_SHA = null;
+let CURRENT_CONTENT = '';
+let allFiles = [];
+
+const elFileList   = document.getElementById('fileList');
+const elPathInput  = document.getElementById('pathInput');
+const elContent    = document.getElementById('content');
+const elStatus     = document.getElementById('status');
+const elShaInfo    = document.getElementById('shaInfo');
+const elPatStatus  = document.getElementById('patStatus');
+const elPatModal   = document.getElementById('patModal');
+const elPatInput   = document.getElementById('patInput');
+const elImageInput = document.getElementById('imageInput');
+const elPanes      = document.getElementById('panes');
+
+// ===== PAT login =====
+function loadPat() {
+  PAT = localStorage.getItem('cd_gh_pat') || '';
+  if (PAT) {
+    elPatStatus.textContent = '已登入';
+    elPatStatus.className = 'pat-status ok';
+    elPatModal.style.display = 'none';
+    refreshFileList();
+  } else {
+    elPatStatus.textContent = '未登入';
+    elPatStatus.className = 'pat-status no';
+    elPatModal.style.display = 'flex';
+  }
+}
+document.getElementById('patSave').addEventListener('click', () => {
+  const v = elPatInput.value.trim();
+  if (!v) { alert('請貼上 PAT'); return; }
+  localStorage.setItem('cd_gh_pat', v);
+  loadPat();
+});
+document.getElementById('logoutBtn').addEventListener('click', () => {
+  if (confirm('清除 PAT?下次需要重新登入。')) {
+    localStorage.removeItem('cd_gh_pat');
+    PAT = '';
+    location.reload();
+  }
+});
+
+// ===== GitHub API helper =====
+async function gh(method, path, body) {
+  const r = await fetch('https://api.github.com/repos/' + REPO + '/' + path, {
+    method,
+    headers: {
+      'Authorization': 'token ' + PAT,
+      'Accept': 'application/vnd.github+json',
+      'Content-Type': 'application/json'
+    },
+    body: body ? JSON.stringify(body) : null
+  });
+  const data = await r.json();
+  if (!r.ok) {
+    const msg = (data && data.message) ? data.message : ('HTTP ' + r.status);
+    throw new Error(msg);
+  }
+  return data;
+}
+
+// ===== file list =====
+async function refreshFileList() {
+  setStatus('載入檔案清單...');
+  try {
+    const root = await gh('GET', 'contents/');
+    const blog = await gh('GET', 'contents/blog');
+    const files = [];
+    root.forEach(f => {
+      if (f.type === 'file' && /\.(html|xml|txt|json|md)$/i.test(f.name)) files.push({path: f.path, name: f.name, dir: '/'});
+    });
+    blog.forEach(f => {
+      if (f.type === 'file' && /\.(html|xml|js)$/i.test(f.name)) files.push({path: f.path, name: f.name, dir: '/blog/'});
+    });
+    allFiles = files;
+    elFileList.innerHTML = '';
+    files.sort((a,b) => a.path.localeCompare(b.path)).forEach(f => {
+      const d = document.createElement('div');
+      d.className = 'file-item';
+      d.innerHTML = '📄 <span>' + f.name + '</span><small>' + f.dir + '</small>';
+      d.addEventListener('click', () => loadFile(f.path));
+      d.dataset.path = f.path;
+      elFileList.appendChild(d);
+    });
+    setStatus('共 ' + files.length + ' 個檔案 — 點選任一個開始編輯');
+  } catch (e) {
+    setStatus('讀取失敗: ' + e.message, true);
+  }
+}
+
+// ===== load file =====
+async function loadFile(path) {
+  setStatus('載入 ' + path + ' ...');
+  try {
+    const data = await gh('GET', 'contents/' + path);
+    CURRENT_SHA = data.sha;
+    CURRENT_FILE = path;
+    CURRENT_CONTENT = decodeUtf8Base64(data.content);
+    elContent.value = CURRENT_CONTENT;
+    elPathInput.value = path;
+    elShaInfo.textContent = 'SHA: ' + data.sha.substring(0,7);
+    setStatus('已載入 ' + path);
+    document.querySelectorAll('.file-item').forEach(el => el.classList.toggle('active', el.dataset.path === path));
+    if (elPanes.classList.contains('split')) refreshPreview();
+  } catch (e) {
+    setStatus('載入失敗: ' + e.message, true);
+  }
+}
+
+document.getElementById('reloadBtn').addEventListener('click', () => {
+  if (CURRENT_FILE) loadFile(CURRENT_FILE);
+});
+
+// ===== save =====
+document.getElementById('saveBtn').addEventListener('click', async () => {
+  if (!CURRENT_FILE) { alert('請先選一個檔案'); return; }
+  if (!PAT) { alert('請先登入 GitHub PAT'); return; }
+  const newContent = elContent.value;
+  if (newContent === CURRENT_CONTENT) {
+    if (!confirm('內容沒變更,還是要送出嗎?')) return;
+  }
+  const msg = prompt('Commit 訊息(留空使用「edit ' + CURRENT_FILE + '」):', '');
+  const message = msg && msg.trim() ? msg.trim() : ('edit ' + CURRENT_FILE);
+  setStatus('正在儲存 ' + CURRENT_FILE + ' ...');
+  try {
+    const body = {
+      message: message,
+      content: encodeUtf8Base64(newContent),
+      branch: BRANCH,
+      sha: CURRENT_SHA
+    };
+    const data = await gh('PUT', 'contents/' + CURRENT_FILE, body);
+    CURRENT_SHA = data.content.sha;
+    CURRENT_CONTENT = newContent;
+    elShaInfo.textContent = 'SHA: ' + CURRENT_SHA.substring(0,7);
+    setStatus('✅ 已儲存並推送 — Vercel 約 30 秒後重新部署', false);
+  } catch (e) {
+    setStatus('儲存失敗: ' + e.message, true);
+  }
+});
+
+// ===== image upload =====
+elImageInput.addEventListener('change', async (e) => {
+  if (!PAT) { alert('請先登入 PAT'); return; }
+  const files = Array.from(e.target.files);
+  for (const file of files) {
+    await uploadImage(file);
+  }
+  elImageInput.value = '';
+});
+
+async function uploadImage(file) {
+  setStatus('上傳 ' + file.name + ' ...');
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = async () => {
+      try {
+        const b64 = reader.result.split(',')[1];
+        const safeName = file.name.replace(/[^a-zA-Z0-9._-]+/g,'-').toLowerCase();
+        const filename = Date.now() + '_' + safeName;
+        const path = 'blog/images/' + filename;
+        await gh('PUT', 'contents/' + path, {
+          message: 'upload ' + filename,
+          content: b64,
+          branch: BRANCH
+        });
+        const url = '/blog/images/' + filename;
+        const tag = '<img src="' + url + '" alt="" style="max-width:100%;height:auto;border-radius:10px;margin:14px 0" />';
+        // Insert at cursor in textarea
+        const ta = elContent;
+        const start = ta.selectionStart, end = ta.selectionEnd;
+        ta.value = ta.value.substring(0, start) + tag + ta.value.substring(end);
+        ta.selectionStart = ta.selectionEnd = start + tag.length;
+        ta.focus();
+        setStatus('✅ 已上傳並插入 ' + url, false);
+      } catch (e) {
+        setStatus('圖片上傳失敗: ' + e.message, true);
+      }
+      resolve();
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+// ===== preview toggle =====
+document.getElementById('togglePreview').addEventListener('click', () => {
+  if (elPanes.classList.contains('split')) {
+    elPanes.classList.remove('split');
+    elPanes.style.gridTemplateColumns = '';
+    const iframe = elPanes.querySelector('iframe');
+    if (iframe) iframe.remove();
+  } else {
+    elPanes.classList.add('split');
+    elPanes.style.gridTemplateColumns = '1fr 1fr';
+    const iframe = document.createElement('iframe');
+    iframe.className = 'preview';
+    iframe.id = 'previewFrame';
+    elPanes.appendChild(iframe);
+    refreshPreview();
+  }
+});
+function refreshPreview() {
+  const iframe = document.getElementById('previewFrame');
+  if (!iframe) return;
+  iframe.srcdoc = elContent.value;
+}
+elContent.addEventListener('input', () => {
+  if (elPanes.classList.contains('split')) {
+    clearTimeout(window._pvT); window._pvT = setTimeout(refreshPreview, 350);
+  }
+});
+
+// ===== new file from template =====
+document.getElementById('newFileBtn').addEventListener('click', async () => {
+  const slug = document.getElementById('newFileName').value.trim().toLowerCase().replace(/[^a-z0-9-]/g,'-');
+  if (!slug) { alert('請輸入文章 slug,例如 acne-faq'); return; }
+  if (!PAT) { alert('請先登入 PAT'); return; }
+  if (!confirm('要從「衛教文章範本」建立 blog/' + slug + '.html 嗎?')) return;
+  // Use isotretinoin-patient.html as template
+  setStatus('讀取範本...');
+  try {
+    const tpl = await gh('GET', 'contents/blog/isotretinoin-patient.html');
+    const tplContent = decodeUtf8Base64(tpl.content);
+    const newPath = 'blog/' + slug + '.html';
+    const data = await gh('PUT', 'contents/' + newPath, {
+      message: 'create ' + newPath + ' from template',
+      content: encodeUtf8Base64(tplContent),
+      branch: BRANCH
+    });
+    setStatus('✅ 已建立 ' + newPath + ' — 別忘了把 sitemap.xml / sw.js / blog/index.html / feed.xml 也加進去', false);
+    document.getElementById('newFileName').value = '';
+    await refreshFileList();
+    loadFile(newPath);
+  } catch (e) {
+    setStatus('建立失敗: ' + e.message, true);
+  }
+});
+
+// ===== utils =====
+function setStatus(msg, isError) {
+  elStatus.textContent = msg;
+  elStatus.className = isError ? 'err' : 'ok';
+}
+function encodeUtf8Base64(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+function decodeUtf8Base64(b64) {
+  return decodeURIComponent(escape(atob(b64.replace(/\n/g,''))));
+}
+
+// ===== Ctrl+S to save =====
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+    e.preventDefault();
+    document.getElementById('saveBtn').click();
+  }
+});
+
+// init
+loadPat();
+</script>
+</body>
+</html>

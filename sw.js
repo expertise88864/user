@@ -1,17 +1,22 @@
-/* DermNotes service worker — offline-first for static, network-first for HTML */
-const CACHE = 'dn-v1';
+/* ChenDermatologist service worker — offline-first for static, network-first for HTML */
+const CACHE = 'cd-v2';
 const PRECACHE = [
   '/',
   '/index.html',
+  '/about',
+  '/privacy',
   '/icon.svg',
   '/manifest.json',
   '/blog/',
   '/blog/feed.xml',
   '/blog/blog-shared.js',
-  '/blog/isotretinoin-patient',
+  '/blog/acne-myths',
+  '/blog/sunscreen-myths',
+  '/blog/eczema-myths',
   '/blog/topical-acids-patient',
-  '/blog/isotretinoin-clinical',
-  '/blog/topical-acids-clinical'
+  '/blog/isotretinoin-patient',
+  '/blog/topical-acids-clinical',
+  '/blog/isotretinoin-clinical'
 ];
 
 self.addEventListener('install', (e) => {
@@ -36,6 +41,8 @@ self.addEventListener('fetch', (e) => {
 
   const url = new URL(req.url);
   if (url.origin !== location.origin) return;
+  // Skip /admin to ensure user always gets fresh editor
+  if (url.pathname.startsWith('/admin')) return;
 
   if (req.mode === 'navigate' || req.headers.get('accept')?.includes('text/html')) {
     e.respondWith(

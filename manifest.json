@@ -1,7 +1,7 @@
 {
-  "name": "DermNotes · 皮膚科筆記與衛教",
-  "short_name": "DermNotes",
-  "description": "皮膚科 R2 醫師的學習筆記與病人衛教 — Dermatology R2 Resident Notes & Patient Education.",
+  "name": "ChenDermatologist · 皮膚科常見衛教及學習筆記網站",
+  "short_name": "ChenDermatologist",
+  "description": "陳翊嘉醫師(中國醫藥大學附設醫院 皮膚部)的皮膚科衛教與學習筆記網站。",
   "lang": "zh-TW",
   "start_url": "/",
   "scope": "/",
@@ -19,9 +19,9 @@
     }
   ],
   "shortcuts": [
-    { "name": "口服A酸衛教", "short_name": "A酸衛教", "url": "/blog/isotretinoin-patient" },
-    { "name": "外用酸類衛教", "short_name": "外用酸類", "url": "/blog/topical-acids-patient" },
-    { "name": "Isotretinoin 學理", "short_name": "Iso 筆記", "url": "/blog/isotretinoin-clinical" },
-    { "name": "外用酸類學理", "short_name": "酸類筆記", "url": "/blog/topical-acids-clinical" }
+    { "name": "預約看診 (中國醫皮膚部)", "short_name": "掛號", "url": "https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&current=0&source=dep" },
+    { "name": "衛教文章", "short_name": "文章", "url": "/blog/" },
+    { "name": "痘痘 9 大迷思", "short_name": "痘痘迷思", "url": "/blog/acne-myths" },
+    { "name": "防曬 8 大迷思", "short_name": "防曬迷思", "url": "/blog/sunscreen-myths" }
   ]
 }
