@@ -333,7 +333,7 @@
         '<span aria-hidden="true">⏱</span><span data-zh="閱讀約 ' + minutes + ' 分鐘" data-en="' + minutes + ' min read">閱讀約 ' + minutes + ' 分鐘</span>' +
       '</span>' +
       '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#dcfce7;border:1px solid #86efac;color:#14532d;font-weight:600">' +
-        '<span aria-hidden="true">✓</span><span data-zh="陳翊嘉 醫師審閱 · ' + reviewedDate + '" data-en="Reviewed by Dr. Chen · ' + reviewedDate + '">陳翊嘉 醫師審閱 · ' + reviewedDate + '</span>' +
+        '<span aria-hidden="true">📅</span><span data-zh="更新於 ' + reviewedDate + '" data-en="Updated · ' + reviewedDate + '">更新於 ' + reviewedDate + '</span>' +
       '</span>' +
       '<a href="/about" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:9999px;background:#fff;border:1px solid var(--border);color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="關於作者 →" data-en="About the author →">關於作者 →</a>';
     target.parentNode.insertBefore(bar, target.nextSibling);
