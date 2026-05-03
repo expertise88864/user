@@ -6,7 +6,31 @@
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>陳翊嘉醫師（中國醫藥大學附設醫院 皮膚科）整理的皮膚科衛教文章 — 民眾最常見的皮膚科誤解、市面上產品、常見皮膚疾病。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 04 May 2026 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2026 23:00:00 +0800</lastBuildDate>
+
+    <item>
+      <title>白斑（Vitiligo）完整衛教 — TDA 共識</title>
+      <link>https://chendermatologist.com/blog/vitiligo</link>
+      <guid>https://chendermatologist.com/blog/vitiligo</guid>
+      <pubDate>Mon, 04 May 2026 23:00:00 +0800</pubDate>
+      <description>白斑（Vitiligo）完整衛教 — 依臺灣皮膚科醫學會官方共識整理。</description>
+    </item>
+
+    <item>
+      <title>猴痘（Mpox）皮膚照護 — TDA 共識</title>
+      <link>https://chendermatologist.com/blog/mpox-care</link>
+      <guid>https://chendermatologist.com/blog/mpox-care</guid>
+      <pubDate>Mon, 04 May 2026 23:00:00 +0800</pubDate>
+      <description>猴痘（Mpox）皮膚照護 — 依臺灣皮膚科醫學會官方共識整理。</description>
+    </item>
+
+    <item>
+      <title>化膿性汗腺炎（HS）完整衛教 — TDA 共識</title>
+      <link>https://chendermatologist.com/blog/hidradenitis-suppurativa</link>
+      <guid>https://chendermatologist.com/blog/hidradenitis-suppurativa</guid>
+      <pubDate>Mon, 04 May 2026 23:00:00 +0800</pubDate>
+      <description>化膿性汗腺炎（HS）完整衛教 — 依臺灣皮膚科醫學會官方共識整理。</description>
+    </item>
 
     <item>
       <title>蠕形蟎蟲(Demodex)與玫瑰斑(酒糟)— TDA 2022 共識完整衛教</title>

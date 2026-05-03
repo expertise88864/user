@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v6';
-const RUNTIME = 'cd-runtime-v6';
+const CACHE = 'cd-v7';
+const RUNTIME = 'cd-runtime-v7';
 const RUNTIME_MAX_ENTRIES = 60;
 
 const PRECACHE = [
@@ -36,6 +36,9 @@ const PRECACHE = [
   '/blog/isotretinoin-clinical',
   '/blog/alopecia-areata',
   '/blog/demodex-rosacea',
+  '/blog/hidradenitis-suppurativa',
+  '/blog/mpox-care',
+  '/blog/vitiligo',
   '/blog/acne-scar-treatment'
 ];
 

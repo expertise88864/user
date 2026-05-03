@@ -295,7 +295,10 @@
     { slug:'isotretinoin-patient',  title:'口服 A 酸完整衛教', cat:'rx', tag:'口服 A 酸', date:'2026-05-02', emoji:'💊', tag_en:'Isotretinoin' },
     { slug:'acne-scar-treatment',   title:'痘疤完整治療指引', cat:'rx', tag:'痘疤', date:'2026-05-04', emoji:'🎯', tag_en:'Acne scars' },
     { slug:'alopecia-areata',     title:'圓禿（鬼剃頭）完整衛教', cat:'rx', tag:'圓禿', date:'2026-05-04', emoji:'💇', tag_en:'Alopecia areata' },
-    { slug:'demodex-rosacea',     title:'蠕形蟎蟲與玫瑰斑(酒糟)', cat:'rx', tag:'玫瑰斑', date:'2026-05-04', emoji:'🌹', tag_en:'Demodex rosacea' }
+    { slug:'demodex-rosacea',     title:'蠕形蟎蟲與玫瑰斑(酒糟)', cat:'rx', tag:'玫瑰斑', date:'2026-05-04', emoji:'🌹', tag_en:'Demodex rosacea' },
+    { slug:'vitiligo', title:'白斑（Vitiligo）完整衛教', cat:'rx', tag:'白斑', date:'2026-05-04', emoji:'', tag_en:'Vitiligo' },
+    { slug:'mpox-care', title:'猴痘（Mpox）皮膚照護', cat:'rx', tag:'猴痘', date:'2026-05-04', emoji:'', tag_en:'Mpox' },
+    { slug:'hidradenitis-suppurativa', title:'化膿性汗腺炎（HS）完整衛教', cat:'rx', tag:'化膿性汗腺炎', date:'2026-05-04', emoji:'', tag_en:'HS' }
   ];
 
   DN.currentSlug = function () {
@@ -505,6 +508,37 @@
   // Reads dates from DN.ARTICLES catalog by matching href slug.
   // -----------------------------------------------------------------------
   // -----------------------------------------------------------------------
+  // -----------------------------------------------------------------------
+  // TDA disease guideline mapping — auto-inject TDA URL block when applicable
+  // -----------------------------------------------------------------------
+  DN.TDA_GUIDELINE = {
+    'acne-myths':                'TDA 痤瘡臨床治療共識(2024)',
+    'eczema-myths':              'TDA 異位性皮膚炎診療共識(2020 更新)',
+    'rosacea-myths':             'TDA 玫瑰斑(酒糟)治療共識(2022)',
+    'demodex-rosacea':           'TDA 玫瑰斑(酒糟)治療共識(2022)',
+    'hairloss-myths':            'TDA 圓禿診斷及治療共識(2024)',
+    'alopecia-areata':           'TDA 圓禿診斷及治療共識(2024)',
+    'urticaria-myths':           'TDA 蕁麻疹定義、分類、診斷暨治療共識(2021)',
+    'psoriasis-myths':           'TDA 尋常型乾癬治療共識手冊(2024)',
+    'shingles-myths':            'TDA 帶狀疱疹疫苗接種建議(2022)',
+    'mpox-care':                 'TDA 猴痘皮膚照護建議指引',
+    'vitiligo':                  'TDA 白斑臨床治療共識(2024)',
+    'hidradenitis-suppurativa':  'TDA 化膿性汗腺炎臨床診療共識建議',
+  };
+  DN.addTDALink = function () {
+    const slug = DN.currentSlug();
+    if (!slug || !DN.TDA_GUIDELINE[slug]) return;
+    if (document.getElementById('dn-tda-link')) return;
+    if (document.getElementById('tda-link')) return;
+    const article = document.querySelector('article.max-w-3xl');
+    if (!article) return;
+    const wrap = document.createElement('section');
+    wrap.id = 'dn-tda-link';
+    wrap.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
+    wrap.innerHTML = '<div style="background:linear-gradient(180deg,#f5fbfa,#fff);border:1px solid var(--border);border-radius:14px;padding:18px 20px"><div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#0c5159;font-weight:700;margin-bottom:6px">📋 臺灣皮膚科醫學會官方資源</div><p style="margin:0 0 10px;font-size:13.5px;line-height:1.7;color:var(--ink-2)">本疾病有 ' + DN.TDA_GUIDELINE[slug] + '。完整官方共識可至以下查詢:</p><a href="https://www.derma.org.tw/clinical/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid var(--border);border-radius:9999px;color:var(--teal-deep);font-weight:700;font-size:13px;text-decoration:none">→ 臺灣皮膚科醫學會 診療指引總覽</a></div>';
+    article.parentNode.insertBefore(wrap, article.nextSibling);
+  };
+
   // §86 醫療法保護 — auto-inject medical-disclaimer block at end of article
   // (resident-grade safety wording per agent research)
   // -----------------------------------------------------------------------
@@ -691,6 +725,7 @@
       DN.addReadingMeta();
       DN.addFloatingTOC();
       DN.addLegalDisclaimer();
+      DN.addTDALink();
       DN.addRelatedArticles();
       DN.addShareToolbar();
     }
