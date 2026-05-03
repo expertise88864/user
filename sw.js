@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v18';
-const RUNTIME = 'cd-runtime-v18';
+const CACHE = 'cd-v20';
+const RUNTIME = 'cd-runtime-v20';
 const RUNTIME_MAX_ENTRIES = 60;
 
 const PRECACHE = [
@@ -46,7 +46,8 @@ const PRECACHE = [
   '/blog/targeted-therapy-skin',
   '/blog/mpox-care',
   '/blog/vitiligo',
-  '/blog/acne-scar-treatment'
+  '/blog/acne-scar-treatment',
+  '/blog/laser-dermatology'
 ];
 
 self.addEventListener('install', (e) => {

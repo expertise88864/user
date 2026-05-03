@@ -17,13 +17,6 @@
   DN.LANGS = [
     { code: 'zh', label: '中文',    htmlLang: 'zh-TW' },
     { code: 'en', label: 'English', htmlLang: 'en'    }
-    { slug:'targeted-therapy-skin', title:'標靶藥物（TKI）皮膚副作用', cat:'rx', tag:'標靶藥物', date:'2026-05-04', emoji:'', tag_en:'Targeted therapy skin' },
-    { slug:'topical-steroids-guide', title:'外用類固醇完整指南', cat:'rx', tag:'外用類固醇', date:'2026-05-04', emoji:'', tag_en:'Topical steroids' },
-    { slug:'biologics-overview', title:'皮膚科生物製劑與小分子標靶藥物總覽', cat:'rx', tag:'生物製劑', date:'2026-05-04', emoji:'', tag_en:'Biologics' },
-    { slug:'skin-whitening-agents', title:'美白成分完整解析', cat:'product', tag:'美白', date:'2026-05-04', emoji:'', tag_en:'Whitening agents' },
-    { slug:'dermatology-faq', title:'皮膚科 25 個最常見問題', cat:'myth', tag:'常見問題', date:'2026-05-05', emoji:'', tag_en:'FAQ' },
-    { slug:'epidermoid-cyst', title:'粉瘤完整衛教', cat:'rx', tag:'粉瘤', date:'2026-05-05', emoji:'', tag_en:'Epidermoid cyst' },
-    { slug:'nhi-derm-drugs', title:'皮膚科常用藥物健保規範完整整理', cat:'rx', tag:'健保規範', date:'2026-05-05', emoji:'', tag_en:'NHI rules' },
   ];
   DN.LANG_KEY = { 'zh': 'zh', 'en': 'en' };
 
@@ -305,7 +298,15 @@
     { slug:'demodex-rosacea',     title:'蠕形蟎蟲與玫瑰斑(酒糟)', cat:'rx', tag:'玫瑰斑', date:'2026-05-04', emoji:'🌹', tag_en:'Demodex rosacea' },
     { slug:'vitiligo', title:'白斑（Vitiligo）完整衛教', cat:'rx', tag:'白斑', date:'2026-05-04', emoji:'', tag_en:'Vitiligo' },
     { slug:'mpox-care', title:'猴痘（Mpox）皮膚照護', cat:'rx', tag:'猴痘', date:'2026-05-04', emoji:'', tag_en:'Mpox' },
-    { slug:'hidradenitis-suppurativa', title:'化膿性汗腺炎（HS）完整衛教', cat:'rx', tag:'化膿性汗腺炎', date:'2026-05-04', emoji:'', tag_en:'HS' }
+    { slug:'hidradenitis-suppurativa', title:'化膿性汗腺炎（HS）完整衛教', cat:'rx', tag:'化膿性汗腺炎', date:'2026-05-04', emoji:'', tag_en:'HS' },
+    { slug:'targeted-therapy-skin', title:'標靶藥物（TKI）皮膚副作用', cat:'rx', tag:'標靶藥物', date:'2026-05-04', emoji:'', tag_en:'Targeted therapy skin' },
+    { slug:'topical-steroids-guide', title:'外用類固醇完整指南', cat:'rx', tag:'外用類固醇', date:'2026-05-04', emoji:'', tag_en:'Topical steroids' },
+    { slug:'biologics-overview', title:'皮膚科生物製劑與小分子標靶藥物總覽', cat:'rx', tag:'生物製劑', date:'2026-05-04', emoji:'', tag_en:'Biologics' },
+    { slug:'skin-whitening-agents', title:'美白成分完整解析', cat:'product', tag:'美白', date:'2026-05-04', emoji:'', tag_en:'Whitening agents' },
+    { slug:'dermatology-faq', title:'皮膚科 25 個最常見問題', cat:'myth', tag:'常見問題', date:'2026-05-05', emoji:'', tag_en:'FAQ' },
+    { slug:'epidermoid-cyst', title:'粉瘤完整衛教', cat:'rx', tag:'粉瘤', date:'2026-05-05', emoji:'', tag_en:'Epidermoid cyst' },
+    { slug:'nhi-derm-drugs', title:'皮膚科常用藥物健保規範完整整理', cat:'rx', tag:'健保規範', date:'2026-05-05', emoji:'', tag_en:'NHI rules' },
+    { slug:'laser-dermatology', title:'皮膚科雷射完整對照', cat:'rx', tag:'雷射 / 光電', date:'2026-05-05', emoji:'', tag_en:'Laser dermatology' }
   ];
 
   DN.currentSlug = function () {
@@ -729,6 +730,7 @@
     '酸類 / A 酸':    ['topical-acids-patient', 'skin-whitening-agents', 'isotretinoin-patient'],
     '常見問題 FAQ':   ['dermatology-faq'],
     '粉瘤 / 表皮囊腫': ['epidermoid-cyst'],
+    '雷射 / 光電':    ['laser-dermatology', 'acne-scar-treatment', 'rosacea-myths'],
     '健保 / 自費':    ['nhi-derm-drugs', 'biologics-overview', 'isotretinoin-patient']
   };
 
@@ -761,7 +763,7 @@
     }
 
     hub.innerHTML =
-      '<div class="dn-hub-title">🔍 <span data-zh="快速查找皮膚科主題" data-en="Quick find by topic">快速查找皮膚科主題</span></div>' +
+      '<div class="dn-hub-title"><span data-zh="快速查找皮膚科主題" data-en="Quick find by topic">快速查找皮膚科主題</span></div>' +
       '<div class="dn-search-row">' +
         '<input id="dn-search-input" type="search" placeholder="搜尋文章標題或關鍵字..." aria-label="搜尋文章" />' +
         '<div id="dn-search-status"></div>' +

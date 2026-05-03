@@ -451,7 +451,7 @@
     <p class="mt-6 text-[14.5px] sm:text-[16.5px] text-ink-700 leading-[1.95]"
        data-zh="民眾最常見的皮膚科疾病、誤解、用藥與保養 — 點擊下方標籤或搜尋,快速找到你關心的主題。"
        data-en="The most common dermatologic conditions, misconceptions, drugs, and skincare. Use the search or tag chips below to jump to what you care about.">
-      民眾最常見的皮膚科疾病、誤解、用藥與保養 — 點擊下方標籤或搜尋,快速找到你關心的主題。
+      民眾最常見的皮膚科疾病、誤解、用藥與保養 — 點擊下方標籤或搜尋，快速找到你關心的主題。
     </p>
     <div class="mt-7 flex flex-wrap gap-3 justify-center">
       <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="btn btn-teal" data-zh="預約看診" data-en="Book appointment">預約看診</a>
@@ -464,10 +464,29 @@
 <!-- ============= QUICK-FIND HUB (search + tag chips, prominent above-the-fold) ============= -->
 <section class="max-w-3xl mx-auto px-5 sm:px-8 mt-6">
   <section id="dn-hub" data-hub-mode="homepage" data-show-count="6">
-    <!-- Inline fallback so users see chips even before JS loads -->
+    <!-- Static fallback — works even without JS or with stale SW cache -->
     <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px 18px 14px;box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(12,81,89,.18)">
-      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;font-weight:700;color:#0c5159;margin:0 0 10px">🔍 快速查找皮膚科主題</div>
-      <div style="margin:0 0 10px;font-size:13.5px;color:var(--muted)">載入中⋯ 請稍候 1-2 秒</div>
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;font-weight:700;color:#0c5159;margin:0 0 10px"><span data-zh="快速查找皮膚科主題" data-en="Quick find by topic">快速查找皮膚科主題</span></div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <a href="/blog/" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:700;background:#ecfeff;color:#0c5159;border:1px solid #a5f3fc;text-decoration:none">全部主題</a>
+        <a href="/blog/acne-myths" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">痘痘</a>
+        <a href="/blog/eczema-myths" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">異位性皮膚炎</a>
+        <a href="/blog/melasma-myths" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">肝斑 / 美白</a>
+        <a href="/blog/sunscreen-myths" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">防曬</a>
+        <a href="/blog/rosacea-myths" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">玫瑰斑</a>
+        <a href="/blog/psoriasis-myths" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">乾癬</a>
+        <a href="/blog/hairloss-myths" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">落髮</a>
+        <a href="/blog/alopecia-areata" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">圓禿</a>
+        <a href="/blog/urticaria-myths" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">蕁麻疹</a>
+        <a href="/blog/tinea-myths" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">香港腳 / 灰指甲</a>
+        <a href="/blog/warts-myths" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">病毒疣</a>
+        <a href="/blog/shingles-myths" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">皮蛇</a>
+        <a href="/blog/vitiligo" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">白斑</a>
+        <a href="/blog/hidradenitis-suppurativa" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">化膿性汗腺炎</a>
+        <a href="/blog/biologics-overview" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">生物製劑</a>
+        <a href="/blog/laser-dermatology" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">雷射 / 光電</a>
+        <a href="/blog/nhi-derm-drugs" style="padding:5px 11px;border-radius:9999px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid var(--border);text-decoration:none">健保 / 自費</a>
+      </div>
     </div>
   </section>
 </section>
@@ -691,7 +710,7 @@
             <span class="chip tag">粉瘤</span>
             <time>2026-05-05</time>
           </div>
-          <h3>粉瘤完整衛教 — 為什麼不能自己擠? 何時該手術切除?</h3>
+          <h3>粉瘤完整衛教 — 為什麼不能自己擠？何時該手術切除？</h3>
           <p>粉瘤跟痘痘怎麼分、囊袋的關鍵、發炎期處置、橢圓形切除術完整流程、健保條件。</p>
         </div>
         <div class="al-arrow">→</div>
@@ -949,12 +968,12 @@
     </div>
     <div class="mt-4 text-[11.5px] text-ink-500 flex flex-wrap items-center justify-between gap-2">
       <div data-zh="本站僅作教育參考，不構成醫療建議。任何用藥或就醫決定請以您的主治醫師判斷為準。" data-en="Educational use only — not medical advice. Always consult your physician for treatment decisions.">本站僅作教育參考，不構成醫療建議。任何用藥或就醫決定請以您的主治醫師判斷為準。</div>
-      <div>© <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師 · <span style="font-size:10px;opacity:.5">build 2026-05-04 18:00</span></div>
+      <div>© <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師 · <span style="font-size:10px;opacity:.5">build 2026-05-05 10:00 (29 EN translations + SEO)</span></div>
     </div>
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605041800" defer></script>
+<script src="/blog/blog-shared.js?v=202605051000" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (window.DN) DN.initBlog({});

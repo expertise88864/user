@@ -6,7 +6,15 @@
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>陳翊嘉醫師（中國醫藥大學附設醫院 皮膚科）整理的皮膚科衛教文章 — 民眾最常見的皮膚科誤解、市面上產品、常見皮膚疾病。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Wed, 06 May 2026 09:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2026 18:00:00 +0800</lastBuildDate>
+
+    <item>
+      <title>皮膚科雷射完整對照 — 波長 × 適應症 × 證據強度</title>
+      <link>https://chendermatologist.com/blog/laser-dermatology</link>
+      <guid>https://chendermatologist.com/blog/laser-dermatology</guid>
+      <pubDate>Wed, 06 May 2026 18:00:00 +0800</pubDate>
+      <description>2022 德國 S2k 雷射指引整理。532-10600 nm 全波長 × 30+ 適應症「該用 / 可考慮 / 不建議」清單。皮秒、染料、KTP、Nd:YAG、CO₂、Er:YAG、IPL 完整對照。</description>
+    </item>
 
     <item>
       <title>皮膚科常用藥物健保規範完整整理</title>
