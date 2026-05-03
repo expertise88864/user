@@ -81,6 +81,8 @@
 
   <url><loc>https://chendermatologist.com/blog/dermatology-faq</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>皮膚科 25 個最常見問題</image:title></image:image></url>
 
+  <url><loc>https://chendermatologist.com/blog/epidermoid-cyst</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>粉瘤完整衛教</image:title></image:image></url>
+
   <!-- 學習筆記（深入閱讀，不出現在主索引） -->
   <url><loc>https://chendermatologist.com/blog/topical-acids-clinical</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://chendermatologist.com/blog/isotretinoin-clinical</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>

@@ -292,11 +292,42 @@
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"WebSite",
-  "name":"ChenDermatologist · 皮膚科常見衛教及學習筆記網站",
+  "@type":"MedicalBusiness",
+  "@id":"https://chendermatologist.com/#organization",
+  "name":"陳翊嘉醫師 · 皮膚科 · ChenDermatologist",
+  "alternateName":["ChenDermatologist","陳翊嘉皮膚科","Chen Dermatologist"],
   "url":"https://chendermatologist.com/",
+  "logo":{
+    "@type":"ImageObject",
+    "url":"https://chendermatologist.com/icon.svg",
+    "width":512,
+    "height":512
+  },
+  "image":"https://chendermatologist.com/icon.svg",
+  "description":"陳翊嘉醫師（中國醫藥大學附設醫院 皮膚科）的皮膚科常見疾病衛教網站。",
+  "founder":{ "@type":"Person","name":"陳翊嘉 醫師","honorificSuffix":"M.D." },
+  "medicalSpecialty":"Dermatology",
+  "sameAs":[
+    "https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&current=0&source=dep"
+  ],
+  "areaServed":{ "@type":"Country","name":"Taiwan" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "@id":"https://chendermatologist.com/#website",
+  "url":"https://chendermatologist.com/",
+  "name":"陳翊嘉醫師 · 皮膚科 · ChenDermatologist",
+  "alternateName":"ChenDermatologist",
+  "publisher":{ "@id":"https://chendermatologist.com/#organization" },
   "inLanguage":["zh-TW","en"],
-  "publisher":{ "@type":"Person","name":"陳翊嘉 醫師","url":"https://chendermatologist.com/" }
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://chendermatologist.com/?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -386,7 +417,7 @@
         <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-teal-600 text-white text-[12px] font-semibold hover:bg-teal-700">
           <span data-zh="預約掛號" data-en="Book appointment">預約掛號</span><span>→</span>
         </a>
-        <a href="/blog/" class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full text-[12px] font-semibold text-teal-700 hover:bg-mint-100 transition-colors" data-zh="衛教文章" data-en="Articles">衛教文章</a>
+        <a href="/blog/" class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full text-[12px] font-semibold text-teal-700 hover:bg-mint-100 transition-colors" data-zh="衛教文章" data-en="Articles">衛教文章</a><button onclick="document.getElementById('dn-search-input')?.focus()||(location.href='/#dn-hub')" class="hidden sm:inline-flex items-center justify-center w-8 h-8 rounded-full text-teal-700 hover:bg-mint-100 transition-colors" aria-label="搜尋" title="搜尋文章"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></button>
         <a href="/about" class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full text-[12px] font-semibold text-teal-700 hover:bg-mint-100 transition-colors" data-zh="關於我" data-en="About">關於我</a>
         <select id="langToggle" class="lang-select" aria-label="Language">
           <option value="zh">中文</option>
@@ -645,6 +676,20 @@
         <div class="al-arrow">→</div>
       </a>
 
+      <a href="/blog/epidermoid-cyst" class="article-list-item">
+        <div class="al-icon cat-rx"></div>
+        <div class="al-body">
+          <div class="al-meta">
+            <span class="chip cat-rx">處方 / 手術</span>
+            <span class="chip tag">粉瘤</span>
+            <time>2026-05-05</time>
+          </div>
+          <h3>粉瘤完整衛教 — 為什麼不能自己擠? 何時該手術切除?</h3>
+          <p>粉瘤跟痘痘怎麼分、囊袋的關鍵、發炎期處置、橢圓形切除術完整流程、健保條件。</p>
+        </div>
+        <div class="al-arrow">→</div>
+      </a>
+
       <a href="/blog/targeted-therapy-skin" class="article-list-item">
         <div class="al-icon cat-rx"></div>
         <div class="al-body">
@@ -883,12 +928,12 @@
     </div>
     <div class="mt-4 text-[11.5px] text-ink-500 flex flex-wrap items-center justify-between gap-2">
       <div data-zh="本站僅作教育參考，不構成醫療建議。任何用藥或就醫決定請以您的主治醫師判斷為準。" data-en="Educational use only — not medical advice. Always consult your physician for treatment decisions.">本站僅作教育參考，不構成醫療建議。任何用藥或就醫決定請以您的主治醫師判斷為準。</div>
-      <div>© <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師 · <span style="font-size:10px;opacity:.5">build 2026-05-03 21:11</span></div>
+      <div>© <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師 · <span style="font-size:10px;opacity:.5">build 2026-05-03 21:20</span></div>
     </div>
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js" defer></script>
+<script src="/blog/blog-shared.js?v=202605032120" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (window.DN) DN.initBlog({});
