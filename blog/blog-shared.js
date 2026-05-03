@@ -503,6 +503,29 @@
   // Reads dates from DN.ARTICLES catalog by matching href slug.
   // -----------------------------------------------------------------------
   // -----------------------------------------------------------------------
+  // §86 醫療法保護 — auto-inject medical-disclaimer block at end of article
+  // (resident-grade safety wording per agent research)
+  // -----------------------------------------------------------------------
+  DN.addLegalDisclaimer = function () {
+    const article = document.querySelector('article.max-w-3xl');
+    if (!article || document.getElementById('dn-legal-disclaimer')) return;
+    const box = document.createElement('section');
+    box.id = 'dn-legal-disclaimer';
+    box.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
+    box.innerHTML =
+      '<div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:14px;padding:14px 18px;font-size:12.5px;line-height:1.85;color:#9a3412">' +
+        '<div style="font-weight:700;color:#7c2d12;margin-bottom:6px;letter-spacing:.04em">⚠ 重要聲明</div>' +
+        '<div data-zh="本文為皮膚科住院醫師的<strong>衛教與學習筆記</strong>,內容依據國際醫學文獻與臨床指引整理,僅作為<strong>一般教育用途</strong>。' +
+        '不構成<strong>個別醫療建議、診斷或治療處方</strong>。' +
+        '個別病情之評估、藥物選擇、雷射治療、手術等,請務必<strong>面對面看診</strong>由主治醫師依完整病史與檢查決定。' +
+        '本網站<strong>不涉及任何藥品、醫療器材、療程或診所之推薦或業配</strong>;若提及商品為公開市售品,僅作教學說明。' +
+        '依《醫療法》§85-86 及《醫師法》§17,個別治療效果因人而異,本文不保證任何結果。' +
+        '若有不適,請就近至皮膚科專科醫師門診評估。" data-en="This article is a <strong>patient-education and study note</strong> by a dermatology resident, summarizing international medical literature and guidelines for general education only. It is <strong>not individual medical advice, diagnosis, or prescription</strong>. For personal evaluation, medication choice, laser, or surgical procedures, please consult a board-certified dermatologist in person. This site does <strong>not endorse any drug, device, procedure, or clinic</strong>. Per Taiwan Medical Care Act §§85–86 and Physicians Act §17, individual outcomes vary; no result is guaranteed.">本文為皮膚科住院醫師的<strong>衛教與學習筆記</strong>,內容依據國際醫學文獻與臨床指引整理,僅作為<strong>一般教育用途</strong>。不構成<strong>個別醫療建議、診斷或治療處方</strong>。個別病情之評估、藥物選擇、雷射治療、手術等,請務必<strong>面對面看診</strong>由主治醫師依完整病史與檢查決定。本網站<strong>不涉及任何藥品、醫療器材、療程或診所之推薦或業配</strong>;若提及商品為公開市售品,僅作教學說明。依《醫療法》§85-86 及《醫師法》§17,個別治療效果因人而異,本文不保證任何結果。若有不適,請就近至皮膚科專科醫師門診評估。</div>' +
+      '</div>';
+    article.parentNode.insertBefore(box, article.nextSibling);
+  };
+
+  // -----------------------------------------------------------------------
   // GA4 conversion event tracking — booking, email, outbound clicks
   // -----------------------------------------------------------------------
   DN.bindGAEvents = function () {
@@ -665,6 +688,7 @@
     if (document.getElementById('proseZh') || document.querySelector('article .prose')) {
       DN.addReadingMeta();
       DN.addFloatingTOC();
+      DN.addLegalDisclaimer();
       DN.addRelatedArticles();
       DN.addShareToolbar();
     }

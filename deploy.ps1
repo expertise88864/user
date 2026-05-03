@@ -57,13 +57,45 @@ if (-not $currentRemote) {
     Write-Host "[2/5] Remote origin already set: $currentRemote"
 }
 
-# 5. stage
+# 5. PULL FIRST — sync any changes from admin / GitHub web edits before our local push
+#    This prevents the local working tree from clobbering changes the user made via /admin
 Write-Host ""
-Write-Host "[3/5] Staging changes..."
+Write-Host "[3/6] Syncing from GitHub (git pull --rebase) ..."
+& git fetch origin main 2>$null
+$hasRemote = $LASTEXITCODE -eq 0
+if ($hasRemote) {
+    # Stash any uncommitted local changes so rebase can run cleanly
+    $stashed = $false
+    $statusOut = & git status --porcelain
+    if ($statusOut) {
+        & git stash push -u -m "deploy-autostash" | Out-Null
+        $stashed = $true
+        Write-Host "      (uncommitted local changes auto-stashed)" -ForegroundColor DarkGray
+    }
+    & git pull --rebase origin main
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "[warn] Pull failed. You may need to resolve conflicts manually." -ForegroundColor Yellow
+        if ($stashed) { & git stash pop | Out-Null }
+        return
+    }
+    if ($stashed) {
+        & git stash pop
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "[warn] Could not auto-restore stashed changes — run 'git stash list' to inspect." -ForegroundColor Yellow
+            return
+        }
+    }
+} else {
+    Write-Host "      (no remote yet — skipping pull)" -ForegroundColor DarkGray
+}
+
+# 6. stage
+Write-Host ""
+Write-Host "[4/6] Staging changes..."
 & git add -A
 & git status --short
 
-# 6. commit
+# 7. commit
 Write-Host ""
 $msg = Read-Host "Commit message (blank = 'deploy update')"
 if (-not $msg) { $msg = "deploy update" }
@@ -72,9 +104,9 @@ if ($LASTEXITCODE -ne 0) {
     Write-Host "[info] Nothing new to commit. Continuing to push." -ForegroundColor Yellow
 }
 
-# 7. push
+# 8. push
 Write-Host ""
-Write-Host "[4/5] Pushing to GitHub (branch: main)..."
+Write-Host "[5/6] Pushing to GitHub (branch: main)..."
 & git push -u origin main
 if ($LASTEXITCODE -ne 0) {
     Write-Host ""
@@ -90,7 +122,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 Write-Host ""
-Write-Host "[5/5] DONE."
+Write-Host "[6/6] DONE."
 Write-Host "============================================================"
 Write-Host " Pushed to GitHub."
 Write-Host " If Vercel is connected, it auto-deploys in ~30 seconds."
