@@ -13,6 +13,8 @@
 <link rel="me" href="mailto:expertise88864@gmail.com" />
 <link rel="me" href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" />
 <link rel="canonical" href="https://chendermatologist.com/404" />
+<link rel="author" href="https://chendermatologist.com/about" />
+<link rel="publisher" href="https://chendermatologist.com/" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,6 +41,52 @@
   ul.popular a:hover{ border-color:rgba(14,124,134,.5); transform:translateX(3px); color:var(--teal-deep); }
   ul.popular .dot{ width:6px; height:6px; border-radius:50%; background:var(--teal-bright); flex-shrink:0; }
 </style>
+<style id="dn-global-ux">
+  /* Global mobile/tablet UX tweaks — added once across the whole site */
+  body { padding-bottom: env(safe-area-inset-bottom); }
+  header.sticky { padding-top: env(safe-area-inset-top); }
+  /* Tap target minimum 44px on touch devices (iOS HIG / Material) */
+  @media (hover: none) and (pointer: coarse) {
+    a, button, select, .article-list-item, .lang-select { min-height: 40px; }
+    select, button { touch-action: manipulation; }
+  }
+  /* Smoother focus ring (keyboard nav) */
+  :focus-visible { outline: 2px solid rgba(20,184,166,.6); outline-offset: 2px; border-radius: 4px; }
+  /* Disable iOS double-tap zoom on interactive elements */
+  a, button { touch-action: manipulation; -webkit-tap-highlight-color: rgba(14,124,134,.18); }
+  /* Tablet: keep article width comfortable */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .max-w-3xl { max-width: 700px; }
+  }
+  /* Reduce motion — respect user preference */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  /* View Transitions: slide-fade for cross-page nav */
+  @media (prefers-reduced-motion: no-preference) {
+    ::view-transition-old(root) { animation: dn-vt-out .22s cubic-bezier(.2,.7,.2,1) both; }
+    ::view-transition-new(root) { animation: dn-vt-in  .26s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes dn-vt-out { to { opacity: 0; transform: translateY(-4px); } }
+    @keyframes dn-vt-in  { from { opacity: 0; transform: translateY(8px); } }
+  }
+  /* Prevent text-size auto-inflation on rotation (iOS) */
+  html { -webkit-text-size-adjust: 100%; }
+  /* Avoid horizontal scroll bleeds */
+  html, body { overflow-x: hidden; }
+</style>
+<!-- ===== Google Analytics 4 ===== -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFF3L5QD10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XFF3L5QD10', { 'anonymize_ip': true });
+</script>
 </head>
 <body>
 

@@ -6,7 +6,7 @@
   <link rel="self" type="application/atom+xml" href="https://chendermatologist.com/blog/atom.xml" />
   <link rel="alternate" type="application/rss+xml" href="https://chendermatologist.com/blog/feed.xml" />
   <id>https://chendermatologist.com/blog/</id>
-  <updated>2026-05-04T10:00:00+08:00</updated>
+  <updated>2026-05-04T18:00:00+08:00</updated>
   <author>
     <name>陳翊嘉 醫師</name>
     <uri>https://chendermatologist.com/about</uri>
@@ -16,6 +16,42 @@
   <logo>https://chendermatologist.com/icon.svg</logo>
   <rights>© 2026 陳翊嘉醫師 · ChenDermatologist</rights>
 
+  <entry>
+    <title>痘疤完整治療指引 — 4 種凹疤、紅疤、黑疤、肥厚疤</title>
+    <link href="https://chendermatologist.com/blog/acne-scar-treatment" />
+    <id>https://chendermatologist.com/blog/acne-scar-treatment</id>
+    <updated>2026-05-04T18:00:00+08:00</updated>
+    <published>2026-05-04T18:00:00+08:00</published>
+    <category term="處方用藥" />
+    <summary>痘疤分 5 大類,選對治療最關鍵。冰鑿、廂車、滾動凹疤、紅疤、黑疤、肥厚疤 — 飛梭、皮秒、TCA CROSS、皮下分離一次說明。</summary>
+  </entry>
+  <entry>
+    <title>帶狀皰疹（皮蛇）6 大迷思 — 繞一圈會死? 疫苗值得嗎?</title>
+    <link href="https://chendermatologist.com/blog/shingles-myths" />
+    <id>https://chendermatologist.com/blog/shingles-myths</id>
+    <updated>2026-05-04T16:00:00+08:00</updated>
+    <published>2026-05-04T16:00:00+08:00</published>
+    <category term="迷思澄清" />
+    <summary>皮蛇繞一圈不會死、72 小時黃金治療期、Shingrix 疫苗 50 歲以上強烈建議,附 dermatome 分布圖。</summary>
+  </entry>
+  <entry>
+    <title>病毒疣 6 大迷思 — 香蕉皮、雷射打一次就好?</title>
+    <link href="https://chendermatologist.com/blog/warts-myths" />
+    <id>https://chendermatologist.com/blog/warts-myths</id>
+    <updated>2026-05-04T14:00:00+08:00</updated>
+    <published>2026-05-04T14:00:00+08:00</published>
+    <category term="迷思澄清" />
+    <summary>病毒疣會自己好嗎? 冷凍要打幾次? HPV 跟疫苗有關嗎? 6 個民眾最常誤會的病毒疣觀念。</summary>
+  </entry>
+  <entry>
+    <title>乾癬 7 大迷思 — 不是癬、不會傳染、生物製劑很安全嗎?</title>
+    <link href="https://chendermatologist.com/blog/psoriasis-myths" />
+    <id>https://chendermatologist.com/blog/psoriasis-myths</id>
+    <updated>2026-05-04T12:00:00+08:00</updated>
+    <published>2026-05-04T12:00:00+08:00</published>
+    <category term="迷思澄清" />
+    <summary>乾癬不是癬、不會傳染、不只是皮膚病。7 個常見誤解,附 IL-17/23 機轉與健保生物製劑階梯。</summary>
+  </entry>
   <entry>
     <title>蕁麻疹（風疹塊）6 大迷思</title>
     <link href="https://chendermatologist.com/blog/urticaria-myths" />

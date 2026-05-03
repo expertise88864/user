@@ -38,7 +38,7 @@
 
   <url>
     <loc>https://chendermatologist.com/blog/topics</loc>
-    <lastmod>2026-05-03</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -52,10 +52,14 @@
   <url><loc>https://chendermatologist.com/blog/hairloss-myths</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>落髮 / 雄性禿 7 大迷思</image:title></image:image></url>
   <url><loc>https://chendermatologist.com/blog/tinea-myths</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>香港腳 / 灰指甲 7 大迷思</image:title></image:image></url>
   <url><loc>https://chendermatologist.com/blog/urticaria-myths</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>蕁麻疹 6 大迷思</image:title></image:image></url>
+  <url><loc>https://chendermatologist.com/blog/psoriasis-myths</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>乾癬 7 大迷思</image:title></image:image></url>
+  <url><loc>https://chendermatologist.com/blog/warts-myths</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>病毒疣 6 大迷思</image:title></image:image></url>
+  <url><loc>https://chendermatologist.com/blog/shingles-myths</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>帶狀皰疹 6 大迷思</image:title></image:image></url>
 
-  <!-- 衛教 · 產品 / 處方介紹 -->
+  <!-- 衛教 · 產品 / 處方 / 治療 -->
   <url><loc>https://chendermatologist.com/blog/topical-acids-patient</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>外用酸類完整衛教</image:title></image:image></url>
   <url><loc>https://chendermatologist.com/blog/isotretinoin-patient</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>口服 A 酸完整衛教</image:title></image:image></url>
+  <url><loc>https://chendermatologist.com/blog/acne-scar-treatment</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>痘疤完整治療指引</image:title></image:image></url>
 
   <!-- 學習筆記（深入閱讀，不出現在主索引） -->
   <url><loc>https://chendermatologist.com/blog/topical-acids-clinical</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>

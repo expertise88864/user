@@ -6,7 +6,39 @@
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>陳翊嘉醫師（中國醫藥大學附設醫院 皮膚科）整理的皮膚科衛教文章 — 民眾最常見的皮膚科誤解、市面上產品、常見皮膚疾病。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Sun, 03 May 2026 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2026 18:00:00 +0800</lastBuildDate>
+
+    <item>
+      <title>痘疤完整治療指引 — 4 種凹疤、紅疤、黑疤、肥厚疤</title>
+      <link>https://chendermatologist.com/blog/acne-scar-treatment</link>
+      <guid>https://chendermatologist.com/blog/acne-scar-treatment</guid>
+      <pubDate>Mon, 04 May 2026 18:00:00 +0800</pubDate>
+      <description>冰鑿、廂車、滾動凹疤怎麼分?紅疤多久會退?黑色素沉著怎麼淡化?肥厚疤怎麼處理?飛梭、皮秒、TCA CROSS、皮下分離、玻尿酸填補、類固醇注射 — 痘疤完整治療指引。</description>
+    </item>
+
+    <item>
+      <title>帶狀皰疹（皮蛇）6 大迷思 — 繞一圈會死? Shingrix 疫苗值得嗎?</title>
+      <link>https://chendermatologist.com/blog/shingles-myths</link>
+      <guid>https://chendermatologist.com/blog/shingles-myths</guid>
+      <pubDate>Mon, 04 May 2026 16:00:00 +0800</pubDate>
+      <description>皮蛇繞一圈會死?是壓力造成?抗病毒藥要 72 小時內?Shingrix 疫苗值得嗎?痛要痛多久?6 個民眾最常誤會的帶狀皰疹觀念。</description>
+    </item>
+
+    <item>
+      <title>病毒疣 6 大迷思 — 香蕉皮、雷射打一次就好?</title>
+      <link>https://chendermatologist.com/blog/warts-myths</link>
+      <guid>https://chendermatologist.com/blog/warts-myths</guid>
+      <pubDate>Mon, 04 May 2026 14:00:00 +0800</pubDate>
+      <description>病毒疣會自己好嗎?香蕉皮、大蒜可以治嗎?冷凍要打幾次?雷射打一次就消嗎?HPV 跟疫苗有關嗎?6 個常見誤解一次澄清。</description>
+    </item>
+
+    <item>
+      <title>乾癬 7 大迷思 — 不是癬、不會傳染、生物製劑很安全嗎?</title>
+      <link>https://chendermatologist.com/blog/psoriasis-myths</link>
+      <guid>https://chendermatologist.com/blog/psoriasis-myths</guid>
+      <pubDate>Mon, 04 May 2026 12:00:00 +0800</pubDate>
+      <description>乾癬不是癬、不會傳染、不只是皮膚病。7 個民眾最常誤會的乾癬觀念,附 IL-17/23 機轉、健保生物製劑階梯。</description>
+    </item>
 
     <item>
       <title>痘痘 9 大迷思 — 民眾最常誤會的觀念</title>

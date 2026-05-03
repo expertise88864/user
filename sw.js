@@ -1,11 +1,17 @@
-/* ChenDermatologist service worker — offline-first for static, network-first for HTML */
-const CACHE = 'cd-v3';
+/* ChenDermatologist service worker — offline-first for static, network-first for HTML
+ * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
+ */
+const CACHE = 'cd-v5';
+const RUNTIME = 'cd-runtime-v5';
+const RUNTIME_MAX_ENTRIES = 60;
+
 const PRECACHE = [
   '/',
   '/index.html',
   '/about',
   '/privacy',
   '/404.html',
+  '/offline.html',
   '/icon.svg',
   '/manifest.json',
   '/blog/',
@@ -21,10 +27,14 @@ const PRECACHE = [
   '/blog/hairloss-myths',
   '/blog/tinea-myths',
   '/blog/urticaria-myths',
+  '/blog/psoriasis-myths',
+  '/blog/warts-myths',
+  '/blog/shingles-myths',
   '/blog/topical-acids-patient',
   '/blog/isotretinoin-patient',
   '/blog/topical-acids-clinical',
-  '/blog/isotretinoin-clinical'
+  '/blog/isotretinoin-clinical',
+  '/blog/acne-scar-treatment'
 ];
 
 self.addEventListener('install', (e) => {
@@ -38,10 +48,37 @@ self.addEventListener('install', (e) => {
 self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(
+        keys.filter((k) => k !== CACHE && k !== RUNTIME).map((k) => caches.delete(k))
+      ))
       .then(() => self.clients.claim())
   );
 });
+
+// LRU eviction for runtime cache
+async function trimCache(cacheName, max) {
+  try {
+    const cache = await caches.open(cacheName);
+    const keys = await cache.keys();
+    if (keys.length <= max) return;
+    // Delete oldest entries (FIFO; cache.keys() preserves insertion order)
+    const toDelete = keys.slice(0, keys.length - max);
+    await Promise.all(toDelete.map((req) => cache.delete(req)));
+  } catch (e) { /* ignore */ }
+}
+
+// Fetch with retry once on transient errors
+async function fetchWithRetry(req, retries = 1) {
+  try {
+    const r = await fetch(req);
+    if (r && (r.ok || r.type === 'opaque')) return r;
+    if (retries > 0) return fetchWithRetry(req, retries - 1);
+    return r;
+  } catch (err) {
+    if (retries > 0) return fetchWithRetry(req, retries - 1);
+    throw err;
+  }
+}
 
 self.addEventListener('fetch', (e) => {
   const req = e.request;
@@ -49,32 +86,47 @@ self.addEventListener('fetch', (e) => {
 
   const url = new URL(req.url);
   if (url.origin !== location.origin) return;
-  // Skip /admin to ensure user always gets fresh editor
+  // Always bypass /admin so user gets the freshest editor
   if (url.pathname.startsWith('/admin')) return;
 
-  if (req.mode === 'navigate' || req.headers.get('accept')?.includes('text/html')) {
+  // Network-first for HTML (navigations + accept text/html)
+  if (req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html')) {
     e.respondWith(
-      fetch(req)
+      fetchWithRetry(req)
         .then((resp) => {
-          const copy = resp.clone();
-          caches.open(CACHE).then((c) => c.put(req, copy));
+          // Only cache successful 2xx responses
+          if (resp && resp.ok) {
+            const copy = resp.clone();
+            caches.open(CACHE).then((c) => c.put(req, copy));
+          }
           return resp;
         })
-        .catch(() => caches.match(req).then((r) => r || caches.match('/')))
+        .catch(() => caches.match(req).then((r) =>
+          r || caches.match('/offline.html').then((o) => o || caches.match('/'))
+        ))
     );
     return;
   }
 
+  // Cache-first for static assets, runtime cache for non-precached
   e.respondWith(
     caches.match(req).then((cached) => {
       if (cached) return cached;
-      return fetch(req).then((resp) => {
+      return fetchWithRetry(req).then((resp) => {
         if (resp && resp.status === 200) {
           const copy = resp.clone();
-          caches.open(CACHE).then((c) => c.put(req, copy));
+          caches.open(RUNTIME).then((c) => {
+            c.put(req, copy);
+            trimCache(RUNTIME, RUNTIME_MAX_ENTRIES);
+          });
         }
         return resp;
       }).catch(() => cached);
     })
   );
+});
+
+// Allow page to trigger immediate update via postMessage({type:'SKIP_WAITING'})
+self.addEventListener('message', (e) => {
+  if (e.data && e.data.type === 'SKIP_WAITING') self.skipWaiting();
 });

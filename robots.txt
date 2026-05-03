@@ -1,8 +1,41 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /admin.html
+Disallow: /_tmp_*
 
 # AdSense crawler — keep allowed even before activation
 User-agent: Mediapartners-Google
 Allow: /
+
+# Google AdsBot — landing page checker
+User-agent: AdsBot-Google
+Allow: /
+
+# Generative AI / training crawlers — opt out
+User-agent: GPTBot
+Disallow: /
+User-agent: ChatGPT-User
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: PerplexityBot
+Disallow: /
+User-agent: Bytespider
+Disallow: /
+User-agent: ImagesiftBot
+Disallow: /
+
+# Aggressive throttle for less useful bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+User-agent: SemrushBot
+Crawl-delay: 10
 
 Sitemap: https://chendermatologist.com/sitemap.xml
