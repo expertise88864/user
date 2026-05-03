@@ -75,7 +75,7 @@
 <body>
 
 <header class="top">
-  <div class="brand"><span class="teal-text">ChenDermatologist</span> · <span style="font-weight:500;color:#64748b">後台編輯(視覺模式)</span></div>
+  <div class="brand"><span class="teal-text">ChenDermatologist</span> · <span style="font-weight:500;color:#64748b">後台編輯（視覺模式）</span></div>
   <div class="right">
     <span id="patStatus" class="pat-status no">未登入</span>
     <button id="logoutBtn" style="padding:5px 9px;font-size:11.5px;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;color:#7f1d1d">清除登入</button>
@@ -99,7 +99,7 @@
       <h2 style="margin:0 4px 6px">小提示</h2>
       <div style="font-size:11px; color:var(--muted); line-height:1.6; padding:0 4px">
         ① 點檔案 → 直接在右側網頁上點任何文字編輯<br/>
-        ② 圖片直接 <strong>拖曳</strong> 進文章內,自動上傳<br/>
+        ② 圖片直接 <strong>拖曳</strong> 進文章內，自動上傳<br/>
         ③ Ctrl + S 儲存<br/>
         ④ 出現黃框 = 可編輯區域
       </div>
@@ -123,15 +123,15 @@
       </label>
       <span class="grow"></span>
       <button id="sourceBtn" title="切換為 HTML 原始碼模式">{ } 原始碼</button>
-      <button id="reloadBtn" title="重新讀取 (放棄改動)">↻ 重讀</button>
+      <button id="reloadBtn" title="重新讀取（放棄改動）">↻ 重讀</button>
       <button id="saveBtn" class="primary" title="儲存並推送 (Ctrl+S)">💾 儲存並推送</button>
     </div>
 
     <div class="frame-wrap" id="frameWrap">
       <div class="empty-state" id="emptyState">
         <h3>👈 從左邊選一個檔案開始編輯</h3>
-        <p>選了之後,網頁本人會出現在這裡。</p>
-        <p>你可以直接點任何文字、改字、貼圖。<strong>有黃框</strong>的區域 = 可以編輯;沒黃框的(如 header / footer / 導覽)為了避免破壞版型,需切到原始碼模式才能改。</p>
+        <p>選了之後，網頁本人會出現在這裡。</p>
+        <p>你可以直接點任何文字、改字、貼圖。<strong>有黃框</strong>的區域 = 可以編輯；沒黃框的（如 header / footer / 導覽）為了避免破壞版型，需切到原始碼模式才能改。</p>
       </div>
       <!-- iframe will be injected here when a file is loaded -->
     </div>
@@ -145,7 +145,7 @@
 <div id="patModal" class="modal-bg" style="display:none">
   <div class="modal">
     <h2>輸入 GitHub Personal Access Token</h2>
-    <p>後台用 GitHub API 直接寫進你的 repo (<code style="font-family:'JetBrains Mono',monospace">expertise88864/user</code>)。需要 PAT 一次,儲存在你瀏覽器的 localStorage,不會傳到任何第三方。</p>
+    <p>後台用 GitHub API 直接寫進你的 repo (<code style="font-family:'JetBrains Mono',monospace">expertise88864/user</code>)。需要 PAT 一次，儲存在你瀏覽器的 localStorage,不會傳到任何第三方。</p>
     <p><strong>怎麼產生 PAT?</strong><br/>
     ① <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">https://github.com/settings/tokens</a><br/>
     ② 點 "Generate new token (classic)"<br/>
@@ -283,7 +283,7 @@ async function refreshFileList(){
 
 // =========== load file (visual mode) ===========
 async function loadFile(path){
-  if(DIRTY && !confirm('目前有未儲存的改動,要捨棄嗎?')) return;
+  if(DIRTY && !confirm('目前有未儲存的改動，要捨棄嗎？')) return;
   setStatus('載入 ' + path + ' ...');
   try {
     const data = await gh('GET', 'contents/' + path);
@@ -542,7 +542,7 @@ document.getElementById('sourceBtn').addEventListener('click', ()=>{
 // =========== reload (discard changes) ===========
 document.getElementById('reloadBtn').addEventListener('click', ()=>{
   if(!CURRENT_FILE) return;
-  if(DIRTY && !confirm('放棄目前的改動,重新載入?')) return;
+  if(DIRTY && !confirm('放棄目前的改動，重新載入？')) return;
   loadFile(CURRENT_FILE);
 });
 
@@ -565,9 +565,9 @@ async function save(){
     newContent = mergeIframeIntoOriginal();
   }
   if(newContent === CURRENT_CONTENT){
-    if(!confirm('內容沒變更,還是要送出嗎?')) return;
+    if(!confirm('內容沒變更，還是要送出嗎？')) return;
   }
-  const msg = prompt('Commit 訊息(留空使用 "edit ' + CURRENT_FILE + '"):', '');
+  const msg = prompt('Commit 訊息（留空使用 "edit ' + CURRENT_FILE + '"):', '');
   const message = (msg && msg.trim()) ? msg.trim() : ('edit ' + CURRENT_FILE);
   setStatus('儲存中...');
   try {
@@ -624,7 +624,7 @@ document.getElementById('newFileBtn').addEventListener('click', async ()=>{
   const slug = document.getElementById('newFileName').value.trim().toLowerCase().replace(/[^a-z0-9-]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
   if(!slug){ alert('請輸入文章 slug,例如 melasma-myths'); return; }
   if(!PAT){ alert('請先登入 PAT'); return; }
-  if(!confirm('要從 "acne-myths.html 範本" 建立 blog/' + slug + '.html 嗎?')) return;
+  if(!confirm('要從 "acne-myths.html 範本" 建立 blog/' + slug + '.html 嗎？')) return;
   setStatus('讀取範本...');
   try {
     const tpl = await gh('GET', 'contents/blog/acne-myths.html');
@@ -654,7 +654,7 @@ function decodeUtf8Base64(b64){ return decodeURIComponent(escape(atob(b64.replac
 
 // =========== prevent accidental close ===========
 window.addEventListener('beforeunload', e=>{
-  if(DIRTY){ e.preventDefault(); e.returnValue = '尚未儲存的改動會遺失,確定要離開嗎?'; return e.returnValue; }
+  if(DIRTY){ e.preventDefault(); e.returnValue = '尚未儲存的改動會遺失，確定要離開嗎？'; return e.returnValue; }
 });
 
 // init

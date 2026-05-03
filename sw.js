@@ -18,6 +18,7 @@ const PRECACHE = [
   '/blog/rosacea-myths',
   '/blog/hairloss-myths',
   '/blog/tinea-myths',
+  '/blog/urticaria-myths',
   '/blog/topical-acids-patient',
   '/blog/isotretinoin-patient',
   '/blog/topical-acids-clinical',
