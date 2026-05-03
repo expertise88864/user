@@ -131,27 +131,28 @@
   .book-cta .b-btn:hover{ transform:translateY(-2px); box-shadow:0 14px 28px -10px rgba(0,0,0,.35); }
   @media(max-width:640px){ .book-cta{ padding:26px 20px; } .book-cta h2{ font-size:22px; } }
 
-  /* Article LIST view */
-  .article-list{ display:flex; flex-direction:column; gap:14px; }
-  .article-list-item{ display:flex; gap:20px; padding:20px 24px; background:#fff; border:1px solid var(--border); border-radius:16px; transition:all .18s ease; text-decoration:none; box-shadow:0 1px 2px rgba(15,23,42,.04); }
-  .article-list-item:hover{ border-color:rgba(14,124,134,.5); box-shadow:0 14px 32px -14px rgba(12,81,89,.25); transform:translateX(4px); }
-  .al-icon{ flex-shrink:0; width:64px; height:64px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:30px; box-shadow:inset 0 -2px 4px rgba(0,0,0,.04); }
+  /* Article LIST view — compact so all 9 titles visible at once */
+  .article-list{ display:flex; flex-direction:column; gap:8px; }
+  .article-list-item{ display:flex; gap:14px; padding:12px 16px; background:#fff; border:1px solid var(--border); border-radius:12px; transition:all .15s ease; text-decoration:none; box-shadow:0 1px 2px rgba(15,23,42,.04); align-items:center; }
+  .article-list-item:hover{ border-color:rgba(14,124,134,.5); box-shadow:0 8px 18px -10px rgba(12,81,89,.22); transform:translateX(3px); }
+  .al-icon{ flex-shrink:0; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:inset 0 -2px 4px rgba(0,0,0,.04); overflow:hidden; }
+  .al-icon svg{ width:34px; height:34px; }
   .al-icon.cat-myth{ background:linear-gradient(135deg, #fef3c7, #fde68a); }
   .al-icon.cat-product{ background:linear-gradient(135deg, #cffafe, #a5f3fc); }
   .al-icon.cat-rx{ background:linear-gradient(135deg, #ede9fe, #ddd6fe); }
   .al-body{ flex:1; min-width:0; }
-  .al-meta{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; margin-bottom:6px; }
-  .al-meta .chip{ display:inline-flex; align-items:center; padding:2px 9px; border-radius:9999px; font-size:11px; font-weight:600; line-height:1.4; }
+  .al-meta{ display:flex; gap:5px; align-items:center; flex-wrap:wrap; margin-bottom:2px; }
+  .al-meta .chip{ display:inline-flex; align-items:center; padding:1px 7px; border-radius:9999px; font-size:10px; font-weight:600; line-height:1.4; }
   .al-meta .chip.cat-myth{ background:#fef3c7; color:#854d0e; border:1px solid #fcd34d; }
   .al-meta .chip.cat-product{ background:#ecfeff; color:#155e63; border:1px solid #a5f3fc; }
   .al-meta .chip.cat-rx{ background:#ede9fe; color:#5b21b6; border:1px solid #ddd6fe; }
   .al-meta .chip.tag{ background:var(--mint-soft); color:var(--teal-deep); border:1px solid #b4ddd6; }
-  .al-meta time{ font-size:11px; color:var(--muted); margin-left:auto; }
-  .al-body h3{ font-size:19px; font-family:'Noto Serif TC',Georgia,serif; font-weight:700; color:var(--ink); margin:0 0 6px; line-height:1.4; }
-  .al-body p{ font-size:13.5px; color:var(--ink-2); margin:0; line-height:1.75; }
-  .al-arrow{ align-self:center; color:var(--teal-deep); font-size:22px; flex-shrink:0; opacity:.55; transition:all .15s ease; font-weight:600; }
-  .article-list-item:hover .al-arrow{ opacity:1; transform:translateX(3px); }
-  @media(max-width:640px){ .article-list-item{ gap:14px; padding:16px; } .al-icon{ width:54px; height:54px; font-size:24px; border-radius:12px; } .al-body h3{ font-size:16.5px; } .al-arrow{ display:none; } }
+  .al-meta time{ font-size:10px; color:var(--muted); margin-left:auto; }
+  .al-body h3{ font-size:15.5px; font-family:'Noto Serif TC',Georgia,serif; font-weight:700; color:var(--ink); margin:0 0 2px; line-height:1.35; display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; }
+  .al-body p{ font-size:12.5px; color:var(--ink-2); margin:0; line-height:1.55; display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; }
+  .al-arrow{ align-self:center; color:var(--teal-deep); font-size:18px; flex-shrink:0; opacity:.55; transition:all .15s ease; font-weight:600; }
+  .article-list-item:hover .al-arrow{ opacity:1; transform:translateX(2px); }
+  @media(max-width:640px){ .article-list-item{ gap:11px; padding:10px 12px; } .al-icon{ width:42px; height:42px; border-radius:10px; } .al-icon svg{ width:30px; height:30px; } .al-body h3{ font-size:14px; } .al-body p{ font-size:11.5px; } .al-meta time{ display:none; } .al-arrow{ display:none; } }
   @media (max-width:640px){ .hide-sm{ display:none; } }
 
   /* ========== ANIMATIONS ========== */
@@ -178,14 +179,14 @@
     .cv-card img[src*="SUNN"]:hover { transform: scale(1.05); }
   }
 
-  /* Scroll-reveal: applied via JS */
-  .reveal { opacity:0; transform:translateY(28px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  /* Scroll-reveal: applied via JS — kept fast so all titles visible quickly */
+  .reveal { opacity:0; transform:translateY(14px); transition: opacity .35s cubic-bezier(.2,.7,.2,1), transform .35s cubic-bezier(.2,.7,.2,1); }
   .reveal.visible { opacity:1; transform:translateY(0); }
-  .reveal.delay-1 { transition-delay:.08s; }
-  .reveal.delay-2 { transition-delay:.16s; }
-  .reveal.delay-3 { transition-delay:.24s; }
-  .reveal.delay-4 { transition-delay:.32s; }
-  .reveal.delay-5 { transition-delay:.40s; }
+  .reveal.delay-1 { transition-delay:.03s; }
+  .reveal.delay-2 { transition-delay:.06s; }
+  .reveal.delay-3 { transition-delay:.09s; }
+  .reveal.delay-4 { transition-delay:.12s; }
+  .reveal.delay-5 { transition-delay:.15s; }
 
   /* Article list cards: enhance hover, add tap feedback for touch devices */
   .article-list-item { will-change: transform; }
@@ -223,23 +224,29 @@
   /* Smooth scrolling */
   html { scroll-behavior:smooth; }
 
-  /* ========== HERO MEDICAL RING (orbiting accent around doctor photo) ========== */
-  .hero-avatar-wrap{ position:relative; display:inline-block; }
-  .hero-ring{ position:absolute; top:50%; left:50%; width:230px; height:230px; transform:translate(-50%,-50%); pointer-events:none; z-index:0; opacity:0; animation: ringFadeIn .8s ease .3s forwards, spinRing 32s linear infinite .3s; }
-  @media (min-width:640px){ .hero-ring{ width:270px; height:270px; } }
-  .hero-ring text{ font-family:'Inter','Noto Sans TC',sans-serif; }
-  @keyframes spinRing { from { transform:translate(-50%,-50%) rotate(0deg); } to { transform:translate(-50%,-50%) rotate(360deg); } }
-  @keyframes ringFadeIn { from { opacity:0; } to { opacity:1; } }
-  .hero-dots{ position:absolute; top:50%; left:50%; width:210px; height:210px; transform:translate(-50%,-50%); pointer-events:none; z-index:0; opacity:0; animation: ringFadeIn 1s ease .5s forwards, spinRingRev 24s linear infinite .5s; }
-  @media (min-width:640px){ .hero-dots{ width:250px; height:250px; } }
-  @keyframes spinRingRev { from { transform:translate(-50%,-50%) rotate(0deg); } to { transform:translate(-50%,-50%) rotate(-360deg); } }
-  .hero-avatar-photo{ position:relative; z-index:1; }
-  /* Pause rings on hover for accessibility */
-  .hero-avatar-wrap:hover .hero-ring,
-  .hero-avatar-wrap:hover .hero-dots{ animation-play-state:running; }
-  @media (prefers-reduced-motion: reduce){
-    .hero-ring, .hero-dots { animation:none !important; opacity:.6; }
-  }
+  /* (Hero ring animation removed — caused eye strain) */
+
+  /* ========== READING STATS ========== */
+  .stats-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; margin:24px 0; }
+  @media(max-width:640px){ .stats-grid{ grid-template-columns:repeat(2, 1fr); gap:10px; } }
+  .stat{ background:#fff; border:1px solid var(--border); border-radius:16px; padding:20px 14px; text-align:center; transition:all .2s ease; box-shadow:0 1px 2px rgba(15,23,42,.04); }
+  .stat:hover{ transform:translateY(-3px); box-shadow:0 14px 28px -12px rgba(12,81,89,.25); border-color:rgba(14,124,134,.4); }
+  .stat-num{ font-family:'Noto Serif TC',Georgia,serif; font-size:32px; font-weight:700; line-height:1; background:linear-gradient(180deg,#14b8a6 0%, #0c5159 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  @media(min-width:640px){ .stat-num{ font-size:40px; } }
+  .stat-label{ font-size:12px; color:var(--ink-2); margin-top:8px; font-weight:600; letter-spacing:.04em; }
+  .stat-sub{ font-size:10.5px; color:var(--muted); margin-top:2px; }
+
+  /* ========== HOMEPAGE FAQ ========== */
+  .home-faq{ display:flex; flex-direction:column; gap:8px; margin-top:16px; }
+  details.hf{ background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; transition:border-color .2s, box-shadow .2s; }
+  details.hf[open]{ border-color:rgba(14,124,134,.5); box-shadow:0 8px 18px -10px rgba(12,81,89,.22); }
+  details.hf summary{ padding:14px 18px 14px 50px; cursor:pointer; position:relative; font-family:'Noto Serif TC',Georgia,serif; font-size:14.5px; font-weight:600; color:var(--ink); list-style:none; line-height:1.55; }
+  details.hf summary::-webkit-details-marker{ display:none; }
+  details.hf summary::before{ content:'Q'; position:absolute; left:14px; top:14px; width:26px; height:26px; border-radius:8px; background:linear-gradient(135deg,#cffafe,#a5f3fc); border:1px solid rgba(14,124,134,.45); color:#0c5159; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; font-family:Inter,sans-serif; }
+  details.hf summary::after{ content:'+'; position:absolute; right:18px; top:14px; font-size:22px; color:var(--teal-deep); transition:transform .25s; line-height:1; }
+  details.hf[open] summary::after{ transform:rotate(45deg); }
+  details.hf .ans{ padding:12px 18px 16px 50px; font-size:13.8px; color:var(--ink-2); line-height:1.85; border-top:1px dashed var(--line); }
+  details.hf .ans a{ color:var(--teal-deep); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
 </style>
 
 <script type="application/ld+json">
@@ -263,6 +270,38 @@
   "url":"https://chendermatologist.com/",
   "inLanguage":["zh-TW","en"],
   "publisher":{ "@type":"Person","name":"陳翊嘉 醫師","url":"https://chendermatologist.com/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"痘痘怎麼辦?要看皮膚科嗎?","acceptedAnswer":{"@type":"Answer","text":"輕度粉刺、零星痘痘可以先用 OTC(過氧化苯醯 BPO 2.5%、水楊酸、杜鵑花酸)2-3 個月。如果出現囊腫型、結節型、深層痛感、開始留疤,或外用治療 3 個月無改善,應該到皮膚科。中重度痘痘可能需要處方藥(Adapalene、口服抗生素、口服 A 酸 isotretinoin)。"}},
+    {"@type":"Question","name":"痘痘可以擠嗎?","acceptedAnswer":{"@type":"Answer","text":"白頭粉刺可以用消毒過的粉刺棒輕壓,不要用指甲擠。發炎中的紅腫痘絕對不要擠 — 擠壓會把感染推得更深、破壞真皮層、留下凹疤。大顆囊腫型痘痘可以到皮膚科做局部類固醇注射,24 小時內顯著消腫且不留疤。"}},
+    {"@type":"Question","name":"防曬乳 SPF 越高效果越好嗎?","acceptedAnswer":{"@type":"Answer","text":"不是。SPF 30 已擋掉約 97% 的 UVB,SPF 50 擋 98%,SPF 100 擋 99% — 邊際效益很小。實際擦的厚度才是關鍵 — 多數人實際擦的厚度只有實驗室測試的 1/3。挑日常 SPF 30+ PA+++、能規律補擦的防曬,比追求 SPF 50+ 重要。"}},
+    {"@type":"Question","name":"室內要不要擦防曬?","acceptedAnswer":{"@type":"Answer","text":"要。UVA 能穿透 50% 以上的玻璃,靠窗座位、開車、室內仍會被曬到。可見光與藍光也會加重肝斑與深膚色族群的色素沉澱。建議室內族群每天仍擦 SPF 30+ 廣譜防曬,有色防曬(含 iron oxide 氧化鐵)能多擋一層可見光。"}},
+    {"@type":"Question","name":"類固醇藥膏可以擦多久?會傷皮膚嗎?","acceptedAnswer":{"@type":"Answer","text":"短期、依醫囑、按部位選對強度的類固醇藥膏是非常安全的第一線治療。臉、眼周、外陰需用低強度(Class V-VII),四肢可用中強度。急性期每天 1-2 次連續 7-14 天,之後改週末療法(一週 2 次)維持。長期大量錯誤使用才會皮膚萎縮、變色。配合醫師指示不需恐懼。"}},
+    {"@type":"Question","name":"異位性皮膚炎長大會自己好嗎?","acceptedAnswer":{"@type":"Answer","text":"約 40-60% 的兒童異膚會在青春期前明顯改善,但 30-50% 會持續到成年。重要的是:越早控制好越能避免後續過敏進行曲(食物過敏、氣喘、過敏性鼻炎)。每天大量保濕修復皮膚屏障是關鍵,不只是等他長大。"}},
+    {"@type":"Question","name":"肝斑可以根治嗎?雷射打一次就消嗎?","acceptedAnswer":{"@type":"Answer","text":"肝斑是慢性疾病,無法根除,但可以高度控制。傳統全切除式雷射對肝斑效果差,還會誘發反黑。主流治療是:每天含氧化鐵防曬 + 三合一藥膏(限期 8-12 週)+ 必要時口服傳明酸 + 低能量雷射 toning(多次)。耐心 6-12 個月可顯著改善,需長期維持。"}},
+    {"@type":"Question","name":"落髮要看什麼科?雄性禿吃藥有效嗎?","acceptedAnswer":{"@type":"Answer","text":"看皮膚科。雄性禿真正有實證的治療只有兩個:外用 Minoxidil 5%(每天 1-2 次)和口服 Finasteride 1 mg(降低 DHT)。需要連續使用 6 個月以上才看效果。已經完全脫落的毛囊不可逆,所以越早治療效果越好。"}},
+    {"@type":"Question","name":"Minoxidil 副作用很多嗎?可以停嗎?","acceptedAnswer":{"@type":"Answer","text":"多數副作用很輕(頭皮癢、初期掉髮加速、臉部多毛)。「初期掉髮」是把休止期舊髮推出去讓新髮長出來的正常過程,堅持下去就好。停藥後幾個月內會逐漸回到原本進度,不是「掉光」。換成泡沫劑型可避免 propylene glycol 過敏。"}},
+    {"@type":"Question","name":"圓禿(鬼剃頭)是壓力造成的嗎?","acceptedAnswer":{"@type":"Answer","text":"圓禿是自體免疫疾病,壓力可能誘發但不是根本原因。需要主動治療 — 不會自己好。輕度可用局部類固醇注射或外用,嚴重(>50% 頭皮)的近年有 FDA 核准的口服 JAK inhibitor(Baricitinib、Ritlecitinib)效果很好。"}},
+    {"@type":"Question","name":"香港腳塗藥膏多久會好?灰指甲一定要吃藥嗎?","acceptedAnswer":{"@type":"Answer","text":"香港腳:用對的處方抗黴菌藥膏連續 2-4 週,治好後再多擦 1 週避免復發。灰指甲:多數中重度需要口服(Terbinafine 250 mg/day,足甲 6 週、趾甲 12 週),塗藥膏穿透不了指甲。輕度灰指甲可用 Efinaconazole 油劑 48 週。口服抗黴菌藥嚴重肝毒性 < 0.5%,定期追蹤抽血很安全。"}},
+    {"@type":"Question","name":"玫瑰痤瘡跟痘痘怎麼分?","acceptedAnswer":{"@type":"Answer","text":"痘痘有粉刺(白頭/黑頭)、皮脂多、發生在油性肌、青少年常見。玫瑰痤瘡(酒糟肌)沒有粉刺、反覆潮紅灼熱、發生在臉頰鼻頭中央(對稱)、30+ 女性多。治療策略不同 — 用治痘痘的 A 酸往往會加重酒糟。如果分不清楚,皮膚科一看就知道。"}},
+    {"@type":"Question","name":"口服 A 酸要吃多久?副作用很多嗎?","acceptedAnswer":{"@type":"Answer","text":"一般療程 6-9 個月,目標累積劑量體重 × 120-150 mg(60 公斤約 7200-9000 mg)。常見副作用:嘴唇乾(>90%)、皮膚乾、肝指數/血脂輕度上升。女性育齡必須嚴格避孕(致畸風險)。療程中暫停雷射、刺青、四環黴素抗生素。停藥後約 1/3 復發,但通常較輕。"}},
+    {"@type":"Question","name":"中國醫附醫皮膚科怎麼掛號?","acceptedAnswer":{"@type":"Answer","text":"到中國醫藥大學附設醫院 皮膚部 醫師團隊頁面(https://www.cmuh.cmu.edu.tw/Department/Team?detail=77),選擇本醫師時段。地址:404 台中市北區育德路 2 號 立夫醫療大樓。實際看診樓層 / 診間請以中國醫官網 / 掛號系統公告為準。"}},
+    {"@type":"Question","name":"皮膚科衛教網站可以取代看醫師嗎?","acceptedAnswer":{"@type":"Answer","text":"不行。本站所有內容僅作教育參考,個別評估、處方、雷射、手術都需要面對面看診才能進行。請把網站當「帶問題去看診」的工具 — 看完文章後帶著疑問到皮膚科,可以節省問診時間並獲得更精準的個別治療。"}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首頁","item":"https://chendermatologist.com/"}
+  ]
 }
 </script>
 </head>
@@ -294,115 +333,55 @@
 
 <main>
 
-<!-- ============= CV HERO ============= -->
-<section class="pt-8 sm:pt-12 pb-8">
-  <div class="max-w-5xl mx-auto px-5 sm:px-8">
-    <div class="cv-card relative overflow-hidden">
-      <!-- decorative top stripe -->
-      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-700"></div>
-      <!-- decorative corner -->
-      <div class="absolute -top-12 -right-12 w-48 h-48 rounded-full opacity-20" style="background:radial-gradient(circle, #14b8a6 0%, transparent 70%)"></div>
-      <div class="absolute -bottom-12 -left-12 w-40 h-40 rounded-full opacity-15" style="background:radial-gradient(circle, #0c5159 0%, transparent 70%)"></div>
-
-      <div class="relative p-6 sm:p-10">
-        <div class="flex flex-col sm:flex-row gap-7 sm:gap-10 items-center sm:items-start">
-          <div class="flex-shrink-0 hero-avatar-wrap" style="margin:18px;">
-            <!-- Orbiting medical text ring -->
-            <svg class="hero-ring" viewBox="0 0 240 240" aria-hidden="true">
-              <defs>
-                <path id="ringTextPath" d="M 120,120 m -108,0 a 108,108 0 1,1 216,0 a 108,108 0 1,1 -216,0" fill="none"/>
-              </defs>
-              <text fill="#0e7c86" font-size="11" font-weight="600" letter-spacing="5">
-                <textPath href="#ringTextPath" startOffset="0%">DERMATOLOGY · 皮膚科 · CHEN, YI-JIA M.D. · 中國醫藥大學附設醫院 · </textPath>
-              </text>
-            </svg>
-            <!-- Reverse-rotating decorative dots & medical crosses -->
-            <svg class="hero-dots" viewBox="0 0 240 240" aria-hidden="true">
-              <g fill="#14b8a6" opacity=".55">
-                <circle cx="120" cy="6" r="2.6"/>
-                <circle cx="234" cy="120" r="2.6"/>
-                <circle cx="120" cy="234" r="2.6"/>
-                <circle cx="6" cy="120" r="2.6"/>
-              </g>
-              <g fill="#0e7c86" opacity=".4">
-                <circle cx="200" cy="40" r="1.6"/>
-                <circle cx="200" cy="200" r="1.6"/>
-                <circle cx="40" cy="200" r="1.6"/>
-                <circle cx="40" cy="40" r="1.6"/>
-              </g>
-              <g stroke="#0e7c86" stroke-width="1.6" stroke-linecap="round" opacity=".5">
-                <line x1="170" y1="14" x2="170" y2="22"/><line x1="166" y1="18" x2="174" y2="18"/>
-                <line x1="226" y1="170" x2="226" y2="178"/><line x1="222" y1="174" x2="230" y2="174"/>
-                <line x1="70" y1="226" x2="70" y2="234"/><line x1="66" y1="230" x2="74" y2="230"/>
-                <line x1="14" y1="70" x2="14" y2="78"/><line x1="10" y1="74" x2="18" y2="74"/>
-              </g>
-            </svg>
-            <div class="hero-avatar-photo w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden ring-4 ring-white shadow-2xl" style="background:linear-gradient(135deg,#cffafe,#a5f3fc); box-shadow:0 18px 36px -10px rgba(12,81,89,.35), 0 0 0 6px rgba(20,184,166,.12);">
-              <img src="/blog/SUNN1327.jpg" alt="陳翊嘉醫師 · Dr. Chen Yi-Jia" class="w-full h-full object-cover" style="object-position: center 18%;" loading="eager" />
-            </div>
-            <!-- pulsing 在職 indicator -->
-            <div class="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-white shadow-md border border-mint-200" style="z-index:2;">
-              <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
-              </span>
-              <span class="text-[10px] font-semibold text-teal-700">在職</span>
-            </div>
-          </div>
-
-          <div class="flex-1 text-center sm:text-left min-w-0">
-            <div class="flex items-center justify-center sm:justify-start gap-2 mb-2">
-              <span class="text-[10.5px] uppercase tracking-[.22em] text-teal-700 font-semibold">皮膚科 住院醫師</span>
-              <span class="text-[10.5px] text-ink-400">·</span>
-              <span class="text-[10.5px] uppercase tracking-[.22em] text-ink-500 font-semibold">Dermatology Resident</span>
-            </div>
-            <h1 class="font-display font-bold leading-tight">
-              <span class="block text-[34px] sm:text-[48px] text-ink-900">陳翊嘉 <span class="teal-text">醫師</span></span>
-              <span class="block text-[14.5px] sm:text-[16px] text-ink-500 mt-1.5 tracking-wide font-light italic">Chen, Yi-Jia, M.D.</span>
-            </h1>
-
-            <div class="mt-6 timeline">
-              <div class="t-row">
-                <div class="t-dot"></div>
-                <div class="t-content">
-                  <div class="t-year" data-zh="現任" data-en="Now">現任</div>
-                  <div class="t-text" data-zh="中國醫藥大學附設醫院 · 皮膚部 住院醫師" data-en="Resident Physician · CMUH Department of Dermatology">中國醫藥大學附設醫院 · 皮膚部 住院醫師</div>
-                </div>
-              </div>
-              <div class="t-row">
-                <div class="t-dot t-past"></div>
-                <div class="t-content">
-                  <div class="t-year" data-zh="PGY" data-en="PGY">PGY</div>
-                  <div class="t-text" data-zh="高雄醫學大學附設中和紀念醫院 不分科住院醫師" data-en="KMU Hospital · Post-Graduate Year (rotating)">高雄醫學大學附設中和紀念醫院 不分科住院醫師</div>
-                </div>
-              </div>
-              <div class="t-row">
-                <div class="t-dot t-past"></div>
-                <div class="t-content">
-                  <div class="t-year" data-zh="畢業" data-en="MD">畢業</div>
-                  <div class="t-text" data-zh="高雄醫學大學 醫學系 醫學士(M.D.)" data-en="Kaohsiung Medical University · College of Medicine (M.D.)">高雄醫學大學 醫學系 醫學士(M.D.)</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-7 flex flex-wrap gap-3 justify-center sm:justify-start">
-              <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="btn btn-teal" data-zh="📅 預約看診" data-en="📅 Book appointment">📅 預約看診</a>
-              <a href="/blog/" class="btn btn-ghost" data-zh="📚 閱讀衛教文章" data-en="📚 Read articles">📚 閱讀衛教文章</a>
-            </div>
-          </div>
-        </div>
-      </div>
+<!-- ============= SLIM HERO ============= -->
+<section class="pt-12 sm:pt-20 pb-4 text-center">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-mint-100 border border-[var(--border)] text-[10.5px] sm:text-[11px] uppercase tracking-[.22em] text-teal-700 font-semibold mb-5">
+      <span class="w-1.5 h-1.5 rounded-full bg-teal-500" style="box-shadow:0 0 0 4px rgba(20,184,166,.18)"></span>
+      <span data-zh="陳翊嘉醫師 · 中國醫藥大學附設醫院 皮膚部" data-en="Dr. Chen Yi-Jia · CMUH Dermatology">陳翊嘉醫師 · 中國醫藥大學附設醫院 皮膚部</span>
+    </div>
+    <h1 class="font-display font-bold leading-[1.12] text-[36px] sm:text-[56px]">
+      <span class="teal-text" data-zh="皮膚科" data-en="Dermatology">皮膚科</span><span data-zh=" 常見衛教" data-en=""> 常見衛教</span><br/>
+      <span data-zh="與學習筆記" data-en="Patient Education &amp; Notes">與學習筆記</span>
+    </h1>
+    <p class="mt-6 text-[14.5px] sm:text-[16.5px] text-ink-700 leading-[1.95]"
+       data-zh="民眾最常見的皮膚科誤解、常見疾病、市面上產品成分介紹 — 看完就能帶著問題走進診間。"
+       data-en="The public's most frequent misconceptions, common conditions, and OTC product breakdowns — so you walk into clinic with the right questions.">
+      民眾最常見的皮膚科誤解、常見疾病、市面上產品成分介紹 — 看完就能帶著問題走進診間。
+    </p>
+    <div class="mt-7 flex flex-wrap gap-3 justify-center">
+      <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="btn btn-teal" data-zh="📅 預約看診" data-en="📅 Book appointment">📅 預約看診</a>
+      <a href="#articles" class="btn btn-ghost" data-zh="📚 瀏覽衛教文章" data-en="📚 Browse articles">📚 瀏覽衛教文章</a>
+      <a href="/about" class="btn btn-ghost" data-zh="關於我" data-en="About">關於我</a>
     </div>
   </div>
 </section>
 
-<!-- ============= TAGLINE ============= -->
-<section class="pb-2">
-  <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
-    <p class="text-[14.5px] sm:text-[16.5px] text-ink-700 leading-[1.95]"
-       data-zh="用最白話的方式解釋<strong>市面上常見的皮膚科產品</strong>、<strong>常見皮膚疾病</strong>、以及<strong>民眾對皮膚科最常有的誤解</strong> — 看完就能帶著問題走進診間。"
-       data-en="Plain-language guides on common dermatology products, diseases, and the public's most frequent misconceptions — so you can walk into clinic with the right questions.">
-    </p>
+<!-- ============= READING STATS ============= -->
+<section class="py-6">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-num" data-count="9">0</div>
+        <div class="stat-label" data-zh="篇衛教文章" data-en="Articles">篇衛教文章</div>
+        <div class="stat-sub" data-zh="持續累積中" data-en="Growing">持續累積中</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="8">0</div>
+        <div class="stat-label" data-zh="主題類別" data-en="Topics">主題類別</div>
+        <div class="stat-sub" data-zh="痘痘・防曬・酸類…" data-en="Acne · Sunscreen…">痘痘・防曬・酸類…</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="40000" data-suffix="+">0</div>
+        <div class="stat-label" data-zh="總字數(中文)" data-en="Words">總字數(中文)</div>
+        <div class="stat-sub" data-zh="深度衛教非快訊" data-en="In-depth content">深度衛教非快訊</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" style="font-size:24px;sm:font-size:28px;">2026.05</div>
+        <div class="stat-label" data-zh="最新更新" data-en="Last update">最新更新</div>
+        <div class="stat-sub" data-zh="月更新頻率" data-en="Monthly cadence">月更新頻率</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -410,12 +389,12 @@
 <section class="max-w-3xl mx-auto px-5 sm:px-8 my-6"><div class="ad-slot h-20 sm:h-24" data-zh="廣告位 · AdSense" data-en="Ad slot · AdSense">廣告位 · AdSense</div></section>
 
 <!-- ============= ARTICLES ============= -->
-<section class="py-8">
+<section class="py-8" id="articles">
   <div class="max-w-5xl mx-auto px-5 sm:px-8">
-    <div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold" data-zh="衛教資訊" data-en="Patient Education">衛教資訊</div>
-    <h2 class="font-display font-bold text-[28px] sm:text-[36px] mt-3 leading-tight"
-        data-zh="診間講不完的話 — 寫在這裡"
-        data-en="What clinic doesn't have time to explain.">診間講不完的話 — 寫在這裡</h2>
+    <div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold" data-zh="衛教文章" data-en="Articles">衛教文章</div>
+    <h2 class="font-display font-bold text-[26px] sm:text-[32px] mt-3 leading-tight"
+        data-zh="診間講不完的話,寫在這裡"
+        data-en="What clinic doesn't have time to explain.">診間講不完的話,寫在這裡</h2>
 
     <div class="article-list mt-8">
 
@@ -548,7 +527,35 @@
     </div>
 
     <div class="text-center mt-8">
-      <a href="/blog/" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--border)] bg-white text-teal-700 font-semibold text-[13.5px] hover:border-teal-500 hover:bg-mint-50" data-zh="📚 瀏覽全部文章 →" data-en="📚 See all articles →">📚 瀏覽全部文章 →</a>
+      <a href="/blog/" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--border)] bg-white text-teal-700 font-semibold text-[13.5px] hover:border-teal-500 hover:bg-mint-50" data-zh="瀏覽全部文章 →" data-en="See all articles →">瀏覽全部文章 →</a>
+      <a href="/blog/topics" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--border)] bg-white text-teal-700 font-semibold text-[13.5px] hover:border-teal-500 hover:bg-mint-50 ml-2" data-zh="主題地圖 →" data-en="Topic map →">主題地圖 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============= HOMEPAGE FAQ ============= -->
+<section class="py-10">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold" data-zh="常見問題" data-en="Frequently Asked">常見問題</div>
+    <h2 class="font-display font-bold text-[26px] sm:text-[32px] mt-3 leading-tight" data-zh="民眾搜尋最多的 15 個皮膚科問題" data-en="The 15 most-searched dermatology questions">民眾搜尋最多的 15 個皮膚科問題</h2>
+    <p class="mt-3 text-[14px] text-ink-700 leading-[1.85]" data-zh="點擊問題展開答案。每題都有對應的詳細衛教文章可深入閱讀。" data-en="Click any question to expand. Each links to a full deep-dive article.">點擊問題展開答案。每題都有對應的詳細衛教文章可深入閱讀。</p>
+
+    <div class="home-faq mt-6">
+      <details class="hf"><summary>痘痘怎麼辦?要看皮膚科嗎?</summary><div class="ans">輕度粉刺、零星痘痘可以先用 OTC(過氧化苯醯 BPO 2.5%、水楊酸、杜鵑花酸)2–3 個月。如果出現囊腫型、結節型、深層痛感、開始留疤,或外用治療 3 個月無改善,應該到皮膚科。中重度痘痘可能需要處方藥(Adapalene、口服抗生素、口服 A 酸)。完整看 <a href="/blog/acne-myths">痘痘 9 大迷思</a> 與 <a href="/blog/isotretinoin-patient">口服 A 酸完整衛教</a>。</div></details>
+      <details class="hf"><summary>痘痘可以擠嗎?</summary><div class="ans">白頭粉刺可以用消毒過的粉刺棒輕壓,不要用指甲擠。發炎中的紅腫痘<strong>絕對不要擠</strong> — 擠壓會把感染推得更深、破壞真皮層、留下凹疤。多數凹疤源頭都是「年輕時擠過的痘」。詳見 <a href="/blog/acne-myths">痘痘 9 大迷思</a>。</div></details>
+      <details class="hf"><summary>防曬乳 SPF 越高效果越好嗎?</summary><div class="ans">不是。SPF 30 已擋掉約 97% 的 UVB,SPF 50 擋 98%,SPF 100 擋 99% — 邊際效益很小。實際擦的<strong>厚度</strong>才是關鍵 — 多數人實際擦的厚度只有實驗室測試的 1/3。挑日常 SPF 30+ PA+++、能規律補擦的防曬,比追求 SPF 50+ 重要。完整看 <a href="/blog/sunscreen-myths">防曬 8 大迷思</a>。</div></details>
+      <details class="hf"><summary>室內 / 陰天要不要擦防曬?</summary><div class="ans">要。UVA 能穿透 50% 以上的玻璃,陰天 UVA 強度可達晴天 80%。靠窗座位、開車、室內仍會被曬到。可見光與藍光也會加重肝斑。建議室內族群每天仍擦 SPF 30+ 廣譜防曬,有色防曬(含 iron oxide 氧化鐵)能多擋一層可見光。詳見 <a href="/blog/sunscreen-myths">防曬 8 大迷思</a>。</div></details>
+      <details class="hf"><summary>類固醇藥膏可以擦多久?會傷皮膚嗎?</summary><div class="ans">短期、依醫囑、按部位選對強度的類固醇藥膏是非常安全的第一線治療。臉、眼周、外陰需用低強度(Class V–VII),四肢可用中強度。急性期每天 1–2 次連續 7–14 天,之後改週末療法(一週 2 次)維持。長期大量錯誤使用才會皮膚萎縮。詳見 <a href="/blog/eczema-myths">異膚 6 大迷思 — 含類固醇恐懼症</a>。</div></details>
+      <details class="hf"><summary>異位性皮膚炎長大會自己好嗎?</summary><div class="ans">約 40–60% 的兒童異膚會在青春期前明顯改善,但 30–50% 會持續到成年。重要的是越早控制越能避免後續過敏進行曲(食物過敏、氣喘、過敏性鼻炎)。<strong>每天大量保濕修復皮膚屏障</strong>是治療基礎。詳見 <a href="/blog/eczema-myths">異膚 6 大迷思</a>。</div></details>
+      <details class="hf"><summary>肝斑可以根治嗎?雷射打一次就消嗎?</summary><div class="ans">肝斑是慢性疾病,無法根除但可以高度控制。傳統全切除式雷射對肝斑效果差,還會誘發反黑。主流治療:每天含氧化鐵防曬 + 三合一藥膏(限期 8–12 週) + 必要時口服傳明酸 + 低能量雷射 toning(多次)。耐心 6–12 個月可顯著改善。詳見 <a href="/blog/melasma-myths">肝斑 7 大迷思</a>。</div></details>
+      <details class="hf"><summary>落髮要看什麼科?雄性禿吃藥有效嗎?</summary><div class="ans">看皮膚科。雄性禿真正有實證的治療只有兩個:外用 Minoxidil 5%(每天 1–2 次)和口服 Finasteride 1 mg(降低 DHT)。需要連續使用 6 個月以上才看效果。已脫落的毛囊不可逆,越早治療效果越好。詳見 <a href="/blog/hairloss-myths">落髮 7 大迷思</a>。</div></details>
+      <details class="hf"><summary>Minoxidil 副作用很多嗎?可以停嗎?</summary><div class="ans">多數副作用很輕(頭皮癢、初期掉髮加速、臉部多毛)。「初期掉髮」是把休止期舊髮推出去讓新髮長出來的正常過程,堅持下去就好。停藥後幾個月內會逐漸回到原本進度,不是「掉光」。換成泡沫劑型可避免 propylene glycol 過敏。詳見 <a href="/blog/hairloss-myths">落髮 7 大迷思</a>。</div></details>
+      <details class="hf"><summary>圓禿(鬼剃頭)是壓力造成的嗎?</summary><div class="ans">圓禿是<strong>自體免疫疾病</strong>,壓力可能誘發但不是根本原因。不會自己好,需主動治療。輕度可用局部類固醇注射,嚴重(>50% 頭皮)的近年有 FDA 核准的口服 JAK inhibitor(Baricitinib、Ritlecitinib)效果很好。詳見 <a href="/blog/hairloss-myths">落髮 7 大迷思</a>。</div></details>
+      <details class="hf"><summary>香港腳塗藥膏多久會好?灰指甲一定要吃藥嗎?</summary><div class="ans">香港腳:用對的處方抗黴菌藥膏連續 2–4 週,治好後再多擦 1 週避免復發。灰指甲:多數中重度需要口服(Terbinafine 250 mg/day,足甲 6 週、趾甲 12 週),塗藥膏穿透不了指甲。輕度灰指甲可用 Efinaconazole 油劑 48 週。口服抗黴菌藥嚴重肝毒性 < 0.5%,定期追蹤抽血很安全。詳見 <a href="/blog/tinea-myths">香港腳 / 灰指甲 7 大迷思</a>。</div></details>
+      <details class="hf"><summary>玫瑰痤瘡跟痘痘怎麼分?</summary><div class="ans">痘痘有粉刺(白頭/黑頭)、皮脂多、發生在油性肌、青少年常見。玫瑰痤瘡(酒糟肌)沒有粉刺、反覆潮紅灼熱、發生在臉頰鼻頭中央(對稱)、30+ 女性多。治療策略不同 — 用治痘痘的 A 酸往往會加重酒糟。詳見 <a href="/blog/rosacea-myths">玫瑰痤瘡 6 大迷思</a>。</div></details>
+      <details class="hf"><summary>口服 A 酸要吃多久?副作用很多嗎?</summary><div class="ans">一般療程 6–9 個月,目標累積劑量體重 × 120–150 mg(60 公斤約 7,200–9,000 mg)。常見副作用:嘴唇乾(>90%)、皮膚乾、肝指數/血脂輕度上升。<strong>女性育齡必須嚴格避孕</strong>(致畸風險)。療程中暫停雷射、刺青、四環黴素抗生素。停藥後約 1/3 復發。詳見 <a href="/blog/isotretinoin-patient">口服 A 酸完整衛教</a>。</div></details>
+      <details class="hf"><summary>外用 A 酸跟 A 醇有什麼差別?哪個適合新手?</summary><div class="ans">A 酸是處方藥,效力強、轉換步驟少;A 醇是化妝品成分,需在皮膚內 2 步驟轉換才有效,效力較弱但較溫和。新手建議從 Adapalene 0.1%(處方,溫和)或 Azelaic acid 15–20%(杜鵑花酸,孕婦也可)開始,從每週 2–3 次低頻率漸進。詳見 <a href="/blog/topical-acids-patient">外用酸類完整衛教</a>。</div></details>
+      <details class="hf"><summary>中國醫附醫皮膚科怎麼掛號?陳翊嘉醫師看診時間?</summary><div class="ans">到中國醫藥大學附設醫院皮膚部 醫師團隊頁面選擇本醫師時段:<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener">中國醫掛號系統 ↗</a>。地址:404 台中市北區育德路 2 號 立夫醫療大樓。實際看診樓層 / 診間請以中國醫官網公告為準。</div></details>
     </div>
   </div>
 </section>
@@ -603,7 +610,7 @@
         <ul class="space-y-1 text-[13px]">
           <li><a class="hover:text-teal-700" href="/" data-zh="首頁" data-en="Home">首頁</a></li>
           <li><a class="hover:text-teal-700" href="/blog/" data-zh="衛教文章" data-en="Articles">衛教文章</a></li>
-          <li><a class="hover:text-teal-700" href="/about" data-zh="聯絡 / 看診資訊" data-en="Contact">聯絡 / 看診資訊</a></li>
+          <li><a class="hover:text-teal-700" href="/about" data-zh="關於我" data-en="About">關於我</a></li>
           <li><a class="hover:text-teal-700" href="/privacy" data-zh="隱私權政策" data-en="Privacy Policy">隱私權政策</a></li>
           <li><a class="hover:text-teal-700" href="/blog/feed.xml">RSS</a></li>
         </ul>
@@ -650,6 +657,40 @@
     } else {
       // Fallback: just show everything
       document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
+    }
+
+    // ============= STATS COUNT-UP ANIMATION =============
+    function animateCount(el) {
+      var target = parseInt(el.dataset.count, 10);
+      if (!target) return;
+      var suffix = el.dataset.suffix || '';
+      var duration = 1400;
+      var startTime = performance.now();
+      function step(now) {
+        var t = Math.min((now - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - t, 3);
+        var val = Math.floor(target * eased);
+        el.textContent = val.toLocaleString() + (t === 1 ? suffix : '');
+        if (t < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    if ('IntersectionObserver' in window) {
+      var statsObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.querySelectorAll('.stat-num[data-count]').forEach(animateCount);
+            statsObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      var statsGrid = document.querySelector('.stats-grid');
+      if (statsGrid) statsObs.observe(statsGrid);
+    } else {
+      // Fallback: directly set values
+      document.querySelectorAll('.stat-num[data-count]').forEach(function (el) {
+        el.textContent = parseInt(el.dataset.count, 10).toLocaleString() + (el.dataset.suffix || '');
+      });
     }
   });
 </script>

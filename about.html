@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>聯絡 / 看診資訊 | ChenDermatologist · 陳翊嘉醫師 · 中國醫藥大學附設醫院 皮膚部</title>
-<meta name="description" content="陳翊嘉醫師(中國醫藥大學附設醫院 皮膚部)的看診資訊、預約掛號方式、聯絡管道。" />
+<title>關於我 | 陳翊嘉醫師 · 中國醫藥大學附設醫院 皮膚部 · ChenDermatologist</title>
+<meta name="description" content="陳翊嘉醫師(Chen, Yi-Jia, M.D.)個人簡介:高雄醫學大學醫學系畢業、高醫附設中和紀念醫院 PGY 不分科住院醫師、現任中國醫藥大學附設醫院 皮膚部 住院醫師。看診地點、預約掛號方式、聯絡管道完整資訊。" />
 <meta name="theme-color" content="#0e7c86" />
+<meta name="keywords" content="陳翊嘉醫師,Chen Yi-Jia 醫師,陳翊嘉皮膚科,中國醫皮膚科 陳翊嘉,中國醫藥大學附設醫院 皮膚部 醫師,中國醫皮膚科 預約掛號,中國醫皮膚科推薦,台中皮膚科推薦,皮膚科醫師簡介,皮膚科醫師學歷,高雄醫學大學醫學系,高醫附設中和紀念醫院 PGY,KMU 醫學系,KMUH PGY,CMUH dermatology,ChenDermatologist 關於我" />
 <link rel="canonical" href="https://chendermatologist.com/about" />
 <link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/about" />
 <link rel="alternate" hreflang="zh-TW" href="https://chendermatologist.com/about" />
@@ -15,9 +16,9 @@
 
 <meta property="og:type" content="profile" />
 <meta property="og:url" content="https://chendermatologist.com/about" />
-<meta property="og:title" content="聯絡 / 看診資訊 | ChenDermatologist" />
-<meta property="og:description" content="陳翊嘉醫師看診與預約掛號資訊。" />
-<meta property="og:image" content="https://chendermatologist.com/icon.svg" />
+<meta property="og:title" content="關於我 | 陳翊嘉醫師 · 中國醫藥大學附設醫院" />
+<meta property="og:description" content="陳翊嘉醫師個人簡介、學經歷、看診資訊、預約掛號。" />
+<meta property="og:image" content="https://chendermatologist.com/blog/SUNN1327.jpg" />
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-8223268344248663">
@@ -31,6 +32,12 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet" />
 <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { mint:{50:'#f5fbfa',100:'#eaf6f3',200:'#d1ebe5'}, teal:{500:'#14b8a6',600:'#0e7c86',700:'#0c5159'}, ink:{900:'#0f172a',700:'#334155',500:'#64748b',400:'#94a3b8'} },
+    fontFamily: { display:['"Noto Serif TC"','Georgia','serif'], sans:['Inter','"Microsoft JhengHei"','"PingFang TC"','system-ui','sans-serif'] }
+  } } }
+</script>
 <style>
   :root{ --bg:#f5fbfa; --ink:#0f172a; --ink-2:#334155; --muted:#64748b; --teal:#0e7c86; --teal-deep:#0c5159; --teal-bright:#14b8a6; --mint-soft:#d4f1ee; --border:#d4eae6; --line:#e5f3ef; }
   html,body{ background:var(--bg); color:var(--ink); }
@@ -42,15 +49,67 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   .lang-toggle{ display:inline-flex; border:1px solid var(--border); border-radius:9999px; overflow:hidden; background:#fff; }
   .lang-toggle button{ padding:6px 12px; font-size:12px; font-weight:600; color:var(--muted); }
   .lang-toggle button.active{ background:linear-gradient(180deg,#14b8a6,#0c5159); color:#fff; }
-  .btn-teal{ background:linear-gradient(180deg,#22d3ee 0%, #0e7c86 50%, #0c5159 100%); color:#fff; border:1px solid rgba(12,81,89,.5); padding:.7rem 1.2rem; border-radius:10px; box-shadow: 0 8px 18px -8px rgba(12,81,89,.45); display:inline-flex; align-items:center; gap:6px; font-weight:600; }
+  .ad-slot{ border:1px dashed var(--border); border-radius:14px; background:#fff; color:var(--muted); font-size:11px; letter-spacing:.18em; text-transform:uppercase; display:flex; align-items:center; justify-content:center; }
+
+  /* CV card + timeline */
+  .cv-card{ background:#fff; border:1px solid var(--border); border-radius:22px; box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 24px 48px -22px rgba(12,81,89,.28); }
+  .timeline{ position:relative; padding-left:6px; }
+  .timeline::before{ content:''; position:absolute; left:5px; top:18px; bottom:18px; width:2px; background:linear-gradient(180deg, #14b8a6 0%, #d4eae6 100%); border-radius:2px; }
+  .t-row{ display:flex; gap:18px; align-items:flex-start; padding:9px 0; position:relative; }
+  .t-dot{ flex-shrink:0; width:12px; height:12px; border-radius:50%; background:#14b8a6; box-shadow:0 0 0 3px rgba(20,184,166,.18); margin-top:6px; position:relative; z-index:1; }
+  .t-dot.t-past{ background:#fff; border:2px solid #14b8a6; box-shadow:none; }
+  .t-content{ flex:1; min-width:0; }
+  .t-year{ font-size:10.5px; text-transform:uppercase; letter-spacing:.2em; color:var(--teal-deep); font-weight:700; margin-bottom:2px; }
+  .t-text{ font-size:14.5px; color:var(--ink); line-height:1.55; font-weight:500; }
+
+  /* Contact info row */
   .info-row{ display:flex; gap:14px; padding:14px 0; border-top:1px solid var(--line); }
   .info-row:first-child{ border-top:0; padding-top:0; }
-  .info-row .lbl{ font-weight:700; color:var(--teal-deep); flex-shrink:0; min-width:90px; }
-  .info-row .val{ color:var(--ink-2); line-height:1.7; }
+  .info-row .lbl{ font-weight:700; color:var(--teal-deep); flex-shrink:0; min-width:90px; font-size:13.5px; }
+  .info-row .val{ color:var(--ink-2); line-height:1.7; font-size:13.5px; }
   .info-row a{ color:var(--teal-deep); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
+
+  /* Buttons */
+  .btn{ display:inline-flex; align-items:center; justify-content:center; line-height:1; transition:all .15s ease; font-weight:600; gap:6px; }
+  .btn-teal{ background:linear-gradient(180deg,#22d3ee 0%, #0e7c86 50%, #0c5159 100%); color:#fff; border:1px solid rgba(12,81,89,.5); padding:.7rem 1.2rem; border-radius:10px; box-shadow: 0 8px 18px -8px rgba(12,81,89,.45); }
+  .btn-teal:hover{ transform:translateY(-1px); box-shadow:0 12px 24px -10px rgba(12,81,89,.55); }
+  .btn-ghost{ background:#fff; color:var(--ink); border:1px solid var(--border); padding:.65rem 1.1rem; border-radius:10px; }
+  .btn-ghost:hover{ border-color:rgba(14,124,134,.45); }
+
   .disclaimer{ background:#fff7ed; border:1px solid #fed7aa; border-radius:14px; padding:14px 18px; color:#9a3412; font-size:13px; line-height:1.7; }
+
+  .crumbs{ font-size:12.5px; color:var(--muted); margin-bottom:18px; }
+  .crumbs a{ color:var(--teal-deep); text-decoration:none; font-weight:600; }
+  .crumbs a:hover{ text-decoration:underline; }
+  .crumbs .sep{ margin:0 6px; opacity:.5; }
+
   @media (max-width:640px){ .hide-sm{display:none} .info-row{flex-direction:column; gap:4px} .info-row .lbl{min-width:auto} }
 </style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"陳翊嘉",
+  "alternateName":"Chen, Yi-Jia",
+  "jobTitle":"Dermatology Resident Physician",
+  "honorificSuffix":"M.D.",
+  "image":"https://chendermatologist.com/blog/SUNN1327.jpg",
+  "alumniOf":[{ "@type":"CollegeOrUniversity","name":"Kaohsiung Medical University, College of Medicine","alternateName":"高雄醫學大學醫學系" }],
+  "worksFor":[{ "@type":"Hospital","name":"China Medical University Hospital — Department of Dermatology","alternateName":"中國醫藥大學附設醫院 皮膚部","sameAs":"https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&current=0&source=dep","address":{"@type":"PostalAddress","streetAddress":"育德路 2 號","addressLocality":"北區","addressRegion":"台中市","postalCode":"404","addressCountry":"TW"} }],
+  "url":"https://chendermatologist.com/about"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首頁","item":"https://chendermatologist.com/"},
+    {"@type":"ListItem","position":2,"name":"關於我","item":"https://chendermatologist.com/about"}
+  ]
+}
+</script>
 </head>
 <body class="font-sans antialiased text-ink-900">
 
@@ -65,6 +124,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
         </div>
       </a>
       <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-teal-600 text-white text-[12px] font-semibold hover:bg-teal-700">預約掛號 →</a>
         <a href="/blog/" class="hidden sm:inline-flex text-[12px] uppercase tracking-[.18em] text-ink-700 font-semibold" data-zh="衛教文章" data-en="Articles">衛教文章</a>
         <div class="lang-toggle" id="langToggle">
           <button data-lang="zh" class="active">中文</button>
@@ -77,11 +137,96 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
 <main>
 
-<section class="pt-12 sm:pt-16 pb-6">
+<!-- Breadcrumbs -->
+<section class="pt-8 pb-2">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8">
+    <nav class="crumbs">
+      <a href="/" data-zh="首頁" data-en="Home">首頁</a><span class="sep">/</span>
+      <span data-zh="關於我" data-en="About">關於我</span>
+    </nav>
+  </div>
+</section>
+
+<!-- ============= CV CARD ============= -->
+<section class="pb-8">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8">
+    <div class="cv-card relative overflow-hidden">
+      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-teal-400 via-teal-500 to-teal-700"></div>
+      <div class="absolute -top-12 -right-12 w-48 h-48 rounded-full opacity-20" style="background:radial-gradient(circle, #14b8a6 0%, transparent 70%)"></div>
+      <div class="absolute -bottom-12 -left-12 w-40 h-40 rounded-full opacity-15" style="background:radial-gradient(circle, #0c5159 0%, transparent 70%)"></div>
+
+      <div class="relative p-6 sm:p-10">
+        <div class="flex flex-col sm:flex-row gap-7 sm:gap-10 items-center sm:items-start">
+          <div class="flex-shrink-0 relative">
+            <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden ring-4 ring-white shadow-2xl" style="background:linear-gradient(135deg,#cffafe,#a5f3fc); box-shadow:0 18px 36px -10px rgba(12,81,89,.35), 0 0 0 6px rgba(20,184,166,.12);">
+              <img src="/blog/SUNN1327.jpg" alt="陳翊嘉醫師 · Dr. Chen Yi-Jia" class="w-full h-full object-cover" style="object-position: center 18%;" loading="eager" />
+            </div>
+            <div class="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-white shadow-md border border-mint-200">
+              <span class="relative flex h-2 w-2">
+                <span class="absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-60 animate-ping"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+              </span>
+              <span class="text-[10px] font-semibold text-teal-700">在職</span>
+            </div>
+          </div>
+
+          <div class="flex-1 text-center sm:text-left min-w-0">
+            <div class="flex items-center justify-center sm:justify-start gap-2 mb-2">
+              <span class="text-[10.5px] uppercase tracking-[.22em] text-teal-700 font-semibold">皮膚科 住院醫師</span>
+              <span class="text-[10.5px] text-ink-400">·</span>
+              <span class="text-[10.5px] uppercase tracking-[.22em] text-ink-500 font-semibold">Dermatology Resident</span>
+            </div>
+            <h1 class="font-display font-bold leading-tight">
+              <span class="block text-[34px] sm:text-[44px] text-ink-900">陳翊嘉 <span class="teal-text">醫師</span></span>
+              <span class="block text-[14.5px] sm:text-[16px] text-ink-500 mt-1.5 tracking-wide font-light italic">Chen, Yi-Jia, M.D.</span>
+            </h1>
+
+            <div class="mt-6 timeline">
+              <div class="t-row">
+                <div class="t-dot"></div>
+                <div class="t-content">
+                  <div class="t-year" data-zh="現任" data-en="Now">現任</div>
+                  <div class="t-text" data-zh="中國醫藥大學附設醫院 · 皮膚部 住院醫師" data-en="Resident Physician · CMUH Department of Dermatology">中國醫藥大學附設醫院 · 皮膚部 住院醫師</div>
+                </div>
+              </div>
+              <div class="t-row">
+                <div class="t-dot t-past"></div>
+                <div class="t-content">
+                  <div class="t-year" data-zh="PGY" data-en="PGY">PGY</div>
+                  <div class="t-text" data-zh="高雄醫學大學附設中和紀念醫院 · 不分科住院醫師" data-en="KMU Hospital · Post-Graduate Year (rotating)">高雄醫學大學附設中和紀念醫院 · 不分科住院醫師</div>
+                </div>
+              </div>
+              <div class="t-row">
+                <div class="t-dot t-past"></div>
+                <div class="t-content">
+                  <div class="t-year" data-zh="畢業" data-en="MD">畢業</div>
+                  <div class="t-text" data-zh="高雄醫學大學 · 醫學系 醫學士(M.D.)" data-en="Kaohsiung Medical University · College of Medicine (M.D.)">高雄醫學大學 · 醫學系 醫學士(M.D.)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-7 flex flex-wrap gap-3 justify-center sm:justify-start">
+              <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="btn btn-teal">📅 預約看診</a>
+              <a href="/blog/" class="btn btn-ghost">📚 閱讀衛教文章</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AdSense slot reserved -->
+<section class="max-w-3xl mx-auto px-5 sm:px-8 my-2">
+  <div class="ad-slot h-20 sm:h-24" data-zh="廣告位 · AdSense" data-en="Ad slot · AdSense">廣告位 · AdSense</div>
+</section>
+
+<!-- ============= CONTACT INFO ============= -->
+<section class="py-6">
   <div class="max-w-3xl mx-auto px-5 sm:px-8">
-    <div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold" data-zh="聯絡 / 看診資訊" data-en="Contact / Clinic">聯絡 / 看診資訊</div>
-    <h1 class="font-display font-bold text-[34px] sm:text-[44px] mt-3 leading-tight" data-zh="想當面諮詢？<br/><span class='teal-text'>歡迎到中國醫皮膚部就診</span>" data-en="Want a consultation in person?<br/><span class='teal-text'>Book at CMUH Dermatology</span>">想當面諮詢？<br/><span class="teal-text">歡迎到中國醫皮膚部就診</span></h1>
-    <p class="mt-6 text-[15px] text-ink-700 leading-[1.9]" data-zh="本網站(ChenDermatologist)是陳翊嘉醫師整理的皮膚科衛教資訊，內容只能作為一般教育參考。<strong>個別評估、處方、雷射或手術皆需面對面看診</strong>,歡迎透過下方連結到中國醫藥大學附設醫院 皮膚部 預約掛號。" data-en="This site provides educational reference only. <strong>Individual assessment, prescription, laser, and surgical procedures all require an in-person visit.</strong> Please book via the link below to consult at CMUH Department of Dermatology.">本網站(ChenDermatologist)是陳翊嘉醫師整理的皮膚科衛教資訊，內容只能作為一般教育參考。<strong>個別評估、處方、雷射或手術皆需面對面看診</strong>,歡迎透過下方連結到中國醫藥大學附設醫院 皮膚部 預約掛號。</p>
+    <div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold" data-zh="聯絡 / 看診資訊" data-en="Contact &amp; Clinic Info">聯絡 / 看診資訊</div>
+    <h2 class="font-display font-bold text-[26px] sm:text-[32px] mt-3 leading-tight" data-zh="想當面諮詢?<br/><span class='teal-text'>歡迎到中國醫皮膚部就診</span>" data-en="Want a consultation in person?<br/><span class='teal-text'>Book at CMUH Dermatology</span>">想當面諮詢?<br/><span class="teal-text">歡迎到中國醫皮膚部就診</span></h2>
+    <p class="mt-5 text-[15px] text-ink-700 leading-[1.9]" data-zh="本網站(ChenDermatologist)是陳翊嘉醫師整理的皮膚科衛教資訊,內容只能作為一般教育參考。<strong>個別評估、處方、雷射或手術皆需面對面看診</strong>,歡迎透過下方連結到中國醫藥大學附設醫院 皮膚部 預約掛號。" data-en="This site provides educational reference only. <strong>Individual assessment, prescription, laser, and surgical procedures all require an in-person visit.</strong>">本網站(ChenDermatologist)是陳翊嘉醫師整理的皮膚科衛教資訊,內容只能作為一般教育參考。<strong>個別評估、處方、雷射或手術皆需面對面看診</strong>,歡迎透過下方連結到中國醫藥大學附設醫院 皮膚部 預約掛號。</p>
   </div>
 </section>
 
@@ -108,11 +253,11 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
     </div>
     <div class="info-row">
       <span class="lbl" data-zh="網站問題回報" data-en="Site issues">網站問題回報</span>
-      <span class="val" data-zh="網站內容更正 / 學術引用詢問 / 媒體合作詢問，請透過中國醫官方管道留言或於門診時當面提出。" data-en="For content corrections, citations, or media inquiries, please contact via official CMUH channels or in-person during clinic.">網站內容更正 / 學術引用詢問 / 媒體合作詢問，請透過中國醫官方管道留言或於門診時當面提出。</span>
+      <span class="val" data-zh="網站內容更正 / 學術引用詢問 / 媒體合作詢問,請透過中國醫官方管道留言或於門診時當面提出。" data-en="For content corrections, citations, or media inquiries, please contact via official CMUH channels or in-person during clinic.">網站內容更正 / 學術引用詢問 / 媒體合作詢問,請透過中國醫官方管道留言或於門診時當面提出。</span>
     </div>
     <div class="info-row">
       <span class="lbl" data-zh="緊急狀況" data-en="Emergency">緊急狀況</span>
-      <span class="val" data-zh="出現嚴重過敏(臉部腫脹、呼吸困難)、廣泛性皮疹合併發燒、藥物嚴重副作用等，請立即至急診就醫，勿在網路上等待回覆。" data-en="If you have severe allergic reactions (facial swelling, difficulty breathing), widespread rash with fever, or severe drug reactions, please go to the emergency department immediately — do not wait for online responses.">出現嚴重過敏(臉部腫脹、呼吸困難)、廣泛性皮疹合併發燒、藥物嚴重副作用等，請立即至急診就醫，勿在網路上等待回覆。</span>
+      <span class="val" data-zh="出現嚴重過敏(臉部腫脹、呼吸困難)、廣泛性皮疹合併發燒、藥物嚴重副作用等,請立即至急診就醫,勿在網路上等待回覆。" data-en="If you have severe allergic reactions, widespread rash with fever, or severe drug reactions, please go to the emergency department immediately.">出現嚴重過敏(臉部腫脹、呼吸困難)、廣泛性皮疹合併發燒、藥物嚴重副作用等,請立即至急診就醫,勿在網路上等待回覆。</span>
     </div>
   </div>
 </section>
@@ -121,14 +266,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   <div class="card p-8 text-center" style="background:linear-gradient(135deg,#ecfeff 0%, #f5fbfa 60%);">
     <div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold mb-3" data-zh="一鍵預約" data-en="One click">一鍵預約</div>
     <h2 class="font-display font-bold text-[24px] sm:text-[28px]" data-zh="中國醫皮膚部 · 立即掛號" data-en="CMUH Dermatology · Book now">中國醫皮膚部 · 立即掛號</h2>
-    <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="btn-teal mt-5" data-zh="📅 前往中國醫掛號系統 →" data-en="📅 Go to CMUH booking →">📅 前往中國醫掛號系統 →</a>
+    <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="btn btn-teal mt-5" data-zh="📅 前往中國醫掛號系統 →" data-en="📅 Go to CMUH booking →">📅 前往中國醫掛號系統 →</a>
   </div>
 </section>
 
 <section class="max-w-3xl mx-auto px-5 sm:px-8 mt-6 mb-12">
   <div class="disclaimer">
     <strong data-zh="醫療免責聲明 · " data-en="Medical disclaimer · ">醫療免責聲明 · </strong>
-    <span data-zh="本站所有內容僅作為一般醫學教育與資訊參考，不構成個別醫療建議，亦不能取代面對面的問診、檢查與處方。任何用藥、停藥、調整劑量或就醫決定，請以您的主治醫師判斷為準。" data-en="All content here is for general educational reference only. It is not individualized medical advice and cannot replace an in-person consultation, examination, or prescription.">本站所有內容僅作為一般醫學教育與資訊參考，不構成個別醫療建議，亦不能取代面對面的問診、檢查與處方。任何用藥、停藥、調整劑量或就醫決定，請以您的主治醫師判斷為準。</span>
+    <span data-zh="本站所有內容僅作為一般醫學教育與資訊參考,不構成個別醫療建議,亦不能取代面對面的問診、檢查與處方。任何用藥、停藥、調整劑量或就醫決定,請以您的主治醫師判斷為準。" data-en="All content here is for general educational reference only.">本站所有內容僅作為一般醫學教育與資訊參考,不構成個別醫療建議,亦不能取代面對面的問診、檢查與處方。任何用藥、停藥、調整劑量或就醫決定,請以您的主治醫師判斷為準。</span>
   </div>
 </section>
 
@@ -153,13 +298,15 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
         <ul class="space-y-1 text-[13px]">
           <li><a class="hover:text-teal-700" href="/" data-zh="首頁" data-en="Home">首頁</a></li>
           <li><a class="hover:text-teal-700" href="/blog/" data-zh="衛教文章" data-en="Articles">衛教文章</a></li>
+          <li><a class="hover:text-teal-700" href="/blog/topics" data-zh="主題地圖" data-en="Topic map">主題地圖</a></li>
+          <li><a class="hover:text-teal-700" href="/about" data-zh="關於我" data-en="About">關於我</a></li>
           <li><a class="hover:text-teal-700" href="/privacy" data-zh="隱私權政策" data-en="Privacy Policy">隱私權政策</a></li>
           <li><a class="hover:text-teal-700" href="/blog/feed.xml">RSS</a></li>
         </ul>
       </div>
     </div>
     <div class="mt-8 pt-6 border-t border-[var(--line)] text-[11.5px] text-ink-500 flex flex-wrap items-center justify-between gap-2">
-      <div data-zh="本站僅作教育參考，不構成醫療建議。" data-en="Educational use only — not medical advice.">本站僅作教育參考，不構成醫療建議。</div>
+      <div data-zh="本站僅作教育參考,不構成醫療建議。" data-en="Educational use only — not medical advice.">本站僅作教育參考,不構成醫療建議。</div>
       <div>© <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師</div>
     </div>
   </div>

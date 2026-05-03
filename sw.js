@@ -8,6 +8,7 @@ const PRECACHE = [
   '/icon.svg',
   '/manifest.json',
   '/blog/',
+  '/blog/topics',
   '/blog/feed.xml',
   '/blog/blog-shared.js',
   '/blog/acne-myths',
