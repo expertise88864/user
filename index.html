@@ -24,6 +24,7 @@
 <link rel="alternate" type="application/rss+xml" title="ChenDermatologist RSS" href="/blog/feed.xml" />
 
 <!-- Search engine verification -->
+<meta name="google-site-verification" content="ptLFsBUrBRXmB3HiFIGEK0GO4wOijz03YSWPrDtwfDg" />
 <meta name="google-site-verification" content="f7oOM7GQVYUXeCH8os4s_MDVzaO62i-Ry7fMs8xWJYs" />
 <meta name="msvalidate.01" content="E0C80549746F44CC7041C29DBBE89452" />
 
@@ -152,6 +153,75 @@
   .article-list-item:hover .al-arrow{ opacity:1; transform:translateX(3px); }
   @media(max-width:640px){ .article-list-item{ gap:14px; padding:16px; } .al-icon{ width:54px; height:54px; font-size:24px; border-radius:12px; } .al-body h3{ font-size:16.5px; } .al-arrow{ display:none; } }
   @media (max-width:640px){ .hide-sm{ display:none; } }
+
+  /* ========== ANIMATIONS ========== */
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; }
+  }
+
+  /* Entrance keyframes */
+  @keyframes fadeInUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeInScale { from { opacity:0; transform:scale(.95); } to { opacity:1; transform:scale(1); } }
+  @keyframes shimmer { 0%,100% { opacity:.16; } 50% { opacity:.28; } }
+  @keyframes glowPulse { 0%,100% { box-shadow:0 0 0 6px rgba(20,184,166,.12), 0 18px 36px -10px rgba(12,81,89,.35); } 50% { box-shadow:0 0 0 10px rgba(20,184,166,.18), 0 22px 44px -10px rgba(12,81,89,.45); } }
+  @keyframes floatY { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+  @keyframes gradientShift { 0% { background-position:0% 50%; } 50% { background-position:100% 50%; } 100% { background-position:0% 50%; } }
+
+  /* CV card entrance + decorative breathing */
+  .cv-card { animation: fadeInUp .8s cubic-bezier(.2,.7,.2,1) both; }
+  .cv-card .absolute { animation: shimmer 6s ease-in-out infinite; }
+  .cv-card img[src*="SUNN"] { transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+  /* Avatar gentle pulse glow on its container — only on devices that hover */
+  @media (hover: hover) {
+    .cv-card > div > div > div:first-child > div:first-child { animation: glowPulse 4.5s ease-in-out infinite; }
+    .cv-card img[src*="SUNN"]:hover { transform: scale(1.05); }
+  }
+
+  /* Scroll-reveal: applied via JS */
+  .reveal { opacity:0; transform:translateY(28px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+  .reveal.delay-1 { transition-delay:.08s; }
+  .reveal.delay-2 { transition-delay:.16s; }
+  .reveal.delay-3 { transition-delay:.24s; }
+  .reveal.delay-4 { transition-delay:.32s; }
+  .reveal.delay-5 { transition-delay:.40s; }
+
+  /* Article list cards: enhance hover, add tap feedback for touch devices */
+  .article-list-item { will-change: transform; }
+  @media (hover: hover) {
+    .article-list-item:hover .al-icon { transform:scale(1.08) rotate(-3deg); transition:transform .25s cubic-bezier(.34,1.56,.64,1); }
+  }
+  @media (hover: none) {
+    /* Mobile/touch: tap feedback */
+    .article-list-item:active { transform:scale(.985) translateX(2px); transition:transform .12s ease; }
+    .btn-teal:active, .btn-ghost:active { transform:scale(.97); }
+    .b-btn:active { transform:scale(.97); }
+  }
+
+  /* Booking CTA: subtle gradient shift */
+  .book-cta { background-size:180% 180%; animation: gradientShift 14s ease infinite; }
+  .book-cta .b-btn { transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s; }
+
+  /* Buttons: pop on hover */
+  @media (hover: hover) {
+    .btn-teal:hover { transform:translateY(-2px) scale(1.02); }
+    .btn-ghost:hover { transform:translateY(-1px); }
+    .b-btn:hover { transform:translateY(-3px) scale(1.04); }
+  }
+
+  /* Filter pills small pop */
+  .filter-pill { transition: all .18s cubic-bezier(.34,1.56,.64,1); }
+  @media (hover: hover) { .filter-pill:hover { transform:translateY(-1px); } }
+
+  /* Header brand subtle entrance */
+  header .teal-text { background-size:200% 200%; animation: gradientShift 8s ease infinite; }
+
+  /* Hero text balanced */
+  h1, h2 { text-wrap: balance; }
+
+  /* Smooth scrolling */
+  html { scroll-behavior:smooth; }
 </style>
 
 <script type="application/ld+json">
@@ -385,6 +455,20 @@
         <div class="al-arrow">→</div>
       </a>
 
+      <a href="/blog/tinea-myths" class="article-list-item">
+        <div class="al-icon cat-myth">👣</div>
+        <div class="al-body">
+          <div class="al-meta">
+            <span class="chip cat-myth" data-zh="迷思澄清" data-en="Myth-busting">迷思澄清</span>
+            <span class="chip tag" data-zh="香港腳 / 灰指甲" data-en="Tinea / Onychomycosis">香港腳 / 灰指甲</span>
+            <time>2026-05-03</time>
+          </div>
+          <h3 data-zh="香港腳 / 灰指甲 7 大迷思 — 塗藥膏就好?熱水殺菌?不痛不癢就不用治?" data-en="7 tinea / onychomycosis myths — topical only? Hot water? No pain = no treatment?">香港腳 / 灰指甲 7 大迷思 — 塗藥膏就好?熱水殺菌?不痛不癢就不用治?</h3>
+          <p data-zh="香港腳是不透氣鞋造成?灰指甲塗藥膏就會好?熱水醋水能殺菌?口服抗黴菌傷肝?寵物黴菌不會傳給人?附 4 種足癬 SVG 與口服藥對照表。" data-en="Caused by shoes? Topical for nail fungus? Vinegar kills it? Oral antifungals harm liver? Pet fungus?">香港腳是不透氣鞋造成?灰指甲塗藥膏就會好?熱水醋水能殺菌?口服抗黴菌傷肝?寵物黴菌不會傳給人?附 4 種足癬 SVG 與口服藥對照表。</p>
+        </div>
+        <div class="al-arrow">→</div>
+      </a>
+
       <a href="/blog/topical-acids-patient" class="article-list-item">
         <div class="al-icon cat-product">🧴</div>
         <div class="al-body">
@@ -486,7 +570,40 @@
 
 <script src="/blog/blog-shared.js" defer></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function () { if (window.DN) DN.initBlog({}); });
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.DN) DN.initBlog({});
+
+    // Scroll-reveal: progressively show content as user scrolls
+    var targets = document.querySelectorAll('main > section');
+    targets.forEach(function (el, i) {
+      el.classList.add('reveal');
+      // First two sections (hero + tagline) reveal immediately on load
+      if (i < 2) {
+        requestAnimationFrame(function () { el.classList.add('visible'); });
+      }
+    });
+    // Stagger article list items on the article section
+    var listItems = document.querySelectorAll('.article-list-item');
+    listItems.forEach(function (el, idx) {
+      el.classList.add('reveal');
+      if (idx < 5) el.classList.add('delay-' + (idx % 5 + 1));
+    });
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal:not(.visible)').forEach(function (el) { io.observe(el); });
+    } else {
+      // Fallback: just show everything
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
+    }
+  });
 </script>
 </body>
 </html>

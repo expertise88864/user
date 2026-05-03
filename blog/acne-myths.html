@@ -125,6 +125,67 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
 <article class="max-w-3xl mx-auto px-5 sm:px-8 mt-2 mb-16">
 
+<!-- Infographic: 4 causes of acne -->
+<div style="background:linear-gradient(135deg,#fff5f5 0%, #fef2f2 100%); border:1px solid #fecaca; border-radius:18px; padding:24px; margin:24px 0; box-shadow:0 8px 24px -14px rgba(220,38,38,.2);">
+  <h4 style="margin:0 0 16px; font-size:14px; color:#991b1b; text-transform:uppercase; letter-spacing:.16em; font-weight:700; text-align:center; font-family:Inter,sans-serif;">🩹 痘痘形成的 4 大成因</h4>
+  <svg viewBox="0 0 560 240" style="width:100%; max-width:520px; display:block; margin:0 auto;" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="acneCenterGrad" cx="0.5" cy="0.5"><stop offset="0" stop-color="#fca5a5"/><stop offset="1" stop-color="#dc2626"/></radialGradient>
+      <linearGradient id="oilGrad" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fef3c7"/><stop offset="1" stop-color="#fbbf24"/></linearGradient>
+      <linearGradient id="kerGrad" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e7e5e4"/><stop offset="1" stop-color="#a8a29e"/></linearGradient>
+      <linearGradient id="bactGrad" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f5d0fe"/><stop offset="1" stop-color="#c026d3"/></linearGradient>
+      <linearGradient id="inflGrad" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fecaca"/><stop offset="1" stop-color="#dc2626"/></linearGradient>
+    </defs>
+
+    <!-- Connecting lines -->
+    <g stroke="#fca5a5" stroke-width="2" stroke-dasharray="3,4" opacity=".55">
+      <line x1="280" y1="120" x2="100" y2="60"/>
+      <line x1="280" y1="120" x2="460" y2="60"/>
+      <line x1="280" y1="120" x2="100" y2="180"/>
+      <line x1="280" y1="120" x2="460" y2="180"/>
+    </g>
+
+    <!-- Center: pimple -->
+    <circle cx="280" cy="120" r="46" fill="url(#acneCenterGrad)"/>
+    <circle cx="270" cy="110" r="10" fill="#fff" opacity=".3"/>
+    <text x="280" y="118" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" font-family="Inter,sans-serif">痘痘</text>
+    <text x="280" y="134" text-anchor="middle" font-size="10" fill="#fff" font-family="Inter,sans-serif" opacity=".9">PIMPLE</text>
+
+    <!-- Cause 1: 皮脂 (top-left) -->
+    <g transform="translate(100,60)">
+      <circle r="44" fill="url(#oilGrad)" stroke="#f59e0b" stroke-width="2"/>
+      <text y="-2" text-anchor="middle" font-size="26">💧</text>
+      <text y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e" font-family="Inter,sans-serif">皮脂分泌過多</text>
+    </g>
+    <text x="100" y="125" text-anchor="middle" font-size="10" fill="#92400e" font-family="Inter,sans-serif">青春期 / 油性肌</text>
+
+    <!-- Cause 2: 角化 (top-right) -->
+    <g transform="translate(460,60)">
+      <circle r="44" fill="url(#kerGrad)" stroke="#78716c" stroke-width="2"/>
+      <text y="-2" text-anchor="middle" font-size="26">🔒</text>
+      <text y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#44403c" font-family="Inter,sans-serif">毛孔角化異常</text>
+    </g>
+    <text x="460" y="125" text-anchor="middle" font-size="10" fill="#44403c" font-family="Inter,sans-serif">阻塞 → 粉刺</text>
+
+    <!-- Cause 3: 痤瘡桿菌 (bottom-left) -->
+    <g transform="translate(100,180)">
+      <circle r="44" fill="url(#bactGrad)" stroke="#a21caf" stroke-width="2"/>
+      <text y="-2" text-anchor="middle" font-size="26">🦠</text>
+      <text y="20" text-anchor="middle" font-size="10.5" font-weight="700" fill="#701a75" font-family="Inter,sans-serif">痤瘡桿菌增生</text>
+    </g>
+    <text x="100" y="245" text-anchor="middle" font-size="10" fill="#701a75" font-family="Inter,sans-serif">C. acnes</text>
+
+    <!-- Cause 4: 發炎 (bottom-right) -->
+    <g transform="translate(460,180)">
+      <circle r="44" fill="url(#inflGrad)" stroke="#dc2626" stroke-width="2"/>
+      <text y="-2" text-anchor="middle" font-size="26">🔥</text>
+      <text y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#7f1d1d" font-family="Inter,sans-serif">免疫發炎反應</text>
+    </g>
+    <text x="460" y="245" text-anchor="middle" font-size="10" fill="#7f1d1d" font-family="Inter,sans-serif">紅腫 / 化膿</text>
+  </svg>
+  <p style="margin:14px 0 0; font-size:12.5px; color:#7f1d1d; text-align:center; line-height:1.7; font-family:'Noto Sans TC',sans-serif;"><strong>關鍵理解</strong>:四個成因環環相扣 — <strong>口服 A 酸是唯一同時擊中所有 4 個的藥</strong>;一般治療多只針對其中 1-2 個。所以中重度痘痘外用治療無效時,要往口服思考。</p>
+</div>
+
 <div class="toc">
   <h4>本篇大綱</h4>
   <ol>
