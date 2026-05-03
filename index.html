@@ -279,14 +279,21 @@
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"Person",
+  "@type":"Physician",
+  "@id":"https://chendermatologist.com/#person",
   "name":"陳翊嘉",
-  "alternateName":"Chen, Yi-Jia",
-  "jobTitle":"Dermatology Resident Physician",
+  "alternateName":["Chen Yi-Jia","ChenDermatologist"],
   "honorificSuffix":"M.D.",
-  "alumniOf":[{ "@type":"CollegeOrUniversity","name":"Kaohsiung Medical University, College of Medicine","alternateName":"高雄醫學大學醫學系" }],
-  "worksFor":[{ "@type":"Hospital","name":"China Medical University Hospital — Department of Dermatology","alternateName":"中國醫藥大學附設醫院 皮膚科","sameAs":"https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&current=0&source=dep" }],
-  "url":"https://chendermatologist.com/"
+  "jobTitle":"Dermatology Resident Physician",
+  "medicalSpecialty":"Dermatology",
+  "alumniOf":{ "@type":"CollegeOrUniversity","name":"Kaohsiung Medical University, College of Medicine","alternateName":"高雄醫學大學醫學系" },
+  "worksFor":{ "@type":"Hospital","name":"中國醫藥大學附設醫院 皮膚科","alternateName":"China Medical University Hospital — Department of Dermatology","sameAs":"https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&current=0&source=dep" },
+  "url":"https://chendermatologist.com/",
+  "image":"https://chendermatologist.com/blog/SUNN1327.jpg",
+  "sameAs":[
+    "https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&current=0&source=dep"
+  ],
+  "knowsAbout":["Dermatology","Atopic Dermatitis","Psoriasis","Acne","Melasma","Vitiligo","Alopecia","Rosacea","Hidradenitis Suppurativa","Topical Corticosteroids","Biologics","JAK Inhibitors"]
 }
 </script>
 <script type="application/ld+json">
@@ -417,8 +424,8 @@
         <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-teal-600 text-white text-[12px] font-semibold hover:bg-teal-700">
           <span data-zh="預約掛號" data-en="Book appointment">預約掛號</span><span>→</span>
         </a>
-        <a href="/blog/" class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full text-[12px] font-semibold text-teal-700 hover:bg-mint-100 transition-colors" data-zh="衛教文章" data-en="Articles">衛教文章</a><button onclick="document.getElementById('dn-search-input')?.focus()||(location.href='/#dn-hub')" class="hidden sm:inline-flex items-center justify-center w-8 h-8 rounded-full text-teal-700 hover:bg-mint-100 transition-colors" aria-label="搜尋" title="搜尋文章"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></button>
-        <a href="/about" class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full text-[12px] font-semibold text-teal-700 hover:bg-mint-100 transition-colors" data-zh="關於我" data-en="About">關於我</a>
+        <a href="/blog/" class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full text-[12px] font-semibold text-teal-700 hover:bg-mint-100 transition-colors" data-zh="衛教文章" data-en="Articles">衛教文章</a><a href="/about" class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full text-[12px] font-semibold text-teal-700 hover:bg-mint-100 transition-colors" data-zh="關於我" data-en="About">關於我</a>
+        <button onclick="document.getElementById('dn-search-input')?.focus()||(location.href='/#dn-hub')" class="hidden sm:inline-flex items-center justify-center w-8 h-8 rounded-full text-teal-700 hover:bg-mint-100 transition-colors" aria-label="搜尋" title="搜尋文章"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></button>
         <select id="langToggle" class="lang-select" aria-label="Language">
           <option value="zh">中文</option>
           <option value="en">EN</option>
@@ -690,6 +697,20 @@
         <div class="al-arrow">→</div>
       </a>
 
+      <a href="/blog/nhi-derm-drugs" class="article-list-item">
+        <div class="al-icon cat-rx"></div>
+        <div class="al-body">
+          <div class="al-meta">
+            <span class="chip cat-rx">處方用藥</span>
+            <span class="chip tag">健保規範</span>
+            <time>2026-05-06</time>
+          </div>
+          <h3>皮膚科常用藥物健保規範完整整理 — 給付條件、劑量、PASS</h3>
+          <p>口服 A 酸、生物製劑、JAK 抑制劑、IL-17/23 等健保給付條件、劑量、療程、事前審查 PASS 流程完整對照。</p>
+        </div>
+        <div class="al-arrow">→</div>
+      </a>
+
       <a href="/blog/targeted-therapy-skin" class="article-list-item">
         <div class="al-icon cat-rx"></div>
         <div class="al-body">
@@ -928,7 +949,7 @@
     </div>
     <div class="mt-4 text-[11.5px] text-ink-500 flex flex-wrap items-center justify-between gap-2">
       <div data-zh="本站僅作教育參考，不構成醫療建議。任何用藥或就醫決定請以您的主治醫師判斷為準。" data-en="Educational use only — not medical advice. Always consult your physician for treatment decisions.">本站僅作教育參考，不構成醫療建議。任何用藥或就醫決定請以您的主治醫師判斷為準。</div>
-      <div>© <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師 · <span style="font-size:10px;opacity:.5">build 2026-05-03 21:20</span></div>
+      <div>© <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師 · <span style="font-size:10px;opacity:.5">build 2026-05-03 23:54</span></div>
     </div>
   </div>
 </footer>

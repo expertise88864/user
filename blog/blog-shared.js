@@ -23,6 +23,7 @@
     { slug:'skin-whitening-agents', title:'美白成分完整解析', cat:'product', tag:'美白', date:'2026-05-04', emoji:'', tag_en:'Whitening agents' },
     { slug:'dermatology-faq', title:'皮膚科 25 個最常見問題', cat:'myth', tag:'常見問題', date:'2026-05-05', emoji:'', tag_en:'FAQ' },
     { slug:'epidermoid-cyst', title:'粉瘤完整衛教', cat:'rx', tag:'粉瘤', date:'2026-05-05', emoji:'', tag_en:'Epidermoid cyst' },
+    { slug:'nhi-derm-drugs', title:'皮膚科常用藥物健保規範完整整理', cat:'rx', tag:'健保規範', date:'2026-05-05', emoji:'', tag_en:'NHI rules' },
   ];
   DN.LANG_KEY = { 'zh': 'zh', 'en': 'en' };
 
@@ -727,7 +728,8 @@
     '生物製劑':       ['biologics-overview'],
     '酸類 / A 酸':    ['topical-acids-patient', 'skin-whitening-agents', 'isotretinoin-patient'],
     '常見問題 FAQ':   ['dermatology-faq'],
-    '粉瘤 / 表皮囊腫': ['epidermoid-cyst']
+    '粉瘤 / 表皮囊腫': ['epidermoid-cyst'],
+    '健保 / 自費':    ['nhi-derm-drugs', 'biologics-overview', 'isotretinoin-patient']
   };
 
   DN.bindArticleHub = function () {

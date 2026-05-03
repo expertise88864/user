@@ -6,7 +6,15 @@
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>陳翊嘉醫師（中國醫藥大學附設醫院 皮膚科）整理的皮膚科衛教文章 — 民眾最常見的皮膚科誤解、市面上產品、常見皮膚疾病。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 05 May 2026 21:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2026 09:00:00 +0800</lastBuildDate>
+
+    <item>
+      <title>皮膚科常用藥物健保規範完整整理</title>
+      <link>https://chendermatologist.com/blog/nhi-derm-drugs</link>
+      <guid>https://chendermatologist.com/blog/nhi-derm-drugs</guid>
+      <pubDate>Wed, 06 May 2026 09:00:00 +0800</pubDate>
+      <description>口服 A 酸、Dupilumab、Adalimumab、Omalizumab、JAK 抑制劑、IL-17/23 生物製劑等健保給付條件、劑量、療程、PASS 事前審查完整整理。</description>
+    </item>
 
     <item>
       <title>粉瘤完整衛教 — 為什麼不能自己擠? 何時該手術?</title>
