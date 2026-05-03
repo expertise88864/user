@@ -6,7 +6,15 @@
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>陳翊嘉醫師（中國醫藥大學附設醫院 皮膚科）整理的皮膚科衛教文章 — 民眾最常見的皮膚科誤解、市面上產品、常見皮膚疾病。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 05 May 2026 09:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2026 14:00:00 +0800</lastBuildDate>
+
+    <item>
+      <title>皮膚科 25 個最常見問題 — 為什麼 A 酸晚上擦? 類固醇能擦多久?</title>
+      <link>https://chendermatologist.com/blog/dermatology-faq</link>
+      <guid>https://chendermatologist.com/blog/dermatology-faq</guid>
+      <pubDate>Tue, 05 May 2026 14:00:00 +0800</pubDate>
+      <description>整理民眾搜尋量最高的 25 個皮膚科常見問題,分藥物使用、保養品搭配、痘痘 / 痘疤、雷射 / 醫美、孕婦 / 哺乳 5 大類。每題附簡明解答 + 延伸閱讀文章連結。</description>
+    </item>
 
     <item>
       <title>美白成分完整解析 — 8 大成分機轉、濃度、安全使用</title>
