@@ -67,9 +67,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   .myth-card{ background:#fff; border:1px solid var(--border); border-radius:14px; padding:18px 22px; margin:18px 0; box-shadow:0 8px 18px -10px rgba(12,81,89,.18); transition:transform .15s, box-shadow .2s; }
   .myth-card:hover{ transform:translateY(-2px); box-shadow:0 14px 26px -12px rgba(12,81,89,.25); }
   .myth-card .myth{ color:#991b1b; font-weight:700; font-size:15.5px; padding-left:28px; position:relative; line-height:1.6; }
-  .myth-card .myth::before{ content:'❌'; position:absolute; left:0; top:0; }
+  .myth-card .myth::before{ content:''; position:absolute; left:0; top:4px; width:3px; height:18px; background:#dc2626; border-radius:2px; }
   .myth-card .truth{ color:#065f46; font-weight:700; font-size:15.5px; padding-left:28px; position:relative; line-height:1.6; margin-top:10px; padding-top:10px; border-top:1px dashed var(--line); }
-  .myth-card .truth::before{ content:'✅'; position:absolute; left:0; top:10px; }
+  .myth-card .truth::before{ content:''; position:absolute; left:0; top:14px; width:3px; height:18px; background:#16a34a; border-radius:2px; }
   table.dn{ width:100%; border-collapse:collapse; margin:18px 0; font-size:14px; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 1px 2px rgba(15,23,42,.04), 0 8px 18px -10px rgba(12,81,89,.18); }
   table.dn th, table.dn td{ padding:10px 12px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
   table.dn th{ background:#ecfeff; color:var(--teal-deep); font-weight:700; font-size:13px; }

@@ -6,7 +6,23 @@
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>陳翊嘉醫師（中國醫藥大學附設醫院 皮膚科）整理的皮膚科衛教文章 — 民眾最常見的皮膚科誤解、市面上產品、常見皮膚疾病。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 04 May 2026 18:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2026 22:00:00 +0800</lastBuildDate>
+
+    <item>
+      <title>蠕形蟎蟲(Demodex)與玫瑰斑(酒糟)— TDA 2022 共識完整衛教</title>
+      <link>https://chendermatologist.com/blog/demodex-rosacea</link>
+      <guid>https://chendermatologist.com/blog/demodex-rosacea</guid>
+      <pubDate>Mon, 04 May 2026 22:00:00 +0800</pubDate>
+      <description>蠕形蟎蟲是玫瑰斑的關鍵誘發因子。Ivermectin 舒立美、Permethrin、口服 Ivermectin 完整介紹,依 TDA 2022 玫瑰斑治療共識整理。</description>
+    </item>
+
+    <item>
+      <title>圓禿（鬼剃頭）完整衛教 — 自體免疫、JAK 抑制劑、SALT 分級</title>
+      <link>https://chendermatologist.com/blog/alopecia-areata</link>
+      <guid>https://chendermatologist.com/blog/alopecia-areata</guid>
+      <pubDate>Mon, 04 May 2026 20:00:00 +0800</pubDate>
+      <description>圓禿（Alopecia areata，俗稱鬼剃頭）是自體免疫疾病。輕度可用病灶內類固醇注射、外用類固醇、Minoxidil；重度可用口服類固醇、JAK 抑制劑(Baricitinib、Ritlecitinib)。本文依據臺灣皮膚科醫學會 2024 共識整理。</description>
+    </item>
 
     <item>
       <title>痘疤完整治療指引 — 4 種凹疤、紅疤、黑疤、肥厚疤</title>

@@ -293,7 +293,9 @@
     { slug:'shingles-myths',      title:'帶狀皰疹 6 大迷思', cat:'myth', tag:'皮蛇', date:'2026-05-04', emoji:'⚡', tag_en:'Shingles' },
     { slug:'topical-acids-patient', title:'外用酸類完整衛教', cat:'product', tag:'酸類', date:'2026-05-02', emoji:'🧴', tag_en:'Topical acids' },
     { slug:'isotretinoin-patient',  title:'口服 A 酸完整衛教', cat:'rx', tag:'口服 A 酸', date:'2026-05-02', emoji:'💊', tag_en:'Isotretinoin' },
-    { slug:'acne-scar-treatment',   title:'痘疤完整治療指引', cat:'rx', tag:'痘疤', date:'2026-05-04', emoji:'🎯', tag_en:'Acne scars' }
+    { slug:'acne-scar-treatment',   title:'痘疤完整治療指引', cat:'rx', tag:'痘疤', date:'2026-05-04', emoji:'🎯', tag_en:'Acne scars' },
+    { slug:'alopecia-areata',     title:'圓禿（鬼剃頭）完整衛教', cat:'rx', tag:'圓禿', date:'2026-05-04', emoji:'💇', tag_en:'Alopecia areata' },
+    { slug:'demodex-rosacea',     title:'蠕形蟎蟲與玫瑰斑(酒糟)', cat:'rx', tag:'玫瑰斑', date:'2026-05-04', emoji:'🌹', tag_en:'Demodex rosacea' }
   ];
 
   DN.currentSlug = function () {

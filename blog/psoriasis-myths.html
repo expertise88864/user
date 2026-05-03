@@ -68,9 +68,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   .myth-card{ background:#fff; border:1px solid var(--border); border-radius:14px; padding:18px 22px; margin:18px 0; box-shadow:0 8px 18px -10px rgba(12,81,89,.18); transition:transform .15s, box-shadow .2s; }
   .myth-card:hover{ transform:translateY(-2px); box-shadow:0 14px 26px -12px rgba(12,81,89,.25); }
   .myth-card .myth{ color:#991b1b; font-weight:700; font-size:15.5px; padding-left:28px; position:relative; line-height:1.6; }
-  .myth-card .myth::before{ content:'❌'; position:absolute; left:0; top:0; }
+  .myth-card .myth::before{ content:''; position:absolute; left:0; top:4px; width:3px; height:18px; background:#dc2626; border-radius:2px; }
   .myth-card .truth{ color:#065f46; font-weight:700; font-size:15.5px; padding-left:28px; position:relative; line-height:1.6; margin-top:10px; padding-top:10px; border-top:1px dashed var(--line); }
-  .myth-card .truth::before{ content:'✅'; position:absolute; left:0; top:10px; }
+  .myth-card .truth::before{ content:''; position:absolute; left:0; top:14px; width:3px; height:18px; background:#16a34a; border-radius:2px; }
   table.dn{ width:100%; border-collapse:collapse; margin:18px 0; font-size:14px; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 1px 2px rgba(15,23,42,.04), 0 8px 18px -10px rgba(12,81,89,.18); }
   table.dn th, table.dn td{ padding:10px 12px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
   table.dn th{ background:#ecfeff; color:var(--teal-deep); font-weight:700; font-size:13px; }
@@ -411,6 +411,26 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 <p><strong>絕對不會傳染</strong>。但有家族傾向：單親有乾癬子女風險 10-15%，雙親都有 40-50%。共用毛巾、抱抱、共桌吃飯不會傳染。</p>
 <h3 id="lt5">乾癬可以曬太陽嗎？飲食要避什麼？</h3>
 <p><strong>適度日曬有助病灶</strong>（這就是 NBUVB 光療的原理）。但要避免曬到曬傷。飲食<strong>戒菸戒酒</strong>有實證有助，沒有「絕對禁區」。<strong>地中海飲食</strong>（蔬果橄欖油魚）有觀察性證據改善。減重 5-10% 可顯著改善。</p>
+
+<h2 id="tda">臺灣皮膚科醫學會 2024 乾癬治療共識重點</h2>
+<p>TDA 2024 尋常型乾癬治療共識整理重點：</p>
+<ul>
+<li><strong>嚴重度定義</strong>:輕度 = <strong>BSA &lt; 10% + PASI &lt; 10 + DLQI &lt; 10</strong>。三項任一超標即視為中重度。</li>
+<li><strong>「特殊區域型」例外</strong>:即使 BSA 不大,病灶若在<strong>臉部、手掌、腳底、生殖器、頭皮、指甲</strong>,均視同中重度,可申請積極治療。</li>
+<li><strong>最佳治療目標</strong>:現代乾癬治療目標已提高到<strong>△PASI ≥ 75</strong>(病灶減少 75% 以上)維持原方案;△PASI 50-75 + DLQI &gt; 5 應調整;&lt;50 必須調整。最終目標 PASI 100(完全清除)。</li>
+<li><strong>外用藥物優先順序</strong>(輕度乾癬):
+  <ul>
+    <li>第一線：<strong>Calcipotriol(維生素 D 衍生物)+ 外用類固醇</strong>。台灣健保已有 <strong>Calcipotriol/Betamethasone 合一藥膏(Daivobet 得膚寧)</strong>,軟膏 / 凝膠 / 泡沫液三種劑型。</li>
+    <li>泡沫液生物可利用性最高,軟膏對厚塊療效最好。</li>
+    <li>水楊酸、煤焦油(coal tar)為輔助 / 緩和性治療。</li>
+  </ul>
+</li>
+<li><strong>指甲乾癬</strong>:採用<strong>mNAPSI(改良版指甲乾癬嚴重程度指數)</strong>評估,觀察 6 項指甲特徵 — 點狀凹陷、白甲、紅色斑點(月牙)、甲床剝離、甲下線狀出血、粉碎狀指甲、甲床增厚角質化。</li>
+<li><strong>口服小分子</strong>:<strong>Apremilast(Otezla 喜樂寶)</strong>列為第一線口服小分子;<strong>Deucravacitinib(Sotyktu)</strong>是新一代 TYK2 抑制劑。</li>
+<li><strong>生物製劑</strong>:在 phototherapy 失敗或不確定能否達到目標時,<strong>可直接從生物製劑或小分子起始</strong>(不再強制傳統口服失敗才能用)。</li>
+<li><strong>治療外的健康管理</strong>:減重、戒菸、限制飲酒、運動 — TDA 2024 強調「<strong>熱量限制和運動</strong>」與藥物併行。</li>
+</ul>
+
 <h2 id="end">結語</h2>
 <p>乾癬不是癬、不會傳染、不只是皮膚問題，但它<strong>是可以高度控制的</strong>。從 1990 年代只有外用藥膏 + 光療，到現在<strong>IL-17 / IL-23 抑制劑可以做到 PASI 100（病灶幾乎完全清除）</strong>，治療的天花板已經完全不一樣。<strong>不要拖，不要怕生物製劑</strong> — 找專科醫師討論最適合你的治療策略。</p>
 
@@ -422,6 +442,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 <li>Armstrong AW, Read C. Pathophysiology, clinical presentation, and treatment of psoriasis: a review. <em>JAMA</em>. 2020;323(19):1945-1960. <a href="https://pubmed.ncbi.nlm.nih.gov/32427307/" target="_blank" rel="noopener">[來源]</a></li>
 <li>UpToDate: Psoriasis: Treatment. Accessed 2026. <a href="https://www.uptodate.com/contents/psoriasis-treatment" target="_blank" rel="noopener">[來源]</a></li>
 <li>台灣乾癬協會 — 治療資源與健保給付資訊 <a href="https://www.psoriasis.org.tw/" target="_blank" rel="noopener">[來源]</a></li>
+<li>臺灣皮膚科醫學會. <em>尋常型乾癬治療共識手冊（2024 年版）</em>.</li>
 </ol>
 
 </div>

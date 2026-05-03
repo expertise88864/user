@@ -68,9 +68,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   .prose a{ color:var(--teal-deep); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
   .myth-card{ background:#fff; border:1px solid var(--border); border-radius:14px; padding:18px 22px; margin:18px 0; box-shadow:0 8px 18px -10px rgba(12,81,89,.18); }
   .myth-card .myth{ color:#991b1b; font-weight:700; font-size:15.5px; padding-left:28px; position:relative; line-height:1.6; }
-  .myth-card .myth::before{ content:'❌'; position:absolute; left:0; top:0; }
+  .myth-card .myth::before{ content:''; position:absolute; left:0; top:4px; width:3px; height:18px; background:#dc2626; border-radius:2px; }
   .myth-card .truth{ color:#065f46; font-weight:700; font-size:15.5px; padding-left:28px; position:relative; line-height:1.6; margin-top:10px; padding-top:10px; border-top:1px dashed var(--line); }
-  .myth-card .truth::before{ content:'✅'; position:absolute; left:0; top:10px; }
+  .myth-card .truth::before{ content:''; position:absolute; left:0; top:14px; width:3px; height:18px; background:#16a34a; border-radius:2px; }
   .toc{ background:#fff; border:1px solid var(--border); border-radius:14px; padding:14px 18px; margin:14px 0 24px; }
   .toc h4{ font-size:13px; color:var(--teal-deep); letter-spacing:.1em; margin:0 0 8px; font-weight:700; text-transform:uppercase; }
   .toc ol{ margin:0; padding:0 0 0 18px; font-size:13.5px; color:var(--ink-2); }
@@ -164,16 +164,16 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
 <section class="pt-12 sm:pt-14 pb-6">
   <div class="max-w-3xl mx-auto px-5 sm:px-8">
-    <div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold mb-3">衛教 · 迷思澄清</div>
-    <h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">
+    <div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold mb-3" data-zh="衛教 · 迷思澄清" data-en="Patient Education · Myth-busting">衛教 · 迷思澄清</div>
+    <h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]" data-zh="防曬 8 大迷思<br/><span class='teal-text'>室內、陰天、SPF、物理化學一次釐清</span>" data-en="8 Sunscreen Myths<br/><span class='teal-text'>Indoors, cloudy days, SPF, physical vs chemical — sorted</span>">
       防曬 8 大迷思<br/>
       <span class="teal-text">室內、陰天、SPF、物理化學一次釐清</span>
     </h1>
-    <p class="mt-6 text-[15.5px] text-ink-700 leading-[1.9]">
+    <p class="mt-6 text-[15.5px] text-ink-700 leading-[1.9]" data-zh="防曬是抗老 / 抗斑 / 抗皮膚癌效果最強、CP 值最高的保養 — 但門診每天都會聽到這些說法：「室內不用擦」、「陰天不用」、「SPF 越高越好」、「物理一定贏化學」⋯⋯ 哪些對哪些錯？本文一次整理。" data-en="Sunscreen is the single highest-yield skincare habit — for anti-aging, anti-pigmentation, and skin-cancer prevention. But every week in clinic we hear: &quot;don't need it indoors&quot;, &quot;skip it on cloudy days&quot;, &quot;higher SPF is always better&quot;, &quot;physical beats chemical&quot;… Let's sort fact from fiction.">
       防曬是抗老 / 抗斑 / 抗皮膚癌效果最強、CP 值最高的保養 — 但門診每天都會聽到這些說法：「室內不用擦」、「陰天不用」、「SPF 越高越好」、「物理一定贏化學」⋯⋯ 哪些對哪些錯？本文一次整理。
     </p>
-    <div class="disclaimer">
-      <strong>提醒 · </strong>本文僅供衛教參考。光敏感體質、長期戶外工作、有皮膚癌病史者，請至皮膚科個別評估。
+    <div class="disclaimer" data-zh="<strong>提醒 ·</strong> 本文僅供衛教參考。光敏感體質、長期戶外工作、有皮膚癌病史者，請至皮膚科個別評估。" data-en="<strong>Reminder ·</strong> This article is general education only. If you're photosensitive, work outdoors long-term, or have a skin-cancer history, please see a dermatologist for individualized advice.">
+      <strong>提醒 ·</strong> 本文僅供衛教參考。光敏感體質、長期戶外工作、有皮膚癌病史者，請至皮膚科個別評估。
     </div>
   </div>
 </section>
@@ -355,6 +355,120 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 <li>Lim HW, et al. Adverse effects of ultraviolet radiation. <em>J Am Acad Dermatol</em>. 2017;76(5):866-875. <a href="https://pubmed.ncbi.nlm.nih.gov/28038884/" target="_blank" rel="noopener">[來源]</a></li>
 <li>Castanedo-Cazares JP, et al. Iron oxide-containing sunscreens for melasma. <em>Photodermatol Photoimmunol Photomed</em>. 2014;30(1):35-42. <a href="https://pubmed.ncbi.nlm.nih.gov/24313929/" target="_blank" rel="noopener">[來源]</a></li>
 <li>UpToDate: Selection of sunscreen and sun-protective measures. <a href="https://www.uptodate.com/contents/selection-of-sunscreen-and-sun-protective-measures" target="_blank" rel="noopener">[來源]</a></li>
+</ol>
+
+</div>
+
+<div id="proseEn" class="prose" style="display:none">
+
+<h2 id="m1-en">Myth 1: No need for sunscreen indoors</h2>
+<div class="myth-card">
+  <div class="myth">"I'm sitting in the office all day — I don't need sunscreen."</div>
+  <div class="truth">UVA penetrates glass. Indoor windows, desks by windows, and car commutes still expose you to ~50% of outdoor UVA dose.</div>
+</div>
+<p>UVB is largely blocked by glass, but <strong>UVA passes through window glass freely</strong>. Long-term, this contributes to photoaging (wrinkles, sagging, pigmentation) and worsening of melasma. Visible light and blue light from screens also drive pigmentation in darker skin types and melasma sufferers — these aren't blocked by ordinary sunscreens unless they contain <strong>iron oxide</strong>.</p>
+<p>Practical rule: if you sit near a window or commute by car/scooter for any meaningful time, daily SPF 30+ broad-spectrum is worth it. Tinted sunscreens with iron oxide add visible-light protection.</p>
+
+<h2 id="m2-en">Myth 2: Cloudy or rainy days = skip sunscreen</h2>
+<div class="myth-card">
+  <div class="myth">"It's not sunny today, why bother?"</div>
+  <div class="truth">Up to <strong>80% of UVA penetrates clouds</strong>. Cloudy ≠ UV-free.</div>
+</div>
+<p>Clouds block some UVB (so you're less likely to feel a sunburn), but UVA is barely affected. If you only protect when "the sun is bright and hot," you're missing half the cumulative damage. Over years this shows up as photoaging, melasma flares, and deeper pigment marks.</p>
+
+<h2 id="m3-en">Myth 3: Higher SPF is always better</h2>
+<div class="myth-card">
+  <div class="myth">"SPF 100 must be twice as effective as SPF 50."</div>
+  <div class="truth">SPF 30 already blocks ~97% of UVB; SPF 50 ~98%; SPF 100 ~99%. Marginal benefit is tiny.</div>
+</div>
+<p>SPF measures UVB protection only — UVA protection comes from PA / PPD or "broad spectrum" labeling. The difference between SPF 30 and SPF 100 is just 2-3 percentage points, but <strong>application habits matter far more than the SPF number</strong>. Most people apply only ~⅓ of the lab-tested thickness, so your SPF 50 effectively performs at ~SPF 17 on your face.</p>
+<p><strong>The key isn't the SPF number — it's "apply enough + reapply regularly."</strong> Daily face: SPF 30+ broad-spectrum, about a 5-NTD-coin's worth.</p>
+
+<h2 id="m4-en">Myth 4: Physical sunscreens are always safer than chemical ones</h2>
+<div class="myth-card">
+  <div class="myth">"Chemical sunscreens are toxic and absorbed into the body — only physical is safe."</div>
+  <div class="truth">Both have pros and cons. Dermatologists use both. Neither is "toxic."</div>
+</div>
+<ul>
+  <li><strong>Physical (inorganic)</strong>: zinc oxide, titanium dioxide. Stable, low-allergenic, pregnancy-safe. Cons: thicker texture, may leave a white cast (more obvious on Asian skin tones), can feel heavy on oily skin.</li>
+  <li><strong>Chemical (organic)</strong>: avobenzone, Tinosorb, Mexoryl, etc. Lighter texture, transparent, broad-spectrum. A few legacy ingredients (oxybenzone, octinoxate) are <strong>coral-reef-unfriendly</strong> and banned in Hawaii and some Pacific nations, but newer chemical filters (Tinosorb S/M, Mexoryl SX/XL, Uvinul A Plus) are very safe and stable.</li>
+</ul>
+<p>The "chemical sunscreens are absorbed into the body" panic stemmed from a 2019 FDA pharmacokinetic study showing measurable blood levels after heavy use; the study did <strong>not</strong> show any health harm. The FDA continues to consider chemical sunscreens safe and effective for general use.</p>
+
+<h2 id="m5-en">Myth 5: One application in the morning lasts all day</h2>
+<div class="myth-card">
+  <div class="myth">"I put sunscreen on at 7 AM, I'm covered until evening."</div>
+  <div class="truth">Sweat, oil, mask friction, and touching your face all degrade sunscreen. Reapplication is required.</div>
+</div>
+<p>Studies show that 2-4 hours after application, on-skin SPF drops by <strong>50% or more</strong>. For people outdoors or near windows in the afternoon:</p>
+<ul>
+  <li>Use <strong>spray, stick, or powder sunscreen</strong> for top-ups without disrupting makeup</li>
+  <li>Reapply every 2-3 hours</li>
+  <li>Reapply immediately after swimming or heavy sweating</li>
+</ul>
+<p>If you're truly indoors all day at a desk, you don't need to top up every few hours — but a midday or pre-evening reapply before going outside helps.</p>
+
+<h2 id="m6-en">Myth 6: Sunscreen always clogs pores and causes acne</h2>
+<div class="myth-card">
+  <div class="myth">"Every time I wear sunscreen I break out — sunscreen causes acne."</div>
+  <div class="truth">Old-formula heavy sunscreens did. Modern <strong>oil-free, non-comedogenic</strong> formulas don't.</div>
+</div>
+<p>Many sunscreens are now formulated as <strong>oil-free</strong>, <strong>non-comedogenic</strong>, or <strong>acne-prone-skin specific</strong> with silicone or water-based bases. These have very low pore-clogging risk. If you break out:</p>
+<ul>
+  <li>Switch to a <strong>gel or fluid texture</strong> (avoid heavy creams)</li>
+  <li>Pick formulas with <strong>niacinamide or azelaic acid</strong></li>
+  <li>Check whether the actual culprit is your <strong>foundation, setting powder, or BB cream</strong> being mistakenly blamed on sunscreen</li>
+  <li>Cleanse off sunscreen at night</li>
+</ul>
+
+<h2 id="m7-en">Myth 7: Darker skin doesn't burn or get skin cancer</h2>
+<div class="myth-card">
+  <div class="myth">"My skin is already dark — UV won't affect me."</div>
+  <div class="truth">Darker skin has more melanin protection, but <strong>still burns, still develops skin cancer, and still develops worsened melasma and post-inflammatory pigmentation</strong>.</div>
+</div>
+<p>Per the American Academy of Dermatology:</p>
+<ul>
+  <li>Skin cancer (especially melanoma) in darker skin is often diagnosed at <strong>later stages with worse outcomes</strong>, because patients assume they're not at risk and skip sunscreen and skin checks.</li>
+  <li>Conditions that bother darker skin most — <strong>melasma, post-inflammatory hyperpigmentation, acne marks</strong> — are aggravated by sun exposure. Skipping sunscreen makes lightening creams essentially useless.</li>
+</ul>
+<p>Bottom line: regardless of skin tone, daily sunscreen matters. Darker skin types especially benefit from <strong>iron-oxide-containing sunscreens</strong>, which block visible light and are particularly helpful for melasma.</p>
+
+<h2 id="m8-en">Myth 8: One sunscreen for the whole body</h2>
+<div class="myth-card">
+  <div class="myth">"One bottle for face and body — saves time and money."</div>
+  <div class="truth">Generally fine for adults, but face, body, lips, eye area, and infants ideally use different formulas.</div>
+</div>
+<ul>
+  <li><strong>Body sunscreen</strong>: thicker texture, large volume, lower price point — apply liberally.</li>
+  <li><strong>Face sunscreen</strong>: lightweight, non-greasy, non-comedogenic; often contains niacinamide or antioxidants.</li>
+  <li><strong>Lips</strong>: SPF lip balm (fragrance-free, mint-free); lip skin is thin and vulnerable to photoaging and lip cancer.</li>
+  <li><strong>Eye area</strong>: low-irritation physical sunscreen sticks are best — chemical sunscreens running into the eyes burns.</li>
+  <li><strong>Infants under 6 months</strong>: avoid sunscreen — use clothing, hats, and shade. 6+ months: pick infant-specific, pure physical, fragrance-free.</li>
+</ul>
+
+<h2 id="end-en">Bottom line — one sentence</h2>
+<p><strong>Apply daily, apply enough, reapply regularly, SPF 30+ broad-spectrum.</strong> Picking one you'll actually use consistently (comfortable texture + within budget) matters 100× more than chasing the highest SPF.</p>
+
+<blockquote style="margin:22px 0; padding:16px 20px; background:var(--mint-soft); border-left:3px solid var(--teal); border-radius:0 12px 12px 0; color:var(--ink); font-family:inherit;"><p style="margin:0"><strong>Further reading:</strong> dealing with pigmentation? See <a href="/blog/topical-acids-patient">Topical Acids Complete Guide</a> for how azelaic acid and AHA can fade dark spots. Adult acne? See <a href="/blog/acne-myths">9 Acne Myths</a> and <a href="/blog/isotretinoin-patient">Oral Isotretinoin Complete Guide</a>.</p></blockquote>
+
+<h2 id="longtail-en">Frequently asked (PTT / Dcard style)</h2>
+<h3>How to pick a sunscreen brand?</h3>
+<p>Popular picks: <strong>Anessa</strong>, <strong>La Roche-Posay Anthelios</strong>, <strong>Elixir</strong>, <strong>Heliocare 360</strong>, <strong>Albion</strong>, <strong>Neutrogena Ultra Sheer</strong>. The brand isn't the point — what matters: ① broad spectrum (SPF 30+ PA+++), ② contains iron oxide if you have melasma, ③ a texture you'll actually reapply. Quality picks exist at every price point from NT$ 400 to NT$ 2000.</p>
+<h3>Big difference between SPF 50 and SPF 30?</h3>
+<p><strong>SPF 30 blocks 97% of UVB; SPF 50 blocks 98%</strong> — a 1% gap. Real-world thickness (need 2 mg/cm²) matters more — most people apply only ⅓ of the test amount, making SPF 50 perform like SPF 17. Pick a SPF 30+ that you'll reapply rather than chasing SPF 50+ you skip.</p>
+<h3>Physical vs chemical sunscreens — which is better?</h3>
+<p><strong>No outright winner.</strong> Physical (zinc oxide, titanium dioxide) is stable, suitable for sensitive skin, safer in pregnancy, but classic formulas leave a white cast. Chemical (octinoxate, avobenzone, octisalate, Tinosorb) has lighter textures but some legacy ingredients (oxybenzone, octinoxate) raise environmental concerns, and rare individuals get contact allergy. Newer hybrid formulas (Tinosorb S/M, Mexoryl) offer the best of both.</p>
+<h3>Do I need makeup remover for sunscreen?</h3>
+<p>Pure chemical sunscreens usually wash off with a gentle cleanser. Physical, iron-oxide-containing, water-resistant, or tinted formulas benefit from <strong>cleansing oil or balm</strong>. Rule of thumb: if your skin still feels coated or "sticky" after washing with face wash, use makeup remover.</p>
+<h3>Sunscreen for kids and pregnant women?</h3>
+<p>Under 6 months: avoid sunscreen — rely on shade, clothing, hats. Over 6 months and pregnancy: <strong>pure physical sunscreens</strong> (zinc oxide, titanium dioxide) are first choice; avoid oxybenzone and octinoxate (endocrine-disruption concerns). Pregnancy-related melasma flares — wear iron-oxide tinted sunscreen even indoors.</p>
+
+<h2 id="refs-en">References</h2>
+<ol class="references">
+  <li>Schalka S, Steiner D. Brazilian consensus on photoprotection. <em>An Bras Dermatol</em>. 2014;89(6 Suppl 1):1-74. <a href="https://pubmed.ncbi.nlm.nih.gov/25761256/" target="_blank" rel="noopener">[Source]</a></li>
+  <li>Lim HW, et al. Adverse effects of ultraviolet radiation. <em>J Am Acad Dermatol</em>. 2017;76(5):866-875. <a href="https://pubmed.ncbi.nlm.nih.gov/28038884/" target="_blank" rel="noopener">[Source]</a></li>
+  <li>Castanedo-Cazares JP, et al. Iron oxide-containing sunscreens for melasma. <em>Photodermatol Photoimmunol Photomed</em>. 2014;30(1):35-42. <a href="https://pubmed.ncbi.nlm.nih.gov/24313929/" target="_blank" rel="noopener">[Source]</a></li>
+  <li>UpToDate: Selection of sunscreen and sun-protective measures. <a href="https://www.uptodate.com/contents/selection-of-sunscreen-and-sun-protective-measures" target="_blank" rel="noopener">[Source]</a></li>
 </ol>
 
 </div>
