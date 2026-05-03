@@ -801,7 +801,7 @@
         var m = href.match(/\/blog\/([a-z0-9-]+)/);
         var slug = m ? m[1] : '';
         var match = slugs === null ? true : slugs.indexOf(slug) !== -1;
-        allCards[i].style.display = match ? '' : 'none';
+        allCards[i].style.display = match ? 'flex' : 'none';
         if (match) shown++;
       }
       return shown;

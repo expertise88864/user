@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>ChenDermatologist · 皮膚科常見衛教及學習筆記網站 | 陳翊嘉 醫師 · 中國醫藥大學附設醫院 皮膚科</title>
-<meta name="description" content="ChenDermatologist 是陳翊嘉醫師（中國醫藥大學附設醫院 皮膚科）的皮膚科衛教與學習筆記網站。提供市面上常見皮膚科產品介紹、常見皮膚疾病的白話衛教、以及民眾最常見的皮膚科誤解整理 — 痘痘、防曬、異位性皮膚炎、肝斑、外用酸類、口服 A 酸、類固醇藥膏、保養品成分、痘疤治療、玫瑰痤瘡、乾癬等。每篇文章用最白話的方式說清楚 — 看完就能帶著問題走進診間。" />
+<title>陳翊嘉醫師 · 皮膚科 · ChenDermatologist</title>
+<meta name="description" content="陳翊嘉醫師（中國醫藥大學附設醫院 皮膚科）皮膚科常見疾病衛教 — 痘痘、防曬、異位性皮膚炎、肝斑、玫瑰斑、落髮、圓禿、白斑、化膿性汗腺炎、生物製劑、A 酸、類固醇等完整解析。點擊疾病標籤快速查找,看完就能帶著問題走進診間。" />
 <meta name="theme-color" content="#0e7c86" />
 <meta name="keywords" content="ChenDermatologist,陳翊嘉醫師,中國醫藥大學附設醫院 皮膚科,皮膚科衛教,痘痘治療,防曬迷思,異位性皮膚炎,肝斑,玫瑰痤瘡,蕁麻疹,乾癬,圓禿,病毒疣,帶狀皰疹,口服 A 酸,外用酸類,皮膚科推薦,台中皮膚科,中國醫附醫皮膚科" />
 <meta name="author" content="陳翊嘉 醫師 · ChenDermatologist" />
@@ -268,6 +268,12 @@
   .article-list-item .al-icon{ display:none; }
   .article-list-item{ padding-left:18px; }
   .article-list-item::before{ content:''; display:block; width:3px; height:30px; background:linear-gradient(180deg,#14b8a6,#0c5159); border-radius:9999px; margin-right:14px; flex-shrink:0; align-self:center; }
+
+  /* Homepage: pre-hide article 7+ to keep clean, JS will manage filter */
+  #dn-article-list > .article-list-item:nth-child(n+7){ display:none; }
+  #dn-article-list.dn-show-all > .article-list-item{ display:flex !important; }
+  .dn-show-more-link{ display:block; text-align:center; margin:14px auto; padding:10px 18px; background:#fff; border:1px solid var(--border); border-radius:10px; font-size:13.5px; font-weight:700; color:var(--teal-deep); cursor:pointer; transition:all .15s; max-width:280px; }
+  .dn-show-more-link:hover{ border-color:rgba(14,124,134,.5); background:var(--mint-soft); transform:translateY(-1px); }
 </style>
 
 <script type="application/ld+json">
@@ -401,13 +407,13 @@
       <span data-zh="陳翊嘉醫師 · 中國醫藥大學附設醫院 皮膚科" data-en="Dr. Chen Yi-Jia · CMUH Dermatology">陳翊嘉醫師 · 中國醫藥大學附設醫院 皮膚科</span>
     </div>
     <h1 class="font-display font-bold leading-[1.12] text-[36px] sm:text-[56px]">
-      <span class="teal-text" data-zh="皮膚科" data-en="Dermatology">皮膚科</span><span data-zh=" 常見衛教" data-en=""> 常見衛教</span><br/>
-      <span data-zh="與學習筆記" data-en="Patient Education &amp; Notes">與學習筆記</span>
+      <span class="teal-text" data-zh="皮膚科" data-en="Common">皮膚科</span><span data-zh="常見疾病" data-en=""> </span><br/>
+      <span data-zh="" data-en="Skin Conditions">常見疾病</span>
     </h1>
     <p class="mt-6 text-[14.5px] sm:text-[16.5px] text-ink-700 leading-[1.95]"
-       data-zh="民眾最常見的皮膚科誤解、常見疾病、市面上產品成分介紹 — 看完就能帶著問題走進診間。"
-       data-en="The public's most frequent misconceptions, common conditions, and OTC product breakdowns — so you walk into clinic with the right questions.">
-      民眾最常見的皮膚科誤解、常見疾病、市面上產品成分介紹 — 看完就能帶著問題走進診間。
+       data-zh="民眾最常見的皮膚科疾病、誤解、用藥與保養 — 點擊下方標籤或搜尋,快速找到你關心的主題。"
+       data-en="The most common dermatologic conditions, misconceptions, drugs, and skincare. Use the search or tag chips below to jump to what you care about.">
+      民眾最常見的皮膚科疾病、誤解、用藥與保養 — 點擊下方標籤或搜尋,快速找到你關心的主題。
     </p>
     <div class="mt-7 flex flex-wrap gap-3 justify-center">
       <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="btn btn-teal" data-zh="預約看診" data-en="Book appointment">預約看診</a>
@@ -415,6 +421,17 @@
       <a href="/about" class="btn btn-ghost" data-zh="關於我" data-en="About">關於我</a>
     </div>
   </div>
+</section>
+
+<!-- ============= QUICK-FIND HUB (search + tag chips, prominent above-the-fold) ============= -->
+<section class="max-w-3xl mx-auto px-5 sm:px-8 mt-6">
+  <section id="dn-hub" data-hub-mode="homepage" data-show-count="6">
+    <!-- Inline fallback so users see chips even before JS loads -->
+    <div style="background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px 18px 14px;box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(12,81,89,.18)">
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;font-weight:700;color:#0c5159;margin:0 0 10px">🔍 快速查找皮膚科主題</div>
+      <div style="margin:0 0 10px;font-size:13.5px;color:var(--muted)">載入中⋯ 請稍候 1-2 秒</div>
+    </div>
+  </section>
 </section>
 
 <!-- (Reading-stats section removed per user request — homepage focuses on articles + booking) -->
@@ -430,9 +447,7 @@
         data-zh="診間講不完的話，寫在這裡"
         data-en="What clinic doesn't have time to explain.">診間講不完的話，寫在這裡</h2>
 
-    <section id="dn-hub" data-hub-mode="homepage" data-show-count="6" class="mt-6"></section>
-
-    <div class="article-list mt-4">
+    <div class="article-list mt-4" id="dn-article-list">
 
       <a href="/blog/acne-myths" class="article-list-item">
         <div class="al-icon cat-myth"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><ellipse cx="20" cy="22" rx="11" ry="13" fill="#fff" stroke="#92400e" stroke-width="1.6"/><path d="M10 13 Q15 6 20 6 Q26 6 30 13 L30 11 Q25 7 20 7 Q15 7 10 11 Z" fill="#1e293b"/><circle cx="16" cy="20" r="1" fill="#0c5159"/><circle cx="24" cy="20" r="1" fill="#0c5159"/><path d="M17 27 Q20 28 23 27" stroke="#92400e" stroke-width="1.2" stroke-linecap="round" fill="none"/><circle cx="13" cy="24" r="1.7" fill="#dc2626" stroke="#991b1b" stroke-width=".5"/><circle cx="27" cy="25" r="1.9" fill="#dc2626" stroke="#991b1b" stroke-width=".5"/><circle cx="20" cy="30" r="1.4" fill="#dc2626" stroke="#991b1b" stroke-width=".5"/></svg></div>
@@ -868,7 +883,7 @@
     </div>
     <div class="mt-4 text-[11.5px] text-ink-500 flex flex-wrap items-center justify-between gap-2">
       <div data-zh="本站僅作教育參考，不構成醫療建議。任何用藥或就醫決定請以您的主治醫師判斷為準。" data-en="Educational use only — not medical advice. Always consult your physician for treatment decisions.">本站僅作教育參考，不構成醫療建議。任何用藥或就醫決定請以您的主治醫師判斷為準。</div>
-      <div>© <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師 · <span style="font-size:10px;opacity:.5">build 2026-05-03 21:02</span></div>
+      <div>© <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師 · <span style="font-size:10px;opacity:.5">build 2026-05-03 21:11</span></div>
     </div>
   </div>
 </footer>
