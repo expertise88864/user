@@ -17,6 +17,10 @@
   DN.LANGS = [
     { code: 'zh', label: '中文',    htmlLang: 'zh-TW' },
     { code: 'en', label: 'English', htmlLang: 'en'    }
+    { slug:'targeted-therapy-skin', title:'標靶藥物（TKI）皮膚副作用', cat:'rx', tag:'標靶藥物', date:'2026-05-04', emoji:'', tag_en:'Targeted therapy skin' },
+    { slug:'topical-steroids-guide', title:'外用類固醇完整指南', cat:'rx', tag:'外用類固醇', date:'2026-05-04', emoji:'', tag_en:'Topical steroids' },
+    { slug:'biologics-overview', title:'皮膚科生物製劑與小分子標靶藥物總覽', cat:'rx', tag:'生物製劑', date:'2026-05-04', emoji:'', tag_en:'Biologics' },
+    { slug:'skin-whitening-agents', title:'美白成分完整解析', cat:'product', tag:'美白', date:'2026-05-04', emoji:'', tag_en:'Whitening agents' },
   ];
   DN.LANG_KEY = { 'zh': 'zh', 'en': 'en' };
 
@@ -524,6 +528,7 @@
     'mpox-care':                 'TDA 猴痘皮膚照護建議指引',
     'vitiligo':                  'TDA 白斑臨床治療共識(2024)',
     'hidradenitis-suppurativa':  'TDA 化膿性汗腺炎臨床診療共識建議',
+    'targeted-therapy-skin':     'TLCS + TDA TKI 標靶藥物相關皮膚毒性共識（2024）',
   };
   DN.addTDALink = function () {
     const slug = DN.currentSlug();
@@ -696,6 +701,170 @@
     } catch (e) { /* ignore */ }
   };
 
+
+  // -----------------------------------------------------------------------
+  // 文章快速查找 — search + disease tag chips, auto-injected to #dn-hub
+  // -----------------------------------------------------------------------
+  DN.TAG_GROUPS = {
+    '痘痘 / 痘疤':    ['acne-myths', 'acne-scar-treatment', 'isotretinoin-patient', 'topical-acids-patient'],
+    '防曬':           ['sunscreen-myths'],
+    '異膚 / 濕疹':    ['eczema-myths', 'topical-steroids-guide', 'biologics-overview'],
+    '肝斑 / 美白':    ['melasma-myths', 'skin-whitening-agents'],
+    '玫瑰斑 / 酒糟':  ['rosacea-myths', 'demodex-rosacea'],
+    '落髮 / 圓禿':    ['hairloss-myths', 'alopecia-areata'],
+    '蕁麻疹':         ['urticaria-myths'],
+    '乾癬':           ['psoriasis-myths', 'biologics-overview'],
+    '香港腳 / 灰指甲':['tinea-myths'],
+    '病毒疣 / HPV':   ['warts-myths'],
+    '帶狀皰疹 / 皮蛇':['shingles-myths'],
+    '白斑':           ['vitiligo'],
+    '化膿性汗腺炎':   ['hidradenitis-suppurativa'],
+    '猴痘 Mpox':      ['mpox-care'],
+    '標靶藥物副作用': ['targeted-therapy-skin'],
+    '類固醇藥膏':     ['topical-steroids-guide', 'eczema-myths'],
+    '生物製劑':       ['biologics-overview'],
+    '酸類 / A 酸':    ['topical-acids-patient', 'skin-whitening-agents', 'isotretinoin-patient']
+  };
+
+  DN.bindArticleHub = function () {
+    var hub = document.getElementById('dn-hub');
+    if (!hub) return;
+    var articles = DN.ARTICLES || [];
+    var mode = hub.dataset.hubMode || 'full';
+
+    if (!document.getElementById('dn-hub-css')) {
+      var st = document.createElement('style');
+      st.id = 'dn-hub-css';
+      st.textContent =
+        '#dn-hub{ background:#fff; border:1px solid var(--border); border-radius:18px; padding:18px 18px 14px; margin:18px 0 22px; box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(12,81,89,.18); }' +
+        '.dn-hub-title{ font-size:11px; text-transform:uppercase; letter-spacing:.22em; font-weight:700; color:#0c5159; margin:0 0 10px; display:flex; align-items:center; gap:6px; }' +
+        '.dn-search-row{ display:flex; align-items:center; gap:10px; margin:0 0 12px; flex-wrap:wrap; }' +
+        '#dn-search-input{ flex:1; min-width:200px; padding:10px 14px 10px 36px; font-size:14.5px; border:1px solid var(--border); border-radius:10px; outline:none; transition:border-color .15s, box-shadow .15s; background:#fff url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%230c5159%27 stroke-width=%272.2%27 stroke-linecap=%27round%27><circle cx=%2711%27 cy=%2711%27 r=%277%27/><line x1=%2721%27 y1=%2721%27 x2=%2716.5%27 y2=%2716.5%27/></svg>") no-repeat 10px center; background-size:18px; }' +
+        '#dn-search-input:focus{ border-color:rgba(14,124,134,.6); box-shadow:0 0 0 3px rgba(20,184,166,.18); }' +
+        '#dn-search-status{ font-size:11.5px; color:var(--muted); white-space:nowrap; }' +
+        '.dn-tag-chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0; }' +
+        '.dn-tag-chip{ padding:5px 11px; border-radius:9999px; font-size:12px; font-weight:600; color:var(--ink-2); background:#fff; border:1px solid var(--border); cursor:pointer; transition:all .15s; line-height:1.4; }' +
+        '.dn-tag-chip:hover{ border-color:rgba(14,124,134,.45); color:var(--teal-deep); }' +
+        '.dn-tag-chip.active{ background:linear-gradient(180deg,#14b8a6,#0c5159); color:#fff; border-color:transparent; }' +
+        '.dn-tag-chip.dn-tag-all{ background:#ecfeff; color:#0c5159; border-color:#a5f3fc; font-weight:700; }' +
+        '.dn-tag-chip.dn-tag-all.active{ background:linear-gradient(180deg,#14b8a6,#0c5159); color:#fff; border-color:transparent; }' +
+        '.dn-show-more{ display:block; width:100%; text-align:center; margin:14px auto 0; padding:9px 14px; background:#fff; border:1px solid var(--border); border-radius:10px; font-size:13px; font-weight:600; color:var(--teal-deep); cursor:pointer; transition:all .15s; }' +
+        '.dn-show-more:hover{ border-color:rgba(14,124,134,.5); background:var(--mint-soft); }' +
+        '@media (max-width:640px){ #dn-search-input{ font-size:14px; padding:8px 12px 8px 32px; background-size:16px; } }';
+      document.head.appendChild(st);
+    }
+
+    hub.innerHTML =
+      '<div class="dn-hub-title">🔍 <span data-zh="快速查找皮膚科主題" data-en="Quick find by topic">快速查找皮膚科主題</span></div>' +
+      '<div class="dn-search-row">' +
+        '<input id="dn-search-input" type="search" placeholder="搜尋文章標題或關鍵字..." aria-label="搜尋文章" />' +
+        '<div id="dn-search-status"></div>' +
+      '</div>' +
+      '<div class="dn-tag-chips" id="dn-tag-chips"></div>';
+
+    var tagsDiv = document.getElementById('dn-tag-chips');
+    var allBtn = document.createElement('button');
+    allBtn.className = 'dn-tag-chip dn-tag-all active';
+    allBtn.dataset.tag = '__all__';
+    allBtn.textContent = '全部主題';
+    allBtn.addEventListener('click', function () { applyFilter('__all__'); });
+    tagsDiv.appendChild(allBtn);
+
+    Object.keys(DN.TAG_GROUPS).forEach(function (tag) {
+      var btn = document.createElement('button');
+      btn.className = 'dn-tag-chip';
+      btn.dataset.tag = tag;
+      btn.textContent = tag;
+      btn.addEventListener('click', function () { applyFilter(tag); });
+      tagsDiv.appendChild(btn);
+    });
+
+    var initialLimit = parseInt(hub.dataset.showCount || '6', 10);
+    var showingAll = (mode === 'full');
+    var showMoreBtn = null;
+    var allCards = Array.prototype.slice.call(document.querySelectorAll('.article-list-item'));
+
+    function setActive(tag) {
+      var chips = tagsDiv.querySelectorAll('.dn-tag-chip');
+      for (var i = 0; i < chips.length; i++) {
+        chips[i].classList.toggle('active', chips[i].dataset.tag === tag);
+      }
+    }
+    function setStatus(t) { document.getElementById('dn-search-status').textContent = t; }
+
+    function showBySlugs(slugs) {
+      var shown = 0;
+      for (var i = 0; i < allCards.length; i++) {
+        var href = allCards[i].getAttribute('href') || '';
+        var m = href.match(/\/blog\/([a-z0-9-]+)/);
+        var slug = m ? m[1] : '';
+        var match = slugs === null ? true : slugs.indexOf(slug) !== -1;
+        allCards[i].style.display = match ? '' : 'none';
+        if (match) shown++;
+      }
+      return shown;
+    }
+
+    function applyFilter(tag) {
+      setActive(tag);
+      var inp = document.getElementById('dn-search-input');
+      if (tag !== '__search__') inp.value = '';
+
+      if (tag === '__all__') {
+        if (mode === 'homepage' && !showingAll) {
+          var newest = articles.slice().sort(function (a, b) {
+            return (b.date || '').localeCompare(a.date || '');
+          }).slice(0, initialLimit).map(function (a) { return a.slug; });
+          var shown = showBySlugs(newest);
+          setStatus('最新 ' + shown + ' 篇 / 共 ' + allCards.length + ' 篇');
+          if (showMoreBtn) showMoreBtn.style.display = 'block';
+        } else {
+          showBySlugs(null);
+          setStatus('全部 ' + allCards.length + ' 篇');
+          if (showMoreBtn) showMoreBtn.style.display = 'none';
+        }
+      } else if (tag !== '__search__') {
+        var ss = DN.TAG_GROUPS[tag] || [];
+        var n = showBySlugs(ss);
+        setStatus('找到 ' + n + ' 篇 ' + tag + ' 相關文章');
+        if (showMoreBtn) showMoreBtn.style.display = 'none';
+        showingAll = true;
+      }
+    }
+
+    document.getElementById('dn-search-input').addEventListener('input', function (e) {
+      var q = e.target.value.trim().toLowerCase();
+      if (!q) { applyFilter('__all__'); return; }
+      setActive('__search__');
+      var matched = articles.filter(function (a) {
+        return a.title.toLowerCase().indexOf(q) !== -1 ||
+               (a.tag || '').toLowerCase().indexOf(q) !== -1 ||
+               (a.tag_en || '').toLowerCase().indexOf(q) !== -1 ||
+               a.slug.toLowerCase().indexOf(q) !== -1;
+      }).map(function (a) { return a.slug; });
+      var shown = showBySlugs(matched);
+      setStatus(shown > 0 ? '搜尋「' + q + '」找到 ' + shown + ' 篇' : '「' + q + '」沒有結果');
+      if (showMoreBtn) showMoreBtn.style.display = 'none';
+      if (typeof gtag === 'function') {
+        try { gtag('event', 'site_search', { search_term: q, results_count: shown }); } catch (err) {}
+      }
+    });
+
+    if (mode === 'homepage') {
+      showMoreBtn = document.createElement('button');
+      showMoreBtn.className = 'dn-show-more';
+      showMoreBtn.textContent = '↓ 顯示全部 ' + allCards.length + ' 篇文章';
+      showMoreBtn.addEventListener('click', function () {
+        showingAll = true;
+        applyFilter('__all__');
+        showMoreBtn.style.display = 'none';
+      });
+      hub.appendChild(showMoreBtn);
+    }
+
+    applyFilter('__all__');
+  };
+
   DN.initBlog = function (opts) {
     opts = opts || {};
     let curLang = DN.detectLang();
@@ -731,6 +900,7 @@
     }
     DN.bindWebVitals();
     DN.bindGAEvents();
+    DN.bindArticleHub();
     DN.markNewArticles();
 
     const yr = document.getElementById('yr');

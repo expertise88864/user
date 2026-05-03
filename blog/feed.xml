@@ -6,7 +6,39 @@
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>陳翊嘉醫師（中國醫藥大學附設醫院 皮膚科）整理的皮膚科衛教文章 — 民眾最常見的皮膚科誤解、市面上產品、常見皮膚疾病。</description>
     <language>zh-TW</language>
-    <lastBuildDate>Mon, 04 May 2026 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2026 09:00:00 +0800</lastBuildDate>
+
+    <item>
+      <title>美白成分完整解析 — 8 大成分機轉、濃度、安全使用</title>
+      <link>https://chendermatologist.com/blog/skin-whitening-agents</link>
+      <guid>https://chendermatologist.com/blog/skin-whitening-agents</guid>
+      <pubDate>Tue, 05 May 2026 09:00:00 +0800</pubDate>
+      <description>氫醌、傳明酸、杜鵑花酸、維他命 C、菸鹼醯胺、A 酸、Cysteamine、Thiamidol — 完整解析機轉、有效濃度、孕婦使用、搭配。</description>
+    </item>
+
+    <item>
+      <title>標靶藥物（TKI）皮膚副作用</title>
+      <link>https://chendermatologist.com/blog/targeted-therapy-skin</link>
+      <guid>https://chendermatologist.com/blog/targeted-therapy-skin</guid>
+      <pubDate>Mon, 04 May 2026 23:30:00 +0800</pubDate>
+      <description>標靶藥物（TKI）皮膚副作用 — 依台灣皮膚科醫學會與 evidence-based 文獻整理。</description>
+    </item>
+
+    <item>
+      <title>外用類固醇完整指南</title>
+      <link>https://chendermatologist.com/blog/topical-steroids-guide</link>
+      <guid>https://chendermatologist.com/blog/topical-steroids-guide</guid>
+      <pubDate>Mon, 04 May 2026 23:30:00 +0800</pubDate>
+      <description>外用類固醇完整指南 — 依台灣皮膚科醫學會與 evidence-based 文獻整理。</description>
+    </item>
+
+    <item>
+      <title>皮膚科生物製劑與小分子標靶藥物總覽</title>
+      <link>https://chendermatologist.com/blog/biologics-overview</link>
+      <guid>https://chendermatologist.com/blog/biologics-overview</guid>
+      <pubDate>Mon, 04 May 2026 23:30:00 +0800</pubDate>
+      <description>皮膚科生物製劑與小分子標靶藥物總覽 — 依台灣皮膚科醫學會與 evidence-based 文獻整理。</description>
+    </item>
 
     <item>
       <title>白斑（Vitiligo）完整衛教 — TDA 共識</title>
