@@ -1,15 +1,17 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML */
-const CACHE = 'cd-v2';
+const CACHE = 'cd-v3';
 const PRECACHE = [
   '/',
   '/index.html',
   '/about',
   '/privacy',
+  '/404.html',
   '/icon.svg',
   '/manifest.json',
   '/blog/',
   '/blog/topics',
   '/blog/feed.xml',
+  '/blog/atom.xml',
   '/blog/blog-shared.js',
   '/blog/acne-myths',
   '/blog/sunscreen-myths',

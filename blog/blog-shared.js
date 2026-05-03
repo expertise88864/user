@@ -66,6 +66,18 @@
   DN.bindLangToggle = function (onChange) {
     const toggle = document.getElementById('langToggle');
     if (!toggle) return;
+    // Dropdown form: <select id="langToggle">
+    if (toggle.tagName === 'SELECT') {
+      toggle.value = DN.detectLang();
+      toggle.addEventListener('change', function () {
+        const lang = toggle.value;
+        if (!DN.LANG_KEY[lang]) return;
+        DN.setLang(lang);
+        if (typeof onChange === 'function') onChange(lang);
+      });
+      return;
+    }
+    // Legacy 2-button form
     const buttons = toggle.querySelectorAll('button[data-lang]');
     function syncActive(curLang) {
       buttons.forEach(function (b) { b.classList.toggle('active', b.dataset.lang === curLang); });

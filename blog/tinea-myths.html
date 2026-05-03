@@ -14,6 +14,7 @@
 <link rel="alternate" hreflang="en" href="https://chendermatologist.com/blog/tinea-myths" />
 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
 <link rel="alternate" type="application/rss+xml" title="ChenDermatologist RSS" href="/blog/feed.xml" />
+<link rel="alternate" type="application/atom+xml" title="ChenDermatologist Atom" href="/blog/atom.xml" />
 
 <meta property="og:type" content="article" />
 <meta property="og:title" content="香港腳 / 灰指甲 7 大迷思 | ChenDermatologist" />
@@ -41,8 +42,11 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
                 linear-gradient(180deg,#f5fbfa 0%, #fbffff 40%, #f5fbfa 100%); }
   .teal-text{ background:linear-gradient(180deg,#14b8a6 0%, #0c5159 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
   .lang-toggle{ display:inline-flex; border:1px solid var(--border); border-radius:9999px; overflow:hidden; background:#fff; }
-  .lang-toggle button{ padding:6px 12px; font-size:12px; font-weight:600; color:var(--muted); }
+  .lang-toggle button{ padding:6px 12px; font-size:12px; font-weight:600; color:var(--muted); letter-spacing:.04em; line-height:1; }
   .lang-toggle button.active{ background:linear-gradient(180deg,#14b8a6,#0c5159); color:#fff; }
+  .lang-select{ appearance:none; -webkit-appearance:none; -moz-appearance:none; padding:6px 26px 6px 12px; font-size:12px; font-weight:600; color:var(--ink); border:1px solid var(--border); border-radius:9999px; background:#fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'><path fill='%230c5159' d='M6 8 0 0h12z'/></svg>") no-repeat right 10px center; background-size:8px 6px; cursor:pointer; line-height:1.2; transition:border-color .15s, box-shadow .15s; }
+  .lang-select:hover{ border-color:rgba(14,124,134,.45); }
+  .lang-select:focus{ outline:none; border-color:rgba(14,124,134,.6); box-shadow:0 0 0 3px rgba(20,184,166,.18); }
   .ad-slot{ border:1px dashed var(--border); border-radius:14px; background:#fff; color:var(--muted); font-size:11px; letter-spacing:.18em; text-transform:uppercase; display:flex; align-items:center; justify-content:center; }
   .prose{ line-height:1.9; font-size:16px; font-family:'Noto Serif TC','Microsoft JhengHei',Georgia,serif; color:var(--ink-2); }
   .prose h2{ font-family:'Noto Serif TC',Georgia,serif; font-weight:700; font-size:24px; margin:48px 0 14px; color:var(--ink); border-left:3px solid var(--teal); padding-left:14px; }
@@ -84,6 +88,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 <script type="application/ld+json">
 { "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://chendermatologist.com/"},{"@type":"ListItem","position":2,"name":"衛教文章","item":"https://chendermatologist.com/blog/"},{"@type":"ListItem","position":3,"name":"香港腳/灰指甲 7 大迷思","item":"https://chendermatologist.com/blog/tinea-myths"}]}
 </script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "MedicalWebPage", "url": "https://chendermatologist.com/blog/tinea-myths", "inLanguage": ["zh-TW", "en"], "name": "足癬 / 甲癬 衛教 · 民眾最常見的迷思", "audience": {"@type": "MedicalAudience", "audienceType": "Patient"}, "lastReviewed": "2026-05-04", "reviewedBy": {"@type": "Person", "name": "陳翊嘉 醫師", "honorificSuffix": "M.D.", "affiliation": {"@type": "Hospital", "name": "中國醫藥大學附設醫院 皮膚科"}}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", "h2", ".tldr", ".speakable"]}, "wordCount": 4300, "keywords": "香港腳,灰指甲,Tinea pedis,Onychomycosis,Terbinafine,Itraconazole", "articleSection": "Dermatology Patient Education", "about": {"@type": "MedicalCondition", "name": "足癬 / 甲癬", "alternateName": ["香港腳", "灰指甲", "Tinea pedis", "Onychomycosis"], "code": {"@type": "MedicalCode", "code": "B35", "codingSystem": "ICD-10"}}, "isPartOf": {"@type": "WebSite", "name": "ChenDermatologist", "url": "https://chendermatologist.com/"}}
+</script>
 </head>
 <body class="font-sans antialiased text-ink-900">
 
@@ -100,7 +107,11 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
       <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
         <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-teal-600 text-white text-[12px] font-semibold hover:bg-teal-700">預約掛號 →</a>
         <a href="/blog/" class="hidden sm:inline-flex text-[12px] uppercase tracking-[.18em] text-ink-700 font-semibold">← 文章索引</a>
-        <div class="lang-toggle" id="langToggle"><button data-lang="zh" class="active">中文</button><button data-lang="en">EN</button></div>
+        <a href="/about" class="hidden sm:inline-flex text-[12px] uppercase tracking-[.18em] text-ink-700 font-semibold" data-zh="關於我" data-en="About">關於我</a>
+        <select id="langToggle" class="lang-select" aria-label="Language">
+          <option value="zh">中文</option>
+          <option value="en">EN</option>
+        </select>
       </div>
     </div>
   </div>
