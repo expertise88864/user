@@ -3,7 +3,7 @@
 A Taiwanese dermatology R2 resident's bilingual study-notes & patient-education site.
 Static HTML + Tailwind CDN, no build step.
 
-> Domain: **chendermatologist.vercel.app**
+> Domain: **chendermatologist.com**
 > GitHub repo: (set below)
 > Auto-deploy: Vercel on every `git push`
 
@@ -21,14 +21,14 @@ https://github.com/signup
 
 ### 1-3 在 GitHub 建立 repo
 1. https://github.com/new
-2. **Repository name**：`dermnotes`（或 `chendermatologist.vercel.app`）
+2. **Repository name**：`dermnotes`（或 `chendermatologist.com`）
 3. **Public**（公開，比較容易讓搜尋引擎抓到）
 4. **不要勾選任何 README / .gitignore / license**（保持空白 repo）
 5. 按 **Create repository**
 6. 在新頁面複製 **HTTPS** 那條 URL，例如：
    `https://github.com/chendermatologist/dermnotes.git`
 
-### 1-4 註冊網域 chendermatologist.vercel.app
+### 1-4 註冊網域 chendermatologist.com
 推薦三家：
 
 | 註冊商 | 年費 (.com) | 備註 |
@@ -74,12 +74,12 @@ If Vercel is connected, it will auto-deploy in ~30 seconds.
 
 ---
 
-## 3. 把 chendermatologist.vercel.app 接到 Vercel
+## 3. 把 chendermatologist.com 接到 Vercel
 
 ### 3-1 在 Vercel 加網域
 1. 進入剛才的 project → 上方 **Settings** → 左欄 **Domains**
-2. 輸入 `chendermatologist.vercel.app` → **Add**
-3. 再輸入 `www.chendermatologist.vercel.app` → **Add** → 設定 redirect 到根網域
+2. 輸入 `chendermatologist.com` → **Add**
+3. 再輸入 `www.chendermatologist.com` → **Add** → 設定 redirect 到根網域
 4. Vercel 會給你 **DNS records 要怎麼填** 的指示（記下來）
 
 通常顯示：
@@ -88,7 +88,7 @@ If Vercel is connected, it will auto-deploy in ~30 seconds.
 
 ### 3-2 在註冊商設定 DNS
 **如果是 Cloudflare：**
-1. 登入 → 點 chendermatologist.vercel.app → **DNS** → **Records**
+1. 登入 → 點 chendermatologist.com → **DNS** → **Records**
 2. **Add record**：
    - Type `A`, Name `@`, IPv4 `76.76.21.21`, Proxy status **DNS only**（灰色雲）
    - Type `CNAME`, Name `www`, Target `cname.vercel-dns.com`, Proxy status **DNS only**
@@ -100,9 +100,9 @@ If Vercel is connected, it will auto-deploy in ~30 seconds.
 3. 砍掉註冊商預設的轉址 / parking page
 
 ### 3-3 等 DNS 生效
-通常 5–30 分鐘。可在 https://dnschecker.org 查 `chendermatologist.vercel.app` 看是否已指向 `76.76.21.21`。
+通常 5–30 分鐘。可在 https://dnschecker.org 查 `chendermatologist.com` 看是否已指向 `76.76.21.21`。
 
-DNS 生效後 Vercel 自動幫你**簽發免費 SSL 憑證（Let's Encrypt）**，網站從此跑在 `https://chendermatologist.vercel.app`。
+DNS 生效後 Vercel 自動幫你**簽發免費 SSL 憑證（Let's Encrypt）**，網站從此跑在 `https://chendermatologist.com`。
 
 ---
 
@@ -110,7 +110,7 @@ DNS 生效後 Vercel 自動幫你**簽發免費 SSL 憑證（Let's Encrypt）**�
 
 ### 4-1 Google Search Console
 1. https://search.google.com/search-console → **Add property**
-2. 選 **URL prefix** → 輸入 `https://chendermatologist.vercel.app`
+2. 選 **URL prefix** → 輸入 `https://chendermatologist.com`
 3. 驗證方法選 **HTML tag**，複製 `content="..."` 那串
 4. 打開 `index.html`，找到這行（接近 head 末尾）：
    ```html
@@ -155,7 +155,7 @@ AdSense 對「全新且內容少」的站很挑剔。建議 **至少累積以下
 - 有 About / Privacy Policy / Disclaimer 頁面（本站首頁已包含 disclaimer，但建議另開 `/privacy.html`）
 
 申請流程：
-1. https://www.google.com/adsense → **Get started** → 填網址 `https://chendermatologist.vercel.app`
+1. https://www.google.com/adsense → **Get started** → 填網址 `https://chendermatologist.com`
 2. AdSense 會給你一段程式碼（含 `ca-pub-XXXXXXXXXXXXXXXX`）
 3. **打開全部 HTML**（首頁 + 所有文章），找到這段被註解的區塊：
    ```html
@@ -185,7 +185,7 @@ AdSense 對「全新且內容少」的站很挑剔。建議 **至少累積以下
    - `blog/index.html`：加新卡片
    - `blog/blog-shared.js`：行動版抽屜選單加新連結
 3. 雙擊 `deploy.bat`，輸入 commit message → 自動推送
-4. 30 秒後 Vercel 上線 → 文章已可在 `https://chendermatologist.vercel.app/blog/新檔名` 看到
+4. 30 秒後 Vercel 上線 → 文章已可在 `https://chendermatologist.com/blog/新檔名` 看到
 
 ---
 
@@ -194,7 +194,7 @@ AdSense 對「全新且內容少」的站很挑剔。建議 **至少累積以下
 如果不想用 Vercel：
 1. GitHub repo → **Settings** → **Pages**
 2. Source 選 `Deploy from a branch` → Branch `main` / `(root)` → Save
-3. 加 `CNAME` 檔內容寫 `chendermatologist.vercel.app`
+3. 加 `CNAME` 檔內容寫 `chendermatologist.com`
 4. 在 DNS 加 4 個 A record 指向 GitHub IP（185.199.108.153 / .109.153 / .110.153 / .111.153）+ CNAME `www → username.github.io`
 
 ⚠️ 用 GitHub Pages 會失去 `vercel.json` 的 `cleanUrls`（網址會變成 `/blog/xxx.html` 而非 `/blog/xxx`），結構化資料 / canonical 都需要改回 `.html`。**強烈建議用 Vercel**，免費額度對個人站綽綽有餘。
@@ -244,8 +244,8 @@ A：GitHub 已不支援密碼登入。需要 Personal Access Token：
 **Q：DNS 設定完還是看不到網站**
 A：(1) 確認 Cloudflare proxy 是「DNS only」灰色雲，不是橘色雲；(2) https://dnschecker.org 看 A record 是否全球已生效；(3) 等到 Vercel Domains 頁面那個網域旁邊顯示綠色勾才算成功。
 
-**Q：可以同時用兩個網域嗎？例如 chendermatologist.vercel.app 和 chendermatologist.tw**
-A：可以。在 Vercel Domains 兩個都加，DNS 都指過來。Vercel 會自動 301 redirect 到主網域（你選 `chendermatologist.vercel.app` 為 primary）。
+**Q：可以同時用兩個網域嗎？例如 chendermatologist.com 和 chendermatologist.tw**
+A：可以。在 Vercel Domains 兩個都加，DNS 都指過來。Vercel 會自動 301 redirect 到主網域（你選 `chendermatologist.com` 為 primary）。
 
 **Q：要把 vercel.app 那個臨時網址藏起來怎麼做？**
 A：Vercel project Settings → Domains → 把 `xxx.vercel.app` 設為 redirect 到正式網域（或直接 disable，不建議刪）。

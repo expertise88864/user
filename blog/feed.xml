@@ -2,56 +2,72 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ChenDermatologist · 皮膚科常見衛教及學習筆記網站</title>
-    <link>https://chendermatologist.vercel.app/blog/</link>
-    <atom:link href="https://chendermatologist.vercel.app/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://chendermatologist.com/blog/</link>
+    <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>陳翊嘉醫師(中國醫藥大學附設醫院 皮膚部)整理的皮膚科衛教文章 — 民眾最常見的皮膚科誤解、市面上產品、常見皮膚疾病。</description>
     <language>zh-TW</language>
     <lastBuildDate>Sun, 03 May 2026 10:00:00 +0800</lastBuildDate>
 
     <item>
       <title>痘痘 9 大迷思 — 民眾最常誤會的觀念</title>
-      <link>https://chendermatologist.vercel.app/blog/acne-myths</link>
-      <guid>https://chendermatologist.vercel.app/blog/acne-myths</guid>
+      <link>https://chendermatologist.com/blog/acne-myths</link>
+      <guid>https://chendermatologist.com/blog/acne-myths</guid>
       <pubDate>Sun, 03 May 2026 10:00:00 +0800</pubDate>
       <description>擠掉就好?牙膏點痘?巧克力會長痘?成人不會長?用越強藥膏越快好?9 個民眾最常誤會的痘痘觀念,陳翊嘉醫師一次澄清。</description>
     </item>
 
     <item>
       <title>防曬 8 大迷思 — 室內、陰天、SPF、物理化學一次釐清</title>
-      <link>https://chendermatologist.vercel.app/blog/sunscreen-myths</link>
-      <guid>https://chendermatologist.vercel.app/blog/sunscreen-myths</guid>
+      <link>https://chendermatologist.com/blog/sunscreen-myths</link>
+      <guid>https://chendermatologist.com/blog/sunscreen-myths</guid>
       <pubDate>Sun, 03 May 2026 10:00:00 +0800</pubDate>
       <description>室內不用擦?陰天可以省?SPF 越高越好?物理一定贏化學?一天擦一次就夠?深膚色不會曬傷?</description>
     </item>
 
     <item>
       <title>異位性皮膚炎 6 大迷思 — 含類固醇恐懼症</title>
-      <link>https://chendermatologist.vercel.app/blog/eczema-myths</link>
-      <guid>https://chendermatologist.vercel.app/blog/eczema-myths</guid>
+      <link>https://chendermatologist.com/blog/eczema-myths</link>
+      <guid>https://chendermatologist.com/blog/eczema-myths</guid>
       <pubDate>Sun, 03 May 2026 10:00:00 +0800</pubDate>
       <description>類固醇會傷皮膚?用了會上癮?異膚長大會自己好?抓癢沒關係?過敏原檢測就能根治?民俗療法比較天然?</description>
     </item>
 
     <item>
       <title>肝斑 7 大迷思 — 雷射、藥膏、停藥反黑、孕婦</title>
-      <link>https://chendermatologist.vercel.app/blog/melasma-myths</link>
-      <guid>https://chendermatologist.vercel.app/blog/melasma-myths</guid>
+      <link>https://chendermatologist.com/blog/melasma-myths</link>
+      <guid>https://chendermatologist.com/blog/melasma-myths</guid>
       <pubDate>Sun, 03 May 2026 10:00:00 +0800</pubDate>
       <description>雷射打一次就消?三合一越濃越好?停藥就反黑?男生不會有肝斑?懷孕生完會自己消?附治療階梯與居家保養 SOP、含氧化鐵防曬解析。</description>
     </item>
 
     <item>
+      <title>玫瑰痤瘡 / 酒糟肌 6 大迷思 — 不是過敏、不是螨蟲</title>
+      <link>https://chendermatologist.com/blog/rosacea-myths</link>
+      <guid>https://chendermatologist.com/blog/rosacea-myths</guid>
+      <pubDate>Sun, 03 May 2026 10:00:00 +0800</pubDate>
+      <description>酒糟皮膚是因為喝酒?玫瑰痤瘡是過敏?用 A 酸治痘痘可以治酒糟?治不好只能避開所有刺激物?</description>
+    </item>
+
+    <item>
+      <title>落髮 / 雄性禿 7 大迷思 — Minoxidil、Finasteride、植髮</title>
+      <link>https://chendermatologist.com/blog/hairloss-myths</link>
+      <guid>https://chendermatologist.com/blog/hairloss-myths</guid>
+      <pubDate>Sun, 03 May 2026 10:00:00 +0800</pubDate>
+      <description>每天掉一點就要禿了?染髮會掉髮?戴帽悶會禿?雄性禿吃中藥就好?Minoxidil 副作用很多?圓禿是壓力?植髮一次解決?附 Hamilton-Norwood 分級與治療階梯。</description>
+    </item>
+
+    <item>
       <title>外用酸類完整衛教 — A 酸 / A 醇 / 杜鵑花酸 / 果酸 / 水楊酸</title>
-      <link>https://chendermatologist.vercel.app/blog/topical-acids-patient</link>
-      <guid>https://chendermatologist.vercel.app/blog/topical-acids-patient</guid>
+      <link>https://chendermatologist.com/blog/topical-acids-patient</link>
+      <guid>https://chendermatologist.com/blog/topical-acids-patient</guid>
       <pubDate>Fri, 02 May 2026 10:00:00 +0800</pubDate>
       <description>五大塗抹酸類各做什麼、適合誰、不能跟誰一起用、孕婦能不能用、會不會反黑爆痘。</description>
     </item>
 
     <item>
       <title>口服 A 酸完整衛教 — 適合誰吃、副作用、復發率</title>
-      <link>https://chendermatologist.vercel.app/blog/isotretinoin-patient</link>
-      <guid>https://chendermatologist.vercel.app/blog/isotretinoin-patient</guid>
+      <link>https://chendermatologist.com/blog/isotretinoin-patient</link>
+      <guid>https://chendermatologist.com/blog/isotretinoin-patient</guid>
       <pubDate>Fri, 02 May 2026 10:00:00 +0800</pubDate>
       <description>適合誰吃 / 累積劑量 / 副作用 / 嘴唇乾肝指數 / 女性避孕 / 雷射禁忌 / 復發率 — 診間最常被問的問題一次答完。</description>
     </item>
