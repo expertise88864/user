@@ -13,6 +13,7 @@ const PRECACHE = [
   '/blog/acne-myths',
   '/blog/sunscreen-myths',
   '/blog/eczema-myths',
+  '/blog/melasma-myths',
   '/blog/topical-acids-patient',
   '/blog/isotretinoin-patient',
   '/blog/topical-acids-clinical',
