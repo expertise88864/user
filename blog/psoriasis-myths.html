@@ -406,6 +406,96 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
 <h2 id="tx">治療階梯（依嚴重度）</h2>
 
+<!-- ===== Treatment pathway flow diagram (SVG) ===== -->
+<figure style="background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px 16px;margin:18px 0;box-shadow:0 1px 2px rgba(15,23,42,.04)">
+<svg viewBox="0 0 720 460" style="width:100%;height:auto;display:block;max-width:720px;margin:0 auto;font-family:'Noto Sans TC',Inter,sans-serif" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="tx-flow-title">
+  <title id="tx-flow-title">乾癬治療階梯流程圖</title>
+  <defs>
+    <linearGradient id="psoflow-mild" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#dcfce7"/><stop offset="1" stop-color="#bbf7d0"/></linearGradient>
+    <linearGradient id="psoflow-mod" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fef9c3"/><stop offset="1" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="psoflow-modsev" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fed7aa"/><stop offset="1" stop-color="#fdba74"/></linearGradient>
+    <linearGradient id="psoflow-sev" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fee2e2"/><stop offset="1" stop-color="#fecaca"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4d6358"/></marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="360" y="22" text-anchor="middle" font-size="14" font-weight="700" fill="#0f172a">乾癬治療階梯(AAD-NPF 2019 + Reich 2023 + 台灣健保條件)</text>
+
+  <!-- Step 1: Mild -->
+  <rect x="20" y="50" width="160" height="100" rx="14" fill="url(#psoflow-mild)" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="100" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#14532d" letter-spacing="2">輕度</text>
+  <text x="100" y="89" text-anchor="middle" font-size="10" fill="#14532d">PASI &lt; 5 · BSA &lt; 3%</text>
+  <text x="100" y="108" text-anchor="middle" font-size="10.5" font-weight="600" fill="#14532d">外用 Calcipotriol</text>
+  <text x="100" y="122" text-anchor="middle" font-size="10.5" font-weight="600" fill="#14532d">+ 類固醇 / Daivobet</text>
+  <text x="100" y="138" text-anchor="middle" font-size="10" fill="#14532d">每日 2 次,主動式維持</text>
+
+  <!-- Step 2: Moderate -->
+  <rect x="200" y="50" width="160" height="100" rx="14" fill="url(#psoflow-mod)" stroke="#eab308" stroke-width="1.5"/>
+  <text x="280" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#854d0e" letter-spacing="2">中度</text>
+  <text x="280" y="89" text-anchor="middle" font-size="10" fill="#854d0e">PASI 5-10 · BSA 3-10%</text>
+  <text x="280" y="108" text-anchor="middle" font-size="10.5" font-weight="600" fill="#854d0e">+ NB-UVB 光療</text>
+  <text x="280" y="122" text-anchor="middle" font-size="10.5" font-weight="600" fill="#854d0e">2-3 次 / 週 × 12 週</text>
+  <text x="280" y="138" text-anchor="middle" font-size="10" fill="#854d0e">準備生物製劑申請</text>
+
+  <!-- Step 3: Mod-Severe -->
+  <rect x="380" y="50" width="160" height="100" rx="14" fill="url(#psoflow-modsev)" stroke="#f97316" stroke-width="1.5"/>
+  <text x="460" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#9a3412" letter-spacing="2">中重度</text>
+  <text x="460" y="89" text-anchor="middle" font-size="10" fill="#9a3412">PASI 10-20 · DLQI ≥ 10</text>
+  <text x="460" y="108" text-anchor="middle" font-size="10.5" font-weight="600" fill="#9a3412">口服 Methotrexate</text>
+  <text x="460" y="122" text-anchor="middle" font-size="10.5" font-weight="600" fill="#9a3412">/ Acitretin / Sotyktu</text>
+  <text x="460" y="138" text-anchor="middle" font-size="10" fill="#9a3412">健保生物製劑門檻</text>
+
+  <!-- Step 4: Severe -->
+  <rect x="560" y="50" width="140" height="100" rx="14" fill="url(#psoflow-sev)" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="630" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="#991b1b" letter-spacing="2">重度</text>
+  <text x="630" y="89" text-anchor="middle" font-size="10" fill="#991b1b">PASI ≥ 20</text>
+  <text x="630" y="108" text-anchor="middle" font-size="10.5" font-weight="600" fill="#991b1b">生物製劑優先</text>
+  <text x="630" y="122" text-anchor="middle" font-size="10.5" font-weight="600" fill="#991b1b">關節炎共病評估</text>
+
+  <!-- Arrows -->
+  <line x1="180" y1="100" x2="200" y2="100" stroke="#4d6358" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="360" y1="100" x2="380" y2="100" stroke="#4d6358" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="540" y1="100" x2="560" y2="100" stroke="#4d6358" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Biologics tier -->
+  <text x="360" y="200" text-anchor="middle" font-size="13" font-weight="700" fill="#0c5159">生物製劑健保條件:PASI ≥ 10 + BSA ≥ 10% + DLQI ≥ 10 + 兩線傳統治療失敗</text>
+
+  <!-- Biologic options -->
+  <rect x="40" y="230" width="200" height="80" rx="12" fill="#cffafe" stroke="#0e7c86" stroke-width="1.5"/>
+  <text x="140" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#0c5159">IL-23 抑制劑</text>
+  <text x="140" y="270" text-anchor="middle" font-size="10.5" fill="#0c5159">Guselkumab(特諾雅)</text>
+  <text x="140" y="285" text-anchor="middle" font-size="10.5" fill="#0c5159">Risankizumab(喜開麗)</text>
+  <text x="140" y="299" text-anchor="middle" font-size="9.5" fill="#4d6358">每 8-12 週 1 針 · 安全性最佳</text>
+
+  <rect x="260" y="230" width="200" height="80" rx="12" fill="#cffafe" stroke="#0e7c86" stroke-width="1.5"/>
+  <text x="360" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#0c5159">IL-17 抑制劑</text>
+  <text x="360" y="270" text-anchor="middle" font-size="10.5" fill="#0c5159">Secukinumab(可善挺)</text>
+  <text x="360" y="285" text-anchor="middle" font-size="10.5" fill="#0c5159">Ixekizumab / Bimekizumab</text>
+  <text x="360" y="299" text-anchor="middle" font-size="9.5" fill="#4d6358">起效快 · PASI 100 達成率最高</text>
+
+  <rect x="480" y="230" width="200" height="80" rx="12" fill="#cffafe" stroke="#0e7c86" stroke-width="1.5"/>
+  <text x="580" y="252" text-anchor="middle" font-size="12" font-weight="700" fill="#0c5159">TNF-α / TYK2 / 其他</text>
+  <text x="580" y="270" text-anchor="middle" font-size="10.5" fill="#0c5159">Adalimumab(復邁)</text>
+  <text x="580" y="285" text-anchor="middle" font-size="10.5" fill="#0c5159">Deucravacitinib(Sotyktu)</text>
+  <text x="580" y="299" text-anchor="middle" font-size="9.5" fill="#4d6358">PsA / IBD 共病優先</text>
+
+  <!-- Vertical arrows from severe box -->
+  <line x1="630" y1="150" x2="630" y2="190" stroke="#4d6358" stroke-width="2" stroke-dasharray="3,3"/>
+  <text x="630" y="180" text-anchor="middle" font-size="9" fill="#5e574e">符合條件</text>
+  <line x1="630" y1="200" x2="580" y2="225" stroke="#4d6358" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="460" y1="150" x2="360" y2="225" stroke="#4d6358" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="280" y1="150" x2="140" y2="225" stroke="#4d6358" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- PsA branch -->
+  <rect x="40" y="340" width="640" height="80" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+  <text x="60" y="362" font-size="12" font-weight="700" fill="#9a3412">乾癬性關節炎(PsA)合併?</text>
+  <text x="60" y="380" font-size="10.5" fill="#9a3412">指甲變形、晨僵、關節腫脹、肌腱炎(指趾端臘腸樣) → 需風濕免疫科共照</text>
+  <text x="60" y="395" font-size="10.5" fill="#9a3412"><tspan font-weight="700">PsA 首選:</tspan> IL-17、TNF-α、JAK/TYK2(Sotyktu) — 而非 IL-23(對關節效果次之)</text>
+  <text x="60" y="410" font-size="9.5" fill="#5e574e">注:健保 PsA 申請門檻為 ≥3 個壓痛關節 + ≥3 個腫脹關節 + 失敗 2 種 DMARDs</text>
+</svg>
+<figcaption style="text-align:center;font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.6">圖:乾癬治療階梯流程圖。實線箭頭=向上升階;虛線箭頭=符合健保門檻時轉用生物製劑。資料來源:AAD-NPF 2019 + Reich 2023 + 2024 健保乾癬給付規範。</figcaption>
+</figure>
+
 <table class="dn">
 <thead><tr><th>嚴重度（PASI / BSA）</th><th>治療</th></tr></thead>
 <tbody>
@@ -624,7 +714,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605090100" defer></script>
+<script src="/blog/blog-shared.js?v=202605092000" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});</script>
 </body>
 </html>

@@ -578,6 +578,8 @@
       '.dn-calc-band{ display:inline-block;margin-left:10px;padding:4px 12px;border-radius:9999px;font-size:12px;font-weight:700;letter-spacing:.04em;vertical-align:middle }' +
       '.dn-calc-interp{ font-size:13px;color:#0f172a;line-height:1.7;margin-top:6px }' +
       '.dn-calc-disclaimer{ font-size:11px;color:#8b8378;margin-top:10px;line-height:1.6;font-style:italic }' +
+      '.dn-calc-tools-link{ display:inline-flex;align-items:center;gap:5px;margin-top:10px;padding:6px 12px;border-radius:9999px;background:#ede7da;color:#4d6358;font-size:12px;font-weight:700;text-decoration:none;border:1px solid #a5f3fc }' +
+      '.dn-calc-tools-link:hover{ background:#d8d2c5 }' +
       '.dn-radio-group{ display:flex;gap:6px;flex-wrap:wrap }' +
       '.dn-radio-group button{ padding:5px 10px;border-radius:8px;border:1px solid var(--border, #dcd5c8);background:#fff;font-size:12.5px;font-weight:600;color:#5e574e;cursor:pointer;min-width:34px }' +
       '.dn-radio-group button.active{ background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;border-color:transparent }';
@@ -614,6 +616,7 @@
           '<div><span class="dn-calc-score" id="dn-scorad-score">—</span><span class="dn-calc-band" id="dn-scorad-band"></span></div>' +
           '<div class="dn-calc-interp" id="dn-scorad-interp"></div>' +
         '</div>' +
+        '<a href="/tools#scorad" class="dn-calc-tools-link" data-zh="📖 查看完整 SCORAD 使用指南 →" data-en="View full SCORAD guide →">查看完整 SCORAD 使用指南 →</a>' +
         '<div class="dn-calc-disclaimer" data-zh="* 本工具僅作衛教自評用途。客觀分數需由皮膚科醫師判讀;治療決策應由主治醫師面對面評估。SCORAD: Stalder JF et al, Dermatology 1993." data-en="* For self-education only. Treatment decisions require an in-person dermatology evaluation.">* 本工具僅作衛教自評用途。客觀分數需由皮膚科醫師判讀;治療決策應由主治醫師面對面評估。SCORAD: Stalder JF et al, Dermatology 1993.</div>' +
       '</div>';
     anchor.parentNode.insertBefore(box, anchor.nextSibling);
@@ -665,6 +668,7 @@
           '<div><span class="dn-calc-score" id="dn-salt-score">—</span><span class="dn-calc-band" id="dn-salt-band"></span></div>' +
           '<div class="dn-calc-interp" id="dn-salt-interp"></div>' +
         '</div>' +
+        '<a href="/tools#salt" class="dn-calc-tools-link" data-zh="查看完整 SALT 使用指南 →" data-en="View full SALT guide →">查看完整 SALT 使用指南 →</a>' +
         '<div class="dn-calc-disclaimer" data-zh="* SALT: Olsen EA et al, JAAD 2004. 治療決策應由皮膚科專科醫師評估。" data-en="* SALT: Olsen EA et al, JAAD 2004. Treatment decisions require dermatology evaluation.">* SALT: Olsen EA et al, JAAD 2004. 治療決策應由皮膚科專科醫師評估。</div>' +
       '</div>';
     anchor.parentNode.insertBefore(box, anchor.nextSibling);
@@ -716,6 +720,7 @@
           '<div><span class="dn-calc-score" id="dn-uas7-score">—</span><span class="dn-calc-band" id="dn-uas7-band"></span></div>' +
           '<div class="dn-calc-interp" id="dn-uas7-interp"></div>' +
         '</div>' +
+        '<a href="/tools#uas7" class="dn-calc-tools-link" data-zh="查看完整 UAS7 使用指南 →" data-en="View full UAS7 guide →">查看完整 UAS7 使用指南 →</a>' +
         '<div class="dn-calc-disclaimer" data-zh="* UAS7: EAACI/GA²LEN 2022 蕁麻疹指引;Kolkhir 2024 JAMA. 控制目標 UAS7 ≤ 6,理想 0。" data-en="* UAS7: EAACI/GA²LEN 2022 guideline. Target UAS7 ≤ 6, ideal 0.">* UAS7: EAACI/GA²LEN 2022 蕁麻疹指引;Kolkhir 2024 JAMA. 控制目標 UAS7 ≤ 6,理想 0。</div>' +
       '</div>';
     box.innerHTML = html;
@@ -775,6 +780,7 @@
           '<div><span class="dn-calc-score" data-result="score">—</span><span class="dn-calc-band" data-result="band"></span></div>' +
           '<div class="dn-calc-interp" data-result="interp"></div>' +
         '</div>' +
+        (cfg.toolsAnchor ? '<a href="/tools#' + cfg.toolsAnchor + '" class="dn-calc-tools-link">查看完整 ' + cfg.tool + ' 使用指南 →</a>' : '') +
         '<div class="dn-calc-disclaimer">' + cfg.disclaimer + '</div>' +
       '</div>';
     anchor.parentNode.insertBefore(box, anchor.nextSibling);
@@ -813,7 +819,7 @@
       rows.push({ type:'number', label: r[0]+' · 面積 A (0-6)',  hint:'0=0% / 6=90-100%', key:r[1]+'_A', min:0, max:6, def:0 });
     });
     DN._buildCalc({
-      id: 'dn-pasi', tool: 'PASI',
+      id: 'dn-pasi', tool: 'PASI', toolsAnchor: 'pasi',
       title: 'PASI 計算器 — 乾癬嚴重度',
       sub: 'PASI = 0.1×(Eh+Ih+Dh)×Ah + 0.2×(Ea+Ia+Da)×Aa + 0.3×(Et+It+Dt)×At + 0.4×(El+Il+Dl)×Al。最高 72 分。',
       rows: rows,
@@ -857,7 +863,7 @@
       ] });
     });
     DN._buildCalc({
-      id: 'dn-dlqi', tool: 'DLQI',
+      id: 'dn-dlqi', tool: 'DLQI', toolsAnchor: 'dlqi',
       title: 'DLQI 計算器 — 皮膚病生活品質量表(過去 7 天)',
       sub: '10 題自評,每題 0-3 分,總分 0-30。生物製劑健保申請常見門檻 DLQI ≥ 10。',
       rows: rows,
@@ -880,7 +886,7 @@
   DN.injectHurley = function () {
     if (DN.currentSlug() !== 'hidradenitis-suppurativa') return;
     DN._buildCalc({
-      id: 'dn-hurley', tool: 'Hurley',
+      id: 'dn-hurley', tool: 'Hurley', toolsAnchor: 'hurley',
       title: 'Hurley 分期 — 化膿性汗腺炎(HS)嚴重度',
       sub: '化膿性汗腺炎臨床上最常用的分期。請選擇最符合您病情的描述。',
       rows: [{ type:'select', label:'目前狀態', key:'stage', options:[
@@ -904,7 +910,7 @@
   DN.injectHairScale = function () {
     if (DN.currentSlug() !== 'hairloss-myths') return;
     DN._buildCalc({
-      id: 'dn-hair-scale', tool: 'Norwood-Ludwig',
+      id: 'dn-hair-scale', tool: 'Norwood-Ludwig', toolsAnchor: 'norwood',
       title: 'Norwood-Hamilton (男性) / Ludwig (女性) 雄性禿分級',
       sub: '雄性禿臨床分級。男性使用 Norwood-Hamilton,女性使用 Ludwig。',
       rows: [
@@ -951,7 +957,7 @@
   DN.injectFitzpatrick = function () {
     if (DN.currentSlug() !== 'sunscreen-myths' && DN.currentSlug() !== 'melasma-myths') return;
     DN._buildCalc({
-      id: 'dn-fitzpatrick', tool: 'Fitzpatrick',
+      id: 'dn-fitzpatrick', tool: 'Fitzpatrick', toolsAnchor: 'fitzpatrick',
       title: 'Fitzpatrick 膚色分型 — 防曬 / 雷射安全參考',
       sub: '依您未曬太陽的皮膚顏色 + 曬太陽 1 小時(初夏中午)後的反應分類。',
       rows: [
@@ -1004,7 +1010,7 @@
       ]};
     });
     DN._buildCalc({
-      id: 'dn-gags', tool: 'GAGS',
+      id: 'dn-gags', tool: 'GAGS', toolsAnchor: 'gags',
       title: 'GAGS 計算器 — 痘痘嚴重度',
       sub: 'GAGS = Σ(部位最嚴重病灶 × 部位權重)。前額 / 兩頰 ×2,鼻 / 下巴 ×1,胸背 ×3。最高 44。',
       rows: rows,
@@ -1039,7 +1045,7 @@
       rows.push({ type:'number', label: sit[0]+' · 同質性 H (0-4)', hint:'homogeneity',     key:sit[1]+'_H', min:0, max:4, def:0 });
     });
     DN._buildCalc({
-      id: 'dn-masi', tool: 'MASI',
+      id: 'dn-masi', tool: 'MASI', toolsAnchor: 'masi',
       title: 'MASI 計算器 — 肝斑嚴重度',
       sub: 'MASI = 0.3×Af×(Df+Hf) + 0.3×Ar×(Dr+Hr) + 0.3×Al×(Dl+Hl) + 0.1×Ac×(Dc+Hc)。最高 48。',
       rows: rows,
@@ -1059,12 +1065,183 @@
     });
   };
 
+  // POEM (Patient-Oriented Eczema Measure, 0-28) — eczema-myths
+  DN.injectPOEM = function () {
+    var slug = DN.currentSlug();
+    if (slug !== 'eczema-myths' && slug !== 'pediatric-eczema') return;
+    var qs = [
+      'Q1 · 過去 1 週,皮膚<strong>癢</strong>幾天?',
+      'Q2 · 過去 1 週,皮膚<strong>讓您睡不好</strong>幾天?',
+      'Q3 · 過去 1 週,皮膚有<strong>滲血</strong>幾天?',
+      'Q4 · 過去 1 週,皮膚<strong>滲出組織液</strong>幾天?',
+      'Q5 · 過去 1 週,皮膚<strong>裂開</strong>幾天?',
+      'Q6 · 過去 1 週,皮膚<strong>剝落</strong>幾天?',
+      'Q7 · 過去 1 週,皮膚<strong>感覺乾燥或粗糙</strong>幾天?'
+    ];
+    var rows = qs.map(function (q, i) {
+      return { type:'select', label: q, key:'q'+(i+1), options:[
+        {v:0,label:'0 天'},{v:1,label:'1-2 天'},{v:2,label:'3-4 天'},{v:3,label:'5-6 天'},{v:4,label:'每天'}
+      ] };
+    });
+    DN._buildCalc({
+      id: 'dn-poem', tool: 'POEM', toolsAnchor: 'poem',
+      title: 'POEM 計算器 — 異位性皮膚炎病人主觀評估(過去 7 天)',
+      sub: 'POEM 是 7 題病人自評(每題 0-4),總分 0-28。最常用於異膚生活影響追蹤,優於 SCORAD 之處在於完全由病人自評。',
+      rows: rows,
+      calc: function (v) {
+        var s = 0;
+        for (var i = 1; i <= 7; i++) s += parseFloat(v['q'+i]) || 0;
+        var band, bg, fg, interp;
+        if (s <= 2) { band='清除 / 接近清除'; bg='#dcfce7'; fg='#14532d'; interp='疾病幾乎完全控制(POEM 0-2)— 維持目前保濕 + 主動式治療即可。'; }
+        else if (s <= 7) { band='輕度'; bg='#dcfce7'; fg='#14532d'; interp='輕度異膚(POEM 3-7)— 外用類固醇 + TCI 即可控制。'; }
+        else if (s <= 16) { band='中度'; bg='#fef9c3'; fg='#854d0e'; interp='中度(POEM 8-16)— 加 NB-UVB 光療、Proactive therapy 主動式維持。'; }
+        else if (s <= 24) { band='重度'; bg='#fed7aa'; fg='#9a3412'; interp='重度(POEM 17-24)— 評估生物製劑(Dupilumab、JAK 抑制劑)健保申請。'; }
+        else { band='極重度'; bg='#fee2e2'; fg='#991b1b'; interp='極重度(POEM 25-28)— Dupilumab / JAK 抑制劑優先,可考慮短期 cyclosporine 橋接。'; }
+        return { score: s + ' / 28', band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* POEM: Charman CR et al, Arch Dermatol 2004. POEM-50 / POEM-90 = 治療後降幅,代表臨床顯著反應。'
+    });
+  };
+
+  // IHS4 (International Hidradenitis Suppurativa Severity Score System) — HS
+  DN.injectIHS4 = function () {
+    if (DN.currentSlug() !== 'hidradenitis-suppurativa') return;
+    DN._buildCalc({
+      id: 'dn-ihs4', tool: 'IHS4', toolsAnchor: 'ihs4',
+      title: 'IHS4 計算器 — 化膿性汗腺炎活動度評估',
+      sub: 'IHS4 = 結節數 + (膿瘍數 × 2) + (引流通道 × 4)。優於 Hurley 之處在於追蹤活動度而非結構性損傷。',
+      rows: [
+        { type:'number', label:'結節(nodule)總數', hint:'未感染之硬結節', key:'nodule', min:0, max:50, def:0 },
+        { type:'number', label:'膿瘍(abscess)總數', hint:'紅腫熱痛的化膿病灶', key:'abscess', min:0, max:50, def:0 },
+        { type:'number', label:'引流通道(draining tunnel)總數', hint:'有膿水滲出的瘺管', key:'tunnel', min:0, max:30, def:0 }
+      ],
+      calc: function (v) {
+        var s = (v.nodule || 0) + (v.abscess || 0) * 2 + (v.tunnel || 0) * 4;
+        var band, bg, fg, interp;
+        if (s <= 3) { band='輕度'; bg='#dcfce7'; fg='#14532d'; interp='輕度活動(IHS4 ≤ 3)— 外用 Clindamycin + 短期口服抗生素。'; }
+        else if (s <= 10) { band='中度'; bg='#fef9c3'; fg='#854d0e'; interp='中度(IHS4 4-10)— 長期口服 Clindamycin + Rifampicin;考慮 Adalimumab(健保條件)。'; }
+        else { band='重度'; bg='#fee2e2'; fg='#991b1b'; interp='重度(IHS4 ≥ 11)— Adalimumab + 廣泛切除手術;<strong>Secukinumab(2023 FDA)</strong>為新選項。'; }
+        return { score: s + ' 分', band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* IHS4: Zouboulis CC et al, Br J Dermatol 2017. HiSCR(降幅 ≥ 50% 且通道未增加)是試驗反應指標。'
+    });
+  };
+
+  // NAPSI (Nail Psoriasis Severity Index, 0-32) — psoriasis-myths
+  DN.injectNAPSI = function () {
+    if (DN.currentSlug() !== 'psoriasis-myths') return;
+    var rows = [
+      { type:'number', label:'指甲基質(matrix)病灶象限數', hint:'點狀凹陷 / 縱向溝紋 / 紅斑 / 白斑;0-4 象限', key:'matrix', min:0, max:4, def:0 },
+      { type:'number', label:'指甲床(bed)病灶象限數', hint:'油滴徵 / 甲下角化 / 甲剝離 / 線狀出血;0-4 象限', key:'bed', min:0, max:4, def:0 }
+    ];
+    DN._buildCalc({
+      id: 'dn-napsi', tool: 'NAPSI', toolsAnchor: 'napsi',
+      title: 'NAPSI 計算器 — 指甲乾癬嚴重度(單一手指評估)',
+      sub: '單一指甲分基質 + 甲床各 4 象限,總分 0-8。十指 / 十趾累計可達 0-160(常用單指或代表指)。',
+      rows: rows,
+      calc: function (v) {
+        var s = (parseInt(v.matrix) || 0) + (parseInt(v.bed) || 0);
+        var band, bg, fg, interp;
+        if (s === 0) { band='無病灶'; bg='#dcfce7'; fg='#14532d'; interp='本指甲無乾癬病灶。'; }
+        else if (s <= 3) { band='輕度'; bg='#dcfce7'; fg='#14532d'; interp='輕度指甲乾癬(NAPSI 1-3)— 外用 Calcipotriol / Clobetasol 6 個月以上。'; }
+        else if (s <= 5) { band='中度'; bg='#fef9c3'; fg='#854d0e'; interp='中度(NAPSI 4-5)— 加病灶內類固醇注射 0.5-1 ml;考慮口服 Methotrexate / Acitretin。'; }
+        else { band='重度'; bg='#fee2e2'; fg='#991b1b'; interp='重度(NAPSI 6-8)— 全身性治療(Methotrexate、Apremilast)或<strong>生物製劑</strong>對指甲乾癬效果最好(IL-17、IL-23 系列)。'; }
+        return { score: s + ' / 8', band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* NAPSI: Rich P, Scher RK, JAAD 2003. 指甲乾癬常合併乾癬性關節炎,應評估關節症狀。'
+    });
+  };
+
+  // PHQ-9 (Patient Health Questionnaire) — psych comorbidity for chronic skin disease
+  DN.injectPHQ9 = function () {
+    var slug = DN.currentSlug();
+    // Show on chronic skin diseases with high psych comorbidity
+    if (!['eczema-myths','psoriasis-myths','urticaria-myths','alopecia-areata','vitiligo','hidradenitis-suppurativa','prurigo-nodularis','acne-myths','melasma-myths'].includes(slug)) return;
+    var qs = [
+      'Q1 · 對事情興趣減少 / 提不起勁',
+      'Q2 · 心情低落、沮喪、絕望',
+      'Q3 · 入睡困難 / 醒太早 / 睡眠太多',
+      'Q4 · 疲倦、覺得沒精力',
+      'Q5 · 食慾差或暴食',
+      'Q6 · 對自己感到失望、覺得是失敗者',
+      'Q7 · 注意力難集中(看書 / 看電視)',
+      'Q8 · 動作或說話<strong>慢到別人察覺</strong>;反過來焦躁不安、坐立難安',
+      'Q9 · 覺得自己活著很糟糕,或想傷害自己'
+    ];
+    var rows = qs.map(function (q, i) {
+      return { type:'select', label: q, key:'q'+(i+1), options:[
+        {v:0,label:'0 完全沒有'},{v:1,label:'1 幾天'},{v:2,label:'2 一半以上的天數'},{v:3,label:'3 幾乎每天'}
+      ]};
+    });
+    DN._buildCalc({
+      id: 'dn-phq9', tool: 'PHQ-9', toolsAnchor: 'phq9',
+      title: 'PHQ-9 計算器 — 憂鬱症篩檢(過去 2 週)',
+      sub: '慢性皮膚病(乾癬、異膚、CSU、結節性癢疹)病人合併憂鬱比率高達 20-30%。本量表為國際標準篩檢,9 題自評,0-27 分。',
+      rows: rows,
+      calc: function (v) {
+        var s = 0;
+        for (var i = 1; i <= 9; i++) s += parseFloat(v['q'+i]) || 0;
+        var q9 = parseFloat(v.q9) || 0;
+        var band, bg, fg, interp;
+        if (s <= 4) { band='正常'; bg='#dcfce7'; fg='#14532d'; interp='憂鬱症狀少(0-4)— 維持規律生活、運動、睡眠。'; }
+        else if (s <= 9) { band='輕度'; bg='#fef9c3'; fg='#854d0e'; interp='輕度憂鬱(5-9)— 觀察 1-2 週,持續可考慮諮商。'; }
+        else if (s <= 14) { band='中度'; bg='#fed7aa'; fg='#9a3412'; interp='中度憂鬱(10-14)— <strong>建議家醫科或精神科評估</strong>。皮膚問題與情緒相互影響,治療皮膚同時請考慮諮商。'; }
+        else if (s <= 19) { band='中重度'; bg='#fee2e2'; fg='#991b1b'; interp='中重度憂鬱(15-19)— <strong>應盡快就醫</strong>。皮膚科 + 精神科同步評估常更有效。'; }
+        else { band='重度'; bg='#fee2e2'; fg='#991b1b'; interp='重度憂鬱(20-27)— <strong>請務必盡快就醫</strong>。'; }
+        if (q9 >= 1) interp += '<br/><strong style="color:#991b1b">⚠ 您回答 Q9 自傷想法 ≥ 1,強烈建議立即就醫;若有自殺念頭,請撥打 安心專線 1925(依舊愛我)或 生命線 1995。</strong>';
+        return { score: s + ' / 27', band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* PHQ-9: Kroenke K, Spitzer RL, Williams JBW, J Gen Intern Med 2001;繁中翻譯:中華民國臨床心理師公會 2016。本工具為篩檢非診斷,正式診斷需精神科醫師評估。'
+    });
+  };
+
+  // EASI (Eczema Area & Severity Index, 0-72) — alternative to SCORAD
+  DN.injectEASI = function () {
+    var slug = DN.currentSlug();
+    if (slug !== 'eczema-myths' && slug !== 'pediatric-eczema') return;
+    var sites = [
+      ['頭頸 (×0.1 成人 / ×0.2 兒童)','head', 0.1],
+      ['上肢 (×0.2)','arm', 0.2],
+      ['軀幹 (×0.3)','trunk', 0.3],
+      ['下肢 (×0.4 成人 / ×0.4 兒童)','leg', 0.4]
+    ];
+    var rows = [];
+    sites.forEach(function (sit) {
+      rows.push({ type:'number', label: sit[0]+' · 紅斑 E (0-3)',  hint:'erythema',     key:sit[1]+'_E', min:0, max:3, def:0 });
+      rows.push({ type:'number', label: sit[0]+' · 浸潤 I (0-3)',  hint:'infiltration', key:sit[1]+'_I', min:0, max:3, def:0 });
+      rows.push({ type:'number', label: sit[0]+' · 抓痕 X (0-3)',  hint:'excoriation',  key:sit[1]+'_X', min:0, max:3, def:0 });
+      rows.push({ type:'number', label: sit[0]+' · 苔癬化 L (0-3)',hint:'lichenification', key:sit[1]+'_L', min:0, max:3, def:0 });
+      rows.push({ type:'number', label: sit[0]+' · 面積 A (0-6)', hint:'0=0% / 6=90-100%', key:sit[1]+'_A', min:0, max:6, def:0 });
+    });
+    DN._buildCalc({
+      id: 'dn-easi', tool: 'EASI', toolsAnchor: 'easi',
+      title: 'EASI 計算器 — 異膚另一標準量表(成人)',
+      sub: 'EASI = Σ(部位症狀總分 × 面積 × 部位權重)。最高 72 分。試驗常用 EASI 75 / 90 為反應指標。',
+      rows: rows,
+      calc: function (v) {
+        var head  = (v.head_E + v.head_I + v.head_X + v.head_L) * v.head_A * 0.1;
+        var arm   = (v.arm_E + v.arm_I + v.arm_X + v.arm_L) * v.arm_A * 0.2;
+        var trunk = (v.trunk_E + v.trunk_I + v.trunk_X + v.trunk_L) * v.trunk_A * 0.3;
+        var leg   = (v.leg_E + v.leg_I + v.leg_X + v.leg_L) * v.leg_A * 0.4;
+        var s = head + arm + trunk + leg;
+        var band, bg, fg, interp;
+        if (s < 1.1) { band='清除'; bg='#dcfce7'; fg='#14532d'; interp='幾乎清除(EASI &lt; 1.1)— 維持治療。'; }
+        else if (s <= 7) { band='輕度'; bg='#dcfce7'; fg='#14532d'; interp='輕度(EASI 1.1-7)— 外用類固醇 + TCI。'; }
+        else if (s <= 21) { band='中度'; bg='#fef9c3'; fg='#854d0e'; interp='中度(EASI 7.1-21)— 加 NB-UVB / Proactive therapy。'; }
+        else if (s <= 50) { band='重度'; bg='#fed7aa'; fg='#9a3412'; interp='重度(EASI 21.1-50)— <strong>達生物製劑健保申請門檻</strong>(EASI ≥ 16 + DLQI ≥ 10)。'; }
+        else { band='極重度'; bg='#fee2e2'; fg='#991b1b'; interp='極重度(EASI &gt; 50)— Dupilumab / JAK 抑制劑優先。'; }
+        return { score: s.toFixed(1), band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* EASI: Hanifin JM et al, Exp Dermatol 2001. 試驗常用 EASI-75(降幅 ≥ 75%)為療效指標。'
+    });
+  };
+
   // -----------------------------------------------------------------------
   // Homepage spotlight — "最近更新" + "熱門推薦" dual columns
   // (Taiwan KOL pattern; benchmarked against 黃瑽寧 / 邱品齊 / 蔡逸群 sites)
   // Auto-populates from DN.ARTICLES catalog; runs on homepage only.
   // -----------------------------------------------------------------------
-  DN.POPULAR_PICKS = ['acne-myths','eczema-myths','hairloss-myths','melasma-myths','sunscreen-myths'];
+  DN.POPULAR_PICKS = ['acne-myths','eczema-myths','hairloss-myths'];
 
   DN.injectSpotlight = function () {
     var recentEl = document.getElementById('dn-recent-list');
@@ -1092,11 +1269,11 @@
       '</a>';
     }
 
-    // Recent: top 5 by date desc (string compare works for YYYY-MM-DD)
+    // Recent: top 3 by date desc (string compare works for YYYY-MM-DD)
     if (recentEl) {
       var sorted = articles.slice().sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
-      var top5 = sorted.slice(0, 5);
-      recentEl.innerHTML = top5.map(function (a, i) {
+      var top3 = sorted.slice(0, 3);
+      recentEl.innerHTML = top3.map(function (a, i) {
         return '<li>' + rowHTML(a, i === 0 ? { label: 'NEW', bg: '#fee2e2', fg: '#991b1b' } : null) + '</li>';
       }).join('');
     }
@@ -1723,6 +1900,11 @@
       DN.injectFitzpatrick();
       DN.injectGAGS();
       DN.injectMASI();
+      DN.injectPOEM();
+      DN.injectEASI();
+      DN.injectIHS4();
+      DN.injectNAPSI();
+      DN.injectPHQ9();
       DN.addAuthorBio();
       DN.addLegalDisclaimer();
       DN.addTDALink();
