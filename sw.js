@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v40';
-const RUNTIME = 'cd-runtime-v40';
+const CACHE = 'cd-v41';
+const RUNTIME = 'cd-runtime-v41';
 const RUNTIME_MAX_ENTRIES = 60;
 
 const PRECACHE = [
