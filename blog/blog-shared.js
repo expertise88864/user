@@ -263,7 +263,7 @@
         '<a href="/" class="block px-3 py-2.5 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="首頁" data-en="Home"></a>' +
         '<a href="/blog/" class="block px-3 py-2.5 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="衛教文章" data-en="Articles"></a>' +
         '<a href="/about" class="block px-3 py-2 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="關於我" data-en="About"></a>' +
-        '<a href="https://reg.cmuh.cmu.edu.tw/" target="_blank" rel="noopener" class="block px-3 py-2.5 rounded-lg bg-teal-600 text-white text-[14px] font-semibold hover:bg-teal-700 mt-2" data-zh="中國醫官方線上掛號 →" data-en="CMUH Online Booking →"></a>' +
+        '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="block px-3 py-2.5 rounded-lg bg-teal-600 text-white text-[14px] font-semibold hover:bg-teal-700 mt-2" data-zh="中國醫官方線上掛號 →" data-en="CMUH Online Booking →"></a>' +
       '</nav>';
     header.appendChild(drawer);
 
@@ -305,7 +305,9 @@
     { slug:'epidermoid-cyst', title:'粉瘤完整衛教', cat:'rx', tag:'粉瘤', date:'2026-05-05', emoji:'', tag_en:'Epidermoid cyst' },
     { slug:'nhi-derm-drugs', title:'皮膚科常用藥物健保規範完整整理', cat:'rx', tag:'健保規範', date:'2026-05-05', emoji:'', tag_en:'NHI rules' },
     { slug:'laser-dermatology', title:'皮膚科雷射完整對照', cat:'rx', tag:'雷射 / 光電', date:'2026-05-05', emoji:'', tag_en:'Laser dermatology' },
-    { slug:'pediatric-eczema', title:'嬰幼兒 / 兒童異位性皮膚炎完整照護指南', cat:'rx', tag:'兒童異膚', date:'2026-05-05', emoji:'', tag_en:'Pediatric AD' }
+    { slug:'pediatric-eczema', title:'嬰幼兒 / 兒童異位性皮膚炎完整照護指南', cat:'rx', tag:'兒童異膚', date:'2026-05-05', emoji:'', tag_en:'Pediatric AD' },
+    { slug:'prurigo-nodularis', title:'結節性癢疹完整衛教', cat:'rx', tag:'結節性癢疹', date:'2026-05-07', emoji:'', tag_en:'Prurigo Nodularis' },
+    { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' }
   ];
 
   DN.currentSlug = function () {
@@ -342,12 +344,14 @@
     bar.style.cssText = 'display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0 8px;font-size:12.5px;color:var(--ink-2);';
     bar.innerHTML =
       '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#f1ece4;border:1px solid #a5f3fc;color:#4d6358;font-weight:600">' +
-        '<span aria-hidden="true">⏱</span><span data-zh="閱讀約 ' + minutes + ' 分鐘" data-en="' + minutes + ' min read">閱讀約 ' + minutes + ' 分鐘</span>' +
+        '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>' +
+        '<span data-zh="閱讀約 ' + minutes + ' 分鐘" data-en="' + minutes + ' min read">閱讀約 ' + minutes + ' 分鐘</span>' +
       '</span>' +
       '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#dcfce7;border:1px solid #86efac;color:#14532d;font-weight:600">' +
-        '<span aria-hidden="true">📅</span><span data-zh="更新於 ' + reviewedDate + '" data-en="Updated · ' + reviewedDate + '">更新於 ' + reviewedDate + '</span>' +
+        '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
+        '<span data-zh="最後審閱 ' + reviewedDate + '" data-en="Last reviewed · ' + reviewedDate + '">最後審閱 ' + reviewedDate + '</span>' +
       '</span>' +
-      '<a href="/about" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:9999px;background:#fff;border:1px solid var(--border);color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="關於作者 →" data-en="About the author →">關於作者 →</a>';
+      '<a href="/about" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:9999px;background:#fff;border:1px solid var(--border);color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="陳翊嘉醫師 →" data-en="Dr. Chen Yi-Jia →">陳翊嘉醫師 →</a>';
     target.parentNode.insertBefore(bar, target.nextSibling);
   };
 
@@ -551,6 +555,130 @@
   // (resident-grade safety wording per agent research)
   // -----------------------------------------------------------------------
   // -----------------------------------------------------------------------
+  // Font-size adjuster (S / M / L) — elder-friendly, persists in localStorage
+  // Sits to the LEFT of existing back-to-top button (right:18px;bottom:24px)
+  // -----------------------------------------------------------------------
+  DN.addFontSizer = function () {
+    if (document.getElementById('dn-font-sizer')) return;
+    if (location.pathname.startsWith('/admin')) return;
+    // Only show on article pages (where prose is heavy)
+    if (!document.querySelector('.prose, #proseZh, .prose-zh')) return;
+
+    var savedSize = localStorage.getItem('dn-font-size') || 'M';
+    var sizeMap = { 'S': '15px', 'M': '16.5px', 'L': '18.5px' };
+    function applyFontSize(s) {
+      var styleEl = document.getElementById('dn-font-size-style');
+      if (!styleEl) {
+        styleEl = document.createElement('style');
+        styleEl.id = 'dn-font-size-style';
+        document.head.appendChild(styleEl);
+      }
+      styleEl.textContent =
+        '.prose, .prose-zh, .prose-en, #proseZh, #proseEn { font-size: ' + sizeMap[s] + ' !important; }' +
+        '.prose p, .prose-zh p, .prose-en p, #proseZh p, #proseEn p { font-size: ' + sizeMap[s] + ' !important; }';
+      localStorage.setItem('dn-font-size', s);
+    }
+    applyFontSize(savedSize);
+
+    var wrap = document.createElement('div');
+    wrap.id = 'dn-font-sizer';
+    wrap.setAttribute('aria-label', '字型大小調整');
+    // Position below back-to-top button (which is at right:18px;bottom:24px)
+    wrap.style.cssText =
+      'position:fixed;right:18px;bottom:74px;z-index:49;display:flex;flex-direction:column;' +
+      'background:#fff;border:1px solid var(--border, #dcd5c8);border-radius:22px;' +
+      'box-shadow:0 6px 18px -8px rgba(77,99,88,.45);overflow:hidden;opacity:0;' +
+      'pointer-events:none;transition:opacity .25s;';
+
+    ['S', 'M', 'L'].forEach(function (s) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.dataset.size = s;
+      b.style.cssText =
+        'width:38px;height:32px;border:0;cursor:pointer;font-weight:700;color:#4d6358;' +
+        'background:' + (s === savedSize ? 'linear-gradient(180deg,#a4b5a8,#4d6358)' : 'transparent') + ';' +
+        'color:' + (s === savedSize ? '#fff' : '#4d6358') + ';';
+      b.style.fontSize = s === 'S' ? '11px' : (s === 'M' ? '13px' : '15px');
+      b.textContent = s === 'S' ? '小' : (s === 'M' ? '中' : '大');
+      b.setAttribute('aria-label', '字型大小 ' + s);
+      b.title = '字型大小 ' + (s === 'S' ? '小' : (s === 'M' ? '中' : '大'));
+      b.addEventListener('click', function () {
+        applyFontSize(s);
+        wrap.querySelectorAll('button').forEach(function (x) {
+          x.style.background = 'transparent';
+          x.style.color = '#4d6358';
+        });
+        b.style.background = 'linear-gradient(180deg,#a4b5a8,#4d6358)';
+        b.style.color = '#fff';
+        if (typeof gtag === 'function') {
+          try { gtag('event', 'font_size_change', { size: s, page_path: location.pathname }); } catch (e) {}
+        }
+      });
+      wrap.appendChild(b);
+    });
+    document.body.appendChild(wrap);
+
+    // Show after scroll > 400 (similar trigger to back-to-top)
+    var ticking = false;
+    function update() {
+      var scrolled = window.scrollY > 400;
+      wrap.style.opacity = scrolled ? '1' : '0';
+      wrap.style.pointerEvents = scrolled ? 'auto' : 'none';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    update();
+  };
+
+  // -----------------------------------------------------------------------
+  // Content feedback button — replaces "LINE consult" pattern with mailto
+  // For residents who don't run a clinic — feedback goes to gmail
+  // -----------------------------------------------------------------------
+  DN.addFeedbackLink = function () {
+    var article = document.querySelector('article.max-w-3xl');
+    if (!article || document.getElementById('dn-feedback')) return;
+    var slug = DN.currentSlug();
+    var pageTitle = document.title.split('|')[0].trim();
+    var subject = encodeURIComponent('[網站回饋] ' + pageTitle);
+    var body = encodeURIComponent(
+      '醫師您好,\n\n' +
+      '我想針對下列文章提供回饋:\n' +
+      '文章: ' + pageTitle + '\n' +
+      '網址: ' + location.href + '\n\n' +
+      '回饋內容(請填寫):\n' +
+      '□ 內容更正建議\n' +
+      '□ 引用爭議\n' +
+      '□ 過時資訊提醒\n' +
+      '□ 其他:_____\n\n' +
+      '說明:\n\n\n' +
+      '謝謝!'
+    );
+    var box = document.createElement('section');
+    box.id = 'dn-feedback';
+    box.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
+    box.innerHTML =
+      '<div style="background:#fafaf7;border:1px dashed #dcd5c8;border-radius:12px;padding:14px 18px;font-size:13px;color:#5e574e;line-height:1.75;display:flex;align-items:center;gap:14px;flex-wrap:wrap">' +
+      '<div style="flex:1;min-width:220px">' +
+      '<strong data-zh="發現錯誤、過時資訊、引用爭議?" data-en="Spot an error or outdated info?">發現錯誤、過時資訊、引用爭議?</strong><br/>' +
+      '<span data-zh="本文歡迎讀者回饋。我會親自閱讀每封信並依據文獻校正。" data-en="Reader feedback welcome. Each email is read personally and corrections are made per current literature.">本文歡迎讀者回饋。我會親自閱讀每封信並依據文獻校正。</span>' +
+      '</div>' +
+      '<a href="mailto:expertise88864@gmail.com?subject=' + subject + '&body=' + body + '" ' +
+      'style="flex-shrink:0;padding:8px 16px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" ' +
+      'data-feedback-link data-zh="提交內容回饋 →" data-en="Send feedback →">提交內容回饋 →</a>' +
+      '</div>';
+    article.parentNode.insertBefore(box, article.nextSibling);
+    // GA4 tracking
+    var fbLink = box.querySelector('[data-feedback-link]');
+    if (fbLink && typeof gtag === 'function') {
+      fbLink.addEventListener('click', function () {
+        try { gtag('event', 'content_feedback_click', { page_path: location.pathname }); } catch (e) {}
+      });
+    }
+  };
+
+  // -----------------------------------------------------------------------
   // Sticky bottom CTA bar — mobile-only fixed bar (research-backed pattern)
   // Modified for resident-physician persona: no fake LINE, no fake phone
   // (預約 CMUH / 醫院 Maps / 快速找文章)
@@ -569,7 +697,7 @@
       'border-top:1px solid var(--border, #dcd5c8);box-shadow:0 -4px 20px -8px rgba(77,99,88,.2);' +
       'padding-bottom:env(safe-area-inset-bottom)';
     bar.innerHTML =
-      '<a href="https://reg.cmuh.cmu.edu.tw/" target="_blank" rel="noopener" ' +
+      '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" ' +
         'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
         'data-cta="cmuh-book" aria-label="中國醫官方線上掛號">' +
         '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
@@ -630,7 +758,7 @@
         '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#4d6358;font-weight:700;margin-bottom:4px" data-zh="想當面評估?" data-en="Need in-person evaluation?">想當面評估?</div>' +
         '<div style="font-size:14px;color:#0f172a;line-height:1.7;margin:0" data-zh="若您有上述症狀或疑慮,歡迎至 <strong>中國醫藥大學附設醫院 皮膚科</strong> 面對面評估,由主治醫師依完整病史與檢查決定治療。" data-en="If you have any of these concerns, please consider an in-person consultation at <strong>China Medical University Hospital — Dermatology</strong>; the attending physician will decide treatment based on a complete history and examination.">若您有上述症狀或疑慮,歡迎至 <strong>中國醫藥大學附設醫院 皮膚科</strong> 面對面評估,由主治醫師依完整病史與檢查決定治療。</div>' +
       '</div>' +
-      '<a href="https://reg.cmuh.cmu.edu.tw/" target="_blank" rel="noopener" style="flex-shrink:0;padding:10px 18px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" data-zh="中國醫官方掛號 →" data-en="CMUH Booking →">中國醫官方掛號 →</a>';
+      '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" style="flex-shrink:0;padding:10px 18px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" data-zh="中國醫官方掛號 →" data-en="CMUH Booking →">中國醫官方掛號 →</a>';
     targetH2.parentNode.insertBefore(cta, targetH2);
   };
 
@@ -658,7 +786,7 @@
             '<strong>經歷</strong>:高雄醫學大學附設中和紀念醫院 不分科住院醫師(PGY)" data-en="<strong>Current</strong>: Dermatology Resident, China Medical University Hospital<br/><strong>Education</strong>: M.D., Kaohsiung Medical University, College of Medicine<br/><strong>Training</strong>: PGY Resident, Kaohsiung Medical University Hospital"><strong>現職</strong>:中國醫藥大學附設醫院 皮膚科 住院醫師<br/><strong>學歷</strong>:高雄醫學大學醫學系 畢業<br/><strong>經歷</strong>:高雄醫學大學附設中和紀念醫院 不分科住院醫師(PGY)</div>' +
           '<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">' +
             '<a href="/about" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#0e7c86;color:#fff;text-decoration:none" data-zh="關於我" data-en="About">關於我 →</a>' +
-            '<a href="https://reg.cmuh.cmu.edu.tw/" target="_blank" rel="noopener" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#4d6358;border:1px solid #a5f3fc;text-decoration:none" data-zh="中國醫官方掛號" data-en="CMUH Booking">中國醫官方掛號 →</a>' +
+            '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#4d6358;border:1px solid #a5f3fc;text-decoration:none" data-zh="中國醫官方掛號" data-en="CMUH Booking">中國醫官方掛號 →</a>' +
           '</div>' +
         '</div>' +
       '</div>';
@@ -1022,7 +1150,9 @@
       DN.addTDALink();
       DN.addRelatedArticles();
       DN.addShareToolbar();
+      DN.addFeedbackLink();
     }
+    DN.addFontSizer();
     DN.bindWebVitals();
     DN.bindGAEvents();
     DN.bindArticleHub();

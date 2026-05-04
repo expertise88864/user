@@ -6,7 +6,7 @@
   <link rel="self" type="application/atom+xml" href="https://chendermatologist.com/blog/atom.xml" />
   <link rel="alternate" type="application/rss+xml" href="https://chendermatologist.com/blog/feed.xml" />
   <id>https://chendermatologist.com/blog/</id>
-  <updated>2026-05-06T09:00:00+08:00</updated>
+  <updated>2026-05-07T18:00:00+08:00</updated>
   <author>
     <name>陳翊嘉 醫師</name>
     <uri>https://chendermatologist.com/about</uri>
@@ -15,6 +15,26 @@
   <icon>https://chendermatologist.com/icon.svg</icon>
   <logo>https://chendermatologist.com/icon.svg</logo>
   <rights>© 2026 陳翊嘉醫師 · ChenDermatologist</rights>
+
+  <entry>
+    <title>皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教 — TDA + 血液腫瘤學會 2024 共識</title>
+    <link href="https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma" />
+    <id>https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma</id>
+    <updated>2026-05-07T18:00:00+08:00</updated>
+    <published>2026-05-07T18:00:00+08:00</published>
+    <category term="罕見皮膚癌" />
+    <summary>蕈狀肉芽腫(MF)、Sézary、CD30+ LPD。TNMB 分期、外用/光療/Bexarotene/Brentuximab/Mogamulizumab、Dupilumab/TNF-α 鑑別。依 TDA + 血液腫瘤學會 2024 聯合共識。</summary>
+  </entry>
+
+  <entry>
+    <title>結節性癢疹(Prurigo Nodularis)完整衛教 — Dupilumab、Nemolizumab、TDA 2024</title>
+    <link href="https://chendermatologist.com/blog/prurigo-nodularis" />
+    <id>https://chendermatologist.com/blog/prurigo-nodularis</id>
+    <updated>2026-05-07T17:00:00+08:00</updated>
+    <published>2026-05-07T17:00:00+08:00</published>
+    <category term="處方用藥" />
+    <summary>頑固搔癢的結節性癢疹完整治療階梯。LIBERTY-PN PRIME(Dupilumab)+ OLYMPIA 2(Nemolizumab,2024 FDA 核准)兩款生物製劑改變治療版圖。依 TDA 2024 共識整理。</summary>
+  </entry>
 
   <entry>
     <title>皮膚科常用藥物健保規範完整整理</title>
