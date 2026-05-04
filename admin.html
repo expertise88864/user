@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="zh-TW">
+<html lang="zh-Hant-TW">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>後台編輯 · ChenDermatologist Admin</title>
 <meta name="robots" content="noindex,nofollow" />
-<meta name="theme-color" content="#0e7c86" />
+<meta name="theme-color" content="#7a9285" />
 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap&text=陳翊嘉醫師中國醫皮膚科衛教筆記常見疾病迷思澄清關於我預約掛號" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   *{ box-sizing:border-box; }
   html,body{ margin:0; padding:0; height:100%; font-family:'Inter','Noto Sans TC','Microsoft JhengHei',sans-serif; background:#f5fbfa; color:#0f172a; overflow:hidden; }
-  :root{ --teal:#0e7c86; --teal-deep:#0c5159; --teal-bright:#14b8a6; --mint-soft:#d4f1ee; --border:#d4eae6; --line:#e5f3ef; --ink:#0f172a; --ink-2:#334155; --muted:#64748b; }
-  .teal-text{ background:linear-gradient(180deg,#14b8a6 0%, #0c5159 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  :root{ --teal:#7a9285; --teal-deep:#4d6358; --teal-bright:#a4b5a8; --mint-soft:#dcd9d1; --border:#dcd5c8; --line:#ebe4d8; --ink:#2a2620; --ink-2:#5e574e; --muted:#8b8378; }
+  .teal-text{ background:linear-gradient(180deg,#a4b5a8 0%, #4d6358 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
 
   header.top{ position:relative; z-index:50; background:rgba(245,251,250,.95); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); padding:10px 16px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; height:54px; }
   header.top .brand{ font-weight:700; font-size:15px; }
@@ -45,7 +45,7 @@
   .toolbar .path{ font-family:'JetBrains Mono',monospace; font-size:12px; padding:5px 10px; background:#f5fbfa; border:1px solid var(--border); border-radius:6px; color:var(--ink); }
   .toolbar button, .toolbar label.upload{ padding:5px 11px; font-size:12.5px; border-radius:6px; border:1px solid var(--border); background:#fff; cursor:pointer; font-weight:600; color:var(--ink-2); display:inline-flex; align-items:center; gap:4px; }
   .toolbar button:hover, .toolbar label.upload:hover{ border-color:var(--teal); color:var(--teal-deep); }
-  .toolbar button.primary{ background:linear-gradient(180deg,#14b8a6,#0c5159); color:#fff; border-color:var(--teal-deep); }
+  .toolbar button.primary{ background:linear-gradient(180deg,#a4b5a8,#4d6358); color:#fff; border-color:var(--teal-deep); }
   .toolbar button.primary:hover{ filter:brightness(1.05); color:#fff; }
   .toolbar .sep{ width:1px; height:18px; background:var(--border); margin:0 4px; }
   .toolbar .grow{ flex:1; }
@@ -69,7 +69,7 @@
   .modal h2{ margin:0 0 8px; font-size:20px; color:var(--ink); }
   .modal p{ margin:6px 0; font-size:13.5px; line-height:1.7; color:var(--ink-2); }
   .modal input{ width:100%; padding:9px 12px; font-size:13px; font-family:'JetBrains Mono',monospace; border:1px solid var(--border); border-radius:8px; margin:8px 0; }
-  .modal button{ padding:9px 16px; background:linear-gradient(180deg,#14b8a6,#0c5159); color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; }
+  .modal button{ padding:9px 16px; background:linear-gradient(180deg,#a4b5a8,#4d6358); color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; }
   .modal a{ color:var(--teal-deep); font-weight:600; }
 </style>
 </head>
@@ -458,7 +458,7 @@ function insertImageAtSelection(url){
   const img = doc.createElement('img');
   img.src = url;
   img.alt = '';
-  img.style.cssText = 'max-width:100%; height:auto; border-radius:12px; box-shadow:0 8px 18px -10px rgba(12,81,89,.25);';
+  img.style.cssText = 'max-width:100%; height:auto; border-radius:12px; box-shadow:0 8px 18px -10px rgba(77,99,88,.25);';
   fig.appendChild(img);
   range.deleteContents();
   range.insertNode(fig);

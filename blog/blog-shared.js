@@ -116,7 +116,7 @@
     btn.id = 'dn-totop';
     btn.setAttribute('aria-label', 'Scroll to top');
     btn.innerHTML = '↑';
-    btn.style.cssText = 'position:fixed;right:18px;bottom:24px;width:42px;height:42px;border-radius:50%;background:linear-gradient(180deg,#14b8a6,#0c5159);color:#fff;border:1px solid rgba(12,81,89,.5);box-shadow:0 8px 20px -8px rgba(12,81,89,.55);cursor:pointer;display:none;align-items:center;justify-content:center;z-index:50;font-size:18px;line-height:1';
+    btn.style.cssText = 'position:fixed;right:18px;bottom:24px;width:42px;height:42px;border-radius:50%;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;border:1px solid rgba(12,81,89,.5);box-shadow:0 8px 20px -8px rgba(12,81,89,.55);cursor:pointer;display:none;align-items:center;justify-content:center;z-index:50;font-size:18px;line-height:1';
     btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
     document.body.appendChild(btn);
     document.addEventListener('scroll', function () {
@@ -220,7 +220,7 @@
       const toast = document.createElement('div');
       toast.id = 'dn-sw-toast';
       toast.style.cssText = 'position:fixed;left:50%;bottom:max(24px,env(safe-area-inset-bottom));transform:translateX(-50%);background:#0c5159;color:#fff;padding:10px 16px 10px 18px;border-radius:9999px;display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;z-index:60;box-shadow:0 12px 28px -8px rgba(12,81,89,.55);max-width:calc(100vw - 24px);';
-      toast.innerHTML = '<span>網站已更新 — </span><button style="background:#fff;color:#0c5159;border:none;padding:5px 12px;border-radius:9999px;font-weight:700;font-size:12px;cursor:pointer">重新載入</button>';
+      toast.innerHTML = '<span>網站已更新 — </span><button style="background:#fff;color:#4d6358;border:none;padding:5px 12px;border-radius:9999px;font-weight:700;font-size:12px;cursor:pointer">重新載入</button>';
       toast.querySelector('button').addEventListener('click', function () {
         if (registration.waiting) registration.waiting.postMessage({ type: 'SKIP_WAITING' });
         location.reload();
@@ -343,7 +343,7 @@
     bar.id = 'dn-reading-meta';
     bar.style.cssText = 'display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0 8px;font-size:12.5px;color:var(--ink-2);';
     bar.innerHTML =
-      '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#ecfeff;border:1px solid #a5f3fc;color:#0c5159;font-weight:600">' +
+      '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#f1ece4;border:1px solid #a5f3fc;color:#4d6358;font-weight:600">' +
         '<span aria-hidden="true">⏱</span><span data-zh="閱讀約 ' + minutes + ' 分鐘" data-en="' + minutes + ' min read">閱讀約 ' + minutes + ' 分鐘</span>' +
       '</span>' +
       '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#dcfce7;border:1px solid #86efac;color:#14532d;font-weight:600">' +
@@ -367,7 +367,7 @@
 
     const aside = document.createElement('aside');
     aside.id = 'dn-toc-float';
-    aside.style.cssText = 'position:fixed;left:max(16px,calc(50% - 720px));top:120px;width:200px;max-height:calc(100vh - 160px);overflow-y:auto;padding:14px 16px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:14px;box-shadow:0 12px 28px -14px rgba(12,81,89,.22);font-size:12.5px;line-height:1.7;z-index:30;';
+    aside.style.cssText = 'position:fixed;left:max(16px,calc(50% - 720px));top:120px;width:200px;max-height:calc(100vh - 160px);overflow-y:auto;padding:14px 16px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:14px;box-shadow:0 12px 28px -14px rgba(77,99,88,.22);font-size:12.5px;line-height:1.7;z-index:30;';
     let html = '<div style="font-size:10.5px;text-transform:uppercase;letter-spacing:.18em;color:var(--teal-deep);font-weight:700;margin-bottom:8px">本篇大綱</div><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px" id="dn-toc-list">';
     h2s.forEach(function (h, i) {
       html += '<li><a href="#' + h.id + '" data-toc="' + h.id + '" style="display:block;padding:5px 8px;border-radius:6px;color:var(--ink-2);text-decoration:none;border-left:2px solid transparent;transition:all .15s">' + (h.textContent || ('Section ' + (i + 1))).slice(0, 28) + '</a></li>';
@@ -426,7 +426,7 @@
     wrap.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-10';
     let html = '<div style="border-top:1px solid var(--line);padding-top:24px"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--teal-deep);font-weight:700;margin-bottom:12px" data-zh="📖 你可能也會想看" data-en="📖 Related reads">📖 你可能也會想看</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">';
     scored.forEach(function (a) {
-      html += '<a href="/blog/' + a.slug + '" style="display:flex;flex-direction:column;gap:6px;padding:14px;background:#fff;border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--ink);transition:all .15s;box-shadow:0 1px 2px rgba(15,23,42,.04)" onmouseover="this.style.borderColor=\'rgba(14,124,134,.5)\';this.style.transform=\'translateY(-2px)\';this.style.boxShadow=\'0 10px 20px -10px rgba(12,81,89,.22)\'" onmouseout="this.style.borderColor=\'var(--border)\';this.style.transform=\'\';this.style.boxShadow=\'0 1px 2px rgba(15,23,42,.04)\'">' +
+      html += '<a href="/blog/' + a.slug + '" style="display:flex;flex-direction:column;gap:6px;padding:14px;background:#fff;border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--ink);transition:all .15s;box-shadow:0 1px 2px rgba(15,23,42,.04)" onmouseover="this.style.borderColor=\'rgba(122,146,133,.5)\';this.style.transform=\'translateY(-2px)\';this.style.boxShadow=\'0 10px 20px -10px rgba(77,99,88,.22)\'" onmouseout="this.style.borderColor=\'var(--border)\';this.style.transform=\'\';this.style.boxShadow=\'0 1px 2px rgba(15,23,42,.04)\'">' +
         '<span style="font-size:22px;line-height:1">' + (a.emoji || '📄') + '</span>' +
         '<span style="font-size:14px;font-weight:700;line-height:1.4;font-family:Noto Serif TC,Georgia,serif">' + a.title + '</span>' +
         '<span style="font-size:11.5px;color:var(--muted)">' + a.tag + ' · ' + a.date + '</span>' +
@@ -480,7 +480,7 @@
         '<a target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=' + url + '" aria-label="Facebook" data-share="facebook" style="display:inline-flex;align-items:center;gap:6px;padding:7px 13px;background:#1877f2;color:#fff;border-radius:9999px;font-size:12.5px;font-weight:700;text-decoration:none">Facebook</a>' +
         '<a target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=' + url + '&text=' + title + '" aria-label="Twitter" data-share="twitter" style="display:inline-flex;align-items:center;gap:6px;padding:7px 13px;background:#1f2937;color:#fff;border-radius:9999px;font-size:12.5px;font-weight:700;text-decoration:none">𝕏</a>' +
         '<button id="dn-copy" data-share="copy" style="display:inline-flex;align-items:center;gap:6px;padding:7px 13px;background:#fff;color:var(--ink);border:1px solid var(--border);border-radius:9999px;font-size:12.5px;font-weight:700;cursor:pointer" data-zh="📋 複製連結" data-en="📋 Copy link">📋 複製連結</button>' +
-        (navigator.share ? '<button id="dn-native-share" data-share="native" style="display:inline-flex;align-items:center;gap:6px;padding:7px 13px;background:linear-gradient(180deg,#14b8a6,#0c5159);color:#fff;border:none;border-radius:9999px;font-size:12.5px;font-weight:700;cursor:pointer">↗ 系統分享</button>' : '') +
+        (navigator.share ? '<button id="dn-native-share" data-share="native" style="display:inline-flex;align-items:center;gap:6px;padding:7px 13px;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;border:none;border-radius:9999px;font-size:12.5px;font-weight:700;cursor:pointer">↗ 系統分享</button>' : '') +
       '</div>';
     article.parentNode.insertBefore(sec, article.nextSibling);
 
@@ -545,7 +545,7 @@
     const wrap = document.createElement('section');
     wrap.id = 'dn-tda-link';
     wrap.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
-    wrap.innerHTML = '<div style="background:linear-gradient(180deg,#f5fbfa,#fff);border:1px solid var(--border);border-radius:14px;padding:18px 20px"><div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#0c5159;font-weight:700;margin-bottom:6px">📋 臺灣皮膚科醫學會官方資源</div><p style="margin:0 0 10px;font-size:13.5px;line-height:1.7;color:var(--ink-2)">本疾病有 ' + DN.TDA_GUIDELINE[slug] + '。完整官方共識可至以下查詢:</p><a href="https://www.derma.org.tw/clinical/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid var(--border);border-radius:9999px;color:var(--teal-deep);font-weight:700;font-size:13px;text-decoration:none">→ 臺灣皮膚科醫學會 診療指引總覽</a></div>';
+    wrap.innerHTML = '<div style="background:linear-gradient(180deg,#f5fbfa,#fff);border:1px solid var(--border);border-radius:14px;padding:18px 20px"><div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#4d6358;font-weight:700;margin-bottom:6px">📋 臺灣皮膚科醫學會官方資源</div><p style="margin:0 0 10px;font-size:13.5px;line-height:1.7;color:var(--ink-2)">本疾病有 ' + DN.TDA_GUIDELINE[slug] + '。完整官方共識可至以下查詢:</p><a href="https://www.derma.org.tw/clinical/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid var(--border);border-radius:9999px;color:var(--teal-deep);font-weight:700;font-size:13px;text-decoration:none">→ 臺灣皮膚科醫學會 診療指引總覽</a></div>';
     article.parentNode.insertBefore(wrap, article.nextSibling);
   };
 
@@ -570,7 +570,7 @@
     cta.style.cssText = 'background:linear-gradient(135deg,#ecfeff 0%,#f5fbfa 100%);border:1px solid #a5f3fc;border-radius:14px;padding:16px 20px;margin:22px 0;display:flex;gap:14px;align-items:center;flex-wrap:wrap;';
     cta.innerHTML =
       '<div style="flex:1;min-width:200px">' +
-        '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#0c5159;font-weight:700;margin-bottom:4px" data-zh="想當面評估?" data-en="Need in-person evaluation?">想當面評估?</div>' +
+        '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#4d6358;font-weight:700;margin-bottom:4px" data-zh="想當面評估?" data-en="Need in-person evaluation?">想當面評估?</div>' +
         '<div style="font-size:14px;color:#0f172a;line-height:1.7;margin:0" data-zh="若您有上述症狀或疑慮,歡迎至 <strong>中國醫藥大學附設醫院 皮膚科</strong> 由陳翊嘉醫師當面評估,提供個別化治療建議。" data-en="If you have any of these concerns, welcome to consult Dr. Chen at <strong>China Medical University Hospital — Dermatology</strong> for personalized evaluation.">若您有上述症狀或疑慮,歡迎至 <strong>中國醫藥大學附設醫院 皮膚科</strong> 由陳翊嘉醫師當面評估,提供個別化治療建議。</div>' +
       '</div>' +
       '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" style="flex-shrink:0;padding:10px 18px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" data-zh="預約掛號 →" data-en="Book consult →">預約掛號 →</a>';
@@ -588,13 +588,13 @@
     box.id = 'dn-author-bio';
     box.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
     box.innerHTML =
-      '<div style="background:linear-gradient(135deg,#ecfeff 0%, #f5fbfa 100%);border:1px solid #a5f3fc;border-radius:18px;padding:22px 24px;display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(12,81,89,.18)">' +
+      '<div style="background:linear-gradient(135deg,#ecfeff 0%, #f5fbfa 100%);border:1px solid #a5f3fc;border-radius:18px;padding:22px 24px;display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(77,99,88,.18)">' +
         '<div style="flex-shrink:0;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#14b8a6,#0c5159);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Inter,sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em">YJ</div>' +
         '<div style="flex:1;min-width:240px">' +
-          '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#0c5159;font-weight:700;margin-bottom:4px" data-zh="關於作者" data-en="About the author">關於作者</div>' +
+          '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#4d6358;font-weight:700;margin-bottom:4px" data-zh="關於作者" data-en="About the author">關於作者</div>' +
           '<div style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#0f172a;margin-bottom:6px">' +
             '<span data-zh="陳翊嘉 醫師" data-en="Dr. Chen Yi-Chia, M.D.">陳翊嘉 醫師</span>' +
-            '<span style="font-size:12px;font-weight:600;color:#0c5159;margin-left:8px;padding:2px 8px;border-radius:6px;background:#fff;border:1px solid #a5f3fc;font-family:Inter,sans-serif" data-zh="皮膚科 R2" data-en="Dermatology PGY-2">皮膚科 R2</span>' +
+            '<span style="font-size:12px;font-weight:600;color:#4d6358;margin-left:8px;padding:2px 8px;border-radius:6px;background:#fff;border:1px solid #a5f3fc;font-family:Inter,sans-serif" data-zh="皮膚科 R2" data-en="Dermatology PGY-2">皮膚科 R2</span>' +
           '</div>' +
           '<div style="font-size:13px;color:#334155;line-height:1.85" data-zh="<strong>現職</strong>:中國醫藥大學附設醫院 皮膚科 住院醫師<br/>' +
             '<strong>學歷</strong>:高雄醫學大學 醫學系<br/>' +
@@ -603,8 +603,8 @@
             '<strong>內容守則</strong>:本站全部內容由作者親自撰寫,依據國際醫學文獻與診療指引(AAD、EAACI、TDA 等),<strong>無業配、無贊助、無廣告專案合作</strong>。引用之 PubMed 文獻可點擊查證。" data-en="<strong>Current</strong>: Dermatology Resident, China Medical University Hospital<br/><strong>Education</strong>: M.D., Kaohsiung Medical University<br/><strong>Training</strong>: PGY at Kaohsiung Medical University Hospital<br/><strong>Areas</strong>: General dermatology, acne / scars, rosacea, atopic dermatitis, psoriasis, alopecia areata, biologics, laser, dermatologic surgery<br/><strong>Editorial standard</strong>: All content authored personally, citing international guidelines (AAD, EAACI, TDA). No sponsored content or affiliate links. PubMed citations are linkable for verification."><strong>現職</strong>:中國醫藥大學附設醫院 皮膚科 住院醫師<br/><strong>學歷</strong>:高雄醫學大學 醫學系<br/><strong>經歷</strong>:高雄醫學大學附設醫院 不分科住院醫師(PGY)<br/><strong>專業領域</strong>:一般皮膚病、痘痘 / 痘疤、玫瑰斑、異位性皮膚炎、乾癬、圓禿、生物製劑、雷射光電、皮膚外科<br/><strong>內容守則</strong>:本站全部內容由作者親自撰寫,依據國際醫學文獻與診療指引(AAD、EAACI、TDA 等),<strong>無業配、無贊助、無廣告專案合作</strong>。引用之 PubMed 文獻可點擊查證。</div>' +
           '<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">' +
             '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#0e7c86;color:#fff;text-decoration:none" data-zh="醫院個人頁" data-en="Hospital profile">醫院個人頁 →</a>' +
-            '<a href="/about" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#0c5159;border:1px solid #a5f3fc;text-decoration:none" data-zh="完整個人介紹" data-en="Full bio">完整個人介紹</a>' +
-            '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#0c5159;border:1px solid #a5f3fc;text-decoration:none" data-zh="預約掛號" data-en="Book consult">預約掛號 →</a>' +
+            '<a href="/about" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#4d6358;border:1px solid #a5f3fc;text-decoration:none" data-zh="完整個人介紹" data-en="Full bio">完整個人介紹</a>' +
+            '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#4d6358;border:1px solid #a5f3fc;text-decoration:none" data-zh="預約掛號" data-en="Book consult">預約掛號 →</a>' +
           '</div>' +
         '</div>' +
       '</div>';
@@ -805,20 +805,20 @@
       var st = document.createElement('style');
       st.id = 'dn-hub-css';
       st.textContent =
-        '#dn-hub{ background:#fff; border:1px solid var(--border); border-radius:18px; padding:18px 18px 14px; margin:18px 0 22px; box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(12,81,89,.18); }' +
-        '.dn-hub-title{ font-size:11px; text-transform:uppercase; letter-spacing:.22em; font-weight:700; color:#0c5159; margin:0 0 10px; display:flex; align-items:center; gap:6px; }' +
+        '#dn-hub{ background:#fff; border:1px solid var(--border); border-radius:18px; padding:18px 18px 14px; margin:18px 0 22px; box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(77,99,88,.18); }' +
+        '.dn-hub-title{ font-size:11px; text-transform:uppercase; letter-spacing:.22em; font-weight:700; color:#4d6358; margin:0 0 10px; display:flex; align-items:center; gap:6px; }' +
         '.dn-search-row{ display:flex; align-items:center; gap:10px; margin:0 0 12px; flex-wrap:wrap; }' +
         '#dn-search-input{ flex:1; min-width:200px; padding:10px 14px 10px 36px; font-size:14.5px; border:1px solid var(--border); border-radius:10px; outline:none; transition:border-color .15s, box-shadow .15s; background:#fff url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%230c5159%27 stroke-width=%272.2%27 stroke-linecap=%27round%27><circle cx=%2711%27 cy=%2711%27 r=%277%27/><line x1=%2721%27 y1=%2721%27 x2=%2716.5%27 y2=%2716.5%27/></svg>") no-repeat 10px center; background-size:18px; }' +
-        '#dn-search-input:focus{ border-color:rgba(14,124,134,.6); box-shadow:0 0 0 3px rgba(20,184,166,.18); }' +
+        '#dn-search-input:focus{ border-color:rgba(122,146,133,.6); box-shadow:0 0 0 3px rgba(164,181,168,.20); }' +
         '#dn-search-status{ font-size:11.5px; color:var(--muted); white-space:nowrap; }' +
         '.dn-tag-chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0; }' +
         '.dn-tag-chip{ padding:5px 11px; border-radius:9999px; font-size:12px; font-weight:600; color:var(--ink-2); background:#fff; border:1px solid var(--border); cursor:pointer; transition:all .15s; line-height:1.4; }' +
-        '.dn-tag-chip:hover{ border-color:rgba(14,124,134,.45); color:var(--teal-deep); }' +
-        '.dn-tag-chip.active{ background:linear-gradient(180deg,#14b8a6,#0c5159); color:#fff; border-color:transparent; }' +
-        '.dn-tag-chip.dn-tag-all{ background:#ecfeff; color:#0c5159; border-color:#a5f3fc; font-weight:700; }' +
-        '.dn-tag-chip.dn-tag-all.active{ background:linear-gradient(180deg,#14b8a6,#0c5159); color:#fff; border-color:transparent; }' +
+        '.dn-tag-chip:hover{ border-color:rgba(122,146,133,.45); color:var(--teal-deep); }' +
+        '.dn-tag-chip.active{ background:linear-gradient(180deg,#a4b5a8,#4d6358); color:#fff; border-color:transparent; }' +
+        '.dn-tag-chip.dn-tag-all{ background:#f1ece4; color:#4d6358; border-color:#a5f3fc; font-weight:700; }' +
+        '.dn-tag-chip.dn-tag-all.active{ background:linear-gradient(180deg,#a4b5a8,#4d6358); color:#fff; border-color:transparent; }' +
         '.dn-show-more{ display:block; width:100%; text-align:center; margin:14px auto 0; padding:9px 14px; background:#fff; border:1px solid var(--border); border-radius:10px; font-size:13px; font-weight:600; color:var(--teal-deep); cursor:pointer; transition:all .15s; }' +
-        '.dn-show-more:hover{ border-color:rgba(14,124,134,.5); background:var(--mint-soft); }' +
+        '.dn-show-more:hover{ border-color:rgba(122,146,133,.5); background:var(--mint-soft); }' +
         '@media (max-width:640px){ #dn-search-input{ font-size:14px; padding:8px 12px 8px 32px; background-size:16px; } }';
       document.head.appendChild(st);
     }
