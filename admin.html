@@ -7,6 +7,7 @@
 <meta name="robots" content="noindex,nofollow" />
 <meta name="theme-color" content="#0e7c86" />
 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -73,6 +74,8 @@
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
+
 
 <header class="top">
   <div class="brand"><span class="teal-text">ChenDermatologist</span> · <span style="font-weight:500;color:#64748b">後台編輯（視覺模式）</span></div>
@@ -609,7 +612,7 @@ function mergeIframeIntoOriginal(){
       return openTag + '\n' + innerHTML + '\n' + closeTag;
     });
   } else {
-    // Fallback: replace <main>...</main>
+    // Fallback: replace <main id="main-content">...</main>
     const reMain = /(<main[^>]*>)([\s\S]*?)(<\/main>)/;
     merged = merged.replace(reMain, function(m, o, _, c){ return o + '\n' + innerHTML + '\n' + c; });
   }

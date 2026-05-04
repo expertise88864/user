@@ -306,7 +306,8 @@
     { slug:'dermatology-faq', title:'皮膚科 25 個最常見問題', cat:'myth', tag:'常見問題', date:'2026-05-05', emoji:'', tag_en:'FAQ' },
     { slug:'epidermoid-cyst', title:'粉瘤完整衛教', cat:'rx', tag:'粉瘤', date:'2026-05-05', emoji:'', tag_en:'Epidermoid cyst' },
     { slug:'nhi-derm-drugs', title:'皮膚科常用藥物健保規範完整整理', cat:'rx', tag:'健保規範', date:'2026-05-05', emoji:'', tag_en:'NHI rules' },
-    { slug:'laser-dermatology', title:'皮膚科雷射完整對照', cat:'rx', tag:'雷射 / 光電', date:'2026-05-05', emoji:'', tag_en:'Laser dermatology' }
+    { slug:'laser-dermatology', title:'皮膚科雷射完整對照', cat:'rx', tag:'雷射 / 光電', date:'2026-05-05', emoji:'', tag_en:'Laser dermatology' },
+    { slug:'pediatric-eczema', title:'嬰幼兒 / 兒童異位性皮膚炎完整照護指南', cat:'rx', tag:'兒童異膚', date:'2026-05-05', emoji:'', tag_en:'Pediatric AD' }
   ];
 
   DN.currentSlug = function () {
@@ -551,6 +552,65 @@
   // §86 醫療法保護 — auto-inject medical-disclaimer block at end of article
   // (resident-grade safety wording per agent research)
   // -----------------------------------------------------------------------
+  // -----------------------------------------------------------------------
+  // 中段內嵌 CTA — auto-injected after 50% of article H2's
+  // (research-backed: internal CTA from broad-question content → consult)
+  // -----------------------------------------------------------------------
+  DN.addInlineCTA = function () {
+    const prose = document.getElementById('proseZh');
+    if (!prose) return;
+    const h2s = prose.querySelectorAll('h2');
+    if (h2s.length < 4) return;
+    // Insert after the H2 closest to 50% of all H2's
+    const targetH2 = h2s[Math.floor(h2s.length / 2)];
+    if (!targetH2 || targetH2.dataset.dnCtaInserted) return;
+    targetH2.dataset.dnCtaInserted = '1';
+    const cta = document.createElement('div');
+    cta.id = 'dn-inline-cta';
+    cta.style.cssText = 'background:linear-gradient(135deg,#ecfeff 0%,#f5fbfa 100%);border:1px solid #a5f3fc;border-radius:14px;padding:16px 20px;margin:22px 0;display:flex;gap:14px;align-items:center;flex-wrap:wrap;';
+    cta.innerHTML =
+      '<div style="flex:1;min-width:200px">' +
+        '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#0c5159;font-weight:700;margin-bottom:4px" data-zh="想當面評估?" data-en="Need in-person evaluation?">想當面評估?</div>' +
+        '<div style="font-size:14px;color:#0f172a;line-height:1.7;margin:0" data-zh="若您有上述症狀或疑慮,歡迎至 <strong>中國醫藥大學附設醫院 皮膚科</strong> 由陳翊嘉醫師當面評估,提供個別化治療建議。" data-en="If you have any of these concerns, welcome to consult Dr. Chen at <strong>China Medical University Hospital — Dermatology</strong> for personalized evaluation.">若您有上述症狀或疑慮,歡迎至 <strong>中國醫藥大學附設醫院 皮膚科</strong> 由陳翊嘉醫師當面評估,提供個別化治療建議。</div>' +
+      '</div>' +
+      '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" style="flex-shrink:0;padding:10px 18px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" data-zh="預約掛號 →" data-en="Book consult →">預約掛號 →</a>';
+    targetH2.parentNode.insertBefore(cta, targetH2);
+  };
+
+  // -----------------------------------------------------------------------
+  // 作者簡介 / Author Bio (E-A-T signal for medical YMYL content)
+  // Auto-injected at end of every article for credentials transparency
+  // -----------------------------------------------------------------------
+  DN.addAuthorBio = function () {
+    const article = document.querySelector('article.max-w-3xl');
+    if (!article || document.getElementById('dn-author-bio')) return;
+    const box = document.createElement('section');
+    box.id = 'dn-author-bio';
+    box.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
+    box.innerHTML =
+      '<div style="background:linear-gradient(135deg,#ecfeff 0%, #f5fbfa 100%);border:1px solid #a5f3fc;border-radius:18px;padding:22px 24px;display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(12,81,89,.18)">' +
+        '<div style="flex-shrink:0;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#14b8a6,#0c5159);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Inter,sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em">YJ</div>' +
+        '<div style="flex:1;min-width:240px">' +
+          '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#0c5159;font-weight:700;margin-bottom:4px" data-zh="關於作者" data-en="About the author">關於作者</div>' +
+          '<div style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#0f172a;margin-bottom:6px">' +
+            '<span data-zh="陳翊嘉 醫師" data-en="Dr. Chen Yi-Chia, M.D.">陳翊嘉 醫師</span>' +
+            '<span style="font-size:12px;font-weight:600;color:#0c5159;margin-left:8px;padding:2px 8px;border-radius:6px;background:#fff;border:1px solid #a5f3fc;font-family:Inter,sans-serif" data-zh="皮膚科 R2" data-en="Dermatology PGY-2">皮膚科 R2</span>' +
+          '</div>' +
+          '<div style="font-size:13px;color:#334155;line-height:1.85" data-zh="<strong>現職</strong>:中國醫藥大學附設醫院 皮膚科 住院醫師<br/>' +
+            '<strong>學歷</strong>:高雄醫學大學 醫學系<br/>' +
+            '<strong>經歷</strong>:高雄醫學大學附設醫院 不分科住院醫師(PGY)<br/>' +
+            '<strong>專業領域</strong>:一般皮膚病、痘痘 / 痘疤、玫瑰斑、異位性皮膚炎、乾癬、圓禿、生物製劑、雷射光電、皮膚外科<br/>' +
+            '<strong>內容守則</strong>:本站全部內容由作者親自撰寫,依據國際醫學文獻與診療指引(AAD、EAACI、TDA 等),<strong>無業配、無贊助、無廣告專案合作</strong>。引用之 PubMed 文獻可點擊查證。" data-en="<strong>Current</strong>: Dermatology Resident, China Medical University Hospital<br/><strong>Education</strong>: M.D., Kaohsiung Medical University<br/><strong>Training</strong>: PGY at Kaohsiung Medical University Hospital<br/><strong>Areas</strong>: General dermatology, acne / scars, rosacea, atopic dermatitis, psoriasis, alopecia areata, biologics, laser, dermatologic surgery<br/><strong>Editorial standard</strong>: All content authored personally, citing international guidelines (AAD, EAACI, TDA). No sponsored content or affiliate links. PubMed citations are linkable for verification."><strong>現職</strong>:中國醫藥大學附設醫院 皮膚科 住院醫師<br/><strong>學歷</strong>:高雄醫學大學 醫學系<br/><strong>經歷</strong>:高雄醫學大學附設醫院 不分科住院醫師(PGY)<br/><strong>專業領域</strong>:一般皮膚病、痘痘 / 痘疤、玫瑰斑、異位性皮膚炎、乾癬、圓禿、生物製劑、雷射光電、皮膚外科<br/><strong>內容守則</strong>:本站全部內容由作者親自撰寫,依據國際醫學文獻與診療指引(AAD、EAACI、TDA 等),<strong>無業配、無贊助、無廣告專案合作</strong>。引用之 PubMed 文獻可點擊查證。</div>' +
+          '<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">' +
+            '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#0e7c86;color:#fff;text-decoration:none" data-zh="醫院個人頁" data-en="Hospital profile">醫院個人頁 →</a>' +
+            '<a href="/about" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#0c5159;border:1px solid #a5f3fc;text-decoration:none" data-zh="完整個人介紹" data-en="Full bio">完整個人介紹</a>' +
+            '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#0c5159;border:1px solid #a5f3fc;text-decoration:none" data-zh="預約掛號" data-en="Book consult">預約掛號 →</a>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    article.parentNode.insertBefore(box, article.nextSibling);
+  };
+
   DN.addLegalDisclaimer = function () {
     const article = document.querySelector('article.max-w-3xl');
     if (!article || document.getElementById('dn-legal-disclaimer')) return;
@@ -712,7 +772,8 @@
   DN.TAG_GROUPS = {
     '痘痘 / 痘疤':    ['acne-myths', 'acne-scar-treatment', 'isotretinoin-patient', 'topical-acids-patient'],
     '防曬':           ['sunscreen-myths'],
-    '異膚 / 濕疹':    ['eczema-myths', 'topical-steroids-guide', 'biologics-overview'],
+    '異膚 / 濕疹':    ['eczema-myths', 'pediatric-eczema', 'topical-steroids-guide', 'biologics-overview'],
+    '兒童 / 嬰幼兒':  ['pediatric-eczema'],
     '肝斑 / 美白':    ['melasma-myths', 'skin-whitening-agents'],
     '玫瑰斑 / 酒糟':  ['rosacea-myths', 'demodex-rosacea'],
     '落髮 / 圓禿':    ['hairloss-myths', 'alopecia-areata'],
@@ -901,6 +962,8 @@
     if (document.getElementById('proseZh') || document.querySelector('article .prose')) {
       DN.addReadingMeta();
       DN.addFloatingTOC();
+      DN.addInlineCTA();
+      DN.addAuthorBio();
       DN.addLegalDisclaimer();
       DN.addTDALink();
       DN.addRelatedArticles();
