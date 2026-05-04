@@ -260,12 +260,10 @@
     drawer.style.cssText = 'background:rgba(245,251,250,.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);max-height:calc(100vh - 64px);overflow-y:auto;-webkit-overflow-scrolling:touch';
     drawer.innerHTML =
       '<nav class="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-1">' +
-        '<a href="/" class="block px-3 py-2.5 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="🏠 首頁" data-en="🏠 Home"></a>' +
-        '<a href="/blog/" class="block px-3 py-2.5 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="📚 衛教文章" data-en="📚 Articles"></a>' +
-        '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="block px-3 py-2.5 rounded-lg bg-teal-600 text-white text-[14px] font-semibold hover:bg-teal-700 mt-2" data-zh="📅 中國醫皮膚部 預約掛號 →" data-en="📅 Book at CMUH Dermatology →"></a>' +
-        '<a href="/about" class="block px-3 py-2 rounded-lg text-[13.5px] text-ink-700 mt-2" data-zh="聯絡 / 看診資訊" data-en="Contact / Clinic info"></a>' +
-        '<a href="/privacy" class="block px-3 py-2 rounded-lg text-[13.5px] text-ink-700" data-zh="隱私權政策" data-en="Privacy Policy"></a>' +
-        '<a href="/blog/feed.xml" class="block px-3 py-2 rounded-lg text-[13.5px] text-ink-700">RSS</a>' +
+        '<a href="/" class="block px-3 py-2.5 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="首頁" data-en="Home"></a>' +
+        '<a href="/blog/" class="block px-3 py-2.5 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="衛教文章" data-en="Articles"></a>' +
+        '<a href="/about" class="block px-3 py-2 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="關於我" data-en="About"></a>' +
+        '<a href="https://reg.cmuh.cmu.edu.tw/" target="_blank" rel="noopener" class="block px-3 py-2.5 rounded-lg bg-teal-600 text-white text-[14px] font-semibold hover:bg-teal-700 mt-2" data-zh="中國醫官方線上掛號 →" data-en="CMUH Online Booking →"></a>' +
       '</nav>';
     header.appendChild(drawer);
 
@@ -280,22 +278,22 @@
   // Article catalog (single source of truth for related-articles / TOC links).
   // -----------------------------------------------------------------------
   DN.ARTICLES = [
-    { slug:'acne-myths',          title:'痘痘 9 大迷思', cat:'myth', tag:'痘痘', date:'2026-05-03', emoji:'🩹', tag_en:'Acne' },
-    { slug:'sunscreen-myths',     title:'防曬 8 大迷思', cat:'myth', tag:'防曬', date:'2026-05-03', emoji:'☀️', tag_en:'Sunscreen' },
-    { slug:'eczema-myths',        title:'異位性皮膚炎 6 大迷思', cat:'myth', tag:'異膚', date:'2026-05-03', emoji:'🌿', tag_en:'Eczema' },
-    { slug:'melasma-myths',       title:'肝斑 7 大迷思', cat:'myth', tag:'肝斑', date:'2026-05-03', emoji:'🟫', tag_en:'Melasma' },
-    { slug:'rosacea-myths',       title:'玫瑰痤瘡 6 大迷思', cat:'myth', tag:'酒糟肌', date:'2026-05-03', emoji:'🌹', tag_en:'Rosacea' },
-    { slug:'hairloss-myths',      title:'落髮 / 雄性禿 7 大迷思', cat:'myth', tag:'落髮', date:'2026-05-03', emoji:'💇', tag_en:'Hair loss' },
-    { slug:'tinea-myths',         title:'香港腳 / 灰指甲 7 大迷思', cat:'myth', tag:'足癬', date:'2026-05-03', emoji:'👣', tag_en:'Tinea' },
-    { slug:'urticaria-myths',     title:'蕁麻疹 6 大迷思', cat:'myth', tag:'蕁麻疹', date:'2026-05-04', emoji:'🐝', tag_en:'Urticaria' },
-    { slug:'psoriasis-myths',     title:'乾癬 7 大迷思', cat:'myth', tag:'乾癬', date:'2026-05-04', emoji:'🧱', tag_en:'Psoriasis' },
-    { slug:'warts-myths',         title:'病毒疣 6 大迷思', cat:'myth', tag:'病毒疣', date:'2026-05-04', emoji:'🦠', tag_en:'Warts' },
-    { slug:'shingles-myths',      title:'帶狀皰疹 6 大迷思', cat:'myth', tag:'皮蛇', date:'2026-05-04', emoji:'⚡', tag_en:'Shingles' },
-    { slug:'topical-acids-patient', title:'外用酸類完整衛教', cat:'product', tag:'酸類', date:'2026-05-02', emoji:'🧴', tag_en:'Topical acids' },
-    { slug:'isotretinoin-patient',  title:'口服 A 酸完整衛教', cat:'rx', tag:'口服 A 酸', date:'2026-05-02', emoji:'💊', tag_en:'Isotretinoin' },
-    { slug:'acne-scar-treatment',   title:'痘疤完整治療指引', cat:'rx', tag:'痘疤', date:'2026-05-04', emoji:'🎯', tag_en:'Acne scars' },
-    { slug:'alopecia-areata',     title:'圓禿（鬼剃頭）完整衛教', cat:'rx', tag:'圓禿', date:'2026-05-04', emoji:'💇', tag_en:'Alopecia areata' },
-    { slug:'demodex-rosacea',     title:'蠕形蟎蟲與玫瑰斑(酒糟)', cat:'rx', tag:'玫瑰斑', date:'2026-05-04', emoji:'🌹', tag_en:'Demodex rosacea' },
+    { slug:'acne-myths',          title:'痘痘 9 大迷思', cat:'myth', tag:'痘痘', date:'2026-05-03', emoji:'', tag_en:'Acne' },
+    { slug:'sunscreen-myths',     title:'防曬 8 大迷思', cat:'myth', tag:'防曬', date:'2026-05-03', emoji:'', tag_en:'Sunscreen' },
+    { slug:'eczema-myths',        title:'異位性皮膚炎 6 大迷思', cat:'myth', tag:'異膚', date:'2026-05-03', emoji:'', tag_en:'Eczema' },
+    { slug:'melasma-myths',       title:'肝斑 7 大迷思', cat:'myth', tag:'肝斑', date:'2026-05-03', emoji:'', tag_en:'Melasma' },
+    { slug:'rosacea-myths',       title:'玫瑰痤瘡 6 大迷思', cat:'myth', tag:'酒糟肌', date:'2026-05-03', emoji:'', tag_en:'Rosacea' },
+    { slug:'hairloss-myths',      title:'落髮 / 雄性禿 7 大迷思', cat:'myth', tag:'落髮', date:'2026-05-03', emoji:'', tag_en:'Hair loss' },
+    { slug:'tinea-myths',         title:'香港腳 / 灰指甲 7 大迷思', cat:'myth', tag:'足癬', date:'2026-05-03', emoji:'', tag_en:'Tinea' },
+    { slug:'urticaria-myths',     title:'蕁麻疹 6 大迷思', cat:'myth', tag:'蕁麻疹', date:'2026-05-04', emoji:'', tag_en:'Urticaria' },
+    { slug:'psoriasis-myths',     title:'乾癬 7 大迷思', cat:'myth', tag:'乾癬', date:'2026-05-04', emoji:'', tag_en:'Psoriasis' },
+    { slug:'warts-myths',         title:'病毒疣 6 大迷思', cat:'myth', tag:'病毒疣', date:'2026-05-04', emoji:'', tag_en:'Warts' },
+    { slug:'shingles-myths',      title:'帶狀皰疹 6 大迷思', cat:'myth', tag:'皮蛇', date:'2026-05-04', emoji:'', tag_en:'Shingles' },
+    { slug:'topical-acids-patient', title:'外用酸類完整衛教', cat:'product', tag:'酸類', date:'2026-05-02', emoji:'', tag_en:'Topical acids' },
+    { slug:'isotretinoin-patient',  title:'口服 A 酸完整衛教', cat:'rx', tag:'口服 A 酸', date:'2026-05-02', emoji:'', tag_en:'Isotretinoin' },
+    { slug:'acne-scar-treatment',   title:'痘疤完整治療指引', cat:'rx', tag:'痘疤', date:'2026-05-04', emoji:'', tag_en:'Acne scars' },
+    { slug:'alopecia-areata',     title:'圓禿（鬼剃頭）完整衛教', cat:'rx', tag:'圓禿', date:'2026-05-04', emoji:'', tag_en:'Alopecia areata' },
+    { slug:'demodex-rosacea',     title:'蠕形蟎蟲與玫瑰斑(酒糟)', cat:'rx', tag:'玫瑰斑', date:'2026-05-04', emoji:'', tag_en:'Demodex rosacea' },
     { slug:'vitiligo', title:'白斑（Vitiligo）完整衛教', cat:'rx', tag:'白斑', date:'2026-05-04', emoji:'', tag_en:'Vitiligo' },
     { slug:'mpox-care', title:'猴痘（Mpox）皮膚照護', cat:'rx', tag:'猴痘', date:'2026-05-04', emoji:'', tag_en:'Mpox' },
     { slug:'hidradenitis-suppurativa', title:'化膿性汗腺炎（HS）完整衛教', cat:'rx', tag:'化膿性汗腺炎', date:'2026-05-04', emoji:'', tag_en:'HS' },
@@ -424,10 +422,10 @@
     const wrap = document.createElement('section');
     wrap.id = 'dn-related';
     wrap.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-10';
-    let html = '<div style="border-top:1px solid var(--line);padding-top:24px"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--teal-deep);font-weight:700;margin-bottom:12px" data-zh="📖 你可能也會想看" data-en="📖 Related reads">📖 你可能也會想看</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">';
+    let html = '<div style="border-top:1px solid var(--line);padding-top:24px"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--teal-deep);font-weight:700;margin-bottom:12px" data-zh="你可能也會想看" data-en="Related reads">你可能也會想看</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">';
     scored.forEach(function (a) {
       html += '<a href="/blog/' + a.slug + '" style="display:flex;flex-direction:column;gap:6px;padding:14px;background:#fff;border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--ink);transition:all .15s;box-shadow:0 1px 2px rgba(15,23,42,.04)" onmouseover="this.style.borderColor=\'rgba(122,146,133,.5)\';this.style.transform=\'translateY(-2px)\';this.style.boxShadow=\'0 10px 20px -10px rgba(77,99,88,.22)\'" onmouseout="this.style.borderColor=\'var(--border)\';this.style.transform=\'\';this.style.boxShadow=\'0 1px 2px rgba(15,23,42,.04)\'">' +
-        '<span style="font-size:22px;line-height:1">' + (a.emoji || '📄') + '</span>' +
+        '<span style="font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--teal-deep);text-transform:uppercase">' + (a.tag_en || a.tag) + '</span>' +
         '<span style="font-size:14px;font-weight:700;line-height:1.4;font-family:Noto Serif TC,Georgia,serif">' + a.title + '</span>' +
         '<span style="font-size:11.5px;color:var(--muted)">' + a.tag + ' · ' + a.date + '</span>' +
       '</a>';
@@ -571,9 +569,9 @@
       'border-top:1px solid var(--border, #dcd5c8);box-shadow:0 -4px 20px -8px rgba(77,99,88,.2);' +
       'padding-bottom:env(safe-area-inset-bottom)';
     bar.innerHTML =
-      '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" ' +
+      '<a href="https://reg.cmuh.cmu.edu.tw/" target="_blank" rel="noopener" ' +
         'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
-        'data-cta="cmuh-book" aria-label="預約 CMUH 皮膚科">' +
+        'data-cta="cmuh-book" aria-label="中國醫官方線上掛號">' +
         '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
         '<span data-zh="預約掛號" data-en="Book Visit">預約掛號</span>' +
       '</a>' +
@@ -630,9 +628,9 @@
     cta.innerHTML =
       '<div style="flex:1;min-width:200px">' +
         '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#4d6358;font-weight:700;margin-bottom:4px" data-zh="想當面評估?" data-en="Need in-person evaluation?">想當面評估?</div>' +
-        '<div style="font-size:14px;color:#0f172a;line-height:1.7;margin:0" data-zh="若您有上述症狀或疑慮,歡迎至 <strong>中國醫藥大學附設醫院 皮膚科</strong> 由陳翊嘉醫師當面評估,提供個別化治療建議。" data-en="If you have any of these concerns, welcome to consult Dr. Chen at <strong>China Medical University Hospital — Dermatology</strong> for personalized evaluation.">若您有上述症狀或疑慮,歡迎至 <strong>中國醫藥大學附設醫院 皮膚科</strong> 由陳翊嘉醫師當面評估,提供個別化治療建議。</div>' +
+        '<div style="font-size:14px;color:#0f172a;line-height:1.7;margin:0" data-zh="若您有上述症狀或疑慮,歡迎至 <strong>中國醫藥大學附設醫院 皮膚科</strong> 面對面評估,由主治醫師依完整病史與檢查決定治療。" data-en="If you have any of these concerns, please consider an in-person consultation at <strong>China Medical University Hospital — Dermatology</strong>; the attending physician will decide treatment based on a complete history and examination.">若您有上述症狀或疑慮,歡迎至 <strong>中國醫藥大學附設醫院 皮膚科</strong> 面對面評估,由主治醫師依完整病史與檢查決定治療。</div>' +
       '</div>' +
-      '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" style="flex-shrink:0;padding:10px 18px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" data-zh="預約掛號 →" data-en="Book consult →">預約掛號 →</a>';
+      '<a href="https://reg.cmuh.cmu.edu.tw/" target="_blank" rel="noopener" style="flex-shrink:0;padding:10px 18px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" data-zh="中國醫官方掛號 →" data-en="CMUH Booking →">中國醫官方掛號 →</a>';
     targetH2.parentNode.insertBefore(cta, targetH2);
   };
 
@@ -656,14 +654,11 @@
             '<span style="font-size:12px;font-weight:600;color:#4d6358;margin-left:8px;padding:2px 8px;border-radius:6px;background:#fff;border:1px solid #a5f3fc;font-family:Inter,sans-serif" data-zh="皮膚科 R2" data-en="Dermatology PGY-2">皮膚科 R2</span>' +
           '</div>' +
           '<div style="font-size:13px;color:#334155;line-height:1.85" data-zh="<strong>現職</strong>:中國醫藥大學附設醫院 皮膚科 住院醫師<br/>' +
-            '<strong>學歷</strong>:高雄醫學大學 醫學系<br/>' +
-            '<strong>經歷</strong>:高雄醫學大學附設醫院 不分科住院醫師(PGY)<br/>' +
-            '<strong>專業領域</strong>:一般皮膚病、痘痘 / 痘疤、玫瑰斑、異位性皮膚炎、乾癬、圓禿、生物製劑、雷射光電、皮膚外科<br/>' +
-            '<strong>內容守則</strong>:本站全部內容由作者親自撰寫,依據國際醫學文獻與診療指引(AAD、EAACI、TDA 等),<strong>無業配、無贊助、無廣告專案合作</strong>。引用之 PubMed 文獻可點擊查證。" data-en="<strong>Current</strong>: Dermatology Resident, China Medical University Hospital<br/><strong>Education</strong>: M.D., Kaohsiung Medical University<br/><strong>Training</strong>: PGY at Kaohsiung Medical University Hospital<br/><strong>Areas</strong>: General dermatology, acne / scars, rosacea, atopic dermatitis, psoriasis, alopecia areata, biologics, laser, dermatologic surgery<br/><strong>Editorial standard</strong>: All content authored personally, citing international guidelines (AAD, EAACI, TDA). No sponsored content or affiliate links. PubMed citations are linkable for verification."><strong>現職</strong>:中國醫藥大學附設醫院 皮膚科 住院醫師<br/><strong>學歷</strong>:高雄醫學大學 醫學系<br/><strong>經歷</strong>:高雄醫學大學附設醫院 不分科住院醫師(PGY)<br/><strong>專業領域</strong>:一般皮膚病、痘痘 / 痘疤、玫瑰斑、異位性皮膚炎、乾癬、圓禿、生物製劑、雷射光電、皮膚外科<br/><strong>內容守則</strong>:本站全部內容由作者親自撰寫,依據國際醫學文獻與診療指引(AAD、EAACI、TDA 等),<strong>無業配、無贊助、無廣告專案合作</strong>。引用之 PubMed 文獻可點擊查證。</div>' +
+            '<strong>學歷</strong>:高雄醫學大學醫學系 畢業<br/>' +
+            '<strong>經歷</strong>:高雄醫學大學附設中和紀念醫院 不分科住院醫師(PGY)" data-en="<strong>Current</strong>: Dermatology Resident, China Medical University Hospital<br/><strong>Education</strong>: M.D., Kaohsiung Medical University, College of Medicine<br/><strong>Training</strong>: PGY Resident, Kaohsiung Medical University Hospital"><strong>現職</strong>:中國醫藥大學附設醫院 皮膚科 住院醫師<br/><strong>學歷</strong>:高雄醫學大學醫學系 畢業<br/><strong>經歷</strong>:高雄醫學大學附設中和紀念醫院 不分科住院醫師(PGY)</div>' +
           '<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">' +
-            '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#0e7c86;color:#fff;text-decoration:none" data-zh="醫院個人頁" data-en="Hospital profile">醫院個人頁 →</a>' +
-            '<a href="/about" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#4d6358;border:1px solid #a5f3fc;text-decoration:none" data-zh="完整個人介紹" data-en="Full bio">完整個人介紹</a>' +
-            '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#4d6358;border:1px solid #a5f3fc;text-decoration:none" data-zh="預約掛號" data-en="Book consult">預約掛號 →</a>' +
+            '<a href="/about" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#0e7c86;color:#fff;text-decoration:none" data-zh="關於我" data-en="About">關於我 →</a>' +
+            '<a href="https://reg.cmuh.cmu.edu.tw/" target="_blank" rel="noopener" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#4d6358;border:1px solid #a5f3fc;text-decoration:none" data-zh="中國醫官方掛號" data-en="CMUH Booking">中國醫官方掛號 →</a>' +
           '</div>' +
         '</div>' +
       '</div>';
@@ -678,7 +673,7 @@
     box.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
     box.innerHTML =
       '<div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:14px;padding:14px 18px;font-size:12.5px;line-height:1.85;color:#9a3412">' +
-        '<div style="font-weight:700;color:#7c2d12;margin-bottom:6px;letter-spacing:.04em">⚠ 重要聲明</div>' +
+        '<div style="font-weight:700;color:#7c2d12;margin-bottom:6px;letter-spacing:.04em" data-zh="重要聲明" data-en="Important Notice">重要聲明</div>' +
         '<div data-zh="本文為皮膚科住院醫師的<strong>衛教與學習筆記</strong>,內容依據國際醫學文獻與臨床指引整理,僅作為<strong>一般教育用途</strong>。' +
         '不構成<strong>個別醫療建議、診斷或治療處方</strong>。' +
         '個別病情之評估、藥物選擇、雷射治療、手術等,請務必<strong>面對面看診</strong>由主治醫師依完整病史與檢查決定。' +
