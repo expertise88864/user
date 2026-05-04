@@ -553,6 +553,65 @@
   // (resident-grade safety wording per agent research)
   // -----------------------------------------------------------------------
   // -----------------------------------------------------------------------
+  // Sticky bottom CTA bar — mobile-only fixed bar (research-backed pattern)
+  // Modified for resident-physician persona: no fake LINE, no fake phone
+  // (預約 CMUH / 醫院 Maps / 快速找文章)
+  // -----------------------------------------------------------------------
+  DN.addStickyCTA = function () {
+    if (document.getElementById('dn-sticky-cta')) return;
+    if (location.pathname === '/about' || location.pathname === '/about/') return;
+    if (location.pathname.startsWith('/admin')) return;
+
+    var bar = document.createElement('div');
+    bar.id = 'dn-sticky-cta';
+    bar.setAttribute('aria-label', '快速操作工具列');
+    bar.style.cssText =
+      'position:fixed;bottom:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:1fr 1fr 1fr;' +
+      'background:rgba(250,247,242,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);' +
+      'border-top:1px solid var(--border, #dcd5c8);box-shadow:0 -4px 20px -8px rgba(77,99,88,.2);' +
+      'padding-bottom:env(safe-area-inset-bottom)';
+    bar.innerHTML =
+      '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" ' +
+        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
+        'data-cta="cmuh-book" aria-label="預約 CMUH 皮膚科">' +
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
+        '<span data-zh="預約掛號" data-en="Book Visit">預約掛號</span>' +
+      '</a>' +
+      '<a href="https://www.google.com/maps/place/%E4%B8%AD%E5%9C%8B%E9%86%AB%E8%97%A5%E5%A4%A7%E5%AD%B8%E9%99%84%E8%A8%AD%E9%86%AB%E9%99%A2/@24.1574,120.6857,17z/" target="_blank" rel="noopener" ' +
+        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
+        'data-cta="cmuh-map" aria-label="中國醫附設醫院 Google Maps">' +
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>' +
+        '<span data-zh="醫院位置" data-en="Hospital Map">醫院位置</span>' +
+      '</a>' +
+      '<a href="/#dn-hub" ' +
+        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700" ' +
+        'data-cta="article-hub" aria-label="找衛教文章">' +
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>' +
+        '<span data-zh="找文章" data-en="Find Article">找文章</span>' +
+      '</a>';
+
+    var style = document.createElement('style');
+    style.id = 'dn-sticky-cta-css';
+    style.textContent =
+      '#dn-sticky-cta a:active{ background:#f1ece4 }' +
+      '#dn-sticky-cta a:hover{ background:#f5f1eb }' +
+      '@media (min-width: 768px){ #dn-sticky-cta{ display:none !important } body.dn-has-sticky-cta{ padding-bottom:0 !important } }' +
+      '@media (max-width: 767px){ body.dn-has-sticky-cta{ padding-bottom:64px } }';
+    document.head.appendChild(style);
+    document.body.appendChild(bar);
+    document.body.classList.add('dn-has-sticky-cta');
+
+    // Track CTA clicks
+    if (typeof gtag === 'function') {
+      bar.querySelectorAll('a[data-cta]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          try { gtag('event', 'sticky_cta_click', { cta: a.dataset.cta, page_path: location.pathname }); } catch (e) {}
+        });
+      });
+    }
+  };
+
+  // -----------------------------------------------------------------------
   // 中段內嵌 CTA — auto-injected after 50% of article H2's
   // (research-backed: internal CTA from broad-question content → consult)
   // -----------------------------------------------------------------------
@@ -973,6 +1032,7 @@
     DN.bindGAEvents();
     DN.bindArticleHub();
     DN.markNewArticles();
+    DN.addStickyCTA();
 
     const yr = document.getElementById('yr');
     if (yr) yr.textContent = new Date().getFullYear();
