@@ -1903,7 +1903,12 @@
     box.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
     box.innerHTML =
       '<div style="background:linear-gradient(135deg,#ecfeff 0%, #f5fbfa 100%);border:1px solid #a5f3fc;border-radius:18px;padding:22px 24px;display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(77,99,88,.18)">' +
-        '<div style="flex-shrink:0;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#14b8a6,#0c5159);display:flex;align-items:center;justify-content:center;color:#fff;font-family:Inter,sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em">YJ</div>' +
+        '<div style="flex-shrink:0;width:64px;height:64px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,#cffafe,#a5f3fc);box-shadow:0 4px 12px -4px rgba(12,81,89,.25), 0 0 0 3px rgba(20,184,166,.15)">' +
+          '<picture>' +
+            '<source type="image/webp" srcset="/blog/SUNN1327-400.webp" />' +
+            '<img src="/blog/SUNN1327-400.jpg" alt="陳翊嘉醫師" width="64" height="64" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 18%" />' +
+          '</picture>' +
+        '</div>' +
         '<div style="flex:1;min-width:240px">' +
           '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#4d6358;font-weight:700;margin-bottom:4px" data-zh="關於作者" data-en="About the author">關於作者</div>' +
           '<div style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#0f172a;margin-bottom:6px">' +
