@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>皮膚科疾病數據 Dashboard — 盛行率、年齡分佈、健保給付 | 陳翊嘉醫師 · ChenDermatologist</title>
-<meta name="description" content="皮膚科疾病流行病學與健保數據視覺化 Dashboard:乾癬 / 異膚 / 圓禿 / 蕁麻疹 / 痘痘 / 玫瑰痤瘡的台灣盛行率、年齡分佈、健保生物製劑使用趨勢、TDA 共識引用次數。陳翊嘉醫師(中國醫藥大學附設醫院 皮膚科)整理 TDA + 健保署公開資料。" />
+<meta name="description" content="皮膚科疾病流行病學與健保數據視覺化 Dashboard:乾癬 / 異膚 / 圓禿 / 蕁麻疹 / 痘痘 / 玫瑰痤瘡的台灣盛行率、年齡分佈、健保生物製劑使用趨勢、TDA 共識引用次數。陳翊嘉醫師(皮膚科)整理 TDA + 健保署公開資料。" />
 <meta name="theme-color" content="#7a9285" />
-<meta name="keywords" content="皮膚科疾病數據,皮膚科盛行率,乾癬盛行率台灣,異膚盛行率,圓禿發病率,健保乾癬給付,健保異膚生物製劑,Dupilumab 健保,Adalimumab 健保,皮膚科年齡分佈,皮膚科 dashboard,皮膚科 visualization,陳翊嘉醫師,中國醫藥大學附設醫院 皮膚科" />
+<meta name="keywords" content="皮膚科疾病數據,皮膚科盛行率,乾癬盛行率台灣,異膚盛行率,圓禿發病率,健保乾癬給付,健保異膚生物製劑,Dupilumab 健保,Adalimumab 健保,皮膚科年齡分佈,皮膚科 dashboard,皮膚科 visualization,陳翊嘉醫師" />
 <link rel="canonical" href="https://chendermatologist.com/dashboard" />
 <link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/dashboard" />
 <link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/dashboard" />
@@ -85,11 +85,11 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
         <img src="/icon.svg" alt="ChenDermatologist" class="w-9 h-9 rounded-lg flex-shrink-0" width="36" height="36" fetchpriority="high" />
         <div class="min-w-0 leading-tight">
           <div class="font-display font-semibold text-[16px] sm:text-[18px] teal-text">ChenDermatologist</div>
-          <div class="text-[10.5px] sm:text-[11.5px] text-ink-500 mt-0.5 truncate">陳翊嘉醫師 · 中國醫藥大學附設醫院 皮膚科</div>
+          <div class="text-[10.5px] sm:text-[11.5px] text-ink-500 mt-0.5 truncate">陳翊嘉醫師 · 皮膚科衛教筆記</div>
         </div>
       </a>
       <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-        <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-teal-600 text-white text-[12px] font-semibold hover:bg-teal-700">中國醫官方掛號 →</a>
+        
         <a href="/blog/" class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full text-[12px] font-semibold text-teal-700 hover:bg-mint-100">← 文章索引</a>
       </div>
     </div>
@@ -114,7 +114,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
     </p>
 
     <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:14px;padding:14px 18px;margin:20px 0;font-size:13.5px;color:#9a3412;line-height:1.8">
-      <strong>數據限制聲明:</strong>本 Dashboard 數據為衛教用途,部分為估計或文獻引用值。健保給付條件與藥物狀態可能<strong>每年更新</strong>,請以中央健保署 / TDA 公告為準。本網站不涉及任何藥商利益、無業配。
+      <strong>數據限制聲明:</strong>本 Dashboard 數據為衛教用途、部分為估計或文獻引用值。健保給付條件與藥物狀態可能<strong>每年更新</strong>,請以中央健保署 / TDA 公告為準。本網站不涉及任何藥商利益、無業配。
     </div>
   </div>
 </section>
@@ -461,9 +461,26 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
     <p class="chart-source">資料來源:本網站 ARTICLES catalog (32 篇)。每月隨新文章發表動態更新。詳見 <a href="/blog/topics">主題地圖</a>。</p>
   </div>
 
+  <!-- 圖表 6:閱讀地圖 -->
+  <div class="chart-card">
+    <h2>6 · 閱讀地圖（您讀過的文章拓樸）</h2>
+    <p class="chart-sub">本網站 30 篇衛教文章的主題拓樸視覺化,<strong style="color:#0e7c86">綠色填滿</strong>表示您已讀過。資料儲存於本機 localStorage,不會上傳。</p>
+
+    <div id="dn-reading-map" style="position:relative;display:flex;justify-content:center;padding:8px 0">
+      <svg id="dn-reading-map-svg" viewBox="0 0 720 480" style="width:100%;max-width:720px;height:auto;font-family:'Noto Sans TC',sans-serif"></svg>
+    </div>
+    <div id="dn-reading-map-legend" style="display:flex;justify-content:center;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);margin-top:8px"></div>
+    <div id="dn-reading-map-stats" style="text-align:center;margin-top:10px;font-size:13px;color:var(--ink-2)"></div>
+    <div style="text-align:center;margin-top:10px">
+      <button id="dn-reading-map-reset" style="padding:6px 14px;border-radius:9999px;background:#fff;color:var(--ink-2);border:1px solid var(--border);font-size:11.5px;font-weight:600;cursor:pointer">重置我的閱讀紀錄</button>
+    </div>
+
+    <p class="chart-source">資料來源:本網站 ARTICLES catalog × localStorage 閱讀紀錄。每進入一篇文章即自動標記為已讀。</p>
+  </div>
+
   <section class="my-12">
     <div style="background:linear-gradient(135deg,#ecfeff,#f5fbfa);border:1px solid #a5f3fc;border-radius:14px;padding:18px 22px;font-size:14px;color:var(--ink-2);line-height:1.85">
-      <strong style="color:#0c5159">說明:</strong>本 Dashboard 為衛教用,部分數據為文獻引用之估計值。所有圖表皆為純 SVG 內嵌(無第三方 charting library),離線可瀏覽。建議搭配對應疾病文章閱讀。<br/>
+      <strong style="color:#0c5159">說明:</strong>本 Dashboard 為衛教用、部分數據為文獻引用之估計值。所有圖表皆為純 SVG 內嵌(無第三方 charting library),離線可瀏覽。建議搭配對應疾病文章閱讀。<br/>
       想自評嚴重度請至 <a href="/tools" style="color:var(--teal-deep);font-weight:700;text-decoration:underline">量表計算器指南</a>;查詢專業詞彙至 <a href="/glossary" style="color:var(--teal-deep);font-weight:700;text-decoration:underline">醫學詞彙白話字典</a>。
     </div>
   </section>
@@ -479,10 +496,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
         <div class="font-display font-bold text-[18px] teal-text">ChenDermatologist</div>
         <div class="text-[12.5px] text-ink-700 mt-1">皮膚科常見衛教及學習筆記網站</div>
       </div>
-      <div>
-        <div class="text-[11px] uppercase tracking-[.22em] text-teal-700 font-semibold mb-2">預約 / 掛號</div>
-        <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-teal-600 text-white text-[12.5px] font-semibold hover:bg-teal-700">中國醫官方掛號 →</a>
-      </div>
+      <div></div>
       <div>
         <div class="text-[11px] uppercase tracking-[.22em] text-teal-700 font-semibold mb-2">網站</div>
         <ul class="space-y-1 text-[13px]">
@@ -501,7 +515,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605100100" defer></script>
+<script src="/blog/blog-shared.js?v=202605110200" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (window.DN) DN.initBlog({});
@@ -551,6 +565,146 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
       legend += '</div>';
 
       pieEl.innerHTML = svg + legend;
+    }
+
+    // ----- Reading topology map (chart 6) -----
+    var mapSvg = document.getElementById('dn-reading-map-svg');
+    var mapLegend = document.getElementById('dn-reading-map-legend');
+    var mapStats = document.getElementById('dn-reading-map-stats');
+    var mapReset = document.getElementById('dn-reading-map-reset');
+    if (mapSvg && window.DN && DN.ARTICLES) {
+      function renderReadingMap() {
+        var arts = DN.ARTICLES.slice();
+        var read = (DN.getReadSlugs && DN.getReadSlugs()) || [];
+        var readSet = {};
+        read.forEach(function (s) { readSet[s] = true; });
+
+        // Group by category, then sub-cluster by tag
+        var groups = { myth: [], rx: [], product: [] };
+        arts.forEach(function (a) { (groups[a.cat] || (groups[a.cat] = [])).push(a); });
+
+        var W = 720, H = 480, cx = W/2, cy = H/2;
+        var clusterCfg = {
+          myth:    { angle: -Math.PI/2, color: '#fde68a', stroke: '#d97706', label: '迷思澄清' },
+          rx:      { angle: Math.PI/6,  color: '#ddd6fe', stroke: '#7c3aed', label: '處方治療' },
+          product: { angle: Math.PI*5/6, color: '#a5f3fc', stroke: '#0e7c86', label: '產品 / 成分' }
+        };
+        var clusterRadius = 145; // distance from center to cluster center
+        var nodeRadius = 11;
+        var s = '';
+
+        // Background grid
+        s += '<defs>' +
+          '<radialGradient id="dn-rm-bg" cx="50%" cy="50%" r="60%"><stop offset="0%" stop-color="#f5fbfa"/><stop offset="100%" stop-color="#fbffff"/></radialGradient>' +
+          '</defs>';
+        s += '<rect width="' + W + '" height="' + H + '" fill="url(#dn-rm-bg)"/>';
+
+        // Cluster halos + edges
+        var positions = {}; // slug -> {x,y, cat}
+        Object.keys(groups).forEach(function (cat) {
+          var cfg = clusterCfg[cat] || { angle: 0, color: '#dcd9d1', stroke: '#5e574e', label: cat };
+          var ccx = cx + Math.cos(cfg.angle) * clusterRadius;
+          var ccy = cy + Math.sin(cfg.angle) * clusterRadius;
+          var arr = groups[cat] || [];
+          // Cluster halo
+          var haloR = Math.min(140, 38 + arr.length * 6);
+          s += '<circle cx="' + ccx.toFixed(1) + '" cy="' + ccy.toFixed(1) + '" r="' + haloR + '" fill="' + cfg.color + '" opacity=".22"/>';
+          s += '<circle cx="' + ccx.toFixed(1) + '" cy="' + ccy.toFixed(1) + '" r="' + haloR + '" fill="none" stroke="' + cfg.stroke + '" stroke-width="1" stroke-dasharray="3 4" opacity=".4"/>';
+          s += '<text x="' + ccx.toFixed(1) + '" y="' + (ccy - haloR - 8).toFixed(1) + '" text-anchor="middle" font-size="13" font-weight="700" fill="' + cfg.stroke + '">' + cfg.label + ' · ' + arr.length + ' 篇</text>';
+
+          // Place nodes around cluster center in concentric rings
+          var ringR = haloR - 28;
+          arr.forEach(function (a, i) {
+            var n = arr.length;
+            var theta = (i / n) * 2 * Math.PI;
+            var px = ccx + Math.cos(theta) * ringR;
+            var py = ccy + Math.sin(theta) * ringR;
+            positions[a.slug] = { x: px, y: py, cat: cat };
+          });
+        });
+
+        // Edges: connect to cluster center for visual cohesion
+        Object.keys(groups).forEach(function (cat) {
+          var cfg = clusterCfg[cat] || {};
+          var ccx = cx + Math.cos(cfg.angle || 0) * clusterRadius;
+          var ccy = cy + Math.sin(cfg.angle || 0) * clusterRadius;
+          (groups[cat] || []).forEach(function (a) {
+            var p = positions[a.slug]; if (!p) return;
+            s += '<line x1="' + ccx.toFixed(1) + '" y1="' + ccy.toFixed(1) + '" x2="' + p.x.toFixed(1) + '" y2="' + p.y.toFixed(1) + '" stroke="' + (cfg.stroke || '#888') + '" stroke-width="0.7" opacity=".25"/>';
+          });
+        });
+
+        // Center hub node
+        s += '<circle cx="' + cx + '" cy="' + cy + '" r="42" fill="#fff" stroke="#4d6358" stroke-width="2"/>';
+        s += '<text x="' + cx + '" y="' + (cy - 4) + '" text-anchor="middle" font-size="13" font-weight="700" fill="#0c5159" font-family="Noto Serif TC,serif">您</text>';
+        var pctRead = arts.length ? Math.round(read.length / arts.length * 100) : 0;
+        s += '<text x="' + cx + '" y="' + (cy + 14) + '" text-anchor="middle" font-size="11" fill="#4d6358">' + read.length + ' / ' + arts.length + ' 篇</text>';
+
+        // Connect cluster centers to hub
+        Object.keys(clusterCfg).forEach(function (cat) {
+          var cfg = clusterCfg[cat];
+          var ccx = cx + Math.cos(cfg.angle) * clusterRadius;
+          var ccy = cy + Math.sin(cfg.angle) * clusterRadius;
+          s += '<line x1="' + cx + '" y1="' + cy + '" x2="' + ccx.toFixed(1) + '" y2="' + ccy.toFixed(1) + '" stroke="' + cfg.stroke + '" stroke-width="1.2" opacity=".35"/>';
+        });
+
+        // Article nodes
+        arts.forEach(function (a) {
+          var p = positions[a.slug]; if (!p) return;
+          var isRead = !!readSet[a.slug];
+          var cfg = clusterCfg[a.cat] || { color: '#dcd9d1', stroke: '#5e574e' };
+          var fill = isRead ? '#0e7c86' : '#fff';
+          var stroke = isRead ? '#0c5159' : cfg.stroke;
+          var sw = isRead ? 2 : 1.4;
+          var label = (a.title || '').replace(/[<>&"']/g, '');
+          s += '<g class="dn-rm-node" data-slug="' + a.slug + '" data-href="/blog/' + a.slug + '" style="cursor:pointer">';
+          s += '<title>' + label + (isRead ? ' (已讀)' : '') + '</title>';
+          s += '<circle cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="' + nodeRadius + '" fill="' + fill + '" stroke="' + stroke + '" stroke-width="' + sw + '"/>';
+          if (isRead) {
+            // checkmark
+            s += '<path d="M' + (p.x - 4).toFixed(1) + ' ' + p.y.toFixed(1) + ' l3 3 l5 -6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+          } else {
+            s += '<circle cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="3" fill="' + cfg.stroke + '" opacity=".55"/>';
+          }
+          s += '</g>';
+        });
+
+        mapSvg.innerHTML = s;
+
+        // Click handler — open article
+        mapSvg.querySelectorAll('.dn-rm-node').forEach(function (node) {
+          node.addEventListener('click', function () {
+            var href = node.dataset.href;
+            if (href) window.location.href = href;
+          });
+        });
+
+        // Legend
+        if (mapLegend) {
+          mapLegend.innerHTML =
+            '<span style="display:inline-flex;align-items:center;gap:6px"><span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#0e7c86;border:2px solid #0c5159"></span>已讀過</span>' +
+            '<span style="display:inline-flex;align-items:center;gap:6px"><span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#fff;border:1.5px solid #d97706"></span>未讀</span>' +
+            '<span style="opacity:.6">· 點擊節點直接開啟文章</span>';
+        }
+
+        // Stats
+        if (mapStats) {
+          var byCat = { myth: 0, rx: 0, product: 0 };
+          arts.forEach(function (a) { if (readSet[a.slug]) byCat[a.cat] = (byCat[a.cat] || 0) + 1; });
+          mapStats.innerHTML =
+            '<strong style="color:#0c5159">已讀 ' + read.length + ' / ' + arts.length + ' 篇 (' + pctRead + '%)</strong> · ' +
+            '迷思澄清 ' + (byCat.myth || 0) + ' · 處方治療 ' + (byCat.rx || 0) + ' · 產品 ' + (byCat.product || 0);
+        }
+      }
+
+      renderReadingMap();
+      if (mapReset) {
+        mapReset.addEventListener('click', function () {
+          if (!confirm('確定要清除全部閱讀紀錄嗎?此動作無法復原。')) return;
+          if (DN.resetRead) DN.resetRead();
+          renderReadingMap();
+        });
+      }
     }
   });
 </script>

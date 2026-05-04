@@ -263,7 +263,8 @@
         '<a href="/" class="block px-3 py-2.5 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="首頁" data-en="Home"></a>' +
         '<a href="/blog/" class="block px-3 py-2.5 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="衛教文章" data-en="Articles"></a>' +
         '<a href="/about" class="block px-3 py-2 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="關於我" data-en="About"></a>' +
-        '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="block px-3 py-2.5 rounded-lg bg-teal-600 text-white text-[14px] font-semibold hover:bg-teal-700 mt-2" data-zh="中國醫官方線上掛號 →" data-en="CMUH Online Booking →"></a>' +
+        '<a href="/tools" class="block px-3 py-2 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="量表計算器" data-en="Calculators"></a>' +
+        '<a href="/glossary" class="block px-3 py-2 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="詞彙字典" data-en="Glossary"></a>' +
       '</nav>';
     header.appendChild(drawer);
 
@@ -474,6 +475,193 @@
 
     // Mark this article as read (localStorage tracker)
     if (slug) DN.markRead(slug);
+  };
+
+  // -----------------------------------------------------------------------
+  // Inline article TOC ("本篇大綱") + scroll-position memory.
+  // Mobile + desktop: inserts a collapsible card at the top of the article
+  // listing all H2 headings. Saves scroll position to localStorage and
+  // offers a "continue reading" toast if the user reopens the page.
+  // -----------------------------------------------------------------------
+  DN.addInlineTOC = function () {
+    var proseEl = document.getElementById('proseZh') || document.querySelector('article .prose');
+    if (!proseEl) return;
+    if (document.getElementById('dn-inline-toc')) return;
+    var h2s = proseEl.querySelectorAll('h2[id]');
+    if (h2s.length < 3) return;
+
+    var details = document.createElement('details');
+    details.id = 'dn-inline-toc';
+    details.open = true;
+    details.style.cssText = 'margin:18px 0 24px;background:linear-gradient(135deg,#f5fbfa 0%,#ecfeff 100%);border:1px solid #a5f3fc;border-radius:14px;padding:0;overflow:hidden';
+
+    var summary = document.createElement('summary');
+    summary.style.cssText = 'cursor:pointer;list-style:none;padding:14px 18px;font-size:13px;font-weight:700;color:#0c5159;display:flex;align-items:center;justify-content:space-between;gap:8px;user-select:none';
+    summary.innerHTML =
+      '<span style="display:inline-flex;align-items:center;gap:8px">' +
+        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+          '<line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>' +
+          '<line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>' +
+        '</svg>' +
+        '<span data-zh="本篇大綱" data-en="In this article">本篇大綱</span>' +
+        '<span style="font-size:11px;font-weight:600;color:#4d6358;opacity:.7">· ' + h2s.length + ' 段</span>' +
+      '</span>' +
+      '<span style="font-size:11px;color:#4d6358;opacity:.7" data-zh="點擊收合" data-en="Click to collapse">點擊收合</span>';
+    details.appendChild(summary);
+
+    var ol = document.createElement('ol');
+    ol.style.cssText = 'list-style:none;counter-reset:toc;padding:4px 18px 14px;margin:0;display:flex;flex-direction:column;gap:2px';
+    h2s.forEach(function (h, i) {
+      var li = document.createElement('li');
+      li.style.cssText = 'counter-increment:toc;position:relative;padding:5px 4px 5px 32px';
+      li.innerHTML =
+        '<span style="position:absolute;left:0;top:5px;width:24px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;color:#0e7c86;background:#fff;border:1px solid #a5f3fc;border-radius:6px">' + (i + 1) + '</span>' +
+        '<a href="#' + h.id + '" data-toc-inline="' + h.id + '" style="display:block;color:var(--ink-2);text-decoration:none;font-size:13.5px;line-height:1.6;font-weight:500">' + (h.textContent || ('Section ' + (i + 1))) + '</a>';
+      ol.appendChild(li);
+    });
+    details.appendChild(ol);
+
+    // Insert at the top of <article> (before the first .prose block content)
+    var articleEl = document.querySelector('article');
+    if (articleEl && articleEl.firstElementChild) {
+      // Place after the H1 if present, else before the first prose block
+      var h1 = articleEl.querySelector('h1');
+      if (h1 && h1.parentNode) {
+        h1.parentNode.insertBefore(details, h1.nextSibling);
+      } else {
+        articleEl.insertBefore(details, articleEl.firstElementChild);
+      }
+    } else {
+      proseEl.parentNode.insertBefore(details, proseEl);
+    }
+
+    // Smooth scroll on link click
+    ol.addEventListener('click', function (e) {
+      var a = e.target.closest('a[data-toc-inline]');
+      if (!a) return;
+      e.preventDefault();
+      var id = a.dataset.tocInline;
+      var target = document.getElementById(id);
+      if (target) {
+        var top = target.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+        history.pushState(null, '', '#' + id);
+        if (window.gtag) window.gtag('event', 'toc_click', { section_id: id });
+      }
+    });
+  };
+
+  // Save scroll position with localStorage; offer "continue reading" toast
+  DN.bindScrollMemory = function () {
+    var slug = DN.currentSlug();
+    if (!slug) return;
+    var proseEl = document.getElementById('proseZh') || document.querySelector('article .prose');
+    if (!proseEl) return;
+    var KEY = 'dn:scroll:' + slug;
+    var MAX_AGE_MS = 14 * 24 * 60 * 60 * 1000; // 14 days
+
+    function saveNow() {
+      try {
+        var docH = document.documentElement.scrollHeight - window.innerHeight;
+        if (docH < 100) return;
+        var y = window.pageYOffset;
+        var pct = Math.min(100, Math.max(0, Math.round((y / docH) * 100)));
+        // Only save meaningful positions
+        if (pct < 3 || pct > 97) {
+          localStorage.removeItem(KEY);
+          return;
+        }
+        // Find nearest H2 above current position for label
+        var h2s = proseEl.querySelectorAll('h2[id]');
+        var nearest = null;
+        var nearestIdx = 0;
+        for (var i = 0; i < h2s.length; i++) {
+          var top = h2s[i].getBoundingClientRect().top + window.pageYOffset;
+          if (top <= y + 120) { nearest = h2s[i]; nearestIdx = i; }
+          else break;
+        }
+        var data = {
+          y: y,
+          pct: pct,
+          ts: Date.now(),
+          h2: nearest ? (nearest.textContent || '').slice(0, 40) : '',
+          h2i: nearestIdx
+        };
+        localStorage.setItem(KEY, JSON.stringify(data));
+      } catch (e) { /* quota etc. */ }
+    }
+
+    var saveTimer = null;
+    window.addEventListener('scroll', function () {
+      if (saveTimer) clearTimeout(saveTimer);
+      saveTimer = setTimeout(saveNow, 500);
+    }, { passive: true });
+    window.addEventListener('beforeunload', saveNow);
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'hidden') saveNow();
+    });
+
+    // Restore prompt
+    function maybePrompt() {
+      // Don't prompt if user navigated to an anchor
+      if (window.location.hash) return;
+      var raw;
+      try { raw = localStorage.getItem(KEY); } catch (e) { return; }
+      if (!raw) return;
+      var data;
+      try { data = JSON.parse(raw); } catch (e) { localStorage.removeItem(KEY); return; }
+      if (!data || !data.y || !data.pct) return;
+      if (Date.now() - (data.ts || 0) > MAX_AGE_MS) { localStorage.removeItem(KEY); return; }
+      if (data.pct < 5 || data.pct > 95) return;
+
+      var toast = document.createElement('div');
+      toast.id = 'dn-resume-toast';
+      toast.style.cssText =
+        'position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;' +
+        'background:#fff;border:1px solid #a5f3fc;border-radius:14px;' +
+        'box-shadow:0 18px 40px -16px rgba(12,81,89,.35),0 4px 10px rgba(15,23,42,.08);' +
+        'padding:14px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;' +
+        'max-width:calc(100vw - 32px);font-size:13.5px;color:var(--ink);' +
+        'animation:dn-toast-in .35s cubic-bezier(.2,.7,.3,1)';
+      var label = data.h2 ? '「' + data.h2 + '」' : '';
+      toast.innerHTML =
+        '<div style="display:flex;align-items:center;gap:10px;flex:1;min-width:200px">' +
+          '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+            '<path d="M21 12a9 9 0 1 1-9-9c2.5 0 4.8 1 6.5 2.6L21 8"/><path d="M21 3v5h-5"/>' +
+          '</svg>' +
+          '<div style="line-height:1.5">' +
+            '<div style="font-weight:700;color:#0c5159">上次讀到 ' + data.pct + '%</div>' +
+            (label ? '<div style="font-size:12px;color:var(--ink-2);margin-top:2px">' + label + '</div>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div style="display:flex;gap:8px;flex-shrink:0">' +
+          '<button data-resume-yes style="padding:7px 14px;border-radius:9999px;background:#0e7c86;color:#fff;border:0;font-weight:700;font-size:12.5px;cursor:pointer">繼續閱讀</button>' +
+          '<button data-resume-no style="padding:7px 12px;border-radius:9999px;background:#fff;color:var(--ink-2);border:1px solid var(--border);font-weight:600;font-size:12.5px;cursor:pointer">從頭開始</button>' +
+        '</div>';
+      // Inject keyframes once
+      if (!document.getElementById('dn-resume-style')) {
+        var st = document.createElement('style');
+        st.id = 'dn-resume-style';
+        st.textContent = '@keyframes dn-toast-in{from{opacity:0;transform:translate(-50%,16px)}to{opacity:1;transform:translate(-50%,0)}}';
+        document.head.appendChild(st);
+      }
+      document.body.appendChild(toast);
+
+      function dismiss() { if (toast.parentNode) toast.parentNode.removeChild(toast); }
+      toast.querySelector('[data-resume-yes]').addEventListener('click', function () {
+        window.scrollTo({ top: data.y, behavior: 'smooth' });
+        dismiss();
+        if (window.gtag) window.gtag('event', 'resume_reading', { slug: slug, pct: data.pct });
+      });
+      toast.querySelector('[data-resume-no]').addEventListener('click', function () {
+        try { localStorage.removeItem(KEY); } catch (e) {}
+        dismiss();
+      });
+      // Auto-dismiss after 12s
+      setTimeout(function () { if (toast.parentNode) toast.style.opacity = '0', setTimeout(dismiss, 350); }, 12000);
+    }
+    // Slight delay so layout settles
+    setTimeout(maybePrompt, 600);
   };
 
   // -----------------------------------------------------------------------
@@ -1536,6 +1724,76 @@
   };
 
   // -----------------------------------------------------------------------
+  // Buy Me a Coffee — top-right header pill button (auto-injects)
+  // User profile URL: https://www.buymeacoffee.com/chendermatologist
+  // (Premium tier shown via the same BMC platform)
+  // -----------------------------------------------------------------------
+  DN.BMC_URL = 'https://www.buymeacoffee.com/chendermatologist';
+
+  DN.injectBMCFooter = function () {
+    if (document.getElementById('dn-bmc-footer')) return;
+    var footer = document.querySelector('footer');
+    if (!footer) return;
+    var section = document.createElement('section');
+    section.id = 'dn-bmc-footer';
+    section.style.cssText = 'max-width:780px;margin:0 auto 0;padding:24px 20px 0;text-align:center';
+    section.innerHTML =
+      '<div style="background:linear-gradient(135deg,#fff8c5 0%,#FFE680 100%);border:1px solid #d4a015;border-radius:18px;padding:22px 26px;box-shadow:0 8px 22px -10px rgba(212,160,21,.35)">' +
+        '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#7c2d12;font-weight:700;margin-bottom:6px" data-zh="如果這個網站對您有幫助" data-en="If this site has helped you">如果這個網站對您有幫助</div>' +
+        '<h3 style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:20px;font-weight:700;color:#0f172a;margin:0 0 8px" data-zh="請支持作者一杯咖啡 ☕" data-en="Buy me a coffee ☕">請支持作者一杯咖啡 ☕</h3>' +
+        '<p style="font-size:13px;color:#5e574e;line-height:1.85;margin:0 auto 14px;max-width:540px" data-zh="本網站<strong>無業配、無贊助</strong>,所有衛教文章與量表計算器都<strong>免費</strong>。如果您覺得內容對您有幫助,歡迎透過 Buy Me a Coffee 支持,讓我能繼續更新最新文獻與指引。" data-en="No ads, no sponsorships. All articles and calculators are free. If this content helped you, support via Buy Me a Coffee.">本網站<strong>無業配、無贊助</strong>,所有衛教文章與量表計算器都<strong>免費</strong>。如果您覺得內容對您有幫助,歡迎透過 Buy Me a Coffee 支持,讓我能繼續更新最新文獻與指引。</p>' +
+        '<a href="' + DN.BMC_URL + '" target="_blank" rel="noopener" data-bmc-footer-link ' +
+          'style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:9999px;background:#FFDD00;color:#0f172a;text-decoration:none;font-size:14px;font-weight:800;border:2px solid #0f172a;box-shadow:0 4px 12px rgba(212,160,21,.4)">' +
+          '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>' +
+          '<span data-zh="Buy Me a Coffee" data-en="Buy Me a Coffee">Buy Me a Coffee</span>' +
+        '</a>' +
+      '</div>';
+    footer.parentNode.insertBefore(section, footer);
+
+    if (typeof gtag === 'function') {
+      var link = section.querySelector('[data-bmc-footer-link]');
+      if (link) link.addEventListener('click', function () {
+        try { gtag('event', 'bmc_click', { source: 'footer', page_path: location.pathname }); } catch (e) {}
+      });
+    }
+  };
+
+  DN.injectBMC = function () {
+    DN.injectBMCFooter();
+    if (document.getElementById('dn-bmc-header')) return;
+    var headerInner = document.querySelector('header.sticky .h-16 > div:last-child');
+    if (!headerInner) return;
+    var a = document.createElement('a');
+    a.id = 'dn-bmc-header';
+    a.href = DN.BMC_URL;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.setAttribute('aria-label', 'Buy Me a Coffee — 支持作者');
+    a.style.cssText =
+      'display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:9999px;' +
+      'background:linear-gradient(180deg,#FFDD00 0%,#F5C518 100%);color:#0f172a;text-decoration:none;' +
+      'font-size:12px;font-weight:700;border:1px solid #d4a015;' +
+      'box-shadow:0 2px 6px -2px rgba(212,160,21,.5);transition:transform .15s';
+    a.onmouseover = function () { a.style.transform = 'translateY(-1px)'; };
+    a.onmouseout = function () { a.style.transform = ''; };
+    a.innerHTML =
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>' +
+        '<line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>' +
+      '</svg>' +
+      '<span class="hidden sm:inline" data-zh="支持作者" data-en="Buy me a coffee">支持作者</span>';
+    // Insert at the start of headerInner
+    headerInner.insertBefore(a, headerInner.firstChild);
+
+    // GA4 tracking
+    if (typeof gtag === 'function') {
+      a.addEventListener('click', function () {
+        try { gtag('event', 'bmc_click', { source: 'header', page_path: location.pathname }); } catch (e) {}
+      });
+    }
+  };
+
+  // -----------------------------------------------------------------------
   // Sticky bottom CTA bar — mobile-only fixed bar (research-backed pattern)
   // Modified for resident-physician persona: no fake LINE, no fake phone
   // (預約 CMUH / 醫院 Maps / 快速找文章)
@@ -1554,23 +1812,23 @@
       'border-top:1px solid var(--border, #dcd5c8);box-shadow:0 -4px 20px -8px rgba(77,99,88,.2);' +
       'padding-bottom:env(safe-area-inset-bottom)';
     bar.innerHTML =
-      '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" ' +
-        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
-        'data-cta="cmuh-book" aria-label="中國醫官方線上掛號">' +
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
-        '<span data-zh="預約掛號" data-en="Book Visit">預約掛號</span>' +
-      '</a>' +
-      '<a href="https://www.google.com/maps/place/%E4%B8%AD%E5%9C%8B%E9%86%AB%E8%97%A5%E5%A4%A7%E5%AD%B8%E9%99%84%E8%A8%AD%E9%86%AB%E9%99%A2/@24.1574,120.6857,17z/" target="_blank" rel="noopener" ' +
-        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
-        'data-cta="cmuh-map" aria-label="中國醫附設醫院 Google Maps">' +
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>' +
-        '<span data-zh="醫院位置" data-en="Hospital Map">醫院位置</span>' +
-      '</a>' +
       '<a href="/#dn-hub" ' +
-        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700" ' +
+        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
         'data-cta="article-hub" aria-label="找衛教文章">' +
         '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>' +
         '<span data-zh="找文章" data-en="Find Article">找文章</span>' +
+      '</a>' +
+      '<a href="/tools" ' +
+        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
+        'data-cta="tools" aria-label="量表計算器">' +
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 7h6M9 12h6M9 17h6"/></svg>' +
+        '<span data-zh="量表" data-en="Tools">量表</span>' +
+      '</a>' +
+      '<a href="/glossary" ' +
+        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700" ' +
+        'data-cta="glossary" aria-label="詞彙字典">' +
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>' +
+        '<span data-zh="詞彙" data-en="Glossary">詞彙</span>' +
       '</a>';
 
     var style = document.createElement('style');
@@ -1612,10 +1870,10 @@
     cta.style.cssText = 'background:linear-gradient(135deg,#ecfeff 0%,#f5fbfa 100%);border:1px solid #a5f3fc;border-radius:14px;padding:16px 20px;margin:22px 0;display:flex;gap:14px;align-items:center;flex-wrap:wrap;';
     cta.innerHTML =
       '<div style="flex:1;min-width:200px">' +
-        '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#4d6358;font-weight:700;margin-bottom:4px" data-zh="想當面評估?" data-en="Need in-person evaluation?">想當面評估?</div>' +
-        '<div style="font-size:14px;color:#0f172a;line-height:1.7;margin:0" data-zh="若您有上述症狀或疑慮,歡迎至 <strong>中國醫藥大學附設醫院 皮膚科</strong> 面對面評估,由主治醫師依完整病史與檢查決定治療。" data-en="If you have any of these concerns, please consider an in-person consultation at <strong>China Medical University Hospital — Dermatology</strong>; the attending physician will decide treatment based on a complete history and examination.">若您有上述症狀或疑慮,歡迎至 <strong>中國醫藥大學附設醫院 皮膚科</strong> 面對面評估,由主治醫師依完整病史與檢查決定治療。</div>' +
+        '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#4d6358;font-weight:700;margin-bottom:4px" data-zh="想評估自己的嚴重度?" data-en="Self-assess severity?">想評估自己的嚴重度?</div>' +
+        '<div style="font-size:14px;color:#0f172a;line-height:1.7;margin:0" data-zh="本站提供 <strong>15 個臨床量表計算器</strong>(SCORAD、PASI、DLQI、UAS7 等),可即時自評、了解嚴重度與治療對應。" data-en="This site provides <strong>15 clinical calculators</strong> (SCORAD, PASI, DLQI, UAS7…) for instant self-assessment.">本站提供 <strong>15 個臨床量表計算器</strong>(SCORAD、PASI、DLQI、UAS7 等),可即時自評、了解嚴重度與治療對應。</div>' +
       '</div>' +
-      '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" style="flex-shrink:0;padding:10px 18px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" data-zh="中國醫官方掛號 →" data-en="CMUH Booking →">中國醫官方掛號 →</a>';
+      '<a href="/tools" style="flex-shrink:0;padding:10px 18px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" data-zh="量表計算器 →" data-en="Calculators →">量表計算器 →</a>';
     targetH2.parentNode.insertBefore(cta, targetH2);
   };
 
@@ -1643,7 +1901,7 @@
             '<strong>經歷</strong>:高雄醫學大學附設中和紀念醫院 不分科住院醫師(PGY)" data-en="<strong>Current</strong>: Dermatology Resident, China Medical University Hospital<br/><strong>Education</strong>: M.D., Kaohsiung Medical University, College of Medicine<br/><strong>Training</strong>: PGY Resident, Kaohsiung Medical University Hospital"><strong>現職</strong>:中國醫藥大學附設醫院 皮膚科 住院醫師<br/><strong>學歷</strong>:高雄醫學大學醫學系 畢業<br/><strong>經歷</strong>:高雄醫學大學附設中和紀念醫院 不分科住院醫師(PGY)</div>' +
           '<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">' +
             '<a href="/about" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#0e7c86;color:#fff;text-decoration:none" data-zh="關於我" data-en="About">關於我 →</a>' +
-            '<a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#4d6358;border:1px solid #a5f3fc;text-decoration:none" data-zh="中國醫官方掛號" data-en="CMUH Booking">中國醫官方掛號 →</a>' +
+            '<a href="/tools" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#4d6358;border:1px solid #a5f3fc;text-decoration:none" data-zh="量表計算器" data-en="Calculators">量表計算器 →</a>' +
           '</div>' +
         '</div>' +
       '</div>';
@@ -2001,6 +2259,7 @@
     }
 
     DN.injectMobileMenu();
+    DN.injectBMC();
     DN.bindLangToggle(apply);
     apply(curLang);
     DN.addReadingProgress();
@@ -2012,7 +2271,9 @@
     // Article-only enhancements (auto-detect via .prose presence)
     if (document.getElementById('proseZh') || document.querySelector('article .prose')) {
       DN.addReadingMeta();
+      DN.addInlineTOC();
       DN.addFloatingTOC();
+      DN.bindScrollMemory();
       DN.addInlineCTA();
       DN.injectSCORAD();
       DN.injectSALT();

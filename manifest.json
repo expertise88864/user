@@ -18,7 +18,7 @@
     { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ],
   "shortcuts": [
-    { "name": "預約看診 (中國醫皮膚部)", "short_name": "掛號", "url": "https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&current=0&source=dep" },
+    { "name": "預約看診 (皮膚部)", "short_name": "掛號", "url": "https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&current=0&source=dep" },
     { "name": "衛教文章", "short_name": "文章", "url": "/blog/" },
     { "name": "痘痘 9 大迷思", "short_name": "痘痘迷思", "url": "/blog/acne-myths" },
     { "name": "防曬 8 大迷思", "short_name": "防曬迷思", "url": "/blog/sunscreen-myths" }

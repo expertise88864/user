@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-TW">
   <title>ChenDermatologist · 皮膚科常見衛教及學習筆記網站</title>
-  <subtitle>陳翊嘉醫師（中國醫藥大學附設醫院 皮膚科）整理的皮膚科衛教文章</subtitle>
+  <subtitle>陳翊嘉醫師（皮膚科）整理的皮膚科衛教文章</subtitle>
   <link href="https://chendermatologist.com/blog/" />
   <link rel="self" type="application/atom+xml" href="https://chendermatologist.com/blog/atom.xml" />
   <link rel="alternate" type="application/rss+xml" href="https://chendermatologist.com/blog/feed.xml" />
