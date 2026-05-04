@@ -310,6 +310,116 @@
     { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' }
   ];
 
+  // -----------------------------------------------------------------------
+  // Article numbering — assign #001-#NNN by chronological publish order
+  // (date asc, then array order as tiebreaker for same-day publishes)
+  // -----------------------------------------------------------------------
+  // -----------------------------------------------------------------------
+  // Reading progress tracker (localStorage) — auto-mark on article view
+  // Provides DN.markRead, DN.getReadSlugs, DN.getReadCount, DN.resetRead
+  // -----------------------------------------------------------------------
+  DN.READ_KEY = 'dn-read-articles-v1';
+
+  DN.getReadSlugs = function () {
+    try {
+      var raw = localStorage.getItem(DN.READ_KEY);
+      if (!raw) return [];
+      var arr = JSON.parse(raw);
+      return Array.isArray(arr) ? arr : [];
+    } catch (e) { return []; }
+  };
+
+  DN.markRead = function (slug) {
+    if (!slug) return;
+    var slugs = DN.getReadSlugs();
+    if (slugs.indexOf(slug) !== -1) return;
+    slugs.push(slug);
+    try {
+      localStorage.setItem(DN.READ_KEY, JSON.stringify(slugs));
+      // Notify any active progress widgets
+      window.dispatchEvent(new CustomEvent('dn-read-updated'));
+      if (typeof gtag === 'function') {
+        try {
+          gtag('event', 'article_read', {
+            slug: slug,
+            total_read: slugs.length,
+            page_path: location.pathname
+          });
+          // Milestones
+          if (slugs.length === 5 || slugs.length === 10 || slugs.length === 20 || slugs.length === DN.totalArticles) {
+            gtag('event', 'reading_milestone', { milestone: slugs.length, total: DN.totalArticles });
+          }
+        } catch (e) {}
+      }
+    } catch (e) {}
+  };
+
+  DN.getReadCount = function () { return DN.getReadSlugs().length; };
+
+  DN.resetRead = function () {
+    try { localStorage.removeItem(DN.READ_KEY); window.dispatchEvent(new CustomEvent('dn-read-updated')); } catch (e) {}
+  };
+
+  // Reading progress widget — injects into target element with id="dn-read-progress"
+  DN.injectReadProgress = function () {
+    var host = document.getElementById('dn-read-progress');
+    if (!host) return;
+
+    function render() {
+      var read = DN.getReadCount();
+      var total = DN.totalArticles || 1;
+      var pct = Math.round((read / total) * 100);
+
+      host.innerHTML =
+        '<div style="background:#fff;border:1px solid var(--border, #dcd5c8);border-radius:14px;padding:18px 22px;box-shadow:0 1px 2px rgba(15,23,42,.04)">' +
+          '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px">' +
+            '<div>' +
+              '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#4d6358;font-weight:700;margin-bottom:2px">閱讀進度</div>' +
+              '<div style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#0f172a">' +
+                '已讀 <span style="color:#0c5159">' + read + '</span> / ' + total + ' 篇 ' +
+                '<span style="font-size:13px;font-weight:500;color:#5e574e">(' + pct + '%)</span>' +
+              '</div>' +
+            '</div>' +
+            (read > 0
+              ? '<button id="dn-read-reset" type="button" style="background:#fff;border:1px solid var(--border, #dcd5c8);color:#5e574e;padding:5px 10px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer">重設進度</button>'
+              : '<span style="font-size:12px;color:#8b8378;font-style:italic">逐篇閱讀後自動記錄</span>') +
+          '</div>' +
+          '<div style="height:8px;background:#f1ece4;border-radius:9999px;overflow:hidden">' +
+            '<div style="height:100%;width:' + pct + '%;background:linear-gradient(90deg,#a4b5a8,#0c5159);transition:width .35s ease;"></div>' +
+          '</div>' +
+        '</div>';
+
+      var resetBtn = document.getElementById('dn-read-reset');
+      if (resetBtn) resetBtn.addEventListener('click', function () {
+        if (confirm('要重設閱讀進度嗎? 本動作只會清除本裝置的紀錄,不會影響網站。')) {
+          DN.resetRead();
+        }
+      });
+    }
+    render();
+    window.addEventListener('dn-read-updated', render);
+    window.addEventListener('storage', function (e) {
+      if (e.key === DN.READ_KEY) render();
+    });
+  };
+
+  DN.numberMap = (function () {
+    var sorted = (DN.ARTICLES || []).slice()
+      .map(function (a, i) { return { slug: a.slug, date: a.date || '', _orig: i }; })
+      .sort(function (a, b) {
+        return (a.date.localeCompare(b.date)) || (a._orig - b._orig);
+      });
+    var map = {};
+    sorted.forEach(function (a, i) {
+      map[a.slug] = String(i + 1).padStart(3, '0');
+    });
+    return map;
+  })();
+  DN.getArticleNumber = function (slug) {
+    return DN.numberMap[slug] || null;
+  };
+  DN.totalArticles = (DN.ARTICLES || []).length;
+
   DN.currentSlug = function () {
     const m = location.pathname.match(/\/blog\/([a-z0-9-]+)\/?$/i);
     return m ? m[1] : null;
@@ -342,7 +452,15 @@
     const bar = document.createElement('div');
     bar.id = 'dn-reading-meta';
     bar.style.cssText = 'display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0 8px;font-size:12.5px;color:var(--ink-2);';
+
+    // Article number badge
+    const articleNum = DN.getArticleNumber(slug);
+    const numBadge = articleNum
+      ? '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;font-weight:700;letter-spacing:.04em;font-family:Inter,sans-serif"><span aria-hidden="true">№</span><span>' + articleNum + ' / ' + String(DN.totalArticles).padStart(3,'0') + '</span></span>'
+      : '';
+
     bar.innerHTML =
+      numBadge +
       '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#f1ece4;border:1px solid #a5f3fc;color:#4d6358;font-weight:600">' +
         '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>' +
         '<span data-zh="閱讀約 ' + minutes + ' 分鐘" data-en="' + minutes + ' min read">閱讀約 ' + minutes + ' 分鐘</span>' +
@@ -353,6 +471,9 @@
       '</span>' +
       '<a href="/about" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:9999px;background:#fff;border:1px solid var(--border);color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="陳翊嘉醫師 →" data-en="Dr. Chen Yi-Jia →">陳翊嘉醫師 →</a>';
     target.parentNode.insertBefore(bar, target.nextSibling);
+
+    // Mark this article as read (localStorage tracker)
+    if (slug) DN.markRead(slug);
   };
 
   // -----------------------------------------------------------------------
@@ -1253,6 +1374,8 @@
       var tagEn = a.tag_en || a.tag || '';
       var dateLabel = a.date || '';
       var title = a.title || a.slug;
+      var num = DN.getArticleNumber(a.slug);
+      var numStr = num ? '№' + num + ' · ' : '';
       return '<a href="/blog/' + a.slug + '" ' +
         'style="display:flex;flex-direction:column;gap:5px;padding:14px 16px;background:#fff;' +
         'border:1px solid var(--border, #dcd5c8);border-radius:12px;text-decoration:none;color:inherit;' +
@@ -1261,6 +1384,7 @@
         'onmouseout="this.style.borderColor=\'var(--border, #dcd5c8)\';this.style.transform=\'\';this.style.boxShadow=\'0 1px 2px rgba(15,23,42,.04)\'">' +
         '<div style="display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#4d6358">' +
           (badge ? '<span style="padding:2px 8px;border-radius:9999px;background:' + badge.bg + ';color:' + badge.fg + ';letter-spacing:.08em;font-size:10px">' + badge.label + '</span>' : '') +
+          (num ? '<span style="font-family:Inter,sans-serif;letter-spacing:.06em;color:#4d6358;font-weight:800">№' + num + '</span><span style="opacity:.5">·</span>' : '') +
           '<span>' + tagEn + '</span>' +
           '<span style="opacity:.5">·</span>' +
           '<time style="font-weight:500;font-family:Inter,sans-serif;letter-spacing:0">' + dateLabel + '</time>' +
@@ -1917,6 +2041,7 @@
     DN.bindGAEvents();
     DN.bindArticleHub();
     DN.injectSpotlight();
+    DN.injectReadProgress();
     DN.markNewArticles();
     DN.addStickyCTA();
 

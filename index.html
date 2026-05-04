@@ -562,6 +562,9 @@
 <!-- ============= 最近更新 + 熱門推薦 雙欄 ============= -->
 <section class="py-8" id="dn-spotlight">
   <div class="max-w-5xl mx-auto px-5 sm:px-8">
+    <!-- 閱讀進度 widget -->
+    <div id="dn-read-progress" style="margin-bottom:24px"></div>
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- 最近更新 -->
       <div>
@@ -974,6 +977,8 @@
       <a href="/blog/topics" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--border)] bg-white text-teal-700 font-semibold text-[13.5px] hover:border-teal-500 hover:bg-mint-50 ml-2" data-zh="主題地圖 →" data-en="Topic map →">主題地圖 →</a>
       <a href="/glossary" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--border)] bg-white text-teal-700 font-semibold text-[13.5px] hover:border-teal-500 hover:bg-mint-50 ml-2" data-zh="醫學詞彙白話字典 →" data-en="Medical glossary →">醫學詞彙白話字典 →</a>
       <a href="/tools" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--border)] bg-white text-teal-700 font-semibold text-[13.5px] hover:border-teal-500 hover:bg-mint-50 ml-2" data-zh="量表計算器指南 →" data-en="Calculator guide →">量表計算器指南 →</a>
+      <a href="/dashboard" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--border)] bg-white text-teal-700 font-semibold text-[13.5px] hover:border-teal-500 hover:bg-mint-50 ml-2" data-zh="疾病數據 Dashboard →" data-en="Disease data dashboard →">疾病數據 Dashboard →</a>
+      <a href="/notes" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--border)] bg-white text-teal-700 font-semibold text-[13.5px] hover:border-teal-500 hover:bg-mint-50 ml-2" data-zh="學習筆記 →" data-en="Resident notes →">學習筆記 →</a>
     </div>
   </div>
 </section>
@@ -1091,12 +1096,12 @@
     </div>
     <div class="mt-4 text-[11.5px] text-ink-500 flex flex-wrap items-center justify-between gap-2">
       <div data-zh="本站僅作教育參考，不構成醫療建議。任何用藥或就醫決定請以您的主治醫師判斷為準。" data-en="Educational use only — not medical advice. Always consult your physician for treatment decisions.">本站僅作教育參考，不構成醫療建議。任何用藥或就醫決定請以您的主治醫師判斷為準。</div>
-      <div>© <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師 · <span style="font-size:10px;opacity:.5">build 2026-05-09 20:00 (R10: 雙欄縮為各 3 篇 | 訂閱區置底 footer 之前 | 5 個新計算器 POEM/EASI/IHS4/NAPSI/PHQ-9(共 15) | 跨領域個人品牌 KOL 研究 | 完整驗證 0 critical issues / 42 a11y pass / 136 JSON-LD valid | SW v35)</span></div>
+      <div>© <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師 · <span style="font-size:10px;opacity:.5">build 2026-05-10 01:00 (R11: 文章編號 №001-#032 顯示在 hero/spotlight | 閱讀進度 badge localStorage 追蹤 | /dashboard 疾病數據視覺化(5 圖) | /notes 學習筆記區(免費版+付費版規劃) | SW v36)</span></div>
     </div>
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605092000" defer></script>
+<script src="/blog/blog-shared.js?v=202605100100" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (window.DN) DN.initBlog({});

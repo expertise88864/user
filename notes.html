@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>學習筆記(Resident Notes)| 陳翊嘉醫師 · ChenDermatologist</title>
+<meta name="description" content="陳翊嘉醫師(中國醫藥大學附設醫院 皮膚科)的住院醫師學習筆記區。整理 Fitzpatrick / Bolognia 教材、最新指引(AAD / EAACI / Werfel / Kolkhir / Rudnicka)、Pubmed 文獻心得、case discussion。提供同行 / 醫學生 / PGY 醫師查找。" />
+<meta name="theme-color" content="#7a9285" />
+<meta name="keywords" content="皮膚科住院醫師筆記,resident notes,皮膚科 study notes,Fitzpatrick 筆記,Bolognia,皮膚科 Pubmed 心得,皮膚科 case discussion,陳翊嘉醫師,中國醫藥大學附設醫院 皮膚科" />
+<link rel="canonical" href="https://chendermatologist.com/notes" />
+<link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/notes" />
+<link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/notes" />
+<link rel="alternate" hreflang="en" href="https://chendermatologist.com/notes" />
+<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" />
+<link rel="icon" sizes="any" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chendermatologist.com/notes" />
+<meta property="og:title" content="學習筆記 — 陳翊嘉醫師 | ChenDermatologist" />
+<meta property="og:description" content="皮膚科住院醫師學習筆記。Fitzpatrick / Bolognia 教材整理 + 最新指引心得 + case discussion。" />
+<meta property="og:image" content="https://chendermatologist.com/logo-512.png" />
+<meta property="og:locale" content="zh_TW" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="學習筆記 — 陳翊嘉醫師" />
+<meta name="twitter:image" content="https://chendermatologist.com/logo-512.png" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-8223268344248663">
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wkvhe0mf7y");</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFF3L5QD10"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XFF3L5QD10',{'anonymize_ip':true});</script>
+
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  :root{ --bg:#faf7f2; --ink:#2a2620; --ink-2:#5e574e; --muted:#8b8378; --teal:#7a9285; --teal-deep:#4d6358; --teal-bright:#a4b5a8; --mint-soft:#dcd9d1; --border:#dcd5c8; --line:#ebe4d8; }
+  html,body{ background:var(--bg); color:var(--ink); }
+  body::before{ content:''; position:fixed; inset:0; pointer-events:none; z-index:-1; background:radial-gradient(800px 500px at 12% -8%, rgba(164,181,168,.18), transparent 60%), linear-gradient(180deg,#f5fbfa 0%, #fbffff 40%, #f5fbfa 100%); }
+  .teal-text{ background:linear-gradient(180deg,#a4b5a8 0%, #4d6358 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  .note-list{ display:flex; flex-direction:column; gap:14px; margin:24px 0; }
+  .note-card{ background:#fff; border:1px solid var(--border); border-radius:14px; padding:18px 22px; box-shadow:0 1px 2px rgba(15,23,42,.04); transition:all .15s ease; }
+  .note-card:hover{ border-color:rgba(122,146,133,.5); transform:translateY(-2px); box-shadow:0 14px 30px -16px rgba(77,99,88,.25); }
+  .note-card .note-meta{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#4d6358; margin-bottom:6px; }
+  .note-card h3{ font-family:'Noto Serif TC',Georgia,serif; font-size:18px; font-weight:700; color:var(--ink); margin:0 0 6px; }
+  .note-card p{ font-size:13.5px; color:var(--ink-2); line-height:1.75; margin:0; }
+  .note-card .note-tags{ display:flex; flex-wrap:wrap; gap:5px; margin-top:10px; }
+  .note-card .note-tag{ padding:2px 8px; border-radius:9999px; background:#f1ece4; color:#4d6358; font-size:11px; font-weight:600; }
+
+  .note-status{ padding:2px 8px; border-radius:9999px; font-size:10px; font-weight:700; letter-spacing:.06em; }
+  .note-status.live{ background:#dcfce7; color:#14532d; }
+  .note-status.coming{ background:#fef3c7; color:#854d0e; }
+  .note-status.premium{ background:linear-gradient(180deg,#fde68a,#f59e0b); color:#7c2d12; }
+
+  .crumbs{ font-size:12.5px; color:var(--muted); margin-bottom:18px; }
+  .crumbs a{ color:var(--teal-deep); text-decoration:none; font-weight:600; }
+  .crumbs a:hover{ text-decoration:underline; }
+
+  .premium-tier{ background:linear-gradient(135deg,#fff7ed 0%,#fef3c7 100%); border:1px solid #fde68a; border-radius:18px; padding:22px 28px; margin:24px 0; }
+</style>
+
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"CollectionPage","name":"皮膚科住院醫師學習筆記","description":"陳翊嘉醫師整理的皮膚科住院醫師學習筆記。","url":"https://chendermatologist.com/notes","author":{"@type":"Person","name":"陳翊嘉 醫師","affiliation":{"@type":"Hospital","name":"中國醫藥大學附設醫院 皮膚科"}},"inLanguage":"zh-Hant-TW" }
+</script>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"首頁","item":"https://chendermatologist.com/"},
+  {"@type":"ListItem","position":2,"name":"學習筆記","item":"https://chendermatologist.com/notes"}
+]}
+</script>
+</head>
+<body class="font-sans antialiased text-ink-900">
+<a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
+
+<header class="sticky top-0 z-40 backdrop-blur border-b" style="background:rgba(250,247,242,.92); border-color:var(--border)">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="h-16 flex items-center justify-between gap-4">
+      <a href="/" class="flex items-center gap-3 min-w-0">
+        <img src="/icon.svg" alt="ChenDermatologist" class="w-9 h-9 rounded-lg flex-shrink-0" width="36" height="36" fetchpriority="high" />
+        <div class="min-w-0 leading-tight">
+          <div class="font-display font-semibold text-[16px] sm:text-[18px] teal-text">ChenDermatologist</div>
+          <div class="text-[10.5px] sm:text-[11.5px] text-ink-500 mt-0.5 truncate">陳翊嘉醫師 · 中國醫藥大學附設醫院 皮膚科</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        <a href="/blog/" class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full text-[12px] font-semibold text-teal-700 hover:bg-mint-100">← 衛教文章</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="pt-12 sm:pt-14 pb-2">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <nav class="crumbs">
+      <a href="/">首頁</a><span style="margin:0 6px;opacity:.5">/</span>
+      <span>學習筆記</span>
+    </nav>
+    <div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold mb-3">資源 · 同行 / 醫學生</div>
+    <h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">
+      學習筆記<br/>
+      <span class="teal-text">Resident Study Notes</span>
+    </h1>
+    <p class="mt-5 text-[15.5px] text-ink-700 leading-[1.95]">
+      這個區塊是給<strong>皮膚科住院醫師、PGY、醫學生、其他科同行</strong>的學習筆記。整理自 <strong>Fitzpatrick / Bolognia / Andrews 教材、最新國際指引(AAD / EAACI / Werfel / Kolkhir / Rudnicka)、Pubmed 文獻心得、台灣皮膚科專科考題回顧</strong>。內容偏向專業臨床知識與機轉,與 <a href="/blog/" style="color:var(--teal-deep);font-weight:700;text-decoration:underline">給民眾的衛教文章</a> 不同。
+    </p>
+
+    <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:14px;padding:14px 18px;margin:20px 0;font-size:13.5px;color:#9a3412;line-height:1.85">
+      <strong>提醒:</strong>本區內容為<strong>學術參考</strong>,引用自公開教材與文獻。<strong>非醫療專業人員</strong>請以 <a href="/blog/" style="color:#7c2d12;text-decoration:underline">衛教文章</a> 為主;這裡沒有給病人讀的口語化內容。
+    </div>
+  </div>
+</section>
+
+<section class="max-w-3xl mx-auto px-5 sm:px-8 my-2">
+  <div class="ad-slot h-20 sm:h-24" style="border:1px dashed var(--border);border-radius:14px;background:#fff;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;justify-content:center">廣告位 · AdSense</div>
+</section>
+
+<section class="max-w-3xl mx-auto px-5 sm:px-8">
+
+  <h2 class="font-display font-bold text-[24px] mt-8 mb-4">已上線(免費)</h2>
+
+  <div class="note-list">
+
+    <a href="/blog/topical-acids-clinical" class="note-card" style="text-decoration:none;color:inherit;display:block">
+      <div class="note-meta">
+        <span class="note-status live">免費 · 已上線</span>
+        <span>住院醫師筆記</span>
+      </div>
+      <h3>外用 Retinoids &amp; Acid Actives 學習筆記</h3>
+      <p>Tretinoin / Adapalene / Tazarotene / Trifarotene 四代 retinoid 的 RAR α/β/γ selectivity、分子設計、pH、滲透深度、與 BPO/L-AA 相容性、孕期安全 evidence、Bakuchiol。</p>
+      <div class="note-tags">
+        <span class="note-tag">Retinoids</span>
+        <span class="note-tag">Pharmacology</span>
+        <span class="note-tag">AAD 2024</span>
+      </div>
+    </a>
+
+    <a href="/blog/isotretinoin-clinical" class="note-card" style="text-decoration:none;color:inherit;display:block">
+      <div class="note-meta">
+        <span class="note-status live">免費 · 已上線</span>
+        <span>住院醫師筆記</span>
+      </div>
+      <h3>Oral Isotretinoin 完整臨床學理整理</h3>
+      <p>13-cis-RA 藥理、isomerization、RAR/RXR 結合、四大機轉(sebocyte apoptosis, comedolysis, antimicrobial, anti-inflammatory)、累積劑量證據、副作用全光譜、IBD/depression 爭議、停藥後 laser timing 最新觀念、AAD 2024 整理。</p>
+      <div class="note-tags">
+        <span class="note-tag">Isotretinoin</span>
+        <span class="note-tag">Pharmacology</span>
+        <span class="note-tag">Side effects</span>
+      </div>
+    </a>
+
+  </div>
+
+  <h2 class="font-display font-bold text-[24px] mt-12 mb-4">籌備中(免費 · 預定上線)</h2>
+
+  <div class="note-list">
+
+    <div class="note-card" style="opacity:.85">
+      <div class="note-meta">
+        <span class="note-status coming">籌備中</span>
+        <span>住院醫師筆記</span>
+      </div>
+      <h3>JAK / TYK2 抑制劑 — 機轉、選擇性、安全警示完整整理</h3>
+      <p>JAK 1-3 + TYK2 受體分支、各分子選擇性比較(Baricitinib / Upadacitinib / Abrocitinib / Ritlecitinib / Deucravacitinib)、ORAL Surveillance 試驗、EMA 2023 黑框警示、皮膚科適應症與健保條件。</p>
+      <div class="note-tags">
+        <span class="note-tag">JAK inhibitor</span>
+        <span class="note-tag">機轉</span>
+        <span class="note-tag">EMA warning</span>
+      </div>
+    </div>
+
+    <div class="note-card" style="opacity:.85">
+      <div class="note-meta">
+        <span class="note-status coming">籌備中</span>
+        <span>住院醫師筆記</span>
+      </div>
+      <h3>IL-17 / IL-23 / IL-31 機轉與生物製劑分類</h3>
+      <p>Th17 vs Th2 vs Th22 軸線、IL-17A/F 雙抑制(Bimekizumab)為何更強、IL-23 p19 vs IL-12/23 p40 比較、IL-31 與搔癢神經調節(Nemolizumab 機轉)。</p>
+      <div class="note-tags">
+        <span class="note-tag">細胞激素</span>
+        <span class="note-tag">生物製劑</span>
+        <span class="note-tag">免疫學</span>
+      </div>
+    </div>
+
+    <div class="note-card" style="opacity:.85">
+      <div class="note-meta">
+        <span class="note-status coming">籌備中</span>
+        <span>住院醫師筆記</span>
+      </div>
+      <h3>Dermoscopy 皮膚鏡判讀必備 50 個 pattern</h3>
+      <p>melanocytic vs non-melanocytic 鑑別、典型 BCC dermoscopic features、痣 ABCDE+chaos rule、灰指甲 vs 黑色素瘤甲下、圓禿 trichoscopy(yellow dots, exclamation mark hair)。</p>
+      <div class="note-tags">
+        <span class="note-tag">Dermoscopy</span>
+        <span class="note-tag">皮膚癌</span>
+        <span class="note-tag">圓禿 trichoscopy</span>
+      </div>
+    </div>
+
+    <div class="note-card" style="opacity:.85">
+      <div class="note-meta">
+        <span class="note-status coming">籌備中</span>
+        <span>住院醫師筆記</span>
+      </div>
+      <h3>皮膚切片組織病理常見 pattern recognition</h3>
+      <p>spongiosis vs psoriasiform vs lichenoid vs interface vs vasculitis 組織學鑑別、各疾病標記性 pattern、IHC 標記常用組合(CD3/CD4/CD8/CD30/CD20/EMA)、TCR 重排判讀。</p>
+      <div class="note-tags">
+        <span class="note-tag">病理</span>
+        <span class="note-tag">Pattern recognition</span>
+        <span class="note-tag">IHC</span>
+      </div>
+    </div>
+
+    <div class="note-card" style="opacity:.85">
+      <div class="note-meta">
+        <span class="note-status coming">籌備中</span>
+        <span>住院醫師筆記</span>
+      </div>
+      <h3>皮膚科專科考題 — 100 題反思題庫(101-114)</h3>
+      <p>整理近 14 年(101-114)台灣皮膚專科甄審筆試實物測驗 100 題,每題附參考答案 + 文獻引用 + 鑑別診斷 + 為什麼選錯的 trap。給準備考試的同學使用。</p>
+      <div class="note-tags">
+        <span class="note-tag">專科考</span>
+        <span class="note-tag">100-114</span>
+        <span class="note-tag">考題反思</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============= Premium Tier (預留 / 暫不啟用) ============= -->
+  <h2 class="font-display font-bold text-[24px] mt-12 mb-4">付費深度版(預計 2026 下半年規劃)</h2>
+
+  <div class="premium-tier">
+    <div style="display:flex;align-items:start;gap:14px;flex-wrap:wrap">
+      <div style="flex:1;min-width:240px">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#7c2d12;font-weight:700;margin-bottom:6px">未來規劃 · 暫不啟用</div>
+        <h3 style="font-family:'Noto Serif TC',Georgia,serif;font-size:20px;font-weight:700;color:#0f172a;margin:0 0 8px">深度版「住院醫師重點 SOP 包」</h3>
+        <p style="font-size:13.5px;color:var(--ink-2);line-height:1.85;margin:0">
+          當免費版累積到 6-12 篇後,規劃推出付費深度版(Substack 訂閱制 · 月費約 NT$ 100-300)。內容包括:<br/>
+          · <strong>每月 1 篇</strong>「值班 SOP 整理」(藥疹處置、疱疹處方、急性蕁麻疹、嚴重過敏緊急評估)<br/>
+          · <strong>每月 1 場</strong>「線上 case discussion」(去識別化、會員專屬)<br/>
+          · <strong>不公開的 PubMed 文獻心得 / journal club</strong><br/>
+          · <strong>住院醫師面試 / 專科考前重點整理</strong><br/>
+          · 訂閱者可優先提問
+        </p>
+        <div style="margin-top:12px;padding:10px 14px;background:#fff;border:1px solid #fde68a;border-radius:10px;font-size:12px;color:#9a3412">
+          <strong>目前狀態:</strong>免費 /notes 持續累積中,等內容達到 6-12 篇後再評估推出付費版。<strong>本區暫不收費</strong>,所有內容免費可讀。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#ecfeff,#f5fbfa);border:1px solid #a5f3fc;border-radius:14px;padding:18px 22px;margin:32px 0;font-size:14px;color:var(--ink-2);line-height:1.85">
+    <strong style="color:#0c5159">想收到新筆記通知?</strong><br/>
+    <a href="mailto:expertise88864@gmail.com?subject=%E8%A8%82%E9%96%B1%20Resident%20Notes%20%E6%96%B0%E7%AD%86%E8%A8%98%E9%80%9A%E7%9F%A5&body=%E9%99%B3%E9%86%AB%E5%B8%AB%E6%82%A8%E5%A5%BD%EF%BC%8C%0A%0A%E6%88%91%E6%83%B3%E8%A8%82%E9%96%B1%20Resident%20Notes%20%E6%96%B0%E7%AD%86%E8%A8%98%E9%80%9A%E7%9F%A5%E3%80%82%0A%0A%E5%B0%88%E6%A5%AD%E8%83%8C%E6%99%AF%EF%BC%88%E5%9C%88%E9%81%B8%E9%81%A9%E7%94%A8%EF%BC%89%EF%BC%9A%0A%E2%96%A1%20%E7%9A%AE%E8%86%9A%E7%A7%91%E5%AD%B8%E9%95%B7%20%2F%20PGY%0A%E2%96%A1%20%E7%9A%AE%E8%86%9A%E7%A7%91%E4%BD%8F%E9%99%A2%E9%86%AB%E5%B8%AB%0A%E2%96%A1%20%E5%85%B6%E4%BB%96%E7%A7%91%E9%86%AB%E5%B8%AB%20%2F%20%E9%86%AB%E5%AD%B8%E7%94%9F%0A%E2%96%A1%20%E5%8E%9F%E5%A0%B1%E5%90%8D%E5%96%AE%E4%B8%AD%E9%83%A8%2F%E5%85%83%2F%E5%9C%8B%E9%9A%9B%2F%E5%85%B6%E4%BB%96%E5%85%A8%E7%9A%AE%2F%E5%85%B6%E4%BB%96%0A%0A%E8%AC%9D%E8%AC%9D%21" data-subscribe-link
+       style="display:inline-flex;align-items:center;gap:6px;margin-top:6px;padding:8px 16px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:13px;font-weight:700">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email 訂閱新筆記通知
+    </a>
+  </div>
+
+</section>
+
+</main>
+
+<footer class="border-t border-[var(--border)] bg-mint-50/60">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10">
+    <div class="grid sm:grid-cols-3 gap-8">
+      <div>
+        <div class="font-display font-bold text-[18px] teal-text">ChenDermatologist</div>
+        <div class="text-[12.5px] text-ink-700 mt-1">皮膚科常見衛教及學習筆記網站</div>
+      </div>
+      <div>
+        <div class="text-[11px] uppercase tracking-[.22em] text-teal-700 font-semibold mb-2">預約 / 掛號</div>
+        <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-teal-600 text-white text-[12.5px] font-semibold hover:bg-teal-700">中國醫官方掛號 →</a>
+      </div>
+      <div>
+        <div class="text-[11px] uppercase tracking-[.22em] text-teal-700 font-semibold mb-2">網站</div>
+        <ul class="space-y-1 text-[13px]">
+          <li><a class="hover:text-teal-700" href="/">首頁</a></li>
+          <li><a class="hover:text-teal-700" href="/blog/">衛教文章</a></li>
+          <li><a class="hover:text-teal-700" href="/notes">學習筆記</a></li>
+          <li><a class="hover:text-teal-700" href="/dashboard">疾病數據 Dashboard</a></li>
+          <li><a class="hover:text-teal-700" href="/tools">量表計算器</a></li>
+          <li><a class="hover:text-teal-700" href="/glossary">醫學詞彙白話字典</a></li>
+          <li><a class="hover:text-teal-700" href="/about">關於我</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-[var(--line)] text-center text-[12.5px] text-ink-500">
+      © <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師
+    </div>
+  </div>
+</footer>
+
+<script src="/blog/blog-shared.js?v=202605100100" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.DN) DN.initBlog({});
+    var yr = document.getElementById('yr');
+    if (yr) yr.textContent = new Date().getFullYear();
+  });
+</script>
+</body>
+</html>

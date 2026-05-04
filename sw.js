@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v35';
-const RUNTIME = 'cd-runtime-v35';
+const CACHE = 'cd-v36';
+const RUNTIME = 'cd-runtime-v36';
 const RUNTIME_MAX_ENTRIES = 60;
 
 const PRECACHE = [
@@ -58,7 +58,9 @@ const PRECACHE = [
   '/blog/prurigo-nodularis',
   '/blog/cutaneous-t-cell-lymphoma',
   '/glossary',
-  '/tools'
+  '/tools',
+  '/dashboard',
+  '/notes'
 ];
 
 self.addEventListener('install', (e) => {

@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>皮膚科疾病數據 Dashboard — 盛行率、年齡分佈、健保給付 | 陳翊嘉醫師 · ChenDermatologist</title>
+<meta name="description" content="皮膚科疾病流行病學與健保數據視覺化 Dashboard:乾癬 / 異膚 / 圓禿 / 蕁麻疹 / 痘痘 / 玫瑰痤瘡的台灣盛行率、年齡分佈、健保生物製劑使用趨勢、TDA 共識引用次數。陳翊嘉醫師(中國醫藥大學附設醫院 皮膚科)整理 TDA + 健保署公開資料。" />
+<meta name="theme-color" content="#7a9285" />
+<meta name="keywords" content="皮膚科疾病數據,皮膚科盛行率,乾癬盛行率台灣,異膚盛行率,圓禿發病率,健保乾癬給付,健保異膚生物製劑,Dupilumab 健保,Adalimumab 健保,皮膚科年齡分佈,皮膚科 dashboard,皮膚科 visualization,陳翊嘉醫師,中國醫藥大學附設醫院 皮膚科" />
+<link rel="canonical" href="https://chendermatologist.com/dashboard" />
+<link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/dashboard" />
+<link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/dashboard" />
+<link rel="alternate" hreflang="en" href="https://chendermatologist.com/dashboard" />
+<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" />
+<link rel="icon" sizes="any" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chendermatologist.com/dashboard" />
+<meta property="og:title" content="皮膚科疾病數據 Dashboard | ChenDermatologist" />
+<meta property="og:description" content="台灣皮膚科常見疾病的流行病學、年齡分佈、健保給付數據視覺化。" />
+<meta property="og:image" content="https://chendermatologist.com/logo-512.png" />
+<meta property="og:locale" content="zh_TW" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="皮膚科疾病數據 Dashboard" />
+<meta name="twitter:image" content="https://chendermatologist.com/logo-512.png" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-8223268344248663">
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wkvhe0mf7y");</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFF3L5QD10"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XFF3L5QD10',{'anonymize_ip':true});</script>
+
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  :root{ --bg:#faf7f2; --ink:#2a2620; --ink-2:#5e574e; --muted:#8b8378; --teal:#7a9285; --teal-deep:#4d6358; --teal-bright:#a4b5a8; --mint-soft:#dcd9d1; --border:#dcd5c8; --line:#ebe4d8; }
+  html,body{ background:var(--bg); color:var(--ink); }
+  body::before{ content:''; position:fixed; inset:0; pointer-events:none; z-index:-1; background:radial-gradient(800px 500px at 12% -8%, rgba(164,181,168,.18), transparent 60%), linear-gradient(180deg,#f5fbfa 0%, #fbffff 40%, #f5fbfa 100%); }
+  .teal-text{ background:linear-gradient(180deg,#a4b5a8 0%, #4d6358 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  .chart-card{ background:#fff; border:1px solid var(--border); border-radius:18px; padding:22px 26px; margin:20px 0; box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(77,99,88,.18); }
+  .chart-card h2{ font-family:'Noto Serif TC',Georgia,serif; font-size:20px; font-weight:700; color:var(--ink); margin:0 0 4px; }
+  .chart-card .chart-sub{ font-size:13px; color:var(--ink-2); line-height:1.7; margin-bottom:14px; }
+  .chart-card .chart-source{ font-size:11px; color:var(--muted); margin-top:10px; line-height:1.6; font-style:italic; }
+  .chart-card .chart-source a{ color:var(--teal-deep); text-decoration:underline; }
+
+  .crumbs{ font-size:12.5px; color:var(--muted); margin-bottom:18px; }
+  .crumbs a{ color:var(--teal-deep); text-decoration:none; font-weight:600; }
+  .crumbs a:hover{ text-decoration:underline; }
+
+  .stat-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin:22px 0; }
+  .stat-tile{ background:#fff; border:1px solid var(--border); border-radius:14px; padding:18px 20px; text-align:center; }
+  .stat-tile .stat-num{ font-family:'Noto Serif TC',Georgia,serif; font-size:28px; font-weight:800; color:#0c5159; line-height:1.2; }
+  .stat-tile .stat-label{ font-size:12.5px; color:var(--ink-2); margin-top:4px; line-height:1.5; }
+  .stat-tile .stat-source{ font-size:10.5px; color:var(--muted); margin-top:2px; }
+</style>
+
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"MedicalScholarlyArticle","headline":"皮膚科疾病數據 Dashboard","description":"台灣皮膚科常見疾病流行病學、年齡分佈、健保給付數據視覺化。","datePublished":"2026-05-09","dateModified":"2026-05-09","author":{"@type":"Person","name":"陳翊嘉 醫師","affiliation":{"@type":"Hospital","name":"中國醫藥大學附設醫院 皮膚科"}},"publisher":{"@type":"Person","name":"陳翊嘉 醫師","url":"https://chendermatologist.com/"},"image":"https://chendermatologist.com/logo-512.png","mainEntityOfPage":"https://chendermatologist.com/dashboard" }
+</script>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"首頁","item":"https://chendermatologist.com/"},
+  {"@type":"ListItem","position":2,"name":"疾病數據 Dashboard","item":"https://chendermatologist.com/dashboard"}
+]}
+</script>
+</head>
+<body class="font-sans antialiased text-ink-900">
+<a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
+
+<header class="sticky top-0 z-40 backdrop-blur border-b" style="background:rgba(250,247,242,.92); border-color:var(--border)">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="h-16 flex items-center justify-between gap-4">
+      <a href="/" class="flex items-center gap-3 min-w-0">
+        <img src="/icon.svg" alt="ChenDermatologist" class="w-9 h-9 rounded-lg flex-shrink-0" width="36" height="36" fetchpriority="high" />
+        <div class="min-w-0 leading-tight">
+          <div class="font-display font-semibold text-[16px] sm:text-[18px] teal-text">ChenDermatologist</div>
+          <div class="text-[10.5px] sm:text-[11.5px] text-ink-500 mt-0.5 truncate">陳翊嘉醫師 · 中國醫藥大學附設醫院 皮膚科</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-teal-600 text-white text-[12px] font-semibold hover:bg-teal-700">中國醫官方掛號 →</a>
+        <a href="/blog/" class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full text-[12px] font-semibold text-teal-700 hover:bg-mint-100">← 文章索引</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="pt-12 sm:pt-14 pb-2">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8">
+    <nav class="crumbs">
+      <a href="/">首頁</a><span style="margin:0 6px;opacity:.5">/</span>
+      <span>疾病數據 Dashboard</span>
+    </nav>
+    <div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold mb-3">衛教 · 數據視覺化</div>
+    <h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">
+      皮膚科疾病<br/>
+      <span class="teal-text">數據 Dashboard</span>
+    </h1>
+    <p class="mt-5 text-[15.5px] text-ink-700 leading-[1.95]">
+      台灣常見皮膚病的<strong>流行病學、年齡分佈、健保給付狀況、生物製劑使用趨勢</strong>。資料整合自 TDA 共識、健保署公開資料、中央健保署 NHI 統計年報、Pubmed 系統綜述。所有圖表皆為純 SVG,無第三方 charting library,可在離線狀態瀏覽。
+    </p>
+
+    <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:14px;padding:14px 18px;margin:20px 0;font-size:13.5px;color:#9a3412;line-height:1.8">
+      <strong>數據限制聲明:</strong>本 Dashboard 數據為衛教用途,部分為估計或文獻引用值。健保給付條件與藥物狀態可能<strong>每年更新</strong>,請以中央健保署 / TDA 公告為準。本網站不涉及任何藥商利益、無業配。
+    </div>
+  </div>
+</section>
+
+<section class="max-w-5xl mx-auto px-5 sm:px-8 my-2">
+  <div class="ad-slot h-20 sm:h-24" style="border:1px dashed var(--border);border-radius:14px;background:#fff;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;justify-content:center">廣告位 · AdSense</div>
+</section>
+
+<section class="max-w-5xl mx-auto px-5 sm:px-8">
+
+  <!-- 概覽數字 -->
+  <div class="stat-grid">
+    <div class="stat-tile">
+      <div class="stat-num">2.3 億</div>
+      <div class="stat-label">全台每年皮膚科<br/>就診人次</div>
+      <div class="stat-source">健保署 2023</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-num">25-30%</div>
+      <div class="stat-label">人口一生中<br/>受異位性皮膚炎影響</div>
+      <div class="stat-source">TDA 2020</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-num">~ 0.2%</div>
+      <div class="stat-label">台灣乾癬<br/>盛行率</div>
+      <div class="stat-source">Tsai 2011</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-num">2.0%</div>
+      <div class="stat-label">圓禿<br/>終生風險</div>
+      <div class="stat-source">TDA 2024</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-num">12 萬</div>
+      <div class="stat-label">每年帶狀疱疹<br/>新案例</div>
+      <div class="stat-source">CDC 2022</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-num">15-20%</div>
+      <div class="stat-label">蕁麻疹<br/>終生盛行率</div>
+      <div class="stat-source">EAACI 2022</div>
+    </div>
+  </div>
+
+  <!-- 圖表 1:常見皮膚病盛行率 -->
+  <div class="chart-card">
+    <h2>1 · 台灣常見皮膚病盛行率(全人口)</h2>
+    <p class="chart-sub">每 100 人中受該疾病影響的比例。資料來源整合 TDA 各疾病共識 + 國民健康署 + 健保資料庫研究。</p>
+
+    <svg viewBox="0 0 720 380" style="width:100%;height:auto;display:block;font-family:Inter,sans-serif" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chart1-title">
+      <title id="chart1-title">常見皮膚病盛行率長條圖</title>
+      <defs>
+        <linearGradient id="bar1" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="#a4b5a8"/><stop offset="1" stop-color="#4d6358"/>
+        </linearGradient>
+      </defs>
+      <!-- Y axis ticks (10%, 20%, 30%) -->
+      <line x1="180" y1="40" x2="700" y2="40" stroke="#ebe4d8" stroke-dasharray="3,3" stroke-width="1"/>
+      <line x1="180" y1="100" x2="700" y2="100" stroke="#ebe4d8" stroke-dasharray="3,3" stroke-width="1"/>
+      <line x1="180" y1="160" x2="700" y2="160" stroke="#ebe4d8" stroke-dasharray="3,3" stroke-width="1"/>
+      <line x1="180" y1="220" x2="700" y2="220" stroke="#ebe4d8" stroke-dasharray="3,3" stroke-width="1"/>
+      <line x1="180" y1="280" x2="700" y2="280" stroke="#ebe4d8" stroke-dasharray="3,3" stroke-width="1"/>
+      <text x="170" y="44" text-anchor="end" font-size="10" fill="#8b8378">25%</text>
+      <text x="170" y="104" text-anchor="end" font-size="10" fill="#8b8378">20%</text>
+      <text x="170" y="164" text-anchor="end" font-size="10" fill="#8b8378">15%</text>
+      <text x="170" y="224" text-anchor="end" font-size="10" fill="#8b8378">10%</text>
+      <text x="170" y="284" text-anchor="end" font-size="10" fill="#8b8378">5%</text>
+      <text x="170" y="324" text-anchor="end" font-size="10" fill="#8b8378">0%</text>
+
+      <!-- Bars (each tile is 60px wide, gap 12) -->
+      <!-- 痘痘 85% (青少年期) → bar capped at top, but show "scaled to 25% max" with note -->
+      <!-- Use compressed scale: 100% = 280 height, mapped across 320 -->
+      <!-- Convert: height in px = (value/25) * 280; if > 25 use 280 -->
+
+      <!-- 異膚 25% -->
+      <rect x="186" y="40" width="56" height="280" fill="url(#bar1)" rx="6"/>
+      <text x="214" y="335" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f172a">異位性皮膚炎</text>
+      <text x="214" y="350" text-anchor="middle" font-size="10" fill="#5e574e">25%(終生)</text>
+      <text x="214" y="34" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">25%</text>
+
+      <!-- 蕁麻疹 17% -->
+      <rect x="254" y="130.4" width="56" height="189.6" fill="url(#bar1)" rx="6"/>
+      <text x="282" y="335" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f172a">蕁麻疹</text>
+      <text x="282" y="350" text-anchor="middle" font-size="10" fill="#5e574e">17%(終生)</text>
+      <text x="282" y="124" text-anchor="middle" font-size="10" fill="#5e574e" font-weight="700">17%</text>
+
+      <!-- 灰指甲 10% -->
+      <rect x="322" y="208" width="56" height="112" fill="url(#bar1)" rx="6"/>
+      <text x="350" y="335" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f172a">灰指甲</text>
+      <text x="350" y="350" text-anchor="middle" font-size="10" fill="#5e574e">~10%</text>
+      <text x="350" y="202" text-anchor="middle" font-size="10" fill="#5e574e" font-weight="700">10%</text>
+
+      <!-- 玫瑰痤瘡 5% -->
+      <rect x="390" y="264" width="56" height="56" fill="url(#bar1)" rx="6"/>
+      <text x="418" y="335" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f172a">玫瑰痤瘡</text>
+      <text x="418" y="350" text-anchor="middle" font-size="10" fill="#5e574e">5.5%</text>
+      <text x="418" y="258" text-anchor="middle" font-size="10" fill="#5e574e" font-weight="700">5.5%</text>
+
+      <!-- 圓禿 2% -->
+      <rect x="458" y="297.6" width="56" height="22.4" fill="url(#bar1)" rx="6"/>
+      <text x="486" y="335" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f172a">圓禿</text>
+      <text x="486" y="350" text-anchor="middle" font-size="10" fill="#5e574e">2%</text>
+      <text x="486" y="291" text-anchor="middle" font-size="10" fill="#5e574e" font-weight="700">2%</text>
+
+      <!-- 白斑 1.5% -->
+      <rect x="526" y="303.2" width="56" height="16.8" fill="url(#bar1)" rx="6"/>
+      <text x="554" y="335" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f172a">白斑</text>
+      <text x="554" y="350" text-anchor="middle" font-size="10" fill="#5e574e">1.5%</text>
+      <text x="554" y="297" text-anchor="middle" font-size="10" fill="#5e574e" font-weight="700">1.5%</text>
+
+      <!-- 乾癬 0.2% -->
+      <rect x="594" y="317.8" width="56" height="2.2" fill="url(#bar1)" rx="2"/>
+      <text x="622" y="335" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f172a">乾癬</text>
+      <text x="622" y="350" text-anchor="middle" font-size="10" fill="#5e574e">0.2%</text>
+      <text x="622" y="312" text-anchor="middle" font-size="10" fill="#5e574e" font-weight="700">0.2%</text>
+
+      <!-- HS 0.3% -->
+      <rect x="662" y="316.6" width="36" height="3.4" fill="url(#bar1)" rx="2"/>
+      <text x="680" y="335" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">化膿汗</text>
+      <text x="680" y="350" text-anchor="middle" font-size="10" fill="#5e574e">0.3%</text>
+    </svg>
+
+    <p class="chart-source">資料來源:TDA 各疾病臨床診療共識 (2020-2024) · Tsai TF, Br J Dermatol 2011 (台灣乾癬) · TDA 2020 異膚共識 · EAACI 2022 蕁麻疹指引 · TDA 2022 玫瑰斑共識 · TDA 2024 圓禿共識 · 詳見 <a href="/blog/">各疾病衛教文章</a>。</p>
+  </div>
+
+  <!-- 圖表 2:疾病高峰年齡 -->
+  <div class="chart-card">
+    <h2>2 · 不同皮膚病的好發年齡分佈</h2>
+    <p class="chart-sub">各疾病典型發病高峰。視覺化幫助讀者理解「為什麼這個年齡層需要注意這些疾病」。</p>
+
+    <svg viewBox="0 0 720 380" style="width:100%;height:auto;display:block;font-family:Inter,sans-serif" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chart2-title">
+      <title id="chart2-title">皮膚病好發年齡分佈圖</title>
+      <!-- X axis: 0, 10, 20, ... 80 -->
+      <line x1="60" y1="320" x2="680" y2="320" stroke="#5e574e" stroke-width="1.5"/>
+      <line x1="60" y1="40" x2="60" y2="320" stroke="#5e574e" stroke-width="1.5"/>
+      <!-- X axis labels -->
+      <text x="60" y="340" text-anchor="middle" font-size="10" fill="#5e574e">0</text>
+      <text x="137.5" y="340" text-anchor="middle" font-size="10" fill="#5e574e">10</text>
+      <text x="215" y="340" text-anchor="middle" font-size="10" fill="#5e574e">20</text>
+      <text x="292.5" y="340" text-anchor="middle" font-size="10" fill="#5e574e">30</text>
+      <text x="370" y="340" text-anchor="middle" font-size="10" fill="#5e574e">40</text>
+      <text x="447.5" y="340" text-anchor="middle" font-size="10" fill="#5e574e">50</text>
+      <text x="525" y="340" text-anchor="middle" font-size="10" fill="#5e574e">60</text>
+      <text x="602.5" y="340" text-anchor="middle" font-size="10" fill="#5e574e">70</text>
+      <text x="680" y="340" text-anchor="middle" font-size="10" fill="#5e574e">80+</text>
+      <text x="370" y="368" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">年齡(歲)</text>
+
+      <!-- Bar segments per disease (each row 28px tall, starting y=50) -->
+      <!-- 嬰幼兒異膚 0-6 -->
+      <rect x="60" y="50" width="46.5" height="22" fill="#fef9c3" stroke="#eab308" stroke-width="1" rx="3"/>
+      <text x="83" y="65" text-anchor="middle" font-size="9" fill="#854d0e">0-6</text>
+      <text x="120" y="65" font-size="11" fill="#0f172a">嬰幼兒異膚(60% 在 5 歲前)</text>
+
+      <!-- 痘痘 12-25 -->
+      <rect x="153" y="80" width="100.75" height="22" fill="#fee2e2" stroke="#dc2626" stroke-width="1" rx="3"/>
+      <text x="203" y="95" text-anchor="middle" font-size="9" fill="#991b1b">12-25</text>
+      <text x="265" y="95" font-size="11" fill="#0f172a">痘痘(青春期~25 歲尖峰)</text>
+
+      <!-- 圓禿 5-40 -->
+      <rect x="98.75" y="110" width="271.25" height="22" fill="#cffafe" stroke="#0e7c86" stroke-width="1" rx="3"/>
+      <text x="234" y="125" text-anchor="middle" font-size="9" fill="#0c5159">5-40(85% 案例)</text>
+      <text x="378" y="125" font-size="11" fill="#0f172a">圓禿(年輕族群為主)</text>
+
+      <!-- 異膚成人持續 (16-40) -->
+      <rect x="183.5" y="140" width="186.5" height="22" fill="#fef3c7" stroke="#d97706" stroke-width="1" rx="3"/>
+      <text x="276" y="155" text-anchor="middle" font-size="9" fill="#854d0e">16-40 持續</text>
+      <text x="378" y="155" font-size="11" fill="#0f172a">成人異膚(30-50% 持續至成年)</text>
+
+      <!-- 玫瑰痤瘡 30-50 -->
+      <rect x="292.5" y="170" width="155" height="22" fill="#fce7f3" stroke="#be185d" stroke-width="1" rx="3"/>
+      <text x="370" y="185" text-anchor="middle" font-size="9" fill="#9d174d">30-50 高峰</text>
+      <text x="455" y="185" font-size="11" fill="#0f172a">玫瑰痤瘡(中年女性)</text>
+
+      <!-- 肝斑 25-50 -->
+      <rect x="253.75" y="200" width="193.75" height="22" fill="#fef3c7" stroke="#a16207" stroke-width="1" rx="3"/>
+      <text x="350" y="215" text-anchor="middle" font-size="9" fill="#854d0e">25-50</text>
+      <text x="455" y="215" font-size="11" fill="#0f172a">肝斑(育齡女性 + 賀爾蒙影響)</text>
+
+      <!-- 化膿性汗腺炎 18-30 -->
+      <rect x="200" y="230" width="93" height="22" fill="#fee2e2" stroke="#b91c1c" stroke-width="1" rx="3"/>
+      <text x="247" y="245" text-anchor="middle" font-size="9" fill="#991b1b">18-30</text>
+      <text x="300" y="245" font-size="11" fill="#0f172a">化膿性汗腺炎(平均 23 歲發病)</text>
+
+      <!-- 帶狀皰疹 50+ -->
+      <rect x="447.5" y="260" width="232.5" height="22" fill="#ede9fe" stroke="#5b21b6" stroke-width="1" rx="3"/>
+      <text x="563" y="275" text-anchor="middle" font-size="9" fill="#5b21b6">50+ 急遽上升</text>
+      <text x="370" y="275" text-anchor="end" font-size="11" fill="#0f172a">帶狀皰疹</text>
+
+      <!-- 雄性禿 30+ -->
+      <rect x="292.5" y="290" width="387.5" height="22" fill="#dcfce7" stroke="#15803d" stroke-width="1" rx="3"/>
+      <text x="486" y="305" text-anchor="middle" font-size="9" fill="#14532d">30+ 漸進性</text>
+      <text x="285" y="305" text-anchor="end" font-size="11" fill="#0f172a">雄性禿</text>
+    </svg>
+
+    <p class="chart-source">資料來源:Reynolds RV AAD 2024(痘痘)· Werfel 2024 S3(異膚)· Clanner 2022 S2k(玫瑰痤瘡)· Rudnicka 2024 EU(圓禿)· TDA HS 共識 · CDC 2022 帶狀皰疹疫苗建議。</p>
+  </div>
+
+  <!-- 圖表 3:健保生物製劑門檻 -->
+  <div class="chart-card">
+    <h2>3 · 台灣健保皮膚科生物製劑申請門檻</h2>
+    <p class="chart-sub">需同時符合「疾病嚴重度量表 + 生活品質量表 + 傳統治療失敗」三大門檻。資料整合健保署 PASS 系統規範。</p>
+
+    <table style="width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden;margin:14px 0">
+      <tr style="background:#f1ece4;color:#4d6358;font-weight:700">
+        <th style="padding:10px 12px;text-align:left">疾病</th>
+        <th style="padding:10px 12px;text-align:left">活動度量表</th>
+        <th style="padding:10px 12px;text-align:left">生活品質</th>
+        <th style="padding:10px 12px;text-align:left">傳統治療</th>
+        <th style="padding:10px 12px;text-align:left">可申請藥</th>
+      </tr>
+      <tr style="border-bottom:1px solid #ebe4d8">
+        <td style="padding:10px 12px"><strong>乾癬</strong></td>
+        <td style="padding:10px 12px"><span style="background:#dcfce7;padding:2px 8px;border-radius:6px;font-weight:700;color:#14532d">PASI ≥ 10</span></td>
+        <td style="padding:10px 12px"><span style="background:#dcfce7;padding:2px 8px;border-radius:6px;font-weight:700;color:#14532d">DLQI ≥ 10</span></td>
+        <td style="padding:10px 12px">2 種傳統失敗(MTX / 光療 / Acitretin)</td>
+        <td style="padding:10px 12px;font-size:12px">IL-17/23/TNF/TYK2</td>
+      </tr>
+      <tr style="border-bottom:1px solid #ebe4d8">
+        <td style="padding:10px 12px"><strong>異位性皮膚炎</strong></td>
+        <td style="padding:10px 12px"><span style="background:#dcfce7;padding:2px 8px;border-radius:6px;font-weight:700;color:#14532d">EASI ≥ 16</span></td>
+        <td style="padding:10px 12px"><span style="background:#dcfce7;padding:2px 8px;border-radius:6px;font-weight:700;color:#14532d">DLQI ≥ 10</span></td>
+        <td style="padding:10px 12px">外用 + Cyclosporine 失敗</td>
+        <td style="padding:10px 12px;font-size:12px">Dupilumab / JAK</td>
+      </tr>
+      <tr style="border-bottom:1px solid #ebe4d8">
+        <td style="padding:10px 12px"><strong>慢性蕁麻疹</strong></td>
+        <td style="padding:10px 12px"><span style="background:#fef9c3;padding:2px 8px;border-radius:6px;font-weight:700;color:#854d0e">UAS7 ≥ 16</span></td>
+        <td style="padding:10px 12px">—</td>
+        <td style="padding:10px 12px">4 倍劑量抗組織胺失敗</td>
+        <td style="padding:10px 12px;font-size:12px">Omalizumab</td>
+      </tr>
+      <tr style="border-bottom:1px solid #ebe4d8">
+        <td style="padding:10px 12px"><strong>化膿性汗腺炎</strong></td>
+        <td style="padding:10px 12px"><span style="background:#fed7aa;padding:2px 8px;border-radius:6px;font-weight:700;color:#9a3412">Hurley II/III</span></td>
+        <td style="padding:10px 12px"><span style="background:#dcfce7;padding:2px 8px;border-radius:6px;font-weight:700;color:#14532d">DLQI ≥ 10</span></td>
+        <td style="padding:10px 12px">2 種抗生素失敗</td>
+        <td style="padding:10px 12px;font-size:12px">Adalimumab</td>
+      </tr>
+      <tr style="border-bottom:1px solid #ebe4d8">
+        <td style="padding:10px 12px"><strong>圓禿(自費為主)</strong></td>
+        <td style="padding:10px 12px"><span style="background:#fee2e2;padding:2px 8px;border-radius:6px;font-weight:700;color:#991b1b">SALT ≥ 50</span></td>
+        <td style="padding:10px 12px">—</td>
+        <td style="padding:10px 12px">2 種傳統失敗 + 特殊申請</td>
+        <td style="padding:10px 12px;font-size:12px">Baricitinib / Ritlecitinib(自費 NT$ 30-50K/月)</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px"><strong>結節性癢疹</strong></td>
+        <td style="padding:10px 12px"><span style="background:#fef9c3;padding:2px 8px;border-radius:6px;font-weight:700;color:#854d0e">WI-NRS ≥ 7</span></td>
+        <td style="padding:10px 12px"><span style="background:#dcfce7;padding:2px 8px;border-radius:6px;font-weight:700;color:#14532d">IGA-PN ≥ 3</span></td>
+        <td style="padding:10px 12px">類固醇 + Gabapentinoid 失敗</td>
+        <td style="padding:10px 12px;font-size:12px">Dupilumab / Nemolizumab(2024 FDA)</td>
+      </tr>
+    </table>
+
+    <p class="chart-source">資料來源:中央健保署藥品給付規定 (PASS 評估) · TDA 各疾病共識 · 詳細申請流程請洽專科醫師。</p>
+  </div>
+
+  <!-- 圖表 4:皮膚病心理共病比率 -->
+  <div class="chart-card">
+    <h2>4 · 慢性皮膚病心理共病比率</h2>
+    <p class="chart-sub">慢性皮膚病合併憂鬱 / 焦慮的比率。「皮膚病不只皮膚病」— 心理共病應同步處理。</p>
+
+    <svg viewBox="0 0 720 320" style="width:100%;height:auto;display:block;font-family:Inter,sans-serif" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chart4-title">
+      <title id="chart4-title">皮膚病心理共病比率</title>
+      <!-- Y axis ticks (0%, 20%, 40%, 60%) -->
+      <line x1="180" y1="40" x2="700" y2="40" stroke="#ebe4d8" stroke-dasharray="3,3" stroke-width="1"/>
+      <line x1="180" y1="100" x2="700" y2="100" stroke="#ebe4d8" stroke-dasharray="3,3" stroke-width="1"/>
+      <line x1="180" y1="160" x2="700" y2="160" stroke="#ebe4d8" stroke-dasharray="3,3" stroke-width="1"/>
+      <line x1="180" y1="220" x2="700" y2="220" stroke="#ebe4d8" stroke-dasharray="3,3" stroke-width="1"/>
+      <text x="170" y="44" text-anchor="end" font-size="10" fill="#8b8378">60%</text>
+      <text x="170" y="104" text-anchor="end" font-size="10" fill="#8b8378">40%</text>
+      <text x="170" y="164" text-anchor="end" font-size="10" fill="#8b8378">20%</text>
+      <text x="170" y="284" text-anchor="end" font-size="10" fill="#8b8378">0%</text>
+
+      <!-- Stacked bars (depression + anxiety) -->
+      <!-- 結節性癢疹 D 30%/A 35% (max 65%) -->
+      <rect x="200" y="76" width="50" height="124" fill="#fee2e2" stroke="#dc2626" stroke-width="1" rx="3"/>
+      <rect x="200" y="200" width="50" height="80" fill="#fed7aa" stroke="#f97316" stroke-width="1" rx="3"/>
+      <text x="225" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">結節性癢疹</text>
+      <text x="225" y="138" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">焦慮 30%</text>
+      <text x="225" y="240" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">憂鬱 25%</text>
+
+      <!-- 化膿性汗腺炎 D 25%/A 28% -->
+      <rect x="270" y="124" width="50" height="76" fill="#fee2e2" stroke="#dc2626" stroke-width="1" rx="3"/>
+      <rect x="270" y="200" width="50" height="80" fill="#fed7aa" stroke="#f97316" stroke-width="1" rx="3"/>
+      <text x="295" y="300" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">化膿性汗腺炎</text>
+      <text x="295" y="160" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">28%</text>
+      <text x="295" y="240" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">25%</text>
+
+      <!-- 乾癬 D 20%/A 25% -->
+      <rect x="340" y="124" width="50" height="80" fill="#fee2e2" stroke="#dc2626" stroke-width="1" rx="3"/>
+      <rect x="340" y="204" width="50" height="76" fill="#fed7aa" stroke="#f97316" stroke-width="1" rx="3"/>
+      <text x="365" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">乾癬</text>
+      <text x="365" y="164" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">25%</text>
+      <text x="365" y="242" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">20%</text>
+
+      <!-- 圓禿 D 30%/A 35% -->
+      <rect x="410" y="76" width="50" height="124" fill="#fee2e2" stroke="#dc2626" stroke-width="1" rx="3"/>
+      <rect x="410" y="200" width="50" height="80" fill="#fed7aa" stroke="#f97316" stroke-width="1" rx="3"/>
+      <text x="435" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">圓禿</text>
+      <text x="435" y="138" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">35%</text>
+      <text x="435" y="240" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">30%</text>
+
+      <!-- CSU 慢性蕁麻疹 D 18%/A 24% -->
+      <rect x="480" y="148" width="50" height="56" fill="#fee2e2" stroke="#dc2626" stroke-width="1" rx="3"/>
+      <rect x="480" y="204" width="50" height="76" fill="#fed7aa" stroke="#f97316" stroke-width="1" rx="3"/>
+      <text x="505" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">CSU</text>
+      <text x="505" y="180" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">24%</text>
+      <text x="505" y="242" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">18%</text>
+
+      <!-- 痘痘 D 14%/A 23% -->
+      <rect x="550" y="151" width="50" height="73" fill="#fee2e2" stroke="#dc2626" stroke-width="1" rx="3"/>
+      <rect x="550" y="224" width="50" height="56" fill="#fed7aa" stroke="#f97316" stroke-width="1" rx="3"/>
+      <text x="575" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">痘痘</text>
+      <text x="575" y="187" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">23%</text>
+      <text x="575" y="252" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">14%</text>
+
+      <!-- 異膚 D 15%/A 20% -->
+      <rect x="620" y="160" width="50" height="60" fill="#fee2e2" stroke="#dc2626" stroke-width="1" rx="3"/>
+      <rect x="620" y="220" width="50" height="60" fill="#fed7aa" stroke="#f97316" stroke-width="1" rx="3"/>
+      <text x="645" y="300" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">異膚</text>
+      <text x="645" y="194" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">20%</text>
+      <text x="645" y="254" text-anchor="middle" font-size="10" fill="#fff" font-weight="700">15%</text>
+
+      <!-- Legend -->
+      <rect x="180" y="14" width="14" height="14" fill="#fee2e2" stroke="#dc2626" stroke-width="1" rx="2"/>
+      <text x="200" y="25" font-size="11" fill="#5e574e">焦慮</text>
+      <rect x="240" y="14" width="14" height="14" fill="#fed7aa" stroke="#f97316" stroke-width="1" rx="2"/>
+      <text x="260" y="25" font-size="11" fill="#5e574e">憂鬱</text>
+    </svg>
+
+    <p class="chart-source">資料來源:Kolkhir P JAMA 2024(CSU)· Pereira EADV 2018(PN)· Lakuta Br J Dermatol 2017(乾癬)· Aktan AA 2008(痘痘)· 文獻 meta-analysis 整合。建議慢性皮膚病病人使用 <a href="/glossary#dn-phq9">PHQ-9 計算器</a> 自評憂鬱症狀。</p>
+  </div>
+
+  <!-- 圖表 5:本網站 32 篇文章閱讀量(預留) -->
+  <div class="chart-card">
+    <h2>5 · 本網站 32 篇衛教文章主題分布</h2>
+    <p class="chart-sub">本網站文章依主題分類後的占比。資料來源:DN.ARTICLES catalog (即時動態載入)。</p>
+
+    <div id="dn-article-pie" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center;padding:8px 0">
+      <!-- Auto-rendered by /dashboard inline script -->
+    </div>
+
+    <p class="chart-source">資料來源:本網站 ARTICLES catalog (32 篇)。每月隨新文章發表動態更新。詳見 <a href="/blog/topics">主題地圖</a>。</p>
+  </div>
+
+  <section class="my-12">
+    <div style="background:linear-gradient(135deg,#ecfeff,#f5fbfa);border:1px solid #a5f3fc;border-radius:14px;padding:18px 22px;font-size:14px;color:var(--ink-2);line-height:1.85">
+      <strong style="color:#0c5159">說明:</strong>本 Dashboard 為衛教用,部分數據為文獻引用之估計值。所有圖表皆為純 SVG 內嵌(無第三方 charting library),離線可瀏覽。建議搭配對應疾病文章閱讀。<br/>
+      想自評嚴重度請至 <a href="/tools" style="color:var(--teal-deep);font-weight:700;text-decoration:underline">量表計算器指南</a>;查詢專業詞彙至 <a href="/glossary" style="color:var(--teal-deep);font-weight:700;text-decoration:underline">醫學詞彙白話字典</a>。
+    </div>
+  </section>
+
+</section>
+
+</main>
+
+<footer class="border-t border-[var(--border)] bg-mint-50/60">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10">
+    <div class="grid sm:grid-cols-3 gap-8">
+      <div>
+        <div class="font-display font-bold text-[18px] teal-text">ChenDermatologist</div>
+        <div class="text-[12.5px] text-ink-700 mt-1">皮膚科常見衛教及學習筆記網站</div>
+      </div>
+      <div>
+        <div class="text-[11px] uppercase tracking-[.22em] text-teal-700 font-semibold mb-2">預約 / 掛號</div>
+        <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-teal-600 text-white text-[12.5px] font-semibold hover:bg-teal-700">中國醫官方掛號 →</a>
+      </div>
+      <div>
+        <div class="text-[11px] uppercase tracking-[.22em] text-teal-700 font-semibold mb-2">網站</div>
+        <ul class="space-y-1 text-[13px]">
+          <li><a class="hover:text-teal-700" href="/">首頁</a></li>
+          <li><a class="hover:text-teal-700" href="/blog/">衛教文章</a></li>
+          <li><a class="hover:text-teal-700" href="/about">關於我</a></li>
+          <li><a class="hover:text-teal-700" href="/tools">量表計算器指南</a></li>
+          <li><a class="hover:text-teal-700" href="/glossary">醫學詞彙白話字典</a></li>
+          <li><a class="hover:text-teal-700" href="/dashboard">疾病數據 Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-[var(--line)] text-center text-[12.5px] text-ink-500">
+      © <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師
+    </div>
+  </div>
+</footer>
+
+<script src="/blog/blog-shared.js?v=202605100100" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.DN) DN.initBlog({});
+    var yr = document.getElementById('yr');
+    if (yr) yr.textContent = new Date().getFullYear();
+
+    // Render dynamic pie chart of article categories
+    var pieEl = document.getElementById('dn-article-pie');
+    if (pieEl && window.DN && DN.ARTICLES) {
+      var counts = {};
+      DN.ARTICLES.forEach(function (a) {
+        var c = a.cat || 'other';
+        counts[c] = (counts[c] || 0) + 1;
+      });
+      var catLabels = { myth:'迷思澄清', rx:'處方治療', product:'產品 / 成分', other:'其他' };
+      var catColors = { myth:'#fef3c7', rx:'#ddd6fe', product:'#a5f3fc', other:'#dcd9d1' };
+      var catBorder = { myth:'#d97706', rx:'#7c3aed', product:'#0e7c86', other:'#5e574e' };
+      var total = DN.ARTICLES.length;
+
+      // Build SVG donut chart
+      var size = 220, r = 80, cx = size/2, cy = size/2;
+      var svg = '<svg viewBox="0 0 ' + size + ' ' + size + '" width="' + size + '" height="' + size + '" style="flex-shrink:0">';
+      var startAngle = -90;
+      Object.keys(counts).forEach(function (c) {
+        var pct = counts[c] / total;
+        var endAngle = startAngle + pct * 360;
+        var rad1 = startAngle * Math.PI / 180, rad2 = endAngle * Math.PI / 180;
+        var x1 = cx + r * Math.cos(rad1), y1 = cy + r * Math.sin(rad1);
+        var x2 = cx + r * Math.cos(rad2), y2 = cy + r * Math.sin(rad2);
+        var large = pct > 0.5 ? 1 : 0;
+        var path = 'M' + cx + ',' + cy + ' L' + x1 + ',' + y1 + ' A' + r + ',' + r + ' 0 ' + large + ',1 ' + x2 + ',' + y2 + ' Z';
+        svg += '<path d="' + path + '" fill="' + (catColors[c]||'#ccc') + '" stroke="' + (catBorder[c]||'#888') + '" stroke-width="1.5"/>';
+        startAngle = endAngle;
+      });
+      // Inner circle (donut hole)
+      svg += '<circle cx="' + cx + '" cy="' + cy + '" r="40" fill="#fff"/>';
+      svg += '<text x="' + cx + '" y="' + (cy-3) + '" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a" font-family="Noto Serif TC,serif">' + total + ' 篇</text>';
+      svg += '<text x="' + cx + '" y="' + (cy+14) + '" text-anchor="middle" font-size="10" fill="#5e574e">總文章</text>';
+      svg += '</svg>';
+
+      // Legend
+      var legend = '<div style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:#2a2620">';
+      Object.keys(counts).forEach(function (c) {
+        var pct = (counts[c] / total * 100).toFixed(1);
+        legend += '<div style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:14px;height:14px;border-radius:3px;background:' + (catColors[c]||'#ccc') + ';border:1.5px solid ' + (catBorder[c]||'#888') + '"></span><strong>' + (catLabels[c]||c) + '</strong> · ' + counts[c] + ' 篇 · ' + pct + '%</div>';
+      });
+      legend += '</div>';
+
+      pieEl.innerHTML = svg + legend;
+    }
+  });
+</script>
+</body>
+</html>
