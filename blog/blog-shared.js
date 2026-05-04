@@ -1904,11 +1904,10 @@
           '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#4d6358;font-weight:700;margin-bottom:4px" data-zh="關於作者" data-en="About the author">關於作者</div>' +
           '<div style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#0f172a;margin-bottom:6px">' +
             '<span data-zh="陳翊嘉 醫師" data-en="Dr. Chen Yi-Chia, M.D.">陳翊嘉 醫師</span>' +
-            '<span style="font-size:12px;font-weight:600;color:#4d6358;margin-left:8px;padding:2px 8px;border-radius:6px;background:#fff;border:1px solid #a5f3fc;font-family:Inter,sans-serif" data-zh="皮膚科 R2" data-en="Dermatology PGY-2">皮膚科 R2</span>' +
+            '<span style="font-size:12px;font-weight:600;color:#4d6358;margin-left:8px;padding:2px 8px;border-radius:6px;background:#fff;border:1px solid #a5f3fc;font-family:Inter,sans-serif" data-zh="衛教筆記作者" data-en="Patient-education author">衛教筆記作者</span>' +
           '</div>' +
-          '<div style="font-size:13px;color:#334155;line-height:1.85" data-zh="<strong>身分</strong>:皮膚科 住院醫師(R2)<br/>' +
-            '<strong>學歷</strong>:高雄醫學大學醫學系 醫學士(M.D.)<br/>' +
-            '<strong>訓練</strong>:不分科住院醫師(PGY)" data-en="<strong>Role</strong>: Dermatology Resident (PGY-2)<br/><strong>Education</strong>: M.D., Kaohsiung Medical University, College of Medicine<br/><strong>Training</strong>: Post-Graduate Year (rotating)"><strong>身分</strong>:皮膚科 住院醫師(R2)<br/><strong>學歷</strong>:高雄醫學大學醫學系 醫學士(M.D.)<br/><strong>訓練</strong>:不分科住院醫師(PGY)</div>' +
+          '<div style="font-size:13px;color:#334155;line-height:1.85" data-zh="<strong>學歷</strong>:高雄醫學大學醫學系 醫學士(M.D.)<br/>' +
+            '<strong>訓練</strong>:高雄醫學大學附設中和紀念醫院 不分科住院醫師(PGY)" data-en="<strong>Education</strong>: M.D., Kaohsiung Medical University, College of Medicine<br/><strong>Training</strong>: Kaohsiung Medical University Hospital, Post-Graduate Year (rotating)"><strong>學歷</strong>:高雄醫學大學醫學系 醫學士(M.D.)<br/><strong>訓練</strong>:高雄醫學大學附設中和紀念醫院 不分科住院醫師(PGY)</div>' +
           '<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">' +
             '<a href="/about" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#0e7c86;color:#fff;text-decoration:none" data-zh="關於我" data-en="About">關於我 →</a>' +
             '<a href="/tools" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#4d6358;border:1px solid #a5f3fc;text-decoration:none" data-zh="量表計算器" data-en="Calculators">量表計算器 →</a>' +
@@ -1927,12 +1926,12 @@
     box.innerHTML =
       '<div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:14px;padding:14px 18px;font-size:12.5px;line-height:1.85;color:#9a3412">' +
         '<div style="font-weight:700;color:#7c2d12;margin-bottom:6px;letter-spacing:.04em" data-zh="重要聲明" data-en="Important Notice">重要聲明</div>' +
-        '<div data-zh="本文為皮膚科住院醫師的<strong>衛教與學習筆記</strong>,內容依據國際醫學文獻與臨床指引整理,僅作為<strong>一般教育用途</strong>。' +
+        '<div data-zh="本文為作者依據國際醫學文獻與臨床指引整理的<strong>個人衛教與學習筆記</strong>,僅作為<strong>一般教育用途</strong>。' +
         '不構成<strong>個別醫療建議、診斷或治療處方</strong>。' +
         '個別病情之評估、藥物選擇、雷射治療、手術等,請務必<strong>面對面看診</strong>由主治醫師依完整病史與檢查決定。' +
         '本網站<strong>不涉及任何藥品、醫療器材、療程或診所之推薦或業配</strong>;若提及商品為公開市售品,僅作教學說明。' +
         '依《醫療法》§85-86 及《醫師法》§17,個別治療效果因人而異,本文不保證任何結果。' +
-        '若有不適,請就近至皮膚科專科醫師門診評估。" data-en="This article is a <strong>patient-education and study note</strong> by a dermatology resident, summarizing international medical literature and guidelines for general education only. It is <strong>not individual medical advice, diagnosis, or prescription</strong>. For personal evaluation, medication choice, laser, or surgical procedures, please consult a board-certified dermatologist in person. This site does <strong>not endorse any drug, device, procedure, or clinic</strong>. Per Taiwan Medical Care Act §§85–86 and Physicians Act §17, individual outcomes vary; no result is guaranteed.">本文為皮膚科住院醫師的<strong>衛教與學習筆記</strong>,內容依據國際醫學文獻與臨床指引整理,僅作為<strong>一般教育用途</strong>。不構成<strong>個別醫療建議、診斷或治療處方</strong>。個別病情之評估、藥物選擇、雷射治療、手術等,請務必<strong>面對面看診</strong>由主治醫師依完整病史與檢查決定。本網站<strong>不涉及任何藥品、醫療器材、療程或診所之推薦或業配</strong>;若提及商品為公開市售品,僅作教學說明。依《醫療法》§85-86 及《醫師法》§17,個別治療效果因人而異,本文不保證任何結果。若有不適,請就近至皮膚科專科醫師門診評估。</div>' +
+        '若有不適,請就近至皮膚科專科醫師門診評估。" data-en="This article is a <strong>personal patient-education and study note</strong> by the author, summarizing international medical literature and guidelines for general education only. It is <strong>not individual medical advice, diagnosis, or prescription</strong>. For personal evaluation, medication choice, laser, or surgical procedures, please consult a board-certified dermatologist in person. This site does <strong>not endorse any drug, device, procedure, or clinic</strong>. Per Taiwan Medical Care Act §§85–86 and Physicians Act §17, individual outcomes vary; no result is guaranteed.">本文為作者依據國際醫學文獻與臨床指引整理的<strong>個人衛教與學習筆記</strong>,僅作為<strong>一般教育用途</strong>。不構成<strong>個別醫療建議、診斷或治療處方</strong>。個別病情之評估、藥物選擇、雷射治療、手術等,請務必<strong>面對面看診</strong>由主治醫師依完整病史與檢查決定。本網站<strong>不涉及任何藥品、醫療器材、療程或診所之推薦或業配</strong>;若提及商品為公開市售品,僅作教學說明。依《醫療法》§85-86 及《醫師法》§17,個別治療效果因人而異,本文不保證任何結果。若有不適,請就近至皮膚科專科醫師門診評估。</div>' +
       '</div>';
     article.parentNode.insertBefore(box, article.nextSibling);
   };
