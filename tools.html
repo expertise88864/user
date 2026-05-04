@@ -83,9 +83,12 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
   .tool-warn{ background:#fff7ed; border:1px solid #fed7aa; border-radius:10px; padding:12px 16px; font-size:13px; color:#9a3412; line-height:1.75; margin:14px 0; }
 
-  .tool-ref{ background:#f8fafc; border:1px solid var(--border); border-radius:10px; padding:10px 16px; font-size:12px; color:var(--ink-2); line-height:1.7; margin-top:14px; }
+  .tool-ref{ background:#f8fafc; border:1px solid var(--border); border-radius:10px; padding:12px 16px; font-size:12.5px; color:var(--ink-2); line-height:1.85; margin-top:14px; }
   .tool-ref strong{ color:var(--teal-deep); }
-  .tool-ref a{ color:var(--teal-deep); font-weight:600; text-decoration:underline; }
+  .tool-ref .cite{ display:block; margin:4px 0; }
+  .tool-ref a.pmid{ display:inline-block; padding:2px 8px; margin-left:4px; border-radius:6px; background:#ecfeff; border:1px solid #a5f3fc; color:#0c5159; font-weight:600; text-decoration:none; font-size:11.5px; white-space:nowrap; vertical-align:baseline; }
+  .tool-ref a.pmid:hover{ background:#cffafe; }
+  .tool-ref a.pmid::after{ content:none !important; }
 
   .tool-launch{ display:inline-flex; align-items:center; gap:6px; padding:9px 16px; border-radius:9999px; background:linear-gradient(180deg,#22d3ee 0%, #0e7c86 50%, #0c5159 100%); color:#fff; text-decoration:none; font-size:13px; font-weight:700; box-shadow:0 8px 18px -8px rgba(12,81,89,.45); margin-top:12px; }
   .tool-launch:hover{ transform:translateY(-1px); }
@@ -231,8 +234,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
     <h3>原始引用</h3>
     <div class="tool-ref">
-      <strong>Stalder JF</strong>, et al. Severity scoring of atopic dermatitis: the SCORAD index. <em>Dermatology</em>. 1993;186(1):23-31. <a href="https://pubmed.ncbi.nlm.nih.gov/8435513/" target="_blank" rel="noopener">[PMID 8435513]</a><br/>
-      <strong>Werfel T</strong>, et al. S3 Guideline Atopic Dermatitis Part 1+2. <em>J Dtsch Dermatol Ges</em>. 2024. <a href="https://pubmed.ncbi.nlm.nih.gov/38212918/" target="_blank" rel="noopener">[PMID 38212918]</a>
+      <strong>Stalder JF</strong>, et al. Severity scoring of atopic dermatitis: the SCORAD index. <em>Dermatology</em>. 1993;186(1):23-31. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/8435513/" target="_blank" rel="noopener">PMID 8435513</a><br/>
+      <strong>Werfel T</strong>, et al. S3 Guideline Atopic Dermatitis Part 1+2. <em>J Dtsch Dermatol Ges</em>. 2024. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/38212918/" target="_blank" rel="noopener">PMID 38212918</a>
     </div>
 
     <a href="/blog/eczema-myths#dn-scorad" class="tool-launch">啟動 SCORAD 計算器 →</a>
@@ -301,8 +304,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
     <h3>原始引用</h3>
     <div class="tool-ref">
-      <strong>Fredriksson T, Pettersson U.</strong> Severe psoriasis—oral therapy with a new retinoid. <em>Dermatologica</em>. 1978;157(4):238-244. <a href="https://pubmed.ncbi.nlm.nih.gov/357603/" target="_blank" rel="noopener">[PMID 357603]</a><br/>
-      <strong>Reich K</strong>, et al. Risankizumab IMMvent. <em>Lancet</em>. 2019. <a href="https://pubmed.ncbi.nlm.nih.gov/31402114/" target="_blank" rel="noopener">[PMID 31402114]</a> · <strong>Blauvelt A</strong>, et al. Bimekizumab BE READY. <em>NEJM</em>. 2021. <a href="https://pubmed.ncbi.nlm.nih.gov/33891380/" target="_blank" rel="noopener">[PMID 33891380]</a>
+      <strong>Fredriksson T, Pettersson U.</strong> Severe psoriasis—oral therapy with a new retinoid. <em>Dermatologica</em>. 1978;157(4):238-244. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/357603/" target="_blank" rel="noopener">PMID 357603</a><br/>
+      <strong>Reich K</strong>, et al. Risankizumab IMMvent. <em>Lancet</em>. 2019. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/31402114/" target="_blank" rel="noopener">PMID 31402114</a> · <strong>Blauvelt A</strong>, et al. Bimekizumab BE READY. <em>NEJM</em>. 2021. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/33891380/" target="_blank" rel="noopener">PMID 33891380</a>
     </div>
 
     <a href="/blog/psoriasis-myths#dn-pasi" class="tool-launch">啟動 PASI 計算器 →</a>
@@ -367,7 +370,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
     <h3>原始引用</h3>
     <div class="tool-ref">
-      <strong>Finlay AY, Khan GK.</strong> Dermatology Life Quality Index (DLQI)—a simple practical measure for routine clinical use. <em>Clin Exp Dermatol</em>. 1994;19(3):210-216. <a href="https://pubmed.ncbi.nlm.nih.gov/8033378/" target="_blank" rel="noopener">[PMID 8033378]</a>
+      <strong>Finlay AY, Khan GK.</strong> Dermatology Life Quality Index (DLQI)—a simple practical measure for routine clinical use. <em>Clin Exp Dermatol</em>. 1994;19(3):210-216. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/8033378/" target="_blank" rel="noopener">PMID 8033378</a>
     </div>
 
     <a href="/blog/eczema-myths#dn-dlqi" class="tool-launch">啟動 DLQI 計算器 →</a>
@@ -432,8 +435,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
     <h3>原始引用</h3>
     <div class="tool-ref">
-      <strong>Olsen EA</strong>, et al. Alopecia areata investigational assessment guidelines—Part II. <em>J Am Acad Dermatol</em>. 2004;51(3):440-447. <a href="https://pubmed.ncbi.nlm.nih.gov/15337988/" target="_blank" rel="noopener">[PMID 15337988]</a><br/>
-      <strong>Rudnicka L</strong>, et al. European expert consensus on systemic AA treatment. <em>JEADV</em>. 2024;38(4):687-694. <a href="https://pubmed.ncbi.nlm.nih.gov/38205946/" target="_blank" rel="noopener">[PMID 38205946]</a>
+      <strong>Olsen EA</strong>, et al. Alopecia areata investigational assessment guidelines—Part II. <em>J Am Acad Dermatol</em>. 2004;51(3):440-447. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/15337988/" target="_blank" rel="noopener">PMID 15337988</a><br/>
+      <strong>Rudnicka L</strong>, et al. European expert consensus on systemic AA treatment. <em>JEADV</em>. 2024;38(4):687-694. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/38205946/" target="_blank" rel="noopener">PMID 38205946</a>
     </div>
 
     <a href="/blog/alopecia-areata#dn-salt" class="tool-launch">啟動 SALT 計算器 →</a>
@@ -489,8 +492,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
     <h3>原始引用</h3>
     <div class="tool-ref">
-      <strong>Zuberbier T</strong>, et al. EAACI/GA²LEN/EuroGuiDerm/APAAACI guideline for urticaria. <em>Allergy</em>. 2022;77(3):734-766. <a href="https://pubmed.ncbi.nlm.nih.gov/34536239/" target="_blank" rel="noopener">[PMID 34536239]</a><br/>
-      <strong>Kolkhir P</strong>, et al. Chronic Spontaneous Urticaria: A Review. <em>JAMA</em>. 2024;332(17):1464-1477. <a href="https://pubmed.ncbi.nlm.nih.gov/39320923/" target="_blank" rel="noopener">[PMID 39320923]</a>
+      <strong>Zuberbier T</strong>, et al. EAACI/GA²LEN/EuroGuiDerm/APAAACI guideline for urticaria. <em>Allergy</em>. 2022;77(3):734-766. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/34536239/" target="_blank" rel="noopener">PMID 34536239</a><br/>
+      <strong>Kolkhir P</strong>, et al. Chronic Spontaneous Urticaria: A Review. <em>JAMA</em>. 2024;332(17):1464-1477. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/39320923/" target="_blank" rel="noopener">PMID 39320923</a>
     </div>
 
     <a href="/blog/urticaria-myths#dn-uas7" class="tool-launch">啟動 UAS7 計算器 →</a>
@@ -556,8 +559,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
     <h3>原始引用</h3>
     <div class="tool-ref">
-      <strong>Doshi A, Zaheer A, Stiller MJ.</strong> A comparison of current acne grading systems and proposal of a novel system. <em>Int J Dermatol</em>. 1997;36(6):416-418. <a href="https://pubmed.ncbi.nlm.nih.gov/9248884/" target="_blank" rel="noopener">[PMID 9248884]</a><br/>
-      <strong>Reynolds RV</strong>, et al. AAD acne guidelines 2024. <em>J Am Acad Dermatol</em>. 2024;90(5):1006.e1-e30. <a href="https://pubmed.ncbi.nlm.nih.gov/38300170/" target="_blank" rel="noopener">[PMID 38300170]</a>
+      <strong>Doshi A, Zaheer A, Stiller MJ.</strong> A comparison of current acne grading systems and proposal of a novel system. <em>Int J Dermatol</em>. 1997;36(6):416-418. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/9248884/" target="_blank" rel="noopener">PMID 9248884</a><br/>
+      <strong>Reynolds RV</strong>, et al. AAD acne guidelines 2024. <em>J Am Acad Dermatol</em>. 2024;90(5):1006.e1-e30. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/38300170/" target="_blank" rel="noopener">PMID 38300170</a>
     </div>
 
     <a href="/blog/acne-myths#dn-gags" class="tool-launch">啟動 GAGS 計算器 →</a>
@@ -620,8 +623,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
     <h3>原始引用</h3>
     <div class="tool-ref">
-      <strong>Kimbrough-Green CK</strong>, et al. Topical retinoic acid for melasma in black patients. <em>Arch Dermatol</em>. 1994;130(6):727-733. <a href="https://pubmed.ncbi.nlm.nih.gov/8002643/" target="_blank" rel="noopener">[PMID 8002643]</a><br/>
-      <strong>Lima PB</strong>, et al. Topical 5% cysteamine vs 4% hydroquinone in melasma. <em>Int J Dermatol</em>. 2020;59(12):1531-1536. <a href="https://pubmed.ncbi.nlm.nih.gov/32954510/" target="_blank" rel="noopener">[PMID 32954510]</a>
+      <strong>Kimbrough-Green CK</strong>, et al. Topical retinoic acid for melasma in black patients. <em>Arch Dermatol</em>. 1994;130(6):727-733. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/8002643/" target="_blank" rel="noopener">PMID 8002643</a><br/>
+      <strong>Lima PB</strong>, et al. Topical 5% cysteamine vs 4% hydroquinone in melasma. <em>Int J Dermatol</em>. 2020;59(12):1531-1536. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/32954510/" target="_blank" rel="noopener">PMID 32954510</a>
     </div>
 
     <a href="/blog/melasma-myths#dn-masi" class="tool-launch">啟動 MASI 計算器 →</a>
@@ -682,7 +685,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
     <h3>原始引用</h3>
     <div class="tool-ref">
       <strong>Hurley HJ.</strong> Axillary hyperhidrosis, apocrine bromhidrosis, hidradenitis suppurativa, and familial benign pemphigus: surgical approach. In: <em>Dermatologic Surgery</em>. 1989:729-739.<br/>
-      <strong>Zouboulis CC</strong>, et al. European S1 guideline for the treatment of hidradenitis suppurativa. <em>JEADV</em>. 2015;29(4):619-644. <a href="https://pubmed.ncbi.nlm.nih.gov/25640693/" target="_blank" rel="noopener">[PMID 25640693]</a>
+      <strong>Zouboulis CC</strong>, et al. European S1 guideline for the treatment of hidradenitis suppurativa. <em>JEADV</em>. 2015;29(4):619-644. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/25640693/" target="_blank" rel="noopener">PMID 25640693</a>
     </div>
 
     <a href="/blog/hidradenitis-suppurativa#dn-hurley" class="tool-launch">啟動 Hurley 分期工具 →</a>
@@ -749,9 +752,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
     <h3>原始引用</h3>
     <div class="tool-ref">
-      <strong>Norwood OT.</strong> Male pattern baldness: classification and incidence. <em>South Med J</em>. 1975;68(11):1359-1365. <a href="https://pubmed.ncbi.nlm.nih.gov/1188424/" target="_blank" rel="noopener">[PMID 1188424]</a><br/>
-      <strong>Ludwig E.</strong> Classification of the types of androgenetic alopecia in the female. <em>Br J Dermatol</em>. 1977;97(3):247-254. <a href="https://pubmed.ncbi.nlm.nih.gov/921894/" target="_blank" rel="noopener">[PMID 921894]</a><br/>
-      <strong>Olsen EA</strong>, et al. Recommendations for the safe and effective use of topical and oral minoxidil. <em>J Am Acad Dermatol</em>. 2025;93(2):457-465. <a href="https://pubmed.ncbi.nlm.nih.gov/40090466/" target="_blank" rel="noopener">[PMID 40090466]</a>
+      <strong>Norwood OT.</strong> Male pattern baldness: classification and incidence. <em>South Med J</em>. 1975;68(11):1359-1365. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/1188424/" target="_blank" rel="noopener">PMID 1188424</a><br/>
+      <strong>Ludwig E.</strong> Classification of the types of androgenetic alopecia in the female. <em>Br J Dermatol</em>. 1977;97(3):247-254. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/921894/" target="_blank" rel="noopener">PMID 921894</a><br/>
+      <strong>Olsen EA</strong>, et al. Recommendations for the safe and effective use of topical and oral minoxidil. <em>J Am Acad Dermatol</em>. 2025;93(2):457-465. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/40090466/" target="_blank" rel="noopener">PMID 40090466</a>
     </div>
 
     <a href="/blog/hairloss-myths#dn-hair-scale" class="tool-launch">啟動 Norwood-Ludwig 分級工具 →</a>
@@ -808,8 +811,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
     <h3>原始引用</h3>
     <div class="tool-ref">
-      <strong>Fitzpatrick TB.</strong> The validity and practicality of sun-reactive skin types I through VI. <em>Arch Dermatol</em>. 1988;124(6):869-871. <a href="https://pubmed.ncbi.nlm.nih.gov/3377516/" target="_blank" rel="noopener">[PMID 3377516]</a><br/>
-      <strong>Pasquali P</strong>, et al. Iron oxide-containing sunscreens for melasma. <em>J Cosmet Dermatol</em>. 2020;19(3):671-675. <a href="https://pubmed.ncbi.nlm.nih.gov/31736195/" target="_blank" rel="noopener">[PMID 31736195]</a>
+      <strong>Fitzpatrick TB.</strong> The validity and practicality of sun-reactive skin types I through VI. <em>Arch Dermatol</em>. 1988;124(6):869-871. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/3377516/" target="_blank" rel="noopener">PMID 3377516</a><br/>
+      <strong>Pasquali P</strong>, et al. Iron oxide-containing sunscreens for melasma. <em>J Cosmet Dermatol</em>. 2020;19(3):671-675. <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/31736195/" target="_blank" rel="noopener">PMID 31736195</a>
     </div>
 
     <a href="/blog/sunscreen-myths#dn-fitzpatrick" class="tool-launch">啟動 Fitzpatrick 分型工具 →</a>
@@ -830,7 +833,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   <section class="my-8">
     <div style="background:linear-gradient(135deg,#ecfeff,#f5fbfa);border:1px solid #a5f3fc;border-radius:14px;padding:18px 22px;font-size:14px;color:var(--ink-2);line-height:1.85">
       <strong style="color:#0c5159">延伸閱讀:</strong>
-      想看完整衛教文章請至 <a href="/blog/" style="color:var(--teal-deep);font-weight:700;text-decoration:underline">衛教文章索引</a>;查詢專業詞彙白話解釋至 <a href="/glossary" style="color:var(--teal-deep);font-weight:700;text-decoration:underline">醫學詞彙白話字典</a>。實際病情評估、處方、療程,請就近至皮膚科專科醫師門診面對面看診。
+      想看完整衛教文章請至 <a href="/blog/" style="color:var(--teal-deep);font-weight:700;text-decoration:underline">衛教文章索引</a>;查詢專業詞彙白話解釋至 <a href="/glossary" style="color:var(--teal-deep);font-weight:700;text-decoration:underline">醫學詞彙白話字典</a>。實際病情評估、處方、療程、請就近至皮膚科專科醫師門診面對面看診。
     </div>
   </section>
 
@@ -864,7 +867,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605120500" defer></script>
+<script src="/blog/blog-shared.js?v=202605120600" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (window.DN) DN.initBlog({});

@@ -1724,29 +1724,32 @@
   };
 
   // -----------------------------------------------------------------------
-  // Buy Me a Coffee — top-right header pill button (auto-injects)
-  // User profile URL: https://www.buymeacoffee.com/chendermatologist
-  // (Premium tier shown via the same BMC platform)
+  // 支持作者 — top-right header pill + footer card (auto-injects)
+  // 目前金流由歐付寶 ezPay 處理。EZPAY 商店 PG100000760296 審核中,
+  // 待通過後把 DN.SUPPORT_URL 換成歐付寶建立的「立即收款」連結即可。
+  // 設為 '' 或 null 時,自動隱藏所有「支持作者」按鈕(等待審核期間用)。
   // -----------------------------------------------------------------------
-  DN.BMC_URL = 'https://www.buymeacoffee.com/chendermatologist';
+  DN.SUPPORT_URL = '';   // ← 換成歐付寶連結後即上線(例:https://www.ezpay.com.tw/QPay/?code=XXXX)
+  DN.BMC_URL = DN.SUPPORT_URL;   // legacy alias (do not delete)
 
   DN.injectBMCFooter = function () {
+    if (!DN.SUPPORT_URL) return;   // 等待 ezPay 審核中,先不注入
     if (document.getElementById('dn-bmc-footer')) return;
     var footer = document.querySelector('footer');
     if (!footer) return;
     var section = document.createElement('section');
     section.id = 'dn-bmc-footer';
     section.style.cssText = 'max-width:780px;margin:0 auto 0;padding:24px 20px 0;text-align:center';
-    // Subtle white card matching the rest of the site — no yellow gradient
+    // Subtle white card matching the rest of the site
     section.innerHTML =
       '<div style="background:#fff;border:1px solid var(--border,#e7e2d8);border-radius:18px;padding:22px 26px;box-shadow:0 4px 14px -8px rgba(15,23,42,.08)">' +
         '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#0e7c86;font-weight:700;margin-bottom:6px" data-zh="如果這個網站對您有幫助" data-en="If this site has helped you">如果這個網站對您有幫助</div>' +
-        '<h3 style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:20px;font-weight:700;color:#0f172a;margin:0 0 8px" data-zh="請支持作者一杯咖啡" data-en="Buy me a coffee">請支持作者一杯咖啡</h3>' +
-        '<p style="font-size:13px;color:#5e574e;line-height:1.85;margin:0 auto 14px;max-width:540px" data-zh="本網站<strong>無業配、無贊助</strong>,所有衛教文章與量表計算器都<strong>免費</strong>。如果您覺得內容對您有幫助,歡迎透過 Buy Me a Coffee 支持,讓我能繼續更新最新文獻與指引。" data-en="No ads, no sponsorships. All articles and calculators are free. If this content helped you, support via Buy Me a Coffee.">本網站<strong>無業配、無贊助</strong>,所有衛教文章與量表計算器都<strong>免費</strong>。如果您覺得內容對您有幫助,歡迎透過 Buy Me a Coffee 支持,讓我能繼續更新最新文獻與指引。</p>' +
-        '<a href="' + DN.BMC_URL + '" target="_blank" rel="noopener" data-bmc-footer-link ' +
+        '<h3 style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:20px;font-weight:700;color:#0f172a;margin:0 0 8px" data-zh="請我喝杯咖啡 ☕" data-en="Buy me a coffee ☕">請我喝杯咖啡 ☕</h3>' +
+        '<p style="font-size:13px;color:#5e574e;line-height:1.85;margin:0 auto 14px;max-width:540px" data-zh="本網站<strong>無業配、無贊助</strong>,所有衛教文章與量表計算器都<strong>免費</strong>。本贊助為讀者自願性的內容打賞,<strong>非醫療服務費用</strong>,不涉及任何醫療諮詢、診斷或治療。" data-en="No ads, no sponsorships. All articles and calculators are free. This support is a voluntary content tip, not a medical-service fee, and does not involve any medical consultation, diagnosis, or treatment.">本網站<strong>無業配、無贊助</strong>,所有衛教文章與量表計算器都<strong>免費</strong>。本贊助為讀者自願性的內容打賞,<strong>非醫療服務費用</strong>,不涉及任何醫療諮詢、診斷或治療。</p>' +
+        '<a href="' + DN.SUPPORT_URL + '" target="_blank" rel="noopener" data-bmc-footer-link ' +
           'style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:14px;font-weight:700;border:1px solid #0e7c86;box-shadow:0 4px 12px -4px rgba(14,124,134,.4);transition:background .15s">' +
           '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>' +
-          '<span data-zh="Buy Me a Coffee" data-en="Buy Me a Coffee">Buy Me a Coffee</span>' +
+          '<span data-zh="贊助本站" data-en="Support this site">贊助本站</span>' +
         '</a>' +
       '</div>';
     footer.parentNode.insertBefore(section, footer);
@@ -1754,22 +1757,23 @@
     if (typeof gtag === 'function') {
       var link = section.querySelector('[data-bmc-footer-link]');
       if (link) link.addEventListener('click', function () {
-        try { gtag('event', 'bmc_click', { source: 'footer', page_path: location.pathname }); } catch (e) {}
+        try { gtag('event', 'support_click', { source: 'footer', page_path: location.pathname }); } catch (e) {}
       });
     }
   };
 
   DN.injectBMC = function () {
     DN.injectBMCFooter();
+    if (!DN.SUPPORT_URL) return;   // 等待 ezPay 審核中,先不注入 header pill
     if (document.getElementById('dn-bmc-header')) return;
     var headerInner = document.querySelector('header.sticky .h-16 > div:last-child');
     if (!headerInner) return;
     var a = document.createElement('a');
     a.id = 'dn-bmc-header';
-    a.href = DN.BMC_URL;
+    a.href = DN.SUPPORT_URL;
     a.target = '_blank';
     a.rel = 'noopener';
-    a.setAttribute('aria-label', 'Buy Me a Coffee — 支持作者');
+    a.setAttribute('aria-label', '支持作者');
     // Low-key teal pill matching the existing header nav links — no yellow background
     a.style.cssText =
       'display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:9999px;' +
