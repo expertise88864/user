@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v31';
-const RUNTIME = 'cd-runtime-v31';
+const CACHE = 'cd-v33';
+const RUNTIME = 'cd-runtime-v33';
 const RUNTIME_MAX_ENTRIES = 60;
 
 const PRECACHE = [
@@ -13,6 +13,12 @@ const PRECACHE = [
   '/404.html',
   '/offline.html',
   '/icon.svg',
+  '/favicon.ico',
+  '/icon-32.png',
+  '/icon-192.png',
+  '/icon-512.png',
+  '/apple-touch-icon.png',
+  '/logo-512.png',
   '/manifest.json',
   '/blog/',
   '/blog/topics',
@@ -50,7 +56,8 @@ const PRECACHE = [
   '/blog/laser-dermatology',
   '/blog/pediatric-eczema',
   '/blog/prurigo-nodularis',
-  '/blog/cutaneous-t-cell-lymphoma'
+  '/blog/cutaneous-t-cell-lymphoma',
+  '/glossary'
 ];
 
 self.addEventListener('install', (e) => {

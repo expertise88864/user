@@ -30,8 +30,10 @@
 <link rel="alternate" hreflang="en"        href="https://chendermatologist.com/" />
 
 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-<link rel="alternate icon" type="image/png" href="/icon.svg" />
-<link rel="apple-touch-icon" href="/icon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" />
+<link rel="icon" sizes="any" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="mask-icon" href="/icon.svg" color="#0e7c86" />
 <link rel="manifest" href="/manifest.json" />
 <link rel="me" href="mailto:expertise88864@gmail.com" />
@@ -49,13 +51,13 @@
 <meta property="og:url" content="https://chendermatologist.com/" />
 <meta property="og:title" content="ChenDermatologist · 陳翊嘉 醫師 · 皮膚科常見衛教與學習筆記" />
 <meta property="og:description" content="陳翊嘉醫師（中國醫藥大學附設醫院 皮膚科）的皮膚科衛教網站 — 痘痘、防曬、異膚、肝斑、外用酸類、口服 A 酸、民眾最常見的皮膚科誤解。" />
-<meta property="og:image" content="https://chendermatologist.com/icon.svg" />
+<meta property="og:image" content="https://chendermatologist.com/logo-512.png" />
 <meta property="og:locale" content="zh_TW" />
 <meta property="og:locale:alternate" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="ChenDermatologist · Dermatology patient education by Dr. Chen Yi-Jia" />
 <meta name="twitter:description" content="Plain-language dermatology guides on common diseases and public misconceptions, written by Dr. Chen Yi-Jia (CMUH Dermatology)." />
-<meta name="twitter:image" content="https://chendermatologist.com/icon.svg" />
+<meta name="twitter:image" content="https://chendermatologist.com/logo-512.png" />
 
 <!-- ===== Google AdSense ===== -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663" crossorigin="anonymous"></script>
@@ -350,11 +352,12 @@
   "url":"https://chendermatologist.com/",
   "logo":{
     "@type":"ImageObject",
-    "url":"https://chendermatologist.com/icon.svg",
+    "url":"https://chendermatologist.com/logo-512.png",
     "width":512,
-    "height":512
+    "height":512,
+    "contentUrl":"https://chendermatologist.com/logo-512.png"
   },
-  "image":"https://chendermatologist.com/icon.svg",
+  "image":"https://chendermatologist.com/logo-512.png",
   "description":"陳翊嘉醫師（中國醫藥大學附設醫院 皮膚科）的皮膚科常見疾病衛教網站。",
   "founder":{ "@type":"Person","name":"陳翊嘉 醫師","honorificSuffix":"M.D." },
   "medicalSpecialty":"Dermatology",
@@ -556,7 +559,36 @@
   </section>
 </section>
 
-<!-- (Reading-stats section removed per user request — homepage focuses on articles + booking) -->
+<!-- ============= 最近更新 + 熱門推薦 雙欄 ============= -->
+<section class="py-8" id="dn-spotlight">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- 最近更新 -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold" data-zh="最近更新" data-en="Recently Updated">最近更新</span>
+        </div>
+        <ol id="dn-recent-list" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <!-- Auto-populated by DN.injectSpotlight (blog-shared.js) -->
+          <li style="padding:14px 16px;background:#fff;border:1px solid var(--border);border-radius:12px;font-size:14px;color:var(--ink-2)">載入中⋯</li>
+        </ol>
+      </div>
+
+      <!-- 熱門推薦 -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold" data-zh="熱門推薦" data-en="Editor's Picks">熱門推薦</span>
+        </div>
+        <ol id="dn-popular-list" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+          <!-- Auto-populated by DN.injectSpotlight (blog-shared.js) -->
+          <li style="padding:14px 16px;background:#fff;border:1px solid var(--border);border-radius:12px;font-size:14px;color:var(--ink-2)">載入中⋯</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- AdSense slot -->
 <section class="max-w-3xl mx-auto px-5 sm:px-8 my-6"><div class="ad-slot h-20 sm:h-24" data-zh="廣告位 · AdSense" data-en="Ad slot · AdSense">廣告位 · AdSense</div></section>
@@ -940,6 +972,36 @@
     <div class="text-center mt-8">
       <a href="/blog/" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--border)] bg-white text-teal-700 font-semibold text-[13.5px] hover:border-teal-500 hover:bg-mint-50" data-zh="瀏覽全部文章 →" data-en="See all articles →">瀏覽全部文章 →</a>
       <a href="/blog/topics" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--border)] bg-white text-teal-700 font-semibold text-[13.5px] hover:border-teal-500 hover:bg-mint-50 ml-2" data-zh="主題地圖 →" data-en="Topic map →">主題地圖 →</a>
+      <a href="/glossary" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--border)] bg-white text-teal-700 font-semibold text-[13.5px] hover:border-teal-500 hover:bg-mint-50 ml-2" data-zh="醫學詞彙白話字典 →" data-en="Medical glossary →">醫學詞彙白話字典 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 訂閱新文章通知 ============= -->
+<section class="py-10" id="dn-subscribe">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <div style="background:linear-gradient(135deg,#f5fbfa 0%,#ecfeff 100%);border:1px solid #a5f3fc;border-radius:18px;padding:28px 32px;text-align:center">
+      <div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold mb-2" data-zh="新文章不錯過" data-en="Stay updated">新文章不錯過</div>
+      <h2 class="font-display font-bold text-[22px] sm:text-[26px] mt-1 leading-tight text-ink-900" data-zh="新文章 / 指引更新通知" data-en="New articles &amp; guideline updates">新文章 / 指引更新通知</h2>
+      <p class="mt-3 text-[14px] text-ink-700 leading-[1.85] max-w-xl mx-auto" data-zh="每月最多 1-2 封,只在<strong>發表新文章或重要指引更新</strong>時寄出。隨時可取消訂閱、無業配無贊助、不轉售給第三方。" data-en="At most 1-2 emails per month — only when new articles publish or major guideline updates land. Unsubscribe anytime. No affiliate, no resale.">每月最多 1-2 封,只在<strong>發表新文章或重要指引更新</strong>時寄出。隨時可取消訂閱、無業配無贊助、不轉售給第三方。</p>
+
+      <div class="mt-5 flex flex-wrap gap-3 justify-center">
+        <!-- Method 1: mailto subscribe -->
+        <a href="mailto:expertise88864@gmail.com?subject=%E8%A8%82%E9%96%B1%20ChenDermatologist%20%E6%96%B0%E6%96%87%E7%AB%A0%E9%80%9A%E7%9F%A5&body=%E9%99%B3%E9%86%AB%E5%B8%AB%E6%82%A8%E5%A5%BD%EF%BC%8C%0A%0A%E6%88%91%E6%83%B3%E8%A8%82%E9%96%B1%20ChenDermatologist%20%E7%9A%84%E6%96%B0%E6%96%87%E7%AB%A0%E9%80%9A%E7%9F%A5%E3%80%82%0A%0A%E5%A7%93%E5%90%8D%EF%BC%88%E5%8F%AF%E5%8C%BF%E5%90%8D%EF%BC%89%EF%BC%9A%0A%E5%B0%88%E6%A5%AD%E8%83%8C%E6%99%AF%EF%BC%88%E9%86%AB%E8%AD%B7%E4%BA%BA%E5%93%A1%20%2F%20%E4%B8%80%E8%88%AC%E6%B0%91%E7%9C%BE%EF%BC%89%EF%BC%9A%0A%0A%E8%AC%9D%E8%AC%9D%E9%99%B3%E9%86%AB%E5%B8%AB%21" data-subscribe-link
+           style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:9999px;background:linear-gradient(180deg,#22d3ee 0%, #0e7c86 50%, #0c5159 100%);color:#fff;text-decoration:none;font-size:13.5px;font-weight:700;box-shadow:0 8px 18px -8px rgba(12,81,89,.45)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span data-zh="Email 訂閱通知" data-en="Subscribe by email">Email 訂閱通知</span>
+        </a>
+
+        <!-- Method 2: RSS -->
+        <a href="/blog/feed.xml" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:9999px;background:#fff;color:#4d6358;border:1px solid var(--border);text-decoration:none;font-size:13.5px;font-weight:700">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+          <span data-zh="RSS / Atom" data-en="RSS / Atom">RSS / Atom</span>
+        </a>
+      </div>
+
+      <p class="mt-4 text-[11.5px] text-ink-500 leading-[1.7]" data-zh="Email 訂閱會開啟您的郵件 App,送出即代表您同意接收新文章通知。Email 僅用於本站新文章通知,不轉售給第三方,可隨時退訂。" data-en="The email button opens your mail app. Submitting indicates consent to receive new-article notifications. Your email will not be resold and you can unsubscribe anytime.">Email 訂閱會開啟您的郵件 App,送出即代表您同意接收新文章通知。Email 僅用於本站新文章通知,不轉售給第三方,可隨時退訂。</p>
     </div>
   </div>
 </section>
@@ -1033,12 +1095,12 @@
     </div>
     <div class="mt-4 text-[11.5px] text-ink-500 flex flex-wrap items-center justify-between gap-2">
       <div data-zh="本站僅作教育參考，不構成醫療建議。任何用藥或就醫決定請以您的主治醫師判斷為準。" data-en="Educational use only — not medical advice. Always consult your physician for treatment decisions.">本站僅作教育參考，不構成醫療建議。任何用藥或就醫決定請以您的主治醫師判斷為準。</div>
-      <div>© <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師 · <span style="font-size:10px;opacity:.5">build 2026-05-08 09:00 (R6: KOL competitor analysis - Taiwan focus | reading meta de-emoji + 最後審閱 badge | font sizer S/M/L localStorage persist | content feedback mailto with prefill | SW v31)</span></div>
+      <div>© <span id="yr">2026</span> ChenDermatologist · 陳翊嘉 醫師 · <span style="font-size:10px;opacity:.5">build 2026-05-09 01:00 (R8: Google 搜尋 logo 修復(PNG icons + Org schema 改 logo-512.png) | 7 個新計算器 PASI/DLQI/Hurley/Norwood-Ludwig/Fitzpatrick/GAGS/MASI(共 10) | 醫學詞彙白話字典 /glossary 60+ 詞 | SW v33)</span></div>
     </div>
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605080900" defer></script>
+<script src="/blog/blog-shared.js?v=202605090100" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (window.DN) DN.initBlog({});

@@ -555,6 +555,562 @@
   // (resident-grade safety wording per agent research)
   // -----------------------------------------------------------------------
   // -----------------------------------------------------------------------
+  // Interactive clinical calculators — SCORAD / SALT / UAS7
+  // Auto-injected into specific articles by slug match.
+  // Pure-JS, no backend, results live-update.
+  // -----------------------------------------------------------------------
+  DN.calcStyles = function () {
+    if (document.getElementById('dn-calc-css')) return;
+    var st = document.createElement('style');
+    st.id = 'dn-calc-css';
+    st.textContent =
+      '.dn-calc{ background:#fff;border:1px solid var(--border, #dcd5c8);border-radius:14px;padding:18px 22px;margin:24px 0;box-shadow:0 8px 24px -14px rgba(77,99,88,.2) }' +
+      '.dn-calc h3.dn-calc-title{ font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#0f172a;margin:0 0 4px }' +
+      '.dn-calc .dn-calc-sub{ font-size:12.5px;color:#5e574e;margin-bottom:14px;line-height:1.6 }' +
+      '.dn-calc-row{ display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #ebe4d8 }' +
+      '.dn-calc-row:first-of-type{ border-top:0 }' +
+      '.dn-calc-row label{ font-size:13.5px;color:#2a2620;font-weight:600 }' +
+      '.dn-calc-row .dn-calc-hint{ display:block;font-size:11.5px;color:#8b8378;font-weight:400;margin-top:2px;line-height:1.4 }' +
+      '.dn-calc-input{ width:90px;padding:6px 10px;border:1px solid var(--border, #dcd5c8);border-radius:8px;font-size:14px;text-align:center;color:#0f172a;font-weight:700 }' +
+      '.dn-calc-input:focus{ outline:none;border-color:rgba(122,146,133,.6);box-shadow:0 0 0 3px rgba(164,181,168,.20) }' +
+      '.dn-calc-result{ margin-top:14px;padding:14px 16px;background:linear-gradient(135deg,#ecfeff,#f5fbfa);border:1px solid #a5f3fc;border-radius:12px }' +
+      '.dn-calc-score{ font-family:\'Noto Serif TC\',Georgia,serif;font-size:32px;font-weight:800;color:#0c5159;line-height:1;margin:0 }' +
+      '.dn-calc-band{ display:inline-block;margin-left:10px;padding:4px 12px;border-radius:9999px;font-size:12px;font-weight:700;letter-spacing:.04em;vertical-align:middle }' +
+      '.dn-calc-interp{ font-size:13px;color:#0f172a;line-height:1.7;margin-top:6px }' +
+      '.dn-calc-disclaimer{ font-size:11px;color:#8b8378;margin-top:10px;line-height:1.6;font-style:italic }' +
+      '.dn-radio-group{ display:flex;gap:6px;flex-wrap:wrap }' +
+      '.dn-radio-group button{ padding:5px 10px;border-radius:8px;border:1px solid var(--border, #dcd5c8);background:#fff;font-size:12.5px;font-weight:600;color:#5e574e;cursor:pointer;min-width:34px }' +
+      '.dn-radio-group button.active{ background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;border-color:transparent }';
+    document.head.appendChild(st);
+  };
+
+  // SCORAD (Atopic Dermatitis Severity)
+  DN.injectSCORAD = function () {
+    var slug = DN.currentSlug();
+    if (slug !== 'eczema-myths' && slug !== 'pediatric-eczema') return;
+    var anchor = document.querySelector('article.max-w-3xl');
+    if (!anchor || document.getElementById('dn-scorad')) return;
+    DN.calcStyles();
+
+    var box = document.createElement('section');
+    box.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
+    box.innerHTML =
+      '<div class="dn-calc" id="dn-scorad">' +
+        '<h3 class="dn-calc-title" data-zh="SCORAD 計算器 — 異膚嚴重度自評" data-en="SCORAD Calculator — AD severity self-assessment">SCORAD 計算器 — 異膚嚴重度自評</h3>' +
+        '<div class="dn-calc-sub" data-zh="SCORAD = A/5 + 7B/2 + C。A:受影響面積(0-100%)、B:6 項客觀症狀總分、C:2 項主觀症狀總分。完整版需臨床評估,本工具為簡易自評。" data-en="SCORAD = A/5 + 7B/2 + C. A: BSA, B: 6 objective signs, C: 2 subjective. Self-assessment only.">SCORAD = A/5 + 7B/2 + C。A:受影響面積(0-100%)、B:6 項客觀症狀總分、C:2 項主觀症狀總分。完整版需臨床評估,本工具為簡易自評。</div>' +
+        '<div class="dn-calc-row">' +
+          '<label data-zh="A · 受影響體表面積(%)" data-en="A · Affected BSA (%)">A · 受影響體表面積(%)<span class="dn-calc-hint" data-zh="0-100,可用九分法估算" data-en="0-100, use rule of nines">0-100,可用九分法估算</span></label>' +
+          '<input type="number" min="0" max="100" step="1" value="20" class="dn-calc-input" id="dn-scorad-A" />' +
+        '</div>' +
+        '<div class="dn-calc-row">' +
+          '<label data-zh="B · 6 項客觀症狀總分(0-18)" data-en="B · Objective signs (0-18)">B · 6 項客觀症狀總分<span class="dn-calc-hint" data-zh="紅斑、水腫/丘疹、滲出/結痂、抓痕、苔癬化、乾燥;每項 0-3" data-en="Erythema, edema, oozing, excoriation, lichenification, dryness; each 0-3">紅斑、水腫/丘疹、滲出/結痂、抓痕、苔癬化、乾燥;每項 0-3</span></label>' +
+          '<input type="number" min="0" max="18" step="1" value="6" class="dn-calc-input" id="dn-scorad-B" />' +
+        '</div>' +
+        '<div class="dn-calc-row">' +
+          '<label data-zh="C · 主觀症狀總分(0-20)" data-en="C · Subjective (0-20)">C · 主觀症狀總分<span class="dn-calc-hint" data-zh="癢感(0-10)+ 失眠(0-10),取過去 3 天平均" data-en="Itch (0-10) + sleep loss (0-10), past 3 days">癢感(0-10)+ 失眠(0-10),過去 3 天平均</span></label>' +
+          '<input type="number" min="0" max="20" step="1" value="6" class="dn-calc-input" id="dn-scorad-C" />' +
+        '</div>' +
+        '<div class="dn-calc-result">' +
+          '<div><span class="dn-calc-score" id="dn-scorad-score">—</span><span class="dn-calc-band" id="dn-scorad-band"></span></div>' +
+          '<div class="dn-calc-interp" id="dn-scorad-interp"></div>' +
+        '</div>' +
+        '<div class="dn-calc-disclaimer" data-zh="* 本工具僅作衛教自評用途。客觀分數需由皮膚科醫師判讀;治療決策應由主治醫師面對面評估。SCORAD: Stalder JF et al, Dermatology 1993." data-en="* For self-education only. Treatment decisions require an in-person dermatology evaluation.">* 本工具僅作衛教自評用途。客觀分數需由皮膚科醫師判讀;治療決策應由主治醫師面對面評估。SCORAD: Stalder JF et al, Dermatology 1993.</div>' +
+      '</div>';
+    anchor.parentNode.insertBefore(box, anchor.nextSibling);
+
+    function calc() {
+      var A = Math.max(0, Math.min(100, parseFloat(document.getElementById('dn-scorad-A').value) || 0));
+      var B = Math.max(0, Math.min(18, parseFloat(document.getElementById('dn-scorad-B').value) || 0));
+      var C = Math.max(0, Math.min(20, parseFloat(document.getElementById('dn-scorad-C').value) || 0));
+      var score = A / 5 + 7 * B / 2 + C;
+      var band, bg, fg, interp;
+      if (score < 25) { band = '輕度'; bg = '#dcfce7'; fg = '#14532d'; interp = '輕度異膚 — 多數可用<strong>外用類固醇 + 保濕 + TCI</strong>控制。'; }
+      else if (score < 50) { band = '中度'; bg = '#fef9c3'; fg = '#854d0e'; interp = '中度異膚 — 建議搭配 <strong>NB-UVB 光療或主動式類固醇/TCI proactive therapy</strong>。'; }
+      else { band = '重度'; bg = '#fee2e2'; fg = '#991b1b'; interp = '重度異膚 — 應與皮膚科討論 <strong>Dupilumab、JAK 抑制劑、Tralokinumab 或 Lebrikizumab</strong>(Werfel 2024 S3)。'; }
+      var sEl = document.getElementById('dn-scorad-score');
+      var bEl = document.getElementById('dn-scorad-band');
+      var iEl = document.getElementById('dn-scorad-interp');
+      sEl.textContent = score.toFixed(1);
+      bEl.textContent = band;
+      bEl.style.background = bg;
+      bEl.style.color = fg;
+      iEl.innerHTML = interp;
+    }
+    box.querySelectorAll('input').forEach(function (i) { i.addEventListener('input', calc); });
+    calc();
+    if (typeof gtag === 'function') {
+      try { gtag('event', 'calculator_view', { tool: 'SCORAD', page_path: location.pathname }); } catch (e) {}
+    }
+  };
+
+  // SALT (Severity of Alopecia Tool)
+  DN.injectSALT = function () {
+    var slug = DN.currentSlug();
+    if (slug !== 'alopecia-areata' && slug !== 'hairloss-myths') return;
+    var anchor = document.querySelector('article.max-w-3xl');
+    if (!anchor || document.getElementById('dn-salt')) return;
+    DN.calcStyles();
+
+    var box = document.createElement('section');
+    box.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
+    box.innerHTML =
+      '<div class="dn-calc" id="dn-salt">' +
+        '<h3 class="dn-calc-title" data-zh="SALT 計算器 — 圓禿頭皮禿髮面積" data-en="SALT Calculator — alopecia areata scalp">SALT 計算器 — 圓禿頭皮禿髮面積</h3>' +
+        '<div class="dn-calc-sub" data-zh="頭皮分 4 區:頂(40%)、後(24%)、左(18%)、右(18%)。SALT = Σ(各區禿髮 % × 該區權重)。" data-en="Scalp divided into 4 zones: vertex (40%), back (24%), left (18%), right (18%). SALT = sum of each zone hair-loss % × weight.">頭皮分 4 區:頂(40%)、後(24%)、左(18%)、右(18%)。SALT = Σ(各區禿髮 % × 該區權重)。</div>' +
+        '<div class="dn-calc-row"><label data-zh="頂部禿髮 %(權重 40)" data-en="Vertex (weight 40)">頂部禿髮 %<span class="dn-calc-hint">權重 0.40</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-V" /></div>' +
+        '<div class="dn-calc-row"><label data-zh="後部禿髮 %(權重 24)" data-en="Back (weight 24)">後部禿髮 %<span class="dn-calc-hint">權重 0.24</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-B" /></div>' +
+        '<div class="dn-calc-row"><label data-zh="左側禿髮 %(權重 18)" data-en="Left (weight 18)">左側禿髮 %<span class="dn-calc-hint">權重 0.18</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-L" /></div>' +
+        '<div class="dn-calc-row"><label data-zh="右側禿髮 %(權重 18)" data-en="Right (weight 18)">右側禿髮 %<span class="dn-calc-hint">權重 0.18</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-R" /></div>' +
+        '<div class="dn-calc-result">' +
+          '<div><span class="dn-calc-score" id="dn-salt-score">—</span><span class="dn-calc-band" id="dn-salt-band"></span></div>' +
+          '<div class="dn-calc-interp" id="dn-salt-interp"></div>' +
+        '</div>' +
+        '<div class="dn-calc-disclaimer" data-zh="* SALT: Olsen EA et al, JAAD 2004. 治療決策應由皮膚科專科醫師評估。" data-en="* SALT: Olsen EA et al, JAAD 2004. Treatment decisions require dermatology evaluation.">* SALT: Olsen EA et al, JAAD 2004. 治療決策應由皮膚科專科醫師評估。</div>' +
+      '</div>';
+    anchor.parentNode.insertBefore(box, anchor.nextSibling);
+
+    function calc() {
+      var V = Math.max(0, Math.min(100, parseFloat(document.getElementById('dn-salt-V').value) || 0));
+      var B = Math.max(0, Math.min(100, parseFloat(document.getElementById('dn-salt-B').value) || 0));
+      var L = Math.max(0, Math.min(100, parseFloat(document.getElementById('dn-salt-L').value) || 0));
+      var R = Math.max(0, Math.min(100, parseFloat(document.getElementById('dn-salt-R').value) || 0));
+      var score = V * 0.40 + B * 0.24 + L * 0.18 + R * 0.18;
+      var band, bg, fg, interp;
+      if (score < 20) { band = '輕度'; bg = '#dcfce7'; fg = '#14532d'; interp = '輕度圓禿(SALT &lt; 20) — 多數可用<strong>病灶內類固醇注射 ± 外用 5% Minoxidil ± DPCP</strong>。'; }
+      else if (score < 50) { band = '中度'; bg = '#fef9c3'; fg = '#854d0e'; interp = '中度圓禿(SALT 20-50)— 可考慮口服類固醇橋接、Methotrexate 或<strong>低劑量 oral Minoxidil 輔助</strong>。'; }
+      else { band = '重度'; bg = '#fee2e2'; fg = '#991b1b'; interp = '重度圓禿(SALT ≥ 50)— Rudnicka 2024 EU 共識:<strong>Baricitinib(成人)或 Ritlecitinib(≥12 歲)</strong>為首選 JAK 抑制劑。'; }
+      document.getElementById('dn-salt-score').textContent = score.toFixed(1);
+      var bEl = document.getElementById('dn-salt-band');
+      bEl.textContent = band; bEl.style.background = bg; bEl.style.color = fg;
+      document.getElementById('dn-salt-interp').innerHTML = interp;
+    }
+    box.querySelectorAll('input').forEach(function (i) { i.addEventListener('input', calc); });
+    calc();
+    if (typeof gtag === 'function') {
+      try { gtag('event', 'calculator_view', { tool: 'SALT', page_path: location.pathname }); } catch (e) {}
+    }
+  };
+
+  // UAS7 (Urticaria Activity Score over 7 days)
+  DN.injectUAS7 = function () {
+    var slug = DN.currentSlug();
+    if (slug !== 'urticaria-myths') return;
+    var anchor = document.querySelector('article.max-w-3xl');
+    if (!anchor || document.getElementById('dn-uas7')) return;
+    DN.calcStyles();
+
+    var box = document.createElement('section');
+    box.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
+    var html =
+      '<div class="dn-calc" id="dn-uas7">' +
+        '<h3 class="dn-calc-title" data-zh="UAS7 計算器 — 蕁麻疹活動度(過去 7 天)" data-en="UAS7 — Urticaria Activity (7 days)">UAS7 計算器 — 蕁麻疹活動度(過去 7 天)</h3>' +
+        '<div class="dn-calc-sub" data-zh="每天評估「風團數」與「癢感」各 0-3 分,連續 7 天加總。最高 42 分。" data-en="Daily wheals (0-3) + itch (0-3), summed over 7 days. Max 42.">每天評估「風團數(0-3)」+「癢感(0-3)」,連續 7 天加總。最高 42 分。</div>';
+    for (var i = 1; i <= 7; i++) {
+      html +=
+        '<div class="dn-calc-row" style="grid-template-columns:1fr auto auto;gap:12px"><label>第 ' + i + ' 天<span class="dn-calc-hint" data-zh="風團 + 癢感" data-en="Wheal + Itch">風團 + 癢感</span></label>' +
+        '<input type="number" min="0" max="3" step="1" value="0" class="dn-calc-input" data-day="' + i + '" data-kind="W" placeholder="風團" />' +
+        '<input type="number" min="0" max="3" step="1" value="0" class="dn-calc-input" data-day="' + i + '" data-kind="I" placeholder="癢感" /></div>';
+    }
+    html +=
+        '<div class="dn-calc-result">' +
+          '<div><span class="dn-calc-score" id="dn-uas7-score">—</span><span class="dn-calc-band" id="dn-uas7-band"></span></div>' +
+          '<div class="dn-calc-interp" id="dn-uas7-interp"></div>' +
+        '</div>' +
+        '<div class="dn-calc-disclaimer" data-zh="* UAS7: EAACI/GA²LEN 2022 蕁麻疹指引;Kolkhir 2024 JAMA. 控制目標 UAS7 ≤ 6,理想 0。" data-en="* UAS7: EAACI/GA²LEN 2022 guideline. Target UAS7 ≤ 6, ideal 0.">* UAS7: EAACI/GA²LEN 2022 蕁麻疹指引;Kolkhir 2024 JAMA. 控制目標 UAS7 ≤ 6,理想 0。</div>' +
+      '</div>';
+    box.innerHTML = html;
+    anchor.parentNode.insertBefore(box, anchor.nextSibling);
+
+    function calc() {
+      var total = 0;
+      box.querySelectorAll('input').forEach(function (i) {
+        var v = Math.max(0, Math.min(3, parseFloat(i.value) || 0));
+        total += v;
+      });
+      var band, bg, fg, interp;
+      if (total === 0) { band = '完全控制'; bg = '#dcfce7'; fg = '#14532d'; interp = '完全控制(UAS7 = 0)— <strong>理想治療目標</strong>已達成,維持當前治療。'; }
+      else if (total <= 6) { band = '良好控制'; bg = '#dcfce7'; fg = '#14532d'; interp = '良好控制(UAS7 ≤ 6)— 維持當前治療,定期回診評估。'; }
+      else if (total <= 15) { band = '輕度活動'; bg = '#fef9c3'; fg = '#854d0e'; interp = '輕度活動(UAS7 7-15)— 評估抗組織胺<strong>加量至 4 倍標準劑量</strong>。'; }
+      else if (total <= 27) { band = '中度活動'; bg = '#fed7aa'; fg = '#9a3412'; interp = '中度活動(UAS7 16-27)— 高劑量抗組織胺仍無效,考慮加用 <strong>Omalizumab 300mg q4w</strong>。'; }
+      else { band = '重度活動'; bg = '#fee2e2'; fg = '#991b1b'; interp = '重度活動(UAS7 ≥ 28)— 應盡快加用 <strong>Omalizumab 或 cyclosporine</strong>(EAACI 2022)。'; }
+      document.getElementById('dn-uas7-score').textContent = total + ' / 42';
+      var bEl = document.getElementById('dn-uas7-band');
+      bEl.textContent = band; bEl.style.background = bg; bEl.style.color = fg;
+      document.getElementById('dn-uas7-interp').innerHTML = interp;
+    }
+    box.querySelectorAll('input').forEach(function (i) { i.addEventListener('input', calc); });
+    calc();
+    if (typeof gtag === 'function') {
+      try { gtag('event', 'calculator_view', { tool: 'UAS7', page_path: location.pathname }); } catch (e) {}
+    }
+  };
+
+  // -----------------------------------------------------------------------
+  // Helper: build a generic calculator with title/sub/inputs/result band
+  // -----------------------------------------------------------------------
+  DN._buildCalc = function (cfg) {
+    DN.calcStyles();
+    var anchor = document.querySelector('article.max-w-3xl');
+    if (!anchor || document.getElementById(cfg.id)) return null;
+    var box = document.createElement('section');
+    box.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
+    var rowsHTML = cfg.rows.map(function (r) {
+      var hint = r.hint ? '<span class="dn-calc-hint">' + r.hint + '</span>' : '';
+      if (r.type === 'number') {
+        return '<div class="dn-calc-row"><label>' + r.label + hint + '</label>' +
+          '<input type="number" min="' + (r.min||0) + '" max="' + (r.max||100) + '" step="' + (r.step||1) + '" value="' + (r.def||0) + '" class="dn-calc-input" data-key="' + r.key + '" /></div>';
+      } else if (r.type === 'select') {
+        var opts = r.options.map(function (o) { return '<option value="' + o.v + '">' + o.label + '</option>'; }).join('');
+        return '<div class="dn-calc-row"><label>' + r.label + hint + '</label>' +
+          '<select class="dn-calc-input" data-key="' + r.key + '" style="width:auto;min-width:140px">' + opts + '</select></div>';
+      }
+      return '';
+    }).join('');
+    box.innerHTML =
+      '<div class="dn-calc" id="' + cfg.id + '">' +
+        '<h3 class="dn-calc-title">' + cfg.title + '</h3>' +
+        '<div class="dn-calc-sub">' + cfg.sub + '</div>' +
+        rowsHTML +
+        '<div class="dn-calc-result">' +
+          '<div><span class="dn-calc-score" data-result="score">—</span><span class="dn-calc-band" data-result="band"></span></div>' +
+          '<div class="dn-calc-interp" data-result="interp"></div>' +
+        '</div>' +
+        '<div class="dn-calc-disclaimer">' + cfg.disclaimer + '</div>' +
+      '</div>';
+    anchor.parentNode.insertBefore(box, anchor.nextSibling);
+    function readVals() {
+      var v = {};
+      box.querySelectorAll('[data-key]').forEach(function (el) {
+        v[el.dataset.key] = el.tagName === 'SELECT' ? el.value : (parseFloat(el.value) || 0);
+      });
+      return v;
+    }
+    function update() {
+      var r = cfg.calc(readVals());
+      box.querySelector('[data-result="score"]').textContent = r.score;
+      var bEl = box.querySelector('[data-result="band"]');
+      bEl.textContent = r.band;
+      bEl.style.background = r.bg;
+      bEl.style.color = r.fg;
+      box.querySelector('[data-result="interp"]').innerHTML = r.interp;
+    }
+    box.querySelectorAll('[data-key]').forEach(function (el) { el.addEventListener('input', update); el.addEventListener('change', update); });
+    update();
+    if (typeof gtag === 'function') {
+      try { gtag('event', 'calculator_view', { tool: cfg.tool, page_path: location.pathname }); } catch (e) {}
+    }
+    return box;
+  };
+
+  // PASI (Psoriasis Area Severity Index, 0-72) — psoriasis-myths
+  DN.injectPASI = function () {
+    if (DN.currentSlug() !== 'psoriasis-myths') return;
+    var rows = [];
+    [['頭頸 (×0.1)','head'],['上肢 (×0.2)','arm'],['軀幹 (×0.3)','trunk'],['下肢 (×0.4)','leg']].forEach(function (r) {
+      rows.push({ type:'number', label: r[0]+' · 紅斑 E (0-4)',  hint:'erythema',     key:r[1]+'_E', min:0, max:4, def:0 });
+      rows.push({ type:'number', label: r[0]+' · 浸潤 I (0-4)',  hint:'infiltration', key:r[1]+'_I', min:0, max:4, def:0 });
+      rows.push({ type:'number', label: r[0]+' · 鱗屑 D (0-4)',  hint:'desquamation', key:r[1]+'_D', min:0, max:4, def:0 });
+      rows.push({ type:'number', label: r[0]+' · 面積 A (0-6)',  hint:'0=0% / 6=90-100%', key:r[1]+'_A', min:0, max:6, def:0 });
+    });
+    DN._buildCalc({
+      id: 'dn-pasi', tool: 'PASI',
+      title: 'PASI 計算器 — 乾癬嚴重度',
+      sub: 'PASI = 0.1×(Eh+Ih+Dh)×Ah + 0.2×(Ea+Ia+Da)×Aa + 0.3×(Et+It+Dt)×At + 0.4×(El+Il+Dl)×Al。最高 72 分。',
+      rows: rows,
+      calc: function (v) {
+        var head = (v.head_E + v.head_I + v.head_D) * v.head_A * 0.1;
+        var arm  = (v.arm_E + v.arm_I + v.arm_D) * v.arm_A * 0.2;
+        var trunk= (v.trunk_E + v.trunk_I + v.trunk_D) * v.trunk_A * 0.3;
+        var leg  = (v.leg_E + v.leg_I + v.leg_D) * v.leg_A * 0.4;
+        var s = head + arm + trunk + leg;
+        var band, bg, fg, interp;
+        if (s < 5) { band='輕度'; bg='#dcfce7'; fg='#14532d'; interp='輕度乾癬(PASI &lt; 5) — 通常以<strong>外用治療</strong>(Daivobet、Calcipotriol、外用類固醇)即可。'; }
+        else if (s < 10) { band='中度'; bg='#fef9c3'; fg='#854d0e'; interp='中度乾癬(PASI 5-10) — 加 <strong>NB-UVB 光療 / Acitretin / Methotrexate</strong>;準備生物製劑申請條件。'; }
+        else if (s < 20) { band='中重度'; bg='#fed7aa'; fg='#9a3412'; interp='中重度(PASI 10-20) — <strong>健保生物製劑可申請</strong>(IL-17/23 inhibitor),需 PASI ≥ 10 + 兩線傳統治療失敗。'; }
+        else { band='重度'; bg='#fee2e2'; fg='#991b1b'; interp='重度(PASI ≥ 20) — 生物製劑優先;<strong>Bimekizumab / Risankizumab / Guselkumab</strong> 三線最強;考慮乾癬性關節炎共病評估。'; }
+        return { score: s.toFixed(1), band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* PASI: Fredriksson &amp; Pettersson 1978;台灣健保生物製劑申請門檻 PASI ≥ 10 / BSA ≥ 10% / DLQI ≥ 10 + 兩線失敗。'
+    });
+  };
+
+  // DLQI (Dermatology Life Quality Index, 0-30) — multi-article
+  DN.injectDLQI = function () {
+    var slug = DN.currentSlug();
+    if (!['eczema-myths','psoriasis-myths','urticaria-myths','alopecia-areata','vitiligo','hidradenitis-suppurativa','prurigo-nodularis'].includes(slug)) return;
+    var rows = [];
+    var qs = [
+      '過去 1 週,皮膚<strong>癢、痠痛、刺痛</strong>的程度?',
+      '過去 1 週,因皮膚問題<strong>感到困窘、自卑、難為情</strong>的程度?',
+      '過去 1 週,皮膚問題影響<strong>購物、家務、整理花園</strong>?',
+      '過去 1 週,皮膚問題影響<strong>穿著選擇</strong>?',
+      '過去 1 週,皮膚問題影響<strong>社交活動或休閒</strong>?',
+      '過去 1 週,皮膚問題影響<strong>運動</strong>?',
+      '過去 1 週,皮膚問題使您<strong>無法工作或念書</strong>?',
+      '過去 1 週,皮膚問題對您與<strong>伴侶 / 親近的朋友 / 家人</strong>關係的影響?',
+      '過去 1 週,皮膚問題對您<strong>性生活</strong>的影響?',
+      '過去 1 週,皮膚<strong>治療</strong>對日常生活造成困擾(如花時間、弄髒衣物)?'
+    ];
+    qs.forEach(function (q, i) {
+      rows.push({ type:'select', label: 'Q'+(i+1)+': '+q, key:'q'+(i+1), options:[
+        {v:0,label:'0 完全沒有'},{v:1,label:'1 一點點'},{v:2,label:'2 中等'},{v:3,label:'3 非常'}
+      ] });
+    });
+    DN._buildCalc({
+      id: 'dn-dlqi', tool: 'DLQI',
+      title: 'DLQI 計算器 — 皮膚病生活品質量表(過去 7 天)',
+      sub: '10 題自評,每題 0-3 分,總分 0-30。生物製劑健保申請常見門檻 DLQI ≥ 10。',
+      rows: rows,
+      calc: function (v) {
+        var s = 0;
+        for (var i = 1; i <= 10; i++) s += parseFloat(v['q'+i]) || 0;
+        var band, bg, fg, interp;
+        if (s <= 1) { band='無影響'; bg='#dcfce7'; fg='#14532d'; interp='皮膚病對生活品質<strong>無影響</strong>(DLQI 0-1)。'; }
+        else if (s <= 5) { band='輕度影響'; bg='#dcfce7'; fg='#14532d'; interp='輕度影響(DLQI 2-5)— 一般治療即可。'; }
+        else if (s <= 10) { band='中度影響'; bg='#fef9c3'; fg='#854d0e'; interp='中度影響(DLQI 6-10) — 應與醫師討論升階治療。'; }
+        else if (s <= 20) { band='重度影響'; bg='#fed7aa'; fg='#9a3412'; interp='重度影響(DLQI 11-20) — <strong>達生物製劑健保申請門檻</strong>(配合疾病活動度)。'; }
+        else { band='極重度'; bg='#fee2e2'; fg='#991b1b'; interp='極重度影響(DLQI ≥ 21) — 生物製劑優先;同時建議<strong>心理共病評估</strong>(PHQ-9/GAD-7)。'; }
+        return { score: s + ' / 30', band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* DLQI: Finlay &amp; Khan 1994;台灣健保生物製劑申請常見門檻 DLQI ≥ 10。本工具僅作病人自評,不取代專科診斷。'
+    });
+  };
+
+  // Hurley Stage (HS) — hidradenitis-suppurativa
+  DN.injectHurley = function () {
+    if (DN.currentSlug() !== 'hidradenitis-suppurativa') return;
+    DN._buildCalc({
+      id: 'dn-hurley', tool: 'Hurley',
+      title: 'Hurley 分期 — 化膿性汗腺炎(HS)嚴重度',
+      sub: '化膿性汗腺炎臨床上最常用的分期。請選擇最符合您病情的描述。',
+      rows: [{ type:'select', label:'目前狀態', key:'stage', options:[
+        {v:1,label:'Stage I — 單一或多個獨立膿瘍/結節,無通道、無疤痕'},
+        {v:2,label:'Stage II — 反覆膿瘍,形成通道與疤痕,但病灶獨立分隔'},
+        {v:3,label:'Stage III — 多個互相連結的通道與膿瘍,大面積疤痕'}
+      ] }],
+      calc: function (v) {
+        var s = parseInt(v.stage) || 1;
+        var band, bg, fg, interp;
+        if (s === 1) { band='輕度'; bg='#dcfce7'; fg='#14532d'; interp='Stage I — <strong>外用 Clindamycin + 短期口服抗生素</strong>(Doxycycline 50-100 mg BID × 12 週);生活調整(減重、戒菸、寬鬆衣物);切開引流。'; }
+        else if (s === 2) { band='中度'; bg='#fef9c3'; fg='#854d0e'; interp='Stage II — <strong>長期口服 Clindamycin + Rifampicin</strong>;Acitretin / 抗雄激素藥;<strong>生物製劑 Adalimumab(已健保條件給付)</strong>;局部 deroofing 手術。'; }
+        else { band='重度'; bg='#fee2e2'; fg='#991b1b'; interp='Stage III — <strong>Adalimumab</strong> + 廣泛切除手術 + 皮瓣重建;<strong>Secukinumab(2023 FDA 核准)</strong>為新選項。'; }
+        return { score: 'Stage ' + s, band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* Hurley 1989;TDA HS 共識;Adalimumab 健保適應症需 Hurley II/III + DLQI ≥ 10 + 兩線傳統治療失敗。'
+    });
+  };
+
+  // Norwood-Hamilton (Male Pattern Baldness) + Ludwig (Female) — hairloss-myths
+  DN.injectHairScale = function () {
+    if (DN.currentSlug() !== 'hairloss-myths') return;
+    DN._buildCalc({
+      id: 'dn-hair-scale', tool: 'Norwood-Ludwig',
+      title: 'Norwood-Hamilton (男性) / Ludwig (女性) 雄性禿分級',
+      sub: '雄性禿臨床分級。男性使用 Norwood-Hamilton,女性使用 Ludwig。',
+      rows: [
+        { type:'select', label:'性別', key:'sex', options:[
+          {v:'M',label:'男性 → Norwood-Hamilton'},
+          {v:'F',label:'女性 → Ludwig'}
+        ]},
+        { type:'select', label:'目前髮量狀態', key:'stage', options:[
+          {v:1,label:'I — 正常,無明顯禿髮'},
+          {v:2,label:'II — 輕度髮際線後退(M 型微微)'},
+          {v:3,label:'III — 明顯 M 型禿 / 頭頂稍稀'},
+          {v:4,label:'IV — 髮際線顯著後退 + 頭頂禿髮'},
+          {v:5,label:'V — 大面積頭頂禿,僅後方環狀剩餘'},
+          {v:6,label:'VI — 頭頂與前方禿髮融合'},
+          {v:7,label:'VII — 僅後枕部 / 兩側馬蹄形剩餘'}
+        ]}
+      ],
+      calc: function (v) {
+        var s = parseInt(v.stage) || 1;
+        var sex = v.sex || 'M';
+        var scaleName = sex === 'M' ? 'Norwood ' : 'Ludwig ';
+        var roman = ['I','II','III','IV','V','VI','VII'];
+        var band, bg, fg, interp;
+        if (s <= 2) { band='輕度'; bg='#dcfce7'; fg='#14532d';
+          interp = sex === 'M'
+            ? '輕度雄性禿 — <strong>外用 Minoxidil 5%</strong>(每日 2 次)± <strong>口服 Finasteride 1 mg/day</strong>(需專科處方);生活型態調整。'
+            : '輕度女性禿 — <strong>外用 Minoxidil 2-5%</strong>(每日 1-2 次);<strong>低劑量口服 Minoxidil 0.5-1.25 mg/day</strong>(Olsen 2025);Spironolactone 100 mg。';
+        }
+        else if (s <= 4) { band='中度'; bg='#fef9c3'; fg='#854d0e';
+          interp = sex === 'M'
+            ? '中度 — <strong>Finasteride 1 mg/day + Minoxidil 5%</strong> 雙標準;考慮 PRP 注射;規劃植髮諮詢。'
+            : '中度 — Minoxidil + Spironolactone 為主軸;考慮 <strong>低劑量 oral Minoxidil</strong> 與 PRP。';
+        }
+        else { band='重度'; bg='#fee2e2'; fg='#991b1b';
+          interp = '重度 — <strong>需植髮搭配藥物維持</strong>(FUE / FUT);Finasteride / Minoxidil 必須持續以避免後方續發禿髮。';
+        }
+        return { score: scaleName + roman[s-1], band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* Norwood 1975 / Ludwig 1977;Olsen 2025 JAAD LDOM 共識;治療需專科醫師個別評估。'
+    });
+  };
+
+  // Fitzpatrick Skin Type (I-VI) — sunscreen-myths
+  DN.injectFitzpatrick = function () {
+    if (DN.currentSlug() !== 'sunscreen-myths' && DN.currentSlug() !== 'melasma-myths') return;
+    DN._buildCalc({
+      id: 'dn-fitzpatrick', tool: 'Fitzpatrick',
+      title: 'Fitzpatrick 膚色分型 — 防曬 / 雷射安全參考',
+      sub: '依您未曬太陽的皮膚顏色 + 曬太陽 1 小時(初夏中午)後的反應分類。',
+      rows: [
+        { type:'select', label:'未曬太陽時皮膚', key:'base', options:[
+          {v:1,label:'極白(蒼白、雀斑多)'},
+          {v:2,label:'白(輕度雀斑)'},
+          {v:3,label:'白偏黃 / 米白'},
+          {v:4,label:'淺褐 / 偏深'},
+          {v:5,label:'褐色(東南亞、拉丁)'},
+          {v:6,label:'深褐 / 黑色(非裔)'}
+        ]},
+        { type:'select', label:'曬太陽 1 小時後反應', key:'sun', options:[
+          {v:1,label:'總是曬傷,從不曬黑'},
+          {v:2,label:'容易曬傷,輕微曬黑'},
+          {v:3,label:'有時曬傷,逐漸曬黑'},
+          {v:4,label:'很少曬傷,容易曬黑'},
+          {v:5,label:'幾乎不曬傷,深度曬黑'},
+          {v:6,label:'從不曬傷'}
+        ]}
+      ],
+      calc: function (v) {
+        var b = parseInt(v.base) || 1;
+        var s = parseInt(v.sun) || 1;
+        var t = Math.round((b + s) / 2);
+        var roman = ['I','II','III','IV','V','VI'];
+        var band, bg, fg, interp;
+        if (t <= 2) { band='I-II 型'; bg='#fee2e2'; fg='#991b1b'; interp='淺膚色 — <strong>每天 SPF 50+、PA++++ 強烈建議</strong>;高風險皮膚癌族群,建議定期皮膚科自我檢查 ABCDE。'; }
+        else if (t <= 4) { band='III-IV 型'; bg='#fef9c3'; fg='#854d0e'; interp='中等膚色(亞洲多數人)— <strong>SPF 30-50、PA+++</strong>;雷射 / 化學換膚後容易反黑,需嚴格防曬 4 週以上。'; }
+        else { band='V-VI 型'; bg='#dcfce7'; fg='#14532d'; interp='深膚色 — <strong>仍需 SPF 30+ 防曬</strong>(避免 PIH 反黑);1064 nm Nd:YAG 為較安全雷射選擇;532/694/755 nm 易引起色素沉著。'; }
+        return { score: 'Type ' + roman[t-1], band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* Fitzpatrick 1975;膚色分型主要用於評估光療 / 雷射 / 防曬需求,不代表絕對皮膚癌風險。'
+    });
+  };
+
+  // GAGS (Global Acne Grading System, 0-44) — acne-myths
+  DN.injectGAGS = function () {
+    if (DN.currentSlug() !== 'acne-myths') return;
+    var sites = [
+      ['前額(×2)','forehead'], ['右臉頰(×2)','rcheek'], ['左臉頰(×2)','lcheek'],
+      ['鼻部(×1)','nose'], ['下巴(×1)','chin'], ['胸 / 上背(×3)','chest']
+    ];
+    var rows = sites.map(function (sit) {
+      return { type:'select', label: sit[0], key: sit[1], options:[
+        {v:0,label:'0 無病灶'},
+        {v:1,label:'1 ≥1 個粉刺'},
+        {v:2,label:'2 ≥1 個丘疹'},
+        {v:3,label:'3 ≥1 個膿皰'},
+        {v:4,label:'4 ≥1 個結節'}
+      ]};
+    });
+    DN._buildCalc({
+      id: 'dn-gags', tool: 'GAGS',
+      title: 'GAGS 計算器 — 痘痘嚴重度',
+      sub: 'GAGS = Σ(部位最嚴重病灶 × 部位權重)。前額 / 兩頰 ×2,鼻 / 下巴 ×1,胸背 ×3。最高 44。',
+      rows: rows,
+      calc: function (v) {
+        var s = (parseInt(v.forehead)||0)*2 + (parseInt(v.rcheek)||0)*2 + (parseInt(v.lcheek)||0)*2 +
+                (parseInt(v.nose)||0)*1 + (parseInt(v.chin)||0)*1 + (parseInt(v.chest)||0)*3;
+        var band, bg, fg, interp;
+        if (s === 0) { band='無'; bg='#dcfce7'; fg='#14532d'; interp='目前無痘痘 — 維持規律保養與防曬。'; }
+        else if (s <= 18) { band='輕度'; bg='#dcfce7'; fg='#14532d'; interp='輕度(GAGS 1-18) — 外用 BPO + retinoid 為主(2024 AAD 強建議);可選用 Adapalene + BPO 固定複方。'; }
+        else if (s <= 30) { band='中度'; bg='#fef9c3'; fg='#854d0e'; interp='中度(GAGS 19-30) — 加口服 Doxycycline 100 mg BID × 8-12 週;考慮 oral 避孕藥 / Spironolactone(女性);Clascoterone 外用為新選項。'; }
+        else if (s <= 38) { band='重度'; bg='#fed7aa'; fg='#9a3412'; interp='重度(GAGS 31-38) — <strong>口服 Isotretinoin 為首選</strong>(健保條件:重度發炎或標準治療失敗)。'; }
+        else { band='極重度'; bg='#fee2e2'; fg='#991b1b'; interp='極重度(GAGS ≥ 39) — Isotretinoin 必要 + 病灶內類固醇 + 早期介入避免疤痕。'; }
+        return { score: s + ' / 44', band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* Doshi-Zaheer-Stiller 1997 GAGS。AAD 2024 (Reynolds) 痘痘指引。'
+    });
+  };
+
+  // MASI (Melasma Area Severity Index, 0-48) — melasma-myths
+  DN.injectMASI = function () {
+    if (DN.currentSlug() !== 'melasma-myths') return;
+    var sites = [
+      ['前額(×0.3)','forehead'],
+      ['右臉頰(×0.3)','rcheek'],
+      ['左臉頰(×0.3)','lcheek'],
+      ['下巴(×0.1)','chin']
+    ];
+    var rows = [];
+    sites.forEach(function (sit) {
+      rows.push({ type:'number', label: sit[0]+' · 面積 A (0-6)', hint:'0=0% / 6=90-100%', key:sit[1]+'_A', min:0, max:6, def:0 });
+      rows.push({ type:'number', label: sit[0]+' · 深淺 D (0-4)', hint:'darkness',           key:sit[1]+'_D', min:0, max:4, def:0 });
+      rows.push({ type:'number', label: sit[0]+' · 同質性 H (0-4)', hint:'homogeneity',     key:sit[1]+'_H', min:0, max:4, def:0 });
+    });
+    DN._buildCalc({
+      id: 'dn-masi', tool: 'MASI',
+      title: 'MASI 計算器 — 肝斑嚴重度',
+      sub: 'MASI = 0.3×Af×(Df+Hf) + 0.3×Ar×(Dr+Hr) + 0.3×Al×(Dl+Hl) + 0.1×Ac×(Dc+Hc)。最高 48。',
+      rows: rows,
+      calc: function (v) {
+        var fh = 0.3 * v.forehead_A * (v.forehead_D + v.forehead_H);
+        var rc = 0.3 * v.rcheek_A * (v.rcheek_D + v.rcheek_H);
+        var lc = 0.3 * v.lcheek_A * (v.lcheek_D + v.lcheek_H);
+        var ch = 0.1 * v.chin_A * (v.chin_D + v.chin_H);
+        var s = fh + rc + lc + ch;
+        var band, bg, fg, interp;
+        if (s < 8) { band='輕度'; bg='#dcfce7'; fg='#14532d'; interp='輕度肝斑 — <strong>嚴格防曬(SPF 50+ 含氧化鐵)+ Azelaic acid 15-20% / Niacinamide</strong>。'; }
+        else if (s < 24) { band='中度'; bg='#fef9c3'; fg='#854d0e'; interp='中度肝斑 — <strong>Tri-Luma(對苯二酚 4% + Tretinoin + Fluocinolone)8-12 週</strong> + 維持治療;考慮口服 Tranexamic acid。'; }
+        else { band='重度'; bg='#fee2e2'; fg='#991b1b'; interp='重度肝斑 — 多管道治療:Tri-Luma + 口服 TXA + 低能量 Q-switched 1064 nm toning;<strong>Cysteamine 5% (Lima 2020)</strong>為新選項。'; }
+        return { score: s.toFixed(1), band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* Kimbrough-Green 1994;Cysteamine: Lima IJD 2020。Tri-Luma 連續使用 ≤ 12 週後改維持治療。'
+    });
+  };
+
+  // -----------------------------------------------------------------------
+  // Homepage spotlight — "最近更新" + "熱門推薦" dual columns
+  // (Taiwan KOL pattern; benchmarked against 黃瑽寧 / 邱品齊 / 蔡逸群 sites)
+  // Auto-populates from DN.ARTICLES catalog; runs on homepage only.
+  // -----------------------------------------------------------------------
+  DN.POPULAR_PICKS = ['acne-myths','eczema-myths','hairloss-myths','melasma-myths','sunscreen-myths'];
+
+  DN.injectSpotlight = function () {
+    var recentEl = document.getElementById('dn-recent-list');
+    var popularEl = document.getElementById('dn-popular-list');
+    if (!recentEl && !popularEl) return;
+    var articles = DN.ARTICLES || [];
+
+    function rowHTML(a, badge) {
+      var tagEn = a.tag_en || a.tag || '';
+      var dateLabel = a.date || '';
+      var title = a.title || a.slug;
+      return '<a href="/blog/' + a.slug + '" ' +
+        'style="display:flex;flex-direction:column;gap:5px;padding:14px 16px;background:#fff;' +
+        'border:1px solid var(--border, #dcd5c8);border-radius:12px;text-decoration:none;color:inherit;' +
+        'transition:all .15s;box-shadow:0 1px 2px rgba(15,23,42,.04)" ' +
+        'onmouseover="this.style.borderColor=\'rgba(122,146,133,.5)\';this.style.transform=\'translateY(-2px)\';this.style.boxShadow=\'0 8px 18px -10px rgba(77,99,88,.25)\'" ' +
+        'onmouseout="this.style.borderColor=\'var(--border, #dcd5c8)\';this.style.transform=\'\';this.style.boxShadow=\'0 1px 2px rgba(15,23,42,.04)\'">' +
+        '<div style="display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#4d6358">' +
+          (badge ? '<span style="padding:2px 8px;border-radius:9999px;background:' + badge.bg + ';color:' + badge.fg + ';letter-spacing:.08em;font-size:10px">' + badge.label + '</span>' : '') +
+          '<span>' + tagEn + '</span>' +
+          '<span style="opacity:.5">·</span>' +
+          '<time style="font-weight:500;font-family:Inter,sans-serif;letter-spacing:0">' + dateLabel + '</time>' +
+        '</div>' +
+        '<div style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:15px;font-weight:700;line-height:1.5;color:#0f172a">' + title + '</div>' +
+      '</a>';
+    }
+
+    // Recent: top 5 by date desc (string compare works for YYYY-MM-DD)
+    if (recentEl) {
+      var sorted = articles.slice().sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
+      var top5 = sorted.slice(0, 5);
+      recentEl.innerHTML = top5.map(function (a, i) {
+        return '<li>' + rowHTML(a, i === 0 ? { label: 'NEW', bg: '#fee2e2', fg: '#991b1b' } : null) + '</li>';
+      }).join('');
+    }
+    if (popularEl) {
+      var picks = DN.POPULAR_PICKS.map(function (slug) {
+        return articles.find(function (a) { return a.slug === slug; });
+      }).filter(Boolean);
+      popularEl.innerHTML = picks.map(function (a, i) {
+        return '<li>' + rowHTML(a, { label: '#' + (i + 1), bg: '#dcfce7', fg: '#14532d' }) + '</li>';
+      }).join('');
+    }
+  };
+
+  // -----------------------------------------------------------------------
   // Font-size adjuster (S / M / L) — elder-friendly, persists in localStorage
   // Sits to the LEFT of existing back-to-top button (right:18px;bottom:24px)
   // -----------------------------------------------------------------------
@@ -830,6 +1386,18 @@
     document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
       a.addEventListener('click', function () {
         fire('email_click', { email: 'expertise88864', page_path: location.pathname });
+      });
+    });
+    // Newsletter subscribe (data-subscribe-link)
+    document.querySelectorAll('[data-subscribe-link]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        fire('newsletter_subscribe_click', { method: 'mailto', page_path: location.pathname });
+      });
+    });
+    // RSS link click
+    document.querySelectorAll('a[href$="/feed.xml"], a[href$="/atom.xml"]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        fire('rss_subscribe_click', { feed: a.getAttribute('href'), page_path: location.pathname });
       });
     });
     // Lang toggle
@@ -1145,6 +1713,16 @@
       DN.addReadingMeta();
       DN.addFloatingTOC();
       DN.addInlineCTA();
+      DN.injectSCORAD();
+      DN.injectSALT();
+      DN.injectUAS7();
+      DN.injectPASI();
+      DN.injectDLQI();
+      DN.injectHurley();
+      DN.injectHairScale();
+      DN.injectFitzpatrick();
+      DN.injectGAGS();
+      DN.injectMASI();
       DN.addAuthorBio();
       DN.addLegalDisclaimer();
       DN.addTDALink();
@@ -1156,6 +1734,7 @@
     DN.bindWebVitals();
     DN.bindGAEvents();
     DN.bindArticleHub();
+    DN.injectSpotlight();
     DN.markNewArticles();
     DN.addStickyCTA();
 
