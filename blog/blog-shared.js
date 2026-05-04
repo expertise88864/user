@@ -1737,14 +1737,15 @@
     var section = document.createElement('section');
     section.id = 'dn-bmc-footer';
     section.style.cssText = 'max-width:780px;margin:0 auto 0;padding:24px 20px 0;text-align:center';
+    // Subtle white card matching the rest of the site — no yellow gradient
     section.innerHTML =
-      '<div style="background:linear-gradient(135deg,#fff8c5 0%,#FFE680 100%);border:1px solid #d4a015;border-radius:18px;padding:22px 26px;box-shadow:0 8px 22px -10px rgba(212,160,21,.35)">' +
-        '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#7c2d12;font-weight:700;margin-bottom:6px" data-zh="如果這個網站對您有幫助" data-en="If this site has helped you">如果這個網站對您有幫助</div>' +
-        '<h3 style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:20px;font-weight:700;color:#0f172a;margin:0 0 8px" data-zh="請支持作者一杯咖啡 ☕" data-en="Buy me a coffee ☕">請支持作者一杯咖啡 ☕</h3>' +
+      '<div style="background:#fff;border:1px solid var(--border,#e7e2d8);border-radius:18px;padding:22px 26px;box-shadow:0 4px 14px -8px rgba(15,23,42,.08)">' +
+        '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#0e7c86;font-weight:700;margin-bottom:6px" data-zh="如果這個網站對您有幫助" data-en="If this site has helped you">如果這個網站對您有幫助</div>' +
+        '<h3 style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:20px;font-weight:700;color:#0f172a;margin:0 0 8px" data-zh="請支持作者一杯咖啡" data-en="Buy me a coffee">請支持作者一杯咖啡</h3>' +
         '<p style="font-size:13px;color:#5e574e;line-height:1.85;margin:0 auto 14px;max-width:540px" data-zh="本網站<strong>無業配、無贊助</strong>,所有衛教文章與量表計算器都<strong>免費</strong>。如果您覺得內容對您有幫助,歡迎透過 Buy Me a Coffee 支持,讓我能繼續更新最新文獻與指引。" data-en="No ads, no sponsorships. All articles and calculators are free. If this content helped you, support via Buy Me a Coffee.">本網站<strong>無業配、無贊助</strong>,所有衛教文章與量表計算器都<strong>免費</strong>。如果您覺得內容對您有幫助,歡迎透過 Buy Me a Coffee 支持,讓我能繼續更新最新文獻與指引。</p>' +
         '<a href="' + DN.BMC_URL + '" target="_blank" rel="noopener" data-bmc-footer-link ' +
-          'style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:9999px;background:#FFDD00;color:#0f172a;text-decoration:none;font-size:14px;font-weight:800;border:2px solid #0f172a;box-shadow:0 4px 12px rgba(212,160,21,.4)">' +
-          '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>' +
+          'style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:14px;font-weight:700;border:1px solid #0e7c86;box-shadow:0 4px 12px -4px rgba(14,124,134,.4);transition:background .15s">' +
+          '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>' +
           '<span data-zh="Buy Me a Coffee" data-en="Buy Me a Coffee">Buy Me a Coffee</span>' +
         '</a>' +
       '</div>';
@@ -1769,21 +1770,30 @@
     a.target = '_blank';
     a.rel = 'noopener';
     a.setAttribute('aria-label', 'Buy Me a Coffee — 支持作者');
+    // Low-key teal pill matching the existing header nav links — no yellow background
     a.style.cssText =
-      'display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:9999px;' +
-      'background:linear-gradient(180deg,#FFDD00 0%,#F5C518 100%);color:#0f172a;text-decoration:none;' +
-      'font-size:12px;font-weight:700;border:1px solid #d4a015;' +
-      'box-shadow:0 2px 6px -2px rgba(212,160,21,.5);transition:transform .15s';
-    a.onmouseover = function () { a.style.transform = 'translateY(-1px)'; };
-    a.onmouseout = function () { a.style.transform = ''; };
+      'display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:9999px;' +
+      'background:transparent;color:#0c5159;text-decoration:none;' +
+      'font-size:12px;font-weight:600;border:1px solid #a7d8ce;' +
+      'transition:background .15s,color .15s';
+    a.onmouseover = function () { a.style.background = '#eaf6f3'; a.style.color = '#0e7c86'; };
+    a.onmouseout  = function () { a.style.background = 'transparent'; a.style.color = '#0c5159'; };
     a.innerHTML =
-      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
         '<path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>' +
         '<line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>' +
       '</svg>' +
       '<span class="hidden sm:inline" data-zh="支持作者" data-en="Buy me a coffee">支持作者</span>';
-    // Insert at the start of headerInner
-    headerInner.insertBefore(a, headerInner.firstChild);
+    // Insert immediately AFTER the search button (i.e. between search and language toggle)
+    var searchBtn = headerInner.querySelector('button[aria-label="搜尋"]');
+    if (searchBtn && searchBtn.parentNode === headerInner) {
+      searchBtn.insertAdjacentElement('afterend', a);
+    } else {
+      // Fallback: place before the language selector
+      var langSel = headerInner.querySelector('#langToggle');
+      if (langSel) headerInner.insertBefore(a, langSel);
+      else headerInner.appendChild(a);
+    }
 
     // GA4 tracking
     if (typeof gtag === 'function') {
@@ -1794,9 +1804,9 @@
   };
 
   // -----------------------------------------------------------------------
-  // Sticky bottom CTA bar — mobile-only fixed bar (research-backed pattern)
-  // Modified for resident-physician persona: no fake LINE, no fake phone
-  // (預約 CMUH / 醫院 Maps / 快速找文章)
+  // Sticky bottom CTA bar — mobile-only fixed bar
+  // Compliance: no booking, no clinic, no phone — only educational nav
+  // (找衛教文章 / 量表計算器 / 詞彙)
   // -----------------------------------------------------------------------
   DN.addStickyCTA = function () {
     if (document.getElementById('dn-sticky-cta')) return;
@@ -1896,9 +1906,9 @@
             '<span data-zh="陳翊嘉 醫師" data-en="Dr. Chen Yi-Chia, M.D.">陳翊嘉 醫師</span>' +
             '<span style="font-size:12px;font-weight:600;color:#4d6358;margin-left:8px;padding:2px 8px;border-radius:6px;background:#fff;border:1px solid #a5f3fc;font-family:Inter,sans-serif" data-zh="皮膚科 R2" data-en="Dermatology PGY-2">皮膚科 R2</span>' +
           '</div>' +
-          '<div style="font-size:13px;color:#334155;line-height:1.85" data-zh="<strong>現職</strong>:中國醫藥大學附設醫院 皮膚科 住院醫師<br/>' +
-            '<strong>學歷</strong>:高雄醫學大學醫學系 畢業<br/>' +
-            '<strong>經歷</strong>:高雄醫學大學附設中和紀念醫院 不分科住院醫師(PGY)" data-en="<strong>Current</strong>: Dermatology Resident, China Medical University Hospital<br/><strong>Education</strong>: M.D., Kaohsiung Medical University, College of Medicine<br/><strong>Training</strong>: PGY Resident, Kaohsiung Medical University Hospital"><strong>現職</strong>:中國醫藥大學附設醫院 皮膚科 住院醫師<br/><strong>學歷</strong>:高雄醫學大學醫學系 畢業<br/><strong>經歷</strong>:高雄醫學大學附設中和紀念醫院 不分科住院醫師(PGY)</div>' +
+          '<div style="font-size:13px;color:#334155;line-height:1.85" data-zh="<strong>身分</strong>:皮膚科 住院醫師(R2)<br/>' +
+            '<strong>學歷</strong>:高雄醫學大學醫學系 醫學士(M.D.)<br/>' +
+            '<strong>訓練</strong>:不分科住院醫師(PGY)" data-en="<strong>Role</strong>: Dermatology Resident (PGY-2)<br/><strong>Education</strong>: M.D., Kaohsiung Medical University, College of Medicine<br/><strong>Training</strong>: Post-Graduate Year (rotating)"><strong>身分</strong>:皮膚科 住院醫師(R2)<br/><strong>學歷</strong>:高雄醫學大學醫學系 醫學士(M.D.)<br/><strong>訓練</strong>:不分科住院醫師(PGY)</div>' +
           '<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">' +
             '<a href="/about" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#0e7c86;color:#fff;text-decoration:none" data-zh="關於我" data-en="About">關於我 →</a>' +
             '<a href="/tools" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#4d6358;border:1px solid #a5f3fc;text-decoration:none" data-zh="量表計算器" data-en="Calculators">量表計算器 →</a>' +
@@ -1935,12 +1945,8 @@
     function fire(name, params) {
       try { gtag('event', name, params || {}); } catch (e) { /* ignore */ }
     }
-    // Booking CTA clicks (CMUH dermatology)
-    document.querySelectorAll('a[href*="cmuh.cmu.edu.tw"]').forEach(function (a) {
-      a.addEventListener('click', function () {
-        fire('booking_click', { destination: 'CMUH Dermatology', page_path: location.pathname });
-      });
-    });
+    // (Removed for compliance) Booking-related CTA tracking — site no longer
+    // includes any booking, appointment, or hospital-affiliation links.
     // Email clicks
     document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
       a.addEventListener('click', function () {
