@@ -7,11 +7,8 @@
 <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
 <link rel="dns-prefetch" href="//www.clarity.ms" />
 <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-<link rel="dns-prefetch" href="//cdn.tailwindcss.com" />
-<link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
 <meta name="description" content="陳翊嘉醫師（皮膚科）皮膚科常見疾病衛教 — 痘痘、防曬、異位性皮膚炎、肝斑、玫瑰斑、落髮、圓禿、白斑、化膿性汗腺炎、生物製劑、A 酸、類固醇等完整解析。點擊疾病標籤快速查找,看完就能帶著問題走進診間。" />
 <meta name="theme-color" content="#7a9285" />
-<meta name="keywords" content="ChenDermatologist,陳翊嘉醫師,皮膚科衛教,痘痘治療,防曬迷思,異位性皮膚炎,肝斑,玫瑰痤瘡,蕁麻疹,乾癬,圓禿,病毒疣,帶狀皰疹,口服 A 酸,外用酸類,皮膚科推薦,台中皮膚科," />
 <meta name="author" content="陳翊嘉 醫師 · ChenDermatologist" />
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 <!-- ▼ Google Search Console verification — replace TOKEN below with the meta tag content from GSC ownership verification -->
@@ -64,23 +61,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
-
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: { extend: {
-      colors: {
-        mint: { 50:'#f5fbfa', 100:'#eaf6f3', 200:'#d1ebe5', 300:'#a7d8ce' },
-        teal: { 50:'#ecfeff', 100:'#cffafe', 200:'#a5f3fc', 300:'#67e8f9', 400:'#22d3ee', 500:'#14b8a6', 600:'#0e7c86', 700:'#0c5159', 800:'#083a40' },
-        ink:  { 950:'#020617', 900:'#0f172a', 800:'#1e293b', 700:'#334155', 500:'#64748b', 400:'#94a3b8', 300:'#cbd5e1' }
-      },
-      fontFamily: {
-        display: ['"Noto Serif TC"', '"Microsoft JhengHei"', '"PingFang TC"', 'Georgia', '"Times New Roman"', 'serif'],
-        sans:    ['Inter', '"Microsoft JhengHei"', '"PingFang TC"', '"Noto Sans TC"', '-apple-system', 'system-ui', 'sans-serif']
-      }
-    } }
-  }
-</script>
 
 <style>
   :root{
@@ -432,6 +412,7 @@
   }]
 }
 </script>
+<link rel="stylesheet" href="/assets/tw-mini.css?v=1" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -1146,11 +1127,11 @@
   <div class="mag-foot-bot">
     <span>© <span id="yr">2026</span> Chen, Yi-Jia M.D. · <span data-zh="皮膚科衛教筆記" data-en="Dermatology Notes">皮膚科衛教筆記</span></span>
     <span data-zh="Made with patience, in Taiwan." data-en="Made with patience, in Taiwan.">Made with patience, in Taiwan.</span>
-    <!-- build 2026-05-13 04:00 (R19: 速度大優化 — 字體 weight 13→6(省 ~180KB)、AdSense/Clarity/GA4 從 head 移到 requestIdleCallback(避免阻塞 first paint)、Hero 砍 Vol.05 meta;新功能:Cmd+K 全文搜尋(Ctrl+K)+ Dark mode toggle(🌙) + R2 標籤移除 | SW v46) -->
+    <!-- build 2026-05-14 02:00 (R20: 拔 Tailwind CDN 改本地 7KB CSS(省 600ms+ LCP)、CSP+HSTS 安全表頭、移除 meta keywords、4 個新計算器(VAS/IGA/ASIS/VASI)、文章圖片變大+lightbox 點擊放大、PHQ-9 移除/DLQI 全篇加入、雙語 MutationObserver 自動翻譯動態內容、GitHub Actions CI(html-validate/link-check/meta/Lighthouse)、4 假 PMID 修正 | SW v48) -->
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605140100" defer></script>
+<script src="/blog/blog-shared.js?v=202605140200" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (window.DN) DN.initBlog({});

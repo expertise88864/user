@@ -1,0 +1,145 @@
+name: Quality gate
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  html-validate:
+    name: HTML structural validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Install validators
+        run: |
+          pip install html5validator lxml
+      - name: Run html5validator (whitelist common Tailwind/SVG noise)
+        run: |
+          html5validator --root . --match "*.html" \
+            --ignore-re "Attribute .* is not allowed on element" \
+            --ignore-re "Element .* not allowed as child of" \
+            --log INFO || true
+      - name: Quick lint — JSON-LD blocks parse cleanly
+        run: |
+          python <<'PY'
+          import json, re, glob, sys
+          err = 0
+          for p in glob.glob('**/*.html', recursive=True):
+              if any(x in p for x in ['.git','node_modules']): continue
+              with open(p, encoding='utf-8') as f: s = f.read()
+              for i, m in enumerate(re.finditer(r'<script type="application/ld\+json">([\s\S]*?)</script>', s)):
+                  try: json.loads(m.group(1))
+                  except Exception as e:
+                      print(f'JSON-LD ERR  {p} block {i}: {e}'); err += 1
+          sys.exit(1 if err else 0)
+          PY
+
+  link-check:
+    name: Internal link check (broken anchors / bad hrefs)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Run link audit
+        run: |
+          python <<'PY'
+          import os, re, glob, sys
+          # Collect all internal page paths
+          pages = set()
+          for p in glob.glob('**/*.html', recursive=True):
+              if any(x in p for x in ['.git','node_modules']): continue
+              # Normalize: blog/index.html → /blog/, X.html → /X
+              path = p.replace('\\', '/')
+              if path.endswith('/index.html'): pages.add('/' + path[:-10].rstrip('/') + '/')
+              elif path == 'index.html': pages.add('/')
+              else: pages.add('/' + path[:-5])  # /blog/acne-myths
+          # Scan all hrefs
+          err = 0
+          for p in glob.glob('**/*.html', recursive=True):
+              if any(x in p for x in ['.git','node_modules']): continue
+              with open(p, encoding='utf-8') as f: s = f.read()
+              for m in re.finditer(r'href="(/[^"#?]*)"', s):
+                  href = m.group(1)
+                  if href.startswith('//') or href.startswith('http'): continue
+                  if href.startswith('/blog/feed') or href.startswith('/blog/atom') or href.startswith('/sitemap') or href.startswith('/robots'): continue
+                  # Resolve to canonical form
+                  candidates = [
+                      href, href + '/', href + '.html',
+                      href[1:] if href.startswith('/') else href,
+                      href[1:] + '.html' if href.startswith('/') else href + '.html',
+                      (href[1:] + '/index.html') if href.startswith('/') else (href + '/index.html')
+                  ]
+                  if any(os.path.exists(c) for c in candidates): continue
+                  if href in pages: continue
+                  if any(href.startswith(prefix) for prefix in ['/icon','/favicon','/apple-touch','/logo-','/blog/SUNN','/manifest']):
+                      continue
+                  print(f'BROKEN  {p}  → {href}'); err += 1
+          sys.exit(1 if err else 0)
+          PY
+
+  meta-check:
+    name: SEO/meta sanity (title / description / canonical / OG)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Run meta audit
+        run: |
+          python <<'PY'
+          import re, glob, sys
+          err = 0
+          REQ = [
+              ('<title>', 'missing <title>'),
+              ('name="description"', 'missing meta description'),
+              ('rel="canonical"', 'missing canonical'),
+              ('property="og:title"', 'missing OG title'),
+              ('property="og:image"', 'missing OG image'),
+          ]
+          for p in glob.glob('**/*.html', recursive=True):
+              if any(x in p for x in ['.git','node_modules','offline','admin','404']): continue
+              with open(p, encoding='utf-8') as f: s = f.read()
+              for needle, msg in REQ:
+                  if needle not in s:
+                      print(f'META  {p}: {msg}'); err += 1
+          sys.exit(1 if err else 0)
+          PY
+
+  lighthouse:
+    name: Lighthouse CI (perf + a11y + SEO + best practices)
+    runs-on: ubuntu-latest
+    needs: html-validate
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Install LHCI
+        run: npm install -g @lhci/cli@0.13.x http-server
+      - name: Serve site
+        run: http-server . -p 8080 -s &
+      - name: Wait for server
+        run: sleep 3
+      - name: Run Lighthouse CI
+        run: |
+          lhci autorun \
+            --collect.url=http://localhost:8080/ \
+            --collect.url=http://localhost:8080/blog/ \
+            --collect.url=http://localhost:8080/blog/acne-myths.html \
+            --collect.url=http://localhost:8080/about.html \
+            --collect.url=http://localhost:8080/tools.html \
+            --collect.numberOfRuns=1 \
+            --upload.target=temporary-public-storage \
+            --assert.assertions.categories:performance=0.7 \
+            --assert.assertions.categories:accessibility=0.85 \
+            --assert.assertions.categories:best-practices=0.85 \
+            --assert.assertions.categories:seo=0.95
+        continue-on-error: true

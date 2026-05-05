@@ -94,6 +94,70 @@
     syncActive(DN.detectLang());
   };
 
+  // ─────────────────────────────────────────────────────────────────────
+  // Article image enlarger + a11y / perf attrs
+  // - Sizes inline images in .prose to fill content width (80%-100%)
+  // - Adds loading="lazy" / decoding="async" if missing
+  // - Adds wide max for SVG infographics
+  // - Adds light box-shadow + rounded corners for visual polish
+  // ─────────────────────────────────────────────────────────────────────
+  DN.enhanceArticleImages = function () {
+    if (document.getElementById('dn-img-css')) return;
+    var st = document.createElement('style');
+    st.id = 'dn-img-css';
+    st.textContent =
+      '/* Article images — make them substantial */' +
+      '.prose img, article.max-w-3xl img:not(.no-zoom){' +
+      '  display:block;width:100%;max-width:760px;height:auto;' +
+      '  margin:24px auto;border-radius:12px;' +
+      '  box-shadow:0 4px 14px -8px rgba(15,23,42,.15);' +
+      '  cursor:zoom-in;' +
+      '}' +
+      '.prose svg, article.max-w-3xl svg{' +
+      '  display:block;max-width:100%;height:auto;margin:20px auto;' +
+      '}' +
+      '/* Infographic SVG containers */' +
+      '.infographic, .types-grid, .wave-card{' +
+      '  max-width:100%;' +
+      '}' +
+      '/* Lightbox overlay (simple click-to-zoom) */' +
+      '.dn-img-lightbox{position:fixed;inset:0;background:rgba(15,23,42,.92);z-index:9999;display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}' +
+      '.dn-img-lightbox.open{display:flex}' +
+      '.dn-img-lightbox img{max-width:96%;max-height:96vh;border-radius:8px;box-shadow:0 24px 60px rgba(0,0,0,.5)}';
+    document.head.appendChild(st);
+
+    // Patch each article image with missing attrs
+    var imgs = document.querySelectorAll('.prose img, article.max-w-3xl img:not(.no-zoom)');
+    imgs.forEach(function (img) {
+      if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+      if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+      // Provide a sensible default width/height to reduce CLS — only if missing
+      if (!img.hasAttribute('width') && !img.hasAttribute('height')) {
+        img.setAttribute('width', '760');
+        img.setAttribute('height', '480');
+        img.style.aspectRatio = 'auto'; // let actual image dictate after load
+      }
+    });
+
+    // Click-to-zoom lightbox
+    var box = document.createElement('div');
+    box.className = 'dn-img-lightbox';
+    box.innerHTML = '<img alt="" />';
+    document.body.appendChild(box);
+    var bigImg = box.querySelector('img');
+    imgs.forEach(function (img) {
+      img.addEventListener('click', function () {
+        bigImg.src = img.currentSrc || img.src;
+        bigImg.alt = img.alt || '';
+        box.classList.add('open');
+      });
+    });
+    box.addEventListener('click', function () { box.classList.remove('open'); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') box.classList.remove('open');
+    });
+  };
+
   DN.addReadingProgress = function () {
     if (document.getElementById('dn-progress')) return;
     const bar = document.createElement('div');
@@ -1722,6 +1786,167 @@
     });
   };
 
+  // ─────────────────────────────────────────────────────────────────────
+  // VAS-Pruritus (Visual Analog Scale for Itch) — eczema/urticaria/CSU/PN
+  // 0-10 single-item subjective itch intensity. Reizner 2012 standard.
+  // ─────────────────────────────────────────────────────────────────────
+  DN.injectVASPruritus = function () {
+    if (!DN._forceInject && !['eczema-myths','urticaria-myths','prurigo-nodularis','pediatric-eczema','demodex-rosacea','tinea-myths','cutaneous-t-cell-lymphoma'].includes(DN.currentSlug())) return;
+    DN._buildCalc({
+      id: 'dn-vas-itch', tool: 'VAS-Pruritus', toolsAnchor: 'vas-pruritus',
+      title: 'VAS 搔癢評分 — 主觀癢度(過去 24 小時最劇烈)',
+      sub: '0 = 完全不癢、10 = 想像中最嚴重的癢。VAS 是國際通用癢度評估,常用於異膚、蕁麻疹、結節性癢疹、CSU 治療反應評估。',
+      rows: [
+        { type:'number', label:'過去 24 小時最劇烈癢度(0-10)', hint:'0:完全不癢 / 5:中等 / 10:無法忍受', key:'vas', min:0, max:10, step:0.5, def:5 }
+      ],
+      calc: function (v) {
+        var s = parseFloat(v.vas) || 0;
+        var band, bg, fg, interp;
+        if (s < 3) { band='輕度'; bg='#dcfce7'; fg='#14532d'; interp='輕度搔癢(<3)— 保濕 + 避免熱水熱風 + 環境抗過敏原。多數可由非藥物 / 單一抗組織胺處理。'; }
+        else if (s < 7) { band='中度'; bg='#fef9c3'; fg='#854d0e'; interp='中度搔癢(3-7)— 影響生活、可能影響睡眠。<strong>外用類固醇或 TCI 短期</strong>;考慮第二代抗組織胺 + 冷敷;原發疾病(異膚 / 蕁麻疹)需積極控制。'; }
+        else if (s < 9) { band='重度'; bg='#fed7aa'; fg='#9a3412'; interp='重度搔癢(7-8)— 顯著影響睡眠 / 抓傷。應全身治療(口服 / 注射);若異膚考慮 <strong>Dupilumab</strong>、若 CSU 考慮 <strong>Omalizumab</strong>。'; }
+        else { band='極重度'; bg='#fee2e2'; fg='#991b1b'; interp='極重度搔癢(≥9)— <strong>建議盡快就醫</strong>。皮膚已可能因抓傷續發感染、苔癬化。需積極系統治療。'; }
+        return { score: s.toFixed(1) + ' / 10', band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* VAS-Pruritus: Reich A, Heisig M, Phan NQ, et al. Acta Derm Venereol 2012;92(5):497-501. 為主觀工具,需配合臨床表徵綜合判斷。'
+    });
+  };
+
+  // ─────────────────────────────────────────────────────────────────────
+  // IGA (Investigator Global Assessment) — 5-point physician global
+  // Used in clinical trials (Dupilumab, biologic) — patient-friendly 5-grade
+  // ─────────────────────────────────────────────────────────────────────
+  DN.injectIGA = function () {
+    if (!DN._forceInject && !['eczema-myths','psoriasis-myths','vitiligo','rosacea-myths','acne-myths','pediatric-eczema','prurigo-nodularis','urticaria-myths'].includes(DN.currentSlug())) return;
+    DN._buildCalc({
+      id: 'dn-iga', tool: 'IGA', toolsAnchor: 'iga',
+      title: 'IGA 醫師整體評估 — 0-4 分皮膚病嚴重度',
+      sub: 'IGA(Investigator Global Assessment)為皮膚科臨床試驗最標準的整體評分。0-4 五級,治療目標通常是 IGA 0/1(完全 / 幾乎完全清除)。',
+      rows: [
+        { type:'select', label:'整體皮膚病嚴重度', key:'iga', options:[
+          { v:0, label:'0 — Clear:完全清除,皮膚乾淨無病灶' },
+          { v:1, label:'1 — Almost clear:幾乎清除,僅輕微紅斑 / 輕微脫屑' },
+          { v:2, label:'2 — Mild:輕度,清楚可見紅斑 + 輕度浸潤 / 丘疹 / 鱗屑' },
+          { v:3, label:'3 — Moderate:中度,明顯紅斑 + 中度浸潤 + 痂皮 / 滲出' },
+          { v:4, label:'4 — Severe:重度,嚴重紅斑 + 嚴重浸潤 + 滲出 / 苔癬化 / 大面積'}
+        ]}
+      ],
+      calc: function (v) {
+        var s = parseInt(v.iga);
+        var band, bg, fg, interp;
+        var labels = ['Clear','Almost clear','Mild','Moderate','Severe'];
+        if (s === 0) { band='完全清除'; bg='#dcfce7'; fg='#14532d'; interp='IGA 0 — 治療成功。維持期保養;可考慮減量或拉長間隔。'; }
+        else if (s === 1) { band='幾乎清除'; bg='#dcfce7'; fg='#14532d'; interp='IGA 1 — <strong>治療目標已達</strong>(臨床試驗以 IGA 0/1 為主要終點)。維持治療,逐步進入 proactive maintenance。'; }
+        else if (s === 2) { band='輕度'; bg='#fef9c3'; fg='#854d0e'; interp='IGA 2 — 輕度。一線治療(外用類固醇 + TCI / Crisaborole)持續使用。'; }
+        else if (s === 3) { band='中度'; bg='#fed7aa'; fg='#9a3412'; interp='IGA 3 — 中度。考慮全身治療:光療、Methotrexate、CsA、或<strong>生物製劑</strong>(乾癬 / 異膚 / CSU 各有適應症)。'; }
+        else { band='重度'; bg='#fee2e2'; fg='#991b1b'; interp='IGA 4 — 重度。<strong>建議盡快全身治療</strong> 或 <strong>生物製劑</strong>(Dupilumab、IL-17、IL-23、JAK 抑制劑);需專科醫師評估。'; }
+        return { score: 'IGA ' + s + ' (' + labels[s] + ')', band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* IGA 為醫師臨床評估工具,本自評僅供參考。各疾病(乾癬 / 異膚 / 玫瑰斑)IGA 定義略不同,請以主治醫師為準。'
+    });
+  };
+
+  // ─────────────────────────────────────────────────────────────────────
+  // ASIS (Acne Symptom and Impact Scale) — patient-reported acne outcomes
+  // 17 items: 9 symptom + 8 impact. Simplified 12-item version here.
+  // Alexis 2014. FDA-qualified PRO endpoint for acne trials.
+  // ─────────────────────────────────────────────────────────────────────
+  DN.injectASIS = function () {
+    if (!DN._forceInject && !['acne-myths','acne-scar-treatment','isotretinoin-patient','topical-acids-patient'].includes(DN.currentSlug())) return;
+    var qs = [
+      '臉上痘痘的紅 / 腫 / 痛',
+      '痘痘留下的疤 / 黑印',
+      '痘痘出油 / 油光感',
+      '長痘痘讓我感到尷尬',
+      '長痘痘讓我自卑',
+      '長痘痘讓我擔心別人怎麼看我',
+      '我會盡量避免拍照 / 鏡子',
+      '長痘痘影響我約會 / 社交',
+      '長痘痘影響我的工作 / 上學',
+      '我會花較多時間 / 錢 在保養與遮瑕',
+      '我擔心痘痘會留下永久的疤',
+      '整體而言,痘痘對我的生活品質造成困擾'
+    ];
+    var rows = qs.map(function (q, i) {
+      return { type:'select', label:(i+1) + '. ' + q, key:'q'+(i+1), options:[
+        { v:0, label:'0 — 完全沒有 / 完全不困擾' },
+        { v:1, label:'1 — 很少 / 輕微' },
+        { v:2, label:'2 — 偶爾 / 中度' },
+        { v:3, label:'3 — 經常 / 顯著' },
+        { v:4, label:'4 — 一直如此 / 嚴重困擾' }
+      ]};
+    });
+    DN._buildCalc({
+      id: 'dn-asis', tool: 'ASIS', toolsAnchor: 'asis',
+      title: 'ASIS 痤瘡症狀與生活影響量表(精簡 12 題)',
+      sub: '患者自評痤瘡的「症狀」+「心理 / 社交衝擊」。原版 17 題(Alexis 2014, FDA-qualified PRO),本版精簡為 12 題,評估口服 A 酸 / 雷射前後變化最常用。0-48 分。',
+      rows: rows,
+      calc: function (v) {
+        var s = 0;
+        for (var i = 1; i <= 12; i++) s += parseInt(v['q'+i]) || 0;
+        var band, bg, fg, interp;
+        if (s <= 8) { band='極輕度'; bg='#dcfce7'; fg='#14532d'; interp='整體影響極輕(0-8)。OTC 保養 + 規律生活作息即可。'; }
+        else if (s <= 18) { band='輕度'; bg='#dcfce7'; fg='#14532d'; interp='輕度影響(9-18)。一線外用治療(BPO / Adapalene / Azelaic acid)即可。'; }
+        else if (s <= 30) { band='中度'; bg='#fef9c3'; fg='#854d0e'; interp='中度(19-30)— 影響日常與社交。建議升級治療:加上口服抗生素 / 口服 A 酸評估。'; }
+        else if (s <= 42) { band='重度'; bg='#fed7aa'; fg='#9a3412'; interp='重度(31-42)— <strong>顯著影響生活品質</strong>。應考慮 <strong>口服 isotretinoin</strong>;同時評估心理狀況。'; }
+        else { band='極重度'; bg='#fee2e2'; fg='#991b1b'; interp='極重度(43-48)— 痤瘡嚴重影響身心。<strong>建議皮膚科 + 心理 / 精神科</strong>同步評估。'; }
+        return { score: s + ' / 48', band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* ASIS: Alexis A, et al. J Drugs Dermatol 2014. 本為精簡版(12/17 題),完整版另含「家庭關係」「治療負擔」5 題。'
+    });
+  };
+
+  // ─────────────────────────────────────────────────────────────────────
+  // VASI (Vitiligo Area Scoring Index) — body region BSA × depigmentation %
+  // Hand units: 1 hand = 1% BSA. Each region gets its hand units × depigmentation %
+  // VASI = Σ (Hand units × Depigmentation%); max ~100 (whole body fully depigmented)
+  // ─────────────────────────────────────────────────────────────────────
+  DN.injectVASI = function () {
+    if (!DN._forceInject && DN.currentSlug() !== 'vitiligo') return;
+    var regions = [
+      { key:'face',  label:'臉、脖子' },
+      { key:'hands', label:'雙手 / 雙臂' },
+      { key:'trunk', label:'軀幹' },
+      { key:'legs',  label:'雙腿' },
+      { key:'feet',  label:'雙腳' }
+    ];
+    var rows = [];
+    regions.forEach(function (r) {
+      rows.push({ type:'number', label:r.label + ' · 「手單位」面積', hint:'1 個手掌(含五指)約占全身體表 1%', key:r.key+'_hu', min:0, max:30, step:0.5, def:0 });
+      rows.push({ type:'select', label:r.label + ' · 該區去色素化程度', key:r.key+'_dp', options:[
+        { v:0, label:'0 — 無病灶' },
+        { v:0.1, label:'10%(輕微)' },
+        { v:0.25, label:'25%' },
+        { v:0.5, label:'50%' },
+        { v:0.75, label:'75%' },
+        { v:0.9, label:'90%' },
+        { v:1, label:'100%(完全脫色)' }
+      ]});
+    });
+    DN._buildCalc({
+      id: 'dn-vasi', tool: 'VASI', toolsAnchor: 'vasi',
+      title: 'VASI 白斑面積評分 — 全身白斑嚴重度',
+      sub: 'VASI = Σ (各區手單位 × 該區去色素化%)。1 個「手單位」(整個手掌 + 五指)≈ 全身體表 1%。VASI 50 是 JAK 抑制劑(Ruxolitinib cream)主要終點。',
+      rows: rows,
+      calc: function (v) {
+        var total = 0;
+        regions.forEach(function (r) {
+          var hu = parseFloat(v[r.key+'_hu']) || 0;
+          var dp = parseFloat(v[r.key+'_dp']) || 0;
+          total += hu * dp;
+        });
+        var band, bg, fg, interp;
+        if (total < 1) { band='極輕度'; bg='#dcfce7'; fg='#14532d'; interp='VASI < 1 — 病灶極輕。外用類固醇 / TCI(Tacrolimus 0.1%)+ 嚴格防曬即可。'; }
+        else if (total < 5) { band='輕度'; bg='#dcfce7'; fg='#14532d'; interp='VASI 1-5 — 輕度。一線治療(外用 + Excimer 308 nm 光療);<strong>新藥 Ruxolitinib cream(2022 FDA)</strong>對非節段型有效。'; }
+        else if (total < 10) { band='中度'; bg='#fef9c3'; fg='#854d0e'; interp='VASI 5-10 — 中度。考慮全身光療(NB-UVB)+ 外用治療;若快速進展可加口服 mini-pulse Dexamethasone。'; }
+        else if (total < 25) { band='重度'; bg='#fed7aa'; fg='#9a3412'; interp='VASI 10-25 — 重度。需<strong>系統治療</strong>(NB-UVB + Methotrexate / 口服 JAK 抑制劑)。穩定 1 年以上可考慮表皮移植 / 自體黑色素細胞移植。'; }
+        else { band='極重度'; bg='#fee2e2'; fg='#991b1b'; interp='VASI > 25 — 全身大範圍白斑。除全身治療外可考慮 <strong>反向去色素治療</strong>(MBEH 4-Hydroquinone monobenzyl ether);需專科醫師深入評估生活品質與治療目標。'; }
+        return { score: total.toFixed(1) + ' / ~100', band: band, bg: bg, fg: fg, interp: interp };
+      },
+      disclaimer: '* VASI: Hamzavi I, et al. Arch Dermatol 2004;140(6):677-83. T-VASI 5(改善 50%)是 Ruxolitinib cream 試驗(TRuE-V)主要終點。'
+    });
+  };
+
   // EASI (Eczema Area & Severity Index, 0-72) — alternative to SCORAD
   DN.injectEASI = function () {
     var slug = DN.currentSlug();
@@ -2509,6 +2734,7 @@
       DN.addFloatingTOC();
       DN.bindScrollMemory();
       DN.addInlineCTA();
+      DN.enhanceArticleImages();
 
       // Per-article calculator priority: most-relevant calculator FIRST.
       // PHQ-9 (depression screen) intentionally removed from auto-injection — too negative for patient pages.
@@ -2522,52 +2748,59 @@
         GAGS: DN.injectGAGS, MASI: DN.injectMASI,
         Hurley: DN.injectHurley, IHS4: DN.injectIHS4,
         Fitzpatrick: DN.injectFitzpatrick,
+        // New (R20+)
+        VAS: DN.injectVASPruritus,
+        IGA: DN.injectIGA,
+        ASIS: DN.injectASIS,
+        VASI: DN.injectVASI,
         DLQI: DN.injectDLQI
       };
       var CALC_ORDER = {
-        // Eczema family
-        'eczema-myths':              ['SCORAD','EASI','POEM','DLQI'],
-        'pediatric-eczema':          ['SCORAD','EASI','POEM','DLQI'],
-        'topical-steroids-guide':    ['SCORAD','EASI','DLQI'],
+        // Eczema family — VAS for itch is critical PRO; IGA for tx response
+        'eczema-myths':              ['SCORAD','EASI','POEM','VAS','IGA','DLQI'],
+        'pediatric-eczema':          ['SCORAD','EASI','POEM','VAS','DLQI'],
+        'topical-steroids-guide':    ['SCORAD','EASI','IGA','DLQI'],
         // Psoriasis
-        'psoriasis-myths':           ['PASI','NAPSI','DLQI'],
+        'psoriasis-myths':           ['PASI','NAPSI','IGA','DLQI'],
         // Hair
         'alopecia-areata':           ['SALT','HairScale','DLQI'],
         'hairloss-myths':            ['HairScale','DLQI'],
-        // Urticaria
-        'urticaria-myths':           ['UAS7','DLQI'],
-        // Acne / Retinoid
-        'acne-myths':                ['GAGS','DLQI'],
-        'acne-scar-treatment':       ['GAGS','DLQI'],
-        'isotretinoin-patient':      ['GAGS','DLQI'],
-        'isotretinoin-clinical':     ['GAGS','DLQI'],
-        'topical-acids-patient':     ['GAGS','DLQI'],
-        'topical-acids-clinical':    ['GAGS','DLQI'],
+        // Urticaria — VAS adds itch dimension beyond UAS7
+        'urticaria-myths':           ['UAS7','VAS','IGA','DLQI'],
+        // Acne / Retinoid — ASIS is patient-reported PRO
+        'acne-myths':                ['GAGS','ASIS','IGA','DLQI'],
+        'acne-scar-treatment':       ['GAGS','ASIS','DLQI'],
+        'isotretinoin-patient':      ['GAGS','ASIS','DLQI'],
+        'isotretinoin-clinical':     ['GAGS','ASIS','IGA','DLQI'],
+        'topical-acids-patient':     ['GAGS','ASIS','DLQI'],
+        'topical-acids-clinical':    ['GAGS','ASIS','DLQI'],
         // Pigmentation / Melasma
         'melasma-myths':             ['MASI','Fitzpatrick','DLQI'],
         'skin-whitening-agents':     ['MASI','Fitzpatrick','DLQI'],
-        'vitiligo':                  ['Fitzpatrick','DLQI'],
-        // Rosacea
-        'rosacea-myths':             ['DLQI'],
-        'demodex-rosacea':           ['DLQI'],
+        // Vitiligo — VASI is the primary index
+        'vitiligo':                  ['VASI','Fitzpatrick','IGA','DLQI'],
+        // Rosacea — IGA used in trials
+        'rosacea-myths':             ['IGA','DLQI'],
+        'demodex-rosacea':           ['IGA','VAS','DLQI'],
         // HS
-        'hidradenitis-suppurativa':  ['IHS4','Hurley','DLQI'],
+        'hidradenitis-suppurativa':  ['IHS4','Hurley','VAS','DLQI'],
         // Sun / Photo
         'sunscreen-myths':           ['Fitzpatrick','DLQI'],
         'laser-dermatology':         ['Fitzpatrick','DLQI'],
-        // Biologics / NHI
-        'biologics-overview':        ['PASI','EASI','SCORAD','DLQI'],
+        // Biologics / NHI — multi-disease, broad coverage
+        'biologics-overview':        ['PASI','EASI','SCORAD','IGA','DLQI'],
         'nhi-derm-drugs':            ['PASI','EASI','SCORAD','DLQI'],
         'targeted-therapy-skin':     ['DLQI'],
-        // Others — DLQI only
+        // Prurigo — VAS critical
+        'prurigo-nodularis':         ['VAS','IGA','DLQI'],
+        // Others — DLQI baseline; VAS where itch present
         'dermatology-faq':           ['DLQI'],
-        'tinea-myths':               ['DLQI'],
+        'tinea-myths':               ['VAS','DLQI'],
         'warts-myths':               ['DLQI'],
-        'shingles-myths':            ['DLQI'],
+        'shingles-myths':            ['VAS','DLQI'],
         'mpox-care':                 ['DLQI'],
         'epidermoid-cyst':           ['DLQI'],
-        'cutaneous-t-cell-lymphoma': ['DLQI'],
-        'prurigo-nodularis':         ['DLQI']
+        'cutaneous-t-cell-lymphoma': ['VAS','DLQI']
       };
       var calcsToInject = CALC_ORDER[slug] || ['DLQI'];
       calcsToInject.forEach(function (name) {
