@@ -41,8 +41,7 @@
 <meta name="twitter:description" content="7 級類固醇分類、部位對應、指尖單位 FTU、TCI 比較、類固醇恐懼症解析。" />
 <meta name="twitter:image" content="https://chendermatologist.com/logo-512.png" />
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663" crossorigin="anonymous"></script>
-<meta name="google-adsense-account" content="ca-pub-8223268344248663">
+<meta name="google-adsense-account" content="ca-pub-8223268344248663" />
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wkvhe0mf7y");</script>
@@ -52,7 +51,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap&text=陳翊嘉醫師皮膚科衛教筆記常見疾病迷思澄清關於我學經歷" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
@@ -457,7 +456,43 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605130300" defer></script>
+<script src="/blog/blog-shared.js?v=202605130400" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});</script>
+
+<!-- ===== Deferred 3rd-party (loaded after first paint) ===== -->
+<script>
+(function(){
+  function load() {
+    // AdSense
+    var ad = document.createElement("script");
+    ad.async = true;
+    ad.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663";
+    ad.crossOrigin = "anonymous";
+    document.head.appendChild(ad);
+
+    // Clarity
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wkvhe0mf7y");
+
+    // GA4
+    var ga = document.createElement("script");
+    ga.async = true;
+    ga.src = "https://www.googletagmanager.com/gtag/js?id=G-XFF3L5QD10";
+    document.head.appendChild(ga);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", "G-XFF3L5QD10", {anonymize_ip: true});
+  }
+  // Load 3rd-party after first paint (idle callback or 1s fallback)
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(load, { timeout: 2500 });
+  } else {
+    setTimeout(load, 1500);
+  }
+})();
+</script>
 </body>
 </html>

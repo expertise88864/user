@@ -125,6 +125,224 @@
   };
 
   // -----------------------------------------------------------------------
+  // Cmd+K / Ctrl+K full-text search modal
+  // Searches DN.ARTICLES (title + tag) and headers (h2) on current page.
+  // -----------------------------------------------------------------------
+  DN.initCmdK = function () {
+    if (document.getElementById('dn-cmdk-style')) return;
+    var st = document.createElement('style');
+    st.id = 'dn-cmdk-style';
+    st.textContent =
+      '#dn-cmdk-overlay{position:fixed;inset:0;background:rgba(42,38,32,.55);z-index:9998;display:none;align-items:flex-start;justify-content:center;padding:88px 18px 18px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}' +
+      '#dn-cmdk-overlay.open{display:flex}' +
+      '#dn-cmdk-modal{width:100%;max-width:640px;background:var(--surface,#fff);border:1px solid var(--border,#dcd5c8);border-radius:14px;box-shadow:0 30px 80px -20px rgba(0,0,0,.35);overflow:hidden;font-family:Inter,system-ui,sans-serif}' +
+      '#dn-cmdk-input{width:100%;padding:18px 20px;border:0;border-bottom:1px solid var(--border,#dcd5c8);font-size:16px;outline:none;background:transparent;color:var(--ink,#2a2620);font-family:inherit}' +
+      '#dn-cmdk-results{max-height:60vh;overflow:auto;padding:8px 0}' +
+      '#dn-cmdk-results .row{display:flex;flex-direction:column;gap:2px;padding:10px 20px;cursor:pointer;border-left:3px solid transparent;text-decoration:none;color:var(--ink,#2a2620)}' +
+      '#dn-cmdk-results .row.active{background:var(--mint-soft,#dcd9d1);border-left-color:var(--teal-deep,#4d6358)}' +
+      '#dn-cmdk-results .row .t{font-family:"Noto Serif TC",Georgia,serif;font-size:14.5px;font-weight:600;line-height:1.4}' +
+      '#dn-cmdk-results .row .m{font-size:11.5px;color:var(--muted,#8b8378);font-family:Inter,monospace;letter-spacing:.06em}' +
+      '#dn-cmdk-empty{padding:24px;text-align:center;font-size:13px;color:var(--muted,#8b8378)}' +
+      '#dn-cmdk-foot{padding:10px 20px;border-top:1px solid var(--border,#dcd5c8);font-size:11px;color:var(--muted,#8b8378);font-family:Inter,monospace;letter-spacing:.04em;display:flex;gap:14px;flex-wrap:wrap;background:var(--paper-deep,#ede7da)}' +
+      '#dn-cmdk-foot kbd{padding:1px 6px;border:1px solid var(--border,#dcd5c8);border-radius:3px;background:#fff;font-family:inherit;font-size:10.5px}';
+    document.head.appendChild(st);
+
+    var overlay = document.createElement('div');
+    overlay.id = 'dn-cmdk-overlay';
+    overlay.innerHTML =
+      '<div id="dn-cmdk-modal" role="dialog" aria-label="搜尋">' +
+        '<input id="dn-cmdk-input" type="text" placeholder="搜尋文章 / 主題 / 量表⋯ (按 Esc 關閉)" autocomplete="off" spellcheck="false" />' +
+        '<div id="dn-cmdk-results"></div>' +
+        '<div id="dn-cmdk-foot"><span><kbd>↑</kbd><kbd>↓</kbd> 移動</span><span><kbd>Enter</kbd> 開啟</span><span><kbd>Esc</kbd> 關閉</span></div>' +
+      '</div>';
+    document.body.appendChild(overlay);
+
+    var input = overlay.querySelector('#dn-cmdk-input');
+    var results = overlay.querySelector('#dn-cmdk-results');
+    var activeIdx = 0;
+    var currentMatches = [];
+
+    function buildIndex() {
+      var idx = [];
+      // From DN.ARTICLES
+      (DN.ARTICLES || []).forEach(function (a) {
+        idx.push({
+          title: a.title || a.slug,
+          meta: (a.tag || '') + ' · ' + (a.date || ''),
+          url: '/blog/' + a.slug,
+          search: ((a.title || '') + ' ' + (a.tag || '') + ' ' + (a.tag_en || '') + ' ' + a.slug).toLowerCase()
+        });
+      });
+      // Tools / glossary / about / dashboard quick-jumps
+      [
+        { title: '量表計算器', meta: 'Tools · 15 個臨床量表', url: '/tools', search: 'tools 量表 計算 scorad pasi dlqi' },
+        { title: '醫學詞彙白話字典', meta: 'Glossary', url: '/glossary', search: 'glossary 詞彙 字典 名詞' },
+        { title: '主題地圖', meta: 'Topic Map', url: '/blog/topics', search: 'topics 主題 地圖' },
+        { title: '關於作者', meta: 'About', url: '/about', search: 'about 作者 陳翊嘉' },
+        { title: '衛教文章索引', meta: 'Articles', url: '/blog/', search: 'blog articles 文章 索引' },
+      ].forEach(function (it) { idx.push(it); });
+      return idx;
+    }
+    var INDEX = null;
+
+    function open() {
+      if (!INDEX) INDEX = buildIndex();
+      overlay.classList.add('open');
+      input.value = '';
+      input.focus();
+      render('');
+    }
+    function close() {
+      overlay.classList.remove('open');
+    }
+    function render(q) {
+      q = (q || '').toLowerCase().trim();
+      var matches;
+      if (!q) {
+        matches = INDEX.slice(0, 8);
+      } else {
+        matches = INDEX
+          .map(function (it) { return { it: it, s: it.search.indexOf(q) >= 0 ? (it.search.indexOf(q) === 0 ? 100 : 50) : (q.split('').every(function (c) { return it.search.indexOf(c) >= 0; }) ? 1 : 0) }; })
+          .filter(function (x) { return x.s > 0; })
+          .sort(function (x, y) { return y.s - x.s; })
+          .slice(0, 10)
+          .map(function (x) { return x.it; });
+      }
+      currentMatches = matches;
+      activeIdx = 0;
+      if (matches.length === 0) {
+        results.innerHTML = '<div id="dn-cmdk-empty">找不到符合的內容</div>';
+        return;
+      }
+      results.innerHTML = matches.map(function (m, i) {
+        return '<a class="row' + (i === 0 ? ' active' : '') + '" href="' + m.url + '" data-idx="' + i + '">' +
+          '<span class="t">' + m.title + '</span>' +
+          '<span class="m">' + (m.meta || '') + '</span>' +
+        '</a>';
+      }).join('');
+    }
+    function setActive(i) {
+      activeIdx = Math.max(0, Math.min(currentMatches.length - 1, i));
+      var rows = results.querySelectorAll('.row');
+      rows.forEach(function (r, j) { r.classList.toggle('active', j === activeIdx); });
+      var act = rows[activeIdx];
+      if (act) act.scrollIntoView({ block: 'nearest' });
+    }
+    function go() {
+      var m = currentMatches[activeIdx];
+      if (m) location.href = m.url;
+    }
+
+    input.addEventListener('input', function () { render(input.value); });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); setActive(activeIdx + 1); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(activeIdx - 1); }
+      else if (e.key === 'Enter') { e.preventDefault(); go(); }
+      else if (e.key === 'Escape') { close(); }
+    });
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) close();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        if (overlay.classList.contains('open')) close(); else open();
+      } else if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        open();
+      }
+    });
+
+    // Wire up search button in header (button[aria-label="搜尋"])
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest('button[aria-label="搜尋"]');
+      if (btn) { e.preventDefault(); open(); }
+    });
+  };
+
+  // -----------------------------------------------------------------------
+  // Dark Mode — prefers-color-scheme auto + manual toggle (☀ ↔ 🌙)
+  // Persists choice to localStorage. Overrides --bg/--ink/--surface tokens.
+  // -----------------------------------------------------------------------
+  DN.initDarkMode = function () {
+    if (document.getElementById('dn-dark-style')) return;
+    var st = document.createElement('style');
+    st.id = 'dn-dark-style';
+    st.textContent =
+      ':root[data-theme="dark"] { --bg:#1f1c17; --surface:#27231d; --ink:#ede7da; --ink-2:#c9c2b3; --muted:#8b8378; --teal:#a4b5a8; --teal-deep:#c9d6cf; --teal-bright:#7a9285; --mint-soft:#3a352c; --border:#3a352c; --line:#2e2924; }' +
+      ':root[data-theme="dark"] body{ background:var(--bg); color:var(--ink); }' +
+      ':root[data-theme="dark"] body::before{ background:radial-gradient(800px 500px at 12% -8%, rgba(164,181,168,.08), transparent 60%), linear-gradient(180deg,#1f1c17 0%, #27231d 40%, #1f1c17 100%) !important; }' +
+      ':root[data-theme="dark"] .card, :root[data-theme="dark"] .mag-card, :root[data-theme="dark"] .cv-card{ background:var(--surface); }' +
+      ':root[data-theme="dark"] header.sticky{ background:rgba(31,28,23,.92) !important; }' +
+      ':root[data-theme="dark"] .hover\\:bg-mint-100:hover{ background:#3a352c !important; }' +
+      ':root[data-theme="dark"] .text-ink-700, :root[data-theme="dark"] .text-ink-900{ color:var(--ink) !important; }' +
+      ':root[data-theme="dark"] .text-ink-500{ color:var(--ink-2) !important; }' +
+      ':root[data-theme="dark"] .text-teal-700{ color:var(--teal-deep) !important; }' +
+      ':root[data-theme="dark"] .bg-mint-50, :root[data-theme="dark"] .bg-mint-100{ background:var(--surface) !important; }' +
+      ':root[data-theme="dark"] .bg-white{ background:var(--surface) !important; }' +
+      ':root[data-theme="dark"] [style*="background:#fff"], :root[data-theme="dark"] [style*="background:#FFFFFF"]{ background:var(--surface) !important; }' +
+      '#dn-theme-toggle{ background:transparent; border:1px solid var(--border); border-radius:9999px; width:32px;height:32px;padding:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:14px;line-height:1;transition:background .15s,border-color .15s;color:var(--ink) }' +
+      '#dn-theme-toggle:hover{ background:var(--mint-soft); border-color:var(--teal-deep); }' +
+      '@media (prefers-reduced-motion: no-preference){ html { transition:background-color .25s, color .25s } }';
+    document.head.appendChild(st);
+
+    function getPref() {
+      try { return localStorage.getItem('dn-theme'); } catch (e) { return null; }
+    }
+    function setPref(v) {
+      try { v ? localStorage.setItem('dn-theme', v) : localStorage.removeItem('dn-theme'); } catch (e) {}
+    }
+    function detect() {
+      var saved = getPref();
+      if (saved === 'dark' || saved === 'light') return saved;
+      return (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    }
+    function apply(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      var btn = document.getElementById('dn-theme-toggle');
+      if (btn) {
+        btn.textContent = theme === 'dark' ? '☀' : '🌙';
+        btn.setAttribute('aria-label', theme === 'dark' ? '切換到亮色' : '切換到暗色');
+      }
+    }
+    apply(detect());
+
+    // Inject toggle next to language switch
+    var injected = false;
+    function inject() {
+      if (injected) return;
+      var langSel = document.getElementById('langToggle');
+      if (!langSel) return;
+      var btn = document.createElement('button');
+      btn.id = 'dn-theme-toggle';
+      btn.type = 'button';
+      btn.setAttribute('aria-label', '切換主題');
+      btn.textContent = detect() === 'dark' ? '☀' : '🌙';
+      btn.addEventListener('click', function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        var next = cur === 'dark' ? 'light' : 'dark';
+        setPref(next);
+        apply(next);
+      });
+      langSel.parentNode.insertBefore(btn, langSel);
+      injected = true;
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', inject);
+    } else {
+      inject();
+    }
+
+    // Sync with system theme changes (only if no manual pref)
+    if (window.matchMedia) {
+      matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+        if (!getPref()) apply(e.matches ? 'dark' : 'light');
+      });
+    }
+  };
+
+  // -----------------------------------------------------------------------
   // Prefetch popular articles on idle (improves next-page LCP)
   // Only same-origin links visible in viewport that haven't been visited.
   // -----------------------------------------------------------------------
@@ -2281,6 +2499,8 @@
     DN.bindRevealOnScroll();
     DN.prefetchOnIdle();
     DN.bindViewTransitions();
+    DN.initCmdK();
+    DN.initDarkMode();
 
     // Article-only enhancements (auto-detect via .prose presence)
     if (document.getElementById('proseZh') || document.querySelector('article .prose')) {

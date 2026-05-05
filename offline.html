@@ -70,14 +70,6 @@
   /* Avoid horizontal scroll bleeds */
   html, body { overflow-x: hidden; }
 </style>
-<!-- ===== Google Analytics 4 ===== -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFF3L5QD10"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XFF3L5QD10', { 'anonymize_ip': true });
-</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -101,6 +93,42 @@
 <script>
   // Auto-reload when back online
   window.addEventListener('online', () => location.reload());
+</script>
+
+<!-- ===== Deferred 3rd-party (loaded after first paint) ===== -->
+<script>
+(function(){
+  function load() {
+    // AdSense
+    var ad = document.createElement("script");
+    ad.async = true;
+    ad.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663";
+    ad.crossOrigin = "anonymous";
+    document.head.appendChild(ad);
+
+    // Clarity
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wkvhe0mf7y");
+
+    // GA4
+    var ga = document.createElement("script");
+    ga.async = true;
+    ga.src = "https://www.googletagmanager.com/gtag/js?id=G-XFF3L5QD10";
+    document.head.appendChild(ga);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", "G-XFF3L5QD10", {anonymize_ip: true});
+  }
+  // Load 3rd-party after first paint (idle callback or 1s fallback)
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(load, { timeout: 2500 });
+  } else {
+    setTimeout(load, 1500);
+  }
+})();
 </script>
 </body>
 </html>

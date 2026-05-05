@@ -14,7 +14,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap&text=陳翊嘉醫師皮膚科衛教筆記常見疾病迷思澄清關於我學經歷" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   *{ box-sizing:border-box; }
   html,body{ margin:0; padding:0; height:100%; font-family:'Inter','Noto Sans TC','Microsoft JhengHei',sans-serif; background:#f5fbfa; color:#0f172a; overflow:hidden; }
@@ -666,6 +666,42 @@ window.addEventListener('beforeunload', e=>{
 
 // init
 loadPat();
+</script>
+
+<!-- ===== Deferred 3rd-party (loaded after first paint) ===== -->
+<script>
+(function(){
+  function load() {
+    // AdSense
+    var ad = document.createElement("script");
+    ad.async = true;
+    ad.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663";
+    ad.crossOrigin = "anonymous";
+    document.head.appendChild(ad);
+
+    // Clarity
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wkvhe0mf7y");
+
+    // GA4
+    var ga = document.createElement("script");
+    ga.async = true;
+    ga.src = "https://www.googletagmanager.com/gtag/js?id=G-XFF3L5QD10";
+    document.head.appendChild(ga);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", "G-XFF3L5QD10", {anonymize_ip: true});
+  }
+  // Load 3rd-party after first paint (idle callback or 1s fallback)
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(load, { timeout: 2500 });
+  } else {
+    setTimeout(load, 1500);
+  }
+})();
 </script>
 </body>
 </html>

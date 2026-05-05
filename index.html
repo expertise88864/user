@@ -59,31 +59,11 @@
 <meta name="twitter:image" content="https://chendermatologist.com/logo-512.png" />
 
 <!-- ===== Google AdSense ===== -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663" crossorigin="anonymous"></script>
-<meta name="google-adsense-account" content="ca-pub-8223268344248663">
-
-<!-- ===== Microsoft Clarity ===== -->
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "wkvhe0mf7y");
-</script>
-
-<!-- ===== Google Analytics 4 ===== -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFF3L5QD10"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XFF3L5QD10', { 'anonymize_ip': true });
-</script>
-
+<meta name="google-adsense-account" content="ca-pub-8223268344248663" />
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap&text=陳翊嘉醫師皮膚科衛教筆記常見疾病迷思澄清關於我學經歷" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -532,13 +512,6 @@
   </defs>
 </svg>
 <section class="mag-hero">
-  <div class="mag-hero-meta">
-    <span data-zh="Vol.05" data-en="Vol.05">Vol.05</span>
-    <span class="mag-hero-meta-dot">·</span>
-    <span data-zh="2026 春季號" data-en="2026 Spring">2026 春季號</span>
-    <span class="mag-hero-meta-dot">·</span>
-    <span data-zh="32 篇衛教 · 15 個量表" data-en="32 articles · 15 calculators">32 篇衛教 · 15 個量表</span>
-  </div>
   <div class="mag-hero-grid">
     <div>
       <div class="mag-eyebrow" data-zh="皮膚科衛教筆記" data-en="Dermatology Patient-Education Notes">皮膚科衛教筆記</div>
@@ -1196,11 +1169,11 @@
   <div class="mag-foot-bot">
     <span>© <span id="yr">2026</span> Chen, Yi-Jia M.D. · <span data-zh="皮膚科衛教筆記" data-en="Dermatology Notes">皮膚科衛教筆記</span></span>
     <span data-zh="Made with patience, in Taiwan." data-en="Made with patience, in Taiwan.">Made with patience, in Taiwan.</span>
-    <!-- build 2026-05-13 02:00 (R18: 還原原版設計 + 套用雜誌風 Hero(上)+ Magazine Footer(下),沿用原色調 paper cream + warm teal #4d6358 + 中段保留原本 #dn-hub / #articles / FAQ | SW v44) -->
+    <!-- build 2026-05-13 04:00 (R19: 速度大優化 — 字體 weight 13→6(省 ~180KB)、AdSense/Clarity/GA4 從 head 移到 requestIdleCallback(避免阻塞 first paint)、Hero 砍 Vol.05 meta;新功能:Cmd+K 全文搜尋(Ctrl+K)+ Dark mode toggle(🌙) + R2 標籤移除 | SW v46) -->
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605130300" defer></script>
+<script src="/blog/blog-shared.js?v=202605130400" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (window.DN) DN.initBlog({});
@@ -1270,6 +1243,42 @@
       });
     }
   });
+</script>
+
+<!-- ===== Deferred 3rd-party (loaded after first paint) ===== -->
+<script>
+(function(){
+  function load() {
+    // AdSense
+    var ad = document.createElement("script");
+    ad.async = true;
+    ad.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663";
+    ad.crossOrigin = "anonymous";
+    document.head.appendChild(ad);
+
+    // Clarity
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wkvhe0mf7y");
+
+    // GA4
+    var ga = document.createElement("script");
+    ga.async = true;
+    ga.src = "https://www.googletagmanager.com/gtag/js?id=G-XFF3L5QD10";
+    document.head.appendChild(ga);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", "G-XFF3L5QD10", {anonymize_ip: true});
+  }
+  // Load 3rd-party after first paint (idle callback or 1s fallback)
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(load, { timeout: 2500 });
+  } else {
+    setTimeout(load, 1500);
+  }
+})();
 </script>
 </body>
 </html>
