@@ -1913,11 +1913,10 @@
           '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#4d6358;font-weight:700;margin-bottom:4px" data-zh="關於作者" data-en="About the author">關於作者</div>' +
           '<div style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#0f172a;margin-bottom:6px">' +
             '<span data-zh="陳翊嘉 醫師" data-en="Dr. Chen Yi-Chia, M.D.">陳翊嘉 醫師</span>' +
-            '<span style="font-size:12px;font-weight:600;color:#4d6358;margin-left:8px;padding:2px 8px;border-radius:6px;background:#fff;border:1px solid #a5f3fc;font-family:Inter,sans-serif" data-zh="皮膚科 R2" data-en="Dermatology PGY-2">皮膚科 R2</span>' +
           '</div>' +
-          '<div style="font-size:13px;color:#334155;line-height:1.85" data-zh="<strong>現職</strong>:皮膚科 住院醫師(R2)<br/>' +
+          '<div style="font-size:13px;color:#334155;line-height:1.85" data-zh="<strong>現職</strong>:皮膚科 住院醫師<br/>' +
             '<strong>學歷</strong>:高雄醫學大學醫學系 醫學士(M.D.)<br/>' +
-            '<strong>訓練</strong>:高雄醫學大學附設中和紀念醫院 不分科住院醫師(PGY)" data-en="<strong>Current</strong>: Dermatology Resident (PGY-2)<br/><strong>Education</strong>: M.D., Kaohsiung Medical University, College of Medicine<br/><strong>Training</strong>: Kaohsiung Medical University Hospital, Post-Graduate Year (rotating)"><strong>現職</strong>:皮膚科 住院醫師(R2)<br/><strong>學歷</strong>:高雄醫學大學醫學系 醫學士(M.D.)<br/><strong>訓練</strong>:高雄醫學大學附設中和紀念醫院 不分科住院醫師(PGY)</div>' +
+            '<strong>訓練</strong>:高雄醫學大學附設中和紀念醫院 不分科住院醫師(PGY)" data-en="<strong>Current</strong>: Dermatology Resident<br/><strong>Education</strong>: M.D., Kaohsiung Medical University, College of Medicine<br/><strong>Training</strong>: Kaohsiung Medical University Hospital, Post-Graduate Year (rotating)"><strong>現職</strong>:皮膚科 住院醫師<br/><strong>學歷</strong>:高雄醫學大學醫學系 醫學士(M.D.)<br/><strong>訓練</strong>:高雄醫學大學附設中和紀念醫院 不分科住院醫師(PGY)</div>' +
           '<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">' +
             '<a href="/about" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#0e7c86;color:#fff;text-decoration:none" data-zh="關於我" data-en="About">關於我 →</a>' +
             '<a href="/tools" style="padding:5px 12px;border-radius:9999px;font-size:12px;font-weight:600;background:#fff;color:#4d6358;border:1px solid #a5f3fc;text-decoration:none" data-zh="量表計算器" data-en="Calculators">量表計算器 →</a>' +
