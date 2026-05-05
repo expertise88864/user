@@ -105,7 +105,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=3" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=4" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -145,14 +145,16 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </header>
 <style>
-  /* Header navigation — flat, no dropdown */
-  .dn-nav{display:flex;align-items:center;gap:4px;flex-shrink:0}
-  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
+  /* Header navigation — flat, right-aligned, tight spacing */
+  .dn-nav{display:flex;align-items:center;gap:2px;flex-shrink:0;margin-left:auto}
+  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 11px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
   .dn-nav-link:hover{background:var(--mint-100,#eaf6f3);color:#0e7c86}
-  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s}
+  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s;padding:0}
   .dn-nav-icon:hover{background:var(--mint-100,#eaf6f3)}
   .dn-nav-icon[id="dn-nav-support"]{color:#0c5159}
-  .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0}
+  /* Compact lang select — match icon button dimensions */
+  .dn-nav .lang-select{margin:0 0 0 2px;padding:6px 22px 6px 10px;height:32px;font-size:11.5px;background-position:right 8px center;background-size:7px 5px}
+  .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0;margin-left:auto}
   .dn-nav-burger:hover{background:var(--mint-100,#eaf6f3)}
   /* Mobile: hide flat nav, show burger */
   @media (max-width:899px){
@@ -636,11 +638,11 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 <h2 class="faq-section-title">參考資料</h2>
 <ol class="references">
   <li>臺灣皮膚科醫學會(TDA)各疾病臨床診療共識：痤瘡(2024)、異位性皮膚炎(2020)、玫瑰斑(2022)、乾癬(2024)、圓禿(2024)、蕁麻疹(2021)、白斑(2024)、化膿性汗腺炎、帶狀疱疹疫苗接種建議(2022)、猴痘皮膚照護指引、TKI 標靶藥物皮膚毒性(2024)。</li>
-  <li>Zaenglein AL, et al. Guidelines of care for the management of acne vulgaris. <em>J Am Acad Dermatol</em>. 2016;74(5):945-973. <a href="https://pubmed.ncbi.nlm.nih.gov/26897386/" target="_blank" rel="noopener">[來源]</a></li>
-  <li>Wollenberg A, et al. ETFAD/EADV Eczema task force 2020 position paper. <em>JEADV</em>. 2020. <a href="https://pubmed.ncbi.nlm.nih.gov/33205485/" target="_blank" rel="noopener">[來源]</a></li>
-  <li>Long CC, Finlay AY. The finger-tip unit. <em>Clin Exp Dermatol</em>. 1991;16(6):444-447. <a href="https://pubmed.ncbi.nlm.nih.gov/1806320/" target="_blank" rel="noopener">[來源]</a></li>
+  <li>Zaenglein AL, et al. Guidelines of care for the management of acne vulgaris. <em>J Am Acad Dermatol</em>. 2016;74(5):945-973. <a href="https://pubmed.ncbi.nlm.nih.gov/26897386/" target="_blank" rel="noopener">「來源」</a></li>
+  <li>Wollenberg A, et al. ETFAD/EADV Eczema task force 2020 position paper. <em>JEADV</em>. 2020. <a href="https://pubmed.ncbi.nlm.nih.gov/33205485/" target="_blank" rel="noopener">「來源」</a></li>
+  <li>Long CC, Finlay AY. The finger-tip unit. <em>Clin Exp Dermatol</em>. 1991;16(6):444-447. <a href="https://pubmed.ncbi.nlm.nih.gov/1806320/" target="_blank" rel="noopener">「來源」</a></li>
   <li>UpToDate: Patient education topics in dermatology (multiple chapters). Accessed 2026.</li>
-  <li>衛福部食藥署 — 各處方藥仿單 <a href="https://www.fda.gov.tw/" target="_blank" rel="noopener">[來源]</a></li>
+  <li>衛福部食藥署 — 各處方藥仿單 <a href="https://www.fda.gov.tw/" target="_blank" rel="noopener">「來源」</a></li>
 </ol>
 
 </div>
@@ -776,7 +778,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605140500" defer></script>
+<script src="/blog/blog-shared.js?v=202605140600" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});</script>
 
 <!-- ===== Deferred 3rd-party (loaded after first paint) ===== -->

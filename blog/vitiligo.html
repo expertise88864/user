@@ -94,7 +94,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 {"@context":"https://schema.org","@type":"MedicalWebPage","url":"https://chendermatologist.com/blog/vitiligo","inLanguage":["zh-TW","en"],"name":"白斑（Vitiligo）完整衛教","audience":{"@type":"MedicalAudience","audienceType":"Patient"},"lastReviewed":"2026-05-04","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1","h2",".tldr"]},"keywords":"白斑,Vitiligo,Ruxolitinib,JAK,NB-UVB","articleSection":"Dermatology Patient Education","about":{"@type":"MedicalCondition","name":"白斑","alternateName":["白斑","Vitiligo"],"code":{"@type":"MedicalCode","code":"L80","codingSystem":"ICD-10"}},"isPartOf":{"@type":"WebSite","name":"ChenDermatologist","url":"https://chendermatologist.com/"}}
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"白斑會傳染嗎？","acceptedAnswer":{"@type":"Answer","text":"不會。白斑是自體免疫疾病，不是感染症。家人共用毛巾、衣物、共住完全不會傳染。"}},{"@type":"Question","name":"白斑會不會自己好？","acceptedAnswer":{"@type":"Answer","text":"少數白斑可自然色素再生（約 10-20%），尤其臉部、年輕、發病不久者。但多數不治療會逐漸擴大。建議積極治療。"}},{"@type":"Question","name":"白斑健保有給付什麼？","acceptedAnswer":{"@type":"Answer","text":"健保有給付：外用皮質類固醇、外用 Tacrolimus（普特皮）/ Pimecrolimus（醫立妥）— 屬適應症外使用但臨床常用、口服類固醇、Methotrexate 等。不給付:Ruxolitinib (Opzelura)、308-nm Excimer 雷射、NB-UVB 光療（部分醫學中心有給付特定狀況）、外科治療。"}},{"@type":"Question","name":"白斑可以曬太陽嗎？","acceptedAnswer":{"@type":"Answer","text":"白斑區域沒有黑色素保護，容易曬傷且 UV 反而可能誘發更多病灶（科伯納現象 Koebner phenomenon）。建議：白斑區域嚴格防曬（SPF 50+ 物理性）；治療型 UVB 是另一回事 — 在皮膚科精準控制下使用。"}},{"@type":"Question","name":"白斑跟異膚或乾癬有關嗎？","acceptedAnswer":{"@type":"Answer","text":"不直接相關，但都是免疫失調家族。共病風險：甲狀腺疾病、Type 1 糖尿病、紅斑性狼瘡、惡性貧血、Addison's disease。建議白斑病人定期篩檢甲狀腺功能。"}},{"@type":"Question","name":"白斑可以化妝遮蓋嗎？","acceptedAnswer":{"@type":"Answer","text":"可以。偽裝化妝（camouflage makeup）是合理的補充策略，如 Dermablend、Cover FX、Vichy Dermablend Pro。仿曬產品（DHA self-tanner）也可染色覆蓋,4-7 天會褪。"}}]}</script>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=3" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=4" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -134,14 +134,16 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </header>
 <style>
-  /* Header navigation — flat, no dropdown */
-  .dn-nav{display:flex;align-items:center;gap:4px;flex-shrink:0}
-  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
+  /* Header navigation — flat, right-aligned, tight spacing */
+  .dn-nav{display:flex;align-items:center;gap:2px;flex-shrink:0;margin-left:auto}
+  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 11px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
   .dn-nav-link:hover{background:var(--mint-100,#eaf6f3);color:#0e7c86}
-  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s}
+  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s;padding:0}
   .dn-nav-icon:hover{background:var(--mint-100,#eaf6f3)}
   .dn-nav-icon[id="dn-nav-support"]{color:#0c5159}
-  .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0}
+  /* Compact lang select — match icon button dimensions */
+  .dn-nav .lang-select{margin:0 0 0 2px;padding:6px 22px 6px 10px;height:32px;font-size:11.5px;background-position:right 8px center;background-size:7px 5px}
+  .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0;margin-left:auto}
   .dn-nav-burger:hover{background:var(--mint-100,#eaf6f3)}
   /* Mobile: hide flat nav, show burger */
   @media (max-width:899px){
@@ -403,10 +405,10 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 <h2 id="refs">參考資料</h2>
 <ol class="references">
   <li>臺灣皮膚科醫學會。 <em>白斑臨床治療共識</em>. 2024.</li>
-  <li>Rosmarin D, et al. Two phase 3, randomized, controlled trials of ruxolitinib cream for vitiligo. <em>N Engl J Med</em>. 2022;387(16):1445-1455. <a href="https://pubmed.ncbi.nlm.nih.gov/36260792/" target="_blank" rel="noopener">[來源]</a></li>
-  <li>van Geel N, Speeckaert R. Segmental vitiligo. <em>Dermatol Clin</em>. 2017;35(2):145-150. <a href="https://pubmed.ncbi.nlm.nih.gov/28317524/" target="_blank" rel="noopener">[來源]</a></li>
-  <li>Ezzedine K, et al. Vitiligo. <em>Lancet</em>. 2015;386(9988):74-84. <a href="https://pubmed.ncbi.nlm.nih.gov/25596811/" target="_blank" rel="noopener">[來源]</a></li>
-  <li>UpToDate: Vitiligo — Management and prognosis. Accessed 2026. <a href="https://www.uptodate.com/contents/vitiligo-management-and-prognosis" target="_blank" rel="noopener">[來源]</a></li>
+  <li>Rosmarin D, et al. Two phase 3, randomized, controlled trials of ruxolitinib cream for vitiligo. <em>N Engl J Med</em>. 2022;387(16):1445-1455. <a href="https://pubmed.ncbi.nlm.nih.gov/36260792/" target="_blank" rel="noopener">「來源」</a></li>
+  <li>van Geel N, Speeckaert R. Segmental vitiligo. <em>Dermatol Clin</em>. 2017;35(2):145-150. <a href="https://pubmed.ncbi.nlm.nih.gov/28317524/" target="_blank" rel="noopener">「來源」</a></li>
+  <li>Ezzedine K, et al. Vitiligo. <em>Lancet</em>. 2015;386(9988):74-84. <a href="https://pubmed.ncbi.nlm.nih.gov/25596811/" target="_blank" rel="noopener">「來源」</a></li>
+  <li>UpToDate: Vitiligo — Management and prognosis. Accessed 2026. <a href="https://www.uptodate.com/contents/vitiligo-management-and-prognosis" target="_blank" rel="noopener">「來源」</a></li>
 </ol>
 
 </div>
@@ -510,7 +512,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605140500" defer></script>
+<script src="/blog/blog-shared.js?v=202605140600" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});</script>
 
 <!-- ===== Deferred 3rd-party (loaded after first paint) ===== -->

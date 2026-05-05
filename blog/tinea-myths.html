@@ -146,7 +146,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   html, body { overflow-x: hidden; }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"香港腳 PTT 推薦的藥膏哪個有效？","acceptedAnswer":{"@type":"Answer","text":"有實證的處方/OTC 抗黴菌藥膏:Lamisil(Terbinafine 1%)、Lotrimin(Clotrimazole 1%)、Loceryl(Amorolfine)、Mentax(Butenafine)。Terbinafine 是最強的，2-4 週可見效。網路推薦的「天然茶樹精油、白醋泡腳」效果有限且易刺激。重點：擦藥要連續 2-4 週，症狀消失後再多擦 1 週避免復發。"}},{"@type":"Question","name":"灰指甲多久會好？","acceptedAnswer":{"@type":"Answer","text":"口服 Terbinafine 250 mg/天：足甲 6 週、趾甲 12 週療程，新指甲長出來看到變化要 6-9 個月（指甲生長慢）。外用藥（Efinaconazole、Tavaborole 油劑、Loceryl 指甲油）效果較弱，需要 48 週每天擦。中重度建議口服 + 外用合併。"}},{"@type":"Question","name":"口服抗黴菌藥真的會傷肝嗎？","acceptedAnswer":{"@type":"Answer","text":"嚴重肝毒性 。多數人安全。建議治療前抽血基本(GOT/GPT、Cr)，療程中第 4-6 週追蹤一次。輕度肝指數上升常為暫時性。Itraconazole對心臟衰竭、抗凝血藥、降血壓藥較多交互作用，優先選 Terbinafine。"}},{"@type":"Question","name":"寵物會傳黴菌給人嗎？","acceptedAnswer":{"@type":"Answer","text":"會。最常見是Microsporum canis（犬小芽胞菌）從貓狗（尤其幼貓）傳給小孩，造成體癬或頭癬。處理：寵物看獸醫治療 + 家裡環境清潔（吸塵、毛巾換洗）+ 自己抗黴菌藥膏。"}},{"@type":"Question","name":"灰指甲健保給付什麼？","acceptedAnswer":{"@type":"Answer","text":"健保：口服 Terbinafine、Itraconazole 都有條件給付（需確診+真菌培養或 KOH 陽性）。外用 Amorolfine（羅每樂）健保也有，但效果較弱。自費：Efinaconazole、雷射（Nd:YAG 灰指甲雷射）。健保藥已涵蓋多數需求，自費主要是怕口服肝毒性的特殊族群。"}}]}</script>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=3" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=4" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -186,14 +186,16 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </header>
 <style>
-  /* Header navigation — flat, no dropdown */
-  .dn-nav{display:flex;align-items:center;gap:4px;flex-shrink:0}
-  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
+  /* Header navigation — flat, right-aligned, tight spacing */
+  .dn-nav{display:flex;align-items:center;gap:2px;flex-shrink:0;margin-left:auto}
+  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 11px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
   .dn-nav-link:hover{background:var(--mint-100,#eaf6f3);color:#0e7c86}
-  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s}
+  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s;padding:0}
   .dn-nav-icon:hover{background:var(--mint-100,#eaf6f3)}
   .dn-nav-icon[id="dn-nav-support"]{color:#0c5159}
-  .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0}
+  /* Compact lang select — match icon button dimensions */
+  .dn-nav .lang-select{margin:0 0 0 2px;padding:6px 22px 6px 10px;height:32px;font-size:11.5px;background-position:right 8px center;background-size:7px 5px}
+  .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0;margin-left:auto}
   .dn-nav-burger:hover{background:var(--mint-100,#eaf6f3)}
   /* Mobile: hide flat nav, show burger */
   @media (max-width:899px){
@@ -506,14 +508,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
 <h2 id="refs">參考資料</h2>
 <ol class="references">
-<li><strong>Ameen M, et al. British Association of Dermatologists' guidelines for the management of onychomycosis 2014.</strong> <em>Br J Dermatol</em>. 2014;171(5):937-958. <a href="https://pubmed.ncbi.nlm.nih.gov/25409999/" target="_blank" rel="noopener">[來源]</a></li>
-<li>Crawford F, Hollis S. Topical treatments for fungal infections of the skin and nails of the foot. <em>Cochrane Database Syst Rev</em>. 2007;(3):CD001434. <a href="https://pubmed.ncbi.nlm.nih.gov/17636672/" target="_blank" rel="noopener">[來源]</a></li>
-<li>Gupta AK, et al. Treatments for onychomycosis. <em>Cochrane Database Syst Rev</em>. 2017;7(7):CD012093. <a href="https://pubmed.ncbi.nlm.nih.gov/28741274/" target="_blank" rel="noopener">[來源]</a></li>
-<li><strong>Gupta AK, et al. Onychomycosis: a review.</strong> <em>J Eur Acad Dermatol Venereol</em>. 2020;34(9):1972-1990. <a href="https://pubmed.ncbi.nlm.nih.gov/32239567/" target="_blank" rel="noopener">[來源]</a></li>
-<li><strong>Foley K, et al. Topical and device-based treatments for fungal infections of the toenails — Cochrane review (updated 2020).</strong> <em>Cochrane Database Syst Rev</em>. 2020;1(1):CD012093. <a href="https://pubmed.ncbi.nlm.nih.gov/31978269/" target="_blank" rel="noopener">[來源]</a></li>
-<li><strong>Gupta AK, et al. Trichophyton indotineae — emerging dermatophyte resistant to terbinafine.</strong> <em>JAAD Int</em>. 2023;13:1-3. <a href="https://pubmed.ncbi.nlm.nih.gov/37711204/" target="_blank" rel="noopener">[來源]</a></li>
-<li>Nenoff P, et al. Mycology — an update. Part 1: Dermatomycoses (S2k guideline). <em>J Dtsch Dermatol Ges</em>. 2014;12(3):188-209. <a href="https://pubmed.ncbi.nlm.nih.gov/24533779/" target="_blank" rel="noopener">[來源]</a></li>
-<li>UpToDate: Onychomycosis: Management. Accessed 2026. <a href="https://www.uptodate.com/contents/onychomycosis-management" target="_blank" rel="noopener">[來源]</a></li>
+<li><strong>Ameen M, et al. British Association of Dermatologists' guidelines for the management of onychomycosis 2014.</strong> <em>Br J Dermatol</em>. 2014;171(5):937-958. <a href="https://pubmed.ncbi.nlm.nih.gov/25409999/" target="_blank" rel="noopener">「來源」</a></li>
+<li>Crawford F, Hollis S. Topical treatments for fungal infections of the skin and nails of the foot. <em>Cochrane Database Syst Rev</em>. 2007;(3):CD001434. <a href="https://pubmed.ncbi.nlm.nih.gov/17636672/" target="_blank" rel="noopener">「來源」</a></li>
+<li>Gupta AK, et al. Treatments for onychomycosis. <em>Cochrane Database Syst Rev</em>. 2017;7(7):CD012093. <a href="https://pubmed.ncbi.nlm.nih.gov/28741274/" target="_blank" rel="noopener">「來源」</a></li>
+<li><strong>Gupta AK, et al. Onychomycosis: a review.</strong> <em>J Eur Acad Dermatol Venereol</em>. 2020;34(9):1972-1990. <a href="https://pubmed.ncbi.nlm.nih.gov/32239567/" target="_blank" rel="noopener">「來源」</a></li>
+<li><strong>Foley K, et al. Topical and device-based treatments for fungal infections of the toenails — Cochrane review (updated 2020).</strong> <em>Cochrane Database Syst Rev</em>. 2020;1(1):CD012093. <a href="https://pubmed.ncbi.nlm.nih.gov/31978269/" target="_blank" rel="noopener">「來源」</a></li>
+<li><strong>Gupta AK, et al. Trichophyton indotineae — emerging dermatophyte resistant to terbinafine.</strong> <em>JAAD Int</em>. 2023;13:1-3. <a href="https://pubmed.ncbi.nlm.nih.gov/37711204/" target="_blank" rel="noopener">「來源」</a></li>
+<li>Nenoff P, et al. Mycology — an update. Part 1: Dermatomycoses (S2k guideline). <em>J Dtsch Dermatol Ges</em>. 2014;12(3):188-209. <a href="https://pubmed.ncbi.nlm.nih.gov/24533779/" target="_blank" rel="noopener">「來源」</a></li>
+<li>UpToDate: Onychomycosis: Management. Accessed 2026. <a href="https://www.uptodate.com/contents/onychomycosis-management" target="_blank" rel="noopener">「來源」</a></li>
 </ol>
 
 </div>
@@ -619,7 +621,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605140500" defer></script>
+<script src="/blog/blog-shared.js?v=202605140600" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});</script>
 
 <!-- ===== Deferred 3rd-party (loaded after first paint) ===== -->

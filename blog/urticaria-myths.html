@@ -138,7 +138,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   html, body { overflow-x: hidden; }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"蕁麻疹 PTT 推薦的抗組織胺哪個好？","acceptedAnswer":{"@type":"Answer","text":"常被推薦的二代抗組織胺：Cetirizine 驅異樂、Loratadine 樂雷塔啶、Fexofenadine 艾來、Bilastine 倍立適、Levocetirizine 驅特異。多數差異不大，Bilastine 最不嗜睡，Fexofenadine 最不影響中樞。「過敏會不會導致開車不安全」選 Fexofenadine 或 Bilastine 較安全。"}},{"@type":"Question","name":"慢性蕁麻疹多久會好？","acceptedAnswer":{"@type":"Answer","text":"50% 在 1 年內、80% 在 5 年內自然緩解。少數頑固型 10 年以上。重點是「規律抗組織胺維持治療」+「找到誘發物避開」。Omalizumab（Xolair 樂無喘）對抗組織胺無效的有效率 70-80%。"}},{"@type":"Question","name":"蕁麻疹飲食要忌口什麼？","acceptedAnswer":{"@type":"Answer","text":"除非每次發作前都吃同一食物 30 分-2 小時內（明確時間相關），否則不需忌口。慢性自發性蕁麻疹根本不是 IgE 食物過敏，是肥大細胞過度活化。亂忌口造成營養不均、社交困擾。常見可能誘發物：酒精、發酵食物、海鮮、堅果（各自試 4 週看是否相關）。"}},{"@type":"Question","name":"蕁麻疹健保給付什麼？","acceptedAnswer":{"@type":"Answer","text":"健保：幾乎所有二代抗組織胺、口服類固醇（短期急性）、Omalizumab(慢性自發性蕁麻疹有條件給付 — 需符合 PASS 評估、抗組織胺無效)。自費：LTRA（白三烯受體拮抗劑）輔助、Cyclosporine 環孢素（頑固性）。"}},{"@type":"Question","name":"小孩蕁麻疹會自己好嗎？","acceptedAnswer":{"@type":"Answer","text":"多數會。兒童急性蕁麻疹通常 6 週內自行緩解（常為病毒感染後）。慢性兒童蕁麻疹較少，需排除自體免疫疾病。可使用兒童劑型抗組織胺（Cetirizine 滴劑、Loratadine 糖漿）。"}}]}</script>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=3" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=4" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -178,14 +178,16 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </header>
 <style>
-  /* Header navigation — flat, no dropdown */
-  .dn-nav{display:flex;align-items:center;gap:4px;flex-shrink:0}
-  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
+  /* Header navigation — flat, right-aligned, tight spacing */
+  .dn-nav{display:flex;align-items:center;gap:2px;flex-shrink:0;margin-left:auto}
+  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 11px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
   .dn-nav-link:hover{background:var(--mint-100,#eaf6f3);color:#0e7c86}
-  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s}
+  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s;padding:0}
   .dn-nav-icon:hover{background:var(--mint-100,#eaf6f3)}
   .dn-nav-icon[id="dn-nav-support"]{color:#0c5159}
-  .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0}
+  /* Compact lang select — match icon button dimensions */
+  .dn-nav .lang-select{margin:0 0 0 2px;padding:6px 22px 6px 10px;height:32px;font-size:11.5px;background-position:right 8px center;background-size:7px 5px}
+  .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0;margin-left:auto}
   .dn-nav-burger:hover{background:var(--mint-100,#eaf6f3)}
   /* Mobile: hide flat nav, show burger */
   @media (max-width:899px){
@@ -548,11 +550,11 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
 <h2 id="refs">參考資料</h2>
 <ol class="references">
-<li><strong>Kolkhir P, Bonnekoh H, Metz M, Maurer M. Chronic Spontaneous Urticaria: A Review.</strong> <em>JAMA</em>. 2024;332(17):1464-1477. <a href="https://pubmed.ncbi.nlm.nih.gov/39325444/" target="_blank" rel="noopener">[來源]</a></li>
-<li>Zuberbier T, et al. EAACI/GA²LEN/EuroGuiDerm/APAAACI guideline for urticaria. <em>Allergy</em>. 2022;77(3):734-766. <a href="https://pubmed.ncbi.nlm.nih.gov/34536239/" target="_blank" rel="noopener">[來源]</a></li>
-<li>Maurer M, et al. Omalizumab for chronic spontaneous urticaria. <em>N Engl J Med</em>. 2013;368(10):924-935. <a href="https://pubmed.ncbi.nlm.nih.gov/23432142/" target="_blank" rel="noopener">[來源]</a></li>
-<li>Maurer M, et al. Remibrutinib, a novel BTK inhibitor, demonstrates promising efficacy and safety in chronic spontaneous urticaria. <em>J Allergy Clin Immunol</em>. 2022;150(6):1498-1506. <a href="https://pubmed.ncbi.nlm.nih.gov/36049650/" target="_blank" rel="noopener">[來源]</a></li>
-<li>UpToDate: Chronic spontaneous urticaria: Treatment. Accessed 2026. <a href="https://www.uptodate.com/contents/chronic-spontaneous-urticaria-treatment" target="_blank" rel="noopener">[來源]</a></li>
+<li><strong>Kolkhir P, Bonnekoh H, Metz M, Maurer M. Chronic Spontaneous Urticaria: A Review.</strong> <em>JAMA</em>. 2024;332(17):1464-1477. <a href="https://pubmed.ncbi.nlm.nih.gov/39325444/" target="_blank" rel="noopener">「來源」</a></li>
+<li>Zuberbier T, et al. EAACI/GA²LEN/EuroGuiDerm/APAAACI guideline for urticaria. <em>Allergy</em>. 2022;77(3):734-766. <a href="https://pubmed.ncbi.nlm.nih.gov/34536239/" target="_blank" rel="noopener">「來源」</a></li>
+<li>Maurer M, et al. Omalizumab for chronic spontaneous urticaria. <em>N Engl J Med</em>. 2013;368(10):924-935. <a href="https://pubmed.ncbi.nlm.nih.gov/23432142/" target="_blank" rel="noopener">「來源」</a></li>
+<li>Maurer M, et al. Remibrutinib, a novel BTK inhibitor, demonstrates promising efficacy and safety in chronic spontaneous urticaria. <em>J Allergy Clin Immunol</em>. 2022;150(6):1498-1506. <a href="https://pubmed.ncbi.nlm.nih.gov/36049650/" target="_blank" rel="noopener">「來源」</a></li>
+<li>UpToDate: Chronic spontaneous urticaria: Treatment. Accessed 2026. <a href="https://www.uptodate.com/contents/chronic-spontaneous-urticaria-treatment" target="_blank" rel="noopener">「來源」</a></li>
 <li>臺灣皮膚科醫學會。 <em>蕁麻疹定義、分類、診斷暨治療共識（2021 年更新版）</em>.</li>
 </ol>
 
@@ -714,7 +716,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605140500" defer></script>
+<script src="/blog/blog-shared.js?v=202605140600" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});</script>
 
 <!-- ===== Deferred 3rd-party (loaded after first paint) ===== -->

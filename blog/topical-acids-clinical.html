@@ -136,7 +136,7 @@
   /* Avoid horizontal scroll bleeds */
   html, body { overflow-x: hidden; }
 </style>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=3" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=4" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -176,14 +176,16 @@
   </div>
 </header>
 <style>
-  /* Header navigation — flat, no dropdown */
-  .dn-nav{display:flex;align-items:center;gap:4px;flex-shrink:0}
-  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
+  /* Header navigation — flat, right-aligned, tight spacing */
+  .dn-nav{display:flex;align-items:center;gap:2px;flex-shrink:0;margin-left:auto}
+  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 11px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
   .dn-nav-link:hover{background:var(--mint-100,#eaf6f3);color:#0e7c86}
-  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s}
+  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s;padding:0}
   .dn-nav-icon:hover{background:var(--mint-100,#eaf6f3)}
   .dn-nav-icon[id="dn-nav-support"]{color:#0c5159}
-  .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0}
+  /* Compact lang select — match icon button dimensions */
+  .dn-nav .lang-select{margin:0 0 0 2px;padding:6px 22px 6px 10px;height:32px;font-size:11.5px;background-position:right 8px center;background-size:7px 5px}
+  .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0;margin-left:auto}
   .dn-nav-burger:hover{background:var(--mint-100,#eaf6f3)}
   /* Mobile: hide flat nav, show burger */
   @media (max-width:899px){
@@ -519,13 +521,13 @@
 
 <h2 id="refs">參考資料</h2>
 <ol class="references">
-<li><strong>Reynolds RV, et al. Guidelines of care for the management of acne vulgaris (2024 AAD).</strong> <em>J Am Acad Dermatol</em>. 2024;90(5):1006.e1-e30. <a href="https://pubmed.ncbi.nlm.nih.gov/38300170/" target="_blank" rel="noopener">[來源]</a></li>
-<li>Zaenglein AL, et al. Guidelines of care for the management of acne vulgaris. <em>J Am Acad Dermatol</em>. 2016;74(5):945-973. <a href="https://pubmed.ncbi.nlm.nih.gov/26897386/" target="_blank" rel="noopener">[來源]</a></li>
-<li><strong>Mukherjee S, et al. Retinoids in the treatment of skin aging — overview of clinical efficacy and safety.</strong> <em>Clin Interv Aging</em>. 2006;1(4):327-348. <a href="https://pubmed.ncbi.nlm.nih.gov/18046911/" target="_blank" rel="noopener">[來源]</a></li>
-<li><strong>Schulte BC, et al. Azelaic acid: evidence-based update.</strong> <em>J Drugs Dermatol</em>. 2015;14(9):964-968. <a href="https://pubmed.ncbi.nlm.nih.gov/26355614/" target="_blank" rel="noopener">[來源]</a></li>
-<li><strong>Tan J, et al. Trifarotene 50 µg/g cream for moderate facial and truncal acne — phase 3 (PERFECT 1+2).</strong> <em>J Am Acad Dermatol</em>. 2019;80(6):1691-1699. <a href="https://pubmed.ncbi.nlm.nih.gov/30802558/" target="_blank" rel="noopener">[來源]</a></li>
-<li><strong>Hebert A, et al. Efficacy and safety of topical clascoterone cream 1% in adolescents and adults with acne (CB-03-01/29).</strong> <em>JAMA Dermatol</em>. 2020;156(6):621-630. <a href="https://pubmed.ncbi.nlm.nih.gov/32320027/" target="_blank" rel="noopener">[來源]</a></li>
-<li><strong>Spring LK, et al. Isotretinoin and timing of procedural interventions: 2017 ASDS consensus.</strong> <em>JAMA Dermatol</em>. 2017;153(8):802-809. <a href="https://pubmed.ncbi.nlm.nih.gov/28658475/" target="_blank" rel="noopener">[來源]</a></li>
+<li><strong>Reynolds RV, et al. Guidelines of care for the management of acne vulgaris (2024 AAD).</strong> <em>J Am Acad Dermatol</em>. 2024;90(5):1006.e1-e30. <a href="https://pubmed.ncbi.nlm.nih.gov/38300170/" target="_blank" rel="noopener">「來源」</a></li>
+<li>Zaenglein AL, et al. Guidelines of care for the management of acne vulgaris. <em>J Am Acad Dermatol</em>. 2016;74(5):945-973. <a href="https://pubmed.ncbi.nlm.nih.gov/26897386/" target="_blank" rel="noopener">「來源」</a></li>
+<li><strong>Mukherjee S, et al. Retinoids in the treatment of skin aging — overview of clinical efficacy and safety.</strong> <em>Clin Interv Aging</em>. 2006;1(4):327-348. <a href="https://pubmed.ncbi.nlm.nih.gov/18046911/" target="_blank" rel="noopener">「來源」</a></li>
+<li><strong>Schulte BC, et al. Azelaic acid: evidence-based update.</strong> <em>J Drugs Dermatol</em>. 2015;14(9):964-968. <a href="https://pubmed.ncbi.nlm.nih.gov/26355614/" target="_blank" rel="noopener">「來源」</a></li>
+<li><strong>Tan J, et al. Trifarotene 50 µg/g cream for moderate facial and truncal acne — phase 3 (PERFECT 1+2).</strong> <em>J Am Acad Dermatol</em>. 2019;80(6):1691-1699. <a href="https://pubmed.ncbi.nlm.nih.gov/30802558/" target="_blank" rel="noopener">「來源」</a></li>
+<li><strong>Hebert A, et al. Efficacy and safety of topical clascoterone cream 1% in adolescents and adults with acne (CB-03-01/29).</strong> <em>JAMA Dermatol</em>. 2020;156(6):621-630. <a href="https://pubmed.ncbi.nlm.nih.gov/32320027/" target="_blank" rel="noopener">「來源」</a></li>
+<li><strong>Spring LK, et al. Isotretinoin and timing of procedural interventions: 2017 ASDS consensus.</strong> <em>JAMA Dermatol</em>. 2017;153(8):802-809. <a href="https://pubmed.ncbi.nlm.nih.gov/28658475/" target="_blank" rel="noopener">「來源」</a></li>
 <li>FDA Pregnancy and Lactation Labeling Final Rule (PLLR). <em>Federal Register</em>. 2014. <a href="https://www.fda.gov/drugs/labeling-information-drug-products/pregnancy-and-lactation-labeling-drugs-final-rule" target="_blank" rel="noopener">[FDA]</a></li>
 <li>UpToDate: Topical retinoids for acne vulgaris. Accessed 2026.</li>
 </ol>
@@ -662,7 +664,7 @@
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605140500" defer></script>
+<script src="/blog/blog-shared.js?v=202605140600" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     if (window.DN) DN.initBlog({ proseZh:'proseZh', proseEn:'proseEn' });

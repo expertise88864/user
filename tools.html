@@ -103,7 +103,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   {"@type":"ListItem","position":2,"name":"量表計算器使用指南","item":"https://chendermatologist.com/tools"}
 ]}
 </script>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=3" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=4" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -142,14 +142,16 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </header>
 <style>
-  /* Header navigation — flat, no dropdown */
-  .dn-nav{display:flex;align-items:center;gap:4px;flex-shrink:0}
-  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
+  /* Header navigation — flat, right-aligned, tight spacing */
+  .dn-nav{display:flex;align-items:center;gap:2px;flex-shrink:0;margin-left:auto}
+  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 11px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
   .dn-nav-link:hover{background:var(--mint-100,#eaf6f3);color:#0e7c86}
-  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s}
+  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s;padding:0}
   .dn-nav-icon:hover{background:var(--mint-100,#eaf6f3)}
   .dn-nav-icon[id="dn-nav-support"]{color:#0c5159}
-  .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0}
+  /* Compact lang select — match icon button dimensions */
+  .dn-nav .lang-select{margin:0 0 0 2px;padding:6px 22px 6px 10px;height:32px;font-size:11.5px;background-position:right 8px center;background-size:7px 5px}
+  .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0;margin-left:auto}
   .dn-nav-burger:hover{background:var(--mint-100,#eaf6f3)}
   /* Mobile: hide flat nav, show burger */
   @media (max-width:899px){
@@ -523,7 +525,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
     <h3>適用對象</h3>
     <ul>
-      <li><strong>慢性自發性蕁麻疹(CSU)</strong>每天活動度追蹤,<strong>必須連續 7 天記錄</strong></li>
+      <li><strong>慢性自發性蕁麻疹(CSU)</strong>每天活動度追蹤、<strong>必須連續 7 天記錄</strong></li>
       <li>判定 <strong>Omalizumab 健保 PASS 評估</strong>適應症</li>
       <li><strong>不適用</strong>:急性蕁麻疹(&lt; 6 週)、誘發性蕁麻疹(改用 trigger threshold test)、血管性水腫</li>
     </ul>
@@ -719,8 +721,8 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
     <h3>評估方式 — 三期分級</h3>
     <table class="tool-table">
       <tr><th>分期</th><th>定義</th></tr>
-      <tr><td><strong>Stage I 輕度</strong></td><td>單一或多個獨立膿瘍 / 結節,<strong>無通道、無疤痕</strong></td></tr>
-      <tr><td><strong>Stage II 中度</strong></td><td>反覆膿瘍,<strong>形成通道(sinus tract)與疤痕</strong>,但病灶獨立分隔</td></tr>
+      <tr><td><strong>Stage I 輕度</strong></td><td>單一或多個獨立膿瘍 / 結節、<strong>無通道、無疤痕</strong></td></tr>
+      <tr><td><strong>Stage II 中度</strong></td><td>反覆膿瘍、<strong>形成通道(sinus tract)與疤痕</strong>,但病灶獨立分隔</td></tr>
       <tr><td><strong>Stage III 重度</strong></td><td><strong>多個互相連結的通道與膿瘍</strong>,大面積疤痕與纖維化</td></tr>
     </table>
 
@@ -937,7 +939,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605140500" defer></script>
+<script src="/blog/blog-shared.js?v=202605140600" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (window.DN) DN.initBlog({});
