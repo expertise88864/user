@@ -1116,7 +1116,7 @@
   // SCORAD (Atopic Dermatitis Severity)
   DN.injectSCORAD = function () {
     var slug = DN.currentSlug();
-    if (slug !== 'eczema-myths' && slug !== 'pediatric-eczema') return;
+    if (!DN._forceInject && (slug !== 'eczema-myths' && slug !== 'pediatric-eczema')) return;
     var anchor = document.querySelector('article.max-w-3xl');
     if (!anchor || document.getElementById('dn-scorad')) return;
     DN.calcStyles();
@@ -1176,7 +1176,7 @@
   // SALT (Severity of Alopecia Tool)
   DN.injectSALT = function () {
     var slug = DN.currentSlug();
-    if (slug !== 'alopecia-areata' && slug !== 'hairloss-myths') return;
+    if (!DN._forceInject && (slug !== 'alopecia-areata' && slug !== 'hairloss-myths')) return;
     var anchor = document.querySelector('article.max-w-3xl');
     if (!anchor || document.getElementById('dn-salt')) return;
     DN.calcStyles();
@@ -1225,7 +1225,7 @@
   // UAS7 (Urticaria Activity Score over 7 days)
   DN.injectUAS7 = function () {
     var slug = DN.currentSlug();
-    if (slug !== 'urticaria-myths') return;
+    if (!DN._forceInject && (slug !== 'urticaria-myths')) return;
     var anchor = document.querySelector('article.max-w-3xl');
     if (!anchor || document.getElementById('dn-uas7')) return;
     DN.calcStyles();
@@ -1337,7 +1337,7 @@
 
   // PASI (Psoriasis Area Severity Index, 0-72) — psoriasis-myths
   DN.injectPASI = function () {
-    if (DN.currentSlug() !== 'psoriasis-myths') return;
+    if (!DN._forceInject && (DN.currentSlug() !== 'psoriasis-myths')) return;
     var rows = [];
     [['頭頸 (×0.1)','head'],['上肢 (×0.2)','arm'],['軀幹 (×0.3)','trunk'],['下肢 (×0.4)','leg']].forEach(function (r) {
       rows.push({ type:'number', label: r[0]+' · 紅斑 E (0-4)',  hint:'erythema',     key:r[1]+'_E', min:0, max:4, def:0 });
@@ -1411,7 +1411,7 @@
 
   // Hurley Stage (HS) — hidradenitis-suppurativa
   DN.injectHurley = function () {
-    if (DN.currentSlug() !== 'hidradenitis-suppurativa') return;
+    if (!DN._forceInject && (DN.currentSlug() !== 'hidradenitis-suppurativa')) return;
     DN._buildCalc({
       id: 'dn-hurley', tool: 'Hurley', toolsAnchor: 'hurley',
       title: 'Hurley 分期 — 化膿性汗腺炎(HS)嚴重度',
@@ -1435,7 +1435,7 @@
 
   // Norwood-Hamilton (Male Pattern Baldness) + Ludwig (Female) — hairloss-myths
   DN.injectHairScale = function () {
-    if (DN.currentSlug() !== 'hairloss-myths') return;
+    if (!DN._forceInject && (DN.currentSlug() !== 'hairloss-myths')) return;
     DN._buildCalc({
       id: 'dn-hair-scale', tool: 'Norwood-Ludwig', toolsAnchor: 'norwood',
       title: 'Norwood-Hamilton (男性) / Ludwig (女性) 雄性禿分級',
@@ -1482,7 +1482,7 @@
 
   // Fitzpatrick Skin Type (I-VI) — sunscreen-myths
   DN.injectFitzpatrick = function () {
-    if (DN.currentSlug() !== 'sunscreen-myths' && DN.currentSlug() !== 'melasma-myths') return;
+    if (!DN._forceInject && (DN.currentSlug() !== 'sunscreen-myths' && DN.currentSlug() !== 'melasma-myths')) return;
     DN._buildCalc({
       id: 'dn-fitzpatrick', tool: 'Fitzpatrick', toolsAnchor: 'fitzpatrick',
       title: 'Fitzpatrick 膚色分型 — 防曬 / 雷射安全參考',
@@ -1522,7 +1522,7 @@
 
   // GAGS (Global Acne Grading System, 0-44) — acne-myths
   DN.injectGAGS = function () {
-    if (DN.currentSlug() !== 'acne-myths') return;
+    if (!DN._forceInject && (DN.currentSlug() !== 'acne-myths')) return;
     var sites = [
       ['前額(×2)','forehead'], ['右臉頰(×2)','rcheek'], ['左臉頰(×2)','lcheek'],
       ['鼻部(×1)','nose'], ['下巴(×1)','chin'], ['胸 / 上背(×3)','chest']
@@ -1558,7 +1558,7 @@
 
   // MASI (Melasma Area Severity Index, 0-48) — melasma-myths
   DN.injectMASI = function () {
-    if (DN.currentSlug() !== 'melasma-myths') return;
+    if (!DN._forceInject && (DN.currentSlug() !== 'melasma-myths')) return;
     var sites = [
       ['前額(×0.3)','forehead'],
       ['右臉頰(×0.3)','rcheek'],
@@ -1595,7 +1595,7 @@
   // POEM (Patient-Oriented Eczema Measure, 0-28) — eczema-myths
   DN.injectPOEM = function () {
     var slug = DN.currentSlug();
-    if (slug !== 'eczema-myths' && slug !== 'pediatric-eczema') return;
+    if (!DN._forceInject && (slug !== 'eczema-myths' && slug !== 'pediatric-eczema')) return;
     var qs = [
       'Q1 · 過去 1 週,皮膚<strong>癢</strong>幾天?',
       'Q2 · 過去 1 週,皮膚<strong>讓您睡不好</strong>幾天?',
@@ -1632,7 +1632,7 @@
 
   // IHS4 (International Hidradenitis Suppurativa Severity Score System) — HS
   DN.injectIHS4 = function () {
-    if (DN.currentSlug() !== 'hidradenitis-suppurativa') return;
+    if (!DN._forceInject && (DN.currentSlug() !== 'hidradenitis-suppurativa')) return;
     DN._buildCalc({
       id: 'dn-ihs4', tool: 'IHS4', toolsAnchor: 'ihs4',
       title: 'IHS4 計算器 — 化膿性汗腺炎活動度評估',
@@ -1656,7 +1656,7 @@
 
   // NAPSI (Nail Psoriasis Severity Index, 0-32) — psoriasis-myths
   DN.injectNAPSI = function () {
-    if (DN.currentSlug() !== 'psoriasis-myths') return;
+    if (!DN._forceInject && (DN.currentSlug() !== 'psoriasis-myths')) return;
     var rows = [
       { type:'number', label:'指甲基質(matrix)病灶象限數', hint:'點狀凹陷 / 縱向溝紋 / 紅斑 / 白斑;0-4 象限', key:'matrix', min:0, max:4, def:0 },
       { type:'number', label:'指甲床(bed)病灶象限數', hint:'油滴徵 / 甲下角化 / 甲剝離 / 線狀出血;0-4 象限', key:'bed', min:0, max:4, def:0 }
@@ -1725,7 +1725,7 @@
   // EASI (Eczema Area & Severity Index, 0-72) — alternative to SCORAD
   DN.injectEASI = function () {
     var slug = DN.currentSlug();
-    if (slug !== 'eczema-myths' && slug !== 'pediatric-eczema') return;
+    if (!DN._forceInject && (slug !== 'eczema-myths' && slug !== 'pediatric-eczema')) return;
     var sites = [
       ['頭頸 (×0.1 成人 / ×0.2 兒童)','head', 0.1],
       ['上肢 (×0.2)','arm', 0.2],
@@ -2044,23 +2044,23 @@
       'border-top:1px solid var(--border, #dcd5c8);box-shadow:0 -4px 20px -8px rgba(77,99,88,.2);' +
       'padding-bottom:env(safe-area-inset-bottom)';
     bar.innerHTML =
+      '<a href="/blog/" ' +
+        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
+        'data-cta="latest" aria-label="最新文章">' +
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>' +
+        '<span data-zh="最新文章" data-en="Latest">最新文章</span>' +
+      '</a>' +
       '<a href="/#dn-hub" ' +
         'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
-        'data-cta="article-hub" aria-label="找衛教文章">' +
+        'data-cta="find" aria-label="找文章">' +
         '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>' +
-        '<span data-zh="找文章" data-en="Find Article">找文章</span>' +
+        '<span data-zh="找文章" data-en="Find">找文章</span>' +
       '</a>' +
-      '<a href="/tools" ' +
-        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
-        'data-cta="tools" aria-label="量表計算器">' +
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 7h6M9 12h6M9 17h6"/></svg>' +
-        '<span data-zh="量表" data-en="Tools">量表</span>' +
-      '</a>' +
-      '<a href="/glossary" ' +
+      '<a href="/about" ' +
         'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700" ' +
-        'data-cta="glossary" aria-label="詞彙字典">' +
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>' +
-        '<span data-zh="詞彙" data-en="Glossary">詞彙</span>' +
+        'data-cta="about" aria-label="關於我">' +
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg>' +
+        '<span data-zh="關於我" data-en="About">關於我</span>' +
       '</a>';
 
     var style = document.createElement('style');
@@ -2509,21 +2509,77 @@
       DN.addFloatingTOC();
       DN.bindScrollMemory();
       DN.addInlineCTA();
-      DN.injectSCORAD();
-      DN.injectSALT();
-      DN.injectUAS7();
-      DN.injectPASI();
-      DN.injectDLQI();
-      DN.injectHurley();
-      DN.injectHairScale();
-      DN.injectFitzpatrick();
-      DN.injectGAGS();
-      DN.injectMASI();
-      DN.injectPOEM();
-      DN.injectEASI();
-      DN.injectIHS4();
-      DN.injectNAPSI();
-      DN.injectPHQ9();
+
+      // Per-article calculator priority: most-relevant calculator FIRST.
+      // PHQ-9 (depression screen) intentionally removed from auto-injection — too negative for patient pages.
+      // DLQI (skin disease quality of life) auto-included for every article.
+      var slug = DN.currentSlug();
+      var CALC_FN = {
+        SCORAD: DN.injectSCORAD, EASI: DN.injectEASI, POEM: DN.injectPOEM,
+        PASI: DN.injectPASI, NAPSI: DN.injectNAPSI,
+        SALT: DN.injectSALT, HairScale: DN.injectHairScale,
+        UAS7: DN.injectUAS7,
+        GAGS: DN.injectGAGS, MASI: DN.injectMASI,
+        Hurley: DN.injectHurley, IHS4: DN.injectIHS4,
+        Fitzpatrick: DN.injectFitzpatrick,
+        DLQI: DN.injectDLQI
+      };
+      var CALC_ORDER = {
+        // Eczema family
+        'eczema-myths':              ['SCORAD','EASI','POEM','DLQI'],
+        'pediatric-eczema':          ['SCORAD','EASI','POEM','DLQI'],
+        'topical-steroids-guide':    ['SCORAD','EASI','DLQI'],
+        // Psoriasis
+        'psoriasis-myths':           ['PASI','NAPSI','DLQI'],
+        // Hair
+        'alopecia-areata':           ['SALT','HairScale','DLQI'],
+        'hairloss-myths':            ['HairScale','DLQI'],
+        // Urticaria
+        'urticaria-myths':           ['UAS7','DLQI'],
+        // Acne / Retinoid
+        'acne-myths':                ['GAGS','DLQI'],
+        'acne-scar-treatment':       ['GAGS','DLQI'],
+        'isotretinoin-patient':      ['GAGS','DLQI'],
+        'isotretinoin-clinical':     ['GAGS','DLQI'],
+        'topical-acids-patient':     ['GAGS','DLQI'],
+        'topical-acids-clinical':    ['GAGS','DLQI'],
+        // Pigmentation / Melasma
+        'melasma-myths':             ['MASI','Fitzpatrick','DLQI'],
+        'skin-whitening-agents':     ['MASI','Fitzpatrick','DLQI'],
+        'vitiligo':                  ['Fitzpatrick','DLQI'],
+        // Rosacea
+        'rosacea-myths':             ['DLQI'],
+        'demodex-rosacea':           ['DLQI'],
+        // HS
+        'hidradenitis-suppurativa':  ['IHS4','Hurley','DLQI'],
+        // Sun / Photo
+        'sunscreen-myths':           ['Fitzpatrick','DLQI'],
+        'laser-dermatology':         ['Fitzpatrick','DLQI'],
+        // Biologics / NHI
+        'biologics-overview':        ['PASI','EASI','SCORAD','DLQI'],
+        'nhi-derm-drugs':            ['PASI','EASI','SCORAD','DLQI'],
+        'targeted-therapy-skin':     ['DLQI'],
+        // Others — DLQI only
+        'dermatology-faq':           ['DLQI'],
+        'tinea-myths':               ['DLQI'],
+        'warts-myths':               ['DLQI'],
+        'shingles-myths':            ['DLQI'],
+        'mpox-care':                 ['DLQI'],
+        'epidermoid-cyst':           ['DLQI'],
+        'cutaneous-t-cell-lymphoma': ['DLQI'],
+        'prurigo-nodularis':         ['DLQI']
+      };
+      var calcsToInject = CALC_ORDER[slug] || ['DLQI'];
+      calcsToInject.forEach(function (name) {
+        var fn = CALC_FN[name];
+        if (typeof fn === 'function') {
+          // Temporarily override the per-injector slug guard by setting a flag
+          DN._forceInject = true;
+          try { fn(); } catch (e) {}
+          DN._forceInject = false;
+        }
+      });
+
       DN.addAuthorBio();
       DN.addLegalDisclaimer();
       DN.addTDALink();
@@ -2537,6 +2593,20 @@
     DN.bindArticleHub();
     DN.injectSpotlight();
     DN.injectReadProgress();
+
+    // ── Re-apply language to ALL injected content (related/share/author-bio/etc.)
+    // Fires after every dynamic injection completes, so data-en attributes inside
+    // late-injected DOM finally translate when user is in English mode.
+    setTimeout(function () { DN.applyTextOnly(curLang); }, 0);
+    // Mutation observer — auto-translate any future DOM inserts (FAQ open/close, lazy spotlight, etc.)
+    if (window.MutationObserver) {
+      var mo = new MutationObserver(function () {
+        DN.applyTextOnly(curLang);
+      });
+      mo.observe(document.body, { childList: true, subtree: true });
+      // Disconnect after 5s (initial heavy injection complete)
+      setTimeout(function () { mo.disconnect(); }, 5000);
+    }
     DN.markNewArticles();
     DN.addStickyCTA();
 
