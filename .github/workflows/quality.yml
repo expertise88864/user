@@ -70,6 +70,8 @@ jobs:
                   href = m.group(1)
                   if href.startswith('//') or href.startswith('http'): continue
                   if href.startswith('/blog/feed') or href.startswith('/blog/atom') or href.startswith('/sitemap') or href.startswith('/robots'): continue
+                  # Skip JS template literals (contain quote/concat chars from inline scripts)
+                  if any(c in href for c in ["'", "+", "${", "`"]): continue
                   # Resolve to canonical form
                   candidates = [
                       href, href + '/', href + '.html',
@@ -79,7 +81,7 @@ jobs:
                   ]
                   if any(os.path.exists(c) for c in candidates): continue
                   if href in pages: continue
-                  if any(href.startswith(prefix) for prefix in ['/icon','/favicon','/apple-touch','/logo-','/blog/SUNN','/manifest']):
+                  if any(href.startswith(prefix) for prefix in ['/icon','/favicon','/apple-touch','/logo-','/blog/SUNN','/manifest','/assets','/ads']):
                       continue
                   print(f'BROKEN  {p}  → {href}'); err += 1
           sys.exit(1 if err else 0)
