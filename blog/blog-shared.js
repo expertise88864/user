@@ -2168,11 +2168,12 @@
 
   // -----------------------------------------------------------------------
   // 支持作者 — top-right header pill + footer card (auto-injects)
-  // 目前金流由歐付寶 ezPay 處理。EZPAY 商店 PG100000760296 審核中,
-  // 待通過後把 DN.SUPPORT_URL 換成歐付寶建立的「立即收款」連結即可。
-  // 設為 '' 或 null 時,自動隱藏所有「支持作者」按鈕(等待審核期間用)。
+  // 收款管道:街口支付(JKO Pay)Transfer link
+  //   街口代碼 396 / 街口帳號 901070305 / 09****615
+  // 街口支援所有銀行 + 電支機構,免手續費、即時入帳。
   // -----------------------------------------------------------------------
-  DN.SUPPORT_URL = '';   // ← 換成歐付寶連結後即上線(例:https://www.ezpay.com.tw/QPay/?code=XXXX)
+  DN.SUPPORT_URL = 'https://service.jkopay.com/r/transfer?j=Transfer:901070305';
+  DN.SUPPORT_PROVIDER = '街口支付';
   DN.BMC_URL = DN.SUPPORT_URL;   // legacy alias (do not delete)
 
   DN.injectBMCFooter = function () {
@@ -2828,18 +2829,14 @@
     DN.injectReadProgress();
 
     // ── Re-apply language to ALL injected content (related/share/author-bio/etc.)
-    // Fires after every dynamic injection completes, so data-en attributes inside
-    // late-injected DOM finally translate when user is in English mode.
-    setTimeout(function () { DN.applyTextOnly(curLang); }, 0);
-    // Mutation observer — auto-translate any future DOM inserts (FAQ open/close, lazy spotlight, etc.)
-    if (window.MutationObserver) {
-      var mo = new MutationObserver(function () {
-        DN.applyTextOnly(curLang);
-      });
-      mo.observe(document.body, { childList: true, subtree: true });
-      // Disconnect after 5s (initial heavy injection complete)
-      setTimeout(function () { mo.disconnect(); }, 5000);
-    }
+    // Use staggered timeouts (NOT MutationObserver — it creates infinite loops because
+    // applyTextOnly mutates the DOM, which triggers the observer again, ad infinitum).
+    // 100ms / 600ms / 1500ms covers most async injection timing without CPU spike.
+    [100, 600, 1500].forEach(function (ms) {
+      setTimeout(function () {
+        try { DN.applyTextOnly(curLang); } catch (e) {}
+      }, ms);
+    });
     DN.markNewArticles();
     DN.addStickyCTA();
 
