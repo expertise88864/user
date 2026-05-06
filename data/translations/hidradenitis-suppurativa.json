@@ -1,875 +1,179 @@
 {
   "slug": "hidradenitis-suppurativa",
   "strings": [
-    {
-      "zh": "什麼是化膿性汗腺炎？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "為何會 HS？風險因子",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "如何診斷？常見誤診",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "Hurley 嚴重度分期",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "HS 的共病風險",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "治療階梯（依 TDA 共識）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "重點：生物製劑 Adalimumab（復邁）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "外科治療",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "生活調整（實證有效）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "常見問題",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "結語",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "臺灣皮膚科醫學會官方資源",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "輕度 Hurley I",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "中度 Hurley II / 第一線口服",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "重度 Hurley III / 反應差 / 生物製劑階段",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "HS 健保有給付什麼？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "HS 會不會自己好？要治多久？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "HS 會傳染嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "HS 跟一般膿包（癤瘡）怎麼分？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "HS 可以開刀根治嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "HS 跟克隆氏症有關嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "本篇大綱",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "建議 HS 病人定期量血壓、檢查血糖血脂、若有腹瀉血便至胃腸科篩檢 IBD。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "詳見下節。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "其他在 HS 有實證的生物製劑：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "有相關。HS 與發炎性腸道疾病（尤其克隆氏症）風險增加。若有腹痛、腹瀉、血便，應至胃腸科評估。Adalimumab 對兩者皆有效，可能是治療上的優勢。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "通道蔓延到皮膚表面，持續排出膿液與血水",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "Infliximab、Ustekinumab（off-label，部分病人有效）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "JAK 抑制劑（臨床試驗中）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "反常性痤瘡 acne inversa",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "慢性、反覆發作的發炎性毛囊疾病",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皺褶摩擦部位",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "平均發病年齡 23.2 歲",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "延遲診斷 7-10 年",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "提醒：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "HS 不是「毛囊發炎」這麼簡單",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皮下通道（tunnels / sinus tracts）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "越早治療效果越好",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "真正的問題不在汗腺，而在毛囊",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "毛囊阻塞",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "毛囊破裂",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "慢性發炎",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "反覆癒合 + 再發",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "通道（tunnel / sinus tract）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不可逆的疤痕",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「反常性痤瘡 acne inversa」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "HS 不是「衛生問題」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "臨床診斷",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "典型病灶",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "典型部位",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "慢性反覆性",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "常見誤診",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "癤瘡 / 毛囊炎",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "痘痘",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皮脂腺囊腫",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "性病或 STI 膿包",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Hurley I（輕度）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "無通道、無疤痕",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Hurley II（中度）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "形成通道與疤痕",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Hurley III（重度）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "多發性互相連結的通道與膿瘍",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "全身性發炎疾病",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "代謝症候群",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "心血管疾病",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "發炎性腸道疾病(IBD)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "多囊性卵巢症候群(PCOS)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "憂鬱、焦慮",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "乾癬、僵直性脊椎炎",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Tetracycline 類",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Clindamycin + Rifampicin 合併",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "較差",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Adalimumab（復邁 Humira）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第一個 HS 適應症生物製劑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "每週",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "有條件給付中重度 HS",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Secukinumab（可善挺，IL-17A 抑制劑）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Bimekizumab（Bimzelx,IL-17A/F 雙重抑制劑）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "切開引流（I&amp;D）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不能治本，常復發",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Deroofing 通道揭頂術",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "廣泛切除術（Wide local excision）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "CO2 雷射消融",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "手術 + 生物製劑合併",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "戒菸",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "減重",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "避免緊身衣物與摩擦",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "避免機械剃毛",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "溫和清潔",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "低升糖、低乳製品飲食",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "鋅補充",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "心理支持",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "有給付",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "2024 年起 Adalimumab 有條件給付",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不給付",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不會自然痊癒",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "長期維持治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "絕對不會",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "一次性細菌感染",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "慢性反覆於相同部位",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "無法保證其他部位不再發",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "常被延遲診斷的疾病",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "越早診斷、越早積極治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "請至皮膚科專科評估",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "延伸閱讀：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "化膿性汗腺炎臨床診療共識建議",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陳翊嘉 醫師",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "化膿性汗腺炎完整衛教",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "依 TDA 共識 · 更新 2026-05-04",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "反常性痤瘡、Hurley 分期、Adalimumab 時代",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "皮膚科 住院醫師",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "類別",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "風險因子",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "分期",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "表現",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "治療策略",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "方式",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "說明",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "藥物",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "劑量",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "項目",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "內容",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "適用",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "遺傳",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "~ 30-40% 病人有家族史（autosomal dominant 部分案例）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "性別 / 年齡",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "歐美：女 > 男；亞洲：男 > 女。平均發病 23 歲",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "體重",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "BMI 過高 / 肥胖 — 強相關，減重可改善",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "吸菸",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "強相關,80% 以上 HS 病人為吸菸者（亞洲比例稍低）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "內分泌",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "多囊性卵巢症候群(PCOS)、雄激素相關",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "機械摩擦",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "緊身衣、剃毛、皮膚對皮膚摩擦",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "共病",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "糖尿病、代謝症候群、發炎性腸道疾病（IBD，如克隆氏症）、乾癬、憂鬱症",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "外用抗生素 + 生活調整 ± 短期口服抗生素",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "長期口服抗生素 ± 生物製劑 ± 局部手術",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "生物製劑 + 廣泛手術切除",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "外用 Clindamycin 1%",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 2 次塗抹病灶，持續 3 個月",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "外用 Resorcinol 15%",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "急性發作期使用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "急性發作：病灶內類固醇注射",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Triamcinolone acetonide 5-10 mg/mL，單次 0.2-0.5 mL",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "急性發作：切開引流",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "暫時緩解 — 注意：單純切開不能治本，常復發",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "3 個月起，抗發炎 + 抗菌",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "10-12 週，中度療效顯著",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "對部分病人有效",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "口服 Acitretin",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "女性育齡禁用（致畸胎）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "女性 + 雄激素相關：Spironolactone",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "合併 PCOS 特別有用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "女性 + 雄激素相關：複方口服避孕藥",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "含 anti-androgenic progestin",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "口服 Isotretinoin",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "機轉",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 TNF-α 單株抗體",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "適應症",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥ 12 歲、中重度 HS、傳統治療失敗",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "效果（HiSCR）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第 12 週約 41-59% 達到 HiSCR",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "必要篩檢",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "結核、B 肝、C 肝、HIV、CBC、肝功能",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "價格",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "自費每月約 NT$ 30,000-50,000",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "健保",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Hurley II 局部反覆通道，皮下通道頂層切除露出底部讓二期癒合",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Hurley III 嚴重病灶，徹底切除受侵犯組織 + 皮瓣 / 植皮重建",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "類似 deroofing，精度更高",
-      "en": "",
-      "tag": "td"
-    }
+    { "zh": "什麼是化膿性汗腺炎？", "en": "What is hidradenitis suppurativa (HS)?", "tag": "h2" },
+    { "zh": "為何會 HS？風險因子", "en": "Why does HS develop? Risk factors", "tag": "h2" },
+    { "zh": "如何診斷？常見誤診", "en": "How is it diagnosed? Common misdiagnoses", "tag": "h2" },
+    { "zh": "Hurley 嚴重度分期", "en": "Hurley severity staging", "tag": "h2" },
+    { "zh": "HS 的共病風險", "en": "HS comorbidity risks", "tag": "h2" },
+    { "zh": "治療階梯（依 TDA 共識）", "en": "Treatment ladder (per TDA consensus)", "tag": "h2" },
+    { "zh": "重點：生物製劑 Adalimumab（復邁）", "en": "Spotlight: biologic — adalimumab (Humira)", "tag": "h2" },
+    { "zh": "外科治療", "en": "Surgical therapy", "tag": "h2" },
+    { "zh": "生活調整（實證有效）", "en": "Lifestyle modifications (evidence-based)", "tag": "h2" },
+    { "zh": "常見問題", "en": "Common questions", "tag": "h2" },
+    { "zh": "結語", "en": "Bottom line", "tag": "h2" },
+    { "zh": "臺灣皮膚科醫學會官方資源", "en": "Taiwanese Dermatological Association official resources", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "輕度 Hurley I", "en": "Mild — Hurley I", "tag": "h3" },
+    { "zh": "中度 Hurley II / 第一線口服", "en": "Moderate — Hurley II / first-line oral therapy", "tag": "h3" },
+    { "zh": "重度 Hurley III / 反應差 / 生物製劑階段", "en": "Severe — Hurley III / refractory / biologic stage", "tag": "h3" },
+    { "zh": "HS 健保有給付什麼？", "en": "What does Taiwan NHI cover for HS?", "tag": "h3" },
+    { "zh": "HS 會不會自己好？要治多久？", "en": "Does HS resolve on its own? How long does treatment last?", "tag": "h3" },
+    { "zh": "HS 會傳染嗎？", "en": "Is HS contagious?", "tag": "h3" },
+    { "zh": "HS 跟一般膿包（癤瘡）怎麼分？", "en": "How is HS distinguished from a regular furuncle?", "tag": "h3" },
+    { "zh": "HS 可以開刀根治嗎？", "en": "Can surgery cure HS?", "tag": "h3" },
+    { "zh": "HS 跟克隆氏症有關嗎？", "en": "Is HS related to Crohn's disease?", "tag": "h3" },
+    { "zh": "本篇大綱", "en": "Article outline", "tag": "h4" },
+    { "zh": "建議 HS 病人定期量血壓、檢查血糖血脂、若有腹瀉血便至胃腸科篩檢 IBD。", "en": "HS patients are recommended to have regular BP, glucose, and lipid checks; if diarrhea or hematochezia is present, refer to gastroenterology to screen for IBD.", "tag": "p" },
+    { "zh": "詳見下節。", "en": "See the next section.", "tag": "p" },
+    { "zh": "其他在 HS 有實證的生物製劑：", "en": "Other biologics with evidence in HS:", "tag": "p" },
+    { "zh": "有相關。HS 與發炎性腸道疾病（尤其克隆氏症）風險增加。若有腹痛、腹瀉、血便，應至胃腸科評估。Adalimumab 對兩者皆有效，可能是治療上的優勢。", "en": "Yes. HS is associated with increased risk of inflammatory bowel disease (especially Crohn's). With abdominal pain, diarrhea, or hematochezia, refer to gastroenterology. Adalimumab is effective for both conditions — a treatment advantage.", "tag": "p" },
+    { "zh": "通道蔓延到皮膚表面，持續排出膿液與血水", "en": "Sinus tracts extend to the skin surface, continuously draining pus and serosanguinous fluid", "tag": "li" },
+    { "zh": "Infliximab、Ustekinumab（off-label，部分病人有效）", "en": "Infliximab, ustekinumab (off-label, effective in some patients)", "tag": "li" },
+    { "zh": "JAK 抑制劑（臨床試驗中）", "en": "JAK inhibitors (in clinical trials)", "tag": "li" },
+    { "zh": "反常性痤瘡 acne inversa", "en": "Acne inversa", "tag": "strong" },
+    { "zh": "慢性、反覆發作的發炎性毛囊疾病", "en": "chronic, relapsing inflammatory follicular disease", "tag": "strong" },
+    { "zh": "皺褶摩擦部位", "en": "intertriginous friction-prone areas", "tag": "strong" },
+    { "zh": "平均發病年齡 23.2 歲", "en": "average onset age 23.2 years", "tag": "strong" },
+    { "zh": "延遲診斷 7-10 年", "en": "average diagnostic delay 7–10 years", "tag": "strong" },
+    { "zh": "提醒：", "en": "Note:", "tag": "strong" },
+    { "zh": "HS 不是「毛囊發炎」這麼簡單", "en": "HS is more than simple folliculitis", "tag": "strong" },
+    { "zh": "皮下通道（tunnels / sinus tracts）", "en": "Subcutaneous tunnels (sinus tracts)", "tag": "strong" },
+    { "zh": "越早治療效果越好", "en": "The earlier the treatment, the better the outcome", "tag": "strong" },
+    { "zh": "真正的問題不在汗腺，而在毛囊", "en": "The real problem is in the follicle, not the sweat gland", "tag": "strong" },
+    { "zh": "毛囊阻塞", "en": "Follicular occlusion", "tag": "strong" },
+    { "zh": "毛囊破裂", "en": "Follicular rupture", "tag": "strong" },
+    { "zh": "慢性發炎", "en": "Chronic inflammation", "tag": "strong" },
+    { "zh": "反覆癒合 + 再發", "en": "Repeated healing and recurrence", "tag": "strong" },
+    { "zh": "通道（tunnel / sinus tract）", "en": "Tunnel (sinus tract)", "tag": "strong" },
+    { "zh": "不可逆的疤痕", "en": "Irreversible scarring", "tag": "strong" },
+    { "zh": "「反常性痤瘡 acne inversa」", "en": "\"Acne inversa\"", "tag": "strong" },
+    { "zh": "HS 不是「衛生問題」", "en": "HS is NOT a hygiene problem", "tag": "strong" },
+    { "zh": "臨床診斷", "en": "Clinical diagnosis", "tag": "strong" },
+    { "zh": "典型病灶", "en": "Typical lesions", "tag": "strong" },
+    { "zh": "典型部位", "en": "Typical sites", "tag": "strong" },
+    { "zh": "慢性反覆性", "en": "Chronic relapsing course", "tag": "strong" },
+    { "zh": "常見誤診", "en": "Common misdiagnoses", "tag": "strong" },
+    { "zh": "癤瘡 / 毛囊炎", "en": "Furuncle / folliculitis", "tag": "strong" },
+    { "zh": "痘痘", "en": "Acne", "tag": "strong" },
+    { "zh": "皮脂腺囊腫", "en": "Sebaceous cyst", "tag": "strong" },
+    { "zh": "性病或 STI 膿包", "en": "STI-related abscess", "tag": "strong" },
+    { "zh": "Hurley I（輕度）", "en": "Hurley I (mild)", "tag": "strong" },
+    { "zh": "無通道、無疤痕", "en": "No sinus tracts, no scarring", "tag": "strong" },
+    { "zh": "Hurley II（中度）", "en": "Hurley II (moderate)", "tag": "strong" },
+    { "zh": "形成通道與疤痕", "en": "With sinus tracts and scarring", "tag": "strong" },
+    { "zh": "Hurley III（重度）", "en": "Hurley III (severe)", "tag": "strong" },
+    { "zh": "多發性互相連結的通道與膿瘍", "en": "Multiple interconnecting tunnels and abscesses", "tag": "strong" },
+    { "zh": "全身性發炎疾病", "en": "Systemic inflammatory disease", "tag": "strong" },
+    { "zh": "代謝症候群", "en": "Metabolic syndrome", "tag": "strong" },
+    { "zh": "心血管疾病", "en": "Cardiovascular disease", "tag": "strong" },
+    { "zh": "發炎性腸道疾病(IBD)", "en": "Inflammatory bowel disease (IBD)", "tag": "strong" },
+    { "zh": "多囊性卵巢症候群(PCOS)", "en": "Polycystic ovary syndrome (PCOS)", "tag": "strong" },
+    { "zh": "憂鬱、焦慮", "en": "Depression, anxiety", "tag": "strong" },
+    { "zh": "乾癬、僵直性脊椎炎", "en": "Psoriasis, ankylosing spondylitis", "tag": "strong" },
+    { "zh": "Tetracycline 類", "en": "Tetracyclines", "tag": "strong" },
+    { "zh": "Clindamycin + Rifampicin 合併", "en": "Clindamycin + rifampicin combination", "tag": "strong" },
+    { "zh": "較差", "en": "Less effective", "tag": "strong" },
+    { "zh": "Adalimumab（復邁 Humira）", "en": "Adalimumab (Humira)", "tag": "strong" },
+    { "zh": "第一個 HS 適應症生物製劑", "en": "the first biologic with HS indication", "tag": "strong" },
+    { "zh": "每週", "en": "Weekly", "tag": "strong" },
+    { "zh": "有條件給付中重度 HS", "en": "Conditional reimbursement for moderate-severe HS", "tag": "strong" },
+    { "zh": "Secukinumab（可善挺，IL-17A 抑制劑）", "en": "Secukinumab (Cosentyx, IL-17A inhibitor)", "tag": "strong" },
+    { "zh": "Bimekizumab（Bimzelx,IL-17A/F 雙重抑制劑）", "en": "Bimekizumab (Bimzelx, IL-17A/F dual inhibitor)", "tag": "strong" },
+    { "zh": "切開引流（I&amp;D）", "en": "Incision and drainage (I&D)", "tag": "strong" },
+    { "zh": "不能治本，常復發", "en": "Cannot cure; recurrence is common", "tag": "strong" },
+    { "zh": "Deroofing 通道揭頂術", "en": "Deroofing", "tag": "strong" },
+    { "zh": "廣泛切除術（Wide local excision）", "en": "Wide local excision", "tag": "strong" },
+    { "zh": "CO2 雷射消融", "en": "CO2 laser ablation", "tag": "strong" },
+    { "zh": "手術 + 生物製劑合併", "en": "Combined surgery + biologic", "tag": "strong" },
+    { "zh": "戒菸", "en": "Smoking cessation", "tag": "strong" },
+    { "zh": "減重", "en": "Weight loss", "tag": "strong" },
+    { "zh": "避免緊身衣物與摩擦", "en": "Avoid tight clothing and friction", "tag": "strong" },
+    { "zh": "避免機械剃毛", "en": "Avoid mechanical shaving", "tag": "strong" },
+    { "zh": "溫和清潔", "en": "Gentle cleansing", "tag": "strong" },
+    { "zh": "低升糖、低乳製品飲食", "en": "Low-glycemic, low-dairy diet", "tag": "strong" },
+    { "zh": "鋅補充", "en": "Zinc supplementation", "tag": "strong" },
+    { "zh": "心理支持", "en": "Psychological support", "tag": "strong" },
+    { "zh": "有給付", "en": "Covered", "tag": "strong" },
+    { "zh": "2024 年起 Adalimumab 有條件給付", "en": "Adalimumab is conditionally reimbursed since 2024", "tag": "strong" },
+    { "zh": "不給付", "en": "Not covered", "tag": "strong" },
+    { "zh": "不會自然痊癒", "en": "Does not resolve spontaneously", "tag": "strong" },
+    { "zh": "長期維持治療", "en": "long-term maintenance therapy", "tag": "strong" },
+    { "zh": "絕對不會", "en": "Absolutely not", "tag": "strong" },
+    { "zh": "一次性細菌感染", "en": "One-time bacterial infection", "tag": "strong" },
+    { "zh": "慢性反覆於相同部位", "en": "chronic recurrence at the same site", "tag": "strong" },
+    { "zh": "無法保證其他部位不再發", "en": "Cannot guarantee no recurrence at other sites", "tag": "strong" },
+    { "zh": "常被延遲診斷的疾病", "en": "frequently delayed-diagnosis disease", "tag": "strong" },
+    { "zh": "越早診斷、越早積極治療", "en": "the earlier the diagnosis and aggressive treatment", "tag": "strong" },
+    { "zh": "請至皮膚科專科評估", "en": "Seek dermatology specialist evaluation", "tag": "strong" },
+    { "zh": "延伸閱讀：", "en": "Further reading:", "tag": "strong" },
+    { "zh": "化膿性汗腺炎臨床診療共識建議", "en": "Hidradenitis Suppurativa Clinical Diagnosis and Treatment Consensus", "tag": "strong" },
+    { "zh": "陳翊嘉 醫師", "en": "Dr. Yi-Jia Chen", "tag": "strong" },
+    { "zh": "化膿性汗腺炎完整衛教", "en": "Complete hidradenitis suppurativa guide", "tag": "span" },
+    { "zh": "依 TDA 共識 · 更新 2026-05-04", "en": "Per TDA consensus · Updated 2026-05-04", "tag": "span" },
+    { "zh": "反常性痤瘡、Hurley 分期、Adalimumab 時代", "en": "Acne inversa, Hurley staging, the adalimumab era", "tag": "span" },
+    { "zh": "皮膚科 住院醫師", "en": "Dermatology Resident", "tag": "span" },
+    { "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：", "en": "Content corrections / academic citation inquiries / media partnerships:", "tag": "span" },
+    { "zh": "類別", "en": "Category", "tag": "th" },
+    { "zh": "風險因子", "en": "Risk factor", "tag": "th" },
+    { "zh": "分期", "en": "Stage", "tag": "th" },
+    { "zh": "表現", "en": "Presentation", "tag": "th" },
+    { "zh": "治療策略", "en": "Treatment strategy", "tag": "th" },
+    { "zh": "方式", "en": "Approach", "tag": "th" },
+    { "zh": "說明", "en": "Notes", "tag": "th" },
+    { "zh": "藥物", "en": "Drug", "tag": "th" },
+    { "zh": "劑量", "en": "Dose", "tag": "th" },
+    { "zh": "項目", "en": "Item", "tag": "th" },
+    { "zh": "內容", "en": "Content", "tag": "th" },
+    { "zh": "適用", "en": "Indication", "tag": "th" },
+    { "zh": "遺傳", "en": "Genetics", "tag": "td" },
+    { "zh": "~ 30-40% 病人有家族史（autosomal dominant 部分案例）", "en": "30–40% of patients have a family history (some autosomal dominant cases)", "tag": "td" },
+    { "zh": "性別 / 年齡", "en": "Sex / age", "tag": "td" },
+    { "zh": "歐美：女 > 男；亞洲：男 > 女。平均發病 23 歲", "en": "Western: F &gt; M; Asian: M &gt; F. Average onset 23 years", "tag": "td" },
+    { "zh": "體重", "en": "Weight", "tag": "td" },
+    { "zh": "BMI 過高 / 肥胖 — 強相關，減重可改善", "en": "Elevated BMI / obesity — strongly correlated; weight loss improves", "tag": "td" },
+    { "zh": "吸菸", "en": "Smoking", "tag": "td" },
+    { "zh": "強相關,80% 以上 HS 病人為吸菸者（亞洲比例稍低）", "en": "Strongly correlated; &gt; 80% of HS patients are smokers (slightly lower in Asia)", "tag": "td" },
+    { "zh": "內分泌", "en": "Endocrine", "tag": "td" },
+    { "zh": "多囊性卵巢症候群(PCOS)、雄激素相關", "en": "PCOS, androgen-related", "tag": "td" },
+    { "zh": "機械摩擦", "en": "Mechanical friction", "tag": "td" },
+    { "zh": "緊身衣、剃毛、皮膚對皮膚摩擦", "en": "Tight clothing, shaving, skin-on-skin friction", "tag": "td" },
+    { "zh": "共病", "en": "Comorbidities", "tag": "td" },
+    { "zh": "糖尿病、代謝症候群、發炎性腸道疾病（IBD，如克隆氏症）、乾癬、憂鬱症", "en": "Diabetes, metabolic syndrome, IBD (especially Crohn's), psoriasis, depression", "tag": "td" },
+    { "zh": "外用抗生素 + 生活調整 ± 短期口服抗生素", "en": "Topical antibiotics + lifestyle modification ± short-course oral antibiotics", "tag": "td" },
+    { "zh": "長期口服抗生素 ± 生物製劑 ± 局部手術", "en": "Long-term oral antibiotics ± biologics ± localized surgery", "tag": "td" },
+    { "zh": "生物製劑 + 廣泛手術切除", "en": "Biologic + wide surgical excision", "tag": "td" },
+    { "zh": "外用 Clindamycin 1%", "en": "Topical clindamycin 1%", "tag": "td" },
+    { "zh": "每天 2 次塗抹病灶，持續 3 個月", "en": "Twice daily on lesions for 3 months", "tag": "td" },
+    { "zh": "外用 Resorcinol 15%", "en": "Topical resorcinol 15%", "tag": "td" },
+    { "zh": "急性發作期使用", "en": "Use during acute flares", "tag": "td" },
+    { "zh": "急性發作：病灶內類固醇注射", "en": "Acute flare: intralesional corticosteroid injection", "tag": "td" },
+    { "zh": "Triamcinolone acetonide 5-10 mg/mL，單次 0.2-0.5 mL", "en": "Triamcinolone acetonide 5–10 mg/mL, 0.2–0.5 mL per injection", "tag": "td" },
+    { "zh": "急性發作：切開引流", "en": "Acute flare: incision and drainage", "tag": "td" },
+    { "zh": "暫時緩解 — 注意：單純切開不能治本，常復發", "en": "Temporary relief — note: I&D alone is not curative; recurrence is common", "tag": "td" },
+    { "zh": "3 個月起，抗發炎 + 抗菌", "en": "From 3 months onward; anti-inflammatory + antimicrobial", "tag": "td" },
+    { "zh": "10-12 週，中度療效顯著", "en": "10–12 weeks; moderate response significant", "tag": "td" },
+    { "zh": "對部分病人有效", "en": "Effective for some patients", "tag": "td" },
+    { "zh": "口服 Acitretin", "en": "Oral acitretin", "tag": "td" },
+    { "zh": "女性育齡禁用（致畸胎）", "en": "Contraindicated in women of childbearing age (teratogenic)", "tag": "td" },
+    { "zh": "女性 + 雄激素相關：Spironolactone", "en": "Women with androgenic features: spironolactone", "tag": "td" },
+    { "zh": "合併 PCOS 特別有用", "en": "Especially useful with concurrent PCOS", "tag": "td" },
+    { "zh": "女性 + 雄激素相關：複方口服避孕藥", "en": "Women with androgenic features: combined oral contraceptives", "tag": "td" },
+    { "zh": "含 anti-androgenic progestin", "en": "Contain anti-androgenic progestin", "tag": "td" },
+    { "zh": "口服 Isotretinoin", "en": "Oral isotretinoin", "tag": "td" },
+    { "zh": "機轉", "en": "Mechanism", "tag": "td" },
+    { "zh": "抗 TNF-α 單株抗體", "en": "Anti-TNF-α monoclonal antibody", "tag": "td" },
+    { "zh": "適應症", "en": "Indication", "tag": "td" },
+    { "zh": "≥ 12 歲、中重度 HS、傳統治療失敗", "en": "≥ 12 years, moderate-severe HS, failed conventional therapy", "tag": "td" },
+    { "zh": "效果（HiSCR）", "en": "Efficacy (HiSCR)", "tag": "td" },
+    { "zh": "第 12 週約 41-59% 達到 HiSCR", "en": "~41–59% achieve HiSCR at week 12", "tag": "td" },
+    { "zh": "必要篩檢", "en": "Required screening", "tag": "td" },
+    { "zh": "結核、B 肝、C 肝、HIV、CBC、肝功能", "en": "TB, hepatitis B, hepatitis C, HIV, CBC, liver function", "tag": "td" },
+    { "zh": "價格", "en": "Cost", "tag": "td" },
+    { "zh": "自費每月約 NT$ 30,000-50,000", "en": "Self-pay ~NT$ 30,000–50,000 per month", "tag": "td" },
+    { "zh": "健保", "en": "NHI", "tag": "td" },
+    { "zh": "Hurley II 局部反覆通道，皮下通道頂層切除露出底部讓二期癒合", "en": "For Hurley II with localized recurrent tracts: unroof tunnel ceiling, leaving floor to heal by secondary intention", "tag": "td" },
+    { "zh": "Hurley III 嚴重病灶，徹底切除受侵犯組織 + 皮瓣 / 植皮重建", "en": "For Hurley III severe disease: complete excision of involved tissue + flap / graft reconstruction", "tag": "td" },
+    { "zh": "類似 deroofing，精度更高", "en": "Similar to deroofing, with higher precision", "tag": "td" }
   ]
 }

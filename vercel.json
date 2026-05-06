@@ -75,7 +75,15 @@
     {
       "source": "/(.*).html",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "Link", "value": "</blog/blog-shared.min.js?v=202605142800>; rel=preload; as=script, </assets/tw-mini.css?v=14>; rel=preload; as=style, <https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin" }
+      ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "Link", "value": "</blog/blog-shared.min.js?v=202605142800>; rel=preload; as=script, </assets/tw-mini.css?v=14>; rel=preload; as=style, <https://fonts.googleapis.com>; rel=preconnect, <https://fonts.gstatic.com>; rel=preconnect; crossorigin" }
       ]
     },
     {

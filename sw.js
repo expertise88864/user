@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v73';
-const RUNTIME = 'cd-runtime-v73';
+const CACHE = 'cd-v74';
+const RUNTIME = 'cd-runtime-v74';
 const RUNTIME_MAX_ENTRIES = 60;
 
 // R31: Slim precache — only critical shell + offline page + assets that EVERY page uses.
@@ -73,21 +73,25 @@ self.addEventListener('fetch', (e) => {
   // Always bypass /admin so user gets the freshest editor
   if (url.pathname.startsWith('/admin')) return;
 
-  // Network-first for HTML (navigations + accept text/html)
+  // Stale-while-revalidate for HTML (navigations + accept text/html)
+  // — Returns cached HTML instantly, then refreshes from network in background.
+  // Improves perceived speed on slow networks; users see fresh content on next visit.
   if (req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html')) {
     e.respondWith(
-      fetchWithRetry(req)
-        .then((resp) => {
-          // Only cache successful 2xx responses
-          if (resp && resp.ok) {
-            const copy = resp.clone();
-            caches.open(CACHE).then((c) => c.put(req, copy));
-          }
-          return resp;
-        })
-        .catch(() => caches.match(req).then((r) =>
-          r || caches.match('/offline.html').then((o) => o || caches.match('/'))
-        ))
+      caches.match(req).then((cached) => {
+        const fetchPromise = fetchWithRetry(req)
+          .then((resp) => {
+            if (resp && resp.ok) {
+              const copy = resp.clone();
+              caches.open(CACHE).then((c) => c.put(req, copy));
+            }
+            return resp;
+          })
+          .catch(() => cached || caches.match('/offline.html').then((o) => o || caches.match('/')));
+        // If cached, return immediately + revalidate in background
+        // If not cached, wait for network
+        return cached || fetchPromise;
+      })
     );
     return;
   }
