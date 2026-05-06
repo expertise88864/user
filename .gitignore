@@ -17,6 +17,16 @@ yarn-error.log
 .env.*
 *.pem
 *.key
+# Google Cloud / AWS / generic service-account JSON keys
+*-service-account*.json
+service-account*.json
+positive-guild-*.json
+*credentials*.json
+*-firebase-adminsdk-*.json
+gcloud-key*.json
+.gcloud/
+# Pagefind binary cache
+_bin/
 
 # Node — currently unused but reserved
 node_modules/

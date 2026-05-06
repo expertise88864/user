@@ -2869,9 +2869,9 @@
     }, { rootMargin: '-30% 0px -50% 0px' });
     h2s.forEach(function (h) { io.observe(h); });
 
-    // Hide on resize below threshold
+    // Hide on resize below threshold (matches initial 1100px threshold)
     window.addEventListener('resize', function () {
-      aside.style.display = (window.innerWidth >= 1280) ? '' : 'none';
+      aside.style.display = (window.innerWidth >= 1100) ? '' : 'none';
     });
   };
 
@@ -3078,6 +3078,51 @@
   DN.getPushStatus = function () {
     if (!('Notification' in window)) return 'unsupported';
     return Notification.permission; // 'default' | 'granted' | 'denied'
+  };
+
+  // F7 — Floating push-subscribe bell. Once granted, hides itself.
+  // Hides on /admin/, /tools, calculator pages, and any page < 800px tall (no room).
+  DN.injectPushBell = function () {
+    if (document.getElementById('dn-push-bell')) return;
+    if (DN.getPushStatus() === 'unsupported') return;
+    if (Notification.permission === 'granted') return; // already subscribed
+    if (location.pathname.startsWith('/admin')) return;
+    // Honour a 7-day "don't ask again" if user dismissed
+    var SUPPRESS_KEY = 'dn-push-suppress-until';
+    try {
+      var until = parseInt(localStorage.getItem(SUPPRESS_KEY) || '0', 10);
+      if (Date.now() < until) return;
+    } catch (e) {}
+
+    var btn = document.createElement('button');
+    btn.id = 'dn-push-bell';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', '訂閱新文章通知');
+    btn.title = '訂閱新文章通知';
+    btn.style.cssText = 'position:fixed;right:18px;bottom:140px;width:42px;height:42px;border-radius:50%;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;border:1px solid var(--teal-deep);box-shadow:0 8px 20px -8px rgba(12,81,89,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:50;font-size:18px;line-height:1;transition:all .15s';
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>';
+
+    // Tiny dismiss "x" so user can hide for 7d
+    var dismiss = document.createElement('span');
+    dismiss.style.cssText = 'position:absolute;top:-6px;right:-6px;width:18px;height:18px;background:#fff;color:#5e574e;border:1px solid var(--border);border-radius:50%;font-size:11px;display:flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;font-weight:700';
+    dismiss.textContent = '×';
+    dismiss.title = '7 天內不再顯示';
+    dismiss.addEventListener('click', function (e) {
+      e.stopPropagation();
+      try { localStorage.setItem(SUPPRESS_KEY, String(Date.now() + 7 * 86400000)); } catch (_) {}
+      btn.remove();
+    });
+    btn.appendChild(dismiss);
+
+    btn.addEventListener('click', function (e) {
+      if (e.target === dismiss) return;
+      DN.requestPushPermission().then(function () {
+        if (Notification.permission === 'granted') btn.remove();
+      });
+    });
+    btn.addEventListener('mouseenter', function () { btn.style.transform = 'translateY(-2px)'; });
+    btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
+    document.body.appendChild(btn);
   };
 
   DN.addBookmarkButton = function () {
@@ -5006,28 +5051,36 @@
       if (typeof opts.onChange === 'function') opts.onChange(lang);
     }
 
+    // F1 INP optimization: split init into critical (immediate) vs deferred (idle)
+    // Reduces long-task blocking during first interaction window.
+    var idle = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1); };
+    // ─── Critical (visual / first-interaction) ───
     DN.injectMobileMenu();
-    DN.injectBMC();
     DN.bindLangToggle(apply);
     apply(curLang);
     DN.addReadingProgress();
-    DN.addScrollToTop();
-    DN.bindRevealOnScroll();
-    DN.prefetchOnIdle();
-    DN.bindViewTransitions();
-    DN.initCmdK();
-    DN.initDarkMode();
+    // ─── Deferred (no first-paint impact) ───
+    idle(function () { DN.injectBMC(); }, { timeout: 1200 });
+    idle(function () { DN.addScrollToTop(); }, { timeout: 1500 });
+    idle(function () { DN.bindRevealOnScroll(); }, { timeout: 800 });
+    idle(function () { DN.prefetchOnIdle(); }, { timeout: 2500 });
+    idle(function () { DN.bindViewTransitions(); }, { timeout: 1500 });
+    idle(function () { DN.initCmdK(); }, { timeout: 2500 });
+    idle(function () { DN.initDarkMode(); }, { timeout: 1500 });
+    idle(function () { DN.injectPushBell && DN.injectPushBell(); }, { timeout: 4000 });
 
     // Article-only enhancements (auto-detect via .prose presence)
-    if (document.getElementById('proseZh') || document.querySelector('article .prose')) {
+    if (document.getElementById('proseZh') || document.querySelector('article .prose') || document.querySelector('article.max-w-3xl')) {
+      // ─── Critical (visible / interactive) ───
       DN.addReadingMeta();
       DN.addInlineTOC();
       DN.addFloatingTOC();
-      DN.bindScrollMemory();
-      DN.addInlineCTA();
-      DN.injectArticleHero();
-      DN.injectMedDiagrams();
-      DN.enhanceArticleImages();
+      // ─── Deferred ───
+      idle(function () { DN.bindScrollMemory(); }, { timeout: 1500 });
+      idle(function () { DN.addInlineCTA(); }, { timeout: 1500 });
+      idle(function () { DN.injectArticleHero(); }, { timeout: 1500 });
+      idle(function () { DN.injectMedDiagrams(); }, { timeout: 2000 });
+      idle(function () { DN.enhanceArticleImages(); }, { timeout: 2500 });
 
       // Per-article calculator priority: most-relevant calculator FIRST.
       // PHQ-9 (depression screen) intentionally removed from auto-injection — too negative for patient pages.
