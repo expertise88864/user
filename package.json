@@ -13,8 +13,7 @@
     "build": "python _gen_en_pages.py && python _gen_feeds.py && python _gen_search_index.py && python _minify.py"
   },
   "dependencies": {
-    "web-push": "^3.6.7",
-    "google-auth-library": "^9.14.1"
+    "web-push": "^3.6.7"
   },
   "engines": {
     "node": ">=20"

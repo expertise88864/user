@@ -1,1115 +1,227 @@
 {
   "slug": "pediatric-eczema",
   "strings": [
-    {
-      "zh": "怎麼診斷?Hanifin Rajka 標準",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "不同年齡好發部位",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "洗澡與保濕原則(Werfel 2024 ↑↑ 強推薦)",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "外用類固醇 — 嬰幼兒安全用法",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "TCI(局部鈣調磷酸酶抑制劑)— 臉部首選",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "過敏原檢測該不該做?(Werfel 2024 ↓↓ 反對「常規篩檢」)",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "Dupilumab — 6 個月以上嬰幼兒(2023 起 EMA / FDA / TFDA 核准)",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "過敏進行曲(Atopic march)— 預防策略",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "嬰兒副食品時機(LEAP / EAT 試驗推翻舊觀念)",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "家長最常問的問題(PTT / Dcard / 兒科診間最常被問)",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "結語 — 嬰幼兒異膚照護 5 大原則",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "主要診斷條件 (≥ 3 項)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "次要診斷條件 (≥ 3 項輔助)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "洗澡基本原則",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "保濕乳液選擇",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "常見適合產品成分(舉例、非品牌推薦)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "潤膚預防(Emollient prevention)— 高風險嬰兒",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "嬰幼兒類固醇分級對應",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "主動式維持治療(Proactive therapy)— Werfel 2024 ↑↑ 強推薦",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "FTU(指尖單位)劑量",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "優點",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "使用注意",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "Crisaborole 2% 寇緹斯(PDE-4 抑制劑)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "建議檢測時機",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "檢測方法",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "陽性 ≠ 真過敏",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "劑量(依體重)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "關鍵試驗:Paller AS et al., Lancet 2022(嬰幼兒)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "副作用(嬰幼兒)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "健保條件",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "已實證的預防策略",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "未證實的「預防」方法",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "實務建議(2024 國際指引整合)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "新生兒臉頰紅紅一塊塊是異膚嗎?",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "嬰兒可以擦類固醇嗎?會不會影響發育?",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "異膚會傳染給家人嗎?其他兄弟姊妹會被影響嗎?",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "嬰兒異膚一定要避開所有過敏原嗎?",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "嬰兒異膚要吃益生菌、深海魚油嗎?",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "異膚孩子上幼稚園 / 上學要注意什麼?",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "嬰兒異膚什麼時候該換 Dupilumab?",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "異膚會自己長大就好嗎?",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "嬰兒爆癢狂抓睡不著該怎麼辦?",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "本篇大綱",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "1 FTU = 從食指尖到第一指節的長度(成人手指),約 0.5 g 藥膏、可塗滿成人 2 個手掌(300 cm²)。嬰兒劑量按體型減半。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "核可 ≥ 3 個月;每天 2 次。台灣可取得;主要用於輕中度異膚、優點為非類固醇、非 TCI。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "皮膚乾燥(xerosis)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "魚鱗癬 / 掌紋增多 / 毛孔角化",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "立即型皮膚反應 / 血清 IgE 升高",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "早發年齡(嬰兒 / 兒童期)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "感染傾向(細菌性 / 病毒性 / 黴菌性)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "非特異性皮膚炎(手腳濕疹、乳頭濕疹、唇炎)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "耳後 / 眼周裂痕、Dennie-Morgan 下眼瞼摺痕",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "白色糠疹、鼻下摩擦痕(Allergic salute)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "含 ceramide:CeraVe Baby、艾妥麗 Atopiclair、理膚寶水 Lipikar AP+M、Cetaphil RestoraDerm",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "燕麥系列:艾惟諾 Aveeno Baby Eczema",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "含菸鹼醯胺修護:Bioderma Atoderm Intensive、QV Baby Skin Lotion",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "主動式維持治療效果好",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "可從 3 個月嬰兒開始使用(Pimecrolimus)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "FDA 黑框警告(理論癌症風險)— 20 年安全性資料未見增加,Werfel 2024 指引認為「短至中期使用安全」",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "感染期(疹、皰疹)暫停使用",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "合併蕁麻疹 / 血管性水腫 / 過敏性休克病史",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "反覆嚴重發作 + 治療反應差",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "納入 162 位 6 個月-5 歲中重度異膚兒童(失敗外用治療)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "Dupilumab + 低強度外用類固醇 vs 安慰劑 + 外用類固醇",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "結膜炎 5% vs 0%(略增加但溫和)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "無嚴重不良反應、無病人因副作用停藥",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "結膜炎:6 月-5 歲約 5%,可用人工淚液處理",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "注射部位反應:輕微、暫時",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "HSV 感染:似乎不增加",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "長期安全性資料目前 5 年以上、未見惡性腫瘤增加",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "低過敏配方奶在沒有牛奶蛋白過敏家族史時 — 沒有額外保護",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "益生菌 — 數據混合、目前 Werfel 2024 不強烈推薦",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "Vitamin D 補充 — 補充缺乏可能輕微有效、常規補充無強證據",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "「家裡保持完全無菌」— 反而可能增加風險(衛生假說)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "納入 640 位 4-11 個月、有嚴重異膚 / 蛋過敏的高風險嬰兒",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "隨機分組:早期攝取花生 vs 避開花生",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "3 個月母乳哺育嬰兒早期引入 6 種致敏食物",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "各種食物過敏發生率均下降",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "引入新食物時:單一新食物 / 次、觀察 48 小時",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "學校保濕乳液:書包準備一份小罐、洗手後 / 中午後補擦",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "避免班上養動物 / 共用毛巾 / 在地板毯上玩耍時間過長",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "立即積極外用治療:適當類固醇 + 大量保濕",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "口服抗組織胺(第二代,Cetirizine、Loratadine)夜間幫助止癢 + 助眠",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "剪短指甲 + 戴手套睡眠避免抓傷",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "一週內無改善 / 看到膿黃結痂 / 發燒 → 立即就醫",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "嬰兒期(出生到 1 歲)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「能擦類固醇嗎?」「會不會長大就好?」「要不要驗過敏原?」「Dupilumab 真的可以打嬰兒嗎?」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "2024 德國 S3 異膚指引(Werfel 等)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Paller 2022 NEJM 嬰幼兒 Dupilumab 試驗",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "提醒：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "盛行率",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "發病年齡",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "過敏進行曲",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "長大會不會好",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "≥ 6 個月嬰幼兒",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "癢感",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "典型形態與分布",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "慢性或反覆發作",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "個人 / 家族過敏史",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "注意",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "脂漏性皮膚炎(嬰兒搖籃帽)、接觸性皮膚炎(尿布疹、口水疹)、疥瘡、原發性免疫缺乏症(IPEX、Wiskott-Aldrich)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "臉頰、額頭、頭皮",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "尿布區通常不受影響",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "關節屈側",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "頭頸部 / 上半身為主",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "水溫 32-37℃ 微溫",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "5-10 分鐘為限",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "避免泡澡",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "無皂鹼、低 pH (5.5)、無香料",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "洗澡後 3 分鐘內",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "關鍵成分",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "輔助成分",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "避免",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "劑型",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "用量",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "出生後每天全身保濕至少 6 個月",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不強烈建議",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "家長最常問的「類固醇恐懼症」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第一線安全有效",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Class VI-VII (最弱)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "新觀念:急性期積極治療把火滅掉，緩解期在「好發部位」每週 2 次擦低強度類固醇或 TCI 預防",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Tacrolimus 0.03% 普特皮",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Tacrolimus 0.1% 普特皮",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Pimecrolimus 1% 醫立妥",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不會皮膚萎縮",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "初期燒灼感",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "避免日曬",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "德國 S3 2024 明確反對",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "明確時間相關",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "中重度異膚 + 嬰幼兒(嬰兒期過敏風險高)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "尚未食用且未測試耐受的基本食物",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Specific IgE 抽血",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Atopy patch test(異位性貼膚試驗)— Werfel 2024 ↓↓ 不建議常規",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "確診金標準:口服食物挑戰(oral food challenge)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "消除-激發試驗(elimination + provocation)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "蛋白質、鈣、鐵、Omega-3 缺乏",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "2023 年起異膚治療版圖大改變",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第 16 週 IGA 0-1(皮膚清除或近清除)達成率:28% vs 4%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "EASI-75 達成率:53% vs 11%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "關鍵的「皮膚屏障假說」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "積極控制異膚",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "避免硬水長時間接觸",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "避免菸害",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "母乳哺育",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "適時引入致敏食物",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "過去觀念(已被推翻):",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "2015-2024 年新觀念:",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "4-6 個月開始引入",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "高風險嬰兒",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "請過敏專科醫師評估",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不需要",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "新生兒痤瘡",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "2-3 個月後",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "可以、而且是首選",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "長期",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不會傳染",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "有家族遺傳傾向",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不是",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "益生菌",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "深海魚油 / Omega-3",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不建議當作主要治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "跟老師溝通",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "金黃色葡萄球菌感染",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "中重度",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "標準外用治療失敗",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "顯著影響生活品質",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "40-60% 在青春期前明顯改善;30-50% 持續到成年",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "越早控制好、越能避免過敏進行曲後續發展",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "濕敷療法(wet wrap)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "每天大量保濕",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "急性發作積極治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "緩解期主動維持",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不要盲目戒口",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "中重度別忍",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "延伸閱讀：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陳翊嘉 醫師",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "嬰幼兒 / 兒童異位性皮膚炎",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "依 Werfel 2024 S3 + Paller NEJM 2022 · 更新 2026-05-05",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "0-5 歲、外用藥、Dupilumab 時代",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "皮膚科 住院醫師",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "部位",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "建議強度",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "常見藥膏(台灣)",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "使用時間",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "嬰兒部位",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "FTU(每次)",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "年齡 / 體重",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "起始劑量",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "維持劑量",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "臉、眼周、生殖器、腋下、鼠蹊",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 1-2 次、連續 ≤ 7 天;發作頻繁可考慮 TCI",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "軀幹、四肢一般部位",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Class IV-V (中弱)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 1-2 次、連續 7-14 天急性、後改 weekend therapy",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "四肢厚皮、慢性苔蘚化",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Class III-IV (中強)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 1-2 次、連續 ≤ 14 天",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "手掌、腳掌",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Class II-III (強)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "短期使用,2 週內",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "整張臉 + 頸",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "單側手臂 + 手",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "單側腿 + 腳",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "軀幹前面",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "軀幹後面 + 屁股",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥ 6 月 - 5 歲、體重 5-15 kg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "200 mg SC 第 0 天",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "200 mg SC 每 4 週",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥ 6 月 - 5 歲、體重 15-30 kg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "300 mg SC 第 0 天",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "300 mg SC 每 4 週",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "6-11 歲、體重 15-60 kg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "300 mg SC 第 0+15 天",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "6-11 歲、體重 ≥ 60 kg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "600 mg SC 第 0 天",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "300 mg SC 每 2 週",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "12-17 歲、體重 &lt; 60 kg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "400 mg SC 第 0 天",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "200 mg SC 每 2 週",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "12-17 歲、體重 ≥ 60 kg",
-      "en": "",
-      "tag": "td"
-    }
+    { "zh": "怎麼診斷?Hanifin Rajka 標準", "en": "How is it diagnosed? Hanifin & Rajka criteria", "tag": "h2" },
+    { "zh": "不同年齡好發部位", "en": "Distribution by age group", "tag": "h2" },
+    { "zh": "洗澡與保濕原則(Werfel 2024 ↑↑ 強推薦)", "en": "Bathing and moisturization principles (Werfel 2024 ↑↑ strong recommendation)", "tag": "h2" },
+    { "zh": "外用類固醇 — 嬰幼兒安全用法", "en": "Topical corticosteroids — safe use in infants and children", "tag": "h2" },
+    { "zh": "TCI(局部鈣調磷酸酶抑制劑)— 臉部首選", "en": "TCI (topical calcineurin inhibitors) — first choice for the face", "tag": "h2" },
+    { "zh": "過敏原檢測該不該做?(Werfel 2024 ↓↓ 反對「常規篩檢」)", "en": "Should allergy testing be performed? (Werfel 2024 ↓↓ against routine screening)", "tag": "h2" },
+    { "zh": "Dupilumab — 6 個月以上嬰幼兒(2023 起 EMA / FDA / TFDA 核准)", "en": "Dupilumab — for infants ≥ 6 months (EMA / FDA / TFDA approved since 2023)", "tag": "h2" },
+    { "zh": "過敏進行曲(Atopic march)— 預防策略", "en": "Atopic march — prevention strategies", "tag": "h2" },
+    { "zh": "嬰兒副食品時機(LEAP / EAT 試驗推翻舊觀念)", "en": "Infant complementary feeding timing (LEAP / EAT trials overturned old guidance)", "tag": "h2" },
+    { "zh": "家長最常問的問題(PTT / Dcard / 兒科診間最常被問)", "en": "Parents' most common questions (FAQ from PTT / Dcard / pediatric clinics)", "tag": "h2" },
+    { "zh": "結語 — 嬰幼兒異膚照護 5 大原則", "en": "Bottom line — 5 principles of pediatric AD care", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "主要診斷條件 (≥ 3 項)", "en": "Major criteria (≥ 3 required)", "tag": "h3" },
+    { "zh": "次要診斷條件 (≥ 3 項輔助)", "en": "Minor criteria (≥ 3 supportive)", "tag": "h3" },
+    { "zh": "洗澡基本原則", "en": "Basic bathing principles", "tag": "h3" },
+    { "zh": "保濕乳液選擇", "en": "Choosing a moisturizer", "tag": "h3" },
+    { "zh": "常見適合產品成分(舉例、非品牌推薦)", "en": "Suitable ingredients (examples, not brand endorsements)", "tag": "h3" },
+    { "zh": "潤膚預防(Emollient prevention)— 高風險嬰兒", "en": "Emollient prevention — high-risk infants", "tag": "h3" },
+    { "zh": "嬰幼兒類固醇分級對應", "en": "Pediatric topical steroid potency selection", "tag": "h3" },
+    { "zh": "主動式維持治療(Proactive therapy)— Werfel 2024 ↑↑ 強推薦", "en": "Proactive therapy — Werfel 2024 ↑↑ strong recommendation", "tag": "h3" },
+    { "zh": "FTU(指尖單位)劑量", "en": "FTU (fingertip unit) dosing", "tag": "h3" },
+    { "zh": "優點", "en": "Advantages", "tag": "h3" },
+    { "zh": "使用注意", "en": "Usage cautions", "tag": "h3" },
+    { "zh": "Crisaborole 2% 寇緹斯(PDE-4 抑制劑)", "en": "Crisaborole 2% (Eucrisa, PDE-4 inhibitor)", "tag": "h3" },
+    { "zh": "建議檢測時機", "en": "When to test", "tag": "h3" },
+    { "zh": "檢測方法", "en": "Testing methods", "tag": "h3" },
+    { "zh": "陽性 ≠ 真過敏", "en": "Positive ≠ true allergy", "tag": "h3" },
+    { "zh": "劑量(依體重)", "en": "Dosing (weight-based)", "tag": "h3" },
+    { "zh": "關鍵試驗:Paller AS et al., Lancet 2022(嬰幼兒)", "en": "Key trial: Paller AS et al., Lancet 2022 (infants and young children)", "tag": "h3" },
+    { "zh": "副作用(嬰幼兒)", "en": "Adverse effects (in infants and young children)", "tag": "h3" },
+    { "zh": "健保條件", "en": "NHI eligibility", "tag": "h3" },
+    { "zh": "已實證的預防策略", "en": "Evidence-based prevention strategies", "tag": "h3" },
+    { "zh": "未證實的「預防」方法", "en": "Unproven \"prevention\" methods", "tag": "h3" },
+    { "zh": "實務建議(2024 國際指引整合)", "en": "Practical recommendations (integrated 2024 international guidelines)", "tag": "h3" },
+    { "zh": "新生兒臉頰紅紅一塊塊是異膚嗎?", "en": "Are red patches on a newborn's cheeks atopic dermatitis?", "tag": "h3" },
+    { "zh": "嬰兒可以擦類固醇嗎?會不會影響發育?", "en": "Can infants use topical steroids? Will it affect development?", "tag": "h3" },
+    { "zh": "異膚會傳染給家人嗎?其他兄弟姊妹會被影響嗎?", "en": "Is AD contagious? Will siblings be affected?", "tag": "h3" },
+    { "zh": "嬰兒異膚一定要避開所有過敏原嗎?", "en": "Must I avoid all allergens for an infant with AD?", "tag": "h3" },
+    { "zh": "嬰兒異膚要吃益生菌、深海魚油嗎?", "en": "Should infants with AD take probiotics or fish oil?", "tag": "h3" },
+    { "zh": "異膚孩子上幼稚園 / 上學要注意什麼?", "en": "What should parents prepare when an AD child starts kindergarten / school?", "tag": "h3" },
+    { "zh": "嬰兒異膚什麼時候該換 Dupilumab?", "en": "When should an infant with AD switch to dupilumab?", "tag": "h3" },
+    { "zh": "異膚會自己長大就好嗎?", "en": "Will AD resolve as the child grows?", "tag": "h3" },
+    { "zh": "嬰兒爆癢狂抓睡不著該怎麼辦?", "en": "What to do when an infant is scratching uncontrollably and can't sleep?", "tag": "h3" },
+    { "zh": "本篇大綱", "en": "Article outline", "tag": "h4" },
+    { "zh": "1 FTU = 從食指尖到第一指節的長度(成人手指),約 0.5 g 藥膏、可塗滿成人 2 個手掌(300 cm²)。嬰兒劑量按體型減半。", "en": "1 FTU = the amount from adult fingertip to first interphalangeal joint (~0.5 g cream); covers ~2 adult palms (300 cm²). Halve dose proportionally for infants.", "tag": "p" },
+    { "zh": "核可 ≥ 3 個月;每天 2 次。台灣可取得;主要用於輕中度異膚、優點為非類固醇、非 TCI。", "en": "Approved for ≥ 3 months; twice daily. Available in Taiwan; primarily for mild-moderate AD; advantages: non-steroidal, non-TCI.", "tag": "p" },
+    { "zh": "皮膚乾燥(xerosis)", "en": "Xerosis (dry skin)", "tag": "li" },
+    { "zh": "魚鱗癬 / 掌紋增多 / 毛孔角化", "en": "Ichthyosis / hyperlinear palms / keratosis pilaris", "tag": "li" },
+    { "zh": "立即型皮膚反應 / 血清 IgE 升高", "en": "Immediate-type skin reactivity / elevated serum IgE", "tag": "li" },
+    { "zh": "早發年齡(嬰兒 / 兒童期)", "en": "Early age of onset (infancy / childhood)", "tag": "li" },
+    { "zh": "感染傾向(細菌性 / 病毒性 / 黴菌性)", "en": "Susceptibility to infection (bacterial / viral / fungal)", "tag": "li" },
+    { "zh": "非特異性皮膚炎(手腳濕疹、乳頭濕疹、唇炎)", "en": "Non-specific dermatitis (hand/foot eczema, nipple eczema, cheilitis)", "tag": "li" },
+    { "zh": "耳後 / 眼周裂痕、Dennie-Morgan 下眼瞼摺痕", "en": "Postauricular / periorbital fissures, Dennie-Morgan infraorbital folds", "tag": "li" },
+    { "zh": "白色糠疹、鼻下摩擦痕(Allergic salute)", "en": "Pityriasis alba, allergic salute (nasal crease)", "tag": "li" },
+    { "zh": "含 ceramide:CeraVe Baby、艾妥麗 Atopiclair、理膚寶水 Lipikar AP+M、Cetaphil RestoraDerm", "en": "Ceramide-containing: CeraVe Baby, Atopiclair, La Roche-Posay Lipikar AP+M, Cetaphil RestoraDerm", "tag": "li" },
+    { "zh": "燕麥系列:艾惟諾 Aveeno Baby Eczema", "en": "Oat-based: Aveeno Baby Eczema", "tag": "li" },
+    { "zh": "含菸鹼醯胺修護:Bioderma Atoderm Intensive、QV Baby Skin Lotion", "en": "Niacinamide-restorative: Bioderma Atoderm Intensive, QV Baby Skin Lotion", "tag": "li" },
+    { "zh": "主動式維持治療效果好", "en": "Effective for proactive maintenance therapy", "tag": "li" },
+    { "zh": "可從 3 個月嬰兒開始使用(Pimecrolimus)", "en": "Can be initiated from 3 months of age (pimecrolimus)", "tag": "li" },
+    { "zh": "FDA 黑框警告(理論癌症風險)— 20 年安全性資料未見增加,Werfel 2024 指引認為「短至中期使用安全」", "en": "FDA boxed warning (theoretical malignancy risk) — 20 years of safety data show no increase; Werfel 2024 considers short-to-mid-term use safe", "tag": "li" },
+    { "zh": "感染期(疹、皰疹)暫停使用", "en": "Hold during active infection (rash, herpes)", "tag": "li" },
+    { "zh": "合併蕁麻疹 / 血管性水腫 / 過敏性休克病史", "en": "Concurrent urticaria / angioedema / anaphylaxis history", "tag": "li" },
+    { "zh": "反覆嚴重發作 + 治療反應差", "en": "Recurrent severe flares + poor treatment response", "tag": "li" },
+    { "zh": "納入 162 位 6 個月-5 歲中重度異膚兒童(失敗外用治療)", "en": "Enrolled 162 children aged 6 months–5 years with moderate-severe AD (failed topical therapy)", "tag": "li" },
+    { "zh": "Dupilumab + 低強度外用類固醇 vs 安慰劑 + 外用類固醇", "en": "Dupilumab + low-potency topical steroid vs placebo + topical steroid", "tag": "li" },
+    { "zh": "結膜炎 5% vs 0%(略增加但溫和)", "en": "Conjunctivitis 5% vs 0% (slight increase but mild)", "tag": "li" },
+    { "zh": "無嚴重不良反應、無病人因副作用停藥", "en": "No serious adverse events; no patient discontinuation due to AEs", "tag": "li" },
+    { "zh": "結膜炎:6 月-5 歲約 5%,可用人工淚液處理", "en": "Conjunctivitis: ~5% in 6-month-to-5-year-old children; managed with artificial tears", "tag": "li" },
+    { "zh": "注射部位反應:輕微、暫時", "en": "Injection-site reactions: mild and transient", "tag": "li" },
+    { "zh": "HSV 感染:似乎不增加", "en": "HSV infection: no apparent increase", "tag": "li" },
+    { "zh": "長期安全性資料目前 5 年以上、未見惡性腫瘤增加", "en": "Long-term safety data now exceed 5 years; no increase in malignancy observed", "tag": "li" },
+    { "zh": "低過敏配方奶在沒有牛奶蛋白過敏家族史時 — 沒有額外保護", "en": "Hypoallergenic formula in absence of cow's milk allergy family history — no additional protection", "tag": "li" },
+    { "zh": "益生菌 — 數據混合、目前 Werfel 2024 不強烈推薦", "en": "Probiotics — mixed data; Werfel 2024 does not strongly recommend", "tag": "li" },
+    { "zh": "Vitamin D 補充 — 補充缺乏可能輕微有效、常規補充無強證據", "en": "Vitamin D — replacing deficiency may help modestly; routine supplementation lacks strong evidence", "tag": "li" },
+    { "zh": "「家裡保持完全無菌」— 反而可能增加風險(衛生假說)", "en": "\"Keeping the home completely sterile\" — may paradoxically increase risk (hygiene hypothesis)", "tag": "li" },
+    { "zh": "納入 640 位 4-11 個月、有嚴重異膚 / 蛋過敏的高風險嬰兒", "en": "Enrolled 640 high-risk infants 4–11 months old with severe AD / egg allergy", "tag": "li" },
+    { "zh": "隨機分組:早期攝取花生 vs 避開花生", "en": "Randomized: early peanut consumption vs peanut avoidance", "tag": "li" },
+    { "zh": "3 個月母乳哺育嬰兒早期引入 6 種致敏食物", "en": "Three-month breastfed infants given early introduction to 6 allergenic foods", "tag": "li" },
+    { "zh": "各種食物過敏發生率均下降", "en": "Incidence of all food allergies decreased", "tag": "li" },
+    { "zh": "引入新食物時:單一新食物 / 次、觀察 48 小時", "en": "When introducing new foods: one new food at a time, observe for 48 hours", "tag": "li" },
+    { "zh": "學校保濕乳液:書包準備一份小罐、洗手後 / 中午後補擦", "en": "School moisturizer: keep a small bottle in the backpack; reapply after handwashing or after lunch", "tag": "li" },
+    { "zh": "避免班上養動物 / 共用毛巾 / 在地板毯上玩耍時間過長", "en": "Avoid classroom pets / shared towels / prolonged play on carpeted floors", "tag": "li" },
+    { "zh": "立即積極外用治療:適當類固醇 + 大量保濕", "en": "Immediate aggressive topical therapy: appropriate-potency steroid + generous moisturization", "tag": "li" },
+    { "zh": "口服抗組織胺(第二代,Cetirizine、Loratadine)夜間幫助止癢 + 助眠", "en": "Oral second-generation antihistamines (cetirizine, loratadine) help with nocturnal itch and sleep", "tag": "li" },
+    { "zh": "剪短指甲 + 戴手套睡眠避免抓傷", "en": "Trim nails short + wear cotton gloves at night to prevent excoriation", "tag": "li" },
+    { "zh": "一週內無改善 / 看到膿黃結痂 / 發燒 → 立即就醫", "en": "No improvement within 1 week / yellow purulent crusts / fever → seek immediate medical care", "tag": "li" },
+    { "zh": "嬰兒期(出生到 1 歲)", "en": "Infancy (birth to 1 year)", "tag": "strong" },
+    { "zh": "「能擦類固醇嗎?」「會不會長大就好?」「要不要驗過敏原?」「Dupilumab 真的可以打嬰兒嗎?」", "en": "\"Can I use topical steroids?\" \"Will my child grow out of it?\" \"Should we do allergy testing?\" \"Is dupilumab really safe in infants?\"", "tag": "strong" },
+    { "zh": "2024 德國 S3 異膚指引(Werfel 等)", "en": "2024 German S3 AD guidelines (Werfel et al.)", "tag": "strong" },
+    { "zh": "Paller 2022 NEJM 嬰幼兒 Dupilumab 試驗", "en": "Paller 2022 NEJM infant/young-child dupilumab trial", "tag": "strong" },
+    { "zh": "提醒：", "en": "Note:", "tag": "strong" },
+    { "zh": "盛行率", "en": "Prevalence", "tag": "strong" },
+    { "zh": "發病年齡", "en": "Age of onset", "tag": "strong" },
+    { "zh": "過敏進行曲", "en": "Atopic march", "tag": "strong" },
+    { "zh": "長大會不會好", "en": "Will they grow out of it", "tag": "strong" },
+    { "zh": "≥ 6 個月嬰幼兒", "en": "Infants ≥ 6 months", "tag": "strong" },
+    { "zh": "癢感", "en": "Pruritus", "tag": "strong" },
+    { "zh": "典型形態與分布", "en": "Typical morphology and distribution", "tag": "strong" },
+    { "zh": "慢性或反覆發作", "en": "Chronic or relapsing course", "tag": "strong" },
+    { "zh": "個人 / 家族過敏史", "en": "Personal / family atopy history", "tag": "strong" },
+    { "zh": "注意", "en": "Note", "tag": "strong" },
+    { "zh": "脂漏性皮膚炎(嬰兒搖籃帽)、接觸性皮膚炎(尿布疹、口水疹)、疥瘡、原發性免疫缺乏症(IPEX、Wiskott-Aldrich)", "en": "Seborrheic dermatitis (infantile cradle cap), contact dermatitis (diaper rash, drool rash), scabies, primary immunodeficiency (IPEX, Wiskott-Aldrich)", "tag": "strong" },
+    { "zh": "臉頰、額頭、頭皮", "en": "Cheeks, forehead, scalp", "tag": "strong" },
+    { "zh": "尿布區通常不受影響", "en": "Diaper area typically spared", "tag": "strong" },
+    { "zh": "關節屈側", "en": "Flexural surfaces", "tag": "strong" },
+    { "zh": "頭頸部 / 上半身為主", "en": "Predominantly head/neck and upper body", "tag": "strong" },
+    { "zh": "水溫 32-37℃ 微溫", "en": "Lukewarm water 32–37°C", "tag": "strong" },
+    { "zh": "5-10 分鐘為限", "en": "Limit to 5–10 minutes", "tag": "strong" },
+    { "zh": "避免泡澡", "en": "Avoid prolonged soaking", "tag": "strong" },
+    { "zh": "無皂鹼、低 pH (5.5)、無香料", "en": "Soap-free, low-pH (5.5), fragrance-free", "tag": "strong" },
+    { "zh": "洗澡後 3 分鐘內", "en": "Within 3 minutes of bathing", "tag": "strong" },
+    { "zh": "關鍵成分", "en": "Key ingredients", "tag": "strong" },
+    { "zh": "輔助成分", "en": "Adjunct ingredients", "tag": "strong" },
+    { "zh": "避免", "en": "Avoid", "tag": "strong" },
+    { "zh": "劑型", "en": "Vehicle", "tag": "strong" },
+    { "zh": "用量", "en": "Quantity", "tag": "strong" },
+    { "zh": "出生後每天全身保濕至少 6 個月", "en": "Daily whole-body moisturization for at least 6 months after birth", "tag": "strong" },
+    { "zh": "不強烈建議", "en": "Not strongly recommended", "tag": "strong" },
+    { "zh": "家長最常問的「類固醇恐懼症」", "en": "Parents' most common concern: steroid phobia", "tag": "strong" },
+    { "zh": "第一線安全有效", "en": "First-line, safe, and effective", "tag": "strong" },
+    { "zh": "Class VI-VII (最弱)", "en": "Class VI–VII (weakest)", "tag": "strong" },
+    { "zh": "新觀念:急性期積極治療把火滅掉，緩解期在「好發部位」每週 2 次擦低強度類固醇或 TCI 預防", "en": "New concept: aggressively treat acute flares; during remission apply low-potency steroid or TCI 2×/week to flare-prone sites for prevention", "tag": "strong" },
+    { "zh": "Tacrolimus 0.03% 普特皮", "en": "Tacrolimus 0.03% (Protopic)", "tag": "strong" },
+    { "zh": "Tacrolimus 0.1% 普特皮", "en": "Tacrolimus 0.1% (Protopic)", "tag": "strong" },
+    { "zh": "Pimecrolimus 1% 醫立妥", "en": "Pimecrolimus 1% (Elidel)", "tag": "strong" },
+    { "zh": "不會皮膚萎縮", "en": "Does not cause skin atrophy", "tag": "strong" },
+    { "zh": "初期燒灼感", "en": "Initial burning sensation", "tag": "strong" },
+    { "zh": "避免日曬", "en": "Avoid sun exposure", "tag": "strong" },
+    { "zh": "德國 S3 2024 明確反對", "en": "German S3 2024 explicitly opposes", "tag": "strong" },
+    { "zh": "明確時間相關", "en": "Clear temporal relationship", "tag": "strong" },
+    { "zh": "中重度異膚 + 嬰幼兒(嬰兒期過敏風險高)", "en": "Moderate-severe AD + infants (highest infancy allergy risk)", "tag": "strong" },
+    { "zh": "尚未食用且未測試耐受的基本食物", "en": "Common foods not yet introduced or tested for tolerance", "tag": "strong" },
+    { "zh": "Specific IgE 抽血", "en": "Specific IgE blood test", "tag": "strong" },
+    { "zh": "Atopy patch test(異位性貼膚試驗)— Werfel 2024 ↓↓ 不建議常規", "en": "Atopy patch test — Werfel 2024 ↓↓ not recommended for routine use", "tag": "strong" },
+    { "zh": "確診金標準:口服食物挑戰(oral food challenge)", "en": "Diagnostic gold standard: oral food challenge", "tag": "strong" },
+    { "zh": "消除-激發試驗(elimination + provocation)", "en": "Elimination + provocation test", "tag": "strong" },
+    { "zh": "蛋白質、鈣、鐵、Omega-3 缺乏", "en": "Protein, calcium, iron, omega-3 deficiency", "tag": "strong" },
+    { "zh": "2023 年起異膚治療版圖大改變", "en": "Since 2023, pediatric AD treatment landscape has dramatically shifted", "tag": "strong" },
+    { "zh": "第 16 週 IGA 0-1(皮膚清除或近清除)達成率:28% vs 4%", "en": "Week-16 IGA 0–1 (clear / almost clear) achievement: 28% vs 4%", "tag": "strong" },
+    { "zh": "EASI-75 達成率:53% vs 11%", "en": "EASI-75 achievement: 53% vs 11%", "tag": "strong" },
+    { "zh": "關鍵的「皮膚屏障假說」", "en": "Critical \"skin barrier hypothesis\"", "tag": "strong" },
+    { "zh": "積極控制異膚", "en": "Aggressively control AD", "tag": "strong" },
+    { "zh": "避免硬水長時間接觸", "en": "Avoid prolonged hard-water contact", "tag": "strong" },
+    { "zh": "避免菸害", "en": "Avoid tobacco exposure", "tag": "strong" },
+    { "zh": "母乳哺育", "en": "Breastfeeding", "tag": "strong" },
+    { "zh": "適時引入致敏食物", "en": "Timely introduction of allergenic foods", "tag": "strong" },
+    { "zh": "過去觀念(已被推翻):", "en": "Old belief (now overturned):", "tag": "strong" },
+    { "zh": "2015-2024 年新觀念:", "en": "New paradigm (2015–2024):", "tag": "strong" },
+    { "zh": "4-6 個月開始引入", "en": "Introduce starting at 4–6 months", "tag": "strong" },
+    { "zh": "高風險嬰兒", "en": "High-risk infants", "tag": "strong" },
+    { "zh": "請過敏專科醫師評估", "en": "Refer to allergist for evaluation", "tag": "strong" },
+    { "zh": "不需要", "en": "Not necessary", "tag": "strong" },
+    { "zh": "新生兒痤瘡", "en": "Neonatal acne", "tag": "strong" },
+    { "zh": "2-3 個月後", "en": "After 2–3 months", "tag": "strong" },
+    { "zh": "可以、而且是首選", "en": "Yes, and it's the first-line choice", "tag": "strong" },
+    { "zh": "長期", "en": "Long-term", "tag": "strong" },
+    { "zh": "不會傳染", "en": "Not contagious", "tag": "strong" },
+    { "zh": "有家族遺傳傾向", "en": "Familial predisposition exists", "tag": "strong" },
+    { "zh": "不是", "en": "No", "tag": "strong" },
+    { "zh": "益生菌", "en": "Probiotics", "tag": "strong" },
+    { "zh": "深海魚油 / Omega-3", "en": "Fish oil / omega-3", "tag": "strong" },
+    { "zh": "不建議當作主要治療", "en": "Not recommended as primary therapy", "tag": "strong" },
+    { "zh": "跟老師溝通", "en": "Communicate with the teacher", "tag": "strong" },
+    { "zh": "金黃色葡萄球菌感染", "en": "Staphylococcus aureus infection", "tag": "strong" },
+    { "zh": "中重度", "en": "Moderate-severe", "tag": "strong" },
+    { "zh": "標準外用治療失敗", "en": "Failure of standard topical therapy", "tag": "strong" },
+    { "zh": "顯著影響生活品質", "en": "Significant impact on quality of life", "tag": "strong" },
+    { "zh": "40-60% 在青春期前明顯改善;30-50% 持續到成年", "en": "40–60% significantly improve before puberty; 30–50% persist into adulthood", "tag": "strong" },
+    { "zh": "越早控制好、越能避免過敏進行曲後續發展", "en": "Earlier control reduces subsequent atopic march progression", "tag": "strong" },
+    { "zh": "濕敷療法(wet wrap)", "en": "Wet wrap therapy", "tag": "strong" },
+    { "zh": "每天大量保濕", "en": "Daily generous moisturization", "tag": "strong" },
+    { "zh": "急性發作積極治療", "en": "Aggressive treatment of acute flares", "tag": "strong" },
+    { "zh": "緩解期主動維持", "en": "Proactive maintenance during remission", "tag": "strong" },
+    { "zh": "不要盲目戒口", "en": "Don't restrict diet blindly", "tag": "strong" },
+    { "zh": "中重度別忍", "en": "Don't endure moderate-severe AD", "tag": "strong" },
+    { "zh": "延伸閱讀：", "en": "Further reading:", "tag": "strong" },
+    { "zh": "陳翊嘉 醫師", "en": "Dr. Yi-Jia Chen", "tag": "strong" },
+    { "zh": "嬰幼兒 / 兒童異位性皮膚炎", "en": "Pediatric atopic dermatitis", "tag": "span" },
+    { "zh": "依 Werfel 2024 S3 + Paller NEJM 2022 · 更新 2026-05-05", "en": "Per Werfel 2024 S3 + Paller NEJM 2022 · Updated 2026-05-05", "tag": "span" },
+    { "zh": "0-5 歲、外用藥、Dupilumab 時代", "en": "Ages 0–5, topical therapy, the dupilumab era", "tag": "span" },
+    { "zh": "皮膚科 住院醫師", "en": "Dermatology Resident", "tag": "span" },
+    { "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：", "en": "Content corrections / academic citation inquiries / media partnerships:", "tag": "span" },
+    { "zh": "部位", "en": "Site", "tag": "th" },
+    { "zh": "建議強度", "en": "Recommended potency", "tag": "th" },
+    { "zh": "常見藥膏(台灣)", "en": "Common products (Taiwan)", "tag": "th" },
+    { "zh": "使用時間", "en": "Duration", "tag": "th" },
+    { "zh": "嬰兒部位", "en": "Infant body region", "tag": "th" },
+    { "zh": "FTU(每次)", "en": "FTU (per application)", "tag": "th" },
+    { "zh": "年齡 / 體重", "en": "Age / weight", "tag": "th" },
+    { "zh": "起始劑量", "en": "Loading dose", "tag": "th" },
+    { "zh": "維持劑量", "en": "Maintenance dose", "tag": "th" },
+    { "zh": "臉、眼周、生殖器、腋下、鼠蹊", "en": "Face, periorbital, genitalia, axillae, groin", "tag": "td" },
+    { "zh": "每天 1-2 次、連續 ≤ 7 天;發作頻繁可考慮 TCI", "en": "1–2 times daily for ≤ 7 days; consider TCI for frequent flares", "tag": "td" },
+    { "zh": "軀幹、四肢一般部位", "en": "Trunk and limbs (general areas)", "tag": "td" },
+    { "zh": "Class IV-V (中弱)", "en": "Class IV–V (mid-low)", "tag": "td" },
+    { "zh": "每天 1-2 次、連續 7-14 天急性、後改 weekend therapy", "en": "1–2 times daily for 7–14 days acute, then transition to weekend proactive therapy", "tag": "td" },
+    { "zh": "四肢厚皮、慢性苔蘚化", "en": "Thick-skinned limbs, chronic lichenification", "tag": "td" },
+    { "zh": "Class III-IV (中強)", "en": "Class III–IV (mid-high)", "tag": "td" },
+    { "zh": "每天 1-2 次、連續 ≤ 14 天", "en": "1–2 times daily for ≤ 14 days", "tag": "td" },
+    { "zh": "手掌、腳掌", "en": "Palms, soles", "tag": "td" },
+    { "zh": "Class II-III (強)", "en": "Class II–III (high)", "tag": "td" },
+    { "zh": "短期使用,2 週內", "en": "Short-term use, within 2 weeks", "tag": "td" },
+    { "zh": "整張臉 + 頸", "en": "Entire face + neck", "tag": "td" },
+    { "zh": "單側手臂 + 手", "en": "Single arm + hand", "tag": "td" },
+    { "zh": "單側腿 + 腳", "en": "Single leg + foot", "tag": "td" },
+    { "zh": "軀幹前面", "en": "Anterior trunk", "tag": "td" },
+    { "zh": "軀幹後面 + 屁股", "en": "Posterior trunk + buttocks", "tag": "td" },
+    { "zh": "≥ 6 月 - 5 歲、體重 5-15 kg", "en": "≥ 6 months–5 years, weight 5–15 kg", "tag": "td" },
+    { "zh": "200 mg SC 第 0 天", "en": "200 mg SC on day 0", "tag": "td" },
+    { "zh": "200 mg SC 每 4 週", "en": "200 mg SC every 4 weeks", "tag": "td" },
+    { "zh": "≥ 6 月 - 5 歲、體重 15-30 kg", "en": "≥ 6 months–5 years, weight 15–30 kg", "tag": "td" },
+    { "zh": "300 mg SC 第 0 天", "en": "300 mg SC on day 0", "tag": "td" },
+    { "zh": "300 mg SC 每 4 週", "en": "300 mg SC every 4 weeks", "tag": "td" },
+    { "zh": "6-11 歲、體重 15-60 kg", "en": "6–11 years, weight 15–60 kg", "tag": "td" },
+    { "zh": "300 mg SC 第 0+15 天", "en": "300 mg SC on day 0 + day 15", "tag": "td" },
+    { "zh": "6-11 歲、體重 ≥ 60 kg", "en": "6–11 years, weight ≥ 60 kg", "tag": "td" },
+    { "zh": "600 mg SC 第 0 天", "en": "600 mg SC on day 0", "tag": "td" },
+    { "zh": "300 mg SC 每 2 週", "en": "300 mg SC every 2 weeks", "tag": "td" },
+    { "zh": "12-17 歲、體重 &lt; 60 kg", "en": "12–17 years, weight &lt; 60 kg", "tag": "td" },
+    { "zh": "400 mg SC 第 0 天", "en": "400 mg SC on day 0", "tag": "td" },
+    { "zh": "200 mg SC 每 2 週", "en": "200 mg SC every 2 weeks", "tag": "td" },
+    { "zh": "12-17 歲、體重 ≥ 60 kg", "en": "12–17 years, weight ≥ 60 kg", "tag": "td" }
   ]
 }

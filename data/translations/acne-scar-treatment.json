@@ -1,725 +1,149 @@
 {
   "slug": "acne-scar-treatment",
   "strings": [
-    {
-      "zh": "5 大痘疤分類",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "紅疤(PIE)— 別急著雷射",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "黑疤(PIH)— 防曬最重要",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "凹疤 1：冰鑿型 → TCA CROSS",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "凹疤 2：廂車型 → 飛梭雷射",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "凹疤 3：滾動型 → 皮下分離",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "肥厚疤 / 蟹足腫",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "最常見的組合療程",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "療程預期 / 價格 / 副作用",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "最常見的迷思",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "常見問題（PTT / Dcard 上常被問的）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "結語",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "痘疤雷射 PTT 推薦哪一台機器？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "痘疤雷射多少錢？健保有嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "痘疤多久看得到改善？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "紅疤(PIE)多久會自己消？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "蟹足腫能不能用雷射磨平？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "4 種凹疤剖面 · 治療策略不同",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "本篇大綱",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "亞洲膚質特別容易留 PIH。處理三招：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "實務上很少只做一種治療。常見組合：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "每次治療 4-8 週間隔，通常需 4-8 次",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "單次效果好，改善率 50-70%",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "價格：每次 NT$ 3,000-8,000（依疤量）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "缺點：操作者技術差異大，過深會加深疤，需找有經驗醫師",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "每次間隔 4-8 週，通常 2-4 次達到效果",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "價格：皮下分離單次 NT$ 5,000-15,000；玻尿酸 NT$ 12,000-30,000/支(0.5-1 mL)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "常合併飛梭雷射處理表面殘餘",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "停止後仍會持續改善，但需維持治療避免回頭",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "蜂巢皮秒：NT$ 6,000-15,000/次",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "飛梭 CO2：NT$ 8,000-25,000/次",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "皮下分離 + 玻尿酸：NT$ 18,000-45,000/次",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "TCA CROSS：NT$ 3,000-8,000/次",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "類固醇注射（肥厚疤）:NT$ 1,500-3,000/次",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "「擠一擠把疤擠掉就好」 → 凹疤是真皮缺損，擠不出來，反而擴大",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "「飛梭可以治蟹足腫」 → 反而會誘發更大，需用類固醇 / 5-FU 注射",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "「自己刷酸刷夠久就會好」 → 只能改善紅黑疤，凹疤需處方治療",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "痘疤治療最棘手",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "分辨疤型",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "完全不同",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "4 種凹疤的辨識",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "最佳治療組合",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "價格與療程預期",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "提醒：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "新冒的痘痘必須先穩定",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不是同一種東西",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "紅色印記",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "嚴格防曬",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "結構性破壞",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不能雷射磨平",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "會自己消",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "6-12 個月",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用淡紅",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "脈衝染料雷射 PDL",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皮秒雷射",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "絕對不可少 — 防曬",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用淡斑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "雷射加速",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "特徵",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "最佳治療：TCA CROSS（高濃度三氯乙酸點狀化學重建）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "點入單一凹疤",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "較差",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "最佳治療：飛梭雷射(Fractional laser)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "飛梭 CO2",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "鉺雅鉻 Erbium:YAG 飛梭",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "非汽化飛梭",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "RF 微針 / 點陣電波",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "蜂巢皮秒",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "建議組合 4-6 次",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "最佳治療：皮下分離(Subcision)+ 玻尿酸填補",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皮下分離",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "切斷",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "暫時性血腫",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "注射玻尿酸",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "絕對不能雷射磨平",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "類固醇注射",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "5-FU 注射 （± 類固醇）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Cryotherapy 冷凍",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "矽膠片 / 矽膠凝膠",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "放射線治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不建議",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "輕度",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "中度",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "中重度",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "冰鑿型佔多數",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "合併肥厚疤",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "合理預期",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "改善率 50-70%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "3-6 個月",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "6 個月到 2 年",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "常見副作用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "價格參考（台灣 2026 行情，個別差異大）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "多次累積",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "疤型",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "嚴格防曬至少 1 個月",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Picosure 蜂巢皮秒",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "飛梭 CO2(UltraPulse、Mosaic)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "RF 微針(Sylfirm X、Genius、Morpheus8)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "選對疤型 + 醫師參數設定 + 多次累積",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不給付痘疤雷射",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "多數 6-12 個月自然淡化",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "絕對不行",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "類固醇注射(Triamcinolone)± 5-FU",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "沒有捷徑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "先穩定痘痘",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "組合治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "耐心 6-24 個月",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "延伸閱讀：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不留下痘痘",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陳翊嘉 醫師",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "痘疤完整治療指引",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "更新日期 · 2026-05-04",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "4 種凹疤、紅疤、黑疤、肥厚疤怎麼選？",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "皮膚科 住院醫師",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "類型",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "原理",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "恢復期",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "效果",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "治療",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "說明",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "高熱汽化，刺激膠原重整",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "5-7 天紅+結痂",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "強，2-3 次見效",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "較淺、低熱",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "3-5 天",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "中，溫和但需多次",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "不破壞表皮",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1-2 天紅",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "溫和，需 5-8 次",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "射頻能量深入真皮",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "2-3 天",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "中-強，適合深層",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "光震波刺激",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "幾乎無",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "溫和，適合輕度",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第一線，每 4-6 週一次，共 3-6 次。降低突起與紅",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "大或頑固疤合併使用，降低類固醇用量",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "肥厚疤輔助治療",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "淡化紅 + 改善發炎",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 12-24 小時持續貼 / 抹，持續 3-6 個月",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "蟹足腫切除術後預防復發，皮膚科+放射科合作",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "單純切除（復發率高）、磨皮、深層雷射 — 易爆發更大蟹足腫",
-      "en": "",
-      "tag": "td"
-    }
+    { "zh": "5 大痘疤分類", "en": "5 categories of acne scars", "tag": "h2" },
+    { "zh": "紅疤(PIE)— 別急著雷射", "en": "Red marks (PIE) — don't rush to laser", "tag": "h2" },
+    { "zh": "黑疤(PIH)— 防曬最重要", "en": "Brown marks (PIH) — sun protection is paramount", "tag": "h2" },
+    { "zh": "凹疤 1：冰鑿型 → TCA CROSS", "en": "Atrophic scar 1: ice-pick → TCA CROSS", "tag": "h2" },
+    { "zh": "凹疤 2：廂車型 → 飛梭雷射", "en": "Atrophic scar 2: boxcar → fractional laser", "tag": "h2" },
+    { "zh": "凹疤 3：滾動型 → 皮下分離", "en": "Atrophic scar 3: rolling → subcision", "tag": "h2" },
+    { "zh": "肥厚疤 / 蟹足腫", "en": "Hypertrophic scars / keloids", "tag": "h2" },
+    { "zh": "最常見的組合療程", "en": "Most common combination protocols", "tag": "h2" },
+    { "zh": "療程預期 / 價格 / 副作用", "en": "Treatment expectations / cost / side effects", "tag": "h2" },
+    { "zh": "最常見的迷思", "en": "Most common myths", "tag": "h2" },
+    { "zh": "常見問題（PTT / Dcard 上常被問的）", "en": "Common Questions (frequently asked on PTT / Dcard)", "tag": "h2" },
+    { "zh": "結語", "en": "Bottom line", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "痘疤雷射 PTT 推薦哪一台機器？", "en": "Which acne-scar laser machine does PTT recommend?", "tag": "h3" },
+    { "zh": "痘疤雷射多少錢？健保有嗎？", "en": "How much do acne-scar lasers cost? Does NHI cover them?", "tag": "h3" },
+    { "zh": "痘疤多久看得到改善？", "en": "How long until you see improvement?", "tag": "h3" },
+    { "zh": "紅疤(PIE)多久會自己消？", "en": "How long until red marks (PIE) fade on their own?", "tag": "h3" },
+    { "zh": "蟹足腫能不能用雷射磨平？", "en": "Can keloids be lasered flat?", "tag": "h3" },
+    { "zh": "4 種凹疤剖面 · 治療策略不同", "en": "Cross-section of 4 atrophic scar types · different treatment strategies", "tag": "h4" },
+    { "zh": "本篇大綱", "en": "Article outline", "tag": "h4" },
+    { "zh": "亞洲膚質特別容易留 PIH。處理三招：", "en": "Asian skin is particularly prone to PIH. Three approaches:", "tag": "p" },
+    { "zh": "實務上很少只做一種治療。常見組合：", "en": "In practice, single-modality treatment is rare. Common combinations:", "tag": "p" },
+    { "zh": "每次治療 4-8 週間隔，通常需 4-8 次", "en": "Treatments are 4–8 weeks apart, usually 4–8 sessions", "tag": "li" },
+    { "zh": "單次效果好，改善率 50-70%", "en": "Per-session efficacy is good, with 50–70% improvement", "tag": "li" },
+    { "zh": "價格：每次 NT$ 3,000-8,000（依疤量）", "en": "Cost: NT$ 3,000–8,000 per session (depending on scar count)", "tag": "li" },
+    { "zh": "缺點：操作者技術差異大，過深會加深疤，需找有經驗醫師", "en": "Drawback: highly operator-dependent; over-depth deepens scars — choose an experienced physician", "tag": "li" },
+    { "zh": "每次間隔 4-8 週，通常 2-4 次達到效果", "en": "4–8 weeks between sessions, usually 2–4 sessions to reach effect", "tag": "li" },
+    { "zh": "價格：皮下分離單次 NT$ 5,000-15,000；玻尿酸 NT$ 12,000-30,000/支(0.5-1 mL)", "en": "Cost: subcision NT$ 5,000–15,000 per session; hyaluronic acid NT$ 12,000–30,000 per syringe (0.5–1 mL)", "tag": "li" },
+    { "zh": "常合併飛梭雷射處理表面殘餘", "en": "Often combined with fractional laser for residual surface texture", "tag": "li" },
+    { "zh": "停止後仍會持續改善，但需維持治療避免回頭", "en": "Improvement continues after cessation, but maintenance prevents regression", "tag": "li" },
+    { "zh": "蜂巢皮秒：NT$ 6,000-15,000/次", "en": "Honeycomb picosecond: NT$ 6,000–15,000 per session", "tag": "li" },
+    { "zh": "飛梭 CO2：NT$ 8,000-25,000/次", "en": "Fractional CO2: NT$ 8,000–25,000 per session", "tag": "li" },
+    { "zh": "皮下分離 + 玻尿酸：NT$ 18,000-45,000/次", "en": "Subcision + hyaluronic acid: NT$ 18,000–45,000 per session", "tag": "li" },
+    { "zh": "TCA CROSS：NT$ 3,000-8,000/次", "en": "TCA CROSS: NT$ 3,000–8,000 per session", "tag": "li" },
+    { "zh": "類固醇注射（肥厚疤）:NT$ 1,500-3,000/次", "en": "Steroid injection (hypertrophic scars): NT$ 1,500–3,000 per session", "tag": "li" },
+    { "zh": "「擠一擠把疤擠掉就好」 → 凹疤是真皮缺損，擠不出來，反而擴大", "en": "\"Just squeeze the scar out\" → atrophic scars are dermal defects; squeezing only widens them", "tag": "li" },
+    { "zh": "「飛梭可以治蟹足腫」 → 反而會誘發更大，需用類固醇 / 5-FU 注射", "en": "\"Fractional laser treats keloids\" → can actually trigger larger keloids; use steroid / 5-FU injection instead", "tag": "li" },
+    { "zh": "「自己刷酸刷夠久就會好」 → 只能改善紅黑疤，凹疤需處方治療", "en": "\"Long-term home acid use will fix it\" → only improves red/brown marks; atrophic scars require prescription treatment", "tag": "li" },
+    { "zh": "痘疤治療最棘手", "en": "Acne scar treatment is the most challenging", "tag": "strong" },
+    { "zh": "分辨疤型", "en": "Identifying scar type", "tag": "strong" },
+    { "zh": "完全不同", "en": "completely different", "tag": "strong" },
+    { "zh": "4 種凹疤的辨識", "en": "Identifying the 4 atrophic scar subtypes", "tag": "strong" },
+    { "zh": "最佳治療組合", "en": "Best treatment combinations", "tag": "strong" },
+    { "zh": "價格與療程預期", "en": "Cost and treatment expectations", "tag": "strong" },
+    { "zh": "提醒：", "en": "Note:", "tag": "strong" },
+    { "zh": "新冒的痘痘必須先穩定", "en": "Active acne must be stabilized first", "tag": "strong" },
+    { "zh": "不是同一種東西", "en": "not the same thing", "tag": "strong" },
+    { "zh": "紅色印記", "en": "red marks", "tag": "strong" },
+    { "zh": "嚴格防曬", "en": "Strict sun protection", "tag": "strong" },
+    { "zh": "結構性破壞", "en": "structural damage", "tag": "strong" },
+    { "zh": "不能雷射磨平", "en": "cannot be lasered flat", "tag": "strong" },
+    { "zh": "會自己消", "en": "self-resolves", "tag": "strong" },
+    { "zh": "6-12 個月", "en": "6–12 months", "tag": "strong" },
+    { "zh": "外用淡紅", "en": "Topical anti-redness agents", "tag": "strong" },
+    { "zh": "脈衝染料雷射 PDL", "en": "Pulsed-dye laser (PDL)", "tag": "strong" },
+    { "zh": "皮秒雷射", "en": "Picosecond laser", "tag": "strong" },
+    { "zh": "絕對不可少 — 防曬", "en": "Absolutely essential — sun protection", "tag": "strong" },
+    { "zh": "外用淡斑", "en": "Topical lightening agents", "tag": "strong" },
+    { "zh": "雷射加速", "en": "Laser to accelerate", "tag": "strong" },
+    { "zh": "特徵", "en": "Features", "tag": "strong" },
+    { "zh": "最佳治療：TCA CROSS（高濃度三氯乙酸點狀化學重建）", "en": "Best treatment: TCA CROSS (high-concentration trichloroacetic acid focal chemical reconstruction)", "tag": "strong" },
+    { "zh": "點入單一凹疤", "en": "applied focally into individual scars", "tag": "strong" },
+    { "zh": "較差", "en": "less effective", "tag": "strong" },
+    { "zh": "最佳治療：飛梭雷射(Fractional laser)", "en": "Best treatment: fractional laser", "tag": "strong" },
+    { "zh": "飛梭 CO2", "en": "Fractional CO2", "tag": "strong" },
+    { "zh": "鉺雅鉻 Erbium:YAG 飛梭", "en": "Fractional Erbium:YAG", "tag": "strong" },
+    { "zh": "非汽化飛梭", "en": "Non-ablative fractional", "tag": "strong" },
+    { "zh": "RF 微針 / 點陣電波", "en": "RF microneedling / fractional radiofrequency", "tag": "strong" },
+    { "zh": "蜂巢皮秒", "en": "Honeycomb picosecond", "tag": "strong" },
+    { "zh": "建議組合 4-6 次", "en": "Recommended in combination over 4–6 sessions", "tag": "strong" },
+    { "zh": "最佳治療：皮下分離(Subcision)+ 玻尿酸填補", "en": "Best treatment: subcision + hyaluronic-acid filler", "tag": "strong" },
+    { "zh": "皮下分離", "en": "Subcision", "tag": "strong" },
+    { "zh": "切斷", "en": "transects", "tag": "strong" },
+    { "zh": "暫時性血腫", "en": "transient hematoma", "tag": "strong" },
+    { "zh": "注射玻尿酸", "en": "Hyaluronic-acid injection", "tag": "strong" },
+    { "zh": "絕對不能雷射磨平", "en": "Absolutely never laser-flatten", "tag": "strong" },
+    { "zh": "類固醇注射", "en": "Intralesional corticosteroid injection", "tag": "strong" },
+    { "zh": "5-FU 注射 （± 類固醇）", "en": "5-FU injection (± corticosteroid)", "tag": "strong" },
+    { "zh": "Cryotherapy 冷凍", "en": "Cryotherapy", "tag": "strong" },
+    { "zh": "矽膠片 / 矽膠凝膠", "en": "Silicone sheet / silicone gel", "tag": "strong" },
+    { "zh": "放射線治療", "en": "Radiation therapy", "tag": "strong" },
+    { "zh": "不建議", "en": "Not recommended", "tag": "strong" },
+    { "zh": "輕度", "en": "Mild", "tag": "strong" },
+    { "zh": "中度", "en": "Moderate", "tag": "strong" },
+    { "zh": "中重度", "en": "Moderate-to-severe", "tag": "strong" },
+    { "zh": "冰鑿型佔多數", "en": "Predominantly ice-pick", "tag": "strong" },
+    { "zh": "合併肥厚疤", "en": "With concomitant hypertrophic scars", "tag": "strong" },
+    { "zh": "合理預期", "en": "Realistic expectations", "tag": "strong" },
+    { "zh": "改善率 50-70%", "en": "50–70% improvement", "tag": "strong" },
+    { "zh": "3-6 個月", "en": "3–6 months", "tag": "strong" },
+    { "zh": "6 個月到 2 年", "en": "6 months to 2 years", "tag": "strong" },
+    { "zh": "常見副作用", "en": "Common side effects", "tag": "strong" },
+    { "zh": "價格參考（台灣 2026 行情，個別差異大）", "en": "Price reference (Taiwan 2026 market, individual variation)", "tag": "strong" },
+    { "zh": "多次累積", "en": "cumulative over multiple sessions", "tag": "strong" },
+    { "zh": "疤型", "en": "Scar type", "tag": "strong" },
+    { "zh": "嚴格防曬至少 1 個月", "en": "Strict sun protection for at least 1 month", "tag": "strong" },
+    { "zh": "Picosure 蜂巢皮秒", "en": "PicoSure honeycomb picosecond", "tag": "strong" },
+    { "zh": "飛梭 CO2(UltraPulse、Mosaic)", "en": "Fractional CO2 (UltraPulse, Mosaic)", "tag": "strong" },
+    { "zh": "RF 微針(Sylfirm X、Genius、Morpheus8)", "en": "RF microneedling (Sylfirm X, Genius, Morpheus8)", "tag": "strong" },
+    { "zh": "選對疤型 + 醫師參數設定 + 多次累積", "en": "Right scar type + physician parameter tuning + cumulative sessions", "tag": "strong" },
+    { "zh": "不給付痘疤雷射", "en": "does not cover acne-scar laser", "tag": "strong" },
+    { "zh": "多數 6-12 個月自然淡化", "en": "Most fade naturally in 6–12 months", "tag": "strong" },
+    { "zh": "絕對不行", "en": "Absolutely not", "tag": "strong" },
+    { "zh": "類固醇注射(Triamcinolone)± 5-FU", "en": "Triamcinolone injection ± 5-FU", "tag": "strong" },
+    { "zh": "沒有捷徑", "en": "No shortcuts", "tag": "strong" },
+    { "zh": "先穩定痘痘", "en": "Stabilize the acne first", "tag": "strong" },
+    { "zh": "組合治療", "en": "Combination therapy", "tag": "strong" },
+    { "zh": "耐心 6-24 個月", "en": "Patience over 6–24 months", "tag": "strong" },
+    { "zh": "延伸閱讀：", "en": "Further reading:", "tag": "strong" },
+    { "zh": "不留下痘痘", "en": "Don't leave acne untreated", "tag": "strong" },
+    { "zh": "陳翊嘉 醫師", "en": "Dr. Yi-Jia Chen", "tag": "strong" },
+    { "zh": "痘疤完整治療指引", "en": "Comprehensive acne-scar treatment guide", "tag": "span" },
+    { "zh": "更新日期 · 2026-05-04", "en": "Updated · 2026-05-04", "tag": "span" },
+    { "zh": "4 種凹疤、紅疤、黑疤、肥厚疤怎麼選？", "en": "Choosing among 4 atrophic types, red marks, brown marks, hypertrophic scars", "tag": "span" },
+    { "zh": "皮膚科 住院醫師", "en": "Dermatology Resident", "tag": "span" },
+    { "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：", "en": "Content corrections / academic citation inquiries / media partnerships:", "tag": "span" },
+    { "zh": "類型", "en": "Type", "tag": "th" },
+    { "zh": "原理", "en": "Mechanism", "tag": "th" },
+    { "zh": "恢復期", "en": "Downtime", "tag": "th" },
+    { "zh": "效果", "en": "Efficacy", "tag": "th" },
+    { "zh": "治療", "en": "Treatment", "tag": "th" },
+    { "zh": "說明", "en": "Notes", "tag": "th" },
+    { "zh": "高熱汽化，刺激膠原重整", "en": "High-heat ablation; stimulates collagen remodeling", "tag": "td" },
+    { "zh": "5-7 天紅+結痂", "en": "5–7 days redness + crusting", "tag": "td" },
+    { "zh": "強，2-3 次見效", "en": "Strong; visible after 2–3 sessions", "tag": "td" },
+    { "zh": "較淺、低熱", "en": "Shallower, low heat", "tag": "td" },
+    { "zh": "3-5 天", "en": "3–5 days", "tag": "td" },
+    { "zh": "中，溫和但需多次", "en": "Moderate; gentle but requires multiple sessions", "tag": "td" },
+    { "zh": "不破壞表皮", "en": "Does not disrupt epidermis", "tag": "td" },
+    { "zh": "1-2 天紅", "en": "1–2 days redness", "tag": "td" },
+    { "zh": "溫和，需 5-8 次", "en": "Gentle; requires 5–8 sessions", "tag": "td" },
+    { "zh": "射頻能量深入真皮", "en": "Radiofrequency energy delivered to deep dermis", "tag": "td" },
+    { "zh": "2-3 天", "en": "2–3 days", "tag": "td" },
+    { "zh": "中-強，適合深層", "en": "Moderate to strong; suited for deep scars", "tag": "td" },
+    { "zh": "光震波刺激", "en": "Photomechanical wave stimulation", "tag": "td" },
+    { "zh": "幾乎無", "en": "Nearly none", "tag": "td" },
+    { "zh": "溫和，適合輕度", "en": "Gentle; suited for mild scars", "tag": "td" },
+    { "zh": "第一線，每 4-6 週一次，共 3-6 次。降低突起與紅", "en": "First-line; every 4–6 weeks for 3–6 sessions. Reduces bulk and redness", "tag": "td" },
+    { "zh": "大或頑固疤合併使用，降低類固醇用量", "en": "For large or refractory scars; combined to reduce steroid dose", "tag": "td" },
+    { "zh": "肥厚疤輔助治療", "en": "Adjunct for hypertrophic scars", "tag": "td" },
+    { "zh": "淡化紅 + 改善發炎", "en": "Reduces redness + improves inflammation", "tag": "td" },
+    { "zh": "每天 12-24 小時持續貼 / 抹，持續 3-6 個月", "en": "Apply 12–24 hours daily for 3–6 months", "tag": "td" },
+    { "zh": "蟹足腫切除術後預防復發，皮膚科+放射科合作", "en": "Post-keloid-excision recurrence prevention; dermatology + radiation oncology collaboration", "tag": "td" },
+    { "zh": "單純切除（復發率高）、磨皮、深層雷射 — 易爆發更大蟹足腫", "en": "Simple excision (high recurrence), dermabrasion, deep laser — all can trigger larger keloids", "tag": "td" }
   ]
 }

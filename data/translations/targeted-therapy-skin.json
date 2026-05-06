@@ -1,725 +1,149 @@
 {
   "slug": "targeted-therapy-skin",
   "strings": [
-    {
-      "zh": "常見的 TKI / 標靶藥物有哪些？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "CTCAE 嚴重度分級（共通分級）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "痤瘡樣皮疹（Acneiform rash）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "乾皮症與瘙癢",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "甲溝炎（Paronychia）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "毛髮變化",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "手足皮膚反應（Hand-Foot Skin Reaction, HFSR）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "黏膜炎與口腔炎",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "預防策略 — 開始用藥前後該做的事",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "常見問題",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "結語",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "標靶藥物的痘痘可以用一般治痘痘藥膏嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "皮膚反應越強代表標靶藥物越有效嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "標靶藥物的皮膚副作用會自己好嗎？停藥後多久消失？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "看皮膚科健保有給付嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "我聽說 EGFR 痘痘可以擦類固醇，會不會更糟？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "有沒有口服藥可以預防痤瘡樣皮疹？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "本篇大綱",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "TLCS + TDA 2024 共識涵蓋衛福部核准的 8 類 TKI 與標靶藥物。常見藥物與機轉：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "用藥 6 個月以上，發生率約 8-30%。特徵：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "皮膚副作用獲得良好控制，癌症治療才能延續完整療程，提升整體存活與生活品質。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "分布：臉部（尤其鼻部、額頭）、頸部、上胸、上背",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "常伴隨刺痛、發癢、乾燥",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "洗澡溫水（不超過 38°C），選無皂鹼、無香料的洗浴用品",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "選擇寬鬆鞋襪，避免緊身鞋擠壓",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "有膿瘍需切開引流",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "嚴重者口服抗生素（若有真細菌感染）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "不同於化療造成的「手足症候群」（那是 5-FU、Capecitabine 引起的瀰漫性紅斑）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "急性期：外用強效類固醇 + 高濃度尿素霜，水泡需保護不戳破",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "Grade 2-3 暫停 TKI，恢復至 ≤ Grade 1 後減量恢復",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "用藥前充分衛教，知道會有什麼變化",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "輕度副作用立即處理，別累積到嚴重才急著看皮膚科",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "跨科合作 — 腫瘤科 / 胸腔科 / 皮膚科共同照護",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "不可自行停藥 — 與醫師討論調整方案",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "標靶治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皮膚副作用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不只影響生活品質，更可能讓患者中斷治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "臺灣肺癌學會 (TLCS) + 臺灣皮膚科醫學會 (TDA) 2024 共識",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "提醒：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不可自行停藥",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "EGFR 抑制劑（Gefitinib、Erlotinib、Afatinib、Osimertinib 等）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「皮疹強度」與「腫瘤反應」呈正相關",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第一代 EGFR-TKI",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第二代 EGFR-TKI",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第三代 EGFR-TKI",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "EGFR 單株抗體",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "VEGF / 多激酶抑制劑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "手足皮膚反應",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "BRAF + MEK 抑制劑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "ALK 抑制劑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "CTCAE（Common Terminology Criteria for Adverse Events）分級 v5.0",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Grade 1（輕度）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Grade 2（中度）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Grade 3（重度）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Grade 4（危及生命）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "EGFR 抑制劑最常見、最具代表性的副作用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "1-2 週開始出現",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "沒有粉刺",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "處置（TDA 2024 共識）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不建議使用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "嚴重乾燥",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "每天使用厚重保濕劑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "神經醯胺、玻尿酸、凡士林",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "口服抗組織胺",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Pramoxine、薄荷醇 1%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用類固醇",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "2-6 個月",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "避免修剪指甲過短",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用強效類固醇 + 抗生素藥膏",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "10-15% 三氯醋酸局部點藥",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "頭髮變脆、變捲、變細",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "毛髮生長變慢",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "多毛 hypertrichosis",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "睫毛變長變粗（trichomegaly）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "非疤痕性禿髮",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "停藥後可逆",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用 Minoxidil 5%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "VEGF / 多激酶抑制劑（Sorafenib、Sunitinib、Regorafenib）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "受壓部位",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "角化斑塊、水泡、疼痛、皸裂",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "處置",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "用藥前 1-2 週開始預防",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "飲食建議",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「主動預防」優於「被動處理」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "用藥前評估",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第 1 天起每日保濕",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "嚴格防曬",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "溫和清潔",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "修甲衛教",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "口腔衛生",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第一次出現皮膚副作用即就醫",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不可以",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用 A 酸、過氧化苯醯（BPO）會加重乾燥與刺激",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "沒有嚴重皮疹不代表藥物無效",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "正確處理皮膚副作用，讓治療能延續",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "停藥後 2-8 週內逐漸消失",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不應為了「等它自己好」而中斷治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "診察、檢查、外用藥（類固醇、抗生素藥膏）、口服藥（Doxycycline、抗組織胺、口服類固醇）健保都有給付",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "發炎反應",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "類固醇藥膏可有效抑制發炎",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "可從用藥第 1 天起預防性給予口服 Doxycycline 100 mg/day",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "可預期、可處理、不應中斷治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "主動保濕 + 防曬",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "延伸閱讀：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陳翊嘉 醫師",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "TKI 標靶藥物相關皮膚毒性的預防與管理共識",
-      "en": "",
-      "tag": "em"
-    },
-    {
-      "zh": "標靶藥物皮膚副作用",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "依 TLCS + TDA 2024 共識 · 更新 2026-05-04",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "痤瘡樣皮疹、乾皮症、甲溝炎、手足症",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "皮膚科 住院醫師",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "類別",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "代表藥物（商品名）",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "主要適應症",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "常見皮膚副作用",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "嚴重度",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "TKI 處理",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "皮膚科處置",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "NSCLC EGFR 突變",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "痤瘡樣皮疹、乾皮症、甲溝炎",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "皮疹較強、腹瀉、口腔炎",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Osimertinib（泰格莎 Tagrisso）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NSCLC T790M 抗藥、第一線",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "較第一二代輕微",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "大腸直腸癌、頭頸癌",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "痤瘡樣皮疹強烈",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "肝癌、腎癌、GIST",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "黑色素瘤",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "光敏感、皮疹、第二原發皮膚癌",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NSCLC ALK 重組",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "較少見，光敏感、視覺異常",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "維持原劑量",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "外用 Clindamycin 1% / Erythromycin 2% + 弱中效類固醇藥膏（短期）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "維持原劑量，密切追蹤",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "暫停 TKI 直到 ≤ Grade 2,恢復時減量",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "口服 Doxycycline + 中強效類固醇藥膏 + 必要時短期口服類固醇",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "停止 TKI",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "住院，專家評估",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "維持劑量",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "0.9% 生理食鹽水 / 碳酸氫鈉漱口、Chlorhexidine 漱口水、benzydamine 鎮痛漱口、塗局部麻醉劑(viscous lidocaine)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "暫停 TKI 直到 ≤ Grade 2",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "加上局部 / 全身性類固醇，考慮預防真菌(Nystatin、Fluconazole)、病毒(Acyclovir)、細菌感染",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "住院支持治療，排除 Stevens-Johnson syndrome",
-      "en": "",
-      "tag": "td"
-    }
+    { "zh": "常見的 TKI / 標靶藥物有哪些？", "en": "What TKIs / targeted therapies are commonly used?", "tag": "h2" },
+    { "zh": "CTCAE 嚴重度分級（共通分級）", "en": "CTCAE severity grading (common grading)", "tag": "h2" },
+    { "zh": "痤瘡樣皮疹（Acneiform rash）", "en": "Acneiform rash", "tag": "h2" },
+    { "zh": "乾皮症與瘙癢", "en": "Xerosis and pruritus", "tag": "h2" },
+    { "zh": "甲溝炎（Paronychia）", "en": "Paronychia", "tag": "h2" },
+    { "zh": "毛髮變化", "en": "Hair changes", "tag": "h2" },
+    { "zh": "手足皮膚反應（Hand-Foot Skin Reaction, HFSR）", "en": "Hand-foot skin reaction (HFSR)", "tag": "h2" },
+    { "zh": "黏膜炎與口腔炎", "en": "Mucositis and stomatitis", "tag": "h2" },
+    { "zh": "預防策略 — 開始用藥前後該做的事", "en": "Prevention strategy — what to do before and after starting therapy", "tag": "h2" },
+    { "zh": "常見問題", "en": "Common questions", "tag": "h2" },
+    { "zh": "結語", "en": "Bottom line", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "標靶藥物的痘痘可以用一般治痘痘藥膏嗎？", "en": "Can ordinary acne creams treat targeted-therapy acneiform rash?", "tag": "h3" },
+    { "zh": "皮膚反應越強代表標靶藥物越有效嗎？", "en": "Does a stronger skin reaction mean the targeted therapy is more effective?", "tag": "h3" },
+    { "zh": "標靶藥物的皮膚副作用會自己好嗎？停藥後多久消失？", "en": "Do skin side effects resolve on their own? How long after discontinuation?", "tag": "h3" },
+    { "zh": "看皮膚科健保有給付嗎？", "en": "Does NHI cover dermatology consultations for these effects?", "tag": "h3" },
+    { "zh": "我聽說 EGFR 痘痘可以擦類固醇，會不會更糟？", "en": "I heard topical steroids can be used for EGFR acneiform rash — won't they make it worse?", "tag": "h3" },
+    { "zh": "有沒有口服藥可以預防痤瘡樣皮疹？", "en": "Is there an oral medication that prevents acneiform rash?", "tag": "h3" },
+    { "zh": "本篇大綱", "en": "Article outline", "tag": "h4" },
+    { "zh": "TLCS + TDA 2024 共識涵蓋衛福部核准的 8 類 TKI 與標靶藥物。常見藥物與機轉：", "en": "The TLCS + TDA 2024 consensus covers 8 classes of MOHW-approved TKIs and targeted agents. Common agents and mechanisms:", "tag": "p" },
+    { "zh": "用藥 6 個月以上，發生率約 8-30%。特徵：", "en": "Incidence ~8–30% after 6 months on therapy. Features:", "tag": "p" },
+    { "zh": "皮膚副作用獲得良好控制，癌症治療才能延續完整療程，提升整體存活與生活品質。", "en": "Good control of skin side effects allows cancer therapy to continue at full course, improving overall survival and quality of life.", "tag": "p" },
+    { "zh": "分布：臉部（尤其鼻部、額頭）、頸部、上胸、上背", "en": "Distribution: face (especially nose, forehead), neck, upper chest, upper back", "tag": "li" },
+    { "zh": "常伴隨刺痛、發癢、乾燥", "en": "Often accompanied by stinging, itching, and dryness", "tag": "li" },
+    { "zh": "洗澡溫水（不超過 38°C），選無皂鹼、無香料的洗浴用品", "en": "Bathe in lukewarm water (≤ 38°C); use soap-free, fragrance-free cleansers", "tag": "li" },
+    { "zh": "選擇寬鬆鞋襪，避免緊身鞋擠壓", "en": "Wear loose footwear; avoid tight shoes that compress feet", "tag": "li" },
+    { "zh": "有膿瘍需切開引流", "en": "Abscesses require incision and drainage", "tag": "li" },
+    { "zh": "嚴重者口服抗生素（若有真細菌感染）", "en": "Oral antibiotics for severe cases (if true bacterial infection)", "tag": "li" },
+    { "zh": "不同於化療造成的「手足症候群」（那是 5-FU、Capecitabine 引起的瀰漫性紅斑）", "en": "Different from chemotherapy-induced \"hand-foot syndrome\" (diffuse erythema from 5-FU, capecitabine)", "tag": "li" },
+    { "zh": "急性期：外用強效類固醇 + 高濃度尿素霜，水泡需保護不戳破", "en": "Acute phase: high-potency topical steroid + high-concentration urea cream; protect blisters intact", "tag": "li" },
+    { "zh": "Grade 2-3 暫停 TKI，恢復至 ≤ Grade 1 後減量恢復", "en": "Grade 2–3: hold TKI; resume at reduced dose after recovery to ≤ grade 1", "tag": "li" },
+    { "zh": "用藥前充分衛教，知道會有什麼變化", "en": "Pre-therapy patient education on expected changes", "tag": "li" },
+    { "zh": "輕度副作用立即處理，別累積到嚴重才急著看皮膚科", "en": "Treat mild side effects promptly; don't wait until severe to see dermatology", "tag": "li" },
+    { "zh": "跨科合作 — 腫瘤科 / 胸腔科 / 皮膚科共同照護", "en": "Multidisciplinary care — oncology / pulmonology / dermatology coordination", "tag": "li" },
+    { "zh": "不可自行停藥 — 與醫師討論調整方案", "en": "Never self-discontinue — discuss dose adjustment with physician", "tag": "li" },
+    { "zh": "標靶治療", "en": "Targeted therapy", "tag": "strong" },
+    { "zh": "皮膚副作用", "en": "Cutaneous side effects", "tag": "strong" },
+    { "zh": "不只影響生活品質，更可能讓患者中斷治療", "en": "not only affect QoL but may force treatment discontinuation", "tag": "strong" },
+    { "zh": "臺灣肺癌學會 (TLCS) + 臺灣皮膚科醫學會 (TDA) 2024 共識", "en": "Taiwan Lung Cancer Society (TLCS) + Taiwanese Dermatological Association (TDA) 2024 Consensus", "tag": "strong" },
+    { "zh": "提醒：", "en": "Note:", "tag": "strong" },
+    { "zh": "不可自行停藥", "en": "Never self-discontinue", "tag": "strong" },
+    { "zh": "EGFR 抑制劑（Gefitinib、Erlotinib、Afatinib、Osimertinib 等）", "en": "EGFR inhibitors (gefitinib, erlotinib, afatinib, osimertinib, etc.)", "tag": "strong" },
+    { "zh": "「皮疹強度」與「腫瘤反應」呈正相關", "en": "Rash intensity correlates positively with tumor response", "tag": "strong" },
+    { "zh": "第一代 EGFR-TKI", "en": "First-generation EGFR-TKI", "tag": "strong" },
+    { "zh": "第二代 EGFR-TKI", "en": "Second-generation EGFR-TKI", "tag": "strong" },
+    { "zh": "第三代 EGFR-TKI", "en": "Third-generation EGFR-TKI", "tag": "strong" },
+    { "zh": "EGFR 單株抗體", "en": "EGFR monoclonal antibodies", "tag": "strong" },
+    { "zh": "VEGF / 多激酶抑制劑", "en": "VEGF / multikinase inhibitors", "tag": "strong" },
+    { "zh": "手足皮膚反應", "en": "Hand-foot skin reaction", "tag": "strong" },
+    { "zh": "BRAF + MEK 抑制劑", "en": "BRAF + MEK inhibitors", "tag": "strong" },
+    { "zh": "ALK 抑制劑", "en": "ALK inhibitors", "tag": "strong" },
+    { "zh": "CTCAE（Common Terminology Criteria for Adverse Events）分級 v5.0", "en": "CTCAE v5.0 (Common Terminology Criteria for Adverse Events)", "tag": "strong" },
+    { "zh": "Grade 1（輕度）", "en": "Grade 1 (mild)", "tag": "strong" },
+    { "zh": "Grade 2（中度）", "en": "Grade 2 (moderate)", "tag": "strong" },
+    { "zh": "Grade 3（重度）", "en": "Grade 3 (severe)", "tag": "strong" },
+    { "zh": "Grade 4（危及生命）", "en": "Grade 4 (life-threatening)", "tag": "strong" },
+    { "zh": "EGFR 抑制劑最常見、最具代表性的副作用", "en": "the most common and characteristic adverse effect of EGFR inhibitors", "tag": "strong" },
+    { "zh": "1-2 週開始出現", "en": "Onset 1–2 weeks after starting", "tag": "strong" },
+    { "zh": "沒有粉刺", "en": "No comedones", "tag": "strong" },
+    { "zh": "處置（TDA 2024 共識）", "en": "Management (TDA 2024 consensus)", "tag": "strong" },
+    { "zh": "不建議使用", "en": "Not recommended", "tag": "strong" },
+    { "zh": "嚴重乾燥", "en": "Severe dryness", "tag": "strong" },
+    { "zh": "每天使用厚重保濕劑", "en": "Daily use of heavy emollients", "tag": "strong" },
+    { "zh": "神經醯胺、玻尿酸、凡士林", "en": "Ceramides, hyaluronic acid, petrolatum", "tag": "strong" },
+    { "zh": "口服抗組織胺", "en": "Oral antihistamines", "tag": "strong" },
+    { "zh": "Pramoxine、薄荷醇 1%", "en": "Pramoxine, menthol 1%", "tag": "strong" },
+    { "zh": "外用類固醇", "en": "Topical corticosteroids", "tag": "strong" },
+    { "zh": "2-6 個月", "en": "2–6 months", "tag": "strong" },
+    { "zh": "避免修剪指甲過短", "en": "Avoid trimming nails too short", "tag": "strong" },
+    { "zh": "外用強效類固醇 + 抗生素藥膏", "en": "High-potency topical steroid + antibiotic ointment", "tag": "strong" },
+    { "zh": "10-15% 三氯醋酸局部點藥", "en": "10–15% trichloroacetic acid focal application", "tag": "strong" },
+    { "zh": "頭髮變脆、變捲、變細", "en": "Hair becomes brittle, curlier, finer", "tag": "strong" },
+    { "zh": "毛髮生長變慢", "en": "Slowed hair growth", "tag": "strong" },
+    { "zh": "多毛 hypertrichosis", "en": "Hypertrichosis", "tag": "strong" },
+    { "zh": "睫毛變長變粗（trichomegaly）", "en": "Eyelashes become longer and thicker (trichomegaly)", "tag": "strong" },
+    { "zh": "非疤痕性禿髮", "en": "Non-scarring alopecia", "tag": "strong" },
+    { "zh": "停藥後可逆", "en": "Reversible after discontinuation", "tag": "strong" },
+    { "zh": "外用 Minoxidil 5%", "en": "Topical minoxidil 5%", "tag": "strong" },
+    { "zh": "VEGF / 多激酶抑制劑（Sorafenib、Sunitinib、Regorafenib）", "en": "VEGF / multikinase inhibitors (sorafenib, sunitinib, regorafenib)", "tag": "strong" },
+    { "zh": "受壓部位", "en": "Pressure-bearing sites", "tag": "strong" },
+    { "zh": "角化斑塊、水泡、疼痛、皸裂", "en": "Hyperkeratotic plaques, blisters, pain, fissures", "tag": "strong" },
+    { "zh": "處置", "en": "Management", "tag": "strong" },
+    { "zh": "用藥前 1-2 週開始預防", "en": "Begin preventive measures 1–2 weeks before therapy", "tag": "strong" },
+    { "zh": "飲食建議", "en": "Dietary recommendations", "tag": "strong" },
+    { "zh": "「主動預防」優於「被動處理」", "en": "Active prevention is superior to reactive treatment", "tag": "strong" },
+    { "zh": "用藥前評估", "en": "Pre-therapy evaluation", "tag": "strong" },
+    { "zh": "第 1 天起每日保濕", "en": "Daily moisturization from day 1", "tag": "strong" },
+    { "zh": "嚴格防曬", "en": "Strict sun protection", "tag": "strong" },
+    { "zh": "溫和清潔", "en": "Gentle cleansing", "tag": "strong" },
+    { "zh": "修甲衛教", "en": "Nail care education", "tag": "strong" },
+    { "zh": "口腔衛生", "en": "Oral hygiene", "tag": "strong" },
+    { "zh": "第一次出現皮膚副作用即就醫", "en": "Seek medical attention at first sign of skin side effects", "tag": "strong" },
+    { "zh": "不可以", "en": "No", "tag": "strong" },
+    { "zh": "外用 A 酸、過氧化苯醯（BPO）會加重乾燥與刺激", "en": "Topical retinoids and benzoyl peroxide (BPO) worsen dryness and irritation", "tag": "strong" },
+    { "zh": "沒有嚴重皮疹不代表藥物無效", "en": "Absence of severe rash does NOT mean the drug is ineffective", "tag": "strong" },
+    { "zh": "正確處理皮膚副作用，讓治療能延續", "en": "Proper management of skin side effects allows treatment continuation", "tag": "strong" },
+    { "zh": "停藥後 2-8 週內逐漸消失", "en": "Gradually resolves within 2–8 weeks after discontinuation", "tag": "strong" },
+    { "zh": "不應為了「等它自己好」而中斷治療", "en": "Should NOT interrupt therapy waiting for spontaneous resolution", "tag": "strong" },
+    { "zh": "診察、檢查、外用藥（類固醇、抗生素藥膏）、口服藥（Doxycycline、抗組織胺、口服類固醇）健保都有給付", "en": "NHI covers visits, workup, topicals (steroids, antibiotic creams), and oral medications (doxycycline, antihistamines, oral steroids)", "tag": "strong" },
+    { "zh": "發炎反應", "en": "Inflammatory reaction", "tag": "strong" },
+    { "zh": "類固醇藥膏可有效抑制發炎", "en": "Topical corticosteroids effectively suppress inflammation", "tag": "strong" },
+    { "zh": "可從用藥第 1 天起預防性給予口服 Doxycycline 100 mg/day", "en": "Prophylactic oral doxycycline 100 mg/day can be started from day 1 of therapy", "tag": "strong" },
+    { "zh": "可預期、可處理、不應中斷治療", "en": "Predictable, manageable, should not interrupt therapy", "tag": "strong" },
+    { "zh": "主動保濕 + 防曬", "en": "Active moisturization + sun protection", "tag": "strong" },
+    { "zh": "延伸閱讀：", "en": "Further reading:", "tag": "strong" },
+    { "zh": "陳翊嘉 醫師", "en": "Dr. Yi-Jia Chen", "tag": "strong" },
+    { "zh": "TKI 標靶藥物相關皮膚毒性的預防與管理共識", "en": "TKI-Targeted Therapy Cutaneous Toxicity Prevention and Management Consensus", "tag": "em" },
+    { "zh": "標靶藥物皮膚副作用", "en": "Targeted therapy cutaneous side effects", "tag": "span" },
+    { "zh": "依 TLCS + TDA 2024 共識 · 更新 2026-05-04", "en": "Per TLCS + TDA 2024 consensus · Updated 2026-05-04", "tag": "span" },
+    { "zh": "痤瘡樣皮疹、乾皮症、甲溝炎、手足症", "en": "Acneiform rash, xerosis, paronychia, hand-foot syndrome", "tag": "span" },
+    { "zh": "皮膚科 住院醫師", "en": "Dermatology Resident", "tag": "span" },
+    { "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：", "en": "Content corrections / academic citation inquiries / media partnerships:", "tag": "span" },
+    { "zh": "類別", "en": "Class", "tag": "th" },
+    { "zh": "代表藥物（商品名）", "en": "Representative drugs (brand names)", "tag": "th" },
+    { "zh": "主要適應症", "en": "Primary indication", "tag": "th" },
+    { "zh": "常見皮膚副作用", "en": "Common cutaneous AEs", "tag": "th" },
+    { "zh": "嚴重度", "en": "Severity", "tag": "th" },
+    { "zh": "TKI 處理", "en": "TKI dose management", "tag": "th" },
+    { "zh": "皮膚科處置", "en": "Dermatologic management", "tag": "th" },
+    { "zh": "NSCLC EGFR 突變", "en": "NSCLC with EGFR mutation", "tag": "td" },
+    { "zh": "痤瘡樣皮疹、乾皮症、甲溝炎", "en": "Acneiform rash, xerosis, paronychia", "tag": "td" },
+    { "zh": "皮疹較強、腹瀉、口腔炎", "en": "Stronger rash, diarrhea, stomatitis", "tag": "td" },
+    { "zh": "Osimertinib（泰格莎 Tagrisso）", "en": "Osimertinib (Tagrisso)", "tag": "td" },
+    { "zh": "NSCLC T790M 抗藥、第一線", "en": "NSCLC T790M resistance, first-line", "tag": "td" },
+    { "zh": "較第一二代輕微", "en": "Milder than first/second-generation", "tag": "td" },
+    { "zh": "大腸直腸癌、頭頸癌", "en": "Colorectal cancer, head and neck cancer", "tag": "td" },
+    { "zh": "痤瘡樣皮疹強烈", "en": "Pronounced acneiform rash", "tag": "td" },
+    { "zh": "肝癌、腎癌、GIST", "en": "Hepatocellular carcinoma, renal cell carcinoma, GIST", "tag": "td" },
+    { "zh": "黑色素瘤", "en": "Melanoma", "tag": "td" },
+    { "zh": "光敏感、皮疹、第二原發皮膚癌", "en": "Photosensitivity, rash, secondary cutaneous malignancies", "tag": "td" },
+    { "zh": "NSCLC ALK 重組", "en": "NSCLC with ALK rearrangement", "tag": "td" },
+    { "zh": "較少見，光敏感、視覺異常", "en": "Less common; photosensitivity, visual disturbance", "tag": "td" },
+    { "zh": "維持原劑量", "en": "Maintain dose", "tag": "td" },
+    { "zh": "外用 Clindamycin 1% / Erythromycin 2% + 弱中效類固醇藥膏（短期）", "en": "Topical clindamycin 1% / erythromycin 2% + low-mid potency topical corticosteroid (short-term)", "tag": "td" },
+    { "zh": "維持原劑量，密切追蹤", "en": "Maintain dose, monitor closely", "tag": "td" },
+    { "zh": "暫停 TKI 直到 ≤ Grade 2,恢復時減量", "en": "Hold TKI until ≤ grade 2; resume at reduced dose", "tag": "td" },
+    { "zh": "口服 Doxycycline + 中強效類固醇藥膏 + 必要時短期口服類固醇", "en": "Oral doxycycline + mid-high potency topical steroid + short-course oral steroid if needed", "tag": "td" },
+    { "zh": "停止 TKI", "en": "Discontinue TKI", "tag": "td" },
+    { "zh": "住院，專家評估", "en": "Hospitalization, specialist evaluation", "tag": "td" },
+    { "zh": "維持劑量", "en": "Maintain dose", "tag": "td" },
+    { "zh": "0.9% 生理食鹽水 / 碳酸氫鈉漱口、Chlorhexidine 漱口水、benzydamine 鎮痛漱口、塗局部麻醉劑(viscous lidocaine)", "en": "0.9% saline / sodium bicarbonate rinse, chlorhexidine mouthwash, benzydamine analgesic rinse, viscous lidocaine", "tag": "td" },
+    { "zh": "暫停 TKI 直到 ≤ Grade 2", "en": "Hold TKI until ≤ grade 2", "tag": "td" },
+    { "zh": "加上局部 / 全身性類固醇，考慮預防真菌(Nystatin、Fluconazole)、病毒(Acyclovir)、細菌感染", "en": "Add topical / systemic corticosteroids; consider antifungal prophylaxis (nystatin, fluconazole), antiviral (acyclovir), and antibacterial coverage", "tag": "td" },
+    { "zh": "住院支持治療，排除 Stevens-Johnson syndrome", "en": "Inpatient supportive care; rule out Stevens-Johnson syndrome", "tag": "td" }
   ]
 }

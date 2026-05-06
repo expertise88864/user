@@ -2415,7 +2415,11 @@
     { slug:'laser-dermatology', title:'皮膚科雷射完整對照', cat:'rx', tag:'雷射 / 光電', date:'2026-05-05', emoji:'', tag_en:'Laser dermatology' },
     { slug:'pediatric-eczema', title:'嬰幼兒 / 兒童異位性皮膚炎完整照護指南', cat:'rx', tag:'兒童異膚', date:'2026-05-05', emoji:'', tag_en:'Pediatric AD' },
     { slug:'prurigo-nodularis', title:'結節性癢疹完整衛教', cat:'rx', tag:'結節性癢疹', date:'2026-05-07', emoji:'', tag_en:'Prurigo Nodularis' },
-    { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' }
+    { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' },
+    { slug:'atopic-dermatitis-systemic', title:'異位性皮膚炎全身治療完整指引 — 生物製劑、JAK、光療', cat:'rx', tag:'異膚', date:'2026-05-14', emoji:'', tag_en:'AD systemic therapy' },
+    { slug:'atopic-dermatitis-comorbidity', title:'異位性皮膚炎共病完整評估 — 氣喘、過敏、心理、骨骼、心血管', cat:'rx', tag:'異膚', date:'2026-05-14', emoji:'', tag_en:'AD comorbidities' },
+    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎概論完整指引 — 病態生理、診斷、嚴重度評分', cat:'rx', tag:'異膚', date:'2026-05-14', emoji:'', tag_en:'AD overview' },
+    { slug:'atopic-dermatitis-topical', title:'異位性皮膚炎外用治療完整指引 — 類固醇、TCI、PDE-4、JAK、Tapinarof', cat:'rx', tag:'異膚', date:'2026-05-14', emoji:'', tag_en:'AD topical therapy' }
   ];
 
   // -----------------------------------------------------------------------
@@ -2961,7 +2965,7 @@
   // Set DN.PUSH_VAPID_PUBLIC_KEY to your VAPID public key (run `npm run vapid` to generate)
   // and store the private key in Vercel env var VAPID_PRIVATE_KEY. The endpoint below is
   // already wired to /api/push-subscribe.js (see api/push-subscribe.js).
-  DN.PUSH_VAPID_PUBLIC_KEY = 'BP6poj7ya338wTK2lESdybj9LOoe9OeEKZ3FF3Zj1VHY4vyn8GB3NzWLgy7GO9SxCDxtXapblFDu01yO1dBern8';
+  DN.PUSH_VAPID_PUBLIC_KEY = 'BOmIG3YbljxnRPbIZ0dQDB8UZTJnLodTgVaLgCSlrif92NeT_R0dBxPtMbi-oCldtf6lIFbuNnKLcpKLsymnMY8';
   DN.PUSH_SUBSCRIBE_ENDPOINT = '/api/push-subscribe';  // ← matches api/push-subscribe.js
 
   function urlBase64ToUint8Array(base64String) {
