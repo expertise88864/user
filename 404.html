@@ -1,158 +1,37 @@
-<!doctype html>
-<html lang="zh-Hant-TW">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>找不到頁面 · ChenDermatologist</title>
-<meta name="description" content="您要找的頁面不存在或已被移動。請利用以下連結返回首頁、瀏覽衛教文章索引，或搜尋常見主題。" />
-<meta name="robots" content="noindex,follow" />
-<meta name="theme-color" content="#7a9285" />
-<link rel="icon" type="image/svg+xml" href="/icon.svg" />
-<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" />
-<link rel="icon" sizes="any" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/manifest.json" />
-<link rel="me" href="mailto:expertise88864@gmail.com" />
-<link rel="canonical" href="https://chendermatologist.com/404" />
-<link rel="author" href="https://chendermatologist.com/about" />
-<link rel="publisher" href="https://chendermatologist.com/" />
-
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap&text=陳翊嘉醫師皮膚科衛教筆記常見疾病迷思澄清關於我學經歷" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
-<style>
-  :root{ --bg:#faf7f2; --surface:#ffffff; --ink:#2a2620; --ink-2:#5e574e; --muted:#8b8378;
-         --teal:#7a9285; --teal-deep:#4d6358; --teal-bright:#a4b5a8; --border:#dcd5c8; --line:#ebe4d8; }
-  html,body{ background:var(--bg); color:var(--ink); font-family:Inter,'Microsoft JhengHei','PingFang TC',sans-serif; }
-  body::before{ content:''; position:fixed; inset:0; pointer-events:none; z-index:-1;
-    background:radial-gradient(800px 500px at 12% -8%, rgba(164,181,168,.18), transparent 60%),
-               radial-gradient(700px 480px at 100% 0%, rgba(14,124,134,.10), transparent 60%),
-               linear-gradient(180deg,#f5fbfa 0%, #fbffff 40%, #f5fbfa 100%); }
-  .teal-text{ background:linear-gradient(180deg,#a4b5a8,#4d6358); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .display{ font-family:'Noto Serif TC',Georgia,serif; }
-  .card{ background:#fff; border:1px solid var(--border); border-radius:18px; box-shadow:0 14px 30px -18px rgba(77,99,88,.18); padding:28px; }
-  .pop{ display:inline-block; padding:6px 14px; border-radius:9999px; background:#fef3c7; color:#854d0e; border:1px solid #fcd34d; font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
-  .btn-teal{ display:inline-flex; align-items:center; gap:6px; padding:.7rem 1.2rem; background:linear-gradient(180deg,#22d3ee 0%, #0e7c86 50%, #0c5159 100%); color:#fff; border-radius:10px; font-weight:600; box-shadow:0 8px 18px -8px rgba(12,81,89,.45); transition:transform .15s; }
-  .btn-teal:hover{ transform:translateY(-1px); }
-  .btn-ghost{ display:inline-flex; align-items:center; gap:6px; padding:.65rem 1.1rem; background:#fff; border:1px solid var(--border); border-radius:10px; font-weight:600; color:var(--ink); }
-  .btn-ghost:hover{ border-color:rgba(122,146,133,.45); }
-  ul.popular{ display:flex; flex-direction:column; gap:6px; margin-top:10px; }
-  ul.popular a{ display:flex; gap:10px; align-items:center; padding:8px 12px; border-radius:10px; background:#fff; border:1px solid var(--border); color:var(--ink); font-size:14px; transition:all .15s; }
-  ul.popular a:hover{ border-color:rgba(122,146,133,.5); transform:translateX(3px); color:var(--teal-deep); }
-  ul.popular .dot{ width:6px; height:6px; border-radius:50%; background:var(--teal-bright); flex-shrink:0; }
-</style>
-<style id="dn-global-ux">
-  /* Global mobile/tablet UX tweaks — added once across the whole site */
-  body { padding-bottom: env(safe-area-inset-bottom); }
-  header.sticky { padding-top: env(safe-area-inset-top); }
-  /* Tap target minimum 44px on touch devices (iOS HIG / Material) */
-  @media (hover: none) and (pointer: coarse) {
-    a, button, select, .article-list-item, .lang-select { min-height: 40px; }
-    select, button { touch-action: manipulation; }
-  }
-  /* Smoother focus ring (keyboard nav) */
-  :focus-visible { outline: 2px solid rgba(20,184,166,.6); outline-offset: 2px; border-radius: 4px; }
-  /* Disable iOS double-tap zoom on interactive elements */
-  a, button { touch-action: manipulation; -webkit-tap-highlight-color: rgba(122,146,133,.20); }
-  /* Tablet: keep article width comfortable */
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .max-w-3xl { max-width: 700px; }
-  }
-  /* Reduce motion — respect user preference */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: .01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: .01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-  /* View Transitions: slide-fade for cross-page nav */
-  @media (prefers-reduced-motion: no-preference) {
-    ::view-transition-old(root) { animation: dn-vt-out .22s cubic-bezier(.2,.7,.2,1) both; }
-    ::view-transition-new(root) { animation: dn-vt-in  .26s cubic-bezier(.2,.7,.2,1) both; }
-    @keyframes dn-vt-out { to { opacity: 0; transform: translateY(-4px); } }
-    @keyframes dn-vt-in  { from { opacity: 0; transform: translateY(8px); } }
-  }
-  /* Prevent text-size auto-inflation on rotation (iOS) */
-  html { -webkit-text-size-adjust: 100%; }
-  /* Avoid horizontal scroll bleeds */
-  html, body { overflow-x: hidden; }
-</style>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=12" />
-</head>
-<body>
-<a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
-
-
-<main class="min-h-[100dvh] flex items-center justify-center px-5 py-16">
-  <div class="max-w-xl w-full text-center">
-    <span class="pop" data-zh="404 · 找不到頁面" data-en="404 · Page not found">404 · 找不到頁面</span>
-    <h1 class="display text-[64px] sm:text-[88px] font-bold mt-4 leading-none teal-text">404</h1>
-    <p class="display text-[20px] sm:text-[24px] font-bold mt-3" data-zh="這頁可能已被移動或不存在" data-en="This page may have moved or no longer exists">這頁可能已被移動或不存在</p>
-    <p class="text-[13.5px] text-[var(--ink-2)] mt-2" data-zh="您可以從以下入口繼續瀏覽 ChenDermatologist 衛教內容。" data-en="Please use one of the entries below to continue browsing.">您可以從以下入口繼續瀏覽 ChenDermatologist 衛教內容。</p>
-
-    <div class="card mt-8 text-left">
-      <div class="text-[11px] uppercase tracking-[.22em] text-[var(--teal-deep)] font-bold" data-zh="熱門衛教文章" data-en="Popular articles">熱門衛教文章</div>
-      <ul class="popular">
-        <li><a href="/blog/acne-myths"><span class="dot"></span><span data-zh="痘痘 9 大迷思" data-en="9 acne myths">痘痘 9 大迷思</span></a></li>
-        <li><a href="/blog/sunscreen-myths"><span class="dot"></span><span data-zh="防曬 8 大迷思" data-en="8 sunscreen myths">防曬 8 大迷思</span></a></li>
-        <li><a href="/blog/eczema-myths"><span class="dot"></span><span data-zh="異位性皮膚炎 6 大迷思" data-en="6 eczema myths">異位性皮膚炎 6 大迷思</span></a></li>
-        <li><a href="/blog/melasma-myths"><span class="dot"></span><span data-zh="肝斑 7 大迷思" data-en="7 melasma myths">肝斑 7 大迷思</span></a></li>
-        <li><a href="/blog/topical-acids-patient"><span class="dot"></span><span data-zh="外用酸類完整衛教" data-en="Topical acids guide">外用酸類完整衛教</span></a></li>
-        <li><a href="/blog/isotretinoin-patient"><span class="dot"></span><span data-zh="口服 A 酸完整衛教" data-en="Oral isotretinoin guide">口服 A 酸完整衛教</span></a></li>
-      </ul>
-    </div>
-
-    <div class="mt-8 flex flex-wrap gap-3 justify-center">
-      <a href="/" class="btn-teal" data-zh="回首頁" data-en="Home">回首頁</a>
-      <a href="/blog/" class="btn-ghost" data-zh="文章索引" data-en="All articles">文章索引</a>
-      <a href="/blog/topics" class="btn-ghost" data-zh="主題分類" data-en="Topics">主題分類</a>
-    </div>
-
-    <p class="text-[11px] text-[var(--muted)] mt-10" data-zh="若您是從外部連結進入，連結可能已過期。可寄信至 expertise88864@gmail.com 反映。" data-en="If you arrived from an external link, it may be outdated. Email expertise88864@gmail.com if needed.">若您是從外部連結進入，連結可能已過期。可寄信至 <a href="mailto:expertise88864@gmail.com" class="text-[var(--teal-deep)] underline">expertise88864@gmail.com</a> 反映。</p>
-  </div>
-</main>
-
-<script src="/blog/blog-shared.js?v=202605141400" defer></script>
+<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /><title>找不到頁面 · ChenDermatologist</title><meta name="description" content="您要找的頁面不存在或已被移動。請利用以下連結返回首頁、瀏覽衛教文章索引，或搜尋常見主題。" /><meta name="robots" content="noindex,follow" /><meta name="theme-color" content="#7a9285" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" /><link rel="icon" sizes="any" href="/favicon.ico" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /><link rel="manifest" href="/manifest.json" /><link rel="me" href="mailto:expertise88864@gmail.com" /><link rel="canonical" href="https://chendermatologist.com/404" /><link rel="author" href="https://chendermatologist.com/about" /><link rel="publisher" href="https://chendermatologist.com/" /><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap&text=陳翊嘉醫師皮膚科衛教筆記常見疾病迷思澄清關於我學經歷" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
+<style>:root{ --bg:#faf7f2; --surface:#ffffff; --ink:#2a2620; --ink-2:#5e574e; --muted:#8b8378; --teal:#7a9285; --teal-deep:#4d6358; --teal-bright:#a4b5a8; --border:#dcd5c8; --line:#ebe4d8; } html,body{ background:var(--bg); color:var(--ink); font-family:Inter,'Microsoft JhengHei','PingFang TC',sans-serif; } body::before{ content:''; position:fixed; inset:0; pointer-events:none; z-index:-1; background:radial-gradient(800px 500px at 12% -8%, rgba(164,181,168,.18), transparent 60%), radial-gradient(700px 480px at 100% 0%, rgba(14,124,134,.10), transparent 60%), linear-gradient(180deg,#f5fbfa 0%, #fbffff 40%, #f5fbfa 100%); } .teal-text{ background:linear-gradient(180deg,#a4b5a8,#4d6358); -webkit-background-clip:text; background-clip:text; color:transparent; } .display{ font-family:'Noto Serif TC',Georgia,serif; } .card{ background:#fff; border:1px solid var(--border); border-radius:18px; box-shadow:0 14px 30px -18px rgba(77,99,88,.18); padding:28px; } .pop{ display:inline-block; padding:6px 14px; border-radius:9999px; background:#fef3c7; color:#854d0e; border:1px solid #fcd34d; font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; } .btn-teal{ display:inline-flex; align-items:center; gap:6px; padding:.7rem 1.2rem; background:linear-gradient(180deg,#22d3ee 0%, #0e7c86 50%, #0c5159 100%); color:#fff; border-radius:10px; font-weight:600; box-shadow:0 8px 18px -8px rgba(12,81,89,.45); transition:transform .15s; } .btn-teal:hover{ transform:translateY(-1px); } .btn-ghost{ display:inline-flex; align-items:center; gap:6px; padding:.65rem 1.1rem; background:#fff; border:1px solid var(--border); border-radius:10px; font-weight:600; color:var(--ink); } .btn-ghost:hover{ border-color:rgba(122,146,133,.45); } ul.popular{ display:flex; flex-direction:column; gap:6px; margin-top:10px; } ul.popular a{ display:flex; gap:10px; align-items:center; padding:8px 12px; border-radius:10px; background:#fff; border:1px solid var(--border); color:var(--ink); font-size:14px; transition:all .15s; } ul.popular a:hover{ border-color:rgba(122,146,133,.5); transform:translateX(3px); color:var(--teal-deep); } ul.popular .dot{ width:6px; height:6px; border-radius:50%; background:var(--teal-bright); flex-shrink:0; }</style>
+<style id="dn-global-ux">body { padding-bottom: env(safe-area-inset-bottom); } header.sticky { padding-top: env(safe-area-inset-top); } @media (hover: none) and (pointer: coarse) { a, button, select, .article-list-item, .lang-select { min-height: 40px; } select, button { touch-action: manipulation; } } :focus-visible { outline: 2px solid rgba(20,184,166,.6); outline-offset: 2px; border-radius: 4px; } a, button { touch-action: manipulation; -webkit-tap-highlight-color: rgba(122,146,133,.20); } @media (min-width: 768px) and (max-width: 1023px) { .max-w-3xl { max-width: 700px; } } @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } } @media (prefers-reduced-motion: no-preference) { ::view-transition-old(root) { animation: dn-vt-out .22s cubic-bezier(.2,.7,.2,1) both; } ::view-transition-new(root) { animation: dn-vt-in .26s cubic-bezier(.2,.7,.2,1) both; } @keyframes dn-vt-out { to { opacity: 0; transform: translateY(-4px); } } @keyframes dn-vt-in { from { opacity: 0; transform: translateY(8px); } } } html { -webkit-text-size-adjust: 100%; } html, body { overflow-x: hidden; }</style>
+<link rel="stylesheet" href="/assets/tw-mini.css?v=14" /></head><body><a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a><main class="min-h-[100dvh] flex items-center justify-center px-5 py-16"><div class="max-w-xl w-full text-center"><span class="pop" data-zh="404 · 找不到頁面" data-en="404 · Page not found">404 · 找不到頁面</span><h1 class="display text-[64px] sm:text-[88px] font-bold mt-4 leading-none teal-text">404</h1><p class="display text-[20px] sm:text-[24px] font-bold mt-3" data-zh="這頁可能已被移動或不存在" data-en="This page may have moved or no longer exists">這頁可能已被移動或不存在</p><p class="text-[13.5px] text-[var(--ink-2)] mt-2" data-zh="您可以從以下入口繼續瀏覽 ChenDermatologist 衛教內容。" data-en="Please use one of the entries below to continue browsing.">您可以從以下入口繼續瀏覽 ChenDermatologist 衛教內容。</p><div class="card mt-8 text-left"><div class="text-[11px] uppercase tracking-[.22em] text-[var(--teal-deep)] font-bold" data-zh="熱門衛教文章" data-en="Popular articles">熱門衛教文章</div><ul class="popular"><li><a href="/blog/acne-myths"><span class="dot"></span><span data-zh="痘痘 9 大迷思" data-en="9 acne myths">痘痘 9 大迷思</span></a></li><li><a href="/blog/sunscreen-myths"><span class="dot"></span><span data-zh="防曬 8 大迷思" data-en="8 sunscreen myths">防曬 8 大迷思</span></a></li><li><a href="/blog/eczema-myths"><span class="dot"></span><span data-zh="異位性皮膚炎 6 大迷思" data-en="6 eczema myths">異位性皮膚炎 6 大迷思</span></a></li><li><a href="/blog/melasma-myths"><span class="dot"></span><span data-zh="肝斑 7 大迷思" data-en="7 melasma myths">肝斑 7 大迷思</span></a></li><li><a href="/blog/topical-acids-patient"><span class="dot"></span><span data-zh="外用酸類完整衛教" data-en="Topical acids guide">外用酸類完整衛教</span></a></li><li><a href="/blog/isotretinoin-patient"><span class="dot"></span><span data-zh="口服 A 酸完整衛教" data-en="Oral isotretinoin guide">口服 A 酸完整衛教</span></a></li></ul></div><div class="mt-8 flex flex-wrap gap-3 justify-center"><a href="/" class="btn-teal" data-zh="回首頁" data-en="Home">回首頁</a><a href="/blog/" class="btn-ghost" data-zh="文章索引" data-en="All articles">文章索引</a><a href="/blog/topics" class="btn-ghost" data-zh="主題分類" data-en="Topics">主題分類</a></div><p class="text-[11px] text-[var(--muted)] mt-10" data-zh="若您是從外部連結進入，連結可能已過期。可寄信至 expertise88864@gmail.com 反映。" data-en="If you arrived from an external link, it may be outdated. Email expertise88864@gmail.com if needed.">若您是從外部連結進入，連結可能已過期。可寄信至 <a href="mailto:expertise88864@gmail.com" class="text-[var(--teal-deep)] underline">expertise88864@gmail.com</a> 反映。</p></div></main>
+<script src="/blog/blog-shared.js?v=202605141600" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.applyTextOnly(DN.detectLang());});</script>
-
-<!-- ===== Deferred 3rd-party (loaded after first paint) ===== -->
-<script>
-(function(){
-  function load() {
-    // AdSense
-    var ad = document.createElement("script");
-    ad.async = true;
-    ad.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663";
-    ad.crossOrigin = "anonymous";
-    document.head.appendChild(ad);
-
-    // Clarity
-    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wkvhe0mf7y");
-
-    // GA4
-    var ga = document.createElement("script");
-    ga.async = true;
-    ga.src = "https://www.googletagmanager.com/gtag/js?id=G-XFF3L5QD10";
-    document.head.appendChild(ga);
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    window.gtag = gtag;
-    gtag("js", new Date());
-    gtag("config", "G-XFF3L5QD10", {anonymize_ip: true});
-  }
-  // Load 3rd-party after first paint (idle callback or 1s fallback)
-  if ("requestIdleCallback" in window) {
-    requestIdleCallback(load, { timeout: 2500 });
-  } else {
-    setTimeout(load, 1500);
-  }
-})();
-</script>
-</body>
-</html>
+<script>(function(){
+function load() {
+// AdSense
+var ad = document.createElement("script");
+ad.async = true;
+ad.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663";
+ad.crossOrigin = "anonymous";
+document.head.appendChild(ad);
+// Clarity
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wkvhe0mf7y");
+// GA4
+var ga = document.createElement("script");
+ga.async = true;
+ga.src = "https://www.googletagmanager.com/gtag/js?id=G-XFF3L5QD10";
+document.head.appendChild(ga);
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+gtag("js", new Date());
+gtag("config", "G-XFF3L5QD10", {anonymize_ip: true});
+}
+// Load 3rd-party after first paint (idle callback or 1s fallback)
+if ("requestIdleCallback" in window) {
+requestIdleCallback(load, { timeout: 2500 });
+} else {
+setTimeout(load, 1500);
+}
+})();</script>
+</body></html>

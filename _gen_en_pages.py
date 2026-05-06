@@ -20,6 +20,33 @@ DOMAIN = 'https://chendermatologist.com'
 
 SKIP = {'404.html', 'offline.html', 'admin.html', 'dashboard.html', 'notes.html'}
 
+# Per-page OG overrides for English mirrors.
+# Key = source filename relative to ROOT (e.g. 'index.html', 'blog/acne-myths.html').
+# Used to swap og:title / og:description / twitter:title to English so social
+# previews (LinkedIn, X, FB) match the visitor's expected language.
+EN_OG_OVERRIDES = {
+    'index.html': {
+        'title': 'Dr. Yi-Jia Chen — Dermatology Patient Education (Taiwan)',
+        'desc':  'Plain-language dermatology articles by Dr. Chen: acne, sunscreen, eczema, melasma, hair loss, biologics, isotretinoin, topical steroids — evidence-based, ad-free.',
+    },
+    'about.html': {
+        'title': 'About Dr. Yi-Jia Chen — Dermatologist (KMU / KMUH / CMUH)',
+        'desc':  'Background of Dr. Chen, Yi-Jia, M.D.: KMU medical school, KMUH PGY, CMUH dermatology resident. Personal patient-education site.',
+    },
+    'tools.html': {
+        'title': 'Dermatology Calculators (PASI / DLQI / SCORAD / SALT) — Dr. Chen',
+        'desc':  'Free clinical scoring calculators for dermatology: PASI, DLQI, SCORAD, SALT, EASI, IGA, NRS, and more.',
+    },
+    'glossary.html': {
+        'title': 'Dermatology Glossary in Plain Mandarin & English — Dr. Chen',
+        'desc':  'Plain-language glossary mapping dermatology jargon (biologics, JAK inhibitors, phototherapy, etc.) to everyday words.',
+    },
+    'blog/index.html': {
+        'title': 'Dermatology Articles Index — Dr. Yi-Jia Chen',
+        'desc':  'Index of all dermatology articles: acne, sunscreen, eczema, melasma, isotretinoin, topical acids, steroids, biologics, hair loss, mpox.',
+    },
+}
+
 # Banner injected after <main> opening tag (or after </header> as fallback)
 EN_BANNER = '''<div id="dn-en-banner" style="background:linear-gradient(180deg,#fef3c7,#fde68a);border-bottom:1px solid #d4a015;padding:9px 18px;text-align:center;font-size:12.5px;color:#854d0e;font-family:Inter,system-ui,sans-serif;line-height:1.5;font-weight:500">
   🌐 You are reading the English-mode interface. Some article body content is currently Chinese-only — full translation in progress.
@@ -47,8 +74,29 @@ def derive_en_path(zh_path):
     return os.path.join(ROOT, 'en', rel.lstrip('./'))
 
 
-def transform(html, zh_canonical_path, en_canonical_path):
+def transform(html, zh_canonical_path, en_canonical_path, source_rel=None):
     s = html
+
+    # OG override (per-page English social-preview titles)
+    ov = EN_OG_OVERRIDES.get(source_rel) if source_rel else None
+    if ov:
+        if 'title' in ov:
+            s = re.sub(
+                r'(<meta\s+property="og:title"\s+content=")[^"]*(")',
+                lambda m: m.group(1) + ov['title'].replace('\\', r'\\').replace('"', '&quot;') + m.group(2),
+                s, count=1
+            )
+            s = re.sub(
+                r'(<meta\s+name="twitter:title"\s+content=")[^"]*(")',
+                lambda m: m.group(1) + ov['title'].replace('\\', r'\\').replace('"', '&quot;') + m.group(2),
+                s, count=1
+            )
+        if 'desc' in ov:
+            s = re.sub(
+                r'(<meta\s+property="og:description"\s+content=")[^"]*(")',
+                lambda m: m.group(1) + ov['desc'].replace('\\', r'\\').replace('"', '&quot;') + m.group(2),
+                s, count=1
+            )
     # 1. Set <html lang="en">
     s = re.sub(r'<html\s+lang="[^"]*"', '<html lang="en"', s, count=1)
 
@@ -115,7 +163,7 @@ def main():
             en_canonical = '/en/' + stem
         en_path = os.path.join(en_dir, f)
         with open(zh_path, 'r', encoding='utf-8') as fp: html = fp.read()
-        en_html = transform(html, zh_canonical, en_canonical)
+        en_html = transform(html, zh_canonical, en_canonical, source_rel=f)
         with open(en_path, 'w', encoding='utf-8') as fp: fp.write(en_html)
         n += 1
 
@@ -133,7 +181,7 @@ def main():
             en_canonical = '/en/blog/' + stem
         en_path = os.path.join(blog_en_dir, f)
         with open(zh_path, 'r', encoding='utf-8') as fp: html = fp.read()
-        en_html = transform(html, zh_canonical, en_canonical)
+        en_html = transform(html, zh_canonical, en_canonical, source_rel='blog/' + f)
         with open(en_path, 'w', encoding='utf-8') as fp: fp.write(en_html)
         n += 1
 

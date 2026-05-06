@@ -1,0 +1,128 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""Hunt for unbalanced delimiters in blog-shared.js.
+
+Strategy: walk char-by-char, track context. Skip strings/comments/regex.
+Print location of first unbalanced item per type.
+"""
+import sys, io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+with open(r'C:\Users\User\Desktop\翊嘉\程式\個人網頁\DermNotes\blog\blog-shared.js', 'r', encoding='utf-8') as f:
+    src = f.read()
+
+n = len(src)
+i = 0
+line = 1
+col = 1
+
+stacks = {'(': [], '[': [], '{': []}
+pairs = {')': '(', ']': '[', '}': '{'}
+opens = {'(': ')', '[': ']', '{': '}'}
+
+last_signif = '\n'  # treat start as if after newline (regex allowed)
+errors = []
+
+def adv(c):
+    global line, col
+    if c == '\n':
+        line += 1
+        col = 1
+    else:
+        col += 1
+
+while i < n:
+    c = src[i]
+    nx = src[i+1] if i+1 < n else ''
+
+    # Line comment
+    if c == '/' and nx == '/':
+        while i < n and src[i] != '\n':
+            adv(src[i])
+            i += 1
+        continue
+    # Block comment
+    if c == '/' and nx == '*':
+        adv(c); adv(nx)
+        i += 2
+        while i < n - 1 and not (src[i] == '*' and src[i+1] == '/'):
+            adv(src[i])
+            i += 1
+        if i < n - 1:
+            adv(src[i]); adv(src[i+1])
+            i += 2
+        continue
+    # String literals
+    if c in ('"', "'", '`'):
+        q = c
+        start_line, start_col = line, col
+        adv(c); i += 1
+        while i < n:
+            if src[i] == '\\' and i + 1 < n:
+                adv(src[i]); adv(src[i+1])
+                i += 2
+                continue
+            if src[i] == q:
+                adv(src[i]); i += 1
+                break
+            if q != '`' and src[i] == '\n':
+                # broken string — bail
+                errors.append(f'unterminated string at line {start_line}:{start_col}')
+                break
+            adv(src[i]); i += 1
+        last_signif = q
+        continue
+    # Regex literal heuristic
+    if c == '/' and last_signif in ('=', '(', ',', ';', ':', '!', '&', '|', '?', '{', '}', '[', '\n', '+', '-', '*', '%', '<', '>', '~', '^', 'n'):
+        # try parsing as regex
+        j = i + 1
+        in_cls = False
+        ok = False
+        while j < n:
+            ch = src[j]
+            if ch == '\\' and j + 1 < n:
+                j += 2
+                continue
+            if ch == '[':
+                in_cls = True
+            elif ch == ']':
+                in_cls = False
+            elif ch == '/' and not in_cls:
+                ok = True
+                j += 1
+                while j < n and src[j].isalpha():
+                    j += 1
+                break
+            elif ch == '\n':
+                break
+            j += 1
+        if ok:
+            while i < j:
+                adv(src[i]); i += 1
+            last_signif = '/'
+            continue
+    # Real bracket
+    if c in '([{':
+        stacks[c].append((line, col))
+    elif c in ')]}':
+        match = pairs[c]
+        if not stacks[match]:
+            errors.append(f'unmatched {c} at line {line}:{col}')
+        else:
+            stacks[match].pop()
+    if not c.isspace():
+        last_signif = c
+    adv(c)
+    i += 1
+
+for op, st in stacks.items():
+    if st:
+        for (l, co) in st[:5]:
+            errors.append(f'unmatched {op} at line {l}:{co}')
+
+if not errors:
+    print('OK — all delimiters balanced')
+else:
+    print(f'{len(errors)} issue(s):')
+    for e in errors[:20]:
+        print(' ', e)

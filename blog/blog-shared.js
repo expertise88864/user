@@ -1641,6 +1641,31 @@
       return idx;
     }
     var INDEX = null;
+    var FULLTEXT_LOADED = false;
+
+    // Lazy-load /assets/search-index.json on first open. Merges H2/H3 headings +
+    // snippet into existing entries by slug match, so search hits article body content.
+    function loadFulltextIndex() {
+      if (FULLTEXT_LOADED) return Promise.resolve();
+      FULLTEXT_LOADED = true;
+      return fetch('/assets/search-index.json', { credentials: 'omit' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!Array.isArray(data) || !INDEX) return;
+          var bySlug = {};
+          data.forEach(function (e) { bySlug[e.slug] = e; });
+          INDEX.forEach(function (it) {
+            var slug = it.url.replace(/^\/blog\//, '').replace(/\/$/, '');
+            var e = bySlug[slug];
+            if (e) {
+              var extra = ' ' + (e.h || []).join(' ') + ' ' + (e.snippet || '');
+              it.search = (it.search + extra).toLowerCase();
+              if (e.snippet && !it.meta.includes('—')) it.meta = it.meta + ' — ' + e.snippet.slice(0, 50);
+            }
+          });
+        })
+        .catch(function () { /* offline ok */ });
+    }
 
     function open() {
       if (!INDEX) INDEX = buildIndex();
@@ -1648,6 +1673,8 @@
       input.value = '';
       input.focus();
       render('');
+      // Fire-and-forget: enrich index for body-content search; re-render if user is still searching
+      loadFulltextIndex().then(function () { if (overlay.classList.contains('open')) render(input.value); });
     }
     function close() {
       overlay.classList.remove('open');
@@ -2035,7 +2062,7 @@
             '<div>' +
               '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#4d6358;font-weight:700;margin-bottom:2px">閱讀進度</div>' +
               '<div style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#0f172a">' +
-                '已讀 <span style="color:#0c5159">' + read + '</span> / ' + total + ' 篇 ' +
+                '已讀 <span style="color:#0c5159">' + read + '</span> 篇 ' +
                 '<span style="font-size:13px;font-weight:500;color:#5e574e">(' + pct + '%)</span>' +
               '</div>' +
             '</div>' +
@@ -2115,7 +2142,7 @@
     // Article number badge
     const articleNum = DN.getArticleNumber(slug);
     const numBadge = articleNum
-      ? '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;font-weight:700;letter-spacing:.04em;font-family:Inter,sans-serif"><span aria-hidden="true">№</span><span>' + articleNum + ' / ' + String(DN.totalArticles).padStart(3,'0') + '</span></span>'
+      ? '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;font-weight:700;letter-spacing:.04em;font-family:Inter,sans-serif"><span aria-hidden="true">№</span><span>' + articleNum + '</span></span>'
       : '';
 
     bar.innerHTML =
@@ -2373,6 +2400,135 @@
   // Picks 3 articles, prefers same category, excludes current slug.
   // Adds JSON-LD ItemList for SEO.
   // -----------------------------------------------------------------------
+  // ─────────────────────────────────────────────────────────────────
+  // R32: Article prev/next series navigation (by category)
+  // ─────────────────────────────────────────────────────────────────
+  DN.addPrevNextNav = function () {
+    var article = document.querySelector('article.max-w-3xl');
+    if (!article || document.getElementById('dn-prev-next')) return;
+    var slug = DN.currentSlug && DN.currentSlug();
+    if (!slug) return;
+    var all = (DN.ARTICLES || []).slice();
+    if (all.length < 2) return;
+    var cur = all.find(function (a) { return a.slug === slug; });
+    if (!cur) return;
+    // Sort by date asc; find prev (older same-cat) + next (newer same-cat)
+    var sameCat = all.filter(function (a) { return a.cat === cur.cat; })
+      .sort(function (x, y) { return (x.date || '').localeCompare(y.date || ''); });
+    var idx = sameCat.findIndex(function (a) { return a.slug === slug; });
+    var prev = idx > 0 ? sameCat[idx - 1] : null;
+    var next = idx >= 0 && idx < sameCat.length - 1 ? sameCat[idx + 1] : null;
+    if (!prev && !next) return;
+
+    var sec = document.createElement('nav');
+    sec.id = 'dn-prev-next';
+    sec.setAttribute('aria-label', '系列文章導航');
+    sec.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
+    sec.style.cssText = 'display:grid;grid-template-columns:1fr 1fr;gap:12px';
+    function card(a, dir) {
+      if (!a) return '<div></div>';
+      var arrow = dir === 'prev' ? '←' : '→';
+      var label = dir === 'prev' ? '上一篇' : '下一篇';
+      var labelEn = dir === 'prev' ? 'Previous' : 'Next';
+      var align = dir === 'prev' ? 'left' : 'right';
+      return '<a href="/blog/' + a.slug + '" style="display:block;padding:14px 16px;background:#fff;border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--ink);text-align:' + align + ';transition:all .15s;box-shadow:0 1px 2px rgba(15,23,42,.04)" ' +
+        'onmouseover="this.style.borderColor=\'var(--teal-deep)\';this.style.transform=\'translateY(-2px)\';this.style.boxShadow=\'0 8px 18px -10px rgba(77,99,88,.22)\'" ' +
+        'onmouseout="this.style.borderColor=\'var(--border)\';this.style.transform=\'\';this.style.boxShadow=\'0 1px 2px rgba(15,23,42,.04)\'">' +
+        '<div style="font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--teal-deep);text-transform:uppercase;margin-bottom:6px">' +
+        (dir === 'prev' ? arrow + ' ' : '') +
+        '<span data-zh="' + label + '" data-en="' + labelEn + '">' + label + '</span>' +
+        (dir === 'next' ? ' ' + arrow : '') +
+        '</div>' +
+        '<div style="font-family:Noto Serif TC,Georgia,serif;font-size:14px;font-weight:700;line-height:1.4">' + a.title + '</div>' +
+        '</a>';
+    }
+    sec.innerHTML = card(prev, 'prev') + card(next, 'next');
+    article.parentNode.insertBefore(sec, article.nextSibling);
+  };
+
+  // ─────────────────────────────────────────────────────────────────
+  // R32: Bookmark button — saves slug to localStorage; toggleable
+  // ─────────────────────────────────────────────────────────────────
+  DN.addBookmarkButton = function () {
+    var article = document.querySelector('article.max-w-3xl');
+    if (!article || document.getElementById('dn-bookmark')) return;
+    var slug = DN.currentSlug && DN.currentSlug();
+    if (!slug) return;
+    var BM_KEY = 'dn-bookmarks';
+    function get() {
+      try { return JSON.parse(localStorage.getItem(BM_KEY) || '[]'); } catch (e) { return []; }
+    }
+    function set(arr) {
+      try { localStorage.setItem(BM_KEY, JSON.stringify(arr.slice(0, 50))); } catch (e) {}
+    }
+    function isBookmarked() { return get().indexOf(slug) >= 0; }
+
+    var btn = document.createElement('button');
+    btn.id = 'dn-bookmark';
+    btn.type = 'button';
+    btn.style.cssText = 'position:fixed;right:18px;bottom:80px;width:42px;height:42px;border-radius:50%;background:#fff;color:var(--teal-deep);border:1px solid var(--border);box-shadow:0 8px 20px -8px rgba(12,81,89,.35);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:50;font-size:18px;line-height:1;transition:all .15s';
+    function render() {
+      var bm = isBookmarked();
+      btn.setAttribute('aria-label', bm ? '取消收藏' : '加入收藏');
+      btn.title = bm ? '已收藏(點擊取消)' : '加入收藏';
+      btn.innerHTML = bm
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="#0c5159" stroke="#0c5159" stroke-width="2" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
+    }
+    btn.addEventListener('click', function () {
+      var arr = get();
+      if (isBookmarked()) {
+        arr = arr.filter(function (s) { return s !== slug; });
+      } else {
+        arr.unshift(slug);
+      }
+      set(arr);
+      render();
+      // Toast
+      var toast = document.createElement('div');
+      toast.style.cssText = 'position:fixed;left:50%;bottom:140px;transform:translateX(-50%);background:#0c5159;color:#fff;padding:8px 16px;border-radius:9999px;font-size:13px;font-weight:600;z-index:51;box-shadow:0 8px 20px -8px rgba(0,0,0,.4);pointer-events:none';
+      toast.textContent = isBookmarked() ? '✓ 已加入收藏' : '已從收藏移除';
+      document.body.appendChild(toast);
+      setTimeout(function () { toast.remove(); }, 1600);
+    });
+    render();
+    document.body.appendChild(btn);
+  };
+
+  // ─────────────────────────────────────────────────────────────────
+  // R32: Print button — for patient handouts
+  // ─────────────────────────────────────────────────────────────────
+  DN.addPrintButton = function () {
+    var article = document.querySelector('article.max-w-3xl');
+    if (!article || document.getElementById('dn-print-btn')) return;
+    var btn = document.createElement('button');
+    btn.id = 'dn-print-btn';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', '列印此文章 / Print article');
+    btn.title = '列印給病人 / 存成 PDF';
+    btn.style.cssText = 'position:fixed;right:18px;bottom:130px;width:42px;height:42px;border-radius:50%;background:#fff;color:var(--teal-deep);border:1px solid var(--border);box-shadow:0 8px 20px -8px rgba(12,81,89,.35);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:50;font-size:16px;line-height:1';
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>';
+    btn.addEventListener('click', function () { window.print(); });
+    document.body.appendChild(btn);
+  };
+
+  // ─────────────────────────────────────────────────────────────────
+  // R32: Lazy-load audit — patch any non-eager <img> missing loading attr
+  // Runs at end of init; safe no-op if already attributed.
+  // ─────────────────────────────────────────────────────────────────
+  DN.lazyLoadAudit = function () {
+    var imgs = document.querySelectorAll('img:not([loading]):not([data-no-lazy])');
+    imgs.forEach(function (img, i) {
+      // Skip first image (likely above fold / LCP candidate) unless explicitly fetchpriority="low"
+      if (i === 0 && !img.hasAttribute('fetchpriority')) {
+        img.setAttribute('fetchpriority', 'high');
+      } else {
+        img.setAttribute('loading', 'lazy');
+        img.setAttribute('decoding', 'async');
+      }
+    });
+  };
+
   DN.addRelatedArticles = function () {
     const article = document.querySelector('article.max-w-3xl');
     if (!article) return;
@@ -2383,10 +2539,29 @@
     const cur = all.find(function (a) { return a.slug === slug; });
     if (!cur) return;
 
-    // Score: same category +2, otherwise +1; pick top 3
+    // R32: Content-vector scoring — keyword overlap between titles + tags (deterministic, no random)
+    function tokens(a) {
+      var t = (a.title + ' ' + (a.tag || '') + ' ' + (a.tag_en || '')).toLowerCase();
+      // Split on whitespace + Chinese is per-char for overlap matching
+      return new Set(t.split(/[\s\/\-,()·]+/).filter(function (w) { return w.length > 1; })
+        .concat((t.match(/[一-鿿]{2,}/g) || [])));
+    }
+    var curTok = tokens(cur);
     const scored = all.filter(function (a) { return a.slug !== slug; })
-      .map(function (a) { return { a: a, s: (a.cat === cur.cat ? 2 : 1) + Math.random() * 0.5 }; })
-      .sort(function (x, y) { return y.s - x.s; })
+      .map(function (a) {
+        var aTok = tokens(a);
+        var overlap = 0;
+        aTok.forEach(function (t) { if (curTok.has(t)) overlap += 1; });
+        // Same category bonus
+        var catBonus = (a.cat === cur.cat) ? 1 : 0;
+        // Same tag (exact) bonus — strongest signal
+        var tagBonus = (a.tag === cur.tag) ? 3 : 0;
+        return { a: a, s: overlap * 2 + catBonus + tagBonus };
+      })
+      .sort(function (x, y) {
+        if (y.s !== x.s) return y.s - x.s;
+        return (y.a.date || '').localeCompare(x.a.date || ''); // tiebreak: newer
+      })
       .slice(0, 3)
       .map(function (x) { return x.a; });
 
@@ -4087,17 +4262,17 @@
             return (b.date || '').localeCompare(a.date || '');
           }).slice(0, initialLimit).map(function (a) { return a.slug; });
           var shown = showBySlugs(newest);
-          setStatus('最新 ' + shown + ' 篇 / 共 ' + allCards.length + ' 篇');
+          setStatus('最新文章');
           if (showMoreBtn) showMoreBtn.style.display = 'block';
         } else {
           showBySlugs(null);
-          setStatus('全部 ' + allCards.length + ' 篇');
+          setStatus('全部文章');
           if (showMoreBtn) showMoreBtn.style.display = 'none';
         }
       } else if (tag !== '__search__') {
         var ss = DN.TAG_GROUPS[tag] || [];
         var n = showBySlugs(ss);
-        setStatus('找到 ' + n + ' 篇 ' + tag + ' 相關文章');
+        setStatus(tag + ' 相關文章');
         if (showMoreBtn) showMoreBtn.style.display = 'none';
         showingAll = true;
       }
@@ -4114,7 +4289,7 @@
                a.slug.toLowerCase().indexOf(q) !== -1;
       }).map(function (a) { return a.slug; });
       var shown = showBySlugs(matched);
-      setStatus(shown > 0 ? '搜尋「' + q + '」找到 ' + shown + ' 篇' : '「' + q + '」沒有結果');
+      setStatus(shown > 0 ? '搜尋「' + q + '」結果' : '「' + q + '」沒有結果');
       if (showMoreBtn) showMoreBtn.style.display = 'none';
       if (typeof gtag === 'function') {
         try { gtag('event', 'site_search', { search_term: q, results_count: shown }); } catch (err) {}
@@ -4124,7 +4299,7 @@
     if (mode === 'homepage') {
       showMoreBtn = document.createElement('button');
       showMoreBtn.className = 'dn-show-more';
-      showMoreBtn.textContent = '↓ 顯示全部 ' + allCards.length + ' 篇文章';
+      showMoreBtn.textContent = '↓ 顯示全部文章';
       showMoreBtn.addEventListener('click', function () {
         showingAll = true;
         applyFilter('__all__');
@@ -4254,10 +4429,14 @@
       DN.addAuthorBio();
       DN.addLegalDisclaimer();
       DN.addTDALink();
+      DN.addPrevNextNav();
       DN.addRelatedArticles();
       DN.addShareToolbar();
+      DN.addBookmarkButton();
+      DN.addPrintButton();
       DN.addFeedbackLink();
     }
+    DN.lazyLoadAudit();
     DN.addFontSizer();
     DN.bindWebVitals();
     DN.bindGAEvents();

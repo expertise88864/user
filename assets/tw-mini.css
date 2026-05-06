@@ -313,3 +313,11 @@ footer.mag-footer {
 .z-40{z-index:40}
 @media (min-width:640px){.sm\:h-44{height:11rem}.sm\:text-left{text-align:left}.sm\:pt-16{padding-top:4rem}.sm\:text-\[17px\]{font-size:17px}.sm\:w-44{width:11rem}.sm\:text-\[32px\]{font-size:32px}.sm\:px-8{padding-left:2rem;padding-right:2rem}.sm\:flex-row{flex-direction:row}.sm\:p-8{padding:2rem}.sm\:text-\[42px\]{font-size:42px}.sm\:items-start{align-items:flex-start}.sm\:text-\[11\.5px\]{font-size:11.5px}.sm\:inline-flex{display:inline-flex}.sm\:justify-start{justify-content:flex-start}.sm\:h-24{height:6rem}.sm\:text-\[44px\]{font-size:44px}.sm\:p-10{padding:2.5rem}.sm\:text-\[18px\]{font-size:18px}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:text-\[16px\]{font-size:16px}.sm\:gap-10{gap:2.5rem}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:text-\[88px\]{font-size:88px}.sm\:pt-14{padding-top:3.5rem}.sm\:gap-3{gap:0.75rem}.sm\:text-\[24px\]{font-size:24px}}
 @media (min-width:768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* ─── Skeleton loaders for spotlight (recent / popular) ─── */
+@keyframes dn-skel-pulse{0%,100%{background-color:#ebe4d8;opacity:.6}50%{background-color:#dcd5c8;opacity:.9}}
+.dn-skel{padding:14px 16px;background:#fff;border:1px solid var(--border,#dcd5c8);border-radius:12px;display:flex;flex-direction:column;gap:8px;list-style:none}
+.dn-skel-meta{height:11px;width:55%;border-radius:4px;background:#ebe4d8;animation:dn-skel-pulse 1.4s ease-in-out infinite}
+.dn-skel-row{display:flex;align-items:center;gap:10px}
+.dn-skel-icon{width:32px;height:32px;border-radius:8px;flex-shrink:0;background:#ebe4d8;animation:dn-skel-pulse 1.4s ease-in-out infinite}
+.dn-skel-title{flex:1;height:15px;border-radius:4px;background:#ebe4d8;animation:dn-skel-pulse 1.4s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.dn-skel-meta,.dn-skel-icon,.dn-skel-title{animation:none}}

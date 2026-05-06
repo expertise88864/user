@@ -1,0 +1,189 @@
+{
+  "edges": {
+    "acne-myths": [
+      "isotretinoin-patient",
+      "topical-acids-patient"
+    ],
+    "acne-scar-treatment": [
+      "acne-myths",
+      "isotretinoin-patient",
+      "sunscreen-myths",
+      "topical-acids-patient"
+    ],
+    "alopecia-areata": [
+      "eczema-myths",
+      "hairloss-myths"
+    ],
+    "biologics-overview": [
+      "alopecia-areata",
+      "eczema-myths",
+      "hidradenitis-suppurativa",
+      "psoriasis-myths",
+      "urticaria-myths",
+      "vitiligo"
+    ],
+    "cutaneous-t-cell-lymphoma": [
+      "biologics-overview",
+      "eczema-myths",
+      "prurigo-nodularis"
+    ],
+    "demodex-rosacea": [
+      "acne-myths",
+      "rosacea-myths",
+      "topical-acids-patient"
+    ],
+    "dermatology-faq": [
+      "acne-myths",
+      "acne-scar-treatment",
+      "alopecia-areata",
+      "biologics-overview",
+      "demodex-rosacea",
+      "eczema-myths",
+      "hairloss-myths",
+      "hidradenitis-suppurativa",
+      "isotretinoin-patient",
+      "melasma-myths",
+      "mpox-care",
+      "psoriasis-myths",
+      "rosacea-myths",
+      "shingles-myths",
+      "skin-whitening-agents",
+      "sunscreen-myths",
+      "targeted-therapy-skin",
+      "tinea-myths",
+      "topical-acids-patient",
+      "topical-steroids-guide",
+      "urticaria-myths",
+      "vitiligo",
+      "warts-myths"
+    ],
+    "eczema-myths": [
+      "acne-myths",
+      "biologics-overview",
+      "topical-steroids-guide"
+    ],
+    "epidermoid-cyst": [
+      "acne-myths",
+      "acne-scar-treatment",
+      "hidradenitis-suppurativa"
+    ],
+    "hairloss-myths": [
+      "acne-myths",
+      "alopecia-areata",
+      "biologics-overview",
+      "topical-acids-patient"
+    ],
+    "hidradenitis-suppurativa": [
+      "acne-myths",
+      "isotretinoin-patient",
+      "psoriasis-myths"
+    ],
+    "isotretinoin-clinical": [
+      "isotretinoin-patient",
+      "topical-acids-clinical"
+    ],
+    "isotretinoin-patient": [
+      "isotretinoin-clinical",
+      "topical-acids-patient"
+    ],
+    "laser-dermatology": [
+      "acne-scar-treatment",
+      "hidradenitis-suppurativa",
+      "nhi-derm-drugs",
+      "rosacea-myths",
+      "skin-whitening-agents"
+    ],
+    "melasma-myths": [
+      "acne-myths",
+      "skin-whitening-agents",
+      "sunscreen-myths",
+      "topical-acids-patient"
+    ],
+    "mpox-care": [
+      "acne-scar-treatment",
+      "shingles-myths"
+    ],
+    "nhi-derm-drugs": [
+      "alopecia-areata",
+      "biologics-overview",
+      "eczema-myths",
+      "hidradenitis-suppurativa",
+      "isotretinoin-patient",
+      "psoriasis-myths",
+      "skin-whitening-agents",
+      "topical-steroids-guide",
+      "urticaria-myths"
+    ],
+    "pediatric-eczema": [
+      "biologics-overview",
+      "eczema-myths",
+      "nhi-derm-drugs",
+      "topical-steroids-guide"
+    ],
+    "prurigo-nodularis": [
+      "biologics-overview",
+      "eczema-myths",
+      "topical-steroids-guide"
+    ],
+    "psoriasis-myths": [
+      "biologics-overview",
+      "eczema-myths"
+    ],
+    "rosacea-myths": [
+      "eczema-myths",
+      "sunscreen-myths",
+      "topical-acids-patient"
+    ],
+    "shingles-myths": [
+      "eczema-myths"
+    ],
+    "skin-whitening-agents": [
+      "melasma-myths",
+      "sunscreen-myths",
+      "topical-acids-patient"
+    ],
+    "sunscreen-myths": [
+      "acne-myths",
+      "isotretinoin-patient",
+      "topical-acids-patient"
+    ],
+    "targeted-therapy-skin": [
+      "acne-myths",
+      "eczema-myths"
+    ],
+    "tinea-myths": [
+      "eczema-myths"
+    ],
+    "topical-acids-clinical": [
+      "isotretinoin-clinical",
+      "topical-acids-patient"
+    ],
+    "topical-acids-patient": [
+      "isotretinoin-patient",
+      "topical-acids-clinical"
+    ],
+    "topical-steroids-guide": [
+      "eczema-myths",
+      "psoriasis-myths"
+    ],
+    "urticaria-myths": [
+      "eczema-myths",
+      "nhi-derm-drugs"
+    ],
+    "vitiligo": [
+      "alopecia-areata",
+      "melasma-myths"
+    ],
+    "warts-myths": [
+      "tinea-myths"
+    ]
+  },
+  "orphans": [
+    "cutaneous-t-cell-lymphoma",
+    "dermatology-faq",
+    "epidermoid-cyst",
+    "laser-dermatology",
+    "pediatric-eczema"
+  ],
+  "dead_ends": []
+}
