@@ -1,855 +1,175 @@
 {
   "slug": "topical-acids-clinical",
   "strings": [
-    {
-      "zh": "Retinoid 分類與 4 代演進",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "RAR α / β / γ × RXR — receptor selectivity 與臨床意義",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "作用機轉",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "每個外用 retinoid 細節",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "前體：Retinaldehyde / Retinol / Retinyl palmitate / Bakuchiol",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "Azelaic Acid — 雙重機轉",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "組合相容性 — BPO / L-AA / niacinamide",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "孕期安全表(Topical actives)",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "Retinoid Dermatitis 處置",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "Bakuchiol(補骨脂酚）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "劑型與濃度",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "關鍵臨床點",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "本篇大綱",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "把外用 retinoid 四代差別、Azelaic acid 雙重機轉、AHA pH 與 free acid concentration 對 penetration 的影響、BHA 親脂特性、PHA、與 BPO 的相容性、與 L-AA 的 pH 衝突、retinoid dermatitis 處置、孕期安全證據，全部整理成可直接帶上門診講解的版本。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "Retinoids 依照分子結構與年代分為四代：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "耐受度顯著優於 Tretinoin(meta-analyses Thiboutot 2008 等）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "新手與青少年首選",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "Pregnancy:Cat C → 仍建議避免",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "RAR-γ selective(>20× over α/β)→ 系統毒性極低",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "耐受性介於 Adapalene 與 Tretinoin 之間",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "哺乳期可用",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "對 Fitzpatrick IV-VI 暗膚色族群 PIH 安全（無反白風險）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "初用 1-2 週可能有刺癢、burning；通常 self-limited",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "可與大多數活性成分共用(retinoid、AHA、BPO、niacinamide、L-AA)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "診所 chemical peel 濃度：20%、35%、50%、70%(glycolic)；更低 pH",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "濃度：OTC 0.5–2%(facial)、2% body wash、5–10% wart、20–30% chemical peel",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "機轉：dissolve intercellular cement、降解 corneodesmosomes、anti-inflammatory(structural similarity to aspirin)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "適應症：acne(comedonal type 為主）、verruca、psoriasis(keratolytic adjunct)、SD",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "分子大、滲透淺、刺激最低、有 humectant + antioxidant 性質",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "適合 sensitive skin、rosacea、post-procedure barrier-impaired",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "常見濃度 4–10%",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "處置階梯：",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "降低使用頻率（每天 → 隔日 → 每週 2 次）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "洗臉換成 syndet、低 pH、無皂鹼",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "強化 ceramide / cholesterol / FFA(3:1:1)修復",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "暫停其他 actives(L-AA、AHA、BHA)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "嚴重者短期外用 low-potency steroid 1 週",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "降濃度(0.1% → 0.025% / Tretinoin → Adapalene / Adapalene → retinaldehyde)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "區分 retinoid dermatitis vs. allergic contact dermatitis(罕見） — 後者廣泛 vesicular、超出塗藥區、patch test 陽性。",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "主要表達 RAR-γ",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "RAR-α 主導全身吸收後副作用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "降低系統毒性與刺激",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "濃度：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "FDA 適應症：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "降低刺激",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "更光穩定",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "可與 BPO 同時使用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不穩定性：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不建議孕期使用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "關鍵優勢：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "光穩定",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "BPO 相容",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "刺激強",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "絕對避孕",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "軀幹（背痘、胸痘）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "相對效力",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "需要幾個 enzymatic conversion step",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "孕期 evidence 仍有限",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "抗發炎",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "抑制 tyrosinase",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "抗菌",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "正常化 keratinization",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Pregnancy 安全 — FDA Cat B",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "分子大小",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "濃度",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "分子越小 → 滲透越深",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "pH ≈ pKa 時 free acid 比例最大",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "FDA OTC 上限",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "親脂",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "避免大面積",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "非協商項目",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "iron oxides（防可見光 / HEV）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "給民眾的口語版本:",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "對 papulopustular rosacea 特別有效",
-      "en": "",
-      "tag": "em"
-    },
-    {
-      "zh": "孕期 acne / melasma / rosacea 首選",
-      "en": "",
-      "tag": "em"
-    },
-    {
-      "zh": "完整臨床整理 — R2 必備",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "世代",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "結構特色",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "代表外用藥",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "代表口服",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "主要特性",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "分子",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "臨床對應",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "轉換步驟到 RA",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "常見濃度",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "備註",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "分子量",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "滲透深度",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "刺激性",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "特性",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "組合",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "相容性",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "原因 / Note",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "成分",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "FDA（舊 cat / PLLR）",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "實務建議",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "natural / 線性 polyene chain",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "多 receptor 親和、刺激較高",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "單苯環 retinoid",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "主要全身用、psoriasis、disorders of cornification",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "多芳香環，提高 receptor selectivity",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "RAR-β/γ 偏好，刺激較低",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "高度 RAR-γ 選擇性",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "專為 acne 設計、可用軀幹",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "pan-RAR；最強亦最刺激",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "RAR-β/γ；刺激低、光穩定",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "RAR-γ selective（20 倍 vs α）；全身吸收最低",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "0(已是活性）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "處方",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1 步",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "~ 20%(估）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "OTC/cosmetic；距離 RA 一步",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "2 步",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "開架抗老主流",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "3 步",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "效力極弱，常見「擺好看」",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Bakuchiol （非 retinoid）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "functional analog，不經 RAR",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "可孕婦用（目前 evidence 有限）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "最深",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "最高",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "最強；photoaging、PIH",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NMF 之一；保濕加分；ichthyosis 也用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "最淺",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "最低",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "有抗菌活性 → acne / PIH；深膚色友善",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "多作為 pH 調整；antioxidant",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "較少單獨使用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "同時擦會降解",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "BPO 將 tretinoin 氧化失活；早 BPO 晚 tretinoin 可",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "可同時",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Microsphere 緩釋避免直接氧化",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "(Epiduo 固定組合）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Adapalene 化學穩定",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "️ 數據有限",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "初步顯示穩定；safety 仍需更多 RWD",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Retinoid + L-AA（維他命 C）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "️ pH 衝突 + 刺激累加",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "建議 早 C 晚 A",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "niacinamide 可緩衝刺激",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "️ 視耐受性",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "不要同夜疊用；隔夜輪替可",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "(舊迷思已破）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "nicotinic acid flushing 須 70°C 才生成，常溫無問題",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Azelaic + 任何活性",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "個性最溫和、相容性最好",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Hydroquinone + retinoid + steroid (Kligman 三合一）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "(短期）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "melasma 標準；steroid 限期使用避免 atrophy",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "避免",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "case reports retinoid embryopathy 雖罕見",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "同上",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "絕對禁忌 + 避孕",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "arotenoid systemic exposure 顯著",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "同 retinoid class default",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "建議避免",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "謹慎原則；開架難規範",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "有限資料，謹慎",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "不應「保證孕期安全」標語",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "可用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "一般可用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "避免診所高濃度 peel",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "低 systemic absorption",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "避免大面積、高濃度、長時間；局部小範圍 Tx 一般可",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "低吸收；焦點 acne 安全選項",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "孕期支援保養首選",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "~ 30% systemic absorption；保留至產後",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "謹慎",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "口服明確避免；外用資料有限",
-      "en": "",
-      "tag": "td"
-    }
+    { "zh": "Retinoid 分類與 4 代演進", "en": "Retinoid classification and 4-generation evolution", "tag": "h2" },
+    { "zh": "RAR α / β / γ × RXR — receptor selectivity 與臨床意義", "en": "RAR α / β / γ × RXR — receptor selectivity and clinical implications", "tag": "h2" },
+    { "zh": "作用機轉", "en": "Mechanism of action", "tag": "h2" },
+    { "zh": "每個外用 retinoid 細節", "en": "Per-agent topical retinoid details", "tag": "h2" },
+    { "zh": "前體：Retinaldehyde / Retinol / Retinyl palmitate / Bakuchiol", "en": "Pro-forms: retinaldehyde / retinol / retinyl palmitate / bakuchiol", "tag": "h2" },
+    { "zh": "Azelaic Acid — 雙重機轉", "en": "Azelaic acid — dual mechanism", "tag": "h2" },
+    { "zh": "組合相容性 — BPO / L-AA / niacinamide", "en": "Combination compatibility — BPO / L-AA / niacinamide", "tag": "h2" },
+    { "zh": "孕期安全表(Topical actives)", "en": "Pregnancy safety reference (topical actives)", "tag": "h2" },
+    { "zh": "Retinoid Dermatitis 處置", "en": "Retinoid dermatitis management", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "Bakuchiol(補骨脂酚）", "en": "Bakuchiol", "tag": "h3" },
+    { "zh": "劑型與濃度", "en": "Vehicles and concentrations", "tag": "h3" },
+    { "zh": "關鍵臨床點", "en": "Key clinical points", "tag": "h3" },
+    { "zh": "本篇大綱", "en": "Article outline", "tag": "h4" },
+    { "zh": "把外用 retinoid 四代差別、Azelaic acid 雙重機轉、AHA pH 與 free acid concentration 對 penetration 的影響、BHA 親脂特性、PHA、與 BPO 的相容性、與 L-AA 的 pH 衝突、retinoid dermatitis 處置、孕期安全證據，全部整理成可直接帶上門診講解的版本。", "en": "A clinic-ready synthesis covering the four retinoid generations, azelaic acid's dual mechanism, the influence of AHA pH and free-acid concentration on penetration, BHA's lipophilic profile, PHA, BPO compatibility, pH conflicts with L-AA, retinoid dermatitis management, and pregnancy safety evidence.", "tag": "p" },
+    { "zh": "Retinoids 依照分子結構與年代分為四代：", "en": "Retinoids are categorized into four generations by molecular structure and era:", "tag": "p" },
+    { "zh": "耐受度顯著優於 Tretinoin(meta-analyses Thiboutot 2008 等）", "en": "Tolerability significantly superior to tretinoin (meta-analyses including Thiboutot 2008)", "tag": "li" },
+    { "zh": "新手與青少年首選", "en": "First-line for retinoid-naïve users and adolescents", "tag": "li" },
+    { "zh": "Pregnancy:Cat C → 仍建議避免", "en": "Pregnancy Category C → still advised to avoid", "tag": "li" },
+    { "zh": "RAR-γ selective(>20× over α/β)→ 系統毒性極低", "en": "RAR-γ selective (>20× over α/β) → minimal systemic toxicity", "tag": "li" },
+    { "zh": "耐受性介於 Adapalene 與 Tretinoin 之間", "en": "Tolerability between adapalene and tretinoin", "tag": "li" },
+    { "zh": "哺乳期可用", "en": "Acceptable during lactation", "tag": "li" },
+    { "zh": "對 Fitzpatrick IV-VI 暗膚色族群 PIH 安全（無反白風險）", "en": "Safe for Fitzpatrick IV–VI skin (no risk of hypopigmentation rebound)", "tag": "li" },
+    { "zh": "初用 1-2 週可能有刺癢、burning；通常 self-limited", "en": "Initial 1–2 weeks may cause stinging or burning; usually self-limited", "tag": "li" },
+    { "zh": "可與大多數活性成分共用(retinoid、AHA、BPO、niacinamide、L-AA)", "en": "Compatible with most actives (retinoid, AHA, BPO, niacinamide, L-AA)", "tag": "li" },
+    { "zh": "診所 chemical peel 濃度：20%、35%、50%、70%(glycolic)；更低 pH", "en": "Clinic chemical-peel concentrations: 20%, 35%, 50%, 70% glycolic; lower pH", "tag": "li" },
+    { "zh": "濃度：OTC 0.5–2%(facial)、2% body wash、5–10% wart、20–30% chemical peel", "en": "Concentrations: 0.5–2% facial OTC, 2% body wash, 5–10% wart, 20–30% chemical peel", "tag": "li" },
+    { "zh": "機轉：dissolve intercellular cement、降解 corneodesmosomes、anti-inflammatory(structural similarity to aspirin)", "en": "Mechanism: dissolves intercellular cement, degrades corneodesmosomes, anti-inflammatory (structural similarity to aspirin)", "tag": "li" },
+    { "zh": "適應症：acne(comedonal type 為主）、verruca、psoriasis(keratolytic adjunct)、SD", "en": "Indications: acne (mainly comedonal), verruca, psoriasis (keratolytic adjunct), seborrheic dermatitis", "tag": "li" },
+    { "zh": "分子大、滲透淺、刺激最低、有 humectant + antioxidant 性質", "en": "Large molecule, shallow penetration, lowest irritation, humectant + antioxidant properties", "tag": "li" },
+    { "zh": "適合 sensitive skin、rosacea、post-procedure barrier-impaired", "en": "Suitable for sensitive skin, rosacea, and post-procedure barrier impairment", "tag": "li" },
+    { "zh": "常見濃度 4–10%", "en": "Common concentrations 4–10%", "tag": "li" },
+    { "zh": "處置階梯：", "en": "Stepwise management:", "tag": "li" },
+    { "zh": "降低使用頻率（每天 → 隔日 → 每週 2 次）", "en": "Decrease frequency (daily → every other day → twice weekly)", "tag": "li" },
+    { "zh": "洗臉換成 syndet、低 pH、無皂鹼", "en": "Switch to soap-free, low-pH syndet cleansers", "tag": "li" },
+    { "zh": "強化 ceramide / cholesterol / FFA(3:1:1)修復", "en": "Reinforce ceramide / cholesterol / FFA (3:1:1) barrier repair", "tag": "li" },
+    { "zh": "暫停其他 actives(L-AA、AHA、BHA)", "en": "Pause other actives (L-AA, AHA, BHA)", "tag": "li" },
+    { "zh": "嚴重者短期外用 low-potency steroid 1 週", "en": "Severe cases: short-course (1 week) low-potency topical corticosteroid", "tag": "li" },
+    { "zh": "降濃度(0.1% → 0.025% / Tretinoin → Adapalene / Adapalene → retinaldehyde)", "en": "Down-titrate (0.1% → 0.025% / tretinoin → adapalene / adapalene → retinaldehyde)", "tag": "li" },
+    { "zh": "區分 retinoid dermatitis vs. allergic contact dermatitis(罕見） — 後者廣泛 vesicular、超出塗藥區、patch test 陽性。", "en": "Differentiate retinoid dermatitis from (rare) allergic contact dermatitis — the latter is more widespread, vesicular, extends beyond application area, and patch test is positive.", "tag": "li" },
+    { "zh": "主要表達 RAR-γ", "en": "predominantly expresses RAR-γ", "tag": "strong" },
+    { "zh": "RAR-α 主導全身吸收後副作用", "en": "RAR-α drives systemic-absorption side effects", "tag": "strong" },
+    { "zh": "降低系統毒性與刺激", "en": "Reduces systemic toxicity and irritation", "tag": "strong" },
+    { "zh": "濃度：", "en": "Concentrations:", "tag": "strong" },
+    { "zh": "FDA 適應症：", "en": "FDA indications:", "tag": "strong" },
+    { "zh": "降低刺激", "en": "reduces irritation", "tag": "strong" },
+    { "zh": "更光穩定", "en": "more photostable", "tag": "strong" },
+    { "zh": "可與 BPO 同時使用", "en": "Compatible with concomitant BPO", "tag": "strong" },
+    { "zh": "不穩定性：", "en": "Instability:", "tag": "strong" },
+    { "zh": "不建議孕期使用", "en": "Not recommended during pregnancy", "tag": "strong" },
+    { "zh": "關鍵優勢：", "en": "Key advantages:", "tag": "strong" },
+    { "zh": "光穩定", "en": "photostable", "tag": "strong" },
+    { "zh": "BPO 相容", "en": "BPO-compatible", "tag": "strong" },
+    { "zh": "刺激強", "en": "highly irritating", "tag": "strong" },
+    { "zh": "絕對避孕", "en": "strict contraception required", "tag": "strong" },
+    { "zh": "軀幹（背痘、胸痘）", "en": "Trunk (back-acne, chest-acne)", "tag": "strong" },
+    { "zh": "相對效力", "en": "Relative potency", "tag": "strong" },
+    { "zh": "需要幾個 enzymatic conversion step", "en": "Requires multiple enzymatic conversion steps", "tag": "strong" },
+    { "zh": "孕期 evidence 仍有限", "en": "Pregnancy evidence remains limited", "tag": "strong" },
+    { "zh": "抗發炎", "en": "Anti-inflammatory", "tag": "strong" },
+    { "zh": "抑制 tyrosinase", "en": "Tyrosinase inhibition", "tag": "strong" },
+    { "zh": "抗菌", "en": "Antimicrobial", "tag": "strong" },
+    { "zh": "正常化 keratinization", "en": "Normalizes keratinization", "tag": "strong" },
+    { "zh": "Pregnancy 安全 — FDA Cat B", "en": "Pregnancy-safe — FDA Category B", "tag": "strong" },
+    { "zh": "分子大小", "en": "Molecular size", "tag": "strong" },
+    { "zh": "濃度", "en": "Concentration", "tag": "strong" },
+    { "zh": "分子越小 → 滲透越深", "en": "Smaller molecules → deeper penetration", "tag": "strong" },
+    { "zh": "pH ≈ pKa 時 free acid 比例最大", "en": "Free-acid fraction is maximized when pH ≈ pKa", "tag": "strong" },
+    { "zh": "FDA OTC 上限", "en": "FDA OTC ceiling", "tag": "strong" },
+    { "zh": "親脂", "en": "Lipophilic", "tag": "strong" },
+    { "zh": "避免大面積", "en": "Avoid widespread application", "tag": "strong" },
+    { "zh": "非協商項目", "en": "Non-negotiable", "tag": "strong" },
+    { "zh": "iron oxides（防可見光 / HEV）", "en": "Iron oxides (block visible light / HEV)", "tag": "strong" },
+    { "zh": "給民眾的口語版本:", "en": "Plain-language patient version:", "tag": "strong" },
+    { "zh": "對 papulopustular rosacea 特別有效", "en": "Particularly effective for papulopustular rosacea", "tag": "em" },
+    { "zh": "孕期 acne / melasma / rosacea 首選", "en": "First-line for pregnancy-era acne / melasma / rosacea", "tag": "em" },
+    { "zh": "完整臨床整理 — R2 必備", "en": "Comprehensive clinical reference — essential for derm R2", "tag": "span" },
+    { "zh": "世代", "en": "Generation", "tag": "th" },
+    { "zh": "結構特色", "en": "Structural feature", "tag": "th" },
+    { "zh": "代表外用藥", "en": "Representative topical", "tag": "th" },
+    { "zh": "代表口服", "en": "Representative oral", "tag": "th" },
+    { "zh": "主要特性", "en": "Key properties", "tag": "th" },
+    { "zh": "分子", "en": "Molecule", "tag": "th" },
+    { "zh": "臨床對應", "en": "Clinical correlate", "tag": "th" },
+    { "zh": "轉換步驟到 RA", "en": "Conversion steps to RA", "tag": "th" },
+    { "zh": "常見濃度", "en": "Common concentrations", "tag": "th" },
+    { "zh": "備註", "en": "Notes", "tag": "th" },
+    { "zh": "分子量", "en": "Molecular weight", "tag": "th" },
+    { "zh": "滲透深度", "en": "Penetration depth", "tag": "th" },
+    { "zh": "刺激性", "en": "Irritation", "tag": "th" },
+    { "zh": "特性", "en": "Properties", "tag": "th" },
+    { "zh": "組合", "en": "Combination", "tag": "th" },
+    { "zh": "相容性", "en": "Compatibility", "tag": "th" },
+    { "zh": "原因 / Note", "en": "Reason / note", "tag": "th" },
+    { "zh": "成分", "en": "Ingredient", "tag": "th" },
+    { "zh": "FDA（舊 cat / PLLR）", "en": "FDA (legacy categories / PLLR)", "tag": "th" },
+    { "zh": "實務建議", "en": "Practical recommendation", "tag": "th" },
+    { "zh": "natural / 線性 polyene chain", "en": "Natural / linear polyene chain", "tag": "td" },
+    { "zh": "多 receptor 親和、刺激較高", "en": "Multi-receptor affinity, higher irritation", "tag": "td" },
+    { "zh": "單苯環 retinoid", "en": "Monoaromatic retinoid", "tag": "td" },
+    { "zh": "主要全身用、psoriasis、disorders of cornification", "en": "Mainly systemic use; psoriasis, disorders of cornification", "tag": "td" },
+    { "zh": "多芳香環，提高 receptor selectivity", "en": "Polyaromatic, increased receptor selectivity", "tag": "td" },
+    { "zh": "RAR-β/γ 偏好，刺激較低", "en": "RAR-β/γ preference, lower irritation", "tag": "td" },
+    { "zh": "高度 RAR-γ 選擇性", "en": "Highly RAR-γ selective", "tag": "td" },
+    { "zh": "專為 acne 設計、可用軀幹", "en": "Acne-designed; suitable for trunk", "tag": "td" },
+    { "zh": "pan-RAR；最強亦最刺激", "en": "Pan-RAR; most potent and most irritating", "tag": "td" },
+    { "zh": "RAR-β/γ；刺激低、光穩定", "en": "RAR-β/γ; low irritation, photostable", "tag": "td" },
+    { "zh": "RAR-γ selective（20 倍 vs α）；全身吸收最低", "en": "RAR-γ selective (20× vs α); lowest systemic absorption", "tag": "td" },
+    { "zh": "0(已是活性）", "en": "0 (already active)", "tag": "td" },
+    { "zh": "處方", "en": "Prescription", "tag": "td" },
+    { "zh": "1 步", "en": "1 step", "tag": "td" },
+    { "zh": "~ 20%(估）", "en": "~20% (estimated)", "tag": "td" },
+    { "zh": "OTC/cosmetic；距離 RA 一步", "en": "OTC/cosmetic; one step from RA", "tag": "td" },
+    { "zh": "2 步", "en": "2 steps", "tag": "td" },
+    { "zh": "開架抗老主流", "en": "Mainstream OTC anti-aging", "tag": "td" },
+    { "zh": "3 步", "en": "3 steps", "tag": "td" },
+    { "zh": "效力極弱，常見「擺好看」", "en": "Very weak potency; often \"label decoration\"", "tag": "td" },
+    { "zh": "Bakuchiol （非 retinoid）", "en": "Bakuchiol (non-retinoid)", "tag": "td" },
+    { "zh": "functional analog，不經 RAR", "en": "Functional analog, RAR-independent pathway", "tag": "td" },
+    { "zh": "可孕婦用（目前 evidence 有限）", "en": "Pregnancy-acceptable (evidence currently limited)", "tag": "td" },
+    { "zh": "最深", "en": "Deepest", "tag": "td" },
+    { "zh": "最高", "en": "Highest", "tag": "td" },
+    { "zh": "最強；photoaging、PIH", "en": "Strongest; photoaging, PIH", "tag": "td" },
+    { "zh": "NMF 之一；保濕加分；ichthyosis 也用", "en": "Component of NMF; humectant bonus; also used in ichthyosis", "tag": "td" },
+    { "zh": "最淺", "en": "Shallowest", "tag": "td" },
+    { "zh": "最低", "en": "Lowest", "tag": "td" },
+    { "zh": "有抗菌活性 → acne / PIH；深膚色友善", "en": "Antimicrobial activity → acne / PIH; safe for darker skin types", "tag": "td" },
+    { "zh": "多作為 pH 調整；antioxidant", "en": "Mainly used for pH adjustment; antioxidant", "tag": "td" },
+    { "zh": "較少單獨使用", "en": "Rarely used alone", "tag": "td" },
+    { "zh": "同時擦會降解", "en": "Simultaneous application causes degradation", "tag": "td" },
+    { "zh": "BPO 將 tretinoin 氧化失活；早 BPO 晚 tretinoin 可", "en": "BPO oxidizes and inactivates tretinoin; BPO morning + tretinoin night is acceptable", "tag": "td" },
+    { "zh": "可同時", "en": "Concurrent use OK", "tag": "td" },
+    { "zh": "Microsphere 緩釋避免直接氧化", "en": "Microsphere sustained release prevents direct oxidation", "tag": "td" },
+    { "zh": "(Epiduo 固定組合）", "en": "(Epiduo fixed-dose combination)", "tag": "td" },
+    { "zh": "Adapalene 化學穩定", "en": "Adapalene is chemically stable", "tag": "td" },
+    { "zh": "️ 數據有限", "en": "️ Limited data", "tag": "td" },
+    { "zh": "初步顯示穩定；safety 仍需更多 RWD", "en": "Preliminary stability data; more real-world safety data needed", "tag": "td" },
+    { "zh": "Retinoid + L-AA（維他命 C）", "en": "Retinoid + L-AA (vitamin C)", "tag": "td" },
+    { "zh": "️ pH 衝突 + 刺激累加", "en": "️ pH conflict + cumulative irritation", "tag": "td" },
+    { "zh": "建議 早 C 晚 A", "en": "Recommend morning-C / night-A regimen", "tag": "td" },
+    { "zh": "niacinamide 可緩衝刺激", "en": "Niacinamide can buffer irritation", "tag": "td" },
+    { "zh": "️ 視耐受性", "en": "️ Tolerance-dependent", "tag": "td" },
+    { "zh": "不要同夜疊用；隔夜輪替可", "en": "Avoid same-night layering; alternating-night rotation acceptable", "tag": "td" },
+    { "zh": "(舊迷思已破）", "en": "(Old myth debunked)", "tag": "td" },
+    { "zh": "nicotinic acid flushing 須 70°C 才生成，常溫無問題", "en": "Nicotinic acid flush requires 70°C to form; ambient temperature is safe", "tag": "td" },
+    { "zh": "Azelaic + 任何活性", "en": "Azelaic + any active", "tag": "td" },
+    { "zh": "個性最溫和、相容性最好", "en": "Mildest personality; best compatibility", "tag": "td" },
+    { "zh": "Hydroquinone + retinoid + steroid (Kligman 三合一）", "en": "Hydroquinone + retinoid + steroid (Kligman triple combination)", "tag": "td" },
+    { "zh": "(短期）", "en": "(Short-term)", "tag": "td" },
+    { "zh": "melasma 標準；steroid 限期使用避免 atrophy", "en": "Melasma standard; time-limit steroid use to avoid atrophy", "tag": "td" },
+    { "zh": "避免", "en": "Avoid", "tag": "td" },
+    { "zh": "case reports retinoid embryopathy 雖罕見", "en": "Case reports of retinoid embryopathy, though rare", "tag": "td" },
+    { "zh": "同上", "en": "Same as above", "tag": "td" },
+    { "zh": "絕對禁忌 + 避孕", "en": "Absolute contraindication + contraception required", "tag": "td" },
+    { "zh": "arotenoid systemic exposure 顯著", "en": "Arotenoid systemic exposure is substantial", "tag": "td" },
+    { "zh": "同 retinoid class default", "en": "Default with retinoid class", "tag": "td" },
+    { "zh": "建議避免", "en": "Recommended to avoid", "tag": "td" },
+    { "zh": "謹慎原則；開架難規範", "en": "Precautionary principle; OTC products hard to regulate", "tag": "td" },
+    { "zh": "有限資料，謹慎", "en": "Limited data, exercise caution", "tag": "td" },
+    { "zh": "不應「保證孕期安全」標語", "en": "Should not be marketed as \"pregnancy-safe\"", "tag": "td" },
+    { "zh": "可用", "en": "Acceptable", "tag": "td" },
+    { "zh": "一般可用", "en": "Generally acceptable", "tag": "td" },
+    { "zh": "避免診所高濃度 peel", "en": "Avoid high-concentration in-clinic peels", "tag": "td" },
+    { "zh": "低 systemic absorption", "en": "Low systemic absorption", "tag": "td" },
+    { "zh": "避免大面積、高濃度、長時間；局部小範圍 Tx 一般可", "en": "Avoid wide-area, high-concentration, prolonged use; small focal applications generally OK", "tag": "td" },
+    { "zh": "低吸收；焦點 acne 安全選項", "en": "Low absorption; safe option for focal acne", "tag": "td" },
+    { "zh": "孕期支援保養首選", "en": "First-line skincare support during pregnancy", "tag": "td" },
+    { "zh": "~ 30% systemic absorption；保留至產後", "en": "~30% systemic absorption; reserve until postpartum", "tag": "td" },
+    { "zh": "謹慎", "en": "Use with caution", "tag": "td" },
+    { "zh": "口服明確避免；外用資料有限", "en": "Oral clearly avoided; topical data limited", "tag": "td" }
   ]
 }
