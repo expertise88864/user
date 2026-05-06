@@ -20,18 +20,20 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with: { python-version: '3.12' }
+      - name: Regen /en/ mirror
+        run: python _gen_en_pages.py
       - name: Run feed generator
         run: python _gen_feeds.py
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [[ -n $(git status -s sitemap.xml blog/feed.xml blog/atom.xml) ]]; then
-            git add sitemap.xml blog/feed.xml blog/atom.xml
-            git commit -m "auto-regen feeds [skip ci]"
+          git add en/ sitemap.xml blog/feed.xml blog/atom.xml || true
+          if [[ -n $(git status -s en/ sitemap.xml blog/feed.xml blog/atom.xml) ]]; then
+            git commit -m "auto-regen /en/ mirror + feeds [skip ci]"
             git push
           else
-            echo "feeds already up-to-date"
+            echo "feeds + /en/ already up-to-date"
           fi
 
   html-validate:

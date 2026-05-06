@@ -58,9 +58,36 @@ if (-not $currentRemote) {
 }
 
 # 5. PULL FIRST — sync any changes from admin / GitHub web edits before our local push
-#    This prevents the local working tree from clobbering changes the user made via /admin
+#    Self-healing: if previous deploy left repo in unmerged/rebase state, recover automatically.
 Write-Host ""
 Write-Host "[3/6] Syncing from GitHub (git pull --rebase) ..."
+
+# 5a. Self-heal: abort any leftover rebase/merge from a prior failed deploy
+if (Test-Path ".git/rebase-merge") {
+    Write-Host "      [recover] previous rebase was interrupted — running git rebase --abort" -ForegroundColor DarkYellow
+    & git rebase --abort 2>$null | Out-Null
+}
+if (Test-Path ".git/rebase-apply") {
+    Write-Host "      [recover] previous am-rebase was interrupted — running git am --abort" -ForegroundColor DarkYellow
+    & git am --abort 2>$null | Out-Null
+}
+if (Test-Path ".git/MERGE_HEAD") {
+    Write-Host "      [recover] previous merge was interrupted — running git merge --abort" -ForegroundColor DarkYellow
+    & git merge --abort 2>$null | Out-Null
+}
+
+# 5b. Check for leftover unmerged paths in the index (e.g. atom.xml/feed.xml from CI conflict)
+$unmerged = & git ls-files --unmerged
+if ($unmerged) {
+    Write-Host "      [recover] unmerged paths detected — auto-resolving (taking HEAD version):" -ForegroundColor DarkYellow
+    $files = ($unmerged | ForEach-Object { ($_ -split '\t')[1] } | Sort-Object -Unique)
+    foreach ($f in $files) {
+        Write-Host "        - $f"
+        & git checkout HEAD -- "$f" 2>$null
+    }
+}
+
+# 5c. Now safe to fetch + rebase
 & git fetch origin main 2>$null
 $hasRemote = $LASTEXITCODE -eq 0
 if ($hasRemote) {
@@ -74,15 +101,58 @@ if ($hasRemote) {
     }
     & git pull --rebase origin main
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "[warn] Pull failed. You may need to resolve conflicts manually." -ForegroundColor Yellow
-        if ($stashed) { & git stash pop | Out-Null }
-        return
+        Write-Host "[warn] Pull failed during rebase — auto-resolving feed/sitemap conflicts (taking incoming version)..." -ForegroundColor Yellow
+        # Most common conflicts are auto-generated files (sitemap.xml, blog/feed.xml, blog/atom.xml, en/*)
+        # Take incoming (origin) version since we'll regen them anyway
+        $autoResolveable = @('sitemap.xml','blog/feed.xml','blog/atom.xml')
+        $unmergedNow = & git ls-files --unmerged
+        if ($unmergedNow) {
+            $conflictFiles = ($unmergedNow | ForEach-Object { ($_ -split '\t')[1] } | Sort-Object -Unique)
+            $allAutoResolveable = $true
+            foreach ($cf in $conflictFiles) {
+                if ($autoResolveable -notcontains $cf -and -not $cf.StartsWith('en/')) { $allAutoResolveable = $false; break }
+            }
+            if ($allAutoResolveable) {
+                foreach ($cf in $conflictFiles) {
+                    & git checkout --theirs -- "$cf" 2>$null
+                    & git add "$cf" 2>$null
+                    Write-Host "        resolved: $cf (took incoming)" -ForegroundColor DarkGray
+                }
+                & git rebase --continue 2>&1 | Out-Null
+                Write-Host "      [recovered] continuing rebase..." -ForegroundColor Green
+            } else {
+                Write-Host "[warn] Conflicts in non-auto-generated files. Manual resolution needed:" -ForegroundColor Yellow
+                $conflictFiles | ForEach-Object { Write-Host "        - $_" }
+                & git rebase --abort 2>$null | Out-Null
+                if ($stashed) { & git stash pop 2>$null | Out-Null }
+                return
+            }
+        } else {
+            if ($stashed) { & git stash pop 2>$null | Out-Null }
+            return
+        }
     }
     if ($stashed) {
         & git stash pop
         if ($LASTEXITCODE -ne 0) {
-            Write-Host "[warn] Could not auto-restore stashed changes — run 'git stash list' to inspect." -ForegroundColor Yellow
-            return
+            Write-Host "[warn] Stash pop had conflicts — auto-resolving auto-generated files..." -ForegroundColor Yellow
+            $autoResolveable = @('sitemap.xml','blog/feed.xml','blog/atom.xml')
+            $unmergedNow = & git ls-files --unmerged
+            if ($unmergedNow) {
+                $conflictFiles = ($unmergedNow | ForEach-Object { ($_ -split '\t')[1] } | Sort-Object -Unique)
+                foreach ($cf in $conflictFiles) {
+                    if ($autoResolveable -contains $cf -or $cf.StartsWith('en/')) {
+                        & git checkout --theirs -- "$cf" 2>$null
+                        & git add "$cf" 2>$null
+                    } else {
+                        # Take stashed (local) version for non-generated files
+                        & git checkout --theirs -- "$cf" 2>$null
+                        & git add "$cf" 2>$null
+                    }
+                }
+                & git stash drop 2>$null | Out-Null
+                Write-Host "      [recovered] stash conflicts resolved" -ForegroundColor Green
+            }
         }
     }
 } else {

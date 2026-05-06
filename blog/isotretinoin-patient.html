@@ -17,7 +17,7 @@
 <link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/isotretinoin-patient" />
 <link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/isotretinoin-patient" />
 <link rel="alternate" hreflang="zh-CN" href="https://chendermatologist.com/blog/isotretinoin-patient" />
-<link rel="alternate" hreflang="en" href="https://chendermatologist.com/blog/isotretinoin-patient" />
+<link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/isotretinoin-patient" />
 <link rel="alternate" hreflang="ja" href="https://chendermatologist.com/blog/isotretinoin-patient" />
 <link rel="alternate" hreflang="ko" href="https://chendermatologist.com/blog/isotretinoin-patient" />
 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
@@ -162,7 +162,7 @@
   /* Avoid horizontal scroll bleeds */
   html, body { overflow-x: hidden; }
 </style>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=5" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=10" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -215,8 +215,9 @@
   .dn-nav-burger:hover{background:var(--mint-100,#eaf6f3)}
   /* Mobile: hide flat nav, show burger */
   @media (max-width:899px){
-    .dn-nav{position:fixed;top:64px;right:0;left:0;background:rgba(250,247,242,.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);flex-direction:column;align-items:stretch;padding:12px 18px 16px;border-bottom:1px solid var(--border);box-shadow:0 12px 24px -12px rgba(77,99,88,.18);transform:translateY(-110%);transition:transform .25s ease;gap:2px}
-    .dn-nav.open{transform:translateY(0)}
+    .dn-nav{display:none;position:fixed;top:64px;right:0;left:0;background:rgba(250,247,242,.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);flex-direction:column;align-items:stretch;padding:12px 18px 16px;border-bottom:1px solid var(--border);box-shadow:0 12px 24px -12px rgba(77,99,88,.18);gap:2px;animation:none}
+    .dn-nav.open{display:flex;animation:dnNavSlide .22s ease}
+    @keyframes dnNavSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
     .dn-nav-link{padding:11px 14px;font-size:14px;border-radius:10px;justify-content:flex-start}
     .dn-nav-icon{width:auto;height:auto;padding:11px 14px;border-radius:10px;justify-content:flex-start;gap:10px;font-size:14px}
     .dn-nav-icon::after{font-family:Inter,sans-serif;font-weight:600;color:var(--teal-deep)}
@@ -512,8 +513,125 @@
 </div><!-- /proseZh -->
 
 <div id="proseEn" class="prose-en" style="display:none;">
-  <p><em>(English version coming soon. The Chinese article above covers everything in detail; an English translation is on the queue. Please check back, or use the language switcher in the header for an auto-translated read.)</em></p>
-  <p>If you can read Chinese, the article above explains: what oral isotretinoin is, who it's indicated for, how the dose and cumulative target work (target 120–150 mg/kg), the full side-effect spectrum (mucocutaneous, lipid, hepatic, MSK, neuropsych, teratogenicity), what to avoid during treatment (laser, tetracyclines, blood donation, hard contact sports), what to do after stopping, expected relapse rates (~1/3), Taiwan NHI coverage, and 10 of the most common patient FAQs.</p>
+
+<h2 id="what-en">What is oral isotretinoin?</h2>
+<p>Oral isotretinoin (also marketed as Roaccutane, Acnotin, Sotret) is a vitamin A derivative — specifically, <em>13-cis-retinoic acid</em>. It's the only acne drug that simultaneously addresses <strong>all four root mechanisms of acne</strong>:</p>
+<ul>
+  <li><strong>Reduces sebum production</strong> ~80–90% (sebocyte apoptosis)</li>
+  <li><strong>Normalizes follicular keratinization</strong> (prevents comedones)</li>
+  <li><strong>Suppresses C. acnes</strong> indirectly (through reduced sebum substrate)</li>
+  <li><strong>Anti-inflammatory</strong> (downregulates Toll-like receptor 2)</li>
+</ul>
+<p>It's the most effective acne treatment available, with cumulative-dose-based protocols achieving long-term remission in ~67% of patients.</p>
+
+<h2 id="who-en">Who is a candidate for oral isotretinoin?</h2>
+<p>Per the <strong>2024 AAD guideline</strong>, indications include:</p>
+<ul>
+  <li><strong>Severe nodulocystic acne</strong> (deep, painful, scarring lesions)</li>
+  <li><strong>Moderate acne unresponsive</strong> to ≥ 3 months of combined topical + oral antibiotics</li>
+  <li><strong>Acne with significant scarring</strong> (any severity)</li>
+  <li><strong>Acne with major psychosocial impact</strong> (BDD, depression linked to skin)</li>
+  <li><strong>Acne fulminans</strong> (with corticosteroid pre-treatment)</li>
+  <li>Recurrent acne despite multiple courses of conventional therapy</li>
+</ul>
+
+<h2 id="dose-en">Dosing & cumulative target</h2>
+<p>The standard protocol is a daily dose of <strong>0.5–1 mg/kg/day</strong> (typically starting at 0.5 and titrating up), targeting a <strong>cumulative dose of 120–150 mg/kg total</strong>.</p>
+<p>Example: A 60 kg patient targets 7,200–9,000 mg total → at 40 mg/day, the course runs ~6–8 months. Lower doses (10–20 mg/day, "low-dose isotretinoin") have growing evidence for efficacy with fewer side effects but may have higher relapse rates if cumulative dose is sub-target.</p>
+
+<h2 id="se-en">Full side-effect spectrum</h2>
+<p><strong>Mucocutaneous (universal — &gt; 90%)</strong></p>
+<ul>
+  <li>Cheilitis (dry, cracked lips) — manage with petrolatum-based balms multiple times daily</li>
+  <li>Dry skin / xerosis — heavy moisturizer + ceramide-based products</li>
+  <li>Dry eyes / conjunctivitis — preservative-free artificial tears; avoid contact lenses if symptomatic</li>
+  <li>Epistaxis (nosebleeds) — saline nasal sprays + petrolatum to nostrils</li>
+</ul>
+<p><strong>Laboratory abnormalities (10–25%)</strong></p>
+<ul>
+  <li>Elevated triglycerides (most common metabolic effect; usually mild and reversible)</li>
+  <li>Elevated cholesterol</li>
+  <li>Mild AST/ALT elevation</li>
+  <li>Routine monitoring: baseline + 1 month + every 2-3 months thereafter</li>
+</ul>
+<p><strong>Musculoskeletal</strong></p>
+<ul>
+  <li>Myalgias / arthralgias — common, usually mild</li>
+  <li>Avoid intense weight-training during therapy (rare reports of CK elevation, rhabdomyolysis)</li>
+</ul>
+<p><strong>Teratogenicity (absolute contraindication in pregnancy)</strong></p>
+<ul>
+  <li>Causes severe birth defects: CNS, cardiac, craniofacial, thymic abnormalities</li>
+  <li>Females of reproductive age <strong>must</strong> use ≥ 1 effective contraception (preferably 2 methods) for 1 month before, throughout, and 1 month after treatment</li>
+  <li>Monthly pregnancy tests required</li>
+</ul>
+<p><strong>Neuropsychiatric (controversial)</strong></p>
+<ul>
+  <li>Older observational studies suggested possible link with depression / suicidal ideation</li>
+  <li>2017 systematic review (Huang &amp; Cheng): no clear causal relationship; severe acne itself confers higher depression risk</li>
+  <li>Recommendation: screen for mood symptoms before and during treatment; counsel patients to report changes</li>
+</ul>
+<p><strong>Other rare</strong></p>
+<ul>
+  <li>Pseudotumor cerebri (especially with concurrent tetracyclines — avoid combination)</li>
+  <li>Inflammatory bowel disease — large 2021 cohort study (Wright et al., JAAD) showed no causal link</li>
+  <li>Photosensitivity — strict daily SPF 30+ broad-spectrum required</li>
+</ul>
+
+<h2 id="dont-en">What to avoid during treatment</h2>
+<ul>
+  <li><strong>Pregnancy</strong> — strict contraception (see above)</li>
+  <li><strong>Tetracycline antibiotics</strong> (doxycycline, minocycline) — risk of pseudotumor cerebri</li>
+  <li><strong>Vitamin A supplements</strong> — additive toxicity</li>
+  <li><strong>Blood donation</strong> — for entire treatment + 1 month after (donor blood could reach a pregnant recipient)</li>
+  <li><strong>Aggressive cosmetic procedures</strong> — laser resurfacing, deep chemical peels, dermabrasion (delay 6 months after stopping)</li>
+  <li><strong>Heavy alcohol</strong> — additive hepatic stress</li>
+</ul>
+
+<h2 id="after-en">After stopping treatment</h2>
+<p>Most side effects resolve within 1-2 months of discontinuation. Skin oil production gradually returns but usually remains lower than pre-treatment baseline. Photosensitivity normalizes within weeks.</p>
+<p><strong>Procedures timing post-isotretinoin:</strong></p>
+<ul>
+  <li>Non-ablative laser, IPL, low-energy picosecond toning: usually safe to resume after 1 month</li>
+  <li>Ablative resurfacing, fractional CO2, deep peels: <strong>wait ≥ 6 months</strong> (per 2017 ASDS consensus, Spring et al.)</li>
+</ul>
+
+<h2 id="relapse-en">Relapse rates</h2>
+<p>Approximately <strong>1/3 of patients relapse</strong> within 1-2 years post-treatment. Risk factors for relapse:</p>
+<ul>
+  <li>Cumulative dose &lt; 120 mg/kg</li>
+  <li>Younger age at treatment (&lt; 16 years)</li>
+  <li>Female with hormonal/PCOS-driven acne</li>
+  <li>Severe baseline disease</li>
+</ul>
+<p>Relapse can be re-treated with another course of isotretinoin or maintained with topical retinoids + spironolactone (in females).</p>
+
+<h2 id="cost-en">Taiwan NHI coverage vs out-of-pocket</h2>
+<p><strong>NHI conditional coverage</strong> exists for moderate-to-severe acne meeting specific criteria:</p>
+<ul>
+  <li>Diagnosis code 706.1 (acne vulgaris)</li>
+  <li>Failure of topical + oral antibiotics ≥ 3 months</li>
+  <li>Documented severity (cystic, scarring, multiple body areas)</li>
+  <li>Pre-authorization required</li>
+  <li>Females of reproductive age: signed contraception consent + monthly pregnancy test</li>
+</ul>
+<p>Out-of-pocket cost in Taiwan ranges roughly NT$ 80–200 per 10 mg capsule depending on brand. For a 6-month course at 40 mg/day, total can range NT$ 30,000–60,000.</p>
+
+<h2 id="myth-en">Common myths</h2>
+<p><strong>Myth: "It's too dangerous, even just one pill."</strong> — Properly monitored, isotretinoin has 70+ years of clinical safety data. Most side effects are mild, reversible, and predictable. The contraindications (pregnancy, severe liver disease) are well-defined.</p>
+<p><strong>Myth: "I'll lose all my skin oil forever."</strong> — Sebum returns gradually after stopping treatment, though typically to a lower set-point than baseline. This is usually a desired outcome.</p>
+<p><strong>Myth: "Drinking alcohol is fine."</strong> — Heavy alcohol adds hepatic stress; moderate occasional drinks are usually tolerated, but avoid binging.</p>
+<p><strong>Myth: "I should stop if I'm in the early purge phase."</strong> — A "purge" in weeks 4-8 is normal for some patients (not most). It usually resolves with continued treatment.</p>
+
+<h2 id="faq-en">Frequently asked questions</h2>
+<p><strong>Is it safe? — PTT controversy aside?</strong> 70+ years of clinical experience. Common side effects (dry lips, dry skin, lipid/liver elevations) are monitorable and reversible. The absolute contraindication is pregnancy (teratogenic). The "suicide risk" controversy: most studies are observational, and severe acne itself confers depression risk; causation is not established. Regular follow-up + reporting mood changes is recommended.</p>
+<p><strong>What is cumulative dose and why does it matter?</strong> Cumulative dose = body weight (kg) × 120–150 mg/kg. Example: 60 kg ≈ 7,200–9,000 mg total. Daily dose 0.5–1 mg/kg, course 6–9 months. Reaching the cumulative target reduces relapse risk significantly.</p>
+<p><strong>How long must I avoid pregnancy?</strong> 1 month before starting + entire treatment + 1 month after. Two contraception methods recommended (e.g., OCP + condom). Monthly clinic visits with pregnancy testing. Accidental pregnancy: stop immediately and consult OB/GYN.</p>
+<p><strong>Can I do laser during isotretinoin?</strong> Wait <strong>6 months after stopping</strong> for invasive lasers (ablative resurfacing, fractional CO2, deep chemical peels) — wound healing is impaired. Non-ablative procedures (low-energy picosecond toning, PDL, IPL) often okay but require individual assessment. Routine skincare, moisturization, sunscreen unaffected.</p>
+<p><strong>Will I become depressed?</strong> Severe acne itself is a depression risk factor. Studies haven't established a causal link with isotretinoin, but mood changes should be reported. Pre-existing depression is not a strict contraindication but warrants close coordination with psychiatry.</p>
+<p><strong>Source references at end of article (Chinese version).</strong> Major sources: Reynolds 2024 AAD guideline (PMID 38300170), Layton 2009 dermatoendocrinology review, Bagatin 2020 large retrospective, Wright 2021 IBD cohort, Spring 2017 ASDS post-isotretinoin consensus.</p>
+
+</div>
 <h2 id="longtail">常見問題（PTT / Dcard 上常被問的）</h2>
 <h3 id="lt1">口服 A 酸 PTT 上爭議很多，真的安全嗎？</h3>
 <p><strong>累積 70 年以上臨床經驗，正確使用是非常安全的</strong>。常見副作用嘴唇乾、皮膚乾、肝指數/血脂上升，可監測可逆。<strong>絕對禁忌</strong>：懷孕（致畸胎）、哺乳。爭議「自殺風險」目前研究多為觀察性 — 中重度痘痘本身就有更高憂鬱風險，藥物因果未證實。建議規律追蹤，若情緒變化告知醫師。</p>
@@ -593,7 +711,7 @@
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605140700" defer></script>
+<script src="/blog/blog-shared.js?v=202605141200" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     if (window.DN) DN.initBlog({ proseZh:'proseZh', proseEn:'proseEn' });

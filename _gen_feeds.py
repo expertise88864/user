@@ -54,25 +54,63 @@ STATIC_PAGES = [
 def build_sitemap():
     today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
-           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemaps-image/1.1">']
-    for p in STATIC_PAGES:
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+           '  xmlns:image="http://www.google.com/schemas/sitemaps-image/1.1"',
+           '  xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+
+    def emit_url(zh_url, en_url, lastmod, changefreq, priority, image=None, image_title=None):
         out.append('  <url>')
-        out.append(f'    <loc>{DOMAIN}{p["url"]}</loc>')
+        out.append(f'    <loc>{DOMAIN}{zh_url}</loc>')
+        out.append(f'    <lastmod>{lastmod}</lastmod>')
+        out.append(f'    <changefreq>{changefreq}</changefreq>')
+        out.append(f'    <priority>{priority}</priority>')
+        # hreflang annotations (Google sitemap-extension format)
+        out.append(f'    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="{DOMAIN}{zh_url}"/>')
+        out.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{DOMAIN}{en_url}"/>')
+        out.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{DOMAIN}{zh_url}"/>')
+        if image:
+            out.append('    <image:image>')
+            out.append(f'      <image:loc>{image}</image:loc>')
+            if image_title:
+                out.append(f'      <image:title>{html.escape(image_title)}</image:title>')
+            out.append('    </image:image>')
+        out.append('  </url>')
+
+    for p in STATIC_PAGES:
+        zh = p["url"]
+        en = '/en/' if zh == '/' else ('/en' + zh)
+        emit_url(zh, en, today, p["changefreq"], p["priority"])
+    for a in articles:
+        emit_url(
+            f'/blog/{a["slug"]}',
+            f'/en/blog/{a["slug"]}',
+            a["date"], 'monthly', '0.8',
+            image=f'{DOMAIN}/assets/og/{a["slug"]}.png',
+            image_title=a["title"]
+        )
+
+    # Also include /en/ URLs as their own entries (Google reads sitemap-multi-language better with both)
+    for p in STATIC_PAGES:
+        zh = p["url"]
+        en = '/en/' if zh == '/' else ('/en' + zh)
+        out.append('  <url>')
+        out.append(f'    <loc>{DOMAIN}{en}</loc>')
         out.append(f'    <lastmod>{today}</lastmod>')
         out.append(f'    <changefreq>{p["changefreq"]}</changefreq>')
-        out.append(f'    <priority>{p["priority"]}</priority>')
+        out.append(f'    <priority>{float(p["priority"]) - 0.1:.1f}</priority>')
+        out.append(f'    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="{DOMAIN}{zh}"/>')
+        out.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{DOMAIN}{en}"/>')
         out.append('  </url>')
     for a in articles:
         out.append('  <url>')
-        out.append(f'    <loc>{DOMAIN}/blog/{a["slug"]}</loc>')
+        out.append(f'    <loc>{DOMAIN}/en/blog/{a["slug"]}</loc>')
         out.append(f'    <lastmod>{a["date"]}</lastmod>')
         out.append('    <changefreq>monthly</changefreq>')
-        out.append('    <priority>0.8</priority>')
-        out.append('    <image:image>')
-        out.append(f'      <image:loc>{DOMAIN}/assets/og/{a["slug"]}.png</image:loc>')
-        out.append(f'      <image:title>{html.escape(a["title"])}</image:title>')
-        out.append('    </image:image>')
+        out.append('    <priority>0.7</priority>')
+        out.append(f'    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="{DOMAIN}/blog/{a["slug"]}"/>')
+        out.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{DOMAIN}/en/blog/{a["slug"]}"/>')
         out.append('  </url>')
+
     out.append('</urlset>')
     return '\n'.join(out) + '\n'
 

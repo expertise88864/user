@@ -15,7 +15,7 @@
 <link rel="publisher" href="https://chendermatologist.com/" />
 <link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/vitiligo" />
 <link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/vitiligo" />
-<link rel="alternate" hreflang="en" href="https://chendermatologist.com/blog/vitiligo" />
+<link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/vitiligo" />
 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" />
@@ -94,7 +94,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 {"@context":"https://schema.org","@type":"MedicalWebPage","url":"https://chendermatologist.com/blog/vitiligo","inLanguage":["zh-TW","en"],"name":"白斑（Vitiligo）完整衛教","audience":{"@type":"MedicalAudience","audienceType":"Patient"},"lastReviewed":"2026-05-04","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1","h2",".tldr"]},"keywords":"白斑,Vitiligo,Ruxolitinib,JAK,NB-UVB","articleSection":"Dermatology Patient Education","about":{"@type":"MedicalCondition","name":"白斑","alternateName":["白斑","Vitiligo"],"code":{"@type":"MedicalCode","code":"L80","codingSystem":"ICD-10"}},"isPartOf":{"@type":"WebSite","name":"ChenDermatologist","url":"https://chendermatologist.com/"}}
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"白斑會傳染嗎？","acceptedAnswer":{"@type":"Answer","text":"不會。白斑是自體免疫疾病，不是感染症。家人共用毛巾、衣物、共住完全不會傳染。"}},{"@type":"Question","name":"白斑會不會自己好？","acceptedAnswer":{"@type":"Answer","text":"少數白斑可自然色素再生（約 10-20%），尤其臉部、年輕、發病不久者。但多數不治療會逐漸擴大。建議積極治療。"}},{"@type":"Question","name":"白斑健保有給付什麼？","acceptedAnswer":{"@type":"Answer","text":"健保有給付：外用皮質類固醇、外用 Tacrolimus（普特皮）/ Pimecrolimus（醫立妥）— 屬適應症外使用但臨床常用、口服類固醇、Methotrexate 等。不給付:Ruxolitinib (Opzelura)、308-nm Excimer 雷射、NB-UVB 光療（部分醫學中心有給付特定狀況）、外科治療。"}},{"@type":"Question","name":"白斑可以曬太陽嗎？","acceptedAnswer":{"@type":"Answer","text":"白斑區域沒有黑色素保護，容易曬傷且 UV 反而可能誘發更多病灶（科伯納現象 Koebner phenomenon）。建議：白斑區域嚴格防曬（SPF 50+ 物理性）；治療型 UVB 是另一回事 — 在皮膚科精準控制下使用。"}},{"@type":"Question","name":"白斑跟異膚或乾癬有關嗎？","acceptedAnswer":{"@type":"Answer","text":"不直接相關，但都是免疫失調家族。共病風險：甲狀腺疾病、Type 1 糖尿病、紅斑性狼瘡、惡性貧血、Addison's disease。建議白斑病人定期篩檢甲狀腺功能。"}},{"@type":"Question","name":"白斑可以化妝遮蓋嗎？","acceptedAnswer":{"@type":"Answer","text":"可以。偽裝化妝（camouflage makeup）是合理的補充策略，如 Dermablend、Cover FX、Vichy Dermablend Pro。仿曬產品（DHA self-tanner）也可染色覆蓋,4-7 天會褪。"}}]}</script>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=5" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=10" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -147,8 +147,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   .dn-nav-burger:hover{background:var(--mint-100,#eaf6f3)}
   /* Mobile: hide flat nav, show burger */
   @media (max-width:899px){
-    .dn-nav{position:fixed;top:64px;right:0;left:0;background:rgba(250,247,242,.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);flex-direction:column;align-items:stretch;padding:12px 18px 16px;border-bottom:1px solid var(--border);box-shadow:0 12px 24px -12px rgba(77,99,88,.18);transform:translateY(-110%);transition:transform .25s ease;gap:2px}
-    .dn-nav.open{transform:translateY(0)}
+    .dn-nav{display:none;position:fixed;top:64px;right:0;left:0;background:rgba(250,247,242,.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);flex-direction:column;align-items:stretch;padding:12px 18px 16px;border-bottom:1px solid var(--border);box-shadow:0 12px 24px -12px rgba(77,99,88,.18);gap:2px;animation:none}
+    .dn-nav.open{display:flex;animation:dnNavSlide .22s ease}
+    @keyframes dnNavSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
     .dn-nav-link{padding:11px 14px;font-size:14px;border-radius:10px;justify-content:flex-start}
     .dn-nav-icon{width:auto;height:auto;padding:11px 14px;border-radius:10px;justify-content:flex-start;gap:10px;font-size:14px}
     .dn-nav-icon::after{font-family:Inter,sans-serif;font-weight:600;color:var(--teal-deep)}
@@ -512,7 +513,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605140700" defer></script>
+<script src="/blog/blog-shared.js?v=202605141200" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});</script>
 
 <!-- ===== Deferred 3rd-party (loaded after first paint) ===== -->

@@ -15,7 +15,7 @@
 <link rel="publisher" href="https://chendermatologist.com/" />
 <link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/topical-acids-patient" />
 <link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/topical-acids-patient" />
-<link rel="alternate" hreflang="en" href="https://chendermatologist.com/blog/topical-acids-patient" />
+<link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/topical-acids-patient" />
 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" />
@@ -166,7 +166,7 @@
   /* Avoid horizontal scroll bleeds */
   html, body { overflow-x: hidden; }
 </style>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=5" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=10" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -219,8 +219,9 @@
   .dn-nav-burger:hover{background:var(--mint-100,#eaf6f3)}
   /* Mobile: hide flat nav, show burger */
   @media (max-width:899px){
-    .dn-nav{position:fixed;top:64px;right:0;left:0;background:rgba(250,247,242,.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);flex-direction:column;align-items:stretch;padding:12px 18px 16px;border-bottom:1px solid var(--border);box-shadow:0 12px 24px -12px rgba(77,99,88,.18);transform:translateY(-110%);transition:transform .25s ease;gap:2px}
-    .dn-nav.open{transform:translateY(0)}
+    .dn-nav{display:none;position:fixed;top:64px;right:0;left:0;background:rgba(250,247,242,.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);flex-direction:column;align-items:stretch;padding:12px 18px 16px;border-bottom:1px solid var(--border);box-shadow:0 12px 24px -12px rgba(77,99,88,.18);gap:2px;animation:none}
+    .dn-nav.open{display:flex;animation:dnNavSlide .22s ease}
+    @keyframes dnNavSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
     .dn-nav-link{padding:11px 14px;font-size:14px;border-radius:10px;justify-content:flex-start}
     .dn-nav-icon{width:auto;height:auto;padding:11px 14px;border-radius:10px;justify-content:flex-start;gap:10px;font-size:14px}
     .dn-nav-icon::after{font-family:Inter,sans-serif;font-weight:600;color:var(--teal-deep)}
@@ -644,7 +645,96 @@
 </div><!-- /proseZh -->
 
 <div id="proseEn" class="prose-en" style="display:none;">
-  <p><em>(English version coming soon. The Chinese article above covers all five families of topical actives — retinoids, retinol-class precursors, azelaic acid, AHA, BHA — with mechanism, indication, pregnancy safety, combination chart, and how to start. Translation in queue.)</em></p>
+
+<h2 id="why-en">Why these 5 topical "acids" are the foundation of acne / aging skincare</h2>
+<p>The five topical active families — retinoids, retinol-class precursors, azelaic acid, alpha hydroxy acids (AHA), and beta hydroxy acids (BHA) — are the most evidence-based ingredients in dermatology for acne, photoaging, hyperpigmentation, and overall skin renewal. Each works on a different molecular pathway, so they're often combined or rotated based on indication and skin type.</p>
+
+<h2 id="retinoids-en">1. Topical retinoids (Tretinoin / Adapalene / Tazarotene / Trifarotene)</h2>
+<p><strong>Mechanism:</strong> Bind to retinoic acid receptors (RAR α/β/γ) → modulate gene transcription → normalize keratinocyte differentiation, reduce comedone formation, anti-inflammatory effects, increase dermal collagen.</p>
+<p><strong>Generations:</strong></p>
+<ul>
+  <li><strong>Tretinoin (1st gen)</strong> — gold standard for acne + photoaging; available 0.025%, 0.05%, 0.1%</li>
+  <li><strong>Adapalene (3rd gen, RARβ/γ-selective)</strong> — gentler, photo-stable, OTC in US (0.1%); now first-line per AAD 2024</li>
+  <li><strong>Tazarotene (3rd gen)</strong> — strongest; for psoriasis + acne</li>
+  <li><strong>Trifarotene (4th gen, RARγ-selective)</strong> — most selective; for back/chest acne</li>
+</ul>
+<p><strong>How to start:</strong> Pea-sized amount, every 3rd night for 2 weeks, then every other night, then nightly. Apply on dry skin only; wait 20 min after washing. Always pair with daily SPF 30+.</p>
+<p><strong>Side effects:</strong> Retinoid dermatitis (redness, peeling, dryness) in first 4-6 weeks is normal. <strong>Pregnancy: contraindicated</strong> (Category C/D depending on agent).</p>
+
+<h2 id="retinol-en">2. Retinol-class precursors (Retinol / Retinaldehyde / Retinyl esters / Bakuchiol)</h2>
+<p>These are <strong>cosmetic-grade</strong> precursors that the skin must convert to retinoic acid in 1-2 enzymatic steps before they're active. Less potent than prescription retinoids but better tolerated.</p>
+<p><strong>Conversion order (and relative potency):</strong></p>
+<ul>
+  <li>Retinyl palmitate → retinol → retinaldehyde → <strong>retinoic acid</strong> (active)</li>
+  <li>Retinaldehyde is ~ 1/10–1/20 the potency of tretinoin but 5-10× retinol</li>
+  <li>Retinol is ~ 1/100 the potency of tretinoin</li>
+  <li>Bakuchiol — plant-derived non-retinoid that activates similar genes; useful in pregnancy as a "retinoid alternative" though evidence is weaker</li>
+</ul>
+<p><strong>Use case:</strong> Beginners, sensitive skin, pregnancy (bakuchiol only), maintenance after stopping prescription retinoids.</p>
+
+<h2 id="azelaic-en">3. Azelaic Acid (杜鵑花酸)</h2>
+<p>A naturally-occurring dicarboxylic acid with <strong>three independent mechanisms</strong>:</p>
+<ul>
+  <li>Anti-inflammatory (downregulates kallikrein 5)</li>
+  <li>Anti-microbial (against C. acnes)</li>
+  <li>Tyrosinase inhibitor (lightens pigmentation)</li>
+</ul>
+<p><strong>Strengths:</strong> 15% (Finacea, OTC) or 20% (Skinoren, prescription).</p>
+<p><strong>Best for:</strong> Acne <em>+</em> melasma <em>+</em> rosacea — uniquely positioned to handle multiple concerns. <strong>Pregnancy-safe</strong> (Category B), making it the #1 retinoid alternative.</p>
+
+<h2 id="aha-en">4. Alpha Hydroxy Acids (AHA): Glycolic / Lactic / Mandelic</h2>
+<p><strong>Mechanism:</strong> Water-soluble, work on the <em>surface</em> by loosening intercorneocyte bonds → exfoliation. Stimulates underlying collagen synthesis at higher concentrations.</p>
+<p><strong>Comparison:</strong></p>
+<ul>
+  <li><strong>Glycolic acid</strong> (smallest molecule, 76 Da) — penetrates deepest, most irritating; 5-10% OTC, 30-70% in-clinic peels</li>
+  <li><strong>Lactic acid</strong> (90 Da) — humectant + gentler; for dry/sensitive skin</li>
+  <li><strong>Mandelic acid</strong> (152 Da) — slowest penetration, best for sensitive / darker skin (less PIH risk)</li>
+</ul>
+<p><strong>pH and free-acid percentage</strong> matter more than total concentration. AHA at pH 3.5-4 has substantial free-acid activity; pH > 6 means most is neutralized.</p>
+
+<h2 id="bha-en">5. Beta Hydroxy Acid (BHA): Salicylic Acid</h2>
+<p><strong>Lipid-soluble</strong>, so it penetrates into oily pores — uniquely effective for blackheads, whiteheads, and oily/combination skin. Anti-inflammatory at higher pH.</p>
+<p><strong>Strengths:</strong> 0.5-2% in OTC (Paula's Choice 2% BHA, CosRX), up to 30% in clinical peels.</p>
+<p><strong>Salicylates and aspirin allergy:</strong> rare but possible cross-reactivity; large surface application can theoretically cause systemic salicylism (avoid in children).</p>
+
+<h2 id="combine-en">Combining acids — what works, what doesn't</h2>
+<table class="dn"><thead><tr><th>Active</th><th>Combine with</th><th>Avoid</th></tr></thead>
+<tbody>
+<tr><td>Tretinoin</td><td>BPO (separately AM/PM), moisturizer, niacinamide</td><td>AHA (same day), L-AA (vit C, pH conflict)</td></tr>
+<tr><td>Adapalene</td><td>BPO (compatible — Epiduo combo), AHA, niacinamide</td><td>Concentrated peels</td></tr>
+<tr><td>Azelaic Acid</td><td>Almost everything — very compatible</td><td>—</td></tr>
+<tr><td>AHA</td><td>Hyaluronic acid, ceramides</td><td>Retinoid same night, BHA daily</td></tr>
+<tr><td>BHA</td><td>Niacinamide, hyaluronic acid</td><td>AHA daily (over-exfoliation)</td></tr>
+<tr><td>L-AA (Vit C)</td><td>SPF (synergistic photoprotection), ferulic acid</td><td>Tretinoin (pH conflict; alternate AM/PM)</td></tr>
+</tbody></table>
+
+<h2 id="pregnancy-en">Pregnancy & breastfeeding safety</h2>
+<table class="dn"><thead><tr><th>Active</th><th>Pregnancy</th><th>Breastfeeding</th></tr></thead>
+<tbody>
+<tr><td>Tretinoin / Tazarotene / Trifarotene</td><td><strong>❌ Contraindicated</strong></td><td>❌ Contraindicated</td></tr>
+<tr><td>Adapalene</td><td>❌ Contraindicated (Cat C)</td><td>Caution</td></tr>
+<tr><td>Retinol / Retinaldehyde</td><td>❌ Avoid</td><td>Caution</td></tr>
+<tr><td><strong>Azelaic Acid</strong></td><td>✅ Cat B (preferred)</td><td>✅ Safe</td></tr>
+<tr><td>Glycolic / Lactic Acid (low %)</td><td>✅ Probably safe</td><td>✅ Safe</td></tr>
+<tr><td>Salicylic Acid (low %, local)</td><td>⚠ Limited area only</td><td>⚠ Limited area</td></tr>
+<tr><td>Bakuchiol</td><td>✅ Likely safe (limited data)</td><td>✅ Likely safe</td></tr>
+</tbody></table>
+
+<h2 id="howto-en">How to start (beginner protocol)</h2>
+<ol>
+  <li><strong>Week 1-2:</strong> Pick ONE active. Apply every 3rd night, on dry skin, after a heavy moisturizer ("buffering" reduces irritation).</li>
+  <li><strong>Week 3-4:</strong> If tolerated, increase to every other night.</li>
+  <li><strong>Week 5+:</strong> Daily evening use if no irritation.</li>
+  <li><strong>Always:</strong> Daily SPF 30+ broad-spectrum in the morning. Stop and consult a dermatologist if persistent erythema, burning, or worsening acne occurs after week 6.</li>
+</ol>
+
+<h2 id="faq-en">Common questions</h2>
+<p><strong>Q: How long until I see results?</strong> Initial benefit at 4-8 weeks; significant improvement at 12 weeks; continued improvement up to 6-12 months.</p>
+<p><strong>Q: Should I expect a "purge" period?</strong> Some patients experience accelerated comedone surfacing in weeks 2-4 with retinoids — this is comedone evacuation, not new acne. Persists 2-6 weeks then improves.</p>
+<p><strong>Q: Can I use multiple acids together?</strong> Yes, but rotate days (Mon/Wed/Fri retinoid; Tue/Thu AHA) rather than stacking nightly. Daily simultaneous use significantly increases barrier disruption risk.</p>
+<p><strong>Q: When should I see a dermatologist?</strong> If acne persists >3 months on OTC, if scarring develops, or if you have moderate-severe baseline disease. Prescription tretinoin/adapalene + oral medication may be needed.</p>
+
+<p><em>Note: All claims based on AAD 2024 acne guideline (Reynolds et al., JAAD 2024), Plewig & Kligman <em>Acne and Rosacea</em> 4th ed (2024), and Mukherjee et al. retinoid review (Clin Interv Aging 2006). See Chinese version for full reference list.</em></p>
 <h2 id="longtail">常見問題（PTT / Dcard 上常被問的）</h2>
 <h3 id="lt1">A 酸 / 杜鵑花酸 / 果酸 / 水楊酸 PTT 推薦的牌子？</h3>
 <p><strong>外用 A 酸</strong>（處方）:Differin(Adapalene)、Stieva-A(Tretinoin)、Tazarotene。<strong>A 醇</strong>(OTC):The Ordinary Granactive Retinoid、SkinCeuticals Retinol、L'Oreal Revitalift、Olay Pro Retinol。<strong>杜鵑花酸</strong>:Skinoren（處方 20%）、The Ordinary Azelaic 10%。<strong>果酸</strong>:Neostrata Glycolic、Drunk Elephant TLC。<strong>水楊酸</strong>:Paula's Choice 2% BHA、CosRX BHA。</p>
@@ -723,7 +813,7 @@
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605140700" defer></script>
+<script src="/blog/blog-shared.js?v=202605141200" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     if (window.DN) DN.initBlog({ proseZh:'proseZh', proseEn:'proseEn' });

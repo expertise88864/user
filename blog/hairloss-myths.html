@@ -14,7 +14,7 @@
 <link rel="publisher" href="https://chendermatologist.com/" />
 <link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/hairloss-myths" />
 <link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/hairloss-myths" />
-<link rel="alternate" hreflang="en" href="https://chendermatologist.com/blog/hairloss-myths" />
+<link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/hairloss-myths" />
 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" />
@@ -141,7 +141,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"落髮 PTT 推薦的洗髮精有用嗎？","acceptedAnswer":{"@type":"Answer","text":"網路高討論度：Nizoral(Ketoconazole 2%)、Revita、L'Oréal Anti-thinning。Nizoral 對合併脂漏性皮膚炎的雄性禿有輔助效果（每週 2-3 次替換），純洗髮精無法治雄性禿。真正有效的是外用 Minoxidil 5% 每天 1-2 次 + 口服 Finasteride 1 mg。"}},{"@type":"Question","name":"雄性禿吃 Finasteride 副作用很可怕嗎？","acceptedAnswer":{"@type":"Answer","text":"多數副作用很輕微。性慾下降、勃起功能影響約 1-2%，停藥可逆。「Finasteride 後症候群」(PFS)很罕見，多數案例為持續心理因素或共病。10 年以上長期數據顯示安全。「降低 PSA 干擾攝護腺癌篩檢」實際把測得 PSA 乘 2 即可校正。"}},{"@type":"Question","name":"雄性禿多久看得到效果？","acceptedAnswer":{"@type":"Answer","text":"Minoxidil 開始 4-8 週可能初期掉髮加速（休止期髮被推出去），這是正常的。3-6 個月開始看到變化、6-12 個月達到最大效果。Finasteride 效果類似節奏。要堅持 6 個月才評估。"}},{"@type":"Question","name":"植髮一次解決嗎？健保有嗎？","acceptedAnswer":{"@type":"Answer","text":"健保不給付植髮（屬美容）。FUE/FUT 自費 NT$ 100,000-300,000（依株數）。植髮只「移植」原有毛囊，沒治療雄性禿源頭，沒搭配 Finasteride 會繼續禿掉旁邊未植區。建議植髮前先吃 6 個月 Finasteride 穩定再評估。"}},{"@type":"Question","name":"圓禿（鬼剃頭）會不會自己好？健保有給付什麼？","acceptedAnswer":{"@type":"Answer","text":"輕度(。重度或全頭(alopecia totalis)很難自然恢復。健保：局部類固醇注射（門診每 4-6 週一次）、外用類固醇、Anthralin。自費 / 健保有條件：JAK inhibitor 口服(Baricitinib、Ritlecitinib)— 重度圓禿新藥，效果好但需符合條件。"}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://chendermatologist.com/"},{"@type":"ListItem","position":2,"name":"衛教文章","item":"https://chendermatologist.com/blog/"},{"@type":"ListItem","position":3,"name":"落髮 / 雄性禿 7 大迷思","item":"https://chendermatologist.com/blog/hairloss-myths"}]}</script>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=5" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=10" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -194,8 +194,9 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   .dn-nav-burger:hover{background:var(--mint-100,#eaf6f3)}
   /* Mobile: hide flat nav, show burger */
   @media (max-width:899px){
-    .dn-nav{position:fixed;top:64px;right:0;left:0;background:rgba(250,247,242,.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);flex-direction:column;align-items:stretch;padding:12px 18px 16px;border-bottom:1px solid var(--border);box-shadow:0 12px 24px -12px rgba(77,99,88,.18);transform:translateY(-110%);transition:transform .25s ease;gap:2px}
-    .dn-nav.open{transform:translateY(0)}
+    .dn-nav{display:none;position:fixed;top:64px;right:0;left:0;background:rgba(250,247,242,.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);flex-direction:column;align-items:stretch;padding:12px 18px 16px;border-bottom:1px solid var(--border);box-shadow:0 12px 24px -12px rgba(77,99,88,.18);gap:2px;animation:none}
+    .dn-nav.open{display:flex;animation:dnNavSlide .22s ease}
+    @keyframes dnNavSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
     .dn-nav-link{padding:11px 14px;font-size:14px;border-radius:10px;justify-content:flex-start}
     .dn-nav-icon{width:auto;height:auto;padding:11px 14px;border-radius:10px;justify-content:flex-start;gap:10px;font-size:14px}
     .dn-nav-icon::after{font-family:Inter,sans-serif;font-weight:600;color:var(--teal-deep)}
@@ -642,7 +643,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605140700" defer></script>
+<script src="/blog/blog-shared.js?v=202605141200" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});</script>
 
 <!-- ===== Deferred 3rd-party (loaded after first paint) ===== -->
