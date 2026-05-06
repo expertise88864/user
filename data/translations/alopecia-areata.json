@@ -1,965 +1,197 @@
 {
   "slug": "alopecia-areata",
   "strings": [
-    {
-      "zh": "什麼是圓禿？跟一般落髮怎麼分？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "為什麼會圓禿？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "圓禿的臨床分類",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "如何診斷？需要切片嗎？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "SALT 嚴重度評估",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "治療階梯（依 TDA 2024 共識）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "重點：JAK 抑制劑時代（改變了重度圓禿的命運）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "圓禿的共病風險（台灣健保資料庫研究）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "常見問題（PTT / Dcard 上常被問的）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "結語",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "未滿 12 歲兒童",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "12-18 歲青少年及成人",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "系統性藥物建議劑量(TDA 2024 + 歐洲共識 2024)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "歐洲共識 2024 核心治療原則",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "圓禿會自己好嗎？多久會好？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "圓禿健保給付什麼？JAK 抑制劑健保有嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "圓禿會傳染嗎？家人會不會被影響？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "壓力會引起圓禿嗎？減壓就會好嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "圓禿可以染髮 / 燙髮嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "圓禿可以吃保健食品嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "植髮對圓禿有用嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "SALT 嚴重度分級（TDA 2024）",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "本篇大綱",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "跟其他常見禿髮的差別：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "確切原因通常不明，但 TDA 共識列出常見誘發因子：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "依禿髮分布形態：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "SALT (Severity of Alopecia Tool) 是國際標準評估工具，以頭皮 4 個區塊百分比加總計算總禿髮面積：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "TDA 2024 共識建議，出現以下情況其中一項時提高一級嚴重度：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "圓禿病人多為年輕成人、風險較低、但仍應於使用前個別評估上述風險、並與病人討論主要心血管事件、惡性腫瘤、嚴重感染、VTE 之風險訊號。Rudnicka 2024 EU 共識亦特別強調此 EMA 警示。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "實務上，口服類固醇仍常作為「橋接治療」（快速壓制活動期），再轉為 JAK 抑制劑長期維持。Cyclosporine 與 MTX 在 JAK 不可使用、不可取得時為 off-label 替代方案。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "圓禿病人需注意的共病：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "對心理社交功能產生負面影響（壓力、焦慮、憂鬱、社交退縮）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "眉毛或睫毛受影響而脫落",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "經至少 6 個月治療仍未達適當反應",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "進展快速且範圍廣泛，拉髮試驗陽性",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "有心血管事件高風險(吸菸 / 高血壓 / 糖尿病 / 心衰 / 過去心肌梗塞或中風 / 家族史)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "惡性腫瘤高風險(目前或過去吸菸者風險特別高)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "主要靜脈血栓栓塞(VTE)高風險(肥胖 / 凝血疾病 / 口服避孕藥 / 重大手術 / 長時間制動)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "自體免疫",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "85.5% 的病人在 40 歲前發病",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "2024 年起 JAK 抑制劑（Baricitinib、Ritlecitinib）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "提醒：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "升級條件",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "自體免疫疾病",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "邊界清楚的圓形 / 橢圓形禿斑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "邊界分明的禿塊",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陽性（易拔起）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "圓禿終生風險 1.7-2.1%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "66% 在 30 歲前、85.5% 在 40 歲前發病",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "環境因子",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "重大心理創傷與急性壓力",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "家族史",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "合併其他自體免疫疾病",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "生活習慣（台灣本土研究）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「壓力」常被高估為唯一原因",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "多因素混合",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "單一斑塊型 / 多發斑塊型（patchy AA）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "蛇形禿（Alopecia ophiasis）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "全頭禿（Alopecia totalis）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "全身禿（Alopecia universalis）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "快速惡化型（Rapidly progressive AA）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "急性瀰漫性全禿（Acute diffuse and total alopecia）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "預後好",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "慢性圓禿",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "理學檢查 + 皮膚鏡（trichoscopy）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "驚嘆號狀斷髮",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "黑點",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "邊界清楚的禿斑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "拉髮試驗陽性",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "指甲表面凹陷",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "頭皮切片",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "輕度（Mild）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "中度（Moderate）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "重度（Severe）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用皮質類固醇 ± 外用 5% Minoxidil",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "系統性皮質類固醇",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "輕至中度",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "強效 / 超強效外用皮質類固醇 或 病灶內類固醇注射",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "重度",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "口服 / 靜脈注射皮質類固醇",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "口服 JAK 抑制劑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "圓禿治療的轉捩點",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "歐洲皮膚科醫學會 2024 共識（Rudnicka et al., JEADV）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第一線治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "使用前必須篩檢",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "禁忌",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "⚠ EMA 2023 / FDA 安全警示(JAK inhibitor class warning)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "應僅在無其他治療選項時",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "≥ 65 歲",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「等待觀察」(wait-and-see)不適用於重度圓禿",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "治療目標",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "調整時機",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "長期維持",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "復發後再治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "合併治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "兒童 (3-11 歲)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "輔助",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "生物素(biotin)無證據，不建議",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "焦慮、憂鬱症",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "中風風險",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "感音神經性聽力喪失",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "睡眠呼吸中止",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "其他自體免疫疾病",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "癌症風險",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "淋巴瘤、乳癌（特別是 50 歲以下女性）、腎癌、膀胱癌風險增加",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "約 50% 在 1 年內自然恢復",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "有給付",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "JAK 抑制劑(Baricitinib、Ritlecitinib)2026 年仍主要為自費",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "絕對不會傳染",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "有家族傾向",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "誘發因子之一，但不是唯一原因",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "染燙不會誘發或加重圓禿",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "維他命 D",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "沒有實證",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不要替代藥物治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不建議植髮",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「等心情好了它就會自己好」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "輕度可考慮病灶內類固醇注射 + 外用，重度建議口服類固醇或 JAK 抑制劑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "JAK 抑制劑是過去 5 年內最大的治療突破",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "請至皮膚科專科醫師評估",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "延伸閱讀：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陳翊嘉 醫師",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "圓禿診斷及治療共識",
-      "en": "",
-      "tag": "em"
-    },
-    {
-      "zh": "圓禿完整衛教",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "依 TDA 2024 共識 · 更新 2026-05-04",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "自體免疫禿髮、SALT 分級、JAK 抑制劑時代",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "皮膚科 住院醫師",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "圓禿",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "雄性禿",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "休止期落髮",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "嚴重度",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "建議治療",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "第一線",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "第二線 / 慢性",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "藥物",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "劑量",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "建議使用時間",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "Baricitinib（Olumiant 愛滅炎）",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "Ritlecitinib（Litfulo 麗扶柔）",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "機轉",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "雄激素 / 基因",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "壓力 / 產後 / 大病後",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "外觀",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "髮線後退、頭頂稀疏",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "全頭均勻變稀",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "速度",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "突然出現",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "緩慢進展（數年）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "誘發後 2-3 個月開始",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "頭髮拉測試",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "陰性",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "陽性",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "恢復",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "輕度可自癒，重度需治療",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "不會自癒，需長期治療",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "誘發因子去除後 6-12 月",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "所有嚴重度",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Prednisolone（成人）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "2-6 個月",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Prednisolone（兒童青少年）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "等效劑量，逐步調升",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1-3 個月",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Methotrexate（成人）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥ 6 個月評估",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Methotrexate（兒童青少年）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "0.3-0.6 mg/kg/週（歐洲共識）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥ 6 個月",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≤ 12 個月，需監測腎功能血壓",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "4 mg/day 口服(≥75 歲或感染風險高 2 mg/day)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "12 週起評估，長期維持(常需 3-7 年)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "200 mg/day 載入 4 週 → 50 mg/day 維持",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "12 週起評估;36 週仍無反應應停藥",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "低劑量口服 Minoxidil(輔助)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "女 0.625-1.25 mg/day,男 1.25-2.5 mg/day",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "不單獨使用，作為毛髮再生輔助",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "適用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥18 歲成人重度圓禿（SALT &gt; 50%）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥12 歲重度圓禿",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "JAK1 / JAK2 抑制",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "JAK3 / TEC 雙抑制",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "4 mg/day(≥75 歲、感染史 2 mg/day)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "關鍵試驗 第三期療效",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "需追蹤",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "結核(IGRA + 胸部 X 光)、B / C 肝、血脂、CBC、淋巴球、ANC、Hb、肝指數、CPK",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "結核、肝炎、血小板計數、淋巴球計數",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "副作用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "上呼吸道感染、頭痛、痤瘡、CK 上升、HSV 復發",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "頭痛、毛囊炎、痤瘡、腹瀉、URI",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "價格（自費）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每月約 NT$ 30,000-50,000",
-      "en": "",
-      "tag": "td"
-    }
+    { "zh": "什麼是圓禿？跟一般落髮怎麼分？", "en": "What is alopecia areata, and how is it distinguished from other hair loss?", "tag": "h2" },
+    { "zh": "為什麼會圓禿？", "en": "What causes alopecia areata?", "tag": "h2" },
+    { "zh": "圓禿的臨床分類", "en": "Clinical subtypes of alopecia areata", "tag": "h2" },
+    { "zh": "如何診斷？需要切片嗎？", "en": "How is it diagnosed — is a biopsy needed?", "tag": "h2" },
+    { "zh": "SALT 嚴重度評估", "en": "SALT severity assessment", "tag": "h2" },
+    { "zh": "治療階梯（依 TDA 2024 共識）", "en": "Treatment ladder (per TDA 2024 consensus)", "tag": "h2" },
+    { "zh": "重點：JAK 抑制劑時代（改變了重度圓禿的命運）", "en": "Key point: the JAK inhibitor era (changing the prognosis of severe alopecia areata)", "tag": "h2" },
+    { "zh": "圓禿的共病風險（台灣健保資料庫研究）", "en": "Comorbidity risks in alopecia areata (Taiwan NHI database studies)", "tag": "h2" },
+    { "zh": "常見問題（PTT / Dcard 上常被問的）", "en": "Common questions (frequently asked on online forums)", "tag": "h2" },
+    { "zh": "結語", "en": "Bottom line", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "未滿 12 歲兒童", "en": "Children under 12", "tag": "h3" },
+    { "zh": "12-18 歲青少年及成人", "en": "Adolescents 12–18 and adults", "tag": "h3" },
+    { "zh": "系統性藥物建議劑量(TDA 2024 + 歐洲共識 2024)", "en": "Systemic drug dosing recommendations (TDA 2024 + 2024 European consensus)", "tag": "h3" },
+    { "zh": "歐洲共識 2024 核心治療原則", "en": "Core treatment principles in the 2024 European consensus", "tag": "h3" },
+    { "zh": "圓禿會自己好嗎？多久會好？", "en": "Will alopecia areata resolve on its own — how long does it take?", "tag": "h3" },
+    { "zh": "圓禿健保給付什麼？JAK 抑制劑健保有嗎？", "en": "What is covered by Taiwan NHI? Are JAK inhibitors reimbursed?", "tag": "h3" },
+    { "zh": "圓禿會傳染嗎？家人會不會被影響？", "en": "Is it contagious? Will family members be affected?", "tag": "h3" },
+    { "zh": "壓力會引起圓禿嗎？減壓就會好嗎？", "en": "Does stress cause it — does reducing stress cure it?", "tag": "h3" },
+    { "zh": "圓禿可以染髮 / 燙髮嗎？", "en": "Is hair coloring or perming allowed?", "tag": "h3" },
+    { "zh": "圓禿可以吃保健食品嗎？", "en": "Are supplements helpful for alopecia areata?", "tag": "h3" },
+    { "zh": "植髮對圓禿有用嗎？", "en": "Is hair transplant effective for alopecia areata?", "tag": "h3" },
+    { "zh": "SALT 嚴重度分級（TDA 2024）", "en": "SALT severity grading (TDA 2024)", "tag": "h4" },
+    { "zh": "本篇大綱", "en": "Article outline", "tag": "h4" },
+    { "zh": "跟其他常見禿髮的差別：", "en": "Differences from other common forms of hair loss:", "tag": "p" },
+    { "zh": "確切原因通常不明，但 TDA 共識列出常見誘發因子：", "en": "The exact cause is usually unknown, but the TDA consensus lists common triggers:", "tag": "p" },
+    { "zh": "依禿髮分布形態：", "en": "Classified by distribution pattern:", "tag": "p" },
+    { "zh": "SALT (Severity of Alopecia Tool) 是國際標準評估工具，以頭皮 4 個區塊百分比加總計算總禿髮面積：", "en": "The Severity of Alopecia Tool (SALT) is the international standard, summing percent involvement across four scalp regions:", "tag": "p" },
+    { "zh": "TDA 2024 共識建議，出現以下情況其中一項時提高一級嚴重度：", "en": "Per the TDA 2024 consensus, severity should be upgraded by one level when any of the following are present:", "tag": "p" },
+    { "zh": "圓禿病人多為年輕成人、風險較低、但仍應於使用前個別評估上述風險、並與病人討論主要心血管事件、惡性腫瘤、嚴重感染、VTE 之風險訊號。Rudnicka 2024 EU 共識亦特別強調此 EMA 警示。", "en": "Most alopecia areata patients are young adults at relatively low risk, but each should still be individually assessed and counseled about the warning signals for major cardiovascular events, malignancy, serious infection, and VTE. Rudnicka 2024 EU consensus reinforces this EMA warning.", "tag": "p" },
+    { "zh": "實務上，口服類固醇仍常作為「橋接治療」（快速壓制活動期），再轉為 JAK 抑制劑長期維持。Cyclosporine 與 MTX 在 JAK 不可使用、不可取得時為 off-label 替代方案。", "en": "In practice, oral corticosteroids are commonly used as bridging therapy to rapidly suppress active disease before transitioning to a JAK inhibitor for long-term maintenance. Cyclosporine and methotrexate serve as off-label alternatives when JAK inhibitors are unavailable or contraindicated.", "tag": "p" },
+    { "zh": "圓禿病人需注意的共病：", "en": "Comorbidities to be aware of in alopecia areata:", "tag": "p" },
+    { "zh": "對心理社交功能產生負面影響（壓力、焦慮、憂鬱、社交退縮）", "en": "Negative impact on psychosocial function (stress, anxiety, depression, social withdrawal)", "tag": "li" },
+    { "zh": "眉毛或睫毛受影響而脫落", "en": "Loss of eyebrows or eyelashes", "tag": "li" },
+    { "zh": "經至少 6 個月治療仍未達適當反應", "en": "Inadequate response after at least 6 months of treatment", "tag": "li" },
+    { "zh": "進展快速且範圍廣泛，拉髮試驗陽性", "en": "Rapidly progressive and extensive disease with a positive hair-pull test", "tag": "li" },
+    { "zh": "有心血管事件高風險(吸菸 / 高血壓 / 糖尿病 / 心衰 / 過去心肌梗塞或中風 / 家族史)", "en": "High cardiovascular risk (smoking, hypertension, diabetes, heart failure, prior MI/stroke, family history)", "tag": "li" },
+    { "zh": "惡性腫瘤高風險(目前或過去吸菸者風險特別高)", "en": "High malignancy risk (especially current or former smokers)", "tag": "li" },
+    { "zh": "主要靜脈血栓栓塞(VTE)高風險(肥胖 / 凝血疾病 / 口服避孕藥 / 重大手術 / 長時間制動)", "en": "High VTE risk (obesity, thrombophilia, oral contraceptives, major surgery, prolonged immobility)", "tag": "li" },
+    { "zh": "自體免疫", "en": "Autoimmune", "tag": "strong" },
+    { "zh": "85.5% 的病人在 40 歲前發病", "en": "85.5% of patients develop disease before age 40", "tag": "strong" },
+    { "zh": "2024 年起 JAK 抑制劑（Baricitinib、Ritlecitinib）", "en": "From 2024 onward: JAK inhibitors (baricitinib, ritlecitinib)", "tag": "strong" },
+    { "zh": "提醒：", "en": "Note:", "tag": "strong" },
+    { "zh": "升級條件", "en": "Upgrade criteria", "tag": "strong" },
+    { "zh": "自體免疫疾病", "en": "autoimmune disease", "tag": "strong" },
+    { "zh": "邊界清楚的圓形 / 橢圓形禿斑", "en": "well-demarcated round or oval bald patches", "tag": "strong" },
+    { "zh": "邊界分明的禿塊", "en": "well-defined patch of hair loss", "tag": "strong" },
+    { "zh": "陽性（易拔起）", "en": "positive (hairs pull out easily)", "tag": "strong" },
+    { "zh": "圓禿終生風險 1.7-2.1%", "en": "lifetime risk of alopecia areata 1.7–2.1%", "tag": "strong" },
+    { "zh": "66% 在 30 歲前、85.5% 在 40 歲前發病", "en": "66% develop disease before age 30, 85.5% before 40", "tag": "strong" },
+    { "zh": "環境因子", "en": "Environmental factors", "tag": "strong" },
+    { "zh": "重大心理創傷與急性壓力", "en": "Major psychological trauma and acute stress", "tag": "strong" },
+    { "zh": "家族史", "en": "Family history", "tag": "strong" },
+    { "zh": "合併其他自體免疫疾病", "en": "Coexisting autoimmune disease", "tag": "strong" },
+    { "zh": "生活習慣（台灣本土研究）", "en": "Lifestyle factors (Taiwanese cohort studies)", "tag": "strong" },
+    { "zh": "「壓力」常被高估為唯一原因", "en": "“Stress” is often overstated as the sole cause", "tag": "strong" },
+    { "zh": "多因素混合", "en": "multifactorial", "tag": "strong" },
+    { "zh": "單一斑塊型 / 多發斑塊型（patchy AA）", "en": "Single-patch / multiple-patch type (patchy AA)", "tag": "strong" },
+    { "zh": "蛇形禿（Alopecia ophiasis）", "en": "Ophiasis pattern", "tag": "strong" },
+    { "zh": "全頭禿（Alopecia totalis）", "en": "Alopecia totalis", "tag": "strong" },
+    { "zh": "全身禿（Alopecia universalis）", "en": "Alopecia universalis", "tag": "strong" },
+    { "zh": "快速惡化型（Rapidly progressive AA）", "en": "Rapidly progressive AA", "tag": "strong" },
+    { "zh": "急性瀰漫性全禿（Acute diffuse and total alopecia）", "en": "Acute diffuse and total alopecia (ADTA)", "tag": "strong" },
+    { "zh": "預後好", "en": "Better prognosis", "tag": "strong" },
+    { "zh": "慢性圓禿", "en": "Chronic alopecia areata", "tag": "strong" },
+    { "zh": "理學檢查 + 皮膚鏡（trichoscopy）", "en": "Physical exam + dermoscopy (trichoscopy)", "tag": "strong" },
+    { "zh": "驚嘆號狀斷髮", "en": "Exclamation-mark hairs", "tag": "strong" },
+    { "zh": "黑點", "en": "Black dots", "tag": "strong" },
+    { "zh": "邊界清楚的禿斑", "en": "Sharply demarcated patches", "tag": "strong" },
+    { "zh": "拉髮試驗陽性", "en": "Positive hair-pull test", "tag": "strong" },
+    { "zh": "指甲表面凹陷", "en": "Nail pitting", "tag": "strong" },
+    { "zh": "頭皮切片", "en": "Scalp biopsy", "tag": "strong" },
+    { "zh": "輕度（Mild）", "en": "Mild", "tag": "strong" },
+    { "zh": "中度（Moderate）", "en": "Moderate", "tag": "strong" },
+    { "zh": "重度（Severe）", "en": "Severe", "tag": "strong" },
+    { "zh": "外用皮質類固醇 ± 外用 5% Minoxidil", "en": "Topical corticosteroids ± topical 5% minoxidil", "tag": "strong" },
+    { "zh": "系統性皮質類固醇", "en": "Systemic corticosteroids", "tag": "strong" },
+    { "zh": "輕至中度", "en": "Mild to moderate", "tag": "strong" },
+    { "zh": "強效 / 超強效外用皮質類固醇 或 病灶內類固醇注射", "en": "High-potency / super-potent topical corticosteroids or intralesional steroid injection", "tag": "strong" },
+    { "zh": "重度", "en": "Severe", "tag": "strong" },
+    { "zh": "口服 / 靜脈注射皮質類固醇", "en": "Oral or IV corticosteroids", "tag": "strong" },
+    { "zh": "口服 JAK 抑制劑", "en": "Oral JAK inhibitor", "tag": "strong" },
+    { "zh": "圓禿治療的轉捩點", "en": "A turning point in alopecia areata treatment", "tag": "strong" },
+    { "zh": "歐洲皮膚科醫學會 2024 共識（Rudnicka et al., JEADV）", "en": "European Academy of Dermatology and Venereology 2024 consensus (Rudnicka et al., JEADV)", "tag": "strong" },
+    { "zh": "第一線治療", "en": "first-line therapy", "tag": "strong" },
+    { "zh": "使用前必須篩檢", "en": "Pre-treatment screening required", "tag": "strong" },
+    { "zh": "禁忌", "en": "Contraindications", "tag": "strong" },
+    { "zh": "⚠ EMA 2023 / FDA 安全警示(JAK inhibitor class warning)", "en": "⚠ EMA 2023 / FDA safety alert (JAK inhibitor class warning)", "tag": "strong" },
+    { "zh": "應僅在無其他治療選項時", "en": "should be used only when no other treatment options are available", "tag": "strong" },
+    { "zh": "≥ 65 歲", "en": "Age ≥ 65", "tag": "strong" },
+    { "zh": "「等待觀察」(wait-and-see)不適用於重度圓禿", "en": "“Wait-and-see” is NOT appropriate for severe alopecia areata", "tag": "strong" },
+    { "zh": "治療目標", "en": "Treatment goal", "tag": "strong" },
+    { "zh": "調整時機", "en": "Timing of adjustments", "tag": "strong" },
+    { "zh": "長期維持", "en": "Long-term maintenance", "tag": "strong" },
+    { "zh": "復發後再治療", "en": "Re-treatment after relapse", "tag": "strong" },
+    { "zh": "合併治療", "en": "Combination therapy", "tag": "strong" },
+    { "zh": "兒童 (3-11 歲)", "en": "Children (3–11 yr)", "tag": "strong" },
+    { "zh": "輔助", "en": "Adjunct", "tag": "strong" },
+    { "zh": "生物素(biotin)無證據，不建議", "en": "Biotin has no evidence and is not recommended", "tag": "strong" },
+    { "zh": "焦慮、憂鬱症", "en": "Anxiety, depression", "tag": "strong" },
+    { "zh": "中風風險", "en": "Stroke risk", "tag": "strong" },
+    { "zh": "感音神經性聽力喪失", "en": "Sensorineural hearing loss", "tag": "strong" },
+    { "zh": "睡眠呼吸中止", "en": "Obstructive sleep apnea", "tag": "strong" },
+    { "zh": "其他自體免疫疾病", "en": "Other autoimmune diseases", "tag": "strong" },
+    { "zh": "癌症風險", "en": "Cancer risk", "tag": "strong" },
+    { "zh": "淋巴瘤、乳癌（特別是 50 歲以下女性）、腎癌、膀胱癌風險增加", "en": "Increased risk of lymphoma, breast cancer (especially women under 50), renal cancer, and bladder cancer", "tag": "strong" },
+    { "zh": "約 50% 在 1 年內自然恢復", "en": "Approximately 50% spontaneously regrow within 1 year", "tag": "strong" },
+    { "zh": "有給付", "en": "Covered by NHI", "tag": "strong" },
+    { "zh": "JAK 抑制劑(Baricitinib、Ritlecitinib)2026 年仍主要為自費", "en": "JAK inhibitors (baricitinib, ritlecitinib) remain primarily out-of-pocket as of 2026", "tag": "strong" },
+    { "zh": "絕對不會傳染", "en": "Absolutely NOT contagious", "tag": "strong" },
+    { "zh": "有家族傾向", "en": "There is a familial tendency", "tag": "strong" },
+    { "zh": "誘發因子之一，但不是唯一原因", "en": "one of several triggers, but not the only cause", "tag": "strong" },
+    { "zh": "染燙不會誘發或加重圓禿", "en": "Hair coloring or perming does not cause or worsen alopecia areata", "tag": "strong" },
+    { "zh": "維他命 D", "en": "Vitamin D", "tag": "strong" },
+    { "zh": "沒有實證", "en": "No supporting evidence", "tag": "strong" },
+    { "zh": "不要替代藥物治療", "en": "should NOT replace pharmacologic therapy", "tag": "strong" },
+    { "zh": "不建議植髮", "en": "Hair transplant is NOT recommended", "tag": "strong" },
+    { "zh": "「等心情好了它就會自己好」", "en": "“It will resolve once your mood improves”", "tag": "strong" },
+    { "zh": "輕度可考慮病灶內類固醇注射 + 外用，重度建議口服類固醇或 JAK 抑制劑", "en": "Mild disease: consider intralesional steroid injection + topicals; severe: oral corticosteroids or JAK inhibitors", "tag": "strong" },
+    { "zh": "JAK 抑制劑是過去 5 年內最大的治療突破", "en": "JAK inhibitors represent the biggest therapeutic breakthrough of the past 5 years", "tag": "strong" },
+    { "zh": "請至皮膚科專科醫師評估", "en": "Please see a board-certified dermatologist for evaluation", "tag": "strong" },
+    { "zh": "延伸閱讀：", "en": "Further reading:", "tag": "strong" },
+    { "zh": "陳翊嘉 醫師", "en": "Dr. Yi-Jia Chen", "tag": "strong" },
+    { "zh": "圓禿診斷及治療共識", "en": "Diagnosis and treatment consensus on alopecia areata", "tag": "em" },
+    { "zh": "圓禿完整衛教", "en": "Complete patient guide to alopecia areata", "tag": "span" },
+    { "zh": "依 TDA 2024 共識 · 更新 2026-05-04", "en": "Per TDA 2024 consensus · Updated 2026-05-04", "tag": "span" },
+    { "zh": "自體免疫禿髮、SALT 分級、JAK 抑制劑時代", "en": "Autoimmune hair loss, SALT grading, the JAK inhibitor era", "tag": "span" },
+    { "zh": "皮膚科 住院醫師", "en": "Dermatology Resident", "tag": "span" },
+    { "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：", "en": "Content corrections / academic citations / media inquiries:", "tag": "span" },
+    { "zh": "圓禿", "en": "Alopecia areata", "tag": "th" },
+    { "zh": "雄性禿", "en": "Androgenetic alopecia", "tag": "th" },
+    { "zh": "休止期落髮", "en": "Telogen effluvium", "tag": "th" },
+    { "zh": "嚴重度", "en": "Severity", "tag": "th" },
+    { "zh": "建議治療", "en": "Recommended treatment", "tag": "th" },
+    { "zh": "第一線", "en": "First-line", "tag": "th" },
+    { "zh": "第二線 / 慢性", "en": "Second-line / chronic", "tag": "th" },
+    { "zh": "藥物", "en": "Drug", "tag": "th" },
+    { "zh": "劑量", "en": "Dosing", "tag": "th" },
+    { "zh": "建議使用時間", "en": "Recommended duration", "tag": "th" },
+    { "zh": "Baricitinib（Olumiant 愛滅炎）", "en": "Baricitinib (Olumiant)", "tag": "th" },
+    { "zh": "Ritlecitinib（Litfulo 麗扶柔）", "en": "Ritlecitinib (Litfulo)", "tag": "th" },
+    { "zh": "機轉", "en": "Mechanism", "tag": "td" },
+    { "zh": "雄激素 / 基因", "en": "Androgens / genetics", "tag": "td" },
+    { "zh": "壓力 / 產後 / 大病後", "en": "Stress / postpartum / post-illness", "tag": "td" },
+    { "zh": "外觀", "en": "Appearance", "tag": "td" },
+    { "zh": "髮線後退、頭頂稀疏", "en": "Receding hairline, vertex thinning", "tag": "td" },
+    { "zh": "全頭均勻變稀", "en": "Diffuse thinning across the entire scalp", "tag": "td" },
+    { "zh": "速度", "en": "Onset speed", "tag": "td" },
+    { "zh": "突然出現", "en": "Sudden onset", "tag": "td" },
+    { "zh": "緩慢進展（數年）", "en": "Slow progression over years", "tag": "td" },
+    { "zh": "誘發後 2-3 個月開始", "en": "Begins 2–3 months after the trigger", "tag": "td" },
+    { "zh": "頭髮拉測試", "en": "Hair-pull test", "tag": "td" },
+    { "zh": "陰性", "en": "Negative", "tag": "td" },
+    { "zh": "陽性", "en": "Positive", "tag": "td" },
+    { "zh": "恢復", "en": "Recovery", "tag": "td" },
+    { "zh": "輕度可自癒，重度需治療", "en": "Mild cases may self-resolve; severe disease requires treatment", "tag": "td" },
+    { "zh": "不會自癒，需長期治療", "en": "Does not self-resolve; long-term treatment required", "tag": "td" },
+    { "zh": "誘發因子去除後 6-12 月", "en": "6–12 months after the trigger is removed", "tag": "td" },
+    { "zh": "所有嚴重度", "en": "All severities", "tag": "td" },
+    { "zh": "Prednisolone（成人）", "en": "Prednisolone (adults)", "tag": "td" },
+    { "zh": "2-6 個月", "en": "2–6 months", "tag": "td" },
+    { "zh": "Prednisolone（兒童青少年）", "en": "Prednisolone (children/adolescents)", "tag": "td" },
+    { "zh": "等效劑量，逐步調升", "en": "Equivalent dose, titrated upward", "tag": "td" },
+    { "zh": "1-3 個月", "en": "1–3 months", "tag": "td" },
+    { "zh": "Methotrexate（成人）", "en": "Methotrexate (adults)", "tag": "td" },
+    { "zh": "≥ 6 個月評估", "en": "Reassess at ≥ 6 months", "tag": "td" },
+    { "zh": "Methotrexate（兒童青少年）", "en": "Methotrexate (children/adolescents)", "tag": "td" },
+    { "zh": "0.3-0.6 mg/kg/週（歐洲共識）", "en": "0.3–0.6 mg/kg/week (European consensus)", "tag": "td" },
+    { "zh": "≥ 6 個月", "en": "≥ 6 months", "tag": "td" },
+    { "zh": "≤ 12 個月，需監測腎功能血壓", "en": "≤ 12 months; monitor renal function and blood pressure", "tag": "td" },
+    { "zh": "4 mg/day 口服(≥75 歲或感染風險高 2 mg/day)", "en": "4 mg/day PO (2 mg/day if ≥ 75 yr or high infection risk)", "tag": "td" },
+    { "zh": "12 週起評估，長期維持(常需 3-7 年)", "en": "Evaluate from week 12; long-term maintenance often required (3–7 years)", "tag": "td" },
+    { "zh": "200 mg/day 載入 4 週 → 50 mg/day 維持", "en": "200 mg/day loading × 4 weeks → 50 mg/day maintenance", "tag": "td" },
+    { "zh": "12 週起評估;36 週仍無反應應停藥", "en": "Evaluate from week 12; discontinue if no response by week 36", "tag": "td" },
+    { "zh": "低劑量口服 Minoxidil(輔助)", "en": "Low-dose oral minoxidil (adjunct)", "tag": "td" },
+    { "zh": "女 0.625-1.25 mg/day,男 1.25-2.5 mg/day", "en": "Women 0.625–1.25 mg/day; men 1.25–2.5 mg/day", "tag": "td" },
+    { "zh": "不單獨使用，作為毛髮再生輔助", "en": "Not used alone — adjunct to hair regrowth therapy", "tag": "td" },
+    { "zh": "適用", "en": "Indication", "tag": "td" },
+    { "zh": "≥18 歲成人重度圓禿（SALT &gt; 50%）", "en": "Adults ≥ 18 yr with severe AA (SALT > 50%)", "tag": "td" },
+    { "zh": "≥12 歲重度圓禿", "en": "Severe AA in patients ≥ 12 yr", "tag": "td" },
+    { "zh": "JAK1 / JAK2 抑制", "en": "JAK1 / JAK2 inhibition", "tag": "td" },
+    { "zh": "JAK3 / TEC 雙抑制", "en": "Dual JAK3 / TEC inhibition", "tag": "td" },
+    { "zh": "4 mg/day(≥75 歲、感染史 2 mg/day)", "en": "4 mg/day (2 mg/day if ≥ 75 yr or history of infection)", "tag": "td" },
+    { "zh": "關鍵試驗 第三期療效", "en": "Key phase 3 trial efficacy", "tag": "td" },
+    { "zh": "需追蹤", "en": "Monitoring required", "tag": "td" },
+    { "zh": "結核(IGRA + 胸部 X 光)、B / C 肝、血脂、CBC、淋巴球、ANC、Hb、肝指數、CPK", "en": "TB (IGRA + chest X-ray), HBV/HCV, lipid panel, CBC, lymphocytes, ANC, Hb, LFT, CPK", "tag": "td" },
+    { "zh": "結核、肝炎、血小板計數、淋巴球計數", "en": "TB, hepatitis, platelet count, lymphocyte count", "tag": "td" },
+    { "zh": "副作用", "en": "Adverse effects", "tag": "td" },
+    { "zh": "上呼吸道感染、頭痛、痤瘡、CK 上升、HSV 復發", "en": "Upper respiratory infections, headache, acne, elevated CK, HSV reactivation", "tag": "td" },
+    { "zh": "頭痛、毛囊炎、痤瘡、腹瀉、URI", "en": "Headache, folliculitis, acne, diarrhea, URI", "tag": "td" },
+    { "zh": "價格（自費）", "en": "Out-of-pocket cost", "tag": "td" },
+    { "zh": "每月約 NT$ 30,000-50,000", "en": "Approximately NT$ 30,000–50,000 per month", "tag": "td" }
   ]
 }
