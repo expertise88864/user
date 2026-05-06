@@ -1,1010 +1,206 @@
 {
   "slug": "epidermoid-cyst",
   "strings": [
-    {
-      "zh": "什麼是粉瘤？粉瘤跟痘痘怎麼分？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "為什麼會長粉瘤？是「皮膚不乾淨」嗎？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "粉瘤的不同型態",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "迷思 1：擠出來就好",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "迷思 2：發炎了直接切開引流就根治",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "處置原則(穩定期 vs 發炎期)",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "手術切除完整流程",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "健保給付條件",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "常見問題",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "結語",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "穩定期(不痛不癢的小腫塊)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "發炎期(紅、腫、熱、痛)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "病灶內類固醇注射(輔助)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "替代術式",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "粉瘤會自己消嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "粉瘤會變癌症嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "粉瘤切除後會留疤嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "粉瘤反覆發炎怎麼辦？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "頭皮上多顆粉瘤怎麼處理？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "陰囊長粉瘤要怎麼辦？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "粉瘤跟脂肪瘤(lipoma)怎麼分？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "本篇大綱",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "自己擠的後果:",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "正確順序:",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "會。所有手術都留疤，但程度可控:",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "陰囊是粉瘤好發部位之一，常多發。處置:",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "如果你身上有反覆發炎或變大的腫塊，別再嘗試擠它了 — 一次完整手術切除，從此根治。健保有給付。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "細菌進入 → 真正的細菌感染 / 化膿",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "反覆刺激 → 囊袋變大 → 之後手術切除困難 + 切口更大",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "消炎後等 2-3 個月再做完整切除",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "反覆注射可能造成皮膚萎縮",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "診斷碼:L72.0(表皮囊腫)、L72.1(毛根鞘囊腫)、L72.2(皮脂囊腫)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "手術代碼：依大小與部位有不同代碼",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "多發性粉瘤、特殊部位(陰囊、會陰、肛周)亦給付",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "單顆切除手術，可一次切除 1-3 顆",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "毛根鞘囊腫包膜較完整，手術相對容易",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "術後傷口處理同其他部位",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "不影響功能、不痛不癢的小粉瘤可觀察",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "影響外觀、性功能、反覆發炎建議切除",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "由皮膚科或泌尿科 / 一般外科評估",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "陰囊皮膚張力小、癒合快，但要避免感染",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "皮下圓形可推動的腫塊",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "本質完全不同",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "提醒：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陰囊、腹股溝、臉部中線",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "粉瘤(epidermoid cyst)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「角質袋」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "核心特徵：有完整囊袋(capsule)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "有完整囊袋的圓形構造",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "跟痘痘的關鍵差異",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "囊袋",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "可推動",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "中央黑色或白色小點",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "有臭豆腐 / 起司味",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不切除囊袋必復發",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "跟「乾淨度」無關",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "毛囊阻塞 + 角質陷入",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皮脂腺多、有毛囊",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外傷 / 穿耳洞 / 手術疤痕",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "植入式囊腫(implantation cyst)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "遺傳症候群",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "發炎後",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不會讓粉瘤好",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "表皮囊腫(Epidermoid cyst)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "顆粒層",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "毛根鞘囊腫(Trichilemmal / Pilar cyst)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "暫時消腫",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "囊袋還在",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "越長越大、越多疤",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "強烈發炎反應",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不規則疤痕",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "急性期切開引流(I&amp;D)只解決發炎，不切除囊袋",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "消炎後 2-3 個月再做完整切除",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "急性發炎期",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "消炎後 2-3 個月",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "橢圓形切除術",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "觀察即可",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "手術完整切除",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "送病理檢查",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "口服抗生素",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "局部冰敷",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "切開引流",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不要在此時完整切除",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "口服 NSAID",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "輕度發炎",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "禁用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不能根治",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "橢圓形切除術(elliptical excision)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "術前評估",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "局部麻醉",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "橢圓形切口",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "分離囊袋",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "關鍵是不弄破囊袋",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "完整取出",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "縫合",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "送病理",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "手術時間",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "術後",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "~70%(只是減壓，不算治療)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "有給付",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "急性發炎引流",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不給付",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "臉部建議皮膚科或整形外科",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "幾乎不會",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "少數變成鱗狀細胞癌",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "快速變大、潰瘍不癒合、出血、變硬",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "順著皮膚張力線切",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "分層縫合 + 細小縫線",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "矽膠貼片或矽膠凝膠",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "嚴格防曬",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "類固醇注射輔助",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "反覆發炎是手術切除的明確適應症",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "毛根鞘囊腫(pilar cyst)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "跟痘痘不同",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不要自己擠",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "急性發炎時先消炎，不要急著完整切除",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "穩定期才做完整橢圓形切除",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "延伸閱讀:",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陳翊嘉 醫師",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "粉瘤完整衛教",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "更新 2026-05-05",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "為什麼不能自己擠？何時該手術切除？",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "皮膚科 住院醫師",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "粉瘤(表皮囊腫)",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "痘痘(尋常痤瘡)",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "類型",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "特徵",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "常見部位",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "大小 / 位置",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "建議處置",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "術式",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "適用",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "復發率",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "粉瘤",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "脂肪瘤",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "本質",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "毛囊發炎，沒有囊袋",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "大小",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "0.5-5 cm,可長期穩定",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "0.2-1 cm,通常數天到數週消退",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "觸感",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "固定、硬",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "頂端",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "白頭/黑頭/紅腫",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "發炎時",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "突然紅腫熱痛，可能化膿，但內部仍有囊袋",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "紅腫，通常 1-2 週消退",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "擠出物",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "白色或黃色膿，氣味較輕",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "復發",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "同部位偶爾復發",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "治療",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "完整手術切除囊袋",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "外用 / 口服藥物",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "臉、頸、軀幹、陰囊",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "囊袋內襯像毛囊外鞘，常多發、有家族史",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "頭皮 90%",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "皮脂囊腫(Steatocystoma)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "多發小囊腫，內含液態皮脂，常見青春期後",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "胸前、腋下、陰囊",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "皮樣囊腫(Dermoid cyst)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "先天性，囊袋內可能有毛髮、牙齒",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "眉外側、臉部中線",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "植入式囊腫(Implantation cyst)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "外傷或手術造成",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "受傷部位",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "&lt; 0.5 cm,不影響外觀",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "0.5-2 cm,影響外觀或反覆發炎",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "&gt; 2 cm 或快速變大",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "臉部、影響功能",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "手術切除，選擇皮膚科 / 整形外科確保美觀",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "陰囊、腹股溝、肛周",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "建議由皮膚科或外科評估",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "所有粉瘤",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "&lt; 5%(囊袋完整取出)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Punch 打洞術",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "小於 0.5 cm 早期粉瘤",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "較高(囊袋可能殘留)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Minimal excision(微創切除)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "0.5-1 cm,要求疤痕小",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "中等",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "單純切開引流(I&D)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "急性化膿",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "位置",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "皮下淺層",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "皮下較深層(脂肪層)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "有彈性、邊界清楚",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "較軟、可能邊界較模糊",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "表面",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "常有黑色 / 白色小點(毛孔開口)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "沒有開口",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "內容物",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "角質與皮脂(臭味)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "純脂肪組織",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "發炎",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "會反覆發炎",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "不會發炎",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "必要時診斷",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "超音波 / 手術病理",
-      "en": "",
-      "tag": "td"
-    }
+    { "zh": "什麼是粉瘤？粉瘤跟痘痘怎麼分？", "en": "What is an epidermoid cyst, and how do you tell it apart from a pimple?", "tag": "h2" },
+    { "zh": "為什麼會長粉瘤？是「皮膚不乾淨」嗎？", "en": "Why do epidermoid cysts form? Is it about poor hygiene?", "tag": "h2" },
+    { "zh": "粉瘤的不同型態", "en": "Different subtypes of epidermal cysts", "tag": "h2" },
+    { "zh": "迷思 1：擠出來就好", "en": "Myth 1: Just squeeze it out", "tag": "h2" },
+    { "zh": "迷思 2：發炎了直接切開引流就根治", "en": "Myth 2: Incision and drainage during a flare cures it", "tag": "h2" },
+    { "zh": "處置原則(穩定期 vs 發炎期)", "en": "Management principles (quiescent vs inflamed)", "tag": "h2" },
+    { "zh": "手術切除完整流程", "en": "Step-by-step surgical excision", "tag": "h2" },
+    { "zh": "健保給付條件", "en": "Taiwan NHI coverage criteria", "tag": "h2" },
+    { "zh": "常見問題", "en": "Frequently asked questions", "tag": "h2" },
+    { "zh": "結語", "en": "Bottom line", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "穩定期(不痛不癢的小腫塊)", "en": "Quiescent stage (a painless, asymptomatic lump)", "tag": "h3" },
+    { "zh": "發炎期(紅、腫、熱、痛)", "en": "Inflamed stage (red, swollen, warm, painful)", "tag": "h3" },
+    { "zh": "病灶內類固醇注射(輔助)", "en": "Intralesional steroid injection (adjunctive)", "tag": "h3" },
+    { "zh": "替代術式", "en": "Alternative surgical techniques", "tag": "h3" },
+    { "zh": "粉瘤會自己消嗎？", "en": "Will an epidermoid cyst go away on its own?", "tag": "h3" },
+    { "zh": "粉瘤會變癌症嗎？", "en": "Can an epidermoid cyst become cancer?", "tag": "h3" },
+    { "zh": "粉瘤切除後會留疤嗎？", "en": "Will the surgery leave a scar?", "tag": "h3" },
+    { "zh": "粉瘤反覆發炎怎麼辦？", "en": "What if the cyst keeps getting inflamed?", "tag": "h3" },
+    { "zh": "頭皮上多顆粉瘤怎麼處理？", "en": "How are multiple scalp cysts managed?", "tag": "h3" },
+    { "zh": "陰囊長粉瘤要怎麼辦？", "en": "What to do about scrotal cysts?", "tag": "h3" },
+    { "zh": "粉瘤跟脂肪瘤(lipoma)怎麼分？", "en": "How to distinguish an epidermoid cyst from a lipoma", "tag": "h3" },
+    { "zh": "本篇大綱", "en": "Article outline", "tag": "h4" },
+    { "zh": "自己擠的後果:", "en": "Consequences of squeezing it yourself:", "tag": "p" },
+    { "zh": "正確順序:", "en": "Correct sequence:", "tag": "p" },
+    { "zh": "會。所有手術都留疤，但程度可控:", "en": "Yes. All surgery leaves a scar, but the extent is controllable:", "tag": "p" },
+    { "zh": "陰囊是粉瘤好發部位之一，常多發。處置:", "en": "The scrotum is a common site, often multiple. Management:", "tag": "p" },
+    { "zh": "如果你身上有反覆發炎或變大的腫塊，別再嘗試擠它了 — 一次完整手術切除，從此根治。健保有給付。", "en": "If you have a recurrently inflamed or enlarging lump, stop trying to squeeze it — one complete surgical excision is curative. The procedure is covered by Taiwan NHI.", "tag": "p" },
+    { "zh": "細菌進入 → 真正的細菌感染 / 化膿", "en": "Bacteria enter → true bacterial infection / suppuration", "tag": "li" },
+    { "zh": "反覆刺激 → 囊袋變大 → 之後手術切除困難 + 切口更大", "en": "Repeated trauma → cyst wall enlarges → harder to excise later, larger incision needed", "tag": "li" },
+    { "zh": "消炎後等 2-3 個月再做完整切除", "en": "Wait 2–3 months after inflammation subsides, then perform complete excision", "tag": "li" },
+    { "zh": "反覆注射可能造成皮膚萎縮", "en": "Repeated injections can cause skin atrophy", "tag": "li" },
+    { "zh": "診斷碼:L72.0(表皮囊腫)、L72.1(毛根鞘囊腫)、L72.2(皮脂囊腫)", "en": "ICD codes: L72.0 (epidermoid), L72.1 (trichilemmal), L72.2 (steatocystoma)", "tag": "li" },
+    { "zh": "手術代碼：依大小與部位有不同代碼", "en": "Procedure codes: vary by size and location", "tag": "li" },
+    { "zh": "多發性粉瘤、特殊部位(陰囊、會陰、肛周)亦給付", "en": "Multiple cysts and special sites (scrotum, perineum, perianal) are also covered", "tag": "li" },
+    { "zh": "單顆切除手術，可一次切除 1-3 顆", "en": "Per-lesion excision; 1–3 cysts can be removed in one session", "tag": "li" },
+    { "zh": "毛根鞘囊腫包膜較完整，手術相對容易", "en": "Trichilemmal cysts have a more intact capsule, making excision relatively easier", "tag": "li" },
+    { "zh": "術後傷口處理同其他部位", "en": "Post-op wound care is the same as other sites", "tag": "li" },
+    { "zh": "不影響功能、不痛不癢的小粉瘤可觀察", "en": "Small asymptomatic cysts that don't impair function can be observed", "tag": "li" },
+    { "zh": "影響外觀、性功能、反覆發炎建議切除", "en": "Excision recommended if cosmetically concerning, affecting sexual function, or recurrently inflamed", "tag": "li" },
+    { "zh": "由皮膚科或泌尿科 / 一般外科評估", "en": "Evaluated by dermatology, urology, or general surgery", "tag": "li" },
+    { "zh": "陰囊皮膚張力小、癒合快，但要避免感染", "en": "Scrotal skin has low tension and heals quickly, but infection must be avoided", "tag": "li" },
+    { "zh": "皮下圓形可推動的腫塊", "en": "round, mobile subcutaneous lump", "tag": "strong" },
+    { "zh": "本質完全不同", "en": "fundamentally different conditions", "tag": "strong" },
+    { "zh": "提醒：", "en": "Note:", "tag": "strong" },
+    { "zh": "陰囊、腹股溝、臉部中線", "en": "scrotum, groin, and facial midline", "tag": "strong" },
+    { "zh": "粉瘤(epidermoid cyst)", "en": "epidermoid cyst", "tag": "strong" },
+    { "zh": "「角質袋」", "en": "“keratin sac”", "tag": "strong" },
+    { "zh": "核心特徵：有完整囊袋(capsule)", "en": "core feature: an intact capsule", "tag": "strong" },
+    { "zh": "有完整囊袋的圓形構造", "en": "a round structure enclosed by an intact capsule", "tag": "strong" },
+    { "zh": "跟痘痘的關鍵差異", "en": "Key differences from acne", "tag": "strong" },
+    { "zh": "囊袋", "en": "capsule", "tag": "strong" },
+    { "zh": "可推動", "en": "mobile on palpation", "tag": "strong" },
+    { "zh": "中央黑色或白色小點", "en": "a central black or white punctum", "tag": "strong" },
+    { "zh": "有臭豆腐 / 起司味", "en": "smells like stinky tofu or cheese", "tag": "strong" },
+    { "zh": "不切除囊袋必復發", "en": "if the capsule isn't removed, it will recur", "tag": "strong" },
+    { "zh": "跟「乾淨度」無關", "en": "unrelated to skin cleanliness", "tag": "strong" },
+    { "zh": "毛囊阻塞 + 角質陷入", "en": "follicular plugging plus keratin trapping", "tag": "strong" },
+    { "zh": "皮脂腺多、有毛囊", "en": "areas with abundant sebaceous glands and hair follicles", "tag": "strong" },
+    { "zh": "外傷 / 穿耳洞 / 手術疤痕", "en": "trauma, ear piercing, or surgical scars", "tag": "strong" },
+    { "zh": "植入式囊腫(implantation cyst)", "en": "implantation cyst", "tag": "strong" },
+    { "zh": "遺傳症候群", "en": "genetic syndromes", "tag": "strong" },
+    { "zh": "發炎後", "en": "after inflammation", "tag": "strong" },
+    { "zh": "不會讓粉瘤好", "en": "does not cure the cyst", "tag": "strong" },
+    { "zh": "表皮囊腫(Epidermoid cyst)", "en": "Epidermoid cyst", "tag": "strong" },
+    { "zh": "顆粒層", "en": "granular layer", "tag": "strong" },
+    { "zh": "毛根鞘囊腫(Trichilemmal / Pilar cyst)", "en": "Trichilemmal / pilar cyst", "tag": "strong" },
+    { "zh": "暫時消腫", "en": "temporarily reduces swelling", "tag": "strong" },
+    { "zh": "囊袋還在", "en": "the capsule remains", "tag": "strong" },
+    { "zh": "越長越大、越多疤", "en": "grows larger over time and leaves more scarring", "tag": "strong" },
+    { "zh": "強烈發炎反應", "en": "severe inflammatory reaction", "tag": "strong" },
+    { "zh": "不規則疤痕", "en": "irregular scar", "tag": "strong" },
+    { "zh": "急性期切開引流(I&amp;D)只解決發炎，不切除囊袋", "en": "Acute-phase incision and drainage (I&amp;D) only addresses the inflammation; the capsule is not removed", "tag": "strong" },
+    { "zh": "消炎後 2-3 個月再做完整切除", "en": "Complete excision should be performed 2–3 months after inflammation resolves", "tag": "strong" },
+    { "zh": "急性發炎期", "en": "Acute inflammatory phase", "tag": "strong" },
+    { "zh": "消炎後 2-3 個月", "en": "2–3 months after inflammation resolves", "tag": "strong" },
+    { "zh": "橢圓形切除術", "en": "Elliptical excision", "tag": "strong" },
+    { "zh": "觀察即可", "en": "Observation is sufficient", "tag": "strong" },
+    { "zh": "手術完整切除", "en": "Complete surgical excision", "tag": "strong" },
+    { "zh": "送病理檢查", "en": "Send specimen for histopathology", "tag": "strong" },
+    { "zh": "口服抗生素", "en": "Oral antibiotics", "tag": "strong" },
+    { "zh": "局部冰敷", "en": "Local cold compress", "tag": "strong" },
+    { "zh": "切開引流", "en": "Incision and drainage", "tag": "strong" },
+    { "zh": "不要在此時完整切除", "en": "Do NOT perform complete excision at this time", "tag": "strong" },
+    { "zh": "口服 NSAID", "en": "Oral NSAIDs", "tag": "strong" },
+    { "zh": "輕度發炎", "en": "mild inflammation", "tag": "strong" },
+    { "zh": "禁用", "en": "Contraindicated", "tag": "strong" },
+    { "zh": "不能根治", "en": "not curative", "tag": "strong" },
+    { "zh": "橢圓形切除術(elliptical excision)", "en": "Elliptical excision", "tag": "strong" },
+    { "zh": "術前評估", "en": "Pre-op assessment", "tag": "strong" },
+    { "zh": "局部麻醉", "en": "Local anesthesia", "tag": "strong" },
+    { "zh": "橢圓形切口", "en": "Elliptical incision", "tag": "strong" },
+    { "zh": "分離囊袋", "en": "Dissection of the capsule", "tag": "strong" },
+    { "zh": "關鍵是不弄破囊袋", "en": "the key is not to rupture the capsule", "tag": "strong" },
+    { "zh": "完整取出", "en": "En-bloc removal", "tag": "strong" },
+    { "zh": "縫合", "en": "Suture closure", "tag": "strong" },
+    { "zh": "送病理", "en": "Histopathology", "tag": "strong" },
+    { "zh": "手術時間", "en": "Operative time", "tag": "strong" },
+    { "zh": "術後", "en": "Post-op", "tag": "strong" },
+    { "zh": "~70%(只是減壓，不算治療)", "en": "~70% (decompression only, not curative)", "tag": "strong" },
+    { "zh": "有給付", "en": "Covered", "tag": "strong" },
+    { "zh": "急性發炎引流", "en": "Acute-phase drainage", "tag": "strong" },
+    { "zh": "不給付", "en": "Not covered", "tag": "strong" },
+    { "zh": "臉部建議皮膚科或整形外科", "en": "Facial cysts: dermatology or plastic surgery preferred", "tag": "strong" },
+    { "zh": "幾乎不會", "en": "Extremely unlikely", "tag": "strong" },
+    { "zh": "少數變成鱗狀細胞癌", "en": "Rarely transforms into squamous cell carcinoma", "tag": "strong" },
+    { "zh": "快速變大、潰瘍不癒合、出血、變硬", "en": "rapid enlargement, non-healing ulceration, bleeding, induration", "tag": "strong" },
+    { "zh": "順著皮膚張力線切", "en": "Incision along skin tension lines", "tag": "strong" },
+    { "zh": "分層縫合 + 細小縫線", "en": "Layered closure with fine sutures", "tag": "strong" },
+    { "zh": "矽膠貼片或矽膠凝膠", "en": "Silicone sheets or gel", "tag": "strong" },
+    { "zh": "嚴格防曬", "en": "Strict sun protection", "tag": "strong" },
+    { "zh": "類固醇注射輔助", "en": "Adjunctive steroid injection", "tag": "strong" },
+    { "zh": "反覆發炎是手術切除的明確適應症", "en": "Recurrent inflammation is a definite indication for surgical excision", "tag": "strong" },
+    { "zh": "毛根鞘囊腫(pilar cyst)", "en": "Trichilemmal (pilar) cyst", "tag": "strong" },
+    { "zh": "跟痘痘不同", "en": "Different from acne", "tag": "strong" },
+    { "zh": "不要自己擠", "en": "Don't squeeze it yourself", "tag": "strong" },
+    { "zh": "急性發炎時先消炎，不要急著完整切除", "en": "Treat inflammation first during a flare; don't rush to complete excision", "tag": "strong" },
+    { "zh": "穩定期才做完整橢圓形切除", "en": "Complete elliptical excision should be done in the quiescent phase", "tag": "strong" },
+    { "zh": "延伸閱讀:", "en": "Further reading:", "tag": "strong" },
+    { "zh": "陳翊嘉 醫師", "en": "Dr. Yi-Jia Chen", "tag": "strong" },
+    { "zh": "粉瘤完整衛教", "en": "Complete patient guide to epidermoid cysts", "tag": "span" },
+    { "zh": "更新 2026-05-05", "en": "Updated 2026-05-05", "tag": "span" },
+    { "zh": "為什麼不能自己擠？何時該手術切除？", "en": "Why you shouldn't squeeze it, and when surgery is needed", "tag": "span" },
+    { "zh": "皮膚科 住院醫師", "en": "Dermatology Resident", "tag": "span" },
+    { "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：", "en": "Content corrections / academic citations / media inquiries:", "tag": "span" },
+    { "zh": "粉瘤(表皮囊腫)", "en": "Epidermoid cyst", "tag": "th" },
+    { "zh": "痘痘(尋常痤瘡)", "en": "Acne (acne vulgaris)", "tag": "th" },
+    { "zh": "類型", "en": "Type", "tag": "th" },
+    { "zh": "特徵", "en": "Features", "tag": "th" },
+    { "zh": "常見部位", "en": "Common sites", "tag": "th" },
+    { "zh": "大小 / 位置", "en": "Size / location", "tag": "th" },
+    { "zh": "建議處置", "en": "Recommended management", "tag": "th" },
+    { "zh": "術式", "en": "Procedure", "tag": "th" },
+    { "zh": "適用", "en": "Indications", "tag": "th" },
+    { "zh": "復發率", "en": "Recurrence rate", "tag": "th" },
+    { "zh": "粉瘤", "en": "Epidermoid cyst", "tag": "th" },
+    { "zh": "脂肪瘤", "en": "Lipoma", "tag": "th" },
+    { "zh": "本質", "en": "Nature", "tag": "td" },
+    { "zh": "毛囊發炎，沒有囊袋", "en": "Inflamed follicle, no capsule", "tag": "td" },
+    { "zh": "大小", "en": "Size", "tag": "td" },
+    { "zh": "0.5-5 cm,可長期穩定", "en": "0.5–5 cm, can remain stable for years", "tag": "td" },
+    { "zh": "0.2-1 cm,通常數天到數週消退", "en": "0.2–1 cm, usually resolves in days to weeks", "tag": "td" },
+    { "zh": "觸感", "en": "Texture", "tag": "td" },
+    { "zh": "固定、硬", "en": "Firm and fixed", "tag": "td" },
+    { "zh": "頂端", "en": "Surface", "tag": "td" },
+    { "zh": "白頭/黑頭/紅腫", "en": "Whitehead / blackhead / red papule", "tag": "td" },
+    { "zh": "發炎時", "en": "When inflamed", "tag": "td" },
+    { "zh": "突然紅腫熱痛，可能化膿，但內部仍有囊袋", "en": "Sudden warmth, redness, swelling, pain; may suppurate, but the capsule remains inside", "tag": "td" },
+    { "zh": "紅腫，通常 1-2 週消退", "en": "Erythema and swelling, usually resolves in 1–2 weeks", "tag": "td" },
+    { "zh": "擠出物", "en": "Expressed contents", "tag": "td" },
+    { "zh": "白色或黃色膿，氣味較輕", "en": "White or yellow pus, mild odor", "tag": "td" },
+    { "zh": "復發", "en": "Recurrence", "tag": "td" },
+    { "zh": "同部位偶爾復發", "en": "Occasional recurrence at same site", "tag": "td" },
+    { "zh": "治療", "en": "Treatment", "tag": "td" },
+    { "zh": "完整手術切除囊袋", "en": "Complete surgical excision of the capsule", "tag": "td" },
+    { "zh": "外用 / 口服藥物", "en": "Topical or oral medications", "tag": "td" },
+    { "zh": "臉、頸、軀幹、陰囊", "en": "Face, neck, trunk, scrotum", "tag": "td" },
+    { "zh": "囊袋內襯像毛囊外鞘，常多發、有家族史", "en": "Lining resembles the outer root sheath; often multiple, often familial", "tag": "td" },
+    { "zh": "頭皮 90%", "en": "Scalp (~90%)", "tag": "td" },
+    { "zh": "皮脂囊腫(Steatocystoma)", "en": "Steatocystoma", "tag": "td" },
+    { "zh": "多發小囊腫，內含液態皮脂，常見青春期後", "en": "Multiple small cysts containing liquid sebum; typically post-puberty", "tag": "td" },
+    { "zh": "胸前、腋下、陰囊", "en": "Chest, axilla, scrotum", "tag": "td" },
+    { "zh": "皮樣囊腫(Dermoid cyst)", "en": "Dermoid cyst", "tag": "td" },
+    { "zh": "先天性，囊袋內可能有毛髮、牙齒", "en": "Congenital; may contain hair or teeth", "tag": "td" },
+    { "zh": "眉外側、臉部中線", "en": "Lateral brow, facial midline", "tag": "td" },
+    { "zh": "植入式囊腫(Implantation cyst)", "en": "Implantation cyst", "tag": "td" },
+    { "zh": "外傷或手術造成", "en": "Caused by trauma or surgery", "tag": "td" },
+    { "zh": "受傷部位", "en": "Site of injury", "tag": "td" },
+    { "zh": "&lt; 0.5 cm,不影響外觀", "en": "&lt; 0.5 cm, cosmetically insignificant", "tag": "td" },
+    { "zh": "0.5-2 cm,影響外觀或反覆發炎", "en": "0.5–2 cm, cosmetic concern or recurrent inflammation", "tag": "td" },
+    { "zh": "&gt; 2 cm 或快速變大", "en": "&gt; 2 cm or rapidly enlarging", "tag": "td" },
+    { "zh": "臉部、影響功能", "en": "Facial or function-impairing", "tag": "td" },
+    { "zh": "手術切除，選擇皮膚科 / 整形外科確保美觀", "en": "Surgical excision; dermatology or plastic surgery preferred for cosmesis", "tag": "td" },
+    { "zh": "陰囊、腹股溝、肛周", "en": "Scrotum, groin, perianal", "tag": "td" },
+    { "zh": "建議由皮膚科或外科評估", "en": "Recommended evaluation by dermatology or surgery", "tag": "td" },
+    { "zh": "所有粉瘤", "en": "All epidermoid cysts", "tag": "td" },
+    { "zh": "&lt; 5%(囊袋完整取出)", "en": "&lt; 5% (with complete capsule removal)", "tag": "td" },
+    { "zh": "Punch 打洞術", "en": "Punch excision", "tag": "td" },
+    { "zh": "小於 0.5 cm 早期粉瘤", "en": "Early cysts &lt; 0.5 cm", "tag": "td" },
+    { "zh": "較高(囊袋可能殘留)", "en": "Higher (capsule may remain)", "tag": "td" },
+    { "zh": "Minimal excision(微創切除)", "en": "Minimal excision", "tag": "td" },
+    { "zh": "0.5-1 cm,要求疤痕小", "en": "0.5–1 cm, when minimal scar is desired", "tag": "td" },
+    { "zh": "中等", "en": "Moderate", "tag": "td" },
+    { "zh": "單純切開引流(I&D)", "en": "Simple incision and drainage (I&D)", "tag": "td" },
+    { "zh": "急性化膿", "en": "Acute suppuration", "tag": "td" },
+    { "zh": "位置", "en": "Location", "tag": "td" },
+    { "zh": "皮下淺層", "en": "Superficial subcutaneous", "tag": "td" },
+    { "zh": "皮下較深層(脂肪層)", "en": "Deeper subcutaneous (fat layer)", "tag": "td" },
+    { "zh": "有彈性、邊界清楚", "en": "Elastic, well-demarcated", "tag": "td" },
+    { "zh": "較軟、可能邊界較模糊", "en": "Softer, sometimes ill-defined borders", "tag": "td" },
+    { "zh": "表面", "en": "Surface", "tag": "td" },
+    { "zh": "常有黑色 / 白色小點(毛孔開口)", "en": "Often a black or white punctum (follicular opening)", "tag": "td" },
+    { "zh": "沒有開口", "en": "No punctum", "tag": "td" },
+    { "zh": "內容物", "en": "Contents", "tag": "td" },
+    { "zh": "角質與皮脂(臭味)", "en": "Keratin and sebum (foul odor)", "tag": "td" },
+    { "zh": "純脂肪組織", "en": "Pure adipose tissue", "tag": "td" },
+    { "zh": "發炎", "en": "Inflammation", "tag": "td" },
+    { "zh": "會反覆發炎", "en": "Recurrent inflammation common", "tag": "td" },
+    { "zh": "不會發炎", "en": "Does not become inflamed", "tag": "td" },
+    { "zh": "必要時診斷", "en": "Workup if needed", "tag": "td" },
+    { "zh": "超音波 / 手術病理", "en": "Ultrasound / surgical pathology", "tag": "td" }
   ]
 }

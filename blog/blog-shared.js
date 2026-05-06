@@ -2584,8 +2584,47 @@
       '<a href="/about" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:9999px;background:#fff;border:1px solid var(--border);color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="陳翊嘉醫師 →" data-en="Dr. Chen Yi-Jia →">陳翊嘉醫師 →</a>';
     target.parentNode.insertBefore(bar, target.nextSibling);
 
-    // Mark this article as read (localStorage tracker)
-    if (slug) DN.markRead(slug);
+    // Mark this article as read — but ONLY when the reader has truly engaged.
+    // Threshold: scrolled past ≥ 70% of article body AND spent ≥ 30 seconds on page.
+    // Prevents the "open and immediately bounce → counted as read" problem.
+    if (slug) {
+      var article = document.querySelector('article.max-w-3xl') || document.querySelector('article');
+      if (!article) return;
+      var pageOpenTime = Date.now();
+      var marked = false;
+      var THRESHOLD_PCT = 0.70;   // must scroll past 70% of article
+      var MIN_DWELL_MS = 30000;   // minimum 30 seconds on page
+      function checkProgress() {
+        if (marked) return;
+        if (Date.now() - pageOpenTime < MIN_DWELL_MS) return;
+        var rect = article.getBoundingClientRect();
+        var articleTop = rect.top + window.scrollY;
+        var articleHeight = article.scrollHeight;
+        var scrolled = window.scrollY + window.innerHeight - articleTop;
+        var pct = scrolled / articleHeight;
+        if (pct >= THRESHOLD_PCT) {
+          marked = true;
+          DN.markRead(slug);
+          window.removeEventListener('scroll', checkProgress);
+          if (typeof gtag === 'function') {
+            try { gtag('event', 'article_read_threshold', { slug: slug }); } catch (e) {}
+          }
+        }
+      }
+      // Throttle scroll listener
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(function () { checkProgress(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
+      // Also check on interval (handles short articles where 70% is below fold)
+      var iv = setInterval(function () {
+        checkProgress();
+        if (marked) clearInterval(iv);
+      }, 5000);
+    }
   };
 
   // -----------------------------------------------------------------------
@@ -2780,9 +2819,24 @@
   // inside #proseZh. Smooth-scrolls, highlights current section.
   // -----------------------------------------------------------------------
   DN.addFloatingTOC = function () {
-    if (window.innerWidth < 1280) return;
-    const proseEl = document.getElementById('proseZh') || document.querySelector('article .prose');
+    if (window.innerWidth < 1100) return;
+    // Match article that IS .prose OR contains a .prose child
+    const proseEl = document.getElementById('proseZh')
+      || document.querySelector('article.prose')
+      || document.querySelector('article .prose')
+      || document.querySelector('article.max-w-3xl');
     if (!proseEl) return;
+    // Auto-id any h2 missing one (so TOC links work for newer articles)
+    var allH2 = proseEl.querySelectorAll('h2');
+    allH2.forEach(function (h, i) {
+      if (!h.id) {
+        var slug = (h.textContent || '').toLowerCase()
+          .replace(/[^\w一-鿿]+/g, '-')
+          .replace(/^-+|-+$/g, '')
+          .slice(0, 40) || ('h2-' + i);
+        h.id = slug;
+      }
+    });
     const h2s = proseEl.querySelectorAll('h2[id]');
     if (h2s.length < 3) return;
     if (document.getElementById('dn-toc-float')) return;

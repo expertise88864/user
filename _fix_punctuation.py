@@ -28,7 +28,8 @@ CJK = r'一-鿿㐀-䶿'  # Han + Han ext A
 
 def convert_chinese_punct(text):
     """Convert half-width punct that has CJK char on either side to full-width.
-    Special handling for periods (avoid converting decimal points / URLs / version numbers)."""
+    Round 2: also handles "punct followed by space then CJK" (the most common
+    Chinese-comma miss in the previous pass — e.g., '異膚, 痘痘' or 'A 酸, 用')."""
     out = list(text)
     n = len(out)
     for i in range(n):
@@ -39,17 +40,26 @@ def convert_chinese_punct(text):
         next_c = out[i+1] if i+1 < n else ''
         prev_is_cjk = bool(re.match(rf'[{CJK}]', prev_c))
         next_is_cjk = bool(re.match(rf'[{CJK}]', next_c))
+        # Round 2: also check 1-char-look-ahead through space ( ", 痘痘" style)
+        next2_c = out[i+2] if i+2 < n else ''
+        prev2_c = out[i-2] if i-1 > 0 else ''
+        next_after_space_cjk = (next_c == ' ' and bool(re.match(rf'[{CJK}]', next2_c)))
+        prev_after_space_cjk = (prev_c == ' ' and bool(re.match(rf'[{CJK}]', prev2_c)))
         # Period special case — only convert if both sides CJK (avoid 1.5, U.S., e.g.)
         if c == '.' and not (prev_is_cjk and next_is_cjk):
             continue
         # Parens — convert ( only if next is CJK; ) only if prev is CJK
-        if c == '(' and not next_is_cjk:
+        if c == '(' and not (next_is_cjk or next_after_space_cjk):
             continue
-        if c == ')' and not prev_is_cjk:
+        if c == ')' and not (prev_is_cjk or prev_after_space_cjk):
             continue
-        # General rule for ,?!:;
-        if prev_is_cjk or next_is_cjk:
+        # General rule for ,?!:;  — wider triggers in round 2
+        if prev_is_cjk or next_is_cjk or next_after_space_cjk or prev_after_space_cjk:
             out[i] = H2F[c]
+            # If we added full-width and there's a half-width space following, drop it
+            # (full-width punct includes built-in spacing)
+            if next_c == ' ' and c in (',', '.', ':', ';', '?', '!'):
+                out[i+1] = ''
     return ''.join(out)
 
 # Regex to skip protected regions
@@ -75,6 +85,21 @@ def process_html(html):
             lambda mm: mm.group(1) + convert_chinese_punct(mm.group(2)) + mm.group(3),
             block
         )
+        # Also convert content="..." on <meta> (description, og:description, twitter:description)
+        # but only if the meta tag's name/property indicates user-facing content
+        if re.search(r'<meta\s+(?:name|property)\s*=\s*"(?:description|og:description|og:title|twitter:title|twitter:description)"', block, re.IGNORECASE):
+            block = re.sub(
+                r'(content\s*=\s*")([^"]*)(")',
+                lambda mm: mm.group(1) + convert_chinese_punct(mm.group(2)) + mm.group(3),
+                block
+            )
+        # Convert <title>...</title> contents too
+        if block.startswith('<title>') or '<title>' in block:
+            block = re.sub(
+                r'(<title>)([^<]*)(</title>)',
+                lambda mm: mm.group(1) + convert_chinese_punct(mm.group(2)) + mm.group(3),
+                block
+            )
         parts.append(block)
         last = m.end()
     parts.append(convert_chinese_punct(html[last:]))

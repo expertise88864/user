@@ -1,1010 +1,206 @@
 {
   "slug": "dermatology-faq",
   "strings": [
-    {
-      "zh": "藥物使用",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "保養品搭配",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "痘痘 / 痘疤",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "雷射 / 醫美",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "孕婦 / 哺乳",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "延伸閱讀",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "三個原因：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "正確用法：洗臉後皮膚乾燥（等 5-10 分鐘）再薄塗於整臉，避開眼周、鼻翼凹陷處。先擦保濕再 A 酸可降低刺激（buffer 法）。白天必須擦 SPF 30+ 廣譜防曬。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "選對強度與部位是關鍵：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "不要把外用抗生素當「萬用藥」長擦 — 容易產生抗藥性。一般傷口或濕疹擦凡士林就好，有膿、紅、熱、痛才用抗生素。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "TDA 2024 痤瘡共識：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "3 個月療程後若仍嚴重，應升級到口服 A 酸。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "都是非類固醇外用藥，主要用於異位性皮膚炎：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "每層之間等 1-2 分鐘吸收再擦下一層。新增成分一次只加 1 個，觀察 2 週確認沒問題再加下一個。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "白天用維他命 C(L-ascorbic acid 10-20%)，晚上用 A 酸（Tretinoin 或 A 醇）。原理：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "判斷依據：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "過度卸妝（每天用強效卸妝水大力搓）會破壞皮膚屏障，反而引起敏感。原則：該卸就卸，不需要過度。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "挑選成分：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "建議方式：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "分兩種：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "看到痘痘消了之後仍有凹陷 — 越早處理越輕鬆。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "常見副作用：嘴唇乾(>90%)、皮膚乾、夜盲、肌肉痛、情緒變化。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "有實證有差的：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "沒有實證需禁的：巧克力、油炸、辣椒、海鮮、堅果、豆漿、雞蛋。建議減糖減奶 3 個月觀察。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "不同機制：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "選擇看目標：斑點 → 皮秒；肌膚整體 → 蜂巢皮秒；深凹疤 → 飛梭 CO2。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "單純雷射沒搭配藥膏 + 防曬 = 浪費錢且易反黑。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "避免侵入性 / 高熱雷射：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "一般雷射（皮秒、IPL）:",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "飛梭 / 高能量雷射 / 換膚：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "核心差異：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "「不敢擦類固醇」是異膚兒童惡化最大原因。每天保濕 + 急性期積極治療 + 緩解期 proactive 維持 = 控制良好。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "常見鑑別：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "分不清就帶寶寶看皮膚科，對症下藥才對。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "建議：計畫懷孕前完成接種，或產後 / 哺乳結束後再接種（Shingrix 哺乳母親可考慮但需與醫師討論）。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "沒找到你的問題？以下是針對特定主題的完整衛教文章：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "膿痂疹(impetigo)、毛囊炎、傷口感染、抓破的濕疹合併感染",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "術後傷口、雷射後 2-3 天",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "實用判斷：洗完皮膚摸起來還有「卡卡」、殘留感，就需卸妝",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "A 酸 + 高濃度果酸 / 水楊酸 = 過度刺激，屏障壞掉",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "A 酸 + 高濃度 BPO = BPO 會氧化分解 A 酸",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "A 酸 + 維他命 C = 同晚刺激倍增",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "「早 C 晚 A」分時段",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "A 酸隔天輪用（中間夜晚改杜鵑花酸或菸鹼醯胺）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "果酸 / 水楊酸建議白天用低濃度，或單獨用一晚",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "劑量 0.5-1 mg/kg/day，療程 6-9 個月，目標累積劑量 120-150 mg/kg",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "用藥前抽血：GOT/GPT、TG、Cholesterol、孕婦 hCG",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "每月回診 + 追蹤抽血（第 1、2、4、6 個月）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "女性育齡需嚴格避孕（致畸胎），療程前 1 個月 + 整個療程 + 結束後 1 個月",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "荷爾蒙波動（月經前、停服避孕藥、PCOS、停經前期）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "壓力（會增加皮質醇 → 刺激皮脂腺）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "保養品 / 防曬選錯（致粉刺成分）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "口罩悶熱(maskne)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "睡眠不足",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "類固醇藥物、男性化藥物",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "三合一藥膏 / Hydroquinone 4%（處方,8-12 週）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "口服傳明酸 250 mg BID-TID（8-12 週）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "當天：不化妝、避免熱水洗臉、避免運動流汗",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "第 2-3 天：可化淡妝；繼續加強保濕",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "保濕 + 修護（維他命 B5、Centella）幫助恢復",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "結痂 5-7 天，不要摳",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "避免日曬 4 週以上",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "使用醫師建議的修護敷料 / 凡士林",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "外用低中強效類固醇短期(Hydrocortisone、Mometasone)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "外用 Erythromycin、Clindamycin（治痘抗生素）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "外用 Calcineurin inhibitor(Tacrolimus、Pimecrolimus)— 哺乳避免在乳頭使用",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "菸鹼醯胺、玻尿酸、Vitamin C、Centella",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "純物理防曬(Zinc oxide、Titanium dioxide)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "口服 A 酸 Isotretinoin（致畸胎）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "外用 A 酸 / Tazarotene",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "口服傳明酸",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "Hydroquinone 4%（避免）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "Tri-Luma 三合一",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "口服 Doxycycline / Minocycline / Tetracycline",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "口服抗黴菌（Itraconazole 致畸胎）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "急性期每天 1-2 次連用 7-14 天",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "緩解後改週末療法（週六、日各 1 次）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "避開大面積、長期、高強度",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "臺灣皮膚科醫學會(TDA)各疾病臨床診療共識：痤瘡(2024)、異位性皮膚炎(2020)、玫瑰斑(2022)、乾癬(2024)、圓禿(2024)、蕁麻疹(2021)、白斑(2024)、化膿性汗腺炎、帶狀疱疹疫苗接種建議(2022)、猴痘皮膚照護指引、TKI 標靶藥物皮膚毒性(2024)。",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "25 個皮膚科常見問題",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "提醒：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "UV 會分解 A 酸",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "A 酸讓皮膚對 UV 敏感",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "晚上皮膚修復活性高",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "一般不超過 4 週",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "臉、眼周、外陰、皺褶處",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "軀幹、四肢",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "手腳掌、頭皮厚塊",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "長期、大面積、強效類固醇用錯部位",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "真正細菌感染或感染風險高",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "常見品名與差別",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Mupirocin （Bactroban 百多邦）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Fusidic acid （Fucidin 褐黴素）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Neomycin / Bacitracin （合霉素）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第一線",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不超過 3 個月",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第二線",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不建議",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Tacrolimus 0.03% / 0.1% （普特皮）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Pimecrolimus 1% （醫立妥）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Crisaborole 2% （寇緹斯）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不會皮膚萎縮",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "原則：質地由稀到稠",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "早上",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "防曬",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "晚上",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "維他命 C",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "A 酸",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "沒做防曬就沒用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "純化學性防曬（無色）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "物理性防曬、含氧化鐵、有色防曬、防水抗汗款",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "潔顏油或卸妝乳",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "洗澡 / 洗臉後 3 分鐘內",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "修復屏障",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "保水",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "封閉鎖水",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "抗發炎",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Ceramide 修護型",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "同晚不建議疊加",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "白頭粉刺",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "發炎中紅腫痘",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "大顆囊腫痘",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "痘印 PIH（色素沉著）/ PIE（紅疤）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "嚴格防曬",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "凹疤（冰鑿、廂車、滾動）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不會自己好，擦藥也無效",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "嚴重肝損傷極罕見",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "高升糖食物 (high-GI)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "低脂牛奶 / 脫脂奶",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "乳清蛋白 (whey protein)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "40-55% 的 25-44 歲女性",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "下巴、嘴角、下顎線",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "傳統 Q 開關雷射",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皮秒雷射 (Picosecond)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "蜂巢皮秒",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "表皮真皮微損傷孔洞",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "飛梭雷射 (CO2 / Erbium fractional)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "常造成反黑加重",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "低能量皮秒 toning（蜂巢皮秒 1064 nm 低能量）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "含氧化鐵",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "禁忌",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "可做",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "除毛雷射",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "刺青",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "四環黴素類抗生素",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "健保覆蓋",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "自費",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "診斷不確定先看健保",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "可以使用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "杜鵑花酸 Azelaic acid 15-20%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "禁用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "部分會",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "杜鵑花酸 Azelaic acid + 純物理防曬（含氧化鐵）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "類固醇藥膏是嬰幼兒異膚第一線治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "弱效",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Crisaborole 寇緹斯",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "嬰兒濕疹 / 異膚",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "汗疹 (miliaria)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "奶癬（脂漏性皮膚炎）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "尿布疹",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "蕁麻疹",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不可以",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "活性疫苗(Zostavax)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "非活性重組疫苗(Shingrix)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陳翊嘉 醫師",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "1. 為什麼 A 酸(Tretinoin、Adapalene、Tazarotene)要晚上擦？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "2. 類固醇藥膏到底可以擦多久？會不會皮膚變薄？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "3. 抗生素藥膏什麼時候該擦？Mupirocin、Fusidic acid 差別？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "4. 口服抗生素治痘痘要吃多久？會不會抗藥性？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "5. 普特皮(Tacrolimus)、醫立妥(Pimecrolimus)、寇緹斯(Crisaborole)差別？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "6. 保養品擦的順序怎麼排？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "7. 「早 C 晚 A」是什麼？真的有效嗎？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "8. 防曬到底要不要卸妝？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "9. 保濕霜何時擦最有效？要怎麼挑？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "10. A 酸 / 果酸 / 水楊酸可以一起擦嗎？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "11. 痘痘可以擠嗎？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "12. 痘疤多久才會消？可以擦藥消嗎？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "13. 痘痘吃口服 A 酸（Roaccutane / Acnotin / 羅可坦）會傷肝嗎？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "14. 痘痘飲食要忌口什麼？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "15. 為什麼成人也會長痘痘？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "16. 皮秒雷射 vs 飛梭雷射 vs 蜂巢皮秒，差別？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "17. 肝斑可以雷射嗎？會不會反黑？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "18. 口服 A 酸期間能不能做雷射、刺青、除毛？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "19. 雷射後該怎麼照顧？何時可以化妝、運動？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "20. 健保 vs 自費皮膚科，差別？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "21. 孕婦哺乳可以擦什麼皮膚科藥？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "22. 懷孕長的肝斑會自己消嗎？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "23. 異膚寶寶可以擦類固醇嗎？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "24. 寶寶皮膚常見問題：濕疹、汗疹、奶癬、尿布疹怎麼分？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "25. 帶狀疱疹疫苗孕婦能打嗎？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "皮膚科 25 問",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "更新 2026-05-05",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "為什麼 A 酸晚上擦？類固醇能擦多久？保養順序？",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "藥物使用 (5)",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "保養品搭配 (5)",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "痘痘 / 痘疤 (5)",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "雷射 / 醫美 (5)",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "孕婦 / 哺乳 (5)",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "皮膚科 住院醫師",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：",
-      "en": "",
-      "tag": "span"
-    }
+    { "zh": "藥物使用", "en": "Medication use", "tag": "h2" },
+    { "zh": "保養品搭配", "en": "Skincare combinations", "tag": "h2" },
+    { "zh": "痘痘 / 痘疤", "en": "Acne and acne scars", "tag": "h2" },
+    { "zh": "雷射 / 醫美", "en": "Laser and aesthetic procedures", "tag": "h2" },
+    { "zh": "孕婦 / 哺乳", "en": "Pregnancy and lactation", "tag": "h2" },
+    { "zh": "延伸閱讀", "en": "Further reading", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "三個原因：", "en": "Three reasons:", "tag": "p" },
+    { "zh": "正確用法：洗臉後皮膚乾燥（等 5-10 分鐘）再薄塗於整臉，避開眼周、鼻翼凹陷處。先擦保濕再 A 酸可降低刺激（buffer 法）。白天必須擦 SPF 30+ 廣譜防曬。", "en": "Correct technique: wait until the face is dry after cleansing (5–10 min), then apply a thin layer over the whole face, avoiding the periocular area and nasolabial folds. Applying moisturizer first (the “buffer” method) reduces irritation. SPF 30+ broad-spectrum sunscreen is mandatory during the day.", "tag": "p" },
+    { "zh": "選對強度與部位是關鍵：", "en": "Picking the right potency for the right body site is key:", "tag": "p" },
+    { "zh": "不要把外用抗生素當「萬用藥」長擦 — 容易產生抗藥性。一般傷口或濕疹擦凡士林就好，有膿、紅、熱、痛才用抗生素。", "en": "Don't use topical antibiotics as a “cure-all” for prolonged periods — antibiotic resistance develops easily. For ordinary wounds or eczema, plain petrolatum is sufficient; antibiotics are only needed when there's pus, erythema, warmth, and pain.", "tag": "p" },
+    { "zh": "TDA 2024 痤瘡共識：", "en": "TDA 2024 acne consensus:", "tag": "p" },
+    { "zh": "3 個月療程後若仍嚴重，應升級到口服 A 酸。", "en": "If still severe after a 3-month course, escalate to oral isotretinoin.", "tag": "p" },
+    { "zh": "都是非類固醇外用藥，主要用於異位性皮膚炎：", "en": "All non-steroidal topicals primarily used for atopic dermatitis:", "tag": "p" },
+    { "zh": "每層之間等 1-2 分鐘吸收再擦下一層。新增成分一次只加 1 個，觀察 2 週確認沒問題再加下一個。", "en": "Wait 1–2 minutes between layers for each to absorb. Add only one new active at a time, observing for 2 weeks before introducing the next.", "tag": "p" },
+    { "zh": "白天用維他命 C(L-ascorbic acid 10-20%)，晚上用 A 酸（Tretinoin 或 A 醇）。原理：", "en": "Vitamin C (L-ascorbic acid 10–20%) in the morning, retinoid (tretinoin or retinol) at night. Rationale:", "tag": "p" },
+    { "zh": "判斷依據：", "en": "Decision criteria:", "tag": "p" },
+    { "zh": "過度卸妝（每天用強效卸妝水大力搓）會破壞皮膚屏障，反而引起敏感。原則：該卸就卸，不需要過度。", "en": "Over-cleansing (vigorously scrubbing with strong makeup remover daily) damages the barrier and triggers sensitivity. Principle: remove makeup when needed, but don't over-do it.", "tag": "p" },
+    { "zh": "挑選成分：", "en": "What to look for:", "tag": "p" },
+    { "zh": "建議方式：", "en": "Recommended approach:", "tag": "p" },
+    { "zh": "分兩種：", "en": "Two categories:", "tag": "p" },
+    { "zh": "看到痘痘消了之後仍有凹陷 — 越早處理越輕鬆。", "en": "If you see indentation remaining after pimples resolve — the earlier you treat, the easier the management.", "tag": "p" },
+    { "zh": "常見副作用：嘴唇乾(>90%)、皮膚乾、夜盲、肌肉痛、情緒變化。", "en": "Common adverse effects: dry lips (>90%), dry skin, night vision changes, myalgia, mood changes.", "tag": "p" },
+    { "zh": "有實證有差的：", "en": "Foods with supporting evidence:", "tag": "p" },
+    { "zh": "沒有實證需禁的：巧克力、油炸、辣椒、海鮮、堅果、豆漿、雞蛋。建議減糖減奶 3 個月觀察。", "en": "No evidence requiring avoidance: chocolate, fried foods, chili, seafood, nuts, soy milk, eggs. A 3-month trial of reduced sugar and dairy is reasonable.", "tag": "p" },
+    { "zh": "不同機制：", "en": "Different mechanisms:", "tag": "p" },
+    { "zh": "選擇看目標：斑點 → 皮秒；肌膚整體 → 蜂巢皮秒；深凹疤 → 飛梭 CO2。", "en": "Choose by target: pigmentation → picosecond; overall skin quality → fractional pico (Pico Genesis); deep atrophic scars → fractional CO₂.", "tag": "p" },
+    { "zh": "單純雷射沒搭配藥膏 + 防曬 = 浪費錢且易反黑。", "en": "Laser alone without topical therapy + sun protection = wasted money and high risk of post-inflammatory hyperpigmentation.", "tag": "p" },
+    { "zh": "避免侵入性 / 高熱雷射：", "en": "Avoid invasive or high-heat lasers:", "tag": "p" },
+    { "zh": "一般雷射（皮秒、IPL）:", "en": "Standard lasers (picosecond, IPL):", "tag": "p" },
+    { "zh": "飛梭 / 高能量雷射 / 換膚：", "en": "Fractional / high-energy lasers / chemical peels:", "tag": "p" },
+    { "zh": "核心差異：", "en": "Core differences:", "tag": "p" },
+    { "zh": "「不敢擦類固醇」是異膚兒童惡化最大原因。每天保濕 + 急性期積極治療 + 緩解期 proactive 維持 = 控制良好。", "en": "“Steroid phobia” is the single largest reason pediatric AD worsens. Daily moisturizer + aggressive flare treatment + proactive maintenance = good control.", "tag": "p" },
+    { "zh": "常見鑑別：", "en": "Common differential diagnoses:", "tag": "p" },
+    { "zh": "分不清就帶寶寶看皮膚科，對症下藥才對。", "en": "If you can't distinguish, see a dermatologist — treatment should match the diagnosis.", "tag": "p" },
+    { "zh": "建議：計畫懷孕前完成接種，或產後 / 哺乳結束後再接種（Shingrix 哺乳母親可考慮但需與醫師討論）。", "en": "Recommendation: complete vaccination before planned pregnancy, or after delivery/lactation. Shingrix may be considered in lactating mothers but should be discussed with the physician.", "tag": "p" },
+    { "zh": "沒找到你的問題？以下是針對特定主題的完整衛教文章：", "en": "Didn't find your question? Here are full articles on specific topics:", "tag": "p" },
+    { "zh": "膿痂疹(impetigo)、毛囊炎、傷口感染、抓破的濕疹合併感染", "en": "Impetigo, folliculitis, wound infection, secondarily infected eczema", "tag": "li" },
+    { "zh": "術後傷口、雷射後 2-3 天", "en": "Post-op wounds, 2–3 days after laser", "tag": "li" },
+    { "zh": "實用判斷：洗完皮膚摸起來還有「卡卡」、殘留感，就需卸妝", "en": "Practical test: if skin feels “coated” or residual after cleansing, makeup remover is needed", "tag": "li" },
+    { "zh": "A 酸 + 高濃度果酸 / 水楊酸 = 過度刺激，屏障壞掉", "en": "Retinoid + high-concentration AHA/BHA = overstimulation, barrier damage", "tag": "li" },
+    { "zh": "A 酸 + 高濃度 BPO = BPO 會氧化分解 A 酸", "en": "Retinoid + high-concentration BPO = BPO oxidatively degrades the retinoid", "tag": "li" },
+    { "zh": "A 酸 + 維他命 C = 同晚刺激倍增", "en": "Retinoid + vitamin C in the same evening = irritation doubled", "tag": "li" },
+    { "zh": "「早 C 晚 A」分時段", "en": "Use the “Vitamin C in the morning, retinoid at night” split", "tag": "li" },
+    { "zh": "A 酸隔天輪用（中間夜晚改杜鵑花酸或菸鹼醯胺）", "en": "Apply retinoid every other night (alternating with azelaic acid or niacinamide)", "tag": "li" },
+    { "zh": "果酸 / 水楊酸建議白天用低濃度，或單獨用一晚", "en": "Use AHA/BHA at low concentration during the day, or on a separate night", "tag": "li" },
+    { "zh": "劑量 0.5-1 mg/kg/day，療程 6-9 個月，目標累積劑量 120-150 mg/kg", "en": "Dosing 0.5–1 mg/kg/day for 6–9 months; target cumulative dose 120–150 mg/kg", "tag": "li" },
+    { "zh": "用藥前抽血：GOT/GPT、TG、Cholesterol、孕婦 hCG", "en": "Pre-treatment labs: AST/ALT, triglycerides, cholesterol, β-hCG (women)", "tag": "li" },
+    { "zh": "每月回診 + 追蹤抽血（第 1、2、4、6 個月）", "en": "Monthly follow-up + repeat labs at months 1, 2, 4, and 6", "tag": "li" },
+    { "zh": "女性育齡需嚴格避孕（致畸胎），療程前 1 個月 + 整個療程 + 結束後 1 個月", "en": "Women of childbearing age require strict contraception (teratogenic): 1 month before + entire course + 1 month after", "tag": "li" },
+    { "zh": "荷爾蒙波動（月經前、停服避孕藥、PCOS、停經前期）", "en": "Hormonal fluctuations (premenstrual, oral contraceptive discontinuation, PCOS, perimenopause)", "tag": "li" },
+    { "zh": "壓力（會增加皮質醇 → 刺激皮脂腺）", "en": "Stress (raises cortisol → stimulates sebaceous glands)", "tag": "li" },
+    { "zh": "保養品 / 防曬選錯（致粉刺成分）", "en": "Wrong skincare or sunscreen (comedogenic ingredients)", "tag": "li" },
+    { "zh": "口罩悶熱(maskne)", "en": "Mask occlusion (maskne)", "tag": "li" },
+    { "zh": "睡眠不足", "en": "Sleep deprivation", "tag": "li" },
+    { "zh": "類固醇藥物、男性化藥物", "en": "Corticosteroids, androgenic medications", "tag": "li" },
+    { "zh": "三合一藥膏 / Hydroquinone 4%（處方,8-12 週）", "en": "Triple combination cream / hydroquinone 4% (prescription, 8–12 weeks)", "tag": "li" },
+    { "zh": "口服傳明酸 250 mg BID-TID（8-12 週）", "en": "Oral tranexamic acid 250 mg BID–TID (8–12 weeks)", "tag": "li" },
+    { "zh": "當天：不化妝、避免熱水洗臉、避免運動流汗", "en": "Same day: no makeup, avoid hot water washing, avoid exercise/sweating", "tag": "li" },
+    { "zh": "第 2-3 天：可化淡妝；繼續加強保濕", "en": "Days 2–3: light makeup OK; continue intensive moisturization", "tag": "li" },
+    { "zh": "保濕 + 修護（維他命 B5、Centella）幫助恢復", "en": "Moisturizer + barrier repair (vitamin B5, Centella) speeds recovery", "tag": "li" },
+    { "zh": "結痂 5-7 天，不要摳", "en": "Crusts last 5–7 days — don't pick", "tag": "li" },
+    { "zh": "避免日曬 4 週以上", "en": "Avoid sun exposure for 4+ weeks", "tag": "li" },
+    { "zh": "使用醫師建議的修護敷料 / 凡士林", "en": "Use physician-recommended dressings or petrolatum", "tag": "li" },
+    { "zh": "外用低中強效類固醇短期(Hydrocortisone、Mometasone)", "en": "Short-course low/mid-potency topical steroids (hydrocortisone, mometasone)", "tag": "li" },
+    { "zh": "外用 Erythromycin、Clindamycin（治痘抗生素）", "en": "Topical erythromycin, clindamycin (acne antibiotics)", "tag": "li" },
+    { "zh": "外用 Calcineurin inhibitor(Tacrolimus、Pimecrolimus)— 哺乳避免在乳頭使用", "en": "Topical calcineurin inhibitors (tacrolimus, pimecrolimus) — avoid nipple use during lactation", "tag": "li" },
+    { "zh": "菸鹼醯胺、玻尿酸、Vitamin C、Centella", "en": "Niacinamide, hyaluronic acid, vitamin C, Centella", "tag": "li" },
+    { "zh": "純物理防曬(Zinc oxide、Titanium dioxide)", "en": "Pure physical sunscreens (zinc oxide, titanium dioxide)", "tag": "li" },
+    { "zh": "口服 A 酸 Isotretinoin（致畸胎）", "en": "Oral isotretinoin (teratogenic)", "tag": "li" },
+    { "zh": "外用 A 酸 / Tazarotene", "en": "Topical retinoids / tazarotene", "tag": "li" },
+    { "zh": "口服傳明酸", "en": "Oral tranexamic acid", "tag": "li" },
+    { "zh": "Hydroquinone 4%（避免）", "en": "Hydroquinone 4% (avoid)", "tag": "li" },
+    { "zh": "Tri-Luma 三合一", "en": "Tri-Luma triple combination", "tag": "li" },
+    { "zh": "口服 Doxycycline / Minocycline / Tetracycline", "en": "Oral doxycycline / minocycline / tetracycline", "tag": "li" },
+    { "zh": "口服抗黴菌（Itraconazole 致畸胎）", "en": "Oral antifungals (itraconazole is teratogenic)", "tag": "li" },
+    { "zh": "急性期每天 1-2 次連用 7-14 天", "en": "Acute phase: 1–2× daily for 7–14 days", "tag": "li" },
+    { "zh": "緩解後改週末療法（週六、日各 1 次）", "en": "After remission: weekend therapy (Saturday + Sunday once each)", "tag": "li" },
+    { "zh": "避開大面積、長期、高強度", "en": "Avoid large surface area, long duration, and high potency", "tag": "li" },
+    { "zh": "臺灣皮膚科醫學會(TDA)各疾病臨床診療共識：痤瘡(2024)、異位性皮膚炎(2020)、玫瑰斑(2022)、乾癬(2024)、圓禿(2024)、蕁麻疹(2021)、白斑(2024)、化膿性汗腺炎、帶狀疱疹疫苗接種建議(2022)、猴痘皮膚照護指引、TKI 標靶藥物皮膚毒性(2024)。", "en": "Taiwanese Dermatological Association (TDA) consensus statements: acne (2024), atopic dermatitis (2020), rosacea (2022), psoriasis (2024), alopecia areata (2024), urticaria (2021), vitiligo (2024), hidradenitis suppurativa, herpes zoster vaccination (2022), mpox skin care guidelines, TKI dermatologic toxicity (2024).", "tag": "li" },
+    { "zh": "25 個皮膚科常見問題", "en": "25 common dermatology questions", "tag": "strong" },
+    { "zh": "提醒：", "en": "Note:", "tag": "strong" },
+    { "zh": "UV 會分解 A 酸", "en": "UV degrades retinoids", "tag": "strong" },
+    { "zh": "A 酸讓皮膚對 UV 敏感", "en": "Retinoids increase UV sensitivity", "tag": "strong" },
+    { "zh": "晚上皮膚修復活性高", "en": "Skin repair activity is highest at night", "tag": "strong" },
+    { "zh": "一般不超過 4 週", "en": "Generally no more than 4 weeks", "tag": "strong" },
+    { "zh": "臉、眼周、外陰、皺褶處", "en": "Face, periocular, genital, intertriginous areas", "tag": "strong" },
+    { "zh": "軀幹、四肢", "en": "Trunk and limbs", "tag": "strong" },
+    { "zh": "手腳掌、頭皮厚塊", "en": "Palms, soles, thick scalp plaques", "tag": "strong" },
+    { "zh": "長期、大面積、強效類固醇用錯部位", "en": "Long-term, large-area, high-potency steroids applied to the wrong site", "tag": "strong" },
+    { "zh": "真正細菌感染或感染風險高", "en": "True bacterial infection or high infection risk", "tag": "strong" },
+    { "zh": "常見品名與差別", "en": "Common brands and differences", "tag": "strong" },
+    { "zh": "Mupirocin （Bactroban 百多邦）", "en": "Mupirocin (Bactroban)", "tag": "strong" },
+    { "zh": "Fusidic acid （Fucidin 褐黴素）", "en": "Fusidic acid (Fucidin)", "tag": "strong" },
+    { "zh": "Neomycin / Bacitracin （合霉素）", "en": "Neomycin / bacitracin", "tag": "strong" },
+    { "zh": "第一線", "en": "First-line", "tag": "strong" },
+    { "zh": "不超過 3 個月", "en": "No more than 3 months", "tag": "strong" },
+    { "zh": "第二線", "en": "Second-line", "tag": "strong" },
+    { "zh": "不建議", "en": "Not recommended", "tag": "strong" },
+    { "zh": "Tacrolimus 0.03% / 0.1% （普特皮）", "en": "Tacrolimus 0.03% / 0.1% (Protopic)", "tag": "strong" },
+    { "zh": "Pimecrolimus 1% （醫立妥）", "en": "Pimecrolimus 1% (Elidel)", "tag": "strong" },
+    { "zh": "Crisaborole 2% （寇緹斯）", "en": "Crisaborole 2% (Eucrisa)", "tag": "strong" },
+    { "zh": "不會皮膚萎縮", "en": "Does not cause skin atrophy", "tag": "strong" },
+    { "zh": "原則：質地由稀到稠", "en": "Principle: thinnest to thickest", "tag": "strong" },
+    { "zh": "早上", "en": "Morning", "tag": "strong" },
+    { "zh": "防曬", "en": "Sunscreen", "tag": "strong" },
+    { "zh": "晚上", "en": "Night", "tag": "strong" },
+    { "zh": "維他命 C", "en": "Vitamin C", "tag": "strong" },
+    { "zh": "A 酸", "en": "Retinoid", "tag": "strong" },
+    { "zh": "沒做防曬就沒用", "en": "Useless without sunscreen", "tag": "strong" },
+    { "zh": "純化學性防曬（無色）", "en": "Pure chemical sunscreens (colorless)", "tag": "strong" },
+    { "zh": "物理性防曬、含氧化鐵、有色防曬、防水抗汗款", "en": "Physical sunscreens, iron-oxide-containing, tinted, water-resistant formulations", "tag": "strong" },
+    { "zh": "潔顏油或卸妝乳", "en": "Cleansing oil or makeup-remover milk", "tag": "strong" },
+    { "zh": "洗澡 / 洗臉後 3 分鐘內", "en": "Within 3 minutes of bathing or face washing", "tag": "strong" },
+    { "zh": "修復屏障", "en": "Barrier repair", "tag": "strong" },
+    { "zh": "保水", "en": "Hydration", "tag": "strong" },
+    { "zh": "封閉鎖水", "en": "Occlusive sealing", "tag": "strong" },
+    { "zh": "抗發炎", "en": "Anti-inflammatory", "tag": "strong" },
+    { "zh": "Ceramide 修護型", "en": "Ceramide-based barrier-repair type", "tag": "strong" },
+    { "zh": "同晚不建議疊加", "en": "Not recommended to layer on the same night", "tag": "strong" },
+    { "zh": "白頭粉刺", "en": "Whiteheads", "tag": "strong" },
+    { "zh": "發炎中紅腫痘", "en": "Inflamed red papules/pustules", "tag": "strong" },
+    { "zh": "大顆囊腫痘", "en": "Large cystic acne", "tag": "strong" },
+    { "zh": "痘印 PIH（色素沉著）/ PIE（紅疤）", "en": "Post-acne marks: PIH (post-inflammatory hyperpigmentation) / PIE (post-inflammatory erythema)", "tag": "strong" },
+    { "zh": "嚴格防曬", "en": "Strict sun protection", "tag": "strong" },
+    { "zh": "凹疤（冰鑿、廂車、滾動）", "en": "Atrophic scars (icepick, boxcar, rolling)", "tag": "strong" },
+    { "zh": "不會自己好，擦藥也無效", "en": "Doesn't resolve on its own, and topicals are ineffective", "tag": "strong" },
+    { "zh": "嚴重肝損傷極罕見", "en": "Severe hepatic injury is extremely rare", "tag": "strong" },
+    { "zh": "高升糖食物 (high-GI)", "en": "High-glycemic-index foods", "tag": "strong" },
+    { "zh": "低脂牛奶 / 脫脂奶", "en": "Low-fat / skim milk", "tag": "strong" },
+    { "zh": "乳清蛋白 (whey protein)", "en": "Whey protein", "tag": "strong" },
+    { "zh": "40-55% 的 25-44 歲女性", "en": "40–55% of women aged 25–44", "tag": "strong" },
+    { "zh": "下巴、嘴角、下顎線", "en": "Chin, perioral area, jawline", "tag": "strong" },
+    { "zh": "傳統 Q 開關雷射", "en": "Traditional Q-switched laser", "tag": "strong" },
+    { "zh": "皮秒雷射 (Picosecond)", "en": "Picosecond laser", "tag": "strong" },
+    { "zh": "蜂巢皮秒", "en": "Fractional pico (PicoSure / Pico Genesis Honeycomb)", "tag": "strong" },
+    { "zh": "表皮真皮微損傷孔洞", "en": "Microscopic epidermal/dermal injury columns", "tag": "strong" },
+    { "zh": "飛梭雷射 (CO2 / Erbium fractional)", "en": "Fractional laser (CO₂ / Erbium)", "tag": "strong" },
+    { "zh": "常造成反黑加重", "en": "Often worsens post-inflammatory hyperpigmentation", "tag": "strong" },
+    { "zh": "低能量皮秒 toning（蜂巢皮秒 1064 nm 低能量）", "en": "Low-energy pico-toning (fractional pico 1064 nm low fluence)", "tag": "strong" },
+    { "zh": "含氧化鐵", "en": "Contains iron oxide", "tag": "strong" },
+    { "zh": "禁忌", "en": "Contraindicated", "tag": "strong" },
+    { "zh": "可做", "en": "Permitted", "tag": "strong" },
+    { "zh": "除毛雷射", "en": "Hair-removal laser", "tag": "strong" },
+    { "zh": "刺青", "en": "Tattooing", "tag": "strong" },
+    { "zh": "四環黴素類抗生素", "en": "Tetracycline-class antibiotics", "tag": "strong" },
+    { "zh": "健保覆蓋", "en": "Covered by NHI", "tag": "strong" },
+    { "zh": "自費", "en": "Out-of-pocket", "tag": "strong" },
+    { "zh": "診斷不確定先看健保", "en": "If diagnosis is uncertain, start with NHI consultation", "tag": "strong" },
+    { "zh": "可以使用", "en": "Permitted", "tag": "strong" },
+    { "zh": "杜鵑花酸 Azelaic acid 15-20%", "en": "Azelaic acid 15–20%", "tag": "strong" },
+    { "zh": "禁用", "en": "Contraindicated", "tag": "strong" },
+    { "zh": "部分會", "en": "Partially", "tag": "strong" },
+    { "zh": "杜鵑花酸 Azelaic acid + 純物理防曬（含氧化鐵）", "en": "Azelaic acid + pure physical sunscreen (iron oxide)", "tag": "strong" },
+    { "zh": "類固醇藥膏是嬰幼兒異膚第一線治療", "en": "Topical corticosteroids are first-line for infant/childhood AD", "tag": "strong" },
+    { "zh": "弱效", "en": "Low-potency", "tag": "strong" },
+    { "zh": "Crisaborole 寇緹斯", "en": "Crisaborole (Eucrisa)", "tag": "strong" },
+    { "zh": "嬰兒濕疹 / 異膚", "en": "Infant eczema / AD", "tag": "strong" },
+    { "zh": "汗疹 (miliaria)", "en": "Miliaria (heat rash)", "tag": "strong" },
+    { "zh": "奶癬（脂漏性皮膚炎）", "en": "Cradle cap (seborrheic dermatitis)", "tag": "strong" },
+    { "zh": "尿布疹", "en": "Diaper rash", "tag": "strong" },
+    { "zh": "蕁麻疹", "en": "Urticaria", "tag": "strong" },
+    { "zh": "不可以", "en": "Not permitted", "tag": "strong" },
+    { "zh": "活性疫苗(Zostavax)", "en": "Live-attenuated vaccine (Zostavax)", "tag": "strong" },
+    { "zh": "非活性重組疫苗(Shingrix)", "en": "Non-live recombinant vaccine (Shingrix)", "tag": "strong" },
+    { "zh": "陳翊嘉 醫師", "en": "Dr. Yi-Jia Chen", "tag": "strong" },
+    { "zh": "1. 為什麼 A 酸(Tretinoin、Adapalene、Tazarotene)要晚上擦？", "en": "1. Why are retinoids (tretinoin, adapalene, tazarotene) applied at night?", "tag": "summary" },
+    { "zh": "2. 類固醇藥膏到底可以擦多久？會不會皮膚變薄？", "en": "2. How long can topical steroids be used? Will skin thin?", "tag": "summary" },
+    { "zh": "3. 抗生素藥膏什麼時候該擦？Mupirocin、Fusidic acid 差別？", "en": "3. When should topical antibiotics be used? Mupirocin vs fusidic acid?", "tag": "summary" },
+    { "zh": "4. 口服抗生素治痘痘要吃多久？會不會抗藥性？", "en": "4. How long should oral antibiotics for acne be taken? Will resistance develop?", "tag": "summary" },
+    { "zh": "5. 普特皮(Tacrolimus)、醫立妥(Pimecrolimus)、寇緹斯(Crisaborole)差別？", "en": "5. What are the differences between Protopic (tacrolimus), Elidel (pimecrolimus), and Eucrisa (crisaborole)?", "tag": "summary" },
+    { "zh": "6. 保養品擦的順序怎麼排？", "en": "6. How should skincare products be layered?", "tag": "summary" },
+    { "zh": "7. 「早 C 晚 A」是什麼？真的有效嗎？", "en": "7. What is the “Vitamin C in the morning, retinoid at night” regimen? Does it actually work?", "tag": "summary" },
+    { "zh": "8. 防曬到底要不要卸妝？", "en": "8. Does sunscreen need to be removed with makeup remover?", "tag": "summary" },
+    { "zh": "9. 保濕霜何時擦最有效？要怎麼挑？", "en": "9. When is the most effective time to apply moisturizer, and how do you choose one?", "tag": "summary" },
+    { "zh": "10. A 酸 / 果酸 / 水楊酸可以一起擦嗎？", "en": "10. Can retinoids, AHAs, and BHAs be used together?", "tag": "summary" },
+    { "zh": "11. 痘痘可以擠嗎？", "en": "11. Can pimples be squeezed?", "tag": "summary" },
+    { "zh": "12. 痘疤多久才會消？可以擦藥消嗎？", "en": "12. How long until acne scars fade? Can topical treatment fix them?", "tag": "summary" },
+    { "zh": "13. 痘痘吃口服 A 酸（Roaccutane / Acnotin / 羅可坦）會傷肝嗎？", "en": "13. Does oral isotretinoin (Roaccutane / Acnotin) damage the liver?", "tag": "summary" },
+    { "zh": "14. 痘痘飲食要忌口什麼？", "en": "14. What foods should be avoided for acne?", "tag": "summary" },
+    { "zh": "15. 為什麼成人也會長痘痘？", "en": "15. Why do adults still get acne?", "tag": "summary" },
+    { "zh": "16. 皮秒雷射 vs 飛梭雷射 vs 蜂巢皮秒，差別？", "en": "16. Picosecond laser vs fractional laser vs fractional pico — what are the differences?", "tag": "summary" },
+    { "zh": "17. 肝斑可以雷射嗎？會不會反黑？", "en": "17. Can melasma be treated with laser? Will it cause rebound hyperpigmentation?", "tag": "summary" },
+    { "zh": "18. 口服 A 酸期間能不能做雷射、刺青、除毛？", "en": "18. During oral isotretinoin, can lasers, tattoos, or hair removal be performed?", "tag": "summary" },
+    { "zh": "19. 雷射後該怎麼照顧？何時可以化妝、運動？", "en": "19. How is post-laser skin cared for? When can you wear makeup or exercise?", "tag": "summary" },
+    { "zh": "20. 健保 vs 自費皮膚科，差別？", "en": "20. NHI vs out-of-pocket dermatology — what's the difference?", "tag": "summary" },
+    { "zh": "21. 孕婦哺乳可以擦什麼皮膚科藥？", "en": "21. What dermatologic medications are safe during pregnancy and lactation?", "tag": "summary" },
+    { "zh": "22. 懷孕長的肝斑會自己消嗎？", "en": "22. Will pregnancy-induced melasma resolve on its own?", "tag": "summary" },
+    { "zh": "23. 異膚寶寶可以擦類固醇嗎？", "en": "23. Can topical steroids be used on babies with atopic dermatitis?", "tag": "summary" },
+    { "zh": "24. 寶寶皮膚常見問題：濕疹、汗疹、奶癬、尿布疹怎麼分？", "en": "24. Common infant skin problems: how to tell eczema, miliaria, cradle cap, and diaper rash apart?", "tag": "summary" },
+    { "zh": "25. 帶狀疱疹疫苗孕婦能打嗎？", "en": "25. Can pregnant women get the shingles vaccine?", "tag": "summary" },
+    { "zh": "皮膚科 25 問", "en": "25 dermatology questions", "tag": "span" },
+    { "zh": "更新 2026-05-05", "en": "Updated 2026-05-05", "tag": "span" },
+    { "zh": "為什麼 A 酸晚上擦？類固醇能擦多久？保養順序？", "en": "Why are retinoids applied at night? How long can steroids be used? What's the right skincare order?", "tag": "span" },
+    { "zh": "藥物使用 (5)", "en": "Medication use (5)", "tag": "span" },
+    { "zh": "保養品搭配 (5)", "en": "Skincare combinations (5)", "tag": "span" },
+    { "zh": "痘痘 / 痘疤 (5)", "en": "Acne / acne scars (5)", "tag": "span" },
+    { "zh": "雷射 / 醫美 (5)", "en": "Laser / aesthetic (5)", "tag": "span" },
+    { "zh": "孕婦 / 哺乳 (5)", "en": "Pregnancy / lactation (5)", "tag": "span" },
+    { "zh": "皮膚科 住院醫師", "en": "Dermatology Resident", "tag": "span" },
+    { "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：", "en": "Content corrections / academic citations / media inquiries:", "tag": "span" }
   ]
 }
