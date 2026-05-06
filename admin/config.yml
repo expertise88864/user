@@ -11,7 +11,7 @@
 
 backend:
   name: github                        # change to git-gateway if using Netlify Identity
-  repo: yi-jia/DermNotes              # ← update to your actual owner/repo
+  repo: expertise88864/user           # actual owner/repo
   branch: main
   base_url: https://chendermatologist.com
   auth_endpoint: api/auth             # see /api/auth.js (placeholder)

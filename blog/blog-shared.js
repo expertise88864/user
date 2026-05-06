@@ -2961,7 +2961,7 @@
   // Set DN.PUSH_VAPID_PUBLIC_KEY to your VAPID public key (run `npm run vapid` to generate)
   // and store the private key in Vercel env var VAPID_PRIVATE_KEY. The endpoint below is
   // already wired to /api/push-subscribe.js (see api/push-subscribe.js).
-  DN.PUSH_VAPID_PUBLIC_KEY = '';                       // ← paste base64-url VAPID public key
+  DN.PUSH_VAPID_PUBLIC_KEY = 'BP6poj7ya338wTK2lESdybj9LOoe9OeEKZ3FF3Zj1VHY4vyn8GB3NzWLgy7GO9SxCDxtXapblFDu01yO1dBern8';
   DN.PUSH_SUBSCRIBE_ENDPOINT = '/api/push-subscribe';  // ← matches api/push-subscribe.js
 
   function urlBase64ToUint8Array(base64String) {

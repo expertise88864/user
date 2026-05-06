@@ -1,765 +1,157 @@
 {
   "slug": "shingles-myths",
   "strings": [
-    {
-      "zh": "迷思 1：皮蛇繞一圈會死",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "迷思 2：得皮蛇就是「壓力造成」",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "迷思 3：年輕人不會得皮蛇",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "迷思 4：擦藥膏 / 蘆薈 / 紅藥水就好，不用吃藥",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "迷思 5：皮蛇不會傳染",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "迷思 6：Shingrix 疫苗太貴不值得",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "完整治療策略",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "常見問題（PTT / Dcard 上常被問的）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "臺灣皮膚科醫學會 2022 帶狀疱疹疫苗接種建議",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "結語",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "帶狀皰疹 PTT 上常問的「斬蛇有用嗎」?",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "Shingrix 哪裡可以打？多少錢？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "帶狀皰疹會傳染嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "皰疹後神經痛(PHN)會痛多久？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "帶狀皰疹健保給付什麼？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "皮蛇沿著「神經節」單側分布 · Dermatome",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "本篇大綱",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "真實情況：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "常見的「點火」因素：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "年輕族群得皮蛇的常見情境：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "近年觀察 30-40 歲族群皮蛇發生率有上升趨勢，可能與工作高壓、熬夜、慢性疲勞有關。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "抗病毒藥治療：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "關鍵時程：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "輔助治療：止痛藥、神經痛藥（Gabapentin、Pregabalin、Amitriptyline）、有時短期類固醇、嚴重時神經阻斷術。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "傳染重點：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "兩種疫苗對比：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "多數 1-3 個月內緩解，但 10-30% 持續 6 個月以上，少數痛數年。年齡越大、急性期疼痛越強、皮疹越大，PHN 風險越高。治療：Gabapentin、Pregabalin、Amitriptyline、外用 Capsaicin / Lidocaine 貼布、嚴重者神經阻斷術。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "參考：臺灣皮膚科醫學會《帶狀疱疹疫苗接種建議》2022 年 7 月。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "真正會「繞圈」的可能是擴散性帶狀皰疹（disseminated zoster）— 出現在免疫嚴重低下（化療、HIV、移植），是急症需住院",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "女性比男性略高，可能與停經期免疫變化有關",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "長期熬夜爆肝 + 急性感染",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "自體免疫疾病（紅斑、克隆氏、IBD)+ 免疫抑制治療",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "癌症化療、生物製劑使用者",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "HIV 感染者（常為首發症狀）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "產後、產程消耗",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "COVID-19 感染後 / mRNA 疫苗後（少數案例）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "已完全結痂、無新水泡，抗病毒藥效益小",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "結痂後不傳染（病毒已不在表面）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "飛沫傳染少見（僅在播散性 / 黏膜病灶時），非主要途徑",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "皮蛇",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "水痘病毒（VZV）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "72 小時內未投抗病毒藥",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "急症提醒：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "額頭、眼睛周圍、鼻尖（Hutchinson sign）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "耳朵、面部一邊不對稱無力",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "沿單側神經節分布，不會越過身體中線",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "感覺神經節",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "單一神經節（dermatome）支配的皮膚區域",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "單側、不過中線",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "沒有任何醫療效果",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "誘發因素之一",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "免疫力下降",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "年齡",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "免疫疾病或藥物",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "感染",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "長期壓力、睡眠不足、極度疲勞",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "水痘",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "潛伏的 VZV",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "任何年齡都可能",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "72 小時內口服抗病毒藥",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "幾乎無效",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "72 小時內開始",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "新水泡",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "眼部帶狀皰疹",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不會傳染「皮蛇」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "水泡液中含 VZV",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "沒得過水痘、沒打疫苗的人感染水痘",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "傳的是「水痘」，不是「皮蛇」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "水泡液接觸",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "覆蓋包紮",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "孕婦（無水痘抗體者）、新生兒、免疫低下者、未接種過水痘疫苗的小孩",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第三代非活性重組疫苗",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "非活性重組蛋白疫苗",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "仍建議打",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "痊癒後 6-12 個月",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "急性期",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "急性期過後仍痛",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "免疫低下",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皰疹後神經痛 PHN",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "預防",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "各醫院家醫科 / 旅遊醫學科 / 部分皮膚科 / 旅遊診所自費接種",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "傳的是水痘不是皮蛇",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Shingrix 疫苗目前需自費",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "《帶狀疱疹疫苗接種建議》",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "台灣每年帶狀疱疹病例約 12 萬人",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "50-79 歲",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "優先建議非活性重組疫苗（Shingrix）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不建議活性疫苗",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "80 歲以上",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "只有非活性重組疫苗（Shingrix）核准",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "18-未滿 50 歲高風險族群",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "高風險族群",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "未滿 18 歲",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "非活性重組疫苗(Shingrix)接種時程",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "已得過帶狀疱疹",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不可在急性發作期接種",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "已接種過活性疫苗者",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「老化指標 + 免疫提醒」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "72 小時黃金期",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不要相信民俗斬蛇符咒",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "延伸閱讀：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陳翊嘉 醫師",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "帶狀皰疹 6 大迷思",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "更新日期 · 2026-05-04",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "繞一圈會死？疫苗值得嗎？神經痛多久？",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "皮膚科 住院醫師",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "藥物",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "劑量",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "療程",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "備註",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "Shingrix（欣剋疹）",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "Zostavax（伏冒帶狀皰疹）",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "階段",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "處理",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "Acyclovir 艾賽可洛偉",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "800 mg × 5 次/日",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "7 天",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "健保可，需注意每天 5 次易漏",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Valacyclovir 維癒",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1 g × 3 次/日",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "較方便，自費約 $1,500-2,000",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Famciclovir 抗皰",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "500 mg × 3 次/日",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "方便，腎功能差調整",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "125 mg × 1 次/日",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "歐洲常用，台灣較少見",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "類型",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "減毒活性疫苗",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "適用年齡",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥ 50 歲；≥ 18 歲免疫低下也可",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥ 50 歲；免疫低下禁用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "劑次",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "2 劑（間隔 2-6 個月）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1 劑",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "保護力（預防皮蛇）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "持續時間",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "&gt; 10 年",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "~5 年逐年下降",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "預防 PHN",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "價格（台灣自費）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "單劑約 NT$ 4,500-6,000",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "副作用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "較輕",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "口服抗病毒藥（Valacyclovir / Famciclovir 7 天）+ 止痛 + 衛教傷口照護",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NSAIDs、Tramadol、Gabapentin、Pregabalin、Amitriptyline、外用 Capsaicin / Lidocaine 貼布",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "立即眼科 + 全身性抗病毒藥 + 局部抗病毒眼藥水 / 軟膏",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "立即耳鼻喉 + 抗病毒藥 + 短期口服類固醇 + 復健",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "住院考量，IV Acyclovir 10 mg/kg q8h × 7 天",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Gabapentin/Pregabalin/Amitriptyline + 外用 + 神經阻斷術 / TENS / 心理支持",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥ 50 歲 → Shingrix 2 劑；免疫低下成人 ≥ 18 歲也可",
-      "en": "",
-      "tag": "td"
-    }
+    { "zh": "迷思 1：皮蛇繞一圈會死", "en": "Myth 1: Shingles wrapping all the way around your body is fatal", "tag": "h2" },
+    { "zh": "迷思 2：得皮蛇就是「壓力造成」", "en": "Myth 2: Shingles is caused by stress alone", "tag": "h2" },
+    { "zh": "迷思 3：年輕人不會得皮蛇", "en": "Myth 3: Young people don't get shingles", "tag": "h2" },
+    { "zh": "迷思 4：擦藥膏 / 蘆薈 / 紅藥水就好，不用吃藥", "en": "Myth 4: Topical creams, aloe, or mercurochrome are enough — no need for oral medication", "tag": "h2" },
+    { "zh": "迷思 5：皮蛇不會傳染", "en": "Myth 5: Shingles isn't contagious", "tag": "h2" },
+    { "zh": "迷思 6：Shingrix 疫苗太貴不值得", "en": "Myth 6: The Shingrix vaccine is too expensive to be worth it", "tag": "h2" },
+    { "zh": "完整治療策略", "en": "Comprehensive treatment strategy", "tag": "h2" },
+    { "zh": "常見問題（PTT / Dcard 上常被問的）", "en": "Common Questions (frequently asked on PTT / Dcard)", "tag": "h2" },
+    { "zh": "臺灣皮膚科醫學會 2022 帶狀疱疹疫苗接種建議", "en": "TDA 2022 herpes zoster vaccine recommendations", "tag": "h2" },
+    { "zh": "結語", "en": "Bottom line", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "帶狀皰疹 PTT 上常問的「斬蛇有用嗎」?", "en": "Does the folk \"shingle-cutting ritual\" really help, as PTT often asks?", "tag": "h3" },
+    { "zh": "Shingrix 哪裡可以打？多少錢？", "en": "Where can I get Shingrix and how much does it cost?", "tag": "h3" },
+    { "zh": "帶狀皰疹會傳染嗎？", "en": "Is shingles contagious?", "tag": "h3" },
+    { "zh": "皰疹後神經痛(PHN)會痛多久？", "en": "How long does post-herpetic neuralgia (PHN) last?", "tag": "h3" },
+    { "zh": "帶狀皰疹健保給付什麼？", "en": "What does Taiwan NHI cover for shingles?", "tag": "h3" },
+    { "zh": "皮蛇沿著「神經節」單側分布 · Dermatome", "en": "Shingles follows a unilateral dermatomal distribution", "tag": "h4" },
+    { "zh": "本篇大綱", "en": "Article outline", "tag": "h4" },
+    { "zh": "真實情況：", "en": "Reality:", "tag": "p" },
+    { "zh": "常見的「點火」因素：", "en": "Common triggering factors:", "tag": "p" },
+    { "zh": "年輕族群得皮蛇的常見情境：", "en": "Common scenarios in younger patients:", "tag": "p" },
+    { "zh": "近年觀察 30-40 歲族群皮蛇發生率有上升趨勢，可能與工作高壓、熬夜、慢性疲勞有關。", "en": "In recent years, shingles incidence in the 30–40 age group has been rising, possibly linked to high work stress, sleep deprivation, and chronic fatigue.", "tag": "p" },
+    { "zh": "抗病毒藥治療：", "en": "Antiviral therapy:", "tag": "p" },
+    { "zh": "關鍵時程：", "en": "Critical timing:", "tag": "p" },
+    { "zh": "輔助治療：止痛藥、神經痛藥（Gabapentin、Pregabalin、Amitriptyline）、有時短期類固醇、嚴重時神經阻斷術。", "en": "Adjunctive therapy: analgesics, neuropathic-pain medications (gabapentin, pregabalin, amitriptyline), sometimes short-course corticosteroids, and nerve blocks for severe cases.", "tag": "p" },
+    { "zh": "傳染重點：", "en": "Transmission key points:", "tag": "p" },
+    { "zh": "兩種疫苗對比：", "en": "Comparison of the two vaccines:", "tag": "p" },
+    { "zh": "多數 1-3 個月內緩解，但 10-30% 持續 6 個月以上，少數痛數年。年齡越大、急性期疼痛越強、皮疹越大，PHN 風險越高。治療：Gabapentin、Pregabalin、Amitriptyline、外用 Capsaicin / Lidocaine 貼布、嚴重者神經阻斷術。", "en": "Most resolve within 1–3 months, but 10–30% persist beyond 6 months, and a few last years. Older age, more severe acute pain, and larger rash all increase PHN risk. Treatment: gabapentin, pregabalin, amitriptyline, topical capsaicin or lidocaine patches; nerve blocks for severe cases.", "tag": "p" },
+    { "zh": "參考：臺灣皮膚科醫學會《帶狀疱疹疫苗接種建議》2022 年 7 月。", "en": "Reference: Taiwanese Dermatological Association, Herpes Zoster Vaccine Recommendations, July 2022.", "tag": "p" },
+    { "zh": "真正會「繞圈」的可能是擴散性帶狀皰疹（disseminated zoster）— 出現在免疫嚴重低下（化療、HIV、移植），是急症需住院", "en": "Truly \"wrapping around\" can occur in disseminated zoster — seen in severely immunocompromised patients (chemo, HIV, transplant); it's a medical emergency requiring hospitalization", "tag": "li" },
+    { "zh": "女性比男性略高，可能與停經期免疫變化有關", "en": "Slightly higher in women, possibly related to menopausal immune changes", "tag": "li" },
+    { "zh": "長期熬夜爆肝 + 急性感染", "en": "Chronic sleep deprivation + acute infection", "tag": "li" },
+    { "zh": "自體免疫疾病（紅斑、克隆氏、IBD)+ 免疫抑制治療", "en": "Autoimmune disease (lupus, Crohn's, IBD) + immunosuppressive therapy", "tag": "li" },
+    { "zh": "癌症化療、生物製劑使用者", "en": "Cancer chemotherapy or biologic users", "tag": "li" },
+    { "zh": "HIV 感染者（常為首發症狀）", "en": "HIV (often a presenting symptom)", "tag": "li" },
+    { "zh": "產後、產程消耗", "en": "Postpartum exhaustion", "tag": "li" },
+    { "zh": "COVID-19 感染後 / mRNA 疫苗後（少數案例）", "en": "Post-COVID-19 or post-mRNA-vaccine (rare cases)", "tag": "li" },
+    { "zh": "已完全結痂、無新水泡，抗病毒藥效益小", "en": "Once fully crusted with no new vesicles, antiviral benefit is minimal", "tag": "li" },
+    { "zh": "結痂後不傳染（病毒已不在表面）", "en": "Not contagious once crusted (virus no longer on surface)", "tag": "li" },
+    { "zh": "飛沫傳染少見（僅在播散性 / 黏膜病灶時），非主要途徑", "en": "Airborne transmission is rare (only with disseminated or mucosal lesions), not the primary route", "tag": "li" },
+    { "zh": "皮蛇", "en": "Shingles", "tag": "strong" },
+    { "zh": "水痘病毒（VZV）", "en": "varicella zoster virus (VZV)", "tag": "strong" },
+    { "zh": "72 小時內未投抗病毒藥", "en": "Antiviral not started within 72 hours", "tag": "strong" },
+    { "zh": "急症提醒：", "en": "Emergency reminder:", "tag": "strong" },
+    { "zh": "額頭、眼睛周圍、鼻尖（Hutchinson sign）", "en": "Forehead, periorbital area, nose tip (Hutchinson sign)", "tag": "strong" },
+    { "zh": "耳朵、面部一邊不對稱無力", "en": "Ear involvement with asymmetric facial weakness", "tag": "strong" },
+    { "zh": "沿單側神經節分布，不會越過身體中線", "en": "Distributes along a unilateral dermatome and does not cross the midline", "tag": "strong" },
+    { "zh": "感覺神經節", "en": "sensory ganglion", "tag": "strong" },
+    { "zh": "單一神經節（dermatome）支配的皮膚區域", "en": "skin area innervated by a single dermatome", "tag": "strong" },
+    { "zh": "單側、不過中線", "en": "unilateral, not crossing midline", "tag": "strong" },
+    { "zh": "沒有任何醫療效果", "en": "no medical effect whatsoever", "tag": "strong" },
+    { "zh": "誘發因素之一", "en": "one of several triggers", "tag": "strong" },
+    { "zh": "免疫力下降", "en": "immune suppression", "tag": "strong" },
+    { "zh": "年齡", "en": "Age", "tag": "strong" },
+    { "zh": "免疫疾病或藥物", "en": "Immune disease or medication", "tag": "strong" },
+    { "zh": "感染", "en": "Infection", "tag": "strong" },
+    { "zh": "長期壓力、睡眠不足、極度疲勞", "en": "chronic stress, sleep deprivation, extreme fatigue", "tag": "strong" },
+    { "zh": "水痘", "en": "chickenpox", "tag": "strong" },
+    { "zh": "潛伏的 VZV", "en": "latent VZV", "tag": "strong" },
+    { "zh": "任何年齡都可能", "en": "any age is possible", "tag": "strong" },
+    { "zh": "72 小時內口服抗病毒藥", "en": "Oral antiviral within 72 hours", "tag": "strong" },
+    { "zh": "幾乎無效", "en": "essentially ineffective", "tag": "strong" },
+    { "zh": "72 小時內開始", "en": "starts within 72 hours", "tag": "strong" },
+    { "zh": "新水泡", "en": "new vesicles", "tag": "strong" },
+    { "zh": "眼部帶狀皰疹", "en": "Herpes zoster ophthalmicus", "tag": "strong" },
+    { "zh": "不會傳染「皮蛇」", "en": "does not transmit shingles per se", "tag": "strong" },
+    { "zh": "水泡液中含 VZV", "en": "vesicle fluid contains VZV", "tag": "strong" },
+    { "zh": "沒得過水痘、沒打疫苗的人感染水痘", "en": "Causes chickenpox in those without prior chickenpox or vaccination", "tag": "strong" },
+    { "zh": "傳的是「水痘」，不是「皮蛇」", "en": "transmits chickenpox, not shingles", "tag": "strong" },
+    { "zh": "水泡液接觸", "en": "vesicle fluid contact", "tag": "strong" },
+    { "zh": "覆蓋包紮", "en": "Cover with dressing", "tag": "strong" },
+    { "zh": "孕婦（無水痘抗體者）、新生兒、免疫低下者、未接種過水痘疫苗的小孩", "en": "Pregnant women without varicella immunity, newborns, immunocompromised individuals, unvaccinated children", "tag": "strong" },
+    { "zh": "第三代非活性重組疫苗", "en": "third-generation non-live recombinant vaccine", "tag": "strong" },
+    { "zh": "非活性重組蛋白疫苗", "en": "Non-live recombinant subunit vaccine", "tag": "strong" },
+    { "zh": "仍建議打", "en": "still recommended", "tag": "strong" },
+    { "zh": "痊癒後 6-12 個月", "en": "6–12 months after recovery", "tag": "strong" },
+    { "zh": "急性期", "en": "Acute phase", "tag": "strong" },
+    { "zh": "急性期過後仍痛", "en": "Pain persists beyond acute phase", "tag": "strong" },
+    { "zh": "免疫低下", "en": "Immunocompromised", "tag": "strong" },
+    { "zh": "皰疹後神經痛 PHN", "en": "Post-herpetic neuralgia (PHN)", "tag": "strong" },
+    { "zh": "預防", "en": "Prevention", "tag": "strong" },
+    { "zh": "各醫院家醫科 / 旅遊醫學科 / 部分皮膚科 / 旅遊診所自費接種", "en": "Available at hospital family medicine / travel medicine clinics, some dermatology clinics, and travel clinics on a self-pay basis", "tag": "strong" },
+    { "zh": "傳的是水痘不是皮蛇", "en": "transmits chickenpox, not shingles itself", "tag": "strong" },
+    { "zh": "Shingrix 疫苗目前需自費", "en": "Shingrix is currently self-paid", "tag": "strong" },
+    { "zh": "《帶狀疱疹疫苗接種建議》", "en": "Herpes Zoster Vaccine Recommendations", "tag": "strong" },
+    { "zh": "台灣每年帶狀疱疹病例約 12 萬人", "en": "Approximately 120,000 shingles cases per year in Taiwan", "tag": "strong" },
+    { "zh": "50-79 歲", "en": "Ages 50–79", "tag": "strong" },
+    { "zh": "優先建議非活性重組疫苗（Shingrix）", "en": "Non-live recombinant vaccine (Shingrix) is preferred", "tag": "strong" },
+    { "zh": "不建議活性疫苗", "en": "Live attenuated vaccine not recommended", "tag": "strong" },
+    { "zh": "80 歲以上", "en": "Ages 80 and above", "tag": "strong" },
+    { "zh": "只有非活性重組疫苗（Shingrix）核准", "en": "only the non-live recombinant vaccine (Shingrix) is approved", "tag": "strong" },
+    { "zh": "18-未滿 50 歲高風險族群", "en": "High-risk groups aged 18 to under 50", "tag": "strong" },
+    { "zh": "高風險族群", "en": "High-risk populations", "tag": "strong" },
+    { "zh": "未滿 18 歲", "en": "Under 18", "tag": "strong" },
+    { "zh": "非活性重組疫苗(Shingrix)接種時程", "en": "Shingrix dosing schedule", "tag": "strong" },
+    { "zh": "已得過帶狀疱疹", "en": "Prior shingles infection", "tag": "strong" },
+    { "zh": "不可在急性發作期接種", "en": "Cannot vaccinate during acute flare", "tag": "strong" },
+    { "zh": "已接種過活性疫苗者", "en": "Previously vaccinated with the live vaccine", "tag": "strong" },
+    { "zh": "「老化指標 + 免疫提醒」", "en": "\"aging indicator + immune-status warning\"", "tag": "strong" },
+    { "zh": "72 小時黃金期", "en": "72-hour golden window", "tag": "strong" },
+    { "zh": "不要相信民俗斬蛇符咒", "en": "Don't rely on folk shingle-cutting rituals", "tag": "strong" },
+    { "zh": "延伸閱讀：", "en": "Further reading:", "tag": "strong" },
+    { "zh": "陳翊嘉 醫師", "en": "Dr. Yi-Jia Chen", "tag": "strong" },
+    { "zh": "帶狀皰疹 6 大迷思", "en": "6 common shingles myths", "tag": "span" },
+    { "zh": "更新日期 · 2026-05-04", "en": "Updated · 2026-05-04", "tag": "span" },
+    { "zh": "繞一圈會死？疫苗值得嗎？神經痛多久？", "en": "Is wrap-around fatal? Is the vaccine worth it? How long does the neuralgia last?", "tag": "span" },
+    { "zh": "皮膚科 住院醫師", "en": "Dermatology Resident", "tag": "span" },
+    { "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：", "en": "Content corrections / academic citation inquiries / media partnerships:", "tag": "span" },
+    { "zh": "藥物", "en": "Drug", "tag": "th" },
+    { "zh": "劑量", "en": "Dose", "tag": "th" },
+    { "zh": "療程", "en": "Duration", "tag": "th" },
+    { "zh": "備註", "en": "Notes", "tag": "th" },
+    { "zh": "Shingrix（欣剋疹）", "en": "Shingrix", "tag": "th" },
+    { "zh": "Zostavax（伏冒帶狀皰疹）", "en": "Zostavax", "tag": "th" },
+    { "zh": "階段", "en": "Stage", "tag": "th" },
+    { "zh": "處理", "en": "Management", "tag": "th" },
+    { "zh": "Acyclovir 艾賽可洛偉", "en": "Acyclovir", "tag": "td" },
+    { "zh": "800 mg × 5 次/日", "en": "800 mg × 5 times/day", "tag": "td" },
+    { "zh": "7 天", "en": "7 days", "tag": "td" },
+    { "zh": "健保可，需注意每天 5 次易漏", "en": "NHI-covered; 5 times daily increases missed-dose risk", "tag": "td" },
+    { "zh": "Valacyclovir 維癒", "en": "Valacyclovir", "tag": "td" },
+    { "zh": "1 g × 3 次/日", "en": "1 g × 3 times/day", "tag": "td" },
+    { "zh": "較方便，自費約 $1,500-2,000", "en": "More convenient; self-pay ~NT$ 1,500–2,000", "tag": "td" },
+    { "zh": "Famciclovir 抗皰", "en": "Famciclovir", "tag": "td" },
+    { "zh": "500 mg × 3 次/日", "en": "500 mg × 3 times/day", "tag": "td" },
+    { "zh": "方便，腎功能差調整", "en": "Convenient; dose-adjust in renal impairment", "tag": "td" },
+    { "zh": "125 mg × 1 次/日", "en": "125 mg × once daily", "tag": "td" },
+    { "zh": "歐洲常用，台灣較少見", "en": "Common in Europe, less used in Taiwan", "tag": "td" },
+    { "zh": "類型", "en": "Type", "tag": "td" },
+    { "zh": "減毒活性疫苗", "en": "Live attenuated vaccine", "tag": "td" },
+    { "zh": "適用年齡", "en": "Eligible age", "tag": "td" },
+    { "zh": "≥ 50 歲；≥ 18 歲免疫低下也可", "en": "≥ 50 years; also ≥ 18 if immunocompromised", "tag": "td" },
+    { "zh": "≥ 50 歲；免疫低下禁用", "en": "≥ 50 years; contraindicated in immunocompromised", "tag": "td" },
+    { "zh": "劑次", "en": "Doses", "tag": "td" },
+    { "zh": "2 劑（間隔 2-6 個月）", "en": "2 doses (2–6 months apart)", "tag": "td" },
+    { "zh": "1 劑", "en": "1 dose", "tag": "td" },
+    { "zh": "保護力（預防皮蛇）", "en": "Efficacy (shingles prevention)", "tag": "td" },
+    { "zh": "持續時間", "en": "Duration", "tag": "td" },
+    { "zh": "&gt; 10 年", "en": "&gt; 10 years", "tag": "td" },
+    { "zh": "~5 年逐年下降", "en": "~5 years, declining year over year", "tag": "td" },
+    { "zh": "預防 PHN", "en": "PHN prevention", "tag": "td" },
+    { "zh": "價格（台灣自費）", "en": "Price (Taiwan self-pay)", "tag": "td" },
+    { "zh": "單劑約 NT$ 4,500-6,000", "en": "Approx NT$ 4,500–6,000 per dose", "tag": "td" },
+    { "zh": "副作用", "en": "Side effects", "tag": "td" },
+    { "zh": "較輕", "en": "milder", "tag": "td" },
+    { "zh": "口服抗病毒藥（Valacyclovir / Famciclovir 7 天）+ 止痛 + 衛教傷口照護", "en": "Oral antiviral (valacyclovir / famciclovir × 7 days) + analgesia + wound-care education", "tag": "td" },
+    { "zh": "NSAIDs、Tramadol、Gabapentin、Pregabalin、Amitriptyline、外用 Capsaicin / Lidocaine 貼布", "en": "NSAIDs, tramadol, gabapentin, pregabalin, amitriptyline, topical capsaicin or lidocaine patches", "tag": "td" },
+    { "zh": "立即眼科 + 全身性抗病毒藥 + 局部抗病毒眼藥水 / 軟膏", "en": "Immediate ophthalmology consult + systemic antiviral + topical antiviral eye drops / ointment", "tag": "td" },
+    { "zh": "立即耳鼻喉 + 抗病毒藥 + 短期口服類固醇 + 復健", "en": "Immediate ENT consult + antiviral + short-course oral corticosteroid + rehabilitation", "tag": "td" },
+    { "zh": "住院考量，IV Acyclovir 10 mg/kg q8h × 7 天", "en": "Consider hospitalization; IV acyclovir 10 mg/kg q8h × 7 days", "tag": "td" },
+    { "zh": "Gabapentin/Pregabalin/Amitriptyline + 外用 + 神經阻斷術 / TENS / 心理支持", "en": "Gabapentin / pregabalin / amitriptyline + topicals + nerve block / TENS / psychological support", "tag": "td" },
+    { "zh": "≥ 50 歲 → Shingrix 2 劑；免疫低下成人 ≥ 18 歲也可", "en": "≥ 50 years → Shingrix × 2 doses; also indicated in immunocompromised adults ≥ 18", "tag": "td" }
   ]
 }
