@@ -1,670 +1,138 @@
 {
   "slug": "cutaneous-t-cell-lymphoma",
   "strings": [
-    {
-      "zh": "CTCL 是什麼?",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "MF 臨床分期(經典三期)",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "MF 變異型 + Sézary",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "診斷流程(ISCL 演算法)",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "TNMB 分期(ISCL/EORTC 2007)",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "早期 MF 治療(Stage IA-IIA)— 皮膚導向",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "進展期 MF / SS 治療(Stage IIB-IVB)— 系統性",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "CD30+ 原發性皮膚淋巴增生疾病",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "Dupilumab / TNF-α 抑制劑與 MF 鑑別",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "結語 — 5 件事",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "本文目錄",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "進展期 MF / SS 通常皮膚 + 系統性治療合併。常見系統性藥物:",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "近年文獻陸續報告:",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "TDA 2024 建議:長期難治性異膚 / 乾癬患者啟動生物製劑前、若有以下「MF 線索」應先做皮膚切片:",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "蕈狀肉芽腫(MF)佔 CTCL 約 60%,Sézary 佔 ~3%,CD30+ LPD 佔 ~25%",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "發病高峰 50-60 歲、男:女 ~ 1.6-2:1",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "SS / 紅皮症型 MF / 結節期 / 內臟轉移屬進展期、預後較差但仍可長期控制",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "淋巴樣丘疹病(Lymphomatoid papulosis, LyP) — 良性反覆、但組織學似惡性",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "原發性皮膚未分化大細胞淋巴瘤(pcALCL)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "其他罕見型:皮下脂膜炎樣 T 細胞淋巴瘤、γδ T 細胞淋巴瘤、原發性皮膚 CD8+ 侵襲性親表皮性 T 細胞淋巴瘤等",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "不對稱分布 / 不曬部位主導 / 皮膚萎縮 / 皺紋紙感",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "標準治療(類固醇 / TCI)反應極差",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "年長(&gt; 50 歲)首次出現所謂「異膚 / 乾癬」",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "合併淋巴結腫大 / 血液不正常 / 體重下降",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "少見的非何杰金氏淋巴瘤",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "75% 為蕈狀肉芽腫(Mycosis fungoides, MF)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "臺灣皮膚科醫學會 + 中華民國血液腫瘤學會 2024 聯合共識",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "提醒:",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "非何杰金氏 T 細胞淋巴瘤",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Mogamulizumab(抗 CCR4)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Brentuximab vedotin(抗 CD30)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "來源於皮膚的成熟 T 細胞惡性腫瘤",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "蕈狀肉芽腫(Mycosis fungoides, MF)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Sézary 症候群(SS)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "斑塊期(Patch)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "厚斑期(Plaque)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "結節期(Tumor)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "紅皮症型(eMF)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "濾泡親性 MF(folliculotropic MF)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "嚴重搔癢",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "肉芽腫性鬆弛皮膚(granulomatous slack skin)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "ISCL 2005 演算法",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "臨床標準",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "組織學標準",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "免疫表型",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "分子",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "多次切片 + 不同部位",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "T(皮膚)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "N(淋巴結)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "M(內臟轉移)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "B(血液 T 細胞侵犯)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "B2 = ≥ 1000/μL Sézary 細胞 → 自動為 SS",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "主要分期",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「皮膚導向治療(skin-directed therapy)」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用中強效 / 超強效類固醇",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用 Mechlorethamine(氮芥子氣)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用 Bexarotene 1% 凝膠",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "PUVA(口服 8-MOP + UVA)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "局部放射治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "全皮膚電子束照射(TSEBT)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "口服 Bexarotene",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "低劑量 Methotrexate",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "同種異體骨髓移植(allo-HSCT)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "淋巴樣丘疹病(LyP)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "5 年存活率 100%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "觀察為主",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "⚠ TDA 2024 共識重點:啟動生物製劑前的鑑別",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "TNF-α 抑制劑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "MF 不等於絕症",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「治不好的濕疹」要警覺",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皮膚優先治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "新藥改變進展期",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "生物製劑前要鑑別",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "延伸閱讀:",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "臺灣皮膚科醫學會 + 中華民國血液腫瘤學會。 皮膚 T 細胞淋巴瘤(CTCL)診斷與治療共識",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陳翊嘉 醫師",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皮膚 T 細胞淋巴瘤完整衛教",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "依 TDA + 血液腫瘤學會 2024 · 更新 2026-05-07",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "蕈狀肉芽腫、Sézary、TNMB 分期完整解析",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "皮膚科 住院醫師",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "期別",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "特徵",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "誤診常為",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "類別",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "定義",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "方式",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "適應症",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "備註",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "藥物",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "機轉",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "關鍵試驗 / 健保",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "扁平、鱗屑、淡紅或棕紅、不規則邊界、好發遮陽部位(臀部、大腿內側、軀幹)、可癢可不癢",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "慢性濕疹、副银屑癬、體癬、藥疹、白斑(色素脫失型)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "明顯隆起、紅褐色、可有萎縮 / 皺紋紙感、邊界較清楚",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "乾癬、扁平苔癬、慢性濕疹、皮膚澱粉沉著",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "結節、潰瘍、臉部「獅面」(leonine facies)變化",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "蜂窩性組織炎、皮膚癌、淋巴瘤其他類型",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥ 80% 體表發紅(常合併 SS)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "異膚紅皮症、藥疹、Sézary、副腫瘤",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "T1 = patches/plaques &lt; 10% BSA;T2 = ≥ 10%;T3 = 結節 ≥ 1 cm;T4 = 紅皮症 ≥ 80%",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "N0 = 無腫大;N1-3 依組織學 / 分子陽性程度",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "M0 = 無;M1 = 有(肝、脾、肺、骨等)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "所有 patch / plaque",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每日 2 次,4-6 週評估;局部反應良好",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "難治 patch/plaque、廣泛型",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每日 1 次薄塗;接觸性皮膚炎常見",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "局限 patch/plaque",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "RXR 選擇性 retinoid;刺激性高",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "廣泛 patch / 薄 plaque",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每週 2-3 次;反應率 70-90%;維持治療常需要",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "厚 plaque、folliculotropic MF",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "滲透深;長期累積劑量需注意皮膚癌風險",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "單一頑固病灶",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "單次 8-12 Gy 即可達成緩解",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "廣泛厚 plaque / 紅皮症",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "低劑量(12 Gy)亦有效;副作用包含暫時性脫毛、汗腺受損",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "RXR 選擇性 retinoid",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "反應率 ~45%;副作用甲狀腺低下、高血脂(需合併 levothyroxine + statin)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗代謝免疫調節",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "5-25 mg/週;反應率 ~30%;健保有給付(其他適應症)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "免疫調節",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "反應率 ~30-50%;類流感副作用、憂鬱",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 CD30 ADC",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "ALCANZA 試驗:CD30+ MF / pcALCL ORR4 56% vs 13%;周邊神經病變副作用;台灣有條件給付",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 CCR4 單株抗體",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "MAVORIC 試驗:SS / MF 中位 PFS 7.7 個月 vs vorinostat 3.1;特別對 SS 有效",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "表觀遺傳調節",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "反應率 ~30%;血液毒性",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "傳統化療",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "反應率 30-40%;緩解期較短",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "免疫重建 + 移植抗腫瘤效果",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "進展期 MF / SS 唯一治癒可能性,5 年 OS ~ 30-40%",
-      "en": "",
-      "tag": "td"
-    }
+    { "zh": "CTCL 是什麼?", "en": "What is CTCL?", "tag": "h2" },
+    { "zh": "MF 臨床分期(經典三期)", "en": "Classic clinical stages of MF (3-phase progression)", "tag": "h2" },
+    { "zh": "MF 變異型 + Sézary", "en": "MF variants + Sézary syndrome", "tag": "h2" },
+    { "zh": "診斷流程(ISCL 演算法)", "en": "Diagnostic algorithm (ISCL)", "tag": "h2" },
+    { "zh": "TNMB 分期(ISCL/EORTC 2007)", "en": "TNMB staging (ISCL/EORTC 2007)", "tag": "h2" },
+    { "zh": "早期 MF 治療(Stage IA-IIA)— 皮膚導向", "en": "Early MF treatment (Stage IA–IIA) — skin-directed therapy", "tag": "h2" },
+    { "zh": "進展期 MF / SS 治療(Stage IIB-IVB)— 系統性", "en": "Advanced MF / SS (Stage IIB–IVB) — systemic therapy", "tag": "h2" },
+    { "zh": "CD30+ 原發性皮膚淋巴增生疾病", "en": "CD30+ primary cutaneous lymphoproliferative disorders", "tag": "h2" },
+    { "zh": "Dupilumab / TNF-α 抑制劑與 MF 鑑別", "en": "Differentiating MF from dupilumab / TNF-α inhibitor candidates", "tag": "h2" },
+    { "zh": "結語 — 5 件事", "en": "Bottom line — 5 takeaways", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "本文目錄", "en": "Contents", "tag": "h4" },
+    { "zh": "進展期 MF / SS 通常皮膚 + 系統性治療合併。常見系統性藥物:", "en": "Advanced MF / SS typically requires combined skin-directed + systemic therapy. Common systemic agents:", "tag": "p" },
+    { "zh": "近年文獻陸續報告:", "en": "Recent literature has reported:", "tag": "p" },
+    { "zh": "TDA 2024 建議:長期難治性異膚 / 乾癬患者啟動生物製劑前、若有以下「MF 線索」應先做皮膚切片:", "en": "TDA 2024 recommends: in patients with long-term refractory eczema/psoriasis, biopsy is required before initiating biologics if any of the following \"MF clues\" are present:", "tag": "p" },
+    { "zh": "蕈狀肉芽腫(MF)佔 CTCL 約 60%,Sézary 佔 ~3%,CD30+ LPD 佔 ~25%", "en": "Mycosis fungoides (MF) ~60% of CTCL, Sézary syndrome ~3%, CD30+ LPD ~25%", "tag": "li" },
+    { "zh": "發病高峰 50-60 歲、男:女 ~ 1.6-2:1", "en": "Peak onset 50–60 years; male-to-female ratio ~1.6–2:1", "tag": "li" },
+    { "zh": "SS / 紅皮症型 MF / 結節期 / 內臟轉移屬進展期、預後較差但仍可長期控制", "en": "SS / erythrodermic MF / tumor stage / visceral involvement are advanced; prognosis worse but long-term control still possible", "tag": "li" },
+    { "zh": "淋巴樣丘疹病(Lymphomatoid papulosis, LyP) — 良性反覆、但組織學似惡性", "en": "Lymphomatoid papulosis (LyP) — benign relapsing course but histologically malignant-appearing", "tag": "li" },
+    { "zh": "原發性皮膚未分化大細胞淋巴瘤(pcALCL)", "en": "Primary cutaneous anaplastic large cell lymphoma (pcALCL)", "tag": "li" },
+    { "zh": "其他罕見型:皮下脂膜炎樣 T 細胞淋巴瘤、γδ T 細胞淋巴瘤、原發性皮膚 CD8+ 侵襲性親表皮性 T 細胞淋巴瘤等", "en": "Other rare types: subcutaneous panniculitis-like T-cell lymphoma, γδ T-cell lymphoma, primary cutaneous CD8+ aggressive epidermotropic T-cell lymphoma, etc.", "tag": "li" },
+    { "zh": "不對稱分布 / 不曬部位主導 / 皮膚萎縮 / 皺紋紙感", "en": "Asymmetric distribution / sun-protected sites predominant / skin atrophy / cigarette-paper texture", "tag": "li" },
+    { "zh": "標準治療(類固醇 / TCI)反應極差", "en": "Poor response to standard therapy (corticosteroids / TCI)", "tag": "li" },
+    { "zh": "年長(&gt; 50 歲)首次出現所謂「異膚 / 乾癬」", "en": "Older adults (&gt; 50) with new-onset \"eczema/psoriasis\"", "tag": "li" },
+    { "zh": "合併淋巴結腫大 / 血液不正常 / 體重下降", "en": "Concurrent lymphadenopathy / blood abnormalities / weight loss", "tag": "li" },
+    { "zh": "少見的非何杰金氏淋巴瘤", "en": "Rare non-Hodgkin lymphoma", "tag": "strong" },
+    { "zh": "75% 為蕈狀肉芽腫(Mycosis fungoides, MF)", "en": "75% are mycosis fungoides (MF)", "tag": "strong" },
+    { "zh": "臺灣皮膚科醫學會 + 中華民國血液腫瘤學會 2024 聯合共識", "en": "TDA + Hematology and Oncology Society of Taiwan 2024 joint consensus", "tag": "strong" },
+    { "zh": "提醒:", "en": "Note:", "tag": "strong" },
+    { "zh": "非何杰金氏 T 細胞淋巴瘤", "en": "Non-Hodgkin T-cell lymphoma", "tag": "strong" },
+    { "zh": "Mogamulizumab(抗 CCR4)", "en": "Mogamulizumab (anti-CCR4)", "tag": "strong" },
+    { "zh": "Brentuximab vedotin(抗 CD30)", "en": "Brentuximab vedotin (anti-CD30)", "tag": "strong" },
+    { "zh": "來源於皮膚的成熟 T 細胞惡性腫瘤", "en": "Skin-derived mature T-cell malignancy", "tag": "strong" },
+    { "zh": "蕈狀肉芽腫(Mycosis fungoides, MF)", "en": "Mycosis fungoides (MF)", "tag": "strong" },
+    { "zh": "Sézary 症候群(SS)", "en": "Sézary syndrome (SS)", "tag": "strong" },
+    { "zh": "斑塊期(Patch)", "en": "Patch stage", "tag": "strong" },
+    { "zh": "厚斑期(Plaque)", "en": "Plaque stage", "tag": "strong" },
+    { "zh": "結節期(Tumor)", "en": "Tumor stage", "tag": "strong" },
+    { "zh": "紅皮症型(eMF)", "en": "Erythrodermic MF (eMF)", "tag": "strong" },
+    { "zh": "濾泡親性 MF(folliculotropic MF)", "en": "Folliculotropic MF", "tag": "strong" },
+    { "zh": "嚴重搔癢", "en": "severe pruritus", "tag": "strong" },
+    { "zh": "肉芽腫性鬆弛皮膚(granulomatous slack skin)", "en": "Granulomatous slack skin", "tag": "strong" },
+    { "zh": "ISCL 2005 演算法", "en": "ISCL 2005 algorithm", "tag": "strong" },
+    { "zh": "臨床標準", "en": "Clinical criteria", "tag": "strong" },
+    { "zh": "組織學標準", "en": "Histologic criteria", "tag": "strong" },
+    { "zh": "免疫表型", "en": "Immunophenotype", "tag": "strong" },
+    { "zh": "分子", "en": "Molecular", "tag": "strong" },
+    { "zh": "多次切片 + 不同部位", "en": "Multiple biopsies from different sites", "tag": "strong" },
+    { "zh": "T(皮膚)", "en": "T (skin)", "tag": "strong" },
+    { "zh": "N(淋巴結)", "en": "N (nodes)", "tag": "strong" },
+    { "zh": "M(內臟轉移)", "en": "M (visceral metastasis)", "tag": "strong" },
+    { "zh": "B(血液 T 細胞侵犯)", "en": "B (blood T-cell involvement)", "tag": "strong" },
+    { "zh": "B2 = ≥ 1000/μL Sézary 細胞 → 自動為 SS", "en": "B2 = ≥ 1000/μL Sézary cells → automatically classified as SS", "tag": "strong" },
+    { "zh": "主要分期", "en": "Main staging groups", "tag": "strong" },
+    { "zh": "「皮膚導向治療(skin-directed therapy)」", "en": "Skin-directed therapy", "tag": "strong" },
+    { "zh": "外用中強效 / 超強效類固醇", "en": "Topical mid- to super-potent corticosteroids", "tag": "strong" },
+    { "zh": "外用 Mechlorethamine(氮芥子氣)", "en": "Topical mechlorethamine (nitrogen mustard)", "tag": "strong" },
+    { "zh": "外用 Bexarotene 1% 凝膠", "en": "Topical bexarotene 1% gel", "tag": "strong" },
+    { "zh": "PUVA(口服 8-MOP + UVA)", "en": "PUVA (oral 8-MOP + UVA)", "tag": "strong" },
+    { "zh": "局部放射治療", "en": "Local radiation therapy", "tag": "strong" },
+    { "zh": "全皮膚電子束照射(TSEBT)", "en": "Total skin electron beam therapy (TSEBT)", "tag": "strong" },
+    { "zh": "口服 Bexarotene", "en": "Oral bexarotene", "tag": "strong" },
+    { "zh": "低劑量 Methotrexate", "en": "Low-dose methotrexate", "tag": "strong" },
+    { "zh": "同種異體骨髓移植(allo-HSCT)", "en": "Allogeneic hematopoietic stem cell transplant (allo-HSCT)", "tag": "strong" },
+    { "zh": "淋巴樣丘疹病(LyP)", "en": "Lymphomatoid papulosis (LyP)", "tag": "strong" },
+    { "zh": "5 年存活率 100%", "en": "5-year survival 100%", "tag": "strong" },
+    { "zh": "觀察為主", "en": "Observation is primary management", "tag": "strong" },
+    { "zh": "⚠ TDA 2024 共識重點:啟動生物製劑前的鑑別", "en": "⚠ TDA 2024 consensus key point: differential diagnosis before initiating biologics", "tag": "strong" },
+    { "zh": "TNF-α 抑制劑", "en": "TNF-α inhibitors", "tag": "strong" },
+    { "zh": "MF 不等於絕症", "en": "MF is not a death sentence", "tag": "strong" },
+    { "zh": "「治不好的濕疹」要警覺", "en": "Stay alert for \"refractory eczema\"", "tag": "strong" },
+    { "zh": "皮膚優先治療", "en": "Skin-first therapy", "tag": "strong" },
+    { "zh": "新藥改變進展期", "en": "New drugs reshape advanced-stage outcomes", "tag": "strong" },
+    { "zh": "生物製劑前要鑑別", "en": "Differentiate before starting biologics", "tag": "strong" },
+    { "zh": "延伸閱讀:", "en": "Further reading:", "tag": "strong" },
+    { "zh": "臺灣皮膚科醫學會 + 中華民國血液腫瘤學會。 皮膚 T 細胞淋巴瘤(CTCL)診斷與治療共識", "en": "Taiwanese Dermatological Association + Taiwan Society of Hematology and Oncology. Cutaneous T-Cell Lymphoma (CTCL) Diagnosis and Treatment Consensus.", "tag": "strong" },
+    { "zh": "陳翊嘉 醫師", "en": "Dr. Yi-Jia Chen", "tag": "strong" },
+    { "zh": "皮膚 T 細胞淋巴瘤完整衛教", "en": "Comprehensive cutaneous T-cell lymphoma guide", "tag": "span" },
+    { "zh": "依 TDA + 血液腫瘤學會 2024 · 更新 2026-05-07", "en": "Per TDA + Taiwan Hematology Oncology Society 2024 · Updated 2026-05-07", "tag": "span" },
+    { "zh": "蕈狀肉芽腫、Sézary、TNMB 分期完整解析", "en": "Mycosis fungoides, Sézary syndrome, TNMB staging — complete breakdown", "tag": "span" },
+    { "zh": "皮膚科 住院醫師", "en": "Dermatology Resident", "tag": "span" },
+    { "zh": "期別", "en": "Stage", "tag": "th" },
+    { "zh": "特徵", "en": "Features", "tag": "th" },
+    { "zh": "誤診常為", "en": "Common misdiagnosis", "tag": "th" },
+    { "zh": "類別", "en": "Category", "tag": "th" },
+    { "zh": "定義", "en": "Definition", "tag": "th" },
+    { "zh": "方式", "en": "Modality", "tag": "th" },
+    { "zh": "適應症", "en": "Indication", "tag": "th" },
+    { "zh": "備註", "en": "Notes", "tag": "th" },
+    { "zh": "藥物", "en": "Drug", "tag": "th" },
+    { "zh": "機轉", "en": "Mechanism", "tag": "th" },
+    { "zh": "關鍵試驗 / 健保", "en": "Pivotal trial / NHI", "tag": "th" },
+    { "zh": "扁平、鱗屑、淡紅或棕紅、不規則邊界、好發遮陽部位(臀部、大腿內側、軀幹)、可癢可不癢", "en": "Flat, scaly, pink-to-brown patches, irregular borders, predilection for sun-protected sites (buttocks, inner thighs, trunk); pruritus variable", "tag": "td" },
+    { "zh": "慢性濕疹、副银屑癬、體癬、藥疹、白斑(色素脫失型)", "en": "Chronic eczema, parapsoriasis, tinea corporis, drug eruption, vitiligo (hypopigmented variant)", "tag": "td" },
+    { "zh": "明顯隆起、紅褐色、可有萎縮 / 皺紋紙感、邊界較清楚", "en": "Distinctly elevated, red-brown, possible atrophy / cigarette-paper texture, more defined borders", "tag": "td" },
+    { "zh": "乾癬、扁平苔癬、慢性濕疹、皮膚澱粉沉著", "en": "Psoriasis, lichen planus, chronic eczema, cutaneous amyloidosis", "tag": "td" },
+    { "zh": "結節、潰瘍、臉部「獅面」(leonine facies)變化", "en": "Nodules, ulceration, leonine facies on the face", "tag": "td" },
+    { "zh": "蜂窩性組織炎、皮膚癌、淋巴瘤其他類型", "en": "Cellulitis, cutaneous malignancies, other lymphoma types", "tag": "td" },
+    { "zh": "≥ 80% 體表發紅(常合併 SS)", "en": "≥ 80% BSA erythema (often coexists with SS)", "tag": "td" },
+    { "zh": "異膚紅皮症、藥疹、Sézary、副腫瘤", "en": "AD-related erythroderma, drug eruption, Sézary, paraneoplastic erythroderma", "tag": "td" },
+    { "zh": "T1 = patches/plaques &lt; 10% BSA;T2 = ≥ 10%;T3 = 結節 ≥ 1 cm;T4 = 紅皮症 ≥ 80%", "en": "T1 = patches/plaques &lt; 10% BSA; T2 = ≥ 10%; T3 = tumor ≥ 1 cm; T4 = erythroderma ≥ 80%", "tag": "td" },
+    { "zh": "N0 = 無腫大;N1-3 依組織學 / 分子陽性程度", "en": "N0 = no palpable nodes; N1–3 graded by histologic/molecular involvement", "tag": "td" },
+    { "zh": "M0 = 無;M1 = 有(肝、脾、肺、骨等)", "en": "M0 = no visceral involvement; M1 = present (liver, spleen, lung, bone, etc.)", "tag": "td" },
+    { "zh": "所有 patch / plaque", "en": "All patch / plaque stages", "tag": "td" },
+    { "zh": "每日 2 次,4-6 週評估;局部反應良好", "en": "Twice daily, evaluate at 4–6 weeks; local response generally good", "tag": "td" },
+    { "zh": "難治 patch/plaque、廣泛型", "en": "Refractory or widespread patch/plaque", "tag": "td" },
+    { "zh": "每日 1 次薄塗;接觸性皮膚炎常見", "en": "Apply thinly once daily; contact dermatitis is common", "tag": "td" },
+    { "zh": "局限 patch/plaque", "en": "Localized patch/plaque", "tag": "td" },
+    { "zh": "RXR 選擇性 retinoid;刺激性高", "en": "RXR-selective retinoid; highly irritating", "tag": "td" },
+    { "zh": "廣泛 patch / 薄 plaque", "en": "Extensive patches / thin plaques", "tag": "td" },
+    { "zh": "每週 2-3 次;反應率 70-90%;維持治療常需要", "en": "2–3 times/week; response rate 70–90%; maintenance often required", "tag": "td" },
+    { "zh": "厚 plaque、folliculotropic MF", "en": "Thick plaques, folliculotropic MF", "tag": "td" },
+    { "zh": "滲透深;長期累積劑量需注意皮膚癌風險", "en": "Deeper penetration; cumulative dose increases skin cancer risk", "tag": "td" },
+    { "zh": "單一頑固病灶", "en": "Solitary refractory lesion", "tag": "td" },
+    { "zh": "單次 8-12 Gy 即可達成緩解", "en": "Single 8–12 Gy dose can achieve remission", "tag": "td" },
+    { "zh": "廣泛厚 plaque / 紅皮症", "en": "Extensive thick plaques / erythroderma", "tag": "td" },
+    { "zh": "低劑量(12 Gy)亦有效;副作用包含暫時性脫毛、汗腺受損", "en": "Low-dose (12 Gy) is effective; side effects include transient alopecia, sweat-gland impairment", "tag": "td" },
+    { "zh": "RXR 選擇性 retinoid", "en": "RXR-selective retinoid", "tag": "td" },
+    { "zh": "反應率 ~45%;副作用甲狀腺低下、高血脂(需合併 levothyroxine + statin)", "en": "Response ~45%; AEs include hypothyroidism, hyperlipidemia (often requires concomitant levothyroxine + statin)", "tag": "td" },
+    { "zh": "抗代謝免疫調節", "en": "Antimetabolite immunomodulator", "tag": "td" },
+    { "zh": "5-25 mg/週;反應率 ~30%;健保有給付(其他適應症)", "en": "5–25 mg/week; response ~30%; NHI-covered (other indications)", "tag": "td" },
+    { "zh": "免疫調節", "en": "Immunomodulator", "tag": "td" },
+    { "zh": "反應率 ~30-50%;類流感副作用、憂鬱", "en": "Response 30–50%; flu-like side effects, depression", "tag": "td" },
+    { "zh": "抗 CD30 ADC", "en": "Anti-CD30 ADC", "tag": "td" },
+    { "zh": "ALCANZA 試驗:CD30+ MF / pcALCL ORR4 56% vs 13%;周邊神經病變副作用;台灣有條件給付", "en": "ALCANZA trial: CD30+ MF/pcALCL ORR4 56% vs 13%; peripheral neuropathy as key AE; Taiwan NHI conditional reimbursement", "tag": "td" },
+    { "zh": "抗 CCR4 單株抗體", "en": "Anti-CCR4 monoclonal antibody", "tag": "td" },
+    { "zh": "MAVORIC 試驗:SS / MF 中位 PFS 7.7 個月 vs vorinostat 3.1;特別對 SS 有效", "en": "MAVORIC trial: SS/MF median PFS 7.7 months vs vorinostat 3.1; particularly effective in SS", "tag": "td" },
+    { "zh": "表觀遺傳調節", "en": "Epigenetic modulator", "tag": "td" },
+    { "zh": "反應率 ~30%;血液毒性", "en": "Response ~30%; hematologic toxicity", "tag": "td" },
+    { "zh": "傳統化療", "en": "Conventional chemotherapy", "tag": "td" },
+    { "zh": "反應率 30-40%;緩解期較短", "en": "Response 30–40%; shorter remission duration", "tag": "td" },
+    { "zh": "免疫重建 + 移植抗腫瘤效果", "en": "Immune reconstitution + graft-versus-tumor effect", "tag": "td" },
+    { "zh": "進展期 MF / SS 唯一治癒可能性,5 年 OS ~ 30-40%", "en": "The only potentially curative option for advanced MF / SS; 5-year OS ~30–40%", "tag": "td" }
   ]
 }

@@ -1,915 +1,187 @@
 {
   "slug": "topical-steroids-guide",
   "strings": [
-    {
-      "zh": "為什麼皮膚科常開類固醇藥膏？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "7 級類固醇強度分類（美國分級）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "不同部位該用哪一級？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "指尖單位（Fingertip Unit, FTU）— 擦多少才夠？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "擦多久？週末療法是什麼？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "副作用與停藥反彈",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "類固醇恐懼症（TCS phobia）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "非類固醇選擇：TCI 與 PDE-4 抑制劑",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "特殊族群：孕婦、哺乳、兒童、老人",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "常見問題",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "結語",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "常見局部副作用",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "全身性副作用（罕見，大量長期才發生）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "停藥反彈（Topical Steroid Withdrawal, TSW）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "類固醇藥膏可以擦多久？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "用完類固醇要不要保濕？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "類固醇藥膏會不會被吸收影響全身？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "強力施美露(Triamcinolone)和寧益膚(Mometasone)哪個強？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "類固醇藥膏可以用在小寶寶嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "類固醇藥膏可以擦痘痘嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "普特皮(Tacrolimus)和類固醇有什麼差？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "網路說 TCS withdrawal 很可怕，我該停類固醇嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "本篇大綱",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "美國皮膚科醫學會以「血管收縮試驗（vasoconstriction assay）」分級，從最強(Class I)到最弱(Class VII)。台灣常用品名對照：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "皮膚厚度與穿透率不同，部位決定強度選擇：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "大多數情況下：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "需要。先擦類固醇等吸收 5-10 分鐘，再擦保濕霜在整個區域。或反過來：先保濕、等吸收，再點擦類固醇於病灶 — 兩種方法都可以。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "不要因為網路上的恐怖故事就擅自停藥 — 大多數正確醫療使用的人從不出問題。有疑慮就帶藥膏盒去問皮膚科醫師，他會告訴你目前用的強度與你的病況是否合適。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "急性期超過 4 週仍未改善 → 重新評估診斷，或升級到 TCI / 光療 / 全身性藥",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "毛髮增生(facial hypertrichosis)、色素脫失",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "下視丘 - 腦下垂體 - 腎上腺軸（HPA axis）抑制",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "白內障、青光眼（眼周長期使用）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "骨質疏鬆、生長遲緩（兒童大量長期）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "原處嚴重紅腫、灼熱、刺痛(rebound erythema)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "皮膚廣泛脫皮、滲出",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "遠超原始疾病範圍",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "用對部位、用對強度、用對時間",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "提醒：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "強效抗發炎、抗增殖、抗免疫",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "關掉發炎開關",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "糖皮質激素受體（GR）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "戴摩肝（Dermovate）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "寧益膚（Elomet）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "臉部、頸部",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "眼周",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "腋下、鼠蹊、會陰、皺褶處",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外陰、陰囊、肛周",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "軀幹（胸背腹）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "四肢伸展側",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "手肘、膝蓋（乾癬常見）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "手掌、腳底",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "頭皮",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "1 FTU = 從成人食指指尖到第一指節擠出的藥膏量",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「擦了油亮的一層」就是太多了",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "急性期",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "每天 1-2 次連用 7-14 天",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "進入維持期",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「週末療法 (Weekend therapy)」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "主動維持治療(proactive treatment)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皮膚萎縮",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "毛細血管擴張",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "痤瘡樣皮疹 / 玫瑰斑誘發",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "口周皮膚炎",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "類固醇紋",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "細菌、黴菌、病毒感染加重",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "強效",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "逐步減量",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "30-80% 的異膚病人",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "全身吸收極少",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不治療發炎才會留色素沉著",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不會生理上癮",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "安全的",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Tacrolimus 0.03% / 0.1%（普特皮）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不萎縮",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Pimecrolimus 1%（醫立妥）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Crisaborole 2%（寇緹斯）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "使用順序建議",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "優先用 TCI",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "避免大面積長期高效",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "乳頭",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "面積比較大、皮膚較薄",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不可長期大面積",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "連續超過 4 週",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "全身性副作用幾乎不會發生",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "劑型差異很重要",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Tacrolimus 0.03% 普特皮 ≥ 2 歲、Pimecrolimus 1% 醫立妥 ≥ 2 歲、Crisaborole 寇緹斯 ≥ 3 個月",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不建議常規使用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "長期會誘發類固醇玫瑰斑、痤瘡樣皮疹、毛囊炎",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "注射",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不會造成皮膚萎縮、不會反彈、可長期使用、適合臉部與皺褶處",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不要因網路恐慌擅自停藥",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "長期不當使用最強類固醇",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "最強、最廣、最安全",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "選對強度",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "用對時機",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "合理時程",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "延伸閱讀：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陳翊嘉 醫師",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "異位性皮膚炎診療共識（2020 更新）",
-      "en": "",
-      "tag": "em"
-    },
-    {
-      "zh": "外用類固醇完整指南",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "更新 2026-05-04",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "7 級分類、部位對應、TCI 比較、安全使用",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "皮膚科 住院醫師",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "等級",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "強度",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "學名 + 濃度",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "台灣常見品名",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "部位",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "建議等級",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "原因",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "FTU（成人）",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "FTU（2-5 歲兒童）",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "藥物",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "機轉",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "適應症",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "優點",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "缺點 / 注意",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "族群",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "建議",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "超強效（Super-potent）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "強效（High-potent）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "達膚松、Mometasone furoate 0.1% ointment",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "中強效（Medium-high）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "強力施美露 (Triamcinolone 0.5%)、Betnovate",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "中效（Medium）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "中弱效（Lower-mid）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Locoid、福俐康（Synalar）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "弱效（Mild）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "最弱效（Least-potent）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Hydrocortisone 1%（部分為指示用藥）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Class VI-VII（弱）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "皮膚薄，易萎縮、毛細血管擴張、長痘",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Class VII 短期 / TCI",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "角膜風險，可能誘發白內障青光眼",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Class V-VII（弱）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "皮膚薄 + 對磨吸收倍增",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Class VI-VII 或 TCI",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "吸收極高，易萎縮",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Class III-V（中）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "標準強度",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Class III-IV（中強）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "較厚，需中強",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Class I-III（強）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "厚塊，需強效",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Class I-II（強）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "角質厚，需穿透強",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "毛髮覆蓋，液態 / 洗髮精劑型較適用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "臉 + 頸部",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "單手（含手指）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "單上肢（肩到手）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "單下肢",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "軀幹前",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "軀幹後 + 臀",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "單腳掌",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Calcineurin 抑制劑(TCI)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "異膚 ≥ 2 歲(0.03%)、≥ 16 歲(0.1%)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "初期灼熱感、避免日曬、黑盒警告（腫瘤風險未證實）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "同上，較弱",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "異膚 ≥ 2 歲輕中度",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "溫和，適合臉部",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "效力較弱",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "PDE-4 抑制劑",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "異膚 ≥ 3 個月輕中度",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "新生兒可用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "可能刺激",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "JAK 抑制劑",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "異膚、白斑 ≥ 12 歲",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "很強，白斑首個專用藥",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "自費高價",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "乾癬、異膚",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "新藥",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "台灣尚未廣泛上市",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "AhR 致效劑",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "新機轉",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "台灣尚未上市",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "孕婦",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "哺乳",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "兒童",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "老人",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "皮膚薄，容易萎縮 / 紫斑，降階到 TCI 較安全",
-      "en": "",
-      "tag": "td"
-    }
+    { "zh": "為什麼皮膚科常開類固醇藥膏？", "en": "Why do dermatologists often prescribe topical corticosteroids?", "tag": "h2" },
+    { "zh": "7 級類固醇強度分類（美國分級）", "en": "7-class topical corticosteroid potency system (US classification)", "tag": "h2" },
+    { "zh": "不同部位該用哪一級？", "en": "Which class should you use on which body site?", "tag": "h2" },
+    { "zh": "指尖單位（Fingertip Unit, FTU）— 擦多少才夠？", "en": "Fingertip Unit (FTU) — how much is enough?", "tag": "h2" },
+    { "zh": "擦多久？週末療法是什麼？", "en": "How long should you use it? What is weekend therapy?", "tag": "h2" },
+    { "zh": "副作用與停藥反彈", "en": "Side effects and rebound after discontinuation", "tag": "h2" },
+    { "zh": "類固醇恐懼症（TCS phobia）", "en": "Topical corticosteroid (TCS) phobia", "tag": "h2" },
+    { "zh": "非類固醇選擇：TCI 與 PDE-4 抑制劑", "en": "Non-steroidal alternatives: TCI and PDE-4 inhibitors", "tag": "h2" },
+    { "zh": "特殊族群：孕婦、哺乳、兒童、老人", "en": "Special populations: pregnancy, lactation, children, elderly", "tag": "h2" },
+    { "zh": "常見問題", "en": "Common questions", "tag": "h2" },
+    { "zh": "結語", "en": "Bottom line", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "常見局部副作用", "en": "Common local side effects", "tag": "h3" },
+    { "zh": "全身性副作用（罕見，大量長期才發生）", "en": "Systemic side effects (rare, only with extensive long-term use)", "tag": "h3" },
+    { "zh": "停藥反彈（Topical Steroid Withdrawal, TSW）", "en": "Topical Steroid Withdrawal (TSW)", "tag": "h3" },
+    { "zh": "類固醇藥膏可以擦多久？", "en": "How long can topical corticosteroids be used?", "tag": "h3" },
+    { "zh": "用完類固醇要不要保濕？", "en": "Should you moisturize after applying corticosteroid?", "tag": "h3" },
+    { "zh": "類固醇藥膏會不會被吸收影響全身？", "en": "Are topical corticosteroids systemically absorbed?", "tag": "h3" },
+    { "zh": "強力施美露(Triamcinolone)和寧益膚(Mometasone)哪個強？", "en": "Which is stronger — triamcinolone or mometasone?", "tag": "h3" },
+    { "zh": "類固醇藥膏可以用在小寶寶嗎？", "en": "Can topical corticosteroids be used on infants?", "tag": "h3" },
+    { "zh": "類固醇藥膏可以擦痘痘嗎？", "en": "Can topical corticosteroids be used on acne?", "tag": "h3" },
+    { "zh": "普特皮(Tacrolimus)和類固醇有什麼差？", "en": "How does tacrolimus (Protopic) differ from topical corticosteroids?", "tag": "h3" },
+    { "zh": "網路說 TCS withdrawal 很可怕，我該停類固醇嗎？", "en": "The internet says TCS withdrawal is scary — should I stop corticosteroids?", "tag": "h3" },
+    { "zh": "本篇大綱", "en": "Article outline", "tag": "h4" },
+    { "zh": "美國皮膚科醫學會以「血管收縮試驗（vasoconstriction assay）」分級，從最強(Class I)到最弱(Class VII)。台灣常用品名對照：", "en": "The AAD grades topical corticosteroids by vasoconstriction assay, from strongest (Class I) to weakest (Class VII). Common Taiwan brand cross-reference:", "tag": "p" },
+    { "zh": "皮膚厚度與穿透率不同，部位決定強度選擇：", "en": "Skin thickness and absorption vary by site, determining the potency choice:", "tag": "p" },
+    { "zh": "大多數情況下：", "en": "In most cases:", "tag": "p" },
+    { "zh": "需要。先擦類固醇等吸收 5-10 分鐘，再擦保濕霜在整個區域。或反過來：先保濕、等吸收，再點擦類固醇於病灶 — 兩種方法都可以。", "en": "Yes. Apply corticosteroid first, wait 5–10 minutes for absorption, then apply moisturizer over the entire area. Or reverse: moisturizer first, wait, then dab corticosteroid on lesions — both work.", "tag": "p" },
+    { "zh": "不要因為網路上的恐怖故事就擅自停藥 — 大多數正確醫療使用的人從不出問題。有疑慮就帶藥膏盒去問皮膚科醫師，他會告訴你目前用的強度與你的病況是否合適。", "en": "Don't stop your medication based on internet horror stories — most patients on correct medical regimens never have problems. If concerned, bring the cream tube to your dermatologist, who can confirm whether the strength matches your condition.", "tag": "p" },
+    { "zh": "急性期超過 4 週仍未改善 → 重新評估診斷，或升級到 TCI / 光療 / 全身性藥", "en": "If acute flare hasn't improved after 4 weeks → reassess diagnosis or step up to TCI / phototherapy / systemic agents", "tag": "li" },
+    { "zh": "毛髮增生(facial hypertrichosis)、色素脫失", "en": "Facial hypertrichosis, hypopigmentation", "tag": "li" },
+    { "zh": "下視丘 - 腦下垂體 - 腎上腺軸（HPA axis）抑制", "en": "Hypothalamic-pituitary-adrenal (HPA) axis suppression", "tag": "li" },
+    { "zh": "白內障、青光眼（眼周長期使用）", "en": "Cataract, glaucoma (long-term periorbital use)", "tag": "li" },
+    { "zh": "骨質疏鬆、生長遲緩（兒童大量長期）", "en": "Osteoporosis, growth delay (extensive long-term use in children)", "tag": "li" },
+    { "zh": "原處嚴重紅腫、灼熱、刺痛(rebound erythema)", "en": "Severe redness, burning, stinging at original site (rebound erythema)", "tag": "li" },
+    { "zh": "皮膚廣泛脫皮、滲出", "en": "Widespread skin desquamation and oozing", "tag": "li" },
+    { "zh": "遠超原始疾病範圍", "en": "Far exceeds the original disease distribution", "tag": "li" },
+    { "zh": "用對部位、用對強度、用對時間", "en": "Right site, right potency, right duration", "tag": "strong" },
+    { "zh": "提醒：", "en": "Note:", "tag": "strong" },
+    { "zh": "強效抗發炎、抗增殖、抗免疫", "en": "potent anti-inflammatory, antiproliferative, immunosuppressive", "tag": "strong" },
+    { "zh": "關掉發炎開關", "en": "switching off the inflammation cascade", "tag": "strong" },
+    { "zh": "糖皮質激素受體（GR）", "en": "glucocorticoid receptor (GR)", "tag": "strong" },
+    { "zh": "戴摩肝（Dermovate）", "en": "Dermovate (clobetasol propionate 0.05%)", "tag": "strong" },
+    { "zh": "寧益膚（Elomet）", "en": "Elomet (mometasone furoate 0.1%)", "tag": "strong" },
+    { "zh": "臉部、頸部", "en": "Face, neck", "tag": "strong" },
+    { "zh": "眼周", "en": "Periorbital area", "tag": "strong" },
+    { "zh": "腋下、鼠蹊、會陰、皺褶處", "en": "Axillae, groin, perineum, intertriginous areas", "tag": "strong" },
+    { "zh": "外陰、陰囊、肛周", "en": "Vulva, scrotum, perianal area", "tag": "strong" },
+    { "zh": "軀幹（胸背腹）", "en": "Trunk (chest, back, abdomen)", "tag": "strong" },
+    { "zh": "四肢伸展側", "en": "Extensor surfaces of limbs", "tag": "strong" },
+    { "zh": "手肘、膝蓋（乾癬常見）", "en": "Elbows, knees (common for psoriasis)", "tag": "strong" },
+    { "zh": "手掌、腳底", "en": "Palms, soles", "tag": "strong" },
+    { "zh": "頭皮", "en": "Scalp", "tag": "strong" },
+    { "zh": "1 FTU = 從成人食指指尖到第一指節擠出的藥膏量", "en": "1 FTU = amount squeezed from adult fingertip to first interphalangeal joint", "tag": "strong" },
+    { "zh": "「擦了油亮的一層」就是太多了", "en": "If your skin looks oily/glossy, you've applied too much", "tag": "strong" },
+    { "zh": "急性期", "en": "Acute phase", "tag": "strong" },
+    { "zh": "每天 1-2 次連用 7-14 天", "en": "1–2 times daily for 7–14 days", "tag": "strong" },
+    { "zh": "進入維持期", "en": "transition to maintenance", "tag": "strong" },
+    { "zh": "「週末療法 (Weekend therapy)」", "en": "Weekend therapy", "tag": "strong" },
+    { "zh": "主動維持治療(proactive treatment)", "en": "Proactive maintenance treatment", "tag": "strong" },
+    { "zh": "皮膚萎縮", "en": "Skin atrophy", "tag": "strong" },
+    { "zh": "毛細血管擴張", "en": "Telangiectasia", "tag": "strong" },
+    { "zh": "痤瘡樣皮疹 / 玫瑰斑誘發", "en": "Acneiform rash / steroid-induced rosacea", "tag": "strong" },
+    { "zh": "口周皮膚炎", "en": "Perioral dermatitis", "tag": "strong" },
+    { "zh": "類固醇紋", "en": "Striae (stretch marks)", "tag": "strong" },
+    { "zh": "細菌、黴菌、病毒感染加重", "en": "Worsening of bacterial, fungal, or viral infection", "tag": "strong" },
+    { "zh": "強效", "en": "Potent", "tag": "strong" },
+    { "zh": "逐步減量", "en": "Gradual taper", "tag": "strong" },
+    { "zh": "30-80% 的異膚病人", "en": "30–80% of AD patients", "tag": "strong" },
+    { "zh": "全身吸收極少", "en": "minimal systemic absorption", "tag": "strong" },
+    { "zh": "不治療發炎才會留色素沉著", "en": "untreated inflammation is what causes hyperpigmentation", "tag": "strong" },
+    { "zh": "不會生理上癮", "en": "no physiologic addiction", "tag": "strong" },
+    { "zh": "安全的", "en": "safe", "tag": "strong" },
+    { "zh": "Tacrolimus 0.03% / 0.1%（普特皮）", "en": "Tacrolimus 0.03% / 0.1% (Protopic)", "tag": "strong" },
+    { "zh": "不萎縮", "en": "no atrophy", "tag": "strong" },
+    { "zh": "Pimecrolimus 1%（醫立妥）", "en": "Pimecrolimus 1% (Elidel)", "tag": "strong" },
+    { "zh": "Crisaborole 2%（寇緹斯）", "en": "Crisaborole 2% (Eucrisa)", "tag": "strong" },
+    { "zh": "使用順序建議", "en": "Recommended sequencing", "tag": "strong" },
+    { "zh": "優先用 TCI", "en": "Prioritize TCI", "tag": "strong" },
+    { "zh": "避免大面積長期高效", "en": "Avoid extensive long-term high-potency use", "tag": "strong" },
+    { "zh": "乳頭", "en": "Nipple", "tag": "strong" },
+    { "zh": "面積比較大、皮膚較薄", "en": "Larger surface area and thinner skin (relative to adults)", "tag": "strong" },
+    { "zh": "不可長期大面積", "en": "Avoid prolonged extensive use", "tag": "strong" },
+    { "zh": "連續超過 4 週", "en": "Continuous use beyond 4 weeks", "tag": "strong" },
+    { "zh": "全身性副作用幾乎不會發生", "en": "Systemic side effects essentially do not occur", "tag": "strong" },
+    { "zh": "劑型差異很重要", "en": "Vehicle differences matter", "tag": "strong" },
+    { "zh": "Tacrolimus 0.03% 普特皮 ≥ 2 歲、Pimecrolimus 1% 醫立妥 ≥ 2 歲、Crisaborole 寇緹斯 ≥ 3 個月", "en": "Tacrolimus 0.03% (Protopic) ≥ 2 years; pimecrolimus 1% (Elidel) ≥ 2 years; crisaborole (Eucrisa) ≥ 3 months", "tag": "strong" },
+    { "zh": "不建議常規使用", "en": "Not recommended for routine use", "tag": "strong" },
+    { "zh": "長期會誘發類固醇玫瑰斑、痤瘡樣皮疹、毛囊炎", "en": "Long-term use induces steroid rosacea, acneiform rash, folliculitis", "tag": "strong" },
+    { "zh": "注射", "en": "Injection", "tag": "strong" },
+    { "zh": "不會造成皮膚萎縮、不會反彈、可長期使用、適合臉部與皺褶處", "en": "No skin atrophy, no rebound, suitable for long-term use, ideal for face and folds", "tag": "strong" },
+    { "zh": "不要因網路恐慌擅自停藥", "en": "Don't stop based on internet panic", "tag": "strong" },
+    { "zh": "長期不當使用最強類固醇", "en": "Prolonged inappropriate use of super-potent corticosteroids", "tag": "strong" },
+    { "zh": "最強、最廣、最安全", "en": "the most potent, most versatile, and safest", "tag": "strong" },
+    { "zh": "選對強度", "en": "Right potency", "tag": "strong" },
+    { "zh": "用對時機", "en": "Right timing", "tag": "strong" },
+    { "zh": "合理時程", "en": "Reasonable duration", "tag": "strong" },
+    { "zh": "延伸閱讀：", "en": "Further reading:", "tag": "strong" },
+    { "zh": "陳翊嘉 醫師", "en": "Dr. Yi-Jia Chen", "tag": "strong" },
+    { "zh": "異位性皮膚炎診療共識（2020 更新）", "en": "Atopic dermatitis treatment consensus (2020 update)", "tag": "em" },
+    { "zh": "外用類固醇完整指南", "en": "Comprehensive topical corticosteroid guide", "tag": "span" },
+    { "zh": "更新 2026-05-04", "en": "Updated 2026-05-04", "tag": "span" },
+    { "zh": "7 級分類、部位對應、TCI 比較、安全使用", "en": "7-class system, site-by-site selection, TCI comparison, safe-use principles", "tag": "span" },
+    { "zh": "皮膚科 住院醫師", "en": "Dermatology Resident", "tag": "span" },
+    { "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：", "en": "Content corrections / academic citation inquiries / media partnerships:", "tag": "span" },
+    { "zh": "等級", "en": "Class", "tag": "th" },
+    { "zh": "強度", "en": "Potency", "tag": "th" },
+    { "zh": "學名 + 濃度", "en": "Generic name + concentration", "tag": "th" },
+    { "zh": "台灣常見品名", "en": "Common Taiwan brand", "tag": "th" },
+    { "zh": "部位", "en": "Site", "tag": "th" },
+    { "zh": "建議等級", "en": "Recommended class", "tag": "th" },
+    { "zh": "原因", "en": "Reason", "tag": "th" },
+    { "zh": "FTU（成人）", "en": "FTU (adult)", "tag": "th" },
+    { "zh": "FTU（2-5 歲兒童）", "en": "FTU (children 2–5 yr)", "tag": "th" },
+    { "zh": "藥物", "en": "Drug", "tag": "th" },
+    { "zh": "機轉", "en": "Mechanism", "tag": "th" },
+    { "zh": "適應症", "en": "Indication", "tag": "th" },
+    { "zh": "優點", "en": "Advantages", "tag": "th" },
+    { "zh": "缺點 / 注意", "en": "Disadvantages / cautions", "tag": "th" },
+    { "zh": "族群", "en": "Population", "tag": "th" },
+    { "zh": "建議", "en": "Recommendation", "tag": "th" },
+    { "zh": "超強效（Super-potent）", "en": "Super-potent", "tag": "td" },
+    { "zh": "強效（High-potent）", "en": "High-potent", "tag": "td" },
+    { "zh": "達膚松、Mometasone furoate 0.1% ointment", "en": "Dermovate, mometasone furoate 0.1% ointment", "tag": "td" },
+    { "zh": "中強效（Medium-high）", "en": "Medium-high", "tag": "td" },
+    { "zh": "強力施美露 (Triamcinolone 0.5%)、Betnovate", "en": "Triamcinolone 0.5% (Aristocort), Betnovate (betamethasone valerate 0.1%)", "tag": "td" },
+    { "zh": "中效（Medium）", "en": "Medium", "tag": "td" },
+    { "zh": "中弱效（Lower-mid）", "en": "Lower-mid", "tag": "td" },
+    { "zh": "Locoid、福俐康（Synalar）", "en": "Locoid (hydrocortisone butyrate), Synalar (fluocinolone acetonide)", "tag": "td" },
+    { "zh": "弱效（Mild）", "en": "Mild", "tag": "td" },
+    { "zh": "最弱效（Least-potent）", "en": "Least-potent", "tag": "td" },
+    { "zh": "Hydrocortisone 1%（部分為指示用藥）", "en": "Hydrocortisone 1% (some formulations OTC)", "tag": "td" },
+    { "zh": "Class VI-VII（弱）", "en": "Class VI–VII (mild)", "tag": "td" },
+    { "zh": "皮膚薄，易萎縮、毛細血管擴張、長痘", "en": "Thin skin; prone to atrophy, telangiectasia, acneiform rash", "tag": "td" },
+    { "zh": "Class VII 短期 / TCI", "en": "Class VII short-term or TCI", "tag": "td" },
+    { "zh": "角膜風險，可能誘發白內障青光眼", "en": "Corneal risk; can induce cataract or glaucoma", "tag": "td" },
+    { "zh": "Class V-VII（弱）", "en": "Class V–VII (mild)", "tag": "td" },
+    { "zh": "皮膚薄 + 對磨吸收倍增", "en": "Thin skin + occlusion-enhanced absorption", "tag": "td" },
+    { "zh": "Class VI-VII 或 TCI", "en": "Class VI–VII or TCI", "tag": "td" },
+    { "zh": "吸收極高，易萎縮", "en": "Very high absorption; prone to atrophy", "tag": "td" },
+    { "zh": "Class III-V（中）", "en": "Class III–V (medium)", "tag": "td" },
+    { "zh": "標準強度", "en": "Standard strength", "tag": "td" },
+    { "zh": "Class III-IV（中強）", "en": "Class III–IV (mid-high)", "tag": "td" },
+    { "zh": "較厚，需中強", "en": "Thicker skin; requires mid-high potency", "tag": "td" },
+    { "zh": "Class I-III（強）", "en": "Class I–III (high)", "tag": "td" },
+    { "zh": "厚塊，需強效", "en": "Thick plaques; requires high potency", "tag": "td" },
+    { "zh": "Class I-II（強）", "en": "Class I–II (high)", "tag": "td" },
+    { "zh": "角質厚，需穿透強", "en": "Thick stratum corneum; requires strong penetration", "tag": "td" },
+    { "zh": "毛髮覆蓋，液態 / 洗髮精劑型較適用", "en": "Hair-bearing site; lotion or shampoo vehicles preferred", "tag": "td" },
+    { "zh": "臉 + 頸部", "en": "Face + neck", "tag": "td" },
+    { "zh": "單手（含手指）", "en": "One hand (including fingers)", "tag": "td" },
+    { "zh": "單上肢（肩到手）", "en": "One upper limb (shoulder to hand)", "tag": "td" },
+    { "zh": "單下肢", "en": "One lower limb", "tag": "td" },
+    { "zh": "軀幹前", "en": "Anterior trunk", "tag": "td" },
+    { "zh": "軀幹後 + 臀", "en": "Posterior trunk + buttocks", "tag": "td" },
+    { "zh": "單腳掌", "en": "One sole", "tag": "td" },
+    { "zh": "Calcineurin 抑制劑(TCI)", "en": "Calcineurin inhibitor (TCI)", "tag": "td" },
+    { "zh": "異膚 ≥ 2 歲(0.03%)、≥ 16 歲(0.1%)", "en": "AD ≥ 2 years (0.03%); ≥ 16 years (0.1%)", "tag": "td" },
+    { "zh": "初期灼熱感、避免日曬、黑盒警告（腫瘤風險未證實）", "en": "Initial burning sensation, avoid sun exposure, black box warning (malignancy risk unproven)", "tag": "td" },
+    { "zh": "同上，較弱", "en": "Same as above, milder", "tag": "td" },
+    { "zh": "異膚 ≥ 2 歲輕中度", "en": "Mild-to-moderate AD ≥ 2 years", "tag": "td" },
+    { "zh": "溫和，適合臉部", "en": "Gentle; suitable for face", "tag": "td" },
+    { "zh": "效力較弱", "en": "Lower potency", "tag": "td" },
+    { "zh": "PDE-4 抑制劑", "en": "PDE-4 inhibitor", "tag": "td" },
+    { "zh": "異膚 ≥ 3 個月輕中度", "en": "Mild-to-moderate AD ≥ 3 months", "tag": "td" },
+    { "zh": "新生兒可用", "en": "Approved for infants", "tag": "td" },
+    { "zh": "可能刺激", "en": "May be irritating", "tag": "td" },
+    { "zh": "JAK 抑制劑", "en": "JAK inhibitor", "tag": "td" },
+    { "zh": "異膚、白斑 ≥ 12 歲", "en": "AD, vitiligo ≥ 12 years", "tag": "td" },
+    { "zh": "很強，白斑首個專用藥", "en": "Highly effective; first vitiligo-specific topical", "tag": "td" },
+    { "zh": "自費高價", "en": "Out-of-pocket and expensive", "tag": "td" },
+    { "zh": "乾癬、異膚", "en": "Psoriasis, AD", "tag": "td" },
+    { "zh": "新藥", "en": "New agent", "tag": "td" },
+    { "zh": "台灣尚未廣泛上市", "en": "Not yet widely available in Taiwan", "tag": "td" },
+    { "zh": "AhR 致效劑", "en": "AhR agonist", "tag": "td" },
+    { "zh": "新機轉", "en": "Novel mechanism", "tag": "td" },
+    { "zh": "台灣尚未上市", "en": "Not yet available in Taiwan", "tag": "td" },
+    { "zh": "孕婦", "en": "Pregnancy", "tag": "td" },
+    { "zh": "哺乳", "en": "Lactation", "tag": "td" },
+    { "zh": "兒童", "en": "Children", "tag": "td" },
+    { "zh": "老人", "en": "Elderly", "tag": "td" },
+    { "zh": "皮膚薄，容易萎縮 / 紫斑，降階到 TCI 較安全", "en": "Thin skin, prone to atrophy/purpura; downgrading to TCI is safer", "tag": "td" }
   ]
 }
