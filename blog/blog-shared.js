@@ -823,6 +823,205 @@
         '</svg><figcaption>圖. JAK 家族 4 種 — 不同 JAK 阻斷不同 cytokines,故同一機轉藥物用在不同疾病</figcaption></figure>';
     },
 
+    // JAK kinase structural domains
+    'jak-structure': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" aria-labelledby="jakstr-title">' +
+        '<title id="jakstr-title">JAK 激酶結構與抑制劑作用點</title>' +
+        '<rect width="720" height="320" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">JAK 激酶 4 大功能域 — 抑制劑為何選擇性不同</text>' +
+        // Linear protein bar with 4 domains (N → C terminus)
+        '<g transform="translate(60 80)">' +
+        '<text x="0" y="-14" font-family="Inter" font-size="10" fill="#5e574e">N-端</text>' +
+        '<text x="600" y="-14" text-anchor="end" font-family="Inter" font-size="10" fill="#5e574e">C-端</text>' +
+        // FERM (band 4.1)
+        '<rect x="0" y="0" width="120" height="50" fill="#fde68a" stroke="#854d0e" stroke-width="2"/>' +
+        '<text x="60" y="24" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#854d0e">FERM</text>' +
+        '<text x="60" y="38" text-anchor="middle" font-family="Inter" font-size="9" fill="#854d0e">JH7-4</text>' +
+        // SH2-like
+        '<rect x="120" y="0" width="100" height="50" fill="#fed7aa" stroke="#9a3412" stroke-width="2"/>' +
+        '<text x="170" y="24" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#9a3412">SH2-like</text>' +
+        '<text x="170" y="38" text-anchor="middle" font-family="Inter" font-size="9" fill="#9a3412">JH3-4</text>' +
+        // Pseudokinase (JH2)
+        '<rect x="220" y="0" width="170" height="50" fill="#cffafe" stroke="#0c5159" stroke-width="2"/>' +
+        '<text x="305" y="24" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#0c5159">Pseudokinase</text>' +
+        '<text x="305" y="38" text-anchor="middle" font-family="Inter" font-size="9" fill="#0c5159">JH2 (調節)</text>' +
+        // Active kinase (JH1)
+        '<rect x="390" y="0" width="210" height="50" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
+        '<text x="495" y="24" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#dc2626">Kinase</text>' +
+        '<text x="495" y="38" text-anchor="middle" font-family="Inter" font-size="9" fill="#dc2626">JH1 (磷酸化活性)</text>' +
+        // ATP binding pocket marker
+        '<circle cx="495" cy="25" r="6" fill="none" stroke="#7f1d1d" stroke-width="1.5" stroke-dasharray="2 2"/>' +
+        '<line x1="495" y1="55" x2="495" y2="80" stroke="#7f1d1d" stroke-width="1" stroke-dasharray="3 3"/>' +
+        '<text x="495" y="98" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#7f1d1d">ATP 結合位</text>' +
+        '<text x="495" y="112" text-anchor="middle" font-family="Inter" font-size="9" fill="#7f1d1d">(JAK 抑制劑作用點)</text>' +
+        // Function annotations
+        '<text x="60" y="135" text-anchor="middle" font-family="Inter" font-size="9" fill="#5e574e">綁細胞激素</text>' +
+        '<text x="60" y="148" text-anchor="middle" font-family="Inter" font-size="9" fill="#5e574e">受體</text>' +
+        '<text x="170" y="135" text-anchor="middle" font-family="Inter" font-size="9" fill="#5e574e">穩定 + 訊號</text>' +
+        '<text x="170" y="148" text-anchor="middle" font-family="Inter" font-size="9" fill="#5e574e">轉接</text>' +
+        '<text x="305" y="135" text-anchor="middle" font-family="Inter" font-size="9" fill="#5e574e">負調控</text>' +
+        '<text x="305" y="148" text-anchor="middle" font-family="Inter" font-size="9" fill="#5e574e">JH1 自抑</text>' +
+        '<text x="495" y="135" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#7f1d1d">磷酸化 STAT</text>' +
+        '<text x="495" y="148" text-anchor="middle" font-family="Inter" font-size="9" fill="#5e574e">→ 基因表現</text>' +
+        '</g>' +
+        // Drug specificity table
+        '<g transform="translate(60 250)">' +
+        '<text x="0" y="-8" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">第一代 vs 第二代 JAK 抑制劑的選擇性</text>' +
+        '<rect x="0" y="0" width="600" height="55" rx="6" fill="#fff" stroke="var(--border)" stroke-width="1"/>' +
+        '<text x="10" y="20" font-family="Inter" font-size="10" fill="#5e574e"><tspan font-weight="700">第一代 (Tofacitinib)</tspan> — 廣譜 JAK1/2/3,副作用較多(感染 / 帶狀皰疹)</text>' +
+        '<text x="10" y="36" font-family="Inter" font-size="10" fill="#5e574e"><tspan font-weight="700">第二代 (Upadacitinib)</tspan> — JAK1 選擇性高,異膚 / 圓禿適應症</text>' +
+        '<text x="10" y="48" font-family="Inter" font-size="10" fill="#5e574e"><tspan font-weight="700">Deucravacitinib</tspan> — 結合 JH2 (allosteric),只抑 TYK2,乾癬專用,副作用最少</text>' +
+        '</g>' +
+        '<text x="360" y="312" text-anchor="middle" font-family="Inter" font-size="9" fill="#8b8378">Source: Tanaka Nat Rev Drug Discov 2022 · Lin Cell 2014 (JH2 structure) · Armstrong NEJM 2022 (Deucravacitinib)</text>' +
+        '</svg><figcaption>圖. JAK 4 結構域 — JH1 是 ATP 競爭抑制劑作用處;Deucravacitinib 卻是綁 JH2 偽激酶域(更高選擇性、副作用少)</figcaption></figure>';
+    },
+
+    // Melanoma ABCDE warning signs
+    'melanoma-abcde': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" aria-labelledby="abcde-title">' +
+        '<title id="abcde-title">皮膚癌警訊 ABCDE</title>' +
+        '<rect width="720" height="360" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">皮膚癌(黑色素瘤)5 大警訊 — ABCDE 自我檢查</text>' +
+        // 5 columns: each shows benign vs malignant comparison
+        '<g transform="translate(40 65)">' +
+        '<text x="65" y="0" text-anchor="middle" font-family="Inter" font-size="32" font-weight="800" fill="#dc2626">A</text>' +
+        '<text x="65" y="22" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#7f1d1d">Asymmetry</text>' +
+        '<text x="65" y="38" text-anchor="middle" font-family="Noto Sans TC" font-size="11" fill="#5e574e">不對稱</text>' +
+        // Benign (round) — top
+        '<circle cx="40" cy="80" r="20" fill="#7c2d12" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="40" y="120" text-anchor="middle" font-family="Inter" font-size="9" fill="#14532d">良性</text>' +
+        // Malignant (asymmetric) — bottom
+        '<path d="M75 65 Q 100 55 110 75 Q 105 95 95 100 Q 80 95 75 80 Z" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="95" y="120" text-anchor="middle" font-family="Inter" font-size="9" fill="#7f1d1d">⚠ 警訊</text>' +
+        '</g>' +
+        // B - Border
+        '<g transform="translate(180 65)">' +
+        '<text x="65" y="0" text-anchor="middle" font-family="Inter" font-size="32" font-weight="800" fill="#dc2626">B</text>' +
+        '<text x="65" y="22" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#7f1d1d">Border</text>' +
+        '<text x="65" y="38" text-anchor="middle" font-family="Noto Sans TC" font-size="11" fill="#5e574e">邊緣不規則</text>' +
+        '<circle cx="40" cy="80" r="20" fill="#7c2d12" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="40" y="120" text-anchor="middle" font-family="Inter" font-size="9" fill="#14532d">平滑邊緣</text>' +
+        // Irregular jagged border
+        '<path d="M85 65 L 92 60 L 105 64 L 112 76 L 116 88 L 108 99 L 95 100 L 82 95 L 78 82 L 80 70 Z" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="95" y="120" text-anchor="middle" font-family="Inter" font-size="9" fill="#7f1d1d">⚠ 鋸齒狀</text>' +
+        '</g>' +
+        // C - Color
+        '<g transform="translate(320 65)">' +
+        '<text x="65" y="0" text-anchor="middle" font-family="Inter" font-size="32" font-weight="800" fill="#dc2626">C</text>' +
+        '<text x="65" y="22" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#7f1d1d">Color</text>' +
+        '<text x="65" y="38" text-anchor="middle" font-family="Noto Sans TC" font-size="11" fill="#5e574e">顏色不均</text>' +
+        '<circle cx="40" cy="80" r="20" fill="#7c2d12" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="40" y="120" text-anchor="middle" font-family="Inter" font-size="9" fill="#14532d">單一顏色</text>' +
+        // Multi-color
+        '<defs><radialGradient id="multicolor" cx="0.4" cy="0.4"><stop offset="0%" stop-color="#1e293b"/><stop offset="50%" stop-color="#7c2d12"/><stop offset="80%" stop-color="#dc2626"/><stop offset="100%" stop-color="#fff"/></radialGradient></defs>' +
+        '<circle cx="95" cy="82" r="20" fill="url(#multicolor)" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="95" y="120" text-anchor="middle" font-family="Inter" font-size="9" fill="#7f1d1d">⚠ 黑/棕/紅/白</text>' +
+        '</g>' +
+        // D - Diameter
+        '<g transform="translate(460 65)">' +
+        '<text x="65" y="0" text-anchor="middle" font-family="Inter" font-size="32" font-weight="800" fill="#dc2626">D</text>' +
+        '<text x="65" y="22" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#7f1d1d">Diameter</text>' +
+        '<text x="65" y="38" text-anchor="middle" font-family="Noto Sans TC" font-size="11" fill="#5e574e">直徑 &gt; 6 mm</text>' +
+        '<circle cx="40" cy="85" r="12" fill="#7c2d12" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="40" y="120" text-anchor="middle" font-family="Inter" font-size="9" fill="#14532d">&lt; 6 mm</text>' +
+        '<circle cx="95" cy="80" r="22" fill="#7c2d12" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="95" y="120" text-anchor="middle" font-family="Inter" font-size="9" fill="#7f1d1d">⚠ ≥ 鉛筆橡皮頭</text>' +
+        '</g>' +
+        // E - Evolving
+        '<g transform="translate(600 65)">' +
+        '<text x="50" y="0" text-anchor="middle" font-family="Inter" font-size="32" font-weight="800" fill="#dc2626">E</text>' +
+        '<text x="50" y="22" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#7f1d1d">Evolving</text>' +
+        '<text x="50" y="38" text-anchor="middle" font-family="Noto Sans TC" font-size="11" fill="#5e574e">變化中</text>' +
+        '<circle cx="20" cy="80" r="10" fill="#7c2d12"/>' +
+        '<text x="40" y="84" font-family="Inter" font-size="14" fill="#dc2626">→</text>' +
+        '<ellipse cx="80" cy="80" rx="20" ry="14" fill="#1e293b"/>' +
+        '<text x="50" y="120" text-anchor="middle" font-family="Inter" font-size="9" fill="#7f1d1d">⚠ 數月變大 / 變色</text>' +
+        '</g>' +
+        // Action box
+        '<g transform="translate(60 200)">' +
+        '<rect x="0" y="0" width="600" height="100" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
+        '<text x="20" y="25" font-family="Noto Sans TC" font-size="14" font-weight="700" fill="#7f1d1d">⚠ 出現任一 ABCDE 警訊 → 盡快至皮膚科求診</text>' +
+        '<text x="20" y="50" font-family="Inter" font-size="11" fill="#5e574e"><tspan font-weight="700">特別高風險群</tspan>:Fitzpatrick 皮膚型 I-II、家族史、多顆痣(&gt; 50)、過往曬傷史、職業曝曬</text>' +
+        '<text x="20" y="68" font-family="Inter" font-size="11" fill="#5e574e"><tspan font-weight="700">「醜小鴨徵象」</tspan>(ugly duckling sign)— 一顆痣與其他明顯不同也是警訊</text>' +
+        '<text x="20" y="86" font-family="Inter" font-size="11" fill="#5e574e"><tspan font-weight="700">每月自我檢查</tspan>+ 異常立即就醫;可拍照記錄變化(同一手機 / 同光線)</text>' +
+        '</g>' +
+        '<text x="360" y="345" text-anchor="middle" font-family="Inter" font-size="9" fill="#8b8378">Source: Friedman 1985 (ABCD) · Abbasi JAMA 2004 (E added) · AAD melanoma self-exam guide</text>' +
+        '</svg><figcaption>圖. ABCDE 5 大警訊;台灣黑色素瘤多以「肢端型」呈現(手腳掌、指甲下),需多注意非曬傷部位</figcaption></figure>';
+    },
+
+    // Actinic keratosis → SCC progression continuum
+    'ak-progression': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" aria-labelledby="ak-title">' +
+        '<title id="ak-title">日光角化症進展</title>' +
+        '<rect width="720" height="280" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">UV 累積傷害 → 日光角化症 → 皮膚癌的連續譜</text>' +
+        // 4-step progression
+        '<g transform="translate(50 65)">' +
+        // Stage 1: Photoaging
+        '<rect x="0" y="0" width="140" height="120" rx="10" fill="#fef9c3" stroke="#854d0e" stroke-width="1.5"/>' +
+        '<text x="70" y="22" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#854d0e">階段 1</text>' +
+        '<text x="70" y="40" text-anchor="middle" font-family="Noto Sans TC" font-size="12" font-weight="700" fill="#854d0e">光老化</text>' +
+        '<text x="70" y="55" text-anchor="middle" font-family="Inter" font-size="9" fill="#5e574e">Photoaging</text>' +
+        // Wrinkle/spot illustration
+        '<line x1="20" y1="75" x2="120" y2="75" stroke="#854d0e" stroke-width="1.5"/>' +
+        '<line x1="25" y1="85" x2="115" y2="85" stroke="#854d0e" stroke-width="1.5"/>' +
+        '<circle cx="40" cy="100" r="3" fill="#a16207"/>' +
+        '<circle cx="80" cy="98" r="2.5" fill="#a16207"/>' +
+        '<circle cx="100" cy="105" r="2" fill="#a16207"/>' +
+        '</g>' +
+        '<path d="M195 125 L 225 125" stroke="#4d6358" stroke-width="2" marker-end="url(#arrowAK)"/>' +
+        '<g transform="translate(230 65)">' +
+        // Stage 2: AK
+        '<rect x="0" y="0" width="140" height="120" rx="10" fill="#fed7aa" stroke="#9a3412" stroke-width="1.5"/>' +
+        '<text x="70" y="22" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#9a3412">階段 2</text>' +
+        '<text x="70" y="40" text-anchor="middle" font-family="Noto Sans TC" font-size="12" font-weight="700" fill="#9a3412">日光角化症</text>' +
+        '<text x="70" y="55" text-anchor="middle" font-family="Inter" font-size="9" fill="#5e574e">Actinic Keratosis</text>' +
+        // Rough scaly patch
+        '<path d="M30 75 Q 50 70 70 78 Q 90 73 110 80" fill="none" stroke="#9a3412" stroke-width="2"/>' +
+        '<rect x="35" y="85" width="6" height="8" fill="#7c2d12"/>' +
+        '<rect x="50" y="83" width="5" height="7" fill="#7c2d12"/>' +
+        '<rect x="65" y="86" width="6" height="9" fill="#7c2d12"/>' +
+        '<rect x="80" y="85" width="5" height="7" fill="#7c2d12"/>' +
+        '<rect x="95" y="87" width="6" height="8" fill="#7c2d12"/>' +
+        '<text x="70" y="113" text-anchor="middle" font-family="Inter" font-size="9" fill="#9a3412">粗糙脫屑</text>' +
+        '</g>' +
+        '<path d="M375 125 L 405 125" stroke="#4d6358" stroke-width="2" marker-end="url(#arrowAK)"/>' +
+        '<g transform="translate(410 65)">' +
+        // Stage 3: SCC in situ
+        '<rect x="0" y="0" width="140" height="120" rx="10" fill="#fee2e2" stroke="#7f1d1d" stroke-width="1.5"/>' +
+        '<text x="70" y="22" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#7f1d1d">階段 3</text>' +
+        '<text x="70" y="40" text-anchor="middle" font-family="Noto Sans TC" font-size="12" font-weight="700" fill="#7f1d1d">原位癌</text>' +
+        '<text x="70" y="55" text-anchor="middle" font-family="Inter" font-size="9" fill="#5e574e">SCC in situ (Bowen)</text>' +
+        // Reddish patch with crust
+        '<ellipse cx="70" cy="90" rx="40" ry="22" fill="#dc2626" opacity="0.7"/>' +
+        '<ellipse cx="65" cy="85" rx="6" ry="3" fill="#7c2d12"/>' +
+        '<ellipse cx="80" cy="95" rx="5" ry="3" fill="#7c2d12"/>' +
+        '<text x="70" y="113" text-anchor="middle" font-family="Inter" font-size="9" fill="#7f1d1d">紅色斑塊</text>' +
+        '</g>' +
+        '<path d="M555 125 L 585 125" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowAK)"/>' +
+        '<g transform="translate(590 65)">' +
+        // Stage 4: SCC invasive
+        '<rect x="0" y="0" width="120" height="120" rx="10" fill="#7f1d1d" stroke="#450a0a" stroke-width="2"/>' +
+        '<text x="60" y="22" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#fff">階段 4</text>' +
+        '<text x="60" y="40" text-anchor="middle" font-family="Noto Sans TC" font-size="12" font-weight="700" fill="#fff">侵襲性 SCC</text>' +
+        '<text x="60" y="55" text-anchor="middle" font-family="Inter" font-size="9" fill="#fee2e2">Invasive SCC</text>' +
+        // Nodule
+        '<circle cx="60" cy="90" r="22" fill="#fee2e2" stroke="#fff" stroke-width="2"/>' +
+        '<circle cx="55" cy="85" r="4" fill="#dc2626"/>' +
+        '<text x="60" y="115" text-anchor="middle" font-family="Inter" font-size="9" fill="#fee2e2">硬結節</text>' +
+        '</g>' +
+        // Treatment annotations
+        '<g transform="translate(50 210)">' +
+        '<text x="0" y="0" font-family="Inter" font-size="10" fill="#5e574e"><tspan font-weight="700">防曬</tspan></text>' +
+        '<text x="180" y="0" font-family="Inter" font-size="10" fill="#5e574e"><tspan font-weight="700">外用 5-FU / Imiquimod / 冷凍 / PDT</tspan></text>' +
+        '<text x="430" y="0" font-family="Inter" font-size="10" fill="#5e574e"><tspan font-weight="700">手術切除 ± 放療</tspan></text>' +
+        '<text x="0" y="20" font-family="Inter" font-size="9" fill="#8b8378">每年 AK 轉 SCC 約 0.025-16% / 顆;有大量 AK 者風險疊加</text>' +
+        '</g>' +
+        '<text x="360" y="262" text-anchor="middle" font-family="Inter" font-size="9" fill="#8b8378">Source: Werner 2013 BJD AK guideline · Glogau 2000 staging · NMSC 2024 NCCN guidelines</text>' +
+        '<defs><marker id="arrowAK" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#4d6358"/></marker></defs>' +
+        '</svg><figcaption>圖. UV 累積傷害的連續譜 — 階段 2 開始就要積極治療(大多 AK 終身不會進展,但有大量 AK 者風險倍增)</figcaption></figure>';
+    },
+
     // Tinea hyphae KOH microscopy view
     'tinea-hyphae': function () {
       return '<figure class="dn-med-fig"><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" aria-labelledby="tinea-title">' +
@@ -1026,6 +1225,11 @@
     'mpox-care':               [{ key: 'dermatome-map', after: 2 }, { key: 'clinical-photo-placeholder', after: 4 }],
     // Tinea hyphae
     'tinea-myths':             [{ key: 'tinea-hyphae', after: 2 }, { key: 'clinical-photo-placeholder', after: 4 }],
+    // R32: JAK structure diagram
+    'alopecia-areata':         [{ key: 'hair-cycle', after: 1 }, { key: 'jak-tree', after: 4 }, { key: 'jak-structure', after: 6 }],
+    'biologics-overview':      [{ key: 'biologics-cytokines', after: 1 }, { key: 'jak-tree', after: 3 }, { key: 'jak-structure', after: 4 }, { key: 'skin-barrier', after: 6 }],
+    // ABCDE + AK progression for sunscreen / melasma articles (UV damage articles)
+    'sunscreen-myths':         [{ key: 'uv-penetration', after: 1 }, { key: 'spf-curve', after: 3 }, { key: 'melanoma-abcde', after: 5 }, { key: 'ak-progression', after: 7 }],
     // More clinical-photo placeholders for diseases without owned images
     'warts-myths':             [{ key: 'clinical-photo-placeholder', after: 2 }],
     'epidermoid-cyst':         [{ key: 'clinical-photo-placeholder', after: 1 }],
@@ -1485,6 +1689,10 @@
       var m = currentMatches[activeIdx];
       if (m) location.href = m.url;
     }
+
+    // Public API for static nav button to call
+    DN.openSearch = open;
+    DN.closeSearch = close;
 
     input.addEventListener('input', function () { render(input.value); });
     input.addEventListener('keydown', function (e) {

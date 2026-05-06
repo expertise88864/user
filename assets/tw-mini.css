@@ -48,6 +48,107 @@ code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,
 .object-right{object-position:right}
 /* Aspect-ratio safety: parent with rounded-full + child img — force square keep-ratio */
 .rounded-full > picture, .rounded-full > picture > img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* ─────────────────────────────────────────────────────────────────
+   Lighthouse / perf: skip rendering off-screen sections
+   `content-visibility: auto` tells browser to skip layout/paint until
+   element scrolls near viewport — massive win for long pages.
+   `contain-intrinsic-size` reserves a fallback height to avoid CLS.
+   ───────────────────────────────────────────────────────────────── */
+main > section:not(:first-of-type),
+.dn-med-fig,
+#articles, #dn-spotlight, .home-faq,
+footer.mag-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+/* Hero stays always rendered for fast LCP */
+.mag-hero, header.sticky { content-visibility: visible; }
+
+/* ─────────────────────────────────────────────────────────────────
+   Print-friendly stylesheet — for printing patient handouts
+   Hide nav/ads/calculators/sticky elements; show full URLs after links;
+   black ink on white; sensible page breaks.
+   ───────────────────────────────────────────────────────────────── */
+@media print {
+  /* Page setup */
+  @page { size: A4; margin: 1.6cm 1.4cm; }
+  html, body { background:#fff !important; color:#000 !important; font-size:11pt; line-height:1.55; }
+  body::before { display:none !important; }
+
+  /* Hide nav, sidebar, sticky, interactive */
+  header.sticky, nav.dn-nav, .dn-nav-burger, #dn-sticky-cta,
+  #dn-progress, #dn-totop, #dn-font-sizer,
+  .ad-slot, [class*="ad-"], [id*="ad-"],
+  #dn-cmdk-overlay, #dn-img-lightbox,
+  .dn-calc, [id^="dn-"][id$="-calc"], .dn-calc-tools-link,
+  #dn-share, .dn-share, button, select,
+  #dn-feedback, [data-feedback],
+  .reveal:not(.visible), .home-faq summary::after,
+  #dn-bmc-footer, #dn-bmc-header, #dn-nav-support,
+  #dn-related, .mag-footer .mag-foot-cols,
+  .crumbs, [data-cta], .skip-link {
+    display: none !important;
+  }
+
+  /* Show full URLs after external links */
+  .prose a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt; color: #555; word-break: break-all;
+  }
+  /* Don't show URL for inline anchors / mailto */
+  .prose a[href^="#"]::after, .prose a[href^="mailto"]::after { content: none; }
+
+  /* Article body — force readable typography */
+  article.max-w-3xl, .prose, #proseZh, #proseEn {
+    max-width: 100% !important;
+    padding: 0 !important; margin: 0 !important;
+  }
+  .prose h1, article h1 { font-size:20pt; margin:6pt 0; page-break-after: avoid; }
+  .prose h2 { font-size:14pt; margin-top:14pt; page-break-after: avoid; border-left: 3pt solid #000; padding-left:8pt; }
+  .prose h3 { font-size:12pt; margin-top:10pt; page-break-after: avoid; }
+  .prose p, .prose li { font-size:11pt; orphans:3; widows:3; }
+
+  /* Tables stay on one page if possible */
+  table, .myth-card, .infographic, .dn-med-fig, figure {
+    page-break-inside: avoid;
+    border: 1pt solid #888 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+  table.dn th { background: #eee !important; color:#000 !important; }
+
+  /* Ensure inline SVG fits */
+  .dn-med-fig svg { max-width:100% !important; height:auto !important; }
+
+  /* References / citations always show */
+  .references, .tool-ref { background:#fff !important; border:1pt solid #888 !important; }
+  .references li, .tool-ref { font-size:9.5pt; line-height:1.4; }
+
+  /* Disclaimer in distinct frame */
+  .disclaimer, #dn-legal-disclaimer {
+    background:#fff !important;
+    border: 1.5pt solid #000 !important;
+    color: #000 !important;
+    padding: 8pt 10pt !important;
+    margin: 12pt 0 !important;
+    page-break-inside: avoid;
+  }
+
+  /* Author bio compact */
+  #dn-author-bio { border:1pt solid #888 !important; background:#fff !important; padding:8pt !important; }
+
+  /* Page header on each printed page */
+  body::after {
+    content: "ChenDermatologist · 陳翊嘉醫師 · chendermatologist.com · 列印僅供衛教,個別治療請與醫師討論";
+    display: block !important;
+    position: fixed; bottom: 0.5cm; left: 0; right: 0;
+    font-size: 8pt; color: #666; text-align: center;
+  }
+
+  /* Hide sw-update toast / hover hints */
+  #dn-sw-toast, #dn-en-banner { display:none !important; }
+}
 .flex-wrap{flex-wrap:wrap}
 .h-48{height:12rem}
 .mb-12{margin-bottom:3rem}
