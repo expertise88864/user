@@ -8,6 +8,32 @@ on:
   workflow_dispatch:
 
 jobs:
+  feeds-regen:
+    name: Auto-regen sitemap.xml + RSS / Atom feeds
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with: { token: '${{ secrets.GITHUB_TOKEN }}' }
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Run feed generator
+        run: python _gen_feeds.py
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [[ -n $(git status -s sitemap.xml blog/feed.xml blog/atom.xml) ]]; then
+            git add sitemap.xml blog/feed.xml blog/atom.xml
+            git commit -m "auto-regen feeds [skip ci]"
+            git push
+          else
+            echo "feeds already up-to-date"
+          fi
+
   html-validate:
     name: HTML structural validation
     runs-on: ubuntu-latest
@@ -145,3 +171,28 @@ jobs:
             --assert.assertions.categories:best-practices=0.85 \
             --assert.assertions.categories:seo=0.95
         continue-on-error: true
+      - name: Render Lighthouse summary to job step
+        if: always()
+        run: |
+          python <<'PY'
+          import json, glob, os
+          summary_path = os.environ.get('GITHUB_STEP_SUMMARY')
+          if not summary_path: exit(0)
+          out_lines = ['# 🚦 Lighthouse Scores', '', '| URL | Perf | A11y | Best | SEO |', '|---|---:|---:|---:|---:|']
+          # LHCI writes JSON results into .lighthouseci/
+          for fp in sorted(glob.glob('.lighthouseci/lhr-*.json')):
+              try:
+                  with open(fp) as f: data = json.load(f)
+                  url = data.get('finalUrl', '?').replace('http://localhost:8080', '')
+                  cats = data.get('categories', {})
+                  def s(k):
+                      v = cats.get(k, {}).get('score')
+                      return f'{int(v*100)}' if v is not None else '—'
+                  out_lines.append(f'| `{url}` | {s("performance")} | {s("accessibility")} | {s("best-practices")} | {s("seo")} |')
+              except Exception as e:
+                  print(f'parse fail {fp}: {e}')
+          if len(out_lines) > 4:
+              with open(summary_path, 'a') as f:
+                  f.write('\n'.join(out_lines) + '\n\n')
+              print('summary written')
+          PY

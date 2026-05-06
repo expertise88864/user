@@ -1,252 +1,282 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>ChenDermatologist · 皮膚科常見衛教及學習筆記網站</title>
-    <link>https://chendermatologist.com/blog/</link>
-    <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml" />
-    <description>陳翊嘉醫師（皮膚科）整理的皮膚科衛教文章 — 民眾最常見的皮膚科誤解、市面上產品、常見皮膚疾病。</description>
-    <language>zh-TW</language>
-    <lastBuildDate>Thu, 07 May 2026 18:00:00 +0800</lastBuildDate>
-
+    <title>ChenDermatologist · 皮膚科衛教筆記</title>
+    <link>https://chendermatologist.com/</link>
+    <description>陳翊嘉醫師(皮膚科)整理的皮膚科衛教與學習筆記。</description>
+    <language>zh-Hant-TW</language>
+    <lastBuildDate>Wed, 06 May 2026 00:25:04 +0000</lastBuildDate>
+    <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <generator>DermNotes auto-feed v1</generator>
     <item>
-      <title>皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教 — TDA + 血液腫瘤學會 2024 共識</title>
-      <link>https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma</link>
-      <guid>https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma</guid>
-      <pubDate>Thu, 07 May 2026 18:00:00 +0800</pubDate>
-      <description>蕈狀肉芽腫(MF)、Sézary、CD30+ LPD 完整解析。TNMB 分期、外用 / 光療 / Bexarotene / Brentuximab vedotin / Mogamulizumab、Dupilumab/TNF-α 鑑別。依 TDA + 血液腫瘤學會 2024 聯合共識整理。</description>
-    </item>
-
-    <item>
-      <title>結節性癢疹(Prurigo Nodularis)完整衛教 — Dupilumab、Nemolizumab、TDA 2024 共識</title>
+      <title>結節性癢疹完整衛教</title>
       <link>https://chendermatologist.com/blog/prurigo-nodularis</link>
-      <guid>https://chendermatologist.com/blog/prurigo-nodularis</guid>
-      <pubDate>Thu, 07 May 2026 17:00:00 +0800</pubDate>
-      <description>頑固搔癢的結節性癢疹完整治療階梯。LIBERTY-PN PRIME(Dupilumab)+ OLYMPIA 2(Nemolizumab,2024 FDA 核准)兩款生物製劑改變治療版圖。依 TDA 2024 共識整理。</description>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/prurigo-nodularis</guid>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>結節性癢疹</category>
+      <description>結節性癢疹完整衛教 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>嬰幼兒 / 兒童異位性皮膚炎完整照護指南</title>
-      <link>https://chendermatologist.com/blog/pediatric-eczema</link>
-      <guid>https://chendermatologist.com/blog/pediatric-eczema</guid>
-      <pubDate>Thu, 07 May 2026 11:00:00 +0800</pubDate>
-      <description>0-5 歲嬰幼兒異膚完整照護:洗澡保濕、外用類固醇/TCI 安全用法、過敏原檢測時機、Dupilumab 6 個月以上適應症、過敏進行曲。依 2024 德國 S3 指引(Werfel)+ Paller 2022 NEJM 嬰幼兒試驗整理。</description>
+      <title>皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教</title>
+      <link>https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma</guid>
+      <pubDate>Thu, 07 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>皮膚淋巴瘤</category>
+      <description>皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>皮膚科雷射完整對照 — 波長 × 適應症 × 證據強度</title>
-      <link>https://chendermatologist.com/blog/laser-dermatology</link>
-      <guid>https://chendermatologist.com/blog/laser-dermatology</guid>
-      <pubDate>Wed, 06 May 2026 18:00:00 +0800</pubDate>
-      <description>2022 德國 S2k 雷射指引整理。532-10600 nm 全波長 × 30+ 適應症「該用 / 可考慮 / 不建議」清單。皮秒、染料、KTP、Nd:YAG、CO₂、Er:YAG、IPL 完整對照。</description>
+      <title>皮膚科 25 個最常見問題</title>
+      <link>https://chendermatologist.com/blog/dermatology-faq</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/dermatology-faq</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>常見問題</category>
+      <description>皮膚科 25 個最常見問題 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
+    <item>
+      <title>粉瘤完整衛教</title>
+      <link>https://chendermatologist.com/blog/epidermoid-cyst</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/epidermoid-cyst</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>粉瘤</category>
+      <description>粉瘤完整衛教 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
+    </item>
     <item>
       <title>皮膚科常用藥物健保規範完整整理</title>
       <link>https://chendermatologist.com/blog/nhi-derm-drugs</link>
-      <guid>https://chendermatologist.com/blog/nhi-derm-drugs</guid>
-      <pubDate>Wed, 06 May 2026 09:00:00 +0800</pubDate>
-      <description>口服 A 酸、Dupilumab、Adalimumab、Omalizumab、JAK 抑制劑、IL-17/23 生物製劑等健保給付條件、劑量、療程、PASS 事前審查完整整理。</description>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/nhi-derm-drugs</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>健保規範</category>
+      <description>皮膚科常用藥物健保規範完整整理 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>粉瘤完整衛教 — 為什麼不能自己擠? 何時該手術?</title>
-      <link>https://chendermatologist.com/blog/epidermoid-cyst</link>
-      <guid>https://chendermatologist.com/blog/epidermoid-cyst</guid>
-      <pubDate>Tue, 05 May 2026 21:00:00 +0800</pubDate>
-      <description>粉瘤(表皮囊腫)的成因、與痘痘鑑別、為什麼自己擠會反覆發炎、何時手術切除、健保給付條件。</description>
+      <title>皮膚科雷射完整對照</title>
+      <link>https://chendermatologist.com/blog/laser-dermatology</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/laser-dermatology</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>雷射 / 光電</category>
+      <description>皮膚科雷射完整對照 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>皮膚科 25 個最常見問題 — 為什麼 A 酸晚上擦? 類固醇能擦多久?</title>
-      <link>https://chendermatologist.com/blog/dermatology-faq</link>
-      <guid>https://chendermatologist.com/blog/dermatology-faq</guid>
-      <pubDate>Tue, 05 May 2026 14:00:00 +0800</pubDate>
-      <description>整理民眾搜尋量最高的 25 個皮膚科常見問題,分藥物使用、保養品搭配、痘痘 / 痘疤、雷射 / 醫美、孕婦 / 哺乳 5 大類。每題附簡明解答 + 延伸閱讀文章連結。</description>
+      <title>嬰幼兒 / 兒童異位性皮膚炎完整照護指南</title>
+      <link>https://chendermatologist.com/blog/pediatric-eczema</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/pediatric-eczema</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>兒童異膚</category>
+      <description>嬰幼兒 / 兒童異位性皮膚炎完整照護指南 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>美白成分完整解析 — 8 大成分機轉、濃度、安全使用</title>
-      <link>https://chendermatologist.com/blog/skin-whitening-agents</link>
-      <guid>https://chendermatologist.com/blog/skin-whitening-agents</guid>
-      <pubDate>Tue, 05 May 2026 09:00:00 +0800</pubDate>
-      <description>氫醌、傳明酸、杜鵑花酸、維他命 C、菸鹼醯胺、A 酸、Cysteamine、Thiamidol — 完整解析機轉、有效濃度、孕婦使用、搭配。</description>
+      <title>蕁麻疹 6 大迷思</title>
+      <link>https://chendermatologist.com/blog/urticaria-myths</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/urticaria-myths</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>蕁麻疹</category>
+      <description>蕁麻疹 6 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
+    <item>
+      <title>乾癬 7 大迷思</title>
+      <link>https://chendermatologist.com/blog/psoriasis-myths</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/psoriasis-myths</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>乾癬</category>
+      <description>乾癬 7 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
+    </item>
+    <item>
+      <title>病毒疣 6 大迷思</title>
+      <link>https://chendermatologist.com/blog/warts-myths</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/warts-myths</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>病毒疣</category>
+      <description>病毒疣 6 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
+    </item>
+    <item>
+      <title>帶狀皰疹 6 大迷思</title>
+      <link>https://chendermatologist.com/blog/shingles-myths</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/shingles-myths</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>皮蛇</category>
+      <description>帶狀皰疹 6 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
+    </item>
+    <item>
+      <title>痘疤完整治療指引</title>
+      <link>https://chendermatologist.com/blog/acne-scar-treatment</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/acne-scar-treatment</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>痘疤</category>
+      <description>痘疤完整治療指引 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
+    </item>
+    <item>
+      <title>圓禿（鬼剃頭）完整衛教</title>
+      <link>https://chendermatologist.com/blog/alopecia-areata</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/alopecia-areata</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>圓禿</category>
+      <description>圓禿（鬼剃頭）完整衛教 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
+    </item>
+    <item>
+      <title>蠕形蟎蟲與玫瑰斑(酒糟)</title>
+      <link>https://chendermatologist.com/blog/demodex-rosacea</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/demodex-rosacea</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>玫瑰斑</category>
+      <description>蠕形蟎蟲與玫瑰斑(酒糟) — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
+    </item>
+    <item>
+      <title>白斑（Vitiligo）完整衛教</title>
+      <link>https://chendermatologist.com/blog/vitiligo</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/vitiligo</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>白斑</category>
+      <description>白斑（Vitiligo）完整衛教 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
+    </item>
+    <item>
+      <title>猴痘（Mpox）皮膚照護</title>
+      <link>https://chendermatologist.com/blog/mpox-care</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/mpox-care</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>猴痘</category>
+      <description>猴痘（Mpox）皮膚照護 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
+    </item>
+    <item>
+      <title>化膿性汗腺炎（HS）完整衛教</title>
+      <link>https://chendermatologist.com/blog/hidradenitis-suppurativa</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/hidradenitis-suppurativa</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>化膿性汗腺炎</category>
+      <description>化膿性汗腺炎（HS）完整衛教 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
+    </item>
     <item>
       <title>標靶藥物（TKI）皮膚副作用</title>
       <link>https://chendermatologist.com/blog/targeted-therapy-skin</link>
-      <guid>https://chendermatologist.com/blog/targeted-therapy-skin</guid>
-      <pubDate>Mon, 04 May 2026 23:30:00 +0800</pubDate>
-      <description>標靶藥物（TKI）皮膚副作用 — 依台灣皮膚科醫學會與 evidence-based 文獻整理。</description>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/targeted-therapy-skin</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>標靶藥物</category>
+      <description>標靶藥物（TKI）皮膚副作用 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
       <title>外用類固醇完整指南</title>
       <link>https://chendermatologist.com/blog/topical-steroids-guide</link>
-      <guid>https://chendermatologist.com/blog/topical-steroids-guide</guid>
-      <pubDate>Mon, 04 May 2026 23:30:00 +0800</pubDate>
-      <description>外用類固醇完整指南 — 依台灣皮膚科醫學會與 evidence-based 文獻整理。</description>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/topical-steroids-guide</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>外用類固醇</category>
+      <description>外用類固醇完整指南 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
       <title>皮膚科生物製劑與小分子標靶藥物總覽</title>
       <link>https://chendermatologist.com/blog/biologics-overview</link>
-      <guid>https://chendermatologist.com/blog/biologics-overview</guid>
-      <pubDate>Mon, 04 May 2026 23:30:00 +0800</pubDate>
-      <description>皮膚科生物製劑與小分子標靶藥物總覽 — 依台灣皮膚科醫學會與 evidence-based 文獻整理。</description>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/biologics-overview</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>生物製劑</category>
+      <description>皮膚科生物製劑與小分子標靶藥物總覽 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>白斑（Vitiligo）完整衛教 — TDA 共識</title>
-      <link>https://chendermatologist.com/blog/vitiligo</link>
-      <guid>https://chendermatologist.com/blog/vitiligo</guid>
-      <pubDate>Mon, 04 May 2026 23:00:00 +0800</pubDate>
-      <description>白斑（Vitiligo）完整衛教 — 依臺灣皮膚科醫學會官方共識整理。</description>
+      <title>美白成分完整解析</title>
+      <link>https://chendermatologist.com/blog/skin-whitening-agents</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/skin-whitening-agents</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>美白</category>
+      <description>美白成分完整解析 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>猴痘（Mpox）皮膚照護 — TDA 共識</title>
-      <link>https://chendermatologist.com/blog/mpox-care</link>
-      <guid>https://chendermatologist.com/blog/mpox-care</guid>
-      <pubDate>Mon, 04 May 2026 23:00:00 +0800</pubDate>
-      <description>猴痘（Mpox）皮膚照護 — 依臺灣皮膚科醫學會官方共識整理。</description>
-    </item>
-
-    <item>
-      <title>化膿性汗腺炎（HS）完整衛教 — TDA 共識</title>
-      <link>https://chendermatologist.com/blog/hidradenitis-suppurativa</link>
-      <guid>https://chendermatologist.com/blog/hidradenitis-suppurativa</guid>
-      <pubDate>Mon, 04 May 2026 23:00:00 +0800</pubDate>
-      <description>化膿性汗腺炎（HS）完整衛教 — 依臺灣皮膚科醫學會官方共識整理。</description>
-    </item>
-
-    <item>
-      <title>蠕形蟎蟲(Demodex)與玫瑰斑(酒糟)— TDA 2022 共識完整衛教</title>
-      <link>https://chendermatologist.com/blog/demodex-rosacea</link>
-      <guid>https://chendermatologist.com/blog/demodex-rosacea</guid>
-      <pubDate>Mon, 04 May 2026 22:00:00 +0800</pubDate>
-      <description>蠕形蟎蟲是玫瑰斑的關鍵誘發因子。Ivermectin 舒立美、Permethrin、口服 Ivermectin 完整介紹,依 TDA 2022 玫瑰斑治療共識整理。</description>
-    </item>
-
-    <item>
-      <title>圓禿（鬼剃頭）完整衛教 — 自體免疫、JAK 抑制劑、SALT 分級</title>
-      <link>https://chendermatologist.com/blog/alopecia-areata</link>
-      <guid>https://chendermatologist.com/blog/alopecia-areata</guid>
-      <pubDate>Mon, 04 May 2026 20:00:00 +0800</pubDate>
-      <description>圓禿（Alopecia areata，俗稱鬼剃頭）是自體免疫疾病。輕度可用病灶內類固醇注射、外用類固醇、Minoxidil；重度可用口服類固醇、JAK 抑制劑(Baricitinib、Ritlecitinib)。本文依據臺灣皮膚科醫學會 2024 共識整理。</description>
-    </item>
-
-    <item>
-      <title>痘疤完整治療指引 — 4 種凹疤、紅疤、黑疤、肥厚疤</title>
-      <link>https://chendermatologist.com/blog/acne-scar-treatment</link>
-      <guid>https://chendermatologist.com/blog/acne-scar-treatment</guid>
-      <pubDate>Mon, 04 May 2026 18:00:00 +0800</pubDate>
-      <description>冰鑿、廂車、滾動凹疤怎麼分?紅疤多久會退?黑色素沉著怎麼淡化?肥厚疤怎麼處理?飛梭、皮秒、TCA CROSS、皮下分離、玻尿酸填補、類固醇注射 — 痘疤完整治療指引。</description>
-    </item>
-
-    <item>
-      <title>帶狀皰疹（皮蛇）6 大迷思 — 繞一圈會死? Shingrix 疫苗值得嗎?</title>
-      <link>https://chendermatologist.com/blog/shingles-myths</link>
-      <guid>https://chendermatologist.com/blog/shingles-myths</guid>
-      <pubDate>Mon, 04 May 2026 16:00:00 +0800</pubDate>
-      <description>皮蛇繞一圈會死?是壓力造成?抗病毒藥要 72 小時內?Shingrix 疫苗值得嗎?痛要痛多久?6 個民眾最常誤會的帶狀皰疹觀念。</description>
-    </item>
-
-    <item>
-      <title>病毒疣 6 大迷思 — 香蕉皮、雷射打一次就好?</title>
-      <link>https://chendermatologist.com/blog/warts-myths</link>
-      <guid>https://chendermatologist.com/blog/warts-myths</guid>
-      <pubDate>Mon, 04 May 2026 14:00:00 +0800</pubDate>
-      <description>病毒疣會自己好嗎?香蕉皮、大蒜可以治嗎?冷凍要打幾次?雷射打一次就消嗎?HPV 跟疫苗有關嗎?6 個常見誤解一次澄清。</description>
-    </item>
-
-    <item>
-      <title>乾癬 7 大迷思 — 不是癬、不會傳染、生物製劑很安全嗎?</title>
-      <link>https://chendermatologist.com/blog/psoriasis-myths</link>
-      <guid>https://chendermatologist.com/blog/psoriasis-myths</guid>
-      <pubDate>Mon, 04 May 2026 12:00:00 +0800</pubDate>
-      <description>乾癬不是癬、不會傳染、不只是皮膚病。7 個民眾最常誤會的乾癬觀念,附 IL-17/23 機轉、健保生物製劑階梯。</description>
-    </item>
-
-    <item>
-      <title>痘痘 9 大迷思 — 民眾最常誤會的觀念</title>
+      <title>痘痘 9 大迷思</title>
       <link>https://chendermatologist.com/blog/acne-myths</link>
-      <guid>https://chendermatologist.com/blog/acne-myths</guid>
-      <pubDate>Sun, 03 May 2026 10:00:00 +0800</pubDate>
-      <description>擠掉就好？牙膏點痘？巧克力會長痘？成人不會長？用越強藥膏越快好?9 個民眾最常誤會的痘痘觀念，陳翊嘉醫師一次澄清。</description>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/acne-myths</guid>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>痘痘</category>
+      <description>痘痘 9 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>防曬 8 大迷思 — 室內、陰天、SPF、物理化學一次釐清</title>
+      <title>防曬 8 大迷思</title>
       <link>https://chendermatologist.com/blog/sunscreen-myths</link>
-      <guid>https://chendermatologist.com/blog/sunscreen-myths</guid>
-      <pubDate>Sun, 03 May 2026 10:00:00 +0800</pubDate>
-      <description>室內不用擦？陰天可以省?SPF 越高越好？物理一定贏化學？一天擦一次就夠？深膚色不會曬傷？</description>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/sunscreen-myths</guid>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>防曬</category>
+      <description>防曬 8 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>異位性皮膚炎 6 大迷思 — 含類固醇恐懼症</title>
+      <title>異位性皮膚炎 6 大迷思</title>
       <link>https://chendermatologist.com/blog/eczema-myths</link>
-      <guid>https://chendermatologist.com/blog/eczema-myths</guid>
-      <pubDate>Sun, 03 May 2026 10:00:00 +0800</pubDate>
-      <description>類固醇會傷皮膚？用了會上癮？異膚長大會自己好？抓癢沒關係？過敏原檢測就能根治？民俗療法比較天然？</description>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/eczema-myths</guid>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>異膚</category>
+      <description>異位性皮膚炎 6 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>肝斑 7 大迷思 — 雷射、藥膏、停藥反黑、孕婦</title>
+      <title>肝斑 7 大迷思</title>
       <link>https://chendermatologist.com/blog/melasma-myths</link>
-      <guid>https://chendermatologist.com/blog/melasma-myths</guid>
-      <pubDate>Sun, 03 May 2026 10:00:00 +0800</pubDate>
-      <description>雷射打一次就消？三合一越濃越好？停藥就反黑？男生不會有肝斑？懷孕生完會自己消？附治療階梯與居家保養 SOP、含氧化鐵防曬解析。</description>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/melasma-myths</guid>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>肝斑</category>
+      <description>肝斑 7 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>玫瑰痤瘡 / 酒糟肌 6 大迷思 — 不是過敏、不是螨蟲</title>
+      <title>玫瑰痤瘡 6 大迷思</title>
       <link>https://chendermatologist.com/blog/rosacea-myths</link>
-      <guid>https://chendermatologist.com/blog/rosacea-myths</guid>
-      <pubDate>Sun, 03 May 2026 10:00:00 +0800</pubDate>
-      <description>酒糟皮膚是因為喝酒？玫瑰痤瘡是過敏？用 A 酸治痘痘可以治酒糟？治不好只能避開所有刺激物？</description>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/rosacea-myths</guid>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>酒糟肌</category>
+      <description>玫瑰痤瘡 6 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>落髮 / 雄性禿 7 大迷思 — Minoxidil、Finasteride、植髮</title>
+      <title>落髮 / 雄性禿 7 大迷思</title>
       <link>https://chendermatologist.com/blog/hairloss-myths</link>
-      <guid>https://chendermatologist.com/blog/hairloss-myths</guid>
-      <pubDate>Sun, 03 May 2026 10:00:00 +0800</pubDate>
-      <description>每天掉一點就要禿了？染髮會掉髮？戴帽悶會禿？雄性禿吃中藥就好?Minoxidil 副作用很多？圓禿是壓力？植髮一次解決？附 Hamilton-Norwood 分級與治療階梯。</description>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/hairloss-myths</guid>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>落髮</category>
+      <description>落髮 / 雄性禿 7 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>香港腳 / 灰指甲 7 大迷思 — 不痛不癢就不用治？</title>
+      <title>香港腳 / 灰指甲 7 大迷思</title>
       <link>https://chendermatologist.com/blog/tinea-myths</link>
-      <guid>https://chendermatologist.com/blog/tinea-myths</guid>
-      <pubDate>Sun, 03 May 2026 10:00:00 +0800</pubDate>
-      <description>香港腳是穿不透氣鞋造成？灰指甲塗藥膏就好？熱水醋水殺菌？口服抗黴菌傷肝？寵物黴菌不會傳給人？附 4 種足癬型態 SVG 圖、Terbinafine / Itraconazole 藥物對照、預防 5 招。</description>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/tinea-myths</guid>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>足癬</category>
+      <description>香港腳 / 灰指甲 7 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>蕁麻疹（風疹塊）6 大迷思 — 一定是過敏嗎?抗組織胺嗜睡?慢性能治好?</title>
-      <link>https://chendermatologist.com/blog/urticaria-myths</link>
-      <guid>https://chendermatologist.com/blog/urticaria-myths</guid>
-      <pubDate>Mon, 04 May 2026 10:00:00 +0800</pubDate>
-      <description>蕁麻疹一定是過敏嗎？反覆發作是免疫力差？抗組織胺嗜睡上癮？會傳染家人？慢性蕁麻疹治不好？食物過敏原檢測有用嗎？附風疹塊形成 SVG 與 Omalizumab 治療階梯。</description>
-    </item>
-
-    <item>
-      <title>外用酸類完整衛教 — A 酸 / A 醇 / 杜鵑花酸 / 果酸 / 水楊酸</title>
+      <title>外用酸類完整衛教</title>
       <link>https://chendermatologist.com/blog/topical-acids-patient</link>
-      <guid>https://chendermatologist.com/blog/topical-acids-patient</guid>
-      <pubDate>Fri, 02 May 2026 10:00:00 +0800</pubDate>
-      <description>五大塗抹酸類各做什麼、適合誰、不能跟誰一起用、孕婦能不能用、會不會反黑爆痘。</description>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/topical-acids-patient</guid>
+      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>酸類</category>
+      <description>外用酸類完整衛教 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
     <item>
-      <title>口服 A 酸完整衛教 — 適合誰吃、副作用、復發率</title>
+      <title>口服 A 酸完整衛教</title>
       <link>https://chendermatologist.com/blog/isotretinoin-patient</link>
-      <guid>https://chendermatologist.com/blog/isotretinoin-patient</guid>
-      <pubDate>Fri, 02 May 2026 10:00:00 +0800</pubDate>
-      <description>適合誰吃 / 累積劑量 / 副作用 / 嘴唇乾肝指數 / 女性避孕 / 雷射禁忌 / 復發率 — 診間最常被問的問題一次答完。</description>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/isotretinoin-patient</guid>
+      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>口服 A 酸</category>
+      <description>口服 A 酸完整衛教 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
-
   </channel>
 </rss>

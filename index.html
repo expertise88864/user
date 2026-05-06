@@ -412,7 +412,7 @@
   }]
 }
 </script>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=4" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=5" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -1203,10 +1203,42 @@
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605140600" defer></script>
+<script src="/blog/blog-shared.js?v=202605140700" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (window.DN) DN.initBlog({});
+
+    // ============= HERO FEATURED CARDS — randomize each visit =============
+    (function () {
+      if (!window.DN || !DN.ARTICLES || DN.ARTICLES.length < 2) return;
+      var pool = DN.ARTICLES.slice(); // copy
+      // Shuffle (Fisher-Yates)
+      for (var i = pool.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
+      }
+      var hero = pool[0], side = pool[1];
+      var heroEl = document.querySelector('.mag-feature .mag-card:not(.mag-card-side)');
+      var sideEl = document.querySelector('.mag-feature .mag-card.mag-card-side');
+      function fmtDate(d) { return d ? d.replace(/-/g, '.').replace(/^(\d{4})\.(\d{2}).*/, '$1.$2') : ''; }
+      function fmtMeta(a) {
+        var d = fmtDate(a.date);
+        var tag = a.tag || '';
+        return [d, tag].filter(Boolean).join(' · ');
+      }
+      if (heroEl && hero) {
+        heroEl.href = '/blog/' + hero.slug;
+        var h3 = heroEl.querySelector('h3');
+        if (h3) { h3.textContent = hero.title; h3.removeAttribute('data-zh'); h3.removeAttribute('data-en'); }
+        var meta = heroEl.querySelector('.mag-card-meta');
+        if (meta) { meta.textContent = fmtMeta(hero); meta.removeAttribute('data-zh'); meta.removeAttribute('data-en'); }
+      }
+      if (sideEl && side) {
+        sideEl.href = '/blog/' + side.slug;
+        var h4 = sideEl.querySelector('h4');
+        if (h4) { h4.textContent = side.title; h4.removeAttribute('data-zh'); h4.removeAttribute('data-en'); }
+      }
+    })();
 
     // Scroll-reveal: progressively show content as user scrolls
     var targets = document.querySelectorAll('main > section');

@@ -372,31 +372,8 @@
     }
     apply(detect());
 
-    // Inject toggle next to language switch
-    var injected = false;
-    function inject() {
-      if (injected) return;
-      var langSel = document.getElementById('langToggle');
-      if (!langSel) return;
-      var btn = document.createElement('button');
-      btn.id = 'dn-theme-toggle';
-      btn.type = 'button';
-      btn.setAttribute('aria-label', '切換主題');
-      btn.textContent = detect() === 'dark' ? '☀' : '🌙';
-      btn.addEventListener('click', function () {
-        var cur = document.documentElement.getAttribute('data-theme');
-        var next = cur === 'dark' ? 'light' : 'dark';
-        setPref(next);
-        apply(next);
-      });
-      langSel.parentNode.insertBefore(btn, langSel);
-      injected = true;
-    }
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', inject);
-    } else {
-      inject();
-    }
+    // R25: skip injecting a separate toggle — static #dn-nav-theme button handles UX.
+    // Just keep the auto-apply + media-query sync logic above.
 
     // Sync with system theme changes (only if no manual pref)
     if (window.matchMedia) {
@@ -520,6 +497,8 @@
   };
 
   DN.injectMobileMenu = function () {
+    // R25: skip — static <nav class="dn-nav"> now handles flat + mobile burger
+    if (document.querySelector('.dn-nav') || document.getElementById('dn-nav-burger')) return;
     if (document.getElementById('dnMobileMenuBtn')) return;
     const header = document.querySelector('header.sticky') || document.querySelector('header');
     if (!header) return;
@@ -2001,12 +1980,45 @@
     if (!recentEl && !popularEl) return;
     var articles = DN.ARTICLES || [];
 
+    // SVG icon library — keyed by article tag (Chinese match) or fallback
+    // 32x32 illustrative line-art icons in teal palette
+    var TAG_SVG = {
+      '痘痘':       '<circle cx="16" cy="16" r="11" fill="#fff" stroke="#4d6358" stroke-width="1.6"/><circle cx="13" cy="14" r="2.5" fill="#a4b5a8"/><circle cx="20" cy="18" r="1.8" fill="#7a9285"/><circle cx="17" cy="20" r="1.2" fill="#4d6358"/>',
+      '防曬':       '<circle cx="16" cy="16" r="6" fill="#a4b5a8" stroke="#4d6358" stroke-width="1.5"/><line x1="16" y1="2" x2="16" y2="6" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="26" x2="16" y2="30" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/><line x1="2" y1="16" x2="6" y2="16" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/><line x1="26" y1="16" x2="30" y2="16" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="6" x2="9" y2="9" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/><line x1="23" y1="23" x2="26" y2="26" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="26" x2="9" y2="23" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/><line x1="23" y1="9" x2="26" y2="6" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/>',
+      '異膚':       '<path d="M5 22 Q9 13 16 13 Q23 13 27 22 Z" fill="#fde68a" stroke="#4d6358" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11" cy="20" r="1.4" fill="#dc2626"/><circle cx="18" cy="19" r="1.2" fill="#dc2626"/><circle cx="22" cy="21" r="1" fill="#dc2626"/>',
+      '兒童異膚':   '<circle cx="16" cy="13" r="6" fill="#cffafe" stroke="#4d6358" stroke-width="1.5"/><circle cx="14" cy="12" r="0.8" fill="#0f172a"/><circle cx="18" cy="12" r="0.8" fill="#0f172a"/><path d="M14 15 Q16 17 18 15" fill="none" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/><path d="M10 26 Q16 21 22 26" fill="none" stroke="#4d6358" stroke-width="1.5" stroke-linecap="round"/>',
+      '肝斑 / 美白':'<circle cx="16" cy="16" r="11" fill="#fff" stroke="#4d6358" stroke-width="1.5"/><path d="M10 14 Q12 12 14 13 Q12 16 10 14 Z" fill="#9a3412"/><path d="M19 17 Q22 15 23 18 Q21 20 19 17 Z" fill="#7c2d12"/><circle cx="16" cy="20" r="1.5" fill="#9a3412"/>',
+      '玫瑰斑':     '<circle cx="16" cy="16" r="11" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><circle cx="12" cy="14" r="0.8" fill="#dc2626"/><circle cx="20" cy="14" r="0.8" fill="#dc2626"/><circle cx="16" cy="18" r="0.6" fill="#dc2626"/><line x1="10" y1="10" x2="14" y2="12" stroke="#dc2626" stroke-width="1" stroke-linecap="round"/><line x1="22" y1="10" x2="18" y2="12" stroke="#dc2626" stroke-width="1" stroke-linecap="round"/>',
+      '落髮':       '<path d="M8 22 Q8 8 16 8 Q24 8 24 22" fill="none" stroke="#4d6358" stroke-width="1.5" stroke-linecap="round"/><line x1="11" y1="9" x2="10" y2="13" stroke="#4d6358" stroke-width="1" stroke-linecap="round"/><line x1="13" y1="8" x2="13" y2="13" stroke="#4d6358" stroke-width="1" stroke-linecap="round"/><line x1="16" y1="8" x2="16" y2="14" stroke="#4d6358" stroke-width="1" stroke-linecap="round"/><line x1="19" y1="8" x2="19" y2="13" stroke="#4d6358" stroke-width="1" stroke-linecap="round"/><line x1="21" y1="9" x2="22" y2="13" stroke="#4d6358" stroke-width="1" stroke-linecap="round"/>',
+      '圓禿':       '<circle cx="16" cy="16" r="11" fill="#fff" stroke="#4d6358" stroke-width="1.5"/><circle cx="16" cy="16" r="5" fill="#fde68a" stroke="#9a3412" stroke-width="1"/><line x1="9" y1="9" x2="11" y2="12" stroke="#4d6358" stroke-width="1"/><line x1="23" y1="9" x2="21" y2="12" stroke="#4d6358" stroke-width="1"/>',
+      '蕁麻疹':     '<circle cx="11" cy="12" r="3" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/><circle cx="20" cy="14" r="3.5" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/><circle cx="14" cy="20" r="2.5" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/><circle cx="22" cy="22" r="2" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>',
+      '乾癬':       '<rect x="6" y="6" width="20" height="20" rx="2" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><line x1="9" y1="10" x2="22" y2="10" stroke="#fef3c7" stroke-width="1.5"/><line x1="10" y1="14" x2="20" y2="14" stroke="#fef3c7" stroke-width="1.5"/><line x1="9" y1="18" x2="23" y2="18" stroke="#fef3c7" stroke-width="1.5"/><line x1="11" y1="22" x2="21" y2="22" stroke="#fef3c7" stroke-width="1.5"/>',
+      '香港腳 / 灰指甲':'<path d="M8 24 Q6 18 9 14 Q12 10 17 11 Q21 12 22 16 Q23 22 19 25 Z" fill="#ebe4d8" stroke="#4d6358" stroke-width="1.5"/><circle cx="13" cy="14" r="1" fill="#16a34a"/><circle cx="17" cy="16" r="0.8" fill="#16a34a"/><circle cx="14" cy="20" r="0.6" fill="#16a34a"/>',
+      '病毒疣 / HPV':'<circle cx="16" cy="16" r="11" fill="#fff" stroke="#4d6358" stroke-width="1.5"/><circle cx="13" cy="14" r="1.5" fill="#7a9285"/><circle cx="19" cy="13" r="1.2" fill="#7a9285"/><circle cx="17" cy="18" r="1.8" fill="#a4b5a8"/><circle cx="14" cy="20" r="1" fill="#7a9285"/><circle cx="20" cy="20" r="1.2" fill="#7a9285"/>',
+      '帶狀皰疹 / 皮蛇':'<path d="M5 16 Q10 8 16 16 Q22 24 27 16" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round"/><circle cx="10" cy="14" r="1.2" fill="#fee2e2" stroke="#dc2626"/><circle cx="16" cy="18" r="1.2" fill="#fee2e2" stroke="#dc2626"/><circle cx="22" cy="14" r="1.2" fill="#fee2e2" stroke="#dc2626"/>',
+      '白斑':       '<circle cx="16" cy="16" r="11" fill="#a4b5a8" stroke="#4d6358" stroke-width="1.5"/><circle cx="13" cy="13" r="3" fill="#fff"/><circle cx="20" cy="18" r="2.5" fill="#fff"/><circle cx="14" cy="20" r="1.5" fill="#fff"/>',
+      '化膿性汗腺炎':'<circle cx="11" cy="14" r="2.5" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><circle cx="21" cy="14" r="2.5" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><circle cx="16" cy="20" r="2" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><line x1="11" y1="14" x2="21" y2="14" stroke="#9a3412" stroke-width="1" stroke-dasharray="2 2"/><line x1="11" y1="14" x2="16" y2="20" stroke="#9a3412" stroke-width="1" stroke-dasharray="2 2"/><line x1="21" y1="14" x2="16" y2="20" stroke="#9a3412" stroke-width="1" stroke-dasharray="2 2"/>',
+      '猴痘 Mpox':  '<circle cx="11" cy="11" r="2.2" fill="#fef3c7" stroke="#9a3412" stroke-width="1.2"/><circle cx="21" cy="11" r="2.2" fill="#fef3c7" stroke="#9a3412" stroke-width="1.2"/><circle cx="16" cy="16" r="2.5" fill="#fef3c7" stroke="#9a3412" stroke-width="1.2"/><circle cx="11" cy="22" r="2" fill="#fef3c7" stroke="#9a3412" stroke-width="1.2"/><circle cx="21" cy="22" r="2" fill="#fef3c7" stroke="#9a3412" stroke-width="1.2"/>',
+      '生物製劑':   '<rect x="9" y="6" width="14" height="20" rx="3" fill="#cffafe" stroke="#0c5159" stroke-width="1.5"/><rect x="11" y="9" width="10" height="3" fill="#0c5159"/><circle cx="16" cy="18" r="2" fill="#0c5159"/><rect x="14" y="22" width="4" height="3" rx="0.5" fill="#0c5159"/>',
+      '酸類 / A 酸':'<path d="M11 5 L11 18 Q11 24 16 24 Q21 24 21 18 L21 5 Z" fill="#cffafe" stroke="#0c5159" stroke-width="1.5"/><path d="M11 5 L21 5" stroke="#0c5159" stroke-width="1.5"/><line x1="13" y1="14" x2="19" y2="14" stroke="#0c5159" stroke-width="1"/><circle cx="14" cy="19" r="0.8" fill="#0c5159"/><circle cx="18" cy="20" r="0.8" fill="#0c5159"/>',
+      '常見問題 FAQ':'<circle cx="16" cy="16" r="11" fill="#fff" stroke="#4d6358" stroke-width="1.5"/><path d="M13 13 Q13 10 16 10 Q19 10 19 13 Q19 15 16 16 L16 18" fill="none" stroke="#4d6358" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="22" r="1.2" fill="#4d6358"/>',
+      '粉瘤 / 表皮囊腫':'<ellipse cx="16" cy="17" rx="9" ry="7" fill="#ebe4d8" stroke="#4d6358" stroke-width="1.5"/><circle cx="16" cy="13" r="1.5" fill="#9a3412"/><line x1="16" y1="11" x2="16" y2="13" stroke="#4d6358" stroke-width="1"/>',
+      '雷射 / 光電':'<rect x="6" y="14" width="14" height="4" rx="1" fill="#a4b5a8" stroke="#4d6358" stroke-width="1.2"/><line x1="20" y1="16" x2="28" y2="16" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/><circle cx="28" cy="16" r="1.5" fill="#dc2626"/>',
+      '健保 / 自費':'<rect x="6" y="9" width="20" height="14" rx="2" fill="#cffafe" stroke="#0c5159" stroke-width="1.5"/><line x1="6" y1="13" x2="26" y2="13" stroke="#0c5159" stroke-width="1.2"/><line x1="9" y1="18" x2="15" y2="18" stroke="#0c5159" stroke-width="1.2"/><circle cx="22" cy="19" r="1.5" fill="#0c5159"/>',
+      '標靶藥物副作用':'<circle cx="16" cy="16" r="11" fill="#fee2e2" stroke="#9a3412" stroke-width="1.5"/><line x1="10" y1="10" x2="22" y2="22" stroke="#9a3412" stroke-width="2" stroke-linecap="round"/><line x1="22" y1="10" x2="10" y2="22" stroke="#9a3412" stroke-width="2" stroke-linecap="round"/>',
+      '類固醇藥膏': '<rect x="11" y="5" width="10" height="22" rx="2" fill="#cffafe" stroke="#0c5159" stroke-width="1.5"/><rect x="13" y="3" width="6" height="3" fill="#0c5159"/><line x1="13" y1="11" x2="19" y2="11" stroke="#0c5159" stroke-width="0.8"/><line x1="13" y1="14" x2="19" y2="14" stroke="#0c5159" stroke-width="0.8"/><line x1="13" y1="17" x2="19" y2="17" stroke="#0c5159" stroke-width="0.8"/>'
+    };
+    function svgFor(tag) {
+      var content = TAG_SVG[tag] || TAG_SVG['常見問題 FAQ'];
+      return '<svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" style="flex-shrink:0">' + content + '</svg>';
+    }
+
     function rowHTML(a, badge) {
       var tagEn = a.tag_en || a.tag || '';
       var dateLabel = a.date || '';
       var title = a.title || a.slug;
       var num = DN.getArticleNumber(a.slug);
-      var numStr = num ? '№' + num + ' · ' : '';
+      var iconSvg = svgFor(a.tag);
       return '<a href="/blog/' + a.slug + '" ' +
         'style="display:flex;flex-direction:column;gap:5px;padding:14px 16px;background:#fff;' +
         'border:1px solid var(--border, #dcd5c8);border-radius:12px;text-decoration:none;color:inherit;' +
@@ -2020,7 +2032,10 @@
           '<span style="opacity:.5">·</span>' +
           '<time style="font-weight:500;font-family:Inter,sans-serif;letter-spacing:0">' + dateLabel + '</time>' +
         '</div>' +
-        '<div style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:15px;font-weight:700;line-height:1.5;color:#0f172a">' + title + '</div>' +
+        '<div style="display:flex;align-items:center;gap:10px">' +
+          iconSvg +
+          '<div style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:15px;font-weight:700;line-height:1.5;color:#0f172a;flex:1">' + title + '</div>' +
+        '</div>' +
       '</a>';
     }
 
@@ -2208,7 +2223,9 @@
 
   DN.injectBMC = function () {
     DN.injectBMCFooter();
-    if (!DN.SUPPORT_URL) return;   // 等待 ezPay 審核中,先不注入 header pill
+    if (!DN.SUPPORT_URL) return;
+    // R25: skip header pill — static #dn-nav-support icon already covers this slot
+    if (document.getElementById('dn-nav-support')) return;
     if (document.getElementById('dn-bmc-header')) return;
     var headerInner = document.querySelector('header.sticky .h-16 > div:last-child');
     if (!headerInner) return;

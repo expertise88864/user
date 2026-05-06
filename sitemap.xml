@@ -1,127 +1,357 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemaps-image/1.1">
   <url>
     <loc>https://chendermatologist.com/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://chendermatologist.com/" />
-    <xhtml:link rel="alternate" hreflang="en"    href="https://chendermatologist.com/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/" />
-    <image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>ChenDermatologist 標誌</image:title></image:image>
   </url>
-
   <url>
     <loc>https://chendermatologist.com/about</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image><image:loc>https://chendermatologist.com/blog/SUNN1327-800.jpg</image:loc><image:title>陳翊嘉醫師 · Dermatology</image:title><image:caption>陳翊嘉醫師個人照</image:caption></image:image>
+    <priority>0.8</priority>
   </url>
-
-  <url>
-    <loc>https://chendermatologist.com/privacy</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
   <url>
     <loc>https://chendermatologist.com/blog/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <url>
-    <loc>https://chendermatologist.com/glossary</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://chendermatologist.com/tools</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://chendermatologist.com/dashboard</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://chendermatologist.com/notes</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://chendermatologist.com/blog/topics</loc>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
-    <loc>https://chendermatologist.com/blog/topics</loc>
-    <lastmod>2026-05-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://chendermatologist.com/tools</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-
-  <!-- 衛教 · 迷思澄清 -->
-  <url><loc>https://chendermatologist.com/blog/acne-myths</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>痘痘 9 大迷思</image:title></image:image></url>
-  <url><loc>https://chendermatologist.com/blog/sunscreen-myths</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>防曬 8 大迷思</image:title></image:image></url>
-  <url><loc>https://chendermatologist.com/blog/eczema-myths</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>異位性皮膚炎 6 大迷思</image:title></image:image></url>
-  <url><loc>https://chendermatologist.com/blog/melasma-myths</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>肝斑 7 大迷思</image:title></image:image></url>
-  <url><loc>https://chendermatologist.com/blog/rosacea-myths</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>玫瑰痤瘡 6 大迷思</image:title></image:image></url>
-  <url><loc>https://chendermatologist.com/blog/hairloss-myths</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>落髮 / 雄性禿 7 大迷思</image:title></image:image></url>
-  <url><loc>https://chendermatologist.com/blog/tinea-myths</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>香港腳 / 灰指甲 7 大迷思</image:title></image:image></url>
-  <url><loc>https://chendermatologist.com/blog/urticaria-myths</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>蕁麻疹 6 大迷思</image:title></image:image></url>
-  <url><loc>https://chendermatologist.com/blog/psoriasis-myths</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>乾癬 7 大迷思</image:title></image:image></url>
-  <url><loc>https://chendermatologist.com/blog/warts-myths</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>病毒疣 6 大迷思</image:title></image:image></url>
-  <url><loc>https://chendermatologist.com/blog/shingles-myths</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>帶狀皰疹 6 大迷思</image:title></image:image></url>
-
-  <!-- 衛教 · 產品 / 處方 / 治療 -->
-  <url><loc>https://chendermatologist.com/blog/topical-acids-patient</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>外用酸類完整衛教</image:title></image:image></url>
-  <url><loc>https://chendermatologist.com/blog/isotretinoin-patient</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>口服 A 酸完整衛教</image:title></image:image></url>
-  <url><loc>https://chendermatologist.com/blog/acne-scar-treatment</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>痘疤完整治療指引</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/alopecia-areata</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>圓禿（鬼剃頭）完整衛教</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/demodex-rosacea</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>蠕形蟎蟲與玫瑰斑</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/vitiligo</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>白斑（Vitiligo）完整衛教</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/mpox-care</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>猴痘（Mpox）皮膚照護</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/hidradenitis-suppurativa</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>化膿性汗腺炎（HS）完整衛教</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/targeted-therapy-skin</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>標靶藥物（TKI）皮膚副作用</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/topical-steroids-guide</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>外用類固醇完整指南</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/biologics-overview</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>皮膚科生物製劑與小分子標靶藥物總覽</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/skin-whitening-agents</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>美白成分完整解析</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/dermatology-faq</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>皮膚科 25 個最常見問題</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/epidermoid-cyst</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>粉瘤完整衛教</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/nhi-derm-drugs</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>皮膚科常用藥物健保規範完整整理</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/laser-dermatology</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>皮膚科雷射完整對照</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/pediatric-eczema</loc><lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>嬰幼兒 / 兒童異位性皮膚炎完整照護指南</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/prurigo-nodularis</loc><lastmod>2026-05-07</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>結節性癢疹完整衛教</image:title></image:image></url>
-
-  <url><loc>https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma</loc><lastmod>2026-05-07</lastmod><changefreq>monthly</changefreq><priority>0.95</priority><image:image><image:loc>https://chendermatologist.com/icon.svg</image:loc><image:title>皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教</image:title></image:image></url>
-
-  <!-- 學習筆記（深入閱讀，不出現在主索引） -->
-  <url><loc>https://chendermatologist.com/blog/topical-acids-clinical</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://chendermatologist.com/blog/isotretinoin-clinical</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url>
+    <loc>https://chendermatologist.com/glossary</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/dashboard</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/notes</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/privacy</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/prurigo-nodularis</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/prurigo-nodularis.png</image:loc>
+      <image:title>結節性癢疹完整衛教</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/cutaneous-t-cell-lymphoma.png</image:loc>
+      <image:title>皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/dermatology-faq</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/dermatology-faq.png</image:loc>
+      <image:title>皮膚科 25 個最常見問題</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/epidermoid-cyst</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/epidermoid-cyst.png</image:loc>
+      <image:title>粉瘤完整衛教</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/nhi-derm-drugs</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/nhi-derm-drugs.png</image:loc>
+      <image:title>皮膚科常用藥物健保規範完整整理</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/laser-dermatology</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/laser-dermatology.png</image:loc>
+      <image:title>皮膚科雷射完整對照</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/pediatric-eczema</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/pediatric-eczema.png</image:loc>
+      <image:title>嬰幼兒 / 兒童異位性皮膚炎完整照護指南</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/urticaria-myths</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/urticaria-myths.png</image:loc>
+      <image:title>蕁麻疹 6 大迷思</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/psoriasis-myths</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/psoriasis-myths.png</image:loc>
+      <image:title>乾癬 7 大迷思</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/warts-myths</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/warts-myths.png</image:loc>
+      <image:title>病毒疣 6 大迷思</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/shingles-myths</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/shingles-myths.png</image:loc>
+      <image:title>帶狀皰疹 6 大迷思</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/acne-scar-treatment</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/acne-scar-treatment.png</image:loc>
+      <image:title>痘疤完整治療指引</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/alopecia-areata</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/alopecia-areata.png</image:loc>
+      <image:title>圓禿（鬼剃頭）完整衛教</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/demodex-rosacea</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/demodex-rosacea.png</image:loc>
+      <image:title>蠕形蟎蟲與玫瑰斑(酒糟)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/vitiligo</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/vitiligo.png</image:loc>
+      <image:title>白斑（Vitiligo）完整衛教</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/mpox-care</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/mpox-care.png</image:loc>
+      <image:title>猴痘（Mpox）皮膚照護</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/hidradenitis-suppurativa</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/hidradenitis-suppurativa.png</image:loc>
+      <image:title>化膿性汗腺炎（HS）完整衛教</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/targeted-therapy-skin</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/targeted-therapy-skin.png</image:loc>
+      <image:title>標靶藥物（TKI）皮膚副作用</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/topical-steroids-guide</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/topical-steroids-guide.png</image:loc>
+      <image:title>外用類固醇完整指南</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/biologics-overview</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/biologics-overview.png</image:loc>
+      <image:title>皮膚科生物製劑與小分子標靶藥物總覽</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/skin-whitening-agents</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/skin-whitening-agents.png</image:loc>
+      <image:title>美白成分完整解析</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/acne-myths</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/acne-myths.png</image:loc>
+      <image:title>痘痘 9 大迷思</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/sunscreen-myths</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/sunscreen-myths.png</image:loc>
+      <image:title>防曬 8 大迷思</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/eczema-myths</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/eczema-myths.png</image:loc>
+      <image:title>異位性皮膚炎 6 大迷思</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/melasma-myths</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/melasma-myths.png</image:loc>
+      <image:title>肝斑 7 大迷思</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/rosacea-myths</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/rosacea-myths.png</image:loc>
+      <image:title>玫瑰痤瘡 6 大迷思</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/hairloss-myths</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/hairloss-myths.png</image:loc>
+      <image:title>落髮 / 雄性禿 7 大迷思</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/tinea-myths</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/tinea-myths.png</image:loc>
+      <image:title>香港腳 / 灰指甲 7 大迷思</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/topical-acids-patient</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/topical-acids-patient.png</image:loc>
+      <image:title>外用酸類完整衛教</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/isotretinoin-patient</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/isotretinoin-patient.png</image:loc>
+      <image:title>口服 A 酸完整衛教</image:title>
+    </image:image>
+  </url>
 </urlset>
