@@ -94,7 +94,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 {"@context":"https://schema.org","@type":"MedicalWebPage","url":"https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma","inLanguage":["zh-TW","en"],"name":"皮膚 T 細胞淋巴瘤完整衛教","audience":{"@type":"MedicalAudience","audienceType":"Patient"},"lastReviewed":"2026-05-07","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1","h2",".tldr"]},"keywords":"CTCL,蕈狀肉芽腫,MF,Sézary syndrome,Brentuximab,Mogamulizumab","articleSection":"Dermatology Patient Education","about":{"@type":"MedicalCondition","name":"皮膚 T 細胞淋巴瘤","alternateName":["皮膚 T 細胞淋巴瘤","CTCL","Mycosis fungoides","蕈狀肉芽腫"],"code":{"@type":"MedicalCode","code":"C84.0","codingSystem":"ICD-10"}},"isPartOf":{"@type":"WebSite","name":"ChenDermatologist","url":"https://chendermatologist.com/"}}
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"蕈狀肉芽腫(MF)是癌症嗎？預後如何？","acceptedAnswer":{"@type":"Answer","text":"是，但是極為惰性的低惡性度淋巴瘤。早期(IA-IIA 期)10 年存活率 > 80-90%,平均壽命接近一般人。進展期(IIB 以上)預後較差,但仍可長期控制。早期診斷與適當治療是關鍵,絕大多數病人不會死於 MF。"}},{"@type":"Question","name":"濕疹反覆發作多年會不會其實是 MF?","acceptedAnswer":{"@type":"Answer","text":"極少數案例會。MF 早期斑塊期常被誤診為慢性濕疹、乾癬、副银屑癬(parapsoriasis)、皮膚黴菌或藥物過敏。若濕疹「對標準治療反應不佳、分布不對稱、皮膚萎縮、出現紅皮症」,皮膚科會建議切片(包含免疫組織化學 CD3/CD4/CD8/CD30 與 T 細胞受體基因重排 TCR 鑑定)。"}},{"@type":"Question","name":"使用 Dupilumab 或 TNF-α 抑制劑會不會誘發 MF?","acceptedAnswer":{"@type":"Answer","text":"目前文獻顯示有 dupilumab 治療「異膚」後出現 MF / SS 的個案報告,但「誘發」抑或「未診斷的 MF 用 dupi 加重」仍有爭議。TDA 2024 共識建議:長期難治性異膚患者啟動生物製劑前,若有 MF 線索(不對稱、皮膚萎縮、難治、年長首次發病),應先做皮膚切片排除。"}},{"@type":"Question","name":"健保有給付 CTCL 哪些治療？","acceptedAnswer":{"@type":"Answer","text":"健保給付:外用類固醇、NB-UVB、PUVA、口服 Methotrexate、Acitretin。Brentuximab vedotin、Mogamulizumab 屬癌症專案藥物,需符合條件申請。Bexarotene(Targretin 倍善)目前多為自費。骨髓移植在符合條件之 SS / 進展期可申請。"}},{"@type":"Question","name":"CTCL 會傳染嗎?家人有風險嗎?","acceptedAnswer":{"@type":"Answer","text":"絕對不會傳染。CTCL 是病人自身 T 細胞惡性化造成,不是感染症。家族遺傳風險亦極低,沒有特定基因可預測。"}}]}</script>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=10" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=11" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -115,6 +115,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
         <a href="/tools" class="dn-nav-link" data-zh="量表計算器" data-en="Calculators">量表計算器</a>
         <a href="/glossary" class="dn-nav-link" data-zh="詞彙字典" data-en="Glossary">詞彙字典</a>
         <a href="/about" class="dn-nav-link" data-zh="關於我" data-en="About">關於我</a>
+        <span class="dn-nav-divider" aria-hidden="true"></span>
         <button id="dn-nav-search" class="dn-nav-icon" aria-label="搜尋" title="搜尋文章 (Cmd/Ctrl + K)">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
         </button>
@@ -134,15 +135,17 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </header>
 <style>
-  /* Header navigation — flat, right-aligned, tight spacing */
-  .dn-nav{display:flex;align-items:center;gap:2px;flex-shrink:0;margin-left:auto}
-  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 11px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
+  /* Header navigation — flat, right-aligned, comfortable spacing */
+  .dn-nav{display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:auto}
+  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
   .dn-nav-link:hover{background:var(--mint-100,#eaf6f3);color:#0e7c86}
-  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s;padding:0}
+  /* Subtle divider between nav links and the icon cluster */
+  .dn-nav .dn-nav-divider{width:1px;height:20px;background:var(--border,#dcd5c8);margin:0 4px}
+  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:15px;line-height:1;transition:background .15s;padding:0}
   .dn-nav-icon:hover{background:var(--mint-100,#eaf6f3)}
   .dn-nav-icon[id="dn-nav-support"]{color:#0c5159}
-  /* Compact lang select — match icon button dimensions */
-  .dn-nav .lang-select{margin:0 0 0 2px;padding:6px 22px 6px 10px;height:32px;font-size:11.5px;background-position:right 8px center;background-size:7px 5px}
+  /* Lang select — slight margin from icons */
+  .dn-nav .lang-select{margin:0 0 0 6px;padding:6px 22px 6px 10px;height:34px;font-size:11.5px;background-position:right 8px center;background-size:7px 5px}
   .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0;margin-left:auto}
   .dn-nav-burger:hover{background:var(--mint-100,#eaf6f3)}
   /* Mobile: hide flat nav, show burger */
@@ -509,7 +512,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605141200" defer></script>
+<script src="/blog/blog-shared.js?v=202605141300" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (window.DN) DN.initBlog({});

@@ -103,7 +103,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 {"@context":"https://schema.org","@type":"MedicalWebPage","url":"https://chendermatologist.com/blog/demodex-rosacea","inLanguage":["zh-TW","en"],"name":"蠕形蟎蟲與玫瑰斑(酒糟)完整衛教","audience":{"@type":"MedicalAudience","audienceType":"Patient"},"lastReviewed":"2026-05-04","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1","h2",".tldr"]},"keywords":"Demodex,蠕形蟎蟲,玫瑰斑,酒糟,Ivermectin,Soolantra","articleSection":"Dermatology Patient Education","about":{"@type":"MedicalCondition","name":"玫瑰斑（酒糟）","alternateName":["玫瑰斑","酒糟","Rosacea"],"code":{"@type":"MedicalCode","code":"L71","codingSystem":"ICD-10"}},"isPartOf":{"@type":"WebSite","name":"ChenDermatologist","url":"https://chendermatologist.com/"}}
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"蟎蟲是不是「住在臉上」？可以洗掉嗎？","acceptedAnswer":{"@type":"Answer","text":"蠕形蟎蟲是正常皮膚共生，大部分健康成人都有。它住在毛囊、皮脂腺裡，洗臉、卸妝、用酒精洗不到（深度不夠）。所以「努力洗臉」對蟎蟲性玫瑰斑沒幫助，反而會破壞屏障加重發炎。"}},{"@type":"Question","name":"玫瑰斑會傳染嗎？","acceptedAnswer":{"@type":"Answer","text":"不會。雖然蠕形蟎蟲可在親密接觸間傳遞，但玫瑰斑本身是宿主免疫反應問題，不是傳染病。家人共用毛巾枕頭不會「傳染玫瑰斑」。"}},{"@type":"Question","name":"聽說玫瑰斑沒辦法治好，只能控制？","acceptedAnswer":{"@type":"Answer","text":"對，但「控制」可以做到幾乎沒症狀。多數病人接受規律治療（Ivermectin / Metronidazole + 防曬 + 避誘發因子）6-12 個月可達穩定，之後維持治療（每週 2-3 次）即可。"}},{"@type":"Question","name":"玫瑰斑健保有給付什麼？","acceptedAnswer":{"@type":"Answer","text":"健保給付：外用 Metronidazole（滅菌靈）、口服 Doxycycline 低劑量、口服 Minocycline、Permethrin（疥瘡適應症）。健保不給付:Ivermectin（舒立美 Soolantra）外用、Brimonidine、雷射光電、肉毒微注射、口服 Isotretinoin 用於玫瑰斑。"}},{"@type":"Question","name":"外用 Ivermectin 跟治療疥瘡的 Permethrin 有什麼不同？","acceptedAnswer":{"@type":"Answer","text":"Ivermectin 同時殺蟎蟲 + 抗發炎，兩個機轉一起作用。Permethrin 主要殺蟎蟲、抗發炎弱。對玫瑰斑而言，Ivermectin 效果較好但需自費，Permethrin 較便宜可作為替代。"}},{"@type":"Question","name":"治好後還會復發嗎？","acceptedAnswer":{"@type":"Answer","text":"會。建議停止「主動治療」後維持「保養治療」：每週 1-2 次外用 Ivermectin 或 Metronidazole + 持續溫和保養 + 防曬。完全停止治療數月後復發率高。"}}]}</script>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=10" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=11" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -124,6 +124,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
         <a href="/tools" class="dn-nav-link" data-zh="量表計算器" data-en="Calculators">量表計算器</a>
         <a href="/glossary" class="dn-nav-link" data-zh="詞彙字典" data-en="Glossary">詞彙字典</a>
         <a href="/about" class="dn-nav-link" data-zh="關於我" data-en="About">關於我</a>
+        <span class="dn-nav-divider" aria-hidden="true"></span>
         <button id="dn-nav-search" class="dn-nav-icon" aria-label="搜尋" title="搜尋文章 (Cmd/Ctrl + K)">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
         </button>
@@ -143,15 +144,17 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </header>
 <style>
-  /* Header navigation — flat, right-aligned, tight spacing */
-  .dn-nav{display:flex;align-items:center;gap:2px;flex-shrink:0;margin-left:auto}
-  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 11px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
+  /* Header navigation — flat, right-aligned, comfortable spacing */
+  .dn-nav{display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:auto}
+  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
   .dn-nav-link:hover{background:var(--mint-100,#eaf6f3);color:#0e7c86}
-  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s;padding:0}
+  /* Subtle divider between nav links and the icon cluster */
+  .dn-nav .dn-nav-divider{width:1px;height:20px;background:var(--border,#dcd5c8);margin:0 4px}
+  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:15px;line-height:1;transition:background .15s;padding:0}
   .dn-nav-icon:hover{background:var(--mint-100,#eaf6f3)}
   .dn-nav-icon[id="dn-nav-support"]{color:#0c5159}
-  /* Compact lang select — match icon button dimensions */
-  .dn-nav .lang-select{margin:0 0 0 2px;padding:6px 22px 6px 10px;height:32px;font-size:11.5px;background-position:right 8px center;background-size:7px 5px}
+  /* Lang select — slight margin from icons */
+  .dn-nav .lang-select{margin:0 0 0 6px;padding:6px 22px 6px 10px;height:34px;font-size:11.5px;background-position:right 8px center;background-size:7px 5px}
   .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0;margin-left:auto}
   .dn-nav-burger:hover{background:var(--mint-100,#eaf6f3)}
   /* Mobile: hide flat nav, show burger */
@@ -543,7 +546,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </footer>
 
-<script src="/blog/blog-shared.js?v=202605141200" defer></script>
+<script src="/blog/blog-shared.js?v=202605141300" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});</script>
 
 <!-- ===== Deferred 3rd-party (loaded after first paint) ===== -->

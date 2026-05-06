@@ -34,6 +34,20 @@ code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,
 [hidden]{display:none}
 /* Custom: prose underlines for in-article links only — not for nav/cards */
 .prose a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+/* Object-fit utilities — critical for avatar / hero images not stretching */
+.object-cover{object-fit:cover}
+.object-contain{object-fit:contain}
+.object-fill{object-fit:fill}
+.object-none{object-fit:none}
+.object-scale-down{object-fit:scale-down}
+/* Object-position presets */
+.object-center{object-position:center}
+.object-top{object-position:top}
+.object-bottom{object-position:bottom}
+.object-left{object-position:left}
+.object-right{object-position:right}
+/* Aspect-ratio safety: parent with rounded-full + child img — force square keep-ratio */
+.rounded-full > picture, .rounded-full > picture > img{display:block;width:100%;height:100%;object-fit:cover}
 .flex-wrap{flex-wrap:wrap}
 .h-48{height:12rem}
 .mb-12{margin-bottom:3rem}

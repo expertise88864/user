@@ -1,66 +1,24 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v58';
-const RUNTIME = 'cd-runtime-v58';
+const CACHE = 'cd-v59';
+const RUNTIME = 'cd-runtime-v59';
 const RUNTIME_MAX_ENTRIES = 60;
 
+// R31: Slim precache — only critical shell + offline page + assets that EVERY page uses.
+// Articles are cached on-demand by network-first / runtime cache. Saves ~3 MB initial install
+// (was caching 30+ blog HTML × ~50 KB each = ~1.5 MB) and avoids slow SW activation on mobile.
 const PRECACHE = [
   '/',
   '/index.html',
-  '/about',
-  '/privacy',
-  '/404.html',
   '/offline.html',
   '/icon.svg',
   '/favicon.ico',
-  '/icon-32.png',
-  '/icon-192.png',
-  '/icon-512.png',
   '/apple-touch-icon.png',
-  '/logo-512.png',
   '/manifest.json',
-  '/blog/',
-  '/blog/topics',
-  '/blog/feed.xml',
-  '/blog/atom.xml',
+  '/assets/tw-mini.css',
   '/blog/blog-shared.js',
-  '/blog/acne-myths',
-  '/blog/sunscreen-myths',
-  '/blog/eczema-myths',
-  '/blog/melasma-myths',
-  '/blog/rosacea-myths',
-  '/blog/hairloss-myths',
-  '/blog/tinea-myths',
-  '/blog/urticaria-myths',
-  '/blog/psoriasis-myths',
-  '/blog/warts-myths',
-  '/blog/shingles-myths',
-  '/blog/topical-acids-patient',
-  '/blog/isotretinoin-patient',
-  '/blog/topical-acids-clinical',
-  '/blog/isotretinoin-clinical',
-  '/blog/alopecia-areata',
-  '/blog/demodex-rosacea',
-  '/blog/hidradenitis-suppurativa',
-  '/blog/biologics-overview',
-  '/blog/skin-whitening-agents',
-  '/blog/dermatology-faq',
-  '/blog/epidermoid-cyst',
-  '/blog/nhi-derm-drugs',
-  '/blog/topical-steroids-guide',
-  '/blog/targeted-therapy-skin',
-  '/blog/mpox-care',
-  '/blog/vitiligo',
-  '/blog/acne-scar-treatment',
-  '/blog/laser-dermatology',
-  '/blog/pediatric-eczema',
-  '/blog/prurigo-nodularis',
-  '/blog/cutaneous-t-cell-lymphoma',
-  '/glossary',
-  '/tools',
-  '/dashboard',
-  '/notes'
+  '/blog/'
 ];
 
 self.addEventListener('install', (e) => {

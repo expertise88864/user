@@ -136,7 +136,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   html, body { overflow-x: hidden; }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"防曬乳 PTT / Dcard 推薦的牌子如何挑？","acceptedAnswer":{"@type":"Answer","text":"網路討論度高的：安耐曬(Anessa)、理膚寶水(La Roche-Posay Anthelios)、怡麗絲爾、Heliocare 360、艾比安(Albion)、Neutrogena Ultra Sheer。挑選重點不是品牌：① 廣譜（SPF 30+ PA+++ 以上）② 含氧化鐵 iron oxide（防可見光，肝斑必備）③ 質地能規律補擦的。售價 NT$ 400-2000 都有實用品。"}},{"@type":"Question","name":"防曬 SPF 50 跟 SPF 30 差很多嗎？","acceptedAnswer":{"@type":"Answer","text":"SPF 30 已擋掉 97% UVB,SPF 50 擋 98% — 邊際效益 1%。實際擦的厚度(2 mg/cm²)才是關鍵，多數人實際只擦 1/3 厚度，導致 SPF 50 變成「實質 SPF 17」。挑能規律擦、不油不悶、能補擦的 SPF 30+ 比追求 SPF 50+ 重要。"}},{"@type":"Question","name":"物理性 vs 化學性防曬哪個好？","acceptedAnswer":{"@type":"Answer","text":"沒有絕對贏家。物理性(Zinc oxide、Titanium dioxide)穩定、敏感肌可用、孕婦較安心，但傳統質地較厚白。化學性(Octinoxate、Avobenzone、Octisalate、Tinosorb)質地較佳，但部分舊款成分(Oxybenzone、Octinoxate)有環境疑慮、極少數人接觸過敏。新款混合型(Tinosorb S/M、Mexoryl)質地與穩定性都好。"}},{"@type":"Question","name":"防曬乳要不要卸妝？","acceptedAnswer":{"@type":"Answer","text":"純化學性防曬通常溫和洗面乳就能洗掉。物理性、含氧化鐵、防水抗汗款、有色防曬建議用潔顏油或卸妝乳輕柔卸除。指引：擦了之後皮膚摸起來「卡卡」、洗完還有殘留感，就需要卸妝。"}},{"@type":"Question","name":"小孩、孕婦防曬怎麼挑？","acceptedAnswer":{"@type":"Answer","text":"6 個月以下嬰兒避免擦防曬，以遮蔽和避光為主。6 個月以上+孕婦建議用純物理性防曬(Zinc oxide、Titanium dioxide)，避開 Oxybenzone、Octinoxate（內分泌干擾疑慮）。孕婦肝斑活化，室內也要擦含氧化鐵的防曬。"}}]}</script>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=10" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=11" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -157,6 +157,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
         <a href="/tools" class="dn-nav-link" data-zh="量表計算器" data-en="Calculators">量表計算器</a>
         <a href="/glossary" class="dn-nav-link" data-zh="詞彙字典" data-en="Glossary">詞彙字典</a>
         <a href="/about" class="dn-nav-link" data-zh="關於我" data-en="About">關於我</a>
+        <span class="dn-nav-divider" aria-hidden="true"></span>
         <button id="dn-nav-search" class="dn-nav-icon" aria-label="搜尋" title="搜尋文章 (Cmd/Ctrl + K)">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
         </button>
@@ -176,15 +177,17 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </header>
 <style>
-  /* Header navigation — flat, right-aligned, tight spacing */
-  .dn-nav{display:flex;align-items:center;gap:2px;flex-shrink:0;margin-left:auto}
-  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 11px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
+  /* Header navigation — flat, right-aligned, comfortable spacing */
+  .dn-nav{display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:auto}
+  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
   .dn-nav-link:hover{background:var(--mint-100,#eaf6f3);color:#0e7c86}
-  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s;padding:0}
+  /* Subtle divider between nav links and the icon cluster */
+  .dn-nav .dn-nav-divider{width:1px;height:20px;background:var(--border,#dcd5c8);margin:0 4px}
+  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:15px;line-height:1;transition:background .15s;padding:0}
   .dn-nav-icon:hover{background:var(--mint-100,#eaf6f3)}
   .dn-nav-icon[id="dn-nav-support"]{color:#0c5159}
-  /* Compact lang select — match icon button dimensions */
-  .dn-nav .lang-select{margin:0 0 0 2px;padding:6px 22px 6px 10px;height:32px;font-size:11.5px;background-position:right 8px center;background-size:7px 5px}
+  /* Lang select — slight margin from icons */
+  .dn-nav .lang-select{margin:0 0 0 6px;padding:6px 22px 6px 10px;height:34px;font-size:11.5px;background-position:right 8px center;background-size:7px 5px}
   .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0;margin-left:auto}
   .dn-nav-burger:hover{background:var(--mint-100,#eaf6f3)}
   /* Mobile: hide flat nav, show burger */
@@ -608,7 +611,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (sw) sw.href = location.pathname.replace(/^\/en\//, '/').replace(/^\/en$/, '/');
 });
 </script>
-<script src="/blog/blog-shared.js?v=202605141200" defer></script>
+<script src="/blog/blog-shared.js?v=202605141300" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});</script>
 
 <!-- ===== Deferred 3rd-party (loaded after first paint) ===== -->

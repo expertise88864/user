@@ -147,7 +147,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   html, body { overflow-x: hidden; }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"香港腳 PTT 推薦的藥膏哪個有效？","acceptedAnswer":{"@type":"Answer","text":"有實證的處方/OTC 抗黴菌藥膏:Lamisil(Terbinafine 1%)、Lotrimin(Clotrimazole 1%)、Loceryl(Amorolfine)、Mentax(Butenafine)。Terbinafine 是最強的，2-4 週可見效。網路推薦的「天然茶樹精油、白醋泡腳」效果有限且易刺激。重點：擦藥要連續 2-4 週，症狀消失後再多擦 1 週避免復發。"}},{"@type":"Question","name":"灰指甲多久會好？","acceptedAnswer":{"@type":"Answer","text":"口服 Terbinafine 250 mg/天：足甲 6 週、趾甲 12 週療程，新指甲長出來看到變化要 6-9 個月（指甲生長慢）。外用藥（Efinaconazole、Tavaborole 油劑、Loceryl 指甲油）效果較弱，需要 48 週每天擦。中重度建議口服 + 外用合併。"}},{"@type":"Question","name":"口服抗黴菌藥真的會傷肝嗎？","acceptedAnswer":{"@type":"Answer","text":"嚴重肝毒性 。多數人安全。建議治療前抽血基本(GOT/GPT、Cr)，療程中第 4-6 週追蹤一次。輕度肝指數上升常為暫時性。Itraconazole對心臟衰竭、抗凝血藥、降血壓藥較多交互作用，優先選 Terbinafine。"}},{"@type":"Question","name":"寵物會傳黴菌給人嗎？","acceptedAnswer":{"@type":"Answer","text":"會。最常見是Microsporum canis（犬小芽胞菌）從貓狗（尤其幼貓）傳給小孩，造成體癬或頭癬。處理：寵物看獸醫治療 + 家裡環境清潔（吸塵、毛巾換洗）+ 自己抗黴菌藥膏。"}},{"@type":"Question","name":"灰指甲健保給付什麼？","acceptedAnswer":{"@type":"Answer","text":"健保：口服 Terbinafine、Itraconazole 都有條件給付（需確診+真菌培養或 KOH 陽性）。外用 Amorolfine（羅每樂）健保也有，但效果較弱。自費：Efinaconazole、雷射（Nd:YAG 灰指甲雷射）。健保藥已涵蓋多數需求，自費主要是怕口服肝毒性的特殊族群。"}}]}</script>
-<link rel="stylesheet" href="/assets/tw-mini.css?v=10" />
+<link rel="stylesheet" href="/assets/tw-mini.css?v=11" />
 </head>
 <body class="font-sans antialiased text-ink-900">
 <a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a>
@@ -168,6 +168,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
         <a href="/tools" class="dn-nav-link" data-zh="量表計算器" data-en="Calculators">量表計算器</a>
         <a href="/glossary" class="dn-nav-link" data-zh="詞彙字典" data-en="Glossary">詞彙字典</a>
         <a href="/about" class="dn-nav-link" data-zh="關於我" data-en="About">關於我</a>
+        <span class="dn-nav-divider" aria-hidden="true"></span>
         <button id="dn-nav-search" class="dn-nav-icon" aria-label="搜尋" title="搜尋文章 (Cmd/Ctrl + K)">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
         </button>
@@ -187,15 +188,17 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
   </div>
 </header>
 <style>
-  /* Header navigation — flat, right-aligned, tight spacing */
-  .dn-nav{display:flex;align-items:center;gap:2px;flex-shrink:0;margin-left:auto}
-  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 11px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
+  /* Header navigation — flat, right-aligned, comfortable spacing */
+  .dn-nav{display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:auto}
+  .dn-nav-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
   .dn-nav-link:hover{background:var(--mint-100,#eaf6f3);color:#0e7c86}
-  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:14px;line-height:1;transition:background .15s;padding:0}
+  /* Subtle divider between nav links and the icon cluster */
+  .dn-nav .dn-nav-divider{width:1px;height:20px;background:var(--border,#dcd5c8);margin:0 4px}
+  .dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;font-size:15px;line-height:1;transition:background .15s;padding:0}
   .dn-nav-icon:hover{background:var(--mint-100,#eaf6f3)}
   .dn-nav-icon[id="dn-nav-support"]{color:#0c5159}
-  /* Compact lang select — match icon button dimensions */
-  .dn-nav .lang-select{margin:0 0 0 2px;padding:6px 22px 6px 10px;height:32px;font-size:11.5px;background-position:right 8px center;background-size:7px 5px}
+  /* Lang select — slight margin from icons */
+  .dn-nav .lang-select{margin:0 0 0 6px;padding:6px 22px 6px 10px;height:34px;font-size:11.5px;background-position:right 8px center;background-size:7px 5px}
   .dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9999px;color:var(--teal-deep);background:transparent;border:0;cursor:pointer;flex-shrink:0;margin-left:auto}
   .dn-nav-burger:hover{background:var(--mint-100,#eaf6f3)}
   /* Mobile: hide flat nav, show burger */
@@ -639,7 +642,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (sw) sw.href = location.pathname.replace(/^\/en\//, '/').replace(/^\/en$/, '/');
 });
 </script>
-<script src="/blog/blog-shared.js?v=202605141200" defer></script>
+<script src="/blog/blog-shared.js?v=202605141300" defer></script>
 <script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});</script>
 
 <!-- ===== Deferred 3rd-party (loaded after first paint) ===== -->

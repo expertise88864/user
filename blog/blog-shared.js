@@ -823,6 +823,102 @@
         '</svg><figcaption>圖. JAK 家族 4 種 — 不同 JAK 阻斷不同 cytokines,故同一機轉藥物用在不同疾病</figcaption></figure>';
     },
 
+    // Tinea hyphae KOH microscopy view
+    'tinea-hyphae': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" aria-labelledby="tinea-title">' +
+        '<title id="tinea-title">皮癬菌 KOH 鏡檢下的菌絲</title>' +
+        '<rect width="720" height="320" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">KOH 鏡檢 — 皮癬菌的「鐵證」</text>' +
+        // Microscope field circle
+        '<g transform="translate(60 65)">' +
+        '<circle cx="180" cy="110" r="105" fill="#fef9c3" stroke="#854d0e" stroke-width="2"/>' +
+        '<circle cx="180" cy="110" r="100" fill="none" stroke="#854d0e" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.4"/>' +
+        // Skin scales (background)
+        '<g opacity="0.55">' +
+        '<polygon points="120,60 145,55 152,75 132,80" fill="#a16207"/>' +
+        '<polygon points="220,80 245,75 248,98 225,100" fill="#a16207"/>' +
+        '<polygon points="100,150 125,145 130,165 110,168" fill="#a16207"/>' +
+        '<polygon points="240,160 260,155 265,175 245,178" fill="#a16207"/>' +
+        '</g>' +
+        // Hyphae — branching septate
+        '<g stroke="#0c5159" stroke-width="2.5" stroke-linecap="round" fill="none">' +
+        // Main branching strand
+        '<path d="M90 80 Q 130 105 180 110 Q 230 115 280 100"/>' +
+        '<path d="M180 110 Q 200 130 220 160"/>' +
+        '<path d="M180 110 Q 165 90 145 60"/>' +
+        '<path d="M220 160 Q 240 175 250 200"/>' +
+        // Septation lines (thinner)
+        '<line x1="105" y1="83" x2="115" y2="93" stroke-width="1.5"/>' +
+        '<line x1="135" y1="100" x2="145" y2="110" stroke-width="1.5"/>' +
+        '<line x1="170" y1="105" x2="180" y2="115" stroke-width="1.5"/>' +
+        '<line x1="210" y1="110" x2="220" y2="120" stroke-width="1.5"/>' +
+        '<line x1="250" y1="105" x2="260" y2="115" stroke-width="1.5"/>' +
+        '<line x1="195" y1="125" x2="205" y2="135" stroke-width="1.5"/>' +
+        '<line x1="215" y1="155" x2="225" y2="165" stroke-width="1.5"/>' +
+        '<line x1="240" y1="185" x2="245" y2="190" stroke-width="1.5"/>' +
+        '<line x1="170" y1="80" x2="160" y2="70" stroke-width="1.5"/>' +
+        '</g>' +
+        // Arthroconidia (chains)
+        '<g fill="#0c5159" opacity="0.85">' +
+        '<circle cx="90" cy="80" r="3"/><circle cx="280" cy="100" r="3"/>' +
+        '<circle cx="145" cy="60" r="3"/><circle cx="250" cy="200" r="3"/>' +
+        '</g>' +
+        // Annotations with arrows
+        '<line x1="40" y1="40" x2="100" y2="80" stroke="#9a3412" stroke-width="1" stroke-dasharray="2 2"/>' +
+        '<text x="40" y="32" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#9a3412">分節菌絲</text>' +
+        '<line x1="320" y1="50" x2="265" y2="105" stroke="#7c2d12" stroke-width="1" stroke-dasharray="2 2"/>' +
+        '<text x="320" y="42" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#7c2d12">關節孢子</text>' +
+        '<line x1="320" y1="200" x2="240" y2="180" stroke="#854d0e" stroke-width="1" stroke-dasharray="2 2"/>' +
+        '<text x="320" y="208" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#854d0e">分支點</text>' +
+        '</g>' +
+        // Right panel: explanation
+        '<g transform="translate(420 75)">' +
+        '<text x="0" y="0" font-family="Noto Sans TC" font-size="14" font-weight="700" fill="#0c5159">KOH 鏡檢看到什麼?</text>' +
+        '<g transform="translate(0 18)">' +
+        '<rect x="0" y="0" width="270" height="170" rx="8" fill="#fff" stroke="var(--border)" stroke-width="1"/>' +
+        '<text x="12" y="22" font-family="Inter" font-size="11" font-weight="700" fill="#0c5159">✓ 分節菌絲(septate hyphae)</text>' +
+        '<text x="12" y="38" font-family="Inter" font-size="10" fill="#5e574e">細長線狀,有「橫膈」分節 — 皮癬菌特徵</text>' +
+        '<text x="12" y="60" font-family="Inter" font-size="11" font-weight="700" fill="#0c5159">✓ 關節孢子(arthroconidia)</text>' +
+        '<text x="12" y="76" font-family="Inter" font-size="10" fill="#5e574e">菌絲斷裂成橢圓形孢子鏈</text>' +
+        '<text x="12" y="98" font-family="Inter" font-size="11" font-weight="700" fill="#7f1d1d">取樣關鍵</text>' +
+        '<text x="12" y="114" font-family="Inter" font-size="10" fill="#5e574e">• 病灶活躍邊緣(紅圈外圍)</text>' +
+        '<text x="12" y="130" font-family="Inter" font-size="10" fill="#5e574e">• 用刀片刮取鱗屑</text>' +
+        '<text x="12" y="146" font-family="Inter" font-size="10" fill="#5e574e">• 滴 10-20% KOH 溶解角質</text>' +
+        '<text x="12" y="160" font-family="Inter" font-size="10" fill="#5e574e">• 加溫 / 等 5 分鐘 → 顯微鏡</text>' +
+        '</g>' +
+        '</g>' +
+        '<text x="360" y="305" text-anchor="middle" font-family="Inter" font-size="9" fill="#8b8378">Source: Hainer Am Fam Physician 2003 · Bonifaz 2024 medical mycology · Levitt JAMA Dermatol 2010</text>' +
+        '</svg><figcaption>圖. 皮癬菌 KOH 鏡檢:分節菌絲 + 關節孢子是診斷金標準;陰性也不排除(取樣不準確 / 已用過藥)</figcaption></figure>';
+    },
+
+    // Clinical photo placeholder — when real clinical photos are unavailable
+    'clinical-photo-placeholder': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" aria-labelledby="cp-title">' +
+        '<title id="cp-title">臨床表現示意圖</title>' +
+        '<rect width="720" height="280" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="16" font-weight="700" fill="#0c5159">臨床表現示意(無病人實照)</text>' +
+        // Three slot panels
+        '<g transform="translate(60 60)">' +
+        '<rect x="0" y="0" width="180" height="180" rx="14" fill="#ebe4d8" stroke="#a4b5a8" stroke-width="2" stroke-dasharray="6 4"/>' +
+        '<text x="90" y="75" text-anchor="middle" font-family="Noto Sans TC" font-size="12" font-weight="700" fill="#4d6358">臨床照片 #1</text>' +
+        '<text x="90" y="95" text-anchor="middle" font-family="Inter" font-size="10" fill="#5e574e">尚未收錄</text>' +
+        '<text x="90" y="125" text-anchor="middle" font-family="Inter" font-size="9" fill="#8b8378">(不放網路截圖以遵守</text>' +
+        '<text x="90" y="138" text-anchor="middle" font-family="Inter" font-size="9" fill="#8b8378">著作權與病患隱私)</text>' +
+        '</g>' +
+        '<g transform="translate(270 60)">' +
+        '<rect x="0" y="0" width="180" height="180" rx="14" fill="#ebe4d8" stroke="#a4b5a8" stroke-width="2" stroke-dasharray="6 4"/>' +
+        '<text x="90" y="75" text-anchor="middle" font-family="Noto Sans TC" font-size="12" font-weight="700" fill="#4d6358">臨床照片 #2</text>' +
+        '<text x="90" y="95" text-anchor="middle" font-family="Inter" font-size="10" fill="#5e574e">尚未收錄</text>' +
+        '</g>' +
+        '<g transform="translate(480 60)">' +
+        '<rect x="0" y="0" width="180" height="180" rx="14" fill="#ebe4d8" stroke="#a4b5a8" stroke-width="2" stroke-dasharray="6 4"/>' +
+        '<text x="90" y="75" text-anchor="middle" font-family="Noto Sans TC" font-size="12" font-weight="700" fill="#4d6358">臨床照片 #3</text>' +
+        '<text x="90" y="95" text-anchor="middle" font-family="Inter" font-size="10" fill="#5e574e">尚未收錄</text>' +
+        '</g>' +
+        '<text x="360" y="262" text-anchor="middle" font-family="Inter" font-size="9" fill="#8b8378">參考公開圖片:DermNet NZ · VisualDx · 各疾病 wiki(英文)</text>' +
+        '</svg><figcaption>圖. 為避免侵權與保護病患隱私,本站不放網路收集的臨床照片;欲對照實際病灶請參考 DermNet / VisualDx</figcaption></figure>';
+    },
+
     // Dermatome map for shingles
     'dermatome-map': function () {
       return '<figure class="dn-med-fig"><svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" aria-labelledby="derm-title">' +
@@ -926,8 +1022,14 @@
     'acne-scar-treatment':     [{ key: 'acne-pathogenesis', after: 0 }, { key: 'acne-scar-types', after: 1 }],
     'alopecia-areata':         [{ key: 'hair-cycle', after: 1 }, { key: 'jak-tree', after: 4 }],
     'biologics-overview':      [{ key: 'biologics-cytokines', after: 1 }, { key: 'jak-tree', after: 3 }, { key: 'skin-barrier', after: 5 }],
-    'shingles-myths':          [{ key: 'dermatome-map', after: 1 }],
-    'mpox-care':               [{ key: 'dermatome-map', after: 2 }]
+    'shingles-myths':          [{ key: 'dermatome-map', after: 1 }, { key: 'clinical-photo-placeholder', after: 3 }],
+    'mpox-care':               [{ key: 'dermatome-map', after: 2 }, { key: 'clinical-photo-placeholder', after: 4 }],
+    // Tinea hyphae
+    'tinea-myths':             [{ key: 'tinea-hyphae', after: 2 }, { key: 'clinical-photo-placeholder', after: 4 }],
+    // More clinical-photo placeholders for diseases without owned images
+    'warts-myths':             [{ key: 'clinical-photo-placeholder', after: 2 }],
+    'epidermoid-cyst':         [{ key: 'clinical-photo-placeholder', after: 1 }],
+    'demodex-rosacea':         [{ key: 'rosacea-subtypes', after: 1 }, { key: 'clinical-photo-placeholder', after: 3 }]
   };
 
   DN.injectMedDiagrams = function () {
@@ -943,25 +1045,55 @@
       var st = document.createElement('style');
       st.id = 'dn-med-fig-css';
       st.textContent =
-        '.dn-med-fig{margin:28px 0;background:#fff;border:1px solid var(--border,#dcd5c8);border-radius:14px;padding:18px;box-shadow:0 4px 14px -8px rgba(15,23,42,.12)}' +
+        '.dn-med-fig{margin:28px 0;background:#fff;border:1px solid var(--border,#dcd5c8);border-radius:14px;padding:18px;box-shadow:0 4px 14px -8px rgba(15,23,42,.12);min-height:120px;display:flex;flex-direction:column;justify-content:center}' +
         '.dn-med-fig svg{display:block;width:100%;height:auto;max-width:100%}' +
-        '.dn-med-fig figcaption{margin-top:10px;font-family:"Noto Sans TC",sans-serif;font-size:12.5px;color:var(--ink-2,#5e574e);line-height:1.6;text-align:center;font-style:italic}';
+        '.dn-med-fig figcaption{margin-top:10px;font-family:"Noto Sans TC",sans-serif;font-size:12.5px;color:var(--ink-2,#5e574e);line-height:1.6;text-align:center;font-style:italic}' +
+        '.dn-med-fig-placeholder{min-height:240px;display:flex;align-items:center;justify-content:center;color:var(--muted,#8b8378);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-family:Inter,sans-serif}';
       document.head.appendChild(st);
     }
 
     var prose = document.getElementById('proseZh') || article.querySelector('.prose');
     if (!prose) return;
     var h2s = prose.querySelectorAll('h2');
+
+    // R31: lazy-load diagrams via IntersectionObserver — only render SVG when scrolled near
+    // Saves ~30-50 KB initial render + reduces main-thread time on slow phones
+    var hasIO = 'IntersectionObserver' in window;
+    var observer = hasIO ? new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var ph = entry.target;
+        var key = ph.dataset.diagramKey;
+        var fn = DN.medDiagrams[key];
+        if (typeof fn !== 'function') { observer.unobserve(ph); return; }
+        var wrap = document.createElement('div');
+        wrap.innerHTML = fn();
+        var fig = wrap.firstElementChild;
+        if (fig && ph.parentNode) ph.parentNode.replaceChild(fig, ph);
+        observer.unobserve(ph);
+      });
+    }, { rootMargin: '300px 0px' }) : null;
+
     spec.forEach(function (item) {
       var fn = DN.medDiagrams[item.key];
       if (typeof fn !== 'function') return;
       var anchor = h2s[item.after];
       if (!anchor) anchor = h2s[h2s.length - 1] || prose.firstElementChild;
       if (!anchor) return;
-      var wrap = document.createElement('div');
-      wrap.innerHTML = fn();
-      var fig = wrap.firstElementChild;
-      if (fig) anchor.parentNode.insertBefore(fig, anchor.nextSibling);
+      if (hasIO) {
+        // Insert lightweight placeholder, lazy-render on scroll
+        var ph = document.createElement('figure');
+        ph.className = 'dn-med-fig dn-med-fig-placeholder';
+        ph.dataset.diagramKey = item.key;
+        ph.innerHTML = '<span>· loading diagram ·</span>';
+        anchor.parentNode.insertBefore(ph, anchor.nextSibling);
+        observer.observe(ph);
+      } else {
+        var wrap = document.createElement('div');
+        wrap.innerHTML = fn();
+        var fig = wrap.firstElementChild;
+        if (fig) anchor.parentNode.insertBefore(fig, anchor.nextSibling);
+      }
     });
   };
 
