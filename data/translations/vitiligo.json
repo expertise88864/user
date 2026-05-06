@@ -1,880 +1,180 @@
 {
   "slug": "vitiligo",
   "strings": [
-    {
-      "zh": "什麼是白斑？跟其他色素疾病怎麼分？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "分類：分節型 vs 非分節型（影響預後與治療）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "如何診斷？需要切片嗎？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "病患評估（TDA 2024 共識聲明）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "治療階梯（依 TDA 2024 共識）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "重點：外用 Ruxolitinib（Opzelura）— 白斑治療的突破",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "外科治療：自體表皮移植",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "常見問題",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "結語",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "臺灣皮膚科醫學會官方資源",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "第一線治療（局限性病灶 ≤ 10% 體表）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "光療（病灶 &gt; 10% 體表 / 廣泛型）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "全身性治療（活動性快速進展型）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "合併治療（TDA 2024 強調）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "維持治療",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "白斑會傳染嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "白斑會不會自己好？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "白斑健保有給付什麼？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "白斑可以曬太陽嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "白斑跟異膚或乾癬有關嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "白斑可以化妝遮蓋嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "本篇大綱",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "對於過去用類固醇 / Tacrolimus 反應不佳的臉部白斑，Ruxolitinib 是顯著進步。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "常用方法：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "外用 Ruxolitinib + NB-UVB(臉部、軀幹)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "外用 Tacrolimus + 308-nm Excimer(局限型)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "口服 OMP + NB-UVB(快速進展型)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "分節型(SV)更適合手術 — 預後較好",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "非分節型若已經對其他治療反應差，可考慮",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "自體免疫造成的皮膚色素脫失",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "2022 年外用 Ruxolitinib（Opzelura,JAK 抑制劑）獲 FDA 核准",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "提醒：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "白斑是後天自體免疫疾病",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不會傳染，但有家族傾向",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "邊界清晰、大小不一的色素脫失斑塊",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "伍氏燈（Wood lamp）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "非常清晰",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "強白色螢光",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "區分 SV 與 NSV 對判斷預後和選擇治療至關重要",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "分節型 SV",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "非分節型 NSV",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "臨床觀察 + 伍氏燈檢查",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "偏光鏡、皮膚鏡",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皮膚切片",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "必做評估",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "客觀評估",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "心理社會壓力篩檢",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "共病篩檢",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "必須篩檢甲狀腺功能",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "中高強度外用皮質類固醇",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用 Calcineurin inhibitor",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用 Ruxolitinib 1.5%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "NSV、≤ 10% 體表、≥ 12 歲",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "NB-UVB（窄波 UVB）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "口服低脈衝皮質類固醇（Oral Mini-Pulse, OMP）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "合併治療優於單一治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "光療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "活動性 vs 穩定性 — 治療選擇的關鍵分野(TDA 2024)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「白斑目前是否仍在擴張」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "活動性指標",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "新病灶出現",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "原病灶擴大",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "三色性(trichrome)邊緣",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "融合性(confetti)小白點",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "科伯納現象(Koebner)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "活動性(VIDA ≥ +2)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "穩定性(VIDA ≤ 0,≥ 1 年)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不要在活動期手術",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "每週 2 次外用 Calcineurin inhibitor 或外用皮質類固醇",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Ruxolitinib 1.5% 乳霜（Opzelura）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "52 週時 50% 病人達到 ≥ 75% 臉部色素再生（F-VASI 75）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "狀態穩定的白斑病灶可使用手術方式治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "病情至少穩定 1 年",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "非培養表皮細胞懸液移植（Non-cultured Epidermal Cell Suspension, NCES）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "負壓水泡表皮移植（Suction blister grafting）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "細胞培養移植（Cultured melanocyte transfer）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不會",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "自然色素再生",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "有給付",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不給付",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "沒有黑色素保護，容易曬傷",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "嚴格防曬",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "甲狀腺疾病、Type 1 糖尿病、紅斑性狼瘡、惡性貧血、Addison's disease",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "定期篩檢甲狀腺功能",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "偽裝化妝（camouflage makeup）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "仿曬產品（DHA self-tanner）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "慢性、可治療但無法快速根治",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "局限型用外用藥（Ruxolitinib 是目前最強）、廣泛型用 NB-UVB、活動性快速進展用口服 OMP、穩定後合併光療提升療效、長期維持治療避免復發、穩定病灶可考慮手術",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "邊界清晰的純白斑塊",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "延伸閱讀：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "白斑臨床治療共識（2024 年）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陳翊嘉 醫師",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "白斑臨床治療共識",
-      "en": "",
-      "tag": "em"
-    },
-    {
-      "zh": "白斑完整衛教",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "依 TDA 2024 共識 · 更新 2026-05-04",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "自體免疫色素脫失、Ruxolitinib JAK 時代",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "皮膚科 住院醫師",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "白斑 Vitiligo",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "白色糠疹 Pityriasis alba",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "花斑癬 Tinea versicolor",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "白癩 Vitiligo-like 念珠菌",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "類型",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "分布",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "常見族群",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "預後",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "方式",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "適用",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "用法",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "項目",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "內容",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "邊界",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "模糊",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "輕度脫屑邊界",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "環狀",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "顏色",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "純白(milky white)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "淡白",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "淺褐 / 淡白",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "白色斑塊",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "伍氏燈",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "輕度",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "黃色螢光",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "所有年齡",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "兒童、青少年",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "青少年到成人，夏天好發",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "免疫低下",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "本質",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "自體免疫",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "濕疹後脫色",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "馬拉色菌感染",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "真菌感染",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "身體單側，沿皮節分布",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "兒童 / 青少年",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "進展 1-2 年後穩定，色素再生反應較差，可考慮手術",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "雙側對稱，常見口周、四肢、伸展側、對磨皺褶",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "各年齡",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "慢性反覆，治療反應視部位而定",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "混合型 Mixed",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "SV + NSV 同時存在",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "少見",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "依優勢型態",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "未分類 Unclassified",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "單一小斑塊或黏膜白斑",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "可能日後轉為 SV / NSV",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "所有類型，病灶區域較小",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 1 次，連續 2-3 個月評估，間歇使用避免皮膚萎縮",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "所有類型，尤其臉部、頸部、皺褶處（類固醇怕副作用）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 2 次，可長期使用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 2 次，持續至少 24 週",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第一線，所有類型，廣泛型",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每週 2-3 次，持續 6-12 個月",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第一線，局限型（臉部、頸部、軀幹）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每週 2 次，光劑量精準靶向",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "外用 PUVA",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "二線，≥ 12 歲",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "需配合紫外線曝曬",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第一線，Dexamethasone 2.5 mg 一週給 2 天連續",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "口服免疫抑制劑（Methotrexate、Cyclosporine、Azathioprine）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第一線替代，類固醇禁忌時",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "機轉",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "JAK1 / JAK2 抑制劑 — 阻斷自體免疫攻擊黑色素細胞的訊號路徑",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "適應症（FDA、TDA 2024 共識）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥ 12 歲、NSV、≤ 10% 體表面積",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 2 次薄塗於白斑病灶，持續至少 24 週",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "效果（TRuE-V1/V2 試驗）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "副作用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "用藥處輕度發紅、痤瘡、搔癢",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "價格",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "台灣自費，約 NT$ 4,000-6,000/條(60g)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "健保",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "未給付",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "禁忌",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≤ 12 歲（目前未核准）、廣泛型 &gt; 10% 體表、活動性嚴重感染、孕婦哺乳",
-      "en": "",
-      "tag": "td"
-    }
+    { "zh": "什麼是白斑？跟其他色素疾病怎麼分？", "en": "What is vitiligo? How is it distinguished from other pigmentary disorders?", "tag": "h2" },
+    { "zh": "分類：分節型 vs 非分節型（影響預後與治療）", "en": "Classification: segmental vs non-segmental (impacts prognosis and treatment)", "tag": "h2" },
+    { "zh": "如何診斷？需要切片嗎？", "en": "How is it diagnosed? Is biopsy necessary?", "tag": "h2" },
+    { "zh": "病患評估（TDA 2024 共識聲明）", "en": "Patient assessment (TDA 2024 consensus statement)", "tag": "h2" },
+    { "zh": "治療階梯（依 TDA 2024 共識）", "en": "Treatment ladder (per TDA 2024 consensus)", "tag": "h2" },
+    { "zh": "重點：外用 Ruxolitinib（Opzelura）— 白斑治療的突破", "en": "Spotlight: topical ruxolitinib (Opzelura) — breakthrough in vitiligo treatment", "tag": "h2" },
+    { "zh": "外科治療：自體表皮移植", "en": "Surgical therapy: autologous epidermal grafting", "tag": "h2" },
+    { "zh": "常見問題", "en": "Common questions", "tag": "h2" },
+    { "zh": "結語", "en": "Bottom line", "tag": "h2" },
+    { "zh": "臺灣皮膚科醫學會官方資源", "en": "Taiwanese Dermatological Association official resources", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "第一線治療（局限性病灶 ≤ 10% 體表）", "en": "First-line therapy (localized lesions ≤ 10% BSA)", "tag": "h3" },
+    { "zh": "光療（病灶 &gt; 10% 體表 / 廣泛型）", "en": "Phototherapy (lesions &gt; 10% BSA / widespread)", "tag": "h3" },
+    { "zh": "全身性治療（活動性快速進展型）", "en": "Systemic therapy (active rapidly progressive type)", "tag": "h3" },
+    { "zh": "合併治療（TDA 2024 強調）", "en": "Combination therapy (emphasized by TDA 2024)", "tag": "h3" },
+    { "zh": "維持治療", "en": "Maintenance therapy", "tag": "h3" },
+    { "zh": "白斑會傳染嗎？", "en": "Is vitiligo contagious?", "tag": "h3" },
+    { "zh": "白斑會不會自己好？", "en": "Will vitiligo resolve on its own?", "tag": "h3" },
+    { "zh": "白斑健保有給付什麼？", "en": "What does NHI cover for vitiligo?", "tag": "h3" },
+    { "zh": "白斑可以曬太陽嗎？", "en": "Can people with vitiligo sunbathe?", "tag": "h3" },
+    { "zh": "白斑跟異膚或乾癬有關嗎？", "en": "Is vitiligo related to AD or psoriasis?", "tag": "h3" },
+    { "zh": "白斑可以化妝遮蓋嗎？", "en": "Can vitiligo be covered with makeup?", "tag": "h3" },
+    { "zh": "本篇大綱", "en": "Article outline", "tag": "h4" },
+    { "zh": "對於過去用類固醇 / Tacrolimus 反應不佳的臉部白斑，Ruxolitinib 是顯著進步。", "en": "For facial vitiligo with poor response to corticosteroids or tacrolimus, ruxolitinib is a significant advance.", "tag": "p" },
+    { "zh": "常用方法：", "en": "Common approaches:", "tag": "p" },
+    { "zh": "外用 Ruxolitinib + NB-UVB(臉部、軀幹)", "en": "Topical ruxolitinib + NB-UVB (face, trunk)", "tag": "li" },
+    { "zh": "外用 Tacrolimus + 308-nm Excimer(局限型)", "en": "Topical tacrolimus + 308-nm excimer (localized)", "tag": "li" },
+    { "zh": "口服 OMP + NB-UVB(快速進展型)", "en": "Oral OMP + NB-UVB (rapidly progressive)", "tag": "li" },
+    { "zh": "分節型(SV)更適合手術 — 預後較好", "en": "Segmental (SV) responds better to surgery — better prognosis", "tag": "li" },
+    { "zh": "非分節型若已經對其他治療反應差，可考慮", "en": "Non-segmental can be considered if other treatments have failed", "tag": "li" },
+    { "zh": "自體免疫造成的皮膚色素脫失", "en": "Autoimmune-mediated skin depigmentation", "tag": "strong" },
+    { "zh": "2022 年外用 Ruxolitinib（Opzelura,JAK 抑制劑）獲 FDA 核准", "en": "Topical ruxolitinib (Opzelura, JAK inhibitor) received FDA approval in 2022", "tag": "strong" },
+    { "zh": "提醒：", "en": "Note:", "tag": "strong" },
+    { "zh": "白斑是後天自體免疫疾病", "en": "Vitiligo is an acquired autoimmune disease", "tag": "strong" },
+    { "zh": "不會傳染，但有家族傾向", "en": "Not contagious, but with familial predisposition", "tag": "strong" },
+    { "zh": "邊界清晰、大小不一的色素脫失斑塊", "en": "Sharply demarcated depigmented patches of varying size", "tag": "strong" },
+    { "zh": "伍氏燈（Wood lamp）", "en": "Wood's lamp", "tag": "strong" },
+    { "zh": "非常清晰", "en": "Sharply defined", "tag": "strong" },
+    { "zh": "強白色螢光", "en": "Bright white fluorescence", "tag": "strong" },
+    { "zh": "區分 SV 與 NSV 對判斷預後和選擇治療至關重要", "en": "Distinguishing SV from NSV is critical for prognosis and treatment selection", "tag": "strong" },
+    { "zh": "分節型 SV", "en": "Segmental vitiligo (SV)", "tag": "strong" },
+    { "zh": "非分節型 NSV", "en": "Non-segmental vitiligo (NSV)", "tag": "strong" },
+    { "zh": "臨床觀察 + 伍氏燈檢查", "en": "Clinical examination + Wood's lamp", "tag": "strong" },
+    { "zh": "偏光鏡、皮膚鏡", "en": "Polarized light dermoscopy", "tag": "strong" },
+    { "zh": "皮膚切片", "en": "Skin biopsy", "tag": "strong" },
+    { "zh": "必做評估", "en": "Mandatory evaluations", "tag": "strong" },
+    { "zh": "客觀評估", "en": "Objective assessment", "tag": "strong" },
+    { "zh": "心理社會壓力篩檢", "en": "Psychosocial stress screening", "tag": "strong" },
+    { "zh": "共病篩檢", "en": "Comorbidity screening", "tag": "strong" },
+    { "zh": "必須篩檢甲狀腺功能", "en": "Mandatory thyroid function screening", "tag": "strong" },
+    { "zh": "中高強度外用皮質類固醇", "en": "Mid-to-high potency topical corticosteroids", "tag": "strong" },
+    { "zh": "外用 Calcineurin inhibitor", "en": "Topical calcineurin inhibitor", "tag": "strong" },
+    { "zh": "外用 Ruxolitinib 1.5%", "en": "Topical ruxolitinib 1.5%", "tag": "strong" },
+    { "zh": "NSV、≤ 10% 體表、≥ 12 歲", "en": "NSV, ≤ 10% BSA, ≥ 12 years", "tag": "strong" },
+    { "zh": "NB-UVB（窄波 UVB）", "en": "NB-UVB (narrowband UVB)", "tag": "strong" },
+    { "zh": "口服低脈衝皮質類固醇（Oral Mini-Pulse, OMP）", "en": "Oral mini-pulse corticosteroids (OMP)", "tag": "strong" },
+    { "zh": "合併治療優於單一治療", "en": "Combination therapy is superior to monotherapy", "tag": "strong" },
+    { "zh": "光療", "en": "Phototherapy", "tag": "strong" },
+    { "zh": "活動性 vs 穩定性 — 治療選擇的關鍵分野(TDA 2024)", "en": "Active vs stable — the key dividing line for treatment selection (TDA 2024)", "tag": "strong" },
+    { "zh": "「白斑目前是否仍在擴張」", "en": "\"Is the vitiligo still expanding right now?\"", "tag": "strong" },
+    { "zh": "活動性指標", "en": "Activity markers", "tag": "strong" },
+    { "zh": "新病灶出現", "en": "Emergence of new lesions", "tag": "strong" },
+    { "zh": "原病灶擴大", "en": "Expansion of existing lesions", "tag": "strong" },
+    { "zh": "三色性(trichrome)邊緣", "en": "Trichrome borders", "tag": "strong" },
+    { "zh": "融合性(confetti)小白點", "en": "Confetti-like small white macules", "tag": "strong" },
+    { "zh": "科伯納現象(Koebner)", "en": "Koebner phenomenon", "tag": "strong" },
+    { "zh": "活動性(VIDA ≥ +2)", "en": "Active (VIDA ≥ +2)", "tag": "strong" },
+    { "zh": "穩定性(VIDA ≤ 0,≥ 1 年)", "en": "Stable (VIDA ≤ 0, ≥ 1 year)", "tag": "strong" },
+    { "zh": "不要在活動期手術", "en": "Do not perform surgery during the active phase", "tag": "strong" },
+    { "zh": "每週 2 次外用 Calcineurin inhibitor 或外用皮質類固醇", "en": "Twice-weekly topical calcineurin inhibitor or topical corticosteroid", "tag": "strong" },
+    { "zh": "Ruxolitinib 1.5% 乳霜（Opzelura）", "en": "Ruxolitinib 1.5% cream (Opzelura)", "tag": "strong" },
+    { "zh": "52 週時 50% 病人達到 ≥ 75% 臉部色素再生（F-VASI 75）", "en": "At 52 weeks, 50% of patients achieved ≥ 75% facial repigmentation (F-VASI 75)", "tag": "strong" },
+    { "zh": "狀態穩定的白斑病灶可使用手術方式治療", "en": "Surgical therapy can be considered for stable vitiligo lesions", "tag": "strong" },
+    { "zh": "病情至少穩定 1 年", "en": "Disease must be stable for at least 1 year", "tag": "strong" },
+    { "zh": "非培養表皮細胞懸液移植（Non-cultured Epidermal Cell Suspension, NCES）", "en": "Non-cultured Epidermal Cell Suspension (NCES) grafting", "tag": "strong" },
+    { "zh": "負壓水泡表皮移植（Suction blister grafting）", "en": "Suction blister epidermal grafting", "tag": "strong" },
+    { "zh": "細胞培養移植（Cultured melanocyte transfer）", "en": "Cultured melanocyte transfer", "tag": "strong" },
+    { "zh": "不會", "en": "No", "tag": "strong" },
+    { "zh": "自然色素再生", "en": "Spontaneous repigmentation", "tag": "strong" },
+    { "zh": "有給付", "en": "Covered", "tag": "strong" },
+    { "zh": "不給付", "en": "Not covered", "tag": "strong" },
+    { "zh": "沒有黑色素保護，容易曬傷", "en": "No melanin protection — prone to sunburn", "tag": "strong" },
+    { "zh": "嚴格防曬", "en": "Strict sun protection", "tag": "strong" },
+    { "zh": "甲狀腺疾病、Type 1 糖尿病、紅斑性狼瘡、惡性貧血、Addison's disease", "en": "Thyroid disease, type 1 diabetes, lupus, pernicious anemia, Addison's disease", "tag": "strong" },
+    { "zh": "定期篩檢甲狀腺功能", "en": "Periodic thyroid-function screening", "tag": "strong" },
+    { "zh": "偽裝化妝（camouflage makeup）", "en": "Camouflage makeup", "tag": "strong" },
+    { "zh": "仿曬產品（DHA self-tanner）", "en": "DHA self-tanner products", "tag": "strong" },
+    { "zh": "慢性、可治療但無法快速根治", "en": "chronic, treatable but not quickly curable", "tag": "strong" },
+    { "zh": "局限型用外用藥（Ruxolitinib 是目前最強）、廣泛型用 NB-UVB、活動性快速進展用口服 OMP、穩定後合併光療提升療效、長期維持治療避免復發、穩定病灶可考慮手術", "en": "Localized → topical (ruxolitinib is currently strongest); widespread → NB-UVB; rapidly progressive active → oral OMP; once stable, combine with phototherapy for enhanced efficacy; long-term maintenance prevents recurrence; stable lesions may consider surgical grafting", "tag": "strong" },
+    { "zh": "邊界清晰的純白斑塊", "en": "Sharply demarcated milky-white patches", "tag": "strong" },
+    { "zh": "延伸閱讀：", "en": "Further reading:", "tag": "strong" },
+    { "zh": "白斑臨床治療共識（2024 年）", "en": "Vitiligo Clinical Treatment Consensus (2024)", "tag": "strong" },
+    { "zh": "陳翊嘉 醫師", "en": "Dr. Yi-Jia Chen", "tag": "strong" },
+    { "zh": "白斑臨床治療共識", "en": "Vitiligo Clinical Treatment Consensus", "tag": "em" },
+    { "zh": "白斑完整衛教", "en": "Complete vitiligo guide", "tag": "span" },
+    { "zh": "依 TDA 2024 共識 · 更新 2026-05-04", "en": "Per TDA 2024 consensus · Updated 2026-05-04", "tag": "span" },
+    { "zh": "自體免疫色素脫失、Ruxolitinib JAK 時代", "en": "Autoimmune depigmentation, the ruxolitinib JAK era", "tag": "span" },
+    { "zh": "皮膚科 住院醫師", "en": "Dermatology Resident", "tag": "span" },
+    { "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：", "en": "Content corrections / academic citation inquiries / media partnerships:", "tag": "span" },
+    { "zh": "白斑 Vitiligo", "en": "Vitiligo", "tag": "th" },
+    { "zh": "白色糠疹 Pityriasis alba", "en": "Pityriasis alba", "tag": "th" },
+    { "zh": "花斑癬 Tinea versicolor", "en": "Tinea versicolor", "tag": "th" },
+    { "zh": "白癩 Vitiligo-like 念珠菌", "en": "Vitiligo-like candidiasis", "tag": "th" },
+    { "zh": "類型", "en": "Type", "tag": "th" },
+    { "zh": "分布", "en": "Distribution", "tag": "th" },
+    { "zh": "常見族群", "en": "Population", "tag": "th" },
+    { "zh": "預後", "en": "Prognosis", "tag": "th" },
+    { "zh": "方式", "en": "Modality", "tag": "th" },
+    { "zh": "適用", "en": "Indication", "tag": "th" },
+    { "zh": "用法", "en": "Usage", "tag": "th" },
+    { "zh": "項目", "en": "Item", "tag": "th" },
+    { "zh": "內容", "en": "Content", "tag": "th" },
+    { "zh": "邊界", "en": "Border", "tag": "td" },
+    { "zh": "模糊", "en": "Ill-defined", "tag": "td" },
+    { "zh": "輕度脫屑邊界", "en": "Slightly scaly border", "tag": "td" },
+    { "zh": "環狀", "en": "Annular", "tag": "td" },
+    { "zh": "顏色", "en": "Color", "tag": "td" },
+    { "zh": "純白(milky white)", "en": "Milky white", "tag": "td" },
+    { "zh": "淡白", "en": "Off-white", "tag": "td" },
+    { "zh": "淺褐 / 淡白", "en": "Light brown / off-white", "tag": "td" },
+    { "zh": "白色斑塊", "en": "White plaques", "tag": "td" },
+    { "zh": "伍氏燈", "en": "Wood's lamp", "tag": "td" },
+    { "zh": "輕度", "en": "Mild", "tag": "td" },
+    { "zh": "黃色螢光", "en": "Yellow fluorescence", "tag": "td" },
+    { "zh": "所有年齡", "en": "All ages", "tag": "td" },
+    { "zh": "兒童、青少年", "en": "Children, adolescents", "tag": "td" },
+    { "zh": "青少年到成人，夏天好發", "en": "Adolescents to adults, more common in summer", "tag": "td" },
+    { "zh": "免疫低下", "en": "Immunocompromised", "tag": "td" },
+    { "zh": "本質", "en": "Etiology", "tag": "td" },
+    { "zh": "自體免疫", "en": "Autoimmune", "tag": "td" },
+    { "zh": "濕疹後脫色", "en": "Post-eczema hypopigmentation", "tag": "td" },
+    { "zh": "馬拉色菌感染", "en": "Malassezia infection", "tag": "td" },
+    { "zh": "真菌感染", "en": "Fungal infection", "tag": "td" },
+    { "zh": "身體單側，沿皮節分布", "en": "Unilateral, dermatomal distribution", "tag": "td" },
+    { "zh": "兒童 / 青少年", "en": "Children / adolescents", "tag": "td" },
+    { "zh": "進展 1-2 年後穩定，色素再生反應較差，可考慮手術", "en": "Stabilizes after 1–2 years of progression; poorer repigmentation response; surgery is often considered", "tag": "td" },
+    { "zh": "雙側對稱，常見口周、四肢、伸展側、對磨皺褶", "en": "Bilateral symmetric, commonly perioral, extremities, extensor surfaces, intertriginous folds", "tag": "td" },
+    { "zh": "各年齡", "en": "All ages", "tag": "td" },
+    { "zh": "慢性反覆，治療反應視部位而定", "en": "Chronic relapsing course; treatment response varies by site", "tag": "td" },
+    { "zh": "混合型 Mixed", "en": "Mixed type", "tag": "td" },
+    { "zh": "SV + NSV 同時存在", "en": "SV + NSV coexisting", "tag": "td" },
+    { "zh": "少見", "en": "Rare", "tag": "td" },
+    { "zh": "依優勢型態", "en": "Based on predominant type", "tag": "td" },
+    { "zh": "未分類 Unclassified", "en": "Unclassified", "tag": "td" },
+    { "zh": "單一小斑塊或黏膜白斑", "en": "Single small patch or mucosal vitiligo", "tag": "td" },
+    { "zh": "可能日後轉為 SV / NSV", "en": "May later evolve into SV or NSV", "tag": "td" },
+    { "zh": "所有類型，病灶區域較小", "en": "All types, smaller lesional areas", "tag": "td" },
+    { "zh": "每天 1 次，連續 2-3 個月評估，間歇使用避免皮膚萎縮", "en": "Once daily, reassess after 2–3 months; intermittent use to avoid atrophy", "tag": "td" },
+    { "zh": "所有類型，尤其臉部、頸部、皺褶處（類固醇怕副作用）", "en": "All types, especially face, neck, and folds (where steroid AEs are a concern)", "tag": "td" },
+    { "zh": "每天 2 次，可長期使用", "en": "Twice daily; suitable for long-term use", "tag": "td" },
+    { "zh": "每天 2 次，持續至少 24 週", "en": "Twice daily for at least 24 weeks", "tag": "td" },
+    { "zh": "第一線，所有類型，廣泛型", "en": "First-line; all types; widespread disease", "tag": "td" },
+    { "zh": "每週 2-3 次，持續 6-12 個月", "en": "2–3 times weekly for 6–12 months", "tag": "td" },
+    { "zh": "第一線，局限型（臉部、頸部、軀幹）", "en": "First-line; localized (face, neck, trunk)", "tag": "td" },
+    { "zh": "每週 2 次，光劑量精準靶向", "en": "Twice weekly with precision-targeted light dosing", "tag": "td" },
+    { "zh": "外用 PUVA", "en": "Topical PUVA", "tag": "td" },
+    { "zh": "二線，≥ 12 歲", "en": "Second-line, ≥ 12 years", "tag": "td" },
+    { "zh": "需配合紫外線曝曬", "en": "Requires UV light exposure", "tag": "td" },
+    { "zh": "第一線，Dexamethasone 2.5 mg 一週給 2 天連續", "en": "First-line; dexamethasone 2.5 mg on 2 consecutive days per week", "tag": "td" },
+    { "zh": "口服免疫抑制劑（Methotrexate、Cyclosporine、Azathioprine）", "en": "Oral immunosuppressants (methotrexate, cyclosporine, azathioprine)", "tag": "td" },
+    { "zh": "第一線替代，類固醇禁忌時", "en": "First-line alternative when steroids are contraindicated", "tag": "td" },
+    { "zh": "機轉", "en": "Mechanism", "tag": "td" },
+    { "zh": "JAK1 / JAK2 抑制劑 — 阻斷自體免疫攻擊黑色素細胞的訊號路徑", "en": "JAK1 / JAK2 inhibitor — blocks autoimmune attack signaling on melanocytes", "tag": "td" },
+    { "zh": "適應症（FDA、TDA 2024 共識）", "en": "Indication (FDA, TDA 2024 consensus)", "tag": "td" },
+    { "zh": "≥ 12 歲、NSV、≤ 10% 體表面積", "en": "≥ 12 years, NSV, ≤ 10% BSA", "tag": "td" },
+    { "zh": "每天 2 次薄塗於白斑病灶，持續至少 24 週", "en": "Apply thinly twice daily to vitiligo lesions for at least 24 weeks", "tag": "td" },
+    { "zh": "效果（TRuE-V1/V2 試驗）", "en": "Efficacy (TRuE-V1/V2 trials)", "tag": "td" },
+    { "zh": "副作用", "en": "Side effects", "tag": "td" },
+    { "zh": "用藥處輕度發紅、痤瘡、搔癢", "en": "Mild redness, acne, itching at application site", "tag": "td" },
+    { "zh": "價格", "en": "Cost", "tag": "td" },
+    { "zh": "台灣自費，約 NT$ 4,000-6,000/條(60g)", "en": "Self-pay in Taiwan, ~NT$ 4,000–6,000 per 60 g tube", "tag": "td" },
+    { "zh": "健保", "en": "NHI", "tag": "td" },
+    { "zh": "未給付", "en": "Not covered", "tag": "td" },
+    { "zh": "禁忌", "en": "Contraindications", "tag": "td" },
+    { "zh": "≤ 12 歲（目前未核准）、廣泛型 &gt; 10% 體表、活動性嚴重感染、孕婦哺乳", "en": "≤ 12 years (not currently approved), widespread &gt; 10% BSA, active severe infection, pregnancy/lactation", "tag": "td" }
   ]
 }
