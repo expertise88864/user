@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v63';
-const RUNTIME = 'cd-runtime-v63';
+const CACHE = 'cd-v67';
+const RUNTIME = 'cd-runtime-v67';
 const RUNTIME_MAX_ENTRIES = 60;
 
 // R31: Slim precache — only critical shell + offline page + assets that EVERY page uses.
@@ -17,7 +17,7 @@ const PRECACHE = [
   '/apple-touch-icon.png',
   '/manifest.json',
   '/assets/tw-mini.css',
-  '/blog/blog-shared.js',
+  '/blog/blog-shared.min.js',
   '/blog/'
 ];
 
@@ -113,4 +113,40 @@ self.addEventListener('fetch', (e) => {
 // Allow page to trigger immediate update via postMessage({type:'SKIP_WAITING'})
 self.addEventListener('message', (e) => {
   if (e.data && e.data.type === 'SKIP_WAITING') self.skipWaiting();
+});
+
+// ─────────────────────────────────────────────────────────────────────
+// Push notifications (R32+) — handler is ready; full activation needs
+// VAPID keys + push server. When server pushes a payload, this displays
+// it as a native notification. Click → opens article URL.
+// Payload schema: { title, body, url, tag?, icon? }
+// ─────────────────────────────────────────────────────────────────────
+self.addEventListener('push', (e) => {
+  let data = {};
+  try { data = e.data ? e.data.json() : {}; } catch { data = { title: 'ChenDermatologist', body: e.data ? e.data.text() : '' }; }
+  const title = data.title || 'ChenDermatologist 衛教更新';
+  const opts = {
+    body: data.body || '新文章上架',
+    icon: data.icon || '/apple-touch-icon.png',
+    badge: '/icon.svg',
+    tag: data.tag || 'cd-update',
+    data: { url: data.url || '/blog/' },
+    requireInteraction: false,
+    silent: false,
+  };
+  e.waitUntil(self.registration.showNotification(title, opts));
+});
+
+self.addEventListener('notificationclick', (e) => {
+  e.notification.close();
+  const url = (e.notification.data && e.notification.data.url) || '/blog/';
+  e.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((wins) => {
+      // Focus existing tab if it's already on the destination
+      for (const w of wins) {
+        if (w.url.endsWith(url) && 'focus' in w) return w.focus();
+      }
+      if (self.clients.openWindow) return self.clients.openWindow(url);
+    })
+  );
 });

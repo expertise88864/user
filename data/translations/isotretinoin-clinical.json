@@ -1,0 +1,635 @@
+{
+  "slug": "isotretinoin-clinical",
+  "strings": [
+    {
+      "zh": "Pharmacology — 13-cis-RA 與 isomerization",
+      "en": "",
+      "tag": "h2"
+    },
+    {
+      "zh": "四大作用機轉",
+      "en": "",
+      "tag": "h2"
+    },
+    {
+      "zh": "適應症與 off-label uses",
+      "en": "",
+      "tag": "h2"
+    },
+    {
+      "zh": "劑量學 — 累積劑量、低劑量、間歇",
+      "en": "",
+      "tag": "h2"
+    },
+    {
+      "zh": "副作用全光譜",
+      "en": "",
+      "tag": "h2"
+    },
+    {
+      "zh": "致畸性與避孕規範細節",
+      "en": "",
+      "tag": "h2"
+    },
+    {
+      "zh": "藥物交互作用",
+      "en": "",
+      "tag": "h2"
+    },
+    {
+      "zh": "停藥後 laser / 手術 timing(更新觀念）",
+      "en": "",
+      "tag": "h2"
+    },
+    {
+      "zh": "爭議題目整理",
+      "en": "",
+      "tag": "h2"
+    },
+    {
+      "zh": "AAD 2024 acne guideline 整理(Isotretinoin 段落要點）",
+      "en": "",
+      "tag": "h2"
+    },
+    {
+      "zh": "參考資料",
+      "en": "",
+      "tag": "h2"
+    },
+    {
+      "zh": "FDA / 健保通用適應症",
+      "en": "",
+      "tag": "h3"
+    },
+    {
+      "zh": "常見 off-label uses",
+      "en": "",
+      "tag": "h3"
+    },
+    {
+      "zh": "標準 protocol（經典 Layton-style）",
+      "en": "",
+      "tag": "h3"
+    },
+    {
+      "zh": "低劑量(low-dose)protocol",
+      "en": "",
+      "tag": "h3"
+    },
+    {
+      "zh": "間歇式(intermittent) — 每週 1 次或每月 1 週",
+      "en": "",
+      "tag": "h3"
+    },
+    {
+      "zh": "累積劑量證據的更新",
+      "en": "",
+      "tag": "h3"
+    },
+    {
+      "zh": "本篇大綱 / Contents",
+      "en": "",
+      "tag": "h4"
+    },
+    {
+      "zh": "歷史上有 Akman 等 protocol（每月吃 1 週），效果與成本介於 daily 與 low-dose 之間。臨床現況不普遍，reserve 給特殊耐受性差或長期維持的病人。",
+      "en": "",
+      "tag": "p"
+    },
+    {
+      "zh": "傳統 1986 年 Zachariae case series 建議停藥後 6-12 個月再做 ablative procedures；此後 6 個月成 dogma。",
+      "en": "",
+      "tag": "p"
+    },
+    {
+      "zh": "個案報告與小型研究有提及性慾下降、ED；機轉未明，可能與 sebum / mucocutaneous dryness 或 androgen 代謝有關。Practice：詢問、回報、必要時減量。",
+      "en": "",
+      "tag": "p"
+    },
+    {
+      "zh": "嚴重 nodulocystic acne 對其他治療無效",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "治療失敗的中度 acne(antibiotic ± topical retinoid 3-6 個月）",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "有顯著 scarring 風險或 PIH 的中度 acne（AAD 2024 已將適應症擴大，不再強求 nodular）",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "0.1–0.4 mg/kg/day(常見：每天 10-20 mg 固定劑量）",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "Meta-analysis(Rasi 2014, Borghi 2011)顯示 efficacy 與 standard dose 相近，但 mucocutaneous AE 顯著降低、生活品質較佳。",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "常用於：成人女性持續性 acne、low-grade inflammation、患者強烈要求美觀。",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "Optional:CBC、Cr、glucose（根據病人 comorbidity）",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "確認近 1 個月內未使用 tetracyclines",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "Dry eye、blepharoconjunctivitis、減少 night vision、contact lens 不耐",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "避免 marathon、heavy lifting",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "頭痛 + visual change → fundoscopy + 神經科會診",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "ALT/AST 輕度升高 ~ 10-15%，通常 &lt; 3× ULN,reversible",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "TG 上升 ~ 25%;total cholesterol ~ 7-10%",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "TG &gt; 500 mg/dL → reduce dose / 飲食 / fenofibrate;&gt; 800 mg/dL → hold(pancreatitis 風險）",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "實務：詢問 baseline mental health；有 active major depression 者謹慎、監測 PHQ-9；出現症狀立即停藥評估。",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "CYP3A4 inducers/inhibitors：臨床顯著性不大，因 iso 有多個代謝路徑。",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "建議 baseline + 第 2 個月 LFT/lipid；低風險者後續間隔可拉長。",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "女性 CBP β-hCG 每月仍建議。",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "Tetracycline 合併 → 禁忌。",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "Post-iso laser timing 採分層建議。",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "Mental health screening 建議 at baseline,but 不支持「iso 直接造成 depression」的 causal claim。",
+      "en": "",
+      "tag": "li"
+    },
+    {
+      "zh": "藥理與 isomerization",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "四大機轉",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "適應症與 off-label",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "劑量學",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "停藥後 laser timing",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "口服吸收",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "食物（尤其脂肪）可使 AUC 增加 1.5-2 倍",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "分布",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "代謝",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "半衰期",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "排除",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "13-cis-RA 自身對 RAR 的親和力低",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "唯一同時擊中所有四個",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "唯一",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "relapse rate 較高",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "cumulative dose 達到 220 mg/kg 以上的病人 5 年復發率比 120 mg/kg 組顯著降低(~20% vs ~40%)",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "更高的 cumulative dose 可能進一步降低復發",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "β-hCG （女性 child-bearing potential, CBP）",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "2 種以上避孕方式",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "每月 1 次",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "routine monthly labs 對於低風險、年輕、無 comorbidity 病人 yield 極低",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "baseline + 第 2 個月再驗 1 次，後續穩定者可拉長間隔",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "暫停軟式隱形眼鏡",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "多年高劑量",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "標準 acne 療程罕見",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "絕對 contraindication",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "過去 case-control 研究曾建議 association，但 2018 以後大型 cohort(Wright 2021、Lee 2016 et al.)及 systematic reviews 並未支持 causal link",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "近年 large meta-analyses(Huang 2017、Ludot 2024)未支持因果關聯",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "2 種避孕方式 ≥ 1 月 before、整個療程、停藥 ≥ 1 月",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "不可捐血",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "絕對禁忌",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "Vitamin A 高劑量補充",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "2017 ASDS expert panel(Waldman 2017)、2024 多份 systematic reviews 已重新審視：",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "不需要 6 個月 wait",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "近期證據(Mysore 2017 et al.)支持治療中或停藥後即可，不影響 wound healing",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "未證實 causal relationship",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "近年 propensity-matched cohorts(Wright 2021、Etminan 2013、Crockett 2010 reanalysis)未支持 causal association",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "長期高劑量（腫瘤科 neuroblastoma protocol、慢性 Darier 維持）",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "顯著 DISH 罕見",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "treatment-resistant 中度 acne",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "scarring 或 PIH 風險高的 moderate acne",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "低劑量 protocol",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "給民眾的口語版本:",
+      "en": "",
+      "tag": "strong"
+    },
+    {
+      "zh": "機轉",
+      "en": "",
+      "tag": "th"
+    },
+    {
+      "zh": "分子層面",
+      "en": "",
+      "tag": "th"
+    },
+    {
+      "zh": "臨床意義",
+      "en": "",
+      "tag": "th"
+    },
+    {
+      "zh": "適合族群",
+      "en": "",
+      "tag": "th"
+    },
+    {
+      "zh": "避孕方式",
+      "en": "",
+      "tag": "th"
+    },
+    {
+      "zh": "單獨可否",
+      "en": "",
+      "tag": "th"
+    },
+    {
+      "zh": "備註",
+      "en": "",
+      "tag": "th"
+    },
+    {
+      "zh": "1. 皮脂腺萎縮 + sebocyte apoptosis",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "透過 NLRP3-independent FoxO/p53 axis 誘導 sebocyte apoptosis;sebum production ↓ 80-90%",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "3-4 週起油脂顯著減少；為療效核心",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "透過 RAR-mediated 改變 K6/K16/profilaggrin 表達，降低 hyperkeratosis",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "粉刺數量下降",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "不易產生抗藥性 — 與口服抗生素的關鍵差異",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "降低 TLR-2 表達、減少 IL-1α / IL-8 / MMPs / neutrophil chemotaxis",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "結節囊腫發炎快速消退",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "6–9 月",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "典型 nodulocystic / scarring acne",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "9–12 月",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "relapse 高風險（青少年男性、嚴重）",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "6–12 月",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "~120 mg/kg(較難達）",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "成人女性、輕中度持續性、rosacea-like",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "0.5 mg/kg × 1 週/月",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "6 月",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "較低",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "耐受性差、特殊狀況",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "可作為 1°，但需配 2°",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "有 break-through 風險；需衛教",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "不建議單獨",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "避孕效率較低",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "可作為 1°,recommended",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "失敗率最低",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "可作為 1°",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "同上",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "不建議單獨；適合作為 2°",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "失敗率高",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "可作為單一 method",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "已絕育者",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "絕對禁慾",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "可，但 reliability 取決於 commitment",
+      "en": "",
+      "tag": "td"
+    },
+    {
+      "zh": "需明確紀錄",
+      "en": "",
+      "tag": "td"
+    }
+  ]
+}

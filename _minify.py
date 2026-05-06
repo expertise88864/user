@@ -20,9 +20,18 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 # JS minifier — extremely conservative (only safe transforms)
 # ─────────────────────────────────────────────────────────────────
 def js_minify(src):
-    """Strip comments + trim whitespace per line. Keep newlines for safety (avoids ASI bugs)."""
+    """Strip comments + trim whitespace per line. Keep newlines for safety (avoids ASI bugs).
+
+    Handles strings + regex literals so // inside an escaped-slash regex isn't read as comment.
+    """
     out = []
     i, n = 0, len(src)
+    # Track last non-whitespace char to decide if `/` starts a regex or is division.
+    # Regex contexts: after operator chars, ( , ; : ! & | ? { } [ + - * % < > ~ ^, newline,
+    # or start of file. Identifier/closing-) means it's division.
+    last_signif = '\n'
+    REGEX_PREV = set('=(,;:!&|?{}[+-*%<>~^\n')
+
     while i < n:
         c = src[i]
         nxt = src[i+1] if i+1 < n else ''
@@ -40,6 +49,7 @@ def js_minify(src):
                 j += 1
             out.append(src[i:j])
             i = j
+            last_signif = quote
             continue
         # Line comment → strip up to (not including) newline
         if c == '/' and nxt == '/':
@@ -57,14 +67,45 @@ def js_minify(src):
                 out.append(src[i:j+2])
             i = j + 2
             continue
+        # Regex literal: `/` after operator/start context, must close with unescaped `/`
+        if c == '/' and last_signif in REGEX_PREV:
+            j = i + 1
+            in_cls = False
+            ok = False
+            while j < n:
+                cj = src[j]
+                if cj == '\\' and j + 1 < n:
+                    j += 2; continue
+                if cj == '[':
+                    in_cls = True
+                elif cj == ']':
+                    in_cls = False
+                elif cj == '/' and not in_cls:
+                    j += 1
+                    # consume regex flags (g, i, m, s, u, y, d)
+                    while j < n and src[j] in 'gimsuyd':
+                        j += 1
+                    ok = True
+                    break
+                elif cj == '\n':
+                    # broken regex — bail; treat original `/` as plain char
+                    break
+                j += 1
+            if ok:
+                out.append(src[i:j])
+                i = j
+                last_signif = '/'
+                continue
+            # else fall through to normal char handling
         out.append(c)
+        if not c.isspace():
+            last_signif = c
         i += 1
     s = ''.join(out)
     # Per-line: trim leading/trailing whitespace, drop pure-blank lines
     lines = []
     for line in s.split('\n'):
         line = line.rstrip()
-        # Don't strip leading whitespace if line is empty
         if line.strip():
             lines.append(line.strip())
     return '\n'.join(lines) + '\n'

@@ -1,0 +1,23 @@
+<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="robots" content="noindex,nofollow" /><title>Content Manager — ChenDermatologist</title><link rel="icon" type="image/svg+xml" href="/icon.svg" />
+<style>body { font-family: Inter, 'Noto Sans TC', system-ui, sans-serif; } .nc-rootContainer { font-family: inherit; }</style>
+</head><body>
+<script src="https://unpkg.com/decap-cms@^3.5.0/dist/decap-cms.js"></script>
+<script>// Optional: register custom preview templates so editors see the rendered card.
+if (window.CMS) {
+CMS.registerPreviewStyle('/assets/tw-mini.css?v=14');
+CMS.registerPreviewTemplate('articles', createClass({
+render: function () {
+var entry = this.props.entry;
+var title = entry.getIn(['data', 'title']) || '';
+var tag = entry.getIn(['data', 'tag']) || '';
+var date = entry.getIn(['data', 'date']) || '';
+var body = this.props.widgetFor('body');
+return h('article', { style: { padding: '32px', maxWidth: '720px', margin: '0 auto', fontFamily: 'Inter, "Noto Sans TC", sans-serif' } },
+h('div', { style: { fontSize: '11px', letterSpacing: '0.22em', textTransform: 'uppercase', color: '#0c5159', fontWeight: 700 } }, tag + ' · ' + date),
+h('h1', { style: { fontFamily: 'Noto Serif TC, Georgia, serif', fontSize: '32px', marginTop: '8px', marginBottom: '24px', color: '#0f172a' } }, title),
+h('div', { style: { fontSize: '16px', lineHeight: 1.85 } }, body)
+);
+}
+}));
+}</script>
+</body></html>

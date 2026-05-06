@@ -2178,7 +2178,20 @@
       ':root[data-theme="dark"] .text-teal-700{ color:var(--teal-deep) !important; }' +
       ':root[data-theme="dark"] .bg-mint-50, :root[data-theme="dark"] .bg-mint-100{ background:var(--surface) !important; }' +
       ':root[data-theme="dark"] .bg-white{ background:var(--surface) !important; }' +
-      ':root[data-theme="dark"] [style*="background:#fff"], :root[data-theme="dark"] [style*="background:#FFFFFF"]{ background:var(--surface) !important; }' +
+      // Inline white-bg cards — match boundary so #fff7ed / #fff3c7 (warning shades) are NOT caught
+      ':root[data-theme="dark"] [style*="background:#fff;"], :root[data-theme="dark"] [style*="background: #fff;"], :root[data-theme="dark"] [style*="background:#fff\""], :root[data-theme="dark"] [style*="background:#FFFFFF;"], :root[data-theme="dark"] [style*="background:white;"], :root[data-theme="dark"] [style*="background: white;"], :root[data-theme="dark"] [style*="background-color:#fff;"], :root[data-theme="dark"] [style*="background-color:#fff\""]{ background:var(--surface) !important; color:var(--ink) !important; }' +
+      // Inline color:#0f172a / #1f2937 (slate ink for cards) — flip to light text in dark mode
+      ':root[data-theme="dark"] [style*="color:#0f172a"], :root[data-theme="dark"] [style*="color:#1f2937"], :root[data-theme="dark"] [style*="color:#111827"]{ color:var(--ink) !important; }' +
+      // Tables with white bg + dark text
+      ':root[data-theme="dark"] table[style*="background:#fff"]{ background:var(--surface) !important; color:var(--ink) !important; }' +
+      ':root[data-theme="dark"] th[style*="background:#fff"], :root[data-theme="dark"] td[style*="background:#fff"]{ background:var(--surface) !important; color:var(--ink) !important; }' +
+      // Warning / info / success tinted boxes — keep tint but darken slightly so contrast works
+      ':root[data-theme="dark"] [style*="background:#fff7ed"]{ background:#3a2818 !important; color:#fed7aa !important; border-color:#9a3412 !important; }' +
+      ':root[data-theme="dark"] [style*="background:#fef3c7"], :root[data-theme="dark"] [style*="background:#fef9c3"]{ background:#332a14 !important; color:#fde68a !important; }' +
+      ':root[data-theme="dark"] [style*="background:#fee2e2"], :root[data-theme="dark"] [style*="background:#fef2f2"]{ background:#3a1a1a !important; color:#fca5a5 !important; }' +
+      ':root[data-theme="dark"] [style*="background:#dcfce7"], :root[data-theme="dark"] [style*="background:#ecfdf5"]{ background:#0f2a1a !important; color:#86efac !important; }' +
+      ':root[data-theme="dark"] [style*="background:#cffafe"], :root[data-theme="dark"] [style*="background:#ecfeff"]{ background:#0c2a2e !important; color:#a5f3fc !important; }' +
+      ':root[data-theme="dark"] [style*="background:#ebe4d8"], :root[data-theme="dark"] [style*="background:#dcd9d1"]{ background:#2e2924 !important; color:var(--ink) !important; }' +
       '#dn-theme-toggle{ background:transparent; border:1px solid var(--border); border-radius:9999px; width:32px;height:32px;padding:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:14px;line-height:1;transition:background .15s,border-color .15s;color:var(--ink) }' +
       '#dn-theme-toggle:hover{ background:var(--mint-soft); border-color:var(--teal-deep); }' +
       '@media (prefers-reduced-motion: no-preference){ html { transition:background-color .25s, color .25s } }';
@@ -2858,6 +2871,157 @@
   // ─────────────────────────────────────────────────────────────────
   // R32: Bookmark button — saves slug to localStorage; toggleable
   // ─────────────────────────────────────────────────────────────────
+  // ─────────────────────────────────────────────────────────────────────
+  // A/B testing framework — client-side, no backend required.
+  // Variant assignment is sticky per-user (localStorage), with stable hash so
+  // the same visitor always gets the same variant. GA4 events fire on entry
+  // + on conversion. Use `?ab_force=B&ab_test=hero_layout` query string to
+  // override during QA.
+  //
+  // Usage:
+  //   var v = DN.abTest('hero_layout', ['A', 'B'], 0.5);  // 50/50 split
+  //   if (v === 'B') document.body.classList.add('hero-v2');
+  //   // Later, on goal:
+  //   DN.abConvert('hero_layout', 'click_cta');
+  // ─────────────────────────────────────────────────────────────────────
+  DN.abTest = function (testName, variants, weights) {
+    if (!Array.isArray(variants) || variants.length < 2) return variants[0];
+    // QA override
+    try {
+      var force = new URLSearchParams(location.search);
+      if (force.get('ab_test') === testName) {
+        var f = force.get('ab_force');
+        if (variants.indexOf(f) >= 0) return f;
+      }
+    } catch (e) {}
+    var key = 'dn-ab-' + testName;
+    var stored;
+    try { stored = localStorage.getItem(key); } catch (e) {}
+    if (stored && variants.indexOf(stored) >= 0) return stored;
+    // Stable hash from a per-user salt + test name → deterministic but reproducible
+    var salt;
+    try {
+      salt = localStorage.getItem('dn-ab-salt');
+      if (!salt) {
+        salt = String(Date.now()) + '_' + Math.random().toString(36).slice(2, 10);
+        localStorage.setItem('dn-ab-salt', salt);
+      }
+    } catch (e) { salt = 'anon_' + Math.random(); }
+    var h = 0, s = salt + ':' + testName;
+    for (var i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+    var pct = (Math.abs(h) % 10000) / 10000; // 0..1
+    // Resolve weights (e.g. 0.5 = 50/50, or array [0.7, 0.3])
+    var picked;
+    if (typeof weights === 'number') {
+      picked = pct < weights ? variants[0] : variants[1];
+    } else if (Array.isArray(weights) && weights.length === variants.length) {
+      var cum = 0;
+      for (var k = 0; k < variants.length; k++) {
+        cum += weights[k];
+        if (pct < cum) { picked = variants[k]; break; }
+      }
+      if (!picked) picked = variants[variants.length - 1];
+    } else {
+      picked = variants[Math.floor(pct * variants.length)];
+    }
+    try { localStorage.setItem(key, picked); } catch (e) {}
+    if (typeof gtag === 'function') {
+      try { gtag('event', 'ab_assign', { ab_test: testName, ab_variant: picked }); } catch (e) {}
+    }
+    return picked;
+  };
+
+  DN.abConvert = function (testName, goalName) {
+    var v;
+    try { v = localStorage.getItem('dn-ab-' + testName); } catch (e) {}
+    if (!v) return;
+    if (typeof gtag === 'function') {
+      try { gtag('event', 'ab_convert', { ab_test: testName, ab_variant: v, ab_goal: goalName || 'default' }); } catch (e) {}
+    }
+  };
+
+  // ─────────────────────────────────────────────────────────────────────
+  // Toast helper — small bottom-center pill, auto-dismiss after 2.5s
+  // ─────────────────────────────────────────────────────────────────────
+  DN.toast = function (msg, opts) {
+    opts = opts || {};
+    var t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;left:50%;bottom:max(110px,env(safe-area-inset-bottom));transform:translateX(-50%);background:#0c5159;color:#fff;padding:9px 18px;border-radius:9999px;font-size:13px;font-weight:600;z-index:9999;box-shadow:0 12px 28px -8px rgba(12,81,89,.55);max-width:calc(100vw - 32px);text-align:center;line-height:1.5';
+    document.body.appendChild(t);
+    setTimeout(function () { t.style.transition = 'opacity .3s'; t.style.opacity = '0'; }, opts.duration || 2500);
+    setTimeout(function () { try { document.body.removeChild(t); } catch (e) {} }, (opts.duration || 2500) + 350);
+  };
+
+  // ─────────────────────────────────────────────────────────────────────
+  // Web Push opt-in (R32+) — client-side ready; full activation needs
+  // VAPID public key + push server. Without server, asks for permission
+  // only and informs user "we'll notify when server is configured".
+  // ─────────────────────────────────────────────────────────────────────
+  // Set DN.PUSH_VAPID_PUBLIC_KEY to your VAPID public key (run `npm run vapid` to generate)
+  // and store the private key in Vercel env var VAPID_PRIVATE_KEY. The endpoint below is
+  // already wired to /api/push-subscribe.js (see api/push-subscribe.js).
+  DN.PUSH_VAPID_PUBLIC_KEY = '';                       // ← paste base64-url VAPID public key
+  DN.PUSH_SUBSCRIBE_ENDPOINT = '/api/push-subscribe';  // ← matches api/push-subscribe.js
+
+  function urlBase64ToUint8Array(base64String) {
+    var padding = '='.repeat((4 - base64String.length % 4) % 4);
+    var base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+    var raw = window.atob(base64);
+    var arr = new Uint8Array(raw.length);
+    for (var i = 0; i < raw.length; i++) arr[i] = raw.charCodeAt(i);
+    return arr;
+  }
+
+  DN.requestPushPermission = function () {
+    if (!('serviceWorker' in navigator) || !('PushManager' in window) || !('Notification' in window)) {
+      DN.toast('您的瀏覽器不支援推播通知');
+      return Promise.reject('unsupported');
+    }
+    if (Notification.permission === 'denied') {
+      DN.toast('您已拒絕通知權限。請至瀏覽器設定重新啟用。');
+      return Promise.reject('denied');
+    }
+    return Notification.requestPermission().then(function (perm) {
+      if (perm !== 'granted') { DN.toast('未授權通知'); return; }
+      // If VAPID + endpoint configured, subscribe + POST to server
+      if (DN.PUSH_VAPID_PUBLIC_KEY && DN.PUSH_SUBSCRIBE_ENDPOINT) {
+        return navigator.serviceWorker.ready.then(function (reg) {
+          return reg.pushManager.subscribe({
+            userVisibleOnly: true,
+            applicationServerKey: urlBase64ToUint8Array(DN.PUSH_VAPID_PUBLIC_KEY)
+          });
+        }).then(function (sub) {
+          return fetch(DN.PUSH_SUBSCRIBE_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(sub)
+          }).then(function () { DN.toast('✓ 已訂閱新文章通知'); });
+        }).catch(function (err) {
+          console.warn('push subscribe failed', err);
+          DN.toast('訂閱失敗,請稍後再試');
+        });
+      }
+      // Server not configured yet — show local notification as proof of concept
+      try {
+        navigator.serviceWorker.ready.then(function (reg) {
+          reg.showNotification('ChenDermatologist · 通知已啟用', {
+            body: '謝謝您!伺服器準備就緒後將自動推送新文章通知。',
+            icon: '/apple-touch-icon.png',
+            badge: '/icon.svg',
+            tag: 'cd-welcome',
+          });
+        });
+      } catch (e) {}
+      DN.toast('✓ 通知權限已授予');
+    });
+  };
+
+  DN.getPushStatus = function () {
+    if (!('Notification' in window)) return 'unsupported';
+    return Notification.permission; // 'default' | 'granted' | 'denied'
+  };
+
   DN.addBookmarkButton = function () {
     var article = document.querySelector('article.max-w-3xl');
     if (!article || document.getElementById('dn-bookmark')) return;
@@ -4141,6 +4305,43 @@
   // Content feedback button — replaces "LINE consult" pattern with mailto
   // For residents who don't run a clinic — feedback goes to gmail
   // -----------------------------------------------------------------------
+  // Subscribe-to-notifications opt-in card. Only visible when:
+  //   1. Browser supports PushManager + Notification API
+  //   2. Permission is still "default" (not yet decided)
+  //   3. User dismissed → remember in localStorage so we don't pester
+  DN.addPushSubscribeCard = function () {
+    if (!('serviceWorker' in navigator) || !('PushManager' in window) || !('Notification' in window)) return;
+    if (Notification.permission !== 'default') return;
+    try { if (localStorage.getItem('dn-push-dismissed') === '1') return; } catch (e) {}
+    if (document.getElementById('dn-push-card')) return;
+
+    var article = document.querySelector('article.max-w-3xl');
+    var anchor = document.getElementById('dn-feedback') || article;
+    if (!anchor) return;
+    var box = document.createElement('section');
+    box.id = 'dn-push-card';
+    box.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-4';
+    box.innerHTML =
+      '<div style="background:#ecfeff;border:1px solid #a5f3fc;border-radius:12px;padding:14px 18px;font-size:13px;color:#0c5159;line-height:1.7;display:flex;align-items:center;gap:14px;flex-wrap:wrap">' +
+        '<div style="flex:1;min-width:220px">' +
+          '<strong data-zh="🔔 接收新文章通知" data-en="🔔 Get new-article alerts">🔔 接收新文章通知</strong><br/>' +
+          '<span style="opacity:.85" data-zh="新衛教文章上架時瀏覽器自動推播,不收 email、不寄電子報。" data-en="Get a push when a new article is published. No email, no newsletter.">新衛教文章上架時瀏覽器自動推播,不收 email、不寄電子報。</span>' +
+        '</div>' +
+        '<button id="dn-push-yes" type="button" style="flex-shrink:0;padding:8px 16px;border-radius:9999px;background:#0c5159;color:#fff;border:0;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap" data-zh="開啟通知" data-en="Enable">開啟通知</button>' +
+        '<button id="dn-push-no" type="button" style="flex-shrink:0;padding:8px 12px;border-radius:9999px;background:transparent;color:#5e574e;border:1px solid #dcd5c8;font-size:12.5px;cursor:pointer;white-space:nowrap" aria-label="關閉" data-zh="不用了" data-en="No thanks">不用了</button>' +
+      '</div>';
+    anchor.parentNode.insertBefore(box, anchor.nextSibling);
+
+    document.getElementById('dn-push-yes').addEventListener('click', function () {
+      DN.requestPushPermission().then(function () { box.remove(); }).catch(function () {});
+      if (typeof gtag === 'function') { try { gtag('event', 'push_subscribe_click'); } catch (e) {} }
+    });
+    document.getElementById('dn-push-no').addEventListener('click', function () {
+      try { localStorage.setItem('dn-push-dismissed', '1'); } catch (e) {}
+      box.remove();
+    });
+  };
+
   DN.addFeedbackLink = function () {
     var article = document.querySelector('article.max-w-3xl');
     if (!article || document.getElementById('dn-feedback')) return;
@@ -4844,6 +5045,7 @@
       DN.addBookmarkButton();
       DN.addPrintButton();
       DN.addFeedbackLink();
+      DN.addPushSubscribeCard();
     }
     DN.lazyLoadAudit();
     DN.addFontSizer();
