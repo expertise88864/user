@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v89';
-const RUNTIME = 'cd-runtime-v89';
+const CACHE = 'cd-v91';
+const RUNTIME = 'cd-runtime-v91';
 const RUNTIME_MAX_ENTRIES = 60;
 
 // R31: Slim precache — only critical shell + offline page + assets that EVERY page uses.
@@ -140,6 +140,27 @@ self.addEventListener('fetch', (e) => {
 // Allow page to trigger immediate update via postMessage({type:'SKIP_WAITING'})
 self.addEventListener('message', (e) => {
   if (e.data && e.data.type === 'SKIP_WAITING') self.skipWaiting();
+  // I11 — Precache list of articles the page tells us about (popular picks).
+  // Page does: navigator.serviceWorker.controller.postMessage({type:'PRECACHE',urls:[...]})
+  // SW fetches them when network is idle so they're available offline.
+  if (e.data && e.data.type === 'PRECACHE' && Array.isArray(e.data.urls)) {
+    e.waitUntil((async () => {
+      try {
+        const cache = await caches.open(RUNTIME);
+        // Limit concurrency to avoid hammering: 3 at a time
+        const queue = e.data.urls.slice(0, 20);
+        for (let i = 0; i < queue.length; i += 3) {
+          await Promise.allSettled(queue.slice(i, i + 3).map(async (u) => {
+            try {
+              const resp = await fetch(u, { credentials: 'omit' });
+              if (resp && resp.ok) await cache.put(u, resp);
+            } catch (_) {}
+          }));
+        }
+        await trimCache(RUNTIME, RUNTIME_MAX_ENTRIES);
+      } catch (_) {}
+    })());
+  }
 });
 
 // ─────────────────────────────────────────────────────────────────────

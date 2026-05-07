@@ -3317,18 +3317,24 @@
         if (y.s !== x.s) return y.s - x.s;
         return (y.a.date || '').localeCompare(x.a.date || ''); // tiebreak: newer
       })
-      .slice(0, 3)
+      .slice(0, 6)   // Strengthened: show 6 instead of 3 (user request 2026-05-07)
       .map(function (x) { return x.a; });
 
     const wrap = document.createElement('section');
     wrap.id = 'dn-related';
     wrap.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-10';
-    let html = '<div style="border-top:1px solid var(--line);padding-top:24px"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--teal-deep);font-weight:700;margin-bottom:12px" data-zh="你可能也會想看" data-en="Related reads">你可能也會想看</div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">';
-    scored.forEach(function (a) {
-      html += '<a href="/blog/' + a.slug + '" style="display:flex;flex-direction:column;gap:6px;padding:14px;background:#fff;border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--ink);transition:all .15s;box-shadow:0 1px 2px rgba(15,23,42,.04)" onmouseover="this.style.borderColor=\'rgba(122,146,133,.5)\';this.style.transform=\'translateY(-2px)\';this.style.boxShadow=\'0 10px 20px -10px rgba(77,99,88,.22)\'" onmouseout="this.style.borderColor=\'var(--border)\';this.style.transform=\'\';this.style.boxShadow=\'0 1px 2px rgba(15,23,42,.04)\'">' +
-        '<span style="font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--teal-deep);text-transform:uppercase">' + (a.tag_en || a.tag) + '</span>' +
-        '<span style="font-size:14px;font-weight:700;line-height:1.4;font-family:Noto Serif TC,Georgia,serif">' + a.title + '</span>' +
-        '<span style="font-size:11.5px;color:var(--muted)">' + a.tag + ' · ' + a.date + '</span>' +
+    // Find read articles to badge "✓ 已讀" / "新"
+    var readSlugs = (DN.getReadSlugs && DN.getReadSlugs()) || [];
+    let html = '<div style="border-top:1px solid var(--line);padding-top:28px"><div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--teal-deep);font-weight:700" data-zh="你可能也會想看" data-en="You might also like">你可能也會想看</div><a href="/blog/" style="font-size:11.5px;color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="瀏覽全部文章 →" data-en="Browse all →">瀏覽全部文章 →</a></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">';
+    scored.forEach(function (a, i) {
+      var hasRead = readSlugs.indexOf(a.slug) !== -1;
+      var badge = hasRead
+        ? '<span style="display:inline-block;padding:2px 7px;border-radius:9999px;background:#dcfce7;color:#14532d;font-size:10px;font-weight:700;margin-left:auto" data-zh="✓ 已讀" data-en="✓ Read">✓ 已讀</span>'
+        : (i === 0 ? '<span style="display:inline-block;padding:2px 7px;border-radius:9999px;background:#fef3c7;color:#854d0e;font-size:10px;font-weight:700;margin-left:auto" data-zh="最相關" data-en="Top match">最相關</span>' : '');
+      html += '<a href="/blog/' + a.slug + '" style="display:flex;flex-direction:column;gap:8px;padding:16px;background:#fff;border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--ink);transition:all .15s;box-shadow:0 1px 2px rgba(15,23,42,.04)" onmouseover="this.style.borderColor=\'rgba(122,146,133,.55)\';this.style.transform=\'translateY(-2px)\';this.style.boxShadow=\'0 12px 24px -10px rgba(77,99,88,.28)\'" onmouseout="this.style.borderColor=\'var(--border)\';this.style.transform=\'\';this.style.boxShadow=\'0 1px 2px rgba(15,23,42,.04)\'">' +
+        '<div style="display:flex;align-items:center;gap:6px"><span style="font-size:10.5px;font-weight:700;letter-spacing:.18em;color:var(--teal-deep);text-transform:uppercase">' + (a.tag_en || a.tag) + '</span>' + badge + '</div>' +
+        '<span style="font-size:14.5px;font-weight:700;line-height:1.4;font-family:Noto Serif TC,Georgia,serif;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">' + a.title + '</span>' +
+        '<span style="font-size:11.5px;color:var(--muted);margin-top:auto">' + a.tag + ' · ' + a.date + '</span>' +
       '</a>';
     });
     html += '</div></div>';
@@ -4313,6 +4319,31 @@
     'hairloss-myths'       // 落髮 — 男性女性共通
   ];
 
+  // I11 — Tell the SW to precache N popular + recent articles when idle.
+  // Lets future navigation be instant + works offline.
+  DN.precacheArticles = function (n) {
+    if (!('serviceWorker' in navigator) || !navigator.serviceWorker.controller) return;
+    var limit = n || 10;
+    var urls = [];
+    var seen = {};
+    // Popular picks first
+    (DN.POPULAR_PICKS || []).forEach(function (s) {
+      if (!seen[s]) { seen[s] = 1; urls.push('/blog/' + s); }
+    });
+    // Then recent by date
+    (DN.ARTICLES || []).slice()
+      .sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); })
+      .forEach(function (a) {
+        if (!seen[a.slug] && urls.length < limit) {
+          seen[a.slug] = 1;
+          urls.push('/blog/' + a.slug);
+        }
+      });
+    try {
+      navigator.serviceWorker.controller.postMessage({ type: 'PRECACHE', urls: urls });
+    } catch (e) {}
+  };
+
   // G2 — Refresh DN.POPULAR_PICKS from /api/admin/popular-picks (KV-backed).
   // Allows admin to change the curated list without a redeploy.
   // Falls back silently to the hard-coded list above if KV is empty or fetch fails.
@@ -4531,6 +4562,75 @@
   // Subscribe-to-notifications opt-in card. Only visible when:
   //   1. Browser supports PushManager + Notification API
   // ─────────────────────────────────────────────────────────────────────
+  // Visible "Buy Me a Coffee" tip CARD (separate from the floating button).
+  // Renders inline at the article footer per user spec.
+  // ─────────────────────────────────────────────────────────────────────
+  DN.injectTipCard = function () {
+    if (document.getElementById('dn-tip-card')) return;
+    var article = document.querySelector('article.max-w-3xl');
+    if (!article) return;
+    if (!DN.BMC_URL && !DN.KOFI_URL) return;
+    var card = document.createElement('section');
+    card.id = 'dn-tip-card';
+    card.style.cssText = 'margin:36px auto 18px;max-width:48rem;padding:22px 24px;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fbbf24;border-radius:16px;box-shadow:0 14px 30px -14px rgba(180,83,9,.30);text-align:center';
+    var primaryUrl = DN.KOFI_URL || DN.BMC_URL;
+    var providerLabel = DN.KOFI_URL ? 'Ko-fi' : 'Buy Me a Coffee';
+    card.innerHTML =
+      '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#78350f;font-weight:700;margin-bottom:6px" data-zh="支持衛教內容" data-en="Support this site">支持衛教內容</div>' +
+      '<h3 style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:22px;font-weight:700;margin:0 0 6px;color:#78350f" data-zh="文章對你有幫助?請我喝杯咖啡 ☕" data-en="Found this useful? Buy me a coffee ☕">文章對你有幫助?請我喝杯咖啡 ☕</h3>' +
+      '<p style="font-size:13.5px;color:#92400e;margin:0 0 14px;line-height:1.7" data-zh="本站完全免費 · 不放廣告 · 沒有業配 · 純粹興趣寫衛教。一杯咖啡的支持就是我繼續寫的最大動力。" data-en="This site is free, ad-free, sponsor-free. Your coffee keeps me writing.">本站完全免費 · 不放廣告 · 沒有業配 · 純粹興趣寫衛教。一杯咖啡的支持就是我繼續寫的最大動力。</p>' +
+      '<a href="' + primaryUrl + '" target="_blank" rel="noopener noreferrer" id="dn-tip-card-btn" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:#78350f;color:#fff;border-radius:10px;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 6px 14px -6px rgba(120,53,15,.5);transition:transform .15s">' +
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>' +
+        '<span data-zh="到 ' + providerLabel + ' 請我喝咖啡" data-en="Buy me a coffee on ' + providerLabel + '">到 ' + providerLabel + ' 請我喝咖啡</span>' +
+      '</a>';
+    article.parentNode.appendChild(card);
+    var btn = document.getElementById('dn-tip-card-btn');
+    btn.addEventListener('mouseenter', function () { btn.style.transform = 'translateY(-2px)'; });
+    btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
+    btn.addEventListener('click', function () {
+      if (typeof gtag === 'function') {
+        try { gtag('event', 'tip_card_click', { provider: providerLabel, slug: DN.currentSlug && DN.currentSlug() }); } catch (_) {}
+      }
+    });
+  };
+  // Pre-set Ko-fi handle (overrides Buy Me a Coffee if both set)
+  DN.KOFI_URL = 'https://ko-fi.com/chendermatologist';
+
+  // ─────────────────────────────────────────────────────────────────────
+  // H6 — One-click PDF / Print export per article.
+  // Uses native print-to-PDF via window.print() — leverages the existing
+  // @media print rules already in critical CSS (which hide nav/CTAs/etc).
+  // Adds a "下載 PDF" floating button next to the bookmark button.
+  // ─────────────────────────────────────────────────────────────────────
+  DN.injectPdfButton = function () {
+    if (document.getElementById('dn-pdf-btn')) return;
+    if (!document.querySelector('article.max-w-3xl')) return;
+    var btn = document.createElement('button');
+    btn.id = 'dn-pdf-btn';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', '下載 PDF');
+    btn.title = '下載成 PDF · Cmd/Ctrl+P 或點此';
+    btn.style.cssText = 'position:fixed;right:18px;bottom:260px;width:42px;height:42px;border-radius:50%;background:#fff;color:var(--teal-deep);border:1px solid var(--border);box-shadow:0 8px 20px -8px rgba(12,81,89,.35);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:50;font-size:16px;line-height:1;transition:all .15s';
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>';
+    btn.addEventListener('mouseenter', function () { btn.style.transform = 'translateY(-2px)'; btn.style.borderColor = 'var(--teal)'; });
+    btn.addEventListener('mouseleave', function () { btn.style.transform = ''; btn.style.borderColor = 'var(--border)'; });
+    btn.addEventListener('click', function () {
+      // GA4 event
+      if (typeof gtag === 'function') {
+        try { gtag('event', 'pdf_download_click', { slug: DN.currentSlug && DN.currentSlug() }); } catch (e) {}
+      }
+      // Set a sensible filename via document.title (browsers use it for "Save as PDF")
+      var origTitle = document.title;
+      var slug = DN.currentSlug && DN.currentSlug();
+      if (slug) document.title = 'ChenDermatologist · ' + slug + ' · ' + new Date().toISOString().slice(0, 10);
+      window.print();
+      // Restore after a tick (browser already snapshot the title)
+      setTimeout(function () { document.title = origTitle; }, 1000);
+    });
+    document.body.appendChild(btn);
+  };
+
+  // ─────────────────────────────────────────────────────────────────────
   // H1 — Giscus comments (GitHub Discussions, no backend, free)
   // Setup: enable Discussions in your repo + install Giscus app + paste IDs.
   // The widget loads only on article pages, lazily on scroll-near-bottom.
@@ -4712,7 +4812,8 @@
     if (!article || document.getElementById('dn-newsletter')) return;
     var card = document.createElement('section');
     card.id = 'dn-newsletter';
-    card.style.cssText = 'margin:24px auto;max-width:48rem;padding:24px;background:linear-gradient(135deg,#0c5159,#0e7c86);color:#fff;border-radius:16px;box-shadow:0 14px 30px -14px rgba(12,81,89,.5)';
+    // Slightly smaller margin-top so it sits flush with whatever comes above
+    card.style.cssText = 'margin:48px auto 24px;max-width:48rem;padding:24px;background:linear-gradient(135deg,#0c5159,#0e7c86);color:#fff;border-radius:16px;box-shadow:0 14px 30px -14px rgba(12,81,89,.5)';
     card.innerHTML =
       '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;font-weight:700;opacity:.85;margin-bottom:6px" data-zh="訂閱衛教更新" data-en="Subscribe">訂閱衛教更新</div>' +
       '<h3 style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:22px;font-weight:700;margin:0 0 6px" data-zh="新文章上架,Email 通知你" data-en="Get an email when new articles publish">新文章上架,Email 通知你</h3>' +
@@ -4722,7 +4823,10 @@
         '<button type="submit" style="padding:10px 18px;background:#fff;color:#0c5159;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:14px" data-zh="訂閱" data-en="Subscribe">訂閱</button>' +
       '</form>' +
       '<div id="dn-news-msg" style="margin-top:8px;font-size:12px;opacity:.85"></div>';
-    article.parentNode.insertBefore(card, article.nextSibling);
+    // Append to end of article's parent (after Giscus, related, push card, etc.)
+    // so the newsletter is the LAST card before <footer>.
+    var container = article.parentNode;
+    container.appendChild(card);
 
     document.getElementById('dn-news-form').addEventListener('submit', function (e) {
       e.preventDefault();
@@ -5400,6 +5504,7 @@
     idle(function () { DN.initDarkMode(); }, { timeout: 1500 });
     idle(function () { DN.injectPushBell && DN.injectPushBell(); }, { timeout: 4000 });
     idle(function () { DN.refreshPopularPicks && DN.refreshPopularPicks(); }, { timeout: 3000 });
+    idle(function () { DN.precacheArticles && DN.precacheArticles(8); }, { timeout: 6000 });
 
     // Article-only enhancements (auto-detect via .prose presence).
     // Match articles whose <article> root has .prose, OR has a .prose descendant,
@@ -5417,11 +5522,12 @@
       idle(function () { DN.injectMedDiagrams(); }, { timeout: 2000 });
       idle(function () { DN.enhanceArticleImages(); }, { timeout: 2500 });
       idle(function () { DN.injectTipButton && DN.injectTipButton(); }, { timeout: 3500 });
-      // H4 word count, H9 next-reads, H3 newsletter, H1 giscus — all article-page only
+      // H4 word count badge, H1 Giscus, H6 PDF — all article-page only
       idle(function () { DN.injectWordCount && DN.injectWordCount(); }, { timeout: 1800 });
-      idle(function () { DN.injectNextReads && DN.injectNextReads(); }, { timeout: 2200 });
-      idle(function () { DN.injectNewsletterCard && DN.injectNewsletterCard(); }, { timeout: 2800 });
       idle(function () { DN.injectGiscus && DN.injectGiscus(); }, { timeout: 3000 });
+      idle(function () { DN.injectPdfButton && DN.injectPdfButton(); }, { timeout: 1800 });
+      // H3 newsletter — INTENTIONALLY LAST card before footer.
+      idle(function () { DN.injectNewsletterCard && DN.injectNewsletterCard(); }, { timeout: 4500 });
 
       // Per-article calculator priority: most-relevant calculator FIRST.
       // PHQ-9 (depression screen) intentionally removed from auto-injection — too negative for patient pages.
@@ -5509,16 +5615,31 @@
         }
       });
 
-      DN.addAuthorBio();
-      DN.addLegalDisclaimer();
-      DN.addTDALink();
-      DN.addPrevNextNav();
-      DN.addRelatedArticles();
-      DN.addShareToolbar();
-      DN.addBookmarkButton();
-      DN.addPrintButton();
+      // Article-footer order (top → bottom, per user spec 2026-05-07):
+      //   ↓ References (in article body, already)
+      //   ↓ Calculators (already injected above)
+      //   1. 繼續閱讀(H9 NextReads)
+      //   2. 發現錯誤、過時資訊、引用爭議(FeedbackLink)
+      //   3. 覺得有幫助?分享給朋友(ShareToolbar)
+      //   4. 你可能也會想看(RelatedArticles — ENHANCED)
+      //   5. 重要聲明(LegalDisclaimer)
+      //   6. 關於作者(AuthorBio)
+      //   7. 請我喝杯咖啡(TipCard — new card variant)
+      //   8. Email 訂閱(NewsletterCard,via idle, last)
+      //   9. 留言(Giscus,via idle,lazy)
+      // PrevNextNav has been REMOVED — replaced by the stronger RelatedArticles.
+      // Floating bookmark / print / push buttons run in idle (don't block DOM order).
+      DN.injectNextReads && DN.injectNextReads();
       DN.addFeedbackLink();
-      DN.addPushSubscribeCard();
+      DN.addShareToolbar();
+      DN.addRelatedArticles();
+      DN.addLegalDisclaimer();
+      DN.addAuthorBio();
+      DN.injectTipCard && DN.injectTipCard();
+      // Floating buttons (don't affect DOM order)
+      idle(function () { DN.addBookmarkButton(); }, { timeout: 1800 });
+      idle(function () { DN.addPrintButton(); }, { timeout: 2000 });
+      idle(function () { DN.addPushSubscribeCard(); }, { timeout: 3500 });
     }
     DN.lazyLoadAudit();
     DN.addFontSizer();

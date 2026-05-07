@@ -321,3 +321,69 @@ footer.mag-footer {
 .dn-skel-icon{width:32px;height:32px;border-radius:8px;flex-shrink:0;background:#ebe4d8;animation:dn-skel-pulse 1.4s ease-in-out infinite}
 .dn-skel-title{flex:1;height:15px;border-radius:4px;background:#ebe4d8;animation:dn-skel-pulse 1.4s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){.dn-skel-meta,.dn-skel-icon,.dn-skel-title{animation:none}}
+
+/* Responsive sm: utilities (≥640px) — added 2026-05-07 to fix /about layout
+ * (these were missing from JIT extract). Covers everything the About page
+ * + similar magazine-style cards use. */
+@media (min-width:640px){
+.sm\:flex-row{flex-direction:row}
+.sm\:flex-col{flex-direction:column}
+.sm\:items-start{align-items:flex-start}
+.sm\:items-center{align-items:center}
+.sm\:items-end{align-items:flex-end}
+.sm\:justify-start{justify-content:flex-start}
+.sm\:justify-end{justify-content:flex-end}
+.sm\:justify-between{justify-content:space-between}
+.sm\:text-left{text-align:left}
+.sm\:text-center{text-align:center}
+.sm\:text-right{text-align:right}
+.sm\:gap-2{gap:.5rem}
+.sm\:gap-3{gap:.75rem}
+.sm\:gap-4{gap:1rem}
+.sm\:gap-6{gap:1.5rem}
+.sm\:gap-8{gap:2rem}
+.sm\:gap-10{gap:2.5rem}
+.sm\:gap-12{gap:3rem}
+.sm\:p-6{padding:1.5rem}
+.sm\:p-8{padding:2rem}
+.sm\:p-10{padding:2.5rem}
+.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}
+.sm\:px-8{padding-left:2rem;padding-right:2rem}
+.sm\:py-6{padding-top:1.5rem;padding-bottom:1.5rem}
+.sm\:py-8{padding-top:2rem;padding-bottom:2rem}
+.sm\:py-12{padding-top:3rem;padding-bottom:3rem}
+.sm\:w-44{width:11rem}
+.sm\:h-44{height:11rem}
+.sm\:w-48{width:12rem}
+.sm\:h-48{height:12rem}
+.sm\:text-\[16px\]{font-size:16px}
+.sm\:text-\[18px\]{font-size:18px}
+.sm\:text-\[20px\]{font-size:20px}
+.sm\:text-\[24px\]{font-size:24px}
+.sm\:text-\[26px\]{font-size:26px}
+.sm\:text-\[32px\]{font-size:32px}
+.sm\:text-\[36px\]{font-size:36px}
+.sm\:text-\[40px\]{font-size:40px}
+.sm\:text-\[44px\]{font-size:44px}
+.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.sm\:hidden{display:none}
+.sm\:block{display:block}
+.sm\:flex{display:flex}
+.sm\:inline-flex{display:inline-flex}
+}
+@media (min-width:768px){
+.md\:flex-row{flex-direction:row}
+.md\:items-start{align-items:flex-start}
+.md\:text-left{text-align:left}
+.md\:gap-10{gap:2.5rem}
+.md\:gap-12{gap:3rem}
+.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.md\:p-10{padding:2.5rem}
+.md\:px-10{padding-left:2.5rem;padding-right:2.5rem}
+.md\:py-12{padding-top:3rem;padding-bottom:3rem}
+.md\:hidden{display:none}
+.md\:block{display:block}
+.md\:flex{display:flex}
+}
