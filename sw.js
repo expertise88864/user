@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v85';
-const RUNTIME = 'cd-runtime-v85';
+const CACHE = 'cd-v86';
+const RUNTIME = 'cd-runtime-v86';
 const RUNTIME_MAX_ENTRIES = 60;
 
 // R31: Slim precache — only critical shell + offline page + assets that EVERY page uses.
@@ -75,25 +75,23 @@ self.addEventListener('fetch', (e) => {
   // Bypass the SW reset page so it can talk to the SW directly
   if (url.pathname === '/reset-sw' || url.pathname === '/reset-sw.html') return;
 
-  // Stale-while-revalidate for HTML (navigations + accept text/html)
-  // — Returns cached HTML instantly, then refreshes from network in background.
-  // Improves perceived speed on slow networks; users see fresh content on next visit.
+  // Network-first for HTML navigation (changed from stale-while-revalidate
+  // because SWR was serving stale HTML referencing old `?v=...` cache-busted
+  // assets even after a deploy, causing site to break for hours after release).
+  // Cache only used as offline fallback. Redirect responses are NEVER cached
+  // (they previously caused redirect-loop ERR_FAILED on /blog/).
   if (req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html')) {
     e.respondWith(
-      caches.match(req).then((cached) => {
-        const fetchPromise = fetchWithRetry(req)
-          .then((resp) => {
-            if (resp && resp.ok) {
-              const copy = resp.clone();
-              caches.open(CACHE).then((c) => c.put(req, copy));
-            }
-            return resp;
-          })
-          .catch(() => cached || caches.match('/offline.html').then((o) => o || caches.match('/')));
-        // If cached, return immediately + revalidate in background
-        // If not cached, wait for network
-        return cached || fetchPromise;
-      })
+      fetchWithRetry(req)
+        .then((resp) => {
+          // Only cache successful, non-redirected, non-opaque responses
+          if (resp && resp.ok && !resp.redirected && resp.type === 'basic') {
+            const copy = resp.clone();
+            caches.open(CACHE).then((c) => c.put(req, copy));
+          }
+          return resp;
+        })
+        .catch(() => caches.match(req).then((c) => c || caches.match('/offline.html').then((o) => o || caches.match('/'))))
     );
     return;
   }
