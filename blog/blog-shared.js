@@ -2388,7 +2388,7 @@
   DN.ARTICLES = [
     { slug:'acne-myths',          title:'痘痘 9 大迷思', cat:'myth', tag:'痘痘', date:'2026-05-03', emoji:'', tag_en:'Acne' },
     { slug:'sunscreen-myths',     title:'防曬 8 大迷思', cat:'myth', tag:'防曬', date:'2026-05-03', emoji:'', tag_en:'Sunscreen' },
-    { slug:'eczema-myths',        title:'異位性皮膚炎 6 大迷思', cat:'myth', tag:'異膚', date:'2026-05-03', emoji:'', tag_en:'Eczema' },
+    { slug:'eczema-myths',        title:'異位性皮膚炎 6 大迷思', cat:'myth', tag:'異位性皮膚炎', date:'2026-05-03', emoji:'', tag_en:'Eczema' },
     { slug:'melasma-myths',       title:'肝斑 7 大迷思', cat:'myth', tag:'肝斑', date:'2026-05-03', emoji:'', tag_en:'Melasma' },
     { slug:'rosacea-myths',       title:'玫瑰痤瘡 6 大迷思', cat:'myth', tag:'酒糟肌', date:'2026-05-03', emoji:'', tag_en:'Rosacea' },
     { slug:'hairloss-myths',      title:'落髮 / 雄性禿 7 大迷思', cat:'myth', tag:'落髮', date:'2026-05-03', emoji:'', tag_en:'Hair loss' },
@@ -2415,8 +2415,8 @@
     { slug:'laser-dermatology', title:'皮膚科雷射完整對照', cat:'rx', tag:'雷射 / 光電', date:'2026-05-05', emoji:'', tag_en:'Laser dermatology' },
     { slug:'pediatric-eczema', title:'嬰幼兒 / 兒童異位性皮膚炎完整照護指南', cat:'rx', tag:'兒童異膚', date:'2026-05-05', emoji:'', tag_en:'Pediatric AD' },
     { slug:'prurigo-nodularis', title:'結節性癢疹完整衛教', cat:'rx', tag:'結節性癢疹', date:'2026-05-07', emoji:'', tag_en:'Prurigo Nodularis' },
-    { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' },    { slug:'atopic-dermatitis-comorbidity', title:'異位性皮膚炎共病完整評估 — 氣喘、過敏、心理、骨骼、心血管', cat:'rx', tag:'異膚', date:'2026-05-14', emoji:'', tag_en:'AD comorbidities' },
-    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整治療指引 — 從病態生理到 4 個生物製劑 + 7 級類固醇', cat:'rx', tag:'異膚', date:'2026-05-14', emoji:'', tag_en:'AD overview' },  ];
+    { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' },    { slug:'atopic-dermatitis-comorbidity', title:'異位性皮膚炎共病完整評估 — 氣喘、過敏、心理、骨骼、心血管', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-14', emoji:'', tag_en:'AD comorbidities' },
+    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整治療指引 — 從病態生理到 4 個生物製劑 + 7 級類固醇', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-14', emoji:'', tag_en:'AD overview' },  ];
 
   // -----------------------------------------------------------------------
   // Article numbering — assign #001-#NNN by chronological publish order
@@ -4395,6 +4395,7 @@
     };
     // Aliases for tag variants in DN.ARTICLES that don't exactly match TAG_SVG keys
     var TAG_ALIAS = {
+      '異位性皮膚炎':   '異膚',
       '健保規範':     '健保 / 自費',
       '口服 A 酸':    '酸類 / A 酸',
       '酸類':         '酸類 / A 酸',
@@ -4561,36 +4562,53 @@
   // Visible "Buy Me a Coffee" tip CARD (separate from the floating button).
   // Renders inline at the article footer per user spec.
   // ─────────────────────────────────────────────────────────────────────
+  // Pre-set Ko-fi + 街口支付 URLs (replace BMC entirely — Ko-fi is 0% commission)
+  DN.KOFI_URL = 'https://ko-fi.com/expertise88864';
+  DN.JKO_URL = 'https://service.jkopay.com/r/transfer?j=Transfer:901070305';
+
   DN.injectTipCard = function () {
     if (document.getElementById('dn-tip-card')) return;
     var article = document.querySelector('article.max-w-3xl');
     if (!article) return;
-    if (!DN.BMC_URL && !DN.KOFI_URL) return;
+    if (!DN.KOFI_URL && !DN.JKO_URL) return;
+
     var card = document.createElement('section');
     card.id = 'dn-tip-card';
-    card.style.cssText = 'margin:36px auto 18px;max-width:48rem;padding:22px 24px;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fbbf24;border-radius:16px;box-shadow:0 14px 30px -14px rgba(180,83,9,.30);text-align:center';
-    var primaryUrl = DN.KOFI_URL || DN.BMC_URL;
-    var providerLabel = DN.KOFI_URL ? 'Ko-fi' : 'Buy Me a Coffee';
+    card.style.cssText = 'margin:36px auto 18px;max-width:48rem;padding:24px;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fbbf24;border-radius:16px;box-shadow:0 14px 30px -14px rgba(180,83,9,.30);text-align:center';
+
     card.innerHTML =
-      '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#78350f;font-weight:700;margin-bottom:6px" data-zh="支持衛教內容" data-en="Support this site">支持衛教內容</div>' +
-      '<h3 style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:22px;font-weight:700;margin:0 0 6px;color:#78350f" data-zh="文章對你有幫助?請我喝杯咖啡 ☕" data-en="Found this useful? Buy me a coffee ☕">文章對你有幫助?請我喝杯咖啡 ☕</h3>' +
-      '<p style="font-size:13.5px;color:#92400e;margin:0 0 14px;line-height:1.7" data-zh="本站完全免費 · 不放廣告 · 沒有業配 · 純粹興趣寫衛教。一杯咖啡的支持就是我繼續寫的最大動力。" data-en="This site is free, ad-free, sponsor-free. Your coffee keeps me writing.">本站完全免費 · 不放廣告 · 沒有業配 · 純粹興趣寫衛教。一杯咖啡的支持就是我繼續寫的最大動力。</p>' +
-      '<a href="' + primaryUrl + '" target="_blank" rel="noopener noreferrer" id="dn-tip-card-btn" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:#78350f;color:#fff;border-radius:10px;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 6px 14px -6px rgba(120,53,15,.5);transition:transform .15s">' +
-        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>' +
-        '<span data-zh="到 ' + providerLabel + ' 請我喝咖啡" data-en="Buy me a coffee on ' + providerLabel + '">到 ' + providerLabel + ' 請我喝咖啡</span>' +
-      '</a>';
+      '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#78350f;font-weight:700;margin-bottom:8px" data-zh="如果這個網站對您有幫助" data-en="If this site has helped you">如果這個網站對您有幫助</div>' +
+      '<h3 style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:24px;font-weight:700;margin:0 0 16px;color:#78350f" data-zh="請我喝杯咖啡 ☕" data-en="Buy me a coffee ☕">請我喝杯咖啡 ☕</h3>' +
+      // Two payment buttons side-by-side (Ko-fi prominent left, JKO subtle right)
+      '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px">' +
+        (DN.KOFI_URL
+          ? '<a href="' + DN.KOFI_URL + '" target="_blank" rel="noopener noreferrer" data-tip-provider="kofi" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:#13c3ff;color:#fff;border-radius:10px;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 6px 14px -6px rgba(19,195,255,.55);transition:transform .15s;min-width:180px;justify-content:center">' +
+            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>' +
+            '<span data-zh="Ko-fi 信用卡 / PayPal" data-en="Ko-fi · Card / PayPal">Ko-fi 信用卡 / PayPal</span>' +
+          '</a>'
+          : '') +
+        (DN.JKO_URL
+          ? '<a href="' + DN.JKO_URL + '" target="_blank" rel="noopener noreferrer" data-tip-provider="jko" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:#fff;color:#78350f;border:1.5px solid #b45309;border-radius:10px;text-decoration:none;font-weight:700;font-size:14.5px;transition:transform .15s;min-width:180px;justify-content:center">' +
+            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="2.4"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
+            '<span data-zh="街口支付(台灣)" data-en="JKOPay (Taiwan)">街口支付(台灣)</span>' +
+          '</a>'
+          : '') +
+      '</div>' +
+      '<p style="font-size:11.5px;color:#92400e;margin:0 auto;line-height:1.7;max-width:42em" data-zh="本網站無業配、無贊助,所有衛教文章與量表計算器都免費。本贊助為讀者自願性的內容打賞,非醫療服務費用,不涉及任何醫療諮詢、診斷或治療。" data-en="This site has no sponsorships or paid content. All articles and tools are free. This is a voluntary content tip — not a medical service fee, and does not constitute medical consultation, diagnosis, or treatment.">本網站無業配、無贊助,所有衛教文章與量表計算器都免費。本贊助為讀者自願性的內容打賞,非醫療服務費用,不涉及任何醫療諮詢、診斷或治療。</p>';
+
     article.parentNode.appendChild(card);
-    var btn = document.getElementById('dn-tip-card-btn');
-    btn.addEventListener('mouseenter', function () { btn.style.transform = 'translateY(-2px)'; });
-    btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
-    btn.addEventListener('click', function () {
-      if (typeof gtag === 'function') {
-        try { gtag('event', 'tip_card_click', { provider: providerLabel, slug: DN.currentSlug && DN.currentSlug() }); } catch (_) {}
-      }
+
+    // Click tracking + hover animation for both buttons
+    card.querySelectorAll('a[data-tip-provider]').forEach(function (b) {
+      b.addEventListener('mouseenter', function () { b.style.transform = 'translateY(-2px)'; });
+      b.addEventListener('mouseleave', function () { b.style.transform = ''; });
+      b.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          try { gtag('event', 'tip_card_click', { provider: b.dataset.tipProvider, slug: DN.currentSlug && DN.currentSlug() }); } catch (_) {}
+        }
+      });
     });
   };
-  // Pre-set Ko-fi handle (overrides Buy Me a Coffee if both set)
-  DN.KOFI_URL = 'https://ko-fi.com/expertise88864';
 
   // ─────────────────────────────────────────────────────────────────────
   // H6 — One-click PDF / Print export per article.
@@ -5517,7 +5535,9 @@
       idle(function () { DN.injectArticleHero(); }, { timeout: 1500 });
       idle(function () { DN.injectMedDiagrams(); }, { timeout: 2000 });
       idle(function () { DN.enhanceArticleImages(); }, { timeout: 2500 });
-      idle(function () { DN.injectTipButton && DN.injectTipButton(); }, { timeout: 3500 });
+      // Floating BMC button disabled — replaced by the visible tip CARD
+      // (DN.injectTipCard) at article footer with Ko-fi + 街口 side-by-side.
+      // idle(function () { DN.injectTipButton && DN.injectTipButton(); }, { timeout: 3500 });
       // H4 word count badge, H1 Giscus, H6 PDF — all article-page only
       idle(function () { DN.injectWordCount && DN.injectWordCount(); }, { timeout: 1800 });
       idle(function () { DN.injectGiscus && DN.injectGiscus(); }, { timeout: 3000 });
