@@ -1,0 +1,1535 @@
+
+
+========== PAGE 1 ==========
+
+GUIDELINES
+BJD
+British Journal of Dermatology
+British Association of Dermatologists guidelines on the
+efﬁcacy and use of acitretin in dermatology
+A.D. Ormerod, E. Campalani* and M.J.D. Goodﬁeld
+Department of Dermatology, University of Aberdeen, Foresterhill, Aberdeen AB9 2ZB, U.K.
+*Department of Dermatology, Royal London Hospital, Whitechapel Road, London E1 1BB, U.K.
+Department of Dermatology, Leeds General Inﬁrmary, Great George Street, Leeds LS1 3EX, U.K.
+Correspondence
+Anthony Ormerod.
+E-mail: a.d.ormerod@abdn.ac.uk
+Accepted for publication
+9 February 2010
+Key words
+acitretin, ichthyosis, psoriasis, safety, systematic
+review, treatment guidelines
+Conﬂicts of interest
+None declared.
+This is a new set of guidelines prepared for the BAD
+Clinical Standards Unit, made up of the Therapy &
+Guidelines Subcommittee (T&G) and the Audit &
+Clinical Standards Subcommittee (A&CS). Members
+of the Clinical Standards Unit are: H.K. Bell
+(Chairman T&G), L.C. Fuller (Chairman A&CS),
+N.J. Levell, M.J. Tidman, P.D. Yesudian, J. Lear,
+J. Hughes, A.J. McDonagh, S. Punjabi, N. Morar,
+S. Wagle (British National Formulary), S.E.
+Hulley (British Dermatological Nursing Group),
+K.J. Lyons (BAD Scientiﬁc Administrator) and M.F.
+Mohd Mustapa (BAD Clinical Standards Manager).
+Guidelines produced in 2010 by the British
+Association of Dermatologists; proposed revision in
+2015.
+Disclaimer
+These guidelines have been prepared on behalf of the
+British Association of Dermatologists (BAD) and
+reﬂect the best data available at the time the report
+was prepared. Caution should be exercised in
+interpreting the data; the results of future studies
+may require alteration of the conclusions or
+recommendations in this report. It may be necessary
+or even desirable to depart from the guidelines in the
+interests of speciﬁc patients and special
+circumstances. Just as adherence to guidelines may
+not constitute defence against a claim of negligence,
+so deviation from them should not necessarily be
+deemed negligent.
+DOI 10.1111/j.1365-2133.2010.09755.x
+Acitretin, a synthetic retinoid, is the pharmacologically active
+metabolite of etretinate. It replaced etretinate in the late 1980s
+because of its more favourable pharmacokinetic proﬁle, and it
+is an established systemic second-line therapy for severe psori-
+asis resistant to topical therapy. Bioavailability is enhanced by
+food, especially fatty food.1 Acitretin is 50 times less lipophilic
+than etretinate and has a shorter elimination half-life. How-
+ever, there is evidence that small amounts of acitretin are
+re-esteriﬁed to etretinate, which has a very long half-life,
+especially in the presence of alcohol.2,3 Intracellularly, it inter-
+acts with cytosolic proteins and nuclear receptors, which are
+part of the steroid-thyroid hormone superfamily. We know
+that these nuclear receptors act as transcriptional factors for
+speciﬁc DNA sequences; however, their role in the retinoid
+pathway is largely unknown. In psoriasis and other disorders
+of keratinization, acitretin normalizes epidermal cell prolifera-
+tion, differentiation and corniﬁcation.4,5 It is thought to exert
+these effects by interfering with the expression of epidermal
+growth factor genes. There is also evidence that acitretin has
+immunomodulatory properties by inhibiting dermal micro-
+vascular endothelial cells6 and neutrophil migration.7,8 Acit-
+retin is licensed for use in severe extensive psoriasis which
+is resistant to other forms of therapy, including topical,
+light and systemic; palmoplantar pustular psoriasis; severe
+Darier disease (keratosis follicularis) and severe congenital
+ichthyosis.
+It is highly teratogenic and must not be used by women
+who are pregnant or are planning a pregnancy. Acitretin is
+highly bound to plasma protein and metabolized in the
+liver. It is excreted to an equal extent by renal and hepatic
+routes.
+Although available for 20 years there have not been any
+published guidelines on the use of acitretin. Its clinical use is
+almost completely restricted to dermatology and it has impor-
+tant metabolic, skeletal and teratogenic side-effects. We felt it
+important to produce evidence-based guidelines on its use in
+dermatology.
+Materials and methods
+A scoping meeting decided that the guideline would include
+only evidence pertaining to acitretin and would not make
+direct inferences from studies of the parent drug etretinate.
+The target audience for the guideline is dermatologists.
+ 2010 The Authors
+952
+Journal Compilation  2010 British Association of Dermatologists • British Journal of Dermatology 2010 162, pp952–963
+Downloaded from https://academic.oup.com/bjd/article/162/5/952/6642571 by guest on 06 May 2026
+
+
+========== PAGE 2 ==========
+
+Inclusion criteria
+We included all randomized controlled trials (RCTs) testing
+acitretin but also needed to survey the literature on monitor-
+ing patients taking acitretin and adverse effects which could
+include well-designed cohort or case–control analytical studies
+and, for rare but signiﬁcant side-effects, case reports.
+We included in the search papers written in English,
+French, Spanish, Italian and German, and those describing
+adverse drug reactions, clinical monitoring and consensus
+statements from respected authorities based on clinical experi-
+ence and consensus committees.
+The following databases were searched: EMBASE, MEDLINE,
+CINAHL, PubMed, The Cochrane Library, RCP Guidelines
+Database, DARE; this gave 1325 hits. These abstracts were
+reviewed and, after sifting, 316 papers were reviewed by the
+authors. The search strategy is available separately online (see
+Data S1).
+Stakeholder involvement and peer review
+The draft guideline was made available for consultation and
+review by the BAD membership. The ﬁnal document was
+peer-reviewed by the Clinical Standards Unit of the BAD
+(made up of the Therapy & Guidelines and Audit & Clinical
+Standards Subcommittees) prior to publication.
+Indications and efﬁcacy: review of the
+evidence
+Psoriasis
+We found four RCTs comparing acitretin with placebo9–12 and
+four RCTs comparing acitretin with etretinate,13–16 with one
+open study.17 The types of disease in these trials and the results
+are heterogeneous and include generalized pustular, severe and
+erythrodermic variants. Acitretin is effective compared with
+placebo but many of these studies are poorly reported or dose
+ranging with small numbers in each dosage group. Higher
+doses of acitretin (50–75 mg daily) are more effective than low
+doses in these RCTs,9–11 with lower doses of 10–25 mg daily
+not signiﬁcantly better than placebo,9,11,14 although one trial
+established efﬁcacy at 25 mg daily.10 Taken together, the ran-
+domized period of these studies is short, and longer-term open
+extensions with variable doses titrated to the patients’ needs
+suggest greater efﬁcacy over time with reduction in area and in-
+creasing percentage of patients cleared between 20 and
+52 weeks.12,17 Twelve-week studies are likely to underestimate
+the efﬁcacy of acitretin and optimal response will be seen at
+12 weeks or later with 70% showing marked improvement
+at 1 year in the open study.17 Typically 75% improvement in
+Psoriasis Area and Severity Index (PASI) score (PASI 75) was
+seen at 12 weeks.13 However, only 2–10% cleared completely.
+In the comparative studies with etretinate there was a trend
+for acitretin to be slightly less effective and to present a higher
+incidence of similar side-effects. In an 8-week trial in 175
+patients acitretin at 10, 25 and 50 mg daily produced a 50%
+improvement in psoriasis in 50%, 40Æ5% and 54%, respec-
+tively,
+compared
+with
+61%
+with
+etretinate.14
+Anecdotal
+reports also suggest a differential response.18 Side-effects, like
+efﬁcacy, were dose related.
+Pearce et al.19 reanalysed retrospectively the pivotal phase
+three trials and found that common adverse events were two
+to three times more frequent in patients receiving 50 mg daily
+compared with patients receiving 25 mg daily. On 25 mg
+daily changes in liver enzymes and lipids were minimal com-
+pared with higher doses. The authors advocated use of a low
+dose as high doses are limited due to adverse events. Others
+have advocated gradual dose escalation as optimal.20
+All studies preceded the now standardized proportion
+achieving PASI 75 outcome measure. However, 23% of 112
+patients achieved 75% improvement in one typical study.14 In
+one study 90% improvement was achieved by 10% of
+patients.15 A retrospective post hoc analysis of the data from
+three studies was published using the now more widely
+accepted criteria of the proportion of patients achieving at
+least 50% improvement in PASI (PASI 50) and at least 75%
+improvement (PASI 75).21 This showed 52% achieving PASI
+75 and 85% achieving PASI 50 after 12 weeks in the multi-
+centre Nordic trial on a median dose of acitretin 40 mg
+daily.13 This was a per protocol analysis. In the Canadian open
+trial17 patients started on acitretin 50 mg daily and were
+tapered to a mean of 40 mg daily. A total of 46% achieved a
+PASI 75 response and 76% a PASI 50 response by the end of
+treatment (intent to treat analysis, average duration 267 days).
+There is an impression from retrospective anecdotal studies
+that acitretin is more effective in erythrodermic22 and pustular
+psoriasis than in chronic plaque psoriasis.23 Etretinate was the
+most effective agent in one study of pustular psoriasis.24
+In an open study of 396 patients with nail psoriasis who
+received acitretin in doses of 0Æ2–0Æ3 mg kg)1 daily for
+6 months, the mean improvement in Nail Psoriasis Severity
+Index was 41% and 25% of patients cleared or almost cleared.25
+Combination therapy in psoriasis
+Acitretin and PUVA
+Four RCTs compared acitretin and PUVA (rePUVA) with
+placebo and PUVA, or additionally etretinate and PUVA
+in two.26–28 These show the acitretin-PUVA combination to
+be more effective than PUVA alone, reducing the number
+of PUVA treatments, exposure to ultraviolet (UV) A and the
+clinical scores, and to be as effective as etretinate-PUVA com-
+bination. A trend was seen towards a higher incidence of
+side-effects in the acitretin-treated patients.28 In considering
+the preventive action of acitretin against carcinogenesis and
+the concerns relating to the carcinogenicity of PUVA therapy
+there are theoretical advantages to this combination which
+help mitigate the more serious side-effects of PUVA. This is
+supported for etretinate in the American PUVA cohort29 where
+the incidence of squamous cell carcinomas was reduced by
+ 2010 The Authors
+Journal Compilation  2010 British Association of Dermatologists • British Journal of Dermatology 2010 162, pp952–963
+Efﬁcacy and use of acitretin in dermatology, A.D. Ormerod et al. 953
+Downloaded from https://academic.oup.com/bjd/article/162/5/952/6642571 by guest on 06 May 2026
+
+
+========== PAGE 3 ==========
+
+retinoids. The same could be said for narrowband UVB where
+the carcinogenic risk is probably less.
+Acitretin and ultraviolet B
+One RCT, two open studies and one retrospective study com-
+pared acitretin in combination with UVB24,30–33 with UVB
+alone. Better outcomes and sparing of UVB were consistently
+seen with acitretin-UVB in combination than with UVB alone.
+In a recent RCT acitretin and UVB (TL-01) cleared 55Æ6% of
+patients compared with 63Æ3% treated with acitretin and
+PUVA.34
+Acitretin and calcipotriol ointment
+Two large RCTs combining acitretin with calcipotriol ointment
+showed additive beneﬁts of the combination although each
+relied on subjective outcome measures.35 In one study the
+number of patients clear or almost clear was increased from
+41% to 67% by the addition of calcipotriol36 and the number
+of patients with complete clearance increased in the other
+from 15% to 40% after 12 weeks.37
+Other combinations
+Acitretin with hydroxycarbamide and with etanercept have
+anecdotally been effective for some patients with plaque psoria-
+sis.38 The combination of methotrexate and acitretin has been
+used in patients with severe psoriasis, where all other treatments
+have failed.39,40 This has been based on anecdotal evidence
+extrapolated from etretinate.41 Although this combination can
+be very effective, sporadic severe hepatotoxic responses have
+been reported.42–44 The efﬁcacy of concomitant use of acitretin
+with ciclosporin is not convincing45 and, in addition, this com-
+bination carries the risk of accumulation of ciclosporin as both
+drugs are inactivated by the same cytochrome P-450 system.46
+A recent RCT showed similar efﬁcacy from the combination
+regimen of acitretin 0Æ4 mg kg)1 daily and etanercept 25 mg
+once weekly to that observed with etanercept 25 mg twice
+weekly. Although a small study, this suggests that the addition
+of acitretin has an etanercept-sparing effect.47
+Palmoplantar pustulosis
+Two RCTs compared acitretin with placebo in palmoplantar
+pustulosis.48,49 Acitretin was signiﬁcantly more effective than
+placebo, acting within 4 weeks to produce a ﬁvefold reduction
+in pustules. After 12 weeks the second study49 comparing aci-
+tretin and etretinate showed a tenfold reduction in pustules
+which was similar for both retinoids.
+Prevention of malignancy
+There have been numerous reports of retinoids used as prophy-
+laxis against skin cancer in organ transplant recipients. Three
+RCTs were systematically reviewed in 2005 by Chen et al.50
+These included two parallel studies of 44 and 26 patients fol-
+lowed for 6 and 12 months, and a crossover study of 23
+patients. Only the short study had a ﬁxed dose of 30 mg daily.
+Longer-term studies had differing dose regimens. In the study
+by George et al.51 acitretin was titrated from 25 mg daily up to
+50 mg daily or down to 25 mg on alternate days. In the cross-
+over study there was a 42% decrease in squamous cell carci-
+noma in the acitretin period compared with drug-free period. A
+similar trend was seen with basal cell carcinoma although num-
+bers were small. For patients treated for 6 months and off treat-
+ment for 6 months, two of 19 patients (11%) in the acitretin
+group reported a total of two new squamous cell carcinomas
+during the treatment period, compared with nine of 19 patients
+(47%) in the placebo group who developed a total of 18 new
+carcinomas. The two trials counting premalignant lesions
+showed a signiﬁcant reduction in these. Keratotic lesions
+increased by 28% in the placebo group and decreased by 13Æ4%
+in the acitretin group.52 The third study which compared differ-
+ent doses of acitretin did not show a difference in tumour rate
+between doses of 0Æ4 mg kg)1 daily and 0Æ4 mg kg)1 daily
+reducing to 0Æ2 mg kg)1 for 9 months, nor a signiﬁcant reduc-
+tion compared with that observed in the preceding year without
+acitretin.53 However, thickness of lesions was reduced and
+numbers of actinic keratoses were reduced. Side-effects were a
+limiting factor in these studies, leading to signiﬁcant drop-outs,
+although lower doses were tolerated. Overall these were small
+studies with a modest reduction in cancer over a short period of
+observation, and further studies are required.
+Other retinoids have anecdotally prevented malignancy in
+congenital skin cancer syndromes such as xeroderma pigmento-
+sum (isotretinoin)54 and basal cell naevus syndrome (etreti-
+nate)55,56 and it may be implied that acitretin has a place here.
+Congenital ichthyoses and keratoderma
+Acitretin has been used in severe forms of the heterogeneous
+group of the ichthyoses where marked hyperkeratosis is the
+main pathological component. The evidence for its efﬁcacy is
+based on anecdotal reports. We found ﬁve open series, one of
+which was prospective, describing its use in the ichthyoses.57–60
+In
+one,
+29
+children
+had
+conditions
+including
+lamellar
+ichthyosis (9), nonbullous ichthyosiform erythroderma (5),
+one of whom responded poorly, bullous ichthyosiform ery-
+throderma (4) and Sjo¨gren-Larsson syndrome (3).57 A patient
+with Netherton syndrome experienced marked worsening. In
+another study, 33 patients (21 adults and 12 children) with
+ichthyoses, palmoplantar hyperkeratosis or Darier disease were
+treated for a period of 4 months. Most patients showed
+marked improvement or remission. The results in congenital
+ichthyosiform erythroderma, lamellar ichthyosis and Papillon-
+Lefe`vre syndrome were judged by the authors empirically as
+better than those usually reported with etretinate.59 Milder
+ichthyoses such as ichthyosis vulgaris and X-linked recessive
+ichthyosis should not require acitretin therapy.61 However,
+six patients with severe X-linked recessive ichthyosis were
+successfully treated.62
+ 2010 The Authors
+Journal Compilation  2010 British Association of Dermatologists • British Journal of Dermatology 2010 162, pp952–963
+954 Efﬁcacy and use of acitretin in dermatology, A.D. Ormerod et al.
+Downloaded from https://academic.oup.com/bjd/article/162/5/952/6642571 by guest on 06 May 2026
+
+
+========== PAGE 4 ==========
+
+Among the keratodermas, Vohwinkel syndrome (keratoderma
+mutilans with hearing loss), keratitis-ichthyosis-deafness (KID)
+syndrome,63 hereditary punctate palmoplantar keratoderma,64
+type
+I
+hereditary
+punctate
+keratoderma,65
+epidermolytic
+hyperkeratosis (a rare form of ichthyosis sometimes associated
+with palmoplantar keratoderma)66 and Papillon-Lefe`vre syn-
+drome67,68 have all been recently reported as successfully trea-
+ted with acitretin in small series. Treatment of epidermolytic
+palmoplantar keratoderma may result in large erosions.61
+Darier disease
+In one RCT, Christopherson et al.69 compared acitretin with
+etretinate in 26 patients and found similar rates of marked
+improvement or remission in both groups, with 10 of 13
+patients responding. An open study of ﬁve patients70 showed
+marked improvement to complete clearance in four. This
+group found that 10–25 mg daily was sufﬁcient, and lower
+doses were required in Darier disease than other diseases. This
+is reﬂected in the licence. In an open study of 13 patients,71
+three patients cleared and seven improved markedly on 30 mg
+daily, followed by dose reduction.
+Pityriasis rubra pilaris
+A single retrospective study of 14 patients, of whom nine
+were treated with either etretinate or acitretin 0Æ5 mg kg)1
+daily for an average period of 18Æ8 months, achieved partial
+or complete clearing in seven without major side-effects. Five
+patients responded to methotrexate 15–25 mg daily but other
+treatments, including steroids and PUVA, were inconsistent.72
+Although anecdotal, the authors considered retinoids to be the
+ﬁrst-line treatment for pityriasis rubra pilaris.
+Lichen planus
+In one RCT in severe lichen planus (LP), Laurberg et al.73
+showed marked improvement in 64% of patients on acitretin
+30 mg daily vs. 13% on placebo. In an open 8-week exten-
+sion, 83% of the placebo patients responded. A total of 17 of
+23 patients with associated mucocutaneous disease improved
+signiﬁcantly on acitretin. In a meta-analysis, Cribier et al.74
+included ﬁve open studies with 58 patients with oral LP trea-
+ted with etretinate (mostly poor-quality studies), and one
+crossover RCT with 28 patients which showed signiﬁcant
+improvement with etretinate over placebo. Etretinate was the
+favoured retinoid therapy. The authors recommend acitretin as
+ﬁrst-line therapy in cutaneous LP and give further anecdotal
+evidence. Acitretin may also be preferred in the hyperkeratotic
+variant of LP for its modulating effect on keratinization.
+Lupus erythematosus
+In an RCT of 58 patients75 comparing acitretin 50 mg daily
+for 8 weeks with hydroxychloroquine 400 mg daily, improve-
+ment was found in 46% and 50%, respectively, but four
+patients had to stop acitretin because of side-effects which
+were more frequent in this group. In one open trial of 20
+subjects,76 the result was unsatisfactory in ﬁve. In 15 patients,
+total clearing or marked reduction of all lesions was seen.
+Acitretin was superior to previous therapy with antimalarials
+and ⁄or systemic corticosteroids in seven, and ﬁve of six
+patients with subacute cutaneous lupus erythematosus showed
+complete clearing of their lesions within 2–4 weeks. As in LP,
+a verrucous variant is seen where the modulation of hyperker-
+atosis may be an advantage favouring acitretin.
+Lichen sclerosus
+One RCT randomized 78 patients but only measured efﬁcacy
+per protocol in 46 subjects. A total of 14 of 22 patients on
+acitretin responded compared with six of 24 in the placebo
+group.77 However, due to the high drop-out rate the study
+has a high risk of bias (1); see Appendix 1) and could not be
+used to make a recommendation.
+Other conditions
+A 51% reduction in hyperkeratotic hand eczema was seen in
+one RCT of 29 patients.78 In one study of mycosis fungoides,
+PUVA in combination with interferon alfa-2a was superior to
+acitretin with interferon.79 The evidence for the use of acit-
+retin for the treatment of warts is sparse and insufﬁcient to
+base a recommendation. An open study of etretinate in chil-
+dren with severe warts showed clearance in 16 of 20 patients
+and in four there was improvement then relapse on stopping
+therapy.80 However, in this age group warts often clear spon-
+taneously. There are a few case reports of warts clearing with
+acitretin,81,82 but in one of these the warts only improved in
+bulk and recurred on stopping therapy.82 Acitretin has been
+used anecdotally as an adjunct to therapy in giant condyloma
+acuminatum83 but in this case response was arguably related
+to excision and imiquimod used in combination. In epidermo-
+dysplasia verruciformis acitretin has been suggested as an
+adjunct in combination with interferon alfa-2a84 but as mono-
+therapy was ineffective.85
+Safety and side-effects
+Side-effects are seen in most patients receiving acitretin. How-
+ever, they usually disappear when the dosage is reduced or
+the medicine is withdrawn. An initial worsening of psoriasis
+symptoms is sometimes seen at the beginning of the treatment
+period.
+Teratogenicity
+Acitretin is teratogenic regardless of the duration of treatment
+or dosage used. Although since the marketing of acitretin only
+one report of human teratogenicity associated with acitretin
+has been published, acitretin is converted to etretinate, which
+has a much longer half-life and has been associated with sev-
+ 2010 The Authors
+Journal Compilation  2010 British Association of Dermatologists • British Journal of Dermatology 2010 162, pp952–963
+Efﬁcacy and use of acitretin in dermatology, A.D. Ormerod et al. 955
+Downloaded from https://academic.oup.com/bjd/article/162/5/952/6642571 by guest on 06 May 2026
+
+
+========== PAGE 5 ==========
+
+eral cases of retinoid-induced embryopathy.86–88 Potential
+teratogenic effects associated with retinoids are characteristic
+of those associated with hypervitaminosis A.89,90 Retinoid em-
+bryopathy can result in craniofacial dysmorphias such as high
+palate and anophthalmia, abnormalities of appendages includ-
+ing syndactyly and absence of terminal phalanges, malforma-
+tions
+of
+the
+hip,
+meningoencephalocele,
+and
+multiple
+synostosis.89–92 The teratogenic risk is particularly high for
+women exposed to treatment during the ﬁrst trimester of
+pregnancy. Available data do not appear to indicate any repro-
+ductive safety risks due to paternal treatment with acitretin.93
+Mucocutaneous effects
+The most frequent side-effect is dryness of the lips, which can
+be alleviated by application of a fatty ointment such as Vase-
+line (Unilever, Walton-on-Thames, U.K.). Mucous mem-
+branes and transitional epithelia become dried out or exhibit
+inﬂammatory lesions. This can occasionally lead to nose bleeds
+and rhinitis, and to ocular disturbances including photopho-
+bia, xerophthalmia and conjunctivitis sometimes resulting in
+intolerance of contact lenses. Cheilitis, dry mouth and thirst
+may also occur. Occasionally stomatitis, gingivitis and taste
+disturbances have been reported.
+Thinning, redness and scaling of the skin may occur all over
+the body, particularly on the palms and soles. For many
+patients the increased sensitivity and fragility of the skin make
+walking and grasping objects difﬁcult.
+Increased hair loss, nail fragility and paronychia are some-
+times observed. Hair loss can occur in up to 75% of patients,
+but frank alopecia is observed in < 10% of treated patients.
+Periungual pyogenic granuloma may occur after long-term
+acitretin therapy. Occasionally bullous eruption and abnormal
+hair texture have been reported.
+Rarely, patients may experience photosensitivity reactions.
+Another side-effect is the initial aggravation of psoriasis,
+which is sometimes seen during the ﬁrst 4 weeks of treat-
+ment. A ‘retinoid dermatitis’, which may resemble unstable
+psoriasis, can also develop in up to 25% of patients receiving
+high-dose oral acitretin.13,94,95 The severity of mucocutaneous
+side-effects was found to be dose related in some studies, with
+a higher incidence at doses of 50–75 mg daily.13,94,95 How-
+ever, this was not found to be the case in other studies.9,14
+If severe mucocutaneous reactions occur during effective
+therapy with acitretin, dose reduction should be attempted
+before discontinuing the drug.
+Hepatotoxicity
+Transient, usually reversible, elevation of liver enzymes may
+occur in up to 15% of patients receiving acitretin.22,90
+Severe hepatotoxic reactions resulting from retinoid use are
+rare, and reports include a severe cholestatic hepatitis occur-
+ring in a patient with a hypoplastic kidney,11,96 and a severe
+hepatotoxic reaction with progression to liver cirrhosis.90,97,98
+However, data from 1877 patients receiving acitretin therapy
+showed overt chemical hepatitis in only 0Æ26%.90 A total of
+83 patients followed by liver biopsy for 2 years showed no
+signiﬁcant
+hepatotoxicity
+with
+acitretin
+other
+than
+mild
+changes.97 Alcoholics, diabetics and obese individuals are at
+increased risk for hepatotoxicity and require more frequent
+liver function studies.
+Hyperlipidaemia
+Hyperlipidaemia is proportional to the dose of acitretin and
+usually reverses within 4–8 weeks after discontinuation.99 The
+greatest increase is seen in triglycerides, which occurs in 20–
+40% of patients, and is associated with the very low density
+lipoprotein (VLDL) fraction. Hypercholesterolaemia, seen in
+10–30% of patients treated with acitretin, relates to increases
+in both the VLDL and ⁄or low density lipoprotein (LDL) frac-
+tions and a parallel decrease in the high density lipoprotein
+(HDL) fraction.99 In addition, HDL levels have been found to
+be decreased in about 40% of patients taking acitretin.100 The
+LDL ⁄HDL ratio (atherogenic index) has been directly corre-
+lated to the risk of developing cardiovascular disease, and
+therefore fasting lipids should be regularly checked in all
+patients receiving treatment with acitretin. Increases of serum
+triglycerides to levels associated with pancreatitis are not
+common, although one case of fatal fulminant pancreatitis
+has been reported.90
+These changes in the lipid proﬁle are dose related and may
+be controlled by dietary means (including restriction of alco-
+hol intake) and ⁄or by reduction of dosage of acitretin. A high
+ﬁsh oil diet was found effective in partially reducing hyper-
+triglyceridaemia and increasing HDL cholesterol in patients
+treated with etretinate and acitretin.100 Gemﬁbrozil taken
+orally is also effective, if required.101 Hypertriglyceridaemia is
+likely to occur in patients with predisposing factors such as
+diabetes mellitus, obesity, increased alcohol intake, or a family
+history of these conditions.
+Skeletal abnormalities
+The effects of acitretin on the skeletal system are not yet well
+documented; however, available data suggest similarities to
+etretinate.102,103 Long-term (2–4 years) treatment with etreti-
+nate was associated with radiographic evidence of extraspinal
+tendon and ligament calciﬁcation. However, estimates of the
+incidence vary widely, the most common sites being ankles,
+pelvis and knees.104,105 Diffuse idiopathic skeletal hyperostosis
+(DISH)-like
+involvement,
+characterized
+by
+degenerative
+spondylosis, vertebral arthritis, and syndesmophytes of the
+vertebral spine, has been reported as a side-effect of systemic
+retinoids.
+Two
+long-term
+retrospective
+studies
+involved
+repeated radiological surveys to detect abnormalities but no
+correlation with dose or duration of treatment has been
+shown.105 This study in 135 patients showed no evidence of a
+link between hyperostosis and prolonged retinoid therapy. A
+prospective study of 51 patients treated with acitretin over
+2 years revealed bone exostoses in only two patients (in the
+ 2010 The Authors
+Journal Compilation  2010 British Association of Dermatologists • British Journal of Dermatology 2010 162, pp952–963
+956 Efﬁcacy and use of acitretin in dermatology, A.D. Ormerod et al.
+Downloaded from https://academic.oup.com/bjd/article/162/5/952/6642571 by guest on 06 May 2026
+
+
+========== PAGE 6 ==========
+
+hip and forearm) that would not have been detected using lat-
+eral spine X-rays.106 A further retrospective study of long-term
+acitretin revealed no cases of DISH.107 Regular radiological
+evaluations have been suggested in the literature but the evi-
+dence does not support this practice which exposes subjects to
+unnecessary radiation; our consensus is that routine radio-
+graphic assessments are not required for long-term acitretin
+therapy. Targeted X-rays for atypical musculoskeletal pain may
+be informative.
+Concern about the use of acitretin in children has arisen
+from occasional reports of bone changes, including premature
+epiphyseal closure,108 skeletal hyperostosis and extraosseous
+calciﬁcation in children on long-term treatment with etreti-
+nate.109 It should be noted that very high dose exposure in
+one case led to osteopenia and fractures in the bones that
+fused prematurely and in the other case premature closure
+was a symptomless observation on X-rays.108 Five children
+treated with etretinate had periosteal thickening in the ﬁbula,
+ulna, metacarpal or metatarsal bones that either developed or
+progressed on therapy. Compared with age- and sex-matched
+normal controls, the children had decreased cortical bone
+thickness of the second left metacarpal bone. However, pro-
+spective follow-up of 42 children treated over 11 years did
+not reveal any abnormalities that would signiﬁcantly impede
+starting or continuing therapy.110 Effects on growth have not
+subsequently been seen in a further 18 children treated with
+retinoids at Great Ormond Street Hospital (David Atherton,
+personal communication).
+If, in the opinion of the treating physician, the child’s con-
+dition is severe enough to be physically, psychologically or
+socially incapacitating and such therapy is undertaken because
+the beneﬁts outweigh the risks, then the child should be clini-
+cally monitored for any abnormalities of growth parameters
+and bone development. An appropriate daily dose in children
+under 12 years of age is 0Æ5 mg kg)1; occasionally this can be
+increased up to 1 mg kg)1.
+Other rheumatological manifestations that may occur during
+therapy with acitretin include arthralgias, arthritis, myalgia, and
+a few cases of vasculitis, Wegener granulomatosis and erythema
+nodosum. Arthralgia and myalgia represent the most frequent
+rheumatological sequelae, occurring in up to 25% of patients.111
+Two previous small studies indicated a possible increased
+risk of osteoporosis in subjects receiving etretinate and this is
+a feature of the hypervitaminosis A syndrome;112,113 however,
+a further study has refuted this risk114 and in a prospective
+study of 30 patients treated for 3Æ6 years with acitretin, osteo-
+porosis was not detected on DEXA scans.114
+Other side-effects
+Benign intracranial hypertension (pseudotumor cerebri) has
+occurred in very rare cases with use of systemic retinoids
+including one instance following acitretin use.90,115 In some
+cases with isotretinoin, this effect has been associated with
+concurrent
+tetracycline
+or
+minocycline
+administration.116
+Patients with severe headache, nausea, vomiting and visual
+disturbance should discontinue acitretin immediately and be
+referred for neurological evaluation.
+Blurred or decreased night vision has been reported occa-
+sionally.22
+Nausea has been reported infrequently.22
+Increased incidence of vulvovaginitis due to Candida albicans
+has been noted during treatment with acitretin.117
+Retinoids are associated with greater insulin sensitivity and
+could therefore induce hypoglycaemia in patients on anti-
+diabetic medications.118 These patients should be advised to
+check their capillary glucose levels regularly, perhaps more
+frequently than usual, in the early stages of treatment.
+Acitretin does not signiﬁcantly affect wound healing. There
+is some evidence that healing was delayed by retinoids in dia-
+betic rats119 and that epidermal proliferation was reduced by
+acitretin in psoriasis.120 However, in a study of 44 complex
+wounds in transplant recipients there were no signiﬁcant
+effects on wound infection, dehiscence, hypertrophic scarring
+or hypergranulation. There is therefore no need to stop aci-
+tretin for routine surgery such as orthopaedic procedures.121
+Overdose
+Signs and symptoms of overdosage with acitretin would prob-
+ably be similar to acute vitamin A toxicity and include head-
+ache, nausea, vomiting, drowsiness and vertigo. They would
+be expected to subside on acitretin withdrawal without need
+for treatment.
+Recommendations
+See Appendix 1 for deﬁnitions of levels of evidence and
+strengths of recommendation.
+In which conditions should acitretin be used?
+Acitretin monotherapy is recommended in the treatment of:
+1 Severe psoriasis, or psoriasis with severe effects on quality of life,
+meriting systemic therapy, which is resistant to topical therapy,
+phototherapy or is unsuitable for these treatments (A, 1+).
+1.1 Acitretin is recommended as a combination with PUVA ther-
+apy or narrowband phototherapy (A, 1+).
+1.2 Acitretin is recommended with hydroxycarbamide (D, 3)
+1.3 Acitretin is recommended in combination with calcipotriol
+ointment (A, 1+).
+1.4 The following combinations are not recommended:
+Acitretin with ciclosporin: no evidence of additive efﬁcacy
+(D, 3).
+Acitretin with methotrexate: potential for severe hepatic tox-
+icity (except in exceptional cases) (D, 3).
+2 Palmoplantar pustular psoriasis (A, 1+).
+3 Hyperkeratotic hand eczema (A, 1+).
+4 Severe Darier disease (keratosis follicularis) (A, 1+).
+5 Severe congenital ichthyosis (D, 3).
+6 Keratoderma (D, 3).
+There is evidence that the following conditions beneﬁt from aci-
+tretin’s antimitotic and keratolytic actions:
+1 Lichen planus (A, 1+)
+ 2010 The Authors
+Journal Compilation  2010 British Association of Dermatologists • British Journal of Dermatology 2010 162, pp952–963
+Efﬁcacy and use of acitretin in dermatology, A.D. Ormerod et al. 957
+Downloaded from https://academic.oup.com/bjd/article/162/5/952/6642571 by guest on 06 May 2026
+
+
+========== PAGE 7 ==========
+
+2 Lichen sclerosus (A, 1+)
+3 Discoid lupus erythematosus (A, 1+)
+4 Prevention
+of
+cutaneous
+malignancies
+in
+organ
+transplant
+patients (A, 1+).
+What are the contraindications to acitretin therapy?
+1 Acitretin therapy is contraindicated in pregnancy and breast-
+feeding.
+2 Acitretin therapy in the above indications should be avoided in
+women of childbearing potential where there is a suitable alter-
+native.
+What precautions should be taken when acitretin is
+prescribed for women of childbearing age?
+• Strict contraception is practised 4 weeks before, during and for
+3 years after treatment.
+• Pregnancy has been excluded by a medically supervised negative
+pregnancy test within 2 weeks prior to therapy.
+• Therapy should start on the second or third day of the next
+menstrual cycle.
+• The treating physician must explain clearly and in detail what
+precautions must be taken. This should include the risk involved
+and the possible consequences of pregnancy occurring during
+acitretin treatment or in the 3 years following its cessation.
+• The patient must be reliable and capable of understanding the
+risk and complying with effective contraception, and conﬁrms
+that she has understood the warnings.
+• The patient should be advised to abstain from alcohol which
+increases the metabolism of acitretin to etretinate.
+• Acitretin therapy should be avoided in the presence of signiﬁ-
+cant hepatic impairment (enzymes > 2 times normal), hepatitis
+and alcohol abuse.
+• Acitretin therapy should be avoided in moderate to severe renal
+impairment.
+What special precautions should be taken when
+prescribing acitretin?
+• Patients should not donate blood either during or for at least
+1 year following discontinuation of therapy.
+• Acitretin is not recommended in children, as there have been
+occasional reports of bone changes, including premature epiph-
+yseal closure, skeletal hyperostosis and extraosseous calciﬁcation
+in children on long-term treatment with etretinate.108,122,123 If,
+in the opinion of the treating physician, the beneﬁts signiﬁ-
+cantly outweigh the risks and such therapy is undertaken, the
+child should be carefully monitored for any abnormalities of
+growth parameters and bone development including plotting
+growth charts.
+• The effects of UV radiation are enhanced by retinoid therapy,
+therefore patients should avoid excessive exposure to sunlight
+and use of sun lamps.
+• Women (and men) should refrain from waxing as a method
+for hair removal as retinoids cause skin fragility.
+• Retinoids are associated with greater insulin sensitivity and
+could therefore induce hypoglycaemia in patients on antidiabet-
+ic medications.118,124 In this subset of patients, serum glucose
+levels should be checked more frequently than usual in the early
+stages of treatment.
+• People with diabetes, alcoholism and obesity need to be moni-
+tored more frequently as they have an increased risk of hyper-
+triglyceridaemia.
+• Advice against exceeding recommended daily intake of vitamin
+A
+(2400–3000 IU
+daily,
+i.e.
+0Æ8–1 mg
+daily)
+should
+be
+given.125
+What drugs can interact with acitretin?
+Clinically signiﬁcant interactions may occur with the following
+drugs, which should be avoided or used with caution:
+• Methotrexate
+Increased risk of liver toxicity. Sporadic episodes of toxic hepa-
+titis have been reported following the concomitant use of etreti-
+nate and methotrexate.42,44.
+• Tetracycline
+In some cases with other retinoids, benign intracranial hyper-
+tension has been associated with concurrent tetracycline or mi-
+nocycline administration.90 In the single reported case of
+pseudotumor cerebri occurring in a patient on acitretin, how-
+ever, neither tetracycline nor minocycline was involved.90
+• Mini-pill
+Acitretin decreases the anti-ovulatory effect of the progestin-
+only pill (mini-pill) but has no effect on the combined prepara-
+tions.126,127
+• Phenytoin
+Acitretin partially reduces the protein binding of phenytoin.
+The clinical signiﬁcance of this is as yet unknown.
+• Antidiabetic agents
+Increased risk of hypoglycaemia.
+• Corticosteroids
+Increased risk of hyperlipidaemia.
+• Vitamin A
+Intake should not exceed the recommended dietary allowance
+(2400–3000 IU daily).
+What are the preliminary investigations prior to
+starting acitretin?
+• Teratogenicity
+In women of childbearing age pregnancy must be excluded by
+negative pregnancy test within 2 weeks prior to therapy. Acitre-
+tin should be started only on the second or third day of the
+next menstrual cycle. Effective contraception must be practised
+for at least 4 weeks before and during therapy with acitretin,
+and for 3 years after treatment with acitretin has ceased.128 In
+the U.S.A. it is recommended that contraception is practised for
+at least 3 years after discontinuation of acitretin therapy.129
+According to the label in Europe contraception is mandated for
+at least 2 years after treatment. There are no pharmacokinetic
+reasons for this discrepancy and the opinion of the guideline
+development group was to err on the side of caution and to
+give consistent patient advice. We have therefore recommended
+continuing contraceptive measures for 3 years.
+ 2010 The Authors
+Journal Compilation  2010 British Association of Dermatologists • British Journal of Dermatology 2010 162, pp952–963
+958 Efﬁcacy and use of acitretin in dermatology, A.D. Ormerod et al.
+Downloaded from https://academic.oup.com/bjd/article/162/5/952/6642571 by guest on 06 May 2026
+
+
+========== PAGE 8 ==========
+
+• Liver disease
+Enquire regarding past or current history of liver disease, excess
+alcohol intake, and hepatotoxic drugs.
+Check
+alanine
+aminotransferase,
+aspartate
+aminotransferase,
+c-glutamyltransferase, alkaline phosphatase, bilirubin.
+• Renal disease
+Enquire regarding past or current history of renal disease, neph-
+rotoxic drugs.
+Check urea, electrolytes and creatinine.
+• Hyperlipidaemia
+Enquire regarding past or current history of disturbances of
+lipid metabolism, diabetes mellitus, obesity, alcoholism.
+Check fasting cholesterol, triglycerides.
+• Abnormal glucose tolerance
+Enquire regarding history of diabetes mellitus, antidiabetic
+drugs.
+Check fasting glucose.
+• Bone changes
+The effects of acitretin on the skeletal system are rare; however,
+available data130 suggest possible similarities to etretinate. Long-
+term etretinate and isotretinoin treatment is associated with
+periosteal thickening, premature epiphyseal closure in children,
+osteophyte formation, extraspinal tendon and ligament calciﬁca-
+tion and DISH (diffuse idiopathic skeletal hyperostosis)-like
+involvement.104,130 Routine radiography has no place in the
+monitoring of acitretin therapy and is potentially harmful.
+Musculoskeletal pain is common and only if atypical would we
+recommend targeted investigation with X-rays. Children taking
+acitretin should have their growth charted.
+How should acitretin be prescribed?
+Therapy should be initiated only under the responsibility
+of a supervising dermatologist
+The capsules should be taken once daily with meals or with
+milk.131 Acitretin necessitates individual adjustment of dosage
+in view of the fact that there is a wide variation in its absorp-
+tion and rate of metabolism. In addition, both therapeutic and
+toxic responses to the drug are dose dependent and vary
+greatly among individual patients. For these reasons the fol-
+lowing dosage recommendations can serve only as a guide.
+Adults
+Effective doses of acitretin as a single agent appear to be in the
+range of 25–50 mg daily.20,94 Gradual dose escalation has been
+shown to be the most effective approach and allows gradual
+onset of ‘tolerance’ to side-effects.94,132 The initial daily dose,
+25 mg or 30 mg for 2–4 weeks, may give satisfactory therapeu-
+tic results. The maintenance dose must be based on clinical efﬁ-
+cacy and tolerability. In general, a daily dose of 25–50 mg taken
+for a further 6–8 weeks achieves optimal therapeutic results. It
+may be necessary in some cases to increase the dose up to a
+maximum of 75 mg daily. Response is gradual and typically
+requires 3–6 months to reach a peak. Therapy can be discontin-
+ued in patients with psoriasis whose lesions have improved
+sufﬁciently. Relapses should be treated as described above.
+In patients with Darier disease a starting dose of 10 mg daily
+may be appropriate. Patients with severe congenital ichthyosis
+and Darier disease are likely to require long-term treatment
+with acitretin, as are some patients with psoriasis; therefore
+the lowest effective dosage, not exceeding 50 mg daily,
+should be given.
+How should acitretin therapy be monitored?
+This is the responsibility of the supervising
+dermatologist; responsibility may be shared with the
+patient’s general practitioner following mutual
+agreement and locally agreed protocol
+• Liver enzymes every 2–4 weeks for the ﬁrst 2 months of
+therapy and then every 3 months. If abnormal results are
+obtained, weekly checks should be instituted and acitretin dose
+adjusted accordingly. Acitretin should be discontinued if trans-
+aminases are elevated to three times their upper normal limit,
+and patients with bilirubin > 50 lmol L)1 or alanine amino-
+transferase > 200 IU L)1 should be referred to gastroenterol-
+ogy. In such cases it is advisable to continue monitoring
+hepatic function for at least 3 months. However, in those
+patients where the disease is particularly severe and all else has
+failed, therapy with acitretin could be continued in consultation
+with a gastroenterologist and would require a liver biopsy.
+• Fasting serum cholesterol and triglycerides every 2–
+4 weeks for the ﬁrst 2 months and then every 3 months. In the
+presence of a good therapeutic response to acitretin but persis-
+tently elevated lipid levels, dietary measures should be intro-
+duced before considering a lipid-lowering drug. Patients with
+triglycerides > 5 mmol L)1 should be referred to a lipidologist
+and investigated for other causes of hypertriglyceridaemia (e.g.
+alcohol, systemic lupus erythematosus, diabetes mellitus, hypo-
+thyroidism, renal and hepatic problems, hormonal dysfunction
+etc.). Hypertriglyceridaemia approaching or over 10 mmol L)1
+warrants discontinuation of acitretin and urgent referral to a
+lipidologist, as it is a risk factor for acute pancreatitis.
+• Blood sugar levels in diabetic patients on insulin or anti-
+glycaemic agents should also be monitored at similar intervals.
+These patients should check their capillary glucose more fre-
+quently than usual during the ﬁrst few weeks of treatment.
+• Radiological investigation for skeletal changes need not be
+done routinely as there is a risk from exposure to radiation, the
+site of ossiﬁcation is unpredictable and asymptomatic, and
+abnormal ﬁndings are common in normal individuals. However,
+targeted X-rays are indicated in patients becoming symptomatic.
+Audit points
+1 Acitretin therapy is not being used in women of childbear-
+ing potential where there is a suitable alternative.
+2 Where acitretin is used in a woman of childbearing potential
+contraception is discussed and undertaken for 3 years.
+3 Three-monthly laboratory tests are ordered including liver
+function and lipids, with action if limits are exceeded.
+ 2010 The Authors
+Journal Compilation  2010 British Association of Dermatologists • British Journal of Dermatology 2010 162, pp952–963
+Efﬁcacy and use of acitretin in dermatology, A.D. Ormerod et al. 959
+Downloaded from https://academic.oup.com/bjd/article/162/5/952/6642571 by guest on 06 May 2026
+
+
+========== PAGE 9 ==========
+
+Acknowledgments
+We thank Cynthia Fraser of the Health Services Research Unit,
+University of Aberdeen for technical assistance with literature
+searching.
+References
+1 McNamara PJ, Jewell RC, Jensen BK et al. Food increases the bio-
+availability of acitretin. J Clin Pharmacol 1988; 28:1051–5.
+2 Larsen FG, Jakobsen P, Knudsen J et al. Conversion of acitretin to
+etretinate in psoriatic patients is inﬂuenced by ethanol. J Invest Der-
+matol 1993; 100:623–7.
+3 Larsen FG, Steinkjer B, Jakobsen P et al. Acitretin is converted to
+etretinate only during concomitant alcohol intake. Br J Dermatol
+2000; 143:1164–9.
+4 Tong PS, Horowitz NN, Wheeler LA. Trans retinoic acid enhances
+the growth response of epidermal keratinocytes to epidermal
+growth factor and transforming growth factor beta. J Invest Dermatol
+1990; 94:126–31.
+5 Zheng ZS, Polakowska R, Johnson A et al. Transcriptional control
+of epidermal growth factor receptor by retinoic acid. Cell Growth
+Differ 1992; 3:225–32.
+6 Imcke E, Ruszczak Z, Mayer-da Silva A et al. Cultivation of human
+dermal microvascular endothelial cells in vitro: immunocytochemi-
+cal and ultrastructural characterization and effect of treatment with
+three synthetic retinoids. Arch Dermatol Res 1991; 283:149–57.
+7 Bauer R, Schutz R, Orfanos CE. Impaired motility and random
+migration of vital polymorphonuclears in vitro after therapy with
+oral aromatic retinoid in psoriasis. Int J Dermatol 1984; 23:72–7.
+8 Becherel PA, Mossalayi MD, LeGoff L et al. Mechanism of anti-in-
+ﬂammatory action of retinoids on keratinocytes. Lancet 1994;
+344:1570–1.
+9 Goldfarb MT, Ellis CN, Gupta AK et al. Acitretin improves psoriasis
+in a dose-dependent fashion. J Am Acad Dermatol 1988; 18:655–62.
+10 Lassus A, Geiger JM, Nyblom M et al. Treatment of severe psoriasis
+with etretin (Ro-10-1670). Br J Dermatol 1987; 117:333–41.
+11 Gupta AK, Goldfarb MT, Ellis CN et al. Side-effect proﬁle of acitre-
+tin therapy in psoriasis. J Am Acad Dermatol 1989; 20:1088–93.
+12 Olsen EA, Weed WW, Meyer CJ et al. A double-blind, placebo-
+controlled trial of acitretin for the treatment of psoriasis. J Am Acad
+Dermatol 1989; 21:681–6.
+13 Kragballe K, Jansen CT, Geiger JM et al. A double-blind compari-
+son of acitretin and etretinate in the treatment of severe psoriasis
+– results of a Nordic multicenter study. Acta Derm Venereol (Stockh)
+1989; 69:35–40.
+14 Gollnick H, Bauer R, Brindley C et al. Acitretin versus etretinate in
+psoriasis – clinical and pharmacokinetic results of a German mul-
+ticenter study. J Am Acad Dermatol 1988; 19:458–68.
+15 Meffert H, Sonnichsen N. Acitretin in the treatment of severe pso-
+riasis: a randomized double-blind study comparing acitretin and
+etretinate. Acta Derm Venereol (Stockh) 1989; 146 (Suppl.):176–7.
+16 Ledo A, Martin M, Geiger JM et al. Acitretin (Ro 10-1670) in the treat-
+ment of severe psoriasis – a randomized double-blind parallel study
+comparing acitretin and etretinate. Int J Dermatol 1988; 27:656–60.
+17 Murray HE, Anhalt AW, Lessard R et al. A 12-month treatment of
+severe psoriasis with acitretin – results of a Canadian open multi-
+center study. J Am Acad Dermatol 1991; 24:598–602.
+18 Bleiker TO, Bourke JF, Graham-Brown RA et al. Etretinate may
+work where acitretin fails. Br J Dermatol 1997; 136:368–70.
+19 Pearce DJ, Klinger S, Ziel KK et al. Low-dose acitretin is associated
+with fewer adverse events than high-dose acitretin in the treat-
+ment of psoriasis. Arch Dermatol 2006; 142:1000–4.
+20 Ling MR. Acitretin: optimal dosing strategies. J Am Acad Dermatol
+1999; 41:S13–17.
+21 Geiger JM. Efﬁcacy of acitretin in severe psoriasis. Skin Ther Lett
+2003; 8:1–3.
+22 van de Kerkhof PC. Update on retinoid therapy of psoriasis in: an
+update on the use of retinoids in dermatology. Dermatol Ther 2006;
+19:252–63.
+23 Magis NL, Blummel JJ, van de Kerkhof PC et al. The treatment of
+psoriasis with etretinate and acitretin: a follow up of actual use.
+Eur J Dermatol 2000; 10:517–21.
+24 Ozawa A, Ohkido M, Haruki Y et al. Treatments of generalized
+pustular psoriasis: a multicenter study in Japan. J Dermatol 1999;
+26:141–9.
+25 Tosti A, Ricotti C, Romanelli P et al. Evaluation of the efﬁcacy of
+acitretin therapy for nail psoriasis. Arch Dermatol 2009; 145:269–
+71.
+26 Sommerburg C, Kietzmann H, Eichelberg D et al. Acitretin in com-
+bination with PUVA: a randomized double-blind placebo-con-
+trolled study in severe psoriasis. J Eur Acad Dermatol Venereol 1993;
+2:308–17.
+27 Saurat JH, Geiger JM, Amblard P et al. Randomized double-blind
+multicenter study comparing acitretin-PUVA, etretinate-PUVA and
+placebo-PUVA in the treatment of severe psoriasis. Dermatologica
+1988; 177:218–24.
+28 Lauharanta J, Geiger JM. A double-blind comparison of acitretin
+and etretinate in combination with bath PUVA in the treatment of
+extensive psoriasis. Br J Dermatol 1989; 121:107–12.
+29 Nijsten TE, Stern RS. Oral retinoid use reduces cutaneous squa-
+mous cell carcinoma risk in patients with psoriasis treated with
+psoralen-UVA: a nested cohort study. J Am Acad Dermatol 2003;
+49:644–50.
+30 Iest J, Boer J. Combined treatment of psoriasis with acitretin and
+UVB phototherapy compared with acitretin alone and UVB alone.
+Br J Dermatol 1989; 120:665–70.
+31 Ruzicka T, Sommerburg C, Braun-Falco O et al. Efﬁciency of aci-
+tretin in combination with UV-B in the treatment of severe psori-
+asis. Arch Dermatol 1990; 126:482–6.
+32 Lowe NJ, Prystowsky JH, Bourget T et al. Acitretin plus UVB ther-
+apy for psoriasis. Comparisons with placebo plus UVB and acitre-
+tin alone. J Am Acad Dermatol 1991; 24:591–4.
+33 Kampitak T, Asawanonda P. The efﬁcacy of combination treat-
+ment with narrowband UVB (TL-01) and acitretin vs narrowband
+UVB alone in plaque-type psoriasis: a retrospective study. J Med As-
+soc Thai 2006; 89 (Suppl. 3):S20–4.
+34 Ozdemir M, Engin B, Baysal I et al. A randomized comparison of
+acitretin–narrow-band TL-01 phototherapy and acitretin–psoralen
+plus ultraviolet A for psoriasis. Acta Derm Venereol (Stockh) 2008;
+88:589–93.
+35 van de Kerkhof PC. Topical use of calcipotriol improves the out-
+come in acitretin treated patients with severe psoriasis vulgaris. Br
+J Dermatol 1996; 135 (Suppl. 47):30 (Abstract).
+36 van de Kerkhof PC, Cambazard F, Hutchinson PE et al. The effect
+of addition of calcipotriol ointment (50 micrograms ⁄g) to acitre-
+tin therapy in psoriasis. Br J Dermatol 1998; 138:84–9.
+37 Rim JH, Park JY, Choe YB et al. The efﬁcacy of calcipotriol + aci-
+tretin combination therapy for psoriasis: comparison with acitre-
+tin monotherapy. Am J Clin Dermatol 2003; 4:507–10.
+38 Yamauchi PS, Ria D, Lowe NJ. Retinoid therapy for psoriasis. Der-
+matol Clin 2004; 22:467–76.
+39 Lebwohl M, Menter A, Koo J et al. Combination therapy to treat
+moderate to severe psoriasis. J Am Acad Dermatol 2004; 50:416–30.
+40 Roenigk HH. Acitretin combination therapy. J Am Acad Dermatol
+1999; 41:S18–21.
+ 2010 The Authors
+Journal Compilation  2010 British Association of Dermatologists • British Journal of Dermatology 2010 162, pp952–963
+960 Efﬁcacy and use of acitretin in dermatology, A.D. Ormerod et al.
+Downloaded from https://academic.oup.com/bjd/article/162/5/952/6642571 by guest on 06 May 2026
+
+
+========== PAGE 10 ==========
+
+41 Vanderveen EE, Ellis CN, Campbell JP et al. Methotrexate and etre-
+tinate as concurrent therapies in severe psoriasis. Arch Dermatol
+1982; 118:660–2.
+42 Beck HI, Foged EK. Toxic hepatitis due to combination therapy
+with methotrexate and etretinate in psoriasis. Dermatologica 1983;
+167:94–6.
+43 Harrison PV, Peat M, James R, Orrell D. Methotrexate and retin-
+oids in combination for psoriasis. Lancet 1987; ii: 512.
+44 Zachariae H. Methotrexate and etretinate as concurrent therapies
+in the treatment of psoriasis. Arch Dermatol 1984; 120:155.
+45 Kuijpers ALA, van Dooren-Geebe RJ, van de Kerkhof PCM. Failure
+of combination therapy with acitretin and cyclosporin A in 3
+patients with erythrodermic psoriasis. Dermatology 1997; 194:88–
+90.
+46 Webber IR, Back DJ. Effect of etretinate on cyclosporin metabo-
+lism in vitro. Br J Dermatol 1993; 128:42–4.
+47 Gisondi P, Del Giglio M, Cotena C et al. Combining etanercept
+and acitretin in the therapy of chronic plaque psoriasis: a 24-
+week, randomized, controlled, investigator-blinded pilot trial. Br J
+Dermatol 2008; 158:1345–9.
+48 Schroder K, Zaun H, Holzmann H et al. Pustulosis palmo-plantaris.
+Clinical and histological changes during etretin (acitretin) therapy.
+Acta Derm Venereol (Stockh) 1989; 146 (Suppl.):111–16.
+49 Lassus A, Geiger JM. Acitretin and etretinate in the treatment of
+palmoplantar pustulosis: a double-blind comparative trial. Br J Der-
+matol 1988; 119:755–9.
+50 Chen K, Craig JC, Shumack S. Oral retinoids for the prevention of
+skin cancers in solid organ transplant recipients: a systematic
+review of randomized controlled trials. Br J Dermatol 2005;
+152:518–23.
+51 George R, Weightman W, Russ GR et al. Acitretin for chemopre-
+vention of non-melanoma skin cancers in renal transplant recipi-
+ents. Australas J Dermatol 2002; 43:269–73.
+52 Bavinck JN, Tieben LM, van der Woude FJ et al. Prevention of skin
+cancer and reduction of keratotic skin lesions during acitretin
+therapy in renal transplant recipients: a double-blind, placebo-
+controlled study. J Clin Oncol 1995; 13:1933–8.
+53 de Sevaux RG, Smit JV, de Jong EM et al. Acitretin treatment of
+premalignant and malignant skin disorders in renal transplant
+recipients: clinical effects of a randomized trial comparing two
+doses of acitretin. J Am Acad Dermatol 2003; 49:407–12.
+54 DiGiovanna JJ. Retinoid chemoprevention in patients at high risk
+for skin cancer. Med Pediatr Oncol 2001; 36:564–7.
+55 Berth-Jones J, Cole J, Lehmann AR et al. Xeroderma pigmentosum
+variant: 5 years of tumour suppression by etretinate. J R Soc Med
+1993; 86:355–6.
+56 Berth-Jones J, Graham-Brown RA. Xeroderma pigmentosum vari-
+ant: response to etretinate. Br J Dermatol 1990; 122:559–61.
+57 Lacour M, Mehta-Nikhar B, Atherton DJ, Harper JI. An appraisal
+of acitretin therapy in children with inherited disorders of kerati-
+nization. Br J Dermatol 1996; 134:1023–9.
+58 Katugampola RP, Finlay AY. Oral retinoid therapy for disorders of
+keratinization: single-centre retrospective 25 years’ experience on
+23 patients. Br J Dermatol 2006; 154:267–76.
+59 Blanchet-Bardon C, Nazzaro V, Rognin C et al. Acitretin in the
+treatment of severe disorders of keratinization. Results of an open
+study. J Am Acad Dermatol 1991; 24:982–6.
+60 Kullavanijaya P, Kulthanan K. Clinical efﬁcacy and side effects of
+acitretin on the disorders of keratinization: a one-year study. J Der-
+matol 1993; 20:501–6.
+61 Happle R, van de Kerkhof PC, Traupe H. Retinoids in disorders of
+keratinization: their use in adults. Dermatologica 1987; 175 (Suppl.
+1):107–24.
+62 Bruckner-Tuderman L, Sigg C, Geiger JM et al. Acitretin in the
+symptomatic therapy for severe recessive X-linked ichthyosis. Arch
+Dermatol 1988; 124:529–32.
+63 Bondeson ML, Nystrom AM, Gunnarsson U et al. Connexin 26
+(GJB2) mutations in two Swedish patients with atypical Vohwinkel
+(mutilating keratoderma plus deafness) and KID syndrome both
+extensively treated with acitretin. Acta Derm Venereol (Stockh) 2006;
+86:503–8.
+64 Al-Mutairi N, Joshi A, Nour-Eldin O. Punctate palmoplantar kera-
+toderma (Buschke-Fischer-Brauer disease) with psoriasis: a rare
+association showing excellent response to acitretin. J Drugs Dermatol
+2005; 4:627–34.
+65 Erkek E, Erdogan S, Tuncez F et al. Type I hereditary punctate ke-
+ratoderma associated with widespread lentigo simplex and suc-
+cessfully treated with low-dose oral acitretin. Arch Dermatol 2006;
+142:1076–7.
+66 Virtanen M, Gedde-Dahl T, Mork NJ et al. Phenotypic ⁄genotypic
+correlations in patients with epidermolytic hyperkeratosis and the
+effects of retinoid therapy on keratin expression. Acta Derm Venereol
+(Stockh) 2001; 81:163–70.
+67 Camacho F, Bullon P. Papillon-Lefe`vre syndrome: study of three
+siblings. Eur J Dermatol 1992; 2:421–3.
+68 Lundgren T, Crossner CG, Twetman S et al. Systemic retinoid
+medication and periodontal health in patients with Papillon-Lefe`-
+vre syndrome. J Clin Periodontol 1996; 23:176–9.
+69 Christophersen J, Geiger JM, Danneskiold-Samsoe P et al. A dou-
+ble-blind comparison of acitretin and etretinate in the treatment
+of Darier’s disease. Acta Derm Venereol (Stockh) 1992; 72:150–2.
+70 van Dooren-Greebe RJ, van de Kerkhof PC, Happle R. Acitretin
+monotherapy in Darier’s disease. Br J Dermatol 1989; 121:375–9.
+71 Lauharanta J, Kanerva L, Turjanmaa K et al. Clinical and ultrastruc-
+tural effects of acitretin in Darier’s disease. Acta Derm Venereol
+(Stockh) 1988; 68:492–8.
+72 Chapalain V, Beylot-Barry M, Doutre MS et al. Treatment of pityri-
+asis rubra pilaris: a retrospective study of 14 patients. J Dermatolog
+Treat 1999; 10:113–17.
+73 Laurberg G, Geiger JM, Hjorth N et al. Treatment of lichen planus
+with acitretin. A double-blind, placebo-controlled study in 65
+patients. J Am Acad Dermatol 1991; 24:434–7.
+74 Cribier B, Frances C, Chosidow O. Treatment of lichen planus: an
+evidence-based medicine analysis of efﬁcacy. Arch Dermatol 1998;
+134:1521–30.
+75 Ruzicka T, Sommerburg C, Goerz G et al. Treatment of cutaneous
+lupus erythematosus with acitretin and hydroxychloroquine. Br J
+Dermatol 1992; 127:513–18.
+76 Ruzicka T, Meurer M, Bieber T. Efﬁciency of acitretin in the treat-
+ment of cutaneous lupus erythematosus. Arch Dermatol 1988;
+124:897–902.
+77 Bousema MT, Romppanen U, Geiger JM et al. Acitretin in the
+treatment of severe lichen sclerosus et atrophicus of the vulva: a
+double-blind, placebo-controlled study. J Am Acad Dermatol 1994;
+30:225–31.
+78 Thestrup-Pedersen K, Andersen KE, Menne´ T et al. Treatment of
+hyperkeratotic dermatitis of the palms (eczema keratoticum) with
+oral acitretin. A single-blind placebo-controlled study. Acta Derm
+Venereol (Stockh) 2001; 81:353–5.
+79 Stadler R, Otte HG, Luger T et al. Prospective randomized multi-
+center clinical trial on the use of interferon a-2a plus acitretin
+versus interferon a-2a plus PUVA in patients with cutaneous T-
+cell lymphoma stages I and II. Blood 1998; 92:3578–81.
+80 Gelmetti C, Cerri D, Schiuma AA et al. Treatment of extensive
+warts with etretinate: a clinical trial in 20 children. Pediatr Dermatol
+1987; 4:254–8.
+ 2010 The Authors
+Journal Compilation  2010 British Association of Dermatologists • British Journal of Dermatology 2010 162, pp952–963
+Efﬁcacy and use of acitretin in dermatology, A.D. Ormerod et al. 961
+Downloaded from https://academic.oup.com/bjd/article/162/5/952/6642571 by guest on 06 May 2026
+
+
+========== PAGE 11 ==========
+
+81 Krupa Shankar DS, Shilpakar R. Acitretin in the management of
+recalcitrant warts. Indian J Dermatol Venereol Leprol 2008; 74:393–5.
+82 Choi YL, Lee KJ, Kim WS et al. Treatment of extensive and recalci-
+trant viral warts with acitretin. Int J Dermatol 2006; 45:480–2.
+83 Erkek E, Basar H, Bozdogan O, Emeksiz MC. Giant condyloma ac-
+uminata of Buschke-Lo¨wenstein: successful treatment with a com-
+bination
+of
+surgical
+excision,
+oral
+acitretin
+and
+topical
+imiquimod. Clin Exp Dermatol 2009; 34:366–8.
+84 Anadolu R, Oskay T, Erdem C et al. Treatment of epidermodyspla-
+sia verruciformis with a combination of acitretin and interferon
+alfa-2a. J Am Acad Dermatol 2001; 45:296–9.
+85 Iraji F, Faghihi G. Epidermodysplasia verruciformis: association
+with isolated IgM deﬁciency and response to treatment with aci-
+tretin. Clin Exp Dermatol 2000; 25:41–3.
+86 Grote W, Harms D, Janig U et al. Malformation of fetus conceived
+4 months after termination of maternal etretinate treatment. Lancet
+1985; i:1276.
+87 Kietzmann H, Schwarze I, Grote W et al. Embryonal malformation
+following etretinate therapy of Darier’s disease in the mother.
+Dtsch Med Wochenschr 1986; 111:60–2.
+88 Lammer EJ. Embryopathy in infant conceived one year after ter-
+mination of maternal etretinate. Lancet 1988; ii: 1080–1.
+89 de Die-Smulders CE, Sturkenboom MC, Veraart J et al. Severe limb
+defects and craniofacial anomalies in a fetus conceived during aci-
+tretin therapy. Teratology 1995; 52:215–19.
+90 Katz HI, Waalen J, Leach EE. Acitretin in psoriasis: an overview of
+adverse effects. J Am Acad Dermatol 1999; 41:S7–12.
+91 Lammer EJ, Chen DT, Hoar RM et al. Retinoic acid embryopathy.
+N Engl J Med 1985; 313:837–41.
+92 Coberly S, Lammer E, Alashari M. Retinoic acid embryopathy:
+case report and review of literature. Pediatr Pathol Lab Med 1996;
+16:823–36.
+93 Geiger JM, Walker M. Is there a reproductive safety risk in male
+patients treated with acitretin (Neotigason ⁄Soriatane)? Dermatology
+2002; 205:105–7.
+94 Geiger JM, Czarnetzki BM. Acitretin (Ro 10-1670, etretin): overall
+evaluation of clinical studies. Dermatologica 1988; 176:182–90.
+95 Gollnick HP. Oral retinoids – efﬁcacy and toxicity in psoriasis. Br J
+Dermatol 1996; 135 (Suppl. 49):6–17.
+96 Kreiss C, Amin S, Nalesnik MA et al. Severe cholestatic hepatitis in
+a patient taking acitretin. Am J Gastroenterol 2002; 97:775–7.
+97 Roenigk HH Jr, Callen JP, Guzzo CA et al. Effects of acitretin on
+the liver. J Am Acad Dermatol 1999; 41:584–8.
+98 Sanchez MR, Ross B, Rotterdam H et al. Retinoid hepatitis. J Am
+Acad Dermatol 1993; 28:853–8.
+99 Vahlquist C, Selinus I, Vessby B. Serum-lipid changes during aci-
+tretin (etretin) treatment of psoriasis and palmoplantar pustulosis.
+Acta Derm Venereol (Stockh) 1988; 68:300–5.
+100 Ashley JM, Lowe NJ, Borok ME et al. Fish oil supplementation results
+in decreased hypertriglyceridemia in patients with psoriasis undergo-
+ing etretinate or acitretin therapy. J Am Acad Dermatol 1988; 19:76–82.
+101 Vahlquist C, Olsson AG, Lindholm A et al. Effects of gemﬁbrozil
+(Lopid) on hyperlipidemia in acitretin-treated patients. Results of
+a double-blind cross-over study. Acta Derm Venereol (Stockh) 1995;
+75:377–80.
+102 Rood MJ, Lavrijsen SP, Huizinga TW. Acitretin-related ossiﬁcation.
+J Rheumatol 2007; 34:837–8.
+103 Mork NJ, Austad J, Kolbenstvedt A. Bamboo spine mimicking Be-
+khterev’s disease caused by long-term acitretin treatment. Acta
+Derm Venereol (Stockh) 2006; 86:452–3.
+104 DiGiovanna JJ, Helfgott RK, Gerber LH et al. Extraspinal tendon
+and ligament calciﬁcation associated with long-term therapy with
+etretinate. N Engl J Med 1986; 315:1177–82.
+105 van Dooren-Greebe RJ, Lemmens JA, De Boo T et al. Prolonged treat-
+ment with oral retinoids in adults: no inﬂuence on the frequency
+and severity of spinal abnormalities. Br J Dermatol 1996; 134:71–6.
+106 Mork NJ, Kolbenstvedt A, Austad J. Efﬁcacy and skeletal side-
+effects of 2 years acitretin treatment. Acta Derm Venereol (Stockh)
+1992; 72:445–8.
+107 Lee E, Koo J. Single-center retrospective study of long-term use of
+low-dose acitretin (Soriatane) for psoriasis. J Dermatolog Treat 2004;
+15:8–13.
+108 Prendiville J, Bingham EA, Burrows D. Premature epiphyseal clo-
+sure – a complication of etretinate therapy in children. J Am Acad
+Dermatol 1986; 15:1259–62.
+109 Halkier-Sorensen L, Laurberg G, Andresen J. Bone changes in chil-
+dren on long-term treatment with etretinate. J Am Acad Dermatol
+1987; 16:999–1006.
+110 Paige DG, Judge MR, Shaw DG et al. Bone changes and their sig-
+niﬁcance in children with ichthyosis on long-term etretinate ther-
+apy. Br J Dermatol 1992; 127:387–91.
+111 Nesher G, Zuckner J. Rheumatologic complications of vitamin A
+and retinoids. Semin Arthritis Rheum 1995; 24:291–6.
+112 McClure SL, Valentine J, Gordon KB. Comparative tolerability of
+systemic treatments for plaque-type psoriasis. Drug Saf 2002;
+25:913–27.
+113 McGuire J, Lawson JP. Skeletal changes associated with chronic
+isotretinoin and etretinate administration. Dermatologica 1987; 175
+(Suppl. 1):169–81.
+114 McMullen EA, McCarron P, Irvine AD et al. Association between
+long-term acitretin therapy and osteoporosis: no evidence of
+increased risk. Clin Exp Dermatol 2003; 28:307–9.
+115 Starling J III, Koo J. Evidence based or theoretical concern?
+Pseudotumor cerebri and depression as acitretin side effects.
+J Drugs Dermatol 2005; 4:690–6.
+116 Lee AG. Pseudotumor cerebri after treatment with tetracycline and
+isotretinoin for acne. Cutis 1995; 55:165–8.
+117 Sturkenboom MC, Middelbeek A, de Jong van den Berg LT et al.
+Vulvo-vaginal candidiasis associated with acitretin. J Clin Epidemiol
+1995; 48:991–7.
+118 Hartmann D, Forgo I, Dubach UC et al. Effect of acitretin on the
+response to an intravenous glucose-tolerance test in healthy-vol-
+unteers. Eur J Clin Pharmacol 1992; 42:523–8.
+119 Frosch PJ, Czarnetzki BM. Effect of retinoids on wound healing in
+diabetic rats. Arch Dermatol Res 1989; 281:424–6.
+120 Gerritsen MJ, van Pelt JP, van de Kerkhof PC. Response of the
+clinically uninvolved skin of psoriatic patients to tape stripping
+during acitretin treatment. Acta Derm Venereol (Stockh) 1996; 76:6–9.
+121 Tan SR, Tope WD. Effect of acitretin on wound healing in organ
+transplant recipients. Dermatol Surg 2004; 30:667–73.
+122 Halkier-Sorensen L, Andresen J. A retrospective study of bone
+changes in adults treated with etretinate. J Am Acad Dermatol 1989;
+20:83–7.
+123 Ruiz-Maldonado R, Tamayo L. Retinoids in disorders of keratini-
+zation: their use in children. Dermatologica 1987; 175 (Suppl.
+1):125–32.
+124 Ellis CN, Kang S, Vinik AI et al. Glucose and insulin responses are
+improved in patients with psoriasis during therapy with etretinate.
+Arch Dermatol 1987; 123:471–5.
+125 Orfanos CE, Zouboulis CC, Almond-Roesler B, Geilen CC. Current
+use and future potential role of retinoids in dermatology. Drugs
+1997; 53:358–88.
+126 Mancano MA. Drug interactions with oral contraceptives. Pharm
+Times 2000; 66:26.
+127 Berbis P, Bun H, Geiger JM et al. Acitretin (RO10-1670) and oral
+contraceptives: interaction study. Arch Dermatol Res 1988; 280:388–9.
+ 2010 The Authors
+Journal Compilation  2010 British Association of Dermatologists • British Journal of Dermatology 2010 162, pp952–963
+962 Efﬁcacy and use of acitretin in dermatology, A.D. Ormerod et al.
+Downloaded from https://academic.oup.com/bjd/article/162/5/952/6642571 by guest on 06 May 2026
+
+
+========== PAGE 12 ==========
+
+128 Association of the British Pharmaceutical Industry. Neotigason Data
+Sheet. London: Datapharm Publications Ltd, 2003.
+129 Roche Laboratories. Soriatane Product Information. Nutley, NJ: Roche
+Laboratories, 2003.
+130 Mork NJ, Kolbenstvedt A, Austad J. Skeletal side-effects of 5 years’
+acitretin treatment. Br J Dermatol 1996; 134:1156–7.
+131 DiGiovanna JJ, Gross EG, McClean SW et al. Etretinate: effect of
+milk intake on absorption. J Invest Dermatol 1984; 82:636–40.
+132 Berbis P, Geiger JM, Vaisse C et al. Beneﬁt of progressively increas-
+ing doses during the initial treatment with acitretin in psoriasis.
+Dermatologica 1989; 178:88–92.
+Appendix 1 Level of evidence and strength of
+recommendation
+Level of evidence
+Level of evidence
+Type of evidence
+1++
+High-quality meta-analyses, systematic
+reviews of RCTs, or RCTs with a very low
+risk of bias
+1+
+Well-conducted meta-analyses, systematic
+reviews of RCTs, or RCTs with a low
+risk of bias
+1)
+Meta-analyses, systematic reviews of RCTs,
+or RCTs with a high risk of biasa
+2++
+High-quality systematic reviews of
+case–control or cohort studies
+High-quality case–control or cohort studies
+with a very low risk of confounding,
+bias or chance and a high probability
+that the relationship is causal
+2+
+Well-conducted case–control or cohort
+studies with a low risk of confounding,
+bias or chance and a moderate probability
+that the relationship is causal
+2)
+Case–control or cohort studies with a high
+risk of confounding, bias or chance and
+a signiﬁcant risk that the relationship is
+not causala
+3
+Nonanalytical studies (e.g. case reports,
+case series)
+4
+Expert opinion, formal consensus
+RCT, randomized controlled trial. aStudies with a level of evi-
+dence ‘–’ should not be used as a basis for making a recommen-
+dation.
+Strength of recommendation
+Once level of evidence has been derived and evidence tables
+drawn up, strengths of recommendation can be derived. These
+are the conclusions of the guideline and it is important that
+they stand out and stand alone. Often they can be highlighted
+in a box or a table. The strength of recommendation is
+determined by the level of evidence although the usefulness of
+a
+classiﬁcation
+system
+based
+solely
+on
+this
+has
+been
+questioned because it does not take into consideration the
+importance of the recommendation in changing practice and
+it may be that more sophisticated derivations of strength of
+recommendation will appear in future.
+Class
+Evidence
+A
+• At least one meta-analysis, systematic review, or RCT
+rated as 1++, and directly applicable to the
+target population, or
+• A systematic review of RCTs or a body of evidence
+consisting principally of studies rated as 1+, directly
+applicable to the target population and
+demonstrating overall consistency of results
+• Evidence drawn from a NICE technology appraisal
+B
+• A body of evidence including studies rated as 2++,
+directly applicable to the target population and
+demonstrating overall consistency of results, or
+• Extrapolated evidence from studies rated as 1++ or
+1+
+C
+• A body of evidence including studies rated as 2 +,
+directly applicable to the target population and
+demonstrating overall consistency of results, or
+• Extrapolated evidence from studies rated as 2++
+D
+• Evidence level 3 or 4, or
+• Extrapolated evidence from studies rated as 2+, or
+• Formal consensus
+D (GPP) • A good practice point (GPP) is a recommendation
+for best practice based on the experience of
+the Guideline Development Group
+RCT, randomized controlled trial.
+Supporting Information
+Additional supporting information may be found in the online
+version of this article:
+Data S1. Search strategy.
+Please note: Wiley-Blackwell are not responsible for the
+content or functionality of any supporting materials supplied
+by the authors. Any queries (other than missing material)
+should be directed to the corresponding author for the article.
+ 2010 The Authors
+Journal Compilation  2010 British Association of Dermatologists • British Journal of Dermatology 2010 162, pp952–963
+Efﬁcacy and use of acitretin in dermatology, A.D. Ormerod et al. 963
+Downloaded from https://academic.oup.com/bjd/article/162/5/952/6642571 by guest on 06 May 2026
+
+
+========== PAGE 13 ==========
+
+of patients
+with PsO achieved
+PASI 75 at Week 4
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+75.9%
+(n=265/349)
+of patients
+with PsO achieved
+PASI 100 at 5 years3
+76.9%
+(N=52)†
+of biologic-naïve
+and TNFi-IR PsA patients
+achieved ACR 50 at
+Week 104/100, respectively‡1,4–6
+of patients
+with PsO achieved
+PASI 100 at Week 16
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+68.2%
+(n=238/349)
+and
+50.6%
+(n=135/267)
+51.5%
+(n=222/431)
+GB-BK-2500315 | July 2025
+UCB Biopharma SRL, 2025. All rights reserved.
+This promotional material has been created and funded by UCB Pharma Ltd and
+is intended for healthcare professionals in the UK.
+BIMZELX is indicated for the treatment of: moderate to severe plaque PsO in adults
+who are candidates for systemic therapy; active PsA, alone or in combination
+with methotrexate, in adults who have had an inadequate response, or who have
+been intolerant, to one or more DMARDs; active nr-axSpA with objective signs of
+inflammation as indicated by elevated CRP and/or MRI, in adults who have responded
+inadequately, or are intolerant, to NSAIDs; active AS in adults who have responded
+inadequately or are intolerant to conventional therapy; and active moderate to severe
+HS (acne inversa) in adults with an inadequate response to conventional systemic HS
+therapy.4
+Prescribing information for United Kingdom click here.
+Please refer to the SmPC for further information.
+These data are from different clinical trials and cannot be directly compared.
+Co-primary endpoints PASI 90 and IGA 0/1 at Week 16 were met.**Secondary endpoints. †N= mNRI, missing data
+were imputed with mNRI (patients with missing data following treatment discontinuation due to lack of efficacy
+or a TRAE were counted as non-responders; multiple imputation methodology was used for other missing data).
+‡43.9% (n=189/431), and 43.4% (n=116/267) of biologic-naïve and TNFi-IR PsA patients achieved the primary
+endpoint of ACR 50 at Week 16 in BE OPTIMAL and BE COMPLETE, respectively (vs 10.0% [n=28/281] and 6.8%
+[n=9/133] placebo, p<0.0001); 54.5% (n=235/431) and 51.7% (n=138/267) maintained it at Week 52 (NRI).4–6 ​
+ACR 50, ≥50% response in the American College of Rheumatology criteria; AS, ankylosing spondylitis; CRP,
+C-reactive protein; DMARD, disease-modifying antirheumatic drug; HS, hidradenitis suppurativa; IGA, Investigator’s
+Global Assessment; (m)NRI, (modified) non-responder imputation; MRI, magnetic resonance imaging; nr-
+axSpA, non-radiographic axial spondyloarthritis; NSAID, non-steroidal anti-inflammatory drug; PASI 75/90/100,
+≥75/90/100% improvement from baseline in Psoriasis Area and Severity Index; PsA, psoriatic arthritis; PsD, psoriatic
+disease; PsO, psoriasis; TNFi-IR, tumour necrosis factor-α inhibitor – inadequate responder; TRAE, treatment-
+related adverse event.
+References: 1. Gordon KB, et al. Lancet. 2021;397(10273):475–486. 2. Blauvelt. 2025. AAD Presentation 62275. 3.
+Mease PJ, et al. Rheumatol Ther. 2024;11(5):1363–1382. 4. BIMZELX SmPC. 5. Ritchlin CT, et al. Ann Rheum Dis.
+2023;82(11):1404–1414. 6. Coates LC, et al. RMD Open. 2024;10(1):e003855. 7. Strober B, et al. AAD 2024;oral
+presentation.​
+This medicine is subject to additional monitoring. This will allow quick
+identification of new safety information. Adverse events should be reported.
+Reporting forms and information can be found at www.yellowcard.mhra.gov.uk for
+the UK. Adverse events should also be reported to UCB Pharma Ltd at
+UCBCares.UK@UCB.com or 0800 2793177 for UK.
+NO COMPROMISE,
+JUST CLEARANCE
+BIMZELX was well tolerated, the most frequently reported adverse reactions were: upper respiratory tract infections
+and oral candidiasis. Other common reported adverse reactions include tinea infections, ear infections, herpes simplex
+infections, oropharyngeal candidiasis, gastroenteritis, folliculitis, headache, rash, dermatitis, eczema, acne, injection site
+reactions, fatigue, and vulvovaginal mycotic infection (including vulvovaginal candidiasis).4
+Bimzelx®     (bimekizumab) offers
+the opportunity for complete, fast,
+and lasting skin clearance and
+proven PsA efficacy 1–7

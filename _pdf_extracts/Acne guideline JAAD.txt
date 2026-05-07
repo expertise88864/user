@@ -1,0 +1,4252 @@
+
+
+========== PAGE 1 ==========
+
+FROM THE ACADEMY
+Guidelines of care for the management
+of acne vulgaris
+Rachel V. Reynolds, MD (Co-Chair),a Howa Yeung, MD, MSc,b Carol E. Cheng, MD,c
+Fran Cook-Bolden, MD,d Seemal R. Desai, MD,e,f Kelly M. Druby, BSN,g Esther E. Freeman, MD, PhD,h
+Jonette E. Keri, MD, PhD,i,j Linda F. Stein Gold, MD,k Jerry K. L. Tan, MD,l,m Megha M. Tollefson, MD,n
+Jonathan S. Weiss, MD,b,o Peggy A. Wu, MD, MPH,p Andrea L. Zaenglein, MD,q
+Jung Min Han, PharmD, MS,r and John S. Barbieri, MD, MBA (Co-Chair)s
+Background: Acne vulgaris commonly affects adults, adolescents, and preadolescents aged 9 years or older.
+Objective: The objective of this study was to provide evidence-based recommendations for the
+management of acne.
+Methods: A work group conducted a systematic review and applied the Grading of Recommendations,
+Assessment, Development, and Evaluation approach for assessing the certainty of evidence and
+formulating and grading recommendations.
+Results: This guideline presents 18 evidence-based recommendations and 5 good practice statements.
+Strong recommendations are made for benzoyl peroxide, topical retinoids, topical antibiotics, and oral
+doxycycline. Oral isotretinoin is strongly recommended for acne that is severe, causing psychosocial
+burden or scarring, or failing standard oral or topical therapy. Conditional recommendations are made for
+topical clascoterone, salicylic acid, and azelaic acid, as well as for oral minocycline, sarecycline, combined
+oral contraceptive pills, and spironolactone. Combining topical therapies with multiple mechanisms of
+action, limiting systemic antibiotic use, combining systemic antibiotics with topical therapies, and adding
+intralesional corticosteroid injections for larger acne lesions are recommended as good practice statements.
+Limitations: Analysis is based on the best available evidence at the time of the systematic review.
+Conclusions: These guidelines provide evidence-based recommendations for the management of acne
+vulgaris. ( J Am Acad Dermatol 2024;90:1006.e1-30)
+Key words: Acne; acne vulgaris; adapalene; antiandrogens; antibiotics; azelaic acid; azithromycin; benzoyl
+peroxide; clascoterone; clindamycin; contraceptives; corticosteroids; Cutibacterium acnes; diet and acne;
+doxycycline; erythromycin; grading and classiﬁcation of acne; guidelines; hormonal therapy; isotretinoin;
+light therapies; microbiological and endocrine testing; minocycline; retinoids; salicylic acid; sarecycline;
+spironolactone; tazarotene; treatment; tretinoin; trifarotene.
+From the Department of Dermatology, Beth Israel Deaconess
+Medical Center, Boston, Massachusettsa; Department of Derma-
+tology, Emory University School of Medicine, Atlanta, Georgiab;
+Division of Dermatology, Department of Medicine, University of
+California Los Angeles, Los Angeles, Californiac; Department of
+Dermatology, Weill Cornell Medicine, New York, New Yorkd;
+Innovative Dermatology, Plano, Texase; Department of Derma-
+tology, University of Texas Southwestern Medical Center, Dallas,
+Texasf; Penn State Health Hampden Medical Center, Enola,
+Pennsylvaniag; Department of Dermatology, Massachusetts Gen-
+eral Hospital, Boston, Massachusettsh; University of Miami, Miller
+School of Medicine, Miami, Floridai; Miami VA Medical Center,
+Miami, Floridaj; Department of Dermatology, Henry Ford Health,
+Detroit, Michigank; Western University, London, Ontario, Cana-
+dal; Windsor Clinical Research Inc., Windsor, Ontario, Canadam;
+Departments of Dermatology and Pediatrics, Mayo Clinic, Ro-
+chester, Minnesotan; Georgia Dermatology Partners, Snellville,
+Georgiao; Department of Dermatology, University of California
+Davis,Sacramento,Californiap;Departments ofDermatologyand
+Pediatrics, Penn State/Hershey Medical Center, Hershey, Penn-
+sylvaniaq; American Academy of Dermatology, Rosemont, Illi-
+noisr; and Department of Dermatology, Brigham and Women’s
+Hospital, Boston, Massachusetts.s
+Funding sources: This study was funded in total by internal funds
+from the American Academy of Dermatology.
+Note: The ‘‘Executive summary: Guidelines of care for the man-
+agement of acne vulgaris’’ is available as supplementary
+material.
+Accepted for publication December 5, 2023.
+Correspondence to: Jung Min Han, PharmD, MS, American
+Academy of Dermatology, 9500 Bryn Mawr Ave, Suite 500,
+Rosemont, IL 60018. E-mail: jminhan@aad.org.
+Published online January 30, 2024.
+0190-9622/$36.00
+ 2024 by the American Academy of Dermatology, Inc.
+https://doi.org/10.1016/j.jaad.2023.12.017
+1006.e1
+
+
+========== PAGE 2 ==========
+
+SCOPE AND OBJECTIVES
+Acne vulgaris is one of the most common skin
+conditions diagnosed and treated by dermatologists
+in the United States (US) and worldwide.1,2 These
+guidelines aim to provide evidence-based recommen-
+dations to guide the clinical management of acne
+vulgaris for adults, adolescents, and preadolescents
+aged 9 years or older from the
+perspectives
+of
+US
+and
+Canadian dermatologists, cli-
+nicians who treat acne, and
+patients. These guidelines up-
+date
+the
+2016
+American
+Academy
+of
+Dermatology
+guidelines of care for the
+management of acne.3 We
+examine evidence based on
+a systematic review of the
+literature on acne grading
+and classification, laboratory
+testing, and treatment using
+topical
+therapies,
+systemic
+antibiotics, hormonal agents,
+oral isotretinoin, physical mo-
+dalities, complementary and
+alternative medicine, and di-
+etary and environmental in-
+terventions. These guidelines
+focus on acne treatments that
+are available, approved by
+the
+US
+Food
+and
+Drug
+Administration
+(FDA),
+and
+commonly used in the US.
+Acneiform
+eruptions
+and
+medication-induced acne are
+not addressed. Diagnosis and
+treatment of infantile acne,
+mid-childhood acne in chil-
+dren under the age of 9 years,
+and acne-induced hyperpig-
+mentation and scarring are
+beyond of the scope of these
+guidelines.4
+METHODS
+The American Academy of Dermatology (AAD)
+and Evidinno, Inc., conducted a series of focused and
+systematic reviews from May 2021 to November 2022
+(see Detailed Methods in Supplementary Materials,
+available via Mendeley at https://data.mendeley.
+com/datasets/z2bmdwwdf9/2)
+to
+determine
+the
+effectiveness and safety of treatments currently avail-
+able and approved in the US for the management of
+acne vulgaris in adults, adolescents, and preadoles-
+cents aged 9 years or older based on the 9 clinical
+questions with prespecified patient, intervention,
+comparator, and outcome and study eligibility
+criteria (Table I and Supplementary Tables I-VII,
+available via Mendeley at https://data.mendeley.
+com/datasets/z2bmdwwdf9/2). The Work Group
+consisted
+of
+9
+board-certified
+dermatologists
+(including 1 methodologist and 1 measure represen-
+tative and medical writer), 3
+board-certified pediatric der-
+matologists, 1 staff liaison,
+and 1 patient representative.
+The work group employed
+the Grading of Recommen-
+dations, Assessment, Deve-
+lopment,
+and
+Evaluation
+approach for assessing the
+certainty
+of
+the
+evidence
+and formulating and grading
+clinical
+recommendations.
+This approach incorporates
+benefits and harms, patient
+values
+and
+preferences,
+resource use, and certainty
+of evidence as key factors in
+the
+evidence
+to
+decision
+framework (Supplementary
+Table
+X,
+available
+via
+Mendeley
+at
+https://data.
+mendeley.com/datasets/z2bm
+dwwdf9/2). Strength of reco-
+mmendation and strength of
+the
+supporting
+evidence
+were expressed as shown in
+Table II.5-7 A strong recom-
+mendation means that the
+work group believes that the
+benefits
+clearly
+outweigh
+risks and burden (or that the
+risks
+and
+burden
+clearly
+outweigh the benefits), and
+a conditional recommenda-
+tion means that the work
+group believes that the ben-
+efits are closely balanced with risks and burden. A
+conditional recommendation implies that we believe
+most people would want the recommended course
+of action.
+DEFINITION
+Acne vulgaris is a chronic, inﬂammatory skin
+disease of the pilosebaceous unit.8 Acne primarily
+presents with open or closed comedones, papules,
+pustules, or nodules on the face or trunk and may
+result in pain, erythema, hyperpigmentation, or
+scars.8
+CAPSULE SUMMARY
+d The American Academy of
+Dermatology’s 2016 guidelines for the
+management of acne vulgaris are
+updated with a systematic review, which
+resulted in 18 evidence-based
+recommendations and 5 good practice
+statements.
+d Strong recommendations are made for
+topical benzoyl peroxide, retinoids, and/
+or antibiotics and their fixed-dose
+combinations, and for oral doxycycline.
+Oral isotretinoin is strongly
+recommended for severe acne, acne
+causing psychosocial burden or scarring,
+or acne failing standard treatment with
+oral or topical therapy.
+d Conditional recommendations are made
+for the use of topical clascoterone,
+salicylic acid, azelaic acid, oral
+minocycline, sarecycline, combined oral
+contraceptives, and spironolactone.
+d Using topical therapies combining
+multiple mechanisms of action, limiting
+systemic antibiotic use, combining
+systemic antibiotics with benzoyl
+peroxide and other topical therapies,
+and adjuvant intralesional corticosteroid
+injections are recommended as good
+clinical practices.
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e2
+
+
+========== PAGE 3 ==========
+
+INTRODUCTION/BACKGROUND
+Acne vulgaris is a common skin condition
+affecting 9.4% of the global population in 2010,
+representing the eighth most prevalent disease
+globally.9
+Acne
+affects
+approximately
+85%
+of
+teenagers but can occur in most age groups and
+can persist into adulthood.10 The burden of acne, as
+measured by disability-adjusted life years, ranked
+second among all skin diseases in 2013.11 Over 50
+million people in the US have acne.12 In the US, more
+than 5.1 million Americans sought medical treatment
+for acne, leading to $846 million in medical costs and
+$398 million in lost productivity for patients and
+caregivers in 2013.1 Acne has important impact on
+emotional
+functioning,
+social
+functioning,
+relationships, leisure activities, daily activities, sleep,
+school, and work.13,14 The health-related quality of
+life impact of acne is comparable to that of chronic
+conditions
+such
+as
+asthma,
+psoriasis,
+and
+arthritis.15,16 Acne is associated with increased risks
+of stigmatization, bullying, depression, anxiety, poor
+self-esteem, and suicidal ideation.17-20
+Multifactorial
+pathogenesis
+of
+acne
+involves
+follicular hyperkeratinization, microbial colonization
+with
+Cutibacterium
+acnes,
+sebum
+production,
+complex inflammatory mechanisms involving both
+innate and acquired immunity, neuroendocrine mech-
+anisms, and genetic and nongenetic factors. Risk factors
+for acne development include increasing age during
+adolescence,familyhistoryofacne,andoilyskintype.21
+ACNE GRADING AND CLASSIFICATION
+Numerous acne clinical grading and classiﬁcation
+systems have been used in research and clinical settings
+to assess overall acne disease severity, lesion number
+and morphologies, affected anatomic sites, and associ-
+ated secondary changes such as dyspigmentation and
+scarring. Consistent use of an acne grading and
+classiﬁcation system may help facilitate therapeutic
+decision-making and assess treatment response in
+clinical practice.22 Available grading systems include
+the Investigator Global Assessment (IGA), Leeds
+revised acne grading system, Global Acne Grading
+System,
+Global
+Acne
+Severity
+Scale,
+and
+ComprehensiveAcneSeverityScale,amongothers.23-29
+While there is no universally accepted acne grading
+system in clinical settings, the IGA is most commonly
+used in the US30 and demonstrates good agreement
+betweenclinicianandpatientratings.Thedefinitionof
+IGA scales varied over time and will require harmo-
+nization efforts to facilitate use and future meta-
+analyses.31 The IGA scale has been used in many
+randomized controlled trials (RCTs) for acne treat-
+ments and proposed as a cohesive framework upon
+which to establish an ideal acne grading system.32 An
+ideal acne grading system should measure the types of
+primary acne lesions, number of lesions, and extent
+and region of skin involvement and should feature
+strong psychometric properties, ability to categorize
+severity via descriptive text or photographs, ease of
+use, and stakeholder acceptance.33 Stakeholders from
+the International Dermatology Outcomes Measures
+and the American Academy of Dermatology reached
+consensus on a 5-point ordinal scale (ranging from 0-
+4: clear, almost clear, mild, moderate, and severe) to
+quantify severity of acne and other inflammatory
+dermatoses in routine clinical practice.34 Descriptors
+of this scale remain to be standardized and validated
+for use in facial and truncal acne. Acne severity may
+also be measured via digital photography, as is
+increasingly used in clinical practice and trials, as
+well as fluorescent photography, polarized light
+photography, video microscopy, and multispectral
+imaging modalities.35
+Beyond signs and symptoms, core acne outcomes
+measures should also include domains such as
+satisfaction with appearance, extent of scars/dark
+marks,
+satisfaction
+with
+treatment
+received,
+long-term acne control, adverse events, and health-
+related quality of life. Acne quality-of-life measures
+provide
+a
+more
+comprehensive
+and
+holistic
+perspective on the burden of acne on patients’ lives
+and may not correlate well with clinical acne
+severity.36 While multiple dermatology-specific and
+acne-specific health-related quality-of-life measures
+are available as research tools, shorter measures also
+exist for use in routine clinical practice.37,38
+MICROBIOLOGICAL AND ENDOCRINE
+TESTING
+C. acnes (formerly Propionibacterium acnes) is a
+Gram-positive anaerobic rod primarily implicated in
+acne
+pathogenesis,
+with
+some
+strains
+likely
+pathogenic while others commensal in the skin
+Abbreviations used:
+AAD:
+American Academy of Dermatology
+BP:
+benzoyl peroxide
+COC:
+combined oral contraceptive
+EE:
+ethinyl estradiol
+FDA:
+Food and Drug Administration
+IBD:
+inﬂammatory bowel disease
+IGA:
+Investigator Global Assessment
+MD:
+mean difference
+RCT:
+randomized controlled trial
+RR:
+risk ratio
+US:
+United States
+VTE:
+venous thromboembolism
+J AM ACAD DERMATOL
+MAY 2024
+1006.e3
+Reynolds et al
+
+
+========== PAGE 4 ==========
+
+microbiome.39,40
+C.
+acnes
+has
+specific
+culture
+requirements
+that
+prevent
+growth
+in
+routine
+bacterial
+culture.
+Staphylococcus
+epidermidis,
+Staphylococcus aureus, and Malassezia species
+have also been identified in acne lesions, although
+causal relationships remain to be demonstrated.41-45
+Table I. Clinical questions and scope
+Clinical questions
+CQ 1. What systems are most commonly used for the grading and classification of acne vulgaris in adults, adolescents, and
+preadolescents ($9 y)?
+CQ 2. What is the role of microbiological and endocrine testing in evaluating acne vulgaris in adults, adolescents, and
+preadolescents ($9 y)?
+CQ 3. What are the effectiveness and safety of topical agents in the treatment of acne vulgaris in adults, adolescents, and
+preadolescents ($9 y), including:
+d Retinoids (adapalene, tazarotene, tretinoin, and trifarotene)
+d Benzoyl peroxide
+d Topical antibiotics (erythromycin, clindamycin, dapsone, and minocycline)
+d Alpha hydroxy acid (glycolic acid)
+d Beta hydroxy acid (salicylic acid)
+d Azelaic acid
+d Topical antiandrogen (clascoterone)
+d Others (sulfur/sulfacetamide sodium and resorcinol)
+d Combinations of topical agents
+CQ 4. What are the effectiveness and safety of systemic antibiotics in the treatment of acne vulgaris in adults, adolescents,
+and preadolescents ($9 y), including:
+d Tetracyclines (doxycycline, minocycline, sarecycline)
+d Macrolides (azithromycin, clarithromycin, and erythromycin)
+d Penicillins (amoxicillin and ampicillin)
+d Cephalosporin (cephalexin)
+d Trimethoprim/sulfamethoxazole
+d Other (dapsone)
+CQ 5.a. What are the effectiveness and safety of hormonal agents in the treatment of acne vulgaris in adults, adolescents,
+and preadolescents ($9 y), including:
+d Combined contraceptive agents (estrogen and progestin)
+d Aldosterone receptor antagonist (spironolactone)
+d Oral corticosteroids (prednisolone and prednisone)
+d Intralesional corticosteroid (triamcinolone)
+CQ 5.b. For patients on spironolactone, how often and for how long should potassium level be monitored?
+CQ 6.a. What are the effectiveness and safety of isotretinoin in the treatment of acne vulgaris in adults, adolescents, and
+preadolescents ($9 y)?
+CQ 6.b. For patients on isotretinoin, how often and for how long should lipids, liver enzymes, creatine kinase, and blood
+count levels be monitored?
+CQ 7. What are the effectiveness and safety of physical modalities for the treatment of acne vulgaris in adults, adolescents,
+and preadolescents ($9 y), including:
+d Chemical peels (alpha hydroxy acid: glycolic acid, lactic acid, madelic acid; beta hydroxy acid: salicylic acid)
+d Comedo extraction
+d Lasers
+d Photodynamic/light therapy (blue light therapy, red light therapy, ALA, and IPL)
+CQ 8. What are the effectiveness and safety of complementary/alternative therapies in the treatment of acne vulgaris in
+adults, adolescents, and preadolescents ($9 y), including:
+d Botanicals/plant-derived agents (tea tree oil, green tea, and witch hazel)
+d Vitamin oral formulation (zinc, niacinamide, pantothenic acid)
+d Vitamin topical formulation (zinc and niacinamide)
+CQ 9. What are the effectiveness and safety of diet in the treatment of acne vulgaris in adults, adolescents, and
+preadolescents ($9 y), including:
+d Low-glycemic diet
+d Low-dairy diet
+d Low-whey diet
+d Omega-3 and chocolate
+ALA, Aminolevulinic acid; IPL, intense pulsed light; US, United States.
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e4
+
+
+========== PAGE 5 ==========
+
+While some C. acnes species have developed
+resistance to antibiotics46,47 and certain strains are
+more
+strongly
+associated
+with
+acne,
+routine
+microbiologic and/or antibiotic susceptibility testing
+is not indicated for patients with acne since it does
+not affect management. Patients presenting with
+eruptive uniform pustules to nodules in periorificial
+areas,
+particularly
+in
+settings
+of
+prolonged
+tetracycline treatment, may benefit from lesion
+culture
+to
+diagnose
+Gram-negative
+folliculitis.
+Treatment with isotretinoin or another antibiotic
+may
+be
+required.
+Microbiologic
+testing
+may
+also be considered for patients presenting with
+monomorphic truncal papules and pustules to
+diagnose pityrosporum folliculitis.
+Androgens, such as testosterone and dehydroepi-
+androsterone sulfate, have central roles in the
+pathogenesis of acne. The association between
+acne severity and androgen levels remains unclear,
+with some studies showing positive associations
+while others showed no associations.48,49
+Routine endocrinologic testing is not indicated for
+most patients with acne. Patients who present
+with acne and clinical signs or symptoms of hyper-
+androgenism, such as hirsutism, oligomenorrhea or
+amenorrhea,
+androgenic
+alopecia,
+infertility,
+polycystic ovaries, clitoromegaly, and truncal obesity
+may
+warrant
+further
+endocrine
+testing
+for
+hyperandrogenism. Polycystic ovarian syndrome is a
+common cause of hyperandrogenism, characterized
+by ovulatory dysfunction or polycystic ovaries on
+ultrasonography. Tests for serum total and/or free
+testosterone,
+dehydroepiandrosterone
+sulfate,
+androstenedione,
+luteinizing
+hormone,
+follicle-
+stimulating hormone may be considered.50-54 For
+women
+with
+hyperandrogenism,
+screening
+for
+Table II. Strength of recommendation and certainty of evidence
+Strength of recommendation
+Wording
+Implication5-7
+Strong recommendation
+for the use of an
+intervention
+‘‘We recommend.’’
+Benefits clearly outweigh risk and burdens; recommendation
+applies to most patients in most circumstances.
+Strong recommendation
+against the use of an
+intervention
+‘‘We recommend against.’’
+Risk and burden clearly outweigh benefits; recommendation
+applies to most patients in most circumstances.
+Good practice statement
+‘‘We recommend.’’
+Guidance was viewed by the Work Group as imperative to
+clinical practice and developed when the supporting
+evidence was considerable but indirect, and the certainty
+surrounding an intervention’s impact was high with the
+benefits clearly outweighing the harms (or vice versa).
+Good Practice Statements are strong recommendations as
+the certainty surrounding the impact of the recommended
+intervention is high. Implementation of these strong
+recommendations is considered to clearly result in
+beneficial outcomes.7
+Conditional
+recommendation
+for the use of an
+intervention
+‘‘We conditionally recommend.’’ Benefits are closely balanced with risks and burden;
+recommendation applies to most patients, but the most
+appropriate action may differ depending on the patient or
+other stakeholder values.
+Conditional
+recommendation
+against the use of an
+intervention
+‘‘We conditionally recommend
+against.’’
+Risks and burden closely balanced with benefits;
+recommendation applies to most patients, but the most
+appropriate action may differ depending on the patient or
+other stakeholder values
+Certainty of evidence
+Wording
+Implication5,6
+High
+‘‘high certainty evidence’’
+Very confident that the true effect lies close to that of the
+estimate of the effect.
+Moderate
+‘‘moderate certainty evidence’’
+Moderately confident in the effect estimate; the true effect is
+likely to be close to the estimate of the effect, but there is a
+possibility that it is substantially different.
+Low
+‘‘low certainty evidence’’
+Confidence in the effect estimate is limited; the true effect may
+be substantially different from the estimate of the effect
+Very low
+"very low certainty evidence"
+The estimate of effect is very uncertain; the true effect may be
+substantially different from the estimate of effect
+J AM ACAD DERMATOL
+MAY 2024
+1006.e5
+Reynolds et al
+
+
+========== PAGE 6 ==========
+
+nonclassic congenital adrenal hyperplasia due to 21-
+hydroxylase deficiency by 17-hydroxyprogesterone
+levels may be indicated.50 Serum growth hormone,
+insulin-like growth factor, sex hormone-binding glob-
+ulin, free androgen index, lipid panel, insulin, pro-
+lactin, estrogen, and progesterone may also be
+abnormal in some patients with severe acne.51,54-57
+Patients with abnormal endocrine testing or in whom
+there is a persistent concern for underlying endocrine
+disorder should be evaluated by an endocrinologist.
+ACNE MANAGEMENT
+Treatment options available for acne include
+topical therapies (available over the counter or as
+prescriptions),
+systemic
+antibiotics,
+hormonal
+agents,
+oral
+isotretinoin,
+physical
+modalities,
+Fig 1. Management of acne vulgaris.
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e6
+
+
+========== PAGE 7 ==========
+
+Table III. Recommendation for the management of acne vulgaris in adults, adolescents, and preadolescents
+($9 years)
+No.
+Recommendation
+Strength
+Certainty of evidence
+Evidence
+Topical agents
+1.1
+When managing acne with topical medications, we
+recommend multimodal therapy combining multiple
+mechanisms of action.
+Good practice statement
+1.2
+For patients with acne, we recommend benzoyl peroxide.
+Strong
+Moderate
+63-70
+1.3
+For patients with acne, we recommend topical retinoids.
+Strong
+Moderate
+59,60,62-64,71-83
+1.4
+For patients with acne, we recommend topical antibiotics
+Remark: Topical antibiotic monotherapy is not recommended.
+Strong
+Moderate
+66,68,69,71,79,84-92
+1.5
+For patients with acne, we conditionally recommend
+clascoterone.
+Conditional*
+High
+93,94
+1.6
+For patients with acne, we conditionally recommend salicylic
+acid.
+Conditional
+Low
+95
+1.7
+For patients with acne, we conditionally recommend azelaic
+acid.
+Conditional
+Moderate
+96-98
+1.8
+For patients with acne, we recommend fixed dose
+combination topical antibiotic with benzoyl peroxide
+Strong
+Moderate
+66,68,69,99-106
+1.9
+For patients with acne, we recommend fixed dose
+combination topical retinoid with topical antibiotic.
+Remark: Concomitant use of benzoyl peroxide is
+recommended to prevent the development of antibiotic
+resistance.
+Strong
+Moderate
+71,79,99,107,108
+1.10
+For patients with acne, we recommend fixed dose
+combination topical retinoid with benzoyl peroxide.
+Strong
+Moderate
+63,64,99,109-113
+Systemic antibiotics
+2.1
+For patients with acne, we recommend doxycycline.
+Strong
+Moderate
+114-118
+2.2
+For patients with acne, we conditionally recommend
+minocycline.
+Conditional
+Moderate
+114,119-122
+2.3
+For patients with acne, we conditionally recommend
+sarecycline.
+Conditional*
+High
+123-125
+2.4
+For patients with acne, we conditionally recommend
+doxycycline over azithromycin.
+Conditional
+Low
+126-129
+2.5
+For patients with acne, we recommend limiting use of
+systemic antibiotics when possible to reduce the
+development of antibiotic resistance and other antibiotic
+associated complications.
+Good practice statement
+2.6
+It is recommended that systemic antibiotics are used
+concomitantly with benzoyl peroxide and other topical
+therapy.
+Good practice statement
+Hormonal agents
+3.1
+For patients with acne, we conditionally recommend
+combined oral contraceptive pills.
+Conditionaly
+Moderate
+130-139
+3.2
+For patients with acne, we conditionally recommend
+spironolactone.
+Remark: Potassium monitoring is not needed in healthy
+patients. However, consider potassium testing for those
+with risk factors for hyperkalemia (e.g., older age, medical
+comorbidities, medications).
+Conditional
+Moderate
+140-147
+3.3
+For patients with larger acne papules or nodules, we
+recommend intralesional corticosteroid injections as an
+adjuvant therapy.
+Remark: Intralesional corticosteroid injections should be used
+judiciously for patients who are at risk of acne scarring and/
+or for rapid improvement in inflammation and pain. Using a
+lower concentration and volume of corticosteroid can
+minimize the risks of local corticosteroid adverse events.
+Good practice statement
+Continued
+J AM ACAD DERMATOL
+MAY 2024
+1006.e7
+Reynolds et al
+
+
+========== PAGE 8 ==========
+
+complementary
+and
+alternative
+medicine,
+and
+dietary and environmental interventions. Given the
+diversity of treatment options for acne, shared
+decision-making is important to individualize acne
+care based on the potential treatment beneﬁts and
+risks, the severity, extent, and region of acne
+involvement, treatment costs, patient preferences,
+and other factors (Fig 1).
+TOPICAL THERAPIES
+Topical therapies are the mainstay of acne
+treatment: they may be used for acne initial treatment
+and maintenance as monotherapy (except topical
+antibiotics) or used in combination with other topical
+or oral agents. Commonly used topical therapies
+include topical retinoids, benzoyl peroxide (BP),
+antibiotics, clascoterone, salicylic acid, and azelaic
+acid. When managing acne with topical therapies,
+multimodal therapy combining multiple mecha-
+nisms of actions is recommended as a good practice
+statement to optimize efﬁcacy and to reduce the risk
+of antibiotic resistance.
+Topical retinoids
+Topical retinoids are vitamin A derivatives and
+serve as the cornerstone of acne treatment since they
+are comedolytic and anti-inﬂammatory, improve
+dyspigmentation, and enable maintenance of acne
+clearance. Four types of topical retinoids, including
+topical tretinoin,58 adapalene,59 tazarotene,60,61 and
+trifarotene,62 are FDA-approved for acne treatment
+in the US. Each retinoid binds to a different set of
+retinoic
+acid
+receptors
+and
+confers
+modest
+differences in activity, tolerability and efficacy.
+We recommend topical retinoids for acne treatment
+based on moderate certainty evidence from 20 studies
+(Table III and Supplementary Table XII, available via
+Mendeley
+at
+https://data.mendeley.com/datasets/
+z2bmdwwdf9/2).59,62-64,71-81,153-155
+Compared
+to
+vehicle at 12 weeks, a greater proportion of patients
+treated with topical retinoids achieved IGA success in
+4 RCTs (risk ratio [RR], 1.57 [1.21, 2.04]).59,63,64,71
+Topical retinoid use may be limited by side effects,
+including increased risk of burning sensation, dryness,
+erythema, exfoliation, peeling, and pain. Treatment-
+emergent adverse events leading to discontinuation at
+12 weeks were low (1.4%) in 3 RCTs.63,80,155 Existing
+comparative effectiveness data do not suggest superi-
+ority of one topical retinoid against another, with
+efficacy and tolerability differing by specific concen-
+trations and formulations.153,156-159 Irritation may be
+particularly common at higher concentrations, which
+Table III. Cont’d
+No.
+Recommendation
+Strength
+Certainty of evidence
+Evidence
+Isotretinoin
+4.1
+For patients with severe acne or for patients who have failed
+standard treatment with oral or topical therapy, we
+recommend isotretinoin.
+Remark: Acne patients with psychosocial burden or scarring
+should be considered as having severe acne and to be
+candidates for isotretinoin. For patients undergoing
+treatment with isotretinoin, monitoring of LFTs and lipids
+should be considered, but CBC monitoring is not needed in
+healthy patients. Population-based studies have not
+identified increased risk of neuropsychiatric conditions or
+inflammatory bowel disease in acne patients undergoing
+treatment with isotretinoin. For persons of childbearing
+potential, pregnancy prevention is mandatory.
+Good practice statement
+4.2
+For patients with severe acne, we conditionally recommend
+traditional daily dosing of isotretinoin over intermittent
+dosing of isotretinoin.
+Conditional
+Low
+148-150
+4.3
+For patients prescribed isotretinoin, we conditionally
+recommend either standard isotretinoin or lidose-
+isotretinoin.
+Conditional
+High
+151
+Physical modalities
+5.1
+For patients with acne, we conditionally recommend against
+adding pneumatic broadband light to adapalene 0.3% gel.
+Conditional
+Low
+152
+*Conditional recommendations were made for clascoterone and sarecycline due to high current cost of treatment that may impact
+equitable acne treatment access.
+yConditional recommendation was made for combined oral contraceptive pills due to the variability in patient values and preferences
+related to contraception and hormonal medications.
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e8
+
+
+========== PAGE 9 ==========
+
+may be mitigated by reduced frequency of use and
+concurrent emollients use.160-163 Some tretinoin for-
+mulations should be applied in the evening due to its
+photolabile nature and should not be applied with BP
+to avoid oxidation and inactivation; topical tretinoin
+microsphere formulations, adapalene, and tazarotene
+lack similar restrictions. Topical retinoids may cause
+photosensitivity; concurrent daily sunscreen use can
+reduce sunburn risks. Adapalene 0.1% gel is available
+over the counter while other topical retinoids are
+available by prescription only.
+Benzoyl peroxide
+BP is an over-the-counter topical antimicrobial
+agent that releases free oxygen radicals and is mildly
+comedolytic.164,165 We recommend BP for acne
+treatment based on moderate certainty evidence
+from 8 studies (Table III and Supplementary Table
+XIII, available via Mendeley at https://data.mendeley.
+com/datasets/z2bmdwwdf9/2).63-70
+Compared
+to
+vehicle at 12 weeks, a greater proportion of patients
+treated with BP achieved IGA success in 3 RCTs (RR,
+2.70 [1.10, 6.65]).63-65 Greater reductions in both
+inflammatory (mean difference [MD] in the percent-
+age change from baseline, 22.13% [42.53%,
+1.72%])
+and
+noninflammatory
+(MD,
+17.05%
+[22.96%, 11.14%]) lesion counts were seen in BP
+versus vehicle at 12 weeks in 3 RCTs.63,66,69 BP use is
+limited by concentration and formulation-dependent
+burning sensation, stinging, dryness, erythema, pain,
+peeling, irritation, fabric staining and bleaching, and
+uncommon contact allergy. Lower BP concentrations
+and water-based and wash-off formulations may be
+better tolerated.166,167 No C. acnes resistance to BP
+has been reported.
+Topical antibiotics
+Topical
+antibiotics
+(including
+erythromycin,
+clindamycin, minocycline, and dapsone) treat acne
+through both antibacterial and anti-inﬂammatory
+effects.168 We recommend topical antibiotics for
+acne
+treatment
+based
+on
+moderate
+certainty
+evidence
+from
+14
+studies
+(Table
+III
+and
+Supplementary Table XIV, available via Mendeley
+at https://data.mendeley.com/datasets/z2bmdwwdf
+9/2).66,68,69,71,79,84-91
+Compared
+to
+vehicle
+at
+12 weeks, a greater proportion of patients treated
+with topical antibiotics achieved IGA success in 3
+RCTs (RR, 1.49 [1.28, 1.73]).71,86,87
+A greater reduction in inﬂammatory lesions was
+seen with topicalantibiotics versus vehicle at 12weeks
+in 8 RCTs (MD in the percentage change from
+baseline, 10.86% [18.81%, 2.91%]),66,69,79,84-87,91
+but the difference in reduction in noninflammatory
+lesion counts between the groups was not statistically
+significant
+at
+12
+weeks
+in
+7
+RCT
+(3.33%
+[7.90%, 1.24%]).66,69,79,84-87 Notably, topical anti-
+biotic monotherapy is not recommended due to
+concern for antibiotic resistance. Combining topical
+antibiotics with BP enhances efficacy and may prevent
+antibiotic resistance development. Concurrent topical
+application of BP with either dapsone or sulfaceta-
+mide causes an orange-brown skin discoloration,
+which can be washed off; thus BP should be used at
+a different time of day than topical dapsone.169
+Glucose-6-phosphate dehydrogenase screening is
+not required prior to starting topical dapsone.
+Topical antibiotics are generally well tolerated; there
+have been rare case reports describing diarrhea or
+Clostridium difficile-related colitis associated with
+topical clindamycin use.92,170 There is a lack of active
+comparator studies to suggest if any one topical
+antibiotic is superior to another.
+Fixed-dose topical combinations
+Fixed-dosetopicalcombinationsofBP,retinoids,or
+antibiotics facilitate treatment regimen adherence.171
+We recommend fixed-dose topical combinations of
+BP and topical retinoid, BP and topical antibiotic,
+and topical retinoid and topical antibiotic for acne
+treatment based on moderate certainty evidence from
+763,64,99,109-112 966,68,69,99-104, and 371,79,99 studies,
+respectively (Table III and Supplementary Tables
+XV-XXIII, available via Mendeley at https://data.
+mendeley.com/datasets/z2bmdwwdf9/2). Compared
+to vehicle at 12 weeks, a greater proportion of patients
+treated with combined BP and topical retinoid
+achieved IGA success in 3 RCTs (RR, 2.19 [1.77,
+2.72]).63,64,109 Greater reductions in both inflammatory
+(MD in the percentage change from baseline,
+37.34% [72.49%, 2.18%]) and noninflammatory
+(MD, 20.47% [26.31, 14.62]) lesion counts were
+seen in combined BP and topical antibiotic versus
+vehicle at 12 weeks in 4 RCTs.66,69,99,101 Concomitant
+BP use is recommended with combined topical
+retinoid and topical antibiotic to prevent the develop-
+ment of antibiotic resistance. Potential adverse effect
+profiles of the fixed-dose combinations generally
+reflect those of the individual agents in summation.
+Some fixed-dose combination products may be less -
+expensive
+than
+prescribing
+their
+individual
+components separately.
+Clascoterone
+Clascoterone
+is
+a
+topical
+antiandrogen
+that
+directly binds the androgen receptor and inhibits
+androgen-mediated lipid and inﬂammatory cytokine
+synthesis
+from
+sebocytes.172
+We
+conditionally
+recommend clascoterone for acne treatment based
+on high certainty evidence from 2 studies (Table III
+J AM ACAD DERMATOL
+MAY 2024
+1006.e9
+Reynolds et al
+
+
+========== PAGE 10 ==========
+
+and
+Supplementary
+Table
+XXIV,
+available
+via
+Mendeley at https://data.mendeley.com/datasets/
+z2bmdwwdf9/2)
+and
+based
+on
+work
+group
+discussions related to treatment access and cost.
+Compared to vehicle at 12 weeks, a greater
+proportion of patients treated with clascoterone
+achieved
+IGA
+success
+in
+2
+RCTs
+(RR,
+2.08
+[1.39, 3.11]).93 Despite high certainty of benefits
+over risks based on clinical trial evidence, the work
+group voted on a conditional recommendation due
+to
+concerns
+about
+the
+high
+current
+cost
+of
+clascoterone treatment that may impact equitable
+acne treatment access. This conditional recommen-
+dation may be revised in the future pending changes
+in treatment cost and access.
+Salicylic acid
+Salicylic acid is a topical comedolytic agent that is
+available over the counter, with concentration
+ranging in 0.5% to 2%. We conditionally recommend
+salicylic acid for acne treatment based on moderate
+certainty evidence from 1 RCT, showing a 25%
+greater reduction in inﬂammatory lesions, 11%
+greater reduction in open comedones, and no
+difference in closed comedones with 0.5% salicylic
+acid use compared to vehicle at 12 weeks (Table III
+and
+Supplementary
+Table
+XXV,
+available
+via
+Mendeley at https://data.mendeley.com/datasets/
+z2bmdwwdf9/2).95 Chemical peels using salicylic
+acid 10% to 30% are separately discussed in the
+physical modalities section.
+Azelaic acid
+Azelaic acid is a topical comedolytic, antibacterial,
+and
+anti-inﬂammatory
+agent,
+which
+may
+be
+particularly helpful for patients with sensitive skin
+or darker skin types due to its lightening effect on
+dyspigmentation.96,97,173 We conditionally recom-
+mend topical azelaic acid for acne treatment based
+on moderate certainty
+evidence from 3 RCTs
+(Table III and Supplementary Table XXVI, available
+via
+Mendeley
+at
+https://data.mendeley.com/
+datasets/z2bmdwwdf9/2).96-98 In 1 RCT of 92 pa-
+tients, 28% more patients receiving azelaic acid 20%
+cream twice daily achieved 50% to 100% reduction in
+total lesion count compared to vehicle at 3 months.97
+Considerations in topical therapies
+In patients who are pregnant, the risk of fetal
+harm from topical azelaic acid, BP, erythromycin,
+and clindamycin are not expected based on limited
+expected systemic absorption.174,175 Salicylic acid
+can be used in pregnancy if the area of exposure and
+duration of therapy is limited; use for large areas or
+under occlusion are not recommended due to the
+potential for systemic absorption.174 There are no
+data
+on
+the
+safety
+of
+topical
+dapsone
+and
+clascoterone
+during
+pregnancy
+or
+lactation.
+Tazarotene is contraindicated in pregnancy based
+on animal reproduction studies, retinoid pharma-
+cology, and the potential for systemic absorption. No
+human studies have established causal relationships
+between the use of topical retinoids with birth
+defects; nevertheless, topical therapies other than
+topical retinoids are preferred during pregnancy.
+Topical minocycline is not recommended during
+pregnancy or lactation.
+Salicylic acid is available over the counter. Fixed-
+dose combination BP 2.5%/adapalene 1% gel,
+tretinoin 0.1%/BP 3% cream, tretinoin 0.05% lotion,
+trifarotene 0.005% cream, dapsone 5% gel, and
+minocycline 4% foam are FDA-approved for ages
+9 years and above, and most other topical retinoids,
+antibiotics,
+clascoterone,
+and
+azelaic
+acid
+are
+approved for age 12 years and above.
+Available evidence is insufﬁcient to develop a
+recommendation on the use of topical glycolic acid,
+sulfur, sodium sulfacetamide, and resorcinol for acne
+treatment
+or
+to
+make
+recommendations
+that
+compare topical BP, retinoids, antibiotics, and their
+combinations
+directly
+against
+each
+other
+(Supplementary Tables XXVII-XXXV, available via
+Mendeley at https://data.mendeley.com/datasets/
+z2bmdwwdf9/2).
+SYSTEMIC ANTIBIOTICS
+Systemic antibiotics have been used extensively to
+treat acne, typically moderate to severe acne. Oral
+tetracycline-class antibiotics, including doxycycline,
+minocycline, and sarecycline, are commonly used.
+Tetracycline-class
+antibiotics
+exhibit
+antibiotic
+properties by binding the 16S ribosomal RNA of the
+bacterial ribosome 30S subunit to inhibit protein
+synthesis, as well as anti-inﬂammatory properties by
+inhibiting
+neutrophil
+chemotaxis
+and
+matrix
+metalloproteinases and down-regulating inﬂamma-
+tory cytokines.176 Notably, tetracycline-class antibi-
+otics are contraindicated in pregnancy, lactation, and
+childhood below age 9 years during tooth develop-
+ment, since repeated exposure may cause perma-
+nent teeth enamel hypoplasia or discoloration.
+Limiting the use of systemic antibiotics when
+possible
+is
+recommended
+as
+a
+good
+practice
+statement to reduce the development of antibiotic
+resistance and other antibiotic-associated complications.
+In 2021, dermatologists prescribed more oral antibi-
+otics per clinician than all other specialties, with the
+majority of antibiotics used for acne treatment.177,178
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e10
+
+
+========== PAGE 11 ==========
+
+In addition to concerns about antibiotic resistance,
+oral tetracycline-class antibiotic use has been asso-
+ciated with inflammatory bowel disease (IBD),114
+pharyngitis,179 Clostridium difficile infection,180,181
+and Candida vulvovaginitis. Outpatient antibiotic
+stewardship promotes appropriate antibiotic use in
+which patients receive the right dose of the right
+antibiotic at the right time for the right duration. The
+Centers for Disease Control and Prevention recom-
+mend outpatient antibiotic stewardship programs to
+include (1) commitment to optimizing antibiotic
+prescribing and patient safety, (2) implementation
+action for stewardship policy or practice, (3) tracking
+prescribing practices through clinician feedback or
+self-assessment, and (4) access to educational re-
+sources and expertise.182 When treating acne with
+systemic antibiotics, we recommend concomitant
+use of BP and other topical therapies as a good
+practice statement to decrease risk of antibiotic
+resistance and to limit the duration of systemic
+antibiotic exposure. Oral antibiotics should not be
+used as monotherapy for acne treatment. Systemic
+antibiotic use should also be limited to the shortest
+duration possible, typically no more than 3-4 months,
+as recommended by international guidelines.3,183,184
+For patients who have inadequate response or
+contraindications to nonantibiotic therapies and
+may require longer courses of systemic antibiotics,
+consistent follow up and re-evaluation should limit
+systemic antibiotic use to the shortest duration and
+should maintain treatment endpoints with concur-
+rent topical therapies during and after systemic
+antibiotic treatment.185-189
+Doxycycline
+We recommend doxycycline for acne treatment
+based on moderate certainty evidence from 5 studies
+(Table III and Supplementary Table XXXVI, available
+via Mendeley at https://data.mendeley.com/datasets/
+z2bmdwwdf9/2).114-118
+Compared
+to
+vehicle
+at
+4 months, a greater proportion of patients treated
+with doxycycline achieved IGA success in 2 RCTs (RR,
+1.80 [1.17, 2.77]).116,117 Treatment withdrawal due to
+adverse effects was more common with doxycycline
+compared to placebo in 3 trials (1.3% vs 0.3%; RR, 2.25
+[0.38, 13.21]).115-117 Doxycycline may cause gastroin-
+testinal disturbances (15.7% vs 5.9%; RR, 2.56 [1.05,
+6.25]),115-117 including nausea, vomiting, and diar-
+rhea; esophagitis, phototoxicity; and rarely intracra-
+nial hypertension. Taking doxycycline with food and
+adequate fluids in the upright position may reduce
+gastrointestinal side effects. Low-dose doxycycline
+(20 mg twice daily or 40 mg extended release daily)
+has demonstrated efficacy in patients with moderate
+inflammatory acne,115 but there remains insufficient
+evidence comparing oral doxycycline at different
+dosages directly.190
+We conditionally recommend doxycycline over
+azithromycin for acne treatment based on low
+certainty evidence from 4 studies (Table III and
+Supplementary
+Table
+XXXVII,
+available
+via
+Mendeley at https://data.mendeley.com/datasets/
+z2bmdwwdf9/2).126-129 A greater reduction in total
+lesion counts was seen in doxycycline versus
+azithromycin at 12 weeks (MD in the change
+from baseline, 6.0 [-11.63, 0.37] in 1 RCT.126
+Azithromycin is a broad-spectrum macrolide anti-
+biotic that covers respiratory and other infections;
+increasing azithromycin use could increase antibiotic
+resistance.
+Minocycline
+We conditionally recommend minocycline for acne
+treatment based on moderate certainty evidence from
+5 studies and based on work group discussions related
+to uncommon potential treatment adverse effects
+(TableIII and SupplementaryTable XXXVIII,available
+via Mendeley at https://data.mendeley.com/datasets/
+z2bmdwwdf9/2).114,119-122 Compared to vehicle at
+12 weeks, a greater proportion of patients treated
+with minocycline achieved IGA success in 2 RCTs (RR,
+1.82 [1.28, 2.57]).119-121 Adverse effects requiring
+treatment cessation were higher with minocycline
+compared to placebo in 2 RCTs (9.1% vs 1.0%; RR,
+6.23 [1.20, 32.99]).120,122 Oral minocycline confers
+similar common adverse effects as doxycycline.
+Despite moderate certaintyofbenefits overrisks based
+on clinical trial evidence, the work group voted on a
+conditional recommendation due to concerns about
+rare potential adverse effects of minocycline, which
+include
+vertigo,
+autoimmune
+hepatitis,
+skin
+hyperpigmentation,
+drug-induced
+lupus,
+and
+hypersensitivity syndrome. As there is insufficient
+evidence comparing doxycycline and minocycline
+directly,
+the
+potential
+risks
+and
+benefits
+of
+each
+treatment
+option
+should
+be
+considered
+(Supplementary
+Table
+XXXIX,
+available
+via
+Mendeley
+at
+https://data.mendeley.com/datasets/
+z2bmdwwdf9/2). Moreover, oral minocycline mono-
+therapy is not superior to topical BP 5% or erythro-
+mycin 2%/BP 5% in mild to moderate acne in 1 RCT
+(Supplementary
+Tables
+XL-XLII,
+available
+via
+Mendeley
+at
+https://data.mendeley.com/datasets/
+z2bmdwwdf9/2).191 Available evidence is insufficient
+to develop a recommendation on the use of long-term
+minocycline monotherapy or in combination with
+tazaroteneasmaintenancetherapybeyond3-4months
+over tazarotene gel alone (Supplementary Table XLIII,
+available via Mendeley at https://data.mendeley.com/
+datasets/z2bmdwwdf9/2).186
+J AM ACAD DERMATOL
+MAY 2024
+1006.e11
+Reynolds et al
+
+
+========== PAGE 12 ==========
+
+Sarecycline
+We conditionally recommend sarecycline for acne
+treatment based on high certainty evidence from 3
+studies and based on Work Group discussions related
+to
+treatment
+access
+and
+cost
+(Table
+III
+and
+Supplementary Table XLIV, available via Mendeley
+at
+https://data.mendeley.com/datasets/z2bmdwwdf
+9/2).123-125
+Sarecycline
+is
+a
+narrow-spectrum
+tetracycline-class antibiotic, and compared to vehicle
+at 12 weeks, a greater proportion of patients treated
+with sarecycline achieved IGA success in 2 RCTs
+(22.3%
+vs
+13.0%;
+RR,
+1.73
+[1.23,
+2.44]).123-125
+Sarecycline is dosed by weight at 1.5 mg/kg and is
+generally well tolerated with low incidence of gastro-
+intestinal, photosensitivity, and Candida infection side
+effects. Despite high certainty of benefits over risks
+based on clinical trial evidence, the work group voted
+on a conditional recommendation due to concerns
+about the high current cost of sarecycline treatment
+that may impact equitable acne treatment access. This
+conditional recommendation may be revised in the
+future pending changes in treatment cost and access.
+Considerations in systemic antibiotics
+Oral doxycycline, minocycline, and sarecycline are
+FDA-approved for the management of acne. In
+patients who are pregnant or lactating, tetracycline-
+class antibiotics should be avoided due to potential
+for permanent teeth discoloration and bone growth
+inhibition in the fetus or nursing infant. The 2016
+AAD acne guidelines discussed the limited use of
+oral erythromycin and azithromycin for pregnant
+persons and on the restricted use of trimethoprim-
+sulfamethoxazole or trimethoprim for patients unable
+to tolerate tetracyclines.3 Available evidence is insuf-
+ficient to develop a recommendation on the use of
+oral azithromycin or trimethoprim/sulfamethoxazole
+for acne treatment (Supplementary Tables XLV-
+XLVIII,
+available
+via
+Mendeley
+at
+https://data.
+mendeley.com/datasets/z2bmdwwdf9/2).
+In
+addi-
+tion, TMP-SMX may be associated with severe adverse
+reactions such as Stevens-Johnson syndrome/toxic
+epidermal necrolysis and acute respiratory failure.
+These antibiotics are also indicated for community-
+acquired infections, such as pneumonia and urinary
+tract infections, and broad use for acne should be
+discouraged to avoid selection of antibiotic-resistant
+bacteria. Available evidence is also insufficient to
+make
+recommendations
+that
+compare
+systemic
+antibiotics directly against each other or against
+topical therapies (Supplementary Tables XLIX-LIII,
+available via Mendeley at https://data.mendeley.com/
+datasets/z2bmdwwdf9/2).
+HORMONAL AGENTS
+Combined oral contraceptives
+Combined oral contraceptives (COCs) contain
+combinations
+of
+estrogen
+and
+progestin.
+COC
+prevent ovulation and pregnancy by inhibiting
+gonadotropin-releasing hormone, follicle stimulating
+hormone, and luteinizing hormone. COC treat acne
+through their overall anti-androgenic properties,
+which decrease ovarian androgen production, in-
+crease sex hormone-binding globulin, and reduce
+free testosterone that would otherwise activate the
+androgen receptor. COC reduce 5a-reductase activity
+and block the androgen receptor.192-195
+Ethinyl estradiol (EE) is the most common estrogen
+component in COC, with daily doses typically ranging
+from 10-50 g. Progestins are synthesized progester-
+one analogues and are historically categorized by
+generations. First, second, and third generation pro-
+gestins are derived from testosterone and have
+androgenic potential if used alone. Examples of
+first-generation oral progestins include norethin-
+drone and ethynodiol diacetate; second-generation
+include levonorgestrel and norgestrel; and third-
+generation include norgestimate and desogestrel,
+which are considered less androgenic than prior
+generations. Progestin-only oral contraceptive pills,
+intramuscular injections, intrauterine devices, or sub-
+cutaneous implants may worsen acne.196,197 Fourth-
+generation progestins include oral drospirenone and
+dienogest.
+Drospirenone
+is
+a
+spironolactone
+analogue not derived from testosterone and has
+antiandrogenic properties. Combined with estrogen,
+all COCs yield net antiandrogenic properties.193,198
+Four COCs are FDA-approved for treatment of acne in
+women who desire oral contraception, including
+norgestimate/EE, norethindrone acetate/EE/ferrous
+fumarate, drospirenone/EE, and drospirenone/EE/
+levomefolate. All COCs are currently available in
+generic forms in the US.
+We conditionally recommend COCs for acne treat-
+ment based on moderate certainty evidence from 10
+studies130-139 and variability in patient values and
+preferences related to contraception (Table III and
+Supplementary Table LIV, available via Mendeley
+at https://data.mendeley.com/datasets/z2bmdwwdf
+9/2). Data on all COC formulations with acne out-
+comes, regardless of specific approved indication for
+acne treatment, were pooled and compared against
+placebo. Compared to vehicle at the end of cycle 6, a
+greater proportion of patients treated with COCs
+achieved IGA success in 3 RCTs (RR, 1.45 [1.06,
+1.97]).130-132 Greater reductions in both inflammatory
+(MD in the percentage change from baseline,
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e12
+
+
+========== PAGE 13 ==========
+
+15.81% [20.44%, 11.17%]) and noninflammatory
+(MD, 19.45% [9.9, 9.0]) lesion counts were seen
+in COC versus vehicle at the end of cycle 6 in 9
+RCTs130-138 and 6 RCTs,131-134,136,137 respectively. High
+dropout rates of 25% to 35% across multiple RCTs may
+in part reflect variability in patient preferences
+regarding COC continuation. Current data show no
+consistent difference in acne responses based on COC
+formulations or dosages and do not support the
+superiority of one COC over another for acne treat-
+ment (Supplementary Tables LVI-LXI, available via
+Mendeley
+at
+https://data.mendeley.com/datasets/
+z2bmdwwdf9/2).199-205 Reports of any adverse effects
+(54.0% vs 50.1%; RR, 1.15 [1.07, 1.24]) and treatment
+withdrawal due to adverse effects (5.1% vs 2.9%; 1.86
+[1.32, 2.62]) are more common with COCs than with
+placebo. COC for acne treatment is not limited to
+patients with acne affecting the jawline or with
+premenstrual flares, hirsutism, or hyperandrogenism.
+Clinicians should counsel patients about expected
+time to acne improvement with COCs, usually notable
+within 3-6 months, and may consider combining
+COCs with other acne therapies early in treatment
+course to accelerate treatment response.
+Obtaining a comprehensive medical history and
+measuring blood pressure are important before pre-
+scribing COCs.206 Clinicians may be reasonably
+certain that a patient who has no symptoms or signs
+of pregnancy and who meets specific criteria (eg,
+who presents within 7 days after the start of normal
+menses or who have not had sexual intercourse since
+the start of last normal menses) is not pregnant.207
+Urine pregnancy tests may also be considered.207
+COC
+access
+may
+be
+expanded
+using
+patient
+eligibility self-screening tools.208 Pelvic and breast
+examination, cervical cancer screening, and sexually
+transmitted infection screening are not required
+prior to COC initiation.208 Recommendations for
+contraceptive selection for patients with specific
+characteristics or medical conditions are found in
+the US Medical Eligibility Criteria for Contraceptive
+Use, 2016, which is available as a mobile application
+to facilitate use in clinical settings.209 Absolute and
+relative contraindications to COCs are summarized
+in Table IV.209 Discussions weighing potential
+benefits and risks of COCs may differ depending
+on its indication: if a COC is indicated to prevent
+pregnancy,
+its
+risks
+and
+benefits
+should
+be
+contextualized against those of an unintended
+pregnancy; if a COC is indicated exclusively for
+acne treatment, its risks and benefits should be
+compared against those of acne.
+Potential adverse effects of COCs include venous
+thromboembolism
+(VTE),
+myocardial
+infarction,
+stroke, breast cancer, cervical cancer, among others.
+Typical use of EE with daily dose below 50 g is
+associated with lower VTE risks compared to
+historical use of EE with daily doses above 50 g,
+which are no longer available in the US; existing data
+have not shown significant effect of further EE dose
+reductions below 50 g on VTE risks.208,210 The
+absolute risk of VTE associated with COC use is small
+compared to the risk of VTE in pregnancy.208,210
+Estimated VTE incidence per 10,000 person-years are
+estimated at approximately 1-5 in nonpregnant
+women who do not use COCs, 3-9 in COC users,
+10 in drospirenone-containing COC users, 5-20 in
+pregnancy, and 40-65 in the 12-week postpartum
+period.208,210 COC use is associated with small
+increases in myocardial infarction and stroke risks,
+particularly in patients above age 35 years who
+smoke tobacco or patients who have hypertension,
+diabetes mellitus, or migraines. While cardiovascular
+events are important safety concerns, they are
+uncommon in reproductive-aged patients, in which
+a small relative risk increase still represents an overall
+low
+absolute
+risk.193,194,211
+COCs
+have
+been
+associated with small increases in breast cancer and
+cervical cancer risks and decreases in endometrial,
+ovarian, and colorectal cancer risks in systematic
+reviews.212-216 A long-term cohort study of 46,022
+women in the United Kingdom showed an overall
+neutral balance between short- and long-term cancer
+risks and benefits in past COC users after 30 years of
+follow-up.214
+COC confers beneﬁts beyond contraception and
+acne treatment, including regulating menstrual cy-
+cles,
+induction
+of
+amenorrhea,
+prevention
+of
+menstrual migraines, and treatment of conditions
+such as dysmenorrhea, hirsutism, menorrhagia,
+endometriosis-associated pelvic pain, premenstrual
+syndrome, among others.217 Due to numerous
+potential benefits, risks, and variability in patient
+values and preferences, patient-centered contracep-
+tive
+counseling
+that
+prioritize
+patients’
+values,
+preferences, and lived experiences in the shared
+decision-making of initiation or discontinuation of
+contraceptive methods is critical.218 To help all
+patients achieve reproductive goals, the American
+College
+of
+Obstetricians
+and
+Gynecologists
+recommends intentional application of a reproduc-
+tive justice framework that acknowledges historical
+devaluation of reproductive desires of people of
+color
+and
+other
+marginalized
+individuals
+and
+conscious
+and
+unconscious
+clinician
+bias
+in
+contraceptive counseling.218
+COC may be combined with other oral or topical
+acne medications, including tetracycline antibiotics
+and spironolactone. Tetracycline-class antibiotics
+have
+not
+been
+shown
+to
+reduce
+COC
+J AM ACAD DERMATOL
+MAY 2024
+1006.e13
+Reynolds et al
+
+
+========== PAGE 14 ==========
+
+Table IV. Summary of contraindications to combined oral contraceptive use based on the US Medical Eligibility
+Criteria for Contraceptive Use*
+Absolute contraindications (Category 4: A condition that represents
+an unacceptable health risk if COC is used)
+Relative contraindications (Category 3: A condition for which the
+theoretical or proven risks usually outweigh the benefits of COC)
+Personal characteristics and reproductive history
+d Age $35 y and smoking $15 cigarettes daily
+d \21 d postpartum, regardless of breastfeeding status
+d Age $35 y and smoking \15 cigarettes daily
+d Breastfeeding patient 21-29 d postpartum
+d Breastfeeding patient 30-42 d postpartum, with other VTE
+risk factorsy
+d Nonbreastfeeding patient 21-42 d postpartum, with other
+VTE risk factorsy
+Cardiovascular disease
+d SBP $160 mmHg or DBP $100 mmHg
+d Vascular disease
+d Acute VTE or history of VTE with $1 risk factor for
+recurrencez
+d Major surgery with prolonged immobilization
+d Known thrombogenic mutationx
+d Multiple risk factors for atherosclerosisk
+d Current or history of ischemic heart disease
+d Current or history of stroke
+d Valvular heart disease with complications{
+d Peripartum cardiomyopathy with normal or impaired
+cardiac function for \6 mo or moderate or severely
+impaired cardiac function
+d SBP 140-159 mmHg or DBP 90-99 mmHg
+d Adequately controlled hypertension
+d VTE with no risk factors for recurrence
+d Superficial venous thrombosis
+d Peripartum
+cardiomyopathy
+with
+normal
+or
+mildly
+impaired cardiac function for $6 mo
+Gastrointestinal conditions
+d Acute or flare of viral hepatitis
+d Severe or decompensated cirrhosis
+d Hepatocellular adenoma
+d Malignant liver tumor (hepatoma)
+d History of malabsorptive procedures (Roux-en-Y gastric
+bypass or biliopancreatic diversion)
+d Ulcerative colitis or Crohn disease with increased VTE risk#
+d Untreated or medically treated symptomatic gallbladder
+disease
+d History of COC-related cholestasis
+d Diabetes with nephropathy, retinopathy, neuropathy, other vascular disease, or with duration [ 20 y**
+d Current breast cancer
+d Migraine with aura
+d Systemic lupus erythematosus with positive or unknown
+antiphospholipid antibodies
+d Solid organ transplantation complicated by acute or
+chronic
+graft
+failure,
+rejection,
+or
+cardiac
+allograft
+vasculopathy
+d Past breast cancer with no evidence of disease for 5 y
+d Multiple sclerosis with prolonged immobility
+BP, Blood pressure; COC, combined oral contraceptives; VTE, venous thromboembolism.
+*Adapted from Curtis KM et al. Please refer to the US Medical Eligibility Criteria for Contraceptive Use 2016 for additional clarification,
+evidence, and comments related to important classification details on combined hormonal contraceptives.209
+yRisk factors include age $35 years, previous VTE, thrombophilia, immobility, transfusion at delivery, peripartum cardiomyopathy, body
+mass index $30 kg/m2, postpartum hemorrhage, post-Cesarean delivery, preeclampsia, or smoking.
+zRisk factors include history of estrogen-related VTE, pregnancy-related VTE, idiopathic VTE, known thrombophilia (including
+antiphospholipid syndrome), active cancer (metastatic, receiving therapy, or within 6 months after clinical remission) excluding
+nonmelanoma skin cancer, or history of recurrent VTE.
+xKnown thrombogenic mutations include factor V Leiden, prothrombin mutation, protein S deficiency, protein C deficiency, or anti-thrombin
+deficiency.
+kRisk factors include older age, smoking, diabetes mellitus, hypertension, low high-density lipoprotein, high low-density lipoprotein, or high
+triglycerides.
+{Complicated valvular heart disease includes pulmonary hypertension, risk for atrial fibrillation, or history of subacute bacterial endocarditis.
+#Risk factors include active or extensive disease, surgery, immobilization, corticosteroid use, vitamin deficiencies, or fluid depletion.
+**Classification as absolute (class 4) or relative (class 3) contraindication is assessed based on severity of diabetes-related complications.
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e14
+
+
+========== PAGE 15 ==========
+
+effectiveness.194,211,219,220
+Among
+anti-infectives,
+rifampin
+and
+griseofulvin
+have
+demonstrably
+reduced COC effectiveness.221 Concomitant use of
+spironolactone and drospirenone did not increase
+serum potassium or adverse effects requiring treat-
+ment discontinuation.222,223 COC is FDA-approved
+for female patients above age 14 years (drospire-
+none/EE,
+drosperinone/EE/levomefolate)
+or
+15
+years
+(norgestimate/EE,
+norethindrone/EE/
+ferrous fumarate). A new type of COC with drospir-
+enone/estetrol was approved by the FDA for contra-
+ception in 2021224; its use for acne was not evaluated
+in the current guidelines.
+Spironolactone
+Spironolactone is an aldosterone receptor antag-
+onist that decreases testosterone production and
+competitively inhibits testosterone and dihydrotes-
+tosterone binding to androgen receptors in the
+skin.225-228
+Spironolactone
+may
+also
+inhibit
+5a-reductase and increase steroid-hormone binding
+globulin.229,230 Spironolactone is not FDA-approved
+for the treatment of acne.
+We conditionally recommend spironolactone for
+acne treatment based on moderate certainty evidence
+from 8 studies (Table III and Supplementary Table LV,
+available via Mendeley at https://data.mendeley.
+com/datasets/z2bmdwwdf9/2).140-147 Compared to
+placebo combined with BP 2.5% alone at 12 weeks,
+a greater proportion of patients treated with spirono-
+lactone 50 mg daily combined with BP 2.5% achieved
+IGA success in a small RCT of 40 patients (75.0% vs
+30.0%; RR, 2.50 [1.22, 5.11]).140 Compared to vehicle
+at 12 weeks, a greater proportion of patients treated
+with spironolactone at daily doses ranging from 50-
+200 mg had improvement in patient global assess-
+ment in 2 small RCTs of 58 patients (77.4% vs 22.25;
+RR, 3.60 [1.75, 7.42]).141,142 A cohort study comparing
+acne patients starting treatment with spironolactone
+to those starting treatment with oral tetracycline-class
+antibiotics found similar rates of treatment effective-
+ness, as assessed by treatment switching, between the
+2 groups.231 Menstrual irregularities were commonly
+reported (40.6% vs 0%; RR, 10.89 [1.54, 77.08]),140,141
+may be dose-dependent,232 and are less common
+among those using COC.233 Common side effects also
+include diuresis, breast tenderness, breast enlarge-
+ment, gynecomastia, fatigue, headache, and dizzi-
+ness.234 Although spironolactone 50-100 mg/day
+showed a greater improvement in IGA at 12 weeks
+as well as acne-specific quality of life and patient
+global assessment at 24 weeks compared with pla-
+cebo in a recent RCT of 410 patients,235 it was
+published after the literature search was finalized for
+the current guidelines.’’
+The work group remarked that potassium moni-
+toring is of low usefulness without risk factors for
+hyperkalemia (eg, older age, medical co-morbidities,
+medications) based on very low certainty observa-
+tional studies.140-147 No significant changes in serum
+electrolytes were seen in 2 small RCT of spironolac-
+tone for acne treatment.140,141 In a large cohort study
+of 108,547 patients with acne who received spirono-
+lactone for $30 days, 0.22% received a hyperkalemia
+diagnosis and 0.03% discontinued spironolactone
+within 30 days after hyperkalemia diagnosis. A 4-
+year retrospective cohort study reported 6 cases of
+hyperkalemia during 291 patient-years of follow-up. A
+retrospective review of 974 women aged 18-45 years
+receiving spironolactone 50-200 mg daily for acne
+showed that 15 (0.8%) of the 1802 associated
+potassium measurements exceeded 5.0 mmol/L; all
+patients with hyperkalemia were asymptomatic and
+continued spironolactone treatment.145 In a cohort
+study of 139 male and female Japanese patients who
+received spironolactone for acne, with daily dose
+taper from 200 mg to 50 mg over 20 weeks, all 25
+patients in the subset who received potassium moni-
+toring had normal potassium levels in 32 weeks of
+follow-up.146 In a cohort study of 124 healthy women
+with baseline normal serum potassium level, 3 (2.4%)
+patients aged 42-47 years had incident hyperkalemia
+upon follow-up.147 Potassium monitoring should be
+considered in older patients; patients with medical co-
+morbidities such as hypertension, diabetes mellitus,
+chronic kidney disease, among others; and patients
+taking medications affecting renal, adrenal, and he-
+patic
+function,
+including
+angiotensin
+converting
+enzyme inhibitors, angiotensin receptor blockers,
+nonsteroidal anti-inflammatory drugs, digoxin, among
+others. Avoiding a diet high in potassium should be
+considered.236
+Spironolactone should not be used in pregnancy.
+Spironolactone crosses the placenta and exposure in
+utero in animal studies may cause feminization of a
+male fetus. Human data are based on limited case
+reports, with 5 cases resulting in normal male genital
+development and 1 case of ambiguous genitalia in a
+newborn of a mother treated with spironolactone
+until week 5 of gestation.237 Concurrent COC use is
+often indicated in treating acne with spironolactone.
+Spironolactone carries a warning on tumorige-
+nicity based on chronic toxicity studies in rats that
+were exposed to up to 150 times human doses of
+spironolactone
+or
+its
+metabolites.
+A
+systematic
+review of 7 studies of 4.5 million individuals showed
+no
+statistically
+signiﬁcant
+association
+between
+J AM ACAD DERMATOL
+MAY 2024
+1006.e15
+Reynolds et al
+
+
+========== PAGE 16 ==========
+
+spironolactone use in men and women above age
+18 years and risks of breast cancer (RR 1.04; 95%
+conﬁdence interval 0.86-1.22), ovarian cancer (1.52;
+0.84-2.20), bladder cancer (0.89; 0.71-1.07); kidney
+cancer
+(0.96;
+0.85-1.07),
+gastric
+cancer
+(1.02;
+0.80-1.24), or esophageal cancer (1.09; 0.91-1.27)
+based on low to very low certainty of evidence.238
+Spironolactone use is associated with decreased
+prostate cancer risk (0.79; 0.68-0.90) compared to
+non-users based on very low certainty of evidence.238
+Intralesional corticosteroid
+Intralesional corticosteroid therapy has been used
+as an adjuvant therapy for acne. Although there is
+limited clinical trial data evaluating intralesional
+corticosteroid injection for acne, in a small RCT of 9
+patients, most acne cysts injected with triamcinolone
+resolved within 3-7 days of the treatment, and those
+injected with triamcinolone resolved faster than
+those with saline control.239 In addition, intralesional
+corticosteroid injections are effective for a variety of
+other inflammatory skin conditions such as granu-
+loma annulare, hidradenitis suppurativa, inflamed
+epidermal cysts, and keloids.240-246 Together, these
+characteristics indirectly imply that intralesional
+corticosteroid injection can be a useful treatment
+option; therefore, the work group issued a good
+practice statement for intralesional corticosteroid
+injection use as an adjuvant therapy in patients
+with larger acne papules or nodules (Table III).
+Intralesional corticosteroid injections should be used
+judiciously for patients who are at risk of acne
+scarring and/or for rapid improvement in inflamma-
+tion and pain. Localized skin atrophy, systemic
+absorption
+of
+steroids,
+and
+possible
+adrenal
+suppression may occur.247 Using a lower concentra-
+tion and volume of corticosteroid (eg, triamcinolone
+2.5-5 mg/ml) can minimize the risks of local
+corticosteroid adverse events.248
+Considerations in hormonal agents
+Available evidence is insufﬁcient to develop a
+recommendation on the use of oral corticosteroids,
+ﬂutamide,
+or
+metformin
+for
+acne
+treatment
+(Supplementary Tables LXII-LXVIII, available via
+Mendeley at https://data.mendeley.com/datasets/
+z2bmdwwdf9/2). The 2016 AAD acne guidelines
+discussed the temporary use of oral corticosteroids
+for patients with severe inflammatory acne while
+starting standard acne treatment and low-dose oral
+corticosteroids for patients with adrenal hyperan-
+drogenism.3 Prednisone 0.5-1 mg/kg/day has been
+used to treat acne fulminans, isotretinoin-induced
+acne fulminans and to prevent isotretinoin-induced
+acne
+flares
+in
+at-risk
+patients.249,250
+However,
+long-term adverse effects of oral corticosteroids
+prohibit their use as a primary acne treatment.
+ISOTRETINOIN
+Oral isotretinoin, or 13-cis-retinoic acid, is the
+only FDA-approved treatment for severe recalcitrant
+nodular acne vulgaris since 1982. While the exact
+mechanism of action is unknown, isotretinoin
+reduces the size and secretion of sebaceous glands,
+decreases surface and ductal level of sebum-
+dependent C. acnes indirectly, inhibits comedogen-
+esis by normalizing keratinocyte keratinization, and
+possesses anti-inflammatory properties.251
+Despite the remarkable effectiveness of isotreti-
+noin observed in routine dermatology practice,
+clinical trial data regarding its efﬁcacy are limited
+and of low quality. In a RCT of 33 patients with
+treatment-resistant cystic and conglobate acne, mean
+number of cystic lesions decreased by 17% and 33%
+at 1 and 2 months of isotretinoin treatment, but
+increased by 33% and 58% at 1 and 2 months of
+placebo (Supplementary Table LXIX, available via
+Mendeley at https://data.mendeley.com/datasets/
+z2bmdwwdf9/2).252 Moreover, 13 of 17 patients
+receiving placebo switched to isotretinoin due to
+acne worsening.252 Earlier dose-response studies
+showed a significant improvement across all dosages
+(0.1, 0.5, and 1 mg/kg/day).253-255 In a RCT of 925
+patients comparing standard isotretinoin with lidose-
+isotretinoin, 81.0% of patients treated with standard
+isotretinoin experienced a 90% reduction in lesion
+count and 88.9% of patients treated with standard
+isotretinoin
+achieved
+treatment
+success
+after
+20 weeks of treatment.151 In another RCT of 60
+patients, the low-dose isotretinoin (5 mg daily)
+group had fewer total lesions compared to those in
+the vehicle group after 16 weeks of treatment (MD in
+total lesion counts, 5.4 [-8.91, 1.89]).256 Many
+global acne experts have agreed that isotretinoin is
+the most appropriate treatment option for those with
+severe or scarring acne.183,184,257-262 Together, these
+characteristics indirectly imply the excellent efficacy
+of isotretinoin; therefore, WG issued a good practice
+statement for isotretinoin use in patients with severe
+acne or in patients who have failed standard
+treatment with oral or topical therapy (Table III).
+The work group remarked that patients with acne
+who present with acne-related psychosocial burden
+and/or scarring should be considered candidates for
+isotretinoin
+treatment.
+Isotretinoin
+has
+been
+extensively used to treat mild to moderate acne
+that is refractory to other topical and oral therapies
+or
+that
+relapses
+quickly
+after
+discontinuation
+of oral antibiotics.148-150,263-265 Common adverse
+effects associated with isotretinoin involve the
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e16
+
+
+========== PAGE 17 ==========
+
+mucocutaneous, musculoskeletal, and ophthalmic
+systems and generally resolve following isotretinoin
+discontinuation with standard treatment courses.3
+Laboratory
+monitoring
+during
+isotretinoin
+treatment should include liver function tests, fasting
+lipid panel, and pregnancy test for patients with
+pregnancy
+potential
+and
+should
+not
+include
+complete blood count monitoring. While signiﬁcant
+heterogeneity exist among study deﬁnitions, data
+from 5 isotretinoin cohort studies estimated that risks
+of abnormal liver function tests above reference
+limits ranged from 0.8% to 10.4%, with 0.9% to
+4.7%
+requiring
+treatment
+discontinuation
+(Supplementary Table LXX, available via Mendeley
+at https://data.mendeley.com/datasets/z2bmdwwd
+f9/2).266-270 Data from 6 isotretinoin cohort studies
+estimated that the risks of abnormal triglycerides
+ranged from 7.1% to 39.0% and abnormal cholesterol
+levels ranged from 6.8% to 27.2% (Supplementary
+Table LXXI, available via Mendeley at https://
+data.mendeley.com/datasets/z2bmdwwdf9/2).266-271
+Data from 2 isotretinoin cohort studies estimated the
+risk of mild normocytic anemia as 0.4%, abnormal
+platelet level at 1.2% to 2.9%, and abnormal white
+blood cell count at 7.0% to 10.8% (Supplementary
+Table LXXII, available via Mendeley at https://data.
+mendeley.com/datasets/z2bmdwwdf9/2).269,270 No
+grade 3 or greater abnormalities in the complete
+blood count was observed.270 Prior meta-analyses of
+26 studies showed that the proportion of patients
+with laboratory abnormalities was low.272 A recent
+Delphi consensus study of 22 acne experts reached
+agreement on checking alanine aminotransferase
+and triglycerides prior to initiation and at peak
+isotretinoin dose and on not checking complete
+blood
+count,
+low-density
+lipoprotein
+or
+high-
+density
+lipoprotein.273
+Data
+on
+laboratory
+monitoring in patients treated with isotretinoin
+have been critically appraised, with little evidence
+to support the benefit of laboratory monitoring to
+detect adverse events.274
+For persons with pregnancy potential, pregnancy
+prevention is mandatory with isotretinoin treatment.
+After introduction of isotretinoin in the US in 1982,
+there were hundreds of reports of isotretinoin-
+exposed pregnancies that resulted in fetal congenital
+malformations.275 iPLEDGE is the current FDA-
+mandated Risk Evaluation and Mitigation Strategy
+aimed to prevent isotretinoin exposure in preg-
+nancy. All patients receiving isotretinoin are required
+to enroll in and adhere to iPLEDGE. Recent iPLEDGE
+modification in 2021 categorized patients into 2
+gender-neutral categories: patients who cannot
+become pregnant, per iPLEDGE definition, include
+a patient who has had a hysterectomy and/or
+bilateral oophorectomy, a patient who is post-
+menopausal, or a patient who was born with male
+reproductive organs. Patients who can become
+pregnant must adhere to complete abstinence or
+use 2 specified contraceptive methods at least
+1 month before, during, and 1 month after isotreti-
+noin treatment. Since the iPLEDGE implementation,
+approximately 150 isotretinoin-exposed pregnan-
+cies continue to occur in the US annually due to
+non-adherence
+with
+contraceptive
+require-
+ments.276,277 Among sexually active patients who
+reported non-adherence, 29% did not comply with
+consistent condom use and 39% missed 1 or more
+contraceptive pills in the previous month.277 Patients
+with
+pregnancy
+potential
+receiving
+isotretinoin
+should be carefully counseled regarding various
+contraceptive methods that are available and the
+specific requirements of the iPLEDGE system at each
+clinic visit. Long-acting reversible contraceptives,
+including intrauterine devices and contraceptive
+implants, should be considered as the primary con-
+traceptive method whenever clinically appropriate
+since they have higher effectiveness than COCs and
+condoms in reducing the risk of unintended preg-
+nancy and do not depend on ongoing patient
+efforts.278
+Population-based studies have not identiﬁed
+increased risk of neuropsychiatric conditions or
+IBD in patients with acne undergoing isotretinoin
+treatment (Supplementary Table LXIX, available
+via Mendeley at https://data.mendeley.com/data
+sets/z2bmdwwdf9/2).
+Available
+low
+certainty
+evidence from 7 observational studies with substan-
+tial heterogeneity do not support a significant
+association between isotretinoin use and IBD inci-
+dence, including ulcerative colitis and Crohn’s dis-
+ease.279-285
+The
+overall
+RR
+of
+IBD
+between
+isotretinoin-exposed and unexposed groups is esti-
+mated at 1.13 (95% confidence interval, 0.89,
+1.43).279-285
+Neuropsychiatric
+adverse
+effects,
+including changes in mood, depression, anxiety,
+suicidal ideation and completed suicide have been
+sporadically reported in patients receiving isotreti-
+noin, including with positive challenge/dechallenge,
+suggesting
+a
+potential
+causal
+association.286,287
+However, available low certainty evidence from 4
+observational studies with substantial heterogeneity
+do not support a significant association between
+isotretinoin use and neuropsychiatric adverse effect
+incidence.288-291 The overall RR of adverse neuro-
+psychiatric adverse effects between isotretinoin-
+exposed and unexposed group is estimated at 0.88
+(95% confidence interval 0.77-1.00).288-291 Multiple
+studies indicate that isotretinoin may improve quality
+of life and decrease symptoms of anxiety and
+J AM ACAD DERMATOL
+MAY 2024
+1006.e17
+Reynolds et al
+
+
+========== PAGE 18 ==========
+
+depression in patients with moderate to severe acne,
+which could reduce overall risks of neuropsychiatric
+adverse events at a population level.292-294 However,
+given high prevalence of depression, anxiety and
+suicidal ideation/suicide in the general population,
+and especially the adolescent population who may
+be candidates for isotretinoin therapy, clinicians
+should monitor for depression, anxiety, suicidal
+ideation/suicidality,
+and
+other
+neuropsychiatric
+adverse effects and individualize therapeutic de-
+cisions based on individual differences in response
+to isotretinoin. Notably, the US Preventive Service
+Task Force recommends screening for depression in
+adults291 and in adolescents aged 12-18 years295 and
+recommends screening for anxiety in adolescents
+aged 8-18 years,296 regardless of exposure to
+isotretinoin, each with grade B recommendations
+that concludes with moderate certainty that such
+screening yields moderate net benefits. The Patient
+Health
+Questionnaire-2
+and
+Patient
+Health
+Questionnaire-9 have been proposed as efficient
+and validated instruments for depression screening
+with isotretinoin treatment.297
+We conditionally recommend daily dosing over
+intermittent dosing of isotretinoin based on low
+certainty evidence from 3 RCTs (Supplementary
+Table LXXIII, available via Mendeley at https://
+data.mendeley.com/datasets/z2bmdwwdf9/2).148-150
+Greater reductions in global acne grading system
+score (MD, 1.75 [3.38, 0.12]), inflammatory
+lesion counts (MD, 3.87 [5.57, 2.17]), and non-
+inflammatory lesion counts (MD, 4.53 [6.89,
+2.17]) were seen in daily dosing (0.5-0.7 mg/kg
+daily) versus intermittent dosing of isotretinoin (0.5-
+0.7 mg/kg daily for 1 week out of every 4 weeks) at
+24 weeks in an RCT of 33 patients.150 Withdrawal due
+to adverse effects were more common with daily
+dosing than intermittent dosing (6.7% vs 0%).150
+We conditionally recommend either standard iso-
+tretinoin or lidose-isotretinoin based on high certainty
+evidence from 1 study (Supplementary Table LXXIV,
+available via Mendeley at https://data.mendeley.
+com/datasets/z2bmdwwdf9/2).151 Standard isotreti-
+noin has better bioavailability when taken with a high
+fat meal, whereas the bioavailability of lidose-isotret-
+inoin is less affected by whether it is taken with food.
+In an RCT of 782 patients, lidose-isotretinoin showed
+non-inferiority in reducing facial and truncal nodular
+lesions and in the proportion of patients achieving
+$90% reduction of total lesions at 20 weeks (76.9% vs
+81.0%; RR, 0.95 [0.88, 1.02]).151 No significant differ-
+ences in adverse effects or treatment withdrawal was
+noted.151 Both formulations are available as branded
+generic prescriptions in the US.
+Additional potential adverse effects, such as
+cardiovascular risk, bone mineralization, scarring,
+and S. aureus colonization, were addressed in
+the 2016 acne guidelines. Expert consensus from
+the American Society of Dermatologic Surgery
+concluded that there is insufficient evidence to justify
+delaying treatment with superficial chemical peels
+and nonablative lasers, including hair removal lasers
+and lights, vascular lasers, and nonablative fractional
+devices for patients currently receiving or recently
+received
+isotretinoin.298
+Full-face
+dermabrasion,
+mechanical dermabrasion with rotary devices, and
+ablative laser treatment of the entire face or
+non-facial regions are not recommended within
+6 months of isotretinoin use due to increased risks
+of adverse events.298
+Available evidence is insufﬁcient to directly
+compare
+between
+traditional
+dosage
+(0.5mg-
+1.0 mg/kg/day) and low-dosage (\0.5 mg/kg/day)
+isotretinoin regimens, between isotretinoin with
+systemic antibiotics with or without topical thera-
+pies, and between isotretinoin alone and isotretinoin
+with topical agents (Supplementary Tables LXXV-
+LXXX,
+available
+via
+Mendeley
+at
+https://data.
+mendeley.com/datasets/z2bmdwwdf9/2). Although
+available evidence was insufficient to make a formal
+recommendation, a few small studies have suggested
+that low-dose regimens may be associated with
+similar efficacy and rates of relapse compared to
+higher-dose regimens.150,254,255
+PHYSICAL MODALITIES
+Physical modalities examined included acne lesion
+extraction, chemical peels, laser and light-based de-
+vices, microneedle radiofrequency
+devices, and
+photodynamic therapy. Available evidence is insufﬁ-
+cient to develop a recommendation on the use of
+acne
+lesion/comedo
+extraction,
+chemical
+peels
+(including glycolic acid, trichloroacetic acid, salicylic
+acid, Jessner’s solution, or mandelic acid), laser and
+light-based devices (including 585-595 nm pulsed dye
+laser, neodymium-doped yttrium aluminum garnet
+laser, 1450 diode laser, potassium titanyl phosphate
+laser, infrared light-emitting diode, 635-670 nm red
+light, combined 420 nm blue light and 660 nm red
+light, 589 nm/1319 nm laser, or intense pulsed light),
+microneedle radiofrequency device, or photody-
+namic
+therapy
+with
+aminolevulinic
+acid
+for
+the
+treatment
+of
+acne
+(Supplementary
+Tables
+LXXXI-CLIX, available via Mendeley at https://
+data.mendeley.com/datasets/z2bmdwwdf9/2).
+We
+conditionally recommend against adding pneumatic
+broadband light to adapalene 0.3% gel based on
+low certainty evidence from 1 study (Table III
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e18
+
+
+========== PAGE 19 ==========
+
+and
+Supplementary
+Table
+CLX,
+available
+via
+Mendeley
+at
+https://data.mendeley.com/datasets/
+z2bmdwwdf9/2).152 Adding pneumatic broadband
+light to adapalene did not reduce acne lesion counts
+and was associated with risks of hyperpigmentation
+and purpura.152 The 1726 nm laser was cleared by the
+FDA for acne treatment in 2022299,300; its evidence
+was not evaluated in the current guidelines due to
+lack of a RCT.
+COMPLEMENTARY/ALTERNATIVE
+THERAPIES
+Complementary and alternative therapies exam-
+ined include botanical or plant-derived agents and
+vitamins.
+Available
+evidence
+is
+insufﬁcient
+to
+develop a recommendation on the use of topical
+tea tree oil, topical green tea, topical witch hazel, oral
+pantothenic acid, oral or topical zinc, oral or topical
+niacinamide for acne treatment (Supplementary
+Tables CLXI-CLXXIII, available via Mendeley at
+https://data.mendeley.com/datasets/z2bmdwwdf9/2).
+DIET
+Available evidence is conﬂicting on low-glycemic-
+load
+diet
+for
+acne
+treatment
+(Supplementary
+Tables CLXXIV-CLXXVI, available via Mendeley at
+https://data.mendeley.com/datasets/z2bmdwwdf9/2).
+A greater reduction in facial acne score was seen in a
+low-glycemic-load diet versus a high-glycemic-load
+diet at 8 weeks in an RCT of 45 patients (MD in
+change from baseline, 0.3 [0.39, 0.21]).301 One
+RCT of 32 Korean patients showed improvement in
+the Leeds Revised Acne score at 12 weeks in a
+low-glycemic-load diet group, but not in control
+group.247 A greater reduction in total lesion count
+was seen in a low-glycemic-load diet versus a high-
+glycemic-load diet at 12 weeks in an RCT of 43
+Australian patients (MD in change from baseline,
+8.1 [14.89, 1.31])302 However, in an RCT of 84
+patients, the addition of a low-glycemic diet in
+patients starting BP 2.5% gel did not result in
+significant differences in acne lesion counts.303
+Available evidence is insufficient to develop a
+recommendation on the use of low dairy diet, low
+whey diet, omega-3 fatty acids, and chocolate on
+acne treatment.
+GAPS IN RESEARCH AND STUDY
+LIMITATIONS
+These guidelines identiﬁed important evidence
+gaps on the use of microbiology and endocrinology
+testing in acne, the use of systemic antibiotics
+beyond tetracycline-class antibiotics, physical mo-
+dalities, complementary and alternative therapies,
+dietary interventions for the treatment of acne,
+and cost-effectiveness of acne treatments. RCT with
+long-term follow-up and comparative effectiveness
+research are necessary to examine and compare
+patient-centered
+acne
+treatment
+outcomes.
+Increased use of active comparator trials are needed
+when multiple interventions exist within a treatment
+class, such as among topical retinoids and topical
+antibiotics.304,305 Additional research is needed on
+optimizing value of laboratory monitoring for pa-
+tients receiving spironolactone and isotretinoin. A
+list of interventions and comparisons of interven-
+tions identified, evaluated, and not considered to be
+viable candidates for recommendation development
+due
+to
+insufficient
+evidence
+is
+available
+in
+Supplementary
+Table
+CLXXVII,
+available
+via
+Mendeley at https://data.mendeley.com/datasets/
+z2bmdwwdf9/2.
+Tailoring acne management in diverse popula-
+tions will require incorporation of diversity, equity,
+and inclusion efforts in the acne research pipeline.
+Women, patients of color, and sexual and gender
+minority patients may be disproportionately affected
+by acne.21,306-308 Many acne RCT specify contracep-
+tive requirements and exclusion criteria related to
+hormone therapy.309 To optimize acne care in
+patients with pregnancy potential and LGBTQ
+1 patients, future acne research should incorporate
+ongoing national efforts to collect high-quality in-
+formation about sex, gender identity, and sexual
+orientation and to examine real-life acne treatment
+effects by including patients with variations in con-
+traceptive use and hormone therapy status.309-311
+Additional research on the safety and efficacy of acne
+treatments in the context of pregnancy and lactation
+are required.174,312
+Patients with skin of color may disproportionately
+suffer from acne sequelae, including acne-induced
+hyperpigmentation and keloidal scarring, which may
+be under-appreciated or undertreated by clini-
+cians.307 A systematic review of the treatments of
+acne-associated hyperpigmentation and scarring fall
+beyond the scope of these guidelines but is an area of
+important work. In addition to early treatment of
+acne, common treatments for acne-induced hyper-
+pigmentation include topical retinoids, azelaic acid,
+hydroquinone, and physical modalities such as
+lasers and chemical peels. Common treatments for
+keloidal scars include topical silicone, intralesional
+corticosteroids, or lasers. A recent systematic review
+of 55 studies on acne in skin of color was unable to
+draw firm conclusions to guide distinct decisions in
+acne practice in patients with skin of color.307 Only 4
+of 55 studies evaluated acne outcomes in Fitzpatrick
+skin types IV to VI. The lack of research represen-
+tation was most notable among Black, African
+J AM ACAD DERMATOL
+MAY 2024
+1006.e19
+Reynolds et al
+
+
+========== PAGE 20 ==========
+
+American, and Afro-Caribbean patients. Expanding
+diversity and inclusion of acne RCT will be critical to
+examine acne treatment in patients with skin of
+color.
+This guideline is developed based on analysis of
+the best available data at the time it was conducted.
+The results of future studies may necessitate revision
+of
+current
+recommendations.
+Study
+limitations
+included the pragmatic decision to limit the literature
+review to English language, which may have
+excluded relevant data published in other languages.
+Due to the large scope of the review using Grading of
+Recommendations, Assessment, Development, and
+Evaluation methodology, the analysis included only
+RCTs, which may have limited identiﬁcation of
+relevant long-term follow-up data.
+SUMMARY
+Analysis of the evidence from this systematic
+review based on 9 clinical questions resulted in 18
+evidence-based recommendations and 5 good prac-
+tice statements for the treatment of acne. Strong
+recommendations are made for benzoyl peroxide,
+topical retinoids, and topical antibiotics, as well as
+for oral doxycycline. Oral isotretinoin is strongly
+recommended for acne that is severe, causing
+psychosocial burden or scarring, or failing standard
+oral or topical therapy. Conditional recommenda-
+tions are made for topical clascoterone, salicylic acid,
+azelaic acid, as well as for oral minocycline,
+sarecycline,
+COC
+pills,
+and
+spironolactone.
+Combining topical therapies with multiple mecha-
+nisms of action, limiting systemic antibiotic use,
+combining
+systemic
+antibiotics
+with
+topical
+therapies, and adding intralesional corticosteroid
+injections for larger acne lesions are recommended
+as good practice statements (Table III).
+We thank Peter A. Lio, MD for his contributions to
+establishing the scope of the acne guideline update and
+David A. Castillo and Charniel McDaniels for helping with
+data extraction and full text article procurement.
+Conﬂicts of interest
+Rachel V.S. Reynolds, MD, Carol E. Cheng, MD, Kelly
+Druby, Megha M. Tollefson, MD, and Jung Min Han,
+PharmD, MS, have no relationships to disclose. Howa
+Yeung, MD, MS, serves as an investigator for American
+Acne & Rosacea Society, Department of Veterans Affairs,
+and National Institutes of Health receiving grants and
+research funding; as an independent contractor for
+American Academy of Dermatology and Journal of the
+American Medical Association receiving fees; as a speaker/
+faculty educator for Dermatology Digest receiving hono-
+raria. Fran Cook-Bolden, MD, serves as an advisory board
+member for AbbVie, Dermavant Sciences, Inc., Galderma
+Global, Novartis, Ortho Dermatologics, and Pﬁzer Inc.
+receiving
+honoraria;
+as
+an
+investigator
+for
+Arcutis
+Biotherapeutics receiving grant and research funding; as
+a speaker for Galderma Laboratories, LP, Journey Medical
+Corporation, and Ortho Dermatologics receiving honorar-
+ia; as others for Topix Pharmaceuticals, Inc. receiving other
+ﬁnancial beneﬁt. Seemal R. Desai, MD, serves an advisory
+board member for Foundation for Research & Education of
+Dermatology receiving fees; as a consultant for AbbVie,
+Allergan, Inc, Almirall, Amgen, Apogee, Avita, Ballature
+Beauty, Beiersdorf, Inc., Bristol-Myers Squibb, Candela
+Corporation, Cassiopea S.p.A., Castle Biosciences, Cutera,
+Inc., Dermavant Sciences, Dermira, Eli Lilly and Company,
+EPI Health, Ferndale Laboratories, Inc., Foamix, Galderma
+Laboratories, LP, Gore Range Capital, Hyphens Pharma,
+Incyte Corporation, Janssen Pharmaceuticals, Inc, Johnson
+and Johnson, Leo Pharma Inc., L’Oreal USA Inc., Lyceum
+Health,
+Ortho
+Dermatologics,
+Pﬁzer
+Inc.,
+Revision
+Skincare,
+Sanoﬁ/Regeneron,
+Scientis,
+Skin
+Science
+Advisors, UCB, Verrica Pharmaceuticals Inc., and VYNE
+Therapeutics receiving fees, honoraria, and/or stock op-
+tions; as an investigator for AOBiome, LLC, Atacama
+Therapeutics, Dermavant Sciences, Incyte Corporation,
+and SkinMedica, Inc. receiving grants and research fund-
+ing;
+as
+a
+speaker
+for
+AbbVie,
+Dermira,
+Galderma
+Laboratories, LP., and Pﬁzer Inc. receiving fees; as a
+stockholder for Gore Range Capital; as other role for
+Medscape receiving fees. Esther E. Freeman, MD, PhD,
+serves as an investigator for International League of
+Dermatologic Societies and National Institutes of Health
+receiving grants and research funding; as an author for
+UptoDate, Inc. and British Journal of Dermatology,
+receiving honoraria or salary; as a speaker for Harvard
+University. Jonette E. Keri, MD, PhD, serves as an advisory
+board
+member
+for
+Ortho
+Dermatologics
+receiving
+honoraria; as a consultant for Almirall receiving fees; as
+an investigator for Galderma USA receiving grants and
+research funding; as a speaker for Foamix Pharmaceuticals
+Ltd and VYNE Therapeutics receiving honoraria. Linda F.
+Stein Gold, MD, serves as an advisory board member
+for
+AbbVie,
+Almirall,
+Aqua,
+Dermavant
+Sciences,
+Foamix,
+Galderma
+Laboratories,
+L.P.,
+GlaxoSmith
+Kline, Incyte Corporation, La Roche-Posay Laboratorie
+Pharmaceutique,
+LEO
+Pharma,
+US,
+Lilly
+ICOS
+LLC,
+Merz
+Pharmaceuticals,
+LLC,
+Pﬁzer
+Inc.,
+Promius
+Pharmaceuticals, Sanoﬁ/Regeneron, Taro Pharm, and
+Valeant Pharmaceuticals International receiving honoraria;
+as
+a
+consultant
+for
+AnaptysBio,
+BMS,
+Botanix
+Pharmaceuticals,
+Cutera,
+Inc.,
+Incyte
+Corporation,
+Janssen Scientiﬁc Affairs, LLC, Sol-Gel Technologies, Taro
+Pharm, The Acne Store, and UCB receiving honoraria or
+grants and research funding; as an investigator for AbbVie,
+Allergan, Inc., AnaptysBio, Galderma Laboratories, L.P.,
+Leo Pharma Inc., Novartis Pharmaceuticals Corp., Pﬁzer
+Inc., Topica, and Valeant Pharmaceuticals International
+receiving grants and research funding; as a speaker for
+Actavis, Almirall, BMS, Dermira, Pﬁzer Inc., Sanoﬁ/
+Regeneron,
+Sun
+Pharmaceutical
+Industries
+Ltd.,
+and
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e20
+
+
+========== PAGE 21 ==========
+
+VYNE Therapeutics receiving honoraria. Jerry K. L. Tan,
+MD, serves as an advisory board member for Abbott
+Laboratories, Cutera, Inc., Galderma Laboratories, L.P,
+and Sun Pharmaceutical Industries Ltd receiving honoraria
+or grants and research funding; as a consultant for Bausch
+Health, Boots, Galderma Research & Development, LLC,
+and Loreal Research and Innovation receiving honoraria;
+as an independent contractor for Norvatis receiving fees; as
+an investigator for Allergan, AnaptysBio, Cutera, Inc., Eli
+Lilly and Co., Galderma Laboratories, L.P, Lilly ICOS LLC,
+Pﬁzer, and UCB for receiving grants and research funding;
+as a speaker for Bausch Health, LEO Laboratories Ltd (LEO
+Pharma), and Vichy Laboratories receiving honoraria.
+Jonathan S. Weiss, MD, serves as an advisory board
+member for Bristol-Myers Squibb, Dermavant Sciences,
+Foamix, Galderma Laboratories, L.P., Incyte Corporation,
+Novartis, and UCB receiving honoraria; as a consultant for
+Arcutis, Inc., Biofrontera, Cutera, Inc., Leo Pharma Inc,
+Ortho Dermatologics, and UCB receiving fees or honorar-
+ia;
+as
+an
+investigator
+for
+AbbVie,
+Bausch
+Health,
+Biofrontera,
+Bristol-Myers
+Squibb,
+Cutera,
+Inc.,
+Dermavant Sciences, Foamix, Galderma Laboratories,
+L.P., LEO Pharma, Mindera, Moberg Pharma North,
+America LLC, Novartis, Palvella Therapeutics, and Verrica
+Pharmaceuticals Inc receiving grants and research funding;
+as
+a
+speaker
+for
+AbbVie,
+Arcutis,
+Inc.,
+Galderma
+Laboratories, L.P., Ortho Dermatologics, Regeneron, and
+SanoﬁGenzyme receiving honoraria. Peggy A. Wu, MD,
+serves as others for UptoDate, Inc. receiving honoraria.
+Andrea L. Zaenglein, MD, serves as a consultant for Church
+& Dwight Co., Inc. and UCB receiving fees or honoraria; as
+an
+investigator
+for
+AbbVie,
+Arcutis
+Biotherapeutics,
+Biofrontera AG, Galderma Laboratories, L.P., and Incyte
+Corporation receiving grants and research funding. John S.
+Barbieri, MD, MBA serves as investigator for National
+Institutes of Health and National Psoriasis Foundation
+receiving grants and research funding.
+REFERENCES
+1. Lim HW, Collins SAB, Resneck JS Jr, et al. The burden of skin
+disease in the United States. J Am Acad Dermatol. 2017;76:
+958-972.e2.
+2. Chen H, Zhang TC, Yin XL, et al. Magnitude and temporal
+trend of acne vulgaris burden in 204 countries and territories
+from 1990 to 2019: an analysis from the global burden of
+disease study 2019. Br J Dermatol. 2022;186:673-683.
+3. Zaenglein AL, Pathy AL, Schlosser BJ, et al. Guidelines of care
+for the management of acne vulgaris. J Am Acad Dermatol.
+2016;74:945-973.e33.
+4. Eichenfield LF, Krakowski AC, Piggott C, et al. Evidence-based
+recommendations
+for the diagnosis and treatment of
+pediatric acne. Pediatrics. 2013;131(Suppl 3):S163-S186.
+5. Andrews J, Guyatt G, Oxman AD, et al. GRADE guidelines: 14.
+Going from evidence to recommendations: the significance
+and presentation of recommendations. J Clin Epidemiol. 2013;
+66:719-725.
+6. Andrews JC, Schunemann HJ, Oxman AD, et al. GRADE
+guidelines: 15. Going from evidence to recommendation-
+determinants of a recommendation’s direction and strength.
+J Clin Epidemiol. 2013;66:726-735.
+7. Guyatt GH, Alonso-Coello P, Schunemann HJ, et al. Guideline
+panels should seldom make good practice statements:
+guidance from the GRADE Working Group. J Clin Epidemiol.
+2016;80:3-7.
+8. Eichenfield DZ, Sprague J, Eichenfield LF. Management of
+acne vulgaris: a review. JAMA. 2021;326:2055-2067.
+9. Hay RJ, Johns NE, Williams HC, et al. The global burden of skin
+disease in 2010: an analysis of the prevalence and impact of
+skin conditions. J Invest Dermatol. 2014;134:1527-1534.
+10. Bhate K, Williams HC. Epidemiology of acne vulgaris. Br J
+Dermatol. 2013;168:474-485.
+11. Karimkhani C, Dellavalle RP, Coffeng LE, et al. Global
+skin disease morbidity and mortality: an update from the
+global burden of disease study 2013. JAMA Dermatol. 2017;
+153:406-412.
+12. White GM. Recent findings in the epidemiologic evidence,
+classification, and subtypes of acne vulgaris. J Am Acad
+Dermatol. 1998;39:S34-S37.
+13. Fabbrocini G, Cacciapuoti S, Monfrecola G. A qualitative
+investigation of the impact of acne on health-related quality
+of life (HRQL): development of a conceptual model. Dermatol
+Ther. 2018;8:85-99.
+14. Barbieri JS, Fulton R, Neergaard R, Nelson MN, Barg FK,
+Margolis DJ. Patient perspectives on the lived experience of
+acne and its treatment among adult women with acne: a
+qualitative study. JAMA Dermatol. 2021;157:1040-1046.
+15. Mallon E, Newton JN, Klassen A, Stewart-Brown SL, Ryan TJ,
+Finlay AY. The quality of life in acne: a comparison with
+general medical conditions using generic questionnaires. Br J
+Dermatol. 1999;140:672-676.
+16. Cresce ND, Davis SA, Huang WW, Feldman SR. The quality of
+life impact of acne and rosacea compared to other major
+medical conditions. J Drugs Dermatol. 2014;13:692-697.
+17. Gupta MA, Gupta AK. Depression and suicidal ideation in
+dermatology patients with acne, alopecia areata, atopic
+dermatitis and psoriasis. Br J Dermatol. 1998;139:846-850.
+18. Magin P, Adams J, Heading G, Pond D, Smith W. Experiences
+of appearance-related teasing and bullying in skin diseases
+and their psychological sequelae: results of a qualitative
+study. Scand J Caring Sci. 2008;22:430-436.
+19. Ritvo E, Del Rosso JQ, Stillman MA, La Riche C. Psychosocial
+judgements and perceptions of adolescents with acne
+vulgaris: a blinded, controlled comparison of adult and
+peer evaluations. Biopsychosoc Med. 2011;5:11.
+20. Purvis D, Robinson E, Merry S, Watson P. Acne, anxiety,
+depression and suicide in teenagers: a cross-sectional survey
+of New Zealand secondary school students. J Paediatr Child
+Health. 2006;42:793-796.
+21. Heng AHS, Chew FT. Systematic review of the epidemiology
+of acne vulgaris. Sci Rep. 2020;10:5754.
+22. Layton AM, Whitehouse H, Eady EA, Cowdell F, Warburton KL,
+Fenton M. Prioritizing treatment outcomes: how people with
+acne vulgaris decide if their treatment is working. J Evid
+Based Med. 2017;10:163-170.
+23. U.S. Department of Health and Human Services, Food and
+Drug
+Administration,
+Center
+for
+Drug
+Evaluation
+and
+Research (CDER). Guidance for Industry. Acne Vulgaris:
+Developing Drugs for Treatment. Silver Spring; 2005.
+24. O’Brien S, Lewis J, Cunliffe W. The Leeds revised acne grading
+system. J Dermatol Treat. 1998;9:215-220.
+25. Doshi A, Zaheer A, Stiller MJ. A comparison of current acne
+grading systems and proposal of a novel system. Int J
+Dermatol. 1997;36:416-418.
+26. Dreno B, Poli F, Pawin H, et al. Development and evaluation
+of a global acne severity scale (GEA scale) suitable for
+J AM ACAD DERMATOL
+MAY 2024
+1006.e21
+Reynolds et al
+
+
+========== PAGE 22 ==========
+
+France and Europe. J Eur Acad Dermatol Venereol. 2011;25:
+43-48.
+27. Tan JK, Tang J, Fung K, et al. Development and validation of a
+comprehensive acne severity scale. J Cutan Med Surg. 2007;
+11:211-216.
+28. Patel DP, Bernardis E, Yan AC. The patient-centered acne
+severity scale study. Pediatr Dermatol. 2017;34:656-660.
+29. Bernardis E, Shou H, Barbieri JS, et al. Development and initial
+validation of a multidimensional acne global grading system
+integrating primary lesions and secondary changes. JAMA
+Dermatol. 2020;156:296-302.
+30. Cho SI, Yang JH, Suh DH. Analysis of trends and status of
+physician-based evaluation methods in acne vulgaris from
+2000 to 2019. J Dermatol. 2021;48:42-48.
+31. Stein Gold L, Tan J, Kircik L. Evolution of acne assessments
+and impact on acne medications: an evolving, imperfect
+paradigm. J Drugs Dermatol. 2016;15:79-86.
+32. Tan JK, Jones E, Allen E, Pripotnev S, Raza A, Wolfe B.
+Evaluation of essential clinical components and features of
+current acne global grading scales. J Am Acad Dermatol.
+2013;69:754-761.
+33. Tan J, Wolfe B, Weiss J, et al. Acne severity grading:
+determining essential clinical components and features
+using a Delphi consensus. J Am Acad Dermatol. 2012;67:
+187-193.
+34. Gottlieb A, Salame N, Armstrong AW, et al. A provider global
+assessment quality measure for clinical practice for inflam-
+matory skin disorders. J Am Acad Dermatol. 2019;80:823-828.
+35. Becker M, Wild T, Zouboulis CC. Objective assessment of
+acne. Clin Dermatol. 2017;35:147-155.
+36. Chernyshov PV, Zouboulis CC, Tomas-Aragones L, et al.
+Quality of life measurement in acne. Position paper of the
+European Academy of Dermatology and Venereology task
+forces on quality of life and patient oriented outcomes and
+acne, rosacea and hidradenitis suppurativa. J Eur Acad
+Dermatol Venereol. 2018;32:194-208.
+37. Marron SE, Chernyshov PV, Tomas-Aragones L. Quality-of-Life
+research in acne vulgaris: current status and future directions.
+Am J Clin Dermatol. 2019;20:527-538.
+38. Hopkins ZH, Thiboutot D, Homsi HA, Perez-Chada LM,
+Barbieri JS. Patient-reported outcome measures for health-
+related quality of life in patients with acne vulgaris: a
+systematic review of measure development and measure-
+ment properties. JAMA Dermatol. 2022;158:900-911.
+39. Fitz-Gibbon S, Tomida S, Chiu BH, et al. Propionibacterium
+acnes strain populations in the human skin microbiome
+associated with acne. J Invest Dermatol. 2013;133:2152-2160.
+40. Miura Y, Ishige I, Soejima N, et al. Quantitative PCR of
+Propionibacterium acnes DNA in samples aspirated from
+sebaceous follicles on the normal skin of subjects with or
+without acne. J Med Dent Sci. 2010;57:65-74.
+41. Akaza N, Akamatsu H, Numata S, et al. Microorganisms
+inhabiting follicular contents of facial acne are not only
+Propionibacterium but also Malassezia spp. J Dermatol. 2016;
+43:906-911.
+42. Jusuf NK, Putra IB, Sari L. Differences of microbiomes found in
+non-inflammatory and inflammatory lesions of acne vulgaris.
+Clin Cosmet Investig Dermatol. 2020;13:773-780.
+43. Dreno B, Martin R, Moyal D, Henley JB, Khammari A, Seite S.
+Skin microbiome and acne vulgaris: staphylococcus, a new
+actor in acne. Exp Dermatol. 2017;26:798-803.
+44. Kim J, Park T, Kim HJ, An S, Sul WJ. Inferences in microbial
+structural signatures of acne microbiome and mycobiome. J
+Microbiol. 2021;59:369-375.
+45. Numata S, Akamatsu H, Akaza N, Yagami A, Nakata S,
+Matsunaga K. Analysis of facial skin-resident microbiota in
+Japanese acne patients. Dermatology. 2014;228:86-92.
+46. Ergin C, Ergin S, Kaleli I, Kac¸ar N, Seng€ul M, Erdogan BS.
+Nasal antibiotic-resistant Propionibacterium acnes carriage
+in acne vulgaris patients in Turkey. J Dermatol. 2006;33:
+899-901.
+47. Schafer F, Fich F, Lam M, Garate C, Wozniak A, Garcia P.
+Antimicrobial susceptibility and genetic characteristics of
+Propionibacterium acnes isolated from patients with acne. Int
+J Dermatol. 2013;52:418-425.
+48. Franik G, Bizon A, W1och S, Kowalczyk K, Biernacka-Bartnik A,
+Madej P. Hormonal and metabolic aspects of acne vulgaris in
+women with polycystic ovary syndrome. Eur Rev Med
+Pharmacol Sci. 2018;22:4411-4418.
+49. Kiayani AJ, Rehman FU. Association of serum testosterone
+and sex hormone binding globulin levels in females with
+acne based on its severity. J Ayub Med Coll Abbottabad. 2016;
+28:357-359.
+50. Martin KA, Anderson RR, Chang RJ, et al. Evaluation and
+treatment of hirsutism in premenopausal women: an endo-
+crine society clinical practice guideline. J Clin Endocrinol
+Metab. 2018;103:1233-1257.
+51. Seirafi H, Farnaghi F, Vasheghani-Farahani A, et al. Assess-
+ment of androgens in women with adult-onset acne. Int J
+Dermatol. 2007;46:1188-1191.
+52. Schmidt JB, Lindmaier A, Spona J. Endocrine parameters in
+acne vulgaris. Endocrinol Exp. 1990;24:457-464.
+53. Lucky AW, McGuire J, Rosenfield RL, Lucky PA, Rich BH.
+Plasma androgens in women with acne vulgaris. J Invest
+Dermatol. 1983;81:70-74.
+54. Timpatanapong P, Rojanasakul A. Hormonal profiles and
+prevalence of polycystic ovary syndrome in women with
+acne. J Dermatol. 1997;24:223-229.
+55. Arora MK, Seth S, Dayal S. The relationship of lipid profile and
+menstrual cycle with acne vulgaris. Clin Biochem. 2010;43:
+1415-1420.
+56. Abulnaja KO. Changes in the hormone and lipid profile of
+obese adolescent Saudi females with acne vulgaris. Braz J
+Med Biol Res. 2009;42:501-505.
+57. Saleh BO. Role of growth hormone and insulin-like growth
+factor-I in hyperandrogenism and the severity of acne
+vulgaris in young males. Saudi Med J. 2012;33:1196-1200.
+58. Tyring SK, Kircik LH, Pariser DM, Guenin E, Bhatt V, Pillai R.
+Novel tretinoin 0.05% lotion for the once-daily treatment of
+moderate-to-severe acne vulgaris: assessment of efficacy and
+safety in patients aged 9 years and older. J Drugs Dermatol
+JDD. 2018;17(10):1084-1091.
+59. Thiboutot D, Pariser DM, Egan N, et al. Adapalene gel 0.3%
+for the treatment of acne vulgaris: a multicenter, random-
+ized, double-blind, controlled, phase III trial. J Am Acad
+Dermatol. 2006;54:242-250.
+60. Shalita AR, Chalker DK, Griffith RF, et al. Tazarotene gel is safe
+and effective in the treatment of acne vulgaris: a multicenter,
+double-blind, vehicle-controlled study. Cutis. 1999;63:349-
+354.
+61. Tanghetti EA, Werschler WP, Lain T, Guenin E, Martin G,
+Pillai R. Tazarotene 0.045% lotion for once-daily treatment of
+moderate-to-severe acne vulgaris: results from two phase 3
+trials. J Drugs Dermatol. 2020;19:70-77.
+62. Tan J, Thiboutot D, Popp G, et al. Randomized phase 3
+evaluation of trifarotene 50 mug/g cream treatment of
+moderate facial and truncal acne. J Am Acad Dermatol.
+2019;80(6):1691-1699.
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e22
+
+
+========== PAGE 23 ==========
+
+63. Webster GF, Sugarman J, Levy-Hacham O, Toledano O.
+Microencapsulated benzoyl peroxide and tretinoin for the
+treatment
+of
+acne
+vulgaris:
+results
+from
+a
+phase
+2
+multicenter, double-blind, randomized, vehicle-controlled
+study. Skinmed. 2020;18(6):343-351.
+64. Gollnick HP, Draelos Z, Glenn MJ, et al. Adapalene-benzoyl
+peroxide, a unique fixed-dose combination topical gel for the
+treatment of acne vulgaris: a transatlantic, randomized,
+double-blind, controlled study in 1670 patients. Br J Derma-
+tol. 2009;161:1180-1189.
+65. Kawashima M, Hashimoto H, Alio Saenz AB, Ono M,
+Yamada
+M.
+Is
+benzoyl
+peroxide
+3%
+topical
+gel
+effective and safe in the treatment of acne vulgaris in
+Japanese patients? A multicenter, randomized, double-
+blind, vehicle-controlled, parallel-group study. J Dermatol.
+2014;41(9):795-801.
+66. Eichenfield LF, Alio Saenz AB. Safety and efficacy of clinda-
+mycin phosphate 1.2%-benzoyl peroxide 3% fixed-dose
+combination gel for the treatment of acne vulgaris: a phase
+3,
+multicenter,
+randomized,
+double-blind,
+active-
+and
+vehicle-controlled study. J Drugs Dermatol. 2011;10:1382-
+1396.
+67. Smith EB, Padilla RS, McCabe JM, Becker LE. Benzoyl peroxide
+lotion (20 percent) in acne. Cutis. 1980;25:90-92.
+68. Chalker DK, Shalita A, Smith JG, Swann RW. A double-blind
+study of the effectiveness of a 3% erythromycin and 5%
+benzoyl peroxide combination in the treatment of acne
+vulgaris. J Am Acad Dermatol. 1983;9:933-936.
+69. Lookingbill DP, Chalker DK, Lindholm JS, et al. Treatment of
+acne with a combination clindamycin/benzoyl peroxide gel
+compared with clindamycin gel, benzoyl peroxide gel and
+vehicle gel: combined results of two double-blind investiga-
+tions. J Am Acad Dermatol. 1997;37:590-595.
+70. Hughes BR, Norris JF, Cunliffe WJ. A double-blind evaluation
+of topical isotretinoin 0.05%, benzoyl peroxide gel 5% and
+placebo in patients with acne. Clin Exp Dermatol. 1992;17:
+165-168.
+71. Jarratt MT, Brundage T. Efficacy and safety of clindamycin-
+tretinoin gel versus clindamycin or tretinoin alone in acne
+vulgaris:
+a
+randomized,
+double-blind,
+vehicle-controlled
+study. J Drugs Dermatol. 2012;11:318-326.
+72. Trifu V, Tiplica GS, Naumescu E, Zalupca L, Moro L, Celasco G.
+Cortexolone
+17alpha-propionate
+1%
+cream,
+a
+new
+potent antiandrogen for topical treatment of acne vulgaris.
+A pilot randomized, double-blind comparative study vs.
+placebo and tretinoin 0.05% cream. Br J Dermatol. 2011;
+165:177-183.
+73. Baldwin HE, Green LJ, Kircik L, Guenin EP, Forest AL, Pillai R.
+Tazarotene 0.045% lotion for moderate-to-severe acne in
+male and female participants: a phase II post-hoc analysis. J
+Clin Aesthet Dermatol. 2021;14:E53-E60.
+74. Lain E, Day D, Harper J, Guenin E. Tretinoin 0.05% lotion for
+the once-daily treatment of moderate-to-severe acne vulga-
+ris: impact of gender and Race on efficacy and safety. J Drugs
+Dermatol. 2019;18(11):1128-1138.
+75. Green LJ, Del Rosso JQ, Tanghetti EA, Guenin E. Tazarotene
+0.045% lotion for moderate-to-severe acne patients: pooled
+phase 3 analysis by age and sex. J Drugs Dermatol. 2021;
+20(6):608-615.
+76. Stein Gold L, Pariser DM, Guenin E. Tretinoin 0.05% lotion for
+the once-daily treatment of moderate and severe acne
+vulgaris in females: effect of age on efficacy and tolerability.
+J Drugs Dermatol. 2019;18(12):1218-1225.
+77. Paracha MM, Ullah I, Zahoor H, Kammal K. Efficacy and safety
+of short term use of 0.1% tazarotene gel in the treatment of
+mild to moderate acne vulgaris: a randomized-vehicle
+controlled trial. J Postgrad Med Inst. 2020;34(2):134-138.
+78. Alirezai M, George SA, Coutts I, et al. Daily treatment with
+adapalene gel 0.1% maintains initial improvement of acne
+vulgaris previously treated with oral lymecycline. Eur J
+Dermatol. 2007;17:45-51.
+79. Glass D, Boorman GC, Stables GI, Cunliffe WJ, Goode K. A
+placebo-controlled clinical trial to compare a gel containing a
+combination of isotretinoin (0.05%) and erythromycin (2%)
+with gels containing isotretinoin (0.05%) or erythromycin
+(2%) alone in the topical treatment of acne vulgaris.
+Dermatology (Basel, Switzerland). 1999;199:242-247.
+80. Tanghetti EA, Kircik LH, Green LJ, et al. A phase 2,
+multicenter, double-blind, randomized, vehicle-controlled
+clinical study to compare the safety and efficacy of a novel
+tazarotene 0.045% lotion and tazarotene 0.1% cream in the
+treatment of moderate-to-severe acne vulgaris. J Drugs
+Dermatol. 2019;18(6):542.
+81. Chalker DK, Lesher JL, Smith JG, et al. Efficacy of topical
+isotretinoin 0.05% gel in acne vulgaris: results of a multi-
+center, double-blind investigation. J Am Acad Dermatol. 1987;
+17:251-254.
+82. Harper JC, Baldwin H, Stein Gold L, Guenin E. Efficacy and
+tolerability of a novel tretinoin 0.05% lotion for the once-
+daily treatment of moderate or severe acne vulgaris in adult
+females. J Drugs Dermatol. 2019;18(11):1147-1154.
+83. Lucky AW, Maloney JM, Roberts J, et al. Dapsone gel 5% for
+the treatment of acne vulgaris: safety and efficacy of long-
+term (1 year) treatment. J Drugs Dermatol. 2007;6:981-987.
+84. Eichenfield LF, Lain T, Frankel EH, et al. Efficacy and safety of
+once-daily dapsone gel, 7.5% for treatment of adolescents
+and adults with acne vulgaris: second of two identically
+designed, large, multicenter, randomized, vehicle-controlled
+trials. J Drugs Dermatol. 2016;15(8):962-969.
+85. Stein Gold LF, Jarratt MT, Bucko AD, et al. Efficacy and safety
+of once-daily dapsone gel, 7.5% for treatment of adolescents
+and adults with acne vulgaris: first of two identically
+designed, large, multicenter, randomized, vehicle-controlled
+trials. J Drugs Dermatol. 2016;15(5):553-561.
+86. Alexis A, Del Rosso JQ, Desai SR, et al. BPX-01 minocycline
+topical gel shows promise for the treatment of moderate-
+tosevere inflammatory acne vulgaris. J Clin Aesthet Dermatol.
+2018;11(11):25-35.
+87. Raoof TJ, Hooper D, Moore A, et al. Efficacy and safety of a
+novel topical minocycline foam for the treatment of moder-
+ate to severe acne vulgaris: a phase 3 study. J Am Acad
+Dermatol. 2020;82(4):832-837.
+88. Pochi PE, Bagatell FK, Ellis CN, et al. Erythromycin 2 percent
+gel in the treatment of acne vulgaris. Cutis. 1988;41:132-136.
+89. Dobson RL, Belknap BS. Topical erythromycin solution in
+acne: results of a multiclinic trial. J Am Acad Dermatol. 1980;3:
+478-482.
+90. Bernstein JE, Shalita AR. Topically applied erythromycin in
+inflammatory acne vulgaris. J Am Acad Dermatol. 1980;2:318-
+321.
+91. Lesher JL, Chalker DK, Smith JG, et al. An evaluation of a 2%
+erythromycin ointment in the topical therapy of acne
+vulgaris. J Am Acad Dermatol. 1985;12:526-531.
+92. Becker LE, Bergstresser PR, Whiting DA, et al. Topical
+clindamycin therapy for acne vulgaris. A cooperative clinical
+study. Arch Dermatol. 1981;117:482-485.
+93. Hebert A, Thiboutot D, Stein Gold L, et al. Efficacy and safety
+of topical clascoterone cream, 1%, for treatment in patients
+with facial acne: two phase 3 randomized clinical trials. JAMA
+Dermatology. 2020;156(6):621-630.
+J AM ACAD DERMATOL
+MAY 2024
+1006.e23
+Reynolds et al
+
+
+========== PAGE 24 ==========
+
+94. Mazzetti A, Moro L, Gerloni M, Cartwright M. A phase 2b,
+randomized, double-blind vehicle controlled, dose escalation
+study evaluating clascoterone 0.1%, 0.5%, and 1% topical
+cream in subjects with facial. Acne. 2019;1:570.
+95. Shalita AR. Treatment of mild and moderate acne vulgaris
+with salicylic acid in an alcohol-detergent vehicle. Cutis. 1981;
+28:556-558, 561.
+96. Cunliffe WJ, Holland KT. Clinical and laboratory studies on
+treatment with 20% azelaic acid cream for acne. Acta Derm
+Venereol Suppl. 1989;143:31-34.
+97. Katsambas A, Graupe K, Stratigos J. Clinical studies of 20%
+azelaic acid cream in the treatment of acne vulgaris. Com-
+parison with vehicle and topical tretinoin. Acta Derm Venereol
+Suppl. 1989;143:35-39.
+98. Iraji F, Sadeghinia A, Shahmoradi Z, Siadat AH, Jooya A.
+Efficacy of topical azelaic acid gel in the treatment of mild-
+moderate acne vulgaris. Indian J Dermatol Venereol Leprol.
+2007;73:94-96.
+99. Stein Gold L, Baldwin H, Kircik LH, et al. Efficacy and safety of
+a fixed-dose clindamycin phosphate 1.2%, benzoyl peroxide
+3.1%, and adapalene 0.15% gel for moderate-to-severe acne:
+a randomized phase II study of the first triple-combination
+drug. Am J Clin Dermatol. 2022;23(1):93-104.
+100. Harper JC. The efficacy and tolerability of a fixed combination
+clindamycin (1.2%) and benzoyl peroxide (3.75%) aqueous
+gel in patients with facial acne vulgaris: gender as a clinically
+relevant outcome variable. J Drugs Dermatol. 2015;14(4):381-
+384.
+101. Pariser DM, Rich P, Cook-Bolden FE, Korotzer A. An aqueous
+gel fixed combination of clindamycin phosphate 1.2% and
+benzoyl peroxide 3.75% for the once-daily treatment of
+moderate to severe acne vulgaris. J Drugs Dermatol. 2014;
+13(9):1083-1089.
+102. Cook-Bolden FE. Efficacy and tolerability of a fixed combina-
+tion of clindamycin phosphate (1.2%) and benzoyl peroxide
+(3.75%) aqueous gel in moderate or severe adolescent acne
+vulgaris. J Clin Aesthet Dermatol. 2015;8(5):28-32.
+103. Gold MH, Korotzer A. Sub-group analyses from a trial of a fixed
+combination of clindamycin phosphate 1.2% and benzoyl
+peroxide 3.75% gel for the treatment of moderate-to-severe
+acne vulgaris. J Clin Aesthet Dermatol. 2015;8(12):22-26.
+104. Stein Gold L. Efficacy and tolerability of a fixed combination
+of clindamycin phosphate (1.2%) and benzoyl peroxide
+(3.75%) aqueous gel in moderate and severe acne vulgaris
+subpopulations. J Drugs Dermatol. 2015;14(9):969-974.
+105. Guerra-Tapia A. Effects of benzoyl peroxide 5% clindamycin
+combination gel versus adapalene 0.1% on quality of life in
+patients with mild to moderate acne vulgaris: a randomized
+single-blind study. J Drugs Dermatol. 2012;11:714-722.
+106. Langner A, Chu A, Goulden V, Ambroziak M. A randomized,
+single-blind comparison of topical clindamycin 1 benzoyl
+peroxide and adapalene in the treatment of mild to moder-
+ate facial acne vulgaris. Br J Dermatol. 2008;158:122-129.
+107. Dogra S, Sumathy TK, Nayak C, et al. Efficacy and safety
+comparison of combination of 0.04% tretinoin microspheres
+plus 1% clindamycin versus their monotherapy in patients
+with acne vulgaris: a phase 3, randomized, double-blind
+study. J Dermatolog Treat. 2021;32(8):925-933.
+108. Tanghetti E, Dhawan S, Green L, et al. Clinical evidence for
+the role of a topical anti-inflammatory agent in comedonal
+acne: findings from a randomized study of dapsone gel 5% in
+combination with tazarotene cream 0.1% in patients with
+acne vulgaris. J Drugs Dermatol. 2011;10:783-792.
+109. Dreno B, Bissonnette R, Gagne-Henley A, et al. Prevention
+and reduction of atrophic acne scars with adapalene
+0.3%/benzoyl peroxide 2.5% gel in subjects with moderate
+or severe facial acne: results of a 6-month randomized,
+vehicle-controlled trial using intra-individual comparison. Am
+J Clin Dermatol. 2018;19(2):275-286.
+110. Weiss J, Gold LS, Leoni M, Rueda MJ, Liu H, Tanghetti E.
+Customized single-agent therapy management of severe
+inflammatory acne: a randomized, double-blind, parallel-
+group, controlled study of a new treatment - adapalene
+0.3%-benzoyl peroxide 2.5% gel. J Drugs Dermatol. 2015;
+14(12):1427-1435.
+111. Stein Gold L, Weiss J, Rueda MJ, Liu H, Tanghetti E. Moderate
+and severe inflammatory acne vulgaris effectively treated
+with single-agent therapy by a new fixed-dose combination
+adapalene 0.3 %/benzoyl peroxide 2.5 % gel: a randomized,
+double-blind, parallel-group, controlled study. Am J Clin
+Dermatol. 2016;17(3):293-303.
+112. Stein Gold L, Werschler WP, Mohawk J. Adapalene/benzoyl
+peroxide gel 0.3%/2.5%: effective acne therapy regardless of
+age or gender. J Drugs Dermatol. 2017;16(6):582-589.
+113. Kwon HH, Park SY, Yoon JY, Min S, Suh DH. Do tutorials on
+application method enhance adapalene-benzoyl peroxide
+combination gel tolerability in the treatment of acne? J
+Dermatol. 2015;42(11):1058-1065.
+114. Margolis DJ, Fanelli M, Hoffstad O, Lewis JD. Potential
+association between the oral tetracycline class of antimicro-
+bials used to treat acne and inflammatory bowel disease. Am
+J Gastroenterol. 2010;105:2610-2616.
+115. Skidmore
+R,
+Kovach
+R,
+Walker
+C,
+et
+al.
+Effects
+of
+subantimicrobial-dose doxycycline in the treatment of mod-
+erate acne. Arch Dermatol. 2003;139:459-464.
+116. Leyden JJ, Bruce S, Lee CS, et al. A randomized, phase 2,
+dose-ranging study in the treatment of moderate to severe
+inflammatory facial acne vulgaris with doxycycline calcium. J
+Drugs Dermatol. 2013;12:658-663.
+117. Moore A, Ling M, Bucko A, Manna V, Rueda MJ. Efficacy and
+safety of subantimicrobial dose, modified-release doxycy-
+cline 40 mg versus doxycycline 100 mg versus placebo for
+the treatment of inflammatory lesions in moderate and
+severe acne: a randomized, double-blinded, controlled study.
+J Drugs Dermatol. 2015;14:581-586.
+118. Plewig G, Petrozzi JW, Berendes U. Double-blind study of
+doxycycline in acne vulgaris. Arch Dermatol. 1970;101:435-
+438.
+119. Fleischer AB Jr, Dinehart S, Stough D, Plott RT, Solodyn Phase
+2 Study G, Solodyn Phase 3 Study G. Safety and efficacy of a
+new extended-release formulation of minocycline. Cutis.
+2006;78:21-31.
+120. StewartDM,TorokHM,WeissJS,PlottRT,SolodynPhase2Study
+G. Dose-ranging efficacy of new once-daily extended-release
+minocycline for acne vulgaris. Cutis. 2006;78:11-20.
+121. Leyden J, Bergfeld W, Drake L, et al. A systemic type 15-
+reductase inhibitor is ineffective in the treatment of acne
+vulgaris. J Am Acad Dermatol. 2004;50:443-447.
+122. Hersle K, Gisslen H. Minocycline in acne vulgaris: a double-
+blind study. Curr Ther Res Clin Exp. 1976;19:339-342.
+123. Moore A, Green LJ, Bruce S, et al. Once-daily oral sarecycline
+1.5 mg/kg/day is effective for moderate to severe acne
+vulgaris: results from two identically designed, phase 3,
+randomized, double-blind clinical trials. J Drugs Dermatol.
+2018;17:987-996.
+124. Leyden JJ, Sniukiene V, Berk DR, Kaoukhov A. Efficacy and
+safety of sarecycline, a novel, once-daily, narrow spectrum
+antibiotic for the treatment of moderate to severe facial acne
+vulgaris: results of a phase 2, dose-ranging study. J Drugs
+Dermatol. 2018;17:333-338.
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e24
+
+
+========== PAGE 25 ==========
+
+125. Pariser DM, Green LJ, Lain EL, et al. Safety and tolerability of
+sarecycline for the treatment of acne vulgaris: results from a
+phase III, multicenter, open-Label study and a phase I
+phototoxicity study. J Clin Aesthet Dermatol. 2019;12:E53-E62.
+126. Maleszka R, Turek-Urasinska K, Oremus M, Vukovic J, Barsic B.
+Pulsed azithromycin treatment is as effective and safe as 2-
+week-longer daily doxycycline treatment of acne vulgaris: a
+randomized, double-blind, noninferiority study. Skinmed.
+2011;9:86-94.
+127. Babaeinejad S, Khodaeiani E, Fouladi RF. Comparison of
+therapeutic effects of oral doxycycline and azithromycin in
+patients with moderate acne vulgaris: what is the role of age?
+J Dermatol Treat. 2011;22:206-210.
+128. Ullah G, Noor SM, Bhatti Z, Ahmad M, Bangash AR. Compar-
+ison of oral azithromycin with oral doxycycline in the
+treatment of acne vulgaris. J Ayub Med Coll Abbottabad.
+2014;26:64-67.
+129. Kus S, Yucelten D, Aytug A. Comparison of efficacy of
+azithromycin vs. doxycycline in the treatment of acne
+vulgaris. Clin Exp Dermatol. 2005;30:215-220.
+130. Maloney JM, Dietze P Jr, Watson D, et al. Treatment of acne
+using
+a
+3-milligram
+drospirenone/20-microgram
+ethinyl
+estradiol oral contraceptive administered in a 24/4 regimen:
+a randomized controlled trial. Obstet Gynecol. 2008;112:773-
+781.
+131. Thiboutot D, Archer DF, Lemay A, Washenik K, Roberts J,
+Harrison DD. A randomized, controlled trial of a low-dose
+contraceptive containing 20 microg of ethinyl estradiol and
+100 microg of levonorgestrel for acne treatment. Fertil Steril.
+2001;76:461-468.
+132. Leyden J, Shalita A, Hordinsky M, Swinyer L, Stanczyk FZ,
+Weber ME.Efficacy ofa low-doseoralcontraceptive containing
+20microgofethinylestradioland100microgof levonorgestrel
+for the treatment of moderate acne: a randomized, placebo-
+controlled trial. J Am Acad Dermatol. 2002;47:399-409.
+133. Redmond GP, Olson WH, Lippman JS, Kafrissen ME, Jones TM,
+Jorizzo JL. Norgestimate and ethinyl estradiol in the treat-
+ment of acne vulgaris: a randomized, placebo-controlled trial.
+Obstet Gynecol. 1997;89:615-622.
+134. Lucky
+AW,
+Henderson
+TA,
+Olson
+WH,
+Robisch
+DM,
+Lebwohl M, Swinyer LJ. Effectiveness of norgestimate and
+ethinyl estradiol in treating moderate acne vulgaris. J Am
+Acad Dermatol. 1997;37:746-754.
+135. Palombo-Kinne E, Schellschmidt I, Schumacher U, Graser T.
+Efficacy of a combined oral contraceptive containing 0.030
+mg ethinylestradiol/2 mg dienogest for the treatment of
+papulopustular acne in comparison with placebo and 0.035
+mg ethinylestradiol/2 mg cyproterone acetate. Contracep-
+tion. 2009;79:282-289.
+136. Maloney JM Arbit D, Flack M, McLaughlin-Miley C, Sevilla C,
+Derman R. Use of low-dose oral contraceptive containing
+norethindrone acetate and ethinyl estradiol in the treatment
+of moderate acne vulgaris. Clin J Wom Health. 2001;1:123-131.
+137. Koltun W, Lucky AW, Thiboutot D, et al. Efficacy and safety of
+3 mg drospirenone/20 mcg ethinylestradiol oral contracep-
+tive administered in 24/4 regimen in the treatment of acne
+vulgaris: a randomized, double-blind, placebo-controlled
+trial. Contraception. 2008;77:249-256.
+138. Plewig G, Cunliffe WJ, Binder N, Hoschen K. Efficacy of an oral
+contraceptive containing EE 0.03 mg and CMA 2 mg (Belara) in
+moderate
+acne
+resolution:
+a
+randomized,
+double-blind,
+placebo-controlled phase III trial. Contraception. 2009;80:25-33.
+139. Katz HI, Kempers S, Akin MD, Dunlap F, Whiting D,
+Norbart
+TC.
+Effect
+of
+a
+desogestrel-containing
+oral
+contraceptive on the skin. Eur J Contracept Reprod Health
+Care. 2000;5:248-255.
+140. Patiyasikunt M, Chancheewa B, Asawanonda P, Noppakun N,
+Kumtornrut C. Efficacy and tolerability of low-dose spirono-
+lactone and topical benzoyl peroxide in adult female acne: a
+randomized, double-blind, placebo-controlled trial. J Derma-
+tol. 2020;47:1411-1416.
+141. Goodfellow A, Alaghband-Zadeh J, Carter G, et al. Oral
+spironolactone improves acne vulgaris and reduces sebum
+excretion. Br J Dermatol. 1984;111:209-214.
+142. Muhlemann MF, Carter GD, Cream JJ, Wise P. Oral spirono-
+lactone: an effective treatment for acne vulgaris in women. Br
+J Dermatol. 1986;115:227-232.
+143. Barbieri JS, Margolis DJ, Mostaghimi A. Temporal trends and
+clinician variability in potassium monitoring of healthy young
+women treated for acne with spironolactone. JAMA Derma-
+tol. 2021;157:296-300.
+144. Grandhi R, Alikhan A. Spironolactone for the treatment of acne:
+a 4-year retrospective study. Dermatology. 2017;233:141-144.
+145. Plovanich M, Weng QY, Mostaghimi A. Low usefulness of
+potassium monitoring among healthy young women taking
+spironolactone for acne. JAMA Dermatol. 2015;151:941-944.
+146. Sato K, Matsumoto D, Iizuka F, et al. Anti-androgenic therapy
+using oral spironolactone for acne vulgaris in Asians.
+Aesthetic Plast Surg. 2006;30:689-694.
+147. Thiede RM, Rastogi S, Nardone B, et al. Hyperkalemia in
+women with acne exposed to oral spironolactone: a retro-
+spective study from the RADAR (Research on Adverse Drug
+Events and Reports) program. Int J Womens Dermatol. 2019;5:
+155-157.
+148. Agarwal US, Besarwal RK, Bhola K. Oral isotretinoin in
+different dose regimens for acne vulgaris: a randomized
+comparative trial. Indian J Dermatol Venereol Leprol. 2011;77:
+688-694.
+149. Akman A, Durusoy C, Senturk M, Koc CK, Soyturk D, Alpsoy E.
+Treatment of acne with intermittent and conventional iso-
+tretinoin: a randomized, controlled multicenter study. Arch
+Dermatol Res. 2007;299:467-473.
+150. Lee JW, Yoo KH, Park KY, et al. Effectiveness of conventional,
+low-dose and intermittent oral isotretinoin in the treatment
+of acne: a randomized, controlled comparative study. Br J
+Dermatol. 2011;164:1369-1375.
+151. Webster GF, Leyden JJ, Gross JA. Results of a phase III,
+double-blind,
+randomized,
+parallel-group,
+non-inferiority
+study evaluating the safety and efficacy of isotretinoin-
+Lidose in patients with severe recalcitrant nodular acne. J
+Drugs Dermatol. 2014;13:665-670.
+152. Tangjaturonrusamee C, Rattanaumpawan P, Ditre CM. Com-
+parison of pneumatic broadband light plus adapalene gel
+0.3% versus adapalene gel 0.3% monotherapy in the
+treatment of mild to moderate acne. Cutis. 2016;98(1):56-61.
+153. Shalita A, Weiss JS, Chalker DK, et al. A comparison of the
+efficacy and safety of adapalene gel 0.1% and tretinoin gel
+0.025% in the treatment of acne vulgaris: a multicenter trial. J
+Am Acad Dermatol. 1996;34:482-485.
+154. Lucky AW, Cullenb SI, Jarratt MT, Quigley JW. Comparative
+efficacy and safety of two 0.025% tretinoin gels: results from
+a multicenter, double-blind, parallel study. J Am Acad
+Dermatol. 1998;38:S17-S23.
+155. Harper JC, Roberts WE, Zeichner JA, Guenin E, Bhatt V,
+Pillai R. Novel tretinoin 0.05% lotion for the once-daily
+treatment of moderate-to-severe acne vulgaris: assessment
+of safety and tolerability in subgroups. J Dermatol Treat.
+2020;31(2):160-167.
+J AM ACAD DERMATOL
+MAY 2024
+1006.e25
+Reynolds et al
+
+
+========== PAGE 26 ==========
+
+156. Dunlap FE, Mills OH, Tuley MR, Baker MD, Plott RT. Adapalene
+0.1% gel for the treatment of acne vulgaris: its superiority
+compared to tretinoin 0.025% cream in skin tolerance and
+patient preference. Br J Dermatol. 1998;139(Suppl 52):17-22.
+157. Kakita L. Tazarotene versus tretinoin or adapalene in the
+treatment of acne vulgaris. J Am Acad Dermatol. 2000;43:S51-
+S54.
+158. Webster GF, Berson D, Stein LF, Fivenson DP, Tanghetti EA,
+Ling M. Efficacy and tolerability of once-daily tazarotene 0.1%
+gel versus once-daily tretinoin 0.025% gel in the treatment of
+facial acne vulgaris: a randomized trial. Cutis. 2001;67:4-9.
+159. Galvin SA, Gilbert R, Baker M, Guibal F, Tuley MR. Compar-
+ative tolerance of adapalene 0.1% gel and six different
+tretinoin formulations. Br J Dermatol. 1998;139(Suppl 52):
+34-40.
+160. Pedace FJ, Stoughton R. Topical retinoic acid in acne vulgaris.
+Br J Dermatol. 1971;84:465-469.
+161. Christiansen JV, Gadborg E, Ludvigsen K, et al. Topical
+tretinoin, vitamin A acid (Airol) in acne vulgaris. A controlled
+clinical trial. Dermatol. 1974;148:82-89.
+162. Cunliffe WJ, Caputo R, Dreno B, et al. Clinical efficacy and
+safety comparison of adapalene gel and tretinoin gel in the
+treatment of acne vulgaris: Europe and U.S. multicenter trials.
+J Am Acad Dermatol. 1997;36:S126-S134.
+163. Krishnan G. Comparison of two concentrations of tretinoin
+solution in the topical treatment of acne vulgaris. Practi-
+tioner. 1976;216:106-109.
+164. Cunliffe WJ, Dodman B, Ead R. Benzoyl peroxide in acne.
+Practitioner. 1978;220:479-482.
+165. Fulton JE Jr, Farzad-Bakshandeh A, Bradley S. Studies on the
+mechanism of action to topical benzoyl peroxide and vitamin
+A acid in acne vulgaris. J Cutan Pathol. 1974;1:191-200.
+166. Fyrand O, Jakobsen HB. Water-based versus alcohol-based
+benzoyl peroxide preparations in the treatment of acne
+vulgaris. Dermatol. 1986;172:263-267.
+167. Mills OH Jr, Kligman AM, Pochi P, Comite H. Comparing 2.5%,
+5%, and 10% benzoyl peroxide on inflammatory acne
+vulgaris. Int J Dermatol. 1986;25:664-667.
+168. Mills O Jr, Thornsberry C, Cardin CW, Smiles KA, Leyden JJ.
+Bacterial resistance and therapeutic outcome following three
+months of topical acne therapy with 2% erythromycin gel
+versus its vehicle. Acta Derm Venereol. 2002;82:260-265.
+169. Dubina MI, Fleischer AB Jr. Interaction of topical sulfaceta-
+mide and topical dapsone with benzoyl peroxide. Arch
+Dermatol. 2009;145:1027-1029.
+170. Parry MF, Rha CK. Pseudomembranous colitis caused by
+topical clindamycin phosphate. Arch Dermatol. 1986;122:583-
+584.
+171. Yentzer BA, Ade RA, Fountain JM, et al. Simplifying regimens
+promotes greater adherence and outcomes with topical acne
+medications: a randomized controlled trial. Cutis. 2010;86:
+103-108.
+172. Rosette C, Agan FJ, Mazzetti A, Moro L, Gerloni M. Cortex-
+olone 17alpha-propionate (clascoterone) is a novel androgen
+receptor antagonist that inhibits production of lipids and
+inflammatory cytokines from sebocytes in vitro. J Drugs
+Dermatol. 2019;18:412-418.
+173. Kircik LH. Efficacy and safety of azelaic acid (AzA) gel 15% in
+the treatment of post-inflammatory hyperpigmentation and
+acne: a 16-week, baseline-controlled study. J Drugs Dermatol.
+2011;10:586-590.
+174. Murase JE, Heller MM, Butler DC. Safety of dermatologic
+medications in pregnancy and lactation: part I. Pregnancy. J
+Am Acad Dermatol. 2014;70:401.e1-401.e14; quiz 15.
+175. Ly S, Kamal K, Manjaly P, Barbieri JS, Mostaghimi A. Treat-
+ment of acne vulgaris during pregnancy and lactation: a
+Narrative review. Dermatol Ther. 2023;13:115-130.
+176. Perret LJ, Tait CP. Non-antibiotic properties of tetracyclines
+and their clinical application in dermatology. Australas J
+Dermatol. 2014;55:111-118.
+177. Barbieri
+JS,
+Bhate
+K,
+Hartnett
+KP,
+Fleming-Dutra
+KE,
+Margolis
+DJ.
+Trends
+in
+oral
+antibiotic
+prescription
+in
+dermatology, 2008 to 2016. JAMA Dermatol. 2019;155:
+290-297.
+178. Centers for Disease Control and Prevention. Outpatient
+Antibiotic Prescriptions d United States, 2022. Updated
+November 15, 2025..
+Accessed January 18, 2024. https://
+www.cdc.gov/antibiotic-use/data/report-2022.html
+179. Margolis DJ, Fanelli M, Kupperman E, et al. Association of
+pharyngitis with oral antibiotic use for the treatment of acne:
+a cross-sectional and prospective cohort study. Arch Derma-
+tol. 2012;148:326-332.
+180. Bartlett
+JG,
+Chang
+TW,
+Gurwith
+M,
+Gorbach
+SL,
+Onderdonk AB. Antibiotic-associated pseudomembranous
+colitis due to toxin-producing clostridia. N Engl J Med.
+1978;298:531-534.
+181. Carroll KC, Bartlett JG. Biology of Clostridium difficile:
+implications for epidemiology and diagnosis. Annu Rev
+Microbiol. 2011;65:501-521.
+182. Sanchez GV, Fleming-Dutra KE, Roberts RM, et al. Core
+elements of outpatient antibiotic stewardship. MMWR Re-
+comm Rep. 2016;65(6):1-12.
+183. Nast A, Dreno B, Bettoli V, et al. European evidence-based
+(S3) guideline for the treatment of acne - update 2016 -
+short version. J Eur Acad Dermatol Venereol. 2016;30:
+1261-1268.
+184. Oon HH, Wong SN, Aw DCW, Cheong WK, Goh CL, Tan HH.
+Acne management guidelines by the Dermatological Society
+of Singapore. J Clin Aesthet Dermatol. 2019;12:34-50.
+185. Gold LS, Cruz A, Eichenfield L, et al. Effective and safe
+combination therapy for severe acne vulgaris: a randomized,
+vehicle-controlled, double-blind study of adapalene 0.1%-
+benzoyl peroxide 2.5% fixed-dose combination gel with
+doxycycline hyclate 100 mg. Cutis. 2010;85:94-104.
+186. Leyden J, Thiboutot DM, Shalita AR, et al. Comparison of
+tazarotene and minocycline maintenance therapies in acne
+vulgaris: a multicenter, double-blind, randomized, parallel-
+group study. Arch Dermatol. 2006;142:605-612.
+187. Tan J, Stein Gold L, Schlessinger J, et al. Short-term combination
+therapy and long-term relapse prevention in the treatment of
+severe acne vulgaris. J Drugs Dermatol. 2012;11:174-180.
+188. Thiboutot DM, Shalita AR, Yamauchi PS, et al. Adapalene gel,
+0.1%, as maintenance therapy for acne vulgaris: a random-
+ized, controlled, investigator-blind follow-up of a recent
+combination study. Arch Dermatol. 2006;142:597-602.
+189. Moon SH, Roh HS, Kim YH, Kim JE, Ko JY, Ro YS. Antibiotic
+resistance of microbial strains isolated from Korean acne
+patients. J Dermatol. 2012;39:833-837.
+190. Toossi P, Farshchian M, Malekzad F, Mohtasham N, Kimyai-
+Asadi A. Subantimicrobial-dose doxycycline in the treatment
+of moderate facial acne. J Drugs Dermatol. 2008;7:1149-1152.
+191. Ozolins M, Eady EA, Avery AJ, et al. Comparison of five
+antimicrobial regimens for treatment of mild to moderate
+inflammatory facial acne vulgaris in the community: rando-
+mised controlled trial. Lancet. 2004;364:2188-2195.
+192. Arowojolu AO, Gallo MF, Lopez LM, Grimes DA. Combined
+oral contraceptive pills for treatment of acne. Cochrane
+Database Syst Rev. 2012;6:CD004425.
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e26
+
+
+========== PAGE 27 ==========
+
+193. Arrington EA, Patel NS, Gerancher K, Feldman SR. Combined
+oral contraceptives for the treatment of acne: a practical
+guide. Cutis. 2012;90:83-90.
+194. Harper JC. Should dermatologists prescribe hormonal con-
+traceptives for acne? Dermatol Ther. 2009;22:452-457.
+195. Rabe T, Kowald A, Ortmann J, Rehberger-Schneider S.
+Inhibition of skin 5 alpha-reductase by oral contraceptive
+progestins in vitro. Gynecol Endocrinol. 2000;14:223-230.
+196. Barbieri JS, Mitra N, Margolis DJ, Harper CC, Mostaghimi A,
+Abuabara K. Influence of contraception class on incidence and
+severity of acne vulgaris. Obstet Gynecol. 2020;135:1306-1312.
+197. Lortscher D, Admani S, Satur N, Eichenfield LF. Hormonal
+contraceptives and acne: a retrospective analysis of 2147
+patients. J Drugs Dermatol. 2016;15:670-674.
+198. Davtyan
+C.
+Four
+Generations
+of
+Progestins
+in
+Oral
+Contraceptives. UCLA Comprehensive Health Program; 2012.
+199. Kelly S, Davies E, Fearns S, et al. Effects of oral contraceptives
+containing ethinylestradiol with either drospirenone or levo-
+norgestrel on various parameters associated with well-being
+in healthy women: a randomized, single-blind, parallel-
+group, multicentre study. Clin Drug Investig. 2010;30:325-336.
+200. Palatsi R, Hirvensalo E, Liukko P, et al. Serum total and
+unbound testosterone and sex hormone binding globulin
+(SHBG) in female acne patients treated with two different
+oral contraceptives. Acta Derm Venereol. 1984;64:517-523.
+201. Rosen MP, Breitkopf DM, Nagamani M. A randomized
+controlled trial of second- versus third-generation oral
+contraceptives in the treatment of acne vulgaris. Am J Obstet
+Gynecol. 2003;188:1158-1160.
+202. Winkler UH, Ferguson H, Mulders JA. Cycle control, quality of
+life and acne with two low-dose oral contraceptives containing
+20 microg ethinylestradiol. Contraception. 2004;69:469-476.
+203. Jaisamrarn U, Chaovisitsaree S, Angsuwathana S, Nerapusee O.
+A comparison of multiphasic oral contraceptives containing
+norgestimate or desogestrel in acne treatment: a randomized
+trial. Contraception. 2014;90:535-541.
+204. Thorneycroft H, Gollnick H, Schellschmidt I. Superiority of a
+combined contraceptive containing drospirenone to a tri-
+phasic preparation containing norgestimate in acne treat-
+ment. Cutis. 2004;74:123-130.
+205. Thorneycroft IH, Stanczyk FZ, Bradshaw KD, Ballagh SA,
+Nichols M, Weber ME. Effect of low-dose oral contraceptives
+on androgenic markers and acne. Contraception. 1999;60:
+255-262.
+206. Stewart FH, Harper CC, Ellertson CE, Grimes DA, Sawaya GF,
+Trussell J. Clinical breast and pelvic examination require-
+ments for hormonal contraception: current practice vs
+evidence. JAMA. 2001;285:2232-2239.
+207. Curtis KM, Jatlaoui TC, Tepper NK, et al. U.S. Selected practice
+recommendations for contraceptive use, 2016. MMWR Re-
+comm Rep. 2016;65:1-66.
+208. ACOG Committee Opinion Number 540. Risk of Venous
+Thromboembolism
+Among
+Users
+of
+Drospirenone-
+Containing Oral Contraceptive Pills. American College of
+Obstetricians and Gynecologists; 2012.
+209. Curtis KM, Tepper NK, Jatlaoui TC, et al. U.S. Medical eligibility
+criteria for contraceptive use, 2016. MMWR Recomm Rep.
+2016;65:1-103.
+210. Food and Drug Administration. Combined Hormonal Con-
+traceptives (CHCs) and the Risk of Cardiovascular Disease
+Endpoints. 2011. Accessed January 18, 2024. https://www.
+fda.gov/media/82335/download
+211. Katsambas AD, Dessinioti C. Hormonal therapy for acne: why
+not as first line therapy? facts and controversies. Clin
+Dermatol. 2010;28:17-23.
+212. Gierisch JM, Coeytaux RR, Urrutia RP, et al. Oral contraceptive
+use and risk of breast, cervical, colorectal, and endometrial
+cancers: a systematic review. Cancer Epidemiol Biomarkers
+Prev. 2013;22:1931-1943.
+213. Havrilesky LJ, Moorman PG, Lowery WJ, et al. Oral contra-
+ceptive pills as primary prevention for ovarian cancer: a
+systematic review and meta-analysis. Obstet Gynecol. 2013;
+122:139-147.
+214. Iversen L, Sivasubramaniam S, Lee AJ, Fielding S, Hannaford PC.
+Lifetime cancer risk and combined oral contraceptives: the
+Royal College of general practitioners’ oral contraception study.
+Am J Obstet Gynecol. 2017;216:580.e1-580.e9.
+215. International Collaboration of Epidemiological Studies of
+Cervical
+Cancer,
+Appleby
+P,
+Beral
+V,
+Berrington
+de
+Gonzalez A, et al. Cervical cancer and hormonal contracep-
+tives: collaborative reanalysis of individual data for 16,573
+women with cervical cancer and 35,509 women without
+cervical cancer from 24 epidemiological studies. Lancet. 2007;
+370:1609-1621.
+216. Roura E, Travier N, Waterboer T, et al. The influence of
+hormonal factors on the risk of developing cervical cancer
+and pre-cancer: results from the EPIC cohort. PLoS One. 2016;
+11:e0147029.
+217. ACOG practice bulletin no. 110: noncontraceptive uses
+of
+hormonal
+contraceptives.
+Obstet
+Gynecol.
+2010;115:
+206-218.
+218. American
+College
+of
+Obstetricians
+and
+Gynecologists’
+Committee
+on
+Health
+Care
+for
+Underserved
+Women,
+Contraceptive Equity Expert Work Group, Committee on Ethics.
+Patient-centered contraceptive counseling: ACOG Committee
+statement number 1. Obstet Gynecol. 2022;139:350-353.
+219. Helms SE, Bredle DL, Zajic J, Jarjoura D, Brodell RT,
+Krishnarao I. Oral contraceptive failure rates and oral
+antibiotics. J Am Acad Dermatol. 1997;36:705-710.
+220. London BM, Lookingbill DP. Frequency of pregnancy in acne
+patients taking oral antibiotics and oral contraceptives. Arch
+Dermatol. 1994;130:392-393.
+221. ACOG Committee on Practice Bulletins-Gynecology. ACOG
+practice bulletin. No. 73: use of hormonal contraception in
+women with coexisting medical conditions. Obstet Gynecol.
+2006;107:1453-1472.
+222. Krunic A, Ciurea A, Scheman A. Efficacy and tolerance of acne
+treatment using both spironolactone and a combined con-
+traceptive containing drospirenone. J Am Acad Dermatol.
+2008;58:60-62.
+223. Bird ST, Pepe SR, Etminan M, Liu X, Brophy JM, Delaney JA.
+The association between drospirenone and hyperkalemia: a
+comparative-safety study. BMC Clin Pharmacol. 2011;11:23.
+224. Creinin MD, Westhoff CL, Bouchard C, et al. Estetrol-drospir-
+enone combination oral contraceptive: North American phase
+3 efficacy and safety results. Contraception. 2021;104:222-228.
+225. Boisselle A, Dionne FT, Tremblay RR. Interaction of spirono-
+lactone with rat skin androgen receptor. Can J Biochem. 1979;
+57:1042-1046.
+226. Menard RH, Martin HF, Stripp B, Gillette JR, Bartter FC.
+Spironolactone and cytochrome P-450: impairment of steroid
+hydroxylation in the adrenal cortex. Life Sci. 1974;15:1639-
+1648.
+227. Menard RH, Stripp B, Gillette JR. Spironolactone and testic-
+ular cytochrome P-450: decreased testosterone formation in
+several species and changes in hepatic drug metabolism.
+Endocrinology. 1974;94:1628-1636.
+228. Rifka SM, Pita JC, Vigersky RA, Wilson YA, Loriaux DL.
+Interaction of digitalis and spironolactone with human sex
+steroid receptors. J Clin Endocrinol Metab. 1978;46:338-344.
+J AM ACAD DERMATOL
+MAY 2024
+1006.e27
+Reynolds et al
+
+
+========== PAGE 28 ==========
+
+229. Zouboulis CC, Akamatsu H, Stephanek K, Orfanos CE. Andro-
+gens affect the activity of human sebocytes in culture in a
+manner dependent on the localization of the sebaceous
+glands and their effect is antagonized by spironolactone. Skin
+Pharmacol. 1994;7:33-40.
+230. Serafini PC, Catalino J, Lobo RA. The effect of spironolactone
+on genital skin 5 alpha-reductase activity. J Steroid Biochem.
+1985;23:191-194.
+231. Barbieri JS, Choi JK, Mitra N, Margolis DJ. Frequency of
+treatment switching for spironolactone compared to oral
+tetracycline-class antibiotics for women with acne: a retrospec-
+tivecohortstudy2010-2016.JDrugsDermatol.2018;17:632-638.
+232. Layton
+AM,
+Eady
+EA,
+Whitehouse
+H,
+Del
+Rosso
+JQ,
+Fedorowicz Z, van Zuuren EJ. Oral spironolactone for acne
+vulgaris in adult females: a hybrid systematic review. Am J
+Clin Dermatol. 2017;18:169-191.
+233. Garg V, Choi JK, James WD, Barbieri JS. Long-term use of
+spironolactone for acne in women: a case series of 403
+patients. J Am Acad Dermatol. 2021;84:1348-1355.
+234. Shaw JC, White LE. Long-term safety of spironolactone in
+acne: results of an 8-year followup study. J Cutan Med Surg.
+2002;6:541-545.
+235. Santer M, Lawrence M, Renz S, et al. Effectiveness of
+spironolactone for women with acne vulgaris (SAFA) in
+England and Wales: pragmatic, multicentre, phase 3, double
+blind, randomised controlled trial. BMJ. 2023;381:e074349.
+236. Zeichner JA. Evaluating and treating the adult female patient
+with acne. J Drugs Dermatol. 2013;12:1416-1427.
+237. Liszewski W, Boull C. Lack of evidence for feminization of
+males exposed to spironolactone in utero: a systematic
+review. J Am Acad Dermatol. 2019;80:1147-1148.
+238. Bommareddy K, Hamade H, Lopez-Olivo MA, Wehner M,
+Tosh T, Barbieri JS. Association of spironolactone use with
+risk of cancer: a systematic review and meta-analysis. JAMA
+Dermatol. 2022;158:275-282.
+239. Levine RM, Rasmussen JE. Intralesional corticosteroids in the
+treatment of nodulocystic acne. Arch Dermatol. 1983;119:
+480-481.
+240. Alikhan A, Sayed C, Alavi A, et al. North American clinical
+management guidelines for hidradenitis suppurativa: a pub-
+lication from the United States and Canadian Hidradenitis
+Suppurativa Foundations: part I: diagnosis, evaluation, and
+the use of complementary and procedural management. J
+Am Acad Dermatol. 2019;81:76-90.
+241. Hochman B, Locali RF, Matsuoka PK, Ferreira LM. Intralesional
+triamcinolone acetonide for keloid treatment: a systematic
+review. Aesthetic Plast Surg. 2008;32:705-709.
+242. Muneuchi G, Suzuki S, Onodera M, Ito O, Hata Y, Igawa HH.
+Long-term outcome of intralesional injection of triamcinolone
+acetonide for the treatment of keloid scars in Asian patients.
+Scand J Plast ReConstr Surg Hand Surg. 2006;40:111-116.
+243. Riis PT, Boer J, Prens EP, et al. Intralesional triamcinolone for
+flares of hidradenitis suppurativa (HS): a case series. J Am
+Acad Dermatol. 2016;75:1151-1155.
+244. Seif-El-Nasr H, El-Komy HM. Granuloma annulare. Report of a
+case treated successfully by intralesional triamcinolone in-
+jection. J Egypt Med Assoc. 1962;45:105-106.
+245. Sparrow G, Abell E. Granuloma annulare and necrobiosis
+lipoidica treated by jet injector. Br J Dermatol. 1975;93:85-89.
+246. Zouboulis CC, Bechara FG, Dickinson-Blok JL, et al. Hidrade-
+nitis suppurativa/acne inversa: a practical framework for
+treatment optimization - systematic review and recommen-
+dations from the HS ALLIANCE working group. J Eur Acad
+Dermatol Venereol. 2019;33:19-31.
+247. Kwon HH, Yoon JY, Hong JS, Jung JY, Park MS, Suh DH. Clinical
+and histological effect of a low glycaemic load diet in treatment
+of acne vulgaris in Korean patients: a randomized, controlled
+trial. Acta Derm Venereol. 2012;92:241-246.
+248. Gallagher T, Taliercio M, Nia JK, Hashim PW, Zeichner JA.
+Dermatologist use of intralesional triamcinolone in the
+treatment of acne. J Clin Aesthet Dermatol. 2020;13:41-43.
+249. Jansen T, Plewig G. Acne fulminans. Int J Dermatol. 1998;37:
+254-257.
+250. Karvonen SL. Acne fulminans: report of clinical findings and
+treatment of twenty-four patients. J Am Acad Dermatol. 1993;
+28:572-579.
+251. Villani A, Nastro F, Di Vico F, Fabbrocini G, Annunziata MC,
+Genco L. Oral isotretinoin for acne: a complete overview.
+Expert Opin Drug Saf. 2022;21:1027-1037.
+252. Peck GL, Olsen TG, Butkus D, et al. Isotretinoin versus placebo
+in the treatment of cystic acne. A randomized double-blind
+study. J Am Acad Dermatol. 1982;6:735-745.
+253. Farrell LN, Strauss JS, Stranieri AM. The treatment of severe
+cystic acne with 13-cis-retinoic acid: evaluation of sebum
+production and the clinical response in a multiple-dose trial. J
+Am Acad Dermatol. 1980;3:602-611.
+254. King K, Jones DH, Daltrey DC, Cunliffe WJ. A double-blind
+study of the effects of 13-cis-retinoic acid on acne, sebum
+excretion rate and microbial population. Br J Dermatol. 1982;
+107:583-590.
+255. Strauss JS, Rapini RP, Shalita AR, et al. Isotretinoin therapy for
+acne: results of a multicenter dose-response study. J Am Acad
+Dermatol. 1984;10:490-496.
+256. Rademaker M, Wishart JM, Birchall NM. Isotretinoin 5 mg
+daily for low-grade adult acne vulgaris--a placebo-controlled,
+randomized double-blind study. J Eur Acad Dermatol Vene-
+reol. 2014;28:747-754.
+257. Asai Y, Baibergenova A, Dutil M, et al. Management of
+acne: Canadian clinical practice guideline. CMAJ. 2016;188:
+118-126.
+258. Gollnick HP, Bettoli V, Lambert J, et al. A consensus-based
+practical and daily guide for the treatment of acne patients. J
+Eur Acad Dermatol Venereol. 2016;30:1480-1490.
+259. Le Cleach L, Lebrun-Vignes B, Bachelot A, et al. Guidelines for
+the management of acne: recommendations from a French
+multidisciplinary group. Br J Dermatol. 2017;177:908-913.
+260. Thiboutot DM, Dreno B, Abanmi A, et al. Practical manage-
+ment of acne for clinicians: an international consensus from
+the global alliance to improve outcomes in acne. J Am Acad
+Dermatol. 2018;78:S1-S23.e1.
+261. Gomez-Flores M, Poletti-Vazquez DE, Garcıa-Hidalgo L, et al.
+[Second joint position paper: use of isotretinoin in severe
+acne]. Rev Med Inst Mex Seguro Soc. 2019;56:441-446.
+262. Bagatin E, Costa CS, Rocha M, et al. Consensus on the use of
+oral isotretinoin in dermatology - Brazilian Society of
+Dermatology. An Bras Dermatol. 2020;95(Suppl 1):19-38.
+263. Kassem B, Ismail M, Hassan F. Evaluation of the efficacy and
+relapse rates of treatment protocols for moderate acne using
+isotretinoin based on the global acne grading system:
+randomized, controlled, comparative study. Dermatol Ther.
+2022;35:e15974.
+264. Borghi A, Mantovani L, Minghetti S, Giari S, Virgili A, Bettoli V.
+Low-cumulative dose isotretinoin treatment in mild-to-
+moderate acne: efficacy in achieving stable remission. J Eur
+Acad Dermatol Venereol. 2011;25:1094-1098.
+265. Kaymak Y, Ilter N. The effectiveness of intermittent isotret-
+inoin treatment in mild or moderate acne. J Eur Acad
+Dermatol Venereol. 2006;20:1256-1260.
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e28
+
+
+========== PAGE 29 ==========
+
+266. Amichai B, Shemer A, Grunwald MH. Low-dose isotretinoin in
+the treatment of acne vulgaris. J Am Acad Dermatol. 2006;54:
+644-646.
+267. Kızılyel O, Metin MS, Elmas €O F, C¸ayır Y, Aktas¸ A. Effects of
+oral isotretinoin on lipids and liver enzymes in acne patients.
+Cutis. 2014;94:234-238.
+268. Ghaffarpour G, Mazloomi S, Soltani-Arabshahi R, Seyed KS.
+Oral isotretinoin for acne, adjusting treatment according to
+patient’s response. J Drugs Dermatol. 2006;5:878-882.
+269. Evaristo L, Bagatin E. Use of oral isotretinoin to treat acne in
+the public system: a hospital-based retrospective cohort. Sao
+Paulo Med J. 2019;137:363-368.
+270. Barbieri JS, Shin DB, Wang S, Margolis DJ, Takeshita J. The
+clinical utility of laboratory monitoring during isotretinoin
+therapy for acne and changes to monitoring practices over
+time. J Am Acad Dermatol. 2020;82:72-79.
+271. Yap FB. Safety and efficacy of fixed-dose 10 mg daily
+isotretinoin treatment for acne vulgaris in Malaysia. J Cosmet
+Dermatol. 2017;16:348-352.
+272. Lee YH, Scharnitz TP, Muscat J, Chen A, Gupta-Elera G,
+Kirby JS. Laboratory monitoring during isotretinoin therapy
+for acne: a systematic review and meta-analysis. JAMA
+Dermatol. 2016;152:35-44.
+273. Xia E, Han J, Faletsky A, et al. Isotretinoin laboratory
+monitoring in acne treatment: a Delphi consensus study.
+JAMA Dermatol. 2022;158:942-948.
+274. Affleck A, Jackson D, Williams HC, Chavez P, Albrecht J. Is
+routine laboratory testing in healthy young patients taking
+isotretinoin necessary: a critically appraised topic. Br J
+Dermatol. 2022;187:857-865.
+275. Dai WS, LaBraico JM, Stern RS. Epidemiology of isotretinoin
+exposure during pregnancy. J Am Acad Dermatol. 1992;26:
+599-606.
+276. Shin J, Cheetham TC, Wong L, et al. The impact of the iPLEDGE
+program on isotretinoin fetal exposure in an integrated health
+care system. J Am Acad Dermatol. 2011;65:1117-1125.
+277. Collins MK, Moreau JF, Opel D, et al. Compliance with
+pregnancy prevention measures during isotretinoin therapy.
+J Am Acad Dermatol. 2014;70:55-59.
+278. Committee on Practice Bulletins-Gynecology, Long-Acting
+Reversible Contraception Work Group. Practice bulletin No.
+186: long-acting reversible contraception: implants and
+intrauterine devices. Obstet Gynecol. 2017;130:e251-e269.
+279. Alhusayen RO, Juurlink DN, Mamdani MM, Morrow RL,
+Shear NH, Dormuth CR. Isotretinoin use and the risk of
+inflammatory bowel disease: a population-based cohort
+study. J Invest Dermatol. 2013;133:907-912.
+280. Bernstein CN, Nugent Z, Longobardi T, Blanchard JF. Isotret-
+inoin is not associated with inflammatory bowel disease: a
+population-based case-control study. Am J Gastroenterol.
+2009;104:2774-2778.
+281. Crockett SD, Porter CQ, Martin CF, Sandler RS, Kappelman MD.
+Isotretinoin use and the risk of inflammatory bowel disease: a
+case-control study. Am J Gastroenterol. 2010;105:1986-1993.
+282. Etminan M, Bird ST, Delaney JA, Bressler B, Brophy JM.
+Isotretinoin and risk for inflammatory bowel disease: a
+nested case-control study and meta-analysis of published
+and unpublished data. JAMA Dermatol. 2013;149:216-220.
+283. Racine A, Cuerq A, Bijon A, et al. Isotretinoin and risk of
+inflammatory bowel disease: a French nationwide study. Am
+J Gastroenterol. 2014;109:563-569.
+284. Wright
+S,
+Strunk
+A,
+Garg
+A.
+Risk
+of
+new-onset
+inflammatory bowel disease among patients with acne vulgaris
+exposed to isotretinoin. J Am Acad Dermatol. 2021;84:41-45.
+285. Rashtak S, Khaleghi S, Pittelkow MR, Larson JJ, Lahr BD,
+Murray JA. Isotretinoin exposure and risk of inflammatory
+bowel disease. JAMA Dermatol. 2014;150:1322-1326.
+286. Marqueling AL, Zane LT. Depression and suicidal behavior in
+acne patients treated with isotretinoin: a systematic review.
+Semin Cutan Med Surg. 2005;24:92-102.
+287. Sundstrom A, Alfredsson L, Sjolin-Forsberg G, Gerden B,
+Bergman U, Jokinen J. Association of suicide attempts with
+acne and treatment with isotretinoin: retrospective Swedish
+cohort study. BMJ. 2010;341:c5812.
+288. Chen YH, Wang WM, Chung CH, Tsao CH, Chien WC,
+Hung CT. Risk of psychiatric disorders in patients taking
+isotretinoin: a nationwide, population-based, cohort study in
+Taiwan. J Affect Disord. 2022;296:277-282.
+289. Ugonabo N, Love E, Wong PW, et al. Psychiatric disorders and
+suicidal behavior in patients with acne prescribed oral
+antibiotics versus isotretinoin: analysis of a large commercial
+insurance claims database. J Am Acad Dermatol. 2021;85:878-
+884.
+290. Jick SS, Kremers HM, Vasilakis-Scaramozza C. Isotretinoin use
+and risk of depression, psychotic symptoms, suicide, and
+attempted suicide. Arch Dermatol. 2000;136:1231-1236.
+291. Siu AL, , US Preventive Services Task Force (USPSTF), Bibbins-
+Domingo K, Grossman DC, et al. Screening for depression in
+adults: US preventive services task force recommendation
+statement. JAMA. 2016;315:380-387.
+292. Secrest AM, Hopkins ZH, Frost ZE, et al. Quality of life
+assessed using Skindex-16 scores among patients with acne
+receiving isotretinoin treatment. JAMA Dermatol. 2020;156:
+1098-1106.
+293. Bray AP, Kravvas G, Skevington SM, Lovell CR. Is there an
+association between isotretinoin therapy and adverse mood
+changes? A prospective study in a cohort of acne patients. J
+Dermatolog Treat. 2019;30:796-801.
+294. Paljarvi T, McPherson T, Luciano S, Herttua K, Fazel S.
+Isotretinoin and adverse neuropsychiatric outcomes: retro-
+spective cohort study using routine data. Br J Dermatol. 2022;
+187:64-72.
+295. US Preventive Services Task Force, Mangione CM, Barry MJ,
+Nicholson WK, et al. Screening for depression and suicide risk
+in children and adolescents: US preventive services task force
+recommendation statement. JAMA. 2022;328:1534-1542.
+296. US Preventive Services Task Force, Mangione CM, Barry MJ,
+Nicholson WK, et al. Screening for anxiety in children and
+adolescents: US preventive services task force recommenda-
+tion statement. JAMA. 2022;328:1438-1444.
+297. Schrom K, Nagy T, Mostow E. Depression screening using
+health questionnaires in patients receiving oral isotretinoin
+for acne vulgaris. J Am Acad Dermatol. 2016;75:237-239.
+298. Waldman A, Bolotin D, Arndt KA, et al. ASDS guidelines task
+force: consensus recommendations regarding the safety of
+lasers, dermabrasion, chemical peels, Energy devices, and
+skin surgery during and after isotretinoin use. Dermatol Surg.
+2017;43:1249-1262.
+299. Scopelliti MG, Kothare A, Karavitis M. A novel 1726-nm laser
+system for safe and effective treatment of acne vulgaris.
+Lasers Med Sci. 2022;37:3639-3647.
+300. Alexiades M, Kothare A, Goldberg D, Dover JS. Novel 1726
+nm laser demonstrates durable therapeutic outcomes and
+tolerability for moderate-to-severe acne across skin types. J
+Am Acad Dermatol. 2023;89(4):703-710.
+301. Reynolds RC, Lee S, Choi JY, et al. Effect of the glycemic index
+of carbohydrates on Acne vulgaris. Nutrients. 2010;2:1060-
+1072.
+J AM ACAD DERMATOL
+MAY 2024
+1006.e29
+Reynolds et al
+
+
+========== PAGE 30 ==========
+
+302. Smith RN, Mann NJ, Braue A, Makelainen H, Varigos GA. A
+low-glycemic-load diet improves symptoms in acne vulgaris
+patients: a randomized controlled trial. Am J Clin Nutr. 2007;
+86:107-115.
+303. Pavithra
+G,
+Upadya
+GM,
+Rukmini
+MS.
+A
+randomized
+controlled trial of topical benzoyl peroxide 2.5% gel with a
+low glycemic load diet versus topical benzoyl peroxide 2.5%
+gel with a normal diet in acne (grades 1-3). Indian J Dermatol
+Venereol Leprol. 2019;85:486-490.
+304. Barbieri JS, Tan JKL, Adamson AS. Active comparator trial
+designs used to promote development of innovative new
+medications. Cutis. 2020;106:E4-E6.
+305. Miller J, Ly S, Mostaghimi A, Barbieri JS. Use of active
+comparator trials for topical medications in dermatology.
+JAMA Dermatol. 2021;157:597-599.
+306. Gao Y, Wei EK, Arron ST, Linos E, Margolis DJ, Mansh MD.
+Acne,
+sexual
+orientation,
+and
+mental
+health
+among
+young adults in the United States: a population-based,
+cross-sectional study. J Am Acad Dermatol. 2017;77:971-
+973.
+307. Pathmarajah P, Peterknecht E, Cheung K, Elyoussfi S,
+Muralidharan V, Bewley A. Acne vulgaris in skin of color: a
+systematic review of the effectiveness and tolerability of
+current treatments. J Clin Aesthet Dermatol. 2022;15:43-68.
+308. Braun H, Zhang Q, Getahun D, et al. Moderate-to-severe acne
+and mental health symptoms in Transmasculine persons
+who have received testosterone. JAMA Dermatol. 2021;157:
+344-346.
+309. DeGrazia TM, Rolader R, Thiboutot DM, Yeung H. Eligibility
+criteria related to hormone therapy in acne clinical trials: a
+systematic review. J Invest Dermatol. 2021;141:189-191.
+310. Becker T, Chin M, Bates N, eds. Measuring Sex, Gender Identity,
+and Sexual Orientation. 2022.
+311. Yeung H, Luk KM, Chen SC, Ginsberg BA, Katz KA. Dermato-
+logic care for lesbian, gay, bisexual, and transgender persons:
+terminology,
+demographics,
+health
+disparities,
+and
+ap-
+proaches to care. J Am Acad Dermatol. 2019;80:581-589.
+312. Butler DC, Heller MM, Murase JE. Safety of dermatologic
+medications in pregnancy and lactation: part II. Lactation. J
+Am Acad Dermatol. 2014;70:417.e1-417.e10; quiz 27.
+J AM ACAD DERMATOL
+VOLUME 90, NUMBER 5
+Reynolds et al
+1006.e30

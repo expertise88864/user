@@ -1,0 +1,1297 @@
+
+
+========== PAGE 1 ==========
+
+GUIDELINES
+BJD
+British Journal of Dermatology
+British Association of Dermatologists guidelines for the
+management of people with vitiligo 2021*
+V. Eleftheriadou iD 1 R. Atkar,2 J. Batchelor,3 B. McDonald iD ,4 L. Novakovic,5,6 J.V. Patel,7 J. Ravenscroft iD ,8
+E. Rush,7,9 D. Shah,10 R. Shah,11,12 L. Shaw,13 A.R. Thompson iD ,12,14 M. Hashme,15 L.S. Exton iD ,15
+M.F. Mohd Mustapa iD ,15 L. Manounah iD 15 and the British Association of Dermatologists’
+Clinical Standards Unit
+Correspondence
+Viktoria Eleftheriadou.
+Emails: Viktoria.Eleftheriadou@nhs.net, guidelines@bad.org.uk
+Accepted for publication
+22 June 2021
+Funding sources
+None.
+Conﬂicts of interest
+V.E. is an investigator and trial development group member on the HI-Light Vitiligo Trial
+(speciﬁc), lead investigator on the pilot HI-Light Vitiligo Trial, and a medical advisory
+panel member of the Vitiligo Society UK. J.B. is chief investigator on the HI-Light Vitiligo
+Trial (speciﬁc) and has an unpaid position on the medical advisory panel of the Vitiligo
+Society (speciﬁc). B.M. has been an invited speaker for Genus Pharmaceuticals, and was
+sponsored by AbbVie to attend an American Academy of Dermatology meeting (nonspeciﬁc)
+and a hidradenitis suppurativa course (nonspeciﬁc). J.R. is an investigator on the HI-Light
+Vitiligo Trial (speciﬁc). R.S. is a consultant for Dove and Unilever; is a spokesperson for a
+LEO Pharma project; has received workshop fees from Novartis (nonspeciﬁc); has provided
+consultancy to Pegasus, LEO Pharma and Exorex (nonspeciﬁc); is an advisor to the
+National Eczema Society (nonspeciﬁc); and is a clinical psychologist for the Psychoderma-
+tology UK executive committee (speciﬁc). A.R.T. has received an honorarium from Craw-
+ford for presenting at an event relating to psoriasis and eczema (nonspeciﬁc); is a trustee for
+Changing Faces (nonspeciﬁc); is an unpaid member of the UK Vitiligo scientiﬁc advisory
+board (speciﬁc); and previously supported the Vitiligo Support and Awareness Foundation
+on a volunteer basis (speciﬁc). R.A., L.N., J.V.P., E.R., D.S., L.S., M.H., L.S.E.,
+M.F.M.M. and L.M. declare they have no conﬂicts of interest.
+Produced in 2008 by the British Association of Dermatologists. Reviewed and updated
+2021.
+This is an updated guideline prepared for the British Association of Dermatologists
+(BAD) Clinical Standards Unit, which includes the Therapy & Guidelines subcommit-
+tee. Members of the Clinical Standards Unit who have been involved are: N.J. Levell
+(Chair, Therapy & Guidelines subcommittee), B. McDonald, S.L. Chua, G. Petrof, P.
+Laws, L. Solman, H. Frow, A. Daunton, I. Nasr, M. Hashme (Information Scientist),
+L.S. Exton (Senior BAD Guideline Research Fellow), L. Manounah (BAD Guideline
+Research Fellow), A. Constantin (BAD Guideline Research Fellow) and M.F. Mohd
+Mustapa (Director of Clinical Standards).
+DOI 10.1111/bjd.20596
+NICE has renewed accreditation of the process used by the British
+Association of Dermatologists to produce clinical guidelines. The
+renewed accreditation is valid until 31 May 2026 and applies to
+guidance produced using the processes described in the updated guid-
+ance for writing a British Association of Dermatologists clinical
+guideline - the adoption of the GRADE methodology 2016. The
+original accreditation term began on 12 May 2010. More informa-
+tion on accreditation can be viewed at www.nice.org.uk/accreditation.
+*Plain language summary available online
+Linked Comment: K. Ezzedine and A.G. Pandya. Br J Dermatol
+2022; 186:3–4.
+1. Purpose and scope
+The overall objective of the guideline is to provide up-to-date,
+evidence-based recommendations for the management of viti-
+ligo. The document aims to:
+•
+offer an appraisal of all relevant literature up to May
+2019, focusing on any key developments
+•
+address important, practical clinical questions relating to
+the primary guideline objective
+•
+provide guideline recommendations and if appropriate
+research recommendations.
+The guideline is presented as a detailed review with high-
+lighted recommendations for practical use in both primary
+care and in a dermatology clinic in secondary care, in addition
+to an updated patient information leaﬂet [PIL; available on the
+British Association of Dermatologists (BAD) website].1
+1.1 Exclusions
+The
+guideline
+does
+not
+cover
+diagnosis
+of
+vitiligo
+or
+leukotrichia (piebaldism).
+Nearly all the evidence supporting the recommendations
+relates to studies in adults. The Guideline Development Group
+(GDG) is aware that the onset of vitiligo can occur before adult-
+hood; however, due to the paucity of high-certainty evidence
+relating to vitiligo in those younger than 18 years of age, there
+are no speciﬁc recommendations that apply to children and
+young people. Please also refer to section 5.7, on the manage-
+ment of children and young people, for further clariﬁcations.
+2. Methodology
+This set of guidelines has been developed using the BAD’s rec-
+ommended methodology,2 with reference to the AGREE II
+instrument (www.agreetrust.org)3 and GRADE (www.grade
+workinggroup.org) (Appendix L; see Supporting Information).
+Recommendations were developed for implementation in the
+UK National Health Service (NHS).
+The GDG consisted of seven consultant dermatologists,
+one
+dermatology
+specialist
+registrar,
+two
+clinical
+© 2021 British Association of Dermatologists
+18
+British Journal of Dermatology (2022) 186, pp18–29
+Downloaded from https://academic.oup.com/bjd/article/186/1/18/6593593 by guest on 06 May 2026
+
+
+========== PAGE 2 ==========
+
+psychologists, two patient representatives and a technical
+team (consisting of an information scientist, two guideline
+research fellows and a project manager providing method-
+ological and technical support). The group established sev-
+eral clinical questions pertinent to the scope of the guideline
+and a set of outcome measures of importance to patients,
+ranked
+by
+the
+patient
+representatives
+according
+to
+the
+GRADE methodology (see section 2.1; and Appendix A; see
+Supporting Information).
+A systematic literature search of the PubMed, MEDLINE,
+Embase, Cochrane and AMED databases was conducted to
+identify key articles on vitiligo from January 2007 to May
+2019 (Appendix L). Studies included in the previous iteration
+of the guideline were evaluated for inclusion. The search
+terms and strategies are detailed in Appendix M (see Support-
+ing Information). Additional references relevant to the topic
+were also isolated from citations in the reviewed literature.
+Data extraction and critical appraisal, data synthesis, evidence
+summaries, lists of excluded studies and the PRISMA diagram
+were prepared by the technical team. Evidence from the
+included studies was graded according to the GRADE system
+(high, moderate, low or very low certainty).
+The recommendations are based on evidence drawn from sys-
+tematic reviews of the literature pertaining to the clinical ques-
+tions identiﬁed. The Supporting Information contains the
+summary of ﬁndings with forest plots (Appendix B), tables
+Linking the Evidence To the Recommendations (Appendix C),
+GRADE evidence proﬁles indicating the certainty of evidence
+(Appendix
+D),
+a
+summary
+of
+the
+included
+studies
+(Appendix E), comparative studies without data in an extracta-
+ble format (Appendix F), within-patient studies (Appendix G),
+noncomparative studies (Appendix H), the PRISMA ﬂow dia-
+gram (Appendix I), critical appraisal of systematic reviews using
+AMSTAR 2 (Appendix J) and a list of studies excluded from
+quantitative analysis (Appendix K). The strength of recommen-
+dation is expressed by the wording and symbols shown in
+Table 1.
+2.1 Clinical questions and outcomes
+The GDG established a number of clinical questions pertinent
+to the scope of the guideline; see Appendix A for the full
+review protocol. The GDG also established two sets of out-
+come measures of importance to patients (treatment), which
+were agreed and ranked according to the GRADE methodology
+by the patient representatives.4 Data on the outcome measures
+were extracted from the included studies (Appendix E). The
+proposed outcomes were in agreement with the core out-
+comes set, which was developed based on international con-
+sensus.5 Outcomes ranked 7, 8 and 9 are critical for decision
+making; those ranked 4, 5 and 6 are important, but not criti-
+cal for decision making; and those ranked 3, 2 and 1 are the
+least important for decision making.
+Q1. In people with vitiligo, what are the clinical effectiveness
+and safety of interventions, including active therapies, com-
+pared with each other or placebo or in combination with
+other interventions? These interventions included:
+•
+topicals, for example corticosteroids, vitamin D analogues
+and calcineurin inhibitors
+•
+systemics
+•
+light, for example narrowband ultraviolet B (NB-UVB), pso-
+ralen–ultraviolet A (PUVA) and PUVAsol (using sunlight)
+•
+laser, for example excimer laser
+•
+surgical
+•
+psychological
+•
+complementary.
+Critical
+•
+Change in psychological wellbeing (e.g. signs of depres-
+sion or anxiety) (9)
+•
+Repigmentation ≥75% (9)
+•
+Patient rating of appearance of vitiligo (patient global
+assessment, colour matching, cosmetic acceptability) (9)
+•
+Harms of treatment (8)
+•
+Quality of life (7)
+Table 1 Strength of recommendation ratings
+Strength
+Wording
+Symbol
+Deﬁnition
+Strong recommendation for
+the use of an intervention
+‘Offer’ (or similar, e.g. ‘use’,
+‘provide’, ‘take’, ‘investigate’
+etc.)
+↑↑
+Beneﬁts of the intervention outweigh the risks; most patients
+would choose the intervention while only a small proportion
+would not; for clinicians, most of their patients would receive
+the intervention; for policymakers, it would be a useful
+performance indicator
+Weak recommendation for
+the use of an intervention
+‘Consider’
+↑
+Risks and beneﬁts of the intervention are ﬁnely balanced; many
+patients would choose the intervention, but many would not;
+clinicians would need to consider the pros and cons for the
+patient in the context of the evidence; for policymakers it would
+be a poor performance indicator where variability in
+practice is expected
+No recommendation
+Θ
+Insufﬁcient evidence to support any recommendation
+Strong recommendation against
+the use of an intervention
+‘Do not offer’
+↓↓
+Risks of the intervention outweigh the beneﬁts; most patients
+would not choose the intervention while only a small proportion
+would; for clinicians, most of their patients would not
+receive the intervention
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp18–29
+BAD guidelines for the management of people with vitiligo 2021, V. Eleftheriadou et al. 19
+Downloaded from https://academic.oup.com/bjd/article/186/1/18/6593593 by guest on 06 May 2026
+
+
+========== PAGE 3 ==========
+
+Important
+•
+Repigmentation ≥50% (6)
+•
+Cessation of spreading of vitiligo (6)
+•
+Maintenance of gained repigmentation (6)
+•
+Tolerability and burden of treatment (5)
+Q2. In people with vitiligo, what are the clinical effectiveness
+and safety of one combination therapy compared with another
+combination therapy?
+Critical
+•
+Change in psychological wellbeing (e.g. signs of depres-
+sion or anxiety) (9)
+•
+Repigmentation ≥75% (9)
+•
+Patient rating of appearance of vitiligo (patient global
+assessment, colour matching, cosmetic acceptability) (9)
+•
+Harms of treatment (8)
+•
+Quality of life (7)
+Important
+•
+Repigmentation ≥50% (6)
+•
+Cessation of spreading of vitiligo (6)
+•
+Maintenance of gained repigmentation (6)
+•
+Tolerability and burden of treatment (5)
+Q3. In people with vitiligo, what is the clinical effectiveness of
+skin camouﬂage compared with placebo, other interventions or
+a combination of skin camouﬂage plus other active therapies?
+Critical
+•
+Change in psychological wellbeing (e.g. signs of depres-
+sion or anxiety) (9)
+•
+Patient rating of appearance of vitiligo (patient global
+assessment, colour matching, cosmetic acceptability) (9)
+•
+Harms of treatment (8)
+•
+Quality of life (7)
+Important
+•
+Tolerability and burden of treatment (5)
+Q4. In people with vitiligo, what are the clinical effectiveness
+and safety of depigmentation treatment compared with other
+active treatments or placebo?
+Critical
+•
+Change in psychological wellbeing (e.g. signs of depres-
+sion or anxiety) (9)
+•
+Degree of depigmentation (9)
+•
+Patient rating of appearance (patient global assessment,
+colour matching, cosmetic acceptability) (9)
+•
+Harms of treatment (8)
+•
+Quality of life (7)
+Important
+•
+Risk of repigmentation (6)
+•
+Tolerability and burden of treatment (5)
+Q5. In people with vitiligo who have received large doses of
+PUVA (more than 150 treatment sessions) or narrowband
+UVB (more than 150 treatment sessions), what is the risk of
+developing premalignant or malignant skin changes compared
+with people who have not received light therapies, and which
+individuals are at particular risk?
+Critical
+•
+Melanoma (9)
+•
+Squamous cell carcinoma (9)
+Important
+•
+Basal cell carcinoma (6)
+•
+Other skin cancers (6)
+•
+Intraepidermal carcinoma (Bowen disease: squamous cell
+carcinoma in situ) (5)
+Less important
+•
+Actinic keratosis (3)
+3. Summary of recommendations
+The following recommendations and ratings were agreed
+upon unanimously by the core members of the GDG and
+patient representatives. For further information on the word-
+ing used for recommendations and strength of recommenda-
+tion ratings see section 2.0. The GDG is aware of the lack of
+high-certainty evidence for some of these recommendations,
+therefore strong recommendations with an asterisk (*) are
+based on the available evidence, as well as consensus and spe-
+cialist experience. Good practice point (GPP) recommenda-
+tions (R) are derived from informal consensus.
+General recommendations
+R1 (GPP) Undertake a full history for people with vitiligo
+including the site and type of vitiligo (segmental, nonseg-
+mental), disease extent (affected body surface area), disease
+stability, speed of onset, trigger factors, quality of life, psy-
+chological and psychosocial impact, and personal and family
+history of associated thyroid dysfunction or other autoimmune
+disease.
+R2 (GPP) Screen for antithyroid antibodies and thyroid func-
+tion in people with vitiligo (including children) to identify
+those at high risk of developing autoimmune thyroid disease.
+R3 (GPP) Discuss with people with vitiligo (including chil-
+dren) the psychosocial impact of living with the condition,
+emphasizing the relationship between the skin and the mind.
+R4 (GPP) Refer people with suspected vitiligo to a healthcare
+professional experienced in managing the condition (sec-
+ondary care specialist or general physicians with enhanced
+role, GPwER) if:
+•
+the condition is progressing rapidly
+•
+there is diagnostic uncertainty
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp18–29
+20 BAD guidelines for the management of people with vitiligo 2021, V. Eleftheriadou et al.
+Downloaded from https://academic.oup.com/bjd/article/186/1/18/6593593 by guest on 06 May 2026
+
+
+========== PAGE 4 ==========
+
+•
+the condition has a signiﬁcant psychosocial impact, or
+•
+the condition is not responding to topical treatment.
+R5 (↑↑) Assess* and monitor the quality of life and level of
+psychological distress associated with living with vitiligo.
+Assessment tools that can be used include Patient Health Ques-
+tionnaire-4 (PHQ-4),6 Patient Health Questionnaire-9 (PHQ-
+9),7 Generalized Anxiety Disorder 7 (GAD7)8 and Dermatol-
+ogy Life Quality Index (DLQI),9 and more speciﬁcally the Viti-
+ligo Impact Patient Scale (VIPs)10 or the vitiligo-speciﬁc
+quality-of-life instrument (VitiQoL).11
+R6 (GPP) Provide people with vitiligo (including children)
+with a patient information leaﬂet on the condition and pre-
+scribed treatments (e.g. British Association of Dermatologists
+patient information leaﬂets).1
+R7 (GPP) Consider measuring serum vitamin D levels in peo-
+ple with vitiligo who are avoiding all sun exposure. If levels
+are reduced or deﬁcient, advise that they may wish to consider
+taking supplementary vitamin D3 (10–25 micrograms per
+day) and increasing their intake of foods high in vitamin D,
+such as oily ﬁsh, eggs, meat, fortiﬁed margarines and cereals.
+R8 (GPP) Monitor the skin of people with vitiligo for treatment
+response (or rapid progression) via medical photography (digital
+imaging) taken at the beginning of treatment and at regular inter-
+vals of approximately 3–6 months. Alternatively, body surface
+area (BSA) and areas affected by vitiligo should be documented,
+or patients could use personal devices to take photographs if
+medical photography is not available or is not practical. Please
+refer to the vitiligo calculator (www.vitiligo-calculator.com).
+R9 (GPP) Offer sunscreen with 4-star or 5-star UVA rating
+and sun protection factor 50 to people with vitiligo, applied
+to affected patches and surrounding skin before going out-
+doors into the sun.
+Topical therapies
+R10 (↑↑) Offer a potent or very potent topical corticosteroid
+once daily, to minimize potential side-effects, to people with
+vitiligo as the ﬁrst-line treatment in primary or secondary
+care, avoiding the periocular area.
+R11 (GPP) Discuss with people with vitiligo the amount of
+topical corticosteroids to be used, the site of application, and
+the safe use of a potent or very potent topical steroid when
+used correctly.
+R12 (↑) Consider topical tacrolimus 01% ointment twice
+daily in people with facial vitiligo as an alternative to potent
+or very potent topical corticosteroids.
+R13 (↑) Consider topical tacrolimus 01% ointment twice
+daily under occlusion on photoexposed areas only in people
+with nonfacial vitiligo as an alternative to potent or very
+potent topical corticosteroids.
+R14 (GPP) Consider an intermittent regimen of once-daily
+application of potent or very potent topical corticosteroids
+with or without topical calcineurin inhibitors (more evidence
+for tacrolimus), factoring the risks and beneﬁts, in people
+with vitiligo especially in areas with thinner skin, for example
+the periocular region, genital area and skin ﬂexures. Examples
+of intermittent regimens would include:
+•
+one week of potent or very potent corticosteroids and at
+least 1 week off, or
+•
+one week of potent or very potent topical corticosteroids
+alternating with ≥1 week of topical calcineurin inhibitor.
+Topical corticosteroids could be used for longer than 1 week
+in the intermittent regimen, after consideration of the risks
+and beneﬁts.
+R15 (GPP) Reassess the use of topical treatments (R10–R14)
+every 3–6 months in people with vitiligo to check for
+improvement. The use of periodic medical photographs may
+help assess these changes.
+Θ There is insufﬁcient evidence to recommend topical vitamin
+D analogues in people with vitiligo.
+Depigmentation therapies
+R16 (GPP) Consider depigmentation therapies in people with
+extensive vitiligo on visible sites, in whom the condition is hav-
+ing a negative psychological impact. This should be done after
+adequate psychological assessment and/or intervention. Please
+refer to the Supporting Information document for further details.
+Systemic therapies
+R17 (↑) Consider oral betamethasone 01 mg kg1 twice
+weekly on two consecutive days for 3 months followed by
+tapering of the dose by 1 mg per month for a further
+3 months in combination with NB-UVB in people with
+rapidly progressive vitiligo to arrest activity of the disease,
+after careful consideration of the risks and beneﬁts (see R18,
+and Table 2 for deﬁnition of rapidly progressive vitiligo).
+R18 (GPP) Consider an equivalent dose of alternative oral
+corticosteroids in people with rapidly progressive vitiligo if
+betamethasone is not available.
+R19 (↓↓) Do not offer azathioprine in combination with
+PUVA (or NB-UVB) to people with vitiligo, due to the risk of
+malignancy.
+Θ There is insufﬁcient evidence to recommend any currently
+available systemic treatments as monotherapy for people with
+stable vitiligo. However, there is some evidence for their use
+in combination with other treatments for rapidly progressive
+vitiligo (see R17 and R18, and Table 2 for the deﬁnition of
+rapidly progressive vitiligo).
+Θ There is insufﬁcient evidence to recommend minocycline,
+methotrexate or tofacitinib for people with vitiligo.
+Light and laser monotherapy and combination therapies
+R20 (↑↑) Offer NB-UVB (whole body or localized, e.g. home
+based handheld) as ﬁrst-line phototherapy to people with viti-
+ligo who have an inadequate response to topical therapy and/
+or who have extensive or progressive disease. As a prolonged
+course is generally required, discuss the risk-beneﬁt ratio,
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp18–29
+BAD guidelines for the management of people with vitiligo 2021, V. Eleftheriadou et al. 21
+Downloaded from https://academic.oup.com/bjd/article/186/1/18/6593593 by guest on 06 May 2026
+
+
+========== PAGE 5 ==========
+
+particularly for children.§ This may be combined with topical
+calcineurin inhibitor† (more evidence for tacrolimus) or
+potent topical corticosteroid,‡ for localized sites. Counsel
+patients on the signiﬁcant risk of loss of response upon treat-
+ment cessation.
+[§There is lack of data on the skin cancer risk for high
+cumulative exposures in children with less deeply pigmented
+skin (Fitzpatrick skin types I–III), hence the risk-beneﬁt ratio
+needs to be carefully considered. †Prior to combination NB-
+UVB and topical tacrolimus treatment, advise patients that
+there is a theoretical increased risk of skin cancer with this
+combination of treatment. A shared decision should be made
+with the person with vitiligo, taking into account other alter-
+natives, the individual’s personal and family history of skin
+cancer risk and the impact of the vitiligo. ‡The evidence for
+potent topical corticosteroid is limited. Prior to this combina-
+tion, consider the risk–beneﬁt ratio of the prolonged use of
+potent topical corticosteroid.]
+R21 (GPP) Inform people with vitiligo who are eligible for
+NB-UVB therapy of the requirements (depending on local pro-
+tocols: a pretherapy assessment, medical photographs taken
+prior to and during follow-ups at 3–6 months, two to three
+sessions weekly possibly for up to 1 year), and the likely
+response depending on the affected anatomical site (e.g. the
+face and trunk usually achieve better repigmentation than acral
+sites). Alternatively, body surface area (BSA) and areas affected
+by vitiligo should be documented, or patients could use per-
+sonal devices to take photographs if medical photography is
+not available or not practical. Please refer to the vitiligo calcu-
+lator (www.vitiligo-calculator.com).
+R22 (↑) Only consider PUVA or PUVAsol in adults with vitiligo
+if treatment with NB-UVB is unavailable or has been ineffective.
+For contraindications refer to the BAD PUVA guidelines 201612
+R23 (↑) Consider excimer laser or light in people with local-
+ized vitiligo in combination with topical calcineurin inhibi-
+tors (more evidence for tacrolimus). Prior to treatment, advise
+patients that there is a theoretical increased risk of skin cancer
+with this combination of treatment. This treatment is not
+widely available on the NHS, but is available in a limited
+number of centres with a specialist interest.
+R24 (↑) Consider CO2 laser in combination with 5-ﬂuo-
+rouracil in adults with nonsegmental vitiligo on the hands
+and feet if other treatments have been ineffective (apply 5-ﬂu-
+orouracil once daily for 7 days per month for 5 months; CO2
+laser treatments once a month for 5 months). This treatment
+is not widely available on the NHS, but can be accessed in a
+limited number of centres with a specialist interest.
+Θ There is insufﬁcient evidence to recommend combination
+treatment of potent or very potent topical steroid with NB-
+UVB plus CO2 laser for people with vitiligo.
+Surgical therapies
+R25 (↑) Consider cellular grafting, for example blister grafting
+or cell suspension, in people with stable, segmental or non-
+segmental vitiligo that is unresponsive to other treatments,
+and who remain distressed by the condition (see Table 2 for
+deﬁnition of stable vitiligo). This treatment is not widely
+available on the NHS, but only in a limited number of centres
+with a specialist interest.
+Θ There is insufﬁcient evidence to recommend mini-punch
+grafting in people with vitiligo.
+Psychological therapies
+R26 (↑↑) Offer* information on self-help (e.g. leaﬂets, books,
+websites, apps) to people with vitiligo with mild psychologi-
+cal distress.
+R27 (↑↑) Offer* referral to psychological services for group or/
+and individual cognitive behavioural therapy (CBT) to people
+with vitiligo with moderate-to-severe psychological distress.
+Skin camouﬂage therapies
+R28 (↑) Consider a skin camouﬂage consultation in people
+with vitiligo who would like to explore this option.
+Complementary therapies
+Θ There is insufﬁcient evidence to recommend a speciﬁc com-
+plementary therapy for people with vitiligo.
+Table 2 Deﬁnition of disease stability in vitiligo
+Vitiligo (NSV and SV)
+Deﬁnition
+Recommendations
+Stable
+The following criteria should be met:a
+No new lesions developing within the last 12 months
+Lack of progression of old lesions within the
+last 12 months
+aAssessment of overall stability is inaccurate and
+unreliable, whereas individual lesion stability
+is more reliable.
+Ideally, stability should be assessed using a patient
+self-reporting, clinical scoring system (e.g. VASI or
+VETF) and serial digital imaging of speciﬁc lesions
+Progressive
+New lesions developing or old vitiliginous lesions
+progressing within the last 12 monthsa
+Rapidly progressive
+No international consensus exists; abrupt deterioration
+in developing new lesions or increase in size of old lesions
+Regressive
+Spontaneous repigmentation of existing vitiliginous lesions
+Adapted from the revised classiﬁcation of vitiligo: the Vitiligo Global Issues Consensus Conference.17 NSV, nonsegmental vitiligo; SV, seg-
+mental vitiligo; VASI, Vitiligo Area Scoring Index; VETF, Vitiligo European Task Force.
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp18–29
+22 BAD guidelines for the management of people with vitiligo 2021, V. Eleftheriadou et al.
+Downloaded from https://academic.oup.com/bjd/article/186/1/18/6593593 by guest on 06 May 2026
+
+
+========== PAGE 6 ==========
+
+Future research recommendations
+FRR1 A national registry for people with vitiligo undergoing
+systemic or light therapy to identify outcomes and safety.
+FRR2 A prospective, randomized controlled trial evaluating
+the safety and efﬁcacy of topical tacrolimus combined with
+NB-UVB, compared with commonly used interventions.
+FRR3 A prospective, randomized controlled trial evaluating
+the safety and efﬁcacy of topical 5-ﬂuorouracil compared with
+commonly used interventions in adults with vitiligo.
+FRR4 Prospective, randomized controlled trials to evaluate the
+safety and efﬁcacy of oral Janus kinase inhibitors, alone or in
+combination, compared with commonly used interventions in
+people with vitiligo.
+FRR5 Prospective, randomized controlled trials to evaluate the
+safety and efﬁcacy of topical Janus kinase inhibitors, alone or
+in combination, compared with commonly used interventions
+in people with vitiligo.
+FRR6 Prospective, randomized controlled trials evaluating the
+safety and efﬁcacy of CO2 laser for vitiligo compared with
+commonly used interventions in adults with vitiligo.
+FRR7 Prospective, randomized controlled trials evaluating the
+safety and efﬁcacy of afamelanotide compared with commonly
+used interventions in adults with vitiligo.
+FRR8 Prospective, randomized controlled trials evaluating the
+effectiveness of psychological interventions in people with vitiligo.
+FRR9 A cost-effectiveness analysis of treatments for people
+with vitiligo within a UK healthcare setting.
+4. Algorithm
+The recommendations, discussions in the Linking the Evidence
+To the Recommendations (Appendix C) and consensus special-
+ist experience were used to inform the algorithm and pathway
+of care (Figure 1).
+5 Background
+5.1 Deﬁnition
+Vitiligo is an acquired chronic depigmentation disorder,
+which results in a loss of functional melanocytes. Vitiligo
+affects 05–1% of the population worldwide,13 although a
+higher incidence of 88% has been reported in India.14
+Adults and children are equally affected and there is no
+predilection for sex. Almost 50% of people with vitiligo pre-
+sent before the age of 20 years, and nearly 70–80% before
+the age of 30 years.15
+5.2 Classiﬁcation
+The most common form, nonsegmental vitiligo, is symmetrical.
+It can initially have an acrofacial distribution, but may spread to
+involve the entire body surface. In contrast, segmental vitiligo is
+unilateral and characterized by rapid stabilization (Table 3).16
+The term ‘vitiligo’ can be used as an umbrella term for all
+nonsegmental forms of vitiligo.17,18 Classiﬁcation and disease sta-
+bility in vitiligo are important prognostic factors (Table 2).
+Currently, there is no consensus deﬁnition for ‘rapidly pro-
+gressive’ vitiligo.
+Where vitiligo is classical, the diagnosis is straightforward
+and can be made in primary care; however, challenging cases
+require assessment by a dermatologist.19 Several depigmenting
+or hypopigmenting disorders should be considered in the dif-
+ferential diagnosis of vitiligo (Table 4).
+5.3 Assessment, monitoring and early treatment
+During the initial consultation with a patient with vitiligo, it
+is important to document the following:
+•
+type of vitiligo
+•
+extent of disease (affected body surface area)
+•
+skin phototype
+•
+age of onset of disease
+•
+disease stability
+•
+type and duration of previous treatments
+•
+history of autoimmune diseases.
+The clinical assessment of vitiligo involves an estimation of
+the affected body surface area. Recently, the global Vitiligo
+Extent Score (VES) was introduced. This user-friendly depig-
+mentation measurement instrument allows clinicians to moni-
+tor accurately and easily the affected body surface area in a
+standardized way.20 A vitiligo calculator (online version of
+VES) is a freely available, useful online tool, which utilizes
+pictures that reﬂect the extent of the vitiligo lesions (www.viti
+ligo-calculator.com). Other scores have also been used, such
+as the Vitiligo Area Scoring Index (VASI)21 and the Vitiligo
+European Task Force (VETF) scoring system.16
+Digital photographs (or if available UV photographs) taken
+on the initial consultation provide a useful benchmark for
+monitoring disease progression and treatment effectiveness.
+During treatment, digital photographs, extent of vitiligo,
+quality of life and level of psychological distress should ideally
+be evaluated and recorded every 3–4 months. In a clinical set-
+ting, treatment response at 3–4 months is usually an indicator
+to continue treatment.19
+In addition, some evidence exists that recent-onset vitiligi-
+nous lesions respond better to treatments such as topical tacro-
+limus and phototherapy. Early treatment of generalized vitiligo
+including acral areas may enhance the chance of successful
+repigmentation.22–24
+5.4 Psychological and quality-of-life impact
+People living with vitiligo report experiencing stigmatization,
+including prejudice, and in some cases actual discrimina-
+tion.25–27 Learning to deal with such reactions takes time and
+is emotionally demanding. Perhaps unsurprisingly, high levels
+of social anxiety have been reported.28 Studies have shown
+that people with vitiligo exhibit social anxiety and adopt cop-
+ing
+techniques
+such
+as
+concealment
+and/or
+avoidance.
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp18–29
+BAD guidelines for the management of people with vitiligo 2021, V. Eleftheriadou et al. 23
+Downloaded from https://academic.oup.com/bjd/article/186/1/18/6593593 by guest on 06 May 2026
+
+
+========== PAGE 7 ==========
+
+Figure 1 Management pathway for people with vitiligo. 5-FU, 5-ﬂuorouracil; BD, twice daily; BSA, body surface area; CBT, cognitive behavioural
+therapy; DLQI, Dermatology Life Quality Index9; GAD7, Generalized Anxiety Disorder 78; PHQ-4, Patient Health Questionnaire-46; PHQ-9, Patient
+Health Questionnaire-97; NB-UVB, narrowband ultraviolet B; PIL, patient information leaﬂet; QoL, quality of life; SPF, sun protection factor; UVA,
+ultraviolet A; VIPs, Vitiligo Impact Scale10; VitiQoL, vitiligo-speciﬁc quality-of-life instrument.11
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp18–29
+24 BAD guidelines for the management of people with vitiligo 2021, V. Eleftheriadou et al.
+Downloaded from https://academic.oup.com/bjd/article/186/1/18/6593593 by guest on 06 May 2026
+
+
+========== PAGE 8 ==========
+
+Perceived stigma was signiﬁcantly related to the extent to
+which vitiligo affected social activities and distress.29
+A recent systematic review and meta-analysis reported
+pooled prevalences of anxiety and depression using depres-
+sion-speciﬁc and anxiety-speciﬁc questionnaires of 029 [95%
+conﬁdence interval (CI) 021–038] and 033 (95% CI 018–
+049), respectively. The prevalence was found to be lower for
+clinically diagnosed depression 021 (95% CI 015–028) and
+anxiety 015 (95% CI 006–024).30 An earlier systematic
+review also commented on the negative impact on quality of
+life, increased levels of self-consciousness, lower self-esteem
+and the potential negative impact on intimacy and sexual
+functioning.31
+From the evidence, we recommend routine screening for
+quality of life and psychosocial distress, referral for psycholog-
+ical therapy, or recommending sources of self-help when nec-
+essary (see R1, R3 and R5).
+5.5 Associations: vitiligo, autoimmunity and thyroid
+disease
+Autoimmunity is considered a contributor to the pathogenesis
+of vitiligo. Vitiligo has been shown to be associated with other
+autoimmune diseases such as thyroid disorders, pernicious
+anaemia, Addison disease, atopic dermatitis and diabetes,
+among others.32,33
+Studies have reported that the incidence of thyroid disease is
+up to 52% in patients with vitiligo, and that 3–90% of patients
+with vitiligo have antithyroid antibodies. Patients with vitiligo
+were at increased risk of Graves disease, Hashimoto thyroiditis
+and thyroid cancer compared with the general population.34
+A systematic review of studies on the prevalence of thyroid
+disease in patients with vitiligo found high rates of thyroid
+disease,
+autoimmune
+thyroid
+disease
+and
+thyroid-speciﬁc
+autoantibodies: 151%, 143% and 208%, respectively. The
+risk for patients with vitiligo to develop (any) thyroid diseases
+is almost twice as high than in patients without vitiligo. The
+risk for patients with vitiligo to develop autoimmune thyroid
+disease is even higher (25-fold) compared with patients with-
+out vitiligo, and the risk of elevated thyroid antibodies in
+patients with vitiligo is more than ﬁvefold higher than in
+patients without vitiligo.35
+A large, recently conducted systematic review and meta-
+analysis assessing the prevalence of thyroid disorders in
+patients with vitiligo showed that six thyroid disorders (sub-
+clinical hyperthyroidism, overt hyperthyroidism, subclinical
+hypothyroidism, overt hypothyroidism, Graves disease and
+Hashimoto thyroiditis) have various prevalences in vitiligo.
+The highest prevalence was in subclinical hypothyroidism, and
+the lowest was in subclinical hyperthyroidism or Graves dis-
+ease. The authors suggested that screening patients with viti-
+ligo for thyroid disorders seems reasonable, in an effort to
+detect potential thyroid diseases or to assess the risk of future
+onset.36
+Another study of 363 paediatric patients found signiﬁcant
+incidence of thyroid dysfunction in paediatric patients with
+nonsegmental vitiligo and concluded that vitiligo usually
+appears before the development of thyroid disease.37
+From this evidence we suggest that routine screening of
+antithyroid antibodies and thyroid function should be per-
+formed in all patients with vitiligo (for affected children if it
+is appropriate to their age) to identify those at high risk of
+developing autoimmune thyroid disease (see R2).
+5.6 Vitiligo and skin cancer
+Recently, it has been shown that vitiligo has an inverse relation-
+ship with melanoma, which means that people with vitiligo are
+less likely to develop melanoma.38 A recent systematic review
+and meta-analysis looking into the risk of skin cancer in people
+Table 3 Classiﬁcation of vitiligo
+Subtype
+Deﬁnition
+Vitiligo/NSV
+Acrofacial
+Involved sites are usually limited to face, head, hands, feet
+Generalized
+Acrofacial vitiligo may later progress to include other body sites
+Universal
+Most extensive form of vitiligo. This term is used when depigmentation
+covers > 80% of total body surface
+Mucosal
+Usually refers to the involvement of oral and/or genital mucosae
+Mixed
+Concomitant occurrence of NSV and segmental vitiligo
+Rare variants
+Follicular
+Vitiligo minor (incomplete defect in pigmentation with a pale skin
+colour compared with healthy skin)
+Vitiligo punctata (1–15-mm sharply demarcated macules)
+Segmental vitiligo
+Uni-, bi- or
+plurisegmental
+Presence of one or more depigmented macules distributed on one side of the body
+Undetermined or
+unclassiﬁed vitiligo
+Focal
+Small, isolated patch, which has not evolved into NSV after a period of at least 2 years
+and does not ﬁt into a segmental distribution
+Mucosal
+One mucosal site in isolation
+Adapted from the revised classiﬁcation of vitiligo: the Vitiligo Global Issues Consensus Conference.17 NSV, nonsegmental vitiligo.
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp18–29
+BAD guidelines for the management of people with vitiligo 2021, V. Eleftheriadou et al. 25
+Downloaded from https://academic.oup.com/bjd/article/186/1/18/6593593 by guest on 06 May 2026
+
+
+========== PAGE 9 ==========
+
+with vitiligo showed that compared with people without viti-
+ligo, people with vitiligo had a signiﬁcantly lower risk of non-
+melanoma skin cancer; the crude odds ratio (OR) was 029
+(95% CI 014–058, I2 = 759%). The same pattern occurred
+for melanoma, but the crude OR was not statistically signiﬁcant
+(OR 052, 95% CI 015–178, I2 = 853%).39 Forest plots are
+available on request to the corresponding author. This review
+supports the current view that vitiligo may be protective of skin
+cancer. This could be due to the genetic and autoimmune pro-
+ﬁle of vitiligo, or the fact that patients with vitiligo are more
+careful regarding sun protection than those without vitiligo.
+However, this review was limited by the small number of
+included studies and high heterogeneity due to methodological
+and clinical differences between the included studies. Once
+more appropriate research has been conducted in this ﬁeld,
+clinicians may be able to reassure people with vitiligo that they
+are not at increased risk of skin cancer.
+5.7 Children and young people
+Childhood-onset vitiligo is common and affects around 30%
+of patients with vitiligo. Research showed that the majority of
+paediatric patients with vitiligo (89%) had disease onset after
+the age of 4 years.40 In most aspects, vitiligo is very similar in
+children and adolescents compared with adults, including
+treatment approaches. However, there are a few important
+management aspects to consider when seeing paediatric and
+adolescent patients.
+1
+There is very little published evidence for treatment inter-
+ventions in children aged under 12 years.
+2
+The impact of vitiligo on children will depend on age
+and developmental level. Treatment decisions, including
+deciding not to actively treat, should take into account
+the child’s own level of concern about the condition and
+its impact on them. Potential future impact may also be
+considered.
+3
+Phototherapy. Excess UV exposure may have different bio-
+logical effects in young children compared with adults,
+with childhood sunburn episodes increasing the risk of
+melanoma.41–43 More caution should be exercised in rec-
+ommending phototherapy treatment in children. Pho-
+totherapy is logistically difﬁcult in young children and is
+generally not offered to children under the age of 5 years.
+4
+Topical
+corticosteroid
+treatment.
+Young
+children
+are
+more at risk from skin atrophy, especially on delicate
+areas such as the face. Nonsteroid options such as tacro-
+limus should be considered ﬁrst line alongside potent
+topical corticosteroids in children. Topical potent and
+very potent steroids are more likely to have a systemic
+effect due to the increased surface-area-to-volume ratio
+in young children, and caution should be exercised
+regarding their use, especially in generalized widespread
+disease.
+5
+Oral corticosteroids. Systemic corticosteroid treatment can
+affect growth in children, and more caution should be
+exercised when recommending their use in children.
+Table 4 Differential diagnosis of vitiligo
+Inherited or genetic-induced hypomelanoses
+Piebaldism
+Tuberous sclerosis
+Hypomelanosis of Ito
+Waardenburg syndrome
+Hermansky–Pudlak syndrome
+Griscelli syndrome
+Menkes syndrome
+Postinﬂammatory hypomelanoses
+Atopic eczema
+Psoriasis
+Lichen planus
+Pityriasis alba
+Genital or extragenital lichen sclerosus
+Allergic contact dermatitis
+Paramalignant hypomelanoses
+Mycosis fungoides
+Melanoma-associated depigmentation
+Occupational or drug-induced hypomelanoses
+Potent topical steroids
+Imiquimod
+Phenolic derivatives
+Systemic drugs (chloroquine, physostigmine, imatinib)
+Melasma
+Normal skin contrasting with melasma might appear hypopigmented
+Post-traumatic leucoderma
+Deep burns
+Post-scars
+Para-infectious hypopigmentation
+Tinea versicolor
+Leprosy
+Leishmaniasis
+Nevus depigmentosus
+Congenital or detectable in the ﬁrst year of life
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp18–29
+26 BAD guidelines for the management of people with vitiligo 2021, V. Eleftheriadou et al.
+Downloaded from https://academic.oup.com/bjd/article/186/1/18/6593593 by guest on 06 May 2026
+
+
+========== PAGE 10 ==========
+
+6. Recommended audit points
+In the last 20 consecutive people with vitiligo, is there clear
+documentation of the following:
+•
+The extent of their disease and quality of life recorded at
+initial assessment?
+•
+The type of vitiligo, disease stability and skin type
+recorded at initial assessment?
+•
+A psychological assessment following referral to secondary
+care?
+•
+Thyroid antibody screening?
+•
+A potent topical corticosteroid being offered to treat the
+condition (if clinically appropriate)?
+The audit recommendation of 20 cases per department is to
+reduce variation in the results due to a single patient and
+allow benchmarking between different units (Appendix N; see
+Supporting Information). However, departments unable to
+achieve this recommendation may choose to audit all cases
+seen in the preceding 12 months.
+7. Stakeholder involvement and peer review
+The draft document and Supporting Information were made
+available to the BAD membership, the British Photodermatol-
+ogy Group (BPG) membership, the British Dermatological
+Nursing Group (BDNG), the Primary Care Dermatological
+Society (PCDS), the British Society for Paediatric Dermatology
+(BSPD), the British Society for Dermatological Surgery (BSDS),
+the Royal Pharmaceutical Society and the Vitiligo Society for
+comments, which were actively considered by the GDG. Fol-
+lowing further review, the ﬁnalized version was sent for peer
+review by the Clinical Standards Unit of the BAD, made up of
+the Therapy & Guidelines subcommittee, prior to submission
+for publication.
+8. Limitations of the guideline
+This document has been prepared on behalf of the BAD and
+is based on the best data available when the document was
+prepared. It is recognized that under certain conditions it may
+be necessary to deviate from the guidelines and that the
+results of future studies may require some of the recommen-
+dations herein to be changed. Additionally, it is acknowledged
+that the limited cost-effectiveness data in the context of the
+UK healthcare setting may impact the availability of a given
+therapy within the NHS, despite evidence of efﬁcacy. Failure
+to adhere to these guidelines should not necessarily be consid-
+ered negligent, nor should adherence to these recommenda-
+tions constitute a defence against a claim of negligence.
+Limiting the systematic review to English-language references
+was a pragmatic decision but the authors recognize this may
+exclude some important information published in other lan-
+guages.
+9. Plans for guideline revision
+The proposed revision date for this set of recommendations is
+scheduled for 2026; where necessary, important interim
+changes will be updated on the BAD website.
+Acknowledgments
+We are very grateful to Dr Robert Dawe, Consultant Dermatol-
+ogist at NHS Tayside, for his input on phototherapy treat-
+ments for vitiligo; both patient representatives – Ms Emma
+Rush and Mr Jeetesh Patel – for their input in formulating the
+clinical question, ranking of the outcomes, reviewing the evi-
+dence and preparing the subsequent draft guideline; and Miss
+Alina Constantin (BAD Guideline Research Fellow) for assist-
+ing with the ﬁnal stages; as well as those who commented on
+the draft during the consultation period.
+References
+1 British Association of Dermatologists. Vitiligo. Patient information
+leaﬂet. Available at: https://www.skinhealthinfo.org.uk/condition/
+vitiligo (last accessed 6 July 2021).
+2 Mohd Mustapa MF, Exton LS, Bell HK et al. Updated guidance for
+writing a British Association of Dermatologists clinical guideline:
+the adoption of the GRADE methodology 2016. Br J Dermatol 2017;
+176:44–51.
+3 Brouwers M, Kho ME, Browman GP et al. AGREE II: advancing
+guideline development, reporting and evaluation in healthcare.
+CMAJ 2010; 182:E839–42.
+4 Guyatt GH, Oxman AD, Vist GE et al. GRADE: an emerging consen-
+sus on rating quality of evidence and strength of recommenda-
+tions. BMJ 2008; 336:924–6.
+5 Eleftheriadou V, Thomas K, van Geel N et al. Developing core out-
+come set for vitiligo clinical trials: international e-Delphi consen-
+sus. Pigment Cell Melanoma Res 2015; 28:363–9.
+6 L€owe B, Wahl I, Rose M. A 4-item measure of depression and
+anxiety: validation and standardization of the Patient Health Ques-
+tionnaire-4 (PHQ-4) in the general population. J Affect Disord 2010;
+122:86–95.
+7 Kroenke K, Spitzer RL, Williams JB. The PHQ-9: validity of a brief
+depression severity measure. J Gen Intern Med 2001; 16:606–13.
+8 Spitzer RL, Kroenke K, Williams JBW et al. A brief measure for
+assessing generalized anxiety disorder: the GAD-7. Arch Intern Med
+2006; 166:1092–7.
+9 Finlay AY, Khan GK. Dermatology Life Quality Index (DLQI) – a
+simple practical measure for routine clinical use. Clin Exp Dermatol
+1994; 19:210–16.
+10 Salzes C, Abadie S, Seneschal J et al. The Vitiligo Impact Patient
+Scale (VIPs): development and validation of a vitiligo burden
+assessment tool. J Invest Dermatol 2016; 136:52–8.
+11 Lilly E, Lu PD, Borovicka JH et al. Development and validation of a
+vitiligo-speciﬁc quality-of-life instrument (VitiQoL). J Am Acad Der-
+matol 2013; 69:e11–18.
+12 Ling TC, Clayton TH, Crawley J et al. British Association of Derma-
+tologists and British Photodermatology Group guidelines for the
+safe and effective use of psoralen–ultraviolet A therapy 2015. Br J
+Dermatol 2016; 174:24–55.
+13 Whitton ME, Pinart M, Batchelor J et al. Interventions for vitiligo.
+Cochrane Database Syst Rev 2015; 2:CD003263.
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp18–29
+BAD guidelines for the management of people with vitiligo 2021, V. Eleftheriadou et al. 27
+Downloaded from https://academic.oup.com/bjd/article/186/1/18/6593593 by guest on 06 May 2026
+
+
+========== PAGE 11 ==========
+
+14 Behl PN, Bhatia RK. 400 cases of vitiligo. A clinico-therapeutic
+analysis. Indian J Dermatol 1972; 17:51–6.
+15 Sehgal VN, Srivastava G. Vitiligo: compendium of clinico-epidemi-
+ological features. Indian J Dermatol Venereol Leprol 2007; 73:149–56.
+16 Ta€ıeb A, Picardo M. The deﬁnition and assessment of vitiligo: a
+consensus report of the Vitiligo European Task Force. Pigment Cell
+Res 2007; 20:27–35.
+17 Ezzedine K, Lim HW, Suzuki T et al. Revised classiﬁcation/nomen-
+clature of vitiligo and related issues: the Vitiligo Global Issues
+Consensus Conference. Pigment Cell Melanoma Res 2012; 25:E1–13.
+18 Ezzedine K, Eleftheriadou V, Whitton M et al. Vitiligo. Lancet 2015;
+386:74–84.
+19 Gawkrodger DJ, Ormerod AD, Shaw L et al. Guideline for the diag-
+nosis and management of vitiligo. Br J Dermatol 2008; 159:1051–76.
+20 van Geel N, Lommerts J, Bekkenk M et al. Development and valida-
+tion of the Vitiligo Extent Score (VES): an international collabora-
+tive initiative. J Invest Dermatol 2016; 136:978–84.
+21 Hamzavi I, Jain H, McLean D et al. Parametric modeling of narrow-
+band UV-B phototherapy for vitiligo using a novel quantitative tool:
+the Vitiligo Area Scoring Index. Arch Dermatol 2004; 140:677–83.
+22 Hallaji Z, Ghiasi M, Eisazadeh A et al. Evaluation of the effect of
+disease duration in generalized vitiligo on its clinical response to
+narrowband ultraviolet B phototherapy. Photodermatol Photoimmunol
+Photomed 2012; 28:115–19.
+23 Lee DY, Kim CR, Lee JH et al. Recent onset vitiligo treated with
+systemic corticosteroid and topical tacrolimus: need for early treat-
+ment in vitiligo. J Dermatol 2010; 37:1057–9.
+24 Lee DY, Kim CR, Lee JH. Recent onset vitiligo on acral areas trea-
+ted with phototherapy: need of early treatment. Photodermatol Pho-
+toimmunol Photomed 2010; 26:266–8.
+25 Thompson AR, Clarke SA, Newell RJ et al. Vitiligo linked to
+stigmatization in British South Asian women: a qualitative study
+of the experiences of living with vitiligo. Br J Dermatol 2010;
+163:481–6.
+26 Thompson AR, Kent G, Smith JA. Living with vitiligo: dealing
+with difference. Br J Health Psychol 2002; 7:213–25.
+27 Ongenae K, Dierckxsens L, Brochez L et al. Quality of life and
+stigmatization proﬁle in a cohort of vitiligo patients and effect of
+the use of camouﬂage. Dermatology 2005; 210:279–85.
+28 Shah R, Hunt J, Webb TL et al. Starting to develop self-help for
+social anxiety associated with vitiligo: using clinical signiﬁcance to
+measure the potential effectiveness of enhanced psychological self-
+help. Br J Dermatol 2014; 171:332–7.
+29 Kent G. Correlates of perceived stigma in vitiligo. Psychol Health
+1999; 14:241–51.
+30 Osinubi O, Grainge MJ, Hong L et al. The prevalence of psycho-
+logical comorbidity in people with vitiligo: a systematic review
+and meta-analysis. Br J Dermatol 2018; 178:863–78.
+31 Ongenae K, Van Geel N, De Schepper S et al. Effect of vitiligo on
+self-reported health-related quality of life. Br J Dermatol 2005;
+152:1165–72.
+32 Rezaei N, Gavalas NG, Weetman AP et al. Autoimmunity as an
+aetiological factor in vitiligo. J Eur Acad Dermatol Venereol 2007;
+21:865–76.
+33 Ezzedine K, Diallo A, Leaute-Labreze C et al. Pre- vs. post-pubertal
+onset of vitiligo: multivariate analysis indicates atopic diathesis
+association in pre-pubertal onset vitiligo. Br J Dermatol 2012;
+167:490–5.
+34 Bae JM, Jung HM, Hong BY et al. Phototherapy for vitiligo: a sys-
+tematic review and meta-analysis. JAMA Dermatol 2017; 153:666–74.
+35 Vrijman C, Kroon MW, Limpens J et al. The prevalence of thyroid
+disease in patients with vitiligo: a systematic review. Br J Dermatol
+2012; 167:1224–35.
+36 Yuan J, Sun C, Jiang S et al. The prevalence of thyroid disorders in
+patients with vitiligo: a systematic review and meta-analysis. Front
+Endocrinol (Lausanne) 2018; 9:803.
+37 Yang Y, Lin X, Fu W et al. An approach to the correlation between
+vitiligo and autoimmune thyroiditis in Chinese children. Clin Exp
+Dermatol 2010; 35:706–10.
+38 Spritz RA. The genetics of generalized vitiligo: autoimmune path-
+ways and an inverse relationship with malignant melanoma. Genome
+Med 2010; 2:78.
+39 Ban L, Labbouz S, Grindlay D et al. Risk of skin cancer in people with viti-
+ligo: a systematic review and meta-analysis. Br J Dermatol 2018; 179:971–2.
+40 Nicolaidou E, Antoniou C, Miniati A et al. Childhood- and later-
+onset vitiligo have diverse epidemiologic and clinical characteris-
+tics. J Am Acad Dermatol 2012; 66:954–8.
+41 Noonan FP, Recio JA, Takayama H et al. Neonatal sunburn and
+melanoma in mice. Nature 2001; 413:271–2.
+42 Berneburg M, Surber C. Children and sun protection. Br J Dermatol
+2009; 161 (Suppl. 3):33–9.
+43 Kulichova D, Danova J, Kunte C et al. Risk factors for malignant
+melanoma and preventive methods. Cutis 2014; 94:241–8.
+Supporting Information
+Additional Supporting Information may be found in the online
+version of this article at the publisher’s website:
+Appendix A Review protocol.
+Appendix B Forest plots.
+Appendix C Linking the Evidence To Recommendations.
+Appendix D GRADE evidence tables.
+Appendix E Summary of included comparative studies.
+Appendix F Comparative studies with no extractable data.
+Appendix G Narrative ﬁndings from within-patient studies.
+Appendix H Narrative ﬁndings from noncomparative studies.
+Appendix I PRISMA diagram: study selection.
+Appendix J Critical appraisal of included systematic reviews:
+AMSTAR 2.
+Appendix K Papers excluded from quantitative analysis.
+Appendix L Methodology.
+Appendix M Search strategy.
+Appendix N Audit standards, data items and data collection
+methodology.
+Powerpoint S1 Journal Club Slide Set.
+Appendix Author afﬁliations
+1Queen Elizabeth Hospital Mindelsohn Way Birmingham B15 2TH UK
+2Addenbrooke’s Hospital Cambridge CB2 0QQ UK
+3Centre for Evidence Based Dermatology University of Nottingham Notting-
+ham NG7 2NR UK
+4The Royal London Hospital Whitechapel Road, Whitechapel London E1 1FR
+UK
+5Queen Elizabeth Hospital Department of Dermatology Lewisham and Green-
+wich NHS Trust London SE18 4QH UK
+6St John’s Institute of Dermatology Department of Photodermatology Guy’s
+and St Thomas’ NHS Foundation Trust London SE1 9RT UK
+7Patient representative
+8Queens Medical Centre Nottingham NG7 2UH UK
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp18–29
+28 BAD guidelines for the management of people with vitiligo 2021, V. Eleftheriadou et al.
+Downloaded from https://academic.oup.com/bjd/article/186/1/18/6593593 by guest on 06 May 2026
+
+
+========== PAGE 12 ==========
+
+9Vitiligo Support UK London UK
+10Amersham Hospital Amersham HP7 0JD UK
+11Central & North West London NHS Trust London NW1 2PL UK
+12British Psychological Society Leicester LE1 7DR UK
+13Bristol Royal Inﬁrmary Bristol BS2 8HW UK
+14South Wales Clinical Psychology Training Cardiff University Cardiff CF10
+3AT UK
+15British Association of Dermatologists Willan House London W1T 5HQ UK
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp18–29
+BAD guidelines for the management of people with vitiligo 2021, V. Eleftheriadou et al. 29
+Downloaded from https://academic.oup.com/bjd/article/186/1/18/6593593 by guest on 06 May 2026
+
+
+========== PAGE 13 ==========
+
+of patients
+with PsO achieved
+PASI 75 at Week 4
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+75.9%
+(n=265/349)
+of patients
+with PsO achieved
+PASI 100 at 5 years3
+76.9%
+(N=52)†
+of biologic-naïve
+and TNFi-IR PsA patients
+achieved ACR 50 at
+Week 104/100, respectively‡1,4–6
+of patients
+with PsO achieved
+PASI 100 at Week 16
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+68.2%
+(n=238/349)
+and
+50.6%
+(n=135/267)
+51.5%
+(n=222/431)
+GB-BK-2500315 | July 2025
+UCB Biopharma SRL, 2025. All rights reserved.
+This promotional material has been created and funded by UCB Pharma Ltd and
+is intended for healthcare professionals in the UK.
+BIMZELX is indicated for the treatment of: moderate to severe plaque PsO in adults
+who are candidates for systemic therapy; active PsA, alone or in combination
+with methotrexate, in adults who have had an inadequate response, or who have
+been intolerant, to one or more DMARDs; active nr-axSpA with objective signs of
+inflammation as indicated by elevated CRP and/or MRI, in adults who have responded
+inadequately, or are intolerant, to NSAIDs; active AS in adults who have responded
+inadequately or are intolerant to conventional therapy; and active moderate to severe
+HS (acne inversa) in adults with an inadequate response to conventional systemic HS
+therapy.4
+Prescribing information for United Kingdom click here.
+Please refer to the SmPC for further information.
+These data are from different clinical trials and cannot be directly compared.
+Co-primary endpoints PASI 90 and IGA 0/1 at Week 16 were met.**Secondary endpoints. †N= mNRI, missing data
+were imputed with mNRI (patients with missing data following treatment discontinuation due to lack of efficacy
+or a TRAE were counted as non-responders; multiple imputation methodology was used for other missing data).
+‡43.9% (n=189/431), and 43.4% (n=116/267) of biologic-naïve and TNFi-IR PsA patients achieved the primary
+endpoint of ACR 50 at Week 16 in BE OPTIMAL and BE COMPLETE, respectively (vs 10.0% [n=28/281] and 6.8%
+[n=9/133] placebo, p<0.0001); 54.5% (n=235/431) and 51.7% (n=138/267) maintained it at Week 52 (NRI).4–6 ​
+ACR 50, ≥50% response in the American College of Rheumatology criteria; AS, ankylosing spondylitis; CRP,
+C-reactive protein; DMARD, disease-modifying antirheumatic drug; HS, hidradenitis suppurativa; IGA, Investigator’s
+Global Assessment; (m)NRI, (modified) non-responder imputation; MRI, magnetic resonance imaging; nr-
+axSpA, non-radiographic axial spondyloarthritis; NSAID, non-steroidal anti-inflammatory drug; PASI 75/90/100,
+≥75/90/100% improvement from baseline in Psoriasis Area and Severity Index; PsA, psoriatic arthritis; PsD, psoriatic
+disease; PsO, psoriasis; TNFi-IR, tumour necrosis factor-α inhibitor – inadequate responder; TRAE, treatment-
+related adverse event.
+References: 1. Gordon KB, et al. Lancet. 2021;397(10273):475–486. 2. Blauvelt. 2025. AAD Presentation 62275. 3.
+Mease PJ, et al. Rheumatol Ther. 2024;11(5):1363–1382. 4. BIMZELX SmPC. 5. Ritchlin CT, et al. Ann Rheum Dis.
+2023;82(11):1404–1414. 6. Coates LC, et al. RMD Open. 2024;10(1):e003855. 7. Strober B, et al. AAD 2024;oral
+presentation.​
+This medicine is subject to additional monitoring. This will allow quick
+identification of new safety information. Adverse events should be reported.
+Reporting forms and information can be found at www.yellowcard.mhra.gov.uk for
+the UK. Adverse events should also be reported to UCB Pharma Ltd at
+UCBCares.UK@UCB.com or 0800 2793177 for UK.
+NO COMPROMISE,
+JUST CLEARANCE
+BIMZELX was well tolerated, the most frequently reported adverse reactions were: upper respiratory tract infections
+and oral candidiasis. Other common reported adverse reactions include tinea infections, ear infections, herpes simplex
+infections, oropharyngeal candidiasis, gastroenteritis, folliculitis, headache, rash, dermatitis, eczema, acne, injection site
+reactions, fatigue, and vulvovaginal mycotic infection (including vulvovaginal candidiasis).4
+Bimzelx®     (bimekizumab) offers
+the opportunity for complete, fast,
+and lasting skin clearance and
+proven PsA efficacy 1–7

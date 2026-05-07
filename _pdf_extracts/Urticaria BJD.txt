@@ -1,0 +1,2064 @@
+
+
+========== PAGE 1 ==========
+
+GUIDELINES
+BJD
+British Journal of Dermatology
+British Association of Dermatologists guidelines for the
+management of people with chronic urticaria 2021*
+R.A. Sabroe iD ,1 F. Lawlor,2 C.E.H. Grattan,2 M.R. Ardern-Jones iD ,3 A. Bewley iD ,4 L. Campbell,5 C. Flohr iD ,2
+T.A. Leslie,6 A.M. Marsland,7 G. Ogg iD ,8 W.A.C. Sewell,9 M. Hashme,10 L.S. Exton iD ,10
+M.F. Mohd Mustapa iD ,10 M.C. Ezejimofor iD 10 and on behalf of the British Association of Dermatologists’
+Clinical Standards Unit
+Correspondence
+Ruth A Sabroe.
+Email: guidelines@bad.org.uk
+Accepted for publication
+29 October 2021
+The author afﬁliations can be found in the Appendix.
+Conﬂicts of interest
+The following interests were declared over the duration of the guideline development.
+C.E.H.G.: honoraria and research investigator – Novartis – speciﬁc. M.R.A.-J.: (1)
+sponsorship to conferences – Allergy Therapeutics, Novartis, Celgene – speciﬁc; (2)
+grant/research support – AbbVie, Emblation, Unilever – nonspeciﬁc. A.B.: (1) consul-
+tant, AbbVie, Almirall, Eli Lilly, LEO Pharma, Galderma, Novartis, Pierre Fabre, Jans-
+sen Pharmaceuticals, UCB – speciﬁc. C.F.: sponsorship to attend a conference –
+Novartis – speciﬁc; (2) travel grants from LEO Pharma, Almirall, Novartis – speciﬁc;
+(3) investigator-initiated studies from Janssen and LEO Pharma – nonspeciﬁc. T.A.L.:
+advisory board – Galderma, La Roche-Posay, Novartis – speciﬁc. A.M.M.: (1) consul-
+tant and advisory board – Novartis – speciﬁc; (2) invited speaker – Novartis – spe-
+ciﬁc. G.O.: advisory board – Novartis – speciﬁc. R.A.S., F.L., L.C., W.A.C.S., M.H.
+L.S.E., M.F.M.M. and M.C.E. declare they have no conﬂicts of interest.
+Produced in 2001 by the British Association of Dermatologists. Reviewed and updated
+2010, 2021
+This is an updated guideline prepared for the British Association of Dermatologists
+(BAD) Clinical Standards Unit, which includes the Therapy & Guidelines Subcommittee
+(T&G). Members of the Clinical Standards Unit who have been involved are N.J. Levell
+(Chair, T&G), S.L. Chua, P. Laws, H. Frow, A. Bardhan, A. Daunton, G. Petrof, M.
+Hashme (BAD Information Scientist), L.S. Exton (BAD Senior Guideline Research Fel-
+low), M.C. Ezejimofor (BAD Guideline Research Fellow) and M.F. Mohd Mustapa
+(BAD Director of Clinical Standards).
+*Plain language summary available online
+DOI 10.1111/bjd.20892
+NICE has renewed accreditation of the process used by the British
+Association of Dermatologists to produce clinical guidelines. The
+renewed accreditation is valid until 31 May 2026 and applies to
+guidance produced using the processes described in the updated
+guidance for writing a British Association of Dermatologists clini-
+cal guideline – the adoption of the GRADE methodology 2016.
+The original accreditation term began on 12 May 2010. More
+information on accreditation can be viewed at www.nice.org.uk/
+accreditation.
+1. Purpose and scope
+The overall objective of the guideline is to provide up-to-date,
+evidence-based recommendations for the management of urti-
+caria. The document aims to
+•
+offer an appraisal of all relevant literature up to March
+2020, focusing on any key developments,
+•
+address important, practical clinical questions relating to
+the primary guideline objective, and
+•
+provide guideline recommendations and if appropriate
+research recommendations.
+The guideline is presented as a detailed review with high-
+lighted recommendations for practical use in primary, sec-
+ondary and tertiary care, in addition to an updated patient
+information leaﬂet (PIL; available on the BAD Skin Health
+Information website, https://www.skinhealthinfo.org.uk/a-z-
+conditions-treatments).
+1.1 Exclusions
+Other than providing background information, the guideline
+does not cover angio-oedema without weals [other than idio-
+pathic, which is now classiﬁed as part of chronic spontaneous
+urticaria (CSU)], hereditary angio-oedema, autoinﬂammatory
+syndromes or differential diagnosis. Additionally, the guideline
+focuses on chronic rather than acute urticaria.
+2. Methodology
+This set of guidelines has been developed using the BAD’s rec-
+ommended methodology.1 Further information can be found
+in Appendix J (see Supporting Information) with reference to
+the AGREE II instrument (www.agreetrust.org)2 and GRADE.3
+The recommendations were developed for implementation in
+the UK National Health Service (NHS).
+The Guideline Development Group (GDG), which consisted
+of eight consultant dermatologists managing adults, children
+and young people; a consultant immunologist; a consultant
+psychodermatologist; a drug allergy specialist; two patient rep-
+resentatives and a technical team (consisting of an information
+scientist, guideline research fellows and a project manager
+providing methodological and technical support), established
+a number of clinical questions pertinent to the scope of the
+guideline and two sets of outcome measures of importance to
+© 2021 British Association of Dermatologists
+398
+British Journal of Dermatology (2022) 186, pp398–413
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 2 ==========
+
+patients, ranked according to the GRADE methodology (sec-
+tion 2.1; and Appendix A; see Supporting Information).
+A systematic literature search of the PubMed, MEDLINE,
+Embase and Cochrane databases was conducted to identify key
+articles on urticaria from January 2007 to March 2020. An
+additional, targeted literature search for the antihistamines
+acrivastine and bilastine was also carried out (from January
+1980 to March 2020). Subsequently published papers known
+to the GDG were included. The ﬁnal literature searches were
+run ahead of journal submission in 2021 to ensure currency.
+The search terms and strategies are detailed in Appendix K
+(see Supporting Information). Additional references relevant
+to the topic were also isolated from citations in the reviewed
+literature and the previous version of the guideline.4 Evidence
+from the included studies was graded according to the GRADE
+system (high, moderate, low or very low certainty).
+The recommendations are based on evidence drawn from
+systematic reviews of the literature pertaining to the clinical
+questions identiﬁed, following discussions with the entire
+GDG and factoring in all four factors that would affect their
+strength rating according to the GRADE approach (i.e. bal-
+ance between desirable and undesirable effects, quality of
+evidence, patient values and preferences, and resource alloca-
+tion). All GDG members contributed towards drafting and/or
+reviewing the narratives and information in the guideline
+and Supporting Information documents. When there was
+insufﬁcient evidence from the literature, informal consensus
+was reached based on the experience of medical and patient
+GDG members.
+The summary of ﬁndings with forest plots (Appendix B),
+tables Linking the Evidence To the Recommendations (LETR;
+Appendix C), GRADE evidence proﬁles indicating the quality
+of evidence (Appendix D), summary of included studies
+(Appendix E), narrative ﬁndings for noncomparative studies
+(Appendix F), PRISMA ﬂow diagram (Appendix G), list of
+excluded studies (Appendix H) and AMSTAR 2 appraisal of
+the included systematic reviews (Appendix I) are detailed in
+the Supporting Information.
+The strength of recommendation is expressed by the word-
+ing and symbols shown in Table 1.
+2.1 Clinical questions and outcomes
+The GDG established the following clinical questions pertinent
+to the scope of the guideline.
+Review question 1: investigation
+Do tests, such as blood tests and the autologous serum skin
+test, alter the management of urticaria?
+Review question 2: treatment
+What is the clinical effectiveness of any H1-antihistamine com-
+pared with another for the treatment of urticaria?
+Review question 3: treatment
+Would changing from one H1-antihistamine to another lead
+to beneﬁt in the treatment of urticaria?
+Review question 4: treatment
+Would adding an H2-antihistamine to an H1-antihistamine
+lead to beneﬁt in the treatment of urticaria?
+Review question 5: treatment
+What is the effectiveness of leukotriene receptor antagonists in
+the treatment of urticaria?
+Review question 6: treatment
+What are the effectiveness and safety of increasing doses of
+H1-antihistamines?
+Review question 7: treatment
+Would adding other therapies to an H1-antihistamine lead to ben-
+eﬁt in the treatment of urticaria, including sulfasalazine, dapsone,
+thyroxine,
+tricyclic
+antidepressants,
+hydroxychloroquine,
+methotrexate, danazol, tranexamic acid, mycophenolate mofetil,
+intravenous immunoglobulins (IVIg) and anticoagulants?
+Review question 8: treatment
+What is the effectiveness of taking systemic corticosteroids for
+the treatment of urticaria?
+Table 1 Strength of recommendation ratings
+Strength
+Wording
+Symbol
+Deﬁnition
+Strong recommendation for
+the use of an intervention
+‘Offer’ (or similar,
+e.g. ‘use’, ‘provide’,
+‘take’, ‘investigate’ etc.)
+↑↑
+Beneﬁts of the intervention outweigh the risks; most patients would
+choose the intervention whilst only a small proportion would not;
+for clinicians, most of their patients would receive the intervention;
+for policymakers, it would be a useful performance indicator
+Weak recommendation for
+the use of an intervention
+‘Consider’
+↑
+Risks and beneﬁts of the intervention are ﬁnely balanced; most
+patients would choose the intervention but many would not;
+clinicians would need to consider the pros and cons for the patient
+in the context of the evidence; for policymakers it would be a poor
+performance indicator where variability in practice is expected
+No recommendation
+Θ
+Insufﬁcient evidence to support any recommendation
+Strong recommendation against
+the use of an intervention
+‘Do not offer’
+↓↓
+Risks of the intervention outweigh the beneﬁts; most patients would
+not choose the intervention whilst only a small proportion would; for
+clinicians, most of their patients would not receive the intervention
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al. 399
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 3 ==========
+
+Review question 9: treatment
+What is the effectiveness of dietary exclusions or supplements
+for the treatment of urticaria?
+Review question 10: treatment
+What is the effectiveness of Helicobacter pylori eradication for the
+treatment of urticaria?
+Review question 11: treatment
+What is the effectiveness of avoiding nonsteroidal anti-
+inﬂammatory drugs (NSAIDs) for the treatment of urticaria?
+Review question 12: treatment
+What is the effectiveness of ciclosporin for the treatment of
+urticaria and are there any long-term beneﬁts?
+Review question 13: treatment
+What is the effectiveness of omalizumab for the treatment of
+urticaria?
+Review question 14: treatment
+Is the response to treatment for inducible urticarias (e.g.
+symptomatic dermographism, delayed pressure urticaria, cold
+urticaria, cholinergic urticaria, vibratory angio-oedema, local-
+ized heat urticaria) the same as for CSU?
+Review question 15: treatment
+Do any other speciﬁc interventions work for inducible urticar-
+ias, such as antibiotics in cold urticaria, sulfasalazine in delayed
+pressure urticaria, phototherapy in dermographism, plasma-
+pheresis in solar urticaria and anticholinergics in cholinergic
+urticaria?
+Review question 16: treatment
+Which H1-antihistamines can be used in pregnancy?
+Review question 17: treatment
+Which H1-antihistamines can be used during breastfeeding?
+Review question 18: treatment
+What are the key differences in the diagnosis and management
+of paediatric compared with adult urticaria (if there are any)?
+Review question 19: treatment
+What is the clinical effectiveness of miscellaneous monothera-
+pies compared with each other for the treatment of urticaria?
+The GDG also established two sets of outcome measures of
+importance to patients (for treatment and investigation),
+ranked according to the GRADE methodology,5 by the patient
+representatives (for the full review protocol see Appendix A in
+the Supporting Information). In the investigation protocol, the
+outcome is either ‘yes’ or ‘no’. The treatment outcomes
+(Table 2) use a nine-point scale; outcomes ranked 9, 8 or 7
+are critical for decision making; those ranked 6, 5 or 4 are
+important but not critical for decision making; and those
+ranked 3, 2 or 1 are the least important for decision making.
+3. Summary of recommendations
+The following recommendations and ratings were agreed
+upon unanimously by members of the GDG and patient repre-
+sentatives.
+For further information on the wording used for recom-
+mendations and strength of recommendation ratings see
+Table 1. The evidence on which the recommendations are
+based is featured and discussed in Appendices B–E (see Sup-
+porting Information). The GDG is aware of the lack of high-
+quality evidence for many of these recommendations, there-
+fore, strong recommendations with an asterisk (*) are based
+on available evidence, as well as informal consensus and spe-
+cialist experience of medical and patient GDG members. Good
+practice point (GPP) recommendations are derived from infor-
+mal consensus.
+The recommendations are based on the clinical classiﬁcation
+of the disease (section 5.2) and refer to people of all ages.
+However, note that for people aged < 12 years:
+•
+the recommendations are based on expert opinion as there
+is very little published evidence
+•
+there are additional notes in section 9.1 and Table 3.
+Licensing information, dosages and monitoring requirements
+for speciﬁc drugs are not included. However, of note, apart
+from H1-antihistamines, oral steroids and omalizumab, none of
+the other treatment options discussed are licensed in the UK for
+use in urticaria. Except where otherwise stated, we recommend
+adherence to published guidelines, for example by the manu-
+facturer, the BAD or, in the UK, the British National Formulary
+(www.bnf.org). In particular, note the licensed dosages for
+people aged < 14 years (also see Table 3).
+The recommendations relate to chronic spontaneous and
+inducible urticarias. Acute urticaria, angio-oedema without
+weals (other than idiopathic, which is now classiﬁed as part
+of CSU), hereditary angio-oedema and autoinﬂammatory dis-
+eases are not covered.
+For clarity, we have divided the management options into
+sections (general treatment, ﬁrst-, second- and third-line
+options). However, depending on disease severity, disease
+ﬂuctuation, comorbidities and the national criteria for use of
+drugs, the order and combinations of treatment may vary and
+may change during the course of each person’s disease.
+We note that, since submission of this article for publica-
+tion, a new international guideline on the management of
+urticaria has been published.6 Broadly, the recommendations
+are similar, except that the international guideline favours
+omalizumab over ciclosporin for CSU.
+Table 2 Outcome measures and ranking
+Disease control
+9
+Decrease in urticarial activity
+9
+Adverse effects
+9
+Quality of life
+9
+Time to clinical effect
+7
+Relapse
+6
+When to stop treatment
+3
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+400 BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al.
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 4 ==========
+
+General management for people with all types of chronic
+urticaria
+The most important step is to take a detailed clinical history,
+with
+examination
+supplemented
+by
+people’s
+own
+pho-
+tographs. In most cases this will provide an accurate clinical
+diagnosis
+(section 5.2),
+which
+will
+guide
+management.
+Disease pathogenesis may also be important in management
+(section 5.3).
+R1 (↑) Only consider baseline investigations if clinically indi-
+cated (see section 6.0).
+R2 (GPP) Consider using appropriate validated scoring sys-
+tems to assess disease activity and impact, for example Derma-
+tology Life Quality Index (DLQI), weekly Urticaria Activity
+Score 7 (UAS7), Angioedema Activity Score (AAS) and/or
+Urticaria Control Test (UCT).
+R3 (GPP) Provide educational material or a patient informa-
+tion leaﬂet on urticaria or angio-oedema (https://www.
+skinhealthinfo.org.uk/a-z-conditions-treatments).
+R4 (GPP) Offer access to support and treatment for anxiety,
+depression and the psychosocial impact of the disease, where
+appropriate. The psychological impact can be assessed using, for
+example, the Hospital Anxiety and Depression Scale (HADS).
+R5 (GPP) Consider topical antipruritic agents, such as a
+menthol-containing emollient.
+R6 (GPP) Advise avoidance of identiﬁed triggers or exacerbat-
+ing factors, such as drugs, and in particular triggers for indu-
+cible urticarias.
+R7 (↑↑) Stop angiotensin-converting enzyme (ACE) inhibitors
+in people with angio-oedema without weals.
+General management for people with chronic spontaneous
+urticaria
+R8 (↑↑) Avoid NSAIDs in people whose CSU appears to be
+exacerbated by this class of drugs.
+R9 (↑) Consider switching NSAID treatment to a selective
+cyclooxygenase-2 inhibitor, if tolerated and not contraindi-
+cated, when there is a history of acute exacerbation of CSU
+after NSAID intake for inﬂammation. However, evidence of
+beneﬁt from switching low-dose aspirin when taken as an
+antithrombotic to an alternative antiplatelet drug is lacking.
+Refer to the National Institute for Health and Care Excellence,7
+British Society of Allergy and Clinical Immunology (BSACI)8
+or European Academy of Allergy and Clinical Immunology
+(EAACI) guidance9 if reactivity to NSAIDs is suspected.
+R10 (GPP) Do not advise dietary exclusion routinely. If, from
+a detailed history, food appears to play a role, investigate
+appropriately.
+Θ1 There is insufﬁcient evidence to recommend routine
+screening for vitamin D deﬁciency.
+Table 3 First-line antihistamines for chronic urticaria in children
+Drug
+1 month
+to 1 year
+1–2 years
+2–5 years
+6–11 years
+12–17 years
+Chlorphenamine
+1 mg
+twice
+a day
+x
+x
+x
+x
+2 mg/5 mL oral solution
+Cetirizine
+x
+Unlicensed:
+250 micrograms
+per kg twice a day
+(typically doses up to
+25 mg twice a day)
+25 mg
+twice a day
+5 mg twice a day
+10 mg daily
+5 mg/5 mL oral solution
+10 mg tablets
+Desloratadine
+x
+125 mg daily
+125 mg daily
+25 mg daily
+5 mg daily
+25 mg/5 mL oral solution
+5 mg tablets
+Loratadine
+x
+x
+< 31 kg:
+5 mg daily
+< 31 kg:
+5 mg daily
+> 31 kg:
+10 mg daily
+10 mg daily
+5 mg/5 mL oral solution
+10 mg tablets
+Fexofenadine
+x
+x
+x
+Unlicensed:
+30 mg twice daily
+180 mg daily
+30 mg/120 mg/180 mg tablets
+Table 3 summarizes the antihistamines commonly used in the UK. Chlorphenamine is a sedating antihistamine and thus daytime drowsiness
+and reduced attention, visual memory and learning are very common. It also causes abnormal sleep at night with delayed and reduced REM
+sleep. For these reasons, it should be used with caution, particularly over longer periods. It is not recommended for use beyond 1 year when
+alternative low-sedating antihistamines are available. Cetirizine can cause drowsiness, especially when used above the licensed dose. Hence it
+is to be used with caution in school-aged children. However, if the child has been started on cetirizine with beneﬁt, then this therapy can be
+continued. Loratadine and desloratadine may be less effective than cetirizine, but are less likely to cause drowsiness. Like chlorphenamine,
+they are metabolized in the liver, increasing the risks of drug accumulation and drug interactions. Fexofenadine is licensed for seasonal aller-
+gic rhinitis from the age of 6 years, and for urticaria from the age of 12 years. It can be considered for unlicensed use for urticaria from the
+age of 6 years. For all children with chronic urticaria who have an inadequate response to standard doses, the frequency of administration of
+nonsedating antihistamines can be increased up to a maximum of four times a day.
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al. 401
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 5 ==========
+
+Θ2 There is insufﬁcient evidence to make a recommendation
+on dietary supplementation.
+R11 (↓↓) Do not offer routine screening for Helicobacter pylori.
+First-line treatment options for people with chronic sponta-
+neous urticaria
+R12 (↑↑) Offer a second-generation H1-antihistamine, using a
+regular daily licensed dose (Table 4).
+R13 (↓↓) Do not offer ﬁrst-generation H1-antihistamines rou-
+tinely, unless there is no alternative, due to concerns about their
+short- and long-term effects on the central nervous system.
+R14 (↑↑) Offer updosing (i.e. increasing the dose above the
+licensed
+dose)
+of
+a
+single
+second-generation
+H1-
+antihistamine, by up to fourfold the licensed dose, to people
+whose symptoms are inadequately controlled by the standard
+licensed dose, provided it is tolerated and there is no caution
+or contraindication (see section 7.2 and Appendix C – LETR
+narratives). Attempt stepwise dose reduction following com-
+plete symptom control. There is no evidence to guide the
+optimum duration of updosing or speed of dose reduction.
+R15 (↓↓) Do not updose mizolastine (see section 7.2).
+R16 (GPP) Consider switching from one second-generation
+H1-antihistamine to another in people whose symptoms do
+not respond adequately to, or who do not tolerate, the ﬁrst
+drug at standard or increased doses.
+Θ3 There is insufﬁcient evidence to make a recommendation
+on using two different second-generation H1-antihistamines at
+the same time.
+R17 (↓↓) Do not updose ﬁrst-generation H1-antihistamines
+(see R13).
+R18 (↑) Consider montelukast, in addition to a second-
+generation H1-antihistamine, in people whose symptoms are
+inadequately controlled by standard and increased doses of
+second-generation H1-antihistamines.
+R19 (↑↑) Offer* progression of therapy, through ﬁrst-line
+treatment options (see R12–R18) every 2–4 weeks (every
+2 weeks in severe treatment-resistant disease).
+Θ4 There is insufﬁcient evidence to recommend routine addition
+of H2-antihistamines to second-generation H1-antihistamines for
+people whose symptoms are inadequately controlled by the latter.
+However, they may be considered if urticaria is associated with
+dyspepsia, although dyspepsia should be investigated appropri-
+ately. See section 7.4.
+R20 (↑) Consider oral prednisolone (e.g. 05 mg kg1) for
+short, infrequent courses of a few days as rescue treatment to
+control severe exacerbations, in addition to continued use of a
+second-generation H1-antihistamine.
+R21 (↓↓) Do not offer* long-term systemic corticosteroids
+unless there is no other option. Use the lowest effective dose
+for the shortest possible period.10
+Second-line treatment options for people with chronic sponta-
+neous urticaria
+For people with CSU with an inadequate response to ﬁrst-line
+treatment, the following additional investigations may be rele-
+vant when considering the next treatment options.
+R22 (↓↓) Do not offer autologous serum skin tests (ASSTs) or
+autologous plasma skin tests (APSTs) routinely.
+R23 (↑) Consider measuring total IgE levels: a high total IgE
+level may indicate a higher probability of early disease respon-
+siveness to omalizumab, whereas a normal total IgE level may
+indicate disease responsiveness to ciclosporin (section 6 and
+Appendix C – LETR narratives).
+R24 (↑) If available, consider a basophil histamine release
+assay (BHRA), although it is not yet subject to a national qual-
+ity assurance scheme. A positive BHRA may indicate a higher
+probability of disease responsiveness to ciclosporin and slower
+or delayed response to omalizumab, whereas a negative BHRA
+may indicate a higher probability of disease responsiveness to
+omalizumab (section 6 and Appendix C – LETR narratives).
+Note: total IgE levels (R23) and BHRAs (R24) are only
+indicative and may not reﬂect actual clinical responsiveness in
+all patients.
+R25 (↑↑) Offer omalizumab, in addition to a second-
+generation H1-antihistamine, to people whose symptoms are
+inadequately controlled by ﬁrst-line options.
+R26 (↑↑) Offer* ciclosporin for 3–6 months, in addition to a
+second-generation H1-antihistamine, to people whose symp-
+toms are inadequately controlled by ﬁrst-line options.
+R27 (↑↑) Avoid long-term use of ciclosporin where possible;
+if not, use at the lowest effective dose, interrupt treatment
+Table 4 Examples of ﬁrst- and second-generation H1-antihistamines
+Licensed oral dose for adultsa
+(see Table 3 for children)
+First generation
+Chlorphenamine
+4 mg every 4–6 h, maximum
+24 mg per day (elderly maximum
+12 mg per day)
+Cyproheptadine
+4 mg three times per day (maximum
+32 mg per day)
+Hydroxyzine
+Initially 10–25 mg at night, maximum
+25 mg three to four times per day
+(elderly maximum 25 mg twice daily)
+Promethazine
+10–20 mg two to three times per day
+Second generation
+Acrivastine
+8 mg three times a day
+Cetirizine
+10 mg once daily
+Desloratadine
+5 mg once daily
+Fexofenadine
+180 mg once daily
+Loratadine
+10 mg once daily
+Levocetirizine
+5 mg once daily
+Mizolastine
+10 mg once daily
+aFrom the British National Formulary.
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+402 BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al.
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 6 ==========
+
+periodically to conﬁrm continued requirement, and consider
+alternative agents (see R25, R28 and Θ5).
+Third-line treatment options for people with chronic sponta-
+neous urticaria
+R28 (↑) Consider the following options in people whose
+symptoms are inadequately controlled by ﬁrst- and second-
+line treatment options, or where the latter are contraindicated
+or inappropriate (in alphabetical order):
+•
+azathioprine
+•
+dapsone
+•
+doxepin (but there are concerns about central nervous sys-
+tem effects, as for ﬁrst-generation antihistamines)
+•
+hydroxychloroquine (particularly for urticaria occurring
+with systemic lupus erythematosus)
+•
+IVIg
+•
+methotrexate
+•
+mycophenolate mofetil
+•
+narrowband ultraviolet (UV)B (typically a course of around
+30 treatments, repeated after 12 months if necessary, but
+not for continual treatment)
+•
+oral tacrolimus
+•
+sulfasalazine
+•
+tranexamic acid (only if predominantly angio-oedema).
+Θ5 There is insufﬁcient evidence to recommend the following
+interventions (in alphabetical order):
+•
+colchicine
+•
+cyclophosphamide
+•
+dipyridamole
+•
+interleukin-1 antagonists (e.g. anakinra)
+•
+plasmapheresis
+•
+psychological interventions (although there is evidence that
+psychological interventions such as cognitive behavioural
+therapy, mindfulness and relaxation techniques are beneﬁ-
+cial for general psychosocial wellbeing in patients with
+skin diseases)
+•
+rituximab
+•
+thyroxine
+•
+tumour necrosis factor antagonists
+•
+warfarin.
+Treatment options for inducible urticarias
+There is much less evidence available than for CSU, but for
+people with all types of inducible urticaria the following are
+recommended
+(based
+mainly
+on
+small
+case
+series
+and
+anecdotal evidence).
+First-line treatment options for people with all types of indu-
+cible urticaria
+R29 (↑↑) Offer* a second-generation H1-antihistamine, using
+a regular daily licensed dose (Table 4).
+R30 (↓↓) Do not offer* ﬁrst-generation H1-antihistamines rou-
+tinely, unless there is no alternative, due to concerns about their
+short- and long-term effects on the central nervous system.
+R31 (↑↑) Offer* updosing of a single second-generation H1-
+antihistamine by up to fourfold the licensed dose to people
+whose symptoms are inadequately controlled by the standard
+licensed dose, provided it is tolerated and there is no caution
+or contraindication (section 7.2 and Appendix C – LETR nar-
+ratives). Attempt stepwise dose reduction following complete
+symptom control. There is no evidence to guide the optimum
+duration of updosing or speed of dose reduction.
+R32 (↓↓) Do not updose mizolastine (see section 7.2).
+R33 (GPP) Consider switching from one second-generation
+H1-antihistamine to another in people whose symptoms do
+not respond adequately to, or who do not tolerate, the ﬁrst
+drug at the standard or increased dose.
+Θ6 There is insufﬁcient evidence to make a recommendation
+on using two different second-generation H1-antihistamines at
+the same time.
+R34 (↓↓) Do not updose ﬁrst-generation H1-antihistamines
+(see R30).
+Θ7 There is insufﬁcient evidence to recommend routine use
+of montelukast, although there is some evidence to support its
+use in some subtypes of inducible urticaria.
+Second-line treatment options for people with all types of
+inducible urticaria
+R35 (↑) Consider omalizumab, in addition to a second-
+generation H1-antihistamine, in people whose symptoms are
+inadequately controlled by ﬁrst-line options, subject to licens-
+ing and funding.
+R36 (GPP) Offer self-injectable adrenaline, if appropriate, for
+those at risk of anaphylaxis, for example in association with
+cold or cholinergic urticaria.
+Third-line treatment options for people with all types of indu-
+cible urticaria
+Consider
+the
+following
+options,
+in
+addition
+to
+second-
+generation H1-antihistamines, in people with speciﬁc types of
+inducible urticaria, whose symptoms are inadequately respon-
+sive to ﬁrst- and second-line treatment options, or where the
+latter are contraindicated or inappropriate.
+Cholinergic urticaria
+R37 (GPP) Consider anticholinergic drugs (e.g. oxybutynin), or beta
+blockers (e.g. propranolol), or danazol, or possibly phototherapy.
+Cold urticaria
+R38 (GPP) Consider ciclosporin.
+Θ8 There is insufﬁcient evidence to recommend routine use
+of antibiotics (e.g. penicillin or tetracyclines).
+R39 (GPP) Do not offer cold desensitization.
+Delayed pressure urticaria
+R40 (↑) Consider dapsone or sulfasalazine.
+Solar urticaria
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al. 403
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 7 ==========
+
+R41 (GPP) Offer advice about sun avoidance and sun protection.
+R42 (↑) Consider UV prophylactic phototherapy using the
+wavelength of light relevant to the individual person, only fol-
+lowing photoinvestigation and obtaining advice from a derma-
+tologist at a specialist photodermatology centre.
+Θ9 There is limited evidence to recommend plasmapheresis or
+IVIg for people with solar urticaria.
+Symptomatic dermographism
+R43 (↑) Consider narrowband UVB (typically a course of
+around 30 treatments, repeated after 12 months, if necessary,
+but not for continual treatment).
+R44 (GPP) Consider psoralen plus UVA (similarly, not for
+continual treatment).
+R45 (GPP) Consider narrowband UVB for other forms of
+inducible urticaria.
+Considerations
+Θ10 There is insufﬁcient evidence to make a recommendation
+about the safety of use of antihistamines during pregnancy
+and breastfeeding. However, in active disease and after
+counselling the female patient with any type of urticaria,
+where necessary, consider cetirizine or loratadine (see the
+individual drug summary of product characteristics11 for
+information on safety during pregnancy) and the discussion in
+Appendix C (LETR narratives).
+R46 (GPP) Refer to secondary care when:
+•
+there is diagnostic doubt
+•
+the urticaria is not adequately controlled by ﬁrst-line treat-
+ment options
+•
+there are high levels of inﬂammatory markers
+•
+there are marked or persistent associated systemic symp-
+toms, or if the person is systemically unwell
+•
+the urticaria is having a signiﬁcant impact on quality of life,
+such as depression, anxiety, marked psychosocial impact,
+reduced work/school attendance or sleep disturbance
+•
+the person has angio-oedema without weals, not controlled
+by ﬁrst-line treatment options.
+Future research recommendations
+The following list outlines future research recommendations
+(FRRs).
+Figure 1 Patient management pathway for urticaria. For clarity we have divided management options into sections (general treatment, and ﬁrst-,
+second- and third-line options). However, depending on disease severity, disease ﬂuctuation, comorbidities and national criteria for use of drugs,
+the order and combinations of treatment may vary and change during each person’s disease. AAS, Angioedema Activity Score; ACE, angiotensin-
+converting enzyme; BHRA, basophil histamine release assay; DLQI, Dermatology Life Quality Index; IVIg, intravenous immunoglobulin; NB-UVB,
+narrowband ultraviolet B; PIL, patient information leaﬂet; PUVA, psoralen plus ultraviolet A; UAS7, Urticaria Activity Score summed over 7 days;
+UCT, Urticaria Control Test.
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+404 BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al.
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 8 ==========
+
+FRR1 Further investigation of the genetic predisposition and/
+or mechanistic factors that drive the development of all types
+of urticaria and/or angio-oedema, including the new theory
+of IgE-mediated ‘autoallergy’ and characterization of the roles
+of basophils, eosinophils and lymphocytes.
+FRR2 Better characterization of, and comparisons between,
+basophil-based assays as predictors of drug responses.
+FRR3 Development of better biomarkers to predict responsive-
+ness to anti-IgE and other therapies.
+FRR4 Utilizing the results from FRR1–3 to address the possi-
+bility of personalized therapy and whether new biological tar-
+gets might offer new therapeutic options.
+FRR5 Randomized controlled trials (RCTs) evaluating the safety
+and efﬁcacy of updosing one second-generation H1-antihistamine
+compared with using two different second-generation H1-
+antihistamines at the same time in people with CSU.
+FRR6 RCTs evaluating the safety and efﬁcacy of omalizumab
+in people with all subtypes of inducible urticaria.
+FRR7 RCTs evaluating the safety and efﬁcacy of other treat-
+ment options (as featured in the treatment algorithm) in peo-
+ple with all subtypes of inducible urticaria.
+FRR8 RCTs evaluating the safety and efﬁcacy of emerging
+treatments for people with all types of urticaria, including the
+new high-afﬁnity, humanized monoclonal anti-IgE antibody
+ligelizumab, and potential new treatment options such as tyro-
+sine kinase inhibitors, dupilumab, histamine H4 receptor
+antagonists, C5a receptor antagonists and drugs targeting inhi-
+bitory mast cell receptors (see section 7.8).
+FRR9 Better characterization of the optimum duration of the
+various treatment options available to people with all types of
+urticaria.
+FRR10 Investigations into disease incidence and prevalence, the
+predictive value of laboratory investigations (such as total IgE levels
+or basophil-based assays), and the safety and efﬁcacy of the various
+current and potential future treatment options in children and
+young people with urticaria and/or angio-oedema of all types.
+4. Algorithm
+The recommendations, discussions in the LETRs (Appendix C)
+and consensus specialist experience were used to produce man-
+agement pathways for adults with chronic urticaria – see Figure 1.
+5. Background
+5.1 Deﬁnition and introduction
+Urticaria consists of transient weals, angio-oedema or both.
+Weals are usually itchy, whereas the swellings of angio-oedema
+are often not. Depending on the disease subtype, angio-oedema
+or weals may be painful. Urticaria is usually divided into acute
+and chronic forms, becoming chronic when daily or almost
+daily weals continue for 6 weeks or more, although many
+attacks of acute urticaria settle much more quickly. Some forms
+of urticaria may be accompanied by systemic symptoms, such
+as arthralgia, gastrointestinal disturbance, malaise, lethargy, or
+wheeze and/or mucosal involvement. Acute urticaria may be a
+presenting sign of anaphylaxis.
+The reported lifetime prevalence rate of urticaria varies from
+8% to 24%, with a lifetime prevalence rate of about 1–2% for
+chronic urticaria.12–14 The point prevalence of chronic urti-
+caria varies from 01% in North America to 14% in Asia.15
+The disease is slightly more common in females, except in
+young children.
+People suffer greatly if they have any form of urticaria, and
+chronic disease may have a signiﬁcant effect on quality of life.16,17
+Even though the initial treatment for many types of urticaria
+is similar, there are some important exceptions. Therefore,
+accurate clinical categorization, based on a detailed history
+and examination (section 5.2) and an understanding of dis-
+ease pathogenesis (section 5.3), are essential to guide investi-
+gation and management. Of note, different forms of urticaria
+commonly occur together.
+5.2 Clinical classiﬁcation of urticaria, including diseases
+presenting with urticaria-like rashes (Table 5)
+5.2.1 Spontaneous urticaria
+No cause is identiﬁed in more than 50% of people with acute
+urticaria (causes when identiﬁed include drugs, infections
+including COVID-19, and type 1 hypersensitivity reactions)
+and in many of those with CSU (see section 5.3.2. for patho-
+genesis of CSU). Weals generally last for up to 24 h, but the
+swellings of angio-oedema may last for up to 72 h.
+5.2.2 Inducible urticarias
+These urticarias are usually chronic. Weals are reproducibly
+induced by the same physical stimulus. Weals usually appear
+within a few minutes of the stimulus and last for < 2 h, the
+exception being delayed pressure urticaria, where weals may
+take 30 min to 12 h to develop, and then last for a few days.
+The shape and size of the weals may aid diagnosis, for exam-
+ple linear weals in dermographism, or papular weals sur-
+rounded by a red ﬂare in cholinergic or aquagenic urticarias.
+Some inducible urticarias present as a spectrum of symptoms
+from pruritus, urticaria and angio-oedema to anaphylaxis.
+Inducible urticarias can be conﬁrmed on provocation testing
+(see section 6.0). Disease severity may be reduced through
+the avoidance of triggers, although this can be difﬁcult and
+disabling. Inducible urticarias tend to be underdiagnosed.
+5.2.3 Angio-oedema without weals
+Usually no cause is identiﬁed. However, it is important not
+to miss uncommon cases of drug-induced angio-oedema
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al. 405
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 9 ==========
+
+where the culprit drug must be withdrawn (especially ACE
+inhibitors, where the angio-oedema may occur soon or
+many years after drug initiation),18,19 or rare cases of C1
+esterase inhibitor deﬁciency (see section 6.4). Both may
+cause life-threatening airway swelling and neither respond
+to the usual treatment for angio-oedema. Angio-oedema of
+the gastrointestinal tract is common in C1 esterase inhibitor
+deﬁciency.
+5.2.4 Contact urticaria
+Like inducible urticarias, this is characterized by a weal-and-
+ﬂare response at the site of contact of a trigger, anaphylaxis
+may occur, the onset is rapid (within minutes) and reactions
+usually last for < 2 h. However, the disease is acute, not
+chronic, and the trigger is not physical but instead may be
+any of a large variety of substances, for example food, plants,
+animals, fragrances or preservatives.
+5.2.5 Urticarial vasculitis
+Weals are usually of prolonged duration, may be painful
+rather than itchy and sometimes leave residual bruising or
+postinﬂammatory change. It can be difﬁcult to differentiate
+urticarial vasculitis from delayed pressure urticaria. However,
+in urticarial vasculitis, there are often marked systemic symp-
+toms, there may be joint or renal involvement, an association
+with other underlying diseases and high inﬂammatory mark-
+ers. A skin biopsy is needed to conﬁrm the diagnosis (see sec-
+tion 6.5).20
+5.2.6 Autoinﬂammatory syndromes
+Autoinﬂammatory syndromes presenting with urticaria-like
+rashes include cryopyrin-associated periodic syndrome (CAPS)
+(usually with onset in childhood, although late-onset acquired
+disease is recognized) and Schnitzler syndrome (acquired with
+adult onset). CAPS consists of three overlapping conditions:
+familial cold autoinﬂammatory syndrome, Muckle–Wells syn-
+drome and neonatal-onset multisystem inﬂammatory disorder.
+These diseases are rare (for pathogenesis see section 5.3.3).
+They differ in associated organ involvement, but are all usually
+accompanied by fever, malaise and high levels of inﬂamma-
+tory markers.21,22
+5.3 Pathogenesis and aetiology
+5.3.1 Allergic
+Some cases of acute or episodic urticaria and some cases of con-
+tact urticaria are due to mast cell degranulation caused by aller-
+gens crosslinking antigen-speciﬁc IgE (type 1 hypersensitivity).
+5.3.2 Autoimmune urticaria
+Approximately 33% of people with CSU have functional,
+histamine-releasing IgG autoantibodies. These either directly
+crosslink high-afﬁnity IgE receptors (FceRI) or bind IgE.23
+A new theory is emerging of type 1 autoimmunity or ‘au-
+toallergy’, in which IgE antibodies are directed at an element
+of self. Antigens may then crosslink IgE on mast cells or
+basophils, causing degranulation. It has been observed that
+there are fast and slow responders to treatment with omal-
+izumab (an anti-IgE antibody). This has led to the proposal
+that the rapid response may be due to omalizumab rapidly
+binding free IgE autoantibodies against autoallergens, whilst
+the slow responses may be due to the slower loss of mast
+cell (or basophil) membrane-bound IgE and downregulation
+of FceRI, thus reducing IgG-mediated activation.24 The func-
+tional importance of IgE ‘autoallergic’ autoantibodies is under
+investigation. Thus far, there is some evidence that IgE anti-
+thyroid
+peroxidase
+antibodies
+and
+possibly
+IgE
+anti-
+interleukin-24 antibodies may play a role in some patients
+with CSU.25,26
+Table 5 Clinical classiﬁcation of urticaria, including diseases
+presenting with urticaria-like rashes4
+Spontaneous urticaria
+•
+Acute
+•
+Chronic (6 weeks or more of continuous activity)
+•
+Episodic (acute intermittent or recurrent activity)
+Inducible urticarias (reproducibly induced by the same
+physical stimulus)
+•
+Aquagenic
+•
+Cholinergic
+•
+Cold contact
+•
+Delayed pressure
+•
+Exercise-induced anaphylaxis
+•
+Heat contact
+•
+Solar
+•
+Symptomatic dermographism
+•
+Vibratory
+Angio-oedema without weals
+•
+Idiopathic (now classiﬁed as part of chronic
+spontaneous urticaria)
+•
+Drug induced, e.g. angiotensin-converting enzyme inhibitors
+•
+C1 esterase inhibitor deﬁciency, hereditary or
+acquired, and hereditary angio-oedema with normal
+C1 esterase inhibitor
+Contact urticaria (contact with allergens or chemicals)
+Diseases presenting with urticaria-like rashes
+•
+Urticarial vasculitis (deﬁned by vasculitis on skin biopsy)
+•
+Autoinﬂammatory syndromes
+•
+Hereditary, e.g. cryopyrin-associated periodic
+syndrome (CAPS) (hereditary NLRP3 mutations)
+•
+Acquired, e.g. Schnitzler syndrome (paraprotein
+and chronic urticarial rash), late-onset CAPS (acquired
+somatic mosaicisms in the NLRP3 gene)
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+406 BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al.
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 10 ==========
+
+5.3.3 Autoinﬂammatory syndromes
+These are characterized by dysregulation of innate immunity.
+Persistent uncontrolled inﬂammation occurs in the absence of
+triggers and is mediated by excessive cytokine production.
+Most cases of CAPS are due to autosomal dominant or de novo
+mutations in the NLRP3 gene, resulting in increased activity of the
+NLRP-3 inﬂammasome and increased secretion of interleukin-
+1b.27,28 Late-onset CAPS is now thought to be due to acquired
+somatic (mosaic) mutations in NLRP3,29 but these have not been
+identiﬁed in Schnitzler syndrome, even though the clinical presen-
+tation is identical.30 Instead, Schnitzler syndrome is deﬁned by
+the presence of a monoclonal gammopathy of unknown signiﬁ-
+cance (MGUS), usually IgM, but sometimes IgG.30
+5.4 Associations
+Many people with CSU ﬁnd that nonspeciﬁc factors including
+heat, alcohol, infections and stress exacerbate or trigger their
+urticaria, but the underlying mechanisms are poorly under-
+stood. Drugs may precipitate urticaria by various mechanisms
+(Table 6).
+An urticaria-like rash may also occur as a prodrome of bul-
+lous pemphigoid or be a presenting feature of progesterone-
+induced dermatosis. Urticaria, and particularly urticarial vas-
+culitis, may occur with other diseases, such as systemic lupus
+erythematosus.
+There is an association between CSU and thyroid autoim-
+munity.31 There is some evidence that Helicobacter pylori infec-
+tion may be associated with an increased risk of CSU. There is
+conﬂicting evidence as to whether eradiation of H. pylori
+alleviates CSU, although identiﬁed H. pylori infection should, in
+any case, be treated appropriately (see Appendix C – LETR
+narratives for question 10). Given the association between
+chronic urticaria and autoimmunity, including coeliac disease
+in children32 and adults,33,34 clinical suspicion of coexisting
+autoimmune diseases should remain high, but screening in
+the absence of associated features is not suggested.
+6. Appropriate investigations
+The most important part of assessment is a thorough clinical
+history and examination. This will usually lead to accurate
+clinical classiﬁcation. In many cases, especially in acute and
+mild chronic spontaneous or inducible urticarias, responsive
+to H1-antihistamines, there is no need for further investiga-
+tion.
+Urticaria can have a signiﬁcant effect on people’s lives.
+Therefore, assessments should be made as to the effect the dis-
+ease is having on the person’s quality of life (e.g. using
+DLQI); anxiety, depression or associated psychological issues
+(e.g. using the HADS);35 sleep and attendance at school or
+work. The activity of the disease should be measured (e.g.
+using UAS7, AAS or UCT)36,37 before embarking on second-
+line treatment options.38,39
+6.1 Acute or episodic spontaneous urticaria
+Skin prick tests and/or blood tests for allergen-speciﬁc IgE
+may help to conﬁrm type 1 hypersensitivity as a cause, if sus-
+pected. These tests are usually not helpful in chronic urticaria.
+A full blood count (FBC) and inﬂammatory markers [C-
+reactive protein (CRP) and erythrocyte sedimentation rate
+(ESR)] may be helpful in identifying infective causes.
+6.2 Chronic spontaneous urticaria
+A FBC may be useful to identify the minority of cases with
+an underlying cause. An eosinophilia may suggest a drug-
+induced rash, pre-bullous pemphigoid urticaria or a parasitic
+infection. Leucocytosis may be present in infection and
+sometimes in urticarial vasculitis or autoinﬂammatory dis-
+ease, or, conversely, leucopenia may suggest systemic lupus
+erythematosus.
+Inﬂammatory markers (CRP and ESR) are often normal in
+CSU, so elevated levels may prompt investigations for urticar-
+ial vasculitis, autoinﬂammatory disease or unrelated causes.
+Due to the association between CSU and thyroid autoimmu-
+nity (section 5.4), testing for thyroid-stimulating hormone
+(TSH) and thyroid antibodies may be useful.
+Thus, performing a small number of tests (FBC, ESR, CRP,
+TSH and thyroid antibodies) at presentation, may be of beneﬁt
+in CSU.
+In treatment-resistant cases, total IgE levels and tests for IgG
+histamine-releasing autoantibodies (if available) may help to
+inform the choice between the second-line treatment agents
+omalizumab (or in the future perhaps new treatments such as
+Table 6 Pathogenesis and aetiology of urticaria4
+Idiopathic
+Immunological
+Adaptive immune system
+•
+Allergic (mediated by IgE – abnormal response to
+external antigen)
+•
+Autoimmune (mediated by IgG, or possibly IgE
+‘autoallergy’) – (abnormal response to self-antigen)
+•
+Immune complex (urticarial vasculitis, or acute
+urticaria due to blood products)
+Innate immune system
+•
+Autoinﬂammatory (mediated by cytokines)
+Other
+•
+Kallikrein–kinin system mediated (acquired or hereditary
+C1 esterase inhibitor deﬁciency or hereditary
+angio-oedema with normal C1 esterase inhibitor)
+•
+Direct mast-cell-releasing agents (e.g. opiates,
+radiocontrast media)
+•
+Leukotriene formation (e.g. aspirin, nonsteroidal
+anti-inﬂammatory drugs)
+•
+Inhibition of kinin breakdown (e.g.
+angiotensin-converting enzyme inhibitors)
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al. 407
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 11 ==========
+
+the monoclonal anti-IgE antibody ligelizumab) and ciclosporin
+(see R23 and R24).40–42 Functional tests may also be useful in
+understanding disease pathogenesis and in providing an expla-
+nation to the person with urticaria.
+Total IgE assays are widely available, low cost and well
+characterized. The BHRA is the most established test for
+functional autoantibodies; however, it is complex to perform.
+Some laboratories may prefer measuring basophil activation
+by other validated means. No functional test is well charac-
+terized or has been subject to national quality assurance
+schemes. Such tests are not always readily accessible or avail-
+able. Further research is needed to determine the compara-
+tive
+utility
+of
+functional
+tests
+in
+predicting
+treatment
+responses in CSU. For more details see Appendix C (LETR
+narratives).
+6.3 Inducible urticarias
+These should be conﬁrmed by history and appropriate provo-
+cation tests.43
+In cold contact urticaria, cryoglobulins may be measured,
+although they are rarely present and, if so, are usually associ-
+ated with infection or haematological disease. If they are mea-
+sured,
+scrupulous
+attention
+to
+temperature-controlled
+sampling, transport and processing is required (blood must be
+kept at 37°C). If weals follow the cold trigger after a delay of
+a few hours, are associated with systemic symptoms or start in
+early childhood, and/or there is a family history, investiga-
+tions should be undertaken for familial cold autoinﬂammatory
+syndrome (section 6.6).
+In solar urticaria, antinuclear antibodies and porphyrins
+should be checked. If the diagnosis is unclear, or if the disease
+is poorly responsive to treatment, referral to a specialist centre
+for an opinion and, if appropriate, phototesting may help.
+In aquagenic pruritus, an annual FBC is recommended, as
+this condition may be associated with polycythaemia rubra
+vera and other haematological disorders.
+6.4 Angio-oedema without weals
+C1 esterase inhibitor deﬁciency is characterized by low C4
+levels, both between and during attacks.44 If C4 levels are
+low, C1 esterase inhibitor level and function should then be
+checked. In about 85% of cases of hereditary angio-oedema
+both are reduced (type I), but in the remainder only func-
+tional activity is reduced (type II). Reduced C1q levels are
+characteristic of (but not speciﬁc for) acquired C1 esterase
+inhibitor deﬁciency. All forms of C1 esterase inhibitor deﬁ-
+ciency should be referred to immunology services for further
+investigation and management, in line with national and inter-
+national consensus guidelines.
+6.5 Urticarial vasculitis
+A skin biopsy showing a leucocytoclastic vasculitis is required
+to conﬁrm the diagnosis, but the histological changes are
+often subtle. Possible histological features include fragmenta-
+tion
+of
+leucocytes
+with
+nuclear
+debris
+(leucocytoclasia),
+endothelial cell swelling or damage, red cell extravasation and
+rarely ﬁbrin deposition.
+Inﬂammatory markers (CRP, ESR) are often raised. A full
+vasculitis screen should be checked to investigate for underly-
+ing causes, such as connective tissue disease or infection. Low
+C3 and C4, and positive anti-C1q antibodies may indicate
+hypocomplementaemic urticarial vasculitis, a more severe dis-
+ease with a greater potential for associated systemic disease,
+particularly systemic lupus erythematosus, and internal organ
+involvement.20,45
+6.6 Autoinﬂammatory syndromes
+Inﬂammatory markers (CRP and ESR) are usually elevated, as
+is
+serum
+amyloid
+A,
+which
+should
+be
+measured.
+Immunoglobulins and serum protein electrophoresis should
+be checked to investigate for Schnitzler syndrome in late-onset
+disease, although a low-level IgM paraprotein can be difﬁcult
+to detect. Genetic tests should be arranged if CAPS is sus-
+pected. In England, patients should be referred to departments
+approved by NHS England for investigation and treatment.
+7. Interventions
+Largely, these are as listed in the recommendations (sec-
+tion 3.0). However, a few important points are discussed
+below. Details of the supporting evidence for each recommen-
+dation can be found in Appendix C (LETR narratives).
+7.1 The effectiveness of H1-antihistamines compared with
+each other
+No ﬁrst-generation H1-antihistamine was found to stand out
+as being more effective than others in the Cochrane review.46
+However, the GDG generally considered loratadine and deslo-
+ratadine to be slightly less effective, a position supported by
+in vivo suppression of weal-and-ﬂare responses by different H1-
+antihistamines.47,48 See Appendix C, question 2/3 for further
+information, including a network meta-analysis published in
+2021 that graded antihistamines in order of efﬁcacy and
+acceptability, but acknowledged that this was based on low-
+quality evidence.49
+7.2 Updosing of H1-antihistamines
+If
+licensed
+doses
+of
+H1-antihistamines
+show
+inadequate
+response, the GDG agreed that evidence on efﬁcacy supported
+the updosing of second-generation H1-antihistamines for CSU,
+where tolerated and in the absence of contraindications. Efﬁ-
+cacy gains were particularly evident for pruritus and quality of
+life, but the need for further research was noted.50 The GDG
+recommended
+considering
+a
+switch
+from
+one
+second-
+generation H1-antihistamine to another in people with CSU
+who do not respond adequately to the ﬁrst drug, or if side-
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+408 BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al.
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 12 ==========
+
+effects develop. The GDG does not recommend routinely
+offering combinations of two different second-generation H1-
+antihistamines at the same time to people with CSU, although
+it was noted that some people may beneﬁt.51 The safety of
+giving two H1-antihistamines at lower dosages has not been
+investigated and there is no published evidence on using such
+combination treatment. The GDG does not recommend updos-
+ing ﬁrst-generation H1-antihistamines in people with CSU.
+In general, evidence supported the good safety proﬁle of up
+to fourfold updosing of second-generation H1-antihistamines,
+where tolerated, and in the absence of contraindications.
+However, the following should be considered before proceed-
+ing. Firstly, some studies have suggested that a proportion of
+people may develop increased side-effects, such as sedation,
+on updosing second-generation H1-antihistamines.52,53 The
+possibility of sedation after updosing second-generation H1-
+antihistamines should be discussed with people with urticaria.
+Secondly, the summary of product characteristics on www.
+medicines.org.uk provides speciﬁc information on the cautions
+and contraindications of individual antihistamines and these
+should be considered before updosing. These include closed-
+angle glaucoma, prostatism, interactions with other drugs
+(e.g. cytochrome P450 modulators, drugs with associated
+sedation), foods (e.g. grapefruit) and alcohol, renal and liver
+impairment,
+epilepsy,
+elderly
+people
+and
+heart
+disease.
+Thirdly, the potential to prolong the electrocardiogram QTc
+interval should also be considered for all H1-antihistamines.54
+For example, among other contraindications, mizolastine is
+contraindicated in people with known or suspected QT pro-
+longation or with electrolyte imbalance, in particular hypoka-
+laemia
+or
+hypomagnesaemia;
+in
+clinically
+signiﬁcant
+bradycardia; and where used with medicinal products known
+to prolong the QT interval, such as class I and III antiarrhyth-
+mics. The GDG does not recommend updosing mizolastine.
+The GDG noted that most studies on updosing have shown
+signiﬁcant heterogeneity in terms of study design, doses,
+speciﬁc antihistamines and responses, and recommended that
+large-scale, high-quality studies be undertaken.
+7.3 Subsets of urticaria in which montelukast may be of
+beneﬁt
+There is published evidence that montelukast in combination
+with a second-generation H1-antihistamine may be more effec-
+tive than taking a second-generation H1-antihistamine alone for
+people with CSU.55 Much less data are available for inducible
+urticarias, although there is some evidence for efﬁcacy in
+delayed pressure urticaria,56 and several members of the GDG
+try montelukast in people with various inducible urticarias.
+There may also be speciﬁc circumstances when this combi-
+nation may be beneﬁcial, such as when urticaria is exacerbated
+by salicylates, or where angio-oedema is the predominant
+symptom.57,58
+Montelukast can be prescribed in primary care without
+monitoring of blood tests, but a recent Medicines and Health-
+care products Regulatory Agency (MHRA) warning reminds
+prescribers of the neuropsychiatric side-effects that may occur
+in a minority of people, particularly in children. People given
+montelukast should be counselled so as to be vigilant for these
+symptoms.
+7.4 H2-antihistamines
+There is insufﬁcient evidence to recommend routine addition of
+H2-antihistamines to second-generation H1-antihistamines for
+people with chronic urticaria whose symptoms are inadequately
+controlled by the latter alone.59 However, some people may
+beneﬁt, especially if urticaria is associated with dyspepsia. How-
+ever, dyspepsia should be investigated appropriately. If an H2-
+antihistamine is used, famotidine (at the dose licensed for dys-
+pepsia) is preferable to cimetidine, because the latter has a
+higher risk of adverse effects and interacts with cytochrome
+p450 modulators. Indeed, cimetidine interacts with some ﬁrst-
+generation H1-antihistamines, raising their plasma concentra-
+tion, which may explain some of the beneﬁcial effects of combi-
+nation therapy demonstrated many years ago.60 However, there
+are very few data on the use of famotidine in urticaria.
+It is of note that we no longer recommend ranitidine as it
+has been withdrawn by the manufacturers due to possible
+contamination with a known carcinogen.61
+7.5 Oral corticosteroids for inducible urticarias
+There are very few published data on the use of systemic cor-
+ticosteroids in people with inducible urticarias. As for CSU, a
+short course of oral prednisolone may be considered for sev-
+ere exacerbations, although it may not be as effective.62
+7.6 Avoidance of triggers in inducible urticarias
+Avoidance of triggers may be helpful, especially where disease
+control is difﬁcult. Avoidance can be disabling. However,
+where there is a risk of anaphylaxis, people should be warned
+to avoid particularly dangerous situations. For example, in
+cold urticaria, swimming in cold water (especially in the sea)
+or rock climbing could lead to a drop in core temperature or
+cooling of much of the body surface, resulting in anaphylaxis,
+potentially with fatal outcome.
+7.7 Autoinﬂammatory syndromes
+These usually respond very rapidly (usually within 24 h) to
+agents that inhibit the actions of interleukin-1, such as the
+interleukin-1 receptor antagonist anakinra. Early treatment
+may prevent (and possibly reverse) disease complications. A
+therapeutic trial can be used as a diagnostic tool.63
+7.8 Potential new treatments for chronic spontaneous
+urticaria
+A number of drugs are under investigation and/or in clinical
+trials
+for
+CSU.64
+Biosimilars
+for
+omalizumab
+are
+being
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al. 409
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 13 ==========
+
+developed. Ligelizumab, a new anti-IgE monoclonal antibody,
+may be more efﬁcacious and need less frequent administration
+than omalizumab. Dupilumab (an anti-interleukin-4 receptor
+antibody that inhibits the interleukin-4 and interleukin-13
+pathways), monoclonal antibodies targeting the interleukin-5
+pathway
+(such
+as
+mepolizumab,
+reslizumab
+and
+benral-
+izumab) and Bruton’s tyrosine kinase inhibitors are all being
+investigated
+for
+CSU.
+Other
+potential
+therapeutic
+targets
+include siglec-8 (an inhibitory receptor on mast cells, baso-
+phils and eosinophils), prostaglandin receptors, the H4 recep-
+tor and the C5a receptor.
+8. Prognosis
+Approximately 45% of people with CSU respond to H1-
+antihistamines at licensed doses,65 and reports estimate that up
+to two-thirds of the residual may respond to updosing.50 About
+two-thirds of those unresponsive to H1-antihistamines respond
+to omalizumab,66 and a similar, probably different but overlap-
+ping, proportion to ciclosporin, although there is less evidence
+for the latter.67 Of note, the response rates given include partial
+and complete responses, so full disease suppression may not be
+achieved in many people with CSU with these treatments alone.
+Approximately 50% of people with CSU go into remission
+after 6 months to 5 years (longer if there is angio-oedema),
+but about 20% still have active disease after 10 years, and
+10% after 20 years.65,68
+In some people, urticaria can be very long lasting, difﬁcult
+to treat and disabling. This is perhaps particularly so for peo-
+ple with severe inducible urticarias, where there are fewer
+options and less data to support treatment.
+9. Considerations
+9.1 Children and young people
+In most aspects, urticaria and angio-oedema are very similar
+in children and adolescents compared with adults, including
+treatment approaches. About 75% of children with chronic
+urticaria have CSU, with most others having inducible urticar-
+ias,69 and both can coexist. However, there are a few impor-
+tant management aspects to consider when seeing children
+and adolescents.
+1.
+Consider an underlying autoinﬂammatory disease if a
+child is systemically unwell and/or has raised inﬂamma-
+tory markers. In England, children who are thought to
+have autoinﬂammatory disease should be referred to a
+rheumatologist with a specialist interest in autoinﬂamma-
+tory syndromes.
+2.
+A parasitic infection may be responsible for chronic urti-
+caria. At-risk children should be screened and, if parasitic
+infection is present, treated accordingly. Indicators of a
+potential parasitic infection include eosinophilia, gas-
+trointestinal symptoms and recent foreign travel.
+3. The same proportion of children and young people with
+CSU have a positive BHRA, but there is a lack of evidence
+that
+this
+inﬂuences
+treatment
+response
+or
+disease
+remission.
+4. H1-antihistamines currently authorized for use in children
+aged 2–11 years (Table 3) include cetirizine, levoceti-
+rizine, loratadine and rupatadine.70 When needed, these
+antihistamines can also be used below age 2 years, despite
+the licensing age cutoff, given their overall good safety
+proﬁle. Desloratadine is licensed from age 1 year and
+chlorphenamine from age 1 month (the latter is licensed
+in the UK according to the British National Formulary).
+5. Second-generation
+H1-antihistamines
+can
+be
+updosed
+with care (section 7.2) as for adults, taking into consid-
+eration cautions and contraindications, and proportionate
+to the manufacturers’ recommendations for age and
+weight (Table 3).71
+6. As
+for
+adults,
+do
+not
+offer
+ﬁrst-generation
+H1-
+antihistamines routinely, unless there is no alternative,
+due to concerns about their short- and long-term effects
+on the central nervous system.
+7. Children may be more likely than adults to have neu-
+ropsychiatric side-effects from montelukast, including
+dysphemia (described as ‘stuttering’), nightmares or
+night terrors, aggression and behavioural changes.
+8. Although not licensed in the UK, omalizumab has been suc-
+cessfully used in children below the age of 12 years with
+CSU and inducible urticarias, typically at the lower dose of
+150 mg every 4 weeks and down to age 6 years, but very
+occasionally at even younger ages.72 The same applies to
+ciclosporin (typically 3–4 mg kg1 per day).73–75
+9. As in adults, self-injectable adrenaline should be considered
+in children with inducible urticarias where there is a risk of
+anaphylaxis following a signiﬁcant trigger (those with cold
+urticaria must not immerse themselves in cold water), espe-
+cially in children with a history of systemic symptoms.
+10.
+There is very little published evidence for treatment
+interventions in children under 12 years, or for pho-
+totherapy for children of any age, with any subtype of
+urticaria.
+9.2 Pregnancy and breastfeeding
+There is insufﬁcient evidence to make a recommendation
+about the safety of using most drugs during pregnancy and
+breastfeeding. Refer to the manufacturer’s summary of pro-
+duct characteristics,11 or other published guidelines.
+However, in active disease and after counselling the person
+with any type of urticaria, where necessary consider cetirizine
+or loratadine (see Appendix C – LETR narratives – for available
+information on antihistamines).
+Similarly, to date there is no evidence of harm to the fetus
+or mother from the use of omalizumab in pregnancy, or
+whilst breastfeeding, although again the person should be
+fully informed of the lack of available evidence.
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+410 BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al.
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 14 ==========
+
+10. Recommended audit points
+In the last 20 consecutive people with chronic urticaria, is
+there clear documentation of:
+1.
+The clinical subtype(s) of urticaria.
+2.
+Provision of educational material.
+3.
+Advice on avoidance of triggers.
+4.
+Assessment of disease impact, for example DLQI (at a min-
+imum, prior to commencement of second-line agents).
+5.
+Assessment of disease severity, for example UAS7, AAS
+or UCT (at a minimum, prior to commencement of
+second-line agents).
+6.
+Use of a second-generation H1-antihistamine at the
+licensed dosage, as a ﬁrst-line agent for all types of
+chronic urticaria.
+7.
+Use of a second-generation H1-antihistamine above the
+manufacturer’s recommended dose for all types of urti-
+caria, if a licensed dose fails to adequately control symp-
+toms, unless there are contraindications.
+8.
+The addition of montelukast to a second-generation H1-
+antihistamine, in people with CSU whose symptoms are
+not adequately responsive to H1-antihistamines alone.
+9.
+The addition of omalizumab (or ciclosporin in CSU) to a
+second-generation H1-antihistamine, if symptoms are not
+adequately controlled by ﬁrst-line agents.
+10.
+Use of oral corticosteroids limited to short courses, if
+applicable.
+11
+Avoidance of ﬁrst-generation H1-antihistamines as ﬁrst-
+line treatment.
+The audit recommendation of 20 cases per department is to
+reduce variation in the results due to a single person and
+allow
+benchmarking
+between
+different
+units.
+However,
+departments unable to achieve this recommendation may
+choose to audit all cases seen in the preceding 12 months. See
+Appendix L (Supporting Information) for the set of audit stan-
+dards, data items and data collection methodology.
+11. Stakeholder involvement and peer review
+The draft document and Supporting Information were made
+available to the BAD membership, British Dermatological
+Nursing Group (BDNG), Primary Care Dermatological Society
+(PCDS), British Society for Allergy & Clinical Immunology
+(BSACI) and the Royal College of Pathologists’ Immunology
+Specialist Advisory Committee for comments, which were
+actively considered by the GDG. Following further review, the
+ﬁnalized version was sent for peer review by the Clinical Stan-
+dards Unit of the BAD, made up of the T&G subcommittee,
+prior to submission for publication.
+12. Limitations of the guideline
+This document has been prepared on behalf of the BAD and is
+based on the best data available when the document was pre-
+pared. It is recognized that under certain conditions it may be
+necessary to deviate from the guidelines and that the results of
+future studies may require some of the recommendations
+herein to be changed. Failure to adhere to these guidelines
+should not necessarily be considered negligent, nor should
+adherence to these recommendations constitute a defence
+against a claim of negligence. Limiting the review to English-
+language references was a pragmatic decision, but the authors
+recognize this may exclude some important information pub-
+lished in other languages.
+13. Plans for guideline revision
+The proposed revision date for this set of recommendations is
+scheduled for 2026; where necessary, important interim
+changes will be updated on the BAD website.
+Acknowledgements
+We are very grateful to Dr Frances Humphreys (formerly South
+Warwickshire NHS Foundation Trust), who led this guideline
+updating project initially; both of the patient representatives
+including Ms Linda Campbell for their input in formulating the
+clinical questions, ranking of the outcomes, reviewing the evi-
+dence and formulating the recommendations; and all those
+who commented on the draft during the consultation period.
+References
+1 Mohd Mustapa MF, Exton LS, Bell HK et al. Updated guidance for
+writing a British Association of Dermatologists clinical guideline:
+the adoption of the GRADE methodology 2016. Br J Dermatol 2017;
+176:44–51.
+2 Brouwers MC, Kho ME, Browman GP et al. AGREE II: advancing
+guideline development, reporting and evaluation in health care.
+CMAJ 2010; 182:E839–42.
+3 GRADEpro Guideline Development Tool. Hamilton, OH, Canada: McMaster
+University (developed by Evidence Prime, Inc.), 2020.
+4 Grattan CE, Humphreys F. Guidelines for evaluation and management
+of urticaria in adults and children. Br J Dermatol 2007; 157:1116–23.
+5 Guyatt GH, Oxman AD, Vist GE et al. GRADE: an emerging consen-
+sus on rating quality of evidence and strength of recommenda-
+tions. BMJ 2008; 336:924–6.
+6 Zuberbier T, Abdul Latiff AH, Abuzakouk M et al. The international
+EAACI/GA2LEN/EuroGuiDerm/APAAACI guideline for the deﬁni-
+tion, classiﬁcation, diagnosis and management of urticaria. Allergy
+2022. https://doi.org/10.1111/all.15090.
+7 National Institute for Health and Care Excellence. NSAIDs – pre-
+scribing issues. Available at: https://cks.nice.org.uk/topics/nsaids-
+prescribing-issues (last accessed 15 November 2021).
+8 British Society for Allergy & Clinical Immunology (BSACI). Non-
+steroidal anti-inﬂammatory drugs (NSAIDS). Available at: https://
+www.bsaci.org/professional-resources/allergy-management/drug-
+allergy/non-steroidal-anti-inﬂammatory-drugs-nsaids (last accessed
+15 November 2021).
+9 Kowalski ML, Asero R, Bavbek S et al. Classiﬁcation and practical
+approach to the diagnosis and management of hypersensitivity to
+nonsteroidal anti-inﬂammatory drugs. Allergy 2013; 68:1219–32.
+10 National Institute for Health and Care Excellence. Corticosteroids –
+oral. Available at: https://cks.nice.org.uk/topics/corticosteroids-
+oral (last accessed 15 November 2021).
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al. 411
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 15 ==========
+
+11 emc.
+Latest
+medicine
+updates.
+Available
+at:
+https://www.
+medicines.org.uk/emc/latest-medicines-updates (last accessed 15
+November 2021).
+12 Sanchez J, Amaya E, Acevedo A et al. Prevalence of inducible urti-
+caria in patients with chronic spontaneous urticaria: associated risk
+factors. J Allergy Clin Immunol 2017; 5:464–70.
+13 Zuberbier T, Balke M, Worm M et al. Epidemiology of urticaria: a
+representative cross-sectional population survey. Clin Exp Dermatol
+2010; 35:869–73.
+14 Kim BR, Yang S, Choi JW et al. Epidemiology and comorbidities
+of
+patients
+with
+chronic
+urticaria
+in
+Korea:
+a
+nationwide
+population-based study. J Dermatol 2018; 45:10–16.
+15 Fricke J, Avila G, Keller T et al. Prevalence of chronic urticaria in
+children and adults across the globe: systematic review with meta-
+analysis. Allergy 2020; 75:423–32.
+16 Maurer M, Abuzakouk M, Berard F et al. The burden of chronic
+spontaneous urticaria is substantial: real-world evidence from
+ASSURE-CSU. Allergy 2017; 72:2005–16.
+17 Guillet G, Becherel P-A, Pralong P et al. The burden of chronic
+urticaria: French baseline data from the international real-life
+AWARE study. Eur J Dermatol 2019; 29:49–54.
+18 Bezalel S, Mahlab-Guri K, Asher I et al. Angiotensin-converting enzyme
+inhibitor-induced angioedema. Am J Med 2015; 128:120–5.
+19 Stone C, Brown NJ. Angiotensin-converting enzyme inhibitor and
+other
+drug-associated
+angioedema.
+Immunol
+Allergy
+Clin
+2017;
+37:483–95.
+20 Mehregan
+DR,
+Hall
+MJ,
+Gibson
+LE.
+Urticarial
+vasculitis:
+a
+histopathologic and clinical review of 72 cases. J Am Acad Dermatol
+1992; 26:441–8.
+21 Gusdorf L, Asli B, Barbarot S et al. Schnitzler syndrome: validation
+and applicability of diagnostic criteria in real-life patients. Allergy
+2017; 72:177–82.
+22 Kuemmerle-Deschner JB, Ozen S, Tyrrell PN et al. Diagnostic crite-
+ria for cryopyrin-associated periodic syndrome (CAPS). Ann Rheum
+Dis 2017; 76:942–7.
+23 Niimi N, Francis DM, Kermani F et al. Dermal mast cell activation
+by autoantibodies against the high afﬁnity IgE receptor in chronic
+urticaria. J Invest Dermatol 1996; 106:1001–6.
+24 Kolkhir P, Church MK, Weller K et al. Autoimmune chronic spon-
+taneous urticaria: what we know and what we do not know. J
+Allergy Clin Immunol 2017; 139:1772–81.
+25 Sanchez J, Sanchez A, Cardona R. Causal relationship between
+anti-TPO IgE and chronic urticaria by in vitro and in vivo tests. Allergy
+Asthma Immunol Res 2019; 11:29–42.
+26 Schmetzer O, Lakin E, Topal FA et al. IL-24 is a common and
+speciﬁc autoantigen of IgE in patients with chronic spontaneous
+urticaria. J Allergy Clin Immunol 2018; 142:876–82.
+27 Hoffman HM, Mueller JL, Broide DH et al. Mutation of a new gene
+encoding a putative pyrin-like protein causes familial cold autoin-
+ﬂammatory syndrome and Muckle-Wells syndrome. Nat Genet
+2001; 29:301–5.
+28 Aksentijevich I, Nowak M, Mallah M et al. De novo CIAS1 mutations,
+cytokine activation, and evidence for genetic heterogeneity in patients
+with neonatal-onset multisystem inﬂammatory disease (NOMID): a
+new member of the expanding family of pyrin-associated autoinﬂam-
+matory diseases. Arthritis Rheum 2002; 46:3340–8.
+29 Rowczenio DM, Gomes SM, Arostegui JI et al. Late-onset cryopyrin-
+associated periodic syndromes caused by somatic NLRP3 mosaicism
+– UK single center experience. Front Immunol 2017; 8:1410.
+30 Rowczenio DM, Pathak S, Arostegui JI et al. Molecular genetic
+investigation,
+clinical
+features,
+and
+response
+to
+treatment
+in 21 patients with Schnitzler syndrome. Blood 2018; 131:
+974–81.
+31 Leznoff A, Sussman GL. Syndrome of idiopathic chronic urticaria
+and angioedema with thyroid autoimmunity: a study of 90
+patients. J Allergy Clin Immunol 1989; 84:66–71.
+32 Caminiti L, Passalacqua G, Magazzu G et al. Chronic urticaria and
+associated coeliac disease in children: a case–control study. Pediatr
+Allergy Immunol Pulmonol 2005; 16:428–32.
+33 Conﬁno-Cohen R, Chodick G, Shalev V et al. Chronic urticaria and
+autoimmunity: associations found in a large population study. J
+Allergy Clin Immunol 2012; 129:1307–13.
+34 Lebwohl B, S€oderling J, Roelstraete B et al. Risk of skin disorders
+in patients with celiac disease: a population-based cohort study. J
+Am Acad Dermatol 2022; 85:1456–64.
+35 Zigmond AS, Snaith RP. The hospital anxiety and depression scale.
+Acta Psychiatr Scand 1983; 67:361–70.
+36 Weller K, Grofﬁk A, Church MK et al. Development and validation
+of the Urticaria Control Test: a patient-reported outcome instru-
+ment for assessing urticaria control. J Allergy Clin Immunol 2014;
+133:1365–72.
+37 Weller K, Grofﬁk A, Magerl M et al. Development, validation, and
+initial results of the Angioedema Activity Score. Allergy 2013;
+68:1185–92.
+38 Jauregui I, Ortiz de Frutos F, Ferrer M et al. Assessment of severity
+and quality of life in chronic urticaria. J Investig Allergol Clin Immunol
+2014; 24:80–6.
+39 Młynek A, Zalewska-Janowska A, Martus P et al. How to assess dis-
+ease activity in patients with chronic urticaria? Allergy 2008;
+63:777–80.
+40 Ertas R, Ozyurt K, Atasoy M et al. The clinical response to omal-
+izumab in chronic spontaneous urticaria patients is linked to and
+predicted by IgE levels and their change. Allergy 2018; 73:
+705–12.
+41 Iqbal K, Bhargava K, Skov PS et al. A positive serum basophil his-
+tamine release assay is a marker for ciclosporin-responsiveness in
+patients with chronic spontaneous urticaria. Clin Transl Allergy 2012;
+2:19.
+42 Maurer M, Gimenez-Arnau AM, Sussman G et al. Ligelizumab for
+chronic spontaneous urticaria. N Engl J Med 2019; 381:1321–32.
+43 Magerl M, Altrichter S, Borzova E et al. The deﬁnition, diagnostic
+testing, and management of chronic inducible urticarias – the
+EAACI/GA2LEN/EDF/UNEV
+consensus
+recommendations
+2016
+update and revision. Allergy 2016; 71:780–802.
+44 Gompels M, Lock R, Abinun M et al. C1 inhibitor deﬁciency: con-
+sensus document. Clin Exp Immunol 2005; 139:379–94.
+45 Sj€owall C, Mandl T, Skattum L et al. Epidemiology of hypocomple-
+mentaemic urticarial vasculitis (anti-C1q vasculitis). Rheumatology
+2018; 57:1400–7.
+46 Sharma M, Bennett C, Cohen SN, Carter B. H1-antihistamines for
+chronic spontaneous urticaria. Cochrane Database Syst Rev 2014; 2014:
+CD006137.
+47 Purohit A, Melac M, Pauli G et al. Twenty-four-hour activity and
+consistency of activity of levocetirizine and desloratadine in the
+skin. Br J Clin Pharmacol 2003; 56:388–94.
+48 Lever L, Hill S, Marks R et al. Effects of cetirizine, loratadine and
+terfenadine on histamine weal and ﬂare reactions. Skin Pharmacol
+Physiol 1992; 5:29–33.
+49 Phinyo P, Koompawichit P, Nochaiwong S et al. Comparative efﬁ-
+cacy and acceptability of licensed dose second-generation antihis-
+tamines in chronic spontaneous urticaria: a network meta-analysis.
+J Allergy Clin Immunol 2021; 9:956–70.
+50 Guillen-Aguinaga S, Jauregui Presa I, Aguinaga-Ontoso E et al.
+Updosing nonsedating antihistamines in patients with chronic
+spontaneous urticaria: a systematic review and meta-analysis. Br J
+Dermatol 2016; 175:1153–65.
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+412 BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al.
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 16 ==========
+
+51 Maurer M, Church M, Goncalo M et al. Management and treatment
+of chronic urticaria (CU). J Eur Acad Dermatol Venereol 2015; 29:16–32.
+52 Casale TB, Blaiss MS, Gelfand E et al. First do no harm: managing
+antihistamine impairment in patients with allergic rhinitis. J Allergy
+Clin Immunol 2003; 111:S835–42.
+53 Weller K, Ziege C, Staubach P et al. H1-antihistamine up-dosing in
+chronic spontaneous urticaria: patients’ perspective of effectiveness
+and side effects – a retrospective survey study. PLOS ONE 2011; 6:
+e23931.
+54 Cataldi M, Maurer M, Taglialatela M et al. Cardiac safety of second-
+generation H1-antihistamines when updosed in chronic sponta-
+neous urticaria. Clin Exp Allergy 2019; 49:1615–23.
+55 de Silva NL, Damayanthi H, Rajapakse AC et al. Leukotriene recep-
+tor antagonists for chronic urticaria: a systematic review. Allergy
+Asthma Clin Immunol 2014; 10:24.
+56 Nettis E, Colanardi M, Soccio A et al. Desloratadine in combination
+with montelukast suppresses the dermographometer challenge test
+papule, and is effective in the treatment of delayed pressure urti-
+caria: a randomized, double-blind, placebo-controlled study. Br J
+Dermatol 2006; 155:1279–82.
+57 Pacor M, Di Lorenzo G, Corrocher R. Efﬁcacy of leukotriene receptor
+antagonist in chronic urticaria. A double-blind, placebo-controlled
+comparison of treatment with montelukast and cetirizine in patients
+with chronic urticaria with intolerance to food additive and/or
+acetylsalicylic acid. Clin Exp Allergy 2001; 31:1607–14.
+58 Akenroye AT, McEwan C, Saini SS. Montelukast reduces symptom
+severity and frequency in patients with angioedema-predominant
+chronic spontaneous urticaria. J Allergy Clin Immunol 2018; 6:1403–5.
+59 Fedorowicz Z, van Zuuren EJ, Hu N. Histamine H2-receptor
+antagonists for urticaria. Cochrane Database Syst Rev 2012; 2012:
+CD008596.
+60 Bleehen S, Thomas S, Greaves M et al. Cimetidine and chlorpheni-
+ramine in the treatment of chronic idiopathic urticaria: a multi-centre
+randomized double-blind study. Br J Dermatol 1987; 117:81–8.
+61 GOV.UK. Ranitidine – MHRA drug alert issued for Teva UK recall.
+Available at: https://www.gov.uk/government/news/ranitidine-
+mhra-drug-alert-issued-for-teva-uk-recall (last accessed 15 Novem-
+ber 2021).
+62 Zuberbier T, Aberer W, Asero R et al. The EAACI/GA2LEN/EDF/
+WAO guideline for the deﬁnition, classiﬁcation, diagnosis and
+management of urticaria. Allergy 2018; 73:1393–414.
+63 Kone-Paut
+I,
+Piram
+M.
+Targeting
+interleukin-1b
+in
+CAPS
+(cryopyrin-associated periodic) syndromes: what did we learn?
+Autoimmun Rev 2012; 12:77–80.
+64 Kolkhir P, Altrichter S, Munoz M et al. New treatments for chronic
+urticaria. Ann Allergy Asthma Immunol 2020; 124:2–12.
+65 Humphreys F, Hunter JA. The characteristics of urticaria in 390
+patients. Br J Dermatol 1998; 138:635–8.
+66 Tharp MD, Bernstein JA, Kavati A et al. Beneﬁts and harms of oma-
+lizumab treatment in adolescent and adult patients with chronic
+idiopathic (spontaneous) urticaria: a meta-analysis of ‘real-world’
+evidence. JAMA Dermatol 2019; 155:29–38.
+67 Kulthanan K, Chaweekulrat P, Komoltri C et al. Cyclosporine for
+chronic spontaneous urticaria: a meta-analysis and systematic
+review. J Allergy Clin Immunol 2018; 6:586–99.
+68 Champion RH, Roberts SO, Carpenter RG et al. Urticaria and
+angio-oedema. A review of 554 patients. Br J Dermatol 1969;
+81:588–97.
+69 Netchiporouk E, Sasseville D, Moreau L et al. Evaluating comorbidities,
+natural history, and predictors of early resolution in a cohort of chil-
+dren with chronic urticaria. JAMA Dermatol 2017; 153:1236–42.
+70 Fitzsimons R, van der Poel LA, Thornhill W et al. Antihistamine
+use in children. Arch Dis Child Educ Pract Ed 2015; 100:122–31.
+71 Gabrielli S, Le M, Netchiporouk E et al. Chronic urticaria in chil-
+dren
+can
+be
+controlled
+effectively
+with
+updosing
+second-
+generation antihistamines. J Am Acad Dermatol 2020; 82:1535–7.
+72 Al-Shaikhly T, Rosenthal JA, Ayars AG et al. Omalizumab for
+chronic urticaria in children younger than 12 years. Ann Allergy
+Asthma Immunol 2019; 123:208–10.
+73 Doshi DR, Weinberger MM. Experience with cyclosporine in chil-
+dren with chronic idiopathic urticaria. Pediatr Dermatol 2009; 26:409–
+13.
+74 Giuliodori K, Ganzetti G, Campanati A et al. A non-responsive
+chronic autoimmune urticaria in a 12-year-old autistic girl treated
+with cyclosporin. J Eur Acad Dermatol Venereol 2009; 23:619–20.
+75 Neverman L, Weinberger M. Treatment of chronic urticaria in
+children with antihistamines and cyclosporine. J Allergy Clin Immunol
+Pract 2014; 2:434–8.
+Supporting Information
+Additional Supporting Information may be found in the online
+version of this article at the publisher’s website:
+Appendix A Systematic review protocols and clinical ques-
+tions.
+Appendix B Forest plots for comparative studies.
+Appendix C Linking the Evidence To the Recommendations
+(LETR).
+Appendix D GRADE evidence tables.
+Appendix E Summary of included comparative studies.
+Appendix F Narrative ﬁndings for noncomparative studies.
+Appendix G PRISMA diagram – study selection.
+Appendix H Papers excluded from quantitative analysis.
+Appendix I AMSTAR 2 critical appraisal of the included sys-
+tematic reviews.
+Appendix J Methodology.
+Appendix K Search strategy.
+Appendix L Audit standards, data items and data collection
+methodology.
+Powerpoint S1 Journal Club Slide Set.
+Appendix Author afﬁliations
+1Shefﬁeld Teaching Hospitals NHS Foundation Trust Shefﬁeld S10 2JF UK
+2St John’s Institute of Dermatology Guy’s and St Thomas’ NHS Foundation
+Trust London SE1 9RT UK
+3Clinical Experimental Sciences Faculty of Medicine University of Southamp-
+ton Southampton General Hospital Southampton SO16 6YD UK
+4Barts Health NHS Trust and Queen Mary University of London Medical
+School London E1 1BB UK
+5Patient representative
+6Royal Free London NHS Foundation Trust Pond St London NW3 2QG UK
+7University of Manchester & Salford Royal Hospital Salford M6 8HD UK
+8MRC Human Immunology Unit The MRC Weatherall Institute of Molecular
+Medicine University of Oxford NIHR Oxford Biomedical Research Centre John
+Radcliffe Hospital Oxford OX3 9DS UK
+9University of Lincoln Lincoln LN6 7TS UK
+10British Association of Dermatologists Willan House, 4 Fitzroy Square Lon-
+don W1T 5HQ UK
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2022) 186, pp398–413
+BAD guidelines for chronic urticaria 2021, R.A. Sabroe et al. 413
+Downloaded from https://academic.oup.com/bjd/article/186/3/398/6705777 by guest on 06 May 2026
+
+
+========== PAGE 17 ==========
+
+of patients
+with PsO achieved
+PASI 75 at Week 4
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+75.9%
+(n=265/349)
+of patients
+with PsO achieved
+PASI 100 at 5 years3
+76.9%
+(N=52)†
+of biologic-naïve
+and TNFi-IR PsA patients
+achieved ACR 50 at
+Week 104/100, respectively‡1,4–6
+of patients
+with PsO achieved
+PASI 100 at Week 16
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+68.2%
+(n=238/349)
+and
+50.6%
+(n=135/267)
+51.5%
+(n=222/431)
+GB-BK-2500315 | July 2025
+UCB Biopharma SRL, 2025. All rights reserved.
+This promotional material has been created and funded by UCB Pharma Ltd and
+is intended for healthcare professionals in the UK.
+BIMZELX is indicated for the treatment of: moderate to severe plaque PsO in adults
+who are candidates for systemic therapy; active PsA, alone or in combination
+with methotrexate, in adults who have had an inadequate response, or who have
+been intolerant, to one or more DMARDs; active nr-axSpA with objective signs of
+inflammation as indicated by elevated CRP and/or MRI, in adults who have responded
+inadequately, or are intolerant, to NSAIDs; active AS in adults who have responded
+inadequately or are intolerant to conventional therapy; and active moderate to severe
+HS (acne inversa) in adults with an inadequate response to conventional systemic HS
+therapy.4
+Prescribing information for United Kingdom click here.
+Please refer to the SmPC for further information.
+These data are from different clinical trials and cannot be directly compared.
+Co-primary endpoints PASI 90 and IGA 0/1 at Week 16 were met.**Secondary endpoints. †N= mNRI, missing data
+were imputed with mNRI (patients with missing data following treatment discontinuation due to lack of efficacy
+or a TRAE were counted as non-responders; multiple imputation methodology was used for other missing data).
+‡43.9% (n=189/431), and 43.4% (n=116/267) of biologic-naïve and TNFi-IR PsA patients achieved the primary
+endpoint of ACR 50 at Week 16 in BE OPTIMAL and BE COMPLETE, respectively (vs 10.0% [n=28/281] and 6.8%
+[n=9/133] placebo, p<0.0001); 54.5% (n=235/431) and 51.7% (n=138/267) maintained it at Week 52 (NRI).4–6 ​
+ACR 50, ≥50% response in the American College of Rheumatology criteria; AS, ankylosing spondylitis; CRP,
+C-reactive protein; DMARD, disease-modifying antirheumatic drug; HS, hidradenitis suppurativa; IGA, Investigator’s
+Global Assessment; (m)NRI, (modified) non-responder imputation; MRI, magnetic resonance imaging; nr-
+axSpA, non-radiographic axial spondyloarthritis; NSAID, non-steroidal anti-inflammatory drug; PASI 75/90/100,
+≥75/90/100% improvement from baseline in Psoriasis Area and Severity Index; PsA, psoriatic arthritis; PsD, psoriatic
+disease; PsO, psoriasis; TNFi-IR, tumour necrosis factor-α inhibitor – inadequate responder; TRAE, treatment-
+related adverse event.
+References: 1. Gordon KB, et al. Lancet. 2021;397(10273):475–486. 2. Blauvelt. 2025. AAD Presentation 62275. 3.
+Mease PJ, et al. Rheumatol Ther. 2024;11(5):1363–1382. 4. BIMZELX SmPC. 5. Ritchlin CT, et al. Ann Rheum Dis.
+2023;82(11):1404–1414. 6. Coates LC, et al. RMD Open. 2024;10(1):e003855. 7. Strober B, et al. AAD 2024;oral
+presentation.​
+This medicine is subject to additional monitoring. This will allow quick
+identification of new safety information. Adverse events should be reported.
+Reporting forms and information can be found at www.yellowcard.mhra.gov.uk for
+the UK. Adverse events should also be reported to UCB Pharma Ltd at
+UCBCares.UK@UCB.com or 0800 2793177 for UK.
+NO COMPROMISE,
+JUST CLEARANCE
+BIMZELX was well tolerated, the most frequently reported adverse reactions were: upper respiratory tract infections
+and oral candidiasis. Other common reported adverse reactions include tinea infections, ear infections, herpes simplex
+infections, oropharyngeal candidiasis, gastroenteritis, folliculitis, headache, rash, dermatitis, eczema, acne, injection site
+reactions, fatigue, and vulvovaginal mycotic infection (including vulvovaginal candidiasis).4
+Bimzelx®     (bimekizumab) offers
+the opportunity for complete, fast,
+and lasting skin clearance and
+proven PsA efficacy 1–7
