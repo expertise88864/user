@@ -28,24 +28,52 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Unicode ranges
 CJK = r'一-鿿㐀-䶿豈-﫿'
-# Map of half-width → full-width
+# Map of half-width ASCII → full-width Chinese (explicit Unicode escapes
+# so the source file isn't ambiguous when an editor input-method silently
+# downcasts a full-width char to ASCII).
 MAP = {
-    ',': ',',
-    ';': ';',
-    ':': ':',
-    '!': '!',
-    '?': '?',
+    ',':  '，',  # ASCII , → ，
+    ';':  '；',  # ASCII ; → ；
+    ':':  '：',  # ASCII : → :
+    '!':  '！',  # ASCII ! → !
+    '?':  '？',  # ASCII ? → ?
 }
-# . is special — full-width period for CJK end-of-sentence is 。
-# But . between English ("3.5") must stay. Match only [CJK].[CJK or end-of-sentence-context]
-DOT_PAT = re.compile(r'([' + CJK + r'])\.(?=[' + CJK + r']|\s*$|\s*[「『』」。、,;:!?])')
+# . is special — full-width period for CJK end-of-sentence is 。 (U+3002).
+# Only convert . between CJK or in trailing-CJK-sentence positions.
+DOT_PAT = re.compile(
+    r'([' + CJK + r'])\.(?=[' + CJK + r']|\s*$|\s*[「『』」。、，；：！？])'
+)
 
-# General punctuation pattern: between CJK chars
-def make_pat(half):
-    # Lookbehind: CJK; the punct; lookahead: CJK or whitespace+CJK or punctuation
-    return re.compile(r'(?<=[' + CJK + r'])' + re.escape(half) + r'(?=[' + CJK + r']|\s*[' + CJK + r'])')
+# Punctuation in CJK context — match if punct is in a non-whitespace position
+# and at least one side (typically the side AFTER) is CJK. This catches:
+#   2-10%;台灣  (% is non-CJK but followed by CJK → in a Chinese sentence)
+#   (Sabroe),台灣
+#   Hello, 世界
+# without accidentally hitting pure-English code:
+#   var x = 1, y;  (no CJK after `,` → no match)
+# Sentence-content chars that count as "CJK-adjacent" for punctuation context:
+# CJK + Enclosed Alphanumerics (①②③) + Halfwidth & Fullwidth Forms (already covered)
+# + numbers/letters (so `2-10%;台灣` matches via either side).
+CJK_EXT = CJK + r'①-⓿'  # ①-Ⓩ  (circled digits/letters used in TC docs)
 
-PATS = {h: (make_pat(h), f) for h, f in MAP.items()}
+def make_pat_pre(half):
+    # CJK-before pattern: CJK + punct + (CJK | space + CJK | letter/digit |
+    # tag boundary < | quote " ' | backslash for JSON \n | math symbols).
+    # Backslash matches `?\n` JSON escape; ≥/≤ etc. for `斯;≥2`.
+    return re.compile(
+        r'(?<=[' + CJK_EXT + r'])'
+        + re.escape(half)
+        + r'(?=[' + CJK_EXT + r']|\s+[' + CJK_EXT + r']|[A-Za-z0-9<>(（"\'\\\\≥≤±·＞＜∼])'
+    )
+
+def make_pat_post(half):
+    # punct + CJK-after: any non-whitespace + punct + (CJK or circled-digit)
+    return re.compile(
+        r'(?<=\S)' + re.escape(half) + r'(?=\s*[' + CJK_EXT + r'])'
+    )
+
+PATS_PRE  = {h: (make_pat_pre(h), f) for h, f in MAP.items()}
+PATS_POST = {h: (make_pat_post(h), f) for h, f in MAP.items()}
 
 # Strip ONLY non-JSON-LD <script> blocks (i.e. real JS code, where ASCII
 # punctuation might be syntactically meaningful). <style> blocks are LEFT
@@ -66,9 +94,13 @@ def fix(text):
         return f'\x00{len(saved)-1}\x00'
     stripped = SCRIPT_RE.sub(save, text)
 
-    # Apply all punct replacements
+    # Apply all punct replacements (two passes: CJK-before and CJK-after)
     n_total = 0
-    for h, (pat, full) in PATS.items():
+    for h, (pat, full) in PATS_PRE.items():
+        new, n = pat.subn(full, stripped)
+        stripped = new
+        n_total += n
+    for h, (pat, full) in PATS_POST.items():
         new, n = pat.subn(full, stripped)
         stripped = new
         n_total += n
