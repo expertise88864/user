@@ -1,1145 +1,233 @@
 {
   "slug": "biologics-overview",
   "strings": [
-    {
-      "zh": "什麼是生物製劑？跟一般藥不同？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "使用前必要篩檢（共通）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "異位性皮膚炎用藥",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "乾癬用藥",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "圓禿用藥",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "慢性自發性蕁麻疹用藥",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "化膿性汗腺炎用藥",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "白斑用藥",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "健保 vs 自費",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "共通副作用與處置",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "結語",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "生物製劑（注射型）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "JAK 抑制劑（口服）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "小分子(Apremilast、Deucravacitinib)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "本篇大綱",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "幾乎所有生物製劑與 JAK 抑制劑使用前都需：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "使用中：每 3-6 個月追蹤 CBC、肝腎、血脂，部分藥物需追蹤淋巴球、CK。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "2026 年台灣健保有條件給付的皮膚科生物製劑與小分子標靶藥（隨時更新）:",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "生物製劑與小分子標靶藥物徹底改變了中重度皮膚疾病的治療面貌：",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "疫苗狀態審視：活性疫苗使用前需間隔（MMR、水痘、Shingrix 為非活性疫苗例外可用）",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "結核篩檢：胸部 X 光（3 個月內）+ IGRA;若潛伏性 TB 須先預防性治療(Isoniazid 9 個月或 Rifampicin 4 個月)",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "B / C 型肝炎篩檢、HIV、CBC、肝腎功能、血脂(總膽固醇 / LDL / HDL / TG)、CPK",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "絕對禁用閾值:ALC &lt; 500/μL、ANC &lt; 1000/μL、Hb &lt; 8 g/dL → 不可開始或須暫停",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "確認疫苗狀態：必要時補打；啟動後不可接種活性疫苗",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "追蹤期間：臨床注意上呼吸道感染、HSV 復發、痤瘡、CPK 上升、不明體重減輕",
-      "en": "",
-      "tag": "li"
-    },
-    {
-      "zh": "生物製劑與小分子標靶藥物",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "有能達到「皮膚清除」的精準治療",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "提醒：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「廣泛抑制免疫」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「精準擊中特定發炎路徑」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "生物製劑（Biologics）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "單株抗體",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "注射",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "小分子標靶藥（Small molecules）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "口服",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "更專一、副作用更輕、療效更強",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "結核病",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "B 型肝炎、C 型肝炎",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "CBC、肝腎功能、血脂",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "驗孕",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Dupilumab（杜避炎 Dupixent）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "EASI-75 第 16 週約 51-69%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "EASI-75 第 16 週約 51-59%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Upadacitinib（銳虎 Rinvoq）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "EASI-75 第 16 週 60-80%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Abrocitinib（喜開憶 Cibinqo）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Baricitinib（愛滅炎 Olumiant）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "JAK 抑制劑 — 治療前必要篩檢（2024 德國 S3 指引）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "禁用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "IL-17 抑制劑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "PASI 90 第 16 週約 70-72%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "PASI 90 第 12 週約 71%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "PASI 100 第 16 週約 59-62%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "IL-23 抑制劑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "PASI 90 第 24 週約 74-80%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "PASI 90 第 16 週約 75%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "IL-12/23 抑制劑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "TNF 抑制劑（較舊代）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "口服小分子",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "PASI 75 第 24 週約 69%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "PASI &gt; 10 + DLQI &gt; 10 + 至少 2 種傳統治療失敗",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "SALT ≤ 20 第 36 週約 38-39%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Ritlecitinib（麗扶柔 Litfulo）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Omalizumab（樂無喘 Xolair）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "UAS7 ≤ 6 第 12 週約 52-66%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Adalimumab（復邁 Humira）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "每週",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "HiSCR 第 12 週約 41-59%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Secukinumab（可善挺 Cosentyx）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用乳霜",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "F-VASI 75 第 24 週約 30%、第 52 週約 50%",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "乾癬",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "異位性皮膚炎",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "慢性自發性蕁麻疹",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "化膿性汗腺炎",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "圓禿",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "白斑",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "使用條件不變",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "注射部位反應",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "上呼吸道感染",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "結核病再活化",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "B 肝再活化",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "注射過敏反應",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "念珠菌感染",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "發炎性腸道疾病",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "上呼吸道感染、痤瘡",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "帶狀疱疹再活化",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "血脂上升",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "淋巴球下降、CK 上升",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "血栓栓塞、嚴重心血管事件、惡性腫瘤",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "禁忌",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "腹瀉、噁心、頭痛",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "體重下降",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "痤瘡、上呼吸道感染、CK 升高",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "憂鬱情緒",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「PASI 100 （完全清除）」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "異膚",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "3 週看到顯著改善",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "口服 JAK 重度個案 38% 達到 SALT 75",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用 Ruxolitinib 半數人臉部 75% 色素再生",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Adalimumab 改善生活品質",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "沒有單一藥物適合所有人",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "延伸閱讀：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陳翊嘉 醫師",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "尋常型乾癬治療共識手冊（2024）",
-      "en": "",
-      "tag": "em"
-    },
-    {
-      "zh": "異位性皮膚炎診療共識（2020）",
-      "en": "",
-      "tag": "em"
-    },
-    {
-      "zh": "圓禿診斷及治療共識（2024）",
-      "en": "",
-      "tag": "em"
-    },
-    {
-      "zh": "皮膚科生物製劑總覽",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "更新 2026-05-04",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "機轉、適應症、施打方式、頻率、價格",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "皮膚科 住院醫師",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "藥名",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "機轉",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "適應症",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "給藥",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "頻率",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "預期療效",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "健保 / 自費",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "自費（估）",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "自費",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "自費 / 健保",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "劑型",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "用法",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "抗 IL-4Rα（同時阻斷 IL-4 + IL-13）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥ 6 個月中重度異膚",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "皮下注射",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第 0 週 600 mg → 每 2 週 300 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "健保有條件給付；自費單針約 NT$ 16,000-22,000",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 IL-13",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥ 12 歲中重度異膚",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每 2 週 300 mg（維持期可改 4 週）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "EASI-75 第 16 週約 25-33%(ECZTRA-1/2)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "自費約 NT$ 18,000-24,000/月",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 IL-13（中和 trap）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第 0、2、4 週 500 mg → 每 4 週 250 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "2024 上市，部分區域可申請",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "選擇性 JAK1 抑制劑",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 15-30 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "健保有條件給付；自費月費約 NT$ 30,000-50,000",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 100-200 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "EASI-75 第 12 週約 40-63%(JADE MONO-1/2)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "JAK1/2 抑制劑",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "異膚（歐洲、未在台灣異膚適應症）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 2-4 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "EASI-75 第 16 週 25-30%(BREEZE-AD)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "台灣異膚適應症未廣泛",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 IL-17A",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "皮下",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第 0,1,2,3,4 週 → 每 4 週 300 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NT$ 35,000-45,000/月",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Ixekizumab（達癬通 Taltz）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第 0 週 160 mg → 第 2-12 週每 2 週 80 mg → 每 4 週 80 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 IL-17 受體 A",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第 0,1,2 週 → 每 2 週 210 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "PASI 100 第 12 週約 37-44%(AMAGINE-2/3)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 IL-17A + IL-17F 雙重",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每 4 週（維持期可 8 週）320 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NT$ 50,000+/月",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Guselkumab（特諾雅 Tremfya）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 IL-23 p19",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第 0、4 週 → 每 8 週 100 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NT$ 50,000-65,000/針（每 2 月）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Risankizumab（喜開麗 Skyrizi）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第 0、4 週 → 每 12 週 150 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NT$ 60,000-80,000/針（每 3 月）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第 0、4 週 → 每 12 週 100 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "PASI 75 第 12 週約 64-74%(reSURFACE)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "類似",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Ustekinumab（喜達諾 Stelara）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 IL-12/23 p40",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第 0、4 週 → 每 12 週（體重決定劑量）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "PASI 75 第 12 週約 67%(PHOENIX-1)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NT$ 50,000-65,000/針",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 TNF-α",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第 0 週 80 mg → 每 2 週 40 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "PASI 75 第 16 週約 71%(REVEAL);較新藥稍低",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NT$ 25,000-35,000/月（較便宜）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Etanercept（恩博 Enbrel）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "TNF 受體融合蛋白",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每週 50 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "PASI 75 第 12 週約 47%(50 mg BIW)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NT$ 25,000-35,000/月",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Infliximab（類克 Remicade）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "靜脈",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第 0、2、6 週 → 每 8 週（體重）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "PASI 75 第 10 週約 80%(EXPRESS)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NT$ 30,000-40,000/次",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 TNF Fab' 片段",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第 0、2、4 週 → 每 2 週",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "PASI 75 第 16 週約 75-83%(CIMPASI-1/2)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Apremilast（喜樂寶 Otezla）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "PDE-4 抑制劑",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 30 mg BID",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "PASI 75 第 16 週約 33%(ESTEEM-1/2);較弱但口服方便",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NT$ 15,000-25,000/月",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "選擇性 TYK2 抑制劑",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 6 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NT$ 30,000-50,000/月",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥ 18 歲重度圓禿",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 4 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "JAK3 / TEC 抑制劑",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "≥ 12 歲重度圓禿",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 50 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "SALT ≤ 20 第 24 週約 23%、第 48 週約 40%(ALLEGRO)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 IgE",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每 4 週 150-300 mg",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "慢性自發性蕁麻疹健保有條件給付；自費約 NT$ 14,000-22,000/針",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 IL-4Rα",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每 2 週（類異膚劑量）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗組織胺無反應 CSU 第 24 週 UAS7 顯著改善(LIBERTY-CUPID)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "慢性蕁麻疹適應症 2024 年 FDA 核准，台灣陸續",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "更強抗 IgE",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "第 III 期試驗未顯著優於 Omalizumab,部分研發暫緩",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "未上市",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "BTK 抑制劑（口服）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "REMIX 第 III 期試驗顯著改善 UAS7",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "2024 健保有條件給付中重度 HS；自費月費 NT$ 30,000-50,000",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "誘導 + 維持每 4 週",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "HiSCR 第 16 週約 42-47%(SUNSHINE / SUNRISE)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "2023 FDA 核准 HS，台灣自費",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗 IL-17A/F",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "誘導後每 4 週",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "HiSCR 第 16 週約 58%(BE HEARD I/II)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "近年取得 HS 適應症",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "每天 2 次，持續 ≥ 24 週",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "NT$ 4,000-6,000/條(60g)",
-      "en": "",
-      "tag": "td"
-    }
+    { "zh": "什麼是生物製劑？跟一般藥不同？", "en": "What are biologics — how do they differ from conventional drugs?", "tag": "h2" },
+    { "zh": "使用前必要篩檢（共通）", "en": "Pre-treatment screening (common to all biologics)", "tag": "h2" },
+    { "zh": "異位性皮膚炎用藥", "en": "Drugs for atopic dermatitis", "tag": "h2" },
+    { "zh": "乾癬用藥", "en": "Drugs for psoriasis", "tag": "h2" },
+    { "zh": "圓禿用藥", "en": "Drugs for alopecia areata", "tag": "h2" },
+    { "zh": "慢性自發性蕁麻疹用藥", "en": "Drugs for chronic spontaneous urticaria", "tag": "h2" },
+    { "zh": "化膿性汗腺炎用藥", "en": "Drugs for hidradenitis suppurativa", "tag": "h2" },
+    { "zh": "白斑用藥", "en": "Drugs for vitiligo", "tag": "h2" },
+    { "zh": "健保 vs 自費", "en": "NHI vs out-of-pocket", "tag": "h2" },
+    { "zh": "共通副作用與處置", "en": "Common adverse effects and management", "tag": "h2" },
+    { "zh": "結語", "en": "Bottom line", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "生物製劑（注射型）", "en": "Biologics (injectable)", "tag": "h3" },
+    { "zh": "JAK 抑制劑（口服）", "en": "JAK inhibitors (oral)", "tag": "h3" },
+    { "zh": "小分子(Apremilast、Deucravacitinib)", "en": "Small molecules (apremilast, deucravacitinib)", "tag": "h3" },
+    { "zh": "本篇大綱", "en": "Article outline", "tag": "h4" },
+    { "zh": "幾乎所有生物製劑與 JAK 抑制劑使用前都需：", "en": "Almost all biologics and JAK inhibitors require the following pre-treatment workup:", "tag": "p" },
+    { "zh": "使用中：每 3-6 個月追蹤 CBC、肝腎、血脂，部分藥物需追蹤淋巴球、CK。", "en": "During treatment: monitor CBC, renal/hepatic function, and lipids every 3–6 months; some drugs additionally require monitoring of lymphocytes and CK.", "tag": "p" },
+    { "zh": "2026 年台灣健保有條件給付的皮膚科生物製劑與小分子標靶藥（隨時更新）:", "en": "Dermatology biologics and small-molecule targeted drugs conditionally covered by Taiwan NHI as of 2026 (subject to updates):", "tag": "p" },
+    { "zh": "生物製劑與小分子標靶藥物徹底改變了中重度皮膚疾病的治療面貌：", "en": "Biologics and small-molecule targeted drugs have transformed the treatment landscape for moderate-to-severe skin diseases:", "tag": "p" },
+    { "zh": "疫苗狀態審視：活性疫苗使用前需間隔（MMR、水痘、Shingrix 為非活性疫苗例外可用）", "en": "Vaccination status review: live vaccines require spacing before treatment (MMR, varicella; Shingrix is non-live and is an exception)", "tag": "li" },
+    { "zh": "結核篩檢：胸部 X 光（3 個月內）+ IGRA;若潛伏性 TB 須先預防性治療(Isoniazid 9 個月或 Rifampicin 4 個月)", "en": "TB screening: chest X-ray (within 3 months) + IGRA; latent TB requires prophylaxis (isoniazid 9 months or rifampicin 4 months) before initiation", "tag": "li" },
+    { "zh": "B / C 型肝炎篩檢、HIV、CBC、肝腎功能、血脂(總膽固醇 / LDL / HDL / TG)、CPK", "en": "HBV/HCV serology, HIV, CBC, hepatic and renal function, lipid panel (total cholesterol / LDL / HDL / TG), CPK", "tag": "li" },
+    { "zh": "絕對禁用閾值:ALC &lt; 500/μL、ANC &lt; 1000/μL、Hb &lt; 8 g/dL → 不可開始或須暫停", "en": "Absolute thresholds: ALC < 500/μL, ANC < 1000/μL, Hb < 8 g/dL → do not initiate or pause therapy", "tag": "li" },
+    { "zh": "確認疫苗狀態：必要時補打；啟動後不可接種活性疫苗", "en": "Confirm vaccination status; supplement if needed. After initiation, live vaccines are contraindicated", "tag": "li" },
+    { "zh": "追蹤期間：臨床注意上呼吸道感染、HSV 復發、痤瘡、CPK 上升、不明體重減輕", "en": "During follow-up: monitor for upper respiratory infection, HSV reactivation, acne, elevated CPK, and unexplained weight loss", "tag": "li" },
+    { "zh": "生物製劑與小分子標靶藥物", "en": "Biologics and small-molecule targeted drugs", "tag": "strong" },
+    { "zh": "有能達到「皮膚清除」的精準治療", "en": "precision therapies capable of achieving “skin clearance”", "tag": "strong" },
+    { "zh": "提醒：", "en": "Note:", "tag": "strong" },
+    { "zh": "「廣泛抑制免疫」", "en": "“broad immunosuppression”", "tag": "strong" },
+    { "zh": "「精準擊中特定發炎路徑」", "en": "“precision targeting of specific inflammatory pathways”", "tag": "strong" },
+    { "zh": "生物製劑（Biologics）", "en": "Biologics", "tag": "strong" },
+    { "zh": "單株抗體", "en": "monoclonal antibodies", "tag": "strong" },
+    { "zh": "注射", "en": "injection", "tag": "strong" },
+    { "zh": "小分子標靶藥（Small molecules）", "en": "Small-molecule targeted drugs", "tag": "strong" },
+    { "zh": "口服", "en": "oral", "tag": "strong" },
+    { "zh": "更專一、副作用更輕、療效更強", "en": "more selective, with fewer adverse effects and greater efficacy", "tag": "strong" },
+    { "zh": "結核病", "en": "Tuberculosis", "tag": "strong" },
+    { "zh": "B 型肝炎、C 型肝炎", "en": "Hepatitis B, hepatitis C", "tag": "strong" },
+    { "zh": "CBC、肝腎功能、血脂", "en": "CBC, hepatic/renal function, lipid panel", "tag": "strong" },
+    { "zh": "驗孕", "en": "Pregnancy test", "tag": "strong" },
+    { "zh": "Dupilumab（杜避炎 Dupixent）", "en": "Dupilumab (Dupixent)", "tag": "strong" },
+    { "zh": "EASI-75 第 16 週約 51-69%", "en": "EASI-75 at week 16: ~51–69%", "tag": "strong" },
+    { "zh": "EASI-75 第 16 週約 51-59%", "en": "EASI-75 at week 16: ~51–59%", "tag": "strong" },
+    { "zh": "Upadacitinib（銳虎 Rinvoq）", "en": "Upadacitinib (Rinvoq)", "tag": "strong" },
+    { "zh": "EASI-75 第 16 週 60-80%", "en": "EASI-75 at week 16: 60–80%", "tag": "strong" },
+    { "zh": "Abrocitinib（喜開憶 Cibinqo）", "en": "Abrocitinib (Cibinqo)", "tag": "strong" },
+    { "zh": "Baricitinib（愛滅炎 Olumiant）", "en": "Baricitinib (Olumiant)", "tag": "strong" },
+    { "zh": "JAK 抑制劑 — 治療前必要篩檢（2024 德國 S3 指引）", "en": "JAK inhibitors — pre-treatment screening (2024 German S3 guidelines)", "tag": "strong" },
+    { "zh": "禁用", "en": "Contraindicated", "tag": "strong" },
+    { "zh": "IL-17 抑制劑", "en": "IL-17 inhibitors", "tag": "strong" },
+    { "zh": "PASI 90 第 16 週約 70-72%", "en": "PASI 90 at week 16: ~70–72%", "tag": "strong" },
+    { "zh": "PASI 90 第 12 週約 71%", "en": "PASI 90 at week 12: ~71%", "tag": "strong" },
+    { "zh": "PASI 100 第 16 週約 59-62%", "en": "PASI 100 at week 16: ~59–62%", "tag": "strong" },
+    { "zh": "IL-23 抑制劑", "en": "IL-23 inhibitors", "tag": "strong" },
+    { "zh": "PASI 90 第 24 週約 74-80%", "en": "PASI 90 at week 24: ~74–80%", "tag": "strong" },
+    { "zh": "PASI 90 第 16 週約 75%", "en": "PASI 90 at week 16: ~75%", "tag": "strong" },
+    { "zh": "IL-12/23 抑制劑", "en": "IL-12/23 inhibitor", "tag": "strong" },
+    { "zh": "TNF 抑制劑（較舊代）", "en": "TNF inhibitors (older generation)", "tag": "strong" },
+    { "zh": "口服小分子", "en": "Oral small molecules", "tag": "strong" },
+    { "zh": "PASI 75 第 24 週約 69%", "en": "PASI 75 at week 24: ~69%", "tag": "strong" },
+    { "zh": "PASI &gt; 10 + DLQI &gt; 10 + 至少 2 種傳統治療失敗", "en": "PASI > 10 + DLQI > 10 + failure of at least 2 conventional therapies", "tag": "strong" },
+    { "zh": "SALT ≤ 20 第 36 週約 38-39%", "en": "SALT ≤ 20 at week 36: ~38–39%", "tag": "strong" },
+    { "zh": "Ritlecitinib（麗扶柔 Litfulo）", "en": "Ritlecitinib (Litfulo)", "tag": "strong" },
+    { "zh": "Omalizumab（樂無喘 Xolair）", "en": "Omalizumab (Xolair)", "tag": "strong" },
+    { "zh": "UAS7 ≤ 6 第 12 週約 52-66%", "en": "UAS7 ≤ 6 at week 12: ~52–66%", "tag": "strong" },
+    { "zh": "Adalimumab（復邁 Humira）", "en": "Adalimumab (Humira)", "tag": "strong" },
+    { "zh": "每週", "en": "weekly", "tag": "strong" },
+    { "zh": "HiSCR 第 12 週約 41-59%", "en": "HiSCR at week 12: ~41–59%", "tag": "strong" },
+    { "zh": "Secukinumab（可善挺 Cosentyx）", "en": "Secukinumab (Cosentyx)", "tag": "strong" },
+    { "zh": "外用乳霜", "en": "Topical cream", "tag": "strong" },
+    { "zh": "F-VASI 75 第 24 週約 30%、第 52 週約 50%", "en": "F-VASI 75: ~30% at week 24, ~50% at week 52", "tag": "strong" },
+    { "zh": "乾癬", "en": "Psoriasis", "tag": "strong" },
+    { "zh": "異位性皮膚炎", "en": "Atopic dermatitis", "tag": "strong" },
+    { "zh": "慢性自發性蕁麻疹", "en": "Chronic spontaneous urticaria", "tag": "strong" },
+    { "zh": "化膿性汗腺炎", "en": "Hidradenitis suppurativa", "tag": "strong" },
+    { "zh": "圓禿", "en": "Alopecia areata", "tag": "strong" },
+    { "zh": "白斑", "en": "Vitiligo", "tag": "strong" },
+    { "zh": "使用條件不變", "en": "the same usage conditions apply", "tag": "strong" },
+    { "zh": "注射部位反應", "en": "Injection-site reaction", "tag": "strong" },
+    { "zh": "上呼吸道感染", "en": "Upper respiratory infection", "tag": "strong" },
+    { "zh": "結核病再活化", "en": "TB reactivation", "tag": "strong" },
+    { "zh": "B 肝再活化", "en": "Hepatitis B reactivation", "tag": "strong" },
+    { "zh": "注射過敏反應", "en": "Injection hypersensitivity", "tag": "strong" },
+    { "zh": "念珠菌感染", "en": "Candidiasis", "tag": "strong" },
+    { "zh": "發炎性腸道疾病", "en": "Inflammatory bowel disease", "tag": "strong" },
+    { "zh": "上呼吸道感染、痤瘡", "en": "Upper respiratory infection, acne", "tag": "strong" },
+    { "zh": "帶狀疱疹再活化", "en": "Herpes zoster reactivation", "tag": "strong" },
+    { "zh": "血脂上升", "en": "Lipid elevation", "tag": "strong" },
+    { "zh": "淋巴球下降、CK 上升", "en": "Lymphopenia, elevated CK", "tag": "strong" },
+    { "zh": "血栓栓塞、嚴重心血管事件、惡性腫瘤", "en": "Thromboembolism, major adverse cardiovascular events, malignancy", "tag": "strong" },
+    { "zh": "禁忌", "en": "Contraindications", "tag": "strong" },
+    { "zh": "腹瀉、噁心、頭痛", "en": "Diarrhea, nausea, headache", "tag": "strong" },
+    { "zh": "體重下降", "en": "Weight loss", "tag": "strong" },
+    { "zh": "痤瘡、上呼吸道感染、CK 升高", "en": "Acne, upper respiratory infection, elevated CK", "tag": "strong" },
+    { "zh": "憂鬱情緒", "en": "Depressed mood", "tag": "strong" },
+    { "zh": "「PASI 100 （完全清除）」", "en": "“PASI 100 (complete clearance)”", "tag": "strong" },
+    { "zh": "異膚", "en": "AD", "tag": "strong" },
+    { "zh": "3 週看到顯著改善", "en": "Significant improvement seen by week 3", "tag": "strong" },
+    { "zh": "口服 JAK 重度個案 38% 達到 SALT 75", "en": "Oral JAK: 38% of severe cases achieve SALT 75", "tag": "strong" },
+    { "zh": "外用 Ruxolitinib 半數人臉部 75% 色素再生", "en": "Topical ruxolitinib: half of patients achieve 75% facial repigmentation", "tag": "strong" },
+    { "zh": "Adalimumab 改善生活品質", "en": "Adalimumab improves quality of life", "tag": "strong" },
+    { "zh": "沒有單一藥物適合所有人", "en": "No single drug fits everyone", "tag": "strong" },
+    { "zh": "延伸閱讀：", "en": "Further reading:", "tag": "strong" },
+    { "zh": "陳翊嘉 醫師", "en": "Dr. Yi-Jia Chen", "tag": "strong" },
+    { "zh": "尋常型乾癬治療共識手冊（2024）", "en": "Plaque psoriasis treatment consensus (2024)", "tag": "em" },
+    { "zh": "異位性皮膚炎診療共識（2020）", "en": "Atopic dermatitis treatment consensus (2020)", "tag": "em" },
+    { "zh": "圓禿診斷及治療共識（2024）", "en": "Alopecia areata diagnosis and treatment consensus (2024)", "tag": "em" },
+    { "zh": "皮膚科生物製劑總覽", "en": "Dermatology biologics overview", "tag": "span" },
+    { "zh": "更新 2026-05-04", "en": "Updated 2026-05-04", "tag": "span" },
+    { "zh": "機轉、適應症、施打方式、頻率、價格", "en": "Mechanism, indication, route, frequency, cost", "tag": "span" },
+    { "zh": "皮膚科 住院醫師", "en": "Dermatology Resident", "tag": "span" },
+    { "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：", "en": "Content corrections / academic citations / media inquiries:", "tag": "span" },
+    { "zh": "藥名", "en": "Drug name", "tag": "th" },
+    { "zh": "機轉", "en": "Mechanism", "tag": "th" },
+    { "zh": "適應症", "en": "Indication", "tag": "th" },
+    { "zh": "給藥", "en": "Administration", "tag": "th" },
+    { "zh": "頻率", "en": "Frequency", "tag": "th" },
+    { "zh": "預期療效", "en": "Expected efficacy", "tag": "th" },
+    { "zh": "健保 / 自費", "en": "NHI / out-of-pocket", "tag": "th" },
+    { "zh": "自費（估）", "en": "Out-of-pocket (est.)", "tag": "th" },
+    { "zh": "自費", "en": "Out-of-pocket", "tag": "th" },
+    { "zh": "自費 / 健保", "en": "Out-of-pocket / NHI", "tag": "th" },
+    { "zh": "劑型", "en": "Formulation", "tag": "th" },
+    { "zh": "用法", "en": "Usage", "tag": "th" },
+    { "zh": "抗 IL-4Rα（同時阻斷 IL-4 + IL-13）", "en": "Anti-IL-4Rα (blocks both IL-4 and IL-13)", "tag": "td" },
+    { "zh": "≥ 6 個月中重度異膚", "en": "Moderate-severe AD ≥ 6 months", "tag": "td" },
+    { "zh": "皮下注射", "en": "Subcutaneous injection", "tag": "td" },
+    { "zh": "第 0 週 600 mg → 每 2 週 300 mg", "en": "Week 0: 600 mg → 300 mg every 2 weeks", "tag": "td" },
+    { "zh": "健保有條件給付；自費單針約 NT$ 16,000-22,000", "en": "Conditional NHI coverage; out-of-pocket ~ NT$ 16,000–22,000 per dose", "tag": "td" },
+    { "zh": "抗 IL-13", "en": "Anti-IL-13", "tag": "td" },
+    { "zh": "≥ 12 歲中重度異膚", "en": "Moderate-severe AD ≥ 12 yr", "tag": "td" },
+    { "zh": "每 2 週 300 mg（維持期可改 4 週）", "en": "300 mg every 2 weeks (may extend to every 4 weeks during maintenance)", "tag": "td" },
+    { "zh": "EASI-75 第 16 週約 25-33%(ECZTRA-1/2)", "en": "EASI-75 at week 16: ~25–33% (ECZTRA-1/2)", "tag": "td" },
+    { "zh": "自費約 NT$ 18,000-24,000/月", "en": "Out-of-pocket ~ NT$ 18,000–24,000 per month", "tag": "td" },
+    { "zh": "抗 IL-13（中和 trap）", "en": "Anti-IL-13 (neutralizing trap)", "tag": "td" },
+    { "zh": "第 0、2、4 週 500 mg → 每 4 週 250 mg", "en": "Weeks 0, 2, 4: 500 mg → 250 mg every 4 weeks", "tag": "td" },
+    { "zh": "2024 上市，部分區域可申請", "en": "Launched 2024; available in select regions", "tag": "td" },
+    { "zh": "選擇性 JAK1 抑制劑", "en": "Selective JAK1 inhibitor", "tag": "td" },
+    { "zh": "每天 15-30 mg", "en": "15–30 mg daily", "tag": "td" },
+    { "zh": "健保有條件給付；自費月費約 NT$ 30,000-50,000", "en": "Conditional NHI coverage; out-of-pocket ~ NT$ 30,000–50,000 per month", "tag": "td" },
+    { "zh": "每天 100-200 mg", "en": "100–200 mg daily", "tag": "td" },
+    { "zh": "EASI-75 第 12 週約 40-63%(JADE MONO-1/2)", "en": "EASI-75 at week 12: ~40–63% (JADE MONO-1/2)", "tag": "td" },
+    { "zh": "JAK1/2 抑制劑", "en": "JAK1/2 inhibitor", "tag": "td" },
+    { "zh": "異膚（歐洲、未在台灣異膚適應症）", "en": "AD (approved in EU; no AD indication in Taiwan)", "tag": "td" },
+    { "zh": "每天 2-4 mg", "en": "2–4 mg daily", "tag": "td" },
+    { "zh": "EASI-75 第 16 週 25-30%(BREEZE-AD)", "en": "EASI-75 at week 16: 25–30% (BREEZE-AD)", "tag": "td" },
+    { "zh": "台灣異膚適應症未廣泛", "en": "AD indication not yet broadly approved in Taiwan", "tag": "td" },
+    { "zh": "抗 IL-17A", "en": "Anti-IL-17A", "tag": "td" },
+    { "zh": "皮下", "en": "Subcutaneous", "tag": "td" },
+    { "zh": "第 0,1,2,3,4 週 → 每 4 週 300 mg", "en": "Weeks 0, 1, 2, 3, 4 → 300 mg every 4 weeks", "tag": "td" },
+    { "zh": "NT$ 35,000-45,000/月", "en": "NT$ 35,000–45,000 per month", "tag": "td" },
+    { "zh": "Ixekizumab（達癬通 Taltz）", "en": "Ixekizumab (Taltz)", "tag": "td" },
+    { "zh": "第 0 週 160 mg → 第 2-12 週每 2 週 80 mg → 每 4 週 80 mg", "en": "Week 0: 160 mg → 80 mg every 2 weeks (weeks 2–12) → 80 mg every 4 weeks", "tag": "td" },
+    { "zh": "抗 IL-17 受體 A", "en": "Anti-IL-17 receptor A", "tag": "td" },
+    { "zh": "第 0,1,2 週 → 每 2 週 210 mg", "en": "Weeks 0, 1, 2 → 210 mg every 2 weeks", "tag": "td" },
+    { "zh": "PASI 100 第 12 週約 37-44%(AMAGINE-2/3)", "en": "PASI 100 at week 12: ~37–44% (AMAGINE-2/3)", "tag": "td" },
+    { "zh": "抗 IL-17A + IL-17F 雙重", "en": "Dual anti-IL-17A and IL-17F", "tag": "td" },
+    { "zh": "每 4 週（維持期可 8 週）320 mg", "en": "320 mg every 4 weeks (every 8 weeks during maintenance)", "tag": "td" },
+    { "zh": "NT$ 50,000+/月", "en": "NT$ 50,000+ per month", "tag": "td" },
+    { "zh": "Guselkumab（特諾雅 Tremfya）", "en": "Guselkumab (Tremfya)", "tag": "td" },
+    { "zh": "抗 IL-23 p19", "en": "Anti-IL-23 p19", "tag": "td" },
+    { "zh": "第 0、4 週 → 每 8 週 100 mg", "en": "Weeks 0 and 4 → 100 mg every 8 weeks", "tag": "td" },
+    { "zh": "NT$ 50,000-65,000/針（每 2 月）", "en": "NT$ 50,000–65,000 per dose (every 2 months)", "tag": "td" },
+    { "zh": "Risankizumab（喜開麗 Skyrizi）", "en": "Risankizumab (Skyrizi)", "tag": "td" },
+    { "zh": "第 0、4 週 → 每 12 週 150 mg", "en": "Weeks 0 and 4 → 150 mg every 12 weeks", "tag": "td" },
+    { "zh": "NT$ 60,000-80,000/針（每 3 月）", "en": "NT$ 60,000–80,000 per dose (every 3 months)", "tag": "td" },
+    { "zh": "第 0、4 週 → 每 12 週 100 mg", "en": "Weeks 0 and 4 → 100 mg every 12 weeks", "tag": "td" },
+    { "zh": "PASI 75 第 12 週約 64-74%(reSURFACE)", "en": "PASI 75 at week 12: ~64–74% (reSURFACE)", "tag": "td" },
+    { "zh": "類似", "en": "Similar", "tag": "td" },
+    { "zh": "Ustekinumab（喜達諾 Stelara）", "en": "Ustekinumab (Stelara)", "tag": "td" },
+    { "zh": "抗 IL-12/23 p40", "en": "Anti-IL-12/23 p40", "tag": "td" },
+    { "zh": "第 0、4 週 → 每 12 週（體重決定劑量）", "en": "Weeks 0 and 4 → every 12 weeks (weight-based dosing)", "tag": "td" },
+    { "zh": "PASI 75 第 12 週約 67%(PHOENIX-1)", "en": "PASI 75 at week 12: ~67% (PHOENIX-1)", "tag": "td" },
+    { "zh": "NT$ 50,000-65,000/針", "en": "NT$ 50,000–65,000 per dose", "tag": "td" },
+    { "zh": "抗 TNF-α", "en": "Anti-TNF-α", "tag": "td" },
+    { "zh": "第 0 週 80 mg → 每 2 週 40 mg", "en": "Week 0: 80 mg → 40 mg every 2 weeks", "tag": "td" },
+    { "zh": "PASI 75 第 16 週約 71%(REVEAL);較新藥稍低", "en": "PASI 75 at week 16: ~71% (REVEAL); slightly lower than newer agents", "tag": "td" },
+    { "zh": "NT$ 25,000-35,000/月（較便宜）", "en": "NT$ 25,000–35,000 per month (more affordable)", "tag": "td" },
+    { "zh": "Etanercept（恩博 Enbrel）", "en": "Etanercept (Enbrel)", "tag": "td" },
+    { "zh": "TNF 受體融合蛋白", "en": "TNF receptor fusion protein", "tag": "td" },
+    { "zh": "每週 50 mg", "en": "50 mg weekly", "tag": "td" },
+    { "zh": "PASI 75 第 12 週約 47%(50 mg BIW)", "en": "PASI 75 at week 12: ~47% (50 mg BIW)", "tag": "td" },
+    { "zh": "NT$ 25,000-35,000/月", "en": "NT$ 25,000–35,000 per month", "tag": "td" },
+    { "zh": "Infliximab（類克 Remicade）", "en": "Infliximab (Remicade)", "tag": "td" },
+    { "zh": "靜脈", "en": "Intravenous", "tag": "td" },
+    { "zh": "第 0、2、6 週 → 每 8 週（體重）", "en": "Weeks 0, 2, 6 → every 8 weeks (weight-based)", "tag": "td" },
+    { "zh": "PASI 75 第 10 週約 80%(EXPRESS)", "en": "PASI 75 at week 10: ~80% (EXPRESS)", "tag": "td" },
+    { "zh": "NT$ 30,000-40,000/次", "en": "NT$ 30,000–40,000 per infusion", "tag": "td" },
+    { "zh": "抗 TNF Fab' 片段", "en": "Anti-TNF Fab' fragment", "tag": "td" },
+    { "zh": "第 0、2、4 週 → 每 2 週", "en": "Weeks 0, 2, 4 → every 2 weeks", "tag": "td" },
+    { "zh": "PASI 75 第 16 週約 75-83%(CIMPASI-1/2)", "en": "PASI 75 at week 16: ~75–83% (CIMPASI-1/2)", "tag": "td" },
+    { "zh": "Apremilast（喜樂寶 Otezla）", "en": "Apremilast (Otezla)", "tag": "td" },
+    { "zh": "PDE-4 抑制劑", "en": "PDE-4 inhibitor", "tag": "td" },
+    { "zh": "每天 30 mg BID", "en": "30 mg BID", "tag": "td" },
+    { "zh": "PASI 75 第 16 週約 33%(ESTEEM-1/2);較弱但口服方便", "en": "PASI 75 at week 16: ~33% (ESTEEM-1/2); lower efficacy but convenient oral dosing", "tag": "td" },
+    { "zh": "NT$ 15,000-25,000/月", "en": "NT$ 15,000–25,000 per month", "tag": "td" },
+    { "zh": "選擇性 TYK2 抑制劑", "en": "Selective TYK2 inhibitor", "tag": "td" },
+    { "zh": "每天 6 mg", "en": "6 mg daily", "tag": "td" },
+    { "zh": "NT$ 30,000-50,000/月", "en": "NT$ 30,000–50,000 per month", "tag": "td" },
+    { "zh": "≥ 18 歲重度圓禿", "en": "Severe alopecia areata ≥ 18 yr", "tag": "td" },
+    { "zh": "每天 4 mg", "en": "4 mg daily", "tag": "td" },
+    { "zh": "JAK3 / TEC 抑制劑", "en": "JAK3 / TEC inhibitor", "tag": "td" },
+    { "zh": "≥ 12 歲重度圓禿", "en": "Severe alopecia areata ≥ 12 yr", "tag": "td" },
+    { "zh": "每天 50 mg", "en": "50 mg daily", "tag": "td" },
+    { "zh": "SALT ≤ 20 第 24 週約 23%、第 48 週約 40%(ALLEGRO)", "en": "SALT ≤ 20 at week 24: ~23%, week 48: ~40% (ALLEGRO)", "tag": "td" },
+    { "zh": "抗 IgE", "en": "Anti-IgE", "tag": "td" },
+    { "zh": "每 4 週 150-300 mg", "en": "150–300 mg every 4 weeks", "tag": "td" },
+    { "zh": "慢性自發性蕁麻疹健保有條件給付；自費約 NT$ 14,000-22,000/針", "en": "CSU has conditional NHI coverage; out-of-pocket ~ NT$ 14,000–22,000 per dose", "tag": "td" },
+    { "zh": "抗 IL-4Rα", "en": "Anti-IL-4Rα", "tag": "td" },
+    { "zh": "每 2 週（類異膚劑量）", "en": "Every 2 weeks (AD-like dosing)", "tag": "td" },
+    { "zh": "抗組織胺無反應 CSU 第 24 週 UAS7 顯著改善(LIBERTY-CUPID)", "en": "Antihistamine-refractory CSU: significant UAS7 improvement at week 24 (LIBERTY-CUPID)", "tag": "td" },
+    { "zh": "慢性蕁麻疹適應症 2024 年 FDA 核准，台灣陸續", "en": "FDA approved for CSU in 2024; Taiwan approval pending", "tag": "td" },
+    { "zh": "更強抗 IgE", "en": "Higher-affinity anti-IgE", "tag": "td" },
+    { "zh": "第 III 期試驗未顯著優於 Omalizumab,部分研發暫緩", "en": "Phase III did not show significant superiority over omalizumab; some development paused", "tag": "td" },
+    { "zh": "未上市", "en": "Not yet marketed", "tag": "td" },
+    { "zh": "BTK 抑制劑（口服）", "en": "BTK inhibitor (oral)", "tag": "td" },
+    { "zh": "REMIX 第 III 期試驗顯著改善 UAS7", "en": "REMIX phase III: significant UAS7 improvement", "tag": "td" },
+    { "zh": "2024 健保有條件給付中重度 HS；自費月費 NT$ 30,000-50,000", "en": "Conditional NHI coverage for moderate-severe HS from 2024; out-of-pocket NT$ 30,000–50,000 per month", "tag": "td" },
+    { "zh": "誘導 + 維持每 4 週", "en": "Induction + maintenance every 4 weeks", "tag": "td" },
+    { "zh": "HiSCR 第 16 週約 42-47%(SUNSHINE / SUNRISE)", "en": "HiSCR at week 16: ~42–47% (SUNSHINE / SUNRISE)", "tag": "td" },
+    { "zh": "2023 FDA 核准 HS，台灣自費", "en": "FDA approved for HS in 2023; out-of-pocket in Taiwan", "tag": "td" },
+    { "zh": "抗 IL-17A/F", "en": "Anti-IL-17A/F", "tag": "td" },
+    { "zh": "誘導後每 4 週", "en": "After induction: every 4 weeks", "tag": "td" },
+    { "zh": "HiSCR 第 16 週約 58%(BE HEARD I/II)", "en": "HiSCR at week 16: ~58% (BE HEARD I/II)", "tag": "td" },
+    { "zh": "近年取得 HS 適應症", "en": "Recently approved for HS", "tag": "td" },
+    { "zh": "每天 2 次，持續 ≥ 24 週", "en": "Twice daily for ≥ 24 weeks", "tag": "td" },
+    { "zh": "NT$ 4,000-6,000/條(60g)", "en": "NT$ 4,000–6,000 per 60 g tube", "tag": "td" }
   ]
 }

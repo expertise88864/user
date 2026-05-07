@@ -1,1015 +1,207 @@
 {
   "slug": "laser-dermatology",
   "strings": [
-    {
-      "zh": "雷射怎麼選 — 顯色團與選擇邏輯",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "12 種臨床常用波長",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "色素病灶 — 斑、痣、母斑",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "刺青除色 — 顏色 × 波長對應",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "血管病灶 — 紅斑、血絲、血管瘤",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "疤痕治療",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "皺紋與光老化",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "除毛雷射",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "良性增生與癌前病變",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "發炎性皮膚疾病",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "感染性疾病",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "雷射絕對禁忌與重要警示(Paasch 2022 S2k)",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "常見問題(PTT / Dcard / 諮詢室常被問的)",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "結語 — 怎麼跟醫師討論雷射？",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "表淺色素 — 雀斑(ephelides)、曬斑(lentigines)、咖啡牛奶斑",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "真皮色素 — 太田母斑(Nevus of Ota)、顴骨母斑(ABNOM)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "肝斑(Melasma)— 最棘手、容易反彈",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "痣(melanocytic nevus)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "微血管擴張(Telangiectasia)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "玫瑰斑(Rosacea)— 持續性紅斑與潮紅",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "葡萄酒色斑(Naevus flammeus)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "表淺血管瘤(老人斑、櫻桃血管瘤、蜘蛛狀血管瘤)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "凹疤 / 痘疤 / 冰錐型(Atrophic scars)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "肥厚性疤痕(Hypertrophic)/ 蟹足腫(Keloid)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "燒燙傷疤、外傷疤",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "老人斑(脂漏性角化症 SK)、汗管瘤、皮脂腺增生、黃色瘤",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "日光性角化(Actinic Keratosis)/ 大面積光老化",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "低危險基底細胞癌(BCC)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "白斑(Vitiligo)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "硬化性苔癬(Lichen sclerosus)— 外陰部白斑樣病變",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "化膿性汗腺炎(Hidradenitis Suppurativa, HS)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "菜花(Condyloma acuminata)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "傳染性軟疣(Mollusca contagiosa)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "病毒疣(Verrucae)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "灰指甲(Onychomycosis)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "皮秒雷射跟奈秒(Q-switch)雷射差在哪？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "雷射除斑後反黑怎麼辦？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "痣可以雷射嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "刺青除色要打幾次？有完全不留痕跡的方法嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "玫瑰斑酒糟可以打雷射嗎？健保有給付嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "雷射前後保養該注意什麼？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "本篇大綱",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "德國 S2k 將色素病灶分為「黑色素細胞數量正常 vs 增加」兩類，治療策略不同:",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "顯色團（色素、血紅素、水）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "2022 德國皮膚科醫學會 S2k 雷射治療指引",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「該用 / 可考慮 / 不建議」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "提醒：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「選擇性光熱解（selective photothermolysis）」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "顯色團（chromophore）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "黑色素(melanin)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "血紅素(hemoglobin / oxyhemoglobin)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "水(water)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外來色素(刺青墨水)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「目標是色素？血管？水?」「位置在表皮還是真皮?」「Fitzpatrick 膚色幾型?」「有沒有發炎中?」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皮秒 vs 奈秒",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "機器較貴、自費價格也較高",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不建議",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "低能量",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "強烈不建議",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "肝斑治療鐵則",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "嚴格防曬 + 外用 (Tri-Luma 三合一、Tranexamic acid)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "S2k 不建議",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「明顯影響外觀且已先排除惡性」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "極佳",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "多種波長輪流打 8-15 次",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "IPL 不建議",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "非破壞性飛梭",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "飛梭",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "活動期",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "雷射輔助藥物導入(LADD)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「家用 IPL 機器」與「醫療等級雷射」效果差異很大",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "無法手術或外用治療不可行",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "絕對不可",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "S2k 100% 共識:色素性黑色素細胞痣(melanocytic nevus)不建議用雷射處理",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "正確流程",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "多項適應症 IPL 不建議",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "近期(6 個月內)使用口服 A 酸(Isotretinoin)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "磨皮 / 飛梭",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "停藥後 1-3 個月",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "Fitzpatrick V-VI 型膚色",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "近期日曬(2-4 週內)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "進行中皮膚感染(疱疹、發炎、活動性痤瘡)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "植入心律調節器或去顫器",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "懷孕",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "cyclosporine 環孢素",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "飛梭 CO₂ 用於肛門 / 生殖部位疣或苔蘚",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "術後護理共通原則",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "光機械效應(把色素打碎)大、熱破壞小",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "但皮秒不是「萬能」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "嚴格防曬(SPF 30+ 含氧化鐵物理性防曬)、Tri-Luma 三合一外用、Tranexamic acid 口服",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "S2k 強烈不建議",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "掩蓋黑色素瘤的早期變化",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不一定能 100% 完全消除",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「測試斑(spot test)」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "IPL 脈衝光、PDL 染料雷射(V Beam)、KTP 532 nm",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "健保不給付",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "術前 1-2 週",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "術前 2-4 週",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "術後 24-72 小時",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "術後 4-8 週",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "避免",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "對的波長 × 對的能量 × 對的時機",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「我這個是什麼診斷？是色素、血管、還是疤?」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「對應的雷射波長有哪些選擇？有實證嗎?」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「需要幾次？間隔多久？可能的副作用?」",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "過度推銷單一機型「能治百病」的不是醫療，是行銷",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "延伸閱讀：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "陳翊嘉 醫師",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皮膚科雷射完整對照",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "依 2022 德國 S2k · 更新 2026-05-05",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "波長 × 適應症 × 證據強度",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "↑↑ 強推薦",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "↑ 推薦",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "○ 可考慮",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "↓ 不建議",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "皮膚科 住院醫師",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "雷射",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "強度",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "備註",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "顏色",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "適用膚色",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "q-sw 694 nm 紅寶石(皮秒 / 奈秒)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "S2k 雀斑、曬斑首選之一",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "q-sw 532 nm KTP(皮秒 / 奈秒)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "表淺色素效果佳",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "q-sw 755 nm 亞歷山大(皮秒)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "皮秒亞歷山大為主流",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "較深色素或黃褐膚色",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "IPL 脈衝光",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "大面積、輕微病灶經濟選擇",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "q-sw 755 nm 亞歷山大 / 1064 nm Nd:YAG(皮秒 / 奈秒)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "太田母斑首選；通常需 5-10 次，間隔 2-3 個月",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "q-sw 694 nm 紅寶石",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "歐美傳統選擇",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "必須低能量、多次小傷害，單次能量過高反引發反黑",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1927 nm 銩雷射(低能量)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "非選擇性熱破壞，適合 III-V 型膚色",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1550 nm 鉺玻璃飛梭(非破壞性)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Fitzpatrick III-V 可考慮",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "CO₂ / Er:YAG 磨皮",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "585-595 nm 染料雷射 PDL(V Beam)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1064 nm Nd:YAG(長脈衝)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "532 nm KTP(長脈衝)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "對紅斑、毛細血管擴張、潮紅都有效",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "適合明顯紅斑與血絲；治療後可能短暫紫斑",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "較深、較粗血管",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "較表淺血絲",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "585-595 nm 染料雷射 PDL",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1064 nm Nd:YAG(用於增厚轉變部位)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "755 nm 亞歷山大",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1064 nm Nd:YAG(長脈衝，小光點)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "585-610 nm 染料雷射(小光點)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "恢復期短，適合在意 downtime 者",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "效果最佳但需 5-7 天恢復期、有 PIH 風險",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "恢復較 CO₂ 短，黃膚色較安全",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "染料雷射 / IPL(針對紅色疤痕成分)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "痘疤紅期 — 先打 PDL/IPL 退紅再做飛梭",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "585-595 nm 染料雷射(新鮮、紅色蟹足腫)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "退紅效果好，合併類固醇注射",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1064 nm Nd:YAG(較厚 / 較深膚色)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "穿透深",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1540-1550 nm 鉺玻璃飛梭(扁平 keloid)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "合併 triamcinolone 注射",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "CO₂ 雷射(大病灶減積)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "合併治療",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "效果最佳，需 5-7 天恢復期",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "10600 nm CO₂ 傳統磨皮(non-fractional)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "效果強但風險(PIH、感染)較高",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "2940 nm Er:YAG 傳統磨皮",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "恢復較 CO₂ 短",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1540-1565 nm 鉺玻璃 / 1927 nm 銩(非破壞飛梭)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "恢復快、效果中等",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "長脈衝 1064 nm Nd:YAG",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "真皮加熱，輕度緊緻",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "I-III 型(白皙)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "800-980 nm 二極體",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "I-IV 型廣泛適用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1064 nm Nd:YAG(脈衝)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "IV-VI 型(較深膚色)、深層粗毛",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "IPL 590-1200 nm 多波長",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "I-IV 型",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "694 nm 紅寶石(長脈衝)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "穿透不足，效果不如新世代",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "2940 nm Er:YAG(磨皮)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "10600 nm CO₂(磨皮)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "308 nm 準分子雷射 / 準分子光",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "S2k 67% 共識，可考慮(其他病灶用窄頻 UVB)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "飛梭 ablative(1927/2940/2970/10600 nm)± 雷射輔助藥物導入",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "合併外用類固醇或他克莫司效果最佳",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "長脈衝 CO₂(嚴重融合 labia)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "專科醫師執行",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "CO₂ / Er:YAG 雷射 — 膿瘍 / 廔管 deroofing",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "飛梭 CO₂ — 改善疤組織與活動度",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "除毛雷射(1064 / 755 / 808 nm / IPL)— 減少毛囊炎",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "10600 nm CO₂ / 2940 nm Er:YAG(外生殖器)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "CO₂(肛內)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "585-595 nm 染料雷射",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "585-595 nm 染料雷射(扁平疣、尋常疣)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "CO₂ 磨皮(頑固型，小面積)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "1064 nm Nd:YAG(深層、頑固型)",
-      "en": "",
-      "tag": "td"
-    }
+    { "zh": "雷射怎麼選 — 顯色團與選擇邏輯", "en": "How to choose a laser — chromophores and selection logic", "tag": "h2" },
+    { "zh": "12 種臨床常用波長", "en": "12 clinically common wavelengths", "tag": "h2" },
+    { "zh": "色素病灶 — 斑、痣、母斑", "en": "Pigmented lesions — lentigines, nevi, birthmarks", "tag": "h2" },
+    { "zh": "刺青除色 — 顏色 × 波長對應", "en": "Tattoo removal — ink color × wavelength matching", "tag": "h2" },
+    { "zh": "血管病灶 — 紅斑、血絲、血管瘤", "en": "Vascular lesions — erythema, telangiectasia, hemangiomas", "tag": "h2" },
+    { "zh": "疤痕治療", "en": "Scar treatment", "tag": "h2" },
+    { "zh": "皺紋與光老化", "en": "Wrinkles and photoaging", "tag": "h2" },
+    { "zh": "除毛雷射", "en": "Laser hair removal", "tag": "h2" },
+    { "zh": "良性增生與癌前病變", "en": "Benign proliferations and precancerous lesions", "tag": "h2" },
+    { "zh": "發炎性皮膚疾病", "en": "Inflammatory skin diseases", "tag": "h2" },
+    { "zh": "感染性疾病", "en": "Infectious diseases", "tag": "h2" },
+    { "zh": "雷射絕對禁忌與重要警示(Paasch 2022 S2k)", "en": "Absolute contraindications and key warnings (Paasch 2022 S2k)", "tag": "h2" },
+    { "zh": "常見問題(PTT / Dcard / 諮詢室常被問的)", "en": "Common questions (frequently asked online and in clinic)", "tag": "h2" },
+    { "zh": "結語 — 怎麼跟醫師討論雷射？", "en": "Bottom line — how to discuss laser treatment with your physician", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "表淺色素 — 雀斑(ephelides)、曬斑(lentigines)、咖啡牛奶斑", "en": "Superficial pigmented lesions — ephelides, lentigines, café-au-lait macules", "tag": "h3" },
+    { "zh": "真皮色素 — 太田母斑(Nevus of Ota)、顴骨母斑(ABNOM)", "en": "Dermal pigmented lesions — nevus of Ota, acquired bilateral nevus of Ota-like macules (ABNOM)", "tag": "h3" },
+    { "zh": "肝斑(Melasma)— 最棘手、容易反彈", "en": "Melasma — the most challenging, prone to rebound", "tag": "h3" },
+    { "zh": "痣(melanocytic nevus)", "en": "Melanocytic nevi", "tag": "h3" },
+    { "zh": "微血管擴張(Telangiectasia)", "en": "Telangiectasia", "tag": "h3" },
+    { "zh": "玫瑰斑(Rosacea)— 持續性紅斑與潮紅", "en": "Rosacea — persistent erythema and flushing", "tag": "h3" },
+    { "zh": "葡萄酒色斑(Naevus flammeus)", "en": "Port-wine stain (nevus flammeus)", "tag": "h3" },
+    { "zh": "表淺血管瘤(老人斑、櫻桃血管瘤、蜘蛛狀血管瘤)", "en": "Superficial vascular lesions (cherry hemangioma, spider angioma)", "tag": "h3" },
+    { "zh": "凹疤 / 痘疤 / 冰錐型(Atrophic scars)", "en": "Atrophic scars (acne scars, icepick scars)", "tag": "h3" },
+    { "zh": "肥厚性疤痕(Hypertrophic)/ 蟹足腫(Keloid)", "en": "Hypertrophic scars / keloids", "tag": "h3" },
+    { "zh": "燒燙傷疤、外傷疤", "en": "Burn scars and traumatic scars", "tag": "h3" },
+    { "zh": "老人斑(脂漏性角化症 SK)、汗管瘤、皮脂腺增生、黃色瘤", "en": "Seborrheic keratoses, syringomas, sebaceous hyperplasia, xanthelasma", "tag": "h3" },
+    { "zh": "日光性角化(Actinic Keratosis)/ 大面積光老化", "en": "Actinic keratoses / extensive photodamage", "tag": "h3" },
+    { "zh": "低危險基底細胞癌(BCC)", "en": "Low-risk basal cell carcinoma (BCC)", "tag": "h3" },
+    { "zh": "白斑(Vitiligo)", "en": "Vitiligo", "tag": "h3" },
+    { "zh": "硬化性苔癬(Lichen sclerosus)— 外陰部白斑樣病變", "en": "Lichen sclerosus — vulvar leukoplakia-like lesions", "tag": "h3" },
+    { "zh": "化膿性汗腺炎(Hidradenitis Suppurativa, HS)", "en": "Hidradenitis suppurativa (HS)", "tag": "h3" },
+    { "zh": "菜花(Condyloma acuminata)", "en": "Condyloma acuminata", "tag": "h3" },
+    { "zh": "傳染性軟疣(Mollusca contagiosa)", "en": "Molluscum contagiosum", "tag": "h3" },
+    { "zh": "病毒疣(Verrucae)", "en": "Verrucae (warts)", "tag": "h3" },
+    { "zh": "灰指甲(Onychomycosis)", "en": "Onychomycosis", "tag": "h3" },
+    { "zh": "皮秒雷射跟奈秒(Q-switch)雷射差在哪？", "en": "What's the difference between picosecond and nanosecond (Q-switched) lasers?", "tag": "h3" },
+    { "zh": "雷射除斑後反黑怎麼辦？", "en": "What to do about post-laser hyperpigmentation?", "tag": "h3" },
+    { "zh": "痣可以雷射嗎？", "en": "Can moles be treated with laser?", "tag": "h3" },
+    { "zh": "刺青除色要打幾次？有完全不留痕跡的方法嗎？", "en": "How many sessions for tattoo removal? Is there a way to leave no trace?", "tag": "h3" },
+    { "zh": "玫瑰斑酒糟可以打雷射嗎？健保有給付嗎？", "en": "Can rosacea be treated with laser? Is it covered by NHI?", "tag": "h3" },
+    { "zh": "雷射前後保養該注意什麼？", "en": "What pre- and post-laser care matters?", "tag": "h3" },
+    { "zh": "本篇大綱", "en": "Article outline", "tag": "h4" },
+    { "zh": "德國 S2k 將色素病灶分為「黑色素細胞數量正常 vs 增加」兩類，治療策略不同:", "en": "The German S2k classifies pigmented lesions into two categories — normal vs increased melanocyte count — with different treatment strategies:", "tag": "p" },
+    { "zh": "顯色團（色素、血紅素、水）", "en": "Chromophores (melanin, hemoglobin, water)", "tag": "strong" },
+    { "zh": "2022 德國皮膚科醫學會 S2k 雷射治療指引", "en": "2022 German Dermatological Society S2k laser treatment guidelines", "tag": "strong" },
+    { "zh": "「該用 / 可考慮 / 不建議」", "en": "“recommended / consider / not recommended”", "tag": "strong" },
+    { "zh": "提醒：", "en": "Note:", "tag": "strong" },
+    { "zh": "「選擇性光熱解（selective photothermolysis）」", "en": "“selective photothermolysis”", "tag": "strong" },
+    { "zh": "顯色團（chromophore）", "en": "chromophore", "tag": "strong" },
+    { "zh": "黑色素(melanin)", "en": "Melanin", "tag": "strong" },
+    { "zh": "血紅素(hemoglobin / oxyhemoglobin)", "en": "Hemoglobin / oxyhemoglobin", "tag": "strong" },
+    { "zh": "水(water)", "en": "Water", "tag": "strong" },
+    { "zh": "外來色素(刺青墨水)", "en": "Exogenous pigment (tattoo ink)", "tag": "strong" },
+    { "zh": "「目標是色素？血管？水?」「位置在表皮還是真皮?」「Fitzpatrick 膚色幾型?」「有沒有發炎中?」", "en": "“Is the target pigment, vessel, or water? Is it epidermal or dermal? What's the Fitzpatrick skin type? Is there active inflammation?”", "tag": "strong" },
+    { "zh": "皮秒 vs 奈秒", "en": "Picosecond vs nanosecond", "tag": "strong" },
+    { "zh": "機器較貴、自費價格也較高", "en": "Equipment is more expensive, so out-of-pocket cost is higher", "tag": "strong" },
+    { "zh": "不建議", "en": "Not recommended", "tag": "strong" },
+    { "zh": "低能量", "en": "low energy", "tag": "strong" },
+    { "zh": "強烈不建議", "en": "Strongly not recommended", "tag": "strong" },
+    { "zh": "肝斑治療鐵則", "en": "Iron rules of melasma management", "tag": "strong" },
+    { "zh": "嚴格防曬 + 外用 (Tri-Luma 三合一、Tranexamic acid)", "en": "Strict sun protection + topicals (Tri-Luma triple combination, tranexamic acid)", "tag": "strong" },
+    { "zh": "S2k 不建議", "en": "S2k does NOT recommend", "tag": "strong" },
+    { "zh": "「明顯影響外觀且已先排除惡性」", "en": "“cosmetically significant after malignancy is ruled out”", "tag": "strong" },
+    { "zh": "極佳", "en": "Excellent", "tag": "strong" },
+    { "zh": "多種波長輪流打 8-15 次", "en": "rotating multiple wavelengths over 8–15 sessions", "tag": "strong" },
+    { "zh": "IPL 不建議", "en": "IPL not recommended", "tag": "strong" },
+    { "zh": "非破壞性飛梭", "en": "Non-ablative fractional", "tag": "strong" },
+    { "zh": "飛梭", "en": "Fractional", "tag": "strong" },
+    { "zh": "活動期", "en": "Active phase", "tag": "strong" },
+    { "zh": "雷射輔助藥物導入(LADD)", "en": "Laser-assisted drug delivery (LADD)", "tag": "strong" },
+    { "zh": "「家用 IPL 機器」與「醫療等級雷射」效果差異很大", "en": "“Home-use IPL devices” and “medical-grade lasers” differ significantly in efficacy", "tag": "strong" },
+    { "zh": "無法手術或外用治療不可行", "en": "When surgery and topicals are not feasible", "tag": "strong" },
+    { "zh": "絕對不可", "en": "Absolutely contraindicated", "tag": "strong" },
+    { "zh": "S2k 100% 共識:色素性黑色素細胞痣(melanocytic nevus)不建議用雷射處理", "en": "S2k 100% consensus: melanocytic nevi should NOT be treated with laser", "tag": "strong" },
+    { "zh": "正確流程", "en": "Correct workflow", "tag": "strong" },
+    { "zh": "多項適應症 IPL 不建議", "en": "IPL not recommended for multiple indications", "tag": "strong" },
+    { "zh": "近期(6 個月內)使用口服 A 酸(Isotretinoin)", "en": "Recent (within 6 months) oral isotretinoin use", "tag": "strong" },
+    { "zh": "磨皮 / 飛梭", "en": "Ablative / fractional resurfacing", "tag": "strong" },
+    { "zh": "停藥後 1-3 個月", "en": "1–3 months after discontinuation", "tag": "strong" },
+    { "zh": "Fitzpatrick V-VI 型膚色", "en": "Fitzpatrick V–VI skin types", "tag": "strong" },
+    { "zh": "近期日曬(2-4 週內)", "en": "Recent sun exposure (within 2–4 weeks)", "tag": "strong" },
+    { "zh": "進行中皮膚感染(疱疹、發炎、活動性痤瘡)", "en": "Active skin infection (herpes, active inflammation, active acne)", "tag": "strong" },
+    { "zh": "植入心律調節器或去顫器", "en": "Implanted pacemaker or defibrillator", "tag": "strong" },
+    { "zh": "懷孕", "en": "Pregnancy", "tag": "strong" },
+    { "zh": "cyclosporine 環孢素", "en": "cyclosporine", "tag": "strong" },
+    { "zh": "飛梭 CO₂ 用於肛門 / 生殖部位疣或苔蘚", "en": "Fractional CO₂ for anogenital warts or lichen", "tag": "strong" },
+    { "zh": "術後護理共通原則", "en": "General post-operative care principles", "tag": "strong" },
+    { "zh": "光機械效應(把色素打碎)大、熱破壞小", "en": "Greater photomechanical effect (shattering pigment) with less thermal damage", "tag": "strong" },
+    { "zh": "但皮秒不是「萬能」", "en": "But picosecond is not a “cure-all”", "tag": "strong" },
+    { "zh": "嚴格防曬(SPF 30+ 含氧化鐵物理性防曬)、Tri-Luma 三合一外用、Tranexamic acid 口服", "en": "Strict sun protection (SPF 30+ iron-oxide physical sunscreen), Tri-Luma triple combination, oral tranexamic acid", "tag": "strong" },
+    { "zh": "S2k 強烈不建議", "en": "S2k strongly recommends against", "tag": "strong" },
+    { "zh": "掩蓋黑色素瘤的早期變化", "en": "obscures early melanoma changes", "tag": "strong" },
+    { "zh": "不一定能 100% 完全消除", "en": "may not achieve 100% complete clearance", "tag": "strong" },
+    { "zh": "「測試斑(spot test)」", "en": "“spot test”", "tag": "strong" },
+    { "zh": "IPL 脈衝光、PDL 染料雷射(V Beam)、KTP 532 nm", "en": "IPL, pulsed dye laser (V-Beam), KTP 532 nm", "tag": "strong" },
+    { "zh": "健保不給付", "en": "Not covered by NHI", "tag": "strong" },
+    { "zh": "術前 1-2 週", "en": "1–2 weeks before treatment", "tag": "strong" },
+    { "zh": "術前 2-4 週", "en": "2–4 weeks before treatment", "tag": "strong" },
+    { "zh": "術後 24-72 小時", "en": "24–72 hours post-procedure", "tag": "strong" },
+    { "zh": "術後 4-8 週", "en": "4–8 weeks post-procedure", "tag": "strong" },
+    { "zh": "避免", "en": "Avoid", "tag": "strong" },
+    { "zh": "對的波長 × 對的能量 × 對的時機", "en": "right wavelength × right energy × right timing", "tag": "strong" },
+    { "zh": "「我這個是什麼診斷？是色素、血管、還是疤?」", "en": "“What is my diagnosis — is it pigment, vessel, or scar?”", "tag": "strong" },
+    { "zh": "「對應的雷射波長有哪些選擇？有實證嗎?」", "en": "“What laser wavelength options exist for this — and what's the evidence?”", "tag": "strong" },
+    { "zh": "「需要幾次？間隔多久？可能的副作用?」", "en": "“How many sessions, how far apart, and what are the possible side effects?”", "tag": "strong" },
+    { "zh": "過度推銷單一機型「能治百病」的不是醫療，是行銷", "en": "Aggressive marketing of any single device as a “cure-all” is marketing, not medicine", "tag": "strong" },
+    { "zh": "延伸閱讀：", "en": "Further reading:", "tag": "strong" },
+    { "zh": "陳翊嘉 醫師", "en": "Dr. Yi-Jia Chen", "tag": "strong" },
+    { "zh": "皮膚科雷射完整對照", "en": "Complete dermatology laser reference", "tag": "span" },
+    { "zh": "依 2022 德國 S2k · 更新 2026-05-05", "en": "Based on 2022 German S2k · Updated 2026-05-05", "tag": "span" },
+    { "zh": "波長 × 適應症 × 證據強度", "en": "Wavelength × indication × evidence strength", "tag": "span" },
+    { "zh": "↑↑ 強推薦", "en": "↑↑ Strongly recommended", "tag": "span" },
+    { "zh": "↑ 推薦", "en": "↑ Recommended", "tag": "span" },
+    { "zh": "○ 可考慮", "en": "○ May consider", "tag": "span" },
+    { "zh": "↓ 不建議", "en": "↓ Not recommended", "tag": "span" },
+    { "zh": "皮膚科 住院醫師", "en": "Dermatology Resident", "tag": "span" },
+    { "zh": "網站內容更正 / 學術引用詢問 / 媒體合作請寄：", "en": "Content corrections / academic citations / media inquiries:", "tag": "span" },
+    { "zh": "雷射", "en": "Laser", "tag": "th" },
+    { "zh": "強度", "en": "Strength", "tag": "th" },
+    { "zh": "備註", "en": "Notes", "tag": "th" },
+    { "zh": "顏色", "en": "Ink color", "tag": "th" },
+    { "zh": "適用膚色", "en": "Suitable skin types", "tag": "th" },
+    { "zh": "q-sw 694 nm 紅寶石(皮秒 / 奈秒)", "en": "Q-switched 694 nm ruby (picosecond / nanosecond)", "tag": "td" },
+    { "zh": "S2k 雀斑、曬斑首選之一", "en": "S2k first-line option for ephelides and lentigines", "tag": "td" },
+    { "zh": "q-sw 532 nm KTP(皮秒 / 奈秒)", "en": "Q-switched 532 nm KTP (picosecond / nanosecond)", "tag": "td" },
+    { "zh": "表淺色素效果佳", "en": "Excellent for superficial pigment", "tag": "td" },
+    { "zh": "q-sw 755 nm 亞歷山大(皮秒)", "en": "Q-switched 755 nm alexandrite (picosecond)", "tag": "td" },
+    { "zh": "皮秒亞歷山大為主流", "en": "Picosecond alexandrite is the mainstay", "tag": "td" },
+    { "zh": "較深色素或黃褐膚色", "en": "Deeper pigment or yellowish-brown skin tones", "tag": "td" },
+    { "zh": "IPL 脈衝光", "en": "IPL", "tag": "td" },
+    { "zh": "大面積、輕微病灶經濟選擇", "en": "Economical option for large areas with mild lesions", "tag": "td" },
+    { "zh": "q-sw 755 nm 亞歷山大 / 1064 nm Nd:YAG(皮秒 / 奈秒)", "en": "Q-switched 755 nm alexandrite / 1064 nm Nd:YAG (picosecond / nanosecond)", "tag": "td" },
+    { "zh": "太田母斑首選；通常需 5-10 次，間隔 2-3 個月", "en": "First-line for nevus of Ota; typically 5–10 sessions at 2–3 month intervals", "tag": "td" },
+    { "zh": "q-sw 694 nm 紅寶石", "en": "Q-switched 694 nm ruby", "tag": "td" },
+    { "zh": "歐美傳統選擇", "en": "Traditional Western option", "tag": "td" },
+    { "zh": "必須低能量、多次小傷害，單次能量過高反引發反黑", "en": "Must use low energy with multiple gentle treatments; high single-pass energy worsens hyperpigmentation", "tag": "td" },
+    { "zh": "1927 nm 銩雷射(低能量)", "en": "1927 nm thulium (low fluence)", "tag": "td" },
+    { "zh": "非選擇性熱破壞，適合 III-V 型膚色", "en": "Non-selective thermal injury; suitable for skin types III–V", "tag": "td" },
+    { "zh": "1550 nm 鉺玻璃飛梭(非破壞性)", "en": "1550 nm erbium glass fractional (non-ablative)", "tag": "td" },
+    { "zh": "Fitzpatrick III-V 可考慮", "en": "May consider for Fitzpatrick III–V", "tag": "td" },
+    { "zh": "CO₂ / Er:YAG 磨皮", "en": "CO₂ / Er:YAG resurfacing", "tag": "td" },
+    { "zh": "585-595 nm 染料雷射 PDL(V Beam)", "en": "585–595 nm pulsed dye laser (V-Beam)", "tag": "td" },
+    { "zh": "1064 nm Nd:YAG(長脈衝)", "en": "1064 nm Nd:YAG (long-pulse)", "tag": "td" },
+    { "zh": "532 nm KTP(長脈衝)", "en": "532 nm KTP (long-pulse)", "tag": "td" },
+    { "zh": "對紅斑、毛細血管擴張、潮紅都有效", "en": "Effective for erythema, telangiectasia, and flushing", "tag": "td" },
+    { "zh": "適合明顯紅斑與血絲；治療後可能短暫紫斑", "en": "Suitable for prominent erythema and visible vessels; transient purpura possible", "tag": "td" },
+    { "zh": "較深、較粗血管", "en": "Deeper or thicker vessels", "tag": "td" },
+    { "zh": "較表淺血絲", "en": "Superficial vessels", "tag": "td" },
+    { "zh": "585-595 nm 染料雷射 PDL", "en": "585–595 nm pulsed dye laser (PDL)", "tag": "td" },
+    { "zh": "1064 nm Nd:YAG(用於增厚轉變部位)", "en": "1064 nm Nd:YAG (for thickened areas)", "tag": "td" },
+    { "zh": "755 nm 亞歷山大", "en": "755 nm alexandrite", "tag": "td" },
+    { "zh": "1064 nm Nd:YAG(長脈衝，小光點)", "en": "1064 nm Nd:YAG (long-pulse, small spot)", "tag": "td" },
+    { "zh": "585-610 nm 染料雷射(小光點)", "en": "585–610 nm dye laser (small spot)", "tag": "td" },
+    { "zh": "恢復期短，適合在意 downtime 者", "en": "Short downtime; suitable for those who can't tolerate recovery time", "tag": "td" },
+    { "zh": "效果最佳但需 5-7 天恢復期、有 PIH 風險", "en": "Best results but requires 5–7 days downtime with PIH risk", "tag": "td" },
+    { "zh": "恢復較 CO₂ 短，黃膚色較安全", "en": "Shorter recovery than CO₂; safer for yellow-toned skin", "tag": "td" },
+    { "zh": "染料雷射 / IPL(針對紅色疤痕成分)", "en": "Pulsed dye laser / IPL (for red scar component)", "tag": "td" },
+    { "zh": "痘疤紅期 — 先打 PDL/IPL 退紅再做飛梭", "en": "Red-phase acne scars — treat redness with PDL/IPL first, then proceed with fractional", "tag": "td" },
+    { "zh": "585-595 nm 染料雷射(新鮮、紅色蟹足腫)", "en": "585–595 nm PDL (fresh, red keloids)", "tag": "td" },
+    { "zh": "退紅效果好，合併類固醇注射", "en": "Effective at reducing redness; combine with steroid injection", "tag": "td" },
+    { "zh": "1064 nm Nd:YAG(較厚 / 較深膚色)", "en": "1064 nm Nd:YAG (thicker scars / darker skin)", "tag": "td" },
+    { "zh": "穿透深", "en": "Deep penetration", "tag": "td" },
+    { "zh": "1540-1550 nm 鉺玻璃飛梭(扁平 keloid)", "en": "1540–1550 nm erbium glass fractional (flat keloids)", "tag": "td" },
+    { "zh": "合併 triamcinolone 注射", "en": "Combine with triamcinolone injection", "tag": "td" },
+    { "zh": "CO₂ 雷射(大病灶減積)", "en": "CO₂ laser (debulking large lesions)", "tag": "td" },
+    { "zh": "合併治療", "en": "Combination therapy", "tag": "td" },
+    { "zh": "效果最佳，需 5-7 天恢復期", "en": "Best efficacy but requires 5–7 days recovery", "tag": "td" },
+    { "zh": "10600 nm CO₂ 傳統磨皮(non-fractional)", "en": "10,600 nm CO₂ traditional resurfacing (non-fractional)", "tag": "td" },
+    { "zh": "效果強但風險(PIH、感染)較高", "en": "Strong efficacy but higher risk (PIH, infection)", "tag": "td" },
+    { "zh": "2940 nm Er:YAG 傳統磨皮", "en": "2940 nm Er:YAG traditional resurfacing", "tag": "td" },
+    { "zh": "恢復較 CO₂ 短", "en": "Shorter recovery than CO₂", "tag": "td" },
+    { "zh": "1540-1565 nm 鉺玻璃 / 1927 nm 銩(非破壞飛梭)", "en": "1540–1565 nm erbium glass / 1927 nm thulium (non-ablative fractional)", "tag": "td" },
+    { "zh": "恢復快、效果中等", "en": "Fast recovery with moderate efficacy", "tag": "td" },
+    { "zh": "長脈衝 1064 nm Nd:YAG", "en": "Long-pulse 1064 nm Nd:YAG", "tag": "td" },
+    { "zh": "真皮加熱，輕度緊緻", "en": "Dermal heating with mild tightening", "tag": "td" },
+    { "zh": "I-III 型(白皙)", "en": "Types I–III (fair)", "tag": "td" },
+    { "zh": "800-980 nm 二極體", "en": "800–980 nm diode", "tag": "td" },
+    { "zh": "I-IV 型廣泛適用", "en": "Broadly applicable to types I–IV", "tag": "td" },
+    { "zh": "1064 nm Nd:YAG(脈衝)", "en": "1064 nm Nd:YAG (pulsed)", "tag": "td" },
+    { "zh": "IV-VI 型(較深膚色)、深層粗毛", "en": "Types IV–VI (darker skin), deep coarse hair", "tag": "td" },
+    { "zh": "IPL 590-1200 nm 多波長", "en": "IPL 590–1200 nm multi-wavelength", "tag": "td" },
+    { "zh": "I-IV 型", "en": "Types I–IV", "tag": "td" },
+    { "zh": "694 nm 紅寶石(長脈衝)", "en": "694 nm ruby (long-pulse)", "tag": "td" },
+    { "zh": "穿透不足，效果不如新世代", "en": "Insufficient penetration; less effective than newer devices", "tag": "td" },
+    { "zh": "2940 nm Er:YAG(磨皮)", "en": "2940 nm Er:YAG (resurfacing)", "tag": "td" },
+    { "zh": "10600 nm CO₂(磨皮)", "en": "10,600 nm CO₂ (resurfacing)", "tag": "td" },
+    { "zh": "308 nm 準分子雷射 / 準分子光", "en": "308 nm excimer laser / excimer light", "tag": "td" },
+    { "zh": "S2k 67% 共識，可考慮(其他病灶用窄頻 UVB)", "en": "S2k 67% consensus — may consider (use narrowband UVB for other lesions)", "tag": "td" },
+    { "zh": "飛梭 ablative(1927/2940/2970/10600 nm)± 雷射輔助藥物導入", "en": "Ablative fractional (1927/2940/2970/10,600 nm) ± laser-assisted drug delivery", "tag": "td" },
+    { "zh": "合併外用類固醇或他克莫司效果最佳", "en": "Best results when combined with topical corticosteroids or tacrolimus", "tag": "td" },
+    { "zh": "長脈衝 CO₂(嚴重融合 labia)", "en": "Long-pulse CO₂ (severe labial fusion)", "tag": "td" },
+    { "zh": "專科醫師執行", "en": "Performed by specialist", "tag": "td" },
+    { "zh": "CO₂ / Er:YAG 雷射 — 膿瘍 / 廔管 deroofing", "en": "CO₂ / Er:YAG — abscess / sinus tract deroofing", "tag": "td" },
+    { "zh": "飛梭 CO₂ — 改善疤組織與活動度", "en": "Fractional CO₂ — improves scar texture and mobility", "tag": "td" },
+    { "zh": "除毛雷射(1064 / 755 / 808 nm / IPL)— 減少毛囊炎", "en": "Hair-removal laser (1064 / 755 / 808 nm / IPL) — reduces folliculitis", "tag": "td" },
+    { "zh": "10600 nm CO₂ / 2940 nm Er:YAG(外生殖器)", "en": "10,600 nm CO₂ / 2940 nm Er:YAG (external genital)", "tag": "td" },
+    { "zh": "CO₂(肛內)", "en": "CO₂ (intra-anal)", "tag": "td" },
+    { "zh": "585-595 nm 染料雷射", "en": "585–595 nm pulsed dye laser", "tag": "td" },
+    { "zh": "585-595 nm 染料雷射(扁平疣、尋常疣)", "en": "585–595 nm PDL (verruca plana, verruca vulgaris)", "tag": "td" },
+    { "zh": "CO₂ 磨皮(頑固型，小面積)", "en": "CO₂ resurfacing (refractory, small area)", "tag": "td" },
+    { "zh": "1064 nm Nd:YAG(深層、頑固型)", "en": "1064 nm Nd:YAG (deep, refractory)", "tag": "td" }
   ]
 }

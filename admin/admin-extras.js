@@ -126,6 +126,7 @@
   <button data-tab="font">字型</button>
   <button data-tab="version">歷史</button>
   <button data-tab="reorder">排序</button>
+  <button data-tab="picks">熱門</button>
 </div>
 <div class="ax-body">
   <div class="ax-tab active" data-tab="seo">
@@ -194,6 +195,17 @@
     <button class="ax-btn primary" id="axReorderLoad" style="margin-top:8px">📋 載入清單</button>
     <ol class="ax-reorder-list" id="axReorderList"></ol>
     <button class="ax-btn primary" id="axReorderSave" style="display:none;margin-top:8px">💾 儲存新順序</button>
+  </div>
+  <div class="ax-tab" data-tab="picks">
+    <div style="font-size:12px;color:#5e574e">設定首頁「熱門推薦」5-12 篇文章(立即生效,不需 redeploy)</div>
+    <button class="ax-btn primary" id="axPicksLoad" style="margin-top:8px">📥 載入目前清單</button>
+    <ol class="ax-reorder-list" id="axPicksList" style="margin-top:8px"></ol>
+    <div style="display:flex;gap:6px;margin-top:8px">
+      <input id="axPicksAdd" placeholder="新增 slug (如 acne-myths)" style="flex:1;padding:5px 8px;font-size:12px;border:1px solid #dcd5c8;border-radius:6px"/>
+      <button class="ax-btn" id="axPicksAddBtn">+</button>
+    </div>
+    <button class="ax-btn primary" id="axPicksSave" style="display:none;margin-top:8px">💾 儲存(寫入 KV)</button>
+    <div id="axPicksStats" style="font-size:11px;color:#8b8378;margin-top:8px"></div>
   </div>
 </div>`;
     document.body.appendChild(panel);
@@ -691,6 +703,77 @@
   }
 
   // ─────────────────────────────────────────────────────────────
+  // ⑧ G2 — POPULAR_PICKS admin (KV-backed; no redeploy needed)
+  // ─────────────────────────────────────────────────────────────
+  let _picksArr = [];
+  function renderPicks() {
+    const ol = document.getElementById('axPicksList');
+    ol.innerHTML = '';
+    _picksArr.forEach((s, idx) => {
+      const li = document.createElement('li');
+      li.draggable = true;
+      li.dataset.slug = s;
+      li.innerHTML = `<span style="flex:1">${s}</span><button class="ax-btn" data-rm="${idx}" style="margin:0 0 0 4px;padding:2px 8px">×</button>`;
+      li.style.display = 'flex';
+      li.style.alignItems = 'center';
+      ol.appendChild(li);
+    });
+    addDragHandlers(ol);
+    ol.querySelectorAll('button[data-rm]').forEach(b => {
+      b.addEventListener('click', e => {
+        e.stopPropagation();
+        const i = parseInt(b.dataset.rm, 10);
+        _picksArr.splice(i, 1);
+        renderPicks();
+      });
+    });
+    document.getElementById('axPicksSave').style.display = _picksArr.length ? 'inline-flex' : 'none';
+    // Watch for drag reorder
+    new MutationObserver(() => {
+      _picksArr = Array.from(ol.querySelectorAll('li')).map(x => x.dataset.slug);
+    }).observe(ol, { childList: true });
+  }
+  async function loadPicks() {
+    document.getElementById('axPicksStats').textContent = '載入中...';
+    try {
+      const r = await fetch('/api/admin/popular-picks');
+      const j = await r.json();
+      _picksArr = (j.picks || []).slice();
+      renderPicks();
+      document.getElementById('axPicksStats').textContent = j.fallback
+        ? `(KV 為空,顯示預設 fallback ${_picksArr.length} 篇)`
+        : `已載入 ${_picksArr.length} 篇 (來自 KV)`;
+    } catch (e) {
+      document.getElementById('axPicksStats').textContent = '載入失敗:' + e.message;
+    }
+  }
+  function addPick() {
+    const inp = document.getElementById('axPicksAdd');
+    const v = inp.value.trim();
+    if (!/^[a-z0-9-]+$/.test(v)) { toast('slug 格式錯誤(只允許 a-z 0-9 -)'); return; }
+    if (_picksArr.includes(v)) { toast('已在清單中'); return; }
+    if (_picksArr.length >= 12) { toast('最多 12 篇'); return; }
+    _picksArr.push(v);
+    inp.value = '';
+    renderPicks();
+  }
+  async function savePicks() {
+    if (!_picksArr.length) { toast('清單不能空'); return; }
+    const r = await fetch('/api/admin/popular-picks', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: 'token ' + getPat() },
+      body: JSON.stringify({ picks: _picksArr }),
+    });
+    const j = await r.json();
+    if (r.ok) {
+      toast('✓ 已儲存到 KV ' + _picksArr.length + ' 篇,前台立即生效');
+      document.getElementById('axPicksStats').textContent = '已儲存 (' + new Date().toLocaleTimeString() + ')';
+    } else {
+      toast('儲存失敗:' + (j.error || r.status));
+    }
+  }
+
+  // ─────────────────────────────────────────────────────────────
   // BOOTSTRAP
   // ─────────────────────────────────────────────────────────────
   ready(() => {
@@ -708,6 +791,10 @@
     document.getElementById('axVersionLoad').addEventListener('click', loadVersions);
     document.getElementById('axReorderLoad').addEventListener('click', loadReorder);
     document.getElementById('axReorderSave').addEventListener('click', saveReorder);
+    document.getElementById('axPicksLoad').addEventListener('click', loadPicks);
+    document.getElementById('axPicksAddBtn').addEventListener('click', addPick);
+    document.getElementById('axPicksAdd').addEventListener('keydown', e => { if (e.key === 'Enter') addPick(); });
+    document.getElementById('axPicksSave').addEventListener('click', savePicks);
 
     // Auto-run SEO check whenever editor content changes (debounced)
     let seoTimer = null;

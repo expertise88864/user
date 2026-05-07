@@ -3080,6 +3080,34 @@
     return Notification.permission; // 'default' | 'granted' | 'denied'
   };
 
+  // G3 — Floating "Buy Me a Coffee" tip button. Article pages only.
+  // Discreet teal coffee-cup icon next to the bookmark button.
+  // Tap → opens BMC profile (or Stripe Tip Jar) in a new tab.
+  // Configure: set DN.BMC_URL below to your BMC username URL.
+  DN.BMC_URL = 'https://www.buymeacoffee.com/chendermatologist'; // change to your BMC handle
+  DN.injectTipButton = function () {
+    if (document.getElementById('dn-tip')) return;
+    if (!document.querySelector('article.max-w-3xl')) return; // article pages only
+    if (!DN.BMC_URL) return;
+    var btn = document.createElement('a');
+    btn.id = 'dn-tip';
+    btn.href = DN.BMC_URL;
+    btn.target = '_blank';
+    btn.rel = 'noopener noreferrer';
+    btn.setAttribute('aria-label', '請我喝杯咖啡 (Buy me a coffee)');
+    btn.title = '請我喝杯咖啡 · 支持衛教內容';
+    btn.style.cssText = 'position:fixed;right:18px;bottom:200px;width:42px;height:42px;border-radius:50%;background:#fbbf24;color:#78350f;border:1px solid #f59e0b;box-shadow:0 8px 20px -8px rgba(180,83,9,.45);text-decoration:none;display:flex;align-items:center;justify-content:center;z-index:50;font-size:20px;line-height:1;transition:all .15s';
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>';
+    btn.addEventListener('mouseenter', function () { btn.style.transform = 'translateY(-2px) scale(1.05)'; });
+    btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
+    btn.addEventListener('click', function () {
+      if (typeof gtag === 'function') {
+        try { gtag('event', 'tip_click', { slug: DN.currentSlug && DN.currentSlug() }); } catch (e) {}
+      }
+    });
+    document.body.appendChild(btn);
+  };
+
   // F7 — Floating push-subscribe bell. Once granted, hides itself.
   // Hides on /admin/, /tools, calculator pages, and any page < 800px tall (no room).
   DN.injectPushBell = function () {
@@ -4234,6 +4262,25 @@
     'hairloss-myths'       // 落髮 — 男性女性共通
   ];
 
+  // G2 — Refresh DN.POPULAR_PICKS from /api/admin/popular-picks (KV-backed).
+  // Allows admin to change the curated list without a redeploy.
+  // Falls back silently to the hard-coded list above if KV is empty or fetch fails.
+  DN.refreshPopularPicks = function () {
+    if (!('fetch' in window)) return Promise.resolve();
+    return fetch('/api/admin/popular-picks', { cache: 'no-cache' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (data && Array.isArray(data.picks) && data.picks.length) {
+          DN.POPULAR_PICKS = data.picks;
+          // Re-render spotlight if already on a page that has it
+          if (typeof DN.injectSpotlight === 'function' && document.getElementById('dn-popular-list')) {
+            try { DN.injectSpotlight(); } catch (e) {}
+          }
+        }
+      })
+      .catch(function () { /* keep fallback */ });
+  };
+
   DN.injectSpotlight = function () {
     var recentEl = document.getElementById('dn-recent-list');
     var popularEl = document.getElementById('dn-popular-list');
@@ -5068,6 +5115,7 @@
     idle(function () { DN.initCmdK(); }, { timeout: 2500 });
     idle(function () { DN.initDarkMode(); }, { timeout: 1500 });
     idle(function () { DN.injectPushBell && DN.injectPushBell(); }, { timeout: 4000 });
+    idle(function () { DN.refreshPopularPicks && DN.refreshPopularPicks(); }, { timeout: 3000 });
 
     // Article-only enhancements (auto-detect via .prose presence)
     if (document.getElementById('proseZh') || document.querySelector('article .prose') || document.querySelector('article.max-w-3xl')) {
@@ -5081,6 +5129,7 @@
       idle(function () { DN.injectArticleHero(); }, { timeout: 1500 });
       idle(function () { DN.injectMedDiagrams(); }, { timeout: 2000 });
       idle(function () { DN.enhanceArticleImages(); }, { timeout: 2500 });
+      idle(function () { DN.injectTipButton && DN.injectTipButton(); }, { timeout: 3500 });
 
       // Per-article calculator priority: most-relevant calculator FIRST.
       // PHQ-9 (depression screen) intentionally removed from auto-injection — too negative for patient pages.

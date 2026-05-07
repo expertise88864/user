@@ -1,975 +1,199 @@
 {
   "slug": "topical-acids-patient",
   "strings": [
-    {
-      "zh": "五大酸類速覽表",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "外用 A 酸 — Topical Retinoids",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "A 醇 / 視黃醛 — Retinol / Retinaldehyde",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "杜鵑花酸 — Azelaic Acid",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "果酸 — AHA",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "水楊酸 — BHA",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "怎麼開始？新手的入門劑量階梯",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "能不能跟誰一起用？混搭禁忌",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "孕期 / 哺乳期 — 哪個能用、哪個不行",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "副作用、爆痘、反黑、刺癢",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "常見 Q&amp;A",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "最後",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "3. Azelaic Acid (杜鵑花酸)",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "常見問題（PTT / Dcard 上常被問的）",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "參考資料",
-      "en": "",
-      "tag": "h2"
-    },
-    {
-      "zh": "1. Tretinoin(全反式 A 酸，第一代）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "2. Adapalene(第三代，Differin / 痘膚潤）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "3. Tazarotene / Trifarotene(第三、四代）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "4. Retinol(視黃醇）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "5. Retinaldehyde(視黃醛）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "6. Retinyl palmitate（視黃醇酯）— 最弱",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "7. Azelaic acid 15% / 20%(Skinoren、Finacea、AzClear、雅若）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "8. Glycolic acid(甘醇酸，從甘蔗來）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "9. Lactic acid(乳酸）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "10. Mandelic acid(杏仁酸）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "順帶一提：PHA(多元羥基酸）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "「三明治法」(sandwich technique)",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "必備搭擋：防曬",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "1. 「Retinoid dermatitis」— 用 A 酸的脫皮紅腫",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "2. 「Purging」— 爆痘",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "3. 「PIH」— 發炎後色素沉澱（反黑）",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "4. 嚴重刺激或過敏",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "A 酸 / 杜鵑花酸 / 果酸 / 水楊酸 PTT 推薦的牌子？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "外用酸類多久看到效果？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "外用酸類能跟其他保養品一起用嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "孕婦能用什麼酸？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "外用酸類健保給付嗎？",
-      "en": "",
-      "tag": "h3"
-    },
-    {
-      "zh": "五大塗抹酸類速覽",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "本篇大綱",
-      "en": "",
-      "tag": "h4"
-    },
-    {
-      "zh": "Gluconolactone、Lactobionic acid 等，分子比果酸更大、更溫和、有抗氧化作用。適合敏感肌、玫瑰痤瘡、酒糟肌、屏障受損的人入門。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "第 1-2 週最明顯：乾、紅、刺、脫皮、緊繃。對策：減頻率、加保濕（神經醯胺、玻尿酸、角鯊烷、凡士林）、暫停其他活性成分、夾三明治。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "持續紅腫、起水泡、灼熱感、皮膚明顯撕裂 → 立刻停用、就醫。",
-      "en": "",
-      "tag": "p"
-    },
-    {
-      "zh": "五大塗抹酸類",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "提醒 ·",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "白話版選擇邏輯 —",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "商品名：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "常用濃度：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "主要功能：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "特性：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "刺激性也最強",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "溫和許多",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "可以跟 BPO 同時用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "常見濃度：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "原理：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不是真正的 A 酸",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "2 步驟酶轉換",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "弱很多但溫和很多",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "適合：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "注意：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "效果比 Retinol 強、刺激性適中",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "實際抗老效果非常微弱",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用 retinoid 強度排名（由強到弱):",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "三合一機轉：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "抗發炎",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "抑制酪胺酸酶",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "能美白",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "抑制痤瘡桿菌",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "孕期哺乳期可以使用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "缺點：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "效果最強的果酸",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "用途：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "刺激性較低、保濕能力更好",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "最大",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "刺激性最低",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "發炎中的痘痘 + 痘印",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "核心特性：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "親油性",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "毛孔深處",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "粉刺、毛孔粗大、油性皮膚",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "常見產品：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "水楊酸中毒",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第 1-2 週：每週 1-2 次，只用一點點（豆子大小）",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第 3-4 週：每週 3 次。",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "第 1-2 個月後：每天 1 次（晚上）。",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "遇到刺癢、脫皮：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "保濕 → A 酸 → 保濕",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "用酸 = 必須防曬。",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "正常生理現象，不是過敏",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "容易曬黑、留下深色印",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "每天嚴格防曬",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "痘痘為主",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "初老抗老",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "角質暗沈",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "脫皮不等於有效",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不脫皮也不等於沒效",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "男性痘痘、粉刺、油痘",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "停用所有活性成分至少 2 週",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "杜鵑花酸 Azelaic acid",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "皮膚科最便宜、最有實證、最值得長期投資",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "選對成分、低頻開始、做足防曬、給皮膚適應時間",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "下一步：",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "外用 A 酸",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "A 醇",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "杜鵑花酸",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "果酸",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "水楊酸",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "4-12 週",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "「爆痘期」(purging)",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "避免疊加",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "早 C 晚 A",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "絕對禁用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "避免",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "可用",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "處方 A 酸藥膏",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "杜鵑花酸 Skinoren",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "不給付",
-      "en": "",
-      "tag": "strong"
-    },
-    {
-      "zh": "新手該從哪一個開始？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "用酸要不要先去角質？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "用酸後可以馬上化妝嗎？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "用酸需要 pH 多少才有效？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "用酸後一定會脫皮才有效嗎？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "用一陣子後皮膚開始適應、效果不如以前怎麼辦？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "男生需要用酸嗎？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "身體上的酸 — 背痘、雞皮、角化症？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "用酸用到屏障壞掉怎麼救？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "有沒有「成分溫和但有效」的萬用酸？",
-      "en": "",
-      "tag": "summary"
-    },
-    {
-      "zh": "A 酸 / A 醇 / 杜鵑花酸 / 果酸 / 水楊酸，一次搞懂",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "處方",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "孕期禁用",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "開架",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "孕期建議避免",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "處方/部分開架",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "孕期可用",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "低濃度可",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "開架(2% 以下）",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "低濃度小範圍可",
-      "en": "",
-      "tag": "span"
-    },
-    {
-      "zh": "酸類",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "主要做什麼",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "常見成分",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "強度",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "處方/開架",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "孕期",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "組合",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "建議",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "原因",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "成分",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "哺乳期",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "說明",
-      "en": "",
-      "tag": "th"
-    },
-    {
-      "zh": "痘痘、抗老、淡斑",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "A 醇 / 視黃醛",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "抗老、初老淡紋",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "痘痘 + 泛紅 + 美白",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "處方/開架皆有",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "果酸 (AHA)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "角質代謝、淡斑、暗沈",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "開架（高濃度需診所）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "水楊酸 (BHA)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "粉刺、毛孔、油痘",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "外用 A 酸 + BPO(過氧化苯醯）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Tretinoin 不要同時、改早晚分開；Adapalene 可以同時",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "BPO 會把 Tretinoin 氧化分解；Adapalene 化學上比較穩定",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "外用 A 酸 + 維他命 C(L-AA)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "早 C 晚 A，分開用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "pH 不同、刺激加成",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "外用 A 酸 + 高濃度果酸 / 水楊酸",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "不建議疊加",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "三層去角質 → 屏障毀掉",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "果酸 + 水楊酸",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "不要全臉同時用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "過度去角質、紅、刺、脫皮",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "杜鵑花酸 + 任何成分",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "幾乎都可以共用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "個性最溫和的酸",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "外用酸 + 雷射 / 醫美術後",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "術後 1-2 週暫停",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "屏障還沒重建",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "外用酸 + 去角質磨砂膏",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "不要",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "機械 + 化學雙層攻擊",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "外用 A 酸(Tretinoin / Adapalene / Tazarotene / Trifarotene)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "致畸風險；雖然外用全身吸收極低，但仍建議避免",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "A 醇 / 視黃醛(Retinol, Retinaldehyde)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "(建議避免）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "同上；雖實證有限，出於謹慎",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "杜鵑花酸(Azelaic acid)",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "孕期可用首選 — 對痘痘、玫瑰痤瘡、淡斑都有用",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "果酸(AHA, 5-10% 居家）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "(低濃度小範圍）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "全身吸收極低",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "水楊酸(2% 以下、小範圍）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "避免大面積、高濃度；局部 spot treatment 可",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "Bakuchiol(補骨脂酚）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "(目前資料）",
-      "en": "",
-      "tag": "td"
-    },
-    {
-      "zh": "植物來源，被推為「孕婦版 retinol」，但長期資料有限",
-      "en": "",
-      "tag": "td"
-    }
+    { "zh": "五大酸類速覽表", "en": "Quick reference: the five major topical acids", "tag": "h2" },
+    { "zh": "外用 A 酸 — Topical Retinoids", "en": "Topical retinoids", "tag": "h2" },
+    { "zh": "A 醇 / 視黃醛 — Retinol / Retinaldehyde", "en": "Retinol / retinaldehyde", "tag": "h2" },
+    { "zh": "杜鵑花酸 — Azelaic Acid", "en": "Azelaic acid", "tag": "h2" },
+    { "zh": "果酸 — AHA", "en": "Alpha-hydroxy acids (AHA)", "tag": "h2" },
+    { "zh": "水楊酸 — BHA", "en": "Beta-hydroxy acid (BHA — salicylic acid)", "tag": "h2" },
+    { "zh": "怎麼開始？新手的入門劑量階梯", "en": "How to start: the beginner's dose ladder", "tag": "h2" },
+    { "zh": "能不能跟誰一起用？混搭禁忌", "en": "What can be used together — combination rules", "tag": "h2" },
+    { "zh": "孕期 / 哺乳期 — 哪個能用、哪個不行", "en": "Pregnancy and lactation — which acids are safe", "tag": "h2" },
+    { "zh": "副作用、爆痘、反黑、刺癢", "en": "Side effects: purging, post-inflammatory hyperpigmentation, irritation", "tag": "h2" },
+    { "zh": "常見 Q&amp;A", "en": "FAQ", "tag": "h2" },
+    { "zh": "最後", "en": "Final thoughts", "tag": "h2" },
+    { "zh": "3. Azelaic Acid (杜鵑花酸)", "en": "3. Azelaic acid", "tag": "h2" },
+    { "zh": "常見問題（PTT / Dcard 上常被問的）", "en": "Common questions (frequently asked on online forums)", "tag": "h2" },
+    { "zh": "參考資料", "en": "References", "tag": "h2" },
+    { "zh": "1. Tretinoin(全反式 A 酸，第一代）", "en": "1. Tretinoin (all-trans retinoic acid, first-generation)", "tag": "h3" },
+    { "zh": "2. Adapalene(第三代，Differin / 痘膚潤）", "en": "2. Adapalene (third-generation; Differin)", "tag": "h3" },
+    { "zh": "3. Tazarotene / Trifarotene(第三、四代）", "en": "3. Tazarotene / trifarotene (third and fourth generation)", "tag": "h3" },
+    { "zh": "4. Retinol(視黃醇）", "en": "4. Retinol", "tag": "h3" },
+    { "zh": "5. Retinaldehyde(視黃醛）", "en": "5. Retinaldehyde", "tag": "h3" },
+    { "zh": "6. Retinyl palmitate（視黃醇酯）— 最弱", "en": "6. Retinyl palmitate — the weakest retinoid", "tag": "h3" },
+    { "zh": "7. Azelaic acid 15% / 20%(Skinoren、Finacea、AzClear、雅若）", "en": "7. Azelaic acid 15% / 20% (Skinoren, Finacea, AzClear)", "tag": "h3" },
+    { "zh": "8. Glycolic acid(甘醇酸，從甘蔗來）", "en": "8. Glycolic acid (derived from sugarcane)", "tag": "h3" },
+    { "zh": "9. Lactic acid(乳酸）", "en": "9. Lactic acid", "tag": "h3" },
+    { "zh": "10. Mandelic acid(杏仁酸）", "en": "10. Mandelic acid", "tag": "h3" },
+    { "zh": "順帶一提：PHA(多元羥基酸）", "en": "Aside: PHAs (polyhydroxy acids)", "tag": "h3" },
+    { "zh": "「三明治法」(sandwich technique)", "en": "The “sandwich technique”", "tag": "h3" },
+    { "zh": "必備搭擋：防曬", "en": "Essential pairing: sunscreen", "tag": "h3" },
+    { "zh": "1. 「Retinoid dermatitis」— 用 A 酸的脫皮紅腫", "en": "1. Retinoid dermatitis — peeling and erythema", "tag": "h3" },
+    { "zh": "2. 「Purging」— 爆痘", "en": "2. “Purging” — initial breakout", "tag": "h3" },
+    { "zh": "3. 「PIH」— 發炎後色素沉澱（反黑）", "en": "3. PIH — post-inflammatory hyperpigmentation", "tag": "h3" },
+    { "zh": "4. 嚴重刺激或過敏", "en": "4. Severe irritation or allergic reaction", "tag": "h3" },
+    { "zh": "A 酸 / 杜鵑花酸 / 果酸 / 水楊酸 PTT 推薦的牌子？", "en": "Online-forum-recommended brands for retinoids / azelaic acid / AHA / BHA?", "tag": "h3" },
+    { "zh": "外用酸類多久看到效果？", "en": "How long until topical acids show results?", "tag": "h3" },
+    { "zh": "外用酸類能跟其他保養品一起用嗎？", "en": "Can topical acids be used with other skincare?", "tag": "h3" },
+    { "zh": "孕婦能用什麼酸？", "en": "Which acids are safe during pregnancy?", "tag": "h3" },
+    { "zh": "外用酸類健保給付嗎？", "en": "Are topical acids covered by NHI?", "tag": "h3" },
+    { "zh": "五大塗抹酸類速覽", "en": "Quick reference for the five major topical acids", "tag": "h4" },
+    { "zh": "本篇大綱", "en": "Article outline", "tag": "h4" },
+    { "zh": "Gluconolactone、Lactobionic acid 等，分子比果酸更大、更溫和、有抗氧化作用。適合敏感肌、玫瑰痤瘡、酒糟肌、屏障受損的人入門。", "en": "Gluconolactone, lactobionic acid, etc. Larger molecules than AHAs, gentler, with antioxidant activity. Suitable for sensitive skin, rosacea, and compromised barrier.", "tag": "p" },
+    { "zh": "第 1-2 週最明顯：乾、紅、刺、脫皮、緊繃。對策：減頻率、加保濕（神經醯胺、玻尿酸、角鯊烷、凡士林）、暫停其他活性成分、夾三明治。", "en": "Most pronounced in weeks 1–2: dryness, erythema, stinging, peeling, tightness. Strategy: reduce frequency, add moisturizer (ceramides, hyaluronic acid, squalane, petrolatum), pause other actives, use the sandwich technique.", "tag": "p" },
+    { "zh": "持續紅腫、起水泡、灼熱感、皮膚明顯撕裂 → 立刻停用、就醫。", "en": "Persistent erythema, blistering, burning, or visible skin breakdown → discontinue immediately and seek medical care.", "tag": "p" },
+    { "zh": "五大塗抹酸類", "en": "Five major topical acids", "tag": "strong" },
+    { "zh": "提醒 ·", "en": "Note ·", "tag": "strong" },
+    { "zh": "白話版選擇邏輯 —", "en": "Plain-language selection logic —", "tag": "strong" },
+    { "zh": "商品名：", "en": "Brand names:", "tag": "strong" },
+    { "zh": "常用濃度：", "en": "Common concentrations:", "tag": "strong" },
+    { "zh": "主要功能：", "en": "Main indications:", "tag": "strong" },
+    { "zh": "特性：", "en": "Properties:", "tag": "strong" },
+    { "zh": "刺激性也最強", "en": "also the most irritating", "tag": "strong" },
+    { "zh": "溫和許多", "en": "much gentler", "tag": "strong" },
+    { "zh": "可以跟 BPO 同時用", "en": "Can be combined with benzoyl peroxide (BPO)", "tag": "strong" },
+    { "zh": "常見濃度：", "en": "Common concentrations:", "tag": "strong" },
+    { "zh": "原理：", "en": "Mechanism:", "tag": "strong" },
+    { "zh": "不是真正的 A 酸", "en": "Not a true retinoic acid", "tag": "strong" },
+    { "zh": "2 步驟酶轉換", "en": "Two-step enzymatic conversion", "tag": "strong" },
+    { "zh": "弱很多但溫和很多", "en": "Much weaker but much gentler", "tag": "strong" },
+    { "zh": "適合：", "en": "Best for:", "tag": "strong" },
+    { "zh": "注意：", "en": "Caution:", "tag": "strong" },
+    { "zh": "效果比 Retinol 強、刺激性適中", "en": "More effective than retinol, with moderate irritation", "tag": "strong" },
+    { "zh": "實際抗老效果非常微弱", "en": "Actual anti-aging effect is minimal", "tag": "strong" },
+    { "zh": "外用 retinoid 強度排名（由強到弱):", "en": "Topical retinoid potency ranking (strongest to weakest):", "tag": "strong" },
+    { "zh": "三合一機轉：", "en": "Triple mechanism:", "tag": "strong" },
+    { "zh": "抗發炎", "en": "Anti-inflammatory", "tag": "strong" },
+    { "zh": "抑制酪胺酸酶", "en": "Tyrosinase inhibition", "tag": "strong" },
+    { "zh": "能美白", "en": "Skin-lightening effect", "tag": "strong" },
+    { "zh": "抑制痤瘡桿菌", "en": "Inhibits Cutibacterium acnes", "tag": "strong" },
+    { "zh": "孕期哺乳期可以使用", "en": "Safe during pregnancy and lactation", "tag": "strong" },
+    { "zh": "缺點：", "en": "Drawbacks:", "tag": "strong" },
+    { "zh": "效果最強的果酸", "en": "the most potent AHA", "tag": "strong" },
+    { "zh": "用途：", "en": "Indications:", "tag": "strong" },
+    { "zh": "刺激性較低、保濕能力更好", "en": "lower irritation and better hydration", "tag": "strong" },
+    { "zh": "最大", "en": "largest molecule", "tag": "strong" },
+    { "zh": "刺激性最低", "en": "lowest irritation", "tag": "strong" },
+    { "zh": "發炎中的痘痘 + 痘印", "en": "Inflamed acne and post-acne marks", "tag": "strong" },
+    { "zh": "核心特性：", "en": "Core properties:", "tag": "strong" },
+    { "zh": "親油性", "en": "lipophilic", "tag": "strong" },
+    { "zh": "毛孔深處", "en": "deep within the pore", "tag": "strong" },
+    { "zh": "粉刺、毛孔粗大、油性皮膚", "en": "Comedones, enlarged pores, oily skin", "tag": "strong" },
+    { "zh": "常見產品：", "en": "Common products:", "tag": "strong" },
+    { "zh": "水楊酸中毒", "en": "Salicylate toxicity", "tag": "strong" },
+    { "zh": "第 1-2 週：每週 1-2 次，只用一點點（豆子大小）", "en": "Weeks 1–2: 1–2× per week, pea-sized amount only", "tag": "strong" },
+    { "zh": "第 3-4 週：每週 3 次。", "en": "Weeks 3–4: 3× per week.", "tag": "strong" },
+    { "zh": "第 1-2 個月後：每天 1 次（晚上）。", "en": "After 1–2 months: once daily (at night).", "tag": "strong" },
+    { "zh": "遇到刺癢、脫皮：", "en": "If stinging or peeling occurs:", "tag": "strong" },
+    { "zh": "保濕 → A 酸 → 保濕", "en": "Moisturizer → retinoid → moisturizer", "tag": "strong" },
+    { "zh": "用酸 = 必須防曬。", "en": "Using acids requires strict sun protection.", "tag": "strong" },
+    { "zh": "正常生理現象，不是過敏", "en": "Normal physiological response — not an allergy", "tag": "strong" },
+    { "zh": "容易曬黑、留下深色印", "en": "Prone to tanning and dark marks", "tag": "strong" },
+    { "zh": "每天嚴格防曬", "en": "Strict daily sunscreen", "tag": "strong" },
+    { "zh": "痘痘為主", "en": "Primarily acne", "tag": "strong" },
+    { "zh": "初老抗老", "en": "Early-aging concerns", "tag": "strong" },
+    { "zh": "角質暗沈", "en": "Dull, thickened stratum corneum", "tag": "strong" },
+    { "zh": "脫皮不等於有效", "en": "Peeling does NOT equal efficacy", "tag": "strong" },
+    { "zh": "不脫皮也不等於沒效", "en": "Not peeling does NOT mean ineffective", "tag": "strong" },
+    { "zh": "男性痘痘、粉刺、油痘", "en": "Acne, comedones, and oily skin in men", "tag": "strong" },
+    { "zh": "停用所有活性成分至少 2 週", "en": "Stop all active ingredients for at least 2 weeks", "tag": "strong" },
+    { "zh": "杜鵑花酸 Azelaic acid", "en": "Azelaic acid", "tag": "strong" },
+    { "zh": "皮膚科最便宜、最有實證、最值得長期投資", "en": "the most affordable, evidence-based, and long-term-worthy investment in dermatology", "tag": "strong" },
+    { "zh": "選對成分、低頻開始、做足防曬、給皮膚適應時間", "en": "Pick the right active, start at low frequency, use strict sunscreen, and give the skin time to adapt", "tag": "strong" },
+    { "zh": "下一步：", "en": "Next step:", "tag": "strong" },
+    { "zh": "外用 A 酸", "en": "Topical retinoid", "tag": "strong" },
+    { "zh": "A 醇", "en": "Retinol", "tag": "strong" },
+    { "zh": "杜鵑花酸", "en": "Azelaic acid", "tag": "strong" },
+    { "zh": "果酸", "en": "AHA", "tag": "strong" },
+    { "zh": "水楊酸", "en": "BHA", "tag": "strong" },
+    { "zh": "4-12 週", "en": "4–12 weeks", "tag": "strong" },
+    { "zh": "「爆痘期」(purging)", "en": "“Purging” phase", "tag": "strong" },
+    { "zh": "避免疊加", "en": "Avoid layering", "tag": "strong" },
+    { "zh": "早 C 晚 A", "en": "Vitamin C in the morning, retinoid at night", "tag": "strong" },
+    { "zh": "絕對禁用", "en": "Absolutely contraindicated", "tag": "strong" },
+    { "zh": "避免", "en": "Avoid", "tag": "strong" },
+    { "zh": "可用", "en": "Permitted", "tag": "strong" },
+    { "zh": "處方 A 酸藥膏", "en": "Prescription topical retinoid", "tag": "strong" },
+    { "zh": "杜鵑花酸 Skinoren", "en": "Azelaic acid (Skinoren)", "tag": "strong" },
+    { "zh": "不給付", "en": "Not covered", "tag": "strong" },
+    { "zh": "新手該從哪一個開始？", "en": "Which acid should beginners start with?", "tag": "summary" },
+    { "zh": "用酸要不要先去角質？", "en": "Should I exfoliate before applying acids?", "tag": "summary" },
+    { "zh": "用酸後可以馬上化妝嗎？", "en": "Can I apply makeup right after using acids?", "tag": "summary" },
+    { "zh": "用酸需要 pH 多少才有效？", "en": "What pH is required for acids to work?", "tag": "summary" },
+    { "zh": "用酸後一定會脫皮才有效嗎？", "en": "Do acids only work if they cause peeling?", "tag": "summary" },
+    { "zh": "用一陣子後皮膚開始適應、效果不如以前怎麼辦？", "en": "What if my skin adapts and the effect diminishes?", "tag": "summary" },
+    { "zh": "男生需要用酸嗎？", "en": "Do men need to use topical acids?", "tag": "summary" },
+    { "zh": "身體上的酸 — 背痘、雞皮、角化症？", "en": "Body acids — for back acne, keratosis pilaris, hyperkeratosis?", "tag": "summary" },
+    { "zh": "用酸用到屏障壞掉怎麼救？", "en": "How do I rescue my skin barrier if I've over-used acids?", "tag": "summary" },
+    { "zh": "有沒有「成分溫和但有效」的萬用酸？", "en": "Is there a gentle yet effective “all-purpose” acid?", "tag": "summary" },
+    { "zh": "A 酸 / A 醇 / 杜鵑花酸 / 果酸 / 水楊酸，一次搞懂", "en": "Retinoids, retinol, azelaic acid, AHA, BHA — explained in one place", "tag": "span" },
+    { "zh": "處方", "en": "Prescription", "tag": "span" },
+    { "zh": "孕期禁用", "en": "Contraindicated in pregnancy", "tag": "span" },
+    { "zh": "開架", "en": "Over the counter", "tag": "span" },
+    { "zh": "孕期建議避免", "en": "Avoid in pregnancy", "tag": "span" },
+    { "zh": "處方/部分開架", "en": "Prescription / partly OTC", "tag": "span" },
+    { "zh": "孕期可用", "en": "Safe in pregnancy", "tag": "span" },
+    { "zh": "低濃度可", "en": "Low concentration permitted", "tag": "span" },
+    { "zh": "開架(2% 以下）", "en": "OTC (≤ 2%)", "tag": "span" },
+    { "zh": "低濃度小範圍可", "en": "Low concentration, small area permitted", "tag": "span" },
+    { "zh": "酸類", "en": "Acid", "tag": "th" },
+    { "zh": "主要做什麼", "en": "Main use", "tag": "th" },
+    { "zh": "常見成分", "en": "Common ingredients", "tag": "th" },
+    { "zh": "強度", "en": "Strength", "tag": "th" },
+    { "zh": "處方/開架", "en": "Rx / OTC", "tag": "th" },
+    { "zh": "孕期", "en": "Pregnancy", "tag": "th" },
+    { "zh": "組合", "en": "Combination", "tag": "th" },
+    { "zh": "建議", "en": "Recommendation", "tag": "th" },
+    { "zh": "原因", "en": "Reason", "tag": "th" },
+    { "zh": "成分", "en": "Ingredient", "tag": "th" },
+    { "zh": "哺乳期", "en": "Lactation", "tag": "th" },
+    { "zh": "說明", "en": "Notes", "tag": "th" },
+    { "zh": "痘痘、抗老、淡斑", "en": "Acne, anti-aging, hyperpigmentation", "tag": "td" },
+    { "zh": "A 醇 / 視黃醛", "en": "Retinol / retinaldehyde", "tag": "td" },
+    { "zh": "抗老、初老淡紋", "en": "Anti-aging, fine lines", "tag": "td" },
+    { "zh": "痘痘 + 泛紅 + 美白", "en": "Acne + redness + skin lightening", "tag": "td" },
+    { "zh": "處方/開架皆有", "en": "Available as Rx and OTC", "tag": "td" },
+    { "zh": "果酸 (AHA)", "en": "AHA", "tag": "td" },
+    { "zh": "角質代謝、淡斑、暗沈", "en": "Keratin turnover, hyperpigmentation, dullness", "tag": "td" },
+    { "zh": "開架（高濃度需診所）", "en": "OTC (high concentrations require clinic)", "tag": "td" },
+    { "zh": "水楊酸 (BHA)", "en": "BHA", "tag": "td" },
+    { "zh": "粉刺、毛孔、油痘", "en": "Comedones, pores, oily-skin acne", "tag": "td" },
+    { "zh": "外用 A 酸 + BPO(過氧化苯醯）", "en": "Topical retinoid + benzoyl peroxide", "tag": "td" },
+    { "zh": "Tretinoin 不要同時、改早晚分開；Adapalene 可以同時", "en": "Don't apply tretinoin and BPO simultaneously — use morning/night separation. Adapalene can be combined.", "tag": "td" },
+    { "zh": "BPO 會把 Tretinoin 氧化分解；Adapalene 化學上比較穩定", "en": "BPO oxidatively degrades tretinoin; adapalene is chemically more stable", "tag": "td" },
+    { "zh": "外用 A 酸 + 維他命 C(L-AA)", "en": "Topical retinoid + vitamin C (L-ascorbic acid)", "tag": "td" },
+    { "zh": "早 C 晚 A，分開用", "en": "Vitamin C in the morning, retinoid at night — separate", "tag": "td" },
+    { "zh": "pH 不同、刺激加成", "en": "Different pH levels; irritation compounds", "tag": "td" },
+    { "zh": "外用 A 酸 + 高濃度果酸 / 水楊酸", "en": "Topical retinoid + high-concentration AHA / BHA", "tag": "td" },
+    { "zh": "不建議疊加", "en": "Layering not recommended", "tag": "td" },
+    { "zh": "三層去角質 → 屏障毀掉", "en": "Triple exfoliation → barrier collapse", "tag": "td" },
+    { "zh": "果酸 + 水楊酸", "en": "AHA + BHA", "tag": "td" },
+    { "zh": "不要全臉同時用", "en": "Don't use both over the entire face simultaneously", "tag": "td" },
+    { "zh": "過度去角質、紅、刺、脫皮", "en": "Over-exfoliation, redness, stinging, peeling", "tag": "td" },
+    { "zh": "杜鵑花酸 + 任何成分", "en": "Azelaic acid + any ingredient", "tag": "td" },
+    { "zh": "幾乎都可以共用", "en": "Compatible with almost everything", "tag": "td" },
+    { "zh": "個性最溫和的酸", "en": "the gentlest acid", "tag": "td" },
+    { "zh": "外用酸 + 雷射 / 醫美術後", "en": "Topical acids + post-laser / aesthetic procedures", "tag": "td" },
+    { "zh": "術後 1-2 週暫停", "en": "Pause for 1–2 weeks post-procedure", "tag": "td" },
+    { "zh": "屏障還沒重建", "en": "Skin barrier hasn't fully recovered", "tag": "td" },
+    { "zh": "外用酸 + 去角質磨砂膏", "en": "Topical acid + physical exfoliating scrub", "tag": "td" },
+    { "zh": "不要", "en": "Avoid", "tag": "td" },
+    { "zh": "機械 + 化學雙層攻擊", "en": "Combined mechanical and chemical insult", "tag": "td" },
+    { "zh": "外用 A 酸(Tretinoin / Adapalene / Tazarotene / Trifarotene)", "en": "Topical retinoids (tretinoin / adapalene / tazarotene / trifarotene)", "tag": "td" },
+    { "zh": "致畸風險；雖然外用全身吸收極低，但仍建議避免", "en": "Teratogenic risk; although systemic absorption from topicals is minimal, avoidance is still recommended", "tag": "td" },
+    { "zh": "A 醇 / 視黃醛(Retinol, Retinaldehyde)", "en": "Retinol / retinaldehyde", "tag": "td" },
+    { "zh": "(建議避免）", "en": "(Recommended to avoid)", "tag": "td" },
+    { "zh": "同上；雖實證有限，出於謹慎", "en": "Same as above; evidence is limited, but caution is advised", "tag": "td" },
+    { "zh": "杜鵑花酸(Azelaic acid)", "en": "Azelaic acid", "tag": "td" },
+    { "zh": "孕期可用首選 — 對痘痘、玫瑰痤瘡、淡斑都有用", "en": "First-line choice in pregnancy — effective for acne, rosacea, and hyperpigmentation", "tag": "td" },
+    { "zh": "果酸(AHA, 5-10% 居家）", "en": "AHA (5–10% home use)", "tag": "td" },
+    { "zh": "(低濃度小範圍）", "en": "(Low concentration, limited area)", "tag": "td" },
+    { "zh": "全身吸收極低", "en": "Minimal systemic absorption", "tag": "td" },
+    { "zh": "水楊酸(2% 以下、小範圍）", "en": "Salicylic acid (≤ 2%, small area)", "tag": "td" },
+    { "zh": "避免大面積、高濃度；局部 spot treatment 可", "en": "Avoid large surface area or high concentration; spot treatment is acceptable", "tag": "td" },
+    { "zh": "Bakuchiol(補骨脂酚）", "en": "Bakuchiol", "tag": "td" },
+    { "zh": "(目前資料）", "en": "(based on current data)", "tag": "td" },
+    { "zh": "植物來源，被推為「孕婦版 retinol」，但長期資料有限", "en": "Plant-derived; promoted as a “pregnancy-safe retinol alternative,” but long-term data is limited", "tag": "td" }
   ]
 }
