@@ -382,30 +382,56 @@
         '</svg><figcaption>圖. 毛髮 3 期 — Minoxidil/Finasteride 把 telogen 推回 anagen，需要 6 個月才看到統計學顯著差異</figcaption></figure>';
     },
 
-    // Topical steroid potency ladder
+    // Topical steroid potency ladder — 2026-05-08 redesigned: each bar uses
+    // two text rows (label+drugs / use-case) to eliminate horizontal overlap
+    // when SVG text was bumped to font-size 13 for readability.
     'tcs-potency': function () {
-      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" aria-labelledby="tcs-title">' +
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" aria-labelledby="tcs-title">' +
         '<title id="tcs-title">外用類固醇強度階梯</title>' +
-        '<rect width="720" height="380" fill="#faf7f2" rx="10"/>' +
-        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">外用類固醇 7 級強度階梯（美國分類）</text>' +
-        // Ladder bars
-        '<g transform="translate(80 60)">' +
-        '<g><rect x="0" y="0" width="540" height="32" fill="#fee2e2" stroke="#7f1d1d" stroke-width="1"/><text x="10" y="22" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">Class I 超強</text><text x="200" y="22" font-family="Inter" font-size="13" fill="#5e574e">Clobetasol 0.05% / Halobetasol 0.05%</text><text x="500" y="22" text-anchor="end" font-family="Inter" font-size="13" fill="#7f1d1d">≤ 2 wk · 重度乾癬手腳掌</text></g>' +
-        '<g transform="translate(0 38)"><rect x="0" y="0" width="540" height="32" fill="#fed7aa" stroke="#9a3412" stroke-width="1"/><text x="10" y="22" font-family="Inter" font-size="13" font-weight="700" fill="#9a3412">Class II–III 強</text><text x="200" y="22" font-family="Inter" font-size="13" fill="#5e574e">Betamethasone Diprop. 0.05% / Mometasone</text><text x="500" y="22" text-anchor="end" font-family="Inter" font-size="13" fill="#9a3412">軀幹 / 四肢慢性</text></g>' +
-        '<g transform="translate(0 76)"><rect x="0" y="0" width="540" height="32" fill="#fef9c3" stroke="#854d0e" stroke-width="1"/><text x="10" y="22" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">Class IV–V 中強</text><text x="200" y="22" font-family="Inter" font-size="13" fill="#5e574e">Triamcinolone 0.1% / Fluticasone 0.05%</text><text x="500" y="22" text-anchor="end" font-family="Inter" font-size="13" fill="#854d0e">四肢一線</text></g>' +
-        '<g transform="translate(0 114)"><rect x="0" y="0" width="540" height="32" fill="#dcfce7" stroke="#14532d" stroke-width="1"/><text x="10" y="22" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">Class VI–VII 弱</text><text x="200" y="22" font-family="Inter" font-size="13" fill="#5e574e">Hydrocortisone 1–2.5% / Desonide 0.05%</text><text x="500" y="22" text-anchor="end" font-family="Inter" font-size="13" fill="#14532d">臉 / 眼周 / 嬰兒</text></g>' +
+        '<rect width="760" height="460" fill="#faf7f2" rx="10"/>' +
+        '<text x="380" y="32" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="18" font-weight="700" fill="#0c5159">外用類固醇 7 級強度階梯(美國分類)</text>' +
+        // Side label arrow + 強/弱
+        '<text x="42" y="100" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#7f1d1d">強</text>' +
+        '<line x1="48" y1="108" x2="48" y2="288" stroke="#9a3412" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<polygon points="44,290 52,290 48,300" fill="#9a3412"/>' +
+        '<text x="42" y="318" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#14532d">弱</text>' +
+        // Ladder bars (2-row layout per class)
+        '<g transform="translate(80 70)">' +
+          // Row 1: Class I
+          '<g><rect x="0" y="0" width="600" height="58" fill="#fee2e2" stroke="#7f1d1d" stroke-width="1.2" rx="3"/>' +
+            '<text x="14" y="22" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">Class I  超強(highest potency)</text>' +
+            '<text x="14" y="46" font-family="Inter" font-size="13" fill="#5e574e">Clobetasol 0.05% · Halobetasol 0.05%</text>' +
+            '<text x="586" y="22" text-anchor="end" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">≤ 2 週短期</text>' +
+            '<text x="586" y="46" text-anchor="end" font-family="Inter" font-size="13" fill="#7f1d1d">重度乾癬 / 苔癬化掌蹠</text>' +
+          '</g>' +
+          // Row 2: Class II-III
+          '<g transform="translate(0 64)"><rect x="0" y="0" width="600" height="58" fill="#fed7aa" stroke="#9a3412" stroke-width="1.2" rx="3"/>' +
+            '<text x="14" y="22" font-family="Inter" font-size="13" font-weight="700" fill="#9a3412">Class II–III  強(high potency)</text>' +
+            '<text x="14" y="46" font-family="Inter" font-size="13" fill="#5e574e">Betamethasone diprop. 0.05% · Mometasone 0.1%</text>' +
+            '<text x="586" y="22" text-anchor="end" font-family="Inter" font-size="13" font-weight="700" fill="#9a3412">≤ 4 週</text>' +
+            '<text x="586" y="46" text-anchor="end" font-family="Inter" font-size="13" fill="#9a3412">軀幹 / 四肢慢性</text>' +
+          '</g>' +
+          // Row 3: Class IV-V
+          '<g transform="translate(0 128)"><rect x="0" y="0" width="600" height="58" fill="#fef9c3" stroke="#854d0e" stroke-width="1.2" rx="3"/>' +
+            '<text x="14" y="22" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">Class IV–V  中強(medium potency)</text>' +
+            '<text x="14" y="46" font-family="Inter" font-size="13" fill="#5e574e">Triamcinolone 0.1% · Fluticasone 0.05%</text>' +
+            '<text x="586" y="22" text-anchor="end" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">日常一線</text>' +
+            '<text x="586" y="46" text-anchor="end" font-family="Inter" font-size="13" fill="#854d0e">四肢 / 軀幹</text>' +
+          '</g>' +
+          // Row 4: Class VI-VII
+          '<g transform="translate(0 192)"><rect x="0" y="0" width="600" height="58" fill="#dcfce7" stroke="#14532d" stroke-width="1.2" rx="3"/>' +
+            '<text x="14" y="22" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">Class VI–VII  弱(low potency)</text>' +
+            '<text x="14" y="46" font-family="Inter" font-size="13" fill="#5e574e">Hydrocortisone 1–2.5% · Desonide 0.05%</text>' +
+            '<text x="586" y="22" text-anchor="end" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">長期亦安全</text>' +
+            '<text x="586" y="46" text-anchor="end" font-family="Inter" font-size="13" fill="#14532d">臉 / 眼周 / 嬰兒</text>' +
+          '</g>' +
         '</g>' +
-        // Labels
-        '<text x="60" y="92" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#7f1d1d">↓</text>' +
-        '<text x="60" y="115" font-family="Noto Sans TC" font-size="13" fill="#5e574e">效果強</text>' +
-        '<text x="60" y="180" font-family="Noto Sans TC" font-size="13" fill="#5e574e">↓</text>' +
-        '<text x="60" y="220" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#14532d">效果弱</text>' +
-        // Bottom
-        '<text x="360" y="262" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">部位選對 = 安全 + 有效</text>' +
-        '<text x="360" y="285" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">臉 / 眼周 / 外陰 = 弱(VI-VII) · 軀幹 / 四肢 = 中(IV-V) · 手腳掌 / 苔癬化 = 強(I-III)</text>' +
-        '<text x="360" y="310" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">急性期每天 1-2 次連續 7-14 天 → 改週末療法（週 2 次）維持。</text>' +
-        '<text x="360" y="333" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#9a3412">⚠ 急性紅腫不擦類固醇 = 抓到破皮 + 變慢性 + 真正出問題。</text>' +
-        '<text x="360" y="358" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Stoughton 1985 vasoconstrictor assay · Cornell & Stoughton 1985 · NEJM 2018 review</text>' +
+        // Bottom guidance lines (centered)
+        '<text x="380" y="350" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">部位選對 = 安全 + 有效</text>' +
+        '<text x="380" y="372" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">臉 / 眼周 / 外陰 → 弱(VI-VII)　軀幹 / 四肢 → 中(IV-V)　掌蹠 / 苔癬化 → 強(I-III)</text>' +
+        '<text x="380" y="394" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">急性期每天 1-2 次 × 7-14 天 → 改週末療法(週 2 次)維持</text>' +
+        '<text x="380" y="418" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#9a3412">⚠ 急性紅腫不擦類固醇 = 抓到破皮、轉慢性、真正出問題</text>' +
+        '<text x="380" y="446" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Stoughton 1985 vasoconstrictor assay · Cornell &amp; Stoughton 1985 · NEJM 2018 review</text>' +
         '</svg><figcaption>圖. 外用類固醇 7 級強度 — 部位 + 急性 / 慢性 + 兒童 / 成人 三維選擇</figcaption></figure>';
     },
 
@@ -2043,7 +2069,7 @@
       });
       // Tools / glossary / about / dashboard quick-jumps
       [
-        { title: '量表計算器', meta: 'Tools · 15 個臨床量表', url: '/tools', search: 'tools 量表 計算 scorad pasi dlqi' },
+        { title: '量表計算器', meta: 'Tools · 10 個臨床量表', url: '/tools', search: 'tools 量表 計算 scorad pasi dlqi' },
         { title: '醫學詞彙白話字典', meta: 'Glossary', url: '/glossary', search: 'glossary 詞彙 字典 名詞' },
         { title: '主題地圖', meta: 'Topic Map', url: '/blog/topics', search: 'topics 主題 地圖' },
         { title: '關於作者', meta: 'About', url: '/about', search: 'about 作者 陳翊嘉' },
@@ -5109,7 +5135,7 @@
     cta.innerHTML =
       '<div style="flex:1;min-width:200px">' +
         '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#4d6358;font-weight:700;margin-bottom:4px" data-zh="想評估自己的嚴重度？" data-en="Self-assess severity?">想評估自己的嚴重度？</div>' +
-        '<div style="font-size:14px;color:#0f172a;line-height:1.7;margin:0" data-zh="本站提供 <strong>15 個臨床量表計算器</strong>(SCORAD、PASI、DLQI、UAS7 等），可即時自評、了解嚴重度與治療對應。" data-en="This site provides <strong>15 clinical calculators</strong> (SCORAD, PASI, DLQI, UAS7…) for instant self-assessment.">本站提供 <strong>15 個臨床量表計算器</strong>(SCORAD、PASI、DLQI、UAS7 等），可即時自評、了解嚴重度與治療對應。</div>' +
+        '<div style="font-size:14px;color:#0f172a;line-height:1.7;margin:0" data-zh="本站提供 <strong>10 個臨床量表計算器</strong>(SCORAD、PASI、DLQI、UAS7 等），可即時自評、了解嚴重度與治療對應。" data-en="This site provides <strong>10 clinical calculators</strong> (SCORAD, PASI, DLQI, UAS7…) for instant self-assessment.">本站提供 <strong>10 個臨床量表計算器</strong>(SCORAD、PASI、DLQI、UAS7 等），可即時自評、了解嚴重度與治療對應。</div>' +
       '</div>' +
       '<a href="/tools" style="flex-shrink:0;padding:10px 18px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap" data-zh="量表計算器 →" data-en="Calculators →">量表計算器 →</a>';
     targetH2.parentNode.insertBefore(cta, targetH2);
@@ -5517,7 +5543,10 @@
     idle(function () { DN.prefetchOnIdle(); }, { timeout: 2500 });
     idle(function () { DN.bindViewTransitions(); }, { timeout: 1500 });
     idle(function () { DN.initDarkMode(); }, { timeout: 1500 });
-    idle(function () { DN.injectPushBell && DN.injectPushBell(); }, { timeout: 4000 });
+    // 2026-05-07 — bottom-right floating push-bell ("提醒") removed per user.
+    // Push subscription is still wired (sw.js handler stays); users who want
+    // it can opt in from a future settings page.
+    // idle(function () { DN.injectPushBell && DN.injectPushBell(); }, { timeout: 4000 });
     idle(function () { DN.refreshPopularPicks && DN.refreshPopularPicks(); }, { timeout: 3000 });
     idle(function () { DN.precacheArticles && DN.precacheArticles(8); }, { timeout: 6000 });
 
@@ -5662,7 +5691,8 @@
       // key), and print is still reachable via Cmd/Ctrl+P natively.
       // idle(function () { DN.addBookmarkButton(); }, { timeout: 1800 });
       // idle(function () { DN.addPrintButton(); }, { timeout: 2000 });
-      idle(function () { DN.addPushSubscribeCard(); }, { timeout: 3500 });
+      // Inline push-subscribe card also removed (same 2026-05-07 cleanup).
+      // idle(function () { DN.addPushSubscribeCard(); }, { timeout: 3500 });
     }
     DN.lazyLoadAudit();
     DN.addFontSizer();

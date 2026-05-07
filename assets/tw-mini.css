@@ -387,9 +387,12 @@ footer.mag-footer {
 .md\:block{display:block}
 .md\:flex{display:flex}
 }
-/* 2026-05-07 — citation styling: render inline (Author Year, Journal) refs
-   in smaller, muted text so they don't dominate body copy. Mirrors how
-   academic journals format inline citations. Applies to article context
-   only; the surrounding parens are kept for visual continuity. */
+/* 2026-05-07 — citation styling: inline refs + bottom References list both
+   render in smaller, muted text so they don't dominate body copy. Mirrors
+   academic journal formatting. */
 .cite,article cite{font-size:.82em;color:#6b7280;font-style:normal;font-weight:400;letter-spacing:.01em}
-@media (prefers-color-scheme:dark){.cite,article cite{color:#9ca3af}}
+ol.references,article ol.references,#references+ol{font-size:.82em;color:#4b5563;line-height:1.65;padding-left:1.4em;margin-top:8px}
+ol.references li,article ol.references li{margin:4px 0;line-height:1.6}
+ol.references li em,article ol.references li em{color:#374151;font-style:italic}
+ol.references li strong,article ol.references li strong{font-size:1.05em;color:#0c5159}
+@media (prefers-color-scheme:dark){.cite,article cite{color:#9ca3af} ol.references{color:#9ca3af}}
