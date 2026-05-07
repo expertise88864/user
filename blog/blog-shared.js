@@ -2415,12 +2415,8 @@
     { slug:'laser-dermatology', title:'皮膚科雷射完整對照', cat:'rx', tag:'雷射 / 光電', date:'2026-05-05', emoji:'', tag_en:'Laser dermatology' },
     { slug:'pediatric-eczema', title:'嬰幼兒 / 兒童異位性皮膚炎完整照護指南', cat:'rx', tag:'兒童異膚', date:'2026-05-05', emoji:'', tag_en:'Pediatric AD' },
     { slug:'prurigo-nodularis', title:'結節性癢疹完整衛教', cat:'rx', tag:'結節性癢疹', date:'2026-05-07', emoji:'', tag_en:'Prurigo Nodularis' },
-    { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' },
-    { slug:'atopic-dermatitis-systemic', title:'異位性皮膚炎全身治療完整指引 — 生物製劑、JAK、光療', cat:'rx', tag:'異膚', date:'2026-05-14', emoji:'', tag_en:'AD systemic therapy' },
-    { slug:'atopic-dermatitis-comorbidity', title:'異位性皮膚炎共病完整評估 — 氣喘、過敏、心理、骨骼、心血管', cat:'rx', tag:'異膚', date:'2026-05-14', emoji:'', tag_en:'AD comorbidities' },
-    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎概論完整指引 — 病態生理、診斷、嚴重度評分', cat:'rx', tag:'異膚', date:'2026-05-14', emoji:'', tag_en:'AD overview' },
-    { slug:'atopic-dermatitis-topical', title:'異位性皮膚炎外用治療完整指引 — 類固醇、TCI、PDE-4、JAK、Tapinarof', cat:'rx', tag:'異膚', date:'2026-05-14', emoji:'', tag_en:'AD topical therapy' }
-  ];
+    { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' },    { slug:'atopic-dermatitis-comorbidity', title:'異位性皮膚炎共病完整評估 — 氣喘、過敏、心理、骨骼、心血管', cat:'rx', tag:'異膚', date:'2026-05-14', emoji:'', tag_en:'AD comorbidities' },
+    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整治療指引 — 從病態生理到 4 個生物製劑 + 7 級類固醇', cat:'rx', tag:'異膚', date:'2026-05-14', emoji:'', tag_en:'AD overview' },  ];
 
   // -----------------------------------------------------------------------
   // Article numbering — assign #001-#NNN by chronological publish order
@@ -4594,7 +4590,7 @@
     });
   };
   // Pre-set Ko-fi handle (overrides Buy Me a Coffee if both set)
-  DN.KOFI_URL = 'https://ko-fi.com/chendermatologist';
+  DN.KOFI_URL = 'https://ko-fi.com/expertise88864';
 
   // ─────────────────────────────────────────────────────────────────────
   // H6 — One-click PDF / Print export per article.
@@ -5304,7 +5300,7 @@
   DN.TAG_GROUPS = {
     '痘痘 / 痘疤':    ['acne-myths', 'acne-scar-treatment', 'isotretinoin-patient', 'topical-acids-patient'],
     '防曬':           ['sunscreen-myths'],
-    '異位性皮膚炎 / 濕疹': ['atopic-dermatitis-overview', 'atopic-dermatitis-topical', 'atopic-dermatitis-systemic', 'atopic-dermatitis-comorbidity', 'eczema-myths', 'pediatric-eczema', 'topical-steroids-guide', 'biologics-overview'],
+    '異位性皮膚炎 / 濕疹': ['atopic-dermatitis-overview', 'atopic-dermatitis-comorbidity', 'eczema-myths', 'pediatric-eczema', 'topical-steroids-guide', 'biologics-overview'],
     '兒童 / 嬰幼兒':  ['pediatric-eczema'],
     '肝斑 / 美白':    ['melasma-myths', 'skin-whitening-agents'],
     '玫瑰斑 / 酒糟':  ['rosacea-myths', 'demodex-rosacea'],
@@ -5555,9 +5551,7 @@
       var CALC_ORDER = {
         // Eczema family — SCORAD covers area+intensity+itch+sleep (most patient-relevant)
         'eczema-myths':              ['SCORAD', 'POEM'],
-        'atopic-dermatitis-overview':    ['SCORAD', 'EASI'],
-        'atopic-dermatitis-topical':     ['EASI', 'IGA'],
-        'atopic-dermatitis-systemic':    ['EASI', 'IGA'],
+        'atopic-dermatitis-overview':    ['SCORAD', 'EASI']:     ['EASI', 'IGA']:    ['EASI', 'IGA'],
         'atopic-dermatitis-comorbidity': ['POEM', 'DLQI'],
         'pediatric-eczema':          ['SCORAD', 'POEM'],
         'topical-steroids-guide':    ['EASI', 'IGA'],
@@ -5650,14 +5644,45 @@
     DN.injectReadProgress();
 
     // ── Re-apply language to ALL injected content (related/share/author-bio/etc.)
-    // Use staggered timeouts (NOT MutationObserver — it creates infinite loops because
-    // applyTextOnly mutates the DOM, which triggers the observer again, ad infinitum).
-    // 100ms / 600ms / 1500ms covers most async injection timing without CPU spike.
-    [100, 600, 1500].forEach(function (ms) {
+    // Extended schedule (was 100/600/1500): added 3000/5000 because new
+    // injects (NextReads, Newsletter, Giscus, RelatedArticles enhanced, TipCard)
+    // fire via idle() with timeouts up to 4500ms. Without these later passes
+    // the EN toggle won't translate the late-injected content.
+    //
+    // Also: a SAFE MutationObserver — only re-runs when a NEW element with
+    // data-zh / data-en is added (skips DOM changes from applyTextOnly itself).
+    [100, 600, 1500, 3000, 5000].forEach(function (ms) {
       setTimeout(function () {
         try { DN.applyTextOnly(curLang); } catch (e) {}
       }, ms);
     });
+    // SAFE MutationObserver: debounced + checks for unprocessed [data-zh] only
+    if ('MutationObserver' in window) {
+      var pending = false;
+      var obs = new MutationObserver(function (mutations) {
+        if (pending) return;
+        var hasNew = false;
+        for (var i = 0; i < mutations.length && !hasNew; i++) {
+          var added = mutations[i].addedNodes;
+          for (var j = 0; j < added.length; j++) {
+            var n = added[j];
+            if (n.nodeType !== 1) continue;
+            if (n.hasAttribute && n.hasAttribute('data-zh')) { hasNew = true; break; }
+            if (n.querySelector && n.querySelector('[data-zh]')) { hasNew = true; break; }
+          }
+        }
+        if (hasNew) {
+          pending = true;
+          // Debounce 80ms — skip applyTextOnly's own mutations (they
+          // change textContent, not addedNodes)
+          setTimeout(function () {
+            try { DN.applyTextOnly(curLang); } catch (e) {}
+            pending = false;
+          }, 80);
+        }
+      });
+      obs.observe(document.body, { childList: true, subtree: true });
+    }
     DN.markNewArticles();
     DN.addStickyCTA();
 
