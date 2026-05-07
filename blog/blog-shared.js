@@ -4921,7 +4921,8 @@
   DN.TAG_GROUPS = {
     '痘痘 / 痘疤':    ['acne-myths', 'acne-scar-treatment', 'isotretinoin-patient', 'topical-acids-patient'],
     '防曬':           ['sunscreen-myths'],
-    '異膚 / 濕疹':    ['eczema-myths', 'pediatric-eczema', 'topical-steroids-guide', 'biologics-overview'],
+    '異膚 / 濕疹':    ['eczema-myths', 'atopic-dermatitis-overview', 'atopic-dermatitis-topical', 'atopic-dermatitis-systemic', 'atopic-dermatitis-comorbidity', 'pediatric-eczema', 'topical-steroids-guide', 'biologics-overview'],
+    '異位性皮膚炎':   ['atopic-dermatitis-overview', 'atopic-dermatitis-topical', 'atopic-dermatitis-systemic', 'atopic-dermatitis-comorbidity', 'eczema-myths', 'pediatric-eczema', 'topical-steroids-guide'],
     '兒童 / 嬰幼兒':  ['pediatric-eczema'],
     '肝斑 / 美白':    ['melasma-myths', 'skin-whitening-agents'],
     '玫瑰斑 / 酒糟':  ['rosacea-myths', 'demodex-rosacea'],
@@ -5106,19 +5107,22 @@
     DN.bindLangToggle(apply);
     apply(curLang);
     DN.addReadingProgress();
+    DN.initCmdK();        // search button must work immediately on click
     // ─── Deferred (no first-paint impact) ───
     idle(function () { DN.injectBMC(); }, { timeout: 1200 });
     idle(function () { DN.addScrollToTop(); }, { timeout: 1500 });
     idle(function () { DN.bindRevealOnScroll(); }, { timeout: 800 });
     idle(function () { DN.prefetchOnIdle(); }, { timeout: 2500 });
     idle(function () { DN.bindViewTransitions(); }, { timeout: 1500 });
-    idle(function () { DN.initCmdK(); }, { timeout: 2500 });
     idle(function () { DN.initDarkMode(); }, { timeout: 1500 });
     idle(function () { DN.injectPushBell && DN.injectPushBell(); }, { timeout: 4000 });
     idle(function () { DN.refreshPopularPicks && DN.refreshPopularPicks(); }, { timeout: 3000 });
 
-    // Article-only enhancements (auto-detect via .prose presence)
-    if (document.getElementById('proseZh') || document.querySelector('article .prose') || document.querySelector('article.max-w-3xl')) {
+    // Article-only enhancements (auto-detect via .prose presence).
+    // Match articles whose <article> root has .prose, OR has a .prose descendant,
+    // OR uses #proseZh. NOT matched by homepage (which has article.max-w-3xl
+    // without .prose class).
+    if (document.getElementById('proseZh') || document.querySelector('article.prose') || document.querySelector('article .prose')) {
       // ─── Critical (visible / interactive) ───
       DN.addReadingMeta();
       DN.addInlineTOC();
@@ -5150,54 +5154,63 @@
         VASI: DN.injectVASI,
         DLQI: DN.injectDLQI
       };
+      // Per-article calculator priority — pick the TWO most relevant tools.
+      // Order matters: first item is shown highest in the article.
+      // DLQI is intentionally NOT auto-included on every page anymore — only
+      // when it's actually one of the two best-fit tools for that disease.
       var CALC_ORDER = {
-        // Eczema family — VAS for itch is critical PRO; IGA for tx response
-        'eczema-myths':              ['SCORAD','EASI','POEM','VAS','IGA','DLQI'],
-        'pediatric-eczema':          ['SCORAD','EASI','POEM','VAS','DLQI'],
-        'topical-steroids-guide':    ['SCORAD','EASI','IGA','DLQI'],
-        // Psoriasis
-        'psoriasis-myths':           ['PASI','NAPSI','IGA','DLQI'],
+        // Eczema family — SCORAD covers area+intensity+itch+sleep (most patient-relevant)
+        'eczema-myths':              ['SCORAD', 'POEM'],
+        'atopic-dermatitis-overview':    ['SCORAD', 'EASI'],
+        'atopic-dermatitis-topical':     ['EASI', 'IGA'],
+        'atopic-dermatitis-systemic':    ['EASI', 'IGA'],
+        'atopic-dermatitis-comorbidity': ['POEM', 'DLQI'],
+        'pediatric-eczema':          ['SCORAD', 'POEM'],
+        'topical-steroids-guide':    ['EASI', 'IGA'],
+        // Psoriasis — PASI is gold standard; NAPSI for nail involvement
+        'psoriasis-myths':           ['PASI', 'NAPSI'],
         // Hair
-        'alopecia-areata':           ['SALT','HairScale','DLQI'],
-        'hairloss-myths':            ['HairScale','DLQI'],
-        // Urticaria — VAS adds itch dimension beyond UAS7
-        'urticaria-myths':           ['UAS7','VAS','IGA','DLQI'],
-        // Acne / Retinoid — ASIS is patient-reported PRO
-        'acne-myths':                ['GAGS','ASIS','IGA','DLQI'],
-        'acne-scar-treatment':       ['GAGS','ASIS','DLQI'],
-        'isotretinoin-patient':      ['GAGS','ASIS','DLQI'],
-        'isotretinoin-clinical':     ['GAGS','ASIS','IGA','DLQI'],
-        'topical-acids-patient':     ['GAGS','ASIS','DLQI'],
-        'topical-acids-clinical':    ['GAGS','ASIS','DLQI'],
-        // Pigmentation / Melasma
-        'melasma-myths':             ['MASI','Fitzpatrick','DLQI'],
-        'skin-whitening-agents':     ['MASI','Fitzpatrick','DLQI'],
-        // Vitiligo — VASI is the primary index
-        'vitiligo':                  ['VASI','Fitzpatrick','IGA','DLQI'],
-        // Rosacea — IGA used in trials
-        'rosacea-myths':             ['IGA','DLQI'],
-        'demodex-rosacea':           ['IGA','VAS','DLQI'],
+        'alopecia-areata':           ['SALT', 'DLQI'],
+        'hairloss-myths':            ['HairScale', 'DLQI'],
+        // Urticaria — UAS7 + DLQI is the EAACI gold standard pair
+        'urticaria-myths':           ['UAS7', 'DLQI'],
+        // Acne — GAGS for severity, ASIS for patient-reported impact
+        'acne-myths':                ['GAGS', 'ASIS'],
+        'acne-scar-treatment':       ['GAGS', 'DLQI'],
+        'isotretinoin-patient':      ['GAGS', 'ASIS'],
+        'isotretinoin-clinical':     ['GAGS', 'IGA'],
+        'topical-acids-patient':     ['GAGS', 'DLQI'],
+        'topical-acids-clinical':    ['GAGS', 'IGA'],
+        // Pigmentation
+        'melasma-myths':             ['MASI', 'Fitzpatrick'],
+        'skin-whitening-agents':     ['MASI', 'Fitzpatrick'],
+        // Vitiligo
+        'vitiligo':                  ['VASI', 'Fitzpatrick'],
+        // Rosacea
+        'rosacea-myths':             ['IGA', 'DLQI'],
+        'demodex-rosacea':           ['IGA', 'VAS'],
         // HS
-        'hidradenitis-suppurativa':  ['IHS4','Hurley','VAS','DLQI'],
+        'hidradenitis-suppurativa':  ['IHS4', 'Hurley'],
         // Sun / Photo
-        'sunscreen-myths':           ['Fitzpatrick','DLQI'],
-        'laser-dermatology':         ['Fitzpatrick','DLQI'],
-        // Biologics / NHI — multi-disease, broad coverage
-        'biologics-overview':        ['PASI','EASI','SCORAD','IGA','DLQI'],
-        'nhi-derm-drugs':            ['PASI','EASI','SCORAD','DLQI'],
+        'sunscreen-myths':           ['Fitzpatrick', 'DLQI'],
+        'laser-dermatology':         ['Fitzpatrick', 'DLQI'],
+        // Biologics / NHI — broad coverage; PASI + EASI most cited
+        'biologics-overview':        ['PASI', 'EASI'],
+        'nhi-derm-drugs':            ['PASI', 'EASI'],
         'targeted-therapy-skin':     ['DLQI'],
-        // Prurigo — VAS critical
-        'prurigo-nodularis':         ['VAS','IGA','DLQI'],
-        // Others — DLQI baseline; VAS where itch present
+        // Prurigo — itch dominant
+        'prurigo-nodularis':         ['VAS', 'DLQI'],
+        // Others
         'dermatology-faq':           ['DLQI'],
-        'tinea-myths':               ['VAS','DLQI'],
+        'tinea-myths':               ['VAS', 'DLQI'],
         'warts-myths':               ['DLQI'],
-        'shingles-myths':            ['VAS','DLQI'],
+        'shingles-myths':            ['VAS', 'DLQI'],
         'mpox-care':                 ['DLQI'],
         'epidermoid-cyst':           ['DLQI'],
-        'cutaneous-t-cell-lymphoma': ['VAS','DLQI']
+        'cutaneous-t-cell-lymphoma': ['VAS', 'DLQI']
       };
-      var calcsToInject = CALC_ORDER[slug] || ['DLQI'];
+      // Hard cap of 2 calculators per article — even if list above has more.
+      var calcsToInject = (CALC_ORDER[slug] || ['DLQI']).slice(0, 2);
       calcsToInject.forEach(function (name) {
         var fn = CALC_FN[name];
         if (typeof fn === 'function') {
