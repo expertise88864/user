@@ -2819,7 +2819,10 @@
   // inside #proseZh. Smooth-scrolls, highlights current section.
   // -----------------------------------------------------------------------
   DN.addFloatingTOC = function () {
-    if (window.innerWidth < 1100) return;
+    // Article max-width is 48rem (768px). TOC needs ~180px width + ~40px gap on each side.
+    // Minimum viewport: 768 + 2*(180+40) = 1208px. We use 1180 for safety.
+    const TOC_MIN_WIDTH = 1180;
+    if (window.innerWidth < TOC_MIN_WIDTH) return;
     // Match article that IS .prose OR contains a .prose child
     const proseEl = document.getElementById('proseZh')
       || document.querySelector('article.prose')
@@ -2841,12 +2844,40 @@
     if (h2s.length < 3) return;
     if (document.getElementById('dn-toc-float')) return;
 
+    // Responsive sizing — width and font scale with viewport so TOC never
+    // overlaps article content even on 1180-1400px screens.
+    //   width:  clamp(150px, 14vw, 210px)  → 165px @ 1180vw, 196px @ 1400vw, 210px @ 1500+
+    //   font:   clamp(11px, 0.95vw, 13px)  → ~11.2px small, 13px wide
+    //   left:   keep TOC's right edge ≥ 30px from article's left edge.
+    //           article left edge = 50% - 384px (max-w-3xl/2). TOC right edge = left + width.
+    //           So  left = 50% - 384 - 30 - width  → use clamp(8px, ..., 100px) safety floor.
     const aside = document.createElement('aside');
     aside.id = 'dn-toc-float';
-    aside.style.cssText = 'position:fixed;left:max(16px,calc(50% - 720px));top:120px;width:200px;max-height:calc(100vh - 160px);overflow-y:auto;padding:14px 16px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:14px;box-shadow:0 12px 28px -14px rgba(77,99,88,.22);font-size:12.5px;line-height:1.7;z-index:30;';
-    let html = '<div style="font-size:10.5px;text-transform:uppercase;letter-spacing:.18em;color:var(--teal-deep);font-weight:700;margin-bottom:8px">本篇大綱</div><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:5px" id="dn-toc-list">';
+    aside.style.cssText = [
+      'position:fixed',
+      'left:max(8px, calc(50% - 384px - clamp(160px, 14vw, 220px) - 30px))',
+      'top:clamp(96px, 12vh, 140px)',
+      'width:clamp(150px, 14vw, 210px)',
+      'max-height:calc(100vh - 160px)',
+      'overflow-y:auto',
+      'padding:clamp(10px, 1vw, 14px) clamp(11px, 1.1vw, 16px)',
+      'background:rgba(255,255,255,.92)',
+      'backdrop-filter:blur(8px)',
+      '-webkit-backdrop-filter:blur(8px)',
+      'border:1px solid var(--border)',
+      'border-radius:12px',
+      'box-shadow:0 12px 28px -14px rgba(77,99,88,.22)',
+      'font-size:clamp(11px, 0.95vw, 12.5px)',
+      'line-height:1.6',
+      'z-index:30'
+    ].join(';');
+    let html = '<div style="font-size:clamp(9.5px, 0.78vw, 10.5px);text-transform:uppercase;letter-spacing:.18em;color:var(--teal-deep);font-weight:700;margin-bottom:8px" data-zh="本篇大綱" data-en="In this article">本篇大綱</div><ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:3px" id="dn-toc-list">';
     h2s.forEach(function (h, i) {
-      html += '<li><a href="#' + h.id + '" data-toc="' + h.id + '" style="display:block;padding:5px 8px;border-radius:6px;color:var(--ink-2);text-decoration:none;border-left:2px solid transparent;transition:all .15s">' + (h.textContent || ('Section ' + (i + 1))).slice(0, 28) + '</a></li>';
+      // Truncate based on TOC width — narrower TOC needs shorter text
+      const maxChars = window.innerWidth >= 1400 ? 26 : (window.innerWidth >= 1280 ? 22 : 18);
+      const txt = (h.textContent || ('Section ' + (i + 1))).trim();
+      const shown = txt.length > maxChars ? txt.slice(0, maxChars - 1) + '…' : txt;
+      html += '<li><a href="#' + h.id + '" data-toc="' + h.id + '" title="' + txt.replace(/"/g, '&quot;') + '" style="display:block;padding:4px 8px;border-radius:6px;color:var(--ink-2);text-decoration:none;border-left:2px solid transparent;transition:all .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + shown + '</a></li>';
     });
     html += '</ul>';
     aside.innerHTML = html;
@@ -2869,9 +2900,29 @@
     }, { rootMargin: '-30% 0px -50% 0px' });
     h2s.forEach(function (h) { io.observe(h); });
 
-    // Hide on resize below threshold (matches initial 1100px threshold)
+    // Hide on resize below threshold (matches initial TOC_MIN_WIDTH).
+    // Also re-truncate text labels when crossing breakpoints.
+    let lastWidth = window.innerWidth;
     window.addEventListener('resize', function () {
-      aside.style.display = (window.innerWidth >= 1100) ? '' : 'none';
+      const w = window.innerWidth;
+      aside.style.display = (w >= TOC_MIN_WIDTH) ? '' : 'none';
+      // Re-render labels if we crossed a break (1280 / 1400)
+      const crossedBreak =
+        (lastWidth < 1280 && w >= 1280) ||
+        (lastWidth >= 1280 && w < 1280) ||
+        (lastWidth < 1400 && w >= 1400) ||
+        (lastWidth >= 1400 && w < 1400);
+      if (crossedBreak) {
+        aside.querySelectorAll('a[data-toc]').forEach(function (a) {
+          const id = a.dataset.toc;
+          const h = document.getElementById(id);
+          if (!h) return;
+          const txt = (h.textContent || '').trim();
+          const maxChars = w >= 1400 ? 26 : (w >= 1280 ? 22 : 18);
+          a.textContent = txt.length > maxChars ? txt.slice(0, maxChars - 1) + '…' : txt;
+        });
+      }
+      lastWidth = w;
     });
   };
 
