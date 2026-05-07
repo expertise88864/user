@@ -91,7 +91,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
     <image:image>
       <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-overview.png</image:loc>
-      <image:title>異位性皮膚炎完整治療指引 — 從病態生理到 4 個生物製劑 + 7 級類固醇</image:title>
+      <image:title>異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思</image:title>
     </image:image>
   </url>
   <url>
@@ -391,19 +391,6 @@
     <image:image>
       <image:loc>https://chendermatologist.com/assets/og/sunscreen-myths.png</image:loc>
       <image:title>防曬 8 大迷思</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/blog/eczema-myths</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/eczema-myths"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/eczema-myths"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/eczema-myths"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/eczema-myths.png</image:loc>
-      <image:title>異位性皮膚炎 6 大迷思</image:title>
     </image:image>
   </url>
   <url>
@@ -747,14 +734,6 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/sunscreen-myths"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/sunscreen-myths"/>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/en/blog/eczema-myths</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/eczema-myths"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/eczema-myths"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/en/blog/melasma-myths</loc>

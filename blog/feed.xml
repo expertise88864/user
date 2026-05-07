@@ -5,17 +5,17 @@
     <link>https://chendermatologist.com/</link>
     <description>陳翊嘉醫師(皮膚科)整理的皮膚科衛教與學習筆記。</description>
     <language>zh-Hant-TW</language>
-    <lastBuildDate>Thu, 07 May 2026 09:05:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 09:29:07 +0000</lastBuildDate>
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <generator>DermNotes auto-feed v1</generator>
     <item>
-      <title>異位性皮膚炎完整治療指引 — 從病態生理到 4 個生物製劑 + 7 級類固醇</title>
+      <title>異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思</title>
       <link>https://chendermatologist.com/blog/atopic-dermatitis-overview</link>
       <guid isPermaLink="true">https://chendermatologist.com/blog/atopic-dermatitis-overview</guid>
       <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
       <dc:creator>陳翊嘉 醫師</dc:creator>
       <category>異位性皮膚炎</category>
-      <description>異位性皮膚炎完整治療指引 — 從病態生理到 4 個生物製劑 + 7 級類固醇 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
+      <description>異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
     <item>
       <title>結節性癢疹完整衛教</title>
@@ -77,7 +77,7 @@
       <guid isPermaLink="true">https://chendermatologist.com/blog/pediatric-eczema</guid>
       <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
       <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>兒童異膚</category>
+      <category>異位性皮膚炎</category>
       <description>嬰幼兒 / 兒童異位性皮膚炎完整照護指南 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
     <item>
@@ -225,15 +225,6 @@
       <description>防曬 8 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
     <item>
-      <title>異位性皮膚炎 6 大迷思</title>
-      <link>https://chendermatologist.com/blog/eczema-myths</link>
-      <guid isPermaLink="true">https://chendermatologist.com/blog/eczema-myths</guid>
-      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
-      <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>異位性皮膚炎</category>
-      <description>異位性皮膚炎 6 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
-    </item>
-    <item>
       <title>肝斑 7 大迷思</title>
       <link>https://chendermatologist.com/blog/melasma-myths</link>
       <guid isPermaLink="true">https://chendermatologist.com/blog/melasma-myths</guid>
@@ -277,6 +268,15 @@
       <dc:creator>陳翊嘉 醫師</dc:creator>
       <category>酸類</category>
       <description>外用酸類完整衛教 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
+    </item>
+    <item>
+      <title>口服 A 酸完整衛教</title>
+      <link>https://chendermatologist.com/blog/isotretinoin-patient</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/isotretinoin-patient</guid>
+      <pubDate>Sat, 02 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>口服 A 酸</category>
+      <description>口服 A 酸完整衛教 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
   </channel>
 </rss>

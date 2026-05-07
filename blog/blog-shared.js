@@ -1199,7 +1199,7 @@
     'topical-acids-clinical':  [{ key: 'acne-pathogenesis', after: 0 }],
     'sunscreen-myths':         [{ key: 'uv-penetration', after: 1 }, { key: 'spf-curve', after: 3 }],
     'melasma-myths':           [{ key: 'uv-penetration', after: 2 }],
-    'eczema-myths':            [{ key: 'skin-barrier', after: 1 }, { key: 'tcs-potency', after: 4 }],
+    'atopic-dermatitis-overview': [{ key: 'skin-barrier', after: 1 }, { key: 'tcs-potency', after: 4 }],
     'pediatric-eczema':        [{ key: 'skin-barrier', after: 1 }, { key: 'tcs-potency', after: 3 }],
     'topical-steroids-guide':  [{ key: 'tcs-potency', after: 1 }],
     'hairloss-myths':          [{ key: 'hair-cycle', after: 2 }],
@@ -1216,7 +1216,6 @@
     'prurigo-nodularis':       [{ key: 'biologics-cytokines', after: 2 }, { key: 'skin-barrier', after: 0 }],
     'hidradenitis-suppurativa': [{ key: 'biologics-cytokines', after: 2 }],
     // R30: New diagrams
-    'eczema-myths':            [{ key: 'skin-barrier', after: 1 }, { key: 'scorad-bsa', after: 3 }, { key: 'tcs-potency', after: 5 }],
     'pediatric-eczema':        [{ key: 'skin-barrier', after: 1 }, { key: 'scorad-bsa', after: 3 }, { key: 'tcs-potency', after: 5 }],
     'acne-scar-treatment':     [{ key: 'acne-pathogenesis', after: 0 }, { key: 'acne-scar-types', after: 1 }],
     'alopecia-areata':         [{ key: 'hair-cycle', after: 1 }, { key: 'jak-tree', after: 4 }],
@@ -2388,7 +2387,6 @@
   DN.ARTICLES = [
     { slug:'acne-myths',          title:'痘痘 9 大迷思', cat:'myth', tag:'痘痘', date:'2026-05-03', emoji:'', tag_en:'Acne' },
     { slug:'sunscreen-myths',     title:'防曬 8 大迷思', cat:'myth', tag:'防曬', date:'2026-05-03', emoji:'', tag_en:'Sunscreen' },
-    { slug:'eczema-myths',        title:'異位性皮膚炎 6 大迷思', cat:'myth', tag:'異位性皮膚炎', date:'2026-05-03', emoji:'', tag_en:'Eczema' },
     { slug:'melasma-myths',       title:'肝斑 7 大迷思', cat:'myth', tag:'肝斑', date:'2026-05-03', emoji:'', tag_en:'Melasma' },
     { slug:'rosacea-myths',       title:'玫瑰痤瘡 6 大迷思', cat:'myth', tag:'酒糟肌', date:'2026-05-03', emoji:'', tag_en:'Rosacea' },
     { slug:'hairloss-myths',      title:'落髮 / 雄性禿 7 大迷思', cat:'myth', tag:'落髮', date:'2026-05-03', emoji:'', tag_en:'Hair loss' },
@@ -2413,10 +2411,10 @@
     { slug:'epidermoid-cyst', title:'粉瘤完整衛教', cat:'rx', tag:'粉瘤', date:'2026-05-05', emoji:'', tag_en:'Epidermoid cyst' },
     { slug:'nhi-derm-drugs', title:'皮膚科常用藥物健保規範完整整理', cat:'rx', tag:'健保規範', date:'2026-05-05', emoji:'', tag_en:'NHI rules' },
     { slug:'laser-dermatology', title:'皮膚科雷射完整對照', cat:'rx', tag:'雷射 / 光電', date:'2026-05-05', emoji:'', tag_en:'Laser dermatology' },
-    { slug:'pediatric-eczema', title:'嬰幼兒 / 兒童異位性皮膚炎完整照護指南', cat:'rx', tag:'兒童異膚', date:'2026-05-05', emoji:'', tag_en:'Pediatric AD' },
+    { slug:'pediatric-eczema', title:'嬰幼兒 / 兒童異位性皮膚炎完整照護指南', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-05', emoji:'', tag_en:'Atopic dermatitis' },
     { slug:'prurigo-nodularis', title:'結節性癢疹完整衛教', cat:'rx', tag:'結節性癢疹', date:'2026-05-07', emoji:'', tag_en:'Prurigo Nodularis' },
-    { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' },    { slug:'atopic-dermatitis-comorbidity', title:'異位性皮膚炎共病完整評估 — 氣喘、過敏、心理、骨骼、心血管', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-14', emoji:'', tag_en:'AD comorbidities' },
-    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整治療指引 — 從病態生理到 4 個生物製劑 + 7 級類固醇', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-14', emoji:'', tag_en:'AD overview' },  ];
+    { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' },
+    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-14', emoji:'', tag_en:'AD complete guide' },  ];
 
   // -----------------------------------------------------------------------
   // Article numbering — assign #001-#NNN by chronological publish order
@@ -3423,7 +3421,7 @@
   // -----------------------------------------------------------------------
   DN.TDA_GUIDELINE = {
     'acne-myths':                'TDA 痤瘡臨床治療共識(2024)',
-    'eczema-myths':              'TDA 異位性皮膚炎診療共識(2020 更新）',
+    'atopic-dermatitis-overview': 'TDA 異位性皮膚炎診療共識(2020 更新）',
     'rosacea-myths':             'TDA 玫瑰斑（酒糟）治療共識(2022)',
     'demodex-rosacea':           'TDA 玫瑰斑（酒糟）治療共識(2022)',
     'hairloss-myths':            'TDA 圓禿診斷及治療共識(2024)',
@@ -3488,7 +3486,7 @@
   // SCORAD (Atopic Dermatitis Severity)
   DN.injectSCORAD = function () {
     var slug = DN.currentSlug();
-    if (!DN._forceInject && (slug !== 'eczema-myths' && slug !== 'pediatric-eczema')) return;
+    if (!DN._forceInject && (slug !== 'atopic-dermatitis-overview' && slug !== 'pediatric-eczema')) return;
     var anchor = document.querySelector('article.max-w-3xl');
     if (!anchor || document.getElementById('dn-scorad')) return;
     DN.calcStyles();
@@ -3742,7 +3740,7 @@
   // DLQI (Dermatology Life Quality Index, 0-30) — multi-article
   DN.injectDLQI = function () {
     var slug = DN.currentSlug();
-    if (!['eczema-myths','psoriasis-myths','urticaria-myths','alopecia-areata','vitiligo','hidradenitis-suppurativa','prurigo-nodularis'].includes(slug)) return;
+    if (!['atopic-dermatitis-overview','psoriasis-myths','urticaria-myths','alopecia-areata','vitiligo','hidradenitis-suppurativa','prurigo-nodularis'].includes(slug)) return;
     var rows = [];
     var qs = [
       '過去 1 週，皮膚<strong>癢、痠痛、刺痛</strong>的程度？',
@@ -3964,10 +3962,10 @@
     });
   };
 
-  // POEM (Patient-Oriented Eczema Measure, 0-28) — eczema-myths
+  // POEM (Patient-Oriented Eczema Measure, 0-28) — atopic-dermatitis-overview
   DN.injectPOEM = function () {
     var slug = DN.currentSlug();
-    if (!DN._forceInject && (slug !== 'eczema-myths' && slug !== 'pediatric-eczema')) return;
+    if (!DN._forceInject && (slug !== 'atopic-dermatitis-overview' && slug !== 'pediatric-eczema')) return;
     var qs = [
       'Q1 · 過去 1 週，皮膚<strong>癢</strong>幾天？',
       'Q2 · 過去 1 週，皮膚<strong>讓您睡不好</strong>幾天？',
@@ -4055,7 +4053,7 @@
   DN.injectPHQ9 = function () {
     var slug = DN.currentSlug();
     // Show on chronic skin diseases with high psych comorbidity
-    if (!['eczema-myths','psoriasis-myths','urticaria-myths','alopecia-areata','vitiligo','hidradenitis-suppurativa','prurigo-nodularis','acne-myths','melasma-myths'].includes(slug)) return;
+    if (!['atopic-dermatitis-overview','psoriasis-myths','urticaria-myths','alopecia-areata','vitiligo','hidradenitis-suppurativa','prurigo-nodularis','acne-myths','melasma-myths'].includes(slug)) return;
     var qs = [
       'Q1 · 對事情興趣減少 / 提不起勁',
       'Q2 · 心情低落、沮喪、絕望',
@@ -4099,7 +4097,7 @@
   // 0-10 single-item subjective itch intensity. Reizner 2012 standard.
   // ─────────────────────────────────────────────────────────────────────
   DN.injectVASPruritus = function () {
-    if (!DN._forceInject && !['eczema-myths','urticaria-myths','prurigo-nodularis','pediatric-eczema','demodex-rosacea','tinea-myths','cutaneous-t-cell-lymphoma'].includes(DN.currentSlug())) return;
+    if (!DN._forceInject && !['atopic-dermatitis-overview','urticaria-myths','prurigo-nodularis','pediatric-eczema','demodex-rosacea','tinea-myths','cutaneous-t-cell-lymphoma'].includes(DN.currentSlug())) return;
     DN._buildCalc({
       id: 'dn-vas-itch', tool: 'VAS-Pruritus', toolsAnchor: 'vas-pruritus',
       title: 'VAS 搔癢評分 — 主觀癢度（過去 24 小時最劇烈）',
@@ -4125,7 +4123,7 @@
   // Used in clinical trials (Dupilumab, biologic) — patient-friendly 5-grade
   // ─────────────────────────────────────────────────────────────────────
   DN.injectIGA = function () {
-    if (!DN._forceInject && !['eczema-myths','psoriasis-myths','vitiligo','rosacea-myths','acne-myths','pediatric-eczema','prurigo-nodularis','urticaria-myths'].includes(DN.currentSlug())) return;
+    if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-myths','vitiligo','rosacea-myths','acne-myths','pediatric-eczema','prurigo-nodularis','urticaria-myths'].includes(DN.currentSlug())) return;
     DN._buildCalc({
       id: 'dn-iga', tool: 'IGA', toolsAnchor: 'iga',
       title: 'IGA 醫師整體評估 — 0-4 分皮膚病嚴重度',
@@ -4258,7 +4256,7 @@
   // EASI (Eczema Area & Severity Index, 0-72) — alternative to SCORAD
   DN.injectEASI = function () {
     var slug = DN.currentSlug();
-    if (!DN._forceInject && (slug !== 'eczema-myths' && slug !== 'pediatric-eczema')) return;
+    if (!DN._forceInject && (slug !== 'atopic-dermatitis-overview' && slug !== 'pediatric-eczema')) return;
     var sites = [
       ['頭頸 (×0.1 成人 / ×0.2 兒童）','head', 0.1],
       ['上肢 (×0.2)','arm', 0.2],
@@ -4310,7 +4308,7 @@
   DN.POPULAR_PICKS = [
     'acne-myths',          // 痘痘 — 最高搜尋量
     'sunscreen-myths',     // 防曬 — 公眾衛教高需求
-    'eczema-myths',        // 異膚 — 兒童 + 成人共通
+    'atopic-dermatitis-overview',        // 異膚 — 兒童 + 成人共通
     'topical-steroids-guide', // 類固醇恐懼症 — 高度誤解
     'hairloss-myths'       // 落髮 — 男性女性共通
   ];
@@ -4570,44 +4568,39 @@
     if (document.getElementById('dn-tip-card')) return;
     var article = document.querySelector('article.max-w-3xl');
     if (!article) return;
-    if (!DN.KOFI_URL && !DN.JKO_URL) return;
 
     var card = document.createElement('section');
     card.id = 'dn-tip-card';
     card.style.cssText = 'margin:36px auto 18px;max-width:48rem;padding:24px;background:linear-gradient(135deg,#fef3c7,#fde68a);border:1px solid #fbbf24;border-radius:16px;box-shadow:0 14px 30px -14px rgba(180,83,9,.30);text-align:center';
 
+    // Single CTA → /support page (the centralised hub with Ko-fi + 街口 + FAQ).
+    // Avoids duplicating payment options across every article and lets us
+    // evolve the support page (add Patreon/LINE Pay etc.) without touching
+    // 30+ articles.
     card.innerHTML =
       '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#78350f;font-weight:700;margin-bottom:8px" data-zh="如果這個網站對您有幫助" data-en="If this site has helped you">如果這個網站對您有幫助</div>' +
       '<h3 style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:24px;font-weight:700;margin:0 0 16px;color:#78350f" data-zh="請我喝杯咖啡 ☕" data-en="Buy me a coffee ☕">請我喝杯咖啡 ☕</h3>' +
-      // Two payment buttons side-by-side (Ko-fi prominent left, JKO subtle right)
-      '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:16px">' +
-        (DN.KOFI_URL
-          ? '<a href="' + DN.KOFI_URL + '" target="_blank" rel="noopener noreferrer" data-tip-provider="kofi" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:#13c3ff;color:#fff;border-radius:10px;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 6px 14px -6px rgba(19,195,255,.55);transition:transform .15s;min-width:180px;justify-content:center">' +
-            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>' +
-            '<span data-zh="Ko-fi 信用卡 / PayPal" data-en="Ko-fi · Card / PayPal">Ko-fi 信用卡 / PayPal</span>' +
-          '</a>'
-          : '') +
-        (DN.JKO_URL
-          ? '<a href="' + DN.JKO_URL + '" target="_blank" rel="noopener noreferrer" data-tip-provider="jko" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:#fff;color:#78350f;border:1.5px solid #b45309;border-radius:10px;text-decoration:none;font-weight:700;font-size:14.5px;transition:transform .15s;min-width:180px;justify-content:center">' +
-            '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="2.4"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
-            '<span data-zh="街口支付(台灣)" data-en="JKOPay (Taiwan)">街口支付(台灣)</span>' +
-          '</a>'
-          : '') +
+      '<div style="display:flex;justify-content:center;margin-bottom:14px">' +
+        '<a href="/support" data-tip-provider="hub" style="display:inline-flex;align-items:center;gap:8px;padding:12px 26px;background:#0e7c86;color:#fff;border-radius:10px;text-decoration:none;font-weight:700;font-size:14.5px;box-shadow:0 6px 14px -6px rgba(14,124,134,.55);transition:transform .15s">' +
+          '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>' +
+          '<span data-zh="到贊助頁支持本站 →" data-en="Support this site →">到贊助頁支持本站 →</span>' +
+        '</a>' +
       '</div>' +
-      '<p style="font-size:11.5px;color:#92400e;margin:0 auto;line-height:1.7;max-width:42em" data-zh="本網站無業配、無贊助,所有衛教文章與量表計算器都免費。本贊助為讀者自願性的內容打賞,非醫療服務費用,不涉及任何醫療諮詢、診斷或治療。" data-en="This site has no sponsorships or paid content. All articles and tools are free. This is a voluntary content tip — not a medical service fee, and does not constitute medical consultation, diagnosis, or treatment.">本網站無業配、無贊助,所有衛教文章與量表計算器都免費。本贊助為讀者自願性的內容打賞,非醫療服務費用,不涉及任何醫療諮詢、診斷或治療。</p>';
+      '<p style="font-size:11.5px;color:#92400e;margin:0 auto;line-height:1.7;max-width:42em" data-zh="支援 Ko-fi 國際信用卡 / PayPal 與街口支付台灣本土。本網站無業配、無贊助,所有衛教文章與量表計算器都免費。" data-en="Supports Ko-fi (international card / PayPal) and JKOPay (Taiwan). No ads, no sponsorships — all articles and tools are free.">支援 Ko-fi 國際信用卡 / PayPal 與街口支付台灣本土。本網站無業配、無贊助,所有衛教文章與量表計算器都免費。</p>';
 
     article.parentNode.appendChild(card);
 
-    // Click tracking + hover animation for both buttons
-    card.querySelectorAll('a[data-tip-provider]').forEach(function (b) {
-      b.addEventListener('mouseenter', function () { b.style.transform = 'translateY(-2px)'; });
-      b.addEventListener('mouseleave', function () { b.style.transform = ''; });
-      b.addEventListener('click', function () {
+    // Click tracking + hover animation
+    var btn = card.querySelector('a[data-tip-provider]');
+    if (btn) {
+      btn.addEventListener('mouseenter', function () { btn.style.transform = 'translateY(-2px)'; });
+      btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
+      btn.addEventListener('click', function () {
         if (typeof gtag === 'function') {
-          try { gtag('event', 'tip_card_click', { provider: b.dataset.tipProvider, slug: DN.currentSlug && DN.currentSlug() }); } catch (_) {}
+          try { gtag('event', 'tip_card_click', { provider: 'support_hub', slug: DN.currentSlug && DN.currentSlug() }); } catch (_) {}
         }
       });
-    });
+    }
   };
 
   // ─────────────────────────────────────────────────────────────────────
@@ -4949,7 +4942,11 @@
   //   街口代碼 396 / 街口帳號 901070305 / 09****615
   // 街口支援所有銀行 + 電支機構,免手續費、即時入帳。
   // -----------------------------------------------------------------------
-  DN.SUPPORT_URL = 'https://service.jkopay.com/r/transfer?j=Transfer:901070305';
+  // Centralised support hub — every "贊助本站" / "請我喝杯咖啡" CTA on the
+  // site routes through /support so users see the disclaimer and pick their
+  // preferred provider (Ko-fi / 街口) in one place. Direct payment URLs are
+  // exposed as DN.KOFI_URL / DN.JKO_URL but only used on /support itself.
+  DN.SUPPORT_URL = '/support';
   DN.SUPPORT_PROVIDER = '街口支付';
   DN.BMC_URL = DN.SUPPORT_URL;   // legacy alias (do not delete)
 
@@ -4967,7 +4964,7 @@
         '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#0e7c86;font-weight:700;margin-bottom:6px" data-zh="如果這個網站對您有幫助" data-en="If this site has helped you">如果這個網站對您有幫助</div>' +
         '<h3 style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:20px;font-weight:700;color:#0f172a;margin:0 0 8px" data-zh="請我喝杯咖啡 ☕" data-en="Buy me a coffee ☕">請我喝杯咖啡 ☕</h3>' +
         '<p style="font-size:13px;color:#5e574e;line-height:1.85;margin:0 auto 14px;max-width:540px" data-zh="本網站<strong>無業配、無贊助</strong>，所有衛教文章與量表計算器都<strong>免費</strong>。本贊助為讀者自願性的內容打賞，<strong>非醫療服務費用</strong>，不涉及任何醫療諮詢、診斷或治療。" data-en="No ads, no sponsorships. All articles and calculators are free. This support is a voluntary content tip, not a medical-service fee, and does not involve any medical consultation, diagnosis, or treatment.">本網站<strong>無業配、無贊助</strong>，所有衛教文章與量表計算器都<strong>免費</strong>。本贊助為讀者自願性的內容打賞，<strong>非醫療服務費用</strong>，不涉及任何醫療諮詢、診斷或治療。</p>' +
-        '<a href="' + DN.SUPPORT_URL + '" target="_blank" rel="noopener" data-bmc-footer-link ' +
+        '<a href="' + DN.SUPPORT_URL + '" data-bmc-footer-link ' +
           'style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:14px;font-weight:700;border:1px solid #0e7c86;box-shadow:0 4px 12px -4px rgba(14,124,134,.4);transition:background .15s">' +
           '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>' +
           '<span data-zh="贊助本站" data-en="Support this site">贊助本站</span>' +
@@ -4994,8 +4991,7 @@
     var a = document.createElement('a');
     a.id = 'dn-bmc-header';
     a.href = DN.SUPPORT_URL;
-    a.target = '_blank';
-    a.rel = 'noopener';
+    // Same-tab navigation: /support is an internal page now.
     a.setAttribute('aria-label', '支持作者');
     // Low-key teal pill matching the existing header nav links — no yellow background
     a.style.cssText =
@@ -5318,7 +5314,7 @@
   DN.TAG_GROUPS = {
     '痘痘 / 痘疤':    ['acne-myths', 'acne-scar-treatment', 'isotretinoin-patient', 'topical-acids-patient'],
     '防曬':           ['sunscreen-myths'],
-    '異位性皮膚炎 / 濕疹': ['atopic-dermatitis-overview', 'atopic-dermatitis-comorbidity', 'eczema-myths', 'pediatric-eczema', 'topical-steroids-guide', 'biologics-overview'],
+    '異位性皮膚炎 / 濕疹': ['atopic-dermatitis-overview', 'pediatric-eczema', 'topical-steroids-guide', 'biologics-overview'],
     '兒童 / 嬰幼兒':  ['pediatric-eczema'],
     '肝斑 / 美白':    ['melasma-myths', 'skin-whitening-agents'],
     '玫瑰斑 / 酒糟':  ['rosacea-myths', 'demodex-rosacea'],
@@ -5332,7 +5328,7 @@
     '化膿性汗腺炎':   ['hidradenitis-suppurativa'],
     '猴痘 Mpox':      ['mpox-care'],
     '標靶藥物副作用': ['targeted-therapy-skin'],
-    '類固醇藥膏':     ['topical-steroids-guide', 'eczema-myths'],
+    '類固醇藥膏':     ['topical-steroids-guide', 'atopic-dermatitis-overview'],
     '生物製劑':       ['biologics-overview'],
     '酸類 / A 酸':    ['topical-acids-patient', 'skin-whitening-agents', 'isotretinoin-patient'],
     '常見問題 FAQ':   ['dermatology-faq'],
@@ -5570,9 +5566,7 @@
       // when it's actually one of the two best-fit tools for that disease.
       var CALC_ORDER = {
         // Eczema family — SCORAD covers area+intensity+itch+sleep (most patient-relevant)
-        'eczema-myths':              ['SCORAD', 'POEM'],
         'atopic-dermatitis-overview':    ['SCORAD', 'EASI'],
-        'atopic-dermatitis-comorbidity': ['POEM', 'DLQI'],
         'pediatric-eczema':          ['SCORAD', 'POEM'],
         'topical-steroids-guide':    ['EASI', 'IGA'],
         // Psoriasis — PASI is gold standard; NAPSI for nail involvement
