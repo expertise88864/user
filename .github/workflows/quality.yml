@@ -136,7 +136,7 @@ jobs:
               ('property="og:image"', 'missing OG image'),
           ]
           for p in glob.glob('**/*.html', recursive=True):
-              if any(x in p for x in ['.git','node_modules','offline','admin','404']): continue
+              if any(x in p for x in ['.git','node_modules','offline','admin','404','reset-sw']): continue
               with open(p, encoding='utf-8') as f: s = f.read()
               for needle, msg in REQ:
                   if needle not in s:

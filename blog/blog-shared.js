@@ -4448,7 +4448,9 @@
     if (!document.querySelector('.prose, #proseZh, .prose-zh')) return;
 
     var savedSize = localStorage.getItem('dn-font-size') || 'M';
-    var sizeMap = { 'S': '15px', 'M': '16.5px', 'L': '18.5px' };
+    // H8 — added XL (大型字體模式) for elderly / low-vision users.
+    var sizeMap = { 'S': '15px', 'M': '16.5px', 'L': '18.5px', 'XL': '21px' };
+    var lineHeightMap = { 'S': '1.7', 'M': '1.85', 'L': '1.95', 'XL': '2.05' };
     function applyFontSize(s) {
       var styleEl = document.getElementById('dn-font-size-style');
       if (!styleEl) {
@@ -4456,9 +4458,15 @@
         styleEl.id = 'dn-font-size-style';
         document.head.appendChild(styleEl);
       }
+      var px = sizeMap[s] || sizeMap.M;
+      var lh = lineHeightMap[s] || lineHeightMap.M;
+      // Apply font size + matching line-height + larger headings for XL.
       styleEl.textContent =
-        '.prose, .prose-zh, .prose-en, #proseZh, #proseEn { font-size: ' + sizeMap[s] + ' !important; }' +
-        '.prose p, .prose-zh p, .prose-en p, #proseZh p, #proseEn p { font-size: ' + sizeMap[s] + ' !important; }';
+        '.prose, .prose-zh, .prose-en, #proseZh, #proseEn, article.prose { font-size: ' + px + ' !important; line-height: ' + lh + ' !important; }' +
+        '.prose p, .prose-zh p, .prose-en p, #proseZh p, #proseEn p, article.prose p, article.prose li { font-size: ' + px + ' !important; line-height: ' + lh + ' !important; }' +
+        (s === 'XL'
+          ? 'article h2 { font-size: 1.55em !important; } article h3 { font-size: 1.28em !important; } article h4 { font-size: 1.12em !important; }'
+          : '');
       localStorage.setItem('dn-font-size', s);
     }
     applyFontSize(savedSize);
@@ -4473,7 +4481,7 @@
       'box-shadow:0 6px 18px -8px rgba(77,99,88,.45);overflow:hidden;opacity:0;' +
       'pointer-events:none;transition:opacity .25s;';
 
-    ['S', 'M', 'L'].forEach(function (s) {
+    ['S', 'M', 'L', 'XL'].forEach(function (s) {
       var b = document.createElement('button');
       b.type = 'button';
       b.dataset.size = s;
@@ -4481,10 +4489,11 @@
         'width:38px;height:32px;border:0;cursor:pointer;font-weight:700;color:#4d6358;' +
         'background:' + (s === savedSize ? 'linear-gradient(180deg,#a4b5a8,#4d6358)' : 'transparent') + ';' +
         'color:' + (s === savedSize ? '#fff' : '#4d6358') + ';';
-      b.style.fontSize = s === 'S' ? '11px' : (s === 'M' ? '13px' : '15px');
-      b.textContent = s === 'S' ? '小' : (s === 'M' ? '中' : '大');
+      var labels = { 'S': { px: '11px', txt: '小' }, 'M': { px: '13px', txt: '中' }, 'L': { px: '15px', txt: '大' }, 'XL': { px: '17px', txt: '特大' } };
+      b.style.fontSize = labels[s].px;
+      b.textContent = labels[s].txt;
       b.setAttribute('aria-label', '字型大小 ' + s);
-      b.title = '字型大小 ' + (s === 'S' ? '小' : (s === 'M' ? '中' : '大'));
+      b.title = '字型大小 ' + labels[s].txt + (s === 'XL' ? '(高齡友善)' : '');
       b.addEventListener('click', function () {
         applyFontSize(s);
         wrap.querySelectorAll('button').forEach(function (x) {
@@ -4521,6 +4530,224 @@
   // -----------------------------------------------------------------------
   // Subscribe-to-notifications opt-in card. Only visible when:
   //   1. Browser supports PushManager + Notification API
+  // ─────────────────────────────────────────────────────────────────────
+  // H1 — Giscus comments (GitHub Discussions, no backend, free)
+  // Setup: enable Discussions in your repo + install Giscus app + paste IDs.
+  // The widget loads only on article pages, lazily on scroll-near-bottom.
+  // ─────────────────────────────────────────────────────────────────────
+  DN.GISCUS_REPO = 'expertise88864/user';   // ← change if your discussions repo differs
+  DN.GISCUS_REPO_ID = '';                   // ← from giscus.app config wizard
+  DN.GISCUS_CATEGORY_ID = '';               // ← from giscus.app config wizard
+  DN.injectGiscus = function () {
+    if (!DN.GISCUS_REPO || !DN.GISCUS_REPO_ID || !DN.GISCUS_CATEGORY_ID) return;
+    if (document.getElementById('dn-giscus')) return;
+    var article = document.querySelector('article.max-w-3xl');
+    if (!article) return;
+    var slug = DN.currentSlug();
+    if (!slug) return;
+    // Lazy mount when user scrolls within 800px of the article end
+    var anchor = document.createElement('div');
+    anchor.id = 'dn-giscus';
+    anchor.style.cssText = 'margin:32px auto;max-width:48rem;padding:0 20px;min-height:120px';
+    anchor.innerHTML = '<div data-zh="留言載入中..." data-en="Loading comments..." style="color:var(--muted);font-size:13px;text-align:center;padding:24px">留言載入中...</div>';
+    article.parentNode.insertBefore(anchor, article.nextSibling);
+
+    function load() {
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      script.dataset.repo = DN.GISCUS_REPO;
+      script.dataset.repoId = DN.GISCUS_REPO_ID;
+      script.dataset.category = 'Comments';
+      script.dataset.categoryId = DN.GISCUS_CATEGORY_ID;
+      script.dataset.mapping = 'pathname';
+      script.dataset.strict = '0';
+      script.dataset.reactionsEnabled = '1';
+      script.dataset.emitMetadata = '0';
+      script.dataset.inputPosition = 'top';
+      script.dataset.theme = (document.documentElement.getAttribute('data-theme') === 'dark') ? 'dark_dimmed' : 'light';
+      script.dataset.lang = (DN.detectLang && DN.detectLang() === 'en') ? 'en' : 'zh-TW';
+      anchor.appendChild(script);
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) { io.disconnect(); load(); }
+      }, { rootMargin: '800px 0px' });
+      io.observe(anchor);
+    } else {
+      setTimeout(load, 2000);
+    }
+  };
+
+  // ─────────────────────────────────────────────────────────────────────
+  // H4 — Enhanced word/character count badge (added to reading meta bar)
+  // Appends a "字數 N" chip alongside the existing reading-time chip.
+  // ─────────────────────────────────────────────────────────────────────
+  DN.injectWordCount = function () {
+    var bar = document.getElementById('dn-reading-meta');
+    if (!bar || bar.querySelector('[data-dn-wordcount]')) return;
+    var proseEl = document.getElementById('proseZh') || document.querySelector('article .prose') || document.querySelector('article.max-w-3xl');
+    if (!proseEl) return;
+    var text = (proseEl.textContent || '').replace(/\s+/g, '');
+    var cjk = (text.match(/[一-鿿]/g) || []).length;
+    var en = (text.match(/[A-Za-z0-9]+/g) || []).length;
+    var totalLabel = cjk > en * 4
+      ? cjk.toLocaleString() + ' 字'
+      : (cjk + en).toLocaleString() + ' 字 / words';
+    var chip = document.createElement('span');
+    chip.setAttribute('data-dn-wordcount', '');
+    chip.style.cssText = 'display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#fef3c7;border:1px solid #fcd34d;color:#854d0e;font-weight:600';
+    chip.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>' +
+      '<span data-zh="' + totalLabel + '" data-en="' + (cjk + en).toLocaleString() + ' words">' + totalLabel + '</span>';
+    bar.appendChild(chip);
+  };
+
+  // ─────────────────────────────────────────────────────────────────────
+  // H9 — "Continue reading" recommendation (collaborative-filter-lite)
+  // Picks 3 articles user hasn't read yet, biased toward same tag as current.
+  // Storage: localStorage.dn-read-articles-v1 (already populated by markRead)
+  // ─────────────────────────────────────────────────────────────────────
+  DN.injectNextReads = function () {
+    var article = document.querySelector('article.max-w-3xl');
+    if (!article) return;
+    if (document.getElementById('dn-next-reads')) return;
+    var slug = DN.currentSlug();
+    if (!slug) return;
+    var allArticles = (DN.ARTICLES || []).filter(function (a) { return a.slug !== slug; });
+    if (!allArticles.length) return;
+
+    var read = (DN.getReadSlugs && DN.getReadSlugs()) || [];
+    var current = (DN.ARTICLES || []).find(function (a) { return a.slug === slug; });
+    var currentTag = current ? current.tag : '';
+
+    // Score: same tag = 100, unread bonus = 50, recent date = up to 30
+    var maxDate = '2026-01-01';
+    allArticles.forEach(function (a) { if (a.date && a.date > maxDate) maxDate = a.date; });
+    function score(a) {
+      var s = 0;
+      if (a.tag === currentTag) s += 100;
+      if (read.indexOf(a.slug) === -1) s += 50;
+      // Recency bonus
+      if (a.date && maxDate) {
+        var daysFromTop = Math.max(0, 30 - Math.floor((new Date(maxDate) - new Date(a.date)) / 86400000));
+        s += daysFromTop;
+      }
+      return s;
+    }
+    var ranked = allArticles.map(function (a) { return [score(a), a]; })
+      .sort(function (x, y) { return y[0] - x[0]; })
+      .slice(0, 3)
+      .map(function (p) { return p[1]; });
+
+    var box = document.createElement('section');
+    box.id = 'dn-next-reads';
+    box.style.cssText = 'margin:32px auto;max-width:48rem;padding:20px 24px;background:linear-gradient(135deg,#f5fbfa 0%,#fff 100%);border:1px solid var(--border);border-radius:16px';
+    var html = '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--teal-deep);font-weight:700;margin-bottom:10px"><span data-zh="繼續閱讀" data-en="Continue reading">繼續閱讀</span></div>';
+    html += '<ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px">';
+    ranked.forEach(function (a, i) {
+      var isUnread = read.indexOf(a.slug) === -1;
+      html += '<li><a href="/blog/' + a.slug + '" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:#fff;border:1px solid var(--border);text-decoration:none;color:inherit;transition:border-color .15s,transform .15s" onmouseover="this.style.borderColor=\'var(--teal)\';this.style.transform=\'translateX(3px)\'" onmouseout="this.style.borderColor=\'var(--border)\';this.style.transform=\'\'">';
+      html += '<span style="font-size:11px;color:var(--teal-deep);font-weight:700;font-family:Inter,sans-serif">0' + (i + 1) + '</span>';
+      html += '<span style="flex:1;font-size:14px;font-weight:600;color:var(--ink)">' + a.title + '</span>';
+      if (isUnread) html += '<span style="font-size:10px;padding:2px 7px;border-radius:9999px;background:#dcfce7;color:#14532d;font-weight:700" data-zh="新" data-en="NEW">新</span>';
+      html += '</a></li>';
+    });
+    html += '</ul>';
+    box.innerHTML = html;
+    article.parentNode.insertBefore(box, article.nextSibling);
+  };
+
+  // ─────────────────────────────────────────────────────────────────────
+  // H2 — Lightweight A/B testing framework
+  // Assigns user to a stable variant (hashed by visitor ID), reports to GA4.
+  //
+  // Usage:
+  //   var v = DN.abVariant('hero-cta', ['A', 'B']);   // returns 'A' or 'B'
+  //   if (v === 'B') { document.querySelector('.cta').textContent = '免費註閱'; }
+  //   DN.abTrack('hero-cta', 'click');                // mark conversion
+  // ─────────────────────────────────────────────────────────────────────
+  DN.abVariant = function (testName, variants) {
+    if (!variants || !variants.length) return null;
+    var key = 'dn-ab-' + testName;
+    var cached;
+    try { cached = localStorage.getItem(key); } catch (e) {}
+    if (cached && variants.indexOf(cached) !== -1) return cached;
+    // Stable hash — use visitor ID if available, else random
+    var visitorId;
+    try {
+      visitorId = localStorage.getItem('dn-visitor-id');
+      if (!visitorId) {
+        visitorId = (crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '-' + Math.random());
+        localStorage.setItem('dn-visitor-id', visitorId);
+      }
+    } catch (e) { visitorId = String(Math.random()); }
+    // Hash visitorId+testName → variant index
+    var h = 0;
+    var s = visitorId + ':' + testName;
+    for (var i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+    var idx = Math.abs(h) % variants.length;
+    var picked = variants[idx];
+    try { localStorage.setItem(key, picked); } catch (e) {}
+    if (typeof gtag === 'function') {
+      try { gtag('event', 'ab_assigned', { test: testName, variant: picked }); } catch (e) {}
+    }
+    return picked;
+  };
+  DN.abTrack = function (testName, eventLabel) {
+    if (typeof gtag !== 'function') return;
+    var key = 'dn-ab-' + testName;
+    var variant;
+    try { variant = localStorage.getItem(key); } catch (e) {}
+    try { gtag('event', 'ab_conversion', { test: testName, variant: variant || 'unknown', label: eventLabel || 'click' }); } catch (e) {}
+  };
+
+  // ─────────────────────────────────────────────────────────────────────
+  // H3 — Email newsletter widget (MailerLite/Buttondown/Mailchimp agnostic)
+  // Set DN.NEWSLETTER_PROVIDER + endpoint to wire up. Falls back to mailto.
+  // ─────────────────────────────────────────────────────────────────────
+  DN.NEWSLETTER_ENDPOINT = '';   // e.g. 'https://app.mailerlite.com/webforms/...'
+  DN.injectNewsletterCard = function () {
+    var article = document.querySelector('article.max-w-3xl');
+    if (!article || document.getElementById('dn-newsletter')) return;
+    var card = document.createElement('section');
+    card.id = 'dn-newsletter';
+    card.style.cssText = 'margin:24px auto;max-width:48rem;padding:24px;background:linear-gradient(135deg,#0c5159,#0e7c86);color:#fff;border-radius:16px;box-shadow:0 14px 30px -14px rgba(12,81,89,.5)';
+    card.innerHTML =
+      '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;font-weight:700;opacity:.85;margin-bottom:6px" data-zh="訂閱衛教更新" data-en="Subscribe">訂閱衛教更新</div>' +
+      '<h3 style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:22px;font-weight:700;margin:0 0 6px" data-zh="新文章上架,Email 通知你" data-en="Get an email when new articles publish">新文章上架,Email 通知你</h3>' +
+      '<p style="font-size:13.5px;opacity:.9;margin:0 0 12px;line-height:1.7" data-zh="不會 spam · 不會賣資料 · 隨時取消訂閱" data-en="No spam · no data sale · unsubscribe anytime">不會 spam · 不會賣資料 · 隨時取消訂閱</p>' +
+      '<form id="dn-news-form" style="display:flex;gap:8px;flex-wrap:wrap">' +
+        '<input type="email" name="email" required placeholder="email@example.com" style="flex:1;min-width:200px;padding:10px 14px;border:1px solid rgba(255,255,255,.4);border-radius:8px;background:rgba(255,255,255,.95);color:#0c5159;font-size:14px;font-family:inherit"/>' +
+        '<button type="submit" style="padding:10px 18px;background:#fff;color:#0c5159;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:14px" data-zh="訂閱" data-en="Subscribe">訂閱</button>' +
+      '</form>' +
+      '<div id="dn-news-msg" style="margin-top:8px;font-size:12px;opacity:.85"></div>';
+    article.parentNode.insertBefore(card, article.nextSibling);
+
+    document.getElementById('dn-news-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = e.target.email.value.trim();
+      var msg = document.getElementById('dn-news-msg');
+      if (!email || !/.@./.test(email)) { msg.textContent = '請輸入有效 email'; return; }
+      if (typeof gtag === 'function') {
+        try { gtag('event', 'newsletter_subscribe', { source: 'article_card' }); } catch (_) {}
+      }
+      if (DN.NEWSLETTER_ENDPOINT) {
+        fetch(DN.NEWSLETTER_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: 'email=' + encodeURIComponent(email),
+          mode: 'no-cors',
+        }).then(function () { msg.textContent = '✓ 訂閱成功!請至信箱確認。'; e.target.reset(); })
+          .catch(function () { msg.textContent = '訂閱失敗,請稍後再試或寫信至 expertise88864@gmail.com'; });
+      } else {
+        // Fallback: open mailto with prefilled body
+        location.href = 'mailto:expertise88864@gmail.com?subject=' + encodeURIComponent('訂閱衛教更新') + '&body=' + encodeURIComponent('我想訂閱新文章通知:' + email);
+        msg.textContent = '✓ 已開啟郵件 — 請寄出此信完成訂閱。';
+      }
+    });
+  };
+
   //   2. Permission is still "default" (not yet decided)
   //   3. User dismissed → remember in localStorage so we don't pester
   DN.addPushSubscribeCard = function () {
@@ -5190,6 +5417,11 @@
       idle(function () { DN.injectMedDiagrams(); }, { timeout: 2000 });
       idle(function () { DN.enhanceArticleImages(); }, { timeout: 2500 });
       idle(function () { DN.injectTipButton && DN.injectTipButton(); }, { timeout: 3500 });
+      // H4 word count, H9 next-reads, H3 newsletter, H1 giscus — all article-page only
+      idle(function () { DN.injectWordCount && DN.injectWordCount(); }, { timeout: 1800 });
+      idle(function () { DN.injectNextReads && DN.injectNextReads(); }, { timeout: 2200 });
+      idle(function () { DN.injectNewsletterCard && DN.injectNewsletterCard(); }, { timeout: 2800 });
+      idle(function () { DN.injectGiscus && DN.injectGiscus(); }, { timeout: 3000 });
 
       // Per-article calculator priority: most-relevant calculator FIRST.
       // PHQ-9 (depression screen) intentionally removed from auto-injection — too negative for patient pages.
