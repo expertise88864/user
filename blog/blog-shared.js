@@ -4418,18 +4418,19 @@
       '</a>';
     }
 
-    // Recent: top 3 by date desc (string compare works for YYYY-MM-DD)
+    // Recent: top 2 by date desc (string compare works for YYYY-MM-DD)
     if (recentEl) {
       var sorted = articles.slice().sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
-      var top3 = sorted.slice(0, 3);
-      recentEl.innerHTML = top3.map(function (a, i) {
+      var topRecent = sorted.slice(0, 2);
+      recentEl.innerHTML = topRecent.map(function (a, i) {
         return '<li>' + rowHTML(a, i === 0 ? { label: 'NEW', bg: '#fee2e2', fg: '#991b1b' } : null) + '</li>';
       }).join('');
     }
+    // Popular: top 2 from curated DN.POPULAR_PICKS (KV-overridable)
     if (popularEl) {
       var picks = DN.POPULAR_PICKS.map(function (slug) {
         return articles.find(function (a) { return a.slug === slug; });
-      }).filter(Boolean);
+      }).filter(Boolean).slice(0, 2);
       popularEl.innerHTML = picks.map(function (a, i) {
         return '<li>' + rowHTML(a, { label: '#' + (i + 1), bg: '#dcfce7', fg: '#14532d' }) + '</li>';
       }).join('');
@@ -4972,8 +4973,7 @@
   DN.TAG_GROUPS = {
     '痘痘 / 痘疤':    ['acne-myths', 'acne-scar-treatment', 'isotretinoin-patient', 'topical-acids-patient'],
     '防曬':           ['sunscreen-myths'],
-    '異膚 / 濕疹':    ['eczema-myths', 'atopic-dermatitis-overview', 'atopic-dermatitis-topical', 'atopic-dermatitis-systemic', 'atopic-dermatitis-comorbidity', 'pediatric-eczema', 'topical-steroids-guide', 'biologics-overview'],
-    '異位性皮膚炎':   ['atopic-dermatitis-overview', 'atopic-dermatitis-topical', 'atopic-dermatitis-systemic', 'atopic-dermatitis-comorbidity', 'eczema-myths', 'pediatric-eczema', 'topical-steroids-guide'],
+    '異位性皮膚炎 / 濕疹': ['atopic-dermatitis-overview', 'atopic-dermatitis-topical', 'atopic-dermatitis-systemic', 'atopic-dermatitis-comorbidity', 'eczema-myths', 'pediatric-eczema', 'topical-steroids-guide', 'biologics-overview'],
     '兒童 / 嬰幼兒':  ['pediatric-eczema'],
     '肝斑 / 美白':    ['melasma-myths', 'skin-whitening-agents'],
     '玫瑰斑 / 酒糟':  ['rosacea-myths', 'demodex-rosacea'],
@@ -5082,11 +5082,16 @@
 
       if (tag === '__all__') {
         if (mode === 'homepage' && !showingAll) {
-          var newest = articles.slice().sort(function (a, b) {
-            return (b.date || '').localeCompare(a.date || '');
-          }).slice(0, initialLimit).map(function (a) { return a.slug; });
-          var shown = showBySlugs(newest);
-          setStatus('最新文章');
+          // Homepage default: show first N cards in DOM order (the curated picks
+          // from index.html). Don't filter by "newest by date" because the
+          // homepage card list is hand-curated and may not contain all articles.
+          var shown = 0;
+          for (var i = 0; i < allCards.length; i++) {
+            var visible = i < initialLimit;
+            allCards[i].style.display = visible ? 'flex' : 'none';
+            if (visible) shown++;
+          }
+          setStatus(shown + ' 篇精選文章');
           if (showMoreBtn) showMoreBtn.style.display = 'block';
         } else {
           showBySlugs(null);
