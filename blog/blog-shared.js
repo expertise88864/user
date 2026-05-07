@@ -5571,7 +5571,7 @@
       var CALC_ORDER = {
         // Eczema family — SCORAD covers area+intensity+itch+sleep (most patient-relevant)
         'eczema-myths':              ['SCORAD', 'POEM'],
-        'atopic-dermatitis-overview':    ['SCORAD', 'EASI']:     ['EASI', 'IGA']:    ['EASI', 'IGA'],
+        'atopic-dermatitis-overview':    ['SCORAD', 'EASI'],
         'atopic-dermatitis-comorbidity': ['POEM', 'DLQI'],
         'pediatric-eczema':          ['SCORAD', 'POEM'],
         'topical-steroids-guide':    ['EASI', 'IGA'],
