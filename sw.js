@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v84';
-const RUNTIME = 'cd-runtime-v84';
+const CACHE = 'cd-v85';
+const RUNTIME = 'cd-runtime-v85';
 const RUNTIME_MAX_ENTRIES = 60;
 
 // R31: Slim precache — only critical shell + offline page + assets that EVERY page uses.
@@ -72,6 +72,8 @@ self.addEventListener('fetch', (e) => {
   if (url.origin !== location.origin) return;
   // Always bypass /admin so user gets the freshest editor
   if (url.pathname.startsWith('/admin')) return;
+  // Bypass the SW reset page so it can talk to the SW directly
+  if (url.pathname === '/reset-sw' || url.pathname === '/reset-sw.html') return;
 
   // Stale-while-revalidate for HTML (navigations + accept text/html)
   // — Returns cached HTML instantly, then refreshes from network in background.
@@ -96,7 +98,30 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // Cache-first for static assets, runtime cache for non-precached
+  // Network-first for versioned assets (URLs containing `?v=`):
+  // we use cache-bust query strings (?v=YYYYMMDDhhmm) on every deploy, so the
+  // version param IS the freshness signal. Going network-first guarantees the
+  // browser ALWAYS picks up the new bundle on the same-day deploy, even if the
+  // SW was installed days ago. Falls back to cache only if offline.
+  if (url.search.includes('v=')) {
+    e.respondWith(
+      fetchWithRetry(req)
+        .then((resp) => {
+          if (resp && resp.status === 200) {
+            const copy = resp.clone();
+            caches.open(RUNTIME).then((c) => {
+              c.put(req, copy);
+              trimCache(RUNTIME, RUNTIME_MAX_ENTRIES);
+            });
+          }
+          return resp;
+        })
+        .catch(() => caches.match(req))
+    );
+    return;
+  }
+
+  // Cache-first for static assets without version, runtime cache for non-precached
   e.respondWith(
     caches.match(req).then((cached) => {
       if (cached) return cached;

@@ -1,0 +1,63 @@
+<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow"><title>SW 強制重置 · ChenDermatologist</title>
+<style>body{font-family:Inter,'Noto Sans TC',sans-serif;background:#faf7f2;color:#2a2620;padding:40px 24px;max-width:640px;margin:0 auto;line-height:1.7} h1{font-family:'Noto Serif TC',Georgia,serif;color:#0c5159;font-size:26px;margin:0 0 12px} .step{background:#fff;border:1px solid #dcd5c8;border-radius:12px;padding:14px 18px;margin:10px 0} .ok{color:#065f46;font-weight:600} .err{color:#7f1d1d;font-weight:600} .pending{color:#92400e} pre{background:#f5fbfa;padding:12px;border-radius:8px;font-size:12px;overflow:auto;margin:8px 0} a{color:#0c5159;font-weight:600} button{padding:10px 18px;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600;font-size:14px;margin:8px 4px}</style>
+</head><body><h1>🔄 強制重置快取與 Service Worker</h1><p>這個頁面會徹底清掉舊版的 SW + 快取,讓你下次打開 chendermatologist.com 看到最新版。</p><div class="step" id="s1"><strong>1. 取消註冊所有 Service Worker</strong><div id="r1" class="pending">執行中...</div></div><div class="step" id="s2"><strong>2. 清空所有 Cache Storage</strong><div id="r2" class="pending">等待中</div></div><div class="step" id="s3"><strong>3. 清空 LocalStorage / SessionStorage / IndexedDB</strong><div id="r3" class="pending">等待中</div></div><div class="step" id="s4"><strong>4. 結果</strong><div id="r4" class="pending">等待中</div></div><p><button onclick="location.href='/?fresh='+Date.now()">→ 進首頁(新版)</button><button onclick="location.href='/blog/?fresh='+Date.now()">→ 進衛教文章</button></p><details style="margin-top:24px"><summary style="cursor:pointer;color:#0c5159">📋 詳細執行記錄(點開看)</summary>
+<pre id="log"></pre>
+</details>
+<script>const log = document.getElementById('log');
+function L(msg) { log.textContent += msg + '\n'; }
+(async function reset() {
+// Step 1: unregister SW
+try {
+if ('serviceWorker' in navigator) {
+const regs = await navigator.serviceWorker.getRegistrations();
+L(`Found ${regs.length} SW registration(s)`);
+for (const r of regs) {
+const ok = await r.unregister();
+L(`  unregister ${r.scope} → ${ok}`);
+}
+document.getElementById('r1').innerHTML = `<span class="ok">✓ 取消註冊 ${regs.length} 個 SW</span>`;
+} else {
+document.getElementById('r1').innerHTML = `<span class="ok">✓ 此瀏覽器不支援 SW(無事可做)</span>`;
+}
+} catch (e) {
+document.getElementById('r1').innerHTML = `<span class="err">✗ ${e.message}</span>`;
+L('  err: ' + e);
+}
+// Step 2: clear all caches
+try {
+if ('caches' in window) {
+const keys = await caches.keys();
+L(`Found ${keys.length} cache(s): ${keys.join(', ')}`);
+for (const k of keys) {
+await caches.delete(k);
+L(`  deleted ${k}`);
+}
+document.getElementById('r2').innerHTML = `<span class="ok">✓ 刪掉 ${keys.length} 個快取</span>`;
+} else {
+document.getElementById('r2').innerHTML = `<span class="ok">✓ 無 cache API</span>`;
+}
+} catch (e) {
+document.getElementById('r2').innerHTML = `<span class="err">✗ ${e.message}</span>`;
+}
+// Step 3: clear storage
+try {
+let count = 0;
+if (localStorage.length > 0) { count += localStorage.length; localStorage.clear(); }
+if (sessionStorage.length > 0) { count += sessionStorage.length; sessionStorage.clear(); }
+// IndexedDB
+if ('databases' in indexedDB) {
+const dbs = await indexedDB.databases();
+for (const db of dbs) {
+if (db.name) { indexedDB.deleteDatabase(db.name); count++; }
+}
+}
+document.getElementById('r3').innerHTML = `<span class="ok">✓ 清掉 ${count} 個 storage 項目</span>`;
+L(`Cleared ${count} storage items`);
+} catch (e) {
+document.getElementById('r3').innerHTML = `<span class="err">✗ ${e.message}</span>`;
+}
+// Step 4: done
+document.getElementById('r4').innerHTML = '<span class="ok">✓ 全部完成。請點上面按鈕進入新版首頁。</span>';
+L('\nAll done. Click the button to navigate.');
+})();</script>
+</body></html>
