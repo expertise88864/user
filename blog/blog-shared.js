@@ -1981,7 +1981,10 @@
     btn.id = 'dn-totop';
     btn.setAttribute('aria-label', 'Scroll to top');
     btn.innerHTML = '↑';
-    btn.style.cssText = 'position:fixed;right:18px;bottom:24px;width:42px;height:42px;border-radius:50%;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;border:1px solid rgba(12,81,89,.5);box-shadow:0 8px 20px -8px rgba(12,81,89,.55);cursor:pointer;display:none;align-items:center;justify-content:center;z-index:50;font-size:18px;line-height:1';
+    // Stacked above the font-sizer (which sits at bottom:24px). Font-sizer
+    // is ~130px tall (4 × 32px buttons + radius), so totop at bottom:165px
+    // gives an ~8px breathing gap.
+    btn.style.cssText = 'position:fixed;right:18px;bottom:165px;width:42px;height:42px;border-radius:50%;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;border:1px solid rgba(12,81,89,.5);box-shadow:0 8px 20px -8px rgba(12,81,89,.55);cursor:pointer;display:none;align-items:center;justify-content:center;z-index:50;font-size:18px;line-height:1';
     btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
     document.body.appendChild(btn);
     document.addEventListener('scroll', function () {
@@ -4500,9 +4503,11 @@
     var wrap = document.createElement('div');
     wrap.id = 'dn-font-sizer';
     wrap.setAttribute('aria-label', '字型大小調整');
-    // Position below back-to-top button (which is at right:18px;bottom:24px)
+    // Sits at the bottom edge; back-to-top is stacked ABOVE this (bottom:165px).
+    // Per user 2026-05-07: bookmark + print buttons removed — the font-sizer
+    // owns the bottom slot now.
     wrap.style.cssText =
-      'position:fixed;right:18px;bottom:74px;z-index:49;display:flex;flex-direction:column;' +
+      'position:fixed;right:18px;bottom:24px;z-index:49;display:flex;flex-direction:column;' +
       'background:#fff;border:1px solid var(--border, #dcd5c8);border-radius:22px;' +
       'box-shadow:0 6px 18px -8px rgba(77,99,88,.45);overflow:hidden;opacity:0;' +
       'pointer-events:none;transition:opacity .25s;';
@@ -5644,9 +5649,14 @@
       DN.addLegalDisclaimer();
       DN.addAuthorBio();
       DN.injectTipCard && DN.injectTipCard();
-      // Floating buttons (don't affect DOM order)
-      idle(function () { DN.addBookmarkButton(); }, { timeout: 1800 });
-      idle(function () { DN.addPrintButton(); }, { timeout: 2000 });
+      // Floating buttons (don't affect DOM order).
+      // 2026-05-07 — bookmark + print floating buttons removed per user
+      // request: they were stacking on top of the font-size adjuster
+      // (bottom:80px / 130px overlapped with the new bottom:24px sizer).
+      // Bookmark feature was UI-only (no list page consumed the localStorage
+      // key), and print is still reachable via Cmd/Ctrl+P natively.
+      // idle(function () { DN.addBookmarkButton(); }, { timeout: 1800 });
+      // idle(function () { DN.addPrintButton(); }, { timeout: 2000 });
       idle(function () { DN.addPushSubscribeCard(); }, { timeout: 3500 });
     }
     DN.lazyLoadAudit();
