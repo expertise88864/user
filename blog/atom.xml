@@ -4,7 +4,7 @@
   <link href="https://chendermatologist.com/" rel="alternate"/>
   <link href="https://chendermatologist.com/blog/atom.xml" rel="self"/>
   <id>https://chendermatologist.com/</id>
-  <updated>2026-05-08T15:51:01Z</updated>
+  <updated>2026-05-08T16:27:51Z</updated>
   <author>
     <name>陳翊嘉 醫師</name>
     <email>expertise88864@gmail.com</email>
@@ -45,6 +45,33 @@
     <published>2026-05-09T00:00:00Z</published>
     <category term="乾癬"/>
     <summary>乾癬合併症與特殊族群 — PsA、心血管、懷孕、兒童、指甲、紅皮症 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
+  </entry>
+  <entry>
+    <title>異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏</title>
+    <link href="https://chendermatologist.com/blog/atopic-dermatitis-topical" rel="alternate"/>
+    <id>https://chendermatologist.com/blog/atopic-dermatitis-topical</id>
+    <updated>2026-05-09T00:00:00Z</updated>
+    <published>2026-05-09T00:00:00Z</published>
+    <category term="異位性皮膚炎"/>
+    <summary>異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
+  </entry>
+  <entry>
+    <title>異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療</title>
+    <link href="https://chendermatologist.com/blog/atopic-dermatitis-systemic" rel="alternate"/>
+    <id>https://chendermatologist.com/blog/atopic-dermatitis-systemic</id>
+    <updated>2026-05-09T00:00:00Z</updated>
+    <published>2026-05-09T00:00:00Z</published>
+    <category term="異位性皮膚炎"/>
+    <summary>異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
+  </entry>
+  <entry>
+    <title>異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染</title>
+    <link href="https://chendermatologist.com/blog/atopic-dermatitis-special-populations" rel="alternate"/>
+    <id>https://chendermatologist.com/blog/atopic-dermatitis-special-populations</id>
+    <updated>2026-05-09T00:00:00Z</updated>
+    <published>2026-05-09T00:00:00Z</published>
+    <category term="異位性皮膚炎"/>
+    <summary>異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
   </entry>
   <entry>
     <title>接觸性皮膚炎(過敏 vs 刺激)完整衛教</title>
@@ -252,32 +279,5 @@
     <published>2026-05-04T00:00:00Z</published>
     <category term="外用類固醇"/>
     <summary>外用類固醇完整指南 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
-  </entry>
-  <entry>
-    <title>皮膚科生物製劑與小分子標靶藥物總覽</title>
-    <link href="https://chendermatologist.com/blog/biologics-overview" rel="alternate"/>
-    <id>https://chendermatologist.com/blog/biologics-overview</id>
-    <updated>2026-05-04T00:00:00Z</updated>
-    <published>2026-05-04T00:00:00Z</published>
-    <category term="生物製劑"/>
-    <summary>皮膚科生物製劑與小分子標靶藥物總覽 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
-  </entry>
-  <entry>
-    <title>美白成分完整解析</title>
-    <link href="https://chendermatologist.com/blog/skin-whitening-agents" rel="alternate"/>
-    <id>https://chendermatologist.com/blog/skin-whitening-agents</id>
-    <updated>2026-05-04T00:00:00Z</updated>
-    <published>2026-05-04T00:00:00Z</published>
-    <category term="美白"/>
-    <summary>美白成分完整解析 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
-  </entry>
-  <entry>
-    <title>防曬 8 大迷思</title>
-    <link href="https://chendermatologist.com/blog/sunscreen-myths" rel="alternate"/>
-    <id>https://chendermatologist.com/blog/sunscreen-myths</id>
-    <updated>2026-05-03T00:00:00Z</updated>
-    <published>2026-05-03T00:00:00Z</published>
-    <category term="防曬"/>
-    <summary>防曬 8 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
   </entry>
 </feed>

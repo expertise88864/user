@@ -134,6 +134,45 @@
     </image:image>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/atopic-dermatitis-topical</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-topical"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-topical"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-topical"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-topical.png</image:loc>
+      <image:title>異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/atopic-dermatitis-systemic</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-systemic"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-systemic"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-systemic"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-systemic.png</image:loc>
+      <image:title>異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/atopic-dermatitis-special-populations</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-special-populations"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-special-populations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-special-populations"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-special-populations.png</image:loc>
+      <image:title>異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/contact-dermatitis</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -639,6 +678,30 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/psoriasis-special-populations"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/psoriasis-special-populations"/>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/en/blog/atopic-dermatitis-topical</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-topical"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-topical"/>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/en/blog/atopic-dermatitis-systemic</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-systemic"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-systemic"/>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/en/blog/atopic-dermatitis-special-populations</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-special-populations"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-special-populations"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/en/blog/contact-dermatitis</loc>
