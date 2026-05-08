@@ -5,18 +5,9 @@
     <link>https://chendermatologist.com/</link>
     <description>陳翊嘉醫師(皮膚科)整理的皮膚科衛教與學習筆記。</description>
     <language>zh-Hant-TW</language>
-    <lastBuildDate>Fri, 08 May 2026 15:46:07 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2026 15:51:01 +0000</lastBuildDate>
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <generator>DermNotes auto-feed v1</generator>
-    <item>
-      <title>異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思</title>
-      <link>https://chendermatologist.com/blog/atopic-dermatitis-overview</link>
-      <guid isPermaLink="true">https://chendermatologist.com/blog/atopic-dermatitis-overview</guid>
-      <pubDate>Thu, 14 May 2026 00:00:00 +0000</pubDate>
-      <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>異位性皮膚炎</category>
-      <description>異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
-    </item>
     <item>
       <title>乾癬完整衛教 — 分型、嚴重度、誘發因子</title>
       <link>https://chendermatologist.com/blog/psoriasis-overview</link>
@@ -277,6 +268,15 @@
       <dc:creator>陳翊嘉 醫師</dc:creator>
       <category>美白</category>
       <description>美白成分完整解析 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
+    </item>
+    <item>
+      <title>防曬 8 大迷思</title>
+      <link>https://chendermatologist.com/blog/sunscreen-myths</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/sunscreen-myths</guid>
+      <pubDate>Sun, 03 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>防曬</category>
+      <description>防曬 8 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</description>
     </item>
   </channel>
 </rss>

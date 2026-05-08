@@ -82,19 +82,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/privacy"/>
   </url>
   <url>
-    <loc>https://chendermatologist.com/blog/atopic-dermatitis-overview</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-overview"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-overview.png</image:loc>
-      <image:title>異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://chendermatologist.com/blog/psoriasis-overview</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -537,6 +524,19 @@
     </image:image>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/atopic-dermatitis-overview</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-overview"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-overview.png</image:loc>
+      <image:title>異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/en/</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -607,14 +607,6 @@
     <priority>0.2</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/privacy"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/privacy"/>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/en/blog/atopic-dermatitis-overview</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-overview"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/en/blog/psoriasis-overview</loc>
@@ -887,5 +879,13 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/tinea-myths"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/tinea-myths"/>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/en/blog/atopic-dermatitis-overview</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-overview"/>
   </url>
 </urlset>

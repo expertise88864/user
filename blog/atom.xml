@@ -4,21 +4,12 @@
   <link href="https://chendermatologist.com/" rel="alternate"/>
   <link href="https://chendermatologist.com/blog/atom.xml" rel="self"/>
   <id>https://chendermatologist.com/</id>
-  <updated>2026-05-08T15:46:07Z</updated>
+  <updated>2026-05-08T15:51:01Z</updated>
   <author>
     <name>陳翊嘉 醫師</name>
     <email>expertise88864@gmail.com</email>
   </author>
   <generator uri="https://chendermatologist.com">DermNotes auto-feed v1</generator>
-  <entry>
-    <title>異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思</title>
-    <link href="https://chendermatologist.com/blog/atopic-dermatitis-overview" rel="alternate"/>
-    <id>https://chendermatologist.com/blog/atopic-dermatitis-overview</id>
-    <updated>2026-05-14T00:00:00Z</updated>
-    <published>2026-05-14T00:00:00Z</published>
-    <category term="異位性皮膚炎"/>
-    <summary>異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
-  </entry>
   <entry>
     <title>乾癬完整衛教 — 分型、嚴重度、誘發因子</title>
     <link href="https://chendermatologist.com/blog/psoriasis-overview" rel="alternate"/>
@@ -279,5 +270,14 @@
     <published>2026-05-04T00:00:00Z</published>
     <category term="美白"/>
     <summary>美白成分完整解析 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
+  </entry>
+  <entry>
+    <title>防曬 8 大迷思</title>
+    <link href="https://chendermatologist.com/blog/sunscreen-myths" rel="alternate"/>
+    <id>https://chendermatologist.com/blog/sunscreen-myths</id>
+    <updated>2026-05-03T00:00:00Z</updated>
+    <published>2026-05-03T00:00:00Z</published>
+    <category term="防曬"/>
+    <summary>防曬 8 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
   </entry>
 </feed>
