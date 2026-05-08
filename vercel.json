@@ -199,26 +199,6 @@
   ],
   "redirects": [
     {
-      "source": "/blog/atopic-dermatitis-topical",
-      "destination": "/blog/atopic-dermatitis-overview",
-      "permanent": true
-    },
-    {
-      "source": "/blog/atopic-dermatitis-systemic",
-      "destination": "/blog/atopic-dermatitis-overview",
-      "permanent": true
-    },
-    {
-      "source": "/en/blog/atopic-dermatitis-topical",
-      "destination": "/en/blog/atopic-dermatitis-overview",
-      "permanent": true
-    },
-    {
-      "source": "/en/blog/atopic-dermatitis-systemic",
-      "destination": "/en/blog/atopic-dermatitis-overview",
-      "permanent": true
-    },
-    {
       "source": "/blog/atopic-dermatitis-comorbidity",
       "destination": "/blog/atopic-dermatitis-overview",
       "permanent": true

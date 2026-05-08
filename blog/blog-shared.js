@@ -2493,7 +2493,10 @@
     { slug:'pediatric-eczema', title:'嬰幼兒 / 兒童異位性皮膚炎完整照護指南', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-05', emoji:'', tag_en:'Atopic dermatitis' },
     { slug:'prurigo-nodularis', title:'結節性癢疹完整衛教', cat:'rx', tag:'結節性癢疹', date:'2026-05-07', emoji:'', tag_en:'Prurigo Nodularis' },
     { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' },
-    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-03', emoji:'', tag_en:'AD complete guide' },  ];
+    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-03', emoji:'', tag_en:'AD complete guide' },
+    { slug:'atopic-dermatitis-topical',  title:'異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-09', emoji:'', tag_en:'AD topical' },
+    { slug:'atopic-dermatitis-systemic', title:'異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-09', emoji:'', tag_en:'AD systemic' },
+    { slug:'atopic-dermatitis-special-populations', title:'異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-09', emoji:'', tag_en:'AD special populations' },  ];
 
   // -----------------------------------------------------------------------
   // Article numbering — assign #001-#NNN by chronological publish order
@@ -5476,7 +5479,7 @@
   DN.TAG_GROUPS = {
     '痘痘 / 痘疤':    ['acne-myths', 'acne-scar-treatment', 'isotretinoin-patient', 'topical-acids-patient'],
     '防曬':           ['sunscreen-myths'],
-    '異位性皮膚炎 / 濕疹': ['atopic-dermatitis-overview', 'pediatric-eczema', 'topical-steroids-guide', 'biologics-overview'],
+    '異位性皮膚炎 / 濕疹': ['atopic-dermatitis-overview', 'atopic-dermatitis-topical', 'atopic-dermatitis-systemic', 'atopic-dermatitis-special-populations', 'pediatric-eczema', 'topical-steroids-guide', 'biologics-overview'],
     '兒童 / 嬰幼兒':  ['pediatric-eczema'],
     '肝斑 / 美白':    ['melasma-myths', 'skin-whitening-agents'],
     '玫瑰斑 / 酒糟':  ['rosacea-myths'],
