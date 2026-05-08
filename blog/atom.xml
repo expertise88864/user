@@ -4,7 +4,7 @@
   <link href="https://chendermatologist.com/" rel="alternate"/>
   <link href="https://chendermatologist.com/blog/atom.xml" rel="self"/>
   <id>https://chendermatologist.com/</id>
-  <updated>2026-05-08T15:25:58Z</updated>
+  <updated>2026-05-08T15:46:07Z</updated>
   <author>
     <name>陳翊嘉 醫師</name>
     <email>expertise88864@gmail.com</email>
@@ -18,6 +18,42 @@
     <published>2026-05-14T00:00:00Z</published>
     <category term="異位性皮膚炎"/>
     <summary>異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
+  </entry>
+  <entry>
+    <title>乾癬完整衛教 — 分型、嚴重度、誘發因子</title>
+    <link href="https://chendermatologist.com/blog/psoriasis-overview" rel="alternate"/>
+    <id>https://chendermatologist.com/blog/psoriasis-overview</id>
+    <updated>2026-05-09T00:00:00Z</updated>
+    <published>2026-05-09T00:00:00Z</published>
+    <category term="乾癬"/>
+    <summary>乾癬完整衛教 — 分型、嚴重度、誘發因子 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
+  </entry>
+  <entry>
+    <title>乾癬外用藥治療 — 類固醇、維生素 D、特殊部位</title>
+    <link href="https://chendermatologist.com/blog/psoriasis-topical" rel="alternate"/>
+    <id>https://chendermatologist.com/blog/psoriasis-topical</id>
+    <updated>2026-05-09T00:00:00Z</updated>
+    <published>2026-05-09T00:00:00Z</published>
+    <category term="乾癬"/>
+    <summary>乾癬外用藥治療 — 類固醇、維生素 D、特殊部位 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
+  </entry>
+  <entry>
+    <title>乾癬全身性治療 — 光療、口服、生物製劑</title>
+    <link href="https://chendermatologist.com/blog/psoriasis-systemic" rel="alternate"/>
+    <id>https://chendermatologist.com/blog/psoriasis-systemic</id>
+    <updated>2026-05-09T00:00:00Z</updated>
+    <published>2026-05-09T00:00:00Z</published>
+    <category term="乾癬"/>
+    <summary>乾癬全身性治療 — 光療、口服、生物製劑 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
+  </entry>
+  <entry>
+    <title>乾癬合併症與特殊族群 — PsA、心血管、懷孕、兒童、指甲、紅皮症</title>
+    <link href="https://chendermatologist.com/blog/psoriasis-special-populations" rel="alternate"/>
+    <id>https://chendermatologist.com/blog/psoriasis-special-populations</id>
+    <updated>2026-05-09T00:00:00Z</updated>
+    <published>2026-05-09T00:00:00Z</published>
+    <category term="乾癬"/>
+    <summary>乾癬合併症與特殊族群 — PsA、心血管、懷孕、兒童、指甲、紅皮症 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
   </entry>
   <entry>
     <title>接觸性皮膚炎(過敏 vs 刺激)完整衛教</title>
@@ -243,41 +279,5 @@
     <published>2026-05-04T00:00:00Z</published>
     <category term="美白"/>
     <summary>美白成分完整解析 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
-  </entry>
-  <entry>
-    <title>防曬 8 大迷思</title>
-    <link href="https://chendermatologist.com/blog/sunscreen-myths" rel="alternate"/>
-    <id>https://chendermatologist.com/blog/sunscreen-myths</id>
-    <updated>2026-05-03T00:00:00Z</updated>
-    <published>2026-05-03T00:00:00Z</published>
-    <category term="防曬"/>
-    <summary>防曬 8 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
-  </entry>
-  <entry>
-    <title>肝斑 7 大迷思</title>
-    <link href="https://chendermatologist.com/blog/melasma-myths" rel="alternate"/>
-    <id>https://chendermatologist.com/blog/melasma-myths</id>
-    <updated>2026-05-03T00:00:00Z</updated>
-    <published>2026-05-03T00:00:00Z</published>
-    <category term="肝斑"/>
-    <summary>肝斑 7 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
-  </entry>
-  <entry>
-    <title>玫瑰痤瘡 6 大迷思</title>
-    <link href="https://chendermatologist.com/blog/rosacea-myths" rel="alternate"/>
-    <id>https://chendermatologist.com/blog/rosacea-myths</id>
-    <updated>2026-05-03T00:00:00Z</updated>
-    <published>2026-05-03T00:00:00Z</published>
-    <category term="酒糟肌"/>
-    <summary>玫瑰痤瘡 6 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
-  </entry>
-  <entry>
-    <title>落髮 / 雄性禿 7 大迷思</title>
-    <link href="https://chendermatologist.com/blog/hairloss-myths" rel="alternate"/>
-    <id>https://chendermatologist.com/blog/hairloss-myths</id>
-    <updated>2026-05-03T00:00:00Z</updated>
-    <published>2026-05-03T00:00:00Z</published>
-    <category term="落髮"/>
-    <summary>落髮 / 雄性禿 7 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
   </entry>
 </feed>
