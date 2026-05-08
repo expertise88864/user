@@ -237,6 +237,16 @@
       "source": "/en/blog/eczema-myths",
       "destination": "/en/blog/atopic-dermatitis-overview",
       "permanent": true
+    },
+    {
+      "source": "/blog/demodex-rosacea",
+      "destination": "/blog/rosacea-myths",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/demodex-rosacea",
+      "destination": "/en/blog/rosacea-myths",
+      "permanent": true
     }
   ]
 }

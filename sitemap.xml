@@ -316,19 +316,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://chendermatologist.com/blog/demodex-rosacea</loc>
-    <lastmod>2026-05-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/demodex-rosacea"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/demodex-rosacea"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/demodex-rosacea"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/demodex-rosacea.png</image:loc>
-      <image:title>蠕形蟎蟲與玫瑰斑（酒糟）</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://chendermatologist.com/blog/mpox-care</loc>
     <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -686,14 +673,6 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/alopecia-areata"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/alopecia-areata"/>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/en/blog/demodex-rosacea</loc>
-    <lastmod>2026-05-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/demodex-rosacea"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/demodex-rosacea"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/en/blog/mpox-care</loc>
