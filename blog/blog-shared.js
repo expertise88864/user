@@ -474,34 +474,34 @@
 
     // Vitiligo segmental vs non-segmental
     'vitiligo-types': function () {
-      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" aria-labelledby="vit-title">' +
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" aria-labelledby="vit-title">' +
         '<title id="vit-title">白斑兩大臨床分型</title>' +
-        '<rect width="720" height="320" fill="#faf7f2" rx="10"/>' +
+        '<rect width="720" height="400" fill="#faf7f2" rx="10"/>' +
         '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">白斑兩大分型 — 預後與治療策略不同</text>' +
         // Non-segmental
         '<g transform="translate(60 60)">' +
-        '<text x="135" y="0" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">非節段型(NSV)— 約 90%</text>' +
+        '<text x="135" y="0" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">非節段型 NSV — 約 90%</text>' +
         '<rect x="40" y="20" width="190" height="180" rx="14" fill="#a4b5a8" stroke="#4d6358" stroke-width="2"/>' +
         // Bilateral patches symmetric
         '<circle cx="80" cy="60" r="14" fill="#fff"/><circle cx="190" cy="60" r="14" fill="#fff"/>' +
         '<circle cx="100" cy="100" r="18" fill="#fff"/><circle cx="170" cy="100" r="18" fill="#fff"/>' +
         '<circle cx="85" cy="150" r="12" fill="#fff"/><circle cx="185" cy="150" r="12" fill="#fff"/>' +
-        '<text x="135" y="220" text-anchor="middle" font-family="Inter" font-size="13" fill="#0c5159">對稱分布</text>' +
-        '<text x="135" y="240" text-anchor="middle" font-family="Inter" font-size="13" fill="#0c5159">慢性進展 / 自體免疫</text>' +
-        '<text x="135" y="260" text-anchor="middle" font-family="Inter" font-size="13" fill="#0c5159">→ 全身性治療(NB-UVB / JAK)</text>' +
+        '<text x="135" y="225" text-anchor="middle" font-family="Inter" font-size="13" fill="#0c5159">對稱分布</text>' +
+        '<text x="135" y="245" text-anchor="middle" font-family="Inter" font-size="13" fill="#0c5159">慢性進展、自體免疫</text>' +
+        '<text x="135" y="265" text-anchor="middle" font-family="Inter" font-size="13" fill="#0c5159">→ 全身性治療(NB-UVB / JAK)</text>' +
         '</g>' +
         // Segmental
         '<g transform="translate(420 60)">' +
-        '<text x="135" y="0" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#9a3412">節段型(SV)— 約 10%</text>' +
+        '<text x="135" y="0" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#9a3412">節段型 SV — 約 10%</text>' +
         '<rect x="40" y="20" width="190" height="180" rx="14" fill="#a4b5a8" stroke="#9a3412" stroke-width="2"/>' +
         // Unilateral, dermatomal
         '<path d="M70 40 Q90 60 110 80 Q130 110 145 145 Q150 175 130 195" fill="#fff" stroke="#9a3412" stroke-width="1.5"/>' +
-        '<text x="135" y="220" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">單側 / 神經皮節分布</text>' +
-        '<text x="135" y="240" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">通常 1-2 年穩定</text>' +
-        '<text x="135" y="260" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">→ 局部治療 + 皮膚移植</text>' +
+        '<text x="135" y="225" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">單側、神經皮節分布</text>' +
+        '<text x="135" y="245" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">通常 1-2 年內穩定</text>' +
+        '<text x="135" y="265" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">→ 局部治療 + 皮膚移植</text>' +
         '</g>' +
-        '<text x="360" y="295" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Ezzedine 2012 · Rosmarin Ruxolitinib NEJM 2022 (TRuE-V) · Bergqvist Mosaic Vitiligo 2020</text>' +
-        '</svg><figcaption>圖. NSV（自體免疫，慢性） vs SV（局部、穩定）— 兩型治療反應與預後差異大</figcaption></figure>';
+        '<text x="360" y="365" text-anchor="middle" font-family="Inter" font-size="12" fill="#8b8378">Source: Ezzedine 2012 · Rosmarin Ruxolitinib NEJM 2022 (TRuE-V) · Bergqvist Mosaic Vitiligo 2020</text>' +
+        '</svg><figcaption>圖。NSV（自體免疫、慢性） vs SV（局部、穩定）— 兩型治療反應與預後差異大</figcaption></figure>';
     },
 
     // Mast cell degranulation — urticaria pathophysiology
@@ -2006,15 +2006,22 @@
     btn.type = 'button';
     btn.id = 'dn-totop';
     btn.setAttribute('aria-label', 'Scroll to top');
+    btn.title = '回到頂端';
     btn.innerHTML = '↑';
-    // Stacked above the font-sizer (which sits at bottom:24px). Font-sizer
-    // is ~130px tall (4 × 32px buttons + radius), so totop at bottom:165px
-    // gives an ~8px breathing gap.
-    btn.style.cssText = 'position:fixed;right:18px;bottom:165px;width:42px;height:42px;border-radius:50%;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;border:1px solid rgba(12,81,89,.5);box-shadow:0 8px 20px -8px rgba(12,81,89,.55);cursor:pointer;display:none;align-items:center;justify-content:center;z-index:50;font-size:18px;line-height:1';
+    // Position adapts: on article pages the font-sizer (S/M/L/XL) sits at
+    // bottom:24px and is ~130px tall, so back-to-top stacks above with a
+    // generous 28px gap (bottom:182px). On non-article pages there is no
+    // font-sizer, so back-to-top sits at bottom:24px directly.
+    var hasFontSizer = !!document.querySelector('.prose, #proseZh, .prose-zh');
+    var bottomPos = hasFontSizer ? '182px' : '24px';
+    btn.style.cssText = 'position:fixed;right:18px;bottom:' + bottomPos + ';width:42px;height:42px;border-radius:50%;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;border:1px solid rgba(12,81,89,.5);box-shadow:0 8px 20px -8px rgba(12,81,89,.55);cursor:pointer;display:none;align-items:center;justify-content:center;z-index:50;font-size:18px;line-height:1;transition:transform .2s,opacity .2s';
     btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    btn.addEventListener('mouseenter', function () { btn.style.transform = 'translateY(-2px) scale(1.05)'; });
+    btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
     document.body.appendChild(btn);
-    document.addEventListener('scroll', function () {
-      btn.style.display = window.scrollY > 800 ? 'flex' : 'none';
+    var threshold = hasFontSizer ? 800 : 600;
+    window.addEventListener('scroll', function () {
+      btn.style.display = window.scrollY > threshold ? 'flex' : 'none';
     }, { passive: true });
   };
 
@@ -3490,9 +3497,15 @@
     var st = document.createElement('style');
     st.id = 'dn-calc-css';
     st.textContent =
-      '.dn-calc{ background:#fff;border:1px solid var(--border, #dcd5c8);border-radius:14px;padding:18px 22px;margin:24px 0;box-shadow:0 8px 24px -14px rgba(77,99,88,.2) }' +
-      '.dn-calc h3.dn-calc-title{ font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#0f172a;margin:0 0 4px }' +
-      '.dn-calc .dn-calc-sub{ font-size:12.5px;color:#5e574e;margin-bottom:14px;line-height:1.6 }' +
+      '.dn-calc{ background:#2a2620;border:1px solid #2a2620;border-radius:16px;padding:0;margin:24px 0;box-shadow:0 12px 28px -16px rgba(12,81,89,.32);overflow:hidden;color:#f7f3ec }' +
+      '.dn-calc h3.dn-calc-title{ font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#f7f3ec;margin:0;padding:18px 22px 4px;background:#2a2620 }' +
+      '.dn-calc .dn-calc-sub{ font-size:12.5px;color:rgba(247,243,236,.78);margin:0;padding:0 22px 14px;line-height:1.7;background:#2a2620 }' +
+      '.dn-calc-row{ background:#fff;color:#0f172a;display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:8px 22px;border-top:1px solid #ebe4d8 }' +
+      '.dn-calc-row:first-of-type{ padding-top:14px }' +
+      '.dn-calc-row label{ color:#0f172a !important }' +
+      '.dn-calc .dn-calc-result{ margin:0;padding:14px 22px 16px;background:linear-gradient(135deg,#ecfeff,#f5fbfa);border-top:1px solid #a5f3fc;border-radius:0 }' +
+      '.dn-calc .dn-calc-tools-link{ margin:0 22px 10px;display:inline-flex }' +
+      '.dn-calc .dn-calc-disclaimer{ margin:0;padding:0 22px 18px;background:#2a2620;color:rgba(247,243,236,.6) }' +
       '.dn-calc-row{ display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #ebe4d8 }' +
       '.dn-calc-row:first-of-type{ border-top:0 }' +
       '.dn-calc-row label{ font-size:13.5px;color:#2a2620;font-weight:600 }' +
@@ -5074,7 +5087,8 @@
       'position:fixed;bottom:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:1fr 1fr 1fr;' +
       'background:rgba(250,247,242,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);' +
       'border-top:1px solid var(--border, #dcd5c8);box-shadow:0 -4px 20px -8px rgba(77,99,88,.2);' +
-      'padding-bottom:env(safe-area-inset-bottom)';
+      'padding-bottom:env(safe-area-inset-bottom);' +
+      'transform:translateY(0);transition:transform .25s ease';
     bar.innerHTML =
       '<a href="/blog/" ' +
         'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
@@ -5105,6 +5119,28 @@
     document.head.appendChild(style);
     document.body.appendChild(bar);
     document.body.classList.add('dn-has-sticky-cta');
+
+    // Auto-hide on scroll-down, show on scroll-up (mobile reading mode).
+    // Always reveal at the very top + when nearly at page bottom.
+    var lastY = window.scrollY || 0;
+    var ticking = false;
+    function onScroll() {
+      var y = window.scrollY || 0;
+      var dy = y - lastY;
+      var nearBottom = (window.innerHeight + y) >= (document.documentElement.scrollHeight - 80);
+      if (y < 120 || nearBottom) {
+        bar.style.transform = 'translateY(0)';
+      } else if (dy > 6) {
+        bar.style.transform = 'translateY(110%)'; // hide
+      } else if (dy < -6) {
+        bar.style.transform = 'translateY(0)'; // show
+      }
+      lastY = y;
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
 
     // Track CTA clicks
     if (typeof gtag === 'function') {
@@ -5571,7 +5607,8 @@
       // H4 word count badge, H1 Giscus, H6 PDF — all article-page only
       idle(function () { DN.injectWordCount && DN.injectWordCount(); }, { timeout: 1800 });
       idle(function () { DN.injectGiscus && DN.injectGiscus(); }, { timeout: 3000 });
-      idle(function () { DN.injectPdfButton && DN.injectPdfButton(); }, { timeout: 1800 });
+      // 2026-05-08 — PDF / 列印 download button removed per user (overlapped font sizer + back-to-top).
+      // idle(function () { DN.injectPdfButton && DN.injectPdfButton(); }, { timeout: 1800 });
       // 2026-05-07 — article-footer email newsletter card disabled per user.
       // Push notifications + the homepage newsletter section already cover the
       // notification surface; double-prompting at every article-end was noisy.
@@ -5647,38 +5684,42 @@
         'epidermoid-cyst':           ['DLQI'],
         'cutaneous-t-cell-lymphoma': ['VAS', 'DLQI']
       };
-      // Hard cap of 2 calculators per article — even if list above has more.
-      var calcsToInject = (CALC_ORDER[slug] || ['DLQI']).slice(0, 2);
+      // 2026-05-08 — Hard cap reduced to 1 calculator per article (per user).
+      // The single most-relevant calculator stays in-article; readers needing
+      // additional tools are routed to /tools via the calc footer link.
+      var calcsToInject = (CALC_ORDER[slug] || ['DLQI']).slice(0, 1);
+
+      // Article-footer order (top → bottom, per user spec 2026-05-08):
+      //   ↓ Official sources / authoritative guidelines (in article body)
+      //   ↓ References (in article body)
+      //   1. 計算器(single, injected last so it sits CLOSEST to article)
+      //   2. 你可能會想看(RelatedArticles)
+      //   3. 分享給朋友(ShareToolbar)
+      //   4. 發現錯誤、過時資訊、引用爭議(FeedbackLink)
+      //   5. 關於作者(AuthorBio)
+      //   6. 重要聲明(LegalDisclaimer)
+      //   7. 贊助本站(injectBMCFooter — runs at site-footer level)
+      //   8. 頁面底部(static <footer>)
+      // All inject via article.parentNode.insertBefore(box, article.nextSibling)
+      // — which means each call pushes earlier-injected boxes further down. To
+      // achieve the desired top-to-bottom order, we call in REVERSE order
+      // (Disclaimer first → Calculator last).
+      // 2026-05-08 — DN.injectNextReads (繼續閱讀) removed per user; the single
+      // RelatedArticles block already covers "what to read next".
+      DN.addLegalDisclaimer();
+      DN.addAuthorBio();
+      DN.addFeedbackLink();
+      DN.addShareToolbar();
+      DN.addRelatedArticles();
+      // Calculator goes LAST (so it ends up immediately under the article).
       calcsToInject.forEach(function (name) {
         var fn = CALC_FN[name];
         if (typeof fn === 'function') {
-          // Temporarily override the per-injector slug guard by setting a flag
           DN._forceInject = true;
           try { fn(); } catch (e) {}
           DN._forceInject = false;
         }
       });
-
-      // Article-footer order (top → bottom, per user spec 2026-05-07):
-      //   ↓ References (in article body, already)
-      //   ↓ Calculators (already injected above)
-      //   1. 繼續閱讀(H9 NextReads)
-      //   2. 發現錯誤、過時資訊、引用爭議(FeedbackLink)
-      //   3. 覺得有幫助?分享給朋友(ShareToolbar)
-      //   4. 你可能也會想看(RelatedArticles — ENHANCED)
-      //   5. 重要聲明(LegalDisclaimer)
-      //   6. 關於作者(AuthorBio)
-      //   7. 請我喝杯咖啡(TipCard — new card variant)
-      //   8. Email 訂閱(NewsletterCard,via idle, last)
-      //   9. 留言(Giscus,via idle,lazy)
-      // PrevNextNav has been REMOVED — replaced by the stronger RelatedArticles.
-      // Floating bookmark / print / push buttons run in idle (don't block DOM order).
-      DN.injectNextReads && DN.injectNextReads();
-      DN.addFeedbackLink();
-      DN.addShareToolbar();
-      DN.addRelatedArticles();
-      DN.addLegalDisclaimer();
-      DN.addAuthorBio();
       // 2026-05-07 — yellow article-footer tip card disabled per user.
       // The teal-bordered DN.injectBMCFooter card on every page is enough;
       // no need for a second 「請我喝杯咖啡」 inside articles.
