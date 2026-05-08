@@ -332,8 +332,13 @@ setTimeout(load, 1500);
     var parent = items[0].parentNode;
     items.forEach(function(it){ parent.appendChild(it); });
   }
-  // Run synchronously so DOM is sorted before blog-shared.min.js DOMContentLoaded
-  // listener calls DN.bindArticleHub, which snapshots allCards in DOM order.
+  // 2026-05-08 — Run sort SYNCHRONOUSLY at parse time. We sit at end of <body>
+  // so all .article-list-item have been parsed. Running synchronously
+  // guarantees the DOM is sorted BEFORE blog-shared.min.js's DOMContentLoaded
+  // listener calls DN.bindArticleHub, which snapshots allCards in current DOM
+  // order. If we used DOMContentLoaded here, our listener was registered AFTER
+  // line 157's listener and ran second — so bindArticleHub captured items in
+  // original (auto-regen) order, not date-sorted order.
   sortNewestFirst();
 })();</script>
 </body></html>
