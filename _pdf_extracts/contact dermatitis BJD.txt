@@ -1,0 +1,1702 @@
+=== PAGE 1 ===
+GUIDELINES
+BJD
+British Journal of Dermatology
+British Association of Dermatologists’ guidelines for the
+management of contact dermatitis 2017
+G.A. Johnston,1 L.S. Exton,2 M.F. Mohd Mustapa,2 J.A. Slack,1 I.H. Coulson,3 J.S.C. English4 and J.F. Bourke5
+1Department of Dermatology, University Hospitals of Leicester NHS Trust, Inﬁrmary Square, Leicester LE1 5WW, U.K.
+2British Association of Dermatologists, Willan House, 4 Fitzroy Square, London W1T 5HQ, U.K.
+3Department of Dermatology, Burnley General Hospital, Casterton Avenue, Burnley BB10 2PQ, U.K.
+4Circle Nottingham, Lister Road, Nottingham NG7 2FT, U.K.
+5Department of Dermatology, South Inﬁrmary Victoria University Hospital, Old Blackrock Road, Cork City, Ireland
+Correspondence
+Graham A. Johnston.
+E-mail: graham.johnston@uhl-tr.nhs.uk
+Accepted for publication
+19 September 2016
+Funding sources
+None.
+Conﬂicts of interest
+G.A.J. has acted as an invited speaker for Crawford Healthcare Ltd (nonspeciﬁc) and as
+a co-author of British Occupational Health Research Foundation guidelines on occupa-
+tional dermatitis (speciﬁc). I.H.C. has acted as an invited speaker for Stiefel (speciﬁc).
+J.S.C.E. has acted as an invited speaker for Stiefel (speciﬁc).
+This is an updated guideline prepared for the British Association of Dermatologists
+(BAD) Clinical Standards Unit, which includes the Therapy & Guidelines Subcommittee
+(T&G). Members of the Clinical Standards Unit that have been involved are: P.M.
+McHenry (Chairman T&G), K. Gibbon, D.A. Buckley, T.A. Leslie, E.C. Mallon, S.
+Wakelin, S. Ungureanu, R.Y.P. Hunasehally, M. Cork, G.A. Johnston, J. Natkunara-
+jah, F.S. Worsnop, N. Chiang, J. Donnelly (British National Formulary), C. Saunders
+(British Dermatological Nursing Group), A.G. Brain (BAD Scientiﬁc Administrator),
+LS Exton (BAD Information Scientist), M.F. Mohd Mustapa (BAD Clinical Standards
+Manager).
+Produced in 2001 by the British Association of Dermatologists; reviewed and updated,
+2009, 2016.
+E-mail: guidelines@bad.org.uk
+DOI 10.1111/bjd.15239
+NICE has accredited the process used by the British Association of
+Dermatologists to produce clinical guidelines. The renewed accredi-
+tation is valid until 31 May 2021 and applies to guidance pro-
+duced using the process described in Updated guidance for writing a
+British Association of Dermatologists clinical guidance – the adop-
+tion of the GRADE methodology 2016. The original accreditation
+term began on 12 May 2010. More information on accreditation
+can be viewed at www.nice.org.uk/accreditation.
+1.0 Purpose and scope
+The overall objective of the guideline is to provide up-to-date,
+evidence-based recommendations for the management of con-
+tact dermatitis. The document aims to (i) offer an appraisal of
+all relevant literature up to February 2016, focusing on any
+key developments; (ii) address important, practical clinical
+questions relating to the primary guideline objective; and (iii)
+provide
+guideline
+recommendations
+and
+if
+appropriate
+research recommendations.
+The guideline is presented as a detailed review with high-
+lighted recommendations for practical use in the clinic, in
+addition to an updated patient information leaﬂet [available
+on the British Association of Dermatologists’ (BAD) website,
+http://www.bad.org.uk/for-the-public/patient-information-
+leaflets].
+1.1 Exclusions
+This guideline will not cover contact urticaria, prick testing or
+atopy patch testing.
+2.0 Stakeholder involvement and peer review
+The guideline development group (GDG) consisted of consul-
+tant dermatologists, a nurse specialist and patient representa-
+tives. The draft document and supporting information was
+made available to the BAD membership, British Dermatological
+Nursing Group, Primary Care Dermatological Society, British
+Society for Cutaneous Allergy, British Society for Skin Care in
+Immunocompromised Individuals, Society for Occupational
+Medicine and several authorities in occupational health, which
+were actively considered by the GDG. Following further
+review, the ﬁnalized version was sent for peer review by the
+Clinical Standards Unit of the BAD, made up of the Therapy &
+Guidelines Subcommittee, prior to submission for publication.
+3.0 Methodology
+This set of guidelines has been developed using the BAD’s rec-
+ommended methodology,1 with reference to the Appraisal of
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp317–329
+317
+Downloaded from https://academic.oup.com/bjd/article/176/2/317/6601881 by guest on 06 May 2026
+
+=== PAGE 2 ===
+Guidelines Research and Evaluation (AGREE II) instrument
+(www.agreetrust.org),2 and the Grading of Recommendations
+Assessment, Development and Evaluation (GRADE).3 Recom-
+mendations were developed for implementation in the U.K.’s
+National Health Service.
+The GDG established several clinical questions pertinent to
+the scope of the guideline and a set of outcome measures of
+importance to patients, ranked according to the GRADE
+methodology (see section 3.1).
+A systematic literature search of the PubMed, MEDLINE,
+Embase, Cochrane and LILACS databases was conducted to
+identify key articles for contact dermatitis up to February
+2016; search terms and strategies are detailed in the Support-
+ing Information. Additional references relevant to the topic
+were also isolated from citations in reviewed literature. Evi-
+dence from included studies was graded according to the
+GRADE system (high, moderate, low or very-low quality).
+Recommendations are based on evidence drawn from system-
+atic reviews of the literature pertaining to the clinical ques-
+tions identiﬁed; the summary of ﬁndings with forest plots,
+GRADE evidence proﬁles indicating the quality of evidence,
+tables linking the evidence to the recommendations, Preferred
+Reporting Items for Systematic Reviews and Meta-Analyses
+(PRISMA) ﬂow diagram and list of excluded studies are
+detailed in the Supporting Information. The strength of rec-
+ommendation is expressed by the wording and symbols
+shown in Table 1.
+3.1 Clinical questions and outcomes
+The GDG established several clinical questions pertinent to the
+scope of the guidelines, in the categories shown in Table 2.
+The GDG also established a set of outcome measures of
+importance to patients (prevention and treatment), ranked
+according to the GRADE methodology,4 data on which are
+extracted from included studies: (i) return to/remain in
+work (9); (ii) improvement in quality of life (8); (iii)
+improved or clearance of dermatitis (8); (iv) treatment tolera-
+bility (5); (v) prevention of dermatitis (5); (vi) side-effects of
+interventions (4).
+The outcome measure used in the diagnosis section was
+conﬁrmation of a diagnosis of contact dermatitis.
+4.0 Summary of recommendations
+The recommendations and ratings shown in Tables 3–5 were
+agreed upon unanimously by the core members of the GDG
+and patient representatives. For further information on the
+wording used for recommendations and strength of recom-
+mendation ratings, see section 3.0.
+5.0 Background
+5.1 Deﬁnition
+The words ‘eczema’ and ‘dermatitis’ are used synonymously
+to describe a polymorphic pattern of cutaneous inﬂammation
+Table 1 Strength of recommendation ratings
+Strength
+Wording
+Symbols
+Deﬁnition
+Strong recommendation for
+the use of an intervention
+‘Offer’ (or similar, e.g. ‘use’,
+‘provide’, ‘take’,
+‘investigate’, etc.)
+Beneﬁts of the intervention outweigh the risks; most
+patients would choose the intervention, while only a
+small proportion would not; for clinicians, most of their
+patients would receive the intervention; for policy-
+makers, it would be a useful performance indicator
+Weak recommendation for
+the use of an intervention
+‘Consider’
+Risks and beneﬁts of the intervention are ﬁnely balanced;
+most patients would choose the intervention, but many
+would not; clinicians would need to consider the pros
+and cons for the patient in the context of the evidence;
+for policy-makers it would be a poor performance
+indicator where variability in practice is expected
+No recommendation
+Insufﬁcient evidence to support any recommendation
+Strong recommendation
+against the use of an
+intervention
+‘Do not offer’
+Risks of the intervention outweigh the beneﬁts; most
+patients would not choose the intervention, while only a
+small proportion would; for clinicians, most of their
+patients would not receive the intervention
+Table 2 Clinical questions in patients with contact dermatitis
+pertinent to the scope of the guidelines
+Diagnosis
+Which and how many allergens should be used
+in tests?
+When should tests be carried out?
+Does increasing the number of allergens tested
+improve diagnosis?
+Prevention
+Does education improve or prevent hand dermatitis?
+Do barrier creams improve hand dermatitis?
+Treatment
+Does topical treatment work?
+Does systemic treatment work?
+Do soap substitutes improve contact dermatitis?
+Does education as a treatment work?
+Does phototherapy work?
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp317–329
+318 BAD guidelines for contact dermatitis 2017, G.A. Johnston et al.
+Downloaded from https://academic.oup.com/bjd/article/176/2/317/6601881 by guest on 06 May 2026
+
+=== PAGE 3 ===
+that, in the acute phase, is characterized by erythema and
+vesiculation and, in the chronic phase, by dryness, licheniﬁca-
+tion and ﬁssuring. Contact dermatitis describes these patterns
+of reaction in response to external agents (exogenous); these
+agents can act either as irritants, where a cell-mediated
+immune response is not involved, or as allergens, where cell-
+mediated immunity is involved.
+Contact dermatitis may be classiﬁed into the following reac-
+tion types. (i) Subjective irritancy: idiosyncratic stinging and
+smarting reactions occur within minutes of contact, usually on
+the face, in the absence of visible changes. Cosmetic or sun-
+screen constituents are common precipitants. (ii) Acute irritant
+contact dermatitis: often the result of a single overwhelming
+exposure or a few brief exposures to strong irritants or caustic
+agents. (iii) Chronic (cumulative) irritant contact dermatitis:
+occurs following repetitive exposure to weaker irritants that
+may be either ‘wet’, such as detergents, organic solvents,
+soaps, weak acids and alkalis, or ‘dry’, such as low-humidity
+air, heat, powders, paper, cardboard and dusts. (iv) Allergic
+contact dermatitis: this involves sensitization of the immune
+system to a speciﬁc allergen or allergens with resulting der-
+matitis or exacerbation of pre-existing dermatitis. (v) Photo-
+toxic, photoallergic and photoaggravated contact dermatitis:
+some allergens are also photoallergens. (vi) Systemic contact
+dermatitis (systemic allergic dermatitis): seen after the sys-
+temic administration of a chemical, usually a drug, to which
+topical sensitization has occurred previously. (vii) Protein con-
+tact dermatitis: repetitive handling of proteins, usually foods,
+results initially in immediate urticarial symptoms and signs,
+but later progresses to a dermatitic reaction. Prick and radioal-
+lergosorbent tests to the offending protein allergen are posi-
+tive, but patch tests are negative. The proteins may be
+vegetables (potato, garlic), meats, ﬁsh (in food handlers),
+ﬂour, enzymes (in bakers and pharmaceutical manufacture),
+and animal dander and ﬂuids (in veterinarians and abattoir
+workers).5
+Table 3 Recommendations and ratings agreed upon by the guideline development group and patient representatives
+Summary of recommendations
+Strength
+Diagnosis
+Offer patients with suspected contact dermatitis a patch test with a baseline series of allergens
+In identifying allergens in patients with contact dermatitis, consider testing for additional series dependent on allergen exposure
+Consider additional readings at day 6 or 7 if the results are unexpectedly negative at day 4
+Prevention
+Consider skin care and skin protection creams in preventing occupational dermatitis
+Treatment
+Offer alitretinoin to patients with severe chronic hand eczema121
+Consider topical tacrolimus to patients with contact dermatitis where topical steroids are unsuitable or ineffective
+Consider PUVA therapy for treating patients with chronic hand eczema
+Consider patient education in occupational contact dermatitis
+PUVA, psoralen plus ultraviolet A.
+Table 4 Summary of good-practice recommendations (informal
+consensus)
+Summary of good-practice recommendations (informal
+consensus)
+Use clinical assessment tools such as the Dermatology Life Quality
+Index and the Hand Eczema Severity Index for both the initial
+assessment and the response to treatment of patients with
+contact dermatitis
+Take a detailed history, including symptoms and if they were
+related to application or use of any particular product, a
+speciﬁc activity or occupation
+If related to the workplace investigate the work practice and
+products handled at work, supplemented by examination of
+health and safety data sheets
+Provide a patient information leaﬂet on patch testing as part of the
+counselling process, which includes information on potential
+side-effects. Informed patient consent should be obtained
+Offer patch testing for patients with chronic or persistent
+dermatitis as clinical features alone are unreliable in
+distinguishing allergic contact from irritant and endogenous
+dermatitis, particularly with hand and facial dermatitis
+Consider deferring patch testing for 3 months after ﬁnishing
+systemic agents and 6 months after ﬁnishing biological agents,
+to minimize the chance of false-negative reactions, if possible
+Table 5 Summary of research recommendations
+The methodology and reporting of results of future patch test
+studies should be standardized
+High-quality studies are needed to address the efﬁcacy of
+interventions for contact dermatitis, including:
+topical tacrolimus vs. topical corticosteroids
+combination of tacrolimus and topical corticosteroids
+alitretinoin vs. PUVA for hand dermatitis
+development and evaluation of skin barrier repair products
+development of new wash products that do not damage the
+skin barrier
+Efﬁcacy of systemic therapies – ciclosporin, azathioprine,
+methotrexate – needs to be determined
+PUVA, psoralen plus ultraviolet A.
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp317–329
+BAD guidelines for contact dermatitis 2017, G.A. Johnston et al. 319
+Downloaded from https://academic.oup.com/bjd/article/176/2/317/6601881 by guest on 06 May 2026
+
+=== PAGE 4 ===
+In clinical practice, it is not uncommon for atopic/endoge-
+nous, irritant and allergic aetiologies to coexist in the develop-
+ment of certain eczemas, particularly hand and foot dermatitis.
+It is important to look for a history of occupational and recre-
+ational factors in both irritant and allergic contact dermatitis.
+5.2 Epidemiology
+The point prevalence of dermatitis in the U.K. is estimated to
+be about 20%. Atopic/endogenous dermatitis makes up the
+majority of cases. The point prevalence of hand dermatitis has
+been reported to be 2%, with a lifetime risk of developing
+hand dermatitis of 20%.6 While irritant contact dermatitis is
+more common than allergic contact dermatitis, allergic contact
+dermatitis carries a worse prognosis unless the allergen is
+identiﬁed and avoided. Contact dermatitis accounts for 4–7%
+of dermatological consultations. Dermatitis can persist, particu-
+larly in those allergic to chromate, epoxy resin and Compositae
+after allergen avoidance.
+The prevalence of contact allergy to speciﬁc allergens in the
+general population in Europe has been estimated at between
+10% and 27%.7,8 Nickel (145%), fragrance (37%), cobalt
+(22%), hydroxyisohexyl cyclohexene carboxaldehyde (14%)
+and p-phenylenediamine (PPD) (1%) were among the most
+commonly identiﬁed allergens.
+Chromate allergy is reducing in frequency in the European
+Union since the addition of iron to cement was made compul-
+sory.9–11 Legislation to reduce the nickel content permitted in
+jewellery has reduced the incidence of nickel sensitization.12,13
+In contrast, an increase in the permitted level of methylisoth-
+iazolinone in cosmetics and personal-care products has led to
+a dramatic and unprecedented increase in sensitization since
+2010.14
+The ongoing UK EPIDERM surveillance scheme records the
+epidemiology of occupational skin disease (OSD).15,16 Skin
+disease ranks second (29%) to musculoskeletal conditions
+(57%) as a cause of occupational disease; dermatitis makes up
+79% of OSD. Occupational hand dermatitis in healthcare
+workers is declining, owing to workplace interventions. While
+there is an overall decrease in sensitization to rubber accelera-
+tors, there is increasing sensitization to carbamates and to
+rarer rubber allergens.17
+The prevalence of contact dermatitis in children is unclear.
+A large review reports positive patch-test reaction rates varying
+from 27% to 95% of referred children.18 The most common
+allergens reported in North American children are nickel, neo-
+mycin, cobalt, fragrance and Myroxylon pereirae; many children
+had atopic/endogenous dermatitis. Recalcitrant disease unre-
+sponsive to standard therapy, or dermatitis in new areas,
+should raise the possibility of a super-added allergic contact
+dermatitis. Adolescents have a prevalence of contact allergy
+almost as high as adults. Population-based studies show 17%
+of girls and 13% of 16-year-olds have at least one positive
+allergic reaction on patch testing.19 Nickel, fragrance and
+4-tert-butylphenol formaldehyde resin are the most common
+allergens.
+5.3 Assessment and investigation
+The pattern and morphology of dermatitis, particularly on the
+hands and face, is unreliable in predicting a cause and in dis-
+tinguishing atopic/endogenous dermatitis clearly from der-
+matitis
+which
+is
+contact
+irritant
+or
+contact
+allergic
+in
+aetiology.20,21 This is also true for children with atopic
+dermatitis.22
+Therefore, it is essential to consider the following points
+initially in the history of all patients with dermatitis: (i) Is
+there a personal history of atopic dermatitis in infancy or
+childhood? Are there other atopic features, such as asthma and
+hay fever? Is there a family history of atopy? (ii) Where did
+the initial symptoms begin, and where did they spread to
+later? (iii) Were symptoms related to the application or use of
+any particular product, especially cosmetics, personal-care
+products, topical medication, clothing, bandages or personal
+protection such as gloves? (iv) A detailed history of all wash
+products which come into contact with the skin is important
+because the majority contain harsh emulsiﬁers/surfactants that
+can cause signiﬁcant damage to the skin barrier in predisposed
+individuals such as those with atopic/endogenous dermatitis
+after a short period of exposure. This should detail every wash
+product, including shampoos. (v) Were symptoms related to
+any particular activity, such as hairdressing, holidays, home
+improvements, painting, decorating, recreation or sport? (vi)
+Are symptoms related to work or speciﬁc activity within the
+workplace? A detailed history should be taken, including
+investigation of practice and products handled at work, sup-
+plemented by examination of health and safety data sheets.
+Also, personal protection practice such as the use of gloves or
+goggles should be determined. (vii) Do symptoms improve
+when environment changes, for example at weekends and
+during holidays, and recur on return to work? (viii) Do symp-
+toms get worse after sunlight exposure?
+The history should also identify any contact with primary
+skin irritants. This should include both wet agents (including
+water and the frequency of hand washing) and which prod-
+ucts have been used, as well as dry, desiccating products.
+Clinical assessment tools should be used for both the initial
+assessment and the response to treatment of patients with con-
+tact dermatitis. Consider both generic tools such as the Derma-
+tology Life Quality Index and more speciﬁc, objective scoring
+systems such as the Hand Eczema Severity Index.23,24 Simpli-
+ﬁed tools that assess only three variables in hand dermatitis,
+such as the Investigators Global Assessment (measuring only
+induration, scaling and ﬁssuring) have the advantage of being
+quick to perform, but have the disadvantage of being useful
+only for certain types of hand dermatitis (chronic hyperkera-
+totic) but not others (pompholyx).
+Patch testing is the gold-standard investigation in a patient
+in whom allergic contact dermatitis is considered. Prospective
+studies support the value of specialist contact dermatitis clinics
+with access to extended series of allergens for the investigation
+of dermatitis in speciﬁc anatomical sites, occupational groups
+and chemical exposures. Dermatologists select appropriate
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp317–329
+320 BAD guidelines for contact dermatitis 2017, G.A. Johnston et al.
+Downloaded from https://academic.oup.com/bjd/article/176/2/317/6601881 by guest on 06 May 2026
+
+=== PAGE 5 ===
+allergens, assess products that patients bring, assess any posi-
+tive reactions, and determine their relevance to the individual
+and their dermatitis. An important aspect of the process is
+clear communication of relevant information to allow the
+patient to identify, avoid or substitute the allergen(s). Follow-
+up visits reiterate and clarify this information.
+5.4 Patch-testing rate
+An approximate suggested annual workload for a contact der-
+matitis investigation clinic has been estimated at one person
+per 700 of the population served, that is, 100 patch tests per
+annum for a catchment population of 70 000.25 The more
+frequently patch testing is carried out, the lower the rate of
+relevant positive reactions becomes.26
+5.5 Who should be investigated?
+As clinical features alone are unreliable in distinguishing aller-
+gic contact from irritant and endogenous dermatitis, particu-
+larly with hand and facial dermatitis, patch testing should be
+carried out in any patient with a chronic or persistent dermati-
+tis,27 or atopic/endogenous dermatitis that was previously
+well controlled with topical therapy and then becomes difﬁ-
+cult or impossible to control with the same topical treatments.
+6.0 Diagnostic tests (diagnosis)
+6.1 Preparation of the patient
+The patient should be counselled that the skin will be covered
+during testing and on the need to avoid exercise, to keep the
+back dry and of possible adverse effects. Informed consent
+should be taken and documented.
+Adverse events associated with patch testing are rare.
+Patients should be counselled that a positive result will pro-
+duce skin reddening, itching and occasionally blistering at the
+application site,28 but that this usually disappears after a few
+days.
+Patients should be warned that some positive test reactions,
+for example to gold, may persist for up to 1 month; that a
+positive patch test may be accompanied by a ﬂare of existing
+or previous eczema at distant sites; that an increase or decrease
+in pigment may be seen at the site of patch tests; and of the
+small possibility of infection or scarring at the treatment site.
+Active sensitization is also rare. While it was reported as
+‘possible’ in two of 7163 patients patch tested to partheno-
+lide,29 it was not reported in any of 5371 patients tested to
+formaldehyde or textile dyes,30,31 and there is no signiﬁcant
+increase in PPD-positive patch-test reactions in individuals
+who undergo repeat patch tests compared with those who
+only had single patch tests.32
+The skin to be tested should be free from dermatitis, and
+skin disease elsewhere, as well controlled as possible. This will
+help avoid the ‘angry back syndrome’ with numerous false-
+positive results.33
+If a patient applies potent topical steroids to the back up to
+2 days prior to the test being applied,34–36 or is taking oral
+corticosteroids,37 there is a signiﬁcant risk of false-negative
+results and decreased reactivity.
+The effect of systemic corticosteroid treatment on weaker
+reactions has not been assessed, but expert consensus is that if
+the daily dose is no higher than 10 mg prednisolone,
+suppression of positive patch tests is unlikely.38 While positive
+patch-test reactions can be elicited in patients taking immuno-
+suppressant drugs,39 or who are tanned as a result of sun
+bathing or treatment with ultraviolet (UV) radiation,40 any
+associated tanning may also suppress patch-test reactions.
+However, the amount required to do so and the relevant
+interval between exposure and patch testing are poorly quanti-
+ﬁed. Where immunosuppressive treatment cannot be stopped
+safely, patch testing can yield positive results which, while
+possibly suboptimal, may be preferable to not testing at all.41
+Antihistamines do not need to be avoided unless testing for
+urticaria or contact urticarial reactions.
+Patch testing should be deferred for 6 weeks after natural
+and artiﬁcial UV exposure, 3 months after ﬁnishing systemic
+agents and 6 months after ﬁnishing biological agents, to mini-
+mize the chance of false-negative reactions.
+There is no evidence that patch testing when breastfeeding
+is harmful. While there is no evidence that patch testing in
+pregnancy is harmful, no safety data are available. Therefore,
+patch testing should be undertaken only when required and
+after informed consent is obtained.
+6.2 Patch testing
+Patch testing involves the reproduction under the patch tests
+of an allergic contact dermatitis in an individual sensitized to
+a particular antigen(s). The standard method involves the
+application of antigen to the skin at standardized concentra-
+tions in an appropriate vehicle and under occlusion. The back
+is most commonly used, principally for convenience because
+of the area available, although the limbs, in particular the
+outer upper arms, are also used.
+This test has a sensitivity and speciﬁcity of between 70%
+and 80%.41
+Various application systems are available, of which the most
+commonly used are Finn chambers. With this system, the
+investigator preloads individual allergens onto test discs,
+which, in turn, are mounted on adhesive tape. Care needs to
+be taken to load the same amount of allergen onto each disc
+as signiﬁcant variation has been reported.42,43 Micropipetting
+is the optimal technique to minimize this variation. Many
+allergens are volatile or degrade over a short time, particularly
+acrylates and fragrances.44,45 Allergen expiration dates should
+be noted and allergens should always be stored as directed
+and patch tests should be prepared as close to the time of
+application of the patch test as practical.46,47 This is essential
+for acrylate, fragrance, isocyanate and aqueous allergens.46 It
+may be occasionally necessary to test certain allergens beyond
+the labelled expiry date when the alternative is not to test.
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp317–329
+BAD guidelines for contact dermatitis 2017, G.A. Johnston et al. 321
+Downloaded from https://academic.oup.com/bjd/article/176/2/317/6601881 by guest on 06 May 2026
+
+=== PAGE 6 ===
+Two preprepared series of patch tests are available – the
+TRUE (Pharmacia, Milton Keynes, U.K.) and the Epiquick
+(Hermal, Reinbek, Germany) tests. Preprepared tests are sig-
+niﬁcantly more reliable than operator-prepared tests,48–52 but
+only limited numbers of allergens are available.
+There is also some evidence that larger chambers may give
+more reproducible tests,53,54 but this may only apply to some
+allergens,55 and can be used to obtain a more deﬁnite positive
+reaction when a smaller chamber has given a doubtful one
+previously.
+The International Contact Dermatitis Research Group has
+laid down the standardization of gradings, methods and
+nomenclature for patch testing.56
+6.3 Timing of patch test readings
+The optimum timing of patch test readings is on day 2, fol-
+lowed by day 4.57 Because some allergens often do not yield
+positive reactions until after day 4, a third reading at day 7 will
+pick up approximately 10% more positive reactions that were
+negative on days 2 and 4.58,59 These include allergens on many
+baseline series such as neomycin and tixocortol pivalate.
+6.4 Reading and relevance of positive reactions
+Patch tests should be read in natural daylight and rated as pos-
+itive, negative or irritant (see Table 6). Those that are positive
+are graded on a scale of +, ++ or +++.60 A number of factors
+may affect this stage. Principal among these are the character-
+istics of the individual allergens and the method of patch test-
+ing.
+Care
+should
+be
+taken
+not
+to
+confuse
+the
+clinical
+appearance of the reaction with interpretation of whether this
+reaction represents an irritant or allergic reaction.61
+Some allergens are more likely to cause irritant reactions
+than others. These reactions may be difﬁcult to interpret and
+are misclassiﬁed easily as positive reactions.62 The metal salts
+for nickel, cobalt and potassium dichromate, fragrances and
+the carba mix often cause irritant reactions and so are the
+most frequently misinterpreted allergens in the baseline series.
+A face-to-face lecture on assessing the morphology of patch-
+test reactions has been shown to improve physicians’ differen-
+tiation between irritant and allergic patch-test reactions.63
+The positivity ratio of an allergen, deﬁned as the percentage
+of + reactions divided by the sum of all positive reactions
+(+, ++ and +++) can help assess false-positivity.64 Allergens
+with a lower number, such as tixocortol pivalate and the
+sesquiterpene lactone mix, are less likely to produce false-
+positive reactions.65
+As indicated above, preprepared patch tests are better stan-
+dardized in terms of the amount of allergens applied and
+therefore are more reproducible but offer only a limited num-
+ber of allergens and can be prohibitively expensive for large-
+scale testing.
+An assessment should be made of the relevance of each pos-
+itive reaction to the patient’s presenting dermatitis. A simple
+and pragmatic way of classifying clinical relevance of positive
+allergic patch-test reactions is: (i) current relevance – the
+patient has been exposed to allergen during the current epi-
+sode of dermatitis and improves when the exposure ceases;
+(ii) past relevance – past episode of dermatitis from exposure
+to allergen; (iii) relevance not known – not sure if exposure
+is current or old; (iv) cross-reaction – the positive test is due
+to cross-reaction with another allergen.
+6.5 Patch-test series
+The usual approach to patch testing is to have a standardized
+baseline screening series, which will pick up approximately
+80% of allergens.66,67 These series vary from country to coun-
+try and should be revised on a regular basis. There are two
+principal baseline series, differing between the U.S.A. and Eur-
+ope. Experienced dermatologists adapt these series by adding
+allergens that may be of importance or relevance locally.
+The British Society for Cutaneous Allergy (BSCA) revises its
+baseline series regularly, removing allergens such as those that
+diminish in relevance and adding important emerging aller-
+gens such as methylisothiazolinone.68
+Supplemental
+series
+are
+also
+recommended;
+these
+are
+important where the baseline series fails to pick up less com-
+mon allergens such as fragrances or rubber chemicals.69 These
+series are outlined in Appendix 1.
+Supplemental series should be used to complement the base-
+line series for particular body sites or types of agents to which
+the patient is exposed (Appendices 1 and 2). The patient’s
+own cosmetics, toiletries and topical medications should be
+tested at nonirritant concentrations. This usually means ‘as is’
+(undiluted product) for leave-on products but requires dilu-
+tions in water for wash-off products. Strong irritants such as
+powder detergents should not be patch-tested. Also, occupa-
+tional products should be tested at nonirritant concentrations.
+The most useful compendium of reported test concentrations
+and recommended vehicles for chemicals, groups of chemicals
+and products is that produced by De Groot.70
+Guidelines for testing materials brought from the workplace
+can be found in the Handbook of Occupational Dermatology.71 How-
+ever, false-positive and false-negative results often occur when
+Table 6 Scoring of patch test reactions according to International
+Contact Dermatitis Research Group recommendations60
+Symbol
+Morphology
+Interpretation
+–
+No reaction
+Negative
+?
+Erythema only, no inﬁltration
+Doubtful reaction
++
+Erythema, inﬁltration, possibly
+discrete papules
+Weak positive
+reaction
+++
+Erythema, inﬁltration, papules,
+vesicles
+Strong positive
+reaction
++++
+Erythema, inﬁltration, conﬂuent
+vesicles
+Extreme positive
+reaction
+ir
+Different types of reactions (soap
+effect, vesicles, blister, necrosis)
+Irritant reaction
+nt
+Not tested
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp317–329
+322 BAD guidelines for contact dermatitis 2017, G.A. Johnston et al.
+Downloaded from https://academic.oup.com/bjd/article/176/2/317/6601881 by guest on 06 May 2026
+
+=== PAGE 7 ===
+patch testing products brought by the patient, and should be
+interpreted with care.
+6.6 Photopatch testing
+Where photoallergic contact dermatitis is suspected, pho-
+topatch testing may be carried out.72 While the exact intervals
+for irradiation and the dose of UVA given vary from centre to
+centre,
+the
+recommended method
+of
+photopatch
+testing
+involves the application of a photoallergen series,73 and any
+suspected patient materials, in duplicate, on either side of the
+upper back. On removal of allergen patches at 2 days,74 one
+side is irradiated with 5 J cm2 UVA and readings are taken
+in parallel after a further 2 days.75
+The incidence of true photoallergy in suspected cases is
+low, at < 5%, although additional readings after day 4
+increase the detection rate.76
+6.7 Open patch testing
+The open patch test is used commonly in cases where poten-
+tial irritants or sensitizers are being assessed. It is also useful
+in the investigation of contact urticaria and protein contact
+dermatitis. The open patch test is usually performed by apply-
+ing the suspected agent ‘as is’ on the skin of the forearm. The
+application site should be assessed regularly for the ﬁrst
+30–60 min and a further reading carried out after 3 or 4 days.
+A repeated open-application test, applying the suspect agent
+on the volar aspect of the forearm, is also useful in the assess-
+ment of cosmetics and personal-care products where irritancy
+or combination effects may interfere with standard patch test-
+ing. Usually, this involves application of the product ‘as is’
+twice daily for 5–10 days, stopping if a reaction develops.
+6.8 Postinvestigation counselling
+Information on the allergen(s), its sources and how to avoid
+it should be given, backed up with written or online informa-
+tion appropriate to the patient’s level of understanding. It is
+important to highlight different names for the same product
+to the patient. Even with such provision, only 17% remem-
+bered the name of the allergen after 10 years, according to
+one study, despite 79% of patients remembering that they
+have had a positive patch test result.77
+7.0 Intervention and treatment (management/
+treatment options)
+The cause of contact dermatitis is frequently multifactorial,78
+and patients may have irritant and/or atopic/endogenous der-
+matitis in addition to allergic contact dermatitis, particularly in
+occupations such as hairdressing.79
+There are three scenarios when patch testing is completed:
+(i) a clear diagnosis is made – including the exclusion of aller-
+gic contact dermatitis, and appropriate advice and treatment
+given; (ii) a possible diagnosis is made – a trial of avoidance
+of allergen is advised with follow-up to conﬁrm/refute the
+hypothesis; (iii) a deﬁnite diagnosis cannot be made – further
+patch
+testing
+may
+be
+required
+and
+further
+information
+obtained from the patient/workplace, to determine the mate-
+rials/series that need to be tested.
+7.1 Occupational contact dermatitis/workplace visit
+Where occupational exposure as a contributing factor to the
+dermatitis is suspected, a workplace visit can: (i) help determine
+which allergens need to be considered; (ii) identify hidden
+allergens after a negative patch test; (iii) give clues as to why a
+patient has failed to respond to avoidance of an allergen or irri-
+tant; (iv) help assess procedures in the work environment and
+identify areas of possible accidental exposure/contamination;
+(v) help prevent further unnecessary exposure to irritants.
+Visits should be organized in conjunction with on-site nurs-
+ing/medical/safety personnel as their presence during the visit
+is often invaluable. Material Safety Data Sheets (MSDS) should
+be requested for all materials to which workers are exposed.
+However, these are only required to list those chemicals that
+have been assigned a Hazard Statement in accordance with
+U.K. regulations. As there are hundreds of chemicals that have
+never been so assigned but can cause contact dermatitis, the
+risk assessment should consider the work activity, including
+all substances hazardous to health, including those used, pro-
+duced and created as waste or as by-products.
+Therefore, it is important to ensure that the normal work-
+ing procedures are active on the day of the visit and that the
+particular process in question is being carried out on the day
+of the visit, in order to determine accurately what workers are
+actually doing in practice rather than in theory. It is important
+to record as accurately as possible the details of the visit: per-
+sonnel
+present,
+sections
+visited,
+processes
+observed
+and
+sources of possible exposure to irritants and allergens.80
+7.2 Avoidance
+Avoidance of allergens and irritants is the cornerstone of the
+management of OSD. Assessment of safety procedures at the
+workplace visit is needed to eliminate sources of exposure and
+remove the allergen/irritant if a suitable substitute is available.
+Personal protective equipment such as clothing or gloves may
+be an adequate solution, although less likely to be effective
+with potent sensitizers and airborne allergens/irritants. It may
+be necessary to move the patient to a different area; changing
+occupation is usually the last resort. However, this may be
+preferable, particularly if severe contact dermatitis is diagnosed
+early in training (e.g. hairdressers).
+7.3 Protection
+Protection of the skin against contact with an allergen most
+commonly involves the use of gloves in hand dermatitis. The
+nature of the allergen or irritants involved will determine
+which type of gloves should be used (Appendix 3), and it is
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp317–329
+BAD guidelines for contact dermatitis 2017, G.A. Johnston et al. 323
+Downloaded from https://academic.oup.com/bjd/article/176/2/317/6601881 by guest on 06 May 2026
+
+=== PAGE 8 ===
+important to check the MSDS to determine the permeation
+time for the glove being used. Latex gloves are penetrated by
+methyl
+methacrylate
+in
+1 min.
+Nitrile
+(5 min),
+butyl
+(15 min) and three-layer PVP gloves (20 min; polyethylene
+outer and inner layer, ethylene vinyl copolymer middle layer)
+give better protection, but none is completely impermeable.81
+It is also important to protect the hands outside the work-
+ing environment. Rubber or polyvinylchloride gloves with a
+cotton lining are recommended for general household tasks.
+There is some evidence that prolonged glove use impairs stra-
+tum corneum barrier function;82 however, the clinical rele-
+vance of this is unclear.83–85 Barrier creams have shown
+promise in vitro,86 and in volunteers in the prevention of occu-
+pational hand dermatitis,87 but their efﬁcacy in the workplace
+is less certain. Workers who use barrier creams have better
+skin-quality scores and reduced transepidermal water loss than
+those who do not,88,89 but this may not translate into a signif-
+icant clinical difference.90
+7.4 Substitution
+Replacement of soaps and detergents with emollients is useful,
+even if they are not the cause of the dermatitis, as they are irri-
+tants which will compound the situation.91,92 It is also often
+possible to substitute different materials both in the workplace
+and outside so that the implicated allergen or irritant can be
+avoided. Typical examples include the use of thiuram-free
+gloves, changing biocides in industrial coolant oils and the use
+of isothiazolinone-free creams/cleansers in those patients in
+whom contact allergy has been identiﬁed to these allergens.
+7.5 Education
+Studies in occupational settings have demonstrated improve-
+ments in established hand dermatitis after comprehensive
+intervention education programmes.93–96 The prevention of
+hand dermatitis with similar programmes has also been
+reported.93,97 Compliance with skin-protection programmes is
+often poor.98 Owing to the very low-quality studies identiﬁed
+and marginal beneﬁts observed (see Supplementary Informa-
+tion), neither education on an individualized basis nor a for-
+mal
+course
+could
+be
+recommended
+over
+the
+other
+in
+preventing hand dermatitis.
+7.6 Treatment of persistent contact dermatitis
+Therapy for contact dermatitis persisting despite allergen/irri-
+tant removal and skin protection largely follows the manage-
+ment of atopic/endogenous dermatitis. Studies support the
+efﬁcacy of topical steroids and topical tacrolimus in the treat-
+ment
+of
+contact
+dermatitis.99–104
+Second-line
+treatment
+includes phototherapy and systemic immunomodulators such
+as methotrexate and mycophenolate mofetil. Psoralen plus
+UVA, ciclosporin and alitretinoin have been demonstrated to
+be useful in chronic hand dermatitis,105–107 and azathioprine
+in chronic actinic dermatitis,108 but none has been assessed
+speciﬁcally in the treatment of contact dermatitis (see Supple-
+mentary Information).
+7.7 Diets
+There are no good-quality studies to support exclusion diets
+in the management of contact dermatitis.109,110
+8.0 Prognosis (follow-up)
+In a Swedish study, only 25% of 555 patients diagnosed with
+occupational contact dermatitis had completely healed over a
+10-year period; 50% still had intermittent symptoms and 25%
+had permanent symptoms. In 40% who changed their occupa-
+tion, the overall prognosis was not improved.111 In an Aus-
+tralian study, 55% of 949 patients still had dermatitis after
+2 years from diagnosis. The prognosis for milder cases of con-
+tact dermatitis depends upon the ease of avoidance.112 The
+long-term prognosis for occupational contact dermatitis is
+often very poor.113
+8.1 Why is the prognosis sometimes so poor?
+Continuation of the exposure – knowingly or unknowingly –
+can occur. Allergens such as chromium, epoxy resin and
+Compositae appear to trigger chronic dermatitis, even after
+avoidance.114,115 Risk factors for a poor prognosis include the
+severity and extent of dermatitis at presentation.116
+8.2 Do educational interventions help?
+Educational programmes may help in secondary prevention and
+outcomes for chronic occupational contact dermatitis.94,96,117
+8.3 Should a job change be recommended?
+If a worker can completely change their job, that is, elimi-
+nate
+their
+exposure
+if
+suffering
+from
+allergic
+contact
+dermatitis or exposure reduction in the case of irritant con-
+tact dermatitis, they have a better chance of the dermatitis
+clearing.113,116
+9.0 Practical and economic considerations
+The management of contact dermatitis includes diagnosis,
+treatment and prevention. There are few studies that look at
+economic considerations.
+9.1 What is the economic burden of suffering from
+contact dermatitis?
+The annual societal cost of patients suffering from occupa-
+tional contact dermatitis is high and comparable with patients
+with severe atopic/endogenous dermatitis or psoriasis.118
+The costs of suffering from contact dermatitis have been
+reported
+as
+amounting
+to
+approximately
+€2300
+for
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp317–329
+324 BAD guidelines for contact dermatitis 2017, G.A. Johnston et al.
+Downloaded from https://academic.oup.com/bjd/article/176/2/317/6601881 by guest on 06 May 2026
+
+=== PAGE 9 ===
+occupational contact dermatitis and €1000 for nonoccupa-
+tional contact dermatitis per patient per annum.119 As contact
+dermatitis is so common, this represents a substantial eco-
+nomic burden.
+9.2 Is it worthwhile managing patients with contact
+dermatitis in a multidisciplinary clinic?
+Integrated care programmes with a multidisciplinary team,
+including a dermatologist specializing in patch testing, a spe-
+cialized nurse and an occupational physician, have been pro-
+posed for patients with moderate-to-severe hand dermatitis
+felt to be work related, and the majority of whom would have
+at least an element of contact dermatitis. These have been
+found to be effective in improving outcomes in the short term
+compared with standard care (patch testing and management
+by a dermatologist).120 However, this difference disappears
+after 12 months. Integrated care programmes cost substantially
+more than standard care (€3613 vs. €1576 per patient).
+10.0 Recommended audit points
+In the last 20 consecutive patients diagnosed with contact der-
+matitis, is there evidence of: (i) the provision of a patient
+information leaﬂet on patch testing, which includes informa-
+tion on potential side-effects; (ii) informed consent; (iii)
+application of the appropriate national or international base-
+line series; (iv) application of all allergens at the correct con-
+centration and in the correct vehicle; (v) prescription of
+further allergens during the tests to clarify doubtful reactions,
+if applicable; (vi) accurate interpretation of the patch-test reac-
+tions as either allergic or irritant, and documentation of rele-
+vance; (vii) recording of any adverse outcomes of patch
+testing and actions taken, if applicable; (viii) a discharge letter
+with a clinical diagnosis and allergen-speciﬁc information,
+where applicable; (ix) collation of local patch-test results into
+a database; (x) benchmarking of local patch test results against
+national collated ﬁgures?
+The audit recommendation of 20 cases per department is to
+reduce variation in the results due to a single patient, and
+allow
+benchmarking
+between
+different
+units.
+However,
+departments unable to achieve this recommendation may
+choose to audit all cases seen in the preceding 12 months.
+11.0 Limitations of the guideline
+This document has been prepared on behalf of the BAD and is
+based on the best data available when the document was pre-
+pared. It is recognized that under certain conditions it may be
+necessary to deviate from the guidelines and that the results of
+future studies may require some of the recommendations
+herein to be changed. Failure to adhere to these guidelines
+should not necessarily be considered negligent, nor should
+adherence to these recommendations constitute a defence
+against a claim of negligence. Limiting the review to English-
+language references was a pragmatic decision, but the authors
+recognize this may exclude some important information pub-
+lished in other languages.
+12.0 Plans for guideline revision
+The proposed revision date for this set of recommendations is
+scheduled for 2022; where necessary, important interim
+changes will be updated on the BAD website.
+Acknowledgments
+We are very grateful to patient representatives Wayne Green-
+halgh and Frank Zagorski, and the British Society for Cutaneous
+Allergy committee for their invaluable input, as well as all those
+who commented on the draft during the consultation period.
+References
+1 Mohd Mustapa MF, Exton LS, Bell HK et al. Update on writing a
+British Association of Dermatologists clinical guideline: the adop-
+tion of the GRADE methodology. Br J Dermatol 2017; 176:44–51.
+2 Brouwers MC, Kho ME, Browman GP et al. AGREE II: advancing
+guideline development, reporting and evaluation in health care.
+CMAJ 2010; 182:E839–42.
+3 GRADE.
+GRADE
+Working
+Group.
+Available
+at:
+http://
+www.gradeworkinggroup.org/ (last accessed 16 March 2016).
+4 Guyatt GH, Oxman AD, Vist GE et al. GRADE: an emerging con-
+sensus on rating quality of evidence and strength of recommen-
+dations. BMJ 2008; 336:924–6.
+5 Barbaud A, Poreaux C, Penven E et al. Occupational protein con-
+tact dermatitis. Eur J Dermatol 2015; 25:527–34.
+6 Lindberg M, Edman B, Fischer T et al. Time trends in Swedish
+patch test data from 1992 to 2000. A multi-centre study based
+on age- and sex-adjusted results of the Swedish standard series.
+Contact Dermatitis 2007; 56:205–10.
+7 Thyssen JP, Linneberg A, Menne T et al. Contact allergy to aller-
+gens of the TRUE-test (panels 1 and 2) has decreased modestly
+in the general population. Br J Dermatol 2009; 161:1124–9.
+8 Diepgen TL, Ofenloch RF, Bruze M et al. Prevalence of contact
+allergy in the general population in different European regions.
+Br J Dermatol 2016; 174:319–29.
+9 Stocks SJ, McNamee R, Turner S et al. Has European Union legis-
+lation to reduce exposure to chromate in cement been effective
+in reducing the incidence of allergic contact dermatitis attributed
+to chromate in the UK? Occup Environ Med 2012; 69:150–2.
+10 Johansen J, Menne T, Christophersen J et al. Changes in the pat-
+tern of sensitization to common contact allergens in Denmark
+between 1985–86 and 1997–98, with a special view to the effect
+of preventive strategies. Br J Dermatol 2000; 142:490–5.
+11 Roto P, Sainio H, Reunala T et al. Addition of ferrous sulfate to
+cement and risk of chromium dermatitis among construction
+workers. Contact Dermatitis 1996; 34:43–50.
+12 TEG. The European Directive restricting the use of Nickel. Avail-
+able
+at:
+http://www.teg.co.uk/nickel/94-27-EC.htm
+(last
+accessed 14 April 2016).
+13 TEG. The European Directive update restricting the use of Nickel.
+Available at: http://www.teg.co.uk/nickel/2004-96-EC.htm (last
+accessed 14 April 2016).
+14 Johnston GA. The rise in prevalence of contact allergy to
+methylisothiazolinone in the British Isles. Contact Dermatitis 2014;
+70:238–40.
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp317–329
+BAD guidelines for contact dermatitis 2017, G.A. Johnston et al. 325
+Downloaded from https://academic.oup.com/bjd/article/176/2/317/6601881 by guest on 06 May 2026
+
+=== PAGE 10 ===
+15 Meyer JD, Chen Y, Holt DL et al. Occupational contact dermatitis
+in the UK: a surveillance report from EPIDERM and OPRA. Occup
+Med (Lond) 2000; 50:265–73.
+16 Turner S, McNamee R, Agius R et al. Evaluating interventions
+aimed at reducing occupational exposure to latex and rubber
+glove allergens. Occup Environ Med 2012; 69:925–31.
+17 Warburton KL, Urwin R, Carder M et al. UK rates of occupational
+skin disease attributed to rubber accelerators, 1996–2012. Contact
+Dermatitis 2015; 72:305–11.
+18 Admani S, Jacob SE. Allergic contact dermatitis in children:
+review of the past decade. Curr Allergy Asthma Rep 2014; 14:421.
+19 Lagrelius M, Wahlgren CF, Matura M et al. High prevalence of
+contact allergy in adolescence: results from the population-based
+BAMSE birth cohort. Contact Dermatitis 2016; 74:44–51.
+20 Cronin E. Clinical prediction of patch test results. Trans St. Johns
+Hosp Dermatol Soc 1972; 58:153–62.
+21 Podmore P, Burrows D, Bingham EA. Prediction of patch test
+results. Contact Dermatitis 1984; 11:283–4.
+22 Clayton TH, Wilkinson SM, Rawcliffe C et al. Allergic contact der-
+matitis in children: should pattern of dermatitis determine refer-
+ral? A retrospective study of 500 children tested between 1995
+and 2004 in one U.K. centre. Br J Dermatol 2006; 154:114–17.
+23 Agner T, Jungersted JM, Coenraads PJ et al. Comparison of four
+methods for assessment of severity of hand eczema. Contact Der-
+matitis 2013; 69:107–11.
+24 van der Valk PG, van Gils RF, Boot CR et al. A simple tool with
+which to study the course of chronic hand eczema in clinical
+practice: a reduced-item score. Contact Dermatitis 2013; 69:112–17.
+25 Bhushan M, Beck MH. An audit to identify the optimum referral
+rate to a contact dermatitis investigation unit. Br J Dermatol 1999;
+141:570–2.
+26 Statham B, Mughal A, Bodger O. The relationship between the pro-
+portion of the population tested annually and the rate of patients
+with positive patch test reactions. Contact Dermatitis 2011; 64:54–7.
+27 Goulden V, Wilkinson SM. Evaluation of a contact allergy clinic.
+Clin Exp Dermatol 2000; 25:67–70.
+28 Spornraft-Ragaller P, Schnuch A, Uter W. Extreme patch test reac-
+tivity to p-phenylenediamine but not to other allergens in chil-
+dren. Contact Dermatitis 2011; 65:220–6.
+29 Paulsen E, Andersen KE. Screening for Compositae sensitization with
+pure allergens: implications of molecular structure, strength of
+reaction, and time of testing. Contact Dermatitis 2011; 64:96–103.
+30 Ponten A, Goossens A, Bruze M. Recommendation to include
+formaldehyde 2.0% aqua in the European baseline patch test ser-
+ies. Contact Dermatitis 2013; 69:372–4.
+31 Ryberg K, Goossens A, Isaksson M et al. Patch testing with a tex-
+tile dye mix and its constituents in a baseline series. Dermatitis
+2010; 21:49–56.
+32 Dawe SA, White IR, Rycroft RJ et al. Active sensitization to para-
+phenylenediamine and its relevance: a 10-year review. Contact Der-
+matitis 2004; 51:96–7.
+33 Bruynzeel DP, Maibach HI. Excited skin syndrome (angry back).
+Arch Dermatol 1986; 122:323–8.
+34 Sukanto H, Nater JP, Bleumink E. Inﬂuence of topically applied
+corticosteroids on patch test reactions. Contact Dermatitis 1981;
+7:180–5.
+35 Clark RA, Rietschel RL. 0.1% triamcinolone acetonide ointment
+and patch test responses. Arch Dermatol 1982; 118:163–5.
+36 Green C. The effect of topically applied corticosteroid on irritant
+and allergic patch test reactions. Contact Dermatitis 1996; 35:331–3.
+37 Anveden I, Lindberg M, Andersen KE et al. Oral prednisone sup-
+presses allergic but not irritant patch test reactions in individuals
+hypersensitive to nickel. Contact Dermatitis 2004; 50:298–303.
+38 Fowler JF Jr, Maibach HI, Zirwas M et al. Effects of immunomod-
+ulatory agents on patch testing: expert opinion 2012. Dermatitis
+2012; 23:301–3.
+39 Wee JS, White JM, McFadden JP et al. Patch testing in patients
+treated with systemic immunosuppression and cytokine inhibi-
+tors. Contact Dermatitis 2010; 62:165–9.
+40 Sjovall P, Christensen OB. Local and systemic effect of ultraviolet
+irradiation (UVB and UVA) on human allergic contact dermatitis.
+Acta Dermatovenereol 1986; 66:290–4.
+41 Nethercott JR, Holness DL. The positive predictive value of patch
+tests in the evaluation of patients with suspected contact dermati-
+tis. Immunol Allergy Clin North Am 1989; 9:549–54.
+42 Frick-Engfeldt M, Gruvberger B, Isaksson M et al. Comparison of
+three different techniques for application of water solutions to
+Finn Chambers(R). Contact Dermatitis 2010; 63:284–8.
+43 Hamann D, Hamann CR, Hamann C. A contemporary ﬁscher-
+maibach investigation: variations in patch test delivery systems
+and implications for standardization. Dermatitis 2013; 24:302–12.
+44 Mose KF, Andersen KE, Christensen LP. Stability of selected vola-
+tile contact allergens in different patch test chambers under dif-
+ferent storage conditions. Contact Dermatitis 2012; 66:172–9.
+45 Siegel PD, Fowler JF, Law BF et al. Concentrations and stability of
+methyl methacrylate, glutaraldehyde, formaldehyde and nickel
+sulfate in commercial patch test allergen preparations. Contact Der-
+matitis 2014; 70:309–15.
+46 Joy NM, Rice KR, Atwater AR. Stability of patch test allergens.
+Dermatitis 2013; 24:227–36.
+47 McDonald BS, Buckley DA. Patch testing practice in the U.K. Br J
+Dermatol 2013; 169:45.
+48 Lachapelle JM, Bruynzeel DP, Ducombs G et al. European multi-
+center study of the TRUE Test. Contact Dermatitis 1988; 19:91–7.
+49 Fischer T, Maibach HI. Easier patch testing with TRUE Test. J Am
+Acad Dermatol 1989; 20:447–53.
+50 TRUE Test Study Group. Comparative multicenter studies with
+TRUE Test and Finn Chambers in eight Swedish hospitals. J Am
+Acad Dermatol 1989; 21:846–9.
+51 Wilkinson JD, Bruynzeel DP, Ducombs G et al. European multi-
+center study of TRUE Test, Panel 2. Contact Dermatitis 1990;
+22:218–25.
+52 Lachapelle JM, Antoine JL. Problems raised by the simultaneous
+reproducibility of positive allergic patch test reactions in man. J
+Am Acad Dermatol 1989; 21:850–4.
+53 Brasch J, Szliska C, Grabbe J. More positive patch test reactions
+with larger test chambers? Results from a study group of the Ger-
+man Contact Dermatitis Research Group (DKG). Contact Dermatitis
+1997; 37:118–20.
+54 Doumit J, Pratt M. Comparative study of IQ-ultra and Finn
+Chambers test methodologies in detecting 10 common standard
+allergens that cause allergic contact dermatitis. J Cutan Med Surg
+2012; 16:18–22.
+55 Gefeller O, Pfahlberg A, Geier J et al. The association between size
+of test chamber and patch test reaction: a statistical reanalysis.
+Contact Dermatitis 1999; 40:14–18.
+56 Wilkinson DS, Fregert S, Magnusson B et al. Terminology of con-
+tact dermatitis. Acta Dermatovenereol 1970; 50:287–92.
+57 Shehade SA, Beck MH, Hillier VF. Epidemiological survey of stan-
+dard series patch test results and observations on day 2 and day 4
+readings. Contact Dermatitis 1991; 24:119–22.
+58 Torp Madsen J, Andersen KE. Outcome of a second patch test
+reading of TRUE Tests(R) on D6/7. Contact Dermatitis 2013;
+68:94–7.
+59 Jonker MJ, Bruynzeel DP. The outcome of an additional patch-test
+reading on days 6 or 7. Contact Dermatitis 2000; 42:330–5.
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp317–329
+326 BAD guidelines for contact dermatitis 2017, G.A. Johnston et al.
+Downloaded from https://academic.oup.com/bjd/article/176/2/317/6601881 by guest on 06 May 2026
+
+=== PAGE 11 ===
+60 Fregert S. Manual of Contact Dermatitis on Behalf of the International Contact
+Dermatitis Research Group and the North American Contact Dermatitis Group,
+2nd edn. Copenhagen: Munksgaard Publishers, 1981.
+61 Johnston GA. Standardization of patch tests and the doctors who
+read them. Br J Dermatol 2009; 161:493–5.
+62 Uter W, Frosch PJ, Becker D et al. Are we biased when reading a
+doubtful patch test reaction to a ‘clear-cut’ allergen such as the
+thiuram mix? Contact Dermatitis 2009; 60:234–5.
+63 Svedman C, Isaksson M, Bjork J et al. ‘Calibration’ of our patch
+test
+reading
+technique
+is
+necessary.
+Contact
+Dermatitis
+2012;
+66:180–7.
+64 Geier J, Uter W, Lessmann H et al. The positivity ratio – another
+parameter to assess the diagnostic quality of a patch test prepara-
+tion. Contact Dermatitis 2003; 48:280–2.
+65 Warshaw EM, Nelsen DD, Sasseville D et al. Positivity ratio and
+reaction index: patch-test quality-control metrics applied to the
+North American Contact Dermatitis group database. Dermatitis
+2010; 21:91–7.
+66 Sherertz EF, Swartz SM. Is the screening patch test tray still worth
+using? J Am Acad Dermatol 1993; 29:1057–8.
+67 Menne T, Dooms-Goossens A, Wahlberg JE et al. How large a
+proportion of contact sensitivities are diagnosed with the Euro-
+pean standard series? Contact Dermatitis 1992; 26:201–2.
+68 Bruze M, Engfeldt M, Goncalo M et al. Recommendation to
+include methylisothiazolinone in the European baseline patch test
+series – on behalf of the European Society of Contact Dermatitis
+and the European Environmental and Contact Dermatitis Research
+Group. Contact Dermatitis 2013; 69:26–370.
+69 Mann J, McFadden JP, White JM et al. Baseline series fragrance
+markers fail to predict contact allergy. Contact Dermatitis 2014;
+70:276–81.
+70 de Groot AC. Patch Testing. Test Concentrations and Vehicles for 3700
+Chemicals, 2nd edn. Amsterdam: Elsevier, 1994.
+71 Jolanki R, Estlander T, Alanko K et al. Patch testing with a
+patient’s own materials handled at work. In: Handbook of Occupational
+Dermatology (Kanerva L, Elsner P, Maibach MD, Howard I, eds),
+Berlin: Springer-Verlag, 2000, 375–83.
+72 British Photodermatology Group. Photopatch testing – methods
+and indications. Br J Dermatol 1997; 136:371–6.
+73 Goncalo M, Ferguson J, Bonevalle A et al. Photopatch testing: rec-
+ommendations for a European photopatch test baseline series.
+Contact Dermatitis 2013; 68:239–43.
+74 Batchelor RJ, Wilkinson SM. Photopatch testing – a retrospective
+review using the 1 day and 2 day irradiation protocols. Contact
+Dermatitis 2006; 54:75–8.
+75 European Multicentre Photopatch Test Study Taskforce. A Euro-
+pean multicentre photopatch test study. Br J Dermtol 2012;
+166:1002–9.
+76 Bryden AM, Moseley H, Ibbotson SH et al. Photopatch testing of
+1155 patients: results of the U.K. multicentre photopatch study
+group. Br J Dermtol 2006; 155:737–47.
+77 Jamil WN, Erikssohn I, Lindberg M. How well is the outcome of
+patch testing remembered by the patients? A 10-year follow-up of
+testing with the Swedish baseline series at the Department of Der-
+matology in Orebro, Sweden. Contact Dermatitis 2012; 66:215–20.
+78 Agner T, Aalto-Korte K, Andersen KE et al. Classiﬁcation of hand
+eczema. J Eur Acad Dermatol Venereol 2015; 29:2417–22.
+79 Lyons G, Roberts H, Palmer A et al. Hairdressers presenting to an
+occupational dermatology clinic in Melbourne, Australia. Contact
+Dermatitis 2013; 68:300–6.
+80 English JSC. Occupational dermatoses. In: Rook’s Textbook in Derma-
+tology (Burns DA, Breathnach SM, Grifﬁths C, Cox NH, eds), 7th
+edn. Oxford: Blackwell Publishing, 2004; 21.8–9.
+81 Darre E, Vedel P, Jensen JS. Skin protection against methyl-
+methacrylate. Acta Orthop Scand 1987; 58:236–8.
+82 Ramsing DW, Agner T. Effect of glove occlusion on human skin
+(II). Long-term experimental exposure. Contact Dermatitis 1996;
+34:258–62.
+83 Boyle DK, Forsyth A, Bagg J et al. An investigation of the effect of
+prolonged glove wearing on the hand skin health of dental
+healthcare workers. J Dentistry 2002; 30:233–41.
+84 Wetzky U, Bock M, Wulfhorst B et al. Short- and long-term
+effects of single and repetitive glove occlusion on the epidermal
+barrier. Arch Dermatol Res 2009; 301:595–602.
+85 Weistenh€ofer W, Wacker M, Bernet F et al. Occlusive gloves and skin
+conditions: is there a problem? Results of a cross-sectional study in a
+semiconductor company. Br J Dermatol 2015; 172:1058–65.
+86 Schliemann S, Petri M, Elsner P. Preventing irritant contact der-
+matitis with protective creams: inﬂuence of the application dose.
+Contact Dermatitis 2014; 70:19–26.
+87 Williams C, Wilkinson SM, McShane P et al. A double-blind, ran-
+domized study to assess the effectiveness of different moisturizers
+in preventing dermatitis induced by hand washing to simulate
+healthcare use. Br J Dermatol 2010; 162:1088–92.
+88 K€utting B, Baumeister T, Weistenh€ofer W et al. Effectiveness of
+skin protection measures in prevention of occupational hand
+eczema: results of a prospective randomized controlled trial over
+a follow-up period of 1 year. Br J Dermtol 2010; 162:362–70.
+89 Winker R, Salameh B, Stolkovich S et al. Effectiveness of skin pro-
+tection creams in the prevention of occupational dermatitis:
+results of a randomized, controlled trial. Int Arch Occup Environ
+Health 2009; 82:653–62.
+90 Bauer A, Schmitt J, Bennett C et al. Interventions for preventing
+occupational irritant hand dermatitis. Cochrane Database Syst Rev
+2010; (6):CD004414.
+91 Lauharanta J, Ojaj€arvi J, Sarna S et al. Prevention of dryness and
+eczema of the hands of hospital staff by emulsion cleansing
+instead of washing with soap. J Hosp Infect 1991; 17:207–15.
+92 Halkier-Sørensen L, Thestrup-Pedersen K. The efﬁcacy of a mois-
+turizer (Locobase) among cleaners and kitchen assistants during
+everyday exposure to water and detergents. Contact Dermatitis 1993;
+29:266–71.
+93 van Gils RF, Boot CR, van Gils PF et al. Effectiveness of prevention
+programmes for hand dermatitis: a systematic review of the liter-
+ature. Contact Dermatitis 2011; 64:63–72.
+94 van Gils RF, Boot CR, Knol DL et al. The effectiveness of inte-
+grated care for patients with hand eczema: results of a random-
+ized, controlled trial. Contact Dermatitis 2012; 66:197–204.
+95 Wilke A, Gediga G, Schlesinger T et al. Sustainability of interdisci-
+plinary secondary prevention in patients with occupational hand
+eczema: a
+5-year follow-up survey.
+Contact Dermatitis 2012;
+67:208–16.
+96 Ibler KS, Jemec GB, Diepgen TL et al. Skin care education and
+individual counselling versus treatment as usual in healthcare
+workers with hand eczema: randomised clinical trial. BMJ 2012;
+345:e7822.
+97 Bregnhoj A, Menne T, Johansen JD et al. Prevention of hand
+eczema among Danish hairdressing apprentices: an intervention
+study. Occup Environ Med 2012; 69:310–16.
+98 K€utting B, Weistenh€ofer W, Baumeister T et al. Current accep-
+tance and implementation of preventive strategies for occupa-
+tional hand eczema in 1355 metalworkers in Germany. Br J
+Dermtol 2009; 161:390–6.
+99 Hachem JP, De Paepe K, Vanpee E et al. Efﬁcacy of topical corti-
+costeroids in nickel-induced contact allergy. Clin Exp Dermatol
+2002; 27:47–50.
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp317–329
+BAD guidelines for contact dermatitis 2017, G.A. Johnston et al. 327
+Downloaded from https://academic.oup.com/bjd/article/176/2/317/6601881 by guest on 06 May 2026
+
+=== PAGE 12 ===
+100 Hachem JP, De Paepe K, Vanpee E et al. Combination therapy
+improves the recovery of the skin barrier function: an experi-
+mental model using a contact allergy patch test combined with
+TEWL measurements. Dermatology 2001; 202:314–19.
+101 Parneix-Spake A, Goustas P, Green R. Eumovate (clobetasone
+butyrate) 0.05% cream with its moisturizing emollient base has
+better healing properties than hydrocortisone 1% cream: a study
+in
+nickel-induced
+contact
+dermatitis.
+J
+Dermatol
+Treat
+2001;
+12:191–7.
+102 Queille-Roussel C, Duteil L, Padilla JM et al. Objective assessment
+of topical anti-inﬂammatory drug activity on experimentally
+induced nickel contact dermatitis: comparison between visual
+scoring, colorimetry, laser Doppler velocimetry and transepider-
+mal water loss. Skin Pharmacol 1990; 3:248–55.
+103 Vernon HJ, Olsen EA. A controlled trial of clobetasol propionate
+ointment 0.05% in the treatment of experimentally induced Rhus
+dermatitis. J Am Acad Dermatol 1990; 23:829–32.
+104 Belsito D, Wilson DC, Warshaw E et al. A prospective randomized
+clinical trial of 0.1% tacrolimus ointment in a model of chronic
+allergic contact dermatitis. J Am Acad Dermatol 2006; 55:40–6.
+105 Rosen K, Mobacken H, Swanbeck G. Chronic eczematous der-
+matitis of the hands: a comparison of PUVA and UVB treatment.
+Acta Dermatovenereol 1987; 67:48–54.
+106 Granlund H, Erkko P, Reitamo S. Comparison of the inﬂuence of
+cyclosporine and topical betamethasone-17,21-dipropionate treat-
+ment on quality of life in chronic hand eczema. Acta Dermatovenereol
+1997; 77:54–8.
+107 Ruzicka T, Lynde CW, Jemec GB et al. Efﬁcacy and safety of oral
+alitretinoin (9-cis retinoic acid) in patients with severe chronic
+hand eczema refractory to topical corticosteroids: results of a ran-
+domized, double-blind, placebo-controlled, multicentre trial. Br J
+Dermatol 2008; 158:808–17.
+108 Murphy GM, Maurice PD, Norris PG et al. Azathioprine treatment
+in chronic actinic dermatitis: a double-blind controlled trial with
+monitoring of exposure to ultraviolet radiation. Br J Dermatol
+1989; 121:639–46.
+109 Veien NK, Hattel T, Laurberg G. Low nickel diet: an open,
+prospective trial. J Am Acad Dermatol 1993; 29:1002–7.
+110 Antico A, Soana R. Chronic allergic-like dermatopathies in nickel-
+sensitive patients. Results of dietary restrictions and challenge
+with nickel salts. Allergy Asthma Proc 1999; 20:235–42.
+111 Fregert S. Occupational dermatitis in a 10-year material. Contact
+Dermatitis 1975; 1:96–107.
+112 Wall LM, Gebauer KA. A follow-up study of occupational skin
+disease in Western Australia. Contact Dermatitis 1991; 24:241–3.
+113 Malkonen T, Alanko K, Jolanki R et al. Long-term follow-up
+study
+of
+occupational
+hand
+eczema.
+Br
+J
+Dermatol
+2010;
+163:999–1006.
+114 Bauer A, Geier J, Mahler V et al. [Contact allergies in the German
+workforce: data of the IVDK network from 2003–2013]. Hautarzt
+2015; 66:652–64 [in German].
+115 Cahill J, Keegel T, Dharmage S et al. Prognosis of contact dermati-
+tis in epoxy resin workers. Contact Dermatitis 2005; 52:147–53.
+116 Petersen AH, Johansen JD, Hald M. Hand eczema-prognosis and
+consequences: a 7-year follow-up study. Br J Dermatol 2014;
+171:1428–33.
+117 Apfelbacher CJ, Soder S, Diepgen TL et al. The impact of measures
+for secondary individual prevention of work-related skin diseases
+in health care workers: 1-year follow-up study. Contact Dermatitis
+2009; 60:144–9.
+118 Diepgen TL, Scheidt R, Weisshaar E et al. Cost of illness from
+occupational hand eczema in Germany. Contact Dermatitis 2013;
+69:99–106.
+119 Saetterstrøm B, Olsen J, Johansen JD. Cost-of-illness of patients
+with contact dermatitis in Denmark. Contact Dermatitis 2014;
+71:154–61.
+120 van Gils RF, Bosmans JE, Boot CR et al. Economic evaluation of
+an integrated care programme for patients with hand dermatitis.
+Contact Dermatitis 2013; 69:144–52.
+121 National Institute for Health and Care Excellence. Alitretinoin for
+the treatment of severe chronic hand eczema. Available at:
+https://www.nice.org.uk/guidance/ta177 (last accessed 27 April
+2016).
+Appendix 1
+British Society for Cutaneous Allergy-recommended baseline series
+Potassium dichromate
+050%
+pet.
+Neomycin sulfate
+2000%
+pet.
+Thiuram mix
+100%
+pet.
+p-Phenylenediamine
+100%
+pet.
+Cobalt chloride
+100%
+pet.
+Caine Mix III
+1000%
+pet.
+Formaldehyde
+200%
+aq.
+Colophony
+2000%
+pet.
+Quinoline mix
+600%
+pet
+Myroxylon pereirae (Balsam of Peru)
+2500%
+pet.
+N-Isopropyl-N-phenyl-4-phenylenediamine
+010%
+pet.
+Lanolin alcohol
+3000%
+pet.
+Mercapto mix
+200%
+pet.
+Epoxy resin
+100%
+pet.
+Parabens mix
+1600%
+pet.
+4-tert-Butylphenol formaldehyde resin
+100%
+pet.
+Fragrance mix I
+800%
+pet.
+Quaternium 15 (Dowicil 200)
+100%
+pet.
+Nickel sulfate
+500%
+pet.
+Cl + Me-isothiazolinone
+002%
+aq.
+Mercaptobenzothiazole
+200%
+pet.
+Amerchol L101
+5000%
+pet.
+Sesquiterpene lactone mix
+010%
+pet.
+p-Chloro-m-Cresol
+100%
+pet.
+2-Bromo-2-nitropropane-1,3-diol (Bronopol)
+050%
+pet.
+Cetearyl alcohol
+2000%
+pet.
+Sodium fusidate
+200%
+pet.
+Tixocortol-21-pivalate
+100%
+pet.
+Budesonide
+010%
+pet.
+Imidazolidinyl urea (Germal115)
+200%
+pet.
+Diazolidinyl urea (Germal 11)
+200%
+pet.
+Methyldibromoglutaronitrile
+030%
+pet.
+Ethylenediamine dihydrochloride
+100%
+pet.
+4-Chloro-3,5-xylenol (PCMX)
+050%
+pet.
+Carba mix
+300%
+pet.
+Disperse Blue Mix 106/124
+100%
+pet.
+Fragrance mix II
+1400%
+pet.
+Hydroxyisohexyl cyclohexene
+carboxaldehyde (Lyral)
+500%
+pet.
+Compositae Mix (Chemotechnique)
+250%
+pet.
+Methylisothiazolinone
+020%
+aq.
+Sodium metabisulﬁte
+100%
+pet.
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp317–329
+328 BAD guidelines for contact dermatitis 2017, G.A. Johnston et al.
+Downloaded from https://academic.oup.com/bjd/article/176/2/317/6601881 by guest on 06 May 2026
+
+=== PAGE 13 ===
+Appendix 2
+Commercially available additional patch test series
+Trolab
+Chemotechnique Diagnostics
+Antimicrobial, preservative and
+antioxidant
+Bakery
+Cosmetics
+Corticosteroid
+Dental materials
+Cosmetics
+Hairdressing
+Dental screening
+Medicament (including
+corticosteroids, antibiotics, local
+anaesthetics and ophthalmics)
+Epoxy
+Metal compounds
+Fragrance
+Metalworking/technical oils
+Hairdressing
+Perfume and ﬂavours
+Isocyanate
+Photoallergens
+Leg ulcer
+Photographic chemicals
+Medicament
+Plant
+Adhesives, dental and other
+(meth)acrylate
+Plastics and glues
+Nails – artiﬁcial (meth)acrylate
+Rubber chemicals
+Printing (meth)acrylate
+Sunscreen agents
+Oil and cooling ﬂuid
+Textile and leather dyes
+Photographic chemicals
+Vehicles and emulsiﬁers
+Plant
+Miscellaneous
+Plastics and glues
+Rubber additives
+Scandinavian photopatch test
+Shoe
+Sunscreen
+Textile colours and ﬁnish
+Various allergens
+Appendix 3
+A guide to which gloves will give some degree of protection for
+speciﬁc types of hazard
+Hazard
+Type of glove
+Microorganisms
+NRL, thermoplastic elastomer
+Disinfectants
+NRL, PVC, PE, EMA
+Pharmaceuticals
+NRL (permeability time very short)
+Composite materials
+(e.g. acrylates)
+Nitrile, 4H glove
+Solvents
+PE, PVC, nitrile, NRL, neoprene,
+butyl rubber, Viton, 4H glove
+Corrosives
+NRL, PE, PVC, neoprene, butyl rubber,
+Viton, 4H glove
+Detergents
+NRL, EMA, PE, neoprene, PVC, nitrile
+(if addition of organic solvents)
+Machining oils
+NRL, PVC, nitrile, neoprene, 4H glove
+NRL, natural rubber latex; PVC, polyvinylchloride; PE, polyethy-
+lene; EMA, ethylene methylmethacrylate.
+Supporting Information
+Additional Supporting Information may be found in the online
+version of this article at the publisher’s website:
+Study selection Preferred Reporting Items for Systematic
+Reviews and Meta-Analyses (PRISMA) ﬂow diagram, summary
+of ﬁndings with forest plots, Grading of Recommendations
+Assessment, Development and Evaluation (GRADE) evidence
+proﬁles indicating the quality of evidence, Linking the Evi-
+dence to the Recommendations (LETR), list of excluded stud-
+ies and search strategy.
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp317–329
+BAD guidelines for contact dermatitis 2017, G.A. Johnston et al. 329
+Downloaded from https://academic.oup.com/bjd/article/176/2/317/6601881 by guest on 06 May 2026
+
+=== PAGE 14 ===
+of patients  
+with PsO achieved  
+PASI 75 at Week 4 
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+75.9% 
+(n=265/349)
+of patients 
+with PsO achieved 
+PASI 100 at 5 years3
+76.9% 
+(N=52)† 
+of biologic-naïve  
+and TNFi-IR PsA patients 
+achieved ACR 50 at  
+Week 104/100, respectively‡1,4–6
+of patients  
+with PsO achieved  
+PASI 100 at Week 16
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+68.2%
+(n=238/349)
+and
+50.6% 
+(n=135/267) 
+51.5% 
+(n=222/431)
+GB-BK-2500315 | July 2025
+UCB Biopharma SRL, 2025. All rights reserved.
+This promotional material has been created and funded by UCB Pharma Ltd and 
+is intended for healthcare professionals in the UK.
+BIMZELX is indicated for the treatment of: moderate to severe plaque PsO in adults 
+who are candidates for systemic therapy; active PsA, alone or in combination 
+with methotrexate, in adults who have had an inadequate response, or who have 
+been intolerant, to one or more DMARDs; active nr-axSpA with objective signs of 
+inflammation as indicated by elevated CRP and/or MRI, in adults who have responded 
+inadequately, or are intolerant, to NSAIDs; active AS in adults who have responded 
+inadequately or are intolerant to conventional therapy; and active moderate to severe 
+HS (acne inversa) in adults with an inadequate response to conventional systemic HS 
+therapy.4
+Prescribing information for United Kingdom click here.  
+Please refer to the SmPC for further information. 
+These data are from different clinical trials and cannot be directly compared.
+Co-primary endpoints PASI 90 and IGA 0/1 at Week 16 were met.**Secondary endpoints. †N= mNRI, missing data 
+were imputed with mNRI (patients with missing data following treatment discontinuation due to lack of efficacy 
+or a TRAE were counted as non-responders; multiple imputation methodology was used for other missing data). 
+‡43.9% (n=189/431), and 43.4% (n=116/267) of biologic-naïve and TNFi-IR PsA patients achieved the primary 
+endpoint of ACR 50 at Week 16 in BE OPTIMAL and BE COMPLETE, respectively (vs 10.0% [n=28/281] and 6.8% 
+[n=9/133] placebo, p<0.0001); 54.5% (n=235/431) and 51.7% (n=138/267) maintained it at Week 52 (NRI).4–6 ​
+ACR 50, ≥50% response in the American College of Rheumatology criteria; AS, ankylosing spondylitis; CRP, 
+C-reactive protein; DMARD, disease-modifying antirheumatic drug; HS, hidradenitis suppurativa; IGA, Investigator’s 
+Global Assessment; (m)NRI, (modified) non-responder imputation; MRI, magnetic resonance imaging; nr-
+axSpA, non-radiographic axial spondyloarthritis; NSAID, non-steroidal anti-inflammatory drug; PASI 75/90/100, 
+≥75/90/100% improvement from baseline in Psoriasis Area and Severity Index; PsA, psoriatic arthritis; PsD, psoriatic 
+disease; PsO, psoriasis; TNFi-IR, tumour necrosis factor-α inhibitor – inadequate responder; TRAE, treatment-
+related adverse event.
+References: 1. Gordon KB, et al. Lancet. 2021;397(10273):475–486. 2. Blauvelt. 2025. AAD Presentation 62275. 3. 
+Mease PJ, et al. Rheumatol Ther. 2024;11(5):1363–1382. 4. BIMZELX SmPC. 5. Ritchlin CT, et al. Ann Rheum Dis. 
+2023;82(11):1404–1414. 6. Coates LC, et al. RMD Open. 2024;10(1):e003855. 7. Strober B, et al. AAD 2024;oral 
+presentation.​
+This medicine is subject to additional monitoring. This will allow quick 
+identification of new safety information. Adverse events should be reported. 
+Reporting forms and information can be found at www.yellowcard.mhra.gov.uk for 
+the UK. Adverse events should also be reported to UCB Pharma Ltd at  
+UCBCares.UK@UCB.com or 0800 2793177 for UK.
+NO COMPROMISE, 
+JUST CLEARANCE
+BIMZELX was well tolerated, the most frequently reported adverse reactions were: upper respiratory tract infections 
+and oral candidiasis. Other common reported adverse reactions include tinea infections, ear infections, herpes simplex 
+infections, oropharyngeal candidiasis, gastroenteritis, folliculitis, headache, rash, dermatitis, eczema, acne, injection site 
+reactions, fatigue, and vulvovaginal mycotic infection (including vulvovaginal candidiasis).4
+Bimzelx®     (bimekizumab) offers 
+the opportunity for complete, fast,
+and lasting skin clearance and 
+proven PsA efficacy 1–7

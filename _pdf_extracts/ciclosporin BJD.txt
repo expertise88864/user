@@ -1,0 +1,3566 @@
+=== PAGE 1 ===
+GUIDELINE
+BJD
+British Journal of Dermatology
+British Association of Dermatologists guidelines for the
+safe and effective prescribing of oral ciclosporin in
+dermatology 2018
+J. Berth-Jones iD ,1 L.S. Exton,2 E. Ladoyanni,3 M.F. Mohd Mustapa,2 V.M. Tebbs,4 P.D. Yesudian5 and
+N.J. Levell iD 6
+1Department of Dermatology, University Hospitals Coventry and Warwickshire NHS Trust, Coventry, CV2 2DX, U.K.
+2British Association of Dermatologists, Willan House, London, W1T 5HQ, U.K.
+3Department of Dermatology, Dudley Group NHS Foundation Trust, Dudley, DY1 2HQ, U.K.
+4formerly of George Eliot Hospital, College Street, Nuneaton, CV10 7DJ, U.K.
+5Wrexham Maelor Hospital, Croesnewydd Road, Wrexham, LL13 7TD, U.K.
+6Dermatology Department, Norfolk and Norwich University Hospital, Colney Lane, Norwich, NR4 7UY, U.K.
+Correspondence
+John Berth-Jones.
+Accepted for publication
+20 December 2018
+Funding sources
+None.
+Conﬂicts of interest
+E.L. has been a principal investigator for National Institute for Health Research
+(NIHR)-approved clinical trials sponsored by Novartis, Leo Pharma, Skin Analytics
+(nonspeciﬁc). P.D.Y. has been an invited speaker Novartis, Leo Pharma and AbbVie
+(nonspeciﬁc). V.M.T. has been an independent medical reviewer of cases of suspected
+adverse reactions to ciclosporin. N.J.L. is President and Trustee of the British Association
+of Dermatologists, National Specialty Lead (Dermatology) NIR, National Lead (Derma-
+tology) Getting It Right First Time NHS Improvement, an Executive Member and Trus-
+tee of UK Dermatology Clinical Trials Network, and a trustee of the British Skin
+Foundation (nonspeciﬁc).
+Produced in 2018 by the British Association of Dermatologists
+This is a new set of guidelines prepared for the British Association of Dermatologists
+(BAD) Clinical Standards Unit, which includes the Therapy & Guidelines Subcommit-
+tee. Members of the Clinical Standards Unit that have been involved are P.M. McHenry
+(Chairman Therapy & Guidelines), T.A. Leslie, S. Wakelin, R.Y.P. Hunasehally, M.
+Cork, G.A. Johnston, N. Chiang, F.S. Worsnop, A. Salim, D. Buckley, G. Petrof, N.
+Callachand (British National Formulary), T. Flavell (British Dermatological Nursing
+Group), A.A. Salad (BAD Clinical Standards Administrator), L.S. Exton (BAD Guide-
+line Research Fellow) and M.F. Mohd Mustapa (BAD Clinical Standards Manager).
+DOI 10.1111/bjd.17587
+NICE has accredited the process used by the British Association of
+Dermatologists to produce clinical guidelines. The renewed accredita-
+tion is valid until 31 May 2021 and applies to guidance produced
+using the process described in Updated guidance for writing a Bri-
+tish Association of Dermatologists clinical guidance – the adoption
+of the GRADE methodology 2016. The original accreditation term
+began on 12 May 2010. More information on accreditation can
+be viewed at www.nice.org.uk/accreditation
+1.0 Purpose and scope
+The overall objective of the guideline is to provide up-to-date,
+evidence-based recommendations for the safe and effective use
+of oral ciclosporin in the ﬁeld of dermatology. The document
+aims to
+•
+Offer an appraisal of all relevant literature since 1970
+focusing on any key developments
+•
+Address important, practical clinical questions relating to
+the primary guideline objective
+•
+Provide guideline recommendations with some health eco-
+nomic implications, where appropriate
+•
+Discuss potential developments and future directions.
+The guideline is presented as a detailed review with high-
+lighted recommendations for practical use in the clinic (see
+section 14), in addition to an updated patient information
+leaﬂet (PIL) [available on the British Association of Dermatolo-
+gists (BAD) website, www.bad.org.uk/leaflets].
+2.0 Stakeholder involvement and peer review
+The guideline development group consisted of consultant der-
+matologists, a specialist registrar, a staff grade dermatologist
+and a technical team consisting of a guideline research fellow
+and project manager providing methodological and technical
+support. The draft document was circulated to the BAD mem-
+bership, British Dermatological Nursing Group, Primary Care
+Dermatological Society, Psoriasis and Psoriatic Arthritis Alli-
+ance, Psoriasis Association, Behcet’s Syndrome Society and
+National Eczema Society for comments, which were actively
+considered and peer-reviewed by the Clinical Standards Unit
+of the BAD (composed of the Therapy & Guidelines subcom-
+mittee) prior to publication.
+3.0 Methodology
+This set of guidelines has been developed using the BAD’s rec-
+ommended methodology1 and with reference to the Appraisal
+of Guidelines Research and Evaluation (AGREE II) instrument
+© 2019 British Association of Dermatologists
+1312
+British Journal of Dermatology (2019) 180, pp1312–1338
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 2 ===
+(www.agreetrust.org).2 Recommendations were developed for
+implementation in the National Health Service (NHS) using a
+process of considered judgement based on the evidence.
+PubMed, MEDLINE and Embase databases were searched for
+meta-analyses,
+randomized
+and
+nonrandomized
+controlled
+clinical trials, case series, case reports and open studies involv-
+ing ciclosporin in the English language from January 1970 to
+February 2018; search terms and strategies are detailed in the
+Supporting Information (File S1). The search strategy aimed
+to identify evidence relating to the clinical pharmacology of
+ciclosporin with particular emphasis being placed on assessing
+risks and beneﬁts of ciclosporin therapy for patients with skin
+disease.
+Searches were also carried out in the Royal College of
+Physicians guidelines database, CINAHL and the Cochrane
+Library. Additional sources of information have included
+expert opinion expressed in contemporary dermatological text-
+books including Rook’s Textbook of Dermatology,3 Dermatology4 and
+Treatment of Skin Disease: Comprehensive Therapeutic Strategies.5 Addi-
+tional relevant references were also isolated from citations in
+reviewed literature.
+The preliminary results were screened, and those relevant
+for ﬁrst-round inclusion were selected for further scrutiny.
+Case reports and case series were considered only if there
+was no higher-quality evidence available. The publications
+selected
+derive
+mainly
+from
+dermatological
+experience
+although important evidence from other ﬁelds, including
+transplant
+medicine
+and
+rheumatology,
+has
+also
+been
+included. The abstracts for the shortlisted references were
+then reviewed and the full papers of relevant material were
+obtained. The structure of the guidelines was then dis-
+cussed, and detailed appraisal of the relevant literature per-
+formed; all sections were subsequently collated and edited
+to produce the ﬁnal guidelines. Whenever possible, these
+guidelines attempt to establish an explicit link between evi-
+dence and recommendations.
+4.0 Limitations of the guideline
+This document has been prepared on behalf of the BAD and
+is based on the best data available when the document was
+prepared. It is recognized that under certain conditions it
+may be necessary and appropriate to deviate from the guide-
+lines and that the results of future research may require
+some of the recommendations herein to be changed. Failure
+to adhere to these guidelines should not necessarily be con-
+sidered negligent, nor should adherence to these recommen-
+dations necessarily constitute a defence against a claim of
+negligence.
+5.0 Plans for guideline revision
+The proposed revision date for this set of recommendations is
+scheduled for 2023; where necessary, important interim
+changes will be updated on the BAD website.
+6.0 Background
+6.1 Deﬁnition
+Ciclosporin is a neutral, hydrophobic, cyclic polypeptide con-
+taining 11 amino acids with a molecular weight of 1203 Da
+(Fig. 1). It was ﬁrst isolated from the soil fungus Tolypocladium
+inﬂatum in 1970. Initial applications of ciclosporin were mainly
+in organ transplantation and enabled this branch of medicine
+to expand on a scale that had not previously been possible. In
+1979, it was reported that ciclosporin improved psoriasis in
+patients with psoriatic arthritis.6 Subsequently, this drug has
+been used for a wide range of autoimmune and immune-
+mediated skin conditions. However, controlled clinical trials in
+dermatology have largely related to treatment of psoriasis and
+atopic dermatitis (AD).
+Ciclosporin can be a highly effective drug but has a rela-
+tively narrow therapeutic index. Therefore, careful considera-
+tion
+is
+required
+when
+using
+ciclosporin,
+to
+ensure
+an
+appropriate balance between beneﬁt and toxicity. The most
+important hazards are nephrotoxicity and hypertension. As a
+result, ciclosporin is reserved for severe disease and is gener-
+ally regarded as a second-line agent, especially when treatment
+is likely to be prolonged beyond 2 or 3 months.
+6.2 Mode of action
+Ciclosporin is a potent, noncytotoxic immunosuppressive
+agent. The principal mode of action is suppression of the T-
+helper (Th) cell response (Th1/Th2) through inhibition of
+lymphocyte activation.
+In the early phase of the immune response, T-cell receptor
+activation
+releases
+intracellular
+calcium
+that
+binds
+onto
+calmodulin to activate calcineurin. The calcineurin complex
+then dephosphorylates the nuclear factor of activated T cells,
+which in turn enters the nucleus and promotes the transcrip-
+tion of lymphokines including interleukin (IL)2, c-interferon,
+granulocyte-macrophage-colony-stimulating factor, IL-3, IL-4,
+tumour necrosis factor (TNF)-a and others.7,8 Ciclosporin
+binds to cytoplasmic cyclophillin, a family of cis-trans iso-
+merases and inhibits calcineurin phosphatase,7 reducing lym-
+phocyte activation and production of lymphokines (Fig. 2).
+Other properties of ciclosporin include an ability to inhibit
+the function of antigen-presenting cells,9 inhibition of the
+release of mast cell mediators including histamine and prosta-
+glandins,10 and the inhibition of keratinocyte proliferation11
+and keratinocyte cytokine secretion.12
+6.3 Pharmacokinetics
+Ciclosporin is available in two oral formulations (both in soft
+gelatin capsules). The original oral formulation (Sandimmun,
+Novartis Pharmaceuticals UK, Surrey, U.K.) was a simple solu-
+tion of the drug in olive oil. This has now been largely super-
+seded by a microemulsion formulation, which demonstrates
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al. 1313
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 3 ===
+more consistent pharmacokinetics,13 and is now in almost
+universal use. The microemulsion has reduced variability in
+absorption both between and within individuals.14,15
+A
+pharmacokinetic
+study
+on
+the
+original
+formulation
+demonstrated that after oral administration, approximately
+40% of the drug was absorbed.14 The microemulsion for-
+mulation yields somewhat higher bioavailability,13,16 with a
+10% lower dose required for equivalent efﬁcacy in a large
+trial comparing the two formulations in the treatment of
+psoriasis.17
+In a nonblinded Japanese study on patients with psoriasis
+using the microemulsion, response was increased when the
+drug was taken before a meal, compared with after a meal.18
+These results seem consistent with a pharmacokinetic study in
+which greater absorption (higher peak levels and area under
+the curve) was observed following preprandial administration
+relative to postprandial administration of the microemulsion.19
+In the blood, ciclosporin is predominantly in erythrocytes,
+30% is located in plasma where it is mostly bound to low-
+and high-density lipoproteins, and 9% is bound to other
+plasma proteins.20 Plasma half-life varies considerably depend-
+ing on the population studied but is reported to be around
+63 h in healthy volunteers.21,22
+Ciclosporin is metabolized in the liver and depends heav-
+ily on the cytochrome P450 enzyme complex (especially
+isoenzymes 3A4 and 9).23 Therefore, medication and food
+affecting this enzyme complex have an effect on ciclosporin
+levels
+in
+the
+blood.
+Metabolites
+are
+primarily
+excreted
+through the bile and faeces with a minor proportion (ap-
+proximately 3–6% of parent drug and metabolites) being
+excreted in the urine.24–26
+The therapeutic index of ciclosporin is narrow, and changes
+in efﬁcacy and toxicity could occur if formulations are
+swapped,
+which
+is
+an
+important
+issue
+when
+generic
+Fig 1. Ciclosporin structure.
+Fig 2. Ciclosporin mechanism of action. NFAT, nuclear factor of activated T cells; IL, interleukin; TNF, tumour necrosis factor; IFN, interferon.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+1314 BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al.
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 4 ===
+formulations are used. Different formulations and different
+brands must not be interchanged without close monitoring.
+7.0 Effective use of ciclosporin: review of the
+evidence
+Although the drug is only licensed in dermatology for treat-
+ment of psoriasis and AD in patients ≥16 years old, dermatol-
+ogists have used ciclosporin for a wide range of inﬂammatory
+and autoimmune skin conditions including other eczematous
+dermatoses, Behcet disease, chronic spontaneous (idiopathic)
+urticaria, lichen planus, connective tissue diseases, immunob-
+ullous diseases, photodermatoses and pyoderma gangrenosum.
+It is also used in children and young people (< 16 years of
+age), most frequently in those with AD (see section 81).
+7.1 Licensed indications (patients aged ≥16 years)
+7.1.1 Severe psoriasis
+There is substantial evidence for efﬁcacy of ciclosporin in sev-
+ere psoriasis vulgaris (see section 7112) (level of evidence 1+;
+strength of recommendation A; see Appendix 1). Severe psoriasis in
+this context is not deﬁned by Psoriasis Area and Severity Index
+(PASI) and Dermatology Life Quality Index, but rather psoria-
+sis that is considered severe by the clinician and patient. The
+drug has also been reported to be effective in erythrodermic
+psoriasis,27–30 generalized pustular psoriasis,31–34 palmoplantar
+pustulosis,35,36
+acrodermatitis
+continua
+of
+Hallopeau,37–39
+psoriatic nail dystrophy40–43 and psoriatic arthropathy.44–47
+For psoriasis vulgaris, the ‘standard’ regimen comprises an
+initial dose for inducing remission of 25–5 mg kg1 per day
+given orally, in a single dose or two divided doses. The higher
+initial dosage of 5 mg kg1 per day can be given when rapid
+control is required. When time is less critical, a lower dose
+may be used initially and increased if the psoriasis is not
+clearly improving after 1 month. Treatment should be discon-
+tinued if sufﬁcient response is not achieved within 6 weeks
+on a dosage of 5 mg kg1 per day, or if the effective dosage
+produces toxicity (see section 104).
+7.1.1.1 Alternative dosing regimens
+Intermittent short courses can be used as an alternative to con-
+tinuous therapy, with a view to reducing cumulative exposure
+to the drug and the potential risk of renal toxicity,48 and can
+maintain satisfactory, although less consistent, control for
+some patients.49–52
+An alternative, simpliﬁed regimen has been proposed using
+a ﬁxed, preprandial, dosage of 100 mg per day either as a sin-
+gle dose or divided into two doses of 50 mg, rather than
+weight-related dosing.53 A 50% reduction in PASI (PASI 50)
+was achieved in over 80% of patients in both groups by 12
+weeks. The single dose yielded a signiﬁcantly higher propor-
+tion of patients achieving PASI 50 at 6 weeks.
+A 12-week, prospective, open-label study assigned 61
+patients with severe psoriasis to a 25 mg kg1 per day
+starting dosage and an increasing regimen (standard regimen)
+or a 50 mg kg1 per day starting dosage and a decreasing
+regimen (step-down regimen) group. The PASI 50 response
+rate at 12 weeks was similar in both groups. The percentage
+of patients achieving PASI 75 response at 12 weeks was higher
+in the step-down regimen group. The mean time to PASI 50
+or PASI 75 was shorter in the step-down regimen group. Rates
+of adverse events requiring intervention were similar in the
+two groups.54
+7.1.1.2 Comparison with other agents
+A small number of randomized comparative studies have been
+performed comparing the efﬁcacy of ciclosporin with other
+modalities. In 60 patients treated with either ciclosporin or a
+dithranol/ultraviolet (UV)B regimen, the median time to
+clearance was 6 weeks with ciclosporin (treated with 5 mg
+kg1 per day) and 8 weeks with dithranol/UVB.55 There was
+no signiﬁcant difference between times to relapse following
+cessation of treatment. The PASI score was reduced by 71%
+with ciclosporin compared with 47% with etretinate in 210
+patients.43
+A third study compared ciclosporin with methotrexate in
+88 individuals;56 the initial dosages were 3 mg kg1 per day
+and 15 mg per week, respectively. Treatment continued for
+16 weeks. There was no signiﬁcant difference in the reduction
+in PASI. Methotrexate was withdrawn in 12 individuals owing
+to reversible elevation of liver enzymes and a single with-
+drawal was required in the ciclosporin group owing to ele-
+vated bilirubin (Gilbert syndrome). Two patients receiving
+ciclosporin required treatment for hypertension.
+A further study compared methotrexate 75–15 mg weekly
+with ciclosporin 3–5 mg kg1 per day. Overall, 84 patients
+were randomized, but only 68 commenced treatment and
+were included in the analysis. At the 12-week end point there
+was a signiﬁcantly greater reduction in PASI (P = 0003) fol-
+lowing treatment with ciclosporin compared with methotrex-
+ate (72% vs. 58%).57
+A ﬁfth study comparing ciclosporin with methotrexate in the
+treatment of nail psoriasis in 37 patients showed improvement
+in Nail Psoriasis Severity Index (NAPSI) of 37% and 43%,
+respectively; however, neither treatment was signiﬁcantly supe-
+rior.58
+A
+sequential
+efﬁcacy
+study
+replaced
+ciclosporin
+with
+mycophenolate mofetil 1–15 g twice daily, in eight patients
+with severe psoriasis.59 In ﬁve patients, the PASI increased by
+more than 70%, while disease control deteriorated slightly in
+the other three patients. Ciclosporin was signiﬁcantly more
+effective than mycophenolate mofetil after 12 weeks in an
+open-label study.60
+A recent meta-analysis identiﬁed 48 eligible randomized con-
+trolled trials totalling 16 696 patients (11 178 randomized to
+biologics, and 1888 to conventional treatments, including
+ciclosporin) and concluded that biological therapies, notably
+inﬂiximab, adalimumab and ustekinumab, were more effective
+than conventional therapies, including ciclosporin. They noted
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al. 1315
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 5 ===
+that ‘the qualitative and quantitative evidence is much stronger
+for biological interventions than for conventional treatments’.61
+7.1.1.3 Combination therapy
+Ciclosporin can be used as monotherapy or in combination
+with topical treatment and/or other systemic drugs to spare
+the dose of each agent and reduce toxicity.62–64
+Combinations of systemic medications for psoriasis have
+been used less often in the U.K. since the introduction of bio-
+logical therapies. Broader recommendations regarding the use
+of systemic therapies in psoriasis are made by the National
+Institute for Health and Care Excellence (NICE).65 A concomi-
+tant weight-reducing diet augmented the response of psoriasis
+to ciclosporin in a controlled trial.66
+7.1.1.3.1 Combining ciclosporin with topical agents
+Patients receiving ciclosporin should be encouraged also to
+apply topical treatment. Effective topical modalities may pro-
+vide a dose-sparing effect. Although some patients prefer the
+more convenient approach of using the systemic medication
+only, it is potentially advantageous to reduce the dosage of
+ciclosporin in this way.
+In two studies, topical calcipotriol was compared with pla-
+cebo in patients taking ciclosporin and both the speed and the
+level of response to ciclosporin were increased by the active
+topical treatment.67,68 Furthermore, in a study by Grossman
+et al. clearing or 90% reduction in PASI was achieved in 50%
+of patients using ciclosporin at the very low dosage of 2 mg
+kg1 per day by combining ciclosporin with calcipotriol.67
+A similar beneﬁcial potentiation of the response to very low
+dosage (2 mg kg1 per day) ciclosporin has been demon-
+strated with the combination of calcipotriol and betametha-
+sone dipropionate with ciclosporin.69
+Dithranol, in a half-body study, improved the response of
+seven patients with psoriasis who had severe disease showing
+incomplete clearance with ciclosporin 5 mg kg1 per day.70
+Clobetasol propionate accelerated the response to ciclos-
+porin in a small trial.71 An 80% reduction in PASI was
+achieved in 6 weeks using ciclosporin alone, and in 35 weeks
+using the combined regimen.
+7.1.1.3.2 Combining ciclosporin with other systemic agents
+Treatment regimens using combinations of systemic antipsori-
+atic drugs are employed when no single treatment is sufﬁ-
+ciently effective, or in order to reduce
+the cumulative
+exposure to each compound by using both at lower dosages.
+The level of immunosuppression is increased when these
+drugs are used in combination.
+Methotrexate can be combined effectively with ciclosporin in
+psoriasis and psoriatic arthritis and there is greater experience
+of this drug combination in the treatment of rheumatoid dis-
+ease. This combination may allow lower dosages of each drug
+to be used and ciclosporin did not appear to cause additive
+hepatotoxicity.72 In another study, 72 patients with psoriatic
+arthritis and psoriasis who had an incomplete response to
+methotrexate were randomized to receive either additional
+placebo or ciclosporin.73 There was a signiﬁcant improvement
+(P < 0001) in the response in both the PASI and the
+arthropathy following the combination therapy at 12 months.
+This combination has also been reported as beneﬁcial in other
+uncontrolled observations.74–76
+Korstanje et al. reported less favourable results;77 methotrex-
+ate was added to the regimen in four patients showing inade-
+quate
+response
+to
+ciclosporin.
+Three
+of
+these
+patients
+experienced worsening of their psoriasis, which occurred fol-
+lowing a dose reduction of ciclosporin owing to side-effects.
+As both drugs are immunosuppressants it is of concern that
+there is no good-quality, long-term, safety data.
+Retinoids have generally been considered less useful in com-
+bination with ciclosporin, although the combination has
+been well tolerated and there is some evidence that the reti-
+noid may suppress keratinocyte cancers in recipients of trans-
+plants78 and patients with xeroderma pigmentosum.79 Early
+reports did not suggest that this treatment combination is
+synergistic.80–83 This combination has been reported to be
+helpful in three cases of erythrodermic psoriasis that had not
+responded to monotherapy with one of these drugs,84 but
+was not useful in another series of three cases of erythroder-
+mic disease.85
+Acitretin and ciclosporin may increase plasma lipids, which
+should be monitored. Ciclosporin metabolism can be inhibited
+in vitro by acitretin, therefore ciclosporin blood levels should
+be monitored if the drugs are used in combination. Blood
+ciclosporin level rose in a single patient with psoriasis when
+acitretin was added to ciclosporin treatment.86
+Hydroxycarbamide
+(Hydroxyurea),
+used in
+combination
+with
+ciclosporin, has been reported as highly beneﬁcial. The results
+of a series of eight patients treated with ciclosporin 25 mg
+kg1 and hydroxyurea 500 mg per day provided evidence for
+safety
+and
+efﬁcacy,87
+although
+the
+long-term
+safety
+is
+unknown. The dosages of each drug were lower than those
+required when each is used as a single agent. Caution should
+be exercised in patients with renal impairment as the kidney
+excretes hydroxyurea.
+Fumarates do not appear to interact adversely with ciclos-
+porin. Although the long-term safety is unknown, and pub-
+lished experience with this combination remains limited, the
+addition of fumarates to ciclosporin therapy can improve the
+control of psoriasis and may also allow a reduction in ciclos-
+porin dosage.88
+Mycophenolate mofetil has been reported to be useful in combi-
+nation with ciclosporin in nine patients. The combination was
+well tolerated and more effective than ciclosporin alone.89
+Sirolimus (rapamycin) has been investigated in combination
+with ciclosporin in a multicentre trial with 150 participants.90
+Ciclosporin 125 mg kg1 per day, combined with sirolimus
+3 mg kg1 per day, was comparable in efﬁcacy with ciclos-
+porin 5 mg kg1 per day and more effective than either drug
+used alone at the same dosage. This may be a useful and syn-
+ergistic
+combination.
+Sirolimus
+is
+an
+immunosuppressant
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+1316 BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al.
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 6 ===
+drug, which lacks the nephrotoxicity of ciclosporin, although
+it can increase serum lipids and induce thrombocytopenia.
+The use of phototherapy has been reported in combination
+with ciclosporin, but such regimens are hazardous and rarely
+used. The combination of ciclosporin and UVB was not syner-
+gistic in a pilot study.91 In another study, the combination of
+psoralen and UVA (PUVA) and ciclosporin was found to be
+synergistic, but the dose-sparing action of ciclosporin on the
+PUVA was not as great as that observed with etretinate.92 In a
+further report on four patients treated with ciclosporin and
+PUVA, there was no evidence of an additive effect.93
+UVB or PUVA, used concurrently or previously, is haz-
+ardous as phototherapy is carcinogenic, while ciclosporin is
+immunosuppressive. Patients who have previously received
+PUVA appear to be at high risk of developing cutaneous squa-
+mous cell carcinoma when subsequently immunosuppressed
+with ciclosporin.94 Therefore, phototherapy should be avoided
+in combination with ciclosporin, and the use of ciclosporin
+must be regarded as relatively contraindicated in patients who
+have substantial previous exposure to phototherapy.
+Biological therapies used in combination with ciclosporin have
+been studied in a number of nonrandomized trials and case
+reports, with most attention having been paid to the combina-
+tion of ciclosporin with etanercept.
+This combination can be useful when transitioning between
+treatments.95 Etanercept was successfully introduced after the ini-
+tial improvement of psoriasis in eight patients treated with ciclos-
+porin, enabling the reduction and cessation of ciclosporin.96 A
+similar approach was used in another series of 10 cases.97
+In a small-scale open-label study of patients with refractory
+psoriasis (n = 7), combination therapy with etanercept and
+low-dose ciclosporin (200 mg per day initially, then 100 mg
+per day) resulted in a mean reduction in PASI of 932% at the
+end of the maintenance treatment period at the lower
+dosage.98 Adding ciclosporin to treatment with etanercept
+improved response in eight patients receiving ciclosporin 35
+mg kg1 per day for 4–20 weeks.99 In 11 patients with psori-
+atic arthritis in whom psoriasis was responding inadequately
+to etanercept, the addition of ciclosporin (3 mg kg1 per day)
+resulted in a PASI 75 response in nine cases at week 24.100 A
+case of generalized pustular psoriasis induced by the with-
+drawal of topical corticosteroid resolved completely following
+treatment with ciclosporin 400 mg twice daily and etanercept
+50 mg twice weekly.34
+The efﬁcacy of therapy with ciclosporin and adalimumab
+was investigated in a nonrandomized open-label study in 170
+patients with active psoriatic arthritis that was refractory to
+methotrexate treatment.101 After 12 months, a PASI 50
+response was achieved by 95% of patients receiving combina-
+tion therapy, compared with 85% of patients receiving adali-
+mumab alone and 65% of those receiving ciclosporin alone
+(P = 00003 vs. combination treatment).
+Ciclosporin showed an additive effect when used in combi-
+nation with ustekinumab in seven cases.102
+A single patient with severe psoriasis responded well to the
+combination
+of
+ciclosporin
+and
+the
+IL-2
+antagonist
+basiliximab103 and a case of palmoplantar pustular psoriasis
+improved markedly when basiliximab was added to ciclos-
+porin therapy.104
+Patients receiving ciclosporin in combination with other
+immunosuppressant agents such as TNF-a inhibitors, should
+be monitored closely for development of infections and malig-
+nancy. A report of lymphoma developing in a patient receiv-
+ing ciclosporin after using inﬂiximab would suggest that there
+would be a need for caution if such potent immunosuppres-
+sive therapies were to be combined.105
+7.1.2 Severe atopic dermatitis
+Ciclosporin is a highly effective treatment for severe AD (level
+of evidence 1+; strength of recommendation A). A systematic review
+conﬁrmed that 11 studies on the use of ciclosporin in AD
+consistently demonstrated efﬁcacy.106 An additional review of
+15 studies and a meta-analysis of 12 studies (which partially
+shared authorship with the aforementioned systematic review)
+concluded, somewhat more cautiously, that short-term use of
+ciclosporin can decrease the severity of atopic eczema in
+patients whose condition cannot be adequately controlled with
+conventional therapies. However, there was some evidence of
+publication bias, so these ﬁndings should be interpreted with
+caution. The effectiveness of ciclosporin is similar in adults
+and children; however, tolerability may be better in children.
+There was insufﬁcient data to evaluate the long-term effective-
+ness
+and
+safety
+of
+ciclosporin
+in
+patients
+with
+atopic
+eczema.107
+The onset of clinical beneﬁt is rapid (within days) and a
+marked improvement is usually achieved within the ﬁrst 2
+months. Ciclosporin has also been shown to improve quality
+of life in adult patients.108
+The recommended dosage range is 25–5 mg kg1 per day
+given orally in single or divided (into two) doses for a maximum
+of 8 weeks.109 If a starting dosage of 25 mg kg1 per day does
+not achieve a good initial response within 2 weeks the dosage
+may be increased rapidly to a maximum of 5 mg kg1 per day.
+In very severe cases prompt and adequate control of disease is
+more likely with a starting dosage of 5 mg kg1 per day.
+Atopic
+keratoconjunctivitis
+has
+also
+been
+reported
+to
+respond well to systemic ciclosporin,110 although severe eye
+disease should be managed in collaboration with an ophthal-
+mologist.
+AD can sometimes ﬂare up equally rapidly on cessation
+of ciclosporin. To avoid this, a gradual discontinuation regi-
+men, e.g. reducing to alternate days or reducing the daily
+dose, and implementation of additional therapy is recom-
+mended.111
+Bacterial cutaneous infection is a common complication of
+AD, which raises the theoretical concern that these infections
+may be exacerbated by immunosuppression with ciclosporin.
+In practice, this is not often observed, so the reduced risk of
+bacterial infection owing to improvement in the condition of
+the skin and reduced excoriation may outweigh any increased
+risk of infection resulting from immunosuppression.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al. 1317
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 7 ===
+Clinically signiﬁcant active herpes simplex infection should
+be allowed to resolve before initiating treatment with ciclos-
+porin. If herpes infection occurs in a patient receiving ciclos-
+porin treatment, this is not necessarily a reason for drug
+withdrawal, unless the infection is severe.
+The presence of Staphylococcus aureus skin infections is not an
+absolute contraindication for treatment with ciclosporin but
+should be controlled with appropriate antibacterial agents.
+Oral erythromycin, known to elevate the blood concentration
+of ciclosporin signiﬁcantly, should be avoided or, if necessary,
+its concomitant use should be accompanied by monitoring of
+ciclosporin blood levels and reduction of the dosage of ciclos-
+porin.
+Cutaneous T-cell lymphoma has rarely been reported in
+patients receiving ciclosporin for eczema.112,113 Cutaneous lym-
+phoma should be considered and, if there is suspicion, excluded
+histologically prior to starting treatment for supposed AD.
+7.1.2.1 Comparison with other agents
+Ciclosporin (27–40 mg kg1 per day) daily for 6 weeks was
+signiﬁcantly more effective than prednisolone (initial dosage
+05–08 mg kg1 per day) for 2 weeks in inducing stable
+remission of severe AD in adults.114 Stable remission was
+achieved in one of 21 patients on the prednisolone regimen
+vs. six of 17 on the ciclosporin regimen (P = 0031).
+Ciclosporin has also been compared with mycophenolate
+mofetil in a study of 55 patients with AD. Ciclosporin
+proved more rapidly effective, and its action ceased more
+rapidly after discontinuation, but the treatments appeared
+equally satisfactory during a 30-week phase of maintenance
+therapy.115
+The efﬁcacy of ciclosporin at a dose of 25 mg kg1 per
+day proved comparable with that of methotrexate 75 mg
+weekly over the course of 12 weeks.116
+7.1.2.2 Combination therapies
+In one case, the successful use of ciclosporin in combination
+with topical pimecrolimus has been reported.117 Although no
+conclusions can be drawn from such limited experience, this
+sort of combination may offer a potential dose-sparing effect.
+7.2 Unlicensed indications
+There are many dermatoses for which ciclosporin has been
+used with reported success (Table 1). Many autoimmune dis-
+eases may respond to treatment; however, case reports show
+no evidence of effect in discoid lupus erythematosus,118,119
+pemphigus
+vulgaris
+and
+pemphigus
+foliaceous,120,121
+for
+which ciclosporin is not recommended. Ciclosporin is also not
+recommended for alopecia areata, as high doses and long-term
+treatment tend to be required in refractory cases with high
+risks of toxicity.122–125
+Ciclosporin has been prescribed and elsewhere in the U.K.
+(both within and outside its licence) for the dermatological
+conditions listed in Table 1.126–352
+8.0 Special groups
+8.1 Children
+Ciclosporin can be used in children. Trials in AD show that it
+is effective and relatively well tolerated by children aged 2
+years and older in short courses of 6 weeks, 6 to 12 weeks,
+and for periods of up to 1 year.142,144 (Level of evidence 1+;
+strength of recommendation A.)
+Case reports about the use of ciclosporin in childhood pso-
+riasis indicate that results are favourable.353–356 Ciclosporin
+has also been effective in several cases of generalized pustular
+psoriasis in children.357–364
+8.2 Pregnancy and lactation
+Although it is naturally avoided in pregnancy whenever pos-
+sible, ciclosporin does not appear to be teratogenic. The drug
+has been reported to be effective in generalized pustular pso-
+riasis in pregnancy.365–369 There is considerable experience
+of the use of ciclosporin in pregnancy in the ﬁeld of trans-
+plantation.370 (Level of evidence 1++; strength of recommendation A.)
+Ciclosporin may pass into breast milk, therefore mothers
+taking this drug are generally advised to avoid breastfeeding.
+This is consistent with the prescribing information, although
+breastfeeding by mothers taking ciclosporin has been reported
+without adverse outcome,371–378 but practice varies. Clinicians
+should keep in mind that, at least theoretically, the risks from
+live vaccines might be increased in these circumstances.
+9.0 Safe use of ciclosporin: review of the
+evidence
+Ciclosporin is generally well tolerated; however, it has a range
+of toxicities and drug interactions resulting in a narrow thera-
+peutic index. Therefore, an understanding of the potential
+adverse effects is important in order to minimize the risks.
+The most signiﬁcant common risks are renal toxicity and
+hypertension.
+Other
+commonly
+encountered
+side-effects
+include gastrointestinal disturbances (notably colicky abdomi-
+nal pain), gingival hyperplasia, hyperlipidaemia, generalized
+hypertrichosis (which may be related to increased duration of
+anagen),379 paraesthesiae and tremor (Table 2).
+9.1 Nephrotoxicity
+The mechanism of ciclosporin nephrotoxicity, which remains
+one of the major constraints on the use of this drug, is not
+completely elucidated. However, it seems likely that, among
+other mechanisms, activation of the intrarenal renin angioten-
+sin system and associated vasoconstriction may play a role.380
+Nephrotoxicity is related to the dose and duration of treat-
+ment and therefore can generally be modulated by dose titra-
+tion.381,382 There is evidence that any nephrotoxicity is
+completely reversible in courses up to 16 weeks in length,
+provided that appropriate measures are taken in the event that
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+1318 BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al.
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 8 ===
+the creatinine levels rise too high.382 Longer-term treatment
+results in structural changes, which are substantially irre-
+versible.383–385 Histological examination of the kidney in these
+circumstances shows interstitial ﬁbrosis, arteriolar hyalinosis,
+tubular atrophy and glomerulosclerosis. Single or intermittent
+short courses of 3–6 months are less nephrotoxic than long-
+term treatment and should be used whenever possible.382
+There is a marked interpatient variation regarding the onset of
+nephrotoxicity and the speed at which it progresses. Older
+Table 1 Licensed and unlicensed indications (in alphabetical order)
+where there is evidence of efﬁcacy of ciclosporin
+Skin disease
+Level of
+evidence
+Acne fulminans126
+3
+Actinic reticuloid127,128
+3a
+Acute generalized exanthematous pustulosis129–131
+3
+Amicrobial pustulosis132
+3
+Anhidrosis (autoimmune)133
+3
+Annular elastolytic giant cell granuloma134
+3
+Antiphospholipid syndrome (ulceration)135
+3b
+Annular erythema of Sjogren syndrome136
+3
+Atopic dermatitis137–144
+1+
+Atopic keratoconjunctivitis110,145
+3
+Behcet disease146–150
+1+
+Bullous erythema multiforme151
+3
+Bullous pemphigoid152–154
+3
+Capillaritis155
+3
+Chronic actinic dermatitis156–158
+3
+Chronic spontaneous (idiopathic) urticaria159–164
+1+
+Cold urticaria165
+3
+Contact allergic dermatitis166–168
+3
+Crohn disease (cutaneous)169
+3
+Darier disease37,170,171
+3
+Degos disease172
+3
+Dermatitis herpetiformis173
+3
+Dermatomyositis174–179
+2
+Dermographic urticaria180
+3
+Eosinophilic cellulitis181–184
+3c
+Eosinophilic fasciitis185–187
+3
+Eosinophilic pustular folliculitis188–190
+3
+Epidermolysis bullosa acquisita191,192
+3
+Epidermolysis bullosa pruriginosa193,194
+3
+Erythema multiforme151,195
+3
+Geographic tongue196
+3
+Graft-versus-host disease197–199
+1+d
+Graham Little syndrome200
+3
+Granuloma annulare37,201–203
+3
+Hailey–Hailey disease204–208
+3
+Hand eczema209,210
+2
+Hidradenitis suppurativa37,211–215
+3
+Histiocytosis216,217
+3
+Hydroa vacciniforme218
+3
+Hypereosinophilic syndrome219,220
+3
+Hyperimmunoglobulin E syndrome221–224
+3
+Hyperzincaemia and hypercalprotectinaemia225
+3
+Interstitial granulomatous dermatitis226
+3
+Kawasaki disease227–229
+3
+Kimuras disease230–235
+3
+Langerhans cell histiocytosis216,217,236–239
+3
+Leprosy and leprosy reactions240–242
+3
+Lichen amyloidosis243,244
+3
+Lichen nitidus245,246
+3
+Lichen planopilaris247,248
+3
+Lichen planus55,249–254
+3
+Lichen planus pemphigoides255
+3
+Lichen sclerosus256
+3
+Linear IgA disease257
+3
+Lupus erythematosus profundus258,259
+3
+Mastocytosis (systemic)260,261
+3c
+(continued)
+Table 1 (continued)
+Skin disease
+Level of
+evidence
+Morphoea262,263
+3
+Mucous membrane pemphigoid264,265
+3
+20-nail dystrophy266
+3
+Necrobiosis lipoidica267–269
+3
+Omenn syndrome270,271
+3
+Palmoplantar pustulosis272,273
+1+
+Panniculitis (cytophagic histiocytic)274–277
+3
+Panniculitis-like T-cell lymphoma278–281
+3
+Panniculitis (lupus)258,282
+3
+Panniculitis (Weber–Christian disease)283–286
+3
+Papuloerythroderma of Ofuji287,288
+3
+Polymorphic light eruption289,290
+3
+PLEVA291,292
+3
+Pityriasis lichenoides chronica37,293
+3
+Pemphigoid gestationis294–296
+3e
+Pemphigus erythematosus297
+3c
+Pemphigus–paraneoplastic298–301
+3f
+Pityriasis rubra pilaris302,303
+3
+Poststreptococcal pustulosis304
+3
+Prurigo nodularis305–307
+3
+Psoriasis50,62,308–310
+1+
+Pyoderma gangrenosum37,311–318
+1+
+Reiter disease319
+3
+Relapsing polychondritis320–322
+3
+Rowell syndrome323
+3
+Scleroderma324
+3
+Scleromyxoedema325–328
+3
+Schnitzler syndrome329,330
+3
+Solar urticaria331
+3
+Subacute cutaneous lupus332
+3g
+Subcorneal pustular dermatosis333,334
+3c
+Sweet syndrome335–338
+3
+Systemic sclerosis339–341
+3
+Toxic epidermal necrolysis342–349
+2++
+Vasculitis350–352
+3
+aIn one case the treatment was followed by development of lym-
+phoma. bIn combination with acetylsalicylic acid and anticoagu-
+lation. cOne in combination with systemic corticosteroid.183
+dCiclosporin is widely used in prophylaxis and treatment of
+acute and chronic graft-versus-host disease. Of necessity, the
+extensive trial data comprises comparisons between different reg-
+imens considered to be effective and not placebo-controlled
+studies. eIn combination with either systemic corticosteroid or
+intravenous immunoglobulins. fResults are conﬂicting. gIn com-
+bination with methotrexate. Indications in bold have good evi-
+dence. Italics denote licensed indication.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al. 1319
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 9 ===
+patients may develop renal impairment more easily, due to
+coexisting renal vascular disease. Discontinuation of ciclos-
+porin even after 5 years of treatment has been shown to lead
+to a partial recovery of renal function.383 Provided that the
+guidance as outlined below is followed, progressive deteriora-
+tion of renal function does not seem to occur after discontinu-
+ation of ciclosporin.
+Recommendations
+•
+Although continuous treatment may be appropriate for
+selected patients with chronic skin disease, if possible, use
+single or intermittent short courses of up to 16 weeks to
+reduce nephrotoxicity.
+•
+Reduce nephrotoxicity by ciclosporin dose titration during
+therapy.
+9.2 Hypertension
+Hypertension will occur in approximately 20% of patients on
+ciclosporin
+and
+can
+develop
+at
+any
+time
+during
+treat-
+ment.41,386,387 Hypertension generally improves when the
+drug is discontinued. It is usually not possible to predict
+which patients will develop hypertension, but it is commonly
+seen in patients over 45 years of age. Patients with pre-exist-
+ing or borderline hypertension are at greater risk.
+The pathogenesis is not well understood but is thought to
+be secondary to a vasoconstrictive effect on vascular smooth
+muscle, particularly in the kidney. A study in transplant recipi-
+ents conﬁrmed a ciclosporin-induced nitric oxide (NO) system
+upregulation, and possible ciclosporin-induced production of
+superoxide leading to NO destruction and inducing vasocon-
+striction and hypertension.388
+The development of hypertension does not automatically
+necessitate cessation of ciclosporin therapy, as it is often possi-
+ble to reduce the dose of ciclosporin, or treat the hyperten-
+sion, to maintain satisfactory blood pressure. Treatment of
+hypertension preferably includes calcium antagonists such as
+nifedipine,389–391
+isradipine,
+felodipine
+or
+amlodipine,392
+which do not interact with ciclosporin metabolism and are
+also nephroprotective. Calcium antagonists have the disadvan-
+tage of inducing gingival hyperplasia, possibly adding to this
+effect of ciclosporin. Verapamil and diltiazem inhibit ciclos-
+porin metabolism and are best avoided unless ciclosporin
+blood level can be monitored. Angiotensin-converting-enzyme
+(ACE) inhibitors and thiazide diuretics are also used in the
+treatment of ciclosporin-induced hypertension.
+Recommendations
+•
+Reduce ciclosporin dosage if hypertension occurs, and/or
+treat the hypertension.
+•
+Discontinue ciclosporin if a satisfactory blood pressure
+cannot be maintained.
+9.3 Infections
+Minor skin infections are common in dermatological patients but
+do not appear to be increased by ciclosporin.381,393 In a report on
+data from 631 patients in early trials, 48% had skin infections
+and 76% developed upper respiratory tract infections.381 How-
+ever, occasional severe infections have been reported, for example
+a case of cryptococcal meningitis.394 Vigilance is required and
+patients should be asked to seek advice in the event of illness. Viral
+hepatitis B or C infections may become more active following
+immunosuppression, most notably following bone marrow trans-
+plantation,395,396 but this does not seem to be a common event in
+organ transplantation.397 Somewhat paradoxically, ciclosporin
+also inhibits replication of hepatitis C virus in vitro.398 Successful
+treatment of psoriasis with ciclosporin has been reported in a
+patient with hepatitis C;399 however, hepatitis B should normally
+be treated before starting ciclosporin.
+Table 2 Adverse effects of ciclosporin
+Common adverse effect
+•
+Abdominal pain
+•
+Dyspepsia
+•
+Gingival hyperplasia
+•
+Hyperbilirubinemia (essentially benign)
+•
+Hypertension
+•
+Hypertrichosis
+•
+Increase in serum lipids
+•
+Increase in serum uric acid
+•
+Increase in potassium
+•
+Nausea
+•
+Neuropathy
+•
+Paraesthesia
+•
+Renal failure
+•
+Tremor
+Rare adverse effect
+•
+Anaemia
+•
+Arthralgia
+•
+Benign intracranial hypertension
+•
+Diarrhoea
+•
+Dizziness
+•
+Fatigue
+•
+Headache
+•
+Hepatic dysfunction
+•
+Hypomagnesaemia
+•
+Hypoglycaemia
+•
+Hyperlipidaemia
+•
+Hyperuricemia
+•
+Hyperkalaemia
+•
+Leg cramps
+•
+Muscle weakness
+•
+Myopathy
+•
+Myalgia
+•
+Oedema
+•
+Pancreatitis
+•
+Posterior reversible encephalopathy syndrome
+•
+Thrombocytopenia
+•
+Weight increase
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+1320 BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al.
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 10 ===
+Ciclosporin treatment in patients who have received a trans-
+plant has been associated with an increased risk of papillo-
+mavirus infections, which may predispose these patients
+towards papillomavirus-related mucosal and internal malig-
+nancy.400
+Recommendations
+•
+When evidence of infections is detected, consideration
+should be given to obtaining advice regarding the safety
+of immunosuppression and to ensure all necessary treat-
+ment is underway before using ciclosporin.
+•
+Advise patients to seek early advice in the event of febrile
+illness or rapid deterioration of their skin condition.
+9.4 Malignancy
+Ciclosporin is neither considered to be a mutagenic nor a
+cytotoxic drug, and it does not induce chromosomal damage
+or mutations in DNA. The increased incidence of neoplasia
+which has been associated with ciclosporin is more likely to
+arise indirectly as a result of immunosuppression inhibiting
+the host response to neoplasms. The results of this have been
+most apparent in the ﬁeld of transplantation and it is clear that
+a wide spectrum of lymphoproliferative disease and solid
+tumours occurs with increased frequency in this popula-
+tion.401 It is likely that the intensity of immunosuppression in
+patients who have received a transplant is signiﬁcantly greater
+than
+in
+dermatological
+patients
+receiving
+ciclosporin
+as
+monotherapy.
+Apart from patients who have received a transplant, no
+increased risk of malignancy has been established in dermato-
+logical patients treated with ciclosporin, with the exception of
+nonmelanoma skin cancer in those who have previously
+received high doses of UV irradiation.402 This is relevant to
+many patients with severe psoriasis. In a cohort of 1252
+patients followed for up to 5 years (mean 19 years), the
+expected increase in cutaneous squamous cell carcinoma was
+observed, but there was no increase in internal malignancy.403
+A study of 272 patients who had received ciclosporin for
+treatment of inﬂammatory skin disease used the Finnish Cancer
+Registry to establish the incidence of malignancy. All partici-
+pants had used ciclosporin for at least 1 month (median 8
+months) and the median follow-up was 109 years. The study
+demonstrated no signiﬁcant increase in the incidence rates for
+lymphoma or skin cancer relative to the general population.404
+Notwithstanding the limited reassurance that can be derived
+from these studies, there are several case reports of dermato-
+logical patients treated with ciclosporin who have developed
+malignancies,
+including
+pseudolymphoma405
+and
+lym-
+phomas.105,406–411
+Recommendation
+•
+Ciclosporin should not be used concurrently with pho-
+totherapy owing to the long-term risk of nonmelanoma
+skin cancer.
+9.5 Hyperlipidaemia
+Serum triglyceride and cholesterol levels tend to rise with
+ciclosporin therapy. The increase is related to dosage, occurs
+within 2 weeks of starting treatment, and persists while treat-
+ment continues.310,412
+Occasionally, the hyperlipidaemia may be clinically signiﬁcant
+and require treatment. An initial trial of dietary restriction of
+cholesterol and saturated fat intake is recommended. Depending
+on the nature of the hyperlipidaemia, ﬁbrates and/or statins can
+be given cautiously. There are potential interactions of these
+drugs with ciclosporin, because ﬁbrates and most statins, with
+the exception of pravastatin, are metabolized by CYP450 (3A4
+and other isoenzymes). This leads to inhibition of metabolism
+of the statin, increasing the risk of myopathy and rhabdomyoly-
+sis. Fibrates have also been reported to impair renal function in
+a reversible manner,413 but are helpful in the treatment of
+hypertriglyceridaemia. Statins (HMG-CoA reductase inhibitors)
+reduce both triglycerides and cholesterol and are often used fol-
+lowing organ transplantation to treat hyperlipidaemia.
+Recommendations
+•
+Check serum lipid levels at baseline and monitor throughout
+treatment, particularly in those at higher risk (e.g. patients
+with diabetes and those with pre-existing hyperlipidaemia).
+•
+The initial treatment of clinically signiﬁcant hyperlipi-
+daemia should be a restriction of dietary intake of choles-
+terol and saturated fat in order to minimize the need for
+medical treatment with the risk of drug interactions.
+9.6 Neurological side-effects
+One of the most commonly reported side-effects of ciclos-
+porin is paraesthesia.310 Other neurological side-effects that
+are less common include tremor, asthenia, muscle cramps,
+headaches and fatigue.414,415
+9.7 Cutaneous side-effects
+The use of ciclosporin has long been associated with acne and
+acne-like eruptions, although in many patient populations
+studied there is concomitant use of corticosteroids, which
+cause similar phenomena, so it can be difﬁcult to separate out
+the speciﬁc actions of ciclosporin.
+Related
+phenomena
+have
+included
+severe
+forms
+of
+acne,416,417 development of keloids,418 acne keloidalis of the
+scalp,419 and hyperplastic pseudofolliculitis barbae.420 Seba-
+ceous hyperplasia has often been observed during treatment
+with ciclosporin,421 and has been treated successfully with
+isotretinoin in two cases.422
+9.8 Reduced bone mass
+Possible effects of ciclosporin on bone density have been
+reported
+and
+investigated
+mainly
+in
+the
+transplant
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al. 1321
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 11 ===
+population where many confounding factors, not least corti-
+costeroid therapy, are also at play. To date, this has not
+proved to be a clinically signiﬁcant issue in dermatological
+patients. In one study of a group of 43 children using topi-
+cal steroids for eczema, more severe changes in bone den-
+sity
+were
+demonstrated
+in
+the
+six
+cases
+also
+using
+ciclosporin. However, the requirement for ciclosporin indi-
+cates that these six cases had more severe eczema and
+therefore may have had greater exposure to topical and sys-
+temic corticosteroids.423
+9.9 Biochemical effects
+In addition to changes in urea and creatinine, ciclosporin therapy
+often induces a range of biochemical changes including small
+increases in serum potassium, urate and bilirubin, and hypomag-
+nesaemia. These effects only occasionally cause clinical concern.
+9.10 Drug interactions
+Drug interactions with ciclosporin are numerous (Table 3).
+Ciclosporin is metabolized by cytochrome P450, particularly
+P450 3A4. Drugs that induce P450 reduce ciclosporin levels,
+whereas drugs that inhibit P450 will increase ciclosporin
+levels. These interactions can produce large changes in levels
+of ciclosporin in the blood. Such effects may be very signiﬁ-
+cant; as ciclosporin has a narrow therapeutic index, small
+changes in blood levels can markedly inﬂuence efﬁcacy and
+toxicity. Concomitant treatment with drugs associated with
+renal toxicity can be expected to augment the risk of nephro-
+toxicity. Concurrent administration of nifedipine with ciclos-
+porin may result in an increased risk of gingival hyperplasia.
+Ciclosporin has the potential to produce marked increases in
+serum levels of statins, with a concomitant increase in the risk
+of rhabdomyolysis. Ciclosporin may reduce digoxin clearance
+and cause digoxin toxicity.
+It is recommended that an up-to-date reference, such as the
+British National Formulary (https://www.evidence.nhs.uk/for
+mulary/bnf/current) or the Summary of Product Characteris-
+tics
+(http://www.mhra.gov.uk/spc-pil/)
+is
+consulted
+regarding possible drug interactions whenever a concomitant
+medication is used.
+In addition to prescribed drugs, self-medication with herbal
+remedies, notably St John’s wort, interact with ciclosporin.424
+Grapefruit juice, and possibly other citrus juices, can inhibit
+cytochrome P450 3A4 in the gut and liver and therefore may
+increase blood levels of ciclosporin. Likely active constituents
+include furanocoumarins and ﬂavonoids.425–428 The effect is
+variable between individuals, and because it may be long-last-
+ing, it is advisable to avoid grapefruit and grapefruit juice
+completely while on ciclosporin (not just to avoid ingestion
+of ciclosporin at the same time as grapefruit juice).
+Recommendations
+•
+Check for possible drug interactions whenever the patient
+is taking other medication.
+•
+Advise the patient not to eat grapefruit or drink grapefruit
+juice while taking ciclosporin.
+9.11 Vaccination
+During treatment with ciclosporin, vaccination may be less
+effective.429,430 Live-attenuated vaccines should be avoided
+during treatment with ciclosporin. A recommendation from
+the Department of Health advises that live vaccination should
+not be undertaken until at least 3 months after discontinuation
+of ciclosporin,431 and that there should be an interval of at
+least 4 weeks between the vaccination and commencing
+immunosuppression.
+10.0 How and when should ciclosporin be
+prescribed?
+10.1 Pretreatment screening and counselling
+10.1.1 Baseline assessment
+It is recommended that baseline screening prior to com-
+mencing ciclosporin should include a history and physical
+examination in order to exclude any of the risk factors dis-
+cussed above. Adult patients should be encouraged to comply
+with national cervical cancer screening programmes. Con-
+comitant medication should be noted and checked for poten-
+tial interaction and blood pressure should be recorded. In
+view of the considerable spontaneous day-to-day ﬂuctuation
+in serum creatinine, it is recommended that at least two and
+preferably three measurements should be performed prior to
+commencing ciclosporin. The mean value can then be used
+as a baseline from which changes can be assessed. In addi-
+tion, screening should include a full blood count, fasting
+serum lipids, electrolytes, liver function tests, serum urate
+and urinalysis. There should also be consideration of an
+interferon-c release assay and a baseline chest X-ray to screen
+for latent tuberculosis when risk factors exist432 and serology
+for HIV, hepatitis B and hepatitis C. In children, hepatitis B,
+hepatitis C and tuberculosis screening should be performed
+at the clinician’s discretion. In those with no deﬁnite history
+of chickenpox or vaccination, varicella serology should be
+obtained.
+10.1.2 Pretreatment discussion
+Prior to prescribing ciclosporin, it is recommended that clini-
+cians discuss the drug with their patients and carers (see sec-
+tion 11). It is also helpful to provide a PIL (www.bad.org.uk/
+leaflets) after the initial discussion, and to document the infor-
+mation that has been provided in the patient’s medical notes.
+Written information should describe all aspects of ciclosporin
+treatment in clear and unambiguous lay terms. Often, the
+patient or their carers will not remember details of the discus-
+sion and a PIL will allow information to be considered and
+discussed with their family, if necessary. A detailed knowledge
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+1322 BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al.
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 12 ===
+of the most common side-effects of ciclosporin treatment (see
+section 9) allows the clinician to discuss these risks and to set
+them in context. It may be prudent for women to avoid preg-
+nancy during ciclosporin treatment, even though there is no
+evidence to prove a teratogenic risk.
+Patients and their carers should be made aware of the
+potential for hazardous interactions with other drugs and the
+need to warn healthcare professionals prescribing concurrent
+medication that they are taking ciclosporin. The following
+treatments may interact with ciclosporin:
+•
+Nephrotoxic agents: drugs such as nonsteroidal anti-inﬂammatory
+drugs (NSAIDs), aminoglycosides, quinolones, melphalan
+and amphotericin B may increase the risk of nephrotoxicity,
+and the risk of hyperkalaemia with ACE inhibitors and potas-
+sium-sparing diuretics might be increased
+o
+Diclofenac: levels are increased when given together with
+ciclosporin; dosage of diclofenac needs to be halved
+•
+Digoxin: Ciclosporin may reduce digoxin clearance and
+cause digoxin toxicity
+•
+Statins: administration of ciclosporin may enhance the
+potential of HMG-CoA reductase inhibitors and colchicine
+to induce muscular toxicity, for example muscular weak-
+ness and pain, myositis and occasionally rhabdomyolysis
+•
+Grapefruit juice and grapefruit: should be avoided as these inhi-
+bit the activity of CYP 3A4 leading to an increase in ciclos-
+porin level.
+10.2 Dosage and delivery
+Ciclosporin is available in capsules of 25 mg, 50 mg and 100
+mg and as a liquid formulation containing 100 mg mL1. The
+recommended dosage range for treatment in dermatological
+patients is 25–5 mg kg1 per day. It should be given at the low-
+est effective dosage, and the maximum dosage of 5 mg kg1 per
+day should not normally be exceeded. It should be taken on an
+empty stomach or before meals. The rate of response is related
+to the starting dosage of ciclosporin. In patients with very severe
+disease a starting dosage at the higher end of the recommended
+range (5 mg kg1 per day) should be used. In less urgent cases
+it is possible to start with a lower dosage and increase this if
+Table 3 Drugs that may affect serum ciclosporin levels (this list is not
+exhaustive)
+Drugs that increase ciclosporin concentration
+•
+Allopurinola
+•
+Amiodaronea
+•
+Azithromycin
+•
+Bromocriptine
+•
+Chloroquine
+•
+Cholic acid and derivatives
+•
+Cimetidinea
+•
+Clarithromycin
+•
+Colchicine
+•
+Danazol
+•
+Diltiazem
+•
+Erythromycin
+•
+Fluconazole
+•
+Imatinib
+•
+Itraconazole
+•
+Ketoconazole
+•
+High-dose methylprednisolone
+•
+Metoclopramide
+•
+Nefazodone
+•
+Nicardipine
+•
+Propafeneonea
+•
+Protease inhibitors
+•
+Ritonavira
+•
+Tacrolimus
+•
+Telaprevir
+•
+Verapamil
+•
+Voriconazole
+Drugs that decrease ciclosporin concentration
+•
+Barbiturates
+•
+Bosentan
+•
+Carbamazepine
+•
+Nafcillin
+•
+Octreotide
+•
+Orlistat
+•
+Oxcarbazepine
+•
+Phenytoin
+•
+Phenobarbital
+•
+Probucol
+•
+Rifampicin
+•
+St. John’s wort
+•
+Sulfadiazinea
+•
+Sulfadimidine (intravenous)
+•
+Sulﬁnpyrazone
+•
+Terbinaﬁne
+•
+Ticlopidine
+Drugs that are nephrotoxic
+•
+Amphotericin B
+•
+Cimetidine
+•
+Gentamycin
+•
+Ketoconazole
+(continued)
+Table 3 (continued)
+Drugs that are nephrotoxic
+•
+Melphalan
+•
+NSAIDs
+•
+Ranitidine
+•
+Tacrolimus
+•
+Tobramycin
+•
+Trimethoprim-sulfamethoxazole
+•
+Vancomycin
+NSAIDs, Nonsteroidal anti-inﬂammatory drugs. aPossible interac-
+tion reported.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al. 1323
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 13 ===
+required. Dosages below 25 mg kg1 per day may be useful as
+part of a maintenance regimen but are not adequate to achieve
+initial control of severe disease.
+When improvement has been achieved the dosage can be
+reduced gradually in steps of 05–1 mg kg1 body weight to
+the lowest effective dosage; if clinical improvement continues,
+ciclosporin should be discontinued to determine whether ther-
+apy is still required. Whenever possible, short courses of treat-
+ment lasting up to 6 months are advised.
+Strategies to minimize the risks associated with ciclos-
+porin include intermittent short-course therapy, rotational
+therapy with other modalities, and short-term use for man-
+agement of severe acute disease.433,434 Topical treatments
+should be used while the patient is on ciclosporin to treat
+resistant lesions, to reduce the ciclosporin dosage required
+and to maintain a satisfactory level of clearance as it is
+tailed off. For patients undergoing intermittent courses of
+ciclosporin, topical therapy should also be used between
+courses to maintain remission for as long as possible. Inter-
+mittent courses of ciclosporin are safer than continuous
+treatment.382
+In most published trials the daily dose of ciclosporin has
+been divided into two fractions, taken in the morning and
+evening. However, there is no convincing evidence that a
+once-daily dosing regimen presents a disadvantage in relation
+to toxicity or efﬁcacy.385,435
+10.3 Monitoring
+In the ﬁrst 2 months, it is recommended that serum creatinine
+and blood pressure be measured at fortnightly intervals fol-
+lowed by monthly measurements thereafter. More frequent
+monitoring is indicated should there be a rise in blood pres-
+sure or creatinine. Less frequent monitoring is sometimes
+acceptable in cases where clinicians are conﬁdent that the risks
+are low (e.g. in otherwise healthy young patients with mini-
+mal previous exposure to NSAIDs or other nephrotoxic drugs).
+Monitoring at 2–3-monthly intervals is adequate when these
+parameters appear to be stable on long-term treatment after 4
+months.
+The serum creatinine level is related to muscle mass. There-
+fore, some individuals with large muscle mass and healthy
+kidneys will commence treatment with a serum creatinine at,
+or above, the upper end of the normal range. Conversely,
+other patients with low muscle mass may develop signiﬁcant
+nephrotoxicity even though the serum creatinine remains well
+within the normal range. For this reason, it is important that
+changes in serum creatinine are assessed in relation to the
+patient’s baseline values, and not the normal range for the
+general population.
+Serum creatinine may ﬂuctuate spontaneously, so single
+measurements should always be interpreted with caution, as
+only sustained changes are clinically important. In the case of
+a serum creatinine rise to more than 30% above the patient’s
+baseline value the test should be repeated within a fortnight.
+If the rise is sustained at this level, then the ciclosporin dosage
+should usually be reduced by at least 1 mg kg1 per day for
+at least 1 month. If the value then falls back to less than 30%
+above baseline, then ciclosporin can be continued at the
+reduced dosage. However, should the creatinine level not
+decrease below the 30% above the patient’s baseline value
+then ciclosporin should usually be discontinued. Reintroduc-
+tion of ciclosporin may be tried when renal function returns
+to within 10% elevation over the patient’s baseline value, but
+if elevation of 30% recurs it should usually be discontinued
+permanently.
+In ciclosporin use over 2 years, renal ﬁbrosis becomes more
+common and may not be detected using creatinine measure-
+ments. Supplementary information on renal function may be
+obtained by measurement of isotope GFR every 2 years, or
+more often in patients with deteriorating renal function.
+Persistent elevation of blood pressure can be managed either
+by reducing the dosage of ciclosporin or by introducing anti-
+hypertensive drug therapy. NICE guidance recommends that
+blood pressure in adults aged up to 79 years should be main-
+tained below a target of 140/90 mmHg,436 (130/80 mmHg
+for patients with diabetes who have eye, renal or cerebrovas-
+cular involvement)437 and this level has also been adopted as
+a threshold for intervention during trials of ciclosporin in pso-
+riasis.
+Additional investigations consisting of fasting lipids, liver
+function tests, potassium and urate levels can be monitored at
+less frequent intervals, depending on the results.
+It is advisable to repeat a physical examination at approxi-
+mately 6-month intervals in patients on prolonged treatment.
+Intensive screening for malignancy is not indicated but
+patients should be advised not to ignore standard recommen-
+dations regarding screening procedures for breast and cervical
+cancer.
+Patients at high risk of HIV, hepatitis B and hepatitis C should
+be monitored clinically during therapy and retested if the his-
+tory, physical signs or blood tests suggest this is necessary.
+Routine monitoring of ciclosporin blood trough levels has
+not proved helpful in dermatology. This investigation may be
+helpful to investigate compliance or drug interactions or in
+cases with an unexpected deterioration in renal function on
+long-term treatment. A blood ciclosporin level measured at
+2 h after dosing appears to correlate with response and may
+be a useful investigation when the response is poor.438
+10.4 Contraindications (Level of evidence 4; strength of
+recommendation D)
+Most ‘contraindications’ are relative, rather than absolute, but
+there are several situations in which particular caution is
+advised when using ciclosporin.439
+Normally, ciclosporin should not be used for patients with
+uncontrolled hypertension or abnormal renal function. Severe
+hepatic dysfunction may impair ciclosporin metabolism.440,441
+Serious infections of any type will usually be contraindications.
+Use of ciclosporin is considered more hazardous in patients
+with pre-existing primary or secondary immunodeﬁciency.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+1324 BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al.
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 14 ===
+In patients with previous or current malignancy, there is a
+risk that systemic immunosuppression may promote growth
+of the neoplasm. Ciclosporin should be avoided in patients
+with a history of lymphoma (including cutaneous T-cell lym-
+phoma), or malignancies such as melanoma.
+Any tendency to drug or alcohol abuse or other factors
+likely to interfere with compliance with correct dosage and
+regular monitoring should be regarded as contraindications.
+Patients should not continue to take ciclosporin if they are
+unwilling to undergo monitoring.
+Patients infected with HIV may be at risk from immunosup-
+pression, so it is advisable to confer with the specialist team
+managing the HIV infection when considering use of ciclos-
+porin in these cases.
+11.0 Checklists for ciclosporin prescribing
+These guidelines attempt to establish an explicit link between
+evidence and recommendations for clinical usage. However,
+this may be difﬁcult as decisions in clinical medicine are
+made in relation to single patients in a setting that may not
+relate to the context from which the guideline recommenda-
+tion has been made. Nevertheless, the following general prin-
+ciples for ciclosporin prescribing are in widespread usage by
+dermatologists and are generally accepted as good clinical
+practice (see box in next column).
+12.0 Economic considerations
+12.1 Cost of drug
+Psoriasis can be treated topically, at signiﬁcantly lower cost, but
+this approach is usually inadequate in patients with severe disease.
+Biological agents, e.g. etanercept, adalimumab and ustek-
+inumab, are now widely used for treating severe psoriasis and
+are signiﬁcantly more expensive, averaging £9500 per annum,
+although less costly biosimilars are now becoming available.442
+A U.S. study evaluated the costs of a range of systemic ther-
+apies for psoriasis including the overall costs of monitoring
+and supervision of the treatments. The annual cost of ciclos-
+porin treatment for psoriasis at a dosage of 5 mg kg1 per
+day was estimated to be $10,021. This study also compared
+ciclosporin with the costs of methotrexate ($1,330), acitretin
+($21,736), etanercept ($24,503), adalimumab ($24,049) and
+ustekinumab ($22,657).443
+There are a number of different formulations for ciclosporin
+available in the U.K. In March 2018 these varied in price
+between £1275 and £1825 for 60 9 10 mg tablets, between
+£1114 and £1837 for 30 9 20 mg tablets, between £2560
+and £3597 for 30 9 50 mg tablets and between £4159 and
+£10993 for 30 9 100 mg tablets. The latest prices are available
+at https://bnf.nice.org.uk/medicinal-forms/ciclosporin.html.
+There is a lack of good-quality health economic evaluations
+comparing total treatment costs of, and beneﬁts from, ciclos-
+porin with comparators.
+13.0 Future directions
+Ciclosporin has been the subject of intensive research over the
+last ﬁve decades. The pharmacological effects and hazards of
+this drug are now fairly well established.
+In dermatology, the use of ciclosporin has been most thor-
+oughly investigated in the treatment of psoriasis and AD.
+There is a need for further investigation of efﬁcacy and tolera-
+bility in other indications, for example rigorous trials in con-
+nective tissue diseases.
+14.0 Recommended audit points
+Clinicians prescribing ciclosporin should use an audit to evalu-
+ate their care against predeﬁned standards. The following
+parameters are suggested:
+Checklist for clinicians – prior to prescribing ciclosporin
+1
+Take a full drug history keeping in mind possible
+interactions.
+2
+Perform a physical examination.
+3
+Ensure there are no contraindications to ciclosporin
+use (section 104).
+4
+Check results of baseline investigations (section 1011)
+a) Full blood count
+b) Urea and electrolytes and calculate a reliable mean
+baseline creatinine
+c) Liver blood tests
+d) Urate, urinalysis and lipid levels
+e) Hepatitis B and C serology (by clinician judgement
+in children)
+f) HIV serology, especially in high-risk groups (by
+clinician judgement in children)
+g) Varicella zoster virus (VZV) serology (unless
+previously vaccinated) (section 911)
+h) Interferon-c release assay and, if indicated, chest
+X-ray when risk factors for tuberculosis exist.
+5
+Give special consideration to the following:
+a) Children (section 81)
+b) Hepatic and renal impairment (section 91)
+c) VZV nonimmune: immunization required
+d) Hepatitis B virus nonimmune: consider
+immunization in at-risk groups.
+6
+Formulate a plan for duration and eventual withdrawal
+of therapy.
+7
+Complete checklist of what to tell patients prior to
+prescribing ciclosporin (see separate checklist).
+8
+For unlicensed indications record provision of
+explanation of prescribing precedent in the
+patient’s notes.
+9
+Supply with a patient information leaﬂet (PIL)
+(if one has not previously been provided) and
+record provision in case notes.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al. 1325
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 15 ===
+1.
+In the last ﬁve consecutive patients receiving long-term
+ciclosporin treatment, is there clear documentation of a
+full drug history?
+2.
+In the last ﬁve patients receiving long-term ciclosporin
+treatment, was there clear documentation of all baseline
+investigations for:
+(a)
+Full blood count
+(b) Urea and electrolytes twice and calculation of mean
+baseline creatinine
+(c)
+Liver blood tests
+(d) Hepatitis B and C serology
+(e)
+Varicella zoster virus serology (if no history of vari-
+cella, unless previously vaccinated)?
+3.
+In the last ﬁve consecutive patients receiving long-term
+ciclosporin treatment, were follow-ups carried out:
+(a)
+by, or under the supervision of, a consultant
+(b) within a maximum of 3-monthly intervals?
+4. In the last ﬁve consecutive patients receiving long-term
+ciclosporin
+treatment,
+were
+serum
+creatinine
+levels
+measured every 2–3 months at each follow-up visit?
+5. In the last ﬁve consecutive patients receiving long-term
+ciclosporin treatment, were blood pressure levels mea-
+sured at each follow-up visit?
+The audit recommendation of ﬁve cases per department
+is to reduce variation in the results owing to a single
+patient and allow benchmarking between different units.
+However, departments unable to achieve this recommenda-
+tion may choose to audit all cases seen in the preceding 12
+months.
+15.0 Summary
+Ciclosporin is a valuable second-line treatment for severe pso-
+riasis and AD. There is good evidence to support the use of
+Checklist of what to tell patients and their carers prior to prescribing ciclosporin
+1
+Explain that ciclosporin works by partially suppressing the immune system and the dosage depends partly on body weight.
+2
+Explain that the onset of therapeutic beneﬁt of ciclosporin can be rapid and once improvement has been achieved the
+dosage will be reduced gradually in steps of 05–1 mg per kg of body weight, to the lowest effective dosage.
+3
+Advise that short courses of treatment lasting 2–4 months are recommended.
+4
+Emphasize the need for monitoring for toxicity, with regular blood tests and blood pressure reading. Patients unable
+to comply should not be given the drug (section 103).
+5
+Advise patients and their carers of the most common side-effects.
+6
+Advise patients and their carers about good oral hygiene (to avoid gingival hyperplasia).
+7
+Explain if usage is for a licensed or unlicensed indication. For unlicensed indications give a clear explanation of
+prescribing precedent.
+8
+Advise patients and their carers to seek urgent medical attention if they develop signs or symptoms of infection or
+renal impairment. Speciﬁcally warn patient about
+a) Fever/ﬂu-like illness
+b) Mouth ulceration
+c) Tiredness
+d) Unexplained bruising or bleeding of the gums
+e) Nausea, vomiting, abdominal pain or dark urine
+f) Breathlessness or cough.
+9
+Advise that grapefruit or grapefruit juice should be avoided while taking ciclosporin.
+10
+Advise that live-attenuated vaccines should be avoided during treatment and other vaccinations may be less effective.
+11
+Advise patients who have not had chickenpox and their carers to inform their doctor promptly if they come into contact
+with anyone with chickenpox or shingles.
+12
+Advise female lactating patients that ciclosporin can pass into the milk and has the potential to cause adverse drug reactions
+in breastfed newborns/infants (section 82).
+13
+Caution regarding pregnancy and emphasize that if a patient does become pregnant they need to inform their doctor as
+soon as possible.
+14
+Warn patients about potential drug interactions [also detailed in the patient information leaﬂet (PIL)] and the need to warn
+other healthcare
+professionals prescribing concurrent medication that they are taking ciclosporin.
+15
+Advise patients not to ignore national screening programmes for breast and cervical cancer.
+16
+Ask patients and their carers whether they have any other concerns about ciclosporin.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+1326 BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al.
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 16 ===
+ciclosporin outside of its product licence for a number of
+indications (Table 4). It is also of potential value in the man-
+agement of many other dermatoses (Table 1). There are some
+skin diseases for which ciclosporin is not recommended
+(Table 4).
+Ciclosporin has a good efﬁcacy and tolerability and its use in
+the right setting demonstrates a good safety proﬁle with accept-
+able side-effects when used for up to 2 years. Toxicity may be
+reduced by using intermittent courses of up to a duration of 16
+weeks. The adverse effects normally do not progress once
+ciclosporin is stopped and, depending on the duration of ther-
+apy, can also regress. Ciclosporin is associated with an increased
+risk of developing nonmelanoma skin cancers in patients previ-
+ously exposed to phototherapy. There is little evidence that the
+incidence of internal malignancy is higher than that of the gen-
+eral population when ciclosporin is used as monotherapy, and
+infections have not proved problematic when using ciclosporin
+to treat skin disease. Following established treatment guidelines,
+maintaining recommended ciclosporin dosage and following
+recommended monitoring protocols should ensure that ciclos-
+porin is used effectively and safely.
+Acknowledgments
+We are very grateful to everyone who commented on the
+draft during the consultation period.
+References
+1 Bell HK, Ormerod AD. Writing a British Association of Dermatol-
+ogists clinical guideline: an update on the process and guidance
+for authors. Br J Dermatol 2009; 160:725–8.
+2 Brouwers MC, Kho ME, Browman GP et al. AGREE II: advancing
+guideline development, reporting and evaluation in health care.
+Can Med Assoc J 2010; 182:E839–42.
+3 Grifﬁths CEM, Barker J, Bleiker T, Chalmers R, Creamer D.
+Rook’s Textbook of Dermatology, 9th edn. Oxford: Wiley-Blackwell,
+2016.
+4 Bologna JL, Jorrizo JL, Rapini RP. Dermatology, 3rd edn. Philadel-
+phia, PA: Elsevier Saunders, 2012.
+5 Lebwohl M, Heymann W, Berth-Jones J, Coulson I. Treatment of
+Skin Disease: Comprehensive Therapeutic Strategies, 4th edn. Philadelphia,
+PA: Elsevier, 2014.
+6 Mueller W, Herrmann B. Cyclosporin A for psoriasis. N Engl J Med
+1979; 301:555.
+7 Liu J, Farmer JD Jr, Lane WS et al. Calcineurin is a common target
+of cyclophilin-cyclosporin A and FKBP-FK506 complexes. Cell
+1991; 66:807–15.
+8 Thompson CB, Lindsten T, Ledbetter JA et al. CD28 activation
+pathway regulates the production of multiple T-cell-derived lym-
+phokines/cytokines. Proc Natl Acad Sci USA 1989; 86:1333–7.
+9 Demidem A, Taylor JR, Grammer SF, Streilien JW. T-lympho-
+cyte-activating properties of epidermal antigen-presenting cells
+from normal and psoriatic skin: evidence that psoriatic epidermal
+antigen-presenting cells resemble cultured normal Langerhans
+cells. J Invest Dermatol 1991; 97:454–60.
+10 Stellato C, de Paulis A, Ciccarelli A et al. Anti-inﬂammatory effect
+of cyclosporin A on human skin mast cells. J Invest Dermatol 1992;
+98:800–4.
+11 Urabe A, Kanitakis J, Viac J, Thivolet J. Cyclosporin A inhibits
+directly in vivo keratinocyte proliferation of living human skin. J
+Invest Dermatol 1989; 92:755–7.
+12 Won YH, Sauder DN, McKenzie RC. Cyclosporin A inhibits ker-
+atinocyte cytokine gene expression. Br J Dermatol 1994; 130:312–19.
+13 Erkko P, Granlund H, Nuutinen M, Reitamo S. Comparison of
+cyclosporin A pharmacokinetics of a new microemulsion formu-
+lation and standard oral preparation in patients with psoriasis. Br
+J Dermatol 1997; 136:82–8.
+14 Wood AJ, Maurer G, Niederberger W, Beveridge T. Cyclosporine:
+pharmacokinetics, metabolism, and drug interactions. Transplant
+Proc 1983; 15 (Suppl. 1):S2409–12.
+15 Chawla M, Ali M, Marks R. Comparison of the steady state phar-
+macokinetics of two formulations of cyclosporin in patients with
+atopic dermatitis. Br J Dermatol 1996; 135 (Suppl. 48):S9–14.
+16 Elder CA, Moore M, Chang CT et al. Efﬁcacy and pharmacokinet-
+ics of two formulations of cyclosporine A in patients with psoria-
+sis. J Clin Pharmacol 1995; 35:865–75.
+17 Koo J. A randomized, double-blind study comparing the efﬁcacy,
+safety and optimal dose of two formulations of cyclosporin,
+Table 4 Summary of the use of ciclosporin in dermatology.
+Ciclosporin is licensed for the following indications (Strength of Recommendation A)
+Atopic dermatitis (≥16 years)
+Psoriasis (≥16 years)
+There is good evidence to support the use of ciclosporin outside of its product licence for the following indications (Strength of Recommendation
+A)
+Atopic dermatitis (< 16 years)
+Behcet disease
+Chronic spontaneous (idiopathic) urticaria
+Graft-versus-host disease
+Palmoplantar pustulosis
+Pyoderma gangrenosum
+Ciclosporin should only be used as a last resort, and on current evidence seems unlikely to be helpful, in the following indications (Strength of
+Recommendation D(GPP))
+Alopecia areata
+Discoid lupus erythematosus
+Pemphigus foliaceous
+Pemphigus vulgaris
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al. 1327
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 17 ===
+Neoral
+and
+Sandimmun,
+in
+patients
+with
+severe
+psoriasis.
+OLP302 Study Group. Br J Dermatol 1998; 139:88–95.
+18 Hashizume H, Ito T, Yagi H et al. Efﬁcacy and safety of prepran-
+dial versus postprandial administration of low-dose cyclosporin
+microemulsion (Neoral) in patients with psoriasis vulgaris. J Der-
+matol 2007; 34:430–4.
+19 Umezawa Y, Mabuchi T, Ozawa A. Preprandial vs. postprandial
+pharmacokinetics of cyclosporine in patients with psoriasis. Int J
+Dermatol 2007; 46:880–2.
+20 Niederberger W, Lemaire M, Maurer G. Distribution and binding
+of cyclosporine in blood and tissues. Transplant Proc 1983; 15
+(Suppl. 1):S2419–21.
+21 Ptachcinski RJ, Venkataramanan R, Burckart GJ. Clinical pharma-
+cokinetics of cyclosporin. Clin Pharmacokinet 1986; 11:107–32.
+22 Ptachcinski RJ, Venkataramanan R, Burckart GJ et al. Cyclosporine
+kinetics in healthy volunteers. J Clin Pharmacol 1987; 27:243–8.
+23 Kronbach T, Fischer V, Meyer UA. Cyclosporine metabolism in
+human liver: identiﬁcation of a cytochrome P-450III gene family
+as the major cyclosporine-metabolizing enzyme explains interac-
+tions of cyclosporine with other drugs. Clin Pharmacol Ther 1988;
+43:630–5.
+24 Beveridge T. Pharmacokinetics and metabolism of cyclosporine A.
+In: Cyclosporin A. (White DJG, ed). New York, NY: Elsevier
+Biomedical, 1982; 35–44.
+25 Bleck JS, Schlitt HJ, Christians U et al. Urinary excretion of ciclos-
+porin and 17 of its metabolites in renal allograft recipients. Phar-
+macology 1989; 39:160–4.
+26 Bleck JS, Schlitt HJ, Christians U et al. Ciclosporin metabolite pat-
+tern in blood and urine of kidney graft patients in relation to
+liver function. Eur J Clin Pharmacol 1991; 40:565–9.
+27 Picascia DD, Garden JM, Freinkel RK, Roenigk HH Jr. Treatment
+of resistant severe psoriasis with systemic cyclosporine. J Am Acad
+Dermatol 1987; 17:408–14.
+28 Sutthipisal N, Sriwatsantsak J, Sirimachan S, Nitidandhabaprabhas
+P. The use of low dose cyclosporin A in a case of recalcitrant ery-
+throdermic psoriasis. J Int Med Res 1988; 16:485–8.
+29 Reitamo S, Mustakallio KK. Cyclosporin in erythrodermic psoria-
+sis. Acta Derm Venereol Suppl (Stockh) 1989; 146:140–1.
+30 Anonymous. Management of erythrodermic psoriasis with low-
+dose cyclosporin. Studio Italiano Multicentrico nella Psoriasi
+(SIMPSO). Dermatology 1993; 187:S30–7.
+31 Meinardi MM, Westerhof W, Bos JD. Generalized pustular psoria-
+sis (von Zumbusch) responding to cyclosporin A. Br J Dermatol
+1987; 116:269–70.
+32 Matsumura N, Takematsu H, Saijo S et al. Exanthematic type of
+pustular psoriasis consisting of two types of pustular lesion. Acta
+Derm Venereol 1991; 71:442–4.
+33 Ephrem G, Jour G, Smith BL. Successful treatment of von Zum-
+busch generalized pustular psoriasis with cyclosporine after erup-
+tion post etanercept injection. J Med Liban 2011; 59:168–9.
+34 Ricotti C, Kerdel FA. Subacute annular generalized pustular psori-
+asis treated with etanercept and cyclosporine combination. J Drugs
+Dermatol 2007; 6:738–40.
+35 Reitamo S, Puska P, Lassus A. Cyclosporin in the treatment of
+palmo-plantar pustulosis. Br J Dermatol 1989; 120:857.
+36 Meinardi MM, de Rie MA, Bos JD. Oral cyclosporin A is effective
+in clearing persistent pustulosis palmaris et plantaris. Acta Derm
+Venereol 1990; 70:77–9.
+37 Gupta AK, Ellis CN, Nickoloff BJ et al. Oral cyclosporine in the
+treatment of inﬂammatory and noninﬂammatory dermatoses. A
+clinical and immunopathologic analysis. Arch Dermatol 1990;
+126:339–50.
+38 Zachariae H, Thestrup-Pedersen K. Ciclosporin A in acrodermatitis
+continua. Dermatologica 1987; 175:29–32.
+39 Peter RU, Ruzicka T, Donhauser G, Braun-Falco O et al. Acroder-
+matitis continua-type of pustular psoriasis responds to low-dose
+cyclosporine. J Am Acad Dermatol 1990; 23:515–16.
+40 Arnold WP, Gerritsen MJ, van de Kerkhof PC. Response of nail
+psoriasis to cyclosporin. Br J Dermatol 1993; 129:750–1.
+41 Grifﬁths CE, Powles AV, McFadden J et al. Long-term cyclosporin
+for psoriasis. Br J Dermatol 1989; 120:253–60.
+42 Anonymous. Short- and long-term considerations concerning the
+management of plaque psoriasis with low-dose cyclosporin. Stu-
+dio Italiano Multicentrico nella Psoriasi (SIMPSO). Dermatology
+1993; 187 (Suppl. 1):S19–29.
+43 Mahrle G, Schulze HJ, Farber L et al. Low-dose short-term cyclos-
+porine versus etretinate in psoriasis: improvement of skin, nail,
+and joint involvement. J Am Acad Dermatol 1995; 32:78–88.
+44 Harper JI, Zemelman V, Keat AC, Staughton RC. Cyclosporine for
+psoriasis: beneﬁcial effect in refractory skin and joint disease.
+Transplant Proc 1988; 20(3 Suppl. 4):63–7.
+45 Steinsson K, Jonsdottir I, Valdimarsson H. Cyclosporin A in psori-
+atic arthritis: an open study. Ann Rheum Dis 1990; 49:603–6.
+46 Gupta AK, Matteson EL, Ellis CN et al. Cyclosporine in the treat-
+ment of psoriatic arthritis. Arch Dermatol 1989; 125:507–10.
+47 Salvarani C, Macchioni P, Boiardi L et al. Low dose cyclosporine A
+in psoriatic arthritis: relation between soluble interleukin 2 recep-
+tors and response to therapy. J Rheumatol 1992; 19:74–9.
+48 Camp RD, Reitamo S, Friedmann PS et al. Cyclosporin A in severe,
+therapy-resistant atopic dermatitis: report of an international
+workshop, April 1993. Br J Dermatol 1993; 129:217–20.
+49 Berth-Jones J, Henderson CA, Munro CS et al. Treatment of psori-
+asis with intermittent short course cyclosporin (Neoral). A multi-
+centre study. Br J Dermatol 1997; 136:527–30.
+50 Ho VC, Grifﬁths CE, Berth-Jones J et al. Intermittent short courses of
+cyclosporine microemulsion for the long-term management of pso-
+riasis: a 2-year cohort study. J Am Acad Dermatol 2001; 44:643–51.
+51 Ohtsuki M, Nakagawa H, Sugai J et al. Long-term continuous ver-
+sus intermittent cyclosporin: therapy for psoriasis. J Dermatol
+2003; 30:290–8.
+52 Chaidemenos GC, Mourellou O, Avgoustinaki N et al. Intermittent
+vs. continuous 1-year cyclosporin use in chronic plaque psoriasis.
+J Eur Acad Dermatol Venereol 2007; 21:1203–8.
+53 Shintani Y, Kaneko N, Furuhashi T et al. Safety and efﬁcacy of a
+ﬁxed-dose cyclosporin microemulsion (100 mg) for the treat-
+ment of psoriasis. J Dermatol 2011; 38:966–72.
+54 Yoon HS, Youn JI. A comparison of two cyclosporine dosage reg-
+imens for the treatment of severe psoriasis. J Dermatolog Treat 2007;
+18:286–90.
+55 Levell NJ, Shuster S, Munro CS, Friedmann PS. Remission of ordi-
+nary psoriasis following a short clearance course of cyclosporin.
+Acta Derm Venereol 1995; 75:65–9.
+56 Heydendael VM, Spuls PI, Opmeer BC et al. Methotrexate versus
+cyclosporine in moderate-to-severe chronic plaque psoriasis. N
+Engl J Med 2003; 349:658–65.
+57 Flytstr€om I, Stenberg B, Svensson A, Bergbrant IM. Methotrexate
+vs. ciclosporin in psoriasis: effectiveness, quality of life and safety.
+A randomized controlled trial. Br J Dermatol 2008; 158:116–21.
+58 G€um€usel M, €Ozdemir M, Mevlito, Bodur S. Evaluation of the efﬁ-
+cacy of methotrexate and cyclosporine therapies on psoriatic
+nails: a one-blind, randomized study. J Eur Acad Dermatol Venereol
+2011; 25:1080–4.
+59 Davison SC, Morris-Jones R, Powles AV, Fry L. Change of treat-
+ment from cyclosporin to mycophenolate mofetil in severe psori-
+asis. Br J Dermatol 2000; 143:405–7.
+60 Beissert S, Pauser S, Sticherling M et al. A comparison of
+mycophenolate mofetil with ciclosporine for the treatment of
+chronic plaque-type psoriasis. Dermatology 2009; 219:126–32.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+1328 BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al.
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 18 ===
+61 Schmitt J, Rosumeck S, Thomaschewski G et al. Efﬁcacy and safety of
+systemic treatments for moderate-to-severe psoriasis: meta-analysis of
+randomized controlled trials. Br J Dermatol 2014; 170:274–303.
+62 Berth-Jones J. The use of ciclosporin in psoriasis. J Dermatolog Treat
+2005; 16:258–77.
+63 Grifﬁths CE, Dubertret L, Ellis CN et al. Ciclosporin in psoriasis
+clinical practice: an international consensus statement. Br J Dermatol
+2004; 150 (Suppl. 67):S11–23.
+64 Lebwohl M, Ellis C, Gottlieb A et al. Cyclosporine consensus con-
+ference: with emphasis on the treatment of psoriasis. J Am Acad
+Dermatol 1998; 39:464–75.
+65 NICE Guidelines. Psoriasis: assessment and management CG153.
+Available
+at:
+https://www.nice.org.uk/guidance/cg153
+(last
+accessed 16 April 2018).
+66 Gisondi P, Del Giglio M, Di Francesco V et al. Weight loss
+improves the response of obese patients with moderate-to-severe
+chronic plaque psoriasis to low-dose cyclosporine therapy: a ran-
+domized, controlled, investigator-blinded clinical trial. Am J Clin
+Nutr 2008; 88:1242–7.
+67 Grossman RM, Thivolet J, Claudy A et al. A novel therapeutic
+approach to psoriasis with combination calcipotriol ointment and
+very low-dose cyclosporine: results of a multicenter placebo-con-
+trolled study. J Am Acad Dermatol 1994; 31:68–74.
+68 Kokelj F, Torsello P, Plozzer C. Calcipotriol improves the efﬁcacy
+of cyclosporine in the treatment of psoriasis vulgaris. J Eur Acad
+Dermatol Venereol 1998; 10:143–6.
+69 Vena GA, Galluccio A, Pezza M et al. Combined treatment with low-
+dose cyclosporine and calcipotriol/betamethasone dipropionate
+ointment for moderate-to-severe plaque psoriasis: a randomized
+controlled open-label study. J Dermatolog Treat 2012; 23:255–60.
+70 Gottlieb SL, Heftler NS, Gilleaudeau P et al. Short-contact anthralin
+treatment augments therapeutic efﬁcacy of cyclosporine in psoria-
+sis: a clinical and pathologic study. J Am Acad Dermatol 1995;
+33:637–45.
+71 Grifﬁths CE, Powles AV, Baker BS et al. Combination of cyclospor-
+ine A and topical corticosteroid in the treatment of psoriasis.
+Transplant Proc 1988; 20 (3 Suppl 4):50–2.
+72 Clark CM, Kirby B, Morris AD et al. Combination treatment with
+methotrexate and cyclosporin for severe recalcitrant psoriasis. Br J
+Dermatol 1999; 141:279–82.
+73 Fraser AD, van Kuijk AW, Westhovens R et al. A randomised,
+double blind, placebo controlled, multicentre trial of combination
+therapy with methotrexate plus ciclosporin in patients with active
+psoriatic arthritis. Ann Rheum Dis 2005; 64:859–64.
+74 Mazzanti G, Coloni L, De Sabbata G, Paladini G. Methotrexate
+and cyclosporin combined therapy in severe psoriatic arthritis.
+A pilot study. Acta Derm Venereol Suppl (Stockh) 1994; 186:116–7.
+75 Wong KC, Georgouras K. Low dose cyclosporin A and methotrex-
+ate in the treatment of psoriasis. Acta Derm Venereol 1999; 79:87.
+76 Aydin F, Canturk T, Senturk N, Turanli AY. Methotrexate and
+ciclosporin combination for the treatment of severe psoriasis. Clin
+Exp Dermatol 2006; 31:520–4.
+77 Korstanje MJ, van Breda Vriesman CJ, van de Staak WJ. Cyclos-
+porine and methotrexate: a dangerous combination. J Am Acad Der-
+matol 1990; 23:320–1.
+78 Anforth R, Blumetti TC, Clements A et al. Systemic retinoids for
+the chemoprevention of cutaneous squamous cell carcinoma and
+verrucal keratosis in a cohort of patients on BRAF inhibitors. Br J
+Dermatol 2013; 169:1310–13.
+79 Berth-Jones J, Graham-Brown RA. Xeroderma pigmentosum vari-
+ant: response to etretinate. Br J Dermatol 1990; 122:559–61.
+80 Brechtel B, Wellenreuther U, Toppe E, Czarnetzki BM. Combina-
+tion of etretinate with cyclosporine in the treatment of severe
+recalcitrant psoriasis. J Am Acad Dermatol 1994; 30:1023–4.
+81 Heule F, Bousema MT, Laeijendecker R, van Joost T. Three long-
+term regimens with cyclosporin for psoriasis vulgaris. Acta Derm
+Venereol Suppl (Stockh) 1989; 146:171–5.
+82 Korstanje MJ, Bessems PJ, van de Staak WJ. Combination therapy
+ciclosporin-etretinate effective in erythrodermic psoriasis. Dermato-
+logica 1989; 179:94.
+83 Korstanje MJ, van de Staak WJ. Combination-therapy cyclosporin-
+A–etretinate for psoriasis. Clin Exp Dermatol 1990; 15:172–3.
+84 Kokelj F, Plozzer C, Torsello P, Trevisan G. Efﬁcacy of cyclos-
+porine plus etretinate in the treatment of erythrodermic psoria-
+sis (three case reports). J Eur Acad Dermatol Venereol 1998; 11:177–
+9.
+85 Kuijpers AL, van Dooren-Greebe JV, van de Kerkhof PC. Failure of
+combination therapy with acitretin and cyclosporin A in 3 patients
+with erythrodermic psoriasis. Dermatology 1997; 194:88–90.
+86 Shah IA, Whiting PH, Omar G et al. The effects of retinoids and
+terbinaﬁne on the human hepatic microsomal metabolism of
+cyclosporin. Br J Dermatol 1993; 129:395–8.
+87 Kirby B, Harrison PV. Combination low-dose cyclosporin (Neo-
+ral) and hydroxyurea for severe recalcitrant psoriasis. Br J Dermatol
+1999; 140:186–7.
+88 Balasubramaniam P, Stevenson O, Berth-Jones J. Fumaric acid
+esters in severe psoriasis, including experience of use in combina-
+tion with other systemic modalities. Br J Dermatol 2004; 150:741–6.
+89 Ameen M, Smith HR, Barker JN. Combined mycophenolate mofe-
+til and cyclosporin therapy for severe recalcitrant psoriasis. Clin
+Exp Dermatol 2001; 26:480–3.
+90 Reitamo S, Spuls P, Sassolas B et al. Efﬁcacy of sirolimus (ra-
+pamycin) administered concomitantly with a subtherapeutic dose
+of cyclosporin in the treatment of severe psoriasis: a randomized
+controlled trial. Br J Dermatol 2001; 145:438–45.
+91 Meinardi MM, Bos JD. Cyclosporine maintenance therapy in pso-
+riasis. Transplant Proc 1988; 20:42–9.
+92 Petzelbauer P, Honigsmann H, Langer K et al. Cyclosporin A in
+combination with photochemotherapy (PUVA) in the treatment
+of psoriasis. Br J Dermatol 1990; 123:641–7.
+93 Korstanje MJ, Hulsmans RF. Combination therapy cyclosporin A-
+PUVA in psoriasis. Acta Derm Venereol 1990; 70:89–90.
+94 Marcil I, Stern RS. Squamous-cell cancer of the skin in patients
+given PUVA and ciclosporin: nested cohort crossover study. Lancet
+2001; 358:1042–5.
+95 Strober BE, Clarke S. Etanercept for the treatment of psoriasis:
+combination therapy with other modalities. J Drugs Dermatol 2004;
+3:270–2.
+96 Yamauchi PS, Lowe NJ. Cessation of cyclosporine therapy by
+treatment with etanercept in patients with severe psoriasis. J Am
+Acad Dermatol 2006; 54 (3 Suppl. 2):S135–8.
+97 Cohen Barak E, Kerner M, Rozenman D, Ziv M. Combination ther-
+apy of cyclosporine and anti-tumor necrosis factor alpha in psoria-
+sis: a case series of 10 patients. Dermatol Ther 2015; 28:126–30.
+98 Lee EJ, Shin MK, Kim NI. A clinical trial of combination therapy
+with etanercept and low dose cyclosporine for the treatment of
+refractory psoriasis. Ann Dermatol 2010; 22:138–42.
+99 Babino G, Giunta A, Ruzzetti M et al. Combination therapy with
+etanercept in psoriasis: Retrospective analysis of efﬁcacy and
+safety outcomes from real-life practice. J Int Med Res 2016;
+44:100–5.
+100 D’Angelo S, Cutro MS, Lubrano E et al. Combination therapy with
+ciclosporin and etanercept in patients with psoriatic arthritis. Ann
+Rheum Dis 2010; 69:934–5.
+101 Karanikolas GN, Koukli EM, Katsalira A et al. Adalimumab or
+cyclosporine as monotherapy and in combination in severe psori-
+atic arthritis: results from a prospective 12-month nonrandom-
+ized unblinded clinical trial. J Rheumatol 2011; 38:2466–74.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al. 1329
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 19 ===
+102 Heinecke GM, Luber AJ, Levitt JO, Lebwohl MG. Combination use
+of ustekinumab with other systemic therapies: a retrospective study
+in a tertiary referral center. J Drugs Dermatol 2013; 12:1098–102.
+103 Owen CM, Harrison PV. Successful treatment of severe psoriasis
+with basiliximab, an interleukin-2 receptor monoclonal antibody.
+Clin Exp Dermatol 2000; 25:195–7.
+104 Bell HK, Parslew RA. Use of basiliximab as a cyclosporin-sparing
+agent in palmoplantar pustular psoriasis with myalgia as an
+adverse effect. Br J Dermatol 2002; 147:606–7.
+105 Mahe E, Descamps V, Grossin M et al. CD30+ T-cell lymphoma in
+a patient with psoriasis treated with ciclosporin and inﬂiximab.
+Br J Dermatol 2003; 149:170–3.
+106 Schmitt J, Schakel K, Schmitt N, Meurer M. Systemic treatment of
+severe atopic eczema: a systematic review. Acta Derm Venereol 2007;
+87:100–11.
+107 Schmitt J, Schmitt N, Meurer M. Cyclosporin in the treatment of
+patients with atopic eczema: a systematic review and meta-analy-
+sis. J Eur Acad Dermatol Venereol 2007; 21:606–19.
+108 Salek MS, Finlay AY, Sumner MJ. Effect of long-term ciclosporin
+treatment on health-related quality of life of adult eczema
+patients - an open multicentre study. J Appl Therapeut Res 2008;
+6:29–34.
+109 NICE. BNF: ciclosporin. Available at: https://bnf.nice.org.uk/d
+rug/ciclosporin.html#directionsForAdministration. (last accessed
+24 January 2018).
+110 Cornish KS, Gregory ME, Ramaesh K. Systemic cyclosporin A in sev-
+ere atopic keratoconjunctivitis. Eur J Ophthalmol 2010; 20:844–51.
+111 Munro CS, Levell NJ, Shuster S, Friedmann PS. Maintenance treat-
+ment with cyclosporin in atopic eczema. Br J Dermatol 1994;
+130:376–80.
+112 Mougel F, Dalle S, Balme B et al. Aggressive CD30 large cell lym-
+phoma after cyclosporine given for putative atopic dermatitis.
+Dermatology 2006; 213:239–41.
+113 Nakamura S, Takeda K, Hashimoto Y et al. Primary cutaneous
+CD30+ lymphoproliferative disorder in an atopic dermatitis
+patient on cyclosporine therapy. Indian J Dermatol Venereol Leprol
+2011; 77:253.
+114 Schmitt J, Sch€akel K, F€olster-Holst R et al. Prednisolone vs. ciclos-
+porin for severe adult eczema. An investigator-initiated double-
+blind placebo-controlled multicentre trial. Br J Dermatol 2010;
+162:661–8.
+115 Haeck IM, Knol MJ, Ten Berge O et al. Enteric-coated mycophe-
+nolate sodium versus cyclosporin A as long-term treatment in
+adult patients with severe atopic dermatitis: a randomized con-
+trolled trial. J Am Acad Dermatol 2011; 64:1074–84.
+116 El-Khalawany MA, Hassan H, Shaaban D et al. Methotrexate versus
+cyclosporine in the treatment of severe atopic dermatitis in chil-
+dren: a multicenter experience from Egypt. Eur J Pediatr 2013;
+172:351–6.
+117 Campione E, Paterno EJ, Diluvio L et al. Combination of low-
+dosage cyclosporine and topical pimecrolimus in severe atopic
+dermatitis with chronic hepatitis B. Acta Derm Venereol 2008;
+88:74–5.
+118 Heule F, van Joost T, Beukers R. Cyclosporine in the treatment of
+lupus erythematosus. Arch Dermatol 1986; 122:973–4.
+119 Yell JA, Burge SM. Cyclosporin and discoid lupus erythematosus.
+Br J Dermatol 1994; 131:132–3.
+120 Chrysomallis F, Ioannides D, Teknetzis A et al. Treatment of oral
+pemphigus vulgaris. Int J Dermatol 1994; 33:803–7.
+121 Ioannides D, Chrysomallis F, Bystryn JC. Ineffectiveness of cyclos-
+porine as an adjuvant to corticosteroids in the treatment of pem-
+phigus. Arch Dermatol 2000; 136:868–72.
+122 Shapiro J, Lui H, Tron V, Ho V. Systemic cyclosporine and low-
+dose prednisone in the treatment of chronic severe alopecia
+areata: a clinical and immunopathologic evaluation. J Am Acad Der-
+matol 1997; 36:114–17.
+123 Gupta AK, Ellis CN, Cooper KD et al. Oral cyclosporine for the
+treatment of alopecia areata. A clinical and immunohistochemical
+analysis. J Am Acad Dermatol 1990; 22:242–50.
+124 Kim BJ, Min SU, Park KY et al. Combination therapy of cyclospor-
+ine and methylprednisolone on severe alopecia areata. J Dermatolog
+Treat 2008; 19:216–20.
+125 Gensure RC. Clinical response to combined therapy of cyclos-
+porine and prednisone. J Investig Dermatol Symp Proc 2013; 16:
+S58.
+126 126 Giavedoni P, Mascaro-Galy JM, Aguilera P, Estrach-Panella T.
+Acne fulminans successfully treated with cyclosporine and isotre-
+tinoin. J Am Acad Dermatol 2014; 70:e38–9.
+127 Thestrup-Pedersen K, Zachariae C, Kaltoft K et al. Development of
+cutaneous pseudolymphoma following ciclosporin therapy of
+actinic reticuloid. Dermatologica 1988; 177:376–81.
+128 Norris PG, Camp RD, Hawk JL. Actinic reticuloid: response to
+cyclosporine. J Am Acad Dermatol 1989; 21:307–9.
+129 Di Lernia V, Grenzi L, Guareschi E, Ricci C. Rapid clearing of
+acute generalized exanthematous pustulosis after administration
+of ciclosporin. Clin Exp Dermatol 2009; 34:e757–9.
+130 Yalҫin B, Ҫakmak S, Yildirim B. Successful treatment of hydroxy-
+chloroquine-induced recalcitrant acute generalized exanthematous
+pustulosis with cyclosporine: case report and literature review.
+Ann Dermatol 2015; 27:431–4.
+131 Natkunarajah J, Ostlere L. Severe acute generalized exanthematous
+pustulosis with blistering, mimicking toxic epidermal necrolysis.
+Clin Exp Dermatol 2012; 37:188–9.
+132 Frigerio E, Ramoni S, Franchi C et al. Successful cyclosporine
+treatment in a case of amicrobial pustulosis associated with
+immunological abnormalities. Int J Immunopathol Pharmacol 2009;
+22:243–6.
+133 Fujita K, Hatta K. Acquired generalized anhidrosis: review of the
+literature and report of a case with lymphocytic hidradenitis and
+sialadenitis successfully treated with cyclosporine. Dermatology
+2013; 227:270–7.
+134 Ventura F, Vilarinho C, da Luz Duarte M et al. Two cases of annu-
+lar elastolytic giant cell granuloma: different response to the
+treatment. Dermatol Online J 2010; 16:11.
+135 Ca~nas CA, Duran CE, Bravo JC et al. Leg ulcers in the antiphospholipid
+syndrome may be considered as a form of pyoderma gangrenosum
+and they respond favorably to treatment with immunosuppression
+and anticoagulation. Rheumatol Int 2010; 30:1253–7.
+136 Nobeyama Y, Matsuzaki H, Nakagawa H. Annular erythema of
+Sjogren’s syndrome treated successfully with low-dose cyclospor-
+ine. J Dermatol 2014; 41:463–4.
+137 Sowden JM, Berth-Jones J, Ross JS et al. Double-blind, controlled,
+crossover study of cyclosporin in adults with severe refractory
+atopic dermatitis. Lancet 1991; 338:137–40.
+138 Salek MS, Finlay AY, Luscombe DK et al. Cyclosporin greatly
+improves the quality of life of adults with severe atopic dermati-
+tis. A randomized, double-blind, placebo-controlled trial. Br J Der-
+matol 1993; 129:422–30.
+139 van Joost T, Heule F, Korstanje M et al. Cyclosporin in atopic der-
+matitis: a multicentre placebo-controlled study. Br J Dermatol
+1994; 130:634–40.
+140 Granlund H, Erkko P, Sinisalo M, Reitamo S. Cyclosporin in ato-
+pic dermatitis: time to relapse and effect of intermittent therapy.
+Br J Dermatol 1995; 132:106–12.
+141 Zonneveld IM, De Rie MA, Beljaards RC et al. The long-term
+safety and efﬁcacy of cyclosporin in severe refractory atopic der-
+matitis: a comparison of two dosage regimens. Br J Dermatol 1996;
+135 (Suppl. 48):15–20.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+1330 BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al.
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 20 ===
+142 Berth-Jones J, Finlay AY, Zaki I et al. Cyclosporine in severe child-
+hood atopic dermatitis: a multicenter study. J Am Acad Dermatol
+1996; 34:1016–21.
+143 Berth-Jones J, Graham-Brown RA, Marks R et al. Long-term efﬁ-
+cacy and safety of cyclosporin in severe adult atopic dermatitis.
+Br J Dermatol 1997; 136:76–81.
+144 Harper JI, Ahmed I, Barclay G et al. Cyclosporin for severe child-
+hood atopic dermatitis: short course versus continuous therapy.
+Br J Dermatol 2000; 142:52–8.
+145 Anzaar F, Gallagher MJ, Bhat P et al. Use of systemic T-lympho-
+cyte signal transduction inhibitors in the treatment of atopic ker-
+atoconjunctivitis. Cornea 2008; 27:884–8.
+146 Masuda K, Nakajima A, Urayama A et al. Double-masked trial of
+cyclosporin versus colchicine and long-term open study of
+cyclosporin in Behcet’s disease. Lancet 1989; 1:1093–6.
+147 Avci O, Gurler N, Gunes AT. Efﬁcacy of cyclosporine on muco-
+cutaneous manifestations of Behcet’s disease. J Am Acad Dermatol
+1997; 36:796–7.
+148 Pacor ML, Biasi D, Lunardi C et al. Cyclosporin in Behcet’s dis-
+ease: results in 16 patients after 24 months of therapy. Clin
+Rheumatol 1994; 13:224–7.
+149 K€otter I, G€unaydin I, Batra M et al. CNS involvement occurs more
+frequently in patients with Behcet’s disease under cyclosporin A
+(CSA) than under other medications–results of a retrospective
+analysis of 117 cases. Clin Rheumatol 2006; 25:482–6.
+150 Oliveira AC, Buosi AL, Dutra LA, de Souza AW. Behcet disease:
+clinical features and management in a Brazilian tertiary hospital. J
+Clin Rheumatol 2011; 17:416–20.
+151 Wilkel CS, McDonald CJ. Cyclosporine therapy for bullous ery-
+thema multiforme. Arch Dermatol 1990; 126:397–8.
+152 Thivolet J, Barthelemy H, Rigot-Muller G, Bendelac A. Effects of
+cyclosporin on bullous pemphigoid and pemphigus. Lancet 1985;
+1:334–5.
+153 Boixeda JP, Soria C, Medina S, Ledo A. Bullous pemphigoid and
+psoriasis: treatment with cyclosporine. J Am Acad Dermatol 1991;
+24:152.
+154 Imanishi A, Tateishi C, Imanishi H et al. Pemphigoid with anti-
+bodies to laminin c1, BP180 and BP230, associated with psoriasis
+vulgaris: successful disease control with cyclosporin. J Dermatol
+2015; 42:394–7.
+155 Okada K, Ishikawa O, Miyachi Y. Purpura pigmentosa chronica
+successfully treated with oral cyclosporin A. Br J Dermatol 1996;
+134:180–1.
+156 Granlund H, Erkko P, Reitamo S. Long-term follow-up of eczema
+patients treated with cyclosporine. Acta Derm Venereol 1998; 78:40–3.
+157 Paquet P. Pierard GE [Severe chronic actinic dermatitis treated
+with cyclosporine: 2 cases]. Ann Dermatol Venereol 2001; 128:42–5.
+(in French).
+158 Stinco G, Codutti R, Frattasio A et al. Chronic actinic dermatitis
+treated with cyclosporine-A. Eur J Dermatol 2002; 12:455–7.
+159 Grattan CE, O’ Donnell BF, Francis DM et al. Randomized double-
+blind study of cyclosporin in chronic ‘idiopathic’ urticaria. Br J
+Dermatol 2000; 143:365–72.
+160 Vena GA, Cassano N, Colombo D et al. Cyclosporine in chronic
+idiopathic urticaria: a double-blind, randomized, placebo-con-
+trolled trial. J Am Acad Dermatol 2006; 55:705–9.
+161 Doshi DR, Weinberger MM. Experience with cyclosporine in children
+with chronic idiopathic urticaria. Pediatr Dermatol 2009; 26:409–13.
+162 Boubouka CD, Charissi C, Kouimintzis D et al. Treatment of
+autoimmune urticaria with low-dose cyclosporin A: a one-year
+follow-up. Acta Derm Venereol 2011; 91:50–4.
+163 Hollander SM, Joo SS, Wedner HJ. Factors that predict the success
+of cyclosporine treatment for chronic urticaria. Ann Allergy Asthma
+Immunol 2011; 107:523–8.
+164 Serhat Inaloz H, Ozturk S, Akcali C et al. Low-dose and short-term
+cyclosporine treatment in patients with chronic idiopathic urti-
+caria: a clinical and immunological evaluation. J Dermatol 2008;
+35:276–82.
+165 Marsland AM, Beck MH. Cold urticaria responding to systemic
+ciclosporin. Br J Dermatol 2003; 149:214–15.
+166 Higgins EM, McLelland J, Friedmann PS et al. Oral cyclosporin
+inhibits the expression of contact hypersensitivity in man. J Der-
+matol Sci 1991; 2:79–83.
+167 Lakshmi C, Srinivas CR, Jayaraman A. Ciclosporin in parthenium
+dermatitis–a report of 2 cases. Contact Dermatitis 2008; 59:245–8.
+168 Park SG, Lee EC, Hong WK et al. A case of occupational allergic con-
+tact dermatitis due to PVC hose. J Occup Health 2008; 50:197–200.
+169 Carranza DC, Young L. Successful treatment of metastatic Crohn’s
+disease with cyclosporine. J Drugs Dermatol 2008; 7:789–91.
+170 Shahidullah H, Humphreys F, Beveridge GW. Darier’s disease:
+severe eczematization successfully treated with cyclosporin. Br J
+Dermatol 1994; 131:713–16.
+171 Stewart LC, Yell J. Vulval Darier’s disease treated successfully with
+ciclosporin. J Obstet Gynaecol 2008; 28:108–9.
+172 Thomson KF, Highet AS. Penile ulceration in fatal malignant
+atrophic papulosis (Degos’ disease). Br J Dermatol 2000; 143:1320–2.
+173 Stenveld HJ, Starink TM, van Joost T, Stoof TJ. Efﬁcacy of cyclos-
+porine in two patients with dermatitis herpetiformis resistant to
+conventional therapy. J Am Acad Dermatol 1993; 28:1014–15.
+174 Zeller V, Cohen P, Prieur AM, Guillevin L. Cyclosporin a therapy
+in refractory juvenile dermatomyositis. Experience and longterm
+followup of 6 cases. J Rheumatol 1996; 23:1424–7.
+175 Vencovsky J, Jarosova K, Machacek S et al. Cyclosporine A versus
+methotrexate in the treatment of polymyositis and dermato-
+myositis. Scand J Rheumatol 2000; 29:95–102.
+176 Qushmaq KA, Chalmers A, Esdaile JM. Cyclosporin A in the treat-
+ment of refractory adult polymyositis/dermatomyositis: popula-
+tion based experience in 6 patients and literature review. J
+Rheumatol 2000; 27:2855–9.
+177 Shimojima Y, Ishii W, Kato T et al. Intractable skin necrosis and
+interstitial pneumonia in amyopathic dermatomyositis, success-
+fully treated with cyclosporin A. Intern Med 2003; 42:1253–8.
+178 Kim HJ, Hong YK, Yoo WH. Dermatomyositis, complicated
+with pneumomediastinum, successfully treated with cyclospor-
+ine A: a case report and review of literature. Rheumatol Int 2009;
+29:1101–4.
+179 Ruperto N, Pistorio A, Knupp Feitosa De Oliveira S et al. PReS-
+FINAL-2184: A randomized trial in new onset juvenile dermato-
+myositis: Prednisone versus prednisone plus cyclosporine versus
+prednisone plus methotrexate. Pediatr Rheumatol 2013; 11 (Suppl.
+2):O19.
+180 Toda S, Takahagi S, Mihara S, Hide S. Six cases of antihistamine-
+resistant dermographic urticaria treated with oral ciclosporin.
+Allergol Int 2011; 60:547–50.
+181 Herr H, Koh JK. Eosinophilic cellulitis (Wells’ syndrome) success-
+fully treated with low-dose cyclosporine. J Korean Med Sci 2001;
+16:664–8.
+182 Karabudak O, Dogan B, Taskapan O, Harmanyeri Y. Eosinophilic
+cellulitis presented with semicircular pattern. J Dermatol 2006;
+33:798–801.
+183 Ladoyanni E, Vlachou C, Thushara R, Snead D. A patient with
+Wells’ syndrome. Clin Exp Dermatol 2010; 35:e3–4.
+184 Kim SH, Kwon JE, Kim H-B. Successful treatment of steroid-
+dependent eosinophilic cellulitis with cyclosporine. Allergy Asthma
+Immunol Res 2013; 5:62–4.
+185 Hayashi N, Igarashi A, Matsuyama T, Harada S. Eosinophilic
+fasciitis following exposure to trichloroethylene: successful treat-
+ment with cyclosporin. Br J Dermatol 2000; 142:830–2.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al. 1331
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 21 ===
+186 Bukiej A, Dropinski J, Dyduch G, Szczeklik A. Eosinophilic fasci-
+itis successfully treated with cyclosporine. Clin Rheumatol 2005;
+24:634–6.
+187 Tahara K, Yukawa S, Shoji A et al. Long-term remission by cyclos-
+porine in a patient with eosinophilic fasciitis associated with pri-
+mary biliary cirrhosis. Clin Rheumatol 2008; 27:1199–201.
+188 Taniguchi S, Tsuruta D, Hamada T. Eosinophilic pustular folliculi-
+tis responding to cyclosporin. Br J Dermatol 1994; 131:736–8.
+189 Fukamachi S, Kabashima K, Sugita K et al. Therapeutic effective-
+ness of various treatments for eosinophilic pustular folliculitis.
+Acta Derm Venereol 2009; 89:155–9.
+190 Otsuka A, Doi H, Miyachi Y, Kabashima K. Treatment of eosino-
+philic pustular folliculitis with ciclosporin: Suppression of mRNA
+expression of IL-4 and IL-13. J Eur Acad Dermatol Venereol 2010;
+24:1489–91.
+191 Crow LL, Finkle JP, Gammon WR, Woodley DT. Clearing of epi-
+dermolysis bullosa acquisita with cyclosporine. J Am Acad Dermatol
+1988; 19:937–42.
+192 Raza A, Hernandez M, Ahmed K, Kushner J. Hemorrhagic bul-
+lous esophagitis complicating a rare skin disorder. Ann Gastroenterol
+2012; 25:61.
+193 Tey HL, Lee AD, Almaani N et al. Epidermolysis bullosa prurigi-
+nosa masquerading as psychogenic pruritus. Arch Dermatol 2011;
+147:956–60.
+194 Tarutani M, Shiga T, Nakajima K et al. Dystrophic epidermolysis
+bullosa pruriginosa in a mother and daughter successfully treated
+by low dose cyclosporine. Eur J Dermatol 2013; 23:727–9.
+195 Senoh A, Tokuyama Y, Nakayama Y et al. Erythema multiforme-
+like contact reaction due to liquid-formulated 2,2-dibromo-3-
+nitrilopropionamide:
+involvement
+of
+cytotoxic
+T-lymphocyte
+reaction. Clin Exp Dermatol 2009; 34:e732–6.
+196 Abe M, Sogabe Y, Syuto T et al. Successful treatment with cyclos-
+porin administration for persistent benign migratory glossitis. J
+Dermatol 2007; 34:340–3.
+197 Kennedy MS, Deeg HJ, Storb R et al. Treatment of acute graft-ver-
+sus-host disease after allogeneic marrow transplantation. Ran-
+domized study comparing corticosteroids and cyclosporine. Am J
+Med 1985; 78:978–83.
+198 Solomon SR, Nakamura R, Read EJ et al. Cyclosporine is required to
+prevent severe acute GVHD following T-cell-depleted peripheral
+blood stem cell transplantation. Bone Marrow Transplant 2003; 31:783–8.
+199 Koc S, Leisenring W, Flowers ME et al. Therapy for chronic graft-
+versus-host disease: a randomized trial comparing cyclosporine
+plus prednisone versus prednisone alone. Blood 2002; 100:48–51.
+200 Kubba R, Rook A. Graham Little syndrome: follicular keratosis
+with cicatricial alopecia. Br J Dermatol 1975; 93 (Suppl. 11):53–5.
+201 Fiallo P. Cyclosporin for the treatment of granuloma annulare. Br
+J Dermatol 1998; 138:369–70.
+202 Ho VC. Cyclosporine in the treatment of generalized granuloma
+annulare. J Am Acad Dermatol 1995; 32:298.
+203 Spadino S, Altomare A, Cainelli C et al. Disseminated granuloma
+annulare: efﬁcacy of cyclosporine therapy. Int J Immunopathol Phar-
+macol 2006; 19:433–8.
+204 Ormerod AD, Duncan J, Stankler L. Benign familial pemphigus
+responsive to cyclosporin, a possible role for cellular immunity
+in pathogenesis. Br J Dermatol 1991; 124:299–300.
+205 Berth-Jones J, Smith SG, Graham-Brown RA. Benign familial
+chronic pemphigus (Hailey-Hailey disease) responds to cyclos-
+porin. Clin Exp Dermatol 1995; 20:70–2.
+206 Usmani N, Wilson C. A novel treatment for recalcitrant benign
+familial pemphigus. J Eur Acad Dermatol Venereol 2007; 21:264–6.
+207 Nanda A, Khawaja F, Harbi R et al. Benign familial pemphigus
+(Hailey-Hailey disease) responsive to low dose cyclosporine.
+Indian J Dermatol Venereol Leprol 2010; 76:422–4.
+208 Varada S, Ramirez-Fort MK, Argobi Y, Simkin AD. Remission of
+refractory benign familial chronic pemphigus (Hailey-Hailey dis-
+ease) with the addition of systemic cyclosporine. J Cutan Med Surg
+2015; 19:163–6.
+209 Petersen CS, Menne T. Cyclosporin A responsive chronic severe
+vesicular hand eczema. Acta Derm Venereol 1992; 72:436–7.
+210 Granlund H, Erkko P, Eriksson E, Reitamo S. Comparison of
+cyclosporine and topical betamethasone-17,21-dipropionate in
+the treatment of severe chronic hand eczema. Acta Derm Venereol
+1996; 76:371–6.
+211 Buckley DA, Rogers S. Cyclosporin-responsive hidradenitis suppu-
+rativa. J R Soc Med 1995; 88:289p–90p.
+212 Rose RF, Goodﬁeld MJ, Clark SM. Treatment of recalcitrant
+hidradenitis suppurativa with oral ciclosporin. Clin Exp Dermatol
+2006; 31:154–5.
+213 Bianchi L, Hansel K, Stingeni L. Recalcitrant severe hidradenitis
+suppurativa successfully treated with cyclosporine A. J Am Acad
+Dermatol 2012; 67:e278–9.
+214 Anderson MD, Zauli S, Bettoli V et al. Cyclosporine treatment of
+severe hidradenitis suppurativa – a case series. J Dermatolog Treat
+2016; 27:247–50.
+215 Staub J, Pfannschmidt N, Strohal R et al. Successful treatment of
+PASH syndrome with inﬂiximab, cyclosporine and dapsone. J Eur
+Acad Dermatol Venereol 2015; 29:2243–7.
+216 Arico M, Colella R, Conter V et al. Cyclosporine therapy for
+refractory Langerhans cell histiocytosis. Med Pediatr Oncol 1995;
+25:12–16.
+217 Minkov M, Grois N, Broadbent V et al. Cyclosporine A therapy
+for multisystem langerhans cell histiocytosis. Med Pediatr Oncol
+1999; 33:482–5.
+218 Blackwell V, McGregor JM, Hawk JL. Hydroa vacciniforme pre-
+senting in an adult successfully treated with cyclosporin A. Clin
+Exp Dermatol 1998; 23:73–6.
+219 Donald CE, Kahn MJ. Successful treatment of hypereosinophilic
+syndrome with cyclosporine. Am J Med Sci 2009; 337:65–6.
+220 Tabata R, Tabata C, Katashima Y, Yasumizu R. Effect of cyclos-
+porine on lymphocytic variant hypereosinophilic syndrome. Int
+Immunopharmacol 2013; 16:488–91.
+221 Kitai E, Wolach B. [A case of Job’s syndrome]. Harefuah 1996;
+130:239–41, 95 (in Hebrew).
+222 Bong CN, Huang SC, Wang CL et al. Cyclosporin A therapy in a
+case with hyperimmunoglobulin E and nephrotic syndrome. J
+Microbiol Immunol Infect 2005; 38:60–4.
+223 Etzioni A, Shehadeh N, Brecher A et al. Cyclosporin A in hyper-
+immunoglobulin E syndrome. Ann Allergy Asthma Immunol 1997;
+78:413–14.
+224 DeWitt CA, Bishop AB, Buescher LS, Stone SP. Hyperim-
+munoglobulin E syndrome: two cases and a review of the litera-
+ture. J Am Acad Dermatol 2006; 54:855–65.
+225 Sugiura T, Goto K, Ito K et al. Effects of cyclosporine A in hyperz-
+incaemia and hypercalprotectinaemia. Acta Paediatr 2006; 95:857–
+60.
+226 Wollina U, Sch€onlebe J, Unger L et al. Interstitial granulomatous
+dermatitis
+with
+plaques
+and
+arthritis.
+Clin
+Rheumatol
+2003;
+22:347–9.
+227 Suzuki H, Terai M, Hamada H et al. Cyclosporin A treatment for
+Kawasaki disease refractory to initial and additional intravenous
+immunoglobulin. Pediatr Infect Dis J 2011; 30:871–6.
+228 Tremoulet AH, Pancoast P, Franco A et al. Calcineurin inhibitor
+treatment of intravenous immunoglobulin-resistant Kawasaki dis-
+ease. J Pediatr 2012; 161(506–12):e1.
+229 Okada S, Azuma Y, Suzuki Y et al. Adjunct cyclosporine therapy
+for refractory Kawasaki disease in a very young infant. Pediatr Int
+2016; 58:295–8.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+1332 BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al.
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 22 ===
+230 Shenoy VV, Joshi SR, Kotwal VS et al. Recurrent Kimura’s disease:
+excellent response to cyclosporine. J Assoc Physicians India 2006;
+54:153–5.
+231 Shin ST, Yang YH, Chiang BL. Recurrent Kimura’s disease: report
+of one case. Acta Paediatr Taiwan 2007; 48:149–51.
+232 Vourc’h M, Barbarot S, Stalder JF. Ciclosporin improves quality
+of life in Kimura’s disease. Br J Dermatol 2007; 157:420–1.
+233 Soeria-Atmadja S, Oskarsson T, Celci G et al. Maintenance of
+remission with cyclosporine in paediatric patients with Kimura’s
+disease - two case reports. Acta Paediatr 2011; 100:e186–9.
+234 Beccastrini E, Emmi G, Chiodi M et al. Kimura’s disease: case report
+of an Italian young male and response to oral cyclosporine A in an 8
+years follow-up. Clin Rheumatol 2013; 32 (Suppl. 1):S55–7.
+235 Sato S, Kawashima H, Kuboshima S et al. Combined treatment of
+steroids and cyclosporine in Kimura disease. Pediatrics 2006; 118:
+e921–3.
+236 Mahmoud HH, Wang WC, Murphy SB. Cyclosporine therapy for
+advanced Langerhans cell histiocytosis. Blood 1991; 77:721–5.
+237 K€orholz D, Janssen G, G€obel U. Treatment of relapsed Langerhans
+cell histiocytosis by cyclosporin A combined with etoposide and
+prednisone. Pediatr Hematol Oncol 1997; 14:443–9.
+238 Zeller B, Storm-Mathisen I, Smevik B, Lie SO. Multisystem
+Langerhans-cell
+histiocytosis
+with
+life-threatening
+pulmonary
+involvement–good response to cyclosporine A. Med Pediatr Oncol
+2000; 35:438–42.
+239 Shahla A, Parvaneh V, Hossein HD. Langerhans cells histiocytosis
+in one family. Pediatr Hematol Oncol 2004; 21:313–20.
+240 Miller RA, Shen JY, Rea TH, Harnisch JP. Treatment of chronic
+erythema nodosum leprosum with cyclosporine A produces clini-
+cal and immunohistologic remission. Int J Lepr Other Mycobact Dis
+1987; 55:441–9.
+241 Sena CB, Salgado CG, Tavares CM et al. Cyclosporine A treatment
+of leprosy patients with chronic neuritis is associated with pain
+control and reduction in antibodies against nerve growth factor.
+Lepr Rev 2006; 77:121–9.
+242 Marlowe SN, Leekassa R, Bizuneh E et al. Response to ciclosporin
+treatment in Ethiopian and Nepali patients with severe leprosy
+Type 1 reactions. Trans R Soc Trop Med Hyg 2007; 101:1004–12.
+243 Teraki Y, Katsuta M, Shiohara T. Lichen amyloidosus associated
+with Kimura’s disease: successful treatment with cyclosporine.
+Dermatology 2002; 204:133–5.
+244 Kang MJ, Kim HS, Kim HO, Park YM. A case of atopic dermati-
+tis-associated lichen amyloidosis successfully treated with oral
+cyclosporine and narrow band UVB therapy in succession. J Der-
+matolog Treat 2009; 20:368–70.
+245 Rallis E, Verros C, Moussatou V et al. Generalized purpuric lichen
+nitidus. Report of a case and review of the literature. Dermatol
+Online J 2007; 13:5.
+246 Lee YK, Choi KW, Lee CW, Kim JH. A case of generalized lichen
+nitidus treated with low dose cyclosporine. Korean J Dermatol 2007;
+45:1311–14.
+247 Mirmirani P, Willey A, Price VH. Short course of oral cyclospor-
+ine in lichen planopilaris. J Am Acad Dermatol 2003; 49:667–71.
+248 Lane TK, Kamino H, Walters RF et al. Lichen planopilaris and
+psoriasis. Dermatol Online J 2008; 14:4.
+249 Ho VC, Gupta AK, Ellis CN et al. Treatment of severe lichen pla-
+nus with cyclosporine. J Am Acad Dermatol 1990; 22:64–8.
+250 Karakatsanis G, Patsatsi A, Kastoridou C, Sotiriadis D. Palmoplan-
+tar lichen planus with umbilicated papules: an atypical case with
+rapid therapeutic response to cyclosporin. J Eur Acad Dermatol Vener-
+eol 2007; 21:1006–7.
+251 Boyce AE, Marshman G, Mills RA. Erosive mucosal lichen planus
+and secondary epiphora responding to systemic cyclosporin A
+treatment. Australas J Dermatol 2009; 50:190–3.
+252 Kim GH, Mikkilineni R. Lichen planus actinicus. Dermatol Online J
+2007; 13:13.
+253 Schepis C, Lentini M, Siragusa M. Erosive lichen planus on an
+atypical site mimicking a factitial dermatitis. Acta Derm Venereol
+2010; 90:185–6.
+254 Schepis C, Siragusa M, Lentini M. Erosive lichen planus: two
+uncommon cases. Acta Derm Venereol 2008; 88:268–70.
+255 Washio K, Nakamura A, Fukuda S et al. A case of lichen planus
+pemphigoides successfully treated with a combination of cyclos-
+porine A and prednisolone. Case Rep Dermatol 2013; 5:84–7.
+256 Bulbul Baskan E, Turan H, Tunali S et al. Open-label trial of
+cyclosporine for vulvar lichen sclerosus. J Am Acad Dermatol 2007;
+57:276–8.
+257 Young HS, Coulson IH. Linear IgA disease: successful treatment
+with cyclosporin. Br J Dermatol 2000; 143:204–5.
+258 Saeki Y, Ohshima S, Kurimoto I et al. Maintaining remission of
+lupus erythematosus profundus (LEP) with cyclosporin A. Lupus
+2000; 9:390–2.
+259 Ishiguro N, Iwasaki T, Kawashima M, Kawakami M. Intractable
+ulceration in a patient with lupus erythematosus profundus suc-
+cessfully treated with cyclosporine. Int J Dermatol 2012; 51:1131–
+3.
+260 Kurosawa M, Amano H, Kanbe N et al. Response to cyclosporin
+and low-dose methylprednisolone in aggressive systemic masto-
+cytosis. J Allergy Clin Immunol 1999; 103:S412–20.
+261 Ozdemir D, Dagdelen S, Erbas T et al. Hypotension, syncope, and
+fever in systemic mastocytosis without skin inﬁltration and rapid
+response to corticosteroid and cyclosporin: a case report. Case Rep
+Med 2010; 2010:782595.
+262 Strauss RM, Bhushan M, Goodﬁeld MJ. Good response of linear
+scleroderma in a child to ciclosporin. Br J Dermatol 2004; 150:
+790–2.
+263 Perez Crespo M, Betlloch Mas I, Mataix Diaz J et al. Rapid response
+to cyclosporine and maintenance with methotrexate in linear scle-
+roderma in a young girl. Pediatr Dermatol 2009; 26:118–20.
+264 Alonso A, Bignone ML, Brunzini M et al. Ocular autoimmune
+pemphigoid and cyclosporin A. Allergol Immunopathol (Madr) 2006;
+34:113–15.
+265 Kaҫmaz RO, Kempen JH, Newcomb C et al. Cyclosporine for ocu-
+lar inﬂammatory diseases. Ophthalmology 2010; 117:576–84.
+266 Lee YB, Cheon MS, Eun YS et al. Cyclosporin administration
+improves clinical manifestations and quality of life in patients
+with 20-nail dystrophy: case series and survey study. J Dermatol
+2012; 39:1064–5.
+267 Darvay A, Acland KM, Russell-Jones R. Persistent ulcerated necro-
+biosis lipoidica responding to treatment with cyclosporin. Br J
+Dermatol 1999; 141:725–7.
+268 Stanway A, Rademaker M, Newman P. Healing of severe ulcera-
+tive necrobiosis lipoidica with cyclosporin. Australas J Dermatol
+2004; 45:119–22.
+269 Gualdi G, Monari P, Farisoglio C, Calzavara-Pinton P. Juvenile
+ulcerated necrobiosis lipoidica successfully treated with oral
+cyclosporin A. G Ital Dermatol Venereol 2013; 148:703–4.
+270 Rego S, Kemp A, Wong M, Knight P. Omenn syndrome: therapeutic
+effects of cyclosporin. J Paediatr Child Health 2006; 42:319–20.
+271 Caglayan Sozmen S, Isik S, Arikan Ayyildiz Z et al. Cyclosporin
+treatment improves skin ﬁndings in Omenn syndrome. Pediatr Der-
+matol 2015; 32:e54–7.
+272 Reitamo S, Erkko P, Remitz A et al. Cyclosporine in the treatment
+of palmoplantar pustulosis. A randomized, double-blind, pla-
+cebo-controlled study. Arch Dermatol 1993; 129:1273–9.
+273 Chu DH, Van Voorhees AS, Rosenbach M. Treatment of refractory
+tumor necrosis factor inhibitor-induced palmoplantar pustulosis:
+a report of 2 cases. Arch Dermatol 2011; 147:1228–30.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al. 1333
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 23 ===
+274 Ostrov BE, Athreya BH, Eichenﬁeld AH, Goldsmith DP. Successful
+treatment of
+severe cytophagic histiocytic
+panniculitis
+with
+cyclosporine A. Semin Arthritis Rheum 1996; 25:404–13.
+275 Manoj J, Kaliyadan F, Unni M, Dharmaratnam AD. Cytophagic
+histiocytic panniculitis: report of two cases. Indian J Dermatol 2011;
+56:306–8.
+276 Bader-Meunier B, Fraitag S, Janssen C et al. Clonal cytophagic his-
+tiocytic panniculitis in children may be cured by cyclosporine A.
+Pediatrics 2013; 132:e545–9.
+277 Hasegawa H, Mizoguchi F, Kohsaka H, Miyasaka N. Systemic
+lupus erythematosus with cytophagic histiocytic panniculitis suc-
+cessfully treated with high-dose glucocorticoids and cyclosporine
+A. Lupus 2013; 22:316–19.
+278 Tsukamoto Y, Katsunobu Y, Omura Y et al. Subcutaneous panni-
+culitis-like T-cell lymphoma: successful initial treatment with
+prednisolone and cyclosporin A. Intern Med 2006; 45:21–4.
+279 Rojnuckarin P, Nakorn TN, Assanasen T et al. Cyclosporin in sub-
+cutaneous panniculitis-like T-cell lymphoma. Leuk Lymphoma 2007;
+48:560–3.
+280 Mizutani S, Kuroda J, Shimura Y et al. Cyclosporine A for
+chemotherapy-resistant subcutaneous panniculitis-like T cell lym-
+phoma with hemophagocytic syndrome. Acta Haematol 2011;
+126:8–12.
+281 Lee WS, Hwang J-H, Kim MJ et al. Cyclosporine A as a primary
+treatment for panniculitis-like T cell lymphoma: a case with a
+long-term remission. Cancer Res Treat 2014; 46:312–16.
+282 Wozniacka A, Salamon M, Lesiak A et al. The dynamism of cuta-
+neous lupus erythematosus: mild discoid lupus erythematosus
+evolving into SLE with SCLE and treatment-resistant lupus panni-
+culitis. Clin Rheumatol 2007; 26:1176–9.
+283 Usuki K, Kitamura K, Urabe A, Takaku F. Successful treatment of
+Weber-Christian disease by cyclosporin A. Am J Med 1988; 85:
+276–8.
+284 Migliore A, Bizzi E, Santacroce CM et al. Mixed panniculitis
+responding to cyclosporin-A with a 12-month follow-up: a case
+report. Int J Immunopathol Pharmacol 2009; 22:1143–6.
+285 Pongratz G, Ehrenstein B, Hartung W et al. A patient with Pfeifer-
+Weber-Christian disease–successful therapy with cyclosporin A:
+case report. BMC Musculoskelet Disord 2010; 11:18.
+286 Cantarini L, Fanti F, Galeazzi M et al. Efﬁcacy of cyclosporine A
+treatment in relapsing febrile lobular panniculitis associated with
+small vessel vasculitis. Rheumatol Int 2010; 30:797–9.
+287 Sommer S, Henderson CA. Papuloerythroderma of Ofuji responding
+to treatment with cyclosporin. Clin Exp Dermatol 2000; 25:293–5.
+288 Terlikowska-Brzosko A, Paluchowska E, Owczarek W, Majewski
+S. Papuloerythroderma of Ofuji in a 41-year-old woman. Postepy
+Dermatol Alergol 2013; 30:324–8.
+289 Lasa O, Trebol I, Gardeazabal J, Diaz-Perez JL. Prophylactic short-
+term use of cyclosporin in refractory polymorphic light eruption.
+J Eur Acad Dermatol Venereol 2004; 18:747–8.
+290 Shipley DR, Hewitt JB. Polymorphic light eruption treated with
+cyclosporin. Br J Dermatol 2001; 144:446–7.
+291 Kim HS, Yu DS, Kim JW. A case of febrile ulceronecrotic Mucha-
+Habermann’s disease successfully treated with oral cyclosporin. J
+Eur Acad Dermatol Venereol 2007; 21:272–3.
+292 Uzoma MA, Wilkerson MG, Carr VL et al. Pentoxifylline and
+cyclosporine in the treatment of febrile ulceronecrotic Mucha-
+Habermann disease. Pediatr Dermatol 2014; 31:525–7.
+293 Grifﬁths JK. Successful long-term use of cyclosporin A in HIV-
+induced pityriasis lichenoides chronica. J Acquir Immune Deﬁc Syndr
+Hum Retrovirol 1998; 18:396–7.
+294 Hern S, Harman K, Bhogal BS, Black MM. A severe persistent case
+of pemphigoid gestationis treated with intravenous immunoglob-
+ulins and cyclosporin. Clin Exp Dermatol 1998; 23:185–8.
+295 Hapa A, Gurpinar A, Akan T, Gokoz O. A resistant case of pemphi-
+gus gestationis successfully treated with intravenous immunoglobu-
+lin plus cyclosporine. Int J Dermatol 2014; 53:e269–71.
+296 Huilaja L, M€akikallio K, Hannula-Jouppi K et al. Cyclosporine
+treatment in severe gestational pemphigoid. Acta Derm Venereol
+2015; 95:593–5.
+297 Campolmi P, Bonan P, Lotti T et al. The role of cyclosporine A in
+the treatment of pemphigus erythematosus. Int J Dermatol 1991;
+30:890–2.
+298 Hwang YY, Chan JC, Trendell-Smith NJ, Kwong YL. Recalcitrant
+paraneoplastic pemphigus associated with follicular dendritic cell
+sarcoma: response to prolonged rituximab and ciclosporin ther-
+apy. Intern Med J 2014; 44:1145–6.
+299 Ng PP, Rencic A, Nousari HC. Paraneoplastic pemphigus: a
+refractory autoimmune mucocutaneous disease. J Cutan Med Surg
+2002; 6:434–7.
+300 Namba C, Tohyama M, Hanakawa Y et al. Paraneoplastic pemphi-
+gus associated with fatal bronchiolitis obliterans and intractable
+mucosal erosions: Treatment with cyclosporin in addition to ster-
+oid, rituximab and intravenous immunoglobulin. J Dermatol 2016;
+43:419–22.
+301 Gergely L, Varoczy L, Vadasz G et al. Successful treatment of B
+cell chronic lymphocytic leukemia-associated severe paraneo-
+plastic pemphigus with cyclosporin A. Acta Haematol 2003;
+109:202–5.
+302 Usuki K, Sekiyama M, Shimada T et al. Three cases of pityriasis
+rubra pilaris successfully treated with cyclosporin A. Dermatology
+2000; 200:324–7.
+303 Wetzig T, Sticherling M. Juvenile pityriasis rubra pilaris: success-
+ful treatment with ciclosporin. Br J Dermatol 2003; 149:202–3.
+304 Fleming P, Shaw JC. Cyclosporine in the management of post-
+streptococcal pustulosis. JAMA Dermatol 2015; 151:345–6.
+305 Berth-Jones J, Smith SG, Graham-Brown RA. Nodular prurigo
+responds to cyclosporin. Br J Dermatol 1995; 132:795–9.
+306 Siepmann D, Luger TA, Stander S. Antipruritic effect of cyclos-
+porine microemulsion in prurigo nodularis: results of a case ser-
+ies. J Dtsch Dermatol Ges 2008; 6:941–6.
+307 Savoia F, Casadio C, Tabanelli M et al. Prurigo nodularis as the
+ﬁrst manifestation of a chronic autoimmune cholestatic hepatitis.
+Int J Dermatol 2011; 50:1588–9.
+308 Ellis CN, Gorsulowsky DC, Hamilton TA et al. Cyclosporine
+improves
+psoriasis
+in
+a
+double-blind
+study.
+JAMA
+1986;
+256:3110–16.
+309 Van Joost T, Bos JD, Heule F, Meinardi MM. Low-dose cyclos-
+porin A in severe psoriasis. A double-blind study. Br J Dermatol
+1988; 118:183–90.
+310 Ellis CN, Fradin MS, Messana JM et al. Cyclosporine for plaque-
+type psoriasis. Results of a multidose, double-blind trial. N Engl J
+Med 1991; 324:277–84.
+311 Elgart G, Stover P, Larson K et al. Treatment of pyoderma gan-
+grenosum with cyclosporine: results in seven patients. J Am Acad
+Dermatol 1991; 24:83–6.
+312 Reich A, Maj J, Cislo M, Szepietowski JC. Periungual lesions in
+pyoderma gangrenosum. Clin Exp Dermatol 2009; 34:e81–4.
+313 Pereira N, Brites MM, Goncalo M et al. Pyoderma gangrenosum–a
+review of 24 cases observed over 10 years. Int J Dermatol 2013;
+52:938–45.
+314 Ormerod AD, Thomas KS, Craig FE et al. Comparison of the two
+most commonly used treatments for pyoderma gangrenosum:
+results of the STOP GAP randomised controlled trial. BMJ 2015;
+350:h2958.
+315 Cheung ST, Zanetto U, Diaz C. Facial superﬁcial granulomatous
+pyoderma treated with cyclosporin: not always a benign condi-
+tion. Acta Derm Venereol 2006; 86:362–4.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+1334 BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al.
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 24 ===
+316 McAleer MA, Powell FC, Devaney D, O’Donnell BF. Infantile
+pyoderma gangrenosum. J Am Acad Dermatol 2008; 58 (2 Suppl.):
+S23–8.
+317 Garcovich S, Gatto A, Ferrara P, Garcovich A. Vulvar pyoderma
+gangrenosum in a child. Pediatr Dermatol 2009; 26:629–31.
+318 Saracino A, Kelly R, Liew D et al. Pyoderma gangrenosum requir-
+ing inpatient management: a report of 26 cases with follow up.
+Australas J Dermatol 2011; 52:218–21.
+319 Kiyohara A, Takamori K, Niizuma N, Ogawa H. Successful treat-
+ment of severe recurrent Reiter’s syndrome with cyclosporine. J
+Am Acad Dermatol 1997; 36:482–3.
+320 Priori R, Paroli MP, Luan FL et al. Cyclosporin A in the treatment
+of relapsing polychondritis with severe recurrent eye involve-
+ment. Br J Rheumatol 1993; 32:352.
+321 Anstey A, Mayou S, Morgan K et al. Relapsing polychondritis:
+autoimmunity to type II collagen and treatment with cyclosporin
+A. Br J Dermatol 1991; 125:588–91.
+322 Diercks K, Barlag K, Ruzicka T. [Cyclosporin A therapy of chronic
+recurrent polychondritis]. Hautarzt 1996; 47:376–7. (in German).
+323 M€uller CS, Hinterberger LR, Vogt T. Successful treatment of Row-
+ell syndrome using oral cyclosporine A. Int J Dermatol 2011;
+50:1020–2.
+324 Mattheou-Vakali G, Ioannides D, Thomas T et al. Cyclosporine in
+scleredema. J Am Acad Dermatol 1996; 35:990–1.
+325 Saigoh S, Tashiro A, Fujita S et al. Successful treatment of intract-
+able scleromyxedema with
+cyclosporin
+A. Dermatology 2003;
+207:410–11.
+326 Krajnc I. [Arndt-Gottron scleromyxedema. Summary of 2 years
+treatment]. Wien Klin Wochenschr 1997; 109:960–3(in German).
+327 Bata-Csorgo Z, Husz S, Foldes M et al. Scleromyxedema. J Am Acad
+Dermatol 1999; 41:343–6.
+328 Acikgoz G, Ozmen I, Huseynov S et al. A case of atypical scle-
+romyxedema without gammopathy treated with cyclosporine.
+Indian J Dermatol Venereol Leprol 2014; 80:278.
+329 Carbone J, Paravisini A, Sarmiento E et al. Partial response to
+cyclosporine in a patient with Schnitzler’s syndrome. Allergol
+Immunopathol (Madr) 2007; 35:71–3.
+330 Nakajima K, Takahashi M, Yamamoto M et al. Successful treat-
+ment of Schnitzler syndrome with cyclosporine. Int J Dermatol
+2014; 53:e361–3.
+331 Edstrom DW, Ros AM. Cyclosporin A therapy for severe solar
+urticaria. Photodermatol Photoimmunol Photomed 1997; 13:61–3.
+332 Klein A, Vogt T, Wenzel SM et al. Cyclosporin combined with
+methotrexate in two patients with recalcitrant subacute cutaneous
+lupus erythematosus. Australas J Dermatol 2011; 52:43–7.
+333 Zachariae CO, Rossen K, Weismann K. An unusual severe case of
+subcorneal pustular dermatosis treated with cyclosporine and
+prednisolone. Acta Derm Venereol 2000; 80:386–7.
+334 Karadogan SK, Aydogan K, Baskan EB, Tunali S. A case of sub-
+corneal pustular dermatosis treated successfully with a combina-
+tion of cyclosporin and prednisolone. J Eur Acad Dermatol Venereol
+2007; 21:536–7.
+335 Bourke JF, Berth-Jones J, Graham-Brown RA. Sweet’s syndrome
+responding to cyclosporin. Br J Dermatol 1992; 127:36–8.
+336 von den Driesch P, Steffan C, Zobe A, Hornstein OP. Sweet’s syn-
+drome–therapy with cyclosporin. Clin Exp Dermatol 1994; 19:274–7.
+337 Wilson DM, John GR, Callen JP. Peripheral ulcerative keratitis–an
+extracutaneous neutrophilic disorder: report of a patient with
+rheumatoid arthritis, pustular vasculitis, pyoderma gangrenosum,
+and Sweet’s syndrome with an excellent response to cyclosporine
+therapy. J Am Acad Dermatol 1999; 40:331–4.
+338 Yasuda F, Fujio Y, Kakuta R et al. Use of cyclosporin A for success-
+ful management of steroid-resistant Sweet’s syndrome patient with
+possible myelodysplastic syndrome. J Dermatol 2014; 41:465–6.
+339 Clements PJ, Lachenbruch PA, Sterz M et al. Cyclosporine in sys-
+temic sclerosis. Results of a forty-eight-week open safety study in
+ten patients. Arthritis Rheum 1993; 36:75–83.
+340 Filaci G, Cutolo M, Scudeletti M et al. Cyclosporin A and iloprost
+treatment of systemic sclerosis: clinical results and interleukin-6
+serum changes after 12 months of therapy. Rheumatology (Oxford)
+1999; 38:992–6.
+341 Morton SJ, Powell RJ. Cyclosporin and tacrolimus: their use in a
+routine clinical setting for scleroderma. Rheumatology (Oxford) 2000;
+39:865–9.
+342 Arevalo JM, Lorente JA, Gonzalez-Herrada C et al. Treatment of
+toxic epidermal necrolysis with cyclosporin A. J Trauma 2000;
+48:473–8.
+343 Zaki I, Patel S, Reed R, Dalziel KL. Toxic epidermal necrolysis
+associated with severe hypocalcaemia, and treated with cyclos-
+porin. Br J Dermatol 1995; 133:337–8.
+344 Hewitt J, Ormerod AD. Toxic epidermal necrolysis treated with
+cyclosporin. Clin Exp Dermatol 1992; 17:264–5.
+345 Valeyrie-Allanore L, Wolkenstein P, Brochard L et al. Open trial of
+ciclosporin treatment for Stevens-Johnson syndrome and toxic
+epidermal necrolysis. Br J Dermatol 2010; 163:847–53.
+346 Rajaratnam R, Mann C, Balasubramaniam P et al. Toxic epidermal
+necrolysis: retrospective analysis of 21 consecutive cases managed
+at a tertiary centre. Clin Exp Dermatol 2010; 35:853–62.
+347 Reese D, Henning JS, Rockers K et al. Cyclosporine for SJS/TEN: a
+case series and review of the literature. Cutis 2011; 87:24–9.
+348 Kirchhof MG, Miliszewski MA, Sikora S et al. Retrospective review
+of Stevens-Johnson syndrome/toxic epidermal necrolysis treat-
+ment comparing intravenous immunoglobulin with cyclosporine.
+J Am Acad Dermatol 2014; 71:941–7.
+349 Gonzalez-Herrada C, Rodriguez-Martin S, Cachafeiro L et al.
+Cyclosporine use in epidermal necrolysis is associated with an
+important mortality reduction: evidence from three different
+approaches. J Invest Dermatol 2017; 137:2092–100.
+350 Tosca AD, Ioannidou DJ, Katsantonis JC et al. Cyclosporin A in
+the treatment of cutaneous vasculitis. Clinical and cellular effects.
+J Eur Acad Dermatol Venereol 1996; 6:135–41.
+351 Endo Y, Minato H, Taki R et al. Myeloperoxidase-antineutrophil
+cytoplasmic antibody-negative microscopic polyangiitis with pul-
+monary haemorrhage and IgA nephropathy. Case Rep Dermatol
+2011; 3:22–7.
+352 Hayashi M, Kawaguchi M, Mitsuhashi Y, Suzuki T. Case of
+hypereosinophilic syndrome with cutaneous necrotizing vasculi-
+tis. J Dermatol 2008; 35:229–33.
+353 Perrett CM, Ilchyshyn A, Berth-Jones J. Cyclosporin in childhood
+psoriasis. J Dermatolog Treat 2003; 14:113–18.
+354 Pereira TM, Vieira AP, Fernandes JC, Sousa-Basto A. Cyclosporin
+A treatment in severe childhood psoriasis. J Eur Acad Dermatol Vener-
+eol 2006; 20:651–6.
+355 Torchia D, Terranova M, Fabbri P. Photosensitive psoriasis in a
+vitiligo patient. J Dermatol 2006; 33:880–3.
+356 Bulbul Baskan E, Yazici S, Tunali S, Saricaoglu H1. Clinical expe-
+rience with systemic cyclosporine A treatment in severe child-
+hood psoriasis. J Dermatolog Treat 2016; 27:328–31.
+357 Kim HS, Kim GM, Kim SY. Two-stage therapy for childhood gen-
+eralized pustular psoriasis: low-dose cyclosporin for induction
+and maintenance with acitretin/narrowband ultraviolet B pho-
+totherapy. Pediatr Dermatol 2006; 23:306–8.
+358 Nakamura S, Hashimoto Y, Igawa S et al. Childhood generalized
+pustular psoriasis treated by preprandial ciclosporin administra-
+tion: serum cytokine pattern during the course of the disease. Clin
+Exp Dermatol 2009; 34:e1023–4.
+359 Xiao T, Li B, He CD, Chen HD. Juvenile generalized pustular pso-
+riasis. J Dermatol 2007; 34:573–6.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al. 1335
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 25 ===
+360 Alli N, Gungor E, Karakayali G et al. The use of cyclosporin in a
+child with generalized pustular psoriasis. Br J Dermatol 1998;
+139:754–5.
+361 Kiliҫ SS, Hacimustafaoglu M, Celebi S et al. Low dose cyclosporin
+A treatment in generalized pustular psoriasis. Pediatr Dermatol 2001;
+18:246–8.
+362 Wollina U, Funfstuck V. Juvenile generalized circinate pustular
+psoriasis treated with oral cyclosporin A. Eur J Dermatol 2001;
+11:117–19.
+363 Takahashi M, Takeuchi M, Matsunaga K. Infant with generalized
+pustular psoriasis who responded to cyclosporin A therapy. J Der-
+matol 2015; 42:911–13.
+364 Mahe E, Bodemer C, Pruszkowski A et al. Cyclosporine in child-
+hood psoriasis. Arch Dermatol 2001; 137:1532–3.
+365 Kapoor R, Kapoor JR. Cyclosporine resolves generalized pustular
+psoriasis of pregnancy. Arch Dermatol 2006; 142:1373–5.
+366 Hazarika D. Generalized pustular psoriasis of pregnancy successfully
+treated with cyclosporine. Indian J Dermatol Venereol Leprol 2009; 75:638.
+367 Kura MM, Surjushe AU. Generalized pustular psoriasis of preg-
+nancy treated with oral cyclosporin. Indian J Dermatol Venereol Leprol
+2006; 72:458–9.
+368 Lakshmi C, Srinivas CR, Paul S et al. Recurrent impetigo herpeti-
+formis with diabetes and hypoalbuminemia successfully treated
+with cyclosporine, albumin, insulin and metformin. Indian J Der-
+matol 2010; 55:181–4.
+369 Shaw CJ, Wu P, Sriemevan A. First trimester impetigo herpeti-
+formis in multiparous female successfully treated with oral
+cyclosporine. BMJ Case Rep 2011 2011:bcr0220113915.
+370 Gaughan WJ, Moritz MJ, Radomski JS et al. National Transplanta-
+tion Pregnancy Registry: report on outcomes in cyclosporine-
+treated female kidney transplant recipients with an interval from
+transplant to pregnancy of greater than ﬁve years. Am J Kidney Dis
+1996; 28:266–9.
+371 Thiru Y, Bateman DN, Coulthard MG. Successful breast feeding
+while mother was taking cyclosporin. BMJ 1997; 315:463.
+372 Nyberg G, Haljam€ae U, Frisenette-Fich C et al. Breast-feeding during
+treatment with cyclosporine. Transplantation 1998; 65:253–5.
+373 American Academy of Pediatrics Committee on Drugs. Transfer
+of drugs and other chemicals into human milk. Pediatrics 2001;
+108:776–89.
+374 Munoz-Flores-Thiagarajan KD, Easterling T, Davis C et al. Breast-
+feeding by a cyclosporine-treated mother. Obstet Gynecol 2001;
+97:816–18.
+375 Moretti ME, Sgro M, Johnson DW et al. Cyclosporine excretion
+into breast milk. Transplantation 2003; 75:2144–6.
+376 Morton A. Cyclosporine and lactation. Nephrology (Carlton) 2011;
+16:249.
+377 Constantinescu S, Pai A, Coscia LA et al. Breast-feeding after trans-
+plantation. Best Pract Res Clin Obstet Gynaecol 2014; 28:1163–73.
+378 Mazzuoccolo LD, Andrada R, Pellerano G et al. Levels of
+cyclosporine in breast milk and passage into the circulation
+of the infant of a mother with psoriasis. Int J Dermatol 2014;
+53:355–6.
+379 Taylor M, Ashcroft AT, Messenger AG. Cyclosporin A prolongs
+human hair growth in vitro. J Invest Dermatol 1993; 100:237–9.
+380 Park JW, Bae EH, Kim IJ et al. Paricalcitol attenuates cyclospor-
+ine-induced kidney injury in rats. Kidney Int 2010; 77:1076–
+85.
+381 Krupp P, Monka C. Side-effect proﬁle of cyclosporin A in
+patients treated for psoriasis. Br J Dermatol 1990; 122 (Suppl.
+36):S47–56.
+382 Brown AL, Wilkinson R, Thomas TH et al. The effect of short-
+term low-dose cyclosporin on renal function and blood pressure
+in patients with psoriasis. Br J Dermatol 1993; 128:550–5.
+383 Young EW, Ellis CN, Messana JM et al. A prospective study of
+renal structure and function in psoriasis patients treated with
+cyclosporin. Kidney Int 1994; 46:1216–22.
+384 Zachariae H, Kragballe K, Hansen HE et al. Renal biopsy ﬁndings
+in long-term cyclosporin treatment of psoriasis. Br J Dermatol
+1997; 136:531–5.
+385 Powles AV, Hardman CM, Porter WM et al. Renal function after
+10 years’ treatment with cyclosporin for psoriasis. Br J Dermatol
+1998; 138:443–9.
+386 Luke RG. Mechanism of cyclosporine-induced hypertension. Am J
+Hypertens 1991; 4:468–71.
+387 Robert N, Wong GW, Wright JM. Effect of cyclosporine on
+blood pressure. Cochrane Database Syst Rev 2010: 1:CD007893.
+388 Calo L, Semplicini A, Davis PA et al. Cyclosporin-induced
+endothelial dysfunction and hypertension: are nitric oxide system
+abnormality and oxidative stress involved? Transpl Int 2000; 13
+(Suppl. 1):S413–18.
+389 Edwards BD, Chalmers RJ, O’Driscoll J et al. Modulation of abnor-
+malities in renal haemodynamics and vasoactive mediators by
+nifedipine in patients with psoriasis on low-dose cyclosporin.
+Nephrol Dial Transplant 1993; 8:1071–8.
+390 McNally PG, Walls J, Feehally J. The effect of nifedipine on renal
+function in normotensive cyclosporin-A-treated renal allograft
+recipients. Nephrol Dial Transplant 1990; 5:962–8.
+391 Harper SJ, Moorhouse J, Abrams K et al. The beneﬁcial effects of
+oral nifedipine on cyclosporin-treated renal transplant recipients–
+a randomised prospective study. Transpl Int 1996; 9:115–25.
+392 Raman GV, Campbell SK, Farrer A et al. Modifying effects of
+amlodipine on cyclosporin A-induced changes in renal function
+in patients with psoriasis. J Hypertens Suppl 1998; 16:S39–41.
+393 Behnam SM, Behnam SE, Koo JY. Review of cyclosporine
+immunosuppressive safety data in dermatology patients after two
+decades of use. J Drugs Dermatol 2005; 4:189–94.
+394 Cainelli F, Concia E, Vento S. Cryptococcal meningitis during
+cyclosporin treatment in a patient with psoriasis. Br J Dermatol
+2000; 143:1327–8.
+395 Kempinska A, Kwak EJ, Angel JB. Reactivation of hepatitis B
+infection following allogeneic bone marrow transplantation in a
+hepatitis B-immune patient: case report and review of the litera-
+ture. Clin Infect Dis 2005; 41:1277–82.
+396 Kanamori H, Fukawa H, Maruta A et al. Case report: fulminant
+hepatitis C viral infection after allogeneic bone marrow transplan-
+tation. Am J Med Sci 1992; 303:109–11.
+397 Duhart BT Jr, Honaker MR, Shokouh-Amiri MH et al. Retrospec-
+tive evaluation of the risk of hepatitis B virus reactivation after
+transplantation. Transpl Infect Dis 2003; 5:126–31.
+398 Watashi K, Hijikata M, Hosaka M et al. Cyclosporin A suppresses
+replication of hepatitis C virus genome in cultured hepatocytes.
+Hepatology 2003; 38:1282–8.
+399 Imafuku S, Tashiro A, Furue M. Ciclosporin treatment of psoriasis in
+a patient with chronic hepatitis C. Br J Dermatol 2007; 156:1367–9.
+400 Kruger-Corcoran D, Stockﬂeth E, Jurgensen JS et al. [Human
+papillomavirus-associated warts in organ transplant recipients.
+Incidence, risk factors, management]. Hautarzt 2010; 61:220–9.
+(in German).
+401 Cockburn IT, Krupp P. The risk of neoplasms in patients treated
+with cyclosporine A. J Autoimmun 1989; 2:723–31.
+402 Muellenhoff MW, Koo JY. Cyclosporine and skin cancer: an
+international dermatologic perspective over 25 years of experi-
+ence. A comprehensive review and pursuit to deﬁne safe use of
+cyclosporine in dermatology. J Dermatolog Treat 2012; 23:290–304.
+403 Paul CF, Ho VC, McGeown C et al. Risk of malignancies in psoria-
+sis patients treated with cyclosporine: a 5 y cohort study. J Invest
+Dermatol 2003; 120:211–16.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+1336 BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al.
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 26 ===
+404 V€akev€a L, Reitamo S, Pukkala E et al. Long-term follow-up of can-
+cer risk in patients treated with short-term cyclosporine. Acta Derm
+Venereol 2008; 88:117–20.
+405 Foley C, Leonard N, Wynne B. Cutaneous pseudolymphoma: a rare
+side effect of cyclosporine. J Am Acad Dermatol 2015; 72:e85–6.
+406 Koo JY, Kadonaga JN, Wintroub BV, Lozada-Nur FI. The devel-
+opment of B-cell lymphoma in a patient with psoriasis treated
+with cyclosporine. J Am Acad Dermatol 1992; 26:836–40.
+407 Corazza M, Zampino MR, Montanari A et al. Primary cutaneous
+CD30+ large T-cell lymphoma in a patient with psoriasis treated
+with cyclosporine. Dermatology 2003; 206:330–3.
+408 Lain EL, Markus RF. Early and explosive development of nodular
+basal cell carcinoma and multiple keratoacanthomas in psoriasis
+patients treated with cyclosporine. J Drugs Dermatol 2004; 3:
+680–2.
+409 Fozza C, Dore F, Bonﬁgli S et al. Two cases of chronic lympho-
+proliferative disorders in psoriatic patients treated with cyclospor-
+ine: hairy cell leukemia and Waldenstrom macroglobulinemia.
+Eur J Dermatol 2005; 15:271–3.
+410 Lelievre JD, Sacre K, Adle-Biassette H et al. Epstein-Barr virus-asso-
+ciated lymphoproliferative disease after long-standing cyclospor-
+ine therapy for psoriasis: a case of spontaneous regression. J Am
+Acad Dermatol 2005; 52:24–7.
+411 Watabe H, Soma Y, Obara W et al. Adult T-cell lymphoma/leu-
+kaemia developing in a patient with psoriasis treated with long-
+term cyclosporine. Acta Derm Venereol 2006; 86:184–5.
+412 Stiller MJ, Pak GH, Kenny C et al. Elevation of fasting serum lipids
+in patients treated with low-dose cyclosporine for severe plaque-
+type psoriasis. An assessment of clinical signiﬁcance when viewed
+as a risk factor for cardiovascular disease. J Am Acad Dermatol 1992;
+27:434–8.
+413 Lipscombe J, Lewis GF, Cattran D, Bargman JM. Deterioration in
+renal function associated with ﬁbrate therapy. Clin Nephrol 2001;
+55:39–44.
+414 Gijtenbeek JM, van den Bent MJ, Vecht CJ. Cyclosporine neuro-
+toxicity: a review. J Neurol 1999; 246:339–46.
+415 Ruffmann C, Bogliun G, Beghi E. Epileptogenic drugs: a system-
+atic review. Expert Rev Neurother 2006; 6:575–89.
+416 Strahan JE, Burch JM. Cyclosporine-induced infantile nodulocystic
+acne. Arch Dermatol 2009; 145:797–9.
+417 el-Shahawy MA, Gadallah MF, Massry SG. Acne: a potential side
+effect of cyclosporine A therapy. Nephron 1996; 72:679–82.
+418 Shivaswamy KN, Thappa DM. Extensive keloids following cyclos-
+porin therapy in a pemphigus vulgaris patient. J Eur Acad Dermatol
+Venereol 2007; 21:111–12.
+419 Piaserico S, Fortina AB, Cavallini F, Alaibac M. Acne keloidalis of
+the scalp in a renal transplant patient treated with cyclosporine.
+Acta Derm Venereol 2009; 89:312–13.
+420 Lear J, Bourke JF, Burns DA. Hyperplastic pseudofolliculitis
+barbae associated with cyclosporin. Br J Dermatol 1997; 136:
+132–3.
+421 Marini M, Saponaro A, Remorino L et al. Eruptive lesions in a
+patient with bone marrow transplantation. Int J Dermatol 2001;
+40:133–5.
+422 McDonald SK, Goh MS, Chong AH. Successful treatment of
+cyclosporine-induced sebaceous hyperplasia with oral isotretinoin
+in two renal transplant recipients. Australas J Dermatol 2011;
+52:227–30.
+423 Pedreira CC, King E, Jones G et al. Oral cyclosporin plus topical
+corticosteroid therapy diminishes bone mass in children with
+eczema. Pediatr Dermatol 2007; 24:613–20.
+424 Pal D, Mitra AK. MDR- and CYP3A4-mediated drug-herbal inter-
+actions. Life Sci 2006; 78:2131–45.
+425 Hollander AA, van Rooij J, Lentjes GW et al. The effect of grape-
+fruit juice on cyclosporine and prednisone metabolism in trans-
+plant patients. Clin Pharmacol Ther 1995; 57:318–24.
+426 Bailey DG, Malcolm J, Arnold O, Spence JD. Grapefruit juice-drug
+interactions. Br J Clin Pharmacol 1998; 46:101–10.
+427 Brunner LJ, Munar MY, Vallian J et al. Interaction between
+cyclosporine and grapefruit juice requires long-term ingestion
+in
+stable
+renal
+transplant
+recipients.
+Pharmacotherapy
+1998;
+18:23–9.
+428 Pirmohamed M. Drug-grapefruit juice interactions: two mecha-
+nisms are clear but individual responses vary. BMJ 2013; 346:f1.
+429 Stark K, Gunther M, Schonfeld C et al. Immunisations in solid-
+organ transplant recipients. Lancet 2002; 359:957–65.
+430 Grailer A, Nichols J, Hullett D et al. Inhibition of human B cell
+responses in vitro by RS-61443, cyclosporine A and DAB486 IL-
+2. Transplant Proc 1991; 23:314–15.
+431 Department of Health. Contraindications and special considera-
+tions(updated October 2017). In: The Green Book: Immunisation
+Against Infectious Disease. Available at https://www.gov.uk/govern
+ment/uploads/system/uploads/attachment_data/file/655225/Gr
+eenbook_chapter_6.pdf (last accessed 25 January 2018).
+432 NICE. Tuberculosis [NG33]. Available at: https://www.nice.org.
+uk/guidance/ng33 (last accessed 13 February 2018).
+433 Fernandes IC, Torres T, Selores M. Maintenance treatment of pso-
+riasis with cyclosporine A: comparison between continuous and
+weekend therapy. J Am Acad Dermatol 2013; 68:341–2.
+434 Colombo D, Cassano N, Altomare G et al. Psoriasis relapse evalua-
+tion with week-end cyclosporine A treatment: results of a ran-
+domized, double-blind, multicenter study. Int J Immunopathol
+Pharmacol 2010; 23:1143–52.
+435 Powles AV, Cook T, Hulme B et al. Renal function and biopsy
+ﬁndings after 5 years’ treatment with low-dose cyclosporin for
+psoriasis. Br J Dermatol 1993; 128:159–65.
+436 NICE.
+Hypertension
+in
+adults:
+diagnosis
+and
+management
+[CG127].
+Available
+at:
+https://www.nice.org.uk/guidance/
+cg127/chapter/1-Guidance (Last accessed 13 February 2018).
+437 NICE. Type 2 diabetes in adults: management[NG28]. Available at:
+https://www.nice.org.uk/guidance/ng28/chapter/1-recommenda
+tions#blood-pressure-management-2 (last accessed 13 February
+2018).
+438 Chew AL, Bashir SJ, Johnston A et al. The value of monitoring
+ciclosporin concentration 2 hours post-dose (C2) in dermatol-
+ogy: a prospective cohort study. J Dermatolog Treat 2011; 22:79–
+85.
+439 Berth-Jones J, Voorhees JJ. Consensus conference on cyclosporin
+A microemulsion for psoriasis, June 1996. Br J Dermatol 1996;
+135:775–7.
+440 Semhoun-Ducloux S, Ducloux D, Bresson-Hadni S et al. Sys-
+temic hypertension and renal function in long-term liver
+transplant recipients on cyclosporine. Transplant Proc 2000; 32:
+449–52.
+441 Kihira K, Kadoyama M, Miyake K et al. Pharmacokinetic behavior
+of cyclosporine A in liver dysfunction. Hiroshima J Med Sci 1994;
+43:175–8.
+442 NHS England. Commissioning framework for biological medici-
+nes (including biosimular medicines). Available at: https://
+www.england.nhs.uk/wp-content/uploads/2017/09/biosimilar-
+medicines-commissioning-framework.pdf 2017; (last accessed
+13 November 2017).
+443 Staidle JP, Dabade TS, Feldman SR. A pharmacoeconomic
+analysis of severe psoriasis therapy: A review of treatment
+choices and cost efﬁciency. Expert Opin Pharmacother 2011;
+12:2041–54.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al. 1337
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 27 ===
+Appendix 1
+Levels of evidence
+Level of evidence
+Type of evidence
+1++
+High-quality meta-analyses, systematic
+reviews of RCTs, or RCTs with a very
+low risk of bias
+1+
+Well-conducted meta-analyses,
+systematic reviews of RCTs, or RCTs
+with a low risk of bias
+1
+Meta-analyses, systematic reviews of RCTs,
+or RCTs with a high risk of biasa
+2++
+High-quality systematic reviews of case–control
+or cohort studies. High-quality case–control
+or cohort studies with a very low risk of
+confounding, bias or chance and a high
+probability that the relationship is causal
+2+
+Well-conducted case–control or cohort studies
+with a low risk of confounding, bias or
+chance and a moderate probability that the
+relationship is causal
+2
+Case–control or cohort studies with a high risk
+of confounding, bias or chance and a
+signiﬁcant risk that the relationship
+is not causala
+3
+Nonanalytical studies (for example, case
+reports, case series)
+4
+Expert opinion, formal consensus
+RCT, randomized controlled trial. aStudies with a level of evi-
+dence ‘’ should not be used as a basis for making a recom-
+mendation.
+Strength of recommendation
+Class
+Evidence
+A
+At least one meta-analysis, systematic review,
+or RCT rated as 1++, and directly applicable to the
+target population, or
+A systematic review of RCTs or a body of
+evidence consisting principally of studies
+rated as 1+, directly applicable to the
+target population and demonstrating overall
+consistency of results
+Evidence drawn from a NICE technology appraisal
+B
+A body of evidence including studies rated as 2++,
+directly applicable to the target population and
+demonstrating overall consistency of results, or
+Extrapolated evidence from studies rated as 1++ or 1+
+C
+A body of evidence including studies rated as 2+,
+directly applicable to the target population and
+demonstrating overall consistency of results, or
+Extrapolated evidence from studies rated as 2++
+D
+Evidence level 3 or 4, or
+Extrapolated evidence from studies rated as 2+, or
+Formal consensus
+D (GPP)
+A good practice point (GPP) is a recommendation
+for best practice based on the experience of
+the guideline development group
+RCT, randomized controlled trial; NICE, National Institute for
+Health and Care Excellence.
+Supporting Information
+Additional Supporting Information may be found in the online
+version of this article at the publisher’s website:
+File S1 Search strategy.
+Video S1 Author video.
+© 2019 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1312–1338
+1338 BAD guidelines for prescribing oral ciclosporin, 2018, J. Berth-Jones et al.
+Downloaded from https://academic.oup.com/bjd/article/180/6/1312/6731158 by guest on 06 May 2026
+
+=== PAGE 28 ===
+of patients  
+with PsO achieved  
+PASI 75 at Week 4 
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+75.9% 
+(n=265/349)
+of patients 
+with PsO achieved 
+PASI 100 at 5 years3
+76.9% 
+(N=52)† 
+of biologic-naïve  
+and TNFi-IR PsA patients 
+achieved ACR 50 at  
+Week 104/100, respectively‡1,4–6
+of patients  
+with PsO achieved  
+PASI 100 at Week 16
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+68.2%
+(n=238/349)
+and
+50.6% 
+(n=135/267) 
+51.5% 
+(n=222/431)
+GB-BK-2500315 | July 2025
+UCB Biopharma SRL, 2025. All rights reserved.
+This promotional material has been created and funded by UCB Pharma Ltd and 
+is intended for healthcare professionals in the UK.
+BIMZELX is indicated for the treatment of: moderate to severe plaque PsO in adults 
+who are candidates for systemic therapy; active PsA, alone or in combination 
+with methotrexate, in adults who have had an inadequate response, or who have 
+been intolerant, to one or more DMARDs; active nr-axSpA with objective signs of 
+inflammation as indicated by elevated CRP and/or MRI, in adults who have responded 
+inadequately, or are intolerant, to NSAIDs; active AS in adults who have responded 
+inadequately or are intolerant to conventional therapy; and active moderate to severe 
+HS (acne inversa) in adults with an inadequate response to conventional systemic HS 
+therapy.4
+Prescribing information for United Kingdom click here.  
+Please refer to the SmPC for further information. 
+These data are from different clinical trials and cannot be directly compared.
+Co-primary endpoints PASI 90 and IGA 0/1 at Week 16 were met.**Secondary endpoints. †N= mNRI, missing data 
+were imputed with mNRI (patients with missing data following treatment discontinuation due to lack of efficacy 
+or a TRAE were counted as non-responders; multiple imputation methodology was used for other missing data). 
+‡43.9% (n=189/431), and 43.4% (n=116/267) of biologic-naïve and TNFi-IR PsA patients achieved the primary 
+endpoint of ACR 50 at Week 16 in BE OPTIMAL and BE COMPLETE, respectively (vs 10.0% [n=28/281] and 6.8% 
+[n=9/133] placebo, p<0.0001); 54.5% (n=235/431) and 51.7% (n=138/267) maintained it at Week 52 (NRI).4–6 ​
+ACR 50, ≥50% response in the American College of Rheumatology criteria; AS, ankylosing spondylitis; CRP, 
+C-reactive protein; DMARD, disease-modifying antirheumatic drug; HS, hidradenitis suppurativa; IGA, Investigator’s 
+Global Assessment; (m)NRI, (modified) non-responder imputation; MRI, magnetic resonance imaging; nr-
+axSpA, non-radiographic axial spondyloarthritis; NSAID, non-steroidal anti-inflammatory drug; PASI 75/90/100, 
+≥75/90/100% improvement from baseline in Psoriasis Area and Severity Index; PsA, psoriatic arthritis; PsD, psoriatic 
+disease; PsO, psoriasis; TNFi-IR, tumour necrosis factor-α inhibitor – inadequate responder; TRAE, treatment-
+related adverse event.
+References: 1. Gordon KB, et al. Lancet. 2021;397(10273):475–486. 2. Blauvelt. 2025. AAD Presentation 62275. 3. 
+Mease PJ, et al. Rheumatol Ther. 2024;11(5):1363–1382. 4. BIMZELX SmPC. 5. Ritchlin CT, et al. Ann Rheum Dis. 
+2023;82(11):1404–1414. 6. Coates LC, et al. RMD Open. 2024;10(1):e003855. 7. Strober B, et al. AAD 2024;oral 
+presentation.​
+This medicine is subject to additional monitoring. This will allow quick 
+identification of new safety information. Adverse events should be reported. 
+Reporting forms and information can be found at www.yellowcard.mhra.gov.uk for 
+the UK. Adverse events should also be reported to UCB Pharma Ltd at  
+UCBCares.UK@UCB.com or 0800 2793177 for UK.
+NO COMPROMISE, 
+JUST CLEARANCE
+BIMZELX was well tolerated, the most frequently reported adverse reactions were: upper respiratory tract infections 
+and oral candidiasis. Other common reported adverse reactions include tinea infections, ear infections, herpes simplex 
+infections, oropharyngeal candidiasis, gastroenteritis, folliculitis, headache, rash, dermatitis, eczema, acne, injection site 
+reactions, fatigue, and vulvovaginal mycotic infection (including vulvovaginal candidiasis).4
+Bimzelx®     (bimekizumab) offers 
+the opportunity for complete, fast,
+and lasting skin clearance and 
+proven PsA efficacy 1–7

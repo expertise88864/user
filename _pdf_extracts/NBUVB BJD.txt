@@ -1,0 +1,1796 @@
+=== PAGE 1 ===
+GUIDELINES
+BJD
+British Journal of Dermatology
+British Association of Dermatologists and British
+Photodermatology Group guidelines for narrowband
+ultraviolet B phototherapy 2022*
+Victoria Goulden,1 Tsui C. Ling,2 Parastoo Babakinejad,3 Robert Dawe,4 Ewan Eadie iD ,4 Hiva Fassihi iD ,5
+Adam Fityan iD ,6 Trish Garibaldinos,5 Sally H. Ibbotson iD ,4 Ljuba Novakovic,5 7 Emma Rush,8
+Sophie C. Weatherhead iD ,3 Heather Whitehouse iD ,1 Maria Hashme,9 M. Firouz Mohd Mustapa iD ,9
+and Lesley S. Exton iD 9 on behalf of the British Association of Dermatologists’ Clinical Standards Unit
+1Leeds Teaching Hospitals NHS Trust, Leeds, LS1 3EX, UK
+2Photobiology Unit, Dermatology Centre, University of Manchester and Salford Royal NHS Foundation Trust, Manchester, M6 8HD, UK
+3Royal Victoria Inﬁrmary, Newcastle upon Tyne, NE1 4LP, UK
+4Scottish Photobiology Service, Photobiology Unit, University of Dundee & NHS Tayside, Ninewells Hospital & Medical School, Dundee, DD1 9SY, UK
+5Department of Photodermatology, St John’s Institute of Dermatology, Guy’s and St Thomas’ NHS Foundation Trust, London, SE1 9RT, UK
+6University Hospital Southampton NHS Foundation Trust, Southampton, SO10 6YD, UK
+7Queen Elizabeth Hospital, Lewisham & Greenwich NHS Trust, London, SE18 4QH, UK
+8Vitiligo Support UK, London, UK
+9Clinical Standards Unit, British Association of Dermatologists, Willan House, London, W1T 5HQ, UK
+Correspondence
+Victoria Goulden.
+Emails: victoria.goulden@nhs.net, guidelines@bad.org.uk
+Accepted for publication
+7 May 2021
+V.G. and T.C.L. share ﬁrst authorship.
+Produced in 1997 by the British Photodermatology Group and the British Association
+of Dermatologists (BAD). Reviewed and updated 2004, 2022.
+This is an updated guideline prepared for the British Association of Dermatologists
+(BAD) Clinical Standards Unit, which includes the Therapy & Guidelines subcommit-
+tee. Members of the Clinical Standards Unit who have contributed are N.J. Levell
+(Chair, Therapy & Guidelines subcommittee), B. McDonald (BAD Assistant Honorary
+Secretary 2019–21), S.L. Chua, A. Daunton, H. Frow, P. Laws, I. Nasr, A. Theri-
+anou, M. Hashme (Information Scientist), Z. Kiaee (Guideline Research Fellow), L.S.
+Exton (Senior Guideline Research Fellow) and M.F. Mohd Mustapa (Director Clinical
+Standards).
+*Plain language summary available online
+DOI 10.1111/bjd.21669
+NICE has renewed accreditation of the process used by the Bri-
+tish Association of Dermatologists to produce clinical guide-
+lines. The renewed accreditation is valid until 31 May 2026
+and applies to guidance produced using the processes described
+in ‘Updated guidance for writing a British Association of Der-
+matologists clinical guideline: the adoption of the GRADE
+methodology 2016’. The original accreditation term began on
+12 May 2010. More information on accreditation can be
+viewed at www.nice.org.uk/accreditation.
+Linked Comment: P. Wolf. Br J Dermatol 2022; 187:285–286.
+1. Purpose and scope
+The overall objective of the guideline is to provide up-to-date,
+evidence-based recommendations for the use of narrowband
+ultraviolet B (NB-UVB) phototherapy in adults, young people
+and children. The document aims to
+•
+offer an appraisal of all relevant literature up to 18 Febru-
+ary 2021, focusing on any key developments;
+•
+address important, practical clinical questions relating to
+the primary guideline objective;
+•
+provide guideline recommendations and, if appropriate,
+research recommendations.
+The guideline is presented as a detailed review with high-
+lighted recommendations for practical use in the clinic and at
+home (see Section 3), in addition to an updated patient infor-
+mation leaﬂet (available on the BAD Skin Health Information
+website:
+https://www.skinhealthinfo.org.uk/a-z-conditions-
+treatments).
+2. Methodology
+This set of guidelines has been developed using the BAD’s rec-
+ommended methodology.1 Further information can be found
+in Appendix T (see Supporting Information) with reference to
+the AGREE II instrument (www.agreetrust.org)2 and GRADE
+(http://www.gradeworkinggroup.org).
+Recommendations
+were developed for implementation in the UK National Health
+Service (NHS).
+The Guideline Development Group (GDG) established sev-
+eral clinical questions pertinent to the scope of the guideline
+ 2022 British Association of Dermatologists.
+British Journal of Dermatology (2022) 187, pp295–308
+295
+Downloaded from https://academic.oup.com/bjd/article/187/3/295/6966564 by guest on 06 May 2026
+
+=== PAGE 2 ===
+and a set of outcome measures of importance to patients,
+ranked according to the GRADE methodology (see Section 2.1
+and Appendix A; see Supporting Information). The GDG con-
+sisted of 10 consultant dermatologists, a medical physicist, a
+phototherapy nursing sister, three patient representatives and a
+technical team (consisting of an information scientist, a guide-
+line research fellow and a project manager providing method-
+ological and technical support).
+A systematic literature search of the PubMed, MEDLINE,
+Embase, Cochrane and AMED databases was conducted to
+identify key articles on NB-UVB to 18 February 2021. The
+search terms and strategies are detailed in Appendix V (see
+Supporting Information). Additional references relevant to the
+topic were also isolated from citations in the reviewed litera-
+ture and the previous editions of the guidelines.3,4 Data
+extraction and critical appraisal, data synthesis, evidence sum-
+maries, lists of excluded studies and the PRISMA diagram were
+prepared by the technical team (Appendixes B–S; see Support-
+ing Information). The overall certainty of the evidence from
+the included studies was graded according to the GRADE sys-
+tem (high, moderate, low or very low certainty). An addi-
+tional targeted literature search (for randomized controlled
+trials and systematic reviews) was conducted on 29 March
+2022; no new publications were identiﬁed that would have
+materially affected the recommendations (Appendix V).
+The recommendations are based when possible on evidence
+drawn from systematic reviews of the literature pertaining to
+the clinical questions identiﬁed, following discussions with
+the entire GDG and factoring in all four factors that would
+affect its strength rating according to the GRADE approach
+(i.e. balance between desirable and undesirable effects, overall
+certainty of the evidence, patient values and preferences, and
+resource allocation). All GDG members contributed towards
+drafting and/or reviewing the narratives and information in
+the guideline and Supporting Information documents. When
+there was insufﬁcient evidence from the literature, informal
+consensus was reached based on the specialist clinical experi-
+ence of the consultants on the GDG.
+The Supporting Information contains the summary of ﬁnd-
+ings with forest plots (Appendix B), tables Linking the Evi-
+dence To the Recommendations (LETR) (Appendix C), GRADE
+evidence proﬁles indicating the overall certainty of the evi-
+dence (Appendix D), summaries of the included studies and
+narrative ﬁndings for noncomparative studies (Appendixes E–
+P), the PRISMA ﬂow diagram (Appendix Q), critical appraisal
+of the included systematic reviews (Appendix R) and a list of
+excluded studies (Appendix S). The strength of recommenda-
+tion is expressed by the wording and symbols shown in
+Table 1.
+2.1 Clinical questions and outcomes
+The GDG established two clinical questions pertinent to the
+scope of the guideline. See Appendix A for the full review
+protocol.
+Review Question 1. In people with skin diseases (including, but
+not limited to psoriasis, vitiligo, eczema, hand and foot dermatoses, lichen
+planus, mycosis fungoides, pityriasis lichenoides, subacute and nodular prurigo,
+pruritus, chronic spontaneous urticaria, alopecia areata, progressive macular
+hypomelanosis and morphoea/localized scleroderma), what are the clinical
+effectiveness/efﬁcacy, safety and tolerability of NB-UVB pho-
+totherapy, as monotherapy or in combination with another
+treatment, compared with other light-based therapy including
+the excimer laser and lamp, topical therapy, retinoid therapy,
+conventional systemic immunosuppression or immunomodu-
+lation, biological therapy, placebo, no treatment or NB-UVB
+in combination with a different treatment?
+Review Question 2. In people with photodermatoses (including
+polymorphic light eruption, solar urticaria, actinic prurigo, chronic actinic der-
+matitis, hydroa vacciniforme, erythropoietic protoporphyria and photoaggravated
+Table 1 Strength of recommendation ratings
+Strength
+Wording
+Symbol
+Deﬁnition
+Strong recommendation for
+the use of an
+intervention
+‘Offer’ (or similar, e.g. ‘use’,
+‘provide’, ‘take’, ‘investigate’
+etc.)
+↑↑
+Beneﬁts of the intervention outweigh the risks; most patients would
+choose the intervention while only a small proportion would not;
+for clinicians, most of their patients would receive the
+intervention; for policymakers, it would be a useful performance
+indicator
+Weak recommendation for
+the use of an
+intervention
+‘Consider’
+↑
+Risks and beneﬁts of the intervention are ﬁnely balanced; most
+patients would choose the intervention, but many would not;
+clinicians would need to consider the pros and cons for the
+patient in the context of the evidence; for policymakers it would
+be a poor performance indicator where variability in practice is
+expected
+No recommendation
+Θ
+Insufﬁcient evidence to support any recommendation
+Strong recommendation
+against the use of an
+intervention
+‘Do not offer’
+↓↓
+Risks of the intervention outweigh the beneﬁts; most patients
+would not choose the intervention while only a small proportion
+would; for clinicians, most of their patients would not receive the
+intervention
+ 2022 British Association of Dermatologists.
+British Journal of Dermatology (2022) 187, pp295–308
+296 BAD and BPG guidelines for UVB phototherapy 2022, V. Goulden et al.
+Downloaded from https://academic.oup.com/bjd/article/187/3/295/6966564 by guest on 06 May 2026
+
+=== PAGE 3 ===
+eczema), what are the clinical effectiveness/efﬁcacy, safety and
+tolerability of NB-UVB phototherapy, as monotherapy or in
+combination with another treatment, used prophylactically and
+to treat active disease, compared with photoprotective measures
+including sunscreen, topical and oral corticosteroids, other
+light-based therapies, systemic immunosuppression, other topi-
+cal and oral anti-inﬂammatory/immunomodulator agents, bio-
+logical
+therapy,
+placebo,
+no
+treatment
+or
+NB-UVB
+in
+combination with a different treatment?
+Outcomes
+The GDG also established a set of outcome measures of
+importance to patients for each review question. These were
+agreed by the patient representatives and ranked by them
+according to the GRADE methodology5 and data on these
+extracted from the included studies (Appendixes B–P). Out-
+comes ranked 7, 8 or 9 are critical for decision making, those
+ranked 4, 5 or 6 are important but not critical for decision
+making, and those ranked 1, 2 or 3 not generally important
+for decision making.
+Review question 1: skin diseases
+Disease improvement [e.g. ≥75% improvement in Psoriasis
+Area and Severity Index (PASI) or Eczema Area and Severity
+Index (EASI), or ≥50% repigmentation] (9)
+Serious adverse events: acute and chronic (9)
+Change in psychological wellbeing or quality of life [e.g.
+Dermatology Life Quality Index (DLQI)] (9)
+Disease-speciﬁc physician assessment [e.g. PASI, EASI,
+Severity
+Weighted
+Assessment
+Tool
+(SWAT),
+Physician’s
+Global Assessment (PGA)] (8)
+Disease-speciﬁc patient self-assessment (8)
+Sustained clearance and beneﬁt (6)
+Treatment tolerability (6)
+Reduction of other therapy (6)
+Convenience of treatment (5)
+Minor adverse events (3)
+Review question 2: Photodermatoses
+Serious adverse events: acute and chronic (9)
+Change in psychological wellbeing or quality of life (e.g.
+DLQI) (9)
+Disease-speciﬁc physician assessment (8)
+Disease-speciﬁc patient self-assessment (8)
+Change in sun tolerance (7)
+Sustained clearance and beneﬁt (6)
+Treatment tolerability (6)
+Reduction of other therapy (6)
+Convenience of treatment (5)
+Minor adverse events (3)
+3. Summary of recommendations
+The following recommendations and ratings were agreed
+upon unanimously by the core members of the GDG and
+patient representatives. For further information on the word-
+ing used for recommendations and strength of recommenda-
+tion ratings see Table 1. The evidence for recommendations is
+based on the studies as listed (for details and discussion of the
+evidence see Appendixes B–P).
+The clinical efﬁcacy and appropriateness of other treatment
+modalities should also be considered, taking into account the
+patient’s diagnosis, age and comorbidities, and patient choice.
+The GDG is aware of the lack of high-quality evidence for
+some of these recommendations.
+GPP indicates a Good Practice Point: recommendations
+derived from consensus.
+Strong recommendations marked with an asterisk (*) are
+based on the available evidence, and/or consensus based on
+specialist experience.
+General (applies to all treated conditions)
+R1 (GPP) Explain the potential beneﬁts and harms of NB-
+UVB and provide a patient information leaﬂet (e.g. https://
+www.skinhealthinfo.org.uk/a-z-conditions-treatments) to can-
+didates prior to choosing the treatment.
+R2 (GPP) All centres should have a phototherapy protocol in
+place for treatment and to address episodes of symptomatic
+erythema and other adverse effects.
+R3 (↑↑) Carry out minimal erythema dose (MED) testing or
+test a small area before starting treatment to ascertain a safe
+starting dose of NB-UVB.
+R4 (GPP) All phototherapy devices (including handheld
+devices) should be evaluated and safety checked by medical
+physics, and irradiance measurements should be carried out at
+regular intervals appropriate for the frequency of use.
+R5 (GPP) All phototherapy centres should consider providing
+a home phototherapy service, within an appropriate gover-
+nance framework and particularly where there is geographical
+need.
+R6 (GPP) Offer skin cancer surveillance at appropriate inter-
+vals to people identiﬁed as having received more than 500
+whole-body NB-UVB treatments, particularly those individuals
+with other coexisting risk factors for skin cancer.
+R7 (↓↓) Do not offer NB-UVB phototherapy to people who
+are taking ciclosporin, mycophenolate, azathioprine or oral
+tacrolimus (see contraindications) for their skin disease or
+other conditions, either as combination therapy or as rescue
+therapy to control ﬂares.
+R8 (GPP) Continue at least daily use of an emollient during a
+course of NB-UVB to prevent and alleviate skin dryness and
+pruritus.
+R9 (GPP) The use of an emollient should generally be
+avoided for at least 2 h before NB-UVB, particularly in people
+with psoriasis, as this may reduce UV transmission in the skin.
+[However, in people with eczema, consistent treatment of the
+skin barrier defect outweighs any reduction in UV transmis-
+sion and these individuals should use emollient following
+their usual routine (see R17).]
+ 2022 British Association of Dermatologists.
+British Journal of Dermatology (2022) 187, pp295–308
+BAD and BPG guidelines for UVB phototherapy 2022, V. Goulden et al. 297
+Downloaded from https://academic.oup.com/bjd/article/187/3/295/6966564 by guest on 06 May 2026
+
+=== PAGE 4 ===
+Psoriasis
+R10 (↑↑) Offer NB-UVB to people with psoriasis who have an
+inadequate response to topical therapy, or when topical ther-
+apy is not suitable, prior to offering systemic immunosuppres-
+sion or immunomodulation therapies, including psoralen plus
+ultraviolet A (PUVA).
+R11 (↑) Consider adding NB-UVB to a selected systemic psori-
+asis treatment (i.e. acitretin, methotrexate, fumaric acid esters,
+apremilast or biologics) as a short-term rescue therapy to con-
+trol ﬂares, if psoriasis is normally well controlled on these
+treatments.
+R12 (↑) Consider combination therapy of NB-UVB and aci-
+tretin in adults and young people with severe chronic psori-
+asis, but this must be avoided in anyone of childbearing
+potential.
+Vitiligo
+R13 (GPP) Inform people with vitiligo who are eligible for
+NB-UVB of the requirements (depending on local protocols: a
+pretherapy assessment, medical photographs taken prior to
+and during follow-ups usually every 3 months, two to three
+sessions weekly possible for up to 1 year), and the likely
+response depending on the affected anatomical site (e.g. the
+face and trunk achieve better repigmentation than acral sites).
+R14 (↑↑) Offer NB-UVB (whole body or localized, e.g. home-
+based handheld) as ﬁrst-line phototherapy to people with viti-
+ligo who have an inadequate response to topical therapy and/
+or have extensive or progressive disease. As a prolonged
+course is generally required, discuss the risk–beneﬁt ratio, par-
+ticularly for children.a This may be combined with a cal-
+cineurin
+antagonistb
+(more
+evidence
+for
+tacrolimus)
+or
+intermittent potent topical corticosteroid,c on localized sites
+for a time period appropriate to the body site.
+[aThere is a lack of data on the skin cancer risk for high
+cumulative exposures in children with less deeply pigmented
+skin (Fitzpatrick skin types I–III), hence the risk–beneﬁt ratio
+needs to be carefully considered. bPrior to combination NB-
+UVB and topical tacrolimus treatment, advise patients that
+there is a theoretical increased risk of skin cancer with this
+combination of treatment. A shared decision should be made
+with the person with vitiligo, taking into account other alter-
+natives, the individual’s personal and family history of risk of
+skin cancer and the impact of the vitiligo. cThere is strong evi-
+dence of a limited effect for combination NB-UVB and potent
+topical corticosteroid, as well as a high risk of loss of response
+upon stopping treatment. Prior to this combination, consider
+the risk–beneﬁt ratio of the prolonged use of potent topical
+corticosteroid.]
+R15 (↑) Consider oral steroids (see vitiligo guidelines for
+speciﬁc treatment protocol)6 in combination with NB-UVB in
+people with rapidly progressive vitiligo to arrest activity of
+the disease, after careful consideration of risks and beneﬁts.
+Eczema
+R16 (↑↑) Offer NB-UVB as ﬁrst-line phototherapy to people
+with eczema who have an inadequate response to topical ther-
+apy alone, prior to offering systemic immunosuppression or
+immunomodulation therapies, including PUVA.
+R17 (GPP) Emollients and, if necessary, short-term intermit-
+tent topical corticosteroids should continue to be used during
+a course of phototherapy for eczema.
+R18 (GPP) Stabilize severe, acute ﬂares of eczema prior to
+commencing NB-UVB therapy by optimizing topical therapy,
+the use of systemic corticosteroids and/or antibiotics as appro-
+priate.
+R19 (GPP) Consider adding NB-UVB to methotrexate or
+another
+suitable
+systemic
+immunomodulatory
+medication
+(avoid with ciclosporin, mycophenolate, azathioprine and
+tacrolimus) as a short-term rescue therapy to control ﬂares, if
+eczema is normally well controlled on these treatments.
+Palmoplantar dermatoses
+R20 (↑) Consider NB-UVB in people with palmoplantar psori-
+asis who have an inadequate response to topical therapy when
+PUVA is contraindicated.
+R21 (↑) Consider NB-UVB in people with palmoplantar
+eczema who have an inadequate response to topical therapy
+when PUVA is contraindicated.
+Θ There is insufﬁcient evidence to recommend NB-UVB in
+people with palmoplantar pustulosis.
+Lichen planus
+R22 (↑) Consider NB-UVB in people with cutaneous lichen
+planus who have an inadequate response to topical therapy.
+Morphoea (localized scleroderma)
+R23 (↑) Consider NB-UVB in people with morphoea (local-
+ized scleroderma) when an alternative and more effective pho-
+totherapy
+or
+systemic
+therapy
+is
+not
+available
+or
+is
+contraindicated.
+Mycosis fungoides
+R24 (↑↑) Offer NB-UVB to people with mycosis fungoides for
+treatment of patches or plaques; however, PUVA is more
+effective for thicker plaques of mycosis fungoides.
+Pityriasis lichenoides
+R25 (↑) Consider NB-UVB in people with pityriasis liche-
+noides chronica (PLC) and pityriasis lichenoides et vario-
+liformis acuta (PLEVA) who have an inadequate response to
+topical therapy.
+ 2022 British Association of Dermatologists.
+British Journal of Dermatology (2022) 187, pp295–308
+298 BAD and BPG guidelines for UVB phototherapy 2022, V. Goulden et al.
+Downloaded from https://academic.oup.com/bjd/article/187/3/295/6966564 by guest on 06 May 2026
+
+=== PAGE 5 ===
+Progressive macular hypomelanosis
+R26 (↑) Consider NB-UVB in people with progressive macular
+hypomelanosis.
+Subacute and nodular prurigo
+R27 (↑) Consider NB-UVB in people with subacute prurigo
+who have an inadequate response to topical therapy.
+R28 (↑) Consider NB-UVB in people with nodular prurigo
+who have an inadequate response to topical therapy when an
+alternative and more effective phototherapy is not available or
+is contraindicated.
+Photodermatoses
+R29 (↑↑) Offer NB-UVB prophylactic phototherapy to people
+who are severely affected by polymorphic light eruption and
+have an inadequate response to photoprotection.
+R30 (↑↑) Offer* NB-UVB prophylactic phototherapy as a treat-
+ment option to people with erythropoietic protoporphyria.
+R31 (↑) Consider NB-UVB prophylactic phototherapy, after
+photoinvestigation and speciﬁc recommendation from a spe-
+cialist photobiology centre, in people with chronic actinic
+dermatitis who have an inadequate response to photoprotec-
+tion and topical therapy.
+[Current evidence exists mainly for people with Fitzpatrick
+skin type IV and above combined with the use of emollients
+and topical or oral corticosteroid.]
+R32 (↑) Consider NB-UVB prophylactic phototherapy, after
+photoinvestigation and advice from a specialist photobiology
+centre, in people with solar urticaria who have an inadequate
+response to photoprotection and a second-generation H1-anti-
+histamine at a dose of up to fourfold the licensed dose.
+R33 (GPP) Consider NB-UVB prophylactic phototherapy, after
+photoinvestigation and speciﬁc recommendation from a spe-
+cialist photobiology centre, in people who have an inade-
+quate response to photoprotection and topical therapy for the
+following conditions:
+•
+Actinic prurigo
+•
+Photoaggravated eczema
+•
+Hydroa vacciniforme
+Pruritus
+R34 (↑↑) Offer NB-UVB to people with pruritus associated
+with severe kidney disease where other interventions have
+failed or are not appropriate.
+R35 (↑) Consider NB-UVB in people with idiopathic or sec-
+ondary pruritus (when the underlying cause cannot be cor-
+rected), who have an inadequate response to topical therapy.
+Chronic urticaria
+R36 (↑) Consider NB-UVB in people with chronic sponta-
+neous urticaria. H1-antihistamines should generally be com-
+bined with phototherapy.
+R37 (GPP) NB-UVB phototherapy should be discussed with
+people with chronic spontaneous urticaria who have an inade-
+quate response to other treatments.
+R38 (↑) Consider NB-UVB in people with symptomatic dermo-
+graphism who have an inadequate response to ﬁrst-line therapy.
+H1-antihistamines should generally be combined with pho-
+totherapy.
+Insufﬁcient evidence to support any recommendation
+Θ There is insufﬁcient evidence to recommend NB-UVB for
+the treatment of the following conditions (see LETR in
+Appendix C for a full list):
+•
+Acne
+•
+Acquired perforating dermatosis
+•
+Alopecia areata
+•
+Cutaneous amyloidosis
+•
+Cutaneous plasmacytosis
+•
+Eosinophilic pustular folliculitis
+•
+Erythema annulare centrifugum
+•
+Graft-versus-host disease
+•
+Granuloma annulare
+•
+Hailey–Hailey disease
+•
+Keratosis lichenoides chronica
+•
+Lichen nitidus
+•
+Lichen sclerosus
+•
+Notalgia paraesthetica
+•
+Pigmented purpuric dermatoses
+•
+Pregnancy-induced dermatoses
+•
+Pruritic papular eruption in HIV
+•
+Scleroedema
+•
+Seborrhoeic dermatitis
+•
+Subcorneal pustular dermatosis
+List of key future research recommendations
+The following list outlines future research recommendations
+(FRRs).
+FRR1 Randomized controlled trials (RCTs) evaluating NB-UVB
+vs. PUVA for the treatment of people with
+•
+Hyperkeratotic plaque psoriasis
+•
+Licheniﬁed eczema
+•
+Nodular prurigo
+•
+Palmoplantar psoriasis
+•
+Palmoplantar eczema
+•
+Generalized granuloma annulare
+FRR2 RCTs evaluating NB-UVB and placebo vs. NB-UVB in
+combination with acitretin for the treatment of people with
+psoriasis.
+FRR3 RCTs to evaluate NB-UVB, PUVA and UVA1 for people
+with eczema according to disease pattern, in particular,
+whether speciﬁc phototherapy may be more effective in acute
+ﬂares of eczema, chronic licheniﬁed eczema or nodular prur-
+igo.
+ 2022 British Association of Dermatologists.
+British Journal of Dermatology (2022) 187, pp295–308
+BAD and BPG guidelines for UVB phototherapy 2022, V. Goulden et al. 299
+Downloaded from https://academic.oup.com/bjd/article/187/3/295/6966564 by guest on 06 May 2026
+
+=== PAGE 6 ===
+FRR4 Determine the action spectrum for phototherapy in
+eczema.
+FRR5 Determine the safety of prolonged courses of NB-UVB
+for vitiligo, particularly in children.
+FRR6 Large, prospective studies with long-term follow-up of
+people treated with NB-UVB to establish skin cancer risk cor-
+related with cumulative number, dose, frequency of expo-
+sures, age, skin type and ethnicity.
+FRR7 Further research into patient and disease characteristics
+inﬂuencing therapeutic response to NB-UVB.
+4. Introduction
+As far back as 1400 BC, sunlight has been harnessed to treat
+skin disease,7 but phototherapy’s modern inception began in
+the 19th century when renowned physician Niels Finsen used
+UV radiation to treat lupus vulgaris. In 1925, Goeckerman
+described the beneﬁts of treating psoriasis using UV rays in
+combination with crude coal tar,8 but it was not until the
+1970s that broadband UVB (BB-UVB) became established as a
+treatment for inﬂammatory skin disease. A paradigm shift
+occurred in 1988 with the introduction of NB-UVB initially to
+treat psoriasis.9,10 Parrish and Jaenicke demonstrated that the
+most effective therapeutic UV wavelength for the treatment of
+this condition was 313 nm.11 Fluorescent NB-UVB photother-
+apy lamps with an emission spectrum that peaks between 310
+nm and 311 nm were then originally introduced by Philips,
+although NB-UVB phototherapy lamps have since been pro-
+duced by other manufacturers.
+UV radiation has been shown to have potent immunomodu-
+latory properties, which involve multiple mechanisms in both
+the innate and adaptive immune systems. It has a signiﬁcant
+immunosuppressive effect on T-cell function and induces anti-
+gen-speciﬁc tolerance that depends on interactions between
+antigen-presenting cells, mast cells and keratinocytes.12 In addi-
+tion to the immunomodulatory effects of UV, recent studies
+have demonstrated other key effects of phototherapy to be
+proapoptotic, antipruritic, antiﬁbrotic and propigmentary, pro-
+moting clinical improvement in various skin diseases.13
+NB-UVB is now the most commonly used type of pho-
+totherapy, and numerous studies have demonstrated its effec-
+tiveness in the treatment of psoriasis.14,15 NB-UVB treatment
+has also become an established treatment for other inﬂamma-
+tory dermatoses such as eczema, as well as for many other
+conditions including vitiligo, cutaneous T-cell lymphoma and
+the photodermatoses.16–18
+4.1 Contraindications
+There are a number of absolute contraindications to the use of
+NB-UVB phototherapy. These include
+•
+Photogenodermatoses (xeroderma pigmentosum, Cockayne
+syndrome,
+trichothiodystrophy,
+Bloom
+syndrome
+and
+Rothmund–Thomson syndrome)
+•
+Disorders with a genetic predisposition to skin cancers
+(Gorlin syndrome and albinism)
+•
+Concomitant oral immunosuppressive medication, in par-
+ticular ciclosporin, azathioprine, mycophenolate mofetil
+and tacrolimus. However, following careful consideration
+of the risk–beneﬁt ratio, NB-UVB could be used in some
+people
+taking
+speciﬁc
+immunosuppressive
+medications
+such as methotrexate or biological therapies
+•
+People medically unﬁt and unable to safely stand in the
+whole-body NB-UVB cubicle (e.g. those with severe car-
+diovascular or respiratory disease, and those with poorly
+controlled epilepsy)
+Relative contraindications
+•
+Hereditary dysplastic naevus syndrome
+•
+Lupus erythematosus
+•
+Previous exposure to arsenic or ionizing radiation
+•
+Past excessive exposure to natural sunlight, sunbeds or
+phototherapy
+•
+Previous signiﬁcant use of oral immunosuppressive medi-
+cation in the form of ciclosporin, azathioprine, mycophe-
+nolate mofetil or tacrolimus
+•
+Current premalignant skin lesions
+•
+Current and past history of nonmelanoma skin cancer
+•
+Current and past history of melanoma skin cancer
+•
+Strong family history of skin cancer (melanoma or non-
+melanoma) at a young age
+NB-UVB phototherapy should generally be avoided in
+patients with a past personal history of melanoma or with a
+current melanoma or nonmelanoma skin cancer; however,
+cases should be assessed on an individual basis and NB-UVB
+could be considered in those individuals where therapeutic
+options are limited and the beneﬁt of the treatment outweighs
+the potential risks.
+NB-UVB phototherapy can be given with caution to people
+with dermatoses that may be photoaggravated, such as der-
+matomyositis, photoaggravated eczema, Darier disease and
+transient acantholytic dermatoses, pityriasis rubra pilaris and
+active herpes simplex. It can be used in people taking poten-
+tially photosensitizing medications as long as MED testing is
+performed before treatment is started.
+NB-UVB phototherapy is not contraindicated in childhood
+(see Section 11), pregnancy or breastfeeding (see Section 10).
+In addition, there are no risks of treating people with pace-
+makers in situ.
+5. Place in the treatment pathway
+NB-UVB is usually considered after no response or inadequate
+response to topical therapy, or if the condition is deemed to
+be too extensive for topical therapy to treat adequately. It is
+also a relatively safe and cost-effective second-line option
+ 2022 British Association of Dermatologists.
+British Journal of Dermatology (2022) 187, pp295–308
+300 BAD and BPG guidelines for UVB phototherapy 2022, V. Goulden et al.
+Downloaded from https://academic.oup.com/bjd/article/187/3/295/6966564 by guest on 06 May 2026
+
+=== PAGE 7 ===
+compared with immunosuppressive, immunomodulating or
+biological therapies and should be offered before these treat-
+ment options.
+NB-UVB is generally considered before PUVA for many der-
+matoses such as psoriasis and eczema due to its better safety
+proﬁle and relative ease of treatment without the need for oral
+medication and eye protection following treatment. However,
+for certain indications, NB-UVB is signiﬁcantly less effective
+than PUVA and should be considered only if PUVA is not
+available. These indications include thicker plaque-stage myco-
+sis fungoides, granuloma annulare, and hand and foot der-
+matoses.
+PUVA
+is
+still
+also
+an
+important
+second-line
+phototherapy for the treatment of many dermatoses, as lack of
+adequate response to NB-UVB does not predict lack of
+response to PUVA.19
+In psoriasis, national UK guidelines (National Institute for
+Health and Care Excellence – NICE) state that NB-UVB should
+be offered to people with plaque or guttate-pattern psoriasis
+that cannot be controlled with topical treatments alone. Sys-
+temic treatment should be offered if NB-UVB phototherapy
+results in an unsatisfactory response or is poorly tolerated, if
+there is rapid relapse following phototherapy, if access is difﬁ-
+cult for logistical reasons, or if the person is at especially high
+risk of skin cancer.20
+In eczema, for children under the age of 12 years, national
+UK guidance (NICE) suggests considering phototherapy or
+systemic treatments for severe atopic eczema when other man-
+agement options have failed or are inappropriate, or if there is
+a signiﬁcant negative impact on quality of life.21 For adults
+with eczema, the NICE guidance does not speciﬁcally discuss
+the use of phototherapy or systemic therapy. In general, UVB
+phototherapy is recommended after failure of topical therapy,
+before consideration of systemic or biological therapy.
+In vitiligo that has not responded to or is unsuitable for
+topical therapy, NB-UVB is the ﬁrst-choice modality of pho-
+totherapy, over PUVA, due to higher efﬁcacy and a better
+safety proﬁle.6
+6. Improving access
+There is increasing evidence for the cost efﬁcacy of NB-UVB
+phototherapy,14,22 but convenience and availability remain an
+issue, and any approach that improves patient access to effec-
+tive, safe treatment should be a priority.23–25 One option for
+improving access is providing home treatment; however, the
+availability of this form of treatment is currently limited in
+the UK.26,27
+In a pragmatic, multicentre, randomized, controlled, nonin-
+feriority study comparing home vs. outpatient UVB photother-
+apy for mild-to-severe psoriasis in the Netherlands (PLUTO),
+105 patients were followed up for 1 year after phototherapy.
+The authors found no signiﬁcant difference between the efﬁ-
+cacy of outpatient and home treatment as assessed by ≥50%
+improvement in PASI or Self-Administered PASI, with no sig-
+niﬁcant differences in adverse effects.28
+In the UK, two studies in Tayside demonstrated home UVB
+phototherapy to have similar outcomes to hospital-based pho-
+totherapy.29 The estimated costs to the hospital ranged from
+£229 to £314 per course (£307 to £422 per effective course for
+psoriasis), compared with £114 for outpatient therapy (£149
+per effective course for psoriasis). However, the total cost to soci-
+ety (hospital and patient costs) is around £410 per course, com-
+pared with an estimated £550 for outpatient phototherapy.30
+Home-based phototherapy may also be considered for peo-
+ple with vitiligo.31,32 This can be undertaken using either
+whole-body units or handheld and non-handheld devices for
+localized areas.33–36 A prospective study showed no signiﬁcant
+difference in repigmentation rates between home-based and
+hospital-based phototherapy, and only minimal adverse effects
+and similar health-related quality-of-life scores.37 A random-
+ized controlled trial of home interventions (HI-Light Vitiligo
+Trial) found that combination treatment with home-based
+handheld NB-UVB and potent topical corticosteroid was likely
+to be superior to potent topical corticosteroid monotherapy in
+the treatment of localized vitiligo.38
+It is important to recognize that there are increased safety
+concerns in the home setting that should be carefully consid-
+ered. To obtain optimal patient outcomes and ensure robust
+safety,
+careful
+patient
+selection
+and
+training
+should
+be
+ensured, along with remote but close monitoring by experi-
+enced phototherapy nurses supported by a hospital-based pho-
+totherapy team, which must include medical physics expertise
+and use a clear governance framework. Recent experience of
+setting up a new service has been reported,39 and a useful
+model for setting up a home phototherapy service is described
+by Hung et al.40 An alternative way to improve convenience
+and access to phototherapy services for patients is to enable
+the patient to self-administer their own treatment in the hos-
+pital setting. In a pilot study, 20 selected people with eczema
+and psoriasis took ownership of treatment by self-administer-
+ing their UVB phototherapy at hospital. This was safe and
+effective and enabled them to take greater control of atten-
+dance times for UVB phototherapy.41
+7. Light sources and dosimetry
+While ﬂuorescent phototherapy lamps are most commonly
+used, NB-UVB can be delivered by other sources such as an
+excimer laser/lamp or ﬁltered broadband lamp (further details
+in Appendix U; see Supporting Information). Such lamps are
+generally used for targeted therapy rather than whole-body
+irradiation.42–45 Regardless of the method of illumination,
+accurate dosimetry (measurement) is critical for efﬁcient and
+safe treatment delivery. Measurement techniques will vary
+depending on the NB-UVB source, and published guidelines
+are available.46,47 It is important that, as part of a quality
+assurance system, there are regular quality control measure-
+ments performed on the cabinet to ensure the accuracy and
+consistency of the UV dose delivered.48 Accurate measurement
+is
+required
+for
+employee
+safety,
+in
+order
+to
+compare
+ 2022 British Association of Dermatologists.
+British Journal of Dermatology (2022) 187, pp295–308
+BAD and BPG guidelines for UVB phototherapy 2022, V. Goulden et al. 301
+Downloaded from https://academic.oup.com/bjd/article/187/3/295/6966564 by guest on 06 May 2026
+
+=== PAGE 8 ===
+anticipated occupational exposure to exposure limit values.
+This is completed as part of a risk assessment as required by
+the control of artiﬁcial optical radiation at work regulations
+2010.49
+8. Protocols for treatment delivery
+Phototherapy protocol variables include initial dose, frequency
+of treatment, incremental regimen, maximum dose, number
+of exposures, and potentially a ‘tailing-off’ period of treat-
+ment. There is a lack of good-quality study evidence to guide
+decision making for many of these variables. Studies in people
+with psoriasis predominantly with skin phototypes I and II
+support the need for a test dose on a small area, principally
+for safety reasons.50 Routine MED testing will allow identiﬁca-
+tion of people with photosensitivity induced by medication,
+or previously unrecognized photodermatoses such as chronic
+actinic dermatitis prior to treatment. This will help prevent
+sensitive people from burning during treatment and identify
+whether people require further phototesting.51,52
+For people with psoriasis, the use of 20% increments has
+been shown to be only slightly less effective than 40% incre-
+ments, but importantly it was associated with fewer episodes
+of symptomatic erythema.53 Treatment three times weekly is
+not signiﬁcantly less effective than ﬁve times weekly, and was
+associated
+with
+fewer
+symptomatic
+erythema
+reactions,54
+while treatment twice weekly is as effective as three times
+weekly, but the duration of treatment is more prolonged.55 A
+study from Turkey showed that, for psoriasis, maintenance
+NB-UVB did not result in longer remission.56
+There is limited study evidence for speciﬁc protocols to
+treat other conditions. In atopic eczema, a comparative study
+demonstrated that a low-increment regimen can work as well
+as higher increments.57
+Examples of commonly used protocols in the UK are avail-
+able on the NHS Scotland Photonet website.58
+It is important that protocols are used only as a guide, as devi-
+ation from protocols will be necessary for optimum results in
+many individual patients. This is particularly the case for condi-
+tions other than psoriasis and will vary according to the clini-
+cian’s individual expertise in treating particular conditions.
+9. Adverse effects
+NB-UVB is considered a safe treatment modality with a rela-
+tively low risk of adverse effects.59,60
+9.1 Short-term adverse effects
+Erythema is the most commonly experienced adverse effect,
+although its reported rate differs throughout the literature.61–
+63 Erythema is usually recorded using a semiquantitative grad-
+ing system consisting of E0 (no erythema), E1 (barely percep-
+tible asymptomatic), E2 (well deﬁned with mild discomfort),
+E3 (well deﬁned and painful) and E4 (painful erythema, with
+bullae). E3 and E4 sunburn-type reactions occur infrequently
+during courses of phototherapy.64 The frequency of erythema
+varies according to body site65,66 and may increase in the
+presence of photosensitizing medication.67 Erythema develops
+within 3–5 h following exposure to UVB, peaks between 12
+and 24 h and resolves by 72 h,68 although this may vary
+depending on the intensity of the UV exposure.69,70
+The risk of phototoxic drug eruptions can be minimized by
+taking a careful drug history and carrying out MED testing
+prior to treatment. Individuals also need to be instructed to
+check with staff before commencing any new medication
+while receiving phototherapy.
+Provocation of photodermatoses. Polymorphic light eruption (PLE) may
+develop during treatment with NB-UVB. In a retrospective sur-
+vey, the provocation rate with NB-UVB was 195% in 113
+patients with PLE, compared with 07% in 974 patients with
+other diagnoses.71 In the event of ﬂaring, dose reduction and
+cautious escalation help to lower PLE recurrence. The application
+of a potent topical steroid to commonly affected sites immedi-
+ately following each treatment may further reduce the inci-
+dence.72
+To minimize the risk of triggering lupus erythematosus,
+autoantibody screening should be considered prior to pho-
+totherapy in any individual with relevant symptoms or with a
+known family history of lupus.
+The provocation of other previously undiagnosed photoder-
+matoses by NB-UVB, such as chronic actinic dermatitis, can be
+severe but occurs less frequently. This cannot be consistently
+predicted from the patient’s history, but the presence of a
+reduced MED should prompt assessment for coexistent photo-
+sensitivity prior to treatment.
+Reactivation of herpes simplex virus (HSV) and HSV keratitis can
+occur as a result of NB-UVB treatment.73,74 In people with a
+history of HSV infection, the use of prophylactic aciclovir and
+facial shielding during treatment should be considered.
+Pruritus during NB-UVB is commonly reported61,75 but may
+arise directly from the underlying disease.4
+The development of bullae limited to psoriatic plaques with sparing
+of the surrounded nonlesional skin during NB-UVB therapy is
+a recognized but uncommon complication of therapy. It is
+hypothesized to reﬂect the enhanced penetration of UVB
+through lesional skin due to the reduction in acanthosis and
+desquamation during treatment.76,77
+Idiopathic guttate hypomelanosis-like hypopigmented macules and freckling
+have been reported to occur in NB-UVB phototherapy, includ-
+ing in people with cutaneous T-cell lymphoma.78–80
+9.2 Delayed adverse effects
+Photoageing presenting as coarse wrinkling or cutaneous atrophy81
+is a recognized delayed adverse effect of exposure to UVB.82
+Photocarcinogenesis. The potential risk of skin cancer with PUVA
+is well established with evidence from both the European and
+American literature, but the risks with NB-UVB are less clear.
+Mouse studies indicated that NB-UVB may have a two times
+higher risk of inducing skin cancer compared with BB-UVB
+per MED;9,83–85 however, in clinical practice, the number of
+ 2022 British Association of Dermatologists.
+British Journal of Dermatology (2022) 187, pp295–308
+302 BAD and BPG guidelines for UVB phototherapy 2022, V. Goulden et al.
+Downloaded from https://academic.oup.com/bjd/article/187/3/295/6966564 by guest on 06 May 2026
+
+=== PAGE 9 ===
+MEDs required for a NB-UVB treatment course is usually less
+than one-third of that required for BB-UVB, resulting in the
+overall skin cancer risk probably being lower than that of BB-
+UVB.86 This is borne out in clinical studies. A systematic
+review that included only four studies was unable to identify
+an increased risk of skin cancer following NB-UVB.87
+People with vitiligo will usually have prolonged courses
+and there is only limited evidence to support the long-term
+safety of high cumulative exposures of NB-UVB in people
+with vitiligo, although a retrospective study of 15 people with
+skin types IV–VI receiving between 200 and 600 treatments
+with a mean follow-up of 835 months did not detect any
+skin cancers.88 There are special considerations for treatment
+of children (see Section 11).
+The NICE-accredited BAD Service Guidance and Standards
+for Phototherapy Units 201648 currently recommends greater
+than 500 UVB exposures as the threshold to trigger considera-
+tion of skin cancer screening review. It may be appropriate to
+treat past these arbitrary threshold numbers after clinical
+assessment by a consultant dermatologist and discussion with
+the individual patient of the risks and beneﬁts of the various
+treatment options.
+The incidences of genital tumours in men exposed to PUVA and
+BB-UVB are approximately 163 and 46 times higher than in the
+general population, respectively.89 No evidence exists separately for
+NB-UVB inducing genital tumours, but it is prudent to cover male
+genitalia during treatment. There is no standard material used for
+shielding genitalia, but studies of UV transmittance suggest that dar-
+ker-coloured materials such as polyester (close weave type and high
+thread count) offer better protection.90
+Eye photodamage. Exposure of the eye to NB-UVB can result in
+acute and chronic photodamage.91 Photokeratitis92 and photo-
+conjunctivitis93 may occur acutely, while chronic exposure is
+linked to the development of pterygium and cataract forma-
+tion.94 For this reason the use of UV-protective goggles is rec-
+ommended during treatment. Only negligible amounts of
+UVB are transmitted through the eyelids, and therefore NB-
+UVB phototherapy can be safely used with the eyes closed in
+those with eyelid dermatoses, providing eyelid closure is com-
+plete and people adhere to this advice.90,95 For any patient in
+whom that is not possible, the use of UV-protective contact
+lenses can be considered. Soft lenses are preferable to gas-per-
+meable ones due to complete coverage of the cornea.96
+10. Use in pregnancy
+Signiﬁcant reductions in folic acid levels through photodegra-
+dation have been reported following high cumulative NB-UVB
+doses (118 J cm2 following 36 sessions of NB-UVB in the
+management of psoriasis).97 Measurement of folic acid levels
+either with or without supplementation should be considered
+in women trying to conceive. For women of childbearing age
+receiving prolonged whole-body NB-UVB courses (e.g. > 30
+treatments) folate supplementation should be considered, and
+the need for supplementation reinforced for those receiving
+NB-UVB in the ﬁrst trimester of pregnancy.98,99
+During pregnancy the use of facial shielding during treat-
+ment may help to limit the exacerbation of melasma.
+NB-UVB can also be safely used in women who are breast-
+feeding.
+11. Narrowband ultraviolet B phototherapy in
+children
+The general efﬁcacy, tolerability and short-term safety in chil-
+dren
+have
+been
+demonstrated
+in
+several
+retrospective
+reviews.100–102
+There is no arbitrary lower age at which children can be
+treated with NB-UVB, but children would need to be able to
+be safely left alone in the cabinet for treatment and be capable
+of complying with all the required safety measures including
+eye protection requirements; this would generally be around
+the age of 6 years or above.
+Although formal long-term safety data are lacking, the rela-
+tively low incidence of skin cancers reported in people treated
+with NB-UVB in childhood is reassuring. While there is no
+long-term evidence to show an increased risk of melanoma in
+those treated with NB-UVB in childhood, overall numbers are
+small. There is a suggestion of a positive association between
+childhood sunburn reactions and subsequent risk of mela-
+noma. It is therefore likely to be of increased importance that
+MED testing is carried out in children before treatment and
+that consideration is given to choosing treatment protocols
+that reduce the risk of symptomatic erythemal episodes.
+There is a lack of studies on the treatment of vitiligo with NB-
+UVB in children. As this condition generally requires a prolonged
+course and sometimes repeated treatments, photocarcinogenesis
+may be a particular concern. However, a retrospective study using a
+hospital database has demonstrated safety in terms of skin cancer
+risk, at least in the medium term for people with skin types IV–VI.88
+A systematic review of treatment options for childhood pso-
+riasis103 demonstrates NB-UVB phototherapy to be effective
+based on data from two open-label studies104,105 and three
+retrospective reviews.101,106,107 This efﬁcacy is also conﬁrmed
+in a retrospective study.108
+In atopic eczema, there is good evidence of the efﬁcacy of NB-
+UVB in children. A number of noncomparative studies that
+included both children and adults (n = 296) looked at NB-UVB
+as a monotherapy102,106–114 or in combination with UVA.101
+These agreed that NB-UVB is effective in moderate, severe and
+chronic atopic dermatitis/eczema. A further study compared the
+outcome of children with moderate-to-severe eczema treated
+with NB-UVB to children who had declined this treatment (con-
+trol group) and showed NB-UVB to be effective.115 Conse-
+quently, the national UK guidance (NICE) suggests considering
+phototherapy as second-line therapy for children under the age
+of 12 years with severe atopic eczema.21
+In the childhood photodermatoses, there is some evidence for
+the use of NB-UVB in PLE,72,106,116 although this is less well
+established than for adults. There are also case series supporting
+the use of NB-UVB in erythropoietic protoporphyria and to a les-
+ser extent in actinic prurigo and hydroa vacciniforme.106,117,118
+ 2022 British Association of Dermatologists.
+British Journal of Dermatology (2022) 187, pp295–308
+BAD and BPG guidelines for UVB phototherapy 2022, V. Goulden et al. 303
+Downloaded from https://academic.oup.com/bjd/article/187/3/295/6966564 by guest on 06 May 2026
+
+=== PAGE 10 ===
+In MF, there are 28 retrospective case series (n = 600),
+which
+included
+100
+children
+or
+young
+adults
+(see
+Appendix J12). These demonstrated NB-UVB as monother-
+apy or in combination with topical corticosteroids to be an
+effective treatment option for early-stage MF.
+Anxiety about the treatment may be a problem for some chil-
+dren,106 but this can usually be managed by a clear explanation and
+a pretreatment visit to the unit. A patient information leaﬂet speciﬁ-
+cally for children is also very helpful. Support from the parents is
+essential and children may be reassured that the phototherapy cabi-
+net is open topped and the child will be able to communicate with
+the parent standing outside the cabinet during treatment.
+12. Safety and governance
+Skin sunburn-type reactions secondary to phototherapy are an
+important cause of litigation and as such clinical governance
+and safety are of paramount importance.119,120 In England
+(2016–2021) there were 25 episodes of litigation related to
+deﬁnite or likely burning from phototherapy out of 327 cases
+(personal communications from Nick Levell: GIRFT Dermatol-
+ogy lead).
+Hospital-based NB-UVB should be administered by a trained
+phototherapist, who in 2022 will be either a ﬁrst-level registered
+nurse or a physiotherapist registered with the Health and Care Pro-
+fessions Council. All staff administering UVB are required to
+undertake an initial period of supervised training and to be signed
+off as competent for all relevant areas at the end of this period. All
+staff should continue to receive annual education and an annual
+appraisal, and attend a recognized phototherapy update or course
+every 3 years. Further guidance can be found in the Service Guid-
+ance and Standards for Phototherapy Units document.48
+Patients should be given an education session prior to treat-
+ment and should be provided with written patient information
+leaﬂets prior to starting their treatment. Educational sessions are
+typically nurse led but have been shown to be as effective if pro-
+vided as a patient-speciﬁc e-learning session, with the latter
+showing improved consistency.121 Patients should sign a consent
+form to indicate their understanding of side-effects and safety
+procedures during treatment, such as keeping goggles on and
+wearing the same clothing during the sessions, where relevant.
+Accurate, clear and timely documentation of any patient
+examination, routine treatment checks, doses given and side-
+effects observed must be made at each patient visit.
+For
+home
+phototherapy,
+careful
+patient
+selection
+is
+required. Training and ongoing remote supervision and sup-
+port during the course of treatment by a trained and experi-
+enced phototherapist are essential, along with the use of
+standardized treatment protocols, documentation and appro-
+priate governance frameworks.26,29,30,40,122
+Unintentional UVB exposure to staff and public should be lim-
+ited by measures such as curtains around cabinets to control UV
+scatter from walls and ceilings, and an assessment of environ-
+mental scatter should be made in line with The Control of Artiﬁ-
+cial Optical Radiation at Work Regulations 2010.49 The safety of
+the cabinets, their outputs and the local environment is covered
+separately in the 2015 BAD guidelines on the measurement of
+UV radiation levels in UV phototherapy.46
+13. Recommended audit points
+The service delivery aspect of phototherapy is covered in
+depth in the NICE-accredited BAD Service Guidance and Stan-
+dards for Phototherapy Units 2016.48 This includes recom-
+mendations on referral and patient assessment, consent, staff
+training, clinical management, equipment, governance and
+audit.
+Recommended audit points are as follows.
+In the last 30 consecutive cases of people treated with NB-
+UVB, is there clear documentation of
+1
+People with psoriasis
+a
+having initially demonstrated inadequate response to
+topical therapy
+b having NB-UVB prior to consideration of systemic
+immunosuppression or immunomodulation therapies
+2
+People with eczemas
+a
+having initially demonstrated inadequate response to
+topical therapy
+b having NB-UVB prior to consideration of systemic
+immunosuppression or immunomodulation therapies
+c
+having continued topical therapy during the course of
+NB-UVB
+d with severe, acute ﬂares having been stabilized prior
+to instituting NB-UVB
+3
+People with vitiligo
+a
+having initially demonstrated inadequate response to
+topical therapy
+b having extensive or progressive disease
+4
+The provision of a patient information leaﬂet (https://
+www.skinhealthinfo.org.uk/a-z-conditions-treatments)
+The audit recommendation of 30 cases per department is to
+reduce variation in the results due to a single patient and to
+allow benchmarking between different units (Appendix W;
+see Supporting Information).
+14. Stakeholder involvement and peer review
+The draft document was made available for comments to the
+BAD membership, the British Photodermatology Group (BPG),
+the British Dermatological Nursing Group (BDNG), the Primary
+Care Dermatological Society (PCDS), the British Society for Pae-
+diatric Dermatology (BSPD), the British Society for Medical Der-
+matology (BSMD), the Psoriasis Association (PA), the Psoriasis
+and Psoriatic Arthritis Alliance (PAPAA), the National Eczema
+Society (NES), the UK Cutaneous Lupus Group (UKCLG), the
+Vitiligo Society, Vitiligo Support UK, Lymphoma Action and the
+British Porphyria Association (BPA). All comments were actively
+considered by the GDG. Following further review, the ﬁnalized
+version was sent for peer review by the Clinical Standards Unit
+of the BAD, made up of the Therapy & Guidelines subcommit-
+tee, prior to submission for publication.
+ 2022 British Association of Dermatologists.
+British Journal of Dermatology (2022) 187, pp295–308
+304 BAD and BPG guidelines for UVB phototherapy 2022, V. Goulden et al.
+Downloaded from https://academic.oup.com/bjd/article/187/3/295/6966564 by guest on 06 May 2026
+
+=== PAGE 11 ===
+15. Limitations of the guideline
+This document has been prepared on behalf of the BAD and is
+based on the best data available when the document was pre-
+pared. It is recognized that under certain circumstances it may
+be necessary to deviate from the guidelines and that the results
+of future studies may require some of the recommendations
+herein to be changed. Failure to adhere to these guidelines
+should not necessarily be considered negligent, nor should
+adherence to these recommendations constitute a defence
+against a claim of negligence.
+16. Plans for guideline revision
+The proposed revision for this set of recommendations is
+scheduled for 2027; where necessary, important interim
+changes will be updated on the BAD website.
+Acknowledgments
+We are very grateful to all three patient representatives,
+including Ms India Angra and Ms Emma Rush, for their input
+in formulating the clinical questions, ranking of the outcomes,
+reviewing the evidence and formulating the recommendations,
+and the Vitiligo Support UK members for their input in rank-
+ing the outcomes and providing details of their experiences.
+We thank Zahra Kiaee (guideline research fellow) for her help
+with summarizing the papers from the top-up search, as well
+as all of those who commented on the draft during the con-
+sultation period.
+Funding sources
+None. Development of this guideline was funded indepen-
+dently by the British Association of Dermatologists.
+Conﬂicts of interest
+The following interests were declared over the duration of the
+guideline development: V.G.: past chair of the British Photoder-
+matology Group (nonspeciﬁc). R.D.: member of Photonet, the
+NHS Scotland Managed Clinical Network for UV phototherapy
+(speciﬁc). E.E.: (i) member of Photonet, the NHS Scotland Man-
+aged Clinical Network for UV phototherapy (speciﬁc); (ii)
+grant/research support from Blueside Photonics Ltd (nonspeci-
+ﬁc). A.F.: (i) speaker fees and consultancy – Sanoﬁ(nonspeciﬁc);
+(ii) speaker fees and honoraria – AbbVie, Dermal, Novartis,
+Sanoﬁ(nonspeciﬁc); (iii) travel and course expenses – AbbVie,
+Almirall, Novartis, Sanoﬁ(nonspeciﬁc). S.H.I.: travel expenses
+and honoraria – Galderma UK (nonspeciﬁc). E.R.: Vitiligo Sup-
+port UK (speciﬁc). S.C.W.: (i) treasurer of the British Photoder-
+matology Group (nonspeciﬁc); (ii) grants/research support
+from the British Skin Foundation – Predicting remission out-
+comes for psoriasis following phototherapy (speciﬁc). T.C.L.,
+P.B., H.F., T.G., L.N., H.W., M.H., M.F.M.M. and L.S.E. declare
+they have no conﬂicts of interest.
+Data availability
+The data are available in the Supporting Information.
+Supporting Information
+Additional Supporting Information may be found in the online
+version of this article at the publisher’s website:
+Appendix A Review protocol.
+Appendix B Forest plots.
+Appendix C Linking Evidence To Recommendations (LETR).
+Appendix D GRADE evidence tables.
+Appendix E Psoriasis: summary of included studies.
+Appendix F Vitiligo: summary of included studies.
+Appendix G Eczema/atopic dermatitis: summary of included
+studies.
+Appendix H Hand and foot dermatoses: summary of included
+studies.
+Appendix I Lichen planus: summary of included studies.
+Appendix J Mycosis fungoides/cutaneous T-cell lymphoma:
+summary of included studies.
+Appendix K
+Pityriasis
+lichenoides:
+summary
+of
+included
+studies.
+Appendix L Subacute prurigo: summary of included studies.
+Appendix M Pruritus: summary of included studies.
+Appendix N
+Chronic
+spontaneous
+urticaria:
+summary
+of
+included studies.
+Appendix O Other skin diseases excluding photodermatoses:
+summary of included studies.
+Appendix P Photodermatoses: summary of included studies.
+Appendix Q PRISMA diagram: study selection.
+Appendix R Critical appraisal of included systematic reviews:
+AMSTAR 2.
+Appendix S Papers excluded from quantitative analysis.
+Appendix T Methodology.
+Appendix U Light sources and dosimetry.
+Appendix V Search strategy.
+Appendix W Audit standards, data items and data collection
+methodology.
+References
+1 Mohd Mustapa MF, Exton LS, Bell HK et al. Updated guidance for
+writing a British Association of Dermatologists clinical guideline:
+the adoption of the GRADE methodology 2016. Br J Dermatol
+2017; 176:44–51.
+2 Brouwers M, Kho ME, Browman GP et al. AGREE II: advancing
+guideline development, reporting and evaluation in healthcare.
+CMAJ 2010; 182:E839–42.
+3 Bilsland D, Dawe R, Diffey BL et al. An appraisal of narrowband
+(TL-01) UVB phototherapy. British Photodermatology Group
+Workshop
+Report
+(April
+1996).
+Br
+J
+Dermatol
+1997;
+137:
+327–30.
+4 Ibbotson SH, Bilsland D, Cox NH et al. An update and guidance
+on narrowband ultraviolet B phototherapy: a British Photoderma-
+tology Group Workshop Report. Br J Dermatol 2004; 151:283–97.
+ 2022 British Association of Dermatologists.
+British Journal of Dermatology (2022) 187, pp295–308
+BAD and BPG guidelines for UVB phototherapy 2022, V. Goulden et al. 305
+Downloaded from https://academic.oup.com/bjd/article/187/3/295/6966564 by guest on 06 May 2026
+
+=== PAGE 12 ===
+5 Guyatt GH, Oxman AD, Vist GE et al. GRADE: an emerging con-
+sensus on rating quality of evidence and strength of recommen-
+dations. BMJ 2008; 336:924–6.
+6 Eleftheriadou V, Atkar R, Batchelor J et al. British Association of
+Dermatologists guidelines for the management of people with
+vitiligo 2021. Br J Dermatol 2022; 186:18–29.
+7 Fitzpatrick TB, Pathak MA. Historical aspects of methoxsalen and
+other furocoumarins. J Invest Dermatol 1959; 32:229–31.
+8 Goeckerman WH. The treatment of psoriasis. Northwest Med 1925;
+24:229–31.
+9 van Weelden H, De La Faille HB, Young E et al. A new develop-
+ment in UVB phototherapy of psoriasis. Br J Dermatol 1988;
+119:11–19.
+10 Dogra S, Kanwar AJ. Narrow band UVB phototherapy in derma-
+tology. Indian J Dermatol Venereol Leprol 2004; 70:205–9.
+11 Parrish JA, Jaenicke KF. Action spectrum for phototherapy of pso-
+riasis. J Invest Dermatol 1981; 76:359–62.
+12 Bernard JJ, Gallo RL, Krutmann J. Photoimmunology: how ultra-
+violet radiation affects the immune system. Nat Rev Immunol 2019;
+19:688–701.
+13 Vieyra-Garcia PA, Wolf P. A deep dive into UV-based photother-
+apy: mechanisms of action and emerging molecular targets in
+inﬂammation and cancer. Pharmacol Ther 2021; 222:107784.
+14 Foerster J, Boswell K, West J et al. Narrowband UVB treatment is
+highly effective and causes a strong reduction in the use of ster-
+oid and other creams in psoriasis patients in clinical practice.
+PLOS ONE 2017; 12:e0181813.
+15 Green C, Ferguson J, Lakshmipathi T et al. 311 nm UVB pho-
+totherapy – an effective treatment for psoriasis. Br J Dermatol
+1988; 119:691–6.
+16 Gambichler T, Altmeyer P, Kreuter A. Treatment of acquired per-
+forating dermatosis with narrowband ultraviolet B. J Am Acad Der-
+matol 2005; 52:363–4.
+17 Ibbotson SH. A perspective on the use of NB-UVB phototherapy
+vs. PUVA photochemotherapy. Front Med (Lausanne) 2018; 5:184.
+18 Chan IHY, Murrell DF. Itch Management: Physical Approaches (UV Pho-
+totherapy, Acupuncture). Basel: Karger Publishers, 2016.
+19 Ling TC, Clayton TH, Crawley J et al. British Association of Der-
+matologists and British Photodermatology Group guidelines for
+the safe and effective use of psoralen–ultraviolet A therapy 2015.
+Br J Dermatol 2016; 174:24–55.
+20 National Institute for Health and Care Excellence. Psoriasis:
+assessment and management. Available at: https://www.nice.org.
+uk/guidance/CG153 (last accessed 17 May 2022).
+21 National Institute for Health and Care Excellence. Eczema. Avail-
+able
+at
+https://pathways.nice.org.uk/pathways/eczema
+(last
+accessed 17 May 2022).
+22 Boswell K, Cameron H, West J et al. Narrowband ultraviolet B
+treatment for psoriasis is highly economical and causes signiﬁcant
+savings in cost for topical treatments. Br J Dermatol 2018;
+179:1148–56.
+23 Lim HW, Silpa-archa N, Amadi U et al. Phototherapy in derma-
+tology: a call for action. J Am Acad Dermatol 2015; 72:1078–80.
+24 Haykal KA, DesGroseilliers JP. Are narrow-band ultraviolet B
+home units a viable option for continuous or maintenance
+therapy of photoresponsive diseases? J Cutan Med Surg 2006;
+10:234–40.
+25 Klotz J, Muir L, Cameron C et al. Monitoring a remote photother-
+apy unit via telemedicine. J Cutan Med Surg 2005; 9:47–53.
+26 Anderson KL, Feldman SR. A guide to prescribing home pho-
+totherapy for patients with psoriasis: the appropriate patient, the
+type of unit, the treatment regimen, and the potential obstacles. J
+Am Acad Dermatol 2015; 72:868–78.
+27 Koek MB, Buskens E, Bruijnzeel-Koomen CA et al. Home ultravio-
+let B phototherapy for psoriasis: discrepancy between literature,
+guidelines, general opinions and actual use. Results of a literature
+review, a web search, and a questionnaire among dermatologists.
+Br J Dermatol 2006; 154:701–11.
+28 Koek MB, Sigurdsson V, van Weelden H et al. Cost effectiveness
+of home ultraviolet B phototherapy for psoriasis: economic eval-
+uation of a randomised controlled trial (PLUTO study). BMJ
+2010; 340:c1490.
+29 Cameron H, Yule S, Moseley H et al. Taking treatment to the
+patient: development of a home TL-01 ultraviolet B phototherapy
+service. Br J Dermatol 2002; 147:957–65.
+30 Cameron H, Yule S, Dawe RS et al. Review of an established UK
+home phototherapy service 1998–2011: improving access to a
+cost-effective treatment for chronic skin disease. Public Health
+2014; 128:317–24.
+31 Khandpur S, Bhatia R. Handheld narrow band ultraviolet B comb
+as home phototherapy device for localised vitiligo: dosimetry and
+calibration. Indian J Dermatol Venereol Leprol 2018; 84:78–80.
+32 Shan X, Wang C, Tian H et al. Narrow-band ultraviolet B home
+phototherapy in vitiligo. Indian J Dermatol Venereol Leprol 2014;
+80:336–8.
+33 Eleftheriadou V, Ezzedine K. Portable home phototherapy for viti-
+ligo. Clin Dermatol 2016; 34:603–6.
+34 Toll A, Velez-Gonzalez M, Gallardo F et al. Treatment of localized
+persistent plaque psoriasis with incoherent narrowband ultraviolet
+B phototherapy. J Dermatolog Treat 2005; 16:165–8.
+35 Lapidoth M, Adatto M, David M. Targeted UVB phototherapy for
+psoriasis: a preliminary study. Clin Exp Dermatol 2007; 32:642–5.
+36 Narang K, Gottlieb AB. A review of home phototherapy and
+available home and handheld phototherapy units. Psoriasis Forum
+2013; 19a:71–5.
+37 Zhang L, Wang X, Chen S et al. Comparison of efﬁcacy and safety
+proﬁle for home NB-UVB vs. outpatient NB-UVB in the treatment
+of non-segmental vitiligo: a prospective cohort study. Photodermatol
+Photoimmunol Photomed 2019; 35:261–7.
+38 Thomas KS, Batchelor JM, Akram P et al. Randomized controlled
+trial of topical corticosteroid and home-based narrowband ultra-
+violet B for active and limited vitiligo: results of the HI-Light
+Vitiligo Trial. Br J Dermatol 2021; 184:828–39.
+39 Warburton KL, Ward A, Turner D et al. Home phototherapy:
+experience of setting up a new service in the U.K.’s National
+Health Service. Br J Dermatol 2020; 182:251–3.
+40 Hung R, Ungureanu S, Edwards C et al. Home phototherapy for
+psoriasis: a review and update. Clin Exp Dermatol 2015; 40:827–2.
+41 Yule S, Sanyal S, Ibbotson S et al. Self-administration of hospital-
+based narrowband ultraviolet B (TL-01) phototherapy: a feasibil-
+ity study in an outpatient setting. Br J Dermatol 2013; 169:464–8.
+42 Aubin F, Vigan M, Puzenat E et al. Evaluation of a novel 308-nm
+monochromatic excimer light delivery system in dermatology: a
+pilot study in different chronic localized dermatoses. Br J Dermatol
+2005; 152:99–103.
+43 Leone G, Iacovelli P, Vidolin AP et al. Monochromatic excimer
+light 308 nm in the treatment of vitiligo: a pilot study. J Eur Acad
+Dermatol Venereol 2003; 17:531–7.
+44 Lotti T, Tripo L, Grazzini M et al. Focused UV-B narrowband
+microphototherapy (Biopsorin). A new treatment for plaque pso-
+riasis. Dermatol Ther 2009; 22:383–5.
+45 Asawanonda P, Anderson RR, Chang Y et al. 308-nm excimer
+laser for the treatment of psoriasis: a dose–response study. Arch
+Dermatol 2000; 136:619–24.
+46 Moseley H, Allan D, Amatiello H et al. Guidelines on the mea-
+surement
+of
+ultraviolet
+radiation
+levels
+in
+ultraviolet
+ 2022 British Association of Dermatologists.
+British Journal of Dermatology (2022) 187, pp295–308
+306 BAD and BPG guidelines for UVB phototherapy 2022, V. Goulden et al.
+Downloaded from https://academic.oup.com/bjd/article/187/3/295/6966564 by guest on 06 May 2026
+
+=== PAGE 13 ===
+phototherapy: report issued by the British Association of Derma-
+tologists and British Photodermatology Group 2015. Br J Dermatol
+2015; 173:333–50.
+47 Moseley H. Scottish UV dosimetry guidelines, ‘ScUViDo’. Photoder-
+matol Photoimmunol Photomed 2001; 17:230–3.
+48 British Association of Dermatologists. Service Guidance and Stan-
+dards for Phototherapy Units. Available at: https://cdn.bad.org.
+uk/uploads/2021/12/29200202/Phototherapy-Service-
+Guidance-and-Standards-20193.pdf (last accessed 17 May 2022).
+49 Legislation.gov.uk. The Control of Artiﬁcial Optical Radiation at
+Work Regulations 2010. Available at: http://www.legislation.gov.
+uk/uksi/2010/1140/contents/made
+(last
+accessed
+17
+May
+2022).
+50 Dawe RS, Cameron HM, Yule S et al. A randomized comparison
+of methods of selecting narrowband UV-B starting dose to treat
+chronic psoriasis. Arch Dermatol 2011; 147:168–74.
+51 Dawe RS, Arseculeratne G, Ferguson J. Chronic actinic dermatitis
+recognized on minimal erythema dose testing prior to narrow-
+band UVB treatment for psoriasis. Photodermatol Photoimmunol Pho-
+tomed 2005; 21:112–13.
+52 Asawanonda P. Chronic actinic dermatitis developing during nar-
+rowband UVB phototherapy for psoriasis. Photodermatol Photoimmunol
+Photomed 2004; 20:66–7.
+53 Wainwright NJ, Dawe RS, Ferguson J. Narrowband ultraviolet B
+(TL-01) phototherapy for psoriasis: which incremental regimen?
+Br J Dermatol 1998; 139:410–14.
+54 Dawe RS, Wainwright NJ, Cameron H et al. Narrow-band (TL-
+01) ultraviolet B phototherapy for chronic plaque psoriasis: three
+times or ﬁve times weekly treatment? Br J Dermatol 1998;
+138:833–9.
+55 Cameron H, Dawe RS, Yule S et al. A randomized, observer-
+blinded trial of twice vs. three times weekly narrowband ultravi-
+olet B phototherapy for chronic plaque psoriasis. Br J Dermatol
+2002; 147:973–8.
+56 Boztepe G, Karaduman A, Sahin S et al. The effect of maintenance
+narrow-band ultraviolet B therapy on the duration of remission
+for psoriasis: a prospective randomized clinical trial. Int J Dermatol
+2006; 45:245–50.
+57 Selvaag E, Caspersen L, Bech-Thomsen N et al. Optimized UVB
+treatment of atopic dermatitis using skin reﬂectance measure-
+ments. A controlled, left–right comparison trial. Acta Derm Venereol
+2005; 85:144–6.
+58 NHS Scotland. Photonet National Managed Clinical Network.
+Treatment protocols. Available at: https://www.photonet.scot.
+nhs.uk/wp-content/uploads/2018/11/2018-10-15-Treatment-
+Protocols-ﬁnal.pdf (last accessed 19 May 2022).
+59 Martin JA, Laube S, Edwards C et al. Rate of acute adverse events
+for narrow-band UVB and psoralen-UVA phototherapy. Photoder-
+matol Photoimmunol Photomed 2007; 23:68–72.
+60 Pearce DJ, Higgins KB, Stealey KH et al. Adverse events from sys-
+temic therapies for psoriasis are common in clinical practice. J
+Dermatolog Treat 2006; 17:288–93.
+61 Bilsland D, George SA, Gibbs NK et al. A comparison of narrow
+band phototherapy (TL-01) and photochemotherapy (PUVA) in
+the management of polymorphic light eruption. Br J Dermatol
+1993; 129:708–12.
+62 Palmer RA, Aquilina S, Milligan PJ et al. Photoadaptation during
+narrowband ultraviolet-B therapy is independent of skin type: a
+study of 352 patients. J Invest Dermatol 2006; 126:1256–63.
+63 Batchelor RJ, Rose RF, Yung A et al. Audit of erythema in patients
+with psoriasis undergoing phototherapy with narrowband (TL-
+01) ultraviolet B: impact of the introduction of a comprehensive
+erythema-reporting protocol. Br J Dermatol 2007; 156:1045–6.
+64 Whitehouse HJ, Thomson K, Goulden V. A regional audit of
+symptomatic erythema rates in psoriasis patients treated with
+whole-body narrowband ultraviolet type B: a basis for setting an
+erythema standard. Clin Exp Dermatol 2020; 45:732–3.
+65 Leslie KS, Lodge E, Garioch JJ. A comparison of narrowband (TL-
+01) UVB-induced erythemal response at different body sites. Clin
+Exp Dermatol 2005; 30:337–9.
+66 Rhodes LE, Friedmann PS. A comparison of the ultraviolet B-in-
+duced erythemal response of back and buttock skin. Photodermatol
+Photoimmunol Photomed 1992; 9:48–51.
+67 Harrop G, Dawe RS, Ibbotson S. Are photosensitizing medications
+associated with increased risk of important erythemal reactions dur-
+ing ultraviolet B phototherapy? Br J Dermatol 2018; 179:1184–5.
+68 Gilchrest BA, Soter NA, Stoff JS et al. The human sunburn reac-
+tion: histologic and biochemical studies. J Am Acad Dermatol 1981;
+5:411–22.
+69 Hawk JM, Parrish JA. Responses of normal skin to ultraviolet
+radiation. In: Photoimmunology (Parrish JA, Kriple ML, Morrison
+WL, eds). New York: Plenum Medical Books, 1983; 219–60.
+70 Hruza LL, Pentland AP. Mechanisms of UV-induced inﬂamma-
+tion. J Invest Dermatol 1993; 100:35S–41S.
+71 Gruber-Wackernagel A, Hofer A, Legat F et al. Frequency of
+occurrence of polymorphic light eruption in patients treated with
+photohardening and patients treated with phototherapy for other
+diseases. Photodermatol Photoimmunol Photomed 2019; 35:100–5.
+72 Man I, Dawe RS, Ferguson J. Artiﬁcial hardening for polymorphic
+light eruption: practical points from ten years’ experience. Photo-
+dermatol Photoimmunol Photomed 1999; 15:96–9.
+73 Perna JJ, Mannix ML, Rooney JF et al. Reactivation of latent her-
+pes simplex virus infection by ultraviolet light: a human model. J
+Am Acad Dermatol 1987; 17:473–8.
+74 Wong GA, Kaye SB, Parslew R. Reactivation of herpes simplex
+keratitis during TL01 phototherapy for psoriasis. Clin Exp Dermatol
+2003; 28:453–4.
+75 Green C, Lakshmipathi T, Johnson BE et al. A comparison of
+the efﬁcacy and relapse rates of narrowband UVB (TL-01)
+monotherapy vs. etretinate (re-TL-01) vs. etretinate-PUVA (re-
+PUVA) in the treatment of psoriasis patients. Br J Dermatol 1992;
+127:5–9.
+76 Calzavara-Pinton PG, Zane C, Candiago E et al. Blisters on psoriatic
+lesions treated with TL-01 lamps. Dermatology 2000; 200:115–19.
+77 George SA, Ferguson J. Lesional blistering following narrow-band
+(TL-01) UVB phototherapy for psoriasis: a report of four cases.
+Br J Dermatol 1992; 127:445–6.
+78 Friedland R, David M, Feinmesser M et al. Idiopathic guttate
+hypomelanosis-like lesions in patients with mycosis fungoides: a
+new adverse effect of phototherapy. J Eur Acad Dermatol Venereol
+2010; 24:1026–30.
+79 Friedland R, David M, Feinmesser M et al. NB-UVB (311–312
+nm)-induced lentigines in patients with mycosis fungoides: a
+new adverse effect of phototherapy. J Eur Acad Dermatol Venereol
+2012; 26:1158–62.
+80 Xu HH, Xiao T, Chen HD. Lentigines following narrow-band
+ultraviolet B phototherapy for mycosis fungoides. Clin Exp Dermatol
+2010; 35:326–8.
+81 Poon F, Kang S, Chien AL. Mechanisms and treatments of pho-
+toaging. Photodermatol Photoimmunol Photomed 2015; 31:65–74.
+82 Trautinger F. Mechanisms of photodamage of the skin and its
+functional consequences for skin ageing. Clin Exp Dermatol 2001;
+26:573–7.
+83 Flindt-Hansen H, McFadden N, Eeg-Larsen T et al. Effect of a new
+narrow-band UVB lamp on photocarcinogenesis in mice. Acta
+Derm Venereol 1991; 71:245–8.
+ 2022 British Association of Dermatologists.
+British Journal of Dermatology (2022) 187, pp295–308
+BAD and BPG guidelines for UVB phototherapy 2022, V. Goulden et al. 307
+Downloaded from https://academic.oup.com/bjd/article/187/3/295/6966564 by guest on 06 May 2026
+
+=== PAGE 14 ===
+84 Wulf HC, Hansen AB, Bech-Thomsen N. Differences in narrow-
+band ultraviolet B and broad-spectrum ultraviolet photocarcino-
+genesis in lightly pigmented hairless mice. Photodermatol Photoim-
+munol Photomed 1994; 10:192–7.
+85 Gibbs NK, Traynor NJ, MacKie RM et al. The phototumorigenic
+potential of broad-band (270–350 nm) and narrow-band (311–
+313 nm) phototherapy sources cannot be predicted by their ede-
+matogenic potential in hairless mouse skin. J Invest Dermatol 1995;
+104:359–63.
+86 Young AR. Carcinogenicity of UVB phototherapy assessed. Lancet
+1995; 345:1431–2.
+87 Archier E, Devaux S, Castela E et al. Carcinogenic risks of psoralen
+UV-A therapy and narrowband UV-B therapy in chronic plaque
+psoriasis: a systematic literature review. J Eur Acad Dermatol Venereol
+2012; 26 (Suppl. 3):22–31.
+88 Momen S, Sarkany R. Are very high cumulative doses of narrow-
+band UVB safe in vitiligo? Photodermatol Photoimmunol Photomed 2017;
+33:220–1.
+89 Stern RS. Genital tumors among men with psoriasis exposed to
+psoralens and ultraviolet A radiation (PUVA) and ultraviolet B
+radiation. The Photochemotherapy Follow-up Study. N Engl J Med
+1990; 322:1093–7.
+90 Abdulla FR, Breneman C, Adams B et al. Standards for genital
+protection in phototherapy units. J Am Acad Dermatol 2010;
+62:223–6.
+91 DePry J, Brescoll J, Szczotka-Flynn L et al. Phototherapy-related
+ophthalmologic disorders. Clin Dermatol 2015; 33:247–55.
+92 Cejkova J, Stipek S, Crkovska J et al. UV rays, the prooxidant/an-
+tioxidant imbalance in the cornea and oxidative eye damage.
+Physiol Res 2004; 53:1–10.
+93 Cullen AP, Perera SC. Sunlight and the human conjunctival action
+spectrum. Proc SPIE 1994; 2134:24–30.
+94 World Health Organization. Ultraviolet radiation ocular exposure
+dosimetry of the eye: a report to the World Health Organization
+and United Nations Environment Programme. WHO/EHG/95.18.
+Available
+at:
+https://apps.who.int/iris/handle/10665/58522
+(last accessed 17 May 2022).
+95 Prystowsky JH, Keen MS, Rabinowitz AD et al. Present status of
+eyelid phototherapy. Clinical efﬁcacy and transmittance of ultravi-
+olet and visible radiation through human eyelids. J Am Acad Derma-
+tol 1992; 26:607–13.
+96 Otman SG, El-Dars LD, Edwards C et al. Eye protection for ultravi-
+olet B phototherapy and psoralen ultraviolet A patients. Photoderma-
+tol Photoimmunol Photomed 2010; 26:143–50.
+97 El-Saie LT, Rabie AR, Kamel MI et al. Effect of narrowband ultra-
+violet B phototherapy on serum folic acid levels in patients with
+psoriasis. Lasers Med Sci 2011; 26:481–5.
+98 Park KK, Murase JE. Narrowband UV-B phototherapy during preg-
+nancy and folic acid depletion. Arch Dermatol 2012; 148:132–3.
+99 Bangsgaard N, Rørbye C, Skov L. treating psoriasis during preg-
+nancy: safety and efﬁcacy of treatments. Am J Clin Dermatol 2015;
+16:389–98.
+100 Ersoy-Evans S, Altaykan A, Sahin S et al. Phototherapy in child-
+hood. Pediatr Dermatol 2008; 25:599–605.
+101 Pasic A, Ceovic R, Lipozencic J et al. Phototherapy in pediatric
+patients. Pediatr Dermatol 2003; 20:71–7.
+102 Eustace K, Dolman S, Alsharqi A et al. Use of phototherapy in
+children. Pediatr Dermatol 2017; 34:150–5.
+103 de Jager MEA, de Jong EMGJ, van de Kerkhof PCM et al. Efﬁcacy
+and safety of treatments for childhood psoriasis: a systematic lit-
+erature review. J Am Acad Dermatol 2010; 62:1013–30.
+104 Jain VK, Aggarwal K, Jain K et al. Narrow-band UV-B photother-
+apy in childhood psoriasis. Int J Dermatol 2007; 46:320–2.
+105 Tay YK, Morelli JG, Weston WL. Experience with UVB pho-
+totherapy in children. Pediatr Dermatol 1996; 13:406–9.
+106 Jury CS, McHenry P, Burden AD et al. Narrowband ultraviolet B
+(UVB) phototherapy in children. Clin Exp Dermatol 2006; 31:196–9.
+107 Al-Fouzan AS, Nanda A. UVB phototherapy in childhood psoria-
+sis. Pediatr Dermatol 1995; 12:66.
+108 Pavlovsky M, Baum S, Shpiro D et al. Narrow band UVB: is it
+effective and safe for paediatric psoriasis and atopic dermatitis? J
+Eur Acad Dermatol Venereol 2011; 25:727–9.
+109 Dayal S, Pathak K, Sahu P et al. Narrowband UV-B phototherapy
+in childhood atopic dermatitis: efﬁcacy and safety. An Bras Dermatol
+2017; 92:801–6.
+110 Clayton TH, Clark SM, Turner D et al. The treatment of severe
+atopic dermatitis in childhood with narrowband ultraviolet B
+phototherapy. Clin Exp Dermatol 2007; 32:28–33.
+111 Mok ZR, Koh MJ, Chong WS. Is phototherapy useful in the treat-
+ment of atopic dermatitis in Asian children? A 5-year report from
+Singapore. Pediatr Dermatol 2014; 31:698–702.
+112 Nabi H, Shams-ud-Din S, Asad F et al. Efﬁcacy and safety of nar-
+rowband ultraviolet B therapy in moderate to severe atopic der-
+matitis. J Pak Assoc Dermatol 2011; 21:106–8.
+113 Tintle S, Shemer A, Suarez-Fari~nas M et al. Reversal of atopic
+dermatitis with narrow-band UVB phototherapy and biomark-
+ers for therapeutic response. J Allergy Clin Immunol 2011; 128:
+583–93.
+114 V€ah€avihu K, Ala-Houhala M, Peric M et al. Narrowband ultravio-
+let B treatment improves vitamin D balance and alters antimicro-
+bial peptide expression in skin lesions of psoriasis and atopic
+dermatitis. Br J Dermatol 2010; 163:321–8.
+115 Darne S, Leech SN, Taylor AE. Narrowband ultraviolet B pho-
+totherapy in children with moderate-to-severe eczema: a compar-
+ative cohort study. Br J Dermatol 2014; 170:150–6.
+116 Aslam A, Fullerton L, Ibbotson SH. Phototherapy and pho-
+tochemotherapy for polymorphic light eruption desensitization: a
+ﬁve-year case series review from a university teaching hospital.
+Photodermatol Photoimmunol Photomed 2017; 33:225–7.
+117 Collins P, Ferguson J. Narrow-band UVB (TL-01) phototherapy:
+an effective preventative treatment for the photodermatoses. Br J
+Dermatol 1995; 132:956–63.
+118 Gupta G, Man I, Kemmett D. Hydroa vacciniforme: a clinical and
+follow-up study of 17 cases. J Am Acad Dermatol 2000; 42:208–13.
+119 Drummond A, Kane D, Bilsland D. Legal claims in Scottish
+National Health Service dermatology departments 1989–2001. Br
+J Dermatol 2003; 149:111–14.
+120 Lovgren ML, McCrae L, Drummond A. Legal claims in Scottish
+National Health Service dermatology departments, 2002–2013.
+Clin Exp Dermatol 2016; 41:436–7.
+121 Thomas CL, Kennedy AK, Choi-Lombardi S et al. Self-directed
+tablet education session improves safety knowledge among
+patients undergoing phototherapy. Br J Dermatol 2017; 176:1382–
+4.
+122 Rajpara AN, O’Neill JL, Nolan BV et al. Review of home pho-
+totherapy. Dermatol Online J 2010; 16:2.
+ 2022 British Association of Dermatologists.
+British Journal of Dermatology (2022) 187, pp295–308
+308 BAD and BPG guidelines for UVB phototherapy 2022, V. Goulden et al.
+Downloaded from https://academic.oup.com/bjd/article/187/3/295/6966564 by guest on 06 May 2026
+
+=== PAGE 15 ===
+of patients  
+with PsO achieved  
+PASI 75 at Week 4 
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+75.9% 
+(n=265/349)
+of patients 
+with PsO achieved 
+PASI 100 at 5 years3
+76.9% 
+(N=52)† 
+of biologic-naïve  
+and TNFi-IR PsA patients 
+achieved ACR 50 at  
+Week 104/100, respectively‡1,4–6
+of patients  
+with PsO achieved  
+PASI 100 at Week 16
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+68.2%
+(n=238/349)
+and
+50.6% 
+(n=135/267) 
+51.5% 
+(n=222/431)
+GB-BK-2500315 | July 2025
+UCB Biopharma SRL, 2025. All rights reserved.
+This promotional material has been created and funded by UCB Pharma Ltd and 
+is intended for healthcare professionals in the UK.
+BIMZELX is indicated for the treatment of: moderate to severe plaque PsO in adults 
+who are candidates for systemic therapy; active PsA, alone or in combination 
+with methotrexate, in adults who have had an inadequate response, or who have 
+been intolerant, to one or more DMARDs; active nr-axSpA with objective signs of 
+inflammation as indicated by elevated CRP and/or MRI, in adults who have responded 
+inadequately, or are intolerant, to NSAIDs; active AS in adults who have responded 
+inadequately or are intolerant to conventional therapy; and active moderate to severe 
+HS (acne inversa) in adults with an inadequate response to conventional systemic HS 
+therapy.4
+Prescribing information for United Kingdom click here.  
+Please refer to the SmPC for further information. 
+These data are from different clinical trials and cannot be directly compared.
+Co-primary endpoints PASI 90 and IGA 0/1 at Week 16 were met.**Secondary endpoints. †N= mNRI, missing data 
+were imputed with mNRI (patients with missing data following treatment discontinuation due to lack of efficacy 
+or a TRAE were counted as non-responders; multiple imputation methodology was used for other missing data). 
+‡43.9% (n=189/431), and 43.4% (n=116/267) of biologic-naïve and TNFi-IR PsA patients achieved the primary 
+endpoint of ACR 50 at Week 16 in BE OPTIMAL and BE COMPLETE, respectively (vs 10.0% [n=28/281] and 6.8% 
+[n=9/133] placebo, p<0.0001); 54.5% (n=235/431) and 51.7% (n=138/267) maintained it at Week 52 (NRI).4–6 ​
+ACR 50, ≥50% response in the American College of Rheumatology criteria; AS, ankylosing spondylitis; CRP, 
+C-reactive protein; DMARD, disease-modifying antirheumatic drug; HS, hidradenitis suppurativa; IGA, Investigator’s 
+Global Assessment; (m)NRI, (modified) non-responder imputation; MRI, magnetic resonance imaging; nr-
+axSpA, non-radiographic axial spondyloarthritis; NSAID, non-steroidal anti-inflammatory drug; PASI 75/90/100, 
+≥75/90/100% improvement from baseline in Psoriasis Area and Severity Index; PsA, psoriatic arthritis; PsD, psoriatic 
+disease; PsO, psoriasis; TNFi-IR, tumour necrosis factor-α inhibitor – inadequate responder; TRAE, treatment-
+related adverse event.
+References: 1. Gordon KB, et al. Lancet. 2021;397(10273):475–486. 2. Blauvelt. 2025. AAD Presentation 62275. 3. 
+Mease PJ, et al. Rheumatol Ther. 2024;11(5):1363–1382. 4. BIMZELX SmPC. 5. Ritchlin CT, et al. Ann Rheum Dis. 
+2023;82(11):1404–1414. 6. Coates LC, et al. RMD Open. 2024;10(1):e003855. 7. Strober B, et al. AAD 2024;oral 
+presentation.​
+This medicine is subject to additional monitoring. This will allow quick 
+identification of new safety information. Adverse events should be reported. 
+Reporting forms and information can be found at www.yellowcard.mhra.gov.uk for 
+the UK. Adverse events should also be reported to UCB Pharma Ltd at  
+UCBCares.UK@UCB.com or 0800 2793177 for UK.
+NO COMPROMISE, 
+JUST CLEARANCE
+BIMZELX was well tolerated, the most frequently reported adverse reactions were: upper respiratory tract infections 
+and oral candidiasis. Other common reported adverse reactions include tinea infections, ear infections, herpes simplex 
+infections, oropharyngeal candidiasis, gastroenteritis, folliculitis, headache, rash, dermatitis, eczema, acne, injection site 
+reactions, fatigue, and vulvovaginal mycotic infection (including vulvovaginal candidiasis).4
+Bimzelx®     (bimekizumab) offers 
+the opportunity for complete, fast,
+and lasting skin clearance and 
+proven PsA efficacy 1–7

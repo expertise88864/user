@@ -1,0 +1,2119 @@
+=== PAGE 1 ===
+GUIDELINES
+BJD
+British Journal of Dermatology
+British Association of Dermatologists’ guidelines for the
+management of cutaneous warts 2014
+J.C. Sterling,1 S. Gibbs,2 S.S. Haque Hussain,1 M.F. Mohd Mustapa3 and S.E. Handﬁeld-Jones4
+1Addenbrooke’s Hospital, Cambridge University Hospitals NHS Foundation Trust, Hills Road, Cambridge CB2 OQQ, U.K.
+2Great Western Hospital, Marlborough Road, Swindon SN3 6BB, U.K.
+3British Association of Dermatologists, Willan House, 4 Fitzroy Square, London W1T 5HQ, U.K.
+4West Suffolk Hospital, Hardwick Lane, Bury St Edmunds, Suffolk IP33 2QZ, U.K.
+Correspondence
+Jane Sterling.
+E-mail: jcs12@cam.ac.uk
+Accepted for publication
+14 July 2014
+Funding sources
+None.
+Conﬂicts of interest
+J.C.S. has received travel and accommodation expenses from LEO Pharma (nonspe-
+ciﬁc) and has been an invited speaker at educational events for Healthcare Education
+Services (nonspeciﬁc).
+J.C.S., S.G., S.S.H.H. and S.E.H.J. are members of the guideline development
+group, with technical support provided by M.F.M.M.
+This is an updated set of guidelines prepared for the British Association of Derma-
+tologists (BAD) Clinical Standards Unit, which includes the Therapy & Guidelines
+(T&G) Subcommittee. Members of the Clinical Standards Unit who have been
+involved are J.R. Hughes (Chairman T&G), M. Grifﬁths, A.J. McDonagh, S. Pun-
+jabi, D.A. Buckley, I. Nasr, V.J. Swale, C.E. Duarte Williamson, P.M. McHenry,
+N.J. Levell, T. Leslie, E. Mallon, K. Towers (British National Formulary), R.
+Davis (British Dermatological Nursing Group), C. Saunders (British Dermatologi-
+cal Nursing Group), A.G. Brian (BAD Scientiﬁc Administrator), L.S. Exton (BAD
+Information Scientist) and M.F. Mohd Mustapa (BAD Clinical Standards Man-
+ager).
+Produced in 2001 by the British Association of Dermatologists; reviewed and
+updated 2014.
+DOI 10.1111/bjd.13310
+1.0 Purpose and scope
+The overall objective of the guideline is to provide up-to-date,
+evidence-based
+recommendations
+for the management
+of
+infectious cutaneous warts caused by papillomavirus infection.
+The document aims to (i) offer an appraisal of all relevant lit-
+erature since January 1999, focusing on any key develop-
+ments; (ii) address important practical clinical questions
+relating to the primary guideline objective, i.e. accurate diag-
+nosis and identiﬁcation of cases and suitable treatment; (iii)
+provide guideline recommendations, where appropriate with
+some health economic implications; and (iv) discuss potential
+developments and future directions.
+The guideline is presented as a detailed review with high-
+lighted recommendations for practical use in the clinic, in
+addition to an updated patient information leaﬂet [available
+on the British Association of Dermatologists’ (BAD) website,
+www.bad.org.uk].
+1.1 Exclusions
+This guideline does not cover anogenital warts, bowenoid
+papulosis, focal epithelial hyperplasia or seborrhoeic keratoses
+(sometimes called seborrhoeic warts).
+2.0 Stakeholder involvement and peer review
+The guideline development group consisted of consultant and
+specialty trainee dermatologists and an editor of the Cochrane
+Skin Group. The draft document was circulated to the BAD
+membership, British Dermatological Nursing Group, Primary
+Care Dermatological Society, British Kidney Patients Associa-
+tion and Royal Pharmaceutical Society for comments, and was
+peer reviewed by the Clinical Standards Unit of the BAD
+(made up of the Therapy & Guidelines subcommittee) prior
+to publication.
+3.0 Methodology
+This set of guidelines has been developed using the BAD’s rec-
+ommended methodology,1 with reference to the Appraisal of
+Guidelines Research and Evaluation (AGREE II) instrument
+(www.agreetrust.org).2 Recommendations were developed for
+NICE has accredited the process used by the British Association of 
+Dermatologists to produce guidelines. Accreditation is valid for 5 years 
+from May 2010. More information on accreditation, and full details of 
+our accreditation can be viewed at www.nice.org.uk/accreditation.
+© 2014 British Association of Dermatologists
+696
+British Journal of Dermatology (2014) 171, pp696–712
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 2 ===
+implementation in the National Health Service using a process
+of considered judgement based on the evidence. PubMed and
+the Medline and Embase databases were searched for meta-
+analyses, randomized controlled trials (RCTs) and non-RCTs,
+case series, case reports and open studies involving warts,
+published in the English language from January 1999 to
+March 2014; search terms and strategies are detailed in the
+Supporting Information. The Allied and Complementary Medi-
+cine Database was also searched for ‘warts’ with the same time
+restriction. Additional relevant references were also isolated
+from citations in the reviewed literature. Each author screened
+their set of identiﬁed titles, and those relevant for ﬁrst-round
+inclusion were selected for further scrutiny. Working in pairs,
+the authors then reviewed the abstracts for the shortlisted ref-
+erences,
+and
+the
+full
+papers
+of
+relevant
+material
+were
+obtained; disagreements in the ﬁnal selections were resolved
+by discussion among the entire development group. The struc-
+ture of the 2001 guidelines was then discussed and re-evalu-
+ated,
+with
+headings
+and
+subheadings
+decided;
+different
+coauthors were allocated separate subsections. Each coauthor
+then performed a detailed appraisal of the selected literature,
+and all subsections were subsequently collated and edited to
+produce the ﬁnal guideline.
+4.0 Limitations of the guideline
+This document has been prepared on behalf of the BAD and is
+based on the best data available when the document was pre-
+pared. It is recognized that under certain conditions it may be
+necessary to deviate from the guidelines and that the results of
+future studies may require some of the recommendations
+herein to be changed. Failure to adhere to these guidelines
+should not necessarily be considered negligent, nor should
+adherence to these recommendations constitute a defence
+against a claim of negligence.
+5.0 Plans for guideline revision
+The proposed revision for this set of recommendations is
+scheduled for 2019; where necessary, important interim
+changes will be updated on the BAD website.
+6.0 Background
+Warts are caused by infection of keratinocytes (the predomi-
+nant cell type in the epidermis) by human papillomavirus
+(HPV). The development of epidermal thickening and hyperk-
+eratinization occurs following infection at the basal layer and
+clonal proliferation, which eventually results in a visible wart,
+weeks or even months later.
+There are over 150 genotypically different types of HPV,
+with classiﬁcation based on deﬁned variation of the viral DNA.
+The majority of common warts are caused by HPV types 1, 2,
+4, 27 or 57, and plane warts by HPV types 3 or 10. The HPV
+types originally identiﬁed in epidermodysplasia verruciformis
+(EV) and their closely related genotypes are also found on the
+skin, often as subclinical infections, but they can be associated
+with squamous cell cancer and premalignant dysplasias, espe-
+cially in cases of immunosuppression.
+6.1 Terminology
+The term ‘warts’ includes all morphological varieties of warts
+and may sometimes be used to name wart-like lesions, such as
+seborrhoeic keratoses or seborrhoeic ‘warts’, which are not
+caused by HPV infection. In this guideline the term ‘warts’
+deals only with warts due to HPV infection. HPV-associated
+warts are subdivided on anatomical or morphological grounds
+into (i) common wart (Verruca vulgaris); (ii) wart on the sole of
+the foot, plantar wart (Verruca plantaris); (iii) ﬂat wart or plane
+wart (Verruca plana) and (iv) genital wart (Condyloma accuminatum).
+6.2 Epidemiology and course of infection
+HPV can spread from one individual to another by direct con-
+tact or via the environment. It is not known exactly how long
+the infectious virus can persist outside the body, but the
+related bovine papillomavirus is believed to retain infectivity
+for months or possibly years,3 and the same may be true for
+HPV. Warts are a common skin disease worldwide. Infection
+is common in childhood, but can occur at any age. Small
+cohort observational studies have suggested that 5–30% of
+children and young adults have warts.4–6
+Warts can persist for years with little or no sign of inﬂam-
+mation. Spontaneous clearance of the infection, ﬁrstly with a
+reduction in size of the wart and then its disappearance, can
+occur at any time from a few months to years later. Clearance
+in children can occur after only a few months, with half clear
+at 1 year and about two-thirds by 2 years.7 However, warts in
+adults can be much slower to clear, and persistence for
+5–10 years is not uncommon.
+7.0 Diagnosis
+Diagnosis of common hand and foot warts is usually not difﬁ-
+cult. Paring down a wart will often result in pinpoint bleeding
+as the capillary loops of the elongated dermal papillae are
+exposed. Warts need to be distinguished either clinically or
+histologically from other keratotic lesions on the hands or
+feet, such as actinic keratoses, knuckle pads or, more rarely,
+squamous cell carcinoma or focal palmoplantar keratoderma.
+On the feet, corns and calluses or callosities can be confused
+with warts, but paring and close inspection should allow them
+to be distinguished. On limbs, other hyperkeratotic lesions
+such as lichen planus or angiokeratoma may cause confusion,
+and plane warts may need to be distinguished from lichen
+planus or thin actinic or seborrhoeic keratoses.
+7.1 Complications
+Impairment of the immune system, especially cell-mediated
+immunity, usually results in prolonged duration of warts.
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+BAD guidelines for cutaneous warts 2014, J.C. Sterling et al. 697
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 3 ===
+When immune function is severely impaired, for example
+after organ or bone marrow transplant or due to severe com-
+bined immune deﬁciency, warts may be large, extensive and
+resistant to treatment. Warts may be the presenting feature of
+milder immunosuppressed states such as lymphoma, idio-
+pathic CD4 lymphocytopenia or HIV infection, so unusually
+severe or prolonged warts should prompt consideration of
+underlying immune deﬁcit.
+Papillomavirus infection is also associated with premalig-
+nancy and squamous cell carcinomas of the skin. In EV, a
+familial tendency to develop scaly and plane wart-like keratotic
+lesions in the teens, which frequently progress to squamous
+cell cancer in early adult life, is attributed to both a mild
+immune deﬁcit and increased carriage of certain HPV types. A
+similar skin condition is seen in long-term immunosuppressed
+individuals, particularly organ transplant recipients. Individuals
+with these conditions harbour HPV types causing plane warts,
+and also those types in the subgroup of beta-papillomaviruses,
+which have a greater frequency than those found in immuno-
+competent people.
+8.0 Management
+8.1 No therapy
+Depending on their site and size, warts may be just a minor
+nuisance. If the affected individual is immunocompetent, then
+an expectant approach to management is entirely acceptable.
+Some warts can be uncomfortable or interfere with function,
+or may be a major cosmetic bother and embarrassment when
+numerous or on sites such as the face. Under these circum-
+stances, a number of different treatments may be considered.
+8.2 Interventional treatment
+There are numerous treatments for warts, and whether used
+singly or in combination they often have little evidence base
+for their use. Home remedies also abound and may have some
+reason for potential efﬁcacy. Ideally treatment should not leave
+scars, although many patients may prefer a permanent scar to
+a persistent, unsightly and troublesome wart.
+There is no antiviral treatment that is speciﬁc for HPV, but
+some of the available therapies interfere with the viral life
+cycle. The most common approach to treatment is to damage
+or destroy the infected epithelium. This can also induce cell
+death and antigen exposure and presentation, thereby poten-
+tially inducing an immune response. By reducing epidermal
+proliferation, or more speciﬁcally DNA replication, the wart
+should become less thick and production of new virus inhib-
+ited. Destruction of the virus particles, or virucide, at the sur-
+face is effected by a limited number of agents, but such
+treatments may not affect virus-infected cells in lower epider-
+mal layers. Direct stimulation of the immune system in the
+locality of the wart could maximize the chance of immuno-
+logical response to the infected keratinocytes. It is not known
+how much the immune response contributes to wart clearance
+after destructive or other inﬂammatory treatments, but the
+poor or absent response to treatments in immunosuppressed
+patients would suggest that it is essential.
+Common variations between studies include (i) no distinc-
+tion being made between common and plane warts; (ii) the
+participants may include both children and adults; (iii) clear-
+ance may be assessed by either cleared warts or clear patients;
+(iv) various body sites can be included; and (v) treatment
+comparisons may be between participants, or right–left or
+wart–wart comparisons within individuals. As few treatments
+currently used for treating warts have been subjected to large,
+rigorous trials, the available evidence for a large number of
+different therapies is discussed in these guidelines. Many trials
+have used a treatment period of 3–4 months with varying
+follow-up times. Under these circumstances, the cure rate for
+placebo-treated warts is of the order of 20–30%.
+8.2.1 Destructive treatments
+Epidermal damage can be produced by chemical means, such
+as (a) salicylic acid and others (c–j) below, or by physical
+means, including (b) cryotherapy and others (k–n) below.
+8.2.1.a. Salicylic acid (level of evidence 1+; strength of recommendation A)
+(see Appendices 1 and 2). Salicylic acid (SA) formulations are the
+most common preparation used in the treatment of viral warts.
+SA is thought to work by promoting exfoliation of epidermal
+cells; at high concentrations it is an irritant. These effects are
+postulated to be able to stimulate host immunity, which may
+be an additional mechanism of action against warts.
+The most commonly used, over-the-counter products are
+SA paints. These contain SA at concentrations of between 10%
+and 26% in either a collodion or a polyacrylic base; they are
+often mixed with lactic acid. Plasters containing 40% SA and
+ointments containing 50% SA are also widely available;
+weaker, cream preparations can be made. The latter are some-
+times used to treat facial warts, but without trial evidence to
+conﬁrm efﬁcacy.
+The method of application of SA depends on the formula-
+tion. For wart paints it is recommended that lesions are
+abraded or pared down and/or soaked prior to application.
+Care should be taken when paring to avoid abrading the sur-
+rounding normal skin, as this may spread the disease. A study
+looking at the effect of occlusion found a beneﬁt when using
+a 17% SA gel with lactic acid.8 Qualitative research has shown
+that expectation of cure from SA paints is low, and patients
+ﬁnd the treatment difﬁcult due to irritation of the surrounding
+skin. Compliance with treatments is thought to be poor.9
+In 2011 a meta-analysis of ﬁve studies of 333 patients
+showed SA (all preparations) to be more effective than pla-
+cebo. The analysis suggested that warts treated with SA are 16
+times more likely to clear than those treated with placebo, and
+that 95% of similar trials would yield a treatment beneﬁt of a
+115–224 times increased chance of clearance [relative risk
+(RR) 160, 95% conﬁdence interval (CI) 115–224]. A
+pooled analysis of 16 studies of SA with a total of 813 patients
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+698 BAD guidelines for cutaneous warts 2014, J.C. Sterling et al.
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 4 ===
+showed that 337 were cured; the mean cure rate was 49%,
+with a range of 0–69%. In contrast, placebo had a cure rate of
+23% (range 5–73%).10
+Two
+important
+trials
+published
+within
+the
+last
+few
+years11,12
+are
+included
+in
+a
+recently
+updated
+Cochrane
+review.13 Bruggink et al.11 studied 250 patients in primary
+care who were randomized to one of three treatment regi-
+mens: SA 40% ointment, fortnightly cotton-bud cryotherapy,
+or no treatment for 13 weeks. The cure rates for all sites com-
+bined were 15%, 49% and 8%, respectively; subgroup cure
+rates were: hand warts, 17%, 46% and 7%, respectively, and
+plantar warts, 33%, 30% and 23%, respectively. Thus, in this
+trial SA was less effective than cryotherapy for the treatment
+of hand warts, but more effective than no treatment at all.
+Neither treatment seemed particularly effective for plantar
+warts. A lack of effectiveness of both SA and cryotherapy for
+treating plantar warts is also corroborated by data from the
+trial of Cockayne et al.12 This involved 240 patients with plan-
+tar warts treated in U.K. podiatric practices, with either SA
+50% for 12 weeks or ‘gentle’ cryotherapy (up to four treat-
+ments delivered by spray or probe usually with prior paring
+of overlying skin). There was neither a placebo nor a no-treat-
+ment group, and both treatments achieved a modest cure rate
+of only 14%. While these recent studies help conﬁrm the efﬁ-
+cacy of SA, there is still a paucity of data on the commonly
+used formulations of SA paint.
+1
+Adverse effects. All but very low-strength SA can cause chem-
+ical burns and should not be used in areas of poor heal-
+ing such as neuropathic feet.14 On the face, SA paints are
+contraindicated due to risk of irritant burning, and this
+can also occur on other sites.15 In areas of sensitive skin,
+2% SA cream has been used but without any evidence
+base. Contact allergy to the excipients is also reported.16
+2
+Combination therapies (level of evidence 2). The most com-
+monly used combination therapy is cryotherapy and SA.
+In an open study, a clearance rate of 86% (25/29) was
+reported in a retrospective analysis of cases treated with
+both cryotherapy and SA 70%.17 There were uncontrolled
+variables in this study: the number and frequency of
+cryotherapy treatments was decided by the practitioner
+and the follow-up period was up to 45 years.
+In a study of 10 patients with 66 warts, the application of
+SA 30% prior to pulsed-dye laser (PDL) therapy appeared to
+decrease the number of laser treatments needed, but while the
+study was randomized, it was a single-blinded trial and
+involved within-patient comparisons.18 In an open study,
+diphencyprone (DPC) 01% was combined with SA 15% oint-
+ment in a trial of 50 patients with palmoplantar warts and
+applied for up to 4 months. The combination showed a 92%
+clearance in those completing the treatment, with 88% clear-
+ance in intention-to-treat cases.19
+SA (either 17% or 40%) has also been combined with
+5-ﬂuorouracil (5-FU, either 05% or 5%) for plantar warts,
+with 100% resolution; however, the regimens were complex
+and treatment continued for up to 235 days in one patient.20
+SA has also been compounded with podophyllotoxin and
+cantharidin, and used on plantar warts, clearing 958% of
+patients (138/144), with 868% (125/144) needing only a
+single application. However, application was complex, and
+blistering and pain could result.21
+8.2.1.b. Cryotherapy (level of evidence 1+; strength of recommendation
+B). A range of devices and techniques are used to induce tar-
+geted cold injury to warts. Liquid nitrogen, delivered by cryo-
+spray or cotton bud, is the most commonly used method in
+medical practice. Compressed-gas devices containing propane
+and dimethyl ether can be purchased without prescription but
+do not achieve temperatures as low as liquid nitrogen and are
+therefore likely to be less effective,22,23 although there is one
+randomized trial suggesting that they are equally effective.24
+Techniques differ between practitioners, with variations in
+freeze times, mode of application and intervals between
+treatments. Paring before cryotherapy can improve results in
+plantar warts, but not hand warts.25 It is common practice to
+freeze until a halo of frozen tissue appears around the wart,
+and this is maintained for 5–30 s depending on the site and
+size of the wart. Standard practice is to repeat the treatment
+every 2–3 weeks until the warts have cleared, up to a maxi-
+mum of approximately six treatments. The available evidence
+from randomized trials broadly supports this, except in the
+case of plantar warts where no treatments, including cryother-
+apy, have been convincingly demonstrated to be consistently
+and signiﬁcantly effective.
+Two trials of cryospray vs. cotton-bud cryotherapy (one
+RCT and one controlled trial) showed the techniques to be of
+equivalent effectiveness.26,27 Cotton-bud application is proba-
+bly preferable when treating warts on the face in children; an
+alternative technique is to freeze the tips of a pair of forceps
+and then grip the wart.28,29
+The reported cure rate of cryotherapy for warts at all sites
+from randomized trials is highly variable, ranging from 0% to
+69% with a mean of 49%.10 Where possible, subgroup
+analysis of data from these trials suggests that cure rates are
+generally better for hand warts than for plantar warts. Two
+recently published trials11,12 have provided much better-
+quality data than previously and have compared cryotherapy
+directly
+with SA.13 As discussed in the section on SA
+(section 8.2.1.a.), cryotherapy gave equivalent or improved
+rates of cure when compared with SA.
+More aggressive cryotherapy with a longer freeze or a
+double freeze–thaw cycle appears to be more effective than
+gentler freezing, but the evidence is very heterogeneous and
+the data are not of very high quality.30–33 Not surprisingly,
+more intense cryotherapy also tends to result in more pain and
+blistering and with an increased risk of scarring. The study by
+Berth-Jones et al.32 is often cited, but it had a very high drop-
+out rate (31%), making the apparent advantage of the double
+freeze–thaw cycle for plantar warts (an improved cure rate of
+65% vs. 41%) rather less convincing. The study by Connolly
+et al.33 (with a 22% dropout rate) showed that a longer freeze
+time (10 s sustained vs. a ‘traditional’ freeze) improved cure
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+BAD guidelines for cutaneous warts 2014, J.C. Sterling et al. 699
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 5 ===
+rates at all sites (64% vs. 39%), but the number of patients
+with plantar warts was too small for subgroup analysis.
+In trials comparing the interval between treatments, most,
+but not all, have suggested that freezing every 2–3 weeks
+produces a better clearance at 3 months than treatment every
+4 weeks.34–37 However, the cure rates after 6 months are
+often similar, suggesting that clearance may in fact depend on
+the total number of treatments given. Only one randomized
+trial has explored the total number of treatments, and even
+this trial was not ideally designed to answer this question.
+There was also a high dropout rate (19% in the ﬁrst part of
+the trial and 26% in the second), introducing a considerable
+risk of bias. In a mixed population of 155 patients with per-
+sistent warts at all sites that had not cleared after 3 months of
+3-weekly cryotherapy treatments (about four treatments),
+there was no demonstrable beneﬁt shown after a further
+3 months of treatment.25
+Patients should be warned that cryotherapy is painful and
+blistering may occur. Adverse effects are more frequently
+reported in shorter-interval treatment regimes. Caution must
+be used when applying cryotherapy near cutaneous nerves,
+tendons and the nail apparatus, and also in patients with
+impaired arterial or venous circulation. Hypopigmentation or
+hyperpigmentation may occur, particularly in patients with
+darker skin types.
+8.2.1.c
+Silver nitrate (level of evidence 2). A silver nitrate 10%
+solution was investigated in a placebo-controlled, double-
+blinded study of hand and foot warts in 60 children and
+adults, and showed a clearance rate of 63% of patients after
+6 weeks.38 However, the data shown relate only to the
+response to the silver nitrate, with no data given for the pla-
+cebo, making interpretation impossible. Yazar and Basaran
+studied the effect of silver nitrate pencils and reported a cure
+rate of 43% of patients in the treatment group and 11% with
+placebo.39
+8.2.1.d. Phenol
+(level
+of
+evidence
+2+;
+strength
+of
+recommendation
+D). Phenol is a caustic agent that has been compared with
+cryotherapy in a single-blinded, randomized study of 60
+patients with hand warts. Cryotherapy was applied weekly
+with a cotton stick for 10–20 s, and 80% phenol was
+applied weekly. The cure rates of patients were 70% with
+cryotherapy and 83% with phenol, although the dropout
+rate with phenol was higher.40
+8.2.1.e. Cantharidin (level of evidence 3; strength of recommendation
+D). This is a blistering agent that triggers acantholysis. The
+superﬁcial nature of the injury reduces the risk of scarring. It
+also has the advantage of painless application, with discomfort
+developing only when blistering occurs in the 24 h following
+application. A study of 15 patients who were treated with a
+cantharidin 07% solution to treat plane facial warts showed
+clearance of warts in all 15 patients within 16 weeks with one
+to four treatments.41 Taken systemically it is highly toxic.
+8.2.1.f. Glycolic acid 5% (level of evidence 3; strength of recommendation
+D). Glycolic acid is an a-hydroxy acid that acts as a peeling
+agent. In a case series of 15 children with facial plane warts it
+was well tolerated, cleared all of the cases and did not pro-
+duce scarring. However, spontaneous resolution may have
+occurred, especially in one case that did not clear until after
+4 months.42 An open study of SA 2% combined with glycolic
+acid 15% in 20 patients aged 7–16 years with recalcitrant
+facial ﬂat warts reported a 100% cure rate within 8 weeks.43
+8.2.1.g. Pyruvic acid (level of evidence 3; strength of recommendation
+D). Pyruvic acid is used as a peeling agent. In a case series
+investigating the response of common warts to pyruvic acid
+70% alone or in combination with 5-FU 05%, 80% of
+patients showed improvement. The addition of 5-FU did not
+increase the effect.44 Hypertrophic scarring was reported in a
+patient using pyruvic acid 98% with 5-FU 2% for warts on
+the chest and arms.45
+8.2.1.h. Citric acid 50% (level of evidence 2). Citric acid was com-
+pared with tretinoin in a prospective randomized, double-
+blinded study of 75 patients with plane warts on the body.
+The study design used a side-to-side comparison and the
+results were given as number of warts cleared. After 6 weeks
+64% of citric acid-treated lesions were cleared, vs. 54% of the
+tretinoin-treated lesions.46
+8.2.1.i. Formic acid (level of evidence 2). Formic acid is another
+low-cost treatment. As an acid, it is stronger than SA but
+weaker than trichloroacetic acid. A number of studies have
+suggested its efﬁcacy.47–49 Side-effects are common, with 12%
+of participants in one study developing an infection and need-
+ing systemic antibiotics.47
+8.2.1.j. Trichloroacetic acid and monochloroacetic acid (level of evidence 3;
+strength of recommendation D). These caustic agents have been used
+to treat warts. Trichloroacetic acid is used regularly to treat
+genital warts,50 and has been used without adequate trial evi-
+dence
+to
+treat
+common
+warts.51
+Monochloroacetic
+acid
+showed a success rate of 61%, and the addition of formalde-
+hyde had no effect on the response rate.52 Monochloroacetic
+acid is highly toxic and corrosive.53
+8.2.1.k. Hyperthermia (level of evidence 2+; strength of recommendation
+D). Two randomized trials have studied the effects of localized
+heat on warts.54,55 The more recent trial involved 60 patients
+with plantar warts randomized to hyperthermia with red light
+(up to 44 °C for 30 min on three consecutive days) or
+placebo red light alone. Cure of treated lesions occurred in
+54% (15/28) vs. 12% (three of 26) of patients, respectively
+(RR 337, 95% CI 105–1418).55 The earlier randomized
+trial,54 involving 13 patients with hand warts and using warts
+as the unit of analysis, and a case series56 are less rigorous
+studies, but also suggest that localized hyperthermia can be
+effective and is reasonably safe.
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+700 BAD guidelines for cutaneous warts 2014, J.C. Sterling et al.
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 6 ===
+8.2.1.l. Surgical interventions (level of evidence 3; strength of recommenda-
+tion D). There are no high-quality studies published on the
+effectiveness of surgical treatments such as curettage, cautery
+and CO2 laser, although these treatments are certainly widely
+used. One case series of 50 patients treated with 2–4-MHz
+electrowave ‘electrosection’ (an accurately targeted destructive
+treatment using radio waves rather than heat) claimed a 67%
+success rate with solitary plantar warts and commented that
+relapse was more common in warts that occurred at weight-
+bearing sites.57
+8.2.1.m. Lasers (level of evidence 2+; strength of recommendation C). PDL
+(585 nm) is the laser used most frequently and acts by
+destroying wart vessel vasculature through haemoglobin’s
+absorption peak at 585–595 nm. Direct thermal injury to the
+heat-sensitive HPV virus may also play a role. Treatment pro-
+tocols (pulse width, ﬂuence, spot size, number of pulses and
+duration of treatment) vary between studies, making efﬁcacy
+difﬁcult to evaluate. One RCT found no signiﬁcant difference
+in outcome between groups treated with PDL, cryotherapy or
+cantharidin.58 Cohort studies have reported patient clearance
+rates with PDL of 32–75%,59–61 and a case series of 142
+patients with over 700 warts reported 93% clearance of trea-
+ted warts after an average of 25 treatments.62
+Most warts are pared down before PDL to facilitate absorp-
+tion of the laser energy. Pretreatment with SA 30% for 5 days,
+followed by PDL, led to faster complete clearance (22 sessions
+in the SA-PDL group vs. 31 sessions in the PDL-only group,
+P < 005), with similar proportions of patients responding to
+treatment overall.18
+Two studies using PDL followed directly by intralesional
+bleomycin led to 60–89% wart clearance, including 80%
+clearance in immunosuppressed patients.63,64 Wart location
+and duration may inﬂuence the rate of clearance. Palmar and
+periungual warts are cleared more effectively than plantar
+warts.60,61,65
+The main side-effects of PDL include local pain (although
+generally not severe enough to warrant stopping treatment),
+haemorrhagic bullae, pigmentary change and scarring. PDL is
+well tolerated by children, with two large cohort studies
+reporting complete response in 48% of treated warts66 and
+75% of children with palmoplantar warts.61
+CO2 laser, neodymium-doped yttrium aluminium garnet
+(Nd:YAG), Er:YAG, infrared and potassium titanyl phosphate
+laser have also been used in a small number of cohort studies.
+The largest of these reported a 96% clearance rate of recalci-
+trant common, palmoplantar and periungual warts in 369
+patients treated with Nd:YAG laser.67
+8.2.1.n. Photodynamic therapy (level of evidence 2+; strength of recommen-
+dation D). There was a signiﬁcant difference in wart clearance
+after 14 weeks in 45 patients with palmar and plantar lesions
+treated
+with
+20%
+aminolaevulinic
+acid
+photodynamic
+therapy (ALA-PDT) (50 mW cm2, 23-min treatment time,
+70 J cm2, six treatments maximum) compared with placebo-
+PDT. However, patients also applied a keratolytic ointment
+(SA and lactic acid) between PDT treatments.68 In total, 75%
+of plantar warts completely resolved in 67 ALA-PDT-treated
+patients (50 mW cm2, 50 J cm2 visible light irradiation,
+three treatments maximum) compared with 23% in the
+placebo group. Both groups received urea 10% and SA 10%
+ointment for a week prior to commencing treatment.69
+Cohort studies have reported clearance rates of warts
+between 58% and 95%.70–72 PDT can be used in combination
+with laser; in such a study, 12 patients with periungual warts
+treated with CO2 fractional laser followed by methyl-5-amino-
+laevuninic acid (MAL)-PDT (3 h, 50 J cm2, 15 min, fort-
+nightly treatments over 6 weeks) resulted in 90% of treated
+warts clearing completely with no recurrence in 6 months.73
+In another study, 19 patients with hand and foot warts were
+treated with MAL-PDT plus a PDL light source, which cleared
+53% of treated warts; hand warts cleared more effectively than
+plantar warts.74
+As with laser treatment, it is difﬁcult to compare efﬁcacy
+rates in published papers due to variation in PDT regimens,
+for example the duration of application of topical photosensi-
+tizers, the type of light source used, ﬂuorescence and the
+number of treatments. Many studies prepare warts before
+treatment, with curettage, blunt scraping, scalpel or keratolytic
+cream to enhance penetration. Azone, a topical penetration
+enhancer, has been used before PDT in two studies, with 83%
+clearance of plantar wart75 and 94% clearance of V. plana on
+the face.76 For facial plane warts, a reduction in concentration
+of ALA from 20% to 10% can maintain efﬁcacy but reduce
+the chance of post-treatment hyperpigmentation.77
+8.2.2. Virucidal agents
+8.2.2.a. Formaldehyde (level of evidence 3; strength of recommendation
+D). Formaldehyde soaks have been used to treat verrucas, and
+they were reported to give a cure rate of 80% in an open
+study of 646 children.78 This study applied 3% soaks to pared
+plantar warts. If the skin hardened, the concentration was
+increased to a 10% solution. Formaldehyde is also available as
+a 075% gel. No randomized study has been completed.
+Formaldehyde is allergenic.
+8.2.2.b. Glutaraldehyde (level of evidence 3; strength of recommendation
+D). A glutaraldehyde 10% paint was reported as being equiva-
+lent to SA paint in plantar warts.35 A series of 25 patients with
+resistant warts showed a cure rate of 72%, and the treatment
+was well accepted in children.79 Reports of deep necrosis
+demonstrate the risk of repeated application, and glutaralde-
+hyde should be used with caution especially in concentrations
+> 10%.80
+8.2.3. Antiproliferative agents
+8.2.3.a. Vitamin D analogues (level of evidence 3; strength of recommenda-
+tion
+D). There
+are
+three
+case
+series81–83
+and
+two
+case
+reports84,85 on the use of vitamin D analogues for treatment
+of warts. The largest case series, by Inaba et al.,82 reported
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+BAD guidelines for cutaneous warts 2014, J.C. Sterling et al. 701
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 7 ===
+complete regression of warts in 59% of patients (13/22; all
+ages, all sites) treated with maxacalcitol and occluded with SA
+plasters for up to 45 days.
+8.2.3.b. Dithranol (level of evidence 2). One small RCT of dithra-
+nol 2% cream vs. Verucid (11% SA, 4% lactic acid with cop-
+per), showed a higher cure rate for dithranol: 56% (15/27)
+vs. 26% (eight of 31).86 Three case series showed patient cure
+rates of 60–70%.87–89 In the series of Hjorth et al.,87 71% of
+patients (17/24) were cleared of mosaic plantar warts within
+10 months of daily treatment with dithranol 2%.
+8.2.3.c. Podophyllin and podophyllotoxin (level of evidence 3; strength of
+recommendation D). Podophyllotoxin can inhibit cell division by
+interfering with the mitotic spindle, and will affect normal
+skin as well as warts. It can have dangerous systemic effects if
+used in high concentrations or over large areas, and its use is
+contraindicated in pregnancy. Although podophyllotoxin (and
+previously the cruder podophyllin) is a standard treatment for
+anogenital warts, its evaluation in cutaneous warts has been
+limited. The assumption is that penetration of the thick, corni-
+ﬁed layer of cutaneous warts is poor compared with that
+achieved at mucosal sites. A very small open study of 40
+patients with plantar warts treated with podophyllin 25% in
+liquid parafﬁn under prolonged adhesive plaster occlusion
+reported a 67% clearance rate of patients at 3 months.90 How-
+ever, the side-effects of this treatment include an intense
+inﬂammatory reaction with blistering, which can be very
+painful. There are no recent studies using podophyllotoxin for
+cutaneous warts, except as a 1% component of a combination
+therapy with cantharidin and SA, so the contribution of podo-
+phyllotoxin alone is impossible to evaluate.91
+8.2.3.d. 5-Fluorouracil (level of evidence 2+; strength of recommendation
+C). Topical 5-FU has been used with effect to treat both plane
+warts and common warts on the hands and feet. 5-FU blocks
+DNA synthesis and damages dividing basal layer cells. When
+used topically or intralesionally, it produces inﬂammation and
+occasionally erosions. Hyperpigmentation, or less frequently
+hypopigmentation, can occur if it is used for longer periods.
+In one study, 5-FU 5% cream was applied once a day for
+4 weeks under occlusion to hand or foot warts on one side of the
+body, while a placebo cream was simultaneously applied to warts
+on the other side of the body. At the end of the treatment, 60%
+of warts were cleared on the side treated with 5-FU compared
+with 17% on the placebo-treated side.92 In a similarly designed
+study, treating adult plantar warts for 12 weeks led to complete
+clearance in 95% of patients (19/20), with 10% clearance in the
+placebo arm.93 In a small open study, application of the cream to
+plane warts twice a day led to similar clearance rates.94
+Topical 5-FU under occlusion was more effective than
+occlusion alone in an unblinded RCT of 40 patients. In total,
+95% of patients using 5-FU under occlusion cleared their
+warts compared with 10% in the control group.93 There was
+no difference in outcome when 5-FU was used in combina-
+tion with cryotherapy vs. cryotherapy alone.95
+5-FU has been used in a weak preparation (05%) in combina-
+tion with SA (10%). In a meta-analysis, the combination appears
+much more effective than SA alone (634% clearance vs. 11%).96
+In a double-blinded RCT, 65% of warts in 40 patients
+cleared with up to four injections, given weekly, of intrale-
+sional 5-FU 4% (in combination with lidocaine and adrena-
+line) compared with 35% in the placebo group (P < 005).97
+Iscimen et al.98 reported a 70% complete clearance of warts in
+a similar single-blinded RCT.
+8.2.3.e. Bleomycin (level of evidence 2+; strength of recommendation
+C). Bleomycin is a cytotoxic agent used in systemic chemother-
+apy, but it has been recognized and applied as a therapy for
+warts for 40 years.99 Bleomycin solution can be injected into
+warts using a small needle and syringe, or applied to the surface
+and ‘pricked’ into the wart with a needle. The strength of bleo-
+mycin
+used
+has
+usually
+been
+1 U mL1,
+equivalent
+to
+1 mg mL1, but weaker strengths of 05 mg mL1 or even
+01 mg mL1 seem to produce similar effects.100,101 The intro-
+duction of bleomycin into the skin is painful, and local anaes-
+thesia, either before or together with administration of
+bleomycin, helps to make the procedure more comfortable. The
+effect of bleomycin on the wart produces some pain that lasts a
+day or two, and then necrosis develops with a black eschar that
+separates after a few days. This obvious response to treatment
+makes it difﬁcult to conduct double-blinded trials, and many
+studies have been open studies or have used bleomycin in com-
+parison with saline injection or cryotherapy.
+Open studies have suggested clearance rates of approxi-
+mately 20–90% of treated warts with one or more treat-
+ments,101,102 with most reporting a patient response rate of
+approximately 65–85%.101,103
+Several trials of intralesional bleomycin have used saline as a
+placebo. In one study where 25 patients were allocated to each
+treatment, 96% (82/85) of warts treated with bleomycin
+cleared, while only 11% of warts (eight of 72) treated with sal-
+ine showed clearance at 3 months.104 A smaller study, in which
+24 patients with multiple warts had one wart treated with bleo-
+mycin and a similar wart injected with saline (control), reported
+a comparable clearance, with 58% of bleomycin-treated warts
+clearing compared with only 11% of the control warts.105
+When compared with cryotherapy, and using one body side
+for each treatment, bleomycin produced higher clearance rates
+(92–97% of bleomycin-treated warts vs. 76–82% of warts
+treated with cryotherapy).106,107
+The major side-effect of bleomycin is pain at the time of
+injection and for up to 48 h afterwards. Flagellate hyperpig-
+mentation, which may occur with standard systemic chemo-
+therapy, has also been reported,108 as has postinﬂammatory
+pigmentation, which usually clears after some weeks.109
+8.2.3.f. Retinoids.
+1
+Topical retinoids (level of evidence 2+; strength of recommendation C).
+Retinoids affect epidermal proliferation and differentiation
+and so can reduce wart volume and alter stratum corne-
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+702 BAD guidelines for cutaneous warts 2014, J.C. Sterling et al.
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 8 ===
+um quality and quantity. Their main side-effect, both
+from topical and systemic administration, is skin dryness
+and skin irritation, which could inﬂuence inﬂammatory
+reactions in the skin and contribute to the drug’s immu-
+nomodulatory effects. In spite of ease of access and avail-
+ability, there are very few reports of the use of topical
+retinoids in the treatment of warts. Two small studies
+assessing plane warts in children110 and organ transplant
+patients111 have suggested 85% clearance (compared with
+23% untreated) or 29% lesion clearance (compared with
+19% placebo treated), respectively, after 6–12 weeks of
+treatment with tretinoin 005% cream. Adapalene 01%
+gel applied under occlusion for 1 week has also been
+used, but proper evaluation is lacking.112
+2
+Systemic retinoids (level of evidence 3; strength of recommendation D).
+There are many anecdotal reports of oral retinoid use in
+severe warts, including in immunosuppressed patients.
+The effect of acitretin 05–1 mg kg1 per day for up to
+3 months is usually a reduction in the bulk of lesions,
+but with a high risk of recurrence on discontinuation of
+therapy.113 In an observational study of children aged
+25–125 years treated with oral etretinate for 3 months,
+80% (16/20) were clear of all warts at 1 year after fol-
+low-up.114 An open study of child and adult patients with
+facial plane warts reported 73% clearance after 2 months
+of treatment with isotretinoin 05 mg kg1 per day.115
+8.2.3.g. Cidofovir (level of evidence 3; strength of recommendation D). Ci-
+dofovir is a potent nucleoside analogue that competitively
+inhibits DNA polymerase and therefore prevents replication of
+cidofovir-incorporated viral cells.
+Several case reports have supported the use of intravenous
+cidofovir in immunosuppressed patients,116–120 but it is gen-
+erally used topically. Topical cidofovir is reconstituted from
+the parenteral form, as either a 1% or 3% cream. It is applied
+under occlusion for 5 days of the week followed by no treat-
+ment for a week; this cycle can then be repeated.
+Cidofovir 1% cream was used to treat long-standing warts in
+a case series of seven children, with four achieving complete
+clearance after 8 weeks of treatment, lasting up to a year in 75%
+of cases.121 A child with acute lymphocytic leukaemia applied
+cidofovir 1% cream to a painful plantar wart daily for 6 weeks
+leading to complete resolution.122 Cidofovir can also be used
+intralesionally, and with an average of 32 injections, clearance
+of 98% of warts has been reported in an open study.123
+Side-effects of intravenous cidofovir include nephrotoxicity,
+neutropenia and metabolic acidosis. Topical cidofovir appears
+to be well tolerated other than causing local irritation,
+although one patient with a background of chronic renal fail-
+ure developed acute deterioration in renal function during
+treatment.123,124
+8.2.3.h. Occlusotherapy (level of evidence 2). The use of occlusion
+for treatment of cutaneous warts has been practised for some
+time, with a suggestion of 47% of patients cleared at
+2 months,90 but the ﬁrst trial of its use was not reported until
+2002.125 A single wart in each of 61 children was treated
+with either light cryotherapy (10 s of liquid nitrogen every
+2–3 weeks) or common silver duct tape applied and left in
+place for 1 week for a total of 8 weeks. In total 60% of the
+cryotherapy-treated warts cleared, compared with 85% of the
+warts treated with duct tape. Two further trials have used
+transparent duct tape applied to a single wart for up to
+8 weeks, but without a statistically increased rate of clearance.
+In a trial involving 100 children randomly allocated to either
+duct tape over the wart or a ring-shaped corn pad around the
+wart, 16% of warts cleared in the treatment group compared
+with 6% in the placebo group.126 In a study of 90 adults trea-
+ted with the same tape, again applied weekly for up to
+8 weeks, and compared with adhesive-backed moleskin pad-
+ding,
+clearance
+rates
+were
+approximately
+20%
+in
+both
+groups.127 Although these studies have not conﬁrmed a deﬁ-
+nite effect of occlusion on warts, there is the possibility that
+an effect may occur in children. Many other topical treatments
+for warts may include some form of occlusion, and the role
+of this part of treatment is yet to be clariﬁed.
+8.2.4. Immunological therapy
+8.2.4.a. Imiquimod (level of evidence 3; strength of recommendation
+D). Imiquimod is a well-established treatment for genital and
+perianal
+warts. It
+stimulates
+a
+proinﬂammatory
+response
+through the induction, synthesis and release of interferon
+(IFN)-a, tumour necrosis factor-a and interleukin (IL)-12, as
+well as promoting natural killer (NK) cell activation. There
+are no RCTs studying the effect of imiquimod on cutaneous
+warts. However, two open-label studies have shown > 50%
+clearance of warts, ﬁrstly in 76% of patients when imiqui-
+mod
+was
+applied
+twice
+daily
+for
+a
+maximum
+of
+24 weeks,128 and secondly in 56% of 50 patients, of whom
+19 were immunosuppressed, after 95 weeks of treatment.129
+Application under occlusion does not appear to enhance the
+efﬁcacy.130 There are numerous case reports reporting the
+effectiveness of imiquimod in both immunocompetent and
+immunocompromised patients.131,132 It has a tolerable side-
+effect proﬁle with mild-to-moderate local pain reported most
+frequently.
+8.2.4.b. Contact immunotherapy (level of evidence 2+; strength of recom-
+mendation C). Contact immunotherapy with diphenylcyclop-
+ropenone/diphencyprone (DPC) or squaric acid dibutyl ester
+(SADBE) induces a local delayed hypersensitivity reaction at
+the wart site triggering a local immune response.
+An 8-year retrospective review of 48 patients with palmopl-
+antar warts treated with DPC reported 88% complete clearance
+of all warts. The median treatment time was 5 months, and
+no recurrences were observed in a 2-year follow-up period.133
+A similar review of treatment over 7 years reported an 877%
+complete response rate.134 Although the clearance rate is
+reduced in immunosuppressed patients, sensitization is possi-
+ble and this treatment can be effective.135
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+BAD guidelines for cutaneous warts 2014, J.C. Sterling et al. 703
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 9 ===
+Of 443 adults and children who completed treatment with
+SADBE twice weekly for a maximum of 10 weeks, 86% under-
+went complete resolution and 138% showed no response to
+the contact sensitizer. All plantar warts responded, but statisti-
+cal analyses to identify whether the wart site was a signiﬁcant
+variable was not undertaken.136 A retrospective review has
+suggested that topical trichloroacetic acid 50% in combination
+with SADBE immunotherapy can enhance clearance rates.137
+Side-effects of SADBE and DPC include erythema, desqua-
+mation, oedema, pruritus and mild burning. A small number
+of patients may develop autoeczematization or widespread
+urticaria, and treatment should be stopped in these cases.
+Other allergens including products used for immunization,
+such as bacille Calmette–Guerin (topical) or measles vaccine
+(intralesional), have been proposed as useful therapies. Topical
+therapies may have particular use for children and for the
+treatment of plane warts.138
+8.2.4.c. Intralesional immunotherapy (level of evidence 1). Intralesion-
+al Candida, mumps and tuberculin antigens have been used to
+induce wart clearance through antigenic stimulation of the
+host-cell-mediated immune system. There is no robust evi-
+dence to support the use of this type of intralesional immuno-
+therapy, but reported clearance rates range from 47% to 87%.
+A single-blinded RCT of intralesional Candida and IFN-a
+showed that patients receiving the antigen were more likely to
+respond, but that the addition of IFN did not signiﬁcantly alter
+the response rate.139
+Phillips et al.140 retrospectively reviewed 149 adults and
+children treated with Candida immunotherapy. Within 8 weeks
+of completing treatment, 72% of patients had achieved com-
+plete wart clearance. However, a separate review of 277
+patients comparing Candida antigen with ‘traditional therapy’
+(including cryotherapy and SA) found no signiﬁcant difference
+in outcome between the different groups.141
+8.2.4.d. H2 receptor antagonists (level of evidence 1). H2 receptor
+antagonists are widely used in the treatment of gastro-
+oesophageal reﬂux. They increase IL-2 and IFN-c expression
+from
+T
+lymphocytes,
+enhancing
+cell-mediated
+immune
+responses. The efﬁcacy of cimetidine has been demonstrated
+in open-label studies: high-dose cimetidine (30–40 mg kg1
+per day) was more effective at clearing warts than low-dose
+cimetidine
+(20–30 mg kg1
+per
+day),142
+and
+87%
+of
+children who received cimetidine for 3 months had com-
+plete resolution of their warts.143 However, these results
+have not been replicated in RCTs, which have found no
+statistically
+signiﬁcant
+difference
+between
+cimetidine
+and
+placebo.144,145
+Ranitidine, which does not have antiandrogenic activity (as
+opposed to cimetidine), has been investigated in one open-
+label study. In total 49% of patients with multiple common or
+plane warts completely responded to a 4-month course of ran-
+itidine 300 mg twice daily, with no recurrence in a 6-month
+follow-up period.146
+8.2.4.e. Other systemic immunotherapy (level of evidence 3; strength of rec-
+ommendation D). Single-patient case reports have described good
+outcomes with IFN,147 immunoglobulin148 and valaciclovir149
+in immunosuppressed patients with warts.
+8.2.4.f. Zinc oxide and zinc sulfate (level of evidence 1). The mecha-
+nism of action of zinc in the treatment of warts is uncertain.
+Zinc is important for immune regulation and mediates the
+role of leucocytes and NK cells. Zinc deﬁciency causes lymp-
+hopenia, and can manifest as acrodermatitis enteropathica.
+Zinc can be used topically or systemically, but there are no
+robust data to support its use in the treatment of warts.
+A double-blinded RCT showed no difference between oral
+zinc sulfate and placebo.150 A poor-quality single-blinded RCT
+showed 87% response in the zinc sulfate patient group, com-
+pared with no response in the placebo group, but all patients
+had a low serum zinc level pretreatment.151 Yaghoobi et al.,152
+who have also published results of a pilot study,153 reported a
+78% response with similar doses of zinc.
+Gastrointestinal side-effects including nausea, vomiting and
+abdominal pain occur frequently, although they do not always
+necessitate withdrawal of treatment in the published studies.
+Topical zinc sulfate 10% is more effective than zinc sulfate
+5% or placebo in the treatment of common and plane warts,
+with 86% complete clearance achieved vs. 10% clearance in
+the placebo group.154 In a double-blinded RCT of zinc oxide
+20% vs. an SA/lactic acid ointment, 50% of patients achieved
+clearance in the zinc oxide group compared with 42% in the
+SA/lactic acid group.155 It is a simple and safe treatment but
+has not been compared with placebo.
+8.2.5. Complementary and alternative treatments
+Most cultures have a history of charms, herbal treatments and
+other remedies for warts.156,157 Modern complementary thera-
+pies are often derived from these treatments. They can be
+divided as follows: (i) psychological treatments, e.g. hypnosis;
+(ii) herbal treatments; (iii) homeopathic treatments; and (iv)
+acupuncture.
+8.2.5.a. Psychological treatments for warts (level of evidence 2). In
+many people warts resolve spontaneously within 8 months, so
+it is therefore very difﬁcult to know whether there is an addi-
+tional effect from suggestion or not.157
+Hypnosis is the most studied technique and can be subdi-
+vided into direct suggestion and visual imagery. A randomized
+study comparing hypnosis with SA, control (no treatment)
+and placebo (base carrier from SA) showed a greater effect
+with hypnosis, but the numbers were small with only 10
+patients per group.158 Studies attempting clearance of warts
+from one-half of the body and not the other have shown con-
+ﬂicting results.159,160 However, this has to be viewed in the
+light of a paper showing that when warts were treated with
+CO2 laser on one side of the body the warts on the other side
+also cleared.161
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+704 BAD guidelines for cutaneous warts 2014, J.C. Sterling et al.
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 10 ===
+A study of 97 patients treated with distant healing showed
+no effect.162 A more elaborate form of suggestion utilized
+simulated X-ray therapy; however, while the report suggested
+that the treatment was successful, only 55% of children (ﬁve
+of nine) showed clearance in 2 months.163
+8.2.5.b. Herbal treatments (level of evidence 2). The destructive
+effect of caustic sap has been exploited to treat warts, but
+burns can result. Plants used include mayapple (Podophyllum pelt-
+atum) (the source of podophyllin) and greater celandine (Che-
+lidonium majus).164 Garlic (Allium sativum) was shown to have
+effect against warts in a study of an extract from garlic, but
+while there was a control group the study does not appear to
+have been randomized.165 Pure garlic can cause skin irritation.
+The sap from ﬁgs was compared with cryotherapy in a ‘left–
+right’ comparison; 44% (11/25) of warts cleared with ﬁg sap
+vs. 56% (14/25) with cryotherapy. While the study had
+design ﬂaws, ﬁg sap was free of side-effects and is inexpensive
+in some parts of the world.166 A study compared oral treat-
+ment with propolis (45 patients) with Echinacea (40 patients)
+and placebo (50 patients). Clearance was seen in 18, six and
+four patients, respectively. The dropout rate was high and
+Table 1 Summary of recommended treatments for hand warts
+Strength of
+recommendation
+Treatment
+Suggested method of use for hand warts
+A
+Salicylic acid (SA)
+Topical preparations of 15–26% SA, applied daily after removing thick keratin layer, with
+occlusion if possible. Continue for 3–4 months11,35
+B
+Cryotherapy
+Keep wart frozen for 15–30 s, repeating every 2–4 weeks for at least 3 months or six
+treatments11,35
+C
+Bleomycin
+A 01–1 U mL1 (01–1 mg mL1) solution injected or pricked into wart after local
+anaesthesia – one to three treatments. Painful during and after treatment101,102
+Contact immunotherapy
+After initial sensitization, DPC or SADBE at strength appropriate for patient, applied from
+twice weekly to every 3 weeks for 3–6 months133,134
+5-Fluorouracil
+A 5% cream applied daily + occlusion for 4–12 weeks92,93
+Laser
+Pulsed-dye laser after paring and/or SA pretreatment. Two to four treatments at
+7–10 J cm2 are usually needed59–61
+D
+Acupuncture
+Auricular acupuncture weekly for 10 weeks171
+Cantharidin
+A 07% solution applied every 3 weeks up to four times41
+Cidofovir
+A 1% cream daily for 5 days each week under occlusion for 8 weeks121,122
+Formaldehyde
+A 3–4% solution as a daily 15–20-min soak for plantar warts, with emollient protection
+of unaffected skin for up to 8 weeks78
+Glutaraldehyde
+A 10% solution applied daily after paring or rubbing down for 3 months79
+Hyperthermia
+Heat wart(s) to 40–44 °C for 30 min on three to ﬁve consecutive days55,56
+Imiquimod
+A 5% cream twice daily for up to 6 months128
+Phenol
+An 80% solution applied weekly for up to 6 weeks40
+Photodynamic therapy
+ALA-PDT after paring and/or SA pretreatment, up to three treatments71
+Podophyllin
+Podophyllin but not podophyllotoxin tested. After paring or rubbing down. 25% in
+liquid parafﬁn applied under occlusion.11 Authors advise weaker strength (10–15%) and
+cautious use90
+Pyruvic acid
+A 70% solution applied daily for up to 2 months44
+Retinoids, systemic
+Acitretin 05–1 mg kg1 per day for up to 3 months113
+Surgery
+Curettage, cautery, or hyfrecation for ﬁliform warts
+Trichloroacetic acid
+Trichloroacetic acid 50–80% solution applied weekly for up to 8 weeks
+Vitamin D analogues
+Maxacalcitol three times a day for 2–6 months, with or without SA plaster82,83
+Calcipotriol once daily for 2–3 months84
+Insufﬁcient
+evidence
+Citric acid
+Although they may be used in practice, further study is needed before these can be
+recommended
+Dithranol
+Formic acid
+H2 receptor antagonists
+Herbal treatment
+Homeopathy
+Hypnotherapy
+Intralesional immunotherapy
+Occlusotherapy (e.g. duct tape)
+Retinoids, topical
+Silver nitrate
+Zinc oxide
+Zinc sulfate
+DPC, diphencyprone; SADBE, squaric acid dibutyl ester; ALA-PDT, aminolaevulinic acid photodynamic therapy.
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+BAD guidelines for cutaneous warts 2014, J.C. Sterling et al. 705
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 11 ===
+analysis was not done using intention to treat, so the positive
+effect may have been overestimated.167 One study used smoke
+from burning the leaves of Populus euphratica; in this single-
+blinded study of 60 patients, smoke was directed into a box-
+like structure surrounding the limb. The effect was compared
+with cryotherapy. While the smoke showed a positive effect,
+the method of administration could have had a mild thermal
+or placebo effect.168
+8.2.5.c. Homeopathy (level of evidence 1). Homeopathy has many
+opponents and the use of extreme dilution of a substance that,
+undiluted, causes the symptoms that are being treated has no
+scientiﬁc explanation to date. However, it is probably safe
+unless the remedy is contaminated. A randomized placebo-
+controlled study of 60 children using individualized remedies
+showed no effect in comparison with placebo; however, the
+method of use of homeopathy was criticized.169,170
+8.2.5.d. Acupuncture (level of evidence 2+; strength of recommendation
+D). While there are only isolated case reports showing an
+apparent effect of acupuncture for common warts, there is a
+single-blinded randomized study of auricular acupuncture for
+plane warts. The study compared acupuncture with tretinoin
+01% ointment. In total 53% (16/30) of patients treated with
+acupuncture cleared, compared with 3% (one of 30) in the
+tretinoin group.171
+8.2.6. Other treatments
+There are single case reports of X-ray treatment163 and isolated
+limb perfusion also being used.172 A double-blinded RCT of
+40 patients using a topical protein–lipid complex for 3 weeks
+(a-lactalbumin–oleic acid) vs. saline placebo reported a 75%
+reduction in wart size.173 However, this has not been investi-
+gated further.
+9.0 Future directions
+Warts are one of the most common skin infections and can
+persist for many years, but the evidence base for treatment is,
+Table 2 Recommendations in particular clinical situations
+Plantar warts
+Cure rates are lower at this site probably due to a thicker corniﬁed layer and subsequent poorer penetration of
+treatments to the lower epidermis. Paring, if used to remove excess skin from warts before treatment, should avoid
+damaging surrounding skin because of the risk of spreading infection
+Salicylic acid (15–40%) topical paints or ointments12
+Cryotherapy, fortnightly for 3–4 months12,32
+Salicylic acid and/or cryotherapy used with more aggressive regimens is probably more effective than standard
+regimens, but care is needed with worse side-effects. Combination treatments can be undertaken10,17,20,21
+Other treatments: dithranol,87 5-FU,93 formaldehyde,78 glutaraldehyde,35 hyperthermia,55 laser,58,65 PDT,68,73
+podophyllotoxin,90 topical immunotherapy133,136
+Plane warts
+On the backs of the hands or face, plane warts are mainly a cosmetic problem and spontaneous clearance can often
+be awaited. Destructive and caustic agents are more likely to produce scarring at these sites and should be used
+with care
+Salicylic acid cream/ointment 2–10% or cautious use of salicylic acid paint, 12–17%, used without occlusion
+Cryotherapy, milder freeze
+Topical retinoid110,111
+Others treatments: acupuncture,171 cantharidin,41 5-FU cream,94 formaldehyde gel, glutaraldehyde solution 10%,
+glycolic acid 15%,42,43 imiquimod,131,132 PDT,76,115 topical immunotherapy,138 zinc oxide,155 zinc sulfate 10%
+solution154
+Facial warts
+Plane warts as above
+Treatment of ﬁliform warts in the beard area should avoid damaging adjacent skin, which, like shaving, can spread
+the infection
+Cryotherapy, curettage or hyfrecation can be used
+Other treatments: glycolic acid 15%,42,43 imiquimod,131 laser,174 PDT,175,176 topical immunotherapy177,178
+Warts in children
+(hand and foot warts)
+Warts in children are often relatively short lived and are likely to clear within a year or two. Painful treatments are
+often not tolerated and should be avoided in young children if possible
+Salicylic acid (15–40%) topical paints or ointments12
+Cryotherapy, gentle, fortnightly for 3–4 months12,32
+Other treatments: cidofovir,121 formaldehyde solution or gel,78 glutaraldehyde 10% solution,79 laser,61,66 silver
+nitrate,39 systemic retinoids,114 topical immunotherapy136
+Warts in the
+immunosuppressed
+Treatment may not be likely to result in cure, but can help to reduce both size of warts and functional and cosmetic
+problems
+Standard treatments with paring, abrasive agents, salicylic acid and destructive methods (but avoiding damage to
+surrounding skin) can help to reduce wart bulk
+Other treatments: cidofovir systemic,116–119 cidofovir topical,122 contact immunotherapy,135 imiquimod,129,179 laser
+(pulsed-dye laser),180 laser + intralesional bleomycin,63 surgery, topical retinoid,111 systemic retinoid181
+FU, ﬂuorouracil; PDT, photodynamic therapy.
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+706 BAD guidelines for cutaneous warts 2014, J.C. Sterling et al.
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 12 ===
+for the most part, weak. Evaluating the results of studies of
+the large number of available treatments for warts has often
+been hampered by ﬂaws in study design. In the future, the
+evidence for management of warts would be helped by studies
+in which (i) children and adults are separated into distinct
+treatment groups; (ii) the duration of warts before the study
+commences is recorded; (iii) study groups are of an adequate
+size; (iv) treatment runs for up to 6 months; (v) left- vs.
+right-side studies are avoided; (vi) treatment success is mea-
+sured as clearance of all treated warts; and (vii) recurrence at
+3
+and
+6 months
+following
+completion
+of
+treatment
+is
+included whenever possible.
+For relatively easily available, inexpensive and well-tolerated
+treatments, a number of questions need resolution.
+9.1 Salicylic acid
+1
+Does the concentration of SA and the treatment regimen
+used affect outcome?
+2
+Does combination with occlusion improve response rate?
+3
+For plantar warts, does a slightly stronger preparation
+(20–30% SA) used after adequate paring for up to
+6 months result in wart clearance?
+9.2 Caustics
+1
+Does treatment with phenol, silver nitrate, cantharidin or
+trichloroacetic acid cause warts to clear?
+9.3 Cryotherapy
+1
+Because of the nature of the treatment, it is difﬁcult to
+use a ‘matched’ placebo control for cryotherapy, but
+cryotherapy could be compared directly with another
+physical treatment (e.g. laser or heat treatment), and also
+a well-established treatment such as SA.
+2
+Does combination of cryotherapy with a topical agent
+improve clearance rates?
+9.4 Virucidals
+1
+Controlled trials of formaldehyde and glutaraldehyde are
+much needed.
+9.5 Antiproliferative treatments
+1
+Podophyllotoxin is effective in genital warts and it is less
+irritating than podophyllin. What treatment regimen could
+be tolerated on the skin and what is the response of warts?
+2
+Do calcipotriol or calcitriol ointments induce wart clear-
+ance?
+3
+What regimen or combination of treatment strengths of
+SA with 5-FU is most effective?
+9.6 Immunotherapy
+1
+In a placebo-controlled study, do plane warts clear with
+imiquimod?
+2
+How effective is topical immunotherapy with DPC in wart
+treatment?
+9.7 Pretreatment regimens
+Treatments requiring an effect on the lower epidermis should
+employ a standardized method to remove stratum corneum
+before application of the test treatment. A week of daily appli-
+cation of SA (15–17%) under occlusion followed by daily par-
+ing or rubbing down is suggested. This regimen could be
+used before PDT, laser, cryotherapy etc.
+10.0 Summary
+Section 8 provides details of the evidence for the various treat-
+ments. Table 1 provides a summary of recommended treat-
+ments for hand warts. All treatments should be used after
+paring or rubbing down (debridement) of warts wherever
+possible. The speciﬁcity of treatment regimens has rarely been
+tested. The treatments should be used as advised by the manu-
+facturers or under direction by appropriate qualiﬁed personnel
+who are aware of contraindications and side-effects. The sug-
+gestions in Table 1 are based on available trial evidence, case
+series or case reports or the authors’ experience.
+Table 2 lists recommendations in particular clinical situa-
+tions. Many clinical trials do not speciﬁcally test treatments for
+different types of warts or warts in speciﬁc clinical situations.
+The recommendations in Table 2 are based on available trial
+evidence, case series or case reports or the authors’ experi-
+ence.
+11.0 Recommended audit points
+1
+In the last 20 consecutive patients receiving cryotherapy
+treatment, were the following items recorded: (i) dose,
+(ii) duration, (iii) number of cycles, (iv) documentation
+of verbal consent?
+2
+In the last 20 consecutive patients receiving cryotherapy
+treatment, was a patient information leaﬂet on cryother-
+apy provided?
+The audit recommendation of 20 cases per department is to
+reduce variation in the results due to a single patient, and to
+allow
+benchmarking
+between
+different
+units.
+However,
+departments unable to achieve this recommendation may
+choose to audit all cases seen in the preceding 12 months.
+Acknowledgments
+We are very grateful to Miss Sara Haveron (BAD Scientiﬁc
+Administrator) and Miss Lesley Exton (BAD Information Scien-
+tist), as well as everyone who commented on the draft during
+the consultation period.
+References
+1 Bell HK, Ormerod AD. Writing a British Association of Dermatol-
+ogists clinical guideline: an update on the process and guidance
+for authors. Br J Dermatol 2009; 160:725–8.
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+BAD guidelines for cutaneous warts 2014, J.C. Sterling et al. 707
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 13 ===
+2 Brouwers MC, Kho ME, Browman GP et al. AGREE II: advancing
+guideline development, reporting and evaluation in health care.
+CMAJ 2010; 182:E839–42.
+3 Jarrett W. The natural history of bovine papillomavirus infection.
+Adv Viral Oncol 1986; 5:83–102.
+4 Kyriakis K, Pagana G, Michailides C et al. Lifetime prevalence ﬂuc-
+tuations of common and plane viral warts. J Eur Acad Dermatol Vene-
+reol 2007; 21:260–2.
+5 Kilkenny M, Merlin K, Young R, Marks R. The prevalence of
+common skin conditions in Australian school students: 1. Com-
+mon, plane and plantar viral warts. Br J Dermatol 1998; 138:840–
+5.
+6 van Haalen FM, Bruggink SC, Gussekloo J et al. Warts in primary
+schoolchildren: prevalence and relation with environmental fac-
+tors. Br J Dermatol 2009; 161:148–52.
+7 Bruggink SC, Eekhof JA, Egberts PF et al. Natural course of cuta-
+neous warts among primary schoolchildren: a prospective cohort
+study. Ann Fam Med 2013; 11:437–41.
+8 Veien NK, Madsen SM, Avrach W et al. The treatment of plantar
+warts with a keratolytic agent and occlusion. J Dermatolog Treat
+1991; 2:59–61.
+9 Thomas KS, Keogh-Brown MR, Chalmers JR et al. Effectiveness
+and cost-effectiveness of salicylic acid and cryotherapy for cuta-
+neous warts. An economic decision model. Health Technol Assess
+2006; 10:iii, ix–87.
+10 Kwok CS, Holland R, Gibbs S. Efﬁcacy of topical treatments for
+cutaneous warts: a meta-analysis and pooled analysis of random-
+ized controlled trials. Br J Dermatol 2011; 165:233–46.
+11 Bruggink SC, Gussekloo J, Berger MY et al. Cryotherapy with
+liquid nitrogen versus topical salicylic acid application for cutane-
+ous warts in primary care: randomized controlled trial. CMAJ
+2010; 182:1624–30.
+12 Cockayne S, Hewitt C, Hicks K et al. Cryotherapy versus salicylic
+acid for the treatment of plantar warts (verrucae): a randomised
+controlled trial. BMJ 2011; 342:d3271.
+13 Kwok CS, Gibbs S, Bennett C et al. Topical treatments for cutane-
+ous warts. Cochrane Database Syst Rev 2012; 9:CD001781.
+14 Tavakkolizadeh A, Povlsen B. A serious complication of topical
+wart treatment on the hand. J R Soc Med 2004; 97:180.
+15 Tiong WH, Kelly EJ. Salicylic acid burn induced by wart
+remover: a report of two cases. Burns 2009; 35:139–40.
+16 Lachapelle JM, Leroy B. Allergic contact dermatitis to colophony
+included in the formulation of ﬂexible collodion BP, the vehicle
+of a salicylic and lactic acid wart paint. Dermatol Clin 1990;
+8:143–6.
+17 van Brederode RL, Engel ED. Combined cryotherapy/70% sali-
+cylic acid treatment for plantar verrucae. J Foot Ankle Surg 2001;
+40:36–41.
+18 Akarsu S, Ilknur T, Demirtasoglu M, Ozkan S. Verruca vulgaris:
+pulsed dye laser therapy compared with salicylic acid + pulsed
+dye laser therapy. J Eur Acad Dermatol Venereol 2006; 20:936–40.
+19 Armour K, Orchard D. Treatment of palmoplantar warts with a
+diphencyprone and salicylic acid ointment. Australas J Dermatol
+2006; 47:182–5.
+20 Young S, Cohen GE. Treatment of verruca plantaris with a combi-
+nation of topical ﬂuorouracil and salicylic acid. J Am Podiatr Med
+Assoc 2005; 95:366–9.
+21 Becerro de Bengoa Vallejo R, Iglesias MEL, Gomez-Martın B et al.
+Application of cantharidin and podophyllotoxin for the treatment
+of plantar warts. J Am Podiatr Med Assoc 2008; 98:445–50.
+22 Gaspar ZS, Dawber RP. An organic refrigerant for cryosurgery:
+fact or ﬁction? Australas J Dermatol 1997; 38:71–2.
+23 Burkhart CG, Pchalek I, Adler M, Burkhart CN. An in vitro study
+comparing temperatures of over-the-counter wart preparations
+with liquid nitrogen. J Am Acad Dermatol 2007; 57:1019–20.
+24 Caballero Martınez F, Plaza Nohales C, Perez Canal C et al. [Cuta-
+neous cryosurgery in family medicine: dimethyl ether–propane
+spray versus liquid nitrogen]. Aten Primaria 1996; 18:211–16 (in
+Spanish).
+25 Berth-Jones J, Hutchinson PE. Modern treatment of warts: cure
+rates at 3 and 6 months. Br J Dermatol 1992; 127:262–5.
+26 Ahmed I, Agarwal S, Ilchyshyn A et al. Liquid nitrogen cryother-
+apy of common warts: cryo-spray vs. cotton wool bud. Br J Der-
+matol 2001; 144:1006–9.
+27 Bleiker TO, Bourke JF, Lear J et al. A comparison of cryogun ver-
+sus cotton buds for the treatment of warts. Br J Dermatol 1997;
+137 (Suppl. s50):26.
+28 Kuwahara RT, Craig SR, Amonette RA. Forceps and cotton appli-
+cator method of freezing benign lesions. Dermatol Surg 2001;
+27:183–4.
+29 Goodheart HP. Surgical Pearl: a rapid technique for destroying
+small skin tags and ﬁliform warts. Dermatol Online J 2003; 9:34.
+30 Sonnex TS, Camp RDR. The treatment of recalcitrant viral warts
+with high dose cryosurgery under local anaesthesia. Br J Dermatol
+1988; 119 (Suppl. s33):38–9.
+31 Hansen JG, Schmidt H. [Plantar warts. Occurrence and cryosurgi-
+cal treatment]. Ugeskr Laeger 1986; 148:173–4. (in Danish).
+32 Berth-Jones J, Bourke J, Eglitis H et al. Value of a second freeze–
+thaw cycle in cryotherapy of common warts. Br J Dermatol 1994;
+131:883–6.
+33 Connolly M, Bazmi K, O’Connell M et al. Cryotherapy of viral
+warts: a sustained 10-s freeze is more effective than the tradi-
+tional method. Br J Dermatol 2001; 145:554–7.
+34 Bourke JF, Berth-Jones J, Hutchinson PE. Cryotherapy of common
+viral warts at intervals of 1, 2 and 3 weeks. Br J Dermatol 1995;
+132:433–6.
+35 Bunney MH, Nolan MW, Williams DA. An assessment of meth-
+ods of treating viral warts by comparative treatment trials based
+on a standard design. Br J Dermatol 1976; 94:667–79.
+36 Larsen PØ, Laurberg G. Cryotherapy of viral warts. J Dermatolog
+Treat 1996; 7:29–31.
+37 Youn SH, Kwon IH, Park EJ et al. A two-week interval is better
+than a three-week interval for reducing the recurrence rate of
+hand-foot viral warts after cryotherapy: a tretrospective review
+of
+560
+hand-foot
+viral
+wart
+patients.
+Ann
+Dermatol
+2011;
+23:53–60.
+38 Ebrahimi S, Dabiri N, Jamshidnejad E, Sarkari B. Efﬁcacy of 10%
+silver nitrate solution in the treatment of common warts: a pla-
+cebo-controlled, randomized, clinical trial. Int J Dermatol 2007;
+46:215–17.
+39 Yazar S, Basaran E. Efﬁcacy of silver nitrate pencils in the treat-
+ment of common warts. J Dermatol 1994; 21:329–33.
+40 Banihashemi M, Pezeshkpoor F, Yazdanpanah MJ, Family S. Efﬁ-
+cacy of 80% phenol solution in comparison with cryotherapy in
+the treatment of common warts of hands. Singapore Med J 2008;
+49:1035–7.
+41 Kartal Durmazlar SP, Atacan D, Eskioglu F. Cantharidin treatment
+for recalcitrant facial ﬂat warts: a preliminary study. J Dermatolog
+Treat 2009; 20:114–19.
+42 Borbujo J, Olmos O, Zamora E et al. Treatment of verrucae plana
+with 15% glycolic acid. Int J Dermatol 2000; 39:236–7.
+43 Rodrıguez-Cerdeira C, Sanchez-Blanco E. Glycolic acid 15% plus
+salicylic acid 2%: a new therapeutic pearl for facial ﬂat warts. J
+Clin Aesthet Dermatol 2011; 4:62–4.
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+708 BAD guidelines for cutaneous warts 2014, J.C. Sterling et al.
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 14 ===
+44 Halasz CL. Treatment of warts with topical pyruvic acid: with
+and without added 5-ﬂuorouracil. Cutis 1998; 62:283–5.
+45 Donaldson MR, Stetson CL. Hypertrophic scarring after treatment
+with ﬂuorouracil, 2%, in pyruvic acid, 98%, for Verruca vulgaris.
+Arch Dermatol 2010; 146:213–14.
+46 Vali A, Ferdowsi F. Evaluation of the efﬁcacy of 50% citric acid
+solution in plane wart treatment. Indian J Dermatol 2007; 52:96–8.
+47 Bhat RM, Vidya K, Kamath G. Topical formic acid puncture tech-
+nique for the treatment of common warts. Int J Dermatol 2001;
+40:415–19.
+48 Shamsadini S, Baghery MH. Treatment of warts with topical for-
+mic acid. Iran J Med Sci 2005; 30:199.
+49 Faghihi G, Vali A, Radan M et al. A double-blind, randomized
+trial of local formic acid puncture technique in the treatment of
+common warts. Skinmed 2010; 8:70–1.
+50 Godley MJ, Bradbeer CS, Gellan M, Thin RN. Cryotherapy com-
+pared with trichloroacetic acid in treating genital warts. Genitourin
+Med 1987; 63:390–2.
+51 Pezeshkpoor F, Banihashemi M, Yazdanpanah MJ et al. Compara-
+tive study of topical 80% trichloroacetic acid with 35% trichloro-
+acetic acid in the treatment of the common wart. J Drugs Dermatol
+2012; 11:e66–9.
+52 Jennings MB, Ricketti J, Guadara J et al. Treatment for simple plan-
+tar verrucae: monochloroacetic acid and 10% formaldehyde versus
+10% formaldehyde alone. J Am Podiatr Med Assoc 2006; 96:53–8.
+53 Baser NT, Yalaz B, Yilmaz AC et al. An unusual and serious com-
+plication of topical wart treatment with monochloroacetic acid.
+Int J Dermatol 2008; 47:1295–7.
+54 Stern P, Levine N. Controlled localized heat therapy in cutaneous
+warts. Arch Dermatol 1992; 128:945–8.
+55 Huo W, Gao X-H, Sun X-P et al. Local hyperthermia at 44 °C for
+the treatment of plantar warts: a randomized, patient-blinded,
+placebo-controlled trial. J Infect Dis 2010; 201:1169–72.
+56 Gao XH, Gao D, Sun XP et al. Non-ablative controlled local hyper-
+thermia for common warts. Chin Med J 2009; 122:2061–3.
+57 Lelliott PE, Robinson C. A retrospective study to evaluate verrucae
+regrowth following electrosurgery. Br J Pod 1999; 2:84–8.
+58 Robson KJ, Cunningham NM, Kruzan KL et al. Pulsed-dye laser
+versus conventional therapy in the treatment of warts: a prospec-
+tive randomized trial. J Am Acad Dermatol 2000; 43:275–80.
+59 Park HS, Choi WS. Pulsed dye laser treatment for viral warts: a
+study of 120 patients. J Dermatol 2008; 35:491–8.
+60 Ross BS, Levine VJ, Nehal K et al. Pulsed dye laser treatment of
+warts: an update. Dermatol Surg 1999; 25:377–80.
+61 Sethuraman G, Richards KA, Hiremagalore RN, Wagner A. Effec-
+tiveness of pulsed dye laser in the treatment of recalcitrant warts
+in children. Dermatol Surg 2010; 36:58–65.
+62 Kauvar AN, Geronemus RG. Pulsed-dye laser versus conventional
+therapy in the treatment of warts. J Am Acad Dermatol 2001;
+45:151–2.
+63 Pollock B, Sheehan-Dare R. Pulsed dye laser and intralesional
+bleomycin for treatment of resistant viol hand warts. Lasers Surg
+Med 2002; 30:135–40.
+64 Dobson JS, Harland CC. Pulsed dye laser and intralesional bleo-
+mycin for the treatment of recalcitrant cutaneous warts. Lasers Surg
+Med 2014; 46:112–16.
+65 Kopera D. Verrucae vulgares: ﬂashlamp-pumped pulsed dye laser
+treatment in 134 patients. Int J Dermatol 2003; 42:905–8.
+66 Park HS, Kim JW, Jang SJ, Choi JC. Pulsed dye laser therapy for
+pediatric warts. Pediatr Dermatol 2007; 24:177–81.
+67 Han TY, Lee JH, Lee CK et al. Long-pulsed Nd:YAG laser treat-
+ment of warts: report on a series of 369 cases. J Korean Med Sci
+2009; 24:889–93.
+68 Stender IM, Na R, Fogh H et al. Photodynamic therapy with
+5-aminolaevulinic acid or placebo for recalcitrant foot and hand
+warts: randomised double-blind trial. Lancet 2000; 355:963–6.
+69 Fabbrocini G, Di Costanzo MP, Riccardo AM et al. Photodynamic
+therapy with topical delta-aminolaevulinic acid for the treatment
+of plantar warts. J Photochem Photobiol, B 2001; 61:30–4.
+70 Schroeter CA, Kaas L, Waterval JJ et al. Successful treatment of
+periungual warts using photodynamic therapy: a pilot study. J Eur
+Acad Dermatol Venereol 2007; 21:1170–4.
+71 Stender IM, Wulf HC. Photodynamic therapy of recalcitrant warts
+with 5-aminolevulinic acid: a retrospective analysis. Acta Derm
+Venereol 1999; 79:400–1.
+72 Wang YS, Tay YK, Kwok C et al. Photodynamic therapy with 20%
+aminolevulinic acid for the treatment of recalcitrant viral warts in
+an Asian population. Int J Dermatol 2007; 46:1180–4.
+73 Yoo KH, Kim BJ, Kim MN. Enhanced efﬁcacy of photodynamic
+therapy with methyl 5-aminolevulinic acid in recalcitrant periun-
+gual warts after ablative carbon dioxide fractional laser: a pilot
+study. Dermatol Surg 2009; 35:1927–32.
+74 Fernandez-Guarino M, Harto A, Jaen P. Treatment of recalcitrant
+viral warts with pulsed dye laser MAL-PDT. J Dermatolog Treat
+2011; 22:226–8.
+75 Ziolkowski P, Osiecka BJ, Siewinski M et al. Pretreatment of plan-
+tar warts with azone enhances the effect of 5-aminolevulinic acid
+photodynamic
+therapy.
+J
+Environ
+Pathol
+Toxicol
+Oncol
+2006;
+25:403–9.
+76 Lu YG, Wu JJ, He Y et al. Efﬁcacy of topical aminolevulinic acid
+photodynamic therapy for the treatment of verruca planae. Pho-
+tomed Laser Surg 2010; 28:561–3.
+77 Li Q, Jiao B, Zhou F et al. Comparative study of photodynamic
+therapy with 5%, 10% and 20% aminolevulinic acid in the treat-
+ment of generalized recalcitrant facial verruca plana: a randomized
+clinical trial. J Eur Acad Dermatol Venereol 2013. doi:10.1111/
+jdv.12319 [Epub ahead of print].
+78 Vickers CF. Treatment of plantar warts in children. BMJ 1961;
+2:743–5.
+79 Hirose R, Hori M, Shukuwa T et al. Topical treatment of resistant
+warts with glutaraldehyde. J Dermatol 1994; 21:248–53.
+80 Fujisawa Y, Furuta J, Kawachi Y, Otsuka F. Deep plantaris ulcera-
+tion secondary to the topical treatment of wart with glutaralde-
+hyde. J Dermatol 2009; 36:618–19.
+81 Egawa K, Ono T. Topical vitamin D3 derivatives for recalcitrant
+warts in three immunocompromised patients. Br J Dermatol 2004;
+150:374–6.
+82 Inaba H, Suzuki T, Adachi A, Tomita Y. Successful treatment of
+warts with a combination of maxacalcitol ointment and salicylic
+acid sticking plaster. J Dermatol 2006; 33:383–5.
+83 Imagawa I, Suzuki H. Successful treatment of refractory warts
+with topical vitamin D3 derivative (maxacalcitol, 1a,25-dihydr-
+oxy-22-oxacalcitriol) in 17 patients. J Dermatol 2007; 34:264–6.
+84 Labandeira J, Vazquez-Blanco M, Paredes C et al. Efﬁcacy of topi-
+cal calcipotriol in the treatment of a giant viral wart. Pediatr Derma-
+tol 2005; 22:375–6.
+85 Hayashi J, Matsui C, Mitsuishi T et al. Treatment of localized epi-
+dermodysplasia verruciformis with tacalcitol ointment. Int J Derma-
+tol 2002; 41:817–20.
+86 Flindt-Hansen H, Tikjøb G, Brandrup F. Wart treatment with
+anthralin. Acta Derm Venereol 1984; 64:177–9.
+87 Hjorth N, Madsen K, Norgaard M. Anthralin stick (Anthraderm) in
+the treatment of mosaic warts. Acta Derm Venereol 1986; 66:181–2.
+88 Mirceva V, Jessberger B, Konstantinow A et al. Treatment of com-
+mon warts with dithranol salicylic acid-containing ointment –
+non-interventional trial. Aktuelle Dermatol 2008; 34:428–32.
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+BAD guidelines for cutaneous warts 2014, J.C. Sterling et al. 709
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 15 ===
+89 Mirceva V, Jessberger B, Papadopulos NA et al. Treatment of cuta-
+neous warts with a wart cream containing anthralin and salicylic
+acid: an efﬁcacy study on 44 patients. Aktuelle Dermatol 2007;
+33:422–7.
+90 Duthie DA, McCallum DI. Treatment of plantar warts with ela-
+stoplast and podophyllin. BMJ 1951; 2:216–18.
+91 Kacar N, Taslı L, Korkmaz S et al. Cantharidin-podophylotoxin-
+salicylic acid versus cryotherapy in the treatment of plantar warts:
+a randomized prospective study. J Eur Acad Dermatol Venereol 2012;
+26:889–93.
+92 Hursthouse MW. A controlled trial on the use of topical 5-ﬂuoro-
+uracil on viral warts. Br J Dermatol 1975; 92:93–6.
+93 Salk RS, Grogan KA, Chang TJ. Topical 5% 5-ﬂuorouracil cream
+in the treatment of plantar warts: a prospective, randomized, and
+controlled clinical study. J Drugs Dermatol 2006; 5:418–24.
+94 Lee S, Kim JG, Chun SI. Treatment of verruca plana with 5%
+5-ﬂuorouracil ointment. Dermatologica 1980; 160:383–9.
+95 Luk NM, Tang WY, Tang NL et al. Topical 5-ﬂuorouracil has no
+additional beneﬁt in treating common warts with cryotherapy: a
+single-centre, double-blind, randomized, placebo-controlled trial.
+Clin Exp Dermatol 2006; 31:394–7.
+96 Zschocke I, Hartmann A, Schl€obe A et al. [Efﬁcacy and beneﬁt of
+a 5-FU/salicylic acid preparation in the therapy of common and
+plantar warts – systematic literature review and meta-analysis].
+J Dtsch Dermatol Ges 2004; 2:187–93 (in German).
+97 Yazdanfar A, Farshchian M, Fereydoonnejad M. Treatment of
+common warts with an intralesional mixture of 5-ﬂuorouracil,
+lidocaine, and epinephrine: a prospective placebo-controlled,
+double-blind randomized trial. Dermatol Surg 2008; 34:656–9.
+98 Iscimen A, Aydemir EH, G€oks€ug€ur N, Engin B. Intralesional
+5-ﬂuorouracil, lidocaine and epinephrine mixture for the treat-
+ment of verrucae: a prospective placebo-controlled, single-blind
+randomized study. J Eur Acad Dermatol Venereol 2004; 18:455–8.
+99 Lewis TG, Nydorf ED. Intralesional bleomycin for warts: a
+review. J Drugs Dermatol 2006; 5:499–504.
+100 Hayes ME, O’Keefe EJ. Reduced dose of bleomycin in the treat-
+ment of recalcitrant warts. J Am Acad Dermatol 1986; 15:1002–6.
+101 AlGhamdi KM, Khurram H. Successful treatment of periungual warts
+with diluted bleomycin using translesional multipuncture tech-
+nique: a pilot prospective study. Dermatol Surg 2011; 37:486–92.
+102 Munn SE, Higgins E, Marshall M, Clement M. A new method of
+intralesional bleomycin therapy in the treatment of recalcitrant
+warts. Br J Dermatol 1996; 135:969–71.
+103 van der Velden EM, Ijsselmuiden OE, Drost BH, Baruchin AM.
+Dermatography with bleomycin as a new treatment for Verrucae
+vulgaris. Int J Dermatol 1997; 36:145–50.
+104 Soni P, Khandelwal K, Aara N et al. Efﬁcacy of intralesional bleo-
+mycin in palmo-plantar and periungual warts. J Cutan Aesthet Surg
+2011; 4:188–91.
+105 Bunney MH, Nolan MW, Buxton PK et al. The treatment of resis-
+tant warts with intralesional bleomycin: a controlled clinical trial.
+Br J Dermatol 1984; 111:197–207.
+106 Adalatkhah H, Khalilollahi H, Amini N, Sadeghi-Bazargani H.
+Compared therapeutic efﬁcacy between intralesional bleomycin
+and cryotherapy for common warts: a randomized clinical trial.
+Dermatol Online J 2007; 13:4.
+107 Dhar SB, Rashid MM, Islam A, Bhuiyan M. Intralesional bleomy-
+cin in the treatment of cutaneous warts: a randomized clinical
+trial comparing it with cryotherapy. Indian J Dermatol Venereol Leprol
+2009; 75:262–7.
+108 Abess A, Keel DM, Graham BS. Flagellate hyperpigmentation fol-
+lowing intralesional bleomycin treatment of verruca plantaris.
+Arch Dermatol 2003; 139:337–9.
+109 Yamamoto T. Bleomycin and the skin. Br J Dermatol 2006;
+155:869–75.
+110 Kubeyinje EP. Evaluation of the efﬁcacy and safety of 0.05% treti-
+noin cream in the treatment of plane warts in Arab children. J
+Dermatolog Treat 1996; 7:21–2.
+111 Euvrard S, Verschoore M, Touraine JL et al. Topical retinoids for
+warts and keratoses in transplant recipients. Lancet 1992; 340:48–9.
+112 Gupta R. Plantar warts treated with topical adapalene. Indian J Der-
+matol 2011; 56:513–14.
+113 Choi YL, Lee KJ, Kim WS et al. Treatment of extensive and
+recalcitrant viral warts with acitretin. Int J Dermatol 2006; 45:480–
+2.
+114 Gelmetti C, Cerri D, Schiuma AA et al. Treatment of extensive
+warts with etretinate: a clinical trial in 20 children. Pediatr Dermatol
+1987; 4:254–8.
+115 Al-Hamamy HR, Salman HA, Abdulsattar NA. Treatment of plane
+warts with a low-dose oral isotretinoin. ISRN Dermatol 2012;
+2012:163929.
+116 Cusack C, Fitzgerald D, Clayton TM, Irvine AD. Successful treat-
+ment of ﬂorid cutaneous warts with intravenous cidofovir in an
+11-year-old girl. Pediatr Dermatol 2008; 25:387–9.
+117 Grone D, Treudler R, de Villiers EM et al. Intravenous cidofovir
+treatment for recalcitrant warts in the setting of a patient with
+myelodysplastic syndrome. J Eur Acad Dermatol Venereol 2006;
+20:202–5.
+118 Hivnor C, Shepard JW, Shapiro MS, Vittorio CC. Intravenous ci-
+dofovir for recalcitrant Verruca vulgaris in the setting of HIV. Arch
+Dermatol 2004; 140:13–14.
+119 Kottke MD, Parker SR. Intravenous cidofovir-induced resolution
+of disﬁguring cutaneous human papillomavirus infection. J Am
+Acad Dermatol 2006; 55:533–6.
+120 Mackintosh L, Parker A, Leman J. Intravenous cidofovir for the
+treatment of ﬂorid cutaneous warts in association with chronic
+graft-versus-host disease. Br J Dermatol 2012; 167 (Suppl. 1):116.
+121 Field S, Irvine AD, Kirby B. The treatment of viral warts with
+topical cidofovir 1%: our experience of seven paediatric patients.
+Br J Dermatol 2009; 160:223–4.
+122 Tobin AM, Cotter M, Irvine AD, Kirby B. Successful treatment of
+a refractory verruca in a child with acute lymphoblastic leukae-
+mia with topical cidofovir. Br J Dermatol 2005; 152:386–8.
+123 Broganelli P, Chiaretta A, Fragnelli B, Bernengo MG. Intralesional
+cidofovir for the treatment of multiple and recalcitrant cutaneous
+viral warts. Dermatol Ther 2012; 25:468–71.
+124 Bienvenu B, Martinez F, Devergie A et al. Topical use of cidofovir
+induced acute renal failure. Transplantation 2002; 73:661–2.
+125 Focht DR, Spicer C, Fairchok MP. The efﬁcacy of duct tape versus
+cryotherapy in the treatment of Verruca vulgaris (the common
+wart). Arch Pediatr Adolesc Med 2002; 156:971–4.
+126 de Haen M, Spigt MG, van Uden CJ et al. Efﬁcacy of duct tape
+versus placebo in the treatment of Verruca vulgaris (warts) in
+primary
+school
+children.
+Arch
+Pediatr
+Adolesc
+Med
+2006;
+160:1121–5.
+127 Wenner R, Askari SK, Cham PM et al. Duct tape for the treatment
+of common warts in adults: a double-blind randomized con-
+trolled trial. Arch Dermatol 2007; 143:309–13.
+128 Grussendorf-Conen EI, Jacobs S, R€ubben A, Dethlefsen U. Top-
+ical 5% imiquimod long-term treatment of cutaneous warts
+resistant
+to
+standard
+therapy
+modalities.
+Dermatology
+2002;
+205:139–45.
+129 Hengge UR, Goos M, Arndt R. Topical treatment of warts and
+mollusca with imiquimod. Ann Intern Med 2000; 132:95.
+130 Kim SY, Jung SK, Lee SG et al. New alternative combination ther-
+apy for recalcitrant common warts: the efﬁcacy of imiquimod
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+710 BAD guidelines for cutaneous warts 2014, J.C. Sterling et al.
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 16 ===
+5% cream and duct tape combination therapy. Ann Dermatol 2013;
+25:261–3.
+131 Kim MB, Ko HC, Jang HS et al. Treatment of ﬂat warts with 5%
+imiquimod cream. J Eur Acad Dermatol Venereol 2006; 20:1349–50.
+132 Oster-Schmidt C. Imiquimod: a new possibility for treatment-
+resistant verrucae planae. Arch Dermatol 2001; 137:666–7.
+133 Buckley DA, Keane FM, Munn SE et al. Recalcitrant viral warts
+treated by diphencyprone immunotherapy. Br J Dermatol 1999;
+141:292–6.
+134 Upitis JA, Krol A. The use of diphenylcyclopropenone in the
+treatment of recalcitrant warts. J Cutan Med Surg 2002; 6:214–17.
+135 Audrain H, Siddiqui H, Buckley DA. Diphencyprone immuno-
+therapy for viral warts in immunosuppressed patients. Br J Derma-
+tol 2013; 168:1138–9.
+136 Micali G, Nasca MR, Tedeschi A et al. Use of squaric acid dibuty-
+lester (SADBE) for cutaneous warts in children. Pediatr Dermatol
+2000; 17:315–18.
+137 Silverberg JI, Silverberg NB. Adjunctive trichloroacetic acid ther-
+apy enhances squaric acid response to Verruca vulgaris. J Drugs Derma-
+tol 2012; 11:1228–30.
+138 Salem A, Nofal A, Hosny D. Treatment of common and plane
+warts in children with topical viable Bacillus Calmette–Guerin.
+Pediatr Dermatol 2013; 30:60–3.
+139 Horn TD, Johnson SM, Helm RM, Roberson PK. Intralesional
+immunotherapy of warts with mumps, Candida, and Trichophyton
+skin test antigens: a single-blinded, randomized, and controlled
+trial. Arch Dermatol 2005; 141:589–94.
+140 Phillips RC, Ruhl TS, Pfenninger JL, Garber MR. Treatment of warts
+with Candida antigen injection. Arch Dermatol 2000; 136:1274–5.
+141 Signore RJ. Candida albicans intralesional injection immunotherapy
+of warts. Cutis 2002; 70:185–92.
+142 Mitsuishi T, Iida K, Kawana S. Cimetidine treatment for viral
+warts enhances IL-2 and IFN-c expression but not IL-18 expres-
+sion in lesional skin. Eur J Dermatol 2003; 13:445–8.
+143 Gooptu C, James MP. Recalcitrant viral warts: results of treatment
+with the KTP laser. Clin Exp Dermatol 1999; 24:60–3.
+144 Rogers CJ, Gibney MD, Siegfried EC et al. Cimetidine therapy for
+recalcitrant warts in adults: is it any better than placebo? J Am
+Acad Dermatol 1999; 41:123–7.
+145 Lee SH, Rose B, Thompson CH, Cossart Y. Plantar warts of
+deﬁned aetiology in adults and unresponsiveness to low dose
+cimetidine. Australas J Dermatol 2001; 42:220–1.
+146 Karaman G, Sendur N, Sevk E. Ranitidine therapy for recalcitrant
+warts in adults: a preliminary study. J Eur Acad Dermatol Venereol
+2001; 15:495–6.
+147 Hamblin TJ. Long-lasting response of therapy-resistant viral warts
+to treatment with interleukin-2 in a patient with chronic lym-
+phocytic leukemia (CLL) and profound immunodeﬁciency. Leuk
+Res 2007; 31:413–14.
+148 Lin JH, Wang KY, Kraft S, Roberts RL. Resolution of warts in
+association with subcutaneous immunoglobulin in immune deﬁ-
+ciency. Pediatr Dermatol 2009; 26:155–8.
+149 Tandeter H, Tandeter ER. Treatment of plantar warts with oral
+valacyclovir. Am J Med 2005; 118:689–90.
+150 Lopez-Garcıa DR, Gomez-Flores M, Arce-Mendoza AY et al. Oral
+zinc sulfate for unresponsive cutaneous viral warts: too good to
+be true? A double-blind, randomized, placebo-controlled trial.
+Clin Exp Dermatol 2009; 34:e984–5.
+151 Al-Gurairi FT, Al-Waiz M, Sharquie KE. Oral zinc sulphate in the
+treatment of recalcitrant viral warts: randomized placebo-con-
+trolled clinical trial. Br J Dermatol 2002; 146:423–31.
+152 Yaghoobi R, Sadighha A, Baktash D. Evaluation of oral zinc
+sulfate effect on recalcitrant multiple viral warts: a randomized
+placebo-controlled clinical trial. J Am Acad Dermatol 2009; 60:
+706–8.
+153 Sadighha A. Oral zinc sulphate in recalcitrant multiple viral warts:
+a pilot study. J Eur Acad Dermatol Venereol 2009; 23:715–16.
+154 Sharquie KE, Khorsheed AA, Al-Nuaimy AA. Topical zinc sulphate
+solution for treatment of viral warts. Saudi Med J 2007; 28:1418–21.
+155 Khattar JA, Musharraﬁeh UM, Tamim H, Hamadeh GN. Topical
+zinc oxide vs. salicylic acid-lactic acid combination in the treat-
+ment of warts. Int J Dermatol 2007; 46:427–30.
+156 Burns DA. ‘Warts and all’ – the history and folklore of warts: a
+review. J R Soc Med 1992; 85:37–40.
+157 Rankin S, Swinscoe M. Alternative treatments and folk remedies
+in the treatment of warts. Br J Pod 2002; 5:12–14.
+158 Spanos NP, Williams V, Gwynn MI. Effects of hypnotic, placebo,
+and salicylic acid treatments on wart regression. Psychosom Med
+1990; 52:109–14.
+159 Surman OS, Gottlieb SK, Hackett TP, Silverberg EL. Hypnosis in
+the treatment of warts. Arch Gen Psychiatry 1973; 28:439–41.
+160 Shenefelt PD. Biofeedback, cognitive-behavioral methods, and
+hypnosis in dermatology: is it all in your mind? Dermatol Ther
+2003; 16:114–22.
+161 Dave R, Monk B, Mahaffey P. Spontaneous disappearance of
+refractory viral warts at distant sites following carbon-dioxide
+laser treatment. Br J Plast Surg 2002; 55:696–8.
+162 Harkness EF, Abbot NC, Ernst E. A randomized trial of distant
+healing for skin warts. Am J Med 2000; 108:448–52.
+163 Meineke V, Reichrath J, Reinhold U, Tilgen W. Verrucae vulgares
+in children: successful simulated X-ray treatment (a suggestion-
+based therapy). Dermatology 2002; 204:287–9.
+164 Bedi MK, Shenefelt PD. Herbal therapy in dermatology. Arch Der-
+matol 2002; 138:232–42.
+165 Dehghani F, Merat A, Panjehshahin MR, Handjani F. Healing
+effect of garlic extract on warts and corns. Int J Dermatol 2005;
+44:612–15.
+166 Bohlooli S, Mohebipoor A, Mohammadi S et al. Comparative
+study of ﬁg tree efﬁcacy in the treatment of common warts (Ver-
+ruca vulgaris) vs. cryotherapy. Int J Dermatol 2007; 46:524–6.
+167 Zedan H, Hofny ER, Ismail SA. Propolis as an alternative treat-
+ment for cutaneous warts. Int J Dermatol 2009; 48:1246–9.
+168 Rahimi AR, Emad M, Rezaian GR. Smoke from leaves of Populus
+euphratica Olivier vs. conventional cryotherapy for the treatment of
+cutaneous warts: a pilot, randomized, single-blind, prospective
+study. Int J Dermatol 2008; 47:393–7.
+169 Kainz JT, Kozel G, Haidvogl M, Smolle J. Homoeopathic versus
+placebo therapy of children with warts on the hands: a random-
+ized, double-blind clinical trial. Dermatology 1996; 193:318–20.
+170 Gengoux P. Homeopathic versus placebo therapy of children with
+warts on the hands. Dermatology 1997; 195:183.
+171 Ning S, Li F, Qian L et al. The successful treatment of ﬂat warts
+with auricular acupuncture. Int J Dermatol 2012; 51:211–15.
+172 Damian DL, Barnetson RS, Rose BR et al. Treatment of refractory
+hand warts by isolated limb infusion with melphalan and actino-
+mycin D. Australas J Dermatol 2001; 42:106–9.
+173 Gustafsson L, Leijonhufvud I, Aronsson A et al. Treatment of skin
+papillomas with topical a-lactalbumin–oleic acid. N Engl J Med
+2004; 350:2663–72.
+174 Li Y, Yang K. Treatment of recalcitrant-pigmented ﬂat warts
+using frequency-doubled Q-switched Nd-YAG laser. Lasers Surg Med
+2001; 29:244–7.
+175 Caucanas M, Gillard P, Vanhooteghem O. Efﬁciency of photody-
+namic therapy in the treatment of diffuse facial viral warts in an
+immunosuppressed patient: towards a gold standard? Case Rep Der-
+matol 2010; 2:207–13.
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+BAD guidelines for cutaneous warts 2014, J.C. Sterling et al. 711
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 17 ===
+176 Durani BK, Jappe U. Successful treatment of facial plane warts
+with imiquimod. Br J Dermatol 2002; 147:1018.
+177 Aghaei S. Treatment of disseminated facial warts through contact
+immunotherapy with diphenylcyclopropenone (DPCP). Dermatol
+Online J 2006; 12:10.
+178 Hama N, Hatamochi A, Hayashi S et al. Usefulness of topical
+immunotherapy with squaric acid dibutylester for refractory
+common warts on the face and neck. J Dermatol 2009; 36:660–2.
+179 Weisshaar E, Gollnick H. Potentiating effect of imiquimod in the
+treatment of verrucae vulgares in immunocompromised patients.
+Acta Derm Venereol 2000; 80:306–7.
+180 L€auchli S, Kempf W, Dragieva G et al. CO2 laser treatment of
+warts in immunosuppressed patients. Dermatology 2003; 206:148–
+52.
+181 Monastirli A, Matsouka P, Pasmatzi E et al. Complete remission
+of recalcitrant viral warts under oral isotretinoin in a patient
+with
+low-grade
+B-cell
+lymphoma.
+Acta
+Derm
+Venereol
+2005;
+85:358–60.
+Supporting Information
+Additional Supporting Information may be found in the online
+version of this article at the publisher’s website:
+Data S1. Literature search strategies.
+Appendix 1
+Levels of evidence
+Appendix 2
+Strength of recommendation
+Class
+Evidence
+A
+At least one meta-analysis, systematic review or RCT
+rated as 1++, and directly applicable to the target
+population, or
+A systematic review of RCTs or a body of evidence
+consisting principally of studies rated as 1+, directly
+applicable to the target population and demonstrating
+overall consistency of results
+Evidence drawn from a NICE technology appraisal
+B
+A body of evidence including studies rated as 2++,
+directly applicable to the target population and
+demonstrating overall consistency of results, or
+Extrapolated evidence from studies rated as 1++ or 1+
+C
+A body of evidence including studies rated as 2+,
+directly applicable to the target population and
+demonstrating overall consistency of results, or
+Extrapolated evidence from studies rated as 2++
+D
+Evidence level 3 or 4, or
+Extrapolated evidence from studies rated as 2+, or
+Formal consensus
+D (GPP)
+A good practice point (GPP) is a recommendation for
+best practice based on the experience of the guideline
+development group
+RCT, randomized controlled trial; NICE, National Institute for
+Health and Care Excellence.
+Level of
+evidencea
+Type of evidence
+1++
+High-quality meta-analyses, systematic reviews of
+RCTs, or RCTs with a very low risk of bias
+1+
+Well-conducted meta-analyses, systematic reviews of
+RCTs, or RCTs with a low risk of bias
+1
+Meta-analyses, systematic reviews of RCTs, or RCTs
+with a high risk of bias
+2++
+High-quality systematic reviews of case–control or
+cohort studies
+High-quality case–control or cohort studies with a
+very low risk of confounding, bias or chance and
+a high probability that the relationship is causal
+2+
+Well-conducted case–control or cohort studies with
+a low risk of confounding, bias or chance and a
+moderate probability that the relationship is causal
+2
+Case–control or cohort studies with a high risk of
+confounding, bias or chance and a signiﬁcant risk
+that the relationship is not causal
+3
+Nonanalytical studies (for example case reports, case
+series)
+4
+Expert opinion, formal consensus
+RCT, randomized controlled trial. aStudies with a level of evi-
+dence ‘’ should not be used as a basis for making a recom-
+mendation.
+712 BAD guidelines for cutaneous warts 2014, J.C. Sterling et al.
+© 2014 British Association of Dermatologists
+British Journal of Dermatology (2014) 171, pp696–712
+Downloaded from https://academic.oup.com/bjd/article/171/4/696/6615605 by guest on 06 May 2026
+
+=== PAGE 18 ===
+of patients  
+with PsO achieved  
+PASI 75 at Week 4 
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+75.9% 
+(n=265/349)
+of patients 
+with PsO achieved 
+PASI 100 at 5 years3
+76.9% 
+(N=52)† 
+of biologic-naïve  
+and TNFi-IR PsA patients 
+achieved ACR 50 at  
+Week 104/100, respectively‡1,4–6
+of patients  
+with PsO achieved  
+PASI 100 at Week 16
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+68.2%
+(n=238/349)
+and
+50.6% 
+(n=135/267) 
+51.5% 
+(n=222/431)
+GB-BK-2500315 | July 2025
+UCB Biopharma SRL, 2025. All rights reserved.
+This promotional material has been created and funded by UCB Pharma Ltd and 
+is intended for healthcare professionals in the UK.
+BIMZELX is indicated for the treatment of: moderate to severe plaque PsO in adults 
+who are candidates for systemic therapy; active PsA, alone or in combination 
+with methotrexate, in adults who have had an inadequate response, or who have 
+been intolerant, to one or more DMARDs; active nr-axSpA with objective signs of 
+inflammation as indicated by elevated CRP and/or MRI, in adults who have responded 
+inadequately, or are intolerant, to NSAIDs; active AS in adults who have responded 
+inadequately or are intolerant to conventional therapy; and active moderate to severe 
+HS (acne inversa) in adults with an inadequate response to conventional systemic HS 
+therapy.4
+Prescribing information for United Kingdom click here.  
+Please refer to the SmPC for further information. 
+These data are from different clinical trials and cannot be directly compared.
+Co-primary endpoints PASI 90 and IGA 0/1 at Week 16 were met.**Secondary endpoints. †N= mNRI, missing data 
+were imputed with mNRI (patients with missing data following treatment discontinuation due to lack of efficacy 
+or a TRAE were counted as non-responders; multiple imputation methodology was used for other missing data). 
+‡43.9% (n=189/431), and 43.4% (n=116/267) of biologic-naïve and TNFi-IR PsA patients achieved the primary 
+endpoint of ACR 50 at Week 16 in BE OPTIMAL and BE COMPLETE, respectively (vs 10.0% [n=28/281] and 6.8% 
+[n=9/133] placebo, p<0.0001); 54.5% (n=235/431) and 51.7% (n=138/267) maintained it at Week 52 (NRI).4–6 ​
+ACR 50, ≥50% response in the American College of Rheumatology criteria; AS, ankylosing spondylitis; CRP, 
+C-reactive protein; DMARD, disease-modifying antirheumatic drug; HS, hidradenitis suppurativa; IGA, Investigator’s 
+Global Assessment; (m)NRI, (modified) non-responder imputation; MRI, magnetic resonance imaging; nr-
+axSpA, non-radiographic axial spondyloarthritis; NSAID, non-steroidal anti-inflammatory drug; PASI 75/90/100, 
+≥75/90/100% improvement from baseline in Psoriasis Area and Severity Index; PsA, psoriatic arthritis; PsD, psoriatic 
+disease; PsO, psoriasis; TNFi-IR, tumour necrosis factor-α inhibitor – inadequate responder; TRAE, treatment-
+related adverse event.
+References: 1. Gordon KB, et al. Lancet. 2021;397(10273):475–486. 2. Blauvelt. 2025. AAD Presentation 62275. 3. 
+Mease PJ, et al. Rheumatol Ther. 2024;11(5):1363–1382. 4. BIMZELX SmPC. 5. Ritchlin CT, et al. Ann Rheum Dis. 
+2023;82(11):1404–1414. 6. Coates LC, et al. RMD Open. 2024;10(1):e003855. 7. Strober B, et al. AAD 2024;oral 
+presentation.​
+This medicine is subject to additional monitoring. This will allow quick 
+identification of new safety information. Adverse events should be reported. 
+Reporting forms and information can be found at www.yellowcard.mhra.gov.uk for 
+the UK. Adverse events should also be reported to UCB Pharma Ltd at  
+UCBCares.UK@UCB.com or 0800 2793177 for UK.
+NO COMPROMISE, 
+JUST CLEARANCE
+BIMZELX was well tolerated, the most frequently reported adverse reactions were: upper respiratory tract infections 
+and oral candidiasis. Other common reported adverse reactions include tinea infections, ear infections, herpes simplex 
+infections, oropharyngeal candidiasis, gastroenteritis, folliculitis, headache, rash, dermatitis, eczema, acne, injection site 
+reactions, fatigue, and vulvovaginal mycotic infection (including vulvovaginal candidiasis).4
+Bimzelx®     (bimekizumab) offers 
+the opportunity for complete, fast,
+and lasting skin clearance and 
+proven PsA efficacy 1–7

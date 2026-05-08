@@ -1,0 +1,2922 @@
+=== PAGE 1 ===
+GUIDELINES
+BJD
+British Journal of Dermatology
+British Association of Dermatologists’ guidelines for the
+safe and effective prescribing of azathioprine 2011
+S.J. Meggitt, A.V. Anstey,* M.F. Mohd Mustapa, N.J. Reynolds and S. Wakelin§
+Department of Dermatology, Royal Victoria Inﬁrmary, Queen Victoria Road, Newcastle upon Tyne NE1 4LP, U.K.
+*Department of Dermatology, Royal Gwent Hospital, Cardiff Road, Newport, Gwent NP20 2UB, U.K.
+British Association of Dermatologists, Willan House, 4 Fitzroy Square, London W1T 5HQ, U.K.
+Institute of Cellular Medicine, Newcastle University, Framlington Place, Newcastle upon Tyne NE2 4HH, U.K.
+§Department of Dermatology, St Mary’s Hospital, Imperial College Healthcare Trust, Praed Street, London W2 1NY, U.K.
+Correspondence
+Simon Meggitt.
+E-mail: s.j.meggitt@ncl.ac.uk
+Accepted for publication
+21 July 2011
+Funding sources
+None.
+Conﬂicts of interest
+N.J.R. receives research grant support from Stiefel, a GSK Company,
+through a Knowledge Transfer Partnership Award and Astra Zeneca
+through a BBSRC CASE award, and sat on advisory boards (nonpersonal)
+for Abbott, Janssen-Cilag, Schering-Plough and Creabilis Therapeutics.
+A.V.A, M.F.M.M., N.J.R. and S.W. contributed equally to this project.
+This is an updated guideline prepared for the British Association of
+Dermatologists’ (BAD) Clinical Standards Unit, made up of the Therapy
+& Guidelines (T&G) Subcommittee and the Audit & Clinical Standards
+Subcommittee (A&CS). Members of the Clinical Standards Unit are: M.J.
+Tidman (Chairman T&G), L.C. Fuller (Chairman A&CS), J. McLelland,
+J. Lear, J. Hughes, A.J. McDonagh, S. Punjabi, N. Morar, D.A. Buckley,
+I. Nasr, P. Maycock (British National Formulary), S. Amin (British
+National Formulary), S.E. Hulley (British Dermatological Nursing
+Group), S.E. Haveron (BAD Scientiﬁc Administrator), M.F. Mohd
+Mustapa (BAD Clinical Standards Manager).
+Guidelines produced in 2004 by the British Association of
+Dermatologists; reviewed and updated 2011.
+DOI 10.1111/j.1365-2133.2011.10575.x
+1.0 Introduction
+Azathioprine is a thiopurine immunosuppressant drug that
+occupies an important place in the management of many
+autoimmune and inﬂammatory skin diseases. Its parent drug
+6-mercaptopurine (6-MP), and the closely related 6-thiogua-
+nine (6-TG), were originally developed for their anticancer
+properties, but thiopurines as a class are now more widely
+used for their anti-inﬂammatory and immunosuppressant
+effects. 6-MP and 6-TG have never found their way into rou-
+tine dermatological practice and these guidelines relate to aza-
+thioprine and its extensive on- and off-label applications for
+inﬂammatory dermatoses.
+Although azathioprine has been widely prescribed since the
+1960s, there continue to be developments in understanding of
+drug action, pharmacogenetics and toxicology. These offer the
+potential for improved and individualized azathioprine pre-
+scribing, but have also created areas of controversy and
+resulted in contradictory information for clinicians. Neverthe-
+less, a basic understanding of the issues relating to azathio-
+prine metabolism and mode of action is important for the
+dermatologist, and should allow better explanation of treat-
+ment to patients with optimized prescribing and monitoring
+of therapy.
+2.0 Purpose and scope
+The overall objective of the guideline is to provide up-to-date,
+evidence-based recommendations for the safe and effective use
+of azathioprine. The document aims to update and expand on
+the previous guidelines by (i) offering a complete reappraisal
+of all relevant literature since 1966 and focusing on key devel-
+opments over the past 5 years, in particular the applicability
+of thiopurine methyltransferase (TPMT) assessment to the clin-
+ical setting; (ii) addressing important, practical clinical ques-
+tions
+relating
+to
+the
+primary
+guideline
+objective;
+(iii)
+providing guideline recommendations with an evaluation of
+their health economic impact; and (iv) discussing potential
+developments and future directions. The guideline is presented
+as a detailed review with highlighted recommendations for
+practical use in the clinic, in addition to updated patient infor-
+mation.
+NHS Evidence has accredited the process used by the British Association of
+Dermatologists to produce guidelines. Accreditation is valid for 3 years from
+May 2010 and is applicable to guidance produced using the processes
+described in the British Association of Dermatologists’ guidelines development
+manual (Bell & Ormerod, 2009). More information on accreditation can be
+viewed at http://www.evidence.nhs.uk.
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+711
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 2 ===
+3.0 Stakeholder involvement and peer review
+The guideline working group consisted of dermatologists and
+a patient representative. The draft document was circulated to
+the British Association of Dermatologists (BAD) membership,
+the British Dermatological Nursing Group (BDNG), an immu-
+nologist and a hepatologist for comments and peer reviewed
+by the Clinical Standards Unit of the BAD (made up of the
+Therapy & Guidelines and Audit & Clinical Standards Subcom-
+mittees) prior to publication.
+4.0 Methodology
+This set of guidelines has been developed using the BAD’s rec-
+ommended methodology1 and with reference to the Appraisal
+of Guidelines Research and Evaluation (AGREE) instrument.2
+Recommendations were developed for implementation in the
+NHS using a process of considered judgment based on the evi-
+dence.
+PubMed,
+MEDLINE
+and
+EMBASE
+databases
+were
+searched up to January 2011 for randomized and nonrandom-
+ized controlled clinical trials, case series, case reports, open
+studies and research articles involving azathioprine and 6-MP.
+Due to the expected high number of results in the EMBASE
+search, which has a particular emphasis on drug literature,
+additional search protocols were used speciﬁcally to target key
+areas such as thiopurine-metabolizing enzymes and toxicity,
+as well as separating the results into predominantly derma-
+tology- and gastroenterology-based publications. Search terms
+and strategies are detailed in Appendix S1 (see Supporting in-
+formation). Searches were also carried out in the Cochrane,
+National Institute of Health and Clinical Excellence (NICE),
+Database of Uncertainties about the Effects of Treatments
+(DUET) and Royal College of Physicians (RCP) databases.
+Additional relevant references were also isolated from citations
+in reviewed literature, as well as independent targeted searches
+carried out by each co-author. All titles in the English lan-
+guage were screened, and those relevant for ﬁrst-round inclu-
+sion were selected for further scrutiny; the abstracts were then
+reviewed by all members of the working group and the full
+papers of relevant material were obtained following selection
+by common agreement. Speciﬁc selection criteria were not
+deemed necessary as the number of selected abstracts was rela-
+tively small (< 150) and there was consensus that the full
+papers were needed in most cases. The structure of the guide-
+lines was then discussed and different co-authors were allocated
+separate subsections. Each co-author then performed a detailed
+appraisal of the relevant literature, and all subsections were
+subsequently collated and edited to produce the ﬁnal guideline.
+5.0 Limitations of the guideline
+This document has been prepared on behalf of the BAD and is
+based on the best data available when the document was pre-
+pared. It is recognized that under certain conditions it may be
+necessary to deviate from the guidelines, and that the results
+of future studies may require some of the recommendations
+herein to be changed. Failure to adhere to these guidelines
+should not necessarily be considered negligent, nor should
+adherence to these recommendations constitute a defence
+against a claim of negligence.
+6.0 Plans for guideline revision
+The proposed revision date for this set of recommendations is
+set for 2016; where necessary, important interim changes will
+be updated on the BAD website.
+7.0 Azathioprine metabolism and
+pharmacogenetics
+This section aims to give an overview of the basis for the bio-
+logical effects of azathioprine and introduce some concepts
+related to dosing and toxicity which will be detailed later in the
+guideline. A widely experienced and important problem for the
+clinician using azathioprine is the large variability demonstrated
+by patients both in response to the drug and side-effects. In
+some patients this can be explained by increasingly well-charac-
+terized genetic differences in drug-metabolizing enzymes, but
+the role of other potential factors such as variability in drug
+absorption and bioavailability remains a matter for speculation.
+Azathioprine is a prodrug that is rapidly converted to 6-MP
+(Fig. 1), which is then metabolized by the purine salvage
+pathway. This is the usual cellular mechanism by which
+endogenous purines are interconverted and recycled. 6-MP is
+acted on by several competing pathways, and bioactivation
+occurs via a series of enzymes to form thioguanine nucleotides
+(TGNs). The major catabolic pathway is mediated by xanthine
+oxidase and produces thiouric acid. A third pathway of meth-
+ylation by the enzyme TPMT produces several intermediates,
+most of which are therapeutically inactive. A common poly-
+morphism in the TPMT gene, such that approximately 10% of
+individuals carry a low-activity variant allele, has been shown
+to be an important factor governing thiopurine toxicity. An
+increase in TPMT activity diverts metabolites from the activat-
+ing pathway and fewer TGNs are formed. This effectively
+amounts to a reduction in azathioprine dose with a theoretical
+decrease in pharmacological (and toxic) effects. The converse
+situation occurs with decreased TPMT activity, such that in the
+extreme situation, those individuals (0Æ3%)3,4 who inherit two
+low-activity variant TPMT alleles are highly likely to develop
+intense TGN-induced myelosuppression if given azathioprine
+at conventional doses. They are effectively receiving a massive
+thiopurine overdose and the profound and prolonged pancyto-
+penia may be fatal.5,6 A lesser degree of myelotoxicity, most
+commonly neutropenia, can also be seen in carriers of one
+variant TPMT
+allele who receive
+conventional
+thiopurine
+doses.7,8 These ﬁndings and their relevance to both toxicity
+and efﬁcacy have been elucidated in a series of seminal papers
+over the past 30 years,3,9,10 and there are a number of excel-
+lent reviews of this topic.11
+Other than TPMT, different enzymes and intermediates that
+may also be clinically relevant are gradually being described
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+712 Guidelines for prescribing azathioprine, S.J. Meggitt et al.
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 3 ===
+and added to the multifaceted overall picture. Much of this lit-
+erature is beyond the scope of the current guideline. How-
+ever, those factors which either offer additional insight into
+efﬁcacy and toxicity, or may affect future clinical practice will
+be reviewed, and are also shown in Figure 1.
+8.0 Effective use of azathioprine: review of the
+evidence
+8.1 Indications
+Licensed and unlicensed indications are listed in Table 1 (see
+Appendix 1 for Strength of recommendations and levels of
+evidence).
+8.11 Licensed indications
+Autoimmune bullous disorders
+Although licensed for pemphigus vulgaris, the evidence for this
+indication is less than robust.16 A recent systematic review of 11
+studies of interventions for pemphigus vulgaris and pemphigus
+foliaceus concluded that although the quality of included studies
+was not high, there was evidence to support a steroid-sparing
+effect of azathioprine17 which appeared greater than that of both
+cyclophosphamide or mycophenolate mofetil.16 However, look-
+ing at induction of remission, there is insufﬁcient evidence to in-
+dicate that azathioprine (or any other second-line agent
+including cyclophosphamide and mycophenolate) is more effec-
+tive than glucocorticoids alone.16 Two nonblinded, randomized
+controlled trials (RCTs) reported that mycophenolate appeared
+HN
+N
+N
+H
+N
+S
+N
+N
+O2N
+CH3
+HN
+N
+N
+H
+N
+S
+HN
+N
+N
+N
+S
+O
+OH
+OH
+P
+HN
+N
+N
+N
+S
+O
+HO
+P
+HN
+N
+N
+N
+S
+O
+H2N
+P
+HN
+N
+N
+N
+S
+O
+P
+CH3
+HN
+N
+N
+H
+N
+S
+CH3
+HN
+N
+N
+N
+S
+O
+OH
+OH
+OH
+OH
+OH
+OH
+OH
+OH
+HO
+CH3
+S
+N
+N
+NO2
+H3C
+N
+N
+N
+H
+N
+SH
+OH
+HO
++
+Fig 1. Thiopurine metabolism. The conversion of azathioprine to 6-mercaptopurine (6-MP) with subsequent metabolism by the endogenous
+purine salvage pathway is shown. The major active metabolites are thioguanine nucleotides (TGNs) and the major catabolic endpoints are thiouric
+acid and methylmercaptopurine (MeMP). This diagram is a signiﬁcant simpliﬁcation and only shows the key intermediates and enzymes that are
+of relevance to these guidelines. (A) Azathioprine reacts with glutathione and is cleaved to the glutathionyl derivative of 1-methyl-4-
+nitroimidazole and 6-MP. It is possible that the imidazole moiety may have a therapeutic effect,12 but this has not been investigated in vivo.
+(B) The activation pathway is shown as a series of enzymatically mediated steps [hypoxanthine guanine phosphoribosyl transferase (HGPRT),
+inosine monophosphate dehydrogenase (IMPD)] from left to right in the diagram, and results in the formation of TGNs. These may exert their
+biological effects in several ways,13,14 with incorporation of the false base into DNA being the most widely cited mechanism. (C) Thiopurine
+methyltransferase (TPMT) is a key enzyme in the pathway, as genetic variations in enzyme activity can explain differences in TGN proﬁles
+between individuals. Methylation by TPMT diverts metabolism away from TGN production, such that individuals homozygous for TPMT variant
+alleles will have absent TPMT activity and consequently develop very high TGN levels, which are myelotoxic. (D) Other enzymes [inosine
+triphosphate pyrophosphatase (ITPase)] and thiopurine intermediates [methylthioinosine monophosphate (MeTIMP)] may also affect toxicity and
+efﬁcacy. For example, MeTIMP is an inhibitor of de novo purine synthesis in vitro.15 However, the relevance of these factors in the clinical setting is
+much less certain than the TPMT ⁄TGN paradigm (see section 13.0). XO, xanthine oxidase; MeMPR, methylmercaptopurine riboside; TIMP,
+thioinosine monophosphate; TITP, thioinosine triphosphate; TXMP, thioxanthine monophosphate; TGMP, thioguanine monophosphate; TGDP,
+thioguanine diphosphate; TGTP, thioguanine triphosphate; GSH, glutathione; GS-imidazole, glutathionyl derivative of 1-methyl-4-nitroimidazole.
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+Guidelines for prescribing azathioprine, S.J. Meggitt et al. 713
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 4 ===
+equally efﬁcacious as azathioprine in inducing remission in
+pemphigus.17,18 However, an intention-to-treat (ITT) analysis
+of one of these studies18 suggested that mycophenolate may be
+more effective in achieving disease control than azathioprine.16
+Lupus erythematosus
+Azathioprine is licensed for use in systemic lupus erythemato-
+sus, and there is evidence to indicate superiority for mainte-
+nance compared with cyclophosphamide, following induction
+in patients with lupus nephritis.19 In cutaneous lupus, there
+are no RCTs to indicate efﬁcacy although several case series
+suggest that azathioprine may be a useful treatment.20–22
+Dermatomyositis and polymyositis
+Azathioprine appears effective as a second-line agent in
+patients with dermatomyositis (DM) or polymyositis (PM),
+with several case series showing improvement in 57–75% of
+patients.23 Two RCTs have compared azathioprine with meth-
+otrexate (MTX), although the quality of this evidence was
+considered to be poor in a systematic review.24 Efﬁcacy
+appeared similar in a RCT (n = 28, published as an abstract
+only) although MTX showed a better side-effect proﬁle.25 In a
+6-month crossover RCT (n = 30), a combination of weekly
+oral MTX plus daily azathioprine was compared with intrave-
+nous MTX alone (every 2 weeks) in resistant DM or PM.26
+Using ITT analysis, a greater number of patients improved
+with the MTX ⁄azathioprine combination compared with intra-
+venous MTX (P = 0Æ025), although the study lacked the
+power to compare both treatments directly. In juvenile DM,
+azathioprine has been demonstrated to have a steroid-sparing
+effect27 and may also be beneﬁcial in patients who have failed
+other immunosuppressive therapies.28
+8.12 Unlicensed indications
+Autoimmune bullous disorders
+Azathioprine is widely used as a steroid-sparing agent in auto-
+immune bullous disorders including bullous pemphigoid. For
+example, a recent survey in 42 German hospitals showed that
+azathioprine is used as a ﬁrst-line therapy adjunctive to oral
+corticosteroids for pemphigoid in 69% of hospitals.29 A sys-
+tematic review of therapeutic modalities for pemphigoid con-
+cluded
+that
+the
+combined
+effectiveness
+of
+azathioprine
+adjunctive to corticosteroids had not been established although
+there was evidence to support a steroid-sparing effect (by up
+to 50%).30 Since then, a multicentre, randomized, nonblinded
+trial showed mycophenolate mofetil and azathioprine to have
+similar efﬁcacy in combination with corticosteroids in induc-
+ing remission of bullous pemphigoid.31 Liver toxicity was
+seen at a higher frequency in the azathioprine group whereas
+infections appeared more common in patients treated with
+mycophenolate mofetil.31,32 Thus, while the evidence base to
+support the use of azathioprine as an adjunctive treatment for
+bullous pemphigoid is lacking, this is also true for other sec-
+ond-line agents that may be considered. For the group of
+patients who have incomplete control with oral prednisolone
+and require alternative therapeutic regimes, adjunctive azathio-
+prine will continue to be used in clinical practice until further
+evidence is forthcoming, particularly as dermatologists are
+usually familiar with azathioprine and its side-effect proﬁle.
+Inﬂammatory skin diseases
+Eczema
+Although azathioprine is not licensed for use in atopic eczema,
+there is now strong evidence (from two RCTs) for a statistic-
+ally signiﬁcant and clinically meaningful response to azathio-
+prine. Both studies used the drug as oral monotherapy in
+moderate-to-severe, refractory disease.33,34 One study showed
+that
+overall,
+at
+12 weeks,
+azathioprine
+induced
+a
+37%
+improvement
+in
+disease
+activity
+compared
+with
+a
+20%
+improvement with placebo.34 This was accompanied by paral-
+lel improvement in quality of life and patient symptoms. A
+double-blind, placebo-controlled trial has also shown azathio-
+prine to be of beneﬁt in chronic actinic dermatitis.35
+Psoriasis
+There is limited evidence to suggest that azathioprine may be
+effective as a monotherapy in the treatment of moderate-to-
+severe psoriasis36 but it is now rarely used in clinical practice.
+However, a recent retrospective review suggests azathioprine
+may be combined with biologics such as inﬂiximab as an
+alternative to MTX for long-term maintenance.37
+Vasculitis
+Azathioprine shows therapeutic efﬁcacy in a variety of vascu-
+litides and Behc¸et disease.38 In Wegener’s granulomatosis, a
+RCT has shown that azathioprine is as effective as cyclophos-
+phamide in maintaining remission following induction by
+cyclophosphamide plus prednisolone.39 Similarly, a prospec-
+tive, open-label trial showed azathioprine to be as effective as
+Table 1 Licensed and unlicensed indications for azathioprine in the
+treatment of dermatological disorders
+Licensed indications
+Unlicensed indications
+Systemic lupus erythematosus
+Atopic dermatitis
+Dermatomyositis
+Psoriasisa
+Pemphigus vulgarisb
+Bullous pemphigoid
+Chronic actinic dermatitis
+Pyoderma gangrenosum
+Pityriasis rubra pilaris
+Wegener’s granulomatosis
+Cutaneous vasculitis
+aStrength of recommendation D; level of evidence 3; bStrength of recommendation
+B; level of evidence 1 (see Appendix 1).
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+714 Guidelines for prescribing azathioprine, S.J. Meggitt et al.
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 5 ===
+MTX for maintenance therapy.40 There is also limited evidence
+for azathioprine use in rheumatoid vasculitis.41
+In severe cutaneous leucocytoclastic vasculitis unresponsive
+to ﬁrst-line therapy including dapsone, treatment with system-
+ic
+corticosteroids
+combined
+with
+azathioprine
+may
+be
+considered, although evidence for this is limited to case
+series.20 There is insufﬁcient evidence to support the use of
+azathioprine in the management of Henoch–Scho¨nlein purpura
+nephritis.42 No studies have addressed whether azathioprine
+affects the development of kidney disease in Henoch–Scho¨n-
+lein purpura, but this is also the case for other immunosup-
+pressive agents and corticosteroids.43
+Other indications
+There is a lack of formal studies but there is limited evidence
+that azathioprine may be effective in other inﬂammatory skin
+conditions such as pyoderma gangrenosum44 and pityriasis ru-
+bra pilaris.45
+Recommendations: unlicensed indications for
+azathioprine
+There is evidence to support the use of azathioprine outside its
+product licence for the following indications:
+• Atopic eczema (Strength of recommendation A; level of evidence 1+)
+• Maintenance therapy for Wegener’s granulomatosis (Strength of
+recommendation B; level of evidence 1+)
+• Behc¸et disease (Strength of recommendation B; level of evidence 1+)
+• Bullous pemphigoid (Strength of recommendation B; level of evidence
+1))
+8.2 The role of thiopurine methyltransferase
+measurement in azathioprine prescribing
+This section investigates the evidence for a link between TPMT
+and both azathioprine effectiveness and toxicity. Although
+these are theoretically affected by variations in TPMT activity,
+the results of studies are sometimes conﬂicting, and conse-
+quently the clinical importance of TPMT in certain situations
+remains uncertain.
+8.21 Thiopurine methyltransferase and azathioprine
+toxicity
+A growing number of studies clearly support the association
+between absent TPMT activity and acute severe neutropenia in
+patients
+receiving
+conventional
+doses
+of
+azathioprine
+or
+6-MP.5,6,9 A meta-analysis of 67 studies, the majority retro-
+spective cohort in design, showed that 86% of patients with
+two
+variant
+TPMT
+alleles
+developed
+myelosuppression.46
+Recently, a controlled trial in 333 patients attempted to clarify
+the value of pretreatment TPMT genotyping in predicting hae-
+matological adverse events due to azathioprine.4 The recruit-
+ment target (n = 500) was not met, but in agreement with
+other reports, the one patient who developed profound neu-
+tropenia (nongenotyped arm) was subsequently shown to
+have a homozygous TPMT null mutation. Prevention of poten-
+tially life-threatening myelosuppression by assessing pretreat-
+ment TPMT status offers the most compelling argument for
+the use of TPMT testing in the clinic. For a discussion of the
+evidence for the cost-effectiveness of this test, see section
+12.4.
+Importantly,
+many
+studies
+have
+also
+highlighted
+that
+patients with one variant TPMT allele (intermediate-range
+TPMT
+activity)
+who
+receive
+‘conventional’
+doses
+of
+thiopurines may be at greater risk of toxicity from ther-
+apy.7,8,47–49 Unfortunately, there are only limited publications
+pertaining to patients with dermatological conditions, includ-
+ing one retrospective review of 139 patients with pemphigus
+vulgaris which failed to demonstrate an association.50 There-
+fore, for the purposes of these guidelines, relevant literature
+for nondermatological indications is also reviewed.
+Whether patients heterozygous at the TPMT locus have an
+increased risk of adverse events in general remains unclear
+from the literature. A few studies have suggested that nausea
+is associated with TPMT status,51,52 but others have not,53–55
+and all of these studies were relatively small. One larger, pro-
+spective study of azathioprine for inﬂammatory bowel disease
+(IBD) indicated that 17% of 33 patients with intermediate-
+range TPMT activity reported nausea ⁄vomiting, compared with
+8% of 366 patients with normal TPMT status.47 However, the
+authors of the study did not discuss this ﬁnding or report the
+statistical signiﬁcance of the association.
+The evidence for haematological adverse events in patients
+with TPMT mutations is much stronger. In a recent meta-analy-
+sis of 67 studies, the odds ratio (OR) for developing azathio-
+prine-induced leucopenia for those with intermediate-range
+TPMT compared with normal activity has been calculated to be
+4Æ2 [95% conﬁdence interval (CI) 3Æ2–5Æ5].46 This is similar to
+the result of the largest single study to assess TPMT activity and
+haematological toxicity, which examined 394 consecutive
+patients with IBD treated with azathioprine 2Æ0–2Æ5 mg kg)1.
+The probability of myelotoxicity in the normal TPMT activity
+group was shown to be 3Æ5% compared with 14Æ3% in the
+intermediate TPMT activity group (95% CI 1Æ37–14Æ9, OR
+4Æ5).47 This is an important study, as the sample size was large,
+the design was prospective, and the result was statistically
+signiﬁcant. The authors subsequently suggested the need for a
+50% dose reduction in those with intermediate TPMT activity.
+However, a prospective study by the same authors (Gisbert
+et al.56) in 131 patients with IBD whose azathioprine dosage
+was determined by TPMT status reported that three of the four
+patients who suffered from myelotoxicity had normal baseline
+TPMT activity, with the fourth having intermediate levels. It
+can be concluded from this result that dose reduction for inter-
+mediate-range TPMT activity does not necessarily prevent the
+occurrence of neutropenia, as myelotoxicity can occur in the
+presence of normal TPMT activity. This is borne out by several
+other reports which suggest that the occurrence of bone mar-
+row toxicity is often independent of TPMT status. One study
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+Guidelines for prescribing azathioprine, S.J. Meggitt et al. 715
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 6 ===
+indicated that TPMT mutations were absent in 73% of patients
+with Crohn disease who had experienced severe myelosuppres-
+sion with azathioprine,57 indicating that pretreatment TPMT
+measurement should not be seen as a substitute for standard
+haematological monitoring.58
+The issue of whether to reduce the dose in individuals with
+intermediate-range TPMT activity (in order to minimize the
+risk of bone marrow toxicity) remains a matter for debate. In
+addition to Gisbert et al.,56 others have reported the use of this
+approach.34,59 Based on a retrospective study of 28 patients
+with dermatological conditions, Snow and Gibson60 proposed
+a TPMT-based, three-tier azathioprine dose schedule, with one
+dose for patients with TPMT in the heterozygote range and
+two incremental doses for TPMT activity in the homozygote
+range. Subsequently, this regime was adapted in a pilot61 and
+then a RCT of azathioprine for atopic eczema using a two-tier
+regime.34 In the RCT, no patients with intermediate TPMT
+activity receiving reduced azathioprine doses developed neu-
+tropenia, yet efﬁcacy seemed to be maintained.34 However,
+patient numbers with TPMT in the intermediate range were
+small, and toxicity was not a primary outcome measure of this
+study. Two studies in patients with autoimmune bullous dis-
+orders have addressed the issue of TPMT activity and dosing.
+A retrospective study (n = 35) showed complete remission
+with no leucopenia in two intermediate-range patients (azathi-
+oprine mean dose 1Æ7 mg kg)1 daily).62 In a prospective study
+(n = 27), patients with normal TPMT activity received azathi-
+oprine up to 250 mg per day and intermediate-range patients
+received 25–75 mg per day, with no myelotoxicity occurring
+over a median of 13 months.63 For suggestions on TPMT-
+based azathioprine dosing based on these and other studies
+see section 10.1 and Table 2.
+Recommendations: TPMT and azathioprine toxicity
+• There is strong evidence that baseline testing predicts severe
+neutropenia in patients with absent TPMT activity (Strength of
+recommendation A; level of evidence 1+)
+• There is good evidence that intermediate TPMT activity is asso-
+ciated with myelotoxicity in patients receiving conventional aza-
+thioprine doses (Strength of recommendation B; level of evidence 2++)
+• TPMT testing only identiﬁes a proportion of individuals at in-
+creased risk of haematological toxicity, hence the continued
+need for regular monitoring of blood counts irrespective of
+TPMT status (Strength of recommendation B; level of evidence 2++)
+• TPMT screening should not be declined by healthcare providers
+on the basis of cost-effectiveness (see section 12.4) (Strength of
+recommendation B; level of evidence 2++)
+8.22 Thiopurine methyltransferase, thioguanine
+nucleotides and azathioprine efﬁcacy
+The link between low TPMT levels and increased risk of myel-
+otoxicity was elucidated in patients with acute childhood lym-
+phoblastic leukaemia receiving 6-MP.9 With this came the
+parallel understanding that the concomitant high levels of
+TGNs (see Fig. 1) were also associated with better survival.10
+Since then the relationship between efﬁcacy and these cellular
+factors has been investigated in inﬂammatory conditions trea-
+ted with lower doses of thiopurines. Retrospective studies in
+IBD have conﬁrmed that pretreatment measurement of TPMT
+might predict clinical response to azathioprine.51,64 In a pro-
+spective study of 207 patients with IBD, intermediate-range
+TPMT activity was associated with a greater chance of clinical
+response compared with higher enzyme activity.65
+Many studies in IBD66–68 and after renal transplantation69
+have now correlated TGN levels with efﬁcacy. For example, in
+a prospective study of 92 paediatric patients with IBD, TGN
+levels > 235 pmol per 8 · 108 red blood cells (RBCs) were
+highly correlated
+with a positive therapeutic
+response.67
+Although other studies70 (a number retrospective) have failed
+to demonstrate a relationship, a meta-analysis of 12 studies on
+IBD provides
+evidence that higher
+TGN levels (> 230–
+260 pmol per 8 · 108 RBCs) are associated with increased
+efﬁcacy (remission).71 Consequently, a therapeutic range for
+TGNs in IBD of 235–450 pmol per 8 · 108 RBCs is now
+widely cited, although there is less evidence to support the
+recommended ‘toxic’ upper limit.72
+Unfortunately, studies measuring TGNs in dermatological
+disease are limited; one report showed the average TGN level
+associated with clinical response in immunobullous disease to
+be 179 pmol per 8 · 108 RBCs.63 Although conclusions
+should be drawn from a single study with caution, this sug-
+gests that the therapeutic threshold for TGNs, at least for
+immunobullous disease, might be a little lower than IBD.
+9.0 Safe use of azathioprine: review of the
+evidence
+Although azathioprine is effective in many inﬂammatory der-
+matological diseases, side-effects are common and can restrict
+use of the drug. An understanding of the potential toxic effects
+is important both for safe usage and to maximize efﬁcacy.
+Side-effects can be split into dose-dependent, nonallergic and
+idiosyncratic dose-independent, presumed allergic. The major-
+ity of adverse events cannot be explained by variations in
+TPMT activity or thiopurine metabolite patterns. It is helpful to
+view side-effects broadly as those occurring in the short, med-
+ium and long term. When starting patients on azathioprine the
+emphasis during initial consultations should be on vigilance
+for potential early toxicity. Minor adverse effects are relatively
+common, and either resolve spontaneously or respond to sim-
+ple measures such as dose adjustment. Patients should be pre-
+pared for this eventuality in order to maximize compliance.
+Table 2 Suggested thiopurine methyltransferase (TPMT)-based
+maintenance doses for dermatological conditions
+TPMT range
+Azathioprine maintenance dose (mg kg)1 daily)
+Absent
+In general unsuitable for azathioprine
+Intermediate
+1Æ0–1Æ5
+Normal
+2Æ0–3Æ0
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+716 Guidelines for prescribing azathioprine, S.J. Meggitt et al.
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 7 ===
+9.1 Short-term toxicity
+9.11 Nausea
+The most frequently observed adverse effect of azathioprine is
+isolated, dose-dependent nausea. Patients with true azathio-
+prine hypersensitivity also exhibit nausea as part of a wider
+symptom complex, but management of these patients is differ-
+ent and is described separately. Nausea early in the course of
+azathioprine treatment is common and usually resolves after a
+few weeks without any alteration of dose. This tendency is
+reﬂected in the empirical approach of gradual dose escalation
+which has been practised by prescribers for years. There are
+insufﬁcient data to allow exact guidelines to be formulated for
+this process. However, two recent RCTs of azathioprine for
+atopic
+eczema
+differed
+in
+their
+use
+of
+ﬁxed
+dosing33
+(2Æ5 mg kg)1)
+vs.
+dose
+escalation
+(e.g.
+2Æ0 mg kg)1
+for
+4 weeks increasing to 2Æ5 mg kg)1 in patients with normal-
+range TPMT activity).34 There was a 20% difference in
+dropout rate between the studies due to toxicity and nonad-
+herence; greater efﬁcacy overall was demonstrated in the
+group receiving a lower initial dose. However, even with dose
+escalation, one-quarter of patients had nausea which limited
+maximum achievable dose or resulted in treatment with-
+drawal.34 Several commonly used approaches to reduce nausea
+in this situation include taking azathioprine with or after food,
+splitting the daily dose, and co-prescription of antiemetics. If
+these strategies fail, then there is also evidence that switching
+to 6-MP can reduce gastrointestinal side-effects.73
+Recommendations: managing nausea
+(Strength of recommendation D; level of evidence 4)
+• Early, mild nausea is a common and often self-limiting side-
+effect of azathioprine
+• Gradual dose escalation may be useful in minimizing initial
+nausea
+• Moderate nausea can be managed by
+s Using divided daily doses
+s Taking azathioprine after food
+s Temporary dose reduction
+s Antiemetics
+• Nausea associated with other symptoms such as fever, myalgia
+or arthralgia suggests hypersensitivity and should be managed
+differently (see section 9.12)
+9.12 Hypersensitivity
+Azathioprine hypersensitivity is an idiosyncratic, immunologi-
+cally mediated reaction that presents with a distinct symptom
+complex within weeks of starting the drug. It is probably
+underdiagnosed, as symptoms are easily confused with infec-
+tion or underlying disease.74 Hypersensitivity is a potentially
+serious adverse event, although fatality appears to be rare.75
+Reports are conﬁned to retrospective case series and conse-
+quently the incidence is unknown. However, in a prospective
+series of 79 patients with atopic eczema treated with azathio-
+prine, ﬁve developed symptoms suggestive of hypersensitiv-
+ity.76 It was speculated that the abnormal immunity in these
+patients may increase the likelihood of drug hypersensitivity
+over nonatopic individuals.34
+Hypersensitivity can manifest with generalized or organ-
+speciﬁc symptoms. Fever, myalgia, arthralgia and nausea are
+common features; more rarely hepatitis, interstitial nephritis77
+or renal failure78 are seen. In severe cases hypotension and
+shock can occur.79 Rash, usually maculopapular, has been
+described, but it is possible that some reported eruptions,
+such as erythema nodosum,80 relate to the underlying condi-
+tion rather than the hypersensitivity reaction. Pneumonitis
+has been reported infrequently, mainly in renal transplant
+patients and patients with IBD.81 Azathioprine-induced pan-
+creatitis is also rare82 and appears to be restricted to patients
+with Crohn disease83 (see section 10.83).
+Conﬁrming hypersensitivity with rechallenge can produce
+more severe symptoms, especially with conventional azathio-
+prine doses; extreme caution is therefore recommended when
+considering this approach,84 with the use of the smallest pos-
+sible azathioprine dose. If symptoms of hypersensitivity were
+severe, then rechallenge in a hospital setting with access
+to resuscitation facilities is advised. In up to 60% of azathio-
+prine-hypersensitive patients 6-MP may be a safe alterna-
+tive,85–88 suggesting that in these individuals immunological
+sensitivity is directed against the imidazole rather than the
+thiopurine moiety of the azathioprine molecule.
+9.2 Medium-term toxicity
+9.21 Myelotoxicity
+Bone marrow suppression, usually manifested as neutropenia,
+is a potentially serious and not uncommon dose-dependent
+side-effect of azathioprine. Detailed analysis of early trials on
+azathioprine (which included rates of haematological adverse
+events) have previously been collated and summarized.89 The
+range of azathioprine-induced neutropenia in these 10 studies
+was 5–30% with a mean of 19%. For a review of the relation-
+ship between myelotoxicity and TPMT pharmacogenetics, see
+section 8.21.
+9.22 Susceptibility to infection
+It is possible that azathioprine may increase susceptibility to
+infection even in the absence of neutropenia, although evi-
+dence for this is limited. Mild lymphopenia is quite com-
+monly seen in patients receiving thiopurines90 and this may
+be a relevant factor. Organ transplant recipients receiving
+azathioprine in conjunction with other immunosuppressants
+do have an increased risk of infections, presumably due to the
+degree of immunosuppression achieved. Varicella zoster virus
+(VZV) infections have been shown to occur more commonly
+in patients with IBD receiving azathioprine.91 VZV infection
+(chicken pox ⁄shingles) is usually a benign and self-limiting
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+Guidelines for prescribing azathioprine, S.J. Meggitt et al. 717
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 8 ===
+disease, but patients taking immunosuppressant medication
+are susceptible to more severe disease and its complications92
+(see Recommendations for management of VZV in this
+group). However, an increase in infections in general has not
+been demonstrated in cohorts of patients with IBD93 or atopic
+eczema34 receiving azathioprine monotherapy. Nevertheless,
+this remains a theoretical risk and careful selection of patients
+is required prior to starting azathioprine; reactivation of latent
+infections such as tuberculosis has been reported.94
+Recommendations: managing VZV in patients
+receiving azathioprine92
+(Strength of recommendation D; level of evidence 4)
+• Consider temporary withdrawal of azathioprine
+• Prompt use of oral antivirals (aciclovir, valaciclovir or famciclo-
+vir) in all patients
+• Intravenous antiviral therapy desirable for disseminated or oph-
+thalmic VZV
+9.23 Hepatotoxicity
+Mild derangement of liver blood tests due to azathioprine is
+not uncommon and usually has no serious clinical implica-
+tions. In contrast, severe hepatotoxicity is rare. Liver injury
+occurs in two patterns: (i) acute idiosyncratic drug-induced
+liver injury (DILI) and (ii) nodular regenerative hyperplasia.
+The former may either be cholestatic (bilirubin and alkaline
+phosphatase disproportionately raised compared with transam-
+inases) or hepatocellular (transaminases raised disproportion-
+ately). Previous classiﬁcations of DILI as either hypersensitivity
+or dose-dependent are now not considered helpful [G. Aithal
+(University Hospitals NHS trust, Nottingham, U.K.), personal
+communication].
+Nodular regenerative hyperplasia seems to be exclusive to
+patients with IBD and organ transplant recipients, and can
+occur after several years of azathioprine therapy. In contrast,
+other forms of thiopurine-induced liver injury occur most
+commonly during the ﬁrst few months of therapy and usually
+resolve completely on azathioprine withdrawal.95 In compari-
+son with hepatocellular DILI, cholestatic injury takes longer to
+resolve after stopping azathioprine and in some cases has pro-
+gressed despite drug withdrawal.95 For both forms of DILI,
+there is no incidence data speciﬁc to dermatological conditions
+in azathioprine-treated patients, although useful inferences can
+be drawn from a recent systematic review of hepatotoxicity in
+patients with IBD. The study included 2992 patients and dem-
+onstrated a mean annual DILI rate (abnormal liver blood tests
+per patient-year) of 1Æ4%.95 However, patients with inﬂamma-
+tory skin disease and patients with IBD may have different
+susceptibilities to azathioprine-induced liver damage.
+In the relatively common situation of mild derangement of
+liver blood tests, values often return to normal without alter-
+ation of dose or drug withdrawal, a phenomenon termed
+adaption. The following approaches should be used if abnor-
+malities persist or worsen:95 when initial abnormalities are
+not transient or are marked (a precise cut-off point has not
+been determined, but a guide for transaminases would be
+greater than twice the upper limit of normal), an initial dose
+reduction of 50% is recommended;95 if values normalize, the
+initial dose may cautiously be prescribed again with more
+frequent monitoring of liver blood tests thereafter.95 This
+approach was used in the only prospective study of thiopurine
+hepatotoxicity to date; almost half the patients were subse-
+quently able to continue on the full dose.96
+In contrast to the increased likelihood of myelotoxicity with
+low TPMT activity, several studies suggest that TPMT activity
+in the high normal range may confer an increased risk of liver
+damage from thiopurine drugs, probably due to elevated levels
+of methylated thiopurine metabolites [predominantly methyl-
+mercaptopurine riboside (MeMPR), see Fig. 1].97,98 In a study
+of 173 patients with IBD treated with azathioprine or 6-MP,
+4Æ6% developed hepatotoxicity; mean MeMPR levels were
+signiﬁcantly higher in these patients compared to those with
+no adverse effects.99 However, 90% of patients with high
+MeMPR levels above the third quartile had no hepatotoxicity,
+while 40% of patients with hepatotoxicity had normal MeMPR
+levels below this cut-off. Therefore, with such poor sensitivity
+and speciﬁcity the measurement of MeMPR is neither superior
+to, nor should it replace, the routine monitoring of liver
+blood tests to screen for azathioprine-induced hepatotoxicity.
+Recommendations: managing hepatotoxicity
+(Strength of recommendation B; level of evidence 2++)
+• Mild derangement of liver blood tests is not uncommon and
+may not require alteration of therapy
+• Various patterns of serious liver injury can more rarely be seen
+at any stage of azathioprine therapy
+• Detection of any abnormal liver blood tests should prompt both
+careful evaluation and increased frequency of repeat testing;
+dose reduction or drug withdrawal may be needed
+9.3 Long-term toxicity
+9.31 Carcinogenesis
+Background
+One paradox of the action of thiopurine drugs is their efﬁcacy
+against some malignancies such as acute lymphoblastic leukae-
+mia, but carcinogenicity in other situations. However, with
+the possible exception of skin cancer, it is unlikely that azathi-
+oprine, when used within certain constraints for dermato-
+logical
+diseases,
+results
+in
+any
+measurable
+or
+clinically
+important increase in risk of developing malignancy. This area
+is both controversial and complex and requires careful discus-
+sion with patients (see section 10.82).
+Before prescribing any immunosuppressant drug, it is worth
+considering that the past few years have seen a revolution in
+the treatment of some inﬂammatory skin diseases. There has
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+718 Guidelines for prescribing azathioprine, S.J. Meggitt et al.
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 9 ===
+been a vast increase in the use of novel immunosuppressants
+with unknown long-term safety proﬁles. These drugs are now
+superseding more traditional therapies such as thiopurines. In
+contrast, epidemiological data on the long-term toxicity of
+thiopurines are available from several medical disciplines. This
+safety record should be borne in mind and be part of the
+general discussion with a patient when choosing an immuno-
+suppressant therapy.
+Ultraviolet radiation and skin cancer
+It is widely recognized that the risk of developing nonmel-
+anoma skin cancer (NMSC) is increased by the long-term
+administration of azathioprine to solid-organ transplant recipi-
+ents. The co-prescription of several immunosuppressants in
+this situation is likely to be a major contributor to this
+risk,100,101 which may be elevated more than 200-fold.102
+There is also evidence of skin cancer risk in thiopurine-treated
+patients with IBD.103 Recently, a nested case–control study104
+of 742 cases of NMSC and 2968 matched controls (both
+groups of IBD patients) showed there to be a signiﬁcant asso-
+ciation with new NMSC and thiopurine use for longer than
+1 year (adjusted OR 4Æ3; 95% CI 3Æ1–6Æ0). The use of antitu-
+mour necrosis factor (TNF) agents, but not MTX, mycopheno-
+late or ciclosporin, was also signiﬁcantly associated with
+NMSC development. These results implicate thiopurines above
+other immunosuppressants in the development of NMSC in
+the IBD population. Although there are no studies addressing
+this issue for inﬂammatory skin disease, the results from the
+IBD study clearly have important implications for dermatology
+patients receiving azathioprine for more than 1 year.
+Considerable progress has recently been made in determin-
+ing the mechanism of photocarcinogenesis by the combination
+of thiopurine drugs and ultraviolet (UV) radiation. UVA wave-
+lengths (320–400 nm), which account for 95% of solar UV
+radiation, are poorly absorbed by purines in DNA and are
+normally considered to be less harmful than UVB. However,
+6-TG has a maximum absorbance at 340 nm. Absorption of
+UVA photons by 6-TG-substituted DNA generates reactive
+oxygen species which cause lethal and mutagenic DNA dam-
+age and may then permit the development of NMSCs.105,106
+Consistent with this, azathioprine administration has been
+shown to confer increased UVA sensitivity in normal skin,
+demonstrated by reduced minimal erythema doses to UVA.107
+Taken together, both epidemiological and laboratory data
+suggest that UV exposure is an important carcinogenic hazard
+for thiopurine-treated patients. This has major implications for
+dermatology patients receiving long-term azathioprine therapy
+and the need for education about rigorous photoprotection is
+highly important.
+One group of thiopurine-treated patients that deserves spe-
+cial consideration is organ transplant recipients who may have
+already developed multiple dysplastic keratoses and NMSCs.
+This group poses a particular therapeutic challenge; they
+should ideally be examined regularly in dedicated dermatology
+clinics by clinicians with an interest in skin cancer and all
+patients should be educated to report any skin lesions that
+develop in intervening periods. For new transplant patients,
+management should be proactive with education about sun
+protection beginning at the time of (or even before) trans-
+plantation.108 For those transplant patients who continue to
+develop NMSCs, there is some evidence to suggest that switch-
+ing from azathioprine to drugs with a lower theoretical risk of
+photocarcinogenesis, such as mycophenolate mofetil or siroli-
+mus, may result in a reduced frequency of cancer and precan-
+cerous keratoses.109
+Lymphoma risk
+Prolonged use of azathioprine in combination with other im-
+munosuppressants in solid-organ transplant recipients increases
+the risk of developing several malignancies, with non-Hodg-
+kin’s lymphoma occurring second only in frequency to
+NMSC.110 Much of the risk may be attributable to the inten-
+sity of immunosuppression rather than azathioprine per se, and
+oncogenic viruses such as Epstein–Barr virus are thought to be
+a major factor.110,111 Most malignancies occur early, usually
+in the ﬁrst year after transplant. This chronology contrasts
+with UV-related NMSC development, which mainly develops
+after approximately 10 years of immunosuppression,102 sug-
+gesting that there are different mechanisms for internal and
+cutaneous carcinogenesis.
+Whether there is also a risk of internal malignancy, in partic-
+ular lymphoma, in nontransplant patients treated with azathio-
+prine monotherapy is controversial. There are no useful data
+for dermatology patients, but there is important literature from
+the IBD population. Two meta-analyses have addressed the
+issue and the conclusions are conﬂicting. Kandiel et al.112 con-
+cluded that there was an approximately fourfold greater risk of
+developing lymphoma with long-term thiopurine therapy
+(3891 patients). This would translate to one additional lymph-
+oma for every 300–4500 years of treatment, depending on the
+age of the patient. However, there have been criticisms of the
+method used in this meta-analysis,113 and whether the calcu-
+lated risk was due to treatment or the underlying disease was
+not convincingly demonstrated.111 Masunaga et al.,114 in a sub-
+sequent meta-analysis failed to ﬁnd any increased risk of malig-
+nancy (4039 patients). Unlike the study by Kandiel et al.,
+which used data obtained from the general population as a
+control, Masanuga et al. used a control population of patients
+with IBD who had not received immunosuppression. Since
+then, a large prospective cohort study by Beaugerie et al.115 in
+19 486 patients with IBD has shown a signiﬁcant association
+between thiopurine use and the incidence of lymphoma
+(hazard ratio 5Æ3; 95% CI 2Æ0–14). However, the authors
+acknowledge that the excess risk may also relate to the underly-
+ing IBD activity. The gut was affected in six of the 23 patients
+who developed a lymphoproliferative disorder, often in intesti-
+nal segments affected by IBD; this might also suggest that
+disease activity was an important factor in carcinogenesis. Most
+recently, in a retrospective cohort of 17 834 patients with IBD
+no overall increased risk of lymphoma was found.116 Although
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+Guidelines for prescribing azathioprine, S.J. Meggitt et al. 719
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 10 ===
+this study, unlike that by Beaugerie et al., was not designed to
+investigate risk with azathioprine ⁄6-MP, it is interesting to
+note that 11 out of 12 patients who developed Epstein–Barr-
+positive lymphoma had used thiopurines, compared with four
+of 21 patients with Epstein–Barr-negative lymphoma.116
+Given that the results of these studies are contradictory, and
+that IBD itself may confer a risk of malignancy, it is difﬁcult
+to know what advice to give regarding lymphoma risk
+to patients with dermatoses that may require prolonged
+azathioprine therapy. However, if there is an increased long-
+term risk, this would appear to be low in absolute terms. Fur-
+thermore, studies of azathioprine use in the short-to-medium
+term do not appear to show an excess of internal can-
+cers.117,118 Taken together these data suggest the best ap-
+proach would be to restrict courses of azathioprine to the
+short-to-medium term. Those patients requiring long-term
+treatment who have no other therapeutic alternatives should
+be counselled about the possible malignancy risk but advised
+that this, if increased, is likely to be small.
+10.0 How and when should azathioprine be
+prescribed?
+10.1 Dosing
+The Summary of Product Characteristics (SPC) for azathio-
+prine recommends a starting dose of 1–3 mg kg)1 daily
+(with larger doses recommended in transplantation).119 The
+dose should be adjusted within these limits depending on
+response
+and
+haematological
+tolerance,
+with
+subsequent
+reduction for maintenance therapy following clinical response.
+The therapeutic effects of azathioprine often take several
+months to become apparent after initiation of therapy, and
+similarly the effects of dose reduction or cessation of therapy
+may also be delayed, possibly due to persistence of active
+drug metabolites. Doses at the lower end of the range are rec-
+ommended in patients with renal and ⁄or hepatic impairment
+or in the elderly (see section 10.51, 10.52 and 10.65).
+The doses required for skin diseases largely conform to the
+general recommendations of the SPC. Apart from studies relat-
+ing dose to TPMT status (see below), there have been no rec-
+ommendations on dosimetry related to either the indication
+for use or whether monotherapy or combination with oral
+corticosteroids is needed. A strategy for dose reduction for
+patients in remission has not been addressed in studies of der-
+matological diseases, and remains a matter for empirical titra-
+tion by the clinician.
+Although it is clear that patients with absent TPMT activity
+(TPMT null) should in general not receive azathioprine (or 6-
+MP), in rare circumstances a greatly reduced dose may be
+used (approximately 5–10% of standard), with very careful
+monitoring of the full blood count (FBC) and metabo-
+lites,11,120 but even then patients may develop leucopenia.121
+Table 2 shows suggested TPMT-based maintenance dose
+ranges for the treatment of dermatological conditions (see sec-
+tion 8.21). The use of lower initial doses (e.g. for the ﬁrst
+4 weeks of therapy) is also recommended in order to mini-
+mize early side-effects such as nausea (see section 9.11).
+Table 2 is adapted from Snow and Gibson,60 Meggitt and Rey-
+nolds,61 Meggitt et al.,34 Gardiner et al.122 and Bezier et al.,62
+and reﬂects the range of doses successfully used in studies
+comparing patients with heterozygous vs. homozygous wild-
+type TPMT phenotype. It should be emphasized that collec-
+tively the number of heterozygous range patients in these
+reports
+was
+small.
+Consequently,
+these
+recommendations
+should serve as a guide for current use, in anticipation of in-
+formation from future studies with larger patient numbers.
+Recommendations: azathioprine dosing
+• Patients with normal TPMT activity are at low risk of profound
+neutropenia and can be prescribed azathioprine at conventional
+doses (see Table 2) (Strength of recommendation A; level of evidence 1+)
+• Patients with intermediate (heterozygous) range TPMT activity
+treated with conventional thiopurine doses have an increased
+risk of neutropenia and should receive a lower azathioprine
+maintenance dose (see Table 2 for suggested dose regimen)
+(Strength of recommendation C; level of evidence 2+)
+• Patients with absent TPMT activity (TPMT null) treated with
+conventional azathioprine doses are at very high risk of pro-
+found neutropenia and should in general not be prescribed aza-
+thioprine (Strength of recommendation A; level of evidence 1+)
+• Side-effects such as dose-dependent nausea may be minimized
+by building up to the recommended maintenance dose over the
+ﬁrst few weeks of therapy (Strength of recommendation D; level of
+evidence 4)
+10.2 Contraindications
+There are few absolute contraindications to the use of azathio-
+prine, but those listed in the manufacturer’s data sheet119 are:
+hypersensitivity
+to
+azathioprine ⁄6-MP;
+severe
+infections;
+severely impaired hepatic or bone marrow function; pancreati-
+tis; live vaccines (section 10.71); pregnancy unless beneﬁts
+outweigh risks (section 10.62); and lactation (section 10.63).
+In hypersensitive patients, desensitization to azathioprine
+and 6-MP has been successfully attempted,123 but this cannot
+be recommended as its safety is unproven. Pregnancy is a rela-
+tive contraindication (see section 10.62) and women taking
+azathioprine are advised to not breastfeed their infants,
+although more recent data suggest this may be safe (see sec-
+tion 10.63). It is not usually recommended that azathioprine
+is initiated or continued in patients with known malignancy,
+as immunosuppression may increase the risk of disease pro-
+gression.
+There are also several relative contraindications to azathio-
+prine use that are not included in the SPC. Discussion of the
+following issues is covered in subsequent sections of these
+guidelines: (i) renal impairment (section 10.51); (ii) viral
+hepatitis (section 10.53); (iii) human immunodeﬁciency virus
+(HIV) infection (section 10.54); (iv) previous varicella zoster
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+720 Guidelines for prescribing azathioprine, S.J. Meggitt et al.
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 11 ===
+virus exposure (section 10.55); (v) premalignancy (section
+10.56).
+10.3 Baseline blood tests
+FBC with differential white cell count, renal function and liver
+blood tests including transaminases (alanine aminotransferase
+or aspartate aminotransferase) should be determined as a base-
+line.
+10.4 Baseline thiopurine methyltransferase
+activity
+A growing body of evidence supports the assessment of TPMT
+activity prior to starting azathioprine. U.K. dermatologists have
+played a leading role in advocating this test as good clinical
+practice, but its uptake has varied among other disciplines and
+countries. A U.K. survey in 2006 found that although nearly
+all dermatologists, gastroenterologists and rheumatologists pre-
+scribe azathioprine, the respective rates of TPMT testing
+were 90%, 60% and 47%.124 A similar survey among gast-
+roenterologists in three states of the U.S.A. found that
+although only 35% reported measuring TPMT levels, 46%
+used adjunctive metabolite (TGN) monitoring to assist man-
+agement125 (see section 13.0). It is widely cited that TPMT
+activity may be induced by thiopurines58 and that consequent-
+ly measurement of TPMT in patients currently receiving aza-
+thioprine is not advised, as values may be falsely elevated.
+However, some studies have failed to demonstrate any induc-
+tion of TPMT by concomitant thiopurine use,48,126,127 but
+have shown repeat TPMT measurements in individuals on
+therapy to be highly variable.
+Genotyping or phenotyping techniques can be used to
+determine TPMT status, but genotyping is not routinely
+used.124 TPMT phenotyping is based on RBC enzymatic activ-
+ity and this can be affected by recent blood transfusion. TPMT
+activity exhibits a trimodal distribution;3 this reﬂects the three
+different allele combinations. Results are usually reported in
+three ranges corresponding to the presumed TPMT genotype.
+(i) Homozygous mutant (TPMT null), i.e. two copies of the
+variant allele (described as absent ⁄very low TPMT activity,
+depending on the laboratory). (ii) Heterozygous, i.e. one copy
+of a variant allele (most commonly described as intermediate
+enzyme activity; this terminology is adhered to throughout
+these guidelines). It should be noted that some laboratories
+may describe this range as ‘low’ TPMT activity. This may
+result in unnecessary confusion, as clinicians could errone-
+ously assume the patient is in the TPMT null, ‘absent ⁄very
+low’ TPMT activity group. (iii) Homozygous wild-type, i.e.
+two functional copies of the active gene (described as
+high ⁄normal enzyme activity, depending on the reporting lab-
+oratory).
+Phenotyping is the preferred method of assessment, with
+genotyping reserved for patients with borderline results and
+those in whom a blood transfusion has recently been carried
+out128 (see section 12.3).
+Recommendations: baseline TPMT activity
+• TPMT activity should be checked in all patients prior to receiv-
+ing azathioprine (Strength of recommendation A; level of evidence 1+)
+• Clinicians should ensure they take into account differences in
+TPMT activity reporting practices across the U.K., in order to be
+certain of the likely genotypic group of their patients (Strength of
+recommendation D; level of evidence 4)
+• TPMT genotyping is only required for patients with indeterminate
+phenotype (i.e. borderline values) or those who have had a recent
+blood transfusion (Strength of recommendation D; level of evidence 4)
+10.5 Other baseline considerations
+10.51 Renal impairment
+The British National Formulary (BNF) advises that dose reduc-
+tion may be needed in renal impairment.129 However, the man-
+ufacturer’s data sheet states that controlled studies do not show
+enhanced toxicity in the presence of renal insufﬁciency.119 Nev-
+ertheless, it is recommended that the dosages used should be at
+the lower end of the normal range and that FBC should be care-
+fully monitored. The dosage should be further reduced if hae-
+matological toxicity occurs. Azathioprine dose does not need to
+be altered in those undergoing haemodialysis.130
+10.52 Hepatic disease
+The
+SPC
+advises
+cautious
+azathioprine
+administration
+in
+patients with hepatic dysfunction, with regular monitoring of
+blood count and liver blood tests.119 In such patients, drug
+metabolism may be impaired, and the azathioprine dosage
+should therefore be reduced if hepatic or haematological tox-
+icity occurs.
+10.53 Viral hepatitis
+Approximately one-third of the world’s population has sero-
+logical evidence of past or present infection with hepatitis B
+virus (HBV).131 Individuals positive for HBV surface antigen
+(HBsAg) are at risk of a ﬂare in disease if given immunosup-
+pressant drugs including azathioprine.132,133 Furthermore, the
+development of acute liver failure in previously well carriers of
+HBV is well recognized after withdrawal of immunosuppres-
+sive therapy.132–134 Measurement of transaminases does not
+reliably detect all infected individuals, as these may be inter-
+mittently normal during the immune tolerant phase of infec-
+tion. Consequently, the European Association for the Study of
+the Liver (EASL) recommends that all candidates for immuno-
+suppressant treatment should be screened for HBsAg and
+anti-HBV core antibodies (anti-HBc) prior to the initiation of
+treatment. Similarly, baseline screening for hepatitis C virus
+(HCV) should be considered in all patients. EASL also recommend
+vaccination against HBV in those who are seronegative. There-
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+Guidelines for prescribing azathioprine, S.J. Meggitt et al. 721
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 12 ===
+fore, this approach should be part of the baseline screening for
+treatment with azathioprine, and a hepatitis-risk history should
+also be taken. Prior to initiation of azathioprine, all serologi-
+cally positive cases should be discussed with the local team
+experienced in the management of HBV infection (hepatology
+or infectious diseases), and prophylactic antiviral therapy con-
+sidered on a case-by-case basis, dependent on factors such as
+the risk of liver disease and HBV viral load [M. Prince
+(Manchester Royal Inﬁrmary, Manchester, U.K.), personal
+communication].
+10.54 Human immunodeﬁciency virus infection
+There are no speciﬁc recommendations regarding generic
+screening for HIV prior to commencing azathioprine, but in
+those with risk factors, baseline HIV status should be estab-
+lished. Treated HIV infection is not necessarily a contraindica-
+tion to the use of immunosuppressive agents;
+there is
+growing experience of the safe concurrent use of azathioprine
+and other immunosuppressants in HIV-positive organ trans-
+plant recipients whose disease is stable and has been treated
+with
+highly
+active
+antiretroviral
+therapy
+for
+at
+least
+12 months.135,136 Initiation of azathioprine in patients with
+HIV infection should only be undertaken after consulting
+those with special expertise in HIV medicine.
+10.55 Previous varicella zoster virus exposure
+All patients who may require treatment with azathioprine
+should be asked whether they have had chickenpox. For those
+who are uncertain about previous exposure, VZV serology
+should be checked. For the nonimmune, administration of
+VZV vaccine should ideally occur several weeks prior to com-
+mencement of azathioprine therapy, as the vaccine is live.137
+Importantly, the Department of Health ‘Immunisation against
+infectious diseases – the Green Book’137 also advises against
+administration of all live vaccines (including VZV) to patients
+receiving immunosuppressants such as azathioprine. This U.K.
+advice contrasts with the guidance from the U.S. Centers for
+Disease Control and Prevention,138 which states that VZV vac-
+cine may be given to persons with impaired humoral immun-
+ity, including those receiving azathioprine £ 3Æ0 mg kg)1
+daily. However, a degree of impaired cellular immunity may
+also occur with azathioprine [G. Spickett (Royal Victoria Inﬁr-
+mary, Newcastle upon Tyne, U.K.), personal communication].
+Consequently, these guidelines recommend adhering to the
+Green Book’s advice, but difﬁcult cases would be best dis-
+cussed individually with an immunologist, particularly as
+administration of vaccine prior to azathioprine treatment may
+not always be practically possible, given that ‘the disadvantages
+of delaying immunosuppression are often signiﬁcant’.137 In the
+rare situation when nonimmune individuals receive azathio-
+prine and subsequently have ‘signiﬁcant exposure’ to chicken
+pox or herpes zoster, then protocols deﬁning this exposure and
+outlining the administration of VZV immunoglobulin and ⁄or
+prophylactic aciclovir are detailed in the Green Book.137
+10.56 Premalignancy
+Patients receiving immunosuppressant drugs have an increased
+frequency of cervical intraepithelial neoplasia (CIN), and in
+these patients the risk of progression to invasive disease is
+higher and the success rate of treatment is lower.139 There is
+some debate whether immunosuppressed patients should be
+screened more frequently, and in some European centres
+annual
+cytology
+combined
+with
+colposcopy
+is
+recom-
+mended.139 Data from the renal transplant population (receiv-
+ing multiple immunosuppressive agents) suggests a ﬁvefold
+increase in the prevalence of abnormal cervical cytology
+(15%) above the normal population.140 However, there is no
+information on risk in dermatology patients on single immu-
+nosuppressant drugs such as azathioprine. Nevertheless, it
+would be sound practice to ensure that, prior to receiving aza-
+thioprine, women have been concordant with the national
+cervical screening programme, and a pretreatment gynaecolog-
+ical review should be requested in those patients with previ-
+ous CIN.
+Guidelines exist for the management of premalignant skin le-
+sions in immunosuppressed solid-organ transplant recipients. A
+baseline dermatological examination is recommended in these
+patients prior to transplantation, and dysplastic keratoses should
+be treated before (or soon after) starting azathioprine ther-
+apy.108 Similar guidelines do not exist for azathioprine use in
+other contexts, but given what is now known about the risks of
+NMSC with prolonged azathioprine monotherapy for IBD,104 it
+would be wise to adopt a similar approach in any circumstance
+when long-term administration of the drug is likely.
+10.6 Special groups
+10.61 Male fertility
+Several studies indicate that male patients receiving azathio-
+prine father healthy children, and that azathioprine at standard
+doses does not appear to affect male fertility.141,142
+10.62 Pregnancy
+Both azathioprine and 6-MP cross the placenta and the U.S.
+Food and Drug Administration categorizes azathioprine as risk
+group D, indicating ‘positive evidence of fetal risk is available,
+but the beneﬁts may outweigh the risk in life-threatening or
+serious disease’. However, the literature is inconclusive on any
+teratogenic effects.143 Most investigators have found azathio-
+prine to be relatively safe in pregnancy and its use in trans-
+plant recipients is not associated with any increased risk of
+congenital defects, although this group is at increased risk of
+premature birth and small-for-dates babies.144 One case report
+has even shown a healthy child born to parents who were
+both receiving thiopurines.145 The general conclusion never-
+theless is to limit use of azathioprine in pregnancy to those
+with severe disease, particularly if there is no safer alternative
+treatment.143
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+722 Guidelines for prescribing azathioprine, S.J. Meggitt et al.
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 13 ===
+10.63 Lactation
+The manufacturer’s data sheet states that breastfeeding is con-
+traindicated in women receiving azathioprine.119 However,
+several studies have shown that the drug and its metabolites
+are either absent or present in negligible amounts in breast
+milk.146,147 Although the World Health Organization (WHO)
+has previously recommended that the risks of azathioprine to
+the infant outweigh the beneﬁts of breast milk, a recent review
+has suggested that the drug may be safe in this scenario.143
+10.64 Children
+A retrospective evaluation of 48 children has reported azathio-
+prine to be a safe and effective treatment for children with
+atopic eczema when high-risk patients were excluded by
+TPMT measurement.59 Higher doses than those used in adults
+were often required (2Æ5–3Æ5 mg kg)1). Similarly, a study of
+children with IBD aged 6 years and under showed that higher
+dosages (> 3 mg kg)1 daily) were needed in order to achieve
+clinical remission.148 The authors postulated that the underly-
+ing reason was decreased drug absorption.
+In view of the concerns surrounding prolonged use of aza-
+thioprine and risk of malignancy, careful consideration should
+be exercised if long-term use of the drug is needed in chil-
+dren. In particular, as it is now known that the risk of photo-
+carcinogenesis escalates with increasing duration of thiopurine
+treatment (see section 9.31), then advice on photoprotection
+is essential, and adherence to this should be assessed at fol-
+low-up visits.
+10.65 Elderly
+Care should be taken with use of azathioprine in the elderly; the
+SPC recommends that additional care should be taken with hae-
+matological monitoring and that doses used should be at the
+lower end of the recommended range.119 Increasing age is asso-
+ciated with an increased risk of drug interactions due to poly-
+pharmacy
+and, in
+the solid-organ
+transplant population,
+increased vulnerability to immunosuppression-related infec-
+tions.149 A recent prospective study of azathioprine monother-
+apy for inﬂammatory diseases has also shown the elderly to
+have a signiﬁcant higher incidence of all categories of side-
+effects.4
+10.7 Drug interactions
+A few drugs have important interactions with azathioprine
+and these are summarized in Table 3. There is also a large cat-
+egory of drugs which may interact but the evidence for this is
+less strong. This group encompasses drugs with the theoretical
+potential for interactions but with little or no supporting clini-
+cal data, or case reports of queried drug interactions in limited
+numbers of patients. Unfortunately, these categories are often
+described collectively and indiscriminately, with the result that
+some of the less deﬁnite associations are subsequently cited in
+a manner that suggests clinically important interactions occur
+(including in the SPC and BNF).
+10.71 Deﬁnite interactions
+Allopurinol and febuxostat
+The most potentially serious azathioprine drug interaction
+occurs with xanthine oxidase inhibitors (data only available
+for allopurinol but in theory febuxostat should have a similar
+effect). Combined use carries a substantially increased risk of
+myelotoxicity.150,151 However, co-prescription of these drugs
+with dose reduction and under strict monitoring may improve
+efﬁcacy in the event of nonresponse to azathioprine alone.
+This issue is covered in detail in Section 13.4. Such an
+approach should be considered experimental at present, as
+there is insufﬁcient evidence of safety or efﬁcacy to advocate
+its use in dermatology patients.
+Table 3 What drugs can interact with azathioprine?a
+Drug
+Risks ⁄interactions
+Allopurinol and febuxostat
+Risk of severe, life-threatening myelotoxicity
+Immunosuppressant drugs
+Combination with other drugs such as cyclophosphamide, methotrexate and ciclosporin increases the
+risk of myelotoxicity
+Drugs that can cause
+haematological ADRs
+Caution is advised when considering concomitant use with drugs such as co-trimoxazole, trimethoprim and
+clozapine
+Warfarin
+Warfarin resistance is reported and warfarin dose may need to be increased. Close monitoring of
+anticoagulation is advised
+Ribavirin
+Severe pancytopenia has been reported. This drug inhibits IMPD, an enzyme in the purine salvage pathway
+Live vaccines
+Should not be prescribed to immunocompromised individuals
+Aminosalicylates
+Inhibit TPMT in vitro but the clinical importance of this is unknown. The drugs are often co-prescribed for
+IBD and increased monitoring of FBC is advised
+aSection 10.7 provides a full discussion of these drugs and also considers possible interactions which are listed in other publications but are
+based on weak evidence only. These include succinylcholine, tubocurarine, furosemide, bendroﬂumethiazide, nonsteroidal anti-inﬂammatory
+drugs and angiotensin-converting enzyme inhibitors. ADR, adverse drug reaction; FBC, full blood count; IBD, inﬂammatory bowel disease;
+IMPD, inosine monophosphate dehydrogenase; TPMT, thiopurine methyltransferase.
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+Guidelines for prescribing azathioprine, S.J. Meggitt et al. 723
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 14 ===
+Warfarin
+A series of case reports have documented that azathioprine
+and 6-MP are associated with warfarin resistance.152,153 The
+onset is rapid. A dose-dependent increase in warfarin therapy
+(at least 2Æ5-fold) and careful monitoring of coagulation is
+therefore required when these drugs are co-administered. The
+exact mechanism of the interaction is unknown.
+Ribavirin
+The antiviral drug ribavirin is an inhibitor of inosine mono-
+phosphate dehydrogenase (IMPD). Severe pancytopenia has
+been reported in a series of patients treated with azathioprine
+and ribavirin,154,155 with bone marrow suppression reaching
+a nadir between 3 and 6 weeks after initiation of ribavirin for
+treatment of HCV.154
+Other immunosuppressant and myelotoxic drugs
+The risk of haematological adverse reactions is increased when
+azathioprine is used with any drug which has a potential my-
+elotoxic effect. This includes both immunosuppressants such
+as cyclophosphamide, MTX, ciclosporin, anti-TNF agents and
+other biologics, and drugs which can cause unintended myel-
+otoxicity. The list of these latter drugs is large; important
+examples are co-trimoxazole, trimethoprim and clozapine.
+Caution must be exercised with co-prescription of azathio-
+prine and any of these drugs, and more frequent monitoring
+of the FBC is advised.
+Vaccines
+Severe complications may result from the administration of live-
+attenuated vaccines to immunocompromised individuals and
+such vaccines are therefore contraindicated in patients receiving
+azathioprine. Live vaccines available in the U.K. include bacillus
+Calmette–Gue´rin (BCG), varicella (see section 10.55), measles,
+mumps, rubella, yellow fever, oral polio and oral typhoid. Inac-
+tivated vaccines are safe in immunocompromised patients. All
+azathioprine-treated individuals should receive pneumococcal
+vaccine and yearly inﬂuenza vaccination. Studies in transplant
+recipients receiving azathioprine have shown this group to
+mount a similar antibody response to healthy controls.156 Fur-
+ther information is available in the Department of Health ‘Im-
+munisation against infectious disease – the Green Book’.137
+10.72 Possible interactions
+Aminosalicylates
+Aminosalicylates cause in vitro inhibition of TPMT but whether
+this translates to increased incidence of neutropenia in the
+clinical setting remains unclear. Gastroenterologists continue
+to co-prescribe these drugs and more cautious dosing and in-
+creased monitoring is advised.157
+Other drugs (interactions unlikely)
+The manufacturer’s datasheet suggests that azathioprine may
+alter neuromuscular blockade by succinylcholine and tubocu-
+rarine, and advises that patients should inform their anaesthe-
+tist prior to receiving a general anaesthetic.119 However, this
+is based on studies performed with supratherapeutic doses of
+azathioprine in animals158,159 and there is no evidence to sug-
+gest a clinically important interaction in humans.
+Furosemide,160
+bendroﬂumethiazide161
+and
+some
+non-
+steroidal anti-inﬂammatory drugs162 have been found to cause
+a degree of inhibition of TPMT ex vivo, but these reports are of
+unclear clinical relevance. Anaemia was reported with azathio-
+prine and angiotensin-converting enzyme inhibitors163 but in
+a follow-up paper the same authors concluded that an inter-
+action was not likely,164 and no further reports have emerged
+since (Table 3).
+10.8 Patient counselling
+These guidelines attempt to establish an explicit link between
+evidence and recommendations for clinical usage. However,
+this may be difﬁcult as decisions in clinical medicine are made
+in relation to single patients in a setting that may not relate to
+the context from which the guideline recommendation has
+been made. Nevertheless, the following general principles for
+azathioprine prescribing are in widespread usage by dermatol-
+ogists and are generally accepted as good clinical practice.
+10.81 Pretreatment discussion
+Prior to prescribing azathioprine, dermatologists and nurses
+routinely discuss the drug with their patients, who are reliant
+on this guidance as their main source of information. It is
+therefore crucial that they are provided with a complete and
+balanced overview of the advantages and disadvantages of
+treatment. The prescriber should bear in mind that the pros-
+pect of commencing a long-term treatment which carries
+potential health risks may be an unnerving experience for any
+individual. It is essential, therefore, that the patient is both
+fully informed and takes part in the decision-making process.
+Initial discussion typically involves a broad-brush approach
+which attempts to give the patient some basic information
+about the immune system, provide a rationale for the use of
+azathioprine and place the drug in the context of other thera-
+peutic options. Alternative immunosuppressant drugs which
+may be prescribed at a later date in the event of a poor thera-
+peutic response or side-effects with azathioprine should also
+be discussed. The dermatologist must not overdramatize start-
+ing such treatment for fear of causing unnecessary alarm.
+Thus, a delicate line is adhered to that seeks to inform without
+causing anxiety.
+Finally, as the issues discussed are novel and complex for
+most patients, it is essential to provide a patient information
+leaﬂet (PIL) after the initial discussion; this should be docu-
+mented in the patient’s medical notes. Written information
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+724 Guidelines for prescribing azathioprine, S.J. Meggitt et al.
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 15 ===
+must describe all aspects of azathioprine treatment in clear and
+unambiguous lay terms. Often, the patient will not remember
+details of the discussion and a PIL will allow information to
+be considered and discussed with family if necessary. Deci-
+sion-making may require careful thought over a period of
+time, sometimes with more than one consultation to discuss
+the pros and cons with the dermatologist. The need for a
+period of consideration is aided by the fact that the onset of a
+therapeutic response with azathioprine is usually slow, and it
+is seldom necessary to prescribe this drug in haste. This
+permits prescribing characterized by shared patient–physician
+decision-making that is well informed and thoughtful.
+Before starting azathioprine, patients are typically focused
+on trying to gauge the potential risks and beneﬁts of this
+drug. A detailed knowledge of the hazards of azathioprine
+treatment (see section 9.0) allows the dermatologist to discuss
+these risks and to set them in context. Ultimately, it is often
+hard for patients to decide on the best course of action; the
+well-informed dermatologist with excellent communication
+skills and sufﬁcient time to cover all angles is a precious
+resource to patients when faced with this difﬁcult choice.
+10.82 Discussion of cancer risk with patients
+The issue of carcinogenesis and thiopurine administration is
+considered in detail in section 9.31. This topic is often difﬁ-
+cult to discuss with patients without causing undue concern;
+many will have chronic, severe inﬂammatory diseases that
+need immunosuppressive therapy in order to improve quality
+of life: in the majority these beneﬁts will far outweigh the
+small risk of cancer. The clinician must then tread a ﬁne line
+between assessing the need for azathioprine treatment and
+providing a balanced appraisal of cancer risk. Otherwise, this
+could deter some patients with debilitating conditions from
+having an effective and safe treatment. There are two impor-
+tant areas that require discussion: ﬁrst the risk of photocarci-
+nogenesis (section 9.31), and second the evidence relating to
+internal malignancy risk (section 9.31).
+10.83 Withdrawal of previous advice (pancreatitis)
+The previous version of this guideline advised that clinicians
+should warn patients about the risk of developing pancreatitis
+with azathioprine, but there is now evidence that there is neg-
+ligible risk in dermatology patients, and consequently there is
+no obligation for dermatologists to discuss this extremely rare
+side-effect with patients (see section 9.12).
+Clinic checklist for use prior to prescribing
+azathioprine
+1 Explain that the onset of therapeutic beneﬁt with azathioprine
+is slow and may not be apparent for 2–3 months. Patient ex-
+pectations need to be realistic
+2 Emphasize the need for toxicity monitoring with regular blood
+tests. Patients unable to comply should not be given the drug
+3 Explain if usage is for a licensed or unlicensed indication. For
+unlicensed indications give a clear explanation of prescribing
+precedent
+4 Advise patients to seek urgent medical attention if they
+develop signs or symptoms of azathioprine hypersensitivity,
+bone marrow suppression or liver impairment. Speciﬁcally
+warn patient about:
+(a) High fever ⁄severe ﬂu-like illness
+(b) Unexplained bruising
+(c) New-onset jaundice
+5 Ensure there are no contraindications to azathioprine use (sec-
+tion 10.2)
+6 Check results of baseline investigations (section 10.3):
+(a) FBC
+(b) Urea and electrolytes
+(c) Liver blood tests
+(d) TPMT activity (rarely also genotype – sections 10.4 and
+12.3)
+(e) Hepatitis B and C serology (section 10.53)
+(f) HIV serology, especially in high-risk groups (section
+10.54)
+(g) VZV serology (if no history of varicella)
+7 Give special consideration to the following:
+(a) Children and the elderly (sections 10.64 and 10.65)
+(b) Hepatic and renal impairment (sections 10.51 and 10.52)
+(c) Premalignancy, i.e. CIN and actinic keratoses (section
+10.56)
+(d) Breastfeeding (section 10.63)
+(e) VZV nonimmune: immunization required (section 10.71)
+(f) HBV nonimmune: consider immunization in at-risk groups
+(section 10.53)
+(g) Positive HIV serology (section 10.54)
+8 Advise on the need for pneumococcal vaccine and a yearly
+inﬂuenza vaccination (section 10.71)
+9 Discuss the possible increased risk of malignancy with long-
+term use (section 9.31)
+10 Give advice on sunscreens and sun avoidance
+11 Caution regarding avoidance of pregnancy (section 10.62)
+12 Warn about potential drug interactions (also detailed in the
+PIL)
+13 When possible, formulate a plan for duration and eventual
+withdrawal of therapy
+14 Supply with a PIL (if not previously) and record provision in
+case notes
+11.0 How should azathioprine treatment be
+monitored?
+11.1 Follow-up visits
+At each visit, the dermatologist should seek to assess efﬁcacy
+of treatment and other possible treatment-related problems.
+Patients should be asked how they feel the drug is working,
+and if adverse events are reported it is helpful to know if these
+are sufﬁciently compensated for by a positive therapeutic
+response. The dermatologist should enquire about the patient’s
+general health and other possible comorbidities that might be
+relevant to azathioprine usage. Each appointment also presents
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+Guidelines for prescribing azathioprine, S.J. Meggitt et al. 725
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 16 ===
+an opportunity for azathioprine dose adjustment depending
+on adverse events and efﬁcacy. Patients also appreciate discus-
+sion of their blood test results; even if these are normal, being
+kept up to date provides valuable reassurance.
+Patients should be reminded at each follow-up appointment
+of what to look out for in terms of possible side-effects. They
+should also be encouraged to keep the PIL accessible and to
+occasionally re-read this. This is particularly important for sta-
+ble patients receiving long-term treatment, as this group may
+be more likely to forget key information. Finally, the derma-
+tologist should repeat advice about photoprotection, empha-
+sizing the importance of compliance during the summer
+months and while on sunny holidays.
+11.2 Toxicity monitoring
+This is the responsibility of the dermatologist prescribing
+azathioprine. With mutual agreement, responsibility is some-
+times shared with the patient’s general practitioner according
+to protocols agreed locally.
+11.21 Frequency
+The BNF suggests that monitoring for azathioprine toxicity
+should be performed weekly for the ﬁrst month of azathio-
+prine treatment and monthly thereafter.129 The azathioprine
+datasheet recommends the more cautious approach of an
+initial 8 weeks of weekly monitoring.119 Once the patient is
+stable on a ﬁxed dosage, the frequency of monitoring can be
+reduced to a minimum of at least once every 3 months.
+11.22 Monitoring for hepatotoxicity
+An optimal monitoring schedule for liver blood tests remains to
+be determined, but it is clear that they should be checked more
+frequently during the ﬁrst few months of treatment, as this is
+the period during which hepatotoxicity is most likely to occur.
+However, as some forms of liver injury may develop after sev-
+eral years, regular monitoring for the duration of treatment is
+essential. If liver test abnormalities persist despite azathioprine
+withdrawal or dose reduction, it is important to bear in mind
+alternative potential causes of hepatitis, particularly those related
+to immunosuppression such as Epstein–Barr virus infection.
+11.23 Monitoring for myelosuppression
+Regular checking of FBC is essential during long-term treat-
+ment with azathioprine. Macrocytosis is a common ﬁnding
+and can be used to assess patient noncompliance. Leucopenia
+is the most common haematological adverse event. Other rarer
+haematological side-effects include anaemia, thrombocytopenia
+and, rarely, pancytopenia. With the exception of macrocytosis,
+occurrence of any of these haematological side-effects should
+be carefully monitored and the dose of azathioprine adjusted
+accordingly.
+Recommendations: toxicity monitoring
+(Strength of recommendation D; level of evidence 4)
+• Regular monitoring of liver blood tests and FBC are required
+for the duration of therapy
+• Once a patient is stable on a ﬁxed dose of azathioprine moni-
+toring should occur at least 3 monthly
+• Prior to stabilization, monitoring bloods should be performed
+more frequently
+12.0 Health economics
+12.1 Cost of drug
+Azathioprine is relatively inexpensive compared with other
+immunosuppressive drugs used by dermatologists such as
+ciclosporin and mycophenolate mofetil. The U.K. price for
+100 azathioprine 50 mg tablets is currently (BNF 61, 2011)
+£7Æ99; thus at 100–200 mg daily, the daily cost of this drug
+would be £0Æ32–£0Æ64. In contrast, the U.K. price for a 30-
+capsule pack of ciclosporin 100 mg is currently £69Æ11 (BNF
+61, 2011); thus, at 300–500 mg daily the daily cost of this
+drug would be £6Æ91–£11Æ52. Additionally, the U.K. price for
+a 50-tablet pack of mycophenolate mofetil 500 mg is cur-
+rently £82Æ26 (BNF 61, 2011); thus, at 1Æ5–3 g daily the daily
+cost of this drug would be £4Æ94–£9Æ87. Expressed in relative
+terms, the daily cost of ciclosporin or mycophenolate mofetil
+in the doses used in dermatology is up to 20 times as great as
+the daily cost of azathioprine.129
+12.2 Cost of thiopurine methyltransferase
+testing
+Thirty years after the initial publication by Weinshilboum and
+Sladek3 on the genetics of TPMT inheritance, the measurement
+of red cell TPMT activity is now a routine test in the U.K.165
+(details of biochemistry laboratories offering TPMT measure-
+ment are given in Appendix 2 at the end of this guideline).
+Due to the high volume of demand, and high throughput in
+the laboratories, the cost for this assay is so low that there is
+no longer a credible argument to be made against testing on
+the basis of cost. Furthermore, the turnaround time (i.e. delay
+between ordering the test and receiving the result) is stated to
+be 24 h in the U.K. biochemistry department with the highest
+throughput of TPMT assays. The current charge for TPMT test-
+ing is around £30; this cost may fall with further reﬁnements
+to testing methodology [J. Berg (City Hospital, Birmingham,
+U.K.), personal communication]. The current cost of TPMT
+screening in the U.K. is low compared with other countries,
+which is partly explained by economies of scale that have
+resulted from widespread uptake of this assay by prescribing
+doctors.
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+726 Guidelines for prescribing azathioprine, S.J. Meggitt et al.
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 17 ===
+12.3 Thiopurine methyltransferase genotyping
+Genotyping as a tool to assess risk of bone marrow toxicity is
+not routinely available and is very unlikely to replace func-
+tional assessment of TPMT activity. However, in some labora-
+tories, genotyping in addition to TPMT assay is already
+routinely performed for patients with borderline ⁄absent TPMT
+activity in order to clarify toxicity risk. The TPMT enzyme
+assay is superior to TPMT genotyping in predicting TPMT
+deﬁciency.165,166 To date, 29 different variant TPMT alleles
+have been described:165 using expression systems, 16 of these
+alleles have been shown to result in deﬁcient TPMT activity.
+Of these, three TPMT polymorphisms are responsible for 80–
+95% of deﬁcient TPMT activity.165 Thus, genotyping for these
+three TPMT polymorphisms could predict deﬁcient TPMT
+activity in about 90% of patients; importantly, it would miss
+TPMT deﬁciency in about 10% of patients. Thus, genotyping
+has emerged as a supportive and complementary test to the
+TPMT enzyme assay; when used in this way on selected sam-
+ples, phenotyping and genotyping overcome the limitations of
+both tests.165,166
+12.4 Cost-effectiveness of thiopurine
+methyltransferase testing
+A recent systematic review of the health economics of azathio-
+prine-related TPMT screening identiﬁed seven relevant stud-
+ies.167
+These
+had
+many
+shortcomings,
+but
+the
+review
+concluded that attempts to identify TPMT deﬁciency prior to
+prescribing azathioprine had a modest cost that overall was es-
+sentially cost neutral. Unfortunately, despite the availability of
+the TPMT enzyme assay, new cases of azathioprine-induced
+pancytopenia in patients where baseline TPMT status was not
+established continue to be reported.168 These cases emphasize
+the risk to life and high cost of the intensive supportive care
+needed for patients with severe and prolonged myelosuppres-
+sion.168 Collectively, these cases appear to make a watertight
+case for routine pretreatment TPMT measurement, and as
+TPMT testing in the U.K. is becoming an increasingly inex-
+pensive test, previous health economic arguments are now of
+limited relevance. This is further highlighted by a case of
+severe neutropenia (TPMT null) that developed in the non-
+screened arm of the Department of Health-funded TARGET
+study4 (see section 8.21) which was set up to address the util-
+ity of pharmacogenetic testing in the NHS.
+13.0 Future directions
+13.1 Personal genomic screening
+Personal genomic screening is a relatively new type of
+genetic testing characterized by multiple statistical compari-
+sons to assess for risk of a medical event. Such screening uses
+data from genome-wide association studies to predict a per-
+son’s disease risk, or for drugs, adverse-event risk, using
+multiple genetic markers simultaneously. This is a rapidly
+evolving ﬁeld and is likely, in the future, to be relevant to
+predicting the risk of adverse events with azathioprine; as
+described earlier in this guideline, some of these risks are
+dependent on genotype. If personal genomic screening for
+risk of adverse events with azathioprine becomes available,
+the accuracy and usefulness of such testing would need to be
+independently assessed before such testing became widely
+adopted.
+13.2 Other pharmacogenetic factors
+Several studies have linked polymorphisms in inosine triphos-
+phate pyrophosphatase (ITPase; Fig. 1), an enzyme involved
+in
+the
+thiopurine
+catabolism,
+with
+adverse
+events169,170
+including hypersensitivity symptoms65,171 and dropout from
+therapy.172 However, other studies have failed to show a
+link.173–176 Although the signiﬁcance of ITPase polymor-
+phisms as yet remains unclear, it seems possible that there is a
+relationship with toxicity; some studies may have been under-
+powered or an association may have been obscured, for exam-
+ple
+by
+misclassiﬁcation
+of
+patients
+with
+dose-dependent
+nausea as drug hypersensitivity. However, as the relevance of
+this literature remains uncertain, ITPase status is not currently
+measured in clinical practice. Recently, a polymorphism in
+aldehyde oxidase, an enzyme which acts on several thiopurine
+intermediates, was shown to predict lack of response to aza-
+thioprine in a prospective cohort of 192 patients with IBD.177
+The reproducibility and clinical relevance of this preliminary
+ﬁnding will require additional conﬁrmation.
+13.3 Therapeutic drug monitoring
+There is currently insufﬁcient evidence in dermatological
+patients to support the use of TGN monitoring to guide aza-
+thioprine dosing and potentially optimize efﬁcacy. However,
+this practice is now being increasingly used in the manage-
+ment of IBD in the clinic (see section 8.22), particularly in
+the U.S.A.,125 and TGN assay is both inexpensive and available
+in the U.K. (see Appendix 2). Monitoring TGNs during azathi-
+oprine therapy may have several beneﬁts including: (i) opti-
+mization of dose for TPMT heterozygotes; (ii) identifying the
+potential to increase dose in clinical nonresponders; and (iii)
+identifying nonresponders with TGNs above the threshold
+value fairly early during azathioprine therapy to avoid contin-
+ued
+and
+unnecessary
+immunosuppressant
+exposure.71
+Although data for dermatology patients are limited, studies in
+IBD have identiﬁed a therapeutic range of 230–260 (lower
+limit) and 450 pmol per 8 · 108 RBCs (upper limit), which
+may serve as useful therapeutic targets in future dermatolo-
+gical practice. Some studies have shown that levels of other
+metabolites (see Fig. 1) such as MeMPR (section 9.23) and
+methylthioinosine monophosphate (MeTIMP) may also been
+linked to toxicity98,99,126 and response (MeTIMP),178 but the
+reproducibility of these ﬁndings or applicability to the clinical
+setting is yet to be determined.
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+Guidelines for prescribing azathioprine, S.J. Meggitt et al. 727
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 18 ===
+13.4 Potential beneﬁts of combined allopurinol
+and azathioprine therapy
+The therapeutic
+indications for allopurinol listed in the
+SPC include gout and other hyperuricaemic conditions;119
+interestingly, the drug was originally developed to enhance
+the therapeutic effects of thiopurine drugs.179 Inhibition of
+xanthine
+oxidase
+and
+thereby
+reduction
+of
+azathioprine
+catabolism to inactive thiouric acid increases metabolism via
+the activation pathway to TGNs (Fig. 1). However, in rou-
+tine clinical practice, the combination of azathioprine and
+allopurinol is relatively contraindicated and the previous ver-
+sion of this guideline advised against concomitant use due
+to the risk of TGN-related toxicity. Recently however, allo-
+purinol has been successfully combined with thiopurine
+drugs in nonresponsive patients with IBD, in whom prefer-
+ential metabolism to MeMPR rather than TGN has been
+identiﬁed.98 Several studies have demonstrated that allopuri-
+nol
+(100 mg
+daily)
+combined
+with
+thiopurine
+drugs
+(at 25–50% of the conventional dose) results in increased
+TGN levels and an improved therapeutic response, although
+the
+mechanism
+of
+this
+action
+remains
+to
+be
+eluci-
+dated.180,181
+The
+concept
+of
+combination
+azathioprine ⁄allopurinol
+therapy has also been extended to patients with thiopurine-
+induced hepatotoxicity associated with high MeMPR lev-
+els98,182,183 (see section 9.23). These individuals have been
+shown preferentially to shunt metabolism away from the for-
+mation of TGN to MeMPR,98 an effect which seems to be
+reduced by the addition of allopurinol.
+There is, however, insufﬁcient experience with these ap-
+proaches to recommend routine usage in clinical practice, and
+caution is advised if combination therapy is to be used in
+dermatology patients. Close monitoring for haematological
+toxicity would obviously be needed.
+Recommendations
+• There is good evidence from nondermatological diseases linking
+TGN levels to toxicity and therapeutic response (Strength of recom-
+mendation A; level of evidence 1+)
+• Measurement of metabolites including TGN should be included
+in future research studies of azathioprine, in order to assess
+their usefulness in optimizing dosimetry in the clinical setting
+(Strength of recommendation D; level of evidence 4)
+14.0 Recommended audit points
+Clinicians prescribing azathioprine should use audit to evaluate
+their care against predeﬁned standards. Possible topics include:
+1 Compliance with pretreatment assessment for patients start-
+ing azathioprine, including baseline assessment of TPMT
+enzyme activity and the provision of written patient infor-
+mation.
+2 Compliance with monitoring recommendations (at least 3-
+monthly when stable but weekly for the ﬁrst 1–2 months
+of therapy).
+3 Monitoring of the provision of sun-awareness advice to
+patients on long-term azathioprine (including patients with
+IBD and solid-organ transplants).
+Acknowledgments
+We are very grateful to the following people for their advice
+and input in the preparation of the manuscript: Andrew Dam-
+sell, patient representative; Dr Martin Prince, Consultant Hepa-
+tologist, Manchester Royal Inﬁrmary, Manchester, U.K.; Dr
+Guru Aithal, Consultant Hepatologist, University Hospitals
+NHS trust, Nottingham, U.K.; Dr Gavin Spickett, Consultant
+Immunologist,
+Royal
+Victoria
+Inﬁrmary,
+Newcastle
+upon
+Tyne, U.K.; Dr Jonathan Berg, Clinical Biochemist, City Hospi-
+tal, Birmingham, U.K.
+References
+1 Bell HK, Ormerod AD. Writing a British Association of Dermatol-
+ogists clinical guideline: an update on the process and guidance
+for authors. Br J Dermatol 2009; 160:725–8.
+2 The AGREE Collaboration. Appraisal of Guidelines for Research & Evalua-
+tion (AGREE) Instrument. 2001. Available at: http://www.agree-
+collaboration.org (last accessed 2 August 2011).
+3 Weinshilboum RM, Sladek SL. Mercaptopurine pharmacogenetics:
+monogenic inheritance of erythrocyte thiopurine methyltransfer-
+ase activity. Am J Hum Genet 1980; 32:651–62.
+4 Newman WG, Payne K, Tricker K et al. A pragmatic randomised
+controlled trial of thiopurine methyltransferase genotyping prior
+to azathioprine treatment: the TARGET study. Pharmacogenomics
+2011; 12:815–26.
+5 Slanar O, Chalupna P, Novotny A et al. Fatal myelotoxicity after
+azathioprine treatment. Nucleosides Nucleotides Nucleic Acids 2008;
+27:661–5.
+6 Boonsrirat U, Angsuthum S, Vannaprasaht S et al. Azathioprine-
+induced fatal myelosuppression in systemic lupus erythematosus
+patient carrying TPMT*3C polymorphism. Lupus 2008; 17:132–4.
+7 Black AJ, McLeod HL, Capell HA et al. Thiopurine methyltransfer-
+ase genotype predicts therapy-limiting severe toxicity from aza-
+thioprine. Ann Intern Med 1998; 129:716–18.
+8 Relling MV, Hancock ML, Rivera GK et al. Mercaptopurine therapy
+intolerance and heterozygosity at the thiopurine S-methyltransfer-
+ase gene locus. J Natl Cancer Inst 1999; 91:2001–8.
+9 Lennard L, Van Loon JA, Weinshilboum RM. Pharmacogenetics of
+acute azathioprine toxicity: relationship to thiopurine methyl-
+transferase
+genetic
+polymorphism.
+Clin
+Pharmacol
+Ther
+1989;
+46:149–54.
+10 Lennard L, Lilleyman JS, Van Loon J et al. Genetic variation in
+response to 6-mercaptopurine for childhood acute lymphoblastic
+leukaemia. Lancet 1990; 336:225–9.
+11 Wang L, Weinshilboum R. Thiopurine S-methyltransferase phar-
+macogenetics: insights, challenges and future directions. Oncogene
+2006; 25:1629–38.
+12 Crawford DJ, Maddocks JL, Jones DN et al. Rational design of
+novel immunosuppressive drugs: analogues of azathioprine lack-
+ing the 6-mercaptopurine substituent retain or have enhanced
+immunosuppressive effects. J Med Chem 1996; 39:2690–5.
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+728 Guidelines for prescribing azathioprine, S.J. Meggitt et al.
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 19 ===
+13 Swann PF, Waters TR, Moulton DC et al. Role of postreplicative
+DNA mismatch repair in the cytotoxic action of thioguanine. Sci-
+ence 1996; 273:1109–11.
+14 Tiede I, Fritz G, Strand S et al. CD28-dependent Rac1 activation is
+the molecular target of azathioprine in primary human CD4+ T
+lymphocytes. J Clin Invest 2003; 111:1133–45.
+15 Vogt MH, Stet EH, De Abreu RA et al. The importance of methyl-
+thio-IMP for methylmercaptopurine ribonucleoside (Me-MPR)
+cytotoxicity in Molt F4 human malignant T-lymphoblasts. Biochim
+Biophys Acta 1993; 1181:189–94.
+16 Martin LK, Werth V, Villanueva E et al. Interventions for pemphi-
+gus vulgaris and pemphigus foliaceus. Cochrane Database Syst Rev
+2009; CD006263.
+17 Chams-Davatchi C, Esmaili N, Daneshpazhooh M et al. Random-
+ized controlled open-label trial of four treatment regimens for
+pemphigus vulgaris. J Am Acad Dermatol 2007; 57:622–8.
+18 Beissert S, Werfel T, Frieling U et al. A comparison of oral meth-
+ylprednisolone plus azathioprine or mycophenolate mofetil for
+the treatment of pemphigus. Arch Dermatol 2006; 142:1447–54.
+19 Pisoni CN, Karim Y, Cuadrado MJ. Mycophenolate mofetil and
+systemic lupus erythematosus: an overview. Lupus 2005; 14 (Sup-
+pl. 1):s9–11.
+20 Callen JP, Spencer LV, Burruss JB et al. Azathioprine. An effective,
+corticosteroid-sparing therapy for patients with recalcitrant cuta-
+neous lupus erythematosus or with recalcitrant cutaneous leuko-
+cytoclastic vasculitis. Arch Dermatol 1991; 127:515–22.
+21 Tsokos GC, Caughman SW, Klippel JH. Successful treatment of
+generalized discoid skin lesions with azathioprine. Its use in a
+patient with systemic lupus erythematosus. Arch Dermatol 1985;
+121:1323–5.
+22 Ashinoff R, Werth VP, Franks AG Jr. Resistant discoid lupus ery-
+thematosus of palms and soles: successful treatment with azathio-
+prine. J Am Acad Dermatol 1988; 19:961–5.
+23 Iorizzo LJ III, Jorizzo JL. The treatment and prognosis of dermato-
+myositis: an updated review. J Am Acad Dermatol 2008; 59:99–112.
+24 Choy EH, Hoogendijk JE, Lecky B et al. Immunosuppressant and
+immunomodulatory treatment for dermatomyositis and polymyo-
+sitis. Cochrane Database Syst Rev 2005; CD003643.
+25 Miller J, Walsh Y, Saminaden S et al. Randomized double blind
+trial of methotrexate and steroids compared with azathioprine
+and steroids in the treatment of idiopathic inﬂammatory myopa-
+thy. J Neurol Sci 2002; 199 (Suppl.):S53. (Abstract).
+26 Villalba L, Hicks JE, Adams EM et al. Treatment of refractory myo-
+sitis: a randomized crossover study of two new cytotoxic regi-
+mens. Arthritis Rheum 1998; 41:392–9.
+27 Ponyi A, Constantin T, Balogh Z et al. Disease course, frequency
+of relapses and survival of 73 patients with juvenile or adult der-
+matomyositis. Clin Exp Rheumatol 2005; 23:50–6.
+28 Ng YT, Ouvrier RA, Wu T. Drug therapy in juvenile dermato-
+myositis: follow-up study. J Child Neurol 1998; 13:109–12.
+29 Hofmann SC, Kautz O, Hertl M et al. Results of a survey of Ger-
+man dermatologists on the therapeutic approaches to pemphigus
+and bullous pemphigoid. J Dtsch Dermatol Ges 2009; 7:227–33.
+30 Kirtschig G, Middleton P, Bennett C et al. Interventions for bullous
+pemphigoid. Cochrane Database Syst Rev 2010; CD002292.
+31 Beissert S, Werfel T, Frieling U et al. A comparison of oral meth-
+ylprednisolone plus azathioprine or mycophenolate mofetil for
+the
+treatment
+of
+bullous
+pemphigoid.
+Arch
+Dermatol
+2007;
+143:1536–42.
+32 Bystryn JC. Comparative effectiveness of azathioprine or myco-
+phenolate mofetil as an adjuvant for the treatment of bullous
+pemphigoid. Arch Dermatol 2008; 144:946.
+33 Berth-Jones J, Takwale A, Tan E et al. Azathioprine in severe adult
+atopic dermatitis: a double-blind, placebo-controlled, crossover
+trial. Br J Dermatol 2002; 147:324–30.
+34 Meggitt SJ, Gray JC, Reynolds NJ. Azathioprine dosed by thiopu-
+rine
+methyltransferase
+activity
+for
+moderate-to-severe
+atopic
+eczema: a double-blind, randomised controlled trial. Lancet 2006;
+367:839–46.
+35 Murphy GM, Maurice PD, Norris PG et al. Azathioprine treatment
+in chronic actinic dermatitis: a double-blind controlled trial with
+monitoring of exposure to ultraviolet radiation. Br J Dermatol
+1989; 121:639–46.
+36 Du Vivier A, Munro DD, Verbov J. Treatment of psoriasis with
+azathioprine. Br Med J 1974; 1:49–51.
+37 Dalaker M, Bonesronning JH. Long-term maintenance treatment
+of moderate-to-severe plaque psoriasis with inﬂiximab in com-
+bination with methotrexate or azathioprine in a retrospective
+cohort. J Eur Acad Dermatol Venereol 2009; 23:277–82.
+38 Yazici H, Pazarli H, Barnes CG et al. A controlled trial of azathio-
+prine in Behc¸et’s syndrome. N Engl J Med 1990; 322:281–5.
+39 Jayne D, Rasmussen N, Andrassy K et al. A randomized trial of
+maintenance therapy for vasculitis associated with antineutrophil
+cytoplasmic autoantibodies. N Engl J Med 2003; 349:36–44.
+40 Pagnoux C, Mahr A, Hamidou MA et al. Azathioprine or metho-
+trexate maintenance for ANCA-associated vasculitis. N Engl J Med
+2008; 359:2790–803.
+41 Heurkens AH, Westedt ML, Breedveld FC. Prednisone plus azathi-
+oprine treatment in patients with rheumatoid arthritis compli-
+cated by vasculitis. Arch Intern Med 1991; 151:2249–54.
+42 Zaffanello M, Brugnara M, Franchini M. Therapy for children
+with Henoch–Scho¨nlein purpura nephritis: a systematic review.
+ScientiﬁcWorldJournal 2007; 7:20–30.
+43 Chartapisak W, Opastirakul S, Hodson EM et al. Interventions for
+preventing and treating kidney disease in Henoch–Scho¨nlein pur-
+pura (HSP). Cochrane Database Syst Rev 2009; CD005128.
+44 Chow RK, Ho VC. Treatment of pyoderma gangrenosum. J Am
+Acad Dermatol 1996; 34:1047–60.
+45 Hunter GA, Forbes IJ. Treatment of pityriasis rubra pilaris with
+azathioprine. Br J Dermatol 1972; 87:42–5.
+46 Higgs JE, Payne K, Roberts C et al. Are patients with intermediate
+TPMT activity at increased risk of myelosuppression when taking
+thiopurine medications? Pharmacogenomics 2010; 11:177–88.
+47 Gisbert JP, Nino P, Rodrigo L et al. Thiopurine methyltransferase
+(TPMT) activity and adverse effects of azathioprine in inﬂamma-
+tory bowel disease: long-term follow-up study of 394 patients.
+Am J Gastroenterol 2006; 101:2769–76.
+48 Lindqvist M, Hindorf U, Almer S et al. No induction of thiopurine
+methyltransferase during thiopurine treatment in inﬂammatory
+bowel disease. Nucleosides Nucleotides Nucleic Acids 2006; 25:1033–7.
+49 Tassaneeyakul W, Srimarthpirom S, Reungjui S et al. Azathioprine-
+induced fatal myelosuppression in a renal-transplant recipient who
+carried heterozygous TPMT*1 ⁄*3C. Transplantation 2003; 76:265–6.
+50 Firooz A, Ghandi N, Hallaji Z et al. Role of thiopurine methyl-
+transferase activity in the safety and efﬁcacy of azathioprine in
+the
+treatment
+of
+pemphigus
+vulgaris.
+Arch
+Dermatol
+2008;
+144:1143–7.
+51 Ansari A, Hassan C, Duley J et al. Thiopurine methyltransferase
+activity and the use of azathioprine in inﬂammatory bowel dis-
+ease. Aliment Pharmacol Ther 2002; 16:1743–50.
+52 Corominas H, Domenech M, Laiz A et al. Is thiopurine methyl-
+transferase genetic polymorphism a major factor for withdrawal
+of azathioprine in rheumatoid arthritis patients? Rheumatology
+2003; 42:40–5.
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+Guidelines for prescribing azathioprine, S.J. Meggitt et al. 729
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 20 ===
+53 Gearry RB, Barclay ML, Burt MJ et al. Thiopurine S-methyltransfer-
+ase (TPMT) genotype does not predict adverse drug reactions to
+thiopurine drugs in patients with inﬂammatory bowel disease.
+Aliment Pharmacol Ther 2003; 18:395–400.
+54 Schwab M, Schaffeler E, Marx C et al. Azathioprine therapy and
+adverse drug reactions in patients with inﬂammatory bowel dis-
+ease: impact of thiopurine S-methyltransferase polymorphism.
+Pharmacogenetics 2002; 12:429–36.
+55 Sayani FA, Prosser C, Bailey RJ et al. Thiopurine methyltransferase
+enzyme activity determination before treatment of inﬂammatory
+bowel disease with azathioprine: effect on cost and adverse
+events. Can J Gastroenterol 2005; 19:147–51.
+56 Gisbert JP, Luna M, Mate´ J et al. Choice of azathioprine or 6-mer-
+captopurine dose based on thiopurine methyltransferase (TPMT)
+activity to avoid myelosuppression. A prospective study. Hepatogast-
+roenterology 2006; 53:399–404.
+57 Colombel JF, Ferrari N, Debuysere H et al. Genotypic analysis of
+thiopurine S-methyltransferase in patients with Crohn’s disease
+and severe myelosuppression during azathioprine therapy. Gastro-
+enterology 2000; 118:1025–30.
+58 Lennard L. TPMT in the treatment of Crohn’s disease with azathi-
+oprine. Gut 2002; 51:143–6.
+59 Murphy LA, Atherton D. A retrospective evaluation of azathio-
+prine in severe childhood atopic eczema, using thiopurine meth-
+yltransferase
+levels
+to
+exclude
+patients
+at
+high
+risk
+of
+myelosuppression. Br J Dermatol 2002; 147:308–15.
+60 Snow JL, Gibson LE. The role of genetic variation in thiopurine
+methyltransferase activity and the efﬁcacy and ⁄or side effects of
+azathioprine therapy in dermatologic patients. Arch Dermatol 1995;
+131:193–7.
+61 Meggitt SJ, Reynolds NJ. Azathioprine for atopic dermatitis. Clin
+Exp Dermatol 2001; 22:369–75.
+62 Bezier M, Reguiai Z, Vitry F et al. Thiopurine S-methyltransferase
+genotypic analysis in autoimmune bullous diseases. Eur J Dermatol
+2008; 18:512–17.
+63 el-Azhary RA, Farmer SA, Drage LA et al. Thioguanine nucleotides
+and thiopurine methyltransferase in immunobullous diseases:
+optimal levels as adjunctive tools for azathioprine monitoring.
+Arch Dermatol 2009; 145:644–52.
+64 Cuffari C, Dassopoulos T, Turnbough L et al. Thiopurine methyl-
+transferase activity inﬂuences clinical response to azathioprine in
+inﬂammatory bowel disease. Clin Gastroenterol Hepatol 2004; 2:410–17.
+65 Ansari A, Arenas M, Greenﬁeld SM et al. Prospective evaluation of
+the pharmacogenetics of azathioprine in the treatment of inﬂam-
+matory bowel disease. Aliment Pharmacol Ther 2008; 28:973–83.
+66 Achkar JP, Stevens T, Easley K et al. Indicators of clinical response to
+treatment with six-mercaptopurine or azathioprine in patients with
+inﬂammatory bowel disease. Inﬂamm Bowel Dis 2004; 10:339–45.
+67 Dubinsky MC, Lamothe S, Yang HY et al. Pharmacogenomics and
+metabolite measurement for 6-mercaptopurine therapy in inﬂam-
+matory bowel disease. Gastroenterology 2000; 118:705–13.
+68 Cuffari C, Hunt S, Bayless TM. Enhanced bioavailability of azathi-
+oprine compared to 6-mercaptopurine therapy in inﬂammatory
+bowel disease: correlation with treatment efﬁcacy. Aliment Pharmacol
+Ther 2000; 14:1009–14.
+69 Bergan S, Rugstad HE, Bentdal O et al. Monitored high-dose aza-
+thioprine treatment reduces acute rejection episodes after renal
+transplantation. Transplantation 1998; 66:334–9.
+70 Reinshagen M, Schutz E, Armstrong VW et al. 6-Thioguanine
+nucleotide-adapted azathioprine therapy does not lead to higher
+remission rates than standard therapy in chronic active Crohn dis-
+ease: results from a randomized, controlled, open trial. Clin Chem
+2007; 53:1306–14.
+71 Osterman MT, Kundu R, Lichtenstein GR et al. Association of
+6-thioguanine nucleotide levels and inﬂammatory bowel disease
+activity: a meta-analysis. Gastroenterology 2006; 130:1047–53.
+72 Wusk B, Kullak-Ublick GA, Rammert C et al. Therapeutic drug
+monitoring of thiopurine drugs in patients with inﬂammatory
+bowel disease or autoimmune hepatitis. Eur J Gastroenterol Hepatol
+2004; 16:1407–13.
+73 Hindorf U, Johansson M, Eriksson A et al. Mercaptopurine treat-
+ment should be considered in azathioprine intolerant patients
+with inﬂammatory bowel disease. Aliment Pharmacol Ther 2009;
+29:654–61.
+74 Parnham AP, Dittmer I, Mathieson PW et al. Acute allergic reac-
+tions associated with azathioprine. Lancet 1996; 348:542–3.
+75 King JO, Laver MC, Fairley KF et al. Sensitivity to azathioprine.
+Med J Aust 1972; 2:939–41.
+76 Meggitt SJ. Azathioprine for Atopic Eczema, MD Thesis. Newcastle Uni-
+versity, Newcastle upon Tyne, UK, 2006.
+77 Bir K, Herzenberg AM, Carette S et al. Azathioprine induced acute
+interstitial nephritis as the cause of rapidly progressive renal fail-
+ure in a patient with Wegener’s granulomatosis. J Rheumatol 2006;
+33:185–7.
+78 Sloth K, Thomsen AC. Acute renal insufﬁciency during treatment
+with azathioprine. Acta Med Scand 1971; 189:145–8.
+79 Sinico RA, Sabadini E, Borlandelli S et al. Azathioprine hypersensi-
+tivity: report of two cases and review of the literature. J Nephrol
+2003; 16:272–6.
+80 de Fonclare AL, Khosrotehrani K, Aractingi S et al. Erythema
+nodosum-like eruption as a manifestation of azathioprine hyper-
+sensitivity in patients with inﬂammatory bowel disease. Arch
+Dermatol 2007; 143:744–8.
+81 Ananthakrishnan AN, Attila T, Otterson MF et al. Severe pulmo-
+nary toxicity after azathioprine ⁄6-mercaptopurine initiation for
+the treatment of inﬂammatory bowel disease. J Clin Gastroenterol
+2007; 41:682–8.
+82 Alexander S, Dowling D. Azathioprine pancreatitis in inﬂamma-
+tory bowel disease and successful subsequent treatment with
+mercaptopurine. Intern Med J 2005; 35:570–1.
+83 Weersma RK, Peters FT, Oostenbrug LE et al. Increased incidence
+of azathioprine-induced pancreatitis in Crohn’s disease compared
+with other diseases. Aliment Pharmacol Ther 2004; 20:843–50.
+84 Knowles S, Shear NH. Azathioprine hypersensitivity reactions:
+caution upon rechallenge. Muscle Nerve 1997; 20:1467–8.
+85 Lees CW, Maan AK, Hansoti B et al. Tolerability and safety of
+mercaptopurine in azathioprine-intolerant patients with inﬂam-
+matory bowel disease. Aliment Pharmacol Ther 2008; 27:220–7.
+86 Davis M, Eddleston AL, Williams R. Hypersensitivity and jaundice
+due to azathioprine. Postgrad Med J 1980; 56:274–5.
+87 Stetter M, Schmidl M, Krapf R. Azathioprine hypersensitivity
+mimicking Goodpasture’s
+syndrome.
+Am J
+Kidney
+Dis
+1994;
+23:874–7.
+88 Bowen DG, Selby WS. Use of 6-mercaptopurine in patients with
+inﬂammatory bowel disease previously intolerant of azathioprine.
+Dig Dis Sci 2000; 45:1810–13.
+89 Anstey A, Lennard L, Mayou SC et al. Pancytopenia related to aza-
+thioprine – an enzyme deﬁciency caused by a common genetic
+polymorphism: a review. J R Soc Med 1992; 85:752–6.
+90 Winkelstein A. The effects of azathioprine and 6 MP on immun-
+ity. J Immunopharmacol 1979; 1:429–54.
+91 Gupta G, Lautenbach E, Lewis JD. Incidence and risk factors for
+herpes zoster among patients with inﬂammatory bowel disease.
+Clin Gastroenterol Hepatol 2006; 4:1483–90.
+92 Ahmed AM, Brantley JS, Madkan V et al. Managing herpes zoster
+in immunocompromised patients. Herpes 2007; 14:32–6.
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+730 Guidelines for prescribing azathioprine, S.J. Meggitt et al.
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 21 ===
+93 Lawson DH, Lovatt GE, Gurton CS et al. Adverse effects of azathio-
+prine. Adverse Drug React Acute Poisoning Rev 1984; 3:161–71.
+94 Millar
+JW,
+Horne
+NW.
+Tuberculosis
+in
+immunosuppressed
+patients. Lancet 1979; 1:1176–8.
+95 Gisbert JP, Gonzalez-Lama Y, Mate J. Thiopurine-induced liver
+injury in patients with inﬂammatory bowel disease: a systematic
+review. Am J Gastroenterol 2007; 102:1518–27.
+96 Bastida G, Nos P, Aguas M et al. Incidence, risk factors and clinical
+course of thiopurine-induced liver injury in patients with inﬂam-
+matory bowel disease. Aliment Pharmacol Ther 2005; 22:775–82.
+97 Nygaard U, Toft N, Schmiegelow K. Methylated metabolites of 6-
+mercaptopurine are associated with hepatotoxicity. Clin Pharmacol
+Ther 2004; 75:274–81.
+98 Dubinsky MC, Yang H, Hassard PV et al. 6-MP metabolite proﬁles
+provide a biochemical explanation for 6-MP resistance in patients
+with inﬂammatory bowel disease. Gastroenterology 2002; 122:904–
+15.
+99 Shaye OA, Yadegari M, Abreu MT et al. Hepatotoxicity of 6-mer-
+captopurine (6-MP) and azathioprine (AZA) in adult IBD patients.
+Am J Gastroenterol 2007; 102:2488–94.
+100 Taylor AE, Shuster S. Skin cancer after renal transplantation: the
+causal role of azathioprine. Acta Derm Venereol 1992; 72:115–19.
+101 McLelland J, Rees A, Williams G et al. The incidence of immuno-
+suppression-related skin disease in long-term transplant patients.
+Transplantation 1988; 46:871–4.
+102 Euvrard S, Kanitakis J, Pouteil-Noble C et al. Skin cancers in organ
+transplant recipients. Ann Transplant 1997; 2:28–32.
+103 Maddox JS, Soltani K. Risk of nonmelanoma skin cancer with aza-
+thioprine use. Inﬂamm Bowel Dis 2008; 14:1425–31.
+104 Long MD, Herfarth HH, Pipkin CA et al. Increased risk for non-
+melanoma skin cancer in patients with inﬂammatory bowel dis-
+ease. Clin Gastroenterol Hepatol 2010; 8:268–74.
+105 Brem R, Li F, Karran P. Reactive oxygen species generated by
+thiopurine ⁄UVA cause irreparable transcription-blocking DNA
+lesions. Nucleic Acids Res 2009; 37:1951–61.
+106 O’Donovan P, Perrett CM, Zhang X et al. Azathioprine and UVA
+light generate mutagenic oxidative DNA damage. Science 2005;
+309:1871–4.
+107 Perrett CM, Walker SL, O DP et al. Azathioprine treatment photo-
+sensitizes human skin to ultraviolet A radiation. Br J Dermatol
+2008; 159:198–204.
+108 EBPG Expert Group on Renal Transplantation. European best prac-
+tice guidelines for renal transplantation. Section IV. Long-term
+management of the transplant recipient. IV.6.2. Cancer risk after
+renal transplantation. Skin cancers: prevention and treatment.
+Nephrol Dial Transplant 2002; 17 (Suppl. 4):31–6.
+109 Ulrich C, Stockﬂeth E. Azathioprine, UV light, and skin cancer in
+organ transplant patients – do we have an answer? Nephrol Dial
+Transplant 2007; 22:1027–9.
+110 Karran P, Attard N. Thiopurines in current medical practice:
+molecular mechanisms and contributions to therapy-related can-
+cer. Nat Rev Cancer 2008; 8:24–36.
+111 Jones JL, Loftus EV Jr. Lymphoma risk in inﬂammatory bowel
+disease: is it the disease or its treatment? Inﬂamm Bowel Dis 2007;
+13:1299–307.
+112 Kandiel A, Fraser AG, Korelitz BI et al. Increased risk of lymphoma
+among inﬂammatory bowel disease patients treated with azathio-
+prine and 6-mercaptopurine. Gut 2005; 54:1121–5.
+113 Sondheimer JM. Lymphoma after Imuran and 6-MP: a new look.
+J Pediatr Gastroenterol Nutr 2005; 41:683–4.
+114 Masunaga Y, Ohno K, Ogawa R et al. Meta-analysis of risk of ma-
+lignancy with immunosuppressive drugs in inﬂammatory bowel
+disease. Ann Pharmacother 2007; 41:21–8.
+115 Beaugerie L, Brousse N, Bouvier AM et al. Lymphoproliferative
+disorders in patients receiving thiopurines for inﬂammatory
+bowel disease: a prospective observational cohort study. Lancet
+2009; 374:1617–25.
+116 Vos ACW, Bakkal N, Minnee RC et al. Risk of malignant lymph-
+oma in patients with inﬂammatory bowel diseases: a Dutch
+nationwide study. Inﬂamm Bowel Dis 2011; 17:1837–45.
+117 Connell WR, Kamm MA, Dickson M et al. Long-term neoplasia
+risk after azathioprine treatment in inﬂammatory bowel disease.
+Lancet 1994; 343:1249–52.
+118 Kempen JH, Daniel E, Dunn JP et al. Overall and cancer related
+mortality among patients with ocular inﬂammation treated with
+immunosuppressive drugs: retrospective cohort study. BMJ 2009;
+339:b2480.
+119 Summary of Product Characteristics. Imuran Tablets 50 mg. 2010.
+Available at: http://www.medicines.org.uk/emc/medicine/2882/
+SPC/Imuran%20Tablets%050mg (last accessed 2 August 2011).
+120 Kaskas BA, Louis E, Hindorf U et al. Safe treatment of thiopurine
+S-methyltransferase deﬁcient Crohn’s disease patients with azathi-
+oprine. Gut 2003; 52:140–2.
+121 Derijks LJ, van Helden RB, Hommes DW et al. Dosing azathio-
+prine in thiopurine S-methyltransferase deﬁcient inﬂammatory
+bowel disease patients. Gut 2008; 57:872.
+122 Gardiner SJ, Gearry RB, Begg EJ et al. Thiopurine dose in intermedi-
+ate and normal metabolizers of thiopurine methyltransferase may
+differ three-fold. Clin Gastroenterol Hepatol 2008; 6:654–60; quiz 04.
+123 Korelitz BI, Reddy B, Bratcher J. Desensitization of patients with
+allergic reactions to immunosuppressives in the treatment of in-
+ﬂammatory bowel disease. Expert Opin Drug Saf 2010; 9:379–82.
+124 Fargher EA, Tricker K, Newman W et al. Current use of pharma-
+cogenetic testing: a national survey of thiopurine methyltransfer-
+ase testing prior to azathioprine prescription. J Clin Pharm Ther
+2007; 32:187–95.
+125 Yip JS, Woodward M, Abreu MT et al. How are azathioprine and
+6-mercaptopurine dosed by gastroenterologists? Results of a sur-
+vey of clinical practice. Inﬂamm Bowel Dis 2008; 14:514–18.
+126 Hindorf U, Lindqvist M, Peterson C et al. Pharmacogenetics dur-
+ing standardised initiation of thiopurine treatment in inﬂamma-
+tory bowel disease. Gut 2006; 55:1423–31.
+127 Arenas M, Duley JA, Ansari A et al. Genetic determinants of the pre-
+and post-azathioprine therapy thiopurine methyltransferase activity
+phenotype. Nucleosides Nucleotides Nucleic Acids 2004; 23:1403–5.
+128 Payne K, Newman W, Fargher E et al. TPMT testing in rheumatol-
+ogy: any better than routine monitoring? Rheumatology 2007;
+46:727–9.
+129 Joint Formulary Committee. British National Formulary, 61. London:
+British Medical Association and Royal Pharmaceutical Society, 2011.
+130 Schusziarra V, Ziekursch V, Schlamp R et al. Pharmacokinetics of
+azathioprine under haemodialysis. Int J Clin Pharmacol Biopharm
+1976; 14:298–302.
+131 European Association for the Study of the Liver. EASL Clinical
+Practice Guidelines: management of chronic hepatitis B. J Hepatol
+2009; 50:227–42.
+132 Colbert C, Chavarria A, Berkelhammer C. Fulminant hepatic fail-
+ure in chronic hepatitis B on withdrawal of corticosteroids, aza-
+thioprine and inﬂiximab for Crohn’s disease. Inﬂamm Bowel Dis
+2007; 13:1453–4.
+133 Wursthorn K, Wedemeyer H, Manns MP. Managing HBV in
+patients with impaired immunity. Gut 2010; 59:1430–45.
+134 Gunji Y, Sakamoto K, Sato S et al. Acutely exaggerated hepatitis B
+induced by the withdrawal of immunosuppressants in a serocon-
+verted renal transplant recipient: report of a case. Surg Today 2002;
+32:472–5.
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+Guidelines for prescribing azathioprine, S.J. Meggitt et al. 731
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 22 ===
+135 Bhagani S, Sweny P, Brook G. Guidelines for kidney transplant-
+ation in patients with HIV disease. HIV Med 2006; 7:133–9.
+136 Roland ME, Adey D, Carlson LL et al. Kidney and liver transplant-
+ation in HIV-infected patients: case presentations and review. AIDS
+Patient Care STDS 2003; 17:501–7.
+137 Department of Health. The Green Book: Immunisation Against Infectious Dis-
+ease. Chapter 6: Contraindications and special considerations. 2006.
+updated 17 September 2008. Available at: http://www.dh.gov.uk/
+prod_consum_dh/groups/dh_digitalassets/@dh/@en/documents
+/digitalasset/dh_063623.pdf (last accessed 2 August 2011).
+138 Centers for Disease Control and Prevention. Guide to Vaccine Contra-
+indications and Precautions. 2009. Available at: http://www.cdc.gov/
+vaccines/recs/vac-admin/downloads/contraindications-guide-508
+.pdf (last accessed 2 August 2011).
+139 Jordan J, Martin-Hirsch P, Arbyn M et al. European guidelines for
+clinical management of abnormal cervical cytology, part 2. Cytopa-
+thology 2009; 20:5–16.
+140 ter Haar-van Eck SA, Rischen-Vos J, Chadha-Ajwani S et al. The
+incidence of cervical intraepithelial neoplasia among women with
+renal transplant in relation to cyclosporine. Br J Obstet Gynaecol
+1995; 102:58–61.
+141 Dejaco C, Mittermaier C, Reinisch W et al. Azathioprine treatment
+and male fertility in inﬂammatory bowel disease. Gastroenterology
+2001; 121:1048–53.
+142 Xu L, Han S, Liu Y et al. The inﬂuence of immunosuppressants on
+the fertility of males who undergo renal transplantation and on the
+immune function of their offspring. Transpl Immunol 2009; 22:28–31.
+143 Gisbert JP. Safety of immunomodulators and biologics for the
+treatment of inﬂammatory bowel disease during pregnancy and
+breast-feeding. Inﬂamm Bowel Dis 2009; 16:881–95.
+144 Patel AA, Swerlick RA, McCall CO. Azathioprine in dermatology: the
+past, the present, and the future. J Am Acad Dermatol 2006; 55:369–89.
+145 Oefferlbauer-Ernst A, Reinisch W, Miehsler W et al. Healthy offspring
+in parents both receiving thiopurines. Gastroenterology 2004; 126:628.
+146 Gardiner SJ, Gearry RB, Roberts RL et al. Exposure to thiopurine
+drugs through breast milk is low based on metabolite concentra-
+tions in mother–infant pairs. Br J Clin Pharmacol 2006; 62:453–6.
+147 Christensen LA, Dahlerup JF, Nielsen MJ et al. Azathioprine treat-
+ment during lactation. Aliment Pharmacol Ther 2008; 28:1209–13.
+148 Grossman AB, Noble AJ, Mamula P et al. Increased dosing require-
+ments for 6-mercaptopurine and azathioprine in inﬂammatory
+bowel disease patients six years and younger. Inﬂamm Bowel Dis
+2008; 14:750–5.
+149 Meier-Kriesche HU, Ojo A, Hanson J et al. Increased immunosup-
+pressive vulnerability in elderly renal transplant recipients. Trans-
+plantation 2000; 69:885–9.
+150 el-Gamel A, Evans C, Keevil B et al. Effect of allopurinol on the
+metabolism of azathioprine in heart transplant patients. Transplant
+Proc 1998; 30:1127–9.
+151 Kennedy DT, Hayney MS, Lake KD. Azathioprine and allopurinol:
+the price of an avoidable drug interaction. Ann Pharmacother 1996;
+30:951–4.
+152 Vazquez SR, Rondina MT, Pendleton RC. Azathioprine-induced
+warfarin resistance. Ann Pharmacother 2008; 42:1118–23.
+153 Ng HJ, Crowther MA. Azathioprine and inhibition of the anti-
+coagulant effect of warfarin: evidence from a case report and a
+literature review. Am J Geriatr Pharmacother 2006; 4:75–7.
+154 Peyrin-Biroulet L, Cadranel JF, Nousbaum JB et al. Interaction of
+ribavirin with azathioprine metabolism potentially induces myelo-
+suppression. Aliment Pharmacol Ther 2008; 28:984–93.
+155 Chaparro M, Trapero-Marugan M, Moreno-Otero R et al. Azathio-
+prine plus ribavirin treatment and pancytopenia. Aliment Pharmacol
+Ther 2009; 30:962–3.
+156 Keshtkar-Jahromi M, Argani H, Rahnavardi M et al. Antibody
+response to inﬂuenza immunization in kidney transplant recipi-
+ents receiving either azathioprine or mycophenolate: a controlled
+trial. Am J Nephrol 2008; 28:654–60.
+157 Shah JA, Edwards CM, Probert CS. Should azathioprine and 5-am-
+inosalicylates be coprescribed in inﬂammatory bowel disease? An
+audit of adverse events and outcome. Eur J Gastroenterol Hepatol
+2008; 20:169–73.
+158 Dretchen KL, Morgenroth VH III, Standaert FG et al. Azathioprine:
+effects on neuromuscular transmission. Anesthesiology 1976; 45:604–9.
+159 Glidden RS, Martyn JA, Tomera JF. Azathioprine fails to alter the
+dose–response curve of d-tubocurarine in rats. Anesthesiology 1988;
+68:595–8.
+160 Xin HW, Fischer C, Schwab M et al. Thiopurine S-methyltransfer-
+ase as a target for drug interactions. Eur J Clin Pharmacol 2005;
+61:395–8.
+161 Lysaa RA, Giverhaug T, Wold HL et al. Inhibition of human thi-
+opurine methyltransferase by furosemide, bendroﬂumethiazide
+and trichlormethiazide. Eur J Clin Pharmacol 1996; 49:393–6.
+162 Oselin K, Anier K. Inhibition of human thiopurine S-methyltrans-
+ferase by various nonsteroidal anti-inﬂammatory drugs in vitro: a
+mechanism for possible drug interactions. Drug Metab Dispos 2007;
+35:1452–4.
+163 Gossmann J, Kachel HG, Schoeppe W et al. Anemia in renal trans-
+plant recipients caused by concomitant therapy with azathioprine
+and
+angiotensin-converting
+enzyme
+inhibitors.
+Transplantation
+1993; 56:585–9.
+164 Gossmann J, Thurmann P, Bachmann T et al. Mechanism of
+angiotensin converting enzyme inhibitor-related anemia in renal
+transplant recipients. Kidney Int 1996; 50:973–8.
+165 Ford LT, Berg JD. Thiopurine S-methyltransferase (TPMT) assessment
+prior to starting thiopurine drug treatment; a pharmacogenomic
+test whose time has come. J Clin Pathol 2010; 63:288–95.
+166 Winter JW, Gaffney D, Shapiro D et al. Assessment of thiopurine
+methyltransferase enzyme activity is superior to genotype in pre-
+dicting
+myelosuppression
+following
+azathioprine
+therapy
+in
+patients with inﬂammatory bowel disease. Aliment Pharmacol Ther
+2007; 25:1069–77.
+167 Compagni A, Bartoli S, Buehrlen B et al. Avoiding adverse drug
+reactions by pharmacogenetic testing: a systematic review of the
+economic evidence in the case of TPMT and AZA-induced side
+effects. Int J Technol Assess Health Care 2008; 24:294–302.
+168 Richard VS, Al-Ismail D, Salamat A. Should we test TPMT enzyme
+levels before starting azathioprine? Hematology 2007; 12:359–60.
+169 Stocco G, Cheok MH, Crews KR et al. Genetic polymorphism of
+inosine triphosphate pyrophosphatase is a determinant of mercap-
+topurine metabolism and toxicity during treatment for acute
+lymphoblastic leukemia. Clin Pharmacol Ther 2009; 85:164–72.
+170 Uchiyama K, Nakamura M, Kubota T et al. Thiopurine S-methyl-
+transferase and inosine triphosphate pyrophosphohydrolase genes
+in Japanese patients with inﬂammatory bowel disease in whom
+adverse drug reactions were induced by azathioprine ⁄6-mercap-
+topurine treatment. J Gastroenterol 2009; 44:197–203.
+171 Marinaki AM, Ansari A, Duley JA et al. Adverse drug reactions to
+azathioprine therapy are associated with polymorphism in the
+gene encoding inosine triphosphate pyrophosphatase (ITPase).
+Pharmacogenetics 2004; 14:181–7.
+172 Von Ahsen N, Oellerich M, Armstrong VW. Characterization of
+the inosine triphosphatase (ITPA) gene: haplotype structure, hap-
+lotype–phenotype correlation and promoter function. Ther Drug
+Monit 2008; 30:16–22.
+173 Van Dieren JM, Hansen BE, Kuipers EJ et al. Meta-analysis: inosine
+triphosphate pyrophosphatase polymorphisms and thiopurine tox-
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+732 Guidelines for prescribing azathioprine, S.J. Meggitt et al.
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 23 ===
+icity in the treatment of inﬂammatory bowel disease. Aliment Phar-
+macol Ther 2007; 26:643–52.
+174 Gearry RB, Roberts RL, Barclay ML et al. Lack of association
+between the ITPA 94C>A polymorphism and adverse effects from
+azathioprine. Pharmacogenetics 2004; 14:779–81.
+175 Kurzawski M, Dziewanowski K, Lener A et al. TPMT but not ITPA
+gene polymorphism inﬂuences the risk of azathioprine intolerance
+in renal transplant recipients. Eur J Clin Pharmacol 2009; 65:533–40.
+176 Allorge D, Hamdan R, Broly F et al. ITPA genotyping test does
+not improve detection of Crohn’s disease patients at risk of aza-
+thioprine ⁄6-mercaptopurine
+induced
+myelosuppression.
+Gut
+2005; 54:565.
+177 Smith MA, Marinaki AM, Arenas M et al. Novel pharmacogenetic
+markers for treatment outcome in azathioprine-treated inﬂamma-
+tory bowel disease. Aliment Pharmacol Ther 2009; 30:375–84.
+178 Hindorf U, Jahed K, Bergquist A et al. Characterisation and utility of
+thiopurine
+methyltransferase
+and
+thiopurine
+metabolite
+measurements in autoimmune hepatitis. J Hepatol 2010; 52:106–11.
+179 Elion GB. The purine path to chemotherapy. Science 1989;
+244:41–7.
+180 Sparrow MP, Hande SA, Friedman S et al. Effect of allopurinol on
+clinical outcomes in inﬂammatory bowel disease nonresponders
+to azathioprine or 6-mercaptopurine. Clin Gastroenterol Hepatol 2007;
+5:209–14.
+181 Sparrow MP, Hande SA, Friedman S et al. Allopurinol safely and
+effectively optimizes tioguanine metabolites in inﬂammatory
+bowel disease patients not responding to azathioprine and mer-
+captopurine. Aliment Pharmacol Ther 2005; 22:441–6.
+182 Ansari A, Patel N, Sanderson J et al. Low-dose azathioprine or
+mercaptopurine in combination with allopurinol can bypass
+many adverse drug reactions in patients with inﬂammatory bowel
+disease. Aliment Pharmacol Ther 2010; 31:640–7.
+183 Ansari A, Elliott T, Baburajan B et al. Long-term outcome of using
+allopurinol co-therapy as a strategy for overcoming thiopurine
+hepatotoxicity in treating inﬂammatory bowel disease. Aliment
+Pharmacol Ther 2008; 28:734–41.
+Appendix 1
+Levels of evidence
+Level of evidence
+Type of evidence
+1++
+High-quality meta-analyses, systematic reviews of RCTs, or RCTs with a very low risk of bias
+1+
+Well-conducted meta-analyses, systematic reviews of RCTs, or RCTs with a low risk of bias
+1)
+Meta-analyses, systematic reviews of RCTs, or RCTs with a high risk of biasa
+2++
+High-quality systematic reviews of case–control or cohort studies
+High-quality case–control or cohort studies with a very low risk of confounding, bias or chance and
+a high probability that the relationship is causal
+2+
+Well-conducted case–control or cohort studies with a low risk of confounding, bias or chance and a
+moderate probability that the relationship is causal
+2)
+Case–control or cohort studies with a high risk of confounding, bias or chance and a signiﬁcant risk that the
+relationship is not causala
+3
+Nonanalytical studies (for example, case reports, case series)
+4
+Expert opinion, formal consensus
+aStudies with a level of evidence ‘)’ should not be used as a basis for making a recommendation. RCT, randomized controlled trial.
+Strength of recommendation
+Class
+Evidence
+A
+• At least one meta-analysis, systematic review, or RCT rated as 1++, and directly applicable to the target population, or
+• A systematic review of RCTs or a body of evidence consisting principally of studies rated as 1+, directly applicable to the
+target population and demonstrating overall consistency of results
+• Evidence drawn from a NICE technology appraisal
+B
+• A body of evidence including studies rated as 2++, directly applicable to the target population and demonstrating overall
+consistency of results, or
+• Extrapolated evidence from studies rated as 1++
+or 1+
+C
+• A body of evidence including studies rated as 2+, directly applicable to the target population and demonstrating overall
+consistency of results, or
+• Extrapolated evidence from studies rated as 2++
+D
+• Evidence level 3 or 4, or
+• Extrapolated evidence from studies rated as 2+, or
+• Formal consensus
+D (GPP)
+• A good practice point (GPP) is a recommendation for best practice based on the experience of the guideline development group
+RCT, randomized controlled trial; NICE, National Institute for Health and Clinical Excellence.
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+Guidelines for prescribing azathioprine, S.J. Meggitt et al. 733
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 24 ===
+Appendix 2
+Laboratories offering thiopurine methyltransferase and
+thioguanine nucleotide measurement
+Measurement of thiopurine methyltransferase (TPMT) activity
+requires a complex assay for which high sample throughput is
+desirable for economic viability. Different centres may use
+different
+units
+so
+reference
+ranges
+corresponding
+to
+absent ⁄very low, intermediate and normal ⁄high levels should
+always be clariﬁed with the reporting laboratory. Although
+there are several NHS laboratories providing local TPMT
+services,
+the
+majority
+of
+TPMT
+testing
+in
+the
+U.K.
+is
+performed by two national services. Both laboratories also
+offer thioguanine nucleotide (TGN) measurement:
+Purine Research Laboratory
+4th Floor, North Wing, St Thomas’ Hospital, Lambeth Palace
+Road, London SE1 7EH, U.K.
+Clinical Biochemistry
+City Hospital, Dudley Road, Birmingham B18 7QH, U.K.
+For historical reasons, due to an ongoing trial in leukaemia,
+all U.K. patients with acute lymphoblastic leukaemia are tested
+at Shefﬁeld.
+Supporting Information
+Additional Supporting Information may be found in the online
+version of this article:
+Appendix S1. Literature search strategies.
+Please note: Wiley-Blackwell are not responsible for the
+content or functionality of any supporting materials supplied
+by the authors. Any queries (other than missing material)
+should be directed to the corresponding author for the article.
+ 2011 The Authors
+BJD  2011 British Association of Dermatologists 2011 165, pp711–734
+734 Guidelines for prescribing azathioprine, S.J. Meggitt et al.
+Downloaded from https://academic.oup.com/bjd/article/165/4/711/6644050 by guest on 06 May 2026
+
+=== PAGE 25 ===
+of patients  
+with PsO achieved  
+PASI 75 at Week 4 
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+75.9% 
+(n=265/349)
+of patients 
+with PsO achieved 
+PASI 100 at 5 years3
+76.9% 
+(N=52)† 
+of biologic-naïve  
+and TNFi-IR PsA patients 
+achieved ACR 50 at  
+Week 104/100, respectively‡1,4–6
+of patients  
+with PsO achieved  
+PASI 100 at Week 16
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+68.2%
+(n=238/349)
+and
+50.6% 
+(n=135/267) 
+51.5% 
+(n=222/431)
+GB-BK-2500315 | July 2025
+UCB Biopharma SRL, 2025. All rights reserved.
+This promotional material has been created and funded by UCB Pharma Ltd and 
+is intended for healthcare professionals in the UK.
+BIMZELX is indicated for the treatment of: moderate to severe plaque PsO in adults 
+who are candidates for systemic therapy; active PsA, alone or in combination 
+with methotrexate, in adults who have had an inadequate response, or who have 
+been intolerant, to one or more DMARDs; active nr-axSpA with objective signs of 
+inflammation as indicated by elevated CRP and/or MRI, in adults who have responded 
+inadequately, or are intolerant, to NSAIDs; active AS in adults who have responded 
+inadequately or are intolerant to conventional therapy; and active moderate to severe 
+HS (acne inversa) in adults with an inadequate response to conventional systemic HS 
+therapy.4
+Prescribing information for United Kingdom click here.  
+Please refer to the SmPC for further information. 
+These data are from different clinical trials and cannot be directly compared.
+Co-primary endpoints PASI 90 and IGA 0/1 at Week 16 were met.**Secondary endpoints. †N= mNRI, missing data 
+were imputed with mNRI (patients with missing data following treatment discontinuation due to lack of efficacy 
+or a TRAE were counted as non-responders; multiple imputation methodology was used for other missing data). 
+‡43.9% (n=189/431), and 43.4% (n=116/267) of biologic-naïve and TNFi-IR PsA patients achieved the primary 
+endpoint of ACR 50 at Week 16 in BE OPTIMAL and BE COMPLETE, respectively (vs 10.0% [n=28/281] and 6.8% 
+[n=9/133] placebo, p<0.0001); 54.5% (n=235/431) and 51.7% (n=138/267) maintained it at Week 52 (NRI).4–6 ​
+ACR 50, ≥50% response in the American College of Rheumatology criteria; AS, ankylosing spondylitis; CRP, 
+C-reactive protein; DMARD, disease-modifying antirheumatic drug; HS, hidradenitis suppurativa; IGA, Investigator’s 
+Global Assessment; (m)NRI, (modified) non-responder imputation; MRI, magnetic resonance imaging; nr-
+axSpA, non-radiographic axial spondyloarthritis; NSAID, non-steroidal anti-inflammatory drug; PASI 75/90/100, 
+≥75/90/100% improvement from baseline in Psoriasis Area and Severity Index; PsA, psoriatic arthritis; PsD, psoriatic 
+disease; PsO, psoriasis; TNFi-IR, tumour necrosis factor-α inhibitor – inadequate responder; TRAE, treatment-
+related adverse event.
+References: 1. Gordon KB, et al. Lancet. 2021;397(10273):475–486. 2. Blauvelt. 2025. AAD Presentation 62275. 3. 
+Mease PJ, et al. Rheumatol Ther. 2024;11(5):1363–1382. 4. BIMZELX SmPC. 5. Ritchlin CT, et al. Ann Rheum Dis. 
+2023;82(11):1404–1414. 6. Coates LC, et al. RMD Open. 2024;10(1):e003855. 7. Strober B, et al. AAD 2024;oral 
+presentation.​
+This medicine is subject to additional monitoring. This will allow quick 
+identification of new safety information. Adverse events should be reported. 
+Reporting forms and information can be found at www.yellowcard.mhra.gov.uk for 
+the UK. Adverse events should also be reported to UCB Pharma Ltd at  
+UCBCares.UK@UCB.com or 0800 2793177 for UK.
+NO COMPROMISE, 
+JUST CLEARANCE
+BIMZELX was well tolerated, the most frequently reported adverse reactions were: upper respiratory tract infections 
+and oral candidiasis. Other common reported adverse reactions include tinea infections, ear infections, herpes simplex 
+infections, oropharyngeal candidiasis, gastroenteritis, folliculitis, headache, rash, dermatitis, eczema, acne, injection site 
+reactions, fatigue, and vulvovaginal mycotic infection (including vulvovaginal candidiasis).4
+Bimzelx®     (bimekizumab) offers 
+the opportunity for complete, fast,
+and lasting skin clearance and 
+proven PsA efficacy 1–7

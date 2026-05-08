@@ -290,6 +290,15 @@
     </image:image>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/contact-dermatitis</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/contact-dermatitis"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/contact-dermatitis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/contact-dermatitis"/>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/shingles-myths</loc>
     <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
