@@ -391,8 +391,10 @@ footer.mag-footer {
    render in smaller, muted text so they don't dominate body copy. Mirrors
    academic journal formatting. */
 .cite,article cite{font-size:.82em;color:#6b7280;font-style:normal;font-weight:400;letter-spacing:.01em}
-ol.references,article ol.references,#references+ol{font-size:.82em;color:#4b5563;line-height:1.65;padding-left:1.4em;margin-top:8px}
-ol.references li,article ol.references li{margin:4px 0;line-height:1.6}
+/* References list — wrapped as a card matching addAuthorBio padding/look */
+ol.references,article ol.references,#references+ol{font-size:.82em;color:#4b5563;line-height:1.7;padding:22px 26px 22px 48px;margin:18px 0;background:#fff;border:1px solid #e7e2d8;border-radius:18px;box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(77,99,88,.18);list-style-position:outside}
+ol.references li,article ol.references li{margin:6px 0;line-height:1.7;padding-left:4px}
 ol.references li em,article ol.references li em{color:#374151;font-style:italic}
 ol.references li strong,article ol.references li strong{font-size:1.05em;color:#0c5159}
-@media (prefers-color-scheme:dark){.cite,article cite{color:#9ca3af} ol.references{color:#9ca3af}}
+ol.references a,article ol.references a{color:#0c5159;font-weight:600}
+@media (prefers-color-scheme:dark){.cite,article cite{color:#9ca3af} ol.references{color:#9ca3af;background:#1e293b;border-color:#334155}}
