@@ -1,0 +1,1220 @@
+=== PAGE 1 ===
+BAD GUIDELINES
+BJD
+British Journal of Dermatology
+British Association of Dermatologists guidelines for the
+management of people with rosacea 2021*
+P.J. Hampton iD ,1 J. Berth-Jones iD ,2,3 C.E. Duarte Williamson,4 R. Hay iD ,5 T.A. Leslie,6 I. Porter,3 S. Rauz iD ,7,8,9
+D. Seukeran,10 R.T. Winn,1 M. Hashme,11 L.S. Exton iD ,11 M.F. Mohd Mustapa iD ,11 and L. Manounah iD 11
+on behalf of the British Association of Dermatologists’ Clinical Standards Unit
+1Royal Victoria Inﬁrmary, Newcastle upon Tyne, NE1 4LP, UK
+2Department of Dermatology, University Hospitals Coventry and Warwickshire NHS Trust, Coventry, CV2 2DX, UK
+3Patient representative
+4King’s College Hospital NHS Foundation Trust, London, SE5 9RS, UK
+5St John’s Institute of Dermatology, Kings College London, London, SE1 9RT, UK
+6Royal Free Hospital, London, NW3 2QG, UK
+7University of Birmingham, Birmingham, B15 2TT, UK
+8Birmingham & Midland Eye Centre, Sandwell and West Birmingham NHS Trust, Birmingham, B18 7QH, UK
+9Royal College of Ophthalmologists, NW1 2HD, UK
+10South Tees Hospitals NHS Foundation Trust, Middlesbrough, TS4 3BW, UK
+11British Association of Dermatologists, Willan House, 4 Fitzroy Square, London, W1T 5HQ, UK
+Correspondence
+Philip J. Hampton
+Email: philip.hampton@nhs.net; guidelines@bad.org.uk
+Accepted for publication
+13 May 2021
+Funding sources
+None.
+Conﬂicts of interest
+P.J.H. has received educational and travel grants (nonspeciﬁc); and research funding
+from LEO Pharma, Janssen, UCB Pharma and Eli Lilly (nonspeciﬁc). J.B.-J. ran a
+clinical trials unit with an interest in rosacea until 2014 (speciﬁc). C.E.D.W. has
+been an invited speaker for AbbVie, Galderma and Janssen (speciﬁc); and has accepted
+invitations to attend congresses and meetings related to psoriasis/biologics (nonspeciﬁc).
+T.A.L. has been on advisory boards for Galderma, La Roche-Posay and Novartis (speci-
+ﬁc); and has been an invited speaker for Novartis (speciﬁc). D.S. received travel and
+conference sponsorship for the 2018 European Academy of Dermatology and Venereology
+spring conference from Galderma (speciﬁc).
+This is a guideline prepared for the British Association of Dermatologists (BAD) Clini-
+cal Standards Unit, which includes the Therapy & Guidelines Subcommittee. Members
+of the Clinical Standards Unit that have been involved are: N.J. Levell, B. McDonald,
+P. Laws, S.L. Chua, A. Daunton, H. Frow, I. Nasr, M. Hashme (Information Scien-
+tist), L.S. Exton (Senior BAD Guideline Research Fellow), L. Manounah (BAD Guide-
+line Research Fellow) and M.F. Mohd Mustapa (Director of Clinical Standards).
+NICE has accredited the process used by the British Association of Dermatologists to produce
+clinical guidelines. The renewed accreditation is valid until 31 May 2021 and applies to
+guidance produced using the process described in Updated guidance for writing a British
+Association of Dermatologists clinical guidance – the adoption of the GRADE methodology
+2016. The original accreditation term began on 12 May 2010. Accreditation renewal in
+progress at time of publication. More information on accreditation can be viewed at
+www.nice.org.uk/accreditation
+DOI 10.1111/bjd.20485
+*Plain language summary available online
+Linked Comment: J.S.S. Ho and Y. Asai. Br J Dermatol 2021;
+185:689–690.
+1.0
+Purpose and scope
+The overall objective of the guideline is to provide up-to-date,
+evidence-based recommendations for the management of rosa-
+cea. The document aims to: (i) offer an appraisal of all rele-
+vant literature up to February 2020 focusing on any key
+developments; (ii) address important, practical clinical ques-
+tions relating to the primary guideline objective; and (iii) pro-
+vide guideline recommendations and, if appropriate, research
+recommendations.
+The guideline is presented as a detailed review with high-
+lighted recommendations for practical use in primary care and
+in the clinic, in addition to an updated Patient Information
+Leaﬂet [available on the British Association of Dermatologists’
+(BAD)
+website:
+www.skinhealthinfo.org.uk/a-z-conditions-
+treatments/].
+1.1. Exclusions
+This guideline does not cover the diagnosis of rosacea. The
+evidence supporting the recommendations does not include
+evidence that is speciﬁc to children.
+2.0 Methodology
+This set of guidelines has been developed using the BAD’s rec-
+ommended methodology,1 with reference to the Appraisal of
+Guidelines Research and Evaluation (AGREE II) instrument
+(www.agreetrust.org)2
+and
+Grading
+of
+Recommendations
+Assessment, Development and Evaluation [GRADE; Appendix L
+(see
+Supporting
+Information)].3
+Recommendations
+were
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2021) 185, pp725–735
+725
+Downloaded from https://academic.oup.com/bjd/article/185/4/725/6599936 by guest on 06 May 2026
+
+=== PAGE 2 ===
+developed for implementation in the UK National Health Ser-
+vice (NHS).
+The guideline development group (GDG), which consisted of
+consultant dermatologists, a consultant ophthalmologist, patient
+representatives and a technical team (consisting of a guideline
+research fellow and project manager who provided method-
+ological and technical support), established several clinical ques-
+tions pertinent to the scope of the guideline and a set of
+outcome measures of importance to patients, ranked by the
+patient representatives according to the GRADE methodology
+[section 2.1 and Appendix A (see Supporting Information)].
+A systematic literature search of PubMed, MEDLINE, Embase
+and the Cochrane databases was conducted to identify key
+articles on rosacea up to February 2020; search terms and
+strategies
+are
+detailed
+in
+the
+supporting
+information
+(Appendix M; see Supporting Information). Additional refer-
+ences relevant to the topic were also isolated from citations in
+reviewed literature. Data extraction and critical appraisal, data
+synthesis, evidence summaries, lists of excluded studies and
+the
+Preferred
+Reporting
+Items
+for
+Systematic
+Reviews
+(PRISMA) diagram were prepared by the technical team. Evi-
+dence from included studies was graded according to the
+GRADE system (high, moderate, low or very-low certainty).
+Recommendations are based on evidence drawn from system-
+atic reviews of the literature pertaining to the clinical ques-
+tions identiﬁed, following discussions with the entire GDG,
+and factoring in all items that would affect the strength of the
+evidence according to the GRADE approach (i.e. balance
+between desirable and undesirable effects, certainty of evi-
+dence, patient values and preference, and resource allocation).
+All GDG members contributed towards drafting and/reviewing
+the narratives and supporting information.
+The summary of ﬁndings with forest plots (Appendix B; see
+Supporting Information), tables Linking the Evidence To the
+Recommendations
+[LETR;
+Appendix
+C
+(see
+Supporting
+Information)], GRADE evidence proﬁles indicating the cer-
+tainty of evidence (Appendix D; see Supporting Information),
+summary of included studies (Appendix E see Supporting
+Information), narrative ﬁndings from comparative without
+data in an extractable format (Appendix F; see Supporting
+Information), narrative ﬁndings from within-patient studies
+(Appendix G; see Supporting Information), narrative ﬁndings
+from non-comparative studies (Appendix H; see Supporting
+Information), critical appraisal of the included systematic
+reviews (Appendix I; see Supporting Information), PRISMA
+ﬂow diagram (Appendix J; see Supporting Information) and
+list of excluded studies (Appendix K; see Supporting Informa-
+tion) are detailed in the Supporting Information. The strength
+of recommendation is expressed by the wording and symbols
+shown in Table 1.
+2.1. Clinical questions and outcomes
+The GDG established several clinical questions pertinent to
+the scope of the guideline. See Appendix A (Supporting
+Information) for the full review protocol. The GDG also
+established two sets of outcome measures of importance to
+patients: one set for topical and systemic treatments; and one
+for procedural therapies [light, laser and intense pulsed light
+(IPL)], which were agreed and ranked by the patient repre-
+sentatives according to the GRADE methodology.4 Outcomes
+ranked 7, 8 and 9 are critical for decision-making; those
+ranked 4, 5 and 6 are important but not critical for decision-
+making; and those ranked 3, 2 and 1 are least important for
+decision-making.
+Systematic review question 1: topical therapies
+In people with rosacea what is the clinical effectiveness and
+safety of topical therapies, compared to each other or pla-
+cebo?
+Table 1 Strength of recommendation ratings
+Strength
+Wording
+Symbols
+Deﬁnition
+Strong recommendation for
+the use of an
+intervention
+‘Offer’ (or similar, e.g. ‘use’,
+‘provide’, ‘take’,
+‘investigate’, etc.)
+↑↑
+Beneﬁts of the intervention outweigh the risks; most patients
+would choose the intervention, while only a small proportion
+would not; for clinicians, most of their patients would receive the
+intervention; for policy makers, it would be a useful performance
+indicator
+Weak recommendation for
+the use of an
+intervention
+‘Consider’
+↑
+Risks and beneﬁts of the intervention are ﬁnely balanced; most
+patients would choose the intervention but many would not;
+clinicians would need to consider the pros and cons for the
+patient in the context of the evidence; for policy makers it would
+be a poor performance indicator where variability in practice is
+expected
+No recommendation
+Θ
+Insufﬁcient evidence to support any recommendation
+Strong recommendation
+against the use of an
+intervention
+‘Do not offer’
+↓↓
+Risks of the intervention outweigh the beneﬁts; most patients
+would not choose the intervention, while only a small proportion
+would; for clinicians, most of their patients would not receive the
+intervention
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2021) 185, pp725–735
+726 BAD guidelines for the management of people with rosacea 2021, P.J. Hampton et al.
+Downloaded from https://academic.oup.com/bjd/article/185/4/725/6599936 by guest on 06 May 2026
+
+=== PAGE 3 ===
+Critical
+Objective response to treatment scoring systems
+• Reduction in lesion counts
+8
+• Reduction in erythema
+8
+• Improvement in quality of life (QoL)
+7
+• Adverse events and tolerability
+7
+Important
+• Physician Global Assessment (PGA)
+6
+• Relapse/recurrence
+6
+• Patient global assessment
+6
+• Reduction in ﬂushing
+6
+Systematic review question 2: systemic therapies
+In people with rosacea what is the clinical effectiveness and
+safety of systemic therapies, compared to topicals, each other
+or placebo?
+Critical
+Objective response to treatment scoring systems
+• Reduction in lesion counts
+8
+• Reduction in erythema
+8
+• Improvement in QoL
+7
+• Adverse events and tolerability
+7
+Important
+• PGA
+6
+• Relapse/recurrence
+6
+• Patient global assessment
+6
+• Reduction in ﬂushing
+6
+Systematic review question 3: procedural therapies
+In people with rosacea what is the clinical effectiveness and
+safety of light, laser and IPL treatments?
+Critical
+Objective response to treatment scoring systems
+• Reduction in erythema
+8
+• Reduction in telangiectasia
+8
+• Improvement in QoL
+7
+• Adverse events and tolerability
+7
+Important
+• PGA
+6
+• Patient global assessment
+6
+• Relapse/recurrence
+6
+• Reduction in ﬂushing
+6
+3.0 Summary of recommendations
+The following recommendations and ratings were agreed
+upon unanimously by the core members of the GDG and
+patient representatives. For further information on the word-
+ing used for recommendations and strength of recommenda-
+tion ratings, see section 2.0. The GDG is aware of the lack of
+high-certainty evidence for some of these recommendations,
+therefore strong recommendations, marked with an asterisk
+(*), are based on available evidence, as well as consensus
+within the GDG and specialist experience. Good practice point
+(GPP) recommendations are derived from informal consensus.
+General recommendations
+R1 (GPP) Advise people with rosacea to limit exposure to
+known aggravating factors such as alcohol, sun exposure, hot
+drinks and spicy food.
+R2 (GPP) Provide a patient information leaﬂet (www.skin-
+healthinfo.org.uk/a-z-conditions-treatments/) to people with
+rosacea.
+R3 (GPP) When characterizing the clinical subtypes and
+symptoms of rosacea, classify the patient according to the phe-
+notypes identiﬁed by Gallo et al.5 This approach encompasses
+the objective clinical signs and the subjective symptoms expe-
+rienced by the patient with rosacea. Diagnostic phenotypes
+include characteristic ﬁxed centrofacial erythema or phymatous
+changes. Other features include ﬂushing, papules or pustules,
+telangiectasia, ocular changes, burning or stinging sensations,
+oedema and dryness.
+R4 (GPP) Take into account the older classiﬁcation system for
+rosacea, which was based on clinical signs: erythematotelang-
+iectatic, papulopustular, phymatous or ocular. Characterize the
+clinical subtypes and symptoms of rosacea affecting the person
+according to these clinical signs.
+R5 (GPP) Whenever possible, avoid long-term use of oral
+antibiotics in people with rosacea (i.e. antibiotic stewardship).
+The optimal duration of antibiotic therapy is not known. In
+acne, a lack of response after 2–3 months of antibiotic therapy
+is usually regarded as treatment failure, and a similar duration
+to establish beneﬁt may be appropriate in rosacea. When
+antibiotics are working, the pros and cons of longer-term
+treatment need to be evaluated carefully.
+R6 (GPP) Advise that some people with rosacea ﬁnd it beneﬁ-
+cial to wash their skin with emollients, moisturize regularly
+and use appropriate sun protection. Soaps and washing prod-
+ucts that contain detergent are irritant in some people and
+should be avoided if they worsen the symptoms.
+R7 (GPP) Consider skin camouﬂage in people with rosacea
+‘whose main clinical feature is’ OR who are ‘presenting with’
+intractable erythema.
+R8 (GPP) Consider the need for psychological support or psy-
+chiatric interventions in people with rosacea who experience
+anxiety or depression. Initial assessment in primary care is
+often appropriate.
+Topical therapies
+R9 (↑↑) Offer either ivermectin, metronidazole or azelaic acid as
+ﬁrst-line topical treatment options to people with papulopustular
+rosacea. Discuss the potential for irritancy of different products
+and formulations prior to prescribing the topical agent.
+R10 (↑) Consider topical minocycline foam in people with
+papulopustular rosacea (minocycline foam is currently not
+available in the UK).
+R11 (↑) Consider topical brimonidine in people with rosacea
+where the main presenting feature is facial erythema. Warn
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2021) 185, pp725–735
+BAD guidelines for the management of people with rosacea 2021, P.J. Hampton et al. 727
+Downloaded from https://academic.oup.com/bjd/article/185/4/725/6599936 by guest on 06 May 2026
+
+=== PAGE 4 ===
+patients that there are reports that redness may ﬂare after dis-
+continuation of treatment.
+R12 (↑) Consider topical oxymetazoline in people with rosa-
+cea where the main presenting feature is facial erythema.
+Warn patients that there are reports that redness may ﬂare
+after discontinuation of treatment (oxymetazoline is currently
+not available in the UK).
+Systemic therapies
+R13 (↑↑) Offer* an oral antibiotic as a ﬁrst-line treatment
+option for more severe papulopustular rosacea. Options (in
+alphabetical order) include azithromycin, clarithromycin, doxy-
+cycline 40 mg (modiﬁed release) daily, doxycycline 100 mg
+daily, erythromycin, lymecycline and oxytetracycline. These
+antibiotics (especially tetracyclines) are considered safe and have
+been prescribed for rosacea for decades. There is insufﬁcient evi-
+dence to establish the superiority of one over another, especially
+in the absence of head-to-head trials or a network meta-analysis.
+Currently, only the modiﬁed-release formulation of doxycycline
+is licensed speciﬁcally for papulopustular rosacea in the UK.
+R14 (↑↑) Avoid minocycline in people with rosacea due to
+potential side-effects, unless there are no other treatment
+options.
+R15 (↑) Consider intermittent courses of low-dose isotretinoin
+(e.g. 025 mg kg–1) in people with persistent and severe rosa-
+cea. Discuss the potential side-effects and teratogenicity.
+R16 (↑) Consider oral propranolol in people with rosacea
+where the main presenting feature is transient facial erythema
+(ﬂushing).
+Procedural therapies
+R17
+(↑)
+Consider
+pulsed
+dye
+laser,
+neodymium-doped
+yttrium aluminium garnet (Nd:YAG) laser or intense pulsed
+light in people with rosacea where the main presenting feature
+is persistent facial erythema. An appropriately qualiﬁed laser
+practitioner should be consulted to ensure safe and high-qual-
+ity practice.
+R18 (↑) Consider nasal debulking by laser ablation or surgical
+intervention (dependent on local expertise) in people with
+signiﬁcant rhinophyma.
+Ocular therapies
+R19 (↑↑) Advise* people with ocular rosacea to minimize expo-
+sure to aggravating factors such as air conditioning, excessive
+central heating, smoky atmospheres and periocular cosmetics.
+R20 (↑↑) Identify* and modify/eliminate systemic medica-
+tions that could be triggering eye dryness in people with ocu-
+lar rosacea (e.g. antidepressants and anxiolytics).
+R21 (↑↑) Offer* warm compresses using proprietary lid-
+warming devices and lid hygiene with homemade bicarbonate
+solution or commercially available lid wipes.
+R22 (↑↑) Offer* over-the-counter ocular lubricants or liposo-
+mal sprays to alleviate symptoms in people with ocular rosa-
+cea, ensuring preservative-free preparations are used if using >
+6 times daily. Increasing humidity using humidiﬁers can help
+to reduce tear evaporation.
+R23 (↑↑) Refer* people with ocular rosacea to an ophthalmolo-
+gist if they are (i) experiencing eye discomfort, sticky eye dis-
+charge persisting for > 12 months despite frequent (> 6 times
+daily) topical lubricant use and adequate lid hygiene; or (ii)
+experiencing symptoms such as reduced vision, pain on eye
+movement and pain that keeps the patient awake at night.
+Summary of future research recommendations
+The following list outlines future research recommendations
+(FRRs).
+FRR1 A prospective randomized controlled trial (RCT) investi-
+gating the effect of topical ivermectin on ocular rosacea.
+FRR2 A prospective RCT investigating various interventions
+(topical/systemic/procedural) for transient erythema (ﬂushing).
+FRR3 A study investigating the psychological impact of rhino-
+phyma, the effect of treatment and the optimal choice of sur-
+gical or laser treatments.
+FRR4 A study investigating other acaricidal drugs currently
+used in veterinary practice, such as moxidectin and afoxolaner
+against Demodex.
+FRR5 A cost-effectiveness analysis of treatments for people
+with rosacea within a UK setting.
+FRR6 Investigations of the aetiology, pathophysiology and psy-
+chological issues of rosacea, and treatment of the sensory symp-
+toms of rosacea, sometimes referred to as neurogenic rosacea.
+4.0 Algorithm
+The recommendations, discussions in the LETR (Appendix C;
+see supporting information) and consensus specialist experience
+were used to inform the algorithm/pathway of care (Figure 1).
+5.0 Background
+5.1. Deﬁnition
+Rosacea is a chronic disorder that predominantly affects the
+central areas of the face (nose, forehead, cheeks and chin). It
+is characterized by frequent ﬂushing, persistent erythema and
+telangiectasia, and episodes of inﬂammation during which
+swelling, papules and pustules are evident. These symptoms
+are frequently accompanied by periocular inﬂammation and
+are sometimes associated with the later development of cuta-
+neous swellings known as phymas.
+5.2. Classiﬁcation
+Rosacea is a clinical diagnosis and can be classiﬁed according to
+the predominant clinical features. In this guideline, we have
+continued to use the traditional approach to the classiﬁcation of
+rosacea, which maps very well to most clinical trials. Some
+authors have suggested that a phenotype approach to the classiﬁ-
+cation of rosacea could have some advantages, and it will
+become clear over time which system is more useful.5 It is not
+clear to what degree the clinical classiﬁcation of rosacea corre-
+sponds
+to
+any
+underlying
+difference
+in
+aetiology
+and
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2021) 185, pp725–735
+728 BAD guidelines for the management of people with rosacea 2021, P.J. Hampton et al.
+Downloaded from https://academic.oup.com/bjd/article/185/4/725/6599936 by guest on 06 May 2026
+
+=== PAGE 5 ===
+pathogenesis, or indeed whether the clinical variants represent
+separate but associated entities. The diverse clinical features,
+which often occur in combination, may also occur in isolation,
+suggesting that these may be different clinical entities that com-
+monly
+coexist.
+Notwithstanding
+the
+considerable
+clinical
+overlap, it is possible, and clinically convenient, to classify most
+cases of rosacea into the following four groups in accordance
+with the clinical presentation. The clinical value of this classiﬁca-
+tion is that it is broadly reﬂected in different approaches to treat-
+ment, although there is, again, considerable overlap.
+Figure 1 Management pathway for people with rosacea. Nd:YAG, neodymium-doped yttrium aluminium garnet; OTC, over-the-counter.
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2021) 185, pp725–735
+BAD guidelines for the management of people with rosacea 2021, P.J. Hampton et al. 729
+Downloaded from https://academic.oup.com/bjd/article/185/4/725/6599936 by guest on 06 May 2026
+
+=== PAGE 6 ===
+1. Erythematotelangiectatic rosacea (vascular rosacea) In
+these cases, the predominant features are vascular (ﬂushing,
+erythema and telangiectasia). Flushing is often noticed ﬁrst
+and progresses gradually to persisting erythema and increas-
+ingly prominent telangiectasia. Factors that trigger ﬂushing
+include emotion and stress,6 hot drinks,7 alcohol and other
+vasodilating drugs,8 and spicy food. The ﬂushing and ery-
+thema are often accompanied by a burning sensation.9
+2. Papulopustular rosacea (inﬂammatory rosacea) In these
+cases, the predominant features are inﬂammatory lesions
+(eruptions of papules and pustules). In contrast to acne, the
+lesions are usually painless, not consistently associated with
+hair follicles and not accompanied by comedones.
+3. Ocular rosacea The predominant features of ocular rosacea
+include blepharitis, episcleritis, meibomian gland dysfunc-
+tion, conjunctival scarring and corneal vascularization. Ini-
+tially, there is a sensation of grittiness, burning or irritability
+of the eyes, accompanied by visible reddening of the eyelid
+margins and conjunctiva. The blepharoconjunctivitis is asso-
+ciated with a predominantly evaporative dry eye accompa-
+nied by aqueous deﬁciency, which results in an unstable tear
+ﬁlm and a static or slowly progressive cicatrising conjunctivi-
+tis.10,11 Ocular rosacea may be seen in isolation or occur
+before the onset of cutaneous features, especially in chil-
+dren.12 The condition may be unilateral or asymmetrical.12
+4. Phymatous rosacea (mainly rhinophyma) This most fre-
+quently manifests as rhinophyma, a bulbous, rugose, soft-
+tissue swelling of the nose, although similar lesions occur
+less often in other facial locations including the ears (oto-
+phyma), forehead (metophyma) and chin (gnathophyma).
+5.3. Epidemiology
+Rosacea is a very common disease. It is predominantly a dis-
+ease of young-to-middle-aged adults but is seen in patients of
+all ages, including, occasionally, in children. Estimates of
+prevalence vary considerably, but this is certainly a very com-
+mon skin disease, estimated in 2018 to affect 55% of the glo-
+bal adult population.13 Women are more commonly affected
+than men, especially within the age range of 36–50 years. It
+is considered more common in individuals with less deeply
+pigmented skin (Fitzpatrick skin types I–III) than in those with
+more deeply pigmented skin (Fitzpatrick skin types IV–VI),
+although it does occur in all skin types. The development of
+rhinophyma is more common in men. Symptoms of ocular
+rosacea are also common, although these are also often
+encountered in patients without other features of the disease,
+and as the symptoms in these cases are indistinguishable from
+those of ‘ocular rosacea’, it is probably impossible to ascertain
+the prevalence of the latter as a distinct entity.
+5.4. Aetiology and pathogenesis
+The cause, or causes, of rosacea remain uncertain, and both
+aetiology and pathogenesis seem likely to differ between the
+various categories.
+It has been proposed that damage to dermal connective tis-
+sue, often caused by solar irradiation, may be the initiating
+event.14 This may result in dysfunction of the unsupported
+facial blood vessels with consequent endothelial damage, leak-
+age, oedema and inﬂammation. Others have argued for a cen-
+tral role of abnormal vascular reactivity.15
+It has also been proposed that lowered neural thresholds for
+reaction to noxious stimuli may result in neurogenic inﬂamma-
+tion.9 Sensitivity to noxious stimuli, including heat, is increased
+in involved skin, regardless of whether vascular or inﬂamma-
+tory features predominate.9 This may explain the burning sen-
+sation frequently reported by patients with rosacea.
+Changes in redox status, with reduced levels of superoxide
+dismutase have been observed in the skin in cases of inﬂam-
+matory rosacea.16
+Abnormally high levels of the endogenous antimicrobial
+peptide cathelicidin have been demonstrated in the facial skin
+of patients with rosacea.17Cathelicidin and related peptides
+trigger inﬂammation by promoting leucocyte chemotaxis and
+angiogenesis. Elevated levels of cathelicidin may be a sec-
+ondary phenomenon, perhaps related to the presence of Demo-
+dex spp. or microorganisms in the skin. Upregulation of
+various elements of the innate skin immune system such as
+Toll-like receptor 2 (TLR2) and the NOD-, LRR- and pyrin
+domain-containing protein 3 (NLRP3), which is an intracellu-
+lar sensor that detects a broad range of microbial motifs,
+endogenous danger signals and environmental irritants, have
+been reported.18 Transient vanilloid receptor potential ion
+channel 1 (TRVP1) has a key role in temperature perception
+and is signiﬁcantly overexpressed in erythematotelangiectatic
+rosacea.19
+Because there is usually no associated sweating, it has been
+argued that ﬂushing in rosacea is mediated by released vasoac-
+tive substances rather than by a neural mechanism.20 Numer-
+ous possible vasoactive mediators have been proposed, but
+none has yet been ﬁrmly and consistently linked to the patho-
+genesis of rosacea.
+Rosacea has often been linked with gastrointestinal symp-
+tomatology, although there is no conclusive evidence to sup-
+port this. A possible role for Helicobacter pylori, infection of the
+gastric mucosa has been the subject of particular controversy,
+but in controlled studies prevalence rates have sometimes been
+similar to controls.21–24 The infection may be more prevalent
+in patients with papulopustular rosacea than those with ery-
+thematotelangiectatic disease.25 Certain chemicals found in
+common foods have been shown to stimulate sensory nerves.
+These include capsaicin (chilli) and resveratrol (a phenol
+found in red wine).26
+A potential role has often been proposed for the follicle
+mites Demodex folliculorum and Demodex brevis in the pathogenesis
+of rosacea. Infestation with these mites is extremely common
+in the general population, reaching up to 100% of patients in
+some studies.25 Eruptions strongly resembling rosacea and
+associated with the presence of large numbers of D. folliculorum
+have been reported under the title of ‘rosacea-like demodico-
+sis’.
+These
+cases
+have
+improved
+following
+treatment
+to
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2021) 185, pp725–735
+730 BAD guidelines for the management of people with rosacea 2021, P.J. Hampton et al.
+Downloaded from https://academic.oup.com/bjd/article/185/4/725/6599936 by guest on 06 May 2026
+
+=== PAGE 7 ===
+eradicate the mite. Papulopustular rosacea has also been
+demonstrated to respond to this therapeutic approach.27 It is
+well established that there are increased numbers of D. folliculo-
+rum in the facial skin of patients with rosacea relative to con-
+trols.28–34
+Demodex
+mites
+have
+also
+been
+histologically
+demonstrated in the dermis associated with an inﬂammatory
+response and undergoing phagocytosis by multinucleate giant
+cells. This phenomenon has been observed both in localized
+and more widespread facial eruptions resembling rosacea.35,36
+Furthermore, D. brevis is often present in the eyelid in hair fol-
+licles, eyelash follicles and meibomian glands,37,38and is often
+reported in association with periocular pathology, including
+blepharitis and meibomianitis.39–41 These observations would
+suggest that the presence of Demodex mites might also play a
+role in some of the ophthalmic features of rosacea. The mites
+are associated with bacteria, which may also provoke an
+inﬂammatory response.
+5.5. Impact on quality of life
+Rosacea is a facial dermatosis and therefore easily visible. It
+can cause signiﬁcant embarrassment and handicap to those
+who suffer from it. This impact has been quantiﬁed in a
+limited and heterogeneous range of studies. A 2014 review
+identiﬁed 12 studies in which the effect of rosacea on QoL
+was evaluated using validated instruments. The Dermatology
+Life Quality Index (DLQI) was the most frequently used
+instrument (in seven of the studies identiﬁed). DLQI scores
+ranged from 41 to 173, depending substantially on the
+population studied, with the highest scores being recorded
+in a study examining only severe cases.42 Another review
+that year found a similarly wide range of reported severity
+of impairment, with DLQI scores in rosacea ranging from 2
+to 177.43 In a 2019 study of the impact of facial ery-
+thema, the mean (SD) DLQI score was 52 (60), and the
+impairment in QoL was strongly correlated with the severity
+of the centrofacial erythema.44 When compared with viti-
+ligo, the mean DLQI score was 43 in patients with rosacea,
+and 7 in those with vitiligo. Severe QoL impairments (DLQI
+>
+10),
+were
+less
+frequent
+(110%)
+than
+in
+vitiligo
+(246%).45
+5.6. Natural history
+Rosacea usually follows a ﬂuctuating course. The eventual dura-
+tion and outcomes are variable, and there is a paucity of pub-
+lished data. In a survey of 92 patients ≥10 years after a diagnosis
+of rosacea, 48 responded and 25 still had active disease, while 23
+had cleared.46 In patients in whom the rosacea had resolved, the
+duration of the disease had ranged from 1 to 25 years.
+Treatment of rosacea can effectively suppress the symptoms
+and signs of the disease, but there is no evidence that this is
+curative. In a follow-up study of 70 patients after 6 months of
+treatment with tetracycline, two-thirds had relapsed after a
+mean follow-up period of 26 years.47
+5.7. Differential diagnosis
+Acne vulgaris and rosacea are quite distinct diseases, although
+there are occasional patients in whom the distinction is difﬁ-
+cult and, as both conditions are very common, it is to be
+expected that, by chance, both will often occur in the same
+patient. Acne vulgaris affects a younger age group and often
+has an extensive distribution over the face, neck and trunk,
+whereas extrafacial rosacea is rare. Typical acne vulgaris lacks
+the redness, telangiectasia and ﬂushing of rosacea, while rosa-
+cea lacks the comedones and seborrhoea characteristic of acne
+vulgaris.
+Seborrhoeic dermatitis is often observed in association with
+rosacea and is therefore a potential cause of confusion, espe-
+cially when the features of one disease predominate at one
+consultation and features of the other at the next. However,
+the typical pattern of seborrhoeic dermatitis differs markedly
+from rosacea. The former, but not the latter, characteristically
+involves the scalp, the retroauricular area, the eyelids and the
+nasolabial folds. Scaling is not normally a feature of rosacea
+but is the rule in seborrhoeic dermatitis.
+Lupus erythematosus is an occasional cause of concern. Dis-
+coid lupus typically causes scarring, scaling and follicular
+plugging, which are not features of rosacea. However,
+patients are often referred to the dermatology clinic with a
+‘butterﬂy’ erythema and a tentative diagnosis of systemic
+lupus. The latter is not pustular and is usually associated with
+systemic symptoms. In some cases, lupus serology and a skin
+biopsy for histological and immunoﬂuorescent examination
+may be necessary.
+Carcinoid syndrome is another cause of ﬂushing often diag-
+nosed after a signiﬁcant delay from the onset of symptoms,
+and may initially be mistaken for rosacea. Atypical (pro-
+longed, generalized or severe) ﬂushing, or the presence of
+additional symptoms (sweating, bronchospasm, abdominal
+pain, diarrhoea) should prompt measurement of urinary 5-
+hydroxyindoleacetic acid and further investigation if suspi-
+cion persists.
+Nasal sarcoidosis (lupus pernio) superﬁcially resembles rhino-
+phyma. However, sarcoidosis often affects the nasal septum
+(causing nasal obstruction). The surface of the thickened nose
+in lupus pernio, although telangiectatic, is generally smooth,
+lacking the rugose peau d’orange surface that characterizes rhino-
+phyma. Patients with lupus pernio almost invariably have evi-
+dence of multisystem disease.
+5.8. Complications
+Lymphoedema is a relatively rare complication of rosacea that
+can develop over the face and ears. In time, this may
+develop into a coarsening of the features known as leonine
+facies. A characteristic pattern of lymphoedema of the upper
+half of the face developing as a complication of chronic
+rosacea has been termed chronic upper facial erythematous
+oedema or Morbihan disease. The orbital skin is often
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2021) 185, pp725–735
+BAD guidelines for the management of people with rosacea 2021, P.J. Hampton et al. 731
+Downloaded from https://academic.oup.com/bjd/article/185/4/725/6599936 by guest on 06 May 2026
+
+=== PAGE 8 ===
+affected, resulting in severe eyelid swelling and sometimes
+ectropion.
+Malignancy, most frequently basal cell carcinoma, may be
+seen as a complication of rhinophyma. This can be difﬁcult to
+diagnose owing to the phymatous distortion of normal skin
+contours, so it is important to be alert to this risk.
+5.9. Facial dermatoses possibly related to rosacea
+Perioral dermatitis (perioriﬁcial dermatitis) is sometimes regarded as
+a variant of rosacea. It presents as a persistent erythematous
+eruption of tiny papules and papulopustules that appears
+abruptly in the nasolabial areas and spreads rapidly to the
+perioral zone, sparing the lip margins. Occasionally, it may
+spread to the forehead, eyelids and glabella. Pruritus, burning
+and soreness are prominent symptoms. The lesions consist of
+monomorphic small papules and pustules occurring against a
+background of redness and variable scaling. The papules may
+occur in recurrent crops and are usually less substantial than
+those of rosacea. A similar eruption involving the eyelids and
+periorbital skin has been termed periocular dermatitis. It
+almost entirely affects young adult females, the age range
+tending to be somewhat younger than that of rosacea, and
+occurrence in childhood more frequent. Topical corticosteroid
+therapy is known to be an important aetiological factor. Occa-
+sionally, this can result from inadvertent transfer during topi-
+cal corticosteroid treatment to other regions such as the
+hands. The use of inhaled corticosteroids for treating asthma,
+particularly from nebulizers, may also cause perioral dermati-
+tis. Periocular dermatitis may be caused by corticosteroid eye
+ointment.48 A variety of primary irritant and allergic contact
+factors and cosmetic products have been proposed to play a
+role, but this has not been substantiated.49 A high prevalence
+of atopy has been reported in patients with perioral dermati-
+tis.50 Perioral dermatitis tends to resolve if exposure to topical
+corticosteroid stops, although this may take some weeks or
+months. Less often, the condition may persist, continuously or
+intermittently.
+Acne agminata (lupus miliaris disseminatus faciei, acnitis and facial
+idiopathic granulomas with regressive evolution [FIGURE]) is seen
+mainly in adolescents and young adults of either sex. It pre-
+sents as multiple, monomorphic, symmetrical, reddish-brown
+papules on the chin, forehead, cheeks and eyelids.51 The
+lesions may cluster around the mouth or on the eyelids or
+eyebrows so that the term ‘agminata’ is appropriate, although
+– paradoxically – in many cases, the lesions are widely dis-
+seminated around the face and the term ‘disseminatus’ seems
+more applicable. Diascopy of larger lesions often reveals an
+apple jelly nodule-like appearance, indicating their granuloma-
+tous histology. This eruption tends to be self-limiting, resolv-
+ing completely over a few months or up to 2 years. In some
+cases, there is scarring. The clinical picture in classical cases is
+distinctive and does not closely resemble rosacea.
+The aetiology remains unknown. It has been considered by
+some to be a variant of rosacea. While the distribution of
+lesions is similar, the natural history and the tendency to affect
+males and females approximately equally, argue against this
+being a form of rosacea. It can be difﬁcult to distinguish from
+micropapular sarcoidosis.
+Granulomatous perioral dermatitis in children (facial Afro-Caribbean
+childhood eruption [FACE], Gianotti-type perioral dermatitis, granulo-
+matous perioriﬁcial dermatitis and sarcoid-like granulomatous dermati-
+tis) is seen in prepubertal children and may represent a
+juvenile form of perioral dermatitis or of acne agminata. It is
+considered relatively common in Afro-Caribbean children.52
+This is a papular eruption generally conﬁned to the face, with
+lesions clustering around the mouth, eyes, nose and ears.53,54 In
+contrast to perioral dermatitis it does not spare the narrow zone
+bordering the lips, and pustules are not seen. The histology has
+been variously described as showing nonspeciﬁc inﬂammation
+with hyperkeratosis or, more often, as granulomatous, with the
+inﬂammatory changes often, but not invariably, being perifollic-
+ular. Blepharitis has occasionally been present.
+Complete resolution usually occurs after a few months –
+either spontaneously or in response to treatment. In some
+cases, small, pitted scars have been reported.
+Pyoderma faciale (rosacea conglobata, rosacea fulminans) is a ﬂorid
+eruption of pustules and cystic swellings that may be intercon-
+nected by sinuses, conﬁned to the face, with an absence of
+comedones.55,56The latter two features distinguish this entity
+from acne conglobata. However, it remains possible that this
+is an unusual variant of acne vulgaris. This is a distressing dis-
+ease, often followed by severe scarring. Pyoderma faciale
+mainly affects adults, and most frequently females (in contrast
+to acne conglobata). There is often no preceding history of
+acne or rosacea. It is usually a fulminant eruption (rosacea ful-
+minans). Marked erythema and oedema are usually present.
+Some cases have developed during pregnancy, suggesting that
+hormonal factors may play a role. Occasional cases may arise
+as a side-effect of medication. Culture of the purulent dis-
+charge or needle aspiration may be sterile or may yield a
+growth of commensal organisms, including Staphylococcus epider-
+midis and Propionibacterium acnes. This investigation can be helpful
+in excluding Gram-negative infection. Signiﬁcant scarring
+develops in many cases.
+Steroid rosacea is the term used for the induction of symp-
+toms
+closely
+resembling
+erythematotelangiectatic
+rosacea
+and/or inﬂammatory rosacea by the application of topical
+corticosteroids.57 This is usually associated with the use of
+potent and very potent corticosteroids, although less potent
+compounds can occasionally cause similar problems. This
+entity is clearly associated with the use of topical corticos-
+teroids, and it is not clear whether there are mechanisms in
+the pathogenesis shared with rosacea. Topical corticosteroids
+may also induce features of acne vulgaris, and these may
+coexist in the same patients.
+Facial dysaesthesia is a clinical presentation in which sensory
+disturbance predominates and is often out of proportion to
+any visible abnormality.58 The most common complaint is a
+severe facial burning sensation, usually occurring intermit-
+tently, and sometimes triggered by contact, temperature
+changes or particular foods. Facial hypersensitivity is often a
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2021) 185, pp725–735
+732 BAD guidelines for the management of people with rosacea 2021, P.J. Hampton et al.
+Downloaded from https://academic.oup.com/bjd/article/185/4/725/6599936 by guest on 06 May 2026
+
+=== PAGE 9 ===
+feature of rosacea, but in some cases appears to occur with
+minimal or no other features of that disease. These symptoms
+are sometimes referred to as neurogenic rosacea.
+6.0 Recommended audit points
+In the last 20 consecutive people with rosacea, is there clear
+documentation of:
+1. A trial of topical ivermectin in those on long-term antibi-
+otics?
+2. Advice to avoid aggravating factors such as alcohol, sun
+exposure, hot drinks or spicy food?
+3. Discussion of the pros and cons of intermittent low-dose
+isotretinoin as an alternative to long-term antibiotics, in
+whom there is no contraindication?
+4. Offering of propranolol in those with symptomatic ﬂushing,
+in whom there is no contraindication?
+The audit recommendation of 20 cases per department is to
+reduce variation in the results due to a single patient and
+allow
+benchmarking
+between
+different
+units.
+However,
+departments unable to achieve this recommendation may
+choose to audit all cases seen in the preceding 12 months
+(Appendix N; see Supporting Information).
+7.0 Stakeholder involvement and peer review
+The draft document and supporting information was made
+available to the BAD membership, British Dermatological
+Nursing Group, Primary Care Dermatological Society, British
+Society for Medical Dermatology, British Society for Dermato-
+logical Surgery and the Royal College of Ophthalmologists for
+comments, which were actively considered by the GDG. Fol-
+lowing further review, the ﬁnalized version was sent for peer
+review by the Clinical Standards Unit of the BAD (made up of
+the Therapy & Guidelines Subcommittee) prior to submission
+for publication.
+8.0 Limitations of the guideline
+This document has been prepared on behalf of the BAD and is
+based on the best data available when the document was pre-
+pared. It is recognized that under certain conditions it may be
+necessary to deviate from the guidelines and that the results of
+future studies may require some of the recommendations
+herein to be changed. Additionally, it is acknowledged that
+limited cost-effectiveness data in the context of the UK health-
+care setting may affect the availability of a given therapy
+within the NHS, despite evidence of efﬁcacy. Failure to adhere
+to these guidelines should not necessarily be considered negli-
+gent, nor should adherence to these recommendations consti-
+tute a defence against a claim of negligence. Limiting the
+systematic review to English language references was a prag-
+matic decision, but the authors recognize that this may
+exclude some important information published in other lan-
+guages.
+9.0 Plans for guideline revision
+The proposed revision date for this set of recommendations is
+scheduled for 2026; where necessary, important interim
+changes will be updated on the BAD website.
+Acknowledgments
+We are very grateful to patient representatives Mr Ian Porter
+and Dr John Berth-Jones for their input in formulating the
+clinical questions, ranking of the outcomes, reviewing of the
+evidence and subsequent draft guideline. We are also very
+grateful to Drs Edward Seaton and Iaisha Ali, and Professors
+Alison Layton, Frank Powell and Malcolm Greaves (consultant
+dermatologists), and Mr Jeremy Prydal (consultant ophthal-
+mologist) for their involvement during the early stages of the
+guideline development process, and to Miss Alina Constantin
+(BAD Guideline Research Fellow) for assisting with the ﬁnal
+stages, as well as all those who commented on the draft dur-
+ing the consultation period.
+References
+1 Mohd Mustapa MF, Exton LS, Bell HK et al. Updated guidance for
+writing a British Association of Dermatologists clinical guideline:
+the adoption of the GRADE methodology 2016. Br J Dermatol 2017;
+176:44–51.
+2 Brouwers M, Kho ME, Browman GP et al. AGREE II: advancing
+guideline development, reporting and evaluation in healthcare.
+CMAJ 2010; 182:E839–E842.
+3 GRADE Workin Group. GRADE. Available at: http://www.grade
+workinggroup.org/ (last accessed 10 May 2021).
+4 Guyatt GH, Oxman AD, Vist GE et al. GRADE: an emerging consen-
+sus on rating quality of evidence and strength of recommenda-
+tions. BMJ 2008; 336:924–6.
+5 Gallo RL, Granstein RD, Kang S et al. Standard classiﬁcation and
+pathophysiology of rosacea: the 2017 update by the National Rosa-
+cea Society Expert Committee. J Am Acad Dermatol 2018; 78:148–55.
+6 Whitlock FA. Psychosomatic aspects of rosacea. Br J Dermatol 1961;
+73:137–48.
+7 Wilkin JK. Oral thermal-induced ﬂushing in erythematotelang-
+iectatic rosacea. J Invest Dermatol 1981; 76:15–8.
+8 Bernstein JE, Soltani K. Alcohol-induced rosacea ﬂushing blocked
+by naloxone. Br J Dermatol 1982; 107:59–61.
+9 Guzman-Sanchez DA, Ishiuji Y, Patel T et al. Enhanced skin blood
+ﬂow and sensitivity to noxious heat stimuli in papulopustular rosa-
+cea. J Am Acad Dermatol 2007; 57:800–5.
+10 Meschig R, Melnik B, Plewig G. Opthalmic Complications of Rosacea.
+London: Martin Dunitz, 1989.
+11 Gudmundsen KJ, O’Donnell BF, Powell FC. Schirmer testing for dry
+eyes in patients with rosacea. J Am Acad Dermatol 1992; 26:211–4.
+12 Nazir SA, Murphy S, Siatkowski RM et al. Ocular rosacea in child-
+hood. Am J Ophthalmol 2004; 137:138–44.
+13 Gether L, Overgaard LK, Egeberg A et al. Incidence and prevalence
+of rosacea: a systematic review and meta-analysis. Br J Dermatol
+2018; 179:282–9.
+14 Marks R. Rosacea: hopeless hypothesis, marvelous myths and der-
+mal disorganisation. In: Acne and Related Disorders: Proceedings of an Inter-
+national Symposium, Cardiff 1988 (Marks R, Plewig G, eds). London:
+Martin Dunitz, 1989; 293–9.
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2021) 185, pp725–735
+BAD guidelines for the management of people with rosacea 2021, P.J. Hampton et al. 733
+Downloaded from https://academic.oup.com/bjd/article/185/4/725/6599936 by guest on 06 May 2026
+
+=== PAGE 10 ===
+15 Wilkin JK. Rosacea. Pathophysiology and treatment. Arch Dermatol
+1994; 130:359–62.
+16 Oztas MO, Balk M, Ogus E et al. The role of free oxygen radicals
+in the aetiopathogenesis of rosacea. Clin Exp Dermatol 2003;
+28:188–92.
+17 Yamasaki K, Di Nardo A, Bardan A et al. Increased serine protease
+activity and cathelicidin promotes skin inﬂammation in rosacea.
+Nat Med 2007; 13:975–80.
+18 Melnik BC. Rosacea: the blessing of the Celts – an approach to
+pathogenesis through translational research. Acta Derm Venereol 2016;
+96:147–56.
+19 Sulk M, Seeliger S, Aubert J et al. Distribution and expression of
+non-neuronal transient receptor potential (TRPV) ion channels in
+rosacea. J Invest Dermatol 2012; 132:1253–62.
+20 No authors listed. Rosacea in hot water. Lancet 1981; 1:647.
+21 Sharma VK, Lynn A, Kaminski M et al. A study of the prevalence
+of Helicobacter pylori infection and other markers of upper gastroin-
+testinal tract disease in patients with rosacea. Am J Gastroenterol
+1998; 93:220–2.
+22 Jones MP, Knable AL Jr, White MJ et al. Helicobacter pylori in rosacea:
+lack of an association. Arch Dermatol 1998; 134:511.
+23 Utas S, Ozbakir O, Turasan A et al. Helicobacter pylori eradication
+treatment reduces the severity of rosacea. J Am Acad Dermatol 1999;
+40:433–5.
+24 Schneider M, Skinner RBJ, Rosenberg EW. Serologic determination
+of Helicobacter pylori in rosacea patients and controls. Clin Res 1992;
+40:831A.
+25 Diaz C, O’Callaghan CJ, Khan A et al. Rosacea: a cutaneous marker
+of Helicobacter pylori infection? Results of a pilot study. Acta Derm
+Venereol 2003; 83:282–6.
+26 Park K, Elias PM, Hupe M et al. Resveratrol stimulates sphingosine-
+1-phosphate signaling of cathelicidin production. J Invest Dermatol
+2013; 133:1942–9.
+27 Taieb A, Ortonne JP, Ruzicka T et al. Superiority of ivermectin 1%
+cream over metronidazole 0.75% cream in treating inﬂammatory
+lesions of rosacea: a randomized, investigator-blinded trial. Br J
+Dermatol 2015; 172:1103–10.
+28 Sibenge S, Gawkrodger DJ. Rosacea: a study of clinical patterns,
+blood ﬂow, and the role of Demodex folliculorum. J Am Acad Dermatol
+1992; 26:590–3.
+29 Bonnar E, Eustace P, Powell FC. The Demodex mite population in
+rosacea. J Am Acad Dermatol 1993; 28:443–8.
+30 Georgala S, Katoulis AC, Kylaﬁs GD et al. Increased density of Demo-
+dex folliculorum and evidence of delayed hypersensitivity reaction in
+subjects with papulopustular rosacea. J Eur Acad Dermatol Venereol
+2001; 15:441–4.
+31 Abd-El-Al AM, Bayoumy AM, Abou Salem EA. A study on Demodex
+folliculorum in rosacea. J Egypt Soc Parasitol 1997; 27:183–95.
+32 Erbagci Z, Ozgoztasi O. The signiﬁcance of Demodex folliculorum den-
+sity in rosacea. Int J Dermatol 1998; 37:421–5.
+33 Schaller M, Gonser L, Belge K et al. Dual anti-inﬂammatory and
+anti-parasitic action of topical ivermectin 1% in papulopustular
+rosacea. J Eur Acad Dermatol Venereol 2017; 31:1907–11.
+34 Trave I, Merlo G, Cozzani E et al. Real-life experience on effective-
+ness and tolerability of topical ivermectin in papulopustular rosa-
+cea and antiparasitic effect on Demodex mites. Dermatol Ther 2019;
+32:e13093.
+35 Hoekzema R, Hulsebosch HJ, Bos JD. Demodicidosis or rosacea:
+what did we treat? Br J Dermatol 1995; 133:294–9.
+36 Pena GP, Andrade Filho JS. Is demodex really non-pathogenic? Rev
+Inst Med Trop Sao Paulo 2000; 42:171–3.
+37 Roth AM. Demodex folliculorum in hair follicles of eyelid skin. Ann
+Ophthalmol 1979; 11:37–40.
+38 English FP, Nutting WB. Demodicosis of ophthalmic concern. Am J
+Ophthalmol 1981; 91:362–72.
+39 Ayres S Jr, Mihan R. Rosacea-like demodicidosis involving the eye-
+lids. A case report. Arch Dermatol 1967; 95:63–6.
+40 Kamoun B, Fourati M, Feki J et al. [Blepharitis due to Demodex:
+myth or reality?]. J Fr Ophtalmol 1999; 22:525–7 (in French).
+41 Post CF, Juhlin E. Demodex folliculorum and blepharitis. Arch Dermatol
+1963; 88:298–302.
+42 van der Linden MMD, van Rappard DC, Daams JG et al. Health-re-
+lated quality of life in patients with cutaneous rosacea: a system-
+atic review. Acta Dermatovenereol 2015; 95:395–400.
+43 Cresce ND, Davis SA, Huang WW et al. The quality of life impact
+of acne and rosacea compared to other major medical conditions.
+J Drugs Dermatol 2014; 13:692–7.
+44 Baldwin HE, Harper J, Baradaran S et al. Erythema of rosacea
+affects health-related quality of life: results of a survey conducted
+in collaboration with the National Rosacea Society. Dermatol Ther
+(Heidelb) 2019; 9:725–34.
+45 Beikert FC, Langenbruch AK, Radtke MA et al. Willingness to pay
+and quality of life in patients with rosacea. J Eur Acad Dermatol Vener-
+eol 2013; 27:734–8.
+46 Irvine C, Marks S. Prognosis and prognostic factors in rosacea. In:
+Acne and Related Disorders (Marks R, Plewig G, eds). London: Martin
+Dunitz, 1989; 331–3.
+47 Knight AG, Vickers CF. A follow-up of tetracycline-treated rosacea.
+With special reference to rosacea keratitis. Br J Dermatol 1975;
+93:577–80.
+48 Velangi SS, Humphreys F, Beveridge GW. Periocular dermatitis
+associated with prolonged use of a steroid eye ointment. Clin Exp
+Dermatol 1998; 23:297–8.
+49 Malik R, Quirk CJ. Topical applications and perioral dermatitis.
+Australas J Dermatol 2000; 41:34–8.
+50 Dirschka T, Tronnier H, Folster-Holst R. Epithelial barrier function
+and atopic diathesis in rosacea and perioral dermatitis. Br J Dermatol
+2004; 150:1136–41.
+51 Layton AM, Eady EA, Zouboulis C. Acne. In: Rook’s Textbook of Der-
+matology (Grifﬁths C, Barker J, Bleiker T et al., 9th edn. Chichester:
+Wiley-Blackwell, 2016; Part 8, Chapter 90.
+52 Williams HC, Ashworth J, Pembroke AC et al. FACE – facial Afro-
+Caribbean childhood eruption. Clin Exp Dermatol 1990; 15:163–6.
+53 Frieden IJ, Prose NS, Fletcher V et al. Granulomatous perioral der-
+matitis in children. Arch Dermatol 1989; 125:369–73.
+54 Gianotti FE, Bennelli MG, Caputo R. Particuliere dermatite peri-
+orale infantile: observations sur cinq cas. Bull Soc Franc Dermatol Syph
+1970; 77:341.
+55 Massa MC, Su WP. Pyoderma faciale: a clinical study of twenty-
+nine patients. J Am Acad Dermatol 1982; 6:84–91.
+56 Plewig G, Jansen T, Kligman AM. Pyoderma faciale. A review and
+report of 20 additional cases: is it rosacea? Arch Dermatol 1992;
+128:1611–7.
+57 Chen AY, Zirwas MJ. Steroid-induced rosacealike dermatitis: case
+report and review of the literature. Cutis 2009; 83:198–204.
+58 Schwab VD, Sulk M, Seeliger S et al. Neurovascular and neuroim-
+mune aspects in the pathophysiology of rosacea. J Investig Dermatol
+Symp Proc 2011; 15:53–62.
+Supporting Information
+Additional Supporting Information may be found in the online
+version of this article at the publisher’s website:
+Appendix A Review protocol.
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2021) 185, pp725–735
+734 BAD guidelines for the management of people with rosacea 2021, P.J. Hampton et al.
+Downloaded from https://academic.oup.com/bjd/article/185/4/725/6599936 by guest on 06 May 2026
+
+=== PAGE 11 ===
+Appendix B Forest plots.
+Appendix C Linking the Evidence to the Recommendations
+(LETR).
+Appendix D Grading of Recommendations Assessment,
+Development and Evaluation (GRADE) evidence tables.
+Appendix E Summary of included studies.
+Appendix F Comparative studies with no extractable data.
+Appendix G Narrative ﬁndings from within-patient studies.
+Appendix H Narrative ﬁndings from noncomparative stud-
+ies.
+Appendix
+I
+Critical
+appraisal
+of
+included
+systematic
+reviews: AMSTAR 2.
+Appendix
+J
+Preferred
+Reporting
+Items
+for
+Systematic
+Reviews and Meta-Analyses (PRISMA) diagram: study selec-
+tion.
+Appendix K Papers excluded from quantitative analysis.
+Appendix L Methodology.
+Appendix M Search strategy.
+Appendix N Audit standards, data items and data collection
+methodology.
+© 2021 British Association of Dermatologists
+British Journal of Dermatology (2021) 185, pp725–735
+BAD guidelines for the management of people with rosacea 2021, P.J. Hampton et al. 735
+Downloaded from https://academic.oup.com/bjd/article/185/4/725/6599936 by guest on 06 May 2026
+
+=== PAGE 12 ===
+of patients  
+with PsO achieved  
+PASI 75 at Week 4 
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+75.9% 
+(n=265/349)
+of patients 
+with PsO achieved 
+PASI 100 at 5 years3
+76.9% 
+(N=52)† 
+of biologic-naïve  
+and TNFi-IR PsA patients 
+achieved ACR 50 at  
+Week 104/100, respectively‡1,4–6
+of patients  
+with PsO achieved  
+PASI 100 at Week 16
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+68.2%
+(n=238/349)
+and
+50.6% 
+(n=135/267) 
+51.5% 
+(n=222/431)
+GB-BK-2500315 | July 2025
+UCB Biopharma SRL, 2025. All rights reserved.
+This promotional material has been created and funded by UCB Pharma Ltd and 
+is intended for healthcare professionals in the UK.
+BIMZELX is indicated for the treatment of: moderate to severe plaque PsO in adults 
+who are candidates for systemic therapy; active PsA, alone or in combination 
+with methotrexate, in adults who have had an inadequate response, or who have 
+been intolerant, to one or more DMARDs; active nr-axSpA with objective signs of 
+inflammation as indicated by elevated CRP and/or MRI, in adults who have responded 
+inadequately, or are intolerant, to NSAIDs; active AS in adults who have responded 
+inadequately or are intolerant to conventional therapy; and active moderate to severe 
+HS (acne inversa) in adults with an inadequate response to conventional systemic HS 
+therapy.4
+Prescribing information for United Kingdom click here.  
+Please refer to the SmPC for further information. 
+These data are from different clinical trials and cannot be directly compared.
+Co-primary endpoints PASI 90 and IGA 0/1 at Week 16 were met.**Secondary endpoints. †N= mNRI, missing data 
+were imputed with mNRI (patients with missing data following treatment discontinuation due to lack of efficacy 
+or a TRAE were counted as non-responders; multiple imputation methodology was used for other missing data). 
+‡43.9% (n=189/431), and 43.4% (n=116/267) of biologic-naïve and TNFi-IR PsA patients achieved the primary 
+endpoint of ACR 50 at Week 16 in BE OPTIMAL and BE COMPLETE, respectively (vs 10.0% [n=28/281] and 6.8% 
+[n=9/133] placebo, p<0.0001); 54.5% (n=235/431) and 51.7% (n=138/267) maintained it at Week 52 (NRI).4–6 ​
+ACR 50, ≥50% response in the American College of Rheumatology criteria; AS, ankylosing spondylitis; CRP, 
+C-reactive protein; DMARD, disease-modifying antirheumatic drug; HS, hidradenitis suppurativa; IGA, Investigator’s 
+Global Assessment; (m)NRI, (modified) non-responder imputation; MRI, magnetic resonance imaging; nr-
+axSpA, non-radiographic axial spondyloarthritis; NSAID, non-steroidal anti-inflammatory drug; PASI 75/90/100, 
+≥75/90/100% improvement from baseline in Psoriasis Area and Severity Index; PsA, psoriatic arthritis; PsD, psoriatic 
+disease; PsO, psoriasis; TNFi-IR, tumour necrosis factor-α inhibitor – inadequate responder; TRAE, treatment-
+related adverse event.
+References: 1. Gordon KB, et al. Lancet. 2021;397(10273):475–486. 2. Blauvelt. 2025. AAD Presentation 62275. 3. 
+Mease PJ, et al. Rheumatol Ther. 2024;11(5):1363–1382. 4. BIMZELX SmPC. 5. Ritchlin CT, et al. Ann Rheum Dis. 
+2023;82(11):1404–1414. 6. Coates LC, et al. RMD Open. 2024;10(1):e003855. 7. Strober B, et al. AAD 2024;oral 
+presentation.​
+This medicine is subject to additional monitoring. This will allow quick 
+identification of new safety information. Adverse events should be reported. 
+Reporting forms and information can be found at www.yellowcard.mhra.gov.uk for 
+the UK. Adverse events should also be reported to UCB Pharma Ltd at  
+UCBCares.UK@UCB.com or 0800 2793177 for UK.
+NO COMPROMISE, 
+JUST CLEARANCE
+BIMZELX was well tolerated, the most frequently reported adverse reactions were: upper respiratory tract infections 
+and oral candidiasis. Other common reported adverse reactions include tinea infections, ear infections, herpes simplex 
+infections, oropharyngeal candidiasis, gastroenteritis, folliculitis, headache, rash, dermatitis, eczema, acne, injection site 
+reactions, fatigue, and vulvovaginal mycotic infection (including vulvovaginal candidiasis).4
+Bimzelx®     (bimekizumab) offers 
+the opportunity for complete, fast,
+and lasting skin clearance and 
+proven PsA efficacy 1–7

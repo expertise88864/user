@@ -1,0 +1,2102 @@
+=== PAGE 1 ===
+Br J Dermatol 2026; 194:e56–e73
+https://doi.org/10.1093/bjd/ljaf452
+Advance access publication date: 14 November 2025
+Guidelines
+Accepted: 8 November 2025
+© British Association of Dermatologists 2025. All rights reserved. For commercial re-use, please contact reprints@oup.com for reprints and translation 
+rights for reprints. All other permissions can be obtained through our RightsLink service via the Permissions link on the article page on our site—for 
+further information please contact journals.permissions@oup.com.
+British Association of Dermatologists living guideline for 
+managing people with alopecia areata 2025
+Matthew J Harries ,1,2 Alia Ahmed,3 Anna Ascott ,4 Kashif Bhatti,5 Joseph Earley,6 
+Paul Farrant ,4 Susan Holmes ,7,8 Amy Johnson,6,9 Abby E Macbeth ,10 
+Andrew G Messenger  ,11 Julian Pearce ,12 Anita Takwale ,13 Andrew R Thompson ,14,15 
+Maria Hashme ,16 M Firouz Mohd Mustapa
+16 and Alina M Constantin
+16; on behalf of the 
+British Association of Dermatologists’ Clinical Standards Unit
+1Salford Royal Hospital, Northern Care Alliance NHS Foundation Trust, Manchester Academic Health Science Centre, Manchester, UK
+2Centre for Dermatology Research, Faculty of Biology, Medicine and Health, University of Manchester & NIHR Biomedical Research 
+Centre, Manchester, UK
+3Royal London Hospital, Barts Health NHS Trust, London, UK
+4University Hospitals Sussex NHS Foundation Trust, Sussex, UK
+5Mid Yorkshire Teaching NHS Trust, Wakefield, UK
+6Patient representative
+7NHS Greater Glasgow and Clyde, Glasgow, UK
+8University of Glasgow, Glasgow, UK
+9Alopecia UK, Shipley, UK
+10Norfolk and Norwich University Hospitals NHS Trust, Norwich, UK
+11University of Sheffield, Sheffield, UK
+12St George’s University Hospitals NHS Foundation Trust, London, UK
+13Gloucestershire Hospitals NHS Foundation Trust, Gloucester, UK
+14Cardiff & The Vale University Health Board and School of Psychology, University of Cardiff, Cardiff, UK
+15British Psychological Society, Leicester, UK
+16British Association of Dermatologists, Willan House, London, UK
+Correspondence: Matthew Harries. Emails: matthew.harries@nca.nhs.uk; guidelines@bad.org.uk
+Lay summary
+Alopecia areata (AA) is a long-term condition that can occur in both children and adults. AA can appear as patches of baldness on the 
+scalp. Sometimes, nail growth is also affected. Hair on other parts of the body may also fall out, such as the beard, eyebrows and eye­
+lashes.
+Alopecia totalis is the name for total loss of scalp hair. Alopecia universalis is complete loss of scalp, facial and body hair.
+This is the second version of the guideline. The British Association of Dermatologists gathered a group of experts in managing people 
+of all ages with AA. The group consisted of eight consultant dermatologists, one dermatology specialist registrar, one general practitio­
+ner, one psychologist, two people with AA and a team with expertise in preparing guidelines. This group of experts reviewed relevant 
+studies published until 11 July 2025. Using the evidence, the group produced recommendations using rigorous standards for guideline 
+development.
+The guideline development group produced 56 recommendations for management of people with AA. They also made 9 recommen­
+dations for future research and suggested 11 audit points for hospitals.
+Based on the guideline, a patient information leaflet is also available on the British Association of Dermatologists’ website (https://
+www.skinhealthinfo.org.uk/condition/alopecia-areata).
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 2 ===
+e57
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+Produced in 2025 by the British Association of 
+Dermatologists
+The full history of this guideline can be accessed here: 
+https://view.genially.com/693ac72b062a08485fcf43a0
+This is a living guideline prepared for the British Association 
+of Dermatologists (BAD) Clinical Standards Unit, which 
+includes the Therapy & Guidelines subcommittee. Members 
+of the Clinical Standards Unit who have been involved are 
+S.L. Chua (Chair, Therapy & Guidelines Subcommittee), L. 
+Asfour, R. Ramessur, H. Wainman, M. Hashme (Information 
+Scientist), A.M. Constantin (Guideline Research Fellow) and 
+M.F. Mohd Mustapa (Director of Clinical Standards).
+The National Institute for Health and Care Excellence (NICE) 
+accredited the BAD’s clinical guideline development process 
+as a mark of quality between 2010 and 2024, until NICE 
+closed its programme in 2024. The 2024, baseline iteration 
+of this living guideline was NICE accredited.
+As the NICE accreditation criteria were already largely 
+aligned with the AGREE II instrument and the international 
+gold-standard GRADE methodology for developing clinical 
+guidelines, the BAD shall commit to observing the principles 
+of the NICE Accreditation Programme, while also continuing 
+to review its guideline development processes to meet the 
+methodological requirements for living ­guidelines.
+Accessibility (version) map
+https://view.genially.com/689a079e8cb77008ef836979.
+What is new, what has changed in this second, living 
+iteration?
+1.0 Purpose and scope
+This is the second iteration (first update) of the British 
+Association of Dermatologists living guideline for managing 
+people with alopecia areata (AA) and therefore replaces the 
+previous iteration. The baseline iteration of this living guide­
+line1 was published online in October 2024 in the British 
+Journal of Dermatology.
+The overall objective of this living guideline with a 
+fixed-interval schedule (i.e. literature surveillance fre­
+quency ≤ 6 months, with a living guideline updating cycle 
+of 12 months) is to provide up-to-date, evidence-based 
+recommendations for the management of AA in children 
+(0–12 years of age), young people (13–17 years of age) and 
+adults (≥ 18 years of age).
+The document aims to:
+•	 offer an appraisal of all relevant literature up to 11 July 
+2025, focusing on any key developments
+•	 address important, practical clinical questions relating to 
+the primary guideline objective
+•	 provide guideline recommendations and, if appropriate, 
+research recommendations.
+The guideline is presented as a detailed review with high­
+lighted recommendations for practical use in all appropriate 
+community and hospital settings (see Section 3.0), in addi­
+tion to a patient information leaflet (available on the BAD 
+website: https://www.skinhealthinfo.org.uk/condition/alo­
+pecia-areata).
+Guideline Development Group members involved in 
+the baseline iteration (2024) who have stood down
+Leila Asfour, Gordon Hale, Victoria M.L. Jolliffe, Ahmed Kazmi, Ali Noor, Lina Manounah
+New members who have joined the Guideline 
+Development Group for the second iteration (2025) 
+of this living guideline
+Alia Ahmed, Kashif Bhatti, Joseph Earley, Julian Pearce
+Living systematic review protocol
+The protocol has been updated, including with the addition of three new outcomes, i.e. 
+Severity of Alopecia Tool (SALT) score 0 (9), SALT score ≤ 10 (8) and SALT score ≤ 20 (7)
+Literature surveillance dates
+Literature surveillance was carried out on 6 February 2025, 15 May 2025 and 11 July 2025. 
+The first literature search captured records published during the time interval 19 October 
+2023 to 6 February 2025, the second literature search captured records published during 
+the time interval 6 February 2025 to 15 May 2025 and the third literature search captured 
+records published during the time interval 15 May 2025 to 11 July 2025
+Literature search strategy
+Updated to reflect date limitations
+New evidence
+Supporting Information document has been updated to reflect the evidence captured 
+during literature surveillance
+Sections 1.0 Purpose and scope, 2.0 Methodology 
+and 2.1 Clinical questions and outcomes
+Updated to reflect the employment of the living guideline methodology and the three 
+outcome additions
+Unchanged recommendations
+R2–R4, R6–R8, R12–R16, R18–R23, R25–R28, R30–R35, R37–R40, R47, R49–R53, R55
+Amended recommendations
+R1, R5, R9, R10, R17, R24, R29, R36, R41, R54, R56
+New recommendations
+R11, R42–R46, R48
+Amended Future Research Recommendation (FRR)
+FRR1
+New FRRs
+FRR2, FRR7
+Section 6.0 Diagnosis and investigations
+Updated from the baseline iteration
+Section 7.0 Management
+Updated from the baseline iteration
+Patient values and preferences
+Updated from the baseline iteration
+Declarations of interests
+Updated from the baseline iteration
+Accessibility (version) map
+In alignment with the living guidelines methodology, the 2025 iteration of the alopecia 
+areata guideline features an interactive ‘accessibility (version) map’ (https://view.genially.
+com/689a079e8cb77008ef836979), which details the changes (in wording and location) 
+in the recommendations from the 2024 version of the alopecia areata guideline to the 
+2025 iteration
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 3 ===
+e58
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+2.0 Methodology
+This guideline has been developed using the BAD’s rec­
+ommended methodology,2 in addition to the living guide­
+line methodology.3 Further information can be found in 
+Appendix K (see Supporting Information) with reference 
+to the AGREE II instrument (www.agreetrust.org)4 and 
+GRADE5 (Appendices D and K; see Supporting Information). 
+While the recommendations were developed for anticipated 
+implementation in the UK National Health Service (NHS), 
+they could equally be adapted in other healthcare systems, 
+internationally, acknowledging different countries’ health 
+systems, including their priorities, legislation, drug availabil­
+ities, funding and policies.
+The guideline development group (GDG) consisted of 
+eight consultant dermatologists (MJH, A Ahmed, PF, SH, 
+AEM, AGM, JP, AT), one dermatology specialist registrar (A 
+Ascott), one general practitioner (KB), one consultant clini­
+cal psychologist (ART), two patient representatives (JE, AJ) 
+and a technical team consisting of one information scientist 
+(MH), one guideline research fellow (AMC) and a project 
+manager (MFMM) providing methodological and technical 
+support.
+The GDG established one systematic review question 
+pertinent to the scope of the guideline and a set of outcome 
+measures of importance to patients, ranked according to the 
+GRADE methodology6 (Section 2.1; and Appendix A; see 
+Supporting Information).
+A systematic literature search of the MEDLINE, Embase 
+and Cochrane databases was conducted by the tech­
+nical team to identify key articles pertaining to AA up to 
+11 July 2025; the search terms and the search strategies 
+are detailed in Appendix L (see Supporting Information). 
+Additional references relevant to the topic were also identi­
+fied from citations in the reviewed literature. Data extraction 
+and critical appraisal, data synthesis, evidence summaries, 
+lists of excluded studies and the PRISMA flow diagram 
+were prepared by the technical team. The overall certainty 
+of evidence from the studies included in the quantitative 
+review was graded according to the GRADE system (high, 
+moderate, low or very low certainty).
+In making the recommendations, all GDG members have 
+evaluated the entire dataset obtained from the living system­
+atic review of the literature pertaining to the clinical question 
+of interest (Section 2.1).
+The recommendations included in the baseline iteration 
+of the guideline were updated during iterative discussions 
+with the entire GDG, including people with lived experi­
+ence of AA, considering changes in the certainty of the evi­
+dence from the previous iteration and all the other factors 
+that would affect the strength of the evidence according 
+to the GRADE approach (i.e. balance between desirable 
+and undesirable effects, quality of evidence, patient values 
+and preferences and resource allocation). All GDG mem­
+bers contributed towards drafting and/or reviewing the 
+narratives and information in the guideline and appendices 
+in the Supporting Information. When insufficient evidence 
+from the literature was available, informal consensus was 
+reached based on the experience of the GDG.
+The summary of findings with forest plots (Appendix 
+B), tables Linking the Evidence To the Recommendations 
+(LETR) (Appendix C), GRADE evidence profiles indicating 
+the certainty of the evidence (Appendix D), summary of 
+comparative studies included in the quantitative and qual­
+itative synthesis (Appendix E), summary of included with­
+in-patient studies (Appendix F), narrative findings from 
+noncomparative studies (Appendix G), PRISMA flow dia­
+gram (Appendix H), risk-of-bias analysis (Appendix I) and 
+the list of excluded studies (Appendix J) are detailed in the 
+Supporting Information.
+The strength of recommendation is expressed by the 
+wording and symbols shown in Table 1.
+Applicability of the recommendations to clinical practice 
+is outlined in Sections 4.0 and 7.0. A ‘patient values and 
+Table 1  The strength of the recommendations’ ratings
+Strength
+Wording
+Symbols
+Definition
+Strong 
+recommendation for 
+the use of an 
+intervention
+‘Offer’ (or similar, 
+e.g. ‘use’, 
+‘provide’, ‘take’, 
+‘investigate’)
+↑↑
+Benefits of the intervention outweigh the risks; most patients would choose the 
+intervention while only a small proportion would not; for clinicians, most of their 
+patients would receive the intervention; for policymakers, it would be a useful 
+performance indicator
+Strong 
+recommendation for 
+the use of an 
+intervention with an 
+asterisk (*)
+‘Offer*’ (or 
+similar, as above)
+↑↑
+The recommendation is supported by lower-certainty evidence, where the risks and 
+benefits of an intervention are finely balanced. However, based on the Guideline 
+Development Group’s specialist experience and consensus, the otherwise weak 
+recommendation has been upgraded, and the appropriate wording for a strong 
+recommendation is used and marked with an asterisk to denote the difference. The 
+asterisk signifies a recommendation based also on expert consensus, and not 
+exclusively on the evidence
+Weak 
+recommendation for 
+the use of an 
+intervention
+‘Consider’
+↑
+Risks and benefits of the intervention are finely balanced; most patients would choose 
+the intervention, but many would not; clinicians would need to consider the pros and 
+cons for the patient in the context of the evidence; for policymakers it would be a poor 
+performance indicator where variability in practice is expected
+No recommendation
+Θ
+Insufficient evidence to support any recommendation
+Strong 
+recommendation 
+against the use of 
+an intervention
+‘Do not offer’
+↓↓
+Risks of the intervention outweigh the benefits; most patients would not choose the 
+intervention while only a small proportion would; for clinicians, most of their patients 
+would not receive the intervention
+Good practice point
+‘Offer’ (or similar, 
+as above), 
+‘consider’
+GPP
+Recommendations are derived from informal consensus based on the Guideline 
+Development Group’s specialist experience, when there is no published evidence 
+available
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 4 ===
+e59
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+preferences’ section and further discussion of the included 
+evidence, treatment options, practical and economic consid­
+erations and service provision are also featured in the LETR 
+narrative (Appendix C).
+2.1 Clinical questions and outcomes
+The GDG established a systematic review question perti­
+nent to the scope of the guideline. See Appendix A for the 
+full living systematic review protocol.
+The GDG also established a set of outcome measures of 
+importance to people with AA, which were agreed by the 
+patient representatives and ranked according to the GRADE 
+methodology.6 Outcomes ranked 7, 8 or 9 are critical for 
+decision making; those ranked 4, 5 or 6 are important, but 
+not critical for decision making; and those ranked 1, 2 or 3 
+are less important for decision making.
+Systematic review question: In people with AA what 
+are the clinical effectiveness and safety of interventions 
+compared with each other, placebo or no treatment?
+Outcomes
+Critical
+•	 Improvement in quality of life and psychological well­
+being (anxiety†/depression) (9)
+•	 Severity of Alopecia Tool (SALT) score 0 (9)
+•	 SALT score ≤ 10 (8)
+•	 Improvement in hair regrowth from baseline 
+(e.g. ≥ 75%)§ (8)
+•	 Improvement in facial (i.e. eyelash, eyebrow, beard) 
+hair regrowth from baseline (8)
+•	 Serious adverse effects (i.e. grade 3–4 adverse events, 
+investigator defined) (8)
+•	 Long-term sustainability of hair regrowth (8)
+•	 SALT score ≤ 20 (7)
+Important
+•	 Patient’s self-assessment (6)
+•	 Disease-specific physician’s assessment (6)
+•	 Improvement in hair regrowth from baseline (e.g. ≥ 50%) (6)
+•	 Physician’s Global Assessment (6)
+•	 Minor adverse effects (i.e. grade 1–2 adverse events) (5)
+Less important
+•	 Improvement in hair regrowth from baseline 
+(e.g. ≥ 25%) (3)
+†Where reported, data on social anxiety are to be extracted 
+additionally and separately.
+§Where reported, data on 90–100% improvement of hair 
+regrowth from baseline are to be extracted additionally and 
+separately.
+3.0 Summary of recommendations
+The GDG set out to provide an up-to-date and evi­
+dence-based approach to optimize the management ­
+of people with AA, factoring in patient values and 
+­preferences.
+The following recommendations and ratings were agreed 
+upon unanimously by all members of the GDG, including 
+patient representatives. For further information on the word­
+ing used for recommendations and strength of recommen­
+dation ratings, see Section 2.0. The GDG is aware of the lack 
+of high-certainty evidence for some of these recommenda­
+tions; therefore, strong recommendations with an asterisk 
+(*) are based on the available evidence, as well as consen­
+sus and specialist experience. Good practice point (GPP) 
+recommendations are derived from informal consensus.
+The GDG considered the evidence and provided recom­
+mendations in the context of clinical practice within the UK’s 
+NHS. However, the GDG acknowledged that some recom­
+mended interventions may not be widely available. The evi­
+dence for recommendations is based on the studies listed. 
+For further details please refer to the discussion in the LETR 
+(Appendix C).
+All recommendations that employ the term ‘people’ refer 
+to adults, children and young people. The terms ‘male’, 
+‘female’, ‘men’ and ‘women’ used throughout the guideline 
+refer to the sex assigned at birth.
+The AA severity definitions used in this living guideline are 
+based primarily on the extent of scalp hair loss, with lim­
+ited (mild) hair loss representing 1–20% scalp involvement, 
+moderate hair loss representing 21–49% scalp involvement 
+and severe hair loss representing 50–100% scalp involve­
+ment.7 However, the grade of severity should be increased 
+if additional clinical features are present (see Section 6.2). 
+Rapidly progressive AA is defined here as progressive 
+scalp hair loss of sudden onset, associated with increased 
+hair fall and generalized positive hair pull test and/or tricho­
+scopic features of active disease (e.g. exclamation-mark 
+hairs, black dots).8
+The definitions of psychological distress used in this living 
+guideline should be based on the outcome of clinical assess­
+ment and judgement. However, this can be supported by the 
+use of mental health patient-reported outcome measures or 
+screening tools (Appendix O; see Supporting Information) 
+that have psychometrically reliable cutoff points.
+General management
+R1 (GPP) Undertake a full history for people with AA, includ­
+ing the site and type of AA, disease extent, disease stabil­
+ity, previous treatment response, age of onset, speed of 
+progression, triggering factors, quality of life, psychological 
+and psychosocial impact, maximum severity experience and 
+personal and family history of other autoimmune diseases.
+R2 (GPP) Manage the expectations of people with AA by con­
+veying that any therapeutic modality is not always ­effective.
+R3 (GPP) Offer all people with AA medical photography9 as 
+a baseline record of severity and consider further photogra­
+phy if there is a significant change and at the start of a new 
+treatment course.
+R4 (GPP) Perform the Severity of Alopecia Tool (SALT) 
+assessment (Appendix N; see Supporting Information) 
+­routinely in people with AA with scalp involvement as a 
+validated outcome measure to assess treatment response 
+over time.
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 5 ===
+e60
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+R5 (GPP) Exercise caution when treating people with AA 
+with brown and black skin with topical and/or ­intralesional 
+corticosteroids and contact immunotherapy, due to the 
+increased risk of skin depigmentation with corticosteroid 
+treatment and the risk of developing vitiligo, as well as local­
+ized skin hyper- or hypopigmentation, with contact immu­
+notherapy. These patients need specific counselling prior 
+to treatment regarding potential skin pigmentary changes.
+R6 (↑↑) Assess* and monitor people’s quality of life and level 
+of psychological distress associated with living with AA. 
+Brief screening tools that can be used include Patient Health 
+Questionnaire-4 (PHQ-4)10 or Patient Health Questionnaire-9 
+(PHQ-9),11,12 Generalized Anxiety Disorder 7 (GAD7),13 Mood 
+and Feelings Questionnaire – short [MFQ(S)]14 and Dermatology 
+Life Quality Index (DLQI).15 Disease-specific measures include 
+the Alopecia Areata Symptom Impact Scale (AASIS)16 and 
+Alopecia Areata Patient Priority Outcome (AAPPO).17
+R7 (GPP) Discuss with people with AA the psychosocial 
+impact of living with the condition.
+R8 (GPP) Provide people with AA, at the time of diagno­
+sis, with a patient information leaflet (e.g. https://www.
+skinhealthinfo.org.uk/condition/alopecia-areata), actively 
+engage them in their treatment management pathway to 
+facilitate shared decision making and direct them to appro­
+priate patient support organizations (e.g. Alopecia UK).
+R9 (GPP) Offer people with moderate-to-severe AA the 
+opportunity to participate in a long-term safety registry [e.g. 
+the Global Registry of Alopecia areata disease Severity 
+and treatment Safety (GRASS)-UK; www.bad.org.uk/
+research-journals/research/grass-uk].
+R10 (GPP) Refer people with suspected AA to a health­
+care professional experienced in managing the condition 
+[secondary care specialist or general practitioner with an 
+extended role (GPwER)] if:
+•	 the condition is severe
+•	 the condition is progressing rapidly
+•	 there is diagnostic uncertainty
+•	 the condition has a significant psychosocial impact
+•	 the condition is not responding to topical treatment.
+Further advice on referral pathways can be found on 
+the British Association of Dermatologists’ website page: 
+‘Dermatology Referral Management Guidelines’ (www.
+bad.org.uk/referrals), which provides an accessible national 
+clinical resource intended to support clinicians in primary, 
+community and secondary care services.
+R11 (GPP) Consider appropriate diagnostic tests on a case-
+by-case basis in people with AA, depending on the patient’s 
+history and clinical presentation. Investigations, including 
+routine blood sampling, are unnecessary in most cases.
+Wigs and other nonpharmacological therapies
+R12 (↑↑) Offer wigs (including toppers) to people with AA 
+whose quality of life is likely to benefit from their use. Due 
+to the lifespan of products, it is suggested that patients are 
+offered a minimum of two synthetic wigs or one human hair 
+wig (if meeting clinical criteria) per year in accordance with 
+the Charter for Best Practice for NHS Wig Provision.18
+R13 (GPP) Acknowledge that wigs and other nonpharmaco­
+logical therapies can be as significant in improving patient 
+quality of life as other treatments.
+R14 (GPP) Suggest that people with AA explore other head­
+wear and camouflage options, such as hats, scarves, ­turbans, 
+makeup, hair fibres, powders and sprays, permanent makeup 
+and skin micropigmentation. The national hair loss charity, 
+Alopecia UK, has comprehensive information about products 
+and services on its website (www.alopecia.org.uk).
+Topical corticosteroids
+R15 (↑↑) Offer* a potent or very potent topical corticosteroid 
+once daily for 3–6 months to people with AA who have 
+scalp hair loss, as the first-line treatment in primary or sec­
+ondary care.
+R16 (↑) Consider a potent or very potent topical corticoster­
+oid treatment regimen of 6 weeks’ treatment and 6 weeks’ 
+break, followed by a further 6 weeks’ treatment cycle in 
+children and young people with scalp AA.
+R17 (GPP) Discuss with people with AA the amount of topi­
+cal corticosteroids to be used, the preferred formulation, the 
+site of application and the safety of a potent or very potent 
+topical corticosteroid when used correctly.
+R18 (GPP) Reassess the use of topical corticosteroids every 
+3–6 months in people with AA, to assess for improvement 
+and cutaneous side effects.
+Intralesional corticosteroids
+R19 (↑↑) Offer* intralesional triamcinolone acetonide (2.5–
+10 mg mL−1) as a first-line option to adults with limited 
+(mild)-to-moderate AA.
+R20 (↑) Consider intralesional triamcinolone acetonide in 
+adults with severe AA on a case-by-case basis.
+R21 (↑) Consider intralesional triamcinolone aceton­
+ide in older children and young people with limited 
+(mild)-to-moderate AA on a case-by-case basis.
+R22 (↑) Consider intralesional triamcinolone acetonide in 
+people with eyebrow or beard alopecia on a case-by-case 
+basis.
+R23 (GPP) Exercise caution when treating people with AA 
+with intralesional corticosteroids due to the risk of local­
+ized skin or fat atrophy, particularly when treating cosmeti­
+cally sensitive sites or if previous episodes of atrophy have 
+occurred.
+R24 (GPP) Consider an initial starting concentration of 5 mg 
+mL−1 for intralesional triamcinolone acetonide as standard 
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 6 ===
+e61
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+practice in all adults with AA. Adjusted concentrations may 
+be required depending on response, treatment site (e.g. 
+facial skin) or risk of side effects.
+R25 (GPP) Consider a time interval of 6–12 weeks for 
+intralesional triamcinolone acetonide injections for peo­
+ple with AA and ensure that the injections are evenly 
+spaced within the patch and patch margins (i.e. 0.1 mL per 
+1 cm2).
+R26 (GPP) Consider options (e.g. topical local anaesthetics, 
+cold spray or distraction/vibration) to reduce pain when inject­
+ing intralesional triamcinolone acetonide in people with AA.
+Systemic corticosteroids
+R27 (↑) Consider a course of oral corticosteroids (e.g. pred­
+nisolone 0.5 mg kg−1 per day tapering over 6–12 weeks) in 
+people with rapidly progressive AA. Intravenous methyl­
+prednisolone 500 mg daily for 3 days may be an alternative 
+to oral corticosteroids in adults, although this treatment is 
+not used widely in the UK.
+R28 (↑) Consider a course of oral corticosteroids (e.g. pred­
+nisolone 0.5 mg kg−1 per day tapering over 6–12 weeks) in 
+people with moderate-to-severe AA.
+R29 (↑) Consider concurrent topical treatment (e.g. potent 
+topical corticosteroid, 5% topical minoxidil) in people with 
+moderate-to-severe AA, to reduce the risk of relapse. 
+Taper corticosteroid use over 6–12 weeks with the aim of 
+maintaining response thereafter with the topical agent.
+R30 (↑) Consider concurrent treatment with corticoster­
+oid-sparing agents (e.g. azathioprine, methotrexate, ciclo­
+sporin) in people with moderate-to-severe AA, to reduce 
+the risk of relapse. Taper corticosteroid use over 6–12 weeks 
+with the aim of maintaining response thereafter with the 
+steroid-sparing agent.
+R31 (GPP) Acknowledge that some people treated with 
+oral corticosteroids may be unable to maintain a treatment 
+response as the dose is reduced or stopped. The side-ef­
+fect profile of oral corticosteroids usually precludes longer-
+term maintenance therapy, particularly if higher doses are 
+required to maintain an effect.
+Contact immunotherapy
+R32 (↑↑) Offer diphenylcyclopropenone (DPCP), where avail­
+able, to people with moderate-to-severe AA.
+R33 (↑) Consider ‘home DPCP’ (where available, under hos­
+pital guidance) in people with AA who can conduct the pro­
+cedure correctly and safely at home, for their easy access 
+and convenience.
+R34 (↑↑) Use DPCP or squaric acid dibutyl ester (SADBE) as 
+a sensitizing agent in people with AA.
+R35 (↓↓) Do not use dinitrochlorobenzene (DNCB) as a sensi­
+tizing agent in people with AA due to the risk of mutagenicity.
+Light and laser
+R36 (↑) Consider topical and oral psoralen plus ultraviolet A 
+(PUVA) in people with AA in selected cases depending on 
+the risk–benefit ratio. For example, this option may be more 
+acceptable in people with brown and black skin who would 
+like a localized treatment option, and to avoid the risk of skin 
+depigmentation with topical immunotherapy. If used, con­
+sider shorter treatment cycles, application to smaller areas 
+and a finite treatment duration.
+ϴ There is insufficient evidence to recommend the following 
+light and laser interventions to people with AA:
+•	 narrowband ultraviolet B (NB-UVB)
+•	 ultraviolet A1 (UVA1)
+•	 laser-assisted delivery of topical agents (such as minox­
+idil and corticosteroids) with fractioned, ablative CO2 
+laser or fractionated nonablative erbium laser
+•	 low-level (light) laser therapy (LLLT) devices
+•	 pulsed infrared diode laser
+•	 photodynamic therapy (PDT)
+•	 Nd:YAG laser
+•	 excimer lamp
+•	 other laser treatments (e.g. 311-nm titanium–sapphire 
+laser, nonablative 1550-nm erbium glass fractional laser, 
+ablative fractional 2940-nm Er:YAG laser).
+Systemic immunosuppression
+R37 (↑) Consider ciclosporin, azathioprine or methotrexate as 
+monotherapy or in combination with oral corticosteroids as treat­
+ment options in people with moderate-to-severe AA, balanc­
+ing benefits, risks of adverse effects, and patient risk factors.
+R38 (GPP) Consider mycophenolate mofetil in adults with 
+moderate-to-severe AA, balancing benefits, risks of 
+adverse effects, and patient risk factors.
+R39 (GPP) Consider ciclosporin in people with rapidly 
+progressive AA for a limited course (i.e. 3–6 months), to 
+encourage initial hair regrowth.
+Other systemic treatments
+ϴ There is insufficient evidence to recommend the following 
+systemic interventions to people with AA:
+•	 inosiplex (isoprinosine or inosine pranobex)
+•	 imipramine
+•	 apremilast
+•	 sulfasalazine
+•	 mesalazine
+•	 hydroxychloroquine
+•	 dimethyl fumarate
+•	 etrasimod
+•	 ezetimibe/simvastatin.
+Janus kinase inhibitors
+R40 (↑↑) Offer a licensed oral Janus kinase inhibitor (if avail­
+able) to adults with severe AA.
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 7 ===
+e62
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+R41 (↑↑) Offer a licensed oral Janus kinase inhibitor (if avail­
+able) to children and young people aged ≥ 12 years with 
+severe AA.
+R42 (↑) Consider discontinuing oral Janus kinase inhibitor 
+therapy in children and young people aged ≥ 12 years 
+and adults with AA who show no evidence of therapeutic 
+benefit after 36 weeks, as per the summaries of product 
+characteristics.19
+R43 (↑) Be aware that time to achieve an adequate therapeu­
+tic response (i.e. SALT < 20) for oral Janus kinase inhibitors 
+will vary from person to person.20
+R44 (↑) Consider a longer trial of oral Janus kinase inhibitor 
+therapy in children and young people aged ≥ 12 years 
+and adults with AA, as some may require a longer course 
+to achieve SALT < 20. Evaluation of an adequate response, 
+and the decision to continue the treatment in the long 
+term, might need to be delayed until after 36 weeks, pos­
+sibly up to 18 months, and should be made on a case-by-
+case basis.
+R45 (GPP) Take into account that, to reduce the risk 
+of relapse, treatment with oral Janus kinase inhibi­
+tors for children and young people aged ≥ 12 years 
+and adults with AA is likely to be needed long term. 
+Generally, those achieving SALT ≤ 20 maintain a good 
+response on continued treatment over time. Treatment 
+cessation, or abrupt dose reduction, may increase the 
+risk of relapse.
+R46 (GPP) Take into account the ‘Ritlecitinib for alopecia 
+areata’ supplementary guidance (https://cdn.bad.org.uk/
+uploads/2024/07/01005430/ritlecitinib-for-alopecia-areata-­
+supplementary-guidance-26.06.24.pdf) to the NICE 
+technology appraisal (TA) guidance21 when prescribing rit­
+lecitinib.
+R47 (GPP) Discuss the recent drug safety update issued by 
+the Medicines and Healthcare products Regulatory Agency 
+(MHRA),22 the ‘black box’ warning by the Food and Drug 
+Administration (FDA)23 or the safety recommendation 
+by the European Medicines Agency (EMA)24 regarding 
+increased risk of venous thromboembolism (VTE), serious 
+cardiovascular events, cancer and death with Janus kinase 
+inhibitors. These drugs should be prescribed with caution 
+in anyone aged > 65 years or with risk factors for these 
+­conditions.
+R48 (GPP) Highlight to patients that the longer-term 
+safety profile of Janus kinase (JAK) inhibitors in chil­
+dren, young people and adults with AA is currently 
+unknown, particularly considering that most people suc­
+cessfully treated with these agents will need to remain 
+on therapy for many years. JAK inhibitors are subject 
+to enhanced safety reporting, and enrolment in pro­
+spective, real-world data collection is encouraged (see 
+Section 7.2).
+ϴ There is insufficient evidence to recommend topical Janus 
+kinase inhibitors to people with AA.
+Biologics
+R49 (↓↓) Do not offer efalizumab to people with AA, as the 
+evidence shows that it is ineffective in this population and 
+the risk of adverse events may exceed any potential benefit.
+ϴ There is insufficient evidence to recommend the following 
+biologic interventions to people with AA:
+•	 ustekinumab
+•	 secukinumab
+•	 abatacept
+•	 intramuscular alefacept
+•	 tumour necrosis factor-α inhibitors
+•	 low-dose anti-interleukin-2
+•	 dupilumab.
+Other topical treatments
+R50 (↑) Consider topical dithranol (if available) as a ­treatment 
+option in people with AA, especially in children and young 
+people or those with lack of access to DPCP. Advise 
+patients about the staining properties of ­dithranol, which 
+can affect scalp hair, fabric and other materials.
+R51 (GPP) Consider topical prostaglandin analogues (appli­
+cation only on the upper eyelid margin) in adults with eye­
+lash alopecia when some hair presence or signs of hair 
+regrowth exists. These agents are probably ineffective at 
+restoring growth where hair has been fully lost. Counsel 
+patients regarding the risk of permanent increased pigmen­
+tation of the iris.
+ϴ There is insufficient evidence to recommend the following 
+topical interventions to people with AA:
+•	 calcineurin inhibitors
+•	 calcipotriol
+•	 ciclosporin
+•	 azelaic acid
+•	 methotrexate 1% gel
+•	 tretinoin
+•	 prostaglandin analogues for scalp alopecia
+•	 dithranol in combination with contact immunotherapy
+•	 dithranol in combination with salicylic acid and coal tar
+•	 mechlorethamine hydrochloride (nitrogen mustard)
+•	 diclofenac sodium
+•	 liquid phenol
+•	 5-fluorouracil
+•	 sildenafil.
+Minoxidil
+R52 (GPP) Consider topical or oral minoxidil in people with 
+AA as an adjuvant to other treatment modalities, as it can 
+improve hair density and may reduce the possibility of 
+relapse.
+Psychological
+R53 (↑↑) Offer* information on self-help and patient sup­
+port (e.g. leaflets, books, websites, apps) to people with 
+mild psychological distress. General recommendations on 
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 8 ===
+e63
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+treatment and management of low mood are available in 
+NICE guidelines NG22225 and NG134.26
+R54 (↑↑) Offer* referral for formal psychological interven­
+tion [including individual or group cognitive behavioural 
+therapy (CBT) and specialized forms of CBT that include 
+mindfulness] to people experiencing moderate-to-se­
+vere psychological distress. For adults, consider directing 
+to NHS Talking Therapies. For children and young people, 
+consider directing to Children and Young People Mental 
+Health Services.
+R55 (↑↑) Offer* the use of psychotropic medication (under 
+the supervision of a suitably trained clinician) or/and referral 
+for more intensive forms of psychological therapy or psychi­
+atric intervention, for more severe psychological distress.
+R56 (GPP) When indicated, formally assess for potential 
+self-harm in people with AA. Recommendations on assess­
+ment, management and preventing recurrence of self-harm 
+are available on the NHS England e-learning platform and 
+NICE guideline NG225.27
+Other nonsteroid injectable therapies
+ϴ There is insufficient evidence to recommend the following 
+injectable interventions to people with AA:
+•	 platelet-rich plasma (PRP)
+•	 microneedling
+•	 carboxytherapy
+•	 cryotherapy
+•	 intralesional pentoxifylline
+•	 intralesional methotrexate
+•	 intralesional vitamin D
+•	 mesenchymal stem cells
+•	 intralesional interferon alfa
+•	 intradermal minoxidil.
+Alternative therapy
+ϴ There is insufficient evidence to recommend the following 
+alternative interventions to people with AA:
+•	 aromatherapy
+•	 allium/onion ointment
+•	 ginseng
+•	 peony
+•	 glycyrrhizin
+•	 combined complementary therapies (herbal, nettle, 
+­dandelion)
+•	 poison primrose (Primula obconica)
+•	 herbal sensitizers
+•	 candida antigen
+•	 squill lotion
+•	 hypnosis.
+Future research recommendations
+The following list outlines future research recommendations 
+(FRRs).
+FRR1 Randomized controlled trials to evaluate the safety 
+and efficacy of oral Janus kinase inhibitors compared with 
+each other and/or commonly used interventions in people 
+with AA.
+FRR2 Clinical trials investigating planned withdrawal, or 
+maintenance therapy, for oral Janus kinase inhibitors in peo­
+ple with AA.
+FRR3 Clinical trials evaluating investigational medicinal 
+products (IMPs) in people with AA should also report on 
+psychological outcomes, using appropriate measurement 
+scales for AA.
+FRR4 Development of an international core outcome set for 
+AA clinical trials to permit data comparison and meta-anal­
+yses.
+FRR5 Study the minimal clinically important difference 
+(MCID) for existing disease-specific tools for AA.
+FRR6 Clinical trials to evaluate the effectiveness of psy­
+chological interventions and/or therapy in reducing distress 
+associated with AA.
+FRR7 Investigation of the effectiveness of camouflage tech­
+niques to reduce psychological distress in people with AA.
+FRR8 Development of biomarkers and other patient stratifi­
+cation tools to better predict prognosis and inform treatment 
+choices for people with AA.
+FRR9 Identify the most suitable health utility tool for assess­
+ment of treatments for managing people with AA.
+4.0 Algorithm
+The recommendations, discussions in the LETR (Appendix 
+C) and consensus specialist experience were used to inform 
+the algorithm/pathway of care (Figure 1).
+5.0 Background
+AA is a chronic inflammatory disease that affects the hair 
+follicles and sometimes the nails. It usually presents with 
+patchy scalp hair loss, which can extend to involve the entire 
+scalp, but any hair-bearing skin may be involved, including 
+facial and body hair. Total loss of scalp hair is called alopecia 
+totalis (AT) and complete loss of scalp, facial and body hair 
+is called alopecia universalis (AU). The affected skin may 
+be slightly reddened, but usually appears normal. Short 
+broken hairs (exclamation-mark hairs) are frequently seen 
+around the margins of expanding patches of AA on trichos­
+copy (dermoscopy). The nails are involved in about 10% of 
+patients referred for specialist advice.28 A recent UK-based 
+epidemiology study estimated the point prevalence, in 2018, 
+of adults with AA as 0.58% and the peak age of onset as 
+25–29 years for both male and female patients. Patients of 
+Asian, Black and mixed ethnicity are more likely to present 
+with AA, especially those of Asian descent.29
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 9 ===
+e64
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+5.1 Prognosis
+The most important prognostic indicators for AA are dis­
+ease severity and age at initial presentation, with extensive 
+disease and younger age of onset predicting a poorer out­
+come.30 These factors are demonstrated in an Italian study 
+of 191 patients with AA seen in clinic between 1983 and 
+1990 who were contacted by telephone 16–23 years later 
+and self-reported their clinical status.31 Patients with mild 
+disease (< 20% scalp area affected) at presentation were 
+more likely to report being disease free at follow-up (68% 
+of cases). However, there was a significant tendency for 
+AA to worsen over time, with 19% of those originally seen 
+with mild-to-moderate disease (< 50% scalp area affected) 
+Figure 1  Management pathway for people with alopecia areata (AA). CYP, children and young people; NHS, National Health Service; PIL, patient 
+information leaflet; QoL, quality of life; SALT, Severity of Alopecia Tool.
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 10 ===
+e65
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+progressing to AT/AU at follow-up, 93% with AU still having 
+extensive disease (AT/AU) at follow-up, and only 3% origi­
+nally with extensive disease (AT/AU) being disease free at 
+follow-up.31 Thus, a tendency to progressive disease, and 
+episodes of disease relapse, are common in this condi­
+tion.32–34
+Hair follicles are preserved in AA; therefore the potential 
+for recovery of hair growth is maintained, although recovery 
+rates may diminish in long-standing disease. Other factors 
+that may affect prognosis include the AA subtype, positive 
+family history and nail disease. The ophiasis subtype (where 
+alopecia affects the hair margins) confers a poorer progno­
+sis and may be less responsive to treatment; however, the 
+recently described ‘acute diffuse and total alopecia’ subtype 
+may have a more favourable prognosis.35 The presence of 
+atopy has also been shown to be associated with treatment 
+resistance in patients with patchy AA.34
+5.2 Aetiology
+The exact pathogenesis of AA is unknown. However, AA 
+is considered a chronic T-cell-mediated inflammatory dis­
+order where loss of hair follicle immune privilege, infiltra­
+tion of proinflammatory cytokine-secreting T cells around 
+the hair follicle bulb, and premature catagen induction are 
+key features in active disease and necessary for hair loss 
+development.36 Genetic predisposition and (as yet unidenti­
+fied) environmental factors may also be relevant in disease 
+pathogenesis.37,38
+5.2.1 Genetic factors and autoimmune associations
+Genetic predisposition seems to be one of the main determi­
+nants for developing AA, with about 20% of people having 
+a family history of the disease.39 Genome-wide association 
+studies have confirmed the link with major histocompat­
+ibility complex (MHC) genes and other genes involved in 
+regulating innate and adaptive immunity, with several of the 
+identified AA susceptibility loci also prevalent in other auto­
+immune diseases.38 The human leucocyte antigen (HLA) 
+class II gene products DR4, DR5, DQ3, DQ7 and DPW4 
+have been strongly associated with AA susceptibility, with 
+HLA-DR on chromosome 6 showing the greatest risk of 
+disease development.40 CD4+ and CD8+ T cells have a key 
+role in AA pathogenesis and have been linked to these HLA 
+class II genes.40
+There are several other pathways that have been impli­
+cated in AA pathogenesis, including genes encoding ­natural 
+killer cell receptor D (NKG2D) ligands [such as MHC class I 
+polypeptide-related sequence A (MICA) and UL16-binding 
+protein (ULBP)], which act as ‘danger signals’ in the hair 
+follicle;41 downstream effectors of the Janus kinase (JAK) 
+pathway;41 T regulatory cell (Treg) pathways;40 and mela­
+nin-concentrating hormone signalling pathways.42,43
+5.2.2 Hair follicle immune privilege collapse
+The lower portion of the normal hair follicle demonstrates 
+immune privilege (a complex array of mechanisms that 
+restrict antigen presentation from these cells),44 meaning 
+hair follicles are protected from immune surveillance by auto­
+reactive T cells. In AA, CD8+ T cells and NKG2D+ cells tar­
+get anagen hair follicles with disrupted immune privilege.45 
+Increased interferon (IFN)-γ responses and upregulation of 
+several common γ-chain (γc) cytokines, including interleukin 
+(IL)-2, IL-7, IL-15 and IL-21, promote recruitment, activation 
+and survival of IFN-γ-producing CD8+ NKG2D+ T cells. This 
+results in immune privilege collapse,46 hair follicle dystrophy 
+and premature entry of hairs into catagen phase, leading to 
+the development of hair loss.36,47
+5.2.3 Environmental factors
+Emotional stress is an often cited cause of AA based on 
+patient-reported triggers, along with biological changes 
+seen in mouse models and human ex vivo hair follicle cul­
+ture studies.48–50 Other potential environmental stressors 
+that may be implicated in AA include infections,51 vaccina­
+tions, hormone fluctuations and diet, although their precise 
+roles are uncertain.37 Several studies have suggested a 
+correlation between AA severity and vitamin D deficiency; 
+however, the role of vitamin D in AA pathogenesis remains 
+unclear.52,53 Gut microbiota has been shown to have a key 
+role in influencing various inflammatory and autoimmune 
+diseases,54 with gut dysbiosis being a potential additional 
+factor in AA.55
+5.3 Comorbidities
+5.3.1 Atopic and autoimmune associations
+AA has been associated with several other autoimmune 
+and atopic disorders. A population-based cohort study of 
+8051 newly diagnosed patients with AA and 32 204 case-
+matched controls in England demonstrated that atopic and 
+autoimmune conditions were more prevalent in patients 
+with AA than in controls, showing an increased risk of atopic 
+dermatitis, allergic rhinitis, autoimmune hypothyroidism, 
+systemic lupus erythematosus and vitiligo.56 An earlier age 
+is associated with early AA onset.57,58
+5.3.2 Anxiety and depression
+The emotional and functional impacts of AA are well rec­
+ognized, with increased levels of both coexisting and 
+new-onset anxiety and depression seen in patients with AA 
+compared with controls. Furthermore, having AA is associ­
+ated with a greater likelihood of being issued time-off-work 
+certificates or being recorded as unemployed.59 A recent 
+study suggests a bidirectional association between severe 
+depression and AA, indicating that both conditions are 
+independent risk factors for the development of the other.60 
+Biologically, systemic inflammation may contribute, with 
+serum IL-22 and IL-17E levels correlating with symptoms of 
+depression.61 Social discrimination and/or stigmatization are 
+also likely to contribute.62
+5.3.3 Increased cardiovascular risk
+Data from recent publications suggest that AA may be asso­
+ciated with increased cardiovascular and metabolic risk, with 
+stroke and acute cardiac events being seen more frequently, 
+particularly in long-standing cases.63–65 The potential cause 
+for this is unclear, but chronic inflammation, disease associ­
+ations, smoking status and the consequence of treatments 
+may play a role. Unfortunately, the published literature shows 
+conflicting results,66,67 so further work is needed to better 
+understand these potential associations and whether risk 
+reduction strategies are specifically needed in this patient 
+group.
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 11 ===
+e66
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+6.0 Diagnosis and investigations
+The diagnosis of AA is usually based on the clinical presenta­
+tion and typical examination findings. Trichoscopy can aid diag­
+nosis and management of AA, identifying preserved follicular 
+ostia and regular yellow dots in areas of hair loss and exclama­
+tion-mark hairs and black dots typically seen at the hair loss 
+margin when the disease is active. However, the following 
+conditions may cause diagnostic difficulties and should be 
+considered in the differential diagnosis of patchy AA.68
+1.	
+Hair-pulling disorder (trichotillomania, trichotillosis)
+	
+Hair-pulling disorder describes self-inflicted trau­
+matic damage to the hairs due to recurrent pulling 
+out of hair. It is characterized by irregular patchy loss 
+with broken hairs of variable length. In contrast to 
+AA, hairs in trichotillomania are firmly attached to the 
+scalp and not easily extracted with the hair pull test.
+2.	
+Tinea capitis
+	
+Tinea capitis presents as patchy hair loss, particularly 
+in children, with features of scalp inflammation and 
+surface scale, although these signs may sometimes 
+be subtle.
+3.	
+Early scarring alopecia
+	
+Trichoscopy is useful in identifying loss of follicular 
+ostia, along with other signs such as perifollicular ery­
+thema and perifollicular scale seen in scarring alopecia. 
+A biopsy may be required to exclude this diagnosis.
+4.	
+Temporal triangular alopecia
+	
+This typically presents in childhood with a static, non­
+inflammatory triangular or oval patch containing vel­
+lus hair located at the frontal hairline; sometimes the 
+condition can be bilateral. In contrast with AA, there 
+are no yellow dots, black dots or exclamation-mark 
+hairs seen in this condition.
+Occasionally, AA may present with diffuse hair loss 
+associated with increased hair fall, but without the typical 
+patches. Further investigation may be necessary, and the 
+following differential diagnoses should be considered in this 
+presentation:
+	1	
+telogen effluvium
+	2	
+anagen effluvium (drug-induced)
+	3	
+systemic lupus erythematosus
+	4	
+secondary syphilis (usually patchy and ‘moth eaten’).
+For children presenting with complete alopecia within the 
+first year of life, clinicians should also consider congenital 
+conditions associated with total hair loss that may be clini­
+cally indistinguishable from AT/AU, particularly ‘atrichia with 
+papular lesions’ and vitamin D-dependent rickets.69
+6.1 Investigations
+Investigations are unnecessary in most cases of AA.70 If there 
+is diagnostic uncertainty (see Section 6.0) appropriate testing 
+may include fungal cultures, skin biopsy, diagnostic criteria 
+and serology testing for systemic lupus erythematosus, or 
+syphilis screening. Investigations for coexisting autoimmune 
+conditions should be considered on a case-by-case basis 
+depending on the patient history and clinical presentation.
+6.1.1 Thyroid disease
+An association between AA and autoimmune thyroid dis­
+ease has long been recognized,71 but opinions are divided on 
+whether routine screening of thyroid function is justified. Two 
+meta-analyses of published data have concluded that the 
+risk of hypo- and hyperthyroidism is significantly increased 
+in AA.72,73 However, a third did not show an association with 
+diagnosed or serological hypo- or hyperthyroidism, although 
+there was a significant association between AA and the pres­
+ence of thyroid autoantibodies, which, in long-term studies, 
+has been associated with the later development of overt dis­
+ease.74 The risks of thyroid disease and of serological thyroid 
+abnormalities appear greater in AT and AU.75,76
+The frequency of thyroid disease is greatest in the older 
+age groups of people with AA, as it is in the population at 
+large, but the risk (vs. that in the age-matched population) 
+is greatest in those aged < 20 years.76 In a study of thyroid 
+function in 298 children with AA the investigators concluded 
+that routine screening in children should be restricted to 
+those with a medical history of Down syndrome, a history of 
+atopy, a family history of thyroid disease or clinical features 
+suggestive of thyroid disease.77 Whether routine thyroid 
+screening should be performed in adults is debatable, but 
+it may be considered, notably in AT and AU. If performed, 
+tests should include thyroid autoantibodies and thyroid-stim­
+ulating hormone and recognize that the increased risk of 
+thyroid disease in AA is lifelong.
+6.1.2 Iron, vitamin D and other nutritional 
+deficiencies
+Deficiencies of nutrients, including iron, zinc and selenium, 
+have been linked with AA. However, these studies are small 
+and show conflicting results. Routine testing for iron status 
+is not supported by evidence. There are no published stud­
+ies demonstrating a treatment response to iron replacement 
+therapy.78–81 There have been reports of decreased serum 
+levels of vitamin D82 and an inverse correlation with the 
+severity of AA,53 while others have not found an association 
+between dietary, supplemental or total vitamin D intake and 
+incident AA.83 Ultimately, studies are required to assess the 
+value of vitamin D supplementation in the treatment of AA.
+6.2 Severity of disease
+Most recent clinical trials for AA have used the SALT score 
+(Appendix N) to categorize the levels of scalp hair loss 
+(Alopecia Areata Scale), based on percentage terminal scalp 
+hair loss.84,85 Severity criteria are presented in the ‘Alopecia 
+Areata Investigator Global Assessment’86 and ‘Scalp Hair 
+Assessment PRO’ tools,87 which present severity grada­
+tions of scalp alopecia for use in clinical trials. The criteria 
+include grade 0 (‘none’; 0% scalp hair loss), grade 1 [‘limited’ 
+(mild); 1–20% scalp hair loss], grade 2 (‘moderate’; 21–49% 
+scalp hair loss), grade 3 (‘severe’; 50–94% scalp hair loss) 
+and grade 4 (‘very severe’; 95–100% scalp hair loss).
+This severity classification can be simplified for clinical 
+practice by combining the top two severity categories into 
+one severity grade (‘severe’) representing 50–100% scalp 
+hair loss, as used in this living guideline. Further, validated 
+clinician- and patient-reported outcome measures are now 
+available to assess eyebrow, eyelash and nail involvement.88
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 12 ===
+e67
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+Unfortunately, the extent of scalp hair loss alone does not 
+capture the wider impact of AA on an individual, particularly 
+when psychological distress or functional impact (e.g. loss 
+of eyelashes or nails) is prominent or when other visible 
+body sites are involved. Therefore, a recent expert consen­
+sus7 has advocated adjusting the SALT-based severity rating 
+when other additional factors are present. Thus, limited or 
+moderate AA may have their severity ratings increased by 
+one level if one or more of the following are present:
+•	 ‘negative impact on psychological functioning resulting 
+from AA’ (Appendix O)
+•	 ‘noticeable involvement of eyebrows or eyelashes’
+•	 ‘inadequate response after at least 6 months of treat­
+ment’
+•	 ‘diffuse (multifocal) positive hair pull test consistent with 
+rapidly progressive AA’.
+Other factors (e.g. religious significance of hair growth) 
+can also increase the impact of AA in certain situations89 or 
+make assessment more challenging. This emphasizes that 
+clinical assessment of AA severity must be holistic, address­
+ing individual patient needs, and should be a priority area for 
+future research.
+7.0 Management
+A complete history and careful clinical assessment are 
+required in all people with suspected AA, to confirm the 
+diagnosis and exclude conditions that may mimic this dis­
+ease (see Section 6.0). As part of the assessment, the func­
+tional and psychological impacts of the condition should be 
+explored to determine the priorities for treatment, as these 
+may differ from person to person. A frequent example is 
+how someone prioritizes their desire to regrow their scalp, 
+eyebrow or beard hair over hair regrowth at other body 
+sites, with different treatment approaches often required to 
+achieve this priority for that individual.
+Various factors (see Section 6.2), in addition to affected 
+scalp area, can influence disease severity. Discussion of the 
+unpredictable and relapsing nature of AA is important, as that 
+may influence which treatments are chosen. Furthermore, 
+recognize that extensive disease (AT/AU), longer duration 
+of disease and certain presentations (e.g. ophiasis pattern) 
+confer a worse prognosis and reduced likelihood of a suc­
+cessful treatment response.
+All people with AA should have a severity assessment 
+(e.g. SALT score) and medical photography9 at baseline, 
+with these assessments repeated if the clinical situation 
+changes or new therapies are considered. As treatment 
+of AA takes time it is important that the therapeutic trial 
+is of sufficient duration to allow a treatment response, 
+but not so long as to be futile and increase the risk of side 
+effects.20 Conventionally, treatments in AA are continued 
+for ≥ 6 months, but are stopped if there is an insufficient 
+response.70,84 Ultimately, the aim of treatment is complete 
+terminal hair regrowth on the scalp and any other body site 
+affected. However, achieving ‘cosmetically acceptable’ 
+regrowth, where the person with AA has hair growth at 
+body sites important to them or can camouflage the hair 
+loss, is a reasonable and pragmatic alternative goal. As it is 
+recognized that SALT scores do not always correlate with 
+patients’ distress, the level of regrowth achieved that is 
+regarded as meaningful will vary between individuals.90,91
+Following the approval by both NICE and the Scottish 
+Medicines Consortium (SMC), one JAK inhibitor (ritlecitinib) 
+can be prescribed within the NHS for the management 
+of severe AA in adults and adolescents aged ≥ 12 years. 
+Although the results of clinical trials have suggested an 
+acceptable drug safety profile, drug safety updates have 
+been issued by the Medicines and Healthcare products 
+Regulatory Agency (MHRA),22 a ‘black box’ warning by the 
+Food and Drug Administration (FDA),23 and a safety rec­
+ommendation by the European Medicines Agency (EMA)24 
+regarding increased risk of venous thromboembolism, 
+serious cardiovascular events, cancer and death with JAK 
+inhibitors. These drugs should be prescribed with caution in 
+anyone aged > 65 years or with risk factors for these condi­
+tions. The BAD, in collaboration with the British Hair and Nail 
+Society and Alopecia UK, have jointly issued supplemen­
+tary guidance regarding the use of ritlecitinib in AA, which 
+includes anticipated response rates and practical guidance 
+for management.92
+Whether to start, stop or change treatment is ultimately 
+a clinical decision based on several factors and made in 
+discussion with the patient. One area of uncertainty is the 
+transition to and between JAK inhibitors,20 and their use in 
+combination therapy, due to limited real-world experience 
+of using these agents.93 Current summary of product char­
+acteristics guidance for ritlecitinib advises against combi­
+nation with other systemic immunosuppressive medicinal 
+products, suggesting that these agents should be used 
+individually and sequentially.19 Furthermore, as more sys­
+temic agents are approved for treating AA, and for those 
+patients with coexisting immune-mediated inflammatory 
+disorders potentially eligible for other licensed agents, con­
+sideration should be given to the most appropriate choice 
+of systemic therapy for that individual. When used in AA, 
+systemic immunosuppressant therapy would be used in the 
+same dose range and regimens as for other inflammatory 
+skin conditions (e.g. methotrexate 5–25 mg per week; ciclo­
+sporin 2.5–5 mg kg−1 per day).94,95
+Despite limited evidence, clinicians frequently recommend 
+topical or oral minoxidil and topical prostaglandin analogues 
+to the eyelashes, as adjunctive therapies in AA, based on 
+their known anagen hair-growth-promoting mechanisms 
+of action. They are probably most successful in supporting 
+hair growth once regrowth has started. Reports of improved 
+treatment responses when minoxidil is combined with JAK 
+inhibitors96 or other systemic agents, and the potential abil­
+ity of minoxidil to reduce longer-term relapse rates,97 need 
+confirmation. As some patients starting minoxidil may expe­
+rience increased hair shedding in the first few weeks of 
+therapy and upon treatment cessation, they should be coun­
+selled specifically about this potential side effect.
+Once regrowth has occurred the decision to continue 
+active maintenance therapy, to reduce the risk of relapse, 
+should be considered on a case-by-case basis and reviewed 
+regularly. Unfortunately, no intervention to date has conclu­
+sively demonstrated alteration of the natural history of the 
+disease. Tapering the dose may help reduce side effects 
+and allow longer-term treatment courses, but this approach 
+needs to be balanced against the risk of relapse. Even when 
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 13 ===
+e68
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+a certain treatment has not resulted in complete regrowth, 
+the improvement in hair coverage may allow transition to 
+alternative, safer and more sustainable localized therapies 
+that previously would not have been suitable for more exten­
+sive disease. The need for additional psychological support 
+and/or requirements for a wig should be reviewed regularly.
+7.1 Special populations
+7.1.1 Conception, pregnancy and breastfeeding
+It is important to advise all patients of childbearing poten­
+tial of the risks and benefits of treatment in the context of 
+pregnancy. This is particularly relevant in AA considering the 
+peak onset and patient demographics in this disease.29 A 
+clear risk–benefit discussion is required on a case-by-case 
+basis and additional obstetric advice should be sought, if 
+required. Anecdotally, many women with AA describe 
+improvement in their AA during pregnancy, perhaps relat­
+ing to the physiological immune changes required to carry 
+a baby to term.
+Commonly used AA treatments that can possibly be 
+offered during pregnancy and breastfeeding include topical, 
+intralesional and systemic corticosteroids, topical dithranol 
+and oral ciclosporin. Specific areas to consider are outlined 
+below.
+1.	
+Systemic corticosteroids
+	
+Caution is required due to the potential increased 
+risk of cleft palate/lip (based on animal studies,98,99 
+but not proven in humans) and higher risk of preterm 
+delivery. Maternal blood pressure and glucose levels 
+need to be monitored during treatment.
+2.	
+Ciclosporin
+	
+It is recommended that pregnant women should 
+undergo close monitoring of their blood pressure, 
+renal function and glucose levels.
+Treatments to avoid in pregnancy include contact immu­
+notherapy, methotrexate, mycophenolate mofetil, JAK 
+inhibitors and minoxidil. Specifically, there are no data on 
+contact immunotherapy in pregnancy or breastfeeding. 
+Therefore, the recommendation is to avoid pregnancy dur­
+ing and up to 6 months post-treatment. Currently, there 
+are insufficient data on the safety profile of JAK inhibitors 
+in pregnancy, and these agents should also be avoided 
+during breastfeeding. Topical and oral minoxidil should be 
+avoided during pregnancy, based on animal studies raising 
+concerns regarding placental perfusion. Furthermore, there 
+have been case reports of neonatal hypertrichosis following 
+exposure during pregnancy. Minoxidil has been found to 
+be present in breast milk but is not known to be harmful to 
+the fetus (see Appendix C, which also includes advice on 
+paternal exposure).
+7.1.2 Paediatric alopecia areata
+Children and young people with AA will have varying 
+degrees of hair loss and may be happy and healthy and not 
+wish to seek treatment. The choice to pursue treatment 
+is not always based on the percentage of hair loss, but 
+additive factors, such as noticeability of the alopecia, peer 
+opinion and the wishes of parents or carers, who may have 
+their own specific expectations, also play a role. Therefore, 
+within this complex dynamic, the wishes of the young per­
+son must be balanced with those of their family or carers. 
+Ultimately, all decisions must factor in the wishes of the 
+child or young person, following a balanced discussion of 
+the different options. The British Society for Paediatric and 
+Adolescent Dermatology guidance on assessment and sup­
+port of mental health in children and young people with skin 
+conditions is a useful reference to support management 
+decisions.100
+The most appropriate treatment will depend on the age 
+and maturity of the person, the emotional and social impact 
+of their hair loss, their ability to tolerate specific therapies 
+(e.g. intralesional injections) and the potential risk of adverse 
+effects with different treatment options. The relapsing and 
+remitting nature of AA should be carefully explained. Early 
+treatment of AA may predict a more favourable outcome,101 
+but this must be balanced against medicalization of the 
+childhood years and the potential for developing health anx­
+ieties from increased medical intervention and exposure to 
+invasive or painful procedures.
+Age-appropriate patient and parent information, including 
+information for schools, can improve the social impact of 
+significant hair loss. The national hair loss charity Alopecia 
+UK provides age-appropriate school and individual resources 
+and can support groups and events for children, as well 
+as provide peer support for individuals and their families. 
+Providing skills and appropriate information to answer peer 
+questions and comments can help and empower the indi­
+vidual to adjust to their change in appearance.
+Unfortunately, the evidence base for treatment of AA 
+in the paediatric population is poor, with many treatment 
+strategies extrapolated from data in the adult population. 
+Therefore, it is vital that future clinical trials, disease reg­
+isters and other clinical studies should include children 
+and young people, wherever possible, to guide treatment, 
+inform patient stratification and provide an evidence base 
+for clinical management options. Generally, when therapies 
+are chosen to treat AA in young people, the least invasive 
+and safest options are usually chosen first. Topical corticos­
+teroids (any age) and contact immunotherapy (≥ 5 years) 
+are generally well tolerated in this population. Ritlecitinib is 
+licensed for severe AA in children aged ≥ 12 years.
+Children and young people may choose to wear a wig 
+to cover their hair loss. Children may find their wigs wear 
+out more quickly depending on activities undertaken. The 
+UK charity The Little Princess Trust (https://www.littleprin­
+cesses.org.uk) will provide one human hair wig to children 
+and young people with hair loss, aged < 24 years.
+7.2 Pharmacovigilance
+As new, high-cost therapies become available, it is important 
+that we understand the longer-term safety and effectiveness 
+of these treatments specifically in the population with AA. 
+GRASS-UK102 (www.bad.org.uk/research-journals/research/
+grass-uk) is a BAD-supported, prospective pharmacovigi­
+lance register based at the University of Manchester, and 
+part of an international collaboration (GRASS-International) 
+designed to generate harmonized high-quality, real-world 
+data for existing and emerging AA therapies.103 All people 
+with moderate-to-severe AA should be encouraged to reg­
+ister for this study, where available.
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 14 ===
+e69
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+8.0 Recommended audit points
+In the last 20 consecutive people with AA, is there clear 
+documentation of:
+1.	
+Provision of a patient information leaflet on the con­
+dition (e.g. https://www.skinhealthinfo.org.uk/condi­
+tion/alopecia-areata)?
+2.	
+Objective severity assessment of AA [e.g. Severity 
+of Alopecia Tool (SALT) or Investigator’s Global 
+Assessment (IGA) grading] at first presentation or 
+prior to starting any new ­therapy?
+3.	
+Assessment of psychological/psychosocial and func­
+tional impact at first presentation?
+4.	
+Quality-of-life assessment [e.g. Dermatology Life 
+Quality Index (DLQI)] at first presentation?
+5.	
+Screening for suicide risk assessment for all people 
+identified as having moderate-to-severe psychologi­
+cal distress at any timepoint?
+6.	
+Assessment of nail, eyebrow, eyelash or beard 
+involvement at first presentation?
+7.	
+A potent topical or intralesional corticosteroid offered 
+to treat limited-to-moderate disease?
+8.	
+Safety advice for patients undergoing contact immu­
+notherapy?
+9.	
+Medical photography at first presentation?
+10.	 Provision of information on wigs, if clinically 
+­indicated?
+11.	 Assessment of Janus kinase inhibitor risk factors, 
+referenced by the drug safety update issued by the 
+MHRA, FDA or EMA, prior to starting treatment?
+The audit recommendation of 20 cases per department 
+is to reduce variation in the results due to a single person 
+and allow benchmarking between different units. However, 
+departments unable to achieve this recommendation may 
+choose to audit all cases seen in the preceding 12 months. 
+See Appendix M in the Supporting Information for the set of 
+audit standards, data items and data collection ­methodology.
+9.0 External review: stakeholder involvement 
+and peer review
+The draft manuscript and the Supporting Information doc­
+ument were made available to the BAD membership, the 
+British Hair and Nail Society (BHNS), the Primary Care 
+Dermatological Society (PCDS), the British Dermatological 
+Nursing Group (BDNG) and Alopecia UK. All comments 
+were actively considered by the GDG, and the guideline 
+was updated where appropriate. Following further review, 
+the finalized version was sent for peer review by the Clinical 
+Standards Unit of the BAD, made up of the Therapy & 
+Guidelines subcommittee, prior to submission for ­publication.
+Upon publication in a peer-reviewed journal, the guideline 
+will also be freely available to access on the BAD ­website.
+10.0 Limitations of the guideline
+This document has been prepared on behalf of the BAD and 
+is based on the best data available at the time of writing. It 
+is recognized that under certain conditions it may be nec­
+essary to deviate from the guidelines and that the results 
+of future studies may require some of the recommenda­
+tions herein to be changed. Failure to adhere to these guide­
+lines should not necessarily be considered negligent, nor 
+should adherence to these recommendations constitute a 
+defence against a claim of negligence. Limiting the review 
+to English-language references was a pragmatic decision, 
+but the authors recognize this may exclude some important 
+information published in other languages.
+11.0 Plans for guideline revision
+The proposed literature surveillance will be scheduled 
+at ≤ 6 months, with a view to publish (in the absence of a 
+trigger) appropriate updates 12 months after publication of 
+the previous guideline iteration.
+All recommendations will be treated as living. The lit­
+erature surveillance may lead to amendments in some 
+­recommendations and/or the addition of new recommen­
+dations, requiring issuance of the next iteration of this living 
+guideline. The next iteration of this living guideline will indi­
+cate all changes made to the content, including from a meth­
+odological and living guideline maintenance perspective, to 
+enable convenient access to the updated information.
+Acknowledgements
+We would like to thank all those who commented on the 
+draft guideline during the consultation period.
+Author contributions
+Matthew Harries (Conceptualization, Supervision, 
+Validation, Writing—original draft, Writing—review 
+& editing [lead], Data curation [equal]), Alia Ahmed 
+(Conceptualization, Data curation, Validation, Writing—orig­
+inal draft, Writing—review & editing [equal]), Anna Ascott 
+(Conceptualization, Data curation, Validation, Writing—orig­
+inal draft, Writing—review & editing [equal]), Kashif Bhatti 
+(Conceptualization, Data curation, Validation, Writing—orig­
+inal draft, Writing—review & editing [equal]), Joseph Earley 
+(Conceptualization, Data curation, Validation, Writing—orig­
+inal draft, Writing—review & editing [equal]), Paul Farrant 
+(Conceptualization, Data curation, Validation, Writing—orig­
+inal draft, Writing—review & editing [equal]), Susan Holmes 
+(Conceptualization, Data curation, Validation, Writing—orig­
+inal draft, Writing—review & editing [equal]), Amy Johnson 
+(Conceptualization, Data curation, Validation, Writing—orig­
+inal draft, Writing—review & editing [equal]), Abby Macbeth 
+(Conceptualization, Data curation, Validation, Writing—orig­
+inal draft, Writing—review & editing [equal]), Andrew G. 
+Messenger (Conceptualization, Data curation, Validation, 
+Writing—original draft, Writing—review & editing [equal]), 
+Julian Pearce (Conceptualization, Data curation, Validation, 
+Writing—original draft, Writing—review & editing [equal]), 
+Anita Takwale (Conceptualization, Data curation, Validation, 
+Writing—original draft, Writing—review & editing [equal]), 
+Andrew R. Thompson (Conceptualization, Data curation, 
+Validation, Writing—original draft, Writing—review & edit­
+ing [equal]), Maria Hashme (Data curation [equal]), M. Firouz 
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 15 ===
+e70
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+Mohd Mustapa (Conceptualization, Data curation, Validation, 
+Writing—original draft, Writing—review & editing [equal], 
+Methodology, Project administration, Supervision [lead]) and 
+Alina Constantin (Conceptualization, Project administration, 
+Supervision, Validation, Writing—review & editing [equal], 
+Data curation, Formal analysis, Investigation, Methodology, 
+Visualization, Writing—original draft [lead]).
+Funding sources and editorial independence
+Development of this guideline has been funded inde­
+pendently by the BAD. No external factors have detracted 
+from the BAD’s organizational and editorial independence. 
+The BAD has a strict adherence to its Sponsorship Policy 
+and Principles.
+Conflicts of interest
+The GDG adhered to BAD’s policy for declaration of inter­
+ests for guideline authors. Further details may be requested 
+by contacting guidelines@bad.org.uk. The following inter­
+ests were declared over the duration of the guideline devel­
+opment. MJH (1) consultancy for AbbVie, Pfizer and Sun 
+Pharma (specific); (2) speaker for Pfizer (specific), principal 
+investigator/national chief investigator for a study funded by 
+AbbVie (specific); (3) principal investigator for a study funded 
+by Sanofi (specific); (4) principal investigator for a study 
+funded by Manentia (specific); (5) awarded a research grant 
+by UCB (specific); (6) NEJM editorial on baricitinib phase 
+III studies (specific); (7) contributed to BAD’s feedback on 
+baricitinib and ritlecitinib for NICE’s appraisal (specific); (8) 
+expert panel member for baricitinib NICE application (spe­
+cific); (9) awarded by BSF a large grant (specific); (10) mem­
+ber of the advisory committee for Alopecia UK research 
+and grant committee (specific); (11) NIHR Manchester 
+Biomedical Research Centre – programme lead (specific). 
+PF (1) speaker at educational meetings on behalf of Pfizer 
+(specific). SH (1) consultancy work for Pfizer UK (specific); 
+(2) investigator for a noninterventional clinical trial funded 
+by Pfizer (specific); (3) provided expert opinion to NICE, 
+SMC, Alopecia UK and the BAD in relation to approval of 
+Janus kinase inhibitors for alopecia areata (specific). AJ (1) 
+employee of Alopecia UK (specific). AGM (1) holds shares in 
+Samson Clinical; (2) chief investigator for Soterios (specific); 
+(3) consultancy work for Almirall (specific). AT (1) educa­
+tional and travel grants from Pfizer, Almirall, LEO, Novartis, 
+Sanofi, Vichy and Sun Pharma. A. Ahmed, A. Ascott, KB, 
+JE, AEM, JP, ART, MH, MFMM and AMC have no conflicts 
+of interest to declare.
+Data availability
+The data are available in the Supporting Information.
+Ethics statement
+Not applicable.
+Patient consent
+Not applicable.
+Supporting Information
+Additional Supporting Information may be found in the 
+online version of this article at the publisher’s website.
+Appendix A Review protocol.
+Appendix B Forest plots.
+Appendix 
+C 
+Linking 
+the 
+Evidence 
+To 
+the 
+Recommendations (LETR).
+Relative values of different outcomes
+Balance between desirable and undesirable effects
+Certainty of evidence
+Patient values and preferences
+Cost
+Other considerations
+List of recommendations.
+Appendix D GRADE evidence tables.
+Appendix E Summary of included comparative studies.
+Appendix F Summary of included within-patient studies.
+Appendix G Summary of included noncomparative ­studies.
+Appendix H PRISMA diagram – study selection.
+Appendix I Risk-of-bias analysis.
+Appendix J Excluded papers.
+Appendix K Methodology.
+Appendix L Search strategy.
+Appendix M Audit standards, data items and data collec­
+tion methodology.
+Appendix N Severity of Alopecia Tool score aid.
+Appendix O Scoring guidance for mental health 
+patient-reported outcome measures.
+References
+	 1	
+Harries MJ, Ascott A, Asfour L et  al. British Association of 
+Dermatologists living guideline for managing people with alo­
+pecia areata 2024. Br J Dermatol 2025; 192:190–205.
+	 2	
+Mohd Mustapa MF, Exton LS, Bell HK et  al. Updated guid­
+ance for writing a British Association of Dermatologists clinical 
+guideline: the adoption of the GRADE methodology 2016. Br J 
+Dermatol 2017; 176:44–51.
+	 3	
+Australian Living Evidence Consortium. The Living Guidelines 
+Handbook: guidance for the production and publication of living 
+clinical practice guidelines. Available at: https://researchmgt.
+monash.edu/ws/portalfiles/portal/410034102/409550596.pdf 
+(last accessed 14 November 2025).
+	 4	
+Brouwers MC, Kho ME, Browman GP et al. AGREE II: advancing 
+guideline development, reporting and evaluation in health care. 
+CMAJ 2010; 182:E839–42.
+	 5	
+The GRADE Working Group. GRADE Handbook. Available at: 
+https://gdt.gradepro.org/app/handbook/handbook.html (last 
+accessed 14 November 2025).
+	 6	
+Guyatt GH, Oxman AD, Vist GE et al. GRADE: an emerging 
+consensus on rating quality of evidence and strength of recom­
+mendations. BMJ 2008; 336:924–6.
+	 7	
+King BA, Mesinkovska NA, Craiglow B et  al. Development 
+of the alopecia areata scale for clinical use: results of an aca­
+demic–industry collaborative effort. J Am Acad Dermatol 2022; 
+86:359–64.
+	 8	
+Wada-Irimada M, Mizuashi M, Takahashi T et al. A retrospective 
+study evaluating the outcomes of high-dose methylpredniso­
+lone pulse therapy for 483 patients with moderate-to-severe 
+alopecia areata. Br J Dermatol 2021; 185:1267–9.
+	 9	
+Institute of Medical Illustrators. National standards and guides to 
+best practice. Available at: https://www.imi.org.uk/resources/
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 16 ===
+e71
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+professional-resources/national-guidelines (last accessed 14 
+November 2025).
+	10	
+Löwe B, Wahl I, Rose M et al. A 4-item measure of depression 
+and anxiety: validation and standardization of the Patient Health 
+Questionnaire-4 (PHQ-4) in the general population. J Affect 
+Disord 2010; 122:86–95.
+	11	
+Kroenke K, Spitzer RL, Williams JB. The PHQ-9: validity of a brief 
+depression severity measure. J Gen Intern Med 2001; 16:606–13.
+	12	
+Johnson JG, Harris ES, Spitzer RL et  al. The patient health 
+questionnaire for adolescents: validation of an instrument for 
+the assessment of mental disorders among adolescent primary 
+care patients. J Adolesc Health 2002; 30:196–204.
+	13	
+Spitzer RL, Kroenke K, Williams JB et al. A brief measure for 
+assessing generalized anxiety disorder: the GAD-7. Arch Intern 
+Med 2006; 166:1092–7.
+	14	
+Angold A, Costello EJ, Messer SC et al. Development of a short 
+questionnaire for use in epidemiological studies of depression 
+in children and adolescents. Int J Methods Psychiatr Res 1995; 
+5:237–49.
+	15	
+Finlay AY, Khan GK. Dermatology Life Quality Index (DLQI) 
+– a simple practical measure for routine clinical use. Clin Exp 
+Dermatol 1994; 19:210–16.
+	16	
+Mendoza TR, Osei J, Duvic M. The utility and validity of the 
+Alopecia Areata Symptom Impact Scale in measuring dis­
+ease-related symptoms and their effect on functioning. J 
+Investig Dermatol Symp Proc 2018; 19:S41–6.
+	17	
+Wyrwich KW, Winnette R, Bender R et al. Validation of the 
+Alopecia Areata Patient Priority Outcomes (AAPPO) question­
+naire in adults and adolescents with alopecia areata. Dermatol 
+Ther 2022; 12:149–66.
+	18	
+Alopecia UK. Charter for Best Practice for NHS Wig Provision. 
+Available at: https://www.alopecia.org.uk/charter-for-best-prac­
+tice-for-nhs-wig-provision (last accessed 14 November 2025).
+	19	
+Datapharm. The electronic medicines compendium (emc): Litfulo 
+50 mg hard capsules. Available at: https://www.medicines.org.
+uk/emc/product/15257 (last accessed 14 November 2025).
+	20	
+King B, Shapiro J, Ohyama M et al. When to expect scalp hair 
+regrowth during treatment of severe alopecia areata with baric­
+itinib: insights from trajectories analyses of patients enrolled in 
+two phase III trials. Br J Dermatol 2023; 189:666–73.
+	21	
+National Institute for Health and Care Excellence. Ritlecitinib 
+for treating severe alopecia areata in people 12 years and over. 
+Available at: https://www.nice.org.uk/guidance/TA958 (last 
+accessed 14 November 2025).
+	22	
+Medicines and Healthcare products Regulatory Agency. Janus 
+kinase (JAK) inhibitors: new measures to reduce risks of major 
+cardiovascular events, malignancy, venous thromboembo­
+lism, serious infections and increased mortality. Available at: 
+https://www.gov.uk/drug-safety-update/janus-kinase-jak-in­
+hibitors-new-measures-to-reduce-risks-of-major-cardiovascu­
+lar-events-malignancy-venous-thromboembolism-serious-infec­
+tions-and-increased-mortality (last accessed 14 November 2025).
+	23	
+US Food and Drug Administration. Janus kinase (JAK) inhib­
+itors: drug safety communication – FDA requires warnings 
+about increased risk of serious heart-related events, cancer, 
+blood clots, and death. Available at: https://www.fda.gov/
+safety/medical-product-safety-information/janus-kinase-jak-in­
+hibitors-drug-safety-communication-fda-requires-warn­
+ings-about-increased-risk (last accessed 14 November 2025).
+	24	
+European Medicines Agency. Janus kinase inhibitors (JAKi) 
+– referral. Available at: https://www.ema.europa.eu/en/
+medicines/human/referrals/janus-kinase-inhibitors-jaki (last 
+accessed 14 November 2025).
+	25	
+National Institute for Health and Care Excellence. Depression in 
+adults: treatment and management. Available at: https://www.
+nice.org.uk/guidance/ng222 (last accessed 14 November 2025).
+	26	
+National Institute for Health and Care Excellence. Depression 
+in children and young people: identification and management. 
+Available at: https://www.nice.org.uk/guidance/ng134 (last 
+accessed 14 November 2025).
+	27	
+National Institute for Health and Care Excellence. Self-harm: 
+assessment, management and preventing recurrence. Available 
+at: https://www.nice.org.uk/guidance/ng225/chapter/recom­
+mendations#principles-for-assessment-and-care-by-health­
+care-professionals-and-social-care-practitioners (last accessed 
+14 November 2025).
+	28	
+Messenger AG, McKillop J, Farrant P et al. British Association 
+of Dermatologists’ guidelines for the management of alopecia 
+areata 2012. Br J Dermatol 2012; 166:916–26.
+	29	
+Harries M, Macbeth AE, Holmes S et al. The epidemiology of 
+alopecia areata: a population-based cohort study in UK primary 
+care. Br J Dermatol 2022; 186:257–65.
+	30	
+Ikeda T. A new classification of alopecia areata. Dermatologica 
+1965; 131:421–45.
+	31	
+Tosti A, Bellavista S, Iorizzo M. Alopecia areata: a long term 
+follow-up study of 191 patients. J Am Acad Dermatol 2006; 
+55:438–41.
+	32	
+Walker SA, Rothman S. A statistical study and consideration of 
+endocrine influences. J Invest Dermatol 1950; 14:403–13.
+	33	
+Gip L, Lodin A, Molin L. Alopecia areata. A follow-up investiga­
+tion of outpatient material. Acta Derm Venereol 1969; 49:180–8.
+	34	
+Burroway B, Griggs J, Tosti A. Alopecia totalis and universalis 
+long-term outcomes: a review. J Eur Acad Dermatol Venereol 
+2020; 34:709–15.
+	35	
+Sato-Kawamura M, Aiba S, Tagami H. Acute diffuse and total 
+alopecia of the female scalp. A new subtype of diffuse alope­
+cia areata that has a favorable prognosis. Dermatology 2002; 
+205:367–73.
+	36	
+Paus R. The evolving pathogenesis of alopecia areata: major 
+open questions. J Investig Dermatol Symp Proc 2020; 20:S6–10.
+	37	
+Alkhalifah A, Alsantali A, Wang E et al. Alopecia areata update: 
+part I. Clinical picture, histopathology, and pathogenesis. J Am 
+Acad Dermatol 2010; 62:177–88.
+	38	
+Petukhova L, Duvic M, Hordinsky M et al. Genome-wide asso­
+ciation study in alopecia areata implicates both innate and adap­
+tive immunity. Nature 2010; 466:113–17.
+	39	
+McDonagh AJ, Messenger AG. The pathogenesis of alopecia 
+areata. Dermatol Clin 1996; 14:661–70.
+	40	
+Betz RC, Petukhova L, Ripke S et al. Genome-wide meta-anal­
+ysis in alopecia areata resolves HLA associations and reveals 
+two new susceptibility loci. Nat Commun 2015; 6:5966.
+	41	
+Petukhova L, Christiano AM. Functional interpretation of 
+genome-wide association study evidence in alopecia areata. 
+J Invest Dermatol 2016; 136:314–17.
+	42	
+Fischer J, Degenhardt F, Hofmann A et al. Genomewide analysis 
+of copy number variants in alopecia areata in a Central European 
+cohort reveals association with MCHR2. Exp Dermatol 2017; 
+26:536–41.
+	43	
+Rajabi F, Drake LA, Senna MM et al. Alopecia areata: a review 
+of disease pathogenesis. Br J Dermatol 2018; 179:1033–48.
+	44	
+Paus R, Nickoloff BJ, Ito T. A ‘hairy’ privilege. Trends Immunol 
+2005; 26:32–40.
+	45	
+Paus R, Bertolini M. The role of hair follicle immune privilege 
+collapse in alopecia areata: status and perspectives. J Investig 
+Dermatol Symp Proc 2013; 16:S25–7.
+	46	
+Xing L, Dai Z, Jabbari A et al. Alopecia areata is driven by cyto­
+toxic T lymphocytes and is reversed by JAK inhibition. Nat Med 
+2014; 20:1043–9.
+	47	
+Ito T, Ito N, Saathoff M et al. Interferon-γ is a potent inducer of 
+catagen-like changes in cultured human anagen hair follicles. Br 
+J Dermatol 2005; 152:623–31.
+	48	
+Gulec AT, Tanriverdi N, Duru C et al. The role of psychological 
+factors in alopecia areata and the impact of the disease on the 
+quality of life. Int J Dermatol 2004; 43:352–6.
+	49	
+Zhang X, Yu M, Yu W et  al. Development of alopecia 
+areata is associated with higher central and peripheral 
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 17 ===
+e72
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+hypothalamic-pituitary-adrenal tone in the skin graft induced 
+C3H/HeJ mouse model. J Invest Dermatol 2009; 129:1527–38.
+	50	
+Peters EM, Liotiri S, Bodó E et al. Probing the effects of stress 
+mediators on the human hair follicle: substance P holds central 
+position. Am J Pathol 2007; 171:1872–86.
+	51	
+Rodriguez TA, Duvic M. Onset of alopecia areata after Epstein–
+Barr virus infectious mononucleosis. J Am Acad Dermatol 2008; 
+59:137–9.
+	52	
+McCusker M, Sidbury R. Nutrition and skin: kids are not just 
+little people. Clin Dermatol 2016; 34:698–709.
+	53	
+Aksu Cerman A, Sarikaya Solak S, Kivanc Altunay I. Vitamin D 
+deficiency in alopecia areata. Br J Dermatol 2014; 170:1299–
+304.
+	54	
+Honda K, Littman DR. The microbiota in adaptive immune 
+homeostasis and disease. Nature 2016; 535:75–84.
+	55	
+Rebello D, Wang E, Yen E et al. Hair growth in two alopecia 
+patients after fecal microbiota transplant. ACG Case Rep J 2017; 
+4:e107.
+	56	
+Holmes S, Harries M, Macbeth AE et al. Alopecia areata and risk 
+of atopic and autoimmune conditions: population-based cohort 
+study. Clin Exp Dermatol 2023; 48:325–31.
+	57	
+Chu S-Y, Chen Y-J, Tseng W-C et al. Comorbidity profiles among 
+patients with alopecia areata: the importance of onset age, a 
+nationwide population-based study. J Am Acad Dermatol 2011; 
+65:949–56.
+	58	
+Lee NR, Kim BK, Yoon NY et al. Differences in comorbidity 
+profiles between early-onset and late-onset  alopecia areata 
+patients: a retrospective study of 871 Korean patients. Ann 
+Dermatol 2014; 26:722–6.
+	59	
+Macbeth AE, Holmes S, Harries M et al. The associated bur­
+den of mental health conditions in alopecia areata: a popula­
+tion-based study in UK primary care. Br J Dermatol 2022; 
+187:73–81.
+	60	
+Vallerand IA, Lewinson RT, Parsons LM et al. Assessment of 
+a bidirectional association between major depressive disorder 
+and alopecia areata. JAMA Dermatol 2019; 155:475–9.
+	61	
+Bain KA, McDonald E, Moffat F et al. Alopecia areata is char­
+acterized by dysregulation in systemic type 17 and type 2 
+cytokines, which may contribute to disease-associated psycho­
+logical morbidity. Br J Dermatol 2020; 182:130–7.
+	62	
+Schielein MC, Tizek L, Ziehfreund S et al. Stigmatization caused 
+by hair loss – a systematic literature review. J Dtsch Dermatol 
+Ges 2020; 18:1357–68.
+	63	
+Kang JH, Lin HC, Kao S et al. Alopecia areata increases the risk 
+of stroke: a 3-year follow-up study. Sci Rep 2015; 5:11718.
+	64	
+Shin JW, Kang T, Lee JS et al. Time-dependent risk of acute 
+myocardial infarction in patients with alopecia areata in Korea. 
+JAMA Dermatol 2020; 156:763–71.
+	65	
+Wang EH, Santos L, Li XY et al. Alopecia areata is associated 
+with increased expression of heart disease biomarker cardiac 
+troponin I. Acta Derm Venereol 2018; 98:776–82.
+	66	
+Huang KP, Joyce CJ, Topaz M et  al. Cardiovascular risk in 
+patients with alopecia areata (AA): a propensity-matched retro­
+spective analysis. J Am Acad Dermatol 2016; 75:151–4.
+	67	
+Lee S, Lee YB, Kim BJ et al. All-cause and cause-specific mor­
+tality risks associated with alopecia areata: a Korean nationwide 
+population-based study. JAMA Dermatol 2019; 155:922–8.
+	68	
+Harries MJ, Holmes S, McMichael A, Messenger AG. Acquired 
+disorders of hair. In: Rook’s Textbook of Dermatology (Griffiths 
+EMC, Baker J, Bleiker OT, Chalmers R, Creamer D, eds), 10 edn. 
+Hoboken, NJ: Wiley-Blackwell, 2024; Ch. 87.
+	69	
+Yip L, Horev L, Sinclair R et al. Atrichia with papular lesions: a 
+report of three novel human hairless gene mutations and a revi­
+sion of diagnostic criteria. Acta Derm Venereol 2008; 88:346–9.
+	70	
+Meah N, Wall D, York K et al. The Alopecia Areata Consensus of 
+Experts (ACE) study: results of an international expert opinion 
+on treatments for alopecia areata. J Am Acad Dermatol 2020; 
+83:123–30.
+	71	
+Muller SA, Winkelmann RK. Alopecia areata. An evaluation of 
+736 patients. Arch Dermatol 1963; 88:290–7.
+	72	
+Lee S, Lee YB, Kim BJ et al. Screening of thyroid function 
+and autoantibodies in patients with alopecia areata: a system­
+atic review and meta-analysis. J Am Acad Dermatol 2019; 
+80:1410–13.
+	73	
+Ly S, Manjaly P, Kamal K et al. Comorbid conditions associated 
+with alopecia areata: a systematic review and meta-analysis. 
+Am J Clin Dermatol 2023; 24:875–93.
+	74	
+Kinoshita-Ise M, Martinez-Cabriales SA, Alhusayen R. 
+Chronological association between alopecia areata and autoim­
+mune thyroid diseases: a systematic review and meta-analysis. 
+J Dermatol 2019; 46:702–9.
+	75	
+Bin Saif GA. Severe subtype of alopecia areata is highly associ­
+ated with thyroid autoimmunity. Saudi Med J 2016; 37:656–61.
+	76	
+Han TY, Lee JH, Noh TK et al. Alopecia areata and overt thy­
+roid diseases: a nationwide population-based study. J Dermatol 
+2018; 45:1411–17.
+	77	
+Patel D, Li P, Bauer AJ et al. Screening guidelines for thyroid 
+function in children with alopecia areata. JAMA Dermatol 2017; 
+153:1307–10.
+	78	
+White MI, Currie J, Williams MP. A study of the tissue iron 
+status of patients with alopecia areata. Br J Dermatol 1994; 
+130:261–3.
+	79	
+Boffa MJ, Wood P, Griffiths CE. Iron status of patients with 
+alopecia areata. Br J Dermatol 1995; 132:662–4.
+	80	
+Esfandiarpour I, Farajzadeh S, Abbaszadeh M. Evaluation of 
+serum iron and ferritin levels in alopecia areata. Dermatol Online 
+J 2008; 14:21.
+	81	
+Jin W, Zheng H, Shan B et al. Changes of serum trace ele­
+ments level in patients with alopecia areata: a meta-analysis. J 
+Dermatol 2017; 44:588–91.
+	82	
+d’Ovidio R, Vessio M, d’Ovidio FD. Reduced level of 
+25-hydroxyvitamin D in chronic/relapsing alopecia areata. 
+Dermatoendocrinol 2013; 5:271–3.
+	83	
+Thompson JM, Li T, Park MK et al. Estimated serum vitamin 
+D status, vitamin D intake, and risk of incident alopecia areata 
+among US women. Arch Dermatol Res 2016; 308:671–6.
+	84	
+Olsen EA, Hordinsky MK, Price VH et al. Alopecia areata inves­
+tigational assessment guidelines – part II. National Alopecia 
+Areata Foundation. J Am Acad Dermatol 2004; 51:440–7.
+	85	
+King B, Ohyama M, Kwon O et al. Two phase 3 trials of baric­
+itinib for alopecia areata. N Engl J Med 2022; 386:1687–99.
+	86	
+Wyrwich KW, Kitchen H, Knight S et al. The Alopecia Areata 
+Investigator Global Assessment scale: a measure for evaluat­
+ing clinically meaningful success in clinical trials. Br J Dermatol 
+2020; 183:702–9.
+	87	
+Wyrwich KW, Kitchen H, Knight S et al. Development of the 
+Scalp Hair Assessment PRO™ measure for alopecia areata. Br 
+J Dermatol 2020; 183:1065–72.
+	88	
+Wyrwich KW, Kitchen H, Knight S et al. Development of clini­
+cian-reported outcome (ClinRO) and patient-reported outcome 
+(PRO) measures for eyebrow, eyelash and nail assessment in 
+alopecia areata. Am J Clin Dermatol 2020; 21:725–32.
+	89	
+Moussa A, Bennett M, Wall D et al. The Alopecia Areata Severity 
+and Morbidity Index (ASAMI) study: results from a global expert 
+consensus exercise on determinants of alopecia areata severity. 
+JAMA Dermatol 2024; 160:341–50.
+	90	
+McSweeney SM, Rayinda T, McGrath JA et  al. Two phase 
+III trials of baricitinib for alopecia areata: a critically appraised 
+research paper. Br J Dermatol 2023; 188:195–7.
+	91	
+Renert-Yuval Y, Correa da Rosa J, Garcet S et al. Analysis of 
+alopecia areata surveys suggests a threshold for improved 
+patient-reported outcomes. Br J Dermatol 2022; 187:539–47.
+	92	
+British Association of Dermatologists. Ritlecitinib for alopecia 
+areata. Available at: https://cdn.bad.org.uk/uploads/2024/07/
+01005430/ritlecitinib-for-alopecia-areata-supplementary-guid­
+ance-26.06.24.pdf (last accessed 14 November 2025).
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 18 ===
+e73
+BAD living guideline for managing people with AA 2025, M.J. Harries et al.
+	93	
+Kazmi A, Moussa A, Bokhari L et al. Switching between tofac­
+itinib and baricitinib in alopecia areata: a review of clinical 
+response. J Am Acad Dermatol 2023; 89:1248–50.
+	94	
+Joly P, Lafon A, Houivet E et al. Efficacy of methotrexate alone 
+versus methotrexate plus low-dose prednisone in patients with 
+alopecia areata totalis or universalis: a 2-step double-blind ran­
+domized clinical trial. JAMA Dermatol 2023; 159:403–10.
+	95	
+Lai VWY, Chen G, Gin D et al. Cyclosporine for moderate-to-se­
+vere alopecia areata: a double-blind, randomized, placebo-con­
+trolled clinical trial of efficacy and safety. J Am Acad Dermatol 
+2019; 81:694–701.
+	96	
+Wambier CG, Craiglow BG, King BA. Combination tofacitinib 
+and oral minoxidil treatment for severe alopecia areata. J Am 
+Acad Dermatol 2021; 85:743–5.
+	97	
+Olsen EA, Carson SC, Turney EA. Systemic steroids with or 
+without 2% topical minoxidil in the treatment of alopecia areata. 
+Arch Dermatol 1992; 128:1467–73.
+	98	
+Fraser FC, Fainstat TD. Production of congenital defects in the 
+off-spring of pregnant mice treated with cortisone; progress 
+report. Pediatrics 1951; 8:527–33.
+	99	
+Walker B, Fraser F. The embryology of cortisone-induced cleft 
+palate. Development 1957; 5:201–9.
+	100	 McPherson T, Ravenscroft J, Ali R et  al. British Society 
+for Paediatric and Adolescent Dermatology assessment 
+and support of mental health in children and young people 
+with skin conditions: a multidisciplinary expert consensus 
+statement and recommendations. Br J Dermatol 2023; 
+189:459–66.
+	101	 Yang CC, Lee CT, Hsu CK et al. Early intervention with high-
+dose steroid pulse therapy prolongs disease-free interval of 
+severe alopecia areata: a retrospective study. Ann Dermatol 
+2013; 25:471–4.
+	102	 Harries M, Al-Nuaimi Y, Wall D et al. The Global Register of 
+Alopecia areata disease Severity and treatment Safety – UK 
+(GRASS-UK): importance of real-world data in alopecia areata. 
+Clin Exp Dermatol 2025; 50:1250–2.
+	103	 Wall D, Meah N, York K et  al. A global eDelphi exercise to 
+identify core domains and domain items for the development 
+of a Global Registry of Alopecia Areata Disease Severity and 
+Treatment Safety (GRASS). JAMA Dermatol 2021; 157:1–11.
+Downloaded from https://academic.oup.com/bjd/article/194/2/e56/8322888 by guest on 06 May 2026
+
+=== PAGE 19 ===
+of patients  
+with PsO achieved  
+PASI 75 at Week 4 
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+75.9% 
+(n=265/349)
+of patients 
+with PsO achieved 
+PASI 100 at 5 years3
+76.9% 
+(N=52)† 
+of biologic-naïve  
+and TNFi-IR PsA patients 
+achieved ACR 50 at  
+Week 104/100, respectively‡1,4–6
+of patients  
+with PsO achieved  
+PASI 100 at Week 16
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+68.2%
+(n=238/349)
+and
+50.6% 
+(n=135/267) 
+51.5% 
+(n=222/431)
+GB-BK-2500315 | July 2025
+UCB Biopharma SRL, 2025. All rights reserved.
+This promotional material has been created and funded by UCB Pharma Ltd and 
+is intended for healthcare professionals in the UK.
+BIMZELX is indicated for the treatment of: moderate to severe plaque PsO in adults 
+who are candidates for systemic therapy; active PsA, alone or in combination 
+with methotrexate, in adults who have had an inadequate response, or who have 
+been intolerant, to one or more DMARDs; active nr-axSpA with objective signs of 
+inflammation as indicated by elevated CRP and/or MRI, in adults who have responded 
+inadequately, or are intolerant, to NSAIDs; active AS in adults who have responded 
+inadequately or are intolerant to conventional therapy; and active moderate to severe 
+HS (acne inversa) in adults with an inadequate response to conventional systemic HS 
+therapy.4
+Prescribing information for United Kingdom click here.  
+Please refer to the SmPC for further information. 
+These data are from different clinical trials and cannot be directly compared.
+Co-primary endpoints PASI 90 and IGA 0/1 at Week 16 were met.**Secondary endpoints. †N= mNRI, missing data 
+were imputed with mNRI (patients with missing data following treatment discontinuation due to lack of efficacy 
+or a TRAE were counted as non-responders; multiple imputation methodology was used for other missing data). 
+‡43.9% (n=189/431), and 43.4% (n=116/267) of biologic-naïve and TNFi-IR PsA patients achieved the primary 
+endpoint of ACR 50 at Week 16 in BE OPTIMAL and BE COMPLETE, respectively (vs 10.0% [n=28/281] and 6.8% 
+[n=9/133] placebo, p<0.0001); 54.5% (n=235/431) and 51.7% (n=138/267) maintained it at Week 52 (NRI).4–6 ​
+ACR 50, ≥50% response in the American College of Rheumatology criteria; AS, ankylosing spondylitis; CRP, 
+C-reactive protein; DMARD, disease-modifying antirheumatic drug; HS, hidradenitis suppurativa; IGA, Investigator’s 
+Global Assessment; (m)NRI, (modified) non-responder imputation; MRI, magnetic resonance imaging; nr-
+axSpA, non-radiographic axial spondyloarthritis; NSAID, non-steroidal anti-inflammatory drug; PASI 75/90/100, 
+≥75/90/100% improvement from baseline in Psoriasis Area and Severity Index; PsA, psoriatic arthritis; PsD, psoriatic 
+disease; PsO, psoriasis; TNFi-IR, tumour necrosis factor-α inhibitor – inadequate responder; TRAE, treatment-
+related adverse event.
+References: 1. Gordon KB, et al. Lancet. 2021;397(10273):475–486. 2. Blauvelt. 2025. AAD Presentation 62275. 3. 
+Mease PJ, et al. Rheumatol Ther. 2024;11(5):1363–1382. 4. BIMZELX SmPC. 5. Ritchlin CT, et al. Ann Rheum Dis. 
+2023;82(11):1404–1414. 6. Coates LC, et al. RMD Open. 2024;10(1):e003855. 7. Strober B, et al. AAD 2024;oral 
+presentation.​
+This medicine is subject to additional monitoring. This will allow quick 
+identification of new safety information. Adverse events should be reported. 
+Reporting forms and information can be found at www.yellowcard.mhra.gov.uk for 
+the UK. Adverse events should also be reported to UCB Pharma Ltd at  
+UCBCares.UK@UCB.com or 0800 2793177 for UK.
+NO COMPROMISE, 
+JUST CLEARANCE
+BIMZELX was well tolerated, the most frequently reported adverse reactions were: upper respiratory tract infections 
+and oral candidiasis. Other common reported adverse reactions include tinea infections, ear infections, herpes simplex 
+infections, oropharyngeal candidiasis, gastroenteritis, folliculitis, headache, rash, dermatitis, eczema, acne, injection site 
+reactions, fatigue, and vulvovaginal mycotic infection (including vulvovaginal candidiasis).4
+Bimzelx®     (bimekizumab) offers 
+the opportunity for complete, fast,
+and lasting skin clearance and 
+proven PsA efficacy 1–7

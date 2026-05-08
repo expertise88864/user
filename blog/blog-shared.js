@@ -195,17 +195,17 @@
         '<title id="uv-title">UV 光波長與皮膚穿透深度</title>' +
         '<rect width="720" height="360" fill="#faf7f2" rx="10"/>' +
         '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">UV 光波長與皮膚穿透深度</text>' +
-        // Skin layers
+        // Skin layers — labels INSIDE the rectangles to avoid overlap with UV-arrow column
         '<g transform="translate(280 70)">' +
         '<rect x="0" y="0" width="320" height="35" fill="#fde68a" stroke="#4d6358" stroke-width="1"/>' +
-        '<text x="-80" y="22" font-family="Noto Sans TC" font-size="13" font-weight="600" fill="#854d0e">表皮 Epidermis</text>' +
-        '<text x="160" y="22" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">~ 0.05–0.15 mm</text>' +
+        '<text x="10" y="22" font-family="Noto Sans TC" font-size="13" font-weight="600" fill="#854d0e">表皮 Epidermis</text>' +
+        '<text x="310" y="22" text-anchor="end" font-family="Inter" font-size="12" fill="#5e574e">~ 0.05–0.15 mm</text>' +
         '<rect x="0" y="35" width="320" height="80" fill="#fed7aa" stroke="#4d6358" stroke-width="1"/>' +
-        '<text x="-80" y="80" font-family="Noto Sans TC" font-size="13" font-weight="600" fill="#9a3412">真皮 Dermis</text>' +
-        '<text x="160" y="80" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">~ 1–3 mm（膠原 / 彈性纖維 / 微血管）</text>' +
+        '<text x="10" y="80" font-family="Noto Sans TC" font-size="13" font-weight="600" fill="#9a3412">真皮 Dermis</text>' +
+        '<text x="310" y="80" text-anchor="end" font-family="Inter" font-size="12" fill="#5e574e">~ 1–3 mm(膠原 / 彈性纖維 / 微血管)</text>' +
         '<rect x="0" y="115" width="320" height="50" fill="#fee2e2" stroke="#4d6358" stroke-width="1"/>' +
-        '<text x="-80" y="145" font-family="Noto Sans TC" font-size="13" font-weight="600" fill="#7f1d1d">皮下組織</text>' +
-        '<text x="160" y="145" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">脂肪 / 神經血管</text>' +
+        '<text x="10" y="145" font-family="Noto Sans TC" font-size="13" font-weight="600" fill="#7f1d1d">皮下組織</text>' +
+        '<text x="310" y="145" text-anchor="end" font-family="Inter" font-size="12" fill="#5e574e">脂肪 / 神經血管</text>' +
         '</g>' +
         // UV arrows from above with different penetration depths
         '<g transform="translate(80 60)">' +
@@ -3347,7 +3347,7 @@
         if (y.s !== x.s) return y.s - x.s;
         return (y.a.date || '').localeCompare(x.a.date || ''); // tiebreak: newer
       })
-      .slice(0, 3)   // 2026-05-07: trimmed back from 6 to 3 — user wants tighter list
+      .slice(0, 4)   // 2026-05-08: 4 articles (2×2 grid on desktop, 1-col on mobile) per user
       .map(function (x) { return x.a; });
 
     const wrap = document.createElement('section');
@@ -3355,7 +3355,7 @@
     wrap.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-10';
     // Find read articles to badge "✓ 已讀" / "新"
     var readSlugs = (DN.getReadSlugs && DN.getReadSlugs()) || [];
-    let html = '<div style="border-top:1px solid var(--line);padding-top:28px"><div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--teal-deep);font-weight:700" data-zh="你可能也會想看" data-en="You might also like">你可能也會想看</div><a href="/blog/" style="font-size:11.5px;color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="瀏覽全部文章 →" data-en="Browse all →">瀏覽全部文章 →</a></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">';
+    let html = '<div style="border-top:1px solid var(--line);padding-top:28px"><div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:var(--teal-deep);font-weight:700" data-zh="你可能也會想看" data-en="You might also like">你可能也會想看</div><a href="/blog/" style="font-size:11.5px;color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="瀏覽全部文章 →" data-en="Browse all →">瀏覽全部文章 →</a></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px" class="dn-related-grid">';
     scored.forEach(function (a, i) {
       var hasRead = readSlugs.indexOf(a.slug) !== -1;
       var badge = hasRead
@@ -3370,6 +3370,14 @@
     html += '</div></div>';
     wrap.innerHTML = html;
     article.parentNode.insertBefore(wrap, article.nextSibling);
+
+    // Mobile responsiveness: collapse 2×2 to single column on narrow screens
+    if (!document.getElementById('dn-related-css')) {
+      var rs = document.createElement('style');
+      rs.id = 'dn-related-css';
+      rs.textContent = '@media (max-width:640px){.dn-related-grid{grid-template-columns:1fr !important}}';
+      document.head.appendChild(rs);
+    }
 
     // ItemList JSON-LD for SEO
     const ld = {

@@ -1,0 +1,1028 @@
+=== PAGE 1 ===
+GUIDELINES
+BJD
+British Journal of Dermatology
+British Association of Dermatologists guidelines for the
+management of hidradenitis suppurativa (acne inversa)
+2018*
+J.R. Ingram iD ,1 F. Collier,2,3 D. Brown,4 T. Burton,5 J. Burton,5 M.F. Chin,6 N. Desai,4 T.E.E. Goodacre iD ,7
+V. Piguet iD ,1,8,9 A.E. Pink,4 L.S. Exton10 and M.F. Mohd Mustapa10
+1Division of Infection & Immunity, Cardiff University, University Hospital of Wales, Heath Park, Cardiff CF14 4XN, U.K.
+2Alva Medical Practice, West Johnstone Street, Alva FK12 5BD, U.K.
+3Dermatology Department, Stirling Community Hospital, Stirling FK8 2AU, U.K.
+4St John’s Institute of Dermatology, Guy’s and St Thomas’ NHS Foundation Trust, St Thomas’ Hospital, London SE1 7EH, U.K.
+5The Hidradenitis Suppurativa Trust, Rochester ME2 4DY, U.K.
+6Great Western Hospitals NHS Foundation Trust, Marlborough Road, Swindon, Wiltshire SN3 6BB, U.K.
+7Oxford University Hospitals NHS Trust, John Radcliffe Hospital, Headington, Oxford OX3 9DU, U.K.
+8Division of Dermatology, Women’s College Hospital, Toronto, ON, Canada
+9Division of Dermatology, Department of Medicine, University of Toronto, Toronto, ON, Canada
+10British Association of Dermatologists, Willan House, 4 Fitzroy Square, London W1T 5HQ, U.K.
+Correspondence
+John Ingram.
+E-mail: IngramJR@cardiff.ac.uk; guidelines@bad.org.uk
+Accepted for publication
+4 December 2018
+Funding sources
+No external funding.
+Conﬂicts of interest
+Details of declarations of interests (cumulative, throughout the project) can be found in
+the online Supporting Information (Appendix L).
+Produced in 2018 by the British Association of Dermatologists.
+This is a new set of guidelines prepared for the British Association of Dermatologists
+(BAD) Clinical Standards Unit, which includes the Therapy & Guidelines Subcommit-
+tee. Members of the Clinical Standards Unit who have been involved are: N.J. Levell
+(Chairman T&G), P.M. McHenry, T.A. Leslie, S. Wakelin, R.Y.P. Hunasehally, M.
+Cork, G.A. Johnston, F.S. Worsnop, P. Rakvit, A. Salim, B. McDonald, D. Buckley,
+S.L. Chua, G. Petrof, N. Callachand (British National Formulary), T. Flavell (British
+Dermatological Nursing Group), A.A. Salad (BAD Scientiﬁc Administrator), L.S. Exton
+(BAD Guideline Research Fellow) and M.F. Mohd Mustapa (BAD Clinical Standards
+Manager).
+*Plain language summary available online
+DOI 10.1111/bjd.17537
+NICE has accredited the process used by the British Association
+of Dermatologists to produce clinical guidelines. The renewed
+accreditation is valid until 31 May 2021 and applies to guidance
+produced using the process described in Updated guidance for writ-
+ing a British Association of Dermatologists clinical guidance – the
+adoption of the GRADE methodology 2016. The original accredi-
+tation term began on 12 May 2010. More information on
+accreditation can be viewed at www.nice.org.uk/accreditation.
+1.0 Purpose and scope
+The overall objective of the guideline is to provide up-to-date,
+evidence-based
+recommendations
+for the
+management of
+hidradenitis suppurativa (HS). The document aims to:
+•
+offer an appraisal of all relevant literature up to July 2018,
+focusing on any key developments;
+•
+address important, practical clinical questions relating to
+the primary guideline objective;
+•
+provide guideline recommendations and, if appropriate,
+research recommendations.
+The guideline is presented as a detailed review with high-
+lighted recommendations for practical use in primary care and
+secondary care, in addition to an updated Patient Information
+Leaﬂet [available on the British Association of Dermatologists
+(BAD) website, www.bad.org.uk/leaflets].
+1.1 Exclusions
+This guideline does not cover management of the non-HS ele-
+ments of syndromes such as PASH (pyoderma gangrenosum,
+acne and HS) and PAPASH (pyoderma gangrenosum, acne,
+psoriasis, arthritis and suppurative hidradenitis). Nearly all the
+evidence underpinning the guideline relates to studies in
+adults. The guideline development group (GDG) is mindful
+that HS onset is often before adulthood and interventions used
+for adults with HS are quite often considered for young peo-
+ple and children. Given the paucity of high-quality evidence
+relating to HS in those younger than 18 years, with the excep-
+tion of adalimumab being licensed for people with HS aged
+12 years and above, speciﬁc recommendations about treatment
+in young people and children could not be included at the
+current time.
+Linked Comment: Jemec. Br J Dermatol 2019; 180:975.
+© 2018 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1009–1017
+1009
+Downloaded from https://academic.oup.com/bjd/article/180/5/1009/6732702 by guest on 06 May 2026
+
+=== PAGE 2 ===
+2.0 Methodology
+This set of guidelines has been developed using the BAD’s rec-
+ommended
+methodology1
+(see
+further
+information
+in
+Appendix J; see Supporting Information for details of all Appen-
+dices) with reference to the Appraisal of Guidelines Research
+and Evaluation (AGREE II) instrument (www.agreetrust.org)2
+and the Grading of Recommendations Assessment, Development
+and Evaluation (GRADE).3 Recommendations were developed
+for implementation in the U.K. National Health Service (NHS).
+The GDG, which consisted of consultant dermatologists, a
+consultant plastic surgeon, a general practitioner, a dermatol-
+ogy registrar, a clinical nurse specialist, patient representatives
+and a technical team (consisting of a guideline research fellow
+and project manager providing methodological and technical
+support), established several clinical questions pertinent to the
+scope of the guideline and a set of outcome measures of
+importance to patients, ranked according to the GRADE
+methodology (see section 31).
+A systematic literature search of PubMed, MEDLINE, EMBASE,
+Cochrane and AMED databases was conducted by the technical
+team to identify key articles for HS up to July 2018; search
+terms and strategies are detailed in the Supporting information
+(Appendix K). Additional references relevant to the topic were
+also isolated from citations in reviewed literature. Data extrac-
+tion and critical appraisal were carried out by two clinicians and
+checked by the technical team. Data synthesis, evidence sum-
+maries, lists of excluded studies and the PRISMA diagram were
+prepared by the technical team. Evidence from included studies
+was rated according to the GRADE system (high, moderate, low
+or very low quality). Recommendations are based on evidence
+drawn from systematic reviews of the literature pertaining to
+the clinical questions identiﬁed, following discussions with the
+entire GDG and considering all four factors that would affect its
+strength rating according to the GRADE approach (i.e. balance
+between desirable and undesirable effects, quality of evidence,
+patient values and preferences and resource allocation). All GDG
+members contributed towards drafting and/or reviewing the
+narratives and information in the guideline and supporting
+information documents. When there is insufﬁcient evidence
+from the literature, informal consensus is reached based on the
+experience of the GDG. The summary of ﬁndings with forest
+plots (Appendix D), GRADE evidence proﬁles indicating the
+quality of evidence (Appendix E), clinical evidence summary
+(Appendix B), summary of included comparative studies
+(Appendix F), narrative ﬁndings tables for noncomparative
+studies (Appendix G), tables linking the evidence to the recom-
+mendations (Appendix C), PRISMA ﬂow diagram (Appendix H)
+and lists of excluded studies (Appendix I) are detailed in the
+Supporting Information. The strength of recommendation is
+expressed by the wording and symbols as shown in Table 1.
+3.0 Introduction
+There is currently a paucity of effective treatment options for
+HS, but common medical therapy approaches include antisep-
+tic washes, steroid injections, topical and oral antibiotics (sin-
+gle agents or combination treatment), retinoids, dapsone, oral
+contraceptive agents, oral immunomodulators, and antitumour
+necrosis factor (anti-TNF) therapy. Surgical procedures range
+from incision and drainage for acute ﬂares, narrow margin
+excision and extensive excision with closure by secondary
+intention, skin ﬂap or graft. Other treatment options include
+radiotherapy, psoralen plus ultraviolet A phototherapy, photo-
+dynamic therapy and laser therapy.
+3.1 Clinical questions and outcomes
+Management strategies in HS are highly variable and are cur-
+rently undertaken by both generalists and specialists spanning
+emergency medicine, internal medicine, dermatology, plastic
+surgery, urology, gynaecology and general surgery. To address
+Table 1 Strength of recommendation ratings
+Strength
+Wording
+Symbols
+Deﬁnition
+Strong recommendation
+for the use of an
+intervention
+‘Offer’ (or similar, e.g. ‘Use’,
+‘Provide’, ‘Take’,
+‘Investigate’, etc.)
+↑↑
+Beneﬁts of the intervention outweigh the risks; most patients
+would choose the intervention while only a small proportion
+would not; for clinicians, most of their patients would receive the
+intervention; for policy-makers, it would be a useful performance
+indicator
+Weak recommendation for
+the use of an
+intervention
+‘Consider’
+↑
+Risks and beneﬁts of the intervention are ﬁnely balanced; most
+patients would choose the intervention, but many would not;
+clinicians would need to consider the pros and cons for the
+patient in the context of the evidence; for policy-makers, it would
+be a poor performance indicator where variability in practice is
+expected
+No recommendation
+Θ
+Insufﬁcient evidence to support any recommendation
+Strong recommendation
+against the use of an
+intervention
+‘Do not offer’
+↓↓
+Risks of the intervention outweigh the beneﬁts; most patients
+would not choose the intervention while only a small proportion
+would; for clinicians, most of their patients would not receive the
+intervention
+© 2018 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1009–1017
+1010 BAD guidelines for the management of HS (acne inversa) 2018, Ingram et al.
+Downloaded from https://academic.oup.com/bjd/article/180/5/1009/6732702 by guest on 06 May 2026
+
+=== PAGE 3 ===
+these matters the GDG established several clinical questions
+pertinent to the scope of the guideline.
+In people with HS:
+1
+What is the efﬁcacy and safety of medical interventions?
+•
+topical
+•
+conventional systemic
+•
+biological
+•
+laser and light
+•
+other therapies
+2
+What is the efﬁcacy and safety of surgical interventions?
+3
+What are the self-management options and the evidence
+to support them?
+The GDG also established two sets of outcome measures of
+importance to patients (see Table 2), one for medical inter-
+ventions and another for surgery; these were ranked according
+to the GRADE methodology4 by patient/carer representatives,
+data on which are extracted from included studies (see
+Appendix F). Outcomes ranked 7, 8 and 9 are critical for deci-
+sion-making; those ranked 4, 5 and 6 are important but not
+critical for decision-making:
+4.0 Summary of recommendations
+The following recommendations and ratings were agreed
+upon unanimously by the core members of the GDG and
+patient/carer representatives. For further information on the
+wording used for recommendations and strength of recom-
+mendation ratings, see Table 1. The evidence for recommen-
+dations
+is
+based
+on
+the
+studies
+as
+listed.
+GDG
+recommendations relating to referral pathways are based on
+discussion and clinical experience, as evidence-based details
+are not available at the time of writing. The GDG is aware of
+the lack of high-quality evidence for some of these recom-
+mendations, therefore strong recommendations with an aster-
+isk (*) are based on available evidence, as well as consensus
+and specialist experience. Good practice point (GPP) recom-
+mendations (R) are derived from informal consensus.
+R1 (GPP) Manage people with HS via a multidisciplinary
+team approach, particularly when considering surgical inter-
+ventions.
+R2 (GPP) In all people with HS, document the Hurley stage
+at baseline for the worst-affected region. For Hurley stage III
+(severe) disease consider immediate referral to dermatology
+secondary care.
+R3 (GPP) Provide a patient information leaﬂet (www.bad.org.
+uk/leaflets) to all people with HS, treat pain if needed and
+provide dressings for pus-producing lesions.
+R4 (GPP) Screen people with HS for associated comorbidities
+including depression, anxiety and cardiovascular risk factors
+(diabetes, hypertension, hyperlipidaemia and central obesity).
+If persistent gastrointestinal symptoms are reported refer for
+inﬂammatory bowel disease screening.
+R5 (GPP) Where relevant, refer people with HS to smoking-
+cessation services.
+R6 (GPP) Where relevant, refer people with HS to weight-
+management services.
+R7 (GPP) Measure treatment response in people with HS
+using recognized instruments for pain and quality of life,
+including an inﬂammatory lesion count for those on adali-
+mumab therapy.
+R8 (GPP) In people with long-standing, moderate-to-severe
+HS, monitor for ﬁstulating gastrointestinal disease, inﬂamma-
+tory arthritis, genital lymphoedema, cutaneous squamous cell
+carcinoma, and also for anaemia.
+R9 (↑↑) Offer* oral tetracyclines such as doxycycline or
+lymecycline for at least 12 weeks to people with HS, consider-
+ing treatment breaks to assess need for ongoing therapy and
+to limit the risk of antimicrobial resistance.
+R10 (↑↑) Offer* combination treatment with oral clindamycin
+300 mg twice daily and rifampicin 300 mg twice daily for
+10–12 weeks to people with HS who are unresponsive to oral
+tetracyclines.
+R11 (↑) Consider acitretin 03–05 mg kg1 day1 in males
+and nonfertile females with HS who are unresponsive to
+antibiotic therapies.
+R12 (↑) Consider dapsone in people with HS who are unre-
+sponsive to antibiotic therapies.
+R13 (↑↑) Offer* adalimumab (licensed for children and
+young people aged 12–17 years, and adults) 40 mg weekly to
+people with moderate-to-severe HS that is unresponsive to
+conventional systemic therapy.
+R14 (↑) Consider inﬂiximab 5 mg kg1 every 8 weeks in
+people with moderate-to-severe HS that is unresponsive to
+adalimumab therapy.
+R15 (↑) Consider clindamycin 1% solution in people with
+HS.
+R16 (↑) Consider intralesional corticosteroid injections for
+carefully selected, individual HS lesions during the acute phase.
+R17 (GPP) Consider metformin in people with HS with con-
+comitant diabetes mellitus, and females with HS and polycystic
+ovary syndrome or pregnancy.
+Table 2 Outcome measures of importance to patients for medical and
+surgical interventions
+Medical intervention
+Rating
+Surgical intervention
+Rating
+Quality of life
+9
+Recurrence rate
+9
+Adverse effects –
+serious
+9
+Quality of life
+9
+Pain
+9
+Overall satisfaction
+8
+Disease-speciﬁc
+physician score
+6
+Functional (arm
+abduction)
+8
+Physician’s global
+assessment
+5
+Complication rates
+7
+Patient’s global self-
+assessment
+5
+Cosmetic
+6
+Adverse events –
+nuisance
+4
+Duration of
+hospitalization
+5
+Total patient
+downtime
+4
+© 2018 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1009–1017
+BAD guidelines for the management of HS (acne inversa) 2018, Ingram et al. 1011
+Downloaded from https://academic.oup.com/bjd/article/180/5/1009/6732702 by guest on 06 May 2026
+
+=== PAGE 4 ===
+R18 (↑) Consider extensive excision in people with HS to
+minimize recurrence rate.
+R19 (↑) Consider extensive excision for people with HS when
+conventional systemic treatments have failed.
+R20 (↑) Consider secondary intention healing [or TDAP (tho-
+racodorsal artery perforator) ﬂap closure for axillary wounds]
+in people with HS following extensive excision.
+R21 (↓↓) Do not offer* isotretinoin to people with HS unless
+there are concomitant moderate-to-severe acneiform lesions of
+the face or trunk.
+R22 (↓↓) Do not offer* adalimumab 40 mg every other week
+to people with moderate-to-severe HS that is unresponsive to
+conventional systemic therapy.
+R23 (↓↓) Do not offer* etanercept to people with moderate-
+to-severe HS that is unresponsive to conventional systemic
+therapy.
+R24 (↓↓) Do not offer* cryotherapy to people with HS to
+treat lesions during the acute phase due to pain from the pro-
+cedure.
+R25 (↓↓) Do not offer* microwave ablation to people with
+HS.
+4.1 Insufﬁcient evidence to support any recommendation
+Θ Currently, there is insufﬁcient evidence to recommend ali-
+tretinoin,
+anakinra,
+apremilast,
+atorvastatin,
+azathioprine,
+ciclosporin, colchicine, cyproterone, ethinyloestradiol with
+cyproterone acetate, ethinyloestradiol with norgestrel, ﬁnas-
+teride, fumaric acid esters, hydrocortisone, hyperbaric oxygen
+therapy, intravenous antibiotics, isoniazid, laser and photody-
+namic therapies, MABp1 [anti-interleukin (anti-IL)-1 therapy],
+methotrexate, oral prednisolone, oral zinc, phototherapy, pho-
+tochemotherapy, radiotherapy, secukinumab, spironolactone,
+staphage lysate, tolmetin sodium and ustekinumab for people
+with HS that is unresponsive to conventional systemic therapy.
+4.2 List of key future research recommendations
+The following list outlines future research recommendations
+(FRRs).
+FRR1 A prospective randomized controlled trial (RCT) evalu-
+ating the alignment/role of biologic therapy with surgical
+intervention in HS, in terms of pre-/post-surgical treatment
+and peri-operative continuation of biologic therapy.
+FRR2 A prospective RCT evaluating the efﬁcacy and safety of
+anakinra in people with (moderate-to-severe) HS (that is
+unresponsive to conventional systemic therapy).
+FRR3 A prospective RCT evaluating the efﬁcacy and safety of
+ustekinumab in people with (moderate-to-severe) HS (that is
+unresponsive to conventional systemic therapy).
+FRR4 A prospective RCT evaluating the efﬁcacy and safety of
+secukinumab in people with (moderate-to-severe) HS (that is
+unresponsive to conventional systemic therapy).
+FRR5 A registry of people with HS receiving systemic therapy,
+including biologic therapy, to determine the long-term safety
+and efﬁcacy of these interventions.
+FRR6 A prospective RCT evaluating the relative efﬁcacy and
+tolerability of topical antiseptics and topical antibiotics for
+mild HS.
+FRR7 A prospective RCT evaluating the efﬁcacy and safety of
+laser and light therapies in people with HS. Trials adopting a
+within-participant design should incorporate a sham interven-
+tion where possible, with matched left/right anatomical sites,
+and report all results fully (i.e. number of participants with (i)
+positive outcomes for both interventions, (ii) positive outcomes
+for only one intervention (reported separately for each inter-
+vention) and (iii) negative outcomes for both interventions).
+FRR8 A larger, prospective RCT evaluating the dosing, efﬁcacy
+and safety of oral tetracyclines in HS.
+FRR9 A prospective RCT evaluating the efﬁcacy, duration of
+treatment and safety of oral clindamycin and rifampicin in
+people with HS.
+FRR10 A prospective RCT evaluating the efﬁcacy and safety of
+oral retinoids in people with HS.
+FRR11 A prospective RCT evaluating the efﬁcacy and safety of
+dapsone in people with HS.
+FRR12 A prospective RCT investigating the management of
+acute ﬂares, including intralesional triamcinolone injections.
+FRR13 A prospective RCT evaluating lifestyle modiﬁcations,
+such as smoking cessation and weight loss, on HS severity.
+FRR14 A long-term pharmacovigilance study (open registry)
+for systemic therapy including biologic therapy.
+FRR15 Studies on stratiﬁcation of treatment response (person-
+alized medicine) – phenotype, genotype, biomarkers, pK stud-
+ies.
+FRR16 A prospective RCT investigating intravenous antibiotics
+in people with moderate-to-severe HS.
+FRR17 A prospective RCT investigating endocrine therapies in
+people with HS.
+FRR18 A prospective RCT of extensive excision of axillary HS
+(Hurley stages II and III) with closure using TDAP ﬂaps vs.
+secondary intention closure (possibility of within-participant,
+bilateral studies).
+FRR19 A prospective RCT of continued optimal nonsurgical
+therapy with extensive surgical excision of a single site for
+comparative evaluation of outcome between operated site and
+contralateral nonoperated axilla or groin.
+FRR20 A prospective head-to-head RCT of derooﬁng vs. best
+medical intervention.
+FRR21 A long-term study looking at recurrence and complica-
+tion rates following surgery.
+FRR22 A prospective RCT of extensive excision of axillary HS
+compared with narrow-margin excision of active lesions (pos-
+sibility of within-participant, bilateral studies).
+5.0 Algorithm
+The recommendations and discussions in the Linking Evidence
+to Recommendations (LETR, see Appendix C in Supporting
+Information) and consensus specialist experience were used to
+produce
+the
+management
+pathway
+for
+people
+with
+HS
+(Fig. 1).
+© 2018 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1009–1017
+1012 BAD guidelines for the management of HS (acne inversa) 2018, Ingram et al.
+Downloaded from https://academic.oup.com/bjd/article/180/5/1009/6732702 by guest on 06 May 2026
+
+=== PAGE 5 ===
+Fig 1. Management pathway for people with HS. *Licensed for use in those aged 12 years and above. **Surgical interventions are relatively
+underrepresented in the management pathway because evidence of high quality, in the form of randomized controlled trials, is sparse. BP, blood
+pressure; DLQI, Dermatology Life Quality Index; HS, hidradenitis suppurativa; MDT, multidisciplinary team; NSAID, nonsteroidal anti-
+inﬂammatory drug; TDAP, thoracodorsal artery perforator; VAS, visual analogue scale
+© 2018 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1009–1017
+BAD guidelines for the management of HS (acne inversa) 2018, Ingram et al. 1013
+Downloaded from https://academic.oup.com/bjd/article/180/5/1009/6732702 by guest on 06 May 2026
+
+=== PAGE 6 ===
+6.0 Background
+6.1 Deﬁnition
+HS is deﬁned as a ‘chronic, inﬂammatory, recurrent, debilitat-
+ing, skin follicular disease that usually presents after puberty
+with painful deep-seated, inﬂamed lesions in the apocrine
+gland-bearing areas of the body, most commonly, the axillary,
+inguinal and anogenital regions’.5,6
+6.2 Epidemiology
+Prevalence has been estimated at approximately 1–4% in the
+U.K. population7 and the typical age of onset is in the sec-
+ond to fourth decades of life.8–10 There is a female predomi-
+nance (3 : 1, F : M) and an association with obesity and
+smoking, with odds ratios of 33 and 36, respectively, com-
+pared with controls.7 However, nonsmoking patients of nor-
+mal body mass index (BMI) are seen in clinical practice. A
+population-based study from the U.S.A. found that HS preva-
+lence among African-American and biracial individuals was
+3-fold and 2-fold greater, respectively, than the prevalence in
+white individuals.11 There is a nearly doubled risk of cardio-
+vascular-associated death in patients with HS compared with
+controls,12 in keeping with high rates of smoking and also
+associations with type 2 diabetes, hyperlipidaemia and hyper-
+tension.7 HS is associated with pilonidal sinus, which may be
+a phenotypic variant, as well as acne vulgaris.7 People with
+HS have a higher risk of depression7,13 and completed sui-
+cide,14 which may relate to HS being a chronic, painful dis-
+ease with a large impact on quality of life. There is an
+association between HS and Crohn disease but not with
+ulcerative colitis.7,15
+6.3 Clinical presentation
+HS may present with comedones (characteristically paired),
+papules, pustules, nodules, cysts, abscesses, sinus tracts and
+ﬁstulae in ﬂexural areas; however, there is signiﬁcant pheno-
+typic variation among patients.16 The condition can cause sev-
+ere pain, as well as pruritus, chronic discharge (serous,
+purulent or blood-stained) and a persistent malodour. Long-
+standing disease can result in ﬁbrosis, dermal contractures,
+scarring and a consequent reduction in mobility. The disease
+targets ﬂexural areas, notably the axillae, groin, perineum,
+buttocks, medial thighs, submammary region, abdominal fold
+and posterior auricular region. Disease complications include
+ﬁstula formation (affecting the urethra, bladder or rectum),
+lymphoedema, anaemia and the development of squamous cell
+carcinoma.17
+The associated pain, chronic purulent discharge, persistent
+malodour and the involvement of intimate sites in HS can
+result in signiﬁcant patient morbidity. A survey of 114
+patients referred to secondary care revealed an average Derma-
+tology Life Quality Index (DLQI) score of 89,18 demonstrat-
+ing a moderate effect on quality of life. HS can have far-
+reaching social and economic consequences, affecting sexual
+health,19 relationships and employment.
+6.4 Diagnostic criteria and measures of disease severity
+Consensus diagnostic criteria require that individuals have typ-
+ical lesions (painful nodules, abscesses, sinus tracts, bridged
+scars or open comedones) in typical sites (axillae, groin, per-
+ineal region, perianal region, infra- and intermammary folds
+or buttocks) and that the disease must be chronic and recur-
+rent.20 Baseline disease severity in each skin region is often
+measured using the Hurley staging system (Table 3).21 The
+Hurley system is relatively insensitive to change, and so other
+instruments are used to measure the efﬁcacy of treatment.
+Patient-reported domains include pain, measured with a visual
+analogue scale or numeric rating scale (0–10) and quality of
+life, measured with a dermatology-speciﬁc scale such as the
+DLQI22 or Skindex.23 Several physician-reported instruments
+are available in the literature including the Sartorius score;24
+however, most have not undergone robust validation.25 More
+recently,
+the
+Hidradenitis
+Suppurativa
+Clinical
+Response
+(HiSCR) has been developed as an endpoint for clinical trials,
+deﬁned as a 50% reduction from baseline in inﬂammatory
+nodules and abscesses, with no increase in abscesses or drain-
+ing sinuses.26 In approving adalimumab for moderate-to-
+severe HS, National Institute for Health and Care Excellence
+(NICE) used a modiﬁed version of the HiSCR endpoint, stipu-
+lating that a 25% reduction in inﬂammatory nodules and
+abscesses is required to continue therapy.27
+6.5 Dermatopathology
+HS is a clinical diagnosis and histopathological conﬁrmation is
+rarely needed. Common histopathological features include fol-
+licular
+hyperkeratosis,
+follicular
+hyperplasia
+and
+follicular
+occlusion with an associated spongiform infundibulofolliculi-
+tis.28 These changes may be associated with follicular dilata-
+tion,
+follicular
+rupture
+and
+the
+formation
+of
+keratin-
+containing cysts (lined by stratiﬁed squamous epithelium),
+abscesses, sinus tracts, granulomas, ﬁbrosis and scarring.
+Table 3 Hurley staging system for baseline disease severity in each
+skin region
+Stage
+Disease severity in
+particular region
+Description
+I
+Mild
+Isolated lesions with no sinus tract
+formation and minimal or no
+scarring
+II
+Moderate
+Recurrent lesions separated by
+normal skin with sinus tract
+formation and scarring
+III
+Severe
+Multiple lesions coalescing into
+inﬂammatory plaques involving
+most of the affected region
+© 2018 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1009–1017
+1014 BAD guidelines for the management of HS (acne inversa) 2018, Ingram et al.
+Downloaded from https://academic.oup.com/bjd/article/180/5/1009/6732702 by guest on 06 May 2026
+
+=== PAGE 7 ===
+6.6 Disease pathogenesis
+The pathogenesis of HS remains poorly understood. Histopatho-
+logical studies suggest that HS is primarily a disease of follicular
+occlusion.28 Up to 42% of patients with HS report a family his-
+tory of the condition and it can follow autosomal dominant
+inheritance in some kindreds.29,30 Recent genetic studies
+revealed that heterozygous mutations in the c-secretase genes
+NCTSN, PSEN1 and PSENEN underlie a few familial cases of
+HS.31,32 These would appear to tie in with the above histopatho-
+logical studies insofar as alterations in c-secretase gene expres-
+sion in animal models can result in follicular occlusion.33
+The signiﬁcant inﬂammatory response seen in HS has led
+some to speculate that it may be a disease of aberrant immu-
+nity and it is noteworthy that immunomodulatory treatments
+including anti-TNF agents can be of beneﬁt.34 The female pre-
+dominance, post-pubertal onset, premenstrual ﬂares and clini-
+cal improvement often observed during pregnancy imply a
+role for hormones in HS; however, the mechanism remains
+unknown.35 The role of bacteria in exacerbations is uncertain,
+for example short courses of antibiotics do not seem to alter
+the natural history of a ﬂare.10 Antibiotics may confer a bene-
+ﬁt via their anti-inﬂammatory properties rather than any bac-
+tericidal or bacteriostatic effects. Obesity may have an impact
+on HS by mechanically increasing friction at ﬂexural sites
+(thus potentially damaging follicular outlets), increasing sweat
+retention or increasing the circulating level of pro-inﬂamma-
+tory cytokines (for example, IL-1b and TNF-a are both
+secreted by macrophages within visceral fat).36,37 The exact
+mechanisms by which smoking contributes to disease patho-
+genesis remain unclear; however, nicotine has been shown to
+induce epidermal hyperplasia and follicular plugging.38
+7.0 Self-management
+What can a person with HS do to help manage their condi-
+tion? In most areas, evidence is weak or absent; however, a
+list of suggestions is provided below following feedback from
+patient/carer representatives on the GDG:
+•
+Obtain up-to-date information about HS from the BAD’s
+Patient Information Leaﬂet web page (www.bad.org.uk/
+leaflets).
+•
+Consider joining a patient support group, such as the HS
+Trust in the U.K. (www.hstrust.org). Mutual support is
+available via associated social media groups.
+•
+Obtain adequate pain relief from your General Practitioner
+(GP) to help manage the pain associated with HS ﬂares or
+chronically active disease.
+•
+Avoid tight clothing and synthetic materials, which can
+increase friction and may contribute to ﬂares.
+•
+Obtain wound dressings from your GP to help manage
+actively pus-producing lesions. Incontinence pads might
+be needed for high volume of discharge.
+•
+HS is not a disease of poor hygiene; however, using an
+antiseptic wash, such as chlorhexidine solution for the
+shower, available via your GP, may be beneﬁcial.
+•
+There is no high-quality evidence that particular diets are
+helpful in HS.
+•
+If you are overweight, weight reduction may improve
+your disease severity and, depending on BMI, support
+from NHS weight-management services may be obtained.
+•
+Smoking is a risk factor for development of HS and people
+with HS have a relatively high risk of cardiovascular dis-
+ease, so stopping smoking, if you currently smoke, is an
+important part of self-management.
+•
+Depression is more common in those with HS and it is
+important to seek help from your GP for low mood, if rele-
+vant.
+8.0 Recommended audit points
+1
+In the last 20 consecutive patients diagnosed with HS is
+there evidence of:
+(a)
+provision of a patient information leaﬂet?
+(b)
+an offer of smoking-cessation referral, where rele-
+vant?
+(c)
+an offer of weight-management referral, where rele-
+vant?
+(d)
+screening for comorbidities?
+•
+depression
+•
+anxiety
+•
+cardiovascular risk factors (e.g. diabetes, hyper-
+tension, hyperlipidaemia and central obesity)
+(e)
+documentation of baseline disease stage (mild, mod-
+erate, severe, based on Hurley system)?
+(f)
+documentation of disease severity using recognized
+instruments, including quality of life and pain?
+(g)
+a pre-operative discussion for those undergoing sur-
+gery, covering duration of recovery and wound
+care?
+2
+In the last 20 consecutive patients with HS receiving adal-
+imumab therapy:
+(a)
+was a baseline count of inﬂammatory nodules,
+abscesses and draining sinus tracts performed?
+(b)
+was there documentation of a Hurley score of II or
+III in at least one skin region?
+(c)
+was there documentation of contraindication(s) or
+failure to respond to conventional systemic therapy?
+(d)
+was treatment discontinued if there was a reduction
+of less than 25% in the baseline total abscess and
+inﬂammatory
+nodule
+count
+or
+any
+increase
+in
+abscesses or draining sinuses?
+The audit recommendation of 20 cases per department is
+to reduce variation in the results due to a single patient
+and to allow benchmarking between different units. How-
+ever, departments unable to achieve this recommendation
+may choose to audit all cases seen in the preceding 12
+months.
+© 2018 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1009–1017
+BAD guidelines for the management of HS (acne inversa) 2018, Ingram et al. 1015
+Downloaded from https://academic.oup.com/bjd/article/180/5/1009/6732702 by guest on 06 May 2026
+
+=== PAGE 8 ===
+9.0 Stakeholder involvement and peer review
+The draft document and supporting information was made
+available to the BAD membership, British Dermatological
+Nursing Group (BDNG), Primary Care Dermatological Society
+(PCDS), British Society for Dermatological Surgery (BSDS),
+British Association of Plastic, Reconstructive & Aesthetic Sur-
+geons (BAPRAS), British Medical Laser Association (BMLA),
+colorectal surgeons and a microbiologist for comments, which
+were actively considered by the GDG. Following further
+review, the ﬁnalized version was sent for peer review by the
+Clinical Standards Unit of the BAD, made up of the Therapy &
+Guidelines Subcommittee (T&G), prior to submission for pub-
+lication.
+10.0 Limitations of the guideline
+This document has been prepared on behalf of the BAD and is
+based on the best data available when the document was pre-
+pared. It is recognized that under certain conditions it may be
+necessary to deviate from the guidelines and that the results of
+future studies may require some of the recommendations
+herein to be changed. Failure to adhere to these guidelines
+should not necessarily be considered negligent, nor should
+adherence to these recommendations constitute a defence
+against a claim of negligence.
+11.0 Plans for guideline revision
+The proposed revision date for this set of recommendations is
+scheduled for 2023; where necessary, important interim
+changes will be updated on the BAD website.
+Acknowledgments
+We are very grateful to the representatives of the HS Trust
+for their input in formulating the clinical questions, ranking
+the outcomes, reviewing the evidence and subsequent draft
+guideline; Dr Gudula Kirtschig (Consultant Dermatologist,
+Philipps-Universit€at Marburg) for her assistance with the
+translation of a paper published in German; Mr Edward West-
+cott (Consultant General and Colorectal Surgeon, Guy’s & St
+Thomas’ NHS Foundation Trust); Mr Andrew Williams (Con-
+sultant General and Colorectal Surgeon, Guy’s & St Thomas’
+NHS Foundation Trust) and Dr Simon Goldenberg (Consul-
+tant Microbiologist and Infection Control Doctor, Guy’s & St
+Thomas’ NHS Foundation Trust) for their feedback, as well
+as all those who commented on the draft during the consul-
+tation period.
+References
+1 Mohd Mustapa MF, Exton LS, Bell HK et al. Updated guidance for
+writing a British Association of Dermatologists clinical guideline:
+the adoption of the GRADE methodology 2016. Br J Dermatol 2017;
+176:44–51.
+2 Brouwers MC, Kho ME, Browman GP et al. AGREE II: advancing
+guideline development, reporting and evaluation in health care.
+CMAJ 2010; 182:E839–42.
+3 GRADE. http://www.gradeworkinggroup.org/ (accessed 9 August
+2018).
+4 Guyatt GH, Oxman AD, Vist GE et al. GRADE: an emerging con-
+sensus on rating quality of evidence and strength of recommenda-
+tions. BMJ 2008; 336:924–6.
+5 Directions 2006: The First International Hidradenitis Suppurativa
+Research Symposium. Dessau, Germany; 30 March – 2 April 2006.
+6 Second International HS Research Symposium. San Francisco,
+U.S.A.; 5 March 2009.
+7 Ingram JR, Jenkins-Jones S, Knipe DW et al. Population-based Clin-
+ical Practice Research Datalink study using algorithm modelling to
+identify the true burden of hidradenitis suppurativa. Br J Dermatol
+2018; 178:917–24.
+8 Jemec GB, Heidenheim M, Nielsen NH. The prevalence of
+hidradenitis suppurativa and its potential precursor lesions. J Am
+Acad Dermatol 1996; 35:191–4.
+9 Revuz JE, Canoui-Poitrine F, Wolkenstein P et al. Prevalence and
+factors associated with hidradenitis suppurativa: results from two
+case–control studies. J Am Acad Dermatol 2008; 59:596–601.
+10 von der Werth JM, Williams HC. The natural history of hidradeni-
+tis suppurativa. J Eur Acad Dermatol Venereol 2000; 14:389–92.
+11 Garg A, Kirby JS, Lavian J et al. Sex- and age-adjusted population
+analysis of prevalence estimates for hidradenitis suppurativa in the
+United States. JAMA Dermatol 2017; 153:760–4.
+12 Egeberg A, Gislason GH, Hansen PR. Risk of major adverse cardio-
+vascular events and all-cause mortality in patients with hidradenitis
+suppurativa. JAMA Dermatol 2016; 152:429–34.
+13 Shavit E, Dreiher J, Freud T et al. Psychiatric comorbidities in 3207
+patients with hidradenitis suppurativa. J Eur Acad Dermatol Venereol
+2015; 29:371–6.
+14 Thorlacius L, Cohen AD, Gislason GH et al. Increased suicide risk
+in patients with hidradenitis suppurativa. J Invest Dermatol 2018;
+138:52–7.
+15 Shalom G, Freud T, Ben Yakov G et al. Hidradenitis suppurativa
+and inﬂammatory bowel disease: a cross-sectional study of 3,207
+patients. J Invest Dermatol 2016; 136:1716–18.
+16 Jemec GB. Clinical practice. Hidradenitis suppurativa. N Engl J Med
+2012; 366:158–64.
+17 Lapins J, Ye W, Nyren O et al. Incidence of cancer among patients
+with hidradenitis suppurativa. Arch Dermatol 2001; 137:730–4.
+18 von der Werth JM, Jemec GB. Morbidity in patients with
+hidradenitis suppurativa. Br J Dermatol 2001; 144:809–13.
+19 Janse IC, Deckers IE, van der Maten AD et al. Sexual health and
+quality of life are impaired in hidradenitis suppurativa: a multicen-
+tre cross-sectional study. Br J Dermatol 2017; 176:1042–7.
+20 Revuz J. Hidradenitis suppurativa. J Eur Acad Dermatol Venereol 2009;
+23:985–98.
+21 Hurley
+HJ.
+Axillary
+hyperhidrosis,
+apocrine
+bromhidrosis,
+hidradenitis suppurativa, and familial benign pemphigus: surgical
+approach. In: Dermatologic Surgery (Roenigk RK, Roenigk HH, eds).
+New York: Dekker, 1989; 729–39.
+22 Finlay AY, Khan GK. Dermatology Life Quality Index (DLQI) – a
+simple practical measure for routine clinical use. Clin Exp Dermatol
+1994; 19:210–16.
+23 Chren MM, Lasek RJ, Sahay AP et al. Measurement properties of
+Skindex-16: a brief quality-of-life measure for patients with skin
+diseases. J Cutan Med Surg 2001; 5:105–10.
+24 Sartorius K, Emtestam L, Jemec GBE et al. Objective scoring of
+hidradenitis suppurativa reﬂecting the role of tobacco smoking
+and obesity. Br J Dermatol 2009; 161:831–9.
+© 2018 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1009–1017
+1016 BAD guidelines for the management of HS (acne inversa) 2018, Ingram et al.
+Downloaded from https://academic.oup.com/bjd/article/180/5/1009/6732702 by guest on 06 May 2026
+
+=== PAGE 9 ===
+25 Ingram JR, Hadjieconomou S, Piguet V. Development of core out-
+come sets in hidradenitis suppurativa: systematic review of out-
+come measure instruments to inform the process. Br J Dermatol
+2016; 175:263–72.
+26 Kimball AB, Jemec GB, Yang M et al. Assessing the validity,
+responsiveness and meaningfulness of the Hidradenitis Suppura-
+tiva Clinical Response (HiSCR) as the clinical endpoint for
+hidradenitis suppurativa treatment. Br J Dermatol 2014; 171:1434–
+42.
+27 National Institute for Health and Care Excellence. Adalimumab for
+treating moderate to severe hidradenitis suppurativa. Technology
+Appraisal Guidance (TA392). NICE: London, 2016. Available at:
+www.nice.org.uk/guidance/ta392 (last accessed 9 August 2018).
+28 Boer J, Weltevreden EF. Hidradenitis suppurativa or acne inversa.
+A clinicopathological study of early lesions. Br J Dermatol 1996;
+135:721–5.
+29 Fitzsimmons JS, Guilbert PR. A family study of hidradenitis suppu-
+rativa. J Med Genet 1985; 22:367–73.
+30 Pink AE, Simpson MA, Desai N et al. Mutations in the gamma-
+secretase genes NCSTN, PSENEN, and PSEN1 underlie rare forms
+of hidradenitis suppurativa (acne inversa). J Invest Dermatol 2012;
+132:2459–61.
+31 Pink A, Simpson M, Desai N et al. Gamma-secretase mutations in
+hidradenitis suppurativa (acne inversa): a new insight into disease
+pathogenesis. Br J Dermatol 2013; 169 (Suppl. S1):10.
+32 Wang B, Yang W, Wen W et al. Gamma-secretase gene mutations
+in familial acne inversa. Science 2010; 330:1065.
+33 Pan Y, Lin MH, Tian X et al. Gamma-secretase functions through
+Notch signaling to maintain skin appendages but is not required
+for their patterning or initial morphogenesis. Dev Cell 2004;
+7:731–43.
+34 Kimball AB, Kerdel F, Adams D et al. Adalimumab for the treat-
+ment of moderate to severe hidradenitis suppurativa: a parallel
+randomized trial. Ann Intern Med 2012; 157:846–55.
+35 Vossen AR, van Straalen KR, Prens EP et al. Menses and pregnancy
+affect symptoms in hidradenitis suppurativa: a cross-sectional
+study. J Am Acad Dermatol 2017; 76:155–6.
+36 Ghanim H, Aljada A, Hofmeyer D et al. Circulating mononuclear
+cells in the obese are in a proinﬂammatory state. Circulation 2004;
+110:1564–71.
+37 Nazary M, van der Zee HH, Prens EP et al. Pathogenesis and phar-
+macotherapy of hidradenitis suppurativa. Eur J Pharmacol 2011;
+672:1–8.
+38 Hana A, Booken D, Henrich C et al. Functional signiﬁcance of non-
+neuronal acetylcholine in skin epithelia. Life Sci 2007; 80:2214–20.
+Supporting Information
+Additional Supporting Information may be found in the online
+version of this article at the publisher’s website:
+Additional supporting information, including the study
+selection PRISMA ﬂow diagram, summary of ﬁndings with
+forest plots, GRADE evidence proﬁles indicating the quality of
+evidence, clinical evidence summary, summary of included
+studies, narrative ﬁndings for noncomparative studies, LETR
+(Linking Evidence to Recommendations), lists of excluded
+studies and search strategy can be found in the online Appen-
+dices linked to this article.
+Powerpoint S1 Journal Club Slide Set.
+Video S1. Author video.
+© 2018 British Association of Dermatologists
+British Journal of Dermatology (2019) 180, pp1009–1017
+BAD guidelines for the management of HS (acne inversa) 2018, Ingram et al. 1017
+Downloaded from https://academic.oup.com/bjd/article/180/5/1009/6732702 by guest on 06 May 2026
+
+=== PAGE 10 ===
+of patients  
+with PsO achieved  
+PASI 75 at Week 4 
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+75.9% 
+(n=265/349)
+of patients 
+with PsO achieved 
+PASI 100 at 5 years3
+76.9% 
+(N=52)† 
+of biologic-naïve  
+and TNFi-IR PsA patients 
+achieved ACR 50 at  
+Week 104/100, respectively‡1,4–6
+of patients  
+with PsO achieved  
+PASI 100 at Week 16
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+68.2%
+(n=238/349)
+and
+50.6% 
+(n=135/267) 
+51.5% 
+(n=222/431)
+GB-BK-2500315 | July 2025
+UCB Biopharma SRL, 2025. All rights reserved.
+This promotional material has been created and funded by UCB Pharma Ltd and 
+is intended for healthcare professionals in the UK.
+BIMZELX is indicated for the treatment of: moderate to severe plaque PsO in adults 
+who are candidates for systemic therapy; active PsA, alone or in combination 
+with methotrexate, in adults who have had an inadequate response, or who have 
+been intolerant, to one or more DMARDs; active nr-axSpA with objective signs of 
+inflammation as indicated by elevated CRP and/or MRI, in adults who have responded 
+inadequately, or are intolerant, to NSAIDs; active AS in adults who have responded 
+inadequately or are intolerant to conventional therapy; and active moderate to severe 
+HS (acne inversa) in adults with an inadequate response to conventional systemic HS 
+therapy.4
+Prescribing information for United Kingdom click here.  
+Please refer to the SmPC for further information. 
+These data are from different clinical trials and cannot be directly compared.
+Co-primary endpoints PASI 90 and IGA 0/1 at Week 16 were met.**Secondary endpoints. †N= mNRI, missing data 
+were imputed with mNRI (patients with missing data following treatment discontinuation due to lack of efficacy 
+or a TRAE were counted as non-responders; multiple imputation methodology was used for other missing data). 
+‡43.9% (n=189/431), and 43.4% (n=116/267) of biologic-naïve and TNFi-IR PsA patients achieved the primary 
+endpoint of ACR 50 at Week 16 in BE OPTIMAL and BE COMPLETE, respectively (vs 10.0% [n=28/281] and 6.8% 
+[n=9/133] placebo, p<0.0001); 54.5% (n=235/431) and 51.7% (n=138/267) maintained it at Week 52 (NRI).4–6 ​
+ACR 50, ≥50% response in the American College of Rheumatology criteria; AS, ankylosing spondylitis; CRP, 
+C-reactive protein; DMARD, disease-modifying antirheumatic drug; HS, hidradenitis suppurativa; IGA, Investigator’s 
+Global Assessment; (m)NRI, (modified) non-responder imputation; MRI, magnetic resonance imaging; nr-
+axSpA, non-radiographic axial spondyloarthritis; NSAID, non-steroidal anti-inflammatory drug; PASI 75/90/100, 
+≥75/90/100% improvement from baseline in Psoriasis Area and Severity Index; PsA, psoriatic arthritis; PsD, psoriatic 
+disease; PsO, psoriasis; TNFi-IR, tumour necrosis factor-α inhibitor – inadequate responder; TRAE, treatment-
+related adverse event.
+References: 1. Gordon KB, et al. Lancet. 2021;397(10273):475–486. 2. Blauvelt. 2025. AAD Presentation 62275. 3. 
+Mease PJ, et al. Rheumatol Ther. 2024;11(5):1363–1382. 4. BIMZELX SmPC. 5. Ritchlin CT, et al. Ann Rheum Dis. 
+2023;82(11):1404–1414. 6. Coates LC, et al. RMD Open. 2024;10(1):e003855. 7. Strober B, et al. AAD 2024;oral 
+presentation.​
+This medicine is subject to additional monitoring. This will allow quick 
+identification of new safety information. Adverse events should be reported. 
+Reporting forms and information can be found at www.yellowcard.mhra.gov.uk for 
+the UK. Adverse events should also be reported to UCB Pharma Ltd at  
+UCBCares.UK@UCB.com or 0800 2793177 for UK.
+NO COMPROMISE, 
+JUST CLEARANCE
+BIMZELX was well tolerated, the most frequently reported adverse reactions were: upper respiratory tract infections 
+and oral candidiasis. Other common reported adverse reactions include tinea infections, ear infections, herpes simplex 
+infections, oropharyngeal candidiasis, gastroenteritis, folliculitis, headache, rash, dermatitis, eczema, acne, injection site 
+reactions, fatigue, and vulvovaginal mycotic infection (including vulvovaginal candidiasis).4
+Bimzelx®     (bimekizumab) offers 
+the opportunity for complete, fast,
+and lasting skin clearance and 
+proven PsA efficacy 1–7
