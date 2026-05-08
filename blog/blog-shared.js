@@ -114,99 +114,97 @@
       return '<figure class="dn-med-fig"><svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" aria-labelledby="acne-path-title">' +
         '<title id="acne-path-title">痤瘡四大致病機轉</title>' +
         '<rect width="960" height="600" fill="#faf7f2" rx="10"/>' +
-        '<text x="480" y="46" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="26" font-weight="700" fill="#0c5159">痤瘡 4 大致病機轉</text>' +
-        // Step 1 — circle r=82, fonts even bigger
+        '<text x="480" y="48" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="32" font-weight="700" fill="#0c5159">痤瘡 4 大致病機轉</text>' +
+        // Step 1
         '<g transform="translate(40 100)"><circle cx="100" cy="100" r="82" fill="#fef9c3" stroke="#854d0e" stroke-width="3"/>' +
-        '<text x="100" y="80" text-anchor="middle" font-family="Inter" font-size="26" font-weight="800" fill="#854d0e">①</text>' +
-        '<text x="100" y="110" text-anchor="middle" font-family="Noto Sans TC" font-size="20" font-weight="700" fill="#854d0e">皮脂分泌</text>' +
-        '<text x="100" y="138" text-anchor="middle" font-family="Noto Sans TC" font-size="20" font-weight="700" fill="#854d0e">增加</text>' +
-        '<text x="100" y="216" text-anchor="middle" font-family="Inter" font-size="15" fill="#5e574e">Sebum (androgen)</text></g>' +
-        // Arrow
-        '<path d="M222 200 L268 200" stroke="#4d6358" stroke-width="3.5" marker-end="url(#arrow)"/>' +
+        '<text x="100" y="78" text-anchor="middle" font-family="Inter" font-size="34" font-weight="800" fill="#854d0e">①</text>' +
+        '<text x="100" y="112" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#854d0e">皮脂分泌</text>' +
+        '<text x="100" y="146" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#854d0e">增加</text>' +
+        '<text x="100" y="220" text-anchor="middle" font-family="Inter" font-size="18" fill="#5e574e">Sebum (androgen)</text></g>' +
+        '<path d="M222 200 L268 200" stroke="#4d6358" stroke-width="4" marker-end="url(#arrow)"/>' +
         // Step 2
         '<g transform="translate(270 100)"><circle cx="100" cy="100" r="82" fill="#fed7aa" stroke="#9a3412" stroke-width="3"/>' +
-        '<text x="100" y="80" text-anchor="middle" font-family="Inter" font-size="26" font-weight="800" fill="#9a3412">②</text>' +
-        '<text x="100" y="110" text-anchor="middle" font-family="Noto Sans TC" font-size="20" font-weight="700" fill="#9a3412">毛囊角化</text>' +
-        '<text x="100" y="138" text-anchor="middle" font-family="Noto Sans TC" font-size="20" font-weight="700" fill="#9a3412">異常</text>' +
-        '<text x="100" y="216" text-anchor="middle" font-family="Inter" font-size="15" fill="#5e574e">Comedo formation</text></g>' +
-        '<path d="M452 200 L498 200" stroke="#4d6358" stroke-width="3.5" marker-end="url(#arrow)"/>' +
+        '<text x="100" y="78" text-anchor="middle" font-family="Inter" font-size="34" font-weight="800" fill="#9a3412">②</text>' +
+        '<text x="100" y="112" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#9a3412">毛囊角化</text>' +
+        '<text x="100" y="146" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#9a3412">異常</text>' +
+        '<text x="100" y="220" text-anchor="middle" font-family="Inter" font-size="18" fill="#5e574e">Comedo formation</text></g>' +
+        '<path d="M452 200 L498 200" stroke="#4d6358" stroke-width="4" marker-end="url(#arrow)"/>' +
         // Step 3
         '<g transform="translate(500 100)"><circle cx="100" cy="100" r="82" fill="#fee2e2" stroke="#991b1b" stroke-width="3"/>' +
-        '<text x="100" y="80" text-anchor="middle" font-family="Inter" font-size="26" font-weight="800" fill="#991b1b">③</text>' +
-        '<text x="100" y="110" text-anchor="middle" font-family="Inter" font-size="19" font-weight="700" font-style="italic" fill="#991b1b">C. acnes</text>' +
-        '<text x="100" y="138" text-anchor="middle" font-family="Noto Sans TC" font-size="20" font-weight="700" fill="#991b1b">增生</text>' +
-        '<text x="100" y="216" text-anchor="middle" font-family="Inter" font-size="15" fill="#5e574e">Bacterial proliferation</text></g>' +
-        '<path d="M682 200 L728 200" stroke="#4d6358" stroke-width="3.5" marker-end="url(#arrow)"/>' +
+        '<text x="100" y="78" text-anchor="middle" font-family="Inter" font-size="34" font-weight="800" fill="#991b1b">③</text>' +
+        '<text x="100" y="112" text-anchor="middle" font-family="Inter" font-size="22" font-weight="700" font-style="italic" fill="#991b1b">C. acnes</text>' +
+        '<text x="100" y="146" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#991b1b">增生</text>' +
+        '<text x="100" y="220" text-anchor="middle" font-family="Inter" font-size="18" fill="#5e574e">Bacterial proliferation</text></g>' +
+        '<path d="M682 200 L728 200" stroke="#4d6358" stroke-width="4" marker-end="url(#arrow)"/>' +
         // Step 4
         '<g transform="translate(730 100)"><circle cx="100" cy="100" r="82" fill="#dc2626" stroke="#7f1d1d" stroke-width="3"/>' +
-        '<text x="100" y="80" text-anchor="middle" font-family="Inter" font-size="26" font-weight="800" fill="#fff">④</text>' +
-        '<text x="100" y="110" text-anchor="middle" font-family="Noto Sans TC" font-size="20" font-weight="700" fill="#fff">免疫發炎</text>' +
-        '<text x="100" y="138" text-anchor="middle" font-family="Noto Sans TC" font-size="20" font-weight="700" fill="#fff">反應</text>' +
-        '<text x="100" y="216" text-anchor="middle" font-family="Inter" font-size="15" fill="#5e574e">IL-1β / TLR2 / Th17</text></g>' +
-        // Drug action labels — fonts 17-18px now (was 15)
-        '<text x="140" y="380" text-anchor="middle" font-family="Inter" font-size="17" font-weight="700" fill="#0c5159">↓ Isotretinoin</text>' +
-        '<text x="140" y="406" text-anchor="middle" font-family="Noto Sans TC" font-size="17" font-weight="700" fill="#0c5159">抗雄性素</text>' +
-        '<text x="370" y="380" text-anchor="middle" font-family="Inter" font-size="17" font-weight="700" fill="#0c5159">↓ Retinoids</text>' +
-        '<text x="370" y="406" text-anchor="middle" font-family="Noto Sans TC" font-size="17" font-weight="700" fill="#0c5159">角質溶解</text>' +
-        '<text x="600" y="380" text-anchor="middle" font-family="Inter" font-size="17" font-weight="700" fill="#0c5159">↓ BPO</text>' +
-        '<text x="600" y="406" text-anchor="middle" font-family="Noto Sans TC" font-size="17" font-weight="700" fill="#0c5159">抗生素</text>' +
-        '<text x="830" y="380" text-anchor="middle" font-family="Inter" font-size="17" font-weight="700" fill="#0c5159">↓ Anti-IL</text>' +
-        '<text x="830" y="406" text-anchor="middle" font-family="Noto Sans TC" font-size="17" font-weight="700" fill="#0c5159">杜鵑花酸</text>' +
+        '<text x="100" y="78" text-anchor="middle" font-family="Inter" font-size="34" font-weight="800" fill="#fff">④</text>' +
+        '<text x="100" y="112" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#fff">免疫發炎</text>' +
+        '<text x="100" y="146" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#fff">反應</text>' +
+        '<text x="100" y="220" text-anchor="middle" font-family="Inter" font-size="18" fill="#5e574e">IL-1β / TLR2 / Th17</text></g>' +
+        // Drug action labels — bumped to 22px
+        '<text x="140" y="378" text-anchor="middle" font-family="Inter" font-size="22" font-weight="700" fill="#0c5159">↓ Isotretinoin</text>' +
+        '<text x="140" y="408" text-anchor="middle" font-family="Noto Sans TC" font-size="22" font-weight="700" fill="#0c5159">抗雄性素</text>' +
+        '<text x="370" y="378" text-anchor="middle" font-family="Inter" font-size="22" font-weight="700" fill="#0c5159">↓ Retinoids</text>' +
+        '<text x="370" y="408" text-anchor="middle" font-family="Noto Sans TC" font-size="22" font-weight="700" fill="#0c5159">角質溶解</text>' +
+        '<text x="600" y="378" text-anchor="middle" font-family="Inter" font-size="22" font-weight="700" fill="#0c5159">↓ BPO</text>' +
+        '<text x="600" y="408" text-anchor="middle" font-family="Noto Sans TC" font-size="22" font-weight="700" fill="#0c5159">抗生素</text>' +
+        '<text x="830" y="378" text-anchor="middle" font-family="Inter" font-size="22" font-weight="700" fill="#0c5159">↓ Anti-IL</text>' +
+        '<text x="830" y="408" text-anchor="middle" font-family="Noto Sans TC" font-size="22" font-weight="700" fill="#0c5159">杜鵑花酸</text>' +
         // Vertical dashed connectors
-        '<line x1="140" y1="290" x2="140" y2="362" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
-        '<line x1="370" y1="290" x2="370" y2="362" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
-        '<line x1="600" y1="290" x2="600" y2="362" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
-        '<line x1="830" y1="290" x2="830" y2="362" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
+        '<line x1="140" y1="295" x2="140" y2="358" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
+        '<line x1="370" y1="295" x2="370" y2="358" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
+        '<line x1="600" y1="295" x2="600" y2="358" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
+        '<line x1="830" y1="295" x2="830" y2="358" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
         // Bottom note
-        '<text x="480" y="498" text-anchor="middle" font-family="Noto Sans TC" font-size="17" fill="#5e574e">每個機轉對應不同藥物 — 中重度痘痘建議「組合治療」</text>' +
-        '<text x="480" y="558" text-anchor="middle" font-family="Inter" font-size="14" fill="#8b8378">Source: AAD 2024 acne guideline · Dreno 2018 EADV consensus</text>' +
+        '<text x="480" y="498" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">每個機轉對應不同藥物 — 中重度痘痘建議「組合治療」</text>' +
+        '<text x="480" y="558" text-anchor="middle" font-family="Inter" font-size="16" fill="#8b8378">Source: AAD 2024 acne guideline · Dreno 2018 EADV consensus</text>' +
         '<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#4d6358"/></marker></defs>' +
         '</svg><figcaption>圖 1。痤瘡 4 大致病機轉與藥物作用點(Gollnick 2003;Williams Lancet 2012;AAD 2024)</figcaption></figure>';
     },
 
     // BPO mechanism — peroxide + porphyrin → free radical → bacteria kill
     'bpo-mechanism': function () {
-      return '<figure class="dn-med-fig"><svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" aria-labelledby="bpo-title">' +
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 960 640" xmlns="http://www.w3.org/2000/svg" aria-labelledby="bpo-title">' +
         '<title id="bpo-title">過氧化苯醯(BPO)殺菌機轉</title>' +
-        '<rect width="960" height="600" fill="#faf7f2" rx="10"/>' +
-        '<text x="480" y="46" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="24" font-weight="700" fill="#0c5159">過氧化苯醯 BPO 為何能殺菌</text>' +
-        '<text x="480" y="78" text-anchor="middle" font-family="Noto Sans TC" font-size="17" fill="#5e574e">(且不像抗生素產生抗藥性)</text>' +
-        // Boxes are bigger (200x130) with more padding; arrows are clearly separated
-        // Box 1 — BPO
-        '<g transform="translate(30 130)"><rect x="0" y="0" width="200" height="130" rx="14" fill="#cffafe" stroke="#0c5159" stroke-width="2.5"/>' +
-        '<text x="100" y="48" text-anchor="middle" font-family="Inter" font-size="24" font-weight="800" fill="#0c5159">BPO</text>' +
-        '<text x="100" y="80" text-anchor="middle" font-family="Noto Sans TC" font-size="16" fill="#5e574e">過氧化苯醯</text>' +
-        '<text x="100" y="106" text-anchor="middle" font-family="Inter" font-size="15" fill="#5e574e">2.5–10%</text></g>' +
-        // Arrow 1 — clearly separated above the cysteine label
-        '<path d="M242 195 L286 195" stroke="#4d6358" stroke-width="3.5" marker-end="url(#arrow2)"/>' +
-        '<text x="264" y="180" text-anchor="middle" font-family="Noto Sans TC" font-size="14" fill="#4d6358">+ 半胱胺酸</text>' +
+        '<rect width="960" height="640" fill="#faf7f2" rx="10"/>' +
+        '<text x="480" y="48" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="30" font-weight="700" fill="#0c5159">過氧化苯醯 BPO 為何能殺菌</text>' +
+        '<text x="480" y="84" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">(且不像抗生素產生抗藥性)</text>' +
+        // Box 1 — BPO  (taller boxes 150 + arrow labels positioned above arrow line)
+        '<g transform="translate(30 140)"><rect x="0" y="0" width="200" height="150" rx="14" fill="#cffafe" stroke="#0c5159" stroke-width="2.5"/>' +
+        '<text x="100" y="56" text-anchor="middle" font-family="Inter" font-size="32" font-weight="800" fill="#0c5159">BPO</text>' +
+        '<text x="100" y="92" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">過氧化苯醯</text>' +
+        '<text x="100" y="124" text-anchor="middle" font-family="Inter" font-size="18" fill="#5e574e">2.5–10%</text></g>' +
+        // Arrow 1 — label MOVED ABOVE arrow with clear gap
+        '<text x="264" y="200" text-anchor="middle" font-family="Noto Sans TC" font-size="17" fill="#4d6358">+ 半胱胺酸</text>' +
+        '<path d="M242 220 L286 220" stroke="#4d6358" stroke-width="4" marker-end="url(#arrow2)"/>' +
         // Box 2 — ROS
-        '<g transform="translate(290 130)"><rect x="0" y="0" width="220" height="130" rx="14" fill="#fed7aa" stroke="#9a3412" stroke-width="2.5"/>' +
-        '<text x="110" y="48" text-anchor="middle" font-family="Inter" font-size="20" font-weight="800" fill="#9a3412">苯甲酸 → ·OH</text>' +
-        '<text x="110" y="80" text-anchor="middle" font-family="Noto Sans TC" font-size="16" fill="#5e574e">自由基產生</text>' +
-        '<text x="110" y="106" text-anchor="middle" font-family="Inter" font-size="14" fill="#5e574e">(ROS、活性氧)</text></g>' +
+        '<g transform="translate(290 140)"><rect x="0" y="0" width="220" height="150" rx="14" fill="#fed7aa" stroke="#9a3412" stroke-width="2.5"/>' +
+        '<text x="110" y="56" text-anchor="middle" font-family="Inter" font-size="24" font-weight="800" fill="#9a3412">苯甲酸 → ·OH</text>' +
+        '<text x="110" y="92" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">自由基產生</text>' +
+        '<text x="110" y="124" text-anchor="middle" font-family="Inter" font-size="17" fill="#5e574e">(ROS、活性氧)</text></g>' +
         // Arrow 2
-        '<path d="M520 195 L564 195" stroke="#4d6358" stroke-width="3.5" marker-end="url(#arrow2)"/>' +
-        '<text x="542" y="180" text-anchor="middle" font-family="Noto Sans TC" font-size="14" fill="#4d6358">氧化攻擊</text>' +
+        '<text x="542" y="200" text-anchor="middle" font-family="Noto Sans TC" font-size="17" fill="#4d6358">氧化攻擊</text>' +
+        '<path d="M520 220 L564 220" stroke="#4d6358" stroke-width="4" marker-end="url(#arrow2)"/>' +
         // Box 3 — bacteria membrane
-        '<g transform="translate(570 130)"><rect x="0" y="0" width="240" height="130" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>' +
-        '<text x="120" y="48" text-anchor="middle" font-family="Noto Sans TC" font-size="20" font-weight="800" fill="#dc2626">細菌膜破壞</text>' +
-        '<text x="120" y="80" text-anchor="middle" font-family="Inter" font-size="16" font-style="italic" fill="#5e574e">C. acnes</text>' +
-        '<text x="120" y="106" text-anchor="middle" font-family="Inter" font-size="14" fill="#5e574e">蛋白質 / DNA 氧化</text></g>' +
+        '<g transform="translate(570 140)"><rect x="0" y="0" width="240" height="150" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>' +
+        '<text x="120" y="56" text-anchor="middle" font-family="Noto Sans TC" font-size="24" font-weight="800" fill="#dc2626">細菌膜破壞</text>' +
+        '<text x="120" y="92" text-anchor="middle" font-family="Inter" font-size="20" font-style="italic" fill="#5e574e">C. acnes</text>' +
+        '<text x="120" y="124" text-anchor="middle" font-family="Inter" font-size="17" fill="#5e574e">蛋白質 / DNA 氧化</text></g>' +
         // Arrow 3
-        '<path d="M820 195 L864 195" stroke="#4d6358" stroke-width="3.5" marker-end="url(#arrow2)"/>' +
+        '<path d="M820 220 L864 220" stroke="#4d6358" stroke-width="4" marker-end="url(#arrow2)"/>' +
         // Box 4 — kill / no resistance
-        '<g transform="translate(870 130)"><rect x="0" y="0" width="80" height="130" rx="14" fill="#dcfce7" stroke="#14532d" stroke-width="2.5"/>' +
-        '<text x="40" y="62" text-anchor="middle" font-family="Noto Sans TC" font-size="18" font-weight="800" fill="#14532d">殺菌</text>' +
-        '<text x="40" y="92" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">無抗藥性</text></g>' +
-        // Explanation card — generously sized
-        '<rect x="50" y="320" width="860" height="200" rx="14" fill="#fff" stroke="#a5f3fc" stroke-width="2"/>' +
-        '<text x="480" y="362" text-anchor="middle" font-family="Noto Sans TC" font-size="20" font-weight="700" fill="#0c5159">為什麼 BPO 不會產生抗藥性?</text>' +
-        '<text x="480" y="402" text-anchor="middle" font-family="Noto Sans TC" font-size="16" fill="#5e574e">BPO 的「自由基」是非特異性氧化攻擊、</text>' +
-        '<text x="480" y="432" text-anchor="middle" font-family="Noto Sans TC" font-size="16" fill="#5e574e">細菌無法演化出單一靶點突變來抵抗。</text>' +
-        '<text x="480" y="472" text-anchor="middle" font-family="Noto Sans TC" font-size="16" fill="#5e574e">因此它常用來「搭配」抗生素以降低抗生素抗藥率。</text>' +
-        '<text x="480" y="500" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">(Plewig &amp; Kligman, 2024)</text>' +
-        '<text x="480" y="568" text-anchor="middle" font-family="Inter" font-size="14" fill="#8b8378">Source: Sagransky JAAD 2009 · Plewig Acne 4th ed 2024 · BPO 2.5% ≈ 5% 同效但耐受佳</text>' +
+        '<g transform="translate(870 140)"><rect x="0" y="0" width="80" height="150" rx="14" fill="#dcfce7" stroke="#14532d" stroke-width="2.5"/>' +
+        '<text x="40" y="78" text-anchor="middle" font-family="Noto Sans TC" font-size="22" font-weight="800" fill="#14532d">殺菌</text>' +
+        '<text x="40" y="108" text-anchor="middle" font-family="Noto Sans TC" font-size="14" fill="#5e574e">無抗藥</text></g>' +
+        // Explanation card — generously sized & taller for bigger fonts
+        '<rect x="50" y="350" width="860" height="220" rx="14" fill="#fff" stroke="#a5f3fc" stroke-width="2"/>' +
+        '<text x="480" y="396" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#0c5159">為什麼 BPO 不會產生抗藥性?</text>' +
+        '<text x="480" y="436" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">BPO 的「自由基」是非特異性氧化攻擊、</text>' +
+        '<text x="480" y="468" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">細菌無法演化出單一靶點突變來抵抗。</text>' +
+        '<text x="480" y="510" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">因此它常用來「搭配」抗生素以降低抗生素抗藥率。</text>' +
+        '<text x="480" y="544" text-anchor="middle" font-family="Inter" font-size="15" fill="#8b8378">(Plewig &amp; Kligman, 2024)</text>' +
+        '<text x="480" y="610" text-anchor="middle" font-family="Inter" font-size="16" fill="#8b8378">Source: Sagransky JAAD 2009 · Plewig Acne 4th ed 2024 · BPO 2.5% ≈ 5% 同效但耐受佳</text>' +
         '<defs><marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#4d6358"/></marker></defs>' +
         '</svg><figcaption>圖 2。BPO 的自由基殺菌機轉 — 為何單用 BPO 不會產生抗藥性、且能搭配抗生素降低抗藥率</figcaption></figure>';
     },
@@ -538,100 +536,100 @@
 
     // Mast cell degranulation — urticaria pathophysiology
     'mast-cell': function () {
-      return '<figure class="dn-med-fig"><svg viewBox="0 0 960 480" xmlns="http://www.w3.org/2000/svg" aria-labelledby="mast-title">' +
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" aria-labelledby="mast-title">' +
         '<title id="mast-title">蕁麻疹肥大細胞釋放機轉</title>' +
-        '<rect width="960" height="480" fill="#faf7f2" rx="10"/>' +
-        '<text x="480" y="42" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="24" font-weight="700" fill="#0c5159">蕁麻疹 — 肥大細胞活化的致病軸</text>' +
-        // Triggers (left)
-        '<g transform="translate(40 90)">' +
-        '<rect x="0" y="0" width="200" height="240" rx="14" fill="#fef9c3" stroke="#854d0e" stroke-width="2"/>' +
-        '<text x="100" y="34" text-anchor="middle" font-family="Inter" font-size="18" font-weight="700" fill="#854d0e">觸發</text>' +
-        '<text x="16" y="74" font-family="Noto Sans TC" font-size="16" fill="#5e574e">• IgE(過敏)</text>' +
-        '<text x="16" y="110" font-family="Noto Sans TC" font-size="16" fill="#5e574e">• 物理(壓 / 冷 / 熱)</text>' +
-        '<text x="16" y="146" font-family="Noto Sans TC" font-size="16" fill="#5e574e">• 自體抗體(CSU)</text>' +
-        '<text x="16" y="182" font-family="Noto Sans TC" font-size="16" fill="#5e574e">• 偽過敏(NSAID)</text>' +
-        '<text x="16" y="218" font-family="Noto Sans TC" font-size="16" fill="#5e574e">• 感染 / 壓力</text>' +
+        '<rect width="960" height="540" fill="#faf7f2" rx="10"/>' +
+        '<text x="480" y="46" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="30" font-weight="700" fill="#0c5159">蕁麻疹 — 肥大細胞活化的致病軸</text>' +
+        // Triggers (left) — bigger box, bigger fonts
+        '<g transform="translate(40 100)">' +
+        '<rect x="0" y="0" width="220" height="270" rx="14" fill="#fef9c3" stroke="#854d0e" stroke-width="2"/>' +
+        '<text x="110" y="40" text-anchor="middle" font-family="Inter" font-size="24" font-weight="700" fill="#854d0e">觸發</text>' +
+        '<text x="18" y="84" font-family="Noto Sans TC" font-size="20" fill="#5e574e">• IgE(過敏)</text>' +
+        '<text x="18" y="124" font-family="Noto Sans TC" font-size="20" fill="#5e574e">• 物理(壓/冷/熱)</text>' +
+        '<text x="18" y="164" font-family="Noto Sans TC" font-size="20" fill="#5e574e">• 自體抗體(CSU)</text>' +
+        '<text x="18" y="204" font-family="Noto Sans TC" font-size="20" fill="#5e574e">• 偽過敏(NSAID)</text>' +
+        '<text x="18" y="244" font-family="Noto Sans TC" font-size="20" fill="#5e574e">• 感染 / 壓力</text>' +
         '</g>' +
         // Arrow 1
-        '<path d="M245 210 L 305 210" stroke="#4d6358" stroke-width="3" marker-end="url(#arrowM)"/>' +
+        '<path d="M265 235 L 320 235" stroke="#4d6358" stroke-width="4" marker-end="url(#arrowM)"/>' +
         // Mast cell (center)
-        '<g transform="translate(315 110)">' +
-        '<circle cx="100" cy="100" r="86" fill="#fed7aa" stroke="#9a3412" stroke-width="3"/>' +
+        '<g transform="translate(330 120)">' +
+        '<circle cx="110" cy="110" r="92" fill="#fed7aa" stroke="#9a3412" stroke-width="3"/>' +
         // Granules
-        '<circle cx="74" cy="78" r="9" fill="#dc2626"/><circle cx="124" cy="68" r="8" fill="#dc2626"/>' +
-        '<circle cx="138" cy="112" r="9" fill="#dc2626"/><circle cx="78" cy="118" r="8" fill="#dc2626"/>' +
-        '<circle cx="105" cy="130" r="7" fill="#dc2626"/><circle cx="68" cy="98" r="7" fill="#dc2626"/>' +
-        '<text x="100" y="220" text-anchor="middle" font-family="Inter" font-size="18" font-weight="700" fill="#9a3412">Mast Cell</text>' +
-        '<text x="100" y="244" text-anchor="middle" font-family="Noto Sans TC" font-size="16" fill="#5e574e">皮膚肥大細胞</text>' +
+        '<circle cx="80" cy="84" r="10" fill="#dc2626"/><circle cx="138" cy="74" r="9" fill="#dc2626"/>' +
+        '<circle cx="150" cy="124" r="10" fill="#dc2626"/><circle cx="84" cy="128" r="9" fill="#dc2626"/>' +
+        '<circle cx="115" cy="142" r="8" fill="#dc2626"/><circle cx="74" cy="106" r="8" fill="#dc2626"/>' +
+        '<text x="110" y="240" text-anchor="middle" font-family="Inter" font-size="22" font-weight="700" fill="#9a3412">Mast Cell</text>' +
+        '<text x="110" y="266" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">皮膚肥大細胞</text>' +
         '</g>' +
         // Arrow 2
-        '<path d="M530 210 L 590 210" stroke="#4d6358" stroke-width="3" marker-end="url(#arrowM)"/>' +
-        '<text x="560" y="196" text-anchor="middle" font-family="Noto Sans TC" font-size="15" fill="#4d6358">脫顆粒</text>' +
+        '<text x="585" y="218" text-anchor="middle" font-family="Noto Sans TC" font-size="18" fill="#4d6358">脫顆粒</text>' +
+        '<path d="M560 235 L 615 235" stroke="#4d6358" stroke-width="4" marker-end="url(#arrowM)"/>' +
         // Mediators (right)
-        '<g transform="translate(600 90)">' +
-        '<rect x="0" y="0" width="320" height="240" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
-        '<text x="160" y="34" text-anchor="middle" font-family="Inter" font-size="18" font-weight="700" fill="#dc2626">釋放介質 → 症狀</text>' +
-        '<text x="16" y="74" font-family="Noto Sans TC" font-size="16" fill="#5e574e"><tspan font-weight="700">組織胺</tspan> → 血管擴張、癢</text>' +
-        '<text x="16" y="110" font-family="Noto Sans TC" font-size="16" fill="#5e574e"><tspan font-weight="700">類胰蛋白酶</tspan> → 發炎</text>' +
-        '<text x="16" y="146" font-family="Noto Sans TC" font-size="16" fill="#5e574e"><tspan font-weight="700">PGD₂ / LTC₄</tspan> → 血管通透性</text>' +
-        '<text x="16" y="182" font-family="Noto Sans TC" font-size="16" fill="#5e574e"><tspan font-weight="700">PAF</tspan> → 風團</text>' +
-        '<text x="16" y="218" font-family="Noto Sans TC" font-size="16" fill="#5e574e"><tspan font-weight="700">細胞激素</tspan> → 慢性</text>' +
+        '<g transform="translate(625 100)">' +
+        '<rect x="0" y="0" width="300" height="270" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
+        '<text x="150" y="40" text-anchor="middle" font-family="Inter" font-size="22" font-weight="700" fill="#dc2626">釋放介質 → 症狀</text>' +
+        '<text x="18" y="84" font-family="Noto Sans TC" font-size="19" fill="#5e574e"><tspan font-weight="700">組織胺</tspan> → 癢、紅</text>' +
+        '<text x="18" y="124" font-family="Noto Sans TC" font-size="19" fill="#5e574e"><tspan font-weight="700">類胰蛋白酶</tspan> → 發炎</text>' +
+        '<text x="18" y="164" font-family="Noto Sans TC" font-size="19" fill="#5e574e"><tspan font-weight="700">PGD₂ / LTC₄</tspan> → 通透性</text>' +
+        '<text x="18" y="204" font-family="Noto Sans TC" font-size="19" fill="#5e574e"><tspan font-weight="700">PAF</tspan> → 風團</text>' +
+        '<text x="18" y="244" font-family="Noto Sans TC" font-size="19" fill="#5e574e"><tspan font-weight="700">細胞激素</tspan> → 慢性</text>' +
         '</g>' +
         // Drug targets
-        '<text x="480" y="382" text-anchor="middle" font-family="Noto Sans TC" font-size="17" font-weight="700" fill="#0c5159">藥物作用點</text>' +
-        '<text x="480" y="412" text-anchor="middle" font-family="Noto Sans TC" font-size="15" fill="#5e574e">第二代 H1 抗組織胺(一線) → Omalizumab(二線、阻斷 IgE) → Cyclosporine 等免疫抑制劑(三線)</text>' +
-        '<text x="480" y="458" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Zuberbier 2022 EAACI · Kolkhir JAMA 2024 CSU review · TDA 蕁麻疹治療共識</text>' +
+        '<text x="480" y="430" text-anchor="middle" font-family="Noto Sans TC" font-size="22" font-weight="700" fill="#0c5159">藥物作用點</text>' +
+        '<text x="480" y="466" text-anchor="middle" font-family="Noto Sans TC" font-size="18" fill="#5e574e">第二代 H1 抗組織胺(一線) → Omalizumab(二線) → Cyclosporine 等(三線)</text>' +
+        '<text x="480" y="514" text-anchor="middle" font-family="Inter" font-size="14" fill="#8b8378">Source: Zuberbier 2022 EAACI · Kolkhir JAMA 2024 CSU review · TDA 蕁麻疹治療共識</text>' +
         '<defs><marker id="arrowM" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#4d6358"/></marker></defs>' +
         '</svg><figcaption>圖。蕁麻疹的肥大細胞活化軸 — 觸發 → 脫顆粒 → 介質 → 風團 / 癢;治療對應每個環節</figcaption></figure>';
     },
 
     // Rosacea 4 subtypes
     'rosacea-subtypes': function () {
-      return '<figure class="dn-med-fig"><svg viewBox="0 0 960 460" xmlns="http://www.w3.org/2000/svg" aria-labelledby="rosacea-title">' +
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 960 500" xmlns="http://www.w3.org/2000/svg" aria-labelledby="rosacea-title">' +
         '<title id="rosacea-title">玫瑰斑 4 大臨床亞型</title>' +
-        '<rect width="960" height="460" fill="#faf7f2" rx="10"/>' +
-        '<text x="480" y="40" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="22" font-weight="700" fill="#0c5159">玫瑰斑(酒糟)4 大亞型 — 一張臉可能多型並存</text>' +
-        // 4 face cards — bigger circles (r=72) and bigger fonts (16-18px)
-        '<g transform="translate(40 80)">' +
+        '<rect width="960" height="500" fill="#faf7f2" rx="10"/>' +
+        '<text x="480" y="44" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="28" font-weight="700" fill="#0c5159">玫瑰斑(酒糟)4 大亞型 — 一張臉可能多型並存</text>' +
+        // 4 face cards — bigger fonts: subtype 18→24, desc 16→20, en 13→15, treat 15→19
+        '<g transform="translate(40 90)">' +
         '<circle cx="100" cy="100" r="72" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>' +
         '<circle cx="80" cy="92" r="3" fill="#0f172a"/><circle cx="120" cy="92" r="3" fill="#0f172a"/>' +
         '<line x1="60" y1="80" x2="85" y2="86" stroke="#dc2626" stroke-width="1.4" opacity="0.6"/>' +
         '<line x1="140" y1="80" x2="115" y2="86" stroke="#dc2626" stroke-width="1.4" opacity="0.6"/>' +
-        '<text x="100" y="218" text-anchor="middle" font-family="Inter" font-size="18" font-weight="700" fill="#dc2626">ETR</text>' +
-        '<text x="100" y="244" text-anchor="middle" font-family="Noto Sans TC" font-size="16" fill="#5e574e">紅斑微血管擴張</text>' +
-        '<text x="100" y="266" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Erythematotelangiectatic</text>' +
-        '<text x="100" y="304" text-anchor="middle" font-family="Inter" font-size="15" font-weight="600" fill="#0c5159">→ Brimonidine / PDL</text>' +
+        '<text x="100" y="225" text-anchor="middle" font-family="Inter" font-size="24" font-weight="700" fill="#dc2626">ETR</text>' +
+        '<text x="100" y="254" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">紅斑微血管擴張</text>' +
+        '<text x="100" y="278" text-anchor="middle" font-family="Inter" font-size="15" fill="#8b8378">Erythematotelangiectatic</text>' +
+        '<text x="100" y="320" text-anchor="middle" font-family="Inter" font-size="19" font-weight="600" fill="#0c5159">→ Brimonidine / PDL</text>' +
         '</g>' +
-        '<g transform="translate(260 80)">' +
+        '<g transform="translate(260 90)">' +
         '<circle cx="100" cy="100" r="72" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>' +
         '<circle cx="80" cy="92" r="3" fill="#0f172a"/><circle cx="120" cy="92" r="3" fill="#0f172a"/>' +
         '<circle cx="86" cy="112" r="4" fill="#9a3412"/><circle cx="114" cy="110" r="4" fill="#9a3412"/>' +
         '<circle cx="100" cy="128" r="3.5" fill="#9a3412"/>' +
-        '<text x="100" y="218" text-anchor="middle" font-family="Inter" font-size="18" font-weight="700" fill="#dc2626">PPR</text>' +
-        '<text x="100" y="244" text-anchor="middle" font-family="Noto Sans TC" font-size="16" fill="#5e574e">丘疹膿皰</text>' +
-        '<text x="100" y="266" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Papulopustular</text>' +
-        '<text x="100" y="304" text-anchor="middle" font-family="Inter" font-size="15" font-weight="600" fill="#0c5159">→ Ivermectin / 口服</text>' +
+        '<text x="100" y="225" text-anchor="middle" font-family="Inter" font-size="24" font-weight="700" fill="#dc2626">PPR</text>' +
+        '<text x="100" y="254" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">丘疹膿皰</text>' +
+        '<text x="100" y="278" text-anchor="middle" font-family="Inter" font-size="15" fill="#8b8378">Papulopustular</text>' +
+        '<text x="100" y="320" text-anchor="middle" font-family="Inter" font-size="19" font-weight="600" fill="#0c5159">→ Ivermectin / 口服</text>' +
         '</g>' +
-        '<g transform="translate(480 80)">' +
+        '<g transform="translate(480 90)">' +
         '<ellipse cx="100" cy="100" rx="72" ry="72" fill="#fed7aa" stroke="#9a3412" stroke-width="2.5"/>' +
         '<circle cx="80" cy="92" r="3" fill="#0f172a"/><circle cx="120" cy="92" r="3" fill="#0f172a"/>' +
         '<ellipse cx="100" cy="128" rx="32" ry="20" fill="#a16207" stroke="#7c2d12" stroke-width="2"/>' +
-        '<text x="100" y="218" text-anchor="middle" font-family="Inter" font-size="18" font-weight="700" fill="#9a3412">Phymatous</text>' +
-        '<text x="100" y="244" text-anchor="middle" font-family="Noto Sans TC" font-size="16" fill="#5e574e">酒糟鼻</text>' +
-        '<text x="100" y="266" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">皮脂腺增生</text>' +
-        '<text x="100" y="304" text-anchor="middle" font-family="Inter" font-size="15" font-weight="600" fill="#0c5159">→ CO₂ 雷射 / 手術</text>' +
+        '<text x="100" y="225" text-anchor="middle" font-family="Inter" font-size="24" font-weight="700" fill="#9a3412">Phymatous</text>' +
+        '<text x="100" y="254" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">酒糟鼻</text>' +
+        '<text x="100" y="278" text-anchor="middle" font-family="Inter" font-size="15" fill="#8b8378">皮脂腺增生</text>' +
+        '<text x="100" y="320" text-anchor="middle" font-family="Inter" font-size="19" font-weight="600" fill="#0c5159">→ CO₂ 雷射 / 手術</text>' +
         '</g>' +
-        '<g transform="translate(700 80)">' +
+        '<g transform="translate(700 90)">' +
         '<circle cx="100" cy="100" r="72" fill="#fef9c3" stroke="#854d0e" stroke-width="2.5"/>' +
         '<circle cx="80" cy="92" r="9" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
         '<circle cx="120" cy="92" r="9" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
-        '<text x="100" y="218" text-anchor="middle" font-family="Inter" font-size="18" font-weight="700" fill="#854d0e">Ocular</text>' +
-        '<text x="100" y="244" text-anchor="middle" font-family="Noto Sans TC" font-size="16" fill="#5e574e">眼部酒糟</text>' +
-        '<text x="100" y="266" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">乾澀 / 結膜炎</text>' +
-        '<text x="100" y="304" text-anchor="middle" font-family="Inter" font-size="15" font-weight="600" fill="#0c5159">→ 眼科 + 口服 doxy</text>' +
+        '<text x="100" y="225" text-anchor="middle" font-family="Inter" font-size="24" font-weight="700" fill="#854d0e">Ocular</text>' +
+        '<text x="100" y="254" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">眼部酒糟</text>' +
+        '<text x="100" y="278" text-anchor="middle" font-family="Inter" font-size="15" fill="#8b8378">乾澀 / 結膜炎</text>' +
+        '<text x="100" y="320" text-anchor="middle" font-family="Inter" font-size="19" font-weight="600" fill="#0c5159">→ 眼科 + doxy</text>' +
         '</g>' +
-        '<text x="480" y="408" text-anchor="middle" font-family="Noto Sans TC" font-size="15" fill="#5e574e">⚠ 用治痘痘的高濃度 retinoid 常會加重玫瑰斑 — 治療策略完全不同</text>' +
-        '<text x="480" y="442" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Wilkin NRS 2002 · Schaller 2017 ROSCO · Reinholz S2k 2022 · Hampton 2021 BAD</text>' +
+        '<text x="480" y="442" text-anchor="middle" font-family="Noto Sans TC" font-size="18" fill="#5e574e">⚠ 用治痘痘的高濃度 retinoid 常會加重玫瑰斑 — 治療策略完全不同</text>' +
+        '<text x="480" y="478" text-anchor="middle" font-family="Inter" font-size="14" fill="#8b8378">Source: Wilkin NRS 2002 · Schaller 2017 ROSCO · Reinholz S2k 2022 · Hampton 2021 BAD</text>' +
         '</svg><figcaption>圖。玫瑰斑 4 亞型 — 同一張臉可能多型並存、治療要分層處理</figcaption></figure>';
     },
 
