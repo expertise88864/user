@@ -2493,7 +2493,7 @@
     { slug:'pediatric-eczema', title:'嬰幼兒 / 兒童異位性皮膚炎完整照護指南', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-05', emoji:'', tag_en:'Atopic dermatitis' },
     { slug:'prurigo-nodularis', title:'結節性癢疹完整衛教', cat:'rx', tag:'結節性癢疹', date:'2026-05-07', emoji:'', tag_en:'Prurigo Nodularis' },
     { slug:'cutaneous-t-cell-lymphoma', title:'皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教', cat:'rx', tag:'皮膚淋巴瘤', date:'2026-05-07', emoji:'', tag_en:'CTCL / MF' },
-    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-14', emoji:'', tag_en:'AD complete guide' },  ];
+    { slug:'atopic-dermatitis-overview', title:'異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思', cat:'rx', tag:'異位性皮膚炎', date:'2026-05-03', emoji:'', tag_en:'AD complete guide' },  ];
 
   // -----------------------------------------------------------------------
   // Article numbering — assign #001-#NNN by chronological publish order
