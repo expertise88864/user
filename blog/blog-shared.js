@@ -2032,12 +2032,17 @@
     btn.setAttribute('aria-label', 'Scroll to top');
     btn.title = '回到頂端';
     btn.innerHTML = '↑';
-    // Position adapts: on article pages the font-sizer (S/M/L/XL) sits at
-    // bottom:24px and is ~130px tall, so back-to-top stacks above with a
-    // generous 28px gap (bottom:182px). On non-article pages there is no
-    // font-sizer, so back-to-top sits at bottom:24px directly.
+    // Position adapts:
+    //   - desktop article: font-sizer at bottom:24px (~130px tall) → totop at 182px above
+    //   - mobile article: font-sizer pushed to bottom:88px (above sticky-CTA bar 64px)
+    //     → totop sits at bottom:240px to clear the font-sizer (88+130+gap)
+    //   - mobile non-article: no font-sizer, sticky-CTA at bottom — totop at bottom:88px
+    //   - desktop non-article: nothing in the way → totop at bottom:24px
     var hasFontSizer = !!document.querySelector('.prose, #proseZh, .prose-zh');
-    var bottomPos = hasFontSizer ? '182px' : '24px';
+    var isMobile = (typeof window !== 'undefined') && window.matchMedia && window.matchMedia('(max-width: 767px)').matches;
+    var bottomPos = hasFontSizer
+      ? (isMobile ? '240px' : '182px')
+      : (isMobile ? '88px'  : '24px');
     btn.style.cssText = 'position:fixed;right:18px;bottom:' + bottomPos + ';width:42px;height:42px;border-radius:50%;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;border:1px solid rgba(12,81,89,.5);box-shadow:0 8px 20px -8px rgba(12,81,89,.55);cursor:pointer;display:none;align-items:center;justify-content:center;z-index:50;font-size:18px;line-height:1;transition:transform .2s,opacity .2s';
     btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
     btn.addEventListener('mouseenter', function () { btn.style.transform = 'translateY(-2px) scale(1.05)'; });
@@ -4614,11 +4619,13 @@
     var wrap = document.createElement('div');
     wrap.id = 'dn-font-sizer';
     wrap.setAttribute('aria-label', '字型大小調整');
-    // Sits at the bottom edge; back-to-top is stacked ABOVE this (bottom:165px).
-    // Per user 2026-05-07: bookmark + print buttons removed — the font-sizer
-    // owns the bottom slot now.
+    // Sits at the bottom-right edge; back-to-top stacks above (bottom:182px).
+    // On mobile (<768px) the sticky-CTA bar (~64px) sits at bottom:0 — push
+    // font-sizer up to bottom:88px to avoid overlapping the 「關於我」 button.
+    var isMobile = (typeof window !== 'undefined') && window.matchMedia && window.matchMedia('(max-width: 767px)').matches;
+    var fsBottom = isMobile ? '88px' : '24px';
     wrap.style.cssText =
-      'position:fixed;right:18px;bottom:24px;z-index:49;display:flex;flex-direction:column;' +
+      'position:fixed;right:18px;bottom:' + fsBottom + ';z-index:49;display:flex;flex-direction:column;' +
       'background:#fff;border:1px solid var(--border, #dcd5c8);border-radius:22px;' +
       'box-shadow:0 6px 18px -8px rgba(77,99,88,.45);overflow:hidden;opacity:0;' +
       'pointer-events:none;transition:opacity .25s;';
@@ -5165,17 +5172,17 @@
       'padding-bottom:env(safe-area-inset-bottom);' +
       'transform:translateY(0);transition:transform .25s ease';
     bar.innerHTML =
+      '<a href="/" ' +
+        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
+        'data-cta="home" aria-label="首頁">' +
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>' +
+        '<span data-zh="首頁" data-en="Home">首頁</span>' +
+      '</a>' +
       '<a href="/blog/" ' +
         'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
         'data-cta="latest" aria-label="最新文章">' +
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>' +
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>' +
         '<span data-zh="最新文章" data-en="Latest">最新文章</span>' +
-      '</a>' +
-      '<a href="/#dn-hub" ' +
-        'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
-        'data-cta="find" aria-label="找文章">' +
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>' +
-        '<span data-zh="找文章" data-en="Find">找文章</span>' +
       '</a>' +
       '<a href="/about" ' +
         'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700" ' +
