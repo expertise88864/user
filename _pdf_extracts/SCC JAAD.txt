@@ -1,0 +1,2612 @@
+=== PAGE 1 ===
+Guidelines of care for the management
+of cutaneous squamous cell carcinoma
+Work Group: Murad Alam, MD, (Co-Chair),a April Armstrong, MD, MPH,b Christian Baum, MD,c
+Jeremy S. Bordeaux, MD, MPH,d Marc Brown, MD,e Klaus J. Busam, MD,f Daniel B. Eisen, MD,g
+Vivek Iyengar, MD,h Clifford Lober, MD, JD,i David J. Margolis, MD, PhD,j Jane Messina, MD,k,l
+Alexander Miller, MD,m Stanley Miller, MD,n Eliot Mostow, MD, MPH,o Christen Mowad, MD,p
+Kishwer Nehal, MD,q Kristi Schmitt-Burr,r Aleksandar Sekulic, MD, PhD,s Paul Storrs, MD,h
+Joyce Teng, MD, PhD,t Siegrid Yu, MD,u Conway Huang, MD,v Kevin Boyer, MPH,w
+Wendy Smith Begolka, MBS,w and Christopher Bichakjian, MD, (Co-Chair)x
+Invited Reviewers: John Y. S. Kim, MD,y Jeffrey H. Kozlow, MD, MS,z Bharat Mittal, MD,aa
+Jeffrey Moyer, MD,bb Thomas Olenecki, DO,cc and Phillip Rodgers, MDdd
+Chicago and Schaumburg, Illinois; Denver, Colorado; Rochester, Minnesota; Cleveland, Rootstown,
+Burton, and Columbus, Ohio; Rochester and New York, New York; Sacramento, San Francisco, Yorba
+Linda, and Stanford, California; Kissimmee and Tampa, Florida; Philadelphia, Pennsylvania; Towson
+and Danville, Maryland; Phoenix, Arizona; Birmingham, Alabama; and Ann Arbor, Michigan.
+Cutaneous squamous cell carcinoma (cSCC) is the second most common form of human cancer and has an
+increasing annual incidence. Although most cSCC is cured with ofﬁce-based therapy, advanced cSCC poses
+a signiﬁcant risk for morbidity, impact on quality of life, and death. This document provides evidence-
+based recommendations for the management of patients with cSCC. Topics addressed include biopsy
+techniques and histopathologic assessment, tumor staging, surgical and nonsurgical management, follow-
+up and prevention of recurrence, and management of advanced disease. The primary focus of these
+recommendations is on evaluation and management of primary cSCC and localized disease, but where
+relevant, applicability to recurrent cSCC is noted, as is general information on the management of patients
+with metastatic disease. ( J Am Acad Dermatol 2018;78:560-78.)
+Key words: biopsy; curettage; metastasis; phototherapy; radiotherapy; squamous cell carcinoma; staging;
+surgery; surveillance; topical therapy.
+DISCLAIMER
+Adherence to these guidelines will not ensure
+successful treatment in every situation. Furthermore,
+these guidelines should not be interpreted as setting
+a standard of care, or be deemed inclusive of all
+proper methods of care, nor exclusive of other
+methods of care reasonably directed to obtaining
+the same results. The ultimate judgment regarding
+From the Department of Dermatology,a Department of Plastic and
+Reconstructive
+Surgery,y
+and
+Department
+of
+Radiation
+Oncology, Northwestern University, Chicagoaa; Department of
+Dermatology, University of Colorado, Denverb; Department of
+Dermatology, Mayo Clinic, Rochesterc; Case Western Reserve
+University School of Medicine, Clevelandd; Department of
+Dermatology, University of Rochester, Rochestere; Dermatopa-
+thology,f Memorial Sloan-Kettering, New Yorkq; Department of
+Dermatology, University of California Davis, Sacramentog; Pri-
+vate practice, Chicagoh; Private practice, Kissimmeei; University
+of Pennsylvania Perelman School of Medicine, Philadelphiaj;
+Departments of Pathology, University of South Floridak and
+Moffitt Cancer Center, Tampal; Private practice, Yorba Lindam;
+Private practice, Towson, MDn; Dermatology Section, NEOMED,
+Rootstowno; Geisinger Medical Center, Danvillep; Basal Cell
+Carcinoma Nevus Syndrome Life Support Network, Burtonr;
+Mayo
+Clinic,
+Phoenixs;
+Stanford
+School
+of
+Medicinet;
+Dermatologic Surgery and Laser Center, University of California
+San Franciscou; Department of Dermatology, University of
+Alabama, Birminghamv; American Academy of Dermatology,
+Schaumburg, ILw; Department of Dermatology, University of
+Michigan, Ann Arborx; Section of Plastic and Reconstructive
+Surgery,z Department of Otolaryngology, Plastic/Head/Neck
+Surgery,bb and Department of Family Medicine, University of
+Michigan, Ann Arbordd; and Department of Internal Medicine,
+Ohio State University, Columbus.cc
+Funding sources: None.
+The management of conflict of interests for this guideline series
+complies with the Council of Medical Special Societies’ Code of
+Interactions with Companies. The authors’ conflict of interest/
+disclosure statements appear at the end of this article.
+Accepted for publication October 3, 2017.
+Reprint requests: guidelines@aad.org.
+Correspondence
+to:
+Wendy
+Smith
+Begolka,
+MBS,
+American
+Academy
+of
+Dermatology,
+930
+East
+Woodfield
+Rd,
+Schaumburg, IL 60173. E-mail: wsmithbegolka@aad.org.
+Published online January 10, 2018.
+0190-9622/$36.00
+ 2017 by the American Academy of Dermatology, Inc.
+https://doi.org/10.1016/j.jaad.2017.10.007
+560
+
+=== PAGE 2 ===
+the propriety of any speciﬁc therapy must be made
+by the physician and the patient in light of all the
+circumstances presented by the individual patient,
+and the known variability and biologic behavior of
+the disease. This guideline reﬂects the best available
+data at the time the guideline was prepared. The
+results of future studies may require revisions to the
+recommendations in this guideline to reﬂect new
+data.
+SCOPE
+This guideline addresses the management of
+patients with cutaneous squamous cell carcinoma
+(cSCC) from the perspective of a US dermatologist.
+Other forms of SCC, such as head and neck (ie,
+mucosal) SCC are outside the scope of this docu-
+ment, as is a discussion of cSCC in situ (Bowen
+disease). The primary focus of the guideline is on the
+most commonly considered and utilized approaches
+for the surgical and medical treatment of cSCC, but it
+also includes recommendations on appropriate bi-
+opsy techniques, staging, follow-up, and prevention
+of cSCC. A detailed discussion of speciﬁc chemo-
+therapeutic
+or
+radiotherapeutic
+approaches
+for
+distant metastatic SCC falls outside the scope of this
+guideline.
+However,
+general
+recommendations
+regarding
+the
+management
+of
+patients
+with
+advanced or metastatic SCC are included to provide
+guidance and facilitate consultation with a physician
+or multidisciplinary group with speciﬁc expertise in
+SCC, such as a surgical, medical, or radiation
+oncologist, head and neck surgeon, plastic surgeon,
+or dermatologist specializing in SCC.
+METHODS
+An expert work group was convened to deter-
+mine the audience and scope of the guideline, and to
+identify important clinical questions in the biopsy,
+staging, treatment, and follow-up of cSCC (Table I).
+Work group members completed a disclosure of
+interests that was updated and reviewed for potential
+relevant conflicts of interest periodically throughout
+guideline development. If a potential conflict was
+noted, the work group member recused himself or
+herself from discussion and drafting of recommen-
+dations pertinent to the topic area of the disclosed
+interest.
+An evidence-based approach was used and avail-
+able evidence was obtained by using a systematic
+search and review of published studies from PubMed
+and the Cochrane Library databases from January
+1960 through April 2015 for all identiﬁed clinical
+questions. A secondary search was subsequently
+undertaken to identify and review published studies
+from April 2015 to August 2016 to provide the most
+current information. Searches were prospectively
+limited to publications in the English language. As
+cSCC is traditionally known as a form of nonmela-
+noma skin cancer (NMSC), a term that also includes
+basal cell carcinoma (BCC), searches were collec-
+tively undertaken for literature on cSCC and BCC
+simultaneously, by using a set of search terms
+applicable to both cSCC and BCC. A parallel
+American Academy of Dermatology (AAD) guideline
+on BCC has also been developed.1 MeSH (Medical
+Subject Headings) terms used in various combina-
+tions in the literature search included carcinoma,
+basal cell carcinoma, squamous cell carcinoma, skin
+neoplasms, stage(ing), grade(ing), score(ing), biopsy,
+pathology,
+prognosis,
+signs
+and
+symptoms,
+risk
+factors,
+curettage,
+electrodesiccation,
+excision,
+incomplete,
+cryosurgery,
+Mohs
+(micrographic)
+surgery,
+topical,
+fluorouracil,
+imiquimod,
+laser,
+radiotherapy,
+radiation,
+photochemotherapy,
+Table I. Clinical questions used to structure the
+evidence review
+d What is the standard grading system for BCC and cSCC?
+d What are the standard biopsy techniques for BCC and
+cSCC?
+d What pathologic and clinical information is useful in the
+pathology report for BCC and cSCC?
+d What are the benefits harm and effectiveness/efficacy of
+available treatments for BCC and cSCC?
+B Surgical treatment
+d Standard excision
+d Mohs micrographic surgery
+d Curettage and electrodesiccation
+d Cryosurgery
+B Topical therapy
+d Fluorouracil
+d Imiquimod
+d Other
+B Energy devices
+d Laser
+d Photodynamic therapy (MAL* and ALA)
+d Radiation therapy
+d What are effective treatment options for the manage-
+ment of advanced BCC and cSCC?
+B Hedgehog inhibitors*
+d What are the effective methods for follow-up and
+preventing recurrence and new primary keratinocyte
+cancer formation?
+B Oral and topical retinoids
+B Celecoxib
+B a-Difluoromethylornithine
+B Selenium
+B b-Carotene
+ALA,
+Aminolevulinic
+acid;
+BCC,
+basal
+cell
+carcinoma;
+cSCC,
+cutaneous squamous cell carcinoma; MAL, methylaminolevulinate.
+*BCC only.
+J AM ACAD DERMATOL
+VOLUME 78, NUMBER 3
+Alam et al
+561
+
+=== PAGE 3 ===
+phototherapy, metastasis, vismodegib, sonidegib, pre-
+vention, prevention and control, and recurrence.
+A total of 1120 articles were reviewed for possible
+inclusion; 188 were retained on the basis of relevancy
+and the highest level of available evidence for the
+outlined clinical questions. Evidence tables were
+generated for these 188 studies and utilized by the
+work group in developing recommendations. Other
+current guidelines on cSCC were also evaluated.2-4
+The available evidence was evaluated by using
+a
+uniﬁed
+system
+called
+the
+Strength
+of
+Recommendation Taxonomy (SORT), which was
+developed by editors of the US family medicine and
+primary care journals (ie, American FamilyPhysician,
+Family Medicine, Journal of Family Practice, and BMJ
+USA).5 Evidence was graded using a 3-point scale
+based on the quality of study methodology (eg,
+randomized control trial [RCT ], case-control, prospec-
+tive/retrospective cohort, case series, etc), and the
+overall focus of the study (ie, diagnosis, treatment/
+prevention/screening, or prognosis) as follows:
+I. Good-quality
+patient-oriented
+evidence
+(ie,
+evidence
+measuring
+outcomes
+that
+matter
+to
+patients:
+morbidity,
+mortality,
+symptom
+improvement, cost reduction, and quality of life).
+II. Limited-quality patient-oriented evidence.
+III. Other evidence, including consensus guidelines,
+opinion, case studies, or disease-oriented evidence
+(ie, evidence measuring intermediate, physio-
+logic, or surrogate end points that may or may
+not reflect improvements in patient outcomes).
+Clinical recommendations were developed on the
+basis of the best available evidence tabled in the
+guideline. These are ranked as follows:
+A. Recommendation based on consistent and good-
+quality patient-oriented evidence. Recommenda-
+tion based on consistent and good-quality pa-
+tient-oriented evidence.
+B. Recommendation
+based
+on
+inconsistent
+or
+limited-quality patient-oriented evidence.
+C. Recommendation based on consensus, opinion,
+case studies, or disease-oriented evidence.
+In situations in which published evidence-based
+data were not available, expert opinion of the
+authors
+was
+utilized
+to
+generate
+clinical
+recommendations.
+This guideline has been developed in accordance
+with
+the
+AAD/AAD
+Association
+Administrative
+Regulations for Evidence-Based Clinical Practice
+Guidelines, which includes the opportunity for re-
+view and comment by the entire AAD membership
+and final review and approval by the AAD Board of
+Directors.6 An additional multidisciplinary panel of
+invited reviewers was utilized to provide cross-
+specialty comments on the draft guideline. This
+guideline will be considered current for a period of
+5 years from the date of publication, unless reaf-
+firmed, updated, or retired at or before that time.
+INTRODUCTION
+cSCC is the second most common skin cancer and
+the second most common form of keratinocyte
+carcinoma after BCC. Like BCC, cSCC is increasing
+in incidence throughout the world. In the United
+States, lifetime risk for development of cSCC is
+estimated at 9% to 14% for men and 4% to 9% for
+women.7 Each year in the United States, at least
+200,000 to 400,000 new cases of cSCC are expected,
+and disease-related death occurs in more than 3000
+people with cSCC.8 A Canadian study also detected
+an increase in annual incidence in cSCC of more than
+200% in both men and women from 1960 to 2000.9
+According to a study of US health care workers that
+analyzed prospective questionnaires obtained from
+more than 250,000 participants enrolled in 3 large
+cohort studies from 1976 to 2008, the incidence of
+invasive cSCC increased over 18 years of follow-
+up.10
+Although many factors can increase the risk for
+cSCC, cumulative sun exposure, especially in child-
+hood and youth, is of greatest importance. In recent
+years, immunosuppression, including that associ-
+ated with organ transplantation,11 has emerged as an
+increasingly important contributor to tumorigenesis.
+cSCC can develop on any skin surface. In fair-
+skinned individuals, who are at highest risk, sun
+exposed areas, including the head and neck and the
+backs of the arms and hands, are common anatomic
+sites.12 Awareness is growing that patients with skin
+of color are also at risk, with tumors in these patients
+sometimes emerging in sun-protected sites or in
+areas of chronic inflammation.13
+Abbreviations used:
+AAD:
+American Academy of Dermatology
+AJCC:
+American Joint Committee on Cancer
+BCC:
+basal cell carcinoma
+BWH:
+Brigham and Women’s Hospital
+C&E:
+curettage and electrodesiccation
+CT:
+computed tomography
+5-FU:
+5-ﬂuorouracil
+MM:
+malignant melanoma
+MMS:
+Mohs micrographic surgery
+NCCN:
+National Comprehensive Cancer Network
+PI:
+principal investigator
+RCT:
+randomized controlled trial
+cSCC:
+cutaneous Squamous Cell carcinoma
+SLNB:
+sentinel lymph node biopsy
+SOTR:
+solid organ transplant recipient
+J AM ACAD DERMATOL
+MARCH 2018
+562
+Alam et al
+
+=== PAGE 4 ===
+The treatment of cSCC has long been a substantial
+component of the clinical practice of dermatologists,
+who are well versed in the numerous available
+therapeutic options. These clinical practice guide-
+lines provide evidence-based recommendations for
+clinical treatment and management of patients with
+cSCC. Information pertaining to widely utilized
+therapies, ranging from curettage and electrodesic-
+cation (C&E) to Mohs micrographic surgery (MMS),
+is reviewed. The quality of the evidence regarding
+emerging treatment modalities, such as topical and
+systemic medications and devices, is also discussed.
+Recommendations regarding staging, biopsy tech-
+nique, prevention, and follow-up are made on the
+basis of the best available literature.
+Recently, the diagnosis and treatment of cSCC
+among older adults with limited life expectancy has
+become an important and valid topic of discus-
+sion.14,15 A clear distinction between advanced age
+and limited life expectancy is critical to this debate,
+as they are by no means synonymous. Every derma-
+tologist is familiar with healthy, energetic nonage-
+narians, who justifiably desire and deserve treatment
+of their cSCC with a modality that provides optimal
+cure rate and quality of life. Conversely, significant
+medical comorbidities at any age may justify a
+therapeutic option that may have a lower long-term
+cure rate but is most appropriate with regard to
+quality of life. In select circumstances and after
+careful consideration with their health care provider,
+patients may understandably prefer observation over
+any form of treatment. A thorough understanding of
+the entire spectrum of therapies available for cSCC
+and the evidence on which each treatment recom-
+mendation is based is critical to selecting and
+providing care optimally tailored to individual
+patients.
+Although many recommendations in these guide-
+lines reafﬁrm prevailing knowledge and current
+practice, some recommendations highlight alterna-
+tive therapeutic or preventive options that are less
+widely considered or are supported by insufﬁcient
+evidence. As the incidence of keratinocyte carci-
+noma in the United States continues to increase,16 a
+thorough understanding of the management of cSCC
+and the evidence on which recommendations are
+based is critically important for optimal patient care.
+GRADING AND STAGING
+A universally accepted staging system for risk
+stratiﬁcation of cSCC is not yet available. Until 2010,
+cSCC was grouped in the American Joint Committee
+on Cancer (AJCC) staging manual with a multitude of
+other cutaneous malignancies.17 In the seventh edi-
+tion of the staging manual, which was published in
+2010, cSCC was specifically addressed in the chapter
+‘‘Cutaneous Squamous Cell Carcinoma and Other
+Cutaneous Carcinomas.’’18 In the recently published
+eighth edition, cSCC is included in the chapter
+‘‘Cutaneous Squamous Cell Carcinoma of the Head
+and Neck.’’19 Although the chapter focuses primarily
+on cSCC, the staging system applies to all histologic
+subtypes of carcinoma limited to the head and neck,
+with the exception of Merkel cell carcinoma.
+Several studies have evaluated various aspects of
+the seventh edition of the AJCC staging system for
+cSCC
+and
+consistently
+identiﬁed
+unsatisfactory
+prognostication among stage groups.20 In 2013,
+Brunner et al noted the heterogeneous nature of
+stage group IV, and in 2014 they pointed out that
+nodal classification demonstrated less prognostic
+significance in cSCC than in mucosal SCC.21,22 In
+2013, Jambusaria-Pahlajani et al proposed an alter-
+native tumor classification system for cSCC on the
+basis of a retrospective cohort study.23 This alter-
+native Brigham and Women’s Hospital (BWH)
+system classifies tumor categories on the basis of
+presence of several clinical and pathologic risk
+factors, as summarized in Table II. The BWH
+system was validated by an expanded retrospective
+cohort from the same group, as well as by an
+independent
+systematic
+literature
+review.24,25
+Although the BWH system does not address nodal
+and metastasis classifications and advanced stage
+groups as the AJCC staging system does, it appears
+to provide superior prognostication for patients
+with localized cSCC. Further validation by inde-
+pendent cohorts, as well as clinical trials regarding
+nodal staging and adjuvant therapy, will be needed
+to determine the clinical utility of the proposed
+staging system.
+Current National Comprehensive Cancer Network
+(NCCN) clinical practice guidelines for cSCC provide
+Table II. Brigham and Women’s Hospital tumor
+classification system
+Category
+Definition
+T0
+In situ SCC
+T1
+0 risk factors*
+T2a
+1 risk factor
+T2b
+2-3 risk factors
+T3
+4 risk factors or bone invasion
+Reprinted with permission.23 Copyright 2013 American Medical
+Association. All rights reserved.
+SCC, Squamous cell carcinoma.
+*Risk factors include tumor diameter 2 cm or larger, poorly
+differentiated histology, perineural invasion, and tumor invasion
+beyond
+the
+subcutaneous
+fat
+(excluding
+bone,
+which
+automatically upgrades to T3).
+J AM ACAD DERMATOL
+VOLUME 78, NUMBER 3
+Alam et al
+563
+
+=== PAGE 5 ===
+an approach to stratifying high-risk and low-risk
+tumors, similar to that used for BCC.3 This stratifica-
+tion, summarized in Table III, takes both clinical and
+pathologic parameters into account and is based on a
+combination
+of available evidence and expert
+opinion. The NCCN risk stratification is primarily
+intended to provide health care providers with
+practical clinical guidance on how to treat cSCC
+rather than to provide accurate prognostication and
+assess outcome as the BWH system does. For this
+reason, treatment recommendations throughout the
+currently presented guidelines are based on the
+NCCN risk stratification (for the recommendations,
+see Table IV; for the level of evidence/strength of the
+recommendations, see Table V2,3,20-50).
+On the basis of the low overall risk for nodal
+and distant metastases in cSCC, staging imaging
+studies are rarely indicated. Although very limited
+data are available on the value of such studies in
+cSCC, imaging to evaluate for nodal metastasis (eg,
+computed
+tomography,
+F-ﬂuorodeoxyglucose
+positron emission tomography/computed tomog-
+raphy, or ultrasound) may be considered for
+high-risk
+tumors
+(eg,
+BWH
+category
+$T2b).
+Imaging may also be considered to assess for
+deep
+structural
+involvement
+with
+extensive
+localized disease.51 A thorough clinical examina-
+tion of the regional lymph node basins should
+always be performed.
+The value of sentinel lymph node biopsy (SLNB)
+in cSCC is currently unknown. Tumor size and
+thickness, as well as angiolymphatic and perineural
+invasion, have been proposed as risk factors for
+sentinel lymph node positivity, but small study sizes
+limit the assessment of prognostic parameters.
+Retrospective and prospective case series have
+demonstrated successful detection of occult nodal
+metastases and suggested a prognostic role in
+patients with high-risk tumors.52,53 However, the
+effect of SLNB on management and outcome of
+Table III. National Comprehensive Cancer Network stratification of low versus high risk cSCC
+Parameters
+Low risk
+High risk
+Clinical
+Location*/sizey
+Area L \20 mm
+Area L $20 mm
+Area Mz \10 mm
+Area M $10 mm
+Area Hx
+Borders
+Well defined
+Poorly defined
+Primary vs recurrent
+Primary
+Recurrent
+Immunosuppression
+No
+Yes
+Site of prior radiation therapy or chronic inflammatory
+process
+No
+Yes
+Rapidly growing tumor
+No
+Yes
+Neurologic symptoms
+No
+Yes
+Pathologic
+Degree of differentiation
+Well to moderately differentiated
+Poorly differentiated
+High-risk histologic subtypek
+No
+Yes
+Depth (thickness or Clark level){
+\2 mm, or I, II, III
+$2 mm or IV, V
+Perineural, lymphatic, or vascular involvement
+No
+Yes
+Reprinted with permission.3
+cSCC, Cutaneous squamous cell carcinoma.
+*Area L consists of trunk and extremities (excluding hands, feet, nail units, pretibia, and ankles); area M consists of cheeks, forehead, scalp,
+neck, and pretibia; and area H consists of central face, eyelids, eyebrows, periorbital skin, nose, lips, chin, mandible, preauricular and
+postauricular skin/sulci, temple, ear, genitalia, hands, and feet.
+yGreatest tumor diameter, including peripheral rim of erythema.
+zLocation independent of size may constitute high risk.
+xArea H constitutes high-risk on the basis of location, independent of size.
+kAdenoid (acantholytic), adenosquamous (showing mucin production), desmoplastic, or metaplastic (carcinosarcomatous) subtypes.
+{A modified Breslow measurement should exclude parakeratosis or scale/crust and should be made from base of the ulcer is present. If
+clinical evaluation of incisional biopsy suggests that microstaging is inadequate, consider narrow-margin excisional biopsy.
+Table IV. Recommendations for grading and
+staging of cSCC
+Stratification of localized SCCs using the NCCN guideline
+framework is recommended for clinical practice.
+Clinicians should refer to the BWH tumor classification
+system to obtain the most accurate prognostication of
+patients with localized cSCC.
+BWH, Brigham and Women’s Hospital; cSCC, cutaneous squamous
+cell carcinoma; NCCN, National Comprehensive Cancer Network;
+SCC, squamous cell carcinoma.
+J AM ACAD DERMATOL
+MARCH 2018
+564
+Alam et al
+
+=== PAGE 6 ===
+patients with cSCC is unknown; enrollment of high-
+risk patients in clinical trials is encouraged, when
+available.
+BIOPSY
+The available literature does not identify a single
+optimal biopsy technique for sampling lesions sus-
+pected of being cSCC. Recommended biopsy tech-
+niques for cSCC include punch biopsy, shave (eg, by
+tangential technique) biopsy,a and excisional bi-
+opsy. Excisional biopsy is distinguished from exci-
+sion with margins in that the intent of the former is to
+determine and/or confirm diagnosis, whereas the
+intent of the latter is to remove the tumor. For all
+techniques, the biopsy specimen size and depth
+should be adequate to provide the recommended
+clinical information and pathology report elements
+to permit accurate diagnosis and guide therapy,
+including
+by
+identifying
+an
+aggressive
+growth
+pattern if present. Repeat biopsy may be considered
+if the initial biopsy specimen is inadequate for
+accurate diagnosis. The recommendations for biopsy
+of suspected cSCC are shown in Table VI, and the
+level of evidence/strength of the recommendation is
+presented in Table V.
+Selection of the speciﬁc biopsy technique is
+contingent on the clinical characteristics of the
+suspected tumor, including morphology, expected
+histologic subtype and depth, natural history, and
+anatomic location; patient-speciﬁc factors, such as
+bleeding and wound healing diatheses; and patient
+preference and physician judgment. Most investiga-
+tions that have compared biopsy methods for
+detection of NMSC have studied BCC rather than
+Table V. Level of evidence and strength of recommendations for grading and staging, biopsy, clinical
+information, and pathology report for the treatment of cSCC
+Recommendation
+Strength of recommendation
+Level of evidence
+References
+Grading and staging
+AJCC
+B
+II
+20-25
+BWH
+B
+II
+23-25
+NCNN
+C
+III
+2,3
+Biopsy
+C
+II, III
+26-32
+Clinical information provided to pathologist
+Age
+A
+I, II
+33-35
+Sex
+B
+II
+34,36
+Anatomic location
+B
+I, II
+34-43
+Recurrent lesion
+A
+I, II
+41,44,45
+Size of lesion
+A
+I, II
+23,37-45
+Immunosuppression
+B
+I, II
+20,23,39,43,46
+History, especially radiation, burn, organ transplant
+B
+II
+20,41,47,48
+Pathology report elements
+Degree of differentiation*
+B
+I, II
+23,35,37,39-44
+Presence of aggressive histologic subtypey
+B
+I, II
+39,40
+Depth of invasion, mm
+A
+I, II
+23,33,39,42-45
+Clark level of invasion
+B
+II
+40,41
+Perineural invasion
+A
+I, II
+23,33,37,40-45
+Lymphovascular invasion
+A
+I, II
+37,44
+Invasion of fascia, muscle, or bone
+A
+I, II
+23,33,44,45
+No. of high-risk featuresz
+C
+III
+Expert opinion
+Margin status
+B
+II
+20,34,36
+TNM stage (AJCC)
+A
+I
+23,33
+Inflammation
+A
+I
+33,44
+Infiltrative strands, single cells, small nests
+B
+II
+40
+Diameter of largest involved nerve
+B
+II
+49,50
+AJCC, American Joint Committee on Cancer; BWH, Brigham and Women’s Hospital; cSCC, cutaneous squamous cell cancer; NCCN, National
+Comprehensive Cancer Network; TNM, tumor, node, metastasis.
+*Well differentiated, moderately differentiated, poorly differentiated, or undifferentiated.
+yAcantholytic, adenosquamous, or carcinosarcomatous subtypes.
+zHigh-risk features include thickness greater than 2 mm, Clark level IV or V, poorly differentiated/undifferentiated, site on mucosa lip or ear,
+perineural invasion, and lymphovascular invasion.
+aShave biopsies are not necessarily superficial, tangential shaves of
+tissue. We use the term shave for biopsies that are saucerize or
+scoop techniques that may penetrate deep into the dermis.
+J AM ACAD DERMATOL
+VOLUME 78, NUMBER 3
+Alam et al
+565
+
+=== PAGE 7 ===
+cSCC.26-32 However, given the similarity in the depth
+and anatomic distribution of many BCC and cSCC
+tumors, the findings of these studies are likely
+applicable also to biopsy of cSCC. Specifically, it is
+likely that initial punch or shave biopsies can detect
+the relevant histologic characteristics for the vast
+majority of sampled cSCC tumors. When recurrent
+tumor, deep invasion, or other aggressive features
+are suspected, more extensive tissue resection or
+multiple scouting biopsies may be needed to detect
+these features if more superficial methods are
+insufficient. The need to obtain information through
+biopsy is counterbalanced by the patient and physi-
+cian preferences to minimize biopsy-associated
+discomfort, trauma, risk for wound infection or
+dehiscence, scar, or loss of function, particularly on
+the head, neck, and other vital, functional, sensory,
+or cosmetically sensitive sites.
+Clinical and pathologic information
+A presumptive diagnosis of cSCC is based on the
+physician’s interpretation of clinical information,
+including appearance and morphology, anatomic
+location, and patient-reported history. Clinical diag-
+nosis is routinely conﬁrmed by biopsy ﬁndings
+before treatment. When the clinician is submitting
+biopsy tissue for histopathologic diagnosis, and
+when possible and appropriate, key elements of
+the patient demographics, clinical presentation, and
+history should be provided to the pathologist (Table
+VII; for level of evidence/strength of recommenda-
+tions, see Table V). These include patient age and
+biologic sex,33-36 anatomic location of the tumor,34-41
+and any history of treatment at the same anatomic
+site.34-43 Additional desirable relevant information
+may include the clinical size of the lesion23,37-45 and
+whether the patient currently has, or in years past
+had, additional risk factors, such as immunosuppres-
+sion,20,23,39,43,46 radiation treatment, or solid organ
+transplantation.20,41,47,48 Although not prognostically
+relevant, information regarding ongoing treatment
+that may or may not contribute to cSCC pathogenesis
+(eg, kinase or hedgehog pathway inhibitor) may be
+diagnostically useful.
+The principal purpose of the biopsy pathology
+report is to provide the clinician with an accurate
+diagnosis of the presence (or absence) of cSCC. If
+cSCC is detected, additional features that are re-
+ported include degree of differentiation and, when
+possible and appropriate, any features that would
+classify the lesion as high risk, including aggressive
+histologic subtypes (acantholytic, adenosquamous,
+and carcinosarcomatous), depth greater than 2 mm
+(measured from the granular layer of the adjacent
+Table VI. Recommendations for the biopsy of
+suspected cSCC
+The recommended biopsy techniques for cSCC are punch
+biopsy, shave biopsy, and excisional biopsy. The biopsy
+technique used will depend on the characteristics of the
+suspected malignancy (morphology, location, etc) and
+the judgment of the physician.
+The biopsy size and depth should be adequate to provide
+the recommended clinical information and pathology
+report elements to permit accurate diagnosis and guide
+therapy.
+Repeat biopsy may be considered if the initial biopsy
+specimen is inadequate for accurate diagnosis.
+cSCC, Cutaneous squamous cell cancer.
+Table VII. Recommendations for clinical
+information and pathology report for suspected
+cSCC
+Clinical information provided to pathologist
+Strongly recommended
+d Age
+d Sex
+d Anatomic location
+d Recurrent lesion
+Recommended
+d Size of lesion
+d Immunosuppression
+d History
+(especially
+radiation,
+burn,
+organ
+transplant)
+Elements to be included in final pathology report (excision
+specimens)
+Strongly recommended
+d Degree of differentiation*
+d Presence of aggressive histologic subtypey
+d Depth of invasion, mm
+d Clark level of invasion
+d Perineural invasion
+d Lymphovascular invasion
+d Invasion of fascia, muscle, or bone
+d Number of high-risk featuresz
+d Margin status
+d TNM stage (AJCC)
+Recommended
+d Inflammation
+d Infiltrative strands, single cells, small nests
+d Diameter of largest involved nerve
+AJCC, American Joint Committee on Cancer; cSCC, cutaneous
+squamous cell carcinoma; TNM, tumor, node, metastasis.
+*Welldifferentiated,moderately differentiated,poorlydifferentiated,
+or undifferentiated.
+yAcantholytic, adenosquamous, or carcinosarcomatous subtypes.
+zHigh-risk features include thickness greater than 2 mm, Clark level
+IV or V, poorly differentiated/undifferentiated, site on mucosa lip or
+ear, perineural invasion, and lymphovascular invasion.
+J AM ACAD DERMATOL
+MARCH 2018
+566
+Alam et al
+
+=== PAGE 8 ===
+intact epidermis), Clark level IV or greater, and
+presence of perineural and/or angiolymphatic inva-
+sion. The presence of prognostically favorable fea-
+tures, such as histopathologic subtype, including
+verrucous
+carcinoma
+and
+keratoacanthomatous
+SCC, may be clinically useful.
+For excision specimens, the extent of the reported
+detail depends on whether it represents a primary
+excisional
+biopsy
+or
+re-excision
+of
+a
+biopsy-
+conﬁrmed tumor. Any new prognostically relevant
+ﬁndings should be noted. It is recommended that the
+following
+items
+be
+reported,
+if
+possible
+and
+appropriate: the
+degree of cellular differentia-
+tion23,35,37,39-44;
+presence
+of
+any
+aggressive
+histologic subtypes39,40; depth of invasion in milli-
+meters23,33,39,42-45;
+anatomic
+(Clark)
+level
+of
+invasion40,41; presence of any perineural inva-
+sion23,33,37,40-45; presence of any lymphovascular
+invasion37,44; description of any invasion of fascia,
+muscle, or bone23,33,44,45; margin status (involved or
+not involved by tumor) 20,34,36; the number of high-
+risk features present and the relevant TNM (tumor,
+node, and metastasis) stage based on current AJCC
+criteria (Table VII) (for level of evidence/strength of
+recommendations, see Table V).18,23,33 In selected
+cases, other elements that have been shown to have
+prognostic significance for clinical care may addi-
+tionally be reported; they include the presence of
+inflammation33,44 or infiltrative strands, single cells,
+or small nests of tumor.40 When perineural invasion
+is observed, the diameter of the largest affected nerve
+(eg, when $ 0.1 mm) may be reported, if this is
+deemed to be clinically significant.49,50 With regard
+to margin status, if a cSCC with aggressive features
+extends close to a margin, it should be reported.
+Pathologic evaluation of skin biopsy specimens is
+ideally performed by a dermatologist or pathologist
+who is experienced in interpreting cutaneous neo-
+plasms. Such a physician is most able to collectively
+interpret the clinical tumor ﬁndings and the histologic
+features (ie, clinicopathologic correlation) to provide
+the most precise and accurate biopsy diagnosis.
+SURGICAL TREATMENT
+It is generally accepted that the majority of cSCCs
+are successfully treated with standard treatment
+modalities, such as surgical excision. However, there
+is a subset of tumors with increased risk for local
+recurrence, perineural spread, and even nodal or
+distant metastasis, particularly in immunocompro-
+mised individuals. Unfortunately, a systematic re-
+view of the literature reveals a complete absence of
+RCTs and a general paucity of prospective trials
+assessing the effectiveness of primary surgical in-
+terventions for cSCC.54 Treatment recommendations
+are generally based on retrospective data, consensus
+opinion, and extrapolation from data on BCC or non-
+cSCC of the head and neck. When the most appro-
+priate therapy is being chosen, recurrence rate,
+preservation of function, patient expectations, and
+potential
+adverse
+effects
+must
+be
+taken
+into
+consideration.55
+In this section, the available data on the most
+commonly used surgical treatment modalities for
+cSCC, including standard excision, MMS, and C&E,
+will be reviewed. Nonsurgical therapies will be
+addressed separately.
+Standard excision
+cSCC, similar to BCC, is characterized by asym-
+metric subclinical extension of the tumor beyond the
+clinically visible lesion. To ensure complete removal
+with histologically negative margins, standard exci-
+sion with ‘‘bread loaf’’ histopathologic sectioning
+must include a margin of clinically normaleappear-
+ing skin around the tumor and surrounding ery-
+thema. To our knowledge, no RCT comparing
+different excision margins for cSCC has been per-
+formed. An extensive systematic review of observa-
+tional studies on interventions for cSCC by Lansbury
+et al identiﬁed 12 studies addressing standard
+excision of cSCC, mostly retrospective case series
+of limited quality and with variable follow-up
+periods.54 The authors reported an average local
+recurrence rate of 5.4% (95% confidence interval,
+2.5-9.1 [n = 1144]) among all studies, with excision
+margins ranging from 2 to 10 mm. Incomplete
+excisions were reported in 8.8% of all cases, although
+the definitions of an incomplete excision varied
+widely. In 1992, Brodland and Zitelli reported that
+4-mm margins were required to achieve at least 95%
+clearance rates when excising cSCC using MMS.56 In
+the same study, for high-risk lesions larger than 2 cm
+in clinical diameter or with higher histologic grade, at
+least 6-mm margins were required to achieve 95%
+clearance rates. On the basis of the limited available
+data and consensus opinion, NCCN guidelines
+recommend 4- to 6-mm clinical margins for standard
+excision of low-risk cSCC (Table III).3
+Given the limited available data, the work group
+recommends standard excision with a 4- to 6-mm
+margin of uninvolved skin around the tumor and/or
+biopsy site to a depth of the mid-subcutaneous
+adipose tissue with histologic margin assessment
+for low-risk primary cSCC (on the basis of NCCN risk
+stratiﬁcation [Table III]). Standard excision may be
+considered for select high-risk tumors. However,
+strong caution is advised when selecting a treatment
+modality without complete margin assessment for
+high-risk
+cSCC.
+The
+insufficient
+data
+preclude
+J AM ACAD DERMATOL
+VOLUME 78, NUMBER 3
+Alam et al
+567
+
+=== PAGE 9 ===
+recommendation of defined peripheral and deep
+margins for excision of high-risk tumors with stan-
+dard excision. When standard excision is performed
+for high-risk tumors, a linear repair, skin graft, or
+healing by second intention are recommended. If a
+repair requiring significant tissue rearrangement is
+indicated, closure should be delayed until negative
+histologic margins are confirmed. Recommendations
+for standard excision of cSCC are summarized in
+Table VIII. The strength of these recommendations is
+shown in Table IX.41,54,55,57,58
+MMS
+Dr Frederic Mohs ﬁrst described the use of
+chemosurgery for the removal of difﬁcult or recur-
+rent cutaneous tumors in the 1940s.59,60 Three de-
+cades later, the concept of en face horizontal
+sectioning for complete peripheral and deep margin
+control pioneered by Mohs to achieve optimal cure
+rates and maximum tissue conservation was adapted
+to the ‘‘fresh tissue’’ technique by Tromovitch and
+Stegman.61 This modification eliminated the pain
+from in vivo fixation with zinc chloride paste,
+shortened the time required to perform surgery and
+allowed immediate repair of a fresh surgical wound.
+Microscopic controlled excision, later referred to as
+MMS, was recommended for all recurrent or poorly
+defined tumors, for sclerosing BCC, and for all
+primary cutaneous carcinomas in areas with a pre-
+dilection for recurrence.62
+Since that time, the use of MMS has signiﬁcantly
+increased and indications have expanded to include
+many
+other
+cutaneous
+malignancies,
+including
+cSCC. In 2012, a combined task force of the AAD,
+American
+College
+of
+Mohs
+Surgery,
+American
+Society for Dermatologic Surgery Association, and
+American Society for Mohs Surgery developed
+appropriate use criteria for MMS.63 However, to
+date,
+no
+RCTs
+or
+prospective
+cohort
+studies
+comparing MMS with other treatment modalities for
+the treatment of cSCC have been performed. In a
+systematic review of the literature since 1940, Rowe
+et al, reported a 5-year local recurrence rate of 3.1%
+(n = 2065) for primary cSCC treated with MMS.41 In
+comparison, the 5-year recurrence rates for C&E,
+standard excision, and radiation therapy were 3.7%
+(n = 82), 8.1% (n = 124), and 10.0% (n = 160),
+respectively. When high-risk factors were taken into
+account,
+MMS
+showed
+lower
+recurrence
+rates
+compared with standard excision and other non-
+MMS treatment modalities: 25.2% versus 41.7% for
+tumors 2 cm or larger, 32.6% versus 53.6% for poorly-
+differentiated cSCC, and 0% versus 47% for neuro-
+tropic cSCC. For recurrent cSCC, the meta-analysis by
+Rowe et al revealed a 5-year recurrence rate after
+MMS of 10.0% (n = 151) compared with 23.3%
+(n = 34) following standard excision. Similar 5-year
+recurrence rates for recurrent cSCC treated with MMS
+(ranging between 6% and 11%) were reported by
+others.57,64
+In the absence of high-level data, extrapolation
+from a recent RCT demonstrating the beneﬁt of MMS
+for primary and recurrent facial BCC may be
+justiﬁed to support the use of MMS for high-risk
+cSCC.58 A large percentage of cSCCs are located on
+the head and neck, where tissue conservation is
+important. Similar to BCC, cSCC is characterized
+histologically by asymmetric subclinical extension
+beyond the clinically visible tumor, but it presents
+with perineural involvement more frequently than
+BCC does.65 Both histopathologic features would
+support the importance of meticulous and complete
+margin assessment with MMS. However, aggressive
+histopathologic growth patterns poorly visualized
+with frozen sections (eg, sarcomatoid/spindle cell
+or single cell infiltrative cSCC) may limit the utility of
+MMS under certain circumstances. An additional
+limitation is that tissue blocks from MMS layers are
+not available for molecular testing or further eval-
+uation of high-risk or unusual features by using
+paraffin sections.66 To overcome this challenge, the
+tumor debulk specimen may be submitted for
+paraffin sections to document high-risk features
+and obtain ancillary molecular studies, if indicated,
+without compromising the integrity of the MMS
+procedure.67 Alternatively, key pathologic high risk
+features can be documented in the Mohs report to
+facilitate prognostic assessment and guide post-
+operative management when indicated. Careful
+selection, on the basis of initial biopsy results, of
+Table VIII. Recommendations for the surgical
+treatment of cSCC
+A treatment plan that considers recurrence rate,
+preservation of function, patient expectations, and
+potential adverse effects is recommended.
+C&E may be considered for low-risk, primary cSCC in none
+terminal hairebearing locations.
+For low-risk primary cSCC, standard excision with a 4- to
+6-mm margin to a depth of the mid-subcutaneous
+adipose tissue with histologic margin assessment is
+recommended.
+Standard excision may be considered for select high-risk
+tumors. However, strong caution is advised when
+selecting a treatment modality for high-risk tumors
+without a complete margin assessment.
+MMS is recommended for high-risk cSCC.
+C&E, Curettage and electrodessication; cSCC, cutaneous squamous
+cell carcinoma; MMS, Mohs micrographic surgery.
+J AM ACAD DERMATOL
+MARCH 2018
+568
+Alam et al
+
+=== PAGE 10 ===
+tumors appropriate for treatment with MMS and
+evaluation by frozen sections will minimize these
+limitations.
+On the basis of the best available data, the
+work group recommends MMS for the treatment of
+high-risk cSCC (on the basis of NCCN risk stratiﬁca-
+tion [Table VIII]; for level of evidence/strength of
+recommendation, see Table IX).
+C&E
+C&E is regularly used in daily practice for the
+treatment of low-risk cSCC. However, no RCTs have
+been performed and no prospective data are avail-
+able to compare C&E with other treatment modal-
+ities. In the aforementioned systematic review by
+Lansbury et al, 8 retrospective series of variable
+follow-up periods that addressed C&E were identi-
+ﬁed.54 A pooled analysis revealed a recurrence
+rate of 1.7% (95% confidence interval, 0.5-3.4
+[n = 1131]). Small, individual studies suggested
+higher recurrence rates for lesions greater than
+2 cm in diameter or located on the ear and treated
+with C&E.
+The limited available data suggest that C&E is an
+effective treatment modality for properly selected
+tumors, although results are highly operator depen-
+dent.68 It is the work group’s opinion that C&E may
+be considered for small, low-risk primary cSCC (on
+the basis of NCCN risk stratification [Table VIII]; for
+level of evidence/strength of recommendation, see
+Table IX). Lesions on terminal hairebearing skin (the
+scalp, pubic, axillary regions, and the beard area in
+men) should be excluded from treatment with C&E
+because of potential follicular extension of tumor.3
+Moreover, C&E may be associated with a longer
+healing
+time
+and
+inferior
+cosmetic
+outcome
+compared with standard excision and is best avoided
+in cosmetically sensitive areas.69
+NONSURGICAL TREATMENT
+In general, treatment of cSCC is most effectively
+accomplished by surgical therapy. There are rela-
+tively few exceptions to this guiding principle,
+especially for high-risk cSCC, because of the poten-
+tial for recurrence and metastasis. If surgical therapy
+is not feasible or elected, nonsurgical approaches
+may be considered when tumors are low risk, with
+the understanding that the cure rate may be lower.
+Further research is needed to better establish the
+comparative safety and effectiveness of nonsurgical
+therapies
+for
+cSCC.
+The
+recommendations
+for
+nonsurgical treatments are shown in Table X. The
+level of evidence/strength of the recommendations
+is listed in Table XI.54,70-79
+PDT
+Photodynamic therapy (PDT) is a 2-part treatment
+consisting of topical application of a photosensitizer,
+either 5-aminolevulinic acid (ALA) or methylamino-
+levulinate (MAL), followed by 1 to several hours of
+incubation by light irradiation, typically with a blue,
+red, or broadband light source.80-91 Available data for
+PDT and laser therapy do not currently support the
+Table X. Recommendations for the nonsurgical
+therapy of cSCC
+If surgical therapy is not feasible or preferred, radiation
+therapy (eg, superficial radiation therapy, brachytherapy,
+external electron beam therapy, and other traditional
+radiotherapy forms) can be considered when tumors are
+low risk, with the understanding that the cure rate may
+be lower.
+Cryosurgery may be considered for low-risk cSCC when
+more effective therapies are contraindicated or
+impractical.
+Topical therapies (imiquimod or 5-FU) and PDT are not
+recommended for the treatment of cSCC on the basis of
+available data.
+There is insufficient evidence available to make a
+recommendation on the use laser therapies or electronic
+surface brachytherapy in the treatment of cSCC.
+cSCC, Cutaneous squamous cell carcinoma; 5-FU, 5-fluorouracil;
+PDT, photodynamic therapy.
+Table IX. Level of evidence and strength of recommendations for the surgical treatment of cSCC
+Recommendation
+Strength of recommendation
+Level of evidence
+References
+Treatment plan
+A
+II
+55
+Standard excision with 4- to 6-mm margins for low-risk
+primary SCC*
+B
+II
+54
+Standard excision for high-risk SCC
+B
+II
+54
+C&E for low-risk primary SCC*
+B
+II, III
+54
+MMS for high-risk SCC*
+B
+II, III
+41,54,57,58
+C&E, Curettage and electrodessication; cSCC, cutaneous squamous cell carcinoma; MMS, Mohs micrographic surgery; SCC, cutaneous
+squamous cell carcinoma.
+*As defined by the National Comprehensive Cancer Network.
+J AM ACAD DERMATOL
+VOLUME 78, NUMBER 3
+Alam et al
+569
+
+=== PAGE 11 ===
+efficacy of either modality in the treatment of cSCC.54
+Limited case report and case series data suggest that
+PDT may be used as an adjuvant modality in com-
+bination with curettage92 and surgery93 for invasive
+cSCC in high-risk patients such as solid organ trans-
+plant recipients (SOTRs) and potentially to spare
+tissue, but the specific contribution of PDT to
+observed outcomes in such combination approaches
+is uncertain.
+When PDT is combined with surgery, multiple
+PDT treatments may be used. Exacerbation or in-
+duction of well-differentiated cSCC or keratoacan-
+thoma after PDT has however been reported.94
+Topical therapies
+The available data do not currently support the
+use of topical modalities for the treatment of cSCC.
+Published studies investigating the use of topical
+imiquimod
+or
+5-ﬂuorouracil
+(5-FU)
+for
+cSCC
+(excluding SCC in situ) are limited to case reports
+for imiquimod and 2 small case series for 5-FU.54,78,79
+Variable lengths of follow-up and histologic clear-
+ance limit the strength of these data.54 Because use of
+5-FU typically results in marked erythema, erosions,
+and crust lasting for a month or longer, decreased
+patient compliance with treatment regimens may
+result in diminished effectiveness. Similarly, imiqui-
+mod dosing for cSCC is complicated by the resultant
+tissue effects, including erythema, edema and ero-
+sions, ulceration and crust, that are not consistent
+from one individual to the next. In addition, imiqui-
+mod use for larger surface areas may be associated
+with
+systemic
+symptoms,
+including
+fatigue,
+influenza-like symptoms, myalgia, and headache.
+Radiation therapy
+Although surgery remains the ﬁrst-line, and most
+effective, treatment for cSCC, primary radiation
+therapy can be used in special situations in which
+surgery is not feasible, contraindicated, or not
+preferred by the patient after a discussion of risks
+and beneﬁts. Several different types of radiotherapy
+can be used to treat cSCC, including superﬁcial
+radiation
+therapy,
+isotope-based
+brachytherapy
+(interstitial or topical contact), or external electron
+beam radiation.54,70-74,95 Primary or adjuvant radia-
+tion therapy is an effective treatment option for
+selected patients with cSCC, resulting in good tumor
+control and cosmesis,96 with the understanding that
+the cure rates may be lower.97,98 Smaller and thinner
+tumors may be more responsive to radiation ther-
+apy.54,99 As with other nonsurgical approaches, the
+available data on radiotherapy are limited by small
+patient numbers and variable lengths of follow-up to
+detect local or regional recurrences.54 Although
+there is limited evidence regarding the use of
+traditional variants of brachytherapy for the treat-
+ment of cSCC, such as interstitial radiotherapy and
+isotope-based
+contact
+brachytherapy,
+electronic
+brachytherapy, a form of superficial radiation ther-
+apy, is a newer modality for which long-term safety
+and effectiveness data are lacking.76,77 Primary cSCC
+with concerning perineural invasion or otherwise at
+high risk for regional or distant metastasis may be
+considered for adjuvant radiation therapy to the local
+tumor site following surgical treatment.100 High-level
+evidence about the effectiveness of this approach is
+lacking.
+Cryosurgery
+Given the lack of histologic margin control with
+this approach, as well as the known risk for subclin-
+ical extension of cSCC, cryosurgery should be
+considered only for low-risk lesions, when more
+effective therapies are contraindicated or imprac-
+tical. The objective of cryosurgery, interchangeably
+Table XI. Level of evidence and strength of recommendations for the nonsurgical treatment of cSCC
+Recommendation
+Strength of
+recommendation
+Level of
+evidence
+References
+Cryosurgery
+B
+II
+54
+Radiation therapy
+d Traditional radiotherapies and modern superficial radiation therapy
+d Electronic surface brachytherapy
+B
+C
+II, III
+III
+54,70-75
+76,77
+Against topical therapy alone
+d Imiquimod
+d 5-FU
+C
+C
+III
+III
+54,78,79
+54
+Against photodynamic therapy alone
+B
+II
+54
+Laser therapy
+C
+III
+54
+cSCC, Cutaneous squamous cell carcinoma; 5-FU, 5-fluorouracil.
+J AM ACAD DERMATOL
+MARCH 2018
+570
+Alam et al
+
+=== PAGE 12 ===
+referred to as cryotherapy, in the treatment of cSCC is
+to cause selective destruction of the same volume of
+tissue that would have been removed with standard
+excision. Although cryosurgery is frequently used for
+the treatment of precursor lesions (ie, actinic kera-
+toses), limited data are available on its use for
+cSCC.54
+Laser treatment
+Treatment of cSCC by a Nd:YAG laser has been
+reported in a single retrospective study, with this
+extremely limited experience precluding the recom-
+mendation of laser for this indication.54 PDT, which
+includes a light source as well as a topical photosen-
+sitizer, was discussed earlier in these Guidelines.
+MANAGING PATIENTS WITH METASTATIC
+cSCC
+The risk for metastasis in cSCC is reported to be
+approximately 4%.39 Among immunosuppressed in-
+dividuals, particularly for SOTRs, the metastatic risk
+may be 2 to 3 times higher.101 Cutaneous in-transit
+and regional lymph node metastases are the most
+common
+metastatic
+presentation,
+followed
+by
+distant metastases. In patients with high-risk local-
+ized tumors, successful detection of occult lymph
+node metastases by SLNB has been reported.52,53
+However, the effect of SLNB on management and
+outcome of patients with high-risk cSCC is unknown.
+The available literature on management of in-
+transit and lymph node metastases is largely limited
+to retrospective reviews and case series of patients
+with head and neck cSCC.51,102,103 Therapeutic
+recommendations are based on the extent of disease
+and consist primarily of surgical resection with
+possible lymph node dissection and consideration
+of adjuvant radiation therapy with or without con-
+current systemic therapy. Given the rarity and
+complexity of metastatic cSCC, multidisciplinary
+consultation is recommended. For inoperable lymph
+node metastases, combination chemoradiation ther-
+apy
+should
+be
+considered.
+For
+patients
+with
+advanced disease, it is also appropriate to provide
+or refer to best supportive and palliative care to
+optimize symptom management and maximize qual-
+ity of life.
+Existing data on the treatment of patients with
+distant metastatic cSCC are sparse and limited to
+phase II clinical trials. Chemotherapy, including
+cisplatin as a single agent or combined with 5-
+ﬂuorouracil (5-FU), has shown some activity, but
+the results have not been conﬁrmed in larger co-
+horts.104,105 In other phase II trials, epidermal growth
+factor receptor inhibitors, such as cetuximab and
+more recently panitumumab, have demonstrated
+efficacy in patients with advanced unresectable
+cSCC.106,107 In (noncutaneous) head and neck SCC,
+a phase III trial demonstrated that the addition of
+panitumumab to combination cisplatin and 5-FU
+improved progression-free survival, but not overall
+survival.108 The US Food and Drug Administration
+recently approved the immune checkpoint (pro-
+grammed cell death 1) inhibitor pembrolizumab for
+some patients with advanced (noncutaneous) head
+and neck squamous cell carcinoma. Great interest
+currently exists in ongoing clinical trials evaluating
+the efficacy of immune checkpoint inhibitors for
+locally advanced and metastatic cSCC.
+Careful consideration must be given to immuno-
+suppressed individuals with high-risk localized or
+metastatic cSCC, given its more aggressive clinical
+behavior and poor prognosis. In SOTRs, dose
+reduction of the immunosuppressive agents and
+minimizing use of calcineurin inhibitors (eg, cyclo-
+sporine, tacrolimus) and/or antimetabolites (eg.,
+azathioprine) in favor of mammalian target of
+rapamycin inhibitors (eg, sirolimus) may be consid-
+ered when appropriate.109,110 However, a recent
+retrospective cohort study did not demonstrate a
+reduction in post-transplantation risk for cSCC
+among
+SOTRs
+exposed
+to
+sirolimus.111
+Multidisciplinary consultation and management are
+strongly encouraged for SOTRs with advanced or
+metastatic SCC.
+The
+recommendations
+for
+management
+of
+regional and distant metastatic SCC are shown in
+Table XII. Recommendations for management of
+locally advanced or metastatic SCC
+Surgical resection, with or without adjuvant radiation
+therapy and possible systemic therapy are
+recommended for regional lymph node metastases.
+Combination chemoradiation therapy should be
+considered for inoperable disease.
+Epidermal growth factor inhibitors and cisplatin, as a single
+agent or in combination therapy, may be considered, as
+they have demonstrated efficacy for metastatic disease,
+albeit on the basis of limited data.
+Multidisciplinary consultation and management,
+particularly in immunosuppressed individuals, is
+recommended for patients with locoregional or distant
+metastases. In some cases, such consultation may be
+appropriate for patients with locally advanced disease
+without known metastases.
+Patients with advanced disease should be provided with or
+referred for best supportive and palliative care to
+optimize symptom management and maximize quality
+of life.
+SCC, Squamous cell carcinoma.
+J AM ACAD DERMATOL
+VOLUME 78, NUMBER 3
+Alam et al
+571
+
+=== PAGE 13 ===
+Table XII, and the level of evidence/strength of the
+recommendation is provided in Table XIII.51,102-108
+FOLLOW-UP AND REDUCING RISK FOR
+FUTURE SKIN CANCERS
+Once an cSCC has been diagnosed, in-ofﬁce
+screening for new primary skin cancers, including
+BCC, cSCC, and melanoma, should be performed at
+least once per year, adjusting frequency on the basis
+of individual patient risk. Clinical assessment of
+regional lymph node basins may be included in the
+physical examination for high-risk lesions. This
+recommendation derives from the considerable ev-
+idence from cohort studies and registries that a
+patient with at least 1 cSCC is at risk for additional
+cSCC as well as other for skin cancers, including BCC
+and melanoma.
+A 2010 meta-analysis by Wheless et al determined
+that the summary random-effects relative risk for
+development of a second NMSC after diagnosis of a
+ﬁrst was 1.12 on the basis of 12 cohort studies from
+cancer registries versus 1.49 on the basis of 3 studies
+with patient-level data.112 More recently, Wehner
+et al found in their prospective cohort that the 5-year
+probability of another NMSC after diagnosis of a first
+was 40.7%, and after more than 1 it was 82%.113 At
+10 years, the chances of another NMSC after the first
+increased to 59.6% and after diagnosis of a nonfirst
+NMSC the chances of another increased to 91.2%.
+Initial diagnosis of NMSC, including cSCC, in-
+creases the risk for subsequent malignant melanoma
+(MM). Song et al found a relative risk for develop-
+ment of MM after diagnosis of a NMSC of 1.99 for
+men and 2.58 for women.114 These data were based
+on 2 large prospective cohort studies with 46,237
+men and 107,339 women under study. A smaller
+study that included 3548 people found the relative
+risk for MM to be 3.62 after diagnosis of an SCC.115
+Patients who have had cSCC should be coun-
+seled regarding the risk for new primary skin
+cancers, the need for in-ofﬁce screening, and the
+potential beneﬁts of self-screening. Concurrent pa-
+tient self-surveillance for cSCC and other skin
+cancers may be of additional utility in detecting
+new primary tumors while they are still small and
+easily treated. Family members can also help
+patients detect skin cancers, as they may be able
+to identify suspicious lesions at anatomic sites (eg,
+the back) that are not easily assessed by the
+patient.116
+Patients with a history of cSCC should also be
+counseled regarding the need for sun protection, sun
+avoidance, and tanning bed avoidance. Broad-
+spectrum chemical and physical sunscreens have
+been shown to reduce ultraviolet light exposure per
+unit time when properly applied.117,118 Routine use
+of sunscreens is recommended in combination with
+other sun-protective behaviors, such as seeking
+shade and wearing broad-brimmed head coverings.
+Many topical and oral agents have been recom-
+mended to reduce the risk for a new SCC or other
+skin cancer after an initial diagnosis of cSCC, but the
+evidence for these agents is mixed. Topical retinoids
+have not been found to reduce the incidence of
+keratinocyte cancers or actinic keratosis in those
+Table XIII. Level of evidence and strength of recommendations for the management of locally advanced or
+metastatic SCC
+Recommendation
+Strength of recommendation
+Level of evidence
+References
+Surgical resection with/without adjuvant radiotherapy
+B
+II
+51,102,103
+Epidermal growth factor inhibitors and cisplatin
+B
+I, II
+104-108
+Multidisciplinary consultation
+A
+III
+Expert opinion
+Palliative care
+A
+III
+Expert opinion
+SCC, Squamous cell carcinoma.
+Table XIV. Recommendations for the follow-up of
+cSCC and reducing risk for future skin cancer
+After diagnosis of a first SCC, screening for new
+keratinocyte cancers (BCC or cSCC) and for melanoma
+should be performed on at least an annual basis.
+Patients with a history of cSCC should be counseled on
+skin self-examination and sun protection.
+Topical and oral retinoids (eg, tretinoin, retinol, acitretin,
+and isotretinoin) should not be prescribed to reduce the
+incidence of keratinocyte cancers in those with a history
+of cSCC, unless they are SOTRs. In the situation of SOTRs,
+only acitretin may be beneficial.
+Dietary supplementation of selenium and b-carotene is
+not recommended to reduce the incidence of future
+keratinocyte cancers in those with a history of cSCC.
+There is insufficient evidence to make a recommendation
+on the use of oral nicotinamide, DFMO, or celecoxib in
+the chemoprevention of cSCC.
+BCC, Basal cell carcinoma; cSCC, cutaneous squamous cell
+carcinoma; DFMO, a-difluoromethylornithine; SCC, squamous cell
+carcinoma; SOTR, solid organ transplant recipient.
+J AM ACAD DERMATOL
+MARCH 2018
+572
+Alam et al
+
+=== PAGE 14 ===
+with
+a
+history
+of
+a
+keratinocyte
+cancer.119
+Consequently, topical retinoids are not recommen-
+ded for reducing the risk for subsequent cSCC in
+patients with a history of cSCC. In addition, topical
+retinoids used for prolonged periods were associ-
+ated in a single study with increased mortality,
+although some investigators have discounted this
+result as spurious.120 Although acitretin has not been
+shown to be helpful in reducing the incidence of
+cSCC in nontransplant patients with a history of
+NMSC,121 it may have a role in the management of
+SOTRs with a history of NMSC.122 One small RCT
+demonstrated benefit to renal transplant patients
+with 10 or more keratotic lesions.123 The benefits
+of oral retinol need more study, as 2 large RCTs have
+shown divergent conclusions. Isotretinoin does not
+appear to reduce the incidence of cSCC in those with
+a history of NMSC.124,125
+Limited evidence is available to support the utility
+of other agents, including cyclic PDT, oral nicotin-
+amide, and celecoxib, in reducing the risk for cSCC in
+patients with a history of keratinocyte carcinoma.
+There is early evidence from a small trial that oral
+nicotinamide may reduce the risk for subsequent
+keratinocyte carcinoma in nonimmunosuppressed
+individuals with a history of such carcinomas.126
+Although there is also some evidence that oral
+celecoxib reduces the risk for cSCC in patients with
+previous NMSC,127 the potential benefits should be
+weighed against the significant risk for a cardiovas-
+cular event that is associated with this medication.
+The dietary supplements b-carotene and sele-
+nium are not recommended for reducing risk for
+cSCC in patients with history of keratinocyte carci-
+noma. Several RCTs have shown no protective
+beneﬁt against NMSC associated with either b-caro-
+tene
+or
+selenium.128-130
+Treatment-associated
+adverse events, notably, skin yellowing with b-caro-
+tene use and gastrointestinal upset with selenium,
+have been noted.
+The
+recommendations
+for
+the
+follow-up
+and reducing risk for future tumors are shown in
+Table XIV, and the level of evidence/strength
+of the recommendations is presented in Table
+XV.112-115,119-121,123,125-138
+GAPS IN RESEARCH
+Much research remains to be done to elucidate the
+causes, natural history, and optimal management of
+cSCC. The relative importance of risk factors for
+cSCC, including the impact of immunosuppression
+over time, requires further elucidation. Population-
+based incidence, morbidity, and mortality data
+remain imprecise in the United States because there
+is no requirement for reporting these tumors to
+tumor registries. In the context of prevention, the
+long-term utility of sun protection and avoidance
+measures remains to be clariﬁed. The role of SLNB
+in high-risk cSCC is unclear, and additional studies
+are warranted to determine their utility and indica-
+tions. Novel therapeutic modalities are expected to
+continue to emerge. Results of ongoing clinical trials
+Table XV. Level of evidence and strength of recommendations for the follow-up of cSCC and reducing risk for
+future tumors
+Recommendation
+Strength of recommendation
+Level of evidence
+References
+Annual follow-up skin cancer screening
+A
+I
+112-115,131,132
+Skin self-examination and sun protection after cSCC
+A
+III
+Expert opinion
+Against the use of topical and oral retinoids*
+d Tretinoin
+d Acitretin
+d Isotretinoin
+d Oral retinol
+A
+B
+A
+A
+I, II
+I
+I
+I
+119,120,133
+121
+125,134
+125,135
+Use of acetretin for SOTR patients
+B
+I
+123
+Against chemoprevention using
+d Celecoxib
+d DFMO
+d Oral nicotinamide
+B
+A
+B
+I
+I
+I
+127,136
+137,138
+126
+Against dietary supplementation with
+d Selenium
+d b-Carotene
+A
+A
+I
+I
+128,129
+130
+cSCC, Cutaneous squamous cell carcinoma; DFMO, a-difluoromethylornithine; SOTR, solid organ transplant recipient.
+*Non-SOTRs.
+J AM ACAD DERMATOL
+VOLUME 78, NUMBER 3
+Alam et al
+573
+
+=== PAGE 15 ===
+with immune checkpoint inhibitors for locally
+advanced and metastatic cSCC are expected in near
+future.
+We thank Charniel McDaniels, MS, for technical assis-
+tance in the development of this manuscript. We also thank
+the AAD Board of Directors, the Council on Science and
+Research, the Clinical Guidelines Committee, and all
+commenting Academy members for their thoughtful and
+excellent feedback.
+The AAD strives to produce clinical guidelines that
+reﬂect the best available evidence supplemented with the
+judgment of expert clinicians. Signiﬁcant efforts are taken
+to minimize the potential for conﬂicts of interest to inﬂu-
+ence guideline content. The management of conﬂict of
+interest for this guideline complies with the Council of
+Medical Specialty Societies’ Code of Interactions with
+Companies. Funding of guideline production by medical
+or pharmaceutical entities is prohibited, full disclosure is
+obtained and evaluated for all guideline contributors
+throughout the guideline development process, and
+recusal is used to manage identified relationships. The
+AAD conflict of interest policy summary may be viewed at
+www.aad.org.
+Disclosure: The below information represents the
+authors’ disclosed relationships with industry during
+guideline development. Relevant relationships requiring
+recusal for drafting of guideline recommendations and
+content by work group members were not noted for this
+guideline.
+April Armstrong, MD, MPH, served as an advisory board
+member
+for
+Abbvie,
+Amgen,
+Janssen-Ortho,
+Merck,
+Novartis, Pﬁzer and UCB, receiving honoraria; as a
+consultant for Celgene, Eli Lily, Jannsen-Ortho, and
+Modernizing Medicine, receiving honoraria; as a speaker
+for Abbvie, receiving honoraria; and as a principal inves-
+tigator (PI) for Eli Lily, Janssen-Ortho, Novartis, and
+Regeneron, receiving grants/research funding. Jeremy S.
+Bordeaux, MD, MPH, served as an advisory board member
+for Lubax, receiving honoraria; as an employee of
+Massachusetts General Hospital, receiving a salary; and
+in another role with Journal Watch Dermatology, receiving
+honoraria. Marc Brown, MD, served as an advisory board
+member for DUSA Pharmaceuticals, receiving no compen-
+sation. David J. Margolis, MD, PhD, served as an advisory
+board member for Astellas, Celleration, and Kerecis,
+receiving fees; as a PI for Valeant, receiving grants/research
+funding; and as a Data Safety Monitoring Board member
+for DermaSciences, Macrocure, and Sanoﬁ/Regeneron
+receiving fees. Stanley Miller, MD, served as an employee
+of UpToDate, Inc, receiving patent royalties and other
+compensation. Eliot Mostow, MD, MPH, served as a
+consultant for Elsevier, receiving a salary; as a speaker
+and PI for Healthpoint, receiving honoraria and grants/
+research funding; and as an advisory board member for
+Vivacare, receiving honoraria. Christen Mowad, MD,
+served on the Board of Directors for Elsevier, receiving
+honoraria; in other roles with UpToDate, Inc, receiving
+patient royalties and other compensation; and as a PI for
+Amgen, receiving fees. Dr. Mowad also had a relative
+serving as an employee of Takeda Pharmaceuticals
+receiving salary. Aleksander Sekulic, MD, PhD, served as
+an advisory board member for Roche and as a PI for
+Genentech, receiving fees. Conway Huang, MD, served as
+a consultant for Castle Biosciences, Inc, receiving hono-
+raria. Murad Alam, M, served as a consultant for Amway,
+receiving honoraria, and as a PI for OptMed and 3M,
+receiving no personal compensation. Thomas Olenecki,
+DO, served as a PI for BMS, Exelixis, Genentech, Pﬁzer,
+and
+Tracon,
+receiving
+grants/research
+funding.
+Christopher Bichakjian, MD, Christian Baum, MD, Klaus
+J. Busam, MD, Daniel B. Eisen, MD, Vivek Iyengar, MD,
+Clifford Lober, MD, JD, Jane Messina, MD, Alexander
+Miller, MD, Kishwer Nehal, MD, Kristi Schmitt-Burr, Paul
+Storrs, MD, Joyce Teng, MD, PhD, Siegrid Yu, MD, John
+Y.S. Kim, MD, Jeffrey H. Kozlow, MD, MS, Bharat Mittal,
+MD, Jeffrey Moyer, MD, Phillip Rodgers, MD, Kevin Boyer,
+MPH, and Wendy Smith Begolka, MBS, have no relation-
+ships to disclose.
+REFERENCES
+1. Bichakjian C, Armstrong A, Baum C, et al. Guidelines of care
+for the management of basal cell carcinoma. J Am Acad
+Dermatol. Online ahead of print. https://doi.org/10.1016/j.
+jaad.2017.10.006.
+2. National Comprehensive Cancer Center. NCCN clinical practice
+guidelines in oncology; squamous cell carcinoma (V1.2015).
+Available at: www.nccn.org. Accessed April 1, 2015.
+3. National Comprehensive Cancer Center. NCCN clinical practice
+guidelines in oncology; squamous cell carcinoma (V1.2017).
+Available at: www.nccn.org. Accessed October 3, 2016.
+4. Motley R, Kersey P, Lawrence C. Multiprofessional guidelines
+for the management of the patient with primary cutaneous
+squamous cell carcinoma. Br J Dermatol. 2002;146(1):18-25.
+5. Ebell MH, Siwek J, Weiss BD, et al. Strength of recommen-
+dation taxonomy (SORT): a patient-centered approach to
+grading evidence in the medical literature. J Am Board Fam
+Pract. 2004;17(1):59-67.
+6. AmericanAcademyofDermatology.Administrativeregulations;
+evidence-based clinical practice guidelines. Available at: www.
+aad.org/Forms/Policies/Uploads/AR/AR%20-%20Evidence-Based
+%20Clinical%20Guideline.pdf. Accessed December 1, 2014.
+7. Miller DL, Weinstock MA. Nonmelanoma skin cancer in the
+United States: incidence. J Am Acad Dermatol. 1994;30(5 Pt 1):
+774-778.
+8. Karia PS, Han J, Schmults CD. Cutaneous squamous cell
+carcinoma: estimated incidence of disease, nodal metastasis,
+and deaths from disease in the United States, 2012. J Am
+Acad Dermatol. 2013;68(6):957-966.
+9. Demers AA, Nugent Z, Mihalcioiu C, Wiseman MC, Kliewer EV.
+Trends of nonmelanoma skin cancer from 1960 through 2000
+in a Canadian population. J Am Acad Dermatol. 2005;53(2):
+320-328.
+10. Nguyen KD, Han J, Li T, Qureshi AA. Invasive cutaneous
+squamous cell carcinoma incidence in US health care
+workers. Arch Dermatol Res. 2014;306(6):555-560.
+11. Kim C, Cheng J, Colegio OR. Cutaneous squamous cell
+carcinomas in solid organ transplant recipients: emerging
+strategies for surveillance, staging, and treatment. Semin
+Oncol. 2016;43(3):390-394.
+12. Alam M, Ratner D. Cutaneous squamous-cell carcinoma. N
+Engl J Med. 2001;344(13):975-983.
+J AM ACAD DERMATOL
+MARCH 2018
+574
+Alam et al
+
+=== PAGE 16 ===
+13. Agbai ON, Buster K, Sanchez M, et al. Skin cancer and
+photoprotection in people of color: a review and recom-
+mendations for physicians and the public. J Am Acad
+Dermatol. 2014;70(4):748-762.
+14. Linos E, Schroeder SA, Chren MM. Potential overdiagnosis of
+basal cell carcinoma in older patients with limited life
+expectancy. JAMA. 2014;312(10):997-998.
+15. Fosko SW. Counterpoint: Limited life expectancy, basal cell
+carcinoma, health care today, and unintended consequences.
+J Am Acad Dermatol. 2015;73(1):162-164.
+16. Rogers HW, Weinstock MA, Feldman SR, Coldiron BM.
+Incidence estimate of nonmelanoma skin cancer (keratino-
+cyte carcinomas) in the U.S. population, 2012. JAMA Derma-
+tol. 2015;151(10):1081-1086.
+17. Greene FL. American Joint Committee on Cancer, American
+Cancer Society. AJCC Cancer Staging Manual. 6th ed. New
+York: Springer; 2002.
+18. Edge SB.American Joint Committeeon Cancer, American Cancer
+Society. AJCC Cancer Staging Handbook: From the AJCC Cancer
+Staging Manual. 7th ed. New York, NY: Springer; 2010.
+19. Amin MB, Edge SB, Greene FL, et al. AJCC Cancer Staging
+Manual. 8th ed. New York, NY: Springer International Pub-
+lishing; 2016.
+20. Clark JR, Rumcheva P, Veness MJ. Analysis and comparison of
+the 7th edition American Joint Committee on Cancer (AJCC)
+nodal staging system for metastatic cutaneous squamous
+cell carcinoma of the head and neck. Ann Surg Oncol. 2012;
+19(13):4252-4258.
+21. Brunner M, Veness MJ, Ch’ng S, Elliott M, Clark JR. Distant
+metastases from cutaneous squamous cell carcinomadanal-
+ysis of AJCC stage IV. Head Neck. 2013;35(1):72-75.
+22. Brunner M, Ng BC, Veness MJ, Clark JR. Comparison of the
+AJCC N staging system in mucosal and cutaneous squa-
+mous head and neck cancer. Laryngoscope. 2014;124(7):
+1598-1602.
+23. Jambusaria-Pahlajani A, Kanetsky PA, Karia PS, et al. Evalua-
+tion of AJCC tumor staging for cutaneous squamous cell
+carcinoma and a proposed alternative tumor staging system.
+JAMA Dermatol. 2013;149(4):402-410.
+24. Karia PS, Jambusaria-Pahlajani A, Harrington DP, Murphy GF,
+Qureshi AA, Schmults CD. Evaluation of American Joint
+Committee on Cancer, International Union Against Cancer,
+and Brigham and Women’s Hospital tumor staging for
+cutaneous squamous cell carcinoma. J Clin Oncol. 2014;
+32(4):327-334.
+25. Schmitt AR, Brewer JD, Bordeaux JS, Baum CL. Staging for
+cutaneous squamous cell carcinoma as a predictor of
+sentinel lymph node biopsy results: meta-analysis of Amer-
+ican Joint Committee on Cancer criteria and a proposed
+alternative system. JAMA Dermatol. 2014;150(1):19-24.
+26. Roozeboom
+MH,
+Mosterd
+K,
+Winnepenninckx
+VJ,
+Nelemans PJ, Kelleners-Smeets NW. Agreement between
+histological subtype on punch biopsy and surgical excision
+in primary basal cell carcinoma. J Eur Acad Dermatol Venereol.
+2013;27(7):894-898.
+27. Haws AL, Rojano R, Tahan SR, Phung TL. Accuracy of biopsy
+sampling for subtyping basal cell carcinoma. J Am Acad
+Dermatol. 2012;66(1):106-111.
+28. Mosterd K, Thissen MR, van Marion AM, et al. Correlation
+between histologic findings on punch biopsy specimens and
+subsequent excision specimens in recurrent basal cell
+carcinoma. J Am Acad Dermatol. 2011;64(2):323-327.
+29. Smith LC, Cox NH, Dawn G. Shave biopsy without local
+anaesthetic to diagnose basal cell carcinoma and other skin
+tumours prior to definitive treatment: analysis of 109 lesions.
+Br J Dermatol. 2009;160(1):180-182.
+30. Russell EB, Carrington PR, Smoller BR. Basal cell carcinoma: a
+comparison of shave biopsy versus punch biopsy techniques
+in subtype diagnosis. J Am Acad Dermatol. 1999;41(1):69-71.
+31. Kadouch DJ, van Haersma de With A, Limpens J, et al. Is a
+punch biopsy reliable in subtyping basal cell carcinoma? A
+systematic review. Br J Dermatol. 2016;175(2):401-403.
+32. Westers-Attema A, Joosten VM, Roozeboom MH, et al. Cor-
+relation between histological findings on punch biopsy
+specimens and subsequent excision specimens in cutaneous
+squamous cell carcinoma. Acta Derm Venereol. 2015;95(2):
+181-185.
+33. Kyrgidis A, Tzellos TG, Kechagias N, et al. Cutaneous
+squamous cell carcinoma (SCC) of the head and neck: risk
+factors of overall and recurrence-free survival. Eur J Cancer.
+2010;46(9):1563-1572.
+34. Hansen C, Wilkinson D, Hansen M, Soyer HP. Factors
+contributing to incomplete excision of nonmelanoma skin
+cancer by Australian general practitioners. Arch Dermatol.
+2009;145(11):1253-1260.
+35. Eroglu A, Berberoglu U, Berreroglu S. Risk factors related to
+locoregional recurrence in squamous cell carcinoma of the
+skin. J Surg Oncol. 1996;61(2):124-130.
+36. Talbot S, Hitchcock B. Incomplete primary excision of
+cutaneous basal and squamous cell carcinomas in the Bay
+of Plenty. N Z Med J. 2004;117(1192):U848.
+37. Brougham ND, Dennett ER, Cameron R, Tan ST. The incidence
+of metastasis from cutaneous squamous cell carcinoma and
+the impact of its risk factors. J Surg Oncol. 2012;106(7):
+811-815.
+38. Rieger KE, Linos E, Egbert BM, Swetter SM. Recurrence rates
+associated with incompletely excised low-risk nonmelanoma
+skin cancer. J Cutan Pathol. 2010;37(1):59-67.
+39. Brantsch KD, Meisner C, Schonfisch B, et al. Analysis of risk
+factors determining prognosis of cutaneous squamous-cell
+carcinoma: a prospective study. Lancet Oncol. 2008;9(8):
+713-720.
+40. Cherpelis BS, Marcusen C, Lang PG. Prognostic factors for
+metastasis in squamous cell carcinoma of the skin. Dermatol
+Surg. 2002;28(3):268-273.
+41. Rowe DE, Carroll RJ, Day CL Jr. Prognostic factors for local
+recurrence, metastasis, and survival rates in squamous cell
+carcinoma of the skin, ear, and lip. Implications for treatment
+modality selection. J Am Acad Dermatol. 1992;26(6):976-990.
+42. Schmults CD, Karia PS, Carter JB, Han J, Qureshi AA. Factors
+predictive of recurrence and death from cutaneous squa-
+mous cell carcinoma: a 10-year, single-institution cohort
+study. JAMA Dermatol. 2013;149(5):541-547.
+43. Thompson AK, Kelley BF, Prokop LJ, Murad MH, Baum CL.
+Risk factors for cutaneous squamous cell carcinoma recur-
+rence, metastasis, and disease-specific death: a systematic
+review and meta-analysis. JAMA Dermatol. 2016;152(4):
+419-428.
+44. Moore BA, Weber RS, Prieto V, et al. Lymph node metastases
+from cutaneous squamous cell carcinoma of the head and
+neck. Laryngoscope. 2005;115(9):1561-1567.
+45. Clayman GL, Lee JJ, Holsinger FC, et al. Mortality risk from
+squamous cell skin cancer. J Clin Oncol. 2005;23(4):759-765.
+46. Brandt MG, Moore CC, Jordan K. Randomized control trial of
+fluorescence-guided surgical excision of nonmelanotic cuta-
+neous malignancies. J Otolaryngol. 2007;36(3):148-155.
+47. Campoli M, Brodland DG, Zitelli J. A prospective evaluation of
+the clinical, histologic, and therapeutic variables associated
+J AM ACAD DERMATOL
+VOLUME 78, NUMBER 3
+Alam et al
+575
+
+=== PAGE 17 ===
+with incidental perineural invasion in cutaneous squamous
+cell carcinoma. J Am Acad Dermatol. 2014;70(4):630-636.
+48. Lott DG, Manz R, Koch C, Lorenz RR. Aggressive behavior of
+nonmelanotic skin cancers in solid organ transplant recipi-
+ents. Transplantation. 2010;90(6):683-687.
+49. Carter JB, Johnson MM, Chua TL, Karia PS, Schmults CD.
+Outcomes of primary cutaneous squamous cell carcinoma
+with perineural invasion: an 11-year cohort study. JAMA
+Dermatol. 2013;149(1):35-41.
+50. Ross
+AS,
+Whalen
+FM,
+Elenitsas
+R,
+Xu
+X,
+Troxel
+AB,
+Schmults CD. Diameter of involved nerves predicts outcomes
+in cutaneous squamous cell carcinoma with perineural inva-
+sion: an investigator-blinded retrospective cohort study.
+Dermatol Surg. 2009;35(12):1859-1866.
+51. Veness MJ, Morgan GJ, Palme CE, Gebski V. Surgery and
+adjuvant radiotherapy in patients with cutaneous head and
+neck squamous cell carcinoma metastatic to lymph nodes:
+combined treatment should be considered best practice.
+Laryngoscope. 2005;115(5):870-875.
+52. Ross AS, Schmults CD. Sentinel lymph node biopsy in
+cutaneous squamous cell carcinoma: a systematic review of
+the English literature. Dermatol Surg. 2006;32(11):1309-1321.
+53. Navarrete-Dechent C, Veness MJ, Droppelmann N, Uribe P.
+High-risk cutaneous squamous cell carcinoma and the
+emerging role of sentinel lymph node biopsy: a literature
+review. J Am Acad Dermatol. 2015;73(1):127-137.
+54. Lansbury
+L,
+Bath-Hextall
+F,
+Perkins
+W,
+Stanton
+W,
+Leonardi-Bee J. Interventions for non-metastatic squamous
+cell carcinoma of the skin: systematic review and pooled
+analysis of observational studies. BMJ. 2013;347:f6153.
+55. Chren MM, Sahay AP, Bertenthal DS, Sen S, Landefeld CS.
+Quality-of-life outcomes of treatments for cutaneous basal
+cell carcinoma and squamous cell carcinoma. J Invest
+Dermatol. 2007;127(6):1351-1357.
+56. Brodland DG, Zitelli JA. Surgical margins for excision of
+primary cutaneous squamous cell carcinoma. J Am Acad
+Dermatol. 1992;27(2 Pt 1):241-248.
+57. Leibovitch I, Huilgol SC, Selva D, Hill D, Richards S, Paver R.
+Cutaneous squamous cell carcinoma treated with Mohs
+micrographic surgery in Australia I. Experience over 10 years.
+J Am Acad Dermatol. 2005;53(2):253-260.
+58. van Loo E, Mosterd K, Krekels GA, et al. Surgical excision
+versus Mohs’ micrographic surgery for basal cell carcinoma of
+the face: a randomised clinical trial with 10 year follow-up.
+Eur J Cancer. 2014;50(17):3011-3020.
+59. Mohs
+FE.
+Chemosurgery:
+a
+microscopically
+controlled
+method of cancer excision. Arch Surg. 1941;42(2):279-295.
+60. Mohs FE. Chemosurgical treatment of cancer of the nose; a
+microscopically controlled method. Arch Surg. 1946;53:
+327-344.
+61. Tromovitch TA, Stegeman SJ. Microscopically controlled
+excision of skin tumors. Arch Dermatol. 1974;110(2):231-232.
+62. Tromovitch TA, Stegman SJ. Microscopie-controlled excision
+of cutaneous tumors: chemosurgery, fresh tissue technique.
+Cancer. 1978;41(2):653-658.
+63. Connolly SM, Baker DR, Coldiron BM, et al. AAD/ACMS/ASD-
+SA/ASMS 2012 appropriate use criteria for Mohs micro-
+graphic surgery: a report of the American Academy of
+Dermatology, American College of Mohs Surgery, American
+Society for Dermatologic Surgery Association, and the
+American Society for Mohs Surgery. J Am Acad Dermatol.
+2012;67(4):531-550.
+64. Lawrence N, Cottel WI. Squamous cell carcinoma of skin with
+perineural invasion. J Am Acad Dermatol. 1994;31(1):30-33.
+65. Goepfert H, Dichtel WJ, Medina JE, Lindberg RD, Luna MD.
+Perineural invasion in squamous cell skin carcinoma of the
+head and neck. Am J Surg. 1984;148(4):542-547.
+66. Ebede TL, Lee EH, Dusza SW, Busam KJ, Nehal KS. Clinical
+value of paraffin sections in association with Mohs micro-
+graphic surgery for nonmelanoma skin cancers. Dermatol
+Surg. 2012;38(10):1631-1638.
+67. American Academy of Dermatology. Appropriate uses of
+paraffin sectionsinassociationwithMohs micrographic surgery.
+2014;
+Available
+at:
+https://www.aad.org/Forms/Policies/
+Uploads/PS/PS%20Appropriate%20Uses%20of%20Paraffin%
+20Sections%20in%20Association%20with%20Mohs%20Mirco
+graphic%20Surgery.pdf. Accessed February 1, 2017.
+68. Goldman G. The current status of curettage and electrodes-
+iccation. Dermatol Clin. 2002;20(3):569-578. ix.
+69. Rodriguez-Vigil T, Vazquez-Lopez F, Perez-Oliva N. Recur-
+rence rates of primary basal cell carcinoma in facial risk areas
+treated with curettage and electrodesiccation. J Am Acad
+Dermatol. 2007;56(1):91-95.
+70. Ashby MA, Smith J, Ainslie J, McEwan L. Treatment of
+nonmelanoma skin cancer at a large Australian center.
+Cancer. 1989;63(9):1863-1871.
+71. Hernandez-Machin B, Borrego L, Gil-Garcia M, Hernandez BH.
+Office-based radiation therapy for cutaneous carcinoma:
+evaluation of 710 treatments. Int J Dermatol. 2007;46(5):
+453-459.
+72. Grossi Marconi D, da Costa Resende B, Rauber E, et al. Head
+and neck non-melanoma skin cancer treated by superficial
+x-ray therapy: an analysis of 1021 cases. PLoS One. 2016;11(7):
+e0156544.
+73. Finizio L, Vidali C, Calacione R, Beorchia A, Trevisan G. What is
+the current role of radiation therapy in the treatment of skin
+carcinomas? Tumori. 2002;88(1):48-52.
+74. Schulte KW, Lippold A, Auras C, et al. Soft x-ray therapy for
+cutaneous basal cell and squamous cell carcinomas. J Am
+Acad Dermatol. 2005;53(6):993-1001.
+75. Cognetta
+AB,
+Howard
+BM,
+Heaton
+HP,
+Stoddard
+ER,
+Hong HG, Green WH. Superficial x-ray in the treatment of
+basal and squamous cell carcinomas: a viable option in select
+patients. J Am Acad Dermatol. 2012;67(6):1235-1241.
+76. Bhatnagar A. Nonmelanoma skin cancer treated with elec-
+tronic brachytherapy: results at 1 year. Brachytherapy. 2013;
+12(2):134-140.
+77. Paravati AJ, Hawkins PG, Martin AN, et al. Clinical and
+cosmetic outcomes in patients treated with high-dose-rate
+electronic brachytherapy for nonmelanoma skin cancer. Pract
+Radiat Oncol. 2015;5(6):e659-664.
+78. Tiodorovic-Zivkovic D, Zalaudek I, Longo C, De Pace B,
+Albertini G, Argenziano G. Successful treatment of two
+invasive squamous cell carcinomas with topical 5% imiqui-
+mod cream in elderly patients. Eur J Dermatol. 2012;22(4):
+579-580.
+79. Dirschka T, Schmitz L, Bartha A. Clinical and histological
+resolution of invasive squamous cell carcinoma by topical
+imiquimod 3.75%: a case report. Eur J Dermatol. 2016;26(4):
+408-409.
+80. Roozeboom MH, Aardoom MA, Nelemans PJ, et al. Fraction-
+ated 5-aminolevulinic acid photodynamic therapy after par-
+tial debulking versus surgical excision for nodular basal cell
+carcinoma: a randomized controlled trial with at least 5-year
+follow-up. J Am Acad Dermatol. 2013;69(2):280-287.
+81. Roozeboom MH, Arits AH, Mosterd K, et al. Three-year
+follow-up results of photodynamic therapy vs. imiquimod
+vs.
+fluorouracil
+for
+treatment
+of
+superficial
+basal
+cell
+J AM ACAD DERMATOL
+MARCH 2018
+576
+Alam et al
+
+=== PAGE 18 ===
+carcinoma:
+a
+single-blind,
+noninferiority,
+randomized
+controlled trial. J Invest Dermatol. 2016;136(8):1568-1574.
+82. Roozeboom
+MH,
+Arits
+AH,
+Nelemans
+PJ,
+Kelleners-
+Smeets NW. Overall treatment success after treatment of
+primary superficial basal cell carcinoma: a systematic review
+and meta-analysis of randomized and nonrandomized trials.
+Br J Dermatol. 2012;167(4):733-756.
+83. Wang H, Xu Y, Shi J, Gao X, Geng L. Photodynamic therapy in
+the treatment of basal cell carcinoma: a systematic review
+and meta-analysis. Photodermatol Photoimmunol Photomed.
+2015;31(1):44-53.
+84. Foley P, Freeman M, Menter A, et al. Photodynamic therapy
+with methyl aminolevulinate for primary nodular basal cell
+carcinoma: results of two randomized studies. Int J Dermatol.
+2009;48(11):1236-1245.
+85. Berroeta L, Clark C, Dawe RS, Ibbotson SH, Fleming CJ. A
+randomized study of minimal curettage followed by topical
+photodynamic therapy compared with surgical excision for
+low-risk nodular basal cell carcinoma. Br J Dermatol. 2007;
+157(2):401-403.
+86. Rhodes LE, de Rie MA, Leifsdottir R, et al. Five-year follow-up
+of a randomized, prospective trial of topical methyl amino-
+levulinate photodynamic therapy vs surgery for nodular
+basal cell carcinoma. Arch Dermatol. 2007;143(9):1131-1136.
+87. Kuijpers DI, Thissen MR, Thissen CA, Neumann MH. Similar
+effectiveness of methylaminolevulinateand5-aminolevulinate
+in topical photodynamic therapy for nodular basal cell carci-
+noma. J Drugs Dermatol. 2006;5(7):642-645.
+88. Soler AM, Angell-Petersen E, Warloe T, et al. Photodynamic
+therapy
+of
+superficial
+basal
+cell
+carcinoma
+with
+5-aminolevulinic acid with dimethylsulfoxide and ethylendia-
+minetetraacetic acid: a comparison of two light sources.
+Photochem Photobiol. 2000;71(6):724-729.
+89. Osiecka B, Jurczyszyn K, Ziolkowski P. The application of
+Levulan-based photodynamic therapy with imiquimod in the
+treatment of recurrent basal cell carcinoma. Med Sci Monit.
+2012;18(2):PI5-PI9.
+90. de Vijlder HC, Sterenborg HJ, Neumann HA, Robinson DJ, de
+Haas ER. Light fractionation significantly improves the
+response of superficial basal cell carcinoma to aminolaevu-
+linic acid photodynamic therapy: five-year follow-up of a
+randomized, prospective trial. Acta Derm Venereol. 2012;
+92(6):641-647.
+91. Arits AH, Mosterd K, Essers BA, et al. Photodynamic therapy
+versus topical imiquimod versus topical fluorouracil for
+treatment of superficial basal-cell carcinoma: a single blind,
+non-inferiority, randomised controlled trial. Lancet Oncol.
+2013;14(7):647-654.
+92. Jambusaria-Pahlajani A, Ortman S, Schmults CD, Liang C.
+Sequential curettage, 5-fluorouracil, and photodynamic ther-
+apy for field cancerization of the scalp and face in solid organ
+transplant recipients. Dermatol Surg. 2016;42(Suppl 1):S66-72.
+93. Wang Y, Yang Y, Yang Y, Lu Y. Surgery combined with topical
+photodynamic therapy for the treatment of squamous cell
+carcinoma of the lip. Photodiagnosis Photodyn Ther. 2016;14:
+170-172.
+94. Kwiek B, Schwartz RA. Keratoacanthoma (KA): an update and
+review. J Am Acad Dermatol. 2016;74(6):1220-1233.
+95. Locke J, Karimpour S, Young G, Lockett MA, Perez CA.
+Radiotherapy for epithelial skin cancer. Int J Radiat Oncol
+Biol Phys. 2001;51(3):748-755.
+96. Mendenhall WM, Amdur RJ, Hinerman RW, Cognetta AB,
+Mendenhall NP. Radiotherapy for cutaneous squamous and
+basal cell carcinomas of the head and neck. Laryngoscope.
+2009;119(10):1994-1999.
+97. American Academy of Dermatology. Position statement on
+superficial radiation therapy for basal cell carcinoma (bcc)
+and squamous cell carcinomas (SCC) https://www.aad.org/
+Forms/Policies/Uploads/PS/PS-Superficial%20Radiation%
+20Therapy.pdf. Accessed November 5, 2016.
+98. American Academy of Dermatology. Position statement on
+electronic surface brachytherapy for basal cell carcinoma (bcc)
+and squamous cell carcinomas (SCC). https://www.aad.org/
+Forms/Policies/Uploads/PS/PS%20-%20Electronic%20Surface
+%20Brachytherapy.pdf. Accessed November 5, 2016.
+99. Kwan W, Wilson D, Moravan V. Radiotherapy for locally
+advanced basal cell and squamous cell carcinomas of the
+skin. Int J Radiat Oncol Biol Phys. 2004;60(2):406-411.
+100. Jennings L, Schmults CD. Management of high-risk cuta-
+neous squamous cell carcinoma. J Clin Aesthet Dermatol.
+2010;3(4):39-48.
+101. Cooper JZ, Brown MD. Special concern about squamous cell
+carcinoma of the scalp in organ transplant recipients. Arch
+Dermatol. 2006;142(6):755-758.
+102. Givi B, Andersen PE, Diggs BS, Wax MK, Gross ND. Outcome
+of patients treated surgically for lymph node metastases
+from cutaneous squamous cell carcinoma of the head and
+neck. Head Neck. 2011;33(7):999-1004.
+103. Wang JT, Palme CE, Wang AY, Morgan GJ, Gebski V,
+Veness MJ. In patients with metastatic cutaneous head and
+neck squamous cell carcinoma to cervical lymph nodes, the
+extent of neck dissection does not influence outcome. J
+Laryngol Otol. 2013;127(Suppl 1):S2-S7.
+104. Guthrie TH Jr, Porubsky ES, Luxenberg MN, Shah KJ,
+Wurtz KL, Watson PR. Cisplatin-based chemotherapy in
+advanced basal and squamous cell carcinomas of the skin:
+results in 28 patients including 13 patients receiving multi-
+modality therapy. J Clin Oncol. 1990;8(2):342-346.
+105. Shin DM, Glisson BS, Khuri FR, et al. Phase II and biologic study
+of interferon alfa, retinoic acid, and cisplatin in advanced
+squamous skin cancer. J Clin Oncol. 2002;20(2):364-370.
+106. Maubec E, Petrow P, Scheer-Senyarich I, et al. Phase II study
+of cetuximab as first-line single-drug therapy in patients with
+unresectable squamous cell carcinoma of the skin. J Clin
+Oncol. 2011;29(25):3419-3426.
+107. Foote MC, McGrath M, Guminski A, et al. Phase II study of
+single-agent panitumumab in patients with incurable cuta-
+neous squamous cell carcinoma. Ann Oncol. 2014;25(10):
+2047-2052.
+108. Vermorken JB, Stohlmacher-Williams J, Davidenko I, et al.
+Cisplatin and fluorouracil with or without panitumumab
+in patients with recurrent or metastatic squamous-cell
+carcinoma
+of
+the
+head
+and
+neck
+(SPECTRUM):
+an
+open-label phase 3 randomised trial. Lancet Oncol. 2013;
+14(8):697-710.
+109. O’Neill JO, Edwards LB, Taylor DO. Mycophenolate mofetil
+and risk of developing malignancy after orthotopic heart
+transplantation: analysis of the transplant registry of the
+International Society for Heart and Lung Transplantation. J
+Heart Lung Transpl. 2006;25(10):1186-1191.
+110. Euvrard S, Morelon E, Rostaing L, et al. Sirolimus and
+secondary skin-cancer prevention in kidney transplantation.
+N Engl J Med. 2012;367(4):329-339.
+111. Asgari MM, Arron ST, Warton EM, Quesenberry CP Jr,
+Weisshaar D. Sirolimus use and risk of cutaneous squamous
+cell carcinoma (SCC) in solid organ transplant recipients
+(SOTRs). J Am Acad Dermatol. 2015;73(3):444-450.
+112. Wheless L, Black J, Alberg AJ. Nonmelanoma skin cancer and
+the risk of second primary cancers: a systematic review.
+Cancer Epidemiol Biomarkers Prev. 2010;19(7):1686-1695.
+J AM ACAD DERMATOL
+VOLUME 78, NUMBER 3
+Alam et al
+577
+
+=== PAGE 19 ===
+113. Wehner MR, Linos E, Parvataneni R, Stuart SE, Boscardin WJ,
+Chren MM. Timing of subsequent new tumors in patients
+who present with basal cell carcinoma or cutaneous squa-
+mous cell carcinoma. JAMA Dermatol. 2015;151(4):382-388.
+114. Song F, Qureshi AA, Giovannucci EL, et al. Risk of a second
+primary cancer after non-melanoma skin cancer in white men
+and women: a prospective cohort study. PLoS Med. 2013;
+10(4):e1001433.
+115. Rees JR, Zens MS, Gui J, Celaya MO, Riddle BL, Karagas MR.
+Non melanoma skin cancer and subsequent cancer risk. PLoS
+One. 2014;9(6):e99674.
+116. Robinson JK, Wayne JD, Martini MC, Hultgren BA, Mallett KA,
+Turrisi R. Early detection of new melanomas by patients with
+melanoma
+and
+their
+partners
+using
+a
+structured
+skin
+self-examination skills training intervention: a randomized
+clinical trial. JAMA Dermatol. 2016;152(9):979-985.
+117. van der Pols JC, Williams GM, Pandeya N, Logan V, Green AC.
+Prolonged prevention of squamous cell carcinoma of the
+skin by regular sunscreen use. Cancer Epidemiol Biomarkers
+Prev. 2006;15(12):2546-2548.
+118. Green AC, Williams GM, Logan V, Strutton GM. Reduced
+melanoma after regular sunscreen use: randomized trial
+follow-up. J Clin Oncol. 2011;29(3):257-263.
+119. Weinstock MA, Bingham SF, Digiovanna JJ, et al. Tretinoin
+and the prevention of keratinocyte carcinoma (basal and
+squamous cell carcinoma of the skin): a veterans affairs
+randomized chemoprevention trial. J Invest Dermatol. 2012;
+132(6):1583-1590.
+120. Weinstock MA, Bingham SF, Lew RA, et al. Topical tretinoin
+therapy and all-cause mortality. Arch Dermatol. 2009;145(1):
+18-24.
+121. Kadakia KC, Barton DL, Loprinzi CL, et al. Randomized
+controlled trial of acitretin versus placebo in patients at
+high-risk for basal cell or squamous cell carcinoma of the skin
+(North Central Cancer Treatment Group Study 969251).
+Cancer. 2012;118(8):2128-2137.
+122. Chen K, Craig JC, Shumack S. Oral retinoids for the preven-
+tion of skin cancers in solid organ transplant recipients: a
+systematic review of randomized controlled trials. Br J
+Dermatol. 2005;152(3):518-523.
+123. Bavinck JN, Tieben LM, Van der Woude FJ, et al. Prevention of
+skin cancer and reduction of keratotic skin lesions during
+acitretin
+therapy
+in
+renal
+transplant
+recipients:
+a
+double-blind, placebo-controlled study. J Clin Oncol. 1995;
+13(8):1933-1938.
+124. Tangrea JA, Edwards BK, Taylor PR, et al. Long-term therapy
+with low-dose isotretinoin for prevention of basal cell carci-
+noma: a multicenter clinical trial. Isotretinoin-Basal Cell Carci-
+noma Study Group. J Natl Cancer Inst. 1992;84(5):328-332.
+125. LevineN,MoonTE,CartmelB,etal.Trialofretinolandisotretinoin
+in
+skin
+cancer
+prevention:
+a
+randomized,
+double-blind,
+controlled trial. Southwest Skin Cancer Prevention Study Group.
+Cancer Epidemiol Biomarkers Prev. 1997;6(11):957-961.
+126. Chen AC, Martin AJ, Choy B, et al. A phase 3 randomized trial
+of nicotinamide for skin-cancer chemoprevention. N Engl J
+Med. 2015;373(17):1618-1626.
+127. Elmets CA, Viner JL, Pentland AP, et al. Chemoprevention of
+nonmelanoma skin cancer with celecoxib: a randomized,
+double-blind, placebo-controlled trial. J Natl Cancer Inst.
+2010;102(24):1835-1844.
+128. Clark LC, Combs GF Jr, Turnbull BW, et al. Effects of selenium
+supplementation for cancer prevention in patients with
+carcinoma of the skin. A randomized controlled trial.
+Nutritional Prevention of Cancer Study Group. JAMA. 1996;
+276(24):1957-1963.
+129. Duffield-Lillico AJ, Slate EH, Reid ME, et al. Selenium supple-
+mentation and secondary prevention of nonmelanoma skin
+cancer in a randomized trial. J Natl Cancer Inst. 2003;95(19):
+1477-1481.
+130. Greenberg ER, Baron JA, Stukel TA, et al. A clinical trial of beta
+carotene to prevent basal-cell and squamous-cell cancers of
+the skin. The Skin Cancer Prevention Study Group. N Engl J
+Med. 1990;323(12):789-795.
+131. Chen J, Ruczinski I, Jorgensen TJ, et al. Nonmelanoma skin
+cancer and risk for subsequent malignancy. J Natl Cancer Inst.
+2008;100(17):1215-1222.
+132. Marcil I, Stern RS. Risk of developing a subsequent non-
+melanoma skin cancer in patients with a history of non-
+melanoma skin cancer: a critical review of the literature and
+meta-analysis. Arch Dermatol. 2000;136(12):1524-1530.
+133. Geng A, Weinstock MA, Hall R, et al. Tolerability of high-dose
+topical tretinoin: the Veterans Affairs Topical Tretinoin Che-
+moprevention Trial. Br J Dermatol. 2009;161(4):918-924.
+134. Tangrea JA, Adrianza E, Helsel WE, et al. Clinical and
+laboratory
+adverse
+effects
+associated
+with
+long-term,
+low-dose
+isotretinoin:
+incidence
+and
+risk
+factors.
+The
+Isotretinoin-Basal Cell Carcinomas Study Group. Cancer
+Epidemiol Biomarkers Prev. 1993;2(4):375-380.
+135. Moon TE, Levine N, Cartmel B, et al. Effect of retinol in
+preventing squamous cell skin cancer in moderate-risk sub-
+jects: a randomized, double-blind, controlled trial. Southwest
+Skin Cancer Prevention Study Group. Cancer Epidemiol Bio-
+markers Prev. 1997;6(11):949-956.
+136. Tang JY, Aszterbaum M, Athar M, et al. Basal cell carcinoma
+chemoprevention with nonsteroidal anti-inflammatory drugs
+in genetically predisposed PTCH11/ humans and mice.
+Cancer Prev Res (phila). 2010;3(1):25-34.
+137. Kreul SM, Havighurst T, Kim K, et al. A phase III skin cancer
+chemoprevention study of DFMO: long-term follow-up of
+skin cancer events and toxicity. Cancer Prev Res (Phila). 2012;
+5(12):1368-1374.
+138. Bailey
+HH,
+Kim
+K,
+Verma
+AK,
+et
+al.
+A
+randomized,
+double-blind, placebo-controlled phase 3 skin cancer pre-
+vention study of {alpha}-difluoromethylornithine in subjects
+with previous history of skin cancer. Cancer Prev Res (phila).
+2010;3(1):35-47.
+J AM ACAD DERMATOL
+MARCH 2018
+578
+Alam et al

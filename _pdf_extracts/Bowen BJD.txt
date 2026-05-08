@@ -1,0 +1,959 @@
+=== PAGE 1 ===
+Br J Dermatol 2023; 188:186–194
+https://doi.org/10.1093/bjd/ljac042
+Advance access publication date: 1 November 2022
+Guidelines
+Accepted: 26 September 2022
+© The Author(s) 2022. Published by Oxford University Press on behalf of British Association of Dermatologists. All rights reserved. For permissions, 
+please e-mail: journals.permissions@oup.com
+British Association of Dermatologists guidelines for the 
+management of people with cutaneous squamous cell 
+carcinoma in situ (Bowen disease) 2022
+Ashish Sharma ,1 Andrew J. Birnie,2 Cristina Bordea,3 Seau Tak Cheung ,4 Jasmine Mann ,5 
+Colin A. Morton,6 Asad Salim,7 Zeeshaan-Ul Hasan,2 Maria Hashme,8 Zahra Mansour Kiaee ,8 
+M. Firouz Mohd Mustapa ,8 Lesley S. Exton
+8 and on behalf of the British Association of 
+Dermatologists’ Clinical Standards Unit
+1Nottingham University Hospitals NHS Trust, Nottingham NG7 2UH, UK
+2East Kent Hospitals University NHSFT, Canterbury CT1 3NG, UK
+3Kettering General Hospital NHSFT, Kettering NN16 8UZ, UK
+4Blackheath Hospital, London SE3 9LF, UK
+5University Hospitals of Derby and Burton NHSFT, Derby DE22 3NG, UK
+6NHS Forth Valley, Stirling Community Hospital, Stirling FK8 2AU, UK
+7Tallaght Hospital, Dublin D24 NR0A, Ireland
+8Willan House, British Association of Dermatologists, London W1T 5HQ, UK
+Correspondence: Ashish Sharma. Email: guidelines@bad.org.uk
+Produced in 1999 by the British Association of Dermatologists
+Reviewed and updated 2006, 2014, 2022
+This is an updated guideline prepared for the British 
+Association of Dermatologists (BAD) Clinical Standards Unit, 
+which includes the Therapy & Guidelines Subcommittee. 
+Members of the Clinical Standards Unit who have con­
+tributed are N.J. Levell (Chair, Therapy & Guidelines 
+Subcommittee), B. McDonald (BAD Assistant Honorary 
+Secretary), A. Bardham, S.L. Chua, A. Daunton, H. Frow, I. 
+Nasr, G. Petrof, A. Therianou, M. Hashme (BAD Information 
+Scientist), Z. Kiaee (BAD Guideline Research Fellow), L.S. 
+Exton (BAD Senior Guideline Research Fellow) and M.F. 
+Mohd Mustapa (Director of Clinical Standards).
+1.0  Purpose and scope
+The overall objective of the guideline is to provide up-to-
+date, evidence-based recommendations for the man­
+agement of squamous cell carcinoma (SCC) in situ. The 
+document aims to:
+•	 offer an appraisal of all relevant literature up to 13 August 
+2021, focusing on any key developments
+•	 address important, practical clinical questions relating to 
+the primary guideline objective
+NICE has renewed accreditation of the process used by the British Association 
+of Dermatologists to produce clinical guidelines. The renewed accredita­
+tion is valid until 31 May 2026 and applies to guidance produced using the 
+­processes ­described in ‘Updated guidance for writing a British Association of 
+Dermatologists clinical guideline: the adoption of the GRADE methodology 
+2016’. The original accreditation term began on 12 May 2010. More information 
+on accreditation can be viewed at www.nice.org.uk/accreditation.
+Linked Article: Berking Br J Dermatol 2023; 188:166.
+Downloaded from https://academic.oup.com/bjd/article/188/2/186/6788751 by guest on 06 May 2026
+
+=== PAGE 2 ===
+187
+BAD guidelines for cutaneous squamous cell carcinoma in situ, A. Sharma et al.
+•	 provide guideline recommendations and if appropriate 
+research recommendations.
+The guideline is presented as a detailed review with high­
+lighted recommendations for practical use in primary care 
+and in the clinic (see Section 3.0), in addition to an updated 
+patient information leaflet (available on the BAD website: 
+https://www.bad.org.uk/patient-information-leaflets).
+The guideline also reviews erythroplasia of Queyrat/penile 
+intraepithelial neoplasia and Bowenoid papulosis, which 
+have similar histology and are often diagnosed by dermatol­
+ogists. However, detailed therapeutic review of these con­
+ditions is beyond the scope of this guideline and readers 
+are directed to recent review articles for further information: 
+Kravvas et al.1 and Issa et al.2
+1.1  Exclusions
+This guideline does not review or offer treatment recom­
+mendations for vaginal intraepithelial neoplasia or perianal 
+SCC in situ.
+2.0  Methodology
+This set of guidelines has been developed using the BAD’s 
+recommended methodology.3 Further information can be 
+found in Appendix K (see Supporting Information) with 
+reference to the AGREE II instrument (www.agreetrust.
+org)4 and GRADE (http://www.gradeworkinggroup.org). 
+Recommendations were developed for implementation in 
+the UK National Health Service (NHS).
+The Guideline Development Group (GDG) consisted of 
+six consultant dermatologists, two dermatology specialist 
+trainees, two patient representatives and a technical team 
+(consisting of a guideline research fellow, an information 
+scientist and a project manager providing methodological 
+and technical support). The GDG established several clini­
+cal questions pertinent to the scope of the guideline and a 
+set of outcome measures of importance to patients, ranked 
+according to the GRADE methodology5 (Section 2.1; and 
+Appendix A; see Supporting Information).
+A systematic literature search of the PubMed, MEDLINE, 
+Embase and Cochrane databases was conducted by the 
+technical team to identify key articles on SCC in situ to 13 
+August 2021; search terms and strategies are detailed in 
+Appendix L (see Supporting Information). Additional ref­
+erences relevant to the topic were also isolated from cita­
+tions in the reviewed literature. Data extraction and critical 
+appraisal, data synthesis, evidence summaries, lists of 
+excluded studies and the PRISMA diagram were prepared 
+by the technical team. The overall certainty of evidence from 
+the included studies was rated according to the GRADE sys­
+tem (high, moderate, low or very low).
+Recommendations are based on evidence drawn from 
+systematic reviews of the literature pertaining to the clinical 
+questions identified, following discussions with the entire 
+GDG and considering all four factors that would affect its 
+strength rating according to the GRADE approach (i.e. bal­
+ance between desirable and undesirable effects, overall cer­
+tainty of the evidence, patient values and preferences, and 
+resource allocation). All GDG members contributed towards 
+drafting and/or reviewing the narratives and information in 
+the guideline and Supporting Information documents. When 
+there was insufficient evidence from the literature, informal 
+consensus was reached based on the specialist experience 
+of consultants on the GDG.
+The Supporting Information contains the summary of 
+findings with forest plots (Appendix B), tables Linking 
+the Evidence To Recommendations (LETR) (Appendix C), 
+GRADE evidence profiles indicating the overall certainty 
+of the evidence (Appendix D), the summary of included 
+studies (Appendix E), narrative findings for within-patient 
+randomized controlled trials (RCTs) (Appendix F), narra­
+tive findings for noncomparative studies (Appendix G), 
+PRISMA flow diagram (Appendix H), critical appraisal 
+of included systematic reviews (Appendix I) and a list 
+of excluded studies (Appendix J). The strength of rec­
+ommendation is expressed by the wording and symbols 
+shown in Table 1.
+2.1  Clinical questions and outcomes
+The GDG established two clinical questions pertinent to 
+the scope of the guideline (see Appendix A for the full 
+review protocol). The GDG also established a set of out­
+come measures of importance to patients for each clinical 
+question, which were agreed with and ranked according to 
+the GRADE methodology5 by the patient representatives. 
+This uses a nine-point scale, with outcomes ranked 9 those 
+the patient representatives considered most important. 
+Table 1  Strength of recommendation ratings
+Strength
+Wording
+Symbol
+Definition
+Strong recommendation 
+for the use of an 
+intervention
+‘Offer’ (or similar, e.g. 
+‘use’, ‘provide’, ‘take’, 
+‘investigate’ etc.)
+⇈
+Benefits of the intervention outweigh the risks; most patients would choose 
+the intervention while only a small proportion would not; for clinicians, most 
+of their patients would receive the intervention; for policymakers, it would be 
+a useful performance indicator
+Weak recommendation 
+for the use of an 
+intervention
+‘Consider’
+↑
+Risks and benefits of the intervention are finely balanced; most patients would 
+choose the intervention, but many would not; clinicians would need to 
+consider the pros and cons for the patient in the context of the evidence; for 
+policymakers it would be a poor performance indicator where variability in 
+practice is expected
+No recommendation
+Θ
+Insufficient evidence to support any recommendation
+Strong recommendation 
+against the use of an 
+intervention
+‘Do not offer’
+⇊
+Risks of the intervention outweigh the benefits; most patients would not 
+choose the intervention while only a small proportion would; for clinicians, 
+most of their patients would not receive the intervention
+Downloaded from https://academic.oup.com/bjd/article/188/2/186/6788751 by guest on 06 May 2026
+
+=== PAGE 3 ===
+188
+BAD guidelines for cutaneous squamous cell carcinoma in situ, A. Sharma et al.
+Outcomes ranked 9, 8 or 7 are critical for decision making; 
+those ranked 6, 5 or 4 are important but not critical for deci­
+sion making, and those ranked 3, 2 or 1 are the least impor­
+tant for decision making. Data on these outcome measures 
+were extracted from the included studies (Appendices B, 
+D and E).
+Review question 1: interventions
+In people with SCC in situ what are the clinical effectiveness 
+and efficacy, safety and tolerability of available treatments 
+compared with each other or in combination or with placebo 
+or no treatment?
+•	 Clearance (within 6 months) (9)
+•	 Sustained clearance and recurrence at 1, 2 or 5 years (9)
+•	 Adverse events: serious (e.g. bleeding, severe pain, 
+ulceration) (8)
+•	 Quality of life (8)
+•	 Cosmetic outcome (6)
+•	 Convenience of treatment (6)
+•	 Treatment tolerability (e.g. pain) (4)
+•	 Adverse events: minor (3)
+Review question 2: rates of cancer
+What are the subsequent rates of keratinocyte cancer in 
+people who have had SCC in situ?
+•	 Incidence of any keratinocyte cancer (at location of previ­
+ous SCC in situ) in studies with follow-up of ≥ 6 months 
+since treatment or a reference timepoint (9)
+•	 Incidence of progression outside the original location of 
+previous SCC in situ (6)
+•	 Incidence of malignancy (6)
+3.0  Summary of recommendations
+There are few RCTs other than for photodynamic therapy 
+(PDT) to support the following guidelines for the manage­
+ment of SCC in situ.
+The following recommendations and ratings were agreed 
+upon unanimously by the core members of the GDG and 
+patient representatives. For further information on the 
+wording used for recommendations and strength of recom­
+mendation ratings see Table 1. The evidence for recommen­
+dations is based on the studies as listed (for details and 
+discussion of the evidence see Appendices B–G). The GDG 
+recommendations relating to referral pathways are based on 
+discussion and specialist clinical experience among consult­
+ants on the GDG, as evidence-based details are not available 
+at the time of writing.
+The GDG is aware of the lack of high-quality evidence 
+for some of these recommendations, and therefore strong 
+recommendations with an asterisk (*) are based on available 
+evidence, as well as consensus and specialist experience 
+among consultants on the GDG. Good Practice Point (GPP) 
+recommendations are derived from informal consensus 
+among consultants on the GDG.
+In practice, most dermatologists will instigate treatment 
+without first resorting to a biopsy. In the ‘real-world’ treat­
+ment of SCC in situ, clinicians may select several different 
+types of treatment to discuss with a patient. Decisions may 
+be influenced by several factors, including the lesion itself 
+(size and thickness), the equipment available and patient fac­
+tors (e.g. general health, immunosuppression, or the poten­
+tial for poor wound healing at sites such as the lower leg). 
+Consideration should also be given to the patient’s previous 
+experience of treatment and cosmetic awareness. Lesions 
+are considered large if > 2 cm and are considered high risk 
+at periocular and digital (and penile) sites. These considera­
+tions should be discussed with the patient, as pertaining to 
+the possible complications and risk of incomplete clearance 
+and/or recurrence.
+Treatments are presented in a sequence with the least 
+invasive and topical therapies first, then surgical approaches, 
+and finally treatments that require more complex or expen­
+sive equipment and are not widely available. 
+General management
+R1 (↑) Consider punch biopsy or diagnostic excision when 
+clinical and dermoscopic features are not sufficient for diag­
+nosis of SCC in situ.
+R2 (GPP) Curettage may be performed, for both treatment 
+and diagnosis, depending on the clinical scenario and oper­
+ator judgement. Histology specimens should include the 
+deep margin if an assessment of potentially invasive tumour 
+is required.
+R3 (GPP) Provide educational material or a patient informa­
+tion leaflet on SCC in situ and for any proposed treatment 
+modality, for example www.skinhealthinfo.org.uk/a-z-­
+conditions-treatments.
+R4 (GPP) The majority of people with SCC in situ can 
+be discharged safely following completion of treatment. 
+Practitioners should exercise clinical judgement when decid­
+ing to offer a follow-up appointment. Education should be 
+provided on skin surveillance and sun protection prior to 
+discharge, and the patient should be advised to return to 
+their healthcare professional if there is any suggestion of 
+recurrence, lack of response or a new skin cancer.
+R5 (GPP) Consider following up people with SCC in situ on 
+a case-by-case basis, based on clinical judgement, factoring 
+in lesion size, treatment modality, anatomical location and 
+immunosuppression.
+No treatment
+R6 (GPP) Consider conservative measures in people in 
+poor health and with multiple SCC in situ lesions, especially 
+on the lower legs, where there is a greater risk of long-
+term ulceration after treatment. This includes a moisturizer 
+(preferably urea based) and skin surveillance, proceeding to 
+biopsy if SCC is suspected.
+Topical therapies
+R7 (⇈) Offer* topical 5-fluorouracil (5%) monotherapy to 
+people with SCC in situ, for small lesions (e.g. < 2 cm) in 
+low-risk sites, and in those who will not or cannot undergo 
+alternative treatments. Initiate a standard regimen of 
+Downloaded from https://academic.oup.com/bjd/article/188/2/186/6788751 by guest on 06 May 2026
+
+=== PAGE 4 ===
+189
+BAD guidelines for cutaneous squamous cell carcinoma in situ, A. Sharma et al.
+once- or twice-daily application for 3–4 weeks. Counsel 
+patients regarding the side-effects of local inflammation, 
+ulceration and potential scarring (see R9).
+R8 (GPP) Consider topical 5-fluorouracil (5%) monother­
+apy in people with SCC in situ, for larger lesions in low-
+risk sites, and in those who will not or cannot undergo 
+treatment with other better-established therapies. Initiate 
+a standard regimen of once- or twice-daily application for 
+up to 4 weeks. Counsel patients regarding the side-ef­
+fects of local inflammation, ulceration and potential scar­
+ring (see R9).
+R9 (↑) Consider biopsy and/or the next treatment option if 
+a complete response to topical 5-fluorouracil has not been 
+achieved, once the residual inflammation has settled.
+R10 (↑) Consider topical 5-fluorouracil (5%) monotherapy in 
+people with SCC in situ, for larger lesions on poorly healing 
+sites (e.g. the lower legs of older patients) as a practical alter­
+native to surgical treatments. Initiate a standard regimen of 
+once- or twice-daily application for up to 4 weeks (see R9).
+R11 (GPP) Consider topical 5-fluorouracil (5%) in immuno­
+suppressed people with SCC in situ, as a practical treatment 
+for multiple and recurring lesions.
+R12 (↑) Consider topical imiquimod (5%) in people with SCC 
+in situ at low-risk sites, when there is no suitable alternative. 
+Consider once-daily application, three times per week for 4 
+weeks, although prolonged treatment for 12 weeks may be 
+required. A reduction in efficacy may be observed in those 
+who are immunosuppressed.
+R13 (↑) Consider topical imiquimod in people with SCC in 
+situ lesions located on the lower legs who are inappropriate 
+for, have contraindication to or have inadequate response to 
+topical 5-fluorouracil (5%), PDT, laser, curettage with cau­
+tery, or surgery (see R31).
+No recommendation (Θ) There is insufficient evidence to 
+recommend tazarotene to treat people with SCC in situ.
+Cryotherapy (cryosurgery)
+R14 (⇈) Offer* cryotherapy as a first-line treatment option 
+to people with small (< 2 cm) SCC in situ lesions (see R15).
+R15 (GPP) Employ a single cryotherapy cycle of freezing for 
+20–30 s, or two cycles of 10–20 s, for SCC in situ lesions 
+(time begins at the creation of a freezing zone). The duration 
+selected may depend on the device used and anatomical 
+location. Advise patients that cryotherapy may be associ­
+ated with more discomfort, poorer healing and greater recur­
+rence compared with curettage with cautery.
+R16 (GPP) Consider cryotherapy on an individual basis, in 
+people with SCC in situ with larger lesions, and those on the 
+lower leg (see R15). Consider patient factors (age, location, 
+skin health) and discuss the risk of prolonged healing and 
+potential ulceration. The time of freezing may need to be 
+shortened to avoid complications, but this is associated with 
+a reduction in effectiveness.
+R17 (GPP) Consider cryotherapy as a treatment option for 
+immunosuppressed people with SCC in situ.
+Curettage with cautery
+R18 (⇈) Offer* curettage with cautery as a first-line treat­
+ment option to people with small SCC in situ lesions, espe­
+cially if a histological diagnosis is desirable.
+R19 (GPP) Consider curettage with cautery on an individual 
+basis in people with SCC in situ with larger lesions. Consider 
+patient factors (age, location, skin health) and discuss the 
+risk of prolonged healing and potential ulceration.
+R20 (GPP) Consider curettage with cautery as a treatment 
+option for immunosuppressed people with SCC in situ.
+Photodynamic therapy
+R21 (⇈) Offer* conventional, red-light PDT as a treatment 
+option to people with SCC in situ, particularly for poorly heal­
+ing or cosmetically sensitive skin sites, multiple lesions and 
+large lesions.
+R22 (GPP) Consider conventional, red-light PDT in immuno­
+suppressed people with SCC in situ, as an effective, well-tol­
+erated and repeatable treatment for multiple and frequently 
+recurring lesions.
+No recommendation (Θ) Currently, there is insufficient 
+trial evidence to support the use of daylight PDT as a treat­
+ment option for people with SCC in situ.
+Standard surgical excision
+R23 (↑↑) Offer* standard surgical excision to people with 
+SCC in situ if there is diagnostic uncertainty regarding inva­
+sive disease.
+R24 (⇈) Offer* standard surgical excision to people with 
+SCC in situ where morbidity from surgery is low, or for recur­
+rent or refractory disease. Use an appropriate clinical margin 
+to achieve complete clearance. Depending on the anatomi­
+cal location and clinical assessment, a 3–5-mm margin may 
+be preferable (see Appendix C).
+R25 (GPP) Consider standard surgical excision as a treat­
+ment option for immunosuppressed people with SCC in situ.
+No recommendation (Θ) There is insufficient evidence to 
+support the use of ultrasonic aspiration to treat people with 
+SCC in situ.
+Mohs micrographic surgery
+R26 (↑) Consider Mohs micrographic surgery in people with 
+SCC in situ when tissue conservation is important, such as 
+around the eyes and the nail unit.
+R27 (GPP) Where Mohs micrographic surgery is not avail­
+able or not appropriate, consider active treatment with any 
+suitable alternative, on an individual basis. This includes 
+standard surgical excision, curettage with cautery, PDT, 
+Downloaded from https://academic.oup.com/bjd/article/188/2/186/6788751 by guest on 06 May 2026
+
+=== PAGE 5 ===
+190
+BAD guidelines for cutaneous squamous cell carcinoma in situ, A. Sharma et al.
+5-fluorouracil (5%), imiquimod (5%), laser and cryotherapy. 
+Discuss the risk of functional impairment, including that 
+posed by recurrence and its subsequent treatment.
+Laser
+R28 (↑) Where this service is available, consider laser treat­
+ment in people with SCC in situ where other treatments 
+have failed or are not suitable. Ablative CO2 laser may be 
+more effective than nonablative neodymium:YAG.
+Radiotherapy
+R29 (⇈) Refer* immunocompetent people with SCC in situ 
+for consideration for radiotherapy only where the lesion is 
+recurrent or refractory to other treatments, or where surgery 
+is not appropriate or is associated with high morbidity.
+R30 (GPP) Consider referring immunocompetent people 
+with SCC in situ for consideration of brachytherapy to treat 
+curved surfaces and areas of poor healing, such as the digit 
+and lower legs.
+Figure 1  Patient management pathway for squamous cell carcinoma in situ. GP, general practitioner; PDT, photodynamic therapy.
+Downloaded from https://academic.oup.com/bjd/article/188/2/186/6788751 by guest on 06 May 2026
+
+=== PAGE 6 ===
+191
+BAD guidelines for cutaneous squamous cell carcinoma in situ, A. Sharma et al.
+R31 (⇈) For immunocompetent people with SCC in situ 
+lesions located on the lower legs, use* treatments other 
+than radiotherapy (apart from brachytherapy), due to pro­
+longed healing time. See the management pathway for 
+treatment options (Figure 1).
+R32 (GPP) For immunosuppressed people, reserve radio­
+therapy for where the SCC in situ has progressed to inva­
+sive disease. Such patients are at higher risk of malignancy, 
+and radiotherapy cannot be used multiple times at the same 
+location.
+Combination therapy
+R33 (↑) Consider combination therapy if monotherapy 
+with 5-fluorouracil (5%), imiquimod (5%), PDT, laser, cry­
+otherapy, or curettage with cautery fails, and surgery is 
+not appropriate or is associated with excessive morbidity 
+(Table 2).
+List of future research recommendations
+The following list outlines future research recommendations 
+(FRRs).
+FRR1 RCTs evaluating topicals, standard surgical excision, 
+curettage with cautery, PDT and cryotherapy.
+FRR2 RCTs evaluating combination treatment.
+FRR3 Prospective trials on the effectiveness of daylight 
+PDT.
+FRR4 Trials to investigate the optimum duration of freez­
+ing, number of freeze–thaw cycles, and use of a prede­
+termined peripheral margin for cryotherapy; in particular, 
+their relation to the risk of prolonged healing.
+FRR5 Comparison study of laser vs. curettage with cau­
+tery, reporting clearance rate, recurrence and cosmetic 
+outcome.
+FRR6 A trial investigating the complete clearance rate fol­
+lowing standard surgical excision with the clinical margin 
+used, grade of the operator, and healthcare setting (pri­
+mary or secondary care).
+FRR7 Further trials to investigate the efficacy and safety 
+of treatments in immunosuppressed people with SCC in 
+situ, in particular, imiquimod (5%) and laser.
+FRR8 Studies on the effectiveness and complication rates of 
+brachytherapy, including at challenging sites such as the 
+digits and lower legs.
+FRR9 The use of optical coherence tomography or confocal 
+laser scanning microscopy in the diagnosis of SCC in situ 
+and their ability to monitor treatment efficacy.
+4.0  Algorithm
+The recommendations, discussions in the LETR (Appendix C) 
+and consensus specialist experience were used to inform 
+the patient management pathway (Figure 1).
+5.0  Background
+5.1  Definition
+Bowen disease is a form of intraepidermal (in situ) SCC, 
+originally described in 1912,6 although the original lesions, 
+located on sites that were not sun exposed, were possi­
+bly arsenic induced. In total six patients were described by 
+Bowen7,8 and Darier,9 all with disordered epidermal architec­
+ture on histology. In 1911, Queyrat described three men with 
+red lesions limited to the glans penis, applying the French 
+term erythroplasie.10 The histology was identical to that 
+described by Bowen and Darier.
+Current practice is to consider Bowen disease as synon­
+ymous with SCC in situ for lesions located at nongenital 
+sites. In line with reduced use of eponyms, we have used 
+the term SCC in situ throughout this updated guideline. The 
+management of genital lesions is not specifically covered in 
+this guideline.
+5.2  Incidence and aetiology
+The most recent data are from the Netherlands, where the 
+incidence rates in 2017 were calculated from a nationwide 
+cancer registry.11 In men and women these were 68 and 
+72 cases per 100 000 person-years, respectively, with a 
+statistically significant increase over time. The number of 
+patients with SCC in situ treated by dermatologists doubled 
+between 2005 and 2015. In Canada, annual incidences in 
+men and women of 27.8 and 22.4 per 100 000, respectively, 
+were reported in the period 1996–2000.12
+Peak incidence of the disease occurs in the seventh dec­
+ade of life and most studies have shown a slight female 
+preponderance.11,13–16 The majority of studies report that 
+SCC in situ occurs mainly on sun-exposed sites, with more 
+recent studies suggesting the most common being the head 
+and neck (29–54%).11,15–18 However, the lower limb seems 
+to be affected more in women than in men.13,16,19 Older, 
+UK-based studies have reported that the majority of patients 
+(60–85%) have SCC in situ on the lower legs, which may 
+indicate that the sun exposure pattern is different in coun­
+tries with lower rates of sunshine.13,14 Less common vari­
+ants include pigmented, subungual, periungual, palmar and 
+verrucous SCC in situ. Variants exist on genital and perianal 
+locations, and are termed ‘penile intraepithelial neoplasia’ 
+and ‘anal intraepithelial neoplasia’, respectively, each with 
+their own specialist treatment pathway.
+Aetiological factors for SCC in situ include:
+•	 Irradiation: ultraviolet radiation (solar, iatrogenic and 
+sunbeds),19,20 radiotherapy.
+•	 Carcinogens: arsenic (lesions may arise in sun-pro­
+tected areas).21
+•	 Immunosuppression: in particular, therapeutic.22–24
+Table 2  Reported combination treatments (n > 5) (for full details see 
+the tables in Appendix D in the Supporting Information)
+Combination treatments in the literature include
+  Cryotherapy followed by imiquimod (5%)
+  Cryotherapy followed by 5-fluorouracil (5%)
+  Imiquimod followed by CO2 laser
+  Laser and 5-fluorouracil (5%)
+  Laser and photodynamic therapy
+  Simple shaving followed by photodynamic therapy
+Downloaded from https://academic.oup.com/bjd/article/188/2/186/6788751 by guest on 06 May 2026
+
+=== PAGE 7 ===
+192
+BAD guidelines for cutaneous squamous cell carcinoma in situ, A. Sharma et al.
+•	 Viral: human papillomavirus (HPV) DNA has been 
+demonstrated in extragenital SCC in situ in varying 
+amounts from 4.8% to 60%.25–29 A systematic review 
+found HPV detected in 28.3% of 904 extragenital sam­
+ples, with HPV 16 being the commonest followed by 
+HPV 33.30 The HPV detection rate was around threefold 
+higher in samples from immunosuppressed patients. 
+HPV 16 may be particularly relevant with regard to 
+development of SCC in situ on the hands and feet, being 
+implicated in the majority of palmoplantar and periun­
+gual lesions.31,32 There is an association between HPV, 
+especially HPV 16, and the development of anogenital 
+SCC in situ,25,33,34 but this is by no means conditional for 
+its development.35 Genital–digital spread is a proposed 
+mechanism linking these sites.
+•	 Others: chronic injury or dermatoses (such as lupus 
+vulgaris or chronic lupus erythematosus) have been 
+implicated.36–38 Seborrhoeic keratoses have also been 
+associated.39–42
+6.0  Diagnosis and investigation
+6.1  Clinical presentation
+SCC in situ typically presents as a well-demarcated, asymp­
+tomatic, erythematous hyperkeratotic plaque with an irreg­
+ular border, on sun-exposed sites of a light-skinned person. 
+A pigmented variant accounts for 1.7–5.5% of cases.42–44 
+This has been more frequently described in male patients 
+with darker skin types, and on sun-protected areas such as 
+lower limbs and intertriginous areas.45–47
+6.2  Investigation
+In routine clinical practice the diagnosis is made on clini­
+cal grounds. Dermoscopic examination commonly reveals 
+surface scaling, coiled vessels (‘glomerular’ vessels) and/
+or red clods (‘globular’ vessels), with the pigmented variant 
+displaying small brown dots and globules.42,48–52 If there is 
+diagnostic doubt, or confirmation is required before under­
+taking a certain type of treatment, a punch biopsy can be 
+performed to show full-thickness epidermal dysplasia on 
+histology.
+If a curette biopsy is performed, this should include the full 
+thickness of the epidermis and dermis, to establish whether 
+there is any invasive disease amounting to a cutaneous SCC. 
+Curettage may therefore be used for both treatment and 
+diagnosis, and is perhaps preferable to a punch biopsy in 
+certain clinical settings. This will depend on the suspected 
+differential diagnoses (e.g. superficial basal cell carcinoma), 
+the suspicion of invasive malignancy and the skill level of 
+the operator.53–55 To avoid a scenario where the histology 
+report cannot assess the deep margin and ‘invasion cannot 
+be excluded’, a punch biopsy or excision is best practice in 
+cases of diagnostic doubt.
+Histology should be obtained before using a destructive 
+modality, such as laser or radiotherapy, unless the diagnosis 
+is clear. Specimens should be representative of the entire 
+lesion, with large lesions perhaps requiring several punch 
+biopsies or a large incisional biopsy. A repeat biopsy should 
+be considered for lesions that are resistant to treatment or 
+evolved in clinical appearance.
+6.3  Referral to secondary care
+SCC in situ that is small (< 2 cm) and at a low-risk site (such 
+as the trunk and limbs) may be managed in primary care by a 
+general practitioner who is capable of establishing a clinical 
+diagnosis and initiating treatment options as per the guide­
+line in the first instance. Surgical modalities (such as curet­
+tage) will usually be performed by a general practitioner with 
+a specialist interest in dermatology, who has undergone a 
+period of specialty training, and is linked to a local skin can­
+cer multidisciplinary team. Such individuals will be trained 
+to perform a full-thickness biopsy to establish a diagnosis, 
+where appropriate.
+Patients should be referred to secondary care where (i) 
+there is diagnostic uncertainty, (ii) lesions are large or at high-
+risk sites such as the face or digit, and (iii) the clinician is not 
+experienced in managing SCC in situ. The use of telederma­
+tology services, where available, may allow a diagnosis to 
+be made by a secondary-care physician using high-quality 
+images, with management subsequently initiated in primary 
+care. Lesions that exhibit features suggestive of invasive 
+disease (rapid growth, pain, bleeding) should be referred 
+urgently on to a pathway for suspected skin cancer.
+7.0  Recommended audit points
+In the last 20 consecutive patients treated for SCC in situ, is 
+there clear documentation that
+1.	
+There has been a discussion on the choice of therapy 
+with the patient and the agreed treatment regimen?
+2.	
+The patient was provided with information on SCC in 
+situ and the treatment(s) offered?
+3.	
+Where surgical excision was used, was the SCC in 
+situ excised completely?
+4.	
+For lesions on the lower leg, were the treatment 
+parameters modified from those conventionally 
+used, for example a shorter duration for cryotherapy 
+or shorter regimen for topical therapy? In any case, 
+was complete clearance achieved?
+5.	
+The patient has been educated on recurrence, either 
+at the initial appointment, during treatment or prior 
+to discharge?
+6.	
+If followed up, the patient was satisfied with the out­
+come of treatment, including cosmesis?
+The audit recommendation of 20 cases per department is 
+to reduce variation in the results due to a single patient and 
+to allow benchmarking between different units. However, 
+departments unable to achieve this recommendation may 
+choose to audit all cases seen in the preceding 12 months 
+(Appendix M; see Supporting Information).
+8.0  Stakeholder involvement and peer review
+The draft document and Supporting Information were made 
+available to the BAD membership, the British Society for 
+Downloaded from https://academic.oup.com/bjd/article/188/2/186/6788751 by guest on 06 May 2026
+
+=== PAGE 8 ===
+193
+BAD guidelines for cutaneous squamous cell carcinoma in situ, A. Sharma et al.
+Dermatological Surgery (BSDS), the British Dermatological 
+Nursing Group (BDNG) and the Primary Care Dermatological 
+Society (PCDS). The comments received were actively con­
+sidered by the GDG. Following further review, the finalized 
+version was sent for peer review by the Clinical Standards 
+Unit of the BAD (made up of the Therapy & Guidelines 
+Subcommittee) prior to submission for publication.
+9.0  Limitations of the guideline
+This document has been prepared on behalf of the BAD 
+and is based on the best data available when the document 
+was prepared. It is recognized that under certain conditions 
+it may be necessary to deviate from the guidelines and that 
+the results of future studies may require some of the recom­
+mendations herein to be changed. Failure to adhere to these 
+guidelines should not necessarily be considered negligent, 
+nor should adherence to these recommendations constitute 
+a defence against a claim of negligence. Limiting the review 
+to English-language references was a pragmatic decision 
+but the authors recognize this may exclude some important 
+information published in other languages.
+10.0  Plans for guideline revision
+The proposed revision for this set of recommendations is 
+scheduled for 2027; where necessary, important interim 
+changes will be updated on the BAD website.
+Acknowledgments
+We are very grateful to the late Dr Neil Cox for his sub­
+stantial contribution to the writing of the earlier versions of 
+these guidelines; to consultant clinical oncologists Dr Agata 
+Rembielak and Dr Kate Fife for their advice on the use of 
+radiotherapy for SCC in situ and consultant dermatologist Dr 
+Raj Mallipeddi for his advice on the use of lasers in clinical 
+practice for SCC in situ; and to the two patient representa­
+tives Elizabeth and Jacqueline for their input in formulating 
+the clinical questions, ranking of the outcomes, reviewing 
+the evidence and formulating the recommendations, as well 
+as all those who commented on the draft during the con­
+sultation period.
+Funding sources
+Development of this guideline has been funded inde­
+pendently by the BAD.
+Conflicts of interest
+The following interests were declared over the duration of 
+the guideline development. A.J.B.: (1) invited speaker at edu­
+cational events – Almirall, LEO Pharma (nonspecific); (2) part 
+owner of the trademark Altruist – a urea-containing cream 
+(specific). C.B.: speaker at educational courses on PDT organ­
+ized by Galderma (specific). C.A.M.: (1) invited speaker – 
+Biofrontera (specific); (2) travel expenses – Galderma 
+(specific); (3) grant/research support – Biofrontera (specific). 
+Z.-U.H.: grant/research support – Meda Pharmaceuticals, 
+NIHR Clinical Research Network: Cancer (nonspecific). 
+A.S., S.T.C., J.M., A.S., M.H., Z.M.K., M.F.M.M. and L.S.E. 
+declare they have no conflicts of interest.
+Data availability
+The data are available in the Supporting Information.
+Ethics statement
+Not applicable.
+References
+	 1	 Kravvas G, Ge L, Ng J et al. The management of penile intraepi­
+thelial neoplasia (PeIN): clinical and histological features and treat­
+ment of 345 patients and a review of the literature. J Dermatolog 
+Treat 2022; 33:1047–62.
+	 2	 Issa A, Sebro K, Kwok A et al. Treatment options and outcomes 
+for men with penile intraepithelial neoplasia: a systematic review. 
+Eur Urol Focus 2022; 8:829–32.
+	 3	 Mohd Mustapa MF, Exton LS, Bell HK et al. Updated guidance for 
+writing a British Association of Dermatologists clinical guideline: 
+the adoption of the GRADE methodology 2016. Br J Dermatol 
+2017; 176:44–51.
+	 4	 Brouwers M, Kho ME, Browman GP et al. AGREE II: advancing 
+guideline development, reporting and evaluation in healthcare. 
+CMAJ 2010; 182:E839-42.
+	 5	 Guyatt GH, Oxman AD, Vist GE et al. GRADE: an emerging con­
+sensus on rating quality of evidence and strength of recommen­
+dations. BMJ 2008; 336:924–6.
+	 6	 Bowen JT. Precancerous dermatoses: a study of two cases of 
+chronic atypical epithelial proliferation. J Cutan Dis 1912; 30:241–55.
+	 7	 Bowen JT. Precancerous dermatoses: the further course of two 
+cases previously reported. Arch Derm Syphilol 1920; 1:23–4.
+	 8	 Bowen JT. Precancerous dermatoses: a sixth case of a type 
+recently described. J Cutan Dis 1915; 33:787–802.
+	 9	 Darier J. [Bowen’s precancerous dermatosis – lenticular and disc 
+dyskeratosis]. Ann Dermatol 1914; 5:449–71 (in French).
+	10	 Queyrat L. [Erythroplasia of the glans]. Bull Soc Franc Derm Syph 
+1911; 22:378–81 (in French).
+	11	 Tokez S, Wakkee M, Louwman M et al. Assessment of cutane­
+ous squamous cell carcinoma (cSCC) in situ incidence and the 
+risk of developing invasive cSCC in patients with prior cSCC in 
+situ versus the general population in the Netherlands, 1989–
+2017. JAMA Dermatol 2020; 156:973–81.
+	12	 Arlette JP, Trotter MJ. Squamous cell carcinoma in situ of the 
+skin: history, presentation, biology and treatment. Australas J 
+Dermatol 2004; 45:1–9.
+	13	 Eedy DJ, Gavin AT. Thirteen-year retrospective study of Bowen’s 
+disease in Northern Ireland. Br J Dermatol 1987; 117:715–20.
+	14	 Cox NH. Body site distribution of Bowen’s disease. Br J Dermatol 
+1994; 130:714–16.
+	15	 Jaeger AB, Gramkow A, Hjalgrim H et al. Bowen disease and risk 
+of subsequent malignant neoplasms: a population-based cohort 
+study of 1147 patients. Arch Dermatol 1999; 135:790–3.
+	16	 Hansen JP, Drake AL, Walling HW. Bowen’s disease: a four-year 
+retrospective review of epidemiology and treatment at a univer­
+sity center. Dermatol Surg 2008; 34:878–83.
+	17	 Leibovitch I, Huilgol SC, Selva D et al. Cutaneous lip tumours 
+treated with Mohs micrographic surgery: clinical features and 
+surgical outcome. Br J Dermatol 2005; 153:1147–52.
+	18	 Foo CC, Lee JS, Guilanno V et al. Squamous cell carcinoma 
+and Bowen’s disease of the skin in Singapore. Ann Acad Med 
+Singapore 2007; 36:189–93.
+Downloaded from https://academic.oup.com/bjd/article/188/2/186/6788751 by guest on 06 May 2026
+
+=== PAGE 9 ===
+194
+BAD guidelines for cutaneous squamous cell carcinoma in situ, A. Sharma et al.
+	19	 Kossard S, Rosen R. Cutaneous Bowen’s disease. An analysis of 
+1001 cases according to age, sex, and site. J Am Acad Dermatol 
+1992; 27:406–10.
+	20	 Reizner GT, Chuang TY, Elpern DJ et al. Bowen’s disease (squa­
+mous cell carcinoma in situ) in Kauai, Hawaii. A population-based 
+incidence report. J Am Acad Dermatol 1994; 31:596–600.
+	21	 Yu HS, Liao WT, Chai CY. Arsenic carcinogenesis in the skin. 
+J Biomed Sci 2006; 13:657–66.
+	22	 Drake AL, Walling HW. Variations in presentation of squamous 
+cell carcinoma in situ (Bowen’s disease) in immunocompromised 
+patients. J Am Acad Dermatol 2008; 59:68–71.
+	23	 Moloney FJ, Comber H, O’Lorcain P et al. A population-based 
+study of skin cancer incidence and prevalence in renal transplant 
+recipients. Br J Dermatol 2006; 154:498–504.
+	24	 Bordea C, Wojnarowska F, Millard PR et al. Skin cancers in 
+renal-transplant recipients occur more frequently than previ­
+ously recognized in a temperate climate. Transplantation 2004; 
+77:574–9.
+	25	 Hama N, Ohtsuka T, Yamazaki S. Detection of mucosal human 
+papilloma virus DNA in bowenoid papulosis, Bowen’s disease 
+and squamous cell carcinoma of the skin. J Dermatol 2006; 
+33:331–7.
+	26	 Derancourt C, Mougin C, Chopard Lallier M et al. [Oncogenic 
+human papillomaviruses in extragenital Bowen disease revealed 
+by in situ hybridization]. Ann Dermatol Venereol 2001; 128:
+715–18 (in French).
+	27	 Quéreux G, N’Guyen JM, Dreno B. Human papillomavirus and 
+extragenital in situ carcinoma. Dermatology 2004; 209:40–5.
+	28	 Mitsuishi T, Kawana S, Kato T et al. Human papillomavirus infec­
+tion in actinic keratosis and Bowen’s disease: comparative study 
+with expression of cell-cycle regulatory proteins p21(Waf1/Cip1), 
+p53, PCNA, Ki-67, and Bcl-2 in positive and negative lesions. 
+Hum Pathol 2003; 34:886–92.
+	29	 Zheng S, Adachi A, Shimizu M et al. Human papillomaviruses 
+of the mucosal type are present in some cases of extragenital 
+Bowen’s disease. Br J Dermatol 2005; 152:1243–7.
+	30	 Namgoong S, Kim J, Jeong KM et al. Association of human pap­
+illomavirus and extra-genital Bowen disease (squamous cell car­
+cinoma in situ): a systematic review. J Am Acad Dermatol 2021; 
+84:822–5.
+	31	 McGregor JM, Proby CM. The role of papillomaviruses in human 
+non-melanoma skin cancer. Cancer Surv 1996; 26:219–36.
+	32	 Alam M, Caldwell JB, Eliezri YD. Human papillomavirus-associ­
+ated digital squamous cell carcinoma: literature review and report 
+of 21 new cases. J Am Acad Dermatol 2003; 48:385–93.
+	33	 Kettler AH, Rutledge M, Tschen JA et al. Detection of human 
+papillomavirus in nongenital Bowen’s disease by in situ DNA 
+hybridization. Arch Dermatol 1990; 126:777–81.
+	34	 Collina G, Rossi E, Bettelli S et al. Detection of human papillo­
+mavirus in extragenital Bowen’s disease using in situ hybridiza­
+tion and polymerase chain reaction. Am J Dermatopathol 1995; 
+17:236–41.
+	35	 Nasca MR, Potenza MC, Alessi L et al. Absence of PCR-
+detectable human papilloma virus in erythroplasia of Queyrat 
+using a comparative control group. Sex Transm Infect 2010; 
+86:199–201.
+	36	 Degos R, Civatte J, Belaïch S et al. [Mucocutaneous Bowen’s 
+disease. 243 clinical cases]. Ann Dermatol Syphiligr (Paris) 1976; 
+103:5–14 (in French).
+	37	 Fritz K, Manske U. [Bowen’s carcinoma and cutaneous papillo­
+mas in lupus vulgaris]. Med Welt 1982; 33:450–2 (in German).
+	38	 Takayama A, Ishiguro N, Kawashima M. Coexistence of Bowenoid 
+papulosis and Bowen’s disease in a patient with systemic lupus 
+erythematosus. J Dermatol 2012; 39:646–9.
+	39	 Monteagudo JC, Jorda E, Terencio C et al. Squamous cell car­
+cinoma in situ (Bowen’s disease) arising in seborrheic keratosis: 
+three lesions in two patients. J Cutan Pathol 1989; 16:348–52.
+	40	 Cascajo CD, Reichel M, Sánchez JL. Malignant neoplasms asso­
+ciated with seborrheic keratoses. An analysis of 54 cases. Am J 
+Dermatopathol 1996; 18:278–82.
+	41	 Marschall SF, Ronan SG, Massa MC. Pigmented Bowen’s dis­
+ease arising from pigmented seborrheic keratoses. J Am Acad 
+Dermatol 1990; 23:440–4.
+	42	 Cameron A, Rosendahl C, Tschandl P et al. Dermatoscopy of 
+pigmented Bowen’s disease. J Am Acad Dermatol 2010; 62:597–
+604.
+	43	 Mota AN, Piñeiro-Maceira J, Alves Mde F et al. Pigmented 
+Bowen’s disease. An Bras Dermatol 2014; 89:825–7.
+	44	 Vivan MM, Hirata SH, Nascimento LS et al. A case of pigmented 
+Bowen’s disease. An Bras Dermatol 2017; 92:124–5.
+	45	 Ragi G, Turner MS, Klein LE et al. Pigmented Bowen’s disease 
+and review of 420 Bowen’s disease lesions. J Dermatol Surg 
+Oncol 1988; 14:765–9.
+	46	 Gutierrez-Mendoza D, Narro-Llorente R, Karam-Orantes M et al. 
+Dermoscopy clues in pigmented Bowen’s disease. Dermatol Res 
+Pract 2010; 2010:464821.
+	47	 Krishnan R, Lewis A, Orengo IF et al. Pigmented Bowen’s dis­
+ease (squamous cell carcinoma in situ): a mimic of malignant 
+melanoma. Dermatol Surg 2001; 27:673–4.
+	48	 Zalaudek I, Di Stefani A, Argenziano G. The specific dermoscopic 
+criteria of Bowen’s disease. J Eur Acad Dermatol Venereol 2006; 
+20:361–2.
+	49	 Zalaudek I, Argenziano G, Leinweber B et al. Dermoscopy of 
+Bowen’s disease. Br J Dermatol 2004; 150:1112–16.
+	50	 Bugatti L, Filosa G, De Angelis R. Dermoscopic observation of 
+Bowen’s disease. J Eur Acad Dermatol Venereol 2004; 18:572–4.
+	51	 Stante M, de Giorgi V, Massi D et al. Pigmented Bowen’s dis­
+ease mimicking cutaneous melanoma: clinical and dermoscopic 
+aspects. Dermatol Surg 2004; 30:541–4.
+	52	 Hu SC-S, Chiu H-H, Chen G-S et al. Dermoscopy as a diagnos­
+tic and follow-up tool for pigmented Bowen’s disease on acral 
+region. Dermatol Surg 2008; 34:1248–53.
+	53	 Nasimi M, Azizpour A, Nikoo A et al. Acantholytic and paget­
+oid variant of Bowen’s disease with microinvasion on the scalp 
+of a young female patient: a case report. Iran J Med Sci 2019; 
+44:511–14.
+	54	 Lee J, Kim M, Moon J et al. Pagetoid Bowen disease initially 
+misdiagnosed as ectopic extramammary Paget’s disease. Ann 
+Dermatol 2018; 30:218–21.
+	55	 Williamson JD, Colome MI, Sahin A et al. Pagetoid Bowen dis­
+ease: a report of 2 cases that express cytokeratin 7. Arch Pathol 
+Lab Med 2000; 124:427–30.
+Supporting Information
+Additional Supporting Information may be found in the 
+online version of this article at the publisher’s website.
+Downloaded from https://academic.oup.com/bjd/article/188/2/186/6788751 by guest on 06 May 2026
+
+=== PAGE 10 ===
+of patients  
+with PsO achieved  
+PASI 75 at Week 4 
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+75.9% 
+(n=265/349)
+of patients 
+with PsO achieved 
+PASI 100 at 5 years3
+76.9% 
+(N=52)† 
+of biologic-naïve  
+and TNFi-IR PsA patients 
+achieved ACR 50 at  
+Week 104/100, respectively‡1,4–6
+of patients  
+with PsO achieved  
+PASI 100 at Week 16
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+68.2%
+(n=238/349)
+and
+50.6% 
+(n=135/267) 
+51.5% 
+(n=222/431)
+GB-BK-2500315 | July 2025
+UCB Biopharma SRL, 2025. All rights reserved.
+This promotional material has been created and funded by UCB Pharma Ltd and 
+is intended for healthcare professionals in the UK.
+BIMZELX is indicated for the treatment of: moderate to severe plaque PsO in adults 
+who are candidates for systemic therapy; active PsA, alone or in combination 
+with methotrexate, in adults who have had an inadequate response, or who have 
+been intolerant, to one or more DMARDs; active nr-axSpA with objective signs of 
+inflammation as indicated by elevated CRP and/or MRI, in adults who have responded 
+inadequately, or are intolerant, to NSAIDs; active AS in adults who have responded 
+inadequately or are intolerant to conventional therapy; and active moderate to severe 
+HS (acne inversa) in adults with an inadequate response to conventional systemic HS 
+therapy.4
+Prescribing information for United Kingdom click here.  
+Please refer to the SmPC for further information. 
+These data are from different clinical trials and cannot be directly compared.
+Co-primary endpoints PASI 90 and IGA 0/1 at Week 16 were met.**Secondary endpoints. †N= mNRI, missing data 
+were imputed with mNRI (patients with missing data following treatment discontinuation due to lack of efficacy 
+or a TRAE were counted as non-responders; multiple imputation methodology was used for other missing data). 
+‡43.9% (n=189/431), and 43.4% (n=116/267) of biologic-naïve and TNFi-IR PsA patients achieved the primary 
+endpoint of ACR 50 at Week 16 in BE OPTIMAL and BE COMPLETE, respectively (vs 10.0% [n=28/281] and 6.8% 
+[n=9/133] placebo, p<0.0001); 54.5% (n=235/431) and 51.7% (n=138/267) maintained it at Week 52 (NRI).4–6 ​
+ACR 50, ≥50% response in the American College of Rheumatology criteria; AS, ankylosing spondylitis; CRP, 
+C-reactive protein; DMARD, disease-modifying antirheumatic drug; HS, hidradenitis suppurativa; IGA, Investigator’s 
+Global Assessment; (m)NRI, (modified) non-responder imputation; MRI, magnetic resonance imaging; nr-
+axSpA, non-radiographic axial spondyloarthritis; NSAID, non-steroidal anti-inflammatory drug; PASI 75/90/100, 
+≥75/90/100% improvement from baseline in Psoriasis Area and Severity Index; PsA, psoriatic arthritis; PsD, psoriatic 
+disease; PsO, psoriasis; TNFi-IR, tumour necrosis factor-α inhibitor – inadequate responder; TRAE, treatment-
+related adverse event.
+References: 1. Gordon KB, et al. Lancet. 2021;397(10273):475–486. 2. Blauvelt. 2025. AAD Presentation 62275. 3. 
+Mease PJ, et al. Rheumatol Ther. 2024;11(5):1363–1382. 4. BIMZELX SmPC. 5. Ritchlin CT, et al. Ann Rheum Dis. 
+2023;82(11):1404–1414. 6. Coates LC, et al. RMD Open. 2024;10(1):e003855. 7. Strober B, et al. AAD 2024;oral 
+presentation.​
+This medicine is subject to additional monitoring. This will allow quick 
+identification of new safety information. Adverse events should be reported. 
+Reporting forms and information can be found at www.yellowcard.mhra.gov.uk for 
+the UK. Adverse events should also be reported to UCB Pharma Ltd at  
+UCBCares.UK@UCB.com or 0800 2793177 for UK.
+NO COMPROMISE, 
+JUST CLEARANCE
+BIMZELX was well tolerated, the most frequently reported adverse reactions were: upper respiratory tract infections 
+and oral candidiasis. Other common reported adverse reactions include tinea infections, ear infections, herpes simplex 
+infections, oropharyngeal candidiasis, gastroenteritis, folliculitis, headache, rash, dermatitis, eczema, acne, injection site 
+reactions, fatigue, and vulvovaginal mycotic infection (including vulvovaginal candidiasis).4
+Bimzelx®     (bimekizumab) offers 
+the opportunity for complete, fast,
+and lasting skin clearance and 
+proven PsA efficacy 1–7

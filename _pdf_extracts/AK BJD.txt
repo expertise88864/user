@@ -1,0 +1,3072 @@
+=== PAGE 1 ===
+GUIDELINES
+BJD
+British Journal of Dermatology
+British Association of Dermatologists’ guidelines for the
+care of patients with actinic keratosis 2017
+D. de Berker,1 J.M. McGregor,2 M.F. Mohd Mustapa,3 L.S. Exton3 and B.R. Hughes4
+1Bristol Dermatology Centre, University Hospitals Bristol, Bristol BS2 8HW, U.K.
+2Department of Dermatology, Barts Health NHS Trust, London E1 1BB, U.K.
+3British Association of Dermatologists, Willan House, 4 Fitzroy Square, London W1T 5HQ, U.K.
+4Portsmouth Dermatology Centre, Portsmouth Hospitals NHS Trust, Portsmouth PO3 6AD, U.K.
+Correspondence
+David de Berker.
+E-mail: guidelines@bad.org.uk
+Accepted for publication
+7 September 2016
+Funding sources
+None.
+Conﬂicts of interest
+None declared.
+D. de B., J.M.M. and B.R.H. are members of the Guideline Development Group, with
+technical support from L.S.E. and M.F.M.M.
+This is an updated guideline prepared for the British Association of Dermatologists
+(BAD) Clinical Standards Unit, which includes the Therapy & Guidelines (T&G) Sub-
+committee. Members of the Clinical Standards Unit who have been involved are P.M.
+McHenry (Chairman T&G), K. Gibbon, D.A. Buckley, I. Nasr, C.E. Duarte Wil-
+liamson, V.J. Swale, T.A. Leslie, E.C. Mallon, S. Wakelin, S. Ungureanu, R.Y.P.
+Hunasehally, M. Cork, G.A. Johnston, J. Natkunarajah, F.S. Worsnop, N. Chiang, J.
+Donnelly (British National Formulary), C. Saunders (British Dermatological Nursing
+Group), A.G. Brian (BAD Scientiﬁc Administrator), L.S. Exton (BAD Information
+Scientist) and M.F. Mohd Mustapa (BAD Clinical Standards Manager).
+Guidelines produced in 2007 by the British Association of Dermatologists; reviewed and
+updated, 2016.
+DOI 10.1111/bjd.15107
+NICE has renewed accreditation of the process used by the British Associa-
+tion of Dermatologists to produce clinical guidelines. The renewed accredi-
+tation is valid until 31 May 2021 and applies to guidance produced using
+the processes described in Updated guidance for writing a British Associa-
+tion of Dermatologists clinical guideline – the adoption of the GRADE
+methodology 2016. The original accreditation term began on 12 May
+2010. More information on accreditation can be viewed at www.nice.
+org.uk/accreditation.
+1.0 Purpose and scope
+The overall objective of the guideline is to provide up-to-date,
+evidence-based recommendations for the management of acti-
+nic keratosis (AK).
+The document aims (i) to offer an appraisal of all relevant
+literature up to February 2016, focusing on any key develop-
+ments; (ii) to address important, practical clinical questions
+relating to the primary guideline objective, including accurate
+diagnosis and suitable treatment; (iii) to provide guideline
+recommendations and, where appropriate, some health eco-
+nomic implications; and (iv) to discuss potential developments
+and future directions.
+The guideline is presented as a detailed review with high-
+lighted recommendations for practical use in the clinic (see
+Section 13.0), in addition to an updated patient information
+leaﬂet (PIL), available at the British Association of Dermatolo-
+gists (BAD) website (http://www.bad.org.uk/for-the-public/
+patient-information-leaﬂets).
+1.1 Exclusions
+This guideline does not cover bowenoid AK or actinic
+cheilitis.
+2.0 Stakeholder involvement and peer review
+The Guideline Development Group (GDG) consisted of consul-
+tant dermatologists. The draft document was circulated to the
+BAD membership, the British Dermatological Nursing Group,
+the Primary Care Dermatological Society, the British Society
+for Skin Care in Immunosuppressed Individuals, and Age U.K.
+for comments. These comments were actively considered by
+the GDG, and peer reviewed by the Clinical Standards Unit of
+the BAD (made up of the Therapy & Guidelines Subcommit-
+tee) prior to publication.
+3.0 Methodology
+This set of guidelines has been developed using the BAD rec-
+ommended methodology,1 with reference to the Appraisal of
+Guidelines Research and Evaluation (AGREE II) instrument
+© 2017 British Association of Dermatologists
+20
+British Journal of Dermatology (2017) 176, pp20–43
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 2 ===
+(www.agreetrust.org).2 Recommendations were developed for
+implementation in the National Health Service (NHS) using a
+process of considered judgement based on the evidence. The
+PubMed, MEDLINE and EMBASE databases were searched for
+meta-analyses,
+randomized
+and
+nonrandomized
+controlled
+clinical trials, case series, case reports and open studies involv-
+ing AK published in the English language from January 2004
+to February 2016; the search terms and strategies are detailed
+in Appendix S1 (see Supporting Information). Additional rele-
+vant references were also isolated from citations in the
+reviewed literature, as well as speciﬁc targeted searches for
+systemic treatments and AK developing into squamous cell
+carcinoma (SCC) as a result of speciﬁc new treatments.
+All identiﬁed titles were screened, and those relevant for
+ﬁrst-round inclusion were selected for further scrutiny. The
+abstracts for the shortlisted references were then reviewed by
+the GDG, with a third round of review and selection for pho-
+todynamic therapy (PDT) publications given their number and
+complexity. Disagreements in the ﬁnal selections were resolved
+by discussion with the entire GDG. The full papers of relevant
+material were obtained. The structure of the 2007 guidelines
+was then discussed and re-evaluated, with headings and sub-
+headings decided; different coauthors were allocated separate
+subsections. Each coauthor then performed a detailed appraisal
+of the selected literature with discussions within the GDG to
+resolve any issues. All subsections were subsequently collated
+and edited to produce the ﬁnal guideline.
+4.0 Limitations of the guideline
+This document has been prepared on behalf of the BAD and is
+based on the best data available when the document was pre-
+pared. It is recognized that under certain conditions it may be
+necessary to deviate from the guidelines, and that the results
+of future studies may require some of the recommendations
+herein to be changed. Failure to adhere to these guidelines
+should not necessarily be considered negligent, nor should
+adherence to these recommendations constitute a defence
+against a claim of negligence. Limiting the review to English-
+language references was a pragmatic decision, but the authors
+recognize this may exclude some important information pub-
+lished in other languages.
+5.0 Plans for guideline revision
+The proposed revision of this set of recommendations is
+scheduled for 2021; where necessary, important interim
+changes will be updated on the BAD website.
+6.0 Background
+Actinic keratoses (synonymous with solar keratoses) are kera-
+totic lesions occurring on chronically light-exposed adult skin.
+They represent focal areas of abnormal keratinocyte prolifera-
+tion and differentiation that carry a low risk of progression to
+invasive SCC. A spectrum of histology is seen, but the cardinal
+feature of an AK is epithelial dysplasia. This may be restricted
+to the basal layer or may extend to full-thickness atypia, at
+which point the lesion is known as SCC in situ (Bowen dis-
+ease). There is disorderly arrangement and maturation of
+epithelial cells. Multiple buds of epithelial cells may occur at
+the membrane zone, but no invasion is seen. Histological vari-
+ants of AK have been described, including hypertrophic,
+bowenoid, lichenoid, acantholytic and pigmented.
+Actinic keratoses are generally considered to be premalig-
+nant lesions with low individual potential for invasive malig-
+nancy and potential for spontaneous regression. AKs present as
+discrete, sometimes conﬂuent, patches of erythema and scaling
+on predominantly sun-exposed skin, usually in middle-aged
+and elderly individuals. Clinically, they are graded on a three-
+point scale according to magnitude. Field change might
+include any or all of these lesions (Table 1).3 At grade 1 the
+lesion is just visible and palpable (gritty to feel and difﬁcult to
+see), grade 2 lesions are usually red and scaly (easily felt and
+seen), and grade 3 corresponds to thicker, hyperkeratotic
+lesions. Grade 3 AKs can be difﬁcult to differentiate from
+small, early SCCs, which, if excised, may be reported to have
+early or equivocal invasion.
+They are often asymptomatic but may occasionally be sore
+or itch; lesions may be single or multiple. When multiple, the
+concept of ‘ﬁeld change’ is used to describe an area of skin
+that is involved extensively with actinic damage.4 The epi-
+demiology, risk factors, disease associations and demographics
+of the ‘at-risk’ population are all pertinent to patient manage-
+ment. They are discussed together with the available treatment
+options.
+6.1 Aetiology
+Actinic keratoses are the result of chronic exposure to ultravio-
+let (UV) radiation, predominantly on skin of the head and
+dorsa of the hands, in fair-skinned individuals.5 In addition,
+UVB-speciﬁc p53 mutations have been demonstrated in AKs,
+providing molecular evidence in support of a role for sun-
+light.6 There is a high prevalence of keratinocyte cancer,
+including AKs, in those receiving chronic immunosuppression,
+particularly organ transplant recipients,7 but also patients on
+long-term treatment for inﬂammatory bowel and rheumato-
+logical disease, although this is not as well documented. Other
+possible risk factors include exposure to arsenic8,9 and chronic
+sunbed use.10–12
+Table 1 Grades of actinic keratosis (AK)3
+Grade 1
+Mild; pink or grey marks with slight scale or gritty
+to touch
+Grade 2
+Moderate; thicker hyperkeratosis and easily detected
+Grade 3
+Severe; hypertrophic, thick keratin
+Field change
+Conﬂuent areas of several centimetres or more with
+a range of features matching any or all of the
+grades of AK
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+Guidelines for actinic keratosis 2017, D. de Berker et al. 21
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 3 ===
+6.2 Incidence and prevalence
+It is likely that the incidence of AKs is underestimated. It is
+difﬁcult to measure the burden of AKs reliably in individuals
+and in populations.13
+In
+prevalence
+studies
+in
+Galway,
+South
+Wales
+and
+Merseyside, 19–24% of individuals aged > 60 had at least one
+AK.14–16 AKs were also present in 36% of men aged
+40–49 years.16 A linear increase in prevalence was found with
+age (from 60 to 80 years) in men but not in women in
+another U.K. study, and the rate of new AKs was estimated to
+be 149 per 1000 person-years.15 Over 30% of those attending
+a dermatology clinic (mean age of attendance 61 years) in
+Austria had AK. By the age of 70 years, > 70% of those
+attending had AK, with the majority (70%) on the head and
+neck.17 A Rotterdam prevalence study of > 2000 Dutch men
+and women, mean age 72 years, found AK in 49% of men
+and 28% of women.18
+6.3 Natural history: spontaneous regression and
+malignant transformation
+Patients with AK have a chronic disease. The presence of a sin-
+gle lesion is a marker of excessive sun exposure and is associ-
+ated with the development of further lesions. Point-prevalence
+studies demonstrate that lesions regress and relapse over time
+(this is probably relevant in the case of grade 1 and 2 lesions).
+Figures range between 25% and 70% for apparent resolution
+of AKs over a period of 1–4 years.15,19,20 Prospective evalua-
+tion demonstrates a low rate of malignant transformation,
+with less than one in 1000 AKs developing into SCC per
+annum.21 In a US study, 06% of patients developed an SCC
+in the AK ﬁeld within the ﬁrst year – rising to 257% at
+4 years.20 The higher rate of apparent transformation in the
+US study probably reﬂects the higher risk status of this pre-
+dominantly male veteran population.
+Nonetheless, there is evidence that AKs are a marker of
+excess risk for nonmelanoma skin cancer (NMSC). Mathemati-
+cal models derived from the study undertaken by Marks et al.
+predict that for an individual with an average of 77 AKs, the
+probability of developing an SCC within a 10-year period is
+approximately 10%.22
+When 918 adults (mean age 61 years) with AKs but no
+previous history of skin cancer were followed prospectively
+for 5 years, the incidence rates for basal cell carcinoma (BCC)
+and SCC were estimated at 4106 and 3198 per 100 000 per-
+son-years, respectively, representing an excess risk compared
+with the general population.23 A sixfold excess risk for NMSC
+or melanoma was found in a representative sample of the US
+Medicare population with AKs compared with those without
+(P < 0001).24
+Despite the proximity of AKs and SCC when they occur on
+chronically sun-damaged skin, and the histological and molec-
+ular similarities between them,25 debate continues concerning
+whether they are separate but similar pathologies developing
+in tandem or whether one leads directly to the other. In one
+prospective photographic monitoring study over 5 years, it
+appeared that 65% of SCCs arose at a site of previously docu-
+mented AK.20 A recent systematic review of 24 eligible studies
+examining the natural history of AKs concluded that there
+were no reliable estimates concerning the frequency of AKs
+developing into invasive carcinoma.26
+In summary, combined data suggest the possibility of
+regression and a low risk of malignant progression for any
+given AK. The presence of AK (particularly in high-risk
+patients – see Section 7.6 – with multiple AKs or ﬁeld change)
+predicts an excess risk for subsequently developing an NMSC
+or melanoma compared with a matched population.
+6.4 Investigation and diagnosis
+Diagnosis of AK may be made in primary or secondary care
+and as part of a general skin examination associated with
+assessment of sun damage, focal keratotic lesions or skin can-
+cer. Teledermatology has been cited as an effective means of
+diagnosis.27 Dermoscopy can be employed with a range of
+deﬁned dermoscopic features.28 People with chronic ﬂuctuat-
+ing disease may learn self-diagnosis but are advised to corrob-
+orate their assessment with a healthcare professional. Such
+models of patient-led monitoring and action are advocated in
+other chronic diseases such as diabetes mellitus,29 where moti-
+vated self-management is a signiﬁcant element in improved
+outcome.30 Diagnosis is typically on clinical grounds. Uncer-
+tainty may arise in distinguishing AKs from superﬁcial BCC,
+SCC in situ, invasive SCC and even amelanotic melanoma,
+where a skin biopsy or excision for histological examination
+may be indicated. Where invasive malignancy is in the differ-
+ential, the patient care should be shared with a member of a
+skin cancer multidisciplinary team. At the diagnosis of AK, the
+location and thickness (e.g. grade 1, 2 or 3)3 should be docu-
+mented; location is best recorded on a diagram.
+6.5 Should actinic keratoses be treated?
+The natural history of individual lesions suggests that treat-
+ment is not universally required on the basis of preventing
+progression into SCC.15 An indirect beneﬁt of treatment is the
+demonstration of lesions not responding to normal therapy,
+which may represent a subgroup with higher malignant
+potential. There is a body of professional opinion that believes
+AKs are part of a spectrum that includes SCC in situ, and that
+prevention of SCC is therefore the reason for therapy.31 A
+Cochrane review of treatment of AK did not ﬁnd any evidence
+that treatment of AK resulted in reduction in presentation of
+invasive SCC.32 There is inadequate evidence to justify treat-
+ment of all AKs to try to prevent malignant change.
+The most appropriate management plan should be deter-
+mined by the patient’s preferences and clinical circumstances,
+which should take into account the extent, duration and pres-
+ence of symptoms, severity of lesions and other associated risk
+factors for skin cancer, in addition to the patient’s general
+health and well-being. A quality-of-life questionnaire (AKQoL)
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+22 Guidelines for actinic keratosis 2017, D. de Berker et al.
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 4 ===
+has been established and validated.33 In particular, patients
+express concern with respect to (i) the disease itself, (ii) side-
+effects and difﬁculties with treatment, (iii) association with
+the term cancer where AK is a risk factor for SCC, and (iv)
+the need to adjust sunshine behaviour on a background of
+long-acquired habits and preferences.34
+7.0 Management
+Many options are available for the treatment of AKs. The
+main patient-centred considerations are the symptoms and
+cosmetic burden of the AK, the efﬁcacy and burden of treat-
+ment, and the threat of evolution of the AK into a more
+bulky lesion or invasive SCC. Healthcare professional consid-
+erations overlap with these, but include others such as efﬁ-
+cacy,
+a
+ﬂexible
+regimen,
+availability
+in
+primary
+and
+secondary care and cost. An additional aspect of management
+is consideration of the patient’s overall risk of skin cancer
+and the wider skin examination. In the Rotterdam study on
+the prevalence of AK in the general population, participants
+with ≥10 AKs (136%) had a threefold higher risk for hav-
+ing a history of SCC compared with participants with four to
+nine (40%).18 Full-body skin examination revealed a skin
+cancer (BCC, SCC or melanoma) in 4%. The correlation
+between skin cancer and number of AKs led the Dutch
+group to advocate shorter follow-up intervals and more
+active treatment in those with ≥10 AKs, while not deﬁning
+an interval and acknowledging the resource implications for
+this 5% of the population.
+At the outset of management, the location and grade
+(Table 1) of the AKs should be deﬁned to enable monitoring,
+response to treatment or evolution. This can be done using
+drawings, body maps and photography, often with lesions
+numbered.
+Management can be directed at individual lesions or over a
+wider area (Fig. 1). This distinction represents lesion vs. ﬁeld
+treatment. Field-based treatment can act to manage a range of
+actinic changes in a zone such as the forehead, scalp or central
+face, and may provide some beneﬁt in reduction of onset of
+new lesions.35 Topical therapies, skin peels36–39 and PDT are
+suitable. Usually, focal destructive therapies such as curettage
+and cautery or cryotherapy are limited to lesion treatment
+(Table 2).
+A European AK guideline achieved consensus through a vot-
+ing and weighting method with advice grouped according to
+the isolated, ﬁeld-associated or skin-cancer-associated distribu-
+tion of the AKs. There remained a preference for cryosurgery
+for isolated lesions and curettage for larger ones. Otherwise,
+preferences revolved largely around different strengths of the
+common main agents, namely 5-ﬂuorouracil (5-FU), imiqui-
+mod, ingenol mebutate and variants of PDT. Diclofenac in
+hyaluronic acid and imiquimod at 25% were not favoured. In
+immunosuppressed patients there was a preference for the
+stronger formulations of all products. Laser was not consid-
+ered a good choice for any circumstance other than treatment
+of ﬁeld disease.40
+7.1 No treatment (strength of recommendation A, quality
+of evidence 2++)
+Summaries of the levels of evidence and strengths of recom-
+mendation are given in Appendices 1 and 2.
+Any perspective on nontreatment should be based on a
+whole-patient assessment, risks, comorbidities and preferences.
+The fact that many AKs remit does not diminish the counter-
+balancing point that they are associated with UV exposure and
+the development of melanoma, SCC and BCC. All patients
+need clear information on this risk and their own risk of SCC
+in general so that, irrespective of the diagnosis of AK, they
+know to present early for assessment if a lesion bleeds, is
+painful,
+grows
+signiﬁcantly
+or
+becomes
+protuberant.
+All
+patients should be advised regarding sun protection.
+7.2 Primary care
+Patients with AK will ask their general practitioner (GP) for
+diagnosis and treatment advice. Most AKs can be diagnosed
+and treated in primary care.41 In healthcare systems with a
+primary-care physician as the ﬁrst contact, skin monitoring of
+sun-exposed surfaces of the head and neck and dorsa of hands
+is possible on an opportunistic basis and can be coupled with
+relevant prevention and self-care advice.42 Specialist dermatol-
+ogy nurses can play a similar role and are able to prescribe
+treatment in some healthcare systems.43 The Primary Care
+Dermatology Society has developed guidance on the manage-
+ment of AK in primary care in the U.K.44,45 Teledermatology
+has been used to support the diagnosis and management of
+AK in primary care with specialist guidance.27 AKs are part of
+the spectrum of actinic damage, which, once present, is man-
+aged rather than cured.
+Consider referral for specialist care when:
+•
+AK fails to respond to standard treatments;
+•
+multiple or relapsing AKs represent a management chal-
+lenge;
+•
+AK occurs in the long-term immunosuppressed;
+•
+lesions are likely to be AK, but there is concern that
+they might be SCC (use the 2-week-wait route for pos-
+sible skin cancer), for example when they are (i) bleed-
+ing, (ii) painful or (iii) thickened with substance when
+held between ﬁnger and thumb.
+7.3 Secondary care
+Secondary-care referral is required for diagnosis and/or man-
+agement if the lesion might represent an invasive SCC.41 All
+regions of the U.K. have dedicated 2-week-wait or ‘urgent
+cancer’ pathways. In addition, if treatment in primary care for
+AK is unsuccessful, then referral is warranted for management
+alone. This includes patients with extensive disease or who are
+immunosuppressed (see bullet points above).
+Following diagnosis in secondary care, treatment can be ini-
+tiated with a future management plan for continued patient
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+Guidelines for actinic keratosis 2017, D. de Berker et al. 23
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 5 ===
+self-care (see Section 7.4) in collaboration with the GP. Histo-
+logical diagnosis can be provided through a range of surgical
+procedures (see Sections 8.3 and 8.4) determined by lesion
+and circumstance. Follow-up in secondary care can be war-
+ranted to assess outcomes of treatment, extensive disease,
+patients with associated skin cancers, or those with other con-
+siderations such as immunosuppression. Nurse clinicians may
+contribute to the care pathway.
+7.4 Self-care
+Actinic keratosis is a chronic disease. Once patients have the
+diagnosis of AK, it is usually the start of a continued process
+of further lesions and relapse. They may also develop related
+pathology such as solar lentigo, lentigo simplex, SCC in situ
+and NMSC.
+Patient education is important in enabling self-care, with
+early
+self-diagnosis,
+ongoing
+intermittent
+treatment
+and
+awareness of the risk of skin cancer and how to minimize this
+risk (see the AK PIL available at http://www.bad.org.uk/for-
+the-public/patient-information-leaﬂets).
+Most
+patients
+with
+mild AK will be seen in primary care and can manage their
+disease with topical therapy. Corroboration of diagnosis with
+the GP is advisable before treatment of new lesions. Short-
+term therapies (e.g. 4 weeks) may need renewal of prescrip-
+tion
+when
+expired
+to
+ensure
+maintained
+efﬁcacy.
+An
+Fig 1. Venn diagram illustrating the overlapping nature of lesion- and ﬁeld-based treatments for actinic keratosis (AK).
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+24 Guidelines for actinic keratosis 2017, D. de Berker et al.
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 6 ===
+Table 2 Factors determining the choice of active therapy from nine main alternatives. The scoring is based on the authors’ evaluation of efﬁcacy, ease of use and morbidity
+Choice
+5-FU
+cream 5%
+5-FU cream
+05% with
+salicylic acid
+10%
+Diclofenac gel
+3%
+Imiquimod
+5%
+Imiquimod
+35%
+Ingenol
+mebutatea
+Cryosurgery
+Curettage
+MAL-PDT
+Comments
+Main characteristic of AKs
+Single AKs
+(low number)
+••••
+••••
+••
+••
+••
+••
+••••
+•
+•
+Field change
+(high number)
+••••
+••
+•••
+•••
+•••
+•••
+•••
+•
+•••
+Grade 1 or 2
+(thin or medium)
+••••
+••••
+•••
+•••
+••
+•••
+•••
+•
+••
+Thin lesions may not
+always require
+treatment
+Grade 3
+(hypertrophic)
+•
+••
+•
+•
+•
+•
+••
+••••
+•
+Histology may be
+required. Curettage
+or formal excision
+may be preferred
+Isolated lesions
+failing
+to respond to other
+therapies
+•
+••
+•
+•
+•
+•
+••
+••••
+•
+Histology may be
+required. Curettage
+or formal excision
+may be preferred
+Conﬂuent
+recalcitrant
+AKs, failing other
+treatments
+•••
+••
+•
+•••
+•••
+•••
+•••
+•
+••••
+Certain lesions
+within a resistant
+ﬁeld may require
+histological
+assessment
+Location
+Scalp, ears, nose,
+cheeks, forehead,
+perioral
+••••
+••••
+•••
+••••
+•••
+•••
+••••
+•••
+•••
+Periorbital
+•
+••
+•
+•
+•
+••
+•••
+•••
+Topical therapies can
+be difﬁcult to use
+near mouth and
+eyes. See
+manufacturer’s
+recommendations
+Conﬂuent scalp
+••••
+•••
+•••
+••••
+•••
+•••
+•••
+•
+••••
+Pretreatment with
+salicylic acid 5%
+ointment may
+improve outcome
+(continued)
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+Guidelines for actinic keratosis 2017, D. de Berker et al. 25
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 7 ===
+Table 2 (continued)
+Choice
+5-FU
+cream 5%
+5-FU cream
+05% with
+salicylic acid
+10%
+Diclofenac gel
+3%
+Imiquimod
+5%
+Imiquimod
+35%
+Ingenol
+mebutatea
+Cryosurgery
+Curettage
+MAL-PDT
+Comments
+Below the knee
+•
+•••
+••
+•
+•
+•
+••
+•••
+••••
+Poor healing is a
+particular concern
+at this site. All
+modalities can lead
+to ulceration.
+Treatment may be
+combined with
+advice on elevation
+and compression
+bandaging in some
+instances
+Back of hands
+••••
+••••
+••
+••
+••
+••
+••••
+•••
+•••
+Courses of topical
+therapy may need
+to be extended,
+and pretreatment
+with salicylic acid
+5% ointment may
+improve outcome
+Comments
+Flexible with
+multiple
+treatments
+from one
+prescription.
+Good for self-
+directed care
+Collodion base
+may enable
+more precise
+placement of
+treatment.
+Salicylic acid
+probably
+increases
+suitability for
+thickened
+lesions
+Low-morbidity
+treatment
+suitable for
+thin AKs over a
+wide area
+Variable
+response based
+on patient
+biology, with
+some instances
+of substantial
+side-effects
+Possible slight
+reduction of
+side-effects
+with lower
+concentration
+2 or 3 days’
+application per
+treatment
+course makes it
+easy to
+remember, but
+reduces
+ﬂexibility or
+ability for
+patient to
+modify
+according to
+side-effects
+Reduces need
+for patient
+involvement,
+but increases
+dependency on
+medical
+provision of
+treatment;
+removes self-
+care and can
+cause scarring
+Good for
+provision of
+histology and
+high efﬁcacy
+for isolated
+thicker lesions.
+Not practical as
+routine
+treatment,
+leaves scars
+and requires
+local
+anaesthetic
+Good treatment
+for areas of
+conﬂuent disease
+and poor
+response to other
+treatments.
+Requires
+dedicated
+equipment and
+secondary-care
+provision in
+most instances
+AK, actinic keratosis; FU, ﬂuorouracil; MAL-PDT, methyl aminolaevulinate photodynamic therapy. •••• Good treatment; ••• fair treatment; •• can be used depending on circumstances; • rarely used in
+these circumstances. aDosed at 150 lg g1 on the face and 500 lg g1 on the limbs and trunk.
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+26 Guidelines for actinic keratosis 2017, D. de Berker et al.
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 8 ===
+important part of patient education is awareness of the side-
+effects of treatment before they start therapy. Many cause
+short-term redness, soreness and sometimes crusting or ooz-
+ing. If this is not anticipated it can cause distress and aban-
+donment of treatment, where a pause would have been more
+appropriate.
+7.5 Prevention
+There have been three randomized controlled trials (RCTs)
+(two in Australia and one in the U.S.A.) in patients > 50 years
+old, many of whom had a history of AKs, to show that sun-
+screen, used to prevent unintentional sun exposure, is associ-
+ated with a small decrease in the incidence of SCCs and AKs
+(but not BCCs) over a short follow-up period.46–48
+More active treatment with a 4-week course of 5-FU, 5%
+twice daily to a ﬁeld of involved skin can reduce the rate of
+onset of new AKs in that area over the subsequent 18 months
+when compared with placebo.35
+There are no studies to show that sun avoidance reduces
+the risk of development of AKs and skin cancer in a popu-
+lation without AKs. Nonetheless, it is reasonable to hope
+that the effect of public health campaigns over the last few
+decades will have an impact on this risk. Such practices
+may have a bearing on vitamin D levels, which warrant
+review in those patients subject to high levels of sun avoid-
+ance or who have other risk factors for diseases related to
+low vitamin D.49
+7.6 High-risk cases
+Are there high-risk groups and is their management different?
+Patients with multiple and conﬂuent AKs are likely to be at
+higher risk of NMSC than those with single lesions. Patients
+on chronic immunosuppressive therapy are at increased risk
+for skin cancer. Organ transplant recipients are reported as
+having 50–100 times the skin cancer risk of an age- and sex-
+matched control population.50,51 It is recommended that
+high-risk patients have closer follow-up52 and more rigorous
+treatment40 for premalignant lesions, including SCC in situ and
+AK, together with a lower index of suspicion for skin biopsy
+to exclude malignancy. Nonetheless, there is no evidence that
+such measures reduce the risk of new skin cancers, although
+they may reduce morbidity from surgery and minimize the
+risk of recurrence.
+Treatment for AKs in transplant patients may be less effec-
+tive than in the general population.53 Outcomes may be con-
+founded
+by
+the
+large
+number
+of
+proliferative
+and
+hyperkeratotic lesions in this group. Studies have not found a
+reduction in subsequent skin cancers in areas previously trea-
+ted for AKs with PDT.51 Oral retinoids have been used to
+reduce the risk of SCC in transplant patients at high risk of
+getting skin cancer, but the effect on AKs is not reported.
+A single study reported that capecitabine, used in 15
+patients, reduced the risk of SCC,54 BCC and AKs in organ
+transplant recipients, but toxicity is likely to limit its use.55
+8.0 Treatment
+Treatment needs to address a wide range of variables includ-
+ing the nature of the AK, the body site, patient preference, the
+premorbid state of the patient and previous treatments tried.
+Added to this is the large number of therapeutic agents, their
+modes of application and the ﬂexibility with which each agent
+can be used. Given this backdrop, it is to be expected that
+there is variation in clinical practice. Table 2 attempts to bring
+a broad perspective to the options. In some instances it might
+be viewed in combination with Table 3, which is an approxi-
+mation of a simpliﬁed cost–beneﬁt analysis.
+8.1 General
+Lifestyle, dietary fat,56 workplace and genetics are likely to
+make a difference to the risk of getting AK, mainly relating to
+the levels of UV radiation exposure.
+8.1.1 Emollient (strength of recommendation B, level of
+evidence 2+)
+Elderly, sun-damaged skin is often dry, and emollient can be
+part of a management regimen. The direct effect of emollient
+on AKs is not clear. Additives such as urea or salicylic acid
+may provide beneﬁt. There are no trials dedicated to the study
+of palliative therapy of AKs, but emollient or gel vehicle has
+been employed in the placebo arm of many trials. The vehicle
+limb of an RCT of diclofenac gel in hyaluronan vehicle
+described clearance of the target lesion in 44% of patients
+using the vehicle after 60 days.57 Less dramatic results were
+seen with the cream vehicle used in trials of imiquimod
+applied two or three times a week for 4 weeks, reporting
+complete clearance of treated AKs in 0%,58 24%59 and
+141%,60 with the latter treated three times a week for
+8 weeks.
+8.1.2 Sun protection and sunscreen (strength of
+recommendation A, level of evidence 1++)
+There is no speciﬁc information or evidence on sun protection
+other than through studies on sunscreen. Sunscreen has a
+combined emollient and photoprotective effect. A randomized,
+placebo-controlled trial of sunscreen with sun protection fac-
+tor (SPF) 17 applied twice daily to the face for 7 months
+showed sunscreen to be more effective than emollient in
+terms of the total number of AKs and new lesions.46 A single,
+daily application of sunscreen with SPF 16 in Queensland,
+Australia, also showed it to be more effective than discre-
+tionary use of the same sunscreen over a 2-year period in the
+reduction of AKs.61 A similar approach in the same setting
+also reduced the incidence of cutaneous SCC.48 A 24-month
+study of daily use of sunscreen (SPF > 50, high UVA absorp-
+tion)
+in
+120
+case-controlled
+organ
+transplant
+recipients
+showed signiﬁcant reduction in AKs and NMSCs arising during
+the study.49
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+Guidelines for actinic keratosis 2017, D. de Berker et al. 27
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 9 ===
+Table 3 Cost, efﬁcacy, ﬂexibility and setting of the main treatment options in AK. Data between treatment groups are not always based on similar sampling and outcome measures. The levels of evidence
+contributing to this table range from 1++ to 4
+Period of evaluation
+(longer than
+active treatment)
+Reduction in
+AKs based on
+aobservational
+studies, bRCTs or
+cmeta-analysis
+(values do not
+reﬂect excess
+over control)
+Cost range per item
+Dispensed item
+Add-on cost of staff
+time or equipment.
+Primary care or
+[secondary care].
+dTypically requires
+2 visits
+Flexible
+regimens
+Amenable to
+patient-directed care
+and monitoring
+Amenable
+to primary care
+No treatment
+Periodic, indeﬁnite
+Up to 21%a,15
+♦
+0
+•
+•
+•••
+Emollient or vehicle
+Periodic, indeﬁnite
+0–44%b,57,60
+♦
+0
+•
+•
+•••
+Sunscreen (UVA 3/
+SPF 17–50)
+Periodic, indeﬁnite
+17–36%b,46,47
+♦
+500 mL
+♦[♦♦]
+•
+•
+•••
+5-Fluorouracil 5%
+2–4 months
+70–78%b,36,66
+♦
+40 g
+♦♦[♦♦♦♦]d
+•••
+••
+••
+Imiquimod 5%
+2–4 months
+50%c to 84%b,74,75
+♦/♦♦
+12–24 sachets
+♦♦[♦♦♦♦]d
+•••
+••
+••
+Imiquimod 375%
+3–4 months
+34–36%b,85
+♦♦♦/♦♦♦♦
+28–56 sachets
+♦♦[♦♦♦♦]d
+•••
+••
+••
+Diclofenac gel 3%
+2–4 months
+19–70%b,57,90
+♦/♦♦
+50–100 g
+♦♦[♦♦♦♦]d
+••
+••
+•••
+Ingenol mebutate
+(150 lg g1 face,
+500 lg g1 limbs
+and trunk)
+1–2 months
+34–42%b,92,93
+♦♦
+2–3 single-application
+047-g tubes
+♦♦[♦♦♦♦]d
+•
+❍
+••
+MAL-PDT
+1–2 months
+69–93%b,107,119,127,176
+♦♦♦
+Single treatment tube
+£427–£928177
+••
+❍
+❍
+Cryosurgery
+1–2 months
+39–88%a,103,106
+Not known
+Not applicable
+♦♦[♦♦♦♦]d
+••
+❍
+•
+Combination therapies
+5-Fluorouracil
+05%
+and salicylic acid
+10%
+2–4 months
+55%a to 77%b,71,72
+♦
+25 mL
+♦[♦♦]
+••
+••
+•••
+Diclofenac gel and
+cryosurgery
+2–4 months
+46–100%a,156,157
+♦/♦♦
+50–100 g
+♦[♦♦]
+••
+•
+•
+Imiquimod and
+cryosurgery
+2–4 months
+595%a,86
+♦/♦♦
+12–24 sachets
+♦♦[♦♦♦♦]d
+••
+•
+•
+Imiquimod and
+MAL-PDT
+2–4 months
+89%a,160
+♦/♦♦
+12–24 sachets plus
+single treatment tube
+♦♦[♦♦♦♦]d plus
+£427–£928
+••
+•
+❍
+Comments
+Standard package
+size or course
+of treatment:
+BNF 2014, edition 66
+Costs drawn from
+NHS publications
+AK, actinic keratosis; BNF, British National Formulary; NHS, National Health Service; MAL-PDT, methyl aminolaevulinate photodynamic therapy; RCT, randomized controlled trial; SPF, sun protection
+factor; UVA, ultraviolet A. Cost key: ♦£0–50; ♦♦£51–100; ♦♦♦£101–150; ♦♦♦♦£150–200. Care key: ❍not amenable or ﬂexible; • some ﬂexibility/amenability; •• moderate ﬂexibility/amenability;
+••• very ﬂexible/amenable. First hospital clinic attendance NHS tariff 2014–15: £104.178 Hospital follow-up attendance: £68. GP visit: £44.179
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+28 Guidelines for actinic keratosis 2017, D. de Berker et al.
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 10 ===
+8.2 Active treatments
+All topical therapies for AK may result in side-effects of irrita-
+tion. Some AKs proceed to ooze, crusting and soreness with
+local swelling. Details are cited in this guideline for the indi-
+vidual treatments and are included in the relevant PILs. It is
+important that the patient understands the extent of the area
+to be treated and anticipates the side-effects. The size of area
+will depend on a range of factors including the therapy, focal
+or scattered pathology and the conceptual model (ﬁeld- or
+lesion-based treatment). Where morbidity is an ascendant con-
+cern, treatment should be initiated over a small area such as
+4–10 cm2 with ﬂexible frequency to establish tolerance and
+conﬁdence. Some treatments deﬁne a ceiling of surface area
+based on the aliquot of prescribed item, for example one tube
+of ingenol mebutate is a single dose for 25 cm2. Imiquimod
+5% is issued in 250-mg sachets where directions include ‘one
+sachet only’ and to ‘cover the area’ typically with a centimetre
+margin around any pathology. Others recommend a maxi-
+mum based on toxicity, such as 500 cm2 for 5-FU 5%.
+Patients should be provided with advice on how to manage
+side-effects, with strategies including a break in treatment,
+altering the frequency of application, use of emollient and in
+some instances application of topical steroid.
+8.2.1 5-Fluorouracil (strength of recommendation A, level
+of evidence 1++)
+The majority of the data on topical therapies relate to the 5%
+concentration of 5-FU cream. 5-FU works by the inhibition of
+thymidylate synthetase, which is needed for DNA synthesis. It
+may also interfere with the formation and function of RNA.62
+It is a widely used, ﬂexible and low-cost treatment.63 It can
+be used either as lesional treatment or as part of ﬁeld treat-
+ment. The side-effects with the latter can be substantial, and it
+is important that the patient is counselled about them, includ-
+ing soreness, redness and possible crusting. All of these can be
+minimized through reduction in the frequency of application
+or short breaks in a course of therapy. It is permitted to wash
+the area and apply thin emollient. If the reaction is excessive,
+weak steroid can be applied. It is important that the patient is
+enabled to learn how to use the treatment, as it is one they
+may require intermittently in the future and a bad initial expe-
+rience can limit further use.
+Many regimens cite twice-daily application over 4 weeks,
+but less frequent initial use may enable titration of the fre-
+quency of application against reaction, tolerance and efﬁcacy.
+Use at poor healing sites such as the lower leg should always
+be undertaken with caution and may need supervision. More
+recently, 5-FU 05% in 10% salicylic acid has been evaluated
+and can be prescribed.64 A wide range of open trials, dose-
+ranging studies and manipulations of the vehicle have been
+reported over the last 45 years, as well as two RCTs, conﬁrm-
+ing efﬁcacy. A large, placebo-controlled RCT showed 5-FU 5%
+to be more effective than placebo in AK clearance and the
+reduction of follow-up cryosurgery treatments at 6 months.35
+A Cochrane review with subsequent meta-analysis of complete
+clearance results ranked the efﬁcacy of all of the main treat-
+ments and put 5-FU at the top.65
+Nine of the trials were controlled; a right–left comparison
+(n = 6) was the most common design, but only ﬁve were ran-
+domized. Numbers in the studies were generally small, with a
+mean of 26 patients per trial and fewer than 15 patients in
+50% of the trials. The minimum follow-up was ≥12 months
+in only two studies. Many open studies appeared to demon-
+strate the efﬁcacy of 5-FU in a range of potencies and differ-
+ent vehicles in the treatment of AKs when used on the face
+twice daily for 3 weeks. Only two trials studied the use of 5-
+FU in the currently available formulation of a 5% cream in a
+well-constructed, controlled manner.36,66 Kurwa et al. exam-
+ined the lesional area of AKs on the back of the hands before
+and after treatment with 5-FU 5% cream twice daily for
+3 weeks in a randomized right–left comparison with a single
+treatment
+with
+PDT.66
+Of
+the
+14
+patients
+evaluable
+at
+6 months, there was a mean reduction in lesional area of 70%
+(5-FU) and 73% (PDT), with no statistically signiﬁcant differ-
+ence between them. Open studies have suggested that this reg-
+imen is not sufﬁciently long for effective treatment of AKs on
+the hands,67 but is adequate for those on the face.36
+Witheiler et al. used 5-FU 5% cream on the face as the con-
+trol in a right–left comparison with a single application of
+Jessner’s solution (14% lactic acid, 14% salicylic acid, 14%
+resorcinol in ethanol) followed by a trichloroacetic acid (TCA)
+35% peel.36 There was a mean reduction in AKs on both sides
+of the face from 18 to four (78% reduction with 5-FU and
+79% reduction with TCA). This beneﬁt was sustained for
+12 months. The third follow-up at 32 months demonstrated
+that the number of AKs had risen again to 10 (5-FU) and 15
+(TCA) in the eight evaluable patients; these differences were
+not statistically signiﬁcant.
+The results of using the same formulation of 5-FU less fre-
+quently, but for prolonged periods, are conﬂicting. An open
+trial of 10 patients reported clearance of 96% of AKs after a
+mean of 67 weeks applying treatment twice daily, once or
+twice per week.68 Six patients were followed for 9 months
+and showed an 86% clearance rate that was maintained.
+Epstein followed this study with a similar protocol and sample
+size, except that evaluation was done by dermatologists given
+a series of photographs and blinded to the sequence.69 Eight
+of 13 patients failed to show any improvement, with the con-
+clusion that pulsing 5-FU over a period < 10 weeks is not
+effective. A comparison of use twice daily for 3 weeks against
+twice daily for 1 day a week for 12 weeks showed the infre-
+quent regimen to be 80% as effective when evaluated at the
+ﬁnal assessment at 52 weeks.70
+The mixed quality and size of these studies mean it is difﬁ-
+cult to provide a ﬁrm interpretation, but the indication is that
+pulsed therapy may work for some patients and enable more
+protracted therapy with reduced morbidity. Such an approach
+can be useful for sensitive areas or people reluctant to use
+treatments that provoke redness and crusting. However, for
+some people it may fail to show beneﬁt, and increased
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+Guidelines for actinic keratosis 2017, D. de Berker et al. 29
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 11 ===
+frequency of use or an alternative treatment may need to be
+employed.
+5-FU 05% in 10% salicylic acid has been assessed, where
+salicylic acid may be acting as a keratolytic to enhance the
+efﬁcacy of 5-FU. In the initial open trial, statistics were under-
+taken per AK rather than per patient.71 In this framework, it is
+not possible to report the complete cure of any single patient.
+However, the clinical clearance rate for individual AKs was
+77%, with no control or blinding. Subsequent evaluation
+against salicylic acid vehicle and diclofenac 3% in hyaluronic
+gel has been undertaken.64 Daily application with a brush for
+6–12 weeks or the point of clearance was compared with
+twice-daily diclofenac gel over the same period. Eight weeks
+post-treatment, complete clearance was determined to be
+achieved in 554%, 32% and 151% of the patients using the
+study product, diclofenac and vehicle, respectively; the AKs
+were grades 1 and 2. A follow-up phase of the same study
+measured the rate of relapse of individual lesions rather than
+relapse from complete clearance.72 With this measure, the rate
+of relapse measured per lesion was less at 12 months with 5-
+FU 05% in 10% salicylic acid (142%) than diclofenac 3% gel
+(19%) (P = 002%).72 The nature of the application makes it
+suitable for lesion-directed therapy rather than ﬁeld therapy.
+The license highlights the beneﬁt of the salicylic acid vehicle
+as a means of addressing more keratotic AKs. About 50% of
+patients discontinue treatment at 6 weeks due to disappear-
+ance of the AK.73
+8.2.2 Imiquimod 5% cream (strength of recommendation
+A, level of evidence 1++)
+Imiquimod is a topical immune-response modiﬁer. It is avail-
+able as a 5% and a 375% cream. Most of the data on treat-
+ment response pertain to the 5% cream and are considered
+ﬁrst. In the U.K. it is licensed for use in clinically typical, non-
+hyperkeratotic, nonhypertrophic AKs on the face or scalp in
+immunocompetent adults, when the size or number of lesions
+limits the efﬁcacy and/or acceptability of cryotherapy, and
+other topical treatment options are contraindicated or less
+appropriate. It is applied at night and washed off in the morn-
+ing 8 h later. Courses are three times a week for 4 weeks,
+which can be repeated for a further 4 weeks if needed.
+A meta-analysis of the use of imiquimod 5% cream from
+ﬁve RCTs using it two or three times a week for 12–16 weeks
+demonstrated a 50% complete clearance rate. This is similar to
+more brief and ﬂexible regimens as per the license.74 A small
+RCT against vehicle placebo showed clearance rates of 84%
+when used up to three times per week for 12 weeks.75 Two
+RCTs with regimens of three times per week for 16 weeks
+and follow-up 8 weeks later gave 47% of subjects with com-
+plete clearance (vs. 72% with placebo)76 and 571% (vs.
+22% for placebo).59
+A head-to-head open trial between imiquimod 5% (twice
+per week for 16 weeks), its cream vehicle and diclofenac 3%
+gel (twice daily for 90 days) showed complete clearance of
+191%, 0% and 20% at the end of the respective treatment
+periods. After a further 24 weeks, these ﬁgures changed to
+45%, 0% and 143%, respectively, illustrating that improve-
+ment continues to progress after the conclusion of imiquimod,
+in contrast to other treatments.58 Similar results were reported
+for imiquimod 5% used three times a week for 4 weeks in
+126 patients, and repeated for a further 4 weeks a month later
+in 79 of them and compared with cream vehicle. The global
+complete response in the combined groups was 55%, com-
+pared with 23% for vehicle, illustrating that personal variation
+makes it possible to tailor the duration of the regimen to the
+individual.77 An RCT comparing imiquimod 5% cream on the
+face [three times a week for 4 (40%) or 8 (60%) weeks
+depending on response] with liquid nitrogen spray (10-s
+freeze to commencement of thawing) favoured liquid nitro-
+gen, with complete clearance in 88% vs. 669%. However, the
+cryosurgery resulted in a higher number of pigmentary
+changes.78
+The side-effects of imiquimod are similar to those of 5-FU,
+with severe erythema (306%), scabbing and crusting (299%)
+and erosions or ulceration (102%). Flu-like symptoms can
+also arise and are more likely if multiple sachets are used at
+each treatment or if it is being used for superﬁcial BCC with
+more frequent applications than is typically the case for AK.59
+An instance of post-treatment eruptive keratoacanthomas has
+been reported.79 The extent of side-effects is not wholly pre-
+dictable, with some patients manifesting an extreme reaction
+and others very little. The clinical response is largely in pro-
+portion to the side-effects, and those terminating treatment
+early due to extreme soreness may still get a good response.
+Side-effects are generally well tolerated, but it is important to
+counsel the patient carefully in order to anticipate those who
+have more extreme clinical reactions.80
+There are limited long-term data on relapse after treatment,
+but in a three-armed RCT between cryosurgery, 5-FU 5% and
+imiquimod, the proportions of the intention-to-treat popula-
+tion maintaining clearance at 12 months were 1%, 33% and
+76%, respectively.81 The cryosurgery treatments were 20–40 s
+in duration, which is a dose at which scarring might be
+expected. This observation poses questions about this limb of
+the study. In an observational, 16-month follow-up study,
+753% of those receiving treatment three times a week over
+8 weeks were clear at 16 months, in comparison with 574%
+receiving the same treatment twice a week.82
+There is a small number of studies on imiquimod 375%
+cream (strength of recommendation B, level of evidence 1+),
+which is licensed for treatment of AKs of the head and scalp
+with application once daily for two, 2-week periods separated
+by 2 weeks. Early studies had longer courses, applied once
+daily for two periods of 3 weeks separated by 3 weeks, over a
+9-week course. Comparison with placebo vehicle 8 weeks
+after conclusion of treatment showed complete clearance rates
+of 55% (placebo) and 34%.83 Where AKs responded they
+recurred in 60% of patients within 14 months.84 Where treat-
+ment was given as per the licence at weeks 1 and 2, then 5
+and 6, complete clearance was seen in 63% and 356% for
+emollient
+and
+imiquimod,
+respectively.85
+Where
+the
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+30 Guidelines for actinic keratosis 2017, D. de Berker et al.
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 12 ===
+comparator was cryosurgery and emollient vehicle, imiquimod
+375% following cryosurgery resulted in complete clearance in
+595% of patients.86
+Imiquimod 375% has also been used following cryosurgery
+as a supplementary treatment, improving the result of treatment
+of hypertrophic AKs on the forearm and dorsa of the hands over
+cryosurgery alone.87 It is possible that the adverse side-effects
+associated with imiquimod 5% cream are less with the 375%
+formulation, and this might enable more ﬁeld-based treatment
+over lesion therapy and improve patient tolerance.
+8.2.3 Diclofenac gel (strength of recommendation A, level
+of evidence 1+)
+Diclofenac 3% in a 25% hyaluronic gel is licensed for applica-
+tion twice daily for 60–90 days and can be applied as a
+lesion- or ﬁeld-based treatment. Its mechanism of action for
+AK is not known, but may be related to inhibition of the
+cyclooxygenase pathway leading to reduced prostaglandin E2
+synthesis. Diclofenac gel usually causes less intense local skin
+reaction than 5-FU or imiquimod 5% cream.88 The reduction
+of side-effects is matched by reduced efﬁcacy where diclofenac
+gel and 5-FU 5% are compared, but both achieve high levels
+(73% vs. 77%) of patient satisfaction.89
+There are three vehicle-controlled studies in the treatment
+of mild AKs. In the ﬁrst, patients were treated for a mean of
+60 days, with a clearance of 70% of target lesions in the treat-
+ment group compared with 44% in those using the vehicle.57
+In the second study, treatment was for 90 days; 50% achieved
+complete clearance vs. 20% of those treated with vehicle alone
+(P < 0001).90 In a three-armed RCT comparing diclofenac
+3%, imiquimod 5% cream and base cream, the rates of com-
+plete clearance at the end of treatment were 191%, 20% and
+0%.
+In summary, these three different studies with diclofenac
+gel show 26%, 30% and 191% beneﬁt over vehicle gel or
+base cream, respectively.58 Extending treatment from 90 to
+180 days gave an additional 5% complete clearance without a
+signiﬁcant change in adverse effects.91 Follow-up assessment
+was limited to 30 days post-treatment in the ﬁrst two studies.
+In the third, clearance dropped to 143% at 24 weeks’ follow-
+up. Diclofenac 3% gel used as part of a three-armed study
+with 5-FU 05% in 10% salicylic acid and vehicle resulted in a
+32% rate (17% over vehicle)64 of complete clearance, and a
+relapse rate of 19% at 12 months.72 These data indicate mod-
+erate efﬁcacy with low morbidity in mild AKs. Treatment was
+well tolerated and reported side-effects were mainly pruritus
+(41% estimated after 30 days’ treatment) and rash (40% esti-
+mated after 60 days).57
+8.2.4 Ingenol mebutate cream (150 lg g1 face and scalp,
+500 lg g1 limbs and trunk) (strength of recommendation
+A, level of evidence 1+)
+Ingenol mebutate is a diterpene ester extracted from the plant
+Euphorbia peplus. At a cellular level it appears to work through
+the disruption of mitochondrial membranes resulting in dam-
+age and death of host cells and promotion of cell-speciﬁc anti-
+bodies with consequent antibody-dependent, cell-medicated
+cellular cytotoxicity. It is licensed for the treatment of nonker-
+atotic, nonhypertrophic AK in adults (grade 1 and 2). It is
+sold in two strengths (150 and 500 lg g1), with the weaker
+one applied 3 days in succession to the chosen area on the
+face and scalp and the stronger one applied 2 days in succes-
+sion to other sites. Each application is dispensed as a single
+tube of cream (three tubes for the face and scalp or two tubes
+for other sites) with scope to cover a ﬁeld 5 9 5 cm. Use of
+the 150-lg g1 preparation on the face and scalp over 3 days
+resulted in a complete cure rate of 40% vs. 117% for vehicle
+60 days after starting the treatment in one RCT,92 and 422%
+vs. 37% for vehicle in another of similar size.93
+Pooled data from two trials of this treatment regimen fol-
+lowed successfully treated patients for 12 months. There was
+relapse on the head and neck in just over half of the patients
+in the following year.94 If residual lesions are re-treated at
+8 weeks, clearance at 12 months increases from 27% to
+50%.95 Clearance on other body sites is less, at 341% vs.
+47% for vehicle after application of the 500-lg g1 cream on
+two consecutive days, with relapse in just over half of the
+patients at 12 months. Speciﬁc sites such as the back of the
+hand are less likely to clear completely, with 185% vs. 0%
+for placebo.96
+Side-effects peak at 4 days, which is after completion of the
+application of treatment. Common effects are redness, scab-
+bing, pain and pustules, with most side-effects settling within
+28 days.93,94
+A 2015 update from the US Food and Drug Administration
+highlights the risks of severe adverse reactions, with local and
+systemic allergic features and herpes zoster infection. Within
+the update they emphasize the need ‘to avoid applying the gel
+in, near, and around the mouth, lips and eye area’.97 Extend-
+ing the area of treatment of ingenol mebutate to 100 cm2
+resulted in no increase in treatment-related adverse events
+compared with 25 cm2.98 Clobetasol propionate, used twice
+daily for 4 days post-treatment, did not alleviate the symp-
+toms or efﬁcacy of ingenol mebutate.99 This may be relevant
+to other treatments causing soreness.
+8.2.5 Topical retinoids (strength of recommendation B,
+level of evidence 1+)
+A range of older trials demonstrate a modest beneﬁt with the
+use of topical retinoids in AK.100 They may lend some addi-
+tional beneﬁt with respect to improvement in lentigines and
+reduced wrinkles. Their use is usually sustained rather than
+based on a limited course of treatment. Products include ada-
+palene 03%, tretinoin 01% and 005% and topical isotreti-
+noin 01%. Where adapalene 01% was compared with 03%,
+the latter was signiﬁcantly more efﬁcacious in achieving AK
+count reduction after 9 months.101 Currently, tretinoin and
+isotretinoin are prescribable in the U.K. only in 0025% and
+005%
+concentrations,
+respectively,
+as
+topical
+antibiotic
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+Guidelines for actinic keratosis 2017, D. de Berker et al. 31
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 13 ===
+combinations licensed for use in acne. A Veterans Association
+RCT exploring topical retinoid for chemoprevention of skin
+cancer was stopped early because of excessive all-cause mortal-
+ity in the treatment group at interim analysis.102
+Key recommendations: topical therapies
+•
+Emollient and sunscreen with advice on sun protection
+might be a satisfactory treatment for people with ﬂuctu-
+ating grade 1 AKs.
+•
+Education at the outset of using active topical therapies
+is important to ensure a full understanding of how to
+apply treatment and the nature of the side-effects, which
+can be marked.
+•
+Active topical therapy is suited to use in primary and
+secondary care. Where possible, a management plan
+should be formulated that enables the patient to be
+managed in primary care.
+•
+Topical therapy is suited to use as lesion- and ﬁeld-
+based treatment. Where used for ﬁeld treatment, the size
+of the ﬁeld needs to be deﬁned with the patient to
+ensure anticipation and tolerance of side-effects.
+•
+Failure of an individual lesion to respond to topical
+therapy indicates a need for further evaluation. This may
+include referral from primary care to secondary care or
+surgery to obtain histology and extend treatment.
+8.3 Cryosurgery (strength of recommendation A, level of
+evidence 1++)
+Cryosurgery is a long-established treatment for AKs requiring
+a cryospray (or cotton wool and orange sticks) and a supply
+of liquid nitrogen. Complete clearance rates vary according to
+the duration of freeze and the number of treatments, usually
+separated by 6–12 weeks. The relationship between duration
+of freeze and clearance was examined in a three-dose study
+with 12-month follow-up after cryosurgery. A duration < 5 s
+showed 39% cure, 5–20 s, 69% cure and > 20 s, 83% cure
+on the scalp and face.103 Many more recent studies are based
+on head-to-head trials with PDT. A randomized study compar-
+ing cryosurgery with PDT in 193 patients indicated an overall
+75% complete response rate for cryosurgery in contrast to
+69% in those treated with PDT at 3 months.104 The differen-
+tial success of the two therapies was more marked for thick
+lesions, with 69% showing complete response to cryosurgery
+vs. 52% to PDT. A double freeze–thaw cycle was used in this
+study in contrast to a single cycle, which, when used in a dif-
+ferent study, yielded a 68% response.105
+A more recent head-to-head study with methyl aminolae-
+vulinate (MAL)-PDT employed cryosurgery (1 9 10-s freeze)
+as needed every 3 months for up to four visits with assess-
+ment at 12 months. It reported a complete response rate of
+85%, with 77% needing only one treatment. Side-effects of
+cryosurgery of soreness, blistering, pigmentary change and
+scarring contributed to an overall patient preference for
+PDT.78 In another study, a double freeze–thaw cycle given just
+once with no deﬁned duration provided a complete clearance
+rate of 88% as judged at 24 weeks.106 In a right–left, split-
+face study comparing MAL-PDT with a cryosurgery double
+freeze–thaw cycle retreated at 12 weeks as needed, MAL-PDT
+showed 891% cured lesions vs. 861% for cryosurgery, with
+no signiﬁcant difference between them. Patient and clinician
+assessment of cosmetic outcome were in favour of MAL-
+PDT.107
+Extensive cryosurgery over large areas has been referred to
+as cryopeeling, and can be used to treat ﬁelds of AKs and
+background damage.108 Cryosurgery has been described in
+combination with topical 5-FU, where the duration of treat-
+ment and consequent side-effects of both modalities could be
+reduced while maintaining efﬁcacy.109 The pretreatment of AK
+with 5-FU 05% for 1 week, prior to treatment of the remain-
+ing lesions with cryosurgery at the 1-month follow-up, may
+decrease the AK count at 6 months when compared with
+cryosurgery and vehicle pretreatment (reduced to 33% vs.
+55%, P = 001).110
+Cryosurgery is a ﬂexible therapy that requires skill in
+administration. With larger doses it is likely to result in loss
+of pigment and scarring. Patient counselling is important con-
+cerning the short- and long-term side-effects. In particular,
+patients should be aware of blistering, oedema, crusting and
+soreness. Doses appropriate for AK are usually < 10 s, but still
+carry some risk of damage to underlying structures such as
+tendons and nerves if applied on the back of the hands. Below
+the knee, slow healing can be a problem, particularly in the
+older patient group presenting with AK.
+8.4 Surgery
+There are no trials of surgery for AKs. The nature of the
+pathology makes it likely that a surgical procedure able to
+remove an area of diseased skin represents an effective ther-
+apy. Histological information can be useful in management of
+AK. It is unlikely that this would be a ﬁrst-line treatment
+unless there was diagnostic uncertainty. Surgery addresses a
+focal lesion, and where AK presents in a ﬁeld of actinic dam-
+age, it does not address this. A curettage specimen may make
+it difﬁcult to determine whether a lesion has an element of
+dermal invasion. In some instances a deep shave or formal
+excision with histological examination might be preferred. If
+curettage is used for a hyperkeratotic AK where SCC is a dif-
+ferential diagnosis, it may be warranted to employ two or
+three cycles of therapy. This will ensure that if the histology is
+that of invasive SCC, or if it is equivocal, the curettage is still
+likely to represent adequate treatment. Exceptions would be
+where the size, histological type or location of an SCC would
+make curettage an unacceptable treatment.111
+8.5 Systemic therapy (strength of recommendation C,
+level of evidence 2+)
+Systemic retinoids have been assessed for their potential role
+in suppression or treatment of multiple AKs. Early studies
+employing etretinate showed the efﬁcacy of this drug in
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+32 Guidelines for actinic keratosis 2017, D. de Berker et al.
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 14 ===
+double-blind, crossover trials.112 Anecdotal evidence over the
+last 20 years suggests that there can be some considerable
+morbidity in employing this treatment. In addition, there may
+be a rebound effect once the systemic therapy is stopped.
+However, these effects were not observed at the 4-month fol-
+low-up in the one available report on this subject.113
+Use of systemic retinoids may be justiﬁed in very high-risk
+patients, such as organ transplant recipients, where there is a
+presumed increased risk of progression from AK to SCC.54
+Renal transplant patients given oral acitretin 04 mg kg1
+showed some immunohistochemical normalization of keratin
+expression patterns, but a residue of histological dysplasia sug-
+gests potential for relapse when the drug is stopped.114 Low-
+dose acitretin is currently given as a treatment option in the
+‘European best practice guidelines’ for renal transplant patients
+with multiple dysplastic skin lesions.115
+An international survey of 28 dermatologists managing skin
+disease in organ transplant recipients looked at the use of sys-
+temic retinoid.116 In the setting of AK alone, only where the
+AK was extensive did the majority (56%) advocate systemic
+retinoid. Once patients start getting multiple (more than ﬁve)
+SCCs in addition to AK, the rate of prescribing increased to
+between 74% and 81% depending on whether the SCCs were
+high risk. Acitretin was the most common drug, at a starting
+dose of 10 mg (42%) or 25 mg (58%); 12% of respondents
+used isotretinoin.
+There is little literature on the use of systemic cytotoxic
+agents in the immunosuppressed, mainly for the treatment of
+SCC but in the setting of extensive AK. Capecitabine given to
+15 organ transplant recipients with frequent SCC, BCC and AK
+showed reductions in monthly incidence to 22%, 33% and
+45% of pretreatment levels, respectively.55 Side-effects resulted
+in 33% of patients stopping after 1 year.
+The
+cyclooxygenase-2
+inhibitor,
+celecoxib,
+taken
+for
+9 months can reduce the number of BCCs and SCCs over an
+11-month period, but does not appear to alter the number of
+AKs.117 Overall, it may have a role in high-risk patients with
+multiple NMSCs, but it does not have evidence of a role for
+AK.118
+8.6 Photodynamic therapy (strength of recommendation
+A, level of evidence 1+)
+Photodynamic therapy combines a dedicated light source of
+appropriate wavelengths with the application of a photosensi-
+tizing cream to produce apoptosis and necrosis of the target
+tissue. Photosensitizing agents include 5-aminolaevulinic acid
+(5-ALA) and the methyl ester of 5-ALA, 5-MAL. BF-200ALA
+was recently used, showing increased stability and penetra-
+tion.119,120
+A range of light sources can be used.121 Red narrow-spec-
+trum light sources permit shorter illumination times and
+appear to give higher response rates.119,120 Current knowledge
+of photosensitizers and light sources are detailed in the 2013
+European Guidelines for PDT.121 In most situations superﬁcial
+crust or keratin is ﬁrst removed with light curettage and
+photosensitizing cream, then the agent is applied under occlu-
+sion for 3 h prior to irradiation. Surface ﬂuorescence with a
+Wood’s lamp can help delineate lesions and identify persistent
+disease. Treatment can be painful but can be managed with
+cold-air analgesia or nerve blocks.121,122 Erythema and crust-
+ing often occur but can be reduced by the use of plaster or
+physical sunscreens.123
+Four studies report PDT to be more effective than pla-
+cebo.105,107,124,125 Three were randomized and one double
+blinded, with 80–211 subjects. Efﬁcacy rates appear better for
+the face and scalp than the forearm and hands,126 but there
+are no studies comparing the two sites. Response rates in the
+face and scalp range from 69% to 93%. Follow-up reported
+up to 24% recurrence at 12 months in an open-label study.127
+There may be an increased response of PDT with fraction-
+ated light128 and pretreatment with laser.129 Both claimed bet-
+ter responses, but patient numbers were small and the side-
+effects greater with laser pretreatment. In a side-to-side com-
+parative study of PDT vs. CO2 laser treatment they were of
+equal efﬁcacy but patient preference was for PDT.130
+Three open-label RCTs compared MAL-PDT with cryosur-
+gery.
+Two
+freeze–thaw
+cycles
+were
+comparable
+in
+one
+study104 and inferior in terms of relapse in another.107 A sin-
+gle cycle was inferior in the third study.105 The efﬁcacy of
+PDT was conﬁrmed in a meta-analysis in 2014.131 PDT has
+also been compared side to side in trials with 5-FU.66 A
+right–left comparison of AK treatment on the backs of the
+hands showed a similar response for PDT and 5-FU, clearing
+lesions in 73% and 70% of cases, respectively. Three studies
+showed no difference between PDT and imiquimod.132–134
+In a randomized study of 30 patients given up to two treat-
+ments with ALA-PDT or one to two courses of imiquimod
+(three times a week for 4 weeks), equivalent responses were
+seen
+6 months
+after
+completion
+of
+treatment
+(65%
+vs.
+55%).134 PDT was more effective for grade 2 lesions.
+A thin, self-adhesive patch has been developed for self-
+application.135,136
+In
+a
+multicentre
+RCT
+involving
+449
+patients,
+efﬁcacy
+with
+active
+treatment
+was
+82%
+after
+12 weeks compared with 19% for placebo and 77% for cryo-
+surgery. It is advocated as allowing self-application and avoid-
+ing the need for pretreatment curettage.
+Daylight PDT involves the application of MAL to the skin
+without occlusion and subsequent exposure to ambient day-
+light. A high-SPF sunscreen without mineral ﬁlters is applied
+15 min before the photosensitizing cream. Thirty minutes
+later the patient spends 2 h outdoors.
+Five RCTs in Europe and Australia have conﬁrmed the efﬁ-
+cacy of daylight PDT compared with conventional PDT.137–141
+This was in mild (grade 1) to moderate (grade 2) lesions on
+the face and scalp. Clearance rates of 70–89% were reported.
+In European studies daylight PDT can be performed in all
+weather conditions,141 but temperatures > 10 °C are advised
+for patient comfort. Consensus guidelines have also been pro-
+duced.142–144
+One comparative study was a right–left comparison of PDT
+with ingenol mebutate in grade 1 and 2 lesions (27 patients).
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+Guidelines for actinic keratosis 2017, D. de Berker et al. 33
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 15 ===
+In both there was a 40% complete response rate, but PDT was
+better tolerated.145
+8.7 Laser therapy (strength of recommendation B, level
+of evidence 1+)
+In principal, dermabrasion, chemical peels and laser treatment
+should treat AKs, as skin is destroyed to a controlled depth.
+The majority of studies treat ﬁeld change as well as individual
+lesions. These physical therapies come with signiﬁcant risk of
+long-term side-effects including hypopigmentation and persis-
+tent erythema and scarring. The risk of such problems is
+greater with ablative rather than nonablative laser techniques,
+which also require anti-infective prophylaxis.146
+There are no studies comparing laser treatment with no
+treatment or placebo.
+A good-quality, prospective, randomized study of 5-FU
+(twice daily for 4 weeks) vs. erbium-doped yttrium alu-
+minium garnet (Er:YAG) laser in 55 patients demonstrated
+signiﬁcantly fewer recurrences in the laser group at 6 and
+12 months, but more erythema and hypopigmentation in the
+long term. No data were reported on clearance at completion
+of treatment.147
+A second prospective randomized trial of CO2 laser vs. TCA
+30% vs. 5-FU (twice daily for 3 weeks) with small patient
+numbers showed a signiﬁcant clearance of lesions with all
+interventions at 3 months. The authors also claimed a delayed
+time to recurrence of NMSC compared with controls, but the
+controls were the dropouts from the study.148
+Three retrospective case studies of CO2 with or without Er:
+YAG lasers show clearance and reduced AKs at follow-up.149
+Two of these studies demonstrate 80% and 87% clearance at
+12 months.150,151 A split-face study of ablative, fractionated
+(i.e.
+multiple
+pinpoint
+treatments)
+CO2
+laser
+treatment
+demonstrated only a short-term reduction in the number of
+AKs, not sustained over 3 months.152 One pilot study of non-
+ablative fractional laser in 10 patients reported 46% clearance
+at 6 months and claimed minimal acute and long-term side-
+effects.153
+Dermabrasion in open studies clears AKs on the face and
+scalp. Coleman et al. treated 23 patients, 96% of whom were
+clear at 6 months and 54% at 5 years.154 Winton and Salasche
+treated ﬁve patients successfully, with complete clearance.155
+A simple, prospective case series describing treatment of
+individual AKs with phenol 100% applied once a month for
+up to a maximum of 8 months in 32 patients reported no
+recurrence at 12 months.37
+8.8 Combination treatment
+There are many trials of combination therapy in the treatment
+of AK; they are of two kinds. The ﬁrst is a serial approach
+where one treatment is advocated to follow the other depend-
+ing on outcome, or as a speciﬁc regimen of pretreatment with
+the possibility that the effects of one treatment will maximize,
+or consolidate, the response. The second approach is to use a
+product with two active ingredients where, for instance, sali-
+cylic acid 10% may break down surface keratin and improve
+penetration and hence the efﬁcacy of 5-FU 05% (see Sec-
+tion 8.2.1).
+Salicylic acid ointment is sometimes used as a preliminary
+to topical 5-FU to remove overlying keratin. Salicylic acid
+50% in croton oil has been described as a treatment for AKs
+when used in combination with TCA 20% and pretreatment
+with topical tretinoin as a serial regimen for facial peel.39 The
+ointment base may be acting as an emollient, with some level
+of success for grade 1 AK3,57 (see Section 8.1.1).
+In a case series, patients were pretreated with diclofenac 3%
+gel for 12 weeks followed by cryosurgery for the 29% with
+residual
+lesions.
+This
+demonstrated
+an
+overall
+effective
+response to this combined management approach, with com-
+plete clearance maintained for 6–20 months (mean 10).156 An
+open-label multicentre trial of cryosurgery (freeze time of 4–
+10 s) followed by diclofenac 3% gel 15 days later for the next
+3 months vs. cryosurgery alone found that complete clearance
+increased from 21% to 46% with the addition of diclofenac.
+The clearance rates for a target lesion were greater at 32% vs.
+64%.157 A small, right–left-hand study with 4 weeks’ pretreat-
+ment using diclofenac 3% gel and PDT compared with pla-
+cebo gel and PDT demonstrated a greater decrease in the
+number and thickness of AKs on the side with diclofenac pre-
+treatment, at 12 months.158
+Diclofenac 3% as pretreatment for 5-FU 05% in 10% sali-
+cylic acid is also reported as an effective sequential regi-
+men.156
+There
+are
+reports
+of
+5–7 days
+of
+5-FU
+5%
+pretreatment also being safe and effective in combination with
+cryosurgery110 or PDT159 or, alternatively, in combination
+with glycolic peels.38 PDT followed by imiquimod twice a
+week for 16 weeks was beneﬁcial over PDT and subsequent
+vehicle cream alone when undertaken in a split-face study.160
+The complete clearance rate was not reported, but the percent-
+age reduction in count was signiﬁcant at 899% in the com-
+bined treatment side vs. 745% on the side treated with PDT
+alone. With PDT as the variable rather than imiquimod, PDT
+did not appear to improve the efﬁcacy of imiquimod alone,
+although the study was small. Similarly, adding imiquimod
+5% two times a week for 8 weeks to cryosurgery does not
+appear to improve on cryosurgery alone.
+An alternative regimen has been studied for hypertrophic
+AKs on the forearms and the dorsa of the hands. Imiquimod
+375% was used following a double, 5-s freeze–thaw cycle,
+randomized to the right or left arm and applied in up to two
+sachets per night for 2 weeks, followed by a 2-week break
+and a further 2 weeks. The comparison was cryosurgery alone
+on the other arm. Complete cure was not an end point, but
+there was a greater level of clearance in the combination arm
+(76%) than the control arm (38%). This difference did not
+emerge until 10 weeks after cryosurgery (4 weeks after com-
+pletion of imiquimod), and maximized at the end of assess-
+ment at 14 weeks.87 Randomizing to 5-FU 05%, 1 week
+after cryosurgery resulted in nonsigniﬁcant improvement over
+cryosurgery alone.161
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+34 Guidelines for actinic keratosis 2017, D. de Berker et al.
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 16 ===
+Key recommendations: physical and systemic therapies
+•
+Education at the outset of using physical therapies is
+important to ensure a full understanding of the side-
+effects, which can be marked and include scarring and
+altered pigmentation.
+•
+Cryosurgery is a ﬂexible and effective form of lesion-
+based physical therapy that removes the patient involve-
+ment in their own care and requires administration in a
+service with cryosurgery.
+•
+Curettage can be warranted for thicker (grade 3) AKs,
+where they are resistant to topical therapy and where there
+is suspicion that they may represent early SCC. Histology
+must always be obtained. Diagnostic biopsy may be war-
+ranted on the same basis, but is subject to sampling error.
+•
+PDT is an effective treatment for conﬂuent AKs, such as
+on the scalp, which are difﬁcult to manage or resistant
+to treatment in the absence of invasive disease.
+•
+PDT has low scarring potential and less risk of poor
+healing in comparison with other physical therapies at
+vulnerable sites such as the lower leg.
+•
+Pretreatment with topical therapy can increase the efﬁ-
+cacy of physical therapies.
+•
+Failure of an individual lesion to respond to physical
+therapy indicates a need for further evaluation. This
+could include formal excision.
+•
+Systemic therapy is usually given in the context of mul-
+tiple grade 3 AKs, a history of serial SCCs and immuno-
+suppression.
+Therapy
+might
+be
+preventive
+with
+a
+retinoid and should be undertaken as part of a multidis-
+ciplinary decision, which might include alternatives such
+as the reduction of immunosuppression.
+9.0 Special considerations
+9.1 Body sites (strength of recommendation C, level of
+evidence 2+)
+The data from available treatments indicate that some treatments
+are more adaptable than others and that morbidity varies with
+location. The balance of issues determined by location, charac-
+teristics of the AKs and nature of the patient are summarized in
+Table 3. The scoring is based on the authors’ evaluation of efﬁ-
+cacy, ease of use, morbidity and cost-beneﬁt.
+9.1.1 Periocular
+The main consideration for treatment of periocular AK is the
+risk of adverse events involving the eye. All products licensed
+for treatment of AK have cautions in the PIL and/or summary
+of product characteristics concerning getting treatment in the
+eye. Creams used near the eye can smear into it, and inﬂam-
+mation caused by local destructive or inﬂammatory treatments
+such as cryosurgery may impinge upon the eye either directly
+or indirectly. Typically, liquid nitrogen is used with a contact
+probe, ensuring that cold vapour does not damage the eye.162
+Studies undertaken in ophthalmology suggest that treatment
+is possible with close supervision. Treatment can be combined
+with care of the eye. In a case series of 14 patients treating
+periocular skin with 5-FU 5% twice daily for 2 weeks, antibi-
+otic ointment was coprescribed and used until the area had
+healed.163 Six of the 14 AKs were on the upper eyelid and
+nine abutted a lid margin. Five patients required a second
+course of treatment, but overall clearance was complete in all
+cases and remained so for a mean follow-up period of
+38 months. Two patients had transient inﬂammatory side-
+effects affecting the eye. The potential precision of application
+of 5-FU 05% in 10% salicylic acid in a collodion base might
+make it a useful alternative to cream formulation, but there
+are no data on this.
+A retrospective study of the use of imiquimod 5% cream
+for a range of periocular actinic lesions identiﬁed 47 patients
+mainly with AK, mainly on the lower lid.164 Conjunctivitis
+occurred in 15 and six had ocular stinging, with conjunctivitis
+in three for over 2 weeks. Antibiotics were needed in three,
+for preseptal cellulitis in two of them. Nine patients discontin-
+ued imiquimod due to ocular irritation and conjunctivitis, of
+whom four patients recommenced and ﬁnished the treatment
+after a rest period. At a mean follow-up of 16 weeks, 34
+(72%) patients had clinical clearance of the periocular lesions
+and no patient had any residual ophthalmic side-effects from
+imiquimod.
+There is no good literature on diclofenac gel or ingenol
+mebutate, but both the PIL and product licence emphasize the
+importance of avoiding contact of the product with the eyes.
+9.1.2 Ears
+The ear is a common site for the presentation of AK and
+SCC. The risk of metastasis is higher when SCC arises on
+the ear. This means that the context of treatment is slightly
+different at this site than at others. The wish to treat AK
+with a view to avoiding evolution to SCC may be a greater
+priority.
+Histological
+diagnosis
+of
+any
+thicker
+AKs
+to
+differentiate them from invasive SCC by shave biopsy or
+excision is recommended. These interventions may represent
+treatment of such AKs or a preliminary to treatment of
+SCC.
+9.1.3 Forearm and hands
+Actinic keratoses on the dorsum of the hand are often multiple
+and hyperkeratotic. Early management with topical therapy or
+PDT may reduce the need for surgical interventions later. The
+skin is more tolerant of the side-effects of inﬂammatory treat-
+ments and hence permits prolongation of the course of treat-
+ment in some instances. This may be required due to the
+thicker skin or hindrance to treatment penetration by keratin
+in thicker AKs. Combinations of salicylic acid and 5-FU or
+curettage can be useful elements of treatment for the grade 3
+AKs found on the forearm and back of hands (see Sec-
+tion 8.8)
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+Guidelines for actinic keratosis 2017, D. de Berker et al. 35
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 17 ===
+9.1.4 Below the knee
+Actinic keratosis below the knee are often mixed with SCC
+in situ, a disposition to NMSC, including atypical BCCs and
+other actinic changes. They are a feature of elderly sun-
+exposed legs and often coincide with decreasing ability to
+heal. Treatments need to ﬁnd the right balance between
+managing
+the
+disease
+and
+causing
+complications,
+which
+include nonhealing and soft-tissue infection. Treatment is
+likely to be intermittent, low intensity and chronic; most
+reports are case series with small numbers. Infrequent or
+pulsed application of 5-FU has been employed,68 as has more
+intensive treatment using 5-FU chemowraps.165 This entails
+the application of 5-FU 5% once a week under an occlusive
+bandage for 7 days over a period of 4–8 weeks. Gaps in treat-
+ment can be needed where skin breakage develops.
+Diclofenac 3% gel might be employed with the expectation
+of fewer side-effects, but possibly less beneﬁt. PDT is used on
+the lower legs, particularly where there may be problems with
+healing.
+Key recommendations: special sites (Table 2)
+•
+Poor healing sites such as below the knee in the elderly
+require ﬂexible regimens, heightened supervision and
+consideration of less destructive treatments such as PDT.
+•
+The ears are commonly affected by AK and require
+attention early in respect to all modalities of treatment,
+including preventive action with a broad-brimmed hat
+and sunscreen.
+•
+Grade 3 AKs on the ear may warrant curettage early to
+obtain histology and avoid missed early SCC.
+•
+The skin of the dorsum of the hands can be more resis-
+tant to treatment than the head and neck, and warrants
+extended periods of topical therapy.
+•
+All licensed treatments include warnings about use near
+the eye. Periocular AK needs careful assessment in sec-
+ondary care. Topical treatments may be possible, but
+clear guidance and supervision are needed.
+9.2 Immunosuppressed patients
+Data on the epidemiology and natural progression of AK in
+the immunosuppressed are less detailed than in the normal
+population. The risk of progression to SCC is likely to be
+higher, and therefore there is a greater need for treatment of
+AK. Wallingford et al. highlighted the need to monitor trans-
+plant patients with ﬁeld-change AK disease.166 Within a large
+cohort of renal transplant patients, nearly one-third were
+found to have AKs. Of these, half were isolated AKs and half
+were AKs within a ﬁeld of AK and actinic change. In the sub-
+sequent year, the rate of development of SCC associated with
+the isolated AK was 7%, in comparison with 21% of those
+with ﬁeld change, most of which (11 of 15) arose within the
+ﬁeld. Other differences between the two groups were that the
+patients with isolated AKs tended to be transplanted later in
+life and had a shorter duration of immunosuppression.166
+Anecdotal and limited trial data suggest that treatments for
+AKs in transplant patients are less effective than in the general
+population,53 perhaps because AKs are more proliferative and
+hyperkeratotic in this group or because new lesions appear
+rapidly in the treated site. One study in transplant recipients
+failed to demonstrate a reduction in the development of sub-
+sequent skin cancers in those areas of skin previously treated
+for AKs with PDT.51 Where safety studies are undertaken in
+transplant patients they appear to demonstrate reactions similar
+to those in nontransplant patients.167
+9.3 Follow-up
+There are no data concerning the beneﬁt of follow-up in
+patients with AKs. Patients and their carers should be educated
+regarding changes that suggest malignancy. Those at high risk
+of NMSC, such as organ transplant recipients, may warrant
+follow-up; the presence of at least 10 AKs is an indicator of
+this risk.18
+Where treatments are likely to require evaluation and
+adjustment, follow-up in primary, intermediate or secondary
+care is needed. This could be by any member of the health-
+care team with validated competencies in the safe and effective
+management of AK. Current NHS guidance suggests that
+patients with AK should be managed in primary care. Where
+this is a sole pathology and not complicated by NMSC or
+other factors, the patient should be provided with information
+to enable ongoing diagnosis and care.
+9.4 Treatment failure
+All treatments have some risk of failing to achieve clearance of
+an individual lesion. Where this is the case, the reason for fail-
+ure needs assessment, where one of the possible explanations
+might be that the diagnosis is incorrect. Lesions within the
+differential diagnosis of AK include SCC in situ, invasive SCC,
+seborrhoeic keratosis, actinic porokeratosis, viral wart and
+others. Depending on the outcome of this clinical assessment,
+treatment might be escalated in intensity, duration or type, or
+the lesion might be biopsied or treated surgically.
+An alternative interpretation of failure is that the patient
+continues to get new AKs. This is not true failure, but more
+an illustration of the nature of the disease. Once someone is
+diagnosed with AK, they are likely to need intermittent, life-
+long treatment.
+10.0 Economic considerations
+Table 3 summarizes the cost-effectiveness of therapy.
+It is likely that the number of treatment episodes for AK
+will increase. Australian Medicare data demonstrate an increase
+of 160% between 1994 and 2012 in claims for use of cryo-
+surgery to treat 10 or more AKs. Many studies have tried to
+assess the cost-effectiveness of treatment for AK.168–171 How-
+ever, the methods of calculation and the different healthcare
+systems and their ways of funding prevent comparison.
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+36 Guidelines for actinic keratosis 2017, D. de Berker et al.
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 18 ===
+Two nonindustry studies have been published from the
+U.K. Wilson tried to compare the cost of PDT and imiquimod,
+taking into account quality of life.172 The author comments
+that a head-to-head study of imiquimod vs. PDT was required
+to enable more accurate calculations. Muston et al. used efﬁ-
+cacy data from the literature to assess the cost–beneﬁt ratio
+and reported that the costs and effectiveness of PDT compare
+well with other treatments for AK.173
+At a practical local level, prescriptions that enable the
+patient to re-treat, extend treatment or treat new areas have an
+inherent economic value and enable the patient to exercise
+their judgement. Imiquimod and ingenol mebutate are dis-
+pensed in aliquot packages that are single-treatment doses and
+provided in a number to complete a course of treatment. This
+tightly deﬁnes the cost per course of treatment and the terri-
+tory that can be treated. By contrast, Gibbs and Davis noted
+that patients used only 31% of the content of a tube of 5-FU
+5% in a single course of treatment, which enables substantial
+ﬂexibility in the course and territory of treatment.174,175
+11.0 Future directions
+Future directions need to address the human element of bear-
+ing the long-term diagnosis of AK and the technical challenges
+of treating AK effectively with low morbidity and acceptable
+cost. The clinical challenge comprises an ageing person with
+barely symptomatic dry areas of skin. Education, prevention
+and empowerment at this stage may help avoid the situation
+in 10–20 years where multiple untreated AKs accumulate and
+the patient presents with advanced AKs mingled with possible
+SCCs. The earliest stage in the prevention strategy shares
+ground with strategies for the avoidance of skin cancer, and
+equally shares its concerns of compromised vitamin D levels
+and loss of the indirect beneﬁts of UV exposure. Collaborative
+work between patient groups and primary and secondary care
+should aim to ﬁnd a suitable balanced approach to global care
+of patients with this diagnosis.
+Technical assessment of the efﬁcacy of treatments should
+continue, but using a standardized model of reporting. Review
+of data of AK treatment illustrates the variety of end points in
+studies, which makes comparison between them difﬁcult.
+These include percentage clearance of lesion number within a
+person, percentage of people within a study having complete
+clearance, percentage of target lesions clearing, and mathemat-
+ical models with projected AK behaviour based on within-
+study data.
+The time points at which these measures are deﬁned also
+vary and have the scope to alter the result greatly. Treatments
+have optimum times when their outcome is at its best, which
+can be up to 10 weeks after completion of treatment in the
+case of imiquimod. Equally, in the setting of a chronic relaps-
+ing and remitting disease, 12- and 24-month evaluation
+points are relevant. As AK is a multifocal manifestation of sun
+damage, AKs within a zone at 12 months may represent a
+mix of relapse and new lesions, which can further complicate
+quantitative assessment. Examples of all this are found in the
+studies referenced in this guideline.
+Areas of uncertainty in the treatment of AK that require fur-
+ther studies include (i) measurement and relevance of vitamin
+D and (ii) prospective studies looking at the effect of treat-
+ment of AKs on subsequent SCC reduction.
+12.0 Recommended audit points
+In the last 20 consecutive patients with AK is there clear docu-
+mentation of:
+•
+the location of the AKs indicated on a drawing or a
+head and neck or body map;
+•
+the grade or bulk of the AKs (e.g. grade 1, 2, 3 or
+descriptive; see Table 1);
+•
+treatment modality and dosage;
+•
+information (e.g. a PIL or other suitable source of infor-
+mation) provided to the patient on side-effects of treat-
+ment, where relevant;
+•
+the patient having received information on the name
+and nature of their diagnosis;
+•
+information provided for the GP in diagnosis and future
+management, in primary care where relevant.
+The audit recommendation of 20 cases per department is to
+reduce variation in the results due to a single patient, and to
+allow
+benchmarking
+between
+different
+units.
+However,
+departments unable to achieve this recommendation may
+choose to audit all cases seen in the preceding 12 months.
+13.0 Summary
+The ﬁndings are summarized in Table 2. See the text for
+details of evidence.
+Actinic keratoses are a multifocal manifestation of sun dam-
+age, comprising a spectrum of clinical complaint and pathol-
+ogy. They are relapsing and remitting and constitute a chronic
+disease. Most patients can be diagnosed and managed in pri-
+mary care. In many instances, management may entail little or
+no medical treatment other than advice on sun avoidance and
+self-monitoring. Where there is clinical concern or the patient
+speciﬁcally wants treatment, therapy can be employed taking
+into consideration the speciﬁcs of the situation. If there is
+diagnostic concern or failure to respond to ﬁrst-line treatment,
+a histological specimen, such as obtained at curettage, shave
+or formal excision, may be diagnostic and curative. Where
+AKs are multiple or conﬂuent, at sites of poor healing or with
+poor response to standard therapies, PDT may be helpful. Such
+patients may also warrant long-term follow-up for the associ-
+ated increased risk of NMSC.
+Acknowledgments
+We are very grateful to everyone who commented on the
+draft during the consultation period.
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+Guidelines for actinic keratosis 2017, D. de Berker et al. 37
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 19 ===
+References
+1 Bell HK, Ormerod AD. Writing a British Association of Dermatol-
+ogists clinical guideline: an update on the process and guidance
+for authors. Br J Dermatol 2009; 160:725–8.
+2 Brouwers MC, Kho ME, Browman GP et al. AGREE II: advancing
+guideline development, reporting and evaluation in health care.
+CMAJ 2010; 182:E839–42.
+3 Olsen EA, Abernethy ML, Kulp-Shorten C et al. A double-blind,
+vehicle-controlled study evaluating masoprocol cream in the
+treatment of actinic keratoses on the head and neck. J Am Acad
+Dermatol 1991; 24:738–43.
+4 Vatve M, Ortonne JP, Birch-Machin MA et al. Management of
+ﬁeld change in actinic keratosis. Br J Dermatol 2007; 157(Suppl.
+2):21–4.
+5 Freeman RG. Carcinogenic effects of solar radiation and preven-
+tion measures. Cancer 1968; 21:1114–20.
+6 Ziegler A, Jonason AS, Leffell DJ et al. Sunburn and p53 in the
+onset of skin cancer. Nature 1994; 372:773–6.
+7 Barr BB, Benton EC, McLaren K et al. Papillomavirus infection and
+skin cancer in renal allograft recipients. Lancet 1989; 2:224–5.
+8 Baudouin C, Charveron M, Tarroux R et al. Environmental pollu-
+tants and skin cancer. Cell Biol Toxicol 2002; 18:341–8.
+9 Wong ST, Chan HL, Teo SK. The spectrum of cutaneous and
+internal malignancies in chronic arsenic toxicity. Singapore Med J
+1998; 39:171–3.
+10 Norris JF. Sunscreens, suntans, and skin cancer. Local councils
+should
+remove
+sunbeds
+from
+leisure
+centres.
+BMJ
+1996;
+313:941–2.
+11 Bajdik CD, Gallagher RP, Astrakianakis G et al. Non-solar ultravio-
+let radiation and the risk of basal and squamous cell skin cancer.
+Br J Cancer 1996; 73:1612–4.
+12 Roest MA, Keane FM, Agnew K et al. Multiple squamous skin car-
+cinomas following excess sunbed use. J R Soc Med 2001; 94:636–
+7.
+13 Atkins D, Bang RH, Sternberg MR et al. Reliable methods to eval-
+uate the burden of actinic keratoses. J Invest Dermatol 2006;
+126:591–4.
+14 O’Beirn SFO, Judge P, Maccon CF et al. Skin cancer in County
+Galway, Ireland. In: Proceedings of the Sixth National Cancer Conference,
+sponsored by the American Cancer Society Inc. and the National Cancer Institute,
+September 1968. Philadelphia: Lippincott, 1970; 489–500.
+15 Harvey I, Frankel S, Marks R et al. Non-melanoma skin cancer
+and solar keratoses. I. Methods and descriptive results of the
+South Wales Skin Cancer Study. Br J Cancer 1996; 74:1302–7.
+16 Memon AA, Tomenson JA, Bothwell J et al. Prevalence of solar
+damage and actinic keratosis in a Merseyside population. Br J Der-
+matol 2000; 142:1154–9.
+17 Eder J, Prillinger K, Korn A et al. Prevalence of actinic keratosis
+among dermatology outpatients in Austria. Br J Dermatol 2014;
+171:1415–21.
+18 Flohil SC, van der Leest RJ, Dowlatshahi EA et al. Prevalence of
+actinic keratosis and its risk factors in the general population: the
+Rotterdam Study. J Invest Dermatol 2013; 133:1971–8.
+19 Marks R, Foley P, Goodman G et al. Spontaneous remission of
+solar keratoses: the case for conservative management. Br J Derma-
+tol 1986; 115:649–55.
+20 Criscione VD, Weinstock MA, Naylor MF et al. Actinic keratoses:
+natural history and risk of malignant transformation in the Veter-
+ans Affairs Topical Tretinoin Chemoprevention Trial. Cancer 2009;
+115:2523–30.
+21 Marks R, Rennie G, Selwood TS. Malignant transformation of
+solar keratoses to squamous cell carcinoma. Lancet 1988; 1:795–7.
+22 Dodson JM, DeSpain J, Hewett JE et al. Malignant potential of
+actinic keratoses and the controversy over treatment. A patient-
+oriented perspective. Arch Dermatol 1991; 127:1029–31.
+23 Foote JA, Harris RB, Giuliano AR et al. Predictors for cutaneous
+basal- and squamous-cell carcinoma among actinically damaged
+adults. Int J Cancer 2001; 95:7–11.
+24 Chen GJ, Feldman SR, Williford PM et al. Clinical diagnosis of
+actinic keratosis identiﬁes an elderly population at high risk of
+developing skin cancer. Dermatol Surg 2005; 31:43–7.
+25 Lambert SR, Mladkova N, Gulati A et al. Key differences identiﬁed
+between actinic keratosis and cutaneous squamous cell carcinoma
+by transcriptome proﬁling. Br J Cancer 2014; 110:520–9.
+26 Werner RN, Sammain A, Erdmann R et al. The natural history of
+actinic
+keratosis:
+a
+systematic
+review.
+Br
+J
+Dermatol
+2013;
+169:502–18.
+27 Janda M. Teledermatology: its use in the detection and manage-
+ment of actinic keratosis. Curr Probl Dermatol 2015; 46:101–7.
+28 Huerta-Brogeras M, Olmos O, Borbujo J et al. Validation of der-
+moscopy as a real-time noninvasive diagnostic imaging technique
+for actinic keratosis. Arch Dermatol 2012; 148:1159–64.
+29 Scottish Intercollegiate Guidelines Network. Management of dia-
+betes: a national clinical guideline. Available at: www.sign.ac.uk/
+pdf/sign116.pdf (last accessed 16 September 2016).
+30 Shigaki C, Kruse RL, Mehr D et al. Motivation and diabetes self-
+management. Chronic Illn 2010; 6:202–14.
+31 Stockﬂeth E. The paradigm shift in treating actinic keratosis: a
+comprehensive strategy. J Drugs Dermatol 2012; 11:1462–7.
+32 Gupta AK, Paquet M, Villanueva E et al. Interventions for actinic
+keratoses. Cochrane Database Syst Rev 2012; 12:CD004415.
+33 Esmann S, Vinding GR, Christensen KB et al. Assessing the inﬂu-
+ence of actinic keratosis on patients’ quality of life: the AKQoL
+questionnaire. Br J Dermatol 2013; 168:277–83.
+34 Esmann S. Patients’ perspectives on actinic keratosis. Curr Probl Der-
+matol 2015; 46:8–13.
+35 Pomerantz H, Hogan D, Eilers D et al. Long-term efﬁcacy of topi-
+cal ﬂuorouracil cream, 5%, for treating actinic keratosis: a ran-
+domized clinical trial. JAMA Dermatol 2015; 151:952–60.
+36 Witheiler DD, Lawrence N, Cox SE et al. Long-term efﬁcacy and
+safety of Jessner’s solution and 35% trichloroacetic acid versus
+5% ﬂuorouracil in the treatment of widespread facial actinic ker-
+atoses. Dermatol Surg 1997; 23:191–6.
+37 Kaminaka C, Yamamoto Y, Yonei N et al. Phenol peels as a novel ther-
+apeutic approach for actinic keratosis and Bowen disease: prospective
+pilot trial with assessment of clinical, histologic, and immunohisto-
+chemical correlations. J Am Acad Dermatol 2009; 60:615–25.
+38 Ditre CM. Treatment of actinic keratosis and photodamaged skin
+with 5-ﬂuorouracil 5% cream and glycolic acid peels. Cosmet Der-
+matol 2004; 17:25–7.
+39 Swinehart JM. Salicylic acid ointment peeling of the hands and
+forearms. Effective nonsurgical removal of pigmented lesions and
+actinic damage. J Dermatol Surg Oncol 1992; 18:495–8.
+40 Werner RN, Stockﬂeth E, Connolly SM et al. Evidence- and con-
+sensus-based (S3) Guidelines for the Treatment of Actinic Kerato-
+sis
+–
+International
+League
+of
+Dermatological
+Societies
+in
+cooperation with the European Dermatology Forum – short ver-
+sion. J Eur Acad Dermatol Venereol 2015; 29:2069–79.
+41 National Institute for Health and Care Excellence. Improving
+outcomes for people with skin tumours including melanoma.
+Available
+at:
+https://www.nice.org.uk/guidance/csg8
+(last
+accessed 16 September 2016).
+42 Chetty P, Choi F, Mitchell T. Primary care review of actinic ker-
+atosis and its therapeutic options: a global perspective. Dermatol
+Ther (Heidelb) 2015; 5:19–35.
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+38 Guidelines for actinic keratosis 2017, D. de Berker et al.
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 20 ===
+43 Englert C, Hughes B. A review of actinic keratosis for the nurse
+practitioner: diagnosis, treatment, and clinical pearls. J Am Acad
+Nurse Pract 2012; 24:290–6.
+44 Primary Care Dermatology Society. Actinic (solar) keratosis: pri-
+mary care treatment pathway. Available at: http://www.pcds.or-
+g.uk/ee/images/uploads/general/Actinic_%28Solar%29_Kerato-
+sis_Primary_Care_Treatment_Pathway.pdf
+(last
+accessed
+16
+September 2016).
+45 Primary Care Dermatology Society. Actinic keratosis (syn. solar
+keratosis).
+Available
+at:
+http://www.pcds.org.uk/clinical-gui-
+dance/actinic-keratosis-syn.-solar-keratosis
+(last
+accessed
+16
+September 2016).
+46 Thompson SC, Jolley D, Marks R. Reduction of solar keratoses by
+regular sunscreen use. N Engl J Med 1993; 329:1147–51.
+47 Naylor MF, Boyd A, Smith DW et al. High sun protection factor
+sunscreens in the suppression of actinic neoplasia. Arch Dermatol
+1995; 131:170–5.
+48 Green A, Williams G, Neale R et al. Daily sunscreen application
+and betacarotene supplementation in prevention of basal-cell and
+squamous-cell carcinomas of the skin: a randomised controlled
+trial. Lancet 1999; 354:723–9.
+49 Ulrich C, Jurgensen JS, Degen A et al. Prevention of non-mela-
+noma skin cancer in organ transplant patients by regular use of a
+sunscreen: a 24 months, prospective, case–control study. Br J Der-
+matol 2009; 161(Suppl. 3):78–84.
+50 Euvrard S, Kanitakis J, Claudy A. Skin cancers after organ trans-
+plantation. N Engl J Med 2003; 348:1681–91.
+51 de Graaf YG, Kennedy C, Wolterbeek R et al. Photodynamic ther-
+apy does not prevent cutaneous squamous-cell carcinoma in
+organ-transplant recipients: results of a randomized-controlled
+trial. J Invest Dermatol 2006; 126:569–74.
+52 Harwood CA, Mesher D, McGregor JM et al. A surveillance model
+for skin cancer in organ transplant recipients: a 22-year prospec-
+tive study in an ethnically diverse population. Am J Transplant
+2013; 13:119–29.
+53 Dragieva G, Hafner J, Dummer R et al. Topical photodynamic
+therapy in the treatment of actinic keratoses and Bowen’s disease
+in transplant recipients. Transplantation 2004; 77:115–21.
+54 McNamara IR, Muir J, Galbraith AJ. Acitretin for prophylaxis of
+cutaneous malignancies after cardiac transplantation. J Heart Lung
+Transplant 2002; 21:1201–5.
+55 Jirakulaporn T, Endrizzi B, Lindgren B et al. Capecitabine for skin
+cancer prevention in solid organ transplant recipients. Clin Trans-
+plant 2011; 25:541–8.
+56 Black HS, Herd JA, Goldberg LH et al. Effect of a low-fat diet on
+the incidence of actinic keratosis. N Engl J Med 1994; 330:1272–5.
+57 Rivers JK, Arlette J, Shear N et al. Topical treatment of actinic ker-
+atoses with 3.0% diclofenac in 2.5% hyaluronan gel. Br J Dermatol
+2002; 146:94–100.
+58 Akarsu S, Aktan S, Atahan A et al. Comparison of topical 3%
+diclofenac sodium gel and 5% imiquimod cream for the treat-
+ment of actinic keratoses. Clin Exp Dermatol 2011; 36:479–84.
+59 Szeimies RM, Gerritsen MJ, Gupta G et al. Imiquimod 5% cream
+for the treatment of actinic keratosis: results from a phase III,
+randomized, double-blind, vehicle-controlled, clinical trial with
+histology. J Am Acad Dermatol 2004; 51:547–55.
+60 Jorizzo J, Dinehart S, Matheson R et al. Vehicle-controlled, dou-
+ble-blind, randomized study of imiquimod 5% cream applied
+3 days per week in one or two courses of treatment for actinic
+keratoses on the head. J Am Acad Dermatol 2007; 57:265–8.
+61 Darlington S, Williams G, Neale R et al. A randomized controlled trial
+to assess sunscreen application and beta carotene supplementation in
+the prevention of solar keratoses. Arch Dermatol 2003; 139:451–5.
+62 Eaglstein WH, Weinstein GD, Frost P. Fluorouracil: mechanism
+of action in human skin and actinic keratoses. I. Effect on DNA
+synthesis in vivo. Arch Dermatol 1970; 101:132–9.
+63 Ingenol mebutate (Picato) for actinic keratosis. Med Lett Drugs Ther
+2012; 54:35–6.
+64 Stockﬂeth E, Kerl H, Zwingers T et al. Low-dose 5-ﬂuorouracil in
+combination with salicylic acid as a new lesion-directed option
+to treat topically actinic keratoses: histological and clinical study
+results. Br J Dermatol 2011; 165:1101–8.
+65 Gupta AK, Paquet M. Network meta-analysis of the outcome ‘par-
+ticipant complete clearance’ in non-immunosuppressed partici-
+pants of eight interventions for actinic keratosis: a follow-up on a
+Cochrane review. Br J Dermatol 2013; 169:250–9.
+66 Kurwa HA, Yong-Gee SA, Seed PT et al. A randomized paired
+comparison of photodynamic therapy and topical 5-ﬂuorouracil
+in the treatment of actinic keratoses. J Am Acad Dermatol 1999;
+41:414–8.
+67 Robinson TA, Kligman AM. Treatment of solar keratoses of the
+extremities with retinoic acid and 5-ﬂuorouracil. Br J Dermatol
+1975; 92:703–6.
+68 Pearlman DL. Weekly pulse dosing: effective and comfortable
+topical 5-ﬂuorouracil treatment of multiple facial actinic ker-
+atoses. J Am Acad Dermatol 1991; 25:665–7.
+69 Epstein E. Does intermittent ‘pulse’ topical 5-ﬂuorouracil therapy
+allow destruction of actinic keratoses without signiﬁcant inﬂam-
+mation? J Am Acad Dermatol 1998; 38:77–80.
+70 Jury CS, Ramraka-Jones VS, Gudi V et al. A randomized trial of
+topical 5% 5-ﬂuorouracil (Efudix cream) in the treatment of acti-
+nic keratoses comparing daily with weekly treatment. Br J Dermatol
+2005; 153:808–10.
+71 Schlaak M, Simon JC. Topical treatment of actinic keratoses with
+low-dose 5-ﬂuorouracil in combination with salicylic acid – pilot
+study. J Dtsch Dermatol Ges 2010; 8:174–8.
+72 Stockﬂeth E, Zwingers T, Willers C. Recurrence rates and patient
+assessed outcomes of 0.5% 5-ﬂuorouracil in combination with sali-
+cylic acid treating actinic keratoses. Eur J Dermatol 2012; 22:370–4.
+73 Szeimies RM, Dirschka T, Prechtl A et al. Efﬁcacy of low-dose 5-
+ﬂuorouracil/salicylic acid in actinic keratoses in relation to treat-
+ment duration. J Dtsch Dermatol Ges 2015; 13:430–8.
+74 Hadley G, Derry S, Moore RA. Imiquimod for actinic keratosis:
+systematic
+review and meta-analysis.
+J Invest
+Dermatol 2006;
+126:1251–5.
+75 Stockﬂeth E, Meyer T, Benninghoff B et al. A randomized, dou-
+ble-blind, vehicle-controlled study to assess 5% imiquimod cream
+for the treatment of multiple actinic keratoses. Arch Dermatol 2002;
+138:1498–502.
+76 Korman N, Moy R, Ling M et al. Dosing with 5% imiquimod
+cream 3 times per week for the treatment of actinic keratosis:
+results of two phase 3, randomized, double-blind, parallel-group,
+vehicle-controlled trials. Arch Dermatol 2005; 141:467–73.
+77 Alomar A, Bichel J, McRae S. Vehicle-controlled, randomized,
+double-blind study to assess safety and efﬁcacy of imiquimod 5%
+cream applied once daily 3 days per week in one or two courses
+of treatment of actinic keratoses on the head. Br J Dermatol 2007;
+157:133–41.
+78 Foley P, Merlin K, Cumming S et al. A comparison of cryotherapy
+and imiquimod for treatment of actinic keratoses: lesion clear-
+ance, safety, and skin quality outcomes. J Drugs Dermatol 2011;
+10:1432–8.
+79 Pini AM, Koch S, Scharer L et al. Eruptive keratoacanthoma fol-
+lowing topical imiquimod for in situ squamous cell carcinoma of
+the skin in a renal transplant recipient. J Am Acad Dermatol 2008;
+59(5 Suppl.):S116–7.
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+Guidelines for actinic keratosis 2017, D. de Berker et al. 39
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 21 ===
+80 Serra-Guillen C, Nagore E, Hueso L et al. A randomized compara-
+tive study of tolerance and satisfaction in the treatment of actinic
+keratosis of the face and scalp between 5% imiquimod cream and
+photodynamic therapy with methyl aminolaevulinate. Br J Dermatol
+2011; 164:429–33.
+81 Krawtchenko N, Roewert-Huber J, Ulrich M et al. A randomised
+study of topical 5% imiquimod vs. topical 5-ﬂuorouracil vs. cryo-
+surgery in immunocompetent patients with actinic keratoses: a
+comparison of clinical and histological outcomes including 1-year
+follow-up. Br J Dermatol 2007; 157(Suppl. 2):34–40.
+82 Lee PK, Harwell WB, Loven KH et al. Long-term clinical outcomes
+following treatment of actinic keratosis with imiquimod 5%
+cream. Dermatol Surg 2005; 31:659–64.
+83 Hanke CW, Beer KR, Stockﬂeth E et al. Imiquimod 2.5% and 3.75%
+for the treatment of actinic keratoses: results of two placebo-con-
+trolled studies of daily application to the face and balding scalp for
+two 3-week cycles. J Am Acad Dermatol 2010; 62:573–81.
+84 Hanke CW, Swanson N, Bruce S et al. Complete clearance is sus-
+tained for at least 12 months after treatment of actinic keratoses
+of the face or balding scalp via daily dosing with imiquimod
+3.75% or 2.5% cream. J Drugs Dermatol 2011; 10:165–70.
+85 Swanson N, Abramovits W, Berman B et al. Imiquimod 2.5% and
+3.75% for the treatment of actinic keratoses: results of two pla-
+cebo-controlled studies of daily application to the face and bald-
+ing scalp for two 2-week cycles. J Am Acad Dermatol 2010;
+62:582–90.
+86 Jorizzo JL, Markowitz O, Lebwohl MG et al. A randomized, dou-
+ble-blinded, placebo-controlled, multicenter, efﬁcacy and safety
+study of 3.75% imiquimod cream following cryosurgery for the
+treatment of actinic keratoses. J Drugs Dermatol 2010; 9:1101–8.
+87 Goldenberg G, Linkner RV, Singer G et al. An investigator-
+initiated study to assess the safety and efﬁcacy of imiquimod
+3.75% cream when used after cryotherapy in the treatment of
+hypertrophic actinic keratoses on dorsal hands and forearms. J
+Clin Aesthet Dermatol 2013; 6:36–43.
+88 Smith SR, Morhenn VB, Piacquadio DJ. Bilateral comparison of
+the efﬁcacy and tolerability of 3% diclofenac sodium gel and 5%
+5-ﬂuorouracil cream in the treatment of actinic keratoses of the
+face and scalp. J Drugs Dermatol 2006; 5:156–9.
+89 Segatto MM, Dornelles SI, Silveira VB et al. Comparative study of
+actinic keratosis treatment with 3% diclofenac sodium and 5% 5-
+ﬂuorouracil. An Bras Dermatol 2013; 88:732–8.
+90 Wolf JE, Taylor JR, Tschen E et al. Topical 3.0% diclofenac in
+2.5% hyaluronan gel in the treatment of actinic keratoses. Int J
+Dermatol 2001; 40:709–13.
+91 Pﬂugfelder A, Welter AK, Leiter U et al. Open label randomized
+study comparing 3 months vs. 6 months treatment of actinic ker-
+atoses with 3% diclofenac in 2.5% hyaluronic acid gel: a trial of
+the German Dermatologic Cooperative Oncology Group. J Eur Acad
+Dermatol Venereol 2012; 26:48–53.
+92 Anderson L, Schmieder GJ, Werschler WP et al. Randomized,
+double-blind, double-dummy, vehicle-controlled study of ingenol
+mebutate gel 0.025% and 0.05% for actinic keratosis. J Am Acad
+Dermatol 2009; 60:934–43.
+93 Lebwohl M, Swanson N, Anderson LL et al. Ingenol mebutate gel
+for actinic keratosis. N Engl J Med 2012; 366:1010–9.
+94 Lebwohl M, Shumack S, Stein Gold L et al. Long-term follow-up
+study of ingenol mebutate gel for the treatment of actinic ker-
+atoses. JAMA Dermatol 2013; 149:666–70.
+95 Garbe C, Basset-Seguin N, Poulin Y et al. Efﬁcacy and safety of
+follow-up ﬁeld treatment of actinic keratosis with ingenol mebu-
+tate 0.015% gel: a randomized, controlled 12-month study. Br J
+Dermatol 2016; 174:505–13.
+96 Anderson L, Melgaard A, Schmeider G et al. Two-day topical
+treatment with ingenol mebutate gel, 0.05% for actinic keratoses
+on the trunk and extremities: analysis of data pooled from two
+trials. J Am Acad Dermatol 2012; 66:AB159.
+97 US Food and Drug Administration. Picato (ingenol mebutate)
+gel: drug safety communication – FDA warns of severe adverse
+events, requires label changes. Available at: http://www.fda.gov/
+Safety/MedWatch/SafetyInformation/SafetyAlertsforHumanMedi-
+calProducts/ucm459311.htm (last accessed 16 September 2016).
+98 Ku J. Clinical review. NDA 202833. PICATO
+TM (ingenol mebutate
+gel,
+PEP005
+gel).
+Available
+at:
+http://www.accessdata.fda.-
+gov/drugsatfda_docs/nda/2012/202833Orig1s000MedR.pdf
+(last accessed 16 September 2016).
+99 Erlendsson AM, Karmisholt KE, Haak CS et al. Topical corticos-
+teroid has no inﬂuence on inﬂammation or efﬁcacy after ingenol
+mebutate treatment of grade I to III actinic keratoses (AK): a ran-
+domized clinical trial. J Am Acad Dermatol 2016; 74:709–15.
+100 Ianhez M, Fleury LF Jr, Miot HA et al. Retinoids for prevention and
+treatment of actinic keratosis. An Bras Dermatol 2013; 88:585–93.
+101 Kang S, Goldfarb MT, Weiss JS et al. Assessment of adapalene gel
+for the treatment of actinic keratoses and lentigines: a random-
+ized trial. J Am Acad Dermatol 2003; 49:83–90.
+102 Weinstock MA, Bingham SF, Lew RA et al. Topical tretinoin ther-
+apy and all-cause mortality. Arch Dermatol 2009; 145:18–24.
+103 Thai KE, Fergin P, Freeman M et al. A prospective study of the
+use of cryosurgery for the treatment of actinic keratoses. Int J Der-
+matol 2004; 43:687–92.
+104 Szeimies RM, Karrer S, Radakovic-Fijan S et al. Photodynamic
+therapy using topical methyl 5-aminolevulinate compared with
+cryotherapy for actinic keratosis: a prospective, randomized
+study. J Am Acad Dermatol 2002; 47:258–62.
+105 Freeman M, Vinciullo C, Francis D et al. A comparison of photody-
+namic therapy using topical methyl aminolevulinate (Metvix) with
+single cycle cryotherapy in patients with actinic keratosis: a
+prospective, randomized study. J Dermatolog Treat 2003; 14:99–106.
+106 Kaufmann R, Spelman L, Weightman W et al. Multicentre intrain-
+dividual randomized trial of topical methyl aminolaevulinate-
+photodynamic therapy vs. cryotherapy for multiple actinic ker-
+atoses on the extremities. Br J Dermatol 2008; 158:994–9.
+107 Morton C, Campbell S, Gupta G et al. Intraindividual, right–left
+comparison of topical methyl aminolaevulinate-photodynamic
+therapy and cryotherapy in subjects with actinic keratoses: a mul-
+ticentre,
+randomized
+controlled
+study.
+Br
+J
+Dermatol
+2006;
+155:1029–36.
+108 Chiarello SE. Cryopeeling (extensive cryosurgery) for treatment
+of actinic keratoses: an update and comparison. Dermatol Surg
+2000; 26:728–32.
+109 Abadir DM. Combination of topical 5-ﬂuorouracil with cryother-
+apy for treatment of actinic keratoses. J Dermatol Surg Oncol 1983;
+9:403–4.
+110 Jorizzo J, Weiss J, Furst K et al. Effect of a 1-week treatment with
+0.5% topical ﬂuorouracil on occurrence of actinic keratosis after
+cryosurgery: a randomized, vehicle-controlled clinical trial. Arch
+Dermatol 2004; 140:813–6.
+111 Motley R, Kersey P, Lawrence C et al. Multiprofessional guidelines
+for the management of the patient with primary cutaneous squa-
+mous cell carcinoma. Br J Dermatol 2002; 146:18–25.
+112 Moriarty M, Dunn J, Darragh A et al. Etretinate in treatment of acti-
+nic keratosis. A double-blind crossover study. Lancet 1982; 1:364–5.
+113 Watson AB. Preventative effect of etretinate therapy on multiple
+actinic keratoses. Cancer Detect Prev 1986; 9:161–5.
+114 Smit JV, de Sevaux RG, Blokx WA et al. Acitretin treatment in
+(pre)malignant skin disorders of renal transplant recipients:
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+40 Guidelines for actinic keratosis 2017, D. de Berker et al.
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 22 ===
+histologic and immunohistochemical effects. J Am Acad Dermatol
+2004; 50:189–96.
+115 EBPG Expert Group on Renal Transplantation. European best prac-
+tice guidelines for renal transplantation. Section IV: long-term
+management of the transplant recipient. IV.6.2. Cancer risk after
+renal transplantation. Skin cancers: prevention and treatment.
+Nephrol Dial Transplant 2002; 17:S31–6.
+116 Kovach BT, Murphy G, Otley CC et al. Oral retinoids for chemo-
+prevention of skin cancers in organ transplant recipients: results
+of a survey. Transplant Proc 2006; 38:1366–8.
+117 Elmets CA, Viner JL, Pentland AP et al. Chemoprevention of non-
+melanoma skin cancer with celecoxib: a randomized, double-blind,
+placebo-controlled trial. J Natl Cancer Inst 2010; 102:1835–44.
+118 Liebman TN, Stein JA, Polsky D. Cyclo-oxygenase-2 inhibitors for
+chemoprevention of nonmelanoma skin cancer: is there a role
+for these agents? J Am Acad Dermatol 2013; 68:173–6.
+119 Dirschka T, Radny P, Dominicus R et al. Photodynamic therapy
+with BF-200 ALA for the treatment of actinic keratosis: results of
+a multicentre, randomized, observer-blind phase III study in
+comparison with a registered methyl-5-aminolaevulinate cream
+and placebo. Br J Dermatol 2012; 166:137–46.
+120 Szeimies RM, Radny P, Sebastian M et al. Photodynamic therapy
+with BF-200 ALA for the treatment of actinic keratosis: results of
+a
+prospective,
+randomized,
+double-blind,
+placebo-controlled
+phase III study. Br J Dermatol 2010; 163:386–94.
+121 Morton CA, Szeimies RM, Sidoroff A et al. European guidelines
+for topical photodynamic therapy part 1: treatment delivery and
+current indications – actinic keratoses, Bowen’s disease, basal cell
+carcinoma. J Eur Acad Dermatol Venereol 2013; 27:536–44.
+122 Klein A, Karrer S, Horner C et al. Comparing cold-air analgesia,
+systemically administered analgesia and scalp nerve blocks for
+pain management during photodynamic therapy for actinic ker-
+atosis of the scalp presenting as ﬁeld cancerization: a randomized
+controlled trial. Br J Dermatol 2015; 173:192–200.
+123 Petersen B, Wiegell SR, Wulf HC. Light protection of the skin
+after photodynamic therapy reduces inﬂammation: an unblinded
+randomized controlled study. Br J Dermatol 2014; 171:175–8.
+124 Tarstedt M, Rosdahl I, Berne B et al. A randomized multicenter
+study to compare two treatment regimens of topical methyl
+aminolevulinate (Metvix)-PDT in actinic keratosis of the face
+and scalp. Acta Derm Venereol 2005; 85:424–8.
+125 Piacquadio DJ, Chen DM, Farber HF et al. Photodynamic therapy
+with aminolevulinic acid topical solution and visible blue light in
+the treatment of multiple actinic keratoses of the face and scalp:
+investigator-blinded, phase 3, multicenter trials. Arch Dermatol
+2004; 140:41–6.
+126 Taub AF, Garretson CB. A randomized, blinded, bilateral intrain-
+dividual, vehicle-controlled trial of the use of photodynamic
+therapy with 5-aminolevulinic acid and blue light for the treat-
+ment of actinic keratoses of the upper extremities. J Drugs Dermatol
+2011; 10:1049–56.
+127 Tschen EH, Wong DS, Pariser DM et al. Photodynamic therapy
+using aminolaevulinic acid for patients with nonhyperkeratotic
+actinic keratoses of the face and scalp: phase IV multicentre
+clinical trial with 12-month follow up. Br J Dermatol 2006;
+155:1262–9.
+128 Sotiriou E, Apalla Z, Chovarda E et al. Single vs. fractionated pho-
+todynamic therapy for face and scalp actinic keratoses: a random-
+ized, intraindividual comparison trial with 12-month follow-up. J
+Eur Acad Dermatol Venereol 2012; 26:36–40.
+129 Togsverd-Bo K, Haak CS, Thaysen-Petersen D et al. Intensiﬁed
+photodynamic therapy of actinic keratoses with fractional CO2
+laser: a randomized clinical trial. Br J Dermatol 2012; 166:1262–9.
+130 Scola N, Terras S, Georgas D et al. A randomized, half-side com-
+parative study of aminolaevulinate photodynamic therapy vs. CO2
+laser ablation in immunocompetent patients with multiple actinic
+keratoses. Br J Dermatol 2012; 167:1366–73.
+131 Patel G, Armstrong AW, Eisen DB. Efﬁcacy of photodynamic
+therapy versus other interventions in randomized clinical trials
+for the treatment of actinic keratoses: a systematic review and
+meta-analysis. JAMA Dermatol 2014; 150:1281–8.
+132 Serra-Guillen C, Nagore E, Hueso L et al. A randomized pilot
+comparative study of topical methyl aminolevulinate photody-
+namic therapy versus imiquimod 5% versus sequential applica-
+tion of both therapies in immunocompetent patients with actinic
+keratosis: clinical and histologic outcomes. J Am Acad Dermatol
+2012; 66:e131–7.
+133 Hadley J, Tristani-Firouzi P, Hull C et al. Results of an investiga-
+tor-initiated single-blind split-face comparison of photodynamic
+therapy and 5% imiquimod cream for the treatment of actinic
+keratoses. Dermatol Surg 2012; 38:722–7.
+134 Sotiriou E, Apalla Z, Maliamani F et al. Intraindividual, right-left
+comparison of topical 5-aminolevulinic acid photodynamic ther-
+apy vs. 5% imiquimod cream for actinic keratoses on the upper
+extremities. J Eur Acad Dermatol Venereol 2009; 23:1061–5.
+135 Hauschild A, Stockﬂeth E, Popp G et al. Optimization of photody-
+namic therapy with a novel self-adhesive 5-aminolaevulinic acid
+patch: results of two randomized controlled phase III studies. Br J
+Dermatol 2009; 160:1066–74.
+136 Szeimies RM, Stockﬂeth E, Popp G et al. Long-term follow-up of
+photodynamic therapy with a self-adhesive 5-aminolaevulinic
+acid patch: 12 months data. Br J Dermatol 2010; 162:410–4.
+137 Wiegell SR, Haedersdal M, Philipsen PA et al. Continuous activa-
+tion of PpIX by daylight is as effective as and less painful than
+conventional photodynamic therapy for actinic keratoses; a ran-
+domized, controlled, single-blinded study. Br J Dermatol 2008;
+158:740–6.
+138 Wiegell SR, Haedersdal M, Eriksen P et al. Photodynamic therapy
+of actinic keratoses with 8% and 16% methyl aminolaevulinate
+and home-based daylight exposure: a double-blinded randomized
+clinical trial. Br J Dermatol 2009; 160:1308–14.
+139 Wiegell SR, Fabricius S, Stender IM et al. A randomized, multi-
+centre study of directed daylight exposure times of 1½ vs. 2½ h
+in daylight-mediated photodynamic therapy with methyl amino-
+laevulinate in patients with multiple thin actinic keratoses of the
+face and scalp. Br J Dermatol 2011; 164:1083–90.
+140 Rubel DM, Spelman L, Murrell DF et al. Daylight photodynamic
+therapy with methyl aminolevulinate cream as a convenient, sim-
+ilarly effective, nearly painless alternative to conventional photo-
+dynamic therapy in actinic keratosis treatment: a randomized
+controlled trial. Br J Dermatol 2014; 171:1164–71.
+141 Lacour JP, Ulrich C, Gilaberte Y et al. Daylight photodynamic
+therapy with methyl aminolevulinate cream is effective and
+nearly painless in treating actinic keratoses: a randomised, inves-
+tigator-blinded, controlled, phase III study throughout Europe. J
+Eur Acad Dermatol Venereol 2015; 29:2342–8.
+142 Morton CA, Wulf HC, Szeimies RM et al. Practical approach to
+the use of daylight photodynamic therapy with topical methyl
+aminolevulinate for actinic keratosis: a European consensus. J Eur
+Acad Dermatol Venereol 2015; 29:1718–23.
+143 See JA, Shumack S, Murrell DF et al. Consensus recommendations
+on the use of daylight photodynamic therapy with methyl
+aminolevulinate cream for actinic keratoses in Australia. Australas J
+Dermatol 2016; 57:167–74.
+144 Wiegell SR, Wulf HC, Szeimies RM et al. Daylight photodynamic
+therapy
+for
+actinic
+keratosis:
+an
+international
+consensus:
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+Guidelines for actinic keratosis 2017, D. de Berker et al. 41
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 23 ===
+International Society for Photodynamic Therapy in Dermatology.
+J Eur Acad Dermatol Venereol 2012; 26:673–9.
+145 Genovese G, Fai D, Fai C et al. Daylight methyl-aminolevulinate
+photodynamic therapy versus ingenol mebutate for the treatment
+of actinic keratoses: an intraindividual comparative analysis. Der-
+matol Ther 2016; 29:191–6.
+146 de Vries K, Prens EP. Laser treatment and its implications for
+photodamaged skin and actinic keratosis. Curr Probl Dermatol 2015;
+46:129–35.
+147 Ostertag JU, Quaedvlieg PJ, van der Geer S et al. A clinical com-
+parison and long-term follow-up of topical 5-ﬂuorouracil versus
+laser resurfacing in the treatment of widespread actinic keratoses.
+Lasers Surg Med 2006; 38:731–9.
+148 Hantash BM, Stewart DB, Cooper ZA et al. Facial resurfacing for
+nonmelanoma
+skin
+cancer
+prophylaxis.
+Arch
+Dermatol
+2006;
+142:976–82.
+149 Sherry SD, Miles BA, Finn RA. Long-term efﬁcacy of carbon diox-
+ide laser resurfacing for facial actinic keratosis. J Oral Maxillofac Surg
+2007; 65:1135–9.
+150 Iyer S, Friedli A, Bowes L et al. Full face laser resurfacing: therapy
+and prophylaxis for actinic keratoses and non-melanoma skin
+cancer. Lasers Surg Med 2004; 34:114–9.
+151 Ostertag JU, Quaedvlieg PJF, Neumann MHAM, Krekels GA.
+Recurrence rates and long-term follow-up after laser resurfacing
+as a treatment for widespread actinic keratoses in the face and on
+the scalp. Dermatol Surg 2006; 32:261–7.
+152 Gan SD, Hsu SH, Chuang G et al. Ablative fractional laser therapy
+for the treatment of actinic keratosis: a split-face study. J Am Acad
+Dermatol 2016; 74:387–9.
+153 Prens SP, de Vries K, Neumann HA et al. Non-ablative fractional
+resurfacing in combination with topical tretinoin cream as a ﬁeld
+treatment modality for multiple actinic keratosis: a pilot study
+and a review of other ﬁeld treatment modalities. J Dermatolog Treat
+2013; 24:227–31.
+154 Coleman WP, Yarborough JM, Mandy SH. Dermabrasion for pro-
+phylaxis and treatment of actinic keratoses. Dermatol Surg 1996;
+22:17–21.
+155 Winton GB, Salasche SJ. Dermabrasion of the scalp as a treatment
+for actinic damage. J Am Acad Dermatol 1986; 14:661–8.
+156 Mastrolonardo M. Topical diclofenac 3% gel plus cryotherapy for
+treatment of multiple and recurrent actinic keratoses. Clin Exp Der-
+matol 2009; 34:33–5.
+157 Berlin JM, Rigel DS. Diclofenac sodium 3% gel in the treatment of
+actinic keratoses postcryosurgery. J Drugs Dermatol 2008; 7:669–73.
+158 Van der Geer S, Krekels GA. Treatment of actinic keratoses on the
+dorsum of the hands: ALA-PDT versus diclofenac 3% gel fol-
+lowed by ALA-PDT. A placebo-controlled, double-blind, pilot
+study. J Dermatolog Treat 2009; 20:259–65.
+159 Gilbert DJ. Treatment of actinic keratoses with sequential combi-
+nation of 5-ﬂuorouracil and photodynamic therapy. J Drugs Derma-
+tol 2005; 4:161–3.
+160 Shaffelburg M. Treatment of actinic keratoses with sequential use
+of photodynamic therapy; and imiquimod 5% cream. J Drugs Der-
+matol 2009; 8:35–9.
+161 Hoover WD 3rd, Jorizzo JL, Clark AR et al. Efﬁcacy of cryosurgery
+and 5-ﬂuorouracil cream 0.5% combination therapy for the treat-
+ment of actinic keratosis. Cutis 2014; 94:255–9.
+162 Tuppurainen K. Cryotherapy for eyelid and periocular basal cell
+carcinomas: outcome in 166 cases over an 8-year period. Graefes
+Arch Clin Exp Ophthalmol 1995; 233:205–8.
+163 Couch SM, Custer PL. Topical 5-ﬂuorouracil for the treatment of
+periocular actinic keratosis and low-grade squamous malignancy.
+Ophthal Plast Reconstr Surg 2012; 28:181–3.
+164 Cannon PS, O’Donnell B, Huilgol SC et al. The ophthalmic side-
+effects of imiquimod therapy in the management of periocular
+skin lesions. Br J Ophthalmol 2011; 95:1682–5.
+165 Tallon B, Turnbull N. 5% Fluorouracil chemowraps in the man-
+agement of widespread lower leg solar keratoses and squamous
+cell carcinoma. Australas J Dermatol 2013; 54:313–6.
+166 Wallingford SC, Russell SA, Vail A et al. Actinic keratoses, actinic
+ﬁeld change and associations with squamous cell carcinoma in
+renal transplant recipients in Manchester, U.K. Acta Derm Venereol
+2015; 95:830–4.
+167 Ingham AI, Weightman W. The efﬁcacy and safety of topical 5%
+5-ﬂuorouracil in renal transplant recipients for the treatment of
+actinic keratoses. Australas J Dermatol 2014; 55:204–8.
+168 Annemans L, Caekelbergh K, Roelandts R et al. Real-life practice
+study of the clinical outcome and cost-effectiveness of photody-
+namic therapy using methyl aminolevulinate (MAL-PDT) in the
+management of actinic keratosis and basal cell carcinoma. Eur J
+Dermatol 2008; 18:539–46.
+169 Caekelbergh K, Annemans L, Lambert J et al. Economic evaluation
+of methyl aminolaevulinate-based photodynamic therapy in the
+management of actinic keratosis and basal cell carcinoma. Br J
+Dermatol 2006; 155:784–90.
+170 Colombo GL, Chimenti S, Di Matteo S et al. Cost-effectiveness
+analysis of topical treatments for actinic keratosis in the perspec-
+tive of the Italian health care system. G Ital Dermatol Venereol 2010;
+145:573–81.
+171 Gold MH. Pharmacoeconomic analysis of the treatment of multi-
+ple actinic keratoses. J Drugs Dermatol 2008; 7:23–5.
+172 Wilson EC. Cost effectiveness of imiquimod 5% cream compared
+with methyl aminolevulinate-based photodynamic therapy in the
+treatment of non-hyperkeratotic, non-hypertrophic actinic (solar)
+keratoses: a decision tree model. Pharmacoeconomics 2010; 28:1055–
+64.
+173 Muston D, Downs A, Rives V. An economic evaluation of topical
+treatments for actinic keratosis. J Dermatolog Treat 2009; 20:266–
+75.
+174 Gibbs S, Davis T. Usage and patient experience of 5% ﬂuorouracil
+cream. Clin Exp Dermatol 2015; 40:88.
+175 Perera E, McGuigan S, Sinclair R. Cost for the treatment of actinic
+keratosis on the rise in Australia. F1000Res 2014; 3:184.
+176 Pariser DM, Lowe NJ, Stewart DM et al. Photodynamic therapy
+with topical methyl aminolevulinate for actinic keratosis: results
+of a prospective randomized multicenter trial. J Am Acad Dermatol
+2003; 48:227–32.
+177 Colechin E, Sims A, Reay C et al. Ambulight photodynamic ther-
+apy. Available at: http://www.nice.org.uk/guidance/mtg6/docu-
+ments/ambulight-photodynamic-therapy-for-the-treatment-of-
+nonmelanoma-skin-cancer-external-assessment-centre-report2
+(last accessed 16 September 2016).
+178 Gov.uk. National tariff payment system 2014/15. Available at:
+https://www.gov.uk/government/publications/national-tariff-pay-
+ment-system-2014-to-2015. (last accessed 16 September 2016).
+179 Personal Social Services Research Unit. Unit costs of health and
+social care 2015. Available at: http://www.pssru.ac.uk/project-
+pages/unit-costs/2015 (last accessed 16 September 2016).
+Supporting information
+Additional Supporting Information may be found in the online
+version of this article at the publisher’s website:
+Appendix S1. Search strategy.
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+42 Guidelines for actinic keratosis 2017, D. de Berker et al.
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 24 ===
+Appendix 1
+Levels of evidence
+Appendix 2
+Strengths of recommendation
+Class
+Evidence
+A
+At least one meta-analysis, systematic review or RCT rated as 1++, and directly applicable to the target population, or
+A systematic review of RCTs or a body of evidence consisting principally of studies rated as 1+, directly applicable to the target
+population and demonstrating overall consistency of results, or
+Evidence drawn from a NICE technology appraisal
+B
+A body of evidence including studies rated as 2++, directly applicable to the target population and demonstrating overall consistency
+of results, or
+Extrapolated evidence from studies rated as 1++ or 1+
+C
+A body of evidence including studies rated as 2+, directly applicable to the target population and demonstrating overall consistency
+of results, or
+Extrapolated evidence from studies rated as 2++
+D
+Evidence level 3 or 4, or
+Extrapolated evidence from studies rated as 2+, or
+Formal consensus
+D (GPP)
+A good practice point (GPP) is a recommendation for best practice based on the experience of the Guideline Development Group
+RCT, randomized controlled trial; NICE, National Institute for Health and Care Excellence.
+Level of evidence
+Type of evidence
+1++
+High-quality meta-analyses, systematic reviews of RCTs, or RCTs with a very low risk of bias
+1+
+Well-conducted meta-analyses, systematic reviews of RCTs, or RCTs with a low risk of bias
+1
+Meta-analyses, systematic reviews of RCTs, or RCTs with a high risk of biasa
+2++
+High-quality systematic reviews of case–control or cohort studies. High-quality case–control or cohort studies with a
+very low risk of confounding, bias or chance and a high probability that the relationship is causal
+2+
+Well-conducted case–control or cohort studies with a low risk of confounding, bias or chance, and a moderate probability
+that the relationship is causal
+2
+Case–control or cohort studies with a high risk of confounding, bias or chance and a signiﬁcant risk that the relationship
+is not causala
+3
+Nonanalytical studies (for example case reports, case series)
+4
+Expert opinion, formal consensus
+RCT, randomized controlled trial. aStudies with a level of evidence ‘’ should not be used as a basis for making a recommendation.
+© 2017 British Association of Dermatologists
+British Journal of Dermatology (2017) 176, pp20–43
+Guidelines for actinic keratosis 2017, D. de Berker et al. 43
+Downloaded from https://academic.oup.com/bjd/article/176/1/20/6747903 by guest on 06 May 2026
+
+=== PAGE 25 ===
+of patients  
+with PsO achieved  
+PASI 75 at Week 4 
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+75.9% 
+(n=265/349)
+of patients 
+with PsO achieved 
+PASI 100 at 5 years3
+76.9% 
+(N=52)† 
+of biologic-naïve  
+and TNFi-IR PsA patients 
+achieved ACR 50 at  
+Week 104/100, respectively‡1,4–6
+of patients  
+with PsO achieved  
+PASI 100 at Week 16
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+68.2%
+(n=238/349)
+and
+50.6% 
+(n=135/267) 
+51.5% 
+(n=222/431)
+GB-BK-2500315 | July 2025
+UCB Biopharma SRL, 2025. All rights reserved.
+This promotional material has been created and funded by UCB Pharma Ltd and 
+is intended for healthcare professionals in the UK.
+BIMZELX is indicated for the treatment of: moderate to severe plaque PsO in adults 
+who are candidates for systemic therapy; active PsA, alone or in combination 
+with methotrexate, in adults who have had an inadequate response, or who have 
+been intolerant, to one or more DMARDs; active nr-axSpA with objective signs of 
+inflammation as indicated by elevated CRP and/or MRI, in adults who have responded 
+inadequately, or are intolerant, to NSAIDs; active AS in adults who have responded 
+inadequately or are intolerant to conventional therapy; and active moderate to severe 
+HS (acne inversa) in adults with an inadequate response to conventional systemic HS 
+therapy.4
+Prescribing information for United Kingdom click here.  
+Please refer to the SmPC for further information. 
+These data are from different clinical trials and cannot be directly compared.
+Co-primary endpoints PASI 90 and IGA 0/1 at Week 16 were met.**Secondary endpoints. †N= mNRI, missing data 
+were imputed with mNRI (patients with missing data following treatment discontinuation due to lack of efficacy 
+or a TRAE were counted as non-responders; multiple imputation methodology was used for other missing data). 
+‡43.9% (n=189/431), and 43.4% (n=116/267) of biologic-naïve and TNFi-IR PsA patients achieved the primary 
+endpoint of ACR 50 at Week 16 in BE OPTIMAL and BE COMPLETE, respectively (vs 10.0% [n=28/281] and 6.8% 
+[n=9/133] placebo, p<0.0001); 54.5% (n=235/431) and 51.7% (n=138/267) maintained it at Week 52 (NRI).4–6 ​
+ACR 50, ≥50% response in the American College of Rheumatology criteria; AS, ankylosing spondylitis; CRP, 
+C-reactive protein; DMARD, disease-modifying antirheumatic drug; HS, hidradenitis suppurativa; IGA, Investigator’s 
+Global Assessment; (m)NRI, (modified) non-responder imputation; MRI, magnetic resonance imaging; nr-
+axSpA, non-radiographic axial spondyloarthritis; NSAID, non-steroidal anti-inflammatory drug; PASI 75/90/100, 
+≥75/90/100% improvement from baseline in Psoriasis Area and Severity Index; PsA, psoriatic arthritis; PsD, psoriatic 
+disease; PsO, psoriasis; TNFi-IR, tumour necrosis factor-α inhibitor – inadequate responder; TRAE, treatment-
+related adverse event.
+References: 1. Gordon KB, et al. Lancet. 2021;397(10273):475–486. 2. Blauvelt. 2025. AAD Presentation 62275. 3. 
+Mease PJ, et al. Rheumatol Ther. 2024;11(5):1363–1382. 4. BIMZELX SmPC. 5. Ritchlin CT, et al. Ann Rheum Dis. 
+2023;82(11):1404–1414. 6. Coates LC, et al. RMD Open. 2024;10(1):e003855. 7. Strober B, et al. AAD 2024;oral 
+presentation.​
+This medicine is subject to additional monitoring. This will allow quick 
+identification of new safety information. Adverse events should be reported. 
+Reporting forms and information can be found at www.yellowcard.mhra.gov.uk for 
+the UK. Adverse events should also be reported to UCB Pharma Ltd at  
+UCBCares.UK@UCB.com or 0800 2793177 for UK.
+NO COMPROMISE, 
+JUST CLEARANCE
+BIMZELX was well tolerated, the most frequently reported adverse reactions were: upper respiratory tract infections 
+and oral candidiasis. Other common reported adverse reactions include tinea infections, ear infections, herpes simplex 
+infections, oropharyngeal candidiasis, gastroenteritis, folliculitis, headache, rash, dermatitis, eczema, acne, injection site 
+reactions, fatigue, and vulvovaginal mycotic infection (including vulvovaginal candidiasis).4
+Bimzelx®     (bimekizumab) offers 
+the opportunity for complete, fast,
+and lasting skin clearance and 
+proven PsA efficacy 1–7

@@ -1,0 +1,1426 @@
+=== PAGE 1 ===
+GUIDELINES
+BJD
+British Journal of Dermatology
+British Association of Dermatologists guidelines for the
+management of people with cutaneous squamous cell
+carcinoma 2020*
+S.G. Keohane1,2 J. Botting,3,4 P.G. Budny,5,6 O.M. Dolan iD ,7 K. Fife iD ,8,9 C.A. Harwood iD ,10
+R. Mallipeddi,1,11 J.R. Marsden,12 R.J. Motley iD ,13 C. Newlands,14,15 C. Proby iD ,16 A. Rembielak iD ,8,17,18
+D.N. Slater iD ,19 J.A. Smithson,20,21 P. Buckley,22 P. Fairbrother,23 M. Hashme,24 M.F. Mohd Mustapa iD ,24
+L.S. Exton iD 24 and the British Association of Dermatologists’ Clinical Standards Unit
+1British Society for Dermatological Surgery, London, UK
+2Portsmouth Hospitals University NHS Trust, Portsmouth, PO3 6AD, UK
+3Royal College of General Practitioners, London, UK
+4Glebe Road Surgery, Barnes, SW13 0DR, UK
+5British Association of Plastic Reconstructive and Aesthetic Surgeons, London, UK
+6Buckinghamshire Healthcare NHS Trust, Aylesbury, HP21 8AL, UK
+7Royal Victoria Hospital, Belfast Health and Social Care Trust, Belfast, BT12 6BA, UK
+8Royal College of Radiologists, Holborn, London, WC2A 3JW, UK
+9Cambridge University Hospitals NHS Foundation Trust, Cambridge, CB2 0QQ, UK
+10Barts Health NHS Trust, Centre for Cell Biology and Cutaneous Research, Blizard Institute, Queen Mary University of London, London, E1 2AT, UK
+11St John’s Institute of Dermatology, Guy’s and St Thomas’ NHS Foundation Trust, London, SE1 9RT, UK
+12Queen Elizabeth Hospital, Edgbaston, Birmingham, B15 2TH, UK
+13University Hospital of Wales, Health Park, Cardiff, CF14 4XN, UK
+14British Association of Oral & Maxillofacial Surgeons, London, UK
+15Royal Surrey County Hospital NHS Foundation Trust, Guildford, GU2 7XX, UK
+16University of Dundee, Ninewells Hospital and Medical School, Dundee, DD1 9SY, UK
+17The Christie NHS Foundation Trust, Manchester, M20 4BX, UK
+18The University of Manchester, Manchester, M13 9PL, UK
+19Royal College of Pathologists, London, E1 8BB, UK
+20British Dermatological Nursing Group, Belfast, UK
+21East Sussex Healthcare NHS Trust, Eastbourne, BN21 2UD, UK
+22Patient representative
+23Independent Cancer Patients’ Voice, London, UK
+24British Association of Dermatologists, Willan House, 4 Fitzroy Square, London, W1T 5HQ, UK
+Correspondence
+Steve Keohane.
+Emails: stephen.keohane@porthosp.nhs.uk; guidelines@bad.org.uk
+Accepted for publication
+17 October 2020
+Conﬂicts of interest statements can be found in the Appendix.
+This is an updated guideline prepared for the British Association of Dermatologists (BAD)
+Clinical Standards Unit, which includes the Therapy & Guidelines Subcommittee. Members
+of the Clinical Standards Unit who have contributed are N.J. Levell (Chair, Therapy &
+Guidelines Subcommittee), B. McDonald, A. Salim, S.L. Chua, G. Petrof, A. Bardhan, P.
+Rakvit, M. Hashme (BAD Information Scientist), L.S. Exton (BAD Guideline Research
+Fellow) and M.F. Mohd Mustapa (BAD Director of Clinical Standards).
+Produced in 2002 by the British Association of Dermatologists (BAD). Reviewed and
+updated 2009, 2020.
+NICE has renewed accreditation of the process
+used by the British Association of Dermatologists
+to produce clinical guidelines. The renewed accred-
+itation is valid until 31 May 2021 and applies
+to guidance produced using the processes described
+in the updated guidance for writing a British
+Association of Dermatologists clinical guideline –
+the adoption of the GRADE methodology 2016.
+The original accreditation term began on 12 May
+2010. More information on accreditation can be
+viewed at www.nice.org.uk/accreditation.
+*Plain language summary available online
+DOI 10.1111/bjd.19621
+Linked Comment: Leiter-St€oppke. Br J Dermatol 2021; 184:
+384–385.
+© 2020 British Association of Dermatologists
+British Journal of Dermatology (2021) 184, pp401–414
+401
+Downloaded from https://academic.oup.com/bjd/article/184/3/401/6702204 by guest on 06 May 2026
+
+=== PAGE 2 ===
+Purpose and scope
+The overall objective of the guideline is to provide up-to-
+date, evidence-based recommendations for the management of
+cutaneous squamous cell carcinoma (cSCC). The document
+aims to
+•
+offer an appraisal of all relevant literature up to 30 January
+2020, focusing on any key developments,
+•
+address important, practical clinical questions relating to
+the primary guideline objective, and
+•
+provide guideline recommendations and if appropriate
+research recommendations.
+The guideline is presented as a detailed review with high-
+lighted recommendations for practical use in primary, sec-
+ondary and tertiary care, in the clinic and in the appropriate
+skin cancer multidisciplinary team (MDT) meetings (see sec-
+tion 3.0). These may be either local skin MDTs (LSMDTs) or
+specialist skin cancer MDTs (SSMDTs), depending on the clini-
+copathological features of the SCC. Clinicians treating people
+with cSCC should be core members of the appropriate MDT
+or sanctioned by the MDT to treat the tumour.1 There is also
+an updated patient information leaﬂet available on the BAD
+website
+(https://www.skinhealthinfo.org.uk/a-z-conditions-
+treatments/).
+Exclusions
+The guideline does not cover
+•
+noncutaneous primary SCC or SCC in situ (Bowen disease);
+there is a separate guideline for SCC in situ,2
+•
+mucosal SCC; for the lip the remit of this guideline stops
+at the vermillion border, or
+•
+secondary prevention.3,4
+Methodology
+This set of guidelines has been developed using the BAD’s
+recommended methodology;5 further information can be
+found in Appendix J (see Supporting Information) with
+reference to the AGREE II instrument (www.agreetrust.
+org)6 and GRADE (https://www.gradeworkinggroup.org).
+Recommendations were developed for implementation in
+the UK National Health Service (NHS).
+The guideline development group (GDG) consisted of
+seven consultant dermatologists (representing England, North-
+ern Ireland, Scotland and Wales), two consultant clinical
+oncologists (radiation oncologists), a consultant plastic sur-
+geon, a consultant maxillofacial surgeon, a dermatopatholo-
+gist, a general practitioner, a Macmillan dermatology clinical
+nurse specialist, two patient representatives and a technical
+team (consisting of an information scientist, a guideline
+research fellow and a project manager providing methodolog-
+ical and technical support).
+The GDG established several clinical questions pertinent to
+the scope of the guideline and a set of outcome measures of
+importance to patients, ranked according to the GRADE
+methodology7 (see section 2.1; and Appendix A; see Support-
+ing Information).
+The GDG agreed to adopt the Royal College of Pathologists
+dataset for the histological reporting of cSCC.8 Along with
+Public Health England, this endorses the Union for Interna-
+tional Cancer Control 8th edition (UICC8)9 (Tables 1 and 2),
+rather than the American Joint Committee on Cancer 8th edi-
+tion cancer staging manual, which covers only head and neck
+cSCC.10 The GDG agreed that risk is part of a spectrum and
+not
+dichotomous,
+and
+the
+evidence
+from
+the
+literature
+searches supported a division based on low-, high- and very
+high-risk status. As shown in Figure 1, this division was
+achieved by integrating clinical, pathological, tumour–nodes–
+metastasis (TNM) staging and margin criteria.
+Table 1 TNM8 (tumour–nodes–metastasis) classiﬁcation for cutaneous
+squamous cell carcinoma (cSCC)9
+T categories
+T1
+≤2 cm in greatest dimension
+T2
+> 2 to 4 cm in greatest dimension
+T3
+> 4 cm in greatest dimension or minor bone erosion
+or speciﬁed perineural invasion (≥0.1 mm diameter
+and/or deeper than the dermis and/or a named
+nerve) or deep invasion (thickness > 6 mm and/or
+beyond the subcutaneous fat)
+T4a
+Tumour with gross cortical bone/marrow invasion
+T4b
+Tumour with skull base or axial skeleton invasion
+including foraminal involvement and/or vertebral
+foramen involvement to the epidural space
+N categories for non-head and neck
+N1
+Metastasis in a single node ≤3 cm in greatest
+dimension
+N2
+Metastasis in a single ipsilateral lymph node, > 3 cm
+but ≤6 cm or in multiple ipsilateral nodes with none
+> 6 cm in greatest dimension
+N3
+Metastasis in a lymph node > 6 cm in greatest
+dimension
+N categories head and neck region
+N1
+Metastasis in a single ipsilateral lymph node ≤3 cm in
+greatest dimension without ENEa
+N2a
+Metastasis in a single ipsilateral lymph node > 3 cm
+but < 6 cm in greatest dimension without ENE
+N2b
+Metastasis in multiple ipsilateral lymph nodes, where
+none are > 6 cm in greatest dimension without ENE
+N2c
+Metastasis in bilateral or contralateral lymph nodes,
+where none are > 6 cm in greatest dimension
+without ENE
+N3a
+Metastasis in a single or multiple lymph nodes > 6 cm
+in greatest dimension without ENE
+N3b
+Metastasis in a single or multiple lymph nodes with
+ENE
+M categories
+M0
+No distant metastasis
+M1
+Distant metastasis (including contralateral nodes in
+non-head and neck cSCC)
+aExtranodal extension (ENE) can be clinical or pathological.
+© 2020 British Association of Dermatologists
+British Journal of Dermatology (2021) 184, pp401–414
+402 BAD guidelines for management of people with SCC 2020, S.G. Keohane et al.
+Downloaded from https://academic.oup.com/bjd/article/184/3/401/6702204 by guest on 06 May 2026
+
+=== PAGE 3 ===
+A systematic literature search of the PubMed, MEDLINE,
+Embase and Cochrane databases was conducted by the techni-
+cal team to identify key articles on cSCC from 1 January 2007
+to 30 January 2020; the search terms and strategies are
+detailed in Appendix K (see Supporting Information). Addi-
+tional references relevant to the topic were also isolated from
+citations in the reviewed literature and the previous versions
+of the guidelines.11,12 Data extraction, critical appraisal and
+data synthesis were performed by the technical team, who
+prepared the evidence summaries, lists of excluded studies and
+PRISMA diagram. Evidence from included studies was rated
+according to the GRADE system (high, moderate, low or very
+low quality).
+Recommendations are based on evidence drawn from
+systematic reviews of the literature pertaining to the clini-
+cal questions identiﬁed, following discussions with the
+entire GDG and factoring in all four factors that would
+affect
+their
+strength
+ratings
+according
+to
+the
+GRADE
+approach (i.e. balance between desirable and undesirable
+effects, quality of evidence, patient values and preferences,
+and resource allocation). All GDG members contributed
+towards
+drafting
+and/or
+reviewing
+the
+narratives
+and
+information in the guideline and supporting information
+documents. When there was insufﬁcient evidence from the
+literature, informal consensus was reached based on the
+experience of the GDG.
+The summary of ﬁndings with forest plots (Appendix B),
+clinical evidence summary (Appendix C), tables Linking the
+Evidence To the Recommendations (LETR) (Appendix D),
+GRADE evidence proﬁles indicating the quality of evidence
+(Appendix E), summary of included studies (Appendix F),
+narrative ﬁndings for noncomparative studies (Appendix G),
+PRISMA ﬂow diagram (Appendix H) and list of excluded stud-
+ies (Appendix I) are detailed in the Supporting Information.
+The strength of recommendation is expressed by the wording
+and symbols shown in Table 3.
+Clinical questions and outcomes
+The GDG established a number of clinical questions perti-
+nent to the scope of the guideline (for a full review proto-
+col see Appendix A in the Supporting Information). The
+GDG also established a set of outcome measures of impor-
+tance to patients for each clinical question, which were
+ranked according to the GRADE methodology7 by the
+patient representatives. This uses a nine-point scale, with
+outcomes ranked 9 being those the patient representatives
+considered most important. Outcomes ranked 9, 8 or 7 are
+critical for decision-making; those ranked 6, 5 or 4 are
+important but not critical for decision-making; and those
+ranked 3, 2 or 1 are the least important for decision-mak-
+ing. Data on these outcome measures were extracted from
+the included studies (Appendixes B, C, E, F and G; see Sup-
+porting Information).
+Review question 1: treatment
+In people with ‘higher-risk’ primary cSCC, how clinically
+effective are surgical (standard and Mohs) and nonsurgical
+treatments (radiotherapy and electrochemotherapy) compared
+with each other?
+•
+Survivorship 9
+•
+Recurrence rate 9
+•
+Cosmetic outcome 7
+•
+Convenience of treatment 7
+Review question 2: treatment
+In people with low-risk primary cSCC how clinically effec-
+tive are surgical (standard excision, Mohs, curettage and cau-
+tery, cryosurgery and carbon dioxide laser) and nonsurgical
+treatments (topical therapies, photodynamic therapy or radio-
+therapy) compared with each other or with no treatment (ob-
+servation)?
+(Radiotherapy
+includes
+brachytherapy
+where
+appropriate.)
+•
+Convenience of treatment 9
+•
+Cosmetic outcome 7
+•
+Recurrence rate 7
+Review question 3: surgical margin
+In people with cSCC who undergo standard surgical exci-
+sion, what surgical margin and surgical plane should be used?
+•
+Lack of clinical recurrence after 5 years 9
+•
+Lack of clinical recurrence after 2 years 9
+Review question 4: involved margins
+In people with cSCC who undergo excision of the primary
+tumour and where histological analysis shows either one or
+more involved or clear-but-close margins (< 1 mm), what is
+the appropriate subsequent management?
+•
+Survivorship 9
+•
+Recurrence 9
+Review question 5: adjuvant radiotherapy
+In people with primary cSCC following surgical excision
+with clear histological margins, what is the role of adjuvant
+radiotherapy
+in
+reducing
+the
+risk
+of
+local
+recurrence?
+[‘Adjuvant’ in the guidelines refers to any treatment (radio-
+therapy) after primary treatment (surgery).]
+•
+Survivorship 9
+•
+Recurrence rate 9
+•
+Cosmetic outcome 7
+•
+Convenience of treatment 6
+•
+Patient-reported outcomes 6
+Table 2 TNM8 (tumour–nodes–metastasis) stage groups for cSCC9
+Stage
+T
+N
+M
+I
+T1
+N0
+M0
+II
+T2
+N0
+M0
+III
+T3
+N0
+M0
+T1, T2, T3
+N1
+M0
+IVA
+T1, T2, T3
+N2, N3
+M0
+T4
+Any N
+M0
+IVB
+Any T
+Any N
+M1
+© 2020 British Association of Dermatologists
+British Journal of Dermatology (2021) 184, pp401–414
+BAD guidelines for management of people with SCC 2020, S.G. Keohane et al. 403
+Downloaded from https://academic.oup.com/bjd/article/184/3/401/6702204 by guest on 06 May 2026
+
+=== PAGE 4 ===
+Figure 1 Guidance for referral to LSMDTs and SSMDTs. This referral guidance relates to primary cSCC, where treatment has been excisional surgery with curative intent. Factors associated with risk of poor
+disease-related outcomes (local recurrence, nodal metastasis, disease-speciﬁc death) in multiple studies using univariate or multivariate analysis.13–18 cSCC, cutaneous squamous cell carcinoma; GP, general
+practitioner; HAART, highly active antiretroviral therapy; LSMDT, local skin cancer multidisciplinary team; SCID, severe combined immunodeﬁciency; SSMDT, specialist skin cancer multidisciplinary team.
+*Review of nodal basins in the head and neck should be per the criteria of the head and neck MDT. [Colour ﬁgure can be viewed at wileyonlinelibrary.com]
+© 2020 British Association of Dermatologists
+British Journal of Dermatology (2021) 184, pp401–414
+404 BAD guidelines for management of people with SCC 2020, S.G. Keohane et al.
+Downloaded from https://academic.oup.com/bjd/article/184/3/401/6702204 by guest on 06 May 2026
+
+=== PAGE 5 ===
+Review question 6: metastatic squamous cell carcinoma
+In people with any metastasis from cSCC how clinically
+effective are standard surgical and nonsurgical treatments
+(chemotherapeutic
+therapy,
+radiotherapy,
+immunotherapy)
+compared with each other or with no treatment (observation)?
+(Radiotherapy includes brachytherapy where appropriate.)
+•
+Survivorship 9
+•
+Recurrence rate 9
+•
+Cosmetic outcome 7
+•
+Convenience of treatment 7
+•
+Patient-reported outcomes 6
+Review question 7: follow-up
+In people with a diagnosed higher-risk cSCC what is the
+appropriate follow-up period following treatment?
+•
+Survivorship 9
+•
+Recurrence 9
+•
+Metastases 9
+•
+Patient-reported outcomes 6
+Note: in Mohs surgery the tumour is curetted or surgically
+debulked, and the defect usually excised with a small (1–2
+mm) margin of surrounding skin. The patient waits with a
+dressed wound pending histological conﬁrmation by the Mohs
+surgeon that the tumour has been completely removed. If
+residual tumour is identiﬁed, a further layer of tissue is
+removed, and the process repeated until the surgical wound is
+conﬁrmed to be tumour free. The wound is then repaired by
+conventional surgical techniques.
+Summary of recommendations
+There are few randomized controlled trials (RCTs) to support
+the following guidelines for the management of cSCC. The
+following recommendations and ratings were agreed upon
+unanimously by the core members of the GDG and patient
+representatives. The recommendations cover suspected and
+diagnosed cSCC. All recommendations would also generally
+relate to children, young people and adults, unless speciﬁed
+otherwise. Those under 24 years of age with cSCC should be
+managed by the SSMDT but must additionally be referred to
+the appropriate children’s, teenagers’ or young adults’ service
+for their speciﬁc expertise. These guidelines do not include
+speciﬁc recommendations for subungual or periungual SCCs.
+For further information on the wording used for recom-
+mendations and strength of recommendation ratings see
+Table 3. The evidence for recommendations is based on the
+studies as listed (for details and discussion of the evidence see
+Appendixes B–F in the Supporting Information). The GDG rec-
+ommendations relating to referral pathways are based on dis-
+cussion and clinical experience, as evidence-based details are
+not available at the time of writing. The GDG is aware of the
+lack of high-quality evidence for some of these recommenda-
+tions, and therefore strong recommendations with an asterisk
+(*) are based on available evidence, as well as consensus and
+specialist experience. Good practice point (GPP) recommenda-
+tions are derived from informal consensus.
+Pretreatment
+R1 (↑↑) Obtain histological conﬁrmation of cSCC lesions in the
+event of diagnostic uncertainty, before planning deﬁnitive treat-
+ment. This must be a representative sample of the tumour; in
+most instances, this will be a full-thickness incisional biopsy
+ideally incorporating both the peripheral and the deep margins.
+R2 (GPP) Offer discussion on the risks and beneﬁts of all
+treatment options (outcomes, function, cosmesis) to people
+with cSCC and their families or carers and make the treatment
+decision together.
+R3 (↑↑) Record the maximum clinical cSCC lesion dimension
+prior to any diagnostic or treatment procedure (usually diame-
+ter, in millimetres), the plane of the deep-excision margin,
+whether it is a recurrent tumour or in ﬁeld of previous
+Table 3 Strength of recommendation ratings
+Strength
+Wording
+Symbol
+Deﬁnition
+Strong recommendation for
+the use of an intervention
+‘Offer’ (or similar, e.g. ‘use’,
+‘provide’, ‘take’, ‘investigate’
+etc.)
+↑↑
+Beneﬁts of the intervention outweigh the risks; most patients would
+choose the intervention while only a small proportion would not;
+for clinicians, most of their patients would receive the
+intervention; for policymakers, it would be a useful performance
+indicator
+Weak recommendation for
+the use of an intervention
+‘Consider’
+↑
+Risks and beneﬁts of the intervention are ﬁnely balanced; most
+patients would choose the intervention but many would not;
+clinicians would need to consider the pros and cons for the
+patient in the context of the evidence; for policymakers it would
+be a poor performance indicator where variability in practice is
+expected
+No recommendation
+Θ
+Insufﬁcient evidence to support any recommendation
+Strong recommendation
+against the use of an
+intervention
+‘Do not offer’
+↓↓
+Risks of the intervention outweigh the beneﬁts; most patients
+would not choose the intervention while only a small proportion
+would; for clinicians, most of their patients would not receive the
+intervention
+© 2020 British Association of Dermatologists
+British Journal of Dermatology (2021) 184, pp401–414
+BAD guidelines for management of people with SCC 2020, S.G. Keohane et al. 405
+Downloaded from https://academic.oup.com/bjd/article/184/3/401/6702204 by guest on 06 May 2026
+
+=== PAGE 6 ===
+radiotherapy, and the immune status of the patient, on the
+specimen request form for the pathologist.
+R4 (GPP) Take a good-quality clinical photograph of the cSCC
+lesion for the patient record to aid future management and
+assessment of the area after healing. In multisite disease the
+lesions to be treated should ideally be marked on the pho-
+tograph to limit the risk of wrong-site procedures.
+Treatment options for primary cutaneous squamous cell
+carcinoma
+Standard surgical excision
+R5 (↑↑) Offer* standard surgical excision as the ﬁrst-line
+treatment option to people with resectable primary cSCC.
+R6 (↑↑) Peripheral tumour margins should be determined
+under bright lighting and magniﬁcation or dermoscopy.
+Excise* with a clinical peripheral surgical margin of
+•
+≥4 mm for a low-risk cSCC tumour,
+•
+≥6 mm for a high-risk cSCC tumour,
+•
+≥10 mm for a very high-risk cSCC tumour.
+For deﬁnition of the levels of risk see Figure 1.13–18
+R7 (↑↑) Ensure at least a 1-mm histological clearance of cSCC
+excisions at all margins by including sufﬁcient peripheral and
+deep tissues (see R6 for appropriate standard surgical excision
+margins).
+•
+For mobile lesions the deep margin should be within the
+next clear surgical plane, and on the scalp the excision
+should include the galea.
+•
+For deeply inﬁltrating or ﬁxed lesions at any site, achiev-
+ing an uninvolved deep histological margin may require
+inclusion of one or more of the following – fascia, mus-
+cle, bone or other underlying structure – which may be
+determined clinically or by imaging, or both.
+•
+Consideration should be given to excision of a further,
+orientated, deep-margin specimen where possible, if there
+is clinical concern at the time of resection that the resec-
+tion is close or incomplete.
+•
+Whenever possible conﬁrm uninvolved histological mar-
+gins by parafﬁn section analysis prior to reconstruction
+involving complex tissue rearrangement where dressings
+or temporizing cover can reasonably be achieved. How-
+ever, in the context of extensive ablative resections (e.g.
+scalp into the calvarium or abutting dura, ear–parotid–
+temporal bone, composite maxillofacial resections etc.)
+this approach is unlikely to be feasible due to immediate
+reconstructive requirements.
+•
+Where there is extensive disease, and/or involvement of
+speciﬁc anatomical areas, consider liaising with one or
+more additional MDT depending on the site of the cSCC.
+R8 (↑↑) Manage and report excised cSCC specimens according
+to the Royal College of Pathologists dataset.8
+Multidisciplinary team discussion
+R9 (GPP) Document the risk status of cSCC tumour as low
+risk, high risk or very high risk in the patient notes (Figure 1).
+R10 (↓↓) T1 cSCC tumours excised with histologically clear
+margins of at least 1 mm, in the absence of other high-risk
+factors, do not need routine discussion at an MDT (Figure 1).
+R11 (↑↑) Review the histology of people with cSCC with one
+or more involved or clear-but-close margins (< 1 mm) at an
+appropriate skin MDT (Figure 1).
+R12 (↑) Consider the risk factors for the patient and the mar-
+gin, site and tumour stage in people with cSCC with one or
+more clear-but-close margins (< 1 mm). Consider observation
+in immunocompetent people with cSCC with a low-risk
+tumour (Figure 1).
+R13 (↑↑) Offer further wide local excision (with likely
+delayed reconstruction), Mohs micrographic surgery, or adju-
+vant radiotherapy to people with cSCC with one or more
+involved margins, or close margins (< 1 mm), where patient
+or tumour factors confer higher risk.
+R14 (GPP) Offer active treatment to immunosuppressed peo-
+ple with cSCC with one or more clear-but-close (< 1 mm) or
+involved margins with structured follow-up and surveillance.
+R15 (↑↑) Discuss at an SSMDT people with cSCC with symp-
+tomatic perineural invasion and/or radiological evidence of
+perineural invasion. If discussed at a skin MDT, skull base or
+head and neck MDT opinion may be required. Aggressive sur-
+gical excision of the involved nerve should be the ﬁrst step,
+where technically possible, followed by consideration of adju-
+vant radiotherapy.
+Mohs micrographic surgery
+R16 (↑) Consider Mohs micrographic surgery in selected peo-
+ple with cSCC following SSMDT discussion, particularly where
+tumour margins are difﬁcult to delineate or in sites where tis-
+sue conservation is important for function.
+Radiotherapy: primary and postoperative (adjuvant
+radiotherapy)
+R17 (↑↑) Discuss people with histologically proven cSCC
+being considered for radiotherapy at an MDT (LSMDT or
+SSMDT) with a clinical oncologist present.
+R18 (↑↑) Offer primary radiotherapy
+•
+to selected people with cSCC as a treatment option follow-
+ing appropriate discussion at the appropriate skin MDT
+and/or with a clinical or radiation oncologist, factoring in
+patient preference, and
+•
+to people with cSCC when surgery is not feasible or would
+be challenging or likely to result in an unacceptable func-
+tional or aesthetic outcome.
+© 2020 British Association of Dermatologists
+British Journal of Dermatology (2021) 184, pp401–414
+406 BAD guidelines for management of people with SCC 2020, S.G. Keohane et al.
+Downloaded from https://academic.oup.com/bjd/article/184/3/401/6702204 by guest on 06 May 2026
+
+=== PAGE 7 ===
+R19 (↑) Consider adjuvant radiotherapy in people with cSCC
+•
+if pathological excision margins are clear but close (< 1
+mm) following discussion at an appropriate skin MDT,
+where a clinical oncologist is present, and
+•
+with completely excised T3 tumours, where there are mul-
+tiple high-risk factors, including those > 6 mm in thick-
+ness (depth) and invasion beyond subcutaneous fat.
+R20 (↑↑) Offer adjuvant radiotherapy to people with incom-
+pletely excised cSCC, where further surgery is not possible (or
+is not chosen by the patient) and in those at high risk of local
+recurrence
+•
+in the case of perineural invasion (multifocal, named nerve
+and/or diameter of nerve > 01 mm, below the dermis),
+•
+in recurrent disease, and
+•
+in those who are immunocompromised (see R21).
+R21 (↓↓) Do not offer postoperative radiotherapy to people
+with completely excised T1 or T2 cSCC and with microscopic,
+dermal-only, nerve diameter < 01 mm perineural invasion.
+R22 (↑) Consider conformal radiotherapy including the entire
+course of the involved nerve in people with cSCC with symp-
+tomatic perineural invasion and/or radiological evidence of
+perineural invasion when surgery is inappropriate, after care-
+fully weighing the beneﬁts and side-effects from radiotherapy
+to such an extensive radiotherapy treatment ﬁeld.
+R23 (GPP) Inform younger people with cSCC (age < 60
+years), especially if they are an organ transplant recipient, of
+the very low risk of radiation-induced, in-ﬁeld malignancy in
+the future. Take this risk into account when making any treat-
+ment decision.
+Curettage and cautery
+R24 (↑) Consider curettage and cautery with curative intent
+in immunocompetent people with small (< 1 cm), well-de-
+ﬁned, nonrecurrent, clinically low-risk cSCC.
+R25 (GPP) Review the histology of cSCC removed by curet-
+tage and cautery to identify high-risk or very high-risk fea-
+tures. If these are identiﬁed, the case should be discussed at an
+appropriate MDT regarding further management.
+Locally advanced, recurrent and metastatic cutaneous
+squamous cell carcinoma
+R26 (GPP) Do not routinely offer imaging of the draining
+nodal basin to people with cSCC in the absence of suspected
+or clinically detectable regional nodal involvement. Very high-
+risk lesions, such as pT2 or greater lip cSCC, carry a high risk
+of occult metastasis and consideration can be given to high-
+resolution ultrasound scan of the regional nodes in the clini-
+cally N0 setting.
+R27 (↑↑) Initiate an individualized SSMDT, multimodality and
+imaging treatment plan for people
+•
+with regional lymph node metastasis,
+•
+who are immunocompromised and with locally advanced
+and/or metastatic cSCC,
+•
+with in transit metastases from cSCC, and
+•
+with metastatic cSCC who have had further locoregional
+relapse following lymphadenectomy.
+R28 (GPP) Where assessment of the anatomical extent of a
+primary cSCC warrants imaging, consider including regional
+lymph nodes in the scan.
+R29 (GPP) Only consider sentinel lymph node biopsy for
+speciﬁc, high-risk cases of primary cSCC in the context of a
+clinical trial or SSMDT discussion.3
+R30 (GPP) Offer ultrasound-guided ﬁne-needle aspiration
+cytology to people with cSCC with clinically suspicious nodes. If
+they are negative and suspicion remains, this can be repeated,
+although core or open-biopsy histology may be required.
+R31 (GPP) Undertake high-resolution magnetic resonance
+imaging (MRI) of the involved area in people with cSCC with
+in transit metastasis or regional perineural invasion of named
+nerves. Discuss with a radiologist if MRI is contraindicated.
+(In transit metastasis is a type of metastasis in which skin can-
+cer spreads through a lymph vessel and begins to grow
+between the area of previous treatment and the nodal basin.)
+R32 (↑↑) Offer therapeutic regional lymphadenectomy to peo-
+ple with head and neck cSCC with regional lymph node
+metastasis. (Regional lymphadenectomy is a surgical procedure
+in which the lymph nodes that drain the site of the tumour
+are removed to an extent that has therapeutic rather than diag-
+nostic or palliative intent. The tissue is subsequently checked
+under the microscope for signs of cancer.) Imaging is required
+preoperatively to deﬁne the extent of locoregional relapse, and
+to identify distant metastatic disease (also see R36). The head
+and neck imaging should include locoregional MRI or com-
+puted tomography (CT), and CT imaging of the chest as a
+minimum. The surgery should be performed by a designated
+surgeon who is a core member of the SSMDT pathway and
+compliant with prevailing multispecialty guidance.
+•
+Where the parotid gland has proven nodal metastasis and
+the neck is cN0, a therapeutic parotidectomy, usually the
+superﬁcial lobe alone, should be combined with an elec-
+tive selective neck dissection of levels I–III. If an anterior
+scalp or temple primary site has proven neck nodal metas-
+tasis, consideration should be given to an elective superﬁ-
+cial parotidectomy at the time of therapeutic neck nodal
+dissection.
+•
+Where the neck has proven nodal metastasis, the therapeutic
+neck dissection should include levels and structures to maxi-
+mize tumour clearance, while minimizing unnecessary mor-
+bidity. It may be appropriate to preserve a clinically and
+radiologically uninvolved level I where the primary tumour
+was posterior, thus to carry out a posterolateral neck dissec-
+tion of levels II–V. Consideration can also be given to preser-
+vation of an uninvolved, level V where the primary tumour
+site was in the central lower face.
+© 2020 British Association of Dermatologists
+British Journal of Dermatology (2021) 184, pp401–414
+BAD guidelines for management of people with SCC 2020, S.G. Keohane et al. 407
+Downloaded from https://academic.oup.com/bjd/article/184/3/401/6702204 by guest on 06 May 2026
+
+=== PAGE 8 ===
+•
+Nodes in the superﬁcial system, such as the occipital
+nodes, or external jugular node should also be included in
+a dissection, according to the primary site, and the identi-
+ﬁed sites of metastasis.
+R33 (↑↑) Offer therapeutic regional lymphadenectomy to peo-
+ple with non-head and neck cSCC with regional lymph node
+metastases in axillary, inguinofemoral or other peripheral
+draining nodes. Imaging is required preoperatively to deﬁne
+the extent of locoregional relapse, and to identify distant
+metastatic disease (also see R36). In the axilla, CT imaging
+should include the neck, chest and axilla as a minimum and
+the surgery should include levels I–III. In the inguinofemoral
+region CT imaging should include the chest–abdomen–pelvis
+and to midthigh level and the surgery should include superﬁ-
+cial and deep levels.
+•
+Therapeutic extended ilio-inguinofemoral lymphadenec-
+tomy is indicated in those with additional iliac nodal cSCC
+on imaging or cytology.
+•
+Elective extended ilio-inguinofemoral lymphadenectomy
+should also be considered, at the SSMDT, for people with
+extensive inguinofemoral relapse (multiple nodes, any > 3
+cm, plus or minus extranodal extension) who do not have
+concurrent evidence of iliac relapse on imaging or cytol-
+ogy but are deemed to be at high risk of microscopic dis-
+ease in the extended basin.
+•
+Nodal disease at other ectopic sites should have individual-
+ized imaging under guidance from the SSMDT.
+•
+The surgery should be performed by a designated surgeon
+of the SSMDT pathway who is compliant with prevailing
+multispecialty guidance.
+R34 (↑↑) Offer adjuvant radiotherapy following therapeutic
+regional lymphadenectomy to people with cSCC with high-
+risk pathology (e.g. two or more nodes, large nodes and
+extracapsular extension), deﬁned by UICC8 as ≥pN1.
+R35 (GPP) Consider surgical resection (with or without adju-
+vant radiotherapy) or primary radiotherapy in people with
+locally recurrent cSCC.
+R36 (GPP) Consider regional lymphadenectomy or regional
+lymph node basin irradiation in selected people with cSCC
+for disease control even in the presence of distant metas-
+tases, especially in those undergoing multimodality treat-
+ment.
+R37 (↑) Consider immune checkpoint inhibitor treatment in
+people with locally advanced cSCC where curative surgery or
+radiotherapy is not reasonable, or those with metastatic cSCC,
+except patients with organ transplants or those who have sig-
+niﬁcant autoimmune conditions.
+R38
+(↑)
+Consider
+systemic
+chemotherapy
+or
+epidermal
+growth factor receptor (EGFR) inhibitors in people with meta-
+static cSCC with contraindications to immune checkpoint inhi-
+bitors. Responses are generally short lived and chemotherapy
+is
+poorly
+tolerated
+in
+elderly
+and
+frail
+people,
+and
+consideration for best supportive care should be made. EGFR
+inhibitors are unlicensed for cSCC in the UK.
+R39 (GPP) Consider electrochemotherapy in people with
+locally advanced cSCC in palliative settings if other local or
+systemic therapies are not appropriate.
+Follow-up
+R40 (↑↑) Offer access to a key worker to people with cSCC,
+ideally a clinical nurse specialist, as part of an ongoing treat-
+ment prevention package.19 Provide information on the diag-
+nosis and management of cSCC.
+R41 (GPP) Follow up people with cSCC by examining the
+skin and lymph node basins and with any other appropriate
+clinical examination.
+R42 (GPP) Educate people with cSCC on self-examination
+(skin and lymph nodes) and sun protection by providing
+appropriate verbal and written information (e.g. www.bad.
+org.uk/leaflets).
+R43 (GPP) Offer people with low-risk cSCC a single post-treat-
+ment appointment, where appropriate, to check histopathology
+results, conduct skin and nodal surveillance and facilitate patient
+education on self-examination and surveillance of patients’ own
+digital photographs (patient education could have already taken
+place at the pretreatment appointment). Provide information on
+the 5-year risk of developing further cSCC and on how to access
+a referral, including the 2-week-wait pathway back into the sys-
+tem if they suspect a new lesion.
+R44 (GPP) Offer people with high-risk cSCC (especially
+when several risk factors apply) post-treatment follow-up
+appointments at 4-monthly intervals for 12 months, then at
+6-monthy intervals for a further 12 months. The initial fol-
+low-up should be with secondary-care clinicians to facilitate
+skin surveillance and patient education on self-examination.
+Later appointments may be with other clinicians able to recog-
+nize recurrences and new skin cancers according to local
+arrangements approved by the appropriate skin MDT.
+R45 (GPP) Offer people with very high-risk cSCC post-treat-
+ment follow-up appointments at 4-monthly intervals for 24
+months, then at 6-monthly intervals for a further 12 months.
+The initial follow-up should be with secondary-care clinicians
+to facilitate skin surveillance and patient education on self-ex-
+amination. Later appointments may be made with other clini-
+cians able to recognize recurrences and new skin cancers
+according to local arrangements approved by the appropriate
+skin MDT. People who have a high risk of developing further
+high-risk, primary cSCC, such as organ transplant recipients,
+should remain under lifelong skin surveillance.
+R46 (GPP) Offer people with metastatic cSCC post-treatment
+follow-up appointments at 3-monthly intervals for 24 months,
+then at 6-monthy intervals for a further 36 months, with
+potential longer-term review dependent on patient factors.
+© 2020 British Association of Dermatologists
+British Journal of Dermatology (2021) 184, pp401–414
+408 BAD guidelines for management of people with SCC 2020, S.G. Keohane et al.
+Downloaded from https://academic.oup.com/bjd/article/184/3/401/6702204 by guest on 06 May 2026
+
+=== PAGE 9 ===
+Imaging should be performed on the basis of clinical ﬁndings,
+with SSMDT discussion if appropriate.
+Insufﬁcient evidence to support any recommendation
+Θ There is insufﬁcient evidence to support any recommenda-
+tion for cryotherapy, CO2 laser or topical therapies in the
+treatment of cSCC.
+List of key future research recommendations
+The following list outlines future research recommendations
+(FRRs).
+FRR1 Research should identify which clinicopathological or
+molecular factors predict poor outcome, which might facilitate
+a scoring system (1–5) for risk.
+FRR2 Future cancer-related RCTs need to include more people
+with cSCC, with stratiﬁcation of the results by risk factors.
+FRR3 Future skin cancer clinical studies need to differentiate
+outcomes clearly by histopathology (i.e. SCC or basal cell car-
+cinoma) and stage.
+FRR4
+Prospective,
+head-to-head
+RCTs
+for
+primary
+cSCC
+reporting (i) 5-year recurrence rates, (ii) quality of life and
+(iii) long- and short-term adverse effects, including pain,
+function and cosmetic appearance
+•
+comparing surgical interventions with modern standard-
+ized two-dimensional histopathology,
+•
+evaluating the role of adjuvant radiotherapy in resected
+primary cSCC,
+•
+comparing further surgery vs. radiotherapy in incom-
+pletely resected primary cSCC, and
+•
+comparing adjuvant radiotherapy (margins, techniques)
+after surgical excision of higher-risk cSCC.
+FRR5 All future RCTs involving cSCC need to report standard-
+ized outcome measures (e.g. time to recurrence, standardized
+quality-of-life scales) to facilitate comparisons and pooling of
+data across studies.
+FRR6 A study evaluating the cost and resource implications of
+different treatment options for people with cSCC in the UK
+NHS healthcare setting.
+FRR7 Alternative immunotherapy strategies suitable for people
+with inoperable, locally advanced cSCC, not amenable to radi-
+cal radiotherapy, or metastatic cSCC in whom immune check-
+point inhibitors are contraindicated.
+FRR8 There is a need for a review of the treatments of cSCC
+in those who are at increased risk of developing SCC (e.g.
+those with impaired immunity or genetic conditions).
+FRR9 The role of sentinel lymph node biopsy in the staging
+of very high-risk cSCC given the propensity of these tumours
+to metastasize.
+Algorithms
+The recommendations, discussions in the LETRs (Appendix D;
+see
+Supplementary
+Information)
+and
+consensus
+specialist
+experience were used to inform the algorithm and pathway of
+care (Figures 2 and 3).
+Background
+Deﬁnition
+Primary cutaneous squamous cell carcinoma (cSCC) is a malig-
+nant tumour that arises from the keratinocytes of the epider-
+mis or its hair follicles. It is locally invasive and has the
+potential to metastasize.20
+Incidence and aetiology
+The rate of nonmelanoma skin cancer is at least 24 times higher
+than that of the next most common tumour in the UK, which is
+breast cancer.21 Recent evidence suggests that this is still an
+underestimate for skin cancer due to under-reporting.22 cSCC is
+the sixth most common cancer in the UK21,22 and its incidence
+continues to rise, not only in the UK but also in many other
+countries.22–24 This will have an increasing impact on planning
+for NHS services and on histopathology services.22,25
+Its occurrence is usually related to chronic ultraviolet (UV)
+exposure and is therefore especially common in people with
+sun-damaged skin, fair skin, albinism and xeroderma pigmen-
+tosum. Additionally, increasing longevity may also be respon-
+sible for the increasing incidence of these tumours. It may
+develop de novo – as a result of previous exposure to UV and
+ionizing radiation, or chemicals such as pesticides, herbicides
+or arsenic; within chronic wounds, scars, burns, ulcers or
+sinus tracts; or from pre-existing lesions such as SCC in situ
+(Bowen disease).23,24 A high incidence of aggressive cSCC is
+found in individuals with recessive dystrophic epidermolysis
+bullosa (RDEB), where it is a major cause of death. In RDEB,
+the aetiology of cSCC is chronic wounding, not UV exposure.
+Individuals with impaired immune function, for example
+those receiving immunosuppressive drugs following allogeneic
+organ transplantation or for inﬂammatory disease, and those
+with lymphoma or leukaemia, are at increased risk of this
+tumour. Some cSCCs are associated with human papillo-
+mavirus infection.26 The risk of cSCC with the ‘biologic’ ther-
+apies (for inﬂammatory or haematological disease) has yet to
+be accurately quantiﬁed.27,28
+There is good evidence linking cSCCs with chronic actinic
+damage (including that from the use of tanning devices)29 and
+to support sun avoidance, use of protective clothing and effec-
+tive sun blocks30 in the prevention of actinic keratoses and
+cSCCs. These measures are particularly important for people
+receiving long-term immunosuppressive medication.31 People
+who have had psoralen–UVA therapy for skin conditions may
+also be at higher risk.32 cSCC may also occur in patients who
+are being treated with BRAF inhibitors for melanoma.33
+People with organ transplants are at high risk of developing
+cSCC. Skin surveillance to allow early detection and treatment,
+and measures to prevent cSCC, should be part of their routine
+care. In patients with multiple, frequent or high-risk cSCCs
+© 2020 British Association of Dermatologists
+British Journal of Dermatology (2021) 184, pp401–414
+BAD guidelines for management of people with SCC 2020, S.G. Keohane et al. 409
+Downloaded from https://academic.oup.com/bjd/article/184/3/401/6702204 by guest on 06 May 2026
+
+=== PAGE 10 ===
+Figure 2 Staging and management pathway of primary cutaneous squamous cell carcinoma (cSCC). FNAB, ﬁne-needle aspiration biopsy; FNAC,
+ﬁne-needle aspiration cytology; LSMDT, local skin cancer multidisciplinary team; SSMDT, specialist skin cancer multidisciplinary team; USS,
+ultrasound scan. [Colour ﬁgure can be viewed at wileyonlinelibrary.com]
+© 2020 British Association of Dermatologists
+British Journal of Dermatology (2021) 184, pp401–414
+410 BAD guidelines for management of people with SCC 2020, S.G. Keohane et al.
+Downloaded from https://academic.oup.com/bjd/article/184/3/401/6702204 by guest on 06 May 2026
+
+=== PAGE 11 ===
+Figure 3 Treatment pathway for primary cutaneous squamous cell carcinoma (cSCC) in adults. ART, adjuvant radiotherapy; laSCC, locally advanced squamous cell carcinoma; mSCC, metastatic squamous cell
+carcinoma; SSMDT, specialist skin cancer multidisciplinary team. [Colour ﬁgure can be viewed at wileyonlinelibrary.com]
+© 2020 British Association of Dermatologists
+British Journal of Dermatology (2021) 184, pp401–414
+BAD guidelines for management of people with SCC 2020, S.G. Keohane et al. 411
+Downloaded from https://academic.oup.com/bjd/article/184/3/401/6702204 by guest on 06 May 2026
+
+=== PAGE 12 ===
+consideration should be given to modifying immunosuppres-
+sive regimens34,35 and the prophylactic use of systemic
+retinoids,36–38 which may also be valuable in other high-risk
+groups.39 Nicotinamide should also be considered in this situ-
+ation.40 Therapies such as topical 5-ﬂuorouracil41 and imiqui-
+mod,42 and photodynamic therapy43 may have useful roles in
+preventing skin dysplasia and therefore decreasing the risk of
+skin cancers in high-risk renal transplant recipients, but sub-
+stantive evidence is awaited.
+Diagnosis and investigation
+Clinical presentation
+SCC usually presents as an indurated nodular keratinizing or
+crusted tumour that may ulcerate, or it may present as an
+ulcer without evidence of keratinization. All patients in whom
+there is a possibility of a cSCC should be referred urgently to
+an appropriately trained specialist who is attached to an
+LSMDT, usually in their local dermatology department’s rapid-
+access skin cancer clinic.44
+Diagnosis and staging
+The handling of skin cancer specimens and their histopatho-
+logical diagnosis and reporting should conform to the Royal
+College of Pathologists dataset for primary cSCC.8 The Royal
+College of Pathologists and Public Health England have
+adopted UICC8 TNM9 for the staging of melanoma and non-
+melanoma skin cancer.
+Recommended audit points
+In the last 20 consecutive patients with cSCC is there clear
+documentation for or evidence of the
+1
+Name and grade of the surgeon who carried out the sur-
+gery?
+2
+Patient being instructed in self-examination and provided
+with written patient information (e.g. www.bad.org.uk/
+leaflets)?
+3
+Site and maximum dimension (usually diameter) of the
+lesion?
+4
+Lesion being ﬁxed or mobile beneath the skin (head,
+neck, trunk and limbs)?
+5
+Lesion having tarsal plate or lid margin involvement, or
+not (eyelid)?
+6
+Immunosuppressive status of the patient?
+7
+Risk status of the lesion (low risk, high risk or very high
+risk)?
+8
+Lesion having associated clinically detectable nodes, or
+being clinically N0?
+9
+Standard surgical excision, detailing
+a
+The surgical margins of excision (R6; and see below)?
+Note: these are ≥4 mm for low-risk, ≥6 mm for
+high-risk and ≥10 mm for very high-risk cSCC.
+b The anatomical description of the deep margin?
+10 Histological margins in all planes following standard sur-
+gical excision? Note: these are deﬁned as clear (≥1
+mm), clear but close (< 1 mm) or involved (0 mm).
+11 Appropriate follow-up protocols (R43, R45, R46 and
+see below) by different members of the MDT, including
+clinical nurse specialists? Note: follow-up schedules are
+low-risk: one appointment for diagnosis and educa-
+tion; high-risk: a follow-up every 4 months in the
+ﬁrst year then every 6 months in the second year;
+and very high-risk: a follow-up every 4 months in
+the ﬁrst and second years, then every 6 months in
+the third year.
+12 Recording and review of histologically proven recurrence
+of cSCC during follow-up periods following both surgical
+and nonsurgical treatments?
+The audit recommendation of 20 cases per department is to
+reduce variation in the results due to a single patient and
+allow benchmarking between different units (Appendix L; see
+Supporting Information).
+Stakeholder involvement and peer review
+The draft document and Supporting Information were made
+available to the BAD membership, the Royal College of Gen-
+eral Practitioners (RCGP), the Royal College of Pathologists
+(RCPath), the Royal College of Radiologists (RCR), the British
+Association of Oral and Maxillofacial Surgeons (BAOMS), the
+British Association of Head and Neck Oncologists (BAHNO),
+the British Association of Plastic Reconstructive and Aesthetic
+Surgeons (BAPRAS), the British Society for Dermatological
+Surgery (BSDS), the British Dermatological Nursing Group
+(BDNG), the British Association of Skin Cancer Nurse Special-
+ists (BASCNS) and the Primary Care Dermatological Society
+(PCDS). The comments received were actively considered by
+the GDG. Following further review, the ﬁnalized version was
+sent for peer review by the Clinical Standards Unit of the BAD
+(made up of the Therapy & Guidelines Subcommittee) prior
+to submission for publication.
+Limitations of the guideline
+This document has been prepared on behalf of the BAD and is
+based on the best data available when the document was pre-
+pared. It is recognized that under certain conditions it may be
+necessary to deviate from the guidelines and that the results of
+future studies may require some of the recommendations
+herein to be changed. Failure to adhere to these guidelines
+should not necessarily be considered negligent, nor should
+adherence to these recommendations constitute a defence
+against a claim of negligence. Limiting the review to English-
+and German-language references was a pragmatic decision but
+the authors recognize this may exclude some important infor-
+mation published in other languages.
+© 2020 British Association of Dermatologists
+British Journal of Dermatology (2021) 184, pp401–414
+412 BAD guidelines for management of people with SCC 2020, S.G. Keohane et al.
+Downloaded from https://academic.oup.com/bjd/article/184/3/401/6702204 by guest on 06 May 2026
+
+=== PAGE 13 ===
+Plans for guideline revision
+The proposed revision date for this set of recommendations is
+scheduled for 2025; where necessary, important interim
+changes will be updated on the BAD website.
+Acknowledgments
+We are very grateful to Professor Fiona Bath-Hextall for her advice
+on formulating the protocols, and Dr Stephen Kownacki (PCDS),
+Dr Virginia Wolstenholme (RCR), Ms Liz Freeman (BDNG) and Dr
+Robert Herd for their contribution at the inception of these guide-
+lines. We thank the patient representatives Ms Patricia Fairbrother
+and Mr Paul Buckley for their input in formulating the clinical
+questions, ranking of the outcomes, reviewing the evidence and
+formulating the recommendations, as well as all of those who
+commented on the draft during the consultation period.
+References
+1 National Institute for Health and Care Excellence. Improving out-
+comes for people with skin tumours including melanoma. Avail-
+able
+at:
+https://www.nice.org.uk/guidance/csg8/evidence/full-
+guideline-2006-pdf-2191950685 (last accessed 20 October 2020).
+2 Morton CA, Birnie AJ, Eedy DJ. British Association of Dermatolo-
+gists’ guidelines for the management of squamous cell carcinoma
+in situ (Bowen’s disease) 2014. Br J Dermatol 2014; 170:245–60.
+3 National Comprehensive Cancer Network. NCCN Guidelines: squa-
+mous cell skin cancer. Available at: https://www.nccn.org/professiona
+ls/physician_gls/pdf/squamous.pdf (last accessed 20 October 2020).
+4 Lopez AT, Carvajal RD, Geskin L. Secondary prevention strategies
+for nonmelanoma skin cancer. Oncology (Williston Park) 2018;
+32:195–200.
+5 Mohd Mustapa MF, Exton LS, Bell HK et al. Updated guidance for
+writing a British Association of Dermatologists clinical guideline:
+the adoption of the GRADE methodology 2016. Br J Dermatol 2017;
+176:44–51.
+6 Brouwers M, Kho ME, Browman GP et al. AGREE II: advancing
+guideline development, reporting and evaluation in healthcare.
+CMAJ 2010; 182:E839–42.
+7 Guyatt GH, Oxman AD, Vist GE et al. GRADE: an emerging consen-
+sus on rating quality of evidence and strength of recommenda-
+tions. BMJ 2008; 336:924–6.
+8 Slater DN, Barrett P. Dataset for the histological reporting of pri-
+mary cutaneous squamous cell carcinoma and regional lymph
+nodes. Available at: https://www.rcpath.org/uploads/assets/9c1d
+8f71-5d3b-4508-8e6200f11e1f4a39/Dataset-for-histopathological-
+reporting-of-primary-invasive-cutaneous-squamous-cell-carcinoma-
+and-regional-lymph-nodes.pdf (last accessed 20 October 2020).
+9 Brierley JD, Gospodarowicz MK, Wittekind C. Skin tumours. In:
+TNM Classiﬁcation Of Malignant Tumours, 8th edn (Brierley JD, Gospo-
+darowicz MK, Wittekind C, eds), Chichester: John Wiley and Sons,
+2017, 131–49.
+10 Califano JA, Lydiatt WM, Nehal KS et al. Cutaneous squamous cell
+carcinoma of the head and neck. In: AJCC Cancer Staging Manual, 8th
+edn (Amin MB, Edge SB, Greene FL, Byrd DR, Brookland RK et al.,
+eds). New York: Springer, 2017; 171–81.
+11 Motley R, Kersey P, Lawrence C. Multiprofessional guidelines for
+the management of the patient with primary cutaneous squamous
+cell carcinoma. Br J Dermatol 2002; 146:18–25.
+12 Motley RJ, Preston PW, Lawrence CM. Multi-professional guideli-
+nes for the management of the patient with primary cutaneous
+squamous cell carcinoma. Available at: http://www.bad.org.uk/
+shared/get-ﬁle.ashx?id=59&itemtype=document (last accessed 20
+October 2020).
+13 Eigentler TK, Leiter U, H€afner HM et al. Survival of patients with
+cutaneous squamous cell carcinoma: results of a prospective
+cohort study. J Invest Dermatol 2017; 137:2309–15.
+14 Rose AM, Nicoll KJ, Moinie A et al. Patients with low-risk cuta-
+neous squamous cell carcinoma do not require extended out-pa-
+tient follow-up. J Plast Reconstr Aesthet Surg 2017; 70:852–5.
+15 Rowe DE, Carroll RJ, Day CL. Prognostic factors for local recur-
+rence, metastasis, and survival rates in squamous cell carcinoma of
+the skin, ear, and lip. Implications for treatment modality selec-
+tion. J Am Acad Dermatol 1992; 26:976–90.
+16 Ruiz ES, Karia PS, Besaw R et al. Performance of the American Joint
+Committee on Cancer Staging Manual, 8th Edition versus the Brigham
+and Women’s Hospital Tumor Classiﬁcation System for Cutaneous
+Squamous Cell Carcinoma. JAMA Dermatol 2019; 155:819–25.
+17 Jambusaria-Pahlajani A, Kanetsky PA, Karia PS et al. Evaluation of
+AJCC tumor staging for cutaneous squamous cell carcinoma and a
+proposed alternative tumor staging system. JAMA Dermatol 2013;
+149:402–10.
+18 Wehner MR, Linos E, Parvataneni R et al. Timing of subsequent
+new tumors in patients who present with basal cell carcinoma or
+cutaneous
+squamous
+cell
+carcinoma.
+JAMA
+Dermatol
+2015;
+151:382–8.
+19 National Institute for Health and Care Excellence. Skin cancer.
+Quality standard QS130. Available at: https://www.nice.org.uk/
+guidance/qs130 (last accessed 20 October 2020).
+20 Kwa RE, Campana K, Moy RL. Biology of cutaneous squamous cell
+carcinoma. J Am Acad Dermatol 1992; 26:1–26.
+21 Cancer Research UK. Non-melanoma skin cancer incidence. Avail-
+able at: https://www.cancerresearchuk.org/health-professional/ca
+ncer-statistics/statistics-by-cancer-type/non-melanoma-skin-cance
+r#heading-zero (last accessed 20 October 2020).
+22 Venables ZC, Nijsten T, Wong KF et al. Epidemiology of basal and
+cutaneous squamous cell carcinoma in the UK 2013–15: a cohort
+study. Br J Dermatol 2019; 181:474–82.
+23 Que SKT, Zwald FO, Schmults CD. Cutaneous squamous cell carci-
+noma: incidence, risk factors, diagnosis, and staging. J Am Acad Der-
+matol 2018; 78:237–47.
+24 Green AC, Olsen CM. Cutaneous squamous cell carcinoma: an epi-
+demiological review. Br J Dermatol 2017; 177:373–81.
+25 Goon PK, Greenberg DC, Igali L et al. Squamous cell carcinoma of
+the skin has more than doubled over the last decade in the UK.
+Acta Derm Venereol 2016; 96:820–1.
+26 Tommasino M. HPV and skin carcinogenesis. Papillomavirus Res
+2019; 7:129–31.
+27 Scott FI, Mamtani R, Brensinger CM et al. Risk of nonmelanoma
+skin cancer associated with the use of immunosuppressant and
+biologic agents in patients with a history of autoimmune disease
+and nonmelanoma skin cancer. JAMA Dermatol 2016; 152:164–72.
+28 Patel RV, Clark LN, Lebwohl M et al. Treatments for psoriasis and
+the risk of malignancy. J Am Acad Dermatol 2009; 60:1001–17.
+29 Karagas MR, Stannard VA, Mott LA et al. Use of tanning devices
+and risk of basal cell and squamous cell skin cancers. J Natl Cancer
+Inst 2002; 94:224–6.
+30 van der Pols JC, Williams GM, Pandeya N et al. Prolonged preven-
+tion of squamous cell carcinoma of the skin by regular sunscreen
+use. Cancer Epidemiol Biomarkers Prev 2006; 15:2546–8.
+31 Ulrich C, Jurgensen JS, Degen A et al. Prevention of non-melanoma
+skin cancer in organ transplant patients by regular use of a
+© 2020 British Association of Dermatologists
+British Journal of Dermatology (2021) 184, pp401–414
+BAD guidelines for management of people with SCC 2020, S.G. Keohane et al. 413
+Downloaded from https://academic.oup.com/bjd/article/184/3/401/6702204 by guest on 06 May 2026
+
+=== PAGE 14 ===
+sunscreen: a 24 months, prospective, case–control study. Br J Der-
+matol 2009; 161 (Suppl. 3):78–84.
+32 Stern RS, PUVA Follow-Up Study. The risk of squamous cell and
+basal cell cancer associated with psoralen and ultraviolet A therapy:
+a 30-year prospective study. J Am Acad Dermatol 2012; 66:553–62.
+33 Gibney GT, Messina JL, Fedorenko IV et al. Paradoxical oncogenesis
+– the long-term effects of BRAF inhibition in melanoma. Nat Rev
+Clin Oncol 2013; 10:390–9.
+34 Mittal A, Colegio OR. Skin cancers in organ transplant recipients.
+Am J Transplant 2017; 17:2509–30.
+35 Collins L, Quinn A, Stasko T. Skin cancer and immunosuppression.
+Dermatol Clin 2019; 37:83–94.
+36 Otley CC, Stasko T, Tope WD et al. Chemoprevention of non-
+melanoma skin cancer with systemic retinoids: practical dosing
+and management of adverse effects. Dermatol Surg 2006; 32:562–8.
+37 Herold M, Good AJ, Nielson CB et al. Use of topical and systemic
+retinoids in solid organ transplant recipients: update and review
+of the current literature. Dermatol Surg 2019; 45:1442–9.
+38 Que SKT, Zwald FO, Schmults CD. Cutaneous squamous cell carci-
+noma: management of advanced and high-stage tumors. J Am Acad
+Dermatol 2018; 78:249–61.
+39 Nijsten TE, Stern RS. Oral retinoid use reduces cutaneous squamous
+cell carcinoma risk in patients with psoriasis treated with psoralen-
+UVA: a nested cohort study. J Am Acad Dermatol 2003; 49:644–50.
+40 Chen AC, Martin AJ, Choy B et al. A phase 3 randomized trial of
+nicotinamide for skin-cancer chemoprevention. N Engl J Med 2015;
+373:1618–26.
+41 Weinstock MA, Thwin SS, Siegel JA et al. Chemoprevention of
+basal and squamous cell carcinoma with a single course of ﬂuo-
+rouracil, 5%, cream: a randomized clinical trial. JAMA Dermatol
+2018; 154:167–74.
+42 Brown VL, Atkins CL, Ghali L et al. Safety and efﬁcacy of 5% imi-
+quimod cream for the treatment of skin dysplasia in high-risk
+renal transplant recipients: randomized, double-blind, placebo-
+controlled trial. Arch Dermatol 2005; 141:985–93.
+43 Togsverd-Bo K, Omland SH, Wulf HC et al. Primary prevention of
+skin dysplasia in renal transplant recipients with photodynamic ther-
+apy: a randomized controlled trial. Am J Transplant 2015; 15:2986–90.
+44 National Institute for Health and Care Excellence. Suspected can-
+cer: recognition and referral. NICE clinical guideline NG12. Avail-
+able at: https://www.nice.org.uk/guidance/ng12 (last accessed
+20 October 2020).
+Appendix
+Conﬂicts of interest
+The following interests were declared over the duration of the
+guideline development. P.G.B.: RCSEng RSPA Plastics South
+Central (demitted 2016), Deputy Chair TVCN Skin Cancer TSSG
+(demitted 2020) (speciﬁc). K.F.: (i) advisory boards – ESAI,
+IPSEN, Roche, Novartis, Merck, Pﬁzer and Eusa (speciﬁc); (ii)
+speaker fees and consultancy – BMS, Pﬁzer, MSD (non-speci-
+ﬁc); (iii) conference hospitality – Novartis, Ipsen (speciﬁc);
+(iv) institutional research funding – Roche, MSD, Exelixis
+(speciﬁc). C.A.H.: (i) speaker and honoraria for Sanoﬁ(speci-
+ﬁc); (ii) member of the NCRI Skin Group (speciﬁc) and mem-
+ber of the EADO guidelines development group for cSCC
+(speciﬁc). J.R.M.: member of the NCRI non-melanoma skin
+cancer subgroup (speciﬁc). C.N.: (i) member of the NCRI non-
+melanoma skin cancer subgroup (speciﬁc); (ii) has shares in a
+private general practitioner web-based company (non-speciﬁc).
+C.P.: (i) Chair of the Scottish Dermatological Society Skin Can-
+cer Group (speciﬁc); (ii) member of the NCRI Skin Group
+(speciﬁc); (iii) member of the NCRI non-melanoma skin can-
+cer subgroup (speciﬁc); (iv) clinical expert for appraisal of
+cemiplimab for cSCC for NICE (April 2019) (speciﬁc). A.R.: (i)
+member of the NCRI Skin Group (speciﬁc); (ii) member of the
+NCRI non-melanoma skin cancer subgroup (speciﬁc); (iii)
+Non-Melanoma Skin Cancer Advisory Board prior to ESMO
+2018 on cemiplimab for Sanoﬁ(speciﬁc). D.N.S.: Royal College
+of Pathologists Lead on Skin Cancer Datasets (speciﬁc). S.G.K.,
+J.B., O.M.D., R.M., R.J.M., C.N., J.A.S., P.B., P.F., M.H.,
+M.F.M.M. and L.S.E. declare they have no conﬂicts of interest.
+Supporting Information
+Additional Supporting Information may be found in the online
+version of this article at the publisher’s website:
+Appendix A Review protocol.
+Appendix B Forest plots.
+Appendix C Clinical evidence summary.
+Appendix D Linking Evidence To Recommendations (LETR).
+Appendix E GRADE evidence tables.
+Appendix F Summary of included studies.
+Appendix G Narrative ﬁndings for non-comparative studies.
+Appendix H PRISMA diagram: study selection.
+Appendix I Papers excluded from quantitative analysis.
+Appendix J Methodology.
+Appendix K Search strategy.
+Appendix L Audit standards, data items and data collection
+methodology.
+© 2020 British Association of Dermatologists
+British Journal of Dermatology (2021) 184, pp401–414
+414 BAD guidelines for management of people with SCC 2020, S.G. Keohane et al.
+Downloaded from https://academic.oup.com/bjd/article/184/3/401/6702204 by guest on 06 May 2026
+
+=== PAGE 15 ===
+of patients  
+with PsO achieved  
+PASI 75 at Week 4 
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+75.9% 
+(n=265/349)
+of patients 
+with PsO achieved 
+PASI 100 at 5 years3
+76.9% 
+(N=52)† 
+of biologic-naïve  
+and TNFi-IR PsA patients 
+achieved ACR 50 at  
+Week 104/100, respectively‡1,4–6
+of patients  
+with PsO achieved  
+PASI 100 at Week 16
+(vs 1.2% placebo [n=1/86], p<0.0001)*,**2
+68.2%
+(n=238/349)
+and
+50.6% 
+(n=135/267) 
+51.5% 
+(n=222/431)
+GB-BK-2500315 | July 2025
+UCB Biopharma SRL, 2025. All rights reserved.
+This promotional material has been created and funded by UCB Pharma Ltd and 
+is intended for healthcare professionals in the UK.
+BIMZELX is indicated for the treatment of: moderate to severe plaque PsO in adults 
+who are candidates for systemic therapy; active PsA, alone or in combination 
+with methotrexate, in adults who have had an inadequate response, or who have 
+been intolerant, to one or more DMARDs; active nr-axSpA with objective signs of 
+inflammation as indicated by elevated CRP and/or MRI, in adults who have responded 
+inadequately, or are intolerant, to NSAIDs; active AS in adults who have responded 
+inadequately or are intolerant to conventional therapy; and active moderate to severe 
+HS (acne inversa) in adults with an inadequate response to conventional systemic HS 
+therapy.4
+Prescribing information for United Kingdom click here.  
+Please refer to the SmPC for further information. 
+These data are from different clinical trials and cannot be directly compared.
+Co-primary endpoints PASI 90 and IGA 0/1 at Week 16 were met.**Secondary endpoints. †N= mNRI, missing data 
+were imputed with mNRI (patients with missing data following treatment discontinuation due to lack of efficacy 
+or a TRAE were counted as non-responders; multiple imputation methodology was used for other missing data). 
+‡43.9% (n=189/431), and 43.4% (n=116/267) of biologic-naïve and TNFi-IR PsA patients achieved the primary 
+endpoint of ACR 50 at Week 16 in BE OPTIMAL and BE COMPLETE, respectively (vs 10.0% [n=28/281] and 6.8% 
+[n=9/133] placebo, p<0.0001); 54.5% (n=235/431) and 51.7% (n=138/267) maintained it at Week 52 (NRI).4–6 ​
+ACR 50, ≥50% response in the American College of Rheumatology criteria; AS, ankylosing spondylitis; CRP, 
+C-reactive protein; DMARD, disease-modifying antirheumatic drug; HS, hidradenitis suppurativa; IGA, Investigator’s 
+Global Assessment; (m)NRI, (modified) non-responder imputation; MRI, magnetic resonance imaging; nr-
+axSpA, non-radiographic axial spondyloarthritis; NSAID, non-steroidal anti-inflammatory drug; PASI 75/90/100, 
+≥75/90/100% improvement from baseline in Psoriasis Area and Severity Index; PsA, psoriatic arthritis; PsD, psoriatic 
+disease; PsO, psoriasis; TNFi-IR, tumour necrosis factor-α inhibitor – inadequate responder; TRAE, treatment-
+related adverse event.
+References: 1. Gordon KB, et al. Lancet. 2021;397(10273):475–486. 2. Blauvelt. 2025. AAD Presentation 62275. 3. 
+Mease PJ, et al. Rheumatol Ther. 2024;11(5):1363–1382. 4. BIMZELX SmPC. 5. Ritchlin CT, et al. Ann Rheum Dis. 
+2023;82(11):1404–1414. 6. Coates LC, et al. RMD Open. 2024;10(1):e003855. 7. Strober B, et al. AAD 2024;oral 
+presentation.​
+This medicine is subject to additional monitoring. This will allow quick 
+identification of new safety information. Adverse events should be reported. 
+Reporting forms and information can be found at www.yellowcard.mhra.gov.uk for 
+the UK. Adverse events should also be reported to UCB Pharma Ltd at  
+UCBCares.UK@UCB.com or 0800 2793177 for UK.
+NO COMPROMISE, 
+JUST CLEARANCE
+BIMZELX was well tolerated, the most frequently reported adverse reactions were: upper respiratory tract infections 
+and oral candidiasis. Other common reported adverse reactions include tinea infections, ear infections, herpes simplex 
+infections, oropharyngeal candidiasis, gastroenteritis, folliculitis, headache, rash, dermatitis, eczema, acne, injection site 
+reactions, fatigue, and vulvovaginal mycotic infection (including vulvovaginal candidiasis).4
+Bimzelx®     (bimekizumab) offers 
+the opportunity for complete, fast,
+and lasting skin clearance and 
+proven PsA efficacy 1–7
