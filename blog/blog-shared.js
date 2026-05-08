@@ -3505,15 +3505,15 @@
     var st = document.createElement('style');
     st.id = 'dn-calc-css';
     st.textContent =
-      '.dn-calc{ background:#2a2620;border:1px solid #2a2620;border-radius:16px;padding:0;margin:24px 0;box-shadow:0 12px 28px -16px rgba(12,81,89,.32);overflow:hidden;color:#f7f3ec }' +
-      '.dn-calc h3.dn-calc-title{ font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#f7f3ec;margin:0;padding:18px 22px 4px;background:#2a2620 }' +
-      '.dn-calc .dn-calc-sub{ font-size:12.5px;color:rgba(247,243,236,.78);margin:0;padding:0 22px 14px;line-height:1.7;background:#2a2620 }' +
+      '.dn-calc{ background:#fff;border:1px solid var(--border, #dcd5c8);border-radius:16px;padding:0;margin:24px 0;box-shadow:0 8px 24px -14px rgba(77,99,88,.22);overflow:hidden }' +
+      '.dn-calc::before{ content:"";display:block;height:5px;background:linear-gradient(90deg,#0c5159 0%,#4d6358 50%,#a4b5a8 100%) }' +
+      '.dn-calc h3.dn-calc-title{ font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#0f172a;margin:0;padding:16px 22px 4px;background:linear-gradient(180deg,#f5fbfa 0%,#fff 100%) }' +
+      '.dn-calc .dn-calc-sub{ font-size:12.5px;color:#5e574e;margin:0;padding:0 22px 14px;line-height:1.7;background:linear-gradient(180deg,#fff 0%,#fff 100%);border-bottom:1px solid #ebe4d8 }' +
       '.dn-calc-row{ background:#fff;color:#0f172a;display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:8px 22px;border-top:1px solid #ebe4d8 }' +
-      '.dn-calc-row:first-of-type{ padding-top:14px }' +
-      '.dn-calc-row label{ color:#0f172a !important }' +
+      '.dn-calc-row:first-of-type{ padding-top:14px;border-top:0 }' +
       '.dn-calc .dn-calc-result{ margin:0;padding:14px 22px 16px;background:linear-gradient(135deg,#ecfeff,#f5fbfa);border-top:1px solid #a5f3fc;border-radius:0 }' +
       '.dn-calc .dn-calc-tools-link{ margin:0 22px 10px;display:inline-flex }' +
-      '.dn-calc .dn-calc-disclaimer{ margin:0;padding:0 22px 18px;background:#2a2620;color:rgba(247,243,236,.6) }' +
+      '.dn-calc .dn-calc-disclaimer{ margin:0;padding:8px 22px 16px;background:#fafaf6;color:#8b8378;border-top:1px solid #ebe4d8 }' +
       '.dn-calc-row{ display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #ebe4d8 }' +
       '.dn-calc-row:first-of-type{ border-top:0 }' +
       '.dn-calc-row label{ font-size:13.5px;color:#2a2620;font-weight:600 }' +
