@@ -95,6 +95,19 @@
     </image:image>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/contact-dermatitis</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/contact-dermatitis"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/contact-dermatitis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/contact-dermatitis"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/contact-dermatitis.png</image:loc>
+      <image:title>接觸性皮膚炎(過敏 vs 刺激)完整衛教</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/acne-myths</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -288,15 +301,6 @@
       <image:loc>https://chendermatologist.com/assets/og/warts-myths.png</image:loc>
       <image:title>病毒疣 6 大迷思</image:title>
     </image:image>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/blog/contact-dermatitis</loc>
-    <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/contact-dermatitis"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/contact-dermatitis"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/contact-dermatitis"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/shingles-myths</loc>
@@ -546,6 +550,14 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-overview"/>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/en/blog/contact-dermatitis</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/contact-dermatitis"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/contact-dermatitis"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/en/blog/acne-myths</loc>
