@@ -111,129 +111,151 @@
 
     // Acne pathogenesis — 4-step funnel (Gollnick 2003 / Williams 2012 / AAD 2024)
     'acne-pathogenesis': function () {
-      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" aria-labelledby="acne-path-title">' +
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 800 470" xmlns="http://www.w3.org/2000/svg" aria-labelledby="acne-path-title">' +
         '<title id="acne-path-title">痤瘡四大致病機轉</title>' +
-        '<rect width="720" height="360" fill="#faf7f2" rx="10"/>' +
-        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="18" font-weight="700" fill="#0c5159">痤瘡 4 大致病機轉</text>' +
-        // Step 1
-        '<g transform="translate(40 70)"><circle cx="60" cy="60" r="48" fill="#fef9c3" stroke="#854d0e" stroke-width="2"/>' +
-        '<text x="60" y="55" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">①</text>' +
-        '<text x="60" y="72" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="600" fill="#854d0e">皮脂分泌增加</text>' +
-        '<text x="60" y="135" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">Sebum (androgen)</text></g>' +
+        '<rect width="800" height="470" fill="#faf7f2" rx="10"/>' +
+        '<text x="400" y="36" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="20" font-weight="700" fill="#0c5159">痤瘡 4 大致病機轉</text>' +
+        // Step 1 — bigger circle (r=56) and bigger fonts
+        '<g transform="translate(40 80)"><circle cx="70" cy="70" r="56" fill="#fef9c3" stroke="#854d0e" stroke-width="2.5"/>' +
+        '<text x="70" y="62" text-anchor="middle" font-family="Inter" font-size="20" font-weight="800" fill="#854d0e">①</text>' +
+        '<text x="70" y="82" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="700" fill="#854d0e">皮脂分泌</text>' +
+        '<text x="70" y="100" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="700" fill="#854d0e">增加</text>' +
+        '<text x="70" y="160" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">Sebum (androgen)</text></g>' +
         // Arrow
-        '<path d="M165 130 L195 130" stroke="#4d6358" stroke-width="2" marker-end="url(#arrow)"/>' +
+        '<path d="M180 150 L210 150" stroke="#4d6358" stroke-width="2.5" marker-end="url(#arrow)"/>' +
         // Step 2
-        '<g transform="translate(200 70)"><circle cx="60" cy="60" r="48" fill="#fed7aa" stroke="#9a3412" stroke-width="2"/>' +
-        '<text x="60" y="55" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#9a3412">②</text>' +
-        '<text x="60" y="72" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="600" fill="#9a3412">毛囊角化異常</text>' +
-        '<text x="60" y="135" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">Comedo formation</text></g>' +
-        '<path d="M325 130 L355 130" stroke="#4d6358" stroke-width="2" marker-end="url(#arrow)"/>' +
+        '<g transform="translate(220 80)"><circle cx="70" cy="70" r="56" fill="#fed7aa" stroke="#9a3412" stroke-width="2.5"/>' +
+        '<text x="70" y="62" text-anchor="middle" font-family="Inter" font-size="20" font-weight="800" fill="#9a3412">②</text>' +
+        '<text x="70" y="82" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="700" fill="#9a3412">毛囊角化</text>' +
+        '<text x="70" y="100" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="700" fill="#9a3412">異常</text>' +
+        '<text x="70" y="160" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">Comedo formation</text></g>' +
+        '<path d="M360 150 L390 150" stroke="#4d6358" stroke-width="2.5" marker-end="url(#arrow)"/>' +
         // Step 3
-        '<g transform="translate(360 70)"><circle cx="60" cy="60" r="48" fill="#fee2e2" stroke="#991b1b" stroke-width="2"/>' +
-        '<text x="60" y="55" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#991b1b">③</text>' +
-        '<text x="60" y="72" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="600" fill="#991b1b">C. acnes 增生</text>' +
-        '<text x="60" y="135" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">Bacterial proliferation</text></g>' +
-        '<path d="M485 130 L515 130" stroke="#4d6358" stroke-width="2" marker-end="url(#arrow)"/>' +
+        '<g transform="translate(400 80)"><circle cx="70" cy="70" r="56" fill="#fee2e2" stroke="#991b1b" stroke-width="2.5"/>' +
+        '<text x="70" y="62" text-anchor="middle" font-family="Inter" font-size="20" font-weight="800" fill="#991b1b">③</text>' +
+        '<text x="70" y="82" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="700" fill="#991b1b">C. acnes</text>' +
+        '<text x="70" y="100" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="700" fill="#991b1b">增生</text>' +
+        '<text x="70" y="160" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">Bacterial proliferation</text></g>' +
+        '<path d="M540 150 L570 150" stroke="#4d6358" stroke-width="2.5" marker-end="url(#arrow)"/>' +
         // Step 4
-        '<g transform="translate(520 70)"><circle cx="60" cy="60" r="48" fill="#dc2626" stroke="#7f1d1d" stroke-width="2"/>' +
-        '<text x="60" y="55" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#fff">④</text>' +
-        '<text x="60" y="72" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="600" fill="#fff">免疫發炎反應</text>' +
-        '<text x="60" y="135" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">IL-1β / TLR2 / Th17</text></g>' +
-        // Drug action labels
-        '<text x="100" y="220" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">↑ Isotretinoin</text>' +
-        '<text x="100" y="234" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">↑ 抗雄性素</text>' +
-        '<text x="260" y="220" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">↑ Retinoids</text>' +
-        '<text x="260" y="234" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">↑ 角質溶解</text>' +
-        '<text x="420" y="220" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">↑ BPO</text>' +
-        '<text x="420" y="234" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">↑ 抗生素</text>' +
-        '<text x="580" y="220" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">↑ Anti-IL / NSAID</text>' +
-        '<text x="580" y="234" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">↑ 杜鵑花酸</text>' +
-        // Bottom note
-        '<text x="360" y="295" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">每個機轉對應不同藥物 — 中重度痘痘建議「組合治療」</text>' +
-        '<text x="360" y="320" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: AAD 2024 acne guideline · Dreno 2018 EADV consensus</text>' +
+        '<g transform="translate(580 80)"><circle cx="70" cy="70" r="56" fill="#dc2626" stroke="#7f1d1d" stroke-width="2.5"/>' +
+        '<text x="70" y="62" text-anchor="middle" font-family="Inter" font-size="20" font-weight="800" fill="#fff">④</text>' +
+        '<text x="70" y="82" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="700" fill="#fff">免疫發炎</text>' +
+        '<text x="70" y="100" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="700" fill="#fff">反應</text>' +
+        '<text x="70" y="160" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">IL-1β / TLR2 / Th17</text></g>' +
+        // Drug action labels — moved further down for breathing room and bigger font
+        '<text x="110" y="285" text-anchor="middle" font-family="Inter" font-size="14" font-weight="700" fill="#0c5159">↓ Isotretinoin</text>' +
+        '<text x="110" y="305" text-anchor="middle" font-family="Noto Sans TC" font-size="14" font-weight="700" fill="#0c5159">抗雄性素</text>' +
+        '<text x="290" y="285" text-anchor="middle" font-family="Inter" font-size="14" font-weight="700" fill="#0c5159">↓ Retinoids</text>' +
+        '<text x="290" y="305" text-anchor="middle" font-family="Noto Sans TC" font-size="14" font-weight="700" fill="#0c5159">角質溶解</text>' +
+        '<text x="470" y="285" text-anchor="middle" font-family="Inter" font-size="14" font-weight="700" fill="#0c5159">↓ BPO</text>' +
+        '<text x="470" y="305" text-anchor="middle" font-family="Noto Sans TC" font-size="14" font-weight="700" fill="#0c5159">抗生素</text>' +
+        '<text x="650" y="285" text-anchor="middle" font-family="Inter" font-size="14" font-weight="700" fill="#0c5159">↓ Anti-IL / NSAID</text>' +
+        '<text x="650" y="305" text-anchor="middle" font-family="Noto Sans TC" font-size="14" font-weight="700" fill="#0c5159">杜鵑花酸</text>' +
+        // Vertical down-arrows from each circle to its drug label group
+        '<line x1="110" y1="216" x2="110" y2="265" stroke="#4d6358" stroke-width="1.5" stroke-dasharray="3 3"/>' +
+        '<line x1="290" y1="216" x2="290" y2="265" stroke="#4d6358" stroke-width="1.5" stroke-dasharray="3 3"/>' +
+        '<line x1="470" y1="216" x2="470" y2="265" stroke="#4d6358" stroke-width="1.5" stroke-dasharray="3 3"/>' +
+        '<line x1="650" y1="216" x2="650" y2="265" stroke="#4d6358" stroke-width="1.5" stroke-dasharray="3 3"/>' +
+        // Bottom note — moved well below drug labels
+        '<text x="400" y="385" text-anchor="middle" font-family="Noto Sans TC" font-size="14" fill="#5e574e">每個機轉對應不同藥物 — 中重度痘痘建議「組合治療」</text>' +
+        '<text x="400" y="430" text-anchor="middle" font-family="Inter" font-size="12" fill="#8b8378">Source: AAD 2024 acne guideline · Dreno 2018 EADV consensus</text>' +
         '<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#4d6358"/></marker></defs>' +
-        '</svg><figcaption>圖 1. 痤瘡 4 大致病機轉與藥物作用點(Gollnick 2003;Williams Lancet 2012;AAD 2024)</figcaption></figure>';
+        '</svg><figcaption>圖 1。痤瘡 4 大致病機轉與藥物作用點(Gollnick 2003;Williams Lancet 2012;AAD 2024)</figcaption></figure>';
     },
 
     // BPO mechanism — peroxide + porphyrin → free radical → bacteria kill
     'bpo-mechanism': function () {
-      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" aria-labelledby="bpo-title">' +
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" aria-labelledby="bpo-title">' +
         '<title id="bpo-title">過氧化苯醯(BPO)殺菌機轉</title>' +
-        '<rect width="720" height="280" fill="#faf7f2" rx="10"/>' +
-        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">過氧化苯醯 BPO 為何能殺菌（且不像抗生素產生抗藥性）</text>' +
-        '<g transform="translate(60 70)"><rect x="0" y="0" width="120" height="60" rx="8" fill="#cffafe" stroke="#0c5159" stroke-width="1.5"/>' +
-        '<text x="60" y="25" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">BPO</text>' +
-        '<text x="60" y="42" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">過氧化苯醯</text>' +
-        '<text x="60" y="55" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">2.5–10%</text></g>' +
-        '<path d="M185 100 L235 100" stroke="#4d6358" stroke-width="2" marker-end="url(#arrow2)"/>' +
-        '<text x="210" y="92" text-anchor="middle" font-family="Inter" font-size="13" fill="#4d6358">+ 半胱胺酸</text>' +
-        '<g transform="translate(240 70)"><rect x="0" y="0" width="120" height="60" rx="8" fill="#fed7aa" stroke="#9a3412" stroke-width="1.5"/>' +
-        '<text x="60" y="25" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#9a3412">苯甲酸 → ·OH</text>' +
-        '<text x="60" y="42" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">自由基產生</text>' +
-        '<text x="60" y="55" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">(ROS)</text></g>' +
-        '<path d="M365 100 L415 100" stroke="#4d6358" stroke-width="2" marker-end="url(#arrow2)"/>' +
-        '<text x="390" y="92" text-anchor="middle" font-family="Inter" font-size="13" fill="#4d6358">氧化攻擊</text>' +
-        '<g transform="translate(420 70)"><rect x="0" y="0" width="120" height="60" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>' +
-        '<text x="60" y="25" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#dc2626">細菌膜破壞</text>' +
-        '<text x="60" y="42" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">C. acnes</text>' +
-        '<text x="60" y="55" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">蛋白質 / DNA 氧化</text></g>' +
-        '<path d="M545 100 L595 100" stroke="#4d6358" stroke-width="2" marker-end="url(#arrow2)"/>' +
-        '<g transform="translate(600 70)"><rect x="0" y="0" width="100" height="60" rx="8" fill="#dcfce7" stroke="#14532d" stroke-width="1.5"/>' +
-        '<text x="50" y="25" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">殺菌</text>' +
-        '<text x="50" y="48" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">無抗藥性</text></g>' +
-        '<text x="360" y="180" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">為什麼 BPO 不會產生抗藥性？</text>' +
-        '<text x="360" y="205" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">BPO 的「自由基」是非特異性氧化攻擊，細菌無法演化出單一靶點突變來抵抗。</text>' +
-        '<text x="360" y="225" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">因此它常用來「搭配」抗生素以降低抗生素抗藥率(Plewig & Kligman, 2024)。</text>' +
-        '<text x="360" y="258" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Sagransky JAAD 2009 · Plewig Acne 4th ed 2024 · BPO 2.5% ≈ 5% 同效但耐受佳</text>' +
+        '<rect width="800" height="400" fill="#faf7f2" rx="10"/>' +
+        '<text x="400" y="32" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="19" font-weight="700" fill="#0c5159">過氧化苯醯 BPO 為何能殺菌</text>' +
+        '<text x="400" y="56" text-anchor="middle" font-family="Noto Sans TC" font-size="14" fill="#5e574e">(且不像抗生素產生抗藥性)</text>' +
+        // Box 1 — BPO  (bigger boxes 150x80)
+        '<g transform="translate(40 90)"><rect x="0" y="0" width="150" height="80" rx="10" fill="#cffafe" stroke="#0c5159" stroke-width="2"/>' +
+        '<text x="75" y="32" text-anchor="middle" font-family="Inter" font-size="16" font-weight="800" fill="#0c5159">BPO</text>' +
+        '<text x="75" y="52" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">過氧化苯醯</text>' +
+        '<text x="75" y="70" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">2.5–10%</text></g>' +
+        // Arrow 1
+        '<path d="M195 130 L235 130" stroke="#4d6358" stroke-width="2.5" marker-end="url(#arrow2)"/>' +
+        '<text x="215" y="120" text-anchor="middle" font-family="Noto Sans TC" font-size="12" fill="#4d6358">+ 半胱胺酸</text>' +
+        // Box 2 — ROS
+        '<g transform="translate(240 90)"><rect x="0" y="0" width="170" height="80" rx="10" fill="#fed7aa" stroke="#9a3412" stroke-width="2"/>' +
+        '<text x="85" y="32" text-anchor="middle" font-family="Inter" font-size="15" font-weight="800" fill="#9a3412">苯甲酸 → ·OH</text>' +
+        '<text x="85" y="52" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">自由基產生</text>' +
+        '<text x="85" y="70" text-anchor="middle" font-family="Inter" font-size="12" fill="#5e574e">(ROS、活性氧)</text></g>' +
+        // Arrow 2
+        '<path d="M415 130 L455 130" stroke="#4d6358" stroke-width="2.5" marker-end="url(#arrow2)"/>' +
+        '<text x="435" y="120" text-anchor="middle" font-family="Noto Sans TC" font-size="12" fill="#4d6358">氧化攻擊</text>' +
+        // Box 3 — bacteria membrane
+        '<g transform="translate(460 90)"><rect x="0" y="0" width="180" height="80" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
+        '<text x="90" y="32" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="800" fill="#dc2626">細菌膜破壞</text>' +
+        '<text x="90" y="52" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">C. acnes</text>' +
+        '<text x="90" y="70" text-anchor="middle" font-family="Inter" font-size="12" fill="#5e574e">蛋白質 / DNA 氧化</text></g>' +
+        // Arrow 3
+        '<path d="M645 130 L685 130" stroke="#4d6358" stroke-width="2.5" marker-end="url(#arrow2)"/>' +
+        // Box 4 — kill / no resistance
+        '<g transform="translate(690 90)"><rect x="0" y="0" width="100" height="80" rx="10" fill="#dcfce7" stroke="#14532d" stroke-width="2"/>' +
+        '<text x="50" y="35" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="800" fill="#14532d">殺菌</text>' +
+        '<text x="50" y="58" text-anchor="middle" font-family="Noto Sans TC" font-size="12" fill="#5e574e">無抗藥性</text></g>' +
+        // Explanation block — well below the row, in its own card
+        '<rect x="60" y="220" width="680" height="125" rx="10" fill="#fff" stroke="#a5f3fc" stroke-width="1.5"/>' +
+        '<text x="400" y="248" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="700" fill="#0c5159">為什麼 BPO 不會產生抗藥性?</text>' +
+        '<text x="400" y="278" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">BPO 的「自由基」是非特異性氧化攻擊、</text>' +
+        '<text x="400" y="296" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">細菌無法演化出單一靶點突變來抵抗。</text>' +
+        '<text x="400" y="324" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">因此它常用來「搭配」抗生素以降低抗生素抗藥率(Plewig &amp; Kligman, 2024)。</text>' +
+        '<text x="400" y="378" text-anchor="middle" font-family="Inter" font-size="12" fill="#8b8378">Source: Sagransky JAAD 2009 · Plewig Acne 4th ed 2024 · BPO 2.5% ≈ 5% 同效但耐受佳</text>' +
         '<defs><marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#4d6358"/></marker></defs>' +
-        '</svg><figcaption>圖 2. BPO 的自由基殺菌機轉 — 為何單用 BPO 不會產生抗藥性，且能搭配抗生素降低抗藥率</figcaption></figure>';
+        '</svg><figcaption>圖 2。BPO 的自由基殺菌機轉 — 為何單用 BPO 不會產生抗藥性、且能搭配抗生素降低抗藥率</figcaption></figure>';
     },
 
     // UV penetration depth — UVA / UVB / visible light
     'uv-penetration': function () {
-      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" aria-labelledby="uv-title">' +
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" aria-labelledby="uv-title">' +
         '<title id="uv-title">UV 光波長與皮膚穿透深度</title>' +
-        '<rect width="720" height="360" fill="#faf7f2" rx="10"/>' +
-        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">UV 光波長與皮膚穿透深度</text>' +
-        // Skin layers — labels INSIDE the rectangles to avoid overlap with UV-arrow column
-        '<g transform="translate(280 70)">' +
-        '<rect x="0" y="0" width="320" height="35" fill="#fde68a" stroke="#4d6358" stroke-width="1"/>' +
-        '<text x="10" y="22" font-family="Noto Sans TC" font-size="13" font-weight="600" fill="#854d0e">表皮 Epidermis</text>' +
-        '<text x="310" y="22" text-anchor="end" font-family="Inter" font-size="12" fill="#5e574e">~ 0.05–0.15 mm</text>' +
-        '<rect x="0" y="35" width="320" height="80" fill="#fed7aa" stroke="#4d6358" stroke-width="1"/>' +
-        '<text x="10" y="80" font-family="Noto Sans TC" font-size="13" font-weight="600" fill="#9a3412">真皮 Dermis</text>' +
-        '<text x="310" y="80" text-anchor="end" font-family="Inter" font-size="12" fill="#5e574e">~ 1–3 mm(膠原 / 彈性纖維 / 微血管)</text>' +
-        '<rect x="0" y="115" width="320" height="50" fill="#fee2e2" stroke="#4d6358" stroke-width="1"/>' +
-        '<text x="10" y="145" font-family="Noto Sans TC" font-size="13" font-weight="600" fill="#7f1d1d">皮下組織</text>' +
-        '<text x="310" y="145" text-anchor="end" font-family="Inter" font-size="12" fill="#5e574e">脂肪 / 神經血管</text>' +
+        '<rect width="800" height="460" fill="#faf7f2" rx="10"/>' +
+        '<text x="400" y="32" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="19" font-weight="700" fill="#0c5159">UV 光波長與皮膚穿透深度</text>' +
+        // ───── Top row: 3 wavelength info cards (no overlap with anything below) ─────
+        '<g transform="translate(60 60)">' +
+        '<rect x="0" y="0" width="220" height="56" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/>' +
+        '<text x="110" y="22" text-anchor="middle" font-family="Inter" font-size="15" font-weight="800" fill="#7c3aed">UVB</text>' +
+        '<text x="110" y="42" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">280-315 nm · 表皮為主</text>' +
         '</g>' +
-        // UV arrows from above with different penetration depths
-        '<g transform="translate(80 60)">' +
-        '<text x="50" y="10" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7c3aed">UVB</text>' +
-        '<text x="50" y="25" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">280–315 nm</text>' +
-        '<line x1="50" y1="35" x2="50" y2="65" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrowU)"/>' +
-        '<text x="50" y="90" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">表皮為主</text>' +
-        '<text x="50" y="105" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">→ 曬傷 / 皮膚癌</text>' +
+        '<g transform="translate(290 60)">' +
+        '<rect x="0" y="0" width="220" height="56" rx="8" fill="#cffafe" stroke="#0c5159" stroke-width="1.8"/>' +
+        '<text x="110" y="22" text-anchor="middle" font-family="Inter" font-size="15" font-weight="800" fill="#0c5159">UVA</text>' +
+        '<text x="110" y="42" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">315-400 nm · 穿到真皮</text>' +
         '</g>' +
-        '<g transform="translate(140 60)">' +
-        '<text x="50" y="10" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">UVA</text>' +
-        '<text x="50" y="25" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">315–400 nm</text>' +
-        '<line x1="50" y1="35" x2="50" y2="155" stroke="#0c5159" stroke-width="3" marker-end="url(#arrowU)"/>' +
-        '<text x="50" y="180" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">穿到真皮</text>' +
-        '<text x="50" y="195" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">→ 光老化 / 肝斑</text>' +
+        '<g transform="translate(520 60)">' +
+        '<rect x="0" y="0" width="220" height="56" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.8"/>' +
+        '<text x="110" y="22" text-anchor="middle" font-family="Inter" font-size="15" font-weight="800" fill="#dc2626">可見光</text>' +
+        '<text x="110" y="42" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">400-700 nm · 穿透更深</text>' +
         '</g>' +
-        '<g transform="translate(200 60)">' +
-        '<text x="50" y="10" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#dc2626">可見光</text>' +
-        '<text x="50" y="25" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">400–700 nm</text>' +
-        '<line x1="50" y1="35" x2="50" y2="220" stroke="#dc2626" stroke-width="3" marker-end="url(#arrowU)"/>' +
-        '<text x="50" y="245" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">穿透更深</text>' +
-        '<text x="50" y="260" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">→ 加重肝斑</text>' +
+        // ───── Vertical penetration arrows from each card ─────
+        '<line x1="170" y1="120" x2="170" y2="148" stroke="#7c3aed" stroke-width="3.5" marker-end="url(#arrowU)"/>' +
+        '<line x1="400" y1="120" x2="400" y2="208" stroke="#0c5159" stroke-width="3.5" marker-end="url(#arrowU)"/>' +
+        '<line x1="630" y1="120" x2="630" y2="288" stroke="#dc2626" stroke-width="3.5" marker-end="url(#arrowU)"/>' +
+        // ───── Skin cross-section (FULL WIDTH, no horizontal interference) ─────
+        '<g transform="translate(60 158)">' +
+        '<rect x="0" y="0" width="680" height="48" fill="#fde68a" stroke="#4d6358" stroke-width="1.5"/>' +
+        '<text x="14" y="29" font-family="Noto Sans TC" font-size="14" font-weight="700" fill="#854d0e">表皮 Epidermis</text>' +
+        '<text x="666" y="29" text-anchor="end" font-family="Inter" font-size="12" fill="#5e574e">~ 0.05-0.15 mm</text>' +
+        '<rect x="0" y="48" width="680" height="100" fill="#fed7aa" stroke="#4d6358" stroke-width="1.5"/>' +
+        '<text x="14" y="100" font-family="Noto Sans TC" font-size="14" font-weight="700" fill="#9a3412">真皮 Dermis</text>' +
+        '<text x="666" y="100" text-anchor="end" font-family="Inter" font-size="12" fill="#5e574e">~ 1-3 mm(膠原、彈性纖維、微血管)</text>' +
+        '<rect x="0" y="148" width="680" height="60" fill="#fee2e2" stroke="#4d6358" stroke-width="1.5"/>' +
+        '<text x="14" y="184" font-family="Noto Sans TC" font-size="14" font-weight="700" fill="#7f1d1d">皮下組織</text>' +
+        '<text x="666" y="184" text-anchor="end" font-family="Inter" font-size="12" fill="#5e574e">脂肪、神經血管</text>' +
         '</g>' +
-        // Bottom note
-        '<text x="360" y="320" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">關鍵：UVA 占地表 UV 95%，但傳統 SPF 只測 UVB → 一定要看 PA 或 Broad-spectrum 標示</text>' +
-        '<text x="360" y="340" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Diffey BJD 2002 · Mahmoud JAAD 2010 · Liebel JID 2012 (visible light & melasma)</text>' +
+        // ───── Outcome labels under each column ─────
+        '<text x="170" y="395" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#7c3aed">→ 曬傷、皮膚癌</text>' +
+        '<text x="400" y="395" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">→ 光老化、肝斑</text>' +
+        '<text x="630" y="395" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#dc2626">→ 加重肝斑</text>' +
+        // ───── Bottom note ─────
+        '<text x="400" y="425" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">關鍵:UVA 占地表 UV 95%、但傳統 SPF 只測 UVB → 一定要看 PA 或 Broad-spectrum 標示</text>' +
+        '<text x="400" y="448" text-anchor="middle" font-family="Inter" font-size="11.5" fill="#8b8378">Source: Diffey BJD 2002 · Mahmoud JAAD 2010 · Liebel JID 2012 (visible light &amp; melasma)</text>' +
         '<defs><marker id="arrowU" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="currentColor"/></marker></defs>' +
-        '</svg><figcaption>圖. UV 波長越長 → 穿透越深；UVA 與可見光是肝斑與光老化主因，需要 broad-spectrum 防曬</figcaption></figure>';
+        '</svg><figcaption>圖。UV 波長越長 → 穿透越深;UVA 與可見光是肝斑與光老化主因、需要 broad-spectrum 防曬</figcaption></figure>';
     },
 
     // SPF efficacy curve — % UV blocked vs SPF number
@@ -2930,6 +2952,45 @@
     }, { rootMargin: '-30% 0px -50% 0px' });
     h2s.forEach(function (h) { io.observe(h); });
 
+    // 2026-05-08 — Auto-hide floating TOC when user scrolls into article-end zone
+    // (author bio / disclaimer / mag-footer). Without this the TOC stays visible
+    // and overlaps the dark site footer's brand text. Use IntersectionObserver
+    // on the article's last sibling (related/author/disclaimer/footer) so we
+    // restore correctly when scrolling back up.
+    aside.style.transition = 'opacity .25s, visibility .25s';
+    aside.style.willChange = 'opacity';
+    var hideAnchor = document.querySelector('#dn-author-bio, #dn-legal-disclaimer, footer.mag-footer, footer');
+    if (!hideAnchor) {
+      // The bio/disclaimer haven't been injected yet at this moment; defer the
+      // observer wiring. Observe the document body for additions, then attach.
+      var attachObs = new MutationObserver(function () {
+        var el = document.querySelector('#dn-author-bio, #dn-legal-disclaimer, footer.mag-footer, footer');
+        if (el) {
+          attachObs.disconnect();
+          attachHide(el);
+        }
+      });
+      attachObs.observe(document.body, { childList: true, subtree: true });
+    } else {
+      attachHide(hideAnchor);
+    }
+    function attachHide(target) {
+      var io2 = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            aside.style.opacity = '0';
+            aside.style.visibility = 'hidden';
+            aside.style.pointerEvents = 'none';
+          } else {
+            aside.style.opacity = '';
+            aside.style.visibility = '';
+            aside.style.pointerEvents = '';
+          }
+        });
+      }, { rootMargin: '0px 0px -40% 0px' });
+      io2.observe(target);
+    }
+
     // Hide on resize below threshold (matches initial TOC_MIN_WIDTH).
     // Also re-truncate text labels when crossing breakpoints.
     let lastWidth = window.innerWidth;
@@ -3505,15 +3566,16 @@
     var st = document.createElement('style');
     st.id = 'dn-calc-css';
     st.textContent =
-      '.dn-calc{ background:#fff;border:1px solid var(--border, #dcd5c8);border-radius:16px;padding:0;margin:24px 0;box-shadow:0 8px 24px -14px rgba(77,99,88,.22);overflow:hidden }' +
+      '.dn-calc{ background:#fff;border:1px solid var(--border, #dcd5c8);border-radius:18px;padding:0;margin:32px 0;box-shadow:0 10px 28px -16px rgba(77,99,88,.22);overflow:hidden }' +
       '.dn-calc::before{ content:"";display:block;height:5px;background:linear-gradient(90deg,#0c5159 0%,#4d6358 50%,#a4b5a8 100%) }' +
-      '.dn-calc h3.dn-calc-title{ font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#0f172a;margin:0;padding:16px 22px 4px;background:linear-gradient(180deg,#f5fbfa 0%,#fff 100%) }' +
-      '.dn-calc .dn-calc-sub{ font-size:12.5px;color:#5e574e;margin:0;padding:0 22px 14px;line-height:1.7;background:linear-gradient(180deg,#fff 0%,#fff 100%);border-bottom:1px solid #ebe4d8 }' +
-      '.dn-calc-row{ background:#fff;color:#0f172a;display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:8px 22px;border-top:1px solid #ebe4d8 }' +
-      '.dn-calc-row:first-of-type{ padding-top:14px;border-top:0 }' +
-      '.dn-calc .dn-calc-result{ margin:0;padding:14px 22px 16px;background:linear-gradient(135deg,#ecfeff,#f5fbfa);border-top:1px solid #a5f3fc;border-radius:0 }' +
-      '.dn-calc .dn-calc-tools-link{ margin:0 22px 10px;display:inline-flex }' +
-      '.dn-calc .dn-calc-disclaimer{ margin:0;padding:8px 22px 16px;background:#fafaf6;color:#8b8378;border-top:1px solid #ebe4d8 }' +
+      '.dn-calc h3.dn-calc-title{ font-family:\'Noto Serif TC\',Georgia,serif;font-size:19px;font-weight:700;color:#0f172a;margin:0;padding:22px 28px 8px;background:linear-gradient(180deg,#f5fbfa 0%,#fff 100%);line-height:1.4 }' +
+      '.dn-calc .dn-calc-sub{ font-size:13px;color:#5e574e;margin:0;padding:0 28px 18px;line-height:1.75;background:#fff;border-bottom:1px solid #ebe4d8 }' +
+      '.dn-calc-row{ background:#fff;color:#0f172a;display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px;padding:14px 28px;border-top:1px solid #f1ece4 }' +
+      '.dn-calc-row:first-of-type{ padding-top:20px;border-top:0 }' +
+      '.dn-calc-row:last-of-type{ padding-bottom:20px }' +
+      '.dn-calc .dn-calc-result{ margin:0;padding:20px 28px 22px;background:linear-gradient(135deg,#ecfeff,#f5fbfa);border-top:1px solid #a5f3fc;border-radius:0 }' +
+      '.dn-calc .dn-calc-tools-link{ margin:14px 28px 4px;display:inline-flex }' +
+      '.dn-calc .dn-calc-disclaimer{ margin:0;padding:14px 28px 22px;background:#fafaf6;color:#8b8378;border-top:1px solid #ebe4d8 }' +
       '.dn-calc-row{ display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #ebe4d8 }' +
       '.dn-calc-row:first-of-type{ border-top:0 }' +
       '.dn-calc-row label{ font-size:13.5px;color:#2a2620;font-weight:600 }' +
@@ -5009,10 +5071,13 @@
     if (!footer) return;
     var section = document.createElement('section');
     section.id = 'dn-bmc-footer';
-    section.style.cssText = 'max-width:780px;margin:0 auto 0;padding:24px 20px 0;text-align:center';
+    // 2026-05-08 — align width + horizontal padding with addAuthorBio for visual
+    // consistency (same .max-w-3xl mx-auto px-5 sm:px-8 my-6 wrapper).
+    section.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
+    section.style.cssText = 'text-align:center';
     // Subtle white card matching the rest of the site
     section.innerHTML =
-      '<div style="background:#fff;border:1px solid var(--border,#e7e2d8);border-radius:18px;padding:22px 26px;box-shadow:0 4px 14px -8px rgba(15,23,42,.08)">' +
+      '<div style="background:#fff;border:1px solid var(--border,#e7e2d8);border-radius:18px;padding:22px 24px;box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(77,99,88,.18)">' +
         '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#0e7c86;font-weight:700;margin-bottom:6px" data-zh="如果這個網站對您有幫助" data-en="If this site has helped you">如果這個網站對您有幫助</div>' +
         '<h3 style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:20px;font-weight:700;color:#0f172a;margin:0 0 8px" data-zh="請我喝杯咖啡 ☕" data-en="Buy me a coffee ☕">請我喝杯咖啡 ☕</h3>' +
         '<p style="font-size:13px;color:#5e574e;line-height:1.85;margin:0 auto 14px;max-width:540px" data-zh="本網站<strong>無業配、無贊助</strong>，所有衛教文章與量表計算器都<strong>免費</strong>。本贊助為讀者自願性的內容打賞，<strong>非醫療服務費用</strong>，不涉及任何醫療諮詢、診斷或治療。" data-en="No ads, no sponsorships. All articles and calculators are free. This support is a voluntary content tip, not a medical-service fee, and does not involve any medical consultation, diagnosis, or treatment.">本網站<strong>無業配、無贊助</strong>，所有衛教文章與量表計算器都<strong>免費</strong>。本贊助為讀者自願性的內容打賞，<strong>非醫療服務費用</strong>，不涉及任何醫療諮詢、診斷或治療。</p>' +
@@ -5605,7 +5670,8 @@
       DN.addFloatingTOC();
       // ─── Deferred ───
       idle(function () { DN.bindScrollMemory(); }, { timeout: 1500 });
-      idle(function () { DN.addInlineCTA(); }, { timeout: 1500 });
+      // 2026-05-08 — 「想評估自己的嚴重度?」 callout removed per user (reading-load reduction).
+      // idle(function () { DN.addInlineCTA(); }, { timeout: 1500 });
       idle(function () { DN.injectArticleHero(); }, { timeout: 1500 });
       idle(function () { DN.injectMedDiagrams(); }, { timeout: 2000 });
       idle(function () { DN.enhanceArticleImages(); }, { timeout: 2500 });
