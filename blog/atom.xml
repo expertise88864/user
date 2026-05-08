@@ -4,7 +4,7 @@
   <link href="https://chendermatologist.com/" rel="alternate"/>
   <link href="https://chendermatologist.com/blog/atom.xml" rel="self"/>
   <id>https://chendermatologist.com/</id>
-  <updated>2026-05-08T09:39:08Z</updated>
+  <updated>2026-05-08T10:33:10Z</updated>
   <author>
     <name>陳翊嘉 醫師</name>
     <email>expertise88864@gmail.com</email>
@@ -27,6 +27,15 @@
     <published>2026-05-08T00:00:00Z</published>
     <category term="接觸性皮膚炎"/>
     <summary>接觸性皮膚炎(過敏 vs 刺激)完整衛教 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
+  </entry>
+  <entry>
+    <title>日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教</title>
+    <link href="https://chendermatologist.com/blog/actinic-keratosis-scc" rel="alternate"/>
+    <id>https://chendermatologist.com/blog/actinic-keratosis-scc</id>
+    <updated>2026-05-08T00:00:00Z</updated>
+    <published>2026-05-08T00:00:00Z</published>
+    <category term="皮膚癌"/>
+    <summary>日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
   </entry>
   <entry>
     <title>痘痘 9 大迷思</title>
@@ -270,14 +279,5 @@
     <published>2026-05-03T00:00:00Z</published>
     <category term="落髮"/>
     <summary>落髮 / 雄性禿 7 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
-  </entry>
-  <entry>
-    <title>香港腳 / 灰指甲 7 大迷思</title>
-    <link href="https://chendermatologist.com/blog/tinea-myths" rel="alternate"/>
-    <id>https://chendermatologist.com/blog/tinea-myths</id>
-    <updated>2026-05-03T00:00:00Z</updated>
-    <published>2026-05-03T00:00:00Z</published>
-    <category term="足癬"/>
-    <summary>香港腳 / 灰指甲 7 大迷思 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
   </entry>
 </feed>

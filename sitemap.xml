@@ -108,6 +108,19 @@
     </image:image>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/actinic-keratosis-scc</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/actinic-keratosis-scc"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/actinic-keratosis-scc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/actinic-keratosis-scc"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/assets/og/actinic-keratosis-scc.png</image:loc>
+      <image:title>日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/acne-myths</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -558,6 +571,14 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/contact-dermatitis"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/contact-dermatitis"/>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/en/blog/actinic-keratosis-scc</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/actinic-keratosis-scc"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/actinic-keratosis-scc"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/en/blog/acne-myths</loc>
