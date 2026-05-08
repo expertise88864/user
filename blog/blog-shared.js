@@ -111,56 +111,56 @@
 
     // Acne pathogenesis — 4-step funnel (Gollnick 2003 / Williams 2012 / AAD 2024)
     'acne-pathogenesis': function () {
-      return '<figure class="dn-med-fig"><svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" aria-labelledby="acne-path-title">' +
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 960 640" xmlns="http://www.w3.org/2000/svg" aria-labelledby="acne-path-title">' +
         '<title id="acne-path-title">痤瘡四大致病機轉</title>' +
-        '<rect width="960" height="600" fill="#faf7f2" rx="10"/>' +
-        '<text x="480" y="48" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="32" font-weight="700" fill="#0c5159">痤瘡 4 大致病機轉</text>' +
+        '<rect width="960" height="640" fill="#faf7f2" rx="10"/>' +
+        '<text x="480" y="52" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="40" font-weight="700" fill="#0c5159">痤瘡 4 大致病機轉</text>' +
         // Step 1
-        '<g transform="translate(40 100)"><circle cx="100" cy="100" r="82" fill="#fef9c3" stroke="#854d0e" stroke-width="3"/>' +
-        '<text x="100" y="78" text-anchor="middle" font-family="Inter" font-size="34" font-weight="800" fill="#854d0e">①</text>' +
-        '<text x="100" y="112" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#854d0e">皮脂分泌</text>' +
-        '<text x="100" y="146" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#854d0e">增加</text>' +
-        '<text x="100" y="220" text-anchor="middle" font-family="Inter" font-size="18" fill="#5e574e">Sebum (androgen)</text></g>' +
-        '<path d="M222 200 L268 200" stroke="#4d6358" stroke-width="4" marker-end="url(#arrow)"/>' +
+        '<g transform="translate(30 110)"><circle cx="100" cy="100" r="92" fill="#fef9c3" stroke="#854d0e" stroke-width="3"/>' +
+        '<text x="100" y="76" text-anchor="middle" font-family="Inter" font-size="44" font-weight="800" fill="#854d0e">①</text>' +
+        '<text x="100" y="118" text-anchor="middle" font-family="Noto Sans TC" font-size="34" font-weight="700" fill="#854d0e">皮脂分泌</text>' +
+        '<text x="100" y="158" text-anchor="middle" font-family="Noto Sans TC" font-size="34" font-weight="700" fill="#854d0e">增加</text>' +
+        '<text x="100" y="234" text-anchor="middle" font-family="Inter" font-size="22" fill="#5e574e">Sebum (androgen)</text></g>' +
+        '<path d="M222 210 L258 210" stroke="#4d6358" stroke-width="5" marker-end="url(#arrow)"/>' +
         // Step 2
-        '<g transform="translate(270 100)"><circle cx="100" cy="100" r="82" fill="#fed7aa" stroke="#9a3412" stroke-width="3"/>' +
-        '<text x="100" y="78" text-anchor="middle" font-family="Inter" font-size="34" font-weight="800" fill="#9a3412">②</text>' +
-        '<text x="100" y="112" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#9a3412">毛囊角化</text>' +
-        '<text x="100" y="146" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#9a3412">異常</text>' +
-        '<text x="100" y="220" text-anchor="middle" font-family="Inter" font-size="18" fill="#5e574e">Comedo formation</text></g>' +
-        '<path d="M452 200 L498 200" stroke="#4d6358" stroke-width="4" marker-end="url(#arrow)"/>' +
+        '<g transform="translate(260 110)"><circle cx="100" cy="100" r="92" fill="#fed7aa" stroke="#9a3412" stroke-width="3"/>' +
+        '<text x="100" y="76" text-anchor="middle" font-family="Inter" font-size="44" font-weight="800" fill="#9a3412">②</text>' +
+        '<text x="100" y="118" text-anchor="middle" font-family="Noto Sans TC" font-size="34" font-weight="700" fill="#9a3412">毛囊角化</text>' +
+        '<text x="100" y="158" text-anchor="middle" font-family="Noto Sans TC" font-size="34" font-weight="700" fill="#9a3412">異常</text>' +
+        '<text x="100" y="234" text-anchor="middle" font-family="Inter" font-size="22" fill="#5e574e">Comedo formation</text></g>' +
+        '<path d="M452 210 L488 210" stroke="#4d6358" stroke-width="5" marker-end="url(#arrow)"/>' +
         // Step 3
-        '<g transform="translate(500 100)"><circle cx="100" cy="100" r="82" fill="#fee2e2" stroke="#991b1b" stroke-width="3"/>' +
-        '<text x="100" y="78" text-anchor="middle" font-family="Inter" font-size="34" font-weight="800" fill="#991b1b">③</text>' +
-        '<text x="100" y="112" text-anchor="middle" font-family="Inter" font-size="22" font-weight="700" font-style="italic" fill="#991b1b">C. acnes</text>' +
-        '<text x="100" y="146" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#991b1b">增生</text>' +
-        '<text x="100" y="220" text-anchor="middle" font-family="Inter" font-size="18" fill="#5e574e">Bacterial proliferation</text></g>' +
-        '<path d="M682 200 L728 200" stroke="#4d6358" stroke-width="4" marker-end="url(#arrow)"/>' +
+        '<g transform="translate(490 110)"><circle cx="100" cy="100" r="92" fill="#fee2e2" stroke="#991b1b" stroke-width="3"/>' +
+        '<text x="100" y="76" text-anchor="middle" font-family="Inter" font-size="44" font-weight="800" fill="#991b1b">③</text>' +
+        '<text x="100" y="120" text-anchor="middle" font-family="Inter" font-size="28" font-weight="700" font-style="italic" fill="#991b1b">C. acnes</text>' +
+        '<text x="100" y="160" text-anchor="middle" font-family="Noto Sans TC" font-size="34" font-weight="700" fill="#991b1b">增生</text>' +
+        '<text x="100" y="234" text-anchor="middle" font-family="Inter" font-size="22" fill="#5e574e">Bacterial proliferation</text></g>' +
+        '<path d="M682 210 L718 210" stroke="#4d6358" stroke-width="5" marker-end="url(#arrow)"/>' +
         // Step 4
-        '<g transform="translate(730 100)"><circle cx="100" cy="100" r="82" fill="#dc2626" stroke="#7f1d1d" stroke-width="3"/>' +
-        '<text x="100" y="78" text-anchor="middle" font-family="Inter" font-size="34" font-weight="800" fill="#fff">④</text>' +
-        '<text x="100" y="112" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#fff">免疫發炎</text>' +
-        '<text x="100" y="146" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#fff">反應</text>' +
-        '<text x="100" y="220" text-anchor="middle" font-family="Inter" font-size="18" fill="#5e574e">IL-1β / TLR2 / Th17</text></g>' +
-        // Drug action labels — bumped to 22px
-        '<text x="140" y="378" text-anchor="middle" font-family="Inter" font-size="22" font-weight="700" fill="#0c5159">↓ Isotretinoin</text>' +
-        '<text x="140" y="408" text-anchor="middle" font-family="Noto Sans TC" font-size="22" font-weight="700" fill="#0c5159">抗雄性素</text>' +
-        '<text x="370" y="378" text-anchor="middle" font-family="Inter" font-size="22" font-weight="700" fill="#0c5159">↓ Retinoids</text>' +
-        '<text x="370" y="408" text-anchor="middle" font-family="Noto Sans TC" font-size="22" font-weight="700" fill="#0c5159">角質溶解</text>' +
-        '<text x="600" y="378" text-anchor="middle" font-family="Inter" font-size="22" font-weight="700" fill="#0c5159">↓ BPO</text>' +
-        '<text x="600" y="408" text-anchor="middle" font-family="Noto Sans TC" font-size="22" font-weight="700" fill="#0c5159">抗生素</text>' +
-        '<text x="830" y="378" text-anchor="middle" font-family="Inter" font-size="22" font-weight="700" fill="#0c5159">↓ Anti-IL</text>' +
-        '<text x="830" y="408" text-anchor="middle" font-family="Noto Sans TC" font-size="22" font-weight="700" fill="#0c5159">杜鵑花酸</text>' +
+        '<g transform="translate(720 110)"><circle cx="100" cy="100" r="92" fill="#dc2626" stroke="#7f1d1d" stroke-width="3"/>' +
+        '<text x="100" y="76" text-anchor="middle" font-family="Inter" font-size="44" font-weight="800" fill="#fff">④</text>' +
+        '<text x="100" y="118" text-anchor="middle" font-family="Noto Sans TC" font-size="34" font-weight="700" fill="#fff">免疫發炎</text>' +
+        '<text x="100" y="158" text-anchor="middle" font-family="Noto Sans TC" font-size="34" font-weight="700" fill="#fff">反應</text>' +
+        '<text x="100" y="234" text-anchor="middle" font-family="Inter" font-size="20" fill="#5e574e">IL-1β / TLR2 / Th17</text></g>' +
+        // Drug action labels — bumped to 28px
+        '<text x="130" y="408" text-anchor="middle" font-family="Inter" font-size="28" font-weight="700" fill="#0c5159">↓ Isotretinoin</text>' +
+        '<text x="130" y="446" text-anchor="middle" font-family="Noto Sans TC" font-size="28" font-weight="700" fill="#0c5159">抗雄性素</text>' +
+        '<text x="360" y="408" text-anchor="middle" font-family="Inter" font-size="28" font-weight="700" fill="#0c5159">↓ Retinoids</text>' +
+        '<text x="360" y="446" text-anchor="middle" font-family="Noto Sans TC" font-size="28" font-weight="700" fill="#0c5159">角質溶解</text>' +
+        '<text x="590" y="408" text-anchor="middle" font-family="Inter" font-size="28" font-weight="700" fill="#0c5159">↓ BPO</text>' +
+        '<text x="590" y="446" text-anchor="middle" font-family="Noto Sans TC" font-size="28" font-weight="700" fill="#0c5159">抗生素</text>' +
+        '<text x="820" y="408" text-anchor="middle" font-family="Inter" font-size="28" font-weight="700" fill="#0c5159">↓ Anti-IL</text>' +
+        '<text x="820" y="446" text-anchor="middle" font-family="Noto Sans TC" font-size="28" font-weight="700" fill="#0c5159">杜鵑花酸</text>' +
         // Vertical dashed connectors
-        '<line x1="140" y1="295" x2="140" y2="358" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
-        '<line x1="370" y1="295" x2="370" y2="358" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
-        '<line x1="600" y1="295" x2="600" y2="358" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
-        '<line x1="830" y1="295" x2="830" y2="358" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
+        '<line x1="130" y1="312" x2="130" y2="386" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
+        '<line x1="360" y1="312" x2="360" y2="386" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
+        '<line x1="590" y1="312" x2="590" y2="386" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
+        '<line x1="820" y1="312" x2="820" y2="386" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
         // Bottom note
-        '<text x="480" y="498" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">每個機轉對應不同藥物 — 中重度痘痘建議「組合治療」</text>' +
-        '<text x="480" y="558" text-anchor="middle" font-family="Inter" font-size="16" fill="#8b8378">Source: AAD 2024 acne guideline · Dreno 2018 EADV consensus</text>' +
+        '<text x="480" y="540" text-anchor="middle" font-family="Noto Sans TC" font-size="26" fill="#5e574e">每個機轉對應不同藥物 — 中重度痘痘建議「組合治療」</text>' +
+        '<text x="480" y="600" text-anchor="middle" font-family="Inter" font-size="18" fill="#8b8378">Source: AAD 2024 acne guideline · Dreno 2018 EADV consensus</text>' +
         '<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#4d6358"/></marker></defs>' +
-        '</svg><figcaption>圖 1。痤瘡 4 大致病機轉與藥物作用點(Gollnick 2003;Williams Lancet 2012;AAD 2024)</figcaption></figure>';
+        '</svg><figcaption>圖 1。痤瘡 4 大致病機轉與藥物作用點（Gollnick 2003；Williams Lancet 2012；AAD 2024）</figcaption></figure>';
     },
 
     // BPO mechanism — peroxide + porphyrin → free radical → bacteria kill
@@ -2046,9 +2046,12 @@
     //   - desktop non-article: nothing in the way → totop at bottom:24px
     var hasFontSizer = !!document.querySelector('.prose, #proseZh, .prose-zh');
     var isMobile = (typeof window !== 'undefined') && window.matchMedia && window.matchMedia('(max-width: 767px)').matches;
+    // 2026-05-08 — bumped clearances so 回到頂端 button doesn't visually overlap
+    // the font-sizer (S/M/L/XL pill, ~132px tall). Was 182/240; now 196/260
+    // to leave a comfortable ~12-16px gap above the font-sizer.
     var bottomPos = hasFontSizer
-      ? (isMobile ? '240px' : '182px')
-      : (isMobile ? '88px'  : '24px');
+      ? (isMobile ? '260px' : '200px')
+      : (isMobile ? '96px'  : '24px');
     btn.style.cssText = 'position:fixed;right:18px;bottom:' + bottomPos + ';width:42px;height:42px;border-radius:50%;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;border:1px solid rgba(12,81,89,.5);box-shadow:0 8px 20px -8px rgba(12,81,89,.55);cursor:pointer;display:none;align-items:center;justify-content:center;z-index:50;font-size:18px;line-height:1;transition:transform .2s,opacity .2s';
     btn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
     btn.addEventListener('mouseenter', function () { btn.style.transform = 'translateY(-2px) scale(1.05)'; });
