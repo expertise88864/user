@@ -65,6 +65,16 @@ footer.mag-footer {
 /* Hero stays always rendered for fast LCP */
 .mag-hero, header.sticky { content-visibility: visible; }
 
+/* dn-med-fig — keep SVG fonts readable on mobile via horizontal scroll
+   instead of squeezing the whole figure to viewport width. */
+.dn-med-fig{ overflow-x:auto; -webkit-overflow-scrolling:touch; margin:18px -8px }
+.dn-med-fig svg{ display:block; min-width:680px; max-width:100%; height:auto }
+.dn-med-fig figcaption{ font-size:12.5px; color:#5e574e; line-height:1.7; padding:6px 12px 0; text-align:center }
+@media (max-width:640px){
+  .dn-med-fig{ margin:14px -16px; padding:0 4px }
+  .dn-med-fig svg{ min-width:680px }
+}
+
 /* ─────────────────────────────────────────────────────────────────
    Print-friendly stylesheet — for printing patient handouts
    Hide nav/ads/calculators/sticky elements; show full URLs after links;
