@@ -4,12 +4,21 @@
   <link href="https://chendermatologist.com/" rel="alternate"/>
   <link href="https://chendermatologist.com/blog/atom.xml" rel="self"/>
   <id>https://chendermatologist.com/</id>
-  <updated>2026-05-08T23:38:03Z</updated>
+  <updated>2026-05-09T04:58:25Z</updated>
   <author>
     <name>陳翊嘉 醫師</name>
     <email>expertise88864@gmail.com</email>
   </author>
   <generator uri="https://chendermatologist.com">DermNotes auto-feed v1</generator>
+  <entry>
+    <title>皮膚切片與腫瘤切除手術完整衛教 — 為什麼要切？怎麼切？術後怎麼照顧？</title>
+    <link href="https://chendermatologist.com/blog/skin-biopsy-excision" rel="alternate"/>
+    <id>https://chendermatologist.com/blog/skin-biopsy-excision</id>
+    <updated>2026-05-09T00:00:00Z</updated>
+    <published>2026-05-09T00:00:00Z</published>
+    <category term="處置 / 手術"/>
+    <summary>皮膚切片與腫瘤切除手術完整衛教 — 為什麼要切？怎麼切？術後怎麼照顧？ — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
+  </entry>
   <entry>
     <title>乾癬完整衛教 — 分型、嚴重度、誘發因子</title>
     <link href="https://chendermatologist.com/blog/psoriasis-overview" rel="alternate"/>
@@ -270,14 +279,5 @@
     <published>2026-05-04T00:00:00Z</published>
     <category term="標靶藥物"/>
     <summary>標靶藥物（TKI）皮膚副作用 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
-  </entry>
-  <entry>
-    <title>外用類固醇完整指南</title>
-    <link href="https://chendermatologist.com/blog/topical-steroids-guide" rel="alternate"/>
-    <id>https://chendermatologist.com/blog/topical-steroids-guide</id>
-    <updated>2026-05-04T00:00:00Z</updated>
-    <published>2026-05-04T00:00:00Z</published>
-    <category term="外用類固醇"/>
-    <summary>外用類固醇完整指南 — 陳翊嘉醫師(皮膚科)的衛教文章。</summary>
   </entry>
 </feed>
