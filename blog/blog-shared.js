@@ -3410,25 +3410,55 @@
     const cur = all.find(function (a) { return a.slug === slug; });
     if (!cur) return;
 
-    // R32: Content-vector scoring — keyword overlap between titles + tags (deterministic, no random)
+    // 2026-05-09 — TAG_GROUPS-membership scoring (replaces token-overlap).
+    // Why: token-based "overlap" matched articles with shared common Chinese
+    // chars like "皮膚" or "腫瘤" — recommending "標靶藥物副作用" as related to
+    // "皮膚切片". The new logic uses curated TAG_GROUPS membership as the
+    // primary signal, with tag string + category as secondary tiebreakers.
+    function tagGroupsContaining(slug) {
+      // Returns array of group keys whose article-list contains this slug
+      var groups = [];
+      try {
+        var TG = DN.TAG_GROUPS || {};
+        Object.keys(TG).forEach(function (k) {
+          if ((TG[k] || []).indexOf(slug) !== -1) groups.push(k);
+        });
+      } catch (e) {}
+      return groups;
+    }
+    var curGroups = new Set(tagGroupsContaining(cur.slug));
     function tokens(a) {
+      // Used only as a weak fallback signal
       var t = (a.title + ' ' + (a.tag || '') + ' ' + (a.tag_en || '')).toLowerCase();
-      // Split on whitespace + Chinese is per-char for overlap matching
       return new Set(t.split(/[\s\/\-,()·]+/).filter(function (w) { return w.length > 1; })
         .concat((t.match(/[一-鿿]{2,}/g) || [])));
     }
+    // Penalize over-common tokens that match too broadly across topics
+    var COMMON_TOKENS = new Set(['皮膚', '完整', '衛教', '迷思', '治療', '藥物', '副作用', '常見']);
     var curTok = tokens(cur);
     const scored = all.filter(function (a) { return a.slug !== slug; })
       .map(function (a) {
-        var aTok = tokens(a);
+        // PRIMARY signal: shared TAG_GROUPS membership (huge weight)
+        var aGroups = tagGroupsContaining(a.slug);
+        var sharedGroups = aGroups.filter(function (g) { return curGroups.has(g); });
+        var groupBonus = sharedGroups.length * 20; // 20 points per shared group
+        // SECONDARY: same exact tag string
+        var tagBonus = (a.tag === cur.tag) ? 12 : 0;
+        // TERTIARY: same cat
+        var catBonus = (a.cat === cur.cat) ? 2 : 0;
+        // FALLBACK (only when no shared group): weak token overlap, common tokens excluded
         var overlap = 0;
-        aTok.forEach(function (t) { if (curTok.has(t)) overlap += 1; });
-        // Same category bonus
-        var catBonus = (a.cat === cur.cat) ? 1 : 0;
-        // Same tag (exact) bonus — strongest signal
-        var tagBonus = (a.tag === cur.tag) ? 3 : 0;
-        return { a: a, s: overlap * 2 + catBonus + tagBonus };
+        if (sharedGroups.length === 0) {
+          var aTok = tokens(a);
+          aTok.forEach(function (t) {
+            if (curTok.has(t) && !COMMON_TOKENS.has(t)) overlap += 1;
+          });
+        }
+        return { a: a, s: groupBonus + tagBonus + catBonus + overlap };
       })
+      // Drop articles with score 0 (no genuine relation) — better to show fewer
+      // good relations than fill with random matches.
+      .filter(function (x) { return x.s > 0; })
       .sort(function (x, y) {
         if (y.s !== x.s) return y.s - x.s;
         return (y.a.date || '').localeCompare(x.a.date || ''); // tiebreak: newer
@@ -5533,6 +5563,19 @@
     var articles = DN.ARTICLES || [];
     var mode = hub.dataset.hubMode || 'full';
 
+    // Key Fact box styling — subtle bordered card, not bright (2026-05-09)
+  if (!document.getElementById('dn-key-fact-css')) {
+    var kfStyle = document.createElement('style');
+    kfStyle.id = 'dn-key-fact-css';
+    kfStyle.textContent =
+      '.key-fact{ background:#fafaf6; border:1px solid var(--border,#dcd5c8); border-left:4px solid var(--teal,#7a9285); border-radius:12px; padding:14px 18px 16px; margin:18px 0 22px; box-shadow:0 1px 2px rgba(15,23,42,.04) }' +
+      '.key-fact .lbl{ font-family:Inter,ui-monospace,monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:var(--teal-deep,#4d6358); margin:0 0 8px; display:flex; align-items:center; gap:6px }' +
+      '.key-fact .lbl::before{ content:"\1F4CC"; font-family:"Apple Color Emoji","Segoe UI Emoji",sans-serif; font-size:14px; opacity:.8 }' +
+      '.key-fact p, .key-fact div:not(.lbl){ margin:0; font-size:14px; line-height:1.85; color:var(--ink-2,#5e574e) }' +
+      '.key-fact .cite{ color:var(--teal-deep,#4d6358); font-style:italic; font-size:12px }';
+    document.head.appendChild(kfStyle);
+  }
+
     if (!document.getElementById('dn-hub-css')) {
       var st = document.createElement('style');
       st.id = 'dn-hub-css';
@@ -5772,7 +5815,7 @@
       // 2026-05-08 — 浮動 TOC (left-side fixed) disabled per user. The inline
       // collapsible TOC at the top of each article is enough; having both was
       // confusing ("為什麼這篇文章一樣有文章大綱以及文章導覽?").
-      // DN.addFloatingTOC();
+      DN.addFloatingTOC();
       // ─── Deferred ───
       idle(function () { DN.bindScrollMemory(); }, { timeout: 1500 });
       // 2026-05-08 — 「想評估自己的嚴重度?」 callout removed per user (reading-load reduction).
