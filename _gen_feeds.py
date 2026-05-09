@@ -54,7 +54,7 @@ STATIC_PAGES = [
 def build_sitemap():
     today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
-           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemaps-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
 
     def emit_url(zh_url, en_url, lastmod, changefreq, priority, image=None, image_title=None):
         out.append('  <url>')
@@ -67,8 +67,10 @@ def build_sitemap():
         out.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{DOMAIN}{en_url}"/>')
         out.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{DOMAIN}{zh_url}"/>')
         if image:
+            # XML-escape & in URLs (e.g., /api/og?title=...&tag=...)
+            image_xml = image.replace('&', '&amp;')
             out.append('    <image:image>')
-            out.append(f'      <image:loc>{image}</image:loc>')
+            out.append(f'      <image:loc>{image_xml}</image:loc>')
             if image_title:
                 out.append(f'      <image:title>{html.escape(image_title)}</image:title>')
             out.append('    </image:image>')
@@ -78,12 +80,32 @@ def build_sitemap():
         zh = p["url"]
         en = '/en/' if zh == '/' else ('/en' + zh)
         emit_url(zh, en, today, p["changefreq"], p["priority"])
+    # Resolve OG image for each article: use static /assets/og/{slug}.png
+    # if that file exists; otherwise read the article HTML and use whatever
+    # the page declares in <meta property="og:image"> (typically /api/og?...).
+    import os, re
+    def resolve_og(slug):
+        static_path = os.path.join('assets', 'og', f'{slug}.png')
+        if os.path.exists(static_path):
+            return f'{DOMAIN}/assets/og/{slug}.png'
+        # Fallback: parse the article HTML for the actual og:image meta
+        try:
+            with open(os.path.join('blog', f'{slug}.html'), encoding='utf-8') as f:
+                page = f.read()
+            m = re.search(r'<meta property="og:image" content="([^"]+)"', page)
+            if m:
+                return m.group(1)
+        except FileNotFoundError:
+            pass
+        return None  # image:image block will be skipped if None
+
     for a in articles:
+        og = resolve_og(a["slug"])
         emit_url(
             f'/blog/{a["slug"]}',
             f'/en/blog/{a["slug"]}',
             a["date"], 'monthly', '0.8',
-            image=f'{DOMAIN}/assets/og/{a["slug"]}.png',
+            image=og,
             image_title=a["title"]
         )
 
