@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemaps-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://chendermatologist.com/</loc>
     <lastmod>2026-05-09</lastmod>
@@ -90,7 +90,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/skin-biopsy-excision"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/skin-biopsy-excision"/>
     <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/skin-biopsy-excision.png</image:loc>
+      <image:loc>https://chendermatologist.com/api/og?title=%E7%9A%AE%E8%86%9A%E5%88%87%E7%89%87%E8%88%87%E8%85%AB%E7%98%A4%E5%88%87%E9%99%A4&amp;tag=%E6%89%8B%E8%A1%93Ð26-05-09</image:loc>
       <image:title>皮膚切片與腫瘤切除手術完整衛教 — 為什麼要切？怎麼切？術後怎麼照顧？</image:title>
     </image:image>
   </url>
@@ -103,7 +103,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/psoriasis-overview"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/psoriasis-overview"/>
     <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/psoriasis-overview.png</image:loc>
+      <image:loc>https://chendermatologist.com/api/og?title=%E4%B9%BE%E7%99%AC%E5%AE%8C%E6%95%B4%E8%A1%9B%E6%95%99&amp;tag=%E4%B9%BE%E7%99%ACÐ26-05-09</image:loc>
       <image:title>乾癬完整衛教 — 分型、嚴重度、誘發因子</image:title>
     </image:image>
   </url>
@@ -116,7 +116,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/psoriasis-topical"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/psoriasis-topical"/>
     <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/psoriasis-topical.png</image:loc>
+      <image:loc>https://chendermatologist.com/api/og?title=%E4%B9%BE%E7%99%AC%E5%A4%96%E7%94%A8%E8%97%A5&amp;tag=%E4%B9%BE%E7%99%ACÐ26-05-09</image:loc>
       <image:title>乾癬外用藥治療 — 類固醇、維生素 D、特殊部位</image:title>
     </image:image>
   </url>
@@ -129,7 +129,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/psoriasis-systemic"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/psoriasis-systemic"/>
     <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/psoriasis-systemic.png</image:loc>
+      <image:loc>https://chendermatologist.com/api/og?title=%E4%B9%BE%E7%99%AC%E5%85%A8%E8%BA%AB%E6%80%A7%E6%B2%BB%E7%99%82&amp;tag=%E4%B9%BE%E7%99%ACÐ26-05-09</image:loc>
       <image:title>乾癬全身性治療 — 光療、口服、生物製劑</image:title>
     </image:image>
   </url>
@@ -142,7 +142,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/psoriasis-special-populations"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/psoriasis-special-populations"/>
     <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/psoriasis-special-populations.png</image:loc>
+      <image:loc>https://chendermatologist.com/api/og?title=%E4%B9%BE%E7%99%AC%E5%90%88%E4%BD%B5%E7%97%87%E8%88%87%E7%89%B9%E6%AE%8A%E6%97%8F%E7%BE%A4&amp;tag=%E4%B9%BE%E7%99%ACÐ26-05-09</image:loc>
       <image:title>乾癬合併症與特殊族群 — PsA、心血管、懷孕、兒童、指甲、紅皮症</image:title>
     </image:image>
   </url>
@@ -155,7 +155,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-topical"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-topical"/>
     <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-topical.png</image:loc>
+      <image:loc>https://chendermatologist.com/api/og?title=%E7%95%B0%E4%BD%8D%E6%80%A7%E7%9A%AE%E8%86%9A%E7%82%8E%E5%A4%96%E7%94%A8&amp;tag=%E7%95%B0%E4%BD%8D%E6%80%A7Ð26-05-09</image:loc>
       <image:title>異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏</image:title>
     </image:image>
   </url>
@@ -168,7 +168,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-systemic"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-systemic"/>
     <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-systemic.png</image:loc>
+      <image:loc>https://chendermatologist.com/api/og?title=%E7%95%B0%E4%BD%8D%E6%80%A7%E7%9A%AE%E8%86%9A%E7%82%8E%E5%85%A8%E8%BA%AB&amp;tag=%E7%95%B0%E4%BD%8D%E6%80%A7Ð26-05-09</image:loc>
       <image:title>異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療</image:title>
     </image:image>
   </url>
@@ -181,7 +181,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-special-populations"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-special-populations"/>
     <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-special-populations.png</image:loc>
+      <image:loc>https://chendermatologist.com/api/og?title=%E7%95%B0%E4%BD%8D%E6%80%A7%E7%9A%AE%E8%86%9A%E7%82%8E%E5%A4%A7%E7%89%B9%E6%AE%8A&amp;tag=%E7%95%B0%E4%BD%8D%E6%80%A7Ð26-05-09</image:loc>
       <image:title>異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染</image:title>
     </image:image>
   </url>
@@ -194,7 +194,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/contact-dermatitis"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/contact-dermatitis"/>
     <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/contact-dermatitis.png</image:loc>
+      <image:loc>https://chendermatologist.com/api/og?title=%E6%8E%A5%E8%A7%B8%E6%80%A7%E7%9A%AE%E8%86%9A%E7%82%8E&amp;tag=%E6%8E%A5%E8%A7%B8%E6%80%A7&amp;date=2026-05-08</image:loc>
       <image:title>接觸性皮膚炎(過敏 vs 刺激)完整衛教</image:title>
     </image:image>
   </url>
@@ -207,7 +207,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/actinic-keratosis-scc"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/actinic-keratosis-scc"/>
     <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/actinic-keratosis-scc.png</image:loc>
+      <image:loc>https://chendermatologist.com/api/og?title=AK+SCC+Bowen&amp;tag=%E7%9A%AE%E8%86%9A%E7%99%8C%E5%89%8D&amp;date=2026-05-08</image:loc>
       <image:title>日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教</image:title>
     </image:image>
   </url>
@@ -584,7 +584,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-overview"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
     <image:image>
-      <image:loc>https://chendermatologist.com/assets/og/atopic-dermatitis-overview.png</image:loc>
+      <image:loc>https://chendermatologist.com/api/og?title=%E7%95%B0%E4%BD%8D%E6%80%A7%E7%9A%AE%E8%86%9A%E7%82%8E+6+%E5%A4%A7%E8%BF%B7%E6%80%9D%3Cbr%2F%3E%3Cspan+class%3D%27teal-text%27+data-zh%3D&amp;tag=%E7%95%B0%E8%86%9A&amp;date=2026-05-03</image:loc>
       <image:title>異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思</image:title>
     </image:image>
   </url>

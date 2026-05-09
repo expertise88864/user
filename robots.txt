@@ -1,14 +1,28 @@
-# ChenDermatologist · 陳翊嘉醫師 皮膚科
+# ChenDermatologist · 陳翊嘉醫師 皮膚科衛教
 # Site: https://chendermatologist.com/
-# Allow major search engines, block AI training crawlers
+# Last update: 2026-05-09
+#
+# Strategy:
+#   1. Allow all major search engines (Google, Bing, DuckDuckGo, Yahoo, Naver, Yandex)
+#   2. Block all known generative-AI training crawlers (opt-out from training)
+#   3. Block aggressive SEO/scraping crawlers entirely (Ahrefs/Semrush/MJ12 — they
+#      are bot noise and we are not paying for their data)
+#   4. Block /admin, /reset-sw, internal tooling
 
+# ─── Default ─────────────────────────────────────────────────────────
 User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /admin/
 Disallow: /admin.html
+Disallow: /reset-sw
+Disallow: /reset-sw.html
 Disallow: /_tmp_*
+Disallow: /_pso_*
+Disallow: /_ad_*
+Disallow: /_surgery_*
 
-# Search engines — explicit allow for clarity
+# ─── Allowlist: search engines ───────────────────────────────────────
 User-agent: Googlebot
 Allow: /
 
@@ -27,18 +41,33 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
-# AdSense + AdsBot crawlers
+User-agent: Yandex
+Allow: /
+
+User-agent: Naverbot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+# ─── AdSense / AdsBot ────────────────────────────────────────────────
 User-agent: Mediapartners-Google
 Allow: /
 
 User-agent: AdsBot-Google
 Allow: /
 
-# Generative AI / LLM training crawlers — opt out
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+# ─── Generative-AI training crawlers — opt out ───────────────────────
 User-agent: GPTBot
 Disallow: /
 
 User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: OAI-SearchBot
 Disallow: /
 
 User-agent: CCBot
@@ -50,10 +79,16 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
+User-agent: Claude-Web
+Disallow: /
+
 User-agent: Google-Extended
 Disallow: /
 
 User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Perplexity-User
 Disallow: /
 
 User-agent: Bytespider
@@ -68,21 +103,75 @@ Disallow: /
 User-agent: FacebookBot
 Disallow: /
 
+User-agent: meta-externalagent
+Disallow: /
+
 User-agent: cohere-ai
+Disallow: /
+
+User-agent: cohere-training-data-crawler
 Disallow: /
 
 User-agent: Diffbot
 Disallow: /
 
-# Aggressive throttle for less useful bots
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytedance
+Disallow: /
+
+User-agent: TimpiBot
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+# ─── Aggressive SEO / scraping crawlers — block entirely ─────────────
+# These provide no value to us, only consume bandwidth and inflate bot
+# traffic in analytics. Previously throttled (crawl-delay) — now blocked.
+
 User-agent: AhrefsBot
-Crawl-delay: 10
+Disallow: /
 
 User-agent: SemrushBot
-Crawl-delay: 10
+Disallow: /
+
+User-agent: SemrushBot-SA
+Disallow: /
 
 User-agent: MJ12bot
-Crawl-delay: 10
+Disallow: /
 
-# Sitemaps
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: SeznamBot
+Disallow: /
+
+User-agent: Barkrowler
+Disallow: /
+
+User-agent: ZoominfoBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: serpstatbot
+Disallow: /
+
+User-agent: TurnitinBot
+Disallow: /
+
+# ─── Sitemap ─────────────────────────────────────────────────────────
 Sitemap: https://chendermatologist.com/sitemap.xml
