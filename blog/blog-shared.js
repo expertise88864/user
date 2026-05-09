@@ -5477,34 +5477,55 @@
   // -----------------------------------------------------------------------
   // 文章快速查找 — search + disease tag chips, auto-injected to #dn-hub
   // -----------------------------------------------------------------------
-  DN.TAG_GROUPS = {
-    '痘痘 / 痘疤':    ['acne-myths', 'acne-scar-treatment', 'isotretinoin-patient', 'topical-acids-patient'],
-    '防曬':           ['sunscreen-myths'],
-    '異位性皮膚炎 / 濕疹': ['atopic-dermatitis-overview', 'atopic-dermatitis-topical', 'atopic-dermatitis-systemic', 'atopic-dermatitis-special-populations', 'pediatric-eczema', 'topical-steroids-guide', 'biologics-overview'],
-    '兒童 / 嬰幼兒':  ['pediatric-eczema'],
-    '肝斑 / 美白':    ['melasma-myths', 'skin-whitening-agents'],
-    '玫瑰斑 / 酒糟':  ['rosacea-myths'],
-    '落髮 / 圓禿':    ['hairloss-myths', 'alopecia-areata'],
-    '蕁麻疹':         ['urticaria-myths'],
-    '接觸性皮膚炎':   ['contact-dermatitis'],
-    '皮膚癌 / AK':    ['actinic-keratosis-scc'],
-    '乾癬':           ['psoriasis-overview', 'psoriasis-topical', 'psoriasis-systemic', 'psoriasis-special-populations', 'psoriasis-myths', 'biologics-overview'],
-    '香港腳 / 灰指甲':['tinea-myths'],
-    '病毒疣 / HPV':   ['warts-myths'],
-    '帶狀皰疹 / 皮蛇':['shingles-myths'],
-    '白斑':           ['vitiligo'],
-    '化膿性汗腺炎':   ['hidradenitis-suppurativa'],
-    '猴痘 Mpox':      ['mpox-care'],
-    '標靶藥物副作用': ['targeted-therapy-skin'],
-    '類固醇藥膏':     ['topical-steroids-guide', 'atopic-dermatitis-overview'],
-    '生物製劑':       ['biologics-overview'],
-    '酸類 / A 酸':    ['topical-acids-patient', 'skin-whitening-agents', 'isotretinoin-patient'],
-    '常見問題 FAQ':   ['dermatology-faq'],
-    '粉瘤 / 表皮囊腫': ['epidermoid-cyst'],
-    '雷射 / 光電':    ['laser-dermatology', 'acne-scar-treatment', 'rosacea-myths'],
-    '處置 / 手術':   ['skin-biopsy-excision', 'epidermoid-cyst', 'actinic-keratosis-scc'],
-    '健保 / 自費':    ['nhi-derm-drugs', 'biologics-overview', 'isotretinoin-patient']
-  };
+  DN.TAG_CATEGORIES = [
+    {
+      label: '常見疾病',
+      label_en: 'Common diseases',
+      tags: {
+        '痘痘 / 痘疤':       ['acne-myths', 'acne-scar-treatment', 'isotretinoin-patient', 'topical-acids-patient'],
+        '異位性皮膚炎 / 濕疹': ['atopic-dermatitis-overview', 'atopic-dermatitis-topical', 'atopic-dermatitis-systemic', 'atopic-dermatitis-special-populations', 'pediatric-eczema', 'topical-steroids-guide', 'biologics-overview'],
+        '乾癬':              ['psoriasis-overview', 'psoriasis-topical', 'psoriasis-systemic', 'psoriasis-special-populations', 'psoriasis-myths', 'biologics-overview'],
+        '蕁麻疹':            ['urticaria-myths'],
+        '接觸性皮膚炎':      ['contact-dermatitis'],
+        '玫瑰斑 / 酒糟':     ['rosacea-myths'],
+        '病毒疣 / HPV':      ['warts-myths'],
+        '帶狀皰疹 / 皮蛇':   ['shingles-myths'],
+        '香港腳 / 灰指甲':   ['tinea-myths'],
+        '落髮 / 圓禿':       ['hairloss-myths', 'alopecia-areata'],
+        '白斑':              ['vitiligo'],
+        '皮膚癌 / AK':       ['actinic-keratosis-scc'],
+        '肝斑 / 美白':       ['melasma-myths', 'skin-whitening-agents'],
+        '化膿性汗腺炎':      ['hidradenitis-suppurativa'],
+        '兒童 / 嬰幼兒':     ['pediatric-eczema'],
+        '猴痘 Mpox':         ['mpox-care']
+      }
+    },
+    {
+      label: '處置 / 治療 / 主題',
+      label_en: 'Procedures / Treatments / Topics',
+      tags: {
+        '處置 / 手術':       ['skin-biopsy-excision', 'epidermoid-cyst', 'actinic-keratosis-scc'],
+        '雷射 / 光電':       ['laser-dermatology', 'acne-scar-treatment', 'rosacea-myths'],
+        '類固醇藥膏':        ['topical-steroids-guide', 'atopic-dermatitis-overview'],
+        '生物製劑':          ['biologics-overview'],
+        '酸類 / A 酸':       ['topical-acids-patient', 'skin-whitening-agents', 'isotretinoin-patient'],
+        '防曬':              ['sunscreen-myths'],
+        '標靶藥物副作用':    ['targeted-therapy-skin'],
+        '粉瘤 / 表皮囊腫':   ['epidermoid-cyst'],
+        '健保 / 自費':       ['nhi-derm-drugs', 'biologics-overview', 'isotretinoin-patient'],
+        '常見問題 FAQ':      ['dermatology-faq']
+      }
+    }
+  ];
+
+  // Backward-compat flat alias — flatten TAG_CATEGORIES into the original TAG_GROUPS shape
+  DN.TAG_GROUPS = (function () {
+    var flat = {};
+    DN.TAG_CATEGORIES.forEach(function (cat) {
+      Object.keys(cat.tags).forEach(function (k) { flat[k] = cat.tags[k]; });
+    });
+    return flat;
+  })();
 
   DN.bindArticleHub = function () {
     var hub = document.getElementById('dn-hub');
@@ -5523,6 +5544,11 @@
         '#dn-search-input:focus{ border-color:rgba(122,146,133,.6); box-shadow:0 0 0 3px rgba(164,181,168,.20); }' +
         '#dn-search-status{ font-size:11.5px; color:var(--muted); white-space:nowrap; }' +
         '.dn-tag-chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0; }' +
+        '.dn-tag-chips-group{ display:flex; flex-direction:column; gap:10px; margin:0; }' +
+        '.dn-tag-chips-row{ display:flex; flex-wrap:wrap; gap:6px; }' +
+        '.dn-tag-chips-row-label{ font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:#8b8378; margin:6px 0 -2px; padding-top:8px; border-top:1px dashed var(--line, #ebe4d8); width:100%; }' +
+        '.dn-tag-chips-row-secondary .dn-tag-chip{ background:#f8fafc; color:#5e574e; font-size:11.5px; padding:4px 10px; border-color:#ebe4d8; }' +
+        '.dn-tag-chips-row-secondary .dn-tag-chip.active{ background:linear-gradient(180deg,#94a3b8,#475569); color:#fff; border-color:transparent; }' +
         '.dn-tag-chip{ padding:5px 11px; border-radius:9999px; font-size:12px; font-weight:600; color:var(--ink-2); background:#fff; border:1px solid var(--border); cursor:pointer; transition:all .15s; line-height:1.4; }' +
         '.dn-tag-chip:hover{ border-color:rgba(122,146,133,.45); color:var(--teal-deep); }' +
         '.dn-tag-chip.active{ background:linear-gradient(180deg,#a4b5a8,#4d6358); color:#fff; border-color:transparent; }' +
@@ -5540,24 +5566,71 @@
         '<input id="dn-search-input" type="search" placeholder="搜尋文章標題或關鍵字..." aria-label="搜尋文章" />' +
         '<div id="dn-search-status"></div>' +
       '</div>' +
-      '<div class="dn-tag-chips" id="dn-tag-chips"></div>';
+      '<div class="dn-tag-chips-group" id="dn-tag-chips"></div>';
 
     var tagsDiv = document.getElementById('dn-tag-chips');
-    var allBtn = document.createElement('button');
-    allBtn.className = 'dn-tag-chip dn-tag-all active';
-    allBtn.dataset.tag = '__all__';
-    allBtn.textContent = '全部主題';
-    allBtn.addEventListener('click', function () { applyFilter('__all__'); });
-    tagsDiv.appendChild(allBtn);
 
-    Object.keys(DN.TAG_GROUPS).forEach(function (tag) {
-      var btn = document.createElement('button');
-      btn.className = 'dn-tag-chip';
-      btn.dataset.tag = tag;
-      btn.textContent = tag;
-      btn.addEventListener('click', function () { applyFilter(tag); });
-      tagsDiv.appendChild(btn);
-    });
+    // ─── Two-tier rendering (2026-05-09) ─────────────────────────────
+    // If DN.TAG_CATEGORIES is defined (new structure), render diseases on
+    // a primary row and procedures/topics on a secondary row with a divider.
+    // Falls back to flat DN.TAG_GROUPS rendering if categories absent.
+    var categories = DN.TAG_CATEGORIES;
+    if (categories && categories.length) {
+      categories.forEach(function (cat, ci) {
+        var rowWrap = document.createElement('div');
+        rowWrap.className = 'dn-tag-chips-row' + (ci === 0 ? ' dn-tag-chips-row-primary' : ' dn-tag-chips-row-secondary');
+
+        // Section label (only for secondary group; primary just has [全部主題] and disease chips)
+        if (ci > 0) {
+          var label = document.createElement('div');
+          label.className = 'dn-tag-chips-row-label';
+          label.setAttribute('data-zh', cat.label);
+          label.setAttribute('data-en', cat.label_en || cat.label);
+          label.textContent = cat.label;
+          tagsDiv.appendChild(label);
+        }
+
+        // Primary row gets the [全部主題] chip first
+        if (ci === 0) {
+          var allBtn = document.createElement('button');
+          allBtn.className = 'dn-tag-chip dn-tag-all active';
+          allBtn.dataset.tag = '__all__';
+          allBtn.textContent = '全部主題';
+          allBtn.setAttribute('data-zh', '全部主題');
+          allBtn.setAttribute('data-en', 'All topics');
+          allBtn.addEventListener('click', function () { applyFilter('__all__'); });
+          rowWrap.appendChild(allBtn);
+        }
+
+        Object.keys(cat.tags).forEach(function (tag) {
+          var btn = document.createElement('button');
+          btn.className = 'dn-tag-chip';
+          btn.dataset.tag = tag;
+          btn.textContent = tag;
+          btn.addEventListener('click', function () { applyFilter(tag); });
+          rowWrap.appendChild(btn);
+        });
+
+        tagsDiv.appendChild(rowWrap);
+      });
+    } else {
+      // Fallback (single-row, original behavior)
+      var allBtn = document.createElement('button');
+      allBtn.className = 'dn-tag-chip dn-tag-all active';
+      allBtn.dataset.tag = '__all__';
+      allBtn.textContent = '全部主題';
+      allBtn.addEventListener('click', function () { applyFilter('__all__'); });
+      tagsDiv.appendChild(allBtn);
+
+      Object.keys(DN.TAG_GROUPS).forEach(function (tag) {
+        var btn = document.createElement('button');
+        btn.className = 'dn-tag-chip';
+        btn.dataset.tag = tag;
+        btn.textContent = tag;
+        btn.addEventListener('click', function () { applyFilter(tag); });
+        tagsDiv.appendChild(btn);
+      });
+    }
 
     var initialLimit = parseInt(hub.dataset.showCount || '6', 10);
     var showingAll = (mode === 'full');
