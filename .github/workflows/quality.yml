@@ -123,7 +123,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with: { python-version: '3.12' }
-      - name: Run meta audit
+      - name: Quick required-tag audit
         run: |
           python <<'PY'
           import re, glob, sys
@@ -143,6 +143,8 @@ jobs:
                       print(f'META  {p}: {msg}'); err += 1
           sys.exit(1 if err else 0)
           PY
+      - name: Deep meta + sitemap consistency audit (_check_meta.py)
+        run: python _check_meta.py
 
   lighthouse:
     name: Lighthouse CI (perf + a11y + SEO + best practices)

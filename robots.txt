@@ -60,15 +60,20 @@ Allow: /
 User-agent: AdsBot-Google-Mobile
 Allow: /
 
-# ─── Generative-AI training crawlers — opt out ───────────────────────
+# ─── AI crawlers — split policy (2026-05-09) ─────────────────────────
+# UNBLOCK: user-initiated retrieval bots that cite source URL back (ChatGPT
+#   browse, Perplexity, Claude artifacts, OAI-SearchBot — these drive
+#   referral traffic and brand visibility when the AI cites our content).
+# BLOCK: pure training crawlers with no back-link (GPTBot, CCBot, ClaudeBot,
+#   anthropic-ai, Google-Extended — they take content for model training only).
 User-agent: GPTBot
 Disallow: /
 
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
 
 User-agent: OAI-SearchBot
-Disallow: /
+Allow: /
 
 User-agent: CCBot
 Disallow: /
@@ -80,16 +85,16 @@ User-agent: ClaudeBot
 Disallow: /
 
 User-agent: Claude-Web
-Disallow: /
+Allow: /
 
 User-agent: Google-Extended
 Disallow: /
 
 User-agent: PerplexityBot
-Disallow: /
+Allow: /
 
 User-agent: Perplexity-User
-Disallow: /
+Allow: /
 
 User-agent: Bytespider
 Disallow: /
