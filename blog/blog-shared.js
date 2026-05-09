@@ -63,6 +63,24 @@
     });
   };
 
+  // Key Fact box styling — runs on EVERY page (article + index + homepage).
+  // Was previously inside bindArticleHub which only ran when #dn-hub existed
+  // (i.e. NOT on individual article pages where Key Fact actually appears).
+  DN.injectKeyFactCSS = function () {
+    if (document.getElementById('dn-key-fact-css')) return;
+    var kfStyle = document.createElement('style');
+    kfStyle.id = 'dn-key-fact-css';
+    kfStyle.textContent =
+      '.key-fact{ background:#fafaf6; border:1px solid var(--border,#dcd5c8); border-left:4px solid var(--teal,#7a9285); border-radius:12px; padding:14px 18px 16px; margin:18px 0 22px; box-shadow:0 1px 2px rgba(15,23,42,.04) }' +
+      '.key-fact .lbl{ font-family:Inter,ui-monospace,monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:var(--teal-deep,#4d6358); margin:0 0 8px; display:flex; align-items:center; gap:6px }' +
+      '.key-fact .lbl::before{ content:"📌"; font-family:"Apple Color Emoji","Segoe UI Emoji",sans-serif; font-size:14px; opacity:.85 }' +
+      '.key-fact p, .key-fact div:not(.lbl){ margin:0; font-size:14px; line-height:1.85; color:var(--ink-2,#5e574e) }' +
+      '.key-fact .cite{ color:var(--teal-deep,#4d6358); font-style:italic; font-size:12px }';
+    document.head.appendChild(kfStyle);
+  };
+
+
+
   DN.bindLangToggle = function (onChange) {
     const toggle = document.getElementById('langToggle');
     if (!toggle) return;
@@ -5563,20 +5581,7 @@
     var articles = DN.ARTICLES || [];
     var mode = hub.dataset.hubMode || 'full';
 
-    // Key Fact box styling — subtle bordered card, not bright (2026-05-09)
-  if (!document.getElementById('dn-key-fact-css')) {
-    var kfStyle = document.createElement('style');
-    kfStyle.id = 'dn-key-fact-css';
-    kfStyle.textContent =
-      '.key-fact{ background:#fafaf6; border:1px solid var(--border,#dcd5c8); border-left:4px solid var(--teal,#7a9285); border-radius:12px; padding:14px 18px 16px; margin:18px 0 22px; box-shadow:0 1px 2px rgba(15,23,42,.04) }' +
-      '.key-fact .lbl{ font-family:Inter,ui-monospace,monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:var(--teal-deep,#4d6358); margin:0 0 8px; display:flex; align-items:center; gap:6px }' +
-      '.key-fact .lbl::before{ content:"\1F4CC"; font-family:"Apple Color Emoji","Segoe UI Emoji",sans-serif; font-size:14px; opacity:.8 }' +
-      '.key-fact p, .key-fact div:not(.lbl){ margin:0; font-size:14px; line-height:1.85; color:var(--ink-2,#5e574e) }' +
-      '.key-fact .cite{ color:var(--teal-deep,#4d6358); font-style:italic; font-size:12px }';
-    document.head.appendChild(kfStyle);
-  }
-
-    if (!document.getElementById('dn-hub-css')) {
+      if (!document.getElementById('dn-hub-css')) {
       var st = document.createElement('style');
       st.id = 'dn-hub-css';
       st.textContent =
@@ -5767,6 +5772,7 @@
   };
 
   DN.initBlog = function (opts) {
+    DN.injectKeyFactCSS();
     opts = opts || {};
     let curLang = DN.detectLang();
 
