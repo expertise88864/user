@@ -3671,8 +3671,6 @@
       '.dn-calc .dn-calc-result{ margin:0;padding:20px 28px 22px;background:linear-gradient(135deg,#ecfeff,#f5fbfa);border-top:1px solid #a5f3fc;border-radius:0 }' +
       '.dn-calc .dn-calc-tools-link{ margin:14px 28px 4px;display:inline-flex }' +
       '.dn-calc .dn-calc-disclaimer{ margin:0;padding:14px 28px 22px;background:#fafaf6;color:#8b8378;border-top:1px solid #ebe4d8 }' +
-      '.dn-calc-row{ display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #ebe4d8 }' +
-      '.dn-calc-row:first-of-type{ border-top:0 }' +
       '.dn-calc-row label{ font-size:13.5px;color:#2a2620;font-weight:600 }' +
       '.dn-calc-row .dn-calc-hint{ display:block;font-size:11.5px;color:#8b8378;font-weight:400;margin-top:2px;line-height:1.4 }' +
       '.dn-calc-input{ width:90px;padding:6px 10px;border:1px solid var(--border, #dcd5c8);border-radius:8px;font-size:14px;text-align:center;color:#0f172a;font-weight:700 }' +
@@ -4304,7 +4302,7 @@
   // 0-10 single-item subjective itch intensity. Reizner 2012 standard.
   // ─────────────────────────────────────────────────────────────────────
   DN.injectVASPruritus = function () {
-    if (!DN._forceInject && !['atopic-dermatitis-overview','urticaria-myths','prurigo-nodularis','pediatric-eczema','tinea-myths','cutaneous-t-cell-lymphoma'].includes(DN.currentSlug())) return;
+    if (!DN._forceInject && !['atopic-dermatitis-overview','urticaria-myths','prurigo-nodularis','pediatric-eczema','cutaneous-t-cell-lymphoma'].includes(DN.currentSlug())) return;
     DN._buildCalc({
       id: 'dn-vas-itch', tool: 'VAS-Pruritus', toolsAnchor: 'vas-pruritus',
       title: 'VAS 搔癢評分 — 主觀癢度（過去 24 小時最劇烈）',
@@ -5928,7 +5926,7 @@
         'prurigo-nodularis':         ['VAS', 'DLQI'],
         // Others
         'dermatology-faq':           ['DLQI'],
-        'tinea-myths':               ['VAS', 'DLQI'],
+        'tinea-myths':               ['DLQI'],
         'warts-myths':               ['DLQI'],
         'shingles-myths':            ['VAS', 'DLQI'],
         'mpox-care':                 ['DLQI'],
