@@ -41,7 +41,7 @@ articles.sort(key=lambda a: a['date'], reverse=True)
 STATIC_PAGES = [
     {'url': '/', 'priority': '1.0', 'changefreq': 'weekly'},
     {'url': '/about', 'priority': '0.8', 'changefreq': 'monthly'},
-    {'url': '/blog/', 'priority': '0.9', 'changefreq': 'weekly'},
+    {'url': '/blog', 'priority': '0.9', 'changefreq': 'weekly'},
     {'url': '/blog/topics', 'priority': '0.7', 'changefreq': 'monthly'},
     {'url': '/tools', 'priority': '0.8', 'changefreq': 'monthly'},
     {'url': '/glossary', 'priority': '0.7', 'changefreq': 'monthly'},
@@ -78,7 +78,7 @@ def build_sitemap():
 
     for p in STATIC_PAGES:
         zh = p["url"]
-        en = '/en/' if zh == '/' else ('/en' + zh)
+        en = '/en' if zh == '/' else ('/en' + zh)
         emit_url(zh, en, today, p["changefreq"], p["priority"])
     # Resolve OG image for each article: use static /assets/og/{slug}.png
     # if that file exists; otherwise read the article HTML and use whatever
@@ -112,7 +112,7 @@ def build_sitemap():
     # Also include /en/ URLs as their own entries (Google reads sitemap-multi-language better with both)
     for p in STATIC_PAGES:
         zh = p["url"]
-        en = '/en/' if zh == '/' else ('/en' + zh)
+        en = '/en' if zh == '/' else ('/en' + zh)
         out.append('  <url>')
         out.append(f'    <loc>{DOMAIN}{en}</loc>')
         out.append(f'    <lastmod>{today}</lastmod>')

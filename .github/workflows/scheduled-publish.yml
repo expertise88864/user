@@ -1,0 +1,111 @@
+name: Scheduled publish
+
+# Runs every 15 minutes. Reads .github/scheduled-publish/queue.json,
+# merges any drafts/<slug> branches whose scheduled time has passed
+# into main, then removes processed entries from the queue.
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "Scheduled Publish Bot"
+          git config user.email "bot@chendermatologist.com"
+
+      - name: Process scheduled queue
+        run: |
+          python3 <<'PY'
+          import json, subprocess, os, sys
+          from datetime import datetime, timezone
+
+          QUEUE_PATH = '.github/scheduled-publish/queue.json'
+          if not os.path.exists(QUEUE_PATH):
+              print('No queue file at', QUEUE_PATH, '— nothing to do.')
+              sys.exit(0)
+
+          with open(QUEUE_PATH, encoding='utf-8') as f:
+              queue = json.load(f)
+
+          if not queue:
+              print('Queue is empty.')
+              sys.exit(0)
+
+          now = datetime.now(timezone.utc)
+          due, remaining = [], []
+          for item in queue:
+              try:
+                  at_str = item['at'].replace('Z', '+00:00')
+                  at = datetime.fromisoformat(at_str)
+              except Exception as e:
+                  print(f'  skip malformed entry: {item} ({e})')
+                  remaining.append(item)
+                  continue
+              if at <= now:
+                  due.append(item)
+              else:
+                  remaining.append(item)
+
+          print(f'Queue: {len(due)} due, {len(remaining)} pending')
+
+          if not due:
+              sys.exit(0)
+
+          subprocess.check_call(['git', 'fetch', 'origin'])
+
+          merged_any = False
+          for item in due:
+              slug = item.get('slug', '<unknown>')
+              branch = item.get('branch', f'drafts/{slug}')
+              print(f'\n>>> Processing {slug} from {branch}')
+              # Check that branch exists on origin
+              r = subprocess.run(['git', 'ls-remote', '--heads', 'origin', branch],
+                                 capture_output=True, text=True)
+              if not r.stdout.strip():
+                  print(f'  Branch {branch} not found on origin — removing from queue without merging')
+                  continue
+              try:
+                  subprocess.check_call(['git', 'merge', '--no-ff', f'origin/{branch}',
+                                         '-m', f'scheduled publish: {slug} (queued {item.get("added_at","?")})'])
+                  print(f'  ✓ Merged {branch} into main')
+                  merged_any = True
+                  # Delete the draft branch from origin (cleanup)
+                  try:
+                      subprocess.check_call(['git', 'push', 'origin', '--delete', branch])
+                      print(f'  ✓ Deleted draft branch {branch}')
+                  except subprocess.CalledProcessError:
+                      print(f'  ⚠ Could not delete {branch}, ignoring')
+              except subprocess.CalledProcessError as e:
+                  print(f'  ✗ Merge conflict for {branch}: {e}')
+                  # Re-queue for manual handling
+                  remaining.append(item)
+                  subprocess.run(['git', 'merge', '--abort'], check=False)
+
+          # Write updated queue
+          with open(QUEUE_PATH, 'w', encoding='utf-8') as f:
+              json.dump(remaining, f, indent=2, ensure_ascii=False)
+              f.write('\n')
+          subprocess.check_call(['git', 'add', QUEUE_PATH])
+
+          # Commit queue update (only if there's something to commit)
+          r = subprocess.run(['git', 'diff', '--cached', '--quiet'])
+          if r.returncode != 0:
+              subprocess.check_call(['git', 'commit', '-m', f'scheduled-publish: processed {len(due)} due item(s)'])
+
+          if merged_any or r.returncode != 0:
+              subprocess.check_call(['git', 'push', 'origin', 'main'])
+              print('\n✓ Pushed to main')
+          PY

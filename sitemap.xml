@@ -6,7 +6,7 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/"/>
   </url>
   <url>
@@ -19,13 +19,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/about"/>
   </url>
   <url>
-    <loc>https://chendermatologist.com/blog/</loc>
+    <loc>https://chendermatologist.com/blog</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/topics</loc>
@@ -589,12 +589,12 @@
     </image:image>
   </url>
   <url>
-    <loc>https://chendermatologist.com/en/</loc>
+    <loc>https://chendermatologist.com/en</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/en/about</loc>
@@ -605,12 +605,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/about"/>
   </url>
   <url>
-    <loc>https://chendermatologist.com/en/blog/</loc>
+    <loc>https://chendermatologist.com/en/blog</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/en/blog/topics</loc>
