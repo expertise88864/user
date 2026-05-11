@@ -1,202 +1,132 @@
 # -*- coding: utf-8 -*-
-"""Redraw the Hamilton-Norwood SVG — combined SIDE + TOP view per stage
-for maximum clarity. Side view shows frontal hairline; top view shows
-crown thinning. Together they make each Norwood stage unambiguous.
+"""Redraw the Hamilton-Norwood SVG — top-down view with hand-tuned
+hairline profiles for each stage. This replaces all my earlier attempts
+which the user said remained 圖片有誤.
+
+Each stage defines an explicit 7-point hairline profile (left temple
+→ forehead → right temple) in fractions of the head radius. The hair
+region is then drawn as: hairline path + arc around the back of the
+head to close. Vertex bald spots for stages IV-V are dashed circles.
 """
 from pathlib import Path
 import re
 
 
-# Palette
-SKIN = '#f4d6b3'
-HAIR = '#2a1a0a'
-THIN_HAIR = '#7c4a1a'  # transitional hair for thinning zones
-OUTLINE = '#92400e'
-FACE_LINE = '#a85a2a'
+SKIN = '#f4dab6'
+HAIR = '#1f1208'
+OUTLINE = '#8b6f3d'
+BALD_RING = '#a85a2a'
+
+# Hairline profiles (left temple → forehead → right temple).
+# Each (x_frac, y_frac) is relative to head center. Negative y = forehead side.
+PROFILES = {
+    1: [(-0.96,-0.28), (-0.78,-0.62), (-0.55,-0.85), (-0.30,-0.93), (0,-0.96), (0.30,-0.93), (0.55,-0.85), (0.78,-0.62), (0.96,-0.28)],
+    2: [(-0.94,-0.10), (-0.78,-0.40), (-0.55,-0.65), (-0.30,-0.78), (0,-0.88), (0.30,-0.78), (0.55,-0.65), (0.78,-0.40), (0.94,-0.10)],
+    3: [(-0.90,0.10),  (-0.78,-0.18), (-0.55,-0.40), (-0.28,-0.62), (0,-0.75), (0.28,-0.62), (0.55,-0.40), (0.78,-0.18), (0.90,0.10)],
+    4: [(-0.90,0.10),  (-0.78,-0.18), (-0.50,-0.36), (-0.22,-0.55), (0,-0.66), (0.22,-0.55), (0.50,-0.36), (0.78,-0.18), (0.90,0.10)],
+    5: [(-0.88,0.22),  (-0.72,-0.05), (-0.42,-0.22), (-0.18,-0.42), (0,-0.50), (0.18,-0.42), (0.42,-0.22), (0.72,-0.05), (0.88,0.22)],
+    6: [(-0.80,0.40),  (-0.62,0.22),  (-0.38,0.15),  (-0.15,0.10),  (0,0.10),  (0.15,0.10),  (0.38,0.15),  (0.62,0.22),  (0.80,0.40)],
+    7: [(-0.72,0.58),  (-0.55,0.48),  (-0.35,0.44),  (-0.15,0.42),  (0,0.42),  (0.15,0.42),  (0.35,0.44),  (0.55,0.48),  (0.72,0.58)],
+}
+
+LABELS = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
+DESCS = [
+    '髮際線正常',
+    '輕微 M 型',
+    '明顯 M 型',
+    '頂部開始稀疏',
+    '前髮 + 頂連通',
+    '大範圍稀疏',
+    '只剩兩側馬蹄狀',
+]
 
 
-def side_view(cx, cy, stage):
-    """Draw a left-facing profile (face on left, occiput on right).
+def head_svg(stage, x, y):
+    cx = x + 65
+    cy = y + 62
+    r = 40
+    parts = []
 
-    Frontal hairline recedes with stage; vertex bald spot grows.
-    """
-    # Skull outline (cranium top + back-of-head curve + nape)
-    # Face: nose at left, ear roughly mid
-    # Use a rounded skull shape with clear silhouette.
-    r = 42
-    # head shape (cranium ellipse) — slightly stretched
-    skull = (
-        f'<path d="M {cx-r+2} {cy+2} '
-        f'C {cx-r-2} {cy-r*0.4}, {cx-r*0.6} {cy-r-4}, {cx} {cy-r-2} '  # top from front to crown
-        f'C {cx+r*0.7} {cy-r-2}, {cx+r+2} {cy-r*0.5}, {cx+r+2} {cy} '  # back of head
-        f'C {cx+r+2} {cy+r*0.5}, {cx+r*0.5} {cy+r*0.7}, {cx+r*0.2} {cy+r*0.65} '  # nape
-        f'L {cx-r*0.2} {cy+r*0.65} '  # jaw line under
-        f'C {cx-r*0.7} {cy+r*0.5}, {cx-r-2} {cy+r*0.2}, {cx-r+2} {cy+2} Z" '
-        f'fill="{SKIN}" stroke="{OUTLINE}" stroke-width="1.2"/>'
+    # Base head circle (skin)
+    parts.append(
+        f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{SKIN}" '
+        f'stroke="{OUTLINE}" stroke-width="1.6"/>'
     )
 
-    # Facial features (left-facing): nose bump + eye + ear
-    face = (
-        # nose bump
-        f'<path d="M {cx-r+2} {cy+2} '
-        f'Q {cx-r-3} {cy+8} {cx-r-1} {cy+14} '
-        f'Q {cx-r+4} {cy+15} {cx-r+5} {cy+10}" '
-        f'fill="none" stroke="{FACE_LINE}" stroke-width="1.2" stroke-linecap="round"/>'
-        # eye
-        f'<circle cx="{cx-r*0.55}" cy="{cy+8}" r="1.6" fill="#1e293b"/>'
-        # ear
-        f'<path d="M {cx} {cy+r*0.25} q -3 4 0 9 q 3 1 4 -3" fill="none" stroke="{FACE_LINE}" stroke-width="1" stroke-linecap="round"/>'
-        # mouth
-        f'<path d="M {cx-r+4} {cy+22} q 4 2 8 0" fill="none" stroke="{FACE_LINE}" stroke-width="1" stroke-linecap="round"/>'
-    )
+    # Build hair path: hairline from left temple → forehead → right temple,
+    # then arc around the BACK of the head (sweep through bottom) to close.
+    pts = PROFILES[stage]
+    px0, py0 = pts[0]
+    d = f'M {cx + px0*r:.1f} {cy + py0*r:.1f}'
+    for px, py in pts[1:]:
+        d += f' L {cx + px*r:.1f} {cy + py*r:.1f}'
+    # Arc closes the shape via back-of-head (long arc if temples above center,
+    # short arc if temples below center — both go clockwise visually).
+    large_arc = 1 if py0 < 0 else 0
+    d += f' A {r-1} {r-1} 0 {large_arc} 1 {cx + px0*r:.1f} {cy + py0*r:.1f} Z'
+    parts.append(f'<path d="{d}" fill="{HAIR}"/>')
 
-    # Hair coverage drawn on top of skull. Each stage defines the front
-    # hairline X (relative to cx) and whether there's vertex thinning.
-    # Hair starts at "hairline" point on top-left and wraps over the crown.
-    def hair_cap(front_x, vertex_bald_r=0, vertex_thin_r=0):
-        """Build hair path covering top of head from front_x to back."""
-        # Top cap (dense hair on top + back)
-        path = (
-            f'<path d="M {front_x} {cy-r*0.55} '
-            f'C {front_x+4} {cy-r-1}, {cx+r*0.5} {cy-r-3}, {cx+r-2} {cy-r*0.45} '
-            f'C {cx+r+1} {cy-r*0.1}, {cx+r-2} {cy+r*0.18}, {cx+r-4} {cy+r*0.28} '
-            f'L {front_x+6} {cy-r*0.42} '
-            f'Q {front_x-1} {cy-r*0.5} {front_x} {cy-r*0.55} Z" '
-            f'fill="{HAIR}" stroke="none"/>'
+    # Vertex bald spot for stages IV and V (dashed circle drawn on top of hair)
+    if stage == 4:
+        parts.append(
+            f'<circle cx="{cx}" cy="{cy + r*0.35}" r="{r*0.18}" '
+            f'fill="{SKIN}" stroke="{BALD_RING}" stroke-width="0.9" '
+            f'stroke-dasharray="2.5 2"/>'
         )
-        # Sideburn / above-ear hair (always present until stage 7 sides only)
-        sideburn = (
-            f'<path d="M {cx-r*0.1} {cy-r*0.05} '
-            f'Q {cx-r*0.1} {cy+r*0.25} {cx-r*0.05} {cy+r*0.35} '
-            f'L {cx+r*0.05} {cy+r*0.4} '
-            f'Q {cx+r*0.25} {cy+r*0.3} {cx+r*0.3} {cy+r*0.05} Z" '
-            f'fill="{HAIR}" stroke="none" opacity="0.85"/>'
-        )
-        # Vertex bald spot (skin colored circle on top of hair)
-        bald = ''
-        if vertex_bald_r > 0:
-            bald = (
-                f'<ellipse cx="{cx+r*0.15}" cy="{cy-r*0.55}" '
-                f'rx="{vertex_bald_r}" ry="{vertex_bald_r*0.75}" '
-                f'fill="{SKIN}" stroke="{OUTLINE}" stroke-width="0.6" stroke-dasharray="2 2"/>'
-            )
-        # Vertex thinning (semi-transparent hair) — a softer effect
-        thin = ''
-        if vertex_thin_r > 0:
-            thin = (
-                f'<ellipse cx="{cx+r*0.15}" cy="{cy-r*0.55}" '
-                f'rx="{vertex_thin_r}" ry="{vertex_thin_r*0.7}" '
-                f'fill="{THIN_HAIR}" opacity="0.55"/>'
-            )
-        return path + thin + bald + sideburn
-
-    if stage == 1:
-        # Full hair, low forehead hairline
-        hair = hair_cap(cx - r + 2)
-    elif stage == 2:
-        # Slight bitemporal recession — hairline back ~3-4 mm
-        hair = hair_cap(cx - r + 6)
-    elif stage == 3:
-        # Deep M-shape — clearly receded temples
-        hair = hair_cap(cx - r + 14)
-    elif stage == 4:
-        # M + small vertex thinning
-        hair = hair_cap(cx - r + 18, vertex_thin_r=10)
     elif stage == 5:
-        # M deepens + vertex bald growing, narrow bridge between
-        hair = hair_cap(cx - r + 24, vertex_bald_r=10, vertex_thin_r=14)
-    elif stage == 6:
-        # M + vertex merged into large top bald area
-        hair = (
-            # Only back-of-head hair + sideburn
-            f'<path d="M {cx+r*0.3} {cy-r*0.45} '
-            f'C {cx+r*0.6} {cy-r*0.45}, {cx+r-2} {cy-r*0.4}, {cx+r+1} {cy-r*0.1} '
-            f'C {cx+r-1} {cy+r*0.2}, {cx+r-4} {cy+r*0.3}, {cx+r-6} {cy+r*0.32} '
-            f'L {cx+r*0.3} {cy-r*0.1} Z" fill="{HAIR}" stroke="none"/>'
-            # sideburn / above-ear
-            f'<path d="M {cx-r*0.05} {cy-r*0.0} '
-            f'Q {cx-r*0.05} {cy+r*0.25} {cx} {cy+r*0.35} '
-            f'L {cx+r*0.1} {cy+r*0.4} '
-            f'Q {cx+r*0.25} {cy+r*0.3} {cx+r*0.3} {cy+r*0.05} Z" '
-            f'fill="{HAIR}" stroke="none" opacity="0.85"/>'
-        )
-    else:  # stage 7
-        # Only sideburn + back-band, very thin
-        hair = (
-            f'<path d="M {cx+r*0.45} {cy-r*0.25} '
-            f'C {cx+r*0.7} {cy-r*0.2}, {cx+r-3} {cy-r*0.15}, {cx+r} {cy+r*0.05} '
-            f'C {cx+r-2} {cy+r*0.25}, {cx+r-5} {cy+r*0.32}, {cx+r-7} {cy+r*0.33} '
-            f'L {cx+r*0.45} {cy+r*0.05} Z" fill="{HAIR}" stroke="none"/>'
-            f'<path d="M {cx-r*0.05} {cy+r*0.12} '
-            f'Q {cx-r*0.05} {cy+r*0.3} {cx+r*0.0} {cy+r*0.38} '
-            f'L {cx+r*0.15} {cy+r*0.42} '
-            f'Q {cx+r*0.25} {cy+r*0.35} {cx+r*0.3} {cy+r*0.18} Z" '
-            f'fill="{HAIR}" stroke="none" opacity="0.85"/>'
+        parts.append(
+            f'<ellipse cx="{cx}" cy="{cy + r*0.28}" rx="{r*0.32}" ry="{r*0.24}" '
+            f'fill="{SKIN}" stroke="{BALD_RING}" stroke-width="0.9" '
+            f'stroke-dasharray="2.5 2"/>'
         )
 
-    return skull + hair + face
-
-
-def stage_panel(x, y, stage):
-    """One panel with side view + stage label + description."""
-    cx = x + 60
-    cy = y + 55
-    side = side_view(cx, cy, stage)
-
-    label = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'][stage - 1]
-    descs = [
-        '髮際線正常',
-        '輕微 M 型',
-        '明顯 M 型',
-        '頂部開始稀疏',
-        '前髮 + 頂連通',
-        '大範圍稀疏',
-        '只剩兩側馬蹄狀',
-    ]
-
-    # Stage badge above head
-    badge = (
-        f'<rect x="{cx-18}" y="{y+2}" width="36" height="20" rx="10" '
-        f'fill="#0c5159"/>'
-        f'<text x="{cx}" y="{y+16}" text-anchor="middle" '
-        f'font-family="Inter,sans-serif" font-size="11" font-weight="800" '
-        f'fill="#fff">{label}</text>'
+    # Forehead arrow indicator above head
+    parts.append(
+        f'<text x="{cx}" y="{y + 12}" text-anchor="middle" '
+        f'font-family="Inter,sans-serif" font-size="10" fill="#94a3b8">前額 ↑</text>'
     )
 
-    desc = (
+    # Stage badge (rounded rect with Roman numeral)
+    label = LABELS[stage - 1]
+    parts.append(
+        f'<rect x="{cx-16}" y="{y+114}" width="32" height="22" rx="11" fill="#0c5159"/>'
+    )
+    parts.append(
         f'<text x="{cx}" y="{y+130}" text-anchor="middle" '
-        f'font-family="Noto Sans TC,sans-serif" font-size="11.5" '
-        f'fill="#5e574e">{descs[stage-1]}</text>'
+        f'font-family="Inter,sans-serif" font-size="12" font-weight="800" fill="#fff">{label}</text>'
     )
 
-    return badge + side + desc
+    # Description label
+    parts.append(
+        f'<text x="{cx}" y="{y+150}" text-anchor="middle" '
+        f'font-family="Noto Sans TC,sans-serif" font-size="11" fill="#5e574e">{DESCS[stage-1]}</text>'
+    )
+
+    return ''.join(parts)
 
 
 def build_svg():
     panel_w = 130
-    panel_h = 150
-    cols = 4  # 4 in row 1, 3 in row 2
-    row1 = ''.join(
-        stage_panel(20 + i * panel_w, 50, i + 1) for i in range(4)
-    )
-    row2 = ''.join(
-        stage_panel(85 + i * panel_w, 50 + panel_h, i + 5) for i in range(3)
-    )
+    panel_h = 168
 
-    width = 20 + cols * panel_w
+    row1 = ''.join(head_svg(i + 1, 20 + i * panel_w, 50) for i in range(4))
+    row2 = ''.join(head_svg(i + 5, 85 + i * panel_w, 50 + panel_h) for i in range(3))
+
+    width = 20 + 4 * panel_w
     height = 50 + 2 * panel_h + 30
+
     return (
         f'<figure class="dn-med-fig">'
         f'<svg viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg" '
         f'aria-labelledby="norwood-svg-title">'
-        f'<title id="norwood-svg-title">男性雄性禿 Hamilton-Norwood 分級（側面剖視）</title>'
+        f'<title id="norwood-svg-title">男性雄性禿 Hamilton-Norwood 分級（頭頂俯視）</title>'
         f'<rect width="{width}" height="{height}" fill="#faf7f2" rx="10"/>'
         f'<text x="{width/2}" y="22" text-anchor="middle" '
         f'font-family="Noto Serif TC,Georgia,serif" font-size="18" font-weight="700" '
         f'fill="#0c5159">男性雄性禿 Hamilton-Norwood 7 階分級</text>'
         f'<text x="{width/2}" y="40" text-anchor="middle" '
         f'font-family="Inter,sans-serif" font-size="12" fill="#5e574e">'
-        f'側面剖視 — 深色為頭髮、虛線圓為頂部禿斑</text>'
+        f'頭頂俯視 — 深色為頭髮、橘色虛線圓為頂部禿斑</text>'
         + row1 + row2 +
         f'<text x="{width/2}" y="{height-8}" text-anchor="middle" '
         f'font-family="Inter,sans-serif" font-size="11" fill="#8b8378" '
@@ -217,14 +147,14 @@ def main():
         src = p.read_text(encoding='utf-8')
         old = re.search(
             r'<figure class="dn-med-fig"><svg viewBox="[^"]+" xmlns="[^"]+" aria-labelledby="norwood-svg-title">.*?</figcaption></figure>',
-            src, re.DOTALL
+            src, re.DOTALL,
         )
         if old:
             src = src[:old.start()] + svg + src[old.end():]
             p.write_text(src, encoding='utf-8')
-            print(f'{fp}: redrawn Norwood SVG (side-view profile, clearer geometry)')
+            print(f'{fp}: Norwood SVG redrawn (top-down, 9-point hand-tuned profiles)')
         else:
-            print(f'{fp}: existing Norwood figure NOT FOUND')
+            print(f'{fp}: Norwood figure NOT FOUND')
 
 
 if __name__ == '__main__':
