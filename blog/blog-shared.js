@@ -1318,17 +1318,17 @@
     'acne-scar-treatment':     [{ key: 'acne-pathogenesis', after: 0 }, { key: 'acne-scar-types', after: 1 }],
     'alopecia-areata':         [{ key: 'hair-cycle', after: 1 }, { key: 'jak-tree', after: 4 }],
     'biologics-overview':      [{ key: 'biologics-cytokines', after: 1 }, { key: 'jak-tree', after: 3 }, { key: 'skin-barrier', after: 5 }],
-    'shingles-myths':          [{ key: 'dermatome-map', after: 1 }, { key: 'clinical-photo-placeholder', after: 3 }],
+    'shingles-myths':          [{ key: 'dermatome-map', after: 1 }],
     'mpox-care':               [{ key: 'dermatome-map', after: 2 }, { key: 'clinical-photo-placeholder', after: 4 }],
     // Tinea hyphae
-    'tinea-myths':             [{ key: 'tinea-hyphae', after: 2 }, { key: 'clinical-photo-placeholder', after: 4 }],
+    'tinea-myths':             [{ key: 'tinea-hyphae', after: 2 }],
     // R32: JAK structure diagram
     'alopecia-areata':         [{ key: 'hair-cycle', after: 1 }, { key: 'jak-tree', after: 4 }, { key: 'jak-structure', after: 6 }],
     'biologics-overview':      [{ key: 'biologics-cytokines', after: 1 }, { key: 'jak-tree', after: 3 }, { key: 'jak-structure', after: 4 }, { key: 'skin-barrier', after: 6 }],
     // ABCDE + AK progression for sunscreen / melasma articles (UV damage articles)
     'sunscreen-myths':         [{ key: 'uv-penetration', after: 1 }, { key: 'spf-curve', after: 3 }, { key: 'melanoma-abcde', after: 5 }, { key: 'ak-progression', after: 7 }],
     // More clinical-photo placeholders for diseases without owned images
-    'warts-myths':             [{ key: 'clinical-photo-placeholder', after: 2 }],
+    'warts-myths':             [],
     'epidermoid-cyst':         [{ key: 'clinical-photo-placeholder', after: 1 }],
   };
 
@@ -5928,7 +5928,7 @@
         'dermatology-faq':           ['DLQI'],
         'tinea-myths':               ['DLQI'],
         'warts-myths':               ['DLQI'],
-        'shingles-myths':            ['VAS', 'DLQI'],
+        'shingles-myths':            ['DLQI'],
         'mpox-care':                 ['DLQI'],
         'epidermoid-cyst':           ['DLQI'],
         'cutaneous-t-cell-lymphoma': ['VAS', 'DLQI']
