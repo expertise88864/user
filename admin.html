@@ -1,5 +1,43 @@
-<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><link rel="modulepreload" href="/blog/blog-shared.min.js?v=202605111135" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link rel="preconnect" href="https://pagead2.googlesyndication.com" /><link rel="preconnect" href="https://www.googletagmanager.com" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>後台編輯 · ChenDermatologist Admin</title><meta name="robots" content="noindex,nofollow" /><meta name="theme-color" content="#7a9285" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" /><link rel="icon" sizes="any" href="/favicon.ico" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap&text=陳翊嘉醫師皮膚科衛教筆記常見疾病迷思澄清關於我學經歷" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><link rel="modulepreload" href="/blog/blog-shared.min.js?v=202605111246" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link rel="preconnect" href="https://pagead2.googlesyndication.com" /><link rel="preconnect" href="https://www.googletagmanager.com" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>後台編輯 · ChenDermatologist Admin</title><meta name="robots" content="noindex,nofollow" /><meta name="theme-color" content="#7a9285" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" /><link rel="icon" sizes="any" href="/favicon.ico" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap&text=陳翊嘉醫師皮膚科衛教筆記常見疾病迷思澄清關於我學經歷" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>*{ box-sizing:border-box; } html,body{ margin:0; padding:0; height:100%; font-family:'Inter','Noto Sans TC','Microsoft JhengHei',sans-serif; background:#f5fbfa; color:#0f172a; overflow:hidden; } :root{ --teal:#7a9285; --teal-deep:#4d6358; --teal-bright:#a4b5a8; --mint-soft:#dcd9d1; --border:#dcd5c8; --line:#ebe4d8; --ink:#2a2620; --ink-2:#5e574e; --muted:#8b8378; } .teal-text{ background:linear-gradient(180deg,#a4b5a8 0%, #4d6358 100%); -webkit-background-clip:text; background-clip:text; color:transparent; } header.top{ position:relative; z-index:50; background:rgba(245,251,250,.95); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); padding:10px 16px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; height:54px; } header.top .brand{ font-weight:700; font-size:15px; } header.top .right{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-size:13px; } header.top a{ color:var(--teal-deep); text-decoration:none; font-weight:600; } .pat-status{ font-size:11.5px; padding:3px 10px; border-radius:9999px; border:1px solid var(--border); background:#fff; } .pat-status.ok{ color:#065f46; border-color:#a7f3d0; background:#ecfdf5; } .pat-status.no{ color:#7f1d1d; border-color:#fca5a5; background:#fef2f2; } main.layout{ display:grid; grid-template-columns:240px 1fr; height:calc(100vh - 54px); } @media (max-width:760px){ main.layout{ grid-template-columns:1fr; height:auto; } #sidebar{ height:auto; max-height:240px; border-right:none; border-bottom:1px solid var(--border); } } #sidebar{ background:#fff; border-right:1px solid var(--border); overflow-y:auto; padding:12px; } #sidebar h2{ font-size:11px; text-transform:uppercase; letter-spacing:.16em; color:var(--teal-deep); margin:6px 4px 8px; } .file-list{ display:flex; flex-direction:column; gap:1px; } .file-item{ font-size:12.5px; padding:6px 10px; border-radius:6px; cursor:pointer; color:var(--ink-2); display:flex; align-items:center; gap:6px; line-height:1.3; } .file-item:hover{ background:var(--mint-soft); color:var(--teal-deep); } .file-item.active{ background:var(--mint-soft); color:var(--teal-deep); font-weight:600; } .file-item .ico{ font-size:11px; } .new-row{ margin-top:14px; padding-top:14px; border-top:1px dashed var(--line); } .new-row input{ width:100%; padding:6px 8px; font-size:12px; border:1px solid var(--border); border-radius:6px; } .new-row button{ width:100%; margin-top:6px; padding:6px; background:#fff; border:1px solid var(--border); border-radius:6px; cursor:pointer; font-size:12px; color:var(--teal-deep); font-weight:600; } .new-row button:hover{ border-color:var(--teal); } #editorPane{ display:flex; flex-direction:column; height:100%; min-height:0; background:#f5fbfa; } .toolbar{ padding:8px 12px; border-bottom:1px solid var(--border); background:#fff; display:flex; gap:6px; align-items:center; flex-wrap:wrap; } .toolbar .path{ font-family:'JetBrains Mono',monospace; font-size:12px; padding:5px 10px; background:#f5fbfa; border:1px solid var(--border); border-radius:6px; color:var(--ink); } .toolbar button, .toolbar label.upload{ padding:5px 11px; font-size:12.5px; border-radius:6px; border:1px solid var(--border); background:#fff; cursor:pointer; font-weight:600; color:var(--ink-2); display:inline-flex; align-items:center; gap:4px; } .toolbar button:hover, .toolbar label.upload:hover{ border-color:var(--teal); color:var(--teal-deep); } .toolbar button.primary{ background:linear-gradient(180deg,#a4b5a8,#4d6358); color:#fff; border-color:var(--teal-deep); } .toolbar button.primary:hover{ filter:brightness(1.05); color:#fff; } .toolbar .sep{ width:1px; height:18px; background:var(--border); margin:0 4px; } .toolbar .grow{ flex:1; } .toolbar label.upload input{ display:none; } .frame-wrap{ flex:1; min-height:0; position:relative; background:#e2e8f0; } iframe.editor{ width:100%; height:100%; border:none; background:#fff; } .empty-state{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--muted); text-align:center; padding:32px; } .empty-state h3{ font-size:18px; color:var(--ink); margin:0 0 8px; } .empty-state p{ font-size:14px; max-width:420px; line-height:1.7; margin:6px 0; } textarea.source{ width:100%; height:100%; padding:14px 18px; font-family:'JetBrains Mono',Menlo,monospace; font-size:13px; line-height:1.65; border:none; outline:none; background:#fff; resize:none; } .statusbar{ padding:6px 14px; font-size:11.5px; background:#fff; border-top:1px solid var(--border); color:var(--muted); display:flex; gap:14px; flex-wrap:wrap; align-items:center; } .statusbar.ok{ color:#065f46; } .statusbar.err{ color:#7f1d1d; } .modal-bg{ position:fixed; inset:0; background:rgba(15,23,42,.42); display:flex; align-items:center; justify-content:center; z-index:100; padding:18px; } .modal{ background:#fff; border-radius:16px; padding:26px; max-width:520px; width:100%; box-shadow:0 24px 50px -16px rgba(12,81,89,.5); } .modal h2{ margin:0 0 8px; font-size:20px; color:var(--ink); } .modal p{ margin:6px 0; font-size:13.5px; line-height:1.7; color:var(--ink-2); } .modal input{ width:100%; padding:9px 12px; font-size:13px; font-family:'JetBrains Mono',monospace; border:1px solid var(--border); border-radius:8px; margin:8px 0; } .modal button{ padding:9px 16px; background:linear-gradient(180deg,#a4b5a8,#4d6358); color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; } .modal a{ color:var(--teal-deep); font-weight:600; }
+/* ── Redesigned toolbar (2026-05-11) — grouped sections, no emoji clutter ── */
+.toolbar-wrap{ background:#fff; border-bottom:1px solid var(--border); box-shadow:0 1px 3px rgba(15,23,42,.04) }
+.toolbar-row{ padding:8px 14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; min-height:42px }
+.toolbar-main{ background:#fff }
+.toolbar-secondary{ background:#fafaf6; padding:6px 14px; border-top:1px solid #ebe4d8; font-size:12px }
+.tb-group{ display:inline-flex; gap:1px; padding:3px 4px 3px 0; background:#f5fbfa; border:1px solid #e7e2d8; border-radius:8px; align-items:center }
+.tb-group::before{ content:attr(data-label); font-size:10px; color:#8b8378; letter-spacing:.1em; font-weight:700; padding:0 8px 0 10px; text-transform:uppercase; white-space:nowrap }
+.tb-group button, .tb-group label.upload{ padding:5px 10px; font-size:12.5px; border:none; background:transparent; cursor:pointer; font-weight:600; color:var(--ink); border-radius:5px; display:inline-flex; align-items:center; gap:4px; min-height:26px; line-height:1 }
+.tb-group button:hover, .tb-group label.upload:hover{ background:rgba(12,81,89,.10); color:var(--teal-deep) }
+.tb-group button:active{ background:rgba(12,81,89,.18) }
+.tb-group select{ padding:4px 6px; font-size:12px; border:1px solid #dcd5c8; border-radius:5px; background:#fff; color:var(--ink); font-weight:600; min-height:26px; cursor:pointer }
+.tb-group select:hover{ border-color:var(--teal) }
+.tb-color{ display:inline-flex; align-items:center; gap:5px; padding:3px 8px; border-radius:5px; cursor:pointer }
+.tb-color:hover{ background:rgba(12,81,89,.10) }
+.tb-color input[type="color"]{ width:18px; height:18px; border:1px solid #dcd5c8; padding:0; background:none; cursor:pointer; border-radius:3px }
+.tb-color span{ font-size:12.5px; font-weight:600; color:var(--ink) }
+.toolbar-row .path{ flex:0 1 auto; font-family:'JetBrains Mono',monospace; font-size:12px; padding:6px 12px; background:#f5fbfa; border:1px solid #e7e2d8; border-radius:8px; color:var(--ink); max-width:340px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:600 }
+.toolbar-row .grow{ flex:1 }
+.toolbar-row button.primary{ background:linear-gradient(180deg,#5a7d70,#3a5048); color:#fff; padding:8px 22px; border-radius:8px; font-size:13.5px; font-weight:700; border:1px solid #2d3f38; box-shadow:0 2px 8px rgba(58,80,72,.32); cursor:pointer; transition:transform .15s, box-shadow .15s; letter-spacing:.02em }
+.toolbar-row button.primary:hover{ transform:translateY(-1px); box-shadow:0 4px 12px rgba(58,80,72,.4); filter:brightness(1.08) }
+.toolbar-row button.primary:active{ transform:translateY(0); box-shadow:0 1px 3px rgba(58,80,72,.3) }
+.autosave-pill{ font-size:11px; color:#5e574e; background:#fff; padding:3px 10px; border-radius:9999px; border:1px solid #ebe4d8 }
+.toolbar-row .sep{ display:none }
+.toolbar{ background:transparent; border:none }
+/* ── Toast notifications ── */
+@keyframes toastIn{ from{ transform:translateY(20px); opacity:0 } to{ transform:translateY(0); opacity:1 } }
+@keyframes toastOut{ from{ transform:translateY(0); opacity:1 } to{ transform:translateY(20px); opacity:0 } }
+.cd-toast{ position:fixed; bottom:24px; right:24px; padding:13px 22px 13px 18px; border-radius:10px; font-size:14px; font-weight:600; font-family:'Noto Sans TC',Inter,sans-serif; box-shadow:0 12px 32px -8px rgba(0,0,0,.22); z-index:200; animation:toastIn .25s ease; max-width:380px; line-height:1.55; display:flex; gap:10px; align-items:flex-start }
+.cd-toast .cd-toast-icon{ flex-shrink:0; width:22px; height:22px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:14px; font-weight:800 }
+.cd-toast-success{ background:#dcfce7; color:#065f46; border:1px solid #86efac } .cd-toast-success .cd-toast-icon{ background:#22c55e; color:#fff }
+.cd-toast-error{ background:#fee2e2; color:#7f1d1d; border:1px solid #fca5a5 } .cd-toast-error .cd-toast-icon{ background:#ef4444; color:#fff }
+.cd-toast-info{ background:#f5fbfa; color:#0c5159; border:1px solid #a4b5a8 } .cd-toast-info .cd-toast-icon{ background:#0c5159; color:#fff }
+.modal{ border-radius:14px; padding:28px 30px }
+.modal h2{ margin:0 0 6px; font-size:19px; font-weight:700; letter-spacing:-.01em; color:var(--ink) }
+.modal button{ border-radius:8px; font-weight:600; padding:8px 16px; border:1px solid #2d3f38; cursor:pointer; font-size:13.5px; background:linear-gradient(180deg,#5a7d70,#3a5048); color:#fff; transition:filter .15s }
+.modal button:hover{ filter:brightness(1.08) }
+.modal button[id$="Cancel"], .modal button[id$="Close"], .modal button[id$="Dismiss"]{ background:#fff; color:var(--ink); border:1px solid #dcd5c8 }
+.modal button[id$="Cancel"]:hover, .modal button[id$="Close"]:hover{ border-color:var(--teal-deep) }
 /* Mobile-friendly admin layout — toolbar wraps, sidebar collapses */
 @media (max-width: 880px){
   main.layout{ grid-template-columns:1fr; height:auto; min-height:calc(100vh - 54px) }
@@ -37,10 +75,7 @@
 ② 圖片直接 <strong>拖曳</strong> 進文章內，自動上傳<br/>
 ③ Ctrl + S 儲存<br/>
 ④ 出現黃框 = 可編輯區域
-</div></div></aside><section id="editorPane"><div class="toolbar" id="toolbar"><span class="path" id="filePath">尚未選擇檔案</span><span class="sep"></span><button id="boldBtn" title="粗體 (Ctrl+B)"><b>B</b></button><button id="italicBtn" title="斜體 (Ctrl+I)"><i>I</i></button><button id="underlineBtn" title="底線 (Ctrl+U)"><u>U</u></button><button id="strikeBtn" title="刪除線"><s>S</s></button><span class="sep"></span><button id="h2Btn" title="大標題">H2</button><button id="h3Btn" title="小標題">H3</button><button id="h4Btn" title="次小標題">H4</button><button id="ulBtn" title="項目符號清單">• 清單</button><button id="olBtn" title="編號清單">1. 編號</button><button id="quoteBtn" title="引用區塊">&ldquo; 引用</button><button id="codeBtn" title="行內代碼">&lt;/&gt;</button><span class="sep"></span><button id="alignLeftBtn" title="靠左">⇤</button><button id="alignCenterBtn" title="置中">⇔</button><button id="alignRightBtn" title="靠右">⇥</button><span class="sep"></span><label class="upload" title="字體顏色" style="padding:3px 6px 3px 8px;gap:2px">
-🎨
-<input type="color" id="colorPick" value="#0c5159" style="width:24px;height:22px;border:none;background:transparent;cursor:pointer;padding:0" /></label><select id="sizeSel" title="字體大小" style="padding:5px 6px;font-size:12px;border:1px solid var(--border);border-radius:6px;background:#fff;color:var(--ink-2);font-weight:600"><option value="">字級</option><option value="12px">12</option><option value="13px">13</option><option value="14px">14</option><option value="15.5px" selected>15.5</option><option value="17px">17</option><option value="20px">20</option><option value="24px">24</option><option value="28px">28</option></select><select id="weightSel" title="字重" style="padding:5px 6px;font-size:12px;border:1px solid var(--border);border-radius:6px;background:#fff;color:var(--ink-2);font-weight:600"><option value="">字重</option><option value="300">細</option><option value="400" selected>正常</option><option value="500">中</option><option value="600">半粗</option><option value="700">粗</option><option value="800">特粗</option></select><button id="clearFmtBtn" title="清除格式">⊘ 清除</button><span class="sep"></span><button id="linkBtn" title="插入連結">🔗 連結</button><button id="tableBtn" title="表格產生器">📊 表格</button><button id="citeBtn" title="引用文獻 (PMID)">📚 文獻</button><button id="bilingualBtn" title="檢查中英雙語完整性">🌐 雙語檢查</button><span class="sep"></span><label class="upload" title="上傳圖片並插入（自動壓縮為 WebP）">🖼 上傳圖片
-<input type="file" id="imageInput" accept="image/*" multiple /></label><button id="imageLibBtn" title="從圖庫挑圖">📁 圖庫</button><button id="metaBtn" title="文章 SEO 後設資料表單">🗂 後設資料</button><span class="sep"></span><button id="bilingualEditBtn" title="切換雙語並排編輯（ZH 左、EN 右）">🇹🇼🇬🇧 雙語編輯</button><button id="historyBtn" title="版本歷史 + 還原">📜 歷史</button><button id="spellBtn" title="拼字 / 文法檢查（LanguageTool）">📖 拼字</button><span class="sep"></span><button id="draftBtn" title="存到草稿分支 drafts/{slug}，不發布到 main">📝 草稿</button><button id="scheduleBtn" title="排程於指定時間自動發布">⏰ 排程</button><span class="grow"></span><button id="sourceBtn" title="切換為 HTML 原始碼模式">{ } 原始碼</button><button id="reloadBtn" title="重新讀取（放棄改動）">↻ 重讀</button><button id="saveBtn" class="primary" title="儲存並推送 (Ctrl+S)">💾 儲存並推送</button></div><div id="behindBanner" style="display:none;padding:8px 16px;background:#fef3c7;border-bottom:1px solid #fbbf24;color:#92400e;font-size:13px;align-items:center;gap:10px;flex-wrap:wrap"><span>⚠️</span><span id="behindBannerText">你載入的版本已落後遠端</span><button id="behindReloadBtn" style="padding:4px 12px;background:#92400e;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">重讀最新版</button><button id="behindDismissBtn" style="padding:4px 10px;background:transparent;color:#92400e;border:1px solid #92400e;border-radius:6px;cursor:pointer;font-size:12px">先不理</button></div><div id="draftBanner" style="display:none;padding:8px 16px;background:#dbeafe;border-bottom:1px solid #60a5fa;color:#1e40af;font-size:13px;align-items:center;gap:10px;flex-wrap:wrap"><span>💾</span><span id="draftBannerText">偵測到 10 分鐘前的未儲存草稿</span><button id="draftRestoreBtn" style="padding:4px 12px;background:#1e40af;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">還原草稿</button><button id="draftDiscardBtn" style="padding:4px 10px;background:transparent;color:#1e40af;border:1px solid #1e40af;border-radius:6px;cursor:pointer;font-size:12px">丟棄</button></div><div class="frame-wrap" id="frameWrap"><div class="empty-state" id="emptyState"><h3>👈 從左邊選一個檔案開始編輯</h3><p>選了之後，網頁本人會出現在這裡。</p><p>你可以直接點任何文字、改字、貼圖。<strong>有黃框</strong>的區域 = 可以編輯；沒黃框的（如 header / footer / 導覽）為了避免破壞版型，需切到原始碼模式才能改。</p></div></div><div class="statusbar" id="statusbar"><span id="status">尚未載入檔案</span><span class="grow" style="flex:1"></span><span id="autosaveInd" style="color:var(--muted);font-size:11px"></span><span id="wordCount" style="color:var(--muted);font-size:11px"></span><span id="readTime" style="color:var(--muted);font-size:11px"></span><span id="shaInfo"></span></div></section></main><div id="patModal" class="modal-bg" style="display:none"><div class="modal"><h2>輸入 GitHub Personal Access Token</h2><p>後台用 GitHub API 直接寫進你的 repo (<code style="font-family:'JetBrains Mono',monospace">expertise88864/user</code>)。需要 PAT 一次，儲存在你瀏覽器的 localStorage，不會傳到任何第三方。</p><p><strong>怎麼產生 PAT?</strong><br/>
+</div></div></aside><section id="editorPane"><div class="toolbar-wrap" id="toolbarWrap"><div class="toolbar-row toolbar-main" id="toolbar"><span class="path" id="filePath">未選擇檔案</span><div class="tb-group" data-label="字型"><button id="boldBtn" title="粗體 Ctrl+B" style="font-weight:800">B</button><button id="italicBtn" title="斜體 Ctrl+I" style="font-style:italic">I</button><button id="underlineBtn" title="底線" style="text-decoration:underline">U</button><button id="strikeBtn" title="刪除線" style="text-decoration:line-through">S</button></div><div class="tb-group" data-label="標題"><button id="h2Btn" title="大標題">H2</button><button id="h3Btn" title="小標題">H3</button><button id="h4Btn" title="次小標題">H4</button></div><div class="tb-group" data-label="段落"><button id="ulBtn" title="項目符號清單">• 清單</button><button id="olBtn" title="編號清單">1. 編號</button><button id="quoteBtn" title="引用區塊">&ldquo; 引用</button><button id="codeBtn" title="行內代碼" style="font-family:'JetBrains Mono',monospace">&lt;/&gt;</button></div><div class="tb-group" data-label="對齊"><button id="alignLeftBtn" title="靠左對齊">&#x21E4;</button><button id="alignCenterBtn" title="置中對齊">&#x21D4;</button><button id="alignRightBtn" title="靠右對齊">&#x21E5;</button></div><div class="tb-group" data-label="樣式"><label class="tb-color" title="字體顏色"><input type="color" id="colorPick" value="#0c5159" /><span>顏色</span></label><select id="sizeSel" title="字級大小"><option value="">字級</option><option value="12px">12</option><option value="13px">13</option><option value="14px">14</option><option value="15.5px" selected>15.5</option><option value="17px">17</option><option value="20px">20</option><option value="24px">24</option><option value="28px">28</option></select><select id="weightSel" title="字重"><option value="">字重</option><option value="300">細</option><option value="400" selected>正常</option><option value="500">中</option><option value="600">半粗</option><option value="700">粗</option><option value="800">特粗</option></select><button id="clearFmtBtn" title="清除所有格式">清除</button></div><span class="grow"></span><button id="saveBtn" class="primary" title="儲存並推送到 GitHub (Ctrl+S)">儲存並推送</button></div><div class="toolbar-row toolbar-secondary"><div class="tb-group" data-label="插入"><button id="linkBtn" title="插入連結">連結</button><button id="tableBtn" title="表格產生器">表格</button><label class="upload" title="上傳圖片（自動壓縮為 WebP）">上傳圖片<input type="file" id="imageInput" accept="image/*" multiple /></label><button id="imageLibBtn" title="從圖庫挑圖">圖庫</button><button id="citeBtn" title="引用 PubMed 文獻 (PMID)">文獻</button></div><div class="tb-group" data-label="文章"><button id="metaBtn" title="文章 SEO 後設資料">後設資料</button><button id="bilingualEditBtn" title="切換為雙語並排編輯">雙語編輯</button><button id="bilingualBtn" title="檢查中英雙語完整性">雙語檢查</button><button id="spellBtn" title="拼字 / 文法檢查 (LanguageTool)">拼字</button><button id="historyBtn" title="版本歷史 + 還原">歷史</button></div><div class="tb-group" data-label="發布"><button id="draftBtn" title="存到草稿分支 drafts/{slug}（不發布到 main）">存草稿</button><button id="scheduleBtn" title="排程於指定時間自動發布">排程發布</button><button id="sourceBtn" title="切換 HTML 原始碼模式">原始碼</button><button id="reloadBtn" title="重新讀取（放棄未存改動）">重讀</button></div><span class="grow"></span><span id="autosaveInd" class="autosave-pill"></span></div></div></div><div id="behindBanner" style="display:none;padding:8px 16px;background:#fef3c7;border-bottom:1px solid #fbbf24;color:#92400e;font-size:13px;align-items:center;gap:10px;flex-wrap:wrap"><span>⚠️</span><span id="behindBannerText">你載入的版本已落後遠端</span><button id="behindReloadBtn" style="padding:4px 12px;background:#92400e;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">重讀最新版</button><button id="behindDismissBtn" style="padding:4px 10px;background:transparent;color:#92400e;border:1px solid #92400e;border-radius:6px;cursor:pointer;font-size:12px">先不理</button></div><div id="draftBanner" style="display:none;padding:8px 16px;background:#dbeafe;border-bottom:1px solid #60a5fa;color:#1e40af;font-size:13px;align-items:center;gap:10px;flex-wrap:wrap"><span>💾</span><span id="draftBannerText">偵測到 10 分鐘前的未儲存草稿</span><button id="draftRestoreBtn" style="padding:4px 12px;background:#1e40af;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">還原草稿</button><button id="draftDiscardBtn" style="padding:4px 10px;background:transparent;color:#1e40af;border:1px solid #1e40af;border-radius:6px;cursor:pointer;font-size:12px">丟棄</button></div><div class="frame-wrap" id="frameWrap"><div class="empty-state" id="emptyState"><h3>請從左側選一個檔案開始編輯</h3><p>選了之後，網頁本人會出現在這裡。</p><p>你可以直接點任何文字、改字、貼圖。<strong>有黃框</strong>的區域 = 可以編輯；沒黃框的（如 header / footer / 導覽）為了避免破壞版型，需切到原始碼模式才能改。</p></div></div><div class="statusbar" id="statusbar"><span id="status">尚未載入檔案</span><span class="grow" style="flex:1"></span><span id="autosaveInd" style="color:var(--muted);font-size:11px"></span><span id="wordCount" style="color:var(--muted);font-size:11px"></span><span id="readTime" style="color:var(--muted);font-size:11px"></span><span id="shaInfo"></span></div></section></main><div id="patModal" class="modal-bg" style="display:none"><div class="modal"><h2>輸入 GitHub Personal Access Token</h2><p>後台用 GitHub API 直接寫進你的 repo (<code style="font-family:'JetBrains Mono',monospace">expertise88864/user</code>)。需要 PAT 一次，儲存在你瀏覽器的 localStorage，不會傳到任何第三方。</p><p><strong>怎麼產生 PAT?</strong><br/>
 ① <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">https://github.com/settings/tokens</a><br/>
 ② 點 "Generate new token (classic)"<br/>
 ③ 名字隨便填，Expiration 選 90 天 / No expiration<br/>
@@ -278,7 +313,7 @@ if(el && !region){ region = el; matchedSel = sel; }
 }
 console.log('[admin] iframe selectors:', diag);
 if(!region){
-setStatus('❌ iframe 沒載入到任何內容 — 自動切原始碼模式', true);
+setStatus('iframe 沒載入到任何內容 — 自動切原始碼模式', true);
 console.warn('[admin] iframe doc has NO body/main/article — likely a parse failure. Check stripAnalytics.');
 // Auto-switch to source mode
 setTimeout(()=>{ try { document.getElementById('sourceBtn').click(); } catch(e){} }, 600);
@@ -289,7 +324,7 @@ region.dataset.cdEditable = '1';
 region.spellcheck = false;
 region.focus();
 const tag = (region.tagName || '').toLowerCase();
-setStatus('✅ 可編輯區域：' + matchedSel + (tag==='body' ? '（全頁可編輯，小心 footer/header）' : ''));
+setStatus('可編輯區域：' + matchedSel + (tag==='body' ? '（全頁可編輯，小心 footer/header）' : ''));
 }
 function bindFrameEvents(){
 if(!editFrame) return;
@@ -386,7 +421,7 @@ content: b64,
 branch: BRANCH
 });
 const url = '/blog/images/' + filename;
-setStatus('✅ 已上傳 ' + url);
+setStatus('已上傳 ' + url);
 resolve(url);
 } catch(e){
 setStatus('圖片上傳失敗: ' + e.message, true);
@@ -469,41 +504,69 @@ CURRENT_SHA = data.content.sha;
 CURRENT_CONTENT = newContent;
 DIRTY = false;
 elShaInfo.textContent = 'SHA: ' + CURRENT_SHA.substring(0,7);
-setStatus('✅ 已儲存並推送 ' + CURRENT_FILE + ' — Vercel 約 30 秒後重新部署');
+setStatus('已儲存並推送 ' + CURRENT_FILE + ' — Vercel 約 30 秒後重新部署');
 } catch(e){
 setStatus('儲存失敗: ' + e.message, true);
 }
 }
 // =========== merge edited iframe content back into CURRENT_CONTENT ===========
-function mergeIframeIntoOriginal(){
-if(!editFrame || !editFrame.contentDocument) return CURRENT_CONTENT;
-const doc = editFrame.contentDocument;
-// Collect edits from each editable region (by id) and splice back into source HTML by id-based regex
-let merged = CURRENT_CONTENT;
-const region = doc.querySelector('[data-cd-editable="1"]');
-if(!region) return merged;
-// Reset contentEditable + remove our marker classes/styles before serializing
-region.removeAttribute('contenteditable');
-region.removeAttribute('data-cd-editable');
-region.removeAttribute('spellcheck');
-// Get the inner HTML
-const innerHTML = region.innerHTML;
-// Splice into the original by id (assume id="proseZh" for articles)
-const id = region.id || null;
-if(id){
-const re = new RegExp('(<[^>]+id="' + id + '"[^>]*>)([\\s\\S]*?)(</[a-zA-Z]+>)');
-merged = merged.replace(re, function(m, openTag, oldInner, closeTag){
-return openTag + '\n' + innerHTML + '\n' + closeTag;
-});
-} else {
-// Fallback: replace <main id="main-content">...</main>
-const reMain = /(<main[^>]*>)([\s\S]*?)(<\/main>)/;
-merged = merged.replace(reMain, function(m, o, _, c){ return o + '\n' + innerHTML + '\n' + c; });
+//
+// CRITICAL FIX (2026-05-11): the original regex `(<[^>]+id="${id}"[^>]*>)([\s\S]*?)(</[a-zA-Z]+>)`
+// was BROKEN. The non-greedy `[\s\S]*?` followed by `</[a-zA-Z]+>` (ANY closing
+// tag) matched the FIRST inner closing tag inside the region — so for
+// <div id="proseZh"><h2>title</h2><p>body</p></div>, the regex captured
+// group 2 = "<h2>title" and group 3 = "</h2>", then replaced the WHOLE region
+// with the new innerHTML stuck between the opening div and the orphan </h2>.
+// Result: articles were SILENTLY CORRUPTED on every save, with original content
+// appearing after the corruption. That's why the user saw "原本的版本" after
+// refresh — old text leaked through the corrupted replacement.
+//
+// Fixed version uses proper tag-depth counting to find the MATCHING close tag.
+function spliceElementById(html, id, newInnerHTML){
+  const safeId = id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const reOpen = new RegExp('<([a-z][a-z0-9]*)([^>]*\\s)?id="' + safeId + '"([^>]*)>', 'i');
+  const open = reOpen.exec(html);
+  if(!open) return null;
+  const tagName = open[1].toLowerCase();
+  const openEnd = open.index + open[0].length;
+  let depth = 1;
+  const walker = new RegExp('<' + tagName + '\\b[^>]*>|<\\/' + tagName + '\\s*>', 'gi');
+  walker.lastIndex = openEnd;
+  let m;
+  while((m = walker.exec(html)) !== null){
+    if(m[0].startsWith('</')) depth--; else depth++;
+    if(depth === 0){
+      return html.slice(0, openEnd) + '\n' + newInnerHTML + '\n' + html.slice(m.index);
+    }
+  }
+  return null;  // unbalanced
 }
-// Restore editable so we can keep editing
-region.contentEditable = 'true';
-region.dataset.cdEditable = '1';
-return merged;
+
+function mergeIframeIntoOriginal(){
+  if(!editFrame || !editFrame.contentDocument) return CURRENT_CONTENT;
+  const doc = editFrame.contentDocument;
+  const region = doc.querySelector('[data-cd-editable="1"]');
+  if(!region) return CURRENT_CONTENT;
+  // Strip our markers before serialising the inner HTML
+  region.removeAttribute('contenteditable');
+  region.removeAttribute('data-cd-editable');
+  region.removeAttribute('spellcheck');
+  const innerHTML = region.innerHTML;
+  const id = region.id || null;
+  // Restore editable state so user can keep editing
+  region.contentEditable = 'true';
+  region.dataset.cdEditable = '1';
+  if(!id){
+    // Fall back to <main>
+    const reMain = /(<main[^>]*>)([\s\S]*?)(<\/main>)/;
+    return CURRENT_CONTENT.replace(reMain, (m, o, _, c) => o + '\n' + innerHTML + '\n' + c);
+  }
+  const out = spliceElementById(CURRENT_CONTENT, id, innerHTML);
+  if(out === null){
+    console.warn('mergeIframeIntoOriginal: could not find matching close tag for id=' + id + ' in CURRENT_CONTENT');
+    return CURRENT_CONTENT;
+  }
+  return out;
 }
 // =========== new file from template ===========
 document.getElementById('newFileBtn').addEventListener('click', async ()=>{
@@ -521,7 +584,7 @@ message: 'create ' + newPath + ' from template',
 content: encodeUtf8Base64(content),
 branch: BRANCH
 });
-setStatus('✅ 已建立 ' + newPath + '。記得編輯後也手動更新 sitemap.xml / sw.js / blog/index.html / feed.xml 加入新文章卡片');
+setStatus('已建立 ' + newPath + '。記得編輯後也手動更新 sitemap.xml / sw.js / blog/index.html / feed.xml 加入新文章卡片');
 document.getElementById('newFileName').value = '';
 await refreshFileList();
 setTimeout(()=>loadFile(newPath), 400);
@@ -588,9 +651,9 @@ const el = document.getElementById('autosaveInd');
 if(!el) return;
 if(!lastAutosaveAt){ el.textContent = ''; return; }
 const ago = Math.floor((Date.now()-lastAutosaveAt)/1000);
-if(ago < 5) el.textContent = '💾 已暫存';
-else if(ago < 60) el.textContent = '💾 ' + ago + 's 前暫存';
-else el.textContent = '💾 ' + Math.floor(ago/60) + 'm 前暫存';
+if(ago < 5) el.textContent = '已暫存';
+else if(ago < 60) el.textContent = '' + ago + 's 前暫存';
+else el.textContent = '' + Math.floor(ago/60) + 'm 前暫存';
 }
 setInterval(autosave, AUTOSAVE_INTERVAL_MS);
 setInterval(updateAutosaveIndicator, 5000);
@@ -620,7 +683,7 @@ if(SOURCE_MODE) mountSource(d.content);
 else mountIframe(d.content);
 DIRTY = true;
 banner.style.display = 'none';
-setStatus('✅ 已還原草稿（記得儲存）');
+setStatus('已還原草稿（記得儲存）');
 });
 document.getElementById('draftDiscardBtn').addEventListener('click', ()=>{
 if(!confirm('丟棄草稿？此操作無法復原。')) return;
@@ -644,7 +707,7 @@ const file = await gh('GET', 'contents/' + CURRENT_FILE);
 if(file.sha !== CURRENT_SHA){
 const banner = document.getElementById('behindBanner');
 const text = document.getElementById('behindBannerText');
-text.textContent = '⚠️ 遠端版本已更新（' + data[0].commit.message.split('\n')[0].slice(0, 50) + '...） — 建議先「重讀最新版」再繼續編輯';
+text.textContent = '遠端版本已更新（' + data[0].commit.message.split('\n')[0].slice(0, 50) + '...） — 建議先「重讀最新版」再繼續編輯';
 banner.style.display = 'flex';
 banner._remoteSha = file.sha;
 }
@@ -847,7 +910,7 @@ if(!pmid || !/^\d{1,9}$/.test(pmid.trim())){ if(pmid) alert('PMID 必須是數�
 setStatus('查詢 PMID ' + pmid + ' ...');
 try {
 const c = await fetchPubmed(pmid.trim());
-setStatus('✅ ' + c.title.slice(0, 60));
+setStatus('' + c.title.slice(0, 60));
 const doc = editFrame.contentDocument;
 // Insert inline citation marker at cursor
 doc.execCommand('insertHTML', false, ' <span class="cite">(PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/' + c.pmid + '/" target="_blank" rel="noopener">' + c.pmid + '</a>)</span>');
@@ -857,9 +920,9 @@ if(refsList){
 const li = doc.createElement('li');
 li.innerHTML = c.citation + ' <a href="https://pubmed.ncbi.nlm.nih.gov/' + c.pmid + '/" target="_blank" rel="noopener">「來源」</a>';
 refsList.appendChild(li);
-setStatus('✅ 已加入參考資料區（第 ' + refsList.children.length + ' 條）');
+setStatus('已加入參考資料區（第 ' + refsList.children.length + ' 條）');
 } else {
-setStatus('✅ 已插入引用標記（注意：本文沒有 <ol class="references"> 區塊）', true);
+setStatus('已插入引用標記（注意：本文沒有 <ol class="references"> 區塊）', true);
 }
 DIRTY = true;
 } catch(e){
@@ -894,7 +957,7 @@ bg.innerHTML = `
 <div class="modal" style="max-width:640px;max-height:80vh;overflow-y:auto">
 <h2>🌐 中英雙語檢查</h2>
 <p>共掃描 ${doc.querySelectorAll('[data-zh],[data-en]').length} 個雙語節點，發現 <strong>${issues.length}</strong> 個問題。</p>
-${issues.length===0 ? '<p style="color:#065f46">✅ 沒有問題！每個 data-zh 都有對應的 data-en。</p>' :
+${issues.length===0 ? '<p style="color:#065f46">沒有問題！每個 data-zh 都有對應的 data-en。</p>' :
 '<div style="max-height:50vh;overflow-y:auto;border:1px solid #ebe4d8;border-radius:8px">' +
 issues.map((i,idx)=>`<div style="padding:10px 14px;border-bottom:1px solid #ebe4d8;font-size:12.5px;line-height:1.6"><strong style="color:#92400e">${idx+1}. ${i.type}</strong><div style="margin-top:4px;color:#5e574e">ZH: ${i.zh}</div><div style="color:#5e574e">EN: ${i.en}</div></div>`).join('') +
 '</div>'}
@@ -964,7 +1027,7 @@ content: b64,
 branch: BRANCH
 });
 const url = '/blog/images/' + filename;
-setStatus('✅ 已上傳 ' + url + ' (' + c.w + '×' + c.h + ')');
+setStatus('已上傳 ' + url + ' (' + c.w + '×' + c.h + ')');
 window._lastAlt = altText || '';
 resolve(url);
 } catch(e){ reject(e); }
@@ -1033,7 +1096,7 @@ const bg = document.createElement('div');
 bg.className = 'modal-bg';
 bg.innerHTML = `
 <div class="modal" style="max-width:760px;max-height:84vh;display:flex;flex-direction:column">
-<h2>📁 圖庫 (${all.length} 張)</h2>
+<h2>圖庫 (${all.length} 張)</h2>
 <input id="libSearch" placeholder="搜尋檔名..." style="padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:8px;margin:8px 0" />
 <div id="libGrid" style="flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;padding:6px;border:1px solid #ebe4d8;border-radius:8px"></div>
 <div style="margin-top:12px;display:flex;gap:8px">
@@ -1062,7 +1125,7 @@ if(filtered.length===0) grid.innerHTML = '<div style="grid-column:1/-1;text-alig
 renderGrid('');
 bg.querySelector('#libSearch').addEventListener('input', e=>renderGrid(e.target.value));
 bg.querySelector('#libClose').addEventListener('click', ()=>bg.remove());
-setStatus('✅ 圖庫載入完成');
+setStatus('圖庫載入完成');
 } catch(e){
 setStatus('圖庫讀取失敗: ' + e.message, true);
 }
@@ -1165,7 +1228,7 @@ if(SOURCE_MODE) sourceTextarea.value = s;
 else mountIframe(s);  // remount iframe with new metadata
 DIRTY = true;
 bg.remove();
-setStatus('✅ 後設資料已套用（記得儲存）');
+setStatus('後設資料已套用（記得儲存）');
 });
 });
 // ─────────────────────────────────────────────────────────────
@@ -1253,7 +1316,7 @@ content: encodeUtf8Base64(html.replace('<html lang="zh-Hant-TW">', '<html lang="
 branch: BRANCH
 });
 }
-setStatus('✅ 已建立 blog/' + slug + '.html' + (mirror ? ' + 英文鏡像' : '') + ' — 記得編輯後也手動加進 sitemap.xml / sw.js / blog/index.html');
+setStatus('已建立 blog/' + slug + '.html' + (mirror ? ' + 英文鏡像' : '') + ' — 記得編輯後也手動加進 sitemap.xml / sw.js / blog/index.html');
 document.getElementById('newFileName').value = '';
 bg.remove();
 await refreshFileList();
@@ -1500,7 +1563,7 @@ function toggleBilingualEdit(){
   wrap.appendChild(zhCol); wrap.appendChild(enCol);
   elFrameWrap.appendChild(wrap);
   bilingualZhTa = zhTa; bilingualEnTa = enTa;
-  setStatus('🌐 雙語並排：左 ZH，右 EN。儲存會同時送出兩邊改動。');
+  setStatus('雙語並排：左 ZH，右 EN。儲存會同時送出兩邊改動。');
 }
 
 function mergeBilingualBack(){
@@ -1557,7 +1620,7 @@ async function loadHistoryList(bg){
       });
       list.appendChild(item);
     });
-    setStatus('✅ 載入 ' + commits.length + ' 個版本');
+    setStatus('載入 ' + commits.length + ' 個版本');
   } catch(e){
     setStatus('版本歷史失敗: ' + e.message, true);
     bg.querySelector('#histList').textContent = '錯誤: ' + e.message;
@@ -1579,7 +1642,7 @@ async function showCommitDiff(bg, sha, isLatest){
       r.addEventListener('click', ()=>{
         if(!confirm('將版本 ' + sha.slice(0,7) + ' 的內容載入編輯器（你目前未存的改動會丟失）。\n\n載入後需要手動按「儲存並推送」才會真的還原到 GitHub。\n\n確定？')) return;
         if(BILINGUAL_MODE){
-          alert('請先按「🇹🇼🇬🇧 雙語編輯」切回單一視窗模式再還原');
+          alert('請先按「雙語編輯」切回單一視窗模式再還原');
           return;
         }
         CURRENT_CONTENT = oldContent;
@@ -1587,7 +1650,7 @@ async function showCommitDiff(bg, sha, isLatest){
         if(SOURCE_MODE){ sourceTextarea.value = oldContent; }
         else mountIframe(oldContent);
         bg.remove();
-        setStatus('已載入 ' + sha.slice(0,7) + ' 版本 — 按 💾 儲存才會真的還原發布');
+        setStatus('已載入 ' + sha.slice(0,7) + ' 版本 — 按 儲存才會真的還原發布');
       });
     }
   } catch(e){
@@ -1678,9 +1741,9 @@ async function saveAsDraft(silent){
     const result = await gh('PUT', 'contents/' + CURRENT_FILE, body);
     DIRTY = false;
     clearAutosaveFor(CURRENT_FILE);
-    setStatus('✅ 已存到草稿分支 ' + draftBranch + ' — Vercel 約 60 秒後可看 preview');
+    setStatus('已存到草稿分支 ' + draftBranch + ' — Vercel 約 60 秒後可看 preview');
     if(!silent){
-      const previewMsg = '✅ 已儲存到草稿分支 ' + draftBranch + '。\n\n要開啟 GitHub 分支頁面 (可看 Vercel preview link) 嗎？';
+      const previewMsg = '已儲存到草稿分支 ' + draftBranch + '。\n\n要開啟 GitHub 分支頁面 (可看 Vercel preview link) 嗎？';
       if(confirm(previewMsg)){
         window.open('https://github.com/' + REPO + '/tree/' + draftBranch, '_blank');
       }
@@ -1707,7 +1770,7 @@ function openScheduleModal(){
   const defaultLocal = oneHourLater.getFullYear() + '-' + pad(oneHourLater.getMonth()+1) + '-' + pad(oneHourLater.getDate()) + 'T' + pad(oneHourLater.getHours()) + ':' + pad(oneHourLater.getMinutes());
   const bg = document.createElement('div');
   bg.className = 'modal-bg';
-  bg.innerHTML = '<div class="modal" style="max-width:560px"><h2>⏰ 排程自動發布</h2><p style="font-size:12.5px;color:#5e574e">會把目前編輯內容存到草稿分支 <code style="background:#f1ece4;padding:2px 6px;border-radius:4px">drafts/' + slug + '</code>，並安排在指定時間由 GitHub Actions 自動 merge 到 main 發布、Vercel 隨即部署。</p><label style="font-size:12px;font-weight:600;color:#0c5159;display:block;margin:14px 0 4px">發布時間（你的本地時間）<input id="schedAt" type="datetime-local" value="' + defaultLocal + '" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" /></label><p style="font-size:11px;color:#8b8378;margin:6px 0 14px">⏱ GitHub Actions cron 每 15 分鐘檢查一次隊列、到時間自動 merge。</p><div style="display:flex;gap:8px;justify-content:flex-end"><button id="schedCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button><button id="schedConfirm">📤 存草稿並排程</button></div></div>';
+  bg.innerHTML = '<div class="modal" style="max-width:560px"><h2>排程自動發布</h2><p style="font-size:12.5px;color:#5e574e">會把目前編輯內容存到草稿分支 <code style="background:#f1ece4;padding:2px 6px;border-radius:4px">drafts/' + slug + '</code>，並安排在指定時間由 GitHub Actions 自動 merge 到 main 發布、Vercel 隨即部署。</p><label style="font-size:12px;font-weight:600;color:#0c5159;display:block;margin:14px 0 4px">發布時間（你的本地時間）<input id="schedAt" type="datetime-local" value="' + defaultLocal + '" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" /></label><p style="font-size:11px;color:#8b8378;margin:6px 0 14px">⏱ GitHub Actions cron 每 15 分鐘檢查一次隊列、到時間自動 merge。</p><div style="display:flex;gap:8px;justify-content:flex-end"><button id="schedCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button><button id="schedConfirm">📤 存草稿並排程</button></div></div>';
   document.body.appendChild(bg);
   bg.querySelector('#schedCancel').addEventListener('click', ()=>bg.remove());
   bg.querySelector('#schedConfirm').addEventListener('click', async ()=>{
@@ -1751,7 +1814,7 @@ function openScheduleModal(){
       };
       if(queueSha) body.sha = queueSha;
       await gh('PUT', 'contents/' + QUEUE_PATH, body);
-      setStatus('✅ 已排程 ' + slug + ' 於 ' + atDate.toLocaleString('zh-TW') + ' 自動發布（共 ' + queue.length + ' 件待發布）');
+      setStatus('已排程 ' + slug + ' 於 ' + atDate.toLocaleString('zh-TW') + ' 自動發布（共 ' + queue.length + ' 件待發布）');
       bg.remove();
     } catch(e){
       btn.disabled = false;
@@ -1790,7 +1853,7 @@ async function runSpellCheck(){
     if(!r.ok) throw new Error('HTTP ' + r.status);
     const data = await r.json();
     showSpellResults(data.matches || []);
-    setStatus('✅ 檢查完成：' + (data.matches?.length||0) + ' 個建議');
+    setStatus('檢查完成：' + (data.matches?.length||0) + ' 個建議');
   } catch(e){
     setStatus('拼字檢查失敗: ' + e.message + ' — 可能 LanguageTool 限額或網路問題', true);
   }
@@ -1800,17 +1863,110 @@ function showSpellResults(matches){
   const bg = document.createElement('div');
   bg.className = 'modal-bg';
   const items = matches.length === 0
-    ? '<p style="color:#065f46;padding:14px;background:#dcfce7;border-radius:8px;margin-top:10px">✅ 沒發現拼字 / 文法問題！</p>'
+    ? '<p style="color:#065f46;padding:14px;background:#dcfce7;border-radius:8px;margin-top:10px">沒發現拼字 / 文法問題！</p>'
     : '<div style="max-height:60vh;overflow-y:auto;border:1px solid #ebe4d8;border-radius:8px;margin-top:10px">' +
       matches.slice(0, 80).map((m, idx)=>{
         const repl = (m.replacements||[]).slice(0,5).map(r=>'<code style="background:#dcfce7;padding:1px 5px;border-radius:3px;margin-right:4px">'+ (r.value||'').replace(/</g,'&lt;') +'</code>').join('');
         const ctx = (m.context && m.context.text || '').replace(/</g,'&lt;');
         return '<div style="padding:10px 14px;border-bottom:1px solid #ebe4d8;font-size:12.5px;line-height:1.6"><div style="color:#92400e;font-weight:600;margin-bottom:4px">' + (idx+1) + '. ' + m.message.replace(/</g,'&lt;') + '</div><div style="color:#5e574e;background:#fef3c7;padding:6px 8px;border-radius:4px;font-family:JetBrains Mono,monospace;font-size:11.5px;word-break:break-all">「' + ctx + '」</div>' + (repl ? '<div style="margin-top:5px;color:#0c5159;font-size:11.5px">建議替換：' + repl + '</div>' : '') + '</div>';
       }).join('') + '</div>' + (matches.length > 80 ? '<p style="font-size:11.5px;color:#8b8378;margin-top:8px">顯示前 80 個結果，共 ' + matches.length + ' 個</p>' : '');
-  bg.innerHTML = '<div class="modal" style="max-width:720px;max-height:88vh;display:flex;flex-direction:column"><h2>📖 拼字 / 文法檢查</h2><p style="font-size:12.5px;color:#5e574e">使用 LanguageTool API（中文支援以 zh-CN 為主，繁中部分可能誤報）。共 ' + matches.length + ' 個建議。</p>' + items + '<div style="margin-top:12px"><button id="spellClose">關閉</button></div></div>';
+  bg.innerHTML = '<div class="modal" style="max-width:720px;max-height:88vh;display:flex;flex-direction:column"><h2>拼字 / 文法檢查</h2><p style="font-size:12.5px;color:#5e574e">使用 LanguageTool API（中文支援以 zh-CN 為主，繁中部分可能誤報）。共 ' + matches.length + ' 個建議。</p>' + items + '<div style="margin-top:12px"><button id="spellClose">關閉</button></div></div>';
   document.body.appendChild(bg);
   bg.querySelector('#spellClose').addEventListener('click', ()=>bg.remove());
 }
+
+// ─────────────────────────────────────────────────────────────
+// TOAST + SAVE MODAL (2026-05-11) — replace ugly prompt()/confirm()/
+// alert() with proper modal + visible toast feedback. User reported
+// save did nothing — probably because the corrupt mergeIframe regex
+// returned identical content, triggering "no changes" confirm, which
+// they may have dismissed. New flow makes every step explicit.
+// ─────────────────────────────────────────────────────────────
+function toast(msg, type){
+  type = type || 'info';
+  // Remove any older toast of the same type to avoid stacking
+  document.querySelectorAll('.cd-toast').forEach(t => t.remove());
+  const el = document.createElement('div');
+  el.className = 'cd-toast cd-toast-' + type;
+  const icon = type === 'success' ? '✓' : (type === 'error' ? '×' : 'ℹ');
+  el.innerHTML = '<span class="cd-toast-icon">' + icon + '</span><span>' + msg.replace(/</g,'&lt;') + '</span>';
+  document.body.appendChild(el);
+  const dur = type === 'error' ? 8000 : 4500;
+  setTimeout(()=>{ el.style.animation = 'toastOut .25s ease forwards'; setTimeout(()=>el.remove(), 250); }, dur);
+}
+window.toast = toast;
+
+function showSaveModal(callback){
+  const bg = document.createElement('div');
+  bg.className = 'modal-bg';
+  bg.innerHTML = '<div class="modal" style="max-width:500px"><h2>儲存並推送到 GitHub</h2><p style="font-size:13px;color:#5e574e;margin:8px 0 14px">檔案：<code style="background:#f1ece4;padding:2px 8px;border-radius:4px;font-family:JetBrains Mono,monospace">' + CURRENT_FILE + '</code></p><label style="display:block;font-size:12px;font-weight:600;color:#0c5159;margin-bottom:4px">Commit 訊息（選填）</label><input id="saveModalMsg" placeholder="例：更新治療階梯數據 / 修正錯字" style="display:block;width:100%;padding:9px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px" autocomplete="off" /><p style="font-size:11.5px;color:#8b8378;margin:8px 0 18px">留空會用「edit ' + CURRENT_FILE + '」</p><div style="display:flex;gap:8px;justify-content:flex-end"><button id="saveModalCancel">取消</button><button id="saveModalConfirm" class="primary">確認儲存並推送</button></div></div>';
+  document.body.appendChild(bg);
+  const input = bg.querySelector('#saveModalMsg');
+  setTimeout(()=>input.focus(), 50);
+  const submit = ()=>{
+    const msg = (input.value || '').trim() || ('edit ' + CURRENT_FILE);
+    bg.remove();
+    callback(msg);
+  };
+  bg.querySelector('#saveModalConfirm').addEventListener('click', submit);
+  bg.querySelector('#saveModalCancel').addEventListener('click', ()=>bg.remove());
+  input.addEventListener('keydown', e=>{
+    if(e.key === 'Enter'){ e.preventDefault(); submit(); }
+    if(e.key === 'Escape') bg.remove();
+  });
+}
+
+// Replace save() flow with modal + toast version
+async function saveWithModal(){
+  if(!CURRENT_FILE){ toast('請先選一個檔案', 'error'); return; }
+  if(!PAT){ toast('請先登入 GitHub PAT', 'error'); return; }
+  let newContent;
+  if(BILINGUAL_MODE) newContent = mergeBilingualBack();
+  else if(SOURCE_MODE) newContent = sourceTextarea ? sourceTextarea.value : CURRENT_CONTENT;
+  else newContent = mergeIframeIntoOriginal();
+  if(newContent === CURRENT_CONTENT){
+    const proceed = confirm('看起來內容沒變化（也許 iframe 還沒讀到你的編輯）。仍要送出嗎？\n\nTip: 如果你確實有改過字、請先點一下 iframe 外面（讓編輯區失去焦點），再按儲存。');
+    if(!proceed) return;
+  }
+  showSaveModal(async (message)=>{
+    setStatus('儲存中 ' + CURRENT_FILE + ' ...');
+    toast('儲存中...', 'info');
+    try {
+      const data = await gh('PUT', 'contents/' + CURRENT_FILE, {
+        message: message,
+        content: encodeUtf8Base64(newContent),
+        branch: BRANCH,
+        sha: CURRENT_SHA,
+      });
+      CURRENT_SHA = data.content.sha;
+      CURRENT_CONTENT = newContent;
+      DIRTY = false;
+      if(CURRENT_FILE) clearAutosaveFor(CURRENT_FILE);
+      lastAutosaveAt = 0;
+      updateAutosaveIndicator();
+      elShaInfo.textContent = 'SHA: ' + CURRENT_SHA.substring(0,7);
+      setStatus('已推送到 GitHub — Vercel 部署中');
+      toast('已儲存並推送到 GitHub。Vercel 約 30 秒後重新部署、上線。', 'success');
+    } catch(e){
+      setStatus('儲存失敗: ' + e.message, true);
+      toast('儲存失敗：' + e.message, 'error');
+    }
+  });
+}
+
+// Re-wire save button + Ctrl+S to the new flow (replace old listeners by cloning)
+(function rewireSave(){
+  const oldBtn = document.getElementById('saveBtn');
+  if(!oldBtn) return;
+  const newBtn = oldBtn.cloneNode(true);
+  oldBtn.replaceWith(newBtn);
+  newBtn.addEventListener('click', saveWithModal);
+  // Also keep Ctrl+S handler pointing to the new flow
+  window.save = saveWithModal;  // for any external callers
+})();
+// Hijack the existing global save() binding too, so other code that
+// calls save() (e.g. autosave wrapper) uses the new flow.
+save = saveWithModal;
 
 // init
 loadPat();</script>
@@ -1844,5 +2000,5 @@ requestIdleCallback(load, { timeout: 2500 });
 setTimeout(load, 1500);
 }
 })();</script>
-<script type="module" src="/admin/admin-extras.js?v=202605111135"></script>
+<script type="module" src="/admin/admin-extras.js?v=202605111246"></script>
 </body></html>
