@@ -31,18 +31,23 @@ jobs:
         with: { python-version: '3.12' }
       - name: Regen /en/ mirror
         run: python _gen_en_pages.py
+      - name: Re-minify blog-shared.js → blog-shared.min.js
+        # Admin wizard auto-registers new articles into blog-shared.js but the
+        # production site loads blog-shared.min.js. Re-minify on every push so
+        # the minified bundle always reflects the source.
+        run: python _minify.py
       - name: Run feed generator
         run: python _gen_feeds.py
       - name: Commit + push with retry on race
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add en/ sitemap.xml blog/feed.xml blog/atom.xml || true
-          if [[ -z $(git status -s en/ sitemap.xml blog/feed.xml blog/atom.xml) ]]; then
-            echo "feeds + /en/ already up-to-date"
+          git add en/ sitemap.xml blog/feed.xml blog/atom.xml blog/blog-shared.min.js || true
+          if [[ -z $(git status -s en/ sitemap.xml blog/feed.xml blog/atom.xml blog/blog-shared.min.js) ]]; then
+            echo "feeds + /en/ + min.js already up-to-date"
             exit 0
           fi
-          git commit -m "auto-regen /en/ mirror + feeds [skip ci]"
+          git commit -m "auto-regen /en/ mirror + feeds + min.js [skip ci]"
           # Retry push up to 5 times with rebase, in case another push raced us
           for attempt in 1 2 3 4 5; do
             if git push; then

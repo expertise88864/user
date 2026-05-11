@@ -5584,14 +5584,40 @@
         '健保 / 自費':       ['nhi-derm-drugs', 'biologics-overview', 'isotretinoin-patient'],
         '常見問題 FAQ':      ['dermatology-faq']
       }
+    },
+    {
+      // ─── 內容深度（2026-05-11 新增）─────────────────────────────
+      // 學習筆記 = 較深度的疾病內容（教學用）
+      // 最新研究 = 最新 JAAD / BJD / JEADV 等期刊摘要
+      // 這兩個分類用 cat 欄位驅動：articles with cat: 'note' 自動歸到 學習筆記，
+      // cat: 'research' 自動歸到 最新研究。Lists are computed dynamically below.
+      label: '內容深度',
+      label_en: 'Content depth',
+      computed: true,  // mark for dynamic resolution
+      tags: {
+        '學習筆記':         { _from_cat: 'note' },
+        '最新研究':         { _from_cat: 'research' }
+      }
     }
   ];
 
-  // Backward-compat flat alias — flatten TAG_CATEGORIES into the original TAG_GROUPS shape
+  // Backward-compat flat alias — flatten TAG_CATEGORIES into the original TAG_GROUPS shape.
+  // Tags whose value is `{ _from_cat: 'note' }` get dynamically resolved to a list of
+  // slugs by scanning DN.ARTICLES for matching cat. This lets us drive 學習筆記 / 最新研究
+  // entirely from the article's own `cat` field instead of maintaining a separate slug list.
   DN.TAG_GROUPS = (function () {
     var flat = {};
     DN.TAG_CATEGORIES.forEach(function (cat) {
-      Object.keys(cat.tags).forEach(function (k) { flat[k] = cat.tags[k]; });
+      Object.keys(cat.tags).forEach(function (k) {
+        var v = cat.tags[k];
+        if (v && typeof v === 'object' && !Array.isArray(v) && v._from_cat) {
+          flat[k] = (DN.ARTICLES || []).filter(function (a) {
+            return a.cat === v._from_cat;
+          }).map(function (a) { return a.slug; });
+        } else {
+          flat[k] = v;
+        }
+      });
     });
     return flat;
   })();

@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><link rel="modulepreload" href="/blog/blog-shared.min.js?v=202605111246" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link rel="preconnect" href="https://pagead2.googlesyndication.com" /><link rel="preconnect" href="https://www.googletagmanager.com" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>後台編輯 · ChenDermatologist Admin</title><meta name="robots" content="noindex,nofollow" /><meta name="theme-color" content="#7a9285" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" /><link rel="icon" sizes="any" href="/favicon.ico" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap&text=陳翊嘉醫師皮膚科衛教筆記常見疾病迷思澄清關於我學經歷" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><link rel="modulepreload" href="/blog/blog-shared.min.js?v=202605111335" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link rel="preconnect" href="https://pagead2.googlesyndication.com" /><link rel="preconnect" href="https://www.googletagmanager.com" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>後台編輯 · ChenDermatologist Admin</title><meta name="robots" content="noindex,nofollow" /><meta name="theme-color" content="#7a9285" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" /><link rel="icon" sizes="any" href="/favicon.ico" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap&text=陳翊嘉醫師皮膚科衛教筆記常見疾病迷思澄清關於我學經歷" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>*{ box-sizing:border-box; } html,body{ margin:0; padding:0; height:100%; font-family:'Inter','Noto Sans TC','Microsoft JhengHei',sans-serif; background:#f5fbfa; color:#0f172a; overflow:hidden; } :root{ --teal:#7a9285; --teal-deep:#4d6358; --teal-bright:#a4b5a8; --mint-soft:#dcd9d1; --border:#dcd5c8; --line:#ebe4d8; --ink:#2a2620; --ink-2:#5e574e; --muted:#8b8378; } .teal-text{ background:linear-gradient(180deg,#a4b5a8 0%, #4d6358 100%); -webkit-background-clip:text; background-clip:text; color:transparent; } header.top{ position:relative; z-index:50; background:rgba(245,251,250,.95); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); padding:10px 16px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; height:54px; } header.top .brand{ font-weight:700; font-size:15px; } header.top .right{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-size:13px; } header.top a{ color:var(--teal-deep); text-decoration:none; font-weight:600; } .pat-status{ font-size:11.5px; padding:3px 10px; border-radius:9999px; border:1px solid var(--border); background:#fff; } .pat-status.ok{ color:#065f46; border-color:#a7f3d0; background:#ecfdf5; } .pat-status.no{ color:#7f1d1d; border-color:#fca5a5; background:#fef2f2; } main.layout{ display:grid; grid-template-columns:240px 1fr; height:calc(100vh - 54px); } @media (max-width:760px){ main.layout{ grid-template-columns:1fr; height:auto; } #sidebar{ height:auto; max-height:240px; border-right:none; border-bottom:1px solid var(--border); } } #sidebar{ background:#fff; border-right:1px solid var(--border); overflow-y:auto; padding:12px; } #sidebar h2{ font-size:11px; text-transform:uppercase; letter-spacing:.16em; color:var(--teal-deep); margin:6px 4px 8px; } .file-list{ display:flex; flex-direction:column; gap:1px; } .file-item{ font-size:12.5px; padding:6px 10px; border-radius:6px; cursor:pointer; color:var(--ink-2); display:flex; align-items:center; gap:6px; line-height:1.3; } .file-item:hover{ background:var(--mint-soft); color:var(--teal-deep); } .file-item.active{ background:var(--mint-soft); color:var(--teal-deep); font-weight:600; } .file-item .ico{ font-size:11px; } .new-row{ margin-top:14px; padding-top:14px; border-top:1px dashed var(--line); } .new-row input{ width:100%; padding:6px 8px; font-size:12px; border:1px solid var(--border); border-radius:6px; } .new-row button{ width:100%; margin-top:6px; padding:6px; background:#fff; border:1px solid var(--border); border-radius:6px; cursor:pointer; font-size:12px; color:var(--teal-deep); font-weight:600; } .new-row button:hover{ border-color:var(--teal); } #editorPane{ display:flex; flex-direction:column; height:100%; min-height:0; background:#f5fbfa; } .toolbar{ padding:8px 12px; border-bottom:1px solid var(--border); background:#fff; display:flex; gap:6px; align-items:center; flex-wrap:wrap; } .toolbar .path{ font-family:'JetBrains Mono',monospace; font-size:12px; padding:5px 10px; background:#f5fbfa; border:1px solid var(--border); border-radius:6px; color:var(--ink); } .toolbar button, .toolbar label.upload{ padding:5px 11px; font-size:12.5px; border-radius:6px; border:1px solid var(--border); background:#fff; cursor:pointer; font-weight:600; color:var(--ink-2); display:inline-flex; align-items:center; gap:4px; } .toolbar button:hover, .toolbar label.upload:hover{ border-color:var(--teal); color:var(--teal-deep); } .toolbar button.primary{ background:linear-gradient(180deg,#a4b5a8,#4d6358); color:#fff; border-color:var(--teal-deep); } .toolbar button.primary:hover{ filter:brightness(1.05); color:#fff; } .toolbar .sep{ width:1px; height:18px; background:var(--border); margin:0 4px; } .toolbar .grow{ flex:1; } .toolbar label.upload input{ display:none; } .frame-wrap{ flex:1; min-height:0; position:relative; background:#e2e8f0; } iframe.editor{ width:100%; height:100%; border:none; background:#fff; } .empty-state{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--muted); text-align:center; padding:32px; } .empty-state h3{ font-size:18px; color:var(--ink); margin:0 0 8px; } .empty-state p{ font-size:14px; max-width:420px; line-height:1.7; margin:6px 0; } textarea.source{ width:100%; height:100%; padding:14px 18px; font-family:'JetBrains Mono',Menlo,monospace; font-size:13px; line-height:1.65; border:none; outline:none; background:#fff; resize:none; } .statusbar{ padding:6px 14px; font-size:11.5px; background:#fff; border-top:1px solid var(--border); color:var(--muted); display:flex; gap:14px; flex-wrap:wrap; align-items:center; } .statusbar.ok{ color:#065f46; } .statusbar.err{ color:#7f1d1d; } .modal-bg{ position:fixed; inset:0; background:rgba(15,23,42,.42); display:flex; align-items:center; justify-content:center; z-index:100; padding:18px; } .modal{ background:#fff; border-radius:16px; padding:26px; max-width:520px; width:100%; box-shadow:0 24px 50px -16px rgba(12,81,89,.5); } .modal h2{ margin:0 0 8px; font-size:20px; color:var(--ink); } .modal p{ margin:6px 0; font-size:13.5px; line-height:1.7; color:var(--ink-2); } .modal input{ width:100%; padding:9px 12px; font-size:13px; font-family:'JetBrains Mono',monospace; border:1px solid var(--border); border-radius:8px; margin:8px 0; } .modal button{ padding:9px 16px; background:linear-gradient(180deg,#a4b5a8,#4d6358); color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; } .modal a{ color:var(--teal-deep); font-weight:600; }
 /* ── Redesigned toolbar (2026-05-11) — grouped sections, no emoji clutter ── */
 .toolbar-wrap{ background:#fff; border-bottom:1px solid var(--border); box-shadow:0 1px 3px rgba(15,23,42,.04) }
@@ -1252,9 +1252,11 @@ bg.innerHTML = `
 <div style="display:grid;gap:10px;margin:14px 0">
 <label style="font-size:12px;font-weight:600;color:#0c5159">文章類型
 <select id="wizType" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px">
-<option value="myth">迷思澄清（7 大迷思格式）</option>
-<option value="rx">治療整理（藥物 / 流程）</option>
+<option value="myth">迷思澄清（7 大迷思格式 · 衛教）</option>
+<option value="rx">治療整理（藥物 / 流程 · 衛教）</option>
 <option value="overview">完整衛教（疾病總覽）</option>
+<option value="note">學習筆記（深度疾病學習用 · 進階）</option>
+<option value="research">最新研究摘要（JAAD / BJD / JEADV 等期刊）</option>
 <option value="blank">空白（從 acne-myths 範本複製）</option>
 </select>
 </label>
@@ -1316,7 +1318,33 @@ content: encodeUtf8Base64(html.replace('<html lang="zh-Hant-TW">', '<html lang="
 branch: BRANCH
 });
 }
-setStatus('已建立 blog/' + slug + '.html' + (mirror ? ' + 英文鏡像' : '') + ' — 記得編輯後也手動加進 sitemap.xml / sw.js / blog/index.html');
+// Auto-add an entry to DN.ARTICLES in blog/blog-shared.js so the new article
+// appears in the article hub / search / related links / 學習筆記 + 最新研究 filters.
+try {
+  const sharedFile = await gh('GET', 'contents/blog/blog-shared.js');
+  const sharedSrc = decodeUtf8Base64(sharedFile.content);
+  // Find the end of DN.ARTICLES array (first "  ];" line after the array opening)
+  const articlesStart = sharedSrc.indexOf('DN.ARTICLES = [');
+  if(articlesStart >= 0){
+    // Walk forward to find matching closing bracket — look for the literal "\n  ];" pattern
+    const closeIdx = sharedSrc.indexOf('\n  ];', articlesStart);
+    if(closeIdx >= 0){
+      const catValue = type === 'note' ? 'note' : type === 'research' ? 'research' : type === 'rx' ? 'rx' : type === 'overview' ? 'rx' : 'myth';
+      const entry = '    { slug:' + JSON.stringify(slug) + ', title:' + JSON.stringify(title + (sub ? ' — ' + sub : '')) + ', cat:' + JSON.stringify(catValue) + ', tag:' + JSON.stringify(tag) + ', date:' + JSON.stringify(today) + ', emoji:\'\', tag_en:' + JSON.stringify(tag) + ' },\n';
+      const newShared = sharedSrc.slice(0, closeIdx + 1) + entry + sharedSrc.slice(closeIdx + 1);
+      await gh('PUT', 'contents/blog/blog-shared.js', {
+        message: 'register ' + slug + ' in DN.ARTICLES (cat=' + catValue + ')',
+        content: encodeUtf8Base64(newShared),
+        branch: BRANCH,
+        sha: sharedFile.sha
+      });
+    }
+  }
+} catch(e){
+  console.warn('auto-register in DN.ARTICLES failed; you may need to add manually:', e.message);
+}
+setStatus('已建立 blog/' + slug + '.html' + (mirror ? ' + 英文鏡像' : '') + '、自動註冊到 DN.ARTICLES');
+toast('文章已建立並註冊。CI 約 30 秒後自動 minify + 部署', 'success');
 document.getElementById('newFileName').value = '';
 bg.remove();
 await refreshFileList();
@@ -1328,11 +1356,24 @@ setStatus('建立失敗: ' + e.message, true);
 }
 function generateNewArticleSkeleton(opts){
 const {slug, type, title, sub, tag, desc, date} = opts;
-// Reusable shell — bilingual disclaimer + TLDR + structure
+// Map type → header badge label + cat field semantics
+const badgeMap = {
+  myth: '衛教',
+  rx: '衛教',
+  overview: '衛教',
+  note: '學習筆記',
+  research: '最新研究',
+};
+const badge = badgeMap[type] || '衛教';
+// Body skeleton — depends on type
 const sections = type === 'myth'
 ? Array.from({length:7}, (_,i)=>`<h2 id="m${i+1}">迷思 ${i+1}：（標題）</h2><div class="myth-card"><div class="myth">「（民眾常聽到的話）」</div><div class="truth">（澄清重點）。</div></div><p>（補充說明）</p>`).join('')
 : type === 'rx'
 ? `<h2 id="overview">概述</h2><p>（疾病 / 藥物背景）</p><h2 id="tx">治療方式對照</h2><table class="dn"><thead><tr><th>方式</th><th>適應症</th><th>劑量</th><th>副作用</th></tr></thead><tbody><tr><td>—</td><td>—</td><td>—</td><td>—</td></tr></tbody></table><h2 id="end">結語</h2><p>（總結）</p>`
+: type === 'note'
+? `<h2 id="background">背景與流行病學</h2><p>（盛行率、好發族群、近年趨勢）</p><h2 id="pathogenesis">致病機轉</h2><p>（分子層級 / 免疫路徑 / 訊息傳遞）</p><h2 id="clinical">臨床表現</h2><ul><li>典型表現：</li><li>非典型 / 鑑別診斷：</li></ul><h2 id="dx">診斷標準與分級</h2><p>（評分系統、影像、切片發現）</p><h2 id="tx">治療階梯</h2><table class="dn"><thead><tr><th>階梯</th><th>第一線</th><th>第二線</th><th>難治型</th></tr></thead><tbody><tr><td>—</td><td>—</td><td>—</td><td>—</td></tr></tbody></table><h2 id="pearls">臨床珍珠（Clinical pearls）</h2><ul><li>—</li></ul><h2 id="refs">參考文獻</h2><ol class="references"></ol>`
+: type === 'research'
+? `<h2 id="study">研究摘要</h2><p><strong>期刊：</strong>（JAAD / BJD / JEADV / NEJM ...）</p><p><strong>研究類型：</strong>（RCT / 系統性回顧 / Real-world / 觀察性 ...）</p><p><strong>研究族群：</strong>（n =, 性別比例, 年齡, 病情嚴重度）</p><h2 id="methods">方法</h2><p>（研究設計、介入、對照組、主要終點）</p><h2 id="results">結果</h2><ul><li><strong>主要終點：</strong></li><li><strong>次要終點：</strong></li><li><strong>安全性 / 副作用：</strong></li></ul><h2 id="discussion">臨床意涵</h2><p>（這個研究改變什麼？對臨床決策有什麼影響？）</p><h2 id="limitations">研究限制</h2><ul><li>—</li></ul><h2 id="takeaway">一句話總結</h2><p><strong>—</strong></p><h2 id="refs">參考文獻</h2><ol class="references"><li><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">原文連結（PMID: ）</a></li></ol>`
 : `<h2 id="overview">什麼是 ${title}</h2><p>（定義 + 流行病學）</p><h2 id="symptoms">症狀</h2><ul><li>—</li></ul><h2 id="diagnosis">診斷</h2><p>（如何確診）</p><h2 id="treatment">治療</h2><p>（治療選項）</p><h2 id="end">結語</h2><p>（總結）</p>`;
 return `<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>${title} — ${sub} | ChenDermatologist · 陳翊嘉醫師</title>
@@ -1357,7 +1398,7 @@ return `<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><me
 <` + `script type="application/ld+json">{ "@context":"https://schema.org","@type":"MedicalScholarlyArticle","inLanguage":"zh-Hant-TW","headline":"${title} — ${sub}","description":"${desc.replace(/"/g,'\\"')}","datePublished":"${date}","dateModified":"${date}","author":{"@type":"Person","@id":"https://chendermatologist.com/about#person","name":"陳翊嘉 醫師","alternateName":["Dr. Chen Yi-Jia"]} }<\/` + `script>
 </head><body>
 <main><section class="max-w-3xl mx-auto px-5 sm:px-8 mt-8 mb-6">
-<div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold mb-3">衛教 · ${tag} <span class="ml-3 inline-block px-2 py-0.5 rounded-full bg-mint-100 text-teal-700 text-[10.5px] font-semibold normal-case tracking-normal">更新日期 · ${date}</span></div>
+<div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold mb-3">${badge} · ${tag} <span class="ml-3 inline-block px-2 py-0.5 rounded-full bg-mint-100 text-teal-700 text-[10.5px] font-semibold normal-case tracking-normal">更新日期 · ${date}</span></div>
 <h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]"><span data-zh="${title}" data-en="${title}">${title}</span><br/><span class="teal-text" data-zh="${sub}" data-en="${sub}">${sub}</span></h1>
 <p class="mt-6 text-[15.5px] text-ink-700 leading-[1.9] tldr"><span data-zh="（TLDR — 一句話總結）" data-en="(TLDR — one-sentence summary)">（TLDR — 一句話總結）</span></p>
 <div class="disclaimer"><strong data-zh="提醒 ·" data-en="Reminder ·">提醒 ·</strong> <span data-zh="本文僅供衛教，個別評估請至皮膚科。" data-en="This article is for general education only — please see a dermatologist for individual assessment.">本文僅供衛教，個別評估請至皮膚科。</span></div>
@@ -2000,5 +2041,5 @@ requestIdleCallback(load, { timeout: 2500 });
 setTimeout(load, 1500);
 }
 })();</script>
-<script type="module" src="/admin/admin-extras.js?v=202605111246"></script>
+<script type="module" src="/admin/admin-extras.js?v=202605111335"></script>
 </body></html>
