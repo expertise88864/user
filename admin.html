@@ -1,13 +1,14 @@
-<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><link rel="modulepreload" href="/blog/blog-shared.min.js?v=202605110937" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link rel="preconnect" href="https://pagead2.googlesyndication.com" /><link rel="preconnect" href="https://www.googletagmanager.com" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>後台編輯 · ChenDermatologist Admin</title><meta name="robots" content="noindex,nofollow" /><meta name="theme-color" content="#7a9285" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" /><link rel="icon" sizes="any" href="/favicon.ico" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap&text=陳翊嘉醫師皮膚科衛教筆記常見疾病迷思澄清關於我學經歷" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><link rel="modulepreload" href="/blog/blog-shared.min.js?v=202605111007" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link rel="preconnect" href="https://pagead2.googlesyndication.com" /><link rel="preconnect" href="https://www.googletagmanager.com" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>後台編輯 · ChenDermatologist Admin</title><meta name="robots" content="noindex,nofollow" /><meta name="theme-color" content="#7a9285" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" /><link rel="icon" sizes="any" href="/favicon.ico" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap&text=陳翊嘉醫師皮膚科衛教筆記常見疾病迷思澄清關於我學經歷" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>*{ box-sizing:border-box; } html,body{ margin:0; padding:0; height:100%; font-family:'Inter','Noto Sans TC','Microsoft JhengHei',sans-serif; background:#f5fbfa; color:#0f172a; overflow:hidden; } :root{ --teal:#7a9285; --teal-deep:#4d6358; --teal-bright:#a4b5a8; --mint-soft:#dcd9d1; --border:#dcd5c8; --line:#ebe4d8; --ink:#2a2620; --ink-2:#5e574e; --muted:#8b8378; } .teal-text{ background:linear-gradient(180deg,#a4b5a8 0%, #4d6358 100%); -webkit-background-clip:text; background-clip:text; color:transparent; } header.top{ position:relative; z-index:50; background:rgba(245,251,250,.95); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); padding:10px 16px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; height:54px; } header.top .brand{ font-weight:700; font-size:15px; } header.top .right{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-size:13px; } header.top a{ color:var(--teal-deep); text-decoration:none; font-weight:600; } .pat-status{ font-size:11.5px; padding:3px 10px; border-radius:9999px; border:1px solid var(--border); background:#fff; } .pat-status.ok{ color:#065f46; border-color:#a7f3d0; background:#ecfdf5; } .pat-status.no{ color:#7f1d1d; border-color:#fca5a5; background:#fef2f2; } main.layout{ display:grid; grid-template-columns:240px 1fr; height:calc(100vh - 54px); } @media (max-width:760px){ main.layout{ grid-template-columns:1fr; height:auto; } #sidebar{ height:auto; max-height:240px; border-right:none; border-bottom:1px solid var(--border); } } #sidebar{ background:#fff; border-right:1px solid var(--border); overflow-y:auto; padding:12px; } #sidebar h2{ font-size:11px; text-transform:uppercase; letter-spacing:.16em; color:var(--teal-deep); margin:6px 4px 8px; } .file-list{ display:flex; flex-direction:column; gap:1px; } .file-item{ font-size:12.5px; padding:6px 10px; border-radius:6px; cursor:pointer; color:var(--ink-2); display:flex; align-items:center; gap:6px; line-height:1.3; } .file-item:hover{ background:var(--mint-soft); color:var(--teal-deep); } .file-item.active{ background:var(--mint-soft); color:var(--teal-deep); font-weight:600; } .file-item .ico{ font-size:11px; } .new-row{ margin-top:14px; padding-top:14px; border-top:1px dashed var(--line); } .new-row input{ width:100%; padding:6px 8px; font-size:12px; border:1px solid var(--border); border-radius:6px; } .new-row button{ width:100%; margin-top:6px; padding:6px; background:#fff; border:1px solid var(--border); border-radius:6px; cursor:pointer; font-size:12px; color:var(--teal-deep); font-weight:600; } .new-row button:hover{ border-color:var(--teal); } #editorPane{ display:flex; flex-direction:column; height:100%; min-height:0; background:#f5fbfa; } .toolbar{ padding:8px 12px; border-bottom:1px solid var(--border); background:#fff; display:flex; gap:6px; align-items:center; flex-wrap:wrap; } .toolbar .path{ font-family:'JetBrains Mono',monospace; font-size:12px; padding:5px 10px; background:#f5fbfa; border:1px solid var(--border); border-radius:6px; color:var(--ink); } .toolbar button, .toolbar label.upload{ padding:5px 11px; font-size:12.5px; border-radius:6px; border:1px solid var(--border); background:#fff; cursor:pointer; font-weight:600; color:var(--ink-2); display:inline-flex; align-items:center; gap:4px; } .toolbar button:hover, .toolbar label.upload:hover{ border-color:var(--teal); color:var(--teal-deep); } .toolbar button.primary{ background:linear-gradient(180deg,#a4b5a8,#4d6358); color:#fff; border-color:var(--teal-deep); } .toolbar button.primary:hover{ filter:brightness(1.05); color:#fff; } .toolbar .sep{ width:1px; height:18px; background:var(--border); margin:0 4px; } .toolbar .grow{ flex:1; } .toolbar label.upload input{ display:none; } .frame-wrap{ flex:1; min-height:0; position:relative; background:#e2e8f0; } iframe.editor{ width:100%; height:100%; border:none; background:#fff; } .empty-state{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--muted); text-align:center; padding:32px; } .empty-state h3{ font-size:18px; color:var(--ink); margin:0 0 8px; } .empty-state p{ font-size:14px; max-width:420px; line-height:1.7; margin:6px 0; } textarea.source{ width:100%; height:100%; padding:14px 18px; font-family:'JetBrains Mono',Menlo,monospace; font-size:13px; line-height:1.65; border:none; outline:none; background:#fff; resize:none; } .statusbar{ padding:6px 14px; font-size:11.5px; background:#fff; border-top:1px solid var(--border); color:var(--muted); display:flex; gap:14px; flex-wrap:wrap; align-items:center; } .statusbar.ok{ color:#065f46; } .statusbar.err{ color:#7f1d1d; } .modal-bg{ position:fixed; inset:0; background:rgba(15,23,42,.42); display:flex; align-items:center; justify-content:center; z-index:100; padding:18px; } .modal{ background:#fff; border-radius:16px; padding:26px; max-width:520px; width:100%; box-shadow:0 24px 50px -16px rgba(12,81,89,.5); } .modal h2{ margin:0 0 8px; font-size:20px; color:var(--ink); } .modal p{ margin:6px 0; font-size:13.5px; line-height:1.7; color:var(--ink-2); } .modal input{ width:100%; padding:9px 12px; font-size:13px; font-family:'JetBrains Mono',monospace; border:1px solid var(--border); border-radius:8px; margin:8px 0; } .modal button{ padding:9px 16px; background:linear-gradient(180deg,#a4b5a8,#4d6358); color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; } .modal a{ color:var(--teal-deep); font-weight:600; }</style>
-<link rel="preload" as="style" href="/assets/tw-mini.css?v=19" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/assets/tw-mini.css?v=19"></noscript><!-- a11y-vt-applied --><meta name="view-transition" content="same-origin"><style>.skip-to-main{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999}.skip-to-main:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;background:#0c5159;color:#fff;padding:10px 18px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.2)}*:focus-visible{outline:2px solid #0c5159;outline-offset:2px;border-radius:4px}@view-transition{navigation:auto}::view-transition-old(root),::view-transition-new(root){animation-duration:.25s}@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}</style><style data-critical-css>*,*::before,*::after{box-sizing:border-box;border:0 solid #e5e7eb}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0;line-height:inherit;font-family:Inter,'Noto Sans TC','PingFang TC','Microsoft JhengHei',-apple-system,system-ui,sans-serif}.font-display{font-family:'Noto Serif TC','Microsoft JhengHei','PingFang TC',Georgia,'Times New Roman',serif}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;margin:0}.rounded-full > picture,.rounded-full > picture > img{display:block;width:100%;height:100%;object-fit:cover}main > section:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 600px;}header.sticky{content-visibility:visible;}@media print{html,body{background:#fff !important;color:#000 !important;font-size:11pt;line-height:1.55;}body::before{display:none !important;}header.sticky,nav.dn-nav,.dn-nav-burger,#dn-sticky-cta,#dn-progress,#dn-totop,#dn-font-sizer,.ad-slot,[class*="ad-"],[id*="ad-"],#dn-cmdk-overlay,#dn-img-lightbox,.dn-calc,[id^="dn-"][id$="-calc"],.dn-calc-tools-link,#dn-share,.dn-share,button,select,#dn-feedback,[data-feedback],.reveal:not(.visible),.home-faq summary::after,#dn-bmc-footer,#dn-bmc-header,#dn-nav-support,#dn-related,.mag-footer .mag-foot-cols,.crumbs,[data-cta],.skip-link{display:none !important;}article.max-w-3xl,.prose,#proseZh,#proseEn{max-width:100% !important;padding:0 !important;margin:0 !important;}.prose h1,article h1{font-size:20pt;margin:6pt 0;page-break-after:avoid;}body::after{content:"ChenDermatologist · 陳翊嘉醫師 · chendermatologist.com · 列印僅供衛教，個別治療請與醫師討論";display:block !important;position:fixed;bottom:0.5cm;left:0;right:0;font-size:8pt;color:#666;text-align:center;}}.flex-wrap{flex-wrap:wrap}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-16{padding-top:4rem;padding-bottom:4rem}.flex-col{flex-direction:column}.hidden{display:none}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.text-ink-500{color:#64748b}.max-w-6xl{max-width:72rem}.max-w-xl{max-width:36rem}.text-left{text-align:left}.block{display:block}.inline-block{display:inline-block}.font-semibold{font-weight:600}.px-2{padding-left:0.5rem;padding-right:0.5rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.gap-6{gap:1.5rem}.leading-tight{line-height:1.25}.text-ink-700{color:#334155}.bg-mint-50\/60{background-color:#f5fbfa;opacity:.6}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.text-teal-700{color:#0c5159}.gap-8{gap:2rem}.gap-3{gap:0.75rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.border-b{border-bottom-width:1px;border-bottom-style:solid}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.flex-shrink-0{flex-shrink:0}.border{border-width:1px;border-style:solid}.bg-white{background-color:#fff}.font-bold{font-weight:700}.px-3{padding-left:0.75rem;padding-right:0.75rem}.justify-center{justify-content:center}.flex{display:flex}.border-t{border-top-width:1px;border-top-style:solid}.py-8{padding-top:2rem;padding-bottom:2rem}.pt-12{padding-top:3rem}.max-w-5xl{max-width:64rem}.gap-7{gap:1.75rem}.pb-6{padding-bottom:1.5rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.pb-8{padding-bottom:2rem}.gap-2{gap:0.5rem}.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}.flex-1{flex:1 1 0%}.pt-8{padding-top:2rem}.items-center{align-items:center}.text-center{text-align:center}.pb-2{padding-bottom:0.5rem}.text-ink-900{color:#0f172a}.gap-4{gap:1rem}.leading-none{line-height:1}.grid{display:grid}.bg-mint-100{background-color:#eaf6f3}.mx-auto{margin-left:auto;margin-right:auto}.text-ink-400{color:#94a3b8}.inline-flex{display:inline-flex}.max-w-4xl{max-width:56rem}.justify-between{justify-content:space-between}.pb-12{padding-bottom:3rem}.pt-6{padding-top:1.5rem}.max-w-3xl{max-width:48rem}</style><script defer src="/_vercel/speed-insights/script.js"></script><!-- i-series-applied --></head><body><style>.dn-skiplinks{position:absolute;left:-9999px;top:auto;z-index:9999}.dn-skiplinks:focus-within{position:fixed;top:8px;left:8px;display:flex;gap:6px}.dn-skiplinks a{background:#0c5159;color:#fff;padding:8px 14px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.2)}.dn-skiplinks a:focus{outline:2px solid #fff;outline-offset:2px}</style><nav class="dn-skiplinks" aria-label="Skip navigation"><a href="#main-content" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a><a href="#dn-related" data-zh="跳至相關文章" data-en="Skip to related">跳至相關文章</a><a href="#dn-newsletter" data-zh="跳至訂閱" data-en="Skip to subscribe">跳至訂閱</a></nav><a href="#main-content" class="skip-to-main" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a><a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a><header class="top"><div class="brand"><span class="teal-text">ChenDermatologist</span> · <span style="font-weight:500;color:#64748b">後台編輯（視覺模式）</span></div><div class="right"><span id="patStatus" class="pat-status no">未登入</span><button id="logoutBtn" style="padding:5px 9px;font-size:11.5px;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;color:#7f1d1d">清除登入</button><a href="/" target="_blank" rel="noopener">← 回首頁</a></div></header><main class="layout"><aside id="sidebar"><h2>檔案</h2><div id="fileList" class="file-list"></div><div class="new-row"><h2 style="margin:0 4px 6px">新增文章</h2><input id="newFileName" placeholder="例： melasma-myths" /><button id="newFileBtn">+ 從衛教範本建立</button></div><div class="new-row"><h2 style="margin:0 4px 6px">小提示</h2><div style="font-size:11px; color:var(--muted); line-height:1.6; padding:0 4px">
+<link rel="preload" as="style" href="/assets/tw-mini.css?v=19" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/assets/tw-mini.css?v=19"></noscript><meta name="view-transition" content="same-origin"><style>.skip-to-main{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999}.skip-to-main:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;background:#0c5159;color:#fff;padding:10px 18px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.2)}*:focus-visible{outline:2px solid #0c5159;outline-offset:2px;border-radius:4px}@view-transition{navigation:auto}::view-transition-old(root),::view-transition-new(root){animation-duration:.25s}@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}</style><style data-critical-css>*,*::before,*::after{box-sizing:border-box;border:0 solid #e5e7eb}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0;line-height:inherit;font-family:Inter,'Noto Sans TC','PingFang TC','Microsoft JhengHei',-apple-system,system-ui,sans-serif}.font-display{font-family:'Noto Serif TC','Microsoft JhengHei','PingFang TC',Georgia,'Times New Roman',serif}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;margin:0}.rounded-full > picture,.rounded-full > picture > img{display:block;width:100%;height:100%;object-fit:cover}main > section:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 600px;}header.sticky{content-visibility:visible;}@media print{html,body{background:#fff !important;color:#000 !important;font-size:11pt;line-height:1.55;}body::before{display:none !important;}header.sticky,nav.dn-nav,.dn-nav-burger,#dn-sticky-cta,#dn-progress,#dn-totop,#dn-font-sizer,.ad-slot,[class*="ad-"],[id*="ad-"],#dn-cmdk-overlay,#dn-img-lightbox,.dn-calc,[id^="dn-"][id$="-calc"],.dn-calc-tools-link,#dn-share,.dn-share,button,select,#dn-feedback,[data-feedback],.reveal:not(.visible),.home-faq summary::after,#dn-bmc-footer,#dn-bmc-header,#dn-nav-support,#dn-related,.mag-footer .mag-foot-cols,.crumbs,[data-cta],.skip-link{display:none !important;}article.max-w-3xl,.prose,#proseZh,#proseEn{max-width:100% !important;padding:0 !important;margin:0 !important;}.prose h1,article h1{font-size:20pt;margin:6pt 0;page-break-after:avoid;}body::after{content:"ChenDermatologist · 陳翊嘉醫師 · chendermatologist.com · 列印僅供衛教，個別治療請與醫師討論";display:block !important;position:fixed;bottom:0.5cm;left:0;right:0;font-size:8pt;color:#666;text-align:center;}}.flex-wrap{flex-wrap:wrap}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-16{padding-top:4rem;padding-bottom:4rem}.flex-col{flex-direction:column}.hidden{display:none}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.text-ink-500{color:#64748b}.max-w-6xl{max-width:72rem}.max-w-xl{max-width:36rem}.text-left{text-align:left}.block{display:block}.inline-block{display:inline-block}.font-semibold{font-weight:600}.px-2{padding-left:0.5rem;padding-right:0.5rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.gap-6{gap:1.5rem}.leading-tight{line-height:1.25}.text-ink-700{color:#334155}.bg-mint-50\/60{background-color:#f5fbfa;opacity:.6}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.text-teal-700{color:#0c5159}.gap-8{gap:2rem}.gap-3{gap:0.75rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.border-b{border-bottom-width:1px;border-bottom-style:solid}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.flex-shrink-0{flex-shrink:0}.border{border-width:1px;border-style:solid}.bg-white{background-color:#fff}.font-bold{font-weight:700}.px-3{padding-left:0.75rem;padding-right:0.75rem}.justify-center{justify-content:center}.flex{display:flex}.border-t{border-top-width:1px;border-top-style:solid}.py-8{padding-top:2rem;padding-bottom:2rem}.pt-12{padding-top:3rem}.max-w-5xl{max-width:64rem}.gap-7{gap:1.75rem}.pb-6{padding-bottom:1.5rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.pb-8{padding-bottom:2rem}.gap-2{gap:0.5rem}.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}.flex-1{flex:1 1 0%}.pt-8{padding-top:2rem}.items-center{align-items:center}.text-center{text-align:center}.pb-2{padding-bottom:0.5rem}.text-ink-900{color:#0f172a}.gap-4{gap:1rem}.leading-none{line-height:1}.grid{display:grid}.bg-mint-100{background-color:#eaf6f3}.mx-auto{margin-left:auto;margin-right:auto}.text-ink-400{color:#94a3b8}.inline-flex{display:inline-flex}.max-w-4xl{max-width:56rem}.justify-between{justify-content:space-between}.pb-12{padding-bottom:3rem}.pt-6{padding-top:1.5rem}.max-w-3xl{max-width:48rem}</style><script defer src="/_vercel/speed-insights/script.js"></script></head><body><style>.dn-skiplinks{position:absolute;left:-9999px;top:auto;z-index:9999}.dn-skiplinks:focus-within{position:fixed;top:8px;left:8px;display:flex;gap:6px}.dn-skiplinks a{background:#0c5159;color:#fff;padding:8px 14px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.2)}.dn-skiplinks a:focus{outline:2px solid #fff;outline-offset:2px}</style><nav class="dn-skiplinks" aria-label="Skip navigation"><a href="#main-content" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a><a href="#dn-related" data-zh="跳至相關文章" data-en="Skip to related">跳至相關文章</a><a href="#dn-newsletter" data-zh="跳至訂閱" data-en="Skip to subscribe">跳至訂閱</a></nav><a href="#main-content" class="skip-to-main" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a><a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a><header class="top"><div class="brand"><span class="teal-text">ChenDermatologist</span> · <span style="font-weight:500;color:#64748b">後台編輯（視覺模式）</span></div><div class="right"><span id="patStatus" class="pat-status no">未登入</span><button id="logoutBtn" style="padding:5px 9px;font-size:11.5px;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;color:#7f1d1d">清除登入</button><a href="/" target="_blank" rel="noopener">← 回首頁</a></div></header><main class="layout"><aside id="sidebar"><h2>檔案</h2><div id="fileList" class="file-list"></div><div class="new-row"><h2 style="margin:0 4px 6px">新增文章</h2><input id="newFileName" placeholder="例： melasma-myths" /><button id="newFileBtn">+ 從衛教範本建立</button></div><div class="new-row"><h2 style="margin:0 4px 6px">小提示</h2><div style="font-size:11px; color:var(--muted); line-height:1.6; padding:0 4px">
 ① 點檔案 → 直接在右側網頁上點任何文字編輯<br/>
 ② 圖片直接 <strong>拖曳</strong> 進文章內，自動上傳<br/>
 ③ Ctrl + S 儲存<br/>
 ④ 出現黃框 = 可編輯區域
-</div></div></aside><section id="editorPane"><div class="toolbar"><span class="path" id="filePath">尚未選擇檔案</span><span class="sep"></span><button id="boldBtn" title="粗體 (Ctrl+B)"><b>B</b></button><button id="italicBtn" title="斜體 (Ctrl+I)"><i>I</i></button><button id="h2Btn" title="大標題">H2</button><button id="h3Btn" title="小標題">H3</button><button id="ulBtn" title="條列">• 清單</button><button id="linkBtn" title="插入連結">🔗</button><span class="sep"></span><label class="upload" title="上傳圖片並插入">
-🖼 上傳圖片
-<input type="file" id="imageInput" accept="image/*" multiple /></label><span class="grow"></span><button id="sourceBtn" title="切換為 HTML 原始碼模式">{ } 原始碼</button><button id="reloadBtn" title="重新讀取（放棄改動）">↻ 重讀</button><button id="saveBtn" class="primary" title="儲存並推送 (Ctrl+S)">💾 儲存並推送</button></div><div class="frame-wrap" id="frameWrap"><div class="empty-state" id="emptyState"><h3>👈 從左邊選一個檔案開始編輯</h3><p>選了之後，網頁本人會出現在這裡。</p><p>你可以直接點任何文字、改字、貼圖。<strong>有黃框</strong>的區域 = 可以編輯；沒黃框的（如 header / footer / 導覽）為了避免破壞版型，需切到原始碼模式才能改。</p></div></div><div class="statusbar" id="statusbar"><span id="status">尚未載入檔案</span><span class="grow" style="flex:1"></span><span id="shaInfo"></span></div></section></main><div id="patModal" class="modal-bg" style="display:none"><div class="modal"><h2>輸入 GitHub Personal Access Token</h2><p>後台用 GitHub API 直接寫進你的 repo (<code style="font-family:'JetBrains Mono',monospace">expertise88864/user</code>)。需要 PAT 一次，儲存在你瀏覽器的 localStorage，不會傳到任何第三方。</p><p><strong>怎麼產生 PAT?</strong><br/>
+</div></div></aside><section id="editorPane"><div class="toolbar" id="toolbar"><span class="path" id="filePath">尚未選擇檔案</span><span class="sep"></span><button id="boldBtn" title="粗體 (Ctrl+B)"><b>B</b></button><button id="italicBtn" title="斜體 (Ctrl+I)"><i>I</i></button><button id="underlineBtn" title="底線 (Ctrl+U)"><u>U</u></button><button id="strikeBtn" title="刪除線"><s>S</s></button><span class="sep"></span><button id="h2Btn" title="大標題">H2</button><button id="h3Btn" title="小標題">H3</button><button id="h4Btn" title="次小標題">H4</button><button id="ulBtn" title="項目符號清單">• 清單</button><button id="olBtn" title="編號清單">1. 編號</button><button id="quoteBtn" title="引用區塊">&ldquo; 引用</button><button id="codeBtn" title="行內代碼">&lt;/&gt;</button><span class="sep"></span><button id="alignLeftBtn" title="靠左">⇤</button><button id="alignCenterBtn" title="置中">⇔</button><button id="alignRightBtn" title="靠右">⇥</button><span class="sep"></span><label class="upload" title="字體顏色" style="padding:3px 6px 3px 8px;gap:2px">
+🎨
+<input type="color" id="colorPick" value="#0c5159" style="width:24px;height:22px;border:none;background:transparent;cursor:pointer;padding:0" /></label><select id="sizeSel" title="字體大小" style="padding:5px 6px;font-size:12px;border:1px solid var(--border);border-radius:6px;background:#fff;color:var(--ink-2);font-weight:600"><option value="">字級</option><option value="12px">12</option><option value="13px">13</option><option value="14px">14</option><option value="15.5px" selected>15.5</option><option value="17px">17</option><option value="20px">20</option><option value="24px">24</option><option value="28px">28</option></select><select id="weightSel" title="字重" style="padding:5px 6px;font-size:12px;border:1px solid var(--border);border-radius:6px;background:#fff;color:var(--ink-2);font-weight:600"><option value="">字重</option><option value="300">細</option><option value="400" selected>正常</option><option value="500">中</option><option value="600">半粗</option><option value="700">粗</option><option value="800">特粗</option></select><button id="clearFmtBtn" title="清除格式">⊘ 清除</button><span class="sep"></span><button id="linkBtn" title="插入連結">🔗 連結</button><button id="tableBtn" title="表格產生器">📊 表格</button><button id="citeBtn" title="引用文獻 (PMID)">📚 文獻</button><button id="bilingualBtn" title="檢查中英雙語完整性">🌐 雙語檢查</button><span class="sep"></span><label class="upload" title="上傳圖片並插入（自動壓縮為 WebP）">🖼 上傳圖片
+<input type="file" id="imageInput" accept="image/*" multiple /></label><button id="imageLibBtn" title="從圖庫挑圖">📁 圖庫</button><button id="metaBtn" title="文章 SEO 後設資料表單">🗂 後設資料</button><span class="grow"></span><button id="sourceBtn" title="切換為 HTML 原始碼模式">{ } 原始碼</button><button id="reloadBtn" title="重新讀取（放棄改動）">↻ 重讀</button><button id="saveBtn" class="primary" title="儲存並推送 (Ctrl+S)">💾 儲存並推送</button></div><div id="behindBanner" style="display:none;padding:8px 16px;background:#fef3c7;border-bottom:1px solid #fbbf24;color:#92400e;font-size:13px;align-items:center;gap:10px;flex-wrap:wrap"><span>⚠️</span><span id="behindBannerText">你載入的版本已落後遠端</span><button id="behindReloadBtn" style="padding:4px 12px;background:#92400e;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">重讀最新版</button><button id="behindDismissBtn" style="padding:4px 10px;background:transparent;color:#92400e;border:1px solid #92400e;border-radius:6px;cursor:pointer;font-size:12px">先不理</button></div><div id="draftBanner" style="display:none;padding:8px 16px;background:#dbeafe;border-bottom:1px solid #60a5fa;color:#1e40af;font-size:13px;align-items:center;gap:10px;flex-wrap:wrap"><span>💾</span><span id="draftBannerText">偵測到 10 分鐘前的未儲存草稿</span><button id="draftRestoreBtn" style="padding:4px 12px;background:#1e40af;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">還原草稿</button><button id="draftDiscardBtn" style="padding:4px 10px;background:transparent;color:#1e40af;border:1px solid #1e40af;border-radius:6px;cursor:pointer;font-size:12px">丟棄</button></div><div class="frame-wrap" id="frameWrap"><div class="empty-state" id="emptyState"><h3>👈 從左邊選一個檔案開始編輯</h3><p>選了之後，網頁本人會出現在這裡。</p><p>你可以直接點任何文字、改字、貼圖。<strong>有黃框</strong>的區域 = 可以編輯；沒黃框的（如 header / footer / 導覽）為了避免破壞版型，需切到原始碼模式才能改。</p></div></div><div class="statusbar" id="statusbar"><span id="status">尚未載入檔案</span><span class="grow" style="flex:1"></span><span id="autosaveInd" style="color:var(--muted);font-size:11px"></span><span id="wordCount" style="color:var(--muted);font-size:11px"></span><span id="readTime" style="color:var(--muted);font-size:11px"></span><span id="shaInfo"></span></div></section></main><div id="patModal" class="modal-bg" style="display:none"><div class="modal"><h2>輸入 GitHub Personal Access Token</h2><p>後台用 GitHub API 直接寫進你的 repo (<code style="font-family:'JetBrains Mono',monospace">expertise88864/user</code>)。需要 PAT 一次，儲存在你瀏覽器的 localStorage，不會傳到任何第三方。</p><p><strong>怎麼產生 PAT?</strong><br/>
 ① <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">https://github.com/settings/tokens</a><br/>
 ② 點 "Generate new token (classic)"<br/>
 ③ 名字隨便填，Expiration 選 90 天 / No expiration<br/>
@@ -477,6 +478,808 @@ function decodeUtf8Base64(b64){ return decodeURIComponent(escape(atob(b64.replac
 window.addEventListener('beforeunload', e=>{
 if(DIRTY){ e.preventDefault(); e.returnValue = '尚未儲存的改動會遺失，確定要離開嗎？'; return e.returnValue; }
 });
+// =====================================================================
+// PHASE 1+2 ENHANCEMENTS — autosave, full formatting, behind-banner,
+// word count, table gen, citations, bilingual check, image compression,
+// image library, article metadata form. (~2026-05-11)
+// =====================================================================
+// Expose state on window for admin-extras.js + future modules
+window.adminState = {
+get file(){ return CURRENT_FILE; },
+get sha(){ return CURRENT_SHA; },
+get content(){ return CURRENT_CONTENT; },
+get dirty(){ return DIRTY; },
+get frame(){ return editFrame; },
+get pat(){ return PAT; },
+};
+// ─────────────────────────────────────────────────────────────
+// AUTOSAVE — every 20s, save current iframe/source content to
+// localStorage keyed by file path. Restore prompt on file load.
+// ─────────────────────────────────────────────────────────────
+const AUTOSAVE_KEY_PREFIX = 'cd_admin_draft_';
+const AUTOSAVE_INTERVAL_MS = 20000;
+let lastAutosaveAt = 0;
+function autosaveKey(path){ return AUTOSAVE_KEY_PREFIX + path; }
+function getCurrentEditorContent(){
+if(SOURCE_MODE && sourceTextarea) return sourceTextarea.value;
+if(editFrame) return mergeIframeIntoOriginal();
+return CURRENT_CONTENT;
+}
+function autosave(){
+if(!CURRENT_FILE || !DIRTY) return;
+try {
+const content = getCurrentEditorContent();
+if(content === CURRENT_CONTENT) return;
+localStorage.setItem(autosaveKey(CURRENT_FILE), JSON.stringify({
+ts: Date.now(),
+sha: CURRENT_SHA,
+content: content,
+}));
+lastAutosaveAt = Date.now();
+updateAutosaveIndicator();
+} catch(e){
+console.warn('autosave failed', e);
+}
+}
+function updateAutosaveIndicator(){
+const el = document.getElementById('autosaveInd');
+if(!el) return;
+if(!lastAutosaveAt){ el.textContent = ''; return; }
+const ago = Math.floor((Date.now()-lastAutosaveAt)/1000);
+if(ago < 5) el.textContent = '💾 已暫存';
+else if(ago < 60) el.textContent = '💾 ' + ago + 's 前暫存';
+else el.textContent = '💾 ' + Math.floor(ago/60) + 'm 前暫存';
+}
+setInterval(autosave, AUTOSAVE_INTERVAL_MS);
+setInterval(updateAutosaveIndicator, 5000);
+function checkAutosaveOnLoad(path){
+try {
+const raw = localStorage.getItem(autosaveKey(path));
+if(!raw) return;
+const d = JSON.parse(raw);
+if(!d || !d.content) return;
+const ago = Math.floor((Date.now()-d.ts)/60000);
+const banner = document.getElementById('draftBanner');
+const text = document.getElementById('draftBannerText');
+text.textContent = '偵測到 ' + (ago<1 ? '<1' : ago) + ' 分鐘前的未儲存草稿 (' + path + ')';
+banner.style.display = 'flex';
+banner._draft = d;
+} catch(e){ /* ignore */ }
+}
+function clearAutosaveFor(path){
+try { localStorage.removeItem(autosaveKey(path)); } catch(e){}
+}
+document.getElementById('draftRestoreBtn').addEventListener('click', ()=>{
+const banner = document.getElementById('draftBanner');
+const d = banner._draft;
+if(!d) return;
+CURRENT_CONTENT = d.content;
+if(SOURCE_MODE) mountSource(d.content);
+else mountIframe(d.content);
+DIRTY = true;
+banner.style.display = 'none';
+setStatus('✅ 已還原草稿（記得儲存）');
+});
+document.getElementById('draftDiscardBtn').addEventListener('click', ()=>{
+if(!confirm('丟棄草稿？此操作無法復原。')) return;
+clearAutosaveFor(CURRENT_FILE);
+document.getElementById('draftBanner').style.display = 'none';
+});
+// ─────────────────────────────────────────────────────────────
+// BEHIND-COMMITS POLL — every 60s, check if remote main is ahead
+// of CURRENT_SHA. If so, show banner.
+// ─────────────────────────────────────────────────────────────
+let LAST_REMOTE_SHA = null;
+async function pollRemoteCommits(){
+if(!CURRENT_FILE || !PAT) return;
+try {
+const data = await gh('GET', 'commits?sha='+BRANCH+'&path='+encodeURIComponent(CURRENT_FILE)+'&per_page=5');
+if(!data || !data.length) return;
+// data[0].sha is the latest commit touching this file
+// CURRENT_SHA is the blob SHA, not commit SHA, so we can't compare directly.
+// Instead, re-fetch the file and compare blob SHA.
+const file = await gh('GET', 'contents/' + CURRENT_FILE);
+if(file.sha !== CURRENT_SHA){
+const banner = document.getElementById('behindBanner');
+const text = document.getElementById('behindBannerText');
+text.textContent = '⚠️ 遠端版本已更新（' + data[0].commit.message.split('\n')[0].slice(0, 50) + '...） — 建議先「重讀最新版」再繼續編輯';
+banner.style.display = 'flex';
+banner._remoteSha = file.sha;
+}
+} catch(e){
+console.warn('poll failed', e.message);
+}
+}
+setInterval(pollRemoteCommits, 60000);
+document.getElementById('behindReloadBtn').addEventListener('click', ()=>{
+if(DIRTY && !confirm('你有未存改動，重讀會丟棄改動（草稿仍保留），確定？')) return;
+document.getElementById('behindBanner').style.display = 'none';
+loadFile(CURRENT_FILE);
+});
+document.getElementById('behindDismissBtn').addEventListener('click', ()=>{
+document.getElementById('behindBanner').style.display = 'none';
+});
+// ─────────────────────────────────────────────────────────────
+// WORD COUNT + READING TIME — refresh on input
+// ─────────────────────────────────────────────────────────────
+let wordCountTimer = null;
+function scheduleWordCount(){
+clearTimeout(wordCountTimer);
+wordCountTimer = setTimeout(updateWordCount, 400);
+}
+function updateWordCount(){
+let text = '';
+if(editFrame && editFrame.contentDocument){
+const r = editFrame.contentDocument.querySelector('[data-cd-editable="1"]');
+if(r) text = r.innerText || r.textContent || '';
+} else if(sourceTextarea){
+// Strip HTML tags for source mode
+text = sourceTextarea.value.replace(/<[^>]+>/g, ' ');
+}
+// CJK chars count as words individually + English words split by whitespace
+const cjk = (text.match(/[一-鿿぀-ヿ]/g) || []).length;
+const ascii = (text.match(/[A-Za-z]+/g) || []).length;
+const total = cjk + ascii;
+document.getElementById('wordCount').textContent = '📝 ' + total + ' 字';
+const minutes = Math.max(1, Math.ceil(cjk / 350 + ascii / 220));  // 350 CJK/min, 220 en/min
+document.getElementById('readTime').textContent = '⏱ ~' + minutes + ' 分';
+}
+// ─────────────────────────────────────────────────────────────
+// EXTENDED TOOLBAR — color, size, weight, underline, strike,
+// alignment, code, blockquote, clear formatting
+// ─────────────────────────────────────────────────────────────
+function execStyled(prop, value){
+if(!editFrame || !editFrame.contentDocument) return;
+const doc = editFrame.contentDocument;
+const sel = doc.getSelection();
+if(!sel || !sel.rangeCount){ alert('請先選取文字'); return; }
+// Use execCommand for color and basic things; for font-size and weight we
+// wrap selection in a <span style="..."> ourselves because execCommand fontSize
+// uses 1-7 legacy values not pixel sizes.
+doc.execCommand('styleWithCSS', false, true);
+if(prop === 'color'){
+doc.execCommand('foreColor', false, value);
+} else if(prop === 'background'){
+doc.execCommand('hiliteColor', false, value);
+} else if(prop === 'fontSize' || prop === 'fontWeight' || prop === 'fontFamily'){
+const range = sel.getRangeAt(0);
+if(range.collapsed){ alert('請先選取文字'); return; }
+const span = doc.createElement('span');
+span.style[prop] = value;
+try {
+span.appendChild(range.extractContents());
+range.insertNode(span);
+sel.removeAllRanges();
+const newRange = doc.createRange();
+newRange.selectNodeContents(span);
+sel.addRange(newRange);
+} catch(e){
+console.warn('extractContents failed (selection crosses block boundary?)', e);
+alert('選取範圍跨越段落，請只選同一段文字內的字');
+}
+}
+DIRTY = true;
+scheduleWordCount();
+}
+document.getElementById('underlineBtn').addEventListener('click', ()=>execInFrame('underline'));
+document.getElementById('strikeBtn').addEventListener('click', ()=>execInFrame('strikeThrough'));
+document.getElementById('h4Btn').addEventListener('click', ()=>execInFrame('formatBlock','h4'));
+document.getElementById('olBtn').addEventListener('click', ()=>execInFrame('insertOrderedList'));
+document.getElementById('quoteBtn').addEventListener('click', ()=>execInFrame('formatBlock','blockquote'));
+document.getElementById('codeBtn').addEventListener('click', ()=>{
+if(!editFrame) return;
+const doc = editFrame.contentDocument;
+const sel = doc.getSelection();
+if(!sel || !sel.rangeCount){ alert('請先選取文字'); return; }
+const range = sel.getRangeAt(0);
+if(range.collapsed){ alert('請先選取文字'); return; }
+const code = doc.createElement('code');
+code.style.cssText = 'background:#f1ece4;padding:2px 6px;border-radius:4px;font-family:JetBrains Mono,Menlo,monospace;font-size:.92em';
+code.appendChild(range.extractContents());
+range.insertNode(code);
+DIRTY = true;
+});
+document.getElementById('alignLeftBtn').addEventListener('click', ()=>execInFrame('justifyLeft'));
+document.getElementById('alignCenterBtn').addEventListener('click', ()=>execInFrame('justifyCenter'));
+document.getElementById('alignRightBtn').addEventListener('click', ()=>execInFrame('justifyRight'));
+document.getElementById('clearFmtBtn').addEventListener('click', ()=>{
+execInFrame('removeFormat');
+execInFrame('unlink');
+});
+document.getElementById('colorPick').addEventListener('change', e=>execStyled('color', e.target.value));
+document.getElementById('sizeSel').addEventListener('change', e=>{
+if(!e.target.value) return;
+execStyled('fontSize', e.target.value);
+e.target.value = '';
+});
+document.getElementById('weightSel').addEventListener('change', e=>{
+if(!e.target.value) return;
+execStyled('fontWeight', e.target.value);
+e.target.value = '';
+});
+// ─────────────────────────────────────────────────────────────
+// TABLE GENERATOR — modal with grid picker
+// ─────────────────────────────────────────────────────────────
+function openTableModal(){
+if(!editFrame){ alert('請先選一個檔案'); return; }
+const bg = document.createElement('div');
+bg.className = 'modal-bg';
+bg.innerHTML = `
+<div class="modal" style="max-width:420px">
+<h2>📊 插入表格</h2>
+<p>選擇表格尺寸（最多 8×8）：</p>
+<div id="tblGrid" style="display:grid;grid-template-columns:repeat(8,28px);gap:3px;margin:12px 0"></div>
+<p id="tblSize" style="font-weight:600;color:#0c5159;margin:8px 0">0 × 0</p>
+<p style="font-size:12px;color:#5e574e">將插入站台預設 .dn 樣式的表格（含表頭列）。</p>
+<div style="display:flex;gap:8px;margin-top:12px">
+<button id="tblInsert" disabled>插入</button>
+<button id="tblCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button>
+</div>
+</div>`;
+document.body.appendChild(bg);
+const grid = bg.querySelector('#tblGrid');
+let selR = 0, selC = 0;
+for(let r=1; r<=8; r++) for(let c=1; c<=8; c++){
+const cell = document.createElement('div');
+cell.style.cssText = 'width:28px;height:28px;background:#f5f5f0;border:1px solid #ddd6c8;border-radius:3px;cursor:pointer';
+cell.dataset.r = r; cell.dataset.c = c;
+cell.addEventListener('mouseenter', ()=>{
+selR = r; selC = c;
+grid.querySelectorAll('div').forEach(d=>{
+const dr = +d.dataset.r, dc = +d.dataset.c;
+d.style.background = (dr<=r && dc<=c) ? '#7a9285' : '#f5f5f0';
+});
+bg.querySelector('#tblSize').textContent = r + ' × ' + c;
+bg.querySelector('#tblInsert').disabled = false;
+});
+cell.addEventListener('click', ()=>insertTbl(r, c));
+grid.appendChild(cell);
+}
+bg.querySelector('#tblInsert').addEventListener('click', ()=>insertTbl(selR, selC));
+bg.querySelector('#tblCancel').addEventListener('click', ()=>bg.remove());
+function insertTbl(r, c){
+let html = '<table class="dn"><thead><tr>';
+for(let i=0;i<c;i++) html += '<th>欄' + (i+1) + '</th>';
+html += '</tr></thead><tbody>';
+for(let i=0;i<r-1;i++){
+html += '<tr>';
+for(let j=0;j<c;j++) html += '<td>—</td>';
+html += '</tr>';
+}
+html += '</tbody></table>';
+const doc = editFrame.contentDocument;
+doc.execCommand('insertHTML', false, html);
+DIRTY = true;
+bg.remove();
+}
+}
+document.getElementById('tableBtn').addEventListener('click', openTableModal);
+// ─────────────────────────────────────────────────────────────
+// CITATION BUTTON — prompt PMID → fetch PubMed esummary → format
+// ─────────────────────────────────────────────────────────────
+async function fetchPubmed(pmid){
+const url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=' + pmid + '&retmode=json';
+const r = await fetch(url);
+if(!r.ok) throw new Error('PubMed API HTTP ' + r.status);
+const data = await r.json();
+const result = data.result && data.result[pmid];
+if(!result) throw new Error('找不到 PMID ' + pmid);
+// Format: Authors. Title. Source Year;Vol(Issue):Pages.
+const authors = (result.authors||[]).slice(0,3).map(a=>a.name).join(', ') + ((result.authors||[]).length>3?', et al':'');
+const title = result.title || '';
+const source = result.fulljournalname || result.source || '';
+const year = (result.pubdate||'').split(' ')[0];
+const vol = result.volume || '';
+const issue = result.issue || '';
+const pages = result.pages || '';
+return {
+authors, title, source, year, vol, issue, pages,
+citation: `${authors}. ${title} <em>${source}</em>. ${year};${vol}${issue?'('+issue+')':''}${pages?':'+pages:''}.`,
+pmid,
+};
+}
+document.getElementById('citeBtn').addEventListener('click', async ()=>{
+if(!editFrame){ alert('請先選一個檔案'); return; }
+const pmid = prompt('輸入 PubMed PMID（例：22972052）：');
+if(!pmid || !/^\d{1,9}$/.test(pmid.trim())){ if(pmid) alert('PMID 必須是數字'); return; }
+setStatus('查詢 PMID ' + pmid + ' ...');
+try {
+const c = await fetchPubmed(pmid.trim());
+setStatus('✅ ' + c.title.slice(0, 60));
+const doc = editFrame.contentDocument;
+// Insert inline citation marker at cursor
+doc.execCommand('insertHTML', false, ' <span class="cite">(PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/' + c.pmid + '/" target="_blank" rel="noopener">' + c.pmid + '</a>)</span>');
+// Also append to <ol class="references"> if present
+const refsList = doc.querySelector('ol.references');
+if(refsList){
+const li = doc.createElement('li');
+li.innerHTML = c.citation + ' <a href="https://pubmed.ncbi.nlm.nih.gov/' + c.pmid + '/" target="_blank" rel="noopener">「來源」</a>';
+refsList.appendChild(li);
+setStatus('✅ 已加入參考資料區（第 ' + refsList.children.length + ' 條）');
+} else {
+setStatus('✅ 已插入引用標記（注意：本文沒有 <ol class="references"> 區塊）', true);
+}
+DIRTY = true;
+} catch(e){
+setStatus('查詢失敗: ' + e.message, true);
+}
+});
+// ─────────────────────────────────────────────────────────────
+// BILINGUAL CHECK — scan data-zh/data-en attrs for empty/mismatch
+// ─────────────────────────────────────────────────────────────
+document.getElementById('bilingualBtn').addEventListener('click', ()=>{
+if(!editFrame || !editFrame.contentDocument){ alert('請先選一個檔案'); return; }
+const doc = editFrame.contentDocument;
+const issues = [];
+doc.querySelectorAll('[data-zh]').forEach(el=>{
+const zh = el.getAttribute('data-zh') || '';
+const en = el.getAttribute('data-en') || '';
+if(!en.trim()){
+issues.push({el, type: '英文空白', zh: zh.slice(0,40), en: '(empty)'});
+} else if(zh.includes('<') && !en.includes('<')){
+issues.push({el, type: '結構不一致', zh: '含 HTML', en: '純文字'});
+}
+});
+doc.querySelectorAll('[data-en]').forEach(el=>{
+if(!el.hasAttribute('data-zh')){
+issues.push({el, type: '中文空白', zh: '(empty)', en: (el.getAttribute('data-en')||'').slice(0,40)});
+}
+});
+// Modal report
+const bg = document.createElement('div');
+bg.className = 'modal-bg';
+bg.innerHTML = `
+<div class="modal" style="max-width:640px;max-height:80vh;overflow-y:auto">
+<h2>🌐 中英雙語檢查</h2>
+<p>共掃描 ${doc.querySelectorAll('[data-zh],[data-en]').length} 個雙語節點，發現 <strong>${issues.length}</strong> 個問題。</p>
+${issues.length===0 ? '<p style="color:#065f46">✅ 沒有問題！每個 data-zh 都有對應的 data-en。</p>' :
+'<div style="max-height:50vh;overflow-y:auto;border:1px solid #ebe4d8;border-radius:8px">' +
+issues.map((i,idx)=>`<div style="padding:10px 14px;border-bottom:1px solid #ebe4d8;font-size:12.5px;line-height:1.6"><strong style="color:#92400e">${idx+1}. ${i.type}</strong><div style="margin-top:4px;color:#5e574e">ZH: ${i.zh}</div><div style="color:#5e574e">EN: ${i.en}</div></div>`).join('') +
+'</div>'}
+<div style="margin-top:12px"><button id="bilingualClose">關閉</button></div>
+</div>`;
+document.body.appendChild(bg);
+bg.querySelector('#bilingualClose').addEventListener('click', ()=>bg.remove());
+});
+// ─────────────────────────────────────────────────────────────
+// IMAGE COMPRESSION — replace uploadImage with WebP-compressed version
+// ─────────────────────────────────────────────────────────────
+async function compressImage(file, maxDim, quality){
+maxDim = maxDim || 1200;
+quality = quality || 0.82;
+return new Promise((resolve, reject)=>{
+const img = new Image();
+const reader = new FileReader();
+reader.onload = e=>{
+img.onload = ()=>{
+const ratio = Math.min(maxDim / img.naturalWidth, maxDim / img.naturalHeight, 1);
+const w = Math.round(img.naturalWidth * ratio);
+const h = Math.round(img.naturalHeight * ratio);
+const canvas = document.createElement('canvas');
+canvas.width = w; canvas.height = h;
+const ctx = canvas.getContext('2d');
+ctx.drawImage(img, 0, 0, w, h);
+canvas.toBlob(blob=>{
+if(!blob) return reject(new Error('canvas.toBlob failed'));
+// If WebP is bigger than original, keep original
+if(blob.size >= file.size * 0.95 && file.type === 'image/jpeg'){
+resolve({blob: file, ext: '.jpg', mime: 'image/jpeg', w, h, originalSize: file.size, newSize: file.size});
+} else {
+resolve({blob, ext: '.webp', mime: 'image/webp', w, h, originalSize: file.size, newSize: blob.size});
+}
+}, 'image/webp', quality);
+};
+img.onerror = ()=>reject(new Error('image decode failed'));
+img.src = e.target.result;
+};
+reader.onerror = ()=>reject(new Error('FileReader failed'));
+reader.readAsDataURL(file);
+});
+}
+// Override original uploadImage with compression-enabled version
+const _originalUploadImage = uploadImage;
+uploadImage = async function(file, prefix){
+// If GIF or already WebP, skip compression
+if(file.type === 'image/gif' || file.type === 'image/svg+xml'){
+return _originalUploadImage(file, prefix);
+}
+setStatus('壓縮 ' + file.name + ' ...');
+try {
+const c = await compressImage(file);
+const altText = prompt('輸入圖片替代文字 (alt) — SEO + 無障礙必要：', '');
+setStatus('上傳壓縮後 ' + (c.newSize/1024).toFixed(1) + 'KB（原 ' + (file.size/1024).toFixed(1) + 'KB）...');
+const safeName = (file.name||'image').replace(/\.[^.]+$/, '').replace(/[^a-zA-Z0-9._-]+/g,'-').toLowerCase();
+const filename = Date.now() + '_' + safeName + c.ext;
+const path = 'blog/images/' + filename;
+const reader = new FileReader();
+return await new Promise((resolve, reject)=>{
+reader.onload = async ()=>{
+try {
+const b64 = reader.result.split(',')[1];
+await gh('PUT', 'contents/' + path, {
+message: 'upload ' + filename + ' (compressed ' + (c.newSize/1024).toFixed(1) + 'KB)',
+content: b64,
+branch: BRANCH
+});
+const url = '/blog/images/' + filename;
+setStatus('✅ 已上傳 ' + url + ' (' + c.w + '×' + c.h + ')');
+window._lastAlt = altText || '';
+resolve(url);
+} catch(e){ reject(e); }
+};
+reader.readAsDataURL(c.blob);
+});
+} catch(e){
+setStatus('壓縮失敗: ' + e.message + ' — 改用原圖上傳', true);
+return _originalUploadImage(file, prefix);
+}
+};
+// Override insertImageAtSelection to include alt text
+const _originalInsertImage = insertImageAtSelection;
+insertImageAtSelection = function(url){
+if(!editFrame) return;
+const doc = editFrame.contentDocument;
+const sel = doc.getSelection();
+let range;
+if(sel && sel.rangeCount){ range = sel.getRangeAt(0); }
+else { const region = doc.querySelector('[data-cd-editable="1"]'); if(!region) return;
+range = doc.createRange(); range.selectNodeContents(region); range.collapse(false); }
+const fig = doc.createElement('figure');
+fig.style.cssText = 'margin:18px 0; text-align:center;';
+const img = doc.createElement('img');
+img.src = url;
+img.alt = window._lastAlt || '';
+img.loading = 'lazy';
+img.decoding = 'async';
+img.style.cssText = 'max-width:100%; height:auto; border-radius:12px; box-shadow:0 8px 18px -10px rgba(77,99,88,.25);';
+fig.appendChild(img);
+if(window._lastAlt){
+const cap = doc.createElement('figcaption');
+cap.style.cssText = 'margin-top:6px;font-size:13px;color:#5e574e';
+cap.textContent = window._lastAlt;
+fig.appendChild(cap);
+}
+range.deleteContents();
+range.insertNode(fig);
+range.setStartAfter(fig); range.collapse(true);
+if(sel){ sel.removeAllRanges(); sel.addRange(range); }
+DIRTY = true;
+window._lastAlt = '';
+};
+// ─────────────────────────────────────────────────────────────
+// IMAGE LIBRARY — modal listing /blog/images/ with thumbnails
+// ─────────────────────────────────────────────────────────────
+document.getElementById('imageLibBtn').addEventListener('click', async ()=>{
+if(!editFrame){ alert('請先選一個檔案'); return; }
+setStatus('讀取圖庫 ...');
+try {
+let files = [];
+try {
+files = await gh('GET', 'contents/blog/images');
+} catch(e){
+// folder may not exist yet
+if(!/not found/i.test(e.message)) throw e;
+}
+let uploads = [];
+try {
+uploads = await gh('GET', 'contents/assets/uploads');
+} catch(e){ if(!/not found/i.test(e.message)) throw e; }
+const all = [...files, ...uploads]
+.filter(f=>f.type==='file' && /\.(jpe?g|png|webp|gif|svg)$/i.test(f.name))
+.sort((a,b)=>b.name.localeCompare(a.name));  // newest first (Date.now prefix)
+const bg = document.createElement('div');
+bg.className = 'modal-bg';
+bg.innerHTML = `
+<div class="modal" style="max-width:760px;max-height:84vh;display:flex;flex-direction:column">
+<h2>📁 圖庫 (${all.length} 張)</h2>
+<input id="libSearch" placeholder="搜尋檔名..." style="padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:8px;margin:8px 0" />
+<div id="libGrid" style="flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;padding:6px;border:1px solid #ebe4d8;border-radius:8px"></div>
+<div style="margin-top:12px;display:flex;gap:8px">
+<button id="libClose" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">關閉</button>
+</div>
+</div>`;
+document.body.appendChild(bg);
+const grid = bg.querySelector('#libGrid');
+const renderGrid = (filter)=>{
+grid.innerHTML = '';
+const filtered = filter ? all.filter(f=>f.name.toLowerCase().includes(filter.toLowerCase())) : all;
+filtered.forEach(f=>{
+const card = document.createElement('div');
+card.style.cssText = 'border:1px solid #ebe4d8;border-radius:8px;padding:6px;cursor:pointer;background:#fff;display:flex;flex-direction:column;align-items:center;gap:4px';
+card.innerHTML = `<img src="/${f.path}" loading="lazy" style="width:100%;height:90px;object-fit:cover;border-radius:4px"><div style="font-size:10px;color:#5e574e;text-align:center;word-break:break-all;line-height:1.3">${f.name}</div>`;
+card.addEventListener('click', ()=>{
+insertImageAtSelection('/' + f.path);
+bg.remove();
+});
+card.addEventListener('mouseenter', ()=>card.style.borderColor='#7a9285');
+card.addEventListener('mouseleave', ()=>card.style.borderColor='#ebe4d8');
+grid.appendChild(card);
+});
+if(filtered.length===0) grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:#8b8378;padding:30px">沒有符合的圖片</div>';
+};
+renderGrid('');
+bg.querySelector('#libSearch').addEventListener('input', e=>renderGrid(e.target.value));
+bg.querySelector('#libClose').addEventListener('click', ()=>bg.remove());
+setStatus('✅ 圖庫載入完成');
+} catch(e){
+setStatus('圖庫讀取失敗: ' + e.message, true);
+}
+});
+// ─────────────────────────────────────────────────────────────
+// ARTICLE METADATA FORM — parse <title>/meta/og from CURRENT_CONTENT,
+// edit in form, sync back on save
+// ─────────────────────────────────────────────────────────────
+document.getElementById('metaBtn').addEventListener('click', ()=>{
+if(!CURRENT_FILE){ alert('請先選一個檔案'); return; }
+const src = SOURCE_MODE ? sourceTextarea.value : CURRENT_CONTENT;
+const m = (re, def)=>{ const x = src.match(re); return x ? x[1] : (def||''); };
+const title = m(/<title>([^<]*)<\/title>/);
+const desc = m(/<meta name="description" content="([^"]*)"/);
+const ogimg = m(/<meta property="og:image" content="([^"]*)"/);
+const ogtitle = m(/<meta property="og:title" content="([^"]*)"/);
+const ogdesc = m(/<meta property="og:description" content="([^"]*)"/);
+const canonical = m(/<link rel="canonical" href="([^"]*)"/);
+// Try to find date from JSON-LD or datePublished
+const date = m(/"datePublished":"([^"]+)"/);
+const dateMod = m(/"dateModified":"([^"]+)"/);
+const bg = document.createElement('div');
+bg.className = 'modal-bg';
+bg.innerHTML = `
+<div class="modal" style="max-width:640px;max-height:88vh;overflow-y:auto">
+<h2>🗂 文章後設資料</h2>
+<p style="font-size:12.5px;color:#5e574e">編輯後按「套用」會同步到 &lt;title&gt;、meta description、og:title/description/image、JSON-LD 的 datePublished/dateModified。</p>
+<div style="display:grid;gap:10px;margin:14px 0">
+<label style="font-size:12px;font-weight:600;color:#0c5159">頁面標題 &lt;title&gt; <span id="titleLen" style="color:#8b8378;font-weight:400"></span>
+<input id="metaTitle" value="${title.replace(/"/g,'&quot;')}" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" />
+</label>
+<label style="font-size:12px;font-weight:600;color:#0c5159">Meta description (≤ 160 字) <span id="descLen" style="color:#8b8378;font-weight:400"></span>
+<textarea id="metaDesc" rows="3" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px;font-family:inherit">${desc}</textarea>
+</label>
+<label style="font-size:12px;font-weight:600;color:#0c5159">OG 標題（社群分享卡片用）
+<input id="metaOgTitle" value="${ogtitle.replace(/"/g,'&quot;')}" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" />
+</label>
+<label style="font-size:12px;font-weight:600;color:#0c5159">OG 描述
+<textarea id="metaOgDesc" rows="2" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px;font-family:inherit">${ogdesc}</textarea>
+</label>
+<label style="font-size:12px;font-weight:600;color:#0c5159">OG 圖片 URL
+<input id="metaOgImg" value="${ogimg.replace(/"/g,'&quot;')}" style="display:block;width:100%;padding:8px 12px;font-size:12px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px;font-family:JetBrains Mono,monospace" />
+</label>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<label style="font-size:12px;font-weight:600;color:#0c5159">發布日期
+<input id="metaDate" type="date" value="${date.slice(0,10)}" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" />
+</label>
+<label style="font-size:12px;font-weight:600;color:#0c5159">更新日期
+<input id="metaDateMod" type="date" value="${(dateMod||date).slice(0,10)}" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" />
+</label>
+</div>
+<label style="font-size:12px;font-weight:600;color:#0c5159">Canonical URL
+<input id="metaCanonical" value="${canonical.replace(/"/g,'&quot;')}" style="display:block;width:100%;padding:8px 12px;font-size:12px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px;font-family:JetBrains Mono,monospace" />
+</label>
+</div>
+<div style="display:flex;gap:8px;justify-content:flex-end">
+<button id="metaCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button>
+<button id="metaApply">✓ 套用</button>
+</div>
+</div>`;
+document.body.appendChild(bg);
+const titleInput = bg.querySelector('#metaTitle');
+const descInput = bg.querySelector('#metaDesc');
+const titleLen = bg.querySelector('#titleLen');
+const descLen = bg.querySelector('#descLen');
+const upd = ()=>{
+const tl = titleInput.value.length, dl = descInput.value.length;
+titleLen.textContent = '· ' + tl + ' 字' + (tl>65?' ⚠ 過長':'');
+titleLen.style.color = tl>65?'#92400e':'#8b8378';
+descLen.textContent = '· ' + dl + ' 字' + (dl<80?' ⚠ 過短':'') + (dl>180?' ⚠ 過長':'');
+descLen.style.color = (dl<80||dl>180)?'#92400e':'#8b8378';
+};
+titleInput.addEventListener('input', upd);
+descInput.addEventListener('input', upd);
+upd();
+bg.querySelector('#metaCancel').addEventListener('click', ()=>bg.remove());
+bg.querySelector('#metaApply').addEventListener('click', ()=>{
+const nt = titleInput.value, nd = descInput.value;
+const not = bg.querySelector('#metaOgTitle').value;
+const nod = bg.querySelector('#metaOgDesc').value;
+const noi = bg.querySelector('#metaOgImg').value;
+const ndate = bg.querySelector('#metaDate').value;
+const ndmod = bg.querySelector('#metaDateMod').value;
+const nc = bg.querySelector('#metaCanonical').value;
+let s = SOURCE_MODE ? sourceTextarea.value : CURRENT_CONTENT;
+const setAttr = (re, val)=>{ s = s.replace(re, (m)=>m.replace(/content="[^"]*"/, 'content="'+val.replace(/"/g,'&quot;')+'"')); };
+s = s.replace(/<title>[^<]*<\/title>/, '<title>'+nt.replace(/</g,'&lt;')+'</title>');
+setAttr(/<meta name="description" content="[^"]*"/, nd);
+setAttr(/<meta property="og:title" content="[^"]*"/, not);
+setAttr(/<meta property="og:description" content="[^"]*"/, nod);
+setAttr(/<meta property="og:image" content="[^"]*"/, noi);
+setAttr(/<meta name="twitter:title" content="[^"]*"/, not);
+setAttr(/<meta name="twitter:description" content="[^"]*"/, nod);
+setAttr(/<meta name="twitter:image" content="[^"]*"/, noi);
+s = s.replace(/"datePublished":"[^"]*"/, '"datePublished":"'+ndate+'"');
+s = s.replace(/"dateModified":"[^"]*"/, '"dateModified":"'+ndmod+'"');
+s = s.replace(/<link rel="canonical" href="[^"]*"/, '<link rel="canonical" href="'+nc.replace(/"/g,'&quot;')+'"');
+CURRENT_CONTENT = s;
+if(SOURCE_MODE) sourceTextarea.value = s;
+else mountIframe(s);  // remount iframe with new metadata
+DIRTY = true;
+bg.remove();
+setStatus('✅ 後設資料已套用（記得儲存）');
+});
+});
+// ─────────────────────────────────────────────────────────────
+// NEW ARTICLE WIZARD — replaces the simple template button
+// ─────────────────────────────────────────────────────────────
+document.getElementById('newFileBtn').removeEventListener('click', ()=>{});  // remove old handler? Can't actually, override below
+// Instead, replace the click listener:
+const _oldNewFileBtn = document.getElementById('newFileBtn').cloneNode(true);
+document.getElementById('newFileBtn').replaceWith(_oldNewFileBtn);
+_oldNewFileBtn.addEventListener('click', openNewArticleWizard);
+function openNewArticleWizard(){
+const slug = document.getElementById('newFileName').value.trim().toLowerCase().replace(/[^a-z0-9-]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+if(!slug){ alert('請先輸入文章 slug（左邊輸入框），例如 melasma-myths'); return; }
+if(!PAT){ alert('請先登入 PAT'); return; }
+const bg = document.createElement('div');
+bg.className = 'modal-bg';
+bg.innerHTML = `
+<div class="modal" style="max-width:560px;max-height:90vh;overflow-y:auto">
+<h2>📝 新文章精靈</h2>
+<p style="font-size:12.5px;color:#5e574e">slug: <code style="background:#f1ece4;padding:2px 6px;border-radius:4px;font-family:JetBrains Mono,monospace">${slug}</code> → blog/${slug}.html</p>
+<div style="display:grid;gap:10px;margin:14px 0">
+<label style="font-size:12px;font-weight:600;color:#0c5159">文章類型
+<select id="wizType" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px">
+<option value="myth">迷思澄清（7 大迷思格式）</option>
+<option value="rx">治療整理（藥物 / 流程）</option>
+<option value="overview">完整衛教（疾病總覽）</option>
+<option value="blank">空白（從 acne-myths 範本複製）</option>
+</select>
+</label>
+<label style="font-size:12px;font-weight:600;color:#0c5159">標題（中文）
+<input id="wizTitle" placeholder="例：肝斑 7 大迷思" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" />
+</label>
+<label style="font-size:12px;font-weight:600;color:#0c5159">副標 / Hook（中文）
+<input id="wizSub" placeholder="例：雷射打不掉？藥膏越強越好？" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" />
+</label>
+<label style="font-size:12px;font-weight:600;color:#0c5159">分類標籤
+<input id="wizTag" placeholder="例：肝斑 / 痘痘 / 落髮" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" />
+</label>
+<label style="font-size:12px;font-weight:600;color:#0c5159">SEO meta description (60-160 字)
+<textarea id="wizDesc" rows="3" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px;font-family:inherit"></textarea>
+</label>
+<label style="font-size:12.5px;display:flex;gap:6px;align-items:center;color:#5e574e">
+<input type="checkbox" id="wizMirror" checked /> 同時建立英文版 (en/blog/${slug}.html)
+</label>
+</div>
+<div style="display:flex;gap:8px;justify-content:flex-end">
+<button id="wizCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button>
+<button id="wizCreate">建立 →</button>
+</div>
+</div>`;
+document.body.appendChild(bg);
+bg.querySelector('#wizCancel').addEventListener('click', ()=>bg.remove());
+bg.querySelector('#wizCreate').addEventListener('click', async ()=>{
+const type = bg.querySelector('#wizType').value;
+const title = bg.querySelector('#wizTitle').value.trim();
+const sub = bg.querySelector('#wizSub').value.trim();
+const tag = bg.querySelector('#wizTag').value.trim();
+const desc = bg.querySelector('#wizDesc').value.trim();
+const mirror = bg.querySelector('#wizMirror').checked;
+if(!title || !tag || !desc){ alert('標題 / 標籤 / 描述都必填'); return; }
+setStatus('產生 ' + type + ' 範本 ...');
+try {
+const today = new Date().toISOString().slice(0,10);
+let html;
+if(type === 'blank'){
+const tpl = await gh('GET', 'contents/blog/acne-myths.html');
+html = decodeUtf8Base64(tpl.content);
+// Substitute title/desc/tag
+html = html.replace(/<title>[^<]*<\/title>/, '<title>'+title+' — '+sub+' | ChenDermatologist · 陳翊嘉醫師</title>');
+html = html.replace(/<meta name="description" content="[^"]*"/, '<meta name="description" content="'+desc.replace(/"/g,'&quot;')+'"');
+html = html.replace(/<link rel="canonical" href="[^"]*"/, '<link rel="canonical" href="https://chendermatologist.com/blog/'+slug+'"');
+} else {
+html = generateNewArticleSkeleton({slug, type, title, sub, tag, desc, date: today});
+}
+await gh('PUT', 'contents/blog/' + slug + '.html', {
+message: 'create blog/' + slug + '.html — ' + title,
+content: encodeUtf8Base64(html),
+branch: BRANCH
+});
+if(mirror){
+// English mirror — same file structurally, will be filled in by Claude/human later
+await gh('PUT', 'contents/en/blog/' + slug + '.html', {
+message: 'create en/blog/' + slug + '.html mirror',
+content: encodeUtf8Base64(html.replace('<html lang="zh-Hant-TW">', '<html lang="en">').replace('https://chendermatologist.com/blog/'+slug, 'https://chendermatologist.com/en/blog/'+slug)),
+branch: BRANCH
+});
+}
+setStatus('✅ 已建立 blog/' + slug + '.html' + (mirror ? ' + 英文鏡像' : '') + ' — 記得編輯後也手動加進 sitemap.xml / sw.js / blog/index.html');
+document.getElementById('newFileName').value = '';
+bg.remove();
+await refreshFileList();
+setTimeout(()=>loadFile('blog/' + slug + '.html'), 400);
+} catch(e){
+setStatus('建立失敗: ' + e.message, true);
+}
+});
+}
+function generateNewArticleSkeleton(opts){
+const {slug, type, title, sub, tag, desc, date} = opts;
+// Reusable shell — bilingual disclaimer + TLDR + structure
+const sections = type === 'myth'
+? Array.from({length:7}, (_,i)=>`<h2 id="m${i+1}">迷思 ${i+1}：（標題）</h2><div class="myth-card"><div class="myth">「（民眾常聽到的話）」</div><div class="truth">（澄清重點）。</div></div><p>（補充說明）</p>`).join('')
+: type === 'rx'
+? `<h2 id="overview">概述</h2><p>（疾病 / 藥物背景）</p><h2 id="tx">治療方式對照</h2><table class="dn"><thead><tr><th>方式</th><th>適應症</th><th>劑量</th><th>副作用</th></tr></thead><tbody><tr><td>—</td><td>—</td><td>—</td><td>—</td></tr></tbody></table><h2 id="end">結語</h2><p>（總結）</p>`
+: `<h2 id="overview">什麼是 ${title}</h2><p>（定義 + 流行病學）</p><h2 id="symptoms">症狀</h2><ul><li>—</li></ul><h2 id="diagnosis">診斷</h2><p>（如何確診）</p><h2 id="treatment">治療</h2><p>（治療選項）</p><h2 id="end">結語</h2><p>（總結）</p>`;
+return `<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>${title} — ${sub} | ChenDermatologist · 陳翊嘉醫師</title>
+<meta name="description" content="${desc.replace(/"/g,'&quot;')}" />
+<meta name="theme-color" content="#7a9285" />
+<meta name="author" content="陳翊嘉 醫師 · ChenDermatologist" />
+<link rel="canonical" href="https://chendermatologist.com/blog/${slug}" />
+<link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/${slug}" />
+<link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/${slug}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="${title} — ${sub}" />
+<meta property="og:description" content="${desc.replace(/"/g,'&quot;')}" />
+<meta property="og:image" content="https://chendermatologist.com/api/og?title=${encodeURIComponent(title)}&tag=${encodeURIComponent(tag)}&date=${date}" />
+<meta property="og:locale" content="zh_TW" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="${title} — ${sub}" />
+<meta name="twitter:description" content="${desc.replace(/"/g,'&quot;')}" />
+<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+<link rel="manifest" href="/manifest.json" />
+<link rel="modulepreload" href="/blog/blog-shared.min.js" />
+<link rel="preload" as="style" href="/assets/tw-mini.css" onload="this.onload=null;this.rel='stylesheet'">
+<` + `script type="application/ld+json">{ "@context":"https://schema.org","@type":"MedicalScholarlyArticle","inLanguage":"zh-Hant-TW","headline":"${title} — ${sub}","description":"${desc.replace(/"/g,'\\"')}","datePublished":"${date}","dateModified":"${date}","author":{"@type":"Person","@id":"https://chendermatologist.com/about#person","name":"陳翊嘉 醫師","alternateName":["Dr. Chen Yi-Jia"]} }<\/` + `script>
+</head><body>
+<main><section class="max-w-3xl mx-auto px-5 sm:px-8 mt-8 mb-6">
+<div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold mb-3">衛教 · ${tag} <span class="ml-3 inline-block px-2 py-0.5 rounded-full bg-mint-100 text-teal-700 text-[10.5px] font-semibold normal-case tracking-normal">更新日期 · ${date}</span></div>
+<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]"><span data-zh="${title}" data-en="${title}">${title}</span><br/><span class="teal-text" data-zh="${sub}" data-en="${sub}">${sub}</span></h1>
+<p class="mt-6 text-[15.5px] text-ink-700 leading-[1.9] tldr"><span data-zh="（TLDR — 一句話總結）" data-en="(TLDR — one-sentence summary)">（TLDR — 一句話總結）</span></p>
+<div class="disclaimer"><strong data-zh="提醒 ·" data-en="Reminder ·">提醒 ·</strong> <span data-zh="本文僅供衛教，個別評估請至皮膚科。" data-en="This article is for general education only — please see a dermatologist for individual assessment.">本文僅供衛教，個別評估請至皮膚科。</span></div>
+</section><article class="max-w-3xl mx-auto px-5 sm:px-8 mt-2 mb-16"><div id="proseZh" class="prose">
+${sections}
+<h2 id="refs">參考資料</h2><ol class="references"></ol>
+</div></article></main>
+<` + `script src="/blog/blog-shared.min.js" defer><\/` + `script>
+<` + `script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});<\/` + `script>
+</body></html>`;
+}
+// ─────────────────────────────────────────────────────────────
+// HOOK INTO EXISTING FLOWS — autosave on loadFile, behind-banner reset
+// ─────────────────────────────────────────────────────────────
+const _origLoadFile = loadFile;
+loadFile = async function(path){
+// Hide stale banners
+document.getElementById('behindBanner').style.display = 'none';
+document.getElementById('draftBanner').style.display = 'none';
+await _origLoadFile(path);
+// Check for autosaved draft
+checkAutosaveOnLoad(path);
+// First word-count update after iframe loads
+setTimeout(updateWordCount, 800);
+};
+// Override save() to clear autosave on success
+const _origSave = save;
+save = async function(){
+const before = CURRENT_FILE;
+await _origSave();
+if(!DIRTY && before){
+clearAutosaveFor(before);
+lastAutosaveAt = 0;
+updateAutosaveIndicator();
+}
+};
+document.getElementById('saveBtn').removeEventListener('click', save);  // can't actually remove, but rebind:
+const _saveBtn = document.getElementById('saveBtn').cloneNode(true);
+document.getElementById('saveBtn').replaceWith(_saveBtn);
+_saveBtn.addEventListener('click', save);
+// Word count input listener (after iframe load)
+const _origBindFrameEvents = bindFrameEvents;
+bindFrameEvents = function(){
+_origBindFrameEvents();
+if(!editFrame || !editFrame.contentDocument) return;
+editFrame.contentDocument.addEventListener('input', scheduleWordCount, true);
+};
 // init
 loadPat();</script>
 <script>(function(){
@@ -509,5 +1312,5 @@ requestIdleCallback(load, { timeout: 2500 });
 setTimeout(load, 1500);
 }
 })();</script>
-<script type="module" src="/admin/admin-extras.js?v=202605110937"></script>
+<script type="module" src="/admin/admin-extras.js?v=202605111007"></script>
 </body></html>
