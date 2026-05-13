@@ -38,12 +38,25 @@
 .modal button:hover{ filter:brightness(1.08) }
 .modal button[id$="Cancel"], .modal button[id$="Close"], .modal button[id$="Dismiss"]{ background:#fff; color:var(--ink); border:1px solid #dcd5c8 }
 .modal button[id$="Cancel"]:hover, .modal button[id$="Close"]:hover{ border-color:var(--teal-deep) }
-/* === Mobile-friendly admin layout (rev 2026-05-13) === */
+/* === Mobile-friendly admin layout (rev 2026-05-13b) === */
 /* Hamburger button — hidden on desktop, shown on mobile */
 #sidebarToggle{ display:none; }
 .sidebar-backdrop{ display:none; }
 @media (max-width: 880px){
-  main.layout{ grid-template-columns:1fr; height:auto; min-height:calc(100vh - 54px); display:block }
+  /* Lock header to a single 54px row so the drawer top:54px never overlaps it */
+  header.top{ padding:0 12px; height:54px; min-height:54px; flex-wrap:nowrap; gap:8px; overflow:hidden }
+  header.top .brand{ font-size:13px; flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
+  header.top .right{ flex-shrink:0; flex-wrap:nowrap; gap:6px }
+  /* Body must allow scroll on mobile (was overflow:hidden) so iOS can scroll */
+  html,body{ overflow:visible; height:auto; min-height:100% }
+  /* Main layout: single column, full viewport height minus 54px header */
+  main.layout{ grid-template-columns:1fr; display:block; height:auto }
+  /* Editor pane is a vertical flex container filling the viewport */
+  #editorPane{ display:flex; flex-direction:column; height:calc(100vh - 54px); height:calc(100dvh - 54px); min-height:0 }
+  /* The iframe / textarea area grows to fill remaining space (key fix) */
+  .frame-wrap{ flex:1 1 auto; min-height:0 }
+  iframe.editor{ height:100%; min-height:0 }
+  textarea.source{ flex:1 1 auto; min-height:0 }
   /* Sidebar becomes an off-canvas drawer with its own scroll */
   #sidebar{ position:fixed; top:54px; left:0; right:0; bottom:0; height:auto; width:100%; max-height:none; z-index:60; background:#fff; border-right:none; border-bottom:1px solid var(--border); overflow-y:auto; -webkit-overflow-scrolling:touch; padding:14px 16px calc(80px + env(safe-area-inset-bottom)); transform:translateY(-100%); transition:transform .25s ease; box-shadow:0 8px 24px -8px rgba(15,23,42,.18) }
   #sidebar.mobile-open{ transform:translateY(0) }
@@ -52,13 +65,10 @@
   .sidebar-backdrop{ display:none; position:fixed; inset:54px 0 0 0; background:rgba(15,23,42,.32); z-index:55; opacity:0; transition:opacity .25s ease; -webkit-tap-highlight-color:transparent }
   .sidebar-backdrop.show{ display:block; opacity:1 }
   /* Hamburger toggle button */
-  #sidebarToggle{ display:inline-flex; align-items:center; gap:6px; padding:6px 12px; background:var(--teal-deep); color:#fff; border:0; border-radius:6px; font-size:12.5px; font-weight:600; cursor:pointer; -webkit-tap-highlight-color:transparent }
+  #sidebarToggle{ display:inline-flex; align-items:center; gap:4px; padding:7px 11px; background:var(--teal-deep); color:#fff; border:0; border-radius:6px; font-size:12.5px; font-weight:600; cursor:pointer; -webkit-tap-highlight-color:transparent; flex-shrink:0 }
   #sidebarToggle:active{ filter:brightness(.92) }
-  /* Allow body to scroll on mobile (was overflow:hidden) so iOS Safari can scroll */
-  html,body{ overflow:visible; height:auto; min-height:100% }
-  #editorPane{ height:auto; min-height:calc(100vh - 54px) }
-  .frame-wrap{ min-height:55vh }
   /* Bigger, more tappable toolbar buttons (iOS 44pt target) */
+  .toolbar-wrap{ flex-shrink:0 }
   .toolbar{ padding:8px 10px; gap:6px; overflow-x:auto; -webkit-overflow-scrolling:touch; flex-wrap:nowrap }
   .toolbar-row{ flex-wrap:nowrap !important; overflow-x:auto; -webkit-overflow-scrolling:touch }
   .toolbar button, .toolbar label.upload{ padding:8px 12px; font-size:12.5px; min-height:38px; flex-shrink:0 }
@@ -67,9 +77,7 @@
   .toolbar .sep{ display:none }
   .toolbar .grow{ flex:0 }
   .tb-group{ flex-shrink:0 }
-  header.top{ padding:8px 12px; height:auto; min-height:50px; flex-wrap:wrap; gap:6px }
-  header.top .brand{ font-size:13px; flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
-  .statusbar{ font-size:11px; padding:5px 10px; flex-wrap:wrap }
+  .statusbar{ font-size:11px; padding:5px 10px; flex-wrap:wrap; flex-shrink:0 }
   .ax-panel{ width:calc(100vw - 24px) !important; right:12px !important; left:auto !important; top:auto !important; bottom:12px !important; max-height:42vh !important; max-width:380px !important }
   textarea.source{ font-size:13px; padding:12px 14px }
   .modal{ max-width:calc(100vw - 24px); padding:20px 16px; max-height:calc(100vh - 32px); overflow-y:auto; -webkit-overflow-scrolling:touch }
