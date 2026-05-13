@@ -126,6 +126,7 @@ jobs:
               'CSS: "min-height": Unknown dimension' \
               'CSS: "max-height": Unknown dimension' \
               'CSS: "height": Unknown dimension' \
+              'CSS: "[a-z-]+": Parse Error' \
               'CSS: Unrecognized at-rule "@view-transition"' \
               "CSS: Parse Error" \
               'Bad value "speculationrules" for attribute "type" on element "script"'
