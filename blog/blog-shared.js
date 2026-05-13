@@ -1379,8 +1379,17 @@
       const isZh = (lang === 'zh');
       const ze = document.getElementById(opts.proseZh || 'proseZh');
       const en = document.getElementById(opts.proseEn || 'proseEn');
-      if (ze) ze.style.display = isZh ? '' : 'none';
-      if (en) en.style.display = isZh ? 'none' : '';
+      // Two article patterns supported:
+      //   (A) Older: proseEn contains a separately-rendered English mirror →
+      //       toggle visibility of ze/en.
+      //   (B) Newer: proseZh has data-zh + data-en on every block; proseEn is
+      //       empty or absent. applyTextOnly() does an in-place swap, so we
+      //       must KEEP proseZh visible regardless of language.
+      const enHasContent = !!(en && en.children && en.children.length > 0);
+      if (enHasContent) {
+        if (ze) ze.style.display = isZh ? '' : 'none';
+        en.style.display = isZh ? 'none' : '';
+      }
       if (typeof opts.onChange === 'function') opts.onChange(lang);
     }
 
