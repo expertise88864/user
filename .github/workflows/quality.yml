@@ -72,7 +72,14 @@ jobs:
             echo "feeds + /en/ + runtime bundles already up-to-date"
             exit 0
           fi
-          git commit -m "auto-regen /en/ mirror + feeds + runtime bundles [skip ci]"
+          # Commit-message tokens:
+          # - `[skip actions]` skips GH Actions only (prevents regen loop).
+          # - `[skip actions]` is NOT recognized by Vercel, so Vercel WILL
+          #   deploy this commit — exactly what we want, since this commit
+          #   reflects the canonical state (admin edit + auto-regen).
+          # - Previously used `[skip ci]` which Vercel ALSO honors, causing
+          #   admin saves to silently not deploy. Switched 2026-05-14.
+          git commit -m "auto-regen /en/ mirror + feeds + runtime bundles [skip actions]"
           # Retry push up to 5 times with rebase, in case another push raced us
           for attempt in 1 2 3 4 5; do
             if git push; then
@@ -203,7 +210,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
       - name: Pre-audit regen (mirror feeds-regen so audit doesn't race against it)
-        # feeds-regen runs in parallel and commits [skip ci]; meta-check picks up
+        # feeds-regen runs in parallel and commits [skip actions]; meta-check picks up
         # the pre-regen state and fails on @id mismatches in /en/ mirrors.
         # Re-run EN gen + schema normalize here so the audit sees the final state.
         run: |
