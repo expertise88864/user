@@ -514,7 +514,13 @@ def transform(src: str, zh_canonical_path: str, en_canonical_path: str, source_r
     )
     s = set_meta(s, en_title, en_desc)
     s = localize_jsonld(s, en_title, en_desc)
-    if uses_generic_meta or visible_cjk_count(s) > 500:
+    # AdSense audit period: force noindex on ALL en/ mirrors. They are machine-
+    # translated from data-en attrs and risk being scored as low-quality. Once
+    # AdSense approves and an article gets a real human translation, opt that
+    # specific page out by listing it in EN_INDEX_ALLOWLIST below.
+    EN_INDEX_ALLOWLIST: set[str] = set()
+    force_noindex = (source_rel or '') not in EN_INDEX_ALLOWLIST
+    if force_noindex or uses_generic_meta or visible_cjk_count(s) > 500:
         s = set_noindex(s)
 
     s = re.sub(r'<html\s+lang="[^"]*"', '<html lang="en"', s, count=1)
