@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://chendermatologist.com/</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/"/>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/about</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/about"/>
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog"/>
@@ -27,7 +27,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/topics</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/topics"/>
@@ -35,7 +35,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/tools</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/tools"/>
@@ -43,7 +43,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/glossary</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/glossary"/>
@@ -51,7 +51,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/support</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/support"/>
@@ -60,7 +60,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/dashboard</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/dashboard"/>
@@ -68,7 +68,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/notes</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/notes"/>
@@ -76,12 +76,24 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/privacy</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/privacy"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/privacy"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/privacy"/>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/perioral-dermatitis-guide</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/perioral-dermatitis-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/perioral-dermatitis-guide"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/api/og?title=%E5%98%B4%E8%A7%92%E7%B4%85%E7%96%B9%E6%98%AF%E7%97%98%E7%97%98%E9%82%84%E6%98%AF%E6%BF%95%E7%96%B9%EF%BC%9F%E5%8F%A3%E5%91%A8%E7%9A%AE%E8%86%9A%E7%82%8E%E6%88%90%E5%9B%A0%E3%80%81%E7%97%87%E7%8B%80%E8%88%87%E6%B2%BB%E7%99%82+%7C+%E9%99%B3%E7%BF%8A%E5%98%89%E9%86%AB%E5%B8%AB+%C2%B7+%E7%9A%AE%E8%86%9A%E7%A7%91&amp;amp;tag=%E7%9A%AE%E8%86%9A%E7%A7%91%E8%A1%9B%E6%95%99&amp;amp;date=2026-05-13</image:loc>
+      <image:title>嘴角紅疹是痘痘還是濕疹？口周皮膚炎完整衛教</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/atopic-dermatitis-special-populations</loc>
@@ -530,18 +542,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://chendermatologist.com/blog/perioral-dermatitis-guide</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/perioral-dermatitis-guide"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/perioral-dermatitis-guide"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/logo-512.png</image:loc>
-      <image:title>口周皮膚炎完整衛教</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://chendermatologist.com/blog/sunscreen-myths</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -592,7 +592,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/en/about</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/about"/>
@@ -601,7 +601,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/en/support</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/support"/>
@@ -610,7 +610,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/en/privacy</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/privacy"/>
