@@ -157,14 +157,17 @@ def html_minify(src):
 
 def main():
     # JS
-    js_src_path = os.path.join(ROOT, 'blog', 'blog-shared.js')
-    js_min_path = os.path.join(ROOT, 'blog', 'blog-shared.min.js')
-    with open(js_src_path, 'r', encoding='utf-8') as f:
-        src = f.read()
-    minified = js_minify(src)
-    with open(js_min_path, 'w', encoding='utf-8') as f:
-        f.write(minified)
-    print(f'JS: {len(src):,} → {len(minified):,} bytes ({len(minified)/len(src)*100:.1f}%) → blog/blog-shared.min.js')
+    for name in ('blog-shared', 'blog-hub', 'blog-article-reading', 'blog-diagrams', 'blog-calculators', 'blog-article-visuals', 'blog-article-footer'):
+        js_src_path = os.path.join(ROOT, 'blog', name + '.js')
+        if not os.path.exists(js_src_path):
+            continue
+        js_min_path = os.path.join(ROOT, 'blog', name + '.min.js')
+        with open(js_src_path, 'r', encoding='utf-8') as f:
+            src = f.read()
+        minified = js_minify(src)
+        with open(js_min_path, 'w', encoding='utf-8') as f:
+            f.write(minified)
+        print(f'JS: {len(src):,} → {len(minified):,} bytes ({len(minified)/len(src)*100:.1f}%) → blog/{name}.min.js')
 
     # HTML
     n_changed = 0

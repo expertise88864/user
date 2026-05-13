@@ -11,10 +11,9 @@ Strategy:
      - typography (h1, h2, h3, .font-display, .font-body)
      - first-screen widgets (header, nav, .hero, .breadcrumb, .chip)
   3. Inline those rules in <style data-critical> right before </head>
-  4. Convert the original <link rel="stylesheet" href="…tw-mini.css"> to a
-     non-blocking preload pattern:
-       <link rel="preload" as="style" href="…" onload="this.onload=null;this.rel='stylesheet'">
-       <noscript><link rel="stylesheet" href="…"></noscript>
+  4. Keep the original stylesheet link as a normal stylesheet. The CSS file is
+     small and local; avoiding inline onload handlers keeps the output cleaner
+     for CSP and accessibility audits.
 
 Idempotent: skips files already processed (look for `data-critical`).
 
@@ -151,17 +150,13 @@ TWMINI_LINK_RE = re.compile(
 def patch_html(html, critical):
     if SENTINEL in html:
         return html, False
-    # Find the link and replace with preload pattern
+    # Find the link and normalize it to a plain stylesheet link.
     m = TWMINI_LINK_RE.search(html)
     if not m:
         return html, False
     href = m.group(1)
-    preload = (
-        f'<link rel="preload" as="style" href="{href}" '
-        f'onload="this.onload=null;this.rel=\'stylesheet\'">'
-        f'<noscript><link rel="stylesheet" href="{href}"></noscript>'
-    )
-    html = html[:m.start()] + preload + html[m.end():]
+    stylesheet = f'<link rel="stylesheet" href="{href}">'
+    html = html[:m.start()] + stylesheet + html[m.end():]
     # Inject critical CSS right before </head>
     inline = f'<style {SENTINEL}>{critical}</style>'
     html = html.replace('</head>', inline + '</head>', 1)

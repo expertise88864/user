@@ -15,6 +15,14 @@ export const config = { runtime: 'edge' };
 
 const REPO = process.env.ADMIN_REPO || 'expertise88864/user';
 const BRANCH = process.env.ADMIN_BRANCH || 'main';
+const DEFAULT_LIMIT = 8;
+const MAX_LIMIT = 20;
+
+function parseLimit(value) {
+  const parsed = Number.parseInt(value || '', 10);
+  if (!Number.isFinite(parsed)) return DEFAULT_LIMIT;
+  return Math.min(MAX_LIMIT, Math.max(1, parsed));
+}
 
 async function ghContents(path) {
   const r = await fetch(
@@ -66,14 +74,24 @@ function extractDate(head) {
 }
 
 export default async function handler(req) {
+  if (req.method !== 'GET') {
+    return Response.json({ error: 'GET only' }, {
+      status: 405,
+      headers: {
+        Allow: 'GET',
+        'Cache-Control': 'no-store',
+      },
+    });
+  }
+
   const url = new URL(req.url);
-  const n = Math.min(20, Math.max(1, parseInt(url.searchParams.get('n') || '8', 10)));
+  const n = parseLimit(url.searchParams.get('n'));
 
   const blog = await ghContents('blog');
   if (!blog) {
     return Response.json({ error: 'cannot read blog/' }, {
       status: 502,
-      headers: { 'Cache-Control': 'public, max-age=10' },
+      headers: { 'Cache-Control': 'no-store' },
     });
   }
   // Filter article HTMLs only

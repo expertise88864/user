@@ -106,6 +106,7 @@ def check_html(canonical_host: str | None, fast: bool = False):
     for fp in targets:
         rel = fp.relative_to(ROOT).as_posix()
         src = fp.read_text(encoding='utf-8')
+        is_noindex = bool(re.search(r'<meta\s+name="robots"\s+content="[^"]*\bnoindex\b', src, re.I))
 
         # 3. canonical present
         m_canon = re.search(r'<link rel="canonical" href="([^"]*)"', src)
@@ -122,18 +123,27 @@ def check_html(canonical_host: str | None, fast: bool = False):
             err(rel, f'canonical host "{canon_host}" != sitemap host "{canonical_host}"')
 
         m_og = re.search(r'<meta property="og:url" content="([^"]*)"', src)
-        if m_og:
+        if not m_og:
+            if not is_noindex:
+                err(rel, 'missing <meta property="og:url">')
+        else:
+            if m_og.group(1) != canon_url:
+                err(rel, f'og:url does not match canonical ({m_og.group(1)} != {canon_url})')
             og_host_m = re.search(r'https?://([^/]+)', m_og.group(1))
             og_host = og_host_m.group(1) if og_host_m else None
             if og_host and canon_host and og_host != canon_host:
                 err(rel, f'og:url host "{og_host}" != canonical host "{canon_host}"')
 
+        hreflang_hrefs = []
         for hf in re.finditer(r'<link rel="alternate" hreflang="[^"]+" href="([^"]*)"', src):
+            hreflang_hrefs.append(hf.group(1))
             hf_host_m = re.search(r'https?://([^/]+)', hf.group(1))
             hf_host = hf_host_m.group(1) if hf_host_m else None
             if hf_host and canon_host and hf_host != canon_host:
                 err(rel, f'hreflang host "{hf_host}" != canonical host "{canon_host}"')
                 break  # one report per file
+        if hreflang_hrefs and canon_url not in hreflang_hrefs:
+            err(rel, f'hreflang cluster missing canonical URL ({canon_url})')
 
         # 5. title length
         m_t = re.search(r'<title>([^<]+)</title>', src)

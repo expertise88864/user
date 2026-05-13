@@ -16,9 +16,9 @@
 
 export const config = { runtime: 'edge' };
 
-const REPO = process.env.ADMIN_REPO || 'expertise88864/user';
 const KV_KEY = 'dn:popular-picks';
 const MAX_PICKS = 12;
+const PAT_AUTH_RE = /^token\s+(?:gh[pousr]_[A-Za-z0-9_]{20,255}|github_pat_[A-Za-z0-9_]{20,255})$/;
 
 const FALLBACK = [
   'acne-myths',
@@ -31,6 +31,7 @@ const FALLBACK = [
 function jsonResp(status, obj, extraHeaders) {
   const headers = {
     'Content-Type': 'application/json; charset=utf-8',
+    'Cache-Control': 'no-store',
     ...(extraHeaders || {}),
   };
   return new Response(JSON.stringify(obj), { status, headers });
@@ -84,7 +85,7 @@ export default async function handler(req) {
   // Admin write
   if (req.method === 'POST') {
     const auth = req.headers.get('authorization') || '';
-    if (!/^token\s+gh[poas]_[A-Za-z0-9_]+/.test(auth)) {
+    if (!PAT_AUTH_RE.test(auth)) {
       return jsonResp(401, { error: 'Missing Authorization (PAT)' });
     }
     let body;
@@ -101,13 +102,16 @@ export default async function handler(req) {
     if (cleaned.length !== picks.length) {
       return jsonResp(400, { error: 'invalid slug format (only a-z 0-9 -)' });
     }
+    if (new Set(cleaned).size !== cleaned.length) {
+      return jsonResp(400, { error: 'duplicate slugs are not allowed' });
+    }
     try {
       await kvSet(KV_KEY, cleaned);
     } catch (e) {
-      return jsonResp(503, { error: e.message });
+      return jsonResp(503, { error: 'Popular picks update failed' });
     }
     return jsonResp(200, { ok: true, picks: cleaned });
   }
 
-  return jsonResp(405, { error: 'GET or POST only' });
+  return jsonResp(405, { error: 'GET or POST only' }, { Allow: 'GET, POST' });
 }

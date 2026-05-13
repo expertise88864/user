@@ -120,13 +120,13 @@
     panel.innerHTML = `
 <header><h3>🛠 編輯助手</h3><span style="font-size:11px;color:#8b8378">▾ 點此摺疊</span></header>
 <div class="ax-tabs">
-  <button data-tab="seo" class="active">SEO</button>
-  <button data-tab="spell">錯字</button>
-  <button data-tab="dict">詞典</button>
-  <button data-tab="font">字型</button>
-  <button data-tab="version">歷史</button>
-  <button data-tab="reorder">排序</button>
-  <button data-tab="picks">熱門</button>
+  <button type="button" data-tab="seo" class="active">SEO</button>
+  <button type="button" data-tab="spell">錯字</button>
+  <button type="button" data-tab="dict">詞典</button>
+  <button type="button" data-tab="font">字型</button>
+  <button type="button" data-tab="version">歷史</button>
+  <button type="button" data-tab="reorder">排序</button>
+  <button type="button" data-tab="picks">熱門</button>
 </div>
 <div class="ax-body">
   <div class="ax-tab active" data-tab="seo">
@@ -134,19 +134,19 @@
     <div style="font-size:30px;font-weight:800;color:#0c5159" id="axSeoScore">—</div>
     <div class="ax-meter"><div class="ax-meter-fill" id="axSeoMeter" style="width:0%"></div></div>
     <ul class="ax-checks" id="axSeoChecks"></ul>
-    <button class="ax-btn" id="axSeoRefresh">重新檢查</button>
-    <button class="ax-btn" id="axFaqGen">產生 FAQPage JSON-LD</button>
+    <button type="button" class="ax-btn" id="axSeoRefresh">重新檢查</button>
+    <button type="button" class="ax-btn" id="axFaqGen">產生 FAQPage JSON-LD</button>
   </div>
   <div class="ax-tab" data-tab="spell">
     <div style="font-size:12px;color:#5e574e">中文錯字 / 標點 / 全形偵測（用 LanguageTool API）</div>
-    <button class="ax-btn primary" id="axSpellRun" style="margin-top:8px">🔍 開始檢查</button>
+    <button type="button" class="ax-btn primary" id="axSpellRun" style="margin-top:8px">🔍 開始檢查</button>
     <div id="axSpellStats" style="font-size:11px;color:#8b8378;margin-top:8px"></div>
     <div id="axSpellList"></div>
   </div>
   <div class="ax-tab" data-tab="dict">
     <div style="font-size:12px;color:#5e574e">皮膚科專業詞彙自動加 &lt;dfn&gt; tooltip 解釋（首次提到才加）</div>
-    <button class="ax-btn primary" id="axDictRun" style="margin-top:8px">⚡ 自動加 dfn</button>
-    <button class="ax-btn" id="axDictUndo">↩ 復原</button>
+    <button type="button" class="ax-btn primary" id="axDictRun" style="margin-top:8px">⚡ 自動加 dfn</button>
+    <button type="button" class="ax-btn" id="axDictUndo">↩ 復原</button>
     <div id="axDictStats" style="font-size:11px;color:#8b8378;margin-top:8px"></div>
     <details style="margin-top:10px"><summary style="font-size:11.5px;cursor:pointer;color:#0c5159">📖 詞典內容（${''}個詞）</summary>
     <div id="axDictList" style="font-size:11px;line-height:1.7;margin-top:6px;max-height:240px;overflow-y:auto"></div></details>
@@ -182,29 +182,29 @@
         <option value="18px">18px (大字)</option>
       </select>
     </div>
-    <button class="ax-btn primary" id="axFontApply" style="margin-top:8px">套用至全站</button>
-    <button class="ax-btn" id="axFontPreview">僅預覽（不存）</button>
+    <button type="button" class="ax-btn primary" id="axFontApply" style="margin-top:8px">套用至全站</button>
+    <button type="button" class="ax-btn" id="axFontPreview">僅預覽（不存）</button>
   </div>
   <div class="ax-tab" data-tab="version">
     <div style="font-size:12px;color:#5e574e">最近 30 個版本（點任一版本可還原）</div>
-    <button class="ax-btn primary" id="axVersionLoad" style="margin-top:8px">↻ 載入歷史</button>
+    <button type="button" class="ax-btn primary" id="axVersionLoad" style="margin-top:8px">↻ 載入歷史</button>
     <div id="axVersionList" style="margin-top:8px"></div>
   </div>
   <div class="ax-tab" data-tab="reorder">
     <div style="font-size:12px;color:#5e574e">拖曳調整文章在「最新文章」清單的順序</div>
-    <button class="ax-btn primary" id="axReorderLoad" style="margin-top:8px">📋 載入清單</button>
+    <button type="button" class="ax-btn primary" id="axReorderLoad" style="margin-top:8px">📋 載入清單</button>
     <ol class="ax-reorder-list" id="axReorderList"></ol>
-    <button class="ax-btn primary" id="axReorderSave" style="display:none;margin-top:8px">💾 儲存新順序</button>
+    <button type="button" class="ax-btn primary" id="axReorderSave" style="display:none;margin-top:8px">💾 儲存新順序</button>
   </div>
   <div class="ax-tab" data-tab="picks">
     <div style="font-size:12px;color:#5e574e">設定首頁「熱門推薦」5-12 篇文章(立即生效,不需 redeploy)</div>
-    <button class="ax-btn primary" id="axPicksLoad" style="margin-top:8px">📥 載入目前清單</button>
+    <button type="button" class="ax-btn primary" id="axPicksLoad" style="margin-top:8px">📥 載入目前清單</button>
     <ol class="ax-reorder-list" id="axPicksList" style="margin-top:8px"></ol>
     <div style="display:flex;gap:6px;margin-top:8px">
       <input id="axPicksAdd" placeholder="新增 slug (如 acne-myths)" style="flex:1;padding:5px 8px;font-size:12px;border:1px solid #dcd5c8;border-radius:6px"/>
-      <button class="ax-btn" id="axPicksAddBtn">+</button>
+      <button type="button" class="ax-btn" id="axPicksAddBtn">+</button>
     </div>
-    <button class="ax-btn primary" id="axPicksSave" style="display:none;margin-top:8px">💾 儲存(寫入 KV)</button>
+    <button type="button" class="ax-btn primary" id="axPicksSave" style="display:none;margin-top:8px">💾 儲存(寫入 KV)</button>
     <div id="axPicksStats" style="font-size:11px;color:#8b8378;margin-top:8px"></div>
   </div>
 </div>`;
@@ -312,7 +312,7 @@
     document.getElementById('axSeoScore').textContent = score + ' / 100';
     document.getElementById('axSeoMeter').style.width = score + '%';
     const ul = document.getElementById('axSeoChecks');
-    ul.innerHTML = '';
+    ul.textContent = '';
     checks.forEach(c => {
       const li = document.createElement('li');
       li.className = c.ok;
@@ -370,7 +370,7 @@
     const stats = document.getElementById('axSpellStats');
     const list = document.getElementById('axSpellList');
     stats.textContent = '查詢中...';
-    list.innerHTML = '';
+    list.textContent = '';
     try {
       const r = await fetch('https://api.languagetool.org/v2/check', {
         method: 'POST',
@@ -385,14 +385,20 @@
         const issue = document.createElement('div');
         issue.className = 'ax-typo-issue';
         const sug = (m.replacements && m.replacements[0] && m.replacements[0].value) || '無建議';
-        issue.innerHTML = `<strong>${m.message || '錯誤'}</strong><br/>“…${ctx}…” → <code>${sug}</code>`;
+        const message = document.createElement('strong');
+        message.textContent = m.message || '錯誤';
+        const context = document.createElement('span');
+        context.textContent = `“…${ctx}…” → `;
+        const code = document.createElement('code');
+        code.textContent = sug;
+        issue.append(message, document.createElement('br'), context, code);
         list.appendChild(issue);
       });
       if (!matches.length) {
         stats.textContent = '✓ 沒發現問題';
       }
     } catch (e) {
-      stats.textContent = '查詢失敗：' + e.message;
+      stats.textContent = '查詢失敗，請稍後再試';
     }
   }
 
@@ -443,7 +449,15 @@
   function fillDictList() {
     const div = document.getElementById('axDictList');
     if (!div) return;
-    div.innerHTML = Object.entries(MEDICAL_DICT).map(([k, v]) => `<div><strong style="color:#0c5159">${k}</strong> — ${v}</div>`).join('');
+    div.textContent = '';
+    Object.entries(MEDICAL_DICT).forEach(([k, v]) => {
+      const row = document.createElement('div');
+      const term = document.createElement('strong');
+      term.style.color = '#0c5159';
+      term.textContent = k;
+      row.append(term, document.createTextNode(' — ' + v));
+      div.appendChild(row);
+    });
     // also inject count into the summary text
     const sum = div.parentElement.querySelector('summary');
     if (sum) sum.textContent = `📖 詞典內容（${Object.keys(MEDICAL_DICT).length} 個詞）`;
@@ -560,7 +574,7 @@
       body: JSON.stringify({ message: 'admin: update site theme', content: b64, branch: BRANCH, sha }),
     });
     if (r.ok) toast('✓ 字型設定已存進 ' + THEME_PATH + '（下次部署生效，記得在 layout 加 <link>）');
-    else { const j = await r.json(); toast('儲存失敗：' + (j.message || r.status)); }
+    else { toast('儲存失敗，請稍後再試（HTTP ' + r.status + '）'); }
   }
 
   // ─────────────────────────────────────────────────────────────
@@ -574,13 +588,21 @@
     const j = await r.json();
     if (!Array.isArray(j)) { toast('讀取失敗'); return; }
     const list = document.getElementById('axVersionList');
-    list.innerHTML = '';
+    list.textContent = '';
     j.forEach(c => {
       const div = document.createElement('div');
       div.className = 'ax-version';
-      const time = new Date(c.commit.author.date).toLocaleString('zh-TW');
-      const msg = c.commit.message.split('\n')[0].slice(0, 60);
-      div.innerHTML = `<div class="ax-v-msg">${msg}</div><div class="ax-v-time">${time} · ${c.sha.slice(0, 7)}</div>`;
+      const date = c.commit && c.commit.author && c.commit.author.date;
+      const time = date ? new Date(date).toLocaleString('zh-TW') : '';
+      const msg = ((c.commit && c.commit.message) || '').split('\n')[0].slice(0, 60);
+      const shortSha = String(c.sha || '').slice(0, 7);
+      const msgEl = document.createElement('div');
+      msgEl.className = 'ax-v-msg';
+      msgEl.textContent = msg;
+      const timeEl = document.createElement('div');
+      timeEl.className = 'ax-v-time';
+      timeEl.textContent = `${time} · ${shortSha}`;
+      div.append(msgEl, timeEl);
       div.addEventListener('click', () => rollbackTo(c.sha));
       list.appendChild(div);
     });
@@ -609,8 +631,7 @@
       toast('✓ 已還原。重新載入...');
       setTimeout(() => location.reload(), 1500);
     } else {
-      const e = await writeR.json();
-      toast('還原失敗：' + (e.message || writeR.status));
+      toast('還原失敗，請稍後再試（HTTP ' + writeR.status + '）');
     }
   }
 
@@ -635,7 +656,7 @@
     while ((mm = slugRegex.exec(m[1])) !== null) slugs.push(mm[1]);
     _orderArr = slugs.slice();
     const ol = document.getElementById('axReorderList');
-    ol.innerHTML = '';
+    ol.textContent = '';
     slugs.forEach(s => {
       const li = document.createElement('li');
       li.draggable = true;
@@ -699,7 +720,7 @@
       body: JSON.stringify({ message: 'admin: reorder DN.ARTICLES', content: b64, branch: BRANCH, sha }),
     });
     if (w.ok) toast('✓ 已儲存,重跑 minify 後生效');
-    else { const e = await w.json(); toast('失敗:' + (e.message || w.status)); }
+    else { toast('失敗，請稍後再試（HTTP ' + w.status + '）'); }
   }
 
   // ─────────────────────────────────────────────────────────────
@@ -708,12 +729,23 @@
   let _picksArr = [];
   function renderPicks() {
     const ol = document.getElementById('axPicksList');
-    ol.innerHTML = '';
+    ol.textContent = '';
     _picksArr.forEach((s, idx) => {
+      const slug = String(s || '');
       const li = document.createElement('li');
       li.draggable = true;
-      li.dataset.slug = s;
-      li.innerHTML = `<span style="flex:1">${s}</span><button class="ax-btn" data-rm="${idx}" style="margin:0 0 0 4px;padding:2px 8px">×</button>`;
+      li.dataset.slug = slug;
+      const span = document.createElement('span');
+      span.style.flex = '1';
+      span.textContent = slug;
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'ax-btn';
+      remove.dataset.rm = String(idx);
+      remove.style.margin = '0 0 0 4px';
+      remove.style.padding = '2px 8px';
+      remove.textContent = '×';
+      li.append(span, remove);
       li.style.display = 'flex';
       li.style.alignItems = 'center';
       ol.appendChild(li);
@@ -744,7 +776,7 @@
         ? `(KV 為空,顯示預設 fallback ${_picksArr.length} 篇)`
         : `已載入 ${_picksArr.length} 篇 (來自 KV)`;
     } catch (e) {
-      document.getElementById('axPicksStats').textContent = '載入失敗:' + e.message;
+      document.getElementById('axPicksStats').textContent = '載入失敗，請稍後再試';
     }
   }
   function addPick() {
@@ -769,7 +801,7 @@
       toast('✓ 已儲存到 KV ' + _picksArr.length + ' 篇,前台立即生效');
       document.getElementById('axPicksStats').textContent = '已儲存 (' + new Date().toLocaleTimeString() + ')';
     } else {
-      toast('儲存失敗:' + (j.error || r.status));
+      toast('儲存失敗，請稍後再試（HTTP ' + r.status + '）');
     }
   }
 

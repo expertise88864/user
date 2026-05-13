@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v116';
-const RUNTIME = 'cd-runtime-v116';
+const CACHE = 'cd-v120';
+const RUNTIME = 'cd-runtime-v120';
 const RUNTIME_MAX_ENTRIES = 60;
 
 // R31: Slim precache — only critical shell + offline page + assets that EVERY page uses.
@@ -17,7 +17,6 @@ const PRECACHE = [
   '/apple-touch-icon.png',
   '/manifest.json',
   '/assets/tw-mini.css',
-  '/blog/blog-shared.min.js',
   '/blog/'
 ];
 
@@ -106,6 +105,27 @@ self.addEventListener('fetch', (e) => {
       fetchWithRetry(req)
         .then((resp) => {
           if (resp && resp.status === 200) {
+            const copy = resp.clone();
+            caches.open(RUNTIME).then((c) => {
+              c.put(req, copy);
+              trimCache(RUNTIME, RUNTIME_MAX_ENTRIES);
+            });
+          }
+          return resp;
+        })
+        .catch(() => caches.match(req))
+    );
+    return;
+  }
+
+  // Network-first for generated data that changes with content updates.
+  // Search results should reflect newly published/edited articles quickly;
+  // cache is only an offline fallback.
+  if (url.pathname === '/assets/search-index.json') {
+    e.respondWith(
+      fetchWithRetry(req)
+        .then((resp) => {
+          if (resp && resp.status === 200 && resp.type === 'basic') {
             const copy = resp.clone();
             caches.open(RUNTIME).then((c) => {
               c.put(req, copy);

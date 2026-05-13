@@ -11,29 +11,71 @@
 
 export const config = { runtime: 'edge' };
 
+const ALLOWED_ORIGINS = [
+  'https://chendermatologist.com',
+  'https://www.chendermatologist.com',
+];
+
+function corsHeaders(origin) {
+  return {
+    'Access-Control-Allow-Origin': origin,
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Max-Age': '86400',
+    Vary: 'Origin',
+  };
+}
+
+function jsonResp(status, obj, origin) {
+  return new Response(JSON.stringify(obj), {
+    status,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      ...(origin ? corsHeaders(origin) : { Vary: 'Origin' }),
+    },
+  });
+}
+
+function isValidSubscription(sub) {
+  return Boolean(
+    sub &&
+    typeof sub.endpoint === 'string' &&
+    sub.endpoint.startsWith('https://') &&
+    sub.keys &&
+    typeof sub.keys.p256dh === 'string' &&
+    typeof sub.keys.auth === 'string'
+  );
+}
+
 export default async function handler(req) {
+  const origin = req.headers.get('origin') || '';
+  if (!ALLOWED_ORIGINS.includes(origin)) {
+    return jsonResp(403, { error: 'Forbidden origin' });
+  }
+  if (req.method === 'OPTIONS') {
+    return new Response(null, {
+      status: 204,
+      headers: corsHeaders(origin),
+    });
+  }
   if (req.method !== 'POST') {
     return new Response(JSON.stringify({ error: 'POST only' }), {
       status: 405,
-      headers: { 'Content-Type': 'application/json', 'Allow': 'POST' },
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        Allow: 'POST, OPTIONS',
+        ...corsHeaders(origin),
+      },
     });
-  }
-  const ALLOWED_ORIGINS = [
-    'https://chendermatologist.com',
-    'https://www.chendermatologist.com',
-  ];
-  const origin = req.headers.get('origin') || '';
-  if (!ALLOWED_ORIGINS.includes(origin)) {
-    return new Response('Forbidden origin', { status: 403 });
   }
   let sub;
   try {
     sub = await req.json();
   } catch {
-    return new Response('Invalid JSON', { status: 400 });
+    return jsonResp(400, { error: 'Invalid JSON' }, origin);
   }
-  if (!sub || !sub.endpoint) {
-    return new Response('Missing endpoint', { status: 400 });
+  if (!isValidSubscription(sub)) {
+    return jsonResp(400, { error: 'Invalid push subscription' }, origin);
   }
   // Hash endpoint to use as KV key (avoids logging entire token URL)
   const hash = await sha256(sub.endpoint);
@@ -42,7 +84,7 @@ export default async function handler(req) {
   const kvUrl = process.env.KV_REST_API_URL;
   const kvToken = process.env.KV_REST_API_TOKEN;
   if (!kvUrl || !kvToken) {
-    return new Response('KV not configured', { status: 503 });
+    return jsonResp(503, { error: 'KV not configured' }, origin);
   }
   // SET key value EX 31536000  (1-year expiry; client re-subscribes on visit)
   const r = await fetch(`${kvUrl}/set/${encodeURIComponent(key)}?EX=31536000`, {
@@ -54,20 +96,14 @@ export default async function handler(req) {
     body: JSON.stringify(sub),
   });
   if (!r.ok) {
-    return new Response('KV write failed', { status: 502 });
+    return jsonResp(502, { error: 'KV write failed' }, origin);
   }
   // Also push the key into a SET for iteration when broadcasting
   await fetch(`${kvUrl}/sadd/push:subs/${encodeURIComponent(key)}`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${kvToken}` },
   });
-  return new Response(JSON.stringify({ ok: true }), {
-    status: 200,
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': origin,
-    },
-  });
+  return jsonResp(200, { ok: true }, origin);
 }
 
 async function sha256(s) {

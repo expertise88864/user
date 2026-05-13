@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><link rel="modulepreload" href="/blog/blog-shared.min.js?v=202605111335" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link rel="preconnect" href="https://pagead2.googlesyndication.com" /><link rel="preconnect" href="https://www.googletagmanager.com" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>後台編輯 · ChenDermatologist Admin</title><meta name="robots" content="noindex,nofollow" /><meta name="theme-color" content="#7a9285" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" /><link rel="icon" sizes="any" href="/favicon.ico" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@700&display=swap&text=陳翊嘉醫師皮膚科衛教筆記常見疾病迷思澄清關於我學經歷" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>後台編輯 · ChenDermatologist Admin</title><meta name="robots" content="noindex,nofollow" /><meta name="theme-color" content="#7a9285" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png" /><link rel="icon" sizes="any" href="/favicon.ico" /><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>*{ box-sizing:border-box; } html,body{ margin:0; padding:0; height:100%; font-family:'Inter','Noto Sans TC','Microsoft JhengHei',sans-serif; background:#f5fbfa; color:#0f172a; overflow:hidden; } :root{ --teal:#7a9285; --teal-deep:#4d6358; --teal-bright:#a4b5a8; --mint-soft:#dcd9d1; --border:#dcd5c8; --line:#ebe4d8; --ink:#2a2620; --ink-2:#5e574e; --muted:#8b8378; } .teal-text{ background:linear-gradient(180deg,#a4b5a8 0%, #4d6358 100%); -webkit-background-clip:text; background-clip:text; color:transparent; } header.top{ position:relative; z-index:50; background:rgba(245,251,250,.95); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); padding:10px 16px; display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; height:54px; } header.top .brand{ font-weight:700; font-size:15px; } header.top .right{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; font-size:13px; } header.top a{ color:var(--teal-deep); text-decoration:none; font-weight:600; } .pat-status{ font-size:11.5px; padding:3px 10px; border-radius:9999px; border:1px solid var(--border); background:#fff; } .pat-status.ok{ color:#065f46; border-color:#a7f3d0; background:#ecfdf5; } .pat-status.no{ color:#7f1d1d; border-color:#fca5a5; background:#fef2f2; } main.layout{ display:grid; grid-template-columns:240px 1fr; height:calc(100vh - 54px); } @media (max-width:760px){ main.layout{ grid-template-columns:1fr; height:auto; } #sidebar{ height:auto; max-height:240px; border-right:none; border-bottom:1px solid var(--border); } } #sidebar{ background:#fff; border-right:1px solid var(--border); overflow-y:auto; padding:12px; } #sidebar h2{ font-size:11px; text-transform:uppercase; letter-spacing:.16em; color:var(--teal-deep); margin:6px 4px 8px; } .file-list{ display:flex; flex-direction:column; gap:1px; } .file-item{ font-size:12.5px; padding:6px 10px; border-radius:6px; cursor:pointer; color:var(--ink-2); display:flex; align-items:center; gap:6px; line-height:1.3; } .file-item:hover{ background:var(--mint-soft); color:var(--teal-deep); } .file-item.active{ background:var(--mint-soft); color:var(--teal-deep); font-weight:600; } .file-item .ico{ font-size:11px; } .new-row{ margin-top:14px; padding-top:14px; border-top:1px dashed var(--line); } .new-row input{ width:100%; padding:6px 8px; font-size:12px; border:1px solid var(--border); border-radius:6px; } .new-row button{ width:100%; margin-top:6px; padding:6px; background:#fff; border:1px solid var(--border); border-radius:6px; cursor:pointer; font-size:12px; color:var(--teal-deep); font-weight:600; } .new-row button:hover{ border-color:var(--teal); } #editorPane{ display:flex; flex-direction:column; height:100%; min-height:0; background:#f5fbfa; } .toolbar{ padding:8px 12px; border-bottom:1px solid var(--border); background:#fff; display:flex; gap:6px; align-items:center; flex-wrap:wrap; } .toolbar .path{ font-family:'JetBrains Mono',monospace; font-size:12px; padding:5px 10px; background:#f5fbfa; border:1px solid var(--border); border-radius:6px; color:var(--ink); } .toolbar button, .toolbar label.upload{ padding:5px 11px; font-size:12.5px; border-radius:6px; border:1px solid var(--border); background:#fff; cursor:pointer; font-weight:600; color:var(--ink-2); display:inline-flex; align-items:center; gap:4px; } .toolbar button:hover, .toolbar label.upload:hover{ border-color:var(--teal); color:var(--teal-deep); } .toolbar button.primary{ background:linear-gradient(180deg,#a4b5a8,#4d6358); color:#fff; border-color:var(--teal-deep); } .toolbar button.primary:hover{ filter:brightness(1.05); color:#fff; } .toolbar .sep{ width:1px; height:18px; background:var(--border); margin:0 4px; } .toolbar .grow{ flex:1; } .toolbar label.upload input{ display:none; } .frame-wrap{ flex:1; min-height:0; position:relative; background:#e2e8f0; } iframe.editor{ width:100%; height:100%; border:none; background:#fff; } .empty-state{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--muted); text-align:center; padding:32px; } .empty-state h3{ font-size:18px; color:var(--ink); margin:0 0 8px; } .empty-state p{ font-size:14px; max-width:420px; line-height:1.7; margin:6px 0; } textarea.source{ width:100%; height:100%; padding:14px 18px; font-family:'JetBrains Mono',Menlo,monospace; font-size:13px; line-height:1.65; border:none; outline:none; background:#fff; resize:none; } .statusbar{ padding:6px 14px; font-size:11.5px; background:#fff; border-top:1px solid var(--border); color:var(--muted); display:flex; gap:14px; flex-wrap:wrap; align-items:center; } .statusbar.ok{ color:#065f46; } .statusbar.err{ color:#7f1d1d; } .modal-bg{ position:fixed; inset:0; background:rgba(15,23,42,.42); display:flex; align-items:center; justify-content:center; z-index:100; padding:18px; } .modal{ background:#fff; border-radius:16px; padding:26px; max-width:520px; width:100%; box-shadow:0 24px 50px -16px rgba(12,81,89,.5); } .modal h2{ margin:0 0 8px; font-size:20px; color:var(--ink); } .modal p{ margin:6px 0; font-size:13.5px; line-height:1.7; color:var(--ink-2); } .modal input{ width:100%; padding:9px 12px; font-size:13px; font-family:'JetBrains Mono',monospace; border:1px solid var(--border); border-radius:8px; margin:8px 0; } .modal button{ padding:9px 16px; background:linear-gradient(180deg,#a4b5a8,#4d6358); color:#fff; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px; } .modal a{ color:var(--teal-deep); font-weight:600; }
 /* ── Redesigned toolbar (2026-05-11) — grouped sections, no emoji clutter ── */
 .toolbar-wrap{ background:#fff; border-bottom:1px solid var(--border); box-shadow:0 1px 3px rgba(15,23,42,.04) }
@@ -70,17 +70,17 @@
 #bilingualWrap .bi-col header{ padding:6px 12px; background:#0c5159; color:#fff; font-size:12px; font-weight:600; border-radius:6px 6px 0 0; font-family:Inter,'Noto Sans TC',sans-serif }
 #bilingualWrap .bi-col textarea{ flex:1; padding:14px; border:1px solid #dcd5c8; border-top:none; border-radius:0 0 6px 6px; font-family:'JetBrains Mono',Menlo,monospace; font-size:13px; line-height:1.65; resize:none; outline:none; background:#fff; min-height:300px }
 @media (max-width: 720px){ #bilingualWrap{ flex-direction:column } }</style>
-<link rel="preload" as="style" href="/assets/tw-mini.css?v=19" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="/assets/tw-mini.css?v=19"></noscript><meta name="view-transition" content="same-origin"><style>.skip-to-main{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999}.skip-to-main:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;background:#0c5159;color:#fff;padding:10px 18px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.2)}*:focus-visible{outline:2px solid #0c5159;outline-offset:2px;border-radius:4px}@view-transition{navigation:auto}::view-transition-old(root),::view-transition-new(root){animation-duration:.25s}@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}</style><style data-critical-css>*,*::before,*::after{box-sizing:border-box;border:0 solid #e5e7eb}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0;line-height:inherit;font-family:Inter,'Noto Sans TC','PingFang TC','Microsoft JhengHei',-apple-system,system-ui,sans-serif}.font-display{font-family:'Noto Serif TC','Microsoft JhengHei','PingFang TC',Georgia,'Times New Roman',serif}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;margin:0}.rounded-full > picture,.rounded-full > picture > img{display:block;width:100%;height:100%;object-fit:cover}main > section:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 600px;}header.sticky{content-visibility:visible;}@media print{html,body{background:#fff !important;color:#000 !important;font-size:11pt;line-height:1.55;}body::before{display:none !important;}header.sticky,nav.dn-nav,.dn-nav-burger,#dn-sticky-cta,#dn-progress,#dn-totop,#dn-font-sizer,.ad-slot,[class*="ad-"],[id*="ad-"],#dn-cmdk-overlay,#dn-img-lightbox,.dn-calc,[id^="dn-"][id$="-calc"],.dn-calc-tools-link,#dn-share,.dn-share,button,select,#dn-feedback,[data-feedback],.reveal:not(.visible),.home-faq summary::after,#dn-bmc-footer,#dn-bmc-header,#dn-nav-support,#dn-related,.mag-footer .mag-foot-cols,.crumbs,[data-cta],.skip-link{display:none !important;}article.max-w-3xl,.prose,#proseZh,#proseEn{max-width:100% !important;padding:0 !important;margin:0 !important;}.prose h1,article h1{font-size:20pt;margin:6pt 0;page-break-after:avoid;}body::after{content:"ChenDermatologist · 陳翊嘉醫師 · chendermatologist.com · 列印僅供衛教，個別治療請與醫師討論";display:block !important;position:fixed;bottom:0.5cm;left:0;right:0;font-size:8pt;color:#666;text-align:center;}}.flex-wrap{flex-wrap:wrap}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-16{padding-top:4rem;padding-bottom:4rem}.flex-col{flex-direction:column}.hidden{display:none}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.text-ink-500{color:#64748b}.max-w-6xl{max-width:72rem}.max-w-xl{max-width:36rem}.text-left{text-align:left}.block{display:block}.inline-block{display:inline-block}.font-semibold{font-weight:600}.px-2{padding-left:0.5rem;padding-right:0.5rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.gap-6{gap:1.5rem}.leading-tight{line-height:1.25}.text-ink-700{color:#334155}.bg-mint-50\/60{background-color:#f5fbfa;opacity:.6}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.text-teal-700{color:#0c5159}.gap-8{gap:2rem}.gap-3{gap:0.75rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.border-b{border-bottom-width:1px;border-bottom-style:solid}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.flex-shrink-0{flex-shrink:0}.border{border-width:1px;border-style:solid}.bg-white{background-color:#fff}.font-bold{font-weight:700}.px-3{padding-left:0.75rem;padding-right:0.75rem}.justify-center{justify-content:center}.flex{display:flex}.border-t{border-top-width:1px;border-top-style:solid}.py-8{padding-top:2rem;padding-bottom:2rem}.pt-12{padding-top:3rem}.max-w-5xl{max-width:64rem}.gap-7{gap:1.75rem}.pb-6{padding-bottom:1.5rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.pb-8{padding-bottom:2rem}.gap-2{gap:0.5rem}.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}.flex-1{flex:1 1 0%}.pt-8{padding-top:2rem}.items-center{align-items:center}.text-center{text-align:center}.pb-2{padding-bottom:0.5rem}.text-ink-900{color:#0f172a}.gap-4{gap:1rem}.leading-none{line-height:1}.grid{display:grid}.bg-mint-100{background-color:#eaf6f3}.mx-auto{margin-left:auto;margin-right:auto}.text-ink-400{color:#94a3b8}.inline-flex{display:inline-flex}.max-w-4xl{max-width:56rem}.justify-between{justify-content:space-between}.pb-12{padding-bottom:3rem}.pt-6{padding-top:1.5rem}.max-w-3xl{max-width:48rem}</style><script defer src="/_vercel/speed-insights/script.js"></script></head><body><style>.dn-skiplinks{position:absolute;left:-9999px;top:auto;z-index:9999}.dn-skiplinks:focus-within{position:fixed;top:8px;left:8px;display:flex;gap:6px}.dn-skiplinks a{background:#0c5159;color:#fff;padding:8px 14px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.2)}.dn-skiplinks a:focus{outline:2px solid #fff;outline-offset:2px}</style><nav class="dn-skiplinks" aria-label="Skip navigation"><a href="#main-content" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a><a href="#dn-related" data-zh="跳至相關文章" data-en="Skip to related">跳至相關文章</a><a href="#dn-newsletter" data-zh="跳至訂閱" data-en="Skip to subscribe">跳至訂閱</a></nav><a href="#main-content" class="skip-to-main" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a><a href="#main-content" class="skip-link" style="position:absolute;left:-999px;top:0;background:#0c5159;color:#fff;padding:8px 16px;z-index:9999;border-radius:0 0 8px 0;font-size:13px;font-weight:600" onfocus="this.style.left='0'" onblur="this.style.left='-999px'">跳到主內容</a><header class="top"><div class="brand"><span class="teal-text">ChenDermatologist</span> · <span style="font-weight:500;color:#64748b">後台編輯（視覺模式）</span></div><div class="right"><span id="patStatus" class="pat-status no">未登入</span><button id="logoutBtn" style="padding:5px 9px;font-size:11.5px;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;color:#7f1d1d">清除登入</button><a href="/" target="_blank" rel="noopener">← 回首頁</a></div></header><main class="layout"><aside id="sidebar"><h2>檔案</h2><div id="fileList" class="file-list"></div><div class="new-row"><h2 style="margin:0 4px 6px">新增文章</h2><input id="newFileName" placeholder="例： melasma-myths" /><button id="newFileBtn">+ 從衛教範本建立</button></div><div class="new-row"><h2 style="margin:0 4px 6px">小提示</h2><div style="font-size:11px; color:var(--muted); line-height:1.6; padding:0 4px">
+<link rel="stylesheet" href="/assets/tw-mini.css?v=19"><meta name="view-transition" content="same-origin"><style>.skip-to-main{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999}.skip-to-main:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;background:#0c5159;color:#fff;padding:10px 18px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.2)}*:focus-visible{outline:2px solid #0c5159;outline-offset:2px;border-radius:4px}@view-transition{navigation:auto}::view-transition-old(root),::view-transition-new(root){animation-duration:.25s}@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}</style><style data-critical-css>*,*::before,*::after{box-sizing:border-box;border:0 solid #e5e7eb}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4}body{margin:0;line-height:inherit;font-family:Inter,'Noto Sans TC','PingFang TC','Microsoft JhengHei',-apple-system,system-ui,sans-serif}.font-display{font-family:'Noto Serif TC','Microsoft JhengHei','PingFang TC',Georgia,'Times New Roman',serif}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;margin:0}.rounded-full > picture,.rounded-full > picture > img{display:block;width:100%;height:100%;object-fit:cover}main > section:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 600px;}header.sticky{content-visibility:visible;}@media print{html,body{background:#fff !important;color:#000 !important;font-size:11pt;line-height:1.55;}body::before{display:none !important;}header.sticky,nav.dn-nav,.dn-nav-burger,#dn-sticky-cta,#dn-progress,#dn-totop,#dn-font-sizer,.ad-slot,[class*="ad-"],[id*="ad-"],#dn-cmdk-overlay,#dn-img-lightbox,.dn-calc,[id^="dn-"][id$="-calc"],.dn-calc-tools-link,#dn-share,.dn-share,button,select,#dn-feedback,[data-feedback],.reveal:not(.visible),.home-faq summary::after,#dn-bmc-footer,#dn-bmc-header,#dn-nav-support,#dn-related,.mag-footer .mag-foot-cols,.crumbs,[data-cta],.skip-link{display:none !important;}article.max-w-3xl,.prose,#proseZh,#proseEn{max-width:100% !important;padding:0 !important;margin:0 !important;}.prose h1,article h1{font-size:20pt;margin:6pt 0;page-break-after:avoid;}body::after{content:"ChenDermatologist · 陳翊嘉醫師 · chendermatologist.com · 列印僅供衛教，個別治療請與醫師討論";display:block !important;position:fixed;bottom:0.5cm;left:0;right:0;font-size:8pt;color:#666;text-align:center;}}.flex-wrap{flex-wrap:wrap}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-16{padding-top:4rem;padding-bottom:4rem}.flex-col{flex-direction:column}.hidden{display:none}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.text-ink-500{color:#64748b}.max-w-6xl{max-width:72rem}.max-w-xl{max-width:36rem}.text-left{text-align:left}.block{display:block}.inline-block{display:inline-block}.font-semibold{font-weight:600}.px-2{padding-left:0.5rem;padding-right:0.5rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.gap-6{gap:1.5rem}.leading-tight{line-height:1.25}.text-ink-700{color:#334155}.bg-mint-50\/60{background-color:#f5fbfa;opacity:.6}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.text-teal-700{color:#0c5159}.gap-8{gap:2rem}.gap-3{gap:0.75rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.border-b{border-bottom-width:1px;border-bottom-style:solid}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.flex-shrink-0{flex-shrink:0}.border{border-width:1px;border-style:solid}.bg-white{background-color:#fff}.font-bold{font-weight:700}.px-3{padding-left:0.75rem;padding-right:0.75rem}.justify-center{justify-content:center}.flex{display:flex}.border-t{border-top-width:1px;border-top-style:solid}.py-8{padding-top:2rem;padding-bottom:2rem}.pt-12{padding-top:3rem}.max-w-5xl{max-width:64rem}.gap-7{gap:1.75rem}.pb-6{padding-bottom:1.5rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.pb-8{padding-bottom:2rem}.gap-2{gap:0.5rem}.shadow-2xl{box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}.flex-1{flex:1 1 0%}.pt-8{padding-top:2rem}.items-center{align-items:center}.text-center{text-align:center}.pb-2{padding-bottom:0.5rem}.text-ink-900{color:#0f172a}.gap-4{gap:1rem}.leading-none{line-height:1}.grid{display:grid}.bg-mint-100{background-color:#eaf6f3}.mx-auto{margin-left:auto;margin-right:auto}.text-ink-400{color:#94a3b8}.inline-flex{display:inline-flex}.max-w-4xl{max-width:56rem}.justify-between{justify-content:space-between}.pb-12{padding-bottom:3rem}.pt-6{padding-top:1.5rem}.max-w-3xl{max-width:48rem}</style><script defer src="/_vercel/speed-insights/script.js"></script></head><body><a href="#main-content" class="skip-to-main" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a><header class="top"><div class="brand"><span class="teal-text">ChenDermatologist</span> · <span style="font-weight:500;color:#64748b">後台編輯（視覺模式）</span></div><div class="right"><span id="patStatus" class="pat-status no">未登入</span><button type="button" id="logoutBtn" style="padding:5px 9px;font-size:11.5px;border:1px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;color:#7f1d1d">清除登入</button><a href="/" target="_blank" rel="noopener noreferrer">← 回首頁</a></div></header><main id="main-content" class="layout"><aside id="sidebar"><h2>檔案</h2><div id="fileList" class="file-list"></div><div class="new-row"><h2 style="margin:0 4px 6px">新增文章</h2><input id="newFileName" placeholder="例： melasma-myths" aria-label="New article slug" /><button type="button" id="newFileBtn">+ 從衛教範本建立</button></div><div class="new-row"><h2 style="margin:0 4px 6px">小提示</h2><div style="font-size:11px; color:var(--muted); line-height:1.6; padding:0 4px">
 ① 點檔案 → 直接在右側網頁上點任何文字編輯<br/>
 ② 圖片直接 <strong>拖曳</strong> 進文章內，自動上傳<br/>
 ③ Ctrl + S 儲存<br/>
 ④ 出現黃框 = 可編輯區域
-</div></div></aside><section id="editorPane"><div class="toolbar-wrap" id="toolbarWrap"><div class="toolbar-row toolbar-main" id="toolbar"><span class="path" id="filePath">未選擇檔案</span><div class="tb-group" data-label="字型"><button id="boldBtn" title="粗體 Ctrl+B" style="font-weight:800">B</button><button id="italicBtn" title="斜體 Ctrl+I" style="font-style:italic">I</button><button id="underlineBtn" title="底線" style="text-decoration:underline">U</button><button id="strikeBtn" title="刪除線" style="text-decoration:line-through">S</button></div><div class="tb-group" data-label="標題"><button id="h2Btn" title="大標題">H2</button><button id="h3Btn" title="小標題">H3</button><button id="h4Btn" title="次小標題">H4</button></div><div class="tb-group" data-label="段落"><button id="ulBtn" title="項目符號清單">• 清單</button><button id="olBtn" title="編號清單">1. 編號</button><button id="quoteBtn" title="引用區塊">&ldquo; 引用</button><button id="codeBtn" title="行內代碼" style="font-family:'JetBrains Mono',monospace">&lt;/&gt;</button></div><div class="tb-group" data-label="對齊"><button id="alignLeftBtn" title="靠左對齊">&#x21E4;</button><button id="alignCenterBtn" title="置中對齊">&#x21D4;</button><button id="alignRightBtn" title="靠右對齊">&#x21E5;</button></div><div class="tb-group" data-label="樣式"><label class="tb-color" title="字體顏色"><input type="color" id="colorPick" value="#0c5159" /><span>顏色</span></label><select id="sizeSel" title="字級大小"><option value="">字級</option><option value="12px">12</option><option value="13px">13</option><option value="14px">14</option><option value="15.5px" selected>15.5</option><option value="17px">17</option><option value="20px">20</option><option value="24px">24</option><option value="28px">28</option></select><select id="weightSel" title="字重"><option value="">字重</option><option value="300">細</option><option value="400" selected>正常</option><option value="500">中</option><option value="600">半粗</option><option value="700">粗</option><option value="800">特粗</option></select><button id="clearFmtBtn" title="清除所有格式">清除</button></div><span class="grow"></span><button id="saveBtn" class="primary" title="儲存並推送到 GitHub (Ctrl+S)">儲存並推送</button></div><div class="toolbar-row toolbar-secondary"><div class="tb-group" data-label="插入"><button id="linkBtn" title="插入連結">連結</button><button id="tableBtn" title="表格產生器">表格</button><label class="upload" title="上傳圖片（自動壓縮為 WebP）">上傳圖片<input type="file" id="imageInput" accept="image/*" multiple /></label><button id="imageLibBtn" title="從圖庫挑圖">圖庫</button><button id="citeBtn" title="引用 PubMed 文獻 (PMID)">文獻</button></div><div class="tb-group" data-label="文章"><button id="metaBtn" title="文章 SEO 後設資料">後設資料</button><button id="bilingualEditBtn" title="切換為雙語並排編輯">雙語編輯</button><button id="bilingualBtn" title="檢查中英雙語完整性">雙語檢查</button><button id="spellBtn" title="拼字 / 文法檢查 (LanguageTool)">拼字</button><button id="historyBtn" title="版本歷史 + 還原">歷史</button></div><div class="tb-group" data-label="發布"><button id="draftBtn" title="存到草稿分支 drafts/{slug}（不發布到 main）">存草稿</button><button id="scheduleBtn" title="排程於指定時間自動發布">排程發布</button><button id="sourceBtn" title="切換 HTML 原始碼模式">原始碼</button><button id="reloadBtn" title="重新讀取（放棄未存改動）">重讀</button></div><span class="grow"></span><span id="autosaveInd" class="autosave-pill"></span></div></div></div><div id="behindBanner" style="display:none;padding:8px 16px;background:#fef3c7;border-bottom:1px solid #fbbf24;color:#92400e;font-size:13px;align-items:center;gap:10px;flex-wrap:wrap"><span>⚠️</span><span id="behindBannerText">你載入的版本已落後遠端</span><button id="behindReloadBtn" style="padding:4px 12px;background:#92400e;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">重讀最新版</button><button id="behindDismissBtn" style="padding:4px 10px;background:transparent;color:#92400e;border:1px solid #92400e;border-radius:6px;cursor:pointer;font-size:12px">先不理</button></div><div id="draftBanner" style="display:none;padding:8px 16px;background:#dbeafe;border-bottom:1px solid #60a5fa;color:#1e40af;font-size:13px;align-items:center;gap:10px;flex-wrap:wrap"><span>💾</span><span id="draftBannerText">偵測到 10 分鐘前的未儲存草稿</span><button id="draftRestoreBtn" style="padding:4px 12px;background:#1e40af;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">還原草稿</button><button id="draftDiscardBtn" style="padding:4px 10px;background:transparent;color:#1e40af;border:1px solid #1e40af;border-radius:6px;cursor:pointer;font-size:12px">丟棄</button></div><div class="frame-wrap" id="frameWrap"><div class="empty-state" id="emptyState"><h3>請從左側選一個檔案開始編輯</h3><p>選了之後，網頁本人會出現在這裡。</p><p>你可以直接點任何文字、改字、貼圖。<strong>有黃框</strong>的區域 = 可以編輯；沒黃框的（如 header / footer / 導覽）為了避免破壞版型，需切到原始碼模式才能改。</p></div></div><div class="statusbar" id="statusbar"><span id="status">尚未載入檔案</span><span class="grow" style="flex:1"></span><span id="autosaveInd" style="color:var(--muted);font-size:11px"></span><span id="wordCount" style="color:var(--muted);font-size:11px"></span><span id="readTime" style="color:var(--muted);font-size:11px"></span><span id="shaInfo"></span></div></section></main><div id="patModal" class="modal-bg" style="display:none"><div class="modal"><h2>輸入 GitHub Personal Access Token</h2><p>後台用 GitHub API 直接寫進你的 repo (<code style="font-family:'JetBrains Mono',monospace">expertise88864/user</code>)。需要 PAT 一次，儲存在你瀏覽器的 localStorage，不會傳到任何第三方。</p><p><strong>怎麼產生 PAT?</strong><br/>
-① <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">https://github.com/settings/tokens</a><br/>
+</div></div></aside><section id="editorPane"><div class="toolbar-wrap" id="toolbarWrap"><div class="toolbar-row toolbar-main" id="toolbar"><span class="path" id="filePath">未選擇檔案</span><div class="tb-group" data-label="字型"><button type="button" id="boldBtn" title="粗體 Ctrl+B" style="font-weight:800">B</button><button type="button" id="italicBtn" title="斜體 Ctrl+I" style="font-style:italic">I</button><button type="button" id="underlineBtn" title="底線" style="text-decoration:underline">U</button><button type="button" id="strikeBtn" title="刪除線" style="text-decoration:line-through">S</button></div><div class="tb-group" data-label="標題"><button type="button" id="h2Btn" title="大標題">H2</button><button type="button" id="h3Btn" title="小標題">H3</button><button type="button" id="h4Btn" title="次小標題">H4</button></div><div class="tb-group" data-label="段落"><button type="button" id="ulBtn" title="項目符號清單">• 清單</button><button type="button" id="olBtn" title="編號清單">1. 編號</button><button type="button" id="quoteBtn" title="引用區塊">&ldquo; 引用</button><button type="button" id="codeBtn" title="行內代碼" style="font-family:'JetBrains Mono',monospace">&lt;/&gt;</button></div><div class="tb-group" data-label="對齊"><button type="button" id="alignLeftBtn" title="靠左對齊">&#x21E4;</button><button type="button" id="alignCenterBtn" title="置中對齊">&#x21D4;</button><button type="button" id="alignRightBtn" title="靠右對齊">&#x21E5;</button></div><div class="tb-group" data-label="樣式"><label class="tb-color" title="字體顏色"><input type="color" id="colorPick" value="#0c5159" /><span>顏色</span></label><select id="sizeSel" title="字級大小" aria-label="字級大小"><option value="">字級</option><option value="12px">12</option><option value="13px">13</option><option value="14px">14</option><option value="15.5px" selected>15.5</option><option value="17px">17</option><option value="20px">20</option><option value="24px">24</option><option value="28px">28</option></select><select id="weightSel" title="字重" aria-label="字重"><option value="">字重</option><option value="300">細</option><option value="400" selected>正常</option><option value="500">中</option><option value="600">半粗</option><option value="700">粗</option><option value="800">特粗</option></select><button type="button" id="clearFmtBtn" title="清除所有格式">清除</button></div><span class="grow"></span><button type="button" id="saveBtn" class="primary" title="儲存並推送到 GitHub (Ctrl+S)">儲存並推送</button></div><div class="toolbar-row toolbar-secondary"><div class="tb-group" data-label="插入"><button type="button" id="linkBtn" title="插入連結">連結</button><button type="button" id="tableBtn" title="表格產生器">表格</button><label class="upload" title="上傳圖片（自動壓縮為 WebP）">上傳圖片<input type="file" id="imageInput" accept="image/*" multiple /></label><button type="button" id="imageLibBtn" title="從圖庫挑圖">圖庫</button><button type="button" id="citeBtn" title="引用 PubMed 文獻 (PMID)">文獻</button></div><div class="tb-group" data-label="文章"><button type="button" id="metaBtn" title="文章 SEO 後設資料">後設資料</button><button type="button" id="bilingualEditBtn" title="切換為雙語並排編輯">雙語編輯</button><button type="button" id="bilingualBtn" title="檢查中英雙語完整性">雙語檢查</button><button type="button" id="spellBtn" title="拼字 / 文法檢查 (LanguageTool)">拼字</button><button type="button" id="historyBtn" title="版本歷史 + 還原">歷史</button></div><div class="tb-group" data-label="發布"><button type="button" id="draftBtn" title="存到草稿分支 drafts/{slug}（不發布到 main）">存草稿</button><button type="button" id="scheduleBtn" title="排程於指定時間自動發布">排程發布</button><button type="button" id="sourceBtn" title="切換 HTML 原始碼模式">原始碼</button><button type="button" id="reloadBtn" title="重新讀取（放棄未存改動）">重讀</button></div><span class="grow"></span><span id="autosaveInd" class="autosave-pill"></span></div></div></div><div id="behindBanner" style="display:none;padding:8px 16px;background:#fef3c7;border-bottom:1px solid #fbbf24;color:#92400e;font-size:13px;align-items:center;gap:10px;flex-wrap:wrap"><span>⚠️</span><span id="behindBannerText">你載入的版本已落後遠端</span><button type="button" id="behindReloadBtn" style="padding:4px 12px;background:#92400e;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">重讀最新版</button><button type="button" id="behindDismissBtn" style="padding:4px 10px;background:transparent;color:#92400e;border:1px solid #92400e;border-radius:6px;cursor:pointer;font-size:12px">先不理</button></div><div id="draftBanner" style="display:none;padding:8px 16px;background:#dbeafe;border-bottom:1px solid #60a5fa;color:#1e40af;font-size:13px;align-items:center;gap:10px;flex-wrap:wrap"><span>💾</span><span id="draftBannerText">偵測到 10 分鐘前的未儲存草稿</span><button type="button" id="draftRestoreBtn" style="padding:4px 12px;background:#1e40af;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">還原草稿</button><button type="button" id="draftDiscardBtn" style="padding:4px 10px;background:transparent;color:#1e40af;border:1px solid #1e40af;border-radius:6px;cursor:pointer;font-size:12px">丟棄</button></div><div class="frame-wrap" id="frameWrap"><div class="empty-state" id="emptyState"><h3>請從左側選一個檔案開始編輯</h3><p>選了之後，網頁本人會出現在這裡。</p><p>你可以直接點任何文字、改字、貼圖。<strong>有黃框</strong>的區域 = 可以編輯；沒黃框的（如 header / footer / 導覽）為了避免破壞版型，需切到原始碼模式才能改。</p></div></div><div class="statusbar" id="statusbar"><span id="status">尚未載入檔案</span><span class="grow" style="flex:1"></span><span id="autosaveIndStatus" style="color:var(--muted);font-size:11px"></span><span id="wordCount" style="color:var(--muted);font-size:11px"></span><span id="readTime" style="color:var(--muted);font-size:11px"></span><span id="shaInfo"></span></div></section></main><div id="patModal" class="modal-bg" style="display:none"><div class="modal"><h2>輸入 GitHub Personal Access Token</h2><p>後台用 GitHub API 直接寫進你的 repo (<code style="font-family:'JetBrains Mono',monospace">expertise88864/user</code>)。需要 PAT 一次，儲存在你瀏覽器的 localStorage，不會傳到任何第三方。</p><p><strong>怎麼產生 PAT?</strong><br/>
+① <a href="https://github.com/settings/tokens" target="_blank" rel="noopener noreferrer">https://github.com/settings/tokens</a><br/>
 ② 點 "Generate new token (classic)"<br/>
 ③ 名字隨便填，Expiration 選 90 天 / No expiration<br/>
 ④ <strong>勾 <code style="font-family:'JetBrains Mono',monospace">repo</code> 全部權限</strong><br/>
-⑤ Generate → 複製 token 貼下面</p><input id="patInput" type="password" placeholder="ghp_..." autocomplete="off" /><div style="display:flex;gap:8px;align-items:center"><button id="patSave">儲存並登入</button><small style="color:var(--muted)">token 只存在這個瀏覽器</small></div></div></div>
+⑤ Generate → 複製 token 貼下面</p><input id="patInput" type="password" placeholder="ghp_..." autocomplete="off" aria-label="GitHub Personal Access Token" /><div style="display:flex;gap:8px;align-items:center"><button type="button" id="patSave">儲存並登入</button><small style="color:var(--muted)">token 只存在這個瀏覽器</small></div></div></div>
 <script>const REPO = 'expertise88864/user';
 const BRANCH = 'main';
 let PAT = '';
@@ -158,6 +158,15 @@ throw new Error(msg);
 }
 return data;
 }
+function escapeHtml(value){
+return String(value || '').replace(/[&<>"']/g, ch => ({
+'&':'&amp;',
+'<':'&lt;',
+'>':'&gt;',
+'"':'&quot;',
+"'":'&#39;'
+}[ch]));
+}
 // =========== file list ===========
 async function refreshFileList(){
 setStatus('載入檔案清單...');
@@ -178,19 +187,30 @@ const ai = pin.indexOf(a.name), bi = pin.indexOf(b.name);
 if(ai!==-1||bi!==-1) return (ai===-1?99:ai) - (bi===-1?99:bi);
 return a.path.localeCompare(b.path);
 });
-elFileList.innerHTML = '';
+elFileList.textContent = '';
 files.forEach(f => {
 const d = document.createElement('div');
 d.className = 'file-item';
 const ico = f.name.endsWith('.html') ? '📄' : (f.name.endsWith('.xml') ? '🗺️' : '🛠️');
-d.innerHTML = '<span class="ico">' + ico + '</span><span>' + (f.dir ? '<span style="color:var(--muted)">'+f.dir+'</span>' : '') + f.name + '</span>';
+const icoSpan = document.createElement('span');
+icoSpan.className = 'ico';
+icoSpan.textContent = ico;
+const labelSpan = document.createElement('span');
+if(f.dir){
+const dirSpan = document.createElement('span');
+dirSpan.style.color = 'var(--muted)';
+dirSpan.textContent = f.dir;
+labelSpan.appendChild(dirSpan);
+}
+labelSpan.appendChild(document.createTextNode(f.name));
+d.append(icoSpan, labelSpan);
 d.dataset.path = f.path;
 d.addEventListener('click', ()=>loadFile(f.path));
 elFileList.appendChild(d);
 });
 setStatus('共 ' + files.length + ' 個檔案 — 點選任一個開始編輯');
 } catch(e){
-setStatus('讀取失敗: ' + e.message, true);
+setStatus('讀取失敗，請稍後再試', true);
 }
 }
 // =========== load file (visual mode) ===========
@@ -213,7 +233,7 @@ mountIframe(CURRENT_CONTENT);
 }
 setStatus('已載入 ' + path + ' — ' + (path.endsWith('.html') ? '直接點文字編輯' : '原始碼模式'));
 } catch(e){
-setStatus('載入失敗: ' + e.message, true);
+setStatus('載入失敗，請稍後再試', true);
 }
 }
 // =========== mount visual iframe ===========
@@ -424,7 +444,7 @@ const url = '/blog/images/' + filename;
 setStatus('已上傳 ' + url);
 resolve(url);
 } catch(e){
-setStatus('圖片上傳失敗: ' + e.message, true);
+setStatus('圖片上傳失敗，請稍後再試', true);
 reject(e);
 }
 };
@@ -506,7 +526,7 @@ DIRTY = false;
 elShaInfo.textContent = 'SHA: ' + CURRENT_SHA.substring(0,7);
 setStatus('已儲存並推送 ' + CURRENT_FILE + ' — Vercel 約 30 秒後重新部署');
 } catch(e){
-setStatus('儲存失敗: ' + e.message, true);
+setStatus('儲存失敗，請稍後再試', true);
 }
 }
 // =========== merge edited iframe content back into CURRENT_CONTENT ===========
@@ -589,7 +609,7 @@ document.getElementById('newFileName').value = '';
 await refreshFileList();
 setTimeout(()=>loadFile(newPath), 400);
 } catch(e){
-setStatus('建立失敗: ' + e.message, true);
+setStatus('建立失敗，請稍後再試', true);
 }
 });
 // =========== utils ===========
@@ -837,8 +857,8 @@ bg.innerHTML = `
 <p id="tblSize" style="font-weight:600;color:#0c5159;margin:8px 0">0 × 0</p>
 <p style="font-size:12px;color:#5e574e">將插入站台預設 .dn 樣式的表格（含表頭列）。</p>
 <div style="display:flex;gap:8px;margin-top:12px">
-<button id="tblInsert" disabled>插入</button>
-<button id="tblCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button>
+<button type="button" id="tblInsert" disabled>插入</button>
+<button type="button" id="tblCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button>
 </div>
 </div>`;
 document.body.appendChild(bg);
@@ -913,12 +933,22 @@ const c = await fetchPubmed(pmid.trim());
 setStatus('' + c.title.slice(0, 60));
 const doc = editFrame.contentDocument;
 // Insert inline citation marker at cursor
-doc.execCommand('insertHTML', false, ' <span class="cite">(PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/' + c.pmid + '/" target="_blank" rel="noopener">' + c.pmid + '</a>)</span>');
+doc.execCommand('insertHTML', false, ' <span class="cite">(PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/' + c.pmid + '/" target="_blank" rel="noopener noreferrer">' + c.pmid + '</a>)</span>');
 // Also append to <ol class="references"> if present
 const refsList = doc.querySelector('ol.references');
 if(refsList){
 const li = doc.createElement('li');
-li.innerHTML = c.citation + ' <a href="https://pubmed.ncbi.nlm.nih.gov/' + c.pmid + '/" target="_blank" rel="noopener">「來源」</a>';
+li.appendChild(doc.createTextNode(c.authors + '. ' + c.title + ' '));
+const journal = doc.createElement('em');
+journal.textContent = c.source;
+li.appendChild(journal);
+li.appendChild(doc.createTextNode('. ' + c.year + ';' + c.vol + (c.issue ? '(' + c.issue + ')' : '') + (c.pages ? ':' + c.pages : '') + '. '));
+const sourceLink = doc.createElement('a');
+sourceLink.href = 'https://pubmed.ncbi.nlm.nih.gov/' + c.pmid + '/';
+sourceLink.target = '_blank';
+sourceLink.rel = 'noopener noreferrer';
+sourceLink.textContent = '「來源」';
+li.appendChild(sourceLink);
 refsList.appendChild(li);
 setStatus('已加入參考資料區（第 ' + refsList.children.length + ' 條）');
 } else {
@@ -926,7 +956,7 @@ setStatus('已插入引用標記（注意：本文沒有 <ol class="references">
 }
 DIRTY = true;
 } catch(e){
-setStatus('查詢失敗: ' + e.message, true);
+setStatus('查詢失敗，請稍後再試', true);
 }
 });
 // ─────────────────────────────────────────────────────────────
@@ -959,9 +989,9 @@ bg.innerHTML = `
 <p>共掃描 ${doc.querySelectorAll('[data-zh],[data-en]').length} 個雙語節點，發現 <strong>${issues.length}</strong> 個問題。</p>
 ${issues.length===0 ? '<p style="color:#065f46">沒有問題！每個 data-zh 都有對應的 data-en。</p>' :
 '<div style="max-height:50vh;overflow-y:auto;border:1px solid #ebe4d8;border-radius:8px">' +
-issues.map((i,idx)=>`<div style="padding:10px 14px;border-bottom:1px solid #ebe4d8;font-size:12.5px;line-height:1.6"><strong style="color:#92400e">${idx+1}. ${i.type}</strong><div style="margin-top:4px;color:#5e574e">ZH: ${i.zh}</div><div style="color:#5e574e">EN: ${i.en}</div></div>`).join('') +
+issues.map((i,idx)=>`<div style="padding:10px 14px;border-bottom:1px solid #ebe4d8;font-size:12.5px;line-height:1.6"><strong style="color:#92400e">${idx+1}. ${escapeHtml(i.type)}</strong><div style="margin-top:4px;color:#5e574e">ZH: ${escapeHtml(i.zh)}</div><div style="color:#5e574e">EN: ${escapeHtml(i.en)}</div></div>`).join('') +
 '</div>'}
-<div style="margin-top:12px"><button id="bilingualClose">關閉</button></div>
+<div style="margin-top:12px"><button type="button" id="bilingualClose">關閉</button></div>
 </div>`;
 document.body.appendChild(bg);
 bg.querySelector('#bilingualClose').addEventListener('click', ()=>bg.remove());
@@ -1035,7 +1065,7 @@ resolve(url);
 reader.readAsDataURL(c.blob);
 });
 } catch(e){
-setStatus('壓縮失敗: ' + e.message + ' — 改用原圖上傳', true);
+setStatus('壓縮失敗，已改用原圖上傳', true);
 return _originalUploadImage(file, prefix);
 }
 };
@@ -1100,18 +1130,30 @@ bg.innerHTML = `
 <input id="libSearch" placeholder="搜尋檔名..." style="padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:8px;margin:8px 0" />
 <div id="libGrid" style="flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;padding:6px;border:1px solid #ebe4d8;border-radius:8px"></div>
 <div style="margin-top:12px;display:flex;gap:8px">
-<button id="libClose" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">關閉</button>
+<button type="button" id="libClose" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">關閉</button>
 </div>
 </div>`;
 document.body.appendChild(bg);
 const grid = bg.querySelector('#libGrid');
 const renderGrid = (filter)=>{
-grid.innerHTML = '';
+grid.textContent = '';
 const filtered = filter ? all.filter(f=>f.name.toLowerCase().includes(filter.toLowerCase())) : all;
 filtered.forEach(f=>{
 const card = document.createElement('div');
+const safePath = encodeURI(f.path).replace(/"/g, '%22');
 card.style.cssText = 'border:1px solid #ebe4d8;border-radius:8px;padding:6px;cursor:pointer;background:#fff;display:flex;flex-direction:column;align-items:center;gap:4px';
-card.innerHTML = `<img src="/${f.path}" loading="lazy" style="width:100%;height:90px;object-fit:cover;border-radius:4px"><div style="font-size:10px;color:#5e574e;text-align:center;word-break:break-all;line-height:1.3">${f.name}</div>`;
+const img = document.createElement('img');
+img.src = '/' + safePath;
+img.alt = f.name;
+img.width = 120;
+img.height = 90;
+img.loading = 'lazy';
+img.decoding = 'async';
+img.style.cssText = 'width:100%;height:90px;object-fit:cover;border-radius:4px';
+const caption = document.createElement('div');
+caption.style.cssText = 'font-size:10px;color:#5e574e;text-align:center;word-break:break-all;line-height:1.3';
+caption.textContent = f.name;
+card.append(img, caption);
 card.addEventListener('click', ()=>{
 insertImageAtSelection('/' + f.path);
 bg.remove();
@@ -1120,14 +1162,19 @@ card.addEventListener('mouseenter', ()=>card.style.borderColor='#7a9285');
 card.addEventListener('mouseleave', ()=>card.style.borderColor='#ebe4d8');
 grid.appendChild(card);
 });
-if(filtered.length===0) grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:#8b8378;padding:30px">沒有符合的圖片</div>';
+if(filtered.length===0) {
+const empty = document.createElement('div');
+empty.style.cssText = 'grid-column:1/-1;text-align:center;color:#8b8378;padding:30px';
+empty.textContent = '沒有符合的圖片';
+grid.appendChild(empty);
+}
 };
 renderGrid('');
 bg.querySelector('#libSearch').addEventListener('input', e=>renderGrid(e.target.value));
 bg.querySelector('#libClose').addEventListener('click', ()=>bg.remove());
 setStatus('圖庫載入完成');
 } catch(e){
-setStatus('圖庫讀取失敗: ' + e.message, true);
+setStatus('圖庫讀取失敗，請稍後再試', true);
 }
 });
 // ─────────────────────────────────────────────────────────────
@@ -1155,19 +1202,19 @@ bg.innerHTML = `
 <p style="font-size:12.5px;color:#5e574e">編輯後按「套用」會同步到 &lt;title&gt;、meta description、og:title/description/image、JSON-LD 的 datePublished/dateModified。</p>
 <div style="display:grid;gap:10px;margin:14px 0">
 <label style="font-size:12px;font-weight:600;color:#0c5159">頁面標題 &lt;title&gt; <span id="titleLen" style="color:#8b8378;font-weight:400"></span>
-<input id="metaTitle" value="${title.replace(/"/g,'&quot;')}" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" />
+<input id="metaTitle" value="${escapeHtml(title)}" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" />
 </label>
 <label style="font-size:12px;font-weight:600;color:#0c5159">Meta description (≤ 160 字) <span id="descLen" style="color:#8b8378;font-weight:400"></span>
-<textarea id="metaDesc" rows="3" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px;font-family:inherit">${desc}</textarea>
+<textarea id="metaDesc" rows="3" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px;font-family:inherit">${escapeHtml(desc)}</textarea>
 </label>
 <label style="font-size:12px;font-weight:600;color:#0c5159">OG 標題（社群分享卡片用）
-<input id="metaOgTitle" value="${ogtitle.replace(/"/g,'&quot;')}" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" />
+<input id="metaOgTitle" value="${escapeHtml(ogtitle)}" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" />
 </label>
 <label style="font-size:12px;font-weight:600;color:#0c5159">OG 描述
-<textarea id="metaOgDesc" rows="2" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px;font-family:inherit">${ogdesc}</textarea>
+<textarea id="metaOgDesc" rows="2" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px;font-family:inherit">${escapeHtml(ogdesc)}</textarea>
 </label>
 <label style="font-size:12px;font-weight:600;color:#0c5159">OG 圖片 URL
-<input id="metaOgImg" value="${ogimg.replace(/"/g,'&quot;')}" style="display:block;width:100%;padding:8px 12px;font-size:12px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px;font-family:JetBrains Mono,monospace" />
+<input id="metaOgImg" value="${escapeHtml(ogimg)}" style="display:block;width:100%;padding:8px 12px;font-size:12px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px;font-family:JetBrains Mono,monospace" />
 </label>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
 <label style="font-size:12px;font-weight:600;color:#0c5159">發布日期
@@ -1178,12 +1225,12 @@ bg.innerHTML = `
 </label>
 </div>
 <label style="font-size:12px;font-weight:600;color:#0c5159">Canonical URL
-<input id="metaCanonical" value="${canonical.replace(/"/g,'&quot;')}" style="display:block;width:100%;padding:8px 12px;font-size:12px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px;font-family:JetBrains Mono,monospace" />
+<input id="metaCanonical" value="${escapeHtml(canonical)}" style="display:block;width:100%;padding:8px 12px;font-size:12px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px;font-family:JetBrains Mono,monospace" />
 </label>
 </div>
 <div style="display:flex;gap:8px;justify-content:flex-end">
-<button id="metaCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button>
-<button id="metaApply">✓ 套用</button>
+<button type="button" id="metaCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button>
+<button type="button" id="metaApply">✓ 套用</button>
 </div>
 </div>`;
 document.body.appendChild(bg);
@@ -1211,8 +1258,8 @@ const ndate = bg.querySelector('#metaDate').value;
 const ndmod = bg.querySelector('#metaDateMod').value;
 const nc = bg.querySelector('#metaCanonical').value;
 let s = SOURCE_MODE ? sourceTextarea.value : CURRENT_CONTENT;
-const setAttr = (re, val)=>{ s = s.replace(re, (m)=>m.replace(/content="[^"]*"/, 'content="'+val.replace(/"/g,'&quot;')+'"')); };
-s = s.replace(/<title>[^<]*<\/title>/, '<title>'+nt.replace(/</g,'&lt;')+'</title>');
+const setAttr = (re, val)=>{ s = s.replace(re, (m)=>m.replace(/content="[^"]*"/, 'content="'+escapeHtml(val)+'"')); };
+s = s.replace(/<title>[^<]*<\/title>/, '<title>'+escapeHtml(nt)+'</title>');
 setAttr(/<meta name="description" content="[^"]*"/, nd);
 setAttr(/<meta property="og:title" content="[^"]*"/, not);
 setAttr(/<meta property="og:description" content="[^"]*"/, nod);
@@ -1222,7 +1269,7 @@ setAttr(/<meta name="twitter:description" content="[^"]*"/, nod);
 setAttr(/<meta name="twitter:image" content="[^"]*"/, noi);
 s = s.replace(/"datePublished":"[^"]*"/, '"datePublished":"'+ndate+'"');
 s = s.replace(/"dateModified":"[^"]*"/, '"dateModified":"'+ndmod+'"');
-s = s.replace(/<link rel="canonical" href="[^"]*"/, '<link rel="canonical" href="'+nc.replace(/"/g,'&quot;')+'"');
+s = s.replace(/<link rel="canonical" href="[^"]*"/, '<link rel="canonical" href="'+escapeHtml(nc)+'"');
 CURRENT_CONTENT = s;
 if(SOURCE_MODE) sourceTextarea.value = s;
 else mountIframe(s);  // remount iframe with new metadata
@@ -1277,8 +1324,8 @@ bg.innerHTML = `
 </label>
 </div>
 <div style="display:flex;gap:8px;justify-content:flex-end">
-<button id="wizCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button>
-<button id="wizCreate">建立 →</button>
+<button type="button" id="wizCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button>
+<button type="button" id="wizCreate">建立 →</button>
 </div>
 </div>`;
 document.body.appendChild(bg);
@@ -1350,7 +1397,7 @@ bg.remove();
 await refreshFileList();
 setTimeout(()=>loadFile('blog/' + slug + '.html'), 400);
 } catch(e){
-setStatus('建立失敗: ' + e.message, true);
+setStatus('建立失敗，請稍後再試', true);
 }
 });
 }
@@ -1373,7 +1420,7 @@ const sections = type === 'myth'
 : type === 'note'
 ? `<h2 id="background">背景與流行病學</h2><p>（盛行率、好發族群、近年趨勢）</p><h2 id="pathogenesis">致病機轉</h2><p>（分子層級 / 免疫路徑 / 訊息傳遞）</p><h2 id="clinical">臨床表現</h2><ul><li>典型表現：</li><li>非典型 / 鑑別診斷：</li></ul><h2 id="dx">診斷標準與分級</h2><p>（評分系統、影像、切片發現）</p><h2 id="tx">治療階梯</h2><table class="dn"><thead><tr><th>階梯</th><th>第一線</th><th>第二線</th><th>難治型</th></tr></thead><tbody><tr><td>—</td><td>—</td><td>—</td><td>—</td></tr></tbody></table><h2 id="pearls">臨床珍珠（Clinical pearls）</h2><ul><li>—</li></ul><h2 id="refs">參考文獻</h2><ol class="references"></ol>`
 : type === 'research'
-? `<h2 id="study">研究摘要</h2><p><strong>期刊：</strong>（JAAD / BJD / JEADV / NEJM ...）</p><p><strong>研究類型：</strong>（RCT / 系統性回顧 / Real-world / 觀察性 ...）</p><p><strong>研究族群：</strong>（n =, 性別比例, 年齡, 病情嚴重度）</p><h2 id="methods">方法</h2><p>（研究設計、介入、對照組、主要終點）</p><h2 id="results">結果</h2><ul><li><strong>主要終點：</strong></li><li><strong>次要終點：</strong></li><li><strong>安全性 / 副作用：</strong></li></ul><h2 id="discussion">臨床意涵</h2><p>（這個研究改變什麼？對臨床決策有什麼影響？）</p><h2 id="limitations">研究限制</h2><ul><li>—</li></ul><h2 id="takeaway">一句話總結</h2><p><strong>—</strong></p><h2 id="refs">參考文獻</h2><ol class="references"><li><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">原文連結（PMID: ）</a></li></ol>`
+? `<h2 id="study">研究摘要</h2><p><strong>期刊：</strong>（JAAD / BJD / JEADV / NEJM ...）</p><p><strong>研究類型：</strong>（RCT / 系統性回顧 / Real-world / 觀察性 ...）</p><p><strong>研究族群：</strong>（n =, 性別比例, 年齡, 病情嚴重度）</p><h2 id="methods">方法</h2><p>（研究設計、介入、對照組、主要終點）</p><h2 id="results">結果</h2><ul><li><strong>主要終點：</strong></li><li><strong>次要終點：</strong></li><li><strong>安全性 / 副作用：</strong></li></ul><h2 id="discussion">臨床意涵</h2><p>（這個研究改變什麼？對臨床決策有什麼影響？）</p><h2 id="limitations">研究限制</h2><ul><li>—</li></ul><h2 id="takeaway">一句話總結</h2><p><strong>—</strong></p><h2 id="refs">參考文獻</h2><ol class="references"><li><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer">原文連結（PMID: ）</a></li></ol>`
 : `<h2 id="overview">什麼是 ${title}</h2><p>（定義 + 流行病學）</p><h2 id="symptoms">症狀</h2><ul><li>—</li></ul><h2 id="diagnosis">診斷</h2><p>（如何確診）</p><h2 id="treatment">治療</h2><p>（治療選項）</p><h2 id="end">結語</h2><p>（總結）</p>`;
 return `<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>${title} — ${sub} | ChenDermatologist · 陳翊嘉醫師</title>
@@ -1393,8 +1440,7 @@ return `<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><me
 <meta name="twitter:description" content="${desc.replace(/"/g,'&quot;')}" />
 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
 <link rel="manifest" href="/manifest.json" />
-<link rel="modulepreload" href="/blog/blog-shared.min.js" />
-<link rel="preload" as="style" href="/assets/tw-mini.css" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="/assets/tw-mini.css">
 <` + `script type="application/ld+json">{ "@context":"https://schema.org","@type":"MedicalScholarlyArticle","inLanguage":"zh-Hant-TW","headline":"${title} — ${sub}","description":"${desc.replace(/"/g,'\\"')}","datePublished":"${date}","dateModified":"${date}","author":{"@type":"Person","@id":"https://chendermatologist.com/about#person","name":"陳翊嘉 醫師","alternateName":["Dr. Chen Yi-Jia"]} }<\/` + `script>
 </head><body>
 <main><section class="max-w-3xl mx-auto px-5 sm:px-8 mt-8 mb-6">
@@ -1406,7 +1452,7 @@ return `<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><me
 ${sections}
 <h2 id="refs">參考資料</h2><ol class="references"></ol>
 </div></article></main>
-<` + `script src="/blog/blog-shared.min.js" defer><\/` + `script>
+<` + `script src="/blog/blog-shared.min.js?v=202605120530" defer><\/` + `script>
 <` + `script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});<\/` + `script>
 </body></html>`;
 }
@@ -1467,7 +1513,7 @@ function enhanceExtrasPanel(){
   if(oldHint) oldHint.remove();
   const controls = document.createElement('div');
   controls.style.cssText = 'display:flex;gap:2px;align-items:center';
-  controls.innerHTML = '<button class="ax-mini" title="摺疊 / 展開" style="padding:2px 8px;font-size:13px;background:transparent;border:none;cursor:pointer;color:#5e574e;border-radius:4px">▸</button><button class="ax-close" title="關閉助手面板" style="padding:1px 8px;font-size:16px;background:transparent;border:none;cursor:pointer;color:#5e574e;border-radius:4px">×</button>';
+  controls.innerHTML = '<button type="button" class="ax-mini" title="摺疊 / 展開" style="padding:2px 8px;font-size:13px;background:transparent;border:none;cursor:pointer;color:#5e574e;border-radius:4px">▸</button><button type="button" class="ax-close" title="關閉助手面板" style="padding:1px 8px;font-size:16px;background:transparent;border:none;cursor:pointer;color:#5e574e;border-radius:4px">×</button>';
   header.appendChild(controls);
   // Prevent old header-click handler from firing on button clicks
   const miniBtn = controls.querySelector('.ax-mini');
@@ -1636,7 +1682,8 @@ function openVersionHistory(){
   if(!PAT){ alert('請先登入 PAT'); return; }
   const bg = document.createElement('div');
   bg.className = 'modal-bg';
-  bg.innerHTML = '<div class="modal" style="max-width:920px;height:85vh;display:flex;flex-direction:column"><h2>📜 ' + CURRENT_FILE + ' — 版本歷史</h2><p style="font-size:12.5px;color:#5e574e">最近 30 次修改。點任一版本看 diff、按「還原此版本」會把檔案內容載入到編輯器（需手動按儲存才會真的發布）。</p><div style="display:flex;flex:1;gap:10px;overflow:hidden;margin-top:10px;min-height:0"><div id="histList" style="flex:0 0 290px;overflow-y:auto;border:1px solid #ebe4d8;border-radius:8px;padding:6px;background:#fafaf6"></div><div id="histDiff" style="flex:1;overflow:auto;border:1px solid #ebe4d8;border-radius:8px;padding:14px;font-family:JetBrains Mono,monospace;font-size:11.5px;line-height:1.55;background:#fff;min-width:0">點選左側任一版本查看 diff</div></div><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"><button id="histClose" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">關閉</button></div></div>';
+  const currentFileLabel = escapeHtml(CURRENT_FILE);
+  bg.innerHTML = '<div class="modal" style="max-width:920px;height:85vh;display:flex;flex-direction:column"><h2>📜 ' + currentFileLabel + ' — 版本歷史</h2><p style="font-size:12.5px;color:#5e574e">最近 30 次修改。點任一版本看 diff、按「還原此版本」會把檔案內容載入到編輯器（需手動按儲存才會真的發布）。</p><div style="display:flex;flex:1;gap:10px;overflow:hidden;margin-top:10px;min-height:0"><div id="histList" style="flex:0 0 290px;overflow-y:auto;border:1px solid #ebe4d8;border-radius:8px;padding:6px;background:#fafaf6"></div><div id="histDiff" style="flex:1;overflow:auto;border:1px solid #ebe4d8;border-radius:8px;padding:14px;font-family:JetBrains Mono,monospace;font-size:11.5px;line-height:1.55;background:#fff;min-width:0">點選左側任一版本查看 diff</div></div><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"><button type="button" id="histClose" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">關閉</button></div></div>';
   document.body.appendChild(bg);
   bg.querySelector('#histClose').addEventListener('click', ()=>bg.remove());
   loadHistoryList(bg);
@@ -1647,13 +1694,21 @@ async function loadHistoryList(bg){
   try {
     const commits = await gh('GET', 'commits?path=' + encodeURIComponent(CURRENT_FILE) + '&per_page=30');
     const list = bg.querySelector('#histList');
-    list.innerHTML = '';
+    list.textContent = '';
     commits.forEach((c, idx)=>{
       const item = document.createElement('div');
       item.style.cssText = 'padding:8px 10px;border:1px solid #ebe4d8;border-radius:6px;margin:3px 0;font-size:12px;cursor:pointer;background:#fff;line-height:1.5';
-      const date = new Date(c.commit.author.date).toLocaleString('zh-TW', { year:'2-digit', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' });
-      const msg = c.commit.message.split('\n')[0].replace(/</g,'&lt;');
-      item.innerHTML = '<div style="font-weight:600;color:#0c5159">' + msg.slice(0,60) + '</div><div style="color:#8b8378;font-size:10.5px;margin-top:2px">' + date + ' · ' + c.sha.slice(0,7) + (idx===0?' (最新)':'') + '</div>';
+      const dateValue = c.commit && c.commit.author && c.commit.author.date;
+      const date = dateValue ? new Date(dateValue).toLocaleString('zh-TW', { year:'2-digit', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit' }) : '';
+      const msg = ((c.commit && c.commit.message) || '').split('\n')[0].slice(0, 60);
+      const shortSha = String(c.sha || '').slice(0,7);
+      const msgEl = document.createElement('div');
+      msgEl.style.cssText = 'font-weight:600;color:#0c5159';
+      msgEl.textContent = msg;
+      const metaEl = document.createElement('div');
+      metaEl.style.cssText = 'color:#8b8378;font-size:10.5px;margin-top:2px';
+      metaEl.textContent = date + ' · ' + shortSha + (idx===0?' (最新)':'');
+      item.append(msgEl, metaEl);
       item.addEventListener('click', ()=>{
         list.querySelectorAll('div').forEach(d=>d.style.borderColor='#ebe4d8');
         item.style.borderColor = '#0c5159';
@@ -1663,8 +1718,8 @@ async function loadHistoryList(bg){
     });
     setStatus('載入 ' + commits.length + ' 個版本');
   } catch(e){
-    setStatus('版本歷史失敗: ' + e.message, true);
-    bg.querySelector('#histList').textContent = '錯誤: ' + e.message;
+    setStatus('版本歷史失敗，請稍後再試', true);
+    bg.querySelector('#histList').textContent = '讀取失敗，請稍後再試';
   }
 }
 
@@ -1676,7 +1731,7 @@ async function showCommitDiff(bg, sha, isLatest){
     const oldContent = decodeUtf8Base64(data.content);
     const cur = BILINGUAL_MODE ? mergeBilingualBack() : (SOURCE_MODE ? sourceTextarea.value : (editFrame ? mergeIframeIntoOriginal() : CURRENT_CONTENT));
     const diffHTML = renderDiff(oldContent, cur);
-    const restoreBtn = isLatest ? '' : '<button id="restoreBtn" style="margin-left:auto;padding:6px 14px;background:#92400e;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">⏮ 還原此版本到編輯器</button>';
+    const restoreBtn = isLatest ? '' : '<button type="button" id="restoreBtn" style="margin-left:auto;padding:6px 14px;background:#92400e;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">⏮ 還原此版本到編輯器</button>';
     diffEl.innerHTML = '<div style="margin-bottom:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;position:sticky;top:0;background:#fff;padding-bottom:8px;border-bottom:1px solid #ebe4d8"><strong style="color:#0c5159">舊版本</strong> <code style="background:#f1ece4;padding:2px 5px;border-radius:3px">' + sha.slice(0,7) + '</code> <span style="color:#8b8378">→</span> <strong style="color:#0c5159">目前' + (isLatest?'（同最新）':'') + '</strong>' + restoreBtn + '</div><div style="white-space:pre-wrap;word-break:break-word">' + diffHTML + '</div>';
     const r = diffEl.querySelector('#restoreBtn');
     if(r){
@@ -1695,7 +1750,7 @@ async function showCommitDiff(bg, sha, isLatest){
       });
     }
   } catch(e){
-    diffEl.textContent = '讀取失敗: ' + e.message;
+    diffEl.textContent = '讀取失敗，請稍後再試';
   }
 }
 
@@ -1791,7 +1846,7 @@ async function saveAsDraft(silent){
     }
     return { branch: draftBranch, sha: result.content.sha };
   } catch(e){
-    setStatus('草稿儲存失敗: ' + e.message, true);
+    setStatus('草稿儲存失敗，請稍後再試', true);
     return null;
   }
 }
@@ -1805,13 +1860,14 @@ function openScheduleModal(){
   if(!CURRENT_FILE){ alert('請先選一個檔案'); return; }
   if(!PAT){ alert('請先登入 PAT'); return; }
   const slug = CURRENT_FILE.replace(/.*\//, '').replace(/\.[^.]+$/, '');
+  const slugLabel = escapeHtml(slug);
   // Default: 1 hour from now, local datetime format
   const oneHourLater = new Date(Date.now() + 60*60*1000);
   const pad = n=>String(n).padStart(2,'0');
   const defaultLocal = oneHourLater.getFullYear() + '-' + pad(oneHourLater.getMonth()+1) + '-' + pad(oneHourLater.getDate()) + 'T' + pad(oneHourLater.getHours()) + ':' + pad(oneHourLater.getMinutes());
   const bg = document.createElement('div');
   bg.className = 'modal-bg';
-  bg.innerHTML = '<div class="modal" style="max-width:560px"><h2>排程自動發布</h2><p style="font-size:12.5px;color:#5e574e">會把目前編輯內容存到草稿分支 <code style="background:#f1ece4;padding:2px 6px;border-radius:4px">drafts/' + slug + '</code>，並安排在指定時間由 GitHub Actions 自動 merge 到 main 發布、Vercel 隨即部署。</p><label style="font-size:12px;font-weight:600;color:#0c5159;display:block;margin:14px 0 4px">發布時間（你的本地時間）<input id="schedAt" type="datetime-local" value="' + defaultLocal + '" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" /></label><p style="font-size:11px;color:#8b8378;margin:6px 0 14px">⏱ GitHub Actions cron 每 15 分鐘檢查一次隊列、到時間自動 merge。</p><div style="display:flex;gap:8px;justify-content:flex-end"><button id="schedCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button><button id="schedConfirm">📤 存草稿並排程</button></div></div>';
+  bg.innerHTML = '<div class="modal" style="max-width:560px"><h2>排程自動發布</h2><p style="font-size:12.5px;color:#5e574e">會把目前編輯內容存到草稿分支 <code style="background:#f1ece4;padding:2px 6px;border-radius:4px">drafts/' + slugLabel + '</code>，並安排在指定時間由 GitHub Actions 自動 merge 到 main 發布、Vercel 隨即部署。</p><label style="font-size:12px;font-weight:600;color:#0c5159;display:block;margin:14px 0 4px">發布時間（你的本地時間）<input id="schedAt" type="datetime-local" value="' + defaultLocal + '" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" /></label><p style="font-size:11px;color:#8b8378;margin:6px 0 14px">⏱ GitHub Actions cron 每 15 分鐘檢查一次隊列、到時間自動 merge。</p><div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" id="schedCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button><button type="button" id="schedConfirm">📤 存草稿並排程</button></div></div>';
   document.body.appendChild(bg);
   bg.querySelector('#schedCancel').addEventListener('click', ()=>bg.remove());
   bg.querySelector('#schedConfirm').addEventListener('click', async ()=>{
@@ -1860,7 +1916,7 @@ function openScheduleModal(){
     } catch(e){
       btn.disabled = false;
       btn.textContent = '📤 存草稿並排程';
-      alert('排程失敗: ' + e.message);
+      alert('排程失敗，請稍後再試');
     }
   });
 }
@@ -1896,7 +1952,7 @@ async function runSpellCheck(){
     showSpellResults(data.matches || []);
     setStatus('檢查完成：' + (data.matches?.length||0) + ' 個建議');
   } catch(e){
-    setStatus('拼字檢查失敗: ' + e.message + ' — 可能 LanguageTool 限額或網路問題', true);
+    setStatus('拼字檢查失敗，請稍後再試；可能是 LanguageTool 限額或網路問題', true);
   }
 }
 
@@ -1907,11 +1963,12 @@ function showSpellResults(matches){
     ? '<p style="color:#065f46;padding:14px;background:#dcfce7;border-radius:8px;margin-top:10px">沒發現拼字 / 文法問題！</p>'
     : '<div style="max-height:60vh;overflow-y:auto;border:1px solid #ebe4d8;border-radius:8px;margin-top:10px">' +
       matches.slice(0, 80).map((m, idx)=>{
-        const repl = (m.replacements||[]).slice(0,5).map(r=>'<code style="background:#dcfce7;padding:1px 5px;border-radius:3px;margin-right:4px">'+ (r.value||'').replace(/</g,'&lt;') +'</code>').join('');
-        const ctx = (m.context && m.context.text || '').replace(/</g,'&lt;');
-        return '<div style="padding:10px 14px;border-bottom:1px solid #ebe4d8;font-size:12.5px;line-height:1.6"><div style="color:#92400e;font-weight:600;margin-bottom:4px">' + (idx+1) + '. ' + m.message.replace(/</g,'&lt;') + '</div><div style="color:#5e574e;background:#fef3c7;padding:6px 8px;border-radius:4px;font-family:JetBrains Mono,monospace;font-size:11.5px;word-break:break-all">「' + ctx + '」</div>' + (repl ? '<div style="margin-top:5px;color:#0c5159;font-size:11.5px">建議替換：' + repl + '</div>' : '') + '</div>';
+        const repl = (m.replacements||[]).slice(0,5).map(r=>'<code style="background:#dcfce7;padding:1px 5px;border-radius:3px;margin-right:4px">'+ escapeHtml(r.value||'') +'</code>').join('');
+        const ctx = escapeHtml(m.context && m.context.text || '');
+        const message = escapeHtml(m.message || '');
+        return '<div style="padding:10px 14px;border-bottom:1px solid #ebe4d8;font-size:12.5px;line-height:1.6"><div style="color:#92400e;font-weight:600;margin-bottom:4px">' + (idx+1) + '. ' + message + '</div><div style="color:#5e574e;background:#fef3c7;padding:6px 8px;border-radius:4px;font-family:JetBrains Mono,monospace;font-size:11.5px;word-break:break-all">「' + ctx + '」</div>' + (repl ? '<div style="margin-top:5px;color:#0c5159;font-size:11.5px">建議替換：' + repl + '</div>' : '') + '</div>';
       }).join('') + '</div>' + (matches.length > 80 ? '<p style="font-size:11.5px;color:#8b8378;margin-top:8px">顯示前 80 個結果，共 ' + matches.length + ' 個</p>' : '');
-  bg.innerHTML = '<div class="modal" style="max-width:720px;max-height:88vh;display:flex;flex-direction:column"><h2>拼字 / 文法檢查</h2><p style="font-size:12.5px;color:#5e574e">使用 LanguageTool API（中文支援以 zh-CN 為主，繁中部分可能誤報）。共 ' + matches.length + ' 個建議。</p>' + items + '<div style="margin-top:12px"><button id="spellClose">關閉</button></div></div>';
+  bg.innerHTML = '<div class="modal" style="max-width:720px;max-height:88vh;display:flex;flex-direction:column"><h2>拼字 / 文法檢查</h2><p style="font-size:12.5px;color:#5e574e">使用 LanguageTool API（中文支援以 zh-CN 為主，繁中部分可能誤報）。共 ' + matches.length + ' 個建議。</p>' + items + '<div style="margin-top:12px"><button type="button" id="spellClose">關閉</button></div></div>';
   document.body.appendChild(bg);
   bg.querySelector('#spellClose').addEventListener('click', ()=>bg.remove());
 }
@@ -1930,7 +1987,12 @@ function toast(msg, type){
   const el = document.createElement('div');
   el.className = 'cd-toast cd-toast-' + type;
   const icon = type === 'success' ? '✓' : (type === 'error' ? '×' : 'ℹ');
-  el.innerHTML = '<span class="cd-toast-icon">' + icon + '</span><span>' + msg.replace(/</g,'&lt;') + '</span>';
+  const iconEl = document.createElement('span');
+  iconEl.className = 'cd-toast-icon';
+  iconEl.textContent = icon;
+  const msgEl = document.createElement('span');
+  msgEl.textContent = msg;
+  el.append(iconEl, msgEl);
   document.body.appendChild(el);
   const dur = type === 'error' ? 8000 : 4500;
   setTimeout(()=>{ el.style.animation = 'toastOut .25s ease forwards'; setTimeout(()=>el.remove(), 250); }, dur);
@@ -1940,7 +2002,8 @@ window.toast = toast;
 function showSaveModal(callback){
   const bg = document.createElement('div');
   bg.className = 'modal-bg';
-  bg.innerHTML = '<div class="modal" style="max-width:500px"><h2>儲存並推送到 GitHub</h2><p style="font-size:13px;color:#5e574e;margin:8px 0 14px">檔案：<code style="background:#f1ece4;padding:2px 8px;border-radius:4px;font-family:JetBrains Mono,monospace">' + CURRENT_FILE + '</code></p><label style="display:block;font-size:12px;font-weight:600;color:#0c5159;margin-bottom:4px">Commit 訊息（選填）</label><input id="saveModalMsg" placeholder="例：更新治療階梯數據 / 修正錯字" style="display:block;width:100%;padding:9px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px" autocomplete="off" /><p style="font-size:11.5px;color:#8b8378;margin:8px 0 18px">留空會用「edit ' + CURRENT_FILE + '」</p><div style="display:flex;gap:8px;justify-content:flex-end"><button id="saveModalCancel">取消</button><button id="saveModalConfirm" class="primary">確認儲存並推送</button></div></div>';
+  const currentFileLabel = escapeHtml(CURRENT_FILE);
+  bg.innerHTML = '<div class="modal" style="max-width:500px"><h2>儲存並推送到 GitHub</h2><p style="font-size:13px;color:#5e574e;margin:8px 0 14px">檔案：<code style="background:#f1ece4;padding:2px 8px;border-radius:4px;font-family:JetBrains Mono,monospace">' + currentFileLabel + '</code></p><label style="display:block;font-size:12px;font-weight:600;color:#0c5159;margin-bottom:4px">Commit 訊息（選填）</label><input id="saveModalMsg" placeholder="例：更新治療階梯數據 / 修正錯字" style="display:block;width:100%;padding:9px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px" autocomplete="off" /><p style="font-size:11.5px;color:#8b8378;margin:8px 0 18px">留空會用「edit ' + currentFileLabel + '」</p><div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" id="saveModalCancel">取消</button><button type="button" id="saveModalConfirm" class="primary">確認儲存並推送</button></div></div>';
   document.body.appendChild(bg);
   const input = bg.querySelector('#saveModalMsg');
   setTimeout(()=>input.focus(), 50);
@@ -1989,8 +2052,8 @@ async function saveWithModal(){
       setStatus('已推送到 GitHub — Vercel 部署中');
       toast('已儲存並推送到 GitHub。Vercel 約 30 秒後重新部署、上線。', 'success');
     } catch(e){
-      setStatus('儲存失敗: ' + e.message, true);
-      toast('儲存失敗：' + e.message, 'error');
+      setStatus('儲存失敗，請稍後再試', true);
+      toast('儲存失敗，請稍後再試', 'error');
     }
   });
 }
@@ -2011,35 +2074,5 @@ save = saveWithModal;
 
 // init
 loadPat();</script>
-<script>(function(){
-function load() {
-// AdSense
-var ad = document.createElement("script");
-ad.async = true;
-ad.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663";
-ad.crossOrigin = "anonymous";
-document.head.appendChild(ad);
-// Clarity
-(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wkvhe0mf7y");
-// GA4
-var ga = document.createElement("script");
-ga.async = true;
-ga.src = "https://www.googletagmanager.com/gtag/js?id=G-XFF3L5QD10";
-document.head.appendChild(ga);
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-window.gtag = gtag;
-gtag("js", new Date());
-gtag("config", "G-XFF3L5QD10", {anonymize_ip: true});
-}
-// Load 3rd-party after first paint (idle callback or 1s fallback)
-if ("requestIdleCallback" in window) {
-requestIdleCallback(load, { timeout: 2500 });
-} else {
-setTimeout(load, 1500);
-}
-})();</script>
-<script type="module" src="/admin/admin-extras.js?v=202605111335"></script>
+<script type="module" src="/admin/admin-extras.js?v=202605120530"></script>
 </body></html>

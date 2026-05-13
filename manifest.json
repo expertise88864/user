@@ -1,7 +1,7 @@
 {
   "name": "ChenDermatologist · 皮膚科常見衛教及學習筆記網站",
   "short_name": "ChenDermatologist",
-  "description": "陳翊嘉醫師( 皮膚部)的皮膚科衛教與學習筆記網站。",
+  "description": "陳翊嘉醫師的皮膚科衛教與學習筆記網站。",
   "lang": "zh-TW",
   "start_url": "/",
   "scope": "/",
@@ -19,7 +19,7 @@
   ],
   "shortcuts": [
     { "name": "衛教文章", "short_name": "文章", "url": "/blog/" },
-    { "name": "痘痘 9 大迷思", "short_name": "痘痘迷思", "url": "/blog/acne-myths" },
+    { "name": "痘痘 8 大迷思", "short_name": "痘痘迷思", "url": "/blog/acne-myths" },
     { "name": "防曬 8 大迷思", "short_name": "防曬迷思", "url": "/blog/sunscreen-myths" }
   ]
 }

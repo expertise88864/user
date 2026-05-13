@@ -22,12 +22,13 @@ import webpush from 'web-push';
 export const config = { runtime: 'nodejs' };
 
 export default async function handler(req, res) {
+  res.setHeader('Cache-Control', 'no-store');
   if (req.method !== 'POST') {
     res.status(405).setHeader('Allow', 'POST').json({ error: 'POST only' });
     return;
   }
   const auth = req.headers.authorization || '';
-  if (!process.env.ADMIN_TOKEN || !auth.endsWith(process.env.ADMIN_TOKEN)) {
+  if (!process.env.ADMIN_TOKEN || auth !== `Bearer ${process.env.ADMIN_TOKEN}`) {
     res.status(401).json({ error: 'unauthorized' });
     return;
   }
@@ -45,6 +46,10 @@ export default async function handler(req, res) {
   // Fetch all subscription keys from KV SET
   const kvUrl = process.env.KV_REST_API_URL;
   const kvTok = process.env.KV_REST_API_TOKEN;
+  if (!kvUrl || !kvTok) {
+    res.status(503).json({ error: 'KV not configured' });
+    return;
+  }
   const keysResp = await fetch(`${kvUrl}/smembers/push:subs`, {
     headers: { Authorization: `Bearer ${kvTok}` },
   });

@@ -15,11 +15,16 @@ export const config = { runtime: 'edge' };
 
 const REPO = process.env.ADMIN_REPO || 'expertise88864/user';
 const BRANCH = process.env.ADMIN_BRANCH || 'main';
+const PAT_AUTH_RE = /^token\s+(?:gh[pousr]_[A-Za-z0-9_]{20,255}|github_pat_[A-Za-z0-9_]{20,255})$/;
 
-function jsonResp(status, obj) {
+function jsonResp(status, obj, extraHeaders) {
   return new Response(JSON.stringify(obj), {
     status,
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store',
+      ...(extraHeaders || {}),
+    },
   });
 }
 
@@ -81,10 +86,10 @@ async function ghPut(path, auth, content, message, sha) {
 }
 
 export default async function handler(req) {
-  if (req.method !== 'POST') return jsonResp(405, { error: 'POST only' });
+  if (req.method !== 'POST') return jsonResp(405, { error: 'POST only' }, { Allow: 'POST' });
 
   const auth = req.headers.get('authorization') || '';
-  if (!/^token\s+gh[poas]_[A-Za-z0-9_]+/.test(auth)) {
+  if (!PAT_AUTH_RE.test(auth)) {
     return jsonResp(401, { error: 'Missing Authorization header' });
   }
 
@@ -126,7 +131,7 @@ export default async function handler(req) {
     existing && existing.sha
   );
 
-  if (!result.ok) return jsonResp(result.status, { error: 'GitHub PUT failed', detail: result.data });
+  if (!result.ok) return jsonResp(result.status, { error: 'GitHub PUT failed' });
 
   return jsonResp(200, {
     path: targetPath,

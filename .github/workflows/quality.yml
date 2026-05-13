@@ -29,25 +29,50 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with: { python-version: '3.12' }
+      - name: Normalize bilingual attributes
+        run: python _normalize_bilingual_attrs.py
+      - name: Normalize schema identity
+        run: python _normalize_schema.py
+      - name: Normalize social images
+        run: python _normalize_social_images.py
+      - name: Normalize CSS links
+        run: python _normalize_css_links.py
+      - name: Normalize heading structure
+        run: python _normalize_heading_structure.py
       - name: Regen /en/ mirror
         run: python _gen_en_pages.py
-      - name: Re-minify blog-shared.js → blog-shared.min.js
-        # Admin wizard auto-registers new articles into blog-shared.js but the
-        # production site loads blog-shared.min.js. Re-minify on every push so
-        # the minified bundle always reflects the source.
+      - name: Normalize generated schema
+        run: python _normalize_schema.py --include-en
+      - name: Normalize social URLs
+        run: python _normalize_social_urls.py
+      - name: Normalize third-party loaders
+        run: python _normalize_third_party.py
+      - name: Normalize external link rel attributes
+        run: python _normalize_external_links.py
+      - name: Normalize button types
+        run: python _normalize_button_types.py
+      - name: Normalize generated CSS links
+        run: python _normalize_css_links.py
+      - name: Normalize generated heading structure
+        run: python _normalize_heading_structure.py
+      - name: Re-minify blog runtime bundles
+        # The production site loads minified split bundles. Re-minify on every
+        # push so generated runtime files always reflect their sources.
         run: python _minify.py
       - name: Run feed generator
         run: python _gen_feeds.py
+      - name: Normalize robots.txt
+        run: python _normalize_robots.py
       - name: Commit + push with retry on race
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add en/ sitemap.xml blog/feed.xml blog/atom.xml blog/blog-shared.min.js || true
-          if [[ -z $(git status -s en/ sitemap.xml blog/feed.xml blog/atom.xml blog/blog-shared.min.js) ]]; then
-            echo "feeds + /en/ + min.js already up-to-date"
+          git add en/ sitemap.xml blog/feed.xml blog/atom.xml blog/*.js blog/*.html *.html || true
+          if [[ -z $(git status -s en/ sitemap.xml blog/feed.xml blog/atom.xml blog/*.js blog/*.html *.html) ]]; then
+            echo "feeds + /en/ + runtime bundles already up-to-date"
             exit 0
           fi
-          git commit -m "auto-regen /en/ mirror + feeds + min.js [skip ci]"
+          git commit -m "auto-regen /en/ mirror + feeds + runtime bundles [skip ci]"
           # Retry push up to 5 times with rebase, in case another push raced us
           for attempt in 1 2 3 4 5; do
             if git push; then
@@ -68,6 +93,13 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with: { python-version: '3.12' }
+      - name: Setup Java for html5validator
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
       - name: Install validators
         run: |
           pip install html5validator lxml
@@ -76,7 +108,7 @@ jobs:
           html5validator --root . --match "*.html" \
             --ignore-re "Attribute .* is not allowed on element" \
             --ignore-re "Element .* not allowed as child of" \
-            --log INFO || true
+            --log INFO
       - name: Quick lint — JSON-LD blocks parse cleanly
         run: |
           python <<'PY'
@@ -147,6 +179,8 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with: { python-version: '3.12' }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
       - name: Quick required-tag audit
         run: |
           python <<'PY'
@@ -156,6 +190,7 @@ jobs:
               ('<title>', 'missing <title>'),
               ('name="description"', 'missing meta description'),
               ('rel="canonical"', 'missing canonical'),
+              ('property="og:url"', 'missing OG URL'),
               ('property="og:title"', 'missing OG title'),
               ('property="og:image"', 'missing OG image'),
           ]
@@ -169,6 +204,48 @@ jobs:
           PY
       - name: Deep meta + sitemap consistency audit (_check_meta.py)
         run: python _check_meta.py
+      - name: Metadata uniqueness audit
+        run: python _check_metadata_uniqueness.py
+      - name: Robots/sitemap consistency audit
+        run: python _check_robots.py
+      - name: Sitemap URL/canonical audit
+        run: python _check_sitemap.py
+      - name: Internal link and anchor audit
+        run: python _check_internal_links.py
+      - name: Public/private index boundary audit
+        run: python _check_index_boundaries.py
+      - name: Static accessibility audit
+        run: python _check_static_a11y.py
+      - name: Inline event audit
+        run: python _check_inline_events.py
+      - name: Structured data audit
+        run: python _audit_jsonld.py
+      - name: PWA manifest/offline/SW audit
+        run: python _check_pwa.py
+      - name: Performance budget audit
+        run: python _check_performance_budget.py
+      - name: Text integrity audit
+        run: python _check_text_integrity.py
+      - name: English internal-link audit
+        run: python _check_en_internal_links.py
+      - name: Third-party loading audit
+        run: python _check_third_party.py
+      - name: External link rel audit
+        run: python _check_external_links.py
+      - name: Button type audit
+        run: python _check_button_types.py
+      - name: Deployment config audit
+        run: python _check_deployment.py
+      - name: API security audit
+        run: python _check_api_security.py
+      - name: Secret leak audit
+        run: python _check_secrets.py
+      - name: Supply-chain audit
+        run: python _check_supply_chain.py
+      - name: JavaScript syntax audit
+        run: npm run check-js
+      - name: Runtime smoke audit
+        run: npm run check-smoke
 
   lighthouse:
     name: Lighthouse CI (perf + a11y + SEO + best practices)
@@ -179,9 +256,9 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
       - name: Install LHCI
-        run: npm install -g @lhci/cli@0.13.x http-server
+        run: npm install -g @lhci/cli@0.13.x
       - name: Serve site
-        run: http-server . -p 8080 -s &
+        run: node _serve.mjs --host 127.0.0.1 --port 8080 &
       - name: Wait for server
         run: sleep 3
       - name: Run Lighthouse CI
@@ -198,7 +275,6 @@ jobs:
             --assert.assertions.categories:accessibility=0.85 \
             --assert.assertions.categories:best-practices=0.85 \
             --assert.assertions.categories:seo=0.95
-        continue-on-error: true
       - name: Render Lighthouse summary to job step
         if: always()
         run: |
@@ -206,7 +282,7 @@ jobs:
           import json, glob, os
           summary_path = os.environ.get('GITHUB_STEP_SUMMARY')
           if not summary_path: exit(0)
-          out_lines = ['# 🚦 Lighthouse Scores', '', '| URL | Perf | A11y | Best | SEO |', '|---|---:|---:|---:|---:|']
+          out_lines = ['# Lighthouse Scores', '', '| URL | Perf | A11y | Best | SEO |', '|---|---:|---:|---:|---:|']
           # LHCI writes JSON results into .lighthouseci/
           for fp in sorted(glob.glob('.lighthouseci/lhr-*.json')):
               try:
@@ -215,7 +291,7 @@ jobs:
                   cats = data.get('categories', {})
                   def s(k):
                       v = cats.get(k, {}).get('score')
-                      return f'{int(v*100)}' if v is not None else '—'
+                      return f'{int(v*100)}' if v is not None else 'n/a'
                   out_lines.append(f'| `{url}` | {s("performance")} | {s("accessibility")} | {s("best-practices")} | {s("seo")} |')
               except Exception as e:
                   print(f'parse fail {fp}: {e}')

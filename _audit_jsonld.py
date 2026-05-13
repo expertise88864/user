@@ -1,81 +1,169 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Audit JSON-LD structured data across all HTML pages.
+"""Audit JSON-LD structured data across all HTML pages."""
 
-Checks:
-  - JSON validity (well-formed)
-  - Required fields per @type
-  - Mismatched URLs (canonical vs mainEntityOfPage vs LD url)
-  - Missing image / wrong image format
-  - Duplicate @id
-"""
-import os, re, json, sys, io
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+from __future__ import annotations
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+import io
+import json
+import os
+import re
+import sys
+from pathlib import Path
+
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+
+ROOT = Path(__file__).resolve().parent
+DOMAIN = "https://chendermatologist.com"
+SKIP_DIRS = {".git", "__pycache__", "node_modules", "astro-rewrite"}
 
 REQUIRED_FIELDS = {
-    'MedicalScholarlyArticle': ['headline', 'datePublished', 'author', 'publisher'],
-    'MedicalWebPage': ['name', 'about'],
-    'BreadcrumbList': ['itemListElement'],
-    'FAQPage': ['mainEntity'],
-    'ItemList': ['itemListElement'],
-    'Person': ['name'],
+    "MedicalScholarlyArticle": [
+        "@id",
+        "headline",
+        "description",
+        "datePublished",
+        "dateModified",
+        "author",
+        "reviewedBy",
+        "publisher",
+        "mainEntityOfPage",
+        "image",
+    ],
+    "MedicalWebPage": ["@id", "name", "description", "about", "author", "reviewedBy"],
+    "BreadcrumbList": ["itemListElement"],
+    "FAQPage": ["mainEntity"],
+    "ItemList": ["itemListElement"],
+    "Person": ["name"],
+    "Physician": ["@id", "name", "medicalSpecialty", "url"],
 }
 
-def main():
+
+def iter_html_files() -> list[Path]:
+    files: list[Path] = []
+    for path in ROOT.rglob("*.html"):
+        if any(part in SKIP_DIRS for part in path.relative_to(ROOT).parts):
+            continue
+        files.append(path)
+    return files
+
+
+def canonical_of(src: str) -> str:
+    m = re.search(r'<link\s+rel="canonical"\s+href="([^"]*)"', src, re.I)
+    return m.group(1) if m else ""
+
+
+def is_noindex(src: str) -> bool:
+    m = re.search(r'<meta\s+name="robots"\s+content="([^"]*)"', src, re.I)
+    return bool(m and "noindex" in m.group(1).lower())
+
+
+def type_list(value) -> list[str]:
+    if isinstance(value, list):
+        return [str(item) for item in value]
+    return [str(value)] if value else []
+
+
+def jsonld_blocks(src: str):
+    for i, m in enumerate(re.finditer(r'<script type="application/ld\+json">([\s\S]*?)</script>', src, re.I)):
+        yield i, m.group(1).strip()
+
+
+def require_ref_object(rel: str, typ: str, field: str, value, errors: list[str]) -> None:
+    if not isinstance(value, dict):
+        errors.append(f"{rel}: {typ}.{field} should be an object reference")
+        return
+    if not (value.get("@id") or value.get("name")):
+        errors.append(f"{rel}: {typ}.{field} missing @id or name")
+
+
+def audit_object(rel: str, canonical: str, obj: dict, errors: list[str], type_counts: dict[str, int]) -> None:
+    types = type_list(obj.get("@type"))
+    if not types:
+        errors.append(f"{rel}: block missing @type")
+        return
+
+    for typ in types:
+        type_counts[typ] = type_counts.get(typ, 0) + 1
+        for field in REQUIRED_FIELDS.get(typ, []):
+            if field not in obj:
+                errors.append(f'{rel}: {typ} missing required field "{field}"')
+
+    if "MedicalScholarlyArticle" in types:
+        expected_id = canonical + "#article" if canonical else ""
+        if expected_id and obj.get("@id") != expected_id:
+            errors.append(f"{rel}: MedicalScholarlyArticle @id should be {expected_id}")
+        if canonical and obj.get("mainEntityOfPage") != canonical:
+            errors.append(f"{rel}: MedicalScholarlyArticle mainEntityOfPage does not match canonical")
+        if obj.get("image") and not isinstance(obj.get("image"), str):
+            errors.append(f"{rel}: MedicalScholarlyArticle image should be a URL string")
+        for field in ("author", "reviewedBy", "publisher"):
+            require_ref_object(rel, "MedicalScholarlyArticle", field, obj.get(field), errors)
+
+    if "MedicalWebPage" in types:
+        expected_id = canonical + "#webpage" if canonical else ""
+        if expected_id and obj.get("@id") != expected_id:
+            errors.append(f"{rel}: MedicalWebPage @id should be {expected_id}")
+        if "/blog/" in canonical:
+            main = obj.get("mainEntity")
+            if not isinstance(main, dict) or main.get("@id") != canonical + "#article":
+                errors.append(f"{rel}: MedicalWebPage mainEntity should point to article @id")
+        for field in ("author", "reviewedBy"):
+            require_ref_object(rel, "MedicalWebPage", field, obj.get(field), errors)
+
+    if "FAQPage" in types:
+        entities = obj.get("mainEntity")
+        if not isinstance(entities, list) or not entities:
+            errors.append(f"{rel}: FAQPage mainEntity should be a non-empty list")
+
+
+def main() -> int:
     n_files = 0
     n_blocks = 0
-    errors = []
-    type_counts = {}
-    for d, _, fs in os.walk(ROOT):
-        if any(x in d for x in ['.git','__pycache__','node_modules','astro-rewrite']): continue
-        for f in fs:
-            if not f.endswith('.html'): continue
-            p = os.path.join(d, f)
-            rel = os.path.relpath(p, ROOT)
-            with open(p,'r',encoding='utf-8') as fp: html = fp.read()
-            n_files += 1
-            for m in re.finditer(r'<script type="application/ld\+json">([\s\S]*?)</script>', html):
-                n_blocks += 1
-                json_str = m.group(1).strip()
-                try:
-                    data = json.loads(json_str)
-                except json.JSONDecodeError as e:
-                    errors.append(f'{rel}: invalid JSON — {e.msg} at pos {e.pos}')
-                    continue
-                # Single object or array
-                blocks = data if isinstance(data, list) else [data]
-                for blk in blocks:
-                    t = blk.get('@type')
-                    if not t:
-                        errors.append(f'{rel}: block missing @type')
-                        continue
-                    type_counts[t] = type_counts.get(t, 0) + 1
-                    req = REQUIRED_FIELDS.get(t, [])
-                    for field in req:
-                        if field not in blk:
-                            errors.append(f'{rel}: {t} missing required field "{field}"')
-                    # URL consistency check for articles
-                    if t == 'MedicalScholarlyArticle':
-                        # check author + publisher are objects with @type
-                        if isinstance(blk.get('author'), dict) and '@type' not in blk['author']:
-                            errors.append(f'{rel}: author missing @type (should be Person)')
-                        # check image is URL
-                        img = blk.get('image')
-                        if img and not isinstance(img, str):
-                            errors.append(f'{rel}: image should be a URL string')
-    print(f'Files scanned: {n_files}')
-    print(f'JSON-LD blocks found: {n_blocks}')
-    print(f'\nType distribution:')
-    for t, c in sorted(type_counts.items(), key=lambda x:-x[1]):
-        print(f'  {c:>4}× {t}')
-    print(f'\nErrors: {len(errors)}')
-    for e in errors[:30]:
-        print(f'  ✗ {e}')
-    if len(errors) > 30:
-        print(f'  ... ({len(errors)-30} more)')
-    return errors
+    errors: list[str] = []
+    type_counts: dict[str, int] = {}
 
-if __name__ == '__main__':
-    main()
+    for path in iter_html_files():
+        rel = path.relative_to(ROOT).as_posix()
+        src = path.read_text(encoding="utf-8")
+        canonical = canonical_of(src)
+        n_files += 1
+        page_types: list[str] = []
+
+        for index, raw in jsonld_blocks(src):
+            n_blocks += 1
+            try:
+                data = json.loads(raw)
+            except json.JSONDecodeError as exc:
+                errors.append(f"{rel}: invalid JSON-LD block {index}: {exc.msg} at pos {exc.pos}")
+                continue
+            objects = data if isinstance(data, list) else [data]
+            for obj in objects:
+                if not isinstance(obj, dict):
+                    errors.append(f"{rel}: JSON-LD block {index} is not an object")
+                    continue
+                page_types.extend(type_list(obj.get("@type")))
+                audit_object(rel, canonical, obj, errors, type_counts)
+
+        if rel.startswith("blog/") and rel not in {"blog/index.html", "blog/topics.html"} and not is_noindex(src):
+            if "MedicalScholarlyArticle" not in page_types:
+                errors.append(f"{rel}: public blog article missing MedicalScholarlyArticle")
+            if "MedicalWebPage" not in page_types:
+                errors.append(f"{rel}: public blog article missing MedicalWebPage")
+
+    print(f"Files scanned: {n_files}")
+    print(f"JSON-LD blocks found: {n_blocks}")
+    print("\nType distribution:")
+    for typ, count in sorted(type_counts.items(), key=lambda x: -x[1]):
+        print(f"  {count:>4}× {typ}")
+    print(f"\nErrors: {len(errors)}")
+    for error in errors[:80]:
+        print(f"  - {error}")
+    if len(errors) > 80:
+        print(f"  ... ({len(errors) - 80} more)")
+    return 1 if errors else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

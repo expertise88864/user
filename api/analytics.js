@@ -15,7 +15,17 @@
 
 export const config = { runtime: 'edge' };
 
-export default function handler() {
+export default function handler(req) {
+  if (req.method !== 'GET') {
+    return Response.json({ error: 'GET only' }, {
+      status: 405,
+      headers: {
+        Allow: 'GET',
+        'Cache-Control': 'no-store',
+      },
+    });
+  }
+
   return new Response(
     JSON.stringify({
       error: 'analytics_disabled',
@@ -25,7 +35,7 @@ export default function handler() {
       status: 503,
       headers: {
         'Content-Type': 'application/json',
-        'Cache-Control': 'public, max-age=3600',
+        'Cache-Control': 'no-store',
       },
     }
   );

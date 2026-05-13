@@ -108,6 +108,16 @@ function buildSvg(title, tag, date, subtitle) {
 }
 
 export default async function handler(req) {
+  if (req.method !== 'GET') {
+    return Response.json({ error: 'GET only' }, {
+      status: 405,
+      headers: {
+        Allow: 'GET',
+        'Cache-Control': 'no-store',
+      },
+    });
+  }
+
   const url = new URL(req.url);
   const title = (url.searchParams.get('title') || '').slice(0, 120);
   const tag = (url.searchParams.get('tag') || '').slice(0, 30);

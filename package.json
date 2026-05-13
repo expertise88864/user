@@ -6,16 +6,39 @@
   "description": "DermNotes — ChenDermatologist study notes & patient education site (Traditional Chinese / English bilingual).",
   "scripts": {
     "vapid": "web-push generate-vapid-keys",
+    "serve": "node _serve.mjs",
     "minify": "python _minify.py",
-    "regen": "python _gen_en_pages.py && python _gen_feeds.py",
+    "regen": "python _run_quality.py regen",
     "search-index": "python _gen_search_index.py",
     "graph": "python _knowledge_graph.py",
-    "build": "python _gen_en_pages.py && python _gen_feeds.py && python _gen_search_index.py && python _check_meta.py --fast && python _minify.py",
+    "build": "python _run_quality.py build",
+    "check": "python _run_quality.py check",
     "check-meta": "python _check_meta.py",
-    "check-meta-fast": "python _check_meta.py --fast"
+    "check-meta-fast": "python _check_meta.py --fast",
+    "check-meta-unique": "python _check_metadata_uniqueness.py",
+    "check-a11y": "python _check_static_a11y.py",
+    "check-inline-events": "python _check_inline_events.py",
+    "check-schema": "python _audit_jsonld.py",
+    "check-sitemap": "python _check_sitemap.py",
+    "check-links": "python _check_internal_links.py",
+    "check-index": "python _check_index_boundaries.py",
+    "check-pwa": "python _check_pwa.py",
+    "check-perf": "python _check_performance_budget.py",
+    "check-text": "python _check_text_integrity.py",
+    "check-en-links": "python _check_en_internal_links.py",
+    "check-third-party": "python _check_third_party.py",
+    "check-external-links": "python _check_external_links.py",
+    "check-buttons": "python _check_button_types.py",
+    "check-deploy": "python _check_deployment.py",
+    "check-api": "python _check_api_security.py",
+    "check-frontend-security": "python _check_frontend_security.py",
+    "check-secrets": "python _check_secrets.py",
+    "check-supply-chain": "python _check_supply_chain.py",
+    "check-js": "python _check_js_syntax.py",
+    "check-smoke": "python _check_runtime_smoke.py"
   },
   "dependencies": {
-    "web-push": "^3.6.7"
+    "web-push": "3.6.7"
   },
   "engines": {
     "node": ">=20"

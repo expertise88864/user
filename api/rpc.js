@@ -29,8 +29,30 @@ export const config = { runtime: 'edge' };
 
 const REPO = process.env.ADMIN_REPO || 'expertise88864/user';
 const BRANCH = process.env.ADMIN_BRANCH || 'main';
+const MAX_BATCH = 20;
+const ALLOWED_ORIGINS = new Set([
+  'https://chendermatologist.com',
+  'https://www.chendermatologist.com',
+]);
 
-function rpcResp(id, result, error) {
+function parseLimit(value, fallback = 8) {
+  const parsed = Number.parseInt(value, 10);
+  if (!Number.isFinite(parsed)) return fallback;
+  return Math.min(20, Math.max(1, parsed));
+}
+
+function corsHeaders(origin) {
+  const headers = {
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    'Access-Control-Max-Age': '86400',
+    Vary: 'Origin',
+  };
+  if (origin) headers['Access-Control-Allow-Origin'] = origin;
+  return headers;
+}
+
+function rpcResp(id, result, error, extraHeaders = {}) {
   const body = error
     ? { jsonrpc: '2.0', error, id: id == null ? null : id }
     : { jsonrpc: '2.0', result, id: id == null ? null : id };
@@ -38,9 +60,7 @@ function rpcResp(id, result, error) {
     status: error && error.code === -32700 ? 400 : 200,
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      ...extraHeaders,
     },
   });
 }
@@ -124,6 +144,13 @@ function getSession(req) {
 
 function isValidSlug(s) { return typeof s === 'string' && /^[a-z0-9-]{2,80}$/.test(s); }
 
+function rpcError(e) {
+  if (e && typeof e.code === 'number' && typeof e.message === 'string') {
+    return { code: e.code, message: e.message };
+  }
+  return { code: -32603, message: 'Internal error' };
+}
+
 // ─── Method registry ───
 const methods = {
   'site.health': async () => ({
@@ -133,7 +160,7 @@ const methods = {
   }),
 
   'articles.recent': async ({ n }) => {
-    const limit = Math.min(20, Math.max(1, n || 8));
+    const limit = parseLimit(n, 8);
     // Reuse /api/articles-recent logic via internal call
     const r = await fetch(`https://api.github.com/repos/${REPO}/contents/blog?ref=${BRANCH}`, {
       headers: { Accept: 'application/vnd.github+json' },
@@ -175,7 +202,7 @@ const methods = {
   },
 
   'stats.top': async ({ n }) => {
-    const limit = Math.min(20, Math.max(1, n || 10));
+    const limit = parseLimit(n, 10);
     // We'd need a sorted set in production; for now return empty.
     // To enable: replace kvIncr with kvZincrby into a `views:zset` sorted set,
     // then ZRANGE here.
@@ -184,28 +211,38 @@ const methods = {
 };
 
 export default async function handler(req) {
+  const origin = req.headers.get('origin') || '';
+  if (origin && !ALLOWED_ORIGINS.has(origin)) {
+    return new Response(JSON.stringify({ error: 'Forbidden origin' }), {
+      status: 403,
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        Vary: 'Origin',
+      },
+    });
+  }
+  const cors = corsHeaders(origin);
+
   // CORS preflight
   if (req.method === 'OPTIONS') {
     return new Response(null, {
       status: 204,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        'Access-Control-Max-Age': '86400',
-      },
+      headers: cors,
     });
   }
 
-  if (req.method !== 'POST') return rpcResp(null, null, { code: -32600, message: 'POST only' });
+  if (req.method !== 'POST') return rpcResp(null, null, { code: -32600, message: 'POST only' }, cors);
 
   let envelope;
   try { envelope = await req.json(); }
-  catch { return rpcResp(null, null, { code: -32700, message: 'Parse error' }); }
+  catch { return rpcResp(null, null, { code: -32700, message: 'Parse error' }, cors); }
 
   // Batch support
   const isBatch = Array.isArray(envelope);
   const calls = isBatch ? envelope : [envelope];
+  if (isBatch && (calls.length === 0 || calls.length > MAX_BATCH)) {
+    return rpcResp(null, null, { code: -32600, message: `Batch size must be 1..${MAX_BATCH}` }, cors);
+  }
   const ctx = { session: getSession(req) };
 
   const results = await Promise.all(calls.map(async (call) => {
@@ -220,8 +257,7 @@ export default async function handler(req) {
       const result = await fn(call.params || {}, ctx);
       return { jsonrpc: '2.0', result, id: call.id };
     } catch (e) {
-      const error = (e && typeof e.code === 'number') ? e : { code: -32603, message: String(e && e.message || e) };
-      return { jsonrpc: '2.0', error, id: call.id };
+      return { jsonrpc: '2.0', error: rpcError(e), id: call.id };
     }
   }));
 
@@ -230,7 +266,7 @@ export default async function handler(req) {
     status: 200,
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
-      'Access-Control-Allow-Origin': '*',
+      ...cors,
     },
   });
 }

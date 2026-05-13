@@ -11,11 +11,16 @@ export const config = { runtime: 'edge' };
 const REPO = process.env.ADMIN_REPO || 'expertise88864/user';
 const BRANCH = process.env.ADMIN_BRANCH || 'main';
 const MODEL = 'claude-3-5-haiku-20241022';
+const PAT_AUTH_RE = /^token\s+(?:gh[pousr]_[A-Za-z0-9_]{20,255}|github_pat_[A-Za-z0-9_]{20,255})$/;
 
-function jsonResp(status, obj) {
+function jsonResp(status, obj, extraHeaders) {
   return new Response(JSON.stringify(obj), {
     status,
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store',
+      ...(extraHeaders || {}),
+    },
   });
 }
 
@@ -36,9 +41,9 @@ const SYSTEM_PROMPT = `You are a Taiwan dermatology resident writing TL;DR summa
 Never wrap in code fences. Output only the JSON.`;
 
 export default async function handler(req) {
-  if (req.method !== 'POST') return jsonResp(405, { error: 'POST only' });
+  if (req.method !== 'POST') return jsonResp(405, { error: 'POST only' }, { Allow: 'POST' });
   const auth = req.headers.get('authorization') || '';
-  if (!/^token\s+gh[poas]_[A-Za-z0-9_]+/.test(auth)) {
+  if (!PAT_AUTH_RE.test(auth)) {
     return jsonResp(401, { error: 'Missing Authorization' });
   }
   const apiKey = process.env.ANTHROPIC_API_KEY;
@@ -76,15 +81,14 @@ export default async function handler(req) {
     }),
   });
   if (!aiResp.ok) {
-    const e = await aiResp.text();
-    return jsonResp(aiResp.status, { error: 'AI call failed', detail: e.slice(0, 300) });
+    return jsonResp(aiResp.status, { error: 'AI call failed' });
   }
   const ai = await aiResp.json();
   let raw = (ai.content && ai.content[0] && ai.content[0].text) || '{}';
   raw = raw.trim().replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '');
   let parsed;
   try { parsed = JSON.parse(raw); }
-  catch { return jsonResp(502, { error: 'AI returned non-JSON', raw: raw.slice(0, 200) }); }
+  catch { return jsonResp(502, { error: 'AI returned non-JSON' }); }
 
   return jsonResp(200, parsed);
 }

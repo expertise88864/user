@@ -22,6 +22,18 @@ const GITHUB_TOKEN = 'https://github.com/login/oauth/access_token';
 const SCOPES = 'repo,user';
 
 export default async function handler(req) {
+  if (req.method !== 'GET') {
+    return new Response('GET only', {
+      status: 405,
+      headers: { Allow: 'GET', 'Cache-Control': 'no-store' },
+    });
+  }
+  if (!process.env.OAUTH_CLIENT_ID || !process.env.OAUTH_CLIENT_SECRET) {
+    return new Response('OAuth is not configured', {
+      status: 503,
+      headers: { 'Cache-Control': 'no-store' },
+    });
+  }
   const url = new URL(req.url);
   const isCallback = url.pathname.endsWith('/callback');
 
@@ -39,6 +51,7 @@ export default async function handler(req) {
       headers: {
         Location: `${GITHUB_AUTHORIZE}?${params}`,
         'Set-Cookie': `oauth_state=${state}; Path=/api/auth; HttpOnly; Secure; SameSite=Lax; Max-Age=600`,
+        'Cache-Control': 'no-store',
       },
     });
   }
@@ -49,7 +62,10 @@ export default async function handler(req) {
   const cookie = req.headers.get('cookie') || '';
   const expected = (cookie.match(/oauth_state=([^;]+)/) || [])[1];
   if (!code || !state || state !== expected) {
-    return new Response('OAuth state mismatch', { status: 400 });
+    return new Response('OAuth state mismatch', {
+      status: 400,
+      headers: { 'Cache-Control': 'no-store' },
+    });
   }
   const tokenResp = await fetch(GITHUB_TOKEN, {
     method: 'POST',
@@ -63,24 +79,30 @@ export default async function handler(req) {
   const data = await tokenResp.json();
   const token = data.access_token;
   if (!token) {
-    return new Response(`OAuth failed: ${JSON.stringify(data)}`, { status: 400 });
+    return new Response('OAuth failed', {
+      status: 400,
+      headers: { 'Cache-Control': 'no-store' },
+    });
   }
   // Decap expects the popup to postMessage back with auth result
+  const targetOrigin = url.origin;
   const html = `<!doctype html><html><body><script>
     (function () {
+      var targetOrigin = ${JSON.stringify(targetOrigin)};
       function send (status, content) {
-        window.opener.postMessage('authorization:github:' + status + ':' + JSON.stringify(content), '*');
+        window.opener.postMessage('authorization:github:' + status + ':' + JSON.stringify(content), targetOrigin);
       }
       window.addEventListener('message', function (e) {
+        if (e.origin !== targetOrigin) return;
         if (e.data === 'authorizing:github') {
           send('success', { token: ${JSON.stringify(token)}, provider: 'github' });
         }
       }, false);
-      window.opener.postMessage('authorizing:github', '*');
+      window.opener.postMessage('authorizing:github', targetOrigin);
     })();
   </script><p>Authentication complete. You may close this tab.</p></body></html>`;
   return new Response(html, {
     status: 200,
-    headers: { 'Content-Type': 'text/html; charset=utf-8' },
+    headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' },
   });
 }

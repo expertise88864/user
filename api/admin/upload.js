@@ -27,6 +27,8 @@ export const config = { runtime: 'edge' };
 const REPO = process.env.ADMIN_REPO || 'expertise88864/user';
 const BRANCH = process.env.ADMIN_BRANCH || 'main';
 const MAX_BYTES = 8 * 1024 * 1024;  // 8 MB hard cap per upload
+const ALLOWED_FOLDERS = new Set(['assets/uploads', 'blog']);
+const PAT_AUTH_RE = /^token\s+(?:gh[pousr]_[A-Za-z0-9_]{20,255}|github_pat_[A-Za-z0-9_]{20,255})$/;
 
 function ymdSlug() {
   const d = new Date();
@@ -43,24 +45,27 @@ function pickExt(mime, filename) {
   if (m === 'image/jpeg' || m === 'image/jpg' || ext === 'jpg' || ext === 'jpeg') return 'jpg';
   if (m === 'image/webp' || ext === 'webp') return 'webp';
   if (m === 'image/avif' || ext === 'avif') return 'avif';
-  if (m === 'image/svg+xml' || ext === 'svg') return 'svg';
   if (m === 'image/gif' || ext === 'gif') return 'gif';
   return 'bin';
 }
 
-function jsonResp(status, obj) {
+function jsonResp(status, obj, extraHeaders) {
   return new Response(JSON.stringify(obj), {
     status,
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store',
+      ...(extraHeaders || {}),
+    },
   });
 }
 
 export default async function handler(req) {
-  if (req.method !== 'POST') return jsonResp(405, { error: 'POST only' });
+  if (req.method !== 'POST') return jsonResp(405, { error: 'POST only' }, { Allow: 'POST' });
 
   // Auth: PAT comes through Authorization header
   const auth = req.headers.get('authorization') || '';
-  if (!/^token\s+gh[poas]_[A-Za-z0-9_]+/.test(auth)) {
+  if (!PAT_AUTH_RE.test(auth)) {
     return jsonResp(401, { error: 'Missing or malformed Authorization header (need "token ghp_…")' });
   }
 
@@ -84,10 +89,16 @@ export default async function handler(req) {
 
   // Sanitize filename
   const ext = pickExt(mime, filename);
+  if (!['png', 'jpg', 'webp', 'avif', 'gif'].includes(ext)) {
+    return jsonResp(415, { error: 'Unsupported image type; use PNG, JPEG, WebP, AVIF, or GIF' });
+  }
   let safe = (filename || '').replace(/[^a-zA-Z0-9._-]/g, '-').replace(/-+/g, '-').replace(/^[-.]+/, '');
   if (!safe || !safe.includes('.')) safe = `img-${ymdSlug()}-${crypto.randomUUID().slice(0, 6)}.${ext}`;
 
   const safeFolder = (folder || 'assets/uploads').replace(/^\/+|\/+$/g, '').replace(/\.\./g, '');
+  if (!ALLOWED_FOLDERS.has(safeFolder)) {
+    return jsonResp(400, { error: 'Invalid folder; uploads must target assets/uploads or blog' });
+  }
   const path = `${safeFolder}/${safe}`;
 
   // Use GitHub Contents API: PUT /repos/:owner/:repo/contents/:path
@@ -121,7 +132,7 @@ export default async function handler(req) {
     body: JSON.stringify(commitBody),
   });
   const result = await put.json();
-  if (!put.ok) return jsonResp(put.status, { error: 'GitHub upload failed', detail: result });
+  if (!put.ok) return jsonResp(put.status, { error: 'GitHub upload failed' });
 
   return jsonResp(200, {
     url: `/${path}`,

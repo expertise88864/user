@@ -1,0 +1,1189 @@
+/* ChenDermatologist medical diagram bundle. Loaded on demand by blog-shared.js. */
+(function () {
+  var DN = (window.DN = window.DN || {});
+
+  DN.medDiagrams = {
+
+    // Acne pathogenesis — 4-step funnel (Gollnick 2003 / Williams 2012 / AAD 2024)
+    'acne-pathogenesis': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 960 640" xmlns="http://www.w3.org/2000/svg" aria-labelledby="acne-path-title">' +
+        '<title id="acne-path-title">痤瘡四大致病機轉</title>' +
+        '<rect width="960" height="640" fill="#faf7f2" rx="10"/>' +
+        '<text x="480" y="52" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="40" font-weight="700" fill="#0c5159">痤瘡 4 大致病機轉</text>' +
+        // Step 1
+        '<g transform="translate(30 110)"><circle cx="100" cy="100" r="92" fill="#fef9c3" stroke="#854d0e" stroke-width="3"/>' +
+        '<text x="100" y="76" text-anchor="middle" font-family="Inter" font-size="44" font-weight="800" fill="#854d0e">①</text>' +
+        '<text x="100" y="118" text-anchor="middle" font-family="Noto Sans TC" font-size="34" font-weight="700" fill="#854d0e">皮脂分泌</text>' +
+        '<text x="100" y="158" text-anchor="middle" font-family="Noto Sans TC" font-size="34" font-weight="700" fill="#854d0e">增加</text>' +
+        '<text x="100" y="234" text-anchor="middle" font-family="Inter" font-size="22" fill="#5e574e">Sebum (androgen)</text></g>' +
+        '<path d="M222 210 L258 210" stroke="#4d6358" stroke-width="5" marker-end="url(#arrow)"/>' +
+        // Step 2
+        '<g transform="translate(260 110)"><circle cx="100" cy="100" r="92" fill="#fed7aa" stroke="#9a3412" stroke-width="3"/>' +
+        '<text x="100" y="76" text-anchor="middle" font-family="Inter" font-size="44" font-weight="800" fill="#9a3412">②</text>' +
+        '<text x="100" y="118" text-anchor="middle" font-family="Noto Sans TC" font-size="34" font-weight="700" fill="#9a3412">毛囊角化</text>' +
+        '<text x="100" y="158" text-anchor="middle" font-family="Noto Sans TC" font-size="34" font-weight="700" fill="#9a3412">異常</text>' +
+        '<text x="100" y="234" text-anchor="middle" font-family="Inter" font-size="22" fill="#5e574e">Comedo formation</text></g>' +
+        '<path d="M452 210 L488 210" stroke="#4d6358" stroke-width="5" marker-end="url(#arrow)"/>' +
+        // Step 3
+        '<g transform="translate(490 110)"><circle cx="100" cy="100" r="92" fill="#fee2e2" stroke="#991b1b" stroke-width="3"/>' +
+        '<text x="100" y="76" text-anchor="middle" font-family="Inter" font-size="44" font-weight="800" fill="#991b1b">③</text>' +
+        '<text x="100" y="120" text-anchor="middle" font-family="Inter" font-size="28" font-weight="700" font-style="italic" fill="#991b1b">C. acnes</text>' +
+        '<text x="100" y="160" text-anchor="middle" font-family="Noto Sans TC" font-size="34" font-weight="700" fill="#991b1b">增生</text>' +
+        '<text x="100" y="234" text-anchor="middle" font-family="Inter" font-size="22" fill="#5e574e">Bacterial proliferation</text></g>' +
+        '<path d="M682 210 L718 210" stroke="#4d6358" stroke-width="5" marker-end="url(#arrow)"/>' +
+        // Step 4
+        '<g transform="translate(720 110)"><circle cx="100" cy="100" r="92" fill="#dc2626" stroke="#7f1d1d" stroke-width="3"/>' +
+        '<text x="100" y="76" text-anchor="middle" font-family="Inter" font-size="44" font-weight="800" fill="#fff">④</text>' +
+        '<text x="100" y="118" text-anchor="middle" font-family="Noto Sans TC" font-size="34" font-weight="700" fill="#fff">免疫發炎</text>' +
+        '<text x="100" y="158" text-anchor="middle" font-family="Noto Sans TC" font-size="34" font-weight="700" fill="#fff">反應</text>' +
+        '<text x="100" y="234" text-anchor="middle" font-family="Inter" font-size="20" fill="#5e574e">IL-1β / TLR2 / Th17</text></g>' +
+        // Drug action labels — bumped to 28px
+        '<text x="130" y="408" text-anchor="middle" font-family="Inter" font-size="28" font-weight="700" fill="#0c5159">↓ Isotretinoin</text>' +
+        '<text x="130" y="446" text-anchor="middle" font-family="Noto Sans TC" font-size="28" font-weight="700" fill="#0c5159">抗雄性素</text>' +
+        '<text x="360" y="408" text-anchor="middle" font-family="Inter" font-size="28" font-weight="700" fill="#0c5159">↓ Retinoids</text>' +
+        '<text x="360" y="446" text-anchor="middle" font-family="Noto Sans TC" font-size="28" font-weight="700" fill="#0c5159">角質溶解</text>' +
+        '<text x="590" y="408" text-anchor="middle" font-family="Inter" font-size="28" font-weight="700" fill="#0c5159">↓ BPO</text>' +
+        '<text x="590" y="446" text-anchor="middle" font-family="Noto Sans TC" font-size="28" font-weight="700" fill="#0c5159">抗生素</text>' +
+        '<text x="820" y="408" text-anchor="middle" font-family="Inter" font-size="28" font-weight="700" fill="#0c5159">↓ Anti-IL</text>' +
+        '<text x="820" y="446" text-anchor="middle" font-family="Noto Sans TC" font-size="28" font-weight="700" fill="#0c5159">杜鵑花酸</text>' +
+        // Vertical dashed connectors
+        '<line x1="130" y1="312" x2="130" y2="386" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
+        '<line x1="360" y1="312" x2="360" y2="386" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
+        '<line x1="590" y1="312" x2="590" y2="386" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
+        '<line x1="820" y1="312" x2="820" y2="386" stroke="#4d6358" stroke-width="2" stroke-dasharray="5 5"/>' +
+        // Bottom note
+        '<text x="480" y="540" text-anchor="middle" font-family="Noto Sans TC" font-size="26" fill="#5e574e">每個機轉對應不同藥物 — 中重度痘痘建議「組合治療」</text>' +
+        '<text x="480" y="600" text-anchor="middle" font-family="Inter" font-size="18" fill="#8b8378">Source: AAD 2024 acne guideline · Dreno 2018 EADV consensus</text>' +
+        '<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#4d6358"/></marker></defs>' +
+        '</svg><figcaption>圖 1。痤瘡 4 大致病機轉與藥物作用點（Gollnick 2003；Williams Lancet 2012；AAD 2024）</figcaption></figure>';
+    },
+
+    // BPO mechanism — peroxide + porphyrin → free radical → bacteria kill
+    'bpo-mechanism': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 960 640" xmlns="http://www.w3.org/2000/svg" aria-labelledby="bpo-title">' +
+        '<title id="bpo-title">過氧化苯醯(BPO)殺菌機轉</title>' +
+        '<rect width="960" height="640" fill="#faf7f2" rx="10"/>' +
+        '<text x="480" y="48" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="30" font-weight="700" fill="#0c5159">過氧化苯醯 BPO 為何能殺菌</text>' +
+        '<text x="480" y="84" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">(且不像抗生素產生抗藥性)</text>' +
+        // Box 1 — BPO  (taller boxes 150 + arrow labels positioned above arrow line)
+        '<g transform="translate(30 140)"><rect x="0" y="0" width="200" height="150" rx="14" fill="#cffafe" stroke="#0c5159" stroke-width="2.5"/>' +
+        '<text x="100" y="56" text-anchor="middle" font-family="Inter" font-size="32" font-weight="800" fill="#0c5159">BPO</text>' +
+        '<text x="100" y="92" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">過氧化苯醯</text>' +
+        '<text x="100" y="124" text-anchor="middle" font-family="Inter" font-size="18" fill="#5e574e">2.5–10%</text></g>' +
+        // Arrow 1 — label MOVED ABOVE arrow with clear gap
+        '<text x="264" y="200" text-anchor="middle" font-family="Noto Sans TC" font-size="17" fill="#4d6358">+ 半胱胺酸</text>' +
+        '<path d="M242 220 L286 220" stroke="#4d6358" stroke-width="4" marker-end="url(#arrow2)"/>' +
+        // Box 2 — ROS
+        '<g transform="translate(290 140)"><rect x="0" y="0" width="220" height="150" rx="14" fill="#fed7aa" stroke="#9a3412" stroke-width="2.5"/>' +
+        '<text x="110" y="56" text-anchor="middle" font-family="Inter" font-size="24" font-weight="800" fill="#9a3412">苯甲酸 → ·OH</text>' +
+        '<text x="110" y="92" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">自由基產生</text>' +
+        '<text x="110" y="124" text-anchor="middle" font-family="Inter" font-size="17" fill="#5e574e">(ROS、活性氧)</text></g>' +
+        // Arrow 2
+        '<text x="542" y="200" text-anchor="middle" font-family="Noto Sans TC" font-size="17" fill="#4d6358">氧化攻擊</text>' +
+        '<path d="M520 220 L564 220" stroke="#4d6358" stroke-width="4" marker-end="url(#arrow2)"/>' +
+        // Box 3 — bacteria membrane
+        '<g transform="translate(570 140)"><rect x="0" y="0" width="240" height="150" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>' +
+        '<text x="120" y="56" text-anchor="middle" font-family="Noto Sans TC" font-size="24" font-weight="800" fill="#dc2626">細菌膜破壞</text>' +
+        '<text x="120" y="92" text-anchor="middle" font-family="Inter" font-size="20" font-style="italic" fill="#5e574e">C. acnes</text>' +
+        '<text x="120" y="124" text-anchor="middle" font-family="Inter" font-size="17" fill="#5e574e">蛋白質 / DNA 氧化</text></g>' +
+        // Arrow 3
+        '<path d="M820 220 L864 220" stroke="#4d6358" stroke-width="4" marker-end="url(#arrow2)"/>' +
+        // Box 4 — kill / no resistance
+        '<g transform="translate(870 140)"><rect x="0" y="0" width="80" height="150" rx="14" fill="#dcfce7" stroke="#14532d" stroke-width="2.5"/>' +
+        '<text x="40" y="78" text-anchor="middle" font-family="Noto Sans TC" font-size="22" font-weight="800" fill="#14532d">殺菌</text>' +
+        '<text x="40" y="108" text-anchor="middle" font-family="Noto Sans TC" font-size="14" fill="#5e574e">無抗藥</text></g>' +
+        // Explanation card — generously sized & taller for bigger fonts
+        '<rect x="50" y="350" width="860" height="220" rx="14" fill="#fff" stroke="#a5f3fc" stroke-width="2"/>' +
+        '<text x="480" y="396" text-anchor="middle" font-family="Noto Sans TC" font-size="26" font-weight="700" fill="#0c5159">為什麼 BPO 不會產生抗藥性?</text>' +
+        '<text x="480" y="436" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">BPO 的「自由基」是非特異性氧化攻擊、</text>' +
+        '<text x="480" y="468" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">細菌無法演化出單一靶點突變來抵抗。</text>' +
+        '<text x="480" y="510" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">因此它常用來「搭配」抗生素以降低抗生素抗藥率。</text>' +
+        '<text x="480" y="544" text-anchor="middle" font-family="Inter" font-size="15" fill="#8b8378">(Plewig &amp; Kligman, 2024)</text>' +
+        '<text x="480" y="610" text-anchor="middle" font-family="Inter" font-size="16" fill="#8b8378">Source: Sagransky JAAD 2009 · Plewig Acne 4th ed 2024 · BPO 2.5% ≈ 5% 同效但耐受佳</text>' +
+        '<defs><marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#4d6358"/></marker></defs>' +
+        '</svg><figcaption>圖 2。BPO 的自由基殺菌機轉 — 為何單用 BPO 不會產生抗藥性、且能搭配抗生素降低抗藥率</figcaption></figure>';
+    },
+
+    // UV penetration depth — UVA / UVB / visible light
+    'uv-penetration': function () {
+      // Layout: cards (top) → semi-transparent skin layers (middle, drawn FIRST) →
+      // arrows DRAWN LAST so the arrowhead is visible inside the skin layers.
+      // Skin layers translate(60 160), heights 60/120/80 = 260 total → ends at y=420
+      // Cards centered at y=58 (rect 0-66) so arrows start at y=86
+      // UVB → ends at y=200 (well into Epidermis 160-220)
+      // UVA → ends at y=300 (deep in Dermis 220-340)
+      // Visible → ends at y=395 (deep in Subcutis 340-420)
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" aria-labelledby="uv-title">' +
+        '<title id="uv-title">UV 光波長與皮膚穿透深度</title>' +
+        '<rect width="960" height="540" fill="#faf7f2" rx="10"/>' +
+        '<text x="480" y="36" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="22" font-weight="700" fill="#0c5159">UV 光波長與皮膚穿透深度</text>' +
+        // ───── Top row: 3 wavelength info cards ─────
+        '<g transform="translate(60 60)">' +
+        '<rect x="0" y="0" width="260" height="62" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>' +
+        '<text x="130" y="26" text-anchor="middle" font-family="Inter" font-size="18" font-weight="800" fill="#7c3aed">UVB</text>' +
+        '<text x="130" y="50" text-anchor="middle" font-family="Inter" font-size="15" fill="#5e574e">280-315 nm · 表皮為主</text>' +
+        '</g>' +
+        '<g transform="translate(350 60)">' +
+        '<rect x="0" y="0" width="260" height="62" rx="10" fill="#cffafe" stroke="#0c5159" stroke-width="2"/>' +
+        '<text x="130" y="26" text-anchor="middle" font-family="Inter" font-size="18" font-weight="800" fill="#0c5159">UVA</text>' +
+        '<text x="130" y="50" text-anchor="middle" font-family="Inter" font-size="15" fill="#5e574e">315-400 nm · 穿到真皮</text>' +
+        '</g>' +
+        '<g transform="translate(640 60)">' +
+        '<rect x="0" y="0" width="260" height="62" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
+        '<text x="130" y="26" text-anchor="middle" font-family="Inter" font-size="18" font-weight="800" fill="#dc2626">可見光</text>' +
+        '<text x="130" y="50" text-anchor="middle" font-family="Inter" font-size="15" fill="#5e574e">400-700 nm · 穿透更深</text>' +
+        '</g>' +
+        // ───── Skin cross-section (drawn FIRST so arrows render on top) ─────
+        '<g transform="translate(60 160)">' +
+        '<rect x="0" y="0" width="840" height="60" fill="#fde68a" stroke="#4d6358" stroke-width="1.8"/>' +
+        '<text x="16" y="36" font-family="Noto Sans TC" font-size="16" font-weight="700" fill="#854d0e">表皮 Epidermis</text>' +
+        '<text x="824" y="36" text-anchor="end" font-family="Inter" font-size="14" fill="#5e574e">~ 0.05-0.15 mm</text>' +
+        '<rect x="0" y="60" width="840" height="120" fill="#fed7aa" stroke="#4d6358" stroke-width="1.8"/>' +
+        '<text x="16" y="124" font-family="Noto Sans TC" font-size="16" font-weight="700" fill="#9a3412">真皮 Dermis</text>' +
+        '<text x="824" y="124" text-anchor="end" font-family="Inter" font-size="14" fill="#5e574e">~ 1-3 mm (膠原、彈性纖維、微血管)</text>' +
+        '<rect x="0" y="180" width="840" height="80" fill="#fee2e2" stroke="#4d6358" stroke-width="1.8"/>' +
+        '<text x="16" y="226" font-family="Noto Sans TC" font-size="16" font-weight="700" fill="#7f1d1d">皮下組織</text>' +
+        '<text x="824" y="226" text-anchor="end" font-family="Inter" font-size="14" fill="#5e574e">脂肪、神經血管</text>' +
+        '</g>' +
+        // ───── Penetration arrows (DRAWN LAST so visible on top of skin layers) ─────
+        // y=125 (just below cards) down to varying depths inside skin
+        '<line x1="190" y1="125" x2="190" y2="200" stroke="#7c3aed" stroke-width="5" marker-end="url(#arrowU)" opacity="0.95"/>' +
+        '<line x1="480" y1="125" x2="480" y2="305" stroke="#0c5159" stroke-width="5" marker-end="url(#arrowU)" opacity="0.95"/>' +
+        '<line x1="770" y1="125" x2="770" y2="395" stroke="#dc2626" stroke-width="5" marker-end="url(#arrowU)" opacity="0.95"/>' +
+        // ───── Outcome labels under skin layers ─────
+        '<text x="190" y="448" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="700" fill="#7c3aed">→ 曬傷、皮膚癌</text>' +
+        '<text x="480" y="448" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="700" fill="#0c5159">→ 光老化、肝斑</text>' +
+        '<text x="770" y="448" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="700" fill="#dc2626">→ 加重肝斑</text>' +
+        // ───── Bottom note ─────
+        '<text x="480" y="488" text-anchor="middle" font-family="Noto Sans TC" font-size="15" font-weight="700" fill="#0c5159">關鍵:UVA 占地表 UV 95%、但傳統 SPF 只測 UVB → 一定要看 PA 或 Broad-spectrum 標示</text>' +
+        '<text x="480" y="520" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Diffey BJD 2002 · Mahmoud JAAD 2010 · Liebel JID 2012 (visible light &amp; melasma)</text>' +
+        '<defs><marker id="arrowU" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="currentColor"/></marker></defs>' +
+        '</svg><figcaption>圖。UV 波長越長 → 穿透越深;UVA 與可見光是肝斑與光老化主因、需要 broad-spectrum 防曬</figcaption></figure>';
+    },
+
+    // SPF efficacy curve — % UV blocked vs SPF number
+    'spf-curve': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" aria-labelledby="spf-title">' +
+        '<title id="spf-title">SPF 與 UV 阻擋百分比的非線性關係</title>' +
+        '<rect width="720" height="320" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">SPF 越高效益遞減 — 為什麼 SPF 30 vs 50 差不多</text>' +
+        // Axes
+        '<g transform="translate(80 60)">' +
+        '<line x1="0" y1="200" x2="500" y2="200" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<line x1="0" y1="0" x2="0" y2="200" stroke="#0f172a" stroke-width="1.5"/>' +
+        // X labels
+        '<text x="0" y="220" font-family="Inter" font-size="13" fill="#5e574e">0</text>' +
+        '<text x="100" y="220" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">SPF 15</text>' +
+        '<text x="200" y="220" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">SPF 30</text>' +
+        '<text x="300" y="220" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">SPF 50</text>' +
+        '<text x="400" y="220" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">SPF 100</text>' +
+        '<text x="250" y="245" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">SPF 數字</text>' +
+        // Y labels
+        '<text x="-20" y="0" text-anchor="end" font-family="Inter" font-size="13" fill="#5e574e">100%</text>' +
+        '<text x="-20" y="50" text-anchor="end" font-family="Inter" font-size="13" fill="#5e574e">99%</text>' +
+        '<text x="-20" y="100" text-anchor="end" font-family="Inter" font-size="13" fill="#5e574e">97%</text>' +
+        '<text x="-20" y="150" text-anchor="end" font-family="Inter" font-size="13" fill="#5e574e">93%</text>' +
+        '<text x="-20" y="200" text-anchor="end" font-family="Inter" font-size="13" fill="#5e574e">0%</text>' +
+        // Grid
+        '<line x1="0" y1="50" x2="500" y2="50" stroke="#dcd5c8" stroke-width="0.5" stroke-dasharray="3 3"/>' +
+        '<line x1="0" y1="100" x2="500" y2="100" stroke="#dcd5c8" stroke-width="0.5" stroke-dasharray="3 3"/>' +
+        '<line x1="0" y1="150" x2="500" y2="150" stroke="#dcd5c8" stroke-width="0.5" stroke-dasharray="3 3"/>' +
+        // Curve: SPF 15→93%, SPF 30→97%, SPF 50→98%, SPF 100→99%
+        // Y-axis: 200 = 0%, 0 = 100%; 93%→14, 97%→6, 98%→4, 99%→2
+        '<path d="M 0 200 Q 50 60 100 14 Q 150 8 200 6 Q 250 5 300 4 Q 350 3 400 2 L 500 2" fill="none" stroke="#0c5159" stroke-width="2.5"/>' +
+        // Data points
+        '<circle cx="100" cy="14" r="5" fill="#fde68a" stroke="#854d0e" stroke-width="2"/><text x="100" y="-5" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">93%</text>' +
+        '<circle cx="200" cy="6" r="5" fill="#86efac" stroke="#14532d" stroke-width="2"/><text x="200" y="-5" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">97%</text>' +
+        '<circle cx="300" cy="4" r="5" fill="#86efac" stroke="#14532d" stroke-width="2"/><text x="300" y="-5" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">98%</text>' +
+        '<circle cx="400" cy="2" r="5" fill="#86efac" stroke="#14532d" stroke-width="2"/><text x="400" y="-5" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">99%</text>' +
+        '</g>' +
+        '<text x="360" y="295" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">SPF 30→50 只多擋 1%，但價格 / 質地通常差很多 → 厚度才是關鍵(2 mg/cm² 標準）</text>' +
+        '<text x="360" y="312" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Schalka 2011 BJD · Bimczok 2007 IPS standard application thickness</text>' +
+        '</svg><figcaption>圖. SPF 與 UV 阻擋率的對數關係 — 厚度比 SPF 數字更重要</figcaption></figure>';
+    },
+
+    // Skin barrier diagram — epidermal layers + filaggrin / ceramide
+    'skin-barrier': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" aria-labelledby="barrier-title">' +
+        '<title id="barrier-title">皮膚屏障結構與異膚 / 乾癬的差異</title>' +
+        '<rect width="720" height="360" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">皮膚屏障 (Stratum Corneum) — 磚牆模型</text>' +
+        // Brick wall — normal
+        '<g transform="translate(40 60)">' +
+        '<text x="160" y="0" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#14532d">正常皮膚</text>' +
+        // Bricks (corneocyte) and mortar (lipid)
+        '<rect x="0" y="20" width="320" height="180" fill="#fde68a" stroke="#854d0e" stroke-width="1"/>' +
+        // Bricks layer 1
+        '<rect x="10" y="30" width="60" height="20" fill="#fef3c7" stroke="#854d0e" stroke-width="1"/>' +
+        '<rect x="80" y="30" width="60" height="20" fill="#fef3c7" stroke="#854d0e" stroke-width="1"/>' +
+        '<rect x="150" y="30" width="60" height="20" fill="#fef3c7" stroke="#854d0e" stroke-width="1"/>' +
+        '<rect x="220" y="30" width="60" height="20" fill="#fef3c7" stroke="#854d0e" stroke-width="1"/>' +
+        // Layer 2 offset
+        '<rect x="-25" y="55" width="60" height="20" fill="#fef3c7" stroke="#854d0e" stroke-width="1"/>' +
+        '<rect x="45" y="55" width="60" height="20" fill="#fef3c7" stroke="#854d0e" stroke-width="1"/>' +
+        '<rect x="115" y="55" width="60" height="20" fill="#fef3c7" stroke="#854d0e" stroke-width="1"/>' +
+        '<rect x="185" y="55" width="60" height="20" fill="#fef3c7" stroke="#854d0e" stroke-width="1"/>' +
+        '<rect x="255" y="55" width="60" height="20" fill="#fef3c7" stroke="#854d0e" stroke-width="1"/>' +
+        // Layer 3
+        '<rect x="10" y="80" width="60" height="20" fill="#fef3c7" stroke="#854d0e" stroke-width="1"/>' +
+        '<rect x="80" y="80" width="60" height="20" fill="#fef3c7" stroke="#854d0e" stroke-width="1"/>' +
+        '<rect x="150" y="80" width="60" height="20" fill="#fef3c7" stroke="#854d0e" stroke-width="1"/>' +
+        '<rect x="220" y="80" width="60" height="20" fill="#fef3c7" stroke="#854d0e" stroke-width="1"/>' +
+        '<text x="160" y="155" text-anchor="middle" font-family="Inter" font-size="13" fill="#854d0e">磚 = 角化細胞 (filaggrin OK)</text>' +
+        '<text x="160" y="175" text-anchor="middle" font-family="Inter" font-size="13" fill="#854d0e">水泥 = 神經醯胺 (ceramide)</text>' +
+        '<text x="160" y="220" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">水分 + 過敏原 ✓ 阻隔</text>' +
+        '</g>' +
+        // Brick wall — eczema (broken)
+        '<g transform="translate(390 60)">' +
+        '<text x="160" y="0" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#9a3412">異位性皮膚炎</text>' +
+        '<rect x="0" y="20" width="320" height="180" fill="#fee2e2" stroke="#7f1d1d" stroke-width="1"/>' +
+        // Broken bricks (smaller, gaps)
+        '<rect x="10" y="30" width="40" height="14" fill="#fef3c7" stroke="#9a3412" stroke-width="0.7"/>' +
+        '<rect x="80" y="30" width="40" height="14" fill="#fef3c7" stroke="#9a3412" stroke-width="0.7"/>' +
+        // gap
+        '<rect x="180" y="30" width="40" height="14" fill="#fef3c7" stroke="#9a3412" stroke-width="0.7"/>' +
+        '<rect x="240" y="30" width="40" height="14" fill="#fef3c7" stroke="#9a3412" stroke-width="0.7"/>' +
+        // Big gap arrow (water loss)
+        '<path d="M125 50 L 145 70" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowB)"/>' +
+        '<text x="158" y="78" font-family="Inter" font-size="13" fill="#dc2626">→ TEWL 增加</text>' +
+        // Allergens entering
+        '<path d="M150 5 L 150 25" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3" marker-end="url(#arrowB)"/>' +
+        '<text x="160" y="14" font-family="Inter" font-size="13" fill="#dc2626">過敏原進入</text>' +
+        // More layers
+        '<rect x="-15" y="55" width="40" height="14" fill="#fef3c7" stroke="#9a3412" stroke-width="0.7"/>' +
+        '<rect x="55" y="55" width="40" height="14" fill="#fef3c7" stroke="#9a3412" stroke-width="0.7"/>' +
+        '<rect x="125" y="55" width="40" height="14" fill="#fef3c7" stroke="#9a3412" stroke-width="0.7"/>' +
+        '<rect x="195" y="55" width="40" height="14" fill="#fef3c7" stroke="#9a3412" stroke-width="0.7"/>' +
+        '<rect x="265" y="55" width="40" height="14" fill="#fef3c7" stroke="#9a3412" stroke-width="0.7"/>' +
+        '<text x="160" y="155" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">filaggrin 突變 → 磚變小</text>' +
+        '<text x="160" y="175" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">ceramide 減少 → 水泥不足</text>' +
+        '<text x="160" y="220" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#dc2626">水分 ↓ 過敏原 ↑（惡性循環）</text>' +
+        '</g>' +
+        '<text x="360" y="295" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">為什麼異膚要每天大量保濕？</text>' +
+        '<text x="360" y="315" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">補回 ceramide / 鎖水 / 阻隔過敏原 = 重建磚牆。光控發炎不修屏障 → 反覆復發。</text>' +
+        '<text x="360" y="343" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Elias 2014 · Werfel 2024 S3 AD guideline · McGrath JID 2008 (filaggrin)</text>' +
+        '<defs><marker id="arrowB" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#dc2626"/></marker></defs>' +
+        '</svg><figcaption>圖. 皮膚屏障磚牆模型 — 異膚 = 磚變小 + 水泥不足 → 水分流失 + 過敏原入侵</figcaption></figure>';
+    },
+
+    // Hair growth cycle
+    'hair-cycle': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" aria-labelledby="hair-title">' +
+        '<title id="hair-title">毛髮生長三期</title>' +
+        '<rect width="720" height="280" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">毛髮生長 3 期 — 為什麼藥要連續吃 6 個月才有效</text>' +
+        // Anagen (growth)
+        '<g transform="translate(60 65)">' +
+        '<rect x="0" y="0" width="180" height="160" fill="#dcfce7" stroke="#14532d" stroke-width="1.5" rx="10"/>' +
+        '<text x="90" y="25" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">Anagen 生長期</text>' +
+        '<line x1="90" y1="50" x2="90" y2="120" stroke="#0f172a" stroke-width="3"/>' +
+        '<circle cx="90" cy="125" r="6" fill="#0f172a"/>' +
+        '<text x="90" y="148" text-anchor="middle" font-family="Inter" font-size="13" fill="#14532d">85–90% 毛囊</text>' +
+        '<text x="90" y="155" text-anchor="middle" font-family="Inter" font-size="13" fill="#14532d">2–7 年</text>' +
+        '</g>' +
+        '<path d="M250 145 L 290 145" stroke="#4d6358" stroke-width="2" marker-end="url(#arrowH)"/>' +
+        // Catagen
+        '<g transform="translate(290 100)">' +
+        '<rect x="0" y="0" width="120" height="90" fill="#fef9c3" stroke="#854d0e" stroke-width="1.5" rx="10"/>' +
+        '<text x="60" y="25" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">Catagen 退化期</text>' +
+        '<text x="60" y="55" text-anchor="middle" font-family="Inter" font-size="13" fill="#854d0e">~ 1% 毛囊</text>' +
+        '<text x="60" y="73" text-anchor="middle" font-family="Inter" font-size="13" fill="#854d0e">2–3 週</text>' +
+        '</g>' +
+        '<path d="M420 145 L 460 145" stroke="#4d6358" stroke-width="2" marker-end="url(#arrowH)"/>' +
+        // Telogen
+        '<g transform="translate(460 65)">' +
+        '<rect x="0" y="0" width="180" height="160" fill="#fee2e2" stroke="#9a3412" stroke-width="1.5" rx="10"/>' +
+        '<text x="90" y="25" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#9a3412">Telogen 休止期</text>' +
+        '<line x1="90" y1="50" x2="90" y2="80" stroke="#0f172a" stroke-width="3"/>' +
+        '<circle cx="90" cy="85" r="4" fill="#0f172a"/>' +
+        '<text x="90" y="120" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">10–15% 毛囊</text>' +
+        '<text x="90" y="138" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">3 個月</text>' +
+        '<text x="90" y="155" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">→ 自然脫落</text>' +
+        '</g>' +
+        // Loop arrow
+        '<path d="M580 145 Q 660 145 660 180 Q 660 240 360 240 Q 60 240 60 180 Q 60 145 140 145" fill="none" stroke="#a4b5a8" stroke-width="1.5" stroke-dasharray="5 5"/>' +
+        '<text x="360" y="265" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Paus & Cotsarelis NEJM 1999 · Olsen 2025 LDOM Consensus</text>' +
+        '<defs><marker id="arrowH" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#4d6358"/></marker></defs>' +
+        '</svg><figcaption>圖. 毛髮 3 期 — Minoxidil/Finasteride 把 telogen 推回 anagen，需要 6 個月才看到統計學顯著差異</figcaption></figure>';
+    },
+
+    // Topical steroid potency ladder — 2026-05-08 redesigned: each bar uses
+    // two text rows (label+drugs / use-case) to eliminate horizontal overlap
+    // when SVG text was bumped to font-size 13 for readability.
+    'tcs-potency': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" aria-labelledby="tcs-title">' +
+        '<title id="tcs-title">外用類固醇強度階梯</title>' +
+        '<rect width="760" height="460" fill="#faf7f2" rx="10"/>' +
+        '<text x="380" y="32" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="18" font-weight="700" fill="#0c5159">外用類固醇 7 級強度階梯(美國分類)</text>' +
+        // Side label arrow + 強/弱
+        '<text x="42" y="100" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#7f1d1d">強</text>' +
+        '<line x1="48" y1="108" x2="48" y2="288" stroke="#9a3412" stroke-width="1.5" stroke-dasharray="3,3"/>' +
+        '<polygon points="44,290 52,290 48,300" fill="#9a3412"/>' +
+        '<text x="42" y="318" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#14532d">弱</text>' +
+        // Ladder bars (2-row layout per class)
+        '<g transform="translate(80 70)">' +
+          // Row 1: Class I
+          '<g><rect x="0" y="0" width="600" height="58" fill="#fee2e2" stroke="#7f1d1d" stroke-width="1.2" rx="3"/>' +
+            '<text x="14" y="22" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">Class I  超強(highest potency)</text>' +
+            '<text x="14" y="46" font-family="Inter" font-size="13" fill="#5e574e">Clobetasol 0.05% · Halobetasol 0.05%</text>' +
+            '<text x="586" y="22" text-anchor="end" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">≤ 2 週短期</text>' +
+            '<text x="586" y="46" text-anchor="end" font-family="Inter" font-size="13" fill="#7f1d1d">重度乾癬 / 苔癬化掌蹠</text>' +
+          '</g>' +
+          // Row 2: Class II-III
+          '<g transform="translate(0 64)"><rect x="0" y="0" width="600" height="58" fill="#fed7aa" stroke="#9a3412" stroke-width="1.2" rx="3"/>' +
+            '<text x="14" y="22" font-family="Inter" font-size="13" font-weight="700" fill="#9a3412">Class II–III  強(high potency)</text>' +
+            '<text x="14" y="46" font-family="Inter" font-size="13" fill="#5e574e">Betamethasone diprop. 0.05% · Mometasone 0.1%</text>' +
+            '<text x="586" y="22" text-anchor="end" font-family="Inter" font-size="13" font-weight="700" fill="#9a3412">≤ 4 週</text>' +
+            '<text x="586" y="46" text-anchor="end" font-family="Inter" font-size="13" fill="#9a3412">軀幹 / 四肢慢性</text>' +
+          '</g>' +
+          // Row 3: Class IV-V
+          '<g transform="translate(0 128)"><rect x="0" y="0" width="600" height="58" fill="#fef9c3" stroke="#854d0e" stroke-width="1.2" rx="3"/>' +
+            '<text x="14" y="22" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">Class IV–V  中強(medium potency)</text>' +
+            '<text x="14" y="46" font-family="Inter" font-size="13" fill="#5e574e">Triamcinolone 0.1% · Fluticasone 0.05%</text>' +
+            '<text x="586" y="22" text-anchor="end" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">日常一線</text>' +
+            '<text x="586" y="46" text-anchor="end" font-family="Inter" font-size="13" fill="#854d0e">四肢 / 軀幹</text>' +
+          '</g>' +
+          // Row 4: Class VI-VII
+          '<g transform="translate(0 192)"><rect x="0" y="0" width="600" height="58" fill="#dcfce7" stroke="#14532d" stroke-width="1.2" rx="3"/>' +
+            '<text x="14" y="22" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">Class VI–VII  弱(low potency)</text>' +
+            '<text x="14" y="46" font-family="Inter" font-size="13" fill="#5e574e">Hydrocortisone 1–2.5% · Desonide 0.05%</text>' +
+            '<text x="586" y="22" text-anchor="end" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">長期亦安全</text>' +
+            '<text x="586" y="46" text-anchor="end" font-family="Inter" font-size="13" fill="#14532d">臉 / 眼周 / 嬰兒</text>' +
+          '</g>' +
+        '</g>' +
+        // Bottom guidance lines (centered)
+        '<text x="380" y="350" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">部位選對 = 安全 + 有效</text>' +
+        '<text x="380" y="372" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">臉 / 眼周 / 外陰 → 弱(VI-VII)　軀幹 / 四肢 → 中(IV-V)　掌蹠 / 苔癬化 → 強(I-III)</text>' +
+        '<text x="380" y="394" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">急性期每天 1-2 次 × 7-14 天 → 改週末療法(週 2 次)維持</text>' +
+        '<text x="380" y="418" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#9a3412">⚠ 急性紅腫不擦類固醇 = 抓到破皮、轉慢性、真正出問題</text>' +
+        '<text x="380" y="446" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Stoughton 1985 vasoconstrictor assay · Cornell &amp; Stoughton 1985 · NEJM 2018 review</text>' +
+        '</svg><figcaption>圖. 外用類固醇 7 級強度 — 部位 + 急性 / 慢性 + 兒童 / 成人 三維選擇</figcaption></figure>';
+    },
+
+    // Laser wavelength chromophore absorption
+    'laser-wavelength': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" aria-labelledby="laser-title">' +
+        '<title id="laser-title">皮膚科雷射波長與目標</title>' +
+        '<rect width="720" height="360" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">雷射波長 vs 主要吸收目標(chromophore)</text>' +
+        // X axis = wavelength
+        '<g transform="translate(60 70)">' +
+        '<line x1="0" y1="200" x2="600" y2="200" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="0" y="220" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">400</text>' +
+        '<text x="100" y="220" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">500</text>' +
+        '<text x="200" y="220" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">600</text>' +
+        '<text x="300" y="220" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">700</text>' +
+        '<text x="400" y="220" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">800–1064</text>' +
+        '<text x="500" y="220" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">1550</text>' +
+        '<text x="580" y="220" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">10600 nm</text>' +
+        '<text x="300" y="240" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">波長 (nm)</text>' +
+        // Common laser markers
+        '<g><rect x="80" y="160" width="6" height="40" fill="#10b981"/><text x="83" y="155" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#065f46">532 KTP</text></g>' +
+        '<g><rect x="160" y="140" width="6" height="60" fill="#fbbf24"/><text x="163" y="135" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">585/595 PDL</text></g>' +
+        '<g><rect x="280" y="125" width="6" height="75" fill="#9333ea"/><text x="283" y="120" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#581c87">694 Ruby</text></g>' +
+        '<g><rect x="350" y="110" width="6" height="90" fill="#dc2626"/><text x="353" y="105" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">755 Alex</text></g>' +
+        '<g><rect x="450" y="95" width="6" height="105" fill="#0c4a6e"/><text x="453" y="90" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c4a6e">1064 Nd:YAG</text></g>' +
+        '<g><rect x="520" y="80" width="6" height="120" fill="#0e7c86"/><text x="523" y="75" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">1550 Erb</text></g>' +
+        '<g><rect x="585" y="65" width="6" height="135" fill="#a16207"/><text x="588" y="60" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#a16207">CO₂</text></g>' +
+        // Chromophore tags
+        '<text x="60" y="290" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#dc2626">血紅素 ●</text>' +
+        '<text x="160" y="290" font-family="Inter" font-size="13" fill="#5e574e">血管（紅胎記、玫瑰斑）</text>' +
+        '<text x="290" y="290" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0f172a">黑色素 ●</text>' +
+        '<text x="380" y="290" font-family="Inter" font-size="13" fill="#5e574e">斑點 / 太田 / 除毛</text>' +
+        '<text x="60" y="320" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">水分 ●</text>' +
+        '<text x="160" y="320" font-family="Inter" font-size="13" fill="#5e574e">磨皮 / 痘疤 / 飛梭（波長越長 → 穿透越深）</text>' +
+        '<text x="360" y="345" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Anderson & Parrish 1983 · Paasch S2k 2022 · Manstein JID 2004 (fractional photothermolysis)</text>' +
+        '</g>' +
+        '</svg><figcaption>圖. 雷射波長 vs 目標 chromophore — 選對波長才能精準破壞病灶不傷正常組織(Selective photothermolysis)</figcaption></figure>';
+    },
+
+    // Vitiligo segmental vs non-segmental
+    'vitiligo-types': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" aria-labelledby="vit-title">' +
+        '<title id="vit-title">白斑兩大臨床分型</title>' +
+        '<rect width="720" height="400" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">白斑兩大分型 — 預後與治療策略不同</text>' +
+        // Non-segmental
+        '<g transform="translate(60 60)">' +
+        '<text x="135" y="0" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">非節段型 NSV — 約 90%</text>' +
+        '<rect x="40" y="20" width="190" height="180" rx="14" fill="#a4b5a8" stroke="#4d6358" stroke-width="2"/>' +
+        // Bilateral patches symmetric
+        '<circle cx="80" cy="60" r="14" fill="#fff"/><circle cx="190" cy="60" r="14" fill="#fff"/>' +
+        '<circle cx="100" cy="100" r="18" fill="#fff"/><circle cx="170" cy="100" r="18" fill="#fff"/>' +
+        '<circle cx="85" cy="150" r="12" fill="#fff"/><circle cx="185" cy="150" r="12" fill="#fff"/>' +
+        '<text x="135" y="225" text-anchor="middle" font-family="Inter" font-size="13" fill="#0c5159">對稱分布</text>' +
+        '<text x="135" y="245" text-anchor="middle" font-family="Inter" font-size="13" fill="#0c5159">慢性進展、自體免疫</text>' +
+        '<text x="135" y="265" text-anchor="middle" font-family="Inter" font-size="13" fill="#0c5159">→ 全身性治療(NB-UVB / JAK)</text>' +
+        '</g>' +
+        // Segmental
+        '<g transform="translate(420 60)">' +
+        '<text x="135" y="0" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#9a3412">節段型 SV — 約 10%</text>' +
+        '<rect x="40" y="20" width="190" height="180" rx="14" fill="#a4b5a8" stroke="#9a3412" stroke-width="2"/>' +
+        // Unilateral, dermatomal
+        '<path d="M70 40 Q90 60 110 80 Q130 110 145 145 Q150 175 130 195" fill="#fff" stroke="#9a3412" stroke-width="1.5"/>' +
+        '<text x="135" y="225" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">單側、神經皮節分布</text>' +
+        '<text x="135" y="245" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">通常 1-2 年內穩定</text>' +
+        '<text x="135" y="265" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">→ 局部治療 + 皮膚移植</text>' +
+        '</g>' +
+        '<text x="360" y="365" text-anchor="middle" font-family="Inter" font-size="12" fill="#8b8378">Source: Ezzedine 2012 · Rosmarin Ruxolitinib NEJM 2022 (TRuE-V) · Bergqvist Mosaic Vitiligo 2020</text>' +
+        '</svg><figcaption>圖。NSV（自體免疫、慢性） vs SV（局部、穩定）— 兩型治療反應與預後差異大</figcaption></figure>';
+    },
+
+    // Mast cell degranulation — urticaria pathophysiology
+    'mast-cell': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" aria-labelledby="mast-title">' +
+        '<title id="mast-title">蕁麻疹肥大細胞釋放機轉</title>' +
+        '<rect width="960" height="540" fill="#faf7f2" rx="10"/>' +
+        '<text x="480" y="46" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="30" font-weight="700" fill="#0c5159">蕁麻疹 — 肥大細胞活化的致病軸</text>' +
+        // Triggers (left) — bigger box, bigger fonts
+        '<g transform="translate(40 100)">' +
+        '<rect x="0" y="0" width="220" height="270" rx="14" fill="#fef9c3" stroke="#854d0e" stroke-width="2"/>' +
+        '<text x="110" y="40" text-anchor="middle" font-family="Inter" font-size="24" font-weight="700" fill="#854d0e">觸發</text>' +
+        '<text x="18" y="84" font-family="Noto Sans TC" font-size="20" fill="#5e574e">• IgE(過敏)</text>' +
+        '<text x="18" y="124" font-family="Noto Sans TC" font-size="20" fill="#5e574e">• 物理(壓/冷/熱)</text>' +
+        '<text x="18" y="164" font-family="Noto Sans TC" font-size="20" fill="#5e574e">• 自體抗體(CSU)</text>' +
+        '<text x="18" y="204" font-family="Noto Sans TC" font-size="20" fill="#5e574e">• 偽過敏(NSAID)</text>' +
+        '<text x="18" y="244" font-family="Noto Sans TC" font-size="20" fill="#5e574e">• 感染 / 壓力</text>' +
+        '</g>' +
+        // Arrow 1
+        '<path d="M265 235 L 320 235" stroke="#4d6358" stroke-width="4" marker-end="url(#arrowM)"/>' +
+        // Mast cell (center)
+        '<g transform="translate(330 120)">' +
+        '<circle cx="110" cy="110" r="92" fill="#fed7aa" stroke="#9a3412" stroke-width="3"/>' +
+        // Granules
+        '<circle cx="80" cy="84" r="10" fill="#dc2626"/><circle cx="138" cy="74" r="9" fill="#dc2626"/>' +
+        '<circle cx="150" cy="124" r="10" fill="#dc2626"/><circle cx="84" cy="128" r="9" fill="#dc2626"/>' +
+        '<circle cx="115" cy="142" r="8" fill="#dc2626"/><circle cx="74" cy="106" r="8" fill="#dc2626"/>' +
+        '<text x="110" y="240" text-anchor="middle" font-family="Inter" font-size="22" font-weight="700" fill="#9a3412">Mast Cell</text>' +
+        '<text x="110" y="266" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">皮膚肥大細胞</text>' +
+        '</g>' +
+        // Arrow 2
+        '<text x="585" y="218" text-anchor="middle" font-family="Noto Sans TC" font-size="18" fill="#4d6358">脫顆粒</text>' +
+        '<path d="M560 235 L 615 235" stroke="#4d6358" stroke-width="4" marker-end="url(#arrowM)"/>' +
+        // Mediators (right)
+        '<g transform="translate(625 100)">' +
+        '<rect x="0" y="0" width="300" height="270" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
+        '<text x="150" y="40" text-anchor="middle" font-family="Inter" font-size="22" font-weight="700" fill="#dc2626">釋放介質 → 症狀</text>' +
+        '<text x="18" y="84" font-family="Noto Sans TC" font-size="19" fill="#5e574e"><tspan font-weight="700">組織胺</tspan> → 癢、紅</text>' +
+        '<text x="18" y="124" font-family="Noto Sans TC" font-size="19" fill="#5e574e"><tspan font-weight="700">類胰蛋白酶</tspan> → 發炎</text>' +
+        '<text x="18" y="164" font-family="Noto Sans TC" font-size="19" fill="#5e574e"><tspan font-weight="700">PGD₂ / LTC₄</tspan> → 通透性</text>' +
+        '<text x="18" y="204" font-family="Noto Sans TC" font-size="19" fill="#5e574e"><tspan font-weight="700">PAF</tspan> → 風團</text>' +
+        '<text x="18" y="244" font-family="Noto Sans TC" font-size="19" fill="#5e574e"><tspan font-weight="700">細胞激素</tspan> → 慢性</text>' +
+        '</g>' +
+        // Drug targets
+        '<text x="480" y="430" text-anchor="middle" font-family="Noto Sans TC" font-size="22" font-weight="700" fill="#0c5159">藥物作用點</text>' +
+        '<text x="480" y="466" text-anchor="middle" font-family="Noto Sans TC" font-size="18" fill="#5e574e">第二代 H1 抗組織胺(一線) → Omalizumab(二線) → Cyclosporine 等(三線)</text>' +
+        '<text x="480" y="514" text-anchor="middle" font-family="Inter" font-size="14" fill="#8b8378">Source: Zuberbier 2022 EAACI · Kolkhir JAMA 2024 CSU review · TDA 蕁麻疹治療共識</text>' +
+        '<defs><marker id="arrowM" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#4d6358"/></marker></defs>' +
+        '</svg><figcaption>圖。蕁麻疹的肥大細胞活化軸 — 觸發 → 脫顆粒 → 介質 → 風團 / 癢;治療對應每個環節</figcaption></figure>';
+    },
+
+    // Rosacea 4 subtypes
+    'rosacea-subtypes': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 960 500" xmlns="http://www.w3.org/2000/svg" aria-labelledby="rosacea-title">' +
+        '<title id="rosacea-title">玫瑰斑 4 大臨床亞型</title>' +
+        '<rect width="960" height="500" fill="#faf7f2" rx="10"/>' +
+        '<text x="480" y="44" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="28" font-weight="700" fill="#0c5159">玫瑰斑(酒糟)4 大亞型 — 一張臉可能多型並存</text>' +
+        // 4 face cards — bigger fonts: subtype 18→24, desc 16→20, en 13→15, treat 15→19
+        '<g transform="translate(40 90)">' +
+        '<circle cx="100" cy="100" r="72" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>' +
+        '<circle cx="80" cy="92" r="3" fill="#0f172a"/><circle cx="120" cy="92" r="3" fill="#0f172a"/>' +
+        '<line x1="60" y1="80" x2="85" y2="86" stroke="#dc2626" stroke-width="1.4" opacity="0.6"/>' +
+        '<line x1="140" y1="80" x2="115" y2="86" stroke="#dc2626" stroke-width="1.4" opacity="0.6"/>' +
+        '<text x="100" y="225" text-anchor="middle" font-family="Inter" font-size="24" font-weight="700" fill="#dc2626">ETR</text>' +
+        '<text x="100" y="254" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">紅斑微血管擴張</text>' +
+        '<text x="100" y="278" text-anchor="middle" font-family="Inter" font-size="15" fill="#8b8378">Erythematotelangiectatic</text>' +
+        '<text x="100" y="320" text-anchor="middle" font-family="Inter" font-size="19" font-weight="600" fill="#0c5159">→ Brimonidine / PDL</text>' +
+        '</g>' +
+        '<g transform="translate(260 90)">' +
+        '<circle cx="100" cy="100" r="72" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>' +
+        '<circle cx="80" cy="92" r="3" fill="#0f172a"/><circle cx="120" cy="92" r="3" fill="#0f172a"/>' +
+        '<circle cx="86" cy="112" r="4" fill="#9a3412"/><circle cx="114" cy="110" r="4" fill="#9a3412"/>' +
+        '<circle cx="100" cy="128" r="3.5" fill="#9a3412"/>' +
+        '<text x="100" y="225" text-anchor="middle" font-family="Inter" font-size="24" font-weight="700" fill="#dc2626">PPR</text>' +
+        '<text x="100" y="254" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">丘疹膿皰</text>' +
+        '<text x="100" y="278" text-anchor="middle" font-family="Inter" font-size="15" fill="#8b8378">Papulopustular</text>' +
+        '<text x="100" y="320" text-anchor="middle" font-family="Inter" font-size="19" font-weight="600" fill="#0c5159">→ Ivermectin / 口服</text>' +
+        '</g>' +
+        '<g transform="translate(480 90)">' +
+        '<ellipse cx="100" cy="100" rx="72" ry="72" fill="#fed7aa" stroke="#9a3412" stroke-width="2.5"/>' +
+        '<circle cx="80" cy="92" r="3" fill="#0f172a"/><circle cx="120" cy="92" r="3" fill="#0f172a"/>' +
+        '<ellipse cx="100" cy="128" rx="32" ry="20" fill="#a16207" stroke="#7c2d12" stroke-width="2"/>' +
+        '<text x="100" y="225" text-anchor="middle" font-family="Inter" font-size="24" font-weight="700" fill="#9a3412">Phymatous</text>' +
+        '<text x="100" y="254" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">酒糟鼻</text>' +
+        '<text x="100" y="278" text-anchor="middle" font-family="Inter" font-size="15" fill="#8b8378">皮脂腺增生</text>' +
+        '<text x="100" y="320" text-anchor="middle" font-family="Inter" font-size="19" font-weight="600" fill="#0c5159">→ CO₂ 雷射 / 手術</text>' +
+        '</g>' +
+        '<g transform="translate(700 90)">' +
+        '<circle cx="100" cy="100" r="72" fill="#fef9c3" stroke="#854d0e" stroke-width="2.5"/>' +
+        '<circle cx="80" cy="92" r="9" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
+        '<circle cx="120" cy="92" r="9" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
+        '<text x="100" y="225" text-anchor="middle" font-family="Inter" font-size="24" font-weight="700" fill="#854d0e">Ocular</text>' +
+        '<text x="100" y="254" text-anchor="middle" font-family="Noto Sans TC" font-size="20" fill="#5e574e">眼部酒糟</text>' +
+        '<text x="100" y="278" text-anchor="middle" font-family="Inter" font-size="15" fill="#8b8378">乾澀 / 結膜炎</text>' +
+        '<text x="100" y="320" text-anchor="middle" font-family="Inter" font-size="19" font-weight="600" fill="#0c5159">→ 眼科 + doxy</text>' +
+        '</g>' +
+        '<text x="480" y="442" text-anchor="middle" font-family="Noto Sans TC" font-size="18" fill="#5e574e">⚠ 用治痘痘的高濃度 retinoid 常會加重玫瑰斑 — 治療策略完全不同</text>' +
+        '<text x="480" y="478" text-anchor="middle" font-family="Inter" font-size="14" fill="#8b8378">Source: Wilkin NRS 2002 · Schaller 2017 ROSCO · Reinholz S2k 2022 · Hampton 2021 BAD</text>' +
+        '</svg><figcaption>圖。玫瑰斑 4 亞型 — 同一張臉可能多型並存、治療要分層處理</figcaption></figure>';
+    },
+
+    // Biologics cytokine pathways (Th17 / Th2 / Th1)
+    'biologics-cytokines': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" aria-labelledby="bio-title">' +
+        '<title id="bio-title">皮膚科生物製劑作用機轉</title>' +
+        '<rect width="720" height="360" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">皮膚科生物製劑 — 不同 T 細胞通路對應不同疾病</text>' +
+        // 3 columns: Th2 / Th17 / Th1
+        // Th2 / Type 2 inflammation (left)
+        '<g transform="translate(40 60)">' +
+        '<rect x="0" y="0" width="200" height="240" rx="12" fill="#cffafe" stroke="#0c5159" stroke-width="2"/>' +
+        '<text x="100" y="25" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">Th2 / Type 2</text>' +
+        '<text x="100" y="48" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">IL-4 / IL-13 / IL-31</text>' +
+        '<line x1="20" y1="60" x2="180" y2="60" stroke="#0c5159" stroke-width="0.5" opacity="0.4"/>' +
+        '<text x="100" y="85" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">疾病</text>' +
+        '<text x="10" y="105" font-family="Inter" font-size="13" fill="#5e574e">• 異位性皮膚炎</text>' +
+        '<text x="10" y="125" font-family="Inter" font-size="13" fill="#5e574e">• 結節性癢疹</text>' +
+        '<text x="10" y="145" font-family="Inter" font-size="13" fill="#5e574e">• 嗜酸性食道炎</text>' +
+        '<text x="100" y="175" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">藥物</text>' +
+        '<text x="10" y="195" font-family="Inter" font-size="13" fill="#5e574e">• Dupilumab(IL-4Rα)</text>' +
+        '<text x="10" y="215" font-family="Inter" font-size="13" fill="#5e574e">• Tralokinumab(IL-13)</text>' +
+        '<text x="10" y="232" font-family="Inter" font-size="13" fill="#5e574e">• Nemolizumab(IL-31)</text>' +
+        '</g>' +
+        // Th17 / Type 17 (center)
+        '<g transform="translate(260 60)">' +
+        '<rect x="0" y="0" width="200" height="240" rx="12" fill="#fee2e2" stroke="#7f1d1d" stroke-width="2"/>' +
+        '<text x="100" y="25" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">Th17 / Type 17</text>' +
+        '<text x="100" y="48" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">IL-17 / IL-23</text>' +
+        '<line x1="20" y1="60" x2="180" y2="60" stroke="#7f1d1d" stroke-width="0.5" opacity="0.4"/>' +
+        '<text x="100" y="85" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#7f1d1d">疾病</text>' +
+        '<text x="10" y="105" font-family="Inter" font-size="13" fill="#5e574e">• 乾癬(plaque / GPP)</text>' +
+        '<text x="10" y="125" font-family="Inter" font-size="13" fill="#5e574e">• HS（化膿性汗腺炎）</text>' +
+        '<text x="10" y="145" font-family="Inter" font-size="13" fill="#5e574e">• 乾癬性關節炎</text>' +
+        '<text x="100" y="175" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#7f1d1d">藥物</text>' +
+        '<text x="10" y="195" font-family="Inter" font-size="13" fill="#5e574e">• IL-17:Secukinumab,Ixekizumab,Bimekizumab</text>' +
+        '<text x="10" y="215" font-family="Inter" font-size="13" fill="#5e574e">• IL-23:Risankizumab,Guselkumab</text>' +
+        '<text x="10" y="232" font-family="Inter" font-size="13" fill="#5e574e">• Adalimumab(HS,TNF)</text>' +
+        '</g>' +
+        // JAK / cytokine common (right)
+        '<g transform="translate(480 60)">' +
+        '<rect x="0" y="0" width="200" height="240" rx="12" fill="#ede9fe" stroke="#5b21b6" stroke-width="2"/>' +
+        '<text x="100" y="25" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#5b21b6">JAK 抑制劑（廣譜）</text>' +
+        '<text x="100" y="48" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">阻斷多個 cytokines</text>' +
+        '<line x1="20" y1="60" x2="180" y2="60" stroke="#5b21b6" stroke-width="0.5" opacity="0.4"/>' +
+        '<text x="100" y="85" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#5b21b6">疾病</text>' +
+        '<text x="10" y="105" font-family="Inter" font-size="13" fill="#5e574e">• 圓禿(JAK1/2)</text>' +
+        '<text x="10" y="125" font-family="Inter" font-size="13" fill="#5e574e">• 異膚（中重度）</text>' +
+        '<text x="10" y="145" font-family="Inter" font-size="13" fill="#5e574e">• 白斑 + 蕁麻疹</text>' +
+        '<text x="100" y="175" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#5b21b6">藥物</text>' +
+        '<text x="10" y="195" font-family="Inter" font-size="13" fill="#5e574e">• Baricitinib(JAK1/2)</text>' +
+        '<text x="10" y="215" font-family="Inter" font-size="13" fill="#5e574e">• Upadacitinib(JAK1)</text>' +
+        '<text x="10" y="232" font-family="Inter" font-size="13" fill="#5e574e">• Ruxolitinib（外用，白斑）</text>' +
+        '</g>' +
+        '<text x="360" y="328" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Werfel 2024 S3 AD · Reich Lancet 2017 IL-17 · Rosmarin NEJM 2022 Ruxolitinib · Hawkes JAAD 2018</text>' +
+        '</svg><figcaption>圖. 不同 T 細胞通路 → 不同疾病 → 不同藥物。Th2 → 異膚；Th17 → 乾癬；JAK → 圓禿 / 多元用途</figcaption></figure>';
+    },
+
+    // SCORAD body surface area — Rule of Nines
+    'scorad-bsa': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" aria-labelledby="bsa-title">' +
+        '<title id="bsa-title">SCORAD 九分法估算體表面積</title>' +
+        '<rect width="720" height="380" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">SCORAD 九分法 — 異膚面積 A 怎麼算</text>' +
+        // Adult body
+        '<g transform="translate(140 70)">' +
+        '<text x="80" y="-5" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">成人</text>' +
+        // Head + neck (9%)
+        '<circle cx="80" cy="20" r="16" fill="#fde68a" stroke="#4d6358" stroke-width="1.5"/>' +
+        '<text x="80" y="24" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">9%</text>' +
+        // Trunk front (18%)
+        '<rect x="55" y="40" width="50" height="80" rx="6" fill="#fed7aa" stroke="#9a3412" stroke-width="1.5"/>' +
+        '<text x="80" y="84" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#9a3412">18%</text>' +
+        '<text x="80" y="98" text-anchor="middle" font-family="Inter" font-size="12" fill="#9a3412">前軀</text>' +
+        // Arms each (9% each side)
+        '<rect x="20" y="45" width="22" height="60" rx="6" fill="#dcfce7" stroke="#14532d" stroke-width="1.5"/>' +
+        '<text x="31" y="72" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">9%</text>' +
+        '<text x="31" y="84" text-anchor="middle" font-family="Inter" font-size="11" fill="#14532d">手</text>' +
+        '<rect x="118" y="45" width="22" height="60" rx="6" fill="#dcfce7" stroke="#14532d" stroke-width="1.5"/>' +
+        '<text x="129" y="72" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">9%</text>' +
+        '<text x="129" y="84" text-anchor="middle" font-family="Inter" font-size="11" fill="#14532d">手</text>' +
+        // Legs each (18% each)
+        '<rect x="50" y="125" width="25" height="80" rx="5" fill="#cffafe" stroke="#0c5159" stroke-width="1.5"/>' +
+        '<text x="62" y="160" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">18%</text>' +
+        '<text x="62" y="173" text-anchor="middle" font-family="Inter" font-size="11" fill="#0c5159">腳</text>' +
+        '<rect x="85" y="125" width="25" height="80" rx="5" fill="#cffafe" stroke="#0c5159" stroke-width="1.5"/>' +
+        '<text x="97" y="160" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">18%</text>' +
+        '<text x="97" y="173" text-anchor="middle" font-family="Inter" font-size="11" fill="#0c5159">腳</text>' +
+        // Genital (1%)
+        '<rect x="73" y="120" width="14" height="8" rx="2" fill="#ede9fe" stroke="#5b21b6" stroke-width="1"/>' +
+        '<text x="80" y="127" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#5b21b6">1%</text>' +
+        '</g>' +
+        // Child body
+        '<g transform="translate(440 70)">' +
+        '<text x="80" y="-5" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#dc2626">兒童（嬰幼兒）</text>' +
+        // Bigger head
+        '<circle cx="80" cy="22" r="22" fill="#fde68a" stroke="#dc2626" stroke-width="1.5"/>' +
+        '<text x="80" y="27" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">17%</text>' +
+        // Trunk
+        '<rect x="55" y="48" width="50" height="70" rx="6" fill="#fed7aa" stroke="#9a3412" stroke-width="1.5"/>' +
+        '<text x="80" y="84" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#9a3412">18%</text>' +
+        // Arms
+        '<rect x="20" y="50" width="22" height="55" rx="6" fill="#dcfce7" stroke="#14532d" stroke-width="1.5"/>' +
+        '<text x="31" y="78" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">9%</text>' +
+        '<rect x="118" y="50" width="22" height="55" rx="6" fill="#dcfce7" stroke="#14532d" stroke-width="1.5"/>' +
+        '<text x="129" y="78" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#14532d">9%</text>' +
+        // Smaller legs
+        '<rect x="50" y="120" width="25" height="60" rx="5" fill="#cffafe" stroke="#0c5159" stroke-width="1.5"/>' +
+        '<text x="62" y="148" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">14%</text>' +
+        '<rect x="85" y="120" width="25" height="60" rx="5" fill="#cffafe" stroke="#0c5159" stroke-width="1.5"/>' +
+        '<text x="97" y="148" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">14%</text>' +
+        '</g>' +
+        // Hand rule
+        '<g transform="translate(60 290)">' +
+        '<rect x="0" y="0" width="600" height="60" rx="8" fill="#ecfeff" stroke="#0c5159" stroke-width="1.5"/>' +
+        '<text x="20" y="22" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">💡 快速估算 — 病人「整個手掌（含五指）」≈ 全身體表 1%</text>' +
+        '<text x="20" y="42" font-family="Inter" font-size="13" fill="#5e574e">用手掌數蓋過病灶，直接 = SCORAD 中的 A 值百分比。</text>' +
+        '</g>' +
+        '<text x="360" y="370" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Wallace 1951 rule of nines · Lund-Browder 1944 (paediatric mod) · Stalder Dermatology 1993 SCORAD</text>' +
+        '</svg><figcaption>圖. 九分法 — 兒童頭比例較大、腿較小；成人標準分法。手掌 1% 法是床邊估算的捷徑。</figcaption></figure>';
+    },
+
+    // Acne scar morphology
+    'acne-scar-types': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" aria-labelledby="scar-title">' +
+        '<title id="scar-title">痘疤 4 大形態與治療對應</title>' +
+        '<rect width="720" height="320" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">凹陷型痘疤 4 種形態 — 對應不同治療</text>' +
+        // 4 cross-sections
+        '<g transform="translate(40 65)">' +
+        '<text x="70" y="0" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">冰鑿型</text>' +
+        '<text x="70" y="14" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">Icepick</text>' +
+        // Skin top
+        '<line x1="0" y1="50" x2="140" y2="50" stroke="#0f172a" stroke-width="2"/>' +
+        // Deep narrow V
+        '<path d="M55 50 L 70 130 L 85 50" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
+        '<line x1="0" y1="160" x2="140" y2="160" stroke="#a16207" stroke-width="1" stroke-dasharray="3 3"/>' +
+        '<text x="70" y="195" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">窄、深、垂直</text>' +
+        '<text x="70" y="225" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">→ TCA CROSS</text>' +
+        '<text x="70" y="240" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">點塗 100% TCA</text>' +
+        '</g>' +
+        '<g transform="translate(210 65)">' +
+        '<text x="70" y="0" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">廂車型</text>' +
+        '<text x="70" y="14" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">Boxcar</text>' +
+        '<line x1="0" y1="50" x2="140" y2="50" stroke="#0f172a" stroke-width="2"/>' +
+        // Square U
+        '<path d="M40 50 L 40 100 L 100 100 L 100 50" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
+        '<line x1="0" y1="160" x2="140" y2="160" stroke="#a16207" stroke-width="1" stroke-dasharray="3 3"/>' +
+        '<text x="70" y="195" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">寬、垂直壁、平底</text>' +
+        '<text x="70" y="225" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">→ 飛梭雷射</text>' +
+        '<text x="70" y="240" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">CO₂ / 1550 nm</text>' +
+        '</g>' +
+        '<g transform="translate(380 65)">' +
+        '<text x="70" y="0" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">滾動型</text>' +
+        '<text x="70" y="14" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">Rolling</text>' +
+        '<line x1="0" y1="50" x2="140" y2="50" stroke="#0f172a" stroke-width="2"/>' +
+        // Wave
+        '<path d="M5 50 Q 35 50 35 80 Q 70 80 70 60 Q 105 60 105 85 Q 135 85 135 50" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
+        // Tether
+        '<line x1="35" y1="80" x2="35" y2="130" stroke="#7f1d1d" stroke-width="2.5" stroke-dasharray="2 2"/>' +
+        '<line x1="105" y1="85" x2="105" y2="130" stroke="#7f1d1d" stroke-width="2.5" stroke-dasharray="2 2"/>' +
+        '<line x1="0" y1="160" x2="140" y2="160" stroke="#a16207" stroke-width="1" stroke-dasharray="3 3"/>' +
+        '<text x="70" y="195" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">寬、淺、底部纖維束</text>' +
+        '<text x="70" y="225" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">→ 皮下分離 + 玻尿酸</text>' +
+        '<text x="70" y="240" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">Subcision + filler</text>' +
+        '</g>' +
+        '<g transform="translate(560 65)">' +
+        '<text x="70" y="0" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#dc2626">肥厚 / 蟹足</text>' +
+        '<text x="70" y="14" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">Hypertrophic / Keloid</text>' +
+        '<line x1="0" y1="80" x2="140" y2="80" stroke="#0f172a" stroke-width="2"/>' +
+        // Bump up
+        '<path d="M40 80 Q 70 30 100 80" fill="#dc2626" stroke="#7f1d1d" stroke-width="2"/>' +
+        '<line x1="0" y1="160" x2="140" y2="160" stroke="#a16207" stroke-width="1" stroke-dasharray="3 3"/>' +
+        '<text x="70" y="195" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">凸出皮表（增生）</text>' +
+        '<text x="70" y="225" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">→ 病灶內類固醇</text>' +
+        '<text x="70" y="240" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">+ PDL / 5-FU</text>' +
+        '</g>' +
+        '<text x="360" y="295" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Jacob ICAS 2001 classification · Boen Dermatol Surg 2019 review · Goodman & Baron 2006 grading</text>' +
+        '</svg><figcaption>圖. 凹陷疤切面對比 — 用形態決定治療，單一文章/雷射難搞定混合型疤痕</figcaption></figure>';
+    },
+
+    // JAK kinase tree
+    'jak-tree': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" aria-labelledby="jak-title">' +
+        '<title id="jak-title">JAK 家族與皮膚科應用</title>' +
+        '<rect width="720" height="320" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">JAK 家族 4 種 — 不同 JAK 對應不同 cytokines / 疾病</text>' +
+        // JAK1
+        '<g transform="translate(40 70)">' +
+        '<rect x="0" y="0" width="155" height="220" rx="10" fill="#cffafe" stroke="#0c5159" stroke-width="2"/>' +
+        '<text x="78" y="24" text-anchor="middle" font-family="Inter" font-size="14" font-weight="700" fill="#0c5159">JAK1</text>' +
+        '<text x="78" y="40" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">與其他 JAK 配對</text>' +
+        '<line x1="15" y1="50" x2="140" y2="50" stroke="#0c5159" stroke-width="0.5" opacity="0.4"/>' +
+        '<text x="78" y="68" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">主要訊號</text>' +
+        '<text x="10" y="85" font-family="Inter" font-size="13" fill="#5e574e">IL-2, 6, 10, 15, IFN-γ</text>' +
+        '<text x="78" y="115" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">疾病應用</text>' +
+        '<text x="10" y="135" font-family="Inter" font-size="13" fill="#5e574e">• 異膚（中重度）</text>' +
+        '<text x="10" y="153" font-family="Inter" font-size="13" fill="#5e574e">• 圓禿</text>' +
+        '<text x="10" y="171" font-family="Inter" font-size="13" fill="#5e574e">• 白斑（外用）</text>' +
+        '<text x="78" y="195" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">藥物</text>' +
+        '<text x="10" y="212" font-family="Inter" font-size="13" fill="#5e574e">Upadacitinib(JAK1)</text>' +
+        '</g>' +
+        // JAK2
+        '<g transform="translate(210 70)">' +
+        '<rect x="0" y="0" width="155" height="220" rx="10" fill="#fee2e2" stroke="#7f1d1d" stroke-width="2"/>' +
+        '<text x="78" y="24" text-anchor="middle" font-family="Inter" font-size="14" font-weight="700" fill="#7f1d1d">JAK2</text>' +
+        '<text x="78" y="40" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">通常 JAK1 + JAK2</text>' +
+        '<line x1="15" y1="50" x2="140" y2="50" stroke="#7f1d1d" stroke-width="0.5" opacity="0.4"/>' +
+        '<text x="78" y="68" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">主要訊號</text>' +
+        '<text x="10" y="85" font-family="Inter" font-size="13" fill="#5e574e">EPO, GM-CSF, IL-3</text>' +
+        '<text x="78" y="115" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">疾病應用</text>' +
+        '<text x="10" y="135" font-family="Inter" font-size="13" fill="#5e574e">• 圓禿(JAK1/2)</text>' +
+        '<text x="10" y="153" font-family="Inter" font-size="13" fill="#5e574e">• 異膚 / 蕁麻疹</text>' +
+        '<text x="10" y="171" font-family="Inter" font-size="13" fill="#5e574e">• 白斑</text>' +
+        '<text x="78" y="195" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">藥物</text>' +
+        '<text x="10" y="212" font-family="Inter" font-size="13" fill="#5e574e">Baricitinib(JAK1/2)</text>' +
+        '</g>' +
+        // JAK3
+        '<g transform="translate(380 70)">' +
+        '<rect x="0" y="0" width="155" height="220" rx="10" fill="#fef9c3" stroke="#854d0e" stroke-width="2"/>' +
+        '<text x="78" y="24" text-anchor="middle" font-family="Inter" font-size="14" font-weight="700" fill="#854d0e">JAK3</text>' +
+        '<text x="78" y="40" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">只在免疫細胞</text>' +
+        '<line x1="15" y1="50" x2="140" y2="50" stroke="#854d0e" stroke-width="0.5" opacity="0.4"/>' +
+        '<text x="78" y="68" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">主要訊號</text>' +
+        '<text x="10" y="85" font-family="Inter" font-size="13" fill="#5e574e">γc 共用鏈(IL-2/4/7/9/15/21)</text>' +
+        '<text x="78" y="115" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">疾病應用</text>' +
+        '<text x="10" y="135" font-family="Inter" font-size="13" fill="#5e574e">• 圓禿(JAK1/3)</text>' +
+        '<text x="10" y="153" font-family="Inter" font-size="13" fill="#5e574e">• 異膚 / RA</text>' +
+        '<text x="78" y="195" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">藥物</text>' +
+        '<text x="10" y="212" font-family="Inter" font-size="13" fill="#5e574e">Ritlecitinib(JAK3/TEC)</text>' +
+        '</g>' +
+        // TYK2
+        '<g transform="translate(550 70)">' +
+        '<rect x="0" y="0" width="140" height="220" rx="10" fill="#ede9fe" stroke="#5b21b6" stroke-width="2"/>' +
+        '<text x="70" y="24" text-anchor="middle" font-family="Inter" font-size="14" font-weight="700" fill="#5b21b6">TYK2</text>' +
+        '<text x="70" y="40" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">特異性高</text>' +
+        '<line x1="15" y1="50" x2="125" y2="50" stroke="#5b21b6" stroke-width="0.5" opacity="0.4"/>' +
+        '<text x="70" y="68" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#5b21b6">主要訊號</text>' +
+        '<text x="10" y="85" font-family="Inter" font-size="13" fill="#5e574e">IL-12 / IL-23 / 第 I 型 IFN</text>' +
+        '<text x="70" y="115" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#5b21b6">疾病應用</text>' +
+        '<text x="10" y="135" font-family="Inter" font-size="13" fill="#5e574e">• 乾癬</text>' +
+        '<text x="10" y="153" font-family="Inter" font-size="13" fill="#5e574e">• PsA</text>' +
+        '<text x="10" y="171" font-family="Inter" font-size="13" fill="#5e574e">• Lupus</text>' +
+        '<text x="70" y="195" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#5b21b6">藥物</text>' +
+        '<text x="10" y="212" font-family="Inter" font-size="13" fill="#5e574e">Deucravacitinib</text>' +
+        '</g>' +
+        '<text x="360" y="305" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: O\'Shea Cell 2013 · King NEJM 2022 Baricitinib AA · Armstrong NEJM 2022 Deucravacitinib</text>' +
+        '</svg><figcaption>圖. JAK 家族 4 種 — 不同 JAK 阻斷不同 cytokines，故同一機轉藥物用在不同疾病</figcaption></figure>';
+    },
+
+    // JAK kinase structural domains
+    'jak-structure': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" aria-labelledby="jakstr-title">' +
+        '<title id="jakstr-title">JAK 激酶結構與抑制劑作用點</title>' +
+        '<rect width="720" height="320" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">JAK 激酶 4 大功能域 — 抑制劑為何選擇性不同</text>' +
+        // Linear protein bar with 4 domains (N → C terminus)
+        '<g transform="translate(60 80)">' +
+        '<text x="0" y="-14" font-family="Inter" font-size="13" fill="#5e574e">N-端</text>' +
+        '<text x="600" y="-14" text-anchor="end" font-family="Inter" font-size="13" fill="#5e574e">C-端</text>' +
+        // FERM (band 4.1)
+        '<rect x="0" y="0" width="120" height="50" fill="#fde68a" stroke="#854d0e" stroke-width="2"/>' +
+        '<text x="60" y="24" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">FERM</text>' +
+        '<text x="60" y="38" text-anchor="middle" font-family="Inter" font-size="13" fill="#854d0e">JH7-4</text>' +
+        // SH2-like
+        '<rect x="120" y="0" width="100" height="50" fill="#fed7aa" stroke="#9a3412" stroke-width="2"/>' +
+        '<text x="170" y="24" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#9a3412">SH2-like</text>' +
+        '<text x="170" y="38" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">JH3-4</text>' +
+        // Pseudokinase (JH2)
+        '<rect x="220" y="0" width="170" height="50" fill="#cffafe" stroke="#0c5159" stroke-width="2"/>' +
+        '<text x="305" y="24" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">Pseudokinase</text>' +
+        '<text x="305" y="38" text-anchor="middle" font-family="Inter" font-size="13" fill="#0c5159">JH2 （調節）</text>' +
+        // Active kinase (JH1)
+        '<rect x="390" y="0" width="210" height="50" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
+        '<text x="495" y="24" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#dc2626">Kinase</text>' +
+        '<text x="495" y="38" text-anchor="middle" font-family="Inter" font-size="13" fill="#dc2626">JH1 （磷酸化活性）</text>' +
+        // ATP binding pocket marker
+        '<circle cx="495" cy="25" r="6" fill="none" stroke="#7f1d1d" stroke-width="1.5" stroke-dasharray="2 2"/>' +
+        '<line x1="495" y1="55" x2="495" y2="80" stroke="#7f1d1d" stroke-width="1" stroke-dasharray="3 3"/>' +
+        '<text x="495" y="98" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">ATP 結合位</text>' +
+        '<text x="495" y="112" text-anchor="middle" font-family="Inter" font-size="13" fill="#7f1d1d">(JAK 抑制劑作用點）</text>' +
+        // Function annotations
+        '<text x="60" y="135" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">綁細胞激素</text>' +
+        '<text x="60" y="148" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">受體</text>' +
+        '<text x="170" y="135" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">穩定 + 訊號</text>' +
+        '<text x="170" y="148" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">轉接</text>' +
+        '<text x="305" y="135" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">負調控</text>' +
+        '<text x="305" y="148" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">JH1 自抑</text>' +
+        '<text x="495" y="135" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">磷酸化 STAT</text>' +
+        '<text x="495" y="148" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">→ 基因表現</text>' +
+        '</g>' +
+        // Drug specificity table
+        '<g transform="translate(60 250)">' +
+        '<text x="0" y="-8" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">第一代 vs 第二代 JAK 抑制劑的選擇性</text>' +
+        '<rect x="0" y="0" width="600" height="55" rx="6" fill="#fff" stroke="var(--border)" stroke-width="1"/>' +
+        '<text x="10" y="20" font-family="Inter" font-size="13" fill="#5e574e"><tspan font-weight="700">第一代 (Tofacitinib)</tspan> — 廣譜 JAK1/2/3，副作用較多（感染 / 帶狀皰疹）</text>' +
+        '<text x="10" y="36" font-family="Inter" font-size="13" fill="#5e574e"><tspan font-weight="700">第二代 (Upadacitinib)</tspan> — JAK1 選擇性高，異膚 / 圓禿適應症</text>' +
+        '<text x="10" y="48" font-family="Inter" font-size="13" fill="#5e574e"><tspan font-weight="700">Deucravacitinib</tspan> — 結合 JH2 (allosteric)，只抑 TYK2，乾癬專用，副作用最少</text>' +
+        '</g>' +
+        '<text x="360" y="312" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Tanaka Nat Rev Drug Discov 2022 · Lin Cell 2014 (JH2 structure) · Armstrong NEJM 2022 (Deucravacitinib)</text>' +
+        '</svg><figcaption>圖. JAK 4 結構域 — JH1 是 ATP 競爭抑制劑作用處；Deucravacitinib 卻是綁 JH2 偽激酶域（更高選擇性、副作用少）</figcaption></figure>';
+    },
+
+    // Melanoma ABCDE warning signs
+    'melanoma-abcde': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" aria-labelledby="abcde-title">' +
+        '<title id="abcde-title">皮膚癌警訊 ABCDE</title>' +
+        '<rect width="720" height="360" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">皮膚癌（黑色素瘤）5 大警訊 — ABCDE 自我檢查</text>' +
+        // 5 columns: each shows benign vs malignant comparison
+        '<g transform="translate(40 65)">' +
+        '<text x="65" y="0" text-anchor="middle" font-family="Inter" font-size="32" font-weight="800" fill="#dc2626">A</text>' +
+        '<text x="65" y="22" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">Asymmetry</text>' +
+        '<text x="65" y="38" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">不對稱</text>' +
+        // Benign (round) — top
+        '<circle cx="40" cy="80" r="20" fill="#7c2d12" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="40" y="120" text-anchor="middle" font-family="Inter" font-size="13" fill="#14532d">良性</text>' +
+        // Malignant (asymmetric) — bottom
+        '<path d="M75 65 Q 100 55 110 75 Q 105 95 95 100 Q 80 95 75 80 Z" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="95" y="120" text-anchor="middle" font-family="Inter" font-size="13" fill="#7f1d1d">⚠ 警訊</text>' +
+        '</g>' +
+        // B - Border
+        '<g transform="translate(180 65)">' +
+        '<text x="65" y="0" text-anchor="middle" font-family="Inter" font-size="32" font-weight="800" fill="#dc2626">B</text>' +
+        '<text x="65" y="22" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">Border</text>' +
+        '<text x="65" y="38" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">邊緣不規則</text>' +
+        '<circle cx="40" cy="80" r="20" fill="#7c2d12" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="40" y="120" text-anchor="middle" font-family="Inter" font-size="13" fill="#14532d">平滑邊緣</text>' +
+        // Irregular jagged border
+        '<path d="M85 65 L 92 60 L 105 64 L 112 76 L 116 88 L 108 99 L 95 100 L 82 95 L 78 82 L 80 70 Z" fill="#1e293b" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="95" y="120" text-anchor="middle" font-family="Inter" font-size="13" fill="#7f1d1d">⚠ 鋸齒狀</text>' +
+        '</g>' +
+        // C - Color
+        '<g transform="translate(320 65)">' +
+        '<text x="65" y="0" text-anchor="middle" font-family="Inter" font-size="32" font-weight="800" fill="#dc2626">C</text>' +
+        '<text x="65" y="22" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">Color</text>' +
+        '<text x="65" y="38" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">顏色不均</text>' +
+        '<circle cx="40" cy="80" r="20" fill="#7c2d12" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="40" y="120" text-anchor="middle" font-family="Inter" font-size="13" fill="#14532d">單一顏色</text>' +
+        // Multi-color
+        '<defs><radialGradient id="multicolor" cx="0.4" cy="0.4"><stop offset="0%" stop-color="#1e293b"/><stop offset="50%" stop-color="#7c2d12"/><stop offset="80%" stop-color="#dc2626"/><stop offset="100%" stop-color="#fff"/></radialGradient></defs>' +
+        '<circle cx="95" cy="82" r="20" fill="url(#multicolor)" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="95" y="120" text-anchor="middle" font-family="Inter" font-size="13" fill="#7f1d1d">⚠ 黑/棕/紅/白</text>' +
+        '</g>' +
+        // D - Diameter
+        '<g transform="translate(460 65)">' +
+        '<text x="65" y="0" text-anchor="middle" font-family="Inter" font-size="32" font-weight="800" fill="#dc2626">D</text>' +
+        '<text x="65" y="22" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">Diameter</text>' +
+        '<text x="65" y="38" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">直徑 &gt; 6 mm</text>' +
+        '<circle cx="40" cy="85" r="12" fill="#7c2d12" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="40" y="120" text-anchor="middle" font-family="Inter" font-size="13" fill="#14532d">&lt; 6 mm</text>' +
+        '<circle cx="95" cy="80" r="22" fill="#7c2d12" stroke="#0f172a" stroke-width="1.5"/>' +
+        '<text x="95" y="120" text-anchor="middle" font-family="Inter" font-size="13" fill="#7f1d1d">⚠ ≥ 鉛筆橡皮頭</text>' +
+        '</g>' +
+        // E - Evolving
+        '<g transform="translate(600 65)">' +
+        '<text x="50" y="0" text-anchor="middle" font-family="Inter" font-size="32" font-weight="800" fill="#dc2626">E</text>' +
+        '<text x="50" y="22" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">Evolving</text>' +
+        '<text x="50" y="38" text-anchor="middle" font-family="Noto Sans TC" font-size="13" fill="#5e574e">變化中</text>' +
+        '<circle cx="20" cy="80" r="10" fill="#7c2d12"/>' +
+        '<text x="40" y="84" font-family="Inter" font-size="14" fill="#dc2626">→</text>' +
+        '<ellipse cx="80" cy="80" rx="20" ry="14" fill="#1e293b"/>' +
+        '<text x="50" y="120" text-anchor="middle" font-family="Inter" font-size="13" fill="#7f1d1d">⚠ 數月變大 / 變色</text>' +
+        '</g>' +
+        // Action box
+        '<g transform="translate(60 200)">' +
+        '<rect x="0" y="0" width="600" height="100" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>' +
+        '<text x="20" y="25" font-family="Noto Sans TC" font-size="14" font-weight="700" fill="#7f1d1d">⚠ 出現任一 ABCDE 警訊 → 盡快至皮膚科求診</text>' +
+        '<text x="20" y="50" font-family="Inter" font-size="13" fill="#5e574e"><tspan font-weight="700">特別高風險群</tspan>:Fitzpatrick 皮膚型 I-II、家族史、多顆痣(&gt; 50)、過往曬傷史、職業曝曬</text>' +
+        '<text x="20" y="68" font-family="Inter" font-size="13" fill="#5e574e"><tspan font-weight="700">「醜小鴨徵象」</tspan>(ugly duckling sign)— 一顆痣與其他明顯不同也是警訊</text>' +
+        '<text x="20" y="86" font-family="Inter" font-size="13" fill="#5e574e"><tspan font-weight="700">每月自我檢查</tspan>+ 異常立即就醫；可拍照記錄變化（同一手機 / 同光線）</text>' +
+        '</g>' +
+        '<text x="360" y="345" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Friedman 1985 (ABCD) · Abbasi JAMA 2004 (E added) · AAD melanoma self-exam guide</text>' +
+        '</svg><figcaption>圖. ABCDE 5 大警訊；台灣黑色素瘤多以「肢端型」呈現（手腳掌、指甲下），需多注意非曬傷部位</figcaption></figure>';
+    },
+
+    // Actinic keratosis → SCC progression continuum
+    'ak-progression': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" aria-labelledby="ak-title">' +
+        '<title id="ak-title">日光角化症進展</title>' +
+        '<rect width="720" height="280" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">UV 累積傷害 → 日光角化症 → 皮膚癌的連續譜</text>' +
+        // 4-step progression
+        '<g transform="translate(50 65)">' +
+        // Stage 1: Photoaging
+        '<rect x="0" y="0" width="140" height="120" rx="10" fill="#fef9c3" stroke="#854d0e" stroke-width="1.5"/>' +
+        '<text x="70" y="22" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">階段 1</text>' +
+        '<text x="70" y="40" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#854d0e">光老化</text>' +
+        '<text x="70" y="55" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">Photoaging</text>' +
+        // Wrinkle/spot illustration
+        '<line x1="20" y1="75" x2="120" y2="75" stroke="#854d0e" stroke-width="1.5"/>' +
+        '<line x1="25" y1="85" x2="115" y2="85" stroke="#854d0e" stroke-width="1.5"/>' +
+        '<circle cx="40" cy="100" r="3" fill="#a16207"/>' +
+        '<circle cx="80" cy="98" r="2.5" fill="#a16207"/>' +
+        '<circle cx="100" cy="105" r="2" fill="#a16207"/>' +
+        '</g>' +
+        '<path d="M195 125 L 225 125" stroke="#4d6358" stroke-width="2" marker-end="url(#arrowAK)"/>' +
+        '<g transform="translate(230 65)">' +
+        // Stage 2: AK
+        '<rect x="0" y="0" width="140" height="120" rx="10" fill="#fed7aa" stroke="#9a3412" stroke-width="1.5"/>' +
+        '<text x="70" y="22" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#9a3412">階段 2</text>' +
+        '<text x="70" y="40" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#9a3412">日光角化症</text>' +
+        '<text x="70" y="55" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">Actinic Keratosis</text>' +
+        // Rough scaly patch
+        '<path d="M30 75 Q 50 70 70 78 Q 90 73 110 80" fill="none" stroke="#9a3412" stroke-width="2"/>' +
+        '<rect x="35" y="85" width="6" height="8" fill="#7c2d12"/>' +
+        '<rect x="50" y="83" width="5" height="7" fill="#7c2d12"/>' +
+        '<rect x="65" y="86" width="6" height="9" fill="#7c2d12"/>' +
+        '<rect x="80" y="85" width="5" height="7" fill="#7c2d12"/>' +
+        '<rect x="95" y="87" width="6" height="8" fill="#7c2d12"/>' +
+        '<text x="70" y="113" text-anchor="middle" font-family="Inter" font-size="13" fill="#9a3412">粗糙脫屑</text>' +
+        '</g>' +
+        '<path d="M375 125 L 405 125" stroke="#4d6358" stroke-width="2" marker-end="url(#arrowAK)"/>' +
+        '<g transform="translate(410 65)">' +
+        // Stage 3: SCC in situ
+        '<rect x="0" y="0" width="140" height="120" rx="10" fill="#fee2e2" stroke="#7f1d1d" stroke-width="1.5"/>' +
+        '<text x="70" y="22" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">階段 3</text>' +
+        '<text x="70" y="40" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#7f1d1d">原位癌</text>' +
+        '<text x="70" y="55" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">SCC in situ (Bowen)</text>' +
+        // Reddish patch with crust
+        '<ellipse cx="70" cy="90" rx="40" ry="22" fill="#dc2626" opacity="0.7"/>' +
+        '<ellipse cx="65" cy="85" rx="6" ry="3" fill="#7c2d12"/>' +
+        '<ellipse cx="80" cy="95" rx="5" ry="3" fill="#7c2d12"/>' +
+        '<text x="70" y="113" text-anchor="middle" font-family="Inter" font-size="13" fill="#7f1d1d">紅色斑塊</text>' +
+        '</g>' +
+        '<path d="M555 125 L 585 125" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowAK)"/>' +
+        '<g transform="translate(590 65)">' +
+        // Stage 4: SCC invasive
+        '<rect x="0" y="0" width="120" height="120" rx="10" fill="#7f1d1d" stroke="#450a0a" stroke-width="2"/>' +
+        '<text x="60" y="22" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#fff">階段 4</text>' +
+        '<text x="60" y="40" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#fff">侵襲性 SCC</text>' +
+        '<text x="60" y="55" text-anchor="middle" font-family="Inter" font-size="13" fill="#fee2e2">Invasive SCC</text>' +
+        // Nodule
+        '<circle cx="60" cy="90" r="22" fill="#fee2e2" stroke="#fff" stroke-width="2"/>' +
+        '<circle cx="55" cy="85" r="4" fill="#dc2626"/>' +
+        '<text x="60" y="115" text-anchor="middle" font-family="Inter" font-size="13" fill="#fee2e2">硬結節</text>' +
+        '</g>' +
+        // Treatment annotations
+        '<g transform="translate(50 210)">' +
+        '<text x="0" y="0" font-family="Inter" font-size="13" fill="#5e574e"><tspan font-weight="700">防曬</tspan></text>' +
+        '<text x="180" y="0" font-family="Inter" font-size="13" fill="#5e574e"><tspan font-weight="700">外用 5-FU / Imiquimod / 冷凍 / PDT</tspan></text>' +
+        '<text x="430" y="0" font-family="Inter" font-size="13" fill="#5e574e"><tspan font-weight="700">手術切除 ± 放療</tspan></text>' +
+        '<text x="0" y="20" font-family="Inter" font-size="13" fill="#8b8378">每年 AK 轉 SCC 約 0.025-16% / 顆；有大量 AK 者風險疊加</text>' +
+        '</g>' +
+        '<text x="360" y="262" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Werner 2013 BJD AK guideline · Glogau 2000 staging · NMSC 2024 NCCN guidelines</text>' +
+        '<defs><marker id="arrowAK" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#4d6358"/></marker></defs>' +
+        '</svg><figcaption>圖. UV 累積傷害的連續譜 — 階段 2 開始就要積極治療（大多 AK 終身不會進展，但有大量 AK 者風險倍增）</figcaption></figure>';
+    },
+
+    // Tinea hyphae KOH microscopy view
+    'tinea-hyphae': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" aria-labelledby="tinea-title">' +
+        '<title id="tinea-title">皮癬菌 KOH 鏡檢下的菌絲</title>' +
+        '<rect width="720" height="320" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">KOH 鏡檢 — 皮癬菌的「鐵證」</text>' +
+        // Microscope field circle
+        '<g transform="translate(60 65)">' +
+        '<circle cx="180" cy="110" r="105" fill="#fef9c3" stroke="#854d0e" stroke-width="2"/>' +
+        '<circle cx="180" cy="110" r="100" fill="none" stroke="#854d0e" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.4"/>' +
+        // Skin scales (background)
+        '<g opacity="0.55">' +
+        '<polygon points="120,60 145,55 152,75 132,80" fill="#a16207"/>' +
+        '<polygon points="220,80 245,75 248,98 225,100" fill="#a16207"/>' +
+        '<polygon points="100,150 125,145 130,165 110,168" fill="#a16207"/>' +
+        '<polygon points="240,160 260,155 265,175 245,178" fill="#a16207"/>' +
+        '</g>' +
+        // Hyphae — branching septate
+        '<g stroke="#0c5159" stroke-width="2.5" stroke-linecap="round" fill="none">' +
+        // Main branching strand
+        '<path d="M90 80 Q 130 105 180 110 Q 230 115 280 100"/>' +
+        '<path d="M180 110 Q 200 130 220 160"/>' +
+        '<path d="M180 110 Q 165 90 145 60"/>' +
+        '<path d="M220 160 Q 240 175 250 200"/>' +
+        // Septation lines (thinner)
+        '<line x1="105" y1="83" x2="115" y2="93" stroke-width="1.5"/>' +
+        '<line x1="135" y1="100" x2="145" y2="110" stroke-width="1.5"/>' +
+        '<line x1="170" y1="105" x2="180" y2="115" stroke-width="1.5"/>' +
+        '<line x1="210" y1="110" x2="220" y2="120" stroke-width="1.5"/>' +
+        '<line x1="250" y1="105" x2="260" y2="115" stroke-width="1.5"/>' +
+        '<line x1="195" y1="125" x2="205" y2="135" stroke-width="1.5"/>' +
+        '<line x1="215" y1="155" x2="225" y2="165" stroke-width="1.5"/>' +
+        '<line x1="240" y1="185" x2="245" y2="190" stroke-width="1.5"/>' +
+        '<line x1="170" y1="80" x2="160" y2="70" stroke-width="1.5"/>' +
+        '</g>' +
+        // Arthroconidia (chains)
+        '<g fill="#0c5159" opacity="0.85">' +
+        '<circle cx="90" cy="80" r="3"/><circle cx="280" cy="100" r="3"/>' +
+        '<circle cx="145" cy="60" r="3"/><circle cx="250" cy="200" r="3"/>' +
+        '</g>' +
+        // Annotations with arrows
+        '<line x1="40" y1="40" x2="100" y2="80" stroke="#9a3412" stroke-width="1" stroke-dasharray="2 2"/>' +
+        '<text x="40" y="32" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#9a3412">分節菌絲</text>' +
+        '<line x1="320" y1="50" x2="265" y2="105" stroke="#7c2d12" stroke-width="1" stroke-dasharray="2 2"/>' +
+        '<text x="320" y="42" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#7c2d12">關節孢子</text>' +
+        '<line x1="320" y1="200" x2="240" y2="180" stroke="#854d0e" stroke-width="1" stroke-dasharray="2 2"/>' +
+        '<text x="320" y="208" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#854d0e">分支點</text>' +
+        '</g>' +
+        // Right panel: explanation
+        '<g transform="translate(420 75)">' +
+        '<text x="0" y="0" font-family="Noto Sans TC" font-size="14" font-weight="700" fill="#0c5159">KOH 鏡檢看到什麼？</text>' +
+        '<g transform="translate(0 18)">' +
+        '<rect x="0" y="0" width="270" height="170" rx="8" fill="#fff" stroke="var(--border)" stroke-width="1"/>' +
+        '<text x="12" y="22" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">✓ 分節菌絲(septate hyphae)</text>' +
+        '<text x="12" y="38" font-family="Inter" font-size="13" fill="#5e574e">細長線狀，有「橫膈」分節 — 皮癬菌特徵</text>' +
+        '<text x="12" y="60" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">✓ 關節孢子(arthroconidia)</text>' +
+        '<text x="12" y="76" font-family="Inter" font-size="13" fill="#5e574e">菌絲斷裂成橢圓形孢子鏈</text>' +
+        '<text x="12" y="98" font-family="Inter" font-size="13" font-weight="700" fill="#7f1d1d">取樣關鍵</text>' +
+        '<text x="12" y="114" font-family="Inter" font-size="13" fill="#5e574e">• 病灶活躍邊緣（紅圈外圍）</text>' +
+        '<text x="12" y="130" font-family="Inter" font-size="13" fill="#5e574e">• 用刀片刮取鱗屑</text>' +
+        '<text x="12" y="146" font-family="Inter" font-size="13" fill="#5e574e">• 滴 10-20% KOH 溶解角質</text>' +
+        '<text x="12" y="160" font-family="Inter" font-size="13" fill="#5e574e">• 加溫 / 等 5 分鐘 → 顯微鏡</text>' +
+        '</g>' +
+        '</g>' +
+        '<text x="360" y="305" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Hainer Am Fam Physician 2003 · Bonifaz 2024 medical mycology · Levitt JAMA Dermatol 2010</text>' +
+        '</svg><figcaption>圖. 皮癬菌 KOH 鏡檢：分節菌絲 + 關節孢子是診斷金標準；陰性也不排除（取樣不準確 / 已用過藥）</figcaption></figure>';
+    },
+
+    // Clinical photo placeholder — when real clinical photos are unavailable
+    'clinical-photo-placeholder': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" aria-labelledby="cp-title">' +
+        '<title id="cp-title">臨床表現示意圖</title>' +
+        '<rect width="720" height="280" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="16" font-weight="700" fill="#0c5159">臨床表現示意（無病人實照）</text>' +
+        // Three slot panels
+        '<g transform="translate(60 60)">' +
+        '<rect x="0" y="0" width="180" height="180" rx="14" fill="#ebe4d8" stroke="#a4b5a8" stroke-width="2" stroke-dasharray="6 4"/>' +
+        '<text x="90" y="75" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#4d6358">臨床照片 #1</text>' +
+        '<text x="90" y="95" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">尚未收錄</text>' +
+        '<text x="90" y="125" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">（不放網路截圖以遵守</text>' +
+        '<text x="90" y="138" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">著作權與病患隱私）</text>' +
+        '</g>' +
+        '<g transform="translate(270 60)">' +
+        '<rect x="0" y="0" width="180" height="180" rx="14" fill="#ebe4d8" stroke="#a4b5a8" stroke-width="2" stroke-dasharray="6 4"/>' +
+        '<text x="90" y="75" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#4d6358">臨床照片 #2</text>' +
+        '<text x="90" y="95" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">尚未收錄</text>' +
+        '</g>' +
+        '<g transform="translate(480 60)">' +
+        '<rect x="0" y="0" width="180" height="180" rx="14" fill="#ebe4d8" stroke="#a4b5a8" stroke-width="2" stroke-dasharray="6 4"/>' +
+        '<text x="90" y="75" text-anchor="middle" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#4d6358">臨床照片 #3</text>' +
+        '<text x="90" y="95" text-anchor="middle" font-family="Inter" font-size="13" fill="#5e574e">尚未收錄</text>' +
+        '</g>' +
+        '<text x="360" y="262" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">參考公開圖片：DermNet NZ · VisualDx · 各疾病 wiki（英文）</text>' +
+        '</svg><figcaption>圖. 為避免侵權與保護病患隱私，本站不放網路收集的臨床照片；欲對照實際病灶請參考 DermNet / VisualDx</figcaption></figure>';
+    },
+
+    // Dermatome map for shingles
+    'dermatome-map': function () {
+      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" aria-labelledby="derm-title">' +
+        '<title id="derm-title">皮節分布（神經皮節）— 帶狀皰疹定位</title>' +
+        '<rect width="720" height="360" fill="#faf7f2" rx="10"/>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">皮節分布 Dermatomes — 帶狀皰疹常見位置</text>' +
+        // Body outline (front)
+        '<g transform="translate(120 60)">' +
+        '<text x="100" y="-5" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">前面</text>' +
+        // Head/face
+        '<circle cx="100" cy="22" r="20" fill="#fde68a" stroke="#854d0e" stroke-width="1.5"/>' +
+        '<text x="100" y="18" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="#854d0e">V1</text>' +
+        '<text x="100" y="29" text-anchor="middle" font-family="Inter" font-size="11" fill="#854d0e">三叉</text>' +
+        // Neck
+        '<rect x="90" y="42" width="20" height="14" fill="#fed7aa" stroke="#9a3412" stroke-width="1"/>' +
+        '<text x="100" y="52" text-anchor="middle" font-family="Inter" font-size="11" fill="#9a3412">C2-3</text>' +
+        // Chest band T1-T6
+        '<rect x="60" y="56" width="80" height="50" fill="#dcfce7" stroke="#14532d" stroke-width="1"/>' +
+        '<line x1="60" y1="68" x2="140" y2="68" stroke="#14532d" stroke-width="0.5" stroke-dasharray="2 2"/>' +
+        '<line x1="60" y1="80" x2="140" y2="80" stroke="#14532d" stroke-width="0.5" stroke-dasharray="2 2"/>' +
+        '<line x1="60" y1="92" x2="140" y2="92" stroke="#14532d" stroke-width="0.5" stroke-dasharray="2 2"/>' +
+        '<text x="40" y="64" text-anchor="middle" font-family="Inter" font-size="12" fill="#14532d">T1</text>' +
+        '<text x="40" y="76" text-anchor="middle" font-family="Inter" font-size="12" fill="#14532d">T2</text>' +
+        '<text x="40" y="88" text-anchor="middle" font-family="Inter" font-size="12" fill="#14532d">T4</text>' +
+        '<text x="40" y="100" text-anchor="middle" font-family="Inter" font-size="12" fill="#14532d">T6</text>' +
+        // Abdomen T7-T12
+        '<rect x="60" y="106" width="80" height="50" fill="#cffafe" stroke="#0c5159" stroke-width="1"/>' +
+        '<line x1="60" y1="118" x2="140" y2="118" stroke="#0c5159" stroke-width="0.5" stroke-dasharray="2 2"/>' +
+        '<line x1="60" y1="130" x2="140" y2="130" stroke="#0c5159" stroke-width="0.5" stroke-dasharray="2 2"/>' +
+        '<line x1="60" y1="142" x2="140" y2="142" stroke="#0c5159" stroke-width="0.5" stroke-dasharray="2 2"/>' +
+        '<text x="40" y="114" text-anchor="middle" font-family="Inter" font-size="12" fill="#0c5159">T7</text>' +
+        '<text x="40" y="126" text-anchor="middle" font-family="Inter" font-size="12" fill="#0c5159">T10</text>' +
+        '<text x="40" y="138" text-anchor="middle" font-family="Inter" font-size="12" fill="#0c5159">T12</text>' +
+        // Pelvis L1-L3
+        '<rect x="60" y="156" width="80" height="30" fill="#fef9c3" stroke="#854d0e" stroke-width="1"/>' +
+        '<text x="40" y="172" text-anchor="middle" font-family="Inter" font-size="12" fill="#854d0e">L1-3</text>' +
+        // Legs
+        '<rect x="65" y="186" width="30" height="80" fill="#fee2e2" stroke="#7f1d1d" stroke-width="1"/>' +
+        '<text x="80" y="220" text-anchor="middle" font-family="Inter" font-size="12" fill="#7f1d1d">L4-S2</text>' +
+        '<rect x="105" y="186" width="30" height="80" fill="#fee2e2" stroke="#7f1d1d" stroke-width="1"/>' +
+        '<text x="120" y="220" text-anchor="middle" font-family="Inter" font-size="12" fill="#7f1d1d">L4-S2</text>' +
+        '</g>' +
+        // Common shingles sites highlighted on right
+        '<g transform="translate(420 70)">' +
+        '<text x="0" y="0" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">最常見發病位置</text>' +
+        '<g transform="translate(0 20)">' +
+        '<circle cx="10" cy="12" r="6" fill="#fde68a" stroke="#854d0e" stroke-width="1.5"/>' +
+        '<text x="25" y="16" font-family="Noto Sans TC" font-size="13" fill="#5e574e"><tspan font-weight="700">V1 三叉神經第一支</tspan> — 額頭、上眼瞼（注意！可侵犯角膜）</text>' +
+        '</g>' +
+        '<g transform="translate(0 50)">' +
+        '<circle cx="10" cy="12" r="6" fill="#dcfce7" stroke="#14532d" stroke-width="1.5"/>' +
+        '<text x="25" y="16" font-family="Noto Sans TC" font-size="13" fill="#5e574e"><tspan font-weight="700">T1-T12 軀幹</tspan> — 占 50% 病例，單側帶狀</text>' +
+        '</g>' +
+        '<g transform="translate(0 80)">' +
+        '<circle cx="10" cy="12" r="6" fill="#cffafe" stroke="#0c5159" stroke-width="1.5"/>' +
+        '<text x="25" y="16" font-family="Noto Sans TC" font-size="13" fill="#5e574e"><tspan font-weight="700">L1-L5 腰薦</tspan> — 占 ~10-20%</text>' +
+        '</g>' +
+        '<g transform="translate(0 120)">' +
+        '<rect x="0" y="0" width="280" height="105" rx="8" fill="#fff7ed" stroke="#fed7aa" stroke-width="1"/>' +
+        '<text x="10" y="20" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#9a3412">⚠ 重要警訊</text>' +
+        '<text x="10" y="40" font-family="Inter" font-size="13" fill="#9a3412">• 鼻尖出疹(Hutchinson sign)→ 強烈疑似侵犯眼睛</text>' +
+        '<text x="10" y="58" font-family="Inter" font-size="13" fill="#9a3412">• 跨越中線 → 考慮免疫不全可能</text>' +
+        '<text x="10" y="76" font-family="Inter" font-size="13" fill="#9a3412">• &gt; 2 個皮節同時 → 同上，需評估</text>' +
+        '<text x="10" y="94" font-family="Inter" font-size="13" fill="#9a3412">• 顏面神經受侵 → Ramsay-Hunt syndrome</text>' +
+        '</g>' +
+        '</g>' +
+        '<text x="360" y="345" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Keegan & Garrett 1948 · CDC Shingles 2024 · Dworkin Clin Infect Dis 2007</text>' +
+        '</svg><figcaption>圖. 帶狀皰疹依神經皮節單側分布；V1（額/眼）是急診轉介眼科的緊急狀況</figcaption></figure>';
+    }
+  };
+
+  // Per-article slug → which diagrams to inject (and at which H2 index)
+  DN.MED_DIAGRAM_MAP = {
+    'acne-myths':              [{ key: 'acne-pathogenesis', after: 1 }, { key: 'bpo-mechanism', after: 3 }],
+    'acne-scar-treatment':     [{ key: 'acne-pathogenesis', after: 0 }],
+    'isotretinoin-patient':    [{ key: 'acne-pathogenesis', after: 1 }],
+    'isotretinoin-clinical':   [{ key: 'acne-pathogenesis', after: 0 }],
+    'topical-acids-patient':   [{ key: 'acne-pathogenesis', after: 1 }],
+    'topical-acids-clinical':  [{ key: 'acne-pathogenesis', after: 0 }],
+    'sunscreen-myths':         [{ key: 'uv-penetration', after: 1 }, { key: 'spf-curve', after: 3 }],
+    'melasma-myths':           [{ key: 'uv-penetration', after: 2 }],
+    'atopic-dermatitis-overview': [{ key: 'skin-barrier', after: 1 }, { key: 'tcs-potency', after: 4 }],
+    'pediatric-eczema':        [{ key: 'skin-barrier', after: 1 }, { key: 'tcs-potency', after: 3 }],
+    'topical-steroids-guide':  [{ key: 'tcs-potency', after: 1 }],
+    'hairloss-myths':          [{ key: 'hair-cycle', after: 2 }],
+    'alopecia-areata':         [{ key: 'hair-cycle', after: 1 }],
+    'laser-dermatology':       [{ key: 'laser-wavelength', after: 0 }],
+    'rosacea-myths':           [{ key: 'rosacea-subtypes', after: 1 }, { key: 'uv-penetration', after: 4 }],
+    'psoriasis-myths':         [{ key: 'biologics-cytokines', after: 2 }, { key: 'tcs-potency', after: 5 }],
+    'biologics-overview':      [{ key: 'biologics-cytokines', after: 1 }, { key: 'skin-barrier', after: 3 }],
+    'vitiligo':                [{ key: 'vitiligo-types', after: 1 }, { key: 'uv-penetration', after: 3 }],
+    'urticaria-myths':         [{ key: 'mast-cell', after: 1 }],
+    'targeted-therapy-skin':   [{ key: 'biologics-cytokines', after: 1 }],
+    'cutaneous-t-cell-lymphoma': [{ key: 'biologics-cytokines', after: 2 }],
+    'prurigo-nodularis':       [{ key: 'biologics-cytokines', after: 2 }, { key: 'skin-barrier', after: 0 }],
+    'hidradenitis-suppurativa': [{ key: 'biologics-cytokines', after: 2 }],
+    // R30: New diagrams
+    'pediatric-eczema':        [{ key: 'skin-barrier', after: 1 }, { key: 'scorad-bsa', after: 3 }, { key: 'tcs-potency', after: 5 }],
+    'acne-scar-treatment':     [{ key: 'acne-pathogenesis', after: 0 }, { key: 'acne-scar-types', after: 1 }],
+    'alopecia-areata':         [{ key: 'hair-cycle', after: 1 }, { key: 'jak-tree', after: 4 }],
+    'biologics-overview':      [{ key: 'biologics-cytokines', after: 1 }, { key: 'jak-tree', after: 3 }, { key: 'skin-barrier', after: 5 }],
+    'shingles-myths':          [{ key: 'dermatome-map', after: 1 }],
+    'mpox-care':               [{ key: 'dermatome-map', after: 2 }, { key: 'clinical-photo-placeholder', after: 4 }],
+    // Tinea hyphae
+    'tinea-myths':             [{ key: 'tinea-hyphae', after: 2 }],
+    // R32: JAK structure diagram
+    'alopecia-areata':         [{ key: 'hair-cycle', after: 1 }, { key: 'jak-tree', after: 4 }, { key: 'jak-structure', after: 6 }],
+    'biologics-overview':      [{ key: 'biologics-cytokines', after: 1 }, { key: 'jak-tree', after: 3 }, { key: 'jak-structure', after: 4 }, { key: 'skin-barrier', after: 6 }],
+    // ABCDE + AK progression for sunscreen / melasma articles (UV damage articles)
+    'sunscreen-myths':         [{ key: 'uv-penetration', after: 1 }, { key: 'spf-curve', after: 3 }, { key: 'melanoma-abcde', after: 5 }, { key: 'ak-progression', after: 7 }],
+    // More clinical-photo placeholders for diseases without owned images
+    'warts-myths':             [],
+    'epidermoid-cyst':         [{ key: 'clinical-photo-placeholder', after: 1 }],
+  };
+
+})();
