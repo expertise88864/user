@@ -201,6 +201,13 @@ jobs:
         with: { python-version: '3.12' }
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
+      - name: Pre-audit regen (mirror feeds-regen so audit doesn't race against it)
+        # feeds-regen runs in parallel and commits [skip ci]; meta-check picks up
+        # the pre-regen state and fails on @id mismatches in /en/ mirrors.
+        # Re-run EN gen + schema normalize here so the audit sees the final state.
+        run: |
+          python _gen_en_pages.py
+          python _normalize_schema.py --include-en
       - name: Quick required-tag audit
         run: |
           python <<'PY'
