@@ -119,7 +119,7 @@ jobs:
               'CSS: "backdrop-filter"' \
               'CSS: "content-visibility"' \
               'CSS: "contain-intrinsic-size"' \
-              'CSS: "padding-bottom".*env\(' \
+              'CSS: "padding-(top|bottom|left|right)".*env\(' \
               'CSS: Unrecognized at-rule "@view-transition"' \
               "CSS: Parse Error"
       - name: Quick lint — JSON-LD blocks parse cleanly
