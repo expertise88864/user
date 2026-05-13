@@ -109,8 +109,15 @@ if (cov) cov.innerHTML = DN.getMagCover(art.tag);
 }
 if (heroEl && hero) {
 heroEl.href = '/blog/' + hero.slug;
-var h3 = heroEl.querySelector('h3');
-if (h3) { h3.textContent = hero.title; h3.removeAttribute('data-zh'); h3.removeAttribute('data-en'); }
+// Hero card actually uses <h2>, not <h2> — match either for safety
+var heading = heroEl.querySelector('h2, h3');
+if (heading) {
+  heading.textContent = hero.title;
+  heading.removeAttribute('data-zh');
+  heading.removeAttribute('data-en');
+  // Use article title_en if available, else fall back to title
+  if (hero.title_en) heading.setAttribute('data-en', hero.title_en);
+}
 var meta = heroEl.querySelector('.mag-card-meta');
 if (meta) { meta.textContent = fmtMeta(hero); meta.removeAttribute('data-zh'); meta.removeAttribute('data-en'); }
 setCover(heroEl, hero);

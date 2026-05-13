@@ -100,7 +100,7 @@ if (cov) cov.innerHTML = DN.getMagCover(art.tag);
 }
 if (heroEl && hero) {
 heroEl.href = '/blog/' + hero.slug;
-// Hero card actually uses <h2>, not <h3> — match either for safety
+// Hero card actually uses <h2>, not <h2> — match either for safety
 var heading = heroEl.querySelector('h2, h3');
 if (heading) {
   heading.textContent = hero.title;
