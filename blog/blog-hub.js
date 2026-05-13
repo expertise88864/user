@@ -92,9 +92,11 @@
     function rowHTML(a, badge) {
       var slug = safeSlug(a.slug);
       if (!slug) return '';
+      var tagZh = escapeHtml(a.tag || '');
       var tagEn = escapeHtml(a.tag_en || a.tag || '');
       var dateLabel = escapeHtml(a.date || '');
-      var title = escapeHtml(a.title || a.slug);
+      var titleZh = escapeHtml(a.title || a.slug);
+      var titleEn = escapeHtml(a.title_en || a.title || a.slug);
       var num = escapeHtml(DN.getArticleNumber(slug));
       var iconSvg = svgFor(a.tag);
       return '<a class="dn-spotlight-card" href="/blog/' + slug + '" ' +
@@ -104,13 +106,13 @@
         '<div style="display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#4d6358">' +
           (badge ? '<span style="padding:2px 8px;border-radius:9999px;background:' + badge.bg + ';color:' + badge.fg + ';letter-spacing:.08em;font-size:10px">' + badge.label + '</span>' : '') +
           (num ? '<span style="font-family:Inter,sans-serif;letter-spacing:.06em;color:#4d6358;font-weight:800">№' + num + '</span><span style="opacity:.5">·</span>' : '') +
-          '<span>' + tagEn + '</span>' +
+          '<span data-zh="' + tagZh + '" data-en="' + tagEn + '">' + tagZh + '</span>' +
           '<span style="opacity:.5">·</span>' +
           '<time style="font-weight:500;font-family:Inter,sans-serif;letter-spacing:0">' + dateLabel + '</time>' +
         '</div>' +
         '<div style="display:flex;align-items:center;gap:10px">' +
           iconSvg +
-          '<div style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:15px;font-weight:700;line-height:1.5;color:#0f172a;flex:1">' + title + '</div>' +
+          '<div data-zh="' + titleZh + '" data-en="' + titleEn + '" style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:15px;font-weight:700;line-height:1.5;color:#0f172a;flex:1">' + titleZh + '</div>' +
         '</div>' +
       '</a>';
     }
@@ -134,6 +136,40 @@
     }
   };
 
+
+  // Bilingual labels for tag chips. Maps ZH tag → EN tag. Keep in sync with
+  // tag keys in DN.TAG_CATEGORIES below.
+  DN.TAG_EN = {
+    '痘痘 / 痘疤': 'Acne / scars',
+    '異位性皮膚炎 / 濕疹': 'Atopic dermatitis / eczema',
+    '乾癬': 'Psoriasis',
+    '蕁麻疹': 'Urticaria',
+    '接觸性皮膚炎': 'Contact dermatitis',
+    '玫瑰斑 / 酒糟': 'Rosacea',
+    '病毒疣 / HPV': 'Warts / HPV',
+    '帶狀皰疹 / 皮蛇': 'Shingles',
+    '香港腳 / 灰指甲': 'Tinea / onychomycosis',
+    '落髮 / 圓禿': 'Hair loss / alopecia areata',
+    '白斑': 'Vitiligo',
+    '皮膚癌 / AK': 'Skin cancer / AK',
+    '肝斑 / 美白': 'Melasma / whitening',
+    '化膿性汗腺炎': 'Hidradenitis suppurativa',
+    '兒童 / 嬰幼兒': 'Children / infants',
+    '猴痘 Mpox': 'Mpox',
+    '處置 / 手術': 'Procedures / surgery',
+    '雷射 / 光電': 'Laser / energy devices',
+    '類固醇藥膏': 'Topical steroids',
+    '生物製劑': 'Biologics',
+    '酸類 / A 酸': 'Topical acids / isotretinoin',
+    '防曬': 'Sunscreen',
+    '標靶藥物副作用': 'Targeted therapy AE',
+    '粉瘤 / 表皮囊腫': 'Epidermoid cyst',
+    '健保 / 自費': 'NHI / self-pay',
+    '常見問題 FAQ': 'FAQ',
+    '學習筆記': 'Study notes',
+    '最新研究': 'Latest research',
+    '全部主題': 'All topics'
+  };
 
   DN.TAG_CATEGORIES = [
     {
@@ -293,6 +329,8 @@
           btn.className = 'dn-tag-chip';
           btn.dataset.tag = tag;
           btn.textContent = tag;
+          btn.setAttribute('data-zh', tag);
+          btn.setAttribute('data-en', (DN.TAG_EN && DN.TAG_EN[tag]) || tag);
           btn.addEventListener('click', function () { applyFilter(tag); });
           rowWrap.appendChild(btn);
         });
@@ -315,6 +353,8 @@
         btn.className = 'dn-tag-chip';
         btn.dataset.tag = tag;
         btn.textContent = tag;
+        btn.setAttribute('data-zh', tag);
+        btn.setAttribute('data-en', (DN.TAG_EN && DN.TAG_EN[tag]) || tag);
         btn.addEventListener('click', function () { applyFilter(tag); });
         tagsDiv.appendChild(btn);
       });

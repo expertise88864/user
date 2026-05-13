@@ -39,7 +39,7 @@ def main() -> int:
     require(errors, "blog/blog-hub.js", "function escapeHtml(value)", "Spotlight card text should be escaped before template insertion")
     require(errors, "blog/blog-hub.js", "function safeSlug(value)", "Spotlight card links should validate article slugs before template insertion")
     require(errors, "blog/blog-hub.js", "var slug = safeSlug(a.slug);", "Spotlight cards should derive hrefs from validated slugs")
-    require(errors, "blog/blog-hub.js", "var title = escapeHtml(a.title || a.slug);", "Spotlight card titles should be escaped")
+    require(errors, "blog/blog-hub.js", "var titleZh = escapeHtml(a.title || a.slug);", "Spotlight card titles should be escaped")
     require(errors, "blog/blog-hub.js", "var tagEn = escapeHtml(a.tag_en || a.tag || '');", "Spotlight card tags should be escaped")
     forbid(errors, "blog/blog-hub.js", "onmouseover=", "Spotlight cards should not inject inline event attributes")
     forbid(errors, "blog/blog-hub.js", "onmouseout=", "Spotlight cards should not inject inline event attributes")
