@@ -108,7 +108,21 @@ var HERO_COVERS = [
   // 3. Wave / gradient — soft cream + sage
   '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="dn-wave" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#dcd9d1"/><stop offset="100%" stop-color="#a4b5a8"/></linearGradient></defs><rect width="400" height="300" fill="url(#dn-wave)"/><path d="M0 200 Q100 150 200 200 T400 200 V300 H0 Z" fill="#4d6358" opacity=".25"/><path d="M0 230 Q100 180 200 230 T400 230 V300 H0 Z" fill="#4d6358" opacity=".35"/></svg>',
   // 4. Skin layer — concentric textures
-  '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#ebe4d8"/><circle cx="200" cy="160" r="100" fill="#fef3c7"/><circle cx="200" cy="160" r="70" fill="#fbcfa3" opacity=".7"/><circle cx="200" cy="160" r="42" fill="#a4b5a8" opacity=".5"/><circle cx="200" cy="160" r="18" fill="#4d6358"/><g fill="#4d6358" opacity=".55"><circle cx="120" cy="80" r="3"/><circle cx="290" cy="100" r="3"/><circle cx="310" cy="220" r="3"/><circle cx="100" cy="220" r="3"/></g></svg>'
+  '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#ebe4d8"/><circle cx="200" cy="160" r="100" fill="#fef3c7"/><circle cx="200" cy="160" r="70" fill="#fbcfa3" opacity=".7"/><circle cx="200" cy="160" r="42" fill="#a4b5a8" opacity=".5"/><circle cx="200" cy="160" r="18" fill="#4d6358"/><g fill="#4d6358" opacity=".55"><circle cx="120" cy="80" r="3"/><circle cx="290" cy="100" r="3"/><circle cx="310" cy="220" r="3"/><circle cx="100" cy="220" r="3"/></g></svg>',
+  // 5. Diagonal bands — modern stripe
+  '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#f5f1e8"/><polygon points="0,80 400,0 400,90 0,200" fill="#a4b5a8" opacity=".55"/><polygon points="0,220 400,130 400,300 0,300" fill="#4d6358" opacity=".45"/><circle cx="320" cy="60" r="20" fill="#fef3c7"/></svg>',
+  // 6. Hexagonal honeycomb — clinical lattice
+  '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#dcd9d1"/><g fill="none" stroke="#4d6358" stroke-width="2" opacity=".55"><polygon points="80,40 110,55 110,85 80,100 50,85 50,55"/><polygon points="170,40 200,55 200,85 170,100 140,85 140,55"/><polygon points="260,40 290,55 290,85 260,100 230,85 230,55"/><polygon points="125,120 155,135 155,165 125,180 95,165 95,135"/><polygon points="215,120 245,135 245,165 215,180 185,165 185,135"/><polygon points="305,120 335,135 335,165 305,180 275,165 275,135"/><polygon points="80,200 110,215 110,245 80,260 50,245 50,215"/><polygon points="170,200 200,215 200,245 170,260 140,245 140,215"/><polygon points="260,200 290,215 290,245 260,260 230,245 230,215"/></g><polygon points="170,120 200,135 200,165 170,180 140,165 140,135" fill="#7a9285" opacity=".5"/></svg>',
+  // 7. Concentric rings — focus / target
+  '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#ebe4d8"/><circle cx="200" cy="150" r="130" fill="none" stroke="#a4b5a8" stroke-width="2" opacity=".5"/><circle cx="200" cy="150" r="100" fill="none" stroke="#7a9285" stroke-width="2.5" opacity=".6"/><circle cx="200" cy="150" r="70" fill="none" stroke="#4d6358" stroke-width="3" opacity=".7"/><circle cx="200" cy="150" r="40" fill="#4d6358" opacity=".8"/><circle cx="200" cy="150" r="14" fill="#fef3c7"/></svg>',
+  // 8. Petal flower — gentle organic
+  '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#fdf6ec"/><g transform="translate(200 150)"><g fill="#7a9285" opacity=".55"><ellipse cx="0" cy="-55" rx="22" ry="55"/><ellipse cx="0" cy="-55" rx="22" ry="55" transform="rotate(60)"/><ellipse cx="0" cy="-55" rx="22" ry="55" transform="rotate(120)"/><ellipse cx="0" cy="-55" rx="22" ry="55" transform="rotate(180)"/><ellipse cx="0" cy="-55" rx="22" ry="55" transform="rotate(240)"/><ellipse cx="0" cy="-55" rx="22" ry="55" transform="rotate(300)"/></g><circle r="20" fill="#fef3c7"/><circle r="9" fill="#4d6358"/></g></svg>',
+  // 9. Crosshatch grid — medical chart
+  '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#f1ece4"/><g stroke="#a4b5a8" stroke-width="1" opacity=".55"><line x1="0" y1="50" x2="400" y2="50"/><line x1="0" y1="100" x2="400" y2="100"/><line x1="0" y1="150" x2="400" y2="150"/><line x1="0" y1="200" x2="400" y2="200"/><line x1="0" y1="250" x2="400" y2="250"/><line x1="50" y1="0" x2="50" y2="300"/><line x1="100" y1="0" x2="100" y2="300"/><line x1="150" y1="0" x2="150" y2="300"/><line x1="200" y1="0" x2="200" y2="300"/><line x1="250" y1="0" x2="250" y2="300"/><line x1="300" y1="0" x2="300" y2="300"/><line x1="350" y1="0" x2="350" y2="300"/></g><polyline points="0,220 60,200 120,180 180,150 240,170 300,120 360,100 400,70" fill="none" stroke="#4d6358" stroke-width="3"/><g fill="#4d6358"><circle cx="120" cy="180" r="4"/><circle cx="240" cy="170" r="4"/><circle cx="360" cy="100" r="4"/></g></svg>',
+  // 10. Liquid drop — skincare
+  '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="dn-drop" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#dcd9d1"/><stop offset="100%" stop-color="#a4b5a8"/></linearGradient></defs><rect width="400" height="300" fill="url(#dn-drop)"/><path d="M200 50 Q150 130 150 180 Q150 230 200 230 Q250 230 250 180 Q250 130 200 50 Z" fill="#fff" opacity=".8"/><ellipse cx="180" cy="120" rx="15" ry="22" fill="#fff" opacity=".7"/><circle cx="80" cy="80" r="20" fill="#fff" opacity=".4"/><circle cx="340" cy="240" r="30" fill="#fff" opacity=".4"/></svg>',
+  // 11. Radial spotlight — focused emphasis
+  '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="dn-rad" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#fef3c7"/><stop offset="50%" stop-color="#dcd9d1"/><stop offset="100%" stop-color="#7a9285"/></radialGradient></defs><rect width="400" height="300" fill="url(#dn-rad)"/><g fill="#4d6358" opacity=".55"><circle cx="60" cy="240" r="6"/><circle cx="340" cy="260" r="4"/><circle cx="320" cy="60" r="5"/><circle cx="90" cy="80" r="3"/></g><circle cx="200" cy="130" r="38" fill="#fff" opacity=".65"/><circle cx="200" cy="130" r="18" fill="#4d6358"/></svg>'
 ];
 function hashTag(tag){
   var h=0; var s=tag||'';
@@ -124,17 +138,22 @@ cov.innerHTML = HERO_COVERS[idx];
 }
 if (heroEl && hero) {
 heroEl.href = '/blog/' + hero.slug;
-// Hero card actually uses <h2>, not <h2> — match either for safety
 var heading = heroEl.querySelector('h2, h3');
 if (heading) {
+  // IMPORTANT: set BOTH data-zh AND data-en so DN.translate() doesn't fall
+  // through to the wrong language when ZH mode is active but only data-en
+  // exists (which would show English titles to ZH readers — the previous bug).
+  heading.setAttribute('data-zh', hero.title);
+  heading.setAttribute('data-en', hero.title_en || hero.title);
   heading.textContent = hero.title;
-  heading.removeAttribute('data-zh');
-  heading.removeAttribute('data-en');
-  // Use article title_en if available, else fall back to title
-  if (hero.title_en) heading.setAttribute('data-en', hero.title_en);
 }
 var meta = heroEl.querySelector('.mag-card-meta');
-if (meta) { meta.textContent = fmtMeta(hero); meta.removeAttribute('data-zh'); meta.removeAttribute('data-en'); }
+if (meta) {
+  var metaText = fmtMeta(hero);
+  meta.setAttribute('data-zh', metaText);
+  meta.setAttribute('data-en', metaText);
+  meta.textContent = metaText;
+}
 setCover(heroEl, hero);
 }
 
