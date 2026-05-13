@@ -93,22 +93,34 @@ var d = fmtDate(a.date);
 var tag = a.tag || '';
 return [d, tag].filter(Boolean).join(' · ');
 }
+// Inline lightweight cover palette — 5 generic dermatology-themed cover SVGs
+// (~3.5 KB total). Picked by tag hash so each article tag gets a consistent
+// but varied cover. We deliberately keep the homepage lean — no reference
+// to the full article-page cover bundle (performance-budget + runtime-smoke
+// audits both disallow it on non-article pages).
+var HERO_COVERS = [
+  // 0. Cell / mineral — abstract cells in mint
+  '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#dcd9d1"/><circle cx="80" cy="80" r="60" fill="#a4b5a8" opacity=".75"/><circle cx="320" cy="200" r="90" fill="#7a9285" opacity=".5"/><circle cx="200" cy="160" r="42" fill="#fff" opacity=".55"/><circle cx="80" cy="80" r="14" fill="#4d6358"/><circle cx="320" cy="200" r="20" fill="#4d6358"/><circle cx="200" cy="160" r="9" fill="#4d6358"/></svg>',
+  // 1. Sun rays — sage palette
+  '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#ebe4d8"/><circle cx="200" cy="150" r="55" fill="#a4b5a8"/><g stroke="#4d6358" stroke-width="3" stroke-linecap="round"><line x1="200" y1="70" x2="200" y2="50"/><line x1="200" y1="230" x2="200" y2="250"/><line x1="120" y1="150" x2="100" y2="150"/><line x1="280" y1="150" x2="300" y2="150"/><line x1="144" y1="94" x2="130" y2="80"/><line x1="270" y1="220" x2="284" y2="234"/><line x1="144" y1="206" x2="130" y2="220"/><line x1="270" y1="80" x2="284" y2="94"/></g></svg>',
+  // 2. Leaf / botanical — warm taupe + green
+  '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#f1ece4"/><path d="M40 240 Q90 100 200 80 Q310 100 360 240 Z" fill="#7a9285" opacity=".55"/><path d="M70 240 Q120 140 200 130 Q280 140 330 240" fill="none" stroke="#4d6358" stroke-width="2.5"/><line x1="200" y1="130" x2="200" y2="240" stroke="#4d6358" stroke-width="2"/></svg>',
+  // 3. Wave / gradient — soft cream + sage
+  '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="dn-wave" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#dcd9d1"/><stop offset="100%" stop-color="#a4b5a8"/></linearGradient></defs><rect width="400" height="300" fill="url(#dn-wave)"/><path d="M0 200 Q100 150 200 200 T400 200 V300 H0 Z" fill="#4d6358" opacity=".25"/><path d="M0 230 Q100 180 200 230 T400 230 V300 H0 Z" fill="#4d6358" opacity=".35"/></svg>',
+  // 4. Skin layer — concentric textures
+  '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="300" fill="#ebe4d8"/><circle cx="200" cy="160" r="100" fill="#fef3c7"/><circle cx="200" cy="160" r="70" fill="#fbcfa3" opacity=".7"/><circle cx="200" cy="160" r="42" fill="#a4b5a8" opacity=".5"/><circle cx="200" cy="160" r="18" fill="#4d6358"/><g fill="#4d6358" opacity=".55"><circle cx="120" cy="80" r="3"/><circle cx="290" cy="100" r="3"/><circle cx="310" cy="220" r="3"/><circle cx="100" cy="220" r="3"/></g></svg>'
+];
+function hashTag(tag){
+  var h=0; var s=tag||'';
+  for (var i=0;i<s.length;i++) h = (h*31 + s.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
 function setCover(el, art) {
 if (!el || !art) return;
 var cov = el.querySelector('.mag-card-cover');
 if (!cov) return;
-// blog-article-visuals.min.js (which defines DN.getMagCover + DN.MAG_COVERS)
-// is NOT statically loaded on the homepage — the performance-budget audit
-// disallows that. Lazy-load it once on the first hero update.
-function applyCover(){
-  if (window.DN && DN.getMagCover) cov.innerHTML = DN.getMagCover(art.tag);
-}
-if (window.DN && DN.getMagCover) { applyCover(); return; }
-var s = document.createElement('script');
-s.src = '/blog/blog-article-visuals.min.js?v=202605120530';
-s.async = true;
-s.onload = applyCover;
-document.head.appendChild(s);
+var idx = hashTag(art.tag || art.slug || '') % HERO_COVERS.length;
+cov.innerHTML = HERO_COVERS[idx];
 }
 if (heroEl && hero) {
 heroEl.href = '/blog/' + hero.slug;
