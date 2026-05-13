@@ -116,7 +116,13 @@ class DataEnRenderer(HTMLParser):
                 self.active['depth'] = int(self.active['depth']) - 1
                 if self.active['depth'] == 0:
                     self.out.append(str(self.active['start']))
-                    self.out.append(str(self.active['en']))
+                    # Python's HTMLParser already decodes HTML entities in
+                    # attribute values, so '&lt; 2 yr' arrives here as '< 2 yr'.
+                    # Re-escape lone '<' that doesn't start an HTML tag so the
+                    # html5validator does not flag "Bad character ' ' after '<'".
+                    en_text = str(self.active['en'])
+                    en_text = re.sub(r'<(?![a-zA-Z!/?])', '&lt;', en_text)
+                    self.out.append(en_text)
                     self.out.append(f'</{tag}>')
                     self.active = None
             return
@@ -367,14 +373,39 @@ def set_meta(src: str, title: str, desc: str) -> str:
 def set_noindex(src: str) -> str:
     content = 'noindex,follow'
     if re.search(r'<meta\s+name="robots"\s+content="[^"]*"', src, re.I):
-        return re.sub(
+        src = re.sub(
             r'(<meta\s+name="robots"\s+content=")[^"]*(")',
             r'\1' + content + r'\2',
             src,
             count=1,
             flags=re.I,
         )
-    return src.replace('</head>', f'<meta name="robots" content="{content}" /></head>', 1)
+    else:
+        src = src.replace('</head>', f'<meta name="robots" content="{content}" /></head>', 1)
+    # Strip third-party analytics/ads on noindex pages — _check_third_party.py
+    # forbids loading AdSense / GA4 / Clarity on noindex/internal pages. Both
+    # the inline late-loader <script> block and the static <meta> / <script src>
+    # references need to be removed (substring presence alone fails the audit).
+    src = re.sub(
+        r'<meta\s+name="google-adsense-account"[^>]*/?>',
+        '',
+        src,
+        flags=re.I,
+    )
+    # Any <script> block (inline or external) that references the three trackers
+    src = re.sub(
+        r'<script(?:\s[^>]*)?>(?:(?!</script>).)*?(?:pagead2\.googlesyndication\.com|www\.clarity\.ms|googletagmanager\.com/gtag)(?:(?!</script>).)*?</script>',
+        '',
+        src,
+        flags=re.I | re.S,
+    )
+    src = re.sub(
+        r'<script[^>]*src="[^"]*(?:adsbygoogle\.js|googletagmanager\.com/gtag/js|clarity\.ms/tag)[^"]*"[^>]*>\s*</script>',
+        '',
+        src,
+        flags=re.I,
+    )
+    return src
 
 
 def is_noindex(src: str) -> bool:

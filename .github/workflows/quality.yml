@@ -115,13 +115,16 @@ jobs:
               "Element .* not allowed as child of" \
               'CSS: "inset"' \
               'CSS: "text-underline-offset"' \
+              'CSS: "text-wrap"' \
               'CSS: "background-clip"' \
               'CSS: "backdrop-filter"' \
               'CSS: "content-visibility"' \
               'CSS: "contain-intrinsic-size"' \
+              'CSS: "aspect-ratio"' \
               'CSS: "padding-(top|bottom|left|right)".*env\(' \
               'CSS: Unrecognized at-rule "@view-transition"' \
-              "CSS: Parse Error"
+              "CSS: Parse Error" \
+              'Bad value "speculationrules" for attribute "type" on element "script"'
       - name: Quick lint — JSON-LD blocks parse cleanly
         run: |
           python <<'PY'
