@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 <script src="/blog/blog-shared.min.js?v=202605120530" defer></script>
-<script src="/blog/blog-article-visuals.min.js?v=202605120530" defer></script>
 <script>document.addEventListener('DOMContentLoaded', function () {
 if (window.DN) {
 try { DN.initBlog({}); }
@@ -104,9 +103,21 @@ var tag = a.tag || '';
 return [d, tag].filter(Boolean).join(' · ');
 }
 function setCover(el, art) {
-if (!el || !art || !DN.getMagCover) return;
+if (!el || !art) return;
 var cov = el.querySelector('.mag-card-cover');
-if (cov) cov.innerHTML = DN.getMagCover(art.tag);
+if (!cov) return;
+// blog-article-visuals.min.js (which defines DN.getMagCover + DN.MAG_COVERS)
+// is NOT statically loaded on the homepage — the performance-budget audit
+// disallows that. Lazy-load it once on the first hero update.
+function applyCover(){
+  if (window.DN && DN.getMagCover) cov.innerHTML = DN.getMagCover(art.tag);
+}
+if (window.DN && DN.getMagCover) { applyCover(); return; }
+var s = document.createElement('script');
+s.src = '/blog/blog-article-visuals.min.js?v=202605120530';
+s.async = true;
+s.onload = applyCover;
+document.head.appendChild(s);
 }
 if (heroEl && hero) {
 heroEl.href = '/blog/' + hero.slug;
