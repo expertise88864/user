@@ -38,32 +38,30 @@
 .modal button:hover{ filter:brightness(1.08) }
 .modal button[id$="Cancel"], .modal button[id$="Close"], .modal button[id$="Dismiss"]{ background:#fff; color:var(--ink); border:1px solid #dcd5c8 }
 .modal button[id$="Cancel"]:hover, .modal button[id$="Close"]:hover{ border-color:var(--teal-deep) }
-/* === Mobile-friendly admin layout (rev 2026-05-13b) === */
+/* === Mobile-friendly admin layout (rev 2026-05-13c — inline collapse) === */
 /* Hamburger button — hidden on desktop, shown on mobile */
 #sidebarToggle{ display:none; }
 .sidebar-backdrop{ display:none; }
 @media (max-width: 880px){
-  /* Lock header to a single 54px row so the drawer top:54px never overlaps it */
+  /* Lock header to a single 54px row */
   header.top{ padding:0 12px; height:54px; min-height:54px; flex-wrap:nowrap; gap:8px; overflow:hidden }
   header.top .brand{ font-size:13px; flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
   header.top .right{ flex-shrink:0; flex-wrap:nowrap; gap:6px }
   /* Body must allow scroll on mobile (was overflow:hidden) so iOS can scroll */
   html,body{ overflow:visible; height:auto; min-height:100% }
-  /* Main layout: single column, full viewport height minus 54px header */
-  main.layout{ grid-template-columns:1fr; display:block; height:auto }
-  /* Editor pane is a vertical flex container filling the viewport */
-  #editorPane{ display:flex; flex-direction:column; height:calc(100vh - 54px); height:calc(100dvh - 54px); min-height:0 }
-  /* The iframe / textarea area grows to fill remaining space (key fix) */
+  /* Main layout: simple vertical stack — sidebar on top, editor below */
+  main.layout{ display:flex; flex-direction:column; grid-template-columns:1fr; height:auto }
+  /* Sidebar is a collapsible inline block (NOT fixed/absolute — iOS fixed+bottom is buggy with dynamic URL bar).
+     Default open: 60% of dynamic viewport, internal scroll. Hamburger toggles collapsed state. */
+  #sidebar{ position:relative; width:100%; height:auto; max-height:60vh; max-height:60dvh; overflow-y:auto; -webkit-overflow-scrolling:touch; border-right:none; border-bottom:1px solid var(--border); padding:12px 16px calc(20px + env(safe-area-inset-bottom)); transition:max-height .25s ease, padding .25s ease, border-color .25s ease; flex:0 0 auto }
+  #sidebar.mobile-hidden{ max-height:0; padding-top:0; padding-bottom:0; border-bottom-color:transparent; overflow:hidden }
+  /* Editor pane fills remaining viewport when sidebar is OPEN at 60vh: 40vh tall. When sidebar collapsed: ~100vh.
+     Set fixed height matching the dynamic viewport so iframe always has explicit space. */
+  #editorPane{ display:flex; flex-direction:column; width:100%; height:calc(100vh - 54px); height:calc(100dvh - 54px); min-height:0; flex:1 1 auto }
+  /* The iframe / textarea area grows to fill remaining space inside editorPane */
   .frame-wrap{ flex:1 1 auto; min-height:0 }
   iframe.editor{ height:100%; min-height:0 }
   textarea.source{ flex:1 1 auto; min-height:0 }
-  /* Sidebar becomes an off-canvas drawer with its own scroll */
-  #sidebar{ position:fixed; top:54px; left:0; right:0; bottom:0; height:auto; width:100%; max-height:none; z-index:60; background:#fff; border-right:none; border-bottom:1px solid var(--border); overflow-y:auto; -webkit-overflow-scrolling:touch; padding:14px 16px calc(80px + env(safe-area-inset-bottom)); transform:translateY(-100%); transition:transform .25s ease; box-shadow:0 8px 24px -8px rgba(15,23,42,.18) }
-  #sidebar.mobile-open{ transform:translateY(0) }
-  #sidebar.mobile-hidden{ transform:translateY(-100%) }
-  /* Backdrop appears when sidebar is open */
-  .sidebar-backdrop{ display:none; position:fixed; inset:54px 0 0 0; background:rgba(15,23,42,.32); z-index:55; opacity:0; transition:opacity .25s ease; -webkit-tap-highlight-color:transparent }
-  .sidebar-backdrop.show{ display:block; opacity:1 }
   /* Hamburger toggle button */
   #sidebarToggle{ display:inline-flex; align-items:center; gap:4px; padding:7px 11px; background:var(--teal-deep); color:#fff; border:0; border-radius:6px; font-size:12.5px; font-weight:600; cursor:pointer; -webkit-tap-highlight-color:transparent; flex-shrink:0 }
   #sidebarToggle:active{ filter:brightness(.92) }
@@ -2104,37 +2102,39 @@ save = saveWithModal;
 loadPat();</script>
 <script type="module" src="/admin/admin-extras.js?v=202605120530"></script>
 <script>
-// === Mobile sidebar drawer (2026-05-13) ===
+// === Mobile sidebar collapse (2026-05-13c — inline collapse) ===
 (function(){
   var sidebar = document.getElementById('sidebar');
   var toggle  = document.getElementById('sidebarToggle');
-  var backdrop = document.getElementById('sidebarBackdrop');
-  if (!sidebar || !toggle || !backdrop) return;
+  if (!sidebar || !toggle) return;
 
   function isMobile(){ return window.matchMedia('(max-width: 880px)').matches; }
-  function openDrawer(){ sidebar.classList.add('mobile-open'); backdrop.classList.add('show'); toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-  function closeDrawer(){ sidebar.classList.remove('mobile-open'); backdrop.classList.remove('show'); toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
-  function toggleDrawer(){ if (sidebar.classList.contains('mobile-open')) closeDrawer(); else openDrawer(); }
+  function openSidebar(){ sidebar.classList.remove('mobile-hidden'); toggle.setAttribute('aria-expanded','true'); toggle.textContent = '☰ 收起'; }
+  function closeSidebar(){ sidebar.classList.add('mobile-hidden'); toggle.setAttribute('aria-expanded','false'); toggle.textContent = '☰ 檔案'; }
+  function toggleSidebar(){ if (sidebar.classList.contains('mobile-hidden')) openSidebar(); else closeSidebar(); }
 
-  toggle.addEventListener('click', toggleDrawer);
-  backdrop.addEventListener('click', closeDrawer);
+  toggle.addEventListener('click', toggleSidebar);
 
-  // Auto-close drawer when user picks a file (mobile only)
+  // Auto-collapse sidebar when user picks a file (mobile only) so they get full editor screen
   document.getElementById('fileList').addEventListener('click', function(e){
     if (!isMobile()) return;
     var fi = e.target.closest('.file-item');
-    if (fi) closeDrawer();
+    if (fi) closeSidebar();
   });
 
-  // Reset state if user resizes from mobile → desktop
+  // Reset state when resizing past 880px (desktop) — drop mobile class
   window.addEventListener('resize', function(){
-    if (!isMobile()) closeDrawer();
+    if (!isMobile()) {
+      sidebar.classList.remove('mobile-hidden');
+      toggle.textContent = '☰ 檔案';
+    }
   });
 
-  // ESC closes drawer
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape' && sidebar.classList.contains('mobile-open')) closeDrawer();
-  });
+  // Initial state on mobile: open (so user sees the file list immediately)
+  if (isMobile()) {
+    toggle.textContent = '☰ 收起';
+    toggle.setAttribute('aria-expanded','true');
+  }
 })();
 </script>
 </body></html>
