@@ -48,7 +48,7 @@ $template = @"
 <title>$title — $subtitle | ChenDermatologist · 陳翊嘉醫師</title>
 <meta name="description" content="$desc" />
 <meta name="theme-color" content="#0e7c86" />
-<meta name="keywords" content="$tag,皮膚科衛教,陳翊嘉醫師,中國醫藥大學附設醫院 皮膚科,ChenDermatologist" />
+<meta name="keywords" content="$tag,皮膚科衛教,陳翊嘉醫師,ChenDermatologist" />
 <meta name="author" content="陳翊嘉 醫師 · ChenDermatologist" />
 <link rel="canonical" href="https://chendermatologist.com/blog/$slug" />
 <link rel="author" href="https://chendermatologist.com/about" />
@@ -128,13 +128,13 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 </style>
 
 <script type="application/ld+json">
-{ "@context":"https://schema.org","@type":"Article","headline":"$title — $subtitle","description":"$desc","datePublished":"$today","dateModified":"$today","author":{"@type":"Person","name":"陳翊嘉 醫師","affiliation":{"@type":"Hospital","name":"中國醫藥大學附設醫院 皮膚科"}},"publisher":{"@type":"Person","name":"陳翊嘉 醫師","url":"https://chendermatologist.com/"},"image":"https://chendermatologist.com/icon.svg","mainEntityOfPage":"https://chendermatologist.com/blog/$slug" }
+{ "@context":"https://schema.org","@type":"Article","headline":"$title — $subtitle","description":"$desc","datePublished":"$today","dateModified":"$today","author":{"@type":"Person","name":"陳翊嘉 醫師"},"publisher":{"@type":"Person","name":"陳翊嘉 醫師","url":"https://chendermatologist.com/"},"image":"https://chendermatologist.com/icon.svg","mainEntityOfPage":"https://chendermatologist.com/blog/$slug" }
 </script>
 <script type="application/ld+json">
 { "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://chendermatologist.com/"},{"@type":"ListItem","position":2,"name":"衛教文章","item":"https://chendermatologist.com/blog/"},{"@type":"ListItem","position":3,"name":"$title","item":"https://chendermatologist.com/blog/$slug"}]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"MedicalWebPage","url":"https://chendermatologist.com/blog/$slug","inLanguage":["zh-TW","en"],"name":"$title 衛教","audience":{"@type":"MedicalAudience","audienceType":"Patient"},"lastReviewed":"$today","reviewedBy":{"@type":"Person","name":"陳翊嘉 醫師","honorificSuffix":"M.D.","affiliation":{"@type":"Hospital","name":"中國醫藥大學附設醫院 皮膚科"}},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1","h2",".tldr"]},"keywords":"$tag","articleSection":"Dermatology Patient Education","isPartOf":{"@type":"WebSite","name":"ChenDermatologist","url":"https://chendermatologist.com/"}}
+{"@context":"https://schema.org","@type":"MedicalWebPage","url":"https://chendermatologist.com/blog/$slug","inLanguage":["zh-TW","en"],"name":"$title 衛教","audience":{"@type":"MedicalAudience","audienceType":"Patient"},"lastReviewed":"$today","reviewedBy":{"@type":"Person","name":"陳翊嘉 醫師","honorificSuffix":"M.D."},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1","h2",".tldr"]},"keywords":"$tag","articleSection":"Dermatology Patient Education","isPartOf":{"@type":"WebSite","name":"ChenDermatologist","url":"https://chendermatologist.com/"}}
 </script>
 </head>
 <body class="font-sans antialiased text-ink-900">
@@ -146,7 +146,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
         <img src="/icon.svg" alt="ChenDermatologist" class="w-9 h-9 rounded-lg flex-shrink-0" />
         <div class="min-w-0 leading-tight">
           <div class="font-display font-semibold text-[16px] sm:text-[18px] teal-text">ChenDermatologist</div>
-          <div class="text-[10.5px] sm:text-[11.5px] text-ink-500 mt-0.5 truncate">陳翊嘉醫師 · 中國醫藥大學附設醫院 皮膚科</div>
+          <div class="text-[10.5px] sm:text-[11.5px] text-ink-500 mt-0.5 truncate">陳翊嘉醫師 · 皮膚科衛教筆記</div>
         </div>
       </a>
       <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
@@ -259,7 +259,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
       <div>
         <div class="font-display font-bold text-[18px] teal-text">ChenDermatologist</div>
         <div class="text-[12.5px] text-ink-700 mt-1">皮膚科常見衛教及學習筆記網站</div>
-        <div class="text-[13px] mt-3 leading-[1.8]"><strong>陳翊嘉 醫師</strong><br/><span class="text-ink-500">中國醫藥大學附設醫院 · 皮膚科</span></div>
+        <div class="text-[13px] mt-3 leading-[1.8]"><strong>陳翊嘉 醫師</strong><br/><span class="text-ink-500">皮膚科醫師</span></div>
       </div>
       <div>
         <div class="text-[11px] uppercase tracking-[.22em] text-teal-700 font-semibold mb-2">網站</div>
