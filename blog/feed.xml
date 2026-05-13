@@ -5,18 +5,9 @@
     <link>https://chendermatologist.com/</link>
     <description>皮膚科衛教與學習筆記，整理常見皮膚疾病、治療選項與醫學指引。</description>
     <language>zh-Hant-TW</language>
-    <lastBuildDate>Wed, 13 May 2026 04:31:19 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2026 04:55:05 +0000</lastBuildDate>
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <generator>DermNotes auto-feed</generator>
-    <item>
-      <title>腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病</title>
-      <link>https://chendermatologist.com/blog/toenail-mechanical-disorders</link>
-      <guid isPermaLink="true">https://chendermatologist.com/blog/toenail-mechanical-disorders</guid>
-      <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
-      <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>趾甲與足部</category>
-      <description>9 成趾甲變形不是灰指甲，是鞋子與腳型造成的。12 種變形完整圖鑑、4 種腳型異常、糖尿病趾甲照護、台灣健保藥品（療黴舒、適撲諾、樂指利）。整合 2026 JAAD review。</description>
-    </item>
     <item>
       <title>嘴角紅疹是痘痘還是濕疹？口周皮膚炎完整衛教</title>
       <link>https://chendermatologist.com/blog/perioral-dermatitis-guide</link>
@@ -25,6 +16,15 @@
       <dc:creator>陳翊嘉 醫師</dc:creator>
       <category>口周皮膚炎</category>
       <description>嘴角紅疹是痘痘還是濕疹？口周皮膚炎完整衛教 | ChenDermatologist 皮膚科衛教筆記</description>
+    </item>
+    <item>
+      <title>腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病</title>
+      <link>https://chendermatologist.com/blog/toenail-mechanical-disorders</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/toenail-mechanical-disorders</guid>
+      <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>趾甲與足部</category>
+      <description>腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病 | ChenDermatologist 皮膚科衛教筆記</description>
     </item>
     <item>
       <title>異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染</title>
@@ -277,15 +277,6 @@
       <dc:creator>陳翊嘉 醫師</dc:creator>
       <category>猴痘</category>
       <description>猴痘（Mpox）皮膚照護 | ChenDermatologist 皮膚科衛教筆記</description>
-    </item>
-    <item>
-      <title>帶狀皰疹 6 大迷思</title>
-      <link>https://chendermatologist.com/blog/shingles-myths</link>
-      <guid isPermaLink="true">https://chendermatologist.com/blog/shingles-myths</guid>
-      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
-      <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>皮蛇</category>
-      <description>帶狀皰疹 6 大迷思 | ChenDermatologist 皮膚科衛教筆記</description>
     </item>
   </channel>
 </rss>
