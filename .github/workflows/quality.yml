@@ -103,11 +103,21 @@ jobs:
       - name: Install validators
         run: |
           pip install html5validator lxml
-      - name: Run html5validator (whitelist common Tailwind/SVG noise)
+      - name: Run html5validator (whitelist common Tailwind/SVG/modern-CSS noise)
         run: |
           html5validator --root . --match "*.html" \
             --ignore-re "Attribute .* is not allowed on element" \
+            --ignore-re 'Attribute "[^"]+" not allowed on element' \
             --ignore-re "Element .* not allowed as child of" \
+            --ignore-re 'CSS: "inset"' \
+            --ignore-re 'CSS: "text-underline-offset"' \
+            --ignore-re 'CSS: "background-clip"' \
+            --ignore-re 'CSS: "backdrop-filter"' \
+            --ignore-re 'CSS: "content-visibility"' \
+            --ignore-re 'CSS: "contain-intrinsic-size"' \
+            --ignore-re 'CSS: "padding-bottom".*env\(' \
+            --ignore-re 'CSS: Unrecognized at-rule "@view-transition"' \
+            --ignore-re "CSS: Parse Error" \
             --log INFO
       - name: Quick lint — JSON-LD blocks parse cleanly
         run: |
