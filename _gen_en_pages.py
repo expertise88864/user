@@ -63,6 +63,10 @@ EN_OG_OVERRIDES = {
         'title': 'Toenail Mechanical & Structural Disorders: 12-Type Atlas + Diabetic Foot',
         'desc': 'Over 90% of toenail dystrophy is mechanical, not fungal. Patient-friendly guide to the 12 most common types (onycholysis, subungual heloma, Beau lines, retronychia, pincer nail, onychocryptosis, etc.), 4 foot deformities (Morton toe, hallux valgus, flat foot, splayfoot), diabetic nail care, and Taiwan NHI coverage. Integrates Ricardo 2026 JAAD review.',
     },
+    'blog/dermatologic-oral-examination.html': {
+        'title': 'Oral Mucosa: When to See a Dermatologist Instead of a Dentist | Exam & Biopsy Guide',
+        'desc': 'An ulcer not healing in 2 weeks, white lacy oral patches, or peeling gums often belong to dermatology, not dentistry. Patient-friendly guide to 6 oral mucosal conditions (oral lichen planus, recurrent aphthous stomatitis, leukoplakia, mucous membrane pemphigoid, actinic cheilitis, oral pigmented lesions), Taiwan-specific epidemiology (betel-related leukoplakia, OLP prevalence trends), dermatologic oral exam steps, biopsy timing and technique, and AHA 2021 antibiotic prophylaxis. Integrates Klein & Aristizabal 2026 JAAD CME.',
+    },
 }
 
 EN_BANNER = '''<div id="dn-en-banner" style="background:linear-gradient(180deg,#ecfeff,#cffafe);border-bottom:1px solid #67e8f9;padding:9px 18px;text-align:center;font-size:12.5px;color:#0c5159;font-family:Inter,system-ui,sans-serif;line-height:1.5;font-weight:600">

@@ -5,9 +5,18 @@
     <link>https://chendermatologist.com/</link>
     <description>皮膚科衛教與學習筆記，整理常見皮膚疾病、治療選項與醫學指引。</description>
     <language>zh-Hant-TW</language>
-    <lastBuildDate>Wed, 13 May 2026 10:29:38 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2026 11:05:10 +0000</lastBuildDate>
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <generator>DermNotes auto-feed</generator>
+    <item>
+      <title>嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南</title>
+      <link>https://chendermatologist.com/blog/dermatologic-oral-examination</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/dermatologic-oral-examination</guid>
+      <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>口腔黏膜</category>
+      <description>嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南 | ChenDermatologist 皮膚科衛教筆記</description>
+    </item>
     <item>
       <title>嘴角紅疹是痘痘還是濕疹？口周皮膚炎完整衛教</title>
       <link>https://chendermatologist.com/blog/perioral-dermatitis-guide</link>
@@ -268,15 +277,6 @@
       <dc:creator>陳翊嘉 醫師</dc:creator>
       <category>化膿性汗腺炎</category>
       <description>化膿性汗腺炎（HS）完整衛教 | ChenDermatologist 皮膚科衛教筆記</description>
-    </item>
-    <item>
-      <title>猴痘（Mpox）皮膚照護</title>
-      <link>https://chendermatologist.com/blog/mpox-care</link>
-      <guid isPermaLink="true">https://chendermatologist.com/blog/mpox-care</guid>
-      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
-      <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>猴痘</category>
-      <description>猴痘（Mpox）皮膚照護 | ChenDermatologist 皮膚科衛教筆記</description>
     </item>
   </channel>
 </rss>

@@ -84,6 +84,19 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/privacy"/>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/dermatologic-oral-examination</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/dermatologic-oral-examination"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/dermatologic-oral-examination"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/dermatologic-oral-examination"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/api/og?title=%E5%98%B4%E7%A0%B4%E3%80%81%E7%99%BD%E6%96%91%E3%80%81%E7%89%99%E9%BD%A6%E5%89%9D%E9%9B%A2+%E2%80%94+%E4%BB%80%E9%BA%BC%E6%99%82%E5%80%99%E8%A9%B2%E6%89%BE%E7%9A%AE%E8%86%9A%E7%A7%91%EF%BC%9F%E5%8F%A3%E8%85%94%E9%BB%8F%E8%86%9C%E6%AA%A2%E6%9F%A5%E8%88%87%E5%88%87%E7%89%87%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97+%7C+%E9%99%B3%E7%BF%8A%E5%98%89%E9%86%AB%E5%B8%AB+%C2%B7+%E7%9A%AE%E8%86%9A%E7%A7%91&amp;amp;tag=%E7%9A%AE%E8%86%9A%E7%A7%91%E8%A1%9B%E6%95%99&amp;amp;date=2026-05-13</image:loc>
+      <image:title>嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/perioral-dermatitis-guide</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -630,6 +643,15 @@
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/privacy"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/privacy"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/privacy"/>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/en/blog/dermatologic-oral-examination</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/dermatologic-oral-examination"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/dermatologic-oral-examination"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/dermatologic-oral-examination"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/en/blog/perioral-dermatitis-guide</loc>
