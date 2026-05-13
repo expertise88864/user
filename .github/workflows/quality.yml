@@ -104,21 +104,24 @@ jobs:
         run: |
           pip install html5validator lxml
       - name: Run html5validator (whitelist common Tailwind/SVG/modern-CSS noise)
+        # NOTE: html5validator uses argparse nargs='+' for --ignore-re with action='store',
+        # so repeating the flag OVERWRITES (only the last wins). All patterns must be
+        # passed as multiple values to a SINGLE --ignore-re flag.
         run: |
-          html5validator --root . --match "*.html" \
-            --ignore-re "Attribute .* is not allowed on element" \
-            --ignore-re 'Attribute "[^"]+" not allowed on element' \
-            --ignore-re "Element .* not allowed as child of" \
-            --ignore-re 'CSS: "inset"' \
-            --ignore-re 'CSS: "text-underline-offset"' \
-            --ignore-re 'CSS: "background-clip"' \
-            --ignore-re 'CSS: "backdrop-filter"' \
-            --ignore-re 'CSS: "content-visibility"' \
-            --ignore-re 'CSS: "contain-intrinsic-size"' \
-            --ignore-re 'CSS: "padding-bottom".*env\(' \
-            --ignore-re 'CSS: Unrecognized at-rule "@view-transition"' \
-            --ignore-re "CSS: Parse Error" \
-            --log INFO
+          html5validator --root . --match "*.html" --log INFO \
+            --ignore-re \
+              "Attribute .* is not allowed on element" \
+              'Attribute "[^"]+" not allowed on element' \
+              "Element .* not allowed as child of" \
+              'CSS: "inset"' \
+              'CSS: "text-underline-offset"' \
+              'CSS: "background-clip"' \
+              'CSS: "backdrop-filter"' \
+              'CSS: "content-visibility"' \
+              'CSS: "contain-intrinsic-size"' \
+              'CSS: "padding-bottom".*env\(' \
+              'CSS: Unrecognized at-rule "@view-transition"' \
+              "CSS: Parse Error"
       - name: Quick lint — JSON-LD blocks parse cleanly
         run: |
           python <<'PY'

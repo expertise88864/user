@@ -175,17 +175,16 @@ AdSense 對「全新且內容少」的站很挑剔。建議 **至少累積以下
 
 ## 6. 之後新增文章 / 修改的工作流
 
-每次更新內容（例如新增第三篇衛教文章）：
+👉 **完整 SOP 請看 [`WRITING_NEW_ARTICLE.md`](WRITING_NEW_ARTICLE.md)**（含 ZH + EN 並排規則、Service Worker 快取解法、CI 全綠 checklist、模板片段速查）。
 
-1. 在 `blog/` 加 .html 檔
-2. **同步更新五個地方**：
-   - `sitemap.xml`：加新 url
-   - `sw.js`：加進 `PRECACHE` 陣列
-   - `blog/feed.xml`：加新 `<item>`
-   - `blog/index.html`：加新卡片
-   - `blog/blog-shared.js`：行動版抽屜選單加新連結
-3. 雙擊 `deploy.bat`，輸入 commit message → 自動推送
-4. 30 秒後 Vercel 上線 → 文章已可在 `https://chendermatologist.com/blog/新檔名` 看到
+精簡版：
+
+1. 跑 `powershell -ExecutionPolicy Bypass -File new-article.ps1`（自動 scaffold + 註冊 sitemap / sw / blog-shared.js）
+2. 在 `<div id="proseZh">` 內寫 ZH 內容，再加 `<div id="proseEn" class="prose" style="display:none">` 寫 EN 內容（兩個版本是必須）
+3. 在 [`_gen_en_pages.py`](_gen_en_pages.py) 的 `EN_OG_OVERRIDES` 加上新文章的英文 title / description
+4. 跑 local quality check（`_audit_jsonld.py`、`_check_sitemap.py`、`_check_meta.py`、`_check_internal_links.py`、`_check_static_a11y.py`、`_check_balance.py`）全綠
+5. `deploy.bat` 推送
+6. **看不到網站更新？**訪問 [`/reset-sw.html`](reset-sw.html) 解除 Service Worker 快取
 
 ---
 
