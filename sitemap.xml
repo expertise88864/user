@@ -84,19 +84,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/privacy"/>
   </url>
   <url>
-    <loc>https://chendermatologist.com/blog/toenail-mechanical-disorders</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/toenail-mechanical-disorders"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/toenail-mechanical-disorders"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/toenail-mechanical-disorders"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/api/og?title=%E8%85%B3%E8%B6%BE%E7%94%B2%E8%AE%8A%E5%BD%A2+12+%E7%A8%AE%E5%9E%8B%E6%85%8B%E5%AE%8C%E6%95%B4%E5%9C%96%E9%91%91+%E2%80%94+%E5%BE%9E%E9%9E%8B%E5%AD%90%E3%80%81%E8%85%B3%E5%9E%8B%E3%80%81%E9%97%9C%E7%AF%80%E5%88%B0%E7%B3%96%E5%B0%BF%E7%97%85+%7C+%E9%99%B3%E7%BF%8A%E5%98%89%E9%86%AB%E5%B8%AB+%C2%B7+%E7%9A%AE%E8%86%9A%E7%A7%91&amp;amp;tag=%E7%9A%AE%E8%86%9A%E7%A7%91%E8%A1%9B%E6%95%99&amp;amp;date=2026-05-14</image:loc>
-      <image:title>腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://chendermatologist.com/blog/perioral-dermatitis-guide</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -107,6 +94,19 @@
     <image:image>
       <image:loc>https://chendermatologist.com/api/og?title=%E5%98%B4%E8%A7%92%E7%B4%85%E7%96%B9%E6%98%AF%E7%97%98%E7%97%98%E9%82%84%E6%98%AF%E6%BF%95%E7%96%B9%EF%BC%9F%E5%8F%A3%E5%91%A8%E7%9A%AE%E8%86%9A%E7%82%8E%E6%88%90%E5%9B%A0%E3%80%81%E7%97%87%E7%8B%80%E8%88%87%E6%B2%BB%E7%99%82+%7C+%E9%99%B3%E7%BF%8A%E5%98%89%E9%86%AB%E5%B8%AB+%C2%B7+%E7%9A%AE%E8%86%9A%E7%A7%91&amp;amp;tag=%E7%9A%AE%E8%86%9A%E7%A7%91%E8%A1%9B%E6%95%99&amp;amp;date=2026-05-13</image:loc>
       <image:title>嘴角紅疹是痘痘還是濕疹？口周皮膚炎完整衛教</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/toenail-mechanical-disorders</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/toenail-mechanical-disorders"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/toenail-mechanical-disorders"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/toenail-mechanical-disorders"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/api/og?title=%E8%85%B3%E8%B6%BE%E7%94%B2%E8%AE%8A%E5%BD%A2+12+%E7%A8%AE%E5%9E%8B%E6%85%8B%E5%AE%8C%E6%95%B4%E5%9C%96%E9%91%91+%E2%80%94+%E5%BE%9E%E9%9E%8B%E5%AD%90%E3%80%81%E8%85%B3%E5%9E%8B%E3%80%81%E9%97%9C%E7%AF%80%E5%88%B0%E7%B3%96%E5%B0%BF%E7%97%85+%7C+%E9%99%B3%E7%BF%8A%E5%98%89%E9%86%AB%E5%B8%AB+%C2%B7+%E7%9A%AE%E8%86%9A%E7%A7%91&amp;amp;tag=%E7%9A%AE%E8%86%9A%E7%A7%91%E8%A1%9B%E6%95%99&amp;amp;date=2026-05-13</image:loc>
+      <image:title>腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病</image:title>
     </image:image>
   </url>
   <url>
@@ -632,15 +632,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/privacy"/>
   </url>
   <url>
-    <loc>https://chendermatologist.com/en/blog/toenail-mechanical-disorders</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/toenail-mechanical-disorders"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/toenail-mechanical-disorders"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/toenail-mechanical-disorders"/>
-  </url>
-  <url>
     <loc>https://chendermatologist.com/en/blog/perioral-dermatitis-guide</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -648,6 +639,15 @@
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/perioral-dermatitis-guide"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/perioral-dermatitis-guide"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/perioral-dermatitis-guide"/>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/en/blog/toenail-mechanical-disorders</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/toenail-mechanical-disorders"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/toenail-mechanical-disorders"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/toenail-mechanical-disorders"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/en/blog/acne-myths</loc>
