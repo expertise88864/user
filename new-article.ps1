@@ -59,7 +59,6 @@ $template = @"
 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
 <link rel="manifest" href="/manifest.json" />
 <link rel="me" href="mailto:expertise88864@gmail.com" />
-<link rel="me" href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" />
 <link rel="alternate" type="application/rss+xml" title="ChenDermatologist RSS" href="/blog/feed.xml" />
 <link rel="alternate" type="application/atom+xml" title="ChenDermatologist Atom" href="/blog/atom.xml" />
 
@@ -151,7 +150,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
         </div>
       </a>
       <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-        <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-teal-600 text-white text-[12px] font-semibold hover:bg-teal-700">預約掛號 →</a>
         <a href="/blog/" class="hidden sm:inline-flex text-[12px] uppercase tracking-[.18em] text-ink-700 font-semibold">← 文章索引</a>
         <a href="/about" class="hidden sm:inline-flex text-[12px] uppercase tracking-[.18em] text-ink-700 font-semibold" data-zh="關於我" data-en="About">關於我</a>
         <select id="langToggle" class="lang-select" aria-label="Language">
@@ -253,27 +251,15 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document
 
 <section class="max-w-3xl mx-auto px-5 sm:px-8 my-6"><div class="ad-slot h-20 sm:h-24">廣告位</div></section>
 
-<section class="max-w-3xl mx-auto px-5 sm:px-8 mb-12">
-  <div class="card p-6 text-center" style="background:linear-gradient(135deg,#ecfeff,#f5fbfa)">
-    <div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold mb-2">想當面諮詢</div>
-    <div class="font-display font-bold text-[20px]">中國醫皮膚科 · 立即掛號</div>
-    <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="inline-flex items-center gap-1 mt-4 px-5 py-2.5 rounded-lg bg-teal-600 text-white text-[13px] font-semibold hover:bg-teal-700">📅 中國醫皮膚科 預約掛號 →</a>
-  </div>
-</section>
-
 </main>
 
 <footer class="border-t border-[var(--border)] bg-mint-50/60">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10">
-    <div class="grid sm:grid-cols-3 gap-8">
+    <div class="grid sm:grid-cols-2 gap-8">
       <div>
         <div class="font-display font-bold text-[18px] teal-text">ChenDermatologist</div>
         <div class="text-[12.5px] text-ink-700 mt-1">皮膚科常見衛教及學習筆記網站</div>
         <div class="text-[13px] mt-3 leading-[1.8]"><strong>陳翊嘉 醫師</strong><br/><span class="text-ink-500">中國醫藥大學附設醫院 · 皮膚科</span></div>
-      </div>
-      <div>
-        <div class="text-[11px] uppercase tracking-[.22em] text-teal-700 font-semibold mb-2">預約 / 掛號</div>
-        <a href="https://www.cmuh.cmu.edu.tw/Department/Team?detail=77&amp;current=0&amp;source=dep" target="_blank" rel="noopener" class="inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-teal-600 text-white text-[12.5px] font-semibold hover:bg-teal-700">中國醫皮膚科 預約掛號 →</a>
       </div>
       <div>
         <div class="text-[11px] uppercase tracking-[.22em] text-teal-700 font-semibold mb-2">網站</div>
