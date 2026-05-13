@@ -84,6 +84,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/privacy"/>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/toenail-mechanical-disorders</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/toenail-mechanical-disorders"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/toenail-mechanical-disorders"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/logo-512.png</image:loc>
+      <image:title>腳趾甲變形 12 種型態完整圖鑑</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/perioral-dermatitis-guide</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
