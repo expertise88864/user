@@ -55,6 +55,10 @@ EN_OG_OVERRIDES = {
         'title': 'Oral Isotretinoin Clinical Guide | Dermatology Notes',
         'desc': 'Resident-level isotretinoin notes covering pharmacology, mechanisms, indications, dosing, adverse effects, drug interactions, monitoring, and acne guideline integration.',
     },
+    'blog/perioral-dermatitis-guide.html': {
+        'title': 'Periorificial (Perioral) Dermatitis: Complete Patient Guide',
+        'desc': 'Patient-friendly dermatology guide to periorificial / perioral dermatitis: how to tell it apart from acne, rosacea, and eczema; the corticosteroid trap; gentle skincare; topical metronidazole / tacrolimus / pimecrolimus / ivermectin; oral doxycycline; Taiwan NHI status and brand names. Integrates Acevedo-Fontanez 2026 JAAD review.',
+    },
 }
 
 EN_BANNER = '''<div id="dn-en-banner" style="background:linear-gradient(180deg,#ecfeff,#cffafe);border-bottom:1px solid #67e8f9;padding:9px 18px;text-align:center;font-size:12.5px;color:#0c5159;font-family:Inter,system-ui,sans-serif;line-height:1.5;font-weight:600">
