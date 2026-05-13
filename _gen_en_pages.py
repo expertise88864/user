@@ -67,6 +67,10 @@ EN_OG_OVERRIDES = {
         'title': 'Oral Mucosa: When to See a Dermatologist Instead of a Dentist | Exam & Biopsy Guide',
         'desc': 'An ulcer not healing in 2 weeks, white lacy oral patches, or peeling gums often belong to dermatology, not dentistry. Patient-friendly guide to 6 oral mucosal conditions (oral lichen planus, recurrent aphthous stomatitis, leukoplakia, mucous membrane pemphigoid, actinic cheilitis, oral pigmented lesions), Taiwan-specific epidemiology (betel-related leukoplakia, OLP prevalence trends), dermatologic oral exam steps, biopsy timing and technique, and AHA 2021 antibiotic prophylaxis. Integrates Klein & Aristizabal 2026 JAAD CME.',
     },
+    'blog/severe-scabies-treatment.html': {
+        'title': 'Severe Scabies: Complete Oral Ivermectin + 5% Permethrin Treatment Guide',
+        'desc': 'Severe scabies (profuse or crusted, with hundreds to thousands of mites) does not respond to single-dose treatment. Patient-friendly guide based on the May 2026 NEJM GALE CRUSTED randomized trial: standard regimen is ivermectin 200 μg/kg on Days 0, 7, 14 plus 5% permethrin head-to-toe on Days 0 and 7 plus daily emollient — Day 28 cure rate around 82%. Covers life cycle, household co-treatment, environmental cleaning, long-term care outbreak protocols, infant/pregnancy safety, and Taiwan drug availability.',
+    },
 }
 
 EN_BANNER = '''<div id="dn-en-banner" style="background:linear-gradient(180deg,#ecfeff,#cffafe);border-bottom:1px solid #67e8f9;padding:9px 18px;text-align:center;font-size:12.5px;color:#0c5159;font-family:Inter,system-ui,sans-serif;line-height:1.5;font-weight:600">
