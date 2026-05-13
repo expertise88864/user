@@ -85,7 +85,11 @@ def normalize_content_headings(html: str) -> str:
     html = re.sub(r'(<div class="mag-card-body"[^>]*>.*?)<h3\b', r"\1<h2", html, flags=re.S)
     html = html.replace("</h3><div class=\"mag-card-meta\"", "</h2><div class=\"mag-card-meta\"")
     html = re.sub(r'(<div class="topic-card"[^>]*>)<h3\b', r"\1<h2", html)
-    html = re.sub(r"</h3>(<p (?:class=\"topic-desc\"|style=))", r"</h2>\1", html)
+    # Only match topic-desc paragraph; the previous |style= alternative was
+    # too broad and mangled regular articles (e.g. laser-dermatology had
+    # <h3>痣(melanocytic nevus)</h3><p style="..."> rewritten to </h2>,
+    # leaving a <h3>...</h2> mismatch the HTML validator failed on).
+    html = re.sub(r'</h3>(<p class="topic-desc")', r"</h2>\1", html)
     html = re.sub(r'(<div class="tool-toc"[^>]*>)<h3\b', r"\1<h2", html)
     html = html.replace("</h3><ul><li><a href=\"#scorad\"", "</h2><ul><li><a href=\"#scorad\"")
 
