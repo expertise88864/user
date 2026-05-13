@@ -168,12 +168,22 @@ location.reload();
 });
 // =========== GitHub API helper ===========
 async function gh(method, path, body){
-const r = await fetch('https://api.github.com/repos/' + REPO + '/' + path, {
+// Always bypass browser HTTP cache. GitHub API responses are sometimes
+// cached for a few seconds by the browser, and a stale GET right after a
+// PUT can hand admin the PRE-commit content + PRE-commit SHA. If the user
+// then edits and saves again, that next save silently reverts the prior
+// commit. (This is exactly what produced commit 59c1455 reverting 665ac3f
+// on 2026-05-14.) Force a fresh fetch on every call.
+const sep = path.includes('?') ? '&' : '?';
+const cacheBustedPath = (method === 'GET') ? (path + sep + '_=' + Date.now()) : path;
+const r = await fetch('https://api.github.com/repos/' + REPO + '/' + cacheBustedPath, {
 method,
+cache: 'no-store',
 headers: {
 'Authorization': 'token ' + PAT,
 'Accept': 'application/vnd.github+json',
-'Content-Type': 'application/json'
+'Content-Type': 'application/json',
+'If-None-Match': ''
 },
 body: body ? JSON.stringify(body) : null
 });
@@ -550,7 +560,37 @@ CURRENT_SHA = data.content.sha;
 CURRENT_CONTENT = newContent;
 DIRTY = false;
 elShaInfo.textContent = 'SHA: ' + CURRENT_SHA.substring(0,7);
-setStatus('已儲存並推送 ' + CURRENT_FILE + ' — Vercel 約 30 秒後重新部署');
+setStatus('已儲存並推送 ' + CURRENT_FILE + ' — 1 秒後驗證 GitHub 內容...');
+// SAFETY: After every save, re-fetch the file from GitHub and verify the
+// server actually has the bytes we sent. Then re-mount the iframe so the
+// editor DOM is bit-identical to GitHub state — that way the NEXT save
+// can't silently revert this one if something quirky happens in DOM
+// re-serialization. (Root cause of 2026-05-14 incident.)
+await new Promise(r => setTimeout(r, 800));
+try {
+  const verify = await gh('GET', 'contents/' + CURRENT_FILE);
+  const serverContent = decodeUtf8Base64(verify.content);
+  CURRENT_SHA = verify.sha;
+  CURRENT_CONTENT = serverContent;
+  elShaInfo.textContent = 'SHA: ' + CURRENT_SHA.substring(0,7);
+  const matches = (serverContent === newContent);
+  setStatus(
+    '已儲存並推送 ' + CURRENT_FILE +
+    (matches ? ' ✓ 已驗證 — Vercel 約 30 秒後重新部署'
+             : ' ⚠ GitHub 內容與送出版本不完全一致（多半是 DOM 重新序列化造成），iframe 已重新載入伺服器版本'),
+    !matches
+  );
+  // Re-mount iframe with the authoritative server content so subsequent
+  // edits work from the exact state on GitHub. Restore source mode if
+  // user was in it.
+  if (SOURCE_MODE && sourceTextarea) {
+    sourceTextarea.value = serverContent;
+  } else if (editFrame && CURRENT_FILE.endsWith('.html')) {
+    mountIframe(serverContent);
+  }
+} catch (verifyErr) {
+  setStatus('已儲存但驗證失敗：' + (verifyErr.message || verifyErr), true);
+}
 } catch(e){
 setStatus('儲存失敗，請稍後再試', true);
 }
