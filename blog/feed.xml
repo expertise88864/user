@@ -5,7 +5,7 @@
     <link>https://chendermatologist.com/</link>
     <description>皮膚科衛教與學習筆記，整理常見皮膚疾病、治療選項與醫學指引。</description>
     <language>zh-Hant-TW</language>
-    <lastBuildDate>Thu, 14 May 2026 01:52:59 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2026 02:01:58 +0000</lastBuildDate>
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <generator>DermNotes auto-feed</generator>
     <item>
@@ -25,15 +25,6 @@
       <dc:creator>陳翊嘉 醫師</dc:creator>
       <category>口周皮膚炎</category>
       <description>嘴角紅疹是痘痘還是濕疹？口周皮膚炎完整衛教 | ChenDermatologist 皮膚科衛教筆記</description>
-    </item>
-    <item>
-      <title>嚴重疥瘡為什麼治不好？口服 ivermectin + 外用 permethrin 完整治療指南</title>
-      <link>https://chendermatologist.com/blog/severe-scabies-treatment</link>
-      <guid isPermaLink="true">https://chendermatologist.com/blog/severe-scabies-treatment</guid>
-      <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
-      <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>疥瘡</category>
-      <description>嚴重疥瘡為什麼治不好？口服 ivermectin + 外用 permethrin 完整治療指南 | ChenDermatologist 皮膚科衛教筆記</description>
     </item>
     <item>
       <title>腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病</title>
@@ -277,6 +268,15 @@
       <dc:creator>陳翊嘉 醫師</dc:creator>
       <category>生物製劑</category>
       <description>皮膚科生物製劑與小分子標靶藥物總覽 | ChenDermatologist 皮膚科衛教筆記</description>
+    </item>
+    <item>
+      <title>化膿性汗腺炎（HS）完整衛教</title>
+      <link>https://chendermatologist.com/blog/hidradenitis-suppurativa</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/hidradenitis-suppurativa</guid>
+      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>化膿性汗腺炎</category>
+      <description>化膿性汗腺炎（HS）完整衛教 | ChenDermatologist 皮膚科衛教筆記</description>
     </item>
   </channel>
 </rss>

@@ -83,6 +83,11 @@ def parse_article_catalog() -> dict[str, dict[str, str]]:
         if not (slug_m and title_m):
             continue
         slug = slug_m.group(1)
+        # Skip articles marked {unpublished:true} in the catalog — they
+        # shouldn't appear in sitemap.xml, blog/feed.xml, blog/atom.xml,
+        # or any other public listing.
+        if re.search(r'\bunpublished\s*:\s*true\b', line):
+            continue
         tag_m = re.search(r"tag:'([^']+)'", line)
         date_m = re.search(r"date:'([^']+)'", line)
         cat_m = re.search(r"cat:'([^']+)'", line)
@@ -96,8 +101,26 @@ def parse_article_catalog() -> dict[str, dict[str, str]]:
     return out
 
 
+def get_unpublished_slugs() -> set[str]:
+    """Read blog-shared.js and return slugs marked unpublished:true."""
+    js_path = ROOT / 'blog' / 'blog-shared.js'
+    src = js_path.read_text(encoding='utf-8')
+    m = re.search(r'DN\.ARTICLES\s*=\s*\[(.*?)\];', src, re.DOTALL)
+    if not m:
+        return set()
+    unpublished: set[str] = set()
+    for line in m.group(1).splitlines():
+        if not re.search(r'\bunpublished\s*:\s*true\b', line):
+            continue
+        slug_m = re.search(r"slug:'([^']+)'", line)
+        if slug_m:
+            unpublished.add(slug_m.group(1))
+    return unpublished
+
+
 def discover_articles() -> list[dict[str, str]]:
     catalog = parse_article_catalog()
+    unpublished = get_unpublished_slugs()
     blog_dir = ROOT / 'blog'
     slugs = sorted(
         p.stem for p in blog_dir.glob('*.html')
@@ -105,6 +128,8 @@ def discover_articles() -> list[dict[str, str]]:
     )
     articles = []
     for slug in slugs:
+        if slug in unpublished:
+            continue  # admin marked this {unpublished:true}; skip from feeds/sitemap
         meta = html_meta(blog_dir / f'{slug}.html')
         row = catalog.get(slug, {
             'slug': slug,

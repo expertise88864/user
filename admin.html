@@ -101,7 +101,7 @@
 ② 圖片直接 <strong>拖曳</strong> 進文章內，自動上傳<br/>
 ③ Ctrl + S 儲存<br/>
 ④ 出現黃框 = 可編輯區域
-</div></div></aside><section id="editorPane"><div class="toolbar-wrap" id="toolbarWrap"><div class="toolbar-row toolbar-main" id="toolbar"><span class="path" id="filePath">未選擇檔案</span><div class="tb-group" data-label="字型"><button type="button" id="boldBtn" title="粗體 Ctrl+B" style="font-weight:800">B</button><button type="button" id="italicBtn" title="斜體 Ctrl+I" style="font-style:italic">I</button><button type="button" id="underlineBtn" title="底線" style="text-decoration:underline">U</button><button type="button" id="strikeBtn" title="刪除線" style="text-decoration:line-through">S</button></div><div class="tb-group" data-label="標題"><button type="button" id="h2Btn" title="大標題">H2</button><button type="button" id="h3Btn" title="小標題">H3</button><button type="button" id="h4Btn" title="次小標題">H4</button></div><div class="tb-group" data-label="段落"><button type="button" id="ulBtn" title="項目符號清單">• 清單</button><button type="button" id="olBtn" title="編號清單">1. 編號</button><button type="button" id="quoteBtn" title="引用區塊">&ldquo; 引用</button><button type="button" id="codeBtn" title="行內代碼" style="font-family:'JetBrains Mono',monospace">&lt;/&gt;</button></div><div class="tb-group" data-label="對齊"><button type="button" id="alignLeftBtn" title="靠左對齊">&#x21E4;</button><button type="button" id="alignCenterBtn" title="置中對齊">&#x21D4;</button><button type="button" id="alignRightBtn" title="靠右對齊">&#x21E5;</button></div><div class="tb-group" data-label="樣式"><label class="tb-color" title="字體顏色"><input type="color" id="colorPick" value="#0c5159" /><span>顏色</span></label><select id="sizeSel" title="字級大小" aria-label="字級大小"><option value="">字級</option><option value="12px">12</option><option value="13px">13</option><option value="14px">14</option><option value="15.5px" selected>15.5</option><option value="17px">17</option><option value="20px">20</option><option value="24px">24</option><option value="28px">28</option></select><select id="weightSel" title="字重" aria-label="字重"><option value="">字重</option><option value="300">細</option><option value="400" selected>正常</option><option value="500">中</option><option value="600">半粗</option><option value="700">粗</option><option value="800">特粗</option></select><button type="button" id="clearFmtBtn" title="清除所有格式">清除</button></div><span class="grow"></span><button type="button" id="saveBtn" class="primary" title="儲存並推送到 GitHub (Ctrl+S)">儲存並推送</button></div><div class="toolbar-row toolbar-secondary"><div class="tb-group" data-label="插入"><button type="button" id="linkBtn" title="插入連結">連結</button><button type="button" id="tableBtn" title="表格產生器">表格</button><label class="upload" title="上傳圖片（自動壓縮為 WebP）">上傳圖片<input type="file" id="imageInput" accept="image/*" multiple /></label><button type="button" id="imageLibBtn" title="從圖庫挑圖">圖庫</button><button type="button" id="citeBtn" title="引用 PubMed 文獻 (PMID)">文獻</button></div><div class="tb-group" data-label="文章"><button type="button" id="metaBtn" title="文章 SEO 後設資料">後設資料</button><button type="button" id="bilingualEditBtn" title="切換為雙語並排編輯">雙語編輯</button><button type="button" id="bilingualBtn" title="檢查中英雙語完整性">雙語檢查</button><button type="button" id="spellBtn" title="拼字 / 文法檢查 (LanguageTool)">拼字</button><button type="button" id="historyBtn" title="版本歷史 + 還原">歷史</button></div><div class="tb-group" data-label="發布"><button type="button" id="draftBtn" title="存到草稿分支 drafts/{slug}（不發布到 main）">存草稿</button><button type="button" id="scheduleBtn" title="排程於指定時間自動發布">排程發布</button><button type="button" id="sourceBtn" title="切換 HTML 原始碼模式">原始碼</button><button type="button" id="reloadBtn" title="重新讀取（放棄未存改動）">重讀</button></div><span class="grow"></span><span id="autosaveInd" class="autosave-pill"></span></div></div><div id="behindBanner" style="display:none;padding:8px 16px;background:#fef3c7;border-bottom:1px solid #fbbf24;color:#92400e;font-size:13px;align-items:center;gap:10px;flex-wrap:wrap"><span>⚠️</span><span id="behindBannerText">你載入的版本已落後遠端</span><button type="button" id="behindReloadBtn" style="padding:4px 12px;background:#92400e;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">重讀最新版</button><button type="button" id="behindDismissBtn" style="padding:4px 10px;background:transparent;color:#92400e;border:1px solid #92400e;border-radius:6px;cursor:pointer;font-size:12px">先不理</button></div><div id="draftBanner" style="display:none;padding:8px 16px;background:#dbeafe;border-bottom:1px solid #60a5fa;color:#1e40af;font-size:13px;align-items:center;gap:10px;flex-wrap:wrap"><span>💾</span><span id="draftBannerText">偵測到 10 分鐘前的未儲存草稿</span><button type="button" id="draftRestoreBtn" style="padding:4px 12px;background:#1e40af;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">還原草稿</button><button type="button" id="draftDiscardBtn" style="padding:4px 10px;background:transparent;color:#1e40af;border:1px solid #1e40af;border-radius:6px;cursor:pointer;font-size:12px">丟棄</button></div><div class="frame-wrap" id="frameWrap"><div class="empty-state" id="emptyState"><h3>請從左側選一個檔案開始編輯</h3><p>選了之後，網頁本人會出現在這裡。</p><p>你可以直接點任何文字、改字、貼圖。<strong>有黃框</strong>的區域 = 可以編輯；沒黃框的（如 header / footer / 導覽）為了避免破壞版型，需切到原始碼模式才能改。</p></div></div><div class="statusbar" id="statusbar"><span id="status">尚未載入檔案</span><span class="grow" style="flex:1"></span><span id="autosaveIndStatus" style="color:var(--muted);font-size:11px"></span><span id="wordCount" style="color:var(--muted);font-size:11px"></span><span id="readTime" style="color:var(--muted);font-size:11px"></span><span id="shaInfo"></span></div></section></main><div id="patModal" class="modal-bg" style="display:none"><div class="modal"><h2>輸入 GitHub Personal Access Token</h2><p>後台用 GitHub API 直接寫進你的 repo (<code style="font-family:'JetBrains Mono',monospace">expertise88864/user</code>)。需要 PAT 一次，儲存在你瀏覽器的 localStorage，不會傳到任何第三方。</p><p><strong>怎麼產生 PAT?</strong><br/>
+</div></div></aside><section id="editorPane"><div class="toolbar-wrap" id="toolbarWrap"><div class="toolbar-row toolbar-main" id="toolbar"><span class="path" id="filePath">未選擇檔案</span><div class="tb-group" data-label="字型"><button type="button" id="boldBtn" title="粗體 Ctrl+B" style="font-weight:800">B</button><button type="button" id="italicBtn" title="斜體 Ctrl+I" style="font-style:italic">I</button><button type="button" id="underlineBtn" title="底線" style="text-decoration:underline">U</button><button type="button" id="strikeBtn" title="刪除線" style="text-decoration:line-through">S</button></div><div class="tb-group" data-label="標題"><button type="button" id="h2Btn" title="大標題">H2</button><button type="button" id="h3Btn" title="小標題">H3</button><button type="button" id="h4Btn" title="次小標題">H4</button></div><div class="tb-group" data-label="段落"><button type="button" id="ulBtn" title="項目符號清單">• 清單</button><button type="button" id="olBtn" title="編號清單">1. 編號</button><button type="button" id="quoteBtn" title="引用區塊">&ldquo; 引用</button><button type="button" id="codeBtn" title="行內代碼" style="font-family:'JetBrains Mono',monospace">&lt;/&gt;</button></div><div class="tb-group" data-label="對齊"><button type="button" id="alignLeftBtn" title="靠左對齊">&#x21E4;</button><button type="button" id="alignCenterBtn" title="置中對齊">&#x21D4;</button><button type="button" id="alignRightBtn" title="靠右對齊">&#x21E5;</button></div><div class="tb-group" data-label="樣式"><label class="tb-color" title="字體顏色"><input type="color" id="colorPick" value="#0c5159" /><span>顏色</span></label><select id="sizeSel" title="字級大小" aria-label="字級大小"><option value="">字級</option><option value="12px">12</option><option value="13px">13</option><option value="14px">14</option><option value="15.5px" selected>15.5</option><option value="17px">17</option><option value="20px">20</option><option value="24px">24</option><option value="28px">28</option></select><select id="weightSel" title="字重" aria-label="字重"><option value="">字重</option><option value="300">細</option><option value="400" selected>正常</option><option value="500">中</option><option value="600">半粗</option><option value="700">粗</option><option value="800">特粗</option></select><button type="button" id="clearFmtBtn" title="清除所有格式">清除</button></div><span class="grow"></span><button type="button" id="saveBtn" class="primary" title="儲存並推送到 GitHub (Ctrl+S)">儲存並推送</button></div><div class="toolbar-row toolbar-secondary"><div class="tb-group" data-label="插入"><button type="button" id="linkBtn" title="插入連結">連結</button><button type="button" id="tableBtn" title="表格產生器">表格</button><label class="upload" title="上傳圖片（自動壓縮為 WebP）">上傳圖片<input type="file" id="imageInput" accept="image/*" multiple /></label><button type="button" id="imageLibBtn" title="從圖庫挑圖">圖庫</button><button type="button" id="citeBtn" title="引用 PubMed 文獻 (PMID)">文獻</button></div><div class="tb-group" data-label="文章"><button type="button" id="metaBtn" title="文章 SEO 後設資料">後設資料</button><button type="button" id="bilingualEditBtn" title="切換為雙語並排編輯">雙語編輯</button><button type="button" id="bilingualBtn" title="檢查中英雙語完整性">雙語檢查</button><button type="button" id="spellBtn" title="拼字 / 文法檢查 (LanguageTool)">拼字</button><button type="button" id="historyBtn" title="版本歷史 + 還原">歷史</button></div><div class="tb-group" data-label="發布"><button type="button" id="draftBtn" title="存到草稿分支 drafts/{slug}（不發布到 main）">存草稿</button><button type="button" id="scheduleBtn" title="排程於指定時間自動發布">排程發布</button><button type="button" id="unpublishBtn" title="切換『暫時下架 / 重新上架』(只切換 catalog 旗標，仍可在後台編輯)">📥 暫時下架</button><button type="button" id="sourceBtn" title="切換 HTML 原始碼模式">原始碼</button><button type="button" id="reloadBtn" title="重新讀取（放棄未存改動）">重讀</button></div><span class="grow"></span><span id="autosaveInd" class="autosave-pill"></span></div></div><div id="behindBanner" style="display:none;padding:8px 16px;background:#fef3c7;border-bottom:1px solid #fbbf24;color:#92400e;font-size:13px;align-items:center;gap:10px;flex-wrap:wrap"><span>⚠️</span><span id="behindBannerText">你載入的版本已落後遠端</span><button type="button" id="behindReloadBtn" style="padding:4px 12px;background:#92400e;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">重讀最新版</button><button type="button" id="behindDismissBtn" style="padding:4px 10px;background:transparent;color:#92400e;border:1px solid #92400e;border-radius:6px;cursor:pointer;font-size:12px">先不理</button></div><div id="draftBanner" style="display:none;padding:8px 16px;background:#dbeafe;border-bottom:1px solid #60a5fa;color:#1e40af;font-size:13px;align-items:center;gap:10px;flex-wrap:wrap"><span>💾</span><span id="draftBannerText">偵測到 10 分鐘前的未儲存草稿</span><button type="button" id="draftRestoreBtn" style="padding:4px 12px;background:#1e40af;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">還原草稿</button><button type="button" id="draftDiscardBtn" style="padding:4px 10px;background:transparent;color:#1e40af;border:1px solid #1e40af;border-radius:6px;cursor:pointer;font-size:12px">丟棄</button></div><div class="frame-wrap" id="frameWrap"><div class="empty-state" id="emptyState"><h3>請從左側選一個檔案開始編輯</h3><p>選了之後，網頁本人會出現在這裡。</p><p>你可以直接點任何文字、改字、貼圖。<strong>有黃框</strong>的區域 = 可以編輯；沒黃框的（如 header / footer / 導覽）為了避免破壞版型，需切到原始碼模式才能改。</p></div></div><div class="statusbar" id="statusbar"><span id="status">尚未載入檔案</span><span class="grow" style="flex:1"></span><span id="autosaveIndStatus" style="color:var(--muted);font-size:11px"></span><span id="wordCount" style="color:var(--muted);font-size:11px"></span><span id="readTime" style="color:var(--muted);font-size:11px"></span><span id="shaInfo"></span></div></section></main><div id="patModal" class="modal-bg" style="display:none"><div class="modal"><h2>輸入 GitHub Personal Access Token</h2><p>後台用 GitHub API 直接寫進你的 repo (<code style="font-family:'JetBrains Mono',monospace">expertise88864/user</code>)。需要 PAT 一次，儲存在你瀏覽器的 localStorage，不會傳到任何第三方。</p><p><strong>怎麼產生 PAT?</strong><br/>
 ① <a href="https://github.com/settings/tokens" target="_blank" rel="noopener noreferrer">https://github.com/settings/tokens</a><br/>
 ② 點 "Generate new token (classic)"<br/>
 ③ 名字隨便填，Expiration 選 90 天 / No expiration<br/>
@@ -268,6 +268,11 @@ mountSource(CURRENT_CONTENT);
 mountIframe(CURRENT_CONTENT);
 }
 setStatus('已載入 ' + path + ' — ' + (path.endsWith('.html') ? '直接點文字編輯' : '原始碼模式'));
+// Update the 暫時下架 / 重新上架 button label based on this article's
+// current publish state in the catalog.
+if (typeof refreshUnpublishBtn === 'function') {
+  refreshUnpublishBtn();
+}
 } catch(e){
 setStatus('載入失敗，請稍後再試', true);
 }
@@ -526,6 +531,87 @@ if(!CURRENT_FILE) return;
 if(DIRTY && !confirm('放棄目前的改動，重新載入？')) return;
 loadFile(CURRENT_FILE);
 });
+
+// =========== unpublish toggle (catalog flag in blog-shared.js) ===========
+async function toggleUnpublish(){
+if(!CURRENT_FILE){ alert('請先選一個檔案'); return; }
+if(!PAT){ alert('請先登入 GitHub PAT'); return; }
+if(!CURRENT_FILE.startsWith('blog/') || !CURRENT_FILE.endsWith('.html')){
+  alert('只有 blog/*.html 文章可以下架');
+  return;
+}
+if(CURRENT_FILE.endsWith('/index.html') || CURRENT_FILE.endsWith('/topics.html')){
+  alert('索引頁不能下架');
+  return;
+}
+const slug = CURRENT_FILE.replace('blog/','').replace('.html','');
+setStatus('讀取 blog-shared.js...');
+let bs, bsSha;
+try {
+  const data = await gh('GET', 'contents/blog/blog-shared.js');
+  bsSha = data.sha;
+  bs = decodeUtf8Base64(data.content);
+} catch(e){
+  setStatus('讀取 blog-shared.js 失敗', true);
+  return;
+}
+// Find the catalog line for this slug. Catalog entries are single lines like:
+//   { slug:'xxx', title:'...', cat:'rx', tag:'...', date:'...', ... },
+const lineRe = new RegExp("(\\{\\s*slug:'" + slug.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&') + "'[^}]*\\})", '');
+const m = bs.match(lineRe);
+if(!m){
+  alert('找不到此文章在 catalog 內的 entry。可能 slug 拼錯，或 catalog 結構變了。');
+  return;
+}
+const oldLine = m[1];
+const isUnpub = /\bunpublished\s*:\s*true\b/.test(oldLine);
+const nextLine = isUnpub
+  ? oldLine.replace(/,?\s*unpublished\s*:\s*true\s*/, '')
+  : oldLine.replace(/(\}\s*$)/, ', unpublished:true $1');
+const action = isUnpub ? '重新上架' : '暫時下架';
+if(!confirm(action + '『' + slug + '』 ？\n\n這會修改 blog-shared.js 並 commit 到 main。下架後文章仍存在於後台可以編輯，但首頁、blog index、sitemap、feeds、熱門點擊都會隱藏。')) return;
+const newBs = bs.replace(oldLine, nextLine);
+setStatus(action + '中... 寫入 blog-shared.js...');
+try {
+  const r = await gh('PUT', 'contents/blog/blog-shared.js', {
+    message: action + ' ' + slug,
+    content: encodeUtf8Base64(newBs),
+    branch: BRANCH,
+    sha: bsSha
+  });
+  setStatus(action + ' ✓ — Vercel 約 30 秒後重新部署。文章本身未動，仍在後台。', false);
+  // Update button label so user sees the new state
+  refreshUnpublishBtn();
+} catch(e){
+  setStatus(action + '失敗：' + (e.message || e), true);
+}
+}
+// Update button label based on current article's publish state
+async function refreshUnpublishBtn(){
+const btn = document.getElementById('unpublishBtn');
+if(!btn) return;
+if(!CURRENT_FILE || !CURRENT_FILE.startsWith('blog/') || !CURRENT_FILE.endsWith('.html')){
+  btn.textContent = '📥 暫時下架';
+  btn.disabled = true;
+  return;
+}
+btn.disabled = false;
+const slug = CURRENT_FILE.replace('blog/','').replace('.html','');
+try {
+  const data = await gh('GET', 'contents/blog/blog-shared.js');
+  const bs = decodeUtf8Base64(data.content);
+  const lineRe = new RegExp("\\{\\s*slug:'" + slug.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&') + "'[^}]*\\}", '');
+  const m = bs.match(lineRe);
+  if(m && /\bunpublished\s*:\s*true\b/.test(m[0])){
+    btn.textContent = '📤 重新上架';
+    btn.title = '這篇文章目前是下架狀態。點擊重新上架。';
+  } else {
+    btn.textContent = '📥 暫時下架';
+    btn.title = '切換『暫時下架 / 重新上架』(只切換 catalog 旗標，仍可在後台編輯)';
+  }
+} catch(e){ /* ignore */ }
+}
+document.getElementById('unpublishBtn').addEventListener('click', toggleUnpublish);
 // =========== save ===========
 document.getElementById('saveBtn').addEventListener('click', save);
 document.addEventListener('keydown', (e)=>{

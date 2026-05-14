@@ -7,7 +7,9 @@
     var recentEl = document.getElementById('dn-recent-list');
     var popularEl = document.getElementById('dn-popular-list');
     if (!recentEl && !popularEl) return;
-    var articles = DN.ARTICLES || [];
+    // Filter out unpublished articles so they don't appear in the homepage
+    // "recent" / "popular" spotlights.
+    var articles = (DN.ARTICLES || []).filter(function (a) { return !a.unpublished; });
     if (!document.getElementById('dn-spotlight-card-css')) {
       var spotlightStyle = document.createElement('style');
       spotlightStyle.id = 'dn-spotlight-card-css';
@@ -250,7 +252,8 @@
   DN.bindArticleHub = function () {
     var hub = document.getElementById('dn-hub');
     if (!hub) return;
-    var articles = DN.ARTICLES || [];
+    // Exclude unpublished articles from hub spotlight + topic filters.
+    var articles = (DN.ARTICLES || []).filter(function (a) { return !a.unpublished; });
     var mode = hub.dataset.hubMode || 'full';
 
       if (!document.getElementById('dn-hub-css')) {

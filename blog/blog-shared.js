@@ -691,7 +691,7 @@
     { slug:'perioral-dermatitis-guide', title:'嘴角紅疹是痘痘還是濕疹？口周皮膚炎完整衛教', title_en:'Perioral / Periorificial dermatitis: complete guide', cat:'rx', tag:'口周皮膚炎', date:'2026-05-13', emoji:'', tag_en:'Perioral dermatitis' },
     { slug:'toenail-mechanical-disorders', title:'腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病', title_en:'Toenail mechanical disorders: complete patient guide', cat:'rx', tag:'趾甲與足部', date:'2026-05-13', emoji:'', tag_en:'Toenail disorders' },
     { slug:'dermatologic-oral-examination', title:'嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南', title_en:'Oral mucosa: when to see a dermatologist — exam and biopsy guide', cat:'rx', tag:'口腔黏膜', date:'2026-05-13', emoji:'', tag_en:'Oral mucosa' },
-    { slug:'severe-scabies-treatment', title:'嚴重疥瘡為什麼治不好？口服 ivermectin + 外用 permethrin 完整治療指南', title_en:'Severe scabies: complete ivermectin + permethrin treatment guide', cat:'rx', tag:'疥瘡', date:'2026-05-13', emoji:'', tag_en:'Scabies' },
+    { slug:'severe-scabies-treatment', title:'嚴重疥瘡為什麼治不好？口服 ivermectin + 外用 permethrin 完整治療指南', title_en:'Severe scabies: complete ivermectin + permethrin treatment guide', cat:'rx', tag:'疥瘡', date:'2026-05-13', emoji:'', tag_en:'Scabies', unpublished:true },
     { slug:'hairloss-myths',      title:'落髮 / 雄性禿 7 大迷思', title_en:'7 Hair Loss & Male Pattern Baldness Myths', cat:'myth', tag:'落髮', date:'2026-05-03', emoji:'', tag_en:'Hair loss' },
     { slug:'tinea-myths',         title:'香港腳 / 灰指甲 7 大迷思', cat:'myth', tag:'足癬', date:'2026-05-03', emoji:'', tag_en:'Tinea' },
     { slug:'urticaria-myths',     title:'蕁麻疹 6 大迷思', cat:'myth', tag:'蕁麻疹', date:'2026-05-07', emoji:'', tag_en:'Urticaria' },
@@ -732,6 +732,74 @@
   // Article numbering — assign #001-#NNN by chronological publish order
   // (date asc, then array order as tiebreaker for same-day publishes)
   // -----------------------------------------------------------------------
+  // -----------------------------------------------------------------------
+  // Publish state — admin can mark an article {unpublished:true} in the
+  // catalog above to hide it from the live site (listings, sitemap, feeds,
+  // related-articles, popular picks) without deleting. Admin can still
+  // open and edit it normally. Direct URL still resolves but the article
+  // gets a banner injected on initBlog().
+  // -----------------------------------------------------------------------
+  DN.isPublished = function (slug) {
+    if (!slug) return true;
+    var a = (DN.ARTICLES || []).find(function (x) { return x.slug === slug; });
+    return !(a && a.unpublished);
+  };
+  DN.publishedArticles = function () {
+    return (DN.ARTICLES || []).filter(function (a) { return !a.unpublished; });
+  };
+  DN.unpublishedSlugs = function () {
+    return (DN.ARTICLES || []).filter(function (a) { return a.unpublished; }).map(function (a) { return a.slug; });
+  };
+
+  // Inject "本文暫時下架" banner at top of article body when the current
+  // article is marked unpublished. Banner is visible to anyone who lands
+  // on the direct URL (e.g. via bookmark) so they know it's not public.
+  DN.injectUnpublishedBanner = function () {
+    try {
+      var slug = DN.currentSlug && DN.currentSlug();
+      if (!slug) return;
+      if (DN.isPublished(slug)) return;
+      if (document.getElementById('dn-unpub-banner')) return;
+      var b = document.createElement('div');
+      b.id = 'dn-unpub-banner';
+      b.style.cssText = 'position:sticky;top:0;z-index:60;background:#fef3c7;border-bottom:2px solid #ca8a04;color:#7c4a03;padding:10px 18px;font-size:13.5px;font-weight:600;text-align:center;font-family:Inter,"Noto Sans TC",sans-serif;line-height:1.6';
+      b.setAttribute('data-zh', '⚠️ 本文目前已暫時下架，僅作者可見。一般訪客連結至此會看到此提示。');
+      b.setAttribute('data-en', '⚠️ This article is temporarily unpublished. Only the author should see this URL.');
+      b.textContent = '⚠️ 本文目前已暫時下架，僅作者可見。一般訪客連結至此會看到此提示。';
+      var first = document.body.firstElementChild;
+      document.body.insertBefore(b, first);
+      // Also add noindex meta if not already there
+      if (!document.querySelector('meta[name="robots"][content*="noindex"]')) {
+        var m = document.createElement('meta');
+        m.name = 'robots';
+        m.content = 'noindex,nofollow';
+        document.head.appendChild(m);
+      }
+    } catch (e) { /* ignore */ }
+  };
+
+  // -----------------------------------------------------------------------
+  // Hide hardcoded homepage / blog-index article cards for unpublished
+  // articles. Called by initBlog after DN.ARTICLES is loaded.
+  // -----------------------------------------------------------------------
+  DN.hideUnpublishedCards = function () {
+    try {
+      var slugs = DN.unpublishedSlugs();
+      if (!slugs.length) return;
+      slugs.forEach(function (s) {
+        document.querySelectorAll('a[href="/blog/' + s + '"],a[href="/blog/' + s + '.html"],a[href$="/blog/' + s + '"]').forEach(function (el) {
+          // Hide article cards (.article-list-item, .dn-spotlight-card) but
+          // NOT plain in-text links (those just become click-through stubs).
+          if (el.classList.contains('article-list-item') ||
+              el.classList.contains('dn-spotlight-card') ||
+              el.closest('.dn-spotlight-card')) {
+            el.style.display = 'none';
+          }
+        });
+      });
+    } catch (e) { /* ignore */ }
+  };
+
   // -----------------------------------------------------------------------
   // Reading progress tracker (localStorage) — auto-mark on article view
   // Provides DN.markRead, DN.getReadSlugs, DN.getReadCount, DN.resetRead
@@ -1451,6 +1519,8 @@
     apply(curLang);
     DN.addReadingProgress();
     DN.initCmdK();        // search button must work immediately on click
+    DN.injectUnpublishedBanner();
+    DN.hideUnpublishedCards();
     // ─── Deferred (no first-paint impact) ───
     idle(function () { DN.injectBMC(); }, { timeout: 1200 });
     idle(function () { DN.addScrollToTop(); }, { timeout: 1500 });
