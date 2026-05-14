@@ -55,22 +55,31 @@
   DN.applyTextOnly = function (lang) {
     const meta = DN.LANGS.find(function (l) { return l.code === lang; }) || DN.LANGS[0];
     document.documentElement.lang = meta.htmlLang;
+    const otherLang = lang === 'en' ? 'zh' : 'en';
+    function plain(s) { return String(s || '').replace(/<[^>]+>/g, ''); }
     document.querySelectorAll('[data-zh],[data-en]').forEach(function (el) {
       const txt = DN.translate(el, lang);
       if (txt == null) return;
-      // CRITICAL: if the element's current visible text (textContent, which
-      // strips inline tags like <b>/<br>/<em>) already matches the plain
-      // version of the target string, the element is ALREADY in the right
-      // language. Don't overwrite — that would strip any inline HTML the
-      // editor added (e.g., user bolded a phrase in admin.html, the user-
-      // visible markup would otherwise be erased on every page load).
-      // We still overwrite when languages differ (the visible text won't
-      // match the target). Fixes 2026-05-14 incident where admin edits
-      // looked successful but were invisible on the live site.
-      const txtPlain = txt.replace(/<[^>]+>/g, '');
-      if (el.textContent === txtPlain) return;
-      if (/[<&]/.test(txt) && /<\/?[a-z]/i.test(txt)) el.innerHTML = txt;
-      else el.textContent = txt;
+      const txtPlain = plain(txt);
+      const elText = el.textContent;
+      // Case A: visible text already matches target language → already correct,
+      // skip (preserves inline edits like <b>/<br> the editor added).
+      if (elText === txtPlain) return;
+      // Case B: visible text matches the OTHER language → genuine language
+      // switch. Run the swap.
+      const otherSrc = el.dataset[otherLang];
+      if (otherSrc != null && elText === plain(otherSrc)) {
+        if (/[<&]/.test(txt) && /<\/?[a-z]/i.test(txt)) el.innerHTML = txt;
+        else el.textContent = txt;
+        return;
+      }
+      // Case C: visible text matches NEITHER stored language → element has
+      // been customized in admin.html (text changes the editor saved into
+      // visible textContent but didn't push back into data-zh / data-en).
+      // Trust the customization and don't overwrite. Without this, every
+      // page load would silently revert the editor's wording / formatting
+      // changes back to the data-zh boilerplate. Fixes 2026-05-14 incident.
+      return;
     });
     // Also swap placeholder / aria-label / title attributes when bilingual
     // variants are provided as data-zh-* / data-en-* attrs.
