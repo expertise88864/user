@@ -399,10 +399,20 @@
           // Homepage default: show first N cards in DOM order (the curated picks
           // from index.html). Don't filter by "newest by date" because the
           // homepage card list is hand-curated and may not contain all articles.
+          // SKIP unpublished slugs from counting toward the limit so the
+          // visible card count stays at N even when an article is hidden.
+          var unpub = (DN.unpublishedSlugs && DN.unpublishedSlugs()) || [];
           var shown = 0;
           for (var i = 0; i < allCards.length; i++) {
-            var visible = i < initialLimit;
-            allCards[i].style.display = visible ? 'flex' : 'none';
+            var href = allCards[i].getAttribute('href') || '';
+            var mSlug = href.match(/\/blog\/([a-z0-9-]+)/);
+            var cardSlug = mSlug ? mSlug[1] : '';
+            var isUnpub = cardSlug && unpub.indexOf(cardSlug) !== -1;
+            var visible = !isUnpub && shown < initialLimit;
+            // Don't fight the unpublished CSS rule — only set display when
+            // the card IS publishable. For unpublished we leave display
+            // alone (CSS keeps it hidden).
+            if (!isUnpub) allCards[i].style.display = visible ? 'flex' : 'none';
             if (visible) shown++;
           }
           setStatus(shown + ' 篇精選文章');
