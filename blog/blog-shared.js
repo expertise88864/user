@@ -58,6 +58,17 @@
     document.querySelectorAll('[data-zh],[data-en]').forEach(function (el) {
       const txt = DN.translate(el, lang);
       if (txt == null) return;
+      // CRITICAL: if the element's current visible text (textContent, which
+      // strips inline tags like <b>/<br>/<em>) already matches the plain
+      // version of the target string, the element is ALREADY in the right
+      // language. Don't overwrite — that would strip any inline HTML the
+      // editor added (e.g., user bolded a phrase in admin.html, the user-
+      // visible markup would otherwise be erased on every page load).
+      // We still overwrite when languages differ (the visible text won't
+      // match the target). Fixes 2026-05-14 incident where admin edits
+      // looked successful but were invisible on the live site.
+      const txtPlain = txt.replace(/<[^>]+>/g, '');
+      if (el.textContent === txtPlain) return;
       if (/[<&]/.test(txt) && /<\/?[a-z]/i.test(txt)) el.innerHTML = txt;
       else el.textContent = txt;
     });
