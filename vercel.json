@@ -272,7 +272,17 @@
       "permanent": true
     },
     {
+      "source": "/blog/atopic-dermatitis-comorbidity.html",
+      "destination": "/blog/atopic-dermatitis-overview",
+      "permanent": true
+    },
+    {
       "source": "/blog/eczema-myths",
+      "destination": "/blog/atopic-dermatitis-overview",
+      "permanent": true
+    },
+    {
+      "source": "/blog/eczema-myths.html",
       "destination": "/blog/atopic-dermatitis-overview",
       "permanent": true
     },
@@ -282,7 +292,17 @@
       "permanent": true
     },
     {
+      "source": "/en/blog/atopic-dermatitis-comorbidity.html",
+      "destination": "/en/blog/atopic-dermatitis-overview",
+      "permanent": true
+    },
+    {
       "source": "/en/blog/eczema-myths",
+      "destination": "/en/blog/atopic-dermatitis-overview",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/eczema-myths.html",
       "destination": "/en/blog/atopic-dermatitis-overview",
       "permanent": true
     },
@@ -292,7 +312,17 @@
       "permanent": true
     },
     {
+      "source": "/blog/demodex-rosacea.html",
+      "destination": "/blog/rosacea-myths",
+      "permanent": true
+    },
+    {
       "source": "/en/blog/demodex-rosacea",
+      "destination": "/en/blog/rosacea-myths",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/demodex-rosacea.html",
       "destination": "/en/blog/rosacea-myths",
       "permanent": true
     }
