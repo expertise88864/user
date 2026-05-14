@@ -779,26 +779,41 @@
   };
 
   // -----------------------------------------------------------------------
-  // Hide hardcoded homepage / blog-index article cards for unpublished
-  // articles. Called by initBlog after DN.ARTICLES is loaded.
+  // Hide hardcoded homepage / blog-index article cards AND topic chips for
+  // unpublished articles. Implemented via <style> injection so the rules
+  // carry !important and reliably override per-element inline styles.
   // -----------------------------------------------------------------------
   DN.hideUnpublishedCards = function () {
     try {
       var slugs = DN.unpublishedSlugs();
       if (!slugs.length) return;
+      if (document.getElementById('dn-unpub-css')) {
+        document.getElementById('dn-unpub-css').remove();
+      }
+      var css = '';
       slugs.forEach(function (s) {
-        document.querySelectorAll('a[href="/blog/' + s + '"],a[href="/blog/' + s + '.html"],a[href$="/blog/' + s + '"]').forEach(function (el) {
-          // Hide article cards (.article-list-item, .dn-spotlight-card) but
-          // NOT plain in-text links (those just become click-through stubs).
-          if (el.classList.contains('article-list-item') ||
-              el.classList.contains('dn-spotlight-card') ||
-              el.closest('.dn-spotlight-card')) {
-            el.style.display = 'none';
-          }
-        });
+        // Article cards on homepage / blog index
+        css += 'a.article-list-item[href="/blog/' + s + '"]{display:none!important}\n';
+        css += 'a.article-list-item[href="/blog/' + s + '.html"]{display:none!important}\n';
+        // Hub spotlight cards
+        css += 'a.dn-spotlight-card[href="/blog/' + s + '"]{display:none!important}\n';
+        css += 'li:has(> a.dn-spotlight-card[href="/blog/' + s + '"]){display:none!important}\n';
+        // Topic chips on homepage (chip strip) — direct child of flex
+        // container, not inside prose. Hide any link to the unpublished slug
+        // EXCEPT inside header/main-prose (so admin-internal links stay).
+        css += 'a[href="/blog/' + s + '"]:not(article a):not(.prose a):not(header a):not(blockquote a){display:none!important}\n';
       });
+      var styleEl = document.createElement('style');
+      styleEl.id = 'dn-unpub-css';
+      styleEl.textContent = css;
+      (document.head || document.documentElement).appendChild(styleEl);
     } catch (e) { /* ignore */ }
   };
+
+  // Eagerly inject hide-unpublished CSS as soon as blog-shared.js finishes
+  // parsing — DN.ARTICLES is already defined by then. This means hidden
+  // cards never paint, even before DOMContentLoaded.
+  try { DN.hideUnpublishedCards(); } catch (e) { /* ignore */ }
 
   // -----------------------------------------------------------------------
   // Reading progress tracker (localStorage) — auto-mark on article view
