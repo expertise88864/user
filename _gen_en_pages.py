@@ -71,6 +71,10 @@ EN_OG_OVERRIDES = {
         'title': 'Severe Scabies: Complete Oral Ivermectin + 5% Permethrin Treatment Guide',
         'desc': 'Severe scabies (profuse or crusted, with hundreds to thousands of mites) does not respond to single-dose treatment. Patient-friendly guide based on the May 2026 NEJM GALE CRUSTED randomized trial: standard regimen is ivermectin 200 μg/kg on Days 0, 7, 14 plus 5% permethrin head-to-toe on Days 0 and 7 plus daily emollient — Day 28 cure rate around 82%. Covers life cycle, household co-treatment, environmental cleaning, long-term care outbreak protocols, infant/pregnancy safety, and Taiwan drug availability.',
     },
+    'blog/dupilumab-long-term-maintenance.html': {
+        'title': 'Dupilumab Long-Term Maintenance: JAAD 2026 Real-World Study (Tapering Relapses Earlier than Stopping)',
+        'desc': 'Real-world 79-patient retrospective from Xinjiang, China, published in May 2026 JAAD, comparing three dupilumab maintenance strategies in moderate-to-severe atopic dermatitis: continuous q2w, interval extension (tapering), and abrupt stop. Continuous q2w yielded the longest relapse-free duration (mean 159.55 days, some >300 days); paradoxically, the tapering group relapsed earlier than the abrupt-stop group, possibly due to sub-therapeutic drug levels or selection bias. Relapse predictors: higher baseline IgE, longer disease duration, non-classic AD phenotype. Includes a first-reported optic-nerve-atrophy case (1 year post-discontinuation, causality unconfirmed) and Taiwan NHI Article 13.17.1 reimbursement criteria.',
+    },
 }
 
 EN_BANNER = '''<div id="dn-en-banner" style="background:linear-gradient(180deg,#ecfeff,#cffafe);border-bottom:1px solid #67e8f9;padding:9px 18px;text-align:center;font-size:12.5px;color:#0c5159;font-family:Inter,system-ui,sans-serif;line-height:1.5;font-weight:600">

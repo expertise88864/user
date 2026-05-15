@@ -5,9 +5,18 @@
     <link>https://chendermatologist.com/</link>
     <description>皮膚科衛教與學習筆記，整理常見皮膚疾病、治療選項與醫學指引。</description>
     <language>zh-Hant-TW</language>
-    <lastBuildDate>Thu, 14 May 2026 14:37:41 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2026 14:40:32 +0000</lastBuildDate>
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <generator>DermNotes auto-feed</generator>
+    <item>
+      <title>杜避炎®（dupilumab）維持治療要打多久？2026 JAAD 真實世界研究：減量竟比停藥更容易復發</title>
+      <link>https://chendermatologist.com/blog/dupilumab-long-term-maintenance</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/dupilumab-long-term-maintenance</guid>
+      <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>dupilumab</category>
+      <description>杜避炎®（dupilumab）維持治療要打多久？2026 JAAD 真實世界研究：減量竟比停藥更容易復發 | ChenDermatologist 皮膚科衛教筆記</description>
+    </item>
     <item>
       <title>嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南</title>
       <link>https://chendermatologist.com/blog/dermatologic-oral-examination</link>
@@ -268,15 +277,6 @@
       <dc:creator>陳翊嘉 醫師</dc:creator>
       <category>生物製劑</category>
       <description>皮膚科生物製劑與小分子標靶藥物總覽 | ChenDermatologist 皮膚科衛教筆記</description>
-    </item>
-    <item>
-      <title>化膿性汗腺炎（HS）完整衛教</title>
-      <link>https://chendermatologist.com/blog/hidradenitis-suppurativa</link>
-      <guid isPermaLink="true">https://chendermatologist.com/blog/hidradenitis-suppurativa</guid>
-      <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
-      <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>化膿性汗腺炎</category>
-      <description>化膿性汗腺炎（HS）完整衛教 | ChenDermatologist 皮膚科衛教筆記</description>
     </item>
   </channel>
 </rss>

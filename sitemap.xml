@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://chendermatologist.com/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/"/>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/about</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/about"/>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog"/>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/topics</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/topics"/>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/tools</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/tools"/>
@@ -42,7 +42,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/glossary</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/glossary"/>
@@ -50,7 +50,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/support</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/support"/>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/dashboard</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/dashboard"/>
@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/notes</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/notes"/>
@@ -74,11 +74,23 @@
   </url>
   <url>
     <loc>https://chendermatologist.com/privacy</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/privacy"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/blog/dupilumab-long-term-maintenance</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/dupilumab-long-term-maintenance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/dupilumab-long-term-maintenance"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/api/og?title=%E6%9D%9C%E9%81%BF%E7%82%8E%C2%AE%EF%BC%88dupilumab%EF%BC%89%E7%B6%AD%E6%8C%81%E6%B2%BB%E7%99%82%E8%A6%81%E6%89%93%E5%A4%9A%E4%B9%85%EF%BC%9F2026+JAAD+%E7%9C%9F%E5%AF%A6%E4%B8%96%E7%95%8C%E7%A0%94%E7%A9%B6%EF%BC%9A%E6%B8%9B%E9%87%8F%E7%AB%9F%E6%AF%94%E5%81%9C%E8%97%A5%E6%9B%B4%E5%AE%B9%E6%98%93%E5%BE%A9%E7%99%BC+%7C+%E9%99%B3%E7%BF%8A%E5%98%89%E9%86%AB%E5%B8%AB+%C2%B7+%E7%9A%AE%E8%86%9A%E7%A7%91&amp;amp;tag=%E7%9A%AE%E8%86%9A%E7%A7%91%E8%A1%9B%E6%95%99&amp;amp;date=2026-05-15</image:loc>
+      <image:title>杜避炎®（dupilumab）維持治療要打多久？2026 JAAD 真實世界研究：減量竟比停藥更容易復發</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://chendermatologist.com/blog/dermatologic-oral-examination</loc>
