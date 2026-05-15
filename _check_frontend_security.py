@@ -54,13 +54,11 @@ def main() -> int:
     require(errors, "blog/blog-shared.js", "escapeHtml(safeSiteUrl(m.url))", "Command palette hrefs should use safe same-site URLs")
     require(errors, "blog/blog-shared.js", "escapeHtml(m.title)", "Command palette titles should be escaped")
     require(errors, "blog/blog-shared.js", "location.href = safeSiteUrl(m.url)", "Command palette Enter navigation should use safe same-site URLs")
-    require(errors, "blog/blog-shared.js", "const guideline = String(DN.TDA_GUIDELINE[slug] || '')", "TDA guideline labels should be escaped before template insertion")
-    require(errors, "blog/blog-shared.js", "' + guideline + '", "TDA guideline block should insert the escaped label")
+    # TDA guideline injector removed 2026-05-16 (was dead code; never called).
     forbid(errors, "blog/blog-shared.js", ".onmouseover", "Runtime code should not assign mouseover handlers via DOM properties")
     forbid(errors, "blog/blog-shared.js", ".onmouseout", "Runtime code should not assign mouseout handlers via DOM properties")
     forbid(errors, "blog/blog-shared.js", 'href="\' + m.url', "Command palette hrefs should not interpolate raw URLs")
     forbid(errors, "blog/blog-shared.js", "'<span class=\"t\">' + m.title", "Command palette titles should not be inserted raw")
-    forbid(errors, "blog/blog-shared.js", "' + DN.TDA_GUIDELINE[slug] + '", "TDA guideline block should not insert raw mapping values")
 
     require(errors, "blog/blog-article-visuals.js", "box.setAttribute('role', 'dialog');", "Image lightbox should expose dialog semantics")
     require(errors, "blog/blog-article-visuals.js", "box.setAttribute('aria-modal', 'true');", "Image lightbox should declare modal behavior to assistive tech")

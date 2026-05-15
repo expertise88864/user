@@ -982,44 +982,10 @@
   };
 
   // Reads dates from DN.ARTICLES catalog by matching href slug.
-  // -----------------------------------------------------------------------
-  // -----------------------------------------------------------------------
-  // -----------------------------------------------------------------------
-  // TDA disease guideline mapping — auto-inject TDA URL block when applicable
-  // -----------------------------------------------------------------------
-  DN.TDA_GUIDELINE = {
-    'acne-myths':                'TDA 痤瘡臨床治療共識(2024)',
-    'atopic-dermatitis-overview': 'TDA 異位性皮膚炎診療共識(2020 更新）',
-    'rosacea-myths':             'TDA 玫瑰斑（酒糟）治療共識(2022)',
-    'hairloss-myths':            'TDA 圓禿診斷及治療共識(2024)',
-    'alopecia-areata':           'TDA 圓禿診斷及治療共識(2024)',
-    'urticaria-myths':           'TDA 蕁麻疹定義、分類、診斷暨治療共識(2021)',
-    'psoriasis-myths':           'TDA 尋常型乾癬治療共識手冊(2024)',
-    'shingles-myths':            'TDA 帶狀疱疹疫苗接種建議(2022)',
-    'mpox-care':                 'TDA 猴痘皮膚照護建議指引',
-    'vitiligo':                  'TDA 白斑臨床治療共識(2024)',
-    'hidradenitis-suppurativa':  'TDA 化膿性汗腺炎臨床診療共識建議',
-    'targeted-therapy-skin':     'TLCS + TDA TKI 標靶藥物相關皮膚毒性共識（2024）',
-  };
-  DN.addTDALink = function () {
-    const slug = DN.currentSlug();
-    if (!slug || !DN.TDA_GUIDELINE[slug]) return;
-    if (document.getElementById('dn-tda-link')) return;
-    if (document.getElementById('tda-link')) return;
-    const article = document.querySelector('article.max-w-3xl');
-    if (!article) return;
-    const wrap = document.createElement('section');
-    const guideline = String(DN.TDA_GUIDELINE[slug] || '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
-    wrap.id = 'dn-tda-link';
-    wrap.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
-    wrap.innerHTML = '<div style="background:linear-gradient(180deg,#f5fbfa,#fff);border:1px solid var(--border);border-radius:14px;padding:18px 20px"><div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#4d6358;font-weight:700;margin-bottom:6px">📋 臺灣皮膚科醫學會官方資源</div><p style="margin:0 0 10px;font-size:13.5px;line-height:1.7;color:var(--ink-2)">本疾病有 ' + guideline + '。完整官方共識可至以下查詢：</p><a href="https://www.derma.org.tw/clinical/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:#fff;border:1px solid var(--border);border-radius:9999px;color:var(--teal-deep);font-weight:700;font-size:13px;text-decoration:none">→ 臺灣皮膚科醫學會 診療指引總覽</a></div>';
-    article.parentNode.insertBefore(wrap, article.nextSibling);
-  };
+  // 2026-05-16 — DN.TDA_GUIDELINE + DN.addTDALink removed (dead code).
+  // The TDA-link block was never called from initBlog or any HTML; the
+  // 「官方資源」 section is now hand-authored at the end of each article body
+  // instead. Saved ~2.4 KB minified from the shared runtime.
 
   // §86 醫療法保護 — auto-inject medical-disclaimer block at end of article
   // (resident-grade safety wording per agent research)
@@ -1176,7 +1142,6 @@
   // exposed as DN.KOFI_URL / DN.JKO_URL but only used on /support itself.
   DN.SUPPORT_URL = '/support';
   DN.SUPPORT_PROVIDER = '街口支付';
-  DN.BMC_URL = DN.SUPPORT_URL;   // legacy alias (do not delete)
 
   DN.injectBMCFooter = function () {
     if (!DN.SUPPORT_URL) return;   // 等待 ezPay 審核中,先不注入
@@ -1407,31 +1372,7 @@
     }
   };
 
-  DN.markNewArticles = function () {
-    const NOW = Date.now();
-    const SEVEN_DAYS = 7 * 86400 * 1000;
-    const cards = document.querySelectorAll('a.article-list-item[href*="/blog/"]');
-    if (!cards.length) return;
-    const styleEl = document.createElement('style');
-    styleEl.textContent = '.dn-new-pulse{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:9999px;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.04em;line-height:1.5;animation:dnPulse 1.6s ease-in-out infinite;}@keyframes dnPulse{0%,100%{box-shadow:0 0 0 0 rgba(251,191,36,.55)}50%{box-shadow:0 0 0 6px rgba(251,191,36,0)}}';
-    document.head.appendChild(styleEl);
-    cards.forEach(function (a) {
-      const href = a.getAttribute('href') || '';
-      const m = href.match(/\/blog\/([a-z0-9-]+)/i);
-      if (!m) return;
-      const slug = m[1];
-      const meta = (DN.ARTICLES || []).find(function (x) { return x.slug === slug; });
-      if (!meta) return;
-      const pub = Date.parse(meta.date);
-      if (!pub || NOW - pub > SEVEN_DAYS) return;
-      const h3 = a.querySelector('h3');
-      if (!h3 || h3.querySelector('.dn-new-pulse')) return;
-      const tag = document.createElement('span');
-      tag.className = 'dn-new-pulse';
-      tag.textContent = 'NEW';
-      h3.appendChild(tag);
-    });
-  };
+  // DN.markNewArticles moved to blog-hub.js (only fires on card list pages).
 
   DN.bindWebVitals = function () {
     if (typeof gtag !== 'function') return;
@@ -1597,64 +1538,9 @@
       // notification surface; double-prompting at every article-end was noisy.
       // idle(function () { DN.injectNewsletterCard && DN.injectNewsletterCard(); }, { timeout: 4500 });
 
-      // Per-article calculator priority: most-relevant calculator FIRST.
-      // Calculator implementations are loaded on demand to keep the shared
-      // runtime light on non-article and first-paint paths.
-      var slug = DN.currentSlug();
-      // Per-article calculator priority — pick the TWO most relevant tools.
-      // Order matters: first item is shown highest in the article.
-      // DLQI is intentionally NOT auto-included on every page anymore — only
-      // when it's actually one of the two best-fit tools for that disease.
-      var CALC_ORDER = {
-        // Eczema family — SCORAD covers area+intensity+itch+sleep (most patient-relevant)
-        'atopic-dermatitis-overview':    ['SCORAD', 'EASI'],
-        'pediatric-eczema':          ['SCORAD', 'POEM'],
-        'topical-steroids-guide':    ['EASI', 'IGA'],
-        // Psoriasis — PASI is gold standard; NAPSI for nail involvement
-        'psoriasis-myths':           ['PASI', 'NAPSI'],
-        // Hair
-        'alopecia-areata':           ['SALT', 'DLQI'],
-        'hairloss-myths':            ['HairScale', 'DLQI'],
-        // Urticaria — UAS7 + DLQI is the EAACI gold standard pair
-        'urticaria-myths':           ['UAS7', 'DLQI'],
-        // Acne — GAGS for severity, ASIS for patient-reported impact
-        'acne-myths':                ['GAGS', 'ASIS'],
-        'acne-scar-treatment':       ['GAGS', 'DLQI'],
-        'isotretinoin-patient':      ['GAGS', 'ASIS'],
-        'isotretinoin-clinical':     ['GAGS', 'IGA'],
-        'topical-acids-patient':     ['GAGS', 'DLQI'],
-        'topical-acids-clinical':    ['GAGS', 'IGA'],
-        // Pigmentation
-        'melasma-myths':             ['MASI', 'Fitzpatrick'],
-        'skin-whitening-agents':     ['MASI', 'Fitzpatrick'],
-        // Vitiligo
-        'vitiligo':                  ['VASI', 'Fitzpatrick'],
-        // Rosacea
-        'rosacea-myths':             ['IGA', 'DLQI'],
-        // HS
-        'hidradenitis-suppurativa':  ['IHS4', 'Hurley'],
-        // Sun / Photo
-        'sunscreen-myths':           ['Fitzpatrick', 'DLQI'],
-        'laser-dermatology':         ['Fitzpatrick', 'DLQI'],
-        // Biologics / NHI — broad coverage; PASI + EASI most cited
-        'biologics-overview':        ['PASI', 'EASI'],
-        'nhi-derm-drugs':            ['PASI', 'EASI'],
-        'targeted-therapy-skin':     ['DLQI'],
-        // Prurigo — itch dominant
-        'prurigo-nodularis':         ['VAS', 'DLQI'],
-        // Others
-        'dermatology-faq':           ['DLQI'],
-        'tinea-myths':               ['DLQI'],
-        'warts-myths':               ['DLQI'],
-        'shingles-myths':            ['DLQI'],
-        'mpox-care':                 ['DLQI'],
-        'epidermoid-cyst':           ['DLQI'],
-        'cutaneous-t-cell-lymphoma': ['VAS', 'DLQI']
-      };
-      // 2026-05-08 — Hard cap reduced to 1 calculator per article (per user).
-      // The single most-relevant calculator stays in-article; readers needing
-      // additional tools are routed to /tools via the calc footer link.
-      var calcsToInject = (CALC_ORDER[slug] || ['DLQI']).slice(0, 1);
+      // Per-article calculator priority lives in blog-calculators.js
+      // (DN.CALC_ORDER + DN.autoInjectCalculators) — keeps the per-slug data
+      // table out of the shared first-paint runtime.
 
       // Article-footer order (top → bottom, per user spec 2026-05-08):
       //   ↓ Official sources / authoritative guidelines (in article body)
@@ -1686,9 +1572,9 @@
       // Calculator goes LAST (so it ends up immediately under the article).
       idle(function () {
         DN.ensureCalculatorBundle().then(function () {
-          calcsToInject.forEach(function (name) {
-            DN.injectCalculatorByName(name);
-          });
+          if (typeof DN.autoInjectCalculators === 'function') {
+            DN.autoInjectCalculators(DN.currentSlug());
+          }
           try { DN.applyTextOnly(curLang); } catch (e) {}
         }).catch(function () {});
       }, { timeout: 1800 });
@@ -1758,7 +1644,7 @@
       });
       obs.observe(document.body, { childList: true, subtree: true });
     }
-    DN.markNewArticles();
+    // DN.markNewArticles() now runs inside blog-hub.js (only when card lists exist).
     DN.addStickyCTA();
 
     const yr = document.getElementById('yr');

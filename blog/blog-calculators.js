@@ -850,5 +850,68 @@
   };
 
   // -----------------------------------------------------------------------
+  // Per-article calculator priority — pick the most-relevant tool(s).
+  // Moved here 2026-05-16 from blog-shared.js so this 1.5 KB data table
+  // does not load on non-article paths or before user interaction.
+  // Order matters: first item is shown highest in the article. DLQI is
+  // intentionally NOT auto-included on every page anymore — only when it
+  // is actually one of the best-fit tools for that disease.
+  DN.CALC_ORDER = {
+    // Eczema family — SCORAD covers area+intensity+itch+sleep (most patient-relevant)
+    'atopic-dermatitis-overview': ['SCORAD', 'EASI'],
+    'pediatric-eczema':           ['SCORAD', 'POEM'],
+    'topical-steroids-guide':     ['EASI', 'IGA'],
+    // Psoriasis — PASI is gold standard; NAPSI for nail involvement
+    'psoriasis-myths':            ['PASI', 'NAPSI'],
+    // Hair
+    'alopecia-areata':            ['SALT', 'DLQI'],
+    'hairloss-myths':             ['HairScale', 'DLQI'],
+    // Urticaria — UAS7 + DLQI is the EAACI gold standard pair
+    'urticaria-myths':            ['UAS7', 'DLQI'],
+    // Acne — GAGS for severity, ASIS for patient-reported impact
+    'acne-myths':                 ['GAGS', 'ASIS'],
+    'acne-scar-treatment':        ['GAGS', 'DLQI'],
+    'isotretinoin-patient':       ['GAGS', 'ASIS'],
+    'isotretinoin-clinical':      ['GAGS', 'IGA'],
+    'topical-acids-patient':      ['GAGS', 'DLQI'],
+    'topical-acids-clinical':     ['GAGS', 'IGA'],
+    // Pigmentation
+    'melasma-myths':              ['MASI', 'Fitzpatrick'],
+    'skin-whitening-agents':      ['MASI', 'Fitzpatrick'],
+    // Vitiligo
+    'vitiligo':                   ['VASI', 'Fitzpatrick'],
+    // Rosacea
+    'rosacea-myths':              ['IGA', 'DLQI'],
+    // HS
+    'hidradenitis-suppurativa':   ['IHS4', 'Hurley'],
+    // Sun / Photo
+    'sunscreen-myths':            ['Fitzpatrick', 'DLQI'],
+    'laser-dermatology':          ['Fitzpatrick', 'DLQI'],
+    // Biologics / NHI — broad coverage; PASI + EASI most cited
+    'biologics-overview':         ['PASI', 'EASI'],
+    'nhi-derm-drugs':             ['PASI', 'EASI'],
+    'targeted-therapy-skin':      ['DLQI'],
+    // Prurigo — itch dominant
+    'prurigo-nodularis':          ['VAS', 'DLQI'],
+    // Others
+    'dermatology-faq':            ['DLQI'],
+    'tinea-myths':                ['DLQI'],
+    'warts-myths':                ['DLQI'],
+    'shingles-myths':             ['DLQI'],
+    'mpox-care':                  ['DLQI'],
+    'epidermoid-cyst':            ['DLQI'],
+    'cutaneous-t-cell-lymphoma':  ['VAS', 'DLQI']
+  };
+
+  // 2026-05-08 — Hard cap of 1 calculator per article. The single most-
+  // relevant calculator stays in-article; readers needing more are routed
+  // to /tools via the calc footer link inside the injected card.
+  DN.autoInjectCalculators = function (slug) {
+    if (!slug) return;
+    var picks = (DN.CALC_ORDER[slug] || ['DLQI']).slice(0, 1);
+    for (var i = 0; i < picks.length; i++) {
+      try { DN.injectCalculatorByName(picks[i]); } catch (e) { /* ignore */ }
+    }
+  };
 
 })();

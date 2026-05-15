@@ -3,6 +3,38 @@
   'use strict';
   var DN = window.DN = window.DN || {};
 
+  // Tag the newest articles with a yellow "NEW" pulse badge on any card list.
+  // Moved here 2026-05-16 from blog-shared.js — only useful where article cards
+  // are rendered, so it does not need to run as part of the first-paint runtime.
+  DN.markNewArticles = function () {
+    var NOW = Date.now();
+    var SEVEN_DAYS = 7 * 86400 * 1000;
+    var cards = document.querySelectorAll('a.article-list-item[href*="/blog/"]');
+    if (!cards.length) return;
+    if (!document.getElementById('dn-new-pulse-css')) {
+      var styleEl = document.createElement('style');
+      styleEl.id = 'dn-new-pulse-css';
+      styleEl.textContent = '.dn-new-pulse{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:9999px;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.04em;line-height:1.5;animation:dnPulse 1.6s ease-in-out infinite;}@keyframes dnPulse{0%,100%{box-shadow:0 0 0 0 rgba(251,191,36,.55)}50%{box-shadow:0 0 0 6px rgba(251,191,36,0)}}';
+      document.head.appendChild(styleEl);
+    }
+    cards.forEach(function (a) {
+      var href = a.getAttribute('href') || '';
+      var m = href.match(/\/blog\/([a-z0-9-]+)/i);
+      if (!m) return;
+      var slug = m[1];
+      var meta = (DN.ARTICLES || []).find(function (x) { return x.slug === slug; });
+      if (!meta) return;
+      var pub = Date.parse(meta.date);
+      if (!pub || NOW - pub > SEVEN_DAYS) return;
+      var h3 = a.querySelector('h3');
+      if (!h3 || h3.querySelector('.dn-new-pulse')) return;
+      var tag = document.createElement('span');
+      tag.className = 'dn-new-pulse';
+      tag.textContent = 'NEW';
+      h3.appendChild(tag);
+    });
+  };
+
   DN.injectSpotlight = function () {
     var recentEl = document.getElementById('dn-recent-list');
     var popularEl = document.getElementById('dn-popular-list');
@@ -136,6 +168,7 @@
         return '<li>' + rowHTML(a, { label: '#' + (i + 1), bg: '#dcfce7', fg: '#14532d' }) + '</li>';
       }).join('');
     }
+    try { DN.markNewArticles(); } catch (e) { /* ignore */ }
   };
 
 
@@ -463,6 +496,7 @@
     }
 
     applyFilter('__all__');
+    try { DN.markNewArticles(); } catch (e) { /* ignore */ }
   };
 
 })();
