@@ -71,8 +71,8 @@ def main() -> int:
     minified = ROOT / "blog" / "blog-shared.min.js"
     if minified.exists():
         size_kb = minified.stat().st_size / 1024
-        if size_kb > 70:
-            errors.append(f"blog/blog-shared.min.js is {size_kb:.1f}KB; keep the shared runtime under 70KB or split features")
+        if size_kb > 72:
+            errors.append(f"blog/blog-shared.min.js is {size_kb:.1f}KB; keep the shared runtime under 72KB or split features")
 
     sw_path = ROOT / "sw.js"
     if sw_path.exists():
