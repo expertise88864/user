@@ -693,6 +693,7 @@
     { slug:'dermatologic-oral-examination', title:'嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南', title_en:'Oral mucosa: when to see a dermatologist — exam and biopsy guide', cat:'rx', tag:'口腔黏膜', date:'2026-05-13', emoji:'', tag_en:'Oral mucosa' },
     { slug:'severe-scabies-treatment', title:'嚴重疥瘡為什麼治不好？口服 ivermectin + 外用 permethrin 完整治療指南', title_en:'Severe scabies: complete ivermectin + permethrin treatment guide', cat:'rx', tag:'疥瘡', date:'2026-05-13', emoji:'', tag_en:'Scabies', unpublished:true },
     { slug:'dupilumab-long-term-maintenance', title:'杜避炎®（dupilumab）維持治療要打多久？2026 JAAD 真實世界研究：減量竟比停藥更容易復發', title_en:'Dupilumab maintenance: JAAD 2026 real-world study finds tapering relapses earlier than stopping', cat:'research', tag:'dupilumab', date:'2026-05-15', emoji:'', tag_en:'Dupilumab' },
+    { slug:'psoriasis-biologic-monitoring', title:'打乾癬生物製劑要不要每年抽血？2026 JAAD 證據評級重新看這件事', title_en:'Do you really need annual blood tests on psoriasis biologics? A 2026 JAAD evidence-grade reappraisal', cat:'research', tag:'生物製劑安全', date:'2026-05-16', emoji:'', tag_en:'Biologic safety' },
     { slug:'hairloss-myths',      title:'落髮 / 雄性禿 7 大迷思', title_en:'7 Hair Loss & Male Pattern Baldness Myths', cat:'myth', tag:'落髮', date:'2026-05-03', emoji:'', tag_en:'Hair loss' },
     { slug:'tinea-myths',         title:'香港腳 / 灰指甲 7 大迷思', cat:'myth', tag:'足癬', date:'2026-05-03', emoji:'', tag_en:'Tinea' },
     { slug:'urticaria-myths',     title:'蕁麻疹 6 大迷思', cat:'myth', tag:'蕁麻疹', date:'2026-05-07', emoji:'', tag_en:'Urticaria' },
