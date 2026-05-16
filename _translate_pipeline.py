@@ -73,50 +73,85 @@ def extract(slug):
 
 def _segment_outside_attrs(html):
     """Yield (offset, segment) pairs covering everything in `html` that is NOT
-    inside a tag's attribute value. Substring positions returned in segments
-    map back to absolute offsets via `offset`.
+    inside an HTML attribute value (the contents between matching `"..."` or
+    `'...'` quotes within a `<tag ...>` declaration).
 
-    Implemented as a tiny state machine: outside-of-tag is OUTSIDE; inside a
-    `<...>` is TAG; inside an attribute value (`"..."` or `'...'` within a tag)
-    is ATTRVAL. We yield OUTSIDE segments so the inject regex never matches a
-    `<strong>X</strong>` string that lives inside another tag's data-zh value.
+    Crucial: this keeps regular `<tag>body</tag>` markup INSIDE the OUTSIDE
+    segments — only the literal characters between an attribute's opening
+    and closing quote are excluded. That way the inject regex below can
+    still match `<strong>X</strong>` in the visible DOM, while ignoring the
+    same literal string when it appears inside a parent's data-zh value.
+
+    State machine has two modes:
+        TEXT_OR_TAG  — anywhere outside attribute values; we copy into out.
+        ATTR_VALUE   — between matching quotes inside a `<...>` tag; skip.
+
+    Transitions:
+        TEXT_OR_TAG + '<' (real tag) -> enter TAG_HEADER (still TEXT_OR_TAG
+            in terms of emitted segments) and watch for unescaped attr
+            quotes. We DO NOT need a separate state for inside-tag-but-
+            outside-attribute; both behave identically from the segmenter's
+            perspective (chars are emitted, quotes start an ATTR_VALUE run).
+        Inside an attribute value, a matching quote closes it.
+        Inside an attribute value, a `>` does NOT close the tag.
     """
-    out = []
-    i = 0
+    out: list[tuple[int, str]] = []
     n = len(html)
+    i = 0
+    seg_start = 0
+    in_tag = False
+    in_quote: str | None = None
+
     while i < n:
-        # OUTSIDE — collect until next '<'
-        j = html.find('<', i)
-        if j < 0:
-            out.append((i, html[i:]))
-            break
-        if j > i:
-            out.append((i, html[i:j]))
-        # We're at a '<' — walk through the tag, skipping any quoted attr values
-        i = j
-        if i + 1 < n and html[i+1] in ('!', '?'):
-            # Comment, CDATA, doctype, processing instruction — skip to next '>'
+        c = html[i]
+        if in_quote:
+            # We're inside an attribute value — emit everything up to (but not
+            # including) the seg_start char, then resume segmenting after the
+            # closing quote.
+            if c == in_quote:
+                in_quote = None
+                # Closing quote — start a new segment AFTER this char.
+                i += 1
+                seg_start = i
+                continue
+            i += 1
+            continue
+
+        if in_tag:
+            if c == '"' or c == "'":
+                # About to enter an attribute value — close the current segment
+                # at this position (so the quote itself is emitted as part of
+                # the OUTSIDE chunk, but the value's contents are not).
+                if i > seg_start:
+                    out.append((seg_start, html[seg_start:i + 1]))
+                else:
+                    # zero-length OUTSIDE before quote — emit just the quote
+                    out.append((seg_start, html[seg_start:i + 1]))
+                in_quote = c
+                i += 1
+                # seg_start updates when quote closes
+                continue
+            if c == '>':
+                in_tag = False
+                i += 1
+                continue
+            i += 1
+            continue
+
+        # TEXT mode (not in any tag, not in any attr value)
+        if c == '<' and i + 1 < n and html[i + 1] not in ('!', '?'):
+            in_tag = True
+            i += 1
+            continue
+        if c == '<' and i + 1 < n and html[i + 1] in ('!', '?'):
+            # comment/cdata/pi — skip to next '>'
             k = html.find('>', i)
             i = (k + 1) if k > 0 else n
             continue
-        # Real tag: walk forward, tracking quote state
-        in_quote = None
-        i += 1  # past '<'
-        while i < n:
-            c = html[i]
-            if in_quote:
-                if c == in_quote:
-                    in_quote = None
-                i += 1
-                continue
-            if c == '"' or c == "'":
-                in_quote = c
-                i += 1
-                continue
-            if c == '>':
-                i += 1
-                break
-            i += 1
+        i += 1
+
+    if seg_start < n:
+        out.append((seg_start, html[seg_start:]))
     return out
 
 

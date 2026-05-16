@@ -1,0 +1,315 @@
+{
+  "slug": "atopic-dermatitis-overview",
+  "strings": [
+    {
+      "zh": "異位性進展(Atopic March)",
+      "en": "Atopic march",
+      "tag": "strong"
+    },
+    {
+      "zh": "自然病程",
+      "en": "Natural history",
+      "tag": "strong"
+    },
+    {
+      "zh": "皮膚屏障",
+      "en": "Skin barrier",
+      "tag": "strong"
+    },
+    {
+      "zh": "Th2 免疫失調",
+      "en": "Th2 immune dysregulation",
+      "tag": "strong"
+    },
+    {
+      "zh": "微生物失衡",
+      "en": "Microbial dysbiosis",
+      "tag": "strong"
+    },
+    {
+      "zh": "Filaggrin (FLG) 突變",
+      "en": "Filaggrin (FLG) mutation",
+      "tag": "strong"
+    },
+    {
+      "zh": "脂質失衡",
+      "en": "Lipid imbalance",
+      "tag": "strong"
+    },
+    {
+      "zh": "TEWL(經皮水分蒸散量,transepidermal water loss)上升",
+      "en": "Elevated TEWL (transepidermal water loss)",
+      "tag": "strong"
+    },
+    {
+      "zh": "金黃色葡萄球菌主導",
+      "en": "Staphylococcus aureus dominance",
+      "tag": "strong"
+    },
+    {
+      "zh": "多樣性下降 + biofilm 形成",
+      "en": "Reduced diversity + biofilm formation",
+      "tag": "strong"
+    },
+    {
+      "zh": "純臨床診斷",
+      "en": "Purely clinical diagnosis",
+      "tag": "strong"
+    },
+    {
+      "zh": "主要 4 條",
+      "en": "Four major criteria",
+      "tag": "strong"
+    },
+    {
+      "zh": "次要常用 8 條",
+      "en": "Eight commonly used minor criteria",
+      "tag": "strong"
+    },
+    {
+      "zh": "必要",
+      "en": "Required",
+      "tag": "strong"
+    },
+    {
+      "zh": "系統性發炎疾病",
+      "en": "Systemic inflammatory disease",
+      "tag": "strong"
+    },
+    {
+      "zh": "食物過敏",
+      "en": "Food allergy",
+      "tag": "strong"
+    },
+    {
+      "zh": "氣喘",
+      "en": "Asthma",
+      "tag": "strong"
+    },
+    {
+      "zh": "過敏性鼻炎",
+      "en": "Allergic rhinitis",
+      "tag": "strong"
+    },
+    {
+      "zh": "嗜酸性食道炎(EoE)",
+      "en": "Eosinophilic esophagitis (EoE)",
+      "tag": "strong"
+    },
+    {
+      "zh": "憂鬱",
+      "en": "Depression",
+      "tag": "strong"
+    },
+    {
+      "zh": "焦慮",
+      "en": "Anxiety",
+      "tag": "strong"
+    },
+    {
+      "zh": "自殺念頭",
+      "en": "Suicidal ideation",
+      "tag": "strong"
+    },
+    {
+      "zh": "PHQ-2 兩題篩檢",
+      "en": "PHQ-2 two-item screening",
+      "tag": "strong"
+    },
+    {
+      "zh": "心肌梗塞 HR ~1.4、中風 HR ~1.2",
+      "en": "Myocardial infarction HR ~1.4, stroke HR ~1.2",
+      "tag": "strong"
+    },
+    {
+      "zh": "骨密度檢查指徵",
+      "en": "Indications for bone-density scanning",
+      "tag": "strong"
+    },
+    {
+      "zh": "急症 — 疱疹性濕疹(eczema herpeticum)",
+      "en": "Emergency — eczema herpeticum",
+      "tag": "strong"
+    },
+    {
+      "zh": "常見 — MRSA / 金黃色葡萄球菌膿痂疹",
+      "en": "Common — MRSA / S. aureus impetigo",
+      "tag": "strong"
+    },
+    {
+      "zh": "兒童 — 軟疣(molluscum)",
+      "en": "Pediatric — molluscum contagiosum",
+      "tag": "strong"
+    },
+    {
+      "zh": "保濕劑",
+      "en": "Moisturizers (emollients)",
+      "tag": "strong"
+    },
+    {
+      "zh": "觸發因子處置",
+      "en": "Trigger management",
+      "tag": "strong"
+    },
+    {
+      "zh": "過敏原",
+      "en": "Allergens",
+      "tag": "strong"
+    },
+    {
+      "zh": "稀釋漂白水浴(bleach bath)",
+      "en": "Dilute bleach baths",
+      "tag": "strong"
+    },
+    {
+      "zh": "外用類固醇(TCS)— 美國 7 級分類",
+      "en": "Topical corticosteroids (TCS) — US 7-class potency scale",
+      "tag": "strong"
+    },
+    {
+      "zh": "部位選擇",
+      "en": "Site selection",
+      "tag": "strong"
+    },
+    {
+      "zh": "用量(FTU)",
+      "en": "Dosing (fingertip units / FTU)",
+      "tag": "strong"
+    },
+    {
+      "zh": "主動式維持(proactive)",
+      "en": "Proactive maintenance",
+      "tag": "strong"
+    },
+    {
+      "zh": "類固醇省略劑(steroid-sparing,非類固醇外用藥)三選一",
+      "en": "Steroid-sparing topicals (non-steroidal) — choose one of three",
+      "tag": "strong"
+    },
+    {
+      "zh": "NB-UVB(窄波 UVB,311 nm)",
+      "en": "Narrowband UVB (NB-UVB, 311 nm)",
+      "tag": "strong"
+    },
+    {
+      "zh": "生物製劑(4 個)",
+      "en": "Biologics (four agents)",
+      "tag": "strong"
+    },
+    {
+      "zh": "口服 JAK 抑制劑(3 個)",
+      "en": "Oral JAK inhibitors (three agents)",
+      "tag": "strong"
+    },
+    {
+      "zh": "用前評估",
+      "en": "Pre-treatment workup",
+      "tag": "strong"
+    },
+    {
+      "zh": "傳統免疫調節劑(健保橋接 / 自費)",
+      "en": "Conventional immunomodulators (NHI bridge or self-pay)",
+      "tag": "strong"
+    },
+    {
+      "zh": "嬰幼兒 / 兒童",
+      "en": "Infants / children",
+      "tag": "strong"
+    },
+    {
+      "zh": "孕婦 / 哺乳",
+      "en": "Pregnancy / lactation",
+      "tag": "strong"
+    },
+    {
+      "zh": "JAK 禁用",
+      "en": "JAK inhibitors contraindicated",
+      "tag": "strong"
+    },
+    {
+      "zh": "老年(≥ 65 歲)",
+      "en": "Elderly (≥ 65 years)",
+      "tag": "strong"
+    },
+    {
+      "zh": "不會",
+      "en": "No",
+      "tag": "strong"
+    },
+    {
+      "zh": "致敏化(sensitization)",
+      "en": "Sensitization",
+      "tag": "strong"
+    },
+    {
+      "zh": "臨床過敏",
+      "en": "Clinical allergy",
+      "tag": "strong"
+    },
+    {
+      "zh": "神經醯胺(ceramide)、甘油(glycerin)、凡士林(petrolatum)",
+      "en": "Ceramide, glycerin, petrolatum",
+      "tag": "strong"
+    },
+    {
+      "zh": "用量比品牌重要",
+      "en": "Amount used matters more than brand",
+      "tag": "strong"
+    },
+    {
+      "zh": "確診 IgE 介導食物過敏",
+      "en": "Confirmed IgE-mediated food allergy",
+      "tag": "strong"
+    },
+    {
+      "zh": "每天保濕",
+      "en": "Moisturize daily",
+      "tag": "strong"
+    },
+    {
+      "zh": "急性期不要怕用對的類固醇",
+      "en": "Don't fear the right corticosteroid in an acute flare",
+      "tag": "strong"
+    },
+    {
+      "zh": "中重度別硬撐",
+      "en": "Don't tough it out if disease is moderate-to-severe",
+      "tag": "strong"
+    },
+    {
+      "zh": "共病要篩",
+      "en": "Screen for comorbidities",
+      "tag": "strong"
+    },
+    {
+      "zh": "診斷與分類",
+      "en": "Diagnosis and classification",
+      "tag": "strong"
+    },
+    {
+      "zh": "嚴重度評估",
+      "en": "Severity assessment",
+      "tag": "strong"
+    },
+    {
+      "zh": "指引與共識",
+      "en": "Guidelines and consensus statements",
+      "tag": "strong"
+    },
+    {
+      "zh": "共病與系統影響",
+      "en": "Comorbidities and systemic impact",
+      "tag": "strong"
+    },
+    {
+      "zh": "系統性治療(關鍵試驗)",
+      "en": "Systemic therapy (landmark trials)",
+      "tag": "strong"
+    },
+    {
+      "zh": "條件常變，以官方公告為準。",
+      "en": "Criteria change frequently; defer to the latest official announcement.",
+      "tag": "em"
+    }
+  ]
+}
