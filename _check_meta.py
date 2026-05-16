@@ -26,6 +26,7 @@ Usage:
 """
 
 from __future__ import annotations
+import os
 import re
 import sys
 import json
@@ -209,6 +210,54 @@ def check_articles_dates():
 # Skipped — h1 may legitimately be long for SEO; warning only on extreme cases.
 
 
+# ─── 10. Stray git merge conflict markers ────────────────────────────
+# Spent half a day in 2026-05-17 outage chasing why html5validator was
+# screaming "Bad character < after <". Cause: an earlier rebase committed
+# blog/ai-dermatology-roles.html with conflict markers still embedded.
+# Cheap guard so it can't happen again.
+#
+# A real git conflict marker is always at column 0 AND followed by a space
+# AND then either a ref-ish word (HEAD, branch name, commit sha) or empty
+# (the middle `=======` is followed by EOL). Matching just the prefix at
+# column 0 catches all three variants without misfiring on string literals
+# that happen to contain "<<<<<<<" inside source code.
+_REAL_MARKER_PREFIX = ('<<<<<<<', '=======', '>>>>>>>')
+def check_no_merge_markers():
+    skip_dirs = {'.git', 'node_modules', '.next', 'out', 'dist', '__pycache__', '.vercel'}
+    self_path = os.path.realpath(__file__)
+    for dirpath, dirnames, filenames in os.walk(ROOT):
+        dirnames[:] = [d for d in dirnames if d not in skip_dirs]
+        for fn in filenames:
+            ext = os.path.splitext(fn)[1].lower()
+            if ext not in {'.html', '.js', '.css', '.json', '.py', '.md', '.xml'}:
+                continue
+            fp = os.path.join(dirpath, fn)
+            # Skip this checker itself; it must reference the markers as
+            # literal strings to do its job.
+            if os.path.realpath(fp) == self_path:
+                continue
+            try:
+                with open(fp, 'r', encoding='utf-8') as f:
+                    src = f.read()
+            except Exception:
+                continue
+            for line in src.splitlines():
+                if not line:
+                    continue
+                # `<<<<<<<` and `>>>>>>>` are followed by space + ref-name.
+                # `=======` middle marker is exactly the 7 chars with
+                # optional trailing whitespace.
+                if line.startswith('<<<<<<< ') or line.startswith('>>>>>>> '):
+                    pass
+                elif line.rstrip() == '=======':
+                    pass
+                else:
+                    continue
+                rel = os.path.relpath(fp, ROOT).replace('\\', '/')
+                err(rel, 'unresolved git merge conflict marker line: ' + line[:60])
+                break  # one error per file is enough
+
+
 # ─── 11. robots.txt sitemap line ─────────────────────────────────────
 def check_robots():
     fp = ROOT / 'robots.txt'
@@ -232,6 +281,7 @@ def main():
     canonical_host = check_sitemap()
     check_html(canonical_host, fast=fast)
     check_articles_dates()
+    check_no_merge_markers()
     check_robots()
 
     if warnings:

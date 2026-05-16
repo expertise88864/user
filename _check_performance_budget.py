@@ -11,7 +11,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SKIP_DIRS = {".git", "node_modules", ".next", "out", "dist", "__pycache__"}
-ASSET_VERSION = "202605120530"
+# Single source of truth: _normalize_css_links.ASSET_VERSION. Mirrored here
+# because this checker runs standalone in CI. Import to stay in sync.
+try:
+    from _normalize_css_links import ASSET_VERSION  # type: ignore
+except Exception:
+    ASSET_VERSION = "202605170800"  # fallback if import path is broken
 
 BLOG_SHARED_PRELOAD_RE = re.compile(
     r'<link\s+rel="(?:modulepreload|preload)"(?:\s+as="script")?\s+href="[^"]*blog-shared(?:\.min)?\.js',
