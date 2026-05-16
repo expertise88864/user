@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (sw) sw.href = location.pathname.replace(/^\/en\//, '/').replace(/^\/en$/, '/');
 });
 </script>
-<script src="/blog/blog-shared.min.js?v=202605170730" defer></script>
+<script src="/blog/blog-shared.min.js?v=202605120530" defer></script>
 <script>document.addEventListener('DOMContentLoaded', function {
 if (window.DN) {
 try { DN.initBlog({}); }
@@ -591,7 +591,7 @@ el.textContent = parseInt(el.dataset.count, 10).toLocaleString + (el.dataset.suf
 }</style>
 <script>(function{
  // Sort .article-list-item DOM by <time> descending so DN.bindArticleHub
- // (called by /blog/blog-shared.min.js?v=202605170730 with data-show-count="5") shows the
+ // (called by /blog/blog-shared.min.js?v=202605120530 with data-show-count="5") shows the
  // 5 NEWEST articles first. Tag filter via .dn-tag-chip then works because
  // we no longer use display:flex !important (which previously blocked
  // bindArticleHub from hiding non-matching items).
