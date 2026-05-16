@@ -2,6 +2,11 @@
 /* AdSense audit period — hide ad-slot placeholders site-wide. Remove this rule
    once AdSense approval is granted. The DOM remains intact for fast re-enable. */
 .ad-slot{display:none!important}
+/* WCAG 2.4.1 "Skip to main content" link — visually hidden until keyboard focus.
+   Without this rule the 跳至主要內容 link renders as plain text at the top of
+   every page (user-visible bug noticed 2026-05-17). */
+.skip-to-main{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;color:#fff;background:#0e7c86;padding:8px 14px;border-radius:0 0 8px 0;text-decoration:none;font-weight:700;font-size:14px;z-index:100}
+.skip-to-main:focus{position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;outline:2px solid #fff;outline-offset:2px}
 /* Custom palette — sourced from index.html tailwind.config */
 :root{--mint-50:#f5fbfa;--mint-100:#eaf6f3;--mint-200:#d1ebe5;--mint-300:#a7d8ce;--teal-50:#ecfeff;--teal-100:#cffafe;--teal-200:#a5f3fc;--teal-300:#67e8f9;--teal-400:#22d3ee;--teal-500:#14b8a6;--teal-600:#0e7c86;--teal-700:#0c5159;--teal-800:#083a40;--ink-950:#020617;--ink-900:#0f172a;--ink-800:#1e293b;--ink-700:#334155;--ink-500:#64748b;--ink-400:#94a3b8;--ink-300:#cbd5e1;}
 /* ─── Tailwind Preflight (essential resets) ─── */
