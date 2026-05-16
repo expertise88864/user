@@ -71,6 +71,55 @@ def extract(slug):
                   ensure_ascii=False, indent=2)
     print(f'Extracted {len(found)} unique strings → {out_path}')
 
+def _segment_outside_attrs(html):
+    """Yield (offset, segment) pairs covering everything in `html` that is NOT
+    inside a tag's attribute value. Substring positions returned in segments
+    map back to absolute offsets via `offset`.
+
+    Implemented as a tiny state machine: outside-of-tag is OUTSIDE; inside a
+    `<...>` is TAG; inside an attribute value (`"..."` or `'...'` within a tag)
+    is ATTRVAL. We yield OUTSIDE segments so the inject regex never matches a
+    `<strong>X</strong>` string that lives inside another tag's data-zh value.
+    """
+    out = []
+    i = 0
+    n = len(html)
+    while i < n:
+        # OUTSIDE — collect until next '<'
+        j = html.find('<', i)
+        if j < 0:
+            out.append((i, html[i:]))
+            break
+        if j > i:
+            out.append((i, html[i:j]))
+        # We're at a '<' — walk through the tag, skipping any quoted attr values
+        i = j
+        if i + 1 < n and html[i+1] in ('!', '?'):
+            # Comment, CDATA, doctype, processing instruction — skip to next '>'
+            k = html.find('>', i)
+            i = (k + 1) if k > 0 else n
+            continue
+        # Real tag: walk forward, tracking quote state
+        in_quote = None
+        i += 1  # past '<'
+        while i < n:
+            c = html[i]
+            if in_quote:
+                if c == in_quote:
+                    in_quote = None
+                i += 1
+                continue
+            if c == '"' or c == "'":
+                in_quote = c
+                i += 1
+                continue
+            if c == '>':
+                i += 1
+                break
+            i += 1
+    return out
+
+
 def inject(slug):
     path = os.path.join(BLOG, slug + '.html')
     json_path = os.path.join(DATA, slug + '.json')
@@ -83,19 +132,29 @@ def inject(slug):
         zh = entry['zh']; en = entry['en']
         if not en or not zh:
             continue
-        # Inject data-en on every translatable tag whose body equals zh
-        # (and which doesn't already have data-en)
-        for tag in TRANSLATABLE_TAGS:
-            pat = re.compile(
-                r'(<' + tag + r'\b)((?:(?!data-en=)[^>])*)(>)' + re.escape(zh) + r'(</' + tag + r'>)',
-                re.IGNORECASE
-            )
-            html, count = pat.subn(
-                lambda m: m.group(1) + m.group(2) + ' data-zh="' + zh.replace('"', '&quot;') +
-                          '" data-en="' + en.replace('"', '&quot;') + '"' + m.group(3) + zh + m.group(4),
-                html
-            )
-            n += count
+        # Build a fresh attr-aware segmentation each round (because injects mutate html)
+        segments = _segment_outside_attrs(html)
+        # For each OUTSIDE segment, do the regex sub locally; reassemble.
+        new_parts = []
+        last_end = 0
+        for offset, seg in segments:
+            new_parts.append(html[last_end:offset])
+            seg_changed = seg
+            for tag in TRANSLATABLE_TAGS:
+                pat = re.compile(
+                    r'(<' + tag + r'\b)((?:(?!data-en=)[^>])*)(>)' + re.escape(zh) + r'(</' + tag + r'>)',
+                    re.IGNORECASE
+                )
+                seg_changed, count = pat.subn(
+                    lambda m: m.group(1) + m.group(2) + ' data-zh="' + zh.replace('"', '&quot;') +
+                              '" data-en="' + en.replace('"', '&quot;') + '"' + m.group(3) + zh + m.group(4),
+                    seg_changed
+                )
+                n += count
+            new_parts.append(seg_changed)
+            last_end = offset + len(seg)
+        new_parts.append(html[last_end:])
+        html = ''.join(new_parts)
     with open(path, 'w', encoding='utf-8') as f:
         f.write(html)
     print(f'Injected {n} data-en attributes into {slug}.html')

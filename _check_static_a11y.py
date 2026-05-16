@@ -1,8 +1,15 @@
 from __future__ import annotations
 
+import io
 import re
 import sys
 from pathlib import Path
+
+# Force UTF-8 stdout so error messages containing non-cp950 chars (≥, →,
+# CJK garbled bytes from broken HTML attrs, etc.) print without crashing
+# on Windows CI runners that default to cp950.
+if hasattr(sys.stdout, "buffer"):
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 
 ROOT = Path(__file__).resolve().parent
