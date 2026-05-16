@@ -31,6 +31,39 @@ def asset_version() -> str:
     return match.group(1)
 
 
+def assert_dynamic_loader_versions_match_html(html_version: str) -> None:
+    """Cross-file version-drift guard.
+
+    All dynamic bundle URLs (?v=...) in HTML AND inside the JS sources that
+    issue script tags for hub/article-reading/diagrams/etc. MUST share a single
+    asset version. If they drift, the user can get fresh HTML + stale JS bundles
+    (or the reverse) because the service worker keys cache by exact URL.
+
+    This was a real outage on 2026-05-17 when HTML shipped v=202605170730 but
+    blog-shared.js still had v=202605120530 hardcoded, so blog-hub.min.js was
+    served from a stale cached URL and the spotlight + search + filter all
+    disappeared at the same time.
+    """
+    pat = re.compile(
+        r"/blog/blog-(?:shared|hub|article-reading|diagrams|calculators|article-visuals|article-footer)\.min\.js\?v=(\d+)"
+    )
+    drift: list[str] = []
+    for src_name in ("blog/blog-shared.js", "blog/blog-article-reading.js",
+                     "blog/blog-shared.min.js", "blog/blog-article-reading.min.js"):
+        src_path = ROOT / src_name
+        if not src_path.exists():
+            continue
+        src_text = src_path.read_text(encoding="utf-8")
+        for found in set(pat.findall(src_text)):
+            if found != html_version:
+                drift.append(f"{src_name}: ?v={found} (HTML ships ?v={html_version})")
+    if drift:
+        raise AssertionError(
+            "Asset-version drift between HTML and JS dynamic-loader URLs:\n  "
+            + "\n  ".join(drift)
+        )
+
+
 def free_port() -> int:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         sock.bind(("127.0.0.1", 0))
@@ -85,6 +118,12 @@ def run_smoke(base_url: str) -> list[str]:
     version = asset_version()
     shared = f"/blog/blog-shared.min.js?v={version}"
     errors: list[str] = []
+
+    # Cross-file version-drift guard (see helper docstring for the outage story).
+    try:
+        assert_dynamic_loader_versions_match_html(version)
+    except AssertionError as exc:
+        errors.append(str(exc))
 
     pages = [
         ("/", "home", ["DN.initBlog", 'id="dn-hub"', shared]),
