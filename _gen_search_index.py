@@ -107,10 +107,38 @@ def extract(page_html: str) -> dict[str, object]:
     return out
 
 
+def get_unpublished_slugs() -> set[str]:
+    """Read blog-shared.js and return slugs that have {unpublished:true} in
+    the DN.ARTICLES catalog. Same logic as _gen_feeds.py.get_unpublished_slugs."""
+    js_path = os.path.join(ROOT, 'blog', 'blog-shared.js')
+    try:
+        with open(js_path, 'r', encoding='utf-8') as fh:
+            src = fh.read()
+    except FileNotFoundError:
+        return set()
+    m = re.search(r"DN\.ARTICLES\s*=\s*\[([\s\S]*?)\];", src)
+    if not m:
+        return set()
+    unpublished: set[str] = set()
+    for line in m.group(1).splitlines():
+        if not re.search(r"\bunpublished\s*:\s*true\b", line):
+            continue
+        slug_m = re.search(r"slug:'([^']+)'", line)
+        if slug_m:
+            unpublished.add(slug_m.group(1))
+    return unpublished
+
+
 def main() -> None:
+    unpublished = get_unpublished_slugs()
+    if unpublished:
+        print(f"Skipping unpublished slugs: {sorted(unpublished)}")
     entries: list[dict[str, object]] = []
     for filename in sorted(os.listdir(BLOG)):
         if not filename.endswith(".html") or filename in SKIP:
+            continue
+        slug = filename[:-5]
+        if slug in unpublished:
             continue
         path = os.path.join(BLOG, filename)
         with open(path, "r", encoding="utf-8") as f:
@@ -118,7 +146,6 @@ def main() -> None:
         data = extract(page_html)
         if not data.get("title"):
             continue
-        slug = filename[:-5]
         entries.append({
             "slug": slug,
             "title": data["title"],

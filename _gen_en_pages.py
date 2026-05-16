@@ -603,12 +603,37 @@ def sync_source_hreflang(pairs: list[tuple[str, str, str]]) -> int:
     return changed
 
 
+def get_unpublished_slugs() -> set[str]:
+    """Read blog-shared.js and return slugs that have {unpublished:true} in
+    the DN.ARTICLES catalog. Matches _gen_feeds.get_unpublished_slugs."""
+    js_path = os.path.join(ROOT, 'blog', 'blog-shared.js')
+    try:
+        with open(js_path, 'r', encoding='utf-8') as fh:
+            src = fh.read()
+    except FileNotFoundError:
+        return set()
+    m = re.search(r"DN\.ARTICLES\s*=\s*\[([\s\S]*?)\];", src)
+    if not m:
+        return set()
+    unpublished: set[str] = set()
+    for line in m.group(1).splitlines():
+        if not re.search(r"\bunpublished\s*:\s*true\b", line):
+            continue
+        slug_m = re.search(r"slug:'([^']+)'", line)
+        if slug_m:
+            unpublished.add(slug_m.group(1))
+    return unpublished
+
+
 def main() -> None:
     n = 0
     pairs: list[tuple[str, str, str]] = []
     en_dir = os.path.join(ROOT, 'en')
     blog_en_dir = os.path.join(en_dir, 'blog')
     os.makedirs(blog_en_dir, exist_ok=True)
+    unpublished = get_unpublished_slugs()
+    if unpublished:
+        print(f'Skipping unpublished slugs from /en/ mirror: {sorted(unpublished)}')
 
     top_files = [f for f in os.listdir(ROOT) if f.endswith('.html') and f not in SKIP and not f.startswith('_')]
     for f in top_files:
@@ -631,6 +656,12 @@ def main() -> None:
     blog_dir = os.path.join(ROOT, 'blog')
     blog_files = [f for f in os.listdir(blog_dir) if f.endswith('.html')]
     for f in blog_files:
+        # Always regenerate the EN mirror (even for unpublished articles).
+        # Unpublished articles still need a /en/ URL because:
+        #  (a) the homepage / index static HTML still links to them, and the
+        #      internal-link audit would fail if the target page is missing;
+        #  (b) admin can still navigate to the article; the runtime banner +
+        #      hide-unpublished-cards CSS hide them from public listings.
         zh_path = os.path.join(blog_dir, f)
         if f == 'index.html':
             zh_canonical = '/blog'
