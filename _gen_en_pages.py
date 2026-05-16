@@ -185,22 +185,36 @@ def apply_data_en(src: str) -> str:
 
 
 def prefer_static_english_blocks(src: str) -> str:
-    """For /en/ pages, remove hidden Chinese article bodies when proseEn exists."""
+    """For /en/ pages, remove hidden Chinese article bodies when proseEn exists.
 
-    src = re.sub(
-        r'<div\s+id="proseZh"\s+class="prose">[\s\S]*?(<div\s+id="proseEn"\s+class="prose")\s+style="display:none"',
-        r'\1',
+    Pattern A articles ship a fully-rendered English mirror inside
+    `<div id="proseEn">`; we drop the Chinese half so search crawlers see EN.
+    Pattern B articles (newer style) keep `proseEn` empty and rely on
+    in-place data-zh/data-en swapping inside `proseZh`. For those, KEEP the
+    proseZh body — apply_data_en will rewrite each tagged element below.
+    Detect via empty-or-whitespace-only proseEn block.
+    """
+
+    proseEn_empty = re.search(
+        r'<div\s+id="proseEn"\s+class="prose"[^>]*>\s*</div>',
         src,
-        count=1,
         flags=re.I,
     )
-    src = re.sub(
-        r'<div\s+id="proseZh"\s+class="prose">[\s\S]*?(<div\s+id="proseEn"\s+class="prose")',
-        r'\1',
-        src,
-        count=1,
-        flags=re.I,
-    )
+    if not proseEn_empty:
+        src = re.sub(
+            r'<div\s+id="proseZh"\s+class="prose">[\s\S]*?(<div\s+id="proseEn"\s+class="prose")\s+style="display:none"',
+            r'\1',
+            src,
+            count=1,
+            flags=re.I,
+        )
+        src = re.sub(
+            r'<div\s+id="proseZh"\s+class="prose">[\s\S]*?(<div\s+id="proseEn"\s+class="prose")',
+            r'\1',
+            src,
+            count=1,
+            flags=re.I,
+        )
     src = re.sub(r'(<div\s+class="ad-slot"[^>]*>)廣告位(</div>)', r'\1Ad slot\2', src)
     src = re.sub(r'(<div\s+class="ad-slot"[^>]*>)廣告位 · AdSense(</div>)', r'\1Ad slot · AdSense\2', src)
     src = src.replace('aria-label="主導覽"', 'aria-label="Main navigation"')

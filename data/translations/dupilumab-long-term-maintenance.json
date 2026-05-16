@@ -1,0 +1,205 @@
+{
+  "slug": "dupilumab-long-term-maintenance",
+  "strings": [
+    {
+      "zh": "提醒：",
+      "en": "Note:",
+      "tag": "strong"
+    },
+    {
+      "zh": "159.55 天 (122.11)",
+      "en": "159.55 days (122.11)",
+      "tag": "strong"
+    },
+    {
+      "zh": "藥物動力學假說",
+      "en": "Pharmacokinetic hypothesis",
+      "tag": "strong"
+    },
+    {
+      "zh": "選擇偏差",
+      "en": "Selection bias",
+      "tag": "strong"
+    },
+    {
+      "zh": "臨床啟示",
+      "en": "Clinical implications",
+      "tag": "strong"
+    },
+    {
+      "zh": "0 人因不良反應停藥",
+      "en": "0 patients discontinued due to adverse events",
+      "tag": "strong"
+    },
+    {
+      "zh": "視神經萎縮（停藥 1 年後出現，首例文獻報告）",
+      "en": "Optic nerve atrophy (appeared 1 year after discontinuation; first case reported in the literature)",
+      "tag": "strong"
+    },
+    {
+      "zh": "關於視神經萎縮個案：",
+      "en": "On the optic nerve atrophy case:",
+      "tag": "strong"
+    },
+    {
+      "zh": "達標後不建議用『減量』作為節省策略",
+      "en": "Once treatment goal is reached, dose tapering is not recommended as a cost-saving strategy",
+      "tag": "strong"
+    },
+    {
+      "zh": "達標後不建議用「減量」作為節省策略",
+      "en": "Once treatment goal is reached, dose tapering is not recommended as a cost-saving strategy",
+      "tag": "strong"
+    },
+    {
+      "zh": "想真正延緩復發 → 持續 q2w",
+      "en": "To genuinely delay relapse → maintain q2w dosing",
+      "tag": "strong"
+    },
+    {
+      "zh": "復發高風險族群",
+      "en": "High-risk groups for relapse",
+      "tag": "strong"
+    },
+    {
+      "zh": "停藥若需嘗試 → 完整停藥比慢慢拉長間隔更穩定",
+      "en": "If discontinuation is attempted → full cessation is more stable than gradually lengthening intervals",
+      "tag": "strong"
+    },
+    {
+      "zh": "追蹤 IgE / EOS 作為復發預測指標",
+      "en": "Monitor IgE / eosinophils as relapse predictors",
+      "tag": "strong"
+    },
+    {
+      "zh": "視神經事件警示但勿過度解讀",
+      "en": "Optic-nerve event is a signal to watch, not to over-interpret",
+      "tag": "strong"
+    },
+    {
+      "zh": "18 歲以上",
+      "en": "≥ 18 years",
+      "tag": "strong"
+    },
+    {
+      "zh": "12–18 歲",
+      "en": "12–18 years",
+      "tag": "strong"
+    },
+    {
+      "zh": "適應症",
+      "en": "Indication",
+      "tag": "strong"
+    },
+    {
+      "zh": "照光治療",
+      "en": "Phototherapy",
+      "tag": "strong"
+    },
+    {
+      "zh": "三種傳統免疫抑制劑中的至少兩種",
+      "en": "At least two of three conventional systemic immunosuppressants",
+      "tag": "strong"
+    },
+    {
+      "zh": "16 週評估",
+      "en": "16-week assessment",
+      "tag": "strong"
+    },
+    {
+      "zh": "暫緩續用",
+      "en": "Hold renewal",
+      "tag": "strong"
+    },
+    {
+      "zh": "不可併用",
+      "en": "Not to be combined",
+      "tag": "strong"
+    },
+    {
+      "zh": "單中心、回溯性",
+      "en": "Single-center, retrospective",
+      "tag": "strong"
+    },
+    {
+      "zh": "分組非隨機",
+      "en": "Non-randomized group assignment",
+      "tag": "strong"
+    },
+    {
+      "zh": "樣本量小（n=79，三組分別 31/18/30）",
+      "en": "Small sample size (n=79; 31/18/30 across the three groups)",
+      "tag": "strong"
+    },
+    {
+      "zh": "合併治療資訊不足",
+      "en": "Insufficient information on concomitant therapies",
+      "tag": "strong"
+    },
+    {
+      "zh": "評估者不一致 + 回憶偏差",
+      "en": "Inter-assessor inconsistency plus recall bias",
+      "tag": "strong"
+    },
+    {
+      "zh": "族群差異",
+      "en": "Population differences",
+      "tag": "strong"
+    },
+    {
+      "zh": "給付制度差異",
+      "en": "Reimbursement-system differences",
+      "tag": "strong"
+    },
+    {
+      "zh": "『減量組』在台灣較罕見",
+      "en": "The \"dose-reduction\" group is uncommon in Taiwan",
+      "tag": "strong"
+    },
+    {
+      "zh": "「減量組」在台灣較罕見",
+      "en": "The \"dose-reduction\" group is uncommon in Taiwan",
+      "tag": "strong"
+    },
+    {
+      "zh": "52 週 follow-up 仍偏短",
+      "en": "52-week follow-up is still relatively short",
+      "tag": "strong"
+    },
+    {
+      "zh": "延伸閱讀：",
+      "en": "Further reading:",
+      "tag": "strong"
+    },
+    {
+      "zh": "陳翊嘉 醫師",
+      "en": "Dr. Chen Yi-Jia",
+      "tag": "strong"
+    },
+    {
+      "zh": "120 天",
+      "en": "120 days",
+      "tag": "td"
+    },
+    {
+      "zh": "66.40 天 (47.66)",
+      "en": "66.40 days (47.66)",
+      "tag": "td"
+    },
+    {
+      "zh": "~150 天",
+      "en": "~150 days",
+      "tag": "td"
+    },
+    {
+      "zh": "48.17 天 (36.56)",
+      "en": "48.17 days (36.56)",
+      "tag": "td"
+    },
+    {
+      "zh": "~130 天",
+      "en": "~130 days",
+      "tag": "td"
+    }
+  ]
+}
