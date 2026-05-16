@@ -39,3 +39,7 @@ build/
 
 # Vercel
 .vercel
+
+# Python bytecode (build scripts run locally)
+__pycache__/
+*.pyc
