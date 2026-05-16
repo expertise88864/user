@@ -258,6 +258,33 @@ def check_no_merge_markers():
                 break  # one error per file is enough
 
 
+# ─── 10b. Manual <div class="toc"> in articles → double TOC ──────────
+# Recurring mistake (logged in MEMORY.md feedback_dermnotes_article_template):
+# DN.addInlineTOC() in blog-article-reading.js auto-injects a collapsible
+# blue/teal TOC for any article with id="proseZh" + 3+ <h2 id="">. If the
+# article HTML ALSO has a manual <div class="toc">, the user sees two TOCs.
+# Hard rule: blog/*.html articles never carry a manual TOC div.
+MANUAL_TOC_RE = re.compile(r'<div\s+class="toc"', re.IGNORECASE)
+def check_no_manual_toc():
+    blog_dir = ROOT / 'blog'
+    if not blog_dir.is_dir():
+        return
+    for fp in sorted(blog_dir.glob('*.html')):
+        # Skip listing / non-article files
+        if fp.name in {'index.html', 'topics.html'}:
+            continue
+        try:
+            src = fp.read_text(encoding='utf-8')
+        except Exception:
+            continue
+        if 'id="proseZh"' not in src:
+            # Not an article (no prose container), so manual TOC is fine
+            continue
+        if MANUAL_TOC_RE.search(src):
+            rel = fp.relative_to(ROOT).as_posix()
+            err(rel, 'manual <div class="toc"> in article → DN.addInlineTOC adds a second TOC; remove the manual one')
+
+
 # ─── 11. robots.txt sitemap line ─────────────────────────────────────
 def check_robots():
     fp = ROOT / 'robots.txt'
@@ -282,6 +309,7 @@ def main():
     check_html(canonical_host, fast=fast)
     check_articles_dates()
     check_no_merge_markers()
+    check_no_manual_toc()
     check_robots()
 
     if warnings:
