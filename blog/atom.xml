@@ -4,7 +4,11 @@
   <link href="https://chendermatologist.com/" rel="alternate"/>
   <link href="https://chendermatologist.com/blog/atom.xml" rel="self"/>
   <id>https://chendermatologist.com/</id>
+<<<<<<< HEAD
   <updated>2026-05-16T17:14:23Z</updated>
+=======
+  <updated>2026-05-16T17:20:43Z</updated>
+>>>>>>> fc38209 (fix(ai-article): <article class="wrap"> → max-w-3xl so footer injections fire)
   <author>
     <name>陳翊嘉 醫師</name>
     <email>expertise88864@gmail.com</email>

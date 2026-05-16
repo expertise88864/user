@@ -285,6 +285,39 @@ def check_no_manual_toc():
             err(rel, 'manual <div class="toc"> in article → DN.addInlineTOC adds a second TOC; remove the manual one')
 
 
+# ─── 10c. Article must have <article class="max-w-3xl"> ──────────────
+# blog-article-footer.js queries `document.querySelector('article.max-w-3xl')`
+# in 9 places (addRelatedArticles, addShareToolbar, addAuthorBio,
+# addLegalDisclaimer, addFeedbackLink, injectGiscus, injectWordCount,
+# injectTipCard, injectPdfButton). Same in blog-article-reading.js.
+# If the <article> tag doesn't have this class, ALL those injections
+# silently no-op — user sees an article with no related links, no share
+# buttons, no author bio, no disclaimer, no word count, no comments.
+# That bit me on ai-dermatology-roles where I used <article class="wrap">.
+ARTICLE_TAG_RE = re.compile(r'<article[^>]*class="([^"]*)"', re.IGNORECASE)
+def check_article_class():
+    blog_dir = ROOT / 'blog'
+    if not blog_dir.is_dir():
+        return
+    for fp in sorted(blog_dir.glob('*.html')):
+        if fp.name in {'index.html', 'topics.html'}:
+            continue
+        try:
+            src = fp.read_text(encoding='utf-8')
+        except Exception:
+            continue
+        if 'id="proseZh"' not in src:
+            continue  # not an article
+        classes = ARTICLE_TAG_RE.findall(src)
+        if not classes:
+            rel = fp.relative_to(ROOT).as_posix()
+            err(rel, '<article> tag has no class attribute — needs max-w-3xl for footer injections')
+            continue
+        if not any('max-w-3xl' in c for c in classes):
+            rel = fp.relative_to(ROOT).as_posix()
+            err(rel, f'<article> class={classes[0]!r} missing max-w-3xl — JS footer injections (related/share/author/disclaimer) will silently fail')
+
+
 # ─── 11. robots.txt sitemap line ─────────────────────────────────────
 def check_robots():
     fp = ROOT / 'robots.txt'
@@ -310,6 +343,7 @@ def main():
     check_articles_dates()
     check_no_merge_markers()
     check_no_manual_toc()
+    check_article_class()
     check_robots()
 
     if warnings:
