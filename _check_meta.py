@@ -318,6 +318,47 @@ def check_article_class():
             err(rel, f'<article> class={classes[0]!r} missing max-w-3xl — JS footer injections (related/share/author/disclaimer) will silently fail')
 
 
+# ─── 10d. JS corruption guard (function{ etc.) ───────────────────────
+# On 2026-05-17 a bulk-edit regex `\(\s*\)` → "" was applied to .html
+# files to clean up empty CJK parens left over after stripping NHI §-codes.
+# It also matched JS `function()` and IIFE `})()` call sites, corrupting
+# 38 files: `function()` became `function`, IIFE call sites disappeared,
+# DN.initBlog runtime path broke, homepage spotlight/search/tag chips
+# all silently died for hours. Cheap guard so any future bulk-edit
+# that produces these patterns fails CI immediately.
+JS_CORRUPTION_PATTERNS = [
+    # `function{` or `function {` (no parens between function and brace)
+    (re.compile(r'\bfunction\s*\{'), 'function{ (missing ())'),
+    # `function (a, b) ` → `function {` after some weird strip — bare `function` followed by space then brace
+    # Already covered by above.
+    # `})\.then\{` or `})\.catch\{` etc. — methods called without their callback parens
+    (re.compile(r'\)\.(then|catch|finally|forEach|map|filter|reduce)\s*\{'), '.then{/.forEach{ etc (missing callback parens)'),
+    # `addEventListener\([^,]+,\s*function\s*\{` — already caught above
+]
+def check_no_js_corruption():
+    skip_dirs = {'.git', 'node_modules', '.next', 'out', 'dist', '__pycache__', '.vercel'}
+    for dirpath, dirnames, filenames in os.walk(ROOT):
+        dirnames[:] = [d for d in dirnames if d not in skip_dirs]
+        for fn in filenames:
+            ext = os.path.splitext(fn)[1].lower()
+            if ext not in {'.html', '.js'}:
+                continue
+            fp = os.path.join(dirpath, fn)
+            # Skip this checker itself (it must reference the literal patterns)
+            if os.path.realpath(fp) == os.path.realpath(__file__):
+                continue
+            try:
+                with open(fp, 'r', encoding='utf-8') as f:
+                    src = f.read()
+            except Exception:
+                continue
+            for pat, label in JS_CORRUPTION_PATTERNS:
+                if pat.search(src):
+                    rel = os.path.relpath(fp, ROOT).replace('\\', '/')
+                    err(rel, f'JS corruption pattern detected: {label}')
+                    break  # one error per file is enough
+
+
 # ─── 11. robots.txt sitemap line ─────────────────────────────────────
 def check_robots():
     fp = ROOT / 'robots.txt'
@@ -344,6 +385,7 @@ def main():
     check_no_merge_markers()
     check_no_manual_toc()
     check_article_class()
+    check_no_js_corruption()
     check_robots()
 
     if warnings:
