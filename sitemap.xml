@@ -81,6 +81,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/privacy"/>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/ai-dermatology-roles</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/ai-dermatology-roles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/ai-dermatology-roles"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/api/og?title=AI+%E5%9C%A8%E7%9A%AE%E8%86%9A%E7%A7%91%E7%9B%AE%E5%89%8D%E8%83%BD%E5%81%9A%E4%BB%80%E9%BA%BC%EF%BC%9F&amp;tag=%E7%9A%AE%E8%86%9A%E7%A7%91%E6%9C%80%E6%96%B0%E7%A0%94%E7%A9%B6&amp;date=2026-05-16</image:loc>
+      <image:title>AI 在皮膚科目前能做什麼？皮膚鏡熱圖、診斷輔助與醫學教育</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/psoriasis-biologic-monitoring</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>

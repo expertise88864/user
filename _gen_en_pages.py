@@ -75,6 +75,10 @@ EN_OG_OVERRIDES = {
         'title': 'Dupilumab Long-Term Maintenance: JAAD 2026 Real-World Study (Tapering Relapses Earlier than Stopping)',
         'desc': 'Real-world 79-patient retrospective from Xinjiang, China, published in May 2026 JAAD, comparing three dupilumab maintenance strategies in moderate-to-severe atopic dermatitis: continuous q2w, interval extension (tapering), and abrupt stop. Continuous q2w yielded the longest relapse-free duration (mean 159.55 days, some >300 days); paradoxically, the tapering group relapsed earlier than the abrupt-stop group, possibly due to sub-therapeutic drug levels or selection bias. Relapse predictors: higher baseline IgE, longer disease duration, non-classic AD phenotype. Includes a first-reported optic-nerve-atrophy case (1 year post-discontinuation, causality unconfirmed) and Taiwan NHI Article 13.17.1 reimbursement criteria.',
     },
+    'blog/ai-dermatology-roles.html': {
+        'title': 'AI in Dermatology Today: Dermoscopy Heat Maps, Explainability, and Education',
+        'desc': 'Resident-level research review integrating 2026 JAAD Reviews and the JAAD eye-tracking study comparing dermatologist gaze maps with DEXI dermoscopy AI heat maps. Covers diagnostic support, explainable AI, generative AI for education, and why AI cannot yet replace clinical judgment.',
+    },
 }
 
 EN_BANNER = '''<div id="dn-en-banner" style="background:linear-gradient(180deg,#ecfeff,#cffafe);border-bottom:1px solid #67e8f9;padding:9px 18px;text-align:center;font-size:12.5px;color:#0c5159;font-family:Inter,system-ui,sans-serif;line-height:1.5;font-weight:600">
