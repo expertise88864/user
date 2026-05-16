@@ -79,12 +79,16 @@ function getTrafficType(){
 }
 function load() {
   if (isBot() || isLocalStaticHost()) return; // skip everything for bots/local static tests
-  // AdSense
+  // AdSense — DISABLED until AdSense approval (audit period).
+  // Re-enable by uncommenting the block below. Visible placeholders
+  // are also hidden via .ad-slot{display:none!important} in tw-mini.css.
+  /* AdSense disabled:
   var ad = document.createElement("script");
   ad.async = true;
   ad.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663";
   ad.crossOrigin = "anonymous";
   document.head.appendChild(ad);
+  */
   // Clarity
   (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
   t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
