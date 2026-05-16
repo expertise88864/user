@@ -1,0 +1,80 @@
+{
+  "slug": "dermatologic-oral-examination",
+  "strings": [
+    {
+      "zh": "提醒：",
+      "en": "Note:",
+      "tag": "strong"
+    },
+    {
+      "zh": "關鍵訊息：",
+      "en": "Key message:",
+      "tag": "strong"
+    },
+    {
+      "zh": "需要盡快就醫的紅旗：",
+      "en": "Red flags that warrant prompt evaluation:",
+      "tag": "strong"
+    },
+    {
+      "zh": "口底（floor of mouth）",
+      "en": "Floor of the mouth",
+      "tag": "strong"
+    },
+    {
+      "zh": "軟顎後段",
+      "en": "Posterior soft palate",
+      "tag": "strong"
+    },
+    {
+      "zh": "腮腺管開口（Stensen's papilla, 上頷第二大臼齒對側）",
+      "en": "Parotid duct opening (Stensen's papilla, opposite the upper second molar)",
+      "tag": "strong"
+    },
+    {
+      "zh": "覆蓋牙根的牙齦",
+      "en": "Gingiva overlying the tooth roots",
+      "tag": "strong"
+    },
+    {
+      "zh": "第一塊樣本",
+      "en": "First specimen",
+      "tag": "strong"
+    },
+    {
+      "zh": "第二塊樣本",
+      "en": "Second specimen",
+      "tag": "strong"
+    },
+    {
+      "zh": "器官移植 / 免疫抑制者",
+      "en": "Organ-transplant or immunosuppressed patients",
+      "tag": "strong"
+    },
+    {
+      "zh": "抗凝血藥 / 抗血小板藥",
+      "en": "Anticoagulants / antiplatelets",
+      "tag": "strong"
+    },
+    {
+      "zh": "放射治療後",
+      "en": "Post-radiation therapy",
+      "tag": "strong"
+    },
+    {
+      "zh": "孕婦",
+      "en": "Pregnancy",
+      "tag": "strong"
+    },
+    {
+      "zh": "延伸閱讀：",
+      "en": "Further reading:",
+      "tag": "strong"
+    },
+    {
+      "zh": "陳翊嘉 醫師",
+      "en": "Dr. Chen Yi-Jia",
+      "tag": "strong"
+    }
+  ]
+}

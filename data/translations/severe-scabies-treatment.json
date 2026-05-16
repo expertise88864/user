@@ -1,0 +1,165 @@
+{
+  "slug": "severe-scabies-treatment",
+  "strings": [
+    {
+      "zh": "提醒：",
+      "en": "Note:",
+      "tag": "strong"
+    },
+    {
+      "zh": "皮膚刮片顯微鏡（gold standard）",
+      "en": "Skin scraping microscopy (gold standard)",
+      "tag": "strong"
+    },
+    {
+      "zh": "皮膚鏡（dermoscopy）",
+      "en": "Dermoscopy",
+      "tag": "strong"
+    },
+    {
+      "zh": "臨床診斷（IACS 2020 國際共識準則）",
+      "en": "Clinical diagnosis (IACS 2020 international consensus criteria)",
+      "tag": "strong"
+    },
+    {
+      "zh": "結論：高劑量沒有比較好。",
+      "en": "Bottom line: a higher dose is not better.",
+      "tag": "strong"
+    },
+    {
+      "zh": "劑量",
+      "en": "Dose",
+      "tag": "strong"
+    },
+    {
+      "zh": "時程",
+      "en": "Schedule",
+      "tag": "strong"
+    },
+    {
+      "zh": "怎麼吃",
+      "en": "How to take it",
+      "tag": "strong"
+    },
+    {
+      "zh": "禁忌與注意",
+      "en": "Contraindications and cautions",
+      "tag": "strong"
+    },
+    {
+      "zh": "塗抹範圍",
+      "en": "Area of application",
+      "tag": "strong"
+    },
+    {
+      "zh": "停留時間",
+      "en": "Contact time",
+      "tag": "strong"
+    },
+    {
+      "zh": "用量",
+      "en": "Amount",
+      "tag": "strong"
+    },
+    {
+      "zh": "結痂型加強",
+      "en": "Intensified protocol for crusted scabies",
+      "tag": "strong"
+    },
+    {
+      "zh": "需要一起治療的人",
+      "en": "Who should be treated together",
+      "tag": "strong"
+    },
+    {
+      "zh": "同治療策略",
+      "en": "Co-treatment strategy",
+      "tag": "strong"
+    },
+    {
+      "zh": "通報",
+      "en": "Notification",
+      "tag": "strong"
+    },
+    {
+      "zh": "個案診斷",
+      "en": "Case diagnosis",
+      "tag": "strong"
+    },
+    {
+      "zh": "同步治療",
+      "en": "Synchronous treatment",
+      "tag": "strong"
+    },
+    {
+      "zh": "隔離結痂型",
+      "en": "Isolate crusted-type cases",
+      "tag": "strong"
+    },
+    {
+      "zh": "環境清潔",
+      "en": "Environmental cleaning",
+      "tag": "strong"
+    },
+    {
+      "zh": "監測 6 週",
+      "en": "6-week surveillance",
+      "tag": "strong"
+    },
+    {
+      "zh": "5% permethrin 乳膏",
+      "en": "5% permethrin cream",
+      "tag": "strong"
+    },
+    {
+      "zh": "口服 ivermectin",
+      "en": "Oral ivermectin",
+      "tag": "strong"
+    },
+    {
+      "zh": "請以衛福部食藥署藥品許可證資料庫與健保署藥品給付規定為準",
+      "en": "Always defer to the latest TFDA drug-license database and NHIA drug reimbursement regulations",
+      "tag": "strong"
+    },
+    {
+      "zh": "benzyl benzoate 10-25% 乳劑",
+      "en": "Benzyl benzoate 10–25% lotion",
+      "tag": "strong"
+    },
+    {
+      "zh": "1% lindane 乳膏",
+      "en": "1% lindane cream",
+      "tag": "strong"
+    },
+    {
+      "zh": "合併治療",
+      "en": "Combination therapy",
+      "tag": "strong"
+    },
+    {
+      "zh": "輕度（grade 1）",
+      "en": "Mild (grade 1)",
+      "tag": "strong"
+    },
+    {
+      "zh": "中度（grade 2）",
+      "en": "Moderate (grade 2)",
+      "tag": "strong"
+    },
+    {
+      "zh": "重度（grade 3）",
+      "en": "Severe (grade 3)",
+      "tag": "strong"
+    },
+    {
+      "zh": "台灣特殊族群提醒",
+      "en": "Special-population reminders for Taiwan",
+      "tag": "strong"
+    },
+    {
+      "zh": "陳翊嘉 醫師",
+      "en": "Dr. Chen Yi-Jia",
+      "tag": "strong"
+    }
+  ]
+}
