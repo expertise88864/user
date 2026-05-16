@@ -102,7 +102,8 @@
       '美白':         '肝斑 / 美白',
       '痘疤':         '痘痘',
       '結節性癢疹':   '異膚',
-      '皮膚淋巴瘤':   '生物製劑'
+      '皮膚淋巴瘤':   '生物製劑',
+      'AI 與皮膚科':  '皮膚鏡 AI'
     };
     function svgFor(tag) {
       var resolvedTag = TAG_ALIAS[tag] || tag;

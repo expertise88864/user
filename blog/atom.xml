@@ -4,12 +4,21 @@
   <link href="https://chendermatologist.com/" rel="alternate"/>
   <link href="https://chendermatologist.com/blog/atom.xml" rel="self"/>
   <id>https://chendermatologist.com/</id>
-  <updated>2026-05-16T15:48:37Z</updated>
+  <updated>2026-05-16T16:37:27Z</updated>
   <author>
     <name>陳翊嘉 醫師</name>
     <email>expertise88864@gmail.com</email>
   </author>
   <generator uri="https://chendermatologist.com">DermNotes auto-feed</generator>
+  <entry>
+    <title>AI 現在能幫皮膚科醫師看病嗎？2026 JAAD 眼動追蹤研究的三個現實答案</title>
+    <link href="https://chendermatologist.com/blog/ai-dermatology-roles" rel="alternate"/>
+    <id>https://chendermatologist.com/blog/ai-dermatology-roles</id>
+    <updated>2026-05-17T00:00:00Z</updated>
+    <published>2026-05-17T00:00:00Z</published>
+    <category term="AI 與皮膚科"/>
+    <summary>AI 現在能幫皮膚科醫師看病嗎？2026 JAAD 眼動追蹤研究的三個現實答案 | ChenDermatologist 皮膚科衛教筆記</summary>
+  </entry>
   <entry>
     <title>打乾癬生物製劑要不要每年抽血？2026 JAAD 證據評級重新看這件事</title>
     <link href="https://chendermatologist.com/blog/psoriasis-biologic-monitoring" rel="alternate"/>
@@ -270,14 +279,5 @@
     <published>2026-05-05T00:00:00Z</published>
     <category term="異位性皮膚炎"/>
     <summary>嬰幼兒 / 兒童異位性皮膚炎完整照護指南 | ChenDermatologist 皮膚科衛教筆記</summary>
-  </entry>
-  <entry>
-    <title>圓禿（鬼剃頭）完整衛教</title>
-    <link href="https://chendermatologist.com/blog/alopecia-areata" rel="alternate"/>
-    <id>https://chendermatologist.com/blog/alopecia-areata</id>
-    <updated>2026-05-04T00:00:00Z</updated>
-    <published>2026-05-04T00:00:00Z</published>
-    <category term="圓禿"/>
-    <summary>圓禿（鬼剃頭）完整衛教 | ChenDermatologist 皮膚科衛教筆記</summary>
   </entry>
 </feed>
