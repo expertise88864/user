@@ -33,7 +33,13 @@ REGEN_STEPS: list[list[str]] = [
     [PY, "_normalize_robots.py"],
 ]
 
-BUILD_GENERATED_STEPS: list[list[str]] = [[PY, "_gen_search_index.py"]]
+BUILD_GENERATED_STEPS: list[list[str]] = [
+    [PY, "_gen_search_index.py"],
+    # 2026-05-17 — Pagefind CJK-aware full-text search index. Runs AFTER all
+    # HTML is generated (REGEN_STEPS) so it crawls the final on-disk file
+    # tree. Non-fatal: skips gracefully if npx unavailable.
+    [PY, "_run_pagefind.py"],
+]
 
 CHECK_STEPS: list[list[str]] = [
     [PY, "_check_meta.py", "--fast"],
