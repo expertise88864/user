@@ -85,9 +85,47 @@ def normalize_file(path: str) -> bool:
     return True
 
 
+JS_LOADER_RE = re.compile(
+    r"(/blog/blog-(?:shared|hub|article-reading|diagrams|calculators|article-visuals|article-footer)\.min\.js\?v=)(\d+)"
+)
+
+
+def normalize_js_loaders() -> int:
+    """Bump ?v= asset version inside JS source files that issue dynamic <script> tags.
+
+    Without this, HTML (normalized above) and JS sources can drift, which
+    _check_runtime_smoke.py blocks. Targets both .js and .min.js so a partial
+    minify state doesn't leave the .min.js stale.
+    """
+    targets = [
+        os.path.join(ROOT, 'blog', name)
+        for name in (
+            'blog-shared.js',
+            'blog-shared.min.js',
+            'blog-article-reading.js',
+            'blog-article-reading.min.js',
+        )
+    ]
+    changed = 0
+    for path in targets:
+        if not os.path.exists(path):
+            continue
+        with open(path, 'r', encoding='utf-8') as fp:
+            src = fp.read()
+        next_src = JS_LOADER_RE.sub(lambda m: m.group(1) + ASSET_VERSION, src)
+        if next_src != src:
+            with open(path, 'w', encoding='utf-8') as fp:
+                fp.write(next_src)
+            changed += 1
+    return changed
+
+
 def main() -> None:
     changed = sum(1 for path in html_files() if normalize_file(path))
     print(f'Normalized CSS links in {changed} files')
+    js_changed = normalize_js_loaders()
+    if js_changed:
+        print(f'Normalized JS dynamic-loader asset-version in {js_changed} files')
 
 
 if __name__ == '__main__':
