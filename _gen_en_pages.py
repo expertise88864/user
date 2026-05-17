@@ -346,8 +346,25 @@ def strip_tags(src: str) -> str:
     return re.sub(r'\s+', ' ', html_lib.unescape(src)).strip()
 
 
+# 2026-05-17 \u2014 elements with data-en="..." get their textContent swapped
+# to English at runtime by DN.applyTextOnly(). For visible_cjk_count
+# (used to gate EN-indexable status) we should NOT count text inside
+# such elements \u2014 what the EN reader actually sees is the data-en value,
+# not the zh fallback baked into HTML.
+#
+# Strategy: remove every "<TAG ... data-en=\"...\"> ... </TAG>" block
+# (matched greedily by tag) before counting. Conservative: only handles
+# tags whose own attribute carries data-en. Children whose own data-en
+# is absent are still counted (so partial translations don't game the
+# threshold).
+_DATA_EN_BLOCK_RE = re.compile(
+    r'<([a-z][a-z0-9]*)\b[^>]*\bdata-en="[^"]*"[^>]*>[\s\S]*?</\1\s*>',
+    re.IGNORECASE,
+)
 def visible_cjk_count(src: str) -> int:
-    return len(re.findall(r'[\u4e00-\u9fff]', strip_tags(src)))
+    # First, strip text inside any element that has data-en (runtime-translated)
+    cleaned = _DATA_EN_BLOCK_RE.sub(' ', src)
+    return len(re.findall(r'[\u4e00-\u9fff]', strip_tags(cleaned)))
 
 
 def has_cjk(src: str) -> bool:
@@ -359,8 +376,39 @@ def first_text(pattern: str, src: str) -> str:
     return strip_tags(m.group(1)) if m else ''
 
 
+def _english_only_from_h1(src: str) -> str:
+    """Extract the EN-equivalent text of <h1>.
+
+    The <h1> in source often mixes raw Chinese (first half) + a
+    <span data-zh="..." data-en="...">trailing</span>. apply_data_en
+    only translates spans with data-en, leaving the first half zh.
+    For meta-extraction purposes we want the EN equivalent if it
+    can be assembled — concatenate every data-en attr inside h1.
+    Falls back to plain stripped text (which may still be hybrid).
+    """
+    m = re.search(r'<h1\b[^>]*>([\s\S]*?)</h1>', src, re.I)
+    if not m:
+        return ''
+    inner = m.group(1)
+    en_parts: list[str] = []
+    # If h1 itself has data-en attribute
+    h1_open_m = re.match(r'<h1\b([^>]*)>', m.group(0), re.I)
+    if h1_open_m:
+        de_m = re.search(r'data-en="([^"]*)"', h1_open_m.group(1))
+        if de_m and not has_cjk(de_m.group(1)):
+            return strip_tags(de_m.group(1)).strip()
+    # Otherwise concatenate every nested element's data-en
+    for de_m in re.finditer(r'data-en="([^"]*)"', inner):
+        v = de_m.group(1)
+        if v and not has_cjk(v):
+            en_parts.append(strip_tags(v).strip())
+    if en_parts:
+        return ' — '.join(en_parts)
+    return first_text(r'<h1\b[^>]*>([\s\S]*?)</h1>', src)
+
+
 def derive_meta(src: str, override: dict[str, str] | None) -> tuple[str, str]:
-    h1 = first_text(r'<h1\b[^>]*>([\s\S]*?)</h1>', src)
+    h1 = _english_only_from_h1(src)
     title = (override or {}).get('title') or (h1 + ' | ChenDermatologist' if h1 else '')
     if not title or has_cjk(title):
         title = 'Dermatology Patient Education | ChenDermatologist'
@@ -370,7 +418,31 @@ def derive_meta(src: str, override: dict[str, str] | None) -> tuple[str, str]:
     lead = (override or {}).get('desc') or ''
     h1_pos = src.lower().find('</h1>')
     if not lead and h1_pos >= 0:
-        lead = first_text(r'<p\b[^>]*>([\s\S]*?)</p>', src[h1_pos:])
+        # Scan up to the first 3 <p> tags after </h1>. For each:
+        # 1) prefer the <p>'s own data-en if present and non-CJK
+        # 2) otherwise concatenate every nested data-en non-CJK value
+        # 3) otherwise fall through to the raw text (which may be CJK)
+        tail = src[h1_pos:]
+        for p_m in list(re.finditer(r'<p\b([^>]*)>([\s\S]*?)</p>', tail, re.I))[:3]:
+            attrs = p_m.group(1)
+            inner = p_m.group(2)
+            # Own data-en
+            attr_de = re.search(r'data-en="([^"]*)"', attrs)
+            if attr_de and not has_cjk(attr_de.group(1)):
+                lead = attr_de.group(1)
+                break
+            # Nested data-en concatenation
+            nested = [m.group(1) for m in re.finditer(r'data-en="([^"]*)"', inner) if not has_cjk(m.group(1))]
+            if nested:
+                candidate = ' '.join(strip_tags(x) for x in nested if x.strip())
+                if candidate and not has_cjk(candidate):
+                    lead = candidate
+                    break
+            # Fall through to plain text
+            raw = strip_tags(inner)
+            if raw and not has_cjk(raw):
+                lead = raw
+                break
     if not lead or has_cjk(lead):
         lead = (override or {}).get('desc') or FALLBACK_EN_DESC
     desc = re.sub(r'\s+', ' ', lead).strip()
@@ -387,7 +459,12 @@ def set_meta(src: str, title: str, desc: str) -> str:
     esc_title = html_lib.escape(title, quote=False)
     esc_desc = html_lib.escape(desc, quote=True)
     src = re.sub(r'<title>[\s\S]*?</title>', f'<title>{esc_title}</title>', src, count=1, flags=re.I)
-    src = re.sub(r'(<meta\s+name="description"\s+content=")[^"]*(")', r'\1' + esc_desc + r'\2', src, count=1, flags=re.I)
+    # 2026-05-17 — use lambda replacement to bypass backreference parsing.
+    # esc_desc / esc_title can contain digits like "8 Acne Myths" which combined
+    # with the leading r'\1' became `\18` = invalid group reference 18.
+    src = re.sub(r'(<meta\s+name="description"\s+content=")[^"]*(")',
+                 lambda m: m.group(1) + esc_desc + m.group(2),
+                 src, count=1, flags=re.I)
     for field, value in (
         ('og:title', title),
         ('og:description', desc),
