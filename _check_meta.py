@@ -395,26 +395,39 @@ HOMEPAGE_CARD_RE = re.compile(
     re.IGNORECASE,
 )
 def check_homepage_card_attrs():
-    fp = ROOT / 'index.html'
-    if not fp.exists():
-        return
-    src = fp.read_text(encoding='utf-8')
-    bad = []
-    for m in HOMEPAGE_CARD_RE.finditer(src):
-        slug = m.group(1)
-        full_attrs = m.group(2) + m.group(3)
-        if 'data-cat=' not in full_attrs:
-            bad.append((slug, 'data-cat'))
-        if 'data-tag-en=' not in full_attrs:
-            bad.append((slug, 'data-tag-en'))
-    if bad:
-        # Group by attribute kind
-        missing_cat = sorted({s for s, a in bad if a == 'data-cat'})
-        missing_tag = sorted({s for s, a in bad if a == 'data-tag-en'})
-        if missing_cat:
-            err('index.html', f'{len(missing_cat)} cards missing data-cat: {", ".join(missing_cat[:5])}{"..." if len(missing_cat) > 5 else ""}')
-        if missing_tag:
-            err('index.html', f'{len(missing_tag)} cards missing data-tag-en: {", ".join(missing_tag[:5])}{"..." if len(missing_tag) > 5 else ""}')
+    for filename in ('index.html', 'en/index.html'):
+        fp = ROOT / filename
+        if not fp.exists():
+            continue
+        src = fp.read_text(encoding='utf-8')
+        bad = []
+        for m in HOMEPAGE_CARD_RE.finditer(src):
+            slug = m.group(1)
+            full_attrs = m.group(2) + m.group(3)
+            if 'data-cat=' not in full_attrs:
+                bad.append((slug, 'data-cat'))
+            if 'data-tag-en=' not in full_attrs:
+                bad.append((slug, 'data-tag-en'))
+        if bad:
+            missing_cat = sorted({s for s, a in bad if a == 'data-cat'})
+            missing_tag = sorted({s for s, a in bad if a == 'data-tag-en'})
+            if missing_cat:
+                err(filename, f'{len(missing_cat)} cards missing data-cat: {", ".join(missing_cat[:5])}{"..." if len(missing_cat) > 5 else ""}')
+            if missing_tag:
+                err(filename, f'{len(missing_tag)} cards missing data-tag-en: {", ".join(missing_tag[:5])}{"..." if len(missing_tag) > 5 else ""}')
+
+        # 2026-05-17 — new check: detect duplicate attr leak. Batch1's
+        # backfill regex inserted "data-cat=... data-tag-en=...>" TWICE
+        # on 12 cards — the second copy fell after the closing `>` and
+        # rendered as visible text on the homepage. Pattern signature:
+        # `class="article-list-item">[whitespace]data-cat="...">`
+        dup_re = re.compile(
+            r'class="article-list-item"[^>]*?>\s*data-cat="[^"]*"\s+data-tag-en="[^"]*">',
+            re.IGNORECASE,
+        )
+        dup_hits = len(dup_re.findall(src))
+        if dup_hits:
+            err(filename, f'{dup_hits} cards have duplicate data-cat/data-tag-en leaked as visible text — strip the trailing copy after the >')
 
 
 # ─── 10h. Bundle-loader slug allow-lists must match the maps ──────
