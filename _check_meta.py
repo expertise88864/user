@@ -386,6 +386,37 @@ def check_no_inline_sup_refs():
             err(rel, f'has {count} inline <sup><a href="#refN">N</a></sup> citations — drop them; references list at the bottom stays intact')
 
 
+# ─── 10g. Homepage article-list cards must have data-cat + data-tag-en ──
+# Memory note feedback_dermnotes_homepage_card.md mandates these for the
+# tag-chip filter to work. 2026-05-17 deep audit found 31/43 cards were
+# missing them — chip filter was broken for 67% of articles.
+HOMEPAGE_CARD_RE = re.compile(
+    r'<a href="/blog/([a-z0-9-]+)"((?:(?!>)[^>])*?)class="article-list-item"((?:(?!>)[^>])*)>',
+    re.IGNORECASE,
+)
+def check_homepage_card_attrs():
+    fp = ROOT / 'index.html'
+    if not fp.exists():
+        return
+    src = fp.read_text(encoding='utf-8')
+    bad = []
+    for m in HOMEPAGE_CARD_RE.finditer(src):
+        slug = m.group(1)
+        full_attrs = m.group(2) + m.group(3)
+        if 'data-cat=' not in full_attrs:
+            bad.append((slug, 'data-cat'))
+        if 'data-tag-en=' not in full_attrs:
+            bad.append((slug, 'data-tag-en'))
+    if bad:
+        # Group by attribute kind
+        missing_cat = sorted({s for s, a in bad if a == 'data-cat'})
+        missing_tag = sorted({s for s, a in bad if a == 'data-tag-en'})
+        if missing_cat:
+            err('index.html', f'{len(missing_cat)} cards missing data-cat: {", ".join(missing_cat[:5])}{"..." if len(missing_cat) > 5 else ""}')
+        if missing_tag:
+            err('index.html', f'{len(missing_tag)} cards missing data-tag-en: {", ".join(missing_tag[:5])}{"..." if len(missing_tag) > 5 else ""}')
+
+
 # ─── 11. robots.txt sitemap line ─────────────────────────────────────
 def check_robots():
     fp = ROOT / 'robots.txt'
@@ -414,6 +445,7 @@ def main():
     check_article_class()
     check_no_js_corruption()
     check_no_inline_sup_refs()
+    check_homepage_card_attrs()
     check_robots()
 
     if warnings:

@@ -22,6 +22,23 @@ PHYSICIAN_REF = {
     "name": "陳翊嘉 醫師",
 }
 
+# 2026-05-17: schema.org's MedicalScholarlyArticle is for peer-reviewed
+# academic publications. Patient-education content (DN.ARTICLES cat in
+# {rx, myth, product}) should use MedicalWebPage as the primary type;
+# misuse risks Google de-ranking. Keep MedicalScholarlyArticle ONLY for
+# the journal-club / research-summary articles (cat: 'research').
+RESEARCH_SLUGS = {
+    'dupilumab-long-term-maintenance',
+    'psoriasis-biologic-monitoring',
+    'ai-dermatology-roles',
+}
+
+def _slug_from_path(path: Path) -> str:
+    return path.stem  # e.g. 'biologics-overview' from blog/biologics-overview.html
+
+def _is_research_article(path: Path) -> bool:
+    return _slug_from_path(path) in RESEARCH_SLUGS
+
 
 def clean_text(src: str) -> str:
     src = re.sub(r"<script\b[\s\S]*?</script>", " ", src, flags=re.I)
@@ -80,10 +97,16 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str]) -> dict:
         obj.setdefault("url", DOMAIN + "/")
 
     if typ in {"Article", "BlogPosting", "MedicalScholarlyArticle"}:
+        # Keep MedicalScholarlyArticle only for research-summary articles
+        # (cat: 'research'); downgrade patient-education articles to
+        # MedicalWebPage so Google doesn't treat them as peer-reviewed
+        # publications and de-rank them.
+        is_research_blog = (meta.get("canonical") and "/blog/" in meta["canonical"]
+                            and _is_research_article(path))
         if meta.get("canonical"):
             obj["@id"] = article_id(meta)
             obj["mainEntityOfPage"] = meta["canonical"]
-        obj["@type"] = "MedicalScholarlyArticle"
+        obj["@type"] = "MedicalScholarlyArticle" if is_research_blog else "MedicalWebPage"
         obj["author"] = PHYSICIAN_REF
         obj["publisher"] = PHYSICIAN_REF
         obj["reviewedBy"] = PHYSICIAN_REF
@@ -92,7 +115,11 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str]) -> dict:
         if meta.get("image"):
             obj.setdefault("image", meta["image"])
         if meta.get("title"):
-            obj["headline"] = meta["title"].split("|")[0].strip()
+            # MedicalWebPage uses `name`; Article uses `headline`.
+            # Set both so the field is correct regardless of @type.
+            short_title = meta["title"].split("|")[0].strip()
+            obj["headline"] = short_title
+            obj["name"] = short_title
         if meta.get("description"):
             obj["description"] = meta["description"]
 
