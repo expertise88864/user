@@ -195,7 +195,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202605171200';
+        s.src = '/blog/blog-article-visuals.min.js?v=202605171300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -681,6 +681,21 @@
   };
 
   // -----------------------------------------------------------------------
+  // Slug allow-lists for the heavy on-demand bundles. Kept in sync (by hand
+  // — there's a Python audit) with the keys of DN.MED_DIAGRAM_MAP (in
+  // blog-diagrams.js) and DN.CALC_ORDER (in blog-calculators.js). Before
+  // these existed, every article paid for the ~100 KB diagrams bundle and
+  // the ~57 KB calculators bundle even when its slug had no entry in the
+  // respective map — pure overhead on ~21 and ~30 articles respectively.
+  //
+  // If you add a new article that needs diagrams or a calculator, ALSO add
+  // its slug here. Drift is caught by check_diagram_calc_slug_lists() in
+  // _check_meta.py.
+  // -----------------------------------------------------------------------
+  DN.DIAGRAM_SLUGS = ['acne-myths','acne-scar-treatment','alopecia-areata','atopic-dermatitis-overview','biologics-overview','cutaneous-t-cell-lymphoma','epidermoid-cyst','hairloss-myths','hidradenitis-suppurativa','isotretinoin-clinical','isotretinoin-patient','laser-dermatology','melasma-myths','mpox-care','pediatric-eczema','prurigo-nodularis','psoriasis-myths','rosacea-myths','shingles-myths','sunscreen-myths','targeted-therapy-skin','tinea-myths','topical-acids-clinical','topical-acids-patient','topical-steroids-guide','urticaria-myths','vitiligo','warts-myths'];
+  DN.CALC_SLUGS    = ['acne-myths','acne-scar-treatment','alopecia-areata','atopic-dermatitis-overview','biologics-overview','cutaneous-t-cell-lymphoma','dermatology-faq','epidermoid-cyst','hairloss-myths','hidradenitis-suppurativa','isotretinoin-clinical','isotretinoin-patient','laser-dermatology','melasma-myths','mpox-care','nhi-derm-drugs','pediatric-eczema','prurigo-nodularis','psoriasis-myths','rosacea-myths','shingles-myths','skin-whitening-agents','sunscreen-myths','targeted-therapy-skin','tinea-myths','topical-acids-clinical','topical-acids-patient','topical-steroids-guide','urticaria-myths','vitiligo','warts-myths'];
+
+  // -----------------------------------------------------------------------
   // Article catalog (single source of truth for related-articles / TOC links).
   // -----------------------------------------------------------------------
   DN.ARTICLES = [
@@ -941,7 +956,7 @@
     if (!DN._articleReadingBundleLoading) {
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202605171200';
+        s.src = '/blog/blog-article-reading.min.js?v=202605171300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -973,7 +988,7 @@
     if (!DN._articleFooterBundleLoading) {
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202605171200';
+        s.src = '/blog/blog-article-footer.min.js?v=202605171300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -999,7 +1014,7 @@
     if (!DN._calculatorBundleLoading) {
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202605171200';
+        s.src = '/blog/blog-calculators.min.js?v=202605171300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1114,7 +1129,7 @@
     if (!DN._hubBundleLoading) {
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202605171200';
+        s.src = '/blog/blog-hub.min.js?v=202605171300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1518,11 +1533,17 @@
           try { DN.applyTextOnly(curLang); } catch (e) {}
         }).catch(function () {});
       }, { timeout: 1500 });
-      idle(function () {
-        DN.ensureArticleReadingBundle().then(function () {
-          DN.injectMedDiagrams && DN.injectMedDiagrams();
-        }).catch(function () {});
-      }, { timeout: 2000 });
+      // 2026-05-17 perf — gate the 100 KB diagrams bundle on a static
+      // slug allow-list (kept in sync with blog-diagrams.js MED_DIAGRAM_MAP)
+      // so articles without diagrams don't pay for the bundle. ~21 articles
+      // saved ~100 KB each before this change.
+      if (DN.DIAGRAM_SLUGS && DN.DIAGRAM_SLUGS.indexOf(DN.currentSlug && DN.currentSlug()) !== -1) {
+        idle(function () {
+          DN.ensureArticleReadingBundle().then(function () {
+            DN.injectMedDiagrams && DN.injectMedDiagrams();
+          }).catch(function () {});
+        }, { timeout: 2000 });
+      }
       // Floating BMC button disabled — replaced by the visible tip CARD
       // (DN.injectTipCard) at article footer with Ko-fi + 街口 side-by-side.
       // H4 word count badge, H1 Giscus, H6 PDF — all article-page only
@@ -1572,14 +1593,20 @@
         }).catch(function () {});
       }, { timeout: 1500 });
       // Calculator goes LAST (so it ends up immediately under the article).
-      idle(function () {
-        DN.ensureCalculatorBundle().then(function () {
-          if (typeof DN.autoInjectCalculators === 'function') {
-            DN.autoInjectCalculators(DN.currentSlug());
-          }
-          try { DN.applyTextOnly(curLang); } catch (e) {}
-        }).catch(function () {});
-      }, { timeout: 1800 });
+      // 2026-05-17 perf — gate the 57 KB calculators bundle on a static
+      // slug allow-list (kept in sync with blog-calculators.js CALC_ORDER)
+      // so articles without calculators don't pay for the bundle. ~30
+      // articles saved ~57 KB each before this change.
+      if (DN.CALC_SLUGS && DN.CALC_SLUGS.indexOf(DN.currentSlug && DN.currentSlug()) !== -1) {
+        idle(function () {
+          DN.ensureCalculatorBundle().then(function () {
+            if (typeof DN.autoInjectCalculators === 'function') {
+              DN.autoInjectCalculators(DN.currentSlug());
+            }
+            try { DN.applyTextOnly(curLang); } catch (e) {}
+          }).catch(function () {});
+        }, { timeout: 1800 });
+      }
       // 2026-05-07 — yellow article-footer tip card disabled per user.
       // The teal-bordered DN.injectBMCFooter card on every page is enough;
       // no need for a second 「請我喝杯咖啡」 inside articles.

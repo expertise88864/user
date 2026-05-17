@@ -417,6 +417,55 @@ def check_homepage_card_attrs():
             err('index.html', f'{len(missing_tag)} cards missing data-tag-en: {", ".join(missing_tag[:5])}{"..." if len(missing_tag) > 5 else ""}')
 
 
+# ─── 10h. Bundle-loader slug allow-lists must match the maps ──────
+# DN.DIAGRAM_SLUGS in blog-shared.js gates loading blog-diagrams.min.js
+# (~100 KB). It MUST match the keys of DN.MED_DIAGRAM_MAP in
+# blog-diagrams.js — drift means either (a) an article that has a diagram
+# defined but never loads the bundle, or (b) bundle loads but no diagram
+# to inject (which is the original waste we fixed on 2026-05-17).
+# Same story for DN.CALC_SLUGS ↔ DN.CALC_ORDER.
+def check_diagram_calc_slug_lists():
+    shared = ROOT / 'blog' / 'blog-shared.js'
+    diagrams = ROOT / 'blog' / 'blog-diagrams.js'
+    calc = ROOT / 'blog' / 'blog-calculators.js'
+    if not (shared.exists() and diagrams.exists() and calc.exists()):
+        return
+    sh = shared.read_text(encoding='utf-8')
+    di = diagrams.read_text(encoding='utf-8')
+    ca = calc.read_text(encoding='utf-8')
+
+    def array_slugs(src, var_name):
+        m = re.search(rf"DN\.{re.escape(var_name)}\s*=\s*\[([^\]]*)\]", src)
+        if not m:
+            return None
+        return set(re.findall(r"'([a-z0-9-]+)'", m.group(1)) +
+                   re.findall(r'"([a-z0-9-]+)"', m.group(1)))
+
+    def map_keys(src, var_name):
+        m = re.search(rf"DN\.{re.escape(var_name)}\s*=\s*\{{([\s\S]*?)\n\s*\}};", src)
+        if not m:
+            return None
+        return set(re.findall(r"'([a-z0-9-]+)'\s*:", m.group(1)) +
+                   re.findall(r'"([a-z0-9-]+)"\s*:', m.group(1)))
+
+    pairs = [
+        ('DIAGRAM_SLUGS', 'MED_DIAGRAM_MAP', sh, di),
+        ('CALC_SLUGS',    'CALC_ORDER',      sh, ca),
+    ]
+    for allow_name, map_name, allow_src, map_src in pairs:
+        allow = array_slugs(allow_src, allow_name)
+        keys = map_keys(map_src, map_name)
+        if allow is None or keys is None:
+            continue
+        only_allow = allow - keys
+        only_map = keys - allow
+        if only_allow:
+            err('blog/blog-shared.js', f'DN.{allow_name} contains slugs not in DN.{map_name}: {sorted(only_allow)} — these will trigger bundle load but find no entry')
+        if only_map:
+            err(f'blog/blog-{("diagrams" if "DIAGRAM" in map_name else "calculators")}.js',
+                f'DN.{map_name} has slugs not in DN.{allow_name}: {sorted(only_map)} — these articles will NOT load the bundle and the diagram/calculator will silently not render')
+
+
 # ─── 11. robots.txt sitemap line ─────────────────────────────────────
 def check_robots():
     fp = ROOT / 'robots.txt'
@@ -446,6 +495,7 @@ def main():
     check_no_js_corruption()
     check_no_inline_sup_refs()
     check_homepage_card_attrs()
+    check_diagram_calc_slug_lists()
     check_robots()
 
     if warnings:
