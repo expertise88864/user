@@ -359,6 +359,33 @@ def check_no_js_corruption():
                     break  # one error per file is enough
 
 
+# ─── 10f. No inline <sup>N</sup> citation refs in article body ───────
+# DermNotes writes patient-facing 衛教 + journal-club content. Vancouver-
+# style superscript citations in every paragraph make the text feel like
+# a paper, breaking the reading flow. References stay at the bottom
+# (<ol class="references">) and readers jump there via the TOC anchor.
+# User asked to remove these on 2026-05-17 after the AI article shipped
+# with 26 sup markers ("每段落後面不需要標註1 2這類引用文獻").
+INLINE_SUP_REF_RE = re.compile(r'<sup><a href="#(?:en-)?ref[0-9]+">[0-9]+</a></sup>')
+def check_no_inline_sup_refs():
+    blog_dir = ROOT / 'blog'
+    if not blog_dir.is_dir():
+        return
+    for fp in sorted(blog_dir.glob('*.html')):
+        if fp.name in {'index.html', 'topics.html'}:
+            continue
+        try:
+            src = fp.read_text(encoding='utf-8')
+        except Exception:
+            continue
+        if 'id="proseZh"' not in src:
+            continue
+        count = len(INLINE_SUP_REF_RE.findall(src))
+        if count > 0:
+            rel = fp.relative_to(ROOT).as_posix()
+            err(rel, f'has {count} inline <sup><a href="#refN">N</a></sup> citations — drop them; references list at the bottom stays intact')
+
+
 # ─── 11. robots.txt sitemap line ─────────────────────────────────────
 def check_robots():
     fp = ROOT / 'robots.txt'
@@ -386,6 +413,7 @@ def main():
     check_no_manual_toc()
     check_article_class()
     check_no_js_corruption()
+    check_no_inline_sup_refs()
     check_robots()
 
     if warnings:
