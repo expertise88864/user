@@ -18,6 +18,18 @@ ROOT = Path(__file__).resolve().parent
 DOMAIN = "https://chendermatologist.com"
 SKIP_DIRS = {".git", "__pycache__", "node_modules", "astro-rewrite"}
 
+# 2026-05-17 — schema type policy: research-summary articles use
+# MedicalScholarlyArticle as the primary @type (they ARE journal-club
+# write-ups). Patient-education articles (cat in {rx, myth, product})
+# use MedicalWebPage to avoid Google de-ranking them as misrepresented
+# academic publications. Single source of truth mirrored in
+# _normalize_schema.py.
+RESEARCH_SLUGS = {
+    'dupilumab-long-term-maintenance',
+    'psoriasis-biologic-monitoring',
+    'ai-dermatology-roles',
+}
+
 REQUIRED_FIELDS = {
     "MedicalScholarlyArticle": [
         "@id",
@@ -147,8 +159,19 @@ def main() -> int:
                 audit_object(rel, canonical, obj, errors, type_counts)
 
         if rel.startswith("blog/") and rel not in {"blog/index.html", "blog/topics.html"} and not is_noindex(src):
-            if "MedicalScholarlyArticle" not in page_types:
-                errors.append(f"{rel}: public blog article missing MedicalScholarlyArticle")
+            # Schema type expectation depends on article category:
+            #   - research articles (cat:'research'): require MedicalScholarlyArticle
+            #   - patient-ed articles (cat in {rx, myth, product}): require MedicalWebPage
+            #     as the PRIMARY article type (MedicalWebPage may still appear
+            #     in addition as the webpage wrapper schema)
+            slug = Path(rel).stem
+            is_research = slug in RESEARCH_SLUGS
+            if is_research:
+                if "MedicalScholarlyArticle" not in page_types:
+                    errors.append(f"{rel}: research article missing MedicalScholarlyArticle")
+            else:
+                if "MedicalScholarlyArticle" in page_types:
+                    errors.append(f"{rel}: patient-ed article should NOT use MedicalScholarlyArticle (Google reserves that for peer-reviewed publications); use MedicalWebPage as primary @type")
             if "MedicalWebPage" not in page_types:
                 errors.append(f"{rel}: public blog article missing MedicalWebPage")
 

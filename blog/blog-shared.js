@@ -195,7 +195,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202605171400';
+        s.src = '/blog/blog-article-visuals.min.js?v=202605171500';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -956,7 +956,7 @@
     if (!DN._articleReadingBundleLoading) {
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202605171400';
+        s.src = '/blog/blog-article-reading.min.js?v=202605171500';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -988,7 +988,7 @@
     if (!DN._articleFooterBundleLoading) {
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202605171400';
+        s.src = '/blog/blog-article-footer.min.js?v=202605171500';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1014,7 +1014,7 @@
     if (!DN._calculatorBundleLoading) {
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202605171400';
+        s.src = '/blog/blog-calculators.min.js?v=202605171500';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1129,7 +1129,7 @@
     if (!DN._hubBundleLoading) {
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202605171400';
+        s.src = '/blog/blog-hub.min.js?v=202605171500';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1634,14 +1634,20 @@
     DN.injectReadProgress();
 
     // ── Re-apply language to ALL injected content (related/share/author-bio/etc.)
-    // Extended schedule (was 100/600/1500): added 3000/5000 because new
-    // injects (NextReads, Newsletter, Giscus, RelatedArticles enhanced, TipCard)
-    // fire via idle() with timeouts up to 4500ms. Without these later passes
-    // the EN toggle won't translate the late-injected content.
-    //
-    // Also: a SAFE MutationObserver — only re-runs when a NEW element with
-    // data-zh / data-en is added (skips DOM changes from applyTextOnly itself).
-    [100, 600, 1500, 3000, 5000].forEach(function (ms) {
+    // 2026-05-17 — trimmed from 5 timers [100,600,1500,3000,5000] to 2.
+    // The SAFE MutationObserver below catches every new [data-zh] node and
+    // re-runs applyTextOnly within 80ms of injection, so the late-timer
+    // safety net was redundant. Keep only:
+    //   100ms — covers any synchronous post-DOMContentLoaded inject
+    //           (e.g. CSS-driven layout reads)
+    //   1500ms — fallback safety in case the MutationObserver missed an
+    //            edge-case insertion (e.g. innerHTML replacement that
+    //            doesn't trigger childList mutations for individual
+    //            descendants we care about)
+    // Net effect: −3 setTimeout invocations per page → ~0.5ms saved on
+    // 3G CPU, but more importantly the 5000ms timer was firing well after
+    // first-interaction and contributing to TBT in some profiles.
+    [100, 1500].forEach(function (ms) {
       setTimeout(function () {
         try { DN.applyTextOnly(curLang); } catch (e) {}
       }, ms);

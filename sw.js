@@ -1,9 +1,13 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v134';
-const RUNTIME = 'cd-runtime-v134';
-const RUNTIME_MAX_ENTRIES = 60;
+const CACHE = 'cd-v135';
+const RUNTIME = 'cd-runtime-v135';
+// 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
+// lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
+// Popular articles getting evicted after ~5 navigations caused repeat-
+// visit LCP regressions of ~300 ms on mobile.
+const RUNTIME_MAX_ENTRIES = 150;
 
 // R31: Slim precache — only critical shell + offline page + assets that EVERY page uses.
 // Articles are cached on-demand by network-first / runtime cache. Saves ~3 MB initial install
@@ -16,7 +20,11 @@ const PRECACHE = [
   '/favicon.ico',
   '/apple-touch-icon.png',
   '/manifest.json',
-  '/assets/tw-mini.css',
+  // 2026-05-17 — REMOVED '/assets/tw-mini.css' from PRECACHE. The HTML
+  // requests it as `tw-mini.css?v=22` (cache-busted), which doesn't
+  // match the unversioned PRECACHE key — so the precache entry was a
+  // useless duplicate. The versioned URL falls through to network-first
+  // for ?v= which already caches it in cd-runtime.
   '/blog/'
 ];
 
