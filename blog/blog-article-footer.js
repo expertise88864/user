@@ -19,6 +19,10 @@
     const article = document.querySelector('article.max-w-3xl');
     if (!article) return;
     if (document.getElementById('dn-related')) return;
+    // 2026-05-17 — _inject_related.py now SSG-renders the same 4 cards
+    // into static HTML at build time (so Googlebot sees them). Skip the
+    // runtime JS injection if the static block already exists.
+    if (document.getElementById('dn-related-static')) return;
     const slug = DN.currentSlug();
     if (!slug) return;
     const all = DN.ARTICLES || [];

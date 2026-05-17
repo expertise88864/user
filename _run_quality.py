@@ -15,6 +15,12 @@ REGEN_STEPS: list[list[str]] = [
     [PY, "_normalize_social_images.py"],
     [PY, "_normalize_css_links.py"],
     [PY, "_normalize_heading_structure.py"],
+    # 2026-05-17 — SSG-render related-articles cards BEFORE _gen_en_pages
+    # so the EN mirror inherits them. Each blog/*.html gets 4 internal
+    # links injected pre-</main>; runtime DN.addRelatedArticles bails
+    # early when it sees #dn-related-static. ~174 internal links added,
+    # all crawlable by Googlebot without JS.
+    [PY, "_inject_related.py"],
     [PY, "_gen_en_pages.py"],
     [PY, "_normalize_schema.py", "--include-en"],
     [PY, "_normalize_social_urls.py"],

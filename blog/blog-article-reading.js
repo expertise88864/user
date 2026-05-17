@@ -10,7 +10,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202605171700';
+          s.src = '/blog/blog-diagrams.min.js?v=202605171800';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
