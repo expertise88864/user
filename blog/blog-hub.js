@@ -357,7 +357,13 @@
           allBtn.textContent = '全部主題';
           allBtn.setAttribute('data-zh', '全部主題');
           allBtn.setAttribute('data-en', 'All topics');
-          allBtn.addEventListener('click', function () { applyFilter('__all__'); });
+          allBtn.addEventListener('click', function () {
+        // Explicit 全部主題 click on homepage unconditionally shows ALL
+        // visible cards (initial 5-curation only applies on first paint).
+        showingAll = true;
+        applyFilter('__all__');
+        if (showMoreBtn) showMoreBtn.style.display = 'none';
+      });
           rowWrap.appendChild(allBtn);
         }
 
@@ -382,7 +388,13 @@
       allBtn.className = 'dn-tag-chip dn-tag-all active';
       allBtn.dataset.tag = '__all__';
       allBtn.textContent = '全部主題';
-      allBtn.addEventListener('click', function () { applyFilter('__all__'); });
+      allBtn.addEventListener('click', function () {
+        // Explicit 全部主題 click on homepage unconditionally shows ALL
+        // visible cards (initial 5-curation only applies on first paint).
+        showingAll = true;
+        applyFilter('__all__');
+        if (showMoreBtn) showMoreBtn.style.display = 'none';
+      });
       tagsDiv.appendChild(allBtn);
 
       Object.keys(DN.TAG_GROUPS).forEach(function (tag) {
@@ -431,9 +443,9 @@
 
       if (tag === '__all__') {
         if (mode === 'homepage' && !showingAll) {
-          // Homepage default: show first N cards in DOM order (the curated picks
-          // from index.html). Don't filter by "newest by date" because the
-          // homepage card list is hand-curated and may not contain all articles.
+          // Initial homepage paint only: show first N curated cards in
+          // DOM order. EXPLICIT 全部主題 click sets showingAll=true (see
+          // chip-click handler) → falls through to the else branch.
           // SKIP unpublished slugs from counting toward the limit so the
           // visible card count stays at N even when an article is hidden.
           var unpub = (DN.unpublishedSlugs && DN.unpublishedSlugs()) || [];
@@ -444,9 +456,6 @@
             var cardSlug = mSlug ? mSlug[1] : '';
             var isUnpub = cardSlug && unpub.indexOf(cardSlug) !== -1;
             var visible = !isUnpub && shown < initialLimit;
-            // Don't fight the unpublished CSS rule — only set display when
-            // the card IS publishable. For unpublished we leave display
-            // alone (CSS keeps it hidden).
             if (!isUnpub) allCards[i].style.display = visible ? 'flex' : 'none';
             if (visible) shown++;
           }
@@ -454,7 +463,16 @@
           if (showMoreBtn) showMoreBtn.style.display = 'block';
         } else {
           showBySlugs(null);
-          setStatus('全部文章');
+          // Count visible cards (skipping unpublished, which CSS hides)
+          var unpubAll = (DN.unpublishedSlugs && DN.unpublishedSlugs()) || [];
+          var totalShown = 0;
+          for (var ai = 0; ai < allCards.length; ai++) {
+            var hrefA = allCards[ai].getAttribute('href') || '';
+            var mSlugA = hrefA.match(/\/blog\/([a-z0-9-]+)/);
+            var sA = mSlugA ? mSlugA[1] : '';
+            if (sA && unpubAll.indexOf(sA) === -1) totalShown++;
+          }
+          setStatus(totalShown + ' 篇文章');
           if (showMoreBtn) showMoreBtn.style.display = 'none';
         }
       } else if (tag !== '__search__') {
@@ -488,17 +506,106 @@
       showMoreBtn = document.createElement('button');
       showMoreBtn.type = 'button';
       showMoreBtn.className = 'dn-show-more';
-      showMoreBtn.textContent = '↓ 顯示全部文章';
+      showMoreBtn.textContent = '↓ 瀏覽全部文章 →';
       showMoreBtn.addEventListener('click', function () {
-        showingAll = true;
-        applyFilter('__all__');
-        showMoreBtn.style.display = 'none';
+        // 2026-05-17 — user wants the show-more action to take them to
+        // the full /blog/ index (which has every article sorted by date),
+        // rather than expanding inline on the homepage. /blog/ is the
+        // canonical "browse all" experience.
+        window.location.href = '/blog/';
       });
-      hub.appendChild(showMoreBtn);
+      hub.appendChild(showMoreMakeAccessibility(showMoreBtn));
+    }
+
+    // 2026-05-17 — On /blog/ (mode='full'), sort existing cards by
+    // DN.ARTICLES date desc AND inject minimal cards for any published
+    // article that isn't in the static HTML yet. Fixes:
+    //   (a) Random order ("文章排序依據要用更新日期")
+    //   (b) /blog/ static HTML missed psoriasis-biologic-monitoring,
+    //       dupilumab-long-term-maintenance, perioral-dermatitis-guide,
+    //       toenail-mechanical-disorders, dermatologic-oral-examination
+    //       (newest 5 were written after this listing was last hand-edited)
+    if (mode === 'full') {
+      try { sortAndCompleteFullList(); } catch (e) { /* ignore */ }
     }
 
     applyFilter('__all__');
     try { DN.markNewArticles(); } catch (e) { /* ignore */ }
   };
+
+  // Accessibility passthrough — kept inline so the click handler binding
+  // above stays a one-liner. Returns the same element.
+  function showMoreMakeAccessibility(btn) {
+    btn.setAttribute('data-zh', '↓ 瀏覽全部文章 →');
+    btn.setAttribute('data-en', '↓ Browse all articles →');
+    btn.setAttribute('aria-label', '瀏覽全部文章');
+    return btn;
+  }
+
+  // For /blog/ index: reorder existing .article-list-item cards by date
+  // (newest first) and inject minimal cards for slugs in DN.ARTICLES that
+  // have no static markup yet.
+  function sortAndCompleteFullList() {
+    var listEl = document.getElementById('dn-article-list')
+      || document.querySelector('.article-list');
+    if (!listEl) return;
+    var articles = (DN.ARTICLES || []).slice().filter(function (a) {
+      return !a.unpublished;
+    });
+    if (articles.length === 0) return;
+    var dateBySlug = {};
+    articles.forEach(function (a) { dateBySlug[a.slug] = a.date || '1970-01-01'; });
+
+    // Gather existing cards by slug
+    var existing = {};
+    var cards = Array.prototype.slice.call(listEl.querySelectorAll('a.article-list-item'));
+    cards.forEach(function (c) {
+      var m = (c.getAttribute('href') || '').match(/\/blog\/([a-z0-9-]+)/);
+      if (m) existing[m[1]] = c;
+    });
+
+    // Build minimal card for any article missing from DOM
+    var generic_svg = '<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none">'
+      + '<rect x="6" y="6" width="28" height="28" rx="6" fill="#f1ece4" stroke="#4d6358" stroke-width="1.4"/>'
+      + '<line x1="11" y1="14" x2="29" y2="14" stroke="#4d6358" stroke-width="1.4" stroke-linecap="round"/>'
+      + '<line x1="11" y1="20" x2="29" y2="20" stroke="#4d6358" stroke-width="1.4" stroke-linecap="round"/>'
+      + '<line x1="11" y1="26" x2="22" y2="26" stroke="#4d6358" stroke-width="1.4" stroke-linecap="round"/>'
+      + '</svg>';
+    var catLabelZh = { rx: '處置 / 治療', myth: '迷思破解', research: '最新研究', note: '學習筆記' };
+    var catLabelEn = { rx: 'Treatment', myth: 'Myth-busting', research: 'Latest Research', note: 'Study Notes' };
+    articles.forEach(function (a) {
+      if (existing[a.slug]) return;
+      var card = document.createElement('a');
+      card.href = '/blog/' + a.slug;
+      card.className = 'article-list-item';
+      card.dataset.cat = a.cat || 'note';
+      if (a.tag_en) card.dataset.tagEn = a.tag_en;
+      var clz = catLabelZh[a.cat || 'note'] || '文章';
+      var cle = catLabelEn[a.cat || 'note'] || 'Article';
+      card.innerHTML =
+        '<div class="al-icon cat-' + (a.cat || 'note') + '">' + generic_svg + '</div>' +
+        '<div class="al-body"><div class="al-meta">' +
+          '<span class="chip cat-' + (a.cat || 'note') + '" data-zh="' + clz + '" data-en="' + cle + '">' + clz + '</span>' +
+          (a.tag ? '<span class="chip tag" data-zh="' + a.tag + '" data-en="' + (a.tag_en || a.tag) + '">' + a.tag + '</span>' : '') +
+          '<time>' + (a.date || '') + '</time>' +
+        '</div>' +
+        '<h2 data-zh="' + (a.title || '') + '" data-en="' + (a.title_en || a.title || '') + '">' + (a.title || '') + '</h2>' +
+        '</div><div class="al-arrow">→</div>';
+      listEl.appendChild(card);
+      existing[a.slug] = card;
+    });
+
+    // Sort: descending by date (newest first), tie-break by slug for stability
+    var ordered = Array.prototype.slice.call(listEl.querySelectorAll('a.article-list-item'))
+      .sort(function (a, b) {
+        var sa = (a.getAttribute('href') || '').match(/\/blog\/([a-z0-9-]+)/);
+        var sb = (b.getAttribute('href') || '').match(/\/blog\/([a-z0-9-]+)/);
+        var da = sa ? (dateBySlug[sa[1]] || '0000-00-00') : '0000-00-00';
+        var db = sb ? (dateBySlug[sb[1]] || '0000-00-00') : '0000-00-00';
+        if (da !== db) return db < da ? -1 : 1;
+        return (sa ? sa[1] : '') < (sb ? sb[1] : '') ? -1 : 1;
+      });
+    ordered.forEach(function (c) { listEl.appendChild(c); }); // re-append = move to end in new order
+  }
 
 })();
