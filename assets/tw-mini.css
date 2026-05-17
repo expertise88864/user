@@ -3,10 +3,11 @@
    once AdSense approval is granted. The DOM remains intact for fast re-enable. */
 .ad-slot{display:none!important}
 /* WCAG 2.4.1 "Skip to main content" link — visually hidden until keyboard focus.
-   Without this rule the 跳至主要內容 link renders as plain text at the top of
-   every page (user-visible bug noticed 2026-05-17). */
-.skip-to-main{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;color:#fff;background:#0e7c86;padding:8px 14px;border-radius:0 0 8px 0;text-decoration:none;font-weight:700;font-size:14px;z-index:100}
-.skip-to-main:focus{position:fixed;left:0;top:0;width:auto;height:auto;overflow:visible;outline:2px solid #fff;outline-offset:2px}
+   2026-05-17 v2: promoted the article-inline version into the global stylesheet
+   (deep-green pill on focus with shadow + larger padding) so we can delete 104
+   inline duplicates and save ~32 KB total HTML weight. */
+.skip-to-main{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999}
+.skip-to-main:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;background:#0c5159;color:#fff;padding:10px 18px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.2)}
 /* CLS prevention — reserve space for elements JS will inject after first
    paint. Vercel Speed Insights flagged CLS=0.2 (Needs Improvement) on
    2026-05-17. Root cause: #dn-hub static fallback was ~150px, bindArticleHub

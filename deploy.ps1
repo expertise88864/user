@@ -159,6 +159,30 @@ if ($hasRemote) {
     Write-Host "      (no remote yet — skipping pull)" -ForegroundColor DarkGray
 }
 
+# 5b. pre-commit quality checks (added 2026-05-17)
+# Same gates Vercel + GH Actions will run. Catching failures locally before
+# push saves a CI round-trip and a broken-deploy email. The check is fast
+# (~30s) compared to a failed CI build + redeploy (~3-5 min).
+$pyExe = (Get-Command python -ErrorAction SilentlyContinue).Source
+if (-not $pyExe) { $pyExe = (Get-Command python3 -ErrorAction SilentlyContinue).Source }
+if ($pyExe -and (Test-Path "_run_quality.py")) {
+    Write-Host ""
+    Write-Host "[3b/6] Running quality gates (meta / runtime-smoke / a11y / etc)..."
+    & $pyExe _run_quality.py check
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host ""
+        Write-Host "[FAIL] Quality gate(s) failed locally — CI would reject this push." -ForegroundColor Red
+        $skip = Read-Host "Push anyway? (y = bypass + likely fail in CI, anything else = abort)"
+        if ($skip -ne 'y' -and $skip -ne 'Y') {
+            Write-Host "[aborted] Fix the gate errors above and re-run deploy." -ForegroundColor Yellow
+            return
+        }
+        Write-Host "[warn] Bypassing gate failure — CI will likely fail too." -ForegroundColor Yellow
+    } else {
+        Write-Host "[ok] All quality gates pass." -ForegroundColor Green
+    }
+}
+
 # 6. stage
 Write-Host ""
 Write-Host "[4/6] Staging changes..."
