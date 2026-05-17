@@ -540,13 +540,17 @@ def transform(src: str, zh_canonical_path: str, en_canonical_path: str, source_r
     )
     s = set_meta(s, en_title, en_desc)
     s = localize_jsonld(s, en_title, en_desc)
-    # AdSense audit period: force noindex on ALL en/ mirrors. They are machine-
-    # translated from data-en attrs and risk being scored as low-quality. Once
-    # AdSense approves and an article gets a real human translation, opt that
-    # specific page out by listing it in EN_INDEX_ALLOWLIST below.
-    EN_INDEX_ALLOWLIST: set[str] = set()
-    force_noindex = (source_rel or '') not in EN_INDEX_ALLOWLIST
-    if force_noindex or uses_generic_meta or visible_cjk_count(s) > 500:
+    # 2026-05-17 — user opted in to EN indexing. Default is now INDEXABLE;
+    # we only force noindex when the EN page fails a quality guard:
+    #   - generic meta (title/desc still has zh fallback)
+    #   - too much visible CJK left after applyTextOnly (means data-en
+    #     translations are missing for big chunks; that page renders as zh
+    #     in English locale → low-quality penalty risk)
+    # When a specific slug needs to stay noindex (e.g. an in-progress
+    # translation), add it to EN_NOINDEX_BLOCKLIST below.
+    EN_NOINDEX_BLOCKLIST: set[str] = set()
+    blocked = (source_rel or '') in EN_NOINDEX_BLOCKLIST
+    if blocked or uses_generic_meta or visible_cjk_count(s) > 500:
         s = set_noindex(s)
 
     s = re.sub(r'<html\s+lang="[^"]*"', '<html lang="en"', s, count=1)
