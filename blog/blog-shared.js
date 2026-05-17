@@ -195,7 +195,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202605172100';
+        s.src = '/blog/blog-article-visuals.min.js?v=202605172200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -469,7 +469,16 @@
     }
     function go() {
       var m = currentMatches[activeIdx];
-      if (m) location.href = safeSiteUrl(m.url);
+      if (m) {
+        try {
+          if (typeof gtag === 'function') gtag('event', 'search_result_click', {
+            search_term: (input.value || '').slice(0, 80),
+            result_url: m.url,
+            result_position: activeIdx,
+          });
+        } catch (e) {}
+        location.href = safeSiteUrl(m.url);
+      }
     }
 
     // Public API for static nav button to call
@@ -1009,7 +1018,7 @@
     if (!DN._articleReadingBundleLoading) {
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202605172100';
+        s.src = '/blog/blog-article-reading.min.js?v=202605172200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1041,7 +1050,7 @@
     if (!DN._articleFooterBundleLoading) {
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202605172100';
+        s.src = '/blog/blog-article-footer.min.js?v=202605172200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1067,7 +1076,7 @@
     if (!DN._calculatorBundleLoading) {
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202605172100';
+        s.src = '/blog/blog-calculators.min.js?v=202605172200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1182,7 +1191,7 @@
     if (!DN._hubBundleLoading) {
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202605172100';
+        s.src = '/blog/blog-hub.min.js?v=202605172200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1427,6 +1436,16 @@
         fire('internal_link', { destination: a.getAttribute('href'), source: location.pathname });
       });
     });
+    // Related-articles card clicks (SSG-injected #dn-related-static + JS-injected #dn-related)
+    // Delegated handler so both SSG and runtime cards fire the same event.
+    document.addEventListener('click', function (e) {
+      var card = e.target.closest && e.target.closest('a.dn-related-card');
+      if (!card) return;
+      fire('related_card_click', {
+        destination: card.getAttribute('href') || '',
+        source: location.pathname,
+      });
+    }, { passive: true });
     // Track 75% scroll depth on articles (reading completion proxy)
     if (document.querySelector('article .prose')) {
       let fired = false;
@@ -1546,6 +1565,22 @@
     apply(curLang);
     DN.addReadingProgress();
     DN.initCmdK();        // search button must work immediately on click
+    // 2026-05-17 — wire up the SearchAction declared in WebSite JSON-LD.
+    // Google's sitelinks search box sends users to /?q=keyword. Auto-open
+    // Cmd+K and seed the query so the contract is honored.
+    try {
+      var qp = new URLSearchParams(location.search).get('q');
+      if (qp && qp.trim() && DN.openSearch) {
+        setTimeout(function () {
+          DN.openSearch();
+          var inp = document.getElementById('dn-cmdk-input');
+          if (inp) {
+            inp.value = qp;
+            inp.dispatchEvent(new Event('input', { bubbles: true }));
+          }
+        }, 50);
+      }
+    } catch (e) { /* ignore */ }
     DN.injectUnpublishedBanner();
     DN.hideUnpublishedCards();
     // ─── Deferred (no first-paint impact) ───

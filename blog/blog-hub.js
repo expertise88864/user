@@ -375,7 +375,10 @@
           btn.textContent = tag;
           btn.setAttribute('data-zh', tag);
           btn.setAttribute('data-en', (DN.TAG_EN && DN.TAG_EN[tag]) || tag);
-          btn.addEventListener('click', function () { applyFilter(tag); });
+          btn.addEventListener('click', function () {
+            applyFilter(tag);
+            try { if (typeof gtag === 'function') gtag('event', 'tag_chip_click', { tag: tag, page_path: location.pathname }); } catch (e) {}
+          });
           rowWrap.appendChild(btn);
         });
 
