@@ -21,6 +21,9 @@ REGEN_STEPS: list[list[str]] = [
     # early when it sees #dn-related-static. ~174 internal links added,
     # all crawlable by Googlebot without JS.
     [PY, "_inject_related.py"],
+    # Refresh 404.html "popular articles" with 6 newest from DN.ARTICLES
+    # so the list doesn't drift as new content lands.
+    [PY, "_inject_404.py"],
     [PY, "_gen_en_pages.py"],
     [PY, "_normalize_schema.py", "--include-en"],
     [PY, "_normalize_social_urls.py"],

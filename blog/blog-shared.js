@@ -195,7 +195,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202605171900';
+        s.src = '/blog/blog-article-visuals.min.js?v=202605172100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -369,20 +369,73 @@
         .catch(function () { /* offline ok */ });
     }
 
+    // 2026-05-17 — Pagefind integration. Lazy-load /pagefind/pagefind.js on
+    // first open() so the substring fallback works immediately while
+    // the CJK-aware BM25 index loads in the background. When pagefind
+    // resolves, future renders use pagefind.search() instead of the
+    // INDEX substring scan.
+    var PAGEFIND = null;
+    var PAGEFIND_LOADING = false;
+    function loadPagefind() {
+      if (PAGEFIND || PAGEFIND_LOADING) return;
+      PAGEFIND_LOADING = true;
+      // Use fetch+import dance because Vite/Pagefind module path is hard-coded.
+      import('/pagefind/pagefind.js').then(function (mod) {
+        PAGEFIND = mod;
+        // Re-render with pagefind if the overlay is still open
+        if (overlay.classList.contains('open')) render(input.value);
+      }).catch(function () {
+        // Index not built locally (dev) — silently fall back to INDEX.
+        PAGEFIND_LOADING = false;
+      });
+    }
+
     function open() {
       if (!INDEX) INDEX = buildIndex();
       overlay.classList.add('open');
       input.value = '';
       input.focus();
       render('');
-      // Fire-and-forget: enrich index for body-content search; re-render if user is still searching
+      // Kick off lazy loads — both pagefind (preferred) and the legacy
+      // fulltext json (fallback). Whichever responds first wins next render.
+      loadPagefind();
       loadFulltextIndex().then(function () { if (overlay.classList.contains('open')) render(input.value); });
     }
     function close() {
       overlay.classList.remove('open');
     }
+
+    function renderPagefind(q) {
+      if (!PAGEFIND) return false;  // signal fallback to substring path
+      // PAGEFIND.search is async; show "searching" placeholder, then update
+      PAGEFIND.search(q).then(function (res) {
+        if (!overlay.classList.contains('open') || input.value.trim() !== q) return;
+        Promise.all(res.results.slice(0, 10).map(function (r) { return r.data(); })).then(function (datas) {
+          var matches = datas.map(function (d) {
+            // Drop the URL query/hash; show title + excerpt as meta
+            var clean = d.url.split('?')[0].split('#')[0];
+            return { url: clean, title: d.meta.title || clean, meta: d.excerpt || (d.meta.description || '').slice(0, 80) };
+          });
+          currentMatches = matches; activeIdx = 0;
+          if (matches.length === 0) {
+            results.innerHTML = '<div id="dn-cmdk-empty">找不到符合的內容</div>';
+            return;
+          }
+          results.innerHTML = matches.map(function (m, i) {
+            return '<a class="row' + (i === 0 ? ' active' : '') + '" href="' + escapeHtml(safeSiteUrl(m.url)) + '" data-idx="' + i + '">' +
+              '<span class="t">' + escapeHtml(m.title) + '</span>' +
+              '<span class="m">' + m.meta + '</span>' +  // excerpt has <mark> tags from pagefind; keep as HTML
+              '</a>';
+          }).join('');
+        });
+      });
+      return true;
+    }
+
     function render(q) {
       q = (q || '').toLowerCase().trim();
+      // Prefer pagefind once it's loaded
+      if (q && renderPagefind(q)) return;
       var matches;
       if (!q) {
         matches = INDEX.slice(0, 8);
@@ -956,7 +1009,7 @@
     if (!DN._articleReadingBundleLoading) {
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202605171900';
+        s.src = '/blog/blog-article-reading.min.js?v=202605172100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -988,7 +1041,7 @@
     if (!DN._articleFooterBundleLoading) {
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202605171900';
+        s.src = '/blog/blog-article-footer.min.js?v=202605172100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1014,7 +1067,7 @@
     if (!DN._calculatorBundleLoading) {
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202605171900';
+        s.src = '/blog/blog-calculators.min.js?v=202605172100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1129,7 +1182,7 @@
     if (!DN._hubBundleLoading) {
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202605171900';
+        s.src = '/blog/blog-hub.min.js?v=202605172100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;

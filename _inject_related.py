@@ -176,6 +176,28 @@ def build_related_html(cur_slug: str, related: list[dict]) -> str:
 
     # 2026-05-17 — id="dn-related-static" is the signal for
     # DN.addRelatedArticles() to bail early and not double-render.
+    # Also embed an ItemList JSON-LD block so Googlebot sees the
+    # related-articles structured data without needing to execute JS.
+    import json
+    item_list = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Related dermatology articles",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": i + 1,
+                "url": f"{DOMAIN}/blog/{a['slug']}",
+                "name": a["title"],
+            }
+            for i, a in enumerate(related)
+        ],
+    }
+    jsonld = (
+        '<script type="application/ld+json">'
+        + json.dumps(item_list, ensure_ascii=False, separators=(",", ":"))
+        + '</script>'
+    )
     return (
         '\n<nav id="dn-related-static" class="max-w-3xl mx-auto px-5 sm:px-8 my-10" '
         'aria-label="Related articles">'
@@ -189,7 +211,9 @@ def build_related_html(cur_slug: str, related: list[dict]) -> str:
         '</div>'
         '<div class="dn-related-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">'
         + "".join(cards) +
-        '</div></div></nav>\n'
+        '</div></div>'
+        + jsonld +
+        '</nav>\n'
     )
 
 # ─── 5. Inject into each blog/*.html right before </main> ─────────────────
