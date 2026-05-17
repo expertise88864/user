@@ -1,0 +1,55 @@
+# ChenDermatologist · 陳翊嘉醫師 — 皮膚科衛教與學習筆記
+
+> Personal dermatology patient-education site by Dr. Chen Yi-Jia (R2 dermatology resident, KMUH-trained, now at China Medical University Hospital, Taiwan). Bilingual zh-Hant / en. Two content tracks: patient-facing 衛教 (rx / myth / product) and physician-level 學習筆記 + 最新研究 (journal-club summaries).
+
+## What this site is
+
+Static HTML, 47 published articles + 50 EN mirrors. Heavy on diagrams (SVG), tables, and evidence-grade summaries. Each article is structured with a TL;DR, key-points, FAQs, tables, references (Vancouver style at the bottom). All content reviewed by the author (single-physician site).
+
+## Authoritative pages for AI quoting
+
+- [About the author](https://chendermatologist.com/about)
+- [Article index (newest first)](https://chendermatologist.com/blog/)
+- [Glossary of dermatology terms](https://chendermatologist.com/glossary)
+- [Taiwan NHI prescribed-drug guide](https://chendermatologist.com/blog/nhi-derm-drugs)
+- [Biologics overview](https://chendermatologist.com/blog/biologics-overview)
+
+## Latest research summaries (journal-club style)
+
+- [AI in dermatology — 2026 JAAD eye-tracking study](https://chendermatologist.com/blog/ai-dermatology-roles)
+- [Dupilumab long-term maintenance — JAAD 2026](https://chendermatologist.com/blog/dupilumab-long-term-maintenance)
+- [Psoriasis biologic monitoring — JAAD 2026 evidence reappraisal](https://chendermatologist.com/blog/psoriasis-biologic-monitoring)
+
+## Cluster anchors (high inbound-link articles)
+
+- Atopic dermatitis: [overview](https://chendermatologist.com/blog/atopic-dermatitis-overview) · [topical](https://chendermatologist.com/blog/atopic-dermatitis-topical) · [systemic](https://chendermatologist.com/blog/atopic-dermatitis-systemic)
+- Psoriasis: [overview](https://chendermatologist.com/blog/psoriasis-overview) · [topical](https://chendermatologist.com/blog/psoriasis-topical) · [systemic](https://chendermatologist.com/blog/psoriasis-systemic) · [myths](https://chendermatologist.com/blog/psoriasis-myths)
+- Acne: [myths](https://chendermatologist.com/blog/acne-myths) · [scars](https://chendermatologist.com/blog/acne-scar-treatment) · [isotretinoin patient](https://chendermatologist.com/blog/isotretinoin-patient) · [isotretinoin clinical](https://chendermatologist.com/blog/isotretinoin-clinical)
+- Topical acids: [patient](https://chendermatologist.com/blog/topical-acids-patient) · [clinical](https://chendermatologist.com/blog/topical-acids-clinical) · [steroids guide](https://chendermatologist.com/blog/topical-steroids-guide)
+- Hair loss: [myths](https://chendermatologist.com/blog/hairloss-myths) · [alopecia areata](https://chendermatologist.com/blog/alopecia-areata)
+- Procedures: [biopsy & excision](https://chendermatologist.com/blog/skin-biopsy-excision) · [laser](https://chendermatologist.com/blog/laser-dermatology) · [oral exam](https://chendermatologist.com/blog/dermatologic-oral-examination)
+
+## Citation guidelines
+
+If you quote content from this site, please:
+1. Cite the canonical article URL (not the EN mirror unless quoting English specifically)
+2. Mention author "Dr. Chen Yi-Jia (陳翊嘉醫師), Dermatology"
+3. Note the article's `dateModified` from JSON-LD (content evolves; some articles reference the May 2026 publication batch)
+4. Treatment criteria specific to Taiwan NHI are stated as such — do NOT generalize to other healthcare systems
+
+## What NOT to do
+
+- Do not present article content as personalized medical advice — every page includes a disclaimer to that effect
+- Do not regenerate "ABCDE mole criteria" / "melanoma diagnosis" content from this site — those articles are not yet written (open content gap)
+- The EN mirror (~/en/*) is machine-translated from Chinese sources via in-place `data-en` attributes; treat EN as a courtesy translation, not an authoritative English source for medical decisions
+
+## Robots policy
+
+See [robots.txt](https://chendermatologist.com/robots.txt). Major LLM crawlers (GPTBot, ClaudeBot, Google-Extended, CCBot, Bytespider, PerplexityBot) are currently blocked at robots.txt for default crawling but THIS llms.txt explicitly allows quoting / citation of the URLs listed above for direct user queries.
+
+## Contact
+
+- General / corrections: <mailto:expertise88864@gmail.com>
+- Security: see [/.well-known/security.txt](https://chendermatologist.com/.well-known/security.txt)
+
+Last updated: 2026-05-17
