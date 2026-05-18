@@ -47,33 +47,63 @@ def clean_text(src: str) -> str:
     return re.sub(r"\s+", " ", html.unescape(src)).strip()
 
 
-def compute_metrics(src: str, lang: str = "zh") -> dict[str, int]:
-    """Estimate wordCount + reading minutes from the main article body.
+def _extract_prose_container(src: str, prose_id: str) -> str | None:
+    """Find <div id="proseZh"> (or proseEn) and return its inner HTML,
+    correctly handling nested <div> blocks by counting open/close tags.
 
-    For ZH pages: count CJK chars at 300/min + Latin words at 200/min.
-    For EN pages: count Latin words from BOTH visible text AND the
-    data-en attribute values that DN.applyTextOnly() swaps in at runtime.
-    Without that, EN articles would report 2-3 min based on the few
-    visible Latin tokens alone.
+    A lazy regex match like `<div ...>([\\s\\S]*?)</div>` stops at the
+    FIRST inner </div>, truncating the content to ~200 chars. We need
+    the full prose body, so walk forward counting nesting depth.
     """
-    article_m = re.search(r"<article\b[^>]*>([\s\S]*?)</article>", src, re.I)
-    main_m = re.search(r"<main\b[^>]*>([\s\S]*?)</main>", src, re.I)
-    body_src = (article_m.group(1) if article_m
-                else (main_m.group(1) if main_m else src))
+    open_m = re.search(rf'<div\b[^>]*\bid="{prose_id}"[^>]*>', src, re.I)
+    if not open_m:
+        return None
+    pos = open_m.end()
+    depth = 1
+    div_re = re.compile(r'<(/?)div\b[^>]*>', re.I)
+    while depth > 0:
+        m = div_re.search(src, pos)
+        if not m:
+            return src[open_m.end():]  # unclosed — return rest of doc
+        if m.group(1) == '/':
+            depth -= 1
+        else:
+            depth += 1
+        pos = m.end()
+        if depth == 0:
+            return src[open_m.end():m.start()]
+    return None
+
+
+def compute_metrics(src: str, lang: str = "zh") -> dict[str, int]:
+    """Estimate wordCount + reading minutes from the main prose container.
+
+    Mirrors DN.addReadingMeta() in blog/blog-article-reading.js so the
+    JSON-LD signal matches what the on-page hero card shows to users:
+      - prefer #proseZh / #proseEn over the whole <article> (skips
+        references, footer ld+json, related cards, etc.)
+      - reading speed: 350 CJK chars/min + 200 Latin/digit tokens/min
+      - count [A-Za-z0-9]+ (same regex as the JS counter)
+    """
+    prose_id = "proseEn" if lang.startswith("en") else "proseZh"
+    body_src = _extract_prose_container(src, prose_id)
+    if body_src is None:
+        article_m = re.search(r"<article\b[^>]*>([\s\S]*?)</article>", src, re.I)
+        body_src = article_m.group(1) if article_m else src
 
     if lang.startswith("en"):
         data_en_text = " ".join(re.findall(r'data-en="([^"]*)"', body_src))
         visible_text = clean_text(re.sub(r'\sdata-en="[^"]*"', '', body_src))
         text = data_en_text + " " + visible_text
-        latin_words = len(re.findall(r"\b[A-Za-z][A-Za-z'\-]{1,}\b", text))
-        minutes = max(1, round(latin_words / 200))
-        return {"wordCount": latin_words, "readingMinutes": minutes}
+        tokens = len(re.findall(r"[A-Za-z0-9]+", text))
+        minutes = max(2, round(tokens / 200))
+        return {"wordCount": tokens, "readingMinutes": minutes}
 
-    text = clean_text(body_src)
+    text = clean_text(body_src).replace(" ", "")
     cjk_chars = len(re.findall(r"[一-鿿]", text))
-    latin_words = len(re.findall(r"\b[A-Za-z][A-Za-z'\-]{1,}\b", text))
-    minutes = max(1, round(cjk_chars / 300 + latin_words / 200))
-    return {"wordCount": cjk_chars + latin_words, "readingMinutes": minutes}
+    tokens = len(re.findall(r"[A-Za-z0-9]+", text))
+    minutes = max(2, round(cjk_chars / 350 + tokens / 200))
+    return {"wordCount": cjk_chars + tokens, "readingMinutes": minutes}
 
 
 SPEAKABLE_SPEC = {

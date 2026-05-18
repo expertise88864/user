@@ -1,18 +1,31 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""SSG-inject a visible reading-time badge directly under the article H1.
+"""Strip any SSG-injected reading-time badge from blog articles.
 
-We already compute `timeRequired` in JSON-LD via _normalize_schema.py.
-This script reads that value back out and writes a tiny <p> element
-right after </h1> so:
-  - Users see "閱讀時間約 7 分鐘 · 約 1861 字" at a glance
-  - Google can attach the time to search snippets (HTML signal in addition to JSON-LD)
-  - The text is bilingual via data-zh/data-en, so EN visitors see "~ 7 min read · 1861 words"
+History: I tried SSG-injecting a visible "閱讀時間約 X 分鐘 · 約 Y 字"
+badge right after </h1> to give Googlebot the metric without needing
+JS execution. Two problems surfaced immediately:
 
-Idempotent: detects existing `<p class="dn-reading-time"` and replaces it.
-Skips articles where timeRequired is not yet in JSON-LD (run _normalize_schema.py first).
+  1. The original dedup regex was `class="dn-reading-time"` (literal
+     closing quote) but the inserted markup used additional Tailwind
+     classes (`class="dn-reading-time mt-3 ..."`), so re-runs never
+     stripped the prior badge — every regen accumulated another copy.
 
-Run as part of REGEN_STEPS in _run_quality.py, after _normalize_schema.py.
+  2. DN.addReadingMeta() already injects a styled "hero card" at
+     runtime with its own reading-time + word-count counter. The SSG
+     badge appeared in addition to it AND used a different counting
+     method (longer count because it includes references/footer),
+     producing TWO different reading-time numbers visible on the same
+     page (e.g. "9 分鐘" in the hero + "17 分鐘" in the SSG badge).
+
+The JSON-LD `wordCount` + `timeRequired` set by _normalize_schema.py
+already carries the SEO signal Google needs (and it shows up in the
+indexed page metadata regardless of JS). So we don't need a visible
+SSG badge at all — let DN.addReadingMeta own the on-page UI.
+
+This script now exists purely to STRIP any badge a prior run left
+behind. It runs after _normalize_schema.py in REGEN_STEPS so future
+templates that try to add their own dn-reading-time tag get cleaned.
 """
 from __future__ import annotations
 
@@ -24,62 +37,26 @@ from pathlib import Path
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parent
-DOMAIN = "https://chendermatologist.com"
 
-# Matches existing badge so re-runs are clean.
-EXISTING_BADGE_RE = re.compile(
-    r'\s*<p\s+class="dn-reading-time"[\s\S]*?</p>',
+# Strip BOTH the original buggy form (any number of repeats) and the
+# corrected form so a single pass cleans every previously-injected copy.
+# `class="dn-reading-time[^"]*"` matches the class regardless of extra
+# Tailwind utility classes appended after the name.
+BADGE_RE = re.compile(
+    r'\s*<p\s+class="dn-reading-time[^"]*"[^>]*>[\s\S]*?</p>',
     re.IGNORECASE,
 )
 
-# Pull timeRequired + wordCount from any JSON-LD block on the page.
-TIME_REQUIRED_RE = re.compile(r'"timeRequired":"PT(\d+)M"')
-WORD_COUNT_RE = re.compile(r'"wordCount":(\d+)')
 
-# Find the first </h1> in the document (article title) to anchor injection.
-H1_CLOSE_RE = re.compile(r'</h1>', re.IGNORECASE)
-
-
-def build_badge(minutes: int, word_count: int) -> str:
-    """Build a bilingual reading-time + word-count badge.
-
-    Visual: small muted line under the H1, similar in weight to the existing
-    article meta line ("陳翊嘉醫師 · 更新 2026-...").
-    """
-    zh = f"閱讀時間約 {minutes} 分鐘 · 約 {word_count:,} 字"
-    en = f"{minutes} min read · {word_count:,} words"
-    # Tailwind classes match the rest of the article meta typography.
-    return (
-        '<p class="dn-reading-time mt-3 mb-2 text-[12.5px] text-ink-500" '
-        'aria-label="Estimated reading time">'
-        f'<time datetime="PT{minutes}M" data-zh="{zh}" data-en="{en}">{zh}</time>'
-        '</p>'
-    )
-
-
-def inject_one(path: Path) -> bool:
+def strip_one(path: Path) -> int:
     src = path.read_text(encoding="utf-8")
-    tr_m = TIME_REQUIRED_RE.search(src)
-    wc_m = WORD_COUNT_RE.search(src)
-    if not tr_m or not wc_m:
-        return False
-    minutes = int(tr_m.group(1))
-    word_count = int(wc_m.group(1))
-    badge = build_badge(minutes, word_count)
-
-    # Strip any prior injection so re-runs are idempotent.
-    cleaned = EXISTING_BADGE_RE.sub("", src)
-
-    h1_m = H1_CLOSE_RE.search(cleaned)
-    if not h1_m:
-        return False
-    # Insert right after the first </h1>
-    insert_at = h1_m.end()
-    next_src = cleaned[:insert_at] + badge + cleaned[insert_at:]
-    if next_src == src:
-        return False
-    path.write_text(next_src, encoding="utf-8")
-    return True
+    stripped = BADGE_RE.sub("", src)
+    if stripped == src:
+        return 0
+    # Count how many copies we removed for the summary log.
+    removed = len(BADGE_RE.findall(src))
+    path.write_text(stripped, encoding="utf-8")
+    return removed
 
 
 def main() -> int:
@@ -91,15 +68,21 @@ def main() -> int:
                     continue
                 targets.append(fp)
 
-    changed = 0
-    skipped_no_metric = 0
+    files_changed = 0
+    total_removed = 0
     for fp in targets:
         try:
-            if inject_one(fp):
-                changed += 1
+            removed = strip_one(fp)
+            if removed:
+                files_changed += 1
+                total_removed += removed
         except Exception as exc:
             print(f"[!] {fp.relative_to(ROOT)} failed: {exc}")
-    print(f"Injected reading-time badge into {changed} of {len(targets)} articles")
+    print(
+        f"Stripped {total_removed} stale dn-reading-time badge(s) "
+        f"from {files_changed} articles "
+        f"(JSON-LD wordCount/timeRequired still in place for SEO)"
+    )
     return 0
 
 
