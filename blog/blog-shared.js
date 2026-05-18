@@ -195,7 +195,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202605181000';
+        s.src = '/blog/blog-article-visuals.min.js?v=202605181100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1018,7 +1018,7 @@
     if (!DN._articleReadingBundleLoading) {
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202605181000';
+        s.src = '/blog/blog-article-reading.min.js?v=202605181100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1050,7 +1050,7 @@
     if (!DN._articleFooterBundleLoading) {
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202605181000';
+        s.src = '/blog/blog-article-footer.min.js?v=202605181100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1076,7 +1076,7 @@
     if (!DN._calculatorBundleLoading) {
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202605181000';
+        s.src = '/blog/blog-calculators.min.js?v=202605181100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1191,7 +1191,7 @@
     if (!DN._hubBundleLoading) {
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202605181000';
+        s.src = '/blog/blog-hub.min.js?v=202605181100';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1540,6 +1540,27 @@
           worstINP = 0;
         }
       });
+    } catch (e) { /* ignore */ }
+    // FCP (First Contentful Paint) — fires once at first paint of any
+    // non-white pixel. Cheap signal for actual server + delivery speed.
+    try {
+      const fcpObs = new PerformanceObserver(function (list) {
+        list.getEntries().forEach(function (entry) {
+          if (entry.name === 'first-contentful-paint') {
+            send('FCP', entry.startTime, 'fcp-' + Date.now());
+            fcpObs.disconnect();
+          }
+        });
+      });
+      fcpObs.observe({ type: 'paint', buffered: true });
+    } catch (e) { /* ignore */ }
+    // TTFB (Time to First Byte) — from PerformanceNavigationTiming.
+    // Captures actual edge latency + cold-start cost. Fires once.
+    try {
+      const nav = performance.getEntriesByType('navigation')[0];
+      if (nav && nav.responseStart > 0) {
+        send('TTFB', nav.responseStart, 'ttfb-' + Date.now());
+      }
     } catch (e) { /* ignore */ }
   };
 

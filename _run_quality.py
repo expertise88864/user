@@ -58,6 +58,11 @@ REGEN_STEPS: list[list[str]] = [
     # gets the same prerender(/blog/*) + prefetch(/*) rule set; pages
     # with a native (homepage) speculationrules block are left alone.
     [PY, "_inject_speculation_rules.py"],
+    # 2026-05-18 — Regenerate llms-full.txt (concatenated clean article
+    # text for AI/LLM crawlers like Perplexity, ChatGPT, Claude). Runs
+    # AFTER schema/og normalization so the metadata embedded in each
+    # article section reflects the latest dateModified + timeRequired.
+    [PY, "_gen_llms_full.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [

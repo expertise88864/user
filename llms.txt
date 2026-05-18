@@ -14,6 +14,10 @@ Static HTML, 47 published articles + 50 EN mirrors. Heavy on diagrams (SVG), tab
 - [Taiwan NHI prescribed-drug guide](https://chendermatologist.com/blog/nhi-derm-drugs)
 - [Biologics overview](https://chendermatologist.com/blog/biologics-overview)
 
+## Full-content corpus
+
+- [llms-full.txt](https://chendermatologist.com/llms-full.txt) — all 45 published articles concatenated with metadata (URL / dateModified / section / reading time / tags). Single fetch (~480 KB) for retrieval-augmented generation. Each article body is capped at 6000 chars; fetch the canonical URL for the complete text.
+
 ## Latest research summaries (journal-club style)
 
 - [AI in dermatology — 2026 JAAD eye-tracking study](https://chendermatologist.com/blog/ai-dermatology-roles)
