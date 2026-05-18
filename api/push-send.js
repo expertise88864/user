@@ -18,8 +18,30 @@
 // Auto-cleans dead subscriptions (410 Gone, 404 Not Found).
 
 import webpush from 'web-push';
+import { Buffer } from 'node:buffer';
+import { timingSafeEqual } from 'node:crypto';
 
 export const config = { runtime: 'nodejs' };
+
+// CODE_REVIEW — payload caps so a hostile admin token (or compromised
+// admin device) can't broadcast a 1 MB blob to every subscriber.
+const MAX_TITLE = 100;
+const MAX_BODY = 500;
+const MAX_URL = 500;
+
+function timingSafeBearerEqual(headerValue, expectedToken) {
+  if (!expectedToken) return false;
+  const expected = `Bearer ${expectedToken}`;
+  const got = String(headerValue || '');
+  if (got.length !== expected.length) {
+    // Length mismatch — do a constant-time compare against a same-length
+    // dummy to keep timing uniform, then return false.
+    const dummy = Buffer.alloc(expected.length, 0);
+    try { timingSafeEqual(Buffer.alloc(expected.length, 0), dummy); } catch {}
+    return false;
+  }
+  return timingSafeEqual(Buffer.from(got), Buffer.from(expected));
+}
 
 export default async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
@@ -27,14 +49,31 @@ export default async function handler(req, res) {
     res.status(405).setHeader('Allow', 'POST').json({ error: 'POST only' });
     return;
   }
-  const auth = req.headers.authorization || '';
-  if (!process.env.ADMIN_TOKEN || auth !== `Bearer ${process.env.ADMIN_TOKEN}`) {
+  // Timing-safe comparison so attackers can't measure response latency
+  // to probe ADMIN_TOKEN byte-by-byte. (CODE_REVIEW)
+  if (!timingSafeBearerEqual(req.headers.authorization, process.env.ADMIN_TOKEN)) {
     res.status(401).json({ error: 'unauthorized' });
     return;
   }
   const { title, body, url, icon, tag } = req.body || {};
   if (!title || !body) {
     res.status(400).json({ error: 'missing title/body' });
+    return;
+  }
+  // Length caps prevent runaway broadcast payloads. Web Push spec
+  // limits typical bodies to ~4 KB encrypted; these caps stay well
+  // under that and keep notification text readable. (CODE_REVIEW)
+  if (typeof title !== 'string' || title.length > MAX_TITLE) {
+    res.status(400).json({ error: `title must be ≤ ${MAX_TITLE} chars` });
+    return;
+  }
+  if (typeof body !== 'string' || body.length > MAX_BODY) {
+    res.status(400).json({ error: `body must be ≤ ${MAX_BODY} chars` });
+    return;
+  }
+  if (url !== undefined && (typeof url !== 'string' || url.length > MAX_URL ||
+      !(url.startsWith('/') || url.startsWith('https://chendermatologist.com/')))) {
+    res.status(400).json({ error: 'url must be relative or under chendermatologist.com' });
     return;
   }
   webpush.setVapidDetails(

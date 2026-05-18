@@ -11,9 +11,10 @@
 
 export const config = { runtime: 'edge' };
 
+// Single allowed origin — `www.` 301s to apex so post-redirect
+// Origin is canonical. (CODE_REVIEW)
 const ALLOWED_ORIGINS = [
   'https://chendermatologist.com',
-  'https://www.chendermatologist.com',
 ];
 
 function corsHeaders(origin) {

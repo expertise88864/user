@@ -14,25 +14,35 @@
 // Currently registered methods:
 //   site.health              → { ok, time, region }    (public)
 //   articles.recent          → { items: [...] }        (public; ≤ 20 items)
-//   articles.bookmark        → { ok }                  (server-side bookmark sync; auth)
-//   articles.unbookmark      → { ok }
-//   articles.bookmarks       → { slugs: [...] }
+//   articles.bookmark        → { ok }                  (DISABLED — see C6 below)
+//   articles.unbookmark      → { ok }                  (DISABLED)
+//   articles.bookmarks       → { slugs: [...] }        (DISABLED)
 //   stats.view               → { ok }                  (increment view count)
 //   stats.top                → { items: [...] }        (top viewed)
 //
-// Auth: methods that mutate state require Authorization: Bearer <SESSION>
-//   Sessions are anonymous opaque tokens stored in localStorage.
-//   For now: SESSION = sha256(IP + userAgent + 'salt'); KV stores per-session
-//   state. No login system yet.
+// Auth (planned, not implemented):
+//   The bookmark methods require Authorization: Bearer <SESSION> but
+//   no session-issuance layer exists yet. Per CODE_REVIEW C6 the
+//   previous implementation accepted any 8-128 char string as a valid
+//   session — anyone could read/write any other user's bookmarks by
+//   guessing or sniffing the string. To re-enable:
+//     1. Add `session.create` method that issues 32-byte tokens bound
+//        to a fingerprint (IP+UA hash with SESSION_SALT), stores
+//        them in KV as `session:<token>` with a 30-day TTL.
+//     2. Update getSession() to validate against KV (look up the
+//        token, return null if missing/expired).
+//     3. Set env var BOOKMARKS_BACKEND=enabled.
 
 export const config = { runtime: 'edge' };
 
 const REPO = process.env.ADMIN_REPO || 'expertise88864/user';
 const BRANCH = process.env.ADMIN_BRANCH || 'main';
 const MAX_BATCH = 20;
+// Single allowed origin — `www.` 301-redirects to apex so the
+// post-redirect browser-sent Origin is already canonical. Including
+// `www.` would widen the allowlist if the 301 ever breaks. (CODE_REVIEW)
 const ALLOWED_ORIGINS = new Set([
   'https://chendermatologist.com',
-  'https://www.chendermatologist.com',
 ]);
 
 function parseLimit(value, fallback = 8) {
@@ -136,7 +146,19 @@ async function kvSmembers(key) {
   return j.result || [];
 }
 
+// CODE_REVIEW C6 — bookmark feature gated until a real session layer
+// exists. Previous getSession() accepted any client-asserted Bearer
+// string with no KV-side issuance, so anyone could read/write any
+// other user's bookmarks by guessing or sniffing the string.
+//
+// Until a server-side session.create method is implemented (issues
+// random tokens bound to IP+UA fingerprint, stored in KV with TTL),
+// the bookmark methods return -32004 Unavailable. Set env var
+// `BOOKMARKS_BACKEND=enabled` ONLY after the issuance layer is wired.
+const BOOKMARKS_BACKEND_ENABLED = process.env.BOOKMARKS_BACKEND === 'enabled';
+
 function getSession(req) {
+  if (!BOOKMARKS_BACKEND_ENABLED) return null;
   const auth = req.headers.get('authorization') || '';
   const m = auth.match(/^Bearer\s+([A-Za-z0-9_-]{8,128})$/);
   return m ? m[1] : null;
@@ -175,7 +197,14 @@ const methods = {
     };
   },
 
+  // CODE_REVIEW C6 — bookmark methods return -32004 Unavailable
+  // until a real session-issuance layer exists. Set env
+  // BOOKMARKS_BACKEND=enabled to re-enable AFTER wiring up
+  // server-side session.create with KV-stored tokens.
   'articles.bookmark': async ({ slug }, ctx) => {
+    if (!BOOKMARKS_BACKEND_ENABLED) {
+      throw { code: -32004, message: 'Bookmark backend not available' };
+    }
     if (!ctx.session) throw { code: -32001, message: 'Unauthorized' };
     if (!isValidSlug(slug)) throw { code: -32602, message: 'Invalid slug' };
     await kvSadd(`bm:${ctx.session}`, slug);
@@ -183,6 +212,9 @@ const methods = {
   },
 
   'articles.unbookmark': async ({ slug }, ctx) => {
+    if (!BOOKMARKS_BACKEND_ENABLED) {
+      throw { code: -32004, message: 'Bookmark backend not available' };
+    }
     if (!ctx.session) throw { code: -32001, message: 'Unauthorized' };
     if (!isValidSlug(slug)) throw { code: -32602, message: 'Invalid slug' };
     await kvSrem(`bm:${ctx.session}`, slug);
@@ -190,6 +222,9 @@ const methods = {
   },
 
   'articles.bookmarks': async (_p, ctx) => {
+    if (!BOOKMARKS_BACKEND_ENABLED) {
+      throw { code: -32004, message: 'Bookmark backend not available' };
+    }
     if (!ctx.session) throw { code: -32001, message: 'Unauthorized' };
     const slugs = await kvSmembers(`bm:${ctx.session}`);
     return { slugs };

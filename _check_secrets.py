@@ -38,10 +38,29 @@ SENSITIVE_TRACKED_SUFFIXES = (".pem", ".key", ".p12", ".pfx")
 SECRET_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ("GitHub classic PAT", re.compile(r"\bghp_[A-Za-z0-9_]{30,}\b")),
     ("GitHub fine-grained PAT", re.compile(r"\bgithub_pat_[A-Za-z0-9_]{50,}\b")),
+    # CODE_REVIEW — GitHub OAuth client secret is 40-char hex; checked
+    # by name (`OAUTH_CLIENT_SECRET=…`) to avoid false positives on
+    # arbitrary SHA-1 hashes.
+    ("GitHub OAuth client secret",
+     re.compile(r"OAUTH_CLIENT_SECRET\s*=\s*['\"]?([a-f0-9]{40})['\"]?", re.I)),
     ("OpenAI API key", re.compile(r"\bsk-(?:proj-)?[A-Za-z0-9_-]{32,}\b")),
     ("Anthropic API key", re.compile(r"\bsk-ant-[A-Za-z0-9_-]{24,}\b")),
     ("AWS access key", re.compile(r"\bAKIA[0-9A-Z]{16}\b")),
     ("Private key block", re.compile(r"-----BEGIN (?:RSA |OPENSSH |EC |DSA )?PRIVATE KEY-----")),
+    # CODE_REVIEW — Vercel KV REST tokens look like `Atxxxx…` (Upstash
+    # tokens are URL-safe base64, ~50+ chars). Checked by name so we
+    # don't flag arbitrary long strings.
+    ("Vercel KV / Upstash REST token",
+     re.compile(r"KV_REST_API_TOKEN\s*=\s*['\"]?([A-Za-z0-9_-]{40,})['\"]?", re.I)),
+    # CODE_REVIEW — VAPID private key is 32-byte ECDSA → 43-char
+    # base64url. Public key is 65-byte uncompressed → 87-char base64url.
+    # Detect the private one (the sensitive half) by env name + length.
+    ("VAPID private key",
+     re.compile(r"VAPID_PRIVATE_KEY\s*=\s*['\"]?([A-Za-z0-9_-]{43,90})['\"]?", re.I)),
+    # CODE_REVIEW — ADMIN_TOKEN is a 32-byte hex (per push-send.js header
+    # comment: `openssl rand -hex 32`). Detect by env name + min length.
+    ("ADMIN_TOKEN",
+     re.compile(r"ADMIN_TOKEN\s*=\s*['\"]?([A-Fa-f0-9]{32,})['\"]?", re.I)),
     (
         "literal secret assignment",
         re.compile(

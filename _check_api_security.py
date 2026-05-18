@@ -29,13 +29,26 @@ def main() -> int:
     require(errors, "api/auth.js", "'Cache-Control': 'no-store'", "OAuth responses should disable caching")
     require(errors, "api/auth.js", "var targetOrigin = ${JSON.stringify(targetOrigin)};", "OAuth popup should postMessage only to the current site origin")
     require(errors, "api/auth.js", "if (e.origin !== targetOrigin) return;", "OAuth popup should ignore messages from other origins")
+    # CODE_REVIEW C5 — scope reduced from `repo,user` to `public_repo`
+    # and popup token release bound to flow state so same-origin XSS
+    # cannot drive-by harvest tokens. Cookie uses __Host- prefix.
+    require(errors, "api/auth.js", "const SCOPES = 'public_repo';", "OAuth should request narrowest GitHub scope (public_repo, not repo,user)")
+    require(errors, "api/auth.js", "const STATE_COOKIE = '__Host-oauth_state';", "OAuth state cookie should use __Host- prefix")
+    require(errors, "api/auth.js", "var flowState = ${JSON.stringify(state)};", "OAuth popup should bind token release to per-flow state")
+    forbid(errors, "api/auth.js", "const SCOPES = 'repo,user';", "OAuth should not request the broad `repo,user` scope")
     forbid(errors, "api/auth.js", "postMessage('authorization:github:' + status + ':' + JSON.stringify(content), '*')", "OAuth token should not be posted to wildcard origins")
     forbid(errors, "api/auth.js", "OAuth failed: ${JSON.stringify(data)}", "OAuth errors should not echo provider payloads")
 
-    require(errors, "api/push-send.js", "auth !== `Bearer ${process.env.ADMIN_TOKEN}`", "admin broadcast auth should use exact bearer-token comparison")
+    # CODE_REVIEW — auth check upgraded from `auth !== \`Bearer ${TOKEN}\``
+    # (timing-leaky string compare) to constant-time timingSafeEqual.
+    require(errors, "api/push-send.js", "timingSafeBearerEqual(req.headers.authorization, process.env.ADMIN_TOKEN)", "admin broadcast auth should use constant-time bearer-token comparison")
+    require(errors, "api/push-send.js", "timingSafeEqual", "admin broadcast must import timingSafeEqual from node:crypto")
     require(errors, "api/push-send.js", "if (!kvUrl || !kvTok)", "admin broadcast should fail closed when KV env vars are missing")
     require(errors, "api/push-send.js", "res.setHeader('Cache-Control', 'no-store');", "admin broadcast responses should not be cached")
+    require(errors, "api/push-send.js", "const MAX_TITLE = 100;", "admin broadcast should cap title length")
+    require(errors, "api/push-send.js", "const MAX_BODY = 500;", "admin broadcast should cap body length")
     forbid(errors, "api/push-send.js", "auth.endsWith(process.env.ADMIN_TOKEN)", "admin broadcast should not use suffix token matching")
+    forbid(errors, "api/push-send.js", "auth !== `Bearer ${process.env.ADMIN_TOKEN}`", "admin broadcast should not use timing-unsafe string compare")
 
     require(errors, "api/push-subscribe.js", "if (req.method === 'OPTIONS')", "push subscription endpoint should support CORS preflight")
     require(errors, "api/push-subscribe.js", "Vary: 'Origin'", "push subscription CORS responses should vary by Origin")
