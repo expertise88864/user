@@ -47,6 +47,35 @@ def clean_text(src: str) -> str:
     return re.sub(r"\s+", " ", html.unescape(src)).strip()
 
 
+def compute_metrics(src: str) -> dict[str, int]:
+    """Estimate wordCount + reading minutes from the main article body.
+
+    Counts CJK characters and Latin words; reading speed estimate is
+    300 CJK chars/min + 200 Latin words/min (typical Chinese reader).
+    Falls back to whole-page text if no <article>/<main> wrapper.
+    """
+    article_m = re.search(r"<article\b[^>]*>([\s\S]*?)</article>", src, re.I)
+    main_m = re.search(r"<main\b[^>]*>([\s\S]*?)</main>", src, re.I)
+    body_src = (article_m.group(1) if article_m
+                else (main_m.group(1) if main_m else src))
+    text = clean_text(body_src)
+    # Strip data-en attribute values that JS swaps in at runtime so we
+    # don't double-count the same content twice.
+    cjk_chars = len(re.findall(r"[一-鿿]", text))
+    latin_words = len(re.findall(r"\b[A-Za-z][A-Za-z'\-]{1,}\b", text))
+    minutes = max(1, round(cjk_chars / 300 + latin_words / 200))
+    return {
+        "wordCount": cjk_chars + latin_words,
+        "readingMinutes": minutes,
+    }
+
+
+SPEAKABLE_SPEC = {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", "[itemprop='description']", ".dn-summary"],
+}
+
+
 def page_meta(src: str) -> dict[str, str]:
     title_m = re.search(r"<title>([\s\S]*?)</title>", src, re.I)
     desc_m = re.search(r'<meta\s+name="description"\s+content="([^"]*)"', src, re.I)
@@ -87,7 +116,8 @@ def webpage_id(meta: dict[str, str]) -> str:
     return meta["canonical"] + "#webpage"
 
 
-def normalize_obj(obj: dict, path: Path, meta: dict[str, str]) -> dict:
+def normalize_obj(obj: dict, path: Path, meta: dict[str, str],
+                  metrics: dict[str, int] | None = None) -> dict:
     typ = obj.get("@type")
     if typ in {"Person", "Physician"} and path.name in {"index.html", "about.html"}:
         return physician_schema(obj)
@@ -95,6 +125,9 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str]) -> dict:
     if typ == "MedicalOrganization":
         obj.setdefault("@id", f"{DOMAIN}/#organization")
         obj.setdefault("url", DOMAIN + "/")
+
+    is_blog_article = (meta.get("canonical") and "/blog/" in meta["canonical"]
+                       and path.name not in {"index.html", "topics.html"})
 
     if typ in {"Article", "BlogPosting", "MedicalScholarlyArticle"}:
         # Keep MedicalScholarlyArticle only for research-summary articles
@@ -122,6 +155,10 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str]) -> dict:
             obj["name"] = short_title
         if meta.get("description"):
             obj["description"] = meta["description"]
+        if metrics and is_blog_article:
+            obj["wordCount"] = metrics["wordCount"]
+            obj["timeRequired"] = f"PT{metrics['readingMinutes']}M"
+            obj.setdefault("speakable", SPEAKABLE_SPEC)
 
     if typ == "MedicalWebPage":
         if meta.get("canonical"):
@@ -135,6 +172,10 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str]) -> dict:
             obj["name"] = meta["title"].split("|")[0].strip()
         if meta.get("description"):
             obj["description"] = meta["description"]
+        if metrics and is_blog_article:
+            obj["wordCount"] = metrics["wordCount"]
+            obj["timeRequired"] = f"PT{metrics['readingMinutes']}M"
+            obj.setdefault("speakable", SPEAKABLE_SPEC)
 
     return obj
 
@@ -161,7 +202,8 @@ def has_article_schema(src: str) -> bool:
     return any(obj.get("@type") in {"MedicalScholarlyArticle", "Article", "BlogPosting"} for obj in iter_jsonld(src))
 
 
-def build_medical_webpage(src: str, path: Path) -> dict:
+def build_medical_webpage(src: str, path: Path,
+                          metrics: dict[str, int] | None = None) -> dict:
     meta = page_meta(src)
     article_about = None
     for obj in iter_jsonld(src):
@@ -188,6 +230,10 @@ def build_medical_webpage(src: str, path: Path) -> dict:
         out["about"] = article_about
     else:
         out["about"] = {"@type": "MedicalSpecialty", "name": "Dermatology"}
+    if metrics and "/blog/" in (meta.get("canonical") or ""):
+        out["wordCount"] = metrics["wordCount"]
+        out["timeRequired"] = f"PT{metrics['readingMinutes']}M"
+        out["speakable"] = SPEAKABLE_SPEC
     return out
 
 
@@ -196,6 +242,7 @@ def normalize_file(path: Path) -> bool:
     src = src.replace(f"{DOMAIN}/#person", PHYSICIAN_ID)
     src = src.replace(f"{DOMAIN}/about#person", PHYSICIAN_ID)
     meta = page_meta(src)
+    metrics = compute_metrics(src) if path.name not in {"index.html", "topics.html"} else None
 
     changed = False
 
@@ -209,7 +256,7 @@ def normalize_file(path: Path) -> bool:
             return match.group(0)
         if not isinstance(obj, dict):
             return match.group(0)
-        new_obj = normalize_obj(obj, path, meta)
+        new_obj = normalize_obj(obj, path, meta, metrics)
         new = '<script type="application/ld+json"' + attrs + ">" + json.dumps(new_obj, ensure_ascii=False, separators=(",", ":")) + "</script>"
         if new != match.group(0):
             changed = True
@@ -218,7 +265,7 @@ def normalize_file(path: Path) -> bool:
     src2 = re.sub(r'<script\s+type="application/ld\+json"([^>]*)>([\s\S]*?)</script>', repl, src, flags=re.I)
 
     if has_article_schema(src2) and path.name not in {"index.html", "topics.html"} and not has_jsonld_type(src2, "MedicalWebPage"):
-        block = script_for(build_medical_webpage(src2, path))
+        block = script_for(build_medical_webpage(src2, path, metrics))
         src2 = src2.replace("</head>", block + "</head>", 1)
         changed = True
 
