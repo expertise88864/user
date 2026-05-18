@@ -479,6 +479,42 @@ def check_diagram_calc_slug_lists():
                 f'DN.{map_name} has slugs not in DN.{allow_name}: {sorted(only_map)} — these articles will NOT load the bundle and the diagram/calculator will silently not render')
 
 
+# ─── 10c. every article must define :root palette so --bg works ──────
+def check_articles_have_root_palette():
+    """Every blog article must define the canonical CSS variable palette
+    in :root so body{ background:var(--bg) } resolves to the warm beige
+    #faf7f2 instead of falling back to browser default white.
+
+    Caught 2026-05-18 when ai-dermatology-roles.html shipped without
+    the :root block — the article rendered on stark white and looked
+    nothing like its peers.
+    """
+    REQUIRED = ['--bg', '--ink', '--teal', '--teal-deep', '--border']
+    CANONICAL_BG = '#faf7f2'
+    for d in ['blog', 'en/blog']:
+        dpath = ROOT / d
+        if not dpath.exists():
+            continue
+        for fp in sorted(dpath.glob('*.html')):
+            if fp.name in {'index.html', 'topics.html'}:
+                continue
+            src = fp.read_text(encoding='utf-8', errors='replace')
+            root_m = re.search(r':root\s*\{[^}]*\}', src)
+            if not root_m:
+                err(f'{d}/{fp.name}',
+                    f'missing :root palette block — body{{ background:var(--bg) }} '
+                    f'will fall back to browser default (white) instead of {CANONICAL_BG}')
+                continue
+            block = root_m.group(0)
+            missing = [v for v in REQUIRED if v not in block]
+            if missing:
+                err(f'{d}/{fp.name}',
+                    f':root missing required vars: {missing}')
+            if CANONICAL_BG not in block:
+                err(f'{d}/{fp.name}',
+                    f':root has --bg but not the canonical {CANONICAL_BG} (warm beige)')
+
+
 # ─── 10b. unpublished articles must carry noindex meta ────────────────
 def check_unpublished_have_noindex():
     """Defense-in-depth: any DN.ARTICLES entry with unpublished:true must
@@ -542,6 +578,7 @@ def main():
     check_homepage_card_attrs()
     check_diagram_calc_slug_lists()
     check_unpublished_have_noindex()
+    check_articles_have_root_palette()
     check_robots()
 
     if warnings:
