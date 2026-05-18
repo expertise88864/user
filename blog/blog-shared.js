@@ -195,7 +195,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202605181600';
+        s.src = '/blog/blog-article-visuals.min.js?v=202605181700';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1025,7 +1025,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202605181600';
+        s.src = '/blog/blog-article-reading.min.js?v=202605181700';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1061,7 +1061,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202605181600';
+        s.src = '/blog/blog-article-footer.min.js?v=202605181700';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1091,7 +1091,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202605181600';
+        s.src = '/blog/blog-calculators.min.js?v=202605181700';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1221,7 +1221,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202605181600';
+        s.src = '/blog/blog-hub.min.js?v=202605181700';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1469,35 +1469,42 @@
         fire('internal_link', { destination: a.getAttribute('href'), source: location.pathname });
       });
     });
-    // Related-articles card clicks (SSG-injected #dn-related-static + JS-injected #dn-related)
-    // Delegated handler so both SSG and runtime cards fire the same event.
+    // CODE_REVIEW — collapsed two separate `document.click` delegated
+    // handlers (related-card + outbound) into one. Saves one event-
+    // listener pass per click; both checks share `e.target.closest`
+    // walk. Also dropped `capture:true` from the outbound branch —
+    // related-card handler used bubble phase and they're independent
+    // anyway. `{passive:true}` is honored.
     document.addEventListener('click', function (e) {
-      var card = e.target.closest && e.target.closest('a.dn-related-card');
-      if (!card) return;
-      fire('related_card_click', {
-        destination: card.getAttribute('href') || '',
-        source: location.pathname,
-      });
-    }, { passive: true });
-    // Outbound link tracking — any <a> pointing off-host fires `outbound_click`
-    // with the destination host as the label. Lets us see in GA4 which external
-    // references (PubMed, journals, derm societies, etc.) readers actually click.
-    // Delegated so it covers SSG, JS-injected, and dynamically loaded links.
-    document.addEventListener('click', function (e) {
-      var a = e.target.closest && e.target.closest('a[href]');
+      var target = e.target;
+      if (!target || !target.closest) return;
+
+      // Related-articles card (SSG #dn-related-static + JS #dn-related)
+      var card = target.closest('a.dn-related-card');
+      if (card) {
+        fire('related_card_click', {
+          destination: card.getAttribute('href') || '',
+          source: location.pathname,
+        });
+      }
+
+      // Outbound link — any <a> pointing off-host. Single closest()
+      // call shared with the card check above when the card is also
+      // an outbound link (rare but possible for future link types).
+      var a = target.closest('a[href]');
       if (!a) return;
       var href = a.getAttribute('href') || '';
-      if (!/^https?:\/\//i.test(href)) return;  // skip relative + mailto + tel
+      if (!/^https?:\/\//i.test(href)) return;  // relative / mailto / tel
       try {
         var u = new URL(href, location.href);
-        if (u.host === location.host) return;  // same-origin, not outbound
+        if (u.host === location.host) return;
         fire('outbound_click', {
           destination: u.host + u.pathname,
           host: u.host,
           page_path: location.pathname,
         });
       } catch (err) { /* malformed URL — skip */ }
-    }, { passive: true, capture: true });
+    }, { passive: true });
     // Track 75% scroll depth on articles (reading completion proxy)
     if (document.querySelector('article .prose')) {
       let fired = false;
@@ -1657,15 +1664,67 @@
     DN.bindLangToggle(apply);
     apply(curLang);
     DN.addReadingProgress();
-    DN.initCmdK();        // search button must work immediately on click
+
+    // CODE_REVIEW — initCmdK builds the entire search index, injects
+    // ~30-line <style>, builds the overlay DOM, and attaches global
+    // keydown + click listeners. That's the biggest INP contributor
+    // during first-paint. Moved to idle queue with a bootstrap so the
+    // search button still works instantly on first click.
+    //
+    // Bootstrap strategy:
+    //   - Pre-bind a one-shot capture on document for the search button
+    //     and Cmd+K / `/` shortcut.
+    //   - On first trigger, synchronously run initCmdK() (idempotent
+    //     via its `dn-cmdk-style` early return) then dispatch openSearch.
+    //   - Idle queue still runs initCmdK at idle so the second click is
+    //     no-bootstrap-cost.
+    var cmdkReady = false;
+    function ensureCmdK() {
+      if (!cmdkReady) {
+        DN.initCmdK();
+        cmdkReady = true;
+      }
+    }
+    function bootstrapClick(e) {
+      var btn = e.target.closest && e.target.closest('button[aria-label="搜尋"]');
+      if (btn) {
+        e.preventDefault();
+        ensureCmdK();
+        DN.openSearch && DN.openSearch();
+      }
+    }
+    function bootstrapKey(e) {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        ensureCmdK();
+        DN.openSearch && DN.openSearch();
+      } else if (e.key === '/' &&
+                 document.activeElement &&
+                 document.activeElement.tagName !== 'INPUT' &&
+                 document.activeElement.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        ensureCmdK();
+        DN.openSearch && DN.openSearch();
+      }
+    }
+    document.addEventListener('click', bootstrapClick, { capture: true });
+    document.addEventListener('keydown', bootstrapKey);
+    // Schedule the real init for idle — once it runs, the bootstrap
+    // handlers above stay attached but each call's `if (!cmdkReady)`
+    // gate becomes a no-op. initCmdK is internally idempotent too.
+    idle(function () { ensureCmdK(); }, { timeout: 800 });
+
     // 2026-05-17 — wire up the SearchAction declared in WebSite JSON-LD.
     // Google's sitelinks search box sends users to /?q=keyword. Auto-open
     // Cmd+K and seed the query so the contract is honored.
     try {
       var qp = new URLSearchParams(location.search).get('q');
-      if (qp && qp.trim() && DN.openSearch) {
+      if (qp && qp.trim()) {
+        // ?q= flow needs cmdk RIGHT NOW (not at idle) so the user sees
+        // the search panel open with their query pre-filled on first paint.
+        ensureCmdK();
         setTimeout(function () {
-          DN.openSearch();
+          DN.openSearch && DN.openSearch();
           var inp = document.getElementById('dn-cmdk-input');
           if (inp) {
             inp.value = qp;
@@ -1833,7 +1892,18 @@
         try { DN.applyTextOnly(curLang); } catch (e) {}
       }, ms);
     });
-    // SAFE MutationObserver: debounced + checks for unprocessed [data-zh] only
+    // SAFE MutationObserver: debounced + checks for unprocessed [data-zh] only.
+    //
+    // CODE_REVIEW — scope was `document.body, subtree:true`, which fires on
+    // EVERY DOM insertion site-wide (calculator live results, lightbox open,
+    // dark-mode toggle, every chart redraw). Calculator-heavy pages were
+    // doing `n.querySelector('[data-zh]')` 50+ times per recalc.
+    //
+    // Narrow to the actual hot spots that legitimately inject data-zh
+    // content: the prose container (#proseZh or #proseEn), the page footer,
+    // and #dn-hub if present (homepage). All other site UI is hand-coded
+    // and never injects new data-zh nodes — the existing fallback
+    // applyTextOnly() retries at the bottom of initBlog catch any miss.
     if ('MutationObserver' in window) {
       var pending = false;
       var obs = new MutationObserver(function (mutations) {
@@ -1858,7 +1928,21 @@
           }, 80);
         }
       });
-      obs.observe(document.body, { childList: true, subtree: true });
+      // Watch only the containers that legitimately receive data-zh
+      // injections. Each target is observed independently with subtree.
+      var targets = [
+        document.getElementById('proseZh'),
+        document.getElementById('proseEn'),
+        document.getElementById('dn-hub'),
+        document.querySelector('article'),
+        document.querySelector('footer'),
+      ].filter(Boolean);
+      // Fallback: if no specific targets exist (rare pages), keep body
+      // scope but bail early on every mutation via the hasNew filter.
+      if (targets.length === 0) targets = [document.body];
+      targets.forEach(function (t) {
+        obs.observe(t, { childList: true, subtree: true });
+      });
     }
     // DN.markNewArticles() now runs inside blog-hub.js (only when card lists exist).
     DN.addStickyCTA();

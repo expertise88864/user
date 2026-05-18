@@ -9,7 +9,7 @@ import re
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-ASSET_VERSION = "202605181600"
+ASSET_VERSION = "202605181700"
 
 PRELOAD_TW_MINI_RE = re.compile(
     r'<link\s+rel="preload"\s+as="style"\s+href="([^"]*tw-mini\.css[^"]*)"\s+'

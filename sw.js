@@ -1,7 +1,7 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v136';
+const CACHE = 'cd-v137';
 const RUNTIME = 'cd-runtime-v136';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
@@ -34,10 +34,17 @@ const PRECACHE = [
 ];
 
 self.addEventListener('install', (e) => {
+  // CODE_REVIEW — dropped self.skipWaiting() from install. Reason:
+  // blog-shared.js bindSWUpdateToast() already shows a "new version
+  // available" toast and posts {type:'SKIP_WAITING'} when the user
+  // clicks it (handler at line 186 of this file). When install also
+  // skipped waiting, the new SW activated immediately AND the toast
+  // would post SKIP_WAITING redundantly, sometimes causing a double
+  // reload via controllerchange. Letting the toast own activation
+  // gives the user warning that something is changing.
   e.waitUntil(
     caches.open(CACHE)
       .then((c) => Promise.allSettled(PRECACHE.map((u) => c.add(u))))
-      .then(() => self.skipWaiting())
   );
 });
 
