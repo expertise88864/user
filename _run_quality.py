@@ -52,6 +52,12 @@ REGEN_STEPS: list[list[str]] = [
     # underneath the title; Google Discover requires width/height to
     # classify image for the large card variant.
     [PY, "_normalize_og_article_meta.py"],
+    # 2026-05-18 — Inject Speculation Rules so cross-article navigation
+    # prerenders on hover. Drops bounce + improves INP (Core Web Vital)
+    # + improves engagement signals Google uses for ranking. Each page
+    # gets the same prerender(/blog/*) + prefetch(/*) rule set; pages
+    # with a native (homepage) speculationrules block are left alone.
+    [PY, "_inject_speculation_rules.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [

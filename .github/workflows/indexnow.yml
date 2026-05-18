@@ -1,0 +1,60 @@
+name: IndexNow submit
+
+# Push updated URLs to Bing / Yandex / Seznam / Naver after every
+# main-branch deploy so they re-crawl within hours instead of the
+# usual days-to-weeks polling cycle. Google ignores IndexNow but the
+# Bing / Yandex slice still moves the needle for low-traffic sites.
+#
+# Runs after the Quality gate workflow finishes successfully — that's
+# the same trigger order Vercel uses, so we know the site is fresh.
+
+on:
+  workflow_run:
+    workflows: ["Quality gate"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "submission scope"
+        required: true
+        default: "since-1"
+        type: choice
+        options:
+          - since-1
+          - since-7
+          - full-sitemap
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    name: Submit URLs to IndexNow
+    runs-on: ubuntu-latest
+    # Only run if the Quality gate run actually succeeded (don't notify
+    # search engines about a broken deploy).
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Determine scope
+        id: scope
+        run: |
+          mode="${{ github.event.inputs.mode }}"
+          if [ -z "$mode" ]; then
+            mode="since-1"  # default for workflow_run trigger
+          fi
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+      - name: Submit to IndexNow
+        run: |
+          case "${{ steps.scope.outputs.mode }}" in
+            since-1)        python _submit_indexnow.py --since 1 ;;
+            since-7)        python _submit_indexnow.py --since 7 ;;
+            full-sitemap)   python _submit_indexnow.py ;;
+            *)              python _submit_indexnow.py --since 1 ;;
+          esac
