@@ -45,6 +45,13 @@ REGEN_STEPS: list[list[str]] = [
     # snippet length (vs 155-char truncation) in Google SERPs. Safe to
     # apply site-wide; preserves any existing noindex.
     [PY, "_normalize_robots_meta.py"],
+    # 2026-05-18 — Inject OpenGraph article:* + Twitter custom labels +
+    # og:image dimensions into every article. Major off-Google CTR uplift:
+    # Facebook / LinkedIn / Discord / Slack render shared cards with
+    # author + date + section + tag chips; Twitter shows reading time
+    # underneath the title; Google Discover requires width/height to
+    # classify image for the large card variant.
+    [PY, "_normalize_og_article_meta.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
