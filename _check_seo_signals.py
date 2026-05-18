@@ -380,6 +380,60 @@ def check_llms_full_clean() -> None:
         print(f"[OK] llms-full.txt has no raw attribute leakage")
 
 
+# ─── 11. Hreflang reciprocity — every cross-link must round-trip ─────
+def check_hreflang_reciprocity() -> None:
+    """CODE_REVIEW: every ZH article that advertises `hreflang="en"`
+    pointing at /en/blog/<slug> must have the EN counterpart on disk
+    AND that EN page must back-link with `hreflang="zh-Hant"` to the
+    ZH canonical. Google flags one-way hreflang clusters as broken
+    and quietly drops them from the language alternate index.
+    """
+    zh_dir = ROOT / "blog"
+    en_dir = ROOT / "en" / "blog"
+    if not (zh_dir.exists() and en_dir.exists()):
+        return
+    bad = 0
+    pairs_checked = 0
+    for zh_fp in sorted(zh_dir.glob("*.html")):
+        if zh_fp.name in {"index.html", "topics.html"}:
+            continue
+        zh_src = zh_fp.read_text(encoding="utf-8", errors="replace")
+        # Look for the EN hreflang advertisement
+        en_link_m = re.search(
+            r'<link\s+rel="alternate"\s+hreflang="en"\s+href="([^"]+)"',
+            zh_src, re.I)
+        if not en_link_m:
+            continue  # this article doesn't claim an EN mirror — fine
+        en_url = en_link_m.group(1)
+        # Resolve EN URL → local file
+        if not en_url.startswith(f"{DOMAIN}/en/blog/"):
+            err(zh_fp.relative_to(ROOT).as_posix(),
+                f"hreflang en points outside /en/blog/: {en_url}")
+            bad += 1
+            continue
+        en_slug = en_url[len(f"{DOMAIN}/en/blog/"):].rstrip("/")
+        en_fp = en_dir / f"{en_slug}.html"
+        if not en_fp.exists():
+            err(zh_fp.relative_to(ROOT).as_posix(),
+                f"hreflang en points at {en_url} but file missing on disk")
+            bad += 1
+            continue
+        en_src = en_fp.read_text(encoding="utf-8", errors="replace")
+        # EN must back-link
+        zh_back = re.search(
+            r'<link\s+rel="alternate"\s+hreflang="zh(?:-Hant(?:-TW)?)?"\s+href="([^"]+)"',
+            en_src, re.I)
+        if not zh_back:
+            err(en_fp.relative_to(ROOT).as_posix(),
+                f"missing back-link hreflang=zh-* to ZH source "
+                f"{zh_fp.relative_to(ROOT).as_posix()}")
+            bad += 1
+            continue
+        pairs_checked += 1
+    if bad == 0:
+        print(f"[OK] hreflang reciprocity verified on {pairs_checked} ZH→EN pairs")
+
+
 def main() -> int:
     print("=== SEO signals audit ===")
     check_robots_serp_directives()
@@ -392,6 +446,7 @@ def main() -> int:
     check_no_duplicate_medical_webpage()
     check_speakable_selectors_resolve()
     check_llms_full_clean()
+    check_hreflang_reciprocity()
 
     if warnings:
         print(f"\n[!] Warnings ({len(warnings)}):")

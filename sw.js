@@ -1,13 +1,18 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v135';
-const RUNTIME = 'cd-runtime-v135';
+const CACHE = 'cd-v136';
+const RUNTIME = 'cd-runtime-v136';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
 // Popular articles getting evicted after ~5 navigations caused repeat-
 // visit LCP regressions of ~300 ms on mobile.
 const RUNTIME_MAX_ENTRIES = 150;
+// CODE_REVIEW — the HTML cache (CACHE) previously had no entry cap;
+// a long-tail reader who navigated ≥100 articles would grow it
+// unbounded. Cap matches RUNTIME_MAX_ENTRIES rationale — generous
+// enough for the current 50-article catalog + ~50 future articles.
+const HTML_CACHE_MAX_ENTRIES = 150;
 
 // R31: Slim precache — only critical shell + offline page + assets that EVERY page uses.
 // Articles are cached on-demand by network-first / runtime cache. Saves ~3 MB initial install
@@ -46,24 +51,30 @@ self.addEventListener('activate', (e) => {
   );
 });
 
-// LRU eviction for runtime cache
+// FIFO eviction for cache (CODE_REVIEW — renamed from "LRU" since
+// cache.keys() returns insertion order, not access order — no
+// read-tracking exists to implement true LRU).
 async function trimCache(cacheName, max) {
   try {
     const cache = await caches.open(cacheName);
     const keys = await cache.keys();
     if (keys.length <= max) return;
-    // Delete oldest entries (FIFO; cache.keys() preserves insertion order)
     const toDelete = keys.slice(0, keys.length - max);
     await Promise.all(toDelete.map((req) => cache.delete(req)));
   } catch (e) { /* ignore */ }
 }
 
-// Fetch with retry once on transient errors
+// CODE_REVIEW — fetchWithRetry was retrying ALL non-OK responses
+// including 404s, wasting a round-trip. Now only retries on network
+// errors (TypeError from fetch) or >=500 server errors. Client-error
+// responses (4xx) are returned as-is.
 async function fetchWithRetry(req, retries = 1) {
   try {
     const r = await fetch(req);
     if (r && (r.ok || r.type === 'opaque')) return r;
-    if (retries > 0) return fetchWithRetry(req, retries - 1);
+    if (r && r.status >= 500 && retries > 0) {
+      return fetchWithRetry(req, retries - 1);
+    }
     return r;
   } catch (err) {
     if (retries > 0) return fetchWithRetry(req, retries - 1);
@@ -94,7 +105,12 @@ self.addEventListener('fetch', (e) => {
           // Only cache successful, non-redirected, non-opaque responses
           if (resp && resp.ok && !resp.redirected && resp.type === 'basic') {
             const copy = resp.clone();
-            caches.open(CACHE).then((c) => c.put(req, copy));
+            // CODE_REVIEW — cap HTML cache same as runtime to avoid
+            // unbounded growth for long-tail readers (≥100 articles).
+            caches.open(CACHE).then((c) => {
+              c.put(req, copy);
+              trimCache(CACHE, HTML_CACHE_MAX_ENTRIES);
+            });
           }
           return resp;
         })
@@ -218,9 +234,17 @@ self.addEventListener('notificationclick', (e) => {
   const url = (e.notification.data && e.notification.data.url) || '/blog/';
   e.waitUntil(
     self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((wins) => {
-      // Focus existing tab if it's already on the destination
+      // CODE_REVIEW — was `w.url.endsWith(url)` which matched
+      // `/blog/myths` against `/blog/acne-myths` (false positive).
+      // Use proper URL pathname comparison anchored to the origin.
+      let targetPath;
+      try {
+        targetPath = new URL(url, self.location.origin).pathname;
+      } catch { targetPath = url; }
       for (const w of wins) {
-        if (w.url.endsWith(url) && 'focus' in w) return w.focus();
+        let winPath;
+        try { winPath = new URL(w.url).pathname; } catch { winPath = ''; }
+        if (winPath === targetPath && 'focus' in w) return w.focus();
       }
       if (self.clients.openWindow) return self.clients.openWindow(url);
     })

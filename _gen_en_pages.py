@@ -13,8 +13,15 @@ from __future__ import annotations
 import json
 import os
 import re
+import sys
 import html as html_lib
 from html.parser import HTMLParser
+
+# CODE_REVIEW — Windows cp950 console crashes on print() with CJK
+# unless stdout is reconfigured to UTF-8. Guard with hasattr because
+# `.reconfigure()` only exists in Python 3.7+.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))

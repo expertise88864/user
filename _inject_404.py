@@ -45,16 +45,28 @@ def parse_articles() -> list[dict]:
 
 
 def build_list(articles: list[dict], n: int = 6) -> str:
+    import html as html_lib
     top = sorted(
         [a for a in articles if not a["unpublished"]],
         key=lambda a: a["date"] or "",
         reverse=True,
     )[:n]
-    return "\n".join(
-        f'<li><a href="/blog/{a["slug"]}"><span class="dot"></span>'
-        f'<span data-zh="{a["title"]}" data-en="{a["title_en"] or a["title"]}">{a["title"]}</span></a></li>'
-        for a in top
-    )
+    # CODE_REVIEW — escape title for both attribute (quote=True) and
+    # content. Without quote=True a future article title containing a
+    # double-quote silently corrupts the data-zh attribute and breaks
+    # all subsequent markup on the 404 page.
+    items = []
+    for a in top:
+        slug = a["slug"]  # already constrained to [a-z0-9-]+ by parse
+        title = a["title"]
+        title_en = a["title_en"] or title
+        items.append(
+            f'<li><a href="/blog/{slug}"><span class="dot"></span>'
+            f'<span data-zh="{html_lib.escape(title, quote=True)}" '
+            f'data-en="{html_lib.escape(title_en, quote=True)}">'
+            f'{html_lib.escape(title)}</span></a></li>'
+        )
+    return "\n".join(items)
 
 
 def main() -> int:

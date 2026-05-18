@@ -195,11 +195,17 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202605181400';
+        s.src = '/blog/blog-article-visuals.min.js?v=202605181500';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
         document.head.appendChild(s);
+      }).catch(function (err) {
+        // CODE_REVIEW — reset on failure so transient network errors
+        // (offline blip, slow DNS) don't permanently block the bundle
+        // for the rest of the session. Next caller retries cleanly.
+        DN._articleVisualBundleLoading = null;
+        throw err;
       });
     }
     return DN._articleVisualBundleLoading;
@@ -1016,13 +1022,17 @@
   DN.ensureArticleReadingBundle = function () {
     if (DN.addReadingMeta && DN.addInlineTOC && DN.addFontSizer) return Promise.resolve();
     if (!DN._articleReadingBundleLoading) {
+      // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202605181400';
+        s.src = '/blog/blog-article-reading.min.js?v=202605181500';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
         document.head.appendChild(s);
+      }).catch(function (err) {
+        DN._articleReadingBundleLoading = null;
+        throw err;
       });
     }
     return DN._articleReadingBundleLoading;
@@ -1048,13 +1058,17 @@
   DN.ensureArticleFooterBundle = function () {
     if (DN.addRelatedArticles && DN.addShareToolbar && DN.addAuthorBio && DN.addLegalDisclaimer) return Promise.resolve();
     if (!DN._articleFooterBundleLoading) {
+      // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202605181400';
+        s.src = '/blog/blog-article-footer.min.js?v=202605181500';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
         document.head.appendChild(s);
+      }).catch(function (err) {
+        DN._articleFooterBundleLoading = null;
+        throw err;
       });
     }
     return DN._articleFooterBundleLoading;
@@ -1074,13 +1088,17 @@
   DN.ensureCalculatorBundle = function () {
     if (DN.injectDLQI && DN.injectSCORAD) return Promise.resolve();
     if (!DN._calculatorBundleLoading) {
+      // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202605181400';
+        s.src = '/blog/blog-calculators.min.js?v=202605181500';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
         document.head.appendChild(s);
+      }).catch(function (err) {
+        DN._calculatorBundleLoading = null;
+        throw err;
       });
     }
     return DN._calculatorBundleLoading;
@@ -1189,13 +1207,17 @@
   DN.ensureHubBundle = function () {
     if (DN.injectSpotlight && DN.bindArticleHub) return Promise.resolve();
     if (!DN._hubBundleLoading) {
+      // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202605181400';
+        s.src = '/blog/blog-hub.min.js?v=202605181500';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
         document.head.appendChild(s);
+      }).catch(function (err) {
+        DN._hubBundleLoading = null;
+        throw err;
       });
     }
     return DN._hubBundleLoading;

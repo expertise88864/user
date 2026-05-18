@@ -28,6 +28,7 @@ already have a <script type="speculationrules">.
 from __future__ import annotations
 
 import io
+import json
 import re
 import sys
 from pathlib import Path
@@ -46,6 +47,18 @@ SPEC_RULES_JSON = (
     '"eagerness":"moderate"}],'
     '"prefetch":[{"where":{"href_matches":"/*"},"eagerness":"conservative"}]}'
 )
+
+# CODE_REVIEW — validate at module load so a typo in the constant
+# above gets caught at build time instead of silently breaking Chrome
+# prerender at runtime (Chrome ignores malformed speculation rules
+# without console output).
+try:
+    json.loads(SPEC_RULES_JSON)
+except json.JSONDecodeError as _exc:  # pragma: no cover — module init
+    raise SystemExit(
+        f"SPEC_RULES_JSON is not valid JSON: {_exc}. "
+        "Fix the constant before re-running the build."
+    )
 
 BLOCK = (
     "\n<!-- dn-spec-rules -->\n"

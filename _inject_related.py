@@ -136,10 +136,27 @@ def score_related(cur: dict, all_articles: list[dict], TG: dict[str, list[str]])
         if s > 0:
             scored.append((s, a))
     # Sort by score desc, tiebreak by date desc (newer first)
-    scored.sort(key=lambda x: (-x[0], x[1]["date"] or ""), reverse=False)
-    scored.sort(key=lambda x: x[1]["date"] or "", reverse=True)
-    scored.sort(key=lambda x: x[0], reverse=True)
+    # CODE_REVIEW — was 3 sequential sorts where only the last one
+    # (score desc) survived Python's stable-sort guarantee. Collapse
+    # to a single composite-key sort: primary = score desc, secondary
+    # = date desc (newer wins ties).
+    scored.sort(key=lambda x: (-x[0], "" if not x[1]["date"] else x[1]["date"]),
+                reverse=False)
+    # Hack: secondary needs to be DESC but the primary is ASC via -x[0].
+    # Use a tuple where date is negated by string-flipping. Simpler:
+    # do one composite sort with two pass-through keys at proper polarity.
+    scored.sort(key=lambda x: (-x[0], -_date_sort_key(x[1]["date"])))
     return [a for _, a in scored[:4]]
+
+
+def _date_sort_key(date_str: str) -> int:
+    """Return an int for date sorting (YYYY-MM-DD → YYYYMMDD)."""
+    if not date_str:
+        return 0
+    try:
+        return int(date_str.replace("-", ""))
+    except ValueError:
+        return 0
 
 # ─── 4. Build the SSG HTML block (mirrors the JS-injected layout) ────────
 def build_related_html(cur_slug: str, related: list[dict]) -> str:

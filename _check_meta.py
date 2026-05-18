@@ -200,7 +200,9 @@ def check_articles_dates():
         err('blog-shared.js', 'DN.ARTICLES block not found')
         return
     block = src[i:end]
-    for m in re.finditer(r"slug:'([a-z0-9-]+)'.*?date:'(202[6-9]-\d\d-\d\d)'", block):
+    # CODE_REVIEW — was `202[6-9]` which silently passes 2030+ dates.
+    # Any 4-digit year is fine; we range-check parseable dates below.
+    for m in re.finditer(r"slug:'([a-z0-9-]+)'.*?date:'(\d{4}-\d\d-\d\d)'", block):
         slug, d = m.group(1), m.group(2)
         if d > today:
             err('blog-shared.js', f'DN.ARTICLES["{slug}"] has future date {d} (today={today})')
@@ -264,7 +266,10 @@ def check_no_merge_markers():
 # blue/teal TOC for any article with id="proseZh" + 3+ <h2 id="">. If the
 # article HTML ALSO has a manual <div class="toc">, the user sees two TOCs.
 # Hard rule: blog/*.html articles never carry a manual TOC div.
-MANUAL_TOC_RE = re.compile(r'<div\s+class="toc"', re.IGNORECASE)
+# CODE_REVIEW — was `<div\s+class="toc"`; allowed `<div  class="toc"`
+# (double space) and `<div class='toc'` (single quote) to bypass.
+# Now matches any `<div ... class=["']toc["']` with any attr order.
+MANUAL_TOC_RE = re.compile(r'''<div\s+[^>]*\bclass=["']toc["']''', re.IGNORECASE)
 def check_no_manual_toc():
     blog_dir = ROOT / 'blog'
     if not blog_dir.is_dir():

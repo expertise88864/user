@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (sw) sw.href = location.pathname.replace(/^\/en\//, '/').replace(/^\/en$/, '/');
 });
 </script>
-<script src="/blog/blog-shared.min.js?v=202605181400" defer></script>
+<script src="/blog/blog-shared.min.js?v=202605181500" defer></script>
 <script>document.addEventListener('DOMContentLoaded', function () {
 if (window.DN) DN.initBlog({});
 var pills = document.querySelectorAll('#filterPills .filter-pill');
@@ -64,7 +64,6 @@ item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
 });
 });
 });</script>
-
 
 <!-- dn-spec-rules -->
 <script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/blog/*"},{"not":{"href_matches":"/admin*"}},{"not":{"selector_matches":"[data-no-prerender]"}}]},"eagerness":"moderate"}],"prefetch":[{"where":{"href_matches":"/*"},"eagerness":"conservative"}]}</script>
