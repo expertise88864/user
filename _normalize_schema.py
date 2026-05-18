@@ -118,13 +118,42 @@ def page_meta(src: str) -> dict[str, str]:
     canon_m = re.search(r'<link\s+rel="canonical"\s+href="([^"]*)"', src, re.I)
     lang_m = re.search(r'<html\b[^>]*lang="([^"]*)"', src, re.I)
     image_m = re.search(r'<meta\s+property="og:image"\s+content="([^"]*)"', src, re.I)
+    keywords_m = re.search(r'<meta\s+name="keywords"\s+content="([^"]*)"', src, re.I)
     return {
         "title": clean_text(title_m.group(1)) if title_m else "",
         "description": html.unescape(desc_m.group(1)).strip() if desc_m else "",
         "canonical": canon_m.group(1) if canon_m else "",
         "lang": lang_m.group(1) if lang_m else "zh-Hant-TW",
         "image": image_m.group(1) if image_m else f"{DOMAIN}/logo-512.png",
+        "keywords": html.unescape(keywords_m.group(1)).strip() if keywords_m else "",
     }
+
+
+# Map DN.ARTICLES cat field to human-friendly article section labels.
+# Used as the `articleSection` field in JSON-LD so Google can group
+# articles by topic in the SERP knowledge panel + topical clustering.
+CAT_TO_SECTION = {
+    "rx": "Treatment & Therapy",
+    "myth": "Myths & Facts",
+    "note": "Clinical Notes",
+    "research": "Research Summary",
+    "product": "Products & Drugs",
+}
+
+
+def _article_section_for_slug(slug: str) -> str | None:
+    """Look up DN.ARTICLES catalog to map slug -> articleSection label."""
+    catalog_path = ROOT / "blog" / "blog-shared.js"
+    if not catalog_path.exists():
+        return None
+    src = catalog_path.read_text(encoding="utf-8")
+    m = re.search(rf"\{{[^{{}}]*?slug:'{re.escape(slug)}'[^{{}}]*?\}}", src)
+    if not m:
+        return None
+    cat_m = re.search(r"cat:'([^']+)'", m.group(0))
+    if not cat_m:
+        return None
+    return CAT_TO_SECTION.get(cat_m.group(1))
 
 
 def physician_schema(existing: dict | None = None) -> dict:
@@ -195,6 +224,12 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str],
             obj["wordCount"] = metrics["wordCount"]
             obj["timeRequired"] = f"PT{metrics['readingMinutes']}M"
             obj.setdefault("speakable", SPEAKABLE_SPEC)
+        if is_blog_article:
+            section = _article_section_for_slug(path.stem)
+            if section:
+                obj["articleSection"] = section
+            if meta.get("keywords"):
+                obj["keywords"] = meta["keywords"]
 
     if typ == "MedicalWebPage":
         if meta.get("canonical"):
@@ -212,6 +247,12 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str],
             obj["wordCount"] = metrics["wordCount"]
             obj["timeRequired"] = f"PT{metrics['readingMinutes']}M"
             obj.setdefault("speakable", SPEAKABLE_SPEC)
+        if is_blog_article:
+            section = _article_section_for_slug(path.stem)
+            if section:
+                obj["articleSection"] = section
+            if meta.get("keywords"):
+                obj["keywords"] = meta["keywords"]
 
     return obj
 

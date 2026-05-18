@@ -188,7 +188,12 @@ def emit_url(out: list[str], loc: str, lastmod: str, changefreq: str, priority: 
             out.append(f'    <xhtml:link rel="alternate" hreflang="{lang}" href="{DOMAIN}{href}"/>')
     if image:
         out.append('    <image:image>')
-        out.append(f'      <image:loc>{image.replace("&", "&amp;")}</image:loc>')
+        # First unescape any HTML entities in the source (og:image content
+        # already has &amp; encoded), then re-encode for XML. Without the
+        # unescape step we double-encode `&` → `&amp;amp;` which breaks
+        # the OG image URL when Google's image fetcher parses it.
+        clean_image = html.unescape(image).replace('&', '&amp;')
+        out.append(f'      <image:loc>{clean_image}</image:loc>')
         if image_title:
             out.append(f'      <image:title>{html.escape(image_title)}</image:title>')
         out.append('    </image:image>')

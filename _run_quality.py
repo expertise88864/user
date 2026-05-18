@@ -39,6 +39,12 @@ REGEN_STEPS: list[list[str]] = [
     [PY, "_normalize_heading_structure.py"],
     [PY, "_gen_feeds.py"],
     [PY, "_normalize_robots.py"],
+    # 2026-05-18 — Inject max-image-preview:large + max-snippet:-1 into
+    # every page's <meta name="robots">. Largest single-action CTR uplift:
+    # unlocks LARGE image previews (vs tiny default thumbs) and FULL
+    # snippet length (vs 155-char truncation) in Google SERPs. Safe to
+    # apply site-wide; preserves any existing noindex.
+    [PY, "_normalize_robots_meta.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
