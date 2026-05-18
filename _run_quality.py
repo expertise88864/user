@@ -85,6 +85,12 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_check_secrets.py"],
     [PY, "_check_supply_chain.py"],
     [PY, "_check_js_syntax.py"],
+    # 2026-05-18 — Lock in SERP CTR/impressions signals shipped in
+    # batches 12-17 (robots SERP directives, JSON-LD enrichment,
+    # OG article:* on every blog article, Organization+logo on
+    # homepage, sitemap encoding). Each missing signal directly
+    # reduces SERP visibility or rich-card eligibility.
+    [PY, "_check_seo_signals.py"],
 ]
 
 POST_BUILD_STEPS: list[list[str]] = [

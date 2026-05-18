@@ -482,7 +482,11 @@ def set_meta(src: str, title: str, desc: str) -> str:
 
 
 def set_noindex(src: str) -> str:
-    content = 'noindex,follow'
+    # 2026-05-18 — include max-image-preview:large + max-snippet:-1 even
+    # on noindex pages. Reason: if the page is later flipped to indexable
+    # (e.g. translation backfilled), Google sees the SERP directives
+    # immediately on the next crawl. Costs nothing on a noindex page.
+    content = 'noindex,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1'
     if re.search(r'<meta\s+name="robots"\s+content="[^"]*"', src, re.I):
         src = re.sub(
             r'(<meta\s+name="robots"\s+content=")[^"]*(")',
