@@ -94,7 +94,14 @@ def main() -> None:
             seen_rules.add(rule)
 
     for raw in robots.split('\n\n'):
-        if 'User-agent:' in raw and 'Allow: /' in raw:
+        # Only the open-access group needs internal disallows. We detect
+        # it by the literal standalone `Allow: /` line — NOT a substring
+        # match (otherwise `Allow: /llms.txt` etc. on the block group
+        # would falsely trigger). The block group has `Disallow: /` and
+        # narrower Allows, which don't grant tree access.
+        lines = [ln.strip() for ln in raw.splitlines()]
+        has_open_allow = 'Allow: /' in lines
+        if 'User-agent:' in raw and has_open_allow:
             for rule in INTERNAL_DISALLOWS:
                 if rule not in raw:
                     first_ua = next((line for line in raw.splitlines() if line.startswith('User-agent:')), 'User-agent: ?')

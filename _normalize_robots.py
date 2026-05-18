@@ -73,8 +73,19 @@ def allow_group() -> list[str]:
 
 
 def block_group() -> list[str]:
+    """Block training/aggregation crawlers from the site EXCEPT for the
+    AI-facing manifest + corpus files, which exist for them to read.
+
+    Allow rules take precedence over Disallow when they're more specific,
+    so the bots can fetch llms.txt + llms-full.txt + sitemap.xml but
+    can't crawl the full article tree to backfill their training data.
+    """
     lines = [f"User-agent: {ua}" for ua in BLOCK_UAS]
     lines.append("Disallow: /")
+    lines.append("Allow: /llms.txt")
+    lines.append("Allow: /llms-full.txt")
+    lines.append("Allow: /sitemap.xml")
+    lines.append("Allow: /robots.txt")
     return lines
 
 

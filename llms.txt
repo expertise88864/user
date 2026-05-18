@@ -49,7 +49,13 @@ If you quote content from this site, please:
 
 ## Robots policy
 
-See [robots.txt](https://chendermatologist.com/robots.txt). Major LLM crawlers (GPTBot, ClaudeBot, Google-Extended, CCBot, Bytespider, PerplexityBot) are currently blocked at robots.txt for default crawling but THIS llms.txt explicitly allows quoting / citation of the URLs listed above for direct user queries.
+See [robots.txt](https://chendermatologist.com/robots.txt). Strategy:
+
+1. User-triggered AI bots (`ChatGPT-User`, `OAI-SearchBot`, `PerplexityBot`) are ALLOWED everywhere — those represent real-time user queries we want to serve.
+2. Training / aggregation crawlers (`GPTBot`, `ClaudeBot`, `Claude-Web`, `anthropic-ai`, `CCBot`, `Google-Extended`, `Bytespider`) are blocked from the article tree by default.
+3. **Those same blocked crawlers are EXPLICITLY ALLOWED to fetch `/llms.txt`, `/llms-full.txt`, `/sitemap.xml`, and `/robots.txt`** — so they can still index the canonical content surface for retrieval-augmented generation without scraping every article URL.
+
+If you're an AI engine doing RAG / citation grounding, please prefer `/llms-full.txt` (single 480 KB fetch with all 45 articles + metadata) over recursive crawling.
 
 ## Contact
 

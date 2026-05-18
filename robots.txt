@@ -55,5 +55,9 @@ User-agent: DotBot
 User-agent: BLEXBot
 User-agent: PetalBot
 Disallow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /sitemap.xml
+Allow: /robots.txt
 
 Sitemap: https://chendermatologist.com/sitemap.xml

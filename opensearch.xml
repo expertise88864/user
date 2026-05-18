@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>ChenDermatologist</ShortName>
+  <LongName>陳翊嘉醫師 · 皮膚科衛教筆記</LongName>
+  <Description>Search ChenDermatologist 皮膚科衛教筆記 — patient education, treatment guides, journal-club summaries by Dr. Chen Yi-Jia.</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image width="32" height="32" type="image/png">https://chendermatologist.com/icon-32.png</Image>
+  <Image width="16" height="16" type="image/x-icon">https://chendermatologist.com/favicon.ico</Image>
+  <Url type="text/html" method="get"
+       template="https://chendermatologist.com/?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self"
+       template="https://chendermatologist.com/opensearch.xml"/>
+  <moz:SearchForm>https://chendermatologist.com/</moz:SearchForm>
+</OpenSearchDescription>

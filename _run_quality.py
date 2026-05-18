@@ -63,6 +63,10 @@ REGEN_STEPS: list[list[str]] = [
     # AFTER schema/og normalization so the metadata embedded in each
     # article section reflects the latest dateModified + timeRequired.
     [PY, "_gen_llms_full.py"],
+    # 2026-05-18 — Inject <link rel="search"> pointing at opensearch.xml
+    # so Firefox/Edge/Brave readers see "Add Search Engine" prompt and
+    # can search the site from their browser URL bar (recurring visits).
+    [PY, "_normalize_head_extras.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
