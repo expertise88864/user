@@ -47,27 +47,33 @@ def clean_text(src: str) -> str:
     return re.sub(r"\s+", " ", html.unescape(src)).strip()
 
 
-def compute_metrics(src: str) -> dict[str, int]:
+def compute_metrics(src: str, lang: str = "zh") -> dict[str, int]:
     """Estimate wordCount + reading minutes from the main article body.
 
-    Counts CJK characters and Latin words; reading speed estimate is
-    300 CJK chars/min + 200 Latin words/min (typical Chinese reader).
-    Falls back to whole-page text if no <article>/<main> wrapper.
+    For ZH pages: count CJK chars at 300/min + Latin words at 200/min.
+    For EN pages: count Latin words from BOTH visible text AND the
+    data-en attribute values that DN.applyTextOnly() swaps in at runtime.
+    Without that, EN articles would report 2-3 min based on the few
+    visible Latin tokens alone.
     """
     article_m = re.search(r"<article\b[^>]*>([\s\S]*?)</article>", src, re.I)
     main_m = re.search(r"<main\b[^>]*>([\s\S]*?)</main>", src, re.I)
     body_src = (article_m.group(1) if article_m
                 else (main_m.group(1) if main_m else src))
+
+    if lang.startswith("en"):
+        data_en_text = " ".join(re.findall(r'data-en="([^"]*)"', body_src))
+        visible_text = clean_text(re.sub(r'\sdata-en="[^"]*"', '', body_src))
+        text = data_en_text + " " + visible_text
+        latin_words = len(re.findall(r"\b[A-Za-z][A-Za-z'\-]{1,}\b", text))
+        minutes = max(1, round(latin_words / 200))
+        return {"wordCount": latin_words, "readingMinutes": minutes}
+
     text = clean_text(body_src)
-    # Strip data-en attribute values that JS swaps in at runtime so we
-    # don't double-count the same content twice.
     cjk_chars = len(re.findall(r"[一-鿿]", text))
     latin_words = len(re.findall(r"\b[A-Za-z][A-Za-z'\-]{1,}\b", text))
     minutes = max(1, round(cjk_chars / 300 + latin_words / 200))
-    return {
-        "wordCount": cjk_chars + latin_words,
-        "readingMinutes": minutes,
-    }
+    return {"wordCount": cjk_chars + latin_words, "readingMinutes": minutes}
 
 
 SPEAKABLE_SPEC = {
@@ -242,7 +248,7 @@ def normalize_file(path: Path) -> bool:
     src = src.replace(f"{DOMAIN}/#person", PHYSICIAN_ID)
     src = src.replace(f"{DOMAIN}/about#person", PHYSICIAN_ID)
     meta = page_meta(src)
-    metrics = compute_metrics(src) if path.name not in {"index.html", "topics.html"} else None
+    metrics = compute_metrics(src, lang=meta.get("lang") or "zh") if path.name not in {"index.html", "topics.html"} else None
 
     changed = False
 

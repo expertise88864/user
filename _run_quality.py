@@ -26,6 +26,11 @@ REGEN_STEPS: list[list[str]] = [
     [PY, "_inject_404.py"],
     [PY, "_gen_en_pages.py"],
     [PY, "_normalize_schema.py", "--include-en"],
+    # 2026-05-18 — Inject visible reading-time badge under each H1
+    # using the timeRequired + wordCount values that _normalize_schema
+    # just wrote into JSON-LD. Runs after --include-en so EN articles
+    # use EN-specific reading times (smaller body, lower minute count).
+    [PY, "_inject_reading_time.py"],
     [PY, "_normalize_social_urls.py"],
     [PY, "_normalize_third_party.py"],
     [PY, "_normalize_external_links.py"],

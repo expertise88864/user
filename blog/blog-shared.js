@@ -195,7 +195,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202605180300';
+        s.src = '/blog/blog-article-visuals.min.js?v=202605180400';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1018,7 +1018,7 @@
     if (!DN._articleReadingBundleLoading) {
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202605180300';
+        s.src = '/blog/blog-article-reading.min.js?v=202605180400';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1050,7 +1050,7 @@
     if (!DN._articleFooterBundleLoading) {
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202605180300';
+        s.src = '/blog/blog-article-footer.min.js?v=202605180400';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1076,7 +1076,7 @@
     if (!DN._calculatorBundleLoading) {
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202605180300';
+        s.src = '/blog/blog-calculators.min.js?v=202605180400';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1191,7 +1191,7 @@
     if (!DN._hubBundleLoading) {
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202605180300';
+        s.src = '/blog/blog-hub.min.js?v=202605180400';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1446,6 +1446,25 @@
         source: location.pathname,
       });
     }, { passive: true });
+    // Outbound link tracking — any <a> pointing off-host fires `outbound_click`
+    // with the destination host as the label. Lets us see in GA4 which external
+    // references (PubMed, journals, derm societies, etc.) readers actually click.
+    // Delegated so it covers SSG, JS-injected, and dynamically loaded links.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (!/^https?:\/\//i.test(href)) return;  // skip relative + mailto + tel
+      try {
+        var u = new URL(href, location.href);
+        if (u.host === location.host) return;  // same-origin, not outbound
+        fire('outbound_click', {
+          destination: u.host + u.pathname,
+          host: u.host,
+          page_path: location.pathname,
+        });
+      } catch (err) { /* malformed URL — skip */ }
+    }, { passive: true, capture: true });
     // Track 75% scroll depth on articles (reading completion proxy)
     if (document.querySelector('article .prose')) {
       let fired = false;
