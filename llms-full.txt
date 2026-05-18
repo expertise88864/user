@@ -359,11 +359,11 @@ SCORAD、EASI、pruritus NRS、DLQI、外周 EOS、血清 IgE
 
 作者提出兩個可能的解釋（皆需更大型 RCT 驗證）：
 
-藥物動力學假說：減量造成 sub-therapeutic 血中濃度。低劑量、波動的 IL-4/IL-13 訊號抑制可能不足以完全壓制底層的 Th2 發炎，反而讓疾病處於『不穩定平衡』，比完全沒藥的免疫系統反彈更難預測，導致較早復發。" data-en="Pharmacokinetic hypothesis: Tapering creates sub-therapeutic plasma levels. Low, fluctuating IL-4/IL-13 receptor blockade may be insufficient to fully suppress underlying Th2 inflammation, leaving the disease in an unstable equilibrium that's actually less predictable than a clean stop — yielding earlier relapse.">藥物動力學假說：減量造成 sub-therapeutic 血中濃度。低劑量、波動的 IL-4/IL-13 訊號抑制可能不足以完全壓制底層的 Th2 發炎，反而讓疾病處於「不穩定平衡」，比完全沒藥的免疫系統反彈更難預測，導致較早復發。
+藥物動力學假說：減量造成 sub-therapeutic 血中濃度。低劑量、波動的 IL-4/IL-13 訊號抑制可能不足以完全壓制底層的 Th2 發炎，反而讓疾病處於「不穩定平衡」，比完全沒藥的免疫系統反彈更難預測，導致較早復發。
 
-選擇偏差：因為是 shared decision-making 非隨機分組，臨床醫師可能傾向把『治療反應不夠理想、症狀容易反覆』的病人安排減量觀察，而非完全停藥。因此減量組從一開始就帶有較高的內生復發風險。" data-en="Selection bias: With shared decision-making (non-randomized), clinicians may have steered patients with less-than-ideal response or more relapse-prone disease toward the tapering arm. The tapering cohort then carries higher baseline relapse risk independent of the dosing strategy itself.">選擇偏差：因為是 shared decision-making 非隨機分組，臨床醫師可能傾向把「治療反應不夠理想、症狀容易反覆」的病人安排減量觀察，而非完全停藥。因此減量組從一開始就帶有較高的內生復發風險。
+選擇偏差：因為是 shared decision-making 非隨機分組，臨床醫師可能傾向把「治療反應不夠理想、症狀容易反覆」的病人安排減量觀察，而非完全停藥。因此減量組從一開始就帶有較高的內生復發風險。
 
-臨床啟示：在等到更大型 RCT 證實之前，這篇研究讓『減量是病人友善的中間路線』這個直覺受到質疑。對 dupilumab 反應好、想嘗試延長間隔的病人，至少應該被告知此一觀察：『慢慢拉長間隔』未必比『一次完整停掉、復發時再申請』來得穩定。" data-en="Clinical implication: Until a larger RCT replicates this, the intuition that "tapering is the gentle compromise" deserves caution. Patients with a good dupilumab response who want to extend dosing intervals should be told: gradual extension is not clearly safer than a clean stop with re-treatment on relapse.">「臨床啟示：在等到更大型 RCT 證實之前，這篇研究讓「減量是病人友善的中間路線」這個直覺受到質疑。對 dupilumab 反應好、想嘗試延長間隔的病人，至少應該被告知此一觀察：「慢慢拉長間隔」未必比「一次完整停掉、復發時再申請」來得穩定。
+「臨床啟示：在等到更大型 RCT 證實之前，這篇研究讓「減量是病人友善的中間路線」這個直覺受到質疑。對 dupilumab 反應好、想嘗試延長間隔的病人，至少應該被告知此一觀察：「慢慢拉長間隔」未必比「一次完整停掉、復發時再申請」來得穩定。
 
 復發風險因子
 
@@ -393,7 +393,7 @@ classic → 較低復發；其他表型 → 較高復發
 
 安全性與視神經萎縮個案首報
 
-0 人因不良反應停藥。" data-en="Across 52 weeks of follow-up, 7 adverse events were recorded — all self-limiting or resolving with treatment. No patient discontinued for adverse events.">52 週追蹤期間共觀察到 7 件不良事件，所有事件皆為自限性或經治療後緩解，0 人因不良反應停藥。
+52 週追蹤期間共觀察到 7 件不良事件，所有事件皆為自限性或經治療後緩解，0 人因不良反應停藥。
 
 不良事件
 件數
@@ -420,7 +420,7 @@ classic → 較低復發；其他表型 → 較高復發
 短期組
 抗組織胺後緩解
 
-視神經萎縮（停藥 1 年後出現，首例文獻報告）" data-en="Optic nerve atrophy (1 year post-discontinuation; first literature report)">視神經萎縮（停藥 1 年後出現，首例文獻報告）
+視神經萎縮（停藥 1 年後出現，首例文獻報告）
 1
 短期組（38 歲女性）
 合併診斷腦缺血；治療後視力恢復；持續每 3 個月追蹤；因果關係未證實
@@ -439,7 +439,108 @@ classic → 較低復發；其他表型 → 較高復發
 
 給臨床醫師的 take-home messages
 
-達標後不建議用『減量』作為節省策略。本研究顯示減量延長間隔反而比直接停藥更早復發（48 vs 66 天）。" data-en="Do not use tapering as a cost-saving strategy after target achievement. This study shows extended-interval tapering relapsed earlier than abrupt stop (48 vs 66 days).">達標後不建議用「減量」作為節省策略。本研究顯示減量延長間隔反而比直接停藥更早復發（48 vs 66 天）。
+達標後不建議用「減量」作為節省策略。本研究顯示減量延長間隔反而比直接停藥更早復發（48 vs 66 天）。
+
+想真正延緩復發 → 持續 q2w。長期 q2w 組平均無復發 159 天，遠勝其他兩組；部分病人 > 300 天無復發。
+
+復發高風險族群（基線 IgE 高、病程 > 5 年、非典型 AD 表型）→ 更應傾向持續治療而非停藥。
+
+停藥若需嘗試 → 完整停藥比慢慢拉長間隔更穩定。本研究短期停藥組復發中位 66 天，仍比減量組好。
+
+追蹤 IgE / EOS 作為復發預測指標。基線高 IgE 與較高復發率相關，可協助分層病人風險。
+
+視神經事件警示但勿過度解讀。1 例個案、停藥 1 年後、合併腦缺血——因果關係未證實。建議常規追蹤眼科症狀但不需常規腦影像篩檢。
+
+台灣健保給付條件（杜避炎® / Dupixent®）
+
+健保署 13.17.1 條 · 2025/04 修正
+以下整理自衛福部中央健康保險署「藥品給付規定」13.17.1 條（114/4/23 公告版本）。實際申請時請以最新版本為準。
+
+處方科別與適應症
+
+18 歲以上：限皮膚科或風濕免疫科專科醫師處方
+
+12–18 歲：限皮膚科專科醫師，或具兒童過敏免疫風濕專長之兒科專科醫師
+
+適應症：經照光治療及其他系統性治療無效、或因醫療因素無法接受照光與系統性治療之全身慢性中重度 AD
+
+中重度 AD 客觀定義
+
+病灶持續 ≥ 6 個月
+
+EASI ≥ 16
+
+紅腫體表面積 ≥ 30%（只算紅腫濕疹部位；單純乾燥、脫皮、抓痕不算）
+
+IGA 3–4（中度至重度）
+
+必須先試過的治療（事前療程證據）
+
+申請前須完成「完整療程」（共需 6 個月，可合併他院病歷）：
+
+照光治療（PUVA 或 nb-UVB）每週至少 2 次、療程達 12 週，附詳細劑量紀錄
+
+三種傳統免疫抑制劑中的至少兩種，各治療至少 12 週後仍無效（成人足量：methotrexate 每週 15 mg / azathioprine 2 mg/kg/d / cyclosporin 5 mg/kg/d）
+
+若有醫療禁忌（光過敏、白化症、紅斑性狼瘡、皮膚癌等）可豁免照光
+
+使用劑量
+
+族群
+起始劑量
+維持劑量
+
+≥ 18 歲
+600 mg（300 mg × 2）
+300 mg q2w
+
+12–18 歲・15–<30 kg
+600 mg（300 mg × 2）
+300 mg q4w
+
+12–18 歲・30–<60 kg
+400 mg（200 mg × 2）
+200 mg q2w
+
+12–18 歲・≥ 60 kg
+600 mg（300 mg × 2）
+300 mg q2w
+
+續用與暫緩規則
+
+初次申請：以 6 個月為一個療程，須經事前審查核准
+
+16 週評估：未達 EASI 50 不可續用
+
+續用：每 6 個月須再次事前審查，需附治療前後照片
+
+暫緩續用：生物製劑（dupilumab）使用 1 年後若 EASI ≤ 16，須暫停；JAK 抑制劑（upadacitinib / abrocitinib）114/6/1 起改為使用 2 年後若 EASI ≤ 16 才須暫停。復發後（再復發 50% 或 EASI ≥ 16）可重新申請
+
+Upa 與 Abro 劑量限制：Upadacitinib — EASI 16–20 限每日 15 mg；≥ 18 歲且 EASI ≥ 20 才可每日 30 mg。Abrocitinib — 12 歲以上每日 100 mg 或 200 mg 均可，於 16 週需達 EASI 50 才能續用。Upa 與 Abro 只能擇一使用，僅於無法耐受時可互換
+
+停藥超過 3 個月再申請：視同新申請案件
+
+不可併用：dupilumab、upadacitinib、abrocitinib 三者擇一；upadacitinib / abrocitinib 不可與 cyclosporin 併用
+
+禁忌與停藥條件
+
+懷孕或哺乳期
+
+寄生蟲（蠕蟲）感染
+
+6 個月療效未達 EASI 50（療效不彰）→ 停止治療
+
+出現惡性腫瘤 → 停止治療
+
+進階補充：研究限制與不能外推台灣
+
+研究方法學限制
+
+單中心、回溯性：選擇偏差難以排除；無法確認三組基線真正可比。
+
+分組非隨機：shared decision-making 表面上尊重病人偏好，實則使重症 / 反應較差者集中於某些組（特別是減量組），造成「減量比停藥更糟」可能部分來自選擇偏差。
+
+樣本量小（n=79，三組分別 31/18/30）：次群組分析統計力不足；多變量分析中病程因素 p=0.093 達邊緣顯著。
 
 
 [... truncated; fetch canonical URL for full text ...]
@@ -592,12 +693,12 @@ Metronidazole 0.75% gel
 
 Pimecrolimus 1% cream
 醫立妥（Elidel）
-30% 中重度異膚第二線（傳統治療無效或不耐受，或敏感部位 AD）；POD 用途多須自費" data-en="NHI : ≥ 2 yr, moderate–severe AD with affected area > 30% as second line (conventional therapy fails/intolerable, or AD on sensitive sites); usually self-pay for POD">NHI ：≥ 2 歲、患部面積 > 30% 中重度異膚第二線（傳統治療無效或不耐受，或敏感部位 AD）；POD 用途多須自費
+NHI ：≥ 2 歲、患部面積 > 30% 中重度異膚第二線（傳統治療無效或不耐受，或敏感部位 AD）；POD 用途多須自費
 第一線（實證最佳）；POD 屬 off-label
 
 Tacrolimus 0.03 / 0.1% ointment
 普特皮（Protopic）
-30% 中重度異膚第二線；POD 用途多須自費" data-en="NHI : ≥ 2 yr, moderate–severe AD with affected area > 30% as second line; usually self-pay for POD">NHI ：≥ 2 歲、患部面積 > 30% 中重度異膚第二線；POD 用途多須自費
+NHI ：≥ 2 歲、患部面積 > 30% 中重度異膚第二線；POD 用途多須自費
 第一線；POD 屬 off-label
 
 Ivermectin 1% cream
@@ -613,6 +714,28 @@ Erythromycin 2 / 3% gel
 Azelaic acid 20% cream
 思麗安（Skinoren，僅 20% cream）
 處方自費為主
+第二線；對色素沉著有幫助
+
+Clindamycin lotion / gel
+多種學名藥
+部分品項健保給付（適應症為痤瘡）
+第二線；POD 屬 off-label
+
+Sarecycline / 外用 roflumilast / 外用 ruxolitinib
+—
+台灣尚未上市
+新興選項；目前無法在台灣取得
+
+註：「POD 屬 off-label」意指該藥品的健保適應症不是口周皮膚炎；醫師基於臨床判斷使用是常見而合理的，但部分藥品健保不會給付到這個用途，可能需自費。實際給付以開立當下的台灣健保藥品給付規定為準。
+口服藥：誰需要、怎麼選
+口服藥
+劑量（成人）
+適合對象
+注意事項
+
+Doxycycline
+50-100 mg 一天 1-2 次
+成人、非孕、>8 歲；最常用
 
 [... truncated; fetch canonical URL for full text ...]
 
@@ -2184,11 +2307,30 @@ Ustekinumab（Stelara®）是第一代「IL-23 路徑」抑制劑、靶向 IL-12
 
 健保生物製劑給付條件（健保署事前審查 PASS 通過後給付，114/6/1 修正版本）：
 
-PASI ≥ 10（或膿疱性等不適用 PASI 者改用 BSA ≥ 10%）" data-en="Chronic moderate-severe psoriasis: disease ≥ 6 months, PASI ≥ 10 (or BSA ≥ 10% for non-PASI-measurable forms like pustular)">慢性中重度乾癬：病灶 ≥ 6 個月、PASI ≥ 10（或膿疱性等不適用 PASI 者改用 BSA ≥ 10%）
+慢性中重度乾癬：病灶 ≥ 6 個月、PASI ≥ 10（或膿疱性等不適用 PASI 者改用 BSA ≥ 10%）
 
-二種各使用 ≥ 3 個月仍失敗」: methotrexate、acitretin、cyclosporin、apremilast、deucravacitinib（114/6/1 起 apremilast 與 deucravacitinib 已加入此清單）" data-en="Must complete phototherapy (PUVA or nb-UVB ≥ 2×/wk for 12 weeks) PLUS failure of at least 2 of these five systemic agents (each ≥ 3 months): methotrexate, acitretin, cyclosporin, apremilast, deucravacitinib (apremilast and deucravacitinib added to this list per 2025/6/1 revision)">須先完成「照光治療（PUVA 或 nb-UVB 每週 ≥ 2 次達 12 週）」+「以下五種系統性治療中至少 二種各使用 ≥ 3 個月仍失敗」: methotrexate、acitretin、cyclosporin、apremilast、deucravacitinib（114/6/1 起 apremilast 與 deucravacitinib 已加入此清單）
+須先完成「照光治療（PUVA 或 nb-UVB 每週 ≥ 2 次達 12 週）」+「以下五種系統性治療中至少 二種各使用 ≥ 3 個月仍失敗」: methotrexate、acitretin、cyclosporin、apremilast、deucravacitinib（114/6/1 起 apremilast 與 deucravacitinib 已加入此清單）
 
 足量定義：MTX ≥ 15 mg/週、CsA 2.5–5 mg/kg/d、acitretin 0.3–1 mg/kg/d；育齡女性可不經 acitretin
+
+12 週評估需達 PASI 25（risankizumab、bimekizumab 為 16 週、risankizumab 須達 PASI 75）才能續用
+
+續用每 6 個月須再次事前審查；初次治療後續用需達 PASI 50（risankizumab 需 PASI 75）
+
+暫緩續用：使用生物製劑 2 年後若 PASI ≤ 10 須暫停（與 AD 不同 — AD 生物製劑 1 年）；但有連續兩次暫緩後復發病史者不在此限
+
+新增藥物：Bimekizumab（115/5/1）IL-17A/F 雙重抑制，第 16 週 PASI 25 評估；Spesolimab（113/7/1）抗 IL-36R，限全身型急性膿疱性乾癬使用
+
+注意：「PASI 10／10／10 三 10 標準」是臨床常見口訣，但與健保條文不完全一致。健保條文只要求 PASI ≥ 10（或 BSA ≥ 10% 用於膿疱性）+「兩種傳統治療失敗」+「照光無效或不適合」；DLQI ≥ 10 並非健保條文的硬性要求（雖然申請表通常會記錄）。BAD/AAD 國際指引把 DLQI ≥ 10 列為臨床「升階治療」考量之一，但不是 NHI 法定門檻。
+不符合條件怎麼辦？
+
+合併 乾癬性關節炎（PsA）且風濕科診斷成立 → 走 PsA 給付路徑（門檻較低）
+
+用生物製劑期間到底要不要每年抽血篩檢？參考 2026 JAAD 證據評級對篩檢必要性的重新檢視。
+
+自費生物製劑：年費約 NT$ 25-60 萬不等
+
+治療目標與切換策略
 
 
 [... truncated; fetch canonical URL for full text ...]
@@ -2910,25 +3052,57 @@ GI 副作用
 
 台灣健保給付實務
 
-dupilumab、upadacitinib、abrocitinib 用於 12 歲以上中重度異膚；6–12 歲兒童適用（dupilumab only，條件較寬）。" data-en="NHI (revised 2025/6/1) reimburses dupilumab, upadacitinib, and abrocitinib for moderate-to-severe AD in patients ≥ 12 years; covers dupilumab in 6–12-year-olds under less stringent criteria.">健保 NHI（114/6/1 修正版本）同時給付 dupilumab、upadacitinib、abrocitinib 用於 12 歲以上中重度異膚；6–12 歲兒童適用（dupilumab only，條件較寬）。
+健保 NHI（114/6/1 修正版本）同時給付 dupilumab、upadacitinib、abrocitinib 用於 12 歲以上中重度異膚；6–12 歲兒童適用（dupilumab only，條件較寬）。
 
 客觀條件（12 歲以上）
 
-≥ 6 個月" data-en="Lesions persisting ≥ 6 months">病灶持續 ≥ 6 個月
+病灶持續 ≥ 6 個月
 
-EASI ≥ 16、紅腫體表面積 ≥ 30%（只算紅腫濕疹部位）、IGA 3–4" data-en="EASI ≥ 16, inflamed BSA ≥ 30% (only eczematous areas count), IGA 3–4">EASI ≥ 16、紅腫體表面積 ≥ 30%（只算紅腫濕疹部位）、IGA 3–4
+EASI ≥ 16、紅腫體表面積 ≥ 30%（只算紅腫濕疹部位）、IGA 3–4
 
-照光治療（PUVA 或 nb-UVB）每週 ≥ 2 次、療程達 12 週 + ② 三種傳統免疫抑制劑中的至少二種，各足量使用 ≥ 12 週仍無效或不可耐受（成人足量：MTX ≥ 15 mg/週、AZA 2 mg/kg/d、CsA 5 mg/kg/d；青少年劑量減半）" data-en="Complete prior course: ① phototherapy (PUVA or nb-UVB) ≥ 2× weekly for 12 weeks AND ② at least two of three conventional immunosuppressants, each at adequate dose for ≥ 12 weeks without response or intolerance (adult full dose: MTX ≥ 15 mg/wk, AZA 2 mg/kg/d, CsA 5 mg/kg/d; pediatric doses halved)">完整療程：① 照光治療（PUVA 或 nb-UVB）每週 ≥ 2 次、療程達 12 週 + ② 三種傳統免疫抑制劑中的至少二種，各足量使用 ≥ 12 週仍無效或不可耐受（成人足量：MTX ≥ 15 mg/週、AZA 2 mg/kg/d、CsA 5 mg/kg/d；青少年劑量減半）
+完整療程：① 照光治療（PUVA 或 nb-UVB）每週 ≥ 2 次、療程達 12 週 + ② 三種傳統免疫抑制劑中的至少二種，各足量使用 ≥ 12 週仍無效或不可耐受（成人足量：MTX ≥ 15 mg/週、AZA 2 mg/kg/d、CsA 5 mg/kg/d；青少年劑量減半）
 
 或具有照光禁忌的醫療因素（光過敏、白化症、紅斑性狼瘡、皮膚癌等）可豁免照光要求
 
 續用、暫緩與評估時點
 
-6 個月為一個療程，須事前審查（PASS）核准" data-en="Initial application: 6-month course, requires PASS pre-authorization">初次申請：以 6 個月為一個療程，須事前審查（PASS）核准
+初次申請：以 6 個月為一個療程，須事前審查（PASS）核准
 
-16 週評估：未達 EASI 50 不可續用（dupilumab、upadacitinib、abrocitinib 三者均需此 gate）" data-en="Week-16 review: failure to meet EASI 50 disqualifies continuation (applies equally to dupilumab, upadacitinib, abrocitinib)">16 週評估：未達 EASI 50 不可續用（dupilumab、upadacitinib、abrocitinib 三者均需此 gate）
+16 週評估：未達 EASI 50 不可續用（dupilumab、upadacitinib、abrocitinib 三者均需此 gate）
 
 續用：每 6 個月須再次事前審查，附治療前後照片
+
+暫緩續用：生物製劑（dupilumab）使用 1 年後若 EASI ≤ 16，須暫停；JAK 抑制劑（upa / abro）114/6/1 起改為使用 2 年後若 EASI ≤ 16 才須暫停
+
+復發後（再復發 50% 或 EASI ≥ 16）可重新申請；停藥 > 3 個月再申請視同新案
+
+關鍵劑量規則
+
+Dupilumab（成人）：起始 600 mg（300 mg × 2）→ 300 mg q2w
+
+Upadacitinib：每日 15 mg 或 30 mg。EASI 16–20 限每日 15 mg；≥ 18 歲且 EASI ≥ 20 才可每日 30 mg
+
+Abrocitinib：≥ 12 歲，每日 100 mg 或 200 mg 均可
+
+Upa 與 Abro 只能擇一使用，僅於無法耐受副作用時可互換；皆不可與 cyclosporin 併用
+
+其他生物製劑與 JAK 抑制劑（tralokinumab、lebrikizumab、nemolizumab、baricitinib）目前 NHI 未列入 AD 給付，須完全自費，月費約 NT$ 30,000–50,000。
+
+維持期該繼續打、減量還是停藥？參考 2026 JAAD 真實世界研究：杜避炎® 減量竟比停藥更早復發。
+
+完整逐條對照請見 皮膚科常用藥物健保規範完整整理。
+
+結語
+
+異位性皮膚炎中重度治療在 2017 後完全改變、現在不必再忍著「就是會癢」。生物製劑（dupilumab、lebrikizumab）安全性最好、是長期首選；JAK 抑制劑（upadacitinib、abrocitinib）起效最快、清除率最高、但需理解黑框警告。NB-UVB 光療是經濟過渡選項。和您的皮膚科醫師依「療效目標、安全顧慮、便利性、預算」共同決定。新藥輩出、選擇前諮詢專科、別自行停藥。
+
+參考資料
+
+Davis DMR, Drucker AM, Alikhan A, et al. Guidelines of care for the management of atopic dermatitis in adults with phototherapy and systemic therapies. J Am Acad Dermatol. 2024;90(2):e57-e96. 「來源」
+
+Davis DMR, Frazer-Green L, Alikhan A, et al. Focused update: Guidelines of care for the management of atopic dermatitis in adults. J Am Acad Dermatol. 2024;90(2):e43-e56.
+
+Drucker AM, Morra DE, Prieto-Merino D, et al. Systemic immunomodulatory treatments for atopic dermatitis: update of network meta-analysis. JAMA Dermatol. 2022;158(5):523-532.
 
 
 [... truncated; fetch canonical URL for full text ...]
@@ -3736,7 +3910,7 @@ A有實證有差的：高升糖食物（白飯、白麵、含糖飲料、甜食�
 A健保：外用 Adapalene、BPO、克林黴素、Acnatac/Duac、口服抗生素(Doxycycline、Minocycline)、口服 A 酸（Isotretinoin，但需符合條件）。自費常見：雷射（脈衝染料、皮秒）、化學換膚、痘痘針（局部類固醇注射）、進階保養品。健保藥物已涵蓋 90% 痘痘需求，自費主要是處理痘疤或加速改善。Q痘痘是不是要忌口豆漿、雞蛋、巧克力？
 A沒有實證需要全面忌口。豆漿、雞蛋、巧克力對多數痘痘病人沒有顯著影響。如果你發現吃完特定食物 24-48 小時內必爆痘（個人觀察記錄 4 週以上），那是個人體質，可避開。否則無需忌口造成飲食偏差。其他常見皮膚科問題
 
-皮膚科常見問題大解答。" data-en="For common dermatology questions beyond acne — AD, psoriasis, melasma, rosacea, hair loss, vitiligo — see the dermatology FAQ.">痘痘以外的常見皮膚問題 — 異位性皮膚炎、乾癬、肝斑、玫瑰斑、落髮、白斑 — 一次解答，請看 皮膚科常見問題大解答。
+痘痘以外的常見皮膚問題 — 異位性皮膚炎、乾癬、肝斑、玫瑰斑、落髮、白斑 — 一次解答，請看 皮膚科常見問題大解答。
 
 結語
 痘痘是可治療的疾病，不是體質、不是排毒、不是時間到就會好。除了常識性的清潔保濕之外，找對處方、規律使用、做好防曬,3-6 個月幾乎都會看到顯著改善。如果你已經試過很多 OTC 沒效，該到皮膚科了。
@@ -3860,7 +4034,7 @@ BAD 2021 強烈反對長期使用全身性類固醇（R21，↓↓）：增加�
 有過病史者建議備自我注射筆
 
 評估工具：UAS7、UCT、AAS、DLQI
-Sabroe 2021, BJD):" data-en="BAD 2021 recommends any of the following validated tools for disease activity and quality of life (R2, GPP) (Sabroe 2021, BJD):"> BAD 2021 建議使用以下任一驗證過的量表追蹤疾病活性與生活品質(R2，GPP)(Sabroe 2021, BJD):
+BAD 2021 建議使用以下任一驗證過的量表追蹤疾病活性與生活品質(R2，GPP)(Sabroe 2021, BJD):
 UAS7(Urticaria Activity Score 7d，0-42 分)：每天記錄風團數與癢度連續 7 天，是 CSU 最常用的活性量表
 UCT(Urticaria Control Test，0-16 分)：4 題病人自評，≥12 分即視為控制
 AAS(Angioedema Activity Score)、AECT(Angioedema Control Test)：僅有血管性水腫者使用
@@ -3883,12 +4057,18 @@ Dupilumab（抗 IL-4Rα，即異膚生物製劑）:24 週完全反應 31.4% vs 1
 Tezepelumab（抗 TSLP)：多重 Th2 機轉
 Barzolvolimab、Briquilimab（抗 KIT，直接耗竭肥大細胞）
 這些新藥不久將提供「無類固醇、無免疫抑制劑」的選項。
-JAMA 2024" data-en="Comorbidity assessment in CSU (JAMA 2024)">CSU 的共病評估 JAMA 2024
+CSU 的共病評估 JAMA 2024
 誘發性蕁麻疹合併比例:> 10% 病人合併皮膚劃紋症、冷蕁麻疹、膽鹼性蕁麻疹、延遲性壓力蕁麻疹
 自體免疫疾病:Hashimoto 甲狀腺炎約 20%（可能合併甲低或甲亢）；全身自體免疫疾病 10-28%
 代謝症候群:6-20%（肥胖、高血壓、高血糖）
 焦慮(10-31%)、憂鬱(7-29%)：診斷後 3 年內持續上升
 建議基本檢驗：CBC、ESR / CRP、TSH、抗 TPO 抗體；其他依病史決定（如寄生蟲、肝炎篩檢）。BAD 2021 提醒：不需常規基本實驗室檢查，僅在臨床有指徵時才做（R1，↑） (Sabroe 2021, BJD)
+不要做的檢查:BAD 2021 明確不建議常規篩檢 Helicobacter pylori(R11，↓↓)；亦不常規做 ASST / APST 自體血清 / 血漿皮膚試驗(R22，↓↓)；維他命 D 缺乏不必常規篩檢(Sabroe 2021, BJD)
+「7C 評估」框架(EAACI / GA²LEN / Kolkhir 2024)
+慢性自發性蕁麻疹的系統化評估建議涵蓋 7 個面向(7Cs)，協助門診一次到位：
+Causes（病因）：有無 IgE 自體抗體(Type I 自體免疫）或抗 FcεRI / 抗 IgE 之 IgG(Type IIb 自體免疫）？有無感染、藥物誘發？
+Cofactors（共因子）:NSAIDs、酒精、壓力、感染、月經前期、運動 — 是否有可避免的加重因素？
+Comorbidities（共病）：甲狀腺、自體免疫、代謝、心理（見上條）
 
 [... truncated; fetch canonical URL for full text ...]
 
@@ -4054,13 +4234,14 @@ Goulden 2022, BJD
 治療外的健康管理：減重、戒菸、限制飲酒、運動 — TDA 2024 強調「熱量限制和運動」與藥物併行。
 想了解乾癬的基礎？
 
-乾癬完整衛教。" data-en="For the 6 subtypes, severity scales (PASI / BSA / IGA / DLQI), triggers, comorbidities, and diagnostic flow, see the complete psoriasis overview.">乾癬的 6 大臨床亞型、嚴重度評估（PASI / BSA / IGA / DLQI）、誘發因子、合併症警訊與診斷流程，請看 乾癬完整衛教。
+乾癬的 6 大臨床亞型、嚴重度評估（PASI / BSA / IGA / DLQI）、誘發因子、合併症警訊與診斷流程，請看 乾癬完整衛教。
 
 結語
 乾癬不是癬、不會傳染、不只是皮膚問題，但它是可以高度控制的。從 1990 年代只有外用藥膏 + 光療，到現在IL-17 / IL-23 抑制劑可以做到 PASI 100（病灶幾乎完全清除），治療的天花板已經完全不一樣。不要拖，不要怕生物製劑 — 找專科醫師討論最適合你的治療策略。
 延伸閱讀：關於類固醇藥膏正確使用，看 異膚 6 大迷思；若鱗屑出現在頭皮，可能是頭皮乾癬或脂漏性皮膚炎，需鑑別。
 
 參考資料
+Menter A, et al. Joint AAD-NPF guidelines of care for the management of psoriasis with biologics.J Am Acad Dermatol. 2019;80(4):1029-1072. 「來源」
 
 [... truncated; fetch canonical URL for full text ...]
 
@@ -4142,7 +4323,7 @@ A 醇 / 視黃醛 — Retinol / Retinaldehyde
 常用濃度：15% gel（玫瑰痤瘡為主）、20% cream（痘痘為主），低濃度開架版本約 10%。三合一機轉：
 抗發炎 — 對發炎性痘痘、玫瑰痤瘡的紅腫很有效。
 抑制酪胺酸酶(tyrosinase) — 能美白，對痘印、肝斑都有幫助。
-Cutibacterium acnes">抑制痤瘡桿菌 — 抗菌不產生抗藥性。
+抑制痤瘡桿菌 — 抗菌不產生抗藥性。
 特性：個性溫和、不光敏感、孕期哺乳期可以使用（列入孕期可用首選）。可早晚用。可與多數成分共用。缺點：有人擦了會輕微刺癢、燒灼，通常 1-2 週適應後消失。
 果酸 — AHA
 8. Glycolic acid（甘醇酸，從甘蔗來）
@@ -4439,7 +4620,7 @@ Tags: 口服 A 酸, Isotretinoin
 可以少量，但不建議大量飲酒。酒精會加重肝指數異常與三酸甘油脂上升，讓追蹤抽血變得難解讀。
 常見 Q&A
 A 酸要怎麼吃？空腹還是飯後？
-飯後吃，而且最好搭配油脂的一餐（例如午餐或晚餐有肉、堅果、酪梨）。脂肪會大幅增加吸收。新型微脂體配方（如 Absorica、Acnotin XR)吸收受食物影響較小，可空腹。" data-en="Take with food, ideally a meal containing fat. Fat boosts absorption substantially. Newer lipid-encapsulated formulations (Absorica, Acnotin XR) are less food-dependent.">飯後吃，而且最好搭配油脂的一餐 — 脂肪會大幅增加吸收。
+飯後吃，而且最好搭配油脂的一餐 — 脂肪會大幅增加吸收。
 可以邊吃 A 酸邊吃口服抗生素嗎？
 不行，尤其是四環黴素類(doxycycline、minocycline、tetracycline) — 兩者合併會增加顱內壓升高（假性腦瘤、視乳突水腫）風險。開始 A 酸前要先停掉這類抗生素。
 可以邊吃 A 酸邊塗外用藥膏嗎？
@@ -4599,7 +4780,7 @@ A雷射後膠原重塑需3-6 個月才看到變化。完整療程 6-12 個月，
 A多數 6-12 個月自然淡化。急著淡可考慮脈衝染料雷射 PDL、皮秒、Niacinamide 保養。嚴格防曬避免轉成黑疤(PIH)。Q蟹足腫能不能用雷射磨平？
 A絕對不行。雷射磨平會誘發更大蟹足腫。正確處理是類固醇注射(Triamcinolone)± 5-FU每 4-6 週一次，持續 3-6 次，搭配矽膠片、脈衝染料雷射輔助。雷射波長對照（痘疤、斑、刺青、毛）
 
-皮膚科雷射完整對照表。" data-en="For the 11 laser wavelengths (532 / 595 / 755 / 1064 / 1550 / 2940 / 10600 nm) and their indications, evidence strength, and selection logic, see the complete dermatology laser reference.">11 種雷射波長（532 / 595 / 755 / 1064 / 1550 / 2940 / 10600 nm 等）對應的適應症、證據強度與選擇邏輯，請看 皮膚科雷射完整對照表。
+11 種雷射波長（532 / 595 / 755 / 1064 / 1550 / 2940 / 10600 nm 等）對應的適應症、證據強度與選擇邏輯，請看 皮膚科雷射完整對照表。
 
 結語
 痘疤治療沒有捷徑。重點順序是：
@@ -4796,7 +4977,7 @@ systemic JAK 抑制劑(ritlecitinib 試驗中)
 
 病程長短
 < 1-2 年 — 黑色素細胞尚未完全消失
-5 年陳舊性病灶 — 毛囊內幹細胞已枯竭" data-en="> 5 years (long-standing lesions) — follicular stem-cell pool exhausted">> 5 年陳舊性病灶 — 毛囊內幹細胞已枯竭
+> 5 年陳舊性病灶 — 毛囊內幹細胞已枯竭
 
 毛髮狀態
 病灶內仍有黑色頭髮、體毛 — 毛囊提供黑色素細胞來源
@@ -5135,7 +5316,7 @@ Baricitinib（愛滅炎 Olumiant)
 
 詳細請看 異位性皮膚炎 6 大迷思 與 生物製劑總覽。
 乾癬生物製劑與小分子藥
-乾癬生物製劑統一健保條件（114/6/1 修正）PASI ≥ 10（或膿疱性等不適用 PASI 者改用 BSA ≥ 10%）+ 「照光治療 PUVA / nb-UVB 每週 ≥ 2 次達 12 週」+「以下五種傳統治療中至少 二種各使用 ≥ 3 個月仍失敗」: MTX、acitretin、cyclosporin、apremilast、deucravacitinib（114/6/1 起 apremilast 與 deucravacitinib 已加入此清單）。需事前審查（PASS）通過。12 週評估需達 PASI 25（risankizumab、bimekizumab 於 16 週評估、risankizumab 須達 PASI 75）才能續用；續用每 6 個月需達 PASI 50（risankizumab 需 PASI 75）。暫緩續用：生物製劑使用 2 年後若 PASI ≤ 10 須暫停。新增藥物：Bimekizumab（115/5/1）；Spesolimab（113/7/1）限全身型急性膿疱性乾癬。注意：「PASI 10／10／10 三 10 標準」中 DLQI ≥ 10 是 BAD/AAD 臨床口訣，並非健保條文的硬性要求。" data-en="PASI ≥ 10 (or BSA ≥ 10% for non-PASI-measurable forms like pustular) + phototherapy (PUVA or nb-UVB ≥ 2×/wk for 12 weeks) + failure of at least 2 of these 5 systemic agents (each ≥ 3 months): MTX, acitretin, cyclosporin, apremilast, deucravacitinib (latter two added per 2025/6/1). Requires PASS pre-authorization. Week-12 review requires PASI 25 (risankizumab and bimekizumab at week 16; risankizumab specifically requires PASI 75); renewal every 6 months requires PASI 50 (PASI 75 for risankizumab). Pause continuation: after 2 years of biologic therapy, if PASI ≤ 10, treatment must pause. Recently added: Bimekizumab (2026/5/1); Spesolimab (2024/7/1) for acute generalized pustular psoriasis. Note: the "10/10/10 rule" with DLQI ≥ 10 is a BAD/AAD clinical shorthand, not the NHI legal requirement.">PASI ≥ 10（或膿疱性等不適用 PASI 者改用 BSA ≥ 10%）+「照光治療 PUVA / nb-UVB 每週 ≥ 2 次達 12 週」+「以下五種傳統治療中至少 二種各使用 ≥ 3 個月仍失敗」: MTX、acitretin、cyclosporin、apremilast、deucravacitinib（114/6/1 起 apremilast 與 deucravacitinib 已加入此清單）。需事前審查（PASS）通過。12 週評估需達 PASI 25（risankizumab、bimekizumab 於 16 週評估、risankizumab 須達 PASI 75）才能續用；續用每 6 個月需達 PASI 50（risankizumab 需 PASI 75）。暫緩續用：生物製劑使用 2 年後若 PASI ≤ 10 須暫停。新增藥物：Bimekizumab（115/5/1）；Spesolimab（113/7/1）限全身型急性膿疱性乾癬。注意：「PASI 10／10／10 三 10 標準」中 DLQI ≥ 10 是 BAD/AAD 臨床口訣，並非健保條文的硬性要求。
+乾癬生物製劑統一健保條件（114/6/1 修正）PASI ≥ 10（或膿疱性等不適用 PASI 者改用 BSA ≥ 10%）+「照光治療 PUVA / nb-UVB 每週 ≥ 2 次達 12 週」+「以下五種傳統治療中至少 二種各使用 ≥ 3 個月仍失敗」: MTX、acitretin、cyclosporin、apremilast、deucravacitinib（114/6/1 起 apremilast 與 deucravacitinib 已加入此清單）。需事前審查（PASS）通過。12 週評估需達 PASI 25（risankizumab、bimekizumab 於 16 週評估、risankizumab 須達 PASI 75）才能續用；續用每 6 個月需達 PASI 50（risankizumab 需 PASI 75）。暫緩續用：生物製劑使用 2 年後若 PASI ≤ 10 須暫停。新增藥物：Bimekizumab（115/5/1）；Spesolimab（113/7/1）限全身型急性膿疱性乾癬。注意：「PASI 10／10／10 三 10 標準」中 DLQI ≥ 10 是 BAD/AAD 臨床口訣，並非健保條文的硬性要求。
 藥物
 劑量 / 頻率
 每月自費（若不給付）
@@ -5210,6 +5391,84 @@ Acitretin(Neotigason)
 Baricitinib（愛滅炎 Olumiant)
 ✗（全自費）
 圓禿適應症健保未給付（NHI 僅就 baricitinib 給付 COVID-19 與類風濕性關節炎 ，並未涵蓋圓禿）。仿單適應症為 ≥ 18 歲重度圓禿(SALT ≥ 50%)，須自費
+4 mg/day(2 mg 起始可逐漸加量）
+
+Ritlecitinib（麗扶柔 Litfulo)
+✗（自費）
+≥ 12 歲重度圓禿
+50 mg/day
+
+自費月費約 NT$ 30,000-50,000。詳細請看 圓禿完整衛教。
+慢性自發性蕁麻疹(CSU)— Omalizumab
+項目
+內容
+
+健保狀態
+▲ 條件待最新公告確認
+
+2025/4/23 NHI 公告版本
+Omalizumab 給付條文僅列「重度持續性氣喘」（12 歲以上或 6–12 歲），慢性自發性蕁麻疹未列入給付項目。實際 CSU 給付可能在後續補充公告中加入，請以健保署最新公告為準。
+
+臨床常用條件（依國際指引與 PASS 慣例）
+慢性自發性蕁麻疹 ≥ 6 週、UAS7 ≥ 28、抗組織胺（包括加量到 4 倍劑量）≥ 4 週仍未改善；PASS 評估通過
+
+劑量
+每 4 週皮下 300 mg（成人）；兒童體重調整
+
+療程
+初期評估 12-24 週，持續使用 6-12 個月後評估減量
+
+自費
+單針約 NT$ 14,000-22,000
+
+詳細請看 蕁麻疹 6 大迷思。
+化膿性汗腺炎(HS)— Secukinumab 與 Adalimumab
+項目
+Secukinumab（可善挺）
+Adalimumab（復邁）
+
+健保狀態
+▲ 2025/7/1 起有條件給付
+✗ 目前健保未列入 HS 適應症（仿單適應症但需自費）
+
+條件
+成人中重度 HS：Hurley 2–3、至少 5 處發炎病灶、影響 ≥ 2 個解剖區域；傳統全身治療（tetracycline 系、acitretin、clindamycin+rifampicin 中至少二種）≥ 3 個月未達 HiSCR 50，或達 HiSCR 50 但仍為 Hurley 2；需事前審查
+—
+
+劑量
+每次 300 mg；第 0、1、2、3、4 週每週給予，之後每 4 週給予
+若自費，HS 劑量：第 0 週 160 mg → 第 2 週 80 mg → 之後每週 40 mg（HS 是每週，不是每兩週）
+
+自費
+月費約 NT$ 35,000–45,000
+月費約 NT$ 30,000–50,000
+
+健保 HS 給付以 Secukinumab 為主（2025/7/1 起）；Adalimumab 用於 HS 仍須自費。詳細請看 化膿性汗腺炎完整衛教。
+主要自費藥物清單（健保不給付）
+藥物
+適應症
+自費價
+
+Hydroquinone 4%
+肝斑、色素沉著
+NT$ 600-1,500/條
+
+Tri-Luma 三合一藥膏(Hydroquinone+Tretinoin+Fluocinolone)
+肝斑（限期 8-12 週）
+NT$ 1,200-2,000/條
+
+Tranexamic acid 口服
+肝斑（限非血栓高風險者）
+NT$ 800-1,500/月
+
+Ruxolitinib 1.5% 乳霜(Opzelura)
+白斑、異膚（臉部 ≥ 12 歲）
+NT$ 4,000-6,000/條(60g)
+
+Ivermectin 1% 乳霜(Soolantra 舒立美）
+玫瑰斑（丘疹膿皰型）
+NT$ 1,800-2,500/條(30g)
+
 
 [... truncated; fetch canonical URL for full text ...]
 
@@ -5695,7 +5954,7 @@ A 酸隔天輪用（中間夜晚改杜鵑花酸或菸鹼醯胺）
 用藥前抽血：GOT/GPT、TG、Cholesterol、孕婦 hCG
 每月回診 + 追蹤抽血（第 1、2、4、6 個月）
 女性育齡需嚴格避孕（致畸胎），療程前 1 個月 + 整個療程 + 結束後 1 個月
-90%)、皮膚乾、夜盲、肌肉痛、情緒變化。" data-en="Common adverse effects: dry lips (>90%), dry skin, night vision changes, myalgia, mood changes.">常見副作用：嘴唇乾(>90%)、皮膚乾、夜盲、肌肉痛、情緒變化。
+常見副作用：嘴唇乾(>90%)、皮膚乾、夜盲、肌肉痛、情緒變化。
 詳見 口服 A 酸完整衛教
 
 14. 痘痘飲食要忌口什麼？
@@ -5794,6 +6053,12 @@ Tri-Luma 三合一
 24. 寶寶皮膚常見問題：濕疹、汗疹、奶癬、尿布疹怎麼分？
 常見鑑別：
 嬰兒濕疹 / 異膚：臉頰、頭皮先發，反覆癢疹，慢性
+汗疹 (miliaria)：熱悶後出現透明小水泡或紅疹，在頸部、皺褶，涼快就退
+奶癬（脂漏性皮膚炎）：頭皮黃色油性結痂，4-6 個月內自然消失
+尿布疹：接觸性，屁股、會陰紅疹，常合併念珠菌（衛星型紅疹）
+蕁麻疹：風疹塊忽然出現忽然消退，癢
+分不清就帶寶寶看皮膚科，對症下藥才對。
+
 
 [... truncated; fetch canonical URL for full text ...]
 
@@ -6440,7 +6705,7 @@ CO₂ 磨皮（頑固型，小面積）
 灰指甲(Onychomycosis)
 S2k 不建議用雷射單獨治療灰指甲(↓)；只有「合併外用 / 口服抗黴菌藥」時可考慮(○)。坊間「雷射根治灰指甲」訴求不符合實證，效果不如口服 itraconazole / terbinafine。
 
-Paasch 2022 S2k)" data-en="Absolute contraindications and key warnings (Paasch 2022 S2k)">雷射絕對禁忌與重要警示(Paasch 2022 S2k)
+雷射絕對禁忌與重要警示(Paasch 2022 S2k)
 S2k 100% 共識：色素性黑色素細胞痣(melanocytic nevus)不建議用雷射處理 — 雷射只能氣化表層、深部黑色素細胞與惡性細胞仍在、可能掩蓋黑色素瘤之早期變化、延誤診斷。正確流程：先以皮膚鏡(dermoscopy)觀察、可疑者切片送病理排除惡性、確認良性後若仍想處理才考慮雷射或手術切除縫合
 多項適應症 IPL 不建議(Paasch 2022)：雀斑、咖啡牛奶斑、太田 / 顴骨母斑、刺青除色、白斑(308 nm 準分子）、菜花、色素性脂漏性角化症 — 應改用對應波長之 Q-switched 或皮秒雷射；IPL 為「廣譜」非「精準」，適合大面積輕度病灶經濟選擇
 近期(6 個月內）使用口服 A 酸(Isotretinoin)者：傳統建議停藥 6 個月後再做磨皮 / 飛梭（疤痕風險）；近年指引放寬至停藥後 1-3 個月(2017 ASDS 共識），但須個別評估、深層磨皮仍建議 6 個月
@@ -6451,6 +6716,8 @@ cyclosporine 環孢素使用者不建議併用 UV 治療（包含 308 nm 準分�
 術後護理共通原則：嚴格防曬(SPF 50+ 含氧化鐵物理性） ≥ 4 週、避免主動結痂前游泳 / 三溫暖 / 化妝、有疱疹史者口服 valacyclovir 預防（磨皮術前 1 天起 5-7 天）
 常見問題(PTT / Dcard / 諮詢室常被問的）
 皮秒雷射跟奈秒(Q-switch)雷射差在哪？
+皮秒(picosecond)脈寬約 10⁻¹² 秒，奈秒(nanosecond)約 10⁻⁹ 秒，皮秒短了 1000 倍。短脈寬代表光機械效應（把色素打碎）大、熱破壞小，所以效果好、副作用少、恢復快。但皮秒不是「萬能」，某些深層色素奈秒仍有用，且皮秒貴 2-3 倍。常見品牌：PicoSure (755 nm)、PicoWay (532/785/1064 nm)、Discovery PICO (532/694/1064 nm)、Enlighten III (532/670/1064 nm)。
+雷射除斑後反黑怎麼辦？
 
 [... truncated; fetch canonical URL for full text ...]
 
@@ -6669,7 +6936,7 @@ EAT trial (Perkin et al., NEJM 2016)
 跟老師溝通：不傳染、不要被排擠、不要給特殊待遇但要給理解
 學校保濕乳液：書包準備一份小罐、洗手後 / 中午後補擦
 避免班上養動物 / 共用毛巾 / 在地板毯上玩耍時間過長
-異常爆發或感染（膿黃結痂）及時就醫、可能是Staphylococcus aureus infection">金黃色葡萄球菌感染(eczema herpeticum 是急症）
+異常爆發或感染（膿黃結痂）及時就醫、可能是金黃色葡萄球菌感染(eczema herpeticum 是急症）
 嬰兒異膚什麼時候該換 Dupilumab?
 
 [... truncated; fetch canonical URL for full text ...]
@@ -7128,7 +7395,7 @@ Baricitinib（Olumiant 愛滅炎）
 Ritlecitinib（Litfulo 麗扶柔）
 
 適用
-50%)">≥18 歲成人重度圓禿（SALT > 50%）
+≥18 歲成人重度圓禿（SALT > 50%）
 ≥12 歲重度圓禿
 
 機轉
@@ -7308,7 +7575,7 @@ Tags: 化膿性汗腺炎, HS
 ~ 30-40% 病人有家族史（autosomal dominant 部分案例）
 
 性別 / 年齡
-男；亞洲：男 > 女。平均發病 23 歲" data-en="Western: F > M; Asian: M > F. Average onset 23 years">歐美：女 > 男；亞洲：男 > 女。平均發病 23 歲
+歐美：女 > 男；亞洲：男 > 女。平均發病 23 歲
 
 體重
 BMI 過高 / 肥胖 — 強相關，減重可改善
@@ -7521,6 +7788,8 @@ HS 會傳染嗎？
 HS 跟一般膿包（癤瘡）怎麼分？
 癤瘡是一次性細菌感染（通常金黃色葡萄球菌），抗生素治療 7-10 天會好。HS 是慢性反覆於相同部位（尤其腋下、鼠蹊、臀部），抗生素短期有效但停藥就復發，且常出現多個病灶 / 通道 / 黑頭粉刺（double-headed comedones,HS 特徵）。
 HS 可以開刀根治嗎？
+局部廣泛切除可解決該部位，但無法保證其他部位不再發。手術應視為「處理已存在不可逆破壞」，搭配生物製劑控制全身發炎才能長期穩定。
+HS 跟克隆氏症有關嗎？
 
 [... truncated; fetch canonical URL for full text ...]
 
@@ -8161,7 +8430,7 @@ Deucravacitinib（Sotyktu）
 PASI 75 第 24 週約 69%；優於 Apremilast(POETYK PSO-1)
 NT$ 30,000-50,000/月
 
-健保給付條件（乾癬）: 10 + DLQI > 10 + failure of at least 2 conventional therapies">PASI > 10 + DLQI > 10 + 至少 2 種傳統治療失敗。詳細看 乾癬 7 大迷思。
+健保給付條件（乾癬）:PASI > 10 + DLQI > 10 + 至少 2 種傳統治療失敗。詳細看 乾癬 7 大迷思。
 圓禿用藥
 健保備註：圓禿目前 NHI 未給付任何 JAK 抑制劑。Baricitinib 給付僅限 COVID-19、給付類風濕性關節炎；Ritlecitinib 亦未列入給付。下表所列為仿單適應症 + 自費價格。
 藥名
@@ -8274,6 +8543,7 @@ NT$ 4,000-6,000/條(60g)
 詳細看 白斑（Vitiligo）完整衛教。
 健保 vs 自費
 2026 年台灣健保有條件給付的皮膚科生物製劑與小分子標靶藥（隨時更新）:
+乾癬：多項生物製劑與 Apremilast、Deucravacitinib（條件嚴格，需 PASI/DLQI/PASS）
 
 [... truncated; fetch canonical URL for full text ...]
 
@@ -8998,7 +9268,7 @@ Minoxidil 5% 加速恢復
 局部類固醇注射 / 外用類固醇
 外用 Ruxolitinib、JAK 短期口服
 
-50% 頭皮）" data-en="Severe alopecia areata (>50% scalp)">嚴重圓禿(>50% 頭皮）
+嚴重圓禿(>50% 頭皮）
 口服 JAK inhibitor(Baricitinib / Ritlecitinib)
 + DPCP 接觸免疫療法
 
@@ -9058,7 +9328,7 @@ Tags: 足癬, Tinea
 另外：自己治好是對家人最大的保護。拖延不治反而是傳染源。
 迷思 4：熱水泡腳 / 醋泡腳 / 鹽水泡腳能殺菌治香港腳
 「網路說熱水加白醋泡腳一週，香港腳就能根除。」無實證。熱水會破壞皮膚屏障反而加重；醋鹽濃度根本殺不死真菌孢子。常見偏方逐一檢視：
-40°C)泡腳" data-en="hot-water foot soaks (>40°C)">熱水(>40°C)泡腳：長時間泡熱水會讓角質層水合過度、屏障受損，反而讓黴菌更容易入侵
+熱水(>40°C)泡腳：長時間泡熱水會讓角質層水合過度、屏障受損，反而讓黴菌更容易入侵
 醋泡腳：醋酸 5-10% 對表面有些抑菌作用，但無法殺死躲在角質深處的菌絲，且高濃度醋會刺激皮膚
 鹽水：鹽水濃度要夠高才有抑菌效果，但那種濃度對皮膚也是強刺激
 茶樹精油：有輕度抗真菌活性（已有實證），但效果弱，僅適合輕症輔助，且部分人會接觸性皮膚炎
@@ -9097,7 +9367,7 @@ Fluconazole
 追蹤方式：用藥前驗肝指數、用藥 4-6 週後再驗一次。若肝指數正常 + 無症狀，後續可拉長間隔。原本肝功能正常的人，因抗黴菌藥造成嚴重肝損傷的機率非常低。
 不適合口服的族群：嚴重肝病、心衰竭(itraconazole 禁忌）、孕婦、哺乳期、與多種藥物有交互作用的人。請與醫師討論。
 迷思 7：寵物身上的黴菌不會傳給人
-「我家貓背上有一塊毛禿掉的斑，獸醫說是黴菌，但牠又沒抓我。」會傳染。Microsporum canis 是貓最常見的皮癬菌，會跳到主人身上" data-en="Microsporum canis, the most common cat dermatophyte, transmits to owners">Microsporum canis 是貓最常見的皮癬菌，會跳到主人身上變體癬或頭癬。寵物相關皮癬菌感染特徵：
+「我家貓背上有一塊毛禿掉的斑，獸醫說是黴菌，但牠又沒抓我。」會傳染。Microsporum canis 是貓最常見的皮癬菌，會跳到主人身上變體癬或頭癬。寵物相關皮癬菌感染特徵：
 貓最常帶 M. canis：幼貓、流浪貓、長毛貓更常見；有時牠們沒明顯症狀但仍是帶原者
 狗則 M. canis、M. gypseum、T. mentagrophytes
 傳到人身上常出現：圓形紅斑伴隨脫皮、邊緣比中央紅（類似戒指） — 體癬
@@ -9128,7 +9398,7 @@ Fluconazole
 Efinaconazole 油劑 / Amorolfine 油劑 48 週
 口服 Terbinafine
 
-50% / 多甲）" data-en="Onychomycosis (moderate-to-severe, >50% or multiple nails)">灰指甲（中重度，>50% / 多甲）
+灰指甲（中重度，>50% / 多甲）
 口服 Terbinafine 250 mg/day，足甲 6 週、趾甲 12 週
 + Itraconazole 脈衝、雷射、化學去甲
 
@@ -9142,11 +9412,11 @@ Efinaconazole 油劑 / Amorolfine 油劑 48 週
 
 疥瘡反覆治不好？
 
-嚴重疥瘡完整治療指南。" data-en="Severe or crusted scabies follows the NEJM 2026 GALE CRUSTED protocol: oral ivermectin + topical 5% permethrin. See the complete severe scabies treatment guide.">廣泛型或結痂型嚴重疥瘡 NEJM 2026 GALE CRUSTED 試驗的標準治療：口服 ivermectin + 外用 5% permethrin。詳見 嚴重疥瘡完整治療指南。
+廣泛型或結痂型嚴重疥瘡 NEJM 2026 GALE CRUSTED 試驗的標準治療：口服 ivermectin + 外用 5% permethrin。詳見 嚴重疥瘡完整治療指南。
 
 腳趾甲變形不一定是灰指甲
 
-腳趾甲變形 12 種型態完整圖鑑。" data-en="Over 90% of toenail dystrophies are mechanical (shoe pressure + foot shape) rather than fungal. See the complete 12-type toenail dystrophy atlas.">超過 9 成的腳趾甲變形其實是「鞋子壓迫 + 腳型」造成的機械性傷害，不是黴菌。詳見 腳趾甲變形 12 種型態完整圖鑑。
+超過 9 成的腳趾甲變形其實是「鞋子壓迫 + 腳型」造成的機械性傷害，不是黴菌。詳見 腳趾甲變形 12 種型態完整圖鑑。
 
 結語 — 預防 5 招
 保持足部乾燥：洗完澡擦乾趾縫、必要時用吹風機冷風吹乾
@@ -9190,21 +9460,21 @@ Tags: 異位性皮膚炎, AD complete guide
 
 異位性皮膚炎是兒童最常見的慢性發炎性皮膚病。全球兒童盛行率 15-30%、成人 2-10%；台灣兒童約 8-10%(Saunes 2024 系統回顧；台灣衛福部健保資料)。發病高峰 60% 在 1 歲前、85% 在 5 歲前；第二高峰見於青少年與成年期，占成人異位性皮膚炎約 25%。
 
-異位性進展(Atopic March)是異位性皮膚炎患者後續易發展食物過敏 → 氣喘 → 過敏性鼻炎的時序現象，在重度嬰兒異位性皮膚炎尤其顯著；Hill 2014 JAMA Pediatr 與 Paller 2019 JACI 提出此概念為早期介入(屏障修復 + 早期食物耐受)的合理基礎。" data-en="The atopic march describes the sequential development of food allergy → asthma → allergic rhinitis after AD, particularly in severe infantile AD; Hill (JAMA Pediatr 2014) and Paller (JACI 2019) frame this as the rationale for early barrier repair and early oral food tolerance strategies.">異位性進展(Atopic March)是異位性皮膚炎患者後續易發展食物過敏 → 氣喘 → 過敏性鼻炎的時序現象，在重度嬰兒異位性皮膚炎尤其顯著；Hill 2014 JAMA Pediatr 與 Paller 2019 JACI 提出此概念為早期介入(屏障修復 + 早期食物耐受)的合理基礎。
+異位性進展(Atopic March)是異位性皮膚炎患者後續易發展食物過敏 → 氣喘 → 過敏性鼻炎的時序現象，在重度嬰兒異位性皮膚炎尤其顯著；Hill 2014 JAMA Pediatr 與 Paller 2019 JACI 提出此概念為早期介入(屏障修復 + 早期食物耐受)的合理基礎。
 
-自然病程：嬰兒型(0-2 歲)約 60% 在 5 歲前緩解；兒童型(2-12 歲)40-60% 在青春期前明顯改善；30-50% 持續到成年。成人新發異位性皮膚炎(占成人異位性皮膚炎約 25%)病程通常更慢性、難治。" data-en="Natural history: infantile AD (0–2 yr) clears before age 5 in ~60%; childhood AD (2–12 yr) improves notably before puberty in 40–60%; 30–50% persist into adulthood. Adult-onset AD (about a quarter of adult AD) is typically more chronic and treatment-resistant.">自然病程：嬰兒型(0-2 歲)約 60% 在 5 歲前緩解；兒童型(2-12 歲)40-60% 在青春期前明顯改善；30-50% 持續到成年。成人新發異位性皮膚炎(占成人異位性皮膚炎約 25%)病程通常更慢性、難治。
+自然病程：嬰兒型(0-2 歲)約 60% 在 5 歲前緩解；兒童型(2-12 歲)40-60% 在青春期前明顯改善；30-50% 持續到成年。成人新發異位性皮膚炎(占成人異位性皮膚炎約 25%)病程通常更慢性、難治。
 
 二、病態生理 — 三角缺陷
 
-皮膚屏障、Th2 免疫失調、微生物失衡三角彼此放大的循環。新藥的標靶幾乎都鎖定第二角的特定 cytokine 軸。" data-en="AD pathophysiology is a self-amplifying triangle of barrier dysfunction, Th2-skewed immunity, and microbiome dysbiosis. Modern targeted agents almost all sit on the second leg, blocking specific Th2 cytokine axes.">異位性皮膚炎的核心病態生理是皮膚屏障、Th2 免疫失調、微生物失衡三角彼此放大的循環。新藥的標靶幾乎都鎖定第二角的特定 cytokine 軸。
+異位性皮膚炎的核心病態生理是皮膚屏障、Th2 免疫失調、微生物失衡三角彼此放大的循環。新藥的標靶幾乎都鎖定第二角的特定 cytokine 軸。
 
 ① 皮膚屏障缺陷
 
-Filaggrin (FLG) 突變：歐美異位性皮膚炎患者 20-50% 有 FLG loss-of-function 突變；亞洲(含台灣)族群常見變異不同(以 R501X、3321delA 之外的突變為主)" data-en="Filaggrin (FLG) mutations: 20–50% of European/American AD have FLG loss-of-function variants; Asian populations carry distinct variants beyond R501X / 3321delA">Filaggrin (FLG) 突變：歐美異位性皮膚炎患者 20-50% 有 FLG loss-of-function 突變；亞洲(含台灣)族群常見變異不同(以 R501X、3321delA 之外的突變為主)
+Filaggrin (FLG) 突變：歐美異位性皮膚炎患者 20-50% 有 FLG loss-of-function 突變；亞洲(含台灣)族群常見變異不同(以 R501X、3321delA 之外的突變為主)
 
-脂質失衡：神經醯胺(尤其 ceramide-3、ceramide-NS)減少；膽固醇 / 脂肪酸 / 神經醯胺比例失調(理想 1:1:3)" data-en="Lipid imbalance: decreased ceramides (especially ceramide-3, ceramide-NS); abnormal cholesterol : fatty acid : ceramide ratio (ideal 1:1:3)">脂質失衡：神經醯胺(尤其 ceramide-3、ceramide-NS)減少；膽固醇 / 脂肪酸 / 神經醯胺比例失調(理想 1:1:3)
+脂質失衡：神經醯胺(尤其 ceramide-3、ceramide-NS)減少；膽固醇 / 脂肪酸 / 神經醯胺比例失調(理想 1:1:3)
 
-TEWL(經皮水分蒸散量,transepidermal water loss)上升:皮膚水分流失加快 → 屏障防禦變差,過敏原與細菌容易進入 → 開啟致敏化(sensitization,身體開始對外來物質產生免疫反應)的入口" data-en="Increased TEWL: elevated transepidermal water loss → easier penetration of allergens and microbes → portal for sensitization">TEWL(經皮水分蒸散量,transepidermal water loss)上升:皮膚水分流失加快 → 屏障防禦變差,過敏原與細菌容易進入 → 開啟致敏化(sensitization,身體開始對外來物質產生免疫反應)的入口
+TEWL(經皮水分蒸散量,transepidermal water loss)上升:皮膚水分流失加快 → 屏障防禦變差,過敏原與細菌容易進入 → 開啟致敏化(sensitization,身體開始對外來物質產生免疫反應)的入口
 
 ② Th2 主導的免疫失調 — 與新藥標靶對應
 
@@ -9236,9 +9506,9 @@ JAK1 (±2)
 
 ③ 皮膚微生物失衡
 
-金黃色葡萄球菌主導:90%+ 病灶帶菌；Staphylococcal enterotoxin 為 superantigen，直接活化大量 T 細胞 → 急性發作" data-en="S. aureus dominance: 90%+ of lesions colonized; staphylococcal enterotoxin acts as a superantigen, directly activating large T-cell pools and triggering flares">金黃色葡萄球菌主導:90%+ 病灶帶菌；Staphylococcal enterotoxin 為 superantigen，直接活化大量 T 細胞 → 急性發作
+金黃色葡萄球菌主導:90%+ 病灶帶菌；Staphylococcal enterotoxin 為 superantigen，直接活化大量 T 細胞 → 急性發作
 
-多樣性下降 + biofilm 形成：正常皮膚的 Staph epidermidis / Cutibacterium 比例下降；病灶區 biofilm 包覆讓抗生素清除困難" data-en="Reduced diversity + biofilm: commensals (S. epidermidis, Cutibacterium) decline; lesional biofilm shields S. aureus from antibiotic clearance">多樣性下降 + biofilm 形成：正常皮膚的 Staph epidermidis / Cutibacterium 比例下降；病灶區 biofilm 包覆讓抗生素清除困難
+多樣性下降 + biofilm 形成：正常皮膚的 Staph epidermidis / Cutibacterium 比例下降；病灶區 biofilm 包覆讓抗生素清除困難
 
 跟接觸性皮膚炎怎麼分？
 
@@ -9246,17 +9516,188 @@ JAK1 (±2)
 
 三、診斷 — 兩套標準與五個鑑別
 
-純臨床診斷；血液 IgE / TARC(thymus and activation-regulated chemokine,反映 Th2 免疫活化的血中指標)/ 過敏原檢測都不是診斷依據(Werfel 2024 S3 反對例行使用)。" data-en="AD is a purely clinical diagnosis; serum IgE, TARC, and allergen panels are not diagnostic and not recommended for routine use (Werfel 2024 S3).">異位性皮膚炎是純臨床診斷；血液 IgE / TARC(thymus and activation-regulated chemokine,反映 Th2 免疫活化的血中指標)/ 過敏原檢測都不是診斷依據(Werfel 2024 S3 反對例行使用)。
+異位性皮膚炎是純臨床診斷；血液 IgE / TARC(thymus and activation-regulated chemokine,反映 Th2 免疫活化的血中指標)/ 過敏原檢測都不是診斷依據(Werfel 2024 S3 反對例行使用)。
 
 Hanifin & Rajka 1980 — 4 主 + 23 次條
 
 主要條件 ≥ 3 + 次要條件 ≥ 3 即可診斷。
 
-主要 4 條(全文)：①搔癢；②典型形態與分布(嬰兒臉與外側肢、兒童青少年屈側、成人手部與屈側苔癬化)；③慢性反覆(> 6 個月)；④個人或家族 atopy 史(氣喘 / 過敏性鼻炎 / 異位性皮膚炎)" data-en="Major (all 4)： ① pruritus； ② typical morphology and distribution (infants: face/extensor; children/adolescents: flexural; adults: hand and flexural lichenification)； ③ chronic relapsing course (> 6 mo)； ④ personal or family history of atopy (asthma, allergic rhinitis, AD)">主要 4 條(全文)：①搔癢；②典型形態與分布(嬰兒臉與外側肢、兒童青少年屈側、成人手部與屈側苔癬化)；③慢性反覆(> 6 個月)；④個人或家族 atopy 史(氣喘 / 過敏性鼻炎 / 異位性皮膚炎)
+主要 4 條(全文)：①搔癢；②典型形態與分布(嬰兒臉與外側肢、兒童青少年屈側、成人手部與屈側苔癬化)；③慢性反覆(> 6 個月)；④個人或家族 atopy 史(氣喘 / 過敏性鼻炎 / 異位性皮膚炎)
 
-次要常用 8 條(共 23 條)：①乾皮(xerosis)；②毛囊角化(keratosis pilaris)；③IgE 上升；④早發(2 歲前)；⑤Dennie-Morgan 摺；⑥眶周色素沉著；⑦白色皮膚劃痕；⑧手 / 足濕疹" data-en="Common 8 minor (of 23)： ① xerosis； ② keratosis pilaris； ③ elevated serum IgE； ④ early onset (< 2 yr)； ⑤ Dennie-Morgan infraorbital fold； ⑥ periorbital darkening； ⑦ white dermographism； ⑧ hand/foot eczema">次要常用 8 條(共 23 條)：①乾皮(xerosis)；②毛囊角化(keratosis pilaris)；③IgE 上升；④早發(2 歲前)；⑤Dennie-Morgan 摺；⑥眶周色素沉著；⑦白色皮膚劃痕；⑧手 / 足濕疹
+次要常用 8 條(共 23 條)：①乾皮(xerosis)；②毛囊角化(keratosis pilaris)；③IgE 上升；④早發(2 歲前)；⑤Dennie-Morgan 摺；⑥眶周色素沉著；⑦白色皮膚劃痕；⑧手 / 足濕疹
 
 UK Working Party 1994 (Williams) — 門診實用版
+
+必要：過去 12 個月有皮膚搔癢病史。加下列 5 項中任 ≥ 3 項：①屈側病史(肘窩、膕窩、頸前、踝前；4 歲以下含臉頰)；②個人 atopy 史(若 < 4 歲改用一等親史)；③近 1 年皮膚廣泛乾燥史；④可見屈側濕疹(4 歲以下含臉頰 / 額)；⑤2 歲前發病(4 歲以上才能用此項)。Williams 1994 BJD,PMID 7918015。
+
+鑑別診斷 — 5 個 quick rule-out
+
+疾病
+關鍵特徵
+與異位性皮膚炎的差別
+
+脂漏性皮膚炎
+頭皮油亮 + 鼻翼 / 眉間 / 耳後黃色油膩鱗屑
+分布偏皮脂腺豐富區；癢輕微
+
+銀屑病
+界線銳利紅斑 + 厚銀白鱗屑；Auspitz sign
+伸側為主(膝、肘、頭皮、薦骨)；指甲變化
+
+疥瘡
+家庭群聚癢、夜間加劇、指間 / 腋下 / 腰帶 / 生殖器；burrow
+不對稱、無屈側 atopy 史；鏡下 mite 確診
+
+接觸性皮膚炎
+邊界銳利、貼合刺激源 / 過敏原(手錶、皮帶、染髮)
+非屈側分布；貼膚試驗(patch test)可確診
+
+早期 CTCL(MF)
+持續 patch > 6 個月、治療反應差、典型分布在覆蓋區(臀、軀幹)
+無 atopy 史的成人新發濕疹樣 plaque → 應切片
+
+四、嚴重度評估
+
+工具
+評估面
+分數區間
+何時用
+限制
+
+EASI
+4 區 × 4 體徵(紅、丘、抓痕、苔癬化)
+0-72
+臨床試驗黃金；EASI-75 為主要 endpoint
+評估費時、評分者間差異大
+
+SCORAD
+A 面積 + B 強度 + C 主觀(癢 + 失眠)
+0-103
+歐系臨床常用；含病人主觀數據
+C 區主觀分受心理共病干擾
+
+IGA
+醫師整體評估(0=clear, 4=severe)
+0-4
+門診快速；台灣健保生物製劑門檻 IGA ≥ 3
+解析度低；無法捕捉局部嚴重變化
+
+POEM
+病人 7 天自評 7 題(乾、癢、滲液、裂、剝、增厚、睡眠)
+0-28
+回診 5 分鐘可完成；捕捉病人視角嚴重度
+無法用於試驗主要 endpoint
+
+DLQI + 癢 NRS
+生活影響 / 癢 0-10
+DLQI 0-30、癢 NRS 0-10
+DLQI > 10 為健保生物製劑門檻；癢 NRS 為主訴指標
+DLQI 不分疾病、異位性皮膚炎特異性差
+
+本網站線上計算器：EASI · SCORAD · DLQI · POEM
+
+五、共病系統評估 — 回診每次篩檢
+
+異位性皮膚炎已不再被視為「只在皮膚」的疾病。Drucker 2017 JID 與 Schonmann 2020 BJD 等族群研究確認其為系統性發炎疾病，與心理、心血管、骨骼、感染風險相連；治療決策(尤其生物製劑 vs JAK 的取捨)必須把這些一起算進去。
+
+① 異位性進展(Atopic March)
+
+食物過敏 OR ~2.7(嬰兒重度異位性皮膚炎風險最高)；早期接觸花生(LEAP 研究)可降低風險 80%
+
+氣喘 OR ~3.0；重度兒童異位性皮膚炎中 30-50%(輕度 10-15%)
+
+過敏性鼻炎 OR ~2.4；重度異位性皮膚炎中 50-75% 合併
+
+嗜酸性食道炎(EoE)：風險約一般人 2-3 倍；吞嚥困難 / 食物卡食道應評估
+
+(數據：Hill DA et al. JAMA Pediatr 2014;Paller AS et al. JACI 2019)
+
+② 心理共病
+
+憂鬱 OR ~1.7(成人重度異位性皮膚炎約 14-20%、一般人 8%)
+
+焦慮 OR ~1.8(17-25% vs 12%)
+
+自殺念頭 OR ~1.4(重度異位性皮膚炎;Schonmann 2020 BJD)
+
+PHQ-2 兩題篩檢：① 過去 2 週是否常感到沒興趣或樂趣？② 過去 2 週是否常感到情緒低落、沮喪或無望？任一題正分 → 進一步 PHQ-9 / 轉介
+
+③ 心血管(成人重度)
+
+重度異位性皮膚炎的心肌梗塞 HR ~1.4、中風 HR ~1.2(Silverberg 2015 JID;Andersen 2018 BJD 全國資料)。機轉為 systemic IL-13 / IL-4 介導的內皮發炎，與 IL-1β / IL-6 介導的動脈粥樣硬化軸有交集。臨床意涵：① 成人重度異位性皮膚炎應例行 BP / 血脂 / 血糖；② JAK 用前評估 ASCVD 風險(見治療段)。
+
+④ 骨骼健康
+
+長期外用強效類固醇(全身 daily ≥ 12 個月)或口服累積 prednisolone ≥ 5 mg/day × 3 個月會降低骨密度(BMD ↓ ~3-5%)。骨密度檢查指徵：符合上述其一即建議 DEXA 基線、之後每 1-2 年追蹤；同時補充 vitamin D + 鈣、戒菸戒酒、負重運動。
+
+⑤ 皮膚感染
+
+急症 — 疱疹性濕疹(eczema herpeticum)：急速擴張的群聚水皰 / 膿皰 + 發燒 + 淋巴結腫；立即 IV acyclovir，眼周受累者眼科會診
+
+常見 — MRSA / 金黃色葡萄球菌膿痂疹：黃色厚痂、滲液；短期 cephalexin / dicloxacillin,MRSA 流行區考慮 doxycycline 或 TMP-SMX
+
+兒童 — 軟疣(molluscum)：多自行消退；搔抓加重異位性皮膚炎；若大量、頑固考慮 cantharidin / 冷凍
+
+⑥ 5 分鐘回診篩檢清單
+
+□ 食物過敏(兒童 < 5 歲必問)
+
+□ 氣喘 / 過敏性鼻炎症狀(咳嗽、夜喘、鼻塞)
+
+□ 睡眠(POEM 第 6 題或主訴夜癢)
+
+□ PHQ-2 兩題；陽性 → PHQ-9 / 轉介
+
+□ 自殺念頭(重度 / 青少年必問)
+
+□ 感染徵象(突然惡化、水皰、蜜色痂、發燒)
+
+□ 累積類固醇(口服 / 強效外用)→ 骨密度評估指徵
+
+外用治療階梯（保濕、類固醇、TCI、PDE4、JAK 軟膏）
+
+保濕用量（每天 ≥ 250 g）、洗澡注意、TCS 1-7 級、tacrolimus / pimecrolimus、crisaborole、外用 ruxolitinib、wet wrap，請看 異位性皮膚炎外用治療完整衛教。
+
+六、治療階梯
+
+STEP 0 — 基礎(所有人，每天)
+
+保濕劑：含神經醯胺 / 甘油 / 凡士林為主；洗澡後 3 分鐘內擦完(soak-and-seal)；成人 200-400 g/週(Sidbury 2023 強建議)
+
+觸發因子處置：汗(運動後沖淋)、衣物(純棉、避羊毛)、避過熱；過敏原急性期可避、慢性期不必盲目戒除
+
+稀釋漂白水浴(bleach bath):Sidbury 2023 條件性建議 — 2.5% NaOCl 1/4 杯加入半浴缸溫水(濃度 ~0.005%)，浸泡 5-10 分鐘，1-2 次 / 週；適合有 S. aureus 反覆感染者，常規無證據族群非必需
+
+STEP 1 — 急性期外用
+
+外用類固醇(TCS)— 美國 7 級分類:Class 1 為 ultra-potent(clobetasol 0.05%),Class 7 為 lowest(hydrocortisone 1%)。部位選擇：臉 / 嬰兒 / 皮膚摺處用 Class 6-7；軀幹四肢 Class 3-5；掌蹠肥厚短期 Class 1-2。
+
+級別
+代表藥
+適用部位
+副作用警示
+
+1 超強
+Clobetasol 0.05%, Halobetasol
+掌蹠肥厚、苔癬化(短期)
+禁用於臉、嬰兒；連續 ≤ 2 週
+
+2-3 強
+Mometasone 0.1%, Betamethasone valerate 0.1%
+軀幹、四肢急性期
+連續 ≤ 4 週，後改 proactive
+
+4-5 中
+Triamcinolone 0.1%, Fluocinolone 0.025%
+多數中度病灶
+長期使用前評估
+
+6-7 弱
+Desonide 0.05%, Hydrocortisone 1%
+臉、皺褶、嬰幼兒
+多數情境第一線
+
+用量(FTU):1 FTU(食指尖到第一指節)≈ 0.5 g，約塗 2 個成人手掌面積。主動式維持(proactive)：緩解後在易復發部位每週 2 次塗 TCS 或 TCI，可降復發 30-60%(Wollenberg 2008、Sidbury 2023 強建議，證據等級 A)。
 
 
 [... truncated; fetch canonical URL for full text ...]

@@ -106,9 +106,18 @@ def compute_metrics(src: str, lang: str = "zh") -> dict[str, int]:
     return {"wordCount": cjk_chars + tokens, "readingMinutes": minutes}
 
 
+# Speakable selectors must target actual DOM and work on BOTH ZH and
+# EN mirrors. CODE_REVIEW C4 found the original `[itemprop='description']`
+# + `.dn-summary` referenced zero pages — Google Assistant TTS picked
+# nothing useful. Replacements:
+#   - `h1` — every article has one (universal)
+#   - `.prose p:first-of-type` — lands on the first paragraph of the
+#     prose container (44/50 ZH + EN articles use `.prose` class).
+#     The first <p> is conventionally the TL;DR or lead sentence.
+#   - `.tldr` — explicit summary class on articles that use it
 SPEAKABLE_SPEC = {
     "@type": "SpeakableSpecification",
-    "cssSelector": ["h1", "[itemprop='description']", ".dn-summary"],
+    "cssSelector": ["h1", ".prose p:first-of-type", ".tldr"],
 }
 
 
@@ -223,7 +232,11 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str],
         if metrics and is_blog_article:
             obj["wordCount"] = metrics["wordCount"]
             obj["timeRequired"] = f"PT{metrics['readingMinutes']}M"
-            obj.setdefault("speakable", SPEAKABLE_SPEC)
+            # Direct assignment (not setdefault) so SPEAKABLE_SPEC updates
+            # propagate to existing blocks. CODE_REVIEW C4 fixed the
+            # selector list to target real DOM (h1 + #proseZh > p +
+            # .tldr) instead of the original nonexistent itemprop ref.
+            obj["speakable"] = SPEAKABLE_SPEC
         if is_blog_article:
             section = _article_section_for_slug(path.stem)
             if section:
@@ -246,7 +259,11 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str],
         if metrics and is_blog_article:
             obj["wordCount"] = metrics["wordCount"]
             obj["timeRequired"] = f"PT{metrics['readingMinutes']}M"
-            obj.setdefault("speakable", SPEAKABLE_SPEC)
+            # Direct assignment (not setdefault) so SPEAKABLE_SPEC updates
+            # propagate to existing blocks. CODE_REVIEW C4 fixed the
+            # selector list to target real DOM (h1 + #proseZh > p +
+            # .tldr) instead of the original nonexistent itemprop ref.
+            obj["speakable"] = SPEAKABLE_SPEC
         if is_blog_article:
             section = _article_section_for_slug(path.stem)
             if section:
@@ -277,6 +294,48 @@ def has_jsonld_type(src: str, typ: str) -> bool:
 
 def has_article_schema(src: str) -> bool:
     return any(obj.get("@type") in {"MedicalScholarlyArticle", "Article", "BlogPosting"} for obj in iter_jsonld(src))
+
+
+_LD_BLOCK_RE = re.compile(
+    r'<script\s+type="application/ld\+json"[^>]*>([\s\S]*?)</script>',
+    re.IGNORECASE,
+)
+
+
+def dedupe_jsonld_type(src: str, typ: str) -> tuple[str, int]:
+    """Remove all but the first JSON-LD block of @type=typ.
+
+    History (CODE_REVIEW C1): 46/48 articles ship 2 MedicalWebPage
+    blocks because an earlier version of the schema normalizer inserted
+    a fresh `build_medical_webpage()` block on every run, on top of
+    whatever Article→MedicalWebPage conversion the same pass produced.
+    The current pass has has_jsonld_type guard against re-insertion,
+    but doesn't clean up the legacy duplicates left in the file.
+
+    Strategy: scan the HTML, find every JSON-LD block of the given
+    @type, keep ONLY the first one. The first block is typically the
+    converted-from-Article version which carries the most editorial
+    metadata (headline, isAccessibleForFree, image). The second was
+    auto-built and only carries derived fields.
+
+    Returns (new_src, count_removed).
+    """
+    matches: list[tuple[int, int]] = []  # (start, end) of MedicalWebPage blocks
+    for m in _LD_BLOCK_RE.finditer(src):
+        try:
+            obj = json.loads(m.group(1))
+        except Exception:
+            continue
+        if isinstance(obj, dict) and obj.get("@type") == typ:
+            matches.append((m.start(), m.end()))
+    if len(matches) <= 1:
+        return src, 0
+    # Drop all but the first; iterate end→start so positions stay valid.
+    keep_start, keep_end = matches[0]
+    out = src
+    for start, end in reversed(matches[1:]):
+        out = out[:start] + out[end:]
+    return out, len(matches) - 1
 
 
 def build_medical_webpage(src: str, path: Path,
@@ -340,6 +399,13 @@ def normalize_file(path: Path) -> bool:
         return new
 
     src2 = re.sub(r'<script\s+type="application/ld\+json"([^>]*)>([\s\S]*?)</script>', repl, src, flags=re.I)
+
+    # CODE_REVIEW C1 — dedupe legacy duplicate MedicalWebPage blocks.
+    # Must run BEFORE the build_medical_webpage insertion check so the
+    # has_jsonld_type guard sees the cleaned state.
+    src2, removed = dedupe_jsonld_type(src2, "MedicalWebPage")
+    if removed:
+        changed = True
 
     if has_article_schema(src2) and path.name not in {"index.html", "topics.html"} and not has_jsonld_type(src2, "MedicalWebPage"):
         block = script_for(build_medical_webpage(src2, path, metrics))

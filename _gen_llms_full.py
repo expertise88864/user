@@ -114,6 +114,13 @@ def extract_clean_body(html: str) -> str:
     body_html = re.sub(r'<style\b[\s\S]*?</style>', ' ', body_html, flags=re.I)
     body_html = re.sub(r'<svg\b[\s\S]*?</svg>', ' ', body_html, flags=re.I)
     body_html = re.sub(r'<noscript\b[\s\S]*?</noscript>', ' ', body_html, flags=re.I)
+    # Strip data-en / data-zh attributes BEFORE tag stripping. The tag
+    # stripper removes tags but the attr values inside them survive as
+    # text otherwise (CODE_REVIEW C2 — confirmed 44 raw "data-en=..."
+    # strings bleeding into the corpus). Strip both since llms-full.txt
+    # is the ZH-source corpus; EN translations have their own surface
+    # via the canonical URLs.
+    body_html = re.sub(r'\sdata-(?:en|zh)="[^"]*"', '', body_html)
     # Replace block-level closes with newlines so paragraphs survive
     body_html = re.sub(r'</(h[1-6]|p|li|tr|td|th|details|summary|blockquote)>',
                        '\n', body_html, flags=re.I)

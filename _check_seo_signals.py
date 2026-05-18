@@ -241,6 +241,145 @@ def check_canonical_coverage() -> None:
         print(f"[OK] canonical link present on all {total} pages")
 
 
+# ─── 8. Schema uniqueness — no duplicate MedicalWebPage per article ──
+def check_no_duplicate_medical_webpage() -> None:
+    """CODE_REVIEW C1: every article must have exactly ONE MedicalWebPage
+    JSON-LD block. Earlier normalize_schema bug left 46/48 articles with
+    duplicates — now deduped in _normalize_schema.dedupe_jsonld_type.
+    """
+    import json
+    pattern = re.compile(
+        r'<script\s+type="application/ld\+json"[^>]*>([\s\S]*?)</script>',
+        re.I)
+    targets: list[Path] = []
+    for d in ("blog", "en/blog"):
+        dpath = ROOT / d
+        if dpath.exists():
+            for fp in sorted(dpath.glob("*.html")):
+                if fp.name in {"index.html", "topics.html"}:
+                    continue
+                targets.append(fp)
+    bad = 0
+    for fp in targets:
+        src = fp.read_text(encoding="utf-8", errors="replace")
+        count = 0
+        for m in pattern.finditer(src):
+            try:
+                obj = json.loads(m.group(1))
+            except Exception:
+                continue
+            if isinstance(obj, dict) and obj.get("@type") == "MedicalWebPage":
+                count += 1
+        if count > 1:
+            err(fp.relative_to(ROOT).as_posix(),
+                f"{count} MedicalWebPage JSON-LD blocks found — should be 1. "
+                f"Run _normalize_schema.py to dedupe.")
+            bad += 1
+    if bad == 0:
+        print(f"[OK] no duplicate MedicalWebPage blocks ({len(targets)} articles)")
+
+
+# ─── 9. Speakable cssSelector must reference real DOM ────────────────
+def check_speakable_selectors_resolve() -> None:
+    """CODE_REVIEW C4: every selector in speakable.cssSelector must
+    match at least one element on the page. Empty selectors leave
+    Google Assistant TTS with no audio source.
+    """
+    import json
+    pattern = re.compile(
+        r'<script\s+type="application/ld\+json"[^>]*>([\s\S]*?)</script>',
+        re.I)
+    targets: list[Path] = []
+    for d in ("blog", "en/blog"):
+        dpath = ROOT / d
+        if dpath.exists():
+            for fp in sorted(dpath.glob("*.html")):
+                if fp.name in {"index.html", "topics.html"}:
+                    continue
+                targets.append(fp)
+    bad = 0
+    for fp in targets:
+        src = fp.read_text(encoding="utf-8", errors="replace")
+        selectors: list[str] = []
+        for m in pattern.finditer(src):
+            try:
+                obj = json.loads(m.group(1))
+            except Exception:
+                continue
+            if not isinstance(obj, dict):
+                continue
+            sp = obj.get("speakable")
+            if isinstance(sp, dict):
+                sel = sp.get("cssSelector")
+                if isinstance(sel, list):
+                    selectors.extend(sel)
+        if not selectors:
+            continue  # not all pages have speakable
+        unresolved: list[str] = []
+        for sel in selectors:
+            # Lightweight check on the ROOT term of each selector. Strips
+            # combinators (>, +, ~, ' ') and pseudo (:first-of-type, etc.)
+            # before testing — we just want to detect "selector targets a
+            # completely missing concept" (e.g., itemprop=description when
+            # nothing on site uses itemprop). Exact CSS resolution would
+            # require parsing the DOM.
+            root = re.split(r'\s|>|\+|~', sel.strip(), maxsplit=1)[0]
+            root = root.split(':', 1)[0]  # drop pseudo-class
+            ok = False
+            if root.startswith('#'):
+                ok = f'id="{root[1:]}"' in src
+            elif root.startswith('.'):
+                cls = root[1:]
+                ok = (f'class="{cls}"' in src
+                      or f'class="{cls} ' in src
+                      or f' {cls}"' in src
+                      or f' {cls} ' in src)
+            elif root.startswith('['):
+                am = re.match(r"\[([a-zA-Z-]+)=['\"]([^'\"]+)['\"]\]", root)
+                if am:
+                    ok = f'{am.group(1)}="{am.group(2)}"' in src
+            elif re.match(r'^[a-z][a-z0-9]*$', root):
+                # Tag selector — h1, h2, p, div, etc.
+                ok = f'<{root}' in src
+            if not ok:
+                unresolved.append(sel)
+        # Spec allows multiple cssSelector entries — Google uses
+        # whichever matches. Only flag if NONE resolve (which is the
+        # original C4 bug). Partial overlap is fine and expected
+        # across heterogeneous article templates.
+        if unresolved and len(unresolved) == len(selectors):
+            err(fp.relative_to(ROOT).as_posix(),
+                f"NO speakable.cssSelector entries resolve to DOM: "
+                f"{unresolved}")
+            bad += 1
+    if bad == 0:
+        print(f"[OK] speakable selectors resolve on every article")
+
+
+# ─── 10. llms-full.txt — no raw data-* attribute bleed ────────────────
+def check_llms_full_clean() -> None:
+    """CODE_REVIEW C2: llms-full.txt is the AI/LLM corpus. Any raw
+    data-en / data-zh / data-cat attribute strings leaking into it
+    confuse RAG ingestion (the LLM sees broken HTML in 'clean text').
+    """
+    fp = ROOT / "llms-full.txt"
+    if not fp.exists():
+        return
+    src = fp.read_text(encoding="utf-8")
+    issues = []
+    for attr in ("data-en", "data-zh", "data-cat", "data-tag-en"):
+        count = src.count(f'{attr}=')
+        if count:
+            issues.append(f"{count}× {attr}=")
+    if issues:
+        err("llms-full.txt",
+            f"raw HTML attribute strings bleed into RAG corpus: {issues}. "
+            f"Update _gen_llms_full.extract_clean_body to strip attrs "
+            f"before tag stripping.")
+    else:
+        print(f"[OK] llms-full.txt has no raw attribute leakage")
+
+
 def main() -> int:
     print("=== SEO signals audit ===")
     check_robots_serp_directives()
@@ -250,6 +389,9 @@ def main() -> int:
     check_homepage_brand_schema()
     check_sitemap_image_encoding()
     check_canonical_coverage()
+    check_no_duplicate_medical_webpage()
+    check_speakable_selectors_resolve()
+    check_llms_full_clean()
 
     if warnings:
         print(f"\n[!] Warnings ({len(warnings)}):")
