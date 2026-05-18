@@ -479,6 +479,38 @@ def check_diagram_calc_slug_lists():
                 f'DN.{map_name} has slugs not in DN.{allow_name}: {sorted(only_map)} — these articles will NOT load the bundle and the diagram/calculator will silently not render')
 
 
+# ─── 10b. unpublished articles must carry noindex meta ────────────────
+def check_unpublished_have_noindex():
+    """Defense-in-depth: any DN.ARTICLES entry with unpublished:true must
+    also ship <meta name="robots" content="noindex,..."> in its HTML.
+
+    Without this, the page is omitted from sitemap.xml + blog listings
+    but Google can still index it via backlinks. Caught on 2026-05-18
+    when severe-scabies-treatment had unpublished:true but no noindex.
+    """
+    shared = ROOT / 'blog' / 'blog-shared.js'
+    if not shared.exists():
+        return
+    src = shared.read_text(encoding='utf-8')
+    m = re.search(r"DN\.ARTICLES\s*=\s*\[([\s\S]*?)\];", src)
+    if not m:
+        return
+    block = m.group(1)
+    for entry_m in re.finditer(r"\{[^{}]*?slug:'([a-z0-9-]+)'[^{}]*?\}", block):
+        e = entry_m.group(0)
+        if not re.search(r"\bunpublished\s*:\s*true\b", e):
+            continue
+        slug = entry_m.group(1)
+        fp = ROOT / 'blog' / f'{slug}.html'
+        if not fp.exists():
+            continue
+        html = fp.read_text(encoding='utf-8', errors='replace')
+        if not re.search(r'<meta[^>]*name="robots"[^>]*content="[^"]*noindex', html, re.I):
+            err(f'blog/{slug}.html',
+                f'article is marked unpublished:true in DN.ARTICLES but has no noindex meta — '
+                f'Google can still index it via backlinks')
+
+
 # ─── 11. robots.txt sitemap line ─────────────────────────────────────
 def check_robots():
     fp = ROOT / 'robots.txt'
@@ -509,6 +541,7 @@ def main():
     check_no_inline_sup_refs()
     check_homepage_card_attrs()
     check_diagram_calc_slug_lists()
+    check_unpublished_have_noindex()
     check_robots()
 
     if warnings:
