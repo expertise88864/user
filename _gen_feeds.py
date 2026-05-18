@@ -17,6 +17,20 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
+def _parse_date_safe(date_str: str, slug: str = "") -> datetime:
+    """Parse a DN.ARTICLES date string. CODE_REVIEW — was a bare
+    datetime.strptime() that crashed on any malformed date and killed
+    the entire build. Now logs the offender and falls back to today
+    so the feed still publishes (degraded vs broken).
+    """
+    try:
+        return datetime.strptime(date_str, '%Y-%m-%d').replace(tzinfo=timezone.utc)
+    except (ValueError, TypeError):
+        print(f"[feeds] WARN — malformed date for slug={slug!r}: {date_str!r}; "
+              f"falling back to today")
+        return datetime.now(tz=timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
+
+
 # CODE_REVIEW — UTF-8 console on Windows (cp950 default crashes on CJK).
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -269,7 +283,7 @@ def build_rss() -> str:
         '    <generator>DermNotes auto-feed</generator>',
     ]
     for a in ARTICLES[:30]:
-        d = datetime.strptime(a['date'], '%Y-%m-%d').replace(tzinfo=timezone.utc)
+        d = _parse_date_safe(a['date'], a.get('slug', ''))
         rfc822 = d.strftime('%a, %d %b %Y 00:00:00 +0000')
         out += [
             '    <item>',
@@ -303,7 +317,7 @@ def build_atom() -> str:
         '  <generator uri="https://chendermatologist.com">DermNotes auto-feed</generator>',
     ]
     for a in ARTICLES[:30]:
-        d = datetime.strptime(a['date'], '%Y-%m-%d').replace(tzinfo=timezone.utc)
+        d = _parse_date_safe(a['date'], a.get('slug', ''))
         iso = d.strftime('%Y-%m-%dT00:00:00Z')
         out += [
             '  <entry>',

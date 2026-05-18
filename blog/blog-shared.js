@@ -195,7 +195,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202605181500';
+        s.src = '/blog/blog-article-visuals.min.js?v=202605181600';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1025,7 +1025,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202605181500';
+        s.src = '/blog/blog-article-reading.min.js?v=202605181600';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1061,7 +1061,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202605181500';
+        s.src = '/blog/blog-article-footer.min.js?v=202605181600';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1091,7 +1091,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202605181500';
+        s.src = '/blog/blog-calculators.min.js?v=202605181600';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1122,7 +1122,18 @@
     var fn = CALC_FN[name];
     if (typeof fn !== 'function') return;
     DN._forceInject = true;
-    try { fn(); } catch (e) {}
+    try {
+      fn();
+    } catch (e) {
+      // CODE_REVIEW — was silently swallowed. A calculator render
+      // error means an article's tool doesn't show up, which the user
+      // notices immediately. Surface to console (guarded to prod
+      // hosts to avoid noisy local-dev) without crashing the page.
+      if (location.hostname.indexOf('chendermatologist.com') !== -1 ||
+          location.hostname === 'localhost') {
+        try { console.warn('[DN] Calculator ' + name + ' failed to render:', e); } catch (_) {}
+      }
+    }
     DN._forceInject = false;
   };
 
@@ -1210,7 +1221,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202605181500';
+        s.src = '/blog/blog-hub.min.js?v=202605181600';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1516,6 +1527,16 @@
         });
       } catch (e) { /* ignore */ }
     }
+    // CODE_REVIEW — all 3 of LCP/CLS/INP observers were left running
+    // for the entire page lifetime. With Speculation Rules now site-
+    // wide, prerender restores can re-invoke initBlog() and accumulate
+    // duplicate observers. Track them in a closure-scoped array and
+    // disconnect when we flush on visibilitychange=hidden.
+    var observers = [];
+    function disconnectAll() {
+      observers.forEach(function (o) { try { o.disconnect(); } catch (e) {} });
+      observers.length = 0;
+    }
     // LCP via PerformanceObserver
     try {
       let lcp = 0;
@@ -1525,10 +1546,12 @@
         lcp = last.renderTime || last.loadTime || last.startTime;
       });
       lcpObs.observe({ type: 'largest-contentful-paint', buffered: true });
+      observers.push(lcpObs);
       addEventListener('visibilitychange', function () {
         if (document.visibilityState === 'hidden' && lcp) {
           send('LCP', lcp, 'lcp-' + Date.now());
           lcp = 0;
+          try { lcpObs.disconnect(); } catch (e) {}
         }
       }, { once: true });
     } catch (e) { /* ignore */ }
@@ -1541,9 +1564,11 @@
         });
       });
       clsObs.observe({ type: 'layout-shift', buffered: true });
+      observers.push(clsObs);
       addEventListener('visibilitychange', function () {
         if (document.visibilityState === 'hidden') {
           send('CLS', cls, 'cls-' + Date.now());
+          try { clsObs.disconnect(); } catch (e) {}
         }
       });
     } catch (e) { /* ignore */ }
@@ -1556,13 +1581,19 @@
         });
       });
       inpObs.observe({ type: 'event', buffered: true, durationThreshold: 40 });
+      observers.push(inpObs);
       addEventListener('visibilitychange', function () {
         if (document.visibilityState === 'hidden' && worstINP) {
           send('INP', worstINP, 'inp-' + Date.now());
           worstINP = 0;
+          try { inpObs.disconnect(); } catch (e) {}
         }
       });
     } catch (e) { /* ignore */ }
+    // bfcache / pageshow safety: if the page was restored from
+    // back-forward cache the observers were already flushed; clean
+    // up any leftover references so re-init doesn't double-observe.
+    addEventListener('pagehide', disconnectAll, { once: true });
     // FCP (First Contentful Paint) — fires once at first paint of any
     // non-white pixel. Cheap signal for actual server + delivery speed.
     try {
@@ -1838,11 +1869,40 @@
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').then(function (reg) {
         DN.bindSWUpdateToast(reg);
-        // Auto-check for update every 30 min when tab is foregrounded
-        setInterval(function () {
-          if (document.visibilityState === 'visible') reg.update().catch(function () {});
-        }, 30 * 60 * 1000);
-      }).catch(function () { /* ignore */ });
+        // CODE_REVIEW — was setInterval(reg.update, 30 min) which never
+        // got cleared and kept firing forever (even after the tab was
+        // hidden for hours; the visibility check just skipped the call
+        // but the interval kept running). Now schedule a single timeout
+        // and reschedule via visibilitychange so a backgrounded tab is
+        // truly idle.
+        var updateTimer = null;
+        function scheduleNextUpdate() {
+          if (updateTimer) clearTimeout(updateTimer);
+          updateTimer = setTimeout(function () {
+            if (document.visibilityState === 'visible') {
+              reg.update().catch(function () {});
+            }
+            scheduleNextUpdate();
+          }, 30 * 60 * 1000);
+        }
+        scheduleNextUpdate();
+        // Re-check on tab refocus too — if the user comes back after
+        // a day, they get the latest SW within seconds, not 30 min.
+        document.addEventListener('visibilitychange', function () {
+          if (document.visibilityState === 'visible') {
+            reg.update().catch(function () {});
+            scheduleNextUpdate();
+          }
+        });
+      }).catch(function (err) {
+        // CODE_REVIEW — was silently swallowed. SW registration failure
+        // means no offline support, no push, no precache. Warn so it
+        // surfaces in DevTools without breaking the page.
+        if (location.hostname.indexOf('chendermatologist.com') !== -1 ||
+            location.hostname === 'localhost') {
+          try { console.warn('[DN] Service Worker register failed:', err); } catch (e) {}
+        }
+      });
     }
     return { applyLang: apply };
   };

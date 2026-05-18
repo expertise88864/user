@@ -34,6 +34,13 @@ import datetime
 from pathlib import Path
 from collections import Counter, defaultdict
 
+# CODE_REVIEW — UTF-8 console at module top so any print() during
+# module init (e.g. import-time warnings) doesn't crash on cp950.
+# Was called inside main() — too late if any module-level code
+# printed CJK before then.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 
 ROOT = Path(__file__).parent
 EXPECTED_NAMESPACES = {
@@ -565,12 +572,7 @@ def check_robots():
 
 # ─── Main ────────────────────────────────────────────────────────────
 def main():
-    # Force UTF-8 output even on Windows cp950 console
-    try:
-        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-    except Exception:
-        pass
-
+    # Module-top reconfigure now handles UTF-8 stdout (CODE_REVIEW).
     fast = '--fast' in sys.argv
     canonical_host = check_sitemap()
     check_html(canonical_host, fast=fast)

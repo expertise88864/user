@@ -48,10 +48,14 @@ function wrapText(text, maxCharsPerLine, maxLines) {
     }
   }
   if (cur && lines.length < maxLines) lines.push(cur);
-  // If text was longer than fits, add ellipsis
+  // If text was longer than fits, add ellipsis.
+  // CODE_REVIEW — was `last.replace(/.{2}$/, '…')` which counts UTF-16
+  // code units, not codepoints. A 4-byte emoji (surrogate pair) at
+  // string end would get mangled (high surrogate dropped, leaving
+  // an unpaired low surrogate). Iterate codepoints via Array.from.
   if (lines.length === maxLines && text.length > lines.join('').length) {
-    const last = lines[lines.length - 1];
-    lines[lines.length - 1] = last.replace(/.{2}$/, '…');
+    const chars = Array.from(lines[lines.length - 1]);
+    lines[lines.length - 1] = chars.slice(0, -2).join('') + '…';
   }
   return lines;
 }
@@ -132,7 +136,12 @@ export default async function handler(req) {
       'Content-Type': 'image/svg+xml; charset=utf-8',
       // Aggressive edge cache: same query string returns same image
       'Cache-Control': 'public, max-age=86400, s-maxage=2592000, stale-while-revalidate=2592000, immutable',
-      'Access-Control-Allow-Origin': '*',
+      // CODE_REVIEW — was `Access-Control-Allow-Origin: *`. SVG can
+      // carry script; if any cross-origin consumer ever drops the
+      // response into `<object>` or fetch+innerHTML, wildcard CORS
+      // would let them read it. OG image scrapers (Facebook, Twitter,
+      // etc.) don't honor CORS anyway — they fetch server-to-server.
+      // No legitimate browser-side consumer needs cross-origin SVG.
     },
   });
 }

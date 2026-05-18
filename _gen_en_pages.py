@@ -16,6 +16,7 @@ import re
 import sys
 import html as html_lib
 from html.parser import HTMLParser
+from pathlib import Path
 
 # CODE_REVIEW — Windows cp950 console crashes on print() with CJK
 # unless stdout is reconfigured to UTF-8. Guard with hasattr because
@@ -683,7 +684,12 @@ def sync_source_hreflang(pairs: list[tuple[str, str, str]]) -> int:
         en_file = os.path.join(ROOT, en_canonical.strip('/').replace('/', os.sep) + '.html')
         if en_canonical == '/en/':
             en_file = os.path.join(ROOT, 'en', 'index.html')
-        en_indexable = os.path.exists(en_file) and not is_noindex(open(en_file, 'r', encoding='utf-8').read())
+        # CODE_REVIEW — use Path.read_text() context-manager equivalent
+        # so file handle is released immediately. Previous open(...).read()
+        # leaked handles on long runs (60+ articles per call).
+        en_indexable = False
+        if os.path.exists(en_file):
+            en_indexable = not is_noindex(Path(en_file).read_text(encoding='utf-8'))
         cluster = hreflang_cluster(zh_canonical, en_canonical if en_indexable else None)
         with open(source_file, 'r', encoding='utf-8') as fp:
             src = fp.read()
