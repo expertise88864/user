@@ -434,6 +434,51 @@ def check_hreflang_reciprocity() -> None:
         print(f"[OK] hreflang reciprocity verified on {pairs_checked} ZH→EN pairs")
 
 
+# ─── 12. Mojibake detector — no literal '????' bleed in data-* attrs ──
+def check_no_mojibake_in_data_attrs() -> None:
+    """CODE_REVIEW (post-launch) — detected on 2026-05-19 that
+    blog/index.html + en/blog/index.html each carried one hand-injected
+    article card where every CJK char in data-zh / text content was
+    replaced with literal '?' (likely from a cp950 console paste or
+    an ASCII-coerced copy step).
+
+    Heuristic: any `data-(zh|en|cat|tag)="...??...??..."` value with
+    3+ consecutive '?' chars is almost certainly mojibake, not real
+    content. Catches both pre-baked cards in index files and any
+    future hand-edits.
+
+    The dynamic loader in blog-hub.js renders cards from DN.ARTICLES
+    (which carries proper UTF-8), so stray static cards are usually
+    duplicates anyway — best to delete rather than repair.
+    """
+    skip_dirs = {".git", "node_modules", "pagefind", "admin"}
+    skip_names = {"404.html", "offline.html", "reset-sw.html",
+                  "admin.html", "CODE_REVIEW.md"}
+    bad = 0
+    # Match `data-WHATEVER="...???..."` or chip body with 3+ literal ?s
+    mojibake_attr_re = re.compile(
+        r'data-(?:zh|en|cat|tag|tag-en|emoji)="[^"]*\?{3,}[^"]*"',
+        re.IGNORECASE,
+    )
+    for fp in sorted(ROOT.rglob("*.html")):
+        parts = fp.relative_to(ROOT).parts
+        if any(p in skip_dirs for p in parts):
+            continue
+        if fp.name in skip_names:
+            continue
+        src = fp.read_text(encoding="utf-8", errors="replace")
+        m = mojibake_attr_re.search(src)
+        if m:
+            err(fp.relative_to(ROOT).as_posix(),
+                f"mojibake in data-* attribute (3+ consecutive '?' literals): "
+                f"{m.group(0)[:80]}... — likely cp950/ASCII coercion damage. "
+                f"Delete the offending card if it's a hand-injected duplicate "
+                f"of a DN.ARTICLES entry; the dynamic loader will render it.")
+            bad += 1
+    if bad == 0:
+        print(f"[OK] no mojibake '????' literals detected in data-* attrs")
+
+
 def main() -> int:
     print("=== SEO signals audit ===")
     check_robots_serp_directives()
@@ -447,6 +492,7 @@ def main() -> int:
     check_speakable_selectors_resolve()
     check_llms_full_clean()
     check_hreflang_reciprocity()
+    check_no_mojibake_in_data_attrs()
 
     if warnings:
         print(f"\n[!] Warnings ({len(warnings)}):")
