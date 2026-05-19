@@ -50,3 +50,5 @@ pagefind/
 # SEO ops (generated, not source)
 _dashboard.md
 .indexnow-log.json
+_readability.md
+_readability.json

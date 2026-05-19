@@ -219,6 +219,17 @@ def main() -> int:
     md_lines.append(f"")
     md_lines.append(f"_Generated {today.isoformat()} · {n} published articles_")
     md_lines.append(f"")
+    # Companion artifacts (Round 2 J/K from OPEN_SOURCE_INTEGRATIONS.md)
+    md_lines.append(f"## Companion artifacts")
+    md_lines.append(f"")
+    md_lines.append(f"- [assets/dn-site-graph.svg](assets/dn-site-graph.svg) — "
+                    f"force-directed visualization of the internal-link graph "
+                    f"(nodes sized by in-degree, coloured by cat). "
+                    f"Re-run `python _gen_site_graph.py` after content changes.")
+    md_lines.append(f"- [_readability.md](_readability.md) — Chinese readability "
+                    f"score per article. Re-run `python _check_readability.py` "
+                    f"after content edits.")
+    md_lines.append(f"")
 
     # ─── Site totals ───
     md_lines.append("## Site totals")

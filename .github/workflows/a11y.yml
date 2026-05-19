@@ -1,0 +1,66 @@
+name: Accessibility (pa11y-ci + axe-core)
+
+# Round 2-G from OPEN_SOURCE_INTEGRATIONS.md
+# pa11y-ci runs axe-core (100+ WCAG 2.1 AA rules) + HTMLCS dual coverage
+# against representative URLs from the sitemap. Complements our
+# Python `_check_static_a11y.py` (~10 hand-rolled rules) with the
+# de-facto industry-standard accessibility engine.
+#
+# Phase-in plan: informational only (continue-on-error) for the first
+# few weeks while we fix the initial fallout (color contrast, ARIA
+# misuse, etc.) Once clean, flip to blocking.
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # Weekly sweep to catch a11y regressions from new content
+    - cron: '0 8 * * 1'  # Monday 08:00 UTC
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  pa11y:
+    name: pa11y-ci (axe + HTMLCS)
+    runs-on: ubuntu-latest
+    continue-on-error: true   # informational until fallout cleared
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+
+      - name: Install pa11y-ci
+        run: npm install -g pa11y-ci@4
+
+      - name: Install Python (for site server)
+        uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+
+      - name: Serve site
+        run: node _serve.mjs --host 127.0.0.1 --port 8080 &
+
+      - name: Wait for server
+        run: |
+          for i in $(seq 1 20); do
+            if curl -sSf http://127.0.0.1:8080/ -o /dev/null; then exit 0; fi
+            sleep 0.5
+          done
+          echo "Server failed to start"; exit 1
+
+      - name: Run pa11y-ci
+        run: |
+          pa11y-ci --config .pa11yci.json \
+            || echo "::warning::pa11y-ci found accessibility issues — see log"
+
+      - name: Upload pa11y report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pa11y-report
+          path: pa11y-report.json
+          if-no-files-found: ignore
+          retention-days: 14

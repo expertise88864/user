@@ -1,6 +1,6 @@
 # ai.txt — AI / LLM crawler policy
 # Site: https://chendermatologist.com/
-# Last update: 2026-05-19
+# Last update: 2026-05-20
 #
 # Companion to /robots.txt. The strategy:
 #   - User-triggered AI bots (ChatGPT-User, OAI-SearchBot, PerplexityBot)

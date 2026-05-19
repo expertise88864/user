@@ -78,6 +78,15 @@ REGEN_STEPS: list[list[str]] = [
     # standards and machine-readable site-summary consumers have a
     # canonical surface (parallel to robots.txt / llms.txt).
     [PY, "_normalize_ai_well_known.py"],
+    # 2026-05-20 — Round 2-H from OPEN_SOURCE_INTEGRATIONS.md:
+    # extract @media print rules from inline <style> blocks to a
+    # shared external CSS loaded with media="print" so browsers
+    # only fetch when printing. ~1 KB savings per page × 114 pages
+    # = ~110 KB redundant inline weight removed site-wide.
+    [PY, "_normalize_critical_css.py"],
+    # 2026-05-20 — Round 2-K visualization: regenerate the
+    # internal-link force-directed SVG after every catalog change.
+    [PY, "_gen_site_graph.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
