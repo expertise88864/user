@@ -1,20 +1,24 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Inject `desc` + `desc_en` fields into DN.ARTICLES entries from each
-article's <meta name="description"> tag.
+"""Emit a DN.ARTICLES_DESC dictionary into blog-hub.js so /blog/ card
+renderer can show subtitle text without bloating the shared runtime.
 
-Why: blog-hub.js renders dynamic article-list cards from DN.ARTICLES,
-but the catalog only carries slug/title/cat/tag fields — no
-description. The static SSG card template used to include a <p> with
-the article description; the dynamic renderer needs the same data so
-every card shows a subtitle.
+Why split: blog/blog-shared.js loads on EVERY page (article, glossary,
+tools, homepage). The 13 KB of CJK description text only matters on
+/blog/ + homepage where article-list cards render. Putting desc into
+DN.ARTICLES on the shared bundle bloated it from ~73 KB to ~96 KB.
+
+Split design:
+  - DN.ARTICLES (in blog-shared.js): unchanged — slug/title/cat/tag/etc.
+  - DN.ARTICLES_DESC (in blog-hub.js): { 'slug': {desc, desc_en} }
+    Only paid when blog-hub bundle loads (/blog/ index + homepage).
 
 Source of truth: the ZH file's <meta name="description"> (SEO-tuned,
 ~100-170 chars). EN counterpart pulled from en/blog/<slug>.html if
 present; falls back to ZH desc otherwise.
 
-Idempotent: matches `desc:'...'` / `desc_en:'...'` and replaces if
-present, inserts after `tag_en:'...'` if absent.
+Idempotent: replaces the whole `// dn-articles-desc:start ... :end`
+marker block on each run.
 
 Run as part of REGEN_STEPS, after _normalize_schema (which canonicalizes
 meta description) and before _normalize_css_links / minify.
@@ -22,6 +26,7 @@ meta description) and before _normalize_css_links / minify.
 from __future__ import annotations
 
 import io
+import json
 import re
 import sys
 from pathlib import Path
@@ -31,8 +36,17 @@ if hasattr(sys.stdout, "reconfigure"):
 
 ROOT = Path(__file__).resolve().parent
 SHARED = ROOT / "blog" / "blog-shared.js"
+HUB = ROOT / "blog" / "blog-hub.js"
 BLOG = ROOT / "blog"
 EN_BLOG = ROOT / "en" / "blog"
+
+# Marker comment block in blog-hub.js — strip + re-insert on each run.
+MARKER_START = "// dn-articles-desc:start"
+MARKER_END = "// dn-articles-desc:end"
+BLOCK_RE = re.compile(
+    re.escape(MARKER_START) + r"[\s\S]*?" + re.escape(MARKER_END),
+    re.MULTILINE,
+)
 
 
 def extract_description(html_path: Path) -> str:
@@ -80,105 +94,101 @@ def js_string_escape(value: str) -> str:
     )
 
 
-def main() -> int:
+def parse_slugs_from_shared() -> list[str]:
+    """Read DN.ARTICLES from blog-shared.js, return slug list (in source
+    order)."""
     if not SHARED.exists():
-        print("[articles-desc] blog/blog-shared.js missing — skipping")
+        return []
+    src = SHARED.read_text(encoding="utf-8")
+    m = re.search(r"DN\.ARTICLES\s*=\s*\[([\s\S]*?)\];", src)
+    if not m:
+        return []
+    return re.findall(r"slug:'([a-z0-9-]+)'", m.group(1))
+
+
+def strip_desc_from_shared() -> int:
+    """One-time cleanup: remove `desc:'...'` and `desc_en:'...'` fields
+    that an earlier version of this script wrote into blog-shared.js
+    DN.ARTICLES entries. They moved to DN.ARTICLES_DESC in blog-hub.js.
+    Returns number of changes made.
+    """
+    if not SHARED.exists():
+        return 0
+    src = SHARED.read_text(encoding="utf-8")
+    # Strip ", desc:'...'" and ", desc_en:'...'" (with or without leading comma)
+    new_src = re.sub(r",\s*desc(?:_en)?:'[^']*'", "", src)
+    if new_src != src:
+        SHARED.write_text(new_src, encoding="utf-8")
+        return src.count("desc:") - new_src.count("desc:")
+    return 0
+
+
+def build_desc_block(descs: dict[str, dict[str, str]]) -> str:
+    """Render the DN.ARTICLES_DESC dictionary as a tight JS literal.
+
+    Skips empty descriptions. Sorts by slug for stable diffs.
+    Uses JSON.dumps internally for proper escaping then converts the
+    JSON-string-keyed dict into JS object syntax that re-uses our
+    js_string_escape rules.
+    """
+    lines = [MARKER_START, "  DN.ARTICLES_DESC = {"]
+    for slug in sorted(descs.keys()):
+        d = descs[slug]
+        if not d.get("desc"):
+            continue
+        lines.append(
+            f"    '{slug}': {{desc:'{d['desc']}',desc_en:'{d.get('desc_en') or d['desc']}'}},"
+        )
+    lines.append("  };")
+    lines.append("  " + MARKER_END)
+    return "\n".join(lines)
+
+
+def main() -> int:
+    if not HUB.exists():
+        print("[articles-desc] blog/blog-hub.js missing — skipping")
         return 0
 
-    src = SHARED.read_text(encoding="utf-8")
-    m_block = re.search(r"DN\.ARTICLES\s*=\s*\[([\s\S]*?)\];", src)
-    if not m_block:
-        print("[articles-desc] DN.ARTICLES catalog not found")
-        return 1
+    # One-time cleanup: pull desc/desc_en out of blog-shared.js if a
+    # previous build wrote them there.
+    n_stripped = strip_desc_from_shared()
+    if n_stripped:
+        print(f"[articles-desc] removed {n_stripped} legacy desc fields from blog-shared.js")
 
-    catalog_start = m_block.start(1)
-    catalog_end = m_block.end(1)
-    catalog = m_block.group(1)
-
-    entries = list(re.finditer(
-        r"\{[^{}]*?slug:'([a-z0-9-]+)'[^{}]*?\}",
-        catalog,
-    ))
-    if not entries:
-        print("[articles-desc] no entries parsed")
-        return 1
-
-    updated = catalog
-    n_changed = 0
-    n_skipped_missing = 0
-
-    # Iterate in reverse so positions inside `updated` stay valid as we splice.
-    for entry_m in reversed(entries):
-        slug = entry_m.group(1)
-        entry_text = entry_m.group(0)
-        entry_start = entry_m.start(0)
-        entry_end = entry_m.end(0)
-
-        zh_desc = extract_description(BLOG / f"{slug}.html")
-        en_desc = extract_description(EN_BLOG / f"{slug}.html") or zh_desc
-
-        if not zh_desc:
-            n_skipped_missing += 1
+    slugs = parse_slugs_from_shared()
+    descs: dict[str, dict[str, str]] = {}
+    skipped = 0
+    for slug in slugs:
+        zh = extract_description(BLOG / f"{slug}.html")
+        en = extract_description(EN_BLOG / f"{slug}.html") or zh
+        if not zh:
+            skipped += 1
             continue
+        descs[slug] = {
+            "desc": js_string_escape(zh),
+            "desc_en": js_string_escape(en),
+        }
 
-        zh_esc = js_string_escape(zh_desc)
-        en_esc = js_string_escape(en_desc)
+    hub_src = HUB.read_text(encoding="utf-8")
+    new_block = build_desc_block(descs)
 
-        new_entry = entry_text
-        # Update or insert desc
-        if re.search(r"\bdesc:'[^']*'", new_entry):
-            new_entry = re.sub(
-                r"\bdesc:'[^']*'",
-                "desc:'" + zh_esc + "'",
-                new_entry,
-                count=1,
-            )
-        else:
-            # Insert AFTER tag_en:'...' if it exists, else after tag:'...',
-            # else right before the closing `}`.
-            anchor = re.search(r"(\btag_en:'[^']*')", new_entry)
-            if anchor:
-                pos = anchor.end()
-                new_entry = (
-                    new_entry[:pos]
-                    + ", desc:'" + zh_esc + "'"
-                    + new_entry[pos:]
-                )
-            else:
-                # before final `}` (drop trailing comma if present)
-                idx = new_entry.rfind("}")
-                new_entry = (
-                    new_entry[:idx].rstrip(", ")
-                    + ", desc:'" + zh_esc + "' "
-                    + new_entry[idx:]
-                )
+    if BLOCK_RE.search(hub_src):
+        new_hub = BLOCK_RE.sub(new_block, hub_src, count=1)
+    else:
+        # First-time insert: place right before the final `})();` IIFE close
+        close_idx = hub_src.rfind("})();")
+        if close_idx == -1:
+            print("[articles-desc] could not find IIFE close in blog-hub.js")
+            return 1
+        new_hub = hub_src[:close_idx] + new_block + "\n\n" + hub_src[close_idx:]
 
-        if re.search(r"\bdesc_en:'[^']*'", new_entry):
-            new_entry = re.sub(
-                r"\bdesc_en:'[^']*'",
-                "desc_en:'" + en_esc + "'",
-                new_entry,
-                count=1,
-            )
-        else:
-            anchor = re.search(r"(\bdesc:'[^']*')", new_entry)
-            if anchor:
-                pos = anchor.end()
-                new_entry = (
-                    new_entry[:pos]
-                    + ", desc_en:'" + en_esc + "'"
-                    + new_entry[pos:]
-                )
-
-        if new_entry != entry_text:
-            updated = updated[:entry_start] + new_entry + updated[entry_end:]
-            n_changed += 1
-
-    if updated != catalog:
-        new_src = src[:catalog_start] + updated + src[catalog_end:]
-        SHARED.write_text(new_src, encoding="utf-8")
-    print(f"[articles-desc] updated {n_changed} entries; "
-          f"skipped {n_skipped_missing} with no <meta description>")
+    if new_hub != hub_src:
+        HUB.write_text(new_hub, encoding="utf-8")
+        print(f"[articles-desc] wrote DN.ARTICLES_DESC ({len(descs)} entries) to blog-hub.js")
+    else:
+        print(f"[articles-desc] DN.ARTICLES_DESC already up-to-date ({len(descs)} entries)")
+    if skipped:
+        print(f"[articles-desc] skipped {skipped} with no <meta description>")
     return 0
 
 
