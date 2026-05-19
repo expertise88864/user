@@ -1,0 +1,62 @@
+name: Structured data validator (sdtt)
+
+# Tier 1C from OPEN_SOURCE_INTEGRATIONS.md — non-blocking sdtt check.
+# Complements _audit_jsonld.py with Google's rich-result preset
+# validation. Surfaces warnings without blocking deploy so it doesn't
+# duplicate the existing JSON-LD audit's enforcement role.
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  sdtt:
+    name: structured-data-testing-tool (informational)
+    runs-on: ubuntu-latest
+    continue-on-error: true   # informational only — never block deploy
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+
+      - name: Install structured-data-testing-tool
+        run: npm install -g structured-data-testing-tool@5
+
+      - name: Pick 8 representative articles
+        id: pick
+        run: |
+          # Sample across categories: 2 myth, 2 rx, 2 research, 1 product, 1 note.
+          # Avoid running on all 50 (sdtt does network fetches; would be slow).
+          cat > /tmp/sample.txt <<'EOF'
+          blog/acne-myths.html
+          blog/sunscreen-myths.html
+          blog/atopic-dermatitis-overview.html
+          blog/biologics-overview.html
+          blog/ai-dermatology-roles.html
+          blog/dupilumab-long-term-maintenance.html
+          blog/topical-acids-patient.html
+          blog/dermatologic-oral-examination.html
+          EOF
+          cat /tmp/sample.txt
+
+      - name: Run sdtt against each sample
+        run: |
+          fail=0
+          while IFS= read -r f; do
+            if [ -f "$f" ]; then
+              echo "::group::sdtt $f"
+              sdtt --file "$f" --schemas "MedicalWebPage,MedicalScholarlyArticle,BreadcrumbList,FAQPage" \
+                || fail=$((fail+1))
+              echo "::endgroup::"
+            fi
+          done < /tmp/sample.txt
+          # Always exit 0 — this is informational. The Python
+          # _audit_jsonld.py + _check_seo_signals.py guards still
+          # enforce in the main Quality gate workflow.
+          echo "sdtt completed; $fail file(s) had warnings (non-blocking)"

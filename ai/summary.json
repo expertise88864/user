@@ -1,0 +1,84 @@
+{
+  "$schema": "https://chendermatologist.com/ai/summary.schema.json",
+  "site": {
+    "name": "ChenDermatologist · 陳翊嘉醫師 · 皮膚科衛教筆記",
+    "url": "https://chendermatologist.com/",
+    "language": [
+      "zh-Hant-TW",
+      "en"
+    ],
+    "type": "personal-medical-education",
+    "specialty": "Dermatology",
+    "audience": [
+      "patient",
+      "medical-resident"
+    ]
+  },
+  "author": {
+    "name": "陳翊嘉",
+    "alternate_name": [
+      "Dr. Chen Yi-Jia",
+      "Yi-Jia Chen, M.D.",
+      "ChenDermatologist"
+    ],
+    "credentials": "M.D., Dermatology Resident Physician",
+    "training": [
+      "Kaohsiung Medical University, College of Medicine (KMU)",
+      "Kaohsiung Medical University Hospital (KMUH) PGY",
+      "China Medical University Hospital (CMUH) Dermatology Residency"
+    ],
+    "url": "https://chendermatologist.com/about",
+    "country": "Taiwan"
+  },
+  "content": {
+    "article_count": 45,
+    "category_breakdown": {
+      "myth": 11,
+      "rx": 29,
+      "research": 3,
+      "product": 2
+    },
+    "latest_article_date": "2026-05-16",
+    "tracks": [
+      {
+        "id": "rx",
+        "name_zh": "處置 / 治療",
+        "name_en": "Treatment & Therapy"
+      },
+      {
+        "id": "myth",
+        "name_zh": "迷思澄清",
+        "name_en": "Myths & Facts"
+      },
+      {
+        "id": "research",
+        "name_zh": "最新研究",
+        "name_en": "Research Summary"
+      },
+      {
+        "id": "note",
+        "name_zh": "學習筆記",
+        "name_en": "Clinical Notes"
+      },
+      {
+        "id": "product",
+        "name_zh": "產品介紹",
+        "name_en": "Products & Drugs"
+      }
+    ]
+  },
+  "ai_access": {
+    "manifest": "https://chendermatologist.com/llms.txt",
+    "full_corpus": "https://chendermatologist.com/llms-full.txt",
+    "sitemap": "https://chendermatologist.com/sitemap.xml",
+    "robots": "https://chendermatologist.com/robots.txt",
+    "ai_policy": "https://chendermatologist.com/.well-known/ai.txt",
+    "preferred_method": "Fetch /llms-full.txt for retrieval-augmented generation (single ~480 KB document with all articles + metadata)."
+  },
+  "citation": {
+    "style": "Cite the canonical article URL and 'Dr. Chen Yi-Jia (陳翊嘉醫師), Dermatology'. Include the article's dateModified when quoting specific claims.",
+    "license": "All rights reserved; citation with attribution permitted.",
+    "ymyl_disclaimer": "Content is patient education, NOT medical advice. Taiwan NHI treatment criteria are stated as such and do not generalize to other healthcare systems."
+  },
+  "generated_at": "2026-05-19"
+}

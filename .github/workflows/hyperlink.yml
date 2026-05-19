@@ -1,0 +1,71 @@
+name: Link & anchor check (hyperlink)
+
+# Tier 1B from OPEN_SOURCE_INTEGRATIONS.md — Rust CLI link checker.
+# Complements the Python `_check_internal_links.py` audit by adding
+# anchor-ID validation (`--check-anchors`): catches TOC links like
+# `href="#some-id"` that point to nonexistent H2 ids on the same page.
+#
+# Speed: 700 HTML pages in ~220 ms (default) / ~850 ms with --check-anchors.
+#
+# Runs in parallel with the main Quality gate.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  hyperlink:
+    name: hyperlink (broken links + anchor IDs)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache hyperlink binary
+        id: hyperlink-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin/hyperlink
+          # Pin a known stable version. Bump deliberately.
+          key: hyperlink-bin-0.1.36-${{ runner.os }}
+
+      - name: Install hyperlink (Rust CLI)
+        if: steps.hyperlink-cache.outputs.cache-hit != 'true'
+        run: |
+          # Prebuilt binary preferred over cargo install (faster cold start).
+          curl -sSL -o /tmp/hyperlink.tar.gz \
+            "https://github.com/untitaker/hyperlink/releases/download/0.1.36/hyperlink-x86_64-unknown-linux-gnu.tar.gz" \
+            || cargo install --locked hyperlink
+          if [ -f /tmp/hyperlink.tar.gz ]; then
+            mkdir -p "$HOME/.cargo/bin"
+            tar -xzf /tmp/hyperlink.tar.gz -C "$HOME/.cargo/bin"
+            chmod +x "$HOME/.cargo/bin/hyperlink"
+          fi
+
+      - name: Add hyperlink to PATH
+        run: echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
+
+      - name: Verify hyperlink installed
+        run: hyperlink --version
+
+      - name: Check links + anchor IDs across all HTML
+        run: |
+          # `--check-anchors`  also validates href="#id" against in-page IDs.
+          # `--github-actions` emits errors inline on PR diffs.
+          # Restrict scan to the static-HTML tree; skip generated noise.
+          hyperlink . \
+            --check-anchors \
+            --github-actions \
+            --sources . \
+          || {
+            echo "::warning::hyperlink found issues — see annotations above."
+            # Don't FAIL the build yet. Phase in as informational until
+            # the existing internal-link audit has been deprecated. Flip
+            # the trailing `|| true` to remove this safety net later.
+            true
+          }

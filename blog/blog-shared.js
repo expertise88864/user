@@ -195,7 +195,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202605191800';
+        s.src = '/blog/blog-article-visuals.min.js?v=202605191900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1025,7 +1025,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202605191800';
+        s.src = '/blog/blog-article-reading.min.js?v=202605191900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1061,7 +1061,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202605191800';
+        s.src = '/blog/blog-article-footer.min.js?v=202605191900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1091,7 +1091,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202605191800';
+        s.src = '/blog/blog-calculators.min.js?v=202605191900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1221,7 +1221,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202605191800';
+        s.src = '/blog/blog-hub.min.js?v=202605191900';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1524,104 +1524,61 @@
 
   DN.bindWebVitals = function () {
     if (typeof gtag !== 'function') return;
-    function send(name, value, id) {
+    // CODE_REVIEW Tier 1A — official GoogleChrome/web-vitals library
+    // (attribution build) loaded via <script defer src="/assets/
+    // web-vitals.iife.js">. Replaces ~85 lines of hand-rolled
+    // PerformanceObserver code with:
+    //   • bfcache restore handling (re-fires with new metric id)
+    //   • Cross-browser parity (Chromium / Firefox / Safari)
+    //   • `.attribution` debug data — WHICH element caused poor LCP,
+    //     which interactionTarget caused INP, which layout-shift source
+    //     caused CLS. Turns GA4 into actionable diagnostics.
+    //   • Standardized algorithm matching the CrUX dataset.
+    var lib = window.webVitals;
+    if (!lib) {
+      // <script defer> hasn't finished loading yet. Retry once.
+      setTimeout(function () {
+        if (window.webVitals) DN.bindWebVitals();
+      }, 800);
+      return;
+    }
+    function send(metric) {
       try {
-        gtag('event', name, {
+        var attr = metric.attribution || {};
+        var params = {
           event_category: 'Web Vitals',
-          event_label: id,
-          value: Math.round(name === 'CLS' ? value * 1000 : value),
-          non_interaction: true
-        });
+          event_label: metric.id,
+          // CLS is unitless; scale to ms-equivalent for GA4.
+          value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+          metric_rating: metric.rating,       // good / needs-improvement / poor
+          metric_delta: metric.delta,
+          navigation_type: metric.navigationType,
+          non_interaction: true,
+        };
+        // Per-metric attribution. Bounded ≤100 chars per GA4 param limit.
+        if (metric.name === 'LCP' && attr.element) {
+          params.lcp_element = String(attr.element).slice(0, 100);
+          params.lcp_url = (attr.url || '').slice(0, 100);
+          params.lcp_ttfb = Math.round(attr.timeToFirstByte || 0);
+          params.lcp_render_delay = Math.round(attr.elementRenderDelay || 0);
+        } else if (metric.name === 'CLS' && attr.largestShiftTarget) {
+          params.cls_target = String(attr.largestShiftTarget).slice(0, 100);
+          params.cls_time = Math.round(attr.largestShiftTime || 0);
+        } else if (metric.name === 'INP' && attr.interactionTarget) {
+          params.inp_target = String(attr.interactionTarget).slice(0, 100);
+          params.inp_type = attr.interactionType || '';
+          params.inp_input_delay = Math.round(attr.inputDelay || 0);
+          params.inp_processing = Math.round(attr.processingDuration || 0);
+          params.inp_presentation = Math.round(attr.presentationDelay || 0);
+        }
+        gtag('event', metric.name, params);
       } catch (e) { /* ignore */ }
     }
-    // CODE_REVIEW — all 3 of LCP/CLS/INP observers were left running
-    // for the entire page lifetime. With Speculation Rules now site-
-    // wide, prerender restores can re-invoke initBlog() and accumulate
-    // duplicate observers. Track them in a closure-scoped array and
-    // disconnect when we flush on visibilitychange=hidden.
-    var observers = [];
-    function disconnectAll() {
-      observers.forEach(function (o) { try { o.disconnect(); } catch (e) {} });
-      observers.length = 0;
-    }
-    // LCP via PerformanceObserver
-    try {
-      let lcp = 0;
-      const lcpObs = new PerformanceObserver(function (list) {
-        const entries = list.getEntries();
-        const last = entries[entries.length - 1];
-        lcp = last.renderTime || last.loadTime || last.startTime;
-      });
-      lcpObs.observe({ type: 'largest-contentful-paint', buffered: true });
-      observers.push(lcpObs);
-      addEventListener('visibilitychange', function () {
-        if (document.visibilityState === 'hidden' && lcp) {
-          send('LCP', lcp, 'lcp-' + Date.now());
-          lcp = 0;
-          try { lcpObs.disconnect(); } catch (e) {}
-        }
-      }, { once: true });
-    } catch (e) { /* ignore */ }
-    // CLS
-    try {
-      let cls = 0;
-      const clsObs = new PerformanceObserver(function (list) {
-        list.getEntries().forEach(function (entry) {
-          if (!entry.hadRecentInput) cls += entry.value;
-        });
-      });
-      clsObs.observe({ type: 'layout-shift', buffered: true });
-      observers.push(clsObs);
-      addEventListener('visibilitychange', function () {
-        if (document.visibilityState === 'hidden') {
-          send('CLS', cls, 'cls-' + Date.now());
-          try { clsObs.disconnect(); } catch (e) {}
-        }
-      });
-    } catch (e) { /* ignore */ }
-    // INP (interaction to next paint) via event timing
-    try {
-      let worstINP = 0;
-      const inpObs = new PerformanceObserver(function (list) {
-        list.getEntries().forEach(function (entry) {
-          if (entry.duration > worstINP) worstINP = entry.duration;
-        });
-      });
-      inpObs.observe({ type: 'event', buffered: true, durationThreshold: 40 });
-      observers.push(inpObs);
-      addEventListener('visibilitychange', function () {
-        if (document.visibilityState === 'hidden' && worstINP) {
-          send('INP', worstINP, 'inp-' + Date.now());
-          worstINP = 0;
-          try { inpObs.disconnect(); } catch (e) {}
-        }
-      });
-    } catch (e) { /* ignore */ }
-    // bfcache / pageshow safety: if the page was restored from
-    // back-forward cache the observers were already flushed; clean
-    // up any leftover references so re-init doesn't double-observe.
-    addEventListener('pagehide', disconnectAll, { once: true });
-    // FCP (First Contentful Paint) — fires once at first paint of any
-    // non-white pixel. Cheap signal for actual server + delivery speed.
-    try {
-      const fcpObs = new PerformanceObserver(function (list) {
-        list.getEntries().forEach(function (entry) {
-          if (entry.name === 'first-contentful-paint') {
-            send('FCP', entry.startTime, 'fcp-' + Date.now());
-            fcpObs.disconnect();
-          }
-        });
-      });
-      fcpObs.observe({ type: 'paint', buffered: true });
-    } catch (e) { /* ignore */ }
-    // TTFB (Time to First Byte) — from PerformanceNavigationTiming.
-    // Captures actual edge latency + cold-start cost. Fires once.
-    try {
-      const nav = performance.getEntriesByType('navigation')[0];
-      if (nav && nav.responseStart > 0) {
-        send('TTFB', nav.responseStart, 'ttfb-' + Date.now());
-      }
-    } catch (e) { /* ignore */ }
+    try { lib.onLCP(send); } catch (e) {}
+    try { lib.onCLS(send); } catch (e) {}
+    try { lib.onINP(send); } catch (e) {}
+    try { lib.onFCP(send); } catch (e) {}
+    try { lib.onTTFB(send); } catch (e) {}
   };
 
 

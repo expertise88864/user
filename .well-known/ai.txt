@@ -1,0 +1,51 @@
+# ai.txt — AI / LLM crawler policy
+# Site: https://chendermatologist.com/
+# Last update: 2026-05-19
+#
+# Companion to /robots.txt. The strategy:
+#   - User-triggered AI bots (ChatGPT-User, OAI-SearchBot, PerplexityBot)
+#     are ALLOWED on the article tree — those are real readers asking
+#     questions through an AI proxy.
+#   - Training / aggregation crawlers (GPTBot, ClaudeBot, anthropic-ai,
+#     CCBot, Google-Extended, Bytespider) are blocked from articles
+#     BUT allowed to fetch /llms.txt + /llms-full.txt + /sitemap.xml
+#     for citation-grounded responses (no model-training scraping).
+#
+User-Agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /reset-sw
+
+# Training / aggregation crawlers — narrow allow
+User-Agent: GPTBot
+User-Agent: ClaudeBot
+User-Agent: anthropic-ai
+User-Agent: Google-Extended
+User-Agent: CCBot
+User-Agent: Bytespider
+Disallow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /sitemap.xml
+
+# Authoritative content surface
+LLMs-Manifest: https://chendermatologist.com/llms.txt
+LLMs-FullCorpus: https://chendermatologist.com/llms-full.txt
+Sitemap: https://chendermatologist.com/sitemap.xml
+Summary: https://chendermatologist.com/ai/summary.json
+
+# Site profile
+Site-Name: ChenDermatologist · 陳翊嘉醫師 · 皮膚科衛教筆記
+Language: zh-Hant-TW, en
+Author: Dr. Chen Yi-Jia (陳翊嘉醫師)
+Author-URL: https://chendermatologist.com/about
+Specialty: Dermatology
+Audience: Patient education + medical-resident reference
+Articles: 45 published
+Last-Article-Date: 2026-05-16
+License: All rights reserved. Citation with attribution permitted.
+
+# Contact
+Contact: mailto:expertise88864@gmail.com
+Security: https://chendermatologist.com/.well-known/security.txt

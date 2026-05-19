@@ -73,6 +73,11 @@ REGEN_STEPS: list[list[str]] = [
     # Must run AFTER everything that touches each article's meta
     # description (notably _normalize_schema.py).
     [PY, "_normalize_articles_desc.py"],
+    # 2026-05-19 — Tier 2D from OPEN_SOURCE_INTEGRATIONS.md:
+    # emit /.well-known/ai.txt + /ai/summary.json so emerging AI bot
+    # standards and machine-readable site-summary consumers have a
+    # canonical surface (parallel to robots.txt / llms.txt).
+    [PY, "_normalize_ai_well_known.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
@@ -112,6 +117,10 @@ CHECK_STEPS: list[list[str]] = [
     # homepage, sitemap encoding). Each missing signal directly
     # reduces SERP visibility or rich-card eligibility.
     [PY, "_check_seo_signals.py"],
+    # 2026-05-19 — Tier 2D guard: every blog article's H1 + lead
+    # paragraph must render from raw HTML (not be JS-injected).
+    # Googlebot's first pass + AI/LLM crawlers don't always run JS.
+    [PY, "_check_no_js_render_dependency.py"],
 ]
 
 POST_BUILD_STEPS: list[list[str]] = [
