@@ -308,6 +308,124 @@ After Round 1 (A/B/C/D shipped in commit `df09c724`):
 
 ---
 
+---
+
+# Round 3 (2026-05-20)
+
+After Round 2 implementation (commit `f8a11668`), explored newsletter
+integration, OG image rendering, prose linting, privacy analytics,
+multilingual SEO, AI-content bias, Bing IndexNow batching.
+
+## Round 3 — Tier 1 (adopt soon)
+
+### L. vale-cli/vale ✅ — prose linter for medical writing
+
+- **What:** Cross-platform Go CLI that lints prose against custom
+  style guides (similar to ESLint but for human-readable text).
+  Markup-aware (HTML, Markdown, etc.). Has official GitHub Action.
+- **Why for DermNotes:** Medical writing benefits enormously from
+  terminology consistency that human review easily misses:
+  - **Drug names:** "外用 A 酸" vs "tretinoin" vs "Retin-A" —
+    pick one canonical form per article and stick with it
+  - **Disease names:** "肝斑" vs "黃褐斑" vs "melasma" — same
+  - **Severity scales:** "PASI" vs "pasi" — case consistency
+  - **Banned phrases:** medical-YMYL no-nos like "保證根治",
+    "100% 治癒", "唯一療法"
+  - **Patient-friendliness:** flag overly long sentences in
+    `*-myths.html` (which target general patients)
+- **Integration plan:**
+  1. `vale --init` to scaffold `.vale.ini`
+  2. Custom `styles/DermNotes/` package with:
+     - `Terminology.yml` — canonical forms for drugs / diseases
+     - `BannedPhrases.yml` — YMYL liability triggers
+     - `SentenceLength.yml` — soft cap for patient-ed articles
+  3. Add `.github/workflows/vale.yml` (action `errata-ai/vale-action@v2`)
+  4. Start as warning-only; promote to blocking once initial fallout
+     is cleared.
+- **Why this works:** Tier 2-J readability check finds STRUCTURAL
+  complexity. Vale finds SEMANTIC inconsistency. Complementary.
+
+### M. NmadeleiDev/bing_webmaster_cli 🔵
+
+- **What:** Python CLI for the Bing Webmaster Tools API (separate
+  from IndexNow). Adds: search impressions / clicks data, keyword
+  rankings, manual URL inspection.
+- **Why borrow:** We already have IndexNow submitting URLs. Bing
+  Webmaster API gives us the OTHER direction — data ABOUT how the
+  site performs in Bing. Useful for the same reason GSC matters
+  for Google.
+- **Why not adopt as CI step:** Requires per-user API key (Bing
+  Webmaster Tools account). Better as a one-off Python script
+  the user runs locally to pull weekly stats into `_dashboard.md`.
+- **Integration plan (optional):**
+  1. User registers site at https://www.bing.com/webmasters
+  2. Generate API key
+  3. Add `_fetch_bing_stats.py` reading API key from env, dumping
+     `_bing_stats.json` (gitignored). Reference from `_dashboard.md`.
+
+## Round 3 — Tier 2 (consider)
+
+### N. vercel/satori 🔵 — modern OG image rendering
+
+- **What:** JSX → SVG renderer. Layout/typography accurate match to
+  CSS rendering. Pairs with ReSVG-JS for SVG → PNG.
+- **Fit:** We already have `/api/og` that hand-builds SVG. Works fine
+  but is verbose (~150 lines for layout calculations). Migrating to
+  satori would shrink it to ~50 lines of JSX and unlock richer designs
+  (gradients, multi-line wrapping with proper kerning, custom fonts).
+- **Why hold:** Existing OG cards work; users / FB / Twitter / Discord
+  all render them correctly. Refactor is cosmetic. Skip unless we
+  want to redesign OG card layout entirely.
+
+## Round 3 — Tier 3 (educational)
+
+### O. iriscxy/GenFair ⚪ — bias in AI medical text
+
+- **What:** Research code for detecting and mitigating bias in
+  AI-generated medical text (Nature Computational Science 2025).
+- **Why interesting:** If we ever do AI-assisted content drafting,
+  this gives us a measurement framework for fairness (sex / age /
+  ethnicity bias in symptoms/treatments described).
+- **Why not now:** Author is solo physician writing content by hand.
+  Not relevant unless workflow changes.
+
+### P. Newsletter integration patterns (Buttondown / Eleventy ref) ⚪
+
+- **What:** [scottandrewlepera/netlify-buttondown-11ty](https://github.com/scottandrewlepera/netlify-buttondown-11ty)
+  shows the embed pattern for static-site newsletter signup with
+  gated subscribers-only content.
+- **Why reference only:** User needs to sign up for Buttondown first
+  (manual external step). Implementation is then trivial — `<form>`
+  POST to Buttondown endpoint. Don't pre-build; wait for user to
+  pick the platform.
+
+## Round 3 — Skip
+
+| Tool | Why skip |
+|---|---|
+| **umami-software/umami** | We have GA4 + Microsoft Clarity. Self-hosting analytics is heavyweight for current near-zero traffic. Privacy story is fine via Clarity's cookieless mode. |
+| **plausible/analytics** | Same — privacy-first but redundant with GA4. |
+| **Screaming Frog / Sitebulb hreflang validator** | Commercial GUIs; we already have `check_hreflang_reciprocity` in `_check_seo_signals.py`. |
+| **Microsoft Bing WP plugin** | We're not on WordPress. |
+| **Various AI-detection tools** | We don't generate content with AI; nothing to detect. |
+
+## Round 3 — Prioritized next steps (cumulative)
+
+After commit `f8a11668`:
+
+11. **🟢 Adopt Vale (Round 3-L)** — biggest content-quality net gain
+    of any Round 3 finding. Catches what readability scoring misses
+    (terminology drift, YMYL liability phrases). Workflow + custom
+    DermNotes style package is ~1 commit.
+12. **🛠 One-off** — Bing Webmaster CLI (Round 3-M) once user creates
+    Bing API key; bulk-pull stats weekly to dashboard.
+13. **🛠 Codex** — CSP nonce edge migration still the last big-refactor
+    item from CODE_REVIEW.md (Round 2-I).
+14. **⏸ Cosmetic** — satori OG rewrite (Round 3-N) only if user wants
+    new OG card design.
+
+---
+
 ## Sources
 
 - [amplifying-ai/awesome-generative-engine-optimization](https://github.com/amplifying-ai/awesome-generative-engine-optimization) — curated GEO list
@@ -336,3 +454,16 @@ After Round 1 (A/B/C/D shipped in commit `df09c724`):
 - [tomlinsonk/site-graph](https://github.com/tomlinsonk/site-graph) — link-graph visualizer
 - [sitespeedio/sitespeed.io](https://github.com/sitespeedio/sitespeed.io) — real-browser perf testing
 - [Vercel CSP nonce docs](https://vercel.com/docs/headers/security-headers) — edge middleware pattern
+
+### Round 3 sources
+
+- [vale-cli/vale](https://github.com/vale-cli/vale) — prose linter
+- [errata-ai/vale-action](https://github.com/errata-ai/vale-action) — GitHub Action
+- [elastic/vale-rules](https://github.com/elastic/vale-rules) — reference style package
+- [NmadeleiDev/bing_webmaster_cli](https://github.com/NmadeleiDev/bing_webmaster_cli) — Bing Webmaster API CLI
+- [vercel/satori](https://github.com/vercel/satori) — JSX → SVG (OG images)
+- [LucJosin/satori-og](https://github.com/LucJosin/satori-og) — SSG integration pattern
+- [umami-software/umami](https://github.com/umami-software/umami) — privacy-focused analytics
+- [plausible/analytics](https://github.com/plausible/analytics) — same niche
+- [scottandrewlepera/netlify-buttondown-11ty](https://github.com/scottandrewlepera/netlify-buttondown-11ty) — newsletter embed pattern
+- [iriscxy/GenFair](https://github.com/iriscxy/GenFair) — medical AI text bias research
