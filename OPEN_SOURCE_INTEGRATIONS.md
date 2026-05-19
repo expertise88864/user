@@ -163,6 +163,151 @@ Tracking notes for Codex audit:
 
 ---
 
+---
+
+# Round 2 (2026-05-19 research expansion)
+
+After implementing Tier 1A/B/C + Tier 2D, scanned a broader set of
+GitHub projects in areas the initial pass didn't cover: accessibility
+depth, critical CSS, link-graph visualization, content readability,
+CSP nonce migration patterns. Findings:
+
+## Round 2 — Tier 1 (adopt soon)
+
+### G. dequelabs/axe-core + pa11y-ci ✅
+
+- **What:** `axe-core` is the de-facto WCAG 2.1/2.2 accessibility
+  engine (100+ rules). `pa11y-ci` runs it against a list of URLs
+  with assertions per page.
+- **Why now:** Our `_check_static_a11y.py` is hand-rolled with
+  ~10 rules (h1 uniqueness, image dimensions, button labels, focus
+  outline). axe-core covers color contrast, ARIA misuse, heading
+  jumps with cross-context awareness, landmark structure, and
+  more — categories our check can't easily replicate.
+- **Integration plan:**
+  1. Add `.github/workflows/axe.yml` parallel to other gates.
+  2. Use `pa11y-ci` with sitemap.xml as the URL list.
+  3. Configure `pa11y.json` with assertions:
+     `{ "standard": "WCAG2AA", "runners": ["axe", "htmlcs"] }`
+  4. Start as `continue-on-error: true` to surface issues without
+     blocking; flip to blocking after fixing initial fallout.
+- **Why this works:** Medical content has higher a11y stakes
+  (visually-impaired patients use these articles). axe-core's
+  color-contrast rule alone often finds 5-10 issues on sites
+  that "look fine."
+
+## Round 2 — Tier 2 (consider; bigger commitment)
+
+### H. danielroe/beasties 🔵 (critical CSS splitting)
+
+- **What:** Inlines critical (above-fold) CSS and lazy-loads the
+  rest. Unlike Penthouse / addyosmani/critical, beasties doesn't
+  use a headless browser — runs in pure Node, much faster.
+- **Why consider:** Our homepage ships 29 KB inline `<style>`
+  covering everything including below-the-fold cards. Splitting
+  to ~8-10 KB critical + 20 KB deferred via `<link rel="preload"
+  as="style" onload>` could shave 100-200 ms off LCP.
+- **Why hold:** The site doesn't have a JS build step today (pure
+  Python pipeline + a small `_minify.py`). Adding beasties means
+  adding a Node dependency to the build. Worth doing if perceived
+  LCP becomes a measurable issue once we have real attribution
+  data from Tier 1A. Skip if LCP is already < 2.5 s in CrUX.
+- **Integration plan when ready:**
+  1. `npm i -D beasties`
+  2. Add `_optimize_critical_css.py` that subprocesses beasties
+     against `index.html`, `blog/*.html` post-build.
+  3. Replace the giant inline `<style>` with the smaller critical
+     subset; emit the rest as `/assets/below-fold.css?v=...`.
+
+### I. Vercel CSP nonce migration via edge middleware ⚪
+
+- **What:** The deferred item from CODE_REVIEW.md (last open big-
+  refactor). Replace CSP `'unsafe-inline'` with per-request
+  `'nonce-RANDOM'` via Vercel edge middleware.
+- **Pattern (from Vercel docs):**
+  ```js
+  // middleware.js (Vercel Edge Function, runs on every request)
+  import { NextResponse } from 'next/server';
+  export const config = { matcher: '/((?!api|_next|_static).*)' };
+  export function middleware(req) {
+    const nonce = crypto.randomUUID().replace(/-/g, '');
+    const res = NextResponse.next({ request: { headers: new Headers(req.headers) } });
+    res.headers.set(
+      'Content-Security-Policy',
+      `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'; ...`
+    );
+    res.headers.set('x-nonce', nonce);
+    return res;
+  }
+  ```
+  Plus a downstream step that rewrites `<script>` tags to include
+  `nonce="{x-nonce}"`. **Static-HTML hard case** — we'd need either:
+  - A response-rewrite step in the edge middleware that inserts
+    nonces into pre-rendered HTML (CPU cost per request)
+  - Or hash-based CSP for the inline scripts (no middleware needed,
+    but every script change requires recomputing the hash)
+- **Why defer:** Touches every inline `<script>` across 114 pages.
+  Hash-based CSP is the pragmatic middle ground for a static site;
+  full nonce-based requires giving up the "static HTML, no compute
+  per request" property. Codex audit territory.
+
+## Round 2 — Tier 3 (educational, not for production)
+
+### J. chenryn/python-readability-cn ⚪
+
+- **What:** Computes Chinese readability metrics (word segmentation,
+  POS distribution, dependency complexity).
+- **Why interesting:** Medical YMYL content needs to be patient-
+  accessible. We could add a `_check_readability.py` that flags
+  articles whose Chinese complexity score exceeds a threshold
+  ("too technical for general patients").
+- **Why not now:** Requires significant content judgment + we don't
+  have a target threshold yet. Worth running once as a baseline
+  measurement, not as a CI gate.
+
+### K. tomlinsonk/site-graph 🔵
+
+- **What:** Visualizes the link graph of a website as a force-
+  directed network (blue = internal, green = resources, orange =
+  external, red = errors).
+- **Why consider:** Our `_dashboard.py` has tabular orphan-article
+  data. A force-directed graph view would make topical-cluster
+  imbalances obvious at a glance — e.g., the 異位性皮膚炎 cluster
+  is dense while the 皮膚癌 cluster is sparse.
+- **Why not now:** One-time visualization; not worth a permanent
+  CI dependency. Run once locally, save the SVG, reference in
+  `_dashboard.md`.
+
+## Round 2 — Skip (redundant or wrong fit)
+
+| Tool | Why skip |
+|---|---|
+| **sitespeedio/sitespeed.io** | Heavier than LHCI; we already have Lighthouse CI in workflows. Timeseries data isn't useful at zero traffic. |
+| **kjvarga/sitemap_generator** | Ruby; we have `_gen_feeds.py` in Python. |
+| **iamvishnusankar/next-sitemap** | Next.js-specific; we're static HTML. |
+| **AltText.ai** | Auto-generates alt text via AI. Our visuals are 99% inline SVG (no `<img>` to alt). |
+| **addyosmani/critical** | Uses Puppeteer (Chromium headless). Heavier than beasties for the same job; skip if we adopt critical-CSS at all. |
+| **Various Flesch/SMOG tools** | English-only; doesn't help bilingual ZH/EN content. |
+
+## Round 2 — Prioritized action order (cumulative with Round 1)
+
+After Round 1 (A/B/C/D shipped in commit `df09c724`):
+
+7. **🟢 Adopt** dequelabs/axe-core + pa11y-ci (Round 2 G) — biggest
+   net gain. Run as informational first, fix initial fallout, then
+   block. Color-contrast issues alone are usually 5-10 wins.
+8. **📊 Measure first** — wait for 1-2 weeks of Tier 1A attribution
+   data from real users. THEN decide if Round 2 H (beasties critical
+   CSS) is worth the build-step complexity.
+9. **🛠 Codex** — the CSP nonce migration (Round 2 I) is the right
+   handoff target. Pattern documented above; implementation needs
+   coordination across 114 pages + edge middleware.
+10. **📖 One-time runs** — site-graph (K) once locally; readability
+    baseline (J) once locally. Both for `_dashboard.md` enrichment,
+    not for CI.
+
+---
+
 ## Sources
 
 - [amplifying-ai/awesome-generative-engine-optimization](https://github.com/amplifying-ai/awesome-generative-engine-optimization) — curated GEO list
@@ -177,3 +322,17 @@ Tracking notes for Codex audit:
 - [funbox/optimizt](https://github.com/funbox/optimizt) — image optimizer CLI
 - [Pagefind](https://github.com/Pagefind/pagefind) — already integrated; v1.5+ has CJK auto-segmentation
 - [AutoGEO arXiv paper](https://arxiv.org/abs/2510.11438) — "What Generative Search Engines Like..."
+
+### Round 2 sources
+
+- [dequelabs/axe-core](https://github.com/dequelabs/axe-core) — accessibility engine
+- [pa11y/pa11y](https://github.com/pa11y/pa11y) — accessibility CLI
+- [canaxess/a11y-github-actions](https://github.com/canaxess/a11y-github-actions) — pa11y + axe-core CI pattern
+- [danielroe/beasties](https://github.com/danielroe/beasties) — headless-free critical CSS
+- [addyosmani/critical](https://github.com/addyosmani/critical) — Puppeteer-based critical CSS
+- [pocketjoso/penthouse](https://github.com/pocketjoso/penthouse) — original critical CSS extractor
+- [chenryn/python-readability-cn](https://github.com/chenryn/python-readability-cn) — Chinese readability
+- [textstat/textstat](https://github.com/textstat/textstat) — English readability formulas
+- [tomlinsonk/site-graph](https://github.com/tomlinsonk/site-graph) — link-graph visualizer
+- [sitespeedio/sitespeed.io](https://github.com/sitespeedio/sitespeed.io) — real-browser perf testing
+- [Vercel CSP nonce docs](https://vercel.com/docs/headers/security-headers) — edge middleware pattern
