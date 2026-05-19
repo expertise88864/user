@@ -587,6 +587,13 @@
       if (a.tag_en) card.dataset.tagEn = a.tag_en;
       var clz = catLabelZh[a.cat || 'note'] || '文章';
       var cle = catLabelEn[a.cat || 'note'] || 'Article';
+      // CODE_REVIEW — added description <p> below the title so each card
+      // has a subtitle. `desc` / `desc_en` come from DN.ARTICLES (populated
+      // build-side by _normalize_articles_desc.py from each article's
+      // <meta name="description"> tag). The description is pre-escaped
+      // for both JS string + HTML attribute + HTML text contexts.
+      var descZh = a.desc || '';
+      var descEn = a.desc_en || a.desc || '';
       card.innerHTML =
         '<div class="al-icon cat-' + (a.cat || 'note') + '">' + generic_svg + '</div>' +
         '<div class="al-body"><div class="al-meta">' +
@@ -595,6 +602,7 @@
           '<time>' + (a.date || '') + '</time>' +
         '</div>' +
         '<h2 data-zh="' + (a.title || '') + '" data-en="' + (a.title_en || a.title || '') + '">' + (a.title || '') + '</h2>' +
+        (descZh ? '<p data-zh="' + descZh + '" data-en="' + descEn + '">' + descZh + '</p>' : '') +
         '</div><div class="al-arrow">→</div>';
       listEl.appendChild(card);
       existing[a.slug] = card;

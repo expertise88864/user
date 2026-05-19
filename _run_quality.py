@@ -67,6 +67,12 @@ REGEN_STEPS: list[list[str]] = [
     # so Firefox/Edge/Brave readers see "Add Search Engine" prompt and
     # can search the site from their browser URL bar (recurring visits).
     [PY, "_normalize_head_extras.py"],
+    # 2026-05-19 — Sync `desc` + `desc_en` fields in DN.ARTICLES from
+    # each article's <meta name="description"> tag. Powers the subtitle
+    # <p> on /blog/ dynamic article-list cards (blog-hub.js renderer).
+    # Must run AFTER everything that touches each article's meta
+    # description (notably _normalize_schema.py).
+    [PY, "_normalize_articles_desc.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
