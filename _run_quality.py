@@ -148,6 +148,13 @@ REGEN_STEPS: list[list[str]] = [
     # references. Must run AFTER _normalize_glossary_schema.py so term
     # @ids are stable. ~217 mentions across 48 articles.
     [PY, "_normalize_mentions.py"],
+    # 2026-05-22 — Auto-derive `isBasedOn` from the citation @graph:
+    # filter ScholarlyArticles by authority-guideline keywords (AAD /
+    # EADV / ETFAD / S3 / Consensus / "guidelines of care") and emit
+    # top 5 as isBasedOn on MedicalWebPage. Makes the article→authority
+    # chain explicit for Google's E-E-A-T scoring + LLM crawler trust.
+    # Must run AFTER _normalize_citations.py so #dn-citations exists.
+    [PY, "_normalize_is_based_on.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
