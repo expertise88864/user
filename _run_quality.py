@@ -128,6 +128,12 @@ REGEN_STEPS: list[list[str]] = [
     # clinical-depth slugs). Must run LAST so previously-injected fields
     # like `about` are stable when we harvest alternateName from them.
     [PY, "_normalize_article_metadata.py"],
+    # 2026-05-21 — Emit a DefinedTermSet JSON-LD block with all 64
+    # /glossary terms (SCORAD/PASI/EASI/DLQI/IL-17/JAK/etc.) so each
+    # surfaces a SERP definition rich-card on its own. Major impressions
+    # win for medical-term queries that currently miss the long-form
+    # article cards. Deep-link via #anchor URL to scroll-to-text.
+    [PY, "_normalize_glossary_schema.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
