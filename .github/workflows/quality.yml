@@ -210,12 +210,21 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
       - name: Pre-audit regen (mirror feeds-regen so audit doesn't race against it)
-        # feeds-regen runs in parallel and commits [skip actions]; meta-check picks up
-        # the pre-regen state and fails on @id mismatches in /en/ mirrors.
-        # Re-run EN gen + schema normalize here so the audit sees the final state.
+        # feeds-regen runs in parallel and commits [skip actions]; meta-check picks
+        # up the pre-regen state and would fail on @id mismatches in /en/ mirrors OR
+        # on a stale sitemap.xml that includes pages just flipped to noindex.
+        # Re-run the FULL regen subset that affects audited surfaces:
+        #   - EN gen rewrites en/ mirrors (canonical, hreflang)
+        #   - schema normalize fixes JSON-LD @ids
+        #   - feeds regen rebuilds sitemap.xml with current noindex state
+        #
+        # Without _gen_feeds.py here, a commit that flips a page noindex but
+        # forgets to re-stage sitemap.xml will cause _check_sitemap.py to red-line
+        # this job until the parallel feeds-regen workflow commits a fresh sitemap.
         run: |
           python _gen_en_pages.py
           python _normalize_schema.py --include-en
+          python _gen_feeds.py
       - name: Quick required-tag audit
         run: |
           python <<'PY'
