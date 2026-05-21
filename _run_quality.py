@@ -134,6 +134,12 @@ REGEN_STEPS: list[list[str]] = [
     # win for medical-term queries that currently miss the long-form
     # article cards. Deep-link via #anchor URL to scroll-to-text.
     [PY, "_normalize_glossary_schema.py"],
+    # 2026-05-21 — Emit a WebApplication @graph for /tools' 10 calculators
+    # (SCORAD/PASI/DLQI/SALT/UAS7/GAGS/MASI/Hurley/Norwood/Fitzpatrick).
+    # applicationCategory=MedicalApplication + isAccessibleForFree=true
+    # qualifies the entries for Google's "free interactive tool" rich-card.
+    # Deep-link URL points to the calculator anchor inside the host article.
+    [PY, "_normalize_tools_schema.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
