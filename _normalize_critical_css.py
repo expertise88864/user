@@ -45,15 +45,34 @@ PRINT_LINK = (
     f'id="dn-print-css">'
 )
 
+# SEO_AUDIT B4 — below-fold CSS extraction. Conservative: only extract
+# rules that are KNOWN to be below the fold (mag-footer, .home-faq).
+# Everything else stays inline to avoid FOUC.
+BELOW_FOLD_CSS_PATH = ROOT / "assets" / "dn-below-fold.css"
+BELOW_FOLD_LINK = (
+    f'<link rel="stylesheet" '
+    f'href="/assets/dn-below-fold.css?v={_ASSET_VERSION}" '
+    f'id="dn-below-fold-css">'
+)
+
 # @media print { ... }  with balanced-brace matching
 PRINT_MEDIA_RE = re.compile(
     r"@media\s+print\s*\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}",
     re.IGNORECASE,
 )
 
-# Detect existing dn-print-css link (for idempotency).
+# Below-fold rule families — each pattern matches ONE rule (selector
+# + braces). Carefully scoped to avoid matching above-fold selectors.
+BELOW_FOLD_RULE_RES = [
+    # .mag-footer { ... } and all its nested selectors
+    re.compile(r"\.mag-footer\b[^{}]*\{[^{}]*\}", re.MULTILINE),
+    # Footer-section-specific selectors derived from .mag-footer
+    re.compile(r"\.mag-foot-(?:cols|col|brand|copy|meta|links)\b[^{}]*\{[^{}]*\}", re.MULTILINE),
+]
+
+# Detect existing extracted-link tags (for idempotency).
 EXISTING_LINK_RE = re.compile(
-    r'<link[^>]+id="dn-print-css"[^>]*>',
+    r'<link[^>]+id="(?:dn-print-css|dn-below-fold-css)"[^>]*>',
     re.IGNORECASE,
 )
 
@@ -61,52 +80,69 @@ SKIP_NAMES = {"404.html", "offline.html", "reset-sw.html", "admin.html"}
 SKIP_DIRS = {".git", "node_modules", "pagefind", "admin"}
 
 
-def extract_from_file(path: Path, canonical_print_css: list[str]) -> int:
-    """Extract @media print rules from inline <style> blocks.
+def extract_from_file(path: Path,
+                       canonical_print_css: list[str],
+                       canonical_below_fold_css: list[str]) -> int:
+    """Extract @media print + below-fold rules from inline <style>.
 
-    Returns number of rules extracted (0 if no change).
-    canonical_print_css mutates — first-run rules get appended for
-    later writing to the shared dn-print.css.
+    Returns total number of rules extracted (0 if no change).
+    canonical_* lists mutate — first-run rules get appended for
+    later writing to the shared external stylesheets.
     """
     src = path.read_text(encoding="utf-8")
     extracted_count = 0
-    new_src = src
+    print_extracted = 0
+    below_fold_extracted = 0
 
-    # Find every inline <style>...</style> block and strip @media print.
     def replace_style(m: re.Match) -> str:
-        nonlocal extracted_count
+        nonlocal extracted_count, print_extracted, below_fold_extracted
         css = m.group(1)
-        # Pull out @media print blocks
-        chunks = []
+        print_chunks = []
+        below_fold_chunks = []
 
-        def collect(mm: re.Match) -> str:
-            nonlocal extracted_count
-            chunks.append(mm.group(0))
-            extracted_count += 1
+        def collect_print(mm: re.Match) -> str:
+            nonlocal print_extracted
+            print_chunks.append(mm.group(0))
+            print_extracted += 1
             return ""
 
-        new_css = PRINT_MEDIA_RE.sub(collect, css)
-        if chunks and not canonical_print_css:
-            # First file we see: this is the canonical print CSS.
-            # Subsequent files' chunks should be identical; we don't
-            # write them out (they're already in canonical).
-            canonical_print_css.extend(chunks)
+        def collect_below(mm: re.Match) -> str:
+            nonlocal below_fold_extracted
+            below_fold_chunks.append(mm.group(0))
+            below_fold_extracted += 1
+            return ""
+
+        new_css = PRINT_MEDIA_RE.sub(collect_print, css)
+        for pattern in BELOW_FOLD_RULE_RES:
+            new_css = pattern.sub(collect_below, new_css)
+
+        # First file we see contributes the canonical version; later
+        # files just strip locally (they should be identical).
+        if print_chunks and not canonical_print_css:
+            canonical_print_css.extend(print_chunks)
+        if below_fold_chunks and not canonical_below_fold_css:
+            canonical_below_fold_css.extend(below_fold_chunks)
+        extracted_count = print_extracted + below_fold_extracted
         return m.group(0).replace(css, new_css)
 
     new_src = re.sub(
         r"<style\b[^>]*>([\s\S]*?)</style>",
         replace_style,
-        new_src,
+        src,
     )
 
     if extracted_count == 0:
         return 0
 
-    # Inject the dn-print.css <link> if not already present.
-    if not EXISTING_LINK_RE.search(new_src):
+    # Inject the <link> tags if not already present.
+    if print_extracted and "dn-print-css" not in new_src:
         head_close = new_src.find("</head>")
         if head_close != -1:
             new_src = new_src[:head_close] + PRINT_LINK + new_src[head_close:]
+    if below_fold_extracted and "dn-below-fold-css" not in new_src:
+        head_close = new_src.find("</head>")
+        if head_close != -1:
+            new_src = new_src[:head_close] + BELOW_FOLD_LINK + new_src[head_close:]
 
     if new_src != src:
         path.write_text(new_src, encoding="utf-8")
@@ -124,18 +160,19 @@ def main() -> int:
             continue
         targets.append(fp)
 
-    canonical_chunks: list[str] = []
+    canonical_print_chunks: list[str] = []
+    canonical_below_fold_chunks: list[str] = []
     total_extracted = 0
     files_changed = 0
 
     for fp in targets:
-        n = extract_from_file(fp, canonical_chunks)
+        n = extract_from_file(fp, canonical_print_chunks, canonical_below_fold_chunks)
         if n:
             total_extracted += n
             files_changed += 1
 
-    # Write the shared print CSS (only if we collected canonical chunks)
-    if canonical_chunks:
+    # Write the shared print CSS
+    if canonical_print_chunks:
         PRINT_CSS_PATH.parent.mkdir(exist_ok=True)
         header = (
             "/* Auto-generated by _normalize_critical_css.py — DO NOT EDIT.\n"
@@ -144,13 +181,35 @@ def main() -> int:
             " * browsers fetch only when the user actually prints.\n"
             " */\n"
         )
-        body = "\n".join(canonical_chunks)
-        PRINT_CSS_PATH.write_text(header + body + "\n", encoding="utf-8")
+        PRINT_CSS_PATH.write_text(
+            header + "\n".join(canonical_print_chunks) + "\n",
+            encoding="utf-8",
+        )
 
-    print(f"[critical-css] extracted {total_extracted} @media print blocks "
-          f"from {files_changed} pages; "
-          f"wrote {PRINT_CSS_PATH.relative_to(ROOT).as_posix()} "
-          f"({PRINT_CSS_PATH.stat().st_size if PRINT_CSS_PATH.exists() else 0} bytes)")
+    # Write the shared below-fold CSS
+    if canonical_below_fold_chunks:
+        BELOW_FOLD_CSS_PATH.parent.mkdir(exist_ok=True)
+        header = (
+            "/* Auto-generated by _normalize_critical_css.py — DO NOT EDIT.\n"
+            " * Below-fold rules (mag-footer family) extracted from inline\n"
+            " * <style> blocks. SEO_AUDIT B4. Loaded via standard\n"
+            " * <link rel=\"stylesheet\"> — below-fold means no LCP impact;\n"
+            " * cached across pages for instant subsequent loads.\n"
+            " */\n"
+        )
+        BELOW_FOLD_CSS_PATH.write_text(
+            header + "\n".join(canonical_below_fold_chunks) + "\n",
+            encoding="utf-8",
+        )
+
+    print(f"[critical-css] extracted {total_extracted} rules from "
+          f"{files_changed} pages")
+    if PRINT_CSS_PATH.exists():
+        print(f"  - {PRINT_CSS_PATH.relative_to(ROOT).as_posix()}: "
+              f"{PRINT_CSS_PATH.stat().st_size} bytes")
+    if BELOW_FOLD_CSS_PATH.exists():
+        print(f"  - {BELOW_FOLD_CSS_PATH.relative_to(ROOT).as_posix()}: "
+              f"{BELOW_FOLD_CSS_PATH.stat().st_size} bytes")
     return 0
 
 
