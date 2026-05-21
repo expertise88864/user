@@ -140,6 +140,14 @@ REGEN_STEPS: list[list[str]] = [
     # qualifies the entries for Google's "free interactive tool" rich-card.
     # Deep-link URL points to the calculator anchor inside the host article.
     [PY, "_normalize_tools_schema.py"],
+    # 2026-05-21 — Stitch each article's body to the glossary schema graph:
+    # scan body text for DefinedTerm names + acronyms + ASCII drug-name
+    # prefixes, rank by occurrence count, emit a `mentions` array on the
+    # MedicalWebPage with DefinedTerm @id refs (cap 10/article). Tells
+    # Google + LLM crawlers which canonical definitions this article
+    # references. Must run AFTER _normalize_glossary_schema.py so term
+    # @ids are stable. ~217 mentions across 48 articles.
+    [PY, "_normalize_mentions.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
