@@ -196,7 +196,7 @@ def resolve_og(slug: str) -> str | None:
 
 def emit_url(out: list[str], loc: str, lastmod: str, changefreq: str, priority: str,
              alternates: dict[str, str] | None = None, image: str | None = None,
-             image_title: str | None = None) -> None:
+             image_title: str | None = None, image_caption: str | None = None) -> None:
     out.append('  <url>')
     out.append(f'    <loc>{DOMAIN}{loc}</loc>')
     out.append(f'    <lastmod>{lastmod}</lastmod>')
@@ -215,6 +215,13 @@ def emit_url(out: list[str], loc: str, lastmod: str, changefreq: str, priority: 
         out.append(f'      <image:loc>{clean_image}</image:loc>')
         if image_title:
             out.append(f'      <image:title>{html.escape(image_title)}</image:title>')
+        # SEO_AUDIT C3 — Google supports <image:caption> for richer
+        # image-search context. We use the article meta description
+        # (already SEO-tuned) — capped at 200 chars so it doesn't
+        # bloat the sitemap.
+        if image_caption:
+            cap = image_caption[:200].rstrip() + ('…' if len(image_caption) > 200 else '')
+            out.append(f'      <image:caption>{html.escape(cap)}</image:caption>')
         out.append('    </image:image>')
     out.append('  </url>')
 
@@ -235,7 +242,13 @@ def build_sitemap() -> str:
 
     for p in STATIC_PAGES:
         zh = p['url']
-        if not file_for_route(zh).exists():
+        zh_file = file_for_route(zh)
+        if not zh_file.exists():
+            continue
+        # SEO_AUDIT — skip noindex pages from sitemap (e.g., /notes is
+        # currently noindex while content is being drafted). The
+        # sitemap audit gate ALSO catches this; mirror its rule here.
+        if not is_indexable(zh_file):
             continue
         en = en_route_for(zh)
         emit_url(out, zh, today, p['changefreq'], p['priority'], alternates_for(zh, en))
@@ -243,11 +256,15 @@ def build_sitemap() -> str:
     for a in ARTICLES:
         zh = f'/blog/{a["slug"]}'
         en = en_route_for(zh)
+        # SEO_AUDIT C3 — also include caption from the article meta
+        # description for richer image-search context.
+        zh_meta = html_meta(ROOT / 'blog' / f'{a["slug"]}.html')
         emit_url(
             out, zh, a['date'], 'monthly', '0.8',
             alternates_for(zh, en),
             image=resolve_og(a['slug']),
             image_title=a['title'],
+            image_caption=zh_meta.get('description') or '',
         )
 
     for p in STATIC_PAGES:

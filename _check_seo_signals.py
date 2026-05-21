@@ -434,6 +434,51 @@ def check_hreflang_reciprocity() -> None:
         print(f"[OK] hreflang reciprocity verified on {pairs_checked} ZH→EN pairs")
 
 
+# ─── 11b. hreflang must not point to a noindex page ──────────────────
+def check_hreflang_targets_indexable() -> None:
+    """SEO_AUDIT A4 (CI codification): if a ZH page advertises
+    hreflang="en" pointing at /en/blog/<slug>, the EN file must
+    NOT be noindex. Google's hreflang docs say noindex pages
+    should not be part of an alternate cluster — including them
+    causes Google to silently drop the cluster.
+
+    This guard catches the regression mode where a ZH article gets
+    a stale hreflang en link to a noindex EN counterpart.
+    """
+    zh_dir = ROOT / "blog"
+    en_dir = ROOT / "en" / "blog"
+    if not (zh_dir.exists() and en_dir.exists()):
+        return
+    bad = 0
+    for zh_fp in sorted(zh_dir.glob("*.html")):
+        if zh_fp.name in {"index.html", "topics.html"}:
+            continue
+        zh_src = zh_fp.read_text(encoding="utf-8", errors="replace")
+        en_link_m = re.search(
+            r'<link\s+rel="alternate"\s+hreflang="en"\s+href="([^"]+)"',
+            zh_src, re.I)
+        if not en_link_m:
+            continue  # no advertised cluster, fine
+        en_url = en_link_m.group(1)
+        if not en_url.startswith(f"{DOMAIN}/en/blog/"):
+            continue
+        en_slug = en_url[len(f"{DOMAIN}/en/blog/"):].rstrip("/")
+        en_fp = en_dir / f"{en_slug}.html"
+        if not en_fp.exists():
+            continue  # caught by check_hreflang_reciprocity
+        en_src = en_fp.read_text(encoding="utf-8", errors="replace")
+        if re.search(r'<meta[^>]+name="robots"[^>]+content="[^"]*noindex',
+                     en_src, re.I):
+            err(zh_fp.relative_to(ROOT).as_posix(),
+                f"hreflang en advertises noindex page: {en_url} — "
+                f"Google will drop the alternate cluster. Either make "
+                f"the EN page indexable OR remove the hreflang en line "
+                f"from the ZH source.")
+            bad += 1
+    if bad == 0:
+        print(f"[OK] no hreflang en pointing to noindex EN pages")
+
+
 # ─── 12. Mojibake detector — no literal '????' bleed in data-* attrs ──
 def check_no_mojibake_in_data_attrs() -> None:
     """CODE_REVIEW (post-launch) — detected on 2026-05-19 that
@@ -492,6 +537,7 @@ def main() -> int:
     check_speakable_selectors_resolve()
     check_llms_full_clean()
     check_hreflang_reciprocity()
+    check_hreflang_targets_indexable()
     check_no_mojibake_in_data_attrs()
 
     if warnings:

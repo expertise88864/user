@@ -110,19 +110,37 @@ def compute_metrics(src: str, lang: str = "zh") -> dict[str, int]:
     return {"wordCount": cjk_chars + tokens, "readingMinutes": minutes}
 
 
-# Speakable selectors must target actual DOM and work on BOTH ZH and
-# EN mirrors. CODE_REVIEW C4 found the original `[itemprop='description']`
-# + `.dn-summary` referenced zero pages — Google Assistant TTS picked
-# nothing useful. Replacements:
-#   - `h1` — every article has one (universal)
-#   - `.prose p:first-of-type` — lands on the first paragraph of the
-#     prose container (44/50 ZH + EN articles use `.prose` class).
-#     The first <p> is conventionally the TL;DR or lead sentence.
-#   - `.tldr` — explicit summary class on articles that use it
+# Speakable selectors target actual DOM and work on BOTH ZH and EN.
+# Selector order (Google Assistant TTS uses first that matches):
+#   1. `[data-speakable]` — opt-in marker authors can add to any
+#      element (SEO_AUDIT D5; forward-compat without restructuring
+#      class names)
+#   2. `h1` — every article has one (universal)
+#   3. `.prose p:first-of-type` — first paragraph in prose container
+#      (44/50 ZH + EN articles use `.prose` class)
+#   4. `.tldr` — explicit summary class on some articles
+#   5. `.dn-tldr` — alternate summary class (atopic-dermatitis-overview)
 SPEAKABLE_SPEC = {
     "@type": "SpeakableSpecification",
-    "cssSelector": ["h1", ".prose p:first-of-type", ".tldr"],
+    "cssSelector": ["[data-speakable]", "h1", ".prose p:first-of-type", ".tldr", ".dn-tldr"],
 }
+
+# SEO_AUDIT D4 — accessibilityFeature signals that articles support
+# multiple a11y modes. Aligns with WCAG AA + Google's accessibility
+# scoring. Static across all blog articles (we set the same baseline
+# in tw-mini.css + Speculation Rules + the bilingual data-zh/data-en
+# system). Add to every MedicalWebPage + MedicalScholarlyArticle.
+ACCESSIBILITY_FEATURES = [
+    "alternativeText",          # all imgs have alt
+    "highContrastDisplay",      # tw-mini has prefers-color-scheme:dark
+    "largePrint",               # font-size adjuster (DN.addFontSizer)
+    "readingOrder",             # semantic heading hierarchy
+    "structuralNavigation",     # h2/h3/h4 + nav landmarks
+    "tableOfContents",          # DN.addInlineTOC auto-generates
+    "displayTransformability",  # prefers-reduced-motion respected
+    "MathML",                   # no math content, but declares no proprietary
+    "bilingualText",            # ZH ↔ EN swap via DN.applyTextOnly
+]
 
 
 def page_meta(src: str) -> dict[str, str]:
@@ -182,6 +200,19 @@ def physician_schema(existing: dict | None = None) -> dict:
         "medicalSpecialty": obj.get("medicalSpecialty") or "Dermatology",
         "url": f"{DOMAIN}/about",
         "sameAs": obj.get("sameAs") or [f"{DOMAIN}/about"],
+        # SEO_AUDIT D3 — affiliation strengthens E-E-A-T (Google rewards
+        # named institutional context for YMYL medical content).
+        "affiliation": obj.get("affiliation") or {
+            "@type": "Hospital",
+            "name": "中國醫藥大學附設醫院 皮膚部",
+            "alternateName": "China Medical University Hospital, Department of Dermatology",
+            "url": "https://www.cmuh.cmu.edu.tw/",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "TW",
+                "addressRegion": "臺中市",
+            },
+        },
     })
     return obj
 
@@ -241,6 +272,8 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str],
             # selector list to target real DOM (h1 + #proseZh > p +
             # .tldr) instead of the original nonexistent itemprop ref.
             obj["speakable"] = SPEAKABLE_SPEC
+            # SEO_AUDIT D4 — accessibilityFeature for a11y signal
+            obj["accessibilityFeature"] = ACCESSIBILITY_FEATURES
         if is_blog_article:
             section = _article_section_for_slug(path.stem)
             if section:
@@ -268,6 +301,8 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str],
             # selector list to target real DOM (h1 + #proseZh > p +
             # .tldr) instead of the original nonexistent itemprop ref.
             obj["speakable"] = SPEAKABLE_SPEC
+            # SEO_AUDIT D4 — accessibilityFeature for a11y signal
+            obj["accessibilityFeature"] = ACCESSIBILITY_FEATURES
         if is_blog_article:
             section = _article_section_for_slug(path.stem)
             if section:
@@ -374,6 +409,7 @@ def build_medical_webpage(src: str, path: Path,
         out["wordCount"] = metrics["wordCount"]
         out["timeRequired"] = f"PT{metrics['readingMinutes']}M"
         out["speakable"] = SPEAKABLE_SPEC
+        out["accessibilityFeature"] = ACCESSIBILITY_FEATURES
     return out
 
 

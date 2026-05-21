@@ -31,7 +31,9 @@ PUBLIC_STATIC_ROUTES = {
     "/blog/topics",
     "/dashboard",
     "/glossary",
-    "/notes",
+    # /notes intentionally omitted — page is noindex while content is
+    # being drafted (SEO_AUDIT A1). Re-add when content ships and the
+    # robots meta flips back to index,follow.
     "/privacy",
     "/support",
     "/tools",

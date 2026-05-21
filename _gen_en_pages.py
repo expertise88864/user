@@ -68,11 +68,13 @@ EN_OG_OVERRIDES = {
         'desc': 'Patient-friendly dermatology guide to periorificial / perioral dermatitis: how to tell it apart from acne, rosacea, and eczema; the corticosteroid trap; gentle skincare; topical metronidazole / tacrolimus / pimecrolimus / ivermectin; oral doxycycline; Taiwan NHI status and brand names. Integrates Acevedo-Fontanez 2026 JAAD review.',
     },
     'blog/toenail-mechanical-disorders.html': {
-        'title': 'Toenail Mechanical & Structural Disorders: 12-Type Atlas + Diabetic Foot',
+        # SEO_AUDIT B1 — shortened from 76 → 63 chars so SERP doesn't truncate.
+        'title': 'Toenail Mechanical Disorders — 12-Type Atlas & Diabetic Foot',
         'desc': 'Over 90% of toenail dystrophy is mechanical, not fungal. Patient-friendly guide to the 12 most common types (onycholysis, subungual heloma, Beau lines, retronychia, pincer nail, onychocryptosis, etc.), 4 foot deformities (Morton toe, hallux valgus, flat foot, splayfoot), diabetic nail care, and Taiwan NHI coverage. Integrates Ricardo 2026 JAAD review.',
     },
     'blog/dermatologic-oral-examination.html': {
-        'title': 'Oral Mucosa: When to See a Dermatologist Instead of a Dentist | Exam & Biopsy Guide',
+        # SEO_AUDIT B1 — shortened from 83 → 56 chars.
+        'title': 'Oral Mucosa: Dermatologist vs Dentist — Exam & Biopsy',
         'desc': 'An ulcer not healing in 2 weeks, white lacy oral patches, or peeling gums often belong to dermatology, not dentistry. Patient-friendly guide to 6 oral mucosal conditions (oral lichen planus, recurrent aphthous stomatitis, leukoplakia, mucous membrane pemphigoid, actinic cheilitis, oral pigmented lesions), Taiwan-specific epidemiology (betel-related leukoplakia, OLP prevalence trends), dermatologic oral exam steps, biopsy timing and technique, and AHA 2021 antibiotic prophylaxis. Integrates Klein & Aristizabal 2026 JAAD CME.',
     },
     'blog/severe-scabies-treatment.html': {
@@ -86,6 +88,24 @@ EN_OG_OVERRIDES = {
     'blog/ai-dermatology-roles.html': {
         'title': 'AI in Dermatology Today: Dermoscopy Heat Maps, Explainability, and Education',
         'desc': 'Resident-level research review integrating 2026 JAAD Reviews and the JAAD eye-tracking study comparing dermatologist gaze maps with DEXI dermoscopy AI heat maps. Covers diagnostic support, explainable AI, generative AI for education, and why AI cannot yet replace clinical judgment.',
+    },
+    # SEO_AUDIT B1 — 4 articles whose auto-derived titles ran >70 chars.
+    # Each rewritten ≤65 chars so Google SERP doesn't ellipsize.
+    'blog/skin-biopsy-excision.html': {
+        'title': 'Skin biopsy & tumor excision — guide & post-op care',
+        'desc': 'Patient-friendly dermatology guide to skin biopsy and tumor excision: indications, technique, post-op wound care, scar care, and follow-up. Integrates AAD biopsy guideline.',
+    },
+    'blog/psoriasis-special-populations.html': {
+        'title': 'Psoriasis comorbidities — PsA, CV, pregnancy, pediatric',
+        'desc': 'Psoriasis comorbidities and special populations: psoriatic arthritis screening, cardiovascular risk, pregnancy / breastfeeding biologic safety, pediatric considerations, and Taiwan NHI coverage notes.',
+    },
+    'blog/warts-myths.html': {
+        'title': 'Warts myths — banana peel, single laser, self-resolution?',
+        'desc': 'Common warts (HPV) myth-busting: does banana peel work, can one laser session cure, will warts self-resolve, when to see a dermatologist. Treatment ladder included.',
+    },
+    'blog/rosacea-myths.html': {
+        'title': 'Rosacea myths — phenotypes, treatment ladder, Demodex',
+        'desc': 'Rosacea myth-busting: subtype identification, ETR vs PPR vs phymatous vs ocular, treatment ladder (topical metronidazole / ivermectin / brimonidine, oral doxycycline, laser), Demodex correlation.',
     },
 }
 

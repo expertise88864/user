@@ -94,6 +94,16 @@ REGEN_STEPS: list[list[str]] = [
     # + schema upgrades). Must run AFTER every other normalizer so
     # the date reflects the FINAL post-build state.
     [PY, "_normalize_date_modified.py"],
+    # 2026-05-21 — SEO_AUDIT A2: strip '廣告位 · AdSense' placeholder
+    # text from ad-slot divs so Googlebot stops indexing the empty-
+    # ad-inventory signal. CSS rule .ad-slot{display:none!important}
+    # already hides them visually; this clears Googlebot's read.
+    [PY, "_normalize_ad_slots.py"],
+    # 2026-05-21 — SEO_AUDIT C4: inject <link rel="prev/next"> for
+    # 8 curated article clusters (atopic-dermatitis, psoriasis, etc.).
+    # Strengthens topic-cluster signal + crawl-budget allocation hint
+    # for Googlebot.
+    [PY, "_inject_cluster_nav.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
