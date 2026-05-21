@@ -104,6 +104,12 @@ REGEN_STEPS: list[list[str]] = [
     # Strengthens topic-cluster signal + crawl-budget allocation hint
     # for Googlebot.
     [PY, "_inject_cluster_nav.py"],
+    # 2026-05-21 — Inject ICD-10/SNOMED/MeSH codes into MedicalCondition
+    # `about` fields. Eligible for Google Medical Q&A rich results;
+    # discoverable via medical-professional diagnosis-code search.
+    # Must run AFTER _normalize_schema (which sets the about field
+    # baseline) and AFTER any --include-en pass so EN mirrors get codes too.
+    [PY, "_normalize_medical_codes.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
