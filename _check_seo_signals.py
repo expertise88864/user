@@ -524,6 +524,183 @@ def check_no_mojibake_in_data_attrs() -> None:
         print(f"[OK] no mojibake '????' literals detected in data-* attrs")
 
 
+# ─── 13. Drug schema present on drug-focused articles ─────────────────
+def check_drug_schema_present() -> None:
+    """The 7 drug-focused articles must carry `<script id="dn-drug-schema">`.
+    Locks in the WebApplication / Drug / ATC / Wikidata / DrugBank
+    cross-references shipped 2026-05-21 (commit 28383355). Missing
+    block = no Google "About this medication" rich-card eligibility.
+    """
+    drug_slugs = {
+        "isotretinoin-patient", "isotretinoin-clinical",
+        "dupilumab-long-term-maintenance", "biologics-overview",
+        "topical-acids-patient", "topical-acids-clinical",
+        "topical-steroids-guide",
+    }
+    blog = ROOT / "blog"
+    missing = 0
+    for slug in sorted(drug_slugs):
+        fp = blog / f"{slug}.html"
+        if not fp.exists():
+            continue
+        src = fp.read_text(encoding="utf-8", errors="replace")
+        if 'id="dn-drug-schema"' not in src:
+            err(fp.relative_to(ROOT).as_posix(),
+                f"missing <script id=\"dn-drug-schema\"> block — "
+                f"_normalize_drug_schema.py should have injected it. "
+                f"Re-run REGEN_STEPS or check that the slug is in "
+                f"SLUG_DRUGS.")
+            missing += 1
+    if missing == 0:
+        print(f"[OK] Drug schema present on all {len(drug_slugs)} drug-focused articles")
+
+
+# ─── 14. Citations @graph present on every blog article ──────────────
+def check_citations_block_present() -> None:
+    """Every indexable blog article must carry `<script id="dn-citations">`
+    with a non-empty ScholarlyArticle @graph. Locks in the 673 Vancouver
+    refs auto-parsed and shipped 2026-05-21.
+    Skip articles where the references section is intentionally empty
+    (FAQ pages, NHI policy summaries)."""
+    skip = {"dermatology-faq", "nhi-derm-drugs"}
+    blog = ROOT / "blog"
+    if not blog.exists():
+        return
+    missing = 0
+    for fp in sorted(blog.glob("*.html")):
+        if fp.stem in skip or fp.name in {"index.html", "topics.html"}:
+            continue
+        src = fp.read_text(encoding="utf-8", errors="replace")
+        if 'id="dn-citations"' not in src:
+            # Check whether the article has a references section at all
+            if '<ol class="references"' in src:
+                err(fp.relative_to(ROOT).as_posix(),
+                    "has <ol class=\"references\"> but no "
+                    "<script id=\"dn-citations\"> block — re-run "
+                    "_normalize_citations.py")
+                missing += 1
+    if missing == 0:
+        print(f"[OK] Citation @graph blocks present on all articles with references")
+
+
+# ─── 15. Glossary DefinedTermSet populated (≥50 entries) ─────────────
+def check_glossary_termset_populated() -> None:
+    """Both glossary pages must carry a DefinedTermSet with at least 50
+    hasDefinedTerm entries. Catches legacy-stub regression (the page
+    historically shipped a `DefinedTermSet` block with `hasDefinedTerm:
+    []` — empty schema is worse than no schema)."""
+    import json as _json
+    for rel in ("glossary.html", "en/glossary.html"):
+        fp = ROOT / rel
+        if not fp.exists():
+            continue
+        src = fp.read_text(encoding="utf-8", errors="replace")
+        found = False
+        for m in re.finditer(
+            r'<script type="application/ld\+json">([\s\S]*?)</script>',
+            src,
+        ):
+            try:
+                obj = _json.loads(m.group(1))
+            except _json.JSONDecodeError:
+                continue
+            if obj.get("@type") != "DefinedTermSet":
+                continue
+            terms = obj.get("hasDefinedTerm") or []
+            if not isinstance(terms, list) or len(terms) < 50:
+                err(rel,
+                    f"DefinedTermSet has only {len(terms) if isinstance(terms, list) else 0} "
+                    f"hasDefinedTerm entries (≥50 required) — re-run "
+                    f"_normalize_glossary_schema.py")
+                continue
+            found = True
+            break
+        if not found:
+            err(rel, "no populated DefinedTermSet found")
+    if not any('glossary' in e for e in errors[-2:]):
+        print(f"[OK] Glossary DefinedTermSet populated (≥50 entries on each locale)")
+
+
+# ─── 16. WebApplication @graph on /tools (≥10 apps) ──────────────────
+def check_tools_schema_present() -> None:
+    """tools.html (+ EN mirror) must carry a populated WebApplication
+    @graph (≥10 apps) — one per calculator. Lower count = regression
+    on the 2026-05-21 calculator-schema shipment."""
+    import json as _json
+    for rel in ("tools.html", "en/tools.html"):
+        fp = ROOT / rel
+        if not fp.exists():
+            continue
+        src = fp.read_text(encoding="utf-8", errors="replace")
+        m = re.search(
+            r'<script type="application/ld\+json" id="dn-tools-schema">'
+            r'([\s\S]*?)</script>',
+            src,
+        )
+        if not m:
+            err(rel, "no <script id=\"dn-tools-schema\"> block found — "
+                     "re-run _normalize_tools_schema.py")
+            continue
+        try:
+            obj = _json.loads(m.group(1))
+        except _json.JSONDecodeError:
+            err(rel, "dn-tools-schema block is not valid JSON")
+            continue
+        graph = obj.get("@graph") or []
+        if len(graph) < 10:
+            err(rel,
+                f"dn-tools-schema @graph has {len(graph)} apps (≥10 required)")
+    if not any('tools' in e for e in errors[-2:]):
+        print(f"[OK] Tools WebApplication @graph populated (≥10 apps on each locale)")
+
+
+# ─── 17. Article metadata: keywords + lastReviewed + audience ────────
+def check_article_metadata_fields() -> None:
+    """Every MedicalWebPage block on a blog article must carry the
+    three fields shipped on 2026-05-21:
+      - keywords (string)
+      - lastReviewed (YYYY-MM-DD)
+      - audience.audienceType (Patient or [Patient,Clinician])
+    Missing any of these = regression on _normalize_article_metadata.py
+    """
+    import json as _json
+    blog = ROOT / "blog"
+    if not blog.exists():
+        return
+    skip = {"index.html", "topics.html"}
+    bad = 0
+    for fp in sorted(blog.glob("*.html")):
+        if fp.name in skip:
+            continue
+        src = fp.read_text(encoding="utf-8", errors="replace")
+        for m in re.finditer(
+            r'<script type="application/ld\+json">([\s\S]*?)</script>',
+            src,
+        ):
+            try:
+                obj = _json.loads(m.group(1))
+            except _json.JSONDecodeError:
+                continue
+            if obj.get("@type") != "MedicalWebPage":
+                continue
+            missing = []
+            if not obj.get("keywords"):
+                missing.append("keywords")
+            if not obj.get("lastReviewed"):
+                missing.append("lastReviewed")
+            aud = obj.get("audience")
+            if not (isinstance(aud, dict) and aud.get("audienceType")):
+                missing.append("audience.audienceType")
+            if missing:
+                err(fp.relative_to(ROOT).as_posix(),
+                    f"MedicalWebPage missing field(s): {', '.join(missing)} — "
+                    f"re-run _normalize_article_metadata.py")
+                bad += 1
+            break
+    if bad == 0:
+        print(f"[OK] Article keywords + lastReviewed + audience fields present")
+
+
 def main() -> int:
     print("=== SEO signals audit ===")
     check_robots_serp_directives()
@@ -539,6 +716,11 @@ def main() -> int:
     check_hreflang_reciprocity()
     check_hreflang_targets_indexable()
     check_no_mojibake_in_data_attrs()
+    check_drug_schema_present()
+    check_citations_block_present()
+    check_glossary_termset_populated()
+    check_tools_schema_present()
+    check_article_metadata_fields()
 
     if warnings:
         print(f"\n[!] Warnings ({len(warnings)}):")
