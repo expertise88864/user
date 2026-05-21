@@ -233,6 +233,37 @@ def inject(html: str, termset: dict) -> tuple[str, bool]:
 
 # --- Main -------------------------------------------------------------------
 
+def inject_card_ids(src: str, cards: list[str], lang: str) -> str:
+    """Add id="term-<slug>" to each <div class="gloss-card"> so the
+    DefinedTerm.@id anchors resolve. Without this, scroll-to-text-
+    fragment from SERP definition cards lands on the page top
+    instead of the right term.
+
+    Iterates cards in document order; replaces only the FIRST naked
+    `<div class="gloss-card">` for each iteration, so we never
+    re-process already-id'd cards. Idempotent.
+    """
+    new_src = src
+    cursor = 0
+    for card in cards:
+        zh = extract_field(card, "gloss-term")
+        en = extract_field(card, "gloss-en")
+        if not zh and not en:
+            cursor += 1
+            continue
+        slug = slugify(en or zh)
+        target_id = f"term-{slug}"
+        # Find the next naked card from cursor onward
+        naked = new_src.find('<div class="gloss-card">', cursor)
+        if naked == -1:
+            break
+        end_of_tag = new_src.find('>', naked) + 1
+        replacement = f'<div class="gloss-card" id="{target_id}">'
+        new_src = new_src[:naked] + replacement + new_src[end_of_tag:]
+        cursor = naked + len(replacement)
+    return new_src
+
+
 def process(fp: Path, lang: str) -> bool:
     if not fp.exists():
         return False
@@ -240,14 +271,22 @@ def process(fp: Path, lang: str) -> bool:
     cards = find_cards(src)
     if not cards:
         return False
+
+    # Phase 1: ensure each card has an id matching DefinedTerm.@id
+    src_with_ids = inject_card_ids(src, cards, lang)
+
     terms = build_terms(cards, lang)
     if not terms:
+        if src_with_ids != src:
+            fp.write_text(src_with_ids, encoding="utf-8")
+            return True
         return False
     termset = build_termset(terms, lang)
-    new_src, changed = inject(src, termset)
-    if changed:
+    new_src, changed = inject(src_with_ids, termset)
+    if new_src != src:
         fp.write_text(new_src, encoding="utf-8")
-    return changed
+        return True
+    return False
 
 
 def main() -> int:
