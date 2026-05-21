@@ -110,6 +110,17 @@ REGEN_STEPS: list[list[str]] = [
     # Must run AFTER _normalize_schema (which sets the about field
     # baseline) and AFTER any --include-en pass so EN mirrors get codes too.
     [PY, "_normalize_medical_codes.py"],
+    # 2026-05-21 — Inject Drug JSON-LD blocks for drug-focused articles
+    # (isotretinoin, dupilumab, biologics, topical retinoids/steroids/acids).
+    # Eligible for Google "About this medication" rich-card. ATC codes +
+    # Wikidata + DrugBank cross-references for Knowledge Graph linkage.
+    [PY, "_normalize_drug_schema.py"],
+    # 2026-05-21 — Parse <ol class="references"> Vancouver citations and
+    # emit a ScholarlyArticle @graph as #dn-citations JSON-LD. Powers
+    # E-E-A-T (peer-reviewed source trail), SERP "Sources: N publications",
+    # and AI-crawler trust signals (Perplexity / ChatGPT / Claude). PMID
+    # + DOI identifiers cross-link to PubMed + Crossref.
+    [PY, "_normalize_citations.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [

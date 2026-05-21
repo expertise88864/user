@@ -598,7 +598,8 @@ def localize_jsonld(src: str, title: str, desc: str) -> str:
     faqs = extract_faqs(src)
 
     def patch_block(match):
-        raw = match.group(1)
+        opening_tag = match.group(1)  # full opening tag, e.g. `<script type="..." id="dn-citations">`
+        raw = match.group(2)
         try:
             obj = json.loads(raw)
         except Exception:
@@ -632,9 +633,16 @@ def localize_jsonld(src: str, title: str, desc: str) -> str:
                 if 'description' in obj:
                     obj['description'] = desc
 
-        return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False, separators=(',', ':')) + '</script>'
+        # Preserve the original opening tag so attributes like
+        # id="dn-citations" / id="dn-drug-schema" survive mirroring. Without
+        # this, _normalize_citations.py + _normalize_drug_schema.py can't
+        # find the existing block on subsequent runs and inject duplicates.
+        return opening_tag + json.dumps(obj, ensure_ascii=False, separators=(',', ':')) + '</script>'
 
-    return re.sub(r'<script\s+type="application/ld\+json"[^>]*>([\s\S]*?)</script>', patch_block, src, flags=re.I)
+    return re.sub(
+        r'(<script\s+type="application/ld\+json"[^>]*>)([\s\S]*?)</script>',
+        patch_block, src, flags=re.I,
+    )
 
 
 def transform(src: str, zh_canonical_path: str, en_canonical_path: str, source_rel: str | None = None) -> str:
