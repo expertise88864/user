@@ -87,6 +87,13 @@ REGEN_STEPS: list[list[str]] = [
     # 2026-05-20 — Round 2-K visualization: regenerate the
     # internal-link force-directed SVG after every catalog change.
     [PY, "_gen_site_graph.py"],
+    # 2026-05-20 — Auto-bump JSON-LD dateModified + OG article:
+    # modified_time to each article's last git-touched date. Fixes
+    # GSC "Crawled — currently not indexed" caused by stale freshness
+    # signal (dateModified never moved despite ~22 batches of SEO
+    # + schema upgrades). Must run AFTER every other normalizer so
+    # the date reflects the FINAL post-build state.
+    [PY, "_normalize_date_modified.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
