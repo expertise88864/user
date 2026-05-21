@@ -1,0 +1,14 @@
+extends: existence
+message: "Article appears to discuss treatment / medication / procedure but no <div class=\"disclaimer\"> block found. YMYL medical content requires a visible disclaimer."
+level: warning
+scope: raw
+# Match articles where keywords appear but disclaimer is absent.
+# This is checked separately by check_seo_signals; Vale adds a
+# second layer that runs against newly-authored content.
+nonword: false
+tokens:
+  # If these YMYL-strong words appear but class="disclaimer" doesn't
+  # exist in the same file, flag. (Vale doesn't support cross-rule
+  # AND/OR — this is best-effort; rely on check_seo_signals for the
+  # hard guarantee.)
+  - 致畸性\s+(?!.*class="disclaimer")

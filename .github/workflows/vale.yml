@@ -1,0 +1,42 @@
+name: Prose lint (Vale)
+
+# Round 3-L from OPEN_SOURCE_INTEGRATIONS.md
+# Vale lints article HTML against the DermNotes style package:
+#   • BannedYMYL.yml      — error on 保證根治 / 100% 治癒 / 推薦使用 etc.
+#   • Terminology.yml     — warn on 黃褐斑 (use 肝斑), pasi (use PASI), etc.
+#   • LongSentence.yml    — suggest splitting >50-char CJK sentences
+#                            (disabled per-article for clinical-depth pages)
+#   • Disclaimer.yml      — flag YMYL keywords missing disclaimer block
+#
+# Phase-in: errata-ai/vale-action runs as warning-only (fail_on_error: false)
+# until the initial fallout is cleared. Promote to blocking after cleanup.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'blog/**.html'
+      - 'en/blog/**.html'
+      - '.vale.ini'
+      - 'styles/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  vale:
+    name: Vale prose lint (informational)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Vale
+        uses: errata-ai/vale-action@v2
+        with:
+          version: 3.7.1
+          # Restrict to article files (not navigation pages with structural markup)
+          files: 'blog en/blog'
+          fail_on_error: false   # informational until fallout cleared
+          # Surface findings as PR comments
+          reporter: github-pr-check

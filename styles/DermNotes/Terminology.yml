@@ -1,0 +1,32 @@
+extends: substitution
+message: "Use '%s' instead of '%s' (DermNotes terminology canon)."
+level: warning
+ignorecase: false
+swap:
+  # Disease names — canonical Mandarin form for SEO consistency
+  '黃褐斑': '肝斑'
+  '異位皮膚炎': '異位性皮膚炎'
+  '濕疹樣皮膚炎': '濕疹'
+  '酒糟性皮膚炎': '玫瑰斑'
+  '皮膚癬': '癬'
+  '汗疱疹': '汗皰疹'
+  # Drug names — pair Latin with Chinese gloss in first mention
+  # (Vale can't enforce "first mention" — these flag when the
+  # raw Latin appears without parens. Use only when consistent.)
+  '\bTretinoin\b': '外用 A 酸 (tretinoin)'
+  '\bIsotretinoin\b(?![\s,，)）])': '口服 A 酸 (isotretinoin)'
+  # Common typos / inconsistent capitalization
+  '\bpubmed\b': 'PubMed'
+  '\bgoogle\b': 'Google'
+  '\bipad\b': 'iPad'
+  '\biphone\b': 'iPhone'
+  # Scale names — case consistency
+  '\bpasi\b': 'PASI'
+  '\beasi\b': 'EASI'
+  '\bscorad\b': 'SCORAD'
+  '\bdlqi\b': 'DLQI'
+  '\bpoem\b(?=\s+score|\s+scoring)': 'POEM'
+  '\bsalt\b(?=\s+score)': 'SALT'
+  # Numbers + units
+  '一千': '1000'
+  '一百': '100'

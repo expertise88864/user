@@ -1,0 +1,24 @@
+extends: existence
+message: "YMYL liability phrase '%s' — medical content must not make absolute cure claims. Use '改善' / '可控制' / '多數有效' / '根據臨床指引' instead."
+level: error
+nonword: false
+ignorecase: true
+tokens:
+  # Absolute cure claims (regulatory + liability risk under 醫療法)
+  - 保證根治
+  - 100%\s*治癒
+  - 完全治癒
+  - 永久痊癒
+  - 一次治好
+  - 一勞永逸
+  - 唯一療法
+  - 最有效的療法
+  - 最好的治療
+  - 治療王者
+  - 神藥
+  # Sponsorship-suggestive language (we explicitly disclaim sponsorship,
+  # so any phrase that contradicts that promise is a bug)
+  - 推薦使用
+  - 強力推薦
+  - 首選品牌
+  - 業界第一
