@@ -121,6 +121,13 @@ REGEN_STEPS: list[list[str]] = [
     # and AI-crawler trust signals (Perplexity / ChatGPT / Claude). PMID
     # + DOI identifiers cross-link to PubMed + Crossref.
     [PY, "_normalize_citations.py"],
+    # 2026-05-21 — Final pass over MedicalWebPage / MedicalScholarlyArticle
+    # JSON-LD: inject `keywords` (from homepage data-tag-en + alternateName),
+    # `lastReviewed` (git last-modified date), and differentiate
+    # `audience.audienceType` (Patient default, Patient+Clinician for
+    # clinical-depth slugs). Must run LAST so previously-injected fields
+    # like `about` are stable when we harvest alternateName from them.
+    [PY, "_normalize_article_metadata.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
