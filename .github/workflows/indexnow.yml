@@ -43,7 +43,7 @@ jobs:
         # 試圖以 HTTPS 認證、終端機 prompt 被禁用 → "could not read
         # Username for 'https://github.com'" + exit 128。我們只需要讀
         # 取 sitemap.xml、不需要 push、所以關掉 persist-credentials +
-        # 顯式帶 GITHUB_TOKEN。
+        # 顯式帶 GITHUB_TOKEN + 跳過 submodule init。
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: false

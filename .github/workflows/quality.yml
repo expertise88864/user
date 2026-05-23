@@ -97,6 +97,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
       - name: Setup Python
         uses: actions/setup-python@v5
         with: { python-version: '3.12' }
@@ -157,6 +160,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
       - name: Setup Python
         uses: actions/setup-python@v5
         with: { python-version: '3.12' }
@@ -204,6 +210,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
       - name: Setup Python
         uses: actions/setup-python@v5
         with: { python-version: '3.12' }
@@ -297,6 +306,9 @@ jobs:
     needs: html-validate
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
       - name: Install LHCI

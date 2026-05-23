@@ -21,6 +21,9 @@ jobs:
     continue-on-error: true   # informational only — never block deploy
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
 
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
