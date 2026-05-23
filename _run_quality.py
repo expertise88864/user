@@ -183,6 +183,7 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_check_external_links.py"],
     [PY, "_check_button_types.py"],
     [PY, "_check_html_escape.py"],
+    [PY, "_check_article_runtime.py"],
     [PY, "_check_deployment.py"],
     [PY, "_check_api_security.py"],
     [PY, "_check_frontend_security.py"],
