@@ -180,6 +180,17 @@ SLUG_CONDITIONS: dict[str, list[dict]] = {
                           icd10="L63.9", snomed="278951000",
                           mesh="D000506", wikidata="Q717619"),
     ],
+    "semaglutide-hair-loss": [
+        medical_condition("Telogen effluvium", "休止期落髮",
+                          icd10="L65.0", snomed="56495002",
+                          wikidata="Q899907"),
+        medical_condition("Androgenetic alopecia", "雄性禿",
+                          icd10="L64.9", snomed="87224000",
+                          mesh="D000505", wikidata="Q1378019"),
+        medical_condition("Alopecia areata", "圓禿",
+                          icd10="L63.9", snomed="278951000",
+                          mesh="D000506", wikidata="Q717619"),
+    ],
 
     # ─── Vitiligo / pigmentation ───
     "vitiligo": [
