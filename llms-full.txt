@@ -5829,7 +5829,7 @@ UpToDate: Prurigo nodularis. Accessed 2026.
 ---
 ## 皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教
 URL: https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 皮膚淋巴瘤, CTCL / MF
@@ -6014,7 +6014,7 @@ UpToDate: Treatment of mycosis fungoides. Accessed 2026.
 ---
 ## 皮膚科 25 個最常見問題
 URL: https://chendermatologist.com/blog/dermatology-faq
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Myths & Facts
 Reading time: PT12M
 Tags: 常見問題, FAQ
@@ -7968,7 +7968,7 @@ HS 跟克隆氏症有關嗎？
 ---
 ## 標靶藥物（TKI）皮膚副作用
 URL: https://chendermatologist.com/blog/targeted-therapy-skin
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 標靶藥物, Targeted therapy skin

@@ -524,35 +524,33 @@ def check_no_mojibake_in_data_attrs() -> None:
         print(f"[OK] no mojibake '????' literals detected in data-* attrs")
 
 
-# ─── 13. Drug schema present on drug-focused articles ─────────────────
+# ─── 13. Drug schema MUST BE ABSENT (GSC WNC-10030322 fix 2026-05-23) ─
 def check_drug_schema_present() -> None:
-    """The 7 drug-focused articles must carry `<script id="dn-drug-schema">`.
-    Locks in the WebApplication / Drug / ATC / Wikidata / DrugBank
-    cross-references shipped 2026-05-21 (commit 28383355). Missing
-    block = no Google "About this medication" rich-card eligibility.
+    """INVERTED 2026-05-23: Drug schema was retracted because Google
+    Search Console started flagging the blocks as "Product snippets"
+    requiring offers / review / aggregateRating (WNC-10030322).
+
+    Now we check the OPPOSITE: no article should carry a dn-drug-schema
+    block. If one drifts back in (e.g., from a half-reverted commit or
+    a stale local edit), the build should fail until cleaned.
     """
-    drug_slugs = {
-        "isotretinoin-patient", "isotretinoin-clinical",
-        "dupilumab-long-term-maintenance", "biologics-overview",
-        "topical-acids-patient", "topical-acids-clinical",
-        "topical-steroids-guide",
-    }
     blog = ROOT / "blog"
-    missing = 0
-    for slug in sorted(drug_slugs):
-        fp = blog / f"{slug}.html"
-        if not fp.exists():
+    en_blog = ROOT / "en" / "blog"
+    stray = 0
+    for base in (blog, en_blog):
+        if not base.exists():
             continue
-        src = fp.read_text(encoding="utf-8", errors="replace")
-        if 'id="dn-drug-schema"' not in src:
-            err(fp.relative_to(ROOT).as_posix(),
-                f"missing <script id=\"dn-drug-schema\"> block — "
-                f"_normalize_drug_schema.py should have injected it. "
-                f"Re-run REGEN_STEPS or check that the slug is in "
-                f"SLUG_DRUGS.")
-            missing += 1
-    if missing == 0:
-        print(f"[OK] Drug schema present on all {len(drug_slugs)} drug-focused articles")
+        for fp in sorted(base.glob("*.html")):
+            src = fp.read_text(encoding="utf-8", errors="replace")
+            if 'id="dn-drug-schema"' in src:
+                err(fp.relative_to(ROOT).as_posix(),
+                    "carries <script id=\"dn-drug-schema\"> block — "
+                    "Drug schema was retracted 2026-05-23 to fix GSC "
+                    "Product-snippet validation error. Re-run "
+                    "_normalize_drug_schema.py to strip.")
+                stray += 1
+    if stray == 0:
+        print("[OK] Drug schema correctly absent (GSC WNC-10030322 fix)")
 
 
 # ─── 14. Citations @graph present on every blog article ──────────────

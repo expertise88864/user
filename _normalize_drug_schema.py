@@ -296,25 +296,40 @@ def inject(html: str, drugs: list[dict]) -> tuple[str, bool]:
 
 
 def main() -> int:
+    """RETRACTED 2026-05-23: Drug schema injection disabled.
+
+    Google Search Console started flagging our Drug @type blocks as
+    "Product snippets" requiring offers / review / aggregateRating
+    (WNC-10030322, affecting 11 items across biologics-overview /
+    topical-steroids-guide / topical-acids-patient). Drug is technically
+    a MedicalEntity not a Product, but Google's parser treats
+    `nonProprietaryName` + `activeIngredient` as product-like markers.
+
+    Adding fake offers / reviews would be misleading; Google has no
+    Drug rich-card to lose either. Net better to strip the schema
+    entirely and let MedicalCondition + Wikidata sameAs + the article
+    body carry the entity disambiguation.
+
+    This function now only REMOVES existing dn-drug-schema blocks
+    (cleanup mode) — no re-injection. Kept in REGEN_STEPS so any
+    drift gets cleaned on every build.
+    """
     blog = ROOT / "blog"
     en_blog = ROOT / "en" / "blog"
-    total_changed = 0
-
-    for slug, drugs in SLUG_DRUGS.items():
-        if not drugs:
+    total_removed = 0
+    for base in (blog, en_blog):
+        if not base.exists():
             continue
-        for base in (blog, en_blog):
-            fp = base / f"{slug}.html"
-            if not fp.exists():
-                continue
+        for fp in sorted(base.glob("*.html")):
             src = fp.read_text(encoding="utf-8")
-            new_src, changed = inject(src, drugs)
-            if changed:
-                fp.write_text(new_src, encoding="utf-8")
-                total_changed += 1
+            if EXISTING_RE.search(src):
+                new_src = EXISTING_RE.sub("", src)
+                if new_src != src:
+                    fp.write_text(new_src, encoding="utf-8")
+                    total_removed += 1
 
-    print(f"[drug-schema] injected Drug JSON-LD into {total_changed} article "
-          f"files ({len(SLUG_DRUGS)} slug mappings)")
+    print(f"[drug-schema] RETRACTED — stripped Drug JSON-LD from "
+          f"{total_removed} article files (GSC WNC-10030322 fix)")
     return 0
 
 
