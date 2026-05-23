@@ -76,6 +76,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/privacy"/>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/ai-dermatology-roles</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/ai-dermatology-roles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/ai-dermatology-roles"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/ai-dermatology-roles"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/api/og?title=AI+%E7%8F%BE%E5%9C%A8%E8%83%BD%E5%B9%AB%E7%9A%AE%E8%86%9A%E7%A7%91%E9%86%AB%E5%B8%AB%E7%9C%8B%E7%97%85%E5%97%8E%EF%BC%9F2026+%E4%B8%89%E7%AF%87+JAAD+%E7%A0%94%E7%A9%B6%E7%9A%84%E7%B6%9C%E5%90%88%E8%A7%A3%E7%AD%94+%7C+%E9%99%B3%E7%BF%8A%E5%98%89%E9%86%AB%E5%B8%AB&amp;tag=%E7%9A%AE%E8%86%9A%E7%A7%91%E8%A1%9B%E6%95%99&amp;date=2026-05-16</image:loc>
+      <image:title>AI 現在能幫皮膚科醫師看病嗎？2026 三篇 JAAD 研究的綜合解答</image:title>
+      <image:caption>2026 三篇 JAAD 研究綜合：Kremer 眼動追蹤（DEXI 熱圖 r=0.540、但 5/20 顆黑色素瘤誤判）、Mahajan 多模態 LLM 看 12 種發炎性皮膚病（GPT-5 46.2%、深膚色準確率掉 13%）、Cao 數位轉錄秘書（皮膚科每天省 15.4 分鐘、高量門診更受益）。給病人與住院醫師的三條前線：影像辨識、解釋自己、寫病歷。</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/vitiligo-maintenance-clinical</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -87,20 +101,6 @@
       <image:loc>https://chendermatologist.com/api/og?title=%E7%99%BD%E6%96%91%E5%81%9C%E8%97%A5%E5%BE%8C%E6%9C%83%E5%BE%A9%E7%99%BC%E5%97%8E%EF%BC%9F%E7%B6%AD%E6%8C%81%E6%B2%BB%E7%99%82%E8%88%87%E5%BE%A9%E7%99%BC%E9%A2%A8%E9%9A%AA%E8%A9%95%E4%BC%B0%EF%BD%9C%E6%89%8B%E8%85%B3%E7%97%85%E7%81%B6+%C3%97+%E7%94%B2%E7%8B%80%E8%85%BA+%C3%97+%E8%87%AA%E9%AB%94%E5%85%8D%E7%96%AB%E5%85%B1%E7%97%85&amp;tag=%E7%9A%AE%E8%86%9A%E7%A7%91%E8%A1%9B%E6%95%99&amp;date=2026-05-23</image:loc>
       <image:title>白斑停藥後會復發嗎？維持治療與復發風險評估</image:title>
       <image:caption>非分節型白斑治療成功後仍有約三分之一會復發。本文整理 Shih HY、Ng CY 等 2026 年 Br J Dermatol 長庚 809 人世代研究：手腳病灶、甲狀腺病、其他自體免疫共病是三大獨立預測因子；手腳合併甲狀腺風險約 2.5 倍。提供患者衛教 + 臨床維持治療強度分層建議。</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/blog/ai-dermatology-roles</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/ai-dermatology-roles"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/ai-dermatology-roles"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/ai-dermatology-roles"/>
-    <image:image>
-      <image:loc>https://chendermatologist.com/api/og?title=AI+%E7%8F%BE%E5%9C%A8%E8%83%BD%E5%B9%AB%E7%9A%AE%E8%86%9A%E7%A7%91%E9%86%AB%E5%B8%AB%E7%9C%8B%E7%97%85%E5%97%8E%EF%BC%9F2026+JAAD+%E7%9C%BC%E5%8B%95%E8%BF%BD%E8%B9%A4%E7%A0%94%E7%A9%B6+%7C+%E9%99%B3%E7%BF%8A%E5%98%89%E9%86%AB%E5%B8%AB&amp;tag=%E7%9A%AE%E8%86%9A%E7%A7%91%E8%A1%9B%E6%95%99&amp;date=2026-05-16</image:loc>
-      <image:title>AI 現在能幫皮膚科醫師看病嗎？2026 JAAD 眼動追蹤研究的三個現實答案</image:title>
-      <image:caption>2026 JAAD 最新研究：DEXI 皮膚鏡 AI 熱圖和皮膚科醫師眼動熱圖有重疊（r=0.540），但 5/20 顆黑色素瘤被 AI 判成痣。給病人與住院醫師的雙軌解讀：AI 在皮膚科目前能做什麼、不能做什麼。</image:caption>
     </image:image>
   </url>
   <url>
@@ -769,6 +769,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/privacy"/>
   </url>
   <url>
+    <loc>https://chendermatologist.com/en/blog/ai-dermatology-roles</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/ai-dermatology-roles"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/ai-dermatology-roles"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/ai-dermatology-roles"/>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/en/blog/vitiligo-maintenance-clinical</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -776,15 +785,6 @@
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/vitiligo-maintenance-clinical"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/vitiligo-maintenance-clinical"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/vitiligo-maintenance-clinical"/>
-  </url>
-  <url>
-    <loc>https://chendermatologist.com/en/blog/ai-dermatology-roles</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/ai-dermatology-roles"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/ai-dermatology-roles"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/ai-dermatology-roles"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/en/blog/psoriasis-biologic-monitoring</loc>

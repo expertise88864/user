@@ -317,7 +317,17 @@ SLUG_CONDITIONS: dict[str, list[dict]] = {
                           icd10="L20.9", snomed="24079001"),
     ],
     "ai-dermatology-roles": [
-        # Research review — no condition mapping
+        # Research review on AI in dermatology — point to Wikidata
+        # entity "Dermatology" (Q3893099) as the most appropriate broad
+        # entity tag. Schema.org MedicalCondition is a structural
+        # mismatch for an AI / specialty review, so we use a minimal
+        # condition stub solely as a Knowledge Graph anchor.
+        {
+            "@type": "MedicalCondition",
+            "name": "Dermatology (general)",
+            "alternateName": ["皮膚科 (一般)"],
+            "sameAs": ["https://www.wikidata.org/wiki/Q3893099"],
+        },
     ],
 
     # ─── NHI / FAQ ───
