@@ -195,16 +195,6 @@ def build_termset(terms: list[dict], lang: str) -> dict:
 
 # --- Injection --------------------------------------------------------------
 
-# Match the legacy empty/stub DefinedTermSet block emitted by an earlier
-# version of _normalize_schema.py. We'll REPLACE this in-place rather
-# than appending a duplicate.
-LEGACY_STUB_RE = re.compile(
-    r'<script type="application/ld\+json">'
-    r'(\{[^<]*?"@type":"DefinedTermSet"[^<]*?\})'
-    r'</script>',
-    re.DOTALL,
-)
-
 # Match a previous run's id-bearing block (if any) so we can clean it up.
 ID_BEARING_RE = re.compile(
     r'<script type="application/ld\+json" id="dn-glossary-terms">.*?</script>\s*',
@@ -212,16 +202,97 @@ ID_BEARING_RE = re.compile(
 )
 
 
+def find_all_definedtermset_blocks(html: str) -> list[tuple[int, int]]:
+    """Return [(start, end)] of every <script ...>{...DefinedTermSet...}</script>
+    using balanced-brace parsing (so JSON bodies containing literal '<'
+    characters are still handled correctly — Chinese glossary entries
+    like '< 12 = 控制不佳' broke the prior `[^<]*?` regex).
+    """
+    out: list[tuple[int, int]] = []
+    i = 0
+    while True:
+        s = html.find('<script type="application/ld+json">', i)
+        if s == -1:
+            break
+        body_start = html.find('>', s) + 1
+        # Quick gate: only proceed if @type is DefinedTermSet in this script
+        next_close = html.find('</script>', body_start)
+        if next_close == -1:
+            break
+        # Need balanced-brace from body_start (skip whitespace)
+        # First, find the opening `{`
+        p = body_start
+        while p < next_close and html[p] in ' \t\n\r':
+            p += 1
+        if p >= next_close or html[p] != '{':
+            i = next_close + len('</script>')
+            continue
+        # Track braces to find matching `}` for top-level JSON object,
+        # respecting string literals.
+        depth = 0
+        in_str = False
+        escape = False
+        end = -1
+        for k in range(p, len(html)):
+            ch = html[k]
+            if escape:
+                escape = False
+                continue
+            if ch == '\\':
+                escape = True
+                continue
+            if ch == '"':
+                in_str = not in_str
+                continue
+            if in_str:
+                continue
+            if ch == '{':
+                depth += 1
+            elif ch == '}':
+                depth -= 1
+                if depth == 0:
+                    end = k + 1
+                    break
+        if end == -1:
+            i = next_close + len('</script>')
+            continue
+        # Now end is just past the closing `}`. Expect `</script>` right after.
+        # (Possibly trailing whitespace inside the tag.)
+        tail = html.find('</script>', end)
+        if tail == -1:
+            i = end
+            continue
+        body = html[p:end]
+        # Only count this block if its @type is DefinedTermSet.
+        if '"@type":"DefinedTermSet"' in body:
+            out.append((s, tail + len('</script>')))
+        i = tail + len('</script>')
+    return out
+
+
 def inject(html: str, termset: dict) -> tuple[str, bool]:
+    # JSON-encode and escape `<` to `<` so subsequent regex passes
+    # (including any future LEGACY_STUB_RE pattern) can rely on the body
+    # being `<`-free, AND to prevent any chance of </script> breakout
+    # if a glossary description happened to contain '</script>' or '<!--'.
     body = json.dumps(termset, ensure_ascii=False, separators=(',', ':'))
+    body = body.replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
+    populated = f'<script type="application/ld+json">{body}</script>'
 
     # 1. Strip any old id="dn-glossary-terms" block from prior runs.
     new_html = ID_BEARING_RE.sub('', html)
 
-    # 2. Replace the legacy stub if present; otherwise prepend before </head>.
-    populated = f'<script type="application/ld+json">{body}</script>'
-    if LEGACY_STUB_RE.search(new_html):
-        new_html = LEGACY_STUB_RE.sub(populated, new_html, count=1)
+    # 2. Find ALL existing DefinedTermSet blocks (could be many duplicates
+    #    accumulated by earlier broken inject runs). Replace the FIRST
+    #    one in place and DELETE the rest.
+    blocks = find_all_definedtermset_blocks(new_html)
+    if blocks:
+        # Splice from end to start so positions stay valid.
+        for start, end in reversed(blocks[1:]):
+            new_html = new_html[:start] + new_html[end:]
+        # Now replace the first block.
+        first_start, first_end = blocks[0]
+        new_html = new_html[:first_start] + populated + new_html[first_end:]
     else:
         head_close = new_html.find("</head>")
         if head_close == -1:
