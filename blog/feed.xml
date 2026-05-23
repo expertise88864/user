@@ -5,9 +5,18 @@
     <link>https://chendermatologist.com/</link>
     <description>皮膚科衛教與學習筆記，整理常見皮膚疾病、治療選項與醫學指引。</description>
     <language>zh-Hant-TW</language>
-    <lastBuildDate>Thu, 21 May 2026 16:13:46 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2026 05:49:34 +0000</lastBuildDate>
     <atom:link href="https://chendermatologist.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <generator>DermNotes auto-feed</generator>
+    <item>
+      <title>白斑停藥後會復發嗎？維持治療與復發風險評估 — 2026 BJD 長庚 809 人世代</title>
+      <link>https://chendermatologist.com/blog/vitiligo-maintenance-clinical</link>
+      <guid isPermaLink="true">https://chendermatologist.com/blog/vitiligo-maintenance-clinical</guid>
+      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
+      <dc:creator>陳翊嘉 醫師</dc:creator>
+      <category>白斑復發</category>
+      <description>白斑停藥後會復發嗎？維持治療與復發風險評估 — 2026 BJD 長庚 809 人世代 | ChenDermatologist 皮膚科衛教筆記</description>
+    </item>
     <item>
       <title>AI 現在能幫皮膚科醫師看病嗎？2026 JAAD 眼動追蹤研究的三個現實答案</title>
       <link>https://chendermatologist.com/blog/ai-dermatology-roles</link>
@@ -268,15 +277,6 @@
       <dc:creator>陳翊嘉 醫師</dc:creator>
       <category>雷射 / 光電</category>
       <description>皮膚科雷射完整對照 | ChenDermatologist 皮膚科衛教筆記</description>
-    </item>
-    <item>
-      <title>嬰幼兒 / 兒童異位性皮膚炎完整照護指南</title>
-      <link>https://chendermatologist.com/blog/pediatric-eczema</link>
-      <guid isPermaLink="true">https://chendermatologist.com/blog/pediatric-eczema</guid>
-      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
-      <dc:creator>陳翊嘉 醫師</dc:creator>
-      <category>異位性皮膚炎</category>
-      <description>嬰幼兒 / 兒童異位性皮膚炎完整照護指南 | ChenDermatologist 皮膚科衛教筆記</description>
     </item>
   </channel>
 </rss>

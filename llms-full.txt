@@ -163,7 +163,7 @@ ANA ≥ 1:80 陽 vs 陰
 ---
 ## 打乾癬生物製劑要不要每年抽血？2026 JAAD 證據評級重新看這件事
 URL: https://chendermatologist.com/blog/psoriasis-biologic-monitoring
-Updated: 2026-05-22
+Updated: 2026-05-21
 Section: Research Summary
 Reading time: PT19M
 Tags: 生物製劑安全, Biologic safety
@@ -290,7 +290,7 @@ HBV 狀態
 ---
 ## AI 現在能幫皮膚科醫師看病嗎？2026 JAAD 眼動追蹤研究的三個現實答案
 URL: https://chendermatologist.com/blog/ai-dermatology-roles
-Updated: 2026-05-22
+Updated: 2026-05-21
 Section: Research Summary
 Reading time: PT9M
 Tags: AI 與皮膚科, AI in dermatology
@@ -409,7 +409,7 @@ Giavina-Bianchi M, Vitor WG, Fornasiero de Paiva V, Okita AL, Sousa RM, Machado 
 ---
 ## 杜避炎®（dupilumab）維持治療要打多久？2026 JAAD 真實世界研究：減量竟比停藥更容易復發
 URL: https://chendermatologist.com/blog/dupilumab-long-term-maintenance
-Updated: 2026-05-22
+Updated: 2026-05-21
 Section: Research Summary
 Reading time: PT20M
 Tags: dupilumab, Dupilumab
@@ -701,7 +701,7 @@ Upa 與 Abro 劑量限制：Upadacitinib — EASI 16–20 限每日 15 mg；≥ 
 ---
 ## 嘴角紅疹是痘痘還是濕疹？口周皮膚炎完整衛教
 URL: https://chendermatologist.com/blog/perioral-dermatitis-guide
-Updated: 2026-05-22
+Updated: 2026-05-21
 Section: Treatment & Therapy
 Reading time: PT20M
 Tags: 口周皮膚炎, Perioral dermatitis
@@ -895,7 +895,7 @@ Doxycycline
 ---
 ## 腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病
 URL: https://chendermatologist.com/blog/toenail-mechanical-disorders
-Updated: 2026-05-22
+Updated: 2026-05-21
 Section: Treatment & Therapy
 Reading time: PT18M
 Tags: 趾甲與足部, Toenail disorders
@@ -1139,7 +1139,7 @@ Carpal Tunnel Syndrome 的手指甲變化
 ---
 ## 嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南
 URL: https://chendermatologist.com/blog/dermatologic-oral-examination
-Updated: 2026-05-22
+Updated: 2026-05-21
 Section: Treatment & Therapy
 Reading time: PT24M
 Tags: 口腔黏膜, Oral mucosa
