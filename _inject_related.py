@@ -218,6 +218,13 @@ def build_related_html(cur_slug: str, related: list[dict]) -> str:
     return (
         '\n<nav id="dn-related-static" class="max-w-3xl mx-auto px-5 sm:px-8 my-10" '
         'aria-label="Related articles">'
+        # 2026-05-23 — explicit 2×2 grid (左上/右上/左下/右下) on desktop,
+        # collapses to 1 column under 520px so cards stay readable on
+        # mobile (320-414px typical phone viewport width).
+        '<style>'
+        '.dn-related-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}'
+        '@media (max-width:520px){.dn-related-grid{grid-template-columns:1fr}}'
+        '</style>'
         '<div style="border-top:1px solid var(--line);padding-top:28px">'
         '<div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px">'
         '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;'
@@ -226,7 +233,7 @@ def build_related_html(cur_slug: str, related: list[dict]) -> str:
         '<a href="/blog/" style="font-size:11.5px;color:var(--teal-deep);text-decoration:none;'
         'font-weight:600" data-zh="瀏覽全部文章 →" data-en="Browse all →">瀏覽全部文章 →</a>'
         '</div>'
-        '<div class="dn-related-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">'
+        '<div class="dn-related-grid">'
         + "".join(cards) +
         '</div></div>'
         + jsonld +

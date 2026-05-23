@@ -3464,6 +3464,8 @@ Dupilumab ≥ 6 月嬰兒已核准、適合中重度
 
 異位性皮膚炎是系統性 Th2 過度發炎、皮膚只是冰山。AAD 2022 把「合併症意識」明訂指引等級不是裝飾、是真實降低呼吸道、心血管、心理疾患風險。每個 AD 病人每年必做：氣喘 / 過敏性鼻炎 / 食物過敏 / 心情快篩 / 眼睛 / 感染史 + DLQI／POEM 評分。嬰幼兒、孕婦、老年、難治型都有專屬策略。別讓「我以為只是癢」延誤治療。
 
+延伸閱讀：AD 與其他自體免疫共病(甲狀腺、白斑、圓禿、SLE 等)的篩檢與長期照護見〈白斑停藥後會復發嗎？維持治療與復發風險評估〉中的自體免疫共病章節，以及〈杜避炎®(dupilumab)維持治療要打多久？〉討論的減量 vs 停藥風險。
+
 參考資料
 
 Davis DMR, Drucker AM, Alikhan A, et al. American Academy of Dermatology Guidelines: Awareness of comorbidities associated with atopic dermatitis in adults. J Am Acad Dermatol. 2022;86(6):1335-1336. 「來源」
@@ -4409,7 +4411,7 @@ Goulden 2022, BJD
 
 結語
 乾癬不是癬、不會傳染、不只是皮膚問題，但它是可以高度控制的。從 1990 年代只有外用藥膏 + 光療，到現在IL-17 / IL-23 抑制劑可以做到 PASI 100（病灶幾乎完全清除），治療的天花板已經完全不一樣。不要拖，不要怕生物製劑 — 找專科醫師討論最適合你的治療策略。
-延伸閱讀：關於類固醇藥膏正確使用，看 異膚 6 大迷思；若鱗屑出現在頭皮，可能是頭皮乾癬或脂漏性皮膚炎，需鑑別。
+延伸閱讀：關於類固醇藥膏正確使用，看 異膚 6 大迷思；若鱗屑出現在頭皮，可能是頭皮乾癬或脂漏性皮膚炎，需鑑別。也提醒：2026 JAAD 多模態 LLM 研究顯示 AI 對乾癬的辨識準確率只有 18%、不適合用 ChatGPT / 手機 App 自我診斷。
 
 參考資料
 Menter A, et al. Joint AAD-NPF guidelines of care for the management of psoriasis with biologics.J Am Acad Dermatol. 2019;80(4):1029-1072. 「來源」
