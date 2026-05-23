@@ -18,7 +18,7 @@ Tags: AI 與皮膚科, AI in dermatology
 一句話結論
 TL;DR：AI 在皮膚科目前比較合理的定位，是診斷輔助、可解釋性檢查與教育資料增強，而不是取代皮膚科醫師。Kremer 等人的 JAAD 研究顯示，DEXI 皮膚鏡 AI 熱圖和皮膚科醫師眼動熱圖有相當重疊，但熱圖相似不等於 AI 使用了和醫師完全相同的臨床邏輯。
 
-衛教：病人最常問的 5 題
+衛教：病人最常問的 8 題
 
 Q1. 我手機 App 拍痣判斷會準嗎？
 目前市售手機 App 的差異非常大，多數沒有公開過完整的前瞻性臨床驗證。本研究使用的 DEXI 是專業皮膚鏡影像（dermoscopy，醫師用的偏光放大鏡）+ 商用 AI 系統，和手機隨手拍的條件差非常多。手機 App 可以作為「提醒你去看醫師」的工具，不能取代正式診斷。
@@ -72,9 +72,7 @@ DEXI 在本研究中誤判 10/114 張影像，其中 5/20 個 melanoma 被判成
 建立教學素材、少見病影像補充、訓練資料擴增。
 可能延續偏差，生成影像未必符合真實病理或皮膚鏡特徵。
 
-台灣健保脈絡本篇主題是 AI 角色與研究方法，不涉及治療選擇或藥品給付，因此不放健保藥品條件。若另寫黑色素瘤治療、免疫檢查點抑制劑或 BRAF/MEK 標靶治療，才需要回到健保署給付規定逐項核對病理診斷、分期、BRAF 檢測、ECOG、影像追蹤與事前審查。
-
-Kremer 2026 JAAD 研究怎麼做？
+Kremer 2026 JAAD 研究怎麼做？(比較皮膚科醫師與 AI 在皮膚鏡影像分析的熱圖：眼動追蹤研究)
 Kremer 等人的問題很具體：AI 皮膚鏡分類模型產生的熱圖，是否真的落在皮膚科醫師會看的診斷區域？研究讓 4 位皮膚科醫師在不知道診斷的情況下看皮膚鏡影像，同時記錄眼動軌跡，再把眼動資料轉成熱圖；同一批影像也用 DEXI 演算法產生 class activation map。
 
 設計元素
@@ -117,7 +115,7 @@ Gaze map 和 fixation map 為什麼不同？
 本研究並未直接測試 AI 是否改善臨床醫師診斷準確度、信心或病人結果。
 DEXI 是特定商業系統與特定資料流程，結果不能直接外推到所有 AI 皮膚鏡 app。
 
-住院醫師 takeaway：這篇可以怎麼放進 journal club？
+住院醫師重點：這幾篇研究怎麼讀？
 1. 這篇不是 AI accuracy paper，而是 explainability paper
 不要把討論焦點放成「DEXI 準不準」。它主要問的是：模型關注區域是否與醫師視覺注意區域相似。
 2. 可解釋性不是 nice-to-have，而是臨床導入門檻
@@ -130,7 +128,7 @@ Lipner 對 text-to-image models 的整理是保守而清楚的：它們可能幫
 
 延伸閱讀：皮膚切片與腫瘤切除手術完整衛教 · 日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教 · 口腔黏膜檢查與切片指南
 
-Mahajan 2026 JAAD：多模態 LLM 看發炎性皮膚病的真實表現
+Mahajan 2026 JAAD：多模態大型語言模型評估發炎性皮膚病(橫斷研究)
 
 Mahajan 等人(Brigham & Women's Hospital, Harvard)2026 年 6 月發表的橫斷研究、是目前最大型一次性同時評估「主流 mLLM 看發炎性皮膚病(inflammatory skin diseases, ISDs)」的研究。設計重點：1,758 張 Stanford + Google Skin Condition Image Network (SCIN) 臨床照片、涵蓋 12 種 ISD(異位性皮膚炎、蕁麻疹、乾癬、痤瘡、白血球破壞性血管炎、苔癬樣疹、玫瑰斑、環狀肉芽腫、脂漏性皮膚炎、皮膚紅斑性狼瘡、多形性紅斑、 pityriasis lichenoides)。三個受測模型：GPT-5(proprietary)、Gemini-2.5-Pro(proprietary)、Janus-pro-7b(open-source)。Primary outcome 為 diagnostic accuracy、附 95% CI、依疾病、Fitzpatrick 膚色、年齡、形態學紋路、解剖位置分層分析。
 
@@ -1336,7 +1334,7 @@ Wang YP et al. 2018; Lin HP et al. 201915,16
 ---
 ## 皮膚切片與腫瘤切除手術完整衛教 — 為什麼要切？怎麼切？術後怎麼照顧？
 URL: https://chendermatologist.com/blog/skin-biopsy-excision
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT14M
 Tags: 處置 / 手術, Skin biopsy & excision
@@ -1713,7 +1711,7 @@ NT$ 3,000-8,000（依大小／部位）
 ---
 ## 乾癬完整衛教 — 分型、嚴重度、誘發因子
 URL: https://chendermatologist.com/blog/psoriasis-overview
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT6M
 Tags: 乾癬, Psoriasis overview
@@ -1888,7 +1886,7 @@ UpToDate: Chronic plaque psoriasis in adults: Overview of management. Accessed 2
 ---
 ## 乾癬外用藥治療 — 類固醇、維生素 D、特殊部位
 URL: https://chendermatologist.com/blog/psoriasis-topical
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 乾癬, Psoriasis topical
@@ -2093,7 +2091,7 @@ Stein Gold L, Lebwohl M, Sugarman J, et al. Calcipotriene/betamethasone dipropio
 ---
 ## 乾癬全身性治療 — 光療、口服、生物製劑
 URL: https://chendermatologist.com/blog/psoriasis-systemic
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 乾癬, Psoriasis systemic
@@ -2509,7 +2507,7 @@ Ustekinumab（Stelara®）是第一代「IL-23 路徑」抑制劑、靶向 IL-12
 ---
 ## 乾癬合併症與特殊族群 — PsA、心血管、懷孕、兒童、指甲、紅皮症
 URL: https://chendermatologist.com/blog/psoriasis-special-populations
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 乾癬, Psoriasis special populations
@@ -2743,7 +2741,7 @@ Bachelez H, Choon SE, Marrakchi S, et al. Trial of spesolimab for generalized pu
 ---
 ## 異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏
 URL: https://chendermatologist.com/blog/atopic-dermatitis-topical
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 異位性皮膚炎, AD topical
@@ -2923,7 +2921,7 @@ Papier A, Strowd LC. Atopic dermatitis: a review of topical nonsteroid therapy. 
 ---
 ## 異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療
 URL: https://chendermatologist.com/blog/atopic-dermatitis-systemic
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT10M
 Tags: 異位性皮膚炎, AD systemic
@@ -3267,6 +3265,8 @@ Upa 與 Abro 只能擇一使用，僅於無法耐受副作用時可互換；皆�
 
 異位性皮膚炎中重度治療在 2017 後完全改變、現在不必再忍著「就是會癢」。生物製劑（dupilumab、lebrikizumab）安全性最好、是長期首選；JAK 抑制劑（upadacitinib、abrocitinib）起效最快、清除率最高、但需理解黑框警告。NB-UVB 光療是經濟過渡選項。和您的皮膚科醫師依「療效目標、安全顧慮、便利性、預算」共同決定。新藥輩出、選擇前諮詢專科、別自行停藥。
 
+延伸閱讀：異位性皮膚炎完整系列 — 外用治療完整衛教、合併症與特殊族群、嬰幼兒 AD 完整照護。
+
 參考資料
 
 Davis DMR, Drucker AM, Alikhan A, et al. Guidelines of care for the management of atopic dermatitis in adults with phototherapy and systemic therapies. J Am Acad Dermatol. 2024;90(2):e57-e96. 「來源」
@@ -3281,7 +3281,7 @@ Drucker AM, Morra DE, Prieto-Merino D, et al. Systemic immunomodulatory treatmen
 ---
 ## 異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染
 URL: https://chendermatologist.com/blog/atopic-dermatitis-special-populations
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 異位性皮膚炎, AD special populations
@@ -3487,7 +3487,7 @@ UpToDate: Management of severe, refractory atopic dermatitis (eczema) in infants
 ---
 ## 接觸性皮膚炎(過敏 vs 刺激)完整衛教
 URL: https://chendermatologist.com/blog/contact-dermatitis
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 接觸性皮膚炎, Contact dermatitis
@@ -3747,7 +3747,7 @@ UpToDate: Common allergens in allergic contact dermatitis. Accessed 2026.
 ---
 ## 日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教
 URL: https://chendermatologist.com/blog/actinic-keratosis-scc
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT10M
 Tags: 皮膚癌, AK / SCC
@@ -4029,6 +4029,8 @@ BAD 2022 SCC in situ / Bowen disease (Sharma et al.)
 BAD 2020 cutaneous SCC (Keohane et al.)
 AAD JAAD cutaneous SCC management
 
+延伸閱讀：皮膚腫瘤相關文章 — 皮膚 T 細胞淋巴瘤(CTCL)、粉瘤(表皮囊腫)完整衛教、皮膚切片與切除手術。
+
 參考資料
 
 de Berker D, McGregor JM, Mohd Mustapa MF, Exton LS, Hughes BR. British Association of Dermatologists' guidelines for the care of patients with actinic keratosis 2017. Br J Dermatol. 2017;176(1):20-43. 「來源」
@@ -4039,7 +4041,7 @@ de Berker D, McGregor JM, Mohd Mustapa MF, Exton LS, Hughes BR. British Associat
 ---
 ## 痘痘 8 大迷思
 URL: https://chendermatologist.com/blog/acne-myths
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 痘痘, Acne
@@ -4114,7 +4116,7 @@ UpToDate: Acne vulgaris: Overview of management. Accessed 2026. 「來源」
 ---
 ## 蕁麻疹 6 大迷思
 URL: https://chendermatologist.com/blog/urticaria-myths
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Myths & Facts
 Reading time: PT13M
 Tags: 蕁麻疹, Urticaria
@@ -4248,7 +4250,7 @@ Comorbidities（共病）：甲狀腺、自體免疫、代謝、心理（見上�
 ---
 ## 乾癬 7 大迷思
 URL: https://chendermatologist.com/blog/psoriasis-myths
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Myths & Facts
 Reading time: PT12M
 Tags: 乾癬, Psoriasis
@@ -4412,6 +4414,8 @@ Goulden 2022, BJD
 結語
 乾癬不是癬、不會傳染、不只是皮膚問題，但它是可以高度控制的。從 1990 年代只有外用藥膏 + 光療，到現在IL-17 / IL-23 抑制劑可以做到 PASI 100（病灶幾乎完全清除），治療的天花板已經完全不一樣。不要拖，不要怕生物製劑 — 找專科醫師討論最適合你的治療策略。
 延伸閱讀：關於類固醇藥膏正確使用，看 異膚 6 大迷思；若鱗屑出現在頭皮，可能是頭皮乾癬或脂漏性皮膚炎，需鑑別。也提醒：2026 JAAD 多模態 LLM 研究顯示 AI 對乾癬的辨識準確率只有 18%、不適合用 ChatGPT / 手機 App 自我診斷。
+
+延伸閱讀：乾癬完整系列 — 乾癬完整衛教(分型、診斷、嚴重度)、乾癬外用治療、乾癬全身性治療。
 
 參考資料
 Menter A, et al. Joint AAD-NPF guidelines of care for the management of psoriasis with biologics.J Am Acad Dermatol. 2019;80(4):1029-1072. 「來源」
@@ -5237,7 +5241,7 @@ TDA 2024 共識聲明 16:狀態穩定的白斑病灶可使用手術方式治療�
 ---
 ## 皮膚科常用藥物健保規範完整整理
 URL: https://chendermatologist.com/blog/nhi-derm-drugs
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT13M
 Tags: 健保規範, NHI rules
@@ -5649,7 +5653,7 @@ NT$ 1,800-2,500/條(30g)
 ---
 ## 結節性癢疹完整衛教
 URL: https://chendermatologist.com/blog/prurigo-nodularis
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT6M
 Tags: 結節性癢疹, Prurigo Nodularis
@@ -6239,7 +6243,7 @@ Tri-Luma 三合一
 ---
 ## 粉瘤完整衛教
 URL: https://chendermatologist.com/blog/epidermoid-cyst
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 粉瘤, Epidermoid cyst
@@ -6467,7 +6471,7 @@ UpToDate: Cutaneous cysts overview — Epidermoid, pilar, and other cysts. Acces
 ---
 ## 皮膚科雷射完整對照
 URL: https://chendermatologist.com/blog/laser-dermatology
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT12M
 Tags: 雷射 / 光電, Laser dermatology
@@ -6898,7 +6902,7 @@ cyclosporine 環孢素使用者不建議併用 UV 治療（包含 308 nm 準分�
 ---
 ## 嬰幼兒 / 兒童異位性皮膚炎完整照護指南
 URL: https://chendermatologist.com/blog/pediatric-eczema
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT12M
 Tags: 異位性皮膚炎, Atopic dermatitis
@@ -7252,6 +7256,8 @@ A足底疣：表面有黑點（血管末梢）、削皮會點狀出血、側壓�
 病毒疣治療的真正秘密不是「哪一招最強」，而是找對方法 + 規則持續、多管齊下。現有療法皆無法保證根治，水楊酸與冷凍兩種第一線療法的清除率約 50-70%、每 2-3 週冷凍配合居家水楊酸的組合通常能在 12 週療程內幫多數人逐步清除 (Sterling 2014, BJD)。撐過去比換來換去重要。
 延伸閱讀：會擴散的還有 香港腳 / 灰指甲，共用浴室拖鞋是高危；若是水珠狀、中央有凹陷，可能是「傳染性軟疣」(molluscum)而非病毒疣。
 
+延伸閱讀：其他病毒性皮膚病 — 猴痘皮膚照護指南、帶狀皰疹 6 大迷思。
+
 參考資料
 Sterling JC, Gibbs S, Haque Hussain SS, et al. British Association of Dermatologists' guidelines for the management of cutaneous warts 2014. Br J Dermatol. 2014;171(4):696-712. 「來源」
 Kwok CS, et al. Topical treatments for cutaneous warts. Cochrane Database Syst Rev. 2012;(9):CD001781. 「來源」
@@ -7426,7 +7432,7 @@ UpToDate: Treatment of herpes zoster in the immunocompetent host. Accessed 2026.
 ---
 ## 圓禿（鬼剃頭）完整衛教
 URL: https://chendermatologist.com/blog/alopecia-areata
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT15M
 Tags: 圓禿, Alopecia areata
@@ -7625,7 +7631,7 @@ Ciclosporin（環孢素）：2.5-5 mg/kg/day 分 2 次，建議短療程，最�
 ---
 ## 猴痘（Mpox）皮膚照護
 URL: https://chendermatologist.com/blog/mpox-care
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 猴痘, Mpox
@@ -7727,7 +7733,7 @@ UpToDate: Mpox (Monkeypox) virus infection: Clinical manifestations and diagnosi
 ---
 ## 化膿性汗腺炎（HS）完整衛教
 URL: https://chendermatologist.com/blog/hidradenitis-suppurativa
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 化膿性汗腺炎, HS
@@ -8383,6 +8389,8 @@ AhR 致效劑
 不要因為網路上的恐怖故事就擅自停藥 — 大多數正確醫療使用的人從不出問題。有疑慮就帶藥膏盒去問皮膚科醫師，他會告訴你目前用的強度與你的病況是否合適。
 延伸閱讀：異膚的類固醇恐懼症專章，看 異位性皮膚炎 6 大迷思；乾癬外用治療看 乾癬 7 大迷思。
 
+延伸閱讀：相關外用藥物文章 — 異位性皮膚炎外用治療、乾癬外用藥物。
+
 參考資料
 Werfel T, et al. S3 Guideline Atopic Dermatitis Part 1 — General aspects, topical and non-drug therapies (2024).J Dtsch Dermatol Ges. 2024;22(1):137-153. 「來源」
 Wollenberg A, et al. ETFAD/EADV Eczema task force 2020 position paper. J Eur Acad Dermatol Venereol. 2020. 「來源」
@@ -8724,7 +8732,7 @@ NT$ 4,000-6,000/條(60g)
 ---
 ## 美白成分完整解析
 URL: https://chendermatologist.com/blog/skin-whitening-agents
-Updated: 2026-05-21
+Updated: 2026-05-23
 Section: Products & Drugs
 Reading time: PT8M
 Tags: 美白, Whitening agents
@@ -9088,7 +9096,7 @@ UpToDate: Selection of sunscreen and sun-protective measures. 「來源」
 ---
 ## 肝斑 7 大迷思
 URL: https://chendermatologist.com/blog/melasma-myths
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 肝斑, Melasma
@@ -9208,7 +9216,7 @@ UpToDate: Melasma: Management. Accessed 2026.
 ---
 ## 玫瑰痤瘡 6 大迷思
 URL: https://chendermatologist.com/blog/rosacea-myths
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Myths & Facts
 Reading time: PT17M
 Tags: 酒糟肌, Rosacea
@@ -9348,7 +9356,7 @@ Schaller 2020 重度玫瑰斑組合療法：外用 Ivermectin 1% qd ＋ 口服�
 ---
 ## 落髮 / 雄性禿 7 大迷思
 URL: https://chendermatologist.com/blog/hairloss-myths
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 落髮, Hair loss
@@ -9472,7 +9480,7 @@ UpToDate: Treatment of androgenetic alopecia in men. Accessed 2026. 「來源」
 ---
 ## 香港腳 / 灰指甲 7 大迷思
 URL: https://chendermatologist.com/blog/tinea-myths
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Myths & Facts
 Reading time: PT9M
 Tags: 足癬, Tinea
@@ -9619,7 +9627,7 @@ UpToDate: Onychomycosis: Management. Accessed 2026. 「來源」
 ---
 ## 異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思
 URL: https://chendermatologist.com/blog/atopic-dermatitis-overview
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT32M
 Tags: 異位性皮膚炎, AD complete guide
