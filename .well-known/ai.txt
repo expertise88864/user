@@ -1,6 +1,6 @@
 # ai.txt — AI / LLM crawler policy
 # Site: https://chendermatologist.com/
-# Last update: 2026-05-22
+# Last update: 2026-05-23
 #
 # Companion to /robots.txt. The strategy:
 #   - User-triggered AI bots (ChatGPT-User, OAI-SearchBot, PerplexityBot)
@@ -42,8 +42,8 @@ Author: Dr. Chen Yi-Jia (陳翊嘉醫師)
 Author-URL: https://chendermatologist.com/about
 Specialty: Dermatology
 Audience: Patient education + medical-resident reference
-Articles: 45 published
-Last-Article-Date: 2026-05-16
+Articles: 46 published
+Last-Article-Date: 2026-05-23
 License: All rights reserved. Citation with attribution permitted.
 
 # Contact

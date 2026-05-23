@@ -1,6 +1,6 @@
 # ChenDermatologist · 陳翊嘉醫師 · 皮膚科衛教筆記
 
-Generated 2026-05-22 · 45 articles · by Dr. Chen Yi-Jia (R2 Dermatology, China Medical University Hospital, Taiwan)
+Generated 2026-05-23 · 46 articles · by Dr. Chen Yi-Jia (R2 Dermatology, China Medical University Hospital, Taiwan)
 
 Bilingual zh-Hant / en. ZH source is authoritative; EN mirror is machine-translated and provided for accessibility only.
 
@@ -8,9 +8,162 @@ For citation rules and structural metadata, see https://chendermatologist.com/ll
 
 
 ---
+## 白斑停藥後會復發嗎？維持治療與復發風險評估 — 2026 BJD 長庚 809 人世代
+URL: https://chendermatologist.com/blog/vitiligo-maintenance-clinical
+Updated: 2026-05-23
+Section: Research Summary
+Reading time: PT19M
+Tags: 白斑復發, Vitiligo relapse
+
+提醒 · 本文為 single-paper-driven 衛教 + 臨床整理、主要根據 Shih HY、Ng CY 等 2026 年發表於 Br J Dermatol 之長庚紀念醫院 809 人非分節型白斑復發風險回溯性世代研究、結合 2024 TDA 共識、2021 BAD 指引與 2025 Ezzedine 機制 review 整理。個別復發風險、是否需延長維持治療、停藥時機、合併內分泌或免疫科共照、皆需主治醫師依個案決定、不取代臨床判斷。本站不從事醫療廣告、不推薦特定診所 / 醫院 / 藥品 / 療程、亦不收受任何業配或贊助。
+
+一頁速覽 — 三個你最想知道的數字
+
+32.9% — 長庚 809 名非分節型白斑患者在「治療穩定 ≥ 6 個月」之後、追蹤 1–2 年期間仍有約三分之一發生復發或惡化。換句話說、「色素長回來」不代表「永遠不會再白」。
+2.44 倍 — 同時有「手腳病灶」 + 「甲狀腺疾病」的患者、復發風險是「兩者都沒有」者的約 2.5 倍。這是這篇研究最具臨床意義的數字、也是判斷「我需不需要更積極的維持治療」的關鍵指標。
+3 個獨立預測因子 — 經 multivariable Cox 校正後仍站得住腳的、只有三個：① 手腳(acral) 病灶、② 甲狀腺疾病、③ 其他自體免疫共病。年齡、性別、BSA 範圍大小、臉部病灶、家族史在校正後皆「無統計顯著差異」。
+
+為什麼白斑停藥後會再回來？
+
+白斑的本質是「對自己黑色素細胞的免疫攻擊」。即使臨床上看不到白斑、皮膚顯微鏡下的免疫記憶細胞 (tissue-resident memory T cell, TRM) 仍可能潛伏在原病灶區。
+
+當治療強度降低（停外用藥、停光療）時、原本被壓制的 TRM 重新活躍、釋放 interferon-γ 和 CXCL9/10/11 chemokines、召喚細胞毒性 CD8+ T 細胞、再次對黑色素細胞發動攻擊。臨床表現可能是「舊白斑慢慢擴大」、也可能「原本好了的地方又開始發白」。
+
+關鍵是「復發通常沒有預兆」 — 不會痛、不會癢、也不會紅。患者常在下次門診才被醫師用 Wood's 燈或攝影對比發現。這也是為什麼維持治療(maintenance therapy)越來越被強調：與其等復發後從頭再治、不如低劑量持續壓制 TRM。
+
+哪些人比較容易復發？三大風險因子
+
+① 手腳病灶 (acral involvement) — aHR 1.56
+
+這是這篇研究中「最強的型態學風險因子」。手腳指的是手指、手掌、腳趾、腳掌等「沒有汗毛、melanocyte 庫存少」的部位。研究中手腳有病灶者 1 年復發率 33.3%、沒有的 22.9%(差距 10 個百分點)。
+
+背景機轉：黑色素細胞在毛囊鞘 (outer root sheath) 內有「儲備細胞」、毛囊密集區 (如頭皮、軀幹、四肢近端) 一旦色素脫失、毛囊鞘的儲備細胞可以遷移補位；但手腳是 glabrous (無毛) 區、缺乏這個 reservoir、所以一旦脫失就難以再色素化、也更容易出現「持續脫色」(colour scarring)。
+
+② 甲狀腺疾病 — aHR 1.42
+
+長庚這批白斑患者裡、約 22.1% 同時有甲狀腺疾病、而一般人口中只有約 1%。臨床上最常見的是橋本氏甲狀腺炎(Hashimoto thyroiditis) 與 葛瑞夫茲氏病(Graves disease) — 兩者都是「免疫系統攻擊甲狀腺」的自體免疫疾病。
+
+為什麼這兩個病常一起出現？白斑與自體免疫甲狀腺疾病分享同一條「失調的免疫網絡」 — interferon-γ 訊號傳導、CXCL chemokines、以及共同的遺傳基因座 (如 PTPN22、HLA region)。簡單說、有甲狀腺問題的白斑患者、體內「攻擊自體組織的傾向」較強、所以白斑也更容易反覆。
+
+✦ 臨床建議：白斑患者初次就診應檢查 TSH、free T4、anti-TPO 抗體；即使初次正常、每 1–2 年仍應重複檢查、因為甲狀腺疾病可能在白斑診斷後數年才出現。
+
+③ 其他自體免疫共病 — aHR 1.73
+
+這群指的是「除了甲狀腺以外」的自體免疫疾病：圓禿(alopecia areata, AA)、類風濕性關節炎(RA)、紅斑性狼瘡(SLE)、第 1 型糖尿病、惡性貧血、休格倫氏症等等。研究中佔 17.8%、與既有文獻報告吻合。
+
+有趣的是、這個因子的調整後 hazard ratio (1.73) 甚至比甲狀腺(1.42)還要高。可能反映「廣泛性免疫失調」比「單一器官免疫失調」對白斑的維持影響更大。臨床上、白斑患者若曾被診斷過任何其他自體免疫病、要把白斑當成更難穩定的版本來處理。
+
+高風險族群：手腳 + 甲狀腺 = 2.5 倍風險
+
+這是這篇研究最有臨床價值的發現。研究團隊把患者分成四組(無手腳/無甲狀腺、僅手腳、僅甲狀腺、兩者皆有)、結果顯示：
+
+圖 1 ⸺ Joint exposure model：把患者分成四組後、單獨「僅手腳」或「僅甲狀腺」其實在校正後並未達到統計顯著(borderline 1.35、1.07)。但「兩者同時存在」風險飆到 2.44 倍、達到強顯著(p < 0.001)。這顯示兩個因子有疊加效應、應視為一個高風險族群、而非各自獨立累加。資料來源：Shih HY, Ng CY et al. Br J Dermatol 2026;194:854–861, Table 2.
+
+✦ 患者自我評估的簡單問題：
+
+① 我的手指、手掌、腳趾、腳掌有白斑嗎？
+
+② 我有橋本氏甲狀腺炎、葛瑞夫茲氏病、或其他甲狀腺異常嗎？或抽血報告 TSH / anti-TPO 是否異常？
+
+③ 我是否合併其他自體免疫病（圓禿、類風濕、紅斑性狼瘡、第 1 型糖尿病⋯⋯）？
+
+勾選任一項 → 屬於「不能直接停藥、需延長維持治療」的族群。同時勾選 ①+② → 屬於「最高風險」族群、應與主治醫師討論長期維持的策略。
+
+高風險的人該怎麼辦？
+
+維持治療的目標不是「治癒」、而是「壓制復發」。研究中發現、復發者裡有 25.9% 已停藥超過 6 個月、相比之下、無復發者中只有 6.3% 完全停藥；換句話說、繼續維持治療的人復發率明顯較低。
+
+維持治療的常見方式（依強度由低到高）：
+
+間歇式外用藥： 每週 2 次塗抹 calcineurin inhibitor（如 tacrolimus 0.1%）或低效類固醇於原病灶區。
+
+拉長間隔的光療： NB-UVB 從急性期每週 2–3 次、降到維持期每 1–2 週 1 次。
+
+低劑量口服免疫調節： 少數高活動性、廣泛型白斑、或合併多重自體免疫病的患者、會在主治醫師判斷下持續低劑量口服藥物。
+
+實務上、患者最常見的錯誤是「皮膚看起來好了就完全停藥」 — 這正好對應研究中復發者最大宗的「off treatment > 6 個月」族群。建議與主治醫師討論「分階段降階」、而不是「斷崖式停藥」。
+
+常見問題（患者篇）
+
+Q1：我手腳都有白斑、是不是要一輩子治療？
+
+不一定要「一輩子」、但要把預期值調整成「長期、低強度、間歇式」。手腳病灶 melanocyte 庫存少、再色素化難、加上復發風險高、所以治療策略傾向「不容易完全停」。但維持治療可以是每週 2 次外用藥、強度很低、影響日常生活有限。
+
+Q2：我有甲狀腺低下 / 橋本氏、會讓白斑更難治嗎？
+
+會。研究顯示甲狀腺疾病患者 1 年復發率 36.9% vs 24.8%、調整後風險 1.42 倍。但這不代表治療無效、而是「復發機率更高、需要更謹慎地維持」。同時、把甲狀腺本身控制好(規律服藥、定期追蹤 TSH)對整體免疫穩定也有幫助。
+
+Q3：停藥多久內最容易復發？
+
+研究設計是「穩定 ≥ 6 個月後、追蹤 ≥ 1 年」、整體 1 年累積復發率約 27–28%(無風險因子者)、高風險族群可達 33–40%。所以一般說「停藥後 1 年內是觀察期」、尤其是停治療後前 6 個月、要特別留意。Wood's 燈下任何細微的脫色擴大、應盡早回診評估。
+
+Q4：抽血查 anti-TPO、ANA 有用嗎？
+
+本研究中、anti-TPO 陽性與 ANA 陽性在 univariable 分析顯示「相關」、但在 multivariable 校正後失去獨立預測力。原因是這兩個指標其實是「免疫失調」的代理指標、跟「臨床診斷的自體免疫病」高度重疊(r = 0.25–0.34)。臨床仍建議檢查、但要把它們當作「有用的線索」而非「直接的風險預測值」。
+
+Q5：白斑有家族史、會不會復發更頻繁？
+
+這篇研究中家族史(白斑 / 甲狀腺 / 自體免疫)在 univariable 與 multivariable 都「未達顯著」、但所有家族史變項都顯示「些微更高」的復發風險趨勢(HR ~1.1–1.2)。可能是因為這批族群「總體基因易感性」差不多、所以家族史無法區分出更高風險。臨床上仍建議告知家族史、有助於後續整體免疫狀態評估。
+
+Q6：白斑會自己好嗎？我可以選擇「不治療、等等看」嗎？
+
+可以、但要先確認兩件事：① 你是否處於「快速進展期」(過去 6–12 個月白斑明顯擴大)、② 你是否有上述任一高風險因子。如果兩個答案都是「否」、暫時觀察 + 防曬是合理選項；若有任一「是」、建議盡早治療、因為「越早介入、melanocyte 越多、預後越好」是貫穿整個白斑文獻的共識(包括本研究的引言部分)。
+
+以下為臨床整理 · 給醫療同仁
+
+研究背景與臨床問題
+
+非分節型白斑(non-segmental vitiligo, NSV)即使在 induction phase 達到 stable + repigmentation 後、stopping 後的 relapse rate 仍是長年未解的問題。BAD 2021 指引、TDA 2024 共識、2023 Global recommendations 等皆呼籲 maintenance therapy 的重要性、但「誰最該維持、用什麼策略、用多久」缺乏 evidence-based 答案。
+
+本研究目的：在大型 single-centre retrospective cohort 中、辨識 NSV 治療穩定後的 phenotypic + autoimmune predictors of recurrence/relapse、並建立臨床可用的 risk-stratification framework。Primary outcome 是 time-to-event：自首次 documented clinical stability(≥ 6 個月 no new/expanding lesion)至首次復發或惡化(new/expanding lesion under Wood's lamp confirmation)的時間。
+
+研究設計與族群
+
+資料來源 Chang Gung Research Database(CGRD)、2015/01/01–2024/10/31。Inclusion：① board-certified dermatologist 診斷之 NSV(ICD-10-CM L80)、② guideline-based induction(NB-UVB ± topical corticosteroids ± calcineurin inhibitors ± 短期 ≤ 3 個月口服類固醇)、③ ≥ 6 個月 documented clinical stability、④ ≥ 1 年 post-stability 追蹤。
+
+圖 2 ⸺ Patient flow(簡化版 Figure 1)：5,365 名 CGRD 確診白斑患者依照「≥ 6 個月穩定 + ≥ 1 年追蹤」初步篩選為 1,821 人、再排除病歷不全(n=926)、分節型(n=79)、systemic induction 中惡化(n=7)後、最終分析 N = 809。研究期間(mean 追蹤 ~1.5 年)共 266 人(32.9%)發生復發或惡化。
+
+變數定義與統計方法
+
+主要 covariates：age、sex、family history(vitiligo / thyroid / autoimmune)、concomitant thyroid disease、其他自體免疫病、acral involvement、facial involvement、baseline BSA(< 5%、5–10%、> 10%)、anti-TPO(> 5.6 IU mL⁻¹)、ANA(≥ 1:80)。Outcome 為 first recurrence/relapse、定義為「先前穩定病灶區的脫色擴大」或「新病灶出現」、需 Wood's 燈 + serial photo 確認。
+
+統計方法：Cox proportional hazards regression(Efron method)。Univariable → 預先指定的 multivariable model(所有 covariates a priori 保留、避免 data-driven selection)。額外進行 acral × thyroid 之 multiplicative interaction 與 4-cell joint-exposure 分析。Proportional hazards assumption 經 standard diagnostics 驗證。Kaplan–Meier 12-month RFS + Greenwood CI、log-rank 檢定。
+
+主要結果 — Baseline + 1 年累積復發
+
+Cohort baseline：N = 809、mean age 44.0 ± 15.8、女 57.1%。Recurrence/relapse 266 (32.9%)。
+
+因子
+1 年累積復發 (%)
+log-rank p
+
+手腳病灶 (有 vs 無)
+33.3% vs 22.9%
+< 0.001
+
+甲狀腺疾病 (有 vs 無)
+36.9% vs 24.8%
+0.001
+
+其他自體免疫病 (有 vs 無)
+40.4% vs 25.5%
+< 0.001
+
+anti-TPO 陽 vs 陰
+33.2% vs 25.2%
+0.006
+
+ANA ≥ 1:80 陽 vs 陰
+35.3% vs 26.1%
+0.006
+
+
+[... truncated; fetch canonical URL for full text ...]
+
+---
 ## 打乾癬生物製劑要不要每年抽血？2026 JAAD 證據評級重新看這件事
 URL: https://chendermatologist.com/blog/psoriasis-biologic-monitoring
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Research Summary
 Reading time: PT19M
 Tags: 生物製劑安全, Biologic safety
@@ -137,7 +290,7 @@ HBV 狀態
 ---
 ## AI 現在能幫皮膚科醫師看病嗎？2026 JAAD 眼動追蹤研究的三個現實答案
 URL: https://chendermatologist.com/blog/ai-dermatology-roles
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Research Summary
 Reading time: PT9M
 Tags: AI 與皮膚科, AI in dermatology
@@ -256,7 +409,7 @@ Giavina-Bianchi M, Vitor WG, Fornasiero de Paiva V, Okita AL, Sousa RM, Machado 
 ---
 ## 杜避炎®（dupilumab）維持治療要打多久？2026 JAAD 真實世界研究：減量竟比停藥更容易復發
 URL: https://chendermatologist.com/blog/dupilumab-long-term-maintenance
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Research Summary
 Reading time: PT20M
 Tags: dupilumab, Dupilumab
@@ -548,7 +701,7 @@ Upa 與 Abro 劑量限制：Upadacitinib — EASI 16–20 限每日 15 mg；≥ 
 ---
 ## 嘴角紅疹是痘痘還是濕疹？口周皮膚炎完整衛教
 URL: https://chendermatologist.com/blog/perioral-dermatitis-guide
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT20M
 Tags: 口周皮膚炎, Perioral dermatitis
@@ -742,7 +895,7 @@ Doxycycline
 ---
 ## 腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病
 URL: https://chendermatologist.com/blog/toenail-mechanical-disorders
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT18M
 Tags: 趾甲與足部, Toenail disorders
@@ -986,7 +1139,7 @@ Carpal Tunnel Syndrome 的手指甲變化
 ---
 ## 嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南
 URL: https://chendermatologist.com/blog/dermatologic-oral-examination
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT24M
 Tags: 口腔黏膜, Oral mucosa
@@ -1165,7 +1318,7 @@ Wang YP et al. 2018; Lin HP et al. 201915,16
 ---
 ## 皮膚切片與腫瘤切除手術完整衛教 — 為什麼要切？怎麼切？術後怎麼照顧？
 URL: https://chendermatologist.com/blog/skin-biopsy-excision
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT14M
 Tags: 處置 / 手術, Skin biopsy & excision
@@ -1542,7 +1695,7 @@ NT$ 3,000-8,000（依大小／部位）
 ---
 ## 乾癬完整衛教 — 分型、嚴重度、誘發因子
 URL: https://chendermatologist.com/blog/psoriasis-overview
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT6M
 Tags: 乾癬, Psoriasis overview
@@ -1717,7 +1870,7 @@ UpToDate: Chronic plaque psoriasis in adults: Overview of management. Accessed 2
 ---
 ## 乾癬外用藥治療 — 類固醇、維生素 D、特殊部位
 URL: https://chendermatologist.com/blog/psoriasis-topical
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 乾癬, Psoriasis topical
@@ -1922,7 +2075,7 @@ Stein Gold L, Lebwohl M, Sugarman J, et al. Calcipotriene/betamethasone dipropio
 ---
 ## 乾癬全身性治療 — 光療、口服、生物製劑
 URL: https://chendermatologist.com/blog/psoriasis-systemic
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 乾癬, Psoriasis systemic
@@ -2338,7 +2491,7 @@ Ustekinumab（Stelara®）是第一代「IL-23 路徑」抑制劑、靶向 IL-12
 ---
 ## 乾癬合併症與特殊族群 — PsA、心血管、懷孕、兒童、指甲、紅皮症
 URL: https://chendermatologist.com/blog/psoriasis-special-populations
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 乾癬, Psoriasis special populations
@@ -2572,7 +2725,7 @@ Bachelez H, Choon SE, Marrakchi S, et al. Trial of spesolimab for generalized pu
 ---
 ## 異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏
 URL: https://chendermatologist.com/blog/atopic-dermatitis-topical
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 異位性皮膚炎, AD topical
@@ -2752,7 +2905,7 @@ Papier A, Strowd LC. Atopic dermatitis: a review of topical nonsteroid therapy. 
 ---
 ## 異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療
 URL: https://chendermatologist.com/blog/atopic-dermatitis-systemic
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT10M
 Tags: 異位性皮膚炎, AD systemic
@@ -3110,7 +3263,7 @@ Drucker AM, Morra DE, Prieto-Merino D, et al. Systemic immunomodulatory treatmen
 ---
 ## 異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染
 URL: https://chendermatologist.com/blog/atopic-dermatitis-special-populations
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 異位性皮膚炎, AD special populations
@@ -3314,7 +3467,7 @@ UpToDate: Management of severe, refractory atopic dermatitis (eczema) in infants
 ---
 ## 接觸性皮膚炎(過敏 vs 刺激)完整衛教
 URL: https://chendermatologist.com/blog/contact-dermatitis
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 接觸性皮膚炎, Contact dermatitis
@@ -3574,7 +3727,7 @@ UpToDate: Common allergens in allergic contact dermatitis. Accessed 2026.
 ---
 ## 日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教
 URL: https://chendermatologist.com/blog/actinic-keratosis-scc
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT10M
 Tags: 皮膚癌, AK / SCC
@@ -3866,7 +4019,7 @@ de Berker D, McGregor JM, Mohd Mustapa MF, Exton LS, Hughes BR. British Associat
 ---
 ## 痘痘 8 大迷思
 URL: https://chendermatologist.com/blog/acne-myths
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 痘痘, Acne
@@ -3941,7 +4094,7 @@ UpToDate: Acne vulgaris: Overview of management. Accessed 2026. 「來源」
 ---
 ## 蕁麻疹 6 大迷思
 URL: https://chendermatologist.com/blog/urticaria-myths
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Myths & Facts
 Reading time: PT13M
 Tags: 蕁麻疹, Urticaria
@@ -4075,7 +4228,7 @@ Comorbidities（共病）：甲狀腺、自體免疫、代謝、心理（見上�
 ---
 ## 乾癬 7 大迷思
 URL: https://chendermatologist.com/blog/psoriasis-myths
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Myths & Facts
 Reading time: PT12M
 Tags: 乾癬, Psoriasis
@@ -4248,7 +4401,7 @@ Menter A, et al. Joint AAD-NPF guidelines of care for the management of psoriasi
 ---
 ## 外用酸類完整衛教
 URL: https://chendermatologist.com/blog/topical-acids-patient
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Products & Drugs
 Reading time: PT8M
 Tags: 酸類, Topical acids
@@ -4455,7 +4608,7 @@ Bakuchiol（補骨脂酚）
 ---
 ## 口服 A 酸完整衛教
 URL: https://chendermatologist.com/blog/isotretinoin-patient
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 口服 A 酸, Isotretinoin
@@ -4651,7 +4804,7 @@ A 酸要怎麼吃？空腹還是飯後？
 ---
 ## 痘疤完整治療指引
 URL: https://chendermatologist.com/blog/acne-scar-treatment
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 痘疤, Acne scars
@@ -4806,7 +4959,7 @@ UpToDate: Treatment of acne scars. Accessed 2026. 「來源」
 ---
 ## 白斑（Vitiligo）完整衛教
 URL: https://chendermatologist.com/blog/vitiligo
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 白斑, Vitiligo
@@ -5005,6 +5158,7 @@ systemic JAK 抑制劑(ritlecitinib 試驗中)
 
 實務提醒 ─ 末端肢體與嘴唇是公認最難治部位、即便 JAK 抑制劑試驗也顯示這些部位反應率較低。要先和病人講清楚:不是治療失敗、是這個部位本來就難。對於這些難治部位、可以考慮:外用治療延長至 ≥ 12 個月、合併 308-nm Excimer、或穩定後考慮自體表皮移植。維持治療
 色素再生穩定後、改每週 2 次外用 Calcineurin inhibitor 或外用皮質類固醇避免復發。
+✦ 深入閱讀：手腳病灶、甲狀腺疾病、其他自體免疫共病是復發的三大獨立預測因子(2026 長庚 809 人 BJD 世代研究) — 請見〈白斑停藥後會復發嗎？維持治療與復發風險評估〉。
 重點：外用 Ruxolitinib（Opzelura）— 白斑治療的突破
 Ruxolitinib 1.5% 乳霜（Opzelura）是 2022 年 FDA 核准的第一個白斑專用藥物：
 項目
@@ -5063,7 +5217,7 @@ TDA 2024 共識聲明 16:狀態穩定的白斑病灶可使用手術方式治療�
 ---
 ## 皮膚科常用藥物健保規範完整整理
 URL: https://chendermatologist.com/blog/nhi-derm-drugs
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT13M
 Tags: 健保規範, NHI rules
@@ -5475,7 +5629,7 @@ NT$ 1,800-2,500/條(30g)
 ---
 ## 結節性癢疹完整衛教
 URL: https://chendermatologist.com/blog/prurigo-nodularis
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT6M
 Tags: 結節性癢疹, Prurigo Nodularis
@@ -5657,7 +5811,7 @@ UpToDate: Prurigo nodularis. Accessed 2026.
 ---
 ## 皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教
 URL: https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 皮膚淋巴瘤, CTCL / MF
@@ -5842,7 +5996,7 @@ UpToDate: Treatment of mycosis fungoides. Accessed 2026.
 ---
 ## 皮膚科 25 個最常見問題
 URL: https://chendermatologist.com/blog/dermatology-faq
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Myths & Facts
 Reading time: PT12M
 Tags: 常見問題, FAQ
@@ -6065,7 +6219,7 @@ Tri-Luma 三合一
 ---
 ## 粉瘤完整衛教
 URL: https://chendermatologist.com/blog/epidermoid-cyst
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 粉瘤, Epidermoid cyst
@@ -6293,7 +6447,7 @@ UpToDate: Cutaneous cysts overview — Epidermoid, pilar, and other cysts. Acces
 ---
 ## 皮膚科雷射完整對照
 URL: https://chendermatologist.com/blog/laser-dermatology
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT12M
 Tags: 雷射 / 光電, Laser dermatology
@@ -6724,7 +6878,7 @@ cyclosporine 環孢素使用者不建議併用 UV 治療（包含 308 nm 準分�
 ---
 ## 嬰幼兒 / 兒童異位性皮膚炎完整照護指南
 URL: https://chendermatologist.com/blog/pediatric-eczema
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT12M
 Tags: 異位性皮膚炎, Atopic dermatitis
@@ -6944,7 +7098,7 @@ EAT trial (Perkin et al., NEJM 2016)
 ---
 ## 病毒疣 6 大迷思
 URL: https://chendermatologist.com/blog/warts-myths
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Myths & Facts
 Reading time: PT7M
 Tags: 病毒疣, Warts
@@ -7090,7 +7244,7 @@ UpToDate: Cutaneous warts: Treatment. Accessed 2026. 「來源」
 ---
 ## 帶狀皰疹 6 大迷思
 URL: https://chendermatologist.com/blog/shingles-myths
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Myths & Facts
 Reading time: PT7M
 Tags: 皮蛇, Shingles
@@ -7252,7 +7406,7 @@ UpToDate: Treatment of herpes zoster in the immunocompetent host. Accessed 2026.
 ---
 ## 圓禿（鬼剃頭）完整衛教
 URL: https://chendermatologist.com/blog/alopecia-areata
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT15M
 Tags: 圓禿, Alopecia areata
@@ -7451,7 +7605,7 @@ Ciclosporin（環孢素）：2.5-5 mg/kg/day 分 2 次，建議短療程，最�
 ---
 ## 猴痘（Mpox）皮膚照護
 URL: https://chendermatologist.com/blog/mpox-care
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 猴痘, Mpox
@@ -7553,7 +7707,7 @@ UpToDate: Mpox (Monkeypox) virus infection: Clinical manifestations and diagnosi
 ---
 ## 化膿性汗腺炎（HS）完整衛教
 URL: https://chendermatologist.com/blog/hidradenitis-suppurativa
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 化膿性汗腺炎, HS
@@ -7796,7 +7950,7 @@ HS 跟克隆氏症有關嗎？
 ---
 ## 標靶藥物（TKI）皮膚副作用
 URL: https://chendermatologist.com/blog/targeted-therapy-skin
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 標靶藥物, Targeted therapy skin
@@ -7966,7 +8120,7 @@ UpToDate: Acneiform eruption secondary to epidermal growth factor receptor (EGFR
 ---
 ## 外用類固醇完整指南
 URL: https://chendermatologist.com/blog/topical-steroids-guide
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 外用類固醇, Topical steroids
@@ -8223,7 +8377,7 @@ UpToDate: General principles of dermatologic therapy and topical corticosteroid 
 ---
 ## 皮膚科生物製劑與小分子標靶藥物總覽
 URL: https://chendermatologist.com/blog/biologics-overview
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 生物製劑, Biologics
@@ -8848,7 +9002,7 @@ UpToDate: Melasma — Management. Accessed 2026.
 ---
 ## 防曬 8 大迷思
 URL: https://chendermatologist.com/blog/sunscreen-myths
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Myths & Facts
 Reading time: PT6M
 Tags: 防曬, Sunscreen
@@ -8914,7 +9068,7 @@ UpToDate: Selection of sunscreen and sun-protective measures. 「來源」
 ---
 ## 肝斑 7 大迷思
 URL: https://chendermatologist.com/blog/melasma-myths
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 肝斑, Melasma
@@ -9034,7 +9188,7 @@ UpToDate: Melasma: Management. Accessed 2026.
 ---
 ## 玫瑰痤瘡 6 大迷思
 URL: https://chendermatologist.com/blog/rosacea-myths
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Myths & Facts
 Reading time: PT17M
 Tags: 酒糟肌, Rosacea
@@ -9174,7 +9328,7 @@ Schaller 2020 重度玫瑰斑組合療法：外用 Ivermectin 1% qd ＋ 口服�
 ---
 ## 落髮 / 雄性禿 7 大迷思
 URL: https://chendermatologist.com/blog/hairloss-myths
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 落髮, Hair loss
@@ -9298,7 +9452,7 @@ UpToDate: Treatment of androgenetic alopecia in men. Accessed 2026. 「來源」
 ---
 ## 香港腳 / 灰指甲 7 大迷思
 URL: https://chendermatologist.com/blog/tinea-myths
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Myths & Facts
 Reading time: PT9M
 Tags: 足癬, Tinea
@@ -9445,7 +9599,7 @@ UpToDate: Onychomycosis: Management. Accessed 2026. 「來源」
 ---
 ## 異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思
 URL: https://chendermatologist.com/blog/atopic-dermatitis-overview
-Updated: 2026-05-21
+Updated: 2026-05-22
 Section: Treatment & Therapy
 Reading time: PT32M
 Tags: 異位性皮膚炎, AD complete guide

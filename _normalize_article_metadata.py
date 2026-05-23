@@ -199,9 +199,13 @@ def process_article(fp: Path, homepage_tags: dict[str, dict[str, str]],
                      is_en: bool) -> bool:
     """Update MedicalWebPage block(s) in this article. Returns True if
     file was modified."""
+    from datetime import date as _date
     slug = fp.stem
     src = fp.read_text(encoding="utf-8")
-    last_mod = git_last_modified(fp)
+    # Prefer git's last-commit date; for newly-authored files not yet
+    # tracked by git, fall back to today's date so _check_seo_signals
+    # doesn't fail with "MedicalWebPage missing lastReviewed".
+    last_mod = git_last_modified(fp) or _date.today().isoformat()
 
     tag_en = ""
     if slug in homepage_tags:

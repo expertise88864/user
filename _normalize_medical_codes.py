@@ -187,6 +187,11 @@ SLUG_CONDITIONS: dict[str, list[dict]] = {
                           icd10="L80", snomed="56727007",
                           mesh="D014820", wikidata="Q170082"),
     ],
+    "vitiligo-maintenance-clinical": [
+        medical_condition("Non-segmental vitiligo", "非分節型白斑",
+                          icd10="L80", snomed="56727007",
+                          mesh="D014820", wikidata="Q170082"),
+    ],
     "melasma-myths": [
         medical_condition("Melasma", "肝斑",
                           icd10="L81.1", snomed="2884008",
