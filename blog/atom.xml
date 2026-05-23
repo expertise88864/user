@@ -4,7 +4,7 @@
   <link href="https://chendermatologist.com/" rel="alternate"/>
   <link href="https://chendermatologist.com/blog/atom.xml" rel="self"/>
   <id>https://chendermatologist.com/</id>
-  <updated>2026-05-23T09:13:39Z</updated>
+  <updated>2026-05-23T13:25:43Z</updated>
   <author>
     <name>陳翊嘉 醫師</name>
     <email>expertise88864@gmail.com</email>
@@ -18,6 +18,15 @@
     <published>2026-05-23T00:00:00Z</published>
     <category term="AI 與皮膚科"/>
     <summary>AI 現在能幫皮膚科醫師看病嗎？2026 三篇 JAAD 研究的綜合解答 | ChenDermatologist 皮膚科衛教筆記</summary>
+  </entry>
+  <entry>
+    <title>打瘦瘦針會掉頭髮嗎？2026 兩篇 TriNetX 大型研究的雙向解答</title>
+    <link href="https://chendermatologist.com/blog/semaglutide-hair-loss" rel="alternate"/>
+    <id>https://chendermatologist.com/blog/semaglutide-hair-loss</id>
+    <updated>2026-05-23T00:00:00Z</updated>
+    <published>2026-05-23T00:00:00Z</published>
+    <category term="GLP-1 與落髮"/>
+    <summary>打瘦瘦針會掉頭髮嗎？2026 兩篇 TriNetX 大型研究的雙向解答 | ChenDermatologist 皮膚科衛教筆記</summary>
   </entry>
   <entry>
     <title>白斑停藥後會復發嗎？維持治療與復發風險評估</title>
@@ -270,14 +279,5 @@
     <published>2026-05-05T00:00:00Z</published>
     <category term="粉瘤"/>
     <summary>粉瘤完整衛教 | ChenDermatologist 皮膚科衛教筆記</summary>
-  </entry>
-  <entry>
-    <title>皮膚科雷射完整對照</title>
-    <link href="https://chendermatologist.com/blog/laser-dermatology" rel="alternate"/>
-    <id>https://chendermatologist.com/blog/laser-dermatology</id>
-    <updated>2026-05-05T00:00:00Z</updated>
-    <published>2026-05-05T00:00:00Z</published>
-    <category term="雷射 / 光電"/>
-    <summary>皮膚科雷射完整對照 | ChenDermatologist 皮膚科衛教筆記</summary>
   </entry>
 </feed>
