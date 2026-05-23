@@ -302,30 +302,30 @@ BSA < 5% / 5–10% / > 10%
 URL: https://chendermatologist.com/blog/semaglutide-hair-loss
 Updated: 2026-05-23
 Section: Research Summary
-Reading time: PT21M
+Reading time: PT20M
 Tags: GLP-1 與落髮, GLP-1 & hair loss
 
-提醒 ·本文整理 Herrera HO、Bordeaux JS 與 Hill MA 等人 2026 年同期發表於 J Am Acad Dermatol 的兩篇 TriNetX retrospective cohort 研究、以及相關 FAERS / 個案報告與機轉文獻。觀察性研究有 ICD-10 編碼準確度、藥物依從性、體重變化資料不完整等 confounding 限制、不能等同 RCT。是否啟用 / 停用 semaglutide / tirzepatide、需與你的內分泌科或減重科主治醫師個別評估、特別是同時罹患甲狀腺異常、PCOS、雄性禿家族史或圓禿病史者。本站不從事醫療廣告、不推薦特定診所 / 醫院 / 藥品 / 療程、亦不收受任何業配或贊助。一頁速覽 — 三個你最該知道的數字
-1.77 倍 / 2.41 倍 — 一般人開始打 semaglutide(Ozempic / Wegovy)或 tirzepatide(Mounjaro / Zepbound)、1 年內新發休止期 + 生長期掉髮(TE + AE)的風險約為對照組(metformin 使用者)的 1.77 倍；雄性禿 anytime 風險高達 2.41 倍。資料來自 Herrera 2026 JAAD 約百萬人 TriNetX 世代、PSM 後仍維持顯著。30–47% ↓ — 已罹患「疤痕性禿髮」(CCCA、frontal fibrosing alopecia、lichen planopilaris、folliculitis decalvans 等)的患者、開始 GLP-1 / GIP 治療後、各種抗發炎治療(病灶內類固醇注射、外用類固醇、calcineurin inhibitor、hydroxychloroquine、抗組織胺、抗生素)的使用率反而下降 30–47%。資料來自 Hill 2026 JAAD 1,171 對配對族群。不只是「瘦太快」 — Herrera 研究的 BMI 變化 1 年僅由 37.20 → 35.39 kg/m²、體重變化中等而已、卻看到顯著掉髮上升。這暗示 GLP-1RA 對毛囊的影響不是「快速減重 → 休止期掉髮」一條路、還有「GLP-1RA 本身的代謝 / IGF-1 / 發炎調節」這條路。換句話說、即使你不打到極瘦、掉髮風險仍然偏高。為什麼瘦瘦針會討論到頭髮？
+提醒 ·本文整理 Herrera HO、Bordeaux JS 與 Hill MA 等人 2026 年同期發表於 J Am Acad Dermatol 的兩篇 TriNetX retrospective cohort 研究、以及相關 FAERS / 個案報告與機轉文獻。觀察性研究有 ICD-10 編碼準確度、藥物依從性、體重變化資料不完整等 confounding 限制、不能等同 RCT。是否啟用 / 停用 semaglutide / tirzepatide、需與你的內分泌科或減重科主治醫師個別評估、特別是同時罹患甲狀腺異常、PCOS、雄性禿家族史或圓禿病史者。一頁速覽 — 三個你最該知道的數字
+1.77 倍 / 2.41 倍 — 一般人開始打 semaglutide(Ozempic / Wegovy)或 tirzepatide(Mounjaro / Zepbound)、1 年內新發休止期 + 生長期掉髮(TE + AE)的風險約為對照組(metformin 使用者)的 1.77 倍；雄性禿 anytime 風險高達 2.41 倍。30–47% ↓ — 已罹患「疤痕性禿髮」(CCCA、frontal fibrosing alopecia、lichen planopilaris、folliculitis decalvans 等)的患者、開始 GLP-1 / GIP 治療後、各種抗發炎治療(病灶內類固醇注射、外用類固醇、calcineurin inhibitor、hydroxychloroquine、抗組織胺、抗生素)的使用率反而下降 30–47%。資料來自 Hill 2026 JAAD 1,171 對配對族群。不只是「瘦太快」 — Herrera 研究的 BMI 變化 1 年僅由 37.20 → 35.39 kg/m²、體重變化中等而已、卻看到顯著掉髮上升。這暗示 GLP-1RA 對毛囊的影響不是「快速減重 → 休止期掉髮」一條路、還有「GLP-1RA 本身的代謝 / IGF-1 / 發炎調節」這條路。換句話說、即使你不打到極瘦、掉髮風險仍然偏高。為什麼瘦瘦針會討論到頭髮？
 2017 年 semaglutide 拿到美國 FDA 第二型糖尿病適應症、2021 年再拿到肥胖適應症(Wegovy)；2022 年 tirzepatide 拿到糖尿病(Mounjaro)、2023 年拿到肥胖(Zepbound)。SURMOUNT-5 試驗(Aronne 2025 NEJM)發現 tirzepatide 在 72 週可達到平均體重下降 20.2%、超越 semaglutide 的 13.7%。瘦瘦針從糖尿病用藥晉升為「減重新世代王者」、全球累計超過 1,500 萬處方。
 隨著使用量暴增、皮膚科診間開始陸續看到患者抱怨「打了之後掉髮變多」。FDA 不良事件通報系統(FAERS)從 2022 年起 alopecia 通報量明顯上升(Godfrey 2025 JEADV)。Burke 2025 JAAD 第一次以 retrospective cohort 量化「GLP-1RA 使用者掉髮率較高」。但這些 early signal 都有「世代過小、confounder 過多、單一藥廠通報偏差」等限制。Herrera 2026 JAAD 用 TriNetX 在 100 萬人規模做 PSM、是目前最大型的證據。
 與此同時、另一條完全相反的線索悄悄出現：個案報告(Morrissette 2024 Cureus)發現 tirzepatide 改善了一位頑固型化膿性毛囊炎(folliculitis decalvans)患者；Desir 2025 JAAD 發現 GLP-1 agonist 可能調節 CCCA(中央離心性疤痕禿)的治療反應。Hill 2026 JAAD 則第一次系統性在 1,171 對配對族群評估 GLP-1 / GIP 對「已有疤痕性禿髮」患者的 5 年治療需求 — 結果反而下降。同一類藥物、對「沒有禿髮的人」是風險、對「已有發炎性疤痕禿髮的人」反而是輔助？這是兩篇研究最有趣的地方。
 衛教：病人最常問的 7 題
-Q1. 我打 Ozempic / Mounjaro 真的會掉頭髮嗎？
+Q1. 我打瘦瘦針（胰妥讚 Ozempic / 猛健樂 Mounjaro）真的會掉頭髮嗎？
 會有較高機率、但不是每個人都會。Herrera 2026 JAAD 在 100 萬人規模的 PSM 配對下、發現使用 semaglutide / tirzepatide 1 年後、新發休止期掉髮 + 生長期掉髮(TE + AE)風險為對照組的 1.77 倍(95% CI 1.45-2.16)、其他非疤痕性掉髮 1.98 倍、雄性禿(AGA)1.96 倍、圓禿(AA)1.53 倍。把時間軸拉長到 anytime、雄性禿風險甚至到 2.41 倍。也就是說「有可能掉、且風險逐步累積」、但絕對數字仍是少數 — 例如雄性禿在對照組中本來就是常見、絕對風險上升 ~1.5-2 倍代表多數人不會、但有家族史 / 雄性禿體質的人風險明顯放大。
-Q2. 掉了會長回來嗎？是 telogen effluvium 還是 AGA？
-分兩種：(a) 休止期掉髮(telogen effluvium, TE)佔大部分、是毛囊集體進入休止期、3-6 個月後通常會自行回復、新長的頭髮跟原本一樣濃密；(b) 雄性禿(AGA)的加速顯化則比較棘手 — GLP-1RA 可能不是「直接造成 AGA」、而是讓本來基因有的雄性禿提早 / 加重表現、這部分不會自己長回來、可能需要 Minoxidil / Finasteride / Dutasteride / PRP 等正規 AGA 治療。所以掉髮如果停藥幾個月內回復大多是 TE；若停藥仍漸進性稀疏、家族有禿髮史、可能是 AGA 顯化、要找皮膚科評估。
+Q2. 掉了會長回來嗎？是休止期掉髮（telogen effluvium）還是雄性禿（AGA）？
+分兩種：(a) 休止期掉髮 (telogen effluvium, TE) 佔大部分、是毛囊集體進入休止期、3-6 個月後通常會自行回復、新長的頭髮跟原本一樣濃密；(b) 雄性禿 (AGA) 的加速顯化則比較棘手 — GLP-1RA 可能不是「直接造成 AGA」、而是讓本來基因有的雄性禿提早 / 加重表現、這部分不會自己長回來、可能需要 Minoxidil / Finasteride / Dutasteride / PRP 等正規 AGA 治療。所以掉髮如果停藥幾個月內回復大多是 TE；若停藥仍漸進性稀疏、家族有禿髮史、可能是 AGA 顯化、要找皮膚科評估。
 Q3. 多久會掉、多久會穩定？
 Herrera 的時間軸資料很重要：6 個月時 TE+AE 風險還未到顯著(RR 1.30、CI 跨 1)、但1 年時 RR 1.77 已顯著、anytime 可達 2.42。雄性禿則 6 個月就顯著(RR 1.79)、1 年 1.96、anytime 2.41。掉髮通常開始於用藥後 3-6 個月、1 年累積到高峰、之後若繼續用藥仍會持續累積。建議用藥前 3 個月內若有明顯掉髮、紀錄頭頂照片或回診評估、不要拖到「整片變稀」才求助。
 Q4. 是因為瘦太快嗎？
 不完全。傳統「快速體重下降 → telogen effluvium」是熟知的機轉(節食 / 胃繞道術後常見)、但 Herrera 研究的1 年 BMI 變化只有約 1.81 kg/m²(從 37.20 降到 35.39)、屬中等程度、卻看到顯著掉髮上升。這暗示GLP-1RA 對毛囊的影響不只是「瘦太快這條路」。可能還有：GLP-1 受體直接作用於毛囊細胞、代謝重設造成胰島素 / IGF-1 訊號變化、或者快速減脂導致雄性激素(testosterone)血中游離分數提升(因為 SHBG 改變)、加速 AGA 顯化。詳見下方「機轉雙路徑」段落。
 Q5. 我已經有圓禿 / 雄性禿、能不能打？
 需要個別評估。Herrera 研究中、即使排除掉化療 / 免疫抑制劑使用者、且 PSM 控制了 PCOS、甲狀腺低下、缺鐵、Spironolactone / Finasteride 使用等已知掉髮 confounder、圓禿風險仍上升 1.53 倍、雄性禿風險上升 1.96 倍。對「已有 AGA」的人來說、GLP-1RA 可能加速進展；對「曾有圓禿」的人來說、可能誘發新的活動期。但這不代表「絕對不能打」 — 體重減輕本身對代謝、心血管、糖尿病的好處仍然存在、是跟你的內分泌或減重專科醫師討論 risk-benefit、必要時併用 Minoxidil 預防性治療的決策、而不是單一禁忌。
-Q6. 我有 frontal fibrosing alopecia / CCCA / 扁平苔癬性禿髮、打了反而會比較好？
+Q6. 我有疤痕性禿髮（前額纖維化禿 FFA / 中央離心性瘢痕禿 CCCA / 扁平苔癬性禿髮）、打了反而會比較好？
 初步證據看起來是的。Hill 2026 JAAD 在 1,171 對配對族群中、發現已罹患疤痕性禿髮(CCCA、frontal fibrosing alopecia 前額纖維化禿髮、lichen planopilaris 扁平苔癬性禿髮、folliculitis decalvans 化膿性毛囊炎)的患者、開始 GLP-1 / GIP 治療後、5 年內用到病灶內類固醇注射的相對風險 0.72、外用類固醇 0.67、抗組織胺 0.76、Hydroxychloroquine 0.60、calcineurin inhibitor 0.53、抗生素 0.65 — 都顯著下降。暗示疾病活動性 / 治療需求下降。但這是 retrospective、無法證明因果、且 TNF-α 抑制劑與 methotrexate 的差異未達顯著(可能因 refractory case 太少)。如果你有以上其中之一、又同時有減重需求、可以跟皮膚科 + 內分泌科 / 減重科共同討論。
 Q7. 要不要先停藥？怎麼跟我的醫師討論？
 三步驟：(1) 量化掉髮 — 用頭頂、髮際、頭頂分線三張定點照片紀錄、每 4 週一次、避免「我覺得有掉」這種主觀印象主導決策；(2) 排除其他原因 — 抽血查 ferritin、TSH、vitamin D、ANA、testosterone(女性)、CBC、Hb；(3) 分情境決定：若 TE 型(6-12 個月內快速瀰漫性掉)、可繼續用藥 + 加 Minoxidil 5%、觀察 3-6 個月；若 AGA 加速型、考慮加上 Finasteride(男)/ Spironolactone(女)正規 AGA 治療；若有圓禿活動 / 異常嚴重掉髮、可能需暫停評估。不建議單方面自行停藥、因為 GLP-1RA 對血糖、心血管、體重的好處需要被一併權衡。
-以下為臨床整理 · 給醫療同仁Herrera 2026 JAAD — 新發掉髮風險(GLP-1RA 使用者 vs metformin)
+· 以下為研究整理 · Herrera 2026 JAAD — 新發掉髮風險(GLP-1RA 使用者 vs metformin)
 Herrera HO 與 Bordeaux JS (Case Western Reserve)2026 年 6 月發表於《Journal of the American Academy of Dermatology》brief report 第 1826-1827 頁。是目前評估 GLP-1RA 與新發掉髮關聯最大型的觀察性研究。
 研究設計
 資料來源：TriNetX 美國資料庫(de-identified EMR、多中心)+ TriNetX worldwide 資料庫做雙重驗證。
@@ -368,6 +368,7 @@ Hill 2026 JAAD — 疤痕性禿髮的治療需求變化
 Hill MA 等人(Case Western Reserve + Cleveland Clinic)2026 年 6 月發表於同期 JAAD 第 1833-1834 頁。是第一篇系統性評估 GLP-1 / GIP agonist 對「已罹患疤痕性禿髮」患者醫療資源使用(HRU)的研究。
 研究設計
 資料來源：TriNetX 2017-2025。
+納入：18-90 歲、確診四種疤痕性禿髮之一：CCCA(中央離心性疤痕禿、L66.81)、Frontal fibrosing alopecia(前額纖維化禿、L66.12)、Lichen planopilaris(扁平苔癬性禿、L66.1)、Folliculitis decalvans(化膿性毛囊炎、L66.2)。
 
 [... truncated; fetch canonical URL for full text ...]
 

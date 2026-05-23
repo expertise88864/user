@@ -1,0 +1,321 @@
+<!DOCTYPE html><html lang="zh-Hant-TW"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="robots" content="noindex,nofollow" /><title>站內編輯器 (Word-style) — ChenDermatologist Admin</title><link rel="icon" type="image/svg+xml" href="/icon.svg" />
+<style>:root { --bg: #faf7f2; --ink: #2a2620; --ink-2: #5e574e; --muted: #8b8378; --teal: #7a9285; --teal-deep: #4d6358; --border: #dcd5c8; --line: #ebe4d8; --shadow: 0 1px 2px rgba(15, 23, 42, .04), 0 14px 30px -18px rgba(77, 99, 88, .18); } * { box-sizing: border-box; } body { margin: 0; font-family: 'Inter', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; font-size: 15px; } header.app-bar { position: sticky; top: 0; z-index: 50; background: rgba(250, 247, 242, .95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 12px 20px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; } header.app-bar h1 { margin: 0; font-size: 16px; font-weight: 700; color: var(--teal-deep); letter-spacing: 0.04em; } header.app-bar .article-picker { flex: 1; min-width: 280px; } header.app-bar select { width: 100%; padding: 7px 12px; border: 1px solid var(--border); border-radius: 8px; background: #fff; font-size: 13.5px; color: var(--ink); cursor: pointer; } header.app-bar .actions { display: flex; gap: 8px; } .btn { padding: 7px 14px; border: 1px solid var(--border); border-radius: 8px; background: #fff; color: var(--ink); font-size: 13px; font-weight: 600; cursor: pointer; transition: all .15s; font-family: inherit; } .btn:hover { border-color: rgba(122, 146, 133, .55); color: var(--teal-deep); } .btn.primary { background: linear-gradient(180deg, #a4b5a8, #4d6358); color: #fff; border-color: transparent; } .btn.primary:hover { color: #fff; opacity: 0.92; } .btn.danger { border-color: #f0d9a8; color: #9a3412; } .toolbar { position: sticky; top: 56px; z-index: 40; background: rgba(255, 255, 255, .96); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); padding: 10px 20px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; } .tb-btn { padding: 6px 10px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--ink-2); cursor: pointer; font-size: 13px; font-weight: 600; transition: all .12s; font-family: inherit; min-width: 30px; } .tb-btn:hover { background: var(--line); color: var(--teal-deep); } .tb-btn:active { background: var(--border); } .tb-btn.active { background: var(--teal); color: #fff; } .tb-sep { width: 1px; height: 22px; background: var(--border); margin: 0 4px; } .tb-shortcut { font-size: 11px; color: var(--muted); margin-left: auto; padding-right: 6px; } main { max-width: 920px; margin: 20px auto 80px; padding: 0 20px; } .note { background: #fff8ec; border: 1px solid #f0d9a8; border-radius: 10px; padding: 12px 16px; margin: 0 0 18px; font-size: 13.5px; color: #5b4a22; line-height: 1.7; } .note strong { color: #92400e; } .article-meta { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px; margin: 0 0 16px; font-size: 13px; color: var(--ink-2); box-shadow: var(--shadow); } .article-meta strong { color: var(--teal-deep); } .editor-shell { background: #fff; border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; } .editor { min-height: 60vh; padding: 28px 40px; font-family: 'Noto Sans TC', 'Inter', sans-serif; font-size: 16px; line-height: 1.9; color: var(--ink); outline: none; } .editor:focus { outline: none; } .editor h1, .editor h2, .editor h3 { font-family: 'Noto Serif TC', Georgia, serif; color: var(--ink); } .editor h1 { font-size: 28px; margin: 24px 0 12px; } .editor h2 { font-size: 22px; margin: 32px 0 10px; border-left: 3px solid var(--teal); padding-left: 12px; } .editor h3 { font-size: 17px; margin: 22px 0 8px; color: var(--teal-deep); } .editor p { margin: 10px 0; } .editor strong { color: var(--teal-deep); font-weight: 700; } .editor a { color: var(--teal-deep); text-decoration: underline; } .editor ul, .editor ol { padding-left: 26px; margin: 10px 0; } .editor li { margin: 4px 0; } .editor blockquote { margin: 14px 0; padding: 10px 16px; border-left: 3px solid var(--teal); background: var(--line); border-radius: 0 8px 8px 0; } .editor code { background: var(--line); padding: 1px 6px; border-radius: 4px; font-size: 0.92em; } .status-bar { display: flex; gap: 12px; align-items: center; padding: 10px 18px; background: #fafafa; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); flex-wrap: wrap; } .status-bar .word-count { font-weight: 600; color: var(--ink-2); } .status-bar .dirty { color: #9a3412; font-weight: 600; } .status-bar .saved { color: var(--teal-deep); font-weight: 600; } .empty-state { text-align: center; padding: 80px 20px; color: var(--muted); font-size: 14px; } .empty-state svg { opacity: 0.5; margin-bottom: 16px; } .kbd { display: inline-block; padding: 1px 6px; background: var(--line); border: 1px solid var(--border); border-radius: 4px; font-family: 'SF Mono', Consolas, monospace; font-size: 11px; color: var(--ink-2); } .toast { position: fixed; bottom: 24px; right: 24px; background: var(--teal-deep); color: #fff; padding: 12px 18px; border-radius: 10px; font-size: 14px; box-shadow: 0 8px 20px -6px rgba(77, 99, 88, .35); opacity: 0; transform: translateY(10px); transition: all .25s; pointer-events: none; z-index: 100; } .toast.show { opacity: 1; transform: translateY(0); } @media (max-width: 720px) { .editor { padding: 18px 20px; } header.app-bar { padding: 10px 14px; } .toolbar { padding: 8px 14px; } main { padding: 0 12px; margin-top: 14px; } }</style>
+</head><body><header class="app-bar"><h1>站內編輯器</h1><div class="article-picker"><select id="article-select" aria-label="選擇文章"><option value="">— 請先選擇文章 —</option></select></div><div class="actions"><button type="button" class="btn" id="btn-reload" title="從 server 重新讀取（會丟失未存檔變更）">↻ 重新載入</button><button type="button" class="btn primary" id="btn-export" title="下載修改後的 HTML 檔">⬇ 匯出 HTML</button><button type="button" class="btn" id="btn-copy" title="複製內文到剪貼簿（純 HTML）">📋 複製內文</button><button type="button" class="btn danger" id="btn-clear" title="清除 localStorage 的所有草稿">🗑 清草稿</button></div></header><div class="toolbar" id="toolbar" hidden><button type="button" class="tb-btn" data-cmd="undo" title="復原 (Ctrl+Z)">↶</button><button type="button" class="tb-btn" data-cmd="redo" title="重做 (Ctrl+Y / Ctrl+Shift+Z)">↷</button><span class="tb-sep"></span><button type="button" class="tb-btn" data-cmd="bold" title="粗體 (Ctrl+B)"><strong>B</strong></button><button type="button" class="tb-btn" data-cmd="italic" title="斜體 (Ctrl+I)"><em>I</em></button><button type="button" class="tb-btn" data-cmd="underline" title="底線 (Ctrl+U)"><u>U</u></button><span class="tb-sep"></span><button type="button" class="tb-btn" data-cmd="formatBlock" data-arg="H2" title="標題 H2 (Ctrl+Alt+2)">H2</button><button type="button" class="tb-btn" data-cmd="formatBlock" data-arg="H3" title="標題 H3 (Ctrl+Alt+3)">H3</button><button type="button" class="tb-btn" data-cmd="formatBlock" data-arg="P" title="一般段落 (Ctrl+Alt+0)">¶</button><span class="tb-sep"></span><button type="button" class="tb-btn" data-cmd="insertUnorderedList" title="項目符號清單">• List</button><button type="button" class="tb-btn" data-cmd="insertOrderedList" title="編號清單">1. List</button><span class="tb-sep"></span><button type="button" class="tb-btn" id="tb-link" title="插入連結 (Ctrl+K)">🔗 Link</button><button type="button" class="tb-btn" data-cmd="formatBlock" data-arg="BLOCKQUOTE" title="引用區塊">❝</button><span class="tb-sep"></span><button type="button" class="tb-btn" data-cmd="removeFormat" title="清除格式">✕ Format</button><span class="tb-shortcut">Ctrl+Z 復原 · Ctrl+Y 重做 · Ctrl+S 儲存草稿</span></div><main><div class="note"><strong>使用須知：</strong>
+這是純前端編輯器、<strong>不會自動 commit 到 git</strong>。修改後請：
+(1) 用 <span class="kbd">Ctrl+S</span> 存草稿到 localStorage 暫存；
+(2) 用「匯出 HTML」下載完整檔案、或「複製內文」貼回 source；
+(3) 在你的 IDE / git commit + push 才會上線。
+支援 <span class="kbd">Ctrl+Z</span> 復原 / <span class="kbd">Ctrl+Y</span> 重做 / <span class="kbd">Ctrl+B</span> 粗體 / <span class="kbd">Ctrl+K</span> 連結。
+</div><div class="article-meta" id="meta" hidden><strong>當前文章：</strong><span id="meta-slug">—</span>
+&nbsp;·&nbsp;
+<strong>標題：</strong><span id="meta-title">—</span>
+&nbsp;·&nbsp;
+<strong>分類：</strong><span id="meta-cat">—</span></div><div class="editor-shell" id="editor-shell"><div class="empty-state" id="empty-state"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg><div>請從右上角下拉選單選一篇文章開始編輯</div></div><div class="editor" id="editor" contenteditable="true" spellcheck="false" hidden></div><div class="status-bar" id="status-bar" hidden><span class="word-count" id="word-count">— 字</span><span id="dirty-state" class="saved">已存檔</span><span style="margin-left:auto" id="last-saved">—</span></div></div></main><div class="toast" id="toast"></div>
+<script>(function () {
+'use strict';
+// ─── State ────────────────────────────────────────────────────────────
+var state = {
+currentSlug: null,
+originalHTML: null,    // original article HTML (full file)
+originalBody: null,    // original <main> contents
+dirty: false,
+lastSavedAt: null,
+};
+// ─── DOM ──────────────────────────────────────────────────────────────
+var $sel = document.getElementById('article-select');
+var $editor = document.getElementById('editor');
+var $toolbar = document.getElementById('toolbar');
+var $empty = document.getElementById('empty-state');
+var $statusBar = document.getElementById('status-bar');
+var $meta = document.getElementById('meta');
+var $metaSlug = document.getElementById('meta-slug');
+var $metaTitle = document.getElementById('meta-title');
+var $metaCat = document.getElementById('meta-cat');
+var $wordCount = document.getElementById('word-count');
+var $dirtyState = document.getElementById('dirty-state');
+var $lastSaved = document.getElementById('last-saved');
+var $toast = document.getElementById('toast');
+// ─── Toast helper ─────────────────────────────────────────────────────
+var toastTimer;
+function toast(msg, ms) {
+$toast.textContent = msg;
+$toast.classList.add('show');
+clearTimeout(toastTimer);
+toastTimer = setTimeout(function () {
+$toast.classList.remove('show');
+}, ms || 2400);
+}
+// ─── Article list — load from /assets/search-index.json ───────────────
+// (We use the static search index instead of the runtime DN.ARTICLES so
+// this admin page doesn't trip the noindex-references-blog-shared budget
+// check. The search index has slug / title / date / url — enough for the
+// picker dropdown.)
+function loadArticleList() {
+return fetch('/assets/search-index.json?_cb=' + Date.now()).then(function (r) {
+if (!r.ok) throw new Error('search-index fetch failed: ' + r.status);
+return r.json();
+});
+}
+function populateSelect(articles) {
+articles.sort(function (a, b) {
+return (b.date || '') > (a.date || '') ? 1 : -1;
+});
+articles.forEach(function (a) {
+var opt = document.createElement('option');
+opt.value = a.slug;
+var t = a.title || a.slug;
+if (t.length > 60) t = t.slice(0, 60) + '…';
+opt.textContent = (a.date || '????-??-??') + ' · ' + t;
+opt.dataset.title = a.title || '';
+opt.dataset.cat = '';
+$sel.appendChild(opt);
+});
+}
+// ─── Load article HTML + extract editable body ────────────────────────
+function loadArticle(slug) {
+state.currentSlug = slug;
+// Try draft first
+var draft = localStorage.getItem('dn-admin-draft:' + slug);
+if (draft) {
+var loadDraft = confirm('發現此文章有 localStorage 草稿、要載入嗎？\n\n按「確定」載入草稿、「取消」直接從 server 載入原版。');
+if (loadDraft) {
+applyEditorContent(draft);
+markDirty(false);
+$lastSaved.textContent = '已從草稿載入';
+toast('已載入 localStorage 草稿');
+return;
+}
+}
+fetchAndRender(slug);
+}
+function fetchAndRender(slug) {
+var url = '/blog/' + slug + '.html?_cb=' + Date.now();
+fetch(url).then(function (r) {
+if (!r.ok) throw new Error('Article fetch failed: ' + r.status);
+return r.text();
+}).then(function (html) {
+state.originalHTML = html;
+// Extract <main>...</main> content
+var bodyMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
+if (!bodyMatch) throw new Error('No <main> tag found in article');
+var bodyContent = bodyMatch[1];
+state.originalBody = bodyContent;
+applyEditorContent(bodyContent);
+markDirty(false);
+$lastSaved.textContent = '已從 server 載入';
+toast('已從 server 載入原版');
+}).catch(function (err) {
+toast('載入失敗：' + err.message, 4000);
+console.error(err);
+});
+}
+function applyEditorContent(html) {
+$editor.innerHTML = html;
+$empty.hidden = true;
+$editor.hidden = false;
+$toolbar.hidden = false;
+$meta.hidden = false;
+$statusBar.hidden = false;
+updateWordCount();
+}
+// ─── Editor commands ──────────────────────────────────────────────────
+function exec(cmd, arg) {
+$editor.focus();
+try {
+document.execCommand(cmd, false, arg || null);
+} catch (e) {
+console.warn('execCommand failed:', cmd, e);
+}
+markDirty(true);
+updateWordCount();
+}
+// Wire toolbar buttons
+$toolbar.addEventListener('click', function (e) {
+var btn = e.target.closest('.tb-btn');
+if (!btn) return;
+if (btn.id === 'tb-link') {
+insertLink();
+return;
+}
+exec(btn.dataset.cmd, btn.dataset.arg);
+});
+function insertLink() {
+var sel = window.getSelection();
+var selText = sel && sel.toString();
+var url = prompt('輸入連結網址（例：/blog/some-slug 或 https://...）：', '');
+if (!url) return;
+if (selText) {
+exec('createLink', url);
+} else {
+var anchor = '<a href="' + url.replace(/"/g, '&quot;') + '">' + url + '</a>';
+exec('insertHTML', anchor);
+}
+}
+// ─── Keyboard shortcuts ───────────────────────────────────────────────
+$editor.addEventListener('keydown', function (e) {
+var meta = e.ctrlKey || e.metaKey;
+if (!meta) return;
+var key = e.key.toLowerCase();
+// Ctrl+S = save draft
+if (key === 's') { e.preventDefault(); saveDraft(); return; }
+// Ctrl+K = insert link
+if (key === 'k') { e.preventDefault(); insertLink(); return; }
+// Ctrl+Y = redo (Word style)
+if (key === 'y') { e.preventDefault(); exec('redo'); return; }
+// Ctrl+Z handled natively by contenteditable; Shift+Ctrl+Z also redo
+// Ctrl+Alt+1/2/3 = H1/H2/H3
+if (e.altKey) {
+if (key === '1') { e.preventDefault(); exec('formatBlock', 'H1'); return; }
+if (key === '2') { e.preventDefault(); exec('formatBlock', 'H2'); return; }
+if (key === '3') { e.preventDefault(); exec('formatBlock', 'H3'); return; }
+if (key === '0') { e.preventDefault(); exec('formatBlock', 'P'); return; }
+}
+});
+// Mark dirty on any input
+$editor.addEventListener('input', function () {
+markDirty(true);
+updateWordCount();
+});
+function markDirty(d) {
+state.dirty = d;
+if (d) {
+$dirtyState.textContent = '● 未存檔';
+$dirtyState.classList.remove('saved');
+$dirtyState.classList.add('dirty');
+} else {
+$dirtyState.textContent = '已存檔';
+$dirtyState.classList.remove('dirty');
+$dirtyState.classList.add('saved');
+}
+}
+function updateWordCount() {
+var text = $editor.innerText || '';
+// CJK char count (chars + non-CJK words)
+var cjk = (text.match(/[一-鿿]/g) || []).length;
+var words = (text.match(/[a-zA-Z]+/g) || []).length;
+$wordCount.textContent = (cjk + words).toLocaleString() + ' 字';
+}
+// ─── Save draft to localStorage ───────────────────────────────────────
+function saveDraft() {
+if (!state.currentSlug) {
+toast('請先選文章再存草稿', 2400);
+return;
+}
+var html = $editor.innerHTML;
+try {
+localStorage.setItem('dn-admin-draft:' + state.currentSlug, html);
+localStorage.setItem('dn-admin-draft:' + state.currentSlug + ':timestamp', new Date().toISOString());
+state.lastSavedAt = new Date();
+$lastSaved.textContent = '草稿已存於 ' + state.lastSavedAt.toLocaleTimeString();
+markDirty(false);
+toast('草稿已存（localStorage）');
+} catch (e) {
+toast('存草稿失敗：' + e.message, 4000);
+}
+}
+// ─── Export modified HTML ─────────────────────────────────────────────
+function exportHTML() {
+if (!state.currentSlug || !state.originalHTML) {
+toast('請先載入文章', 2400);
+return;
+}
+var newBody = $editor.innerHTML;
+// Replace <main>...</main> in original with new content
+var newHTML = state.originalHTML.replace(
+/(<main[^>]*>)[\s\S]*?(<\/main>)/i,
+function (_, openTag, closeTag) {
+return openTag + newBody + closeTag;
+}
+);
+// Download
+var blob = new Blob([newHTML], { type: 'text/html;charset=utf-8' });
+var url = URL.createObjectURL(blob);
+var a = document.createElement('a');
+a.href = url;
+a.download = state.currentSlug + '.html';
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+URL.revokeObjectURL(url);
+toast('已匯出 ' + state.currentSlug + '.html');
+}
+// ─── Copy body to clipboard ───────────────────────────────────────────
+function copyBody() {
+if (!state.currentSlug) return toast('請先載入文章', 2400);
+var html = $editor.innerHTML;
+navigator.clipboard.writeText(html).then(function () {
+toast('內文已複製（' + Math.round(html.length / 1024) + ' KB）');
+}).catch(function (e) {
+toast('複製失敗：' + e.message, 3600);
+});
+}
+// ─── Clear all drafts ─────────────────────────────────────────────────
+function clearAllDrafts() {
+if (!confirm('確定要清除所有 localStorage 草稿嗎？\n\n此動作無法復原（但 server 原始檔不受影響）。')) {
+return;
+}
+var n = 0;
+Object.keys(localStorage).forEach(function (k) {
+if (k.indexOf('dn-admin-draft:') === 0) {
+localStorage.removeItem(k);
+n++;
+}
+});
+toast('已清除 ' + n + ' 個草稿項目', 3000);
+}
+// ─── Wire up ──────────────────────────────────────────────────────────
+$sel.addEventListener('change', function () {
+var slug = $sel.value;
+if (!slug) {
+$empty.hidden = false;
+$editor.hidden = true;
+$toolbar.hidden = true;
+$meta.hidden = true;
+$statusBar.hidden = true;
+return;
+}
+if (state.dirty && state.currentSlug && state.currentSlug !== slug) {
+if (!confirm('當前文章有未存檔變更、切換會丟失。確定要切換嗎？')) {
+$sel.value = state.currentSlug;
+return;
+}
+}
+var opt = $sel.options[$sel.selectedIndex];
+$metaSlug.textContent = slug;
+$metaTitle.textContent = opt.dataset.title || '—';
+$metaCat.textContent = opt.dataset.cat || '—';
+loadArticle(slug);
+});
+document.getElementById('btn-reload').addEventListener('click', function () {
+if (!state.currentSlug) return;
+if (state.dirty && !confirm('當前有未存檔變更、確定要重新載入嗎？')) return;
+fetchAndRender(state.currentSlug);
+});
+document.getElementById('btn-export').addEventListener('click', exportHTML);
+document.getElementById('btn-copy').addEventListener('click', copyBody);
+document.getElementById('btn-clear').addEventListener('click', clearAllDrafts);
+// Window-level Ctrl+S also saves (even when focus is on select)
+window.addEventListener('keydown', function (e) {
+if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+e.preventDefault();
+saveDraft();
+}
+});
+// Warn on close if dirty
+window.addEventListener('beforeunload', function (e) {
+if (state.dirty) {
+e.preventDefault();
+e.returnValue = '有未存檔的變更、確定要離開嗎？';
+return e.returnValue;
+}
+});
+// ─── Init ─────────────────────────────────────────────────────────────
+loadArticleList().then(function (articles) {
+populateSelect(articles);
+toast('已載入 ' + articles.length + ' 篇文章');
+}).catch(function (err) {
+toast('文章列表載入失敗：' + err.message, 5000);
+console.error(err);
+});
+})();</script>
+</body></html>
