@@ -191,6 +191,17 @@ SLUG_CONDITIONS: dict[str, list[dict]] = {
                           icd10="L63.9", snomed="278951000",
                           mesh="D000506", wikidata="Q717619"),
     ],
+    "photodynamic-therapy-overview": [
+        medical_condition("Actinic keratosis", "光化性角化症",
+                          icd10="L57.0", snomed="201101007",
+                          wikidata="Q934820"),
+        medical_condition("Basal cell carcinoma", "基底細胞癌",
+                          icd10="C44.91", snomed="254701007",
+                          mesh="D002280", wikidata="Q1192180"),
+        medical_condition("Acne vulgaris", "尋常性痤瘡",
+                          icd10="L70.0", snomed="11381005",
+                          mesh="D000152", wikidata="Q188601"),
+    ],
 
     # ─── Vitiligo / pigmentation ───
     "vitiligo": [

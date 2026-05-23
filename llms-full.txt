@@ -1,6 +1,6 @@
 # ChenDermatologist · 陳翊嘉醫師 · 皮膚科衛教筆記
 
-Generated 2026-05-23 · 47 articles · by Dr. Chen Yi-Jia (R2 Dermatology, China Medical University Hospital, Taiwan)
+Generated 2026-05-23 · 48 articles · by Dr. Chen Yi-Jia (R2 Dermatology, China Medical University Hospital, Taiwan)
 
 Bilingual zh-Hant / en. ZH source is authoritative; EN mirror is machine-translated and provided for accessibility only.
 
@@ -369,6 +369,274 @@ Hill MA 等人(Case Western Reserve + Cleveland Clinic)2026 年 6 月發表於�
 研究設計
 資料來源：TriNetX 2017-2025。
 納入：18-90 歲、確診四種疤痕性禿髮之一：CCCA(中央離心性疤痕禿、L66.81)、Frontal fibrosing alopecia(前額纖維化禿、L66.12)、Lichen planopilaris(扁平苔癬性禿、L66.1)、Folliculitis decalvans(化膿性毛囊炎、L66.2)。
+
+[... truncated; fetch canonical URL for full text ...]
+
+---
+## 光動力治療（PDT）皮膚科完整指南 — 從 AK、BCC 到痘痘的 2026 JAAD 雙篇 Review 整合
+URL: https://chendermatologist.com/blog/photodynamic-therapy-overview
+Updated: 2026-05-23
+Section: Research Summary
+Reading time: PT26M
+Tags: 光動力治療, Photodynamic therapy
+
+光動力治療（PDT）皮膚科完整指南 — 從 AK、BCC 到痘痘的 2026 JAAD 雙篇 Review 整合｜陳翊嘉醫師
+
+跳至主要內容
+ChenDermatologist陳翊嘉醫師 · 皮膚科衛教筆記衛教文章量表計算器詞彙字典關於我 🌙中文EN
+
+最新研究 · 光動力治療
+
+光動力治療（PDT）皮膚科完整指南從 AK、BCC 到痘痘的 2026 JAAD 雙篇 Review 整合
+
+2026 年 6 月《Journal of the American Academy of Dermatology》同期刊出兩篇 PDT（photodynamic therapy、光動力治療）CME Review：上篇談機轉與光敏劑（Austin 等人）、下篇談 12 個皮膚科臨床適應症（Wang 等人）。本文以衛教 + 臨床雙軌整理：PDT 是「光敏劑 + 光源 + 氧氣」三要素產生活性氧、選擇性破壞病灶細胞、不傷周圍組織。最強證據（LoE IA）的適應症是光化性角化症（AK）、基底細胞癌（BCC）、Bowen disease、痘痘；其他 8 項適應症包含酒紅斑、光老化、玫瑰斑、圓禿、蕈狀肉芽腫等。
+
+🕐 閱讀約 20 分鐘
+📅 最後審閱 2026-05-23
+👨‍⚕️ 陳翊嘉醫師
+
+提醒 · 本文整理 2026 JAAD 兩篇 CME Review 證據、僅作為一般醫學教育參考、不構成個別醫療建議。PDT 治療方案、光敏劑與光源選擇、療程次數均需由皮膚科醫師個別評估、依病灶類型、位置、深度、患者膚色與耐受度決定。
+
+一頁速覽 — 三個你最該知道的數字
+
+🎯 1. 對「光化性角化症（AK、actinic keratosis）」的清除率：5-ALA + 藍光（BL）治療臉部與頭皮、3 個月清除率 77-89%、和冷凍、Imiquimod、5-FU 相當或更佳；同時帶來更佳美觀結果。FDA 自 1999 起核可此適應症。
+
+🎯 2. 對「淺層 / 低風險基底細胞癌（superficial / low-risk BCC）」的清除率：MAL 或 BF-200 ALA + 紅光（RL）兩次治療、3 個月清除率 92-97%、1 年復發率 9%、5 年復發率 22%。比手術復發率略高、但美觀勝於手術。
+
+🎯 3. 對「中重度痘痘」：ALA + 紅光治療效果與口服 A 酸（isotretinoin 0.5 mg/kg/day × 6 個月）相當、起效更快；治療後 6 個月復發率 24% vs 口服 A 酸 38%（無統計顯著差異）。
+
+為什麼皮膚科會用光？百年歷史簡述
+
+光療在皮膚科有上千年歷史 — 古埃及、印度、中國都曾用日光治療乾癬、白斑、皮膚癌。1903 年 Niels Finsen 因用碳弧光治皮膚結核獲得諾貝爾獎。1900 年代初 Oscar Raab 與 Hermann von Tappeiner 首先描述「photodynamic action（光動力作用）」— 也就是「光敏劑 + 光 + 氧氣」三者組合產生治療效果的現象。1990 年代 5-ALA 上市、1999 年 FDA 核可第一個 PDT 適應症（光化性角化症）後、PDT 在皮膚科的應用從單一病灶逐漸擴展到「field cancerization（場域癌變）」整片治療、以及痘痘、光老化等美容適應症。2022 年全球 PDT 市場約 45 億美元、預估 2030 年達 86 億美元。
+
+衛教：病人最常問的 7 題
+
+Q1. 光動力治療（PDT）是什麼？跟雷射有什麼不同？
+
+PDT 是「光敏劑 + 光 + 氧氣」三者組合的治療方式。流程是：醫師先在病灶塗一種叫做「光敏劑」的藥膏（最常用的是 5-ALA 或 MAL）、等待 1-3 小時讓藥膏被異常細胞吸收、然後用特定波長的光（紅光或藍光）照射病灶、藥膏在光的觸發下產生「活性氧（reactive oxygen species、ROS）」、把異常細胞破壞掉。
+
+跟雷射差別在於：
+
+🔬 雷射靠的是「光熱（thermal）」直接打、不需要先塗藥；PDT 靠的是「光化學（photochemical）」、需要先讓細胞吸收光敏劑。
+
+🎯 雷射打到哪裡傷哪裡、選擇性靠「目標分子（如黑色素、血紅素）」吸光不同；PDT 的選擇性更高、因為癌細胞 / 痘痘細胞的酵素活性異常、累積光敏劑遠多於正常皮膚、所以正常組織受傷較少。
+
+⏱ 雷射通常一次門診就做完；PDT 因為要等藥膏吸收、通常一次門診 2-4 小時。
+
+🩹 雷射可能會有點狀燒灼痕；PDT 治療後較少留疤、適合臉部、頭皮等美觀區域。
+
+Q2. 哪些皮膚問題可以用 PDT？哪些不行？
+
+2026 JAAD review 整理出 12 個有實證的適應症、按證據等級（LoE、Level of Evidence）排序：
+
+✅ 最強證據（LoE IA、多篇 RCT 與 meta-analysis）：
+
+光化性角化症（AK、actinic keratosis、長期日曬造成的角化粗糙斑）— FDA 唯一正式適應症
+
+淺層基底細胞癌（superficial BCC）與低風險結節型 BCC
+
+Bowen disease（皮膚原位鱗狀細胞癌、SCC in situ）
+
+中重度痘痘（acne vulgaris）— 對發炎性與非發炎性痘痘都有效
+
+🟡 中等證據（LoE IB-II）：
+
+酒紅斑（port wine stain、PWS、葡萄酒色斑）— 中國上市的 Hemoporfin 靜脈注射 + KTP 雷射
+
+光老化（photoaging）— 改善細紋、紋路與皮膚紋理
+
+光化性唇炎（actinic cheilitis）— 嘴唇的 AK 等效病灶
+
+病毒疣（HPV warts）、單純皰疹（HSV）、皮膚 MRSA 感染
+
+🟢 早期證據（LoE III-IV、case series 為主）：
+
+蕈狀肉芽腫（mycosis fungoides、皮膚 T 細胞淋巴瘤的最常見型態）
+
+玫瑰斑（rosacea）— 改善紅斑與發炎丘疹
+
+圓禿（alopecia areata、AA）— 早期證據、不是第一線
+
+乳房外 Paget disease（EMPD）— 紓緩性、不能取代手術
+
+❌ 不適合 PDT 的情況：
+
+侵犯性（infiltrative）或高風險 BCC（如眼瞼、鼻翼、耳、唇、≥ 2 cm、復發性）— 仍要靠 Mohs 手術切除
+
+侵犯性鱗狀細胞癌（invasive SCC）— 必須手術或放療
+
+黑色素瘤（melanoma）— 絕對禁忌、PDT 對深層病灶無效
+
+孕婦、porphyria（紫質症）患者、對光敏劑成分過敏者
+
+Q3. 痛不痛？需要打麻醉嗎？
+
+會痛 — 而且這是 PDT 最常被詬病的副作用。約 16-20% 的患者會有「嚴重痛感」、通常在光照開始的 7-10 分鐘內最痛、之後逐漸減輕。痛的成因是活性氧（ROS）刺激皮膚神經末梢與發炎介質釋放。
+
+痛感的影響因子：
+
+📐 治療面積越大越痛（臉、頭皮 > 局部單一病灶）
+
+🦠 病灶類型：AK > BCC > Bowen disease 痛感較強
+
+💡 光源：紅光（RL）通常比藍光（BL）稍微比較不痛
+
+💊 ALA 比 MAL 略痛、但證據尚不一致
+
+疼痛管理選項（一個 RCT 顯示效果優劣）：
+
+🥇 「神經阻斷（nerve block）」 — 頭皮神經阻斷效果最佳、比冷空氣 + 靜脈鎮痛還好
+
+🥈 「冷空氣鎮痛（cold-air analgesia）」 — 對流式吹冷風、簡單便宜、效果中等
+
+🥉 外用麻醉藥（如 lidocaine、prilocaine）— 治療前 30 分鐘塗
+
+🗣 「對話分心（talk therapy）」 — 醫師 / 護理師持續對話、降低焦慮與疼痛感、研究證實有效
+
+📅 改用「日光 PDT（daylight PDT）」— 將藥膏塗上後直接出去曬日光 2 小時、光強度低、痛感顯著降低、效果不輸傳統 PDT
+
+一般不需要靜脈鎮痛或全身麻醉。重點：如果痛到必須停止治療、效果就會打折扣 — 治療前跟醫師討論你的疼痛閾值、選擇適合的疼痛管理策略很重要。
+
+Q4. 治療後皮膚會怎麼樣？多久復原？
+
+PDT 是發炎性反應、治療後皮膚會經歷可預期的變化：
+
+⏱ 0-2 小時：光毒性反應達高峰、紅腫、灼熱、刺痛
+
+📅 1-3 天：紅斑與水腫仍明顯、可能有滲出液、結痂開始形成
+
+📅 4-7 天：結痂期、看起來像「皮膚過敏」或「曬傷脫皮」、會癢
+
+📅 1-2 週：結痂自然脫落、皮膚開始恢復、紅潤暫時持續
+
+📅 2-4 週：紅斑逐漸退色、皮膚回到接近治療前狀態（但病灶清除）
+
+術後照顧重點：
+
+🌞 「最重要」：治療後 40 小時內絕對避免日曬與強光（包括戶外、車窗邊、亮室內燈）— 殘留光敏劑仍會被光活化、可能造成嚴重灼傷。出門必須戴帽 + 物理性防曬 + 長袖
+
+🧴 結痂期不要摳、不要剝、用溫水輕輕清潔、塗薄薄一層白色凡士林保濕
+
+💄 1 週內避免上妝（會卡進結痂縫隙、增加感染風險）；可用無酒精、無香料防曬乳
+
+🚨 異常徵兆需立即回診：黃綠色膿、發燒、超過 2 週仍紅腫熱痛、出現水泡或紫色出血斑
+
+Q5. 跟手術 / 冷凍 / 5-FU / Imiquimod 比起來如何？
+
+以最常見的 AK 與 BCC 治療為例（PDT 對這兩個病灶最有實證）：
+
+治療
+清除率
+美觀
+痛感
+場域治療
+
+PDT
+AK 77-89%、BCC 92-97%
+優
+中-高
+✅ 可一次治療整片
+
+手術切除
+BCC ~97% 一年
+留疤
+麻醉
+❌ 單一病灶
+
+冷凍治療
+AK ~70%、與 PDT 相當或略遜
+可能色素脫失
+中
+❌ 逐一處理
+
+Imiquimod 5%
+AK ~50-60%、自行擦藥 4-16 週
+優
+輕-中（紅、癢）
+✅ 但需患者持續性
+
+5-FU 5%
+AK ~50-70%、擦藥 2-4 週
+優
+高（劇紅、糜爛）
+✅
+
+重點：
+
+📐 多顆病灶、整片場域 → PDT 或外用藥（5-FU、Imiquimod）優於單一手術
+
+🎨 臉、頭皮、暴露區美觀考量 → PDT 留疤最少
+
+✂ 單一深層、邊界不清、復發性、≥ 2 cm 病灶 → 手術才是正解
+
+🏠 不想去診所多次、可以自我管理擦藥 → 外用 Imiquimod / 5-FU
+
+❄ 病灶數量少、不在意暫時色素變化 → 冷凍便宜快速
+
+Q6. 治療要做幾次？多久看到效果？
+
+療程次數依病灶而異：
+
+🟢 AK（光化性角化症）：1-2 次、間隔 4-12 週、3 個月後評估清除率
+
+🟢 BCC / Bowen disease：2 次、間隔 1 週（標準歐洲方案）、3 個月評估、之後 1 年內回診追蹤
+
+🟢 中重度痘痘：2-5 次、間隔 1-2 週、約 6-12 週看到顯著改善、有時需要重複療程
+
+🟢 光老化 / 玫瑰斑：2-3 次、間隔 1 個月、效果在 2-3 個月後逐漸顯現
+
+🟢 酒紅斑（PWS）：Hemoporfin 方案 2 次、間隔 2 個月（中國上市方案）
+
+痘痘 PDT 跟口服 A 酸（isotretinoin）比較很有趣：一個 RCT 發現 ALA + RL 兩次治療、抗發炎與抑制皮脂效果與 isotretinoin 0.5 mg/kg/day 治療 6 個月「相當」、但 PDT 起效更快、且 6 個月復發率較低（24% vs 38%、未達統計顯著）。對於不能口服 A 酸（如懷孕計劃中、有肝功能問題、無法配合避孕者）的病人、PDT 是值得考慮的替代方案。
+
+Q7. 我這種狀況適不適合？什麼狀況不能做？
+
+✅ 適合 PDT 的情境：
+
+多顆 AK 散布在臉、頭皮、手背（場域治療優勢）
+
+淺層 BCC、單顆 中重度痘痘、口服 A 酸不適合或不願使用者
+
+美觀區域（臉、頸、前胸）的病灶 — PDT 不留疤
+
+不能配合手術或長期擦藥的病人（年長、行動不便）
+
+⚠ 需要謹慎評估的情境：
+
+深色膚色（Fitzpatrick V-VI）— PDT 後色素變化風險增加、需評估病灶深度與光源
+
+服用光敏感藥物（如 doxycycline、amiodarone、某些利尿劑、磺胺類抗生素）— 治療前需考慮停藥
+
+自體免疫疾病活動期（如紅斑性狼瘡）— PDT 可能誘發發作
+
+❌ 絕對禁忌：
+
+紫質症（porphyria、cutaneous porphyria）— PDT 機轉就是讓 PpIX 累積、會讓紫質症急性發作
+
+對光敏劑（ALA、MAL）或其他成分過敏
+
+懷孕（缺乏安全性資料）
+
+侵犯性 / 高風險 BCC、SCC、黑色素瘤
+
+治療部位有活動性感染（蜂窩性組織炎、HSV 發作期）
+
+就診前準備清單：(1) 列出所有目前服用藥物與保健品；(2) 告知過敏史與既往光敏感反應；(3) 確認懷孕計劃；(4) 詢問醫師：選哪一種光敏劑（ALA vs MAL）、哪一種光源（RL vs BL vs 日光）、需要幾次療程、每次多少時間、術後照顧重點。
+
+延伸閱讀： 對日光性角化症（AK）與皮膚鱗狀細胞癌（SCC）完整衛教看 日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教 ；中重度痘痘的其他治療選項看 口服 A 酸完整衛教 ；玫瑰斑的整體治療策略看 玫瑰斑 6 大迷思。
+
+以下為臨床整理 · 給醫療同仁
+
+PDT 三要素與分子層級機轉
+
+現代 PDT 由三個必要元素構成：(1) 選擇性累積於病灶細胞的「光敏劑（photosensitizer、PS）」；(2) 與 PS 最大吸收峰匹配的「光源」；(3) 組織內的「分子氧（³O₂）」。三者缺一不可。
+
+光敏劑吸收光子後從基態進入激發態、再經 intersystem crossing 進入三重態。三重態的 PS 與分子氧反應：
+
+Type II 反應（主要路徑）：能量轉移給 ³O₂、產生「單態氧（singlet oxygen、¹O₂）」。¹O₂ 半衰期僅 40 ns、只能影響半徑 20 nm 內細胞、選擇性極高、不傷周圍組織。
+
+Type I 反應（次要）：PS 直接與受質分子反應、產生超氧自由基（superoxide）、羥基自由基（hydroxyl radical）、過氧化氫（H₂O₂）等 ROS（reactive oxygen species）。Austin 等人研究顯示 ALA-PDT + BL 在人類皮膚纖維母細胞主要產生 superoxide、未測到 hydroxyl ROS 或 H₂O₂。
+
 
 [... truncated; fetch canonical URL for full text ...]
 
@@ -4106,11 +4374,9 @@ BAD 2022 SCC in situ / Bowen disease (Sharma et al.)
 BAD 2020 cutaneous SCC (Keohane et al.)
 AAD JAAD cutaneous SCC management
 
-延伸閱讀：皮膚腫瘤相關文章 — 皮膚 T 細胞淋巴瘤(CTCL)、粉瘤(表皮囊腫)完整衛教、皮膚切片與切除手術。
+延伸閱讀： AK / BCC / Bowen disease 的光動力治療（PDT）詳細機轉與證據看 光動力治療完整指南 ；皮膚腫瘤相關文章 — 皮膚 T 細胞淋巴瘤(CTCL)、粉瘤(表皮囊腫)完整衛教、皮膚切片與切除手術。
 
 參考資料
-
-de Berker D, McGregor JM, Mohd Mustapa MF, Exton LS, Hughes BR. British Association of Dermatologists' guidelines for the care of patients with actinic keratosis 2017. Br J Dermatol. 2017;176(1):20-43. 「來源」
 
 
 [... truncated; fetch canonical URL for full text ...]
