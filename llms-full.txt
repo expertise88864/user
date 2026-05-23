@@ -8140,7 +8140,7 @@ UpToDate: Acneiform eruption secondary to epidermal growth factor receptor (EGFR
 ---
 ## 外用類固醇完整指南
 URL: https://chendermatologist.com/blog/topical-steroids-guide
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 外用類固醇, Topical steroids
@@ -8397,7 +8397,7 @@ UpToDate: General principles of dermatologic therapy and topical corticosteroid 
 ---
 ## 皮膚科生物製劑與小分子標靶藥物總覽
 URL: https://chendermatologist.com/blog/biologics-overview
-Updated: 2026-05-22
+Updated: 2026-05-23
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 生物製劑, Biologics
