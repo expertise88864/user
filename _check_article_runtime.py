@@ -35,8 +35,15 @@ RUNTIME_RE = re.compile(
 )
 
 # Articles that don't need the runtime (e.g., index pages, topic map)
-# blog/index.html and blog/topics.html load it themselves elsewhere
-SKIP_FILES = {"blog/index.html", "blog/topics.html"}
+# blog/index.html and blog/topics.html load it themselves elsewhere.
+# 2026-05-24 — also skip the /en/ mirror equivalents; they're hub pages
+# without proseZh wrapper, not articles.
+SKIP_FILES = {
+    "blog/index.html",
+    "blog/topics.html",
+    "en/blog/index.html",
+    "en/blog/topics.html",
+}
 
 # Legacy articles whose structure pre-dates the proseZh / prose-zh wrapper
 # requirement (they have their own bespoke CSS). Skip the prose-wrapper

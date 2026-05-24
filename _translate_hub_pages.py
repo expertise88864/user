@@ -1,0 +1,302 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""One-shot translator for blog/topics.html + blog/index.html hub pages.
+
+These hub pages are mostly static <h2> cluster headings + <a> link texts
+with no bilingual data-en attributes — so the EN mirror at
+/en/blog/topics.html and /en/blog/index.html shows untranslated ZH to
+GoogleBot. This script adds data-en="..." inline to every static element
+that needs translation, in a translation dictionary maintained below.
+
+Run after editing the dictionary; then re-run _gen_en_pages.py to refresh
+the EN mirror.
+"""
+from __future__ import annotations
+
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+
+# Translation dictionary: ZH text → EN text.
+# Add an entry here whenever you write a new topic-card link, a new
+# cluster heading, or any other hub-page string. Order doesn't matter.
+TRANSLATIONS: dict[str, str] = {
+    # Cluster H2 headings (topics.html)
+    "痘痘 · 痤瘡": "Acne",
+    "防曬 · 紫外線": "Sunscreen · UV",
+    "異位性皮膚炎 · 濕疹": "Atopic Dermatitis · Eczema",
+    "色素沉澱 · 美白": "Pigmentation · Brightening",
+    "玫瑰痤瘡 · 酒糟肌": "Rosacea",
+    "落髮 · 頭皮": "Hair Loss · Scalp",
+    "感染 · 黴菌 · 病毒": "Infections · Fungi · Viruses",
+    "免疫 · 自體免疫疾病": "Immune · Autoimmune",
+    "外用藥膏 · 處方用藥": "Topical & Prescription Drugs",
+    "處置 / 手術": "Procedures / Surgery",
+    # Anchor link text (topics.html article links)
+    "痘痘 8 大迷思 — 民眾最常誤會的觀念":
+        "8 Acne Myths — patient misconceptions clarified",
+    "外用酸類完整衛教 — A 酸、A 醇、杜鵑花酸、果酸、水楊酸":
+        "Topical acids — full patient guide (retinoids, AHA, BHA, azelaic, PHA)",
+    "口服 A 酸完整衛教 — 適合誰、副作用、復發率":
+        "Oral isotretinoin — who, side effects, relapse rate",
+    "痘疤完整治療指引 — 4 種凹疤、紅疤、黑疤、肥厚疤怎麼選":
+        "Acne scar treatment — atrophic, red, dark, hypertrophic",
+    "口服抗生素治痘 — Doxycycline / Minocycline — 規劃中":
+        "Oral antibiotics for acne — doxycycline / minocycline (coming)",
+    "防曬 8 大迷思 — 室內、陰天、SPF、物理化學一次釐清":
+        "8 Sunscreen Myths — indoor, cloudy day, SPF, mineral vs chemical",
+    "含氧化鐵(iron oxide)防曬完整指南 — 規劃中":
+        "Iron-oxide sunscreens — full guide (coming)",
+    "嬰幼兒 / 孕婦 / 敏感肌防曬挑選 — 規劃中":
+        "Sunscreen choice for infants / pregnancy / sensitive skin (coming)",
+    "異位性皮膚炎概論 — 病態生理、診斷、嚴重度評分":
+        "Atopic dermatitis overview — pathophysiology, diagnosis, severity",
+    "異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏":
+        "AD topical treatment — moisturizer, steroid, TCI, PDE4, topical JAK",
+    "異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療":
+        "AD systemic treatment — biologics, JAK inhibitors, phototherapy",
+    "異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染":
+        "AD comorbidities & special populations — atopic march, mental health, pregnancy, infection",
+    "兒童異膚 — Dupilumab 嬰幼兒時代":
+        "Pediatric eczema — the dupilumab-infant era",
+    "肝斑 7 大迷思 — 雷射、藥膏、停藥反黑、孕婦":
+        "7 Melasma Myths — laser, topicals, rebound, pregnancy",
+    "曬斑 / 雀斑雷射選擇指南 — 規劃中":
+        "Sun spots / freckles laser selection guide (coming)",
+    "美白成分大整理（氫醌 / 傳明酸 / 杜鵑花酸 / 維他命 C) — 規劃中":
+        "Brightening ingredients — hydroquinone / tranexamic acid / azelaic / vitamin C (coming)",
+    "玫瑰痤瘡 6 大迷思 — 不是過敏、不是螨蟲、能治好嗎？":
+        "6 Rosacea Myths — not allergy, not Demodex, can it be cured?",
+    "血管雷射 / 脈衝光治酒糟 — 規劃中":
+        "Vascular laser / IPL for rosacea (coming)",
+    "酒糟肌專用保養品挑選 — 規劃中":
+        "Rosacea-friendly skincare selection (coming)",
+    "落髮 / 雄性禿 7 大迷思 — Minoxidil、Finasteride、植髮真相":
+        "7 Hair-loss / AGA Myths — minoxidil, finasteride, hair-transplant truths",
+    "圓禿（鬼剃頭）完整衛教 — JAK 抑制劑時代，TDA 2024 共識":
+        "Alopecia areata complete guide — JAK era, TDA 2024 consensus",
+    "植髮 FUE / FUT 完整指南 — 規劃中":
+        "Hair transplant FUE / FUT complete guide (coming)",
+    "產後落髮怎麼辦 — 規劃中":
+        "Postpartum hair loss management (coming)",
+    "香港腳 / 灰指甲 7 大迷思 — 含 Terbinafine、Itraconazole 對照":
+        "7 Athlete's Foot / Nail Fungus Myths — terbinafine vs itraconazole",
+    "病毒疣 6 大迷思 — 香蕉皮、雷射打一次就好？HPV 疫苗？":
+        "6 Wart Myths — banana peel, one-laser cure, HPV vaccine?",
+    "帶狀皰疹（皮蛇）6 大迷思 — 72 小時黃金期、Shingrix":
+        "6 Shingles Myths — 72-hour window, Shingrix",
+    "蜂窩性組織炎完整衛教 — 規劃中":
+        "Cellulitis complete patient guide (coming)",
+    "乾癬完整衛教 — 分型、嚴重度評估、誘發因子與診斷":
+        "Psoriasis complete guide — subtypes, severity, triggers, diagnosis",
+    "乾癬外用藥治療 — 類固醇、維生素 D、特殊部位用法":
+        "Psoriasis topical treatment — steroids, vitamin D, special sites",
+    "乾癬全身性治療 — 光療、口服、生物製劑、健保給付":
+        "Psoriasis systemic treatment — phototherapy, oral, biologics, Taiwan NHI",
+    "乾癬合併症與特殊族群 — PsA、心血管、懷孕、兒童、指甲、紅皮症":
+        "Psoriasis comorbidities & special populations — PsA, CV, pregnancy, pediatric, nail, erythroderma",
+    "乾癬 7 大迷思 — 不是癬、不會傳染、生物製劑安全嗎？":
+        "7 Psoriasis Myths — not tinea, not contagious, are biologics safe?",
+    "A 酸、A 醇、杜鵑花酸、果酸、水楊酸、PHA、口服 A 酸、抗生素、生物製劑 — 處方藥完整解析":
+        "Retinoids, retinol, azelaic acid, AHA, BHA, PHA, oral isotretinoin, antibiotics, biologics — full prescription drug review",
+    "外用酸類完整衛教 — 五大酸一次搞懂":
+        "Topical acids — all five acids in one guide",
+    "口服 A 酸完整衛教":
+        "Oral isotretinoin — complete patient guide",
+    "類固醇藥膏完整使用指南 — 規劃中":
+        "Topical steroid full-use guide (coming)",
+    "外用免疫調節劑 Tacrolimus / Pimecrolimus — 規劃中":
+        "Topical immunomodulators — tacrolimus / pimecrolimus (coming)",
+    "皮膚切片與腫瘤切除手術完整衛教 — 為什麼要切？怎麼切？術後怎麼照顧？":
+        "Skin biopsy & excision — why, how, post-op care",
+    "表皮囊腫（粉瘤）— 為什麼會復發？要切除嗎？":
+        "Epidermoid cyst — why does it recur? should it be excised?",
+    "日光性角化症 + 鱗狀細胞癌 + 波文氏症 完整衛教":
+        "Actinic keratosis + SCC + Bowen disease — complete guide",
+    # Standalone strings (crumbs, headings, notices)
+    "首頁": "Home",
+    "衛教文章": "Articles",
+    "主題地圖": "Topic Map",
+    "主題地圖 · TOPICS": "Topic Map · TOPICS",
+    "中文": "Chinese",
+    "重要提醒": "Important notice",
+    "本網站文章僅作衛教資訊、個別評估、處方、雷射或手術仍需就近至皮膚科專科醫師門診評估。本站不從事醫療廣告、亦不推薦特定診所或療程。":
+        "All articles are for general education only. Individual evaluation, prescription, laser, or surgery must be assessed by a dermatologist in person. This site does not engage in medical advertising and does not recommend specific clinics or procedures.",
+    # index.html — article card H2 titles + descriptions
+    "皮膚科雷射完整對照 — 波長 × 適應症 × 證據強度":
+        "Dermatologic laser comparison — wavelength × indication × evidence",
+    "嬰幼兒 / 兒童異位性皮膚炎完整照護指南":
+        "Infant & pediatric atopic dermatitis — complete care guide",
+    "標靶藥物（TKI）皮膚副作用完整衛教 — TLCS + TDA 共識":
+        "Targeted-therapy (TKI) cutaneous side effects — TLCS + TDA consensus",
+    "猴痘（Mpox）皮膚照護完整指南 — TDA 官方建議":
+        "Monkeypox (Mpox) skin care — full guide per TDA recommendations",
+    "化膿性汗腺炎（HS）完整衛教 — TDA 共識":
+        "Hidradenitis suppurativa (HS) — patient guide per TDA consensus",
+    "帶狀皰疹（皮蛇）6 大迷思 — 繞一圈會死？疫苗值得嗎？神經痛多久？":
+        "6 Shingles Myths — does it kill if it circles? is the vaccine worth it? how long does neuralgia last?",
+    "病毒疣 6 大迷思 — 香蕉皮、雷射打一次就好？HPV 疫苗值得？":
+        "6 Wart Myths — banana peel, one-laser cure? Is the HPV vaccine worth it?",
+    "乾癬 7 大迷思 — 不是癬、不會傳染、生物製劑很安全嗎？":
+        "7 Psoriasis Myths — not tinea, not contagious, are biologics safe?",
+    "蕁麻疹 6 大迷思 — 一定是過敏？抗組織胺嗜睡？慢性能治好？":
+        "6 Urticaria Myths — is it always allergy? do antihistamines cause drowsiness? can chronic urticaria be cured?",
+    # Article descriptions
+    "2022 德國 S2k 雷射指引整理。532-10600 nm 全波長，30+ 適應症「該用 / 可考慮 / 不建議」清單。":
+        "2022 German S2k laser guideline summarized. 532-10600 nm full spectrum, 30+ indications classified as 'recommended / consider / not recommended'.",
+    "0-5 歲嬰幼兒異膚：洗澡保濕、外用類固醇 / TCI、過敏原檢測時機、Dupilumab 6 個月以上適應症、過敏進行曲。依 2024 德國 S3 指引整理。":
+        "Infant/child (0-5 y) atopic dermatitis: bathing & moisturizing, topical steroid / TCI, allergy-test timing, dupilumab indication (≥6 months), atopic march. Per 2024 German S3 guideline.",
+    "EGFR 抑制劑痤瘡樣皮疹、乾皮症、甲溝炎、手足症 — 預防、評估與處置完整流程。":
+        "EGFR-inhibitor acneiform eruption, xerosis, paronychia, hand-foot syndrome — prevention, evaluation and management workflow.",
+    "病灶 5 階段、避免搔抓、溫和清潔、傷口照護、預防疤痕。":
+        "Lesion staging (5 phases), avoiding scratching, gentle cleansing, wound care, scar prevention.",
+    "反常性痤瘡、Hurley 分期、Adalimumab 健保 2024 給付、外科治療。":
+        "Acne inversa, Hurley staging, adalimumab Taiwan NHI 2024 coverage, surgical treatment.",
+    "72 小時黃金期、Shingrix vs Zostavax、皰疹後神經痛 PHN、年輕人為何也會得。附 dermatome 分布圖。":
+        "72-hour golden window, Shingrix vs Zostavax, postherpetic neuralgia (PHN), why young adults get it. Includes dermatome distribution diagram.",
+    "會自己好嗎？冷凍要打幾次？足底疣與雞眼怎麼分？HPV 疫苗對皮膚疣有幫助嗎？附 HPV 型別 × 部位對照圖。":
+        "Does it resolve on its own? How many cryotherapy sessions? Plantar wart vs corn? Does the HPV vaccine help cutaneous warts? Includes HPV type × location chart.",
+    "IL-17/23 抑制劑健保條件、乾癬性關節炎、心血管合併症、Methotrexate / Apremilast / Deucravacitinib 完整階梯。":
+        "Taiwan NHI criteria for IL-17/23 inhibitors, psoriatic arthritis, cardiovascular comorbidity, methotrexate / apremilast / deucravacitinib treatment ladder.",
+    "一定是吃到過敏的東西？反覆發作是免疫力差？抗組織胺會嗜睡上癮？會傳染家人？食物過敏原檢測有用？":
+        "Is it always food allergy? Are recurrent episodes a sign of weak immunity? Are antihistamines addictive or sedating? Is it contagious? Are food allergy tests useful?",
+    # Chip labels (categories / tags — many repeats)
+    "皮膚科": "Dermatology",
+    "處方 / 雷射": "Prescription / Laser",
+    "痘疤治療": "Acne scar treatment",
+    "處方用藥": "Prescription drugs",
+    "圓禿 / 鬼剃頭": "Alopecia areata",
+    "玫瑰斑 / 蠕形蟎蟲": "Rosacea / Demodex",
+    "白斑 / Vitiligo": "Vitiligo",
+    "外用類固醇": "Topical steroids",
+    "生物製劑": "Biologics",
+    "產品介紹": "Product guide",
+    "美白成分": "Brightening ingredients",
+    "常見問題": "FAQ",
+    "處方 / 手術": "Prescription / Surgery",
+    "粉瘤": "Epidermoid cyst",
+    "健保規範": "Taiwan NHI rules",
+    "處方治療": "Prescription treatment",
+    "雷射 / 光電": "Laser / Light",
+    "兒童異膚": "Pediatric eczema",
+    "標靶藥物副作用": "Targeted-therapy side effects",
+    "感染照護": "Infection care",
+    "猴痘 Mpox": "Monkeypox / Mpox",
+    "化膿性汗腺炎 HS": "Hidradenitis suppurativa (HS)",
+    "迷思澄清": "Myth busting",
+    "帶狀皰疹 / 皮蛇": "Shingles / Herpes zoster",
+    "病毒疣 / HPV": "Warts / HPV",
+    "完整衛教": "Full patient guide",
+    "乾癬": "Psoriasis",
+    "蕁麻疹": "Urticaria",
+}
+
+
+# Tags to which we will add data-en. We only target tag patterns where
+# the ZH content has no bilingual attribute yet.
+INTERESTING_TAGS = ("a", "h2", "h3", "span", "li", "p", "div", "summary", "option", "td", "th", "strong", "em", "figcaption")
+
+
+def add_data_en(html: str) -> tuple[str, int]:
+    """For each interesting tag with inner CJK that matches a TRANSLATIONS
+    key (after stripping leading <span> sibling tags), add `data-en="..."`
+    to that tag's open. Skip tags that already carry data-en.
+
+    Also fixes existing `data-en="<CJK>"` values where the data-en attribute
+    was authored as ZH placeholder text — replace its value with the EN
+    translation if the key is in TRANSLATIONS.
+
+    Returns (new_html, replacement_count).
+    """
+    count = 0
+
+    # Pre-pass: fix bogus data-en="<ZH>" values
+    for zh, en in TRANSLATIONS.items():
+        bogus_attr = f'data-en="{zh}"'
+        good_attr = f'data-en="{en}"'
+        if bogus_attr in html:
+            occ = html.count(bogus_attr)
+            html = html.replace(bogus_attr, good_attr)
+            count += occ
+
+    for zh, en in TRANSLATIONS.items():
+        if zh not in html:
+            continue
+        en_attr = f' data-en="{en}"'
+
+        # Case A: tag with inner-only text matching ZH exactly
+        # <tagX attrs>ZH</tagX>
+        pat_simple = re.compile(
+            r'<(' + '|'.join(INTERESTING_TAGS) + r')\b([^>]*?)>'
+            + re.escape(zh)
+            + r'</\1>',
+            re.IGNORECASE,
+        )
+
+        def repl_simple(m: re.Match) -> str:
+            nonlocal count
+            attrs = m.group(2)
+            if 'data-en=' in attrs:
+                return m.group(0)
+            count += 1
+            return f'<{m.group(1)}{attrs}{en_attr}>{zh}</{m.group(1)}>'
+
+        html = pat_simple.sub(repl_simple, html)
+
+        # Case B: tag with a leading <span...>...</span> sibling followed
+        # by ZH text (the topic-card <h2><span>N</span>ZH</h2> pattern)
+        pat_with_span = re.compile(
+            r'<(h2|h3)\b([^>]*?)>(<span[^>]*>[^<]*</span>)'
+            + re.escape(zh)
+            + r'</\1>',
+            re.IGNORECASE,
+        )
+
+        def repl_with_span(m: re.Match) -> str:
+            nonlocal count
+            attrs = m.group(2)
+            if 'data-en=' in attrs:
+                return m.group(0)
+            count += 1
+            return f'<{m.group(1)}{attrs}{en_attr}>{m.group(3)}{zh}</{m.group(1)}>'
+
+        html = pat_with_span.sub(repl_with_span, html)
+
+    return html, count
+
+
+def process(path: Path) -> int:
+    text = path.read_text(encoding='utf-8')
+    new_text, n = add_data_en(text)
+    if new_text != text:
+        path.write_text(new_text, encoding='utf-8')
+        print(f"  [WRITE] {path}: +{n} data-en attributes")
+    else:
+        print(f"  [SKIP]  {path}: no changes")
+    return n
+
+
+def main() -> int:
+    total = 0
+    # Hub pages first
+    hub_files = ["blog/topics.html", "blog/index.html"]
+    for rel in hub_files:
+        p = ROOT / rel
+        if not p.exists():
+            continue
+        total += process(p)
+    # Then all blog articles for common UI strings (lang option, chips, etc.)
+    blog_dir = ROOT / "blog"
+    if blog_dir.exists():
+        for p in sorted(blog_dir.glob("*.html")):
+            if p.name in {"topics.html", "index.html"}:
+                continue
+            total += process(p)
+    print(f"\nTotal: +{total} data-en attributes added.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

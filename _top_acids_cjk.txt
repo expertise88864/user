@@ -1,0 +1,52 @@
+"Language"><option value="zh">中文
+font-semibold"><span data-en="衛教 · 產品介紹"
+>衛教 · 產品介紹
+塗抹酸類完整衛教 —
+開架專櫃藥局滿滿的「酸」，有的拿來祛痘、有的拿來美白、有的拿來抗老。但成分標籤上 Retinol、Retinaldehyde、
+e、Azelaic、Glycolic、Salicylic… 看到頭暈。本篇用一張表把
+e major topical acids</strong>整理清楚，告訴你它們各自做什麼、適合誰、不能跟誰一起用、孕婦能不能用
+、用了會不會反黑爆痘。
+
+iv class="disclaimer"><strong>提醒 · 
+</strong>本文僅供衛教參考。是否用酸、用什麼濃度、合併用藥、停藥時機，請依您的皮膚科醫師個別判斷。皮膚屏障受損、嚴重發
+炎、剛做完雷射 / 換膚術後請暫停使用。
+
+id">Topical retinoid</strong>（處方）:Differin(Adapalene)、Stieva-A
+zelaic acid</strong>:Skinoren（處方 20%）、The Ordinary Azelaic 10%
+–12 weeks">4–12 weeks</strong>是常見起效時間。前 2-4 週可能
+e">“Purging” phase</strong> — 加速代謝把潛伏粉刺帶出來，堅持下去就好。長期用持續改善膚質、淡化痘印、減少粉刺。
+ht:1.85;color:#334155;flex:1">同一晚
+Avoid layering</strong>:A 酸 + 果酸/水楊酸、A 酸 + 維他命 C、A 酸 + 過氧化苯醯。可
+以隔夜輪用或
+g, retinoid at night</strong>（早上維他命 C，晚上 A 酸）。皮脂腺分泌多、油痘肌建議白天水楊酸、晚
+上 A 酸/A 醇 隔天輪用。
+tely contraindicated</strong>：外用 A 酸(Tretinoin、Adapalene、Tazar
+otene)、口服 A 酸(Isotretinoin)。
+ata-en="Avoid">Avoid</strong>：水楊酸(BHA)高濃度全臉、高濃度果酸。
+Permitted">Permitted</strong>：杜鵑花酸 Azelaic acid、低濃度果酸(Lactic、Gly
+colic 5-8%)、PHA、菸鹼醯胺、玻尿酸。
+eva-A、Tazarotene、Acnatac、Duac)健保有給付（需處方，診斷碼為痤瘡）。
+laic acid (Skinoren)</strong> 健保也有。果酸、水楊酸、A 醇都
+covered">Not covered</strong>（屬保養品/自費醫美）。
+li><strong>Trifarotene 0.005% 乳膏（Aklief）
+</strong>：第 4 代外用 A 酸，特別針對 RAR-γ 受體（皮膚最多的亞型），
+l (back, chest) acne</strong>。傳統 A 酸主要研究在臉，背痘有需要時可考慮。
+i><li><strong>Clascoterone 1% 乳膏（Winlevi）
+inhibitor</strong>，2020 年 FDA 核准。直接在毛囊皮脂腺局部抑制雄激素訊號 — 
+>works in both sexes</strong>，每天兩次，臉部全臉塗。對男性以前沒有外用抗雄選項的族群很重要。台灣目
+前尚未上市，可能需自費或透過代購。AAD 2024 列為 conditional recommendation（高品
+質證據，但成本是限制）。
+k" rel="noopener noreferrer">「來源」
+ast updated April 2026). NICE 第一線治療一致採「retinoid+BPO」、「retinoid+topic
+al antibiotic」固定複方，呼應 AAD 2024。
+k" rel="noopener noreferrer">「來源」
+k" rel="noopener noreferrer">「來源」
+k" rel="noopener noreferrer">「來源」
+k" rel="noopener noreferrer">「來源」
+k" rel="noopener noreferrer">「來源」
+k" rel="noopener noreferrer">「來源」
+k" rel="noopener noreferrer">「來源」
+ Retinoids &amp; Acid Actives 完整整理
+ext-[13px] text-ink-500 mt-2">同主題醫師版 — receptor selectivity、AHA pH
+/penetration、孕期安全表、retinoid dermatitis 處置。
+y font-bold text-[17px] mt-2">口服 A 酸完整衛教
