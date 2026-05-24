@@ -1,0 +1,18 @@
+WITH data-en: 95
+MISSING data-en: 154
+
+<p  class="mt-6 text-[15.5px] sm:text-[17px>'口服 A 酸</strong>（英文 Isotretinoin，商品名 Roaccutane / Acnotin / 羅可坦等）是治療<strong>中重度痘痘'
+<strong >'中重度痘痘'
+<strong >'唯一'
+<p >'口服 A 酸的學名叫做 <strong>Isotretinoin</strong>(13-cis-retinoic acid)，它是維他命 A 的衍生物，198'
+<em >'羅可坦 Roaccutane'
+<em >'艾諾汀 Acnotin'
+<em >'異維 A 酸'
+<p >'它是<strong>目前公認對中重度痘痘最有效的口服藥物</strong>，而且是唯一能同時對付痘痘四個成因的藥：'
+<strong >'目前公認對中重度痘痘最有效的口服藥物'
+<li >'<strong>皮脂腺縮小</strong> — 油就少了，粉刺與痘痘的「燃料」變少。'
+<strong >'皮脂腺縮小'
+<li >'<strong>毛孔角化正常化</strong> — 毛孔不再被角質塞住，粉刺自然減少。'
+<strong >'毛孔角化正常化'
+<li >'<strong>降低痤瘡桿菌</strong>(<em><em>Cutibacterium acnes</em></em>)— 因為皮脂變少，菌也跟著少。'
+<strong >'降低痤瘡桿菌'

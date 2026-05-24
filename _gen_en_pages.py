@@ -538,6 +538,63 @@ def set_meta(src: str, title: str, desc: str) -> str:
             count=1,
             flags=re.I,
         )
+    # 2026-05-24 — additional meta fields that previously kept ZH content in
+    # the /en/ mirror and showed up as raw CJK to GoogleBot + screen-readers.
+    # All replace ALL occurrences (count not capped) because OG/twitter pairs
+    # often appear twice (open-graph block + dn-og-extras block).
+    EN_AUTHOR = 'Dr. Yi-Jia Chen · ChenDermatologist'
+    EN_AUTHOR_NAME = 'Dr. Yi-Jia Chen'
+    # author meta — replace ZH "陳翊嘉醫師 · ChenDermatologist" forms.
+    src = re.sub(
+        r'(<meta\s+name="author"\s+content=")[^"]*(")',
+        lambda m: m.group(1) + html_lib.escape(EN_AUTHOR, quote=True) + m.group(2),
+        src,
+        flags=re.I,
+    )
+    # twitter:data2 = "Written by" value — canonical EN author name.
+    src = re.sub(
+        r'(<meta\s+name="twitter:data2"\s+content=")[^"]*(")',
+        lambda m: m.group(1) + html_lib.escape(EN_AUTHOR_NAME, quote=True) + m.group(2),
+        src,
+        flags=re.I,
+    )
+    # og:image:alt + twitter:image:alt — use article EN title as alt text.
+    for field in ('og:image:alt', 'twitter:image:alt'):
+        src = re.sub(
+            rf'(<meta\s+(?:property|name)="{re.escape(field)}"\s+content=")[^"]*(")',
+            lambda m: m.group(1) + html_lib.escape(title, quote=True) + m.group(2),
+            src,
+            flags=re.I,
+        )
+    # article:tag — articles typically have TWO `<meta property="article:tag">`
+    # entries (ZH + EN). On the EN mirror strip the ZH one (any tag whose
+    # content contains CJK characters). Run twice to handle adjacent matches.
+    cjk_tag_re = re.compile(
+        r'<meta\s+property="article:tag"\s+content="[^"]*[一-鿿][^"]*"\s*/?>\s*',
+        re.I,
+    )
+    for _ in range(3):
+        new = cjk_tag_re.sub('', src)
+        if new == src:
+            break
+        src = new
+    # name="keywords" — comma-separated list often mixes ZH + EN keywords.
+    # Drop the CJK-bearing entries, keep the EN ones. If nothing EN survives,
+    # fall back to a minimal generic list (Google ignores meta keywords for
+    # ranking, but lint/auditors flag CJK in /en/).
+    def _clean_keywords(m: re.Match) -> str:
+        content = m.group(2)
+        parts = [k.strip() for k in content.split(',')]
+        en_parts = [k for k in parts if k and not re.search(r'[一-鿿]', k)]
+        if not en_parts:
+            en_parts = ['dermatology', 'patient education']
+        return m.group(1) + ', '.join(en_parts) + m.group(3)
+    src = re.sub(
+        r'(<meta\s+name="keywords"\s+content=")([^"]*)(")',
+        _clean_keywords,
+        src,
+        flags=re.I,
+    )
     return src
 
 
