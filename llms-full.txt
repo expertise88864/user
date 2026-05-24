@@ -142,7 +142,7 @@ Mahajan 等人(Brigham & Women's Hospital, Harvard)2026 年 6 月發表的橫斷
 ---
 ## 白斑停藥後會復發嗎？維持治療與復發風險評估
 URL: https://chendermatologist.com/blog/vitiligo-maintenance-clinical
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Research Summary
 Reading time: PT19M
 Tags: 白斑復發, Vitiligo relapse
@@ -300,7 +300,7 @@ BSA < 5% / 5–10% / > 10%
 ---
 ## 打瘦瘦針會掉頭髮嗎？2026 兩篇 TriNetX 大型研究的雙向解答
 URL: https://chendermatologist.com/blog/semaglutide-hair-loss
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Research Summary
 Reading time: PT20M
 Tags: GLP-1 與落髮, GLP-1 & hair loss
@@ -1677,7 +1677,7 @@ Wang YP et al. 2018; Lin HP et al. 201915,16
 ---
 ## 皮膚切片與腫瘤切除手術完整衛教 — 為什麼要切？怎麼切？術後怎麼照顧？
 URL: https://chendermatologist.com/blog/skin-biopsy-excision
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT14M
 Tags: 處置 / 手術, Skin biopsy & excision
@@ -2054,7 +2054,7 @@ NT$ 3,000-8,000（依大小／部位）
 ---
 ## 乾癬完整衛教 — 分型、嚴重度、誘發因子
 URL: https://chendermatologist.com/blog/psoriasis-overview
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT6M
 Tags: 乾癬, Psoriasis overview
@@ -2229,7 +2229,7 @@ UpToDate: Chronic plaque psoriasis in adults: Overview of management. Accessed 2
 ---
 ## 乾癬外用藥治療 — 類固醇、維生素 D、特殊部位
 URL: https://chendermatologist.com/blog/psoriasis-topical
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 乾癬, Psoriasis topical
@@ -2434,7 +2434,7 @@ Stein Gold L, Lebwohl M, Sugarman J, et al. Calcipotriene/betamethasone dipropio
 ---
 ## 乾癬全身性治療 — 光療、口服、生物製劑
 URL: https://chendermatologist.com/blog/psoriasis-systemic
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 乾癬, Psoriasis systemic
@@ -2850,7 +2850,7 @@ Ustekinumab（Stelara®）是第一代「IL-23 路徑」抑制劑、靶向 IL-12
 ---
 ## 乾癬合併症與特殊族群 — PsA、心血管、懷孕、兒童、指甲、紅皮症
 URL: https://chendermatologist.com/blog/psoriasis-special-populations
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 乾癬, Psoriasis special populations
@@ -3084,7 +3084,7 @@ Bachelez H, Choon SE, Marrakchi S, et al. Trial of spesolimab for generalized pu
 ---
 ## 異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏
 URL: https://chendermatologist.com/blog/atopic-dermatitis-topical
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 異位性皮膚炎, AD topical
@@ -3264,7 +3264,7 @@ Papier A, Strowd LC. Atopic dermatitis: a review of topical nonsteroid therapy. 
 ---
 ## 異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療
 URL: https://chendermatologist.com/blog/atopic-dermatitis-systemic
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT10M
 Tags: 異位性皮膚炎, AD systemic
@@ -3624,7 +3624,7 @@ Drucker AM, Morra DE, Prieto-Merino D, et al. Systemic immunomodulatory treatmen
 ---
 ## 異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染
 URL: https://chendermatologist.com/blog/atopic-dermatitis-special-populations
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 異位性皮膚炎, AD special populations
@@ -3830,7 +3830,7 @@ UpToDate: Management of severe, refractory atopic dermatitis (eczema) in infants
 ---
 ## 接觸性皮膚炎(過敏 vs 刺激)完整衛教
 URL: https://chendermatologist.com/blog/contact-dermatitis
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 接觸性皮膚炎, Contact dermatitis
@@ -4090,7 +4090,7 @@ UpToDate: Common allergens in allergic contact dermatitis. Accessed 2026.
 ---
 ## 日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教
 URL: https://chendermatologist.com/blog/actinic-keratosis-scc
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT10M
 Tags: 皮膚癌, AK / SCC
@@ -4382,7 +4382,7 @@ AAD JAAD cutaneous SCC management
 ---
 ## 痘痘 8 大迷思
 URL: https://chendermatologist.com/blog/acne-myths
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 痘痘, Acne
@@ -4457,7 +4457,7 @@ UpToDate: Acne vulgaris: Overview of management. Accessed 2026. 「來源」
 ---
 ## 蕁麻疹 6 大迷思
 URL: https://chendermatologist.com/blog/urticaria-myths
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Myths & Facts
 Reading time: PT13M
 Tags: 蕁麻疹, Urticaria
@@ -4591,7 +4591,7 @@ Comorbidities（共病）：甲狀腺、自體免疫、代謝、心理（見上�
 ---
 ## 乾癬 7 大迷思
 URL: https://chendermatologist.com/blog/psoriasis-myths
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Myths & Facts
 Reading time: PT12M
 Tags: 乾癬, Psoriasis
@@ -4766,7 +4766,7 @@ Menter A, et al. Joint AAD-NPF guidelines of care for the management of psoriasi
 ---
 ## 外用酸類完整衛教
 URL: https://chendermatologist.com/blog/topical-acids-patient
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Products & Drugs
 Reading time: PT8M
 Tags: 酸類, Topical acids
@@ -4973,7 +4973,7 @@ Bakuchiol（補骨脂酚）
 ---
 ## 口服 A 酸完整衛教
 URL: https://chendermatologist.com/blog/isotretinoin-patient
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 口服 A 酸, Isotretinoin
@@ -5169,7 +5169,7 @@ A 酸要怎麼吃？空腹還是飯後？
 ---
 ## 痘疤完整治療指引
 URL: https://chendermatologist.com/blog/acne-scar-treatment
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 痘疤, Acne scars
@@ -5324,7 +5324,7 @@ UpToDate: Treatment of acne scars. Accessed 2026. 「來源」
 ---
 ## 白斑（Vitiligo）完整衛教
 URL: https://chendermatologist.com/blog/vitiligo
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 白斑, Vitiligo
@@ -5582,7 +5582,7 @@ TDA 2024 共識聲明 16:狀態穩定的白斑病灶可使用手術方式治療�
 ---
 ## 皮膚科常用藥物健保規範完整整理
 URL: https://chendermatologist.com/blog/nhi-derm-drugs
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT13M
 Tags: 健保規範, NHI rules
@@ -5994,7 +5994,7 @@ NT$ 1,800-2,500/條(30g)
 ---
 ## 結節性癢疹完整衛教
 URL: https://chendermatologist.com/blog/prurigo-nodularis
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT6M
 Tags: 結節性癢疹, Prurigo Nodularis
@@ -6176,7 +6176,7 @@ UpToDate: Prurigo nodularis. Accessed 2026.
 ---
 ## 皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教
 URL: https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 皮膚淋巴瘤, CTCL / MF
@@ -6361,7 +6361,7 @@ UpToDate: Treatment of mycosis fungoides. Accessed 2026.
 ---
 ## 皮膚科 25 個最常見問題
 URL: https://chendermatologist.com/blog/dermatology-faq
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Myths & Facts
 Reading time: PT12M
 Tags: 常見問題, FAQ
@@ -6584,7 +6584,7 @@ Tri-Luma 三合一
 ---
 ## 粉瘤完整衛教
 URL: https://chendermatologist.com/blog/epidermoid-cyst
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 粉瘤, Epidermoid cyst
@@ -6812,7 +6812,7 @@ UpToDate: Cutaneous cysts overview — Epidermoid, pilar, and other cysts. Acces
 ---
 ## 皮膚科雷射完整對照
 URL: https://chendermatologist.com/blog/laser-dermatology
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT12M
 Tags: 雷射 / 光電, Laser dermatology
@@ -7243,7 +7243,7 @@ cyclosporine 環孢素使用者不建議併用 UV 治療（包含 308 nm 準分�
 ---
 ## 嬰幼兒 / 兒童異位性皮膚炎完整照護指南
 URL: https://chendermatologist.com/blog/pediatric-eczema
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT12M
 Tags: 異位性皮膚炎, Atopic dermatitis
@@ -7463,7 +7463,7 @@ EAT trial (Perkin et al., NEJM 2016)
 ---
 ## 病毒疣 6 大迷思
 URL: https://chendermatologist.com/blog/warts-myths
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Myths & Facts
 Reading time: PT7M
 Tags: 病毒疣, Warts
@@ -7611,7 +7611,7 @@ UpToDate: Cutaneous warts: Treatment. Accessed 2026. 「來源」
 ---
 ## 帶狀皰疹 6 大迷思
 URL: https://chendermatologist.com/blog/shingles-myths
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Myths & Facts
 Reading time: PT7M
 Tags: 皮蛇, Shingles
@@ -7773,7 +7773,7 @@ UpToDate: Treatment of herpes zoster in the immunocompetent host. Accessed 2026.
 ---
 ## 圓禿（鬼剃頭）完整衛教
 URL: https://chendermatologist.com/blog/alopecia-areata
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT15M
 Tags: 圓禿, Alopecia areata
@@ -7972,7 +7972,7 @@ Ciclosporin（環孢素）：2.5-5 mg/kg/day 分 2 次，建議短療程，最�
 ---
 ## 猴痘（Mpox）皮膚照護
 URL: https://chendermatologist.com/blog/mpox-care
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 猴痘, Mpox
@@ -8074,7 +8074,7 @@ UpToDate: Mpox (Monkeypox) virus infection: Clinical manifestations and diagnosi
 ---
 ## 化膿性汗腺炎（HS）完整衛教
 URL: https://chendermatologist.com/blog/hidradenitis-suppurativa
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 化膿性汗腺炎, HS
@@ -8317,7 +8317,7 @@ HS 跟克隆氏症有關嗎？
 ---
 ## 標靶藥物（TKI）皮膚副作用
 URL: https://chendermatologist.com/blog/targeted-therapy-skin
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 標靶藥物, Targeted therapy skin
@@ -8487,7 +8487,7 @@ UpToDate: Acneiform eruption secondary to epidermal growth factor receptor (EGFR
 ---
 ## 外用類固醇完整指南
 URL: https://chendermatologist.com/blog/topical-steroids-guide
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 外用類固醇, Topical steroids
@@ -8746,7 +8746,7 @@ UpToDate: General principles of dermatologic therapy and topical corticosteroid 
 ---
 ## 皮膚科生物製劑與小分子標靶藥物總覽
 URL: https://chendermatologist.com/blog/biologics-overview
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 生物製劑, Biologics
@@ -9073,7 +9073,7 @@ NT$ 4,000-6,000/條(60g)
 ---
 ## 美白成分完整解析
 URL: https://chendermatologist.com/blog/skin-whitening-agents
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Products & Drugs
 Reading time: PT8M
 Tags: 美白, Whitening agents
@@ -9371,7 +9371,7 @@ UpToDate: Melasma — Management. Accessed 2026.
 ---
 ## 防曬 8 大迷思
 URL: https://chendermatologist.com/blog/sunscreen-myths
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Myths & Facts
 Reading time: PT6M
 Tags: 防曬, Sunscreen
@@ -9437,7 +9437,7 @@ UpToDate: Selection of sunscreen and sun-protective measures. 「來源」
 ---
 ## 肝斑 7 大迷思
 URL: https://chendermatologist.com/blog/melasma-myths
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 肝斑, Melasma
@@ -9557,7 +9557,7 @@ UpToDate: Melasma: Management. Accessed 2026.
 ---
 ## 玫瑰痤瘡 6 大迷思
 URL: https://chendermatologist.com/blog/rosacea-myths
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Myths & Facts
 Reading time: PT17M
 Tags: 酒糟肌, Rosacea
@@ -9697,7 +9697,7 @@ Schaller 2020 重度玫瑰斑組合療法：外用 Ivermectin 1% qd ＋ 口服�
 ---
 ## 落髮 / 雄性禿 7 大迷思
 URL: https://chendermatologist.com/blog/hairloss-myths
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 落髮, Hair loss
@@ -9821,7 +9821,7 @@ UpToDate: Treatment of androgenetic alopecia in men. Accessed 2026. 「來源」
 ---
 ## 香港腳 / 灰指甲 7 大迷思
 URL: https://chendermatologist.com/blog/tinea-myths
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Myths & Facts
 Reading time: PT9M
 Tags: 足癬, Tinea
@@ -9968,7 +9968,7 @@ UpToDate: Onychomycosis: Management. Accessed 2026. 「來源」
 ---
 ## 異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思
 URL: https://chendermatologist.com/blog/atopic-dermatitis-overview
-Updated: 2026-05-23
+Updated: 2026-05-24
 Section: Treatment & Therapy
 Reading time: PT32M
 Tags: 異位性皮膚炎, AD complete guide
