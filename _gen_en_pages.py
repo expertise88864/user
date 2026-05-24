@@ -200,15 +200,47 @@ class DataEnRenderer(HTMLParser):
         return ''.join(self.out)
 
 
+def _translate_svg_text(svg_block: str) -> str:
+    """Translate <text> elements inside an SVG that carry data-en.
+
+    The main `apply_data_en` STASHES SVG blocks to keep their bytes intact
+    (HTMLParser would lowercase tags like linearGradient). But that means
+    `<text data-en="...">Chinese</text>` inside SVG never gets translated
+    when we want a static EN mirror. This helper does a targeted swap on
+    just `<text>` elements: keeps the attrs, swaps inner content with
+    data-en value. SVG-other tags untouched.
+    """
+    def repl(m: re.Match[str]) -> str:
+        attrs = m.group('attrs')
+        inner = m.group('inner')
+        de = re.search(r'data-en="([^"]*)"', attrs)
+        if not de:
+            return m.group(0)
+        en = de.group(1)
+        # Re-escape lone '<' for html5validator
+        en = re.sub(r'<(?![a-zA-Z!/?])', '&lt;', en)
+        return f'<text{attrs}>{en}</text>'
+
+    return re.sub(
+        r'<text(?P<attrs>[^>]*\bdata-en="[^"]*"[^>]*)>(?P<inner>[^<]+)</text>',
+        repl,
+        svg_block,
+    )
+
+
 def apply_data_en(src: str) -> str:
     protected: list[str] = []
 
     def stash(match: re.Match[str]) -> str:
-        protected.append(match.group(0))
+        # Pre-translate <text data-en> inside the SVG before stashing.
+        block = _translate_svg_text(match.group(0))
+        protected.append(block)
         return f'__DN_EN_PROTECTED_BLOCK_{len(protected) - 1}__'
 
     # HTMLParser lowercases foreign-content end tags such as linearGradient.
     # Keep SVG/script/style bytes intact and only render bilingual HTML around them.
+    # 2026-05-24 — but BEFORE stashing SVG, swap any `<text data-en>` inner
+    # content with the EN value so EN mirror figures show English labels.
     guarded = re.sub(r'<(svg|script|style)\b[\s\S]*?</\1>', stash, src, flags=re.I)
     rendered = DataEnRenderer().render(guarded)
     for index, block in enumerate(protected):
