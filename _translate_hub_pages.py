@@ -191,6 +191,66 @@ TRANSLATIONS: dict[str, str] = {
     "完整衛教": "Full patient guide",
     "乾癬": "Psoriasis",
     "蕁麻疹": "Urticaria",
+    # Common chip-label pairs (compound categories)
+    "衛教 · 產品介紹": "Patient guide · Product overview",
+    "衛教 · 痘痘": "Patient guide · Acne",
+    "衛教 · 痘疤": "Patient guide · Acne scars",
+    "衛教 · 防曬": "Patient guide · Sunscreen",
+    "衛教 · 處方藥": "Patient guide · Prescription",
+    "衛教 · 處方治療": "Patient guide · Prescription treatment",
+    "衛教 · 雷射": "Patient guide · Laser",
+    "衛教 · 圓禿": "Patient guide · Alopecia areata",
+    "衛教 · 玫瑰斑": "Patient guide · Rosacea",
+    "衛教 · 白斑": "Patient guide · Vitiligo",
+    "衛教 · 兒童異膚": "Patient guide · Pediatric eczema",
+    "衛教 · 標靶副作用": "Patient guide · Targeted-therapy SE",
+    "衛教 · 帶狀皰疹": "Patient guide · Shingles",
+    "衛教 · 病毒疣": "Patient guide · Warts",
+    "衛教 · 乾癬": "Patient guide · Psoriasis",
+    "衛教 · 蕁麻疹": "Patient guide · Urticaria",
+    "衛教 · 異膚": "Patient guide · Atopic dermatitis",
+    "衛教 · 香港腳": "Patient guide · Athlete's foot",
+    "衛教 · 黴菌感染": "Patient guide · Fungal infections",
+    "衛教 · 健保規範": "Patient guide · Taiwan NHI rules",
+    "衛教 · 完整衛教": "Patient guide · Complete",
+    "衛教 · 處方手術": "Patient guide · Prescription & surgery",
+    "衛教 · 美白成分": "Patient guide · Brightening ingredients",
+    "衛教 · 常見問題": "Patient guide · FAQ",
+    "處方 · 外用類固醇": "Prescription · Topical steroid",
+    "處方 · 生物製劑": "Prescription · Biologics",
+    "處方 · 處方用藥": "Prescription drugs",
+    "處方 · 化膿性汗腺炎": "Prescription · Hidradenitis suppurativa",
+    "處方 · 標靶藥物副作用": "Prescription · TKI cutaneous SE",
+    "處方 · 猴痘": "Prescription · Monkeypox",
+    "處方 · 兒童異膚": "Prescription · Pediatric eczema",
+    "處方 · 雷射": "Prescription · Laser",
+    # Reference link text
+    "來源": "Source",
+    "「來源」": "[Source]",
+    "[來源]": "[Source]",
+    # Date / category prefix patterns (from card chips like "2026-05-07")
+    "口服 A 酸 · 2026-05-07": "Oral isotretinoin · 2026-05-07",
+    "美白 · 2026-05-04": "Brightening · 2026-05-04",
+    "痘痘 · 2026-05-07": "Acne · 2026-05-07",
+    "痘疤 · 2026-05-07": "Acne scar · 2026-05-07",
+    # Hero / lead sentence (topical-acids-patient)
+    "塗抹酸類完整衛教 — A 酸、A 醇、杜鵑花酸、果酸、水楊酸、PHA":
+        "Complete patient guide to topical acids — retinoids, retinol, azelaic, AHA, BHA, PHA",
+    "開架專櫃藥局滿滿的「酸」，有的拿來祛痘、有的拿來美白、有的拿來抗老。但成分標籤上 Retinol、Retinaldehyde、Tretinoin、Adapalene、Azelaic、Glycolic、Salicylic… 看到頭暈。本篇用一張表把":
+        "Pharmacies and beauty counters are full of \"acids\" — some for acne, some for brightening, some for anti-aging. But the ingredient list (Retinol, Retinaldehyde, Tretinoin, Adapalene, Azelaic, Glycolic, Salicylic…) is dizzying. This article uses a single table to lay out",
+    "整理清楚，告訴你它們各自做什麼、適合誰、不能跟誰一起用、孕婦能不能用、用了會不會反黑爆痘。":
+        "clearly: what each does, who it suits, what not to combine with, pregnancy safety, and whether it causes purging or rebound pigmentation.",
+    # Disclaimer / Notice strings
+    "提醒 · ": "Reminder · ",
+    "本文僅供衛教參考。是否用酸、用什麼濃度、合併用藥、停藥時機，請依您的皮膚科醫師個別判斷。皮膚屏障受損、嚴重發炎、剛做完雷射 / 換膚術後請暫停使用。":
+        "This article is for general education only. Whether to use acids, what concentration, combined use, and timing of discontinuation should be individually assessed by your dermatologist. Pause use if your skin barrier is compromised, severely inflamed, or recently treated with laser / peel.",
+    # Card descriptions on related articles
+    "Topical Retinoids &amp; Acid Actives 完整整理":
+        "Topical Retinoids &amp; Acid Actives — full clinical write-up",
+    "同主題醫師版 — receptor selectivity、AHA pH/penetration、孕期安全表、retinoid dermatitis 處置。":
+        "Same topic, clinician version — receptor selectivity, AHA pH/penetration, pregnancy safety table, retinoid dermatitis management.",
+    "中重度痘痘可能需要進階到口服 A 酸 — 全衛教在這篇。":
+        "Moderate-to-severe acne may need to step up to oral isotretinoin — full guide here.",
 }
 
 
