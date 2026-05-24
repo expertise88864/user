@@ -257,23 +257,34 @@ def prefer_static_english_blocks(src: str) -> str:
     in-place data-zh/data-en swapping inside `proseZh`. For those, KEEP the
     proseZh body — apply_data_en will rewrite each tagged element below.
     Detect via empty-or-whitespace-only proseEn block.
+
+    Accepts both legacy `class="prose"` and bilingual `class="prose-zh"` /
+    `class="prose-en"` wrappers (2026-05-24 — older regex missed bilingual
+    articles like isotretinoin-patient, leaving 2300+ CJK chars visible on
+    the EN mirror's proseZh block while the fully-translated proseEn block
+    stayed hidden via display:none).
     """
 
     proseEn_empty = re.search(
-        r'<div\s+id="proseEn"\s+class="prose"[^>]*>\s*</div>',
+        r'<div\s+id="proseEn"\s+class="prose(?:-en)?"[^>]*>\s*</div>',
         src,
         flags=re.I,
     )
     if not proseEn_empty:
+        # Drop entire proseZh block (replace with empty) AND strip the
+        # display:none from proseEn so it becomes the visible body. Two-step
+        # rewrite, accepting both legacy `prose` and bilingual `prose-zh|en`.
+        # Step 1: remove the proseZh content.
         src = re.sub(
-            r'<div\s+id="proseZh"\s+class="prose">[\s\S]*?(<div\s+id="proseEn"\s+class="prose")\s+style="display:none"',
-            r'\1',
+            r'<div\s+id="proseZh"\s+class="prose(?:-zh)?">[\s\S]*?(?=<div\s+id="proseEn"\s+class="prose(?:-en)?")',
+            '',
             src,
             count=1,
             flags=re.I,
         )
+        # Step 2: unhide proseEn (strip the inline display:none if present).
         src = re.sub(
-            r'<div\s+id="proseZh"\s+class="prose">[\s\S]*?(<div\s+id="proseEn"\s+class="prose")',
+            r'(<div\s+id="proseEn"\s+class="prose(?:-en)?")\s+style="display:none;?"',
             r'\1',
             src,
             count=1,
