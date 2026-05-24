@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v140';
-const RUNTIME = 'cd-runtime-v138';
+const CACHE = 'cd-v141';
+const RUNTIME = 'cd-runtime-v139';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
 // Popular articles getting evicted after ~5 navigations caused repeat-
@@ -100,29 +100,42 @@ self.addEventListener('fetch', (e) => {
   // Bypass the SW reset page so it can talk to the SW directly
   if (url.pathname === '/reset-sw' || url.pathname === '/reset-sw.html') return;
 
-  // Network-first for HTML navigation (changed from stale-while-revalidate
-  // because SWR was serving stale HTML referencing old `?v=...` cache-busted
-  // assets even after a deploy, causing site to break for hours after release).
-  // Cache only used as offline fallback. Redirect responses are NEVER cached
-  // (they previously caused redirect-loop ERR_FAILED on /blog/).
+  // Stale-while-revalidate for HTML navigation.
+  // 2026-05-24 — switched from network-first to SWR to cut Vercel Edge
+  // Requests (was ~31k/day, hitting 75% of free-tier 1M/month at day 24).
+  // Safety against stale HTML referencing old `?v=...` assets: every
+  // deploy that changes asset references MUST bump CACHE_VERSION above —
+  // the `activate` handler purges old caches, so SWR never serves HTML
+  // from a previous deploy generation. Within the same cache generation,
+  // ?v= strings are identical, so SWR cannot cause asset/HTML mismatch.
+  // Redirect responses are NEVER cached (they previously caused
+  // redirect-loop ERR_FAILED on /blog/).
   if (req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html')) {
-    e.respondWith(
-      fetchWithRetry(req)
+    e.respondWith((async () => {
+      const cache = await caches.open(CACHE);
+      const cached = await cache.match(req);
+
+      // Background revalidate — fires regardless of cache hit so the
+      // NEXT visit gets fresh content. Errors swallowed so offline
+      // visits still resolve to the cached copy.
+      const networkPromise = fetchWithRetry(req)
         .then((resp) => {
-          // Only cache successful, non-redirected, non-opaque responses
           if (resp && resp.ok && !resp.redirected && resp.type === 'basic') {
-            const copy = resp.clone();
-            // CODE_REVIEW — cap HTML cache same as runtime to avoid
-            // unbounded growth for long-tail readers (≥100 articles).
-            caches.open(CACHE).then((c) => {
-              c.put(req, copy);
-              trimCache(CACHE, HTML_CACHE_MAX_ENTRIES);
-            });
+            cache.put(req, resp.clone());
+            trimCache(CACHE, HTML_CACHE_MAX_ENTRIES);
           }
           return resp;
         })
-        .catch(() => caches.match(req).then((c) => c || caches.match('/offline.html').then((o) => o || caches.match('/'))))
-    );
+        .catch(() => null);
+
+      // Serve cached HTML immediately if we have it (the SWR win).
+      // First-ever visit to this URL waits for network.
+      if (cached) return cached;
+      const fresh = await networkPromise;
+      if (fresh) return fresh;
+      // Offline + no cache for this URL → fallback chain.
+      return (await cache.match('/offline.html')) || (await cache.match('/'));
+    })());
     return;
   }
 
