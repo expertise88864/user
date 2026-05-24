@@ -29,7 +29,13 @@
     document.cookie = name + '=' + encodeURIComponent(val) + '; expires=' + exp + '; path=/; SameSite=Lax';
   };
 
+  // URL is the source of truth for which language the user is currently
+  // viewing. /en/* paths serve pre-translated mirrors; everything else
+  // is ZH. Cookie/localStorage are only consulted when there's no URL
+  // hint (e.g., first-time visitor on the homepage redirected to /).
   DN.detectLang = function () {
+    if (location.pathname.startsWith('/en/') ||
+        location.pathname === '/en') return 'en';
     const fromCookie = DN.cookieGet('dn_lang');
     if (fromCookie && DN.LANG_KEY[fromCookie]) return fromCookie;
     const stored = localStorage.getItem('dn_lang');
@@ -136,17 +142,51 @@
 
 
 
+  // 2026-05-24 — Switched from in-place `applyTextOnly()` swap to full
+  // navigation between /<path> and /en/<path>. The in-place swap only
+  // translated elements with `data-en` attributes (typically 30-70% of
+  // article body) which left H2/H3/FAQ/SVG/related-articles in Chinese
+  // when viewing the "EN" version. Navigating to the pre-translated
+  // /en/ mirror gives 100% English content (the mirror is built by
+  // _gen_en_pages.py from the ZH source with full translation pipeline).
   DN.bindLangToggle = function (onChange) {
     const toggle = document.getElementById('langToggle');
     if (!toggle) return;
+
+    function targetUrlFor(lang) {
+      const path = location.pathname;
+      const isCurrentlyEn = path.startsWith('/en/') || path === '/en';
+      if (lang === 'en' && !isCurrentlyEn) {
+        // Add /en prefix. Handle root '/' specially (→ '/en').
+        const newPath = path === '/' ? '/en' : '/en' + path;
+        return newPath + location.search + location.hash;
+      }
+      if (lang === 'zh' && isCurrentlyEn) {
+        // Strip /en prefix. '/en' or '/en/' → '/'.
+        let newPath = path.replace(/^\/en(?=\/|$)/, '') || '/';
+        if (!newPath.startsWith('/')) newPath = '/' + newPath;
+        return newPath + location.search + location.hash;
+      }
+      return null;  // already on correct lang, no-op
+    }
+
+    function switchTo(lang) {
+      if (!DN.LANG_KEY[lang]) return;
+      DN.setLang(lang);
+      const target = targetUrlFor(lang);
+      if (target) {
+        location.href = target;
+      } else if (typeof onChange === 'function') {
+        // Same language — call onChange but skip navigation
+        onChange(lang);
+      }
+    }
+
     // Dropdown form: <select id="langToggle">
     if (toggle.tagName === 'SELECT') {
       toggle.value = DN.detectLang();
       toggle.addEventListener('change', function () {
-        const lang = toggle.value;
-        if (!DN.LANG_KEY[lang]) return;
-        DN.setLang(lang);
-        if (typeof onChange === 'function') onChange(lang);
+        switchTo(toggle.value);
       });
       return;
     }
@@ -157,11 +197,8 @@
     }
     buttons.forEach(function (btn) {
       btn.addEventListener('click', function () {
-        const lang = btn.dataset.lang;
-        if (!DN.LANG_KEY[lang]) return;
-        DN.setLang(lang);
-        syncActive(lang);
-        if (typeof onChange === 'function') onChange(lang);
+        switchTo(btn.dataset.lang);
+        syncActive(btn.dataset.lang);
       });
     });
     syncActive(DN.detectLang());
