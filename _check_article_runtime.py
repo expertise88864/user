@@ -51,6 +51,18 @@ PROSE_WRAPPER_RE = re.compile(
     r'<div\b[^>]*\b(?:id="prose(?:Zh|En)"|class="[^"]*\bprose(?:-zh|-en|\b)[^"]*")',
     re.IGNORECASE,
 )
+# .prose-zh ul / .prose-en ul rule MUST set list-style (disc / decimal / etc).
+# Without it, Tailwind Preflight in tw-mini.css resets ul to list-style:none —
+# bullets vanish and lead-in lines like "病灶準備技巧:" / "Phase III RCT 結果:"
+# flow visually into the items below as one undifferentiated block of text.
+# (2026-05-24 — PDT, semaglutide-hair-loss, vitiligo-maintenance-clinical all
+# shipped with this bug. User explicitly complained "段落分行符號都消失了".)
+PROSE_UL_RE = re.compile(
+    r'\.prose-zh\s+ul[^{]*\{[^}]*\}', re.IGNORECASE
+)
+PROSE_UL_LIST_STYLE_RE = re.compile(
+    r'\.prose-zh\s+ul[^{]*\{[^}]*\blist-style\b', re.IGNORECASE
+)
 
 
 def check_article(path: Path) -> list[str]:
@@ -76,6 +88,15 @@ def check_article(path: Path) -> list[str]:
     # styling and look like body text.
     if rel not in PROSE_WRAPPER_LEGACY_SKIP and not PROSE_WRAPPER_RE.search(text):
         errs.append(f"{rel}: missing <div id=\"proseZh\" class=\"prose-zh\"> (or proseEn/prose-en) wrapper")
+    # If the article defines its own .prose-zh ul rule, it MUST also set
+    # list-style (otherwise Tailwind preflight wins and bullets vanish).
+    # Articles that don't define any .prose-zh ul rule fall through to the
+    # global stylesheet, which IS allowed — only flag the half-defined case.
+    if PROSE_UL_RE.search(text) and not PROSE_UL_LIST_STYLE_RE.search(text):
+        errs.append(
+            f"{rel}: .prose-zh ul rule is missing `list-style` — tw-mini.css "
+            f"preflight will hide bullets. Add `list-style:disc outside;`."
+        )
     # Order check: related-articles <nav> must come BEFORE <footer>, not
     # after. If after, the related-articles section appears at the very
     # bottom of the page (below the dark footer) which looks like a
