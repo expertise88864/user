@@ -38,18 +38,45 @@ RUNTIME_RE = re.compile(
 # blog/index.html and blog/topics.html load it themselves elsewhere
 SKIP_FILES = {"blog/index.html", "blog/topics.html"}
 
+# Legacy articles whose structure pre-dates the proseZh / prose-zh wrapper
+# requirement (they have their own bespoke CSS). Skip the prose-wrapper
+# check for these. The blog-shared.min.js check still applies.
+PROSE_WRAPPER_LEGACY_SKIP = {"blog/atopic-dermatitis-overview.html"}
 
-def check_article(path: Path) -> str | None:
+
+ARTICLE_WRAPPER_RE = re.compile(
+    r'<article\b[^>]*class="[^"]*\bmax-w-3xl\b[^"]*"', re.IGNORECASE
+)
+PROSE_WRAPPER_RE = re.compile(
+    r'<div\b[^>]*\b(?:id="prose(?:Zh|En)"|class="[^"]*\bprose(?:-zh|-en|\b)[^"]*")',
+    re.IGNORECASE,
+)
+
+
+def check_article(path: Path) -> list[str]:
     rel = path.relative_to(ROOT).as_posix()
     if rel in SKIP_FILES:
-        return None
+        return []
     text = path.read_text(encoding="utf-8", errors="replace")
     # Skip if noindex (admin / placeholder pages may not need the runtime)
     if re.search(r'<meta\s+name="robots"\s+content="[^"]*noindex', text, re.I):
-        return None
+        return []
+    errs = []
     if not RUNTIME_RE.search(text):
-        return f"{rel}: missing <script src=\"/blog/blog-shared(.min).js\">"
-    return None
+        errs.append(f"{rel}: missing <script src=\"/blog/blog-shared(.min).js\">")
+    # The <article class="max-w-3xl"> is the hook for blog-article-footer.js
+    # (7 inject functions all use document.querySelector('article.max-w-3xl')).
+    # Without it the related-articles, share toolbar, author bio, etc. all
+    # silently fail to render.
+    if not ARTICLE_WRAPPER_RE.search(text):
+        errs.append(f"{rel}: missing <article class=\"max-w-3xl ...\"> wrapper")
+    # The <div id="proseZh" class="prose-zh"> (or proseEn / prose-en for EN
+    # mirrors) is the hook for the inline CSS rules `.prose-zh h2 {
+    # border-left: ... }` etc. Without it the H2/H3 lose their distinctive
+    # styling and look like body text.
+    if rel not in PROSE_WRAPPER_LEGACY_SKIP and not PROSE_WRAPPER_RE.search(text):
+        errs.append(f"{rel}: missing <div id=\"proseZh\" class=\"prose-zh\"> (or proseEn/prose-en) wrapper")
+    return errs
 
 
 def main() -> int:
@@ -58,9 +85,7 @@ def main() -> int:
         if not folder.exists():
             continue
         for path in sorted(folder.glob("*.html")):
-            err = check_article(path)
-            if err:
-                errors.append(err)
+            errors.extend(check_article(path))
     if errors:
         for e in errors:
             print(f"  {e}")
