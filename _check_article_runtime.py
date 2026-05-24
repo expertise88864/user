@@ -76,6 +76,20 @@ def check_article(path: Path) -> list[str]:
     # styling and look like body text.
     if rel not in PROSE_WRAPPER_LEGACY_SKIP and not PROSE_WRAPPER_RE.search(text):
         errs.append(f"{rel}: missing <div id=\"proseZh\" class=\"prose-zh\"> (or proseEn/prose-en) wrapper")
+    # Order check: related-articles <nav> must come BEFORE <footer>, not
+    # after. If after, the related-articles section appears at the very
+    # bottom of the page (below the dark footer) which looks like a
+    # broken layout. 2026-05-23 — PDT article shipped with footer before
+    # related-nav until manually reordered.
+    a = text.find('</article>')
+    nav = text.find('<nav id="dn-related-static"')
+    foot = text.find('<footer class="mag-footer"')
+    if a > 0 and nav > 0 and foot > 0:
+        if foot < nav:
+            errs.append(
+                f"{rel}: <footer class=\"mag-footer\"> appears BEFORE <nav id=\"dn-related-static\">. "
+                f"Correct order is </article> → <nav related> → </main> → <footer>."
+            )
     return errs
 
 
