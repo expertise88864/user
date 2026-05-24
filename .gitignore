@@ -52,3 +52,8 @@ _dashboard.md
 .indexnow-log.json
 _readability.md
 _readability.json
+
+# Local one-off audit scratchpads (never commit)
+_cjk_audit.txt
+_en_meta_audit.txt
+_zh_audit.txt
