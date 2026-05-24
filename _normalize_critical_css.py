@@ -61,14 +61,15 @@ PRINT_MEDIA_RE = re.compile(
     re.IGNORECASE,
 )
 
-# Below-fold rule families — each pattern matches ONE rule (selector
-# + braces). Carefully scoped to avoid matching above-fold selectors.
-BELOW_FOLD_RULE_RES = [
-    # .mag-footer { ... } and all its nested selectors
-    re.compile(r"\.mag-footer\b[^{}]*\{[^{}]*\}", re.MULTILINE),
-    # Footer-section-specific selectors derived from .mag-footer
-    re.compile(r"\.mag-foot-(?:cols|col|brand|copy|meta|links)\b[^{}]*\{[^{}]*\}", re.MULTILINE),
-]
+# Below-fold rule families — extraction is DISABLED (2026-05-23) because
+# the file `assets/dn-below-fold.css` is now MAINTAINED MANUALLY to ensure
+# `.mag-footer` family AND `.dn-nav` family rules both persist. The
+# normalizer previously stripped mag-footer rules from inline styles and
+# overwrote the css file with just the extracted set — but that excluded
+# the dn-nav rules entirely (they live inline in index.html only, and were
+# never extracted), leaving all blog articles with unstyled top-right nav.
+# Empty list = skip below-fold extraction + writeback.
+BELOW_FOLD_RULE_RES: list[re.Pattern[str]] = []
 
 # Detect existing extracted-link tags (for idempotency).
 EXISTING_LINK_RE = re.compile(
