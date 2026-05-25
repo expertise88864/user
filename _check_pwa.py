@@ -101,8 +101,13 @@ def audit_service_worker(errors: list[str]) -> None:
         errors.append("sw.js should tolerate partial precache failures with Promise.allSettled")
     if "skipWaiting" not in src or "clients.claim" not in src:
         errors.append("sw.js should call skipWaiting and clients.claim for update reliability")
-    if "url.search.includes('v=')" not in src:
-        errors.append("sw.js should handle cache-busted ?v= assets network-first")
+    # 2026-05-25 — switched from network-first to cache-first for ?v=
+    # versioned assets. The version string IS the freshness signal, so
+    # an exact cached URL is by definition fresh; old keys naturally
+    # fall out via trimCache. This is the biggest remaining Edge
+    # Request reduction (network-first defeated cache-bust entirely).
+    if "/[?&]v=/" not in src:
+        errors.append("sw.js should match ?v= via /[?&]v=/ regex (cache-first strategy)")
     if "url.pathname === '/assets/search-index.json'" not in src:
         errors.append("sw.js should handle generated search-index.json network-first")
     if "url.pathname.startsWith('/admin')" not in src:
