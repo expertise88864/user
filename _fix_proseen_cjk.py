@@ -596,6 +596,37 @@ TRANSLATIONS: dict[str, str] = {
     "類固醇藥膏屬處方藥（部分指示用藥例外），不應自行購買強效類固醇長期使用。請依醫師處方使用。":
         "Topical steroids are prescription medications (some indications are OTC exceptions). Do not self-purchase potent topical steroids for long-term use. Follow physician prescription.",
 
+    # === Final-tier small leftovers ===
+    # actinic-keratosis-scc — "（日光性角化症）" variant after Eisen 2021 citation
+    "</span>（日光性角化症） — five major guidelines":
+        "</span> (actinic keratosis) — five major guidelines",
+    # PDT "MAL 或 ALA" (in protocol card value cell)
+    ">MAL 或 ALA<": ">MAL or ALA<",
+    # psoriasis-systemic trailing CJK after the apremilast sentence
+    "心血管／感染史）、孕計畫、施打頻率與健保給付。":
+        " cardiovascular / infection history), pregnancy plans, dosing frequency, and Taiwan NHI coverage.",
+    "izumab、risankizumab、guselkumab":
+        "izumab, risankizumab, guselkumab",
+    # psoriasis-topical "、或 " between strongs
+    "</strong>、或 <strong":
+        "</strong>, or <strong",
+    # vitiligo-maintenance-clinical Taiwan derm society reference
+    "臺灣皮膚科醫學會。":
+        "Taiwan Dermatological Association.",
+    # perioral-dermatitis-guide H1 (already added in different form,
+    # ensure raw \n變體 also caught)
+    "嘴角紅疹是痘痘還是濕疹？\n":
+        "Is that rash around the mouth acne or eczema?\n",
+    # toenail H1 variant — wrap in bilingual span so future renders are clean
+    "</div>\n<h1 class=\"font-display font-bold leading-[1.18] text-[30px] sm:text-[40px]\">\n腳趾甲變形 12 種型態完整圖鑑\n</h1>":
+        "</div>\n<h1 class=\"font-display font-bold leading-[1.18] text-[30px] sm:text-[40px]\">\n<span data-zh=\"腳趾甲變形 12 種型態完整圖鑑\" data-en=\"Toenail deformity — visual atlas of 12 patterns\">腳趾甲變形 12 種型態完整圖鑑</span>\n</h1>",
+    # toenail H1 — actual variant: text + <br/> + already-bilingual subtitle span
+    "\n腳趾甲變形 12 種型態完整圖鑑<br/>":
+        "\n<span data-zh=\"腳趾甲變形 12 種型態完整圖鑑\" data-en=\"Toenail deformity — visual atlas of 12 patterns\">腳趾甲變形 12 種型態完整圖鑑</span><br/>",
+    # perioral H1 — same pattern: leading ZH + <br/> + bilingual subtitle
+    "\n嘴角紅疹是痘痘還是濕疹？<br/>":
+        "\n<span data-zh=\"嘴角紅疹是痘痘還是濕疹？\" data-en=\"Is that rash around the mouth acne or eczema?\">嘴角紅疹是痘痘還是濕疹？</span><br/>",
+
     # === psoriasis-systemic TLDR ===
     " — 過去傳統治療目標只是 PASI 50-75。網絡統合分析（network meta-analysis）顯示 16 週 PASI 90 排名（從高到低）：":
         " — historically, conventional treatment targets were only PASI 50–75. Network meta-analysis ranks 16-week PASI 90 (high to low):",

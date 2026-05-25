@@ -542,6 +542,17 @@ TRANSLATIONS: dict[str, str] = {
     "帶狀皰疹 6 大迷思": "6 Shingles Myths",
     "皮蛇 · 2026-05-04": "Shingles · 2026-05-04",
     "Key Facts（TDA 共識）": "Key Facts (TDA consensus)",
+    # Final batch — short isolated strongs
+    "每天": "Daily",
+    "或": "or",
+    "懷孕": "Pregnancy",
+    "按主題整理": "Organized by topic",
+    "9 篇": "9 articles",
+    "8 大類別": "8 categories",
+    "「Soak and seal」原則": "&quot;Soak and seal&quot; principle",
+    "每年問關節症狀": "Ask about joint symptoms annually",
+    "乾癬性關節炎（PsA）若未即時診斷":
+        "Psoriatic arthritis (PsA), if undiagnosed in time,",
 }
 
 
