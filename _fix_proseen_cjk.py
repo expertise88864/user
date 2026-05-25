@@ -48,7 +48,7 @@ TRANSLATIONS: dict[str, str] = {
     "口周皮膚炎是嘴巴、鼻子、眼睛周圍反覆長紅色小丘疹和膿皰的發炎性皮膚病，":
         "Perioral dermatitis is a recurring inflammatory skin disease around the mouth, nose, and eyes, with small red papules and pustules; ",
     "是辨識關鍵；最常見的誘發因子是外用、吸入或口服類固醇。治療重點是「停掉誘發因子 + 溫和保養 ± 外用 / 口服藥 4-8 週」，並避免突然停類固醇造成反彈。":
-        " is the key recognition clue. The most common trigger is topical, inhaled, or oral corticosteroid use. Management hinges on \"stopping the trigger + gentle skincare ± topical / oral medication for 4–8 weeks\" while avoiding abrupt corticosteroid withdrawal (rebound).",
+        " is the key recognition clue. The most common trigger is topical, inhaled, or oral corticosteroid use. Management hinges on &quot;stopping the trigger + gentle skincare ± topical / oral medication for 4–8 weeks&quot; while avoiding abrupt corticosteroid withdrawal (rebound).",
     "本文僅作衛教參考，不可取代面對面看診。個別藥物選擇、劑量與療程請由皮膚專科醫師依您的狀況評估。":
         "This article is for general education only and does not replace in-person consultation. Individual drug selection, dose, and duration must be assessed by a dermatologist based on your specific situation.",
     "陳翊嘉醫師 · 整合 Acevedo-Fontanez 2026 JAAD review、Tempark 2014 Am J Clin Dermatol、Schwarz 2008 / Veien 1991 / Ollech 2020 JAAD 等實證":
@@ -95,11 +95,11 @@ TRANSLATIONS: dict[str, str] = {
     "臉常常潮紅、灼熱、長像痘痘的紅疹，皮膚科醫師會想到的常見診斷之一是":
         "If you have a face that frequently flushes, burns, and breaks out with acne-like red papules, one common diagnosis a dermatologist will consider is ",
     "。這個病很常被搞錯 —「我這是過敏吧」、「聽說酒糟是螨蟲造成的、洗乾淨就好」、「擦 A 酸應該也行」⋯⋯ 本文依英國 BAD 2021 指引、德國 2022 S2k 指引、ROSCO 共識與 TDA 2022 共識，從表現型分類、致病機轉與蠕形蟎蟲(Demodex)角色、誘因清單、治":
-        ". This condition is often misunderstood — \"It must be an allergy,\" \"I heard rosacea is caused by mites, so just wash thoroughly,\" \"Topical retinoid should work too\" ... This article integrates the UK BAD 2021 guideline, German 2022 S2k guideline, ROSCO consensus, and TDA 2022 consensus to cover phenotype classification, pathogenesis and the role of Demodex mites, trigger lists, and treatment.",
+        ". This condition is often misunderstood — &quot;It must be an allergy,&quot; &quot;I heard rosacea is caused by mites, so just wash thoroughly,&quot; &quot;Topical retinoid should work too&quot; ... This article integrates the UK BAD 2021 guideline, German 2022 S2k guideline, ROSCO consensus, and TDA 2022 consensus to cover phenotype classification, pathogenesis and the role of Demodex mites, trigger lists, and treatment.",
     "本文僅供衛教。臉部紅疹也可能是脂漏性皮膚炎、紅斑性狼瘡、皮肌炎等不同疾病，個別判斷請至皮膚科。":
         "This article is for general education only. Facial redness can also be seborrheic dermatitis, lupus, dermatomyositis, or other conditions — individual evaluation must be done by a dermatologist in person.",
     "不是「碰到就一定爆」，而是":
-        "It's not \"one exposure equals immediate flare\" — rather, triggers ",
+        "It's not &quot;one exposure equals immediate flare&quot; — rather, triggers ",
     "才發作。每個人的點不同，記下你的觸發物。":
         " before a flare occurs. Everyone's threshold is different — track your personal triggers.",
     # rosacea-myths H1
@@ -152,7 +152,7 @@ TRANSLATIONS: dict[str, str] = {
 
     # === laser-dermatology hero + legend ===
     "本文為衛教整理。實際雷射選擇需專科醫師依個別膚色 (Fitzpatrick I-VI)、病灶深度、過往治療反應評估。「同一波長」不同廠牌 / 不同脈寬 / 不同能量結果差異很大，本文僅整理波長層級的適應症。":
-        "This article is a patient-education summary. Actual laser selection must be done by a specialist based on individual skin type (Fitzpatrick I–VI), lesion depth, and prior treatment response. Even at the \"same wavelength\", outcomes differ significantly across manufacturers, pulse widths, and energy settings. This guide covers only wavelength-level indications.",
+        "This article is a patient-education summary. Actual laser selection must be done by a specialist based on individual skin type (Fitzpatrick I–VI), lesion depth, and prior treatment response. Even at the &quot;same wavelength&quot;, outcomes differ significantly across manufacturers, pulse widths, and energy settings. This guide covers only wavelength-level indications.",
     " 多數知情者會選擇此療法，效果與安全有充分證據":
         " Most informed patients would choose this treatment; efficacy and safety are well supported",
     " 多數會選擇，但仍需個別評估":
@@ -169,7 +169,7 @@ TRANSLATIONS: dict[str, str] = {
     "、約 1-2% 因感染等併發症需要追蹤、整體安全性高。":
         "; about 1–2% require follow-up for complications such as infection; overall safety is high.",
     "「切片會讓癌細胞擴散」是常見迷思":
-        "\"Biopsy spreads cancer\" is a common myth",
+        "&quot;Biopsy spreads cancer&quot; is a common myth",
     " — 實證上不存在這個風險、反而":
         " — evidence does not support this risk; on the contrary,",
     "沒切片才會延誤診斷":
@@ -194,7 +194,7 @@ TRANSLATIONS: dict[str, str] = {
     "，袋子裡裝滿角質與皮脂混合物（臭豆腐味）。":
         " — the sac is filled with a mixture of keratin and sebum (often with a stinky-tofu smell).",
     "。只擠掉內容物、不切除囊袋，囊袋會繼續產生新角質 → 反覆腫起來 → 反覆發炎 → 越來越大、越來越疤。「粉瘤 = 痘痘」是錯誤的概念。":
-        ". Squeezing out the contents without removing the capsule leaves the sac in place; it keeps producing new keratin → repeated swelling → repeated inflammation → larger and more scarred over time. The notion that \"epidermoid cyst = acne pimple\" is incorrect.",
+        ". Squeezing out the contents without removing the capsule leaves the sac in place; it keeps producing new keratin → repeated swelling → repeated inflammation → larger and more scarred over time. The notion that &quot;epidermoid cyst = acne pimple&quot; is incorrect.",
     # epidermoid-cyst H1
     '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n粉瘤完整衛教':
         '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="粉瘤完整衛教" data-en="Epidermoid cyst — complete patient guide">粉瘤完整衛教</span>',
@@ -203,13 +203,13 @@ TRANSLATIONS: dict[str, str] = {
     "）是潛伏的":
         ") is reactivation of dormant ",
     "在年紀大、免疫低下時重新活化。台灣 50 歲以上每 3 個人就有 1 個會發作。「繞一圈會死」是民間誤解，但":
-        " when age or immunosuppression weakens immunity. In Taiwan, 1 in 3 people over 50 will experience an episode. The folk belief that \"it kills if it circles your body\" is wrong, but ",
+        " when age or immunosuppression weakens immunity. In Taiwan, 1 in 3 people over 50 will experience an episode. The folk belief that &quot;it kills if it circles your body&quot; is wrong, but ",
     "確實會大幅增加皰疹後神經痛（PHN）風險。本文整理 6 個最常見的錯誤觀念，以及該不該打":
         " genuinely increases the risk of post-herpetic neuralgia (PHN). This article covers 6 of the most common misconceptions and whether to get the ",
     " 疫苗。":
         " vaccine.",
     "可能是「眼部帶狀皰疹」需立即眼科；Lumps located on the ":
-        " may be \"herpes zoster ophthalmicus\" — immediate ophthalmology referral required. ",
+        " may be &quot;herpes zoster ophthalmicus&quot; — immediate ophthalmology referral required. ",
     "可能是 Ramsay Hunt 症候群，需立即就醫。":
         " may be Ramsay Hunt syndrome — immediate medical attention required.",
     "帶狀皰疹（俗稱":
@@ -220,19 +220,19 @@ TRANSLATIONS: dict[str, str] = {
 
     # === melasma-myths TLDR ===
     "肝斑(melasma)是亞洲女性最常見的色素困擾，門診講最多次的就是 —「我這個是不是肝斑？」、「雷射打一次就會消嗎？」、「我聽說氫醌會":
-        "Melasma is the most common pigmentary concern in Asian women. The questions most often heard in clinic are — \"Is this melasma?\", \"Will one laser session clear it?\", \"I've heard hydroquinone ",
+        "Melasma is the most common pigmentary concern in Asian women. The questions most often heard in clinic are — &quot;Is this melasma?&quot;, &quot;Will one laser session clear it?&quot;, &quot;I've heard hydroquinone ",
     "：肝斑同時跟「":
-        ": melasma is driven by BOTH \"",
+        ": melasma is driven by BOTH &quot;",
     "」與「":
-        "\" AND \"",
+        "&quot; AND &quot;",
     "」有關，所以單靠雷射不夠；單靠防曬也不夠，要 ":
-        "\" — so laser alone is not enough, and sunscreen alone is not enough; ",
+        "&quot; — so laser alone is not enough, and sunscreen alone is not enough; ",
     " 才會穩定。":
         " is required for sustained control.",
 
     # === skin-whitening-agents TLDR + mechanism ===
     "美白藥膏（含氫醌、A 酸、Tri-Luma）為處方用藥，需皮膚科醫師評估。網路購買「神膏」常含":
-        "Brightening creams containing hydroquinone, retinoid, or Tri-Luma are prescription only and require dermatologist evaluation. \"Miracle creams\" sold online often contain ",
+        "Brightening creams containing hydroquinone, retinoid, or Tri-Luma are prescription only and require dermatologist evaluation. &quot;Miracle creams&quot; sold online often contain ",
     "，使用前請查證。":
         " — verify ingredients before use.",
     "受 UV、發炎、荷爾蒙刺激，經 ":
@@ -298,7 +298,7 @@ TRANSLATIONS: dict[str, str] = {
     "較精準、亦可改採膚色分型(Fitzpatrick)起始":
         " is more accurate; Fitzpatrick skin-type-based starting dose is an alternative",
     "民眾最常問的皮膚科問題 25 題見〈":
-        "see \"",
+        "see &quot;",
     "Baricitinib in adults with moderate to severe atopic dermatitis (BREEZE-異位性皮膚炎). ":
         "Baricitinib in adults with moderate to severe atopic dermatitis (BREEZE-AD). ",
 
@@ -332,7 +332,7 @@ TRANSLATIONS: dict[str, str] = {
     "乾癬（psoriasis）是一種":
         "Psoriasis is a chronic inflammatory skin disease caused by ",
     "造成的慢性發炎性皮膚疾病，全球盛行率約 2-3%，台灣約有 10-20 萬人。但很多病人長期抗拒治療 — 因為誤以為是「癬」、「皮膚不乾淨」、「會傳染」、「擦藥就好」，結果延誤治療。本文整理 7 個民眾最常見的誤解。":
-        "; global prevalence is about 2–3%, and Taiwan has roughly 100,000–200,000 affected patients. But many resist treatment long-term, mistakenly believing it is a fungal infection (\"癬\" / tinea), a hygiene problem, contagious, or solvable with topicals alone — delaying care. This article covers the 7 most common misconceptions.",
+        "; global prevalence is about 2–3%, and Taiwan has roughly 100,000–200,000 affected patients. But many resist treatment long-term, mistakenly believing it is a fungal infection (&quot;癬&quot; / tinea), a hygiene problem, contagious, or solvable with topicals alone — delaying care. This article covers the 7 most common misconceptions.",
     "乾癬不只是皮膚病，可能合併":
         "Psoriasis is not just a skin disease; it may be associated with ",
     "。請至皮膚科或風濕免疫科完整評估。":

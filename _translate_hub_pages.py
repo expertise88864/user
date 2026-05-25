@@ -237,7 +237,7 @@ TRANSLATIONS: dict[str, str] = {
     "塗抹酸類完整衛教 — A 酸、A 醇、杜鵑花酸、果酸、水楊酸、PHA":
         "Complete patient guide to topical acids — retinoids, retinol, azelaic, AHA, BHA, PHA",
     "開架專櫃藥局滿滿的「酸」，有的拿來祛痘、有的拿來美白、有的拿來抗老。但成分標籤上 Retinol、Retinaldehyde、Tretinoin、Adapalene、Azelaic、Glycolic、Salicylic… 看到頭暈。本篇用一張表把":
-        "Pharmacies and beauty counters are full of \"acids\" — some for acne, some for brightening, some for anti-aging. But the ingredient list (Retinol, Retinaldehyde, Tretinoin, Adapalene, Azelaic, Glycolic, Salicylic…) is dizzying. This article uses a single table to lay out",
+        "Pharmacies and beauty counters are full of &quot;acids&quot; — some for acne, some for brightening, some for anti-aging. But the ingredient list (Retinol, Retinaldehyde, Tretinoin, Adapalene, Azelaic, Glycolic, Salicylic…) is dizzying. This article uses a single table to lay out",
     "整理清楚，告訴你它們各自做什麼、適合誰、不能跟誰一起用、孕婦能不能用、用了會不會反黑爆痘。":
         "clearly: what each does, who it suits, what not to combine with, pregnancy safety, and whether it causes purging or rebound pigmentation.",
     # Disclaimer / Notice strings
