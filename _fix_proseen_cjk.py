@@ -199,6 +199,122 @@ TRANSLATIONS: dict[str, str] = {
     '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n粉瘤完整衛教':
         '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="粉瘤完整衛教" data-en="Epidermoid cyst — complete patient guide">粉瘤完整衛教</span>',
 
+    # === shingles-myths TLDR ===
+    "）是潛伏的":
+        ") is reactivation of dormant ",
+    "在年紀大、免疫低下時重新活化。台灣 50 歲以上每 3 個人就有 1 個會發作。「繞一圈會死」是民間誤解，但":
+        " when age or immunosuppression weakens immunity. In Taiwan, 1 in 3 people over 50 will experience an episode. The folk belief that \"it kills if it circles your body\" is wrong, but ",
+    "確實會大幅增加皰疹後神經痛（PHN）風險。本文整理 6 個最常見的錯誤觀念，以及該不該打":
+        " genuinely increases the risk of post-herpetic neuralgia (PHN). This article covers 6 of the most common misconceptions and whether to get the ",
+    " 疫苗。":
+        " vaccine.",
+    "可能是「眼部帶狀皰疹」需立即眼科；Lumps located on the ":
+        " may be \"herpes zoster ophthalmicus\" — immediate ophthalmology referral required. ",
+    "可能是 Ramsay Hunt 症候群，需立即就醫。":
+        " may be Ramsay Hunt syndrome — immediate medical attention required.",
+    "帶狀皰疹（俗稱":
+        "Herpes zoster (commonly called ",
+    # shingles H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n帶狀皰疹（皮蛇）6 大迷思':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="帶狀皰疹（皮蛇）6 大迷思" data-en="6 Shingles (Herpes Zoster) Myths">帶狀皰疹（皮蛇）6 大迷思</span>',
+
+    # === melasma-myths TLDR ===
+    "肝斑(melasma)是亞洲女性最常見的色素困擾，門診講最多次的就是 —「我這個是不是肝斑？」、「雷射打一次就會消嗎？」、「我聽說氫醌會":
+        "Melasma is the most common pigmentary concern in Asian women. The questions most often heard in clinic are — \"Is this melasma?\", \"Will one laser session clear it?\", \"I've heard hydroquinone ",
+    "：肝斑同時跟「":
+        ": melasma is driven by BOTH \"",
+    "」與「":
+        "\" AND \"",
+    "」有關，所以單靠雷射不夠；單靠防曬也不夠，要 ":
+        "\" — so laser alone is not enough, and sunscreen alone is not enough; ",
+    " 才會穩定。":
+        " is required for sustained control.",
+
+    # === skin-whitening-agents TLDR + mechanism ===
+    "美白藥膏（含氫醌、A 酸、Tri-Luma）為處方用藥，需皮膚科醫師評估。網路購買「神膏」常含":
+        "Brightening creams containing hydroquinone, retinoid, or Tri-Luma are prescription only and require dermatologist evaluation. \"Miracle creams\" sold online often contain ",
+    "，使用前請查證。":
+        " — verify ingredients before use.",
+    "受 UV、發炎、荷爾蒙刺激，經 ":
+        " are stimulated by UV, inflammation, and hormones; via ",
+    "催化合成":
+        " they synthesize ",
+    "，然後傳遞給角質細胞。美白成分作用點分四大類：":
+        " and transfer it to keratinocytes. Brightening agents act on four targets:",
+    "（氫醌、麴酸、熊果素、Resorcinol 衍生物）":
+        " (hydroquinone, kojic acid, arbutin, resorcinol derivatives)",
+    "（A 酸、果酸、水楊酸）":
+        " (retinoids, AHAs, salicylic acid)",
+    "（維他命 C、菸鹼醯胺）":
+        " (vitamin C, niacinamide)",
+    "（菸鹼醯胺、傳明酸）":
+        " (niacinamide, tranexamic acid)",
+    "先理解黑色素機轉":
+        "First, understand melanin biology",
+    # skin-whitening H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n美白成分完整解析':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="美白成分完整解析" data-en="Brightening ingredients — full breakdown">美白成分完整解析</span>',
+
+    # === pediatric-eczema TLDR + key facts ===
+    "嬰幼兒個別差異大，本文為衛教整理。實際藥物選擇與劑量請由皮膚科或兒科專科醫師評估。":
+        "Infants vary widely; this article is a general education summary. Actual drug selection and dosing must be evaluated by a dermatologist or pediatrician.",
+    "：兒童 13%、成人 2-3% （德國 / 台灣相近）":
+        ": 13% in children, 2–3% in adults (similar in Germany and Taiwan)",
+    ":60% 在 1 歲前發病、85% 在 5 歲前發病":
+        ": 60% before age 1, 85% before age 5",
+    "：異膚 → 食物過敏 → 氣喘 → 過敏性鼻炎（約 30-50% 順序進展）":
+        ": AD → food allergy → asthma → allergic rhinitis (about 30–50% progress in this sequence)",
+    ":40-60% 在青春期前明顯改善；30-50% 持續到成年":
+        ": 40–60% improve markedly before puberty; 30–50% persist into adulthood",
+    ":2023 年起核准 ":
+        ": FDA-approved since 2023 for ",
+    "（改變治療版圖）":
+        " (a paradigm shift)",
+    "關鍵數字":
+        "Key numbers",
+    # pediatric-eczema H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n嬰幼兒 / 兒童異位性皮膚炎完整照護指南':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="嬰幼兒 / 兒童異位性皮膚炎完整照護指南" data-en="Infant &amp; pediatric atopic dermatitis — complete care guide">嬰幼兒 / 兒童異位性皮膚炎完整照護指南</span>',
+
+    # === atopic-dermatitis-overview proseEn leakage ===
+    ":NB-UVB 是":
+        ": NB-UVB is the ",
+    "(優於寬波 UVB、UVA1)":
+        " (superior to broadband UVB and UVA1)",
+    ":光療期間":
+        ": during phototherapy, ",
+    "、視需要併用":
+        ", combine as needed with ",
+    "控制亞急性發炎":
+        " to control subacute inflammation",
+    "(避免照光誘發 Koebner / 加重)":
+        " (avoid phototherapy-induced Koebner / flare)",
+    ":頑固型可考慮":
+        ": for refractory cases consider ",
+    "(避免與 azathioprine 長期併用、提升皮膚癌風險)":
+        " (avoid long-term combination with azathioprine due to increased skin-cancer risk)",
+    ":正式 ":
+        ": formal ",
+    "較精準、亦可改採膚色分型(Fitzpatrick)起始":
+        " is more accurate; Fitzpatrick skin-type-based starting dose is an alternative",
+    "民眾最常問的皮膚科問題 25 題見〈":
+        "see \"",
+    "Baricitinib in adults with moderate to severe atopic dermatitis (BREEZE-異位性皮膚炎). ":
+        "Baricitinib in adults with moderate to severe atopic dermatitis (BREEZE-AD). ",
+
+    # === targeted-therapy-skin TLDR ===
+    "。請與您的腫瘤科 / 胸腔科醫師、皮膚科醫師討論，共同擬定處置計畫。":
+        ". Discuss with your oncologist / pulmonologist and dermatologist to develop a joint management plan.",
+    "幾乎所有病人都會出現皮膚反應，主要因為 EGFR 受體也存在於皮膚毛囊與表皮細胞中。":
+        " — almost all patients develop cutaneous reactions because the EGFR receptor is also expressed on skin follicles and epidermal cells.",
+    " — 這往往是好的訊號，但需要正確的皮膚科處置才不會被迫減藥或停藥。":
+        " — this is often a good prognostic sign, but proper dermatologic management is essential to avoid forced dose reduction or discontinuation.",
+    "使用標靶藥物期間出現皮膚問題":
+        "When skin problems develop during targeted-therapy use, ",
+    # targeted-therapy H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n標靶藥物（TKI）皮膚副作用完整衛教':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="標靶藥物（TKI）皮膚副作用完整衛教" data-en="Targeted-therapy (TKI) cutaneous side effects — complete patient guide">標靶藥物（TKI）皮膚副作用完整衛教</span>',
+
     # topical-acids-patient.html — list items
     "（處方）:Differin(Adapalene)、Stieva-A(Tretinoin)、Tazarotene。":
         " (prescription): Differin (adapalene), Stieva-A (tretinoin), Tazarotene.",
