@@ -99,6 +99,20 @@ def check_article(path: Path) -> list[str]:
     # list-style (otherwise Tailwind preflight wins and bullets vanish).
     # Articles that don't define any .prose-zh ul rule fall through to the
     # global stylesheet, which IS allowed — only flag the half-defined case.
+    # Guard against literal " inside any data-zh / data-en attribute value.
+    # The bilingual translation pipeline (_fix_proseen_cjk.py, broad
+    # string.replace) can leak EN translations containing `"X"` into a
+    # data-zh value, which closes the attribute mid-way and breaks HTML5
+    # parsing. Always use &quot; inside attribute values.
+    # 2026-05-25 — recurred 3 times; lock it down via build-time check.
+    for m in re.finditer(r'data-(zh|en)="([^"]*?)"([^>\s/])', text):
+        # m.group(3) being a non-`>` / non-` ` / non-`/` char means the
+        # parser-perceived attribute value was broken short. Flag.
+        snippet = text[max(0, m.start()):m.end()][:120]
+        errs.append(
+            f"{rel}: literal `\"` inside data-{m.group(1)} attribute — "
+            f"escape to &quot;. Context: ...{snippet}..."
+        )
     if PROSE_UL_RE.search(text) and not PROSE_UL_LIST_STYLE_RE.search(text):
         errs.append(
             f"{rel}: .prose-zh ul rule is missing `list-style` — tw-mini.css "
