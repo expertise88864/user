@@ -53,19 +53,7 @@ _dashboard.md
 _readability.md
 _readability.json
 
-# Local one-off audit scratchpads (never commit)
-_cjk_audit.txt
-_en_meta_audit.txt
-_zh_audit.txt
-_top_acids_cjk.txt
-_topics_strings.txt
-_idx_untranslated.txt
-_*_cjk*.txt
-_*_audit*.txt
-_pdg*.txt
-_akscc*.txt
-_rm*.txt
-_iso*.txt
-_pbm*.txt
-_acids*.txt
-_aria_*.txt
+# Local one-off audit scratchpads (never commit).
+# Convention: leading underscore + .txt = local scratch; ignore them all.
+# Whitelist real Python helpers via their .py extension (covered above).
+_*.txt

@@ -390,7 +390,7 @@ TRANSLATIONS: dict[str, str] = {
     "乾癬 · 2026-05-09": "Psoriasis · 2026-05-09",
     # semaglutide-hair-loss hero stat cards
     "1.77 倍 / 2.41 倍": "1.77× / 2.41×",
-    "不只是「瘦太快」": "Not just \"weight loss too fast\"",
+    "不只是「瘦太快」": "Not just &quot;weight loss too fast&quot;",
     # PBM "Further reading" anchor texts (used inside <a> in proseEn)
     "乾癬全身性治療完整衛教 ":
         "Psoriasis systemic treatment — complete guide ",
@@ -407,6 +407,39 @@ TRANSLATIONS: dict[str, str] = {
     # epidermoid-cyst
     "衛教 · 處方用藥 / 手術": "Patient guide · Prescription / Surgery",
     "粉瘤完整衛教": "Epidermoid cyst — complete patient guide",
+    # === Myth-style article batch ===
+    "衛教 · 迷思澄清": "Patient guide · Myth busting",
+    "衛教 · 產品 / 處方介紹": "Patient guide · Product / Prescription",
+    "衛教 · 兒童皮膚": "Patient guide · Pediatric skin",
+    "衛教 · 處方用藥": "Patient guide · Prescription drugs",
+    "帶狀皰疹（皮蛇）6 大迷思": "6 Shingles (Herpes Zoster) Myths",
+    "肝斑 7 大迷思": "7 Melasma Myths",
+    "美白成分完整解析": "Brightening ingredients — full breakdown",
+    "嬰幼兒 / 兒童異位性皮膚炎完整照護指南":
+        "Infant & pediatric atopic dermatitis — complete care guide",
+    "標靶藥物（TKI）皮膚副作用完整衛教":
+        "Targeted-therapy (TKI) cutaneous side effects — complete patient guide",
+    "病毒疣 6 大迷思": "6 Wart Myths",
+    "猴痘（Mpox）皮膚照護": "Monkeypox (Mpox) skin care",
+    "乾癬 7 大迷思": "7 Psoriasis Myths",
+    "病毒疣 · 2026-05-04": "Warts · 2026-05-04",
+    "猴痘 · 2026-05-04": "Monkeypox · 2026-05-04",
+    "乾癬 · 2026-05-07": "Psoriasis · 2026-05-07",
+    "肝斑 · 2026-05-03": "Melasma · 2026-05-03",
+    "酸類 · 2026-05-07": "Acids · 2026-05-07",
+    "異位性皮膚炎 · 2026-05-03": "Atopic dermatitis · 2026-05-03",
+    "外用類固醇 · 2026-05-04": "Topical steroids · 2026-05-04",
+    "兩劑保護力 > 90%": "2-dose protection > 90%",
+    "兩劑保護力 &gt; 90%": "2-dose protection > 90%",
+    # AD-overview related-card titles
+    "AD 外用治療完整衛教": "AD topical treatment — complete patient guide",
+    "AD 合併症與特殊族群": "AD comorbidities & special populations",
+    "接觸性皮膚炎（鑑別診斷）":
+        "Contact dermatitis (differential diagnosis)",
+    "嬰幼兒 AD 完整照護": "Infant & pediatric AD — complete care",
+    "皮膚科 25 個最常見問題":
+        "25 most-asked dermatology questions",
+    "AD 外用治療完整衛教、": "AD topical treatment — complete patient guide、",
 }
 
 
@@ -442,6 +475,14 @@ def _inside_attribute(pos: int, ranges: list[tuple[int, int]]) -> bool:
     return False
 
 
+def _attr_safe(en: str) -> str:
+    """Escape any `"` in an EN translation so it's safe to put inside an
+    HTML attribute value. Replaces literal `"` with `&quot;`. Does NOT
+    touch existing `&quot;` (idempotent because `&quot;` has no `"`).
+    """
+    return en.replace('"', '&quot;')
+
+
 def add_data_en(html: str) -> tuple[str, int]:
     """For each interesting tag with inner CJK that matches a TRANSLATIONS
     key (after stripping leading <span> sibling tags), add `data-en="..."`
@@ -457,6 +498,10 @@ def add_data_en(html: str) -> tuple[str, int]:
     Adding data-en there would inject a `"` inside the parent attribute and
     break HTML5 parsing.
 
+    2026-05-25 — also escape any `"` in EN translation values to `&quot;`
+    before injection so EN text like `Not just "weight loss too fast"`
+    doesn't break attribute quoting.
+
     Returns (new_html, replacement_count).
     """
     count = 0
@@ -464,7 +509,7 @@ def add_data_en(html: str) -> tuple[str, int]:
     # Pre-pass: fix bogus data-en="<ZH>" values
     for zh, en in TRANSLATIONS.items():
         bogus_attr = f'data-en="{zh}"'
-        good_attr = f'data-en="{en}"'
+        good_attr = f'data-en="{_attr_safe(en)}"'
         if bogus_attr in html:
             occ = html.count(bogus_attr)
             html = html.replace(bogus_attr, good_attr)
@@ -473,7 +518,7 @@ def add_data_en(html: str) -> tuple[str, int]:
     for zh, en in TRANSLATIONS.items():
         if zh not in html:
             continue
-        en_attr = f' data-en="{en}"'
+        en_attr = f' data-en="{_attr_safe(en)}"'
 
         # Case A: tag with inner-only text matching ZH exactly
         # <tagX attrs>ZH</tagX>
