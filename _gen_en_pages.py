@@ -745,8 +745,34 @@ def localize_jsonld(src: str, title: str, desc: str) -> str:
     )
 
 
+# 2026-05-24 — aria-label translations for SVG figures and other elements
+# whose ZH aria-label would otherwise be announced to EN screen-reader
+# users. Only translates aria-label values that exactly match a key here;
+# unrecognized ZH aria-labels are left as-is (better than a wrong gloss).
+ARIA_LABEL_TRANSLATIONS: dict[str, str] = {
+    "USPSTF 證據評級熱度圖：13 項常見篩檢 × 5 個生物製劑類別。深綠 B = 建議；淺綠 C = 個別考量；橘 D = 不建議；灰 I = 證據不足。TNF-α 在結核（B）與 HBV（C）為主要建議；IL-17 在念珠菌與 IBD（C）為主要建議；IL-12/23、IL-23 p19 幾乎全 D；HIV 全 I":
+        "USPSTF evidence-grade summary: 13 routine pre-biologic labs across 5 biologic classes. Green B = recommended; uncolored C = case-by-case; red D = not recommended; gray I = insufficient evidence. TNF-α has the most stringent annual TB + HBV recommendations; IL-17 highlights mucocutaneous fungal infection and IBD considerations; IL-12/23 and IL-23 p19 are mostly D; HIV is I.",
+    "慢性 B 肝乾癬病人接受生物製劑的 reactivation 風險柱狀比較：未抗病毒預防約 26%、抗病毒預防（entecavir 或 tenofovir）約 7.7%；secukinumab + 預防、ustekinumab + 預防在現有資料中無復活個案；TNF-α 仍有少數復活個案":
+        "Bar chart of biologic-associated HBV reactivation risk in psoriasis patients with chronic HBV carriage: 26% without antiviral prophylaxis; 7.7% with antiviral prophylaxis (entecavir or tenofovir); secukinumab + prophylaxis and ustekinumab + prophylaxis show no reactivation cases in current data; TNF-α inhibitors have the most reactivation events.",
+    "生物製劑類別決策樹：拿到哪一支生物製劑、要做哪些篩檢與門診詢問。TNF-α → 結核每年 + B 肝；IL-12/23 與 IL-23 → 依個別風險；IL-17 → 問口腔念珠菌 + 腸道症狀。":
+        "Biologic class decision tree: required screening and mechanism-of-action questions before initiating any biologic. TNF-α → strict annual TB + HBV screening; IL-12/23 and IL-23 → individual-risk based; IL-17 → mucocutaneous fungal infection prophylaxis + IBD considerations.",
+}
+
+
+def translate_aria_labels(src: str) -> str:
+    """Swap ZH aria-label values for known EN translations."""
+    def repl(m: re.Match) -> str:
+        label = m.group(1)
+        en = ARIA_LABEL_TRANSLATIONS.get(label)
+        if en:
+            return f'aria-label="{html_lib.escape(en, quote=True)}"'
+        return m.group(0)
+    return re.sub(r'aria-label="([^"]+)"', repl, src)
+
+
 def transform(src: str, zh_canonical_path: str, en_canonical_path: str, source_rel: str | None = None) -> str:
     s = apply_data_en(src)
+    s = translate_aria_labels(s)
     s = prefer_static_english_blocks(s)
     if source_rel == 'privacy.html':
         s = replace_privacy_body(s)

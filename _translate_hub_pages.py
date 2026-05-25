@@ -251,6 +251,49 @@ TRANSLATIONS: dict[str, str] = {
         "Same topic, clinician version — receptor selectivity, AHA pH/penetration, pregnancy safety table, retinoid dermatitis management.",
     "中重度痘痘可能需要進階到口服 A 酸 — 全衛教在這篇。":
         "Moderate-to-severe acne may need to step up to oral isotretinoin — full guide here.",
+    # Author byline — shared across all 53 articles in the sticky header
+    "陳翊嘉醫師 · 皮膚科衛教筆記":
+        "Dr. Yi-Jia Chen · Dermatology Patient Education Notes",
+    "陳翊嘉醫師": "Dr. Yi-Jia Chen",
+    "皮膚科衛教筆記": "Dermatology Patient Education Notes",
+    # Common card-chip date prefix patterns ("成分 · YYYY-MM-DD")
+    "處方 · 2026-05-07": "Prescription · 2026-05-07",
+    "處方 · 2026-05-09": "Prescription · 2026-05-09",
+    "規範 · 2026-05-07": "NHI rules · 2026-05-07",
+    "生物製劑 · 2026-05-04": "Biologics · 2026-05-04",
+    "AI 與皮膚科 · 2026-05-23": "AI & Dermatology · 2026-05-23",
+    "玫瑰斑 · 2026-05-04": "Rosacea · 2026-05-04",
+    "白斑 · 2026-05-15": "Vitiligo · 2026-05-15",
+    "白斑 · 2026-05-22": "Vitiligo · 2026-05-22",
+    "光動力治療 · 2026-05-23": "Photodynamic therapy · 2026-05-23",
+    "GLP-1 · 2026-05-23": "GLP-1 · 2026-05-23",
+    # Related-article card titles (bogus data-en values across many files)
+    "皮膚科生物製劑與小分子標靶藥物常見":
+        "Dermatology biologics and small-molecule targeted drugs — overview",
+    "皮膚科常用藥物的健保規範整理":
+        "Taiwan NHI rules for common dermatology drugs",
+    "牛皮癬全身性治療完整衛教":
+        "Psoriasis systemic treatment — complete guide",
+    "塗抹酸類完整衛教":
+        "Topical acids — complete patient guide",
+    "口服 A 酸完整衛教":
+        "Oral isotretinoin — complete patient guide",
+    "痘疤完整治療指引":
+        "Acne scar treatment — complete guide",
+    "美白成分完整解析":
+        "Brightening ingredients — full breakdown",
+    "外用酸類完整衛教":
+        "Topical acids — complete patient guide",
+    # Further-reading section common in clinical articles
+    "Further reading:": "Further reading:",  # already EN
+    "詳細給付條件請見 ":
+        "For detailed coverage criteria, see ",
+    "；生物製劑分類與藥效請見 ":
+        "; for biologics drug-class overview and pharmacology, see ",
+    "；台灣健保完整給付請見 ":
+        "; for Taiwan NHI full coverage rules, see ",
+    "牛皮癬全身性治療完整衛教 ":
+        "Psoriasis systemic treatment — complete guide ",
 }
 
 
