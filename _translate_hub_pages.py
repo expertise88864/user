@@ -294,6 +294,65 @@ TRANSLATIONS: dict[str, str] = {
         "; for Taiwan NHI full coverage rules, see ",
     "牛皮癬全身性治療完整衛教 ":
         "Psoriasis systemic treatment — complete guide ",
+    # Article-archive nav button (in sticky header)
+    "← 文章索引": "← Articles",
+    # perioral-dermatitis-guide hero
+    "口周皮膚炎完整衛教": "Perioral dermatitis — complete patient guide",
+    "衛教 · 鑑別與治療 ": "Patient guide · Diagnosis & treatment ",
+    "衛教 · 鑑別與治療": "Patient guide · Diagnosis & treatment",
+    "嘴角紅疹是痘痘還是濕疹？": "Is that rash around the mouth acne or eczema?",
+    "口周皮膚炎的成因、症狀與治療":
+        "Perioral dermatitis — causes, symptoms, and treatment",
+    "一句話結論：": "Bottom line:",
+    "嘴唇紅色邊緣那一圈會明顯「跳過」不發炎":
+        "the lip vermilion border is conspicuously spared",
+    "提醒：": "Reminder:",
+    # Common related-card date prefixes ("接觸性皮膚炎 · 2026-05-08" etc.)
+    "接觸性皮膚炎 · 2026-05-08": "Contact dermatitis · 2026-05-08",
+    "異位性皮膚炎 · 2026-05-05": "Atopic dermatitis · 2026-05-05",
+    "趾甲與足部 · 2026-05-13": "Toenail / foot · 2026-05-13",
+    "口腔黏膜 · 2026-05-13": "Oral mucosa · 2026-05-13",
+    # Footer / nav shared across all articles
+    "皮膚科常見衛教及學習筆記網站":
+        "Plain-language dermatology articles and clinical study notes",
+    "皮膚科醫師": "Dermatologist",
+    "網站": "Site",
+    "關於我": "About",
+    "隱私權政策": "Privacy",
+    # actinic-keratosis-scc kicker + chips
+    "衛教 · 皮膚癌 / 癌前病變": "Patient guide · Skin cancer / Precancer",
+    "衛教 · 皮膚癌": "Patient guide · Skin cancer",
+    "皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教":
+        "Cutaneous T-cell lymphoma (CTCL / MF) — complete patient guide",
+    "粉瘤完整衛教": "Epidermoid cyst — complete patient guide",
+    "標靶藥物（TKI）皮膚副作用":
+        "Targeted-therapy (TKI) cutaneous side effects",
+    # More date chips
+    "處置 / 手術 · 2026-05-09": "Procedures / Surgery · 2026-05-09",
+    "皮膚淋巴瘤 · 2026-05-07": "Cutaneous lymphoma · 2026-05-07",
+    "粉瘤 · 2026-05-05": "Epidermoid cyst · 2026-05-05",
+    "標靶藥物 · 2026-05-04": "Targeted therapy · 2026-05-04",
+    "Note:": "Note:",  # already EN; here for the disclaimer label translation pairing
+    "突然變大、變硬、潰瘍出血":
+        "rapid enlargement, hardening, ulceration, or bleeding",
+    # rosacea-myths hero kicker + H1 + trigger labels
+    "衛教 · 完整指引": "Patient guide · Complete guidelines",
+    "玫瑰痤瘡（酒糟肌）完整衛教":
+        "Rosacea (commonly called 酒糟肌) — complete patient guide",
+    "陽光 / UV": "Sun / UV",
+    "溫差 / 熱風": "Temperature change / heat",
+    "酒精": "Alcohol",
+    "辣的食物": "Spicy food",
+    "熱飲 / 咖啡": "Hot drinks / coffee",
+    "壓力": "Stress",
+    "劇烈運動": "Intense exercise",
+    "刺激性保養": "Irritating skincare",
+    "皮膚科雷射完整對照": "Dermatologic laser comparison",
+    "蕁麻疹 6 大迷思": "6 Urticaria Myths",
+    "雷射 / 光電 · 2026-05-05": "Laser / Light · 2026-05-05",
+    "蕁麻疹 · 2026-05-07": "Urticaria · 2026-05-07",
+    # Disclaimer label variants
+    "提醒 ·": "Reminder ·",
 }
 
 
