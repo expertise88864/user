@@ -35,11 +35,96 @@ TRANSLATIONS: dict[str, str] = {
     " ChenDermatologist · 陳翊嘉醫師":
         " ChenDermatologist · Dr. Yi-Jia Chen",
     # Kicker / chip with trailing space (the div-with-child-span pattern
-    # add_data_en can't auto-translate because the div has mixed content)
+    # add_data_en can't auto-translate because the div has mixed content).
+    # Source pattern: <div class="kicker">衛教 · XX <span>更新日期 · YYYY-
+    # MM-DD</span></div> — leading text is bare text node before the date
+    # chip. Match `>衛教 · XX <` (with trailing space) AND `>衛教 · XX<`
+    # (no trailing space — articles where the chip is just <div>...</div>).
     ">衛教 · 鑑別與治療 <":
         ">Patient guide · Diagnosis & treatment <",
     ">衛教 · 鑑別與治療<":
         ">Patient guide · Diagnosis & treatment<",
+    ">衛教 · 處方用藥 <":
+        ">Patient guide · Prescription <",
+    ">衛教 · 處方用藥<":
+        ">Patient guide · Prescription<",
+    ">衛教 · 迷思澄清 <":
+        ">Patient guide · Myth busting <",
+    ">衛教 · 迷思澄清<":
+        ">Patient guide · Myth busting<",
+    ">衛教 · 處方用藥 / 雷射治療 <":
+        ">Patient guide · Prescription / Laser treatment <",
+    ">衛教 · 處方用藥 / 雷射治療<":
+        ">Patient guide · Prescription / Laser treatment<",
+    ">衛教 · 皮膚癌 / 癌前病變 <":
+        ">Patient guide · Skin cancer / Precancer <",
+    ">衛教 · 皮膚癌 / 癌前病變<":
+        ">Patient guide · Skin cancer / Precancer<",
+    ">衛教 · 環境 / 職業 <":
+        ">Patient guide · Environment / Occupation <",
+    ">衛教 · 環境 / 職業<":
+        ">Patient guide · Environment / Occupation<",
+    ">衛教 · 罕見皮膚癌 <":
+        ">Patient guide · Rare skin cancer <",
+    ">衛教 · 罕見皮膚癌<":
+        ">Patient guide · Rare skin cancer<",
+    ">衛教 · 常見問題 <":
+        ">Patient guide · FAQ <",
+    ">衛教 · 常見問題<":
+        ">Patient guide · FAQ<",
+    ">衛教 · 處方用藥 / 手術 <":
+        ">Patient guide · Prescription / Surgery <",
+    ">衛教 · 處方用藥 / 手術<":
+        ">Patient guide · Prescription / Surgery<",
+    ">衛教 · 醫療雷射 <":
+        ">Patient guide · Medical lasers <",
+    ">衛教 · 醫療雷射<":
+        ">Patient guide · Medical lasers<",
+    ">衛教 · 感染照護 <":
+        ">Patient guide · Infection care <",
+    ">衛教 · 感染照護<":
+        ">Patient guide · Infection care<",
+    ">衛教 · 處方用藥 / 健保規範 <":
+        ">Patient guide · Prescription / NHI rules <",
+    ">衛教 · 處方用藥 / 健保規範<":
+        ">Patient guide · Prescription / NHI rules<",
+    ">衛教 · 兒童皮膚 <":
+        ">Patient guide · Pediatric skin <",
+    ">衛教 · 兒童皮膚<":
+        ">Patient guide · Pediatric skin<",
+    ">衛教 · 完整指引 <":
+        ">Patient guide · Complete guidelines <",
+    ">衛教 · 完整指引<":
+        ">Patient guide · Complete guidelines<",
+    ">衛教 · 趾甲與足部 <":
+        ">Patient guide · Toenail / foot <",
+    ">衛教 · 趾甲與足部<":
+        ">Patient guide · Toenail / foot<",
+    ">衛教 · 產品 / 處方介紹 <":
+        ">Patient guide · Product / Prescription <",
+    ">衛教 · 產品 / 處方介紹<":
+        ">Patient guide · Product / Prescription<",
+    ">衛教 · 產品介紹 <":
+        ">Patient guide · Product overview <",
+    ">衛教 · 產品介紹<":
+        ">Patient guide · Product overview<",
+    # Footer copyright variant
+    "ChenDermatologist · 陳翊嘉 醫師":
+        "ChenDermatologist · Dr. Yi-Jia Chen",
+    # Updated-on chip (text node inside <span>)
+    ">更新日期 · 2026-05-13<": ">Updated · 2026-05-13<",
+    ">更新日期 · 2026-05-07<": ">Updated · 2026-05-07<",
+    ">更新日期 · 2026-05-03<": ">Updated · 2026-05-03<",
+    ">更新日期 · 2026-05-04<": ">Updated · 2026-05-04<",
+    ">更新日期 · 2026-05-08<": ">Updated · 2026-05-08<",
+    ">更新日期 · 2026-05-09<": ">Updated · 2026-05-09<",
+    ">更新日期 · 2026-05-15<": ">Updated · 2026-05-15<",
+    ">更新日期 · 2026-05-16<": ">Updated · 2026-05-16<",
+    ">更新日期 · 2026-05-22<": ">Updated · 2026-05-22<",
+    ">更新日期 · 2026-05-23<": ">Updated · 2026-05-23<",
+    # Card chips that survive prior translations
+    ">常見問題 · 2026-05-05<": ">FAQ · 2026-05-05<",
+    ">健保規範 · 2026-05-07<": ">NHI rules · 2026-05-07<",
     # === Per-article: long-text segments that only appear in one article ===
 
     # perioral-dermatitis-guide
