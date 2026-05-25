@@ -1,6 +1,6 @@
 # ChenDermatologist · 陳翊嘉醫師 · 皮膚科衛教筆記
 
-Generated 2026-05-24 · 48 articles · by Dr. Chen Yi-Jia (R2 Dermatology, China Medical University Hospital, Taiwan)
+Generated 2026-05-25 · 48 articles · by Dr. Chen Yi-Jia (R2 Dermatology, China Medical University Hospital, Taiwan)
 
 Bilingual zh-Hant / en. ZH source is authoritative; EN mirror is machine-translated and provided for accessibility only.
 
@@ -10,13 +10,13 @@ For citation rules and structural metadata, see https://chendermatologist.com/ll
 ---
 ## AI 現在能幫皮膚科醫師看病嗎？2026 三篇 JAAD 研究的綜合解答
 URL: https://chendermatologist.com/blog/ai-dermatology-roles
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Research Summary
 Reading time: PT21M
 Tags: AI 與皮膚科, AI in dermatology
 
 一句話結論
-AI 在皮膚科目前比較合理的定位，是診斷輔助、可解釋性檢查與教育資料增強，而不是取代皮膚科醫師。Kremer 等人的 JAAD 研究顯示，DEXI 皮膚鏡 AI 熱圖和皮膚科醫師眼動熱圖有相當重疊，但熱圖相似不等於 AI 使用了和醫師完全相同的臨床邏輯。
+AI 在皮膚科目前比較合理的定位，是診斷輔助、可解釋性檢查與教育資料增強，而不是取代皮膚科醫師。Kremer 等人的 JAAD Studies show that ，DEXI 皮膚鏡 AI 熱圖和皮膚科醫師眼動熱圖有相當重疊，但熱圖相似不等於 AI 使用了和醫師完全相同的臨床邏輯。
 
 衛教：病人最常問的 8 題
 
@@ -134,15 +134,13 @@ Mahajan 等人(Brigham & Women's Hospital, Harvard)2026 年 6 月發表的橫斷
 
 主要結果：整體準確率不到 50%、且疾病間差距極大
 
-整體 accuracy：GPT-5 46.2%(95% CI 42.1-50.3)、Gemini 45.1%、Janus 30.8%。看似相近、但疾病層級差距很大、且不同 model 強項不同。例如 GPT-5 看異位性皮膚炎達 60.5%、但看乾癬只有 18.1%；Gemini 反過來看脂漏性皮膚炎 81.8%、看皮膚紅斑性狼瘡只有 10%。Janus 在環狀肉芽腫 0% 但在血管炎 52.2%。
-
 
 [... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 白斑停藥後會復發嗎？維持治療與復發風險評估
 URL: https://chendermatologist.com/blog/vitiligo-maintenance-clinical
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Research Summary
 Reading time: PT19M
 Tags: 白斑復發, Vitiligo relapse
@@ -223,7 +221,7 @@ Q1：我手腳都有白斑、是不是要一輩子治療？
 
 Q2：我有甲狀腺低下 / 橋本氏、會讓白斑更難治嗎？
 
-會。研究顯示甲狀腺疾病患者 1 年復發率 36.9% vs 24.8%、調整後風險 1.42 倍。但這不代表治療無效、而是「復發機率更高、需要更謹慎地維持」。同時、把甲狀腺本身控制好(規律服藥、定期追蹤 TSH)對整體免疫穩定也有幫助。
+會。Studies show that 甲狀腺疾病患者 1 年復發率 36.9% vs 24.8%、調整後風險 1.42 倍。但這不代表治療無效、而是「復發機率更高、需要更謹慎地維持」。同時、把甲狀腺本身控制好(規律服藥、定期追蹤 TSH)對整體免疫穩定也有幫助。
 
 Q3：停藥多久內最容易復發？
 
@@ -300,7 +298,7 @@ BSA < 5% / 5–10% / > 10%
 ---
 ## 打瘦瘦針會掉頭髮嗎？2026 兩篇 TriNetX 大型研究的雙向解答
 URL: https://chendermatologist.com/blog/semaglutide-hair-loss
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Research Summary
 Reading time: PT20M
 Tags: GLP-1 與落髮, GLP-1 & hair loss
@@ -375,9 +373,9 @@ Hill MA 等人(Case Western Reserve + Cleveland Clinic)2026 年 6 月發表於�
 ---
 ## 光動力治療（PDT）皮膚科完整指南 — 從 AK、BCC 到痘痘的 2026 JAAD 雙篇 Review 整合
 URL: https://chendermatologist.com/blog/photodynamic-therapy-overview
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Research Summary
-Reading time: PT25M
+Reading time: PT24M
 Tags: 光動力治療, Photodynamic therapy
 
 最新研究 · 光動力治療
@@ -631,7 +629,7 @@ PDT 三要素與分子層級機轉
 
 Type II 反應（主要路徑）：能量轉移給 ³O₂、產生「單態氧（singlet oxygen、¹O₂）」。¹O₂ 半衰期僅 40 ns、只能影響半徑 20 nm 內細胞、選擇性極高、不傷周圍組織。
 
-Type I 反應（次要）：PS 直接與受質分子反應、產生超氧自由基（superoxide）、羥基自由基（hydroxyl radical）、過氧化氫（H₂O₂）等 ROS（reactive oxygen species）。Austin 等人研究顯示 ALA-PDT + BL 在人類皮膚纖維母細胞主要產生 superoxide、未測到 hydroxyl ROS 或 H₂O₂。
+Type I 反應（次要）：PS 直接與受質分子反應、產生超氧自由基（superoxide）、羥基自由基（hydroxyl radical）、過氧化氫（H₂O₂）等 ROS（reactive oxygen species）。Austin 等人Studies show that ALA-PDT + BL 在人類皮膚纖維母細胞主要產生 superoxide、未測到 hydroxyl ROS 或 H₂O₂。
 
 ¹O₂ 與 ROS 觸發下游細胞效應：(a) 粒線體內路徑誘導凋亡（caspase 3/7/8、BAX、BAK 上調、BCL-2 下調）；(b) 死亡受體（Fas/CD95）外路徑；(c) 血管內皮損傷與微血管栓塞、切斷腫瘤血流；(d) 釋放損傷相關分子模式（DAMPs）與發炎細胞因子、活化免疫反應、產生長期抗腫瘤免疫記憶。
 
@@ -641,7 +639,7 @@ Type I 反應（次要）：PS 直接與受質分子反應、產生超氧自由�
 ---
 ## 打乾癬生物製劑要不要每年抽血？2026 JAAD 證據評級重新看這件事
 URL: https://chendermatologist.com/blog/psoriasis-biologic-monitoring
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Research Summary
 Reading time: PT19M
 Tags: 生物製劑安全, Biologic safety
@@ -740,7 +738,7 @@ USPSTF（美國預防服務工作小組）評級系統定義：A 級= 強烈建�
 
 散播性結核（disseminated TB）若發生在生物製劑治療 15 週內，死亡率約 7%（Snast 2019 系統性回顧）。台灣為結核中度盛行區，治療前結核篩檢有必要。IGRA（如 QuantiFERON）相較於 tuberculin skin test 敏感度較高、特異度相當，且不受 BCG 接種干擾，現多優先選用（Jonas 2023, JAMA）。
 
-TNF-α 抑制劑：潛伏結核再活化與新發結核個案最多，部分病人即使接受結核預防仍可能發生。建議初次與每年複篩（B 級）。IL-17、IL-12/23、IL-23 抑制劑：多項研究顯示即使是未治療的潛伏結核病人，使用這些藥物復發風險極低（Torres 2024、Nogueira 2021、Fowler 2020、Manzanares 2024）。因此 Duong 等人建議這些類別不需常規初次或每年結核篩檢（D 級）。但這個結論假設病人沒有結核風險因子；若有接觸史、症狀（不明原因體重下降、咳嗽、發燒），仍要評估。Phase 3 臨床試驗多數因「歷史慣例」而非真實風險而納入結核篩檢，可能高估其必要性。
+TNF-α 抑制劑：潛伏結核再活化與新發結核個案最多，部分病人即使接受結核預防仍可能發生。建議初次與每年複篩（B 級）。IL-17、IL-12/23、IL-23 抑制劑：多項Studies show that 即使是未治療的潛伏結核病人，使用這些藥物復發風險極低（Torres 2024、Nogueira 2021、Fowler 2020、Manzanares 2024）。因此 Duong 等人建議這些類別不需常規初次或每年結核篩檢（D 級）。但這個結論假設病人沒有結核風險因子；若有接觸史、症狀（不明原因體重下降、咳嗽、發燒），仍要評估。Phase 3 臨床試驗多數因「歷史慣例」而非真實風險而納入結核篩檢，可能高估其必要性。
 
 B 型肝炎（HBV）篩檢深度
 
@@ -768,7 +766,7 @@ HBV 狀態
 ---
 ## 杜避炎®（dupilumab）維持治療要打多久？2026 JAAD 真實世界研究：減量竟比停藥更容易復發
 URL: https://chendermatologist.com/blog/dupilumab-long-term-maintenance
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Research Summary
 Reading time: PT20M
 Tags: dupilumab, Dupilumab
@@ -951,7 +949,7 @@ classic → 較低復發；其他表型 → 較高復發
 
 給臨床醫師的 take-home messages
 
-達標後不建議用「減量」作為節省策略。本研究顯示減量延長間隔反而比直接停藥更早復發（48 vs 66 天）。
+達標後不建議用「減量」作為節省策略。本Studies show that 減量延長間隔反而比直接停藥更早復發（48 vs 66 天）。
 
 想真正延緩復發 → 持續 q2w。長期 q2w 組平均無復發 159 天，遠勝其他兩組；部分病人 > 300 天無復發。
 
@@ -1060,7 +1058,7 @@ Upa 與 Abro 劑量限制：Upadacitinib — EASI 16–20 限每日 15 mg；≥ 
 ---
 ## 嘴角紅疹是痘痘還是濕疹？口周皮膚炎完整衛教
 URL: https://chendermatologist.com/blog/perioral-dermatitis-guide
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT20M
 Tags: 口周皮膚炎, Perioral dermatitis
@@ -1098,11 +1096,11 @@ Q8：孕婦或小朋友可以治療嗎？
 圖一口周皮膚炎的典型分布：嘴、鼻、眼周；嘴唇紅色邊緣會明顯空白一圈（vermilion sparing）是辨識關鍵。這是什麼疾病？
 口周皮膚炎（periorificial dermatitis, POD），又稱周口皮膚炎、perioral dermatitis，是一種反覆發作的臉部發炎性皮膚病。雖然中文名叫「口周」，但其實鼻子周圍、眼睛周圍也可能長，所以醫學上更精確的說法是「臉部開口周圍皮膚炎」（periorificial）。
 臨床表現是一群一群的紅色小丘疹（papules）、小膿皰（pustules）（約 1-2 mm），有時會有細小脫屑；患者常會抱怨灼熱感、刺癢感。最關鍵的辨識點是：嘴唇紅色邊緣（vermilion border）那一圈會「跳過」不發炎，留下明顯空白。
-誰會得？盛行率約 0.1-1%，最常見於 20-45 歲女性，但孩童與年長者也會。研究顯示口周皮膚炎患者的生活品質量表（Dermatology Life Quality Index, DLQI）平均分數約 10 分，屬於中重度影響，會對外觀、社交、自信造成明顯困擾。
+誰會得？盛行率約 0.1-1%，最常見於 20-45 歲女性，但孩童與年長者也會。Studies show that 口周皮膚炎患者的生活品質量表（Dermatology Life Quality Index, DLQI）平均分數約 10 分，屬於中重度影響，會對外觀、社交、自信造成明顯困擾。
 為什麼會發生？四大致病機轉
 目前認為口周皮膚炎是多重因素共同作用的結果，主要有四個面向：
 ① 皮膚屏障功能下降
-研究顯示口周皮膚炎患者的經皮水分流失（transepidermal water loss, TEWL）增加，代表角質層的屏障功能變差。屏障一變差，外來刺激物、過敏原、微生物就容易進入皮膚，引發發炎反應。
+Studies show that 口周皮膚炎患者的經皮水分流失（transepidermal water loss, TEWL）增加，代表角質層的屏障功能變差。屏障一變差，外來刺激物、過敏原、微生物就容易進入皮膚，引發發炎反應。
 ② 發炎反應失調
 皮膚的免疫系統被活化，產生持續性的低度發炎；這也是為什麼外用 calcineurin 抑制劑（tacrolimus、pimecrolimus）對口周皮膚炎有效的原因——它們抑制 T 細胞過度反應。
 ③ 微生物失衡（dysbiosis）
@@ -1247,14 +1245,13 @@ Sarecycline / 外用 roflumilast / 外用 ruxolitinib
 
 Doxycycline
 50-100 mg 一天 1-2 次
-成人、非孕、>8 歲；最常用
 
 [... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病
 URL: https://chendermatologist.com/blog/toenail-mechanical-disorders
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT18M
 Tags: 趾甲與足部, Toenail disorders
@@ -1263,7 +1260,7 @@ Tags: 趾甲與足部, Toenail disorders
 「醫師，我穿鞋很久了，趾甲就黃黃厚厚的，是灰指甲嗎？要吃藥嗎？」
 「我大拇趾外翻很多年，趾甲老是裂、變形，每次剪都很痛。」
 「糖尿病的我，可不可以自己修剪嵌甲？」
-這些都是診間最常遇到的問題。先講結論：研究顯示腳趾甲變形最常見的原因不是黴菌，是「鞋子壓迫 + 腳型」造成的機械性傷害。超過 9 成的趾甲變形可以找到合併的腳型異常或鞋子壓迫的證據。但機械性傷害本身又會讓黴菌容易感染，所以兩者常常合併存在——只治療其中一邊，往往效果不持久。
+這些都是診間最常遇到的問題。先講結論：Studies show that 腳趾甲變形最常見的原因不是黴菌，是「鞋子壓迫 + 腳型」造成的機械性傷害。超過 9 成的趾甲變形可以找到合併的腳型異常或鞋子壓迫的證據。但機械性傷害本身又會讓黴菌容易感染，所以兩者常常合併存在——只治療其中一邊，往往效果不持久。
 這篇文章前半段用最白話的方式告訴你怎麼辨識、怎麼處理；後半段給對醫學有興趣的讀者完整的解剖、機轉與治療深度。
 先講結論：你最需要知道的幾件事
 30 秒重點趾甲變形最常見的原因不是黴菌，是鞋子壓迫 + 腳型異常造成的機械性傷害
@@ -1275,7 +1272,7 @@ Morton 趾、拇指外翻、扁平足、開張足都會讓趾甲變樣，常被�
 看醫師前可以準備：常穿的鞋子（或照片）、變化的時間軸、糖尿病/血液循環/關節炎病史
 民眾常見問題 Q&A
 Q1：腳趾甲變黃變厚一定是灰指甲嗎？
-不一定，而且機率比你想的低很多。研究顯示超過 90% 的趾甲變形其實是鞋子壓迫和腳型問題造成的，最常被誤診為灰指甲。要確認，最好做真菌培養或甲片病理切片。即使真的是灰指甲，如果腳型問題沒處理，治療後還是容易復發。
+不一定，而且機率比你想的低很多。Studies show that 超過 90% 的趾甲變形其實是鞋子壓迫和腳型問題造成的，最常被誤診為灰指甲。要確認，最好做真菌培養或甲片病理切片。即使真的是灰指甲，如果腳型問題沒處理，治療後還是容易復發。
 Q2：拇指外翻會讓趾甲怎樣？
 拇指外翻（Hallux valgus）是常見的腳型問題，盛行率 23-36%，女性比例較高。會造成大拇趾甲增厚、向外側偏、不透明、甲床下角化、甲剝離——看起來很像灰指甲。第二趾常被擠到蓋到大拇趾上面，跟著也受傷。一份觀察性研究指出，185 位灰指甲患者中約 90% 合併有拇趾錯位，腳型問題不處理，趾甲問題會反覆。
 Q3：Morton 趾是什麼？需要治療嗎？
@@ -1498,7 +1495,7 @@ Carpal Tunnel Syndrome 的手指甲變化
 ---
 ## 嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南
 URL: https://chendermatologist.com/blog/dermatologic-oral-examination
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT24M
 Tags: 口腔黏膜, Oral mucosa
@@ -1529,7 +1526,7 @@ Q1. 嘴破多久沒好應該找醫師？
 
 Q2. 口腔白色蕾絲紋路是癌前病變嗎？
 
-口腔扁平苔癬（OLP）多以細白色蕾絲狀紋路（Wickham striae）呈現，本身是慢性自體免疫發炎，通常為良性。但長期追蹤研究顯示 OLP 屬於「癌前病變候選」，少數案例（約 1% 以下/年）可能轉為口腔癌，需要每 6–12 個月定期追蹤。和「口腔白斑（leukoplakia）」需要分清楚——白斑通常是均勻白色斑塊、無蕾絲狀紋，與檳榔、菸酒高度相關，惡性轉化風險更高。
+口腔扁平苔癬（OLP）多以細白色蕾絲狀紋路（Wickham striae）呈現，本身是慢性自體免疫發炎，通常為良性。但長期追蹤Studies show that OLP 屬於「癌前病變候選」，少數案例（約 1% 以下/年）可能轉為口腔癌，需要每 6–12 個月定期追蹤。和「口腔白斑（leukoplakia）」需要分清楚——白斑通常是均勻白色斑塊、無蕾絲狀紋，與檳榔、菸酒高度相關，惡性轉化風險更高。
 
 Q3. 口腔切片會痛嗎？會留疤嗎？
 
@@ -1569,7 +1566,7 @@ Q6. 切片前要禁食或停藥嗎？孕婦可以切嗎？
 
 ① 口腔扁平苔癬（Oral Lichen Planus, OLP）
 
-自體免疫性發炎反應，T 細胞攻擊口腔黏膜上皮基底層。最典型的樣子是「雙側對稱的白色蕾絲狀紋路（Wickham striae）」長在頰黏膜，也可能出現紅斑型、糜爛型、萎縮型——後三種比較會痛。常見部位：頰黏膜雙側、舌側、牙齦。約 15–20% 患者同時有皮膚扁平苔癬（手腕、腰、足踝的紫色多角形丘疹），也可能合併指甲、頭皮、生殖器黏膜病變。
+自體免疫性發炎反應，T 細胞攻擊口腔黏膜上皮基底層。最典型的樣子是「雙側對稱的白色蕾絲狀紋路（Wickham striae）」Lumps located on the 頰黏膜，也可能出現紅斑型、糜爛型、萎縮型——後三種比較會痛。常見部位：頰黏膜雙側、舌側、牙齦。約 15–20% 患者同時有皮膚扁平苔癬（手腕、腰、足踝的紫色多角形丘疹），也可能合併指甲、頭皮、生殖器黏膜病變。
 
 ② 復發性口瘡（Recurrent Aphthous Stomatitis, RAS）
 
@@ -1629,7 +1626,7 @@ Wang YP et al. 2018; Lin HP et al. 201915,16
 
 皮膚科會怎麼檢查口腔？
 
-皮膚科口腔檢查不需要特別的設備——一個壓舌板、紗布、頭燈或診間照明就夠了。整個流程約 3–5 分鐘，分為「外觀檢查（extraoral）」與「口內檢查（intraoral）」。
+皮膚科口腔檢查不需要特別的設備——一個壓舌板、紗布、頭燈或診間照明就夠了。整個流程約 3–5 分鐘，分為「外觀檢查（extraoral）" AND "口內檢查（intraoral）」。
 
 外觀檢查：正面看臉部、嘴唇、人中、唇紅交界、嘴角；側面看下頷、腮腺、頸部淋巴結是否對稱、有無腫塊。
 
@@ -1677,14 +1674,14 @@ Wang YP et al. 2018; Lin HP et al. 201915,16
 ---
 ## 皮膚切片與腫瘤切除手術完整衛教 — 為什麼要切？怎麼切？術後怎麼照顧？
 URL: https://chendermatologist.com/blog/skin-biopsy-excision
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT14M
 Tags: 處置 / 手術, Skin biopsy & excision
 
 切片 vs 切除：差別在哪？
 
-「切片（biopsy）」主要目的是取得組織送病理確診、不一定切完整顆病灶；可能只取一部分（incisional）或整顆切下來（excisional）。「切除（excision）」則是把整顆病灶連同周圍邊緣完整移除、目的可能是治療（已知良性想拿掉）、或是診斷 + 治療一次完成（懷疑早期皮膚癌、邊緣 1-5 mm 切除送病理）。
+「切片（biopsy）」主要目的是取得組織送病理確診、不一定切完整顆病灶；可能只取一部分（incisional）或整顆切下來（excisional）。「切除（excision）」 is 把整顆病灶連同周圍邊緣完整移除、目的可能是治療（已知良性想拿掉）、或是診斷 + 治療一次完成（懷疑早期皮膚癌、邊緣 1-5 mm 切除送病理）。
 
 實務上兩者常用同一個梭形切口執行 — 差別只在是否包含足夠的安全邊緣。所有切下來的組織都應送病理化驗（Alguire 2026）— 這不是醫師多此一舉、而是常規與法規要求、以避免漏診早期皮膚癌。
 
@@ -1752,7 +1749,7 @@ UpToDate 2026（Alguire 2026）整理 8 大適應症：
 
 指甲切片需特別注意位置 — 因為指甲長度由「甲基質（matrix）」產生、切到基質可能造成永久指甲變形（Rich 2026）。
 
-圖 3。指甲切片必須區分「甲基質」與「甲床」位置 — 切到基質可能造成永久指甲變形。
+圖 3。指甲切片必須區分「甲基質" AND "甲床」位置 — 切到基質可能造成永久指甲變形。
 
 什麼樣的指甲變化要切片？
 
@@ -2054,7 +2051,7 @@ NT$ 3,000-8,000（依大小／部位）
 ---
 ## 乾癬完整衛教 — 分型、嚴重度、誘發因子
 URL: https://chendermatologist.com/blog/psoriasis-overview
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT6M
 Tags: 乾癬, Psoriasis overview
@@ -2229,7 +2226,7 @@ UpToDate: Chronic plaque psoriasis in adults: Overview of management. Accessed 2
 ---
 ## 乾癬外用藥治療 — 類固醇、維生素 D、特殊部位
 URL: https://chendermatologist.com/blog/psoriasis-topical
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 乾癬, Psoriasis topical
@@ -2417,7 +2414,7 @@ calcitriol 軟膏比 calcipotriol 對臉刺激小
 
 結語
 
-乾癬外用藥是 70-80% 病人的長期主力。掌握 4 個原則就能事半功倍：（1）強類固醇短期用、特殊部位避免；（2）維生素 D 衍生物作為維持與長期治療；（3）合併使用比單方更有效（複方 calcipotriol／betamethasone 是首選）；（4）頑固或特殊部位儘早升階（光療、全身性、生物製劑）。如果你已認真規律外用 6 個月仍無法控制、別自責沒擦對藥、是時候和醫師討論升階。
+乾癬外用藥是 70-80% 病人的長期主力。掌握 4 個原則就能事半功倍：（1）強類固醇短期用、特殊部位避免；（2）維生素 D 衍生物作為維持與長期治療；（3）合併使用比單方更有效（複方 calcipotriol／betamethasone 是首選）；（4）頑固或特殊部位儘早升階（光療、全身性、生物製劑）。如果你已認真規律topicals fail to control after 6 months、別自責沒擦對藥、是時候和醫師討論升階。
 
 參考資料
 
@@ -2434,7 +2431,7 @@ Stein Gold L, Lebwohl M, Sugarman J, et al. Calcipotriene/betamethasone dipropio
 ---
 ## 乾癬全身性治療 — 光療、口服、生物製劑
 URL: https://chendermatologist.com/blog/psoriasis-systemic
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 乾癬, Psoriasis systemic
@@ -2850,7 +2847,7 @@ Ustekinumab（Stelara®）是第一代「IL-23 路徑」抑制劑、靶向 IL-12
 ---
 ## 乾癬合併症與特殊族群 — PsA、心血管、懷孕、兒童、指甲、紅皮症
 URL: https://chendermatologist.com/blog/psoriasis-special-populations
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 乾癬, Psoriasis special populations
@@ -3084,7 +3081,7 @@ Bachelez H, Choon SE, Marrakchi S, et al. Trial of spesolimab for generalized pu
 ---
 ## 異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏
 URL: https://chendermatologist.com/blog/atopic-dermatitis-topical
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 異位性皮膚炎, AD topical
@@ -3264,7 +3261,7 @@ Papier A, Strowd LC. Atopic dermatitis: a review of topical nonsteroid therapy. 
 ---
 ## 異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療
 URL: https://chendermatologist.com/blog/atopic-dermatitis-systemic
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT10M
 Tags: 異位性皮膚炎, AD systemic
@@ -3624,12 +3621,12 @@ Drucker AM, Morra DE, Prieto-Merino D, et al. Systemic immunomodulatory treatmen
 ---
 ## 異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染
 URL: https://chendermatologist.com/blog/atopic-dermatitis-special-populations
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 異位性皮膚炎, AD special populations
 
-過敏進行曲（atopic march）
+atopic march
 
 「過敏進行曲」描述異位體質（atopy）兒童的疾病演變模式：
 
@@ -3830,7 +3827,7 @@ UpToDate: Management of severe, refractory atopic dermatitis (eczema) in infants
 ---
 ## 接觸性皮膚炎(過敏 vs 刺激)完整衛教
 URL: https://chendermatologist.com/blog/contact-dermatitis
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 接觸性皮膚炎, Contact dermatitis
@@ -4090,7 +4087,7 @@ UpToDate: Common allergens in allergic contact dermatitis. Accessed 2026.
 ---
 ## 日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教
 URL: https://chendermatologist.com/blog/actinic-keratosis-scc
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT10M
 Tags: 皮膚癌, AK / SCC
@@ -4382,13 +4379,13 @@ AAD JAAD cutaneous SCC management
 ---
 ## 痘痘 8 大迷思
 URL: https://chendermatologist.com/blog/acne-myths
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 痘痘, Acne
 
 迷思 1：痘痘是青春期才會的事
-「我都 30 歲了還在長痘，是不是身體出問題？」成人痘(adult acne)非常常見，並不代表身體出問題。研究顯示約 40-55% 的 25-44 歲女性仍有不同程度的痘痘問題；男性比例略低但也不少見。成人痘成因跟青春期不一樣，常和荷爾蒙波動（月經前、停服避孕藥、多囊性卵巢）、壓力、保養品、口罩悶熱、睡眠更相關。
+「我都 30 歲了還在長痘，是不是身體出問題？」成人痘(adult acne)非常常見，並不代表身體出問題。Studies show that 約 40-55% 的 25-44 歲女性仍有不同程度的痘痘問題；男性比例略低但也不少見。成人痘成因跟青春期不一樣，常和荷爾蒙波動（月經前、停服避孕藥、多囊性卵巢）、壓力、保養品、口罩悶熱、睡眠更相關。
 位置也不太一樣：青春期常在前額、鼻頭（T 字部位）；成人女性多在下巴、嘴角、下顎線。看到 30 歲還在長痘不需要恐慌，但反覆發作建議至皮膚科評估。
 迷思 2：痘痘擠掉就好
 「白頭出來了用衛生紙擠一下就消了。」擠痘是留疤主因之一。擠痘看似讓痘痘「立刻消失」，但你看不到的是：擠壓的力量會把感染推得更深、破壞真皮層的膠原蛋白、造成微小的疤痕組織形成。大部分凹疤（冰錐疤、廂型疤、滾動疤）的源頭都是「年輕時擠過的痘」。
@@ -4452,12 +4449,12 @@ Zaenglein AL, et al. Guidelines of care for the management of acne vulgaris. J A
 Reynolds RC, et al. Effect of the glycemic index of carbohydrates on Acne vulgaris. Nutrients. 2010;2(10):1060-1072. 「來源」
 UpToDate: Acne vulgaris: Overview of management. Accessed 2026. 「來源」
 衛福部食藥署 — Adapalene/Tretinoin 仿單 「來源」
-臺灣皮膚科醫學會。 痤瘡臨床治療共識. 2024.
+Taiwan Dermatological Association. 痤瘡臨床治療共識. 2024.
 
 ---
 ## 蕁麻疹 6 大迷思
 URL: https://chendermatologist.com/blog/urticaria-myths
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Myths & Facts
 Reading time: PT13M
 Tags: 蕁麻疹, Urticaria
@@ -4591,7 +4588,7 @@ Comorbidities（共病）：甲狀腺、自體免疫、代謝、心理（見上�
 ---
 ## 乾癬 7 大迷思
 URL: https://chendermatologist.com/blog/psoriasis-myths
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Myths & Facts
 Reading time: PT12M
 Tags: 乾癬, Psoriasis
@@ -4766,7 +4763,7 @@ Menter A, et al. Joint AAD-NPF guidelines of care for the management of psoriasi
 ---
 ## 外用酸類完整衛教
 URL: https://chendermatologist.com/blog/topical-acids-patient
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Products & Drugs
 Reading time: PT8M
 Tags: 酸類, Topical acids
@@ -4973,7 +4970,7 @@ Bakuchiol（補骨脂酚）
 ---
 ## 口服 A 酸完整衛教
 URL: https://chendermatologist.com/blog/isotretinoin-patient
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 口服 A 酸, Isotretinoin
@@ -5103,7 +5100,7 @@ Tags: 口服 A 酸, Isotretinoin
 皮脂腺需要時間恢復：許多人停藥後仍維持低出油狀態 6-12 個月，才慢慢回升。
 皮膚屏障重建：停藥後仍要維持溫和洗臉、保濕、防曬。
 會復發嗎？復發率多少
-大型研究顯示，標準療程（累積 120-150 mg/kg)結束後，大約三分之一的人會在 1-3 年內復發需要再治療。但「復發」不等於「跟以前一樣嚴重」 — 多數復發比之前輕很多，且常常用外用藥就能控制。
+大型Studies show that ，標準療程（累積 120-150 mg/kg)結束後，大約三分之一的人會在 1-3 年內復發需要再治療。但「復發」不等於「跟以前一樣嚴重」 — 多數復發比之前輕很多，且常常用外用藥就能控制。
 復發風險較高的族群：
 累積劑量未達標（沒吃夠就自己停藥）
 青少年（尤其男性 16 歲以下）
@@ -5124,7 +5121,7 @@ Tags: 口服 A 酸, Isotretinoin
 
 常見迷思澄清
 迷思 1:「吃 A 酸會憂鬱、自殺」
-這是從 1990 年代開始的爭議。近年的大型統合分析並未證實口服 A 酸會直接造成憂鬱或自殺風險；甚至有一部分研究顯示痘痘改善後病人的憂鬱分數反而下降。但個別病人可能對情緒比較敏感，出現低落、易怒、睡眠改變應立即告訴醫師，評估是否減量或停藥。
+這是從 1990 年代開始的爭議。近年的大型統合分析並未證實口服 A 酸會直接造成憂鬱或自殺風險；甚至有一部分Studies show that 痘痘改善後病人的憂鬱分數反而下降。但個別病人可能對情緒比較敏感，出現低落、易怒、睡眠改變應立即告訴醫師，評估是否減量或停藥。
 2023 NICE 新規（2026 重新確認）：英國依 MHRA 新指引要求，開始口服 A 酸前必須先評估精神狀態（憂鬱、焦慮、自傷自殺意念），療程中每次回診都要重新詢問與紀錄。台灣雖無強制等同規定，但越來越多皮膚科醫師會主動詢問你的情緒狀態，這是好事，不要嫌煩。
 迷思 2:「吃 A 酸會得發炎性腸道疾病(IBD)」
 過去曾有研究擔心 A 酸會增加 IBD（克隆氏症、潰瘍性結腸炎）風險，但近年大型族群研究並未支持這個關聯。痘痘本身就跟 IBD 有些重疊體質。如果腸胃明顯不適、便血，告訴醫師。
@@ -5169,7 +5166,7 @@ A 酸要怎麼吃？空腹還是飯後？
 ---
 ## 痘疤完整治療指引
 URL: https://chendermatologist.com/blog/acne-scar-treatment
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 痘疤, Acne scars
@@ -5324,7 +5321,7 @@ UpToDate: Treatment of acne scars. Accessed 2026. 「來源」
 ---
 ## 白斑（Vitiligo）完整衛教
 URL: https://chendermatologist.com/blog/vitiligo
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 白斑, Vitiligo
@@ -5582,7 +5579,7 @@ TDA 2024 共識聲明 16:狀態穩定的白斑病灶可使用手術方式治療�
 ---
 ## 皮膚科常用藥物健保規範完整整理
 URL: https://chendermatologist.com/blog/nhi-derm-drugs
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT13M
 Tags: 健保規範, NHI rules
@@ -5994,7 +5991,7 @@ NT$ 1,800-2,500/條(30g)
 ---
 ## 結節性癢疹完整衛教
 URL: https://chendermatologist.com/blog/prurigo-nodularis
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT6M
 Tags: 結節性癢疹, Prurigo Nodularis
@@ -6164,7 +6161,7 @@ KIT 抑制劑(Barzolvolimab)：耗竭肥大細胞、尤其慢性蕁麻疹合併 
 Meggitt SJ, Anstey AV, Mohd Mustapa MF, Reynolds NJ, Wakelin S. British Association of Dermatologists' guidelines for the safe and effective prescribing of azathioprine 2011. Br J Dermatol. 2011;165(4):711-734. 「來源」
 Warren RB, Weatherhead SC, Smith CH, et al. British Association of Dermatologists' guidelines for the safe and effective prescribing of methotrexate for skin disease 2016. Br J Dermatol. 2016;175(1):23-44. 「來源」
 Berth-Jones J, Exton LS, Ladoyanni E, et al. British Association of Dermatologists guidelines for the safe and effective prescribing of oral ciclosporin in dermatology 2018. Br J Dermatol. 2019;180(6):1312-1338. 「來源」
-臺灣皮膚科醫學會。 結節性癢疹診斷與管理共識(TDA Consensus for Diagnosis and Management of Prurigo Nodularis). 2024 年 9 月。
+Taiwan Dermatological Association. 結節性癢疹診斷與管理共識(TDA Consensus for Diagnosis and Management of Prurigo Nodularis). 2024 年 9 月。
 Pereira MP, et al. EADV recommendations for the diagnosis and treatment of chronic prurigo.J Eur Acad Dermatol Venereol. 2018;32(7):1059-1065. 「來源」
 Yosipovitch G, et al. Efficacy and safety of dupilumab in adults with prurigo nodularis (LIBERTY-PN PRIME / PRIME 2).Nat Med. 2023;29(5):1180-1190. 「來源」
 Kwatra SG, et al. Phase 3 trial of nemolizumab in patients with prurigo nodularis (OLYMPIA 2).N Engl J Med. 2023;389(17):1579-1589. 「來源」
@@ -6176,7 +6173,7 @@ UpToDate: Prurigo nodularis. Accessed 2026.
 ---
 ## 皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教
 URL: https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 皮膚淋巴瘤, CTCL / MF
@@ -6361,7 +6358,7 @@ UpToDate: Treatment of mycosis fungoides. Accessed 2026.
 ---
 ## 皮膚科 25 個最常見問題
 URL: https://chendermatologist.com/blog/dermatology-faq
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Myths & Facts
 Reading time: PT12M
 Tags: 常見問題, FAQ
@@ -6423,7 +6420,7 @@ Crisaborole 2% （寇緹斯）:PDE-4 抑制劑，3 個月以上嬰兒可用
 維他命 C：抗氧化、協助防曬抵抗 UV、抑制黑色素
 A 酸：夜間發揮（白天會分解），促進角質代謝、抗老
 有實證，但沒做防曬就沒用。新手建議從低濃度開始（維他命 C 10% / A 醇 0.1%），適應後升級。
-詳見 外用酸類完整衛教 + 美白成分完整解析
+詳見 外用酸類完整衛教 + Brightening ingredients — full breakdown
 
 8. 防曬到底要不要卸妝？
 判斷依據：
@@ -6465,7 +6462,7 @@ A 酸隔天輪用（中間夜晚改杜鵑花酸或菸鹼醯胺）
 痘印 PIH（色素沉著）/ PIE（紅疤）：平面、不凹凸，3-12 個月會自然淡化。嚴格防曬是關鍵。可用 A 酸 / 杜鵑花酸 / 菸鹼醯胺加速。紅疤可考慮脈衝染料雷射(PDL)
 凹疤（冰鑿、廂車、滾動）：已是真皮損傷，不會自己好，擦藥也無效。需雷射（飛梭、皮秒）、TCA CROSS、皮下分離、玻尿酸填補等介入
 看到痘痘消了之後仍有凹陷 — 越早處理越輕鬆。
-詳見 痘疤完整治療指引
+詳見 Acne scar treatment — full guide
 
 13. 痘痘吃口服 A 酸（Roaccutane / Acnotin / 羅可坦）會傷肝嗎？
 會輕度上升肝指數與血脂，但嚴重肝損傷極罕見(< 0.1%)。台灣標準療程：
@@ -6484,7 +6481,7 @@ A 酸隔天輪用（中間夜晚改杜鵑花酸或菸鹼醯胺）
 沒有實證需禁的：巧克力、油炸、辣椒、海鮮、堅果、豆漿、雞蛋。建議減糖減奶 3 個月觀察。
 
 15. 為什麼成人也會長痘痘？
-研究顯示40-55% 的 25-44 歲女性仍有不同程度痘痘。常見原因：
+Studies show that 40-55% 的 25-44 歲女性仍有不同程度痘痘。常見原因：
 荷爾蒙波動（月經前、停服避孕藥、PCOS、停經前期）
 壓力（會增加皮質醇 → 刺激皮脂腺）
 保養品 / 防曬選錯（致粉刺成分）
@@ -6501,7 +6498,7 @@ A 酸隔天輪用（中間夜晚改杜鵑花酸或菸鹼醯胺）
 蜂巢皮秒：皮秒 + 全像聚焦透鏡(LIOB)，產生表皮真皮微損傷孔洞，刺激膠原 — 適合輕度凹疤、毛孔、肌膚整體質感
 飛梭雷射 (CO2 / Erbium fractional)：汽化點陣，深度強，適合中重度凹疤、深層皺紋，術後紅+結痂 5-7 天
 選擇看目標：斑點 → 皮秒；肌膚整體 → 蜂巢皮秒；深凹疤 → 飛梭 CO2。
-詳見 痘疤完整治療指引
+詳見 Acne scar treatment — full guide
 
 17. 肝斑可以雷射嗎？會不會反黑？
 傳統高能量雷射對肝斑常造成反黑加重(PIH)。現在共識是用低能量皮秒 toning（蜂巢皮秒 1064 nm 低能量）多次治療，搭配：
@@ -6509,7 +6506,7 @@ A 酸隔天輪用（中間夜晚改杜鵑花酸或菸鹼醯胺）
 口服傳明酸 250 mg BID-TID（8-12 週）
 每天含氧化鐵物理性防曬
 單純雷射沒搭配藥膏 + 防曬 = 浪費錢且易反黑。
-詳見 肝斑 7 大迷思
+詳見 7 Melasma Myths
 
 18. 口服 A 酸期間能不能做雷射、刺青、除毛？
 避免侵入性 / 高熱雷射：
@@ -6557,7 +6554,7 @@ Tri-Luma 三合一
 22. 懷孕長的肝斑會自己消嗎？
 部分會。多數產後肝斑會在 6-12 個月內自然淡化（若哺乳結束 + 停止口服避孕藥）。但已存在多年的肝斑、有家族史的、停經前期再起的，通常不會自然消退。
 哺乳期可使用杜鵑花酸 Azelaic acid + 純物理防曬（含氧化鐵）溫和處置；生完哺乳結束後再考慮 Hydroquinone 或 Tri-Luma。
-詳見 肝斑 7 大迷思
+詳見 7 Melasma Myths
 
 23. 異膚寶寶可以擦類固醇嗎？
 可以。台灣 TDA 異膚 2020 共識認可類固醇藥膏是嬰幼兒異膚第一線治療。安全使用：
@@ -6573,18 +6570,13 @@ Tri-Luma 三合一
 常見鑑別：
 嬰兒濕疹 / 異膚：臉頰、頭皮先發，反覆癢疹，慢性
 汗疹 (miliaria)：熱悶後出現透明小水泡或紅疹，在頸部、皺褶，涼快就退
-奶癬（脂漏性皮膚炎）：頭皮黃色油性結痂，4-6 個月內自然消失
-尿布疹：接觸性，屁股、會陰紅疹，常合併念珠菌（衛星型紅疹）
-蕁麻疹：風疹塊忽然出現忽然消退，癢
-分不清就帶寶寶看皮膚科，對症下藥才對。
-
 
 [... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 粉瘤完整衛教
 URL: https://chendermatologist.com/blog/epidermoid-cyst
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 粉瘤, Epidermoid cyst
@@ -6630,7 +6622,7 @@ Tags: 粉瘤, Epidermoid cyst
 
 為什麼會長粉瘤？是「皮膚不乾淨」嗎？
 跟「乾淨度」無關。常見成因：
-毛囊阻塞 + 角質陷入：最常見，所以粉瘤常長在皮脂腺多、有毛囊的部位 — 臉、頸、胸、背、頭皮、陰囊
+毛囊阻塞 + 角質陷入：最常見，所以粉瘤常Lumps located on the 皮脂腺多、有毛囊的部位 — 臉、頸、胸、背、頭皮、陰囊
 外傷 / 穿耳洞 / 手術疤痕：表皮細胞被推到真皮層，形成 植入式囊腫(implantation cyst)
 遺傳症候群:Gardner 症候群（腸道息肉 + 多發性粉瘤）、Gorlin 症候群
 發炎後：嚴重痤瘡癒合後可能形成粉瘤
@@ -6801,7 +6793,7 @@ Minimal excision（微創切除）
 急性發炎時先消炎，不要急著完整切除
 穩定期才做完整橢圓形切除，確保囊袋完整取出 → 復發率 < 5%
 如果你身上有反覆發炎或變大的腫塊，別再嘗試擠它了 — 一次完整手術切除，從此根治。健保有給付。
-延伸閱讀：跟粉瘤鑑別的常見發炎性腫塊看 化膿性汗腺炎（皺褶處反覆膿瘍）；類似但機轉不同的痤瘡看 痘痘 8 大迷思；術後減疤看 痘疤完整治療指引 中的肥厚疤 / 蟹足腫處置。
+延伸閱讀：跟粉瘤鑑別的常見發炎性腫塊看 化膿性汗腺炎（皺褶處反覆膿瘍）；類似但機轉不同的痤瘡看 痘痘 8 大迷思；術後減疤看 Acne scar treatment — full guide 中的肥厚疤 / 蟹足腫處置。
 
 參考資料
 Hoang VT, et al. Overview of epidermoid cyst. Eur J Radiol Open. 2019;6:291-301. 「來源」
@@ -6812,7 +6804,7 @@ UpToDate: Cutaneous cysts overview — Epidermoid, pilar, and other cysts. Acces
 ---
 ## 皮膚科雷射完整對照
 URL: https://chendermatologist.com/blog/laser-dermatology
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT12M
 Tags: 雷射 / 光電, Laser dermatology
@@ -6821,7 +6813,7 @@ Tags: 雷射 / 光電, Laser dermatology
 雷射的核心物理原理是「選擇性光熱解（selective photothermolysis）」：不同波長的光被不同顯色團（chromophore）吸收，把光能轉成熱能精準破壞目標，周邊組織不受傷：
 黑色素(melanin)：吸收 532-1064 nm 範圍，波長越短吸收越強（但穿透越淺）
 血紅素(hemoglobin / oxyhemoglobin)：強吸收於 418、542、577 nm 三個峰；臨床用 PDL(585-595 nm)、KTP(532 nm)、Nd:YAG(1064 nm)
-水(water)：強吸收於 1450、1927、2940、10600 nm；這是「磨皮」與「飛梭」雷射的原理
+水(water)：強吸收於 1450、1927、2940、10600 nm；這是「磨皮" AND "飛梭」雷射的原理
 外來色素（刺青墨水）：依顏色不同對波長有特異吸收 — 黑藍綠用 1064/755/694，紅黃用 532
 所以醫師選雷射時會問：「目標是色素？血管？水？」「位置在表皮還是真皮？」「Fitzpatrick 膚色幾型？」「有沒有發炎中？」
 12 種臨床常用波長
@@ -7131,7 +7123,7 @@ I-IV 型
 ↓
 穿透不足，效果不如新世代
 
-典型療程 6-8 次，間隔 4-8 週（視部位）。S2k 提醒：「家用 IPL 機器」與「醫療等級雷射」效果差異很大，不要互相比較。
+典型療程 6-8 次，間隔 4-8 週（視部位）。S2k 提醒：「家用 IPL 機器" AND "醫療等級雷射」效果差異很大，不要互相比較。
 良性增生與癌前病變
 老人斑（脂漏性角化症 SK)、汗管瘤、皮脂腺增生、黃色瘤
 雷射
@@ -7243,7 +7235,7 @@ cyclosporine 環孢素使用者不建議併用 UV 治療（包含 308 nm 準分�
 ---
 ## 嬰幼兒 / 兒童異位性皮膚炎完整照護指南
 URL: https://chendermatologist.com/blog/pediatric-eczema
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT12M
 Tags: 異位性皮膚炎, Atopic dermatitis
@@ -7284,7 +7276,7 @@ Tags: 異位性皮膚炎, Atopic dermatitis
 燕麥系列：艾惟諾 Aveeno Baby Eczema
 含菸鹼醯胺修護：Bioderma Atoderm Intensive、QV Baby Skin Lotion
 潤膚預防(Emollient prevention)— 高風險嬰兒
-有家族異膚史的嬰兒，出生後每天全身保濕至少 6 個月，過去研究顯示可降低 32-50% 異膚發生率(BEEP, PreventADALL trials)。但 2020 年後較大型試驗(BEEP)結果為陰性，目前 Werfel 2024 指引不強烈建議「常規保濕預防」，但對高風險嬰兒仍可考慮。
+有家族異膚史的嬰兒，出生後每天全身保濕至少 6 個月，過去Studies show that 可降低 32-50% 異膚發生率(BEEP, PreventADALL trials)。但 2020 年後較大型試驗(BEEP)結果為陰性，目前 Werfel 2024 指引不強烈建議「常規保濕預防」，但對高風險嬰兒仍可考慮。
 外用類固醇 — 嬰幼兒安全用法
 家長最常問的「類固醇恐懼症」：正確使用下，外用類固醇是嬰幼兒異膚的第一線安全有效治療。皮膚萎縮、紋路、毛細血管擴張幾乎只發生在「長期錯誤使用」高強度類固醇於薄皮處。詳見外用類固醇完整指南。
 
@@ -7463,7 +7455,7 @@ EAT trial (Perkin et al., NEJM 2016)
 ---
 ## 病毒疣 6 大迷思
 URL: https://chendermatologist.com/blog/warts-myths
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Myths & Facts
 Reading time: PT7M
 Tags: 病毒疣, Warts
@@ -7611,7 +7603,7 @@ UpToDate: Cutaneous warts: Treatment. Accessed 2026. 「來源」
 ---
 ## 帶狀皰疹 6 大迷思
 URL: https://chendermatologist.com/blog/shingles-myths
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Myths & Facts
 Reading time: PT7M
 Tags: 皮蛇, Shingles
@@ -7773,7 +7765,7 @@ UpToDate: Treatment of herpes zoster in the immunocompetent host. Accessed 2026.
 ---
 ## 圓禿（鬼剃頭）完整衛教
 URL: https://chendermatologist.com/blog/alopecia-areata
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT15M
 Tags: 圓禿, Alopecia areata
@@ -7972,7 +7964,7 @@ Ciclosporin（環孢素）：2.5-5 mg/kg/day 分 2 次，建議短療程，最�
 ---
 ## 猴痘（Mpox）皮膚照護
 URL: https://chendermatologist.com/blog/mpox-care
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 猴痘, Mpox
@@ -8056,16 +8048,16 @@ TDA 官方建議的處置原則：
 對淺色色素沉著（PIH）：嚴格防曬 + A 酸 / 杜鵑花酸 / 對苯二酚 / 蜂巢皮秒（視個人狀況）
 對輕度凹疤：微針、皮秒蜂巢、飛梭雷射（數月後再做）
 對肥厚疤 / 蟹足腫：類固醇注射、矽膠貼片
-詳細的痘疤 / 各類疤痕處理方式可參考 痘疤完整治療指引 中的對照與療程。
+詳細的痘疤 / 各類疤痕處理方式可參考 Acne scar treatment — full guide 中的對照與療程。
 結語
 猴痘是一種會自行痊癒的病毒感染，皮膚科處置以支持性治療為主。最關鍵的三件事：不抓 + 溫和清潔 + 凡士林保護傷口。痊癒後若有疤痕困擾，完成感染期後再到皮膚科評估雷射或修復治療。
 有任何感染徵象、症狀加劇、無法忍受的疼痛或精神症狀，請立即至感染科或急診就醫。
-延伸閱讀：痊癒後的疤痕處理看 痘疤完整治療指引；類似水泡狀的病毒感染還有 帶狀皰疹（皮蛇）6 大迷思。
+延伸閱讀：痊癒後的疤痕處理看 Acne scar treatment — full guide；類似水泡狀的病毒感染還有 帶狀皰疹（皮蛇）6 大迷思。
 
 臺灣皮膚科醫學會官方資源
 本文照護建議由臺灣皮膚科醫學會吳介山醫師、魏楷哲醫師、宋玟儀醫師協助制定。完整官方指引：
 → 臺灣皮膚科醫學會診療指引總覽→ 衛福部疾管署 猴痘專區參考資料
-臺灣皮膚科醫學會。 猴痘皮膚照護建議指引. 制訂醫師：吳介山、魏楷哲、宋玟儀。
+Taiwan Dermatological Association. 猴痘皮膚照護建議指引. 制訂醫師：吳介山、魏楷哲、宋玟儀。
 衛生福利部疾病管制署。 猴痘專區。 「來源」
 WHO. Mpox (formerly monkeypox) factsheet. 「來源」
 CDC USA. Mpox: Clinical Recognition. 「來源」
@@ -8074,7 +8066,7 @@ UpToDate: Mpox (Monkeypox) virus infection: Clinical manifestations and diagnosi
 ---
 ## 化膿性汗腺炎（HS）完整衛教
 URL: https://chendermatologist.com/blog/hidradenitis-suppurativa
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 化膿性汗腺炎, HS
@@ -8317,7 +8309,7 @@ HS 跟克隆氏症有關嗎？
 ---
 ## 標靶藥物（TKI）皮膚副作用
 URL: https://chendermatologist.com/blog/targeted-therapy-skin
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 標靶藥物, Targeted therapy skin
@@ -8478,7 +8470,7 @@ EGFR 痤瘡樣皮疹本質是發炎反應（不是真正的痤瘡）類固醇藥
 延伸閱讀：痤瘡樣皮疹 vs 一般痘痘的差別，看 痘痘 8 大迷思；乾皮症處置原則類似 異位性皮膚炎 6 大迷思 中的保濕策略。
 
 參考資料
-臺灣肺癌學會 + 臺灣皮膚科醫學會。 TKI 標靶藥物相關皮膚毒性的預防與管理共識. 2024.
+臺灣肺癌學會 + Taiwan Dermatological Association. TKI 標靶藥物相關皮膚毒性的預防與管理共識. 2024.
 Lacouture ME, et al. Clinical practice guidelines for the prevention and treatment of EGFR inhibitor-associated dermatologic toxicities. Support Care Cancer. 2011;19(8):1079-1095. 「來源」
 Lacouture ME, et al. Skin toxicity evaluation protocol with panitumumab (STEPP). J Clin Oncol. 2010;28(8):1351-1357. 「來源」
 Hofheinz RD, et al. Recommendations for the prophylactic management of skin reactions induced by EGFR inhibitors. Oncologist. 2016;21(12):1483-1491. 「來源」
@@ -8487,7 +8479,7 @@ UpToDate: Acneiform eruption secondary to epidermal growth factor receptor (EGFR
 ---
 ## 外用類固醇完整指南
 URL: https://chendermatologist.com/blog/topical-steroids-guide
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 外用類固醇, Topical steroids
@@ -8640,7 +8632,7 @@ FTU（2-5 歲兒童）
 遠超原始疾病範圍
 處置：逐步減量，改弱強度 / 改頻率，搭配 TCI、光療，必要時短期口服免疫抑制劑。網路上「TSW」的恐怖案例多為長期不當自行使用最強類固醇所致，正確醫療使用幾乎不會發生。
 類固醇恐懼症（TCS phobia）
-研究顯示30-80% 的異膚病人對類固醇有不同程度的恐懼，結果擅自停藥 → 病情惡化 → 抓癢 → 感染 → 用更強類固醇 → 惡性循環。常見誤解：
+Studies show that 30-80% 的異膚病人對類固醇有不同程度的恐懼，結果擅自停藥 → 病情惡化 → 抓癢 → 感染 → 用更強類固醇 → 惡性循環。常見誤解：
 類固醇藥膏會被吸收影響身體 → 弱中強度短期使用全身吸收極少(< 2%)
 類固醇會讓皮膚變黑 → 可能讓皮膚變薄變蒼白，而不治療發炎才會留色素沉著
 類固醇會上癮 → 不會生理上癮，但長期亂用後突然停可能反彈
@@ -8741,18 +8733,18 @@ Long CC, Finlay AY. The finger-tip unit—a new practical measure. Clin Exp Derm
 Hajar T, et al. A systematic review of topical corticosteroid withdrawal ("steroid addiction") in patients with atopic dermatitis. J Am Acad Dermatol. 2015;72(3):541-549. 「來源」
 Wollenberg A, et al. Proactive therapy with TCS / TCI for AD — efficacy and safety review.Allergy. 2008;63(7):742-750. 「來源」
 UpToDate: General principles of dermatologic therapy and topical corticosteroid use. Accessed 2026.
-臺灣皮膚科醫學會。 異位性皮膚炎診療共識（2020 更新）. 詳述外用類固醇與 TCI 用法。
+Taiwan Dermatological Association. 異位性皮膚炎診療共識（2020 更新）. 詳述外用類固醇與 TCI 用法。
 
 ---
 ## 皮膚科生物製劑與小分子標靶藥物總覽
 URL: https://chendermatologist.com/blog/biologics-overview
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 生物製劑, Biologics
 
 什麼是生物製劑？跟一般藥不同？
-傳統小分子藥物（類固醇、Methotrexate、Cyclosporine）透過「廣泛抑制免疫」達到效果，副作用較多。生物製劑與新一代小分子標靶藥物則是「精準擊中特定發炎路徑」:
+傳統小分子藥物（類固醇、Methotrexate、Cyclosporine）透過「廣泛抑制免疫」達到效果，副作用較多。生物製劑與新一代小分子標靶藥物 is 「精準擊中特定發炎路徑」:
 生物製劑（Biologics）：大分子蛋白質（通常是單株抗體)，需注射（皮下或靜脈）。例：Dupilumab、Adalimumab、Secukinumab、Guselkumab
 小分子標靶藥（Small molecules）：小分子化學合成，可口服。例：JAK 抑制劑(Upadacitinib、Abrocitinib)、PDE-4 抑制劑(Apremilast)、TYK2 抑制劑(Deucravacitinib)
 兩類都比傳統藥物更專一、副作用更輕、療效更強，但價格較高，且許多有健保條件給付。
@@ -9073,7 +9065,7 @@ NT$ 4,000-6,000/條(60g)
 ---
 ## 美白成分完整解析
 URL: https://chendermatologist.com/blog/skin-whitening-agents
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Products & Drugs
 Reading time: PT8M
 Tags: 美白, Whitening agents
@@ -9128,7 +9120,7 @@ Fluocinolone 0.01%
 達到效果後改用非類固醇美白成分（如 Azelaic acid）維持
 嚴格防曬
 孕婦、哺乳禁用
-研究顯示三合一比單獨使用 Hydroquinone 效果好(Taylor et al., Cutis 2003)。但「越濃越好」是錯的 — 自行配製超高濃度反而易反黑。
+Studies show that 三合一比單獨使用 Hydroquinone 效果好(Taylor et al., Cutis 2003)。但「越濃越好」是錯的 — 自行配製超高濃度反而易反黑。
 傳明酸（Tranexamic acid）— 外用 + 口服
 原本是抗纖溶止血藥（治月經量多、外科出血），近 10 年發現對肝斑有顯著效果，改變了肝斑治療版圖。
 劑型
@@ -9202,7 +9194,7 @@ L-ascorbic acid（左旋 C）10-20%是金標，但不穩定；衍生物如 MAP�
 選購重點
 避光不透明瓶身、配合維他命 E + 阿魏酸（SkinCeuticals CE Ferulic 為標竿）、pH < 3.5 才有效
 
-維他命 C 最強的不是「美白」，是「協同防曬抗氧化」。早上維他命 C + 防曬 = 最佳光防護組合。研究顯示可以增強防曬光防護(Pinnell SR. Cutaneous photodamage, oxidative stress, and topical antioxidant protection. J Am Acad Dermatol 2003)。
+維他命 C 最強的不是「美白」，是「協同防曬抗氧化」。早上維他命 C + 防曬 = 最佳光防護組合。Studies show that 可以增強防曬光防護(Pinnell SR. Cutaneous photodamage, oxidative stress, and topical antioxidant protection. J Am Acad Dermatol 2003)。
 菸鹼醯胺（Niacinamide, Vitamin B3）
 項目
 內容
@@ -9342,7 +9334,7 @@ Tri-Luma 三合一
 穀胱甘肽（Glutathione, GSH）口服：大多研究品質不佳；皮下/靜脈注射為「美白點滴」概念，FDA 並不核准美白用途；孕婦禁用
 口服 PCB / 蔘類：無實證
 肝斑 vs 曬斑 vs 痘印，各用什麼成分？
-肝斑:Tri-Luma（處方）或 Hydroquinone + 防曬 + 口服傳明酸 + 低能量皮秒 toning。詳見 肝斑 7 大迷思
+肝斑:Tri-Luma（處方）或 Hydroquinone + 防曬 + 口服傳明酸 + 低能量皮秒 toning。詳見 7 Melasma Myths
 曬斑：防曬 + Hydroquinone 或 Tri-Luma 短期 + 雷射（皮秒、Q 開關）
 痘印 PIH：防曬 + A 酸 + 杜鵑花酸 + 菸鹼醯胺；通常 6-12 個月會自然淡化
 痘印 PIE（紅疤）：脈衝染料雷射 PDL 或皮秒；一般美白成分對紅疤效果有限
@@ -9353,7 +9345,7 @@ Tri-Luma 三合一
 OTC 強：維他命 C 10-20%（配防曬）、菸鹼醯胺 5%、新型 Thiamidol、Cysteamine
 OTC 弱：熊果素、麴酸 — 輔助使用
 「黑色素代謝週期 28-40 天」決定一切美白都需耐心 3-6 個月。配合防曬，任何方案都會更有效。
-延伸閱讀：肝斑專題看 肝斑 7 大迷思；外用酸類詳細看 外用酸類完整衛教；防曬要點看 防曬 8 大迷思。
+延伸閱讀：肝斑專題看 7 Melasma Myths；外用酸類詳細看 外用酸類完整衛教；防曬要點看 防曬 8 大迷思。
 
 參考資料
 Bala HR, et al. Oral Tranexamic Acid for the Treatment of Melasma: A Review. Br J Dermatol. 2018. 「來源」
@@ -9371,7 +9363,7 @@ UpToDate: Melasma — Management. Accessed 2026.
 ---
 ## 防曬 8 大迷思
 URL: https://chendermatologist.com/blog/sunscreen-myths
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Myths & Facts
 Reading time: PT6M
 Tags: 防曬, Sunscreen
@@ -9391,7 +9383,7 @@ UVA：造成曬黑、皺紋、肝斑、長期 DNA 損傷，能穿透一般玻璃
 化學（有機）防曬:Avobenzone、Tinosorb、Mexoryl 等。質地清爽、透明、防護廣譜。少數成分（如 oxybenzone、octinoxate)對珊瑚礁不友善，夏威夷與某些國家已禁用，但近年新一代化學防曬劑(Tinosorb S/M、Mexoryl SX/XL、Uvinul A Plus)安全性與穩定性都很好。
 「化學防曬被吸收進身體」是 2019 年 FDA 一篇研究後的網路恐慌，該研究只證實能驗到血中代謝物，並未證實有任何健康危害;FDA 至今仍將化學防曬劑列為合法可用。對絕大多數使用者來說，兩種都安全有效，挑你皮膚耐受、會持續使用的就好。
 迷思 5：一天擦一次就夠
-「早上出門擦了，撐一整天沒問題。」流汗、擦臉、流油、口罩摩擦都會讓防曬掉，需要補擦。研究顯示防曬擦在皮膚上 2-4 小時後，實際保護力降低 50% 以上（因為被汗 / 油 / 摩擦帶走）。下午仍在戶外或靠窗位置者，建議：
+「早上出門擦了，撐一整天沒問題。」流汗、擦臉、流油、口罩摩擦都會讓防曬掉，需要補擦。Studies show that 防曬擦在皮膚上 2-4 小時後，實際保護力降低 50% 以上（因為被汗 / 油 / 摩擦帶走）。下午仍在戶外或靠窗位置者，建議：
 用防曬噴霧、棒狀防曬、防曬粉、防曬蜜粉來補擦，不會破壞底妝
 每 2-3 小時補一次
 下水或大量流汗後立刻補擦
@@ -9437,7 +9429,7 @@ UpToDate: Selection of sunscreen and sun-protective measures. 「來源」
 ---
 ## 肝斑 7 大迷思
 URL: https://chendermatologist.com/blog/melasma-myths
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 肝斑, Melasma
@@ -9483,7 +9475,7 @@ Tags: 肝斑, Melasma
 氫醌停藥不會「反黑」，但不防曬會曬黑 — 民眾常誤會這兩件事
 美國 FDA 將 OTC 氫醌下架後，合法的途徑是皮膚科處方
 迷思 4：停藥就會反黑，所以乾脆不要用
-「我聽說一停藥就反黑回去，還更嚴重，那不如不要碰。」研究顯示妥善停藥（逐漸減量 + 改用 maintenance)不會反黑；真正的「反黑」幾乎都是沒做防曬。停藥後的標準作法：
+「我聽說一停藥就反黑回去，還更嚴重，那不如不要碰。」Studies show that 妥善停藥（逐漸減量 + 改用 maintenance)不會反黑；真正的「反黑」幾乎都是沒做防曬。停藥後的標準作法：
 不要直接停：從每天 1 次，改成每週 3 次，再改成每週 1-2 次
 同時轉用 maintenance 成分：杜鵑花酸 15-20%（孕婦也可用）、傳明酸外用、菸鹼醯胺 5-10%、維他命 C(L-AA) 10-20%
 絕對不可省略防曬：每天 SPF 30+ 廣譜 + 含氧化鐵(iron oxide) 的防曬
@@ -9557,7 +9549,7 @@ UpToDate: Melasma: Management. Accessed 2026.
 ---
 ## 玫瑰痤瘡 6 大迷思
 URL: https://chendermatologist.com/blog/rosacea-myths
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Myths & Facts
 Reading time: PT17M
 Tags: 酒糟肌, Rosacea
@@ -9697,13 +9689,13 @@ Schaller 2020 重度玫瑰斑組合療法：外用 Ivermectin 1% qd ＋ 口服�
 ---
 ## 落髮 / 雄性禿 7 大迷思
 URL: https://chendermatologist.com/blog/hairloss-myths
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 落髮, Hair loss
 
 迷思 1：每天掉一點頭髮就是要禿了
-「我每天梳頭都會掉，枕頭上一堆，完蛋了！」每天掉 50-100 根是正常的（成年人有 ~10 萬根頭髮）。要看的不是「總量」，是「新長出來的」與「頭頂髮量變化」。怎麼自我判斷：
+「我每天梳頭都會掉，枕頭上一堆，完蛋了！」每天掉 50-100 根是正常的（成年人有 ~10 萬根頭髮）。要看的不是「總量」，是「新長出來的" AND "頭頂髮量變化」。怎麼自我判斷：
 洗頭時掉幾根？：超過 100-150 根/次 連續 1-2 個月 → 該看醫師
 分線變寬？：從前到後拍照，2-3 個月比較，看頂部分線是否變寬
 髮際線後退？:M 型角度比以前明顯
@@ -9816,12 +9808,12 @@ Mysore V, Shashikumar BM. Guidelines on the use of finasteride in androgenetic a
 Olsen EA, et al. Topical minoxidil in male pattern baldness. J Am Acad Dermatol. 1990;22(4):643-646. 「來源」
 King B, et al. Two phase 3 trials of baricitinib for alopecia areata. N Engl J Med. 2022;386(18):1687-1699. 「來源」
 UpToDate: Treatment of androgenetic alopecia in men. Accessed 2026. 「來源」
-臺灣皮膚科醫學會。 圓禿診斷及治療共識. 2024.
+Taiwan Dermatological Association. 圓禿診斷及治療共識. 2024.
 
 ---
 ## 香港腳 / 灰指甲 7 大迷思
 URL: https://chendermatologist.com/blog/tinea-myths
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Myths & Facts
 Reading time: PT9M
 Tags: 足癬, Tinea
@@ -9968,7 +9960,7 @@ UpToDate: Onychomycosis: Management. Accessed 2026. 「來源」
 ---
 ## 異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思
 URL: https://chendermatologist.com/blog/atopic-dermatitis-overview
-Updated: 2026-05-24
+Updated: 2026-05-25
 Section: Treatment & Therapy
 Reading time: PT32M
 Tags: 異位性皮膚炎, AD complete guide

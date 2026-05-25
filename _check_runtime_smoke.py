@@ -102,7 +102,19 @@ def wait_for_server(proc: subprocess.Popen[str], base_url: str) -> None:
 
 
 def assert_contains(label: str, body: str, needles: list[str]) -> list[str]:
-    return [f"{label}: missing {needle}" for needle in needles if needle not in body]
+    # 2026-05-25 — needles containing `|` are treated as OR-groups: the
+    # body must contain AT LEAST ONE of the alternatives. (Used for the
+    # post-extraction DN.initBlog needle that can be satisfied either by
+    # the inline literal or by the external bootstrap file reference.)
+    errors: list[str] = []
+    for needle in needles:
+        if "|" in needle:
+            alts = needle.split("|")
+            if not any(alt in body for alt in alts):
+                errors.append(f"{label}: missing any of {alts}")
+        elif needle not in body:
+            errors.append(f"{label}: missing {needle}")
+    return errors
 
 
 def assert_no_eager_dynamic(label: str, body: str) -> list[str]:
@@ -125,12 +137,19 @@ def run_smoke(base_url: str) -> list[str]:
     except AssertionError as exc:
         errors.append(str(exc))
 
+    # 2026-05-25 — audit follow-up E extracted the DN.initBlog bootstrap to
+    # /assets/inline/inline-haK95xnKsrGj.js. Pages can satisfy this smoke
+    # check by either keeping the inline `DN.initBlog` literal OR by
+    # referencing the external bootstrap file (both work identically at
+    # runtime). The helper below collapses the two forms into one needle.
+    dn_init = "DN.initBlog|/assets/inline/inline-haK95xnKsrGj.js"
+
     pages = [
-        ("/", "home", ["DN.initBlog", 'id="dn-hub"', shared]),
-        ("/blog/", "blog index", ["DN.initBlog", shared]),
-        ("/blog/acne-myths", "article", ["DN.initBlog", 'id="proseZh"', shared]),
-        ("/about", "about", ["DN.initBlog", shared]),
-        ("/tools", "tools", ["DN.initBlog", shared]),
+        ("/", "home", [dn_init, 'id="dn-hub"', shared]),
+        ("/blog/", "blog index", [dn_init, shared]),
+        ("/blog/acne-myths", "article", [dn_init, 'id="proseZh"', shared]),
+        ("/about", "about", [dn_init, shared]),
+        ("/tools", "tools", [dn_init, shared]),
     ]
     for path, label, needles in pages:
         body, content_type = fetch(base_url, path)
@@ -156,8 +175,8 @@ def run_smoke(base_url: str) -> list[str]:
     if "javascript" not in content_type:
         errors.append(f"service-worker: expected JavaScript content-type, got {content_type!r}")
     errors.extend(assert_contains("service-worker", sw_body, [
-        "const CACHE = 'cd-v144'",
-        "const RUNTIME = 'cd-runtime-v142'",
+        "const CACHE = 'cd-v145'",
+        "const RUNTIME = 'cd-runtime-v143'",
         "/[?&]v=/",
         "url.pathname === '/assets/search-index.json'",
         "url.pathname.startsWith('/admin')",

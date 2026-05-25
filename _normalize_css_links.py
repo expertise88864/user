@@ -65,7 +65,21 @@ def normalize_file(path: str) -> bool:
     next_src = PRELOAD_GOOGLE_FONTS_RE.sub("", next_src)
     next_src = PRELOAD_BLOG_SHARED_RE.sub("", next_src)
     next_src = BLOG_SHARED_SRC_RE.sub(rf"\1?v={ASSET_VERSION}", next_src)
-    if "DN.initBlog" not in next_src:
+    # 2026-05-25 — old heuristic was: "if DN.initBlog is not in the HTML
+    # source, the blog-shared.min.js script must be unused, so strip it."
+    # That broke after audit follow-up E extracted the inline DN.initBlog
+    # bootstrap to /assets/inline/inline-haK95xnKsrGj.js — `DN.initBlog`
+    # is now in the external file, not the HTML, so this heuristic
+    # silently stripped blog-shared.min.js from 80+ articles.
+    # New rule: only strip blog-shared.min.js if NEITHER `DN.initBlog`
+    # NOR the inline DN-init bootstrap reference appears. The extracted
+    # bootstrap file MUST be the same name shipped from
+    # _extract_inline_scripts (rename it together with this check).
+    has_dn_init = (
+        "DN.initBlog" in next_src
+        or "/assets/inline/inline-haK95xnKsrGj.js" in next_src
+    )
+    if not has_dn_init:
         next_src = BLOG_SHARED_SCRIPT_RE.sub("", next_src)
     seen_fonts: set[str] = set()
 
