@@ -515,6 +515,58 @@ TRANSLATIONS: dict[str, str] = {
     # === melasma-myths H1 + remaining hero ===
     "肝斑 7 大迷思": "7 Melasma Myths",
 
+    # === NHI legend text nodes (between </span> and <br/>) ===
+    "</span> 一般情況即可使用":
+        "</span> Usable in routine cases",
+    "</span> 需符合特定診斷 / 嚴重度 / 過去治療歷程，部分需事前審查 (PASS)":
+        "</span> Requires specific diagnosis / severity / prior-treatment history; some need prior authorization (PASS)",
+    "</span> 健保不給付，或核准適應症外使用":
+        "</span> Not covered by NHI, or off-label use",
+
+    # === acne-scar-treatment ===
+    "治痘疤前，":
+        "Before treating acne scars, ",
+    "（至少 3 個月沒新痘）。否則一邊雷射一邊長新痘，只會留更多疤。":
+        " (at least 3 months without new acne). Otherwise, lasering while new acne forms leaves more scars.",
+    # acne-scar H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n痘疤完整治療指引':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="痘疤完整治療指引" data-en="Acne scar treatment — complete guide">痘疤完整治療指引</span>',
+
+    # === dermatology-faq ===
+    "本文為衛教整理，個別狀況需專科醫師面對面評估。網路答案不能取代看診。":
+        "This article is a general patient-education summary. Individual situations require in-person evaluation by a specialist; online answers do not replace consultation.",
+    # dermatology-faq H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n皮膚科 25 個最常見問題':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="皮膚科 25 個最常見問題" data-en="25 Most-asked Dermatology Questions">皮膚科 25 個最常見問題</span>',
+
+    # === warts-myths ===
+    "Lumps located on the 生殖器、肛門、口腔黏膜的「疣」可能是":
+        "Lesions on the genitals, anus, or oral mucosa may be ",
+    "，需專科醫師評估，不能用一般病毒疣的偏方處理。":
+        " — require specialist evaluation and cannot be treated with common wart remedies.",
+    # warts-myths H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n病毒疣 6 大迷思':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="病毒疣 6 大迷思" data-en="6 Wart Myths">病毒疣 6 大迷思</span>',
+
+    # === urticaria-myths ===
+    "急性蕁麻疹合併":
+        "Acute urticaria accompanied by ",
+    "可能是過敏性休克，請":
+        " may indicate anaphylaxis — ",
+    "。本文不可取代面對面看診。":
+        ". This article does not replace in-person consultation.",
+    # urticaria-myths H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n蕁麻疹（風疹塊）6 大迷思':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="蕁麻疹（風疹塊）6 大迷思" data-en="6 Urticaria (Hives) Myths">蕁麻疹（風疹塊）6 大迷思</span>',
+
+    # === isotretinoin-clinical related cards ===
+    "口服 A 酸完整衛教 — 給民眾":
+        "Oral isotretinoin — patient guide",
+    "同主題的口語衛教版，可直接傳給診間病人。":
+        "Plain-language patient version of the same topic — share directly with clinic patients.",
+    "外用 retinoid 4 代差別、AHA pH/penetration、azelaic 雙機轉、孕期安全表。":
+        "Differences across 4 generations of topical retinoids, AHA pH/penetration, azelaic acid's dual mechanism, pregnancy safety table.",
+
 
     # topical-acids-patient.html — list items
     "（處方）:Differin(Adapalene)、Stieva-A(Tretinoin)、Tazarotene。":
