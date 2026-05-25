@@ -117,6 +117,88 @@ TRANSLATIONS: dict[str, str] = {
     '<h1 class="font-display font-bold leading-[1.18] text-[30px] sm:text-[40px]">\n腳趾甲變形 12 種型態完整圖鑑<br/><span class="teal-text">從鞋子、腳型、關節到糖尿病</span></h1>':
         '<h1 class="font-display font-bold leading-[1.18] text-[30px] sm:text-[40px]">\n<span data-zh="腳趾甲變形 12 種型態完整圖鑑" data-en="Toenail deformity — visual atlas of 12 patterns">腳趾甲變形 12 種型態完整圖鑑</span><br/><span class="teal-text" data-zh="從鞋子、腳型、關節到糖尿病" data-en="From shoes, foot shape, joints, to diabetes">從鞋子、腳型、關節到糖尿病</span></h1>',
 
+    # === psoriasis-biologic-monitoring "Further reading" anchor wraps ===
+    "乾癬全身治療請看 ":
+        "for psoriasis systemic treatment, see ",
+    "；生物製劑機轉與藥物選擇請看 ":
+        "; for biologic mechanism of action and drug selection, see ",
+    "；台灣健保完整給付條件請看 ":
+        "; for full Taiwan NHI coverage conditions, see ",
+    # Footer references in Chinese (Taiwan NHI documents)
+    "衛生福利部中央健康保險署. 全民健康保險藥品給付規定（生物製劑用於乾癬治療部分；114/6/1 修正版本）. 公告日期 114/4/23. ":
+        "Taiwan NHI Administration. National Health Insurance Drug Coverage Regulations (Biologics for Psoriasis section; revised effective 2025/6/1). Published 2025/4/23. ",
+    "衛生福利部食品藥物管理署. 各生物製劑藥品仿單（adalimumab、infliximab、etanercept、certolizumab、ustekinumab、secukinumab、ixekizumab、brodalumab、bimekizumab":
+        "Taiwan FDA. Drug package inserts for each biologic (adalimumab, infliximab, etanercept, certolizumab, ustekinumab, secukinumab, ixekizumab, brodalumab, bimekizumab",
+    # semaglutide-hair-loss SVG <title> elements (visible in many SR tools)
+    "圖 1：GLP-1RA 使用者 vs metformin 的新發掉髮風險 (RR 95% CI)":
+        "Figure 1: GLP-1RA users vs metformin — new-onset hair-loss risk (RR 95% CI)",
+    "圖 2：GLP-1 / GIP agonist 使用者 vs 對照 — 疤痕性禿髮治療 HRU RR":
+        "Figure 2: GLP-1 / GIP agonist users vs controls — scarring alopecia treatment HRU RR",
+    "圖 3：Herrera 與 Hill 兩篇研究的族群與結果 2×2 矩陣":
+        "Figure 3: Herrera and Hill — population × outcome 2×2 matrix",
+    "圖 4：GLP-1RA 對毛囊的雙路徑機轉假說":
+        "Figure 4: GLP-1RA dual-pathway hypothesis on hair follicle",
+    "圖 5：新發掉髮 RR 隨用藥時間累積上升":
+        "Figure 5: New-onset hair-loss RR accumulating over time",
+    # semaglutide-hair-loss list items (PSM cohort characteristics)
+    "：女性 85.65% vs 87.27%(SMD 0.0474)— 反映疤痕性禿髮(尤其 CCCA、FFA)的女性盛行特性。":
+        ": 85.65% vs 87.27% female (SMD 0.0474) — reflecting the female predominance of scarring alopecia (especially CCCA, FFA).",
+    "：35.9 vs 35.2 kg/m²(SMD 0.0916)— 屬肥胖等級、解釋為何這群人會被處方 GLP-1 / GIP。":
+        ": 35.9 vs 35.2 kg/m² (SMD 0.0916) — obese range, explaining why this population was prescribed GLP-1 / GIP.",
+    "：白人 66.01% vs 62.93%、黑人 24.85% vs 29.80%(SMD 0.1113)":
+        ": White 66.01% vs 62.93%, Black 24.85% vs 29.80% (SMD 0.1113)",
+    "：21.52% vs 22.11%(SMD 0.0145、平衡良好)。":
+        ": 21.52% vs 22.11% (SMD 0.0145, well balanced).",
+
+    # === laser-dermatology hero + legend ===
+    "本文為衛教整理。實際雷射選擇需專科醫師依個別膚色 (Fitzpatrick I-VI)、病灶深度、過往治療反應評估。「同一波長」不同廠牌 / 不同脈寬 / 不同能量結果差異很大，本文僅整理波長層級的適應症。":
+        "This article is a patient-education summary. Actual laser selection must be done by a specialist based on individual skin type (Fitzpatrick I–VI), lesion depth, and prior treatment response. Even at the \"same wavelength\", outcomes differ significantly across manufacturers, pulse widths, and energy settings. This guide covers only wavelength-level indications.",
+    " 多數知情者會選擇此療法，效果與安全有充分證據":
+        " Most informed patients would choose this treatment; efficacy and safety are well supported",
+    " 多數會選擇，但仍需個別評估":
+        " Most would choose it, but individual evaluation is still needed",
+    " 證據有限或風險效益不明確，個案考量":
+        " Evidence is limited or risk-benefit is unclear; consider case-by-case",
+    " 多數不會選擇此療法，效果差或風險高":
+        " Most would not choose this treatment; efficacy is poor or risk is high",
+    # laser-dermatology H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n皮膚科雷射完整對照':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="皮膚科雷射完整對照" data-en="Dermatologic laser comparison">皮膚科雷射完整對照</span>',
+
+    # === skin-biopsy-excision TLDR ===
+    "、約 1-2% 因感染等併發症需要追蹤、整體安全性高。":
+        "; about 1–2% require follow-up for complications such as infection; overall safety is high.",
+    "「切片會讓癌細胞擴散」是常見迷思":
+        "\"Biopsy spreads cancer\" is a common myth",
+    " — 實證上不存在這個風險、反而":
+        " — evidence does not support this risk; on the contrary,",
+    "沒切片才會延誤診斷":
+        "skipping biopsy delays diagnosis",
+    "。皮膚腫瘤切除手術中、":
+        ". In skin tumor excision surgery, ",
+    "正確設計梭形（fusiform）的長寬比 3：1、頂角 ≤ 30°、長軸平行 Langer 皮膚張力線":
+        "correct fusiform design with a 3:1 length-to-width ratio, apex angle ≤30°, and long axis parallel to Langer's tension lines",
+    "是疤痕美觀的關鍵（":
+        " is the key to cosmetically acceptable scars (",
+    "）。傷口感染率約 1-3%（":
+        "). Wound infection rate is about 1–3% (",
+    "）、抗生素並非常規預防、僅高風險病人或部位（植入瓣、糖尿病、免疫抑制、人工關節等）或免疫抑制者使用。":
+        "). Routine antibiotic prophylaxis is not recommended; reserve antibiotics for high-risk patients or sites (skin flap, diabetes, immunosuppression, prosthetic joint, etc.).",
+
+    # === epidermoid-cyst TLDR ===
+    "長在": "Lumps located on the ",
+    "的腫塊有時是其他疾病（如皮樣囊腫、淋巴管瘤、脂肪瘤），需皮膚科醫師面對面評估，本文不能取代看診。":
+        " can sometimes be other diseases (dermoid cyst, lymphangioma, lipoma); evaluation must be in person by a dermatologist. This article does not replace consultation.",
+    "是表皮細胞陷入皮下後形成的":
+        " forms when epidermal cells become trapped below the skin surface, creating a ",
+    "，袋子裡裝滿角質與皮脂混合物（臭豆腐味）。":
+        " — the sac is filled with a mixture of keratin and sebum (often with a stinky-tofu smell).",
+    "。只擠掉內容物、不切除囊袋，囊袋會繼續產生新角質 → 反覆腫起來 → 反覆發炎 → 越來越大、越來越疤。「粉瘤 = 痘痘」是錯誤的概念。":
+        ". Squeezing out the contents without removing the capsule leaves the sac in place; it keeps producing new keratin → repeated swelling → repeated inflammation → larger and more scarred over time. The notion that \"epidermoid cyst = acne pimple\" is incorrect.",
+    # epidermoid-cyst H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n粉瘤完整衛教':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="粉瘤完整衛教" data-en="Epidermoid cyst — complete patient guide">粉瘤完整衛教</span>',
+
     # topical-acids-patient.html — list items
     "（處方）:Differin(Adapalene)、Stieva-A(Tretinoin)、Tazarotene。":
         " (prescription): Differin (adapalene), Stieva-A (tretinoin), Tazarotene.",

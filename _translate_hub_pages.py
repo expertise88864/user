@@ -373,6 +373,40 @@ TRANSLATIONS: dict[str, str] = {
     "白斑（Vitiligo）完整衛教":
         "Vitiligo — complete patient guide",
     "白斑 · 2026-05-07": "Vitiligo · 2026-05-07",
+    # dupilumab / semaglutide / PBM related-card titles
+    "結節性癢疹完整衛教":
+        "Prurigo nodularis — complete patient guide",
+    "皮膚科生物製劑與小分子標靶藥物總覽":
+        "Dermatology biologics and small-molecule targeted drugs — overview",
+    "乾癬全身性治療完整衛教":
+        "Psoriasis systemic treatment — complete patient guide",
+    "皮膚科常用藥物健保規範完整整理":
+        "Taiwan NHI rules for common dermatology drugs — complete reference",
+    # Date chips
+    "生物製劑安全 · 2026-05-16": "Biologics safety · 2026-05-16",
+    "異位性皮膚炎 · 2026-05-09": "Atopic dermatitis · 2026-05-09",
+    "結節性癢疹 · 2026-05-07": "Prurigo nodularis · 2026-05-07",
+    "白斑復發 · 2026-05-23": "Vitiligo relapse · 2026-05-23",
+    "乾癬 · 2026-05-09": "Psoriasis · 2026-05-09",
+    # semaglutide-hair-loss hero stat cards
+    "1.77 倍 / 2.41 倍": "1.77× / 2.41×",
+    "不只是「瘦太快」": "Not just \"weight loss too fast\"",
+    # PBM "Further reading" anchor texts (used inside <a> in proseEn)
+    "乾癬全身性治療完整衛教 ":
+        "Psoriasis systemic treatment — complete guide ",
+    # laser-dermatology
+    "衛教 · 醫療雷射": "Patient guide · Medical lasers",
+    "皮膚科雷射完整對照": "Dermatologic laser comparison",
+    "證據強度標示": "Evidence-strength legend",
+    "玫瑰痤瘡 6 大迷思": "6 Rosacea Myths",
+    "酒糟肌 · 2026-05-03": "Rosacea · 2026-05-03",
+    # skin-biopsy-excision + epidermoid-cyst shared related-card
+    "日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教":
+        "Actinic keratosis (AK) + cutaneous SCC — complete patient guide",
+    "皮膚癌 · 2026-05-08": "Skin cancer · 2026-05-08",
+    # epidermoid-cyst
+    "衛教 · 處方用藥 / 手術": "Patient guide · Prescription / Surgery",
+    "粉瘤完整衛教": "Epidermoid cyst — complete patient guide",
 }
 
 

@@ -750,6 +750,22 @@ def localize_jsonld(src: str, title: str, desc: str) -> str:
 # users. Only translates aria-label values that exactly match a key here;
 # unrecognized ZH aria-labels are left as-is (better than a wrong gloss).
 ARIA_LABEL_TRANSLATIONS: dict[str, str] = {
+    "三組 EASI / SCORAD / pruritus NRS 在 T0、T1、T2 三時間點的柱狀比較圖：長期組第 52 週下降最多；短期組停藥後維持但不再進步；減量組介於兩者之間":
+        "Three side-by-side bar charts (EASI / SCORAD / pruritus NRS) at three time points T0 / T1 / T2: the long-term q2w arm shows the greatest decrease by week 52; the short-term arm maintains effect after stopping but does not improve further.",
+    "Kaplan-Meier 風格曲線示意：長期 q2w 組 52 週累積無復發率明顯高於短期與減量兩組，部分長期組病人 300 天以上仍無復發":
+        "Kaplan-Meier-style curve: cumulative relapse-free rate at 52 weeks is markedly higher in the long-term q2w arm than in the short-term or tapering arms; some long-term patients remain relapse-free beyond 300 days.",
+    "五種異位性皮膚炎表型示意圖：classic 對稱屈側、廣泛苔癬化、廣泛發炎、錢幣狀濕疹樣、痒疹結節樣":
+        "Five atopic dermatitis phenotypes: classic symmetric flexural, generalized lichenified, generalized inflammatory, nummular eczema-like, and prurigo nodular-like.",
+    "主導覽":
+        "Herrera 2026 JAAD: forest plot of relative risks for various new-onset hair-loss types in semaglutide / tirzepatide users",
+    "搜尋":
+        "Hill 2026 JAAD: forest plot of treatment-utilization rates for scarring alopecia patients on GLP-1 / GIP",
+    "贊助本站":
+        "2x2 concept matrix of the two studies: population × outcome",
+    "切換暗色模式":
+        "GLP-1RA dual-pathway hypothesis on hair follicle",
+    "開啟選單":
+        "New-onset hair-loss RR accumulating over time after GLP-1RA initiation",
     "口腔黏膜三類分佈圖：硬顎與牙齦為角化的咀嚼性黏膜（粉紅），頰、舌腹、口底、軟顎為非角化的鬆軟黏膜（米黃），舌背與唇紅為特化黏膜（橘紅）":
         "Oral mucosa zones (3 types): keratinized masticatory mucosa over hard palate and gingiva (pink); non-keratinized lining mucosa over buccal, ventral tongue, floor of mouth, and soft palate (cream); specialized mucosa over dorsal tongue and lip vermilion (orange-red).",
     "6 種口腔黏膜疾病示意圖：口腔扁平苔癬白色蕾絲紋路、復發性口瘡圓形潰瘍、口腔白斑均勻白色斑塊、類天疱瘡牙齦剝離與血皰、光線性唇炎下唇粗糙、口腔黑色素斑":

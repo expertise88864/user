@@ -32,6 +32,18 @@ def dump(rel: str, en_translations: list[str], out_lines: list[str]) -> None:
 
 if __name__ == "__main__":
     out_lines: list[str] = []
+    dump("blog/dupilumab-long-term-maintenance.html", [
+        "Three side-by-side bar charts (EASI / SCORAD / pruritus NRS) at three time points T0 / T1 / T2: the long-term q2w arm shows the greatest decrease by week 52; the short-term arm maintains effect after stopping but does not improve further.",
+        "Kaplan-Meier-style curve: cumulative relapse-free rate at 52 weeks is markedly higher in the long-term q2w arm than in the short-term or tapering arms; some long-term patients remain relapse-free beyond 300 days.",
+        "Five atopic dermatitis phenotypes: classic symmetric flexural, generalized lichenified, generalized inflammatory, nummular eczema-like, and prurigo nodular-like.",
+    ], out_lines)
+    dump("blog/semaglutide-hair-loss.html", [
+        "Herrera 2026 JAAD: forest plot of relative risks for various new-onset hair-loss types in semaglutide / tirzepatide users",
+        "Hill 2026 JAAD: forest plot of treatment-utilization rates for scarring alopecia patients on GLP-1 / GIP",
+        "2x2 concept matrix of the two studies: population × outcome",
+        "GLP-1RA dual-pathway hypothesis on hair follicle",
+        "New-onset hair-loss RR accumulating over time after GLP-1RA initiation",
+    ], out_lines)
     dump("blog/dermatologic-oral-examination.html", [
         "Oral mucosa zones (3 types): keratinized masticatory mucosa over hard palate and gingiva (pink); non-keratinized lining mucosa over buccal, ventral tongue, floor of mouth, and soft palate (cream); specialized mucosa over dorsal tongue and lip vermilion (orange-red).",
         "6 oral mucosal diseases at a glance: oral lichen planus (white lacy reticulations), recurrent aphthous stomatitis (round ulcer), oral leukoplakia (uniform white patch), mucous membrane pemphigoid (desquamative gingivitis with blood blisters), actinic cheilitis (rough lower lip), and oral melanotic macule.",
