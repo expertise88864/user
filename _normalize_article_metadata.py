@@ -33,6 +33,7 @@ import json
 import re
 import subprocess
 import sys
+import sys
 from pathlib import Path
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -101,7 +102,12 @@ def git_last_modified(path: Path) -> str | None:
             return None
         out = result.stdout.strip()
         return out if re.match(r"^\d{4}-\d{2}-\d{2}$", out) else None
-    except Exception:
+    except (subprocess.SubprocessError, OSError) as exc:
+        # CODE_REVIEW 2026-05-25 — narrowed from `except Exception` so genuine
+        # bugs (e.g., AttributeError from a refactor) propagate. Log to stderr
+        # so missing git history surfaces in CI logs.
+        print(f"[normalize_article_metadata] git log failed for {path}: {exc}",
+              file=sys.stderr)
         return None
 
 

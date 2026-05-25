@@ -76,7 +76,11 @@ def git_last_modified(path: Path) -> str | None:
             return None
         out = result.stdout.strip()
         return out if re.match(r"^\d{4}-\d{2}-\d{2}$", out) else None
-    except Exception:
+    except (subprocess.SubprocessError, OSError) as exc:
+        # CODE_REVIEW 2026-05-25 — narrowed + logged so missing git history
+        # surfaces in CI logs instead of silently leaving dateModified stale.
+        print(f"[normalize_date_modified] git log failed for {path}: {exc}",
+              file=sys.stderr)
         return None
 
 

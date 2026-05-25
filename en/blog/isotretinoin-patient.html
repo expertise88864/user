@@ -16,36 +16,7 @@
 <link rel="next" href="https://chendermatologist.com/blog/isotretinoin-clinical" />
 <!-- /dn-cluster-nav --></head><body class="font-sans antialiased text-ink-900"><a href="#main-content" class="skip-to-main" data-zh="跳至主要內容" data-en="Skip to main content">Skip to main content</a><header class="sticky top-0 z-40 backdrop-blur border-b" style="background:rgba(250,247,242,.92); border-color:var(--border)"><div class="max-w-6xl mx-auto px-5 sm:px-8"><div class="h-16 flex items-center justify-between gap-3"><a href="/en/" class="flex items-center gap-3 min-w-0 flex-shrink-0"><img src="/icon.svg" alt="ChenDermatologist" class="w-9 h-9 rounded-lg flex-shrink-0" width="36" height="36" fetchpriority="high" loading="eager" decoding="async"><div class="min-w-0 leading-tight"><div class="font-display font-semibold text-[16px] sm:text-[18px] teal-text">ChenDermatologist</div><div class="text-[10.5px] sm:text-[11.5px] text-ink-500 mt-0.5 truncate" data-zh="陳翊嘉醫師 · 皮膚科衛教筆記" data-en="Dr. Chen Yi-Jia · Dermatology Notes">Dr. Chen Yi-Jia · Dermatology Notes</div></div></a><nav class="dn-nav" aria-label="Main navigation"><a href="/en/blog/" class="dn-nav-link" data-zh="衛教文章" data-en="Articles">Articles</a><a href="/en/tools" class="dn-nav-link" data-zh="量表計算器" data-en="Calculators">Calculators</a><a href="/en/glossary" class="dn-nav-link" data-zh="詞彙字典" data-en="Glossary">Glossary</a><a href="/en/about" class="dn-nav-link" data-zh="關於我" data-en="About">About</a><span class="dn-nav-divider" aria-hidden="true"></span><button type="button" id="dn-nav-search" class="dn-nav-icon" aria-label="Search" title="Search articles (Cmd/Ctrl + K)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></button><a id="dn-nav-support" href="/en/support" class="dn-nav-icon" aria-label="Support this site" title="Support this site"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></a><button type="button" id="dn-nav-theme" class="dn-nav-icon" aria-label="Toggle dark mode" title="Toggle light / dark">🌙</button><select id="langToggle" class="lang-select" aria-label="Language" title="Language"><option value="zh" data-en="Chinese">Chinese</option><option value="en">EN</option></select></nav><button type="button" id="dn-nav-burger" class="dn-nav-burger" aria-label="Open menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button></div></div></header>
 <style>          @media (max-width:899px){   @keyframes dnNavSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}    #dn-nav-search::after{content:'搜尋'} #dn-nav-support::after{content:'贊助本站'} #dn-nav-theme::after{content:'切換暗色'}  #langToggle{align-self:flex-start;margin-top:4px} } body.dn-en #dn-nav-search::after{content:'Search'} body.dn-en #dn-nav-support::after{content:'Support'} body.dn-en #dn-nav-theme::after{content:'Theme'}</style>
-<script>(function () {
-var burger = document.getElementById('dn-nav-burger');
-var nav = document.querySelector('.dn-nav');
-if (burger && nav) {
-burger.addEventListener('click', function () {
-var open = nav.classList.toggle('open');
-burger.setAttribute('aria-expanded', String(open));
-});
-}
-var search = document.getElementById('dn-nav-search');
-if (search) search.addEventListener('click', function () {
-// Triggers Cmd+K search modal via DN
-if (window.DN && DN.openSearch) DN.openSearch();
-else { var ev = new KeyboardEvent('keydown', { key: 'k', metaKey: true, ctrlKey: true }); document.dispatchEvent(ev); }
-});
-var theme = document.getElementById('dn-nav-theme');
-if (theme) theme.addEventListener('click', function () {
-var cur = document.documentElement.getAttribute('data-theme');
-var next = cur === 'dark' ? 'light' : 'dark';
-try { localStorage.setItem('dn-theme', next); } catch (e) {}
-document.documentElement.setAttribute('data-theme', next);
-theme.textContent = next === 'dark' ? '☀' : '🌙';
-});
-// Initialize theme button label
-if (theme) {
-var saved = (function(){ try { return localStorage.getItem('dn-theme'); } catch(e) { return null; } })();
-var dark = saved === 'dark' || (!saved && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
-theme.textContent = dark ? '☀' : '🌙';
-}
-})();</script>
+<script src="/assets/inline/inline-pPMrllcSiIXu.js" defer></script>
 <main id="main-content">
 <div id="dn-en-banner" style="background:linear-gradient(180deg,#ecfeff,#cffafe);border-bottom:1px solid #67e8f9;padding:9px 18px;text-align:center;font-size:12.5px;color:#0c5159;font-family:Inter,system-ui,sans-serif;line-height:1.5;font-weight:600">
   English version. Prefer Traditional Chinese?
@@ -71,74 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <script>document.addEventListener('DOMContentLoaded', () => {
 if (window.DN) DN.initBlog({ proseZh:'proseZh', proseEn:'proseEn' });
 });</script>
-<script>(function(){
-// 2026-05-09 — Bot-aware analytics loader. Skip GA/Clarity/AdSense when:
-//   (a) UA matches known bots/crawlers (incl. AI training & SEO scrapers)
-//   (b) Page is /admin or /reset-sw (internal pages)
-// Tag GA traffic_type="internal" when ?ga_internal=1 or localStorage flag.
-// This dramatically reduces bot noise in GA4 (the platform's built-in
-// "filter known bots" only covers IAB/ABC list, missing AI crawlers + scrapers).
-var BOT_RE = /bot|crawl|spider|slurp|mediapartners|adsbot|yandex|bingbot|googlebot|duckduckbot|baiduspider|facebookexternalhit|twitterbot|telegrambot|whatsapp|linkedinbot|applebot|petalbot|ahrefsbot|semrushbot|mj12bot|dotbot|seznambot|gptbot|chatgpt|ccbot|claudebot|claude-web|anthropic-ai|perplexitybot|bytespider|amazonbot|cohere-ai|diffbot|datasforseo|blexbot|zoominfobot|barkrowler|timpibot|omgili|headlesschrome|phantomjs|puppeteer|electron|jsdom/i;
-function isBot(){ try{ return BOT_RE.test(navigator.userAgent || ''); }catch(e){ return false; } }
-function isInternalPage(){
-  var p = location.pathname;
-  return p.indexOf('/admin') === 0 || p.indexOf('/reset-sw') === 0;
-}
-function isLocalStaticHost(){
-  return /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
-}
-function getTrafficType(){
-  // Allow flagging via ?ga_internal=1 (sticks via localStorage)
-  try {
-    if (location.search.indexOf('ga_internal=1') !== -1) {
-      localStorage.setItem('dn-ga-internal', '1');
-      return 'internal';
-    }
-    if (location.search.indexOf('ga_internal=0') !== -1) {
-      localStorage.removeItem('dn-ga-internal');
-    }
-    if (localStorage.getItem('dn-ga-internal') === '1') return 'internal';
-  } catch(e) {}
-  if (isInternalPage()) return 'internal';
-  return null;
-}
-function load() {
-  if (isBot() || isLocalStaticHost()) return; // skip everything for bots/local static tests
-  // AdSense — DISABLED until AdSense approval (audit period).
-  // Re-enable by uncommenting the block below. Visible placeholders
-  // are also hidden via .ad-slot{display:none!important} in tw-mini.css.
-  /* AdSense disabled:
-  var ad = document.createElement("script");
-  ad.async = true;
-  ad.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8223268344248663";
-  ad.crossOrigin = "anonymous";
-  document.head.appendChild(ad);
-  */
-  // Clarity
-  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wkvhe0mf7y");
-  // GA4
-  var ga = document.createElement("script");
-  ga.async = true;
-  ga.src = "https://www.googletagmanager.com/gtag/js?id=G-XFF3L5QD10";
-  document.head.appendChild(ga);
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag = gtag;
-  gtag("js", new Date());
-  var cfg = { anonymize_ip: true };
-  var tt = getTrafficType();
-  if (tt) cfg.traffic_type = tt; // GA4 picks up traffic_type for "Internal traffic" filter
-  gtag("config", "G-XFF3L5QD10", cfg);
-}
-// Load 3rd-party after first paint (idle callback or 1s fallback)
-if ("requestIdleCallback" in window) {
-  requestIdleCallback(load, { timeout: 2500 });
-} else {
-  setTimeout(load, 1500);
-}
-})();</script>
+<script src="/assets/inline/inline-YWHMbZ-bellM.js" defer></script>
 
 <!-- dn-spec-rules -->
 <script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/blog/*"},{"not":{"href_matches":"/admin*"}},{"not":{"selector_matches":"[data-no-prerender]"}}]},"eagerness":"moderate"}],"prefetch":[{"where":{"href_matches":"/*"},"eagerness":"conservative"}]}</script>

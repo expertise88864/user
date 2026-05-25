@@ -266,7 +266,10 @@ def check_no_duplicate_medical_webpage() -> None:
         for m in pattern.finditer(src):
             try:
                 obj = json.loads(m.group(1))
-            except Exception:
+            except json.JSONDecodeError as _exc:
+                # CODE_REVIEW 2026-05-25 — narrowed + logged.
+                print(f"[check_seo_signals] skip malformed JSON-LD in {fp}: {_exc.msg}",
+                      file=__import__('sys').stderr)
                 continue
             if isinstance(obj, dict) and obj.get("@type") == "MedicalWebPage":
                 count += 1
@@ -304,7 +307,10 @@ def check_speakable_selectors_resolve() -> None:
         for m in pattern.finditer(src):
             try:
                 obj = json.loads(m.group(1))
-            except Exception:
+            except json.JSONDecodeError as _exc:
+                # CODE_REVIEW 2026-05-25 — narrowed + logged.
+                print(f"[check_seo_signals] skip malformed JSON-LD in {fp}: {_exc.msg}",
+                      file=__import__('sys').stderr)
                 continue
             if not isinstance(obj, dict):
                 continue

@@ -321,7 +321,13 @@ def iter_jsonld(src: str):
     for m in re.finditer(r'<script\s+type="application/ld\+json"[^>]*>([\s\S]*?)</script>', src, re.I):
         try:
             obj = json.loads(m.group(1))
-        except Exception:
+        except json.JSONDecodeError as exc:
+            # CODE_REVIEW 2026-05-25 — was silent `except Exception: continue`
+            # → masked real malformed-JSON-LD bugs. Now narrow to
+            # JSONDecodeError + warn to stderr so problems surface in CI logs.
+            preview = m.group(1)[:80].replace('\n', ' ')
+            print(f"[normalize_schema] iter_jsonld: skipping malformed JSON-LD ({exc.msg}): {preview!r}",
+                  file=sys.stderr)
             continue
         if isinstance(obj, dict):
             yield obj
@@ -363,7 +369,10 @@ def dedupe_jsonld_type(src: str, typ: str) -> tuple[str, int]:
     for m in _LD_BLOCK_RE.finditer(src):
         try:
             obj = json.loads(m.group(1))
-        except Exception:
+        except json.JSONDecodeError as exc:
+            preview = m.group(1)[:80].replace('\n', ' ')
+            print(f"[normalize_schema] dedupe_type({typ}): skipping malformed JSON-LD ({exc.msg}): {preview!r}",
+                  file=sys.stderr)
             continue
         if isinstance(obj, dict) and obj.get("@type") == typ:
             matches.append((m.start(), m.end()))

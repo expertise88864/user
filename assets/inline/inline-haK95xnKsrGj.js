@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});

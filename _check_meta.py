@@ -248,7 +248,8 @@ def check_no_merge_markers():
             try:
                 with open(fp, 'r', encoding='utf-8') as f:
                     src = f.read()
-            except Exception:
+            except (OSError, UnicodeDecodeError) as _exc:
+                print(f"[check_meta] skip {fp}: {_exc}", file=__import__('sys').stderr)
                 continue
             for line in src.splitlines():
                 if not line:
@@ -287,7 +288,8 @@ def check_no_manual_toc():
             continue
         try:
             src = fp.read_text(encoding='utf-8')
-        except Exception:
+        except (OSError, UnicodeDecodeError) as _exc:
+            print(f"[check_meta] skip {fp}: {_exc}", file=__import__('sys').stderr)
             continue
         if 'id="proseZh"' not in src:
             # Not an article (no prose container), so manual TOC is fine
@@ -316,7 +318,8 @@ def check_article_class():
             continue
         try:
             src = fp.read_text(encoding='utf-8')
-        except Exception:
+        except (OSError, UnicodeDecodeError) as _exc:
+            print(f"[check_meta] skip {fp}: {_exc}", file=__import__('sys').stderr)
             continue
         if 'id="proseZh"' not in src:
             continue  # not an article
@@ -362,7 +365,8 @@ def check_no_js_corruption():
             try:
                 with open(fp, 'r', encoding='utf-8') as f:
                     src = f.read()
-            except Exception:
+            except (OSError, UnicodeDecodeError) as _exc:
+                print(f"[check_meta] skip {fp}: {_exc}", file=__import__('sys').stderr)
                 continue
             for pat, label in JS_CORRUPTION_PATTERNS:
                 if pat.search(src):
@@ -388,7 +392,8 @@ def check_no_inline_sup_refs():
             continue
         try:
             src = fp.read_text(encoding='utf-8')
-        except Exception:
+        except (OSError, UnicodeDecodeError) as _exc:
+            print(f"[check_meta] skip {fp}: {_exc}", file=__import__('sys').stderr)
             continue
         if 'id="proseZh"' not in src:
             continue
