@@ -750,6 +750,10 @@ def localize_jsonld(src: str, title: str, desc: str) -> str:
 # users. Only translates aria-label values that exactly match a key here;
 # unrecognized ZH aria-labels are left as-is (better than a wrong gloss).
 ARIA_LABEL_TRANSLATIONS: dict[str, str] = {
+    "手腳病灶 × 甲狀腺疾病 2x2 風險矩陣":
+        "2x2 risk matrix: hand/foot lesions × thyroid disease — adjusted hazard ratios for vitiligo relapse",
+    "患者篩選流程圖":
+        "Patient screening flow diagram for the Chang Gung database vitiligo cohort",
     "PDT 三要素與分子機轉：光敏劑 + 光 + 氧氣 → ROS → 細胞凋亡 / 血管損傷 / 免疫活化":
         "PDT three essential elements and molecular mechanism: photosensitizer + light + oxygen → ROS → apoptosis / vascular damage / immune activation",
     "ALA 與 MAL 經 heme 合成路徑代謝為 PpIX 的示意":

@@ -42,6 +42,12 @@ def dump(rel: str, en_translations: list[str], out_lines: list[str]) -> None:
 
 if __name__ == "__main__":
     out_lines: list[str] = []
+    dump("blog/vitiligo-maintenance-clinical.html", [
+        "2x2 risk matrix: hand/foot lesions × thyroid disease — adjusted hazard ratios for vitiligo relapse",
+        "Patient screening flow diagram for the Chang Gung database vitiligo cohort",
+        "Forest plot showing adjusted hazard ratios for 3 independent predictors of vitiligo relapse",
+        "3-tier risk-stratified maintenance decision tree for vitiligo",
+    ], out_lines)
     dump("blog/photodynamic-therapy-overview.html", [
         "PDT three essential elements and molecular mechanism: photosensitizer + light + oxygen → ROS → apoptosis / vascular damage / immune activation",
         "Schematic: ALA and MAL metabolism via the heme biosynthesis pathway to PpIX",

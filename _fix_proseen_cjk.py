@@ -444,6 +444,51 @@ TRANSLATIONS: dict[str, str] = {
     '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n皮膚 T 細胞淋巴瘤(CTCL / MF)':
         '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="皮膚 T 細胞淋巴瘤(CTCL / MF)" data-en="Cutaneous T-cell lymphoma (CTCL / MF)">皮膚 T 細胞淋巴瘤(CTCL / MF)</span>',
 
+    # === topics.html hub heading ===
+    "把所有皮膚科衛教文章":
+        "All dermatology patient-education articles ",
+    " — 從你關心的問題出發找對應文章，而不是從目錄一篇一篇翻。\n共 ":
+        " — find articles by the question you have, not by table-of-contents scrolling. There are ",
+    "已完成、":
+        " completed, ",
+    "持續累積中。每個主題皆有對應的「常見迷思」、「實證治療&quot; AND &quot;就醫時機」。":
+        " growing. Each topic has its own &quot;Common myths&quot;, &quot;Evidence-based treatment&quot; and &quot;When to see a doctor&quot; coverage.",
+    # topics H1
+    '<h1 class="font-display font-bold text-[34px] sm:text-[44px] mt-4 leading-[1.15]">\n皮膚科衛教 ':
+        '<h1 class="font-display font-bold text-[34px] sm:text-[44px] mt-4 leading-[1.15]">\n<span data-zh="皮膚科衛教" data-en="Dermatology patient education">皮膚科衛教</span> ',
+
+    # === biologics-overview Note ===
+    "本文價格為 2026 年市場估計，實際因醫院、廠商促銷、健保給付狀態變動。實際使用須由皮膚科專科醫師依個別狀況評估與處方。":
+        "Prices in this article are 2026 market estimates and vary by hospital, manufacturer promotions, and Taiwan NHI coverage status. Actual use requires evaluation and prescription by a dermatologist based on your individual situation.",
+    # biologics H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n皮膚科生物製劑與小分子標靶藥物總覽':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="皮膚科生物製劑與小分子標靶藥物總覽" data-en="Dermatology biologics and small-molecule targeted drugs — overview">皮膚科生物製劑與小分子標靶藥物總覽</span>',
+
+    # === tinea-myths TLDR ===
+    "並非所有腳脫皮、指甲變色都是黴菌感染 — 也可能是濕疹、乾癬、扁平苔癬、外傷。":
+        "Not all foot peeling or nail discoloration is fungal infection — eczema, psoriasis, lichen planus, and trauma can all mimic it.",
+    "，個別判斷請至皮膚科。":
+        "; individual evaluation must be done by a dermatologist.",
+    " — 用對藥膏、用對時間、是否需要口服，差很多。":
+        " — using the right topical, for the right duration, and deciding when oral therapy is needed makes a huge difference.",
+    # tinea-myths H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n香港腳 / 灰指甲 7 大迷思':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="香港腳 / 灰指甲 7 大迷思" data-en="7 Athlete\'s Foot / Nail Fungus Myths">香港腳 / 灰指甲 7 大迷思</span>',
+
+    # === prurigo-nodularis Note ===
+    "頑固搔癢若合併消瘦、發燒、淋巴結腫大等全身症狀、需排除潛在惡性疾病（尤其皮膚 T 細胞淋巴瘤），請至皮膚科或血液腫瘤科進一步評估。":
+        "Refractory itch accompanied by weight loss, fever, or lymphadenopathy requires evaluation for underlying malignancy (especially cutaneous T-cell lymphoma); please consult dermatology or hematology-oncology.",
+    # prurigo-nodularis H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n結節性癢疹（Prurigo Nodularis）完整衛教':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="結節性癢疹（Prurigo Nodularis）完整衛教" data-en="Prurigo nodularis — complete patient guide">結節性癢疹（Prurigo Nodularis）完整衛教</span>',
+
+    # === hairloss-myths figcaption ===
+    "圖：男性雄性禿 Hamilton-Norwood 7 階分級。I = 正常 → VII = 嚴重剩兩側馬蹄狀。":
+        "Figure: Hamilton-Norwood 7-tier classification of male androgenetic alopecia. I = normal → VII = severe, with only a horseshoe rim remaining.",
+    "。已脫落的毛囊不可逆，藥物治療目標是「穩住現有的、養出細毛」，而不是「長出全新一頭」。":
+        ". Lost follicles do not regrow; the goal of pharmacotherapy is to &quot;stabilize what remains and grow vellus hair&quot;, not to &quot;regrow a whole new head of hair&quot;.",
+
+
     # topical-acids-patient.html — list items
     "（處方）:Differin(Adapalene)、Stieva-A(Tretinoin)、Tazarotene。":
         " (prescription): Differin (adapalene), Stieva-A (tretinoin), Tazarotene.",

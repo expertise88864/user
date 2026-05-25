@@ -487,6 +487,33 @@ TRANSLATIONS: dict[str, str] = {
     # Batch 53
     "衛教 · 感染照護": "Patient guide · Infection care",
     "衛教 · 罕見皮膚癌": "Patient guide · Rare skin cancer",
+    # Batch 54
+    "結節性癢疹（Prurigo Nodularis）完整衛教":
+        "Prurigo nodularis — complete patient guide",
+    "皮膚科生物製劑與小分子標靶藥物總覽":
+        "Dermatology biologics and small-molecule targeted drugs — overview",
+    "圓禿 · 2026-05-04": "Alopecia areata · 2026-05-04",
+    "皮膚科衛教 ":
+        "Dermatology patient education ",
+    # SVG text labels (sunscreen-myths penetration diagram)
+    "膠原蛋白 / 彈性纖維 — UVA 在這裡造成老化":
+        "Collagen / elastic fibers — UVA causes aging here",
+    "~ 數 mm": "~ a few mm",
+    "主要造成曬傷": "Primarily causes sunburn",
+    "主要造成曬黑、老化、肝斑": "Primarily causes tanning, aging, melasma",
+    "加重肝斑、深膚色色素": "Worsens melasma and pigmentation in darker skin",
+    # SVG <title> elements (hairloss-myths)
+    "男性雄性禿 Hamilton-Norwood 分級（頭頂俯視）":
+        "Male androgenetic alopecia — Hamilton-Norwood classification (top-down view)",
+    # vitiligo-maintenance SVG titles
+    "2×2 風險矩陣：手腳病灶與甲狀腺疾病合併時的調整後 hazard ratio":
+        "2×2 risk matrix: adjusted hazard ratio when hand/foot lesions co-occur with thyroid disease",
+    "長庚研究資料庫患者篩選流程：從 5365 人到最終 809 人世代":
+        "Chang Gung database patient screening flow: from 5,365 to final 809-patient cohort",
+    "Forest plot: 3 個獨立預測因子的調整後 hazard ratio":
+        "Forest plot: adjusted hazard ratios for 3 independent predictors",
+    "3-tier risk-stratified maintenance 建議":
+        "3-tier risk-stratified maintenance recommendation",
     "化膿性汗腺炎（HS）完整衛教":
         "Hidradenitis suppurativa (HS) — complete patient guide",
     "猴痘（Mpox）皮膚照護完整指南":
