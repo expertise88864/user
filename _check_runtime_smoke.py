@@ -138,11 +138,11 @@ def run_smoke(base_url: str) -> list[str]:
         errors.append(str(exc))
 
     # 2026-05-25 — audit follow-up E extracted the DN.initBlog bootstrap to
-    # /assets/inline/inline-haK95xnKsrGj.js. Pages can satisfy this smoke
+    # /assets/inline/dn-init.js. Pages can satisfy this smoke
     # check by either keeping the inline `DN.initBlog` literal OR by
     # referencing the external bootstrap file (both work identically at
     # runtime). The helper below collapses the two forms into one needle.
-    dn_init = "DN.initBlog|/assets/inline/inline-haK95xnKsrGj.js"
+    dn_init = "DN.initBlog|/assets/inline/dn-init.js"
 
     pages = [
         ("/", "home", [dn_init, 'id="dn-hub"', shared]),
@@ -175,8 +175,8 @@ def run_smoke(base_url: str) -> list[str]:
     if "javascript" not in content_type:
         errors.append(f"service-worker: expected JavaScript content-type, got {content_type!r}")
     errors.extend(assert_contains("service-worker", sw_body, [
-        "const CACHE = 'cd-v145'",
-        "const RUNTIME = 'cd-runtime-v143'",
+        "const CACHE = 'cd-v146'",
+        "const RUNTIME = 'cd-runtime-v144'",
         "/[?&]v=/",
         "url.pathname === '/assets/search-index.json'",
         "url.pathname.startsWith('/admin')",
