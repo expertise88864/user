@@ -9,10 +9,19 @@
 //
 // Methods:
 //   GET  → returns { picks: [...] }                 (public, KV-backed)
-//   POST → updates picks. Body: { picks: ["slug1", ...] }   (PAT required)
+//   POST → updates picks. Body: { picks: ["slug1", ...] }   (auth required)
+//
+// Auth (POST):
+//   PREFERRED: HttpOnly session cookie set by /api/admin/login (PAT never
+//   travels back to the browser, can't be exfiltrated by XSS).
+//   LEGACY:    Authorization: token ghp_… header (still works; validated
+//   against GitHub /user). Deprecated; the admin UI should migrate to
+//   the cookie flow.
 //
 // KV keys:
 //   dn:popular-picks  → JSON array of slugs
+
+import { getSession } from './_session.js';
 
 export const config = { runtime: 'edge' };
 
@@ -84,35 +93,40 @@ export default async function handler(req) {
 
   // Admin write
   if (req.method === 'POST') {
-    const auth = req.headers.get('authorization') || '';
-    if (!PAT_AUTH_RE.test(auth)) {
-      return jsonResp(401, { error: 'Missing Authorization (PAT)' });
-    }
-    // 2026-05-25 — actually validate the bearer against GitHub. Previously
-    // the endpoint only regex-checked the token's shape, so any random
-    // string of the right pattern could mutate KV. Now we round-trip to
-    // GitHub's /user endpoint and require (a) HTTP 200, (b) the
-    // authenticated login is in REPO_OWNER_ALLOWLIST.
-    const REPO_OWNER_ALLOWLIST = new Set(['expertise88864']);
+    // 2026-05-25 — PREFERRED auth: HttpOnly cookie session set by
+    // /api/admin/login. PAT never travels back to the browser, can't be
+    // exfiltrated by XSS. Falls back to legacy Authorization header for
+    // back-compat (still validated against GitHub /user).
     let userLogin = null;
-    try {
-      const ghResp = await fetch('https://api.github.com/user', {
-        headers: {
-          Authorization: auth, // pass through "token gh..."
-          'User-Agent': 'ChenDermatologist-Admin/1.0',
-          Accept: 'application/vnd.github+json',
-        },
-      });
-      if (!ghResp.ok) {
-        return jsonResp(401, { error: 'GitHub rejected the token' });
+    const session = await getSession(req);
+    if (session) {
+      userLogin = session.login;
+    } else {
+      // Legacy path: Authorization: token ghp_...
+      const auth = req.headers.get('authorization') || '';
+      if (!PAT_AUTH_RE.test(auth)) {
+        return jsonResp(401, { error: 'Login required (POST /api/admin/login or Authorization header)' });
       }
-      const u = await ghResp.json();
-      userLogin = u && u.login;
-    } catch (_) {
-      return jsonResp(502, { error: 'GitHub validation failed' });
-    }
-    if (!userLogin || !REPO_OWNER_ALLOWLIST.has(userLogin)) {
-      return jsonResp(403, { error: 'Token user not allowlisted' });
+      const REPO_OWNER_ALLOWLIST = new Set(['expertise88864']);
+      try {
+        const ghResp = await fetch('https://api.github.com/user', {
+          headers: {
+            Authorization: auth, // pass through "token gh..."
+            'User-Agent': 'ChenDermatologist-Admin/1.0',
+            Accept: 'application/vnd.github+json',
+          },
+        });
+        if (!ghResp.ok) {
+          return jsonResp(401, { error: 'GitHub rejected the token' });
+        }
+        const u = await ghResp.json();
+        userLogin = u && u.login;
+      } catch (_) {
+        return jsonResp(502, { error: 'GitHub validation failed' });
+      }
+      if (!userLogin || !REPO_OWNER_ALLOWLIST.has(userLogin)) {
+        return jsonResp(403, { error: 'Token user not allowlisted' });
+      }
     }
     let body;
     try { body = await req.json(); } catch { return jsonResp(400, { error: 'JSON body required' }); }
