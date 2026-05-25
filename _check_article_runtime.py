@@ -48,7 +48,11 @@ SKIP_FILES = {
 # Legacy articles whose structure pre-dates the proseZh / prose-zh wrapper
 # requirement (they have their own bespoke CSS). Skip the prose-wrapper
 # check for these. The blog-shared.min.js check still applies.
-PROSE_WRAPPER_LEGACY_SKIP = {"blog/atopic-dermatitis-overview.html"}
+# Skip both ZH master AND its EN mirror (the mirror inherits structure).
+PROSE_WRAPPER_LEGACY_SKIP = {
+    "blog/atopic-dermatitis-overview.html",
+    "en/blog/atopic-dermatitis-overview.html",
+}
 
 
 ARTICLE_WRAPPER_RE = re.compile(

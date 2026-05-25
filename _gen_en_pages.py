@@ -438,19 +438,53 @@ def strip_tags(src: str) -> str:
 # such elements \u2014 what the EN reader actually sees is the data-en value,
 # not the zh fallback baked into HTML.
 #
-# Strategy: remove every "<TAG ... data-en=\"...\"> ... </TAG>" block
-# (matched greedily by tag) before counting. Conservative: only handles
-# tags whose own attribute carries data-en. Children whose own data-en
-# is absent are still counted (so partial translations don't game the
-# threshold).
-_DATA_EN_BLOCK_RE = re.compile(
-    r'<([a-z][a-z0-9]*)\b[^>]*\bdata-en="[^"]*"[^>]*>[\s\S]*?</\1\s*>',
-    re.IGNORECASE,
-)
+# 2026-05-25 \u2014 the old regex-based _DATA_EN_BLOCK_RE matcher was wrong
+# on nested same-tag content (e.g., `<div data-en="..."><div>ZH</div></div>`
+# closes at the first inner </div>, leaving the outer wrapper's ZH text
+# uncounted-as-stripped). Result: AD-overview and dupilumab-long-term-
+# maintenance kept being marked noindex even after all visible CJK was
+# translated away. Switch to a DOM-aware counter: parse the HTML and walk
+# the tree, skipping descendants of any element with data-en.
+class _VisibleCJKCounter(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.depth = 0
+        self.skip_depth = 0
+        self.count = 0
+        self._cjk_re = re.compile(r'[\u4e00-\u9fff]')
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag in ('script', 'style', 'svg'):
+            self.skip_depth += 1
+            return
+        has_data_en = any(name == 'data-en' for name, _ in attrs)
+        if has_data_en or self.skip_depth:
+            self.skip_depth += 1
+
+    def handle_endtag(self, tag: str) -> None:
+        if self.skip_depth:
+            self.skip_depth -= 1
+
+    def handle_data(self, data: str) -> None:
+        if self.skip_depth:
+            return
+        self.count += len(self._cjk_re.findall(data))
+
+
 def visible_cjk_count(src: str) -> int:
-    # First, strip text inside any element that has data-en (runtime-translated)
-    cleaned = _DATA_EN_BLOCK_RE.sub(' ', src)
-    return len(re.findall(r'[\u4e00-\u9fff]', strip_tags(cleaned)))
+    """Count CJK characters that a JS-disabled crawler (e.g., legacy
+    GoogleBot, Bingbot Lite) would see in the rendered text. Skips
+    script/style/svg blocks AND any element subtree carrying data-en
+    (which DN.applyTextOnly swaps to English at runtime).
+    """
+    counter = _VisibleCJKCounter()
+    try:
+        counter.feed(src)
+        counter.close()
+    except Exception:
+        # Fall back to the regex-based estimator if parsing breaks
+        return len(re.findall(r'[\u4e00-\u9fff]', strip_tags(src)))
+    return counter.count
 
 
 def has_cjk(src: str) -> bool:
