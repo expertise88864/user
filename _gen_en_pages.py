@@ -750,6 +750,14 @@ def localize_jsonld(src: str, title: str, desc: str) -> str:
 # users. Only translates aria-label values that exactly match a key here;
 # unrecognized ZH aria-labels are left as-is (better than a wrong gloss).
 ARIA_LABEL_TRANSLATIONS: dict[str, str] = {
+    "口腔黏膜三類分佈圖：硬顎與牙齦為角化的咀嚼性黏膜（粉紅），頰、舌腹、口底、軟顎為非角化的鬆軟黏膜（米黃），舌背與唇紅為特化黏膜（橘紅）":
+        "Oral mucosa zones (3 types): keratinized masticatory mucosa over hard palate and gingiva (pink); non-keratinized lining mucosa over buccal, ventral tongue, floor of mouth, and soft palate (cream); specialized mucosa over dorsal tongue and lip vermilion (orange-red).",
+    "6 種口腔黏膜疾病示意圖：口腔扁平苔癬白色蕾絲紋路、復發性口瘡圓形潰瘍、口腔白斑均勻白色斑塊、類天疱瘡牙齦剝離與血皰、光線性唇炎下唇粗糙、口腔黑色素斑":
+        "6 oral mucosal diseases at a glance: oral lichen planus (white lacy reticulations), recurrent aphthous stomatitis (round ulcer), oral leukoplakia (uniform white patch), mucous membrane pemphigoid (desquamative gingivitis with blood blisters), actinic cheilitis (rough lower lip), and oral melanotic macule.",
+    "口腔症狀分流決策圖：依症狀類型導向牙科、皮膚科或口腔外科／耳鼻喉科":
+        "Oral symptom triage decision flow: by symptom type, route to dentistry, dermatology, or oral & maxillofacial surgery / ENT.",
+    "口腔切片器械與兩種切片技術示意圖：punch trephine 環形切片與 15 號刀片條狀切片":
+        "Oral biopsy instruments and two techniques: punch trephine (circular biopsy) and #15 blade (strip biopsy).",
     "USPSTF 證據評級熱度圖：13 項常見篩檢 × 5 個生物製劑類別。深綠 B = 建議；淺綠 C = 個別考量；橘 D = 不建議；灰 I = 證據不足。TNF-α 在結核（B）與 HBV（C）為主要建議；IL-17 在念珠菌與 IBD（C）為主要建議；IL-12/23、IL-23 p19 幾乎全 D；HIV 全 I":
         "USPSTF evidence-grade summary: 13 routine pre-biologic labs across 5 biologic classes. Green B = recommended; uncolored C = case-by-case; red D = not recommended; gray I = insufficient evidence. TNF-α has the most stringent annual TB + HBV recommendations; IL-17 highlights mucocutaneous fungal infection and IBD considerations; IL-12/23 and IL-23 p19 are mostly D; HIV is I.",
     "慢性 B 肝乾癬病人接受生物製劑的 reactivation 風險柱狀比較：未抗病毒預防約 26%、抗病毒預防（entecavir 或 tenofovir）約 7.7%；secukinumab + 預防、ustekinumab + 預防在現有資料中無復活個案；TNF-α 仍有少數復活個案":

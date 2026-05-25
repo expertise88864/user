@@ -106,6 +106,17 @@ TRANSLATIONS: dict[str, str] = {
     '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n玫瑰痤瘡（酒糟肌）完整衛教':
         '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="玫瑰痤瘡（酒糟肌）完整衛教" data-en="Rosacea (commonly called 酒糟肌) — complete patient guide">玫瑰痤瘡（酒糟肌）完整衛教</span>',
 
+    # === toenail-mechanical-disorders TLDR ===
+    "研究顯示":
+        "Studies show that ",
+    "，而是鞋子擠壓 + 腳型問題造成的。最常被誤認為灰指甲，但如果腳型沒處理，再怎麼治療都會反覆。從鞋子、腳型、關節、神經、血管到糖尿病都會影響趾甲，這篇把 12 種變形型態跟對應原因一次講清楚。":
+        " — they are caused by shoe pressure and foot shape. The most common misdiagnosis is onychomycosis (nail fungus), but if foot shape is not addressed, no amount of antifungal treatment cures it. From shoes, foot shape, joints, nerves, vessels, to diabetes — all affect toenails. This guide walks through 12 deformity patterns and their causes in one place.",
+    "本文僅作衛教參考，不可取代面對面看診。個別治療請由皮膚專科或足踝專科醫師依您的狀況評估。":
+        "This article is for general education only and does not replace in-person consultation. Individual treatment must be assessed by a dermatologist or foot-and-ankle specialist based on your specific situation.",
+    # toenail H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[30px] sm:text-[40px]">\n腳趾甲變形 12 種型態完整圖鑑<br/><span class="teal-text">從鞋子、腳型、關節到糖尿病</span></h1>':
+        '<h1 class="font-display font-bold leading-[1.18] text-[30px] sm:text-[40px]">\n<span data-zh="腳趾甲變形 12 種型態完整圖鑑" data-en="Toenail deformity — visual atlas of 12 patterns">腳趾甲變形 12 種型態完整圖鑑</span><br/><span class="teal-text" data-zh="從鞋子、腳型、關節到糖尿病" data-en="From shoes, foot shape, joints, to diabetes">從鞋子、腳型、關節到糖尿病</span></h1>',
+
     # topical-acids-patient.html — list items
     "（處方）:Differin(Adapalene)、Stieva-A(Tretinoin)、Tazarotene。":
         " (prescription): Differin (adapalene), Stieva-A (tretinoin), Tazarotene.",

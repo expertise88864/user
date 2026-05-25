@@ -353,6 +353,26 @@ TRANSLATIONS: dict[str, str] = {
     "蕁麻疹 · 2026-05-07": "Urticaria · 2026-05-07",
     # Disclaimer label variants
     "提醒 ·": "Reminder ·",
+    # toenail-mechanical-disorders
+    "衛教 · 趾甲與足部": "Patient guide · Toenail / foot",
+    "腳趾甲變形 12 種型態完整圖鑑":
+        "Toenail deformity — visual atlas of 12 patterns",
+    "從鞋子、腳型、關節到糖尿病":
+        "From shoes, foot shape, joints, to diabetes",
+    "香港腳 / 灰指甲 7 大迷思":
+        "7 Athlete's Foot / Nail Fungus Myths",
+    "足癬 · 2026-05-03": "Tinea pedis · 2026-05-03",
+    "口周皮膚炎 · 2026-05-13": "Perioral dermatitis · 2026-05-13",
+    # Byline variant with space ("陳翊嘉 醫師")
+    "陳翊嘉 醫師 · 整合 Ricardo 2026 JAAD review、Haneke 2024 Skin Appendage Disord、Watjer 2024 BMJ":
+        "Dr. Yi-Jia Chen · Synthesis of Ricardo 2026 JAAD review, Haneke 2024 Skin Appendage Disord, Watjer 2024 BMJ",
+    "陳翊嘉 醫師": "Dr. Yi-Jia Chen",
+    "ChenDermatologist · 陳翊嘉 醫師":
+        "ChenDermatologist · Dr. Yi-Jia Chen",
+    # dermatologic-oral-examination related-card + chips
+    "白斑（Vitiligo）完整衛教":
+        "Vitiligo — complete patient guide",
+    "白斑 · 2026-05-07": "Vitiligo · 2026-05-07",
 }
 
 
