@@ -514,7 +514,50 @@ TRANSLATIONS: dict[str, str] = {
 
     # === melasma-myths H1 + remaining hero ===
     "肝斑 7 大迷思": "7 Melasma Myths",
+    # Trailing TLDR fragment left over from earlier partial translation
+    "反黑、不能用」⋯⋯ 但很多說法都是錯的，或只對一半。本文用最白話的方式釐清 7 個最常見的迷思，附治療階梯與居家保養 SOP。":
+        "causes rebound pigmentation, don't use it&quot; ... but many of these claims are wrong or only half-right. This article uses the plainest language to clarify the 7 most common misconceptions, plus a treatment ladder and home-care SOP.",
 
+    # === sunscreen-myths key-insight strong continuation ===
+    ":SPF 是 UVB 指標、PA 是 UVA 指標。一般化學防曬擋不到可見光 — ":
+        ": SPF measures UVB protection, PA measures UVA protection. Regular chemical sunscreens do not block visible light — ",
+    "才能保護到肝斑與深膚色族群最在意的可見光波段。":
+        " can protect against the visible-light wavelength range that matters most for melasma and darker skin tones.",
+
+    # === topical-acids-clinical tldr trailing ===
+    "AHA pH ":
+        "AHA pH ",  # placeholder; the trailing CJK is the issue
+    # Find tail of TAC TLDR by inspection
+    "差異一次說清楚。":
+        " explained in one place.",
+    "適合急著找處方依據的醫師同仁。":
+        " For clinicians who need a quick prescription-evidence reference.",
+
+    # === AD-systemic strong continuation ===
+    "讓 EASI 75 達 60-78%、且不需常驗血。台灣健保自 2021 年起有條件給付 dupilumab 用於 EASI ≥ 24 + IGA 4 + 一定條件失敗病人。新藥（lebrikizumab、nemolizumab）2024-2025 陸續核准。":
+        " achieve EASI 75 in 60–78% without routine blood monitoring. Taiwan NHI has provided conditional coverage for dupilumab since 2021 for EASI ≥ 24 + IGA 4 + prior-treatment failure. New drugs (lebrikizumab, nemolizumab) approved in 2024–2025.",
+
+    # === psoriasis-topical strong continuation ===
+    "外用 6 個月仍無法控制":
+        "topicals fail to control after 6 months",
+    "特殊部位（臉／皺褶／頭皮／生殖器／指甲）影響生活":
+        "special sites (face / folds / scalp / genitals / nails) impair quality of life",
+    "應緩慢減量":
+        "tapering should be gradual",
+
+    # === AD-special-populations strong continuation ===
+    "過敏進行曲（atopic march）":
+        "atopic march",
+    "成人異位性皮膚炎與心血管疾病、憂鬱、自殺意念顯著相關":
+        "Adult atopic dermatitis significantly correlates with cardiovascular disease, depression, and suicidal ideation",
+
+    # === psoriasis-overview ===
+    "。男女比例近 1：1、有兩個發病高峰：":
+        ". Male-to-female ratio approximately 1:1, with two peaks of onset: ",
+    "、且皮膚通常先於關節 5-10 年發病、是早期警訊。":
+        ", and skin involvement typically precedes joint involvement by 5–10 years — an important early warning sign.",
+
+    # === toenail byline (variant) — already added but re-confirm
     # === NHI legend text nodes (between </span> and <br/>) ===
     "</span> 一般情況即可使用":
         "</span> Usable in routine cases",
