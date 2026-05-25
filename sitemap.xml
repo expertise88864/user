@@ -154,6 +154,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/dupilumab-long-term-maintenance"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/dupilumab-long-term-maintenance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/dupilumab-long-term-maintenance"/>
     <image:image>
       <image:loc>https://chendermatologist.com/api/og?title=%E6%9D%9C%E9%81%BF%E7%82%8E%C2%AE%EF%BC%88dupilumab%EF%BC%89%E7%B6%AD%E6%8C%81%E6%B2%BB%E7%99%82%E8%A6%81%E6%89%93%E5%A4%9A%E4%B9%85%EF%BC%9F2026+JAAD+%E7%9C%9F%E5%AF%A6%E4%B8%96%E7%95%8C%E7%A0%94%E7%A9%B6%EF%BC%9A%E6%B8%9B%E9%87%8F%E7%AB%9F%E6%AF%94%E5%81%9C%E8%97%A5%E6%9B%B4%E5%AE%B9%E6%98%93%E5%BE%A9%E7%99%BC+%7C+%E9%99%B3%E7%BF%8A%E5%98%89%E9%86%AB%E5%B8%AB&amp;tag=%E7%9A%AE%E8%86%9A%E7%A7%91%E8%A1%9B%E6%95%99&amp;date=2026-05-15</image:loc>
       <image:title>杜避炎®（dupilumab）維持治療要打多久？2026 JAAD 真實世界研究：減量竟比停藥更容易復發</image:title>
@@ -671,6 +672,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-overview"/>
     <image:image>
       <image:loc>https://chendermatologist.com/api/og?title=%E7%95%B0%E4%BD%8D%E6%80%A7%E7%9A%AE%E8%86%9A%E7%82%8E%E5%AE%8C%E6%95%B4%E6%8C%87%E5%BC%95+%E2%80%94+%E6%B2%BB%E7%99%82%E3%80%81%E5%85%B1%E7%97%85%E3%80%81%E8%BF%B7%E6%80%9D+%7C+%E9%99%B3%E7%BF%8A%E5%98%89%E9%86%AB%E5%B8%AB+%C2%B7+%E7%9A%AE%E8%86%9A%E7%A7%91&amp;tag=%E7%9A%AE%E8%86%9A%E7%A7%91%E8%A1%9B%E6%95%99&amp;date=2026-05-03</image:loc>
       <image:title>異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思</image:title>
@@ -864,6 +866,15 @@
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/psoriasis-biologic-monitoring"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/psoriasis-biologic-monitoring"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/psoriasis-biologic-monitoring"/>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/en/blog/dupilumab-long-term-maintenance</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/dupilumab-long-term-maintenance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/dupilumab-long-term-maintenance"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/dupilumab-long-term-maintenance"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/en/blog/dermatologic-oral-examination</loc>
@@ -1188,6 +1199,15 @@
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/warts-myths"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/warts-myths"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/warts-myths"/>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/en/blog/atopic-dermatitis-overview</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/atopic-dermatitis-overview"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/atopic-dermatitis-overview"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/en/blog/hairloss-myths</loc>
