@@ -578,8 +578,23 @@ TRANSLATIONS: dict[str, str] = {
         ". Before that, moderate-to-severe AD could only rely on cyclosporine (short-term) or struggle with topicals. Today ",
     "讓 EASI 75 達 60-78%、且不需常驗血。台灣健保自 2021 年起有條件給付 dupilumab 用於 EASI ≥ 24 + IGA 4 + 一定條件失敗病人。新藥（lebrikizumab、nemolizumab）2024-2025 陸續核准。":
         " achieve EASI 75 in 60–78% without routine blood monitoring. Taiwan NHI has provided conditional coverage for dupilumab since 2021 for EASI ≥ 24 + IGA 4 + prior-treatment failure. New drugs (lebrikizumab, nemolizumab) were approved in 2024–2025.",
+    # Actual variant in source ("、JAKi）多需自費、年費 NT$" trailing, not "2024-2025 陸續核准")
+    "讓 EASI 75 達 60-78%、且不需常驗血。台灣健保自 2021 年起有條件給付 dupilumab 用於 EASI ≥ 24 + IGA 4 + 一定條件失敗病人。新藥（lebrikizumab、nemolizumab、JAKi）多需自費、年費 NT$":
+        " achieve EASI 75 in 60–78% without routine blood monitoring. Taiwan NHI has provided conditional coverage for dupilumab since 2021 for EASI ≥ 24 + IGA 4 + prior-treatment failure. Newer drugs (lebrikizumab, nemolizumab, JAKi) are mostly out-of-pocket with annual costs of NT$",
     "4 種生物製劑 + 3 種 JAK 抑制劑":
         "4 biologics + 3 JAK inhibitors",
+
+    # === isotretinoin-patient NICE 2021 reference ===
+    "London: NICE; 2021 (last updated April 2026). 重點：每日 0.5-1 mg/kg；總累積劑量 120-150 mg/kg；療程前 + 每次回診皆需評估精神狀態。":
+        "London: NICE; 2021 (last updated April 2026). Key points: daily dose 0.5–1 mg/kg; total cumulative dose 120–150 mg/kg; mental-health evaluation required before treatment and at every follow-up visit.",
+
+    # === toenail-mechanical-disorders full byline ===
+    "陳翊嘉 醫師 · 整合 Ricardo 2026 JAAD review、Haneke 2024 Skin Appendage Disord、Watjer 2024 BMJ Open、Nix":
+        "Dr. Yi-Jia Chen · Synthesis of Ricardo 2026 JAAD review, Haneke 2024 Skin Appendage Disord, Watjer 2024 BMJ Open, Nix",
+
+    # === topical-steroids-guide Note (direct text after <strong>Note:</strong>) ===
+    "類固醇藥膏屬處方藥（部分指示用藥例外），不應自行購買強效類固醇長期使用。請依醫師處方使用。":
+        "Topical steroids are prescription medications (some indications are OTC exceptions). Do not self-purchase potent topical steroids for long-term use. Follow physician prescription.",
 
     # === psoriasis-systemic TLDR ===
     " — 過去傳統治療目標只是 PASI 50-75。網絡統合分析（network meta-analysis）顯示 16 週 PASI 90 排名（從高到低）：":
@@ -590,6 +605,8 @@ TRANSLATIONS: dict[str, str] = {
     # === topical-acids-clinical TLDR + related ===
     "把外用 retinoid 四代差別、Azelaic acid 雙重機轉、AHA pH ":
         "Topical retinoids by generation, azelaic acid's dual mechanism, AHA pH — ",
+    "與 free acid concentration 對 penetration 的影響、BHA 親脂特性、PHA、與 BPO 的相容性、與 L-AA 的 pH 衝突、retinoid dermatitis 處置、孕期安全證據，全部整理成可直接帶上門診講解的版本。":
+        "the effect of free-acid concentration on penetration, BHA's lipophilic property, PHA, compatibility with BPO, pH conflict with L-AA, retinoid dermatitis management, and pregnancy-safety evidence — all summarized into a clinic-ready reference.",
     "Oral Isotretinoin 完整臨床學理整理":
         "Oral isotretinoin — complete clinical write-up",
 
