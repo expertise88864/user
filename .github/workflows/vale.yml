@@ -30,12 +30,12 @@ jobs:
     name: Vale prose lint (informational)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # pin v4 (was @v4)
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: false
       - name: Run Vale
-        uses: errata-ai/vale-action@v2
+        uses: errata-ai/vale-action@d89dee975228ae261d22c15adcd03578634d429c # pin v2 (was @v2)
         with:
           version: 3.7.1
           # Restrict to article files (not navigation pages with structural markup)
