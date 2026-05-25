@@ -88,6 +88,32 @@ export default async function handler(req) {
     if (!PAT_AUTH_RE.test(auth)) {
       return jsonResp(401, { error: 'Missing Authorization (PAT)' });
     }
+    // 2026-05-25 — actually validate the bearer against GitHub. Previously
+    // the endpoint only regex-checked the token's shape, so any random
+    // string of the right pattern could mutate KV. Now we round-trip to
+    // GitHub's /user endpoint and require (a) HTTP 200, (b) the
+    // authenticated login is in REPO_OWNER_ALLOWLIST.
+    const REPO_OWNER_ALLOWLIST = new Set(['expertise88864']);
+    let userLogin = null;
+    try {
+      const ghResp = await fetch('https://api.github.com/user', {
+        headers: {
+          Authorization: auth, // pass through "token gh..."
+          'User-Agent': 'ChenDermatologist-Admin/1.0',
+          Accept: 'application/vnd.github+json',
+        },
+      });
+      if (!ghResp.ok) {
+        return jsonResp(401, { error: 'GitHub rejected the token' });
+      }
+      const u = await ghResp.json();
+      userLogin = u && u.login;
+    } catch (_) {
+      return jsonResp(502, { error: 'GitHub validation failed' });
+    }
+    if (!userLogin || !REPO_OWNER_ALLOWLIST.has(userLogin)) {
+      return jsonResp(403, { error: 'Token user not allowlisted' });
+    }
     let body;
     try { body = await req.json(); } catch { return jsonResp(400, { error: 'JSON body required' }); }
     const picks = body && body.picks;

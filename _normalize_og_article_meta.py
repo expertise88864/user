@@ -144,6 +144,17 @@ BLOCK_RE = re.compile(
     r"<!-- dn-og-extras:start -->[\s\S]*?<!-- dn-og-extras:end -->",
     re.IGNORECASE,
 )
+# 2026-05-25 — also strip ORPHAN duplicate <meta property="article:|og:|name=
+# "twitter:"> tags that appear right after dn-og-extras:end. A prior version
+# of this injector (or a different script) appended a second meta block
+# without start/end markers, so BLOCK_RE alone couldn't catch the dup. This
+# regex strips a contiguous run of orphan metas immediately following the
+# end-marker so re-runs converge to a single block.
+ORPHAN_RUN_RE = re.compile(
+    r'(<!-- dn-og-extras:end -->)'
+    r'(\s*(?:<meta\s+(?:property|name)="(?:article:|og:image:|twitter:[^"]+)"\s+content="[^"]*"\s*/?>)+)',
+    re.IGNORECASE,
+)
 OG_IMAGE_TAG_RE = re.compile(
     r'<meta\s+property="og:image"\s+content="[^"]*"\s*/?>',
     re.IGNORECASE,
@@ -158,7 +169,9 @@ def inject(path: Path, catalog: dict[str, dict[str, str]]) -> bool:
         return False  # unlisted / non-article
     block = build_meta_block(slug, record, src)
 
-    # Strip any prior injection.
+    # Strip orphan duplicate metas that follow end-marker (legacy artifacts).
+    src = ORPHAN_RUN_RE.sub(r'\1', src)
+    # Strip any prior injection (current-format block).
     cleaned = BLOCK_RE.sub("", src)
     # Insert right after the existing og:image meta tag for visual grouping.
     og_m = OG_IMAGE_TAG_RE.search(cleaned)

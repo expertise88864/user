@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v142';
-const RUNTIME = 'cd-runtime-v140';
+const CACHE = 'cd-v143';
+const RUNTIME = 'cd-runtime-v141';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
 // Popular articles getting evicted after ~5 navigations caused repeat-
@@ -42,10 +42,21 @@ self.addEventListener('install', (e) => {
   // would post SKIP_WAITING redundantly, sometimes causing a double
   // reload via controllerchange. Letting the toast own activation
   // gives the user warning that something is changing.
-  e.waitUntil(
-    caches.open(CACHE)
-      .then((c) => Promise.allSettled(PRECACHE.map((u) => c.add(u))))
-  );
+  // CODE_REVIEW 2026-05-25 — `Promise.allSettled` swallows install
+  // failures; if /offline.html ever fails to cache the offline-fallback
+  // chain in the fetch handler resolves to undefined and the browser
+  // shows its own error page. Hard-require /offline.html (other
+  // PRECACHE entries can fail without harming the user).
+  e.waitUntil((async () => {
+    const c = await caches.open(CACHE);
+    await Promise.allSettled(PRECACHE.map((u) => c.add(u)));
+    // Re-fetch /offline.html explicitly so a transient install failure
+    // doesn't leave us without an offline fallback for the lifetime of
+    // this SW generation.
+    if (!(await c.match('/offline.html'))) {
+      try { await c.add('/offline.html'); } catch (_) {}
+    }
+  })());
 });
 
 self.addEventListener('activate', (e) => {
@@ -118,11 +129,17 @@ self.addEventListener('fetch', (e) => {
       // Background revalidate — fires regardless of cache hit so the
       // NEXT visit gets fresh content. Errors swallowed so offline
       // visits still resolve to the cached copy.
+      // CODE_REVIEW 2026-05-25 — cache.put + trimCache wrapped in
+      // event.waitUntil so SW termination mid-eviction can't leave
+      // the HTML cache permanently over-cap.
       const networkPromise = fetchWithRetry(req)
         .then((resp) => {
           if (resp && resp.ok && !resp.redirected && resp.type === 'basic') {
-            cache.put(req, resp.clone());
-            trimCache(CACHE, HTML_CACHE_MAX_ENTRIES);
+            const copy = resp.clone();
+            e.waitUntil((async () => {
+              await cache.put(req, copy);
+              await trimCache(CACHE, HTML_CACHE_MAX_ENTRIES);
+            })());
           }
           return resp;
         })
@@ -139,26 +156,42 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // Network-first for versioned assets (URLs containing `?v=`):
-  // we use cache-bust query strings (?v=YYYYMMDDhhmm) on every deploy, so the
-  // version param IS the freshness signal. Going network-first guarantees the
-  // browser ALWAYS picks up the new bundle on the same-day deploy, even if the
-  // SW was installed days ago. Falls back to cache only if offline.
-  if (url.search.includes('v=')) {
-    e.respondWith(
-      fetchWithRetry(req)
-        .then((resp) => {
-          if (resp && resp.status === 200) {
-            const copy = resp.clone();
-            caches.open(RUNTIME).then((c) => {
-              c.put(req, copy);
-              trimCache(RUNTIME, RUNTIME_MAX_ENTRIES);
-            });
-          }
-          return resp;
-        })
-        .catch(() => caches.match(req))
-    );
+  // Cache-first for versioned assets (URLs with `?v=YYYYMMDDhhmm` or
+  // `&v=YYYYMMDDhhmm`): the version string IS the freshness signal,
+  // so an exact URL+query cache hit is BY DEFINITION fresh. A new
+  // deploy ships a new `?v=` → new URL → cache miss → fetch → cache.
+  // Old `?v=` keys are no longer referenced by any HTML and naturally
+  // fall out via `trimCache`.
+  //
+  // 2026-05-25 — switched from network-first to cache-first to slash
+  // Vercel Edge Requests (network-first was making every repeat visitor
+  // re-fetch every versioned asset, defeating the whole cache-bust
+  // strategy). Tightened the matcher to require `v=` to be a real
+  // query parameter (preceded by `?` or `&`), not a substring of any
+  // other param like `?nav=1`, `?prev=foo`, or `?view=...`.
+  if (/[?&]v=/.test(url.search)) {
+    e.respondWith((async () => {
+      const cached = await caches.match(req);
+      if (cached) return cached;
+      try {
+        const resp = await fetchWithRetry(req);
+        if (resp && resp.status === 200 && resp.type === 'basic') {
+          const copy = resp.clone();
+          // CODE_REVIEW — wrap cache.put + trimCache in waitUntil so SW
+          // termination mid-eviction can't leave RUNTIME permanently
+          // over-cap.
+          e.waitUntil((async () => {
+            const c = await caches.open(RUNTIME);
+            await c.put(req, copy);
+            await trimCache(RUNTIME, RUNTIME_MAX_ENTRIES);
+          })());
+        }
+        return resp;
+      } catch (_) {
+        // network failed and no cache — bubble up
+        return Response.error();
+      }
+    })());
     return;
   }
 
@@ -171,10 +204,12 @@ self.addEventListener('fetch', (e) => {
         .then((resp) => {
           if (resp && resp.status === 200 && resp.type === 'basic') {
             const copy = resp.clone();
-            caches.open(RUNTIME).then((c) => {
-              c.put(req, copy);
-              trimCache(RUNTIME, RUNTIME_MAX_ENTRIES);
-            });
+            // CODE_REVIEW 2026-05-25 — waitUntil for cache.put + trimCache.
+            e.waitUntil((async () => {
+              const c = await caches.open(RUNTIME);
+              await c.put(req, copy);
+              await trimCache(RUNTIME, RUNTIME_MAX_ENTRIES);
+            })());
           }
           return resp;
         })
@@ -188,12 +223,16 @@ self.addEventListener('fetch', (e) => {
     caches.match(req).then((cached) => {
       if (cached) return cached;
       return fetchWithRetry(req).then((resp) => {
-        if (resp && resp.status === 200) {
+        if (resp && resp.status === 200 && resp.type === 'basic') {
           const copy = resp.clone();
-          caches.open(RUNTIME).then((c) => {
-            c.put(req, copy);
-            trimCache(RUNTIME, RUNTIME_MAX_ENTRIES);
-          });
+          // CODE_REVIEW 2026-05-25 — (a) waitUntil for cache.put +
+          // trimCache. (b) gate on resp.type === 'basic' so opaque
+          // CORS responses (potentially 5xx in disguise) aren't cached.
+          e.waitUntil((async () => {
+            const c = await caches.open(RUNTIME);
+            await c.put(req, copy);
+            await trimCache(RUNTIME, RUNTIME_MAX_ENTRIES);
+          })());
         }
         return resp;
       }).catch(() => cached);
@@ -208,16 +247,43 @@ self.addEventListener('message', (e) => {
   // Page does: navigator.serviceWorker.controller.postMessage({type:'PRECACHE',urls:[...]})
   // SW fetches them when network is idle so they're available offline.
   if (e.data && e.data.type === 'PRECACHE' && Array.isArray(e.data.urls)) {
+    // CODE_REVIEW 2026-05-25 — same-origin + path-allowlist guard.
+    // Previous implementation accepted ANY URL in the message — any
+    // page (or compromised 3rd-party script like adsbygoogle/gtag/Giscus)
+    // could ask the SW to fetch + cache attacker-controlled URLs.
+    // Cache poisoning primitive. Now: only accept same-origin URLs
+    // under /blog/, /en/blog/, /assets/, or root html pages.
+    const safe = e.data.urls.filter((u) => {
+      try {
+        const url = new URL(u, self.location.origin);
+        if (url.origin !== self.location.origin) return false;
+        const p = url.pathname;
+        return (
+          p === '/' ||
+          p.startsWith('/blog/') ||
+          p.startsWith('/en/') ||
+          p.startsWith('/assets/') ||
+          p === '/offline.html' ||
+          p === '/manifest.json' ||
+          p === '/icon.svg'
+        );
+      } catch (_) {
+        return false;
+      }
+    });
     e.waitUntil((async () => {
       try {
         const cache = await caches.open(RUNTIME);
         // Limit concurrency to avoid hammering: 3 at a time
-        const queue = e.data.urls.slice(0, 20);
+        const queue = safe.slice(0, 20);
         for (let i = 0; i < queue.length; i += 3) {
           await Promise.allSettled(queue.slice(i, i + 3).map(async (u) => {
             try {
+              // Skip if already cached — avoid wasting Edge Requests.
+              const existing = await cache.match(u);
+              if (existing) return;
               const resp = await fetch(u, { credentials: 'omit' });
-              if (resp && resp.ok) await cache.put(u, resp);
+              if (resp && resp.ok && resp.type === 'basic') await cache.put(u, resp);
             } catch (_) {}
           }));
         }
