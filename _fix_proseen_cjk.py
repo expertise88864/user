@@ -381,6 +381,69 @@ TRANSLATIONS: dict[str, str] = {
     '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n白斑（Vitiligo）完整衛教':
         '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="白斑（Vitiligo）完整衛教" data-en="Vitiligo — complete patient guide">白斑（Vitiligo）完整衛教</span>',
 
+    # === hidradenitis-suppurativa TLDR ===
+    "HS 早期症狀常被誤認為一般癤瘡、毛囊炎而錯過治療。若反覆發作於相同部位，建議至皮膚科確認。":
+        "HS early symptoms are often misdiagnosed as ordinary boils or folliculitis and treatment is delayed. If lesions recur at the same site, dermatologist evaluation is recommended.",
+    "。它是慢性發炎 → 形成":
+        ". It is chronic inflammation → forming ",
+    "→ 不可逆組織破壞與疤痕的自體發炎疾病。":
+        " → an auto-inflammatory disease with irreversible tissue destruction and scarring.",
+    "。亞洲國家男性盛行率高於女性（歐美相反）。":
+        ". In Asia, prevalence is higher in men than women (opposite of Europe/US).",
+    # HS H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n化膿性汗腺炎（HS）完整衛教':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="化膿性汗腺炎（HS）完整衛教" data-en="Hidradenitis suppurativa (HS) — complete patient guide">化膿性汗腺炎（HS）完整衛教</span>',
+
+    # === atopic-dermatitis-topical TLDR ===
+    "、不是急性期才用、是":
+        " — not just during acute flares, but ",
+    "。AAD 2023 強推（A 級實證）「每天大量使用 ≥ 250 g／週的保濕劑」、可降低急性發作頻率約 30-50%。":
+        ". AAD 2023 strongly recommends (Grade A evidence) using ≥ 250 g of moisturizer per week, which reduces acute flare frequency by about 30–50%.",
+    "：洗澡 ≤ 10 分鐘 + 溫水 + 不用肥皂揉搓 + 出浴後 3 分鐘內塗保濕＋外用藥、效果最好。新一代非類固醇外用（PDE4i、外用 JAKi、tapinarof、roflumilast）讓特殊部位、長期維持、減少類固醇":
+        ": shower ≤ 10 min + lukewarm water + no soap scrubbing + apply moisturizer + topical medication within 3 min of toweling — works best. Newer non-steroidal topicals (PDE4i, topical JAKi, tapinarof, roflumilast) help with special sites, long-term maintenance, and reduce steroid use",
+
+    # === psoriasis-topical TLDR ===
+    "、是健保最常開立、CP 值最高的療法。但若 ":
+        " — the most-prescribed and most cost-effective therapy under Taiwan NHI. However, if ",
+    "、或病灶位於":
+        ", or lesions are located on ",
+    "、就應升階至光療或全身性治療。「乾癬反彈」（rebound）通常發生在突然停強效類固醇後、":
+        ", then escalation to phototherapy or systemic treatment is indicated. &quot;Psoriasis rebound&quot; typically occurs after abrupt discontinuation of potent topical steroids, ",
+    "或改維生素 D 衍生物作為維持。":
+        " or switch to vitamin D analog for maintenance.",
+
+    # === mpox-care emergency reminder ===
+    "若出現眼部受影響、嚴重生殖器或肛門症狀、無法進食、呼吸困難、高燒不退，或免疫低下族群，請立即就醫。本文僅供居家照護參考，不取代專業醫療評估。":
+        "If you have ocular involvement, severe genital or anal symptoms, inability to eat, breathing difficulty, persistent high fever, or are immunocompromised, seek immediate medical attention. This article is for home-care reference only and does not replace professional medical evaluation.",
+    # mpox H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n猴痘（Mpox）皮膚照護完整指南':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="猴痘（Mpox）皮膚照護完整指南" data-en="Monkeypox (Mpox) skin-care complete guide">猴痘（Mpox）皮膚照護完整指南</span>',
+
+    # === psoriasis-special-populations TLDR ===
+    "、相當於糖尿病患的程度（":
+        ", equivalent to the level seen in diabetic patients (",
+    "、5 年內可能造成不可逆關節破壞、影響功能。AAD 建議：所有乾癬病人應「":
+        " — within 5 years can cause irreversible joint destruction and impair function. AAD recommends that all psoriasis patients should &quot;",
+    "」 + 「定期心血管 / 代謝 / 情緒篩檢」。":
+        "&quot; + &quot;routine cardiovascular / metabolic / mood screening&quot;.",
+    "中 50% 乾癬病人會自然改善、產後常反彈（postpartum flare）— 此時藥物選擇尤需謹慎。":
+        ": 50% of psoriasis patients improve spontaneously during pregnancy; postpartum flare is common — drug selection requires special care.",
+
+    # === atopic-dermatitis-special-populations TLDR ===
+    "是著名的「":
+        " is the well-known &quot;",
+    "」。早期積極治療異位性皮膚炎、修復皮膚屏障、可降低後續氣喘與食物過敏風險（最高達 30%）。":
+        "&quot;. Early aggressive treatment of atopic dermatitis and skin-barrier repair can reduce later asthma and food-allergy risk by up to 30%.",
+    "—不只是「皮膚癢」、是全身性發炎、需要長期定期追蹤合併症。":
+        " — not just &quot;itchy skin&quot;, but systemic inflammation requiring long-term monitoring for comorbidities.",
+
+    # === cutaneous-t-cell-lymphoma Note ===
+    "本文為衛教與學習筆記。若懷疑 CTCL，需由皮膚科醫師判讀、並透過皮膚切片 + 免疫組織化學 + T 細胞受體基因重排確診。治療屬腫瘤等級、需多專科團隊（皮膚科、血液腫瘤科、放射腫瘤科）共同決策。":
+        "This article is patient-education plus study notes. If CTCL is suspected, diagnosis requires dermatologist interpretation with skin biopsy + immunohistochemistry + T-cell receptor gene rearrangement. Treatment is at oncology level and requires multidisciplinary team decision-making (dermatology, hematology-oncology, radiation oncology).",
+    # CTCL H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n皮膚 T 細胞淋巴瘤(CTCL / MF)':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="皮膚 T 細胞淋巴瘤(CTCL / MF)" data-en="Cutaneous T-cell lymphoma (CTCL / MF)">皮膚 T 細胞淋巴瘤(CTCL / MF)</span>',
+
     # topical-acids-patient.html — list items
     "（處方）:Differin(Adapalene)、Stieva-A(Tretinoin)、Tazarotene。":
         " (prescription): Differin (adapalene), Stieva-A (tretinoin), Tazarotene.",

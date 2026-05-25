@@ -750,15 +750,15 @@ def localize_jsonld(src: str, title: str, desc: str) -> str:
 # users. Only translates aria-label values that exactly match a key here;
 # unrecognized ZH aria-labels are left as-is (better than a wrong gloss).
 ARIA_LABEL_TRANSLATIONS: dict[str, str] = {
-    "主導覽":
+    "PDT 三要素與分子機轉：光敏劑 + 光 + 氧氣 → ROS → 細胞凋亡 / 血管損傷 / 免疫活化":
         "PDT three essential elements and molecular mechanism: photosensitizer + light + oxygen → ROS → apoptosis / vascular damage / immune activation",
-    "搜尋":
+    "ALA 與 MAL 經 heme 合成路徑代謝為 PpIX 的示意":
         "Schematic: ALA and MAL metabolism via the heme biosynthesis pathway to PpIX",
-    "贊助本站":
+    "藍光、綠光、紅光與紅外光在皮膚的穿透深度比較":
         "Comparison of penetration depth in skin: blue light, green light, red light, and near-infrared",
-    "切換暗色模式":
+    "PDT 12 適應症按證據等級階梯":
         "PDT 12 indications ranked by evidence level on a tiered ladder",
-    "開啟選單":
+    "PDT 疼痛管理策略階梯":
         "PDT pain-management strategy ladder",
     "疥蟲生命週期與隧道圖：雌蟲在角質層挖隧道產卵，3-4 天孵化，2-3 週成蟲，整個週期 2-3 週":
         "Scabies mite life cycle and burrow diagram: female mite tunnels in stratum corneum and lays eggs; eggs hatch in 3-4 days; adult in 2-3 weeks; full cycle 2-3 weeks",
@@ -772,15 +772,15 @@ ARIA_LABEL_TRANSLATIONS: dict[str, str] = {
         "Kaplan-Meier-style curve: cumulative relapse-free rate at 52 weeks is markedly higher in the long-term q2w arm than in the short-term or tapering arms; some long-term patients remain relapse-free beyond 300 days.",
     "五種異位性皮膚炎表型示意圖：classic 對稱屈側、廣泛苔癬化、廣泛發炎、錢幣狀濕疹樣、痒疹結節樣":
         "Five atopic dermatitis phenotypes: classic symmetric flexural, generalized lichenified, generalized inflammatory, nummular eczema-like, and prurigo nodular-like.",
-    "主導覽":
+    "Herrera 2026 JAAD：semaglutide / tirzepatide 各種掉髮新發風險 forest plot":
         "Herrera 2026 JAAD: forest plot of relative risks for various new-onset hair-loss types in semaglutide / tirzepatide users",
-    "搜尋":
+    "Hill 2026 JAAD：GLP-1 / GIP 對疤痕性禿髮患者各種治療使用率 forest plot":
         "Hill 2026 JAAD: forest plot of treatment-utilization rates for scarring alopecia patients on GLP-1 / GIP",
-    "贊助本站":
+    "兩篇研究 2x2 概念圖：族群 × 結果":
         "2x2 concept matrix of the two studies: population × outcome",
-    "切換暗色模式":
+    "GLP-1RA 對毛囊的雙路徑機轉假說":
         "GLP-1RA dual-pathway hypothesis on hair follicle",
-    "開啟選單":
+    "GLP-1RA 使用後新發掉髮 RR 隨時間累積":
         "New-onset hair-loss RR accumulating over time after GLP-1RA initiation",
     "口腔黏膜三類分佈圖：硬顎與牙齦為角化的咀嚼性黏膜（粉紅），頰、舌腹、口底、軟顎為非角化的鬆軟黏膜（米黃），舌背與唇紅為特化黏膜（橘紅）":
         "Oral mucosa zones (3 types): keratinized masticatory mucosa over hard palate and gingiva (pink); non-keratinized lining mucosa over buccal, ventral tongue, floor of mouth, and soft palate (cream); specialized mucosa over dorsal tongue and lip vermilion (orange-red).",

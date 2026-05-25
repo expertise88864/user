@@ -11,9 +11,19 @@ ROOT = Path(__file__).resolve().parent
 
 
 def extract_zh_arias(rel: str) -> list[str]:
+    """Extract CJK aria-labels from FIGURE / SVG elements only.
+
+    Earlier versions returned ALL CJK aria-labels in document order, which
+    erroneously included nav-button labels ("主導覽", "搜尋", "贊助本站",
+    "切換暗色模式", "開啟選單") at the front of the list. Mapping per-page
+    figure translations onto those keys silently overrode the same labels
+    site-wide via the shared ARIA_LABEL_TRANSLATIONS dict.
+
+    Now we only pick aria-labels on <svg> tags.
+    """
     text = (ROOT / rel).read_text(encoding="utf-8")
     out = []
-    for m in re.finditer(r'aria-label="([^"]+)"', text):
+    for m in re.finditer(r'<svg\b[^>]*aria-label="([^"]+)"', text):
         if re.search(r"[一-鿿]", m.group(1)):
             out.append(m.group(1))
     return out

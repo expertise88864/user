@@ -484,6 +484,18 @@ TRANSLATIONS: dict[str, str] = {
     # topical-acids-clinical hero kicker
     "深入閱讀 · 給醫療同仁 ":
         "In-depth reading · For clinicians ",
+    # Batch 53
+    "衛教 · 感染照護": "Patient guide · Infection care",
+    "衛教 · 罕見皮膚癌": "Patient guide · Rare skin cancer",
+    "化膿性汗腺炎（HS）完整衛教":
+        "Hidradenitis suppurativa (HS) — complete patient guide",
+    "猴痘（Mpox）皮膚照護完整指南":
+        "Monkeypox (Mpox) skin-care complete guide",
+    "皮膚 T 細胞淋巴瘤(CTCL / MF)":
+        "Cutaneous T-cell lymphoma (CTCL / MF)",
+    "帶狀皰疹 6 大迷思": "6 Shingles Myths",
+    "皮蛇 · 2026-05-04": "Shingles · 2026-05-04",
+    "Key Facts（TDA 共識）": "Key Facts (TDA consensus)",
 }
 
 
