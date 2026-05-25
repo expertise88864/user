@@ -1,9 +1,0 @@
-[archive link text] ← 文章索引
-[breadcrumb] <span>口周皮膚炎完整衛教</span>
-[kicker] <div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold mb-3">衛教 · 鑑別與治療 
-[h1 main] 嘴角紅疹是痘痘還是濕疹？
-[h1 span] <span class="teal-text">口周皮膚炎的成因、症狀與治療</span>
-[author byline] <div class="text-[13.5px] text-ink-500 mt-4">陳翊嘉醫師 · 整合 Acevedo-Fontanez 2026 JAAD review、Tempark 2014 Am J Clin Dermatol、Schwarz 2008 / Veien 1991 / Ollech 2020 JAAD 等實證</div>
-[tldr lede] <strong>一句話結論：</strong>
-[tldr middle strong] <strong>嘴唇紅色邊緣那一圈會明顯「跳過」不發炎</strong>
-[disclaimer lede] <strong>提醒：</strong>
