@@ -917,7 +917,11 @@ def main() -> None:
         zh_path = os.path.join(blog_dir, f)
         if f == 'index.html':
             zh_canonical = '/blog'
-            en_canonical = '/en/blog/'
+            # 2026-05-25 — drop trailing slash to match (a) sitemap.xml
+            # entry "/en/blog" (no slash) and (b) ZH canonical style. The
+            # inconsistency caused _check_sitemap.py to fail on hreflang
+            # vs canonical mismatch.
+            en_canonical = '/en/blog'
         else:
             stem = f[:-5]
             zh_canonical = '/blog/' + stem

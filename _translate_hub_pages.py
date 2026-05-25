@@ -302,6 +302,33 @@ TRANSLATIONS: dict[str, str] = {
 INTERESTING_TAGS = ("a", "h2", "h3", "span", "li", "p", "div", "summary", "option", "td", "th", "strong", "em", "figcaption")
 
 
+_ATTR_VALUE_RANGES_CACHE: list[tuple[int, int]] | None = None
+
+
+def _attribute_value_ranges(html: str) -> list[tuple[int, int]]:
+    """Return (start, end) char ranges of every double-quoted attribute
+    value in `html`. Used to skip tag-pattern matches that would land
+    INSIDE an attribute value (which is malformed HTML — we'd be adding
+    `data-en="..."` to a `<span>` that lives inside a `data-zh="..."`
+    attribute, breaking the parent's quoting).
+    """
+    ranges: list[tuple[int, int]] = []
+    # All attribute=val patterns: attr="value"
+    for m in re.finditer(r'\s\w[\w-]*="([^"]*)"', html):
+        # m.group(1) is the value content (no quotes)
+        ranges.append((m.start(1), m.end(1)))
+    return ranges
+
+
+def _inside_attribute(pos: int, ranges: list[tuple[int, int]]) -> bool:
+    for start, end in ranges:
+        if start <= pos < end:
+            return True
+        if start > pos:
+            return False
+    return False
+
+
 def add_data_en(html: str) -> tuple[str, int]:
     """For each interesting tag with inner CJK that matches a TRANSLATIONS
     key (after stripping leading <span> sibling tags), add `data-en="..."`
@@ -310,6 +337,12 @@ def add_data_en(html: str) -> tuple[str, int]:
     Also fixes existing `data-en="<CJK>"` values where the data-en attribute
     was authored as ZH placeholder text — replace its value with the EN
     translation if the key is in TRANSLATIONS.
+
+    2026-05-25 — guard against matches that fall inside ANOTHER attribute
+    value (e.g., the literal `<span class='teal-text'>皮膚科</span>` that
+    appears inside `data-zh="<span class='teal-text'>皮膚科</span>常見..."`).
+    Adding data-en there would inject a `"` inside the parent attribute and
+    break HTML5 parsing.
 
     Returns (new_html, replacement_count).
     """
@@ -343,6 +376,10 @@ def add_data_en(html: str) -> tuple[str, int]:
             attrs = m.group(2)
             if 'data-en=' in attrs:
                 return m.group(0)
+            # Skip if this match starts inside another attribute value
+            ranges = _attribute_value_ranges(html)
+            if _inside_attribute(m.start(), ranges):
+                return m.group(0)
             count += 1
             return f'<{m.group(1)}{attrs}{en_attr}>{zh}</{m.group(1)}>'
 
@@ -361,6 +398,9 @@ def add_data_en(html: str) -> tuple[str, int]:
             nonlocal count
             attrs = m.group(2)
             if 'data-en=' in attrs:
+                return m.group(0)
+            ranges = _attribute_value_ranges(html)
+            if _inside_attribute(m.start(), ranges):
                 return m.group(0)
             count += 1
             return f'<{m.group(1)}{attrs}{en_attr}>{m.group(3)}{zh}</{m.group(1)}>'
