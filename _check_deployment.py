@@ -129,7 +129,24 @@ def main() -> int:
                 "https://unpkg.com",
             ],
             "style-src": ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
-            "img-src": ["'self'", "data:", "https:", "blob:"],
+            # 2026-05-25 — img-src tightened: was `'self' data: https: blob:`
+            # (wildcard https: = any host could serve images, real
+            # exfiltration vector via injected <img>). Now explicit allow-
+            # list: 'self' + data: + blob: + GA/Clarity/AdSense/doubleclick
+            # tracking pixels + Giscus avatars. Wildcard `https:` is FORBIDDEN.
+            "img-src": [
+                "'self'",
+                "data:",
+                "blob:",
+                "https://www.google-analytics.com",
+                "https://www.googletagmanager.com",
+                "https://pagead2.googlesyndication.com",
+                "https://googleads.g.doubleclick.net",
+                "https://stats.g.doubleclick.net",
+                "https://www.clarity.ms",
+                "https://*.clarity.ms",
+                "https://avatars.githubusercontent.com",
+            ],
             "font-src": ["'self'", "data:", "https://fonts.gstatic.com"],
             "connect-src": [
                 "'self'",
@@ -148,6 +165,8 @@ def main() -> int:
             for source in sources:
                 require_csp_source(errors, directives, name, source)
         forbid_csp_source(errors, directives, "script-src", "https://fonts.googleapis.com")
+        # 2026-05-25 — block the wildcard https: from sneaking back into img-src.
+        forbid_csp_source(errors, directives, "img-src", "https:")
 
     if errors:
         print("[FAIL] Deployment config audit found issues:")
