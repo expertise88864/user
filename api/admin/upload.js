@@ -22,6 +22,8 @@
 //
 // Response: { url, path, sha, size }
 
+import { resolveAuth } from './_session.js';
+
 export const config = { runtime: 'edge' };
 
 const REPO = process.env.ADMIN_REPO || 'expertise88864/user';
@@ -63,8 +65,15 @@ function jsonResp(status, obj, extraHeaders) {
 export default async function handler(req) {
   if (req.method !== 'POST') return jsonResp(405, { error: 'POST only' }, { Allow: 'POST' });
 
-  // Auth: PAT comes through Authorization header
-  const auth = req.headers.get('authorization') || '';
+  // Auth: PREFERRED is HttpOnly cookie session set by /api/admin/login.
+  // LEGACY: Authorization: token ghp_… header still accepted.
+  const resolved = await resolveAuth(req);
+  if (!resolved) {
+    return jsonResp(401, { error: 'Login required (POST /api/admin/login or Authorization header)' });
+  }
+  const auth = resolved.auth;
+  // Defensive — should never trip post-resolveAuth, but keep the original
+  // shape guard so a malformed legacy header bounces here too.
   if (!PAT_AUTH_RE.test(auth)) {
     return jsonResp(401, { error: 'Missing or malformed Authorization header (need "token ghp_…")' });
   }

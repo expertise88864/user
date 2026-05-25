@@ -4,7 +4,11 @@
 // The admin Save flow can then optionally inject the result into the
 // `<div class="dn-tldr">` block of the article.
 //
-// Auth: requires Authorization: token ghp_... + ANTHROPIC_API_KEY env.
+// Auth: PREFERRED is HttpOnly cookie session set by /api/admin/login;
+// LEGACY accepts Authorization: token ghp_... header. ANTHROPIC_API_KEY
+// env still required for the Claude call.
+
+import { resolveAuth } from './_session.js';
 
 export const config = { runtime: 'edge' };
 
@@ -42,9 +46,16 @@ Never wrap in code fences. Output only the JSON.`;
 
 export default async function handler(req) {
   if (req.method !== 'POST') return jsonResp(405, { error: 'POST only' }, { Allow: 'POST' });
-  const auth = req.headers.get('authorization') || '';
+  const resolved = await resolveAuth(req);
+  if (!resolved) {
+    return jsonResp(401, { error: 'Login required (POST /api/admin/login or Authorization header)' });
+  }
+  const auth = resolved.auth;
+  // Defensive — should never trip post-resolveAuth, but keeps the original
+  // shape guard so a malformed legacy header bounces here too and the
+  // CI security audit (_check_api_security.py) still sees the call.
   if (!PAT_AUTH_RE.test(auth)) {
-    return jsonResp(401, { error: 'Missing Authorization' });
+    return jsonResp(401, { error: 'Malformed Authorization (need "token ghp_…")' });
   }
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return jsonResp(500, { error: 'ANTHROPIC_API_KEY not configured on server' });

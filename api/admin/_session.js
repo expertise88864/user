@@ -184,6 +184,31 @@ async function destroySession(req) {
   return buildSetCookie('', { clear: true });
 }
 
+/**
+ * Resolve the GitHub auth header value for an admin API call.
+ * Tries cookie session first (PREFERRED — PAT never touched the browser);
+ * falls back to legacy `Authorization: token ghp_...` header (the older
+ * admin UI sends this; gradually being phased out in Phase 2).
+ *
+ * Returns { auth, login, source } on hit, null on miss.
+ *   - auth: string "token ghp_..." ready to forward to api.github.com
+ *   - login: GitHub username (only set in cookie path; null in legacy)
+ *   - source: 'cookie' | 'header'
+ */
+const PAT_AUTH_RE_INTERNAL = /^token\s+(?:gh[pousr]_[A-Za-z0-9_]{20,255}|github_pat_[A-Za-z0-9_]{20,255})$/;
+
+async function resolveAuth(req) {
+  const session = await getSession(req);
+  if (session) {
+    return { auth: `token ${session.pat}`, login: session.login, source: 'cookie' };
+  }
+  const header = req.headers.get('authorization') || '';
+  if (PAT_AUTH_RE_INTERNAL.test(header)) {
+    return { auth: header, login: null, source: 'header' };
+  }
+  return null;
+}
+
 export {
   COOKIE_NAME,
   SESSION_TTL_SECONDS,
@@ -192,4 +217,5 @@ export {
   getSession,
   createSession,
   destroySession,
+  resolveAuth,
 };

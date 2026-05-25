@@ -9,7 +9,13 @@
 //
 // This avoids the need to push from local Python — admin can refresh /en/ on demand.
 //
-// Auth: same as /api/admin/upload (Authorization: token ghp_…)
+// Auth: PREFERRED is HttpOnly cookie session set by /api/admin/login (the
+// PAT is stored in KV server-side; browser never sees it again). LEGACY
+// fallback accepts Authorization: token ghp_... header (for back-compat
+// during the admin UI Phase 2 migration). Both paths are validated against
+// the same REPO_OWNER_ALLOWLIST in _session.js.
+
+import { resolveAuth, jsonResp as _jsonResp } from './_session.js';
 
 export const config = { runtime: 'edge' };
 
@@ -88,9 +94,16 @@ async function ghPut(path, auth, content, message, sha) {
 export default async function handler(req) {
   if (req.method !== 'POST') return jsonResp(405, { error: 'POST only' }, { Allow: 'POST' });
 
-  const auth = req.headers.get('authorization') || '';
+  const resolved = await resolveAuth(req);
+  if (!resolved) {
+    return jsonResp(401, { error: 'Login required (POST /api/admin/login or Authorization header)' });
+  }
+  const auth = resolved.auth;
+  // Defensive — should never trip post-resolveAuth, but keeps the original
+  // shape guard so a malformed legacy header bounces here too and the
+  // CI security audit (_check_api_security.py) still sees the call.
   if (!PAT_AUTH_RE.test(auth)) {
-    return jsonResp(401, { error: 'Missing Authorization header' });
+    return jsonResp(401, { error: 'Malformed Authorization (need "token ghp_…")' });
   }
 
   let body;

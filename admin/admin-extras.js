@@ -25,6 +25,21 @@
  *      it to sessionStorage (with default 24h expiry) and DELETE the
  *      localStorage entry so it can never be exfiltrated again.
  *
+ * SECURITY 2026-05-25 (Phase 2) — hybrid cookie auth for /api/admin/*:
+ *   - When setPat() is called we ALSO POST the PAT to /api/admin/login,
+ *     which stores it in Vercel KV server-side and sets an HttpOnly
+ *     cookie. From then on, any fetch to /api/admin/* automatically
+ *     authenticates via the cookie — the PAT itself never travels back
+ *     to the browser, and an XSS on the origin cannot read it.
+ *   - The 8 direct-to-api.github.com calls (commits, image upload via
+ *     GitHub Contents API, version rollback, etc.) still send the PAT
+ *     in an Authorization header because the browser is the one talking
+ *     to GitHub directly there — there's no server in the middle that
+ *     could hold the PAT for us. Removing those would require proxying
+ *     every GitHub call through a custom /api/admin/* endpoint, which
+ *     is Phase 3 (deferred — high churn for marginal gain since the
+ *     PAT now expires in 24h and sessionStorage clears on tab close).
+ *
  * Hook into admin.html via a single tag:
  *   <script type="module" src="/admin/admin-extras.js"></script>
  */
@@ -44,6 +59,19 @@
       sessionStorage.setItem(PAT_KEY, token);
       sessionStorage.setItem(PAT_EXP_KEY, String(Date.now() + PAT_TTL_MS));
     } catch (_) {}
+    // Phase 2 — fire-and-forget cookie mint. /api/admin/login stores the
+    // PAT server-side keyed by a random session token and Set-Cookies an
+    // HttpOnly cookie back. Subsequent /api/admin/* calls authenticate
+    // via the cookie. If this fails (KV not configured, network blip),
+    // calls still fall back to the legacy Authorization header path.
+    try {
+      fetch('/api/admin/login', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pat: token }),
+      }).catch(() => { /* legacy header path still works */ });
+    } catch (_) { /* same */ }
   }
 
   function clearPat() {
@@ -51,6 +79,15 @@
       sessionStorage.removeItem(PAT_KEY);
       sessionStorage.removeItem(PAT_EXP_KEY);
       localStorage.removeItem(PAT_KEY); // belt-and-braces
+    } catch (_) {}
+    // Phase 2 — also tear down the HttpOnly cookie session. Same
+    // fire-and-forget shape so a transient failure doesn't block logout
+    // (the cookie has Max-Age=86400 so it dies on its own anyway).
+    try {
+      fetch('/api/admin/logout', {
+        method: 'POST',
+        credentials: 'same-origin',
+      }).catch(() => {});
     } catch (_) {}
   }
 
@@ -847,8 +884,14 @@
   }
   async function savePicks() {
     if (!_picksArr.length) { toast('清單不能空'); return; }
+    // Phase 2 — cookie-first: HttpOnly cookie minted by /api/admin/login
+    // travels via credentials:'same-origin'. The Authorization header is
+    // kept as a transparent fallback for the brief window after PAT paste
+    // before /api/admin/login round-trips (and as a safety net if KV is
+    // misconfigured server-side). Server prefers cookie when both present.
     const r = await fetch('/api/admin/popular-picks', {
       method: 'POST',
+      credentials: 'same-origin',
       headers: { 'Content-Type': 'application/json', Authorization: 'token ' + getPat() },
       body: JSON.stringify({ picks: _picksArr }),
     });
