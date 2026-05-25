@@ -627,6 +627,23 @@ TRANSLATIONS: dict[str, str] = {
     "\n嘴角紅疹是痘痘還是濕疹？<br/>":
         "\n<span data-zh=\"嘴角紅疹是痘痘還是濕疹？\" data-en=\"Is that rash around the mouth acne or eczema?\">嘴角紅疹是痘痘還是濕疹？</span><br/>",
 
+    # === Final 15-char mop-up ===
+    # AD-topical: tail of "reduce steroid use" sentence
+    "焦慮成為可能。":
+        " possible.",
+    # topics: footer link text "關於本站 →"
+    "關於本站 →":
+        "About this site →",
+    # toenail byline: full form ending in "等實證" (after BMJ Open, Nix)
+    "Open, Nix 2010 meta-analysis 等實證":
+        "Open, Nix 2010 meta-analysis evidence",
+    # AD-systemic: " 35-65 萬" → " 350,000–650,000" (Chinese 萬 = 10,000)
+    " 35-65 萬。":
+        " 350,000–650,000.",
+    # index.html: SVG "A 酸" icon label
+    ">A 酸</text>":
+        ">Retinoid</text>",
+
     # === psoriasis-systemic TLDR ===
     " — 過去傳統治療目標只是 PASI 50-75。網絡統合分析（network meta-analysis）顯示 16 週 PASI 90 排名（從高到低）：":
         " — historically, conventional treatment targets were only PASI 50–75. Network meta-analysis ranks 16-week PASI 90 (high to low):",
