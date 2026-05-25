@@ -201,31 +201,46 @@ class DataEnRenderer(HTMLParser):
 
 
 def _translate_svg_text(svg_block: str) -> str:
-    """Translate <text> elements inside an SVG that carry data-en.
+    """Translate <text> and <title> elements inside an SVG that carry data-en.
 
     The main `apply_data_en` STASHES SVG blocks to keep their bytes intact
     (HTMLParser would lowercase tags like linearGradient). But that means
-    `<text data-en="...">Chinese</text>` inside SVG never gets translated
-    when we want a static EN mirror. This helper does a targeted swap on
-    just `<text>` elements: keeps the attrs, swaps inner content with
-    data-en value. SVG-other tags untouched.
+    `<text data-en="...">Chinese</text>` and `<title data-en="...">Chinese
+    </title>` inside SVG never get translated when we want a static EN
+    mirror. This helper does a targeted swap on these tags: keeps the
+    attrs, swaps inner content with data-en value. SVG-other tags untouched.
+
+    2026-05-25 — extended to <title> as well (was only <text>).
     """
-    def repl(m: re.Match[str]) -> str:
+    def repl_text(m: re.Match[str]) -> str:
         attrs = m.group('attrs')
-        inner = m.group('inner')
         de = re.search(r'data-en="([^"]*)"', attrs)
         if not de:
             return m.group(0)
         en = de.group(1)
-        # Re-escape lone '<' for html5validator
         en = re.sub(r'<(?![a-zA-Z!/?])', '&lt;', en)
         return f'<text{attrs}>{en}</text>'
 
-    return re.sub(
+    def repl_title(m: re.Match[str]) -> str:
+        attrs = m.group('attrs')
+        de = re.search(r'data-en="([^"]*)"', attrs)
+        if not de:
+            return m.group(0)
+        en = de.group(1)
+        en = re.sub(r'<(?![a-zA-Z!/?])', '&lt;', en)
+        return f'<title{attrs}>{en}</title>'
+
+    svg_block = re.sub(
         r'<text(?P<attrs>[^>]*\bdata-en="[^"]*"[^>]*)>(?P<inner>[^<]+)</text>',
-        repl,
+        repl_text,
         svg_block,
     )
+    svg_block = re.sub(
+        r'<title(?P<attrs>[^>]*\bdata-en="[^"]*"[^>]*)>(?P<inner>[^<]+)</title>',
+        repl_title,
+        svg_block,
+    )
+    return svg_block
 
 
 def apply_data_en(src: str) -> str:

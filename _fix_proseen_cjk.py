@@ -488,6 +488,33 @@ TRANSLATIONS: dict[str, str] = {
     "。已脫落的毛囊不可逆，藥物治療目標是「穩住現有的、養出細毛」，而不是「長出全新一頭」。":
         ". Lost follicles do not regrow; the goal of pharmacotherapy is to &quot;stabilize what remains and grow vellus hair&quot;, not to &quot;regrow a whole new head of hair&quot;.",
 
+    # === atopic-dermatitis-systemic TLDR ===
+    "。在那之前、中重度 AD 只能靠 cyclosporine（短期）或苦撐外用。如今 ":
+        ". Before that, moderate-to-severe AD could only rely on cyclosporine (short-term) or struggle with topicals. Today ",
+    "讓 EASI 75 達 60-78%、且不需常驗血。台灣健保自 2021 年起有條件給付 dupilumab 用於 EASI ≥ 24 + IGA 4 + 一定條件失敗病人。新藥（lebrikizumab、nemolizumab）2024-2025 陸續核准。":
+        " achieve EASI 75 in 60–78% without routine blood monitoring. Taiwan NHI has provided conditional coverage for dupilumab since 2021 for EASI ≥ 24 + IGA 4 + prior-treatment failure. New drugs (lebrikizumab, nemolizumab) were approved in 2024–2025.",
+    "4 種生物製劑 + 3 種 JAK 抑制劑":
+        "4 biologics + 3 JAK inhibitors",
+
+    # === psoriasis-systemic TLDR ===
+    " — 過去傳統治療目標只是 PASI 50-75。網絡統合分析（network meta-analysis）顯示 16 週 PASI 90 排名（從高到低）：":
+        " — historically, conventional treatment targets were only PASI 50–75. Network meta-analysis ranks 16-week PASI 90 (high to low):",
+    "（皆 ≥ 70%）、其次 secukinumab、brodalumab、adalimumab；最低為 etanercept、tildrakizumab、apremilast。但選藥不只看療效、還要考量合併症（PsA／IBD／":
+        " (all ≥ 70%), then secukinumab, brodalumab, adalimumab; lowest: etanercept, tildrakizumab, apremilast. But drug selection considers more than efficacy — comorbidities (PsA / IBD / ",
+
+    # === topical-acids-clinical TLDR + related ===
+    "把外用 retinoid 四代差別、Azelaic acid 雙重機轉、AHA pH ":
+        "Topical retinoids by generation, azelaic acid's dual mechanism, AHA pH — ",
+    "Oral Isotretinoin 完整臨床學理整理":
+        "Oral isotretinoin — complete clinical write-up",
+
+    # === topical-steroids-guide H1 ===
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n外用類固醇完整指南':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="外用類固醇完整指南" data-en="Topical steroids — complete guide">外用類固醇完整指南</span>',
+
+    # === melasma-myths H1 + remaining hero ===
+    "肝斑 7 大迷思": "7 Melasma Myths",
+
 
     # topical-acids-patient.html — list items
     "（處方）:Differin(Adapalene)、Stieva-A(Tretinoin)、Tazarotene。":

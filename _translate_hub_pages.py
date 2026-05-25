@@ -514,6 +514,25 @@ TRANSLATIONS: dict[str, str] = {
         "Forest plot: adjusted hazard ratios for 3 independent predictors",
     "3-tier risk-stratified maintenance 建議":
         "3-tier risk-stratified maintenance recommendation",
+    # sunscreen-myths SVG <text> labels
+    "可見光 / 藍光": "Visible / blue light",
+    "皮下 · Hypodermis": "Hypodermis",
+    "真皮 · Dermis": "Dermis",
+    "表皮 · Epidermis": "Epidermis",
+    "膠原蛋白 / 彈性纖維 — UVA 在這裡造成老化":
+        "Collagen / elastic fibers — UVA causes aging here",
+    "膠原蛋白／彈性纖維 — UVA 在這裡造成老化":
+        "Collagen / elastic fibers — UVA causes aging here",
+    # melasma-myths SVG text labels
+    "UVA · 可見光 · 藍光": "UVA · Visible · Blue light",
+    "荷爾蒙": "Hormones",
+    "過度活躍 → 製造大量 melanin":
+        "Overactive → produces excess melanin",
+    # topical-steroids-guide
+    "外用類固醇完整指南": "Topical steroids — complete guide",
+    # Common Note disclaimer text
+    "類固醇藥膏屬處方藥（部分指示用藥例外），不應自行購買強效類固醇長期使用。請依醫師處方使用。":
+        "Topical steroids are prescription medications (some indications are OTC exceptions). Do not self-purchase potent topical steroids for long-term use. Follow physician prescription.",
     "化膿性汗腺炎（HS）完整衛教":
         "Hidradenitis suppurativa (HS) — complete patient guide",
     "猴痘（Mpox）皮膚照護完整指南":
@@ -528,7 +547,7 @@ TRANSLATIONS: dict[str, str] = {
 
 # Tags to which we will add data-en. We only target tag patterns where
 # the ZH content has no bilingual attribute yet.
-INTERESTING_TAGS = ("a", "h2", "h3", "span", "li", "p", "div", "summary", "option", "td", "th", "strong", "em", "figcaption")
+INTERESTING_TAGS = ("a", "h2", "h3", "span", "li", "p", "div", "summary", "option", "td", "th", "strong", "em", "figcaption", "text", "title", "h4", "blockquote")
 
 
 _ATTR_VALUE_RANGES_CACHE: list[tuple[int, int]] | None = None
