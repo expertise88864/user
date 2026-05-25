@@ -750,6 +750,22 @@ def localize_jsonld(src: str, title: str, desc: str) -> str:
 # users. Only translates aria-label values that exactly match a key here;
 # unrecognized ZH aria-labels are left as-is (better than a wrong gloss).
 ARIA_LABEL_TRANSLATIONS: dict[str, str] = {
+    "主導覽":
+        "PDT three essential elements and molecular mechanism: photosensitizer + light + oxygen → ROS → apoptosis / vascular damage / immune activation",
+    "搜尋":
+        "Schematic: ALA and MAL metabolism via the heme biosynthesis pathway to PpIX",
+    "贊助本站":
+        "Comparison of penetration depth in skin: blue light, green light, red light, and near-infrared",
+    "切換暗色模式":
+        "PDT 12 indications ranked by evidence level on a tiered ladder",
+    "開啟選單":
+        "PDT pain-management strategy ladder",
+    "疥蟲生命週期與隧道圖：雌蟲在角質層挖隧道產卵，3-4 天孵化，2-3 週成蟲，整個週期 2-3 週":
+        "Scabies mite life cycle and burrow diagram: female mite tunnels in stratum corneum and lays eggs; eggs hatch in 3-4 days; adult in 2-3 weeks; full cycle 2-3 weeks",
+    "嚴重疥瘡兩型對照圖：廣泛型 profuse scabies 是疥蟲擴散到頭背等不典型部位的紅斑脫屑；結痂型 crusted scabies 是免疫低下患者皮膚出現像乾癬般厚痂、內含數千隻疥蟲":
+        "Comparison of two severe scabies subtypes: profuse scabies (mites spread to atypical sites like head and back with erythematous scaling) versus crusted scabies (hyperkeratotic crusted plaques with thousands of mites)",
+    "嚴重疥瘡標準治療時程圖：Day 0 ivermectin 200 μg/kg + permethrin 全身塗抹、Day 7 同上、Day 14 ivermectin、Day 18-21 顯微鏡複查、Day 28 治癒判定":
+        "Severe scabies standard treatment schedule: Day 0 ivermectin 200 μg/kg + permethrin head-to-toe; Day 7 repeat; Day 14 ivermectin; daily emollient",
     "三組 EASI / SCORAD / pruritus NRS 在 T0、T1、T2 三時間點的柱狀比較圖：長期組第 52 週下降最多；短期組停藥後維持但不再進步；減量組介於兩者之間":
         "Three side-by-side bar charts (EASI / SCORAD / pruritus NRS) at three time points T0 / T1 / T2: the long-term q2w arm shows the greatest decrease by week 52; the short-term arm maintains effect after stopping but does not improve further.",
     "Kaplan-Meier 風格曲線示意：長期 q2w 組 52 週累積無復發率明顯高於短期與減量兩組，部分長期組病人 300 天以上仍無復發":

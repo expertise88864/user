@@ -440,6 +440,50 @@ TRANSLATIONS: dict[str, str] = {
     "皮膚科 25 個最常見問題":
         "25 most-asked dermatology questions",
     "AD 外用治療完整衛教、": "AD topical treatment — complete patient guide、",
+    # Batch 51 — hero kickers + H1 + chips
+    "衛教 · 處方用藥 / 健保規範": "Patient guide · Prescription / NHI rules",
+    "衛教 · 環境 / 職業": "Patient guide · Environment / Occupation",
+    "圓禿（鬼剃頭）完整衛教":
+        "Alopecia areata — complete patient guide",
+    "皮膚科常用藥物健保規範完整整理":
+        "Taiwan NHI rules for common dermatology drugs — complete reference",
+    "接觸性皮膚炎完整衛教":
+        "Contact dermatitis — complete patient guide",
+    "白斑（Vitiligo）完整衛教":
+        "Vitiligo — complete patient guide",
+    "深入閱讀 · 給醫療同仁":
+        "In-depth reading · For clinicians",
+    # Severity card labels (alopecia-areata)
+    "輕度 Mild": "Mild",
+    "中度 Moderate": "Moderate",
+    "重度 Severe": "Severe",
+    "頭髮脫落 ≤ 20% 頭皮面積":
+        "Hair loss ≤ 20% of scalp surface",
+    "頭髮脫落 20-50%": "Hair loss 20–50% of scalp",
+    "頭髮脫落 > 50%，含全頭禿、全身禿":
+        "Hair loss > 50%, including alopecia totalis and universalis",
+    "頭髮脫落 &gt; 50%，含全頭禿、全身禿":
+        "Hair loss > 50%, including alopecia totalis and universalis",
+    # NHI legend (nhi-derm-drugs)
+    "健保標誌定義": "NHI badge legend",
+    " 一般情況即可使用": " Usable in routine cases",
+    " 需符合特定診斷 / 嚴重度 / 過去治療歷程，部分需事前審查 (PASS)":
+        " Requires specific diagnosis / severity / prior-treatment history; some need prior authorization (PASS)",
+    " 健保不給付，或核准適應症外使用":
+        " Not covered by NHI, or off-label use",
+    # PBM-related related-card chip dates
+    "GLP-1 與落髮 · 2026-05-23": "GLP-1 & hair loss · 2026-05-23",
+    "落髮 · 2026-05-03": "Hair loss · 2026-05-03",
+    # topical-acids-clinical
+    "把外用 retinoid 四代差別、Azelaic acid 雙重機轉、AHA pH ":
+        "Topical retinoids by generation, azelaic acid's dual mechanism, AHA pH — ",
+    "同主題的口語衛教版，可直接傳給門診病人。":
+        "Patient-facing version of the same topic — share directly with clinic patients.",
+    "系統性 retinoid：藥理、機轉、累積劑量、副作用、爭議、AAD 2024。":
+        "Systemic retinoids: pharmacology, mechanism, cumulative dose, adverse effects, controversies, AAD 2024.",
+    # topical-acids-clinical hero kicker
+    "深入閱讀 · 給醫療同仁 ":
+        "In-depth reading · For clinicians ",
 }
 
 

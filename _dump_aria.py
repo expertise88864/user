@@ -32,6 +32,18 @@ def dump(rel: str, en_translations: list[str], out_lines: list[str]) -> None:
 
 if __name__ == "__main__":
     out_lines: list[str] = []
+    dump("blog/photodynamic-therapy-overview.html", [
+        "PDT three essential elements and molecular mechanism: photosensitizer + light + oxygen → ROS → apoptosis / vascular damage / immune activation",
+        "Schematic: ALA and MAL metabolism via the heme biosynthesis pathway to PpIX",
+        "Comparison of penetration depth in skin: blue light, green light, red light, and near-infrared",
+        "PDT 12 indications ranked by evidence level on a tiered ladder",
+        "PDT pain-management strategy ladder",
+    ], out_lines)
+    dump("blog/severe-scabies-treatment.html", [
+        "Scabies mite life cycle and burrow diagram: female mite tunnels in stratum corneum and lays eggs; eggs hatch in 3-4 days; adult in 2-3 weeks; full cycle 2-3 weeks",
+        "Comparison of two severe scabies subtypes: profuse scabies (mites spread to atypical sites like head and back with erythematous scaling) versus crusted scabies (hyperkeratotic crusted plaques with thousands of mites)",
+        "Severe scabies standard treatment schedule: Day 0 ivermectin 200 μg/kg + permethrin head-to-toe; Day 7 repeat; Day 14 ivermectin; daily emollient",
+    ], out_lines)
     dump("blog/dupilumab-long-term-maintenance.html", [
         "Three side-by-side bar charts (EASI / SCORAD / pruritus NRS) at three time points T0 / T1 / T2: the long-term q2w arm shows the greatest decrease by week 52; the short-term arm maintains effect after stopping but does not improve further.",
         "Kaplan-Meier-style curve: cumulative relapse-free rate at 52 weeks is markedly higher in the long-term q2w arm than in the short-term or tapering arms; some long-term patients remain relapse-free beyond 300 days.",

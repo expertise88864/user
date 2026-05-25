@@ -315,6 +315,72 @@ TRANSLATIONS: dict[str, str] = {
     '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n標靶藥物（TKI）皮膚副作用完整衛教':
         '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="標靶藥物（TKI）皮膚副作用完整衛教" data-en="Targeted-therapy (TKI) cutaneous side effects — complete patient guide">標靶藥物（TKI）皮膚副作用完整衛教</span>',
 
+    # === PDT SVG <title> elements + table headers ===
+    "圖 1：PDT 分子機轉":
+        "Figure 1: PDT molecular mechanism",
+    "圖 2：ALA / MAL → PpIX 代謝":
+        "Figure 2: ALA / MAL → PpIX metabolism",
+    "圖 3：光源穿透深度":
+        "Figure 3: Penetration depth by light source",
+    "圖 4：12 適應症證據階梯":
+        "Figure 4: 12 indications by evidence ladder",
+    "圖 5：疼痛管理階梯":
+        "Figure 5: Pain-management ladder",
+    "<th>項目": "<th>Item",
+
+    # === psoriasis-myths TLDR ===
+    "乾癬（psoriasis）是一種":
+        "Psoriasis is a chronic inflammatory skin disease caused by ",
+    "造成的慢性發炎性皮膚疾病，全球盛行率約 2-3%，台灣約有 10-20 萬人。但很多病人長期抗拒治療 — 因為誤以為是「癬」、「皮膚不乾淨」、「會傳染」、「擦藥就好」，結果延誤治療。本文整理 7 個民眾最常見的誤解。":
+        "; global prevalence is about 2–3%, and Taiwan has roughly 100,000–200,000 affected patients. But many resist treatment long-term, mistakenly believing it is a fungal infection (\"癬\" / tinea), a hygiene problem, contagious, or solvable with topicals alone — delaying care. This article covers the 7 most common misconceptions.",
+    "乾癬不只是皮膚病，可能合併":
+        "Psoriasis is not just a skin disease; it may be associated with ",
+    "。請至皮膚科或風濕免疫科完整評估。":
+        ". Comprehensive evaluation by dermatology or rheumatology / immunology is recommended.",
+    # psoriasis-myths H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n乾癬 7 大迷思':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="乾癬 7 大迷思" data-en="7 Psoriasis Myths">乾癬 7 大迷思</span>',
+
+    # === alopecia-areata + nhi-derm-drugs TLDR ===
+    "本文為衛教整理，實際藥物選擇、劑量、健保給付條件需由專科醫師依個別狀況評估。":
+        "This article is a patient-education summary. Actual drug selection, dosing, and Taiwan NHI coverage criteria must be evaluated by a specialist based on your individual situation.",
+    "（出現任一項提高一級）：影響心理社交功能、眉毛/睫毛掉落、≥6 個月治療無反應、快速進展且拉髮試陽性。":
+        " (any one promotes the severity by one tier): psychosocial impact, eyebrow / eyelash loss, ≥ 6 months treatment non-response, rapid progression with positive hair-pull test.",
+    "健保條件每年由健保署修訂，本文整理至 2026 年 5 月為止。實際給付以":
+        "Taiwan NHI coverage rules are revised annually by the NHIA; this article reflects rules through May 2026. Actual coverage follows ",
+    "為準。處方需專科醫師依個別狀況評估。":
+        ". Prescription must be evaluated by a specialist based on your individual situation.",
+    # alopecia-areata H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n圓禿（鬼剃頭）完整衛教':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="圓禿（鬼剃頭）完整衛教" data-en="Alopecia areata — complete patient guide">圓禿（鬼剃頭）完整衛教</span>',
+    # nhi-derm-drugs H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n皮膚科常用藥物健保規範完整整理':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="皮膚科常用藥物健保規範完整整理" data-en="Taiwan NHI rules for common dermatology drugs — complete reference">皮膚科常用藥物健保規範完整整理</span>',
+
+    # === contact-dermatitis TLDR ===
+    "本文內容僅作為一般教育參考。若您懷疑自己有接觸性皮膚炎、特別是反覆發作或職業相關紅疹、請至皮膚科門診評估；Patch Test 須由訓練有素的皮膚科醫師判讀。":
+        "This article is for general education only. If you suspect contact dermatitis — especially recurrent or occupation-related rashes — please see a dermatologist; patch testing must be interpreted by a trained dermatologist.",
+    " — 美髮業、醫療、餐飲、清潔、機械業最常見。":
+        " — hairdressing, healthcare, food service, cleaning, and mechanical industries are the most affected.",
+    "。一旦對某過敏原致敏、終生都會反應、必須長期避開。":
+        ". Once sensitized to an allergen, the reaction is lifelong and the allergen must be avoided permanently.",
+    # contact-dermatitis H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">接觸性皮膚炎完整衛教':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]"><span data-zh="接觸性皮膚炎完整衛教" data-en="Contact dermatitis — complete patient guide">接觸性皮膚炎完整衛教</span>',
+
+    # === vitiligo TLDR ===
+    "本文為衛教整理。實際治療方案、劑量、療程請與您的皮膚科醫師討論。":
+        "This article is a patient-education summary. Actual treatment, dose, and course must be discussed with your dermatologist.",
+    "白斑為慢性疾病，治療需數月至數年才有色素再生。建議至皮膚科專科醫師評估個人化治療計畫。":
+        "Vitiligo is a chronic disease; repigmentation typically takes months to years. Evaluation by a dermatologist is recommended to design a personalized treatment plan.",
+    " — 表皮黑色素細胞功能喪失，造成邊界清晰的色素脫失斑塊。":
+        " — loss of epidermal melanocyte function results in sharply demarcated depigmented patches.",
+    "（約 20-30% 病人有家族史）。常合併甲狀腺異常等其他自體免疫疾病，需主動篩檢。":
+        " (about 20–30% of patients have a family history). Often co-occurs with thyroid disease and other autoimmune conditions; active screening is recommended.",
+    # vitiligo H1
+    '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n白斑（Vitiligo）完整衛教':
+        '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]">\n<span data-zh="白斑（Vitiligo）完整衛教" data-en="Vitiligo — complete patient guide">白斑（Vitiligo）完整衛教</span>',
+
     # topical-acids-patient.html — list items
     "（處方）:Differin(Adapalene)、Stieva-A(Tretinoin)、Tazarotene。":
         " (prescription): Differin (adapalene), Stieva-A (tretinoin), Tazarotene.",
