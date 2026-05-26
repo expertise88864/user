@@ -912,9 +912,25 @@ def transform(src: str, zh_canonical_path: str, en_canonical_path: str, source_r
     #     in English locale → low-quality penalty risk)
     # When a specific slug needs to stay noindex (e.g. an in-progress
     # translation), add it to EN_NOINDEX_BLOCKLIST below.
+    #
+    # 2026-05-26 — added EN_INDEX_ALLOWLIST for explicitly bilingual reference
+    # pages (Mandarin↔English glossary, calculator tools listing the Chinese
+    # generic name alongside English term, EN homepage hub). These trip the
+    # 500-CJK threshold by design but the title/description/structured data
+    # are still pure English — Google's Search Console kept flagging them as
+    # "Excluded by noindex tag", which was technically correct but blocked
+    # the entire /en/ subtree from earning crawl signal via the EN home hub.
+    # The generic-meta guard still applies (a page with fallback title/desc
+    # stays noindex even if allowlisted — that's a stronger quality signal).
     EN_NOINDEX_BLOCKLIST: set[str] = set()
+    EN_INDEX_ALLOWLIST: set[str] = {
+        'index.html',     # EN homepage hub
+        'tools.html',     # Clinical calculator landing (PASI/DLQI/SCORAD…)
+        'glossary.html',  # Mandarin↔English dermatology glossary
+    }
     blocked = (source_rel or '') in EN_NOINDEX_BLOCKLIST
-    if blocked or uses_generic_meta or visible_cjk_count(s) > 500:
+    allow_high_cjk = (source_rel or '') in EN_INDEX_ALLOWLIST
+    if blocked or uses_generic_meta or (not allow_high_cjk and visible_cjk_count(s) > 500):
         s = set_noindex(s)
 
     s = re.sub(r'<html\s+lang="[^"]*"', '<html lang="en"', s, count=1)
