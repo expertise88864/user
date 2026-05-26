@@ -31,14 +31,14 @@
     "country": "Taiwan"
   },
   "content": {
-    "article_count": 48,
+    "article_count": 49,
     "category_breakdown": {
       "myth": 11,
       "rx": 29,
-      "research": 6,
+      "research": 7,
       "product": 2
     },
-    "latest_article_date": "2026-05-23",
+    "latest_article_date": "2026-05-26",
     "tracks": [
       {
         "id": "rx",
@@ -80,5 +80,5 @@
     "license": "All rights reserved; citation with attribution permitted.",
     "ymyl_disclaimer": "Content is patient education, NOT medical advice. Taiwan NHI treatment criteria are stated as such and do not generalize to other healthcare systems."
   },
-  "generated_at": "2026-05-25"
+  "generated_at": "2026-05-26"
 }

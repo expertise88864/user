@@ -35,6 +35,7 @@ RESEARCH_SLUGS = {
     'dupilumab-long-term-maintenance',
     'psoriasis-biologic-monitoring',
     'ai-dermatology-roles',
+    'spironolactone-dermatology-safety',
 }
 
 def _slug_from_path(path: Path) -> str:

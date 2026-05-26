@@ -89,6 +89,10 @@ EN_OG_OVERRIDES = {
         'title': 'AI in Dermatology Today: Dermoscopy Heat Maps, Explainability, and Education',
         'desc': 'Resident-level research review integrating 2026 JAAD Reviews and the JAAD eye-tracking study comparing dermatologist gaze maps with DEXI dermoscopy AI heat maps. Covers diagnostic support, explainable AI, generative AI for education, and why AI cannot yet replace clinical judgment.',
     },
+    'blog/spironolactone-dermatology-safety.html': {
+        'title': 'Spironolactone Safety in Dermatology: JAAD 2026 — Hyperkalemia in Women ≥45 and LDOM Combination',
+        'desc': 'Two June-2026 JAAD studies from Mass General Brigham synthesized: Gregoire et al. (n=398) — in women ≥45 on spironolactone for dermatologic indications, overall hyperkalemia 10.1%, rising to 28.1% in ≥65 with ≥1 comorbidity, but 97.5% mild and 62.5% required no management change; mean onset 20 months, not the 1-4 week label window. Dewey et al. (n=432) — spironolactone + low-dose oral minoxidil combination: 37.7% adverse-event rate, hypertrichosis 12.3%, orthostasis 12.0%; simultaneous initiation reduced hypertrichosis by 64.8% vs sequential, concurrent BP-lowering drug raised orthostatic risk 3.29-fold. Includes stratified monitoring suggestions and Taiwan off-label out-of-pocket context.',
+    },
     # SEO_AUDIT B1 — 4 articles whose auto-derived titles ran >70 chars.
     # Each rewritten ≤65 chars so Google SERP doesn't ellipsize.
     'blog/skin-biopsy-excision.html': {

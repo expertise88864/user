@@ -28,6 +28,7 @@ RESEARCH_SLUGS = {
     'dupilumab-long-term-maintenance',
     'psoriasis-biologic-monitoring',
     'ai-dermatology-roles',
+    'spironolactone-dermatology-safety',
 }
 
 REQUIRED_FIELDS = {
