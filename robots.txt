@@ -1,6 +1,6 @@
 # ChenDermatologist · 陳翊嘉醫師 皮膚科衛教
 # Site: https://chendermatologist.com/
-# Last update: 2026-05-26
+# Last update: 2026-05-27
 #
 # Strategy:
 #   1. Allow search, ads, and user-requested browsing crawlers.
