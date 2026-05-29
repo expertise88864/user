@@ -28,6 +28,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.request
 from pathlib import Path
 
@@ -77,36 +78,74 @@ def submit(urls: list[str]) -> int:
         "urlList": urls,
     }
     body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-    req = urllib.request.Request(
-        ENDPOINT,
-        data=body,
-        method="POST",
-        headers={
-            "Content-Type": "application/json; charset=utf-8",
-            "Host": "api.indexnow.org",
-            "User-Agent": "DermNotes-IndexNow-Submitter/1.0",
-        },
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            status = resp.status
-            body_text = resp.read().decode("utf-8", errors="replace")
-    except urllib.error.HTTPError as exc:
-        body_text = exc.read().decode("utf-8", errors="replace") if exc.fp else ""
-        status = exc.code
-    except Exception as exc:
-        print(f"[indexnow] network error: {exc}")
-        return 1
-    # IndexNow returns:
+
+    def attempt() -> tuple[int | None, str]:
+        """Return (http_status, body_text). status is None on network failure."""
+        req = urllib.request.Request(
+            ENDPOINT,
+            data=body,
+            method="POST",
+            headers={
+                "Content-Type": "application/json; charset=utf-8",
+                "Host": "api.indexnow.org",
+                "User-Agent": "DermNotes-IndexNow-Submitter/1.0",
+            },
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return resp.status, resp.read().decode("utf-8", errors="replace")
+        except urllib.error.HTTPError as exc:
+            return exc.code, (exc.read().decode("utf-8", errors="replace") if exc.fp else "")
+        except Exception as exc:  # noqa: BLE001 — network timeout / DNS / reset
+            return None, str(exc)
+
+    # IndexNow responses:
     #   200 OK / 202 Accepted — submitted successfully
-    #   400 — bad request (malformed JSON)
-    #   403 — key file unreachable (verify host KEY.txt is live)
-    #   422 — URLs not under host or invalid
-    #   429 — rate limited
-    print(f"[indexnow] submitted {len(urls)} URLs -> HTTP {status}")
-    if status not in (200, 202):
+    #   400 — bad request (malformed JSON)        ← OUR bug → fail
+    #   403 — key file unreachable (KEY.txt down)  ← OUR bug → fail
+    #   422 — URLs not under host / invalid        ← OUR bug → fail
+    #   429 — rate limited                         ← transient → retry, then pass
+    #   5xx / network timeout                      ← THEIR outage → retry, then pass
+    #
+    # 2026-05-26 — IndexNow is a best-effort "please recrawl faster" ping to
+    # Bing/Yandex/Seznam; it does NOT affect Google. An api.indexnow.org
+    # outage (we observed sustained HTTP 502s + read timeouts) must NOT fail
+    # the CI workflow and spam failure emails. So transient upstream errors
+    # (5xx / 429 / network) are retried a few times and then treated as a
+    # non-fatal warning (exit 0). Only genuine client errors that indicate a
+    # real problem on our side (400 / 403 / 422) fail the run so we get alerted.
+    TRANSIENT_HTTP = {429, 500, 502, 503, 504}
+    CLIENT_ERRORS = {400, 403, 422}
+    max_attempts = 3
+    status: int | None = None
+    body_text = ""
+    for i in range(max_attempts):
+        status, body_text = attempt()
+        if status in (200, 202):
+            print(f"[indexnow] submitted {len(urls)} URLs -> HTTP {status}")
+            return 0
+        transient = status is None or status in TRANSIENT_HTTP
+        label = "network error" if status is None else f"HTTP {status}"
+        if transient and i < max_attempts - 1:
+            wait = 5 * (i + 1)
+            print(f"[indexnow] {label} (attempt {i + 1}/{max_attempts}) — retrying in {wait}s")
+            time.sleep(wait)
+            continue
+        break
+
+    if status in CLIENT_ERRORS:
+        # Real misconfiguration on our side (bad payload, KEY.txt unreachable,
+        # URLs not under host). Fail so the CI email is actionable.
+        print(f"[indexnow] submit FAILED -> HTTP {status} (client error — needs a fix)")
         print(f"[indexnow]   response body: {body_text[:300]}")
         return 1
+
+    # Transient upstream outage (5xx / 429 / network) — non-fatal.
+    where = "network unreachable" if status is None else f"HTTP {status}"
+    print(f"[indexnow] upstream issue after {max_attempts} attempts -> {where}")
+    print("[indexnow] treating as NON-FATAL (IndexNow is best-effort; does not affect Google).")
+    if body_text:
+        print(f"[indexnow]   detail: {body_text[:200]}")
     return 0
 
 
