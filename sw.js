@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v149';
-const RUNTIME = 'cd-runtime-v147';
+const CACHE = 'cd-v150';
+const RUNTIME = 'cd-runtime-v148';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
 // Popular articles getting evicted after ~5 navigations caused repeat-
@@ -34,14 +34,21 @@ const PRECACHE = [
 ];
 
 self.addEventListener('install', (e) => {
-  // CODE_REVIEW — dropped self.skipWaiting() from install. Reason:
-  // blog-shared.js bindSWUpdateToast() already shows a "new version
-  // available" toast and posts {type:'SKIP_WAITING'} when the user
-  // clicks it (handler at line 186 of this file). When install also
-  // skipped waiting, the new SW activated immediately AND the toast
-  // would post SKIP_WAITING redundantly, sometimes causing a double
-  // reload via controllerchange. Letting the toast own activation
-  // gives the user warning that something is changing.
+  // 2026-05-26 — RE-ADDED self.skipWaiting(). The previous "let the toast
+  // own activation" model left users STUCK: a returning visitor whose old
+  // SW kept cache-first-serving a previous-generation HTML (with the old
+  // unstyled / text-based nav) only updated if they happened to click the
+  // "網站已更新" toast OR closed every tab. Across several deploys this
+  // meant the homepage nav rendered broken for days. There is NO
+  // controllerchange→reload handler in blog-shared.js (the toast reloads
+  // only on explicit click, line ~733), so skipWaiting cannot cause a
+  // reload loop — it just makes a freshly-installed SW activate + claim
+  // immediately, purge old caches (see activate handler), and serve fresh
+  // content on the user's very next navigation. The toast remains as a
+  // same-tab backup. Trade-off accepted: instantly-correct content beats
+  // a theoretical double-reload that the current code can't actually
+  // trigger.
+  self.skipWaiting();
   // CODE_REVIEW 2026-05-25 — `Promise.allSettled` swallows install
   // failures; if /offline.html ever fails to cache the offline-fallback
   // chain in the fetch handler resolves to undefined and the browser
