@@ -155,6 +155,17 @@ REGEN_STEPS: list[list[str]] = [
     # chain explicit for Google's E-E-A-T scoring + LLM crawler trust.
     # Must run AFTER _normalize_citations.py so #dn-citations exists.
     [PY, "_normalize_is_based_on.py"],
+    # 2026-05-26 — Inline the critical sticky-nav CSS (.dn-nav family) into
+    # every page's <head> as <style id="dn-nav-critical">. The nav is the
+    # most above-the-fold element on every page but its CSS otherwise lives
+    # only in the separately-versioned assets/dn-below-fold.css; twice the
+    # homepage nav rendered as an unstyled run-together blob because a
+    # cached copy of that CSS predated its dn-nav rules (content edited
+    # without a ?v= bump → cache-first SW never re-fetched). Inlining makes
+    # the nav markup + its critical styling atomic (same document, same
+    # cache entry) so they can never desync. Runs LAST in REGEN, after
+    # _normalize_critical_css.py, so the block is never disturbed.
+    [PY, "_inject_nav_critical.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
