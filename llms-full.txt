@@ -1,6 +1,6 @@
 # ChenDermatologist · 陳翊嘉醫師 · 皮膚科衛教筆記
 
-Generated 2026-05-29 · 49 articles · by Dr. Chen Yi-Jia (R2 Dermatology, China Medical University Hospital, Taiwan)
+Generated 2026-05-29 · 50 articles · by Dr. Chen Yi-Jia (R2 Dermatology, China Medical University Hospital, Taiwan)
 
 Bilingual zh-Hant / en. ZH source is authoritative; EN mirror is machine-translated and provided for accessibility only.
 
@@ -10,7 +10,7 @@ For citation rules and structural metadata, see https://chendermatologist.com/ll
 ---
 ## Spironolactone 在皮膚科安全嗎？2026 JAAD 兩篇研究：≥45 歲女性高血鉀風險與合併 minoxidil 開立指南
 URL: https://chendermatologist.com/blog/spironolactone-dermatology-safety
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Research Summary
 Reading time: PT30M
 Tags: Spironolactone 安全性, Spironolactone safety
@@ -172,9 +172,157 @@ LDOM 劑量
 [... truncated; fetch canonical URL for full text ...]
 
 ---
+## 第一種 JAK 抑制劑治圓禿失敗，換第二種有用嗎？2026 JAAD 108 人換藥真實數據
+URL: https://chendermatologist.com/blog/jaki-switching-alopecia-areata
+Updated: 2026-05-26
+Section: Research Summary
+Reading time: PT18M
+Tags: 圓禿 JAK 換藥, JAKi switching
+
+30 秒重點
+
+Key Points
+
+研究：JAAD 2026/6，美國 6 個掉髮專科中心多中心回溯研究（Martin et al.），108 名重度圓禿患者在第一種口服 JAK 抑制劑用滿至少 6 個月後換第二種。基線平均 SALT 78（85% 掉髮 ≥ 50%、48% 全頭掉光）。
+
+換第二種的整體成績：48.8% 達 SALT≤20（頭皮掉髮降到 20% 以下、臨床上算有意義的回復）、32.6% 達 SALT≤10。換句話說，第一種沒效不代表 JAK 抑制劑這條路走不通。
+
+換第三種也值得：21 名換到第三種 JAK 抑制劑的患者，75% 有任何改善、52.4% 達 SALT≤20、38.1% 達 SALT≤10。最常見路徑是 tofacitinib → baricitinib → ritlecitinib。
+
+最強預測因子：對第一種 JAK 抑制劑「有反應」（達 SALT≤20）的人，換第二種成功的勝算高出 3.3 倍（多變量 adjusted OR 3.33；95% CI 1.22-9.68；P=.022）。這暗示「反應與否」反映的是個人疾病生物學，會跨不同 JAK 抑制劑延續。
+
+換藥路徑差異：tofacitinib → ritlecitinib（n=9）達 SALT≤20 比例 87.5%、tofacitinib → baricitinib（n=59）51.0%、baricitinib → ritlecitinib（n=20）42.9%；換成 upadacitinib（n=3）則無人改善。各組人數懸殊，僅供參考。
+
+安全性：換藥過程的副作用與單獨用 JAK 抑制劑時一致、沒有新增非預期事件。最常見高膽固醇 7.4%、痘痘 6.5%、LDL 上升 4.6%、上呼吸道感染 4.6%、頭痛 3.7%、頭皮毛囊炎 3.7%。沒有人因副作用需要降階停藥。
+
+台灣現況（沿用本站圓禿主文已整理）：baricitinib（Olumiant 愛滅炎）核准 ≥18 歲成人重度圓禿、ritlecitinib（Litfulo 麗扶柔）核准 ≥12 歲重度圓禿；tofacitinib（Xeljanz 捷抑炎）、upadacitinib（Rinvoq 銳虎）在圓禿屬 off-label。健保 / 自費條件以健保署最新公告為準。
+
+先讀基礎篇
+這篇是進階主題，假設你已經知道「圓禿是什麼、SALT 怎麼算、JAK 抑制劑怎麼作用、台灣有哪些藥」。如果還不熟，建議先看本站的圓禿完整衛教主文：
+
+→ 圓禿（鬼剃頭）完整衛教：診斷、SALT 嚴重度、JAK 抑制劑與治療階梯
+
+為什麼「換藥」這個問題重要
+
+JAK 抑制劑是近年重度圓禿治療最大的突破。但臨床現場有個 RCT（隨機對照試驗）沒回答的問題：第一種 JAK 抑制劑效果不夠好、或一開始有效後來失效、或因副作用 / 保險 / 換藥需求而必須停用時——換另一種同類藥（同樣是 JAK 抑制劑）還會有用嗎？還是應該直接放棄這條路？
+
+過去只有零星的小型研究與個案報告（例如 tofacitinib 換 baricitinib 的小型 cohort），樣本數小、單中心、也沒有評估「誰換藥比較會成功」。Martin 等人 2026 年這篇研究的價值在於：它是目前同主題「最大」的真實世界系列（108 人）、橫跨 6 個專科中心、納入了較少被研究的第三線換藥與較冷門的藥物（ritlecitinib、ruxolitinib、upadacitinib），並且用統計模型找出了「換藥成功的預測因子」。
+
+研究設計
+
+項目
+內容
+
+設計
+多中心、回溯性 chart review（無對照組、無隨機化）
+
+地點 / 時間
+美國 6 個掉髮專科中心，2024/10–2025/1 收資料
+
+納入條件
+確診重度圓禿、第一種口服 JAK 抑制劑用滿至少 6 個月後換第二種（第二、三種同樣要求至少 6 個月才評估療效）；排除用藥不滿 6 個月、或同時併用其他全身免疫抑制劑 / 生物製劑者
+
+人數 / 年齡
+108 人；平均年齡 38.5 歲（SD 16.5）；66.7% 女性；66.7% 白人、各 7.4% 黑人 / 亞裔
+
+疾病嚴重度
+基線平均 SALT 78.0（範圍 25-100）；85% SALT ≥ 50、48% SALT = 100（全頭掉光）；亞型：universalis（全身型）45.4%、patchy 16.7%、totalis 16.7%、ophiasis 12.0%
+
+病程
+平均罹病 12.1 年；當次發作平均已 65.8 個月（約 5.5 年）；家族史 15.7%、合併異位性疾病 15.7%、其他自體免疫病 17.6%
+
+併用治療
+54.6% 同時用口服 minoxidil（落健，平均 2.97 mg/day）、28.7% 病灶內類固醇注射
+
+療效指標
+SALT（Severity of Alopecia Tool，頭皮掉髮 % 評分，0 = 不掉、100 = 全禿）；臨床有意義反應定義為 SALT ≤ 20（掉髮 ≤ 20%），SALT ≤ 10 為更佳
+
+這個族群有兩個特徵要記得：一是「很難治」——平均罹病超過 10 年、近半數全頭掉光、來自醫學中心轉診，本來就是治療反應較差的一群。二是換藥之間的「空窗」很短：第一種停藥到第二種開始平均只隔 2.7 個月，第二種平均用了 17.9 個月。
+
+第一種 JAK 抑制劑的反應
+
+最常用的第一種 JAK 抑制劑是 tofacitinib（71.3%，平均 12.0 mg/day），其次 baricitinib（25.0%，平均 3.9 mg/day），deuruxolitinib / ritlecitinib / ruxolitinib 各 ≤ 2 人。整體而言，66.7% 對第一種有任何改善、35.8% 達 SALT≤20、27.4% 達 SALT≤10。
+
+兩種主要藥物表現差很多：tofacitinib 組 75.8% 改善、47.8% 達 SALT≤20；baricitinib 組只有 41.7% 改善、8.3% 達 SALT≤20、0% 達 SALT≤10。但這個差異不能解讀成「baricitinib 比較差」——baricitinib 組剛好當次發作時間長很多（平均 53.8 個月），而病程越長越難達到 SALT≤20，存在選擇偏差。
+
+換第二種 JAK 抑制劑的結果
+
+整體換第二種：48.8% 達 SALT≤20、32.6% 達 SALT≤10。對一群「第一種失敗、病程超長、近半全禿」的難治族群來說，這個數字相當鼓舞——將近一半的人換第二種後，頭皮掉髮能壓到 20% 以下。
+
+圖一、第一 / 二 / 三線 JAK 抑制劑達標率。換第二種後達 SALT≤20 的比例（48.8%）反而比第一種（35.8%）高，換第三種（52.4%）又略升——但要注意，能撐到第二、三線的人本身是「願意持續嘗試、且過去有部分反應」的篩選後族群，數字會被這個選擇偏差墊高。
+
+換第三種 JAK 抑制劑（少數但值得）
+
+21 名患者用到第三種 JAK 抑制劑，平均療程 12 個月。整體 75% 有任何改善、52.4% 達 SALT≤20、38.1% 達 SALT≤10。最常見路徑是 tofacitinib → baricitinib → ritlecitinib（n=9），其中 55.6% 達 SALT≤20、33.3% 達 SALT≤10。另外 3 名從 ritlecitinib 換回 tofacitinib 當第三種的患者，全部達 SALT≤10。
+
+當然也有失敗的：3 名患者就算換到第三種，SALT 仍維持 ≥ 50（一半以上頭皮掉光），始終沒有足夠回復。換藥不是萬靈丹，但對「願意繼續嘗試」的患者，第三線仍有過半機會。
+
+最重要的發現：什麼樣的人換藥比較會成功？
+
+這篇研究真正有臨床價值的地方，是它找出了「換藥成功的預測因子」。研究者把可能影響療效的因素都放進多變量 logistic regression 分析，結果如下：
+
+圖二、換第二種達標的預測因子。唯一達統計顯著的是「對第一種 JAK 抑制劑有反應」（adjusted OR 3.33）。第一種用滿 ≥ 18 個月、無家族史者「傾向」反應較好，但未達統計顯著。年齡、性別、種族、圓禿亞型、病程、共病、是否併用口服 minoxidil / 病灶內類固醇、以及第二種藥是哪一種，都與反應無顯著相關。
+
+臨床啟示
+「對第一種有反應 → 換第二種也容易有反應」這個發現的意涵：反應與否反映的可能是「這個人的圓禿生物學對 JAK-STAT 路徑阻斷敏不敏感」，而這個特性會跨不同 JAK 抑制劑延續。實務上的對話可以變成：如果你對第一種 JAK 抑制劑曾經有部分回復（即使後來失效或因故停藥），換第二種值得期待；如果你對第一種完全沒反應，換第二種仍可能有效（研究中初始無反應者換藥仍有部分成功），但機會相對低、要事先溝通期望值。
+
+各種換藥路徑的成績
+
+研究列出了不同「從哪種換到哪種」的達標率。先強調：各組人數差很多（從 3 人到 59 人），小組的百分比波動大，以下只能當趨勢參考、不能當成「哪種一定比較好」的結論。
+
+圖三、主要換藥路徑達 SALT≤20 比例。人數最多的 tofacitinib → baricitinib（n=59）達 51.0%，最可信。其餘高 / 低數字（baricitinib → tofacitinib 100%、tofacitinib → ritlecitinib 87.5%、tofacitinib → upadacitinib 0%）都來自個位數的小組，波動極大、不能解讀成藥物優劣排名。
+
+另一個次要觀察：在 tofacitinib → baricitinib 這條路徑裡，原本吃較低劑量 tofacitinib（10 mg/day）的人，換 baricitinib 4 mg 後達 SALT≤20 的比例（59.5%），高於原本吃較高劑量 tofacitinib（20 mg/day）的人（12.5%）（P=.022）。作者推測高劑量 tofacitinib 還壓不住的可能本來就是更頑固的疾病。但這同樣是小組分析、屬探索性，不足以建立「換藥前該降劑量」之類的結論。
+
+換藥的安全性
+
+整段換藥過程（含第一、二、三種）觀察到的副作用，與既有單獨使用各 JAK 抑制劑的研究一致，沒有出現非預期的新事件、也沒有人因副作用需要降階或停藥。最常見的是：
+
+高膽固醇血症 7.4%、LDL（壞膽固醇）上升 4.6%、三酸甘油酯上升 2.8%——JAK 抑制劑已知的血脂變化，治療期間要定期抽血追蹤血脂。
+
+痘痘 6.5%、頭皮毛囊炎 3.7%——JAK 抑制劑相關的皮膚副作用，通常可處理、少需停藥。
+
+上呼吸道感染 4.6%、腸胃不適 4.6%、頭痛 3.7%——多為輕度。
+
+發生率 < 1% 的零星事件：唇部單純疱疹復發、白血球低下、體重增加、肝功能 / 肌酸酐輕微上升、食道念珠菌、泌尿道感染、下肢麻、流鼻血、夜汗、畏寒等。
+
+重要安全提醒：JAK 抑制劑有「類別安全警示」（class warning，源自類風濕性關節炎族群的 ORAL Surveillance 試驗）：可能增加嚴重感染、帶狀疱疹、靜脈血栓、心血管事件與惡性腫瘤風險，尤其在年長、有心血管 / 癌症風險因子者。治療前評估、治療中定期監測（血球、肝腎、血脂、感染徵象）都必須由皮膚科專科醫師執行。換藥不改變這些 class 風險。
+
+台灣可用的 JAK 抑制劑與品名
+
+台灣藥物現況（沿用本站圓禿主文整理，依食藥署 / 健保署最新公告為準）
+
+baricitinib（Olumiant 愛滅炎）：JAK1/2 抑制劑，台灣核准用於 ≥18 歲成人重度圓禿（SALT > 50%），常用 4 mg/day（≥75 歲或有感染史者 2 mg/day）。本研究中最常被當作「第二種」。
+
+ritlecitinib（Litfulo 麗扶柔）：JAK3/TEC 抑制劑，台灣核准用於 ≥12 歲重度圓禿（含青少年），50 mg/day。本研究中是常見的第二、三線換藥對象。
+
+tofacitinib（Xeljanz 捷抑炎）：JAK1/3 抑制劑，台灣核准用於類風濕性關節炎、乾癬性關節炎、潰瘍性結腸炎等，但用於圓禿屬 off-label。本研究中是最常見的「第一種」。
+
+upadacitinib（Rinvoq 銳虎）：JAK1 抑制劑，台灣核准用於異位性皮膚炎、類風濕性關節炎等，用於圓禿屬 off-label。本研究換成它的僅 3 人、無人達標，但人數太少無法評價。
+
+deuruxolitinib（Leqselvi）：美國 FDA 2024 核准用於成人重度圓禿，但台灣目前未引進。
+
+健保 / 自費條件、最新適應症與年齡限制，請以衛福部食藥署許可仿單與健保署藥品給付規定的當下公告為準；詳細的台灣給付與費用整理，見本站圓禿主文。
+
+常見問題 Q&A
+
+Q1. 我吃第一種 JAK 抑制劑半年都沒長頭髮，換第二種還有救嗎？
+
+有機會。這篇研究就是針對「第一種用滿至少 6 個月後換藥」的族群，整體換第二種有 48.8% 達到 SALT≤20。不過要誠實溝通：如果你對第一種「完全沒有任何反應」，換第二種成功率會比「曾經有部分反應」的人低（第一種有反應者勝算高 3.3 倍）。是否換、換哪一種，要由皮膚科醫師依你的整體狀況、藥物可近性與安全評估決定。
+
+Q2. 要吃多久才知道第一種沒效、該換藥？
+
+這篇研究納入的條件是「至少用滿 6 個月」才評估、換藥。圓禿的毛髮再生本來就慢，多數指引建議 JAK 抑制劑至少試 6 個月（部分到 9-12 個月）才判定療效，因為有些人是「延遲反應」、6 個月後才開始長。研究作者也提醒：他們的 6 個月門檻可能讓部分「晚反應者」被低估。所以「沒效就換」的時機要個別化，不要太早放棄、也不要無限期等下去。
+
+Q3. 換哪一種 JAK 抑制劑最好？
+
+
+[... truncated; fetch canonical URL for full text ...]
+
+---
 ## AI 現在能幫皮膚科醫師看病嗎？2026 三篇 JAAD 研究的綜合解答
 URL: https://chendermatologist.com/blog/ai-dermatology-roles
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Research Summary
 Reading time: PT21M
 Tags: AI 與皮膚科, AI in dermatology
@@ -304,7 +452,7 @@ Mahajan 等人(Brigham & Women's Hospital, Harvard)2026 年 6 月發表的橫斷
 ---
 ## 白斑停藥後會復發嗎？維持治療與復發風險評估
 URL: https://chendermatologist.com/blog/vitiligo-maintenance-clinical
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Research Summary
 Reading time: PT19M
 Tags: 白斑復發, Vitiligo relapse
@@ -462,7 +610,7 @@ BSA < 5% / 5–10% / > 10%
 ---
 ## 打瘦瘦針會掉頭髮嗎？2026 兩篇 TriNetX 大型研究的雙向解答
 URL: https://chendermatologist.com/blog/semaglutide-hair-loss
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Research Summary
 Reading time: PT20M
 Tags: GLP-1 與落髮, GLP-1 & hair loss
@@ -537,7 +685,7 @@ Hill MA 等人(Case Western Reserve + Cleveland Clinic)2026 年 6 月發表於�
 ---
 ## 光動力治療（PDT）皮膚科完整指南 — 從 AK、BCC 到痘痘的 2026 JAAD 雙篇 Review 整合
 URL: https://chendermatologist.com/blog/photodynamic-therapy-overview
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Research Summary
 Reading time: PT24M
 Tags: 光動力治療, Photodynamic therapy
@@ -803,7 +951,7 @@ Type I 反應（次要）：PS 直接與受質分子反應、產生超氧自由�
 ---
 ## 打乾癬生物製劑要不要每年抽血？2026 JAAD 證據評級重新看這件事
 URL: https://chendermatologist.com/blog/psoriasis-biologic-monitoring
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Research Summary
 Reading time: PT19M
 Tags: 生物製劑安全, Biologic safety
@@ -930,7 +1078,7 @@ HBV 狀態
 ---
 ## 杜避炎®（dupilumab）維持治療要打多久？2026 JAAD 真實世界研究：減量竟比停藥更容易復發
 URL: https://chendermatologist.com/blog/dupilumab-long-term-maintenance
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Research Summary
 Reading time: PT20M
 Tags: dupilumab, Dupilumab
@@ -1222,7 +1370,7 @@ Upa 與 Abro 劑量限制：Upadacitinib — EASI 16–20 限每日 15 mg；≥ 
 ---
 ## 嘴角紅疹是痘痘還是濕疹？口周皮膚炎完整衛教
 URL: https://chendermatologist.com/blog/perioral-dermatitis-guide
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT20M
 Tags: 口周皮膚炎, Perioral dermatitis
@@ -1415,7 +1563,7 @@ Doxycycline
 ---
 ## 腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病
 URL: https://chendermatologist.com/blog/toenail-mechanical-disorders
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT18M
 Tags: 趾甲與足部, Toenail disorders
@@ -1659,7 +1807,7 @@ Carpal Tunnel Syndrome 的手指甲變化
 ---
 ## 嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南
 URL: https://chendermatologist.com/blog/dermatologic-oral-examination
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT24M
 Tags: 口腔黏膜, Oral mucosa
@@ -1838,7 +1986,7 @@ Wang YP et al. 2018; Lin HP et al. 201915,16
 ---
 ## 皮膚切片與腫瘤切除手術完整衛教 — 為什麼要切？怎麼切？術後怎麼照顧？
 URL: https://chendermatologist.com/blog/skin-biopsy-excision
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT14M
 Tags: 處置 / 手術, Skin biopsy & excision
@@ -2215,7 +2363,7 @@ NT$ 3,000-8,000（依大小／部位）
 ---
 ## 乾癬完整衛教 — 分型、嚴重度、誘發因子
 URL: https://chendermatologist.com/blog/psoriasis-overview
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT6M
 Tags: 乾癬, Psoriasis overview
@@ -2390,7 +2538,7 @@ UpToDate: Chronic plaque psoriasis in adults: Overview of management. Accessed 2
 ---
 ## 乾癬外用藥治療 — 類固醇、維生素 D、特殊部位
 URL: https://chendermatologist.com/blog/psoriasis-topical
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 乾癬, Psoriasis topical
@@ -2595,7 +2743,7 @@ Stein Gold L, Lebwohl M, Sugarman J, et al. Calcipotriene/betamethasone dipropio
 ---
 ## 乾癬全身性治療 — 光療、口服、生物製劑
 URL: https://chendermatologist.com/blog/psoriasis-systemic
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 乾癬, Psoriasis systemic
@@ -3011,7 +3159,7 @@ Ustekinumab（Stelara®）是第一代「IL-23 路徑」抑制劑、靶向 IL-12
 ---
 ## 乾癬合併症與特殊族群 — PsA、心血管、懷孕、兒童、指甲、紅皮症
 URL: https://chendermatologist.com/blog/psoriasis-special-populations
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 乾癬, Psoriasis special populations
@@ -3245,7 +3393,7 @@ Bachelez H, Choon SE, Marrakchi S, et al. Trial of spesolimab for generalized pu
 ---
 ## 異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏
 URL: https://chendermatologist.com/blog/atopic-dermatitis-topical
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 異位性皮膚炎, AD topical
@@ -3425,7 +3573,7 @@ Papier A, Strowd LC. Atopic dermatitis: a review of topical nonsteroid therapy. 
 ---
 ## 異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療
 URL: https://chendermatologist.com/blog/atopic-dermatitis-systemic
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT10M
 Tags: 異位性皮膚炎, AD systemic
@@ -3785,7 +3933,7 @@ Drucker AM, Morra DE, Prieto-Merino D, et al. Systemic immunomodulatory treatmen
 ---
 ## 異位性皮膚炎合併症與特殊族群 — 過敏進行曲、心理、懷孕、感染
 URL: https://chendermatologist.com/blog/atopic-dermatitis-special-populations
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 異位性皮膚炎, AD special populations
@@ -3991,7 +4139,7 @@ UpToDate: Management of severe, refractory atopic dermatitis (eczema) in infants
 ---
 ## 接觸性皮膚炎(過敏 vs 刺激)完整衛教
 URL: https://chendermatologist.com/blog/contact-dermatitis
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 接觸性皮膚炎, Contact dermatitis
@@ -4251,7 +4399,7 @@ UpToDate: Common allergens in allergic contact dermatitis. Accessed 2026.
 ---
 ## 日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教
 URL: https://chendermatologist.com/blog/actinic-keratosis-scc
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT10M
 Tags: 皮膚癌, AK / SCC
@@ -4543,7 +4691,7 @@ AAD JAAD cutaneous SCC management
 ---
 ## 痘痘 8 大迷思
 URL: https://chendermatologist.com/blog/acne-myths
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 痘痘, Acne
@@ -4618,7 +4766,7 @@ Taiwan Dermatological Association. 痤瘡臨床治療共識. 2024.
 ---
 ## 蕁麻疹 6 大迷思
 URL: https://chendermatologist.com/blog/urticaria-myths
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Myths & Facts
 Reading time: PT13M
 Tags: 蕁麻疹, Urticaria
@@ -4752,7 +4900,7 @@ Comorbidities（共病）：甲狀腺、自體免疫、代謝、心理（見上�
 ---
 ## 乾癬 7 大迷思
 URL: https://chendermatologist.com/blog/psoriasis-myths
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Myths & Facts
 Reading time: PT12M
 Tags: 乾癬, Psoriasis
@@ -4927,7 +5075,7 @@ Menter A, et al. Joint AAD-NPF guidelines of care for the management of psoriasi
 ---
 ## 外用酸類完整衛教
 URL: https://chendermatologist.com/blog/topical-acids-patient
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Products & Drugs
 Reading time: PT8M
 Tags: 酸類, Topical acids
@@ -5134,7 +5282,7 @@ Bakuchiol（補骨脂酚）
 ---
 ## 口服 A 酸完整衛教
 URL: https://chendermatologist.com/blog/isotretinoin-patient
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 口服 A 酸, Isotretinoin
@@ -5330,7 +5478,7 @@ A 酸要怎麼吃？空腹還是飯後？
 ---
 ## 痘疤完整治療指引
 URL: https://chendermatologist.com/blog/acne-scar-treatment
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 痘疤, Acne scars
@@ -5485,7 +5633,7 @@ UpToDate: Treatment of acne scars. Accessed 2026. 「來源」
 ---
 ## 白斑（Vitiligo）完整衛教
 URL: https://chendermatologist.com/blog/vitiligo
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 白斑, Vitiligo
@@ -5743,7 +5891,7 @@ TDA 2024 共識聲明 16:狀態穩定的白斑病灶可使用手術方式治療�
 ---
 ## 皮膚科常用藥物健保規範完整整理
 URL: https://chendermatologist.com/blog/nhi-derm-drugs
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT13M
 Tags: 健保規範, NHI rules
@@ -6155,7 +6303,7 @@ NT$ 1,800-2,500/條(30g)
 ---
 ## 結節性癢疹完整衛教
 URL: https://chendermatologist.com/blog/prurigo-nodularis
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT6M
 Tags: 結節性癢疹, Prurigo Nodularis
@@ -6337,7 +6485,7 @@ UpToDate: Prurigo nodularis. Accessed 2026.
 ---
 ## 皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教
 URL: https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 皮膚淋巴瘤, CTCL / MF
@@ -6522,7 +6670,7 @@ UpToDate: Treatment of mycosis fungoides. Accessed 2026.
 ---
 ## 皮膚科 25 個最常見問題
 URL: https://chendermatologist.com/blog/dermatology-faq
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Myths & Facts
 Reading time: PT12M
 Tags: 常見問題, FAQ
@@ -6740,7 +6888,7 @@ Tri-Luma 三合一
 ---
 ## 粉瘤完整衛教
 URL: https://chendermatologist.com/blog/epidermoid-cyst
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 粉瘤, Epidermoid cyst
@@ -6968,7 +7116,7 @@ UpToDate: Cutaneous cysts overview — Epidermoid, pilar, and other cysts. Acces
 ---
 ## 皮膚科雷射完整對照
 URL: https://chendermatologist.com/blog/laser-dermatology
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT12M
 Tags: 雷射 / 光電, Laser dermatology
@@ -7399,7 +7547,7 @@ cyclosporine 環孢素使用者不建議併用 UV 治療（包含 308 nm 準分�
 ---
 ## 嬰幼兒 / 兒童異位性皮膚炎完整照護指南
 URL: https://chendermatologist.com/blog/pediatric-eczema
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT12M
 Tags: 異位性皮膚炎, Atopic dermatitis
@@ -7619,7 +7767,7 @@ EAT trial (Perkin et al., NEJM 2016)
 ---
 ## 病毒疣 6 大迷思
 URL: https://chendermatologist.com/blog/warts-myths
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Myths & Facts
 Reading time: PT7M
 Tags: 病毒疣, Warts
@@ -7767,7 +7915,7 @@ UpToDate: Cutaneous warts: Treatment. Accessed 2026. 「來源」
 ---
 ## 帶狀皰疹 6 大迷思
 URL: https://chendermatologist.com/blog/shingles-myths
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Myths & Facts
 Reading time: PT7M
 Tags: 皮蛇, Shingles
@@ -7929,7 +8077,7 @@ UpToDate: Treatment of herpes zoster in the immunocompetent host. Accessed 2026.
 ---
 ## 圓禿（鬼剃頭）完整衛教
 URL: https://chendermatologist.com/blog/alopecia-areata
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT15M
 Tags: 圓禿, Alopecia areata
@@ -8128,7 +8276,7 @@ Ciclosporin（環孢素）：2.5-5 mg/kg/day 分 2 次，建議短療程，最�
 ---
 ## 猴痘（Mpox）皮膚照護
 URL: https://chendermatologist.com/blog/mpox-care
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 猴痘, Mpox
@@ -8230,7 +8378,7 @@ UpToDate: Mpox (Monkeypox) virus infection: Clinical manifestations and diagnosi
 ---
 ## 化膿性汗腺炎（HS）完整衛教
 URL: https://chendermatologist.com/blog/hidradenitis-suppurativa
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 化膿性汗腺炎, HS
@@ -8473,7 +8621,7 @@ HS 跟克隆氏症有關嗎？
 ---
 ## 標靶藥物（TKI）皮膚副作用
 URL: https://chendermatologist.com/blog/targeted-therapy-skin
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 標靶藥物, Targeted therapy skin
@@ -8643,7 +8791,7 @@ UpToDate: Acneiform eruption secondary to epidermal growth factor receptor (EGFR
 ---
 ## 外用類固醇完整指南
 URL: https://chendermatologist.com/blog/topical-steroids-guide
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 外用類固醇, Topical steroids
@@ -8902,7 +9050,7 @@ Taiwan Dermatological Association. 異位性皮膚炎診療共識（2020 更新�
 ---
 ## 皮膚科生物製劑與小分子標靶藥物總覽
 URL: https://chendermatologist.com/blog/biologics-overview
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 生物製劑, Biologics
@@ -9229,7 +9377,7 @@ NT$ 4,000-6,000/條(60g)
 ---
 ## 美白成分完整解析
 URL: https://chendermatologist.com/blog/skin-whitening-agents
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Products & Drugs
 Reading time: PT8M
 Tags: 美白, Whitening agents
@@ -9527,7 +9675,7 @@ UpToDate: Melasma — Management. Accessed 2026.
 ---
 ## 防曬 8 大迷思
 URL: https://chendermatologist.com/blog/sunscreen-myths
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Myths & Facts
 Reading time: PT6M
 Tags: 防曬, Sunscreen
@@ -9593,7 +9741,7 @@ UpToDate: Selection of sunscreen and sun-protective measures. 「來源」
 ---
 ## 肝斑 7 大迷思
 URL: https://chendermatologist.com/blog/melasma-myths
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 肝斑, Melasma
@@ -9713,7 +9861,7 @@ UpToDate: Melasma: Management. Accessed 2026.
 ---
 ## 玫瑰痤瘡 6 大迷思
 URL: https://chendermatologist.com/blog/rosacea-myths
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Myths & Facts
 Reading time: PT17M
 Tags: 酒糟肌, Rosacea
@@ -9853,7 +10001,7 @@ Schaller 2020 重度玫瑰斑組合療法：外用 Ivermectin 1% qd ＋ 口服�
 ---
 ## 落髮 / 雄性禿 7 大迷思
 URL: https://chendermatologist.com/blog/hairloss-myths
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 落髮, Hair loss
@@ -9977,7 +10125,7 @@ Taiwan Dermatological Association. 圓禿診斷及治療共識. 2024.
 ---
 ## 香港腳 / 灰指甲 7 大迷思
 URL: https://chendermatologist.com/blog/tinea-myths
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Myths & Facts
 Reading time: PT9M
 Tags: 足癬, Tinea
@@ -10124,7 +10272,7 @@ UpToDate: Onychomycosis: Management. Accessed 2026. 「來源」
 ---
 ## 異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思
 URL: https://chendermatologist.com/blog/atopic-dermatitis-overview
-Updated: 2026-05-27
+Updated: 2026-05-29
 Section: Treatment & Therapy
 Reading time: PT32M
 Tags: 異位性皮膚炎, AD complete guide

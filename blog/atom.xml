@@ -4,12 +4,21 @@
   <link href="https://chendermatologist.com/" rel="alternate"/>
   <link href="https://chendermatologist.com/blog/atom.xml" rel="self"/>
   <id>https://chendermatologist.com/</id>
-  <updated>2026-05-29T10:27:37Z</updated>
+  <updated>2026-05-29T10:40:51Z</updated>
   <author>
     <name>陳翊嘉 醫師</name>
     <email>expertise88864@gmail.com</email>
   </author>
   <generator uri="https://chendermatologist.com">DermNotes auto-feed</generator>
+  <entry>
+    <title>第一種 JAK 抑制劑治圓禿失敗，換第二種有用嗎？2026 JAAD 108 人換藥真實數據</title>
+    <link href="https://chendermatologist.com/blog/jaki-switching-alopecia-areata" rel="alternate"/>
+    <id>https://chendermatologist.com/blog/jaki-switching-alopecia-areata</id>
+    <updated>2026-05-26T00:00:00Z</updated>
+    <published>2026-05-26T00:00:00Z</published>
+    <category term="圓禿 JAK 換藥"/>
+    <summary>第一種 JAK 抑制劑治圓禿失敗，換第二種有用嗎？2026 JAAD 108 人換藥真實數據 | ChenDermatologist 皮膚科衛教筆記</summary>
+  </entry>
   <entry>
     <title>Spironolactone 在皮膚科安全嗎？2026 JAAD 兩篇研究：≥45 歲女性高血鉀風險與合併 minoxidil 開立指南</title>
     <link href="https://chendermatologist.com/blog/spironolactone-dermatology-safety" rel="alternate"/>
@@ -270,14 +279,5 @@
     <published>2026-05-07T00:00:00Z</published>
     <category term="蕁麻疹"/>
     <summary>蕁麻疹 6 大迷思 | ChenDermatologist 皮膚科衛教筆記</summary>
-  </entry>
-  <entry>
-    <title>白斑（Vitiligo）完整衛教</title>
-    <link href="https://chendermatologist.com/blog/vitiligo" rel="alternate"/>
-    <id>https://chendermatologist.com/blog/vitiligo</id>
-    <updated>2026-05-07T00:00:00Z</updated>
-    <published>2026-05-07T00:00:00Z</published>
-    <category term="白斑"/>
-    <summary>白斑（Vitiligo）完整衛教 | ChenDermatologist 皮膚科衛教筆記</summary>
   </entry>
 </feed>
