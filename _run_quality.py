@@ -166,6 +166,9 @@ REGEN_STEPS: list[list[str]] = [
     # cache entry) so they can never desync. Runs LAST in REGEN, after
     # _normalize_critical_css.py, so the block is never disturbed.
     [PY, "_inject_nav_critical.py"],
+    # 2026-05-31 - add scope=col to every <thead> <th> (WCAG 1.3.1). Runs last
+    # in REGEN so it also covers freshly-generated EN mirrors. Idempotent.
+    [PY, "_normalize_th_scope.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
