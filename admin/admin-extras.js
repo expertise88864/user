@@ -651,6 +651,7 @@
     const headFont = document.getElementById('axHeadFont').value;
     const bodySize = document.getElementById('axBodySize').value;
     if (!bodyFont && !headFont && !bodySize) { toast('未選擇任何項目'); return; }
+    if (!getPat()) { toast('GitHub Token 已過期或未設定，請重新貼上'); return; }
     const css = buildThemeCss(bodyFont, headFont, bodySize);
     const b64 = btoa(unescape(encodeURIComponent(css)));
     // Get current sha if exists
@@ -661,13 +662,15 @@
       });
       if (r.ok) { const j = await r.json(); sha = j.sha; }
     } catch (e) { /* not exists */ }
-    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${THEME_PATH}`, {
-      method: 'PUT',
-      headers: { Authorization: 'token ' + getPat(), Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: 'admin: update site theme', content: b64, branch: BRANCH, sha }),
-    });
-    if (r.ok) toast('✓ 字型設定已存進 ' + THEME_PATH + '（下次部署生效，記得在 layout 加 <link>）');
-    else { toast('儲存失敗，請稍後再試（HTTP ' + r.status + '）'); }
+    try {
+      const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${THEME_PATH}`, {
+        method: 'PUT',
+        headers: { Authorization: 'token ' + getPat(), Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: 'admin: update site theme', content: b64, branch: BRANCH, sha }),
+      });
+      if (r.ok) toast('✓ 字型設定已存進 ' + THEME_PATH + '（下次部署生效，記得在 layout 加 <link>）');
+      else { toast('儲存失敗，請稍後再試（HTTP ' + r.status + '）'); }
+    } catch (e) { toast('網路錯誤，儲存字型設定失敗'); }
   }
 
   // ─────────────────────────────────────────────────────────────
@@ -675,10 +678,15 @@
   // ─────────────────────────────────────────────────────────────
   async function loadVersions() {
     if (!getCurrentFile()) { toast('先選一個檔案'); return; }
-    const r = await fetch(`https://api.github.com/repos/${REPO}/commits?path=${encodeURIComponent(getCurrentFile())}&per_page=30&sha=${BRANCH}`, {
-      headers: { Authorization: 'token ' + getPat(), Accept: 'application/vnd.github+json' },
-    });
-    const j = await r.json();
+    const pat = getPat();
+    if (!pat) { toast('GitHub Token 已過期或未設定，請重新貼上'); return; }
+    let j;
+    try {
+      const r = await fetch(`https://api.github.com/repos/${REPO}/commits?path=${encodeURIComponent(getCurrentFile())}&per_page=30&sha=${BRANCH}`, {
+        headers: { Authorization: 'token ' + pat, Accept: 'application/vnd.github+json' },
+      });
+      j = await r.json();
+    } catch (e) { toast('網路錯誤，讀取版本歷史失敗'); return; }
     if (!Array.isArray(j)) { toast('讀取失敗'); return; }
     const list = document.getElementById('axVersionList');
     list.textContent = '';
@@ -703,12 +711,16 @@
 
   async function rollbackTo(sha) {
     if (!confirm(`確定要還原到 ${sha.slice(0, 7)}?目前未存的改動會遺失。`)) return;
+    if (!getPat()) { toast('GitHub Token 已過期或未設定，請重新貼上'); return; }
     // Fetch file content at that commit
-    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${getCurrentFile()}?ref=${sha}`, {
-      headers: { Authorization: 'token ' + getPat(), Accept: 'application/vnd.github+json' },
-    });
-    const j = await r.json();
-    if (!j.content) { toast('讀取舊版失敗'); return; }
+    let j;
+    try {
+      const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${getCurrentFile()}?ref=${sha}`, {
+        headers: { Authorization: 'token ' + getPat(), Accept: 'application/vnd.github+json' },
+      });
+      j = await r.json();
+    } catch (e) { toast('網路錯誤，讀取舊版失敗'); return; }
+    if (!j || !j.content) { toast('讀取舊版失敗'); return; }
     // Write back to main with current sha
     const writeR = await fetch(`https://api.github.com/repos/${REPO}/contents/${getCurrentFile()}`, {
       method: 'PUT',
