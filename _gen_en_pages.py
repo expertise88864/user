@@ -90,11 +90,11 @@ EN_OG_OVERRIDES = {
         'desc': 'Resident-level research review integrating 2026 JAAD Reviews and the JAAD eye-tracking study comparing dermatologist gaze maps with DEXI dermoscopy AI heat maps. Covers diagnostic support, explainable AI, generative AI for education, and why AI cannot yet replace clinical judgment.',
     },
     'blog/spironolactone-dermatology-safety.html': {
-        'title': 'Spironolactone Safety in Dermatology: JAAD 2026 — Hyperkalemia in Women ≥45 and LDOM Combination',
+        'title': 'Spironolactone in Dermatology: Hyperkalemia & LDOM Safety (JAAD 2026)',
         'desc': 'Two June-2026 JAAD studies from Mass General Brigham synthesized: Gregoire et al. (n=398) — in women ≥45 on spironolactone for dermatologic indications, overall hyperkalemia 10.1%, rising to 28.1% in ≥65 with ≥1 comorbidity, but 97.5% mild and 62.5% required no management change; mean onset 20 months, not the 1-4 week label window. Dewey et al. (n=432) — spironolactone + low-dose oral minoxidil combination: 37.7% adverse-event rate, hypertrichosis 12.3%, orthostasis 12.0%; simultaneous initiation reduced hypertrichosis by 64.8% vs sequential, concurrent BP-lowering drug raised orthostatic risk 3.29-fold. Includes stratified monitoring suggestions and Taiwan off-label out-of-pocket context.',
     },
     'blog/jaki-switching-alopecia-areata.html': {
-        'title': 'Switching JAK Inhibitors for Alopecia Areata: JAAD 2026 — 108-Patient Real-World Data',
+        'title': 'Switching JAK Inhibitors for Alopecia Areata (JAAD 2026)',
         'desc': 'When the first JAK inhibitor fails in severe alopecia areata, does switching help? June-2026 JAAD multicenter retrospective (Martin et al., 6 US clinics, n=108): 48.8% reached SALT≤20 on a second JAKi, 32.6% SALT≤10; among 21 reaching a third, 52.4% reached SALT≤20. The strongest predictor of response to a second JAKi was responding to the first (adjusted OR 3.33; 95% CI 1.22-9.68). Covers switch-path outcomes (tofacitinib/baricitinib/ritlecitinib/upadacitinib), safety, predictors, and Taiwan drug availability.',
     },
     # SEO_AUDIT B1 — 4 articles whose auto-derived titles ran >70 chars.
@@ -557,7 +557,7 @@ def derive_meta(src: str, override: dict[str, str] | None) -> tuple[str, str]:
     if not title or has_cjk(title):
         title = 'Dermatology Patient Education | ChenDermatologist'
     if len(title) > 72:
-        title = title[:69].rsplit(' ', 1)[0].rstrip(' ,.;:|-') + '...'
+        title = title[:69].rsplit(' ', 1)[0].rstrip(' ,.;:|-') + '…'
 
     lead = (override or {}).get('desc') or ''
     h1_pos = src.lower().find('</h1>')
