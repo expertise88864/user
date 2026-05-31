@@ -77,20 +77,35 @@ export default async function handler(req) {
   const articleMatch = html.match(/<article[\s\S]*?<\/article>/i);
   const text = stripHtml(articleMatch ? articleMatch[0] : html).slice(0, 4000);
 
-  const aiResp = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      max_tokens: 600,
-      system: SYSTEM_PROMPT,
-      messages: [{ role: 'user', content: 'Article body:\n\n' + text }],
-    }),
-  });
+  // CODE_REVIEW 2026-05-26 — bound the upstream Claude call with an
+  // AbortController so a slow/hung Anthropic response can't hold the edge
+  // invocation open until the platform duration limit (wasted compute + a
+  // worse 504-style failure for the admin). 25s is comfortably above a
+  // normal Haiku TL;DR latency while staying under typical edge limits.
+  const aiController = new AbortController();
+  const aiTimeout = setTimeout(() => aiController.abort(), 25000);
+  let aiResp;
+  try {
+    aiResp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      signal: aiController.signal,
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: MODEL,
+        max_tokens: 600,
+        system: SYSTEM_PROMPT,
+        messages: [{ role: 'user', content: 'Article body:\n\n' + text }],
+      }),
+    });
+  } catch (_) {
+    return jsonResp(504, { error: 'AI call timed out or failed' });
+  } finally {
+    clearTimeout(aiTimeout);
+  }
   if (!aiResp.ok) {
     return jsonResp(aiResp.status, { error: 'AI call failed' });
   }

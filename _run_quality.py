@@ -187,6 +187,10 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_check_inline_events.py"],
     [PY, "_audit_jsonld.py"],
     [PY, "_check_pwa.py"],
+    # 2026-05-26 — guard the inline sticky-nav critical CSS (see
+    # _inject_nav_critical.py); fails loudly if a dn-nav page ever loses its
+    # <style id="dn-nav-critical"> block (e.g. via a REGEN reorder).
+    [PY, "_check_nav_critical.py"],
     [PY, "_check_performance_budget.py"],
     [PY, "_check_text_integrity.py"],
     [PY, "_check_en_internal_links.py"],

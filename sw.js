@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v151';
-const RUNTIME = 'cd-runtime-v149';
+const CACHE = 'cd-v152';
+const RUNTIME = 'cd-runtime-v150';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
 // Popular articles getting evicted after ~5 navigations caused repeat-
@@ -136,21 +136,27 @@ self.addEventListener('fetch', (e) => {
       // Background revalidate — fires regardless of cache hit so the
       // NEXT visit gets fresh content. Errors swallowed so offline
       // visits still resolve to the cached copy.
-      // CODE_REVIEW 2026-05-25 — cache.put + trimCache wrapped in
-      // event.waitUntil so SW termination mid-eviction can't leave
-      // the HTML cache permanently over-cap.
+      // CODE_REVIEW 2026-05-26 — the cache.put now lives INSIDE the awaited
+      // networkPromise chain, and the whole promise is passed to
+      // event.waitUntil() up-front. Previously, on a fast cache HIT the
+      // handler returned `cached` (resolving respondWith) and only THEN —
+      // when the in-flight fetch settled — called e.waitUntil() inside .then.
+      // Calling waitUntil() after respondWith has already settled can be a
+      // no-op (or throw "called too late"), so SW termination right after a
+      // cache hit could silently kill the revalidation, weakening the
+      // "next visit gets fresh" guarantee that prevents stale HTML.
       const networkPromise = fetchWithRetry(req)
-        .then((resp) => {
+        .then(async (resp) => {
           if (resp && resp.ok && !resp.redirected && resp.type === 'basic') {
-            const copy = resp.clone();
-            e.waitUntil((async () => {
-              await cache.put(req, copy);
-              await trimCache(CACHE, HTML_CACHE_MAX_ENTRIES);
-            })());
+            await cache.put(req, resp.clone());
+            await maybeTrim(CACHE, HTML_CACHE_MAX_ENTRIES);
           }
           return resp;
         })
         .catch(() => null);
+      // Keep the SW alive through the background fetch + cache write even if
+      // we return the cached copy immediately below.
+      e.waitUntil(networkPromise);
 
       // Serve cached HTML immediately if we have it (the SWR win).
       // First-ever visit to this URL waits for network.
