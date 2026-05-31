@@ -955,12 +955,47 @@
       if (e.target.closest && e.target.closest('iframe.editor')) return;
       // Listen for iframe edits is harder — poll via interval as fallback
     });
-    setInterval(() => {
+    // CODE_REVIEW 2026-05-31: replaced a 4s forever-setInterval. It ran
+    // getEditorDocument() + (when the SEO tab was active) a heavy runSeoCheck()
+    // with full outerHTML serialization every 4 seconds for the ENTIRE admin
+    // session, even with no editor open and the SEO tab inactive -> constant
+    // background CPU and typing jank. Now event-driven + debounced, no polling:
+    // a passive input listener inside the editor iframe (re-attached on iframe
+    // navigation) plus a delegated SEO-tab-open trigger. Preserves the original
+    // guards (only runs when the SEO tab is active AND an editor doc exists);
+    // degrades gracefully to the manual refresh button if the iframe can't be
+    // wired.
+    function seoTabActive() {
+      return !!document.querySelector('.ax-tab[data-tab="seo"].active');
+    }
+    function scheduleSeoCheck() {
+      if (!seoTabActive()) return;
+      if (!getEditorDocument()) return;
+      clearTimeout(seoTimer);
+      seoTimer = setTimeout(runSeoCheck, 600);
+    }
+    function attachSeoInput() {
       const doc = getEditorDocument();
-      if (!doc) return;
-      const tab = document.querySelector('.ax-tab[data-tab="seo"].active');
-      if (tab) { clearTimeout(seoTimer); seoTimer = setTimeout(runSeoCheck, 600); }
-    }, 4000);
+      if (!doc || doc._seoInputHooked) return;
+      doc._seoInputHooked = true;
+      doc.addEventListener('input', scheduleSeoCheck, { passive: true });
+    }
+    function wireEditorSeoInput() {
+      const f = document.querySelector('iframe.editor');
+      if (!f) return;
+      if (!f._seoLoadHooked) {
+        f._seoLoadHooked = true;
+        f.addEventListener('load', attachSeoInput);
+      }
+      attachSeoInput();
+    }
+    document.addEventListener('click', function (e) {
+      if (e.target && e.target.closest && e.target.closest('.ax-tab[data-tab="seo"]')) {
+        wireEditorSeoInput();
+        setTimeout(scheduleSeoCheck, 50);
+      }
+    });
+    wireEditorSeoInput();
 
     // Run once on first file load
     setTimeout(runSeoCheck, 1500);
