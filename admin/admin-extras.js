@@ -951,10 +951,6 @@
 
     // Auto-run SEO check whenever editor content changes (debounced)
     let seoTimer = null;
-    document.addEventListener('input', e => {
-      if (e.target.closest && e.target.closest('iframe.editor')) return;
-      // Listen for iframe edits is harder — poll via interval as fallback
-    });
     // CODE_REVIEW 2026-05-31: replaced a 4s forever-setInterval. It ran
     // getEditorDocument() + (when the SEO tab was active) a heavy runSeoCheck()
     // with full outerHTML serialization every 4 seconds for the ENTIRE admin
