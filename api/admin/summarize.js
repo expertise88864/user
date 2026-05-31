@@ -71,6 +71,11 @@ export default async function handler(req) {
   });
   if (!r.ok) return jsonResp(404, { error: 'Article not found' });
   const j = await r.json();
+  // GitHub omits `content` for files >1 MB / returns an array for dirs, so
+  // j.content can be undefined → atob(undefined) throws an opaque 500. Guard.
+  if (typeof j.content !== 'string') {
+    return jsonResp(422, { error: 'Article too large (>1 MB) or not a single file' });
+  }
   const html = new TextDecoder().decode(Uint8Array.from(atob(j.content.replace(/\n/g, '')), c => c.charCodeAt(0)));
 
   // Extract main article text (truncate to 4000 chars to keep token cost low)

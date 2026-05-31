@@ -115,7 +115,6 @@ def submit(urls: list[str]) -> int:
     # non-fatal warning (exit 0). Only genuine client errors that indicate a
     # real problem on our side (400 / 403 / 422) fail the run so we get alerted.
     TRANSIENT_HTTP = {429, 500, 502, 503, 504}
-    CLIENT_ERRORS = {400, 403, 422}
     max_attempts = 3
     status: int | None = None
     body_text = ""
@@ -133,10 +132,15 @@ def submit(urls: list[str]) -> int:
             continue
         break
 
-    if status in CLIENT_ERRORS:
-        # Real misconfiguration on our side (bad payload, KEY.txt unreachable,
-        # URLs not under host). Fail so the CI email is actionable.
-        print(f"[indexnow] submit FAILED -> HTTP {status} (client error — needs a fix)")
+    if status is not None and status not in (200, 202) and status not in TRANSIENT_HTTP:
+        # Any non-success status that is NOT a known-transient upstream code is a
+        # real problem on our side that needs fixing — bad/rotated key (401),
+        # endpoint moved (404), malformed payload (400), key file unreachable
+        # (403), URLs not under host (422), payload too large (413), etc. Fail
+        # so the CI email is actionable. (Previously only an explicit
+        # {400,403,422} allowlist failed, so 401/404/413/… leaked through as a
+        # silent "non-fatal" pass — defeating the alerting this script exists for.)
+        print(f"[indexnow] submit FAILED -> HTTP {status} (client/unexpected error — needs a fix)")
         print(f"[indexnow]   response body: {body_text[:300]}")
         return 1
 

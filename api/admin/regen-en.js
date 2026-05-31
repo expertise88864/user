@@ -121,6 +121,12 @@ export default async function handler(req) {
   // 1. Fetch source HTML
   const src = await ghGet(sourcePath, auth);
   if (!src) return jsonResp(404, { error: `Source not found: ${sourcePath}` });
+  // GitHub Contents API omits `content` for files >1 MB (and returns an array
+  // for directories), so src.content can be undefined → atob(undefined) throws
+  // an opaque 500. Articles with large inline SVGs can exceed 1 MB. Guard it.
+  if (typeof src.content !== 'string') {
+    return jsonResp(422, { error: 'Source too large (>1 MB) or not a single file' });
+  }
   const decoded = atob(src.content.replace(/\n/g, ''));
   const utf8 = new TextDecoder().decode(Uint8Array.from(decoded, c => c.charCodeAt(0)));
 
