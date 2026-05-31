@@ -832,6 +832,7 @@
   // ⑧ G2 — POPULAR_PICKS admin (KV-backed; no redeploy needed)
   // ─────────────────────────────────────────────────────────────
   let _picksArr = [];
+  let _picksObserver = null;
   function renderPicks() {
     const ol = document.getElementById('axPicksList');
     ol.textContent = '';
@@ -865,10 +866,19 @@
       });
     });
     document.getElementById('axPicksSave').style.display = _picksArr.length ? 'inline-flex' : 'none';
-    // Watch for drag reorder
-    new MutationObserver(() => {
-      _picksArr = Array.from(ol.querySelectorAll('li')).map(x => x.dataset.slug);
-    }).observe(ol, { childList: true });
+    // Watch for drag reorder. CODE_REVIEW 2026-05-31 — was `new MutationObserver()
+    // .observe()` on EVERY renderPicks() call (load + each add/remove), so N
+    // observers accumulated and all fired on the next mutation (O(N²) + leak in
+    // a long admin session). Reuse a single observer: disconnect, then re-observe
+    // the (stable-id) list element.
+    if (!_picksObserver) {
+      _picksObserver = new MutationObserver(() => {
+        const list = document.getElementById('axPicksList');
+        if (list) _picksArr = Array.from(list.querySelectorAll('li')).map(x => x.dataset.slug);
+      });
+    }
+    _picksObserver.disconnect();
+    _picksObserver.observe(ol, { childList: true });
   }
   async function loadPicks() {
     document.getElementById('axPicksStats').textContent = '載入中...';
