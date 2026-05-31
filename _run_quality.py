@@ -174,6 +174,10 @@ REGEN_STEPS: list[list[str]] = [
     # Runs after _gen_en_pages so EN mirrors (English visible text) get an
     # English FAQPage too. Idempotent; skips hand-authored FAQPage blocks.
     [PY, "_gen_faq_from_qa.py"],
+    # 2026-05-31 - label the breadcrumb <nav> (WCAG 1.3.6: articles have two
+    # nav landmarks - breadcrumb + related-articles - and each needs a unique
+    # accessible name). Idempotent, additive. Runs after EN gen.
+    [PY, "_normalize_breadcrumb_aria.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
