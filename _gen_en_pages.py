@@ -371,6 +371,17 @@ def replace_privacy_body(src: str) -> str:
     return re.sub(r'<main id="main-content">[\s\S]*?</main>', EN_PRIVACY_ARTICLE, src, count=1, flags=re.I)
 
 
+# 2026-05-31 — memoize the per-link filesystem existence checks. They are
+# pure for the duration of a build run (the source tree is static while we
+# generate the /en/ mirror — these only stat SOURCE files, never the en/
+# outputs we write), and rewrite_en_internal_links() calls them once per
+# internal link per page (~3.6k os.path.exists calls/build, ~150 unique
+# paths). lru_cache collapses that to one stat per unique path. Output is
+# byte-identical; CI (_run_quality.py build) verifies.
+import functools as _ft
+
+
+@_ft.lru_cache(maxsize=8192)
 def local_html_exists(path: str) -> bool:
     clean = path.split('?', 1)[0].split('#', 1)[0]
     if clean == '/':
@@ -384,6 +395,7 @@ def local_html_exists(path: str) -> bool:
     )
 
 
+@_ft.lru_cache(maxsize=8192)
 def en_mirror_exists(path: str) -> bool:
     clean = path.split('?', 1)[0].split('#', 1)[0]
     if clean == '/':
