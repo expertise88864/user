@@ -93,6 +93,18 @@ def compute_metrics(src: str, lang: str = "zh") -> dict[str, int]:
     """
     prose_id = "proseEn" if lang.startswith("en") else "proseZh"
     body_src = _extract_prose_container(src, prose_id)
+    # 2026-05-31 — bilingual EN-mirror fix. These pages keep #proseEn as an
+    # empty placeholder and store the real content in #proseZh with data-en=""
+    # swaps (DN.applyTextOnly renders EN at runtime). Reading #proseEn for an
+    # EN page therefore yielded an EMPTY body → wordCount:0 / timeRequired:PT2M
+    # (false structured data flagged by audit). When the EN container is
+    # missing or near-empty, fall back to #proseZh, whose data-en attributes
+    # the lang=="en" branch below already harvests. Verified: jaki EN goes
+    # 0 → 3331 words.
+    if lang.startswith("en") and (body_src is None or len(clean_text(body_src)) < 200):
+        zh = _extract_prose_container(src, "proseZh")
+        if zh is not None and len(zh) > (len(body_src or "")):
+            body_src = zh
     if body_src is None:
         article_m = re.search(r"<article\b[^>]*>([\s\S]*?)</article>", src, re.I)
         body_src = article_m.group(1) if article_m else src
