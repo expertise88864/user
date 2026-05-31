@@ -10,7 +10,7 @@ For citation rules and structural metadata, see https://chendermatologist.com/ll
 ---
 ## Spironolactone 在皮膚科安全嗎？2026 JAAD 兩篇研究：≥45 歲女性高血鉀風險與合併 minoxidil 開立指南
 URL: https://chendermatologist.com/blog/spironolactone-dermatology-safety
-Updated: 2026-05-29
+Updated: 2026-05-31
 Section: Research Summary
 Reading time: PT30M
 Tags: Spironolactone 安全性, Spironolactone safety
@@ -174,7 +174,7 @@ LDOM 劑量
 ---
 ## 第一種 JAK 抑制劑治圓禿失敗，換第二種有用嗎？2026 JAAD 108 人換藥真實數據
 URL: https://chendermatologist.com/blog/jaki-switching-alopecia-areata
-Updated: 2026-05-29
+Updated: 2026-05-31
 Section: Research Summary
 Reading time: PT18M
 Tags: 圓禿 JAK 換藥, JAKi switching
@@ -322,7 +322,7 @@ Q3. 換哪一種 JAK 抑制劑最好？
 ---
 ## AI 現在能幫皮膚科醫師看病嗎？2026 三篇 JAAD 研究的綜合解答
 URL: https://chendermatologist.com/blog/ai-dermatology-roles
-Updated: 2026-05-29
+Updated: 2026-05-31
 Section: Research Summary
 Reading time: PT21M
 Tags: AI 與皮膚科, AI in dermatology
@@ -610,7 +610,7 @@ BSA < 5% / 5–10% / > 10%
 ---
 ## 打瘦瘦針會掉頭髮嗎？2026 兩篇 TriNetX 大型研究的雙向解答
 URL: https://chendermatologist.com/blog/semaglutide-hair-loss
-Updated: 2026-05-29
+Updated: 2026-05-31
 Section: Research Summary
 Reading time: PT20M
 Tags: GLP-1 與落髮, GLP-1 & hair loss
@@ -685,7 +685,7 @@ Hill MA 等人(Case Western Reserve + Cleveland Clinic)2026 年 6 月發表於�
 ---
 ## 光動力治療（PDT）皮膚科完整指南 — 從 AK、BCC 到痘痘的 2026 JAAD 雙篇 Review 整合
 URL: https://chendermatologist.com/blog/photodynamic-therapy-overview
-Updated: 2026-05-29
+Updated: 2026-05-31
 Section: Research Summary
 Reading time: PT24M
 Tags: 光動力治療, Photodynamic therapy
@@ -951,7 +951,7 @@ Type I 反應（次要）：PS 直接與受質分子反應、產生超氧自由�
 ---
 ## 打乾癬生物製劑要不要每年抽血？2026 JAAD 證據評級重新看這件事
 URL: https://chendermatologist.com/blog/psoriasis-biologic-monitoring
-Updated: 2026-05-29
+Updated: 2026-05-31
 Section: Research Summary
 Reading time: PT19M
 Tags: 生物製劑安全, Biologic safety
@@ -1078,7 +1078,7 @@ HBV 狀態
 ---
 ## 杜避炎®（dupilumab）維持治療要打多久？2026 JAAD 真實世界研究：減量竟比停藥更容易復發
 URL: https://chendermatologist.com/blog/dupilumab-long-term-maintenance
-Updated: 2026-05-29
+Updated: 2026-05-31
 Section: Research Summary
 Reading time: PT20M
 Tags: dupilumab, Dupilumab
@@ -1370,7 +1370,7 @@ Upa 與 Abro 劑量限制：Upadacitinib — EASI 16–20 限每日 15 mg；≥ 
 ---
 ## 嘴角紅疹是痘痘還是濕疹？口周皮膚炎完整衛教
 URL: https://chendermatologist.com/blog/perioral-dermatitis-guide
-Updated: 2026-05-29
+Updated: 2026-05-31
 Section: Treatment & Therapy
 Reading time: PT20M
 Tags: 口周皮膚炎, Perioral dermatitis
@@ -1563,7 +1563,7 @@ Doxycycline
 ---
 ## 腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病
 URL: https://chendermatologist.com/blog/toenail-mechanical-disorders
-Updated: 2026-05-29
+Updated: 2026-05-31
 Section: Treatment & Therapy
 Reading time: PT18M
 Tags: 趾甲與足部, Toenail disorders
@@ -1807,7 +1807,7 @@ Carpal Tunnel Syndrome 的手指甲變化
 ---
 ## 嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南
 URL: https://chendermatologist.com/blog/dermatologic-oral-examination
-Updated: 2026-05-29
+Updated: 2026-05-31
 Section: Treatment & Therapy
 Reading time: PT24M
 Tags: 口腔黏膜, Oral mucosa

@@ -392,11 +392,16 @@
     // snippet into existing entries by slug match, so search hits article body content.
     function loadFulltextIndex() {
       if (FULLTEXT_LOADED) return Promise.resolve();
-      FULLTEXT_LOADED = true;
+      // CODE_REVIEW 2026-05-26 — latch FULLTEXT_LOADED only on SUCCESS. It was
+      // set true synchronously before the fetch, so one transient failure
+      // (offline at the first Cmd-K) latched it forever and the full-text index
+      // never loaded again that session, permanently degrading search to
+      // title/tag-only. A failed attempt now leaves it false so search retries.
       return fetch('/assets/search-index.json', { credentials: 'omit' })
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (data) {
           if (!Array.isArray(data) || !INDEX) return;
+          FULLTEXT_LOADED = true;
           var bySlug = {};
           data.forEach(function (e) { bySlug[e.slug] = e; });
           INDEX.forEach(function (it) {

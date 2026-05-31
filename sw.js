@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v153';
-const RUNTIME = 'cd-runtime-v151';
+const CACHE = 'cd-v154';
+const RUNTIME = 'cd-runtime-v152';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
 // Popular articles getting evicted after ~5 navigations caused repeat-
@@ -296,7 +296,9 @@ self.addEventListener('message', (e) => {
               const existing = await cache.match(u);
               if (existing) return;
               const resp = await fetch(u, { credentials: 'omit' });
-              if (resp && resp.ok && resp.type === 'basic') await cache.put(u, resp);
+              // CODE_REVIEW 2026-05-26 — exclude redirected responses (match the
+              // navigation SWR guard) so a 308 isn't cached under the pre-redirect key.
+              if (resp && resp.ok && !resp.redirected && resp.type === 'basic') await cache.put(u, resp);
             } catch (_) {}
           }));
         }

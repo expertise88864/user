@@ -439,7 +439,13 @@ def normalize_file(path: Path) -> bool:
         raw = match.group(2)
         try:
             obj = json.loads(raw)
-        except Exception:
+        except json.JSONDecodeError as exc:
+            # 2026-05-26 — narrowed from bare `except Exception` (matches the
+            # iter_jsonld policy): surface malformed JSON-LD on stderr instead
+            # of silently leaving it un-normalized, which later shows up as a
+            # confusing missing-field error in _audit_jsonld far from the cause.
+            print(f"[normalize_schema] WARN malformed JSON-LD skipped: {exc}: {raw[:80]}",
+                  file=sys.stderr)
             return match.group(0)
         if not isinstance(obj, dict):
             return match.group(0)
