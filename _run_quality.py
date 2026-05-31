@@ -169,6 +169,11 @@ REGEN_STEPS: list[list[str]] = [
     # 2026-05-31 - add scope=col to every <thead> <th> (WCAG 1.3.1). Runs last
     # in REGEN so it also covers freshly-generated EN mirrors. Idempotent.
     [PY, "_normalize_th_scope.py"],
+    # 2026-05-31 - emit FAQPage JSON-LD for articles whose FAQ uses the
+    # .qa pattern (newer research articles) instead of <details><summary>.
+    # Runs after _gen_en_pages so EN mirrors (English visible text) get an
+    # English FAQPage too. Idempotent; skips hand-authored FAQPage blocks.
+    [PY, "_gen_faq_from_qa.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
