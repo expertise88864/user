@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v154';
-const RUNTIME = 'cd-runtime-v152';
+const CACHE = 'cd-v155';
+const RUNTIME = 'cd-runtime-v153';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
 // Popular articles getting evicted after ~5 navigations caused repeat-
@@ -87,6 +87,18 @@ async function trimCache(cacheName, max) {
     const toDelete = keys.slice(0, keys.length - max);
     await Promise.all(toDelete.map((req) => cache.delete(req)));
   } catch (e) { /* ignore */ }
+}
+
+// CODE_REVIEW 2026-05-31 - maybeTrim was CALLED by the HTML stale-while-
+// revalidate handler but never DEFINED: a prior pass renamed a trimCache()
+// call intending a probabilistic wrapper and never added the function. The
+// call threw a ReferenceError swallowed by waitUntil, so the HTML CACHE was
+// never trimmed and HTML_CACHE_MAX_ENTRIES (150) was silently defeated.
+// Define it as a probabilistic trim: the real trim does an O(n) cache.keys()
+// scan, and a SOFT FIFO cap need not run on every single write, so running it
+// ~1-in-5 fixes the bug AND cuts ~80% of the scan work.
+async function maybeTrim(cacheName, max) {
+  if (Math.random() < 0.2) await trimCache(cacheName, max);
 }
 
 // CODE_REVIEW — fetchWithRetry was retrying ALL non-OK responses

@@ -1241,7 +1241,12 @@
   DN.refreshPopularPicks = function () {
     if (!('fetch' in window)) return Promise.resolve();
     if (DN.isLocalStaticHost()) return Promise.resolve();
-    return fetch('/api/admin/popular-picks', { cache: 'no-cache' })
+    // CODE_REVIEW 2026-05-31 - dropped { cache: 'no-cache' }. Runs on every
+    // page load (idle in DOMContentLoaded); no-cache bypassed Vercel's CDN and
+    // hit the edge fn + Upstash KV per page view. Endpoint already sets
+    // s-maxage=60, stale-while-revalidate=300, so a plain fetch lets the CDN
+    // serve it ~60s across visitors. Admin writes are a POST (not CDN-cached).
+    return fetch('/api/admin/popular-picks')
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
         if (data && Array.isArray(data.picks) && data.picks.length) {
