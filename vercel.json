@@ -436,6 +436,16 @@
   ],
   "redirects": [
     {
+      "source": "/en/notes",
+      "destination": "/en/",
+      "permanent": true
+    },
+    {
+      "source": "/en/notes.html",
+      "destination": "/en/",
+      "permanent": true
+    },
+    {
       "source": "/blog/atopic-dermatitis-comorbidity",
       "destination": "/blog/atopic-dermatitis-overview",
       "permanent": true
