@@ -31,7 +31,7 @@
 //        them in KV as `session:<token>` with a 30-day TTL.
 //     2. Update getSession() to validate against KV (look up the
 //        token, return null if missing/expired).
-//     3. Set env var BOOKMARKS_BACKEND=enabled.
+//     3. Replace getSession() with a KV-backed lookup before enabling.
 
 export const config = { runtime: 'edge' };
 
@@ -153,15 +153,13 @@ async function kvSmembers(key) {
 //
 // Until a server-side session.create method is implemented (issues
 // random tokens bound to IP+UA fingerprint, stored in KV with TTL),
-// the bookmark methods return -32004 Unavailable. Set env var
-// `BOOKMARKS_BACKEND=enabled` ONLY after the issuance layer is wired.
-const BOOKMARKS_BACKEND_ENABLED = process.env.BOOKMARKS_BACKEND === 'enabled';
+// the bookmark methods return -32004 Unavailable. Do not wire this to
+// an env-var-only flag; that would revive the old client-asserted
+// Bearer-token vulnerability.
+const BOOKMARKS_BACKEND_ENABLED = false;
 
 function getSession(req) {
-  if (!BOOKMARKS_BACKEND_ENABLED) return null;
-  const auth = req.headers.get('authorization') || '';
-  const m = auth.match(/^Bearer\s+([A-Za-z0-9_-]{8,128})$/);
-  return m ? m[1] : null;
+  return null;
 }
 
 function isValidSlug(s) { return typeof s === 'string' && /^[a-z0-9-]{2,80}$/.test(s); }
@@ -198,9 +196,7 @@ const methods = {
   },
 
   // CODE_REVIEW C6 — bookmark methods return -32004 Unavailable
-  // until a real session-issuance layer exists. Set env
-  // BOOKMARKS_BACKEND=enabled to re-enable AFTER wiring up
-  // server-side session.create with KV-stored tokens.
+  // until a real session-issuance layer exists.
   'articles.bookmark': async ({ slug }, ctx) => {
     if (!BOOKMARKS_BACKEND_ENABLED) {
       throw { code: -32004, message: 'Bookmark backend not available' };

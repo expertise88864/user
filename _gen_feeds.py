@@ -81,6 +81,25 @@ def html_meta(path: Path) -> dict[str, str]:
     }
 
 
+def existing_match(path: Path, pattern: str, fallback: str) -> str:
+    if not path.exists():
+        return fallback
+    src = path.read_text(encoding='utf-8')
+    m = re.search(pattern, src)
+    return m.group(1) if m else fallback
+
+
+def existing_sitemap_lastmods() -> dict[str, str]:
+    path = ROOT / 'sitemap.xml'
+    if not path.exists():
+        return {}
+    src = path.read_text(encoding='utf-8')
+    out: dict[str, str] = {}
+    for m in re.finditer(r'<url>\s*<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>', src):
+        out[m.group(1)] = m.group(2)
+    return out
+
+
 def is_indexable(path: Path) -> bool:
     if not path.exists():
         return False
@@ -235,6 +254,7 @@ def alternates_for(zh_url: str, en_url: str | None) -> dict[str, str]:
 
 def build_sitemap() -> str:
     today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    current_lastmods = existing_sitemap_lastmods()
     out = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
@@ -251,7 +271,7 @@ def build_sitemap() -> str:
         if not is_indexable(zh_file):
             continue
         en = en_route_for(zh)
-        emit_url(out, zh, today, p['changefreq'], p['priority'], alternates_for(zh, en))
+        emit_url(out, zh, current_lastmods.get(f'{DOMAIN}{zh}', today), p['changefreq'], p['priority'], alternates_for(zh, en))
 
     for a in ARTICLES:
         zh = f'/blog/{a["slug"]}'
@@ -272,7 +292,7 @@ def build_sitemap() -> str:
         en = en_route_for(zh)
         if not en:
             continue
-        emit_url(out, en, today, p['changefreq'], f'{max(float(p["priority"]) - 0.1, 0.1):.1f}', alternates_for(zh, en))
+        emit_url(out, en, current_lastmods.get(f'{DOMAIN}{en}', today), p['changefreq'], f'{max(float(p["priority"]) - 0.1, 0.1):.1f}', alternates_for(zh, en))
 
     for a in ARTICLES:
         zh = f'/blog/{a["slug"]}'
@@ -286,7 +306,8 @@ def build_sitemap() -> str:
 
 
 def build_rss() -> str:
-    today = datetime.now(timezone.utc).strftime('%a, %d %b %Y %H:%M:%S +0000')
+    fallback = datetime.now(timezone.utc).strftime('%a, %d %b %Y %H:%M:%S +0000')
+    today = existing_match(ROOT / 'blog' / 'feed.xml', r'<lastBuildDate>([^<]+)</lastBuildDate>', fallback)
     out = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">',
@@ -318,7 +339,8 @@ def build_rss() -> str:
 
 
 def build_atom() -> str:
-    today = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+    fallback = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+    today = existing_match(ROOT / 'blog' / 'atom.xml', r'<updated>([^<]+)</updated>', fallback)
     out = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-Hant-TW">',

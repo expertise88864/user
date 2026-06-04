@@ -58,6 +58,7 @@ def main() -> int:
     print(f"[pagefind] {' '.join(args[:5])} ...")
     try:
         result = subprocess.run(args, cwd=str(ROOT), check=False, text=True,
+                                encoding="utf-8", errors="replace",
                                 capture_output=True, timeout=180)
     except subprocess.TimeoutExpired:
         print("[pagefind] timed out after 180s — skipping (not fatal)")

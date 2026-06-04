@@ -63,8 +63,14 @@ def parse_articles_summary() -> dict:
     return {"count": count, "categories": cats, "latest_date": latest}
 
 
-def build_ai_txt(summary: dict) -> str:
-    today = dt.date.today().isoformat()
+def existing_date(path: Path, pattern: str, fallback: str) -> str:
+    if not path.exists():
+        return fallback
+    m = re.search(pattern, path.read_text(encoding="utf-8"))
+    return m.group(1) if m else fallback
+
+
+def build_ai_txt(summary: dict, today: str) -> str:
     return (
         "# ai.txt — AI / LLM crawler policy\n"
         f"# Site: {DOMAIN}/\n"
@@ -120,8 +126,7 @@ def build_ai_txt(summary: dict) -> str:
     )
 
 
-def build_summary_json(summary: dict) -> str:
-    today = dt.date.today().isoformat()
+def build_summary_json(summary: dict, today: str) -> str:
     obj = {
         "$schema": "https://chendermatologist.com/ai/summary.schema.json",
         "site": {
@@ -184,12 +189,15 @@ def main() -> int:
     ai_txt_dir = ROOT / ".well-known"
     ai_txt_dir.mkdir(exist_ok=True)
     ai_txt_path = ai_txt_dir / "ai.txt"
-    ai_txt_path.write_text(build_ai_txt(summary), encoding="utf-8", newline="\n")
+    fallback_date = summary.get("latest_date") or dt.date.today().isoformat()
+    ai_txt_date = existing_date(ai_txt_path, r"# Last update: (\d{4}-\d{2}-\d{2})", fallback_date)
+    ai_txt_path.write_text(build_ai_txt(summary, ai_txt_date), encoding="utf-8", newline="\n")
 
     ai_json_dir = ROOT / "ai"
     ai_json_dir.mkdir(exist_ok=True)
     ai_json_path = ai_json_dir / "summary.json"
-    ai_json_path.write_text(build_summary_json(summary), encoding="utf-8", newline="\n")
+    ai_json_date = existing_date(ai_json_path, r'"generated_at": "(\d{4}-\d{2}-\d{2})"', fallback_date)
+    ai_json_path.write_text(build_summary_json(summary, ai_json_date), encoding="utf-8", newline="\n")
 
     print(f"[ai-well-known] wrote .well-known/ai.txt + ai/summary.json "
           f"({summary['count']} articles)")

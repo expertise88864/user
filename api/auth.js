@@ -125,11 +125,7 @@ export default async function handler(req) {
       }
       window.addEventListener('message', function (e) {
         if (e.origin !== targetOrigin) return;
-        // Accept either the legacy plain handshake (for backwards-compat
-        // with Decap < state-binding) OR the stricter state-bound echo.
-        // After Decap upgrades, drop the legacy branch.
-        if (e.data === 'authorizing:github' ||
-            e.data === 'authorizing:github:' + flowState) {
+        if (e.data === 'authorizing:github:' + flowState) {
           send('success', { token: ${JSON.stringify(token)}, provider: 'github' });
         }
       }, false);

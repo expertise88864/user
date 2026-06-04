@@ -94,8 +94,18 @@ def block_group() -> list[str]:
     return lines
 
 
+def existing_last_update() -> str | None:
+    path = ROOT / "robots.txt"
+    if not path.exists():
+        return None
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.startswith("# Last update: "):
+            return line.rsplit(" ", 1)[-1]
+    return None
+
+
 def main() -> None:
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    today = existing_last_update() or datetime.now(timezone.utc).strftime("%Y-%m-%d")
     lines = [
         "# ChenDermatologist · 陳翊嘉醫師 皮膚科衛教",
         f"# Site: {DOMAIN}/",

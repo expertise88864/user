@@ -235,8 +235,9 @@ def process_article(fp: Path, homepage_tags: dict[str, dict[str, str]],
             continue
 
         # ----- keywords -----
+        existing_keywords = obj.get("keywords")
         keywords_str = derive_keywords(slug, tag_en, obj.get("about"), is_en)
-        if keywords_str:
+        if not existing_keywords and keywords_str:
             obj["keywords"] = keywords_str
 
         # ----- lastReviewed -----

@@ -594,14 +594,24 @@
       var descRec = (DN.ARTICLES_DESC && DN.ARTICLES_DESC[a.slug]) || {};
       var descZh = descRec.desc || '';
       var descEn = descRec.desc_en || descRec.desc || '';
+      var cat = escapeHtml(a.cat || 'note');
+      var tagZh = escapeHtml(a.tag || '');
+      var tagEn = escapeHtml(a.tag_en || a.tag || '');
+      var titleZh = escapeHtml(a.title || '');
+      var titleEn = escapeHtml(a.title_en || a.title || '');
+      var date = escapeHtml(a.date || '');
+      var catZh = escapeHtml(clz);
+      var catEn = escapeHtml(cle);
+      descZh = escapeHtml(descZh);
+      descEn = escapeHtml(descEn);
       card.innerHTML =
-        '<div class="al-icon cat-' + (a.cat || 'note') + '">' + generic_svg + '</div>' +
+        '<div class="al-icon cat-' + cat + '">' + generic_svg + '</div>' +
         '<div class="al-body"><div class="al-meta">' +
-          '<span class="chip cat-' + (a.cat || 'note') + '" data-zh="' + clz + '" data-en="' + cle + '">' + clz + '</span>' +
-          (a.tag ? '<span class="chip tag" data-zh="' + a.tag + '" data-en="' + (a.tag_en || a.tag) + '">' + a.tag + '</span>' : '') +
-          '<time>' + (a.date || '') + '</time>' +
+          '<span class="chip cat-' + cat + '" data-zh="' + catZh + '" data-en="' + catEn + '">' + catZh + '</span>' +
+          (tagZh ? '<span class="chip tag" data-zh="' + tagZh + '" data-en="' + tagEn + '">' + tagZh + '</span>' : '') +
+          '<time>' + date + '</time>' +
         '</div>' +
-        '<h2 data-zh="' + (a.title || '') + '" data-en="' + (a.title_en || a.title || '') + '">' + (a.title || '') + '</h2>' +
+        '<h2 data-zh="' + titleZh + '" data-en="' + titleEn + '">' + titleZh + '</h2>' +
         (descZh ? '<p data-zh="' + descZh + '" data-en="' + descEn + '">' + descZh + '</p>' : '') +
         '</div><div class="al-arrow">→</div>';
       listEl.appendChild(card);
