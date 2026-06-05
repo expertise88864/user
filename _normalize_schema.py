@@ -38,6 +38,7 @@ RESEARCH_SLUGS = {
     'spironolactone-dermatology-safety',
     'jaki-switching-alopecia-areata',
     'nail-psoriasis-topical-intralesional',
+    'bimekizumab-hidradenitis-suppurativa',
 }
 
 def _slug_from_path(path: Path) -> str:

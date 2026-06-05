@@ -31,14 +31,14 @@
     "country": "Taiwan"
   },
   "content": {
-    "article_count": 51,
+    "article_count": 52,
     "category_breakdown": {
       "myth": 11,
       "rx": 29,
-      "research": 9,
+      "research": 10,
       "product": 2
     },
-    "latest_article_date": "2026-05-31",
+    "latest_article_date": "2026-06-05",
     "tracks": [
       {
         "id": "rx",

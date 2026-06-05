@@ -81,6 +81,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/privacy"/>
   </url>
   <url>
+    <loc>https://chendermatologist.com/blog/bimekizumab-hidradenitis-suppurativa</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/bimekizumab-hidradenitis-suppurativa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/bimekizumab-hidradenitis-suppurativa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/bimekizumab-hidradenitis-suppurativa"/>
+    <image:image>
+      <image:loc>https://chendermatologist.com/api/og?title=%E5%8C%96%E8%86%BF%E6%80%A7%E6%B1%97%E8%85%BA%E7%82%8E%E6%89%93+bimekizumab+%E6%9C%89%E6%95%88%E5%97%8E%EF%BC%9FIL-17A%2FF+%E9%9B%99%E6%8A%91%E5%88%B6%E8%88%87+BE-HEARD+I%2FII+%E4%B8%89%E6%9C%9F%E8%A9%A6%E9%A9%97%E7%9A%84%E5%9A%B4%E6%A0%BC%E8%A9%95%E8%AE%80+%7C+%E9%99%B3%E7%BF%8A%E5%98%89%E9%86%AB%E5%B8%AB&amp;tag=%E7%9A%AE%E8%86%9A%E7%A7%91%E8%A1%9B%E6%95%99&amp;date=2026-06-05</image:loc>
+      <image:title>化膿性汗腺炎打 bimekizumab 有效嗎？IL-17A/F 雙抑制與 BE-HEARD I/II 三期試驗的嚴格評讀</image:title>
+      <image:caption>化膿性汗腺炎（HS）的新生物製劑 bimekizumab 同時抑制 IL-17A 與 IL-17F。2026 BJD 嚴格評讀 BE-HEARD I/II 兩項三期試驗：第 16 週約半數達 HiSCR 50、DLQI 與疼痛改善；但安慰劑反應高達 31%、candida 感染常見、長期續用率下降，受試者多為白人女性。整理療效、安全性與台灣定位。</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/blog/nail-psoriasis-topical-intralesional</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -893,6 +907,15 @@
     <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/privacy"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/privacy"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/privacy"/>
+  </url>
+  <url>
+    <loc>https://chendermatologist.com/en/blog/bimekizumab-hidradenitis-suppurativa</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/blog/bimekizumab-hidradenitis-suppurativa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/bimekizumab-hidradenitis-suppurativa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://chendermatologist.com/en/blog/bimekizumab-hidradenitis-suppurativa"/>
   </url>
   <url>
     <loc>https://chendermatologist.com/en/blog/nail-psoriasis-topical-intralesional</loc>

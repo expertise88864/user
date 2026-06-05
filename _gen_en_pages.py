@@ -101,6 +101,10 @@ EN_OG_OVERRIDES = {
         'title': 'Topical & Intralesional Therapy for Nail Psoriasis (JAAD 2026)',
         'desc': 'Nail psoriasis is hard to treat because creams cannot cross the thick nail plate and the matrix sits deep. A June-2026 JAAD Letter from the Editor (Elston) reviews the spectrum: vitamin D analog ointments (calcipotriol ± steroid), 20% urea + calcipotriol, topical methotrexate 1% gel with fractional CO2 laser-assisted delivery, and — for topical-refractory disease — intralesional injection (MTX, corticosteroid, 5-FU) with digital/palmar/wrist nerve blocks. A companion Mello pharmacokinetic study found a single periungual MTX injection induced multi-month remission with low plasma levels and slow clearance, suggesting a matrix slow-release depot. Evidence is mixed; covers nail-matrix anesthesia, MTX-vs-steroid divergence, and the Taiwan NHI (covered topicals) vs out-of-pocket off-label (injection/laser) divide.',
     },
+    'blog/bimekizumab-hidradenitis-suppurativa.html': {
+        'title': 'Bimekizumab for Hidradenitis Suppurativa (BE-HEARD I/II, BJD 2026)',
+        'desc': 'Bimekizumab is a newer biologic that inhibits both IL-17A and IL-17F. A 2026 British Journal of Dermatology critically appraised topic (McCarthy & Ring) reviews its two phase III trials, BE-HEARD I and II (Kimball et al., Lancet 2024): at week 16, about 48–52% of the every-2-weeks arm reached HiSCR 50 vs 29–32% on placebo, with DLQI and pain improvements, broadly comparable to adalimumab and secukinumab. The appraisal is candid about limits: a 31% placebo response, UCB funding, no comparator beyond week 16 and no head-to-head, common candida infections (23–25%), IBD signals, week-48 retention falling to 66–76%, a predominantly White and female cohort, and exclusion of the most severe phenotype. Covers IL-17A/F mechanism, efficacy, safety, the critical appraisal, and the Taiwan context.',
+    },
     # SEO_AUDIT B1 — 4 articles whose auto-derived titles ran >70 chars.
     # Each rewritten ≤65 chars so Google SERP doesn't ellipsize.
     'blog/skin-biopsy-excision.html': {
