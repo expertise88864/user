@@ -37,6 +37,7 @@ RESEARCH_SLUGS = {
     'ai-dermatology-roles',
     'spironolactone-dermatology-safety',
     'jaki-switching-alopecia-areata',
+    'nail-psoriasis-topical-intralesional',
 }
 
 def _slug_from_path(path: Path) -> str:

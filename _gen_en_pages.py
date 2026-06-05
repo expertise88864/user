@@ -97,6 +97,10 @@ EN_OG_OVERRIDES = {
         'title': 'Switching JAK Inhibitors for Alopecia Areata (JAAD 2026)',
         'desc': 'When the first JAK inhibitor fails in severe alopecia areata, does switching help? June-2026 JAAD multicenter retrospective (Martin et al., 6 US clinics, n=108): 48.8% reached SALT≤20 on a second JAKi, 32.6% SALT≤10; among 21 reaching a third, 52.4% reached SALT≤20. The strongest predictor of response to a second JAKi was responding to the first (adjusted OR 3.33; 95% CI 1.22-9.68). Covers switch-path outcomes (tofacitinib/baricitinib/ritlecitinib/upadacitinib), safety, predictors, and Taiwan drug availability.',
     },
+    'blog/nail-psoriasis-topical-intralesional.html': {
+        'title': 'Topical & Intralesional Therapy for Nail Psoriasis (JAAD 2026)',
+        'desc': 'Nail psoriasis is hard to treat because creams cannot cross the thick nail plate and the matrix sits deep. A June-2026 JAAD Letter from the Editor (Elston) reviews the spectrum: vitamin D analog ointments (calcipotriol ± steroid), 20% urea + calcipotriol, topical methotrexate 1% gel with fractional CO2 laser-assisted delivery, and — for topical-refractory disease — intralesional injection (MTX, corticosteroid, 5-FU) with digital/palmar/wrist nerve blocks. A companion Mello pharmacokinetic study found a single periungual MTX injection induced multi-month remission with low plasma levels and slow clearance, suggesting a matrix slow-release depot. Evidence is mixed; covers nail-matrix anesthesia, MTX-vs-steroid divergence, and the Taiwan NHI (covered topicals) vs out-of-pocket off-label (injection/laser) divide.',
+    },
     # SEO_AUDIT B1 — 4 articles whose auto-derived titles ran >70 chars.
     # Each rewritten ≤65 chars so Google SERP doesn't ellipsize.
     'blog/skin-biopsy-excision.html': {
