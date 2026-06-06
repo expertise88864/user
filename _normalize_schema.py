@@ -216,20 +216,25 @@ def physician_schema(existing: dict | None = None) -> dict:
         "medicalSpecialty": obj.get("medicalSpecialty") or "Dermatology",
         "url": f"{DOMAIN}/about",
         "sameAs": obj.get("sameAs") or [f"{DOMAIN}/about"],
-        # SEO_AUDIT D3 — affiliation strengthens E-E-A-T (Google rewards
-        # named institutional context for YMYL medical content).
-        "affiliation": obj.get("affiliation") or {
-            "@type": "Hospital",
-            "name": "中國醫藥大學附設醫院 皮膚部",
-            "alternateName": "China Medical University Hospital, Department of Dermatology",
-            "url": "https://www.cmuh.cmu.edu.tw/",
-            "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "TW",
-                "addressRegion": "臺中市",
+        # Medical license credential (no license number published). A Taiwan
+        # 醫師 licence is granted by the Ministry of Health and Welfare. This is
+        # a truthful, compliant E-E-A-T signal that does not claim any hospital
+        # affiliation or solicit patients.
+        "hasCredential": obj.get("hasCredential") or {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "license",
+            "name": "醫師 (Licensed Physician, Taiwan)",
+            "recognizedBy": {
+                "@type": "GovernmentOrganization",
+                "name": "衛生福利部 Ministry of Health and Welfare (Taiwan)",
+                "url": "https://www.mohw.gov.tw/",
             },
         },
     })
+    # Compliance: as a resident-in-training the author may not advertise an
+    # institutional (hospital) affiliation. Strip any previously-injected
+    # `affiliation` (e.g. a teaching-hospital department) so it is never claimed.
+    obj.pop("affiliation", None)
     return obj
 
 

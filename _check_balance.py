@@ -5,10 +5,11 @@
 Strategy: walk char-by-char, track context. Skip strings/comments/regex.
 Print location of first unbalanced item per type.
 """
-import sys, io
+import sys, io, os
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-with open(r'C:\Users\User\Desktop\翊嘉\程式\個人網頁\DermNotes\blog\blog-shared.js', 'r', encoding='utf-8') as f:
+_HERE = os.path.dirname(os.path.abspath(__file__))
+with open(os.path.join(_HERE, 'blog', 'blog-shared.js'), 'r', encoding='utf-8') as f:
     src = f.read()
 
 n = len(src)

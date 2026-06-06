@@ -106,7 +106,7 @@
 ② 點 "Generate new token (classic)"<br/>
 ③ 名字隨便填，Expiration 選 90 天 / No expiration<br/>
 ④ <strong>勾 <code style="font-family:'JetBrains Mono',monospace">repo</code> 全部權限</strong><br/>
-⑤ Generate → 複製 token 貼下面</p><input id="patInput" type="password" placeholder="ghp_..." autocomplete="off" aria-label="GitHub Personal Access Token" /><div style="display:flex;gap:8px;align-items:center"><button type="button" id="patSave">儲存並登入</button><small style="color:var(--muted)">token 只存在這個瀏覽器</small></div></div></div>
+⑤ Generate → 複製 token 貼下面</p><input id="patInput" type="password" placeholder="ghp_..." autocomplete="off" aria-label="GitHub Personal Access Token" /><div style="display:flex;gap:8px;align-items:center"><button type="button" id="patSave">儲存並登入</button><small style="color:var(--muted)">token 只存在這個分頁(關閉即清除)</small></div></div></div>
 <script>const REPO = 'expertise88864/user';
 const BRANCH = 'main';
 let PAT = '';
@@ -137,8 +137,12 @@ const elFrameWrap  = document.getElementById('frameWrap');
 const elEmpty      = document.getElementById('emptyState');
 const elStatusbar  = document.getElementById('statusbar');
 // =========== PAT login ===========
+// Security: the PAT is kept in sessionStorage (cleared when the tab/session
+// closes) instead of localStorage, so a stolen token cannot persist across
+// browser restarts. Clear any legacy localStorage token from older builds.
+try{ localStorage.removeItem('cd_gh_pat'); }catch(e){}
 function loadPat(){
-PAT = localStorage.getItem('cd_gh_pat') || '';
+PAT = sessionStorage.getItem('cd_gh_pat') || '';
 if(PAT){
 elPatStatus.textContent = '已登入';
 elPatStatus.className = 'pat-status ok';
@@ -154,7 +158,7 @@ setTimeout(()=>elPatInput.focus(), 50);
 document.getElementById('patSave').addEventListener('click', ()=>{
 const v = elPatInput.value.trim();
 if(!v){ alert('請貼上 PAT'); return; }
-localStorage.setItem('cd_gh_pat', v);
+sessionStorage.setItem('cd_gh_pat', v);
 loadPat();
 });
 elPatInput.addEventListener('keydown', e=>{
@@ -162,7 +166,7 @@ if(e.key === 'Enter') document.getElementById('patSave').click();
 });
 document.getElementById('logoutBtn').addEventListener('click', ()=>{
 if(confirm('清除 PAT?下次需要重新登入。')){
-localStorage.removeItem('cd_gh_pat');
+sessionStorage.removeItem('cd_gh_pat');
 location.reload();
 }
 });

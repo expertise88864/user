@@ -1,6 +1,6 @@
 # ChenDermatologist · 陳翊嘉醫師 — 皮膚科衛教與學習筆記
 
-> Personal dermatology patient-education site by Dr. Chen Yi-Jia (R2 dermatology resident, KMUH-trained, now at China Medical University Hospital, Taiwan). Bilingual zh-Hant / en. Two content tracks: patient-facing 衛教 (rx / myth / product) and physician-level 學習筆記 + 最新研究 (journal-club summaries).
+> Personal dermatology patient-education site by Dr. Chen Yi-Jia (R2 dermatology resident, KMUH-trained, Taiwan). Bilingual zh-Hant / en. Two content tracks: patient-facing 衛教 (rx / myth / product) and physician-level 學習筆記 + 最新研究 (journal-club summaries).
 
 ## What this site is
 

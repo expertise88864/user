@@ -144,7 +144,6 @@ def build_summary_json(summary: dict, today: str) -> str:
             "training": [
                 "Kaohsiung Medical University, College of Medicine (KMU)",
                 "Kaohsiung Medical University Hospital (KMUH) PGY",
-                "China Medical University Hospital (CMUH) Dermatology Residency",
             ],
             "url": DOMAIN + "/about",
             "country": "Taiwan",
