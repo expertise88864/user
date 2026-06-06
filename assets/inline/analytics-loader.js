@@ -58,6 +58,33 @@ function load() {
   var tt = getTrafficType();
   if (tt) cfg.traffic_type = tt; // GA4 picks up traffic_type for "Internal traffic" filter
   gtag("config", "G-XFF3L5QD10", cfg);
+  // --- Engagement / key events (GA4). Defensive: only runs once analytics
+  // has loaded (i.e. not for bots/localhost). These complement GA4 Enhanced
+  // Measurement (which already covers page_view, scroll, outbound clicks,
+  // site search via URL, and file downloads). Mark the ones you care about as
+  // "key events" in GA4 → Admin → Events.
+  try {
+    // Internal article navigation — topical journeys (not covered by EM).
+    document.addEventListener("click", function (e) {
+      var t = e.target;
+      var a = (t && t.closest) ? t.closest('a[href]') : null;
+      if (!a) return;
+      var href = a.getAttribute("href") || "";
+      if (/^\/(en\/)?blog\/[a-z0-9-]+/.test(href)) {
+        gtag("event", "select_content", { content_type: "article", item_id: href });
+      }
+    }, { capture: true, passive: true });
+    // Search intent — Pagefind opens a JS modal EM cannot see.
+    var sb = document.getElementById("dn-nav-search");
+    if (sb) sb.addEventListener("click", function () {
+      gtag("event", "site_search_open");
+    }, { passive: true });
+    // Language toggle usage.
+    var lt = document.getElementById("langToggle");
+    if (lt) lt.addEventListener("change", function () {
+      gtag("event", "language_toggle", { language: lt.value });
+    }, { passive: true });
+  } catch (e) {}
 }
 // Load 3rd-party after first paint (idle callback or 1s fallback)
 if ("requestIdleCallback" in window) {
