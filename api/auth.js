@@ -97,39 +97,40 @@ export default async function handler(req) {
   if (!token) {
     return new Response('OAuth failed', {
       status: 400,
-      headers: { 'Cache-Control': 'no-store' },
+      headers: {
+        'Cache-Control': 'no-store',
+        'Set-Cookie': `${STATE_COOKIE}=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`,
+      },
     });
   }
-  // CODE_REVIEW C5 — bind postMessage to opener-proof state echo.
-  //
   // Decap CMS protocol: popup sends 'authorizing:github' → opener
   // echoes 'authorizing:github' → popup responds with
   // 'authorization:github:success:...{token}'.
   //
-  // Hardening: include the OAuth `state` value as a per-flow secret.
-  // The opener must echo back exactly `authorizing:github:<state>` to
-  // receive the token. A same-origin attacker who didn't initiate the
-  // flow cannot guess `state` (it's a fresh UUID + already consumed
-  // by callback verification). Prevents drive-by token harvesting if a
-  // future XSS lands on chendermatologist.com.
+  // OAuth state was already verified above against the HttpOnly __Host-
+  // cookie. Keep this handshake byte-compatible with Decap CMS 3.5.0 and
+  // accept the echo only from the exact opener WindowProxy.
   const targetOrigin = url.origin;
   const html = `<!doctype html><html><body><script>
     (function () {
       var targetOrigin = ${JSON.stringify(targetOrigin)};
-      var flowState = ${JSON.stringify(state)};
+      var openerWindow = window.opener;
       var settled = false;
       function send (status, content) {
-        if (settled) return;
+        if (settled || !openerWindow) return;
         settled = true;
-        window.opener.postMessage('authorization:github:' + status + ':' + JSON.stringify(content), targetOrigin);
+        openerWindow.postMessage('authorization:github:' + status + ':' + JSON.stringify(content), targetOrigin);
       }
       window.addEventListener('message', function (e) {
         if (e.origin !== targetOrigin) return;
-        if (e.data === 'authorizing:github:' + flowState) {
+        if (e.source !== openerWindow) return;
+        if (e.data === 'authorizing:github') {
           send('success', { token: ${JSON.stringify(token)}, provider: 'github' });
         }
       }, false);
-      window.opener.postMessage('authorizing:github:' + flowState, targetOrigin);
+      if (openerWindow) {
+        openerWindow.postMessage('authorizing:github', targetOrigin);
+      }
       // Auto-cleanup after 60s if opener never responds (e.g., window
       // closed, opener navigated away). Token stays only in memory.
       setTimeout(function () { window.close(); }, 60000);

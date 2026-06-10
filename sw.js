@@ -125,6 +125,10 @@ self.addEventListener('fetch', (e) => {
 
   const url = new URL(req.url);
   if (url.origin !== location.origin) return;
+  // API responses must never enter service-worker caches. OAuth callback
+  // HTML can carry one-time credentials, and dynamic API reads must honor
+  // their server/CDN cache policy.
+  if (url.pathname.startsWith('/api/')) return;
   // Always bypass /admin so user gets the freshest editor
   if (url.pathname.startsWith('/admin')) return;
   // Bypass the SW reset page so it can talk to the SW directly

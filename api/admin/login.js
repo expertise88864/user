@@ -5,9 +5,9 @@
 // PAT in Vercel KV keyed by a random session token, and returns Set-Cookie
 // with the session token (HttpOnly Secure SameSite=Strict, 24h TTL).
 //
-// After this, subsequent admin API calls (popular-picks / regen-en /
-// upload / summarize) send the cookie automatically and use _session.js
-// to retrieve the PAT server-side. The browser never re-touches the PAT.
+// After this, same-origin admin API calls send the cookie automatically
+// and use _session.js to retrieve the PAT server-side. The WYSIWYG keeps
+// a separate tab-scoped copy only for its direct GitHub API operations.
 //
 // Method:
 //   POST { pat: "ghp_..." } → 200 { ok: true, login: "expertise88864" }
@@ -17,7 +17,7 @@
 // Security rationale: localStorage and sessionStorage are JS-accessible,
 // so an XSS or compromised 3rd-party script can exfiltrate the PAT.
 // HttpOnly cookies are not accessible to JS — even XSS can't read them.
-// PAT also never returns to the browser, so its blast radius is contained.
+// Cookie-authenticated endpoints should not resend the tab-scoped PAT.
 
 import { createSession, jsonResp } from './_session.js';
 

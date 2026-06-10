@@ -1,15 +1,13 @@
 // _session.js — shared helper for HttpOnly cookie-based admin sessions.
 //
-// 2026-05-25 — replaces "send PAT in Authorization header from browser" pattern,
-// which kept the PAT in localStorage/sessionStorage and exposed it to any XSS.
-// New pattern:
+// Cookie-session path for same-origin admin APIs:
 //   1. POST /api/admin/login {pat:"ghp_..."} → validates with GitHub /user,
 //      stores {pat, login, exp} in Vercel KV keyed by random session token,
 //      Set-Cookie: dn_admin_session=<token> HttpOnly Secure SameSite=Strict.
 //   2. Subsequent calls send the cookie (browser does this automatically).
 //   3. Admin API endpoints call `getSession(req)` here to retrieve {pat, login}.
-//   4. PAT never lives in JS-accessible storage; an XSS on the origin cannot
-//      read it because of HttpOnly + (under modern browsers) Site-isolation.
+// The custom WYSIWYG still keeps a tab-scoped PAT for direct GitHub calls;
+// endpoints using this helper should rely on the cookie and avoid resending it.
 //
 // Note: needs env vars KV_REST_API_URL + KV_REST_API_TOKEN configured.
 // Falls back to ADMIN_REPO env var; defaults to "expertise88864/user".
@@ -86,7 +84,12 @@ function parseCookies(cookieHeader) {
     if (i < 0) continue;
     const k = part.slice(0, i).trim();
     const v = part.slice(i + 1).trim();
-    if (k) out[k] = decodeURIComponent(v);
+    if (!k) continue;
+    try {
+      out[k] = decodeURIComponent(v);
+    } catch (_) {
+      // Ignore malformed cookie values instead of turning auth misses into 500s.
+    }
   }
   return out;
 }
@@ -135,36 +138,56 @@ async function getSession(req) {
   return { token, pat: data.pat, login: data.login };
 }
 
+async function validateGitHubIdentity(auth) {
+  let response;
+  try {
+    response = await fetch('https://api.github.com/user', {
+      headers: {
+        Authorization: auth,
+        'User-Agent': 'ChenDermatologist-Admin/1.0',
+        Accept: 'application/vnd.github+json',
+      },
+    });
+  } catch (_) {
+    throw new Error('GitHub validation failed');
+  }
+  if (!response.ok) throw new Error('GitHub rejected token');
+
+  let user;
+  try {
+    user = await response.json();
+  } catch (_) {
+    throw new Error('GitHub validation failed');
+  }
+  const login = user && user.login;
+  if (!login || !REPO_OWNER_ALLOWLIST.has(login)) {
+    throw new Error('User not allowlisted');
+  }
+  return login;
+}
+
+function createSessionToken() {
+  if (globalThis.crypto && typeof globalThis.crypto.randomUUID === 'function') {
+    return globalThis.crypto.randomUUID();
+  }
+  if (globalThis.crypto && typeof globalThis.crypto.getRandomValues === 'function') {
+    const bytes = new Uint8Array(32);
+    globalThis.crypto.getRandomValues(bytes);
+    return Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
+  }
+  throw new Error('Secure random generator unavailable');
+}
+
 /**
  * Validate the PAT against GitHub and (on success) mint a new session.
  * Returns { token, login, setCookieHeader } on success, throws on failure.
  */
 async function createSession(pat) {
   if (!pat || typeof pat !== 'string') throw new Error('Missing PAT');
-  // Round-trip to GitHub /user to confirm the token is valid + owner is allowed.
-  let userLogin = null;
-  try {
-    const r = await fetch('https://api.github.com/user', {
-      headers: {
-        Authorization: `token ${pat}`,
-        'User-Agent': 'ChenDermatologist-Admin/1.0',
-        Accept: 'application/vnd.github+json',
-      },
-    });
-    if (!r.ok) throw new Error('GitHub rejected token');
-    const u = await r.json();
-    userLogin = u && u.login;
-  } catch (_) {
-    throw new Error('GitHub validation failed');
-  }
-  if (!userLogin || !REPO_OWNER_ALLOWLIST.has(userLogin)) {
-    throw new Error('User not allowlisted');
-  }
-  // Mint a 32-byte session token. crypto.randomUUID() is good enough here
-  // (122 bits of entropy, plenty for a 24h-lifetime session ID).
-  const token = (globalThis.crypto && globalThis.crypto.randomUUID)
-    ? globalThis.crypto.randomUUID()
-    : Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
+  const userLogin = await validateGitHubIdentity(`token ${pat}`);
+  // Mint an unguessable session token. UUID gives 122 random bits; the
+  // getRandomValues fallback gives 256 bits.
+  const token = createSessionToken();
   const exp = Math.floor(Date.now() / 1000) + SESSION_TTL_SECONDS;
   await kvSetEx(KV_KEY_PREFIX + token, { pat, login: userLogin, exp }, SESSION_TTL_SECONDS);
   return {
@@ -204,7 +227,12 @@ async function resolveAuth(req) {
   }
   const header = req.headers.get('authorization') || '';
   if (PAT_AUTH_RE_INTERNAL.test(header)) {
-    return { auth: header, login: null, source: 'header' };
+    try {
+      const login = await validateGitHubIdentity(header);
+      return { auth: header, login, source: 'header' };
+    } catch (_) {
+      return null;
+    }
   }
   return null;
 }

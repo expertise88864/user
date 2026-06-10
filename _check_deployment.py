@@ -76,6 +76,10 @@ def main() -> int:
     require_header(errors, config, "/sw.js", "Service-Worker-Allowed", "/")
     require_header(errors, config, "/sitemap.xml", "Content-Type", "application/xml")
     require_header(errors, config, "/robots.txt", "Content-Type", "text/plain")
+    require_header(errors, config, "/admin.html", "Cache-Control", "no-store")
+    require_header(errors, config, "/admin.html", "X-Robots-Tag", "noindex")
+    require_header(errors, config, "/admin.html", "X-Frame-Options", "DENY")
+    require_header(errors, config, "/admin.html", "Content-Security-Policy", "frame-ancestors 'none'")
 
     admin_index = ROOT / "admin" / "index.html"
     if admin_index.exists():
@@ -86,6 +90,24 @@ def main() -> int:
             errors.append("admin/index.html: duplicate </main> closing tag should be removed")
     else:
         errors.append("admin/index.html: missing admin shell")
+
+    scheduled_path = ROOT / ".github" / "workflows" / "scheduled-publish.yml"
+    if not scheduled_path.exists():
+        errors.append(".github/workflows/scheduled-publish.yml: missing scheduled publish workflow")
+    else:
+        scheduled = scheduled_path.read_text(encoding="utf-8", errors="replace")
+        push_main = "subprocess.check_call(['git', 'push', 'origin', 'main'])"
+        delete_branch = "subprocess.check_call(['git', 'push', 'origin', '--delete', branch])"
+        if push_main not in scheduled or delete_branch not in scheduled:
+            errors.append("scheduled-publish.yml: expected main push and draft cleanup commands")
+        elif scheduled.index(delete_branch) < scheduled.index(push_main):
+            errors.append("scheduled-publish.yml: draft branches must be deleted only after main is pushed")
+        if "remaining.append(item)" not in scheduled:
+            errors.append("scheduled-publish.yml: failed or missing drafts should remain queued for recovery")
+        if "group: scheduled-publish-main" not in scheduled:
+            errors.append("scheduled-publish.yml: scheduled runs should be serialized")
+        if "if r.returncode != 0:" not in scheduled or "raise subprocess.CalledProcessError" not in scheduled:
+            errors.append("scheduled-publish.yml: remote branch lookup failures should fail visibly")
 
     global_entry = find_header_entry(config, "/(.*)")
     if not global_entry:

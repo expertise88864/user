@@ -112,6 +112,8 @@ def audit_service_worker(errors: list[str]) -> None:
         errors.append("sw.js should handle generated search-index.json network-first")
     if "url.pathname.startsWith('/admin')" not in src:
         errors.append("sw.js should bypass /admin so the editor is always fresh")
+    if "url.pathname.startsWith('/api/')" not in src:
+        errors.append("sw.js should bypass /api so OAuth and dynamic API responses are never cached")
     if "url.pathname === '/reset-sw'" not in src:
         errors.append("sw.js should bypass reset-sw pages")
 

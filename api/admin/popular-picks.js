@@ -21,14 +21,12 @@
 // KV keys:
 //   dn:popular-picks  → JSON array of slugs
 
-import { getSession } from './_session.js';
+import { resolveAuth } from './_session.js';
 
 export const config = { runtime: 'edge' };
 
 const KV_KEY = 'dn:popular-picks';
 const MAX_PICKS = 12;
-const PAT_AUTH_RE = /^token\s+(?:gh[pousr]_[A-Za-z0-9_]{20,255}|github_pat_[A-Za-z0-9_]{20,255})$/;
-
 const FALLBACK = [
   'acne-myths',
   'sunscreen-myths',
@@ -93,40 +91,12 @@ export default async function handler(req) {
 
   // Admin write
   if (req.method === 'POST') {
-    // 2026-05-25 — PREFERRED auth: HttpOnly cookie session set by
-    // /api/admin/login. PAT never travels back to the browser, can't be
-    // exfiltrated by XSS. Falls back to legacy Authorization header for
-    // back-compat (still validated against GitHub /user).
-    let userLogin = null;
-    const session = await getSession(req);
-    if (session) {
-      userLogin = session.login;
-    } else {
-      // Legacy path: Authorization: token ghp_...
-      const auth = req.headers.get('authorization') || '';
-      if (!PAT_AUTH_RE.test(auth)) {
-        return jsonResp(401, { error: 'Login required (POST /api/admin/login or Authorization header)' });
-      }
-      const REPO_OWNER_ALLOWLIST = new Set(['expertise88864']);
-      try {
-        const ghResp = await fetch('https://api.github.com/user', {
-          headers: {
-            Authorization: auth, // pass through "token gh..."
-            'User-Agent': 'ChenDermatologist-Admin/1.0',
-            Accept: 'application/vnd.github+json',
-          },
-        });
-        if (!ghResp.ok) {
-          return jsonResp(401, { error: 'GitHub rejected the token' });
-        }
-        const u = await ghResp.json();
-        userLogin = u && u.login;
-      } catch (_) {
-        return jsonResp(502, { error: 'GitHub validation failed' });
-      }
-      if (!userLogin || !REPO_OWNER_ALLOWLIST.has(userLogin)) {
-        return jsonResp(403, { error: 'Token user not allowlisted' });
-      }
+    // Preferred auth is the HttpOnly cookie set by /api/admin/login.
+    // Legacy Authorization remains for external/back-compat clients and
+    // is validated against GitHub /user by the shared helper.
+    const resolved = await resolveAuth(req);
+    if (!resolved) {
+      return jsonResp(401, { error: 'Login required (POST /api/admin/login or Authorization header)' });
     }
     let body;
     try { body = await req.json(); } catch { return jsonResp(400, { error: 'JSON body required' }); }

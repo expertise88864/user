@@ -28,6 +28,7 @@ export const config = { runtime: 'nodejs' };
 const MAX_TITLE = 100;
 const MAX_BODY = 500;
 const MAX_URL = 500;
+const BROADCAST_CONCURRENCY = 20;
 
 function timingSafeBearerEqual(headerValue, expectedToken) {
   if (!expectedToken) return false;
@@ -92,16 +93,24 @@ export default async function handler(req, res) {
   const keysResp = await fetch(`${kvUrl}/smembers/push:subs`, {
     headers: { Authorization: `Bearer ${kvTok}` },
   });
+  if (!keysResp.ok) {
+    res.status(502).json({ error: 'KV subscription index read failed' });
+    return;
+  }
   const keysJson = await keysResp.json();
-  const keys = keysJson.result || [];
+  const keys = Array.isArray(keysJson.result) ? keysJson.result : [];
   const payload = JSON.stringify({ title, body, url: url || '/blog/', icon, tag });
 
   let sent = 0, dead = 0, err = 0;
-  await Promise.all(keys.map(async (key) => {
+  async function sendToKey(key) {
     try {
       const subResp = await fetch(`${kvUrl}/get/${encodeURIComponent(key)}`, {
         headers: { Authorization: `Bearer ${kvTok}` },
       });
+      if (!subResp.ok) {
+        err++;
+        return;
+      }
       const subJson = await subResp.json();
       const sub = JSON.parse(subJson.result || 'null');
       if (!sub) return;
@@ -121,6 +130,9 @@ export default async function handler(req, res) {
         } else { err++; }
       }
     } catch { err++; }
-  }));
+  }
+  for (let i = 0; i < keys.length; i += BROADCAST_CONCURRENCY) {
+    await Promise.all(keys.slice(i, i + BROADCAST_CONCURRENCY).map(sendToKey));
+  }
   res.status(200).json({ ok: true, sent, dead, err, total: keys.length });
 }

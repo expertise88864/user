@@ -29,12 +29,16 @@ def main() -> int:
     require(errors, "api/auth.js", "'Cache-Control': 'no-store'", "OAuth responses should disable caching")
     require(errors, "api/auth.js", "var targetOrigin = ${JSON.stringify(targetOrigin)};", "OAuth popup should postMessage only to the current site origin")
     require(errors, "api/auth.js", "if (e.origin !== targetOrigin) return;", "OAuth popup should ignore messages from other origins")
-    # CODE_REVIEW C5 — scope reduced from `repo,user` to `public_repo`
-    # and popup token release bound to flow state so same-origin XSS
-    # cannot drive-by harvest tokens. Cookie uses __Host- prefix.
+    # Scope is reduced from `repo,user` to `public_repo`. OAuth state is
+    # verified through the HttpOnly __Host- cookie before the standard
+    # Decap popup handshake is allowed to release the token.
     require(errors, "api/auth.js", "const SCOPES = 'public_repo';", "OAuth should request narrowest GitHub scope (public_repo, not repo,user)")
     require(errors, "api/auth.js", "const STATE_COOKIE = '__Host-oauth_state';", "OAuth state cookie should use __Host- prefix")
-    require(errors, "api/auth.js", "var flowState = ${JSON.stringify(state)};", "OAuth popup should bind token release to per-flow state")
+    require(errors, "api/auth.js", "var openerWindow = window.opener;", "OAuth popup should retain the exact opener window")
+    require(errors, "api/auth.js", "if (e.source !== openerWindow) return;", "OAuth popup should accept replies only from its opener")
+    require(errors, "api/auth.js", "if (e.data === 'authorizing:github')", "OAuth popup should use the Decap-compatible handshake message")
+    require(errors, "api/auth.js", "openerWindow.postMessage('authorizing:github', targetOrigin);", "OAuth popup should initiate the standard Decap handshake")
+    forbid(errors, "api/auth.js", "authorizing:github:' + flowState", "OAuth popup should not append state to the Decap handshake")
     forbid(errors, "api/auth.js", "const SCOPES = 'repo,user';", "OAuth should not request the broad `repo,user` scope")
     forbid(errors, "api/auth.js", "postMessage('authorization:github:' + status + ':' + JSON.stringify(content), '*')", "OAuth token should not be posted to wildcard origins")
     forbid(errors, "api/auth.js", "OAuth failed: ${JSON.stringify(data)}", "OAuth errors should not echo provider payloads")
@@ -47,14 +51,21 @@ def main() -> int:
     require(errors, "api/push-send.js", "res.setHeader('Cache-Control', 'no-store');", "admin broadcast responses should not be cached")
     require(errors, "api/push-send.js", "const MAX_TITLE = 100;", "admin broadcast should cap title length")
     require(errors, "api/push-send.js", "const MAX_BODY = 500;", "admin broadcast should cap body length")
+    require(errors, "api/push-send.js", "const BROADCAST_CONCURRENCY = 20;", "admin broadcast should use bounded concurrency")
+    require(errors, "api/push-send.js", "keys.slice(i, i + BROADCAST_CONCURRENCY)", "admin broadcast should process subscriptions in bounded batches")
+    require(errors, "api/push-send.js", "if (!keysResp.ok)", "admin broadcast should handle KV index read failures")
     forbid(errors, "api/push-send.js", "auth.endsWith(process.env.ADMIN_TOKEN)", "admin broadcast should not use suffix token matching")
     forbid(errors, "api/push-send.js", "auth !== `Bearer ${process.env.ADMIN_TOKEN}`", "admin broadcast should not use timing-unsafe string compare")
+    forbid(errors, "api/push-send.js", "Promise.all(keys.map", "admin broadcast should not fan out to every subscriber at once")
 
     require(errors, "api/push-subscribe.js", "if (req.method === 'OPTIONS')", "push subscription endpoint should support CORS preflight")
     require(errors, "api/push-subscribe.js", "Vary: 'Origin'", "push subscription CORS responses should vary by Origin")
     require(errors, "api/push-subscribe.js", "sub.endpoint.startsWith('https://')", "push subscription endpoint should require HTTPS")
     require(errors, "api/push-subscribe.js", "typeof sub.keys.p256dh === 'string'", "push subscription should validate p256dh key")
     require(errors, "api/push-subscribe.js", "typeof sub.keys.auth === 'string'", "push subscription should validate auth key")
+    require(errors, "api/push-subscribe.js", "const MAX_ENDPOINT_LENGTH = 2048;", "push subscription should cap endpoint length")
+    require(errors, "api/push-subscribe.js", "if (!setResp.ok)", "push subscription should verify the KV membership write")
+    require(errors, "api/push-subscribe.js", "/del/${encodeURIComponent(key)}", "push subscription should roll back orphan values after membership failure")
 
     require(errors, "api/rpc.js", "const MAX_BATCH = 20;", "RPC endpoint should cap JSON-RPC batch size")
     require(errors, "api/rpc.js", "if (origin && !ALLOWED_ORIGINS.has(origin))", "RPC endpoint should reject disallowed browser origins")
@@ -81,16 +92,22 @@ def main() -> int:
     require(errors, "api/admin/upload.js", "Unsupported image type; use PNG, JPEG, WebP, AVIF, or GIF", "upload endpoint should reject unsupported image types")
     forbid(errors, "api/admin/upload.js", "m === 'image/svg+xml' || ext === 'svg'", "same-origin SVG uploads should remain disabled")
 
+    require(errors, "api/admin/_session.js", "const login = await validateGitHubIdentity(header);", "legacy PAT fallback should validate GitHub identity and allowlist")
+    require(errors, "api/admin/_session.js", "throw new Error('Secure random generator unavailable');", "admin sessions should fail closed without a CSPRNG")
+    require(errors, "api/admin/_session.js", "catch (_) {\n      // Ignore malformed cookie values", "malformed cookies should not crash admin authentication")
+    forbid(errors, "api/admin/_session.js", "Math.random()", "admin session tokens should never use Math.random")
+
     admin_pat_files = [
         "api/admin/upload.js",
         "api/admin/summarize.js",
         "api/admin/regen-en.js",
-        "api/admin/popular-picks.js",
     ]
     for rel in admin_pat_files:
         require(errors, rel, "const PAT_AUTH_RE = /^token\\s+(?:gh[pousr]_[A-Za-z0-9_]{20,255}|github_pat_[A-Za-z0-9_]{20,255})$/;", "admin PAT auth regex should be anchored and support classic/fine-grained tokens")
         require(errors, rel, "PAT_AUTH_RE.test(auth)", "admin endpoint should use the shared anchored PAT auth regex")
         forbid(errors, rel, "/^token\\s+gh[poas]_[A-Za-z0-9_]+/.test(auth)", "admin endpoint should not use unanchored PAT auth regex")
+    require(errors, "api/admin/popular-picks.js", "import { resolveAuth } from './_session.js';", "admin popular-picks should use shared authentication")
+    require(errors, "api/admin/popular-picks.js", "const resolved = await resolveAuth(req);", "admin popular-picks should validate cookie and legacy PAT through the shared helper")
 
     for rel in ["api/admin/upload.js", "api/admin/summarize.js", "api/admin/regen-en.js"]:
         require(errors, rel, "'Cache-Control': 'no-store'", "admin write endpoint responses should not be cached")

@@ -15,6 +15,9 @@ permissions:
 jobs:
   process:
     runs-on: ubuntu-latest
+    concurrency:
+      group: scheduled-publish-main
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # pin v4 (was @v4)
         with:
@@ -65,8 +68,10 @@ jobs:
               sys.exit(0)
 
           subprocess.check_call(['git', 'fetch', 'origin'])
+          subprocess.check_call(['git', 'pull', '--ff-only', 'origin', 'main'])
 
           merged_any = False
+          merged_branches = []
           for item in due:
               slug = item.get('slug', '<unknown>')
               branch = item.get('branch', f'drafts/{slug}')
@@ -74,20 +79,21 @@ jobs:
               # Check that branch exists on origin
               r = subprocess.run(['git', 'ls-remote', '--heads', 'origin', branch],
                                  capture_output=True, text=True)
+              if r.returncode != 0:
+                  print(f'  Failed to query origin for {branch}: {r.stderr.strip()}')
+                  raise subprocess.CalledProcessError(
+                      r.returncode, r.args, output=r.stdout, stderr=r.stderr
+                  )
               if not r.stdout.strip():
-                  print(f'  Branch {branch} not found on origin — removing from queue without merging')
+                  print(f'  Branch {branch} not found on origin — keeping queue entry for manual recovery')
+                  remaining.append(item)
                   continue
               try:
                   subprocess.check_call(['git', 'merge', '--no-ff', f'origin/{branch}',
                                          '-m', f'scheduled publish: {slug} (queued {item.get("added_at","?")})'])
                   print(f'  ✓ Merged {branch} into main')
                   merged_any = True
-                  # Delete the draft branch from origin (cleanup)
-                  try:
-                      subprocess.check_call(['git', 'push', 'origin', '--delete', branch])
-                      print(f'  ✓ Deleted draft branch {branch}')
-                  except subprocess.CalledProcessError:
-                      print(f'  ⚠ Could not delete {branch}, ignoring')
+                  merged_branches.append(branch)
               except subprocess.CalledProcessError as e:
                   print(f'  ✗ Merge conflict for {branch}: {e}')
                   # Re-queue for manual handling
@@ -108,4 +114,12 @@ jobs:
           if merged_any or r.returncode != 0:
               subprocess.check_call(['git', 'push', 'origin', 'main'])
               print('\n✓ Pushed to main')
+              # Delete source branches only after the main push is durable.
+              # A failed push leaves both queue state and drafts recoverable.
+              for branch in merged_branches:
+                  try:
+                      subprocess.check_call(['git', 'push', 'origin', '--delete', branch])
+                      print(f'  ✓ Deleted draft branch {branch}')
+                  except subprocess.CalledProcessError:
+                      print(f'  ⚠ Could not delete {branch}, ignoring')
           PY

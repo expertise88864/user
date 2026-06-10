@@ -53,25 +53,20 @@
   const PAT_EXP_KEY = 'cd_gh_pat_exp';
   const PAT_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
 
-  function setPat(token) {
+  async function setPat(token) {
     if (!token) return;
+    const response = await fetch('/api/admin/login', {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ pat: token }),
+    });
+    if (!response.ok) throw new Error('Admin login failed');
     try {
       sessionStorage.setItem(PAT_KEY, token);
       sessionStorage.setItem(PAT_EXP_KEY, String(Date.now() + PAT_TTL_MS));
     } catch (_) {}
-    // Phase 2 — fire-and-forget cookie mint. /api/admin/login stores the
-    // PAT server-side keyed by a random session token and Set-Cookies an
-    // HttpOnly cookie back. Subsequent /api/admin/* calls authenticate
-    // via the cookie. If this fails (KV not configured, network blip),
-    // calls still fall back to the legacy Authorization header path.
-    try {
-      fetch('/api/admin/login', {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ pat: token }),
-      }).catch(() => { /* legacy header path still works */ });
-    } catch (_) { /* same */ }
+    return true;
   }
 
   function clearPat() {
@@ -87,6 +82,7 @@
       fetch('/api/admin/logout', {
         method: 'POST',
         credentials: 'same-origin',
+        keepalive: true,
       }).catch(() => {});
     } catch (_) {}
   }
@@ -97,7 +93,7 @@
       // to sessionStorage and purge the localStorage copy.
       const legacy = localStorage.getItem(PAT_KEY);
       if (legacy && !sessionStorage.getItem(PAT_KEY)) {
-        setPat(legacy);
+        setPat(legacy).catch(() => {});
         localStorage.removeItem(PAT_KEY);
         console.info('[admin-extras] PAT migrated from localStorage to sessionStorage');
       }
@@ -117,6 +113,8 @@
 
   // Expose helpers globally for the admin UI's "Login" / "Logout" buttons.
   window.cdAdminAuth = { setPat, clearPat, getPat };
+  const existingPat = getPat();
+  if (existingPat) setPat(existingPat).catch(() => {});
   function getCurrentFile() {
     const t = (document.getElementById('filePath') || {}).textContent || '';
     return t === '尚未選擇檔案' ? null : t;
@@ -906,15 +904,13 @@
   }
   async function savePicks() {
     if (!_picksArr.length) { toast('清單不能空'); return; }
-    // Phase 2 — cookie-first: HttpOnly cookie minted by /api/admin/login
-    // travels via credentials:'same-origin'. The Authorization header is
-    // kept as a transparent fallback for the brief window after PAT paste
-    // before /api/admin/login round-trips (and as a safety net if KV is
-    // misconfigured server-side). Server prefers cookie when both present.
+    // Cookie-first: setPat() waits for /api/admin/login, so the HttpOnly
+    // session is ready before this control can be used. Do not resend the
+    // browser-held PAT to same-origin admin APIs.
     const r = await fetch('/api/admin/popular-picks', {
       method: 'POST',
       credentials: 'same-origin',
-      headers: { 'Content-Type': 'application/json', Authorization: 'token ' + getPat() },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ picks: _picksArr }),
     });
     const j = await r.json();

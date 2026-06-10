@@ -16,6 +16,9 @@ export const config = { runtime: 'edge' };
 const ALLOWED_ORIGINS = [
   'https://chendermatologist.com',
 ];
+const MAX_ENDPOINT_LENGTH = 2048;
+const MAX_P256DH_LENGTH = 256;
+const MAX_AUTH_LENGTH = 128;
 
 function corsHeaders(origin) {
   return {
@@ -32,6 +35,7 @@ function jsonResp(status, obj, origin) {
     status,
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store',
       ...(origin ? corsHeaders(origin) : { Vary: 'Origin' }),
     },
   });
@@ -42,9 +46,14 @@ function isValidSubscription(sub) {
     sub &&
     typeof sub.endpoint === 'string' &&
     sub.endpoint.startsWith('https://') &&
+    sub.endpoint.length <= MAX_ENDPOINT_LENGTH &&
     sub.keys &&
     typeof sub.keys.p256dh === 'string' &&
-    typeof sub.keys.auth === 'string'
+    sub.keys.p256dh.length > 0 &&
+    sub.keys.p256dh.length <= MAX_P256DH_LENGTH &&
+    typeof sub.keys.auth === 'string' &&
+    sub.keys.auth.length > 0 &&
+    sub.keys.auth.length <= MAX_AUTH_LENGTH
   );
 }
 
@@ -100,10 +109,18 @@ export default async function handler(req) {
     return jsonResp(502, { error: 'KV write failed' }, origin);
   }
   // Also push the key into a SET for iteration when broadcasting
-  await fetch(`${kvUrl}/sadd/push:subs/${encodeURIComponent(key)}`, {
+  const setResp = await fetch(`${kvUrl}/sadd/push:subs/${encodeURIComponent(key)}`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${kvToken}` },
   });
+  if (!setResp.ok) {
+    // Avoid an unreachable orphan value when the membership write fails.
+    await fetch(`${kvUrl}/del/${encodeURIComponent(key)}`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${kvToken}` },
+    }).catch(() => {});
+    return jsonResp(502, { error: 'KV index write failed' }, origin);
+  }
   return jsonResp(200, { ok: true }, origin);
 }
 
