@@ -109,8 +109,62 @@ toast('載入失敗：' + err.message, 4000);
 console.error(err);
 });
 }
+function isSafeEditorUrl(value, allowDataImage) {
+var raw = String(value || '').replace(/[\u0000-\u001f\u007f]/g, '').trim();
+var normalized = raw.replace(/\s+/g, '').toLowerCase();
+if (!normalized) return true;
+if (normalized.indexOf('javascript:') === 0 || normalized.indexOf('vbscript:') === 0) return false;
+if (normalized.indexOf('data:') === 0) {
+return Boolean(allowDataImage && /^data:image\/(?:png|jpeg|gif|webp|avif);base64,/.test(normalized));
+}
+try {
+var parsed = new URL(raw, window.location.origin);
+if (allowDataImage) return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+return parsed.protocol === 'http:' || parsed.protocol === 'https:' || parsed.protocol === 'mailto:' || parsed.protocol === 'tel:';
+} catch (_) {
+return false;
+}
+}
+function sanitizeEditableHtml(html) {
+var template = document.createElement('template');
+template.innerHTML = String(html || '');
+template.content.querySelectorAll('script,iframe,object,embed,form,base,meta,link,style,template').forEach(function (node) {
+node.remove();
+});
+template.content.querySelectorAll('*').forEach(function (node) {
+Array.from(node.attributes).forEach(function (attr) {
+var name = attr.name.toLowerCase();
+if (name.indexOf('on') === 0 || name === 'srcdoc' || name === 'nonce' || name === 'ping' || name === 'formaction') {
+node.removeAttribute(attr.name);
+return;
+}
+if ((name === 'href' || name === 'xlink:href') && !isSafeEditorUrl(attr.value, false)) {
+node.removeAttribute(attr.name);
+return;
+}
+if ((name === 'src' || name === 'poster') && !isSafeEditorUrl(attr.value, true)) {
+node.removeAttribute(attr.name);
+return;
+}
+if (name === 'srcset') {
+var safeCandidates = attr.value.split(',').filter(function (candidate) {
+return isSafeEditorUrl(candidate.trim().split(/\s+/)[0], true);
+});
+if (safeCandidates.length) node.setAttribute(attr.name, safeCandidates.join(','));
+else node.removeAttribute(attr.name);
+}
+if (name === 'style' && /(?:expression\s*\(|url\s*\(\s*['"]?\s*(?:javascript|data):|-moz-binding\s*:|behavior\s*:)/i.test(attr.value)) {
+node.removeAttribute(attr.name);
+}
+});
+if (node.tagName === 'A' && node.getAttribute('target') === '_blank') {
+node.setAttribute('rel', 'noopener noreferrer');
+}
+});
+return template.innerHTML;
+}
 function applyEditorContent(html) {
-$editor.innerHTML = html;
+$editor.innerHTML = sanitizeEditableHtml(html);
 $empty.hidden = true;
 $editor.hidden = false;
 $toolbar.hidden = false;
@@ -144,11 +198,17 @@ var sel = window.getSelection();
 var selText = sel && sel.toString();
 var url = prompt('輸入連結網址（例：/blog/some-slug 或 https://...）：', '');
 if (!url) return;
+if (!isSafeEditorUrl(url, false)) {
+toast('連結格式不安全，已取消插入', 3200);
+return;
+}
 if (selText) {
 exec('createLink', url);
 } else {
-var anchor = '<a href="' + url.replace(/"/g, '&quot;') + '">' + url + '</a>';
-exec('insertHTML', anchor);
+var anchor = document.createElement('a');
+anchor.setAttribute('href', url);
+anchor.textContent = url;
+exec('insertHTML', anchor.outerHTML);
 }
 }
 // ─── Keyboard shortcuts ───────────────────────────────────────────────
@@ -176,6 +236,18 @@ $editor.addEventListener('input', function () {
 markDirty(true);
 updateWordCount();
 });
+$editor.addEventListener('paste', function (e) {
+var html = e.clipboardData && e.clipboardData.getData('text/html');
+if (!html) return;
+e.preventDefault();
+exec('insertHTML', sanitizeEditableHtml(html));
+});
+$editor.addEventListener('drop', function (e) {
+var html = e.dataTransfer && e.dataTransfer.getData('text/html');
+if (!html) return;
+e.preventDefault();
+exec('insertHTML', sanitizeEditableHtml(html));
+});
 function markDirty(d) {
 state.dirty = d;
 if (d) {
@@ -201,7 +273,7 @@ if (!state.currentSlug) {
 toast('請先選文章再存草稿', 2400);
 return;
 }
-var html = $editor.innerHTML;
+var html = sanitizeEditableHtml($editor.innerHTML);
 try {
 localStorage.setItem('dn-admin-draft:' + state.currentSlug, html);
 localStorage.setItem('dn-admin-draft:' + state.currentSlug + ':timestamp', new Date().toISOString());
@@ -219,7 +291,7 @@ if (!state.currentSlug || !state.originalHTML) {
 toast('請先載入文章', 2400);
 return;
 }
-var newBody = $editor.innerHTML;
+var newBody = sanitizeEditableHtml($editor.innerHTML);
 // Replace <main>...</main> in original with new content
 var newHTML = state.originalHTML.replace(
 /(<main[^>]*>)[\s\S]*?(<\/main>)/i,
@@ -242,7 +314,7 @@ toast('已匯出 ' + state.currentSlug + '.html');
 // ─── Copy body to clipboard ───────────────────────────────────────────
 function copyBody() {
 if (!state.currentSlug) return toast('請先載入文章', 2400);
-var html = $editor.innerHTML;
+var html = sanitizeEditableHtml($editor.innerHTML);
 navigator.clipboard.writeText(html).then(function () {
 toast('內文已複製（' + Math.round(html.length / 1024) + ' KB）');
 }).catch(function (e) {

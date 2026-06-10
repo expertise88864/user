@@ -158,6 +158,19 @@ def run_smoke(base_url: str) -> list[str]:
         errors.extend(assert_contains(label, body, needles))
         errors.extend(assert_no_eager_dynamic(label, body))
 
+    admin_pages = [
+        ("/admin.html", "full admin", ["/api/admin/login", "frame.setAttribute('sandbox', 'allow-same-origin');"]),
+        ("/admin/", "clean-url full admin", ["/api/admin/login", "frame.setAttribute('sandbox', 'allow-same-origin');"]),
+        ("/admin/edit.html", "simple editor", ["function sanitizeEditableHtml(html)", "anchor.textContent = url;"]),
+    ]
+    for path, label, needles in admin_pages:
+        body, content_type = fetch(base_url, path)
+        if "text/html" not in content_type:
+            errors.append(f"{label}: expected text/html, got {content_type!r}")
+        errors.extend(assert_contains(label, body, needles))
+        if "Decap CMS" in body or "/api/auth" in body:
+            errors.append(f"{label}: references retired Decap/OAuth workflow")
+
     json_body, content_type = fetch(base_url, "/assets/search-index.json")
     if "application/json" not in content_type:
         errors.append(f"search-index: expected application/json, got {content_type!r}")

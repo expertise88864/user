@@ -103,6 +103,11 @@ def main() -> int:
         rel = rel_path.as_posix()
         if any(part in SKIP_DIRS for part in rel_path.parts):
             continue
+        # `git ls-files` still reports paths staged or marked for deletion
+        # until the next commit. Secret checks must work in that normal
+        # review state instead of crashing on a missing worktree file.
+        if not path.is_file():
+            continue
         name = path.name
         if name in SENSITIVE_TRACKED_NAMES or name.endswith(SENSITIVE_TRACKED_SUFFIXES):
             errors.append(f"{rel}: sensitive file should not be tracked")

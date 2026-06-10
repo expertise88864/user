@@ -330,16 +330,28 @@ self.addEventListener('message', (e) => {
 // it as a native notification. Click → opens article URL.
 // Payload schema: { title, body, url, tag?, icon? }
 // ─────────────────────────────────────────────────────────────────────
+function safeNotificationPath(value, fallback) {
+  try {
+    const parsed = new URL(String(value || fallback), self.location.origin);
+    if (parsed.origin !== self.location.origin) return fallback;
+    return parsed.pathname + parsed.search + parsed.hash;
+  } catch {
+    return fallback;
+  }
+}
+
 self.addEventListener('push', (e) => {
   let data = {};
   try { data = e.data ? e.data.json() : {}; } catch { data = { title: 'ChenDermatologist', body: e.data ? e.data.text() : '' }; }
   const title = data.title || 'ChenDermatologist 衛教更新';
+  const targetUrl = safeNotificationPath(data.url, '/blog/');
+  const iconUrl = safeNotificationPath(data.icon, '/apple-touch-icon.png');
   const opts = {
     body: data.body || '新文章上架',
-    icon: data.icon || '/apple-touch-icon.png',
+    icon: iconUrl,
     badge: '/icon.svg',
     tag: data.tag || 'cd-update',
-    data: { url: data.url || '/blog/' },
+    data: { url: targetUrl },
     requireInteraction: false,
     silent: false,
   };
@@ -348,16 +360,13 @@ self.addEventListener('push', (e) => {
 
 self.addEventListener('notificationclick', (e) => {
   e.notification.close();
-  const url = (e.notification.data && e.notification.data.url) || '/blog/';
+  const url = safeNotificationPath(e.notification.data && e.notification.data.url, '/blog/');
   e.waitUntil(
     self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((wins) => {
       // CODE_REVIEW — was `w.url.endsWith(url)` which matched
       // `/blog/myths` against `/blog/acne-myths` (false positive).
       // Use proper URL pathname comparison anchored to the origin.
-      let targetPath;
-      try {
-        targetPath = new URL(url, self.location.origin).pathname;
-      } catch { targetPath = url; }
+      const targetPath = new URL(url, self.location.origin).pathname;
       for (const w of wins) {
         let winPath;
         try { winPath = new URL(w.url).pathname; } catch { winPath = ''; }

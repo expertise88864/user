@@ -24,7 +24,7 @@
 | **E10** | **Pagefind 中文搜尋（_setup_pagefind.bat + /blog/pagefind-search.js）** | **CJK 搜尋準確度 60% → 90%+** |
 | **E11** | **FAQPage JSON-LD 自動產生（45 Q&A 跨 3 篇）** | **Google FAQ rich result** |
 | **E12** | **a11y skip-link + main landmark + focus-visible（92 個 HTML）** | **WCAG 2.1 AA 合規** |
-| **後台** | **完整 admin extras 模組 + 2 個 /api/admin/ 端點** | **電腦端後台編輯體驗大幅升級** |
+| **後台** | **完整 admin extras 模組 + HttpOnly session 寫入流程** | **電腦端後台編輯體驗大幅升級** |
 | **翻譯** | **epidermoid-cyst（180）+ dermatology-faq（203）注入 EN** | **再增 2 篇雙語覆蓋** |
 
 ### 後台編輯模組（admin/admin-extras.js）— 新增功能
@@ -36,15 +36,11 @@
 6. **文章排序拖拉** — 載入 `DN.ARTICLES` 陣列,拖拉調整,儲存後 git commit
 7. **FAQPage JSON-LD 一鍵產生** — 從 `<details><summary>` 自動抽 schema.org 結構化資料
 
-### `/api/admin/upload.js` — 圖片上傳 API
-- 接受 base64 圖片 + 自動命名(去除特殊字元)
-- 直接 PUT 到 `/assets/uploads/` via GitHub Contents API(走使用者自己 PAT,Vercel 不存 token)
-- 8 MB 上限、ADMIN_TOKEN 雙因素可選
-- 回傳 url、commit URL
-
-### `/api/admin/regen-en.js` — EN 鏡像即時重生
-- 接受 `{ slug }`,讀 `blog/<slug>.html`,套用 ZH→EN 轉換規則,寫到 `/en/blog/<slug>.html`
-- 不需要本地跑 Python,後台一鍵更新 EN 版
+### 2026-06-10 review cleanup
+- 移除未被前端呼叫的 `/api/admin/upload`、`/api/admin/summarize`、`/api/admin/regen-en`。
+- 圖片與文章寫入統一走完整後台既有的 GitHub Contents API 流程。
+- EN 鏡像統一由 `_gen_en_pages.py` 產生，避免 serverless 簡化版規則寫壞鏡像。
+- 移除設定與資料來源不相容的 Decap CMS / OAuth 路徑。
 
 ---
 
@@ -108,7 +104,7 @@ img.save('assets/uploads/photo.avif', quality=70)
 **建議**:用 Vercel Edge Functions + SWR(Stale-While-Revalidate)從 GitHub Contents API 讀文章清單,即時包裝成 JSON 回傳。前端輪詢一次,新文章可即時顯示。
 
 ```js
-// /api/articles-recent.js — Edge function
+// Proposed /api/articles-recent.js — Edge function (not currently deployed)
 export const config = { runtime: 'edge' };
 export default async function () {
   const r = await fetch('https://api.github.com/repos/.../contents/blog');
@@ -128,7 +124,7 @@ export default async function () {
 
 **現況**:沒有防誤輸入機制。
 
-**建議**:在 `/api/admin/upload.js` 加 RegEx 清單檢查文章 body 是否含:
+**建議**:在完整後台的文章儲存流程加 RegEx 清單檢查 body 是否含:
 - 醫療誇大字眼(「根治」「永遠不復發」「100% 有效」 — 衛福部禁用)
 - 偽中藥廣告詞
 - 競品連結
@@ -251,14 +247,14 @@ ROI 偏低,**跳過**。
 
 ## 🛠️ 後台 CMS 工作流(已完成的功能)
 
-**現況**:已有 `/admin.html`(視覺編輯 + GitHub PAT) + `/admin/index.html`(Decap CMS)。本批次補上 admin-extras.js + API endpoints。
+**現況**:已有 `/admin`(視覺編輯 + HttpOnly session) + `/admin/edit`(本機草稿 / 匯出)。
 
 **完整能力**:
 - ✅ 視覺(非原始碼)編輯 — 點任何文字直接改
 - ✅ 雙模式切換(視覺 / 原始碼)
-- ✅ 圖片拖拉上傳(走 `/api/admin/upload`)
+- ✅ 圖片拖拉上傳(完整後台直接走 GitHub Contents API)
 - ✅ Ctrl+S 儲存(直接 commit 到 GitHub `main`,git push 不會覆蓋)
-- ✅ Markdown / Decap CMS 雙後台選擇
+- ✅ 完整發佈後台 / 簡易本機編輯器雙模式
 - ✅ SEO 即時評分
 - ✅ 中文錯字偵測(LanguageTool)
 - ✅ 醫學詞彙 auto-link `<dfn>` tooltip
@@ -266,7 +262,7 @@ ROI 偏低,**跳過**。
 - ✅ 版本歷史 + 一鍵還原(從 30 個 commit 任選)
 - ✅ 文章排序拖拉
 - ✅ FAQPage JSON-LD 一鍵產生
-- ✅ EN 鏡像一鍵更新(`/api/admin/regen-en`)
+- ✅ EN 鏡像由完整 build pipeline 一致重建
 
 **為什麼 git push 不會覆蓋編輯**:
 所有後台儲存都走 GitHub API → 變成真實的 git commit → 跟你本地 git push 共用同一條 main branch。後台改的內容**就是 git push 上去的內容**,沒有版本衝突。

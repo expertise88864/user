@@ -28,7 +28,18 @@ export const config = { runtime: 'nodejs' };
 const MAX_TITLE = 100;
 const MAX_BODY = 500;
 const MAX_URL = 500;
+const MAX_ICON = 500;
+const MAX_TAG = 64;
 const BROADCAST_CONCURRENCY = 20;
+
+function isSafeSiteUrl(value) {
+  if (typeof value !== 'string') return false;
+  try {
+    return new URL(value, 'https://chendermatologist.com').origin === 'https://chendermatologist.com';
+  } catch {
+    return false;
+  }
+}
 
 function timingSafeBearerEqual(headerValue, expectedToken) {
   if (!expectedToken) return false;
@@ -72,16 +83,31 @@ export default async function handler(req, res) {
     res.status(400).json({ error: `body must be ≤ ${MAX_BODY} chars` });
     return;
   }
-  if (url !== undefined && (typeof url !== 'string' || url.length > MAX_URL ||
-      !(url.startsWith('/') || url.startsWith('https://chendermatologist.com/')))) {
+  if (url !== undefined && (url.length > MAX_URL || !isSafeSiteUrl(url))) {
     res.status(400).json({ error: 'url must be relative or under chendermatologist.com' });
     return;
   }
-  webpush.setVapidDetails(
-    process.env.VAPID_CONTACT,
-    process.env.VAPID_PUBLIC_KEY,
-    process.env.VAPID_PRIVATE_KEY
-  );
+  if (icon !== undefined && (icon.length > MAX_ICON || !isSafeSiteUrl(icon))) {
+    res.status(400).json({ error: 'icon must be relative or under chendermatologist.com' });
+    return;
+  }
+  if (tag !== undefined && (typeof tag !== 'string' || tag.length > MAX_TAG)) {
+    res.status(400).json({ error: `tag must be ≤ ${MAX_TAG} chars` });
+    return;
+  }
+  const vapidContact = process.env.VAPID_CONTACT;
+  const vapidPublicKey = process.env.VAPID_PUBLIC_KEY;
+  const vapidPrivateKey = process.env.VAPID_PRIVATE_KEY;
+  if (!vapidContact || !vapidPublicKey || !vapidPrivateKey) {
+    res.status(503).json({ error: 'VAPID not configured' });
+    return;
+  }
+  try {
+    webpush.setVapidDetails(vapidContact, vapidPublicKey, vapidPrivateKey);
+  } catch {
+    res.status(503).json({ error: 'VAPID configuration invalid' });
+    return;
+  }
 
   // Fetch all subscription keys from KV SET
   const kvUrl = process.env.KV_REST_API_URL;

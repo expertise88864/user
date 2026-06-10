@@ -17,7 +17,7 @@ NS = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 
 PRIVATE_PAGES = {
     "admin.html": {"route": "/admin", "robots": "noindex,nofollow", "blocked": True},
-    "admin/index.html": {"route": "/admin/", "robots": "noindex,nofollow", "blocked": True},
+    "admin/edit.html": {"route": "/admin/edit", "robots": "noindex,nofollow", "blocked": True},
     "reset-sw.html": {"route": "/reset-sw", "robots": "noindex,nofollow", "blocked": True},
     "en/reset-sw.html": {"route": "/en/reset-sw", "robots": "noindex,nofollow", "blocked": True},
     "offline.html": {"route": "/offline", "robots": "noindex,nofollow", "blocked": False},
@@ -59,14 +59,6 @@ def sitemap_routes() -> set[str]:
         route = url[len(DOMAIN) :] or "/"
         routes.add(route)
     return routes
-
-
-def robots_disallows() -> set[str]:
-    rules: set[str] = set()
-    for line in (ROOT / "robots.txt").read_text(encoding="utf-8").splitlines():
-        if line.lower().startswith("disallow:"):
-            rules.add(line.split(":", 1)[1].strip())
-    return rules
 
 
 def parse_robots(src: str) -> list[tuple[list[str], list[tuple[str, str]]]]:
@@ -116,7 +108,6 @@ def main() -> int:
     errors: list[str] = []
     routes = sitemap_routes()
     robots_src = (ROOT / "robots.txt").read_text(encoding="utf-8")
-    disallows = robots_disallows()
     googlebot_rules = rules_for("Googlebot", parse_robots(robots_src))
 
     for rel, expected in PRIVATE_PAGES.items():
@@ -130,7 +121,7 @@ def main() -> int:
         route = str(expected["route"])
         if route in routes:
             errors.append(f"{rel}: private/noindex route is included in sitemap ({route})")
-        if expected["blocked"] and route not in disallows:
+        if expected["blocked"] and not disallowed(route, googlebot_rules):
             errors.append(f"{rel}: private route should be disallowed in robots.txt ({route})")
 
     for route in sorted(PUBLIC_STATIC_ROUTES):

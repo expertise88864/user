@@ -80,16 +80,31 @@ def main() -> int:
     require_header(errors, config, "/admin.html", "X-Robots-Tag", "noindex")
     require_header(errors, config, "/admin.html", "X-Frame-Options", "DENY")
     require_header(errors, config, "/admin.html", "Content-Security-Policy", "frame-ancestors 'none'")
+    require_header(errors, config, "/admin", "Cache-Control", "no-store")
+    require_header(errors, config, "/admin", "X-Robots-Tag", "noindex")
+    require_header(errors, config, "/admin", "X-Frame-Options", "DENY")
+    require_header(errors, config, "/admin", "Content-Security-Policy", "frame-ancestors 'none'")
+    require_header(errors, config, "/admin/(.*)", "X-Frame-Options", "DENY")
+    require_header(errors, config, "/admin/(.*)", "Content-Security-Policy", "frame-ancestors 'none'")
+    for admin_source in ("/admin.html", "/admin", "/admin/(.*)"):
+        admin_entry = find_header_entry(config, admin_source)
+        if admin_entry:
+            admin_csp = header_map(admin_entry).get("content-security-policy", "")
+            for directive in [
+                "default-src 'self'",
+                "object-src 'none'",
+                "base-uri 'self'",
+                "form-action 'self'",
+                "frame-ancestors 'none'",
+                "connect-src 'self'",
+                "upgrade-insecure-requests",
+            ]:
+                if directive not in admin_csp:
+                    errors.append(f"vercel.json: {admin_source} CSP missing {directive}")
 
-    admin_index = ROOT / "admin" / "index.html"
-    if admin_index.exists():
-        admin_html = admin_index.read_text(encoding="utf-8", errors="replace")
-        if "decap-cms@^" in admin_html or "decap-cms@latest" in admin_html:
-            errors.append("admin/index.html: Decap CMS CDN version should be pinned exactly")
-        if "</main></main>" in admin_html:
-            errors.append("admin/index.html: duplicate </main> closing tag should be removed")
-    else:
-        errors.append("admin/index.html: missing admin shell")
+    for retired in ("admin/index.html", "admin/cms.html", "admin/config.yml"):
+        if (ROOT / retired).exists():
+            errors.append(f"{retired}: retired or unreachable admin shell should remain removed")
 
     scheduled_path = ROOT / ".github" / "workflows" / "scheduled-publish.yml"
     if not scheduled_path.exists():

@@ -4,6 +4,11 @@ _Generated 2026-05-18. Reviewer: Claude (Sonnet 4.5)._
 _Scope: 96 Python scripts · 7 JS bundles · 7 Vercel API endpoints · Service Worker · `vercel.json` · 96 HTML pages._
 _Designed as a baseline for follow-up Codex audit._
 
+> Status update (2026-06-10): this is a historical baseline. The unused
+> `api/rpc.js`, `api/articles-recent.js`, `api/analytics.js`, Decap OAuth
+> stack, and three unwired admin endpoints were removed after call-site
+> verification. Findings below preserve the original review context.
+
 ---
 
 ## TL;DR — top 10 actions, in order
