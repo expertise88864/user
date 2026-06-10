@@ -52,15 +52,6 @@ SECRET_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     # don't flag arbitrary long strings.
     ("Vercel KV / Upstash REST token",
      re.compile(r"KV_REST_API_TOKEN\s*=\s*['\"]?([A-Za-z0-9_-]{40,})['\"]?", re.I)),
-    # CODE_REVIEW — VAPID private key is 32-byte ECDSA → 43-char
-    # base64url. Public key is 65-byte uncompressed → 87-char base64url.
-    # Detect the private one (the sensitive half) by env name + length.
-    ("VAPID private key",
-     re.compile(r"VAPID_PRIVATE_KEY\s*=\s*['\"]?([A-Za-z0-9_-]{43,90})['\"]?", re.I)),
-    # CODE_REVIEW — ADMIN_TOKEN is a 32-byte hex (per push-send.js header
-    # comment: `openssl rand -hex 32`). Detect by env name + min length.
-    ("ADMIN_TOKEN",
-     re.compile(r"ADMIN_TOKEN\s*=\s*['\"]?([A-Fa-f0-9]{32,})['\"]?", re.I)),
     (
         "literal secret assignment",
         re.compile(

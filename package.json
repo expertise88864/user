@@ -5,7 +5,6 @@
   "type": "module",
   "description": "DermNotes — ChenDermatologist study notes & patient education site (Traditional Chinese / English bilingual).",
   "scripts": {
-    "vapid": "web-push generate-vapid-keys",
     "serve": "node _serve.mjs",
     "minify": "python _minify.py",
     "regen": "python _run_quality.py regen",
@@ -36,9 +35,6 @@
     "check-supply-chain": "python _check_supply_chain.py",
     "check-js": "python _check_js_syntax.py",
     "check-smoke": "python _check_runtime_smoke.py"
-  },
-  "dependencies": {
-    "web-push": "3.6.7"
   },
   "engines": {
     "node": ">=20"

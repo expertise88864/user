@@ -7,18 +7,15 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-# Serialize feed-regen runs so two pushes don't race each other to write
-# to main (the loser used to fail with "fetch first" rejected). When a
-# new push arrives while a previous regen is still running, the new one
-# waits; the previous one's commits get picked up before the new one
-# runs _gen_feeds.py.
+# Serialize canonical regeneration runs so two pushes do not race each
+# other to write generated files back to main.
 concurrency:
   group: feeds-regen-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
   feeds-regen:
-    name: Auto-regen sitemap.xml + RSS / Atom feeds
+    name: Auto-regen canonical generated files
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
     permissions:
@@ -29,47 +26,18 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # pin v5 (was @v5)
         with: { python-version: '3.12' }
-      - name: Normalize bilingual attributes
-        run: python _normalize_bilingual_attrs.py
-      - name: Normalize schema identity
-        run: python _normalize_schema.py
-      - name: Normalize social images
-        run: python _normalize_social_images.py
-      - name: Normalize CSS links
-        run: python _normalize_css_links.py
-      - name: Normalize heading structure
-        run: python _normalize_heading_structure.py
-      - name: Regen /en/ mirror
-        run: python _gen_en_pages.py
-      - name: Normalize generated schema
-        run: python _normalize_schema.py --include-en
-      - name: Normalize social URLs
-        run: python _normalize_social_urls.py
-      - name: Normalize third-party loaders
-        run: python _normalize_third_party.py
-      - name: Normalize external link rel attributes
-        run: python _normalize_external_links.py
-      - name: Normalize button types
-        run: python _normalize_button_types.py
-      - name: Normalize generated CSS links
-        run: python _normalize_css_links.py
-      - name: Normalize generated heading structure
-        run: python _normalize_heading_structure.py
-      - name: Re-minify blog runtime bundles
-        # The production site loads minified split bundles. Re-minify on every
-        # push so generated runtime files always reflect their sources.
-        run: python _minify.py
-      - name: Run feed generator
-        run: python _gen_feeds.py
-      - name: Normalize robots.txt
-        run: python _normalize_robots.py
+      - name: Regenerate canonical site files
+        run: |
+          python _run_quality.py regen
+          python _gen_search_index.py
+          python _minify.py
       - name: Commit + push with retry on race
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add en/ sitemap.xml blog/feed.xml blog/atom.xml blog/*.js blog/*.html *.html || true
-          if [[ -z $(git status -s en/ sitemap.xml blog/feed.xml blog/atom.xml blog/*.js blog/*.html *.html) ]]; then
-            echo "feeds + /en/ + runtime bundles already up-to-date"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "generated files already up-to-date"
             exit 0
           fi
           # Commit-message tokens:
@@ -79,8 +47,9 @@ jobs:
           #   reflects the canonical state (admin edit + auto-regen).
           # - Previously used `[skip ci]` which Vercel ALSO honors, causing
           #   admin saves to silently not deploy. Switched 2026-05-14.
-          git commit -m "auto-regen /en/ mirror + feeds + runtime bundles [skip actions]"
-          # Retry push up to 5 times with rebase, in case another push raced us
+          git commit -m "auto-regen canonical generated files [skip actions]"
+          # Regenerate after every rebase so generated files describe the
+          # newest source tree, not the commit that originally triggered us.
           for attempt in 1 2 3 4 5; do
             if git push; then
               echo "Pushed on attempt $attempt"
@@ -88,6 +57,13 @@ jobs:
             fi
             echo "Push attempt $attempt rejected — pulling + rebasing"
             git pull --rebase origin main
+            python _run_quality.py regen
+            python _gen_search_index.py
+            python _minify.py
+            git add -A
+            if ! git diff --cached --quiet; then
+              git commit --amend --no-edit
+            fi
           done
           echo "::error::Failed to push after 5 attempts"
           exit 1

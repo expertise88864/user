@@ -87,11 +87,21 @@ def load_homepage_tags() -> dict[str, dict[str, str]]:
 
 # --- Git date helper (mirror of _normalize_date_modified.py) ----------------
 
+AUTO_REGEN_SUBJECT_RE = (
+    r"^auto-regen (canonical generated files|/en/ mirror \+ feeds \+ runtime bundles)"
+)
+
+
 def git_last_modified(path: Path) -> str | None:
     try:
         rel = path.relative_to(ROOT).as_posix()
         result = subprocess.run(
-            ["git", "log", "-1", "--format=%cs", "--", rel],
+            [
+                "git", "log", "-1", "--format=%cs",
+                "--extended-regexp", "--invert-grep",
+                f"--grep={AUTO_REGEN_SUBJECT_RE}",
+                "--", rel,
+            ],
             cwd=str(ROOT),
             capture_output=True,
             text=True,

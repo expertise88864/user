@@ -179,19 +179,11 @@ Reads/writes `bm:<session>` keys directly. No KV-side issuance, no expiry, no bi
 - **CSP missing `report-uri`/`report-to`** — silent CSP violations.
 - **CSP missing `require-trusted-types-for 'script'`** — would harden DOM-XSS sinks.
 - **CSP `connect-src` includes `api.github.com`, `uploads.github.com`, `raw.githubusercontent.com`, `api.languagetool.org`** — admin-only; scope to `/admin/(.*)` route.
-- **`_check_secrets.py` patterns** cover GitHub PAT, OpenAI, Anthropic, AWS, PEM blocks — missing VAPID private key (44-byte base64url), Vercel KV tokens, GitHub OAuth client secret patterns.
+- **`_check_secrets.py` patterns** cover GitHub PAT, OpenAI, Anthropic, AWS, PEM blocks, Vercel KV tokens, and GitHub OAuth client secrets.
 
 ### API endpoints
 
-- **`api/rpc.js:33-36` + `api/push-subscribe.js:14-17` CORS allowlist includes `www.` variant** — the post-redirect Origin is already apex, so this entry never legitimately matches but widens the allowlist if the 301 ever breaks. Drop it.
-
-- **`api/push-subscribe.js:50-106` has no rate limit + no endpoint length cap.** Bot loop can exhaust Vercel KV free tier. Add per-IP INCR+EX, cap `JSON.stringify(sub).length`, restrict `endpoint` to known push services.
-
-- **`api/push-send.js:30-34` Bearer compare is timing-unsafe.** Use `crypto.timingSafeEqual` on equal-length buffers.
-
-- **`api/push-send.js:35` `req.body` destructure has no length caps.** A 1 MB `body` is broadcast to every subscriber. Cap title ≤ 100, body ≤ 500, url validated.
-
-- **`api/rpc.js:165` + `api/articles-recent.js:28-29` use anonymous GitHub API** (60 req/hr). 50-article batch can exhaust quota. Use `GITHUB_TOKEN` PAT (5000/hr) + KV cache.
+- **Resolved 2026-06-10:** the unused RPC, recent-article, analytics, and Web Push endpoints were retired. Push enrollment had no live caller, so the VAPID tooling, runtime handlers, and `web-push` dependency were removed instead of preserving dormant attack surface.
 
 ### SEO / HTML
 
@@ -244,8 +236,6 @@ Reads/writes `bm:<session>` keys directly. No KV-side issuance, no expiry, no bi
 - **HSTS preload** (`max-age=63072000; includeSubDomains; preload`) is full strength.
 - **`X-XSS-Protection: 0`** correctly disables the legacy XSS auditor (modern OWASP guidance).
 - **`og.js` escapes XML and caps query lengths** — XML injection closed.
-- **`push-subscribe.js` validates endpoint must be `https://`, hashes endpoint for KV key, sets 1-year TTL** — correct Web Push hygiene.
-- **`push-send.js` auto-purges dead subscriptions on 410/404** — correct.
 - **`articles-recent.js` caps head read at 4 KB, cancels reader, bounds concurrency at 8** — defensive.
 - **22 CI gates run on every push.** Quality gate has high coverage.
 - **`_check_seo_signals.py`** (added batch18) locks in batches 12–17 SERP signals as deploy-blocking.

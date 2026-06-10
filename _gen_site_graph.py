@@ -22,7 +22,6 @@ from __future__ import annotations
 
 import io
 import math
-import os
 import random
 import re
 import sys
@@ -75,7 +74,10 @@ def parse_edges(slugs: set[str]) -> list[tuple[str, str]]:
             dst = em.group(1)
             if dst in slugs and dst != src_slug:
                 edges.append((src_slug, dst))
-    return edges
+    # Directory iteration order differs across filesystems and operating
+    # systems. Stable ordering keeps the force simulation byte-for-byte
+    # reproducible in local builds and GitHub Actions.
+    return sorted(edges)
 
 
 def layout(nodes: list[str], edges: list[tuple[str, str]],
@@ -224,7 +226,7 @@ def render_svg(articles: list[dict], edges: list[tuple[str, str]],
 
 
 def main() -> int:
-    articles = parse_articles()
+    articles = sorted(parse_articles(), key=lambda article: article["slug"])
     slugs = {a["slug"] for a in articles}
     edges = parse_edges(slugs)
 

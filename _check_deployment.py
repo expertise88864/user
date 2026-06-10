@@ -123,6 +123,40 @@ def main() -> int:
             errors.append("scheduled-publish.yml: scheduled runs should be serialized")
         if "if r.returncode != 0:" not in scheduled or "raise subprocess.CalledProcessError" not in scheduled:
             errors.append("scheduled-publish.yml: remote branch lookup failures should fail visibly")
+        for guard in [
+            "SLUG_RE.fullmatch(slug)",
+            "branch != f'drafts/{slug}'",
+            "file_path != f'blog/{slug}.html'",
+            "if at.tzinfo is None:",
+        ]:
+            if guard not in scheduled:
+                errors.append(f"scheduled-publish.yml: missing queue safety guard {guard}")
+
+    quality_path = ROOT / ".github" / "workflows" / "quality.yml"
+    if not quality_path.exists():
+        errors.append(".github/workflows/quality.yml: missing quality workflow")
+    else:
+        quality = quality_path.read_text(encoding="utf-8", errors="replace")
+        for command in [
+            "python _run_quality.py regen",
+            "python _gen_search_index.py",
+            "python _minify.py",
+            "git add -A",
+            "git commit --amend --no-edit",
+        ]:
+            if command not in quality:
+                errors.append(f"quality.yml: canonical auto-regen missing {command}")
+
+    graph_generator = (ROOT / "_gen_site_graph.py").read_text(encoding="utf-8", errors="replace")
+    if "return sorted(edges)" not in graph_generator:
+        errors.append("_gen_site_graph.py: graph edges should be sorted for deterministic builds")
+    if 'sorted(parse_articles(), key=lambda article: article["slug"])' not in graph_generator:
+        errors.append("_gen_site_graph.py: graph nodes should be sorted for deterministic builds")
+
+    for date_script in ("_normalize_date_modified.py", "_normalize_article_metadata.py"):
+        date_source = (ROOT / date_script).read_text(encoding="utf-8", errors="replace")
+        if "--invert-grep" not in date_source or "AUTO_REGEN_SUBJECT_RE" not in date_source:
+            errors.append(f"{date_script}: git-derived freshness dates should ignore auto-regen commits")
 
     global_entry = find_header_entry(config, "/(.*)")
     if not global_entry:

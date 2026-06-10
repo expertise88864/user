@@ -1808,8 +1808,8 @@
       // 2026-05-08 — PDF / 列印 download button removed per user (overlapped font sizer + back-to-top).
       // idle(function () { DN.injectPdfButton && DN.injectPdfButton(); }, { timeout: 1800 });
       // 2026-05-07 — article-footer email newsletter card disabled per user.
-      // Push notifications + the homepage newsletter section already cover the
-      // notification surface; double-prompting at every article-end was noisy.
+      // The homepage newsletter already covers this surface; prompting again
+      // at every article end was noisy.
       // idle(function () { DN.injectNewsletterCard && DN.injectNewsletterCard(); }, { timeout: 4500 });
 
       // Per-article calculator priority lives in blog-calculators.js

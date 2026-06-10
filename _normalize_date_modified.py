@@ -34,8 +34,8 @@ For that, we either:
       file as the canonical dateModified
 
 Option (b) is cleaner and matches reality. Switching to it:
-  - For each article, read git log -1 --format=%aI -- <path>
-  - That's the last commit that touched the file
+  - For each article, read the latest non-auto-regen git commit that
+    touched the file
   - Use that ISO date as dateModified
 
 This avoids needing a hash sidecar entirely AND correctly reflects
@@ -56,6 +56,9 @@ if hasattr(sys.stdout, "reconfigure"):
 ROOT = Path(__file__).resolve().parent
 BLOG = ROOT / "blog"
 EN_BLOG = ROOT / "en" / "blog"
+AUTO_REGEN_SUBJECT_RE = (
+    r"^auto-regen (canonical generated files|/en/ mirror \+ feeds \+ runtime bundles)"
+)
 
 
 def git_last_modified(path: Path) -> str | None:
@@ -65,7 +68,12 @@ def git_last_modified(path: Path) -> str | None:
     try:
         rel = path.relative_to(ROOT).as_posix()
         result = subprocess.run(
-            ["git", "log", "-1", "--format=%cs", "--", rel],
+            [
+                "git", "log", "-1", "--format=%cs",
+                "--extended-regexp", "--invert-grep",
+                f"--grep={AUTO_REGEN_SUBJECT_RE}",
+                "--", rel,
+            ],
             cwd=str(ROOT),
             capture_output=True,
             text=True,

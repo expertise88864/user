@@ -2032,6 +2032,10 @@ document.getElementById('scheduleBtn').addEventListener('click', openScheduleMod
 function openScheduleModal(){
   if(!CURRENT_FILE){ alert('請先選一個檔案'); return; }
   if(!PAT){ alert('請先登入 PAT'); return; }
+  if(!/^blog\/[a-z0-9]+(?:-[a-z0-9]+)*\.html$/.test(CURRENT_FILE)){
+    alert('排程發布僅支援 blog/<slug>.html 文章');
+    return;
+  }
   const slug = CURRENT_FILE.replace(/.*\//, '').replace(/\.[^.]+$/, '');
   const slugLabel = escapeHtml(slug);
   // Default: 1 hour from now, local datetime format

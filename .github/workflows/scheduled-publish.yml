@@ -32,16 +32,20 @@ jobs:
       - name: Process scheduled queue
         run: |
           python3 <<'PY'
-          import json, subprocess, os, sys
+          import json, subprocess, os, re, sys
           from datetime import datetime, timezone
 
           QUEUE_PATH = '.github/scheduled-publish/queue.json'
+          SLUG_RE = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
           if not os.path.exists(QUEUE_PATH):
               print('No queue file at', QUEUE_PATH, '— nothing to do.')
               sys.exit(0)
 
           with open(QUEUE_PATH, encoding='utf-8') as f:
               queue = json.load(f)
+
+          if not isinstance(queue, list):
+              raise ValueError('Scheduled publish queue must be a JSON array')
 
           if not queue:
               print('Queue is empty.')
@@ -51,8 +55,22 @@ jobs:
           due, remaining = [], []
           for item in queue:
               try:
+                  if not isinstance(item, dict):
+                      raise ValueError('entry must be an object')
+                  slug = item.get('slug')
+                  branch = item.get('branch')
+                  file_path = item.get('file')
+                  if not isinstance(slug, str) or not SLUG_RE.fullmatch(slug):
+                      raise ValueError('invalid slug')
+                  if branch != f'drafts/{slug}':
+                      raise ValueError('branch must exactly match drafts/<slug>')
+                  if file_path != f'blog/{slug}.html':
+                      raise ValueError('file must exactly match blog/<slug>.html')
                   at_str = item['at'].replace('Z', '+00:00')
                   at = datetime.fromisoformat(at_str)
+                  if at.tzinfo is None:
+                      raise ValueError('scheduled time must include a timezone')
+                  at = at.astimezone(timezone.utc)
               except Exception as e:
                   print(f'  skip malformed entry: {item} ({e})')
                   remaining.append(item)
@@ -73,8 +91,8 @@ jobs:
           merged_any = False
           merged_branches = []
           for item in due:
-              slug = item.get('slug', '<unknown>')
-              branch = item.get('branch', f'drafts/{slug}')
+              slug = item['slug']
+              branch = item['branch']
               print(f'\n>>> Processing {slug} from {branch}')
               # Check that branch exists on origin
               r = subprocess.run(['git', 'ls-remote', '--heads', 'origin', branch],

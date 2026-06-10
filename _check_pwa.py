@@ -116,12 +116,8 @@ def audit_service_worker(errors: list[str]) -> None:
         errors.append("sw.js should bypass /api so dynamic API responses are never cached")
     if "url.pathname === '/reset-sw'" not in src:
         errors.append("sw.js should bypass reset-sw pages")
-    if "function safeNotificationPath(value, fallback)" not in src:
-        errors.append("sw.js should normalize push notification URLs to same-origin paths")
-    if "parsed.origin !== self.location.origin" not in src:
-        errors.append("sw.js should reject cross-origin push notification targets")
-    if "self.clients.openWindow(url)" not in src:
-        errors.append("sw.js should open only the normalized notification URL")
+    if "self.addEventListener('push'" in src or "self.addEventListener('notificationclick'" in src:
+        errors.append("sw.js should not retain the retired push-notification runtime")
 
     match = re.search(r"const\s+PRECACHE\s*=\s*\[([\s\S]*?)\];", src)
     if not match:

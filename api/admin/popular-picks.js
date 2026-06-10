@@ -1,27 +1,10 @@
-// G2 — Admin endpoint to read/write DN.POPULAR_PICKS via Vercel KV.
+// Public read and authenticated admin write for DN.POPULAR_PICKS.
 //
-// Why: previously POPULAR_PICKS was hard-coded in blog-shared.js. Updating it
-// required a code commit + redeploy. With this endpoint, the admin UI can
-// change "熱門推薦" instantly without git push.
-//
-// On the public side, blog-shared.js fetches /api/popular-picks (no auth) at
-// runtime and falls back to its hard-coded default if KV is empty.
-//
-// Methods:
-//   GET  → returns { picks: [...] }                 (public, KV-backed)
-//   POST → updates picks. Body: { picks: ["slug1", ...] }   (auth required)
-//
-// Auth (POST):
-//   PREFERRED: HttpOnly session cookie set by /api/admin/login (PAT never
-//   travels back to the browser, can't be exfiltrated by XSS).
-//   LEGACY:    Authorization: token ghp_… header (still works; validated
-//   against GitHub /user). Deprecated; the admin UI should migrate to
-//   the cookie flow.
-//
-// KV keys:
-//   dn:popular-picks  → JSON array of slugs
+// GET is cached at the edge and lets blog-shared.js refresh the hard-coded
+// fallback without a redeploy. POST requires the HttpOnly admin session set
+// by /api/admin/login.
 
-import { resolveAuth } from './_session.js';
+import { getSession } from './_session.js';
 
 export const config = { runtime: 'edge' };
 
@@ -30,7 +13,7 @@ const MAX_PICKS = 12;
 const FALLBACK = [
   'acne-myths',
   'sunscreen-myths',
-  'eczema-myths',
+  'atopic-dermatitis-overview',
   'topical-steroids-guide',
   'hairloss-myths',
 ];
@@ -49,12 +32,12 @@ async function kvGet(key) {
   const token = process.env.KV_REST_API_TOKEN;
   if (!url || !token) return null;
   try {
-    const r = await fetch(`${url}/get/${encodeURIComponent(key)}`, {
+    const response = await fetch(`${url}/get/${encodeURIComponent(key)}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
-    if (!r.ok) return null;
-    const j = await r.json();
-    return j.result ? JSON.parse(j.result) : null;
+    if (!response.ok) return null;
+    const payload = await response.json();
+    return payload.result ? JSON.parse(payload.result) : null;
   } catch (_) {
     return null;
   }
@@ -64,7 +47,7 @@ async function kvSet(key, value) {
   const url = process.env.KV_REST_API_URL;
   const token = process.env.KV_REST_API_TOKEN;
   if (!url || !token) throw new Error('KV not configured');
-  const r = await fetch(`${url}/set/${encodeURIComponent(key)}`, {
+  const response = await fetch(`${url}/set/${encodeURIComponent(key)}`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -72,52 +55,53 @@ async function kvSet(key, value) {
     },
     body: JSON.stringify(value),
   });
-  if (!r.ok) {
-    const t = await r.text();
-    throw new Error(`KV set failed: ${r.status} ${t}`);
-  }
+  if (!response.ok) throw new Error('KV write failed');
 }
 
 export default async function handler(req) {
-  // Public read
   if (req.method === 'GET') {
     const stored = await kvGet(KV_KEY);
     return jsonResp(200, { picks: stored || FALLBACK, fallback: !stored }, {
-      // Edge cache 60s, stale-while-revalidate 5 min
       'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300',
       'Access-Control-Allow-Origin': '*',
     });
   }
 
-  // Admin write
   if (req.method === 'POST') {
-    // Preferred auth is the HttpOnly cookie set by /api/admin/login.
-    // Legacy Authorization remains for external/back-compat clients and
-    // is validated against GitHub /user by the shared helper.
-    const resolved = await resolveAuth(req);
-    if (!resolved) {
-      return jsonResp(401, { error: 'Login required (POST /api/admin/login or Authorization header)' });
+    const session = await getSession(req);
+    if (!session) {
+      return jsonResp(401, { error: 'Login required' });
     }
+
     let body;
-    try { body = await req.json(); } catch { return jsonResp(400, { error: 'JSON body required' }); }
+    try {
+      body = await req.json();
+    } catch {
+      return jsonResp(400, { error: 'JSON body required' });
+    }
+
     const picks = body && body.picks;
-    if (!Array.isArray(picks)) return jsonResp(400, { error: 'picks must be an array' });
+    if (!Array.isArray(picks)) {
+      return jsonResp(400, { error: 'picks must be an array' });
+    }
     if (picks.length === 0 || picks.length > MAX_PICKS) {
       return jsonResp(400, { error: `picks length must be 1..${MAX_PICKS}` });
     }
+
     const cleaned = picks
-      .filter(s => typeof s === 'string')
-      .map(s => s.trim())
-      .filter(s => /^[a-z0-9-]+$/.test(s));
+      .filter(slug => typeof slug === 'string')
+      .map(slug => slug.trim())
+      .filter(slug => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug));
     if (cleaned.length !== picks.length) {
-      return jsonResp(400, { error: 'invalid slug format (only a-z 0-9 -)' });
+      return jsonResp(400, { error: 'invalid slug format' });
     }
     if (new Set(cleaned).size !== cleaned.length) {
       return jsonResp(400, { error: 'duplicate slugs are not allowed' });
     }
+
     try {
       await kvSet(KV_KEY, cleaned);
-    } catch (e) {
+    } catch (_) {
       return jsonResp(503, { error: 'Popular picks update failed' });
     }
     return jsonResp(200, { ok: true, picks: cleaned });
