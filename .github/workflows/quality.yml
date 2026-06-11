@@ -26,11 +26,15 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # pin v5 (was @v5)
         with: { python-version: '3.12' }
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # pin v4 (was @v4)
+        with: { node-version: '20' }
       - name: Regenerate canonical site files
         run: |
           python _run_quality.py regen
           python _gen_search_index.py
           python _minify.py
+          python _run_quality.py check
       - name: Commit + push with retry on race
         run: |
           git config user.name "github-actions[bot]"
@@ -60,6 +64,7 @@ jobs:
             python _run_quality.py regen
             python _gen_search_index.py
             python _minify.py
+            python _run_quality.py check
             git add -A
             if ! git diff --cached --quiet; then
               git commit --amend --no-edit

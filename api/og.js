@@ -21,8 +21,16 @@
 
 export const config = { runtime: 'edge' };
 
+function sanitizeXmlText(value, maxChars) {
+  const cleaned = String(value || '')
+    .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f]/g, '');
+  return Number.isInteger(maxChars)
+    ? Array.from(cleaned).slice(0, maxChars).join('')
+    : cleaned;
+}
+
 function escapeXml(s) {
-  return String(s || '')
+  return sanitizeXmlText(s)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -123,10 +131,10 @@ export default async function handler(req) {
   }
 
   const url = new URL(req.url);
-  const title = (url.searchParams.get('title') || '').slice(0, 120);
-  const tag = (url.searchParams.get('tag') || '').slice(0, 30);
-  const date = (url.searchParams.get('date') || '').slice(0, 30);
-  const subtitle = (url.searchParams.get('subtitle') || '').slice(0, 80);
+  const title = sanitizeXmlText(url.searchParams.get('title'), 120);
+  const tag = sanitizeXmlText(url.searchParams.get('tag'), 30);
+  const date = sanitizeXmlText(url.searchParams.get('date'), 30);
+  const subtitle = sanitizeXmlText(url.searchParams.get('subtitle'), 80);
 
   const svg = buildSvg(title, tag, date, subtitle);
 
@@ -134,6 +142,9 @@ export default async function handler(req) {
     status: 200,
     headers: {
       'Content-Type': 'image/svg+xml; charset=utf-8',
+      'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+      'Content-Disposition': 'inline',
+      'X-Content-Type-Options': 'nosniff',
       // Aggressive edge cache: same query string returns same image
       'Cache-Control': 'public, max-age=86400, s-maxage=2592000, stale-while-revalidate=2592000, immutable',
       // CODE_REVIEW — was `Access-Control-Allow-Origin: *`. SVG can

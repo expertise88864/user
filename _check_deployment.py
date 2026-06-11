@@ -101,6 +101,20 @@ def main() -> int:
             ]:
                 if directive not in admin_csp:
                     errors.append(f"vercel.json: {admin_source} CSP missing {directive}")
+    header_sources = [entry.get("source") for entry in config.get("headers", [])]
+    broad_indices = [
+        header_sources.index(source)
+        for source in ("/(.*).html", "/(.*)")
+        if source in header_sources
+    ]
+    if broad_indices:
+        last_broad_index = max(broad_indices)
+        for admin_source in ("/admin.html", "/admin", "/admin/(.*)"):
+            if admin_source in header_sources and header_sources.index(admin_source) <= last_broad_index:
+                errors.append(
+                    f"vercel.json: {admin_source} must follow broad header rules "
+                    "so its strict CSP and DENY frame policy win"
+                )
 
     for retired in ("admin/index.html", "admin/cms.html", "admin/config.yml"):
         if (ROOT / retired).exists():
@@ -141,11 +155,29 @@ def main() -> int:
             "python _run_quality.py regen",
             "python _gen_search_index.py",
             "python _minify.py",
+            "python _run_quality.py check",
             "git add -A",
             "git commit --amend --no-edit",
         ]:
             if command not in quality:
                 errors.append(f"quality.yml: canonical auto-regen missing {command}")
+
+    runner = (ROOT / "_run_quality.py").read_text(encoding="utf-8", errors="replace")
+    date_step = '[PY, "_normalize_date_modified.py"]'
+    if runner.count(date_step) != 1:
+        errors.append("_run_quality.py: dateModified normalizer should appear exactly once")
+    else:
+        date_index = runner.index(date_step)
+        for dependent_step in (
+            '[PY, "_gen_en_pages.py"]',
+            '[PY, "_gen_feeds.py"]',
+            '[PY, "_gen_llms_full.py"]',
+        ):
+            if dependent_step not in runner or date_index > runner.index(dependent_step):
+                errors.append(
+                    f"_run_quality.py: {date_step} must run before {dependent_step} "
+                    "to keep generated freshness metadata consistent"
+                )
 
     graph_generator = (ROOT / "_gen_site_graph.py").read_text(encoding="utf-8", errors="replace")
     if "return sorted(edges)" not in graph_generator:

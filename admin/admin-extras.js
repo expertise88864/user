@@ -53,8 +53,7 @@
   const PAT_EXP_KEY = 'cd_gh_pat_exp';
   const PAT_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
 
-  async function setPat(token) {
-    if (!token) return;
+  async function createServerSession(token) {
     const response = await fetch('/api/admin/login', {
       method: 'POST',
       credentials: 'same-origin',
@@ -62,6 +61,11 @@
       body: JSON.stringify({ pat: token }),
     });
     if (!response.ok) throw new Error('Admin login failed');
+  }
+
+  async function setPat(token) {
+    if (!token) return;
+    await createServerSession(token);
     try {
       sessionStorage.setItem(PAT_KEY, token);
       sessionStorage.setItem(PAT_EXP_KEY, String(Date.now() + PAT_TTL_MS));
@@ -100,8 +104,8 @@
       const tok = sessionStorage.getItem(PAT_KEY) || '';
       if (!tok) return '';
       // Check expiry — if past, clear and treat as missing.
-      const exp = parseInt(sessionStorage.getItem(PAT_EXP_KEY) || '0', 10);
-      if (exp && Date.now() > exp) {
+      const exp = Number(sessionStorage.getItem(PAT_EXP_KEY));
+      if (!Number.isFinite(exp) || exp <= Date.now()) {
         clearPat();
         return '';
       }
@@ -114,7 +118,9 @@
   // Expose helpers globally for the admin UI's "Login" / "Logout" buttons.
   window.cdAdminAuth = { setPat, clearPat, getPat };
   const existingPat = getPat();
-  if (existingPat) setPat(existingPat).catch(() => {});
+  // Recreate the HttpOnly session without extending the fixed browser-side
+  // deadline on every reload.
+  if (existingPat) createServerSession(existingPat).catch(() => {});
   function getCurrentFile() {
     const t = (document.getElementById('filePath') || {}).textContent || '';
     return t === '尚未選擇檔案' ? null : t;

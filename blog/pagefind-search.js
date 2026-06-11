@@ -12,6 +12,7 @@
 
 let pagefind = null;
 let modal = null;
+let searchRequestId = 0;
 
 async function loadPagefind() {
   if (pagefind) return pagefind;
@@ -34,9 +35,9 @@ function escapeHtml(value) {
 }
 
 function safeResultUrl(value) {
-  const url = String(value || '');
-  if (!url.startsWith('/') || url.startsWith('//')) return '#';
-  return url.replace(/[\u0000-\u001f\u007f]/g, '');
+  const url = String(value || '').replace(/[\u0000-\u001f\u007f]/g, '');
+  if (url[0] !== '/' || url[1] === '/' || url.includes('\\')) return '#';
+  return url;
 }
 
 function sanitizeExcerpt(value) {
@@ -86,6 +87,7 @@ function buildModal() {
 }
 
 async function doSearch(q) {
+  const requestId = ++searchRequestId;
   const list = modal.querySelector('.pf-results');
   if (!q || q.length < 1) { list.innerHTML = ''; return; }
   if (!pagefind) {
@@ -95,11 +97,13 @@ async function doSearch(q) {
   list.innerHTML = '<div style="padding:24px;text-align:center;color:#8b8378">搜尋中...</div>';
   try {
     const search = await pagefind.search(q);
+    if (requestId !== searchRequestId) return;
     if (!search.results.length) {
       list.innerHTML = '<div style="padding:24px;text-align:center;color:#5e574e">沒找到相關文章</div>';
       return;
     }
     const items = await Promise.all(search.results.slice(0, 8).map(r => r.data()));
+    if (requestId !== searchRequestId) return;
     list.innerHTML = items.map(d => `
 <a href="${escapeHtml(safeResultUrl(d.url))}" style="display:block;padding:12px 14px;border-radius:8px;text-decoration:none;color:#2a2620;border:1px solid transparent;margin:4px 0">
   <div style="font-weight:600;font-size:14.5px;color:#0c5159">${escapeHtml(d.meta && d.meta.title || '(無標題)')}</div>
@@ -122,5 +126,6 @@ export async function openSearch() {
 }
 
 export function closeSearch() {
+  searchRequestId += 1;
   if (modal) modal.style.display = 'none';
 }

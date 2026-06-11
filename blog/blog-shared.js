@@ -352,9 +352,9 @@
     }
 
     function safeSiteUrl(value) {
-      var url = String(value || '');
-      if (!url.startsWith('/') || url.startsWith('//')) return '/';
-      return url.replace(/[\u0000-\u001f\u007f]/g, '');
+      var url = String(value || '').replace(/[\u0000-\u001f\u007f]/g, '');
+      if (url[0] !== '/' || url[1] === '/' || url.includes('\\')) return '/';
+      return url;
     }
 
     function safeSlug(value) {

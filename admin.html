@@ -142,7 +142,18 @@ const elStatusbar  = document.getElementById('statusbar');
 // browser restarts. Clear any legacy localStorage token from older builds.
 try{ localStorage.removeItem('cd_gh_pat'); }catch(e){}
 function loadPat(){
-PAT = sessionStorage.getItem('cd_gh_pat') || '';
+try {
+  PAT = sessionStorage.getItem('cd_gh_pat') || '';
+  const exp = Number(sessionStorage.getItem('cd_gh_pat_exp'));
+  if(PAT && (!Number.isFinite(exp) || exp <= Date.now())){
+    PAT = '';
+    sessionStorage.removeItem('cd_gh_pat');
+    sessionStorage.removeItem('cd_gh_pat_exp');
+    fetch('/api/admin/logout', { method:'POST', credentials:'same-origin', keepalive:true }).catch(()=>{});
+  }
+} catch(e) {
+  PAT = '';
+}
 if(PAT){
 elPatStatus.textContent = '已登入';
 elPatStatus.className = 'pat-status ok';

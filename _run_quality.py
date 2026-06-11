@@ -21,6 +21,10 @@ REGEN_STEPS: list[list[str]] = [
     # early when it sees #dn-related-static. ~174 internal links added,
     # all crawlable by Googlebot without JS.
     [PY, "_inject_related.py"],
+    # Resolve git-derived freshness before generating EN mirrors, feeds,
+    # LLM corpora, and search artifacts. Running this after llms-full used
+    # to leave aggregate freshness metadata one build behind.
+    [PY, "_normalize_date_modified.py"],
     # Refresh 404.html "popular articles" with 6 newest from DN.ARTICLES
     # so the list doesn't drift as new content lands.
     [PY, "_inject_404.py"],
@@ -87,13 +91,6 @@ REGEN_STEPS: list[list[str]] = [
     # 2026-05-20 — Round 2-K visualization: regenerate the
     # internal-link force-directed SVG after every catalog change.
     [PY, "_gen_site_graph.py"],
-    # 2026-05-20 — Auto-bump JSON-LD dateModified + OG article:
-    # modified_time to each article's last git-touched date. Fixes
-    # GSC "Crawled — currently not indexed" caused by stale freshness
-    # signal (dateModified never moved despite ~22 batches of SEO
-    # + schema upgrades). Must run AFTER every other normalizer so
-    # the date reflects the FINAL post-build state.
-    [PY, "_normalize_date_modified.py"],
     # 2026-05-21 — SEO_AUDIT A2: strip '廣告位 · AdSense' placeholder
     # text from ad-slot divs so Googlebot stops indexing the empty-
     # ad-inventory signal. CSS rule .ad-slot{display:none!important}

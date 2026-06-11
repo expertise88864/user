@@ -31,6 +31,9 @@ def main() -> int:
 
     require(errors, "api/og.js", "if (req.method !== 'GET')", "OG image endpoint should explicitly allow GET only")
     require(errors, "api/og.js", "Allow: 'GET'", "OG image 405 response should declare Allow: GET")
+    require(errors, "api/og.js", "function sanitizeXmlText(value, maxChars)", "OG image text should strip invalid XML controls")
+    require(errors, "api/og.js", "\"default-src 'none'; style-src 'unsafe-inline'; sandbox\"", "OG SVG responses should carry a restrictive CSP")
+    require(errors, "api/og.js", "'X-Content-Type-Options': 'nosniff'", "OG SVG responses should disable MIME sniffing")
 
     require(errors, "api/admin/_session.js", "throw new Error('Secure random generator unavailable');", "admin sessions should fail closed without a CSPRNG")
     require(errors, "api/admin/_session.js", "catch (_) {\n      // Ignore malformed cookie values", "malformed cookies should not crash admin authentication")
