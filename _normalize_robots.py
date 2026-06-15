@@ -33,16 +33,23 @@ ALLOW_UAS = [
     "ChatGPT-User",
     "OAI-SearchBot",
     "PerplexityBot",
-]
-
-BLOCK_UAS = [
+    # AI search/answer + training crawlers — allowed so the site can be cited
+    # in AI answers (ChatGPT, Claude, Perplexity) and grounded in Gemini.
+    # Google AI Overviews use Googlebot (already allowed); Google-Extended
+    # only governs Gemini grounding/training, so allowing it has no SERP risk.
     "GPTBot",
     "ClaudeBot",
     "Claude-Web",
     "anthropic-ai",
     "CCBot",
     "Google-Extended",
+    # Meta's crawler (Meta AI / link metadata). Note: link-PREVIEW cards use
+    # `facebookexternalhit`, which is already permitted via the `*` group; this
+    # only opens Meta's general crawler, kept allowed for the social strategy.
     "FacebookBot",
+]
+
+BLOCK_UAS = [
     "Amazonbot",
     "Bytespider",
     "omgilibot",
@@ -112,8 +119,8 @@ def main() -> None:
         f"# Last update: {today}",
         "#",
         "# Strategy:",
-        "#   1. Allow search, ads, and user-requested browsing crawlers.",
-        "#   2. Block known AI-training and aggressive SEO/scraping crawlers.",
+        "#   1. Allow search, ads, AI search/answer, and social-preview crawlers.",
+        "#   2. Block only aggressive SEO/scraping + low-value aggregator crawlers.",
         "#   3. Block admin/reset/internal generated working files.",
         "",
         "# Public/search crawlers",

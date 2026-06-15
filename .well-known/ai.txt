@@ -3,13 +3,12 @@
 # Last update: 2026-06-01
 #
 # Companion to /robots.txt. The strategy:
-#   - User-triggered AI bots (ChatGPT-User, OAI-SearchBot, PerplexityBot)
-#     are ALLOWED on the article tree — those are real readers asking
-#     questions through an AI proxy.
-#   - Training / aggregation crawlers (GPTBot, ClaudeBot, anthropic-ai,
-#     CCBot, Google-Extended, Bytespider) are blocked from articles
-#     BUT allowed to fetch /llms.txt + /llms-full.txt + /sitemap.xml
-#     for citation-grounded responses (no model-training scraping).
+#   - AI search/answer + training crawlers (ChatGPT-User, OAI-SearchBot,
+#     PerplexityBot, GPTBot, ClaudeBot, anthropic-ai, CCBot, Google-Extended)
+#     are ALLOWED on the article tree so the site can be cited in AI answers
+#     and grounded in Gemini (kept consistent with /robots.txt).
+#   - Only aggressive scraper/aggregator bots (e.g. Bytespider) stay blocked
+#     from the article tree but may still fetch the manifest/corpus files.
 #
 User-Agent: *
 Allow: /
@@ -17,13 +16,18 @@ Disallow: /admin
 Disallow: /admin/
 Disallow: /reset-sw
 
-# Training / aggregation crawlers — narrow allow
-User-Agent: GPTBot
-User-Agent: ClaudeBot
-User-Agent: anthropic-ai
-User-Agent: Google-Extended
-User-Agent: CCBot
+# Aggressive scraper/aggregator crawlers — manifest/corpus only.
+# Keep this list in sync with BLOCK_UAS in _normalize_robots.py.
+User-Agent: Amazonbot
 User-Agent: Bytespider
+User-Agent: omgilibot
+User-Agent: omgili
+User-Agent: AhrefsBot
+User-Agent: SemrushBot
+User-Agent: MJ12bot
+User-Agent: DotBot
+User-Agent: BLEXBot
+User-Agent: PetalBot
 Disallow: /
 Allow: /llms.txt
 Allow: /llms-full.txt

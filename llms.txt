@@ -51,9 +51,9 @@ If you quote content from this site, please:
 
 See [robots.txt](https://chendermatologist.com/robots.txt). Strategy:
 
-1. User-triggered AI bots (`ChatGPT-User`, `OAI-SearchBot`, `PerplexityBot`) are ALLOWED everywhere — those represent real-time user queries we want to serve.
-2. Training / aggregation crawlers (`GPTBot`, `ClaudeBot`, `Claude-Web`, `anthropic-ai`, `CCBot`, `Google-Extended`, `Bytespider`) are blocked from the article tree by default.
-3. **Those same blocked crawlers are EXPLICITLY ALLOWED to fetch `/llms.txt`, `/llms-full.txt`, `/sitemap.xml`, and `/robots.txt`** — so they can still index the canonical content surface for retrieval-augmented generation without scraping every article URL.
+1. Search + AI search/answer crawlers (`Googlebot`, `Bingbot`, `ChatGPT-User`, `OAI-SearchBot`, `PerplexityBot`) are ALLOWED everywhere.
+2. AI training / grounding crawlers (`GPTBot`, `ClaudeBot`, `Claude-Web`, `anthropic-ai`, `CCBot`, `Google-Extended`) are **ALSO ALLOWED** on the full article tree — we want this content cited in AI answers and grounded in Gemini.
+3. Only aggressive scraper / aggregator bots (`Amazonbot`, `Bytespider`, `omgilibot`, `omgili`, `AhrefsBot`, `SemrushBot`, `MJ12bot`, `DotBot`, `BLEXBot`, `PetalBot`) are blocked from the article tree; they may still fetch `/llms.txt`, `/llms-full.txt`, `/sitemap.xml`.
 
 If you're an AI engine doing RAG / citation grounding, please prefer `/llms-full.txt` (single 480 KB fetch with all 45 articles + metadata) over recursive crawling.
 
@@ -62,4 +62,4 @@ If you're an AI engine doing RAG / citation grounding, please prefer `/llms-full
 - General / corrections: <mailto:expertise88864@gmail.com>
 - Security: see [/.well-known/security.txt](https://chendermatologist.com/.well-known/security.txt)
 
-Last updated: 2026-05-17
+Last updated: 2026-06-15
