@@ -470,12 +470,22 @@
   "redirects": [
     {
       "source": "/en/notes",
-      "destination": "/en/",
+      "destination": "/en",
       "permanent": true
     },
     {
       "source": "/en/notes.html",
-      "destination": "/en/",
+      "destination": "/en",
+      "permanent": true
+    },
+    {
+      "source": "/en/dashboard",
+      "destination": "/dashboard",
+      "permanent": true
+    },
+    {
+      "source": "/en/dashboard.html",
+      "destination": "/dashboard",
       "permanent": true
     },
     {
