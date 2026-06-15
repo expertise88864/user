@@ -5021,7 +5021,7 @@ AAD JAAD cutaneous SCC management
 ---
 ## 痘痘 8 大迷思
 URL: https://chendermatologist.com/blog/acne-myths
-Updated: 2026-06-10
+Updated: 2026-06-15
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 痘痘, Acne
@@ -5230,7 +5230,7 @@ Comorbidities（共病）：甲狀腺、自體免疫、代謝、心理（見上�
 ---
 ## 乾癬 7 大迷思
 URL: https://chendermatologist.com/blog/psoriasis-myths
-Updated: 2026-06-10
+Updated: 2026-06-15
 Section: Myths & Facts
 Reading time: PT12M
 Tags: 乾癬, Psoriasis
@@ -5405,7 +5405,7 @@ Menter A, et al. Joint AAD-NPF guidelines of care for the management of psoriasi
 ---
 ## 外用酸類完整衛教
 URL: https://chendermatologist.com/blog/topical-acids-patient
-Updated: 2026-06-10
+Updated: 2026-06-15
 Section: Products & Drugs
 Reading time: PT8M
 Tags: 酸類, Topical acids
@@ -5612,7 +5612,7 @@ Bakuchiol（補骨脂酚）
 ---
 ## 口服 A 酸完整衛教
 URL: https://chendermatologist.com/blog/isotretinoin-patient
-Updated: 2026-06-10
+Updated: 2026-06-15
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 口服 A 酸, Isotretinoin
@@ -5963,7 +5963,7 @@ UpToDate: Treatment of acne scars. Accessed 2026. 「來源」
 ---
 ## 白斑（Vitiligo）完整衛教
 URL: https://chendermatologist.com/blog/vitiligo
-Updated: 2026-06-10
+Updated: 2026-06-15
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 白斑, Vitiligo
@@ -8407,7 +8407,7 @@ UpToDate: Treatment of herpes zoster in the immunocompetent host. Accessed 2026.
 ---
 ## 圓禿（鬼剃頭）完整衛教
 URL: https://chendermatologist.com/blog/alopecia-areata
-Updated: 2026-06-10
+Updated: 2026-06-15
 Section: Treatment & Therapy
 Reading time: PT15M
 Tags: 圓禿, Alopecia areata
@@ -10005,7 +10005,7 @@ UpToDate: Melasma — Management. Accessed 2026.
 ---
 ## 防曬 8 大迷思
 URL: https://chendermatologist.com/blog/sunscreen-myths
-Updated: 2026-06-10
+Updated: 2026-06-15
 Section: Myths & Facts
 Reading time: PT6M
 Tags: 防曬, Sunscreen
@@ -10071,7 +10071,7 @@ UpToDate: Selection of sunscreen and sun-protective measures. 「來源」
 ---
 ## 肝斑 7 大迷思
 URL: https://chendermatologist.com/blog/melasma-myths
-Updated: 2026-06-10
+Updated: 2026-06-15
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 肝斑, Melasma
@@ -10191,7 +10191,7 @@ UpToDate: Melasma: Management. Accessed 2026.
 ---
 ## 玫瑰痤瘡 6 大迷思
 URL: https://chendermatologist.com/blog/rosacea-myths
-Updated: 2026-06-10
+Updated: 2026-06-15
 Section: Myths & Facts
 Reading time: PT17M
 Tags: 酒糟肌, Rosacea
@@ -10331,7 +10331,7 @@ Schaller 2020 重度玫瑰斑組合療法：外用 Ivermectin 1% qd ＋ 口服�
 ---
 ## 落髮 / 雄性禿 7 大迷思
 URL: https://chendermatologist.com/blog/hairloss-myths
-Updated: 2026-06-10
+Updated: 2026-06-15
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 落髮, Hair loss
@@ -10455,7 +10455,7 @@ Taiwan Dermatological Association. 圓禿診斷及治療共識. 2024.
 ---
 ## 香港腳 / 灰指甲 7 大迷思
 URL: https://chendermatologist.com/blog/tinea-myths
-Updated: 2026-06-10
+Updated: 2026-06-15
 Section: Myths & Facts
 Reading time: PT9M
 Tags: 足癬, Tinea
