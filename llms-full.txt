@@ -1893,7 +1893,7 @@ Doxycycline
 ---
 ## 腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病
 URL: https://chendermatologist.com/blog/toenail-mechanical-disorders
-Updated: 2026-06-10
+Updated: 2026-06-23
 Section: Treatment & Therapy
 Reading time: PT18M
 Tags: 趾甲與足部, Toenail disorders
@@ -2137,7 +2137,7 @@ Carpal Tunnel Syndrome 的手指甲變化
 ---
 ## 嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南
 URL: https://chendermatologist.com/blog/dermatologic-oral-examination
-Updated: 2026-06-10
+Updated: 2026-06-23
 Section: Treatment & Therapy
 Reading time: PT24M
 Tags: 口腔黏膜, Oral mucosa
@@ -2316,7 +2316,7 @@ Wang YP et al. 2018; Lin HP et al. 201915,16
 ---
 ## 皮膚切片與腫瘤切除手術完整衛教 — 為什麼要切？怎麼切？術後怎麼照顧？
 URL: https://chendermatologist.com/blog/skin-biopsy-excision
-Updated: 2026-06-10
+Updated: 2026-06-23
 Section: Treatment & Therapy
 Reading time: PT14M
 Tags: 處置 / 手術, Skin biopsy & excision
@@ -5808,7 +5808,7 @@ A 酸要怎麼吃？空腹還是飯後？
 ---
 ## 痘疤完整治療指引
 URL: https://chendermatologist.com/blog/acne-scar-treatment
-Updated: 2026-06-10
+Updated: 2026-06-23
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 痘疤, Acne scars
