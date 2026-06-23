@@ -1,0 +1,54 @@
+# Weekly outbound-citation rot check for a YMYL medical site.
+# NON-BLOCKING: never fails a deploy. It checks that external references
+# (DOI / PubMed / guideline URLs) in the committed article HTML still resolve,
+# and files a GitHub issue if any are truly dead (404/410/DNS), so stale
+# citations — which erode E-E-A-T — get noticed. Bot-blocked hosts (403/429)
+# are treated as alive, since "exists but blocks crawlers" is not link rot.
+# The internal-anchor check lives in hyperlink.yml; this one is outbound-only.
+name: Link rot (outbound citations)
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Mondays 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: link-rot
+  cancel-in-progress: false
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # pin v4
+
+      - name: Check outbound links
+        id: lychee
+        uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411 # pin v2
+        with:
+          # Outbound only: skip relative/mailto (--scheme https), skip self
+          # links (covered by hyperlink.yml) and social share buttons. Accept
+          # bot-block codes as alive so only genuine rot (404/410/gone) flags.
+          args: >-
+            --cache --max-cache-age 1d --max-retries 2 --no-progress
+            --accept 200,206,301,302,403,429,503
+            --scheme https
+            --exclude 'chendermatologist\.com'
+            --exclude 'twitter\.com' --exclude 'x\.com'
+            --exclude 'linkedin\.com' --exclude 'facebook\.com'
+            "blog/**/*.html" "en/blog/**/*.html" "*.html"
+          fail: false
+          jobSummary: true
+
+      - name: Open issue on dead citations
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@e8ef132d6df98ed982188e460ebb3b5d4ef3a9cd # pin v5
+        with:
+          title: 'Link rot: dead outbound citation(s) detected'
+          content-filepath: ./lychee/out.md
+          labels: link-rot, automated

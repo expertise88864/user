@@ -175,6 +175,19 @@ REGEN_STEPS: list[list[str]] = [
     # nav landmarks - breadcrumb + related-articles - and each needs a unique
     # accessible name). Idempotent, additive. Runs after EN gen.
     [PY, "_normalize_breadcrumb_aria.py"],
+    # 2026-06-23 - aggregate every article's data-faq-auto FAQPage Q&A into a
+    # single static /ai/faq.json for AI answer engines + RAG. Runs LAST so all
+    # FAQPage blocks (zh + EN mirror) already exist. Deterministic (date from
+    # newest article), so it never churns git on unchanged content.
+    [PY, "_gen_ai_faq.py"],
+    # 2026-06-23 - emit /ai/service.json, a machine-readable service descriptor
+    # (who/what/tracks/endpoints/AI-policy) — the 4th AI-discovery surface
+    # alongside ai.txt + summary.json + faq.json. Deterministic.
+    [PY, "_gen_ai_service.py"],
+    # 2026-06-23 - refresh the 3 stale counts inside the hand-curated llms.txt
+    # (article/EN-mirror counts, corpus entry count, corpus KB) from on-disk
+    # truth. Runs after _gen_llms_full.py so the size/entries are current.
+    [PY, "_normalize_llms_counts.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [

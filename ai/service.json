@@ -1,0 +1,48 @@
+{
+ "name": "ChenDermatologist \u00b7 \u9673\u7fca\u5609\u91ab\u5e2b \u00b7 \u76ae\u819a\u79d1\u885b\u6559\u7b46\u8a18",
+ "url": "https://chendermatologist.com/",
+ "type": "medical-patient-education",
+ "category": "Dermatology",
+ "description": "Bilingual (zh-Hant-TW / en) dermatology patient-education and physician study-notes site by Dr. Chen Yi-Jia, a dermatology resident in Taiwan. Evidence-based, citation-bearing articles with original SVG diagrams, tables, FAQs, and Vancouver references.",
+ "languages": [
+  "zh-Hant-TW",
+  "en"
+ ],
+ "areaServed": "Taiwan",
+ "author": {
+  "name": "Dr. Chen Yi-Jia (\u9673\u7fca\u5609\u91ab\u5e2b)",
+  "url": "https://chendermatologist.com/about",
+  "jobTitle": "Dermatology Resident Physician"
+ },
+ "content": {
+  "article_count": 55,
+  "updated": "2026-06-10",
+  "tracks": [
+   "patient-education (\u885b\u6559)",
+   "clinical study-notes (\u5b78\u7fd2\u7b46\u8a18)",
+   "research summaries / journal club (\u6700\u65b0\u7814\u7a76)"
+  ],
+  "format": "static HTML with SVG diagrams, tables, FAQs, Vancouver references"
+ },
+ "endpoints": {
+  "manifest": "https://chendermatologist.com/llms.txt",
+  "full_corpus": "https://chendermatologist.com/llms-full.txt",
+  "summary": "https://chendermatologist.com/ai/summary.json",
+  "faq": "https://chendermatologist.com/ai/faq.json",
+  "sitemap": "https://chendermatologist.com/sitemap.xml",
+  "feed": "https://chendermatologist.com/blog/feed.xml",
+  "search": "https://chendermatologist.com/?q={query}"
+ },
+ "ai_policy": {
+  "citation": "allowed with attribution",
+  "training": "not permitted",
+  "attribution_required": true,
+  "attribution": "\u9673\u7fca\u5609\u91ab\u5e2b / ChenDermatologist, https://chendermatologist.com/",
+  "robots": "https://chendermatologist.com/robots.txt",
+  "ai_txt": "https://chendermatologist.com/.well-known/ai.txt"
+ },
+ "contact": "mailto:expertise88864@gmail.com",
+ "license": "All rights reserved. Citation with attribution permitted.",
+ "disclaimer": "Educational content; not individual medical advice.",
+ "updated": "2026-06-10"
+}

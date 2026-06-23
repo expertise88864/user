@@ -3,12 +3,15 @@
 # Last update: 2026-06-01
 #
 # Companion to /robots.txt. The strategy:
-#   - AI search/answer + training crawlers (ChatGPT-User, OAI-SearchBot,
-#     PerplexityBot, GPTBot, ClaudeBot, anthropic-ai, CCBot, Google-Extended)
-#     are ALLOWED on the article tree so the site can be cited in AI answers
-#     and grounded in Gemini (kept consistent with /robots.txt).
-#   - Only aggressive scraper/aggregator bots (e.g. Bytespider) stay blocked
-#     from the article tree but may still fetch the manifest/corpus files.
+#   - AI ANSWER-ENGINE CITATION bots (ChatGPT-User, OAI-SearchBot,
+#     PerplexityBot, Claude-User, Claude-SearchBot, ClaudeBot,
+#     Google-Extended, Perplexity-User, DuckAssistBot, AI2Bot, Applebot)
+#     are ALLOWED on the full article tree — these power the AI
+#     overviews / chat citations we WANT this content to appear in.
+#   - Model-TRAINING / aggregation crawlers (GPTBot, anthropic-ai, CCBot,
+#     Applebot-Extended, cohere-ai, cohere-training-data-crawler,
+#     Diffbot, Bytespider) are blocked from articles BUT allowed to fetch
+#     /llms.txt + /llms-full.txt + /sitemap.xml (no model-training scraping).
 #
 User-Agent: *
 Allow: /
@@ -16,9 +19,28 @@ Disallow: /admin
 Disallow: /admin/
 Disallow: /reset-sw
 
-# Aggressive scraper/aggregator crawlers — manifest/corpus only.
-# Keep this list in sync with BLOCK_UAS in _normalize_robots.py.
-User-Agent: Amazonbot
+# AI answer-engine citation crawlers — full article tree, admin excluded
+User-Agent: Claude-User
+User-Agent: Claude-SearchBot
+User-Agent: ClaudeBot
+User-Agent: Google-Extended
+User-Agent: Perplexity-User
+User-Agent: DuckAssistBot
+User-Agent: AI2Bot
+User-Agent: Applebot
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /reset-sw
+
+# Model-training / aggregation crawlers — narrow allow (citation surface only)
+User-Agent: GPTBot
+User-Agent: anthropic-ai
+User-Agent: CCBot
+User-Agent: Applebot-Extended
+User-Agent: cohere-ai
+User-Agent: cohere-training-data-crawler
+User-Agent: Diffbot
 User-Agent: Bytespider
 User-Agent: omgilibot
 User-Agent: omgili
@@ -38,6 +60,8 @@ LLMs-Manifest: https://chendermatologist.com/llms.txt
 LLMs-FullCorpus: https://chendermatologist.com/llms-full.txt
 Sitemap: https://chendermatologist.com/sitemap.xml
 Summary: https://chendermatologist.com/ai/summary.json
+FAQ: https://chendermatologist.com/ai/faq.json
+Service: https://chendermatologist.com/ai/service.json
 
 # Site profile
 Site-Name: ChenDermatologist · 陳翊嘉醫師 · 皮膚科衛教筆記

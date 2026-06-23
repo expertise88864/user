@@ -33,19 +33,30 @@ ALLOW_UAS = [
     "ChatGPT-User",
     "OAI-SearchBot",
     "PerplexityBot",
-    # AI search/answer + training crawlers — allowed so the site can be cited
-    # in AI answers (ChatGPT, Claude, Perplexity) and grounded in Gemini.
-    # Google AI Overviews use Googlebot (already allowed); Google-Extended
-    # only governs Gemini grounding/training, so allowing it has no SERP risk.
+    # AI answer-engine citation crawlers (NOT model-training scrapers).
+    # Allowed so Claude + Gemini / Google AI Overviews can fetch and CITE
+    # the article tree — mirrors the OpenAI split (OAI-SearchBot allowed,
+    # GPTBot blocked). The site's llms.txt / ai.txt investment exists to be
+    # cited by these engines, so they must be able to reach the content.
+    "Claude-User",       # Anthropic — user-initiated fetch during a Claude chat
+    "Claude-SearchBot",  # Anthropic — powers Claude's web search citations
+    "ClaudeBot",         # Anthropic — indexes content that Claude.ai cites
+    "Claude-Web",        # Anthropic — legacy on-demand fetcher
+    "Google-Extended",   # gates Gemini grounding + Google AI Overviews citation
+    "Perplexity-User",   # Perplexity — user-initiated citation fetch
+    "DuckAssistBot",     # DuckDuckGo DuckAssist AI answers
+    "AI2Bot",            # Allen Institute / Semantic Scholar (academic citation)
+    "Applebot",          # Apple — Siri / Spotlight search surfacing
+]
+
+BLOCK_UAS = [
     "GPTBot",
-    "ClaudeBot",
-    "Claude-Web",
     "anthropic-ai",
     "CCBot",
-    "Google-Extended",
-    # Meta's crawler (Meta AI / link metadata). Note: link-PREVIEW cards use
-    # `facebookexternalhit`, which is already permitted via the `*` group; this
-    # only opens Meta's general crawler, kept allowed for the social strategy.
+    "Applebot-Extended",            # Apple Intelligence model training
+    "cohere-ai",                    # Cohere model training
+    "cohere-training-data-crawler", # Cohere data crawler
+    "Diffbot",                      # bulk structured-data scraping
     "FacebookBot",
 ]
 
@@ -119,8 +130,10 @@ def main() -> None:
         f"# Last update: {today}",
         "#",
         "# Strategy:",
-        "#   1. Allow search, ads, AI search/answer, and social-preview crawlers.",
-        "#   2. Block only aggressive SEO/scraping + low-value aggregator crawlers.",
+        "#   1. Allow search, ads, user-requested browsing, and AI answer-engine",
+        "#      CITATION crawlers (ChatGPT/Perplexity/Claude search + Google AI).",
+        "#   2. Block model-TRAINING and aggressive SEO/scraping crawlers (they may",
+        "#      still fetch llms.txt + llms-full.txt + sitemap for citation grounding).",
         "#   3. Block admin/reset/internal generated working files.",
         "",
         "# Public/search crawlers",
