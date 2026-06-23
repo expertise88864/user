@@ -32,9 +32,15 @@ INTERNAL_DISALLOWS = [
 
 # Model-training / aggregation crawlers that MUST be blocked from the article
 # tree (they may still fetch llms.txt / sitemap). This guards against a class
-# of bug where the bot falls out of the block group — e.g. a duplicate
-# top-level BLOCK_UAS assignment in _normalize_robots.py silently shadowing
-# the first — and lands in the wildcard Allow group instead.
+# of bug where a bot falls out of the block group — e.g. a duplicate top-level
+# BLOCK_UAS assignment in _normalize_robots.py silently shadowing the first —
+# and lands in the wildcard Allow group instead.
+#
+# Deliberately a COMPLETE, INDEPENDENT hardcoded list (the full BLOCK_UAS
+# policy set), NOT imported from _normalize_robots.BLOCK_UAS: if it were
+# derived from the same source, the very shadowing bug we are guarding against
+# would shrink both the generator AND this list in lockstep, and the check
+# would pass while bots were silently unblocked.
 REQUIRED_BLOCKED = [
     'GPTBot',
     'anthropic-ai',
@@ -43,7 +49,17 @@ REQUIRED_BLOCKED = [
     'cohere-ai',
     'cohere-training-data-crawler',
     'Diffbot',
+    'FacebookBot',
+    'Amazonbot',
     'Bytespider',
+    'omgilibot',
+    'omgili',
+    'AhrefsBot',
+    'SemrushBot',
+    'MJ12bot',
+    'DotBot',
+    'BLEXBot',
+    'PetalBot',
 ]
 
 
@@ -132,14 +148,20 @@ def main() -> None:
         if blocked:
             errors.append(f'{ua} blocks sitemap URL(s): {", ".join(blocked[:5])}')
 
-    # Training/aggregation crawlers MUST be disallowed from the article tree.
-    # If one falls into the wildcard Allow group (e.g. dropped from BLOCK_UAS),
-    # it would be allowed to crawl everything — fail loudly.
-    probe = '/blog/acne-myths'
+    # Training/aggregation crawlers MUST be broadly blocked. If one falls into
+    # the wildcard Allow group (e.g. dropped from BLOCK_UAS), it would be free
+    # to crawl everything — fail loudly. We require BOTH an effective broad
+    # block (a literal `Disallow: /` in the resolved group) AND that every
+    # representative path is disallowed, so a future narrow-disallow policy
+    # can't slip through a single-path probe.
+    probes = ['/blog/acne-myths', '/blog/', '/en/blog/acne-myths', '/glossary', '/tools', '/about']
     for ua in REQUIRED_BLOCKED:
         rules = rules_for(ua, groups)
-        if not disallowed(probe, rules):
-            errors.append(f'training crawler {ua} is NOT blocked from the article tree ({probe})')
+        has_broad_block = any(kind == 'disallow' and pattern == '/' for kind, pattern in rules)
+        crawlable = [p for p in probes if not disallowed(p, rules)]
+        if not has_broad_block or crawlable:
+            detail = 'no "Disallow: /"' if not has_broad_block else f'crawlable: {", ".join(crawlable)}'
+            errors.append(f'training/scraper crawler {ua} is NOT broadly blocked ({detail})')
 
     if errors:
         print('[FAIL] robots.txt audit')
