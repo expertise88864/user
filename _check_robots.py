@@ -30,6 +30,22 @@ INTERNAL_DISALLOWS = [
     'Disallow: /en/reset-sw',
 ]
 
+# Model-training / aggregation crawlers that MUST be blocked from the article
+# tree (they may still fetch llms.txt / sitemap). This guards against a class
+# of bug where the bot falls out of the block group — e.g. a duplicate
+# top-level BLOCK_UAS assignment in _normalize_robots.py silently shadowing
+# the first — and lands in the wildcard Allow group instead.
+REQUIRED_BLOCKED = [
+    'GPTBot',
+    'anthropic-ai',
+    'CCBot',
+    'Applebot-Extended',
+    'cohere-ai',
+    'cohere-training-data-crawler',
+    'Diffbot',
+    'Bytespider',
+]
+
 
 def parse_robots(src: str) -> list[tuple[list[str], list[tuple[str, str]]]]:
     groups: list[tuple[list[str], list[tuple[str, str]]]] = []
@@ -115,6 +131,15 @@ def main() -> None:
         blocked = [loc for loc in locs if disallowed(loc, rules)]
         if blocked:
             errors.append(f'{ua} blocks sitemap URL(s): {", ".join(blocked[:5])}')
+
+    # Training/aggregation crawlers MUST be disallowed from the article tree.
+    # If one falls into the wildcard Allow group (e.g. dropped from BLOCK_UAS),
+    # it would be allowed to crawl everything — fail loudly.
+    probe = '/blog/acne-myths'
+    for ua in REQUIRED_BLOCKED:
+        rules = rules_for(ua, groups)
+        if not disallowed(probe, rules):
+            errors.append(f'training crawler {ua} is NOT blocked from the article tree ({probe})')
 
     if errors:
         print('[FAIL] robots.txt audit')

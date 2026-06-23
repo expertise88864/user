@@ -58,9 +58,6 @@ BLOCK_UAS = [
     "cohere-training-data-crawler", # Cohere data crawler
     "Diffbot",                      # bulk structured-data scraping
     "FacebookBot",
-]
-
-BLOCK_UAS = [
     "Amazonbot",
     "Bytespider",
     "omgilibot",
