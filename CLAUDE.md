@@ -35,7 +35,7 @@ zh-Hant 為源頭、`/en/` 鏡像為生成物。~57 篇文章 + 128 支根目錄
 ## 常用命令
 ```
 python _run_quality.py check     # 31+ 驗證器(push 前必跑, exit 0 才行)
-python _run_quality.py all       # 全量 regen + check(改了源頭腳本後用)
+python _run_quality.py build       # 全量 regen + check(改了源頭腳本後用)
 python _check_robots.py          # 單項快篩範例(所有 _check_*.py 都可單跑)
 node _serve.mjs                  # 本地預覽
 ```

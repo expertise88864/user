@@ -34,8 +34,13 @@ BLEXBot, PetalBot。歷史:曾短暫全放(2026-06-15),隨後收斂為此分流�
 **D-07 URL 形式:trailingSlash:false,EN 首頁 canonical = `/en`(無尾斜線)**(2026-06)
 sitemap/canonical/og/hreflang 一律無尾斜線形式。曾因 `/en/` 造成 GSC「頁面會重新導向」,已修。
 
-**D-08 導覽列 `/blog/`、`/en/` 尾斜線 308 一跳:刻意不修**(2026-06)
-Google 正常跟隨、純美觀;修復需動 EN link rewriter,風險>收益。GSC 對應條目**不要按驗證**。
+**D-08 導覽列 URL 一律無尾斜線(`/blog`、`/en`);~~刻意不修~~ → 已於 2026-07-01 修正**
+原判斷「純美觀、風險>收益」。**推翻理由**:使用者連續多次在 GSC 見「頁面會重新導向」含 `/en/`、
+`/blog/`,且 Google 持續沿內部連結重爬會 308 的網址。實作:改 `_gen_en_pages` 的 `en_mirror_exists`
++ `to_en_path` 支援無斜線目錄形式 → zh 導覽 `/blog/`→`/blog`、`/en/`→`/en` → `build` 重生 EN 鏡像。
+低風險已驗證(`_check_internal_links`/`_check_en_internal_links`/`_check_links` 全綠、live 皆 200)。
+**新規則**:內部連結一律用無尾斜線的 canonical 形式(與 D-07 一致)。舊 slug 301(D-09)仍會在
+GSC redirect 報告中、仍不要按驗證。
 
 **D-09 舊 slug 301(demodex-rosacea / eczema-myths / atopic-dermatitis-comorbidity)永久保留**(2026-05)
 改名遺留,vercel.json 刻意設 permanent。GSC 顯示「頁面會重新導向」是預期行為,驗證永遠會失敗,別再送。

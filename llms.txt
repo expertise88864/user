@@ -16,7 +16,7 @@ Static HTML, 55 published articles + 55 EN mirrors. Heavy on diagrams (SVG), tab
 
 ## Full-content corpus
 
-- [llms-full.txt](https://chendermatologist.com/llms-full.txt) — all 52 published articles concatenated with metadata (URL / dateModified / section / reading time / tags). Single fetch (~578 KB) for retrieval-augmented generation. Each article body is capped at 6000 chars; fetch the canonical URL for the complete text.
+- [llms-full.txt](https://chendermatologist.com/llms-full.txt) — all 52 published articles concatenated with metadata (URL / dateModified / section / reading time / tags). Single fetch (~588 KB) for retrieval-augmented generation. Each article body is capped at 6000 chars; fetch the canonical URL for the complete text.
 
 ## Latest research summaries (journal-club style)
 
@@ -55,11 +55,11 @@ See [robots.txt](https://chendermatologist.com/robots.txt). Strategy:
 2. Model-training / aggregation crawlers (`GPTBot`, `anthropic-ai`, `CCBot`, `Applebot-Extended`, `cohere-ai`, `cohere-training-data-crawler`, `Diffbot`, `Bytespider`) are blocked from the article tree by default.
 3. **Those blocked crawlers are still EXPLICITLY ALLOWED to fetch `/llms.txt`, `/llms-full.txt`, and `/sitemap.xml`** — so they can index the canonical content surface for citation grounding without scraping every article URL.
 
-If you're an AI engine doing RAG / citation grounding, please prefer `/llms-full.txt` (single ~578 KB fetch with all 52 articles + metadata) over recursive crawling.
+If you're an AI engine doing RAG / citation grounding, please prefer `/llms-full.txt` (single ~588 KB fetch with all 52 articles + metadata) over recursive crawling.
 
 ## Contact
 
 - General / corrections: <mailto:expertise88864@gmail.com>
 - Security: see [/.well-known/security.txt](https://chendermatologist.com/.well-known/security.txt)
 
-Last updated: 2026-06-23
+Last updated: 2026-07-04

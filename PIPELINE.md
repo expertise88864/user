@@ -34,14 +34,14 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
 ## 配方:「我改了 X,要跑什麼?」
 | 你改了什麼 | 跑什麼 | 再驗什麼 |
 |---|---|---|
-| zh 文章內文(段落/表格/FAQ 文字) | `python _run_quality.py all`(會重生 en/feeds/llms) | gate exit 0 |
-| DN.ARTICLES(新文章/改標題/日期) | `python _run_quality.py all` | `_check_articles.py`, gate |
-| 某個 `_normalize_*`/`_gen_*` 腳本 | `python _run_quality.py all`(跑兩次確認冪等) | 第二次 git diff 為空 |
+| zh 文章內文(段落/表格/FAQ 文字) | `python _run_quality.py build`(會重生 en/feeds/llms) | gate exit 0 |
+| DN.ARTICLES(新文章/改標題/日期) | `python _run_quality.py build` | `_check_articles.py`, gate |
+| 某個 `_normalize_*`/`_gen_*` 腳本 | `python _run_quality.py build`(跑兩次確認冪等) | 第二次 git diff 為空 |
 | `_normalize_robots.py` 的 UA 清單 | `python _normalize_robots.py` + **同步三檔**(見下) | `_check_robots.py` |
 | `vercel.json`(redirect/header) | 不用 regen | `_check_deployment.py` + codex review |
 | `assets/inline/*.js` | 不用 regen(非 min 化對象);跑 `_check_js_syntax.py` | `_check_runtime_smoke.py` |
 | `blog/blog-shared.js` 或 `blog-hub.js` | `python _minify.py`(重生 .min.js) | `_check_min_balance.py`, smoke |
-| 新增 TL;DR(`_inject_tldr.py` 的 map) | 醫師審核後 `python _inject_tldr.py --apply` → `all` | gate;絕不覆寫既有 dn-tldr |
+| 新增 TL;DR(`_inject_tldr.py` 的 map) | 醫師審核後 `python _inject_tldr.py --apply` → `python _run_quality.py build` | gate;絕不覆寫既有 dn-tldr |
 
 ## ⚠️ 三檔同步鐵則:AI 爬蟲政策
 `robots.txt`、`.well-known/ai.txt`、`llms.txt` 三處都描述爬蟲政策,**必須一致**

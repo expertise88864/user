@@ -230,7 +230,7 @@ def build_related_html(cur_slug: str, related: list[dict]) -> str:
         '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;'
         'color:var(--teal-deep);font-weight:700" data-zh="你可能也會想看" '
         'data-en="You might also like">你可能也會想看</div>'
-        '<a href="/blog/" style="font-size:11.5px;color:var(--teal-deep);text-decoration:none;'
+        '<a href="/blog" style="font-size:11.5px;color:var(--teal-deep);text-decoration:none;'
         'font-weight:600" data-zh="瀏覽全部文章 →" data-en="Browse all →">瀏覽全部文章 →</a>'
         '</div>'
         '<div class="dn-related-grid">'

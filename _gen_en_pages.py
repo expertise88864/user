@@ -408,7 +408,7 @@ def en_mirror_exists(path: str) -> bool:
     clean = path.split('?', 1)[0].split('#', 1)[0]
     if clean == '/':
         return True
-    if clean.startswith('/en/'):
+    if clean == '/en' or clean.startswith('/en/'):
         return True
     if clean.endswith('/'):
         source = os.path.join(ROOT, clean.strip('/'), 'index.html')
@@ -417,6 +417,13 @@ def en_mirror_exists(path: str) -> bool:
     rel = clean.lstrip('/')
     if rel.endswith('.html'):
         rel = rel[:-5]
+    # No-slash directory form (e.g. /blog, /tools) → <dir>/index.html.
+    # Needed since nav links use the canonical no-trailing-slash form
+    # (trailingSlash:false); without this the EN rewriter would leave a
+    # /blog link pointing at the ZH tree.
+    if os.path.isdir(os.path.join(ROOT, rel)) and \
+            os.path.exists(os.path.join(ROOT, rel, 'index.html')):
+        return True
     source_file = rel + '.html'
     if '/' not in rel:
         return os.path.exists(os.path.join(ROOT, source_file)) and source_file not in SKIP
@@ -428,11 +435,9 @@ def en_mirror_exists(path: str) -> bool:
 
 def to_en_path(path: str) -> str:
     if path == '/':
-        return '/en/'
-    if path.startswith('/en/'):
+        return '/en'
+    if path == '/en' or path.startswith('/en/'):
         return path
-    if path.endswith('/'):
-        return '/en' + path
     return '/en' + path
 
 
@@ -610,7 +615,12 @@ def derive_meta(src: str, override: dict[str, str] | None) -> tuple[str, str]:
 def set_meta(src: str, title: str, desc: str) -> str:
     esc_title = html_lib.escape(title, quote=False)
     esc_desc = html_lib.escape(desc, quote=True)
-    src = re.sub(r'<title>[\s\S]*?</title>', f'<title>{esc_title}</title>', src, count=1, flags=re.I)
+    # lambda replacement (not f-string) so a backslash/digit in the title text
+    # can't be parsed as a regex backreference — same guard as the description
+    # + og/twitter fields below (a raw f-string here was the last unguarded one).
+    src = re.sub(r'<title>[\s\S]*?</title>',
+                 lambda m: f'<title>{esc_title}</title>',
+                 src, count=1, flags=re.I)
     # 2026-05-17 — use lambda replacement to bypass backreference parsing.
     # esc_desc / esc_title can contain digits like "8 Acne Myths" which combined
     # with the leading r'\1' became `\18` = invalid group reference 18.
