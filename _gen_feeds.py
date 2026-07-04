@@ -200,9 +200,12 @@ STATIC_PAGES = [
 
 
 def en_route_for(zh_url: str) -> str | None:
-    en = '/en' if zh_url == '/' else '/en' + zh_url
-    en_file = file_for_route(en)
-    return en if is_indexable(en_file) else None
+    # EN-consolidation (DECISIONS D-17): the /en mirror now canonicals to its ZH
+    # original, so EN URLs are no longer canonical and must NOT appear in the
+    # sitemap (neither as <url> entries nor as hreflang alternates). Return None
+    # everywhere → the sitemap is ZH-only. (Kept as a function so re-enabling the
+    # EN mirror later is a one-line change.)
+    return None
 
 
 def resolve_og(slug: str) -> str | None:

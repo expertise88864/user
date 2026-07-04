@@ -748,14 +748,17 @@ def is_noindex(src: str) -> bool:
 
 
 def hreflang_cluster(zh_canonical_path: str, en_canonical_path: str | None) -> str:
-    lines = [
+    # EN-consolidation (DECISIONS D-17): the /en mirror is a courtesy machine
+    # translation that Google was crawling but not indexing. We consolidate all
+    # ranking signal onto the ZH canonical (EN canonical -> zh, EN articles
+    # already noindex). So we no longer advertise `hreflang="en"` as an
+    # independent alternate — en_canonical_path is intentionally ignored.
+    # Emitting only the ZH self-references keeps x-default pointed at zh.
+    return '\n'.join([
         f'<link rel="alternate" hreflang="x-default" href="{DOMAIN}{zh_canonical_path}" />',
         f'<link rel="alternate" hreflang="zh-Hant" href="{DOMAIN}{zh_canonical_path}" />',
         f'<link rel="alternate" hreflang="zh-Hant-TW" href="{DOMAIN}{zh_canonical_path}" />',
-    ]
-    if en_canonical_path:
-        lines.append(f'<link rel="alternate" hreflang="en" href="{DOMAIN}{en_canonical_path}" />')
-    return '\n'.join(lines)
+    ])
 
 
 def replace_hreflang_cluster(src: str, cluster: str | None) -> str:
@@ -973,7 +976,14 @@ def transform(src: str, zh_canonical_path: str, en_canonical_path: str, source_r
 
     s = re.sub(r'<html\s+lang="[^"]*"', '<html lang="en"', s, count=1)
 
-    new_canonical = f'{DOMAIN}{en_canonical_path}'
+    # EN-consolidation (DECISIONS D-17): point the EN page's canonical + og:url
+    # at the ZH original so ranking signal consolidates onto the authoritative
+    # Chinese page instead of the thin machine-translated mirror (which Google
+    # crawls but declines to index). Note: cross-language canonical is a SOFT
+    # signal Google may ignore — the hard de-index is the existing noindex on
+    # EN article pages; this makes canonical + JSON-LD (which already use /blog)
+    # internally consistent.
+    new_canonical = f'{DOMAIN}{zh_canonical_path}'
     s = re.sub(
         r'<link\s+rel="canonical"\s+href="[^"]*"\s*/?>',
         f'<link rel="canonical" href="{new_canonical}" />',

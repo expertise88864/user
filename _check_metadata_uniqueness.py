@@ -54,9 +54,16 @@ def main() -> int:
         src = path.read_text(encoding="utf-8")
         if is_noindex(src):
             continue
+        is_en = rel.startswith("en/")
         for field, pattern in FIELDS.items():
             match = pattern.search(src)
             if not match:
+                continue
+            # EN-consolidation (DECISIONS D-17): EN mirror pages intentionally
+            # point canonical + og:url at their ZH original, so they legitimately
+            # "share" the ZH canonical — not an accidental duplicate. Still check
+            # EN title/description uniqueness (those stay English + distinct).
+            if is_en and field in ("canonical", "og:url"):
                 continue
             values[field][normalize(match.group(1))].append(rel)
 

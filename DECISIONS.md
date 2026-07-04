@@ -61,6 +61,17 @@ EN 不進 llms-full 語料;llms.txt 明示 EN 非醫療決策依據。內容一�
 **D-14 FTU 用量表唯一正規位置 = topical-steroids-guide**(2026-06 路線圖定案)
 異膚等其他文章只放連結指過來,不重複表格(防 duplicate content 與版本漂移)。
 
+**D-17 /en 鏡像收斂指向 zh(不獨立索引)**(2026-07-04,使用者定案)
+GSC 證據:Google 一直爬 /en 但**不收錄**(thin machine-translation);且 en 頁 JSON-LD 早就指
+zh /blog、與其 canonical=/en 不一致(Codex 抓到)。決策:把 /en 當純翻譯,權重全部收斂到 zh。
+實作(改源頭):`_gen_en_pages` en 頁 canonical+og:url→zh、hreflang_cluster **不再發 hreflang="en"**;
+`_gen_feeds` `en_route_for` 一律回 None → **sitemap 變 zh-only**(無 /en URL、無 en 替代);
+`_check_metadata_uniqueness` 放行 en 與 zh 共用 canonical(刻意,非重複錯誤);dashboard.html 移除殘留 hreflang=en。
+**誠實註記**:跨語言 canonical 是 Google 可能忽略的**軟訊號**;真正硬去索引可再對 en 加 noindex —
+但目前 en 內容頁多數本就靠 CJK>500 規則 noindex,加上 canonical→zh + 退出 sitemap,已足夠收斂。
+**要重開 en 獨立索引**:改回 `en_route_for` 與 canonical、恢復 hreflang="en" — 一併回退本則。
+內部連結仍指 `/en/...`(D-08,使用者仍可瀏覽英文;只是不餵 Google 獨立索引)。
+
 **D-15 GSC 判讀準則**(2026-06)
 「已找到/已檢索-尚未索引」= 新站常態,等權重;feed.xml/atom.xml 未索引=正常;robots 擋 /admin=正確。
 真正要動手的訊號:sitemap 內頁面 404、canonical 指向轉址、或收錄數長期下降。
