@@ -20,7 +20,9 @@
 | ~~TD-07~~ | ✅ **DONE**(2026-06-15) title 替換改 lambda | `_gen_en_pages.set_meta` 第 613 行原用 f-string 作 re.sub replacement(description 已修、title 漏改);標題含 `\`+數字會炸。已改 lambda,單元測試:正常標題輸出不變、backslash 標題不再 crash | 當前 en 輸出 byte-identical(無現有標題含反斜線),不需 regen | 🟢 |
 | ~~TD-08~~ | ❎ **刻意設計**(2026-06-15 複驗) | sw.js `maybeTrim` 1/5 機率跑 `trimCache` 是**文件化的取捨**(軟 FIFO 上限不必每次寫都做 O(n) 掃描);程式註解已說明。不是 bug | — | — | — |
 | TD-09 | desc 檢查:①兩支 checker 窗口不一致(常態 16 WARN,非 blocking)②`en/tools.html` desc 過短(w=112<120) | `_check_meta.py`(字元) vs `_check_meta_descriptions.py`(寬度) | ①以寬度版為準,`_check_meta.py` desc 降 info ②en/tools desc 在 en 生成源加長(反覆 regression,低價值 en 頁) | 兩支跑;Problems→0 | 🟢 低優先 |
-| TD-10 | WebSite SearchAction 指向無處理器 `/?q=` | schema audit;但 **Google 2024 已下架 sitelinks searchbox** | 讓 `?q=` 開 pagefind(需 JS)或移除。**低價值**(功能已被 Google 廢棄、phantom 無害) | `_audit_jsonld.py` | 🟢 低優先 |
+| ~~TD-10~~ | ❎ **非缺陷**(2026-07-06 複驗) SearchAction 非 phantom | `blog-shared.js:1728`(2026-05-17 加)已有 `?q=` handler:讀 URLSearchParams `q` → 開 Cmd+K → 預填查詢 → 觸發搜尋。SearchAction 契約已兌現,無需修改。 |
+| ~~TD-18~~ | ✅ **DONE**(2026-07-06)about.html ProfilePage `dateModified` 由 date-only 改 full ISO datetime | GSC「dateModified datetime 值無效」警告(/about,ProfilePage rich result 要 datetime)。`_normalize_date_modified` 只跑 blog/*.html(寫 `T00:00:00+08:00`),about.html 在範圍外故停在 date-only。已直接改 about.html;新文章的 breadcrumb 尾斜線 scaffold(new-article.ps1)也一併修。 |
+| ~~TD-19~~ | ✅ **DONE**(2026-07-06)breadcrumb JSON-LD `item` 尾斜線 `/blog/`→`/blog` | 每篇 breadcrumb position-2「衛教文章」item 指 `/blog/`(308 轉址)。112 檔 + scaffold 修正,與 D-08 導覽無尾斜線一致。 |
 | ~~TD-11~~ | ❎ **非缺陷**(2026-06-15 複驗) | 那 2 個 `Person` publisher 是 `blog/index.html` + `blog/topics.html`(Blog/CollectionPage,本就非文章型);55 篇文章 publisher 一致為 `Physician`。無不一致 | — | — | — |
 | TD-12 | blog-shared.min.js 72KB/75KB 逼近 budget 上限 | `_check_performance_budget.py` 基線 | 新功能改放 lazy bundle(blog-hub/diagrams 模式),不進 shared | budget checker | 🟢(規則)|
 
