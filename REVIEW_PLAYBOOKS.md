@@ -12,21 +12,22 @@ git diff → Codex GPT-5.5 review   # APPROVE 才 push(全域規則)
 
 ## 1. SEO(技術面)
 - 命令:`_check_seo_signals.py`、`_check_sitemap.py`、`_check_robots.py`、`_check_meta.py`
-- 通過:全部 [OK];sitemap URL 數 = 可索引頁數;canonical 全站自指、無尾斜線混用(`/en` 不是 `/en/`)。
-- 基線(2026-06-15):全綠;sitemap 125 URLs;hreflang 54 對互惠;`/en/` 尾斜線 bug 已修。
+- 通過:全部 [OK];sitemap URL 數 = 可索引 zh 頁數;zh 頁 canonical 自指、**en 頁 canonical→zh(D-17 收斂)**;URL 一律無尾斜線(`/en` 不是 `/en/`)。
+- 基線(2026-07-06):全綠;**sitemap 63 URLs(zh-only,D-17 後 /en 已退出 sitemap)**;生成的可索引頁**已不發 `hreflang="en"`**(D-17;2026-07-07 併把 scaffold `new-article.ps1`/`admin.html` 的殘留一併移除);`/en/`、`/blog/` 尾斜線 bug 已修。
 - 失敗處置:訊息會指出檔案 — 改**源頭**(見 PIPELINE.md)再 regen,不改產物。
 - 判斷力提醒:**排名/流量問題 ≠ 技術 SEO 問題**。gate 全綠時流量低是站外權重問題(新網域),
   不要再磨站內。收錄真相只看 GSC(WebSearch 是美國節點、不支援 site:,不可作準)。
 
 ## 2. schema.org(結構化資料)
 - 命令:`_audit_jsonld.py`(+ CI 的 schema-validator.yml)
-- 通過:Errors: 0。型別分布基線(2026-06):417 blocks — MedicalWebPage 113、BreadcrumbList 122、
-  ItemList 104、FAQPage 37、MedicalScholarlyArticle 14、HowTo 10、Physician 4。
+- 通過:Errors: 0。**主要**型別分布(2026-07-07,數字隨內容漂,**以 `_audit_jsonld.py` 實跑為準**):409 blocks —
+  BreadcrumbList 122、MedicalWebPage 113、ItemList 104、FAQPage 37、MedicalScholarlyArticle 14、Physician 4;
+  其餘為 CollectionPage / ProfilePage / DefinedTermSet / Organization / WebSite / WebPage / Blog 等各 2-3 塊(合計 409)。
 - 不變量(改前先讀 DECISIONS.md):
   - 作者 Physician 節點:**有** hasCredential(醫師執照、無號碼),**絕不加** worksFor/affiliation。
   - `mainEntity → #article` 引用是**刻意契約**(auditor 強制),外部工具說它 dangling 也不改。
   - 病患衛教文用 MedicalWebPage(非 Article),research 文才用 MedicalScholarlyArticle — 刻意降級,防 Google 誤判。
-- 失敗處置:JSON-LD 一律由 `_normalize_schema.py` 家族生成 — 改生成器,跑 `all`,兩次冪等。
+- 失敗處置:JSON-LD 一律由 `_normalize_schema.py` 家族生成 — 改生成器,跑 `build`,兩次冪等。
 - 升級:要「新增 schema 型別」或動作者權威表述 → 先問使用者。
 
 ## 3. Core Web Vitals(效能)
@@ -45,7 +46,7 @@ git diff → Codex GPT-5.5 review   # APPROVE 才 push(全域規則)
   非 blocking — **以 `_check_meta_descriptions.py`(寬度版)為準**,warnings ≤ 20 可接受。
 - 慣例(DECISIONS):zh 文章 title 後綴統一 `| 陳翊嘉醫師`;og/twitter title 跟隨;
   desc 是 SEO 源頭(blog-hub 卡片文字由它生成 → 改 desc 後跑 `_normalize_articles_desc.py` + `_minify.py`)。
-- 基線(2026-06-15):125 頁 desc 全綠 0 problems;title 唯一性通過。
+- 基線(2026-07-07):125 頁 desc,1 WARN(`en/tools.html` 過短 w=112,=TD-09,非 blocking);title 唯一性通過。
 
 ## 5. Internal Linking(內鏈)
 - 命令:`_check_internal_link_density.py`(--orphans 只看孤兒)、`_check_internal_links.py`、
@@ -71,18 +72,18 @@ git diff → Codex GPT-5.5 review   # APPROVE 才 push(全域規則)
 - 政策:引用型爬蟲全允許、訓練型封鎖(細節與名單:PIPELINE.md「三檔同步鐵則」+ DECISIONS D-06)。
   驗證:`_check_robots.py`(含 REQUIRED_BLOCKED 防護,防止訓練型被誤放行)。
 - TL;DR 直答區塊(GEO 第一槓桿):`.dn-tldr`,H1 下、disclaimer 上,zh 40-80 字 + EN 對照,
-  由 `_inject_tldr.py` 注入(冪等、**絕不覆寫**既有)。基線:12/57 篇(2026-06-15)。
-  **剩餘 45 篇是現成任務**:每篇從既有 FAQ/內文濃縮草稿 → 醫師逐句審 → apply → gate → codex → push。
+  由 `_inject_tldr.py` 注入(冪等、**絕不覆寫**既有)。基線:12/~53 篇(2026-06-15)。
+  **其餘 ~40 篇是現成任務**:每篇從既有 FAQ/內文濃縮草稿 → 醫師逐句審 → apply → gate → codex → push。
   措辭紅線(codex 實際退過件):不得寫「根治/cure」這類過強療效words — 用「最有效的治療…部分仍可能復發」。
 - 量測:GSC 成效報告看曝光趨勢(領先指標);可選:自架 danishashko/geo-aeo-tracker 每週查
   ChatGPT/Perplexity/Gemini 是否引用本站(30 條目標查詢)。
 - 判斷力提醒:GEO 是新站唯一不被網域權重卡死的通道 — 這一節的優先級**高於** CWV/站內 SEO 細節。
 
 ## 8. 可維護性 / 技術債
-- 命令:`python _run_quality.py check` 兩次(第二次 diff 必須為空 = 全管線冪等);
-  `git ls-files | grep -c "^_"`(根目錄腳本數,基線 ~128);TECH_DEBT.md 逐項狀態。
+- 命令:`python _run_quality.py build` 兩次(第二次 `git diff` 必須為空 = 全管線冪等;`check` 只跑驗證器、不重生,**無法**驗冪等);
+  `git ls-files | grep -c "^_"`(根目錄腳本數,基線 ~130);TECH_DEBT.md 逐項狀態。
 - 通過判準:gate 綠 + 冪等 + TECH_DEBT.md 無新增 P0/P1。
-- 心智模型:這個 repo 的「測試」= 對**產物**的驗證器(31 支),生成器本身無單元測試 —
-  所以改生成器的安全法是:跑 all → 看 git diff 是否**只有**你預期的變化 → 兩次冪等 → gate。
+- 心智模型:這個 repo 的「測試」= 對**產物**的驗證器(gate 的 `check` 跑 28 步 CHECK_STEPS;另有數支 `_check_*.py` 手動跑、不進 gate),生成器本身無單元測試 —
+  所以改生成器的安全法是:跑 build → 看 git diff 是否**只有**你預期的變化 → 兩次冪等 → gate。
   diff 出現非預期檔案 = 立刻停下來讀懂再繼續,不要「看起來沒關係就 commit」。
 - 升級判準:要重構管線結構(合併/拆分腳本、改執行順序)→ 屬架構決策,先問使用者。

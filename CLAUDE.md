@@ -6,7 +6,7 @@
 
 ## 這是什麼專案
 台灣皮膚科住院醫師(陳翊嘉)的靜態衛教網站,部署於 Vercel(push 到 main = 直接上 production)。
-zh-Hant 為源頭、`/en/` 鏡像為生成物。~57 篇文章 + 128 支根目錄 Python 腳本組成的建置管線。
+zh-Hant 為源頭、`/en/` 鏡像為生成物。~53 篇文章 + ~130 支根目錄 Python 腳本組成的建置管線。
 **這是 YMYL 醫療網站** — 內容錯誤會傷害真實病人,合規限制見下方鐵律。
 
 ## 每次開工(照順序做,不要跳)
@@ -27,14 +27,14 @@ zh-Hant 為源頭、`/en/` 鏡像為生成物。~57 篇文章 + 128 支根目錄
 4. **生成物不手改**。哪些是生成物、改了源頭要跑什麼:見 PIPELINE.md。
    通則:`en/**`、`sitemap.xml`、feeds、`llms-full.txt`、`ai/*.json`、`.well-known/ai.txt`、
    `robots.txt`、`*.min.js`、pagefind/ 都是生成物 → 改對應的 `_normalize_*/_gen_*` 源頭再重跑。
-5. **push 前必過品質閘**:`python _run_quality.py check` 必須 exit 0(31+ 驗證器)。
+5. **push 前必過品質閘**:`python _run_quality.py check` 必須 exit 0(跑完整套 CHECK_STEPS 驗證器)。
    只動 1-2 檔時可先跑對應單一 `_check_*.py` 快篩,但 push 前仍跑完整 gate。
 6. **DECISIONS.md 裡的定案不得重議/回退**(例:mainEntity→#article 是刻意契約、
    severe-scabies noindex 是刻意草稿、robots 引用/訓練分流)。想推翻 → 先問使用者。
 
 ## 常用命令
 ```
-python _run_quality.py check     # 31+ 驗證器(push 前必跑, exit 0 才行)
+python _run_quality.py check     # 整套 CHECK_STEPS 驗證器(push 前必跑, exit 0 才行)
 python _run_quality.py build       # 全量 regen + check(改了源頭腳本後用)
 python _check_robots.py          # 單項快篩範例(所有 _check_*.py 都可單跑)
 node _serve.mjs                  # 本地預覽
@@ -67,5 +67,5 @@ Python 3.13(命令是 `python`,**沒有 `python3`**)。腳本只用 stdlib。Nod
 ## 目前戰略脈絡(2026-06,幫你抓輕重)
 站內技術已到頂(gate 全綠);流量瓶頸是**新網域零權重 + 站外分發**,不是程式。
 別再花時間磨站內效能/SEO 細節(邊際效益≈0);高價值待辦見 TECH_DEBT.md 與 CONTENT_ROADMAP.md。
-TL;DR 區塊已覆蓋 12/57 篇(`_inject_tldr.py`,冪等、絕不覆寫既有)— 其餘 45 篇是
+TL;DR 區塊已覆蓋 12/~53 篇(`_inject_tldr.py`,冪等、絕不覆寫既有)— 其餘 ~40 篇是
 現成高價值任務:補 map → 醫師審 → apply → codex → push。

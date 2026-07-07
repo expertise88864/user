@@ -2,7 +2,7 @@
 
 > 目的:讓任何 session 一眼分清「哪些檔案是**源頭**(可手改)、哪些是**生成物**(絕不手改)」,
 > 以及「改了 X 之後要跑什麼」。順序的唯一權威是 `_run_quality.py` 的 `REGEN_STEPS`(~46 步)
-> 與 `CHECK_STEPS`(~31 步)—— **本檔不複製完整清單**(會漂移),只給結構與配方。
+> 與 `CHECK_STEPS`(當前 28 步,以該檔為準)—— **本檔不複製完整清單**(會漂移),只給結構與配方。
 
 ## 一張圖看懂資料流
 
@@ -44,8 +44,9 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
 | 新增 TL;DR(`_inject_tldr.py` 的 map) | 醫師審核後 `python _inject_tldr.py --apply` → `python _run_quality.py build` | gate;絕不覆寫既有 dn-tldr |
 
 ## ⚠️ 三檔同步鐵則:AI 爬蟲政策
-`robots.txt`、`.well-known/ai.txt`、`llms.txt` 三處都描述爬蟲政策,**必須一致**
-(Codex 曾兩度因此退件)。政策現況(2026-06,詳見 DECISIONS.md D-06):
+`robots.txt`、`.well-known/ai.txt`、`llms.txt` 三處都描述爬蟲政策,**政策方向必須一致(不得互相矛盾)**。
+`robots.txt` 是權威且列得最全(當前列 30 支 AI 爬蟲);`.well-known/ai.txt`/`llms.txt` 可為**精選子集**(未必逐一列同一份名單),
+但**絕不能**放行 robots.txt 所封鎖者、或封鎖其所放行者(Codex 曾兩度因此退件)。政策現況(詳見 DECISIONS.md D-06):
 - **引用型爬蟲允許全站**:ChatGPT-User, OAI-SearchBot, PerplexityBot, Claude-User,
   Claude-SearchBot, ClaudeBot, Claude-Web, Google-Extended, Perplexity-User, DuckAssistBot, AI2Bot, Applebot
 - **訓練型/掃站型封鎖**(但可抓 llms*.txt + sitemap):GPTBot, anthropic-ai, CCBot,

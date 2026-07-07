@@ -55,7 +55,6 @@ $template = @"
 <link rel="publisher" href="https://chendermatologist.com/" />
 <link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/blog/$slug" />
 <link rel="alternate" hreflang="zh-TW" href="https://chendermatologist.com/blog/$slug" />
-<link rel="alternate" hreflang="en" href="https://chendermatologist.com/blog/$slug" />
 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
 <link rel="manifest" href="/manifest.json" />
 <link rel="me" href="mailto:expertise88864@gmail.com" />

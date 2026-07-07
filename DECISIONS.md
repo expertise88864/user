@@ -31,8 +31,9 @@ Diffbot, FacebookBot, Amazonbot, Bytespider, omgili*, AhrefsBot, SemrushBot, MJ1
 BLEXBot, PetalBot。歷史:曾短暫全放(2026-06-15),隨後收斂為此分流並加 REQUIRED_BLOCKED 測試防回歸。
 改動必同步三檔(robots.txt / .well-known/ai.txt / llms.txt,見 PIPELINE.md)。重開:使用者指示。
 
-**D-07 URL 形式:trailingSlash:false,EN 首頁 canonical = `/en`(無尾斜線)**(2026-06)
-sitemap/canonical/og/hreflang 一律無尾斜線形式。曾因 `/en/` 造成 GSC「頁面會重新導向」,已修。
+**D-07 URL 形式:trailingSlash:false,一律無尾斜線**(2026-06;EN 部分已被 D-17 取代)
+所有內部 URL(sitemap/canonical/og/hreflang/內部連結)一律用無尾斜線形式(`/blog` 非 `/blog/`、`/en` 非 `/en/`)。曾因 `/en/`、`/blog/` 造成 GSC「頁面會重新導向」,已修。
+**註**:本則原說「EN 首頁 canonical=/en」——**D-17 之後 EN 全站 canonical 改指向 zh**(見 D-17);無尾斜線原則本身仍有效(適用於 zh)。
 
 **D-08 導覽列 URL 一律無尾斜線(`/blog`、`/en`);~~刻意不修~~ → 已於 2026-07-01 修正**
 原判斷「純美觀、風險>收益」。**推翻理由**:使用者連續多次在 GSC 見「頁面會重新導向」含 `/en/`、
@@ -64,7 +65,7 @@ EN 不進 llms-full 語料;llms.txt 明示 EN 非醫療決策依據。內容一�
 **D-17 /en 鏡像收斂指向 zh(不獨立索引)**(2026-07-04,使用者定案)
 GSC 證據:Google 一直爬 /en 但**不收錄**(thin machine-translation);且 en 頁 JSON-LD 早就指
 zh /blog、與其 canonical=/en 不一致(Codex 抓到)。決策:把 /en 當純翻譯,權重全部收斂到 zh。
-實作(改源頭):`_gen_en_pages` en 頁 canonical+og:url→zh、hreflang_cluster **不再發 hreflang="en"**;
+實作(改源頭):`_gen_en_pages` en 頁 canonical+og:url→zh、hreflang_cluster **不再發 hreflang="en"**(2026-07-07 併移除 scaffold `new-article.ps1`/`admin.html` 的 hreflang="en",杜絕新文章重新引入);
 `_gen_feeds` `en_route_for` 一律回 None → **sitemap 變 zh-only**(無 /en URL、無 en 替代);
 `_check_metadata_uniqueness` 放行 en 與 zh 共用 canonical(刻意,非重複錯誤);dashboard.html 移除殘留 hreflang=en。
 **誠實註記**:跨語言 canonical 是 Google 可能忽略的**軟訊號**;真正硬去索引可再對 en 加 noindex —
