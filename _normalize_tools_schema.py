@@ -120,11 +120,13 @@ TOOL_TO_DISEASE = {
 
 def build_app(tool: dict, lang: str) -> dict:
     inLang = "en" if lang == "en" else "zh-Hant-TW"
-    abs_url = CANONICAL_HOST + ("/en" if lang == "en" else "") + tool["url"]
+    # EN-consolidation (DECISIONS D-17): EN /tools canonicals to the ZH /tools,
+    # so its WebApplication @id + url must reference the ZH canonical (not /en).
+    # inLanguage stays "en" (the tool UI is English) — only the URLs consolidate.
+    abs_url = CANONICAL_HOST + tool["url"]
     app: dict = {
         "@type": "WebApplication",
-        "@id": CANONICAL_HOST + ("/en/tools" if lang == "en" else "/tools")
-               + "#tool-" + tool["id"],
+        "@id": CANONICAL_HOST + "/tools#tool-" + tool["id"],
         "name": tool["name"] if lang == "en" else (
             tool["name"] + "（線上計算器）"
         ),

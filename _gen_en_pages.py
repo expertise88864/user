@@ -915,11 +915,11 @@ def translate_aria_labels(src: str) -> str:
 EN_HUB_JSONLD_SWAPS: dict[str, str] = {
     # blog/index.html → en/blog/index.html: Blog @type
     '{"@context":"https://schema.org","@type":"Blog","name":"ChenDermatologist 部落格","url":"https://chendermatologist.com/blog/","description":"陳翊嘉醫師（皮膚科）整理的皮膚科衛教文章。","publisher":{"@type":"Person","name":"陳翊嘉 醫師","url":"https://chendermatologist.com/"}}':
-        '{"@context":"https://schema.org","@type":"Blog","name":"ChenDermatologist Blog","url":"https://chendermatologist.com/en/blog","description":"Plain-language dermatology articles by Dr. Yi-Jia Chen.","inLanguage":"en","publisher":{"@type":"Person","name":"Dr. Yi-Jia Chen","url":"https://chendermatologist.com/en"}}',
+        '{"@context":"https://schema.org","@type":"Blog","name":"ChenDermatologist Blog","url":"https://chendermatologist.com/blog","description":"Plain-language dermatology articles by Dr. Yi-Jia Chen.","inLanguage":"en","publisher":{"@type":"Person","name":"Dr. Yi-Jia Chen","url":"https://chendermatologist.com/"}}',
     # blog/topics.html → en/blog/topics.html: CollectionPage @type
     # NB: source uses inLanguage zh-TW; swap to en for the mirror.
     '{"@context":"https://schema.org","@type":"CollectionPage","name":"皮膚科主題地圖 | ChenDermatologist","url":"https://chendermatologist.com/blog/topics","description":"所有皮膚科衛教文章按主題整理 — 痘痘、防曬、異膚、肝斑、酸類、A 酸、落髮、香港腳。","inLanguage":"zh-TW","isPartOf":{"@type":"WebSite","name":"ChenDermatologist","url":"https://chendermatologist.com/"},"publisher":{"@type":"Person","name":"陳翊嘉 醫師","url":"https://chendermatologist.com/"}}':
-        '{"@context":"https://schema.org","@type":"CollectionPage","name":"Dermatology Topic Map | ChenDermatologist","url":"https://chendermatologist.com/en/blog/topics","description":"All dermatology patient-education articles organized by topic — acne, sunscreen, atopic dermatitis, melasma, acids, retinoids, hair loss, tinea pedis.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ChenDermatologist","url":"https://chendermatologist.com/"},"publisher":{"@type":"Person","name":"Dr. Yi-Jia Chen","url":"https://chendermatologist.com/en"}}',
+        '{"@context":"https://schema.org","@type":"CollectionPage","name":"Dermatology Topic Map | ChenDermatologist","url":"https://chendermatologist.com/blog/topics","description":"All dermatology patient-education articles organized by topic — acne, sunscreen, atopic dermatitis, melasma, acids, retinoids, hair loss, tinea pedis.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ChenDermatologist","url":"https://chendermatologist.com/"},"publisher":{"@type":"Person","name":"Dr. Yi-Jia Chen","url":"https://chendermatologist.com/"}}',
 }
 
 

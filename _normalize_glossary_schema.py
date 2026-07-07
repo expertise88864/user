@@ -124,7 +124,10 @@ def build_terms(cards: list[str], lang: str) -> list[dict]:
 
     `lang` is 'zh' or 'en' — controls which fields become `name` vs
     `alternateName` and the localized inDefinedTermSet URL."""
-    set_url = CANONICAL_HOST + ("/en/glossary" if lang == "en" else "/glossary")
+    # EN-consolidation (DECISIONS D-17): EN glossary canonicals to ZH /glossary,
+    # so its DefinedTermSet @id/url must reference /glossary (not /en/glossary)
+    # to stay consistent with the canonical.
+    set_url = CANONICAL_HOST + "/glossary"
     set_id = set_url + "#termset"
 
     terms: list[dict] = []
@@ -161,13 +164,22 @@ def build_terms(cards: list[str], lang: str) -> list[dict]:
             # Schema.org: termCode is the category/subject label
             term["termCode"] = cat
         if link:
+            # EN-consolidation (DECISIONS D-17): the EN glossary's DefinedTerm
+            # url points at the article that defines the term. The visible card
+            # link stays /en/... (D-08, users browse EN), but the structured-data
+            # url must reference the ZH canonical, so strip the /en prefix here.
+            if lang == "en" and link.startswith("/en/"):
+                link = link[3:]  # /en/blog/x#a -> /blog/x#a
             term["url"] = link if link.startswith('http') else CANONICAL_HOST + link
         terms.append(term)
     return terms
 
 
 def build_termset(terms: list[dict], lang: str) -> dict:
-    set_url = CANONICAL_HOST + ("/en/glossary" if lang == "en" else "/glossary")
+    # EN-consolidation (DECISIONS D-17): EN glossary canonicals to ZH /glossary,
+    # so its DefinedTermSet @id/url must reference /glossary (not /en/glossary)
+    # to stay consistent with the canonical.
+    set_url = CANONICAL_HOST + "/glossary"
     set_id = set_url + "#termset"
     if lang == "en":
         name = "Dermatology glossary (Chinese-English)"
