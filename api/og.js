@@ -73,7 +73,10 @@ function buildSvg(title, tag, date, subtitle) {
   const titleLines = wrapText(title || 'ChenDermatologist', 38, 3);
   const titleY0 = H / 2 - (titleLines.length - 1) * 38 + 10;
   const subtitleSafe = subtitle ? escapeXml(subtitle) : '';
-  const tagSafe = tag ? escapeXml(tag) : '皮膚科衛教';
+  // Uppercase the RAW eyebrow text, THEN escape — escaping first and
+  // upper-casing after would mangle XML entities (e.g. `&amp;` → `&AMP;`,
+  // which is not a valid entity). CJK has no case so this is a no-op there.
+  const tagSafe = escapeXml((tag || '皮膚科衛教').toUpperCase());
   const dateSafe = date ? escapeXml(date) : '';
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
@@ -97,7 +100,7 @@ function buildSvg(title, tag, date, subtitle) {
 <rect width="${W}" height="${H}" fill="url(#glow)"/>
 <g font-family="-apple-system, BlinkMacSystemFont, 'Noto Sans TC', sans-serif" fill="#fff">
   <!-- top eyebrow / tag -->
-  <text x="80" y="120" font-size="22" font-weight="700" letter-spacing="0.2em" fill="#a4b5a8" text-transform="uppercase">${tagSafe.toUpperCase()}</text>
+  <text x="80" y="120" font-size="22" font-weight="700" letter-spacing="0.2em" fill="#a4b5a8" text-transform="uppercase">${tagSafe}</text>
   <line x1="80" y1="146" x2="240" y2="146" stroke="url(#line)" stroke-width="2"/>
 
   <!-- title (up to 3 lines) -->

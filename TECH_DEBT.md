@@ -22,8 +22,10 @@
 > 讀了 `api/admin/*`(session/login/logout/popular-picks)、`api/og.js`、`admin/admin-extras.js`、
 > `admin/edit.html`、`admin.html` inline JS、8 支 CI workflow、`/admin*` CSP。
 > **總結:寫入層安全設計良好,未發現 P0/P1 漏洞**(上一輪「修資安」成果紮實)。
-> 詳細評估(含幾個低優先強化建議如 KV 內 PAT、login rate-limit、og.js `toUpperCase` entity)
-> **只在對話回報,不落公開 .md**(本 repo .md 會被公開部署)。以下只記非敏感的流程備註:
+> 詳細評估只在對話回報,不落公開 .md(本 repo .md 會被公開部署)。
+> **已於 2026-07-08 加固三項**:(2) `/api/admin/login` 加 KV per-IP rate-limit(10 次/15 分、fail-open);
+> (3) `api/og.js` eyebrow 先 uppercase 再 escape(修 entity mangling);
+> (5) 新增 `middleware.js` 對 `/admin*` 加可選邊緣 Basic-Auth(**inert:未設 `ADMIN_BASIC_USER`/`ADMIN_BASIC_PASS` 前完全不動作**,不碰 /api 與公開頁)。以下只記非敏感的流程備註:
 | ID | 項目 | 說明 | 安全 |
 |----|------|------|------|
 | TD-26 | 編輯器直寫 GitHub 繞過**本地** gate(#13) | WYSIWYG 用瀏覽器端 PAT 直接 commit 到 GitHub(8 個 `api.github.com` 呼叫)→ 觸發 Vercel 部署;Vercel 不等 CI(`quality.yml`)。內容由可信站長寫入,但**編輯器寫的內容未過本地 `_run_quality.py` 即可能上線**。非漏洞、屬流程取捨。建議:編輯器送出前至少跑輕量前端驗證,或讓 Vercel 部署 gate 在 CI 綠燈後。 | 🟢 流程 P3 |
