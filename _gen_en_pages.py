@@ -984,9 +984,13 @@ def transform(src: str, zh_canonical_path: str, en_canonical_path: str, source_r
     # EN article pages; this makes canonical + JSON-LD (which already use /blog)
     # internally consistent.
     new_canonical = f'{DOMAIN}{zh_canonical_path}'
+    # CODE_REVIEW — lambda replacement (not a raw f-string) so a backslash or
+    # digit sequence in new_canonical can't be parsed as a regex backreference.
+    # Same guard the og:url replacement below and set_meta() already use; this
+    # was the last raw-f-string re.sub replacement in the module.
     s = re.sub(
         r'<link\s+rel="canonical"\s+href="[^"]*"\s*/?>',
-        f'<link rel="canonical" href="{new_canonical}" />',
+        lambda m: f'<link rel="canonical" href="{new_canonical}" />',
         s,
         count=1,
     )

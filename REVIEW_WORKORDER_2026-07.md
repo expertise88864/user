@@ -209,7 +209,7 @@ TD-03 admin 邊緣驗證(P2 **驗證是否已過時**)。
   - **修復(2026-07-08,醫師授權+提供 Ludwig I–III 描述)**:TD-20(Ludwig 重寫)、TD-22(clamp)、TD-24(死錨點)、TD-21/23(揭露)**已全部修復並上線**(node 驗證 + gate 綠 + Codex APPROVE)。**TD-25(PHQ-9 死碼去留)待醫師決定**。
   - HANDOFF:Phase 1 **完全交付**(審 + 修)。下一步 = Phase 2(Admin 攻擊面)。唯一待辦:TD-25 PHQ-9「刪死碼 or 重新接線成正式功能」需醫師一句話決定。
 - [x] **Phase 2 Admin 攻擊面 — 完成 2026-07-08**。讀 `api/admin/*`、`api/og.js`、`admin-extras.js`、`edit.html`、`admin.html` inline JS、8 支 CI workflow、`/admin*` CSP。**結論:寫入層安全設計良好,無 P0/P1 漏洞**。TD-03 真相 = **大幅緩解**(session cookie `api/admin/_session.js`、`/admin*` 硬化 CSP〔無第三方 script、connect-src 鎖定、frame-ancestors none〕、DOM textContent、CI action SHA-pin、無 pull_request_target);殘留僅「admin HTML 殼公開可載入」= 標準 SPA。#13 繞過管線 = 真(編輯器瀏覽器端 PAT 直寫 GitHub、Vercel 不等 CI)→ 流程備註 TD-26。低優先強化(KV 內 PAT、login rate-limit、og.js `toUpperCase` entity)只在對話回報,未落公開 .md。
-- [ ] Phase 3 全庫掃描 + 核心生成器(掃描命中:____ 支;TD-06 關單:____)
+- [x] **Phase 3 全庫掃描 + 核心生成器 — 完成 2026-07-09**。步驟 0 掃 132 支 `_*.py`:硬路徑僅 TD-13 一次性腳本;**bug 類 #6(open 無 encoding)全庫 100% 乾淨**、無 bare except、無 shell=True;re.sub f-string 管線內僅 `_gen_en_pages.py:987` 真需修(其餘 int/日期插值或 callable = 安全)。深讀 10 支核心生成器(en_pages/feeds/schema/medical_codes/drug_schema/article_metadata/minify/run_quality/llms_counts/date_modified),體質優良、冪等。**修復**:**TD-06 關單**(sitemap 文章 lastmod 走 `_parse_date_safe`,sitemap.xml byte-identical)、**TD-27**(canonical f-string→lambda,順手修 🟢,EN 生成物零內容 diff)。**新記**:TD-28(`check` 漏驗 min 同步,P3 有 CI 兜底)、TD-29(死碼清理,P3)。**TD-05 已看清根因、寫成可執行工單但未動工**(🟡 改 55 檔 schema image,需醫師/使用者+codex+rich-result 手驗)。`build` 兩次冪等 + gate 全綠。HANDOFF:Phase 3 完全交付,下一步 = Phase 4(驗證器可信度 + 部署基建;可先接 TD-28 的 `_check_min_sync.py` + TD-05 執行)。
 - [ ] Phase 4 驗證器可信度 + 部署基建(假綠燈:____ 支)
 - [ ] Phase 5 前端核心 runtime
 - [ ] Phase 6 次要 bundles + 總結報告

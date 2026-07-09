@@ -282,8 +282,13 @@ def build_sitemap() -> str:
         # SEO_AUDIT C3 — also include caption from the article meta
         # description for richer image-search context.
         zh_meta = html_meta(ROOT / 'blog' / f'{a["slug"]}.html')
+        # CODE_REVIEW TD-06 — normalize article lastmod through the same
+        # _parse_date_safe guard the RSS/Atom pubDates use. A malformed
+        # date in DN.ARTICLES would otherwise flow raw into <lastmod> and
+        # produce an invalid W3C datetime. Valid dates round-trip identically.
+        lastmod = _parse_date_safe(a['date'], a.get('slug', '')).strftime('%Y-%m-%d')
         emit_url(
-            out, zh, a['date'], 'monthly', '0.8',
+            out, zh, lastmod, 'monthly', '0.8',
             alternates_for(zh, en),
             image=resolve_og(a['slug']),
             image_title=a['title'],
@@ -302,7 +307,8 @@ def build_sitemap() -> str:
         en = en_route_for(zh)
         if not en:
             continue
-        emit_url(out, en, a['date'], 'monthly', '0.7', alternates_for(zh, en))
+        lastmod = _parse_date_safe(a['date'], a.get('slug', '')).strftime('%Y-%m-%d')
+        emit_url(out, en, lastmod, 'monthly', '0.7', alternates_for(zh, en))
 
     out.append('</urlset>')
     return '\n'.join(out) + '\n'
