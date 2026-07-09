@@ -208,7 +208,7 @@ TD-03 admin 邊緣驗證(P2 **驗證是否已過時**)。
   - 另發現:TD-22 通用 helper 數字輸入無 clamp(7 個 calc 受影響)、TD-23 ASIS 自訂分級無實證、TD-24 5 個 in-article calc 連到不存在的 /tools# 錨點。
   - **修復(2026-07-08,醫師授權+提供 Ludwig I–III 描述)**:TD-20(Ludwig 重寫)、TD-22(clamp)、TD-24(死錨點)、TD-21/23(揭露)**已全部修復並上線**(node 驗證 + gate 綠 + Codex APPROVE)。**TD-25(PHQ-9 死碼去留)待醫師決定**。
   - HANDOFF:Phase 1 **完全交付**(審 + 修)。下一步 = Phase 2(Admin 攻擊面)。唯一待辦:TD-25 PHQ-9「刪死碼 or 重新接線成正式功能」需醫師一句話決定。
-- [ ] Phase 2 Admin 攻擊面(TD-03 真相:____;#13 繞過管線:____)
+- [x] **Phase 2 Admin 攻擊面 — 完成 2026-07-08**。讀 `api/admin/*`、`api/og.js`、`admin-extras.js`、`edit.html`、`admin.html` inline JS、8 支 CI workflow、`/admin*` CSP。**結論:寫入層安全設計良好,無 P0/P1 漏洞**。TD-03 真相 = **大幅緩解**(session cookie `api/admin/_session.js`、`/admin*` 硬化 CSP〔無第三方 script、connect-src 鎖定、frame-ancestors none〕、DOM textContent、CI action SHA-pin、無 pull_request_target);殘留僅「admin HTML 殼公開可載入」= 標準 SPA。#13 繞過管線 = 真(編輯器瀏覽器端 PAT 直寫 GitHub、Vercel 不等 CI)→ 流程備註 TD-26。低優先強化(KV 內 PAT、login rate-limit、og.js `toUpperCase` entity)只在對話回報,未落公開 .md。
 - [ ] Phase 3 全庫掃描 + 核心生成器(掃描命中:____ 支;TD-06 關單:____)
 - [ ] Phase 4 驗證器可信度 + 部署基建(假綠燈:____ 支)
 - [ ] Phase 5 前端核心 runtime

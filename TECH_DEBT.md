@@ -18,12 +18,22 @@
 | ~~TD-24~~ ✅ | 5 個 in-article 計算器的「查看完整指南 →」連到不存在的 `/tools#` 錨點(已修 2026-07-08) | `/tools` hub 只有 10 區塊(scorad/pasi/dlqi/salt/uas7/gags/masi/hurley/norwood/fitzpatrick)。但 EASI/IHS4/VAS-pruritus/IGA/VASI 會實際 in-article 渲染並由 `_buildCalc`(:235)產生 `href="/tools#easi"` 等連結 → 該錨點不存在,點了落在 /tools 頂端。 | 二擇一:①在 tools.html 補這些工具區塊;②這些 calc 的 cfg 拿掉 `toolsAnchor`(不產生死連結)。**✅ 已修:8 個非-hub calc(easi/poem/ihs4/napsi/vas-pruritus/iga/asis/vasi)移除 toolsAnchor;6 個 hub calc 保留** | gate 綠 | ✅ DONE |
 | ~~TD-25~~ ✅ | 計算器死碼/不可達(維護性,非醫療錯誤) | (a) `injectPHQ9` **刻意未接線**(tools.html build note R20 2026-05-14:「PHQ-9 移除」)→ 函式+其 min 檔為死碼;另 dashboard.html 有 `/glossary#dn-phq9` 死連結。(b) 因 `autoInjectCalculators` 硬上限 1/篇(`.slice(0,1)`)只顯示 CALC_ORDER 第 1 個,**永遠排第 2 的 POEM/NAPSI/ASIS 從不 auto-render**,又不在 /tools hub → 實質不可達。 | **✅ (a) 已修(2026-07-08,醫師選「刪除」):移除 `injectPHQ9`(−2317 字元)+ 重生 min;修好 dashboard.html 死連結(改「PHQ-9 量表」純文字)。** (b) POEM/NAPSI/ASIS 非死碼、係 hard-cap-1 設計後果,**降 P3**:未來若要讓其可達,再放進 /tools hub 或調 CALC_ORDER。 | gate 綠 | ✅ PHQ-9 DONE;(b)→P3 |
 
+## Phase 2 — Admin 攻擊面複審(2026-07-08)結論
+> 讀了 `api/admin/*`(session/login/logout/popular-picks)、`api/og.js`、`admin/admin-extras.js`、
+> `admin/edit.html`、`admin.html` inline JS、8 支 CI workflow、`/admin*` CSP。
+> **總結:寫入層安全設計良好,未發現 P0/P1 漏洞**(上一輪「修資安」成果紮實)。
+> 詳細評估(含幾個低優先強化建議如 KV 內 PAT、login rate-limit、og.js `toUpperCase` entity)
+> **只在對話回報,不落公開 .md**(本 repo .md 會被公開部署)。以下只記非敏感的流程備註:
+| ID | 項目 | 說明 | 安全 |
+|----|------|------|------|
+| TD-26 | 編輯器直寫 GitHub 繞過**本地** gate(#13) | WYSIWYG 用瀏覽器端 PAT 直接 commit 到 GitHub(8 個 `api.github.com` 呼叫)→ 觸發 Vercel 部署;Vercel 不等 CI(`quality.yml`)。內容由可信站長寫入,但**編輯器寫的內容未過本地 `_run_quality.py` 即可能上線**。非漏洞、屬流程取捨。建議:編輯器送出前至少跑輕量前端驗證,或讓 Vercel 部署 gate 在 CI 綠燈後。 | 🟢 流程 P3 |
+
 ## P1(值得做,影響真實但不緊急)
 | ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
 |----|------|-----------|------|------|------|
 | TD-01 | TL;DR 只覆蓋 12/~53 篇 | `grep -rl 'class="dn-tldr"' blog/*.html \| wc -l` = 12 | 分批(每批~10 篇)補 `_inject_tldr.py` 的 map:從該篇 FAQ/首段濃縮 zh 40-80 字+EN;**逐句給醫師審**後 --apply | gate + codex;措辭不得含「根治/cure」 | 🟡 |
 | TD-02 | ⏸️ **暫緩(需手動)** 字型未自託管:fonts.googleapis.com render-blocking | 2026-06-15 複驗:仍走 Google Fonts。但 `_self_host_fonts.py` **只自動處理 Inter**;Noto Sans/Serif **TC(CJK)需手動 subset**(全檔數 MB,盲抓有缺字風險)。現行 `display=optional` 已把 FOUT 降到最低,render-blocking 只剩 CSS fetch 一跳 | 若要做:先手動 subset CJK(只含站內用字)→ 改 `_self_host_fonts.py` 產 @font-face → 實機逐頁確認**無缺字**。非弱模型可獨立安全完成 | PSI 手查前後 LCP | 🔴 |
-| TD-03 | admin/dashboard 無邊緣驗證(僅 noindex+PAT) | admin.html 公開可達;寫入靠 PAT 但介面裸奔 | Vercel 密碼保護或 middleware Basic-Auth;或搬離 public | 手測 401;`_check_api_security.py` | 🔴(部署層變更) |
+| TD-03 | ✅ **大幅緩解(Phase 2 複審 2026-07-08)** admin 寫入層安全 | 寫入 API 全走 HttpOnly+Secure+SameSite=Strict session cookie(`api/admin/_session.js`:KV+24h+owner allowlist)、PAT shape 驗證、slug 白名單;`/admin*` 有**專屬硬化 CSP**(無第三方 script、connect-src 鎖 GitHub/languagetool/ncbi、frame-ancestors none);DOM 動態值走 `textContent`;CI action 全 SHA-pin、無 pull_request_target。**殘留僅「admin HTML 殼公開可載入」= 標準 SPA、非漏洞**(無 PAT 即無作用)。 | 可選 defense-in-depth:對 admin HTML 殼加 Vercel 邊緣密碼(細節見對話) | Phase 2 複審 | 🟢 可選 |
 | TD-04 | CSP `script-src 'unsafe-inline'` | vercel.json 全站 CSP;8 個 inline script + 128 頁 speculation rules 依賴 | 需 nonce 化或外移 inline script 的**專案級重構** — 勿零碎修 | 全站 smoke + 實機 console 無 CSP 錯誤 | 🔴 |
 | TD-05 | ⚠️ **仍開啟(先前誤標 DONE,Codex 2026-07-06 更正)** og/schema 首圖 | 實測:og:image **28/55** 用 `/assets/og/<slug>.png`、**27/55** 仍用動態 `/api/og?...`;更關鍵——**JSON-LD `image` 54/55 仍是 `logo-512.png`**(通用 logo,非真實圖)。所以 og:image 只做一半、schema image 幾乎沒做 | (a) 讓 og:image 全部收斂到 `/assets/og`;(b) schema image 指向真實首圖而非 logo(改 `_normalize_schema` 的 image 來源) | `_check_seo_signals.py`、分享/rich-result 手查 | 🟡 |
 
