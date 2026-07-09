@@ -206,7 +206,8 @@ TD-03 admin 邊緣驗證(P2 **驗證是否已過時**)。
   - 必查點 2 Fitzpatrick → **確認**:非標準「取平均」計分、未標示簡化 → TD-21。
   - PHQ-9 警語 → 程式**正確**(Q9≥1 觸發 1925/1995 求助專線),但整支計算器**刻意未接線**(R20「PHQ-9 移除」)= 死碼 → TD-25。
   - 另發現:TD-22 通用 helper 數字輸入無 clamp(7 個 calc 受影響)、TD-23 ASIS 自訂分級無實證、TD-24 5 個 in-article calc 連到不存在的 /tools# 錨點。
-  - HANDOFF:Phase 1 交付完成。下一步 = Phase 2(Admin 攻擊面);TD-20 若使用者要修,需先請醫師提供 Ludwig I–III 的中文分級描述。
+  - **修復(2026-07-08,醫師授權+提供 Ludwig I–III 描述)**:TD-20(Ludwig 重寫)、TD-22(clamp)、TD-24(死錨點)、TD-21/23(揭露)**已全部修復並上線**(node 驗證 + gate 綠 + Codex APPROVE)。**TD-25(PHQ-9 死碼去留)待醫師決定**。
+  - HANDOFF:Phase 1 **完全交付**(審 + 修)。下一步 = Phase 2(Admin 攻擊面)。唯一待辦:TD-25 PHQ-9「刪死碼 or 重新接線成正式功能」需醫師一句話決定。
 - [ ] Phase 2 Admin 攻擊面(TD-03 真相:____;#13 繞過管線:____)
 - [ ] Phase 3 全庫掃描 + 核心生成器(掃描命中:____ 支;TD-06 關單:____)
 - [ ] Phase 4 驗證器可信度 + 部署基建(假綠燈:____ 支)

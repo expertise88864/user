@@ -239,7 +239,11 @@
     function readVals() {
       var v = {};
       box.querySelectorAll('[data-key]').forEach(function (el) {
-        v[el.dataset.key] = el.tagName === 'SELECT' ? el.value : (parseFloat(el.value) || 0);
+        if (el.tagName === 'SELECT') { v[el.dataset.key] = el.value; return; }
+        var num = parseFloat(el.value) || 0;
+        var mn = el.hasAttribute('min') ? parseFloat(el.getAttribute('min')) : -Infinity;
+        var mx = el.hasAttribute('max') ? parseFloat(el.getAttribute('max')) : Infinity;
+        v[el.dataset.key] = Math.max(mn, Math.min(mx, num));
       });
       return v;
     }
@@ -358,51 +362,97 @@
     });
   };
 
-  // Norwood-Hamilton (Male Pattern Baldness) + Ludwig (Female) — hairloss-myths
+  // Norwood-Hamilton (Male, I-VII) + Ludwig (Female, I-III) — hairloss-myths
+  // Sex-dependent stage list: Ludwig only has I-III (fixed 2026-07-08, TD-20).
   DN.injectHairScale = function () {
     if (!DN._forceInject && (DN.currentSlug() !== 'hairloss-myths')) return;
-    DN._buildCalc({
-      id: 'dn-hair-scale', tool: 'Norwood-Ludwig', toolsAnchor: 'norwood',
-      title: 'Norwood-Hamilton （男性） / Ludwig （女性） 雄性禿分級',
-      sub: '雄性禿臨床分級。男性使用 Norwood-Hamilton，女性使用 Ludwig。',
-      rows: [
-        { type:'select', label:'性別', key:'sex', options:[
-          {v:'M',label:'男性 → Norwood-Hamilton'},
-          {v:'F',label:'女性 → Ludwig'}
-        ]},
-        { type:'select', label:'目前髮量狀態', key:'stage', options:[
-          {v:1,label:'I — 正常，無明顯禿髮'},
-          {v:2,label:'II — 輕度髮際線後退(M 型微微）'},
-          {v:3,label:'III — 明顯 M 型禿 / 頭頂稍稀'},
-          {v:4,label:'IV — 髮際線顯著後退 + 頭頂禿髮'},
-          {v:5,label:'V — 大面積頭頂禿，僅後方環狀剩餘'},
-          {v:6,label:'VI — 頭頂與前方禿髮融合'},
-          {v:7,label:'VII — 僅後枕部 / 兩側馬蹄形剩餘'}
-        ]}
-      ],
-      calc: function (v) {
-        var s = parseInt(v.stage) || 1;
-        var sex = v.sex || 'M';
-        var scaleName = sex === 'M' ? 'Norwood ' : 'Ludwig ';
-        var roman = ['I','II','III','IV','V','VI','VII'];
-        var band, bg, fg, interp;
-        if (s <= 2) { band='輕度'; bg='#dcfce7'; fg='#14532d';
-          interp = sex === 'M'
-            ? '輕度雄性禿 — <strong>外用 Minoxidil 5%</strong>（每日 2 次）± <strong>口服 Finasteride 1 mg/day</strong>（需專科處方）；生活型態調整。'
-            : '輕度女性禿 — <strong>外用 Minoxidil 2-5%</strong>（每日 1-2 次）;<strong>低劑量口服 Minoxidil 0.5-1.25 mg/day</strong>(Olsen 2025);Spironolactone 100 mg。';
-        }
-        else if (s <= 4) { band='中度'; bg='#fef9c3'; fg='#854d0e';
-          interp = sex === 'M'
-            ? '中度 — <strong>Finasteride 1 mg/day + Minoxidil 5%</strong> 雙標準；考慮 PRP 注射；規劃植髮諮詢。'
-            : '中度 — Minoxidil + Spironolactone 為主軸；考慮 <strong>低劑量 oral Minoxidil</strong> 與 PRP。';
-        }
-        else { band='重度'; bg='#fee2e2'; fg='#991b1b';
-          interp = '重度 — <strong>需植髮搭配藥物維持</strong>(FUE / FUT);Finasteride / Minoxidil 必須持續以避免後方續發禿髮。';
-        }
-        return { score: scaleName + roman[s-1], band: band, bg: bg, fg: fg, interp: interp };
-      },
-      disclaimer: '* Norwood 1975 / Ludwig 1977;Olsen 2025 JAAD LDOM 共識；治療需專科醫師個別評估。'
-    });
+    DN.calcStyles();
+    var anchor = document.querySelector('article.max-w-3xl');
+    if (!anchor || document.getElementById('dn-hair-scale')) return;
+
+    var NORWOOD = [
+      'I — 正常，無明顯禿髮',
+      'II — 輕度髮際線後退(M 型微微）',
+      'III — 明顯 M 型禿 / 頭頂稍稀',
+      'IV — 髮際線顯著後退 + 頭頂禿髮',
+      'V — 大面積頭頂禿，僅後方環狀剩餘',
+      'VI — 頭頂與前方禿髮融合',
+      'VII — 僅後枕部 / 兩側馬蹄形剩餘'
+    ];
+    var LUDWIG = [
+      'I — 頭頂/頂冠部輕度稀疏，額前髮際線通常保留',
+      'II — 頂冠區稀疏明顯加重、密度顯著下降，頭皮可見度增加',
+      'III — 頂冠區近乎全禿/完全裸露，但額前髮緣通常仍保留'
+    ];
+    var roman = ['I','II','III','IV','V','VI','VII'];
+
+    var box = document.createElement('section');
+    box.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
+    box.innerHTML =
+      '<div class="dn-calc" id="dn-hair-scale">' +
+        '<h3 class="dn-calc-title" data-zh="Norwood-Hamilton（男性）/ Ludwig（女性）雄性禿分級" data-en="Norwood-Hamilton (male) / Ludwig (female) AGA staging">Norwood-Hamilton（男性）/ Ludwig（女性）雄性禿分級</h3>' +
+        '<div class="dn-calc-sub" data-zh="雄性禿臨床分級。男性使用 Norwood-Hamilton（I–VII），女性使用 Ludwig（I–III）。" data-en="Male: Norwood-Hamilton I–VII. Female: Ludwig I–III.">雄性禿臨床分級。男性使用 Norwood-Hamilton（I–VII），女性使用 Ludwig（I–III）。</div>' +
+        '<div class="dn-calc-row"><label data-zh="性別" data-en="Sex">性別</label>' +
+          '<select class="dn-calc-input" id="dn-hair-sex" style="width:auto;min-width:190px">' +
+            '<option value="M" data-zh="男性 → Norwood-Hamilton" data-en="Male → Norwood-Hamilton">男性 → Norwood-Hamilton</option>' +
+            '<option value="F" data-zh="女性 → Ludwig" data-en="Female → Ludwig">女性 → Ludwig</option>' +
+          '</select></div>' +
+        '<div class="dn-calc-row"><label data-zh="目前髮量狀態" data-en="Current stage">目前髮量狀態</label>' +
+          '<select class="dn-calc-input" id="dn-hair-stage" style="width:auto;min-width:190px"></select></div>' +
+        '<div class="dn-calc-result">' +
+          '<div><span class="dn-calc-score" id="dn-hair-score">—</span><span class="dn-calc-band" id="dn-hair-band"></span></div>' +
+          '<div class="dn-calc-interp" id="dn-hair-interp"></div>' +
+        '</div>' +
+        '<a href="/tools#norwood" class="dn-calc-tools-link" data-zh="查看完整 Norwood-Ludwig 使用指南 →" data-en="View full guide →">查看完整 Norwood-Ludwig 使用指南 →</a>' +
+        '<div class="dn-calc-disclaimer" data-zh="* Norwood 1975 / Ludwig 1977;Olsen 2025 JAAD LDOM 共識；治療需專科醫師個別評估。" data-en="* Norwood 1975 / Ludwig 1977. Treatment requires specialist evaluation.">* Norwood 1975 / Ludwig 1977;Olsen 2025 JAAD LDOM 共識；治療需專科醫師個別評估。</div>' +
+      '</div>';
+    anchor.parentNode.insertBefore(box, anchor.nextSibling);
+
+    var sexEl = document.getElementById('dn-hair-sex');
+    var stageEl = document.getElementById('dn-hair-stage');
+
+    function populateStages() {
+      var list = sexEl.value === 'F' ? LUDWIG : NORWOOD;
+      stageEl.innerHTML = list.map(function (label, idx) {
+        return '<option value="' + (idx + 1) + '">' + label + '</option>';
+      }).join('');
+    }
+
+    function calc() {
+      var sex = sexEl.value || 'M';
+      var maxStage = sex === 'F' ? 3 : 7;
+      var s = Math.max(1, Math.min(maxStage, parseInt(stageEl.value, 10) || 1));
+      var scaleName = sex === 'M' ? 'Norwood ' : 'Ludwig ';
+      // Severity tiers — Male: I-II mild / III-IV moderate / V-VII severe.
+      // Female Ludwig: I mild / II moderate / III severe.
+      var tier = sex === 'F' ? s : (s <= 2 ? 1 : (s <= 4 ? 2 : 3));
+      var band, bg, fg, interp;
+      if (tier === 1) { band='輕度'; bg='#dcfce7'; fg='#14532d';
+        interp = sex === 'M'
+          ? '輕度雄性禿 — <strong>外用 Minoxidil 5%</strong>（每日 2 次）± <strong>口服 Finasteride 1 mg/day</strong>（需專科處方）；生活型態調整。'
+          : '輕度女性禿 — <strong>外用 Minoxidil 2-5%</strong>（每日 1-2 次）;<strong>低劑量口服 Minoxidil 0.5-1.25 mg/day</strong>(Olsen 2025);Spironolactone 100 mg。';
+      }
+      else if (tier === 2) { band='中度'; bg='#fef9c3'; fg='#854d0e';
+        interp = sex === 'M'
+          ? '中度 — <strong>Finasteride 1 mg/day + Minoxidil 5%</strong> 雙標準；考慮 PRP 注射；規劃植髮諮詢。'
+          : '中度 — Minoxidil + Spironolactone 為主軸；考慮 <strong>低劑量 oral Minoxidil</strong> 與 PRP。';
+      }
+      else { band='重度'; bg='#fee2e2'; fg='#991b1b';
+        interp = '重度 — <strong>需植髮搭配藥物維持</strong>(FUE / FUT);Finasteride / Minoxidil 必須持續以避免後方續發禿髮。';
+      }
+      document.getElementById('dn-hair-score').textContent = scaleName + roman[s - 1];
+      var bEl = document.getElementById('dn-hair-band');
+      bEl.textContent = band; bEl.style.background = bg; bEl.style.color = fg;
+      document.getElementById('dn-hair-interp').innerHTML = interp;
+    }
+
+    sexEl.addEventListener('change', function () { populateStages(); calc(); });
+    stageEl.addEventListener('change', calc);
+    populateStages();
+    calc();
+    if (typeof gtag === 'function') {
+      try { gtag('event', 'calculator_view', { tool: 'Norwood-Ludwig', page_path: location.pathname }); } catch (e) {}
+    }
   };
 
   // Fitzpatrick Skin Type (I-VI) — sunscreen-myths
@@ -441,7 +491,7 @@
         else { band='V-VI 型'; bg='#dcfce7'; fg='#14532d'; interp='深膚色 — <strong>仍需 SPF 30+ 防曬</strong>（避免 PIH 反黑）;1064 nm Nd:YAG 為較安全雷射選擇；532/694/755 nm 易引起色素沉著。'; }
         return { score: 'Type ' + roman[t-1], band: band, bg: bg, fg: fg, interp: interp };
       },
-      disclaimer: '* Fitzpatrick 1975；膚色分型主要用於評估光療 / 雷射 / 防曬需求，不代表絕對皮膚癌風險。'
+      disclaimer: '* Fitzpatrick 1975；本工具為簡易自評(依膚色與曬後反應估算)、非正式分型；確切分型與雷射參數請由皮膚科醫師判定。膚色分型主要用於評估光療 / 雷射 / 防曬需求，不代表絕對皮膚癌風險。'
     });
   };
 
@@ -536,7 +586,7 @@
       ] };
     });
     DN._buildCalc({
-      id: 'dn-poem', tool: 'POEM', toolsAnchor: 'poem',
+      id: 'dn-poem', tool: 'POEM',
       title: 'POEM 計算器 — 異位性皮膚炎病人主觀評估（過去 7 天）',
       sub: 'POEM 是 7 題病人自評（每題 0-4)，總分 0-28。最常用於異膚生活影響追蹤，優於 SCORAD 之處在於完全由病人自評。',
       rows: rows,
@@ -559,7 +609,7 @@
   DN.injectIHS4 = function () {
     if (!DN._forceInject && (DN.currentSlug() !== 'hidradenitis-suppurativa')) return;
     DN._buildCalc({
-      id: 'dn-ihs4', tool: 'IHS4', toolsAnchor: 'ihs4',
+      id: 'dn-ihs4', tool: 'IHS4',
       title: 'IHS4 計算器 — 化膿性汗腺炎活動度評估',
       sub: 'IHS4 = 結節數 + （膿瘍數 × 2) + （引流通道 × 4)。優於 Hurley 之處在於追蹤活動度而非結構性損傷。',
       rows: [
@@ -587,7 +637,7 @@
       { type:'number', label:'指甲床(bed)病灶象限數', hint:'油滴徵 / 甲下角化 / 甲剝離 / 線狀出血；0-4 象限', key:'bed', min:0, max:4, def:0 }
     ];
     DN._buildCalc({
-      id: 'dn-napsi', tool: 'NAPSI', toolsAnchor: 'napsi',
+      id: 'dn-napsi', tool: 'NAPSI',
       title: 'NAPSI 計算器 — 指甲乾癬嚴重度（單一手指評估）',
       sub: '單一指甲分基質 + 甲床各 4 象限，總分 0-8。十指 / 十趾累計可達 0-160（常用單指或代表指）。',
       rows: rows,
@@ -654,7 +704,7 @@
   DN.injectVASPruritus = function () {
     if (!DN._forceInject && !['atopic-dermatitis-overview','urticaria-myths','prurigo-nodularis','pediatric-eczema','cutaneous-t-cell-lymphoma'].includes(DN.currentSlug())) return;
     DN._buildCalc({
-      id: 'dn-vas-itch', tool: 'VAS-Pruritus', toolsAnchor: 'vas-pruritus',
+      id: 'dn-vas-itch', tool: 'VAS-Pruritus',
       title: 'VAS 搔癢評分 — 主觀癢度（過去 24 小時最劇烈）',
       sub: '0 = 完全不癢、10 = 想像中最嚴重的癢。VAS 是國際通用癢度評估，常用於異膚、蕁麻疹、結節性癢疹、CSU 治療反應評估。',
       rows: [
@@ -680,7 +730,7 @@
   DN.injectIGA = function () {
     if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-myths','vitiligo','rosacea-myths','acne-myths','pediatric-eczema','prurigo-nodularis','urticaria-myths'].includes(DN.currentSlug())) return;
     DN._buildCalc({
-      id: 'dn-iga', tool: 'IGA', toolsAnchor: 'iga',
+      id: 'dn-iga', tool: 'IGA',
       title: 'IGA 醫師整體評估 — 0-4 分皮膚病嚴重度',
       sub: 'IGA(Investigator Global Assessment)為皮膚科臨床試驗最標準的整體評分。0-4 五級，治療目標通常是 IGA 0/1（完全 / 幾乎完全清除）。',
       rows: [
@@ -738,7 +788,7 @@
       ]};
     });
     DN._buildCalc({
-      id: 'dn-asis', tool: 'ASIS', toolsAnchor: 'asis',
+      id: 'dn-asis', tool: 'ASIS',
       title: 'ASIS 痤瘡症狀與生活影響量表（精簡 12 題）',
       sub: '患者自評痤瘡的「症狀」+「心理 / 社交衝擊」。原版 17 題(Alexis 2014, FDA-qualified PRO)，本版精簡為 12 題，評估口服 A 酸 / 雷射前後變化最常用。0-48 分。',
       rows: rows,
@@ -753,7 +803,7 @@
         else { band='極重度'; bg='#fee2e2'; fg='#991b1b'; interp='極重度(43-48)— 痤瘡嚴重影響身心。<strong>建議皮膚科 + 心理 / 精神科</strong>同步評估。'; }
         return { score: s + ' / 48', band: band, bg: bg, fg: fg, interp: interp };
       },
-      disclaimer: '* ASIS: Alexis A, et al. J Drugs Dermatol 2014. 本為精簡版(12/17 題），完整版另含「家庭關係」「治療負擔」5 題。'
+      disclaimer: '* ASIS: Alexis A, et al. J Drugs Dermatol 2014. 本為精簡版(12/17 題），完整版另含「家庭關係」「治療負擔」5 題。分級為相對嚴重度參考、主要用於追蹤治療前後變化，非原量表之正式分級。'
     });
   };
 
@@ -785,7 +835,7 @@
       ]});
     });
     DN._buildCalc({
-      id: 'dn-vasi', tool: 'VASI', toolsAnchor: 'vasi',
+      id: 'dn-vasi', tool: 'VASI',
       title: 'VASI 白斑面積評分 — 全身白斑嚴重度',
       sub: 'VASI = Σ （各區手單位 × 該區去色素化%)。1 個「手單位」（整個手掌 + 五指）≈ 全身體表 1%。VASI 50 是 JAK 抑制劑(Ruxolitinib cream)主要終點。',
       rows: rows,
@@ -827,7 +877,7 @@
       rows.push({ type:'number', label: sit[0]+' · 面積 A (0-6)', hint:'0=0% / 6=90-100%', key:sit[1]+'_A', min:0, max:6, def:0 });
     });
     DN._buildCalc({
-      id: 'dn-easi', tool: 'EASI', toolsAnchor: 'easi',
+      id: 'dn-easi', tool: 'EASI',
       title: 'EASI 計算器 — 異膚另一標準量表（成人）',
       sub: 'EASI = Σ（部位症狀總分 × 面積 × 部位權重）。最高 72 分。試驗常用 EASI 75 / 90 為反應指標。',
       rows: rows,
