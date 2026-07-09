@@ -654,49 +654,6 @@
     });
   };
 
-  // PHQ-9 (Patient Health Questionnaire) — psych comorbidity for chronic skin disease
-  DN.injectPHQ9 = function () {
-    var slug = DN.currentSlug();
-    // Show on chronic skin diseases with high psych comorbidity
-    if (!['atopic-dermatitis-overview','psoriasis-myths','urticaria-myths','alopecia-areata','vitiligo','hidradenitis-suppurativa','prurigo-nodularis','acne-myths','melasma-myths'].includes(slug)) return;
-    var qs = [
-      'Q1 · 對事情興趣減少 / 提不起勁',
-      'Q2 · 心情低落、沮喪、絕望',
-      'Q3 · 入睡困難 / 醒太早 / 睡眠太多',
-      'Q4 · 疲倦、覺得沒精力',
-      'Q5 · 食慾差或暴食',
-      'Q6 · 對自己感到失望、覺得是失敗者',
-      'Q7 · 注意力難集中（看書 / 看電視）',
-      'Q8 · 動作或說話<strong>慢到別人察覺</strong>；反過來焦躁不安、坐立難安',
-      'Q9 · 覺得自己活著很糟糕，或想傷害自己'
-    ];
-    var rows = qs.map(function (q, i) {
-      return { type:'select', label: q, key:'q'+(i+1), options:[
-        {v:0,label:'0 完全沒有'},{v:1,label:'1 幾天'},{v:2,label:'2 一半以上的天數'},{v:3,label:'3 幾乎每天'}
-      ]};
-    });
-    DN._buildCalc({
-      id: 'dn-phq9', tool: 'PHQ-9', toolsAnchor: 'phq9',
-      title: 'PHQ-9 計算器 — 憂鬱症篩檢（過去 2 週）',
-      sub: '慢性皮膚病（乾癬、異膚、CSU、結節性癢疹）病人合併憂鬱比率高達 20-30%。本量表為國際標準篩檢，9 題自評，0-27 分。',
-      rows: rows,
-      calc: function (v) {
-        var s = 0;
-        for (var i = 1; i <= 9; i++) s += parseFloat(v['q'+i]) || 0;
-        var q9 = parseFloat(v.q9) || 0;
-        var band, bg, fg, interp;
-        if (s <= 4) { band='正常'; bg='#dcfce7'; fg='#14532d'; interp='憂鬱症狀少(0-4)— 維持規律生活、運動、睡眠。'; }
-        else if (s <= 9) { band='輕度'; bg='#fef9c3'; fg='#854d0e'; interp='輕度憂鬱(5-9)— 觀察 1-2 週，持續可考慮諮商。'; }
-        else if (s <= 14) { band='中度'; bg='#fed7aa'; fg='#9a3412'; interp='中度憂鬱(10-14)— <strong>建議家醫科或精神科評估</strong>。皮膚問題與情緒相互影響，治療皮膚同時請考慮諮商。'; }
-        else if (s <= 19) { band='中重度'; bg='#fee2e2'; fg='#991b1b'; interp='中重度憂鬱(15-19)— <strong>應盡快就醫</strong>。皮膚科 + 精神科同步評估常更有效。'; }
-        else { band='重度'; bg='#fee2e2'; fg='#991b1b'; interp='重度憂鬱(20-27)— <strong>請務必盡快就醫</strong>。'; }
-        if (q9 >= 1) interp += '<br/><strong style="color:#991b1b">⚠ 您回答 Q9 自傷想法 ≥ 1，強烈建議立即就醫；若有自殺念頭，請撥打 安心專線 1925（依舊愛我）或 生命線 1995。</strong>';
-        return { score: s + ' / 27', band: band, bg: bg, fg: fg, interp: interp };
-      },
-      disclaimer: '* PHQ-9: Kroenke K, Spitzer RL, Williams JBW, J Gen Intern Med 2001；繁中翻譯：中華民國臨床心理師公會 2016。本工具為篩檢非診斷，正式診斷需精神科醫師評估。'
-    });
-  };
-
   // ─────────────────────────────────────────────────────────────────────
   // VAS-Pruritus (Visual Analog Scale for Itch) — eczema/urticaria/CSU/PN
   // 0-10 single-item subjective itch intensity. Reizner 2012 standard.

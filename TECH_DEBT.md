@@ -8,7 +8,7 @@
 > 方法:19 個計算器逐一抽公式/係數/範圍/邊界對照。**19 個的計分公式本身全部正確**
 > (SCORAD 103、PASI 72、EASI 72、MASI 48、GAGS 44、UAS7 42、DLQI 30、POEM 28、PHQ-9 27、
 > SALT 100%、IHS4、NAPSI 8/指、VASI、VAS、IGA、Hurley 皆與原始文獻一致;bands 亦標準)。
-> 以下是公式**以外**的缺陷。**TD-20~24 已於 2026-07-08 修復並上線**(醫師提供 Ludwig 描述、node 驗證、Codex APPROVE);**TD-25 待醫師決定 PHQ-9 去留**。
+> 以下是公式**以外**的缺陷。**TD-20~25 已於 2026-07-08 修復並上線**(醫師提供 Ludwig 描述、node 驗證、Codex APPROVE;TD-25 = 醫師選擇「刪除」PHQ-9 死碼)。
 | ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
 |----|------|-----------|------|------|------|
 | ~~TD-20~~ ✅ | 🔴 **分級錯誤(已修 2026-07-08)** Ludwig(女性雄性禿)被標成 I–VII | `injectHairScale`(:362-405):性別選 F 時,stage 仍共用同一組 **I–VII** 選單(:373-381),輸出 `'Ludwig ' + roman[s-1]`(:402)→ 女性可得「Ludwig IV/V/VI/VII」,**但 Ludwig 量表只有 I–III**;且 7 個階段描述(:374-380)全是男性 M 型/馬蹄形,**不適用女性**(女性為瀰漫性中央稀疏)。Codex 已預先標出。 | 性別=F 時切換成 3 選項的 Ludwig I–III + 女性專屬描述(需醫師撰寫);男性維持 Norwood I–VII。**✅ 已修:`injectHairScale` 重寫為 hand-written、性別切換 stage 清單(F=Ludwig I–III、M=Norwood I–VII),採醫師提供之 Ludwig 描述,stage 依性別 clamp。node 驗:F 選/誤填 7 → 夾成 Ludwig III(非 VII)** | node 驗證 + gate 綠 | ✅ DONE |
@@ -16,7 +16,7 @@
 | ~~TD-22~~ ✅ | 通用 `_buildCalc` 數字輸入**無 JS clamp**(bug 類 #11)(已修 2026-07-08) | `_buildCalc.readVals`(:242)只 `parseFloat(el.value)||0`,**不夾 min/max**;只有手寫的 SCORAD/SALT/UAS7 的 calc() 有 `Math.max/min` 夾。受影響(number 輸入):PASI、MASI、IHS4、NAPSI、VAS、VASI、EASI — 超界打字(如 0-4 欄輸入 44)**靜默灌高分**。 | 在 readVals 依元素 `min`/`max` 夾值(集中一處修好全部);屬落實既宣告範圍、非改公式。**✅ 已修:`readVals` 依元素 min/max 夾值,一處修好 7 個 calc。node 驗:44→4、-5→0、3→3** | node 驗 + gate 綠 | ✅ DONE |
 | ~~TD-23~~ ✅ | ASIS 自訂嚴重度分級無實證依據 | `injectASIS`(:749-753):ASIS 原為**變化量測 PRO**(無官方 severity cutoff),站上自訂極輕~極重五級 bands。已於 disclaimer 揭露為 12/17 精簡版,但分級切點非來自原量表。 | 改為「追蹤變化」框架,或由醫師定義/背書分級。**✅ 已修(揭露):disclaimer 加註「分級為相對嚴重度參考、主要用於追蹤治療前後變化,非原量表之正式分級」** | 醫師過目 | ✅ DONE(揭露) |
 | ~~TD-24~~ ✅ | 5 個 in-article 計算器的「查看完整指南 →」連到不存在的 `/tools#` 錨點(已修 2026-07-08) | `/tools` hub 只有 10 區塊(scorad/pasi/dlqi/salt/uas7/gags/masi/hurley/norwood/fitzpatrick)。但 EASI/IHS4/VAS-pruritus/IGA/VASI 會實際 in-article 渲染並由 `_buildCalc`(:235)產生 `href="/tools#easi"` 等連結 → 該錨點不存在,點了落在 /tools 頂端。 | 二擇一:①在 tools.html 補這些工具區塊;②這些 calc 的 cfg 拿掉 `toolsAnchor`(不產生死連結)。**✅ 已修:8 個非-hub calc(easi/poem/ihs4/napsi/vas-pruritus/iga/asis/vasi)移除 toolsAnchor;6 個 hub calc 保留** | gate 綠 | ✅ DONE |
-| TD-25 | 計算器死碼/不可達(維護性,非醫療錯誤) | (a) `injectPHQ9`(:608)**刻意未接線**(tools.html build note R20 2026-05-14:「PHQ-9 移除」)→ 函式+其 min 檔為死碼。(b) 因 `autoInjectCalculators` 硬上限 1/篇(`.slice(0,1)`,:911)只顯示 CALC_ORDER 第 1 個,**永遠排第 2 的 POEM/NAPSI/ASIS 從不 auto-render**,又不在 /tools hub → 實質不可達。 | 決定去留:移除死碼(injectPHQ9 + 相關),或把想保留的工具放進 /tools hub / 調整 CALC_ORDER。**PHQ-9 之去留涉心理健康顯示政策,需使用者/醫師決策**(2026-07-08:其餘缺陷已修,**PHQ-9 死碼刻意暫不動**,等醫師決定「刪除死碼」或「重新接線成正式功能」) | 移除後 `_minify.py`+check-js+smoke;冪等 | 🟡 待決策 |
+| ~~TD-25~~ ✅ | 計算器死碼/不可達(維護性,非醫療錯誤) | (a) `injectPHQ9` **刻意未接線**(tools.html build note R20 2026-05-14:「PHQ-9 移除」)→ 函式+其 min 檔為死碼;另 dashboard.html 有 `/glossary#dn-phq9` 死連結。(b) 因 `autoInjectCalculators` 硬上限 1/篇(`.slice(0,1)`)只顯示 CALC_ORDER 第 1 個,**永遠排第 2 的 POEM/NAPSI/ASIS 從不 auto-render**,又不在 /tools hub → 實質不可達。 | **✅ (a) 已修(2026-07-08,醫師選「刪除」):移除 `injectPHQ9`(−2317 字元)+ 重生 min;修好 dashboard.html 死連結(改「PHQ-9 量表」純文字)。** (b) POEM/NAPSI/ASIS 非死碼、係 hard-cap-1 設計後果,**降 P3**:未來若要讓其可達,再放進 /tools hub 或調 CALC_ORDER。 | gate 綠 | ✅ PHQ-9 DONE;(b)→P3 |
 
 ## P1(值得做,影響真實但不緊急)
 | ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
