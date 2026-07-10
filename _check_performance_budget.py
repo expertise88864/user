@@ -75,7 +75,13 @@ def main() -> int:
 
     minified = ROOT / "blog" / "blog-shared.min.js"
     if minified.exists():
-        size_kb = minified.stat().st_size / 1024
+        # CODE_REVIEW Phase 5 — measure the DEPLOYED byte size. git stores LF
+        # and Vercel/CI serve LF, but a local Windows checkout (and _minify's
+        # text-mode write) leaves CRLF on disk, where each \r inflates
+        # stat().st_size by ~1.4 KB for this file — enough to fail the budget on
+        # bytes that never ship. Normalize CRLF→LF before measuring so the gate
+        # reflects the served artifact and matches CI (already LF).
+        size_kb = len(minified.read_bytes().replace(b"\r\n", b"\n")) / 1024
         # 2026-05-19 — bumped 72→75 KB after CODE_REVIEW refactor batch
         # added:
         #   - initCmdK bootstrap (idle-queue pre-binding, ~0.4 KB)

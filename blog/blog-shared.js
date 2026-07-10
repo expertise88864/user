@@ -38,7 +38,13 @@
         location.pathname === '/en') return 'en';
     const fromCookie = DN.cookieGet('dn_lang');
     if (fromCookie && DN.LANG_KEY[fromCookie]) return fromCookie;
-    const stored = localStorage.getItem('dn_lang');
+    // CODE_REVIEW Phase 5 — guard localStorage access. Every other
+    // localStorage read/write in this file is wrapped; this one wasn't, so a
+    // browser with storage fully blocked (SecurityError on access) threw here
+    // and, because detectLang() runs first inside initBlog(), took the whole
+    // interactive layer (menu / lang toggle / search) down with it.
+    let stored = null;
+    try { stored = localStorage.getItem('dn_lang'); } catch (e) { /* storage blocked/disabled */ }
     if (stored && DN.LANG_KEY[stored]) return stored;
     const nav = (navigator.language || 'zh').toLowerCase();
     if (nav.startsWith('zh')) return 'zh';
@@ -457,8 +463,13 @@
       if (!PAGEFIND) return false;  // signal fallback to substring path
       // PAGEFIND.search is async; show "searching" placeholder, then update
       PAGEFIND.search(q).then(function (res) {
-        if (!overlay.classList.contains('open') || input.value.trim() !== q) return;
+        if (!overlay.classList.contains('open') || input.value.toLowerCase().trim() !== q) return;
         Promise.all(res.results.slice(0, 10).map(function (r) { return r.data(); })).then(function (datas) {
+          // CODE_REVIEW Phase 5 — re-check freshness AFTER the r.data() batch
+          // resolves, not just after PAGEFIND.search(). A slower earlier query
+          // could otherwise land its data() here and clobber a newer query's
+          // results. (blog/pagefind-search.js already re-checks at both stages.)
+          if (!overlay.classList.contains('open') || input.value.toLowerCase().trim() !== q) return;
           var matches = datas.map(function (d) {
             // Drop the URL query/hash; show title + excerpt as meta
             var clean = d.url.split('?')[0].split('#')[0];
@@ -472,7 +483,13 @@
           results.innerHTML = matches.map(function (m, i) {
             return '<a class="row' + (i === 0 ? ' active' : '') + '" href="' + escapeHtml(safeSiteUrl(m.url)) + '" data-idx="' + i + '">' +
               '<span class="t">' + escapeHtml(m.title) + '</span>' +
-              '<span class="m">' + m.meta + '</span>' +  // excerpt has <mark> tags from pagefind; keep as HTML
+              // CODE_REVIEW Phase 5 — the pagefind excerpt was inserted raw.
+              // Strip its <mark> highlight tags, then escape, so the sink is safe
+              // AND we don't render literal "<mark>…</mark>" text. Highlight is
+              // dropped here (matches the substring path + stays within the
+              // shared-runtime size budget, TD-12); the dedicated /search modal
+              // (pagefind-search.js) keeps highlights via its own sanitizer.
+              '<span class="m">' + escapeHtml(String(m.meta || '').replace(/<\/?mark>/gi, '')) + '</span>' +
               '</a>';
           }).join('');
         });
