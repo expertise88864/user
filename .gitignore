@@ -57,3 +57,7 @@ _readability.json
 # Convention: leading underscore + .txt = local scratch; ignore them all.
 # Whitelist real Python helpers via their .py extension (covered above).
 _*.txt
+
+# Codex external review state (raw transcripts + usage log). Never commit:
+# last_raw.log can contain verbatim source snippets from the review session.
+.codex-review/
