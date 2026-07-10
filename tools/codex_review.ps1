@@ -66,12 +66,19 @@ switch ($Mode) {
     default    { Die "未知 mode '$Mode'(可用:diff | targeted | deep | resume)" }
 }
 
-function Build-Flags([string]$EffortValue) {
+function Build-Flags([string]$EffortValue, [string]$ForMode = '') {
     # 不含內層引號的 -c key=value:codex 對 value 先試 TOML,失敗即當字面字串。
     # 明確不使用:--ask-for-approval(exec 無此旗標)、--skip-git-repo-check、--ephemeral、--dangerously-*。
     $f = @('--ignore-user-config', '--model', $Model,
-           '-c', "model_reasoning_effort=$EffortValue",
-           '--sandbox', 'read-only', '--cd', $RepoRoot, '-o', $LastMsg)
+           '-c', "model_reasoning_effort=$EffortValue", '-o', $LastMsg)
+    # CODE_REVIEW — `codex exec resume` does NOT accept --sandbox/--cd (they are
+    # `codex exec` flags). For resume, enforce read-only via the sandbox_mode
+    # config override and run in the current dir (resume filters by cwd).
+    if ($ForMode -eq 'resume') {
+        $f += @('-c', 'sandbox_mode=read-only')
+    } else {
+        $f += @('--sandbox', 'read-only', '--cd', $RepoRoot)
+    }
     if ($Strict -eq '1') { $f += '--strict-config' }
     if ($Harden -eq '1') { $f += @('-c', 'web_search=disabled', '-c', 'features.apps=false') }
     return $f
@@ -97,11 +104,15 @@ function Get-TokensUsed {
     return 'unavailable'
 }
 function Get-Result {
+    # CODE_REVIEW — the verdict is the LAST non-blank line, matched EXACTLY. A
+    # substring match over the whole message reads "...I cannot APPROVE." as
+    # APPROVE. Codex is instructed to end with exactly APPROVE / REQUEST_CHANGES.
     if (-not (Test-Path $LastMsg)) { return 'UNKNOWN' }
-    $t = Get-Content $LastMsg -Raw
-    if (-not $t) { return 'UNKNOWN' }
-    if ($t -match 'REQUEST_CHANGES') { return 'REQUEST_CHANGES' }
-    if ($t -match 'APPROVE') { return 'APPROVE' }
+    $lines = @(Get-Content $LastMsg | Where-Object { $_.Trim() -ne '' })
+    if ($lines.Count -eq 0) { return 'UNKNOWN' }
+    $last = $lines[-1].Trim()
+    if ($last -eq 'APPROVE') { return 'APPROVE' }
+    if ($last -eq 'REQUEST_CHANGES') { return 'REQUEST_CHANGES' }
     return 'UNKNOWN'
 }
 function Get-FindingCount {
@@ -112,10 +123,14 @@ function Get-FindingCount {
     if ($n -gt 0) { return $n }
     return 'unavailable'
 }
-function Test-RateLimited {
-    if (-not (Test-Path $RawLog)) { return $false }
-    $t = Get-Content $RawLog -Raw
-    return ($t -match '(?i)usage limit|rate limit|try again at')
+function Test-Untrusted([int]$Rc, [string]$Result) {
+    # CODE_REVIEW — trustworthiness is decided by codex's EXIT CODE plus whether
+    # a clean verdict was produced, NOT by grepping the transcript. The old
+    # grep-the-raw-log approach false-tripped whenever the reviewed DIFF itself
+    # contained "rate limit" / "usage limit" / "try again at" (e.g. reviewing
+    # this wrapper). A genuine rate-limit / crash makes codex exit non-zero and
+    # leaves no verdict in the freshly-truncated last-message file.
+    return ($Rc -ne 0 -and $Result -eq 'UNKNOWN')
 }
 function Write-Usage([string]$M, [string]$E, [string]$B, [int]$Pass) {
     $sid = Get-SessionId; $tok = Get-TokensUsed; $res = Get-Result; $fnd = Get-FindingCount
@@ -152,15 +167,23 @@ probes, and do not use web search, browser, apps, connectors, or external MCP
 tools. End with exactly APPROVE or REQUEST_CHANGES.
 '@
 
-    $flags = Build-Flags $ResumeEffort
+    $flags = Build-Flags $ResumeEffort 'resume'
     Write-Host "[codex-review] resume session=$Sid effort=$ResumeEffort (pass 2/2)"
     '' | Out-File -FilePath $LastMsg -Encoding utf8
     $args2 = @('exec', 'resume', $Sid) + $flags + @($ResumePrompt)
     & codex @args2 2>&1 | Tee-Object -FilePath $RawLog
+    $rc = $LASTEXITCODE
+    $result = Get-Result
+    # Untrusted run: do NOT advance pass state (finding 3) — a failed pass-2 must
+    # not be permanently recorded as done.
+    if (Test-Untrusted $rc $result) {
+        [Console]::Error.WriteLine("[codex-review] codex exec resume 未正常完成(rc=$rc,無明確結論)—— 結果不可信,勿據此 push。")
+        [void](Write-Usage 'resume' $ResumeEffort $ResumeBase 1)
+        exit 4
+    }
     '2' | Out-File -FilePath $PassFile -Encoding ascii -NoNewline
-    $result = Write-Usage 'resume' $ResumeEffort $ResumeBase 2
+    [void](Write-Usage 'resume' $ResumeEffort $ResumeBase 2)
     Write-Host "`n[codex-review] result=$result (pass 2/2)"
-    if (Test-RateLimited) { [Console]::Error.WriteLine('[codex-review] Codex 限流,結果不可信。'); exit 4 }
     if ($result -eq 'APPROVE') { exit 0 } elseif ($result -eq 'REQUEST_CHANGES') { exit 2 } else { exit 5 }
 }
 
@@ -299,11 +322,19 @@ Write-Host "[codex-review] mode=$Mode effort=$Effort base=$BaseRef model=$Model 
 '' | Out-File -FilePath $LastMsg -Encoding utf8
 $args1 = @('exec') + $flags + @($prompt)
 & codex @args1 2>&1 | Tee-Object -FilePath $RawLog
+$rc = $LASTEXITCODE
+$result = Get-Result
 
+# Decide trust BEFORE recording pass state (finding 3): an incomplete /
+# rate-limited first pass must not become eligible for the resume flow.
+if (Test-Untrusted $rc $result) {
+    [Console]::Error.WriteLine("[codex-review] codex exec 未正常完成(rc=$rc,無明確結論)—— 結果不可信,勿據此 push。")
+    [void](Write-Usage $Mode $Effort $BaseRef 0)
+    exit 4
+}
 '1' | Out-File -FilePath $PassFile -Encoding ascii -NoNewline
-$result = Write-Usage $Mode $Effort $BaseRef 1
+[void](Write-Usage $Mode $Effort $BaseRef 1)
 Write-Host "`n[codex-review] result=$result (pass 1/2)  usage -> $UsageTsv"
-if (Test-RateLimited) { [Console]::Error.WriteLine('[codex-review] Codex 限流,結果不可信,勿據此 push。'); exit 4 }
 if ($result -eq 'APPROVE') { exit 0 }
 elseif ($result -eq 'REQUEST_CHANGES') { exit 2 }
 else { [Console]::Error.WriteLine("[codex-review] 未取得明確 APPROVE/REQUEST_CHANGES;請人工檢視 $LastMsg"); exit 5 }

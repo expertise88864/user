@@ -25,6 +25,12 @@ guards. A naive grep flags all three. We reuse `_minify.js_minify()`, which is
 string- and regex-literal-aware, so `'https://…'` is never mistaken for a `//`
 comment.
 
+Sink-shaped TEXT inside a single/double-quoted string (e.g. `const w =
+"call eval("`) is NOT a false positive: the sink scan runs on a view where
+js_minify has blanked those string bodies. Template-literal bodies are kept
+(they can hold real code in `${…}`), so sink text inside a backtick string is a
+rare remaining false-positive — the message names the file so it's easy to spot.
+
 KNOWN LIMIT (documented, not silently ignored): this is a lexical scan. It
 catches direct and bracket-notation sinks, but a deliberately obfuscated one
 (`el['inner' + 'HTML'] = x`, `Reflect.set(el, 'innerHTML', x)`) will pass. The
@@ -129,9 +135,11 @@ INNERHTML_RE = re.compile(
 
 # ``Authorization: `Bearer ${token}` `` is fine (`${…}` is not [A-Za-z0-9_-]).
 # `Authorization: 'token ghp_abc12345'` / ``Authorization: `Basic Zm9vOmJhcg==` ``
-# are not.
+# are not. `[\s\S]{0,40}?` (NOT `[^\n]`) so a value formatted onto the next line
+# — `Authorization:\n  'Basic …'` — is still caught, bounded to 40 chars so it
+# cannot run away.
 AUTH_LITERAL_RE = re.compile(
-    rf"""Authorization[^\n]{{0,40}}?{_Q}\s*(?:Bearer|token|Basic)\s+[A-Za-z0-9_\-+/=]{{8,}}""",
+    rf"""Authorization[\s\S]{{0,40}}?{_Q}\s*(?:Bearer|token|Basic)\s+[A-Za-z0-9_\-+/=]{{8,}}""",
     re.IGNORECASE,
 )
 
@@ -157,15 +165,25 @@ def iter_files() -> tuple[list[Path], dict[str, int]]:
     return [seen[key] for key in sorted(seen)], per_pattern
 
 
-def code_of(path: Path) -> str:
-    """Return the file's executable JS with comments stripped."""
+def code_of(path: Path, *, blank_strings: bool = False) -> str:
+    """Return the file's executable JS with comments stripped.
+
+    blank_strings=True additionally blanks single/double-quoted string BODIES
+    (via js_minify) so sink-shaped TEXT inside a string is not mistaken for a
+    sink. The caller uses that view for the eval/innerHTML/etc. scan, but the
+    strings-intact view for the Authorization-literal scan (whose credential
+    lives inside the string).
+    """
     src = path.read_text(encoding="utf-8", errors="replace")
     if path.suffix.lower() == ".js":
-        return js_minify(src)
+        return js_minify(src, blank_simple_strings=blank_strings)
     # HTML: drop markup comments, then keep only <script> bodies (all the sinks
     # we care about live in JS), each run through the comment-aware minifier.
     src = HTML_COMMENT_RE.sub(" ", src)
-    return "\n".join(js_minify(m.group(1)) for m in SCRIPT_RE.finditer(src))
+    return "\n".join(
+        js_minify(m.group(1), blank_simple_strings=blank_strings)
+        for m in SCRIPT_RE.finditer(src)
+    )
 
 
 def main() -> int:
@@ -177,17 +195,22 @@ def main() -> int:
     for path in files:
         rel = path.relative_to(ROOT).as_posix()
         try:
-            code = code_of(path)
+            # Sink scan runs on the string-BLANKED view so sink-shaped text
+            # inside a string literal (e.g. `const w = "call eval("`) is not a
+            # false positive. The Authorization scan needs the strings intact
+            # (the credential lives inside the string), so it uses its own view.
+            sink_code = code_of(path, blank_strings=True)
+            auth_code = code_of(path, blank_strings=False)
         except Exception as exc:  # noqa: BLE001 — surface, never silently skip
             errors.append(f"{rel}: could not extract code for scanning ({exc})")
             continue
         scanned.add(rel)
 
         for pattern, label in FORBIDDEN:
-            if pattern.search(code):
+            if pattern.search(sink_code):
                 errors.append(f"{rel}: forbidden construct {label} — never allowed on the security surface")
 
-        hits = len(INNERHTML_RE.findall(code))
+        hits = len(INNERHTML_RE.findall(sink_code))
         if hits:
             if rel not in INNERHTML_ALLOWLIST:
                 errors.append(
@@ -198,7 +221,7 @@ def main() -> int:
             else:
                 innerhtml_sites += hits
 
-        if AUTH_LITERAL_RE.search(code):
+        if AUTH_LITERAL_RE.search(auth_code):
             errors.append(f"{rel}: Authorization header appears to embed a literal credential")
 
     # Guard against a broken glob silently scanning nothing (vacuous green).

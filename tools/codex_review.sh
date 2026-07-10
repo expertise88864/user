@@ -57,10 +57,19 @@ case "$MODE" in
 esac
 
 # ---------- codex 旗標(read-only + 隔離) ----------
-build_flags() {   # $1 = effort
+build_flags() {   # $1 = effort ; $2 = "resume" to build resume-compatible flags
   # 刻意用不含內層引號的 -c key=value:codex 對 value 先試 TOML,失敗即當字面字串
   # (bare `medium`/`disabled` → 字串;`false` → 布林)。跨 bash/PowerShell quoting 最穩。
-  FLAGS=(--ignore-user-config --model "$MODEL" -c "model_reasoning_effort=$1" --sandbox read-only --cd "$REPO_ROOT" -o "$LAST_MSG")
+  FLAGS=(--ignore-user-config --model "$MODEL" -c "model_reasoning_effort=$1" -o "$LAST_MSG")
+  # CODE_REVIEW — `codex exec resume` (this CLI, 0.145.0-alpha.2) does NOT accept
+  # `--sandbox` or `--cd`; those belong to `codex exec`. For resume, enforce
+  # read-only via the `sandbox_mode` config override and run in the current dir
+  # (resume already filters sessions by cwd, and we invoke from the repo root).
+  if [ "${2:-}" = "resume" ]; then
+    FLAGS+=(-c "sandbox_mode=read-only")
+  else
+    FLAGS+=(--sandbox read-only --cd "$REPO_ROOT")
+  fi
   [ "$STRICT" = "1" ] && FLAGS+=(--strict-config)
   if [ "$HARDEN" = "1" ]; then
     FLAGS+=(-c "web_search=disabled" -c "features.apps=false")
@@ -73,10 +82,17 @@ build_flags() {   # $1 = effort
 extract_session_id() { grep -oiE 'session id:[[:space:]]*[0-9a-f-]{36}' "$RAW_LOG" 2>/dev/null | head -1 | grep -oiE '[0-9a-f-]{36}' || true; }
 extract_tokens() { awk 'tolower($0) ~ /tokens used/ {found=1; next} found && $0 ~ /[0-9]/ {gsub(/[^0-9]/,"",$0); if (length($0)) {print $0; exit}}' "$RAW_LOG" 2>/dev/null || true; }
 extract_result() {
+  # CODE_REVIEW — the verdict is the LAST non-blank line, matched EXACTLY. A
+  # substring grep over the whole message misreads "...I cannot APPROVE." as
+  # APPROVE. Codex is instructed to end with exactly APPROVE / REQUEST_CHANGES.
   [ -s "$LAST_MSG" ] || { echo "UNKNOWN"; return; }
-  if grep -q 'REQUEST_CHANGES' "$LAST_MSG"; then echo "REQUEST_CHANGES"
-  elif grep -q 'APPROVE' "$LAST_MSG"; then echo "APPROVE"
-  else echo "UNKNOWN"; fi
+  local last
+  last="$(grep -vE '^[[:space:]]*$' "$LAST_MSG" | tail -1 | tr -d '[:space:]')"
+  case "$last" in
+    APPROVE)         echo "APPROVE" ;;
+    REQUEST_CHANGES) echo "REQUEST_CHANGES" ;;
+    *)               echo "UNKNOWN" ;;
+  esac
 }
 extract_findings() {
   [ -s "$LAST_MSG" ] || { echo "unavailable"; return; }
@@ -85,7 +101,16 @@ extract_findings() {
   elif [ -n "$n" ] && [ "$n" -gt 0 ] 2>/dev/null; then echo "$n"
   else echo "unavailable"; fi
 }
-is_rate_limited() { grep -qiE 'usage limit|rate limit|try again at' "$RAW_LOG" 2>/dev/null; }
+# CODE_REVIEW — trustworthiness is decided by codex's EXIT CODE plus whether a
+# clean verdict was produced, NOT by grepping the transcript. The old
+# grep-the-raw-log approach false-tripped whenever the reviewed DIFF itself
+# contained "rate limit" / "usage limit" / "try again at" — e.g. when reviewing
+# THIS wrapper. A genuine rate-limit / crash makes `codex exec` exit non-zero
+# and leaves no APPROVE/REQUEST_CHANGES verdict in the (freshly-truncated)
+# last-message file.
+run_untrusted() {   # $1 = codex exit code ; $2 = extracted verdict
+  [ "$1" -ne 0 ] && [ "$2" = "UNKNOWN" ]
+}
 
 log_usage() {  # $1 mode $2 effort $3 base $4 pass
   local sid tok res fnd
@@ -112,7 +137,7 @@ if [ "$MODE" = "resume" ]; then
   # 第二輪的 effort 沿用第一輪(從 usage.tsv 最後一筆讀回),預設 medium。
   RESUME_EFFORT="$(tail -1 "$USAGE_TSV" | cut -f5)"; [ -n "$RESUME_EFFORT" ] || RESUME_EFFORT="medium"
   RESUME_BASE="$(tail -1 "$USAGE_TSV" | cut -f6)";   [ -n "$RESUME_BASE" ] || RESUME_BASE="unavailable"
-  build_flags "$RESUME_EFFORT"
+  build_flags "$RESUME_EFFORT" resume
 
   read -r -d '' RESUME_PROMPT <<'RP' || true
 Second and final review pass. Inspect only the corrections made for CONFIRMED
@@ -127,10 +152,18 @@ RP
   echo "[codex-review] resume session=$SID effort=$RESUME_EFFORT (pass 2/2)"
   : > "$LAST_MSG"
   codex exec resume "$SID" "${FLAGS[@]}" "$RESUME_PROMPT" 2>&1 | tee "$RAW_LOG"
+  CODEX_RC="${PIPESTATUS[0]}"
+  RESULT="$(extract_result)"
+  # Untrusted run: do NOT advance pass state (finding 3) — a failed pass-2 must
+  # not be permanently recorded as "done".
+  if run_untrusted "$CODEX_RC" "$RESULT"; then
+    echo "[codex-review] codex exec resume 未正常完成(rc=$CODEX_RC,無明確結論)—— 結果不可信,勿據此 push。" >&2
+    log_usage "resume" "$RESUME_EFFORT" "$RESUME_BASE" 1 >/dev/null   # pass stays 1
+    exit 4
+  fi
   echo 2 > "$PASS_FILE"
-  RESULT="$(log_usage "resume" "$RESUME_EFFORT" "$RESUME_BASE" 2)"
+  log_usage "resume" "$RESUME_EFFORT" "$RESUME_BASE" 2 >/dev/null
   echo; echo "[codex-review] result=$RESULT (pass 2/2)"
-  if is_rate_limited; then echo "[codex-review] Codex 限流,結果不可信。" >&2; exit 4; fi
   case "$RESULT" in
     APPROVE) exit 0 ;;
     REQUEST_CHANGES) exit 2 ;;
@@ -277,11 +310,20 @@ build_flags "$EFFORT"
 echo "[codex-review] mode=$MODE effort=$EFFORT base=$BASE model=$MODEL (pass 1/2, read-only, user-config ignored)"
 : > "$LAST_MSG"
 codex exec "${FLAGS[@]}" "$(cat "$TMP/prompt.txt")" 2>&1 | tee "$RAW_LOG"
+CODEX_RC="${PIPESTATUS[0]}"
+RESULT="$(extract_result)"
 
+# CODE_REVIEW — decide trust BEFORE recording pass state (finding 3): an
+# incomplete/rate-limited first pass must not become eligible for the
+# corrections-only resume flow.
+if run_untrusted "$CODEX_RC" "$RESULT"; then
+  echo "[codex-review] codex exec 未正常完成(rc=$CODEX_RC,無明確結論)—— 結果不可信,勿據此 push。" >&2
+  log_usage "$MODE" "$EFFORT" "$BASE" 0 >/dev/null   # record the attempt; pass stays 0
+  exit 4
+fi
 echo 1 > "$PASS_FILE"
-RESULT="$(log_usage "$MODE" "$EFFORT" "$BASE" 1)"
+log_usage "$MODE" "$EFFORT" "$BASE" 1 >/dev/null
 echo; echo "[codex-review] result=$RESULT (pass 1/2)  usage → $USAGE_TSV"
-if is_rate_limited; then echo "[codex-review] Codex 限流,結果不可信,勿據此 push。" >&2; exit 4; fi
 case "$RESULT" in
   APPROVE) exit 0 ;;
   REQUEST_CHANGES) exit 2 ;;
