@@ -65,6 +65,29 @@
 | ~~TD-33~~ ✅ | **DONE(Phase 5)** `blog-shared.js` runtime 三處硬化 | (a) `detectLang`(:41)`localStorage.getItem` **未包 try/catch**(全站唯一)——storage 完全封鎖(SecurityError)時,因 detectLang 是 `initBlog` 第一步 → 整個互動層(選單/語言/搜尋)全掛;(b) `renderPagefind` 只在 `PAGEFIND.search()` 後 re-check freshness、**`r.data()` 批次後沒有** → 慢查詢的 data() 可覆寫新查詢(#12;對照 `pagefind-search.js` 兩階段都檢查);(c) cmdk `renderPagefind` 的 pagefind excerpt **原樣插入 innerHTML**(`pagefind-search.js` 對等處有 `sanitizeExcerpt`)。 | **✅ 已修**:(a) getItem 包 try/catch;(b) 內層 `.then` 加 freshness re-check;(c) excerpt 改 `escapeHtml(String(m.meta||'').replace(/<\/?mark>/gi,''))`——**先剝 `<mark>` 再 escape**(Codex 指出純 escape 會顯示字面 `<mark>…</mark>`;剝標後 escape 既安全又不露標記,放棄 highlight 守 TD-12,dedicated /search modal 仍 highlight);(d) **順帶修既有 bug**:兩處 freshness check 原比對 raw `input.value` vs 已 lowercase 的 `q` → 大寫英文查詢永遠被丟棄,改 `input.value.toLowerCase().trim()`。 | `_minify.py` + `check-js`(37 檔綠)+ `_check_frontend_security` 綠 + smoke + 全 gate + Codex gpt-5.6-sol APPROVE | 🟢 小修 |
 | ~~TD-34~~ ✅ | **DONE(Phase 5)** `_check_performance_budget.py` 量到本機 CRLF、非部署的 LF size | 該 checker(:78)用 `stat().st_size` 量 `blog-shared.min.js` 原始位元組。本機 Windows 上 min 是 CRLF(1443 個 `\r`,+1.4KB),量到 75.0KB(過線 fail);但 git 存 LF、CI/Vercel 服務 LF = **73.6KB(實際在預算內)**。checker 量錯對象(本機 CRLF vs 部署 LF)= checker-trust 缺口。**根因**:`_minify.py`(:168)用 text-mode `open('w')`(無 `newline=''`)在 Windows 寫 CRLF。 | **✅ 已修 checker**:改量 `read_bytes().replace(b'\r\n',b'\n')` 的 LF-normalized size(反映部署產物,CI 上本就 LF 故行為不變)。**根因 `_minify` CRLF 寫入 → P3 記錄**(git autocrlf 已遮蔽 churn;checker 修正後量測已正確,`_minify` 加 `newline=''` 為可選清理)。 | `_check_performance_budget` 綠(73.6KB)+ 全 gate | 🟢 修 checker |
 
+## Phase 6 — 次要 bundles + 總結(2026-07-10)結論
+> 深讀 `blog-diagrams.js`(1189)、`blog-article-visuals.js`(664)、`blog-article-reading.js`(604)、`blog-article-footer.js`(596);獵殺同 Phase 5。
+> **整體體質良好、無 P0/P1**:① `blog-diagrams.js` **零危險 sink**(純 SVG 生成器,由呼叫端當可信 author 圖插入);② `blog-article-visuals.js` `heroSvg` 是 build/author SVG、lightbox 從點擊的文章 `<img>.src`(property assignment、author 內容)→ 安全;③ `blog-article-footer.js` A/B + newsletter 的 localStorage **全包 try/catch**、innerHTML 皆 author/static、mailto 走 `encodeURIComponent`;④ `blog-article-reading.js` 捲動位置 localStorage 全守衛。
+
+| ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
+|----|------|-----------|------|------|------|
+| ~~TD-35~~ ✅ | **DONE(Phase 6)** `blog-article-reading.js` 兩處 | (a) `addFontSizer` 的 `localStorage.getItem`(:523)+ `setItem`(:543)**未包 try/catch**(同 TD-33a 類,storage 封鎖時炸掉字型調整器;此 bundle 其他 localStorage 都有守衛);(b) TOC 用 H2 `textContent`/`id` 拼 innerHTML,`title` 只 escape 引號,但**元素內容 `shown` 與 `href`/`data-toc` 的 `h.id` 未 escape** → 標題含醫學比較運算子(如「PASI < 10」)會讓 TOC 誤渲染(author 內容 → 顯示正確性、非 XSS)。 | **✅ 已修**:(a) 兩處 localStorage 包 try/catch;(b) 加 `esc()` helper,對 `h.id`/`txt`/`shown` 全 escape(對不含 `&<>"` 的標題輸出 byte-identical)。此為 lazy bundle(非 shared,無 TD-12 預算問題)。 | `_minify.py` + `check-js`(37)+ `_check_min_balance` + smoke + 全 gate + Codex gpt-5.6-sol | 🟢 小修 |
+
+---
+
+## 📊 REVIEW_WORKORDER_2026-07 全案總結(6 phases,2026-07-08~10)
+> 逐檔讀 code review(非向度稽核),專打驗證器蓋不到的東西。**結論:全站體質優良**——19 計算器公式全對、寫入層安全無 P0/P1、生成器冪等且 encoding/例外處理紀律良好、驗證器無假綠燈、部署基建硬化、前端無 XSS。
+>
+> **修復統計(全數上線,皆過 Codex review)**:P0 醫療 5 項(Phase 1:TD-20~25 Ludwig/clamp/死錨/揭露/PHQ-9)、生成器 2(TD-06 sitemap lastmod、TD-27 canonical lambda)、驗證器 2(TD-30 sitemap lastmod 斷言、TD-34 perf-budget LF)、前端 runtime 2 組(TD-33 blog-shared ×4、TD-35 reading ×2)。
+>
+> **待決策(需醫師/使用者)**:
+> - **TD-05**(🟡):schema image 全站指向 logo 非真實首圖;根因與工單已備妥,涉 55 篇、需醫師+codex+rich-result 手驗。**使用者已表示暫緩**。
+> - **TD-25(b)**:PHQ-9 已刪死碼,POEM/NAPSI/ASIS 因 hard-cap-1 不可達 → 降 P3(未來放進 /tools hub 再解)。
+>
+> **建議未動工(P2/P3,列此備忘)**:TD-31(安全 checker 補廣掃 companion,🟡 需 codex)、TD-28(`_check_min_sync.py` 讓 `check` 也抓 stale min)、TD-32/TD-34 根因(vercel global CSP 收斂、`_minify` 改寫 LF)、TD-29(生成器死碼清理)。
+>
+> **未發現任何 P0/P1 未修項**;#14 source/min 全同步(無 stale);D-11 單一入口未繞過;CI 無 `pull_request_target`。
+
 ## P1(值得做,影響真實但不緊急)
 | ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
 |----|------|-----------|------|------|------|

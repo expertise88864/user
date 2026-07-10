@@ -3,6 +3,16 @@
   'use strict';
   var DN = window.DN = window.DN || {};
 
+  // CODE_REVIEW Phase 6 — shared HTML-escape for both TOC renderers
+  // (addInlineTOC + the desktop aside TOC). H2 text/id are author content, so
+  // this is display-correctness (a heading like "PASI < 10" must not break the
+  // list markup), not XSS. No-op for text without & < > ".
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
   DN.injectMedDiagrams = function () {
     var slug = DN.currentSlug && DN.currentSlug();
     if (!slug) return;
@@ -210,7 +220,7 @@
       li.style.cssText = 'counter-increment:toc;position:relative;padding:5px 4px 5px 32px';
       li.innerHTML =
         '<span style="position:absolute;left:0;top:5px;width:24px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;color:#0e7c86;background:#fff;border:1px solid #a5f3fc;border-radius:6px">' + (i + 1) + '</span>' +
-        '<a href="#' + h.id + '" data-toc-inline="' + h.id + '" style="display:block;color:var(--ink-2);text-decoration:none;font-size:13.5px;line-height:1.6;font-weight:500">' + (h.textContent || ('Section ' + (i + 1))) + '</a>';
+        '<a href="#' + esc(h.id) + '" data-toc-inline="' + esc(h.id) + '" style="display:block;color:var(--ink-2);text-decoration:none;font-size:13.5px;line-height:1.6;font-weight:500">' + esc(h.textContent || ('Section ' + (i + 1))) + '</a>';
       ol.appendChild(li);
     });
     details.appendChild(ol);
@@ -317,7 +327,7 @@
         'padding:14px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;' +
         'max-width:calc(100vw - 32px);font-size:13.5px;color:var(--ink);' +
         'animation:dn-toast-in .35s cubic-bezier(.2,.7,.3,1)';
-      var label = data.h2 ? '「' + data.h2 + '」' : '';
+      var label = data.h2 ? '「' + esc(data.h2) + '」' : '';  // CODE_REVIEW Phase 6 — escape stored H2 text
       toast.innerHTML =
         '<div style="display:flex;align-items:center;gap:10px;flex:1;min-width:200px">' +
           '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0e7c86" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
@@ -421,7 +431,7 @@
       const maxChars = window.innerWidth >= 1400 ? 26 : (window.innerWidth >= 1280 ? 22 : 18);
       const txt = (h.textContent || ('Section ' + (i + 1))).trim();
       const shown = txt.length > maxChars ? txt.slice(0, maxChars - 1) + '…' : txt;
-      html += '<li><a href="#' + h.id + '" data-toc="' + h.id + '" title="' + txt.replace(/"/g, '&quot;') + '" style="display:block;padding:4px 8px;border-radius:6px;color:var(--ink-2);text-decoration:none;border-left:2px solid transparent;transition:all .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + shown + '</a></li>';
+      html += '<li><a href="#' + esc(h.id) + '" data-toc="' + esc(h.id) + '" title="' + esc(txt) + '" style="display:block;padding:4px 8px;border-radius:6px;color:var(--ink-2);text-decoration:none;border-left:2px solid transparent;transition:all .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + esc(shown) + '</a></li>';
     });
     html += '</ul>';
     aside.innerHTML = html;
@@ -520,7 +530,10 @@
     // Only show on article pages (where prose is heavy)
     if (!document.querySelector('.prose, #proseZh, .prose-zh')) return;
 
-    var savedSize = localStorage.getItem('dn-font-size') || 'M';
+    // CODE_REVIEW Phase 6 — guard localStorage (storage-blocked browsers throw
+    // on access); matches the scroll-position + A/B code in this bundle.
+    var savedSize = 'M';
+    try { savedSize = localStorage.getItem('dn-font-size') || 'M'; } catch (e) {}
     // H8 — added XL (大型字體模式) for elderly / low-vision users.
     var sizeMap = { 'S': '15px', 'M': '16.5px', 'L': '18.5px', 'XL': '21px' };
     var lineHeightMap = { 'S': '1.7', 'M': '1.85', 'L': '1.95', 'XL': '2.05' };
@@ -540,7 +553,7 @@
         (s === 'XL'
           ? 'article h2 { font-size: 1.55em !important; } article h3 { font-size: 1.28em !important; } article h4 { font-size: 1.12em !important; }'
           : '');
-      localStorage.setItem('dn-font-size', s);
+      try { localStorage.setItem('dn-font-size', s); } catch (e) {}
     }
     applyFontSize(savedSize);
 
