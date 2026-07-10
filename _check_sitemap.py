@@ -4,6 +4,7 @@
 
 from __future__ import annotations
 
+import datetime as _dt
 import re
 import sys
 import xml.etree.ElementTree as ET
@@ -17,6 +18,41 @@ NS = {
     "xhtml": "http://www.w3.org/1999/xhtml",
     "image": "http://www.google.com/schemas/sitemap-image/1.1",
 }
+
+# W3C Sitemap <lastmod> accepts a date (YYYY-MM-DD) or a full ISO 8601
+# datetime with a timezone designator. CODE_REVIEW Phase 4 (TD-06 companion):
+# the generator fix routes article lastmods through _parse_date_safe, but
+# nothing in the gate actually asserted the emitted <lastmod> is a valid W3C
+# value — a malformed catalog date could have shipped an invalid <lastmod>
+# unnoticed. This guard closes that gap so the checker verifies what its name
+# implies.
+#
+# The regex is a *lexical* shape gate: require a TZD when a time is present,
+# forbid a fractional minute, and bound the offset (00-23:00-59). The
+# datetime/date parse then range-validates the calendar/clock parts. Both
+# layers are needed — Codex gpt-5.6-sol flagged that datetime.fromisoformat
+# *normalizes* an out-of-range offset minute (+08:99 → +09:39) instead of
+# rejecting it, so the offset bound must live in the regex; fromisoformat
+# does correctly reject impossible dates and clock times (2026-13-45,
+# T25:99:99Z).
+_LASTMOD_RE = re.compile(
+    r"^\d{4}-\d{2}-\d{2}"
+    r"(?:T\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?"
+    r"(?:Z|[+-](?:[01]\d|2[0-3]):[0-5]\d))?$"
+)
+
+
+def valid_w3c_lastmod(value: str) -> bool:
+    v = value.strip()
+    if not _LASTMOD_RE.match(v):
+        return False
+    try:
+        # Range-validate the whole value: datetime.fromisoformat (Py 3.11+)
+        # accepts the trailing 'Z' and rejects out-of-range time/offset parts.
+        (_dt.datetime if "T" in v else _dt.date).fromisoformat(v)
+    except ValueError:
+        return False
+    return True
 
 
 def local_html_for_url(url: str) -> Path | None:
@@ -62,6 +98,15 @@ def main() -> int:
             continue
         loc = loc_el.text.strip()
         page_locs.append(loc)
+
+        lastmod_el = url_el.find("sm:lastmod", NS)
+        if lastmod_el is None or not (lastmod_el.text or "").strip():
+            errors.append(f"{loc}: sitemap <url> missing <lastmod>")
+        elif not valid_w3c_lastmod(lastmod_el.text):
+            errors.append(
+                f"{loc}: invalid <lastmod> {lastmod_el.text.strip()!r} "
+                f"(must be a W3C date YYYY-MM-DD or ISO 8601 datetime)"
+            )
 
         if not loc.startswith(DOMAIN + "/") and loc != DOMAIN:
             errors.append(f"{loc}: sitemap URL must use {DOMAIN}")

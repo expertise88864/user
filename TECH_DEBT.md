@@ -42,6 +42,20 @@
 | TD-28 | `check` 模式漏驗 source/min 同步(bug 類 #14) | `_minify.py` 只在 `POST_BUILD_STEPS`(僅 `build` 跑),不在 `CHECK_STEPS`;但 CLAUDE.md rule 5 的 push 閘只要求 `check`。改了 `blog/*.js` 源檔卻忘跑 `_minify`/`build`、只跑 `check` 就 push → `check` 內 `_check_js_syntax` 只驗語法(舊 min 仍合法)、抓不到 stale min。有 PIPELINE 流程紀律 + CI `build` auto-regen 兜底 | Phase 4 可補 `_check_min_sync.py`:對 7 支 bundle 斷言 `js_minify(source)==min`,讓 `check` 單獨也能在 push 前抓到 stale min | 加 checker 後併入 CHECK_STEPS | 🟢 P3(流程+CI 已兜底)|
 | TD-29 | 生成器內死碼(維護性,非缺陷) | (a) `_normalize_drug_schema.py`:RETRACTED 後 `drug()`/`SLUG_DRUGS`/`serialize_drugs`/`inject` 約 260 行未被 `main()` 呼叫(文件化保留);(b) `_normalize_medical_codes.py`:內層 `replace_about`(:423-447)定義後**從未被呼叫**(重構改用 :451-482 手動 splice 後殘留);(c) `_normalize_article_metadata.py`:`import sys` 重複兩次(:35-36) | 低優先清理:(b)(c) 可直接刪;(a) 若確定不再恢復 Drug schema 再刪 | `build` 兩次冪等 + gate | 🟢 P3 |
 
+## Phase 4 — 驗證器可信度 + 部署基建(2026-07-10)結論
+> A. 抽查 7 支驗證器問「它宣稱驗的真的驗到了嗎」:`_check_seo_signals`(747)、`_check_meta`、`_check_sitemap`、`_check_robots`、`_check_api_security`、`_check_frontend_security`、`_audit_jsonld`。
+> B. 部署基建:`sw.js`(325)、`vercel.json`、8 支 CI workflows(868)。
+> **整體結論:驗證器與基建體質良好,無假綠燈(false-green)、無 P0/P1**。
+> - **`_check_robots.py` = 黃金標準**:`REQUIRED_BLOCKED` 刻意寫成獨立硬編碼清單(不從 `_normalize_robots.BLOCK_UAS` import),註解明言避免「同源 shadowing 讓 checker 與生成器連坐縮小」——checker-trust 的正確示範。
+> - `_audit_jsonld.py` 真結構驗證、fail-safe;`_check_sitemap.py` canonical/noindex/hreflang 皆真行為驗證。
+> - **基建**:CI **無 `pull_request_target`**、actions 全 SHA-pin、per-job scoped permissions、`GITHUB_TOKEN` + `persist-credentials:false`(除需 push 者);`quality.yml` auto-regen 用 `[skip actions]` 防迴圈 + 有界 retry;`scheduled-publish.yml` 輸入驗證紮實(slug regex + branch/file 精確比對 + subprocess list args);`indexnow.yml` 的 `mode` 是 `type:choice` 白名單(注入面中和);`sw.js` cache-poisoning 已由 same-origin+路徑白名單防護。
+
+| ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
+|----|------|-----------|------|------|------|
+| ~~TD-30~~ ✅ | **DONE(Phase 4)** `_check_sitemap.py` 從不驗 `<lastmod>`(TD-06 溜進去的缺口) | 該 checker 驗 loc/canonical/noindex/hreflang,但**完全無 lastmod 格式斷言**;`ET.parse` 只對結構壞的 XML 報錯,`<lastmod>garbage</lastmod>` 仍是合法 XML → 壞 lastmod 這支看不到。TD-06 的真正防線是生成器,不是它。 | **✅ 已修**:新增 `valid_w3c_lastmod()`(W3C date/datetime regex + `date.fromisoformat` 拒不可能日期)+ 每個 `<url>` 驗 lastmod 存在且格式有效。單元驗:接受 date/datetime、拒 garbage/2026-13-45/空值;現行 sitemap 63 URL 全過。 | 單元測 + `_check_sitemap.py` 綠 + 全 gate | 🟢 強化 checker |
+| TD-31 | 安全驗證器是「字串契約 regression-lock」,非掃描器(覆蓋比名稱窄) | `_check_api_security.py`/`_check_frontend_security.py` 對**固定檔案清單**斷言特定字串在/不在。缺口:①新增的 `api/admin/*.js` 或前端檔完全不被稽核;②只 forbid 特定舊變數名的 `innerHTML`,新 sink(不同識別字、`insertAdjacentHTML`/`document.write`)不擋。**非假綠燈**(現狀確實安全、Phase 2 已驗無 P0/P1),屬覆蓋限制。 | 建議(未動工,改安全 checker 需 codex 覆核):補一支廣掃 companion——對 `api/**` + admin/前端 JS/HTML 掃 `.innerHTML\s*=`/`insertAdjacentHTML`/`document.write`/`Authorization: 'token '`,要求只出現在白名單安全脈絡。 | 加 checker 後併 gate | 🟡 建議 |
+| TD-32 | 部署基建 P3 觀察(非漏洞) | (a) `vercel.json` **global** CSP 的 `connect-src` 含 `api.github.com`/`uploads.github.com`/`languagetool`/`ncbi`——這些主要 admin 寫入用,放全站比公開頁所需略寬(防禦深度可縮到 admin scope);(b) `scheduled-publish.yml` merge→push→Vercel 部署發生在 quality gate 驗證合併結果**之前**(Vercel 不等 CI)= TD-26 同族,draft 為站長可信內容故風險低;(c) `_check_seo_signals` 的 hreflang 互惠檢查(check 11/11b)post-D-17 完全 vacuous(「verified on 0 pairs」),屬刻意休眠的 forward-compat 守衛。 | 皆記錄不修(pre-existing / 刻意設計)。若日後收斂:(a) 從 global CSP 移除 github/languagetool/ncbi,只留 admin CSP。 | — | 🟢 P3 記錄 |
+
 ## P1(值得做,影響真實但不緊急)
 | ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
 |----|------|-----------|------|------|------|
