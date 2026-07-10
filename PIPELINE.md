@@ -2,7 +2,7 @@
 
 > 目的:讓任何 session 一眼分清「哪些檔案是**源頭**(可手改)、哪些是**生成物**(絕不手改)」,
 > 以及「改了 X 之後要跑什麼」。順序的唯一權威是 `_run_quality.py` 的 `REGEN_STEPS`(~46 步)
-> 與 `CHECK_STEPS`(當前 28 步,以該檔為準)—— **本檔不複製完整清單**(會漂移),只給結構與配方。
+> 與 `CHECK_STEPS`(當前 30 步,以該檔為準)—— **本檔不複製完整清單**(會漂移),只給結構與配方。
 
 ## 一張圖看懂資料流
 
@@ -40,7 +40,7 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
 | `_normalize_robots.py` 的 UA 清單 | `python _normalize_robots.py` + **同步三檔**(見下) | `_check_robots.py` |
 | `vercel.json`(redirect/header) | 不用 regen | `_check_deployment.py` + codex review |
 | `assets/inline/*.js` | 不用 regen(非 min 化對象);跑 `_check_js_syntax.py` | `_check_runtime_smoke.py` |
-| `blog/blog-shared.js` 或 `blog-hub.js` | `python _minify.py`(重生 .min.js) | `_check_min_balance.py`, smoke |
+| `blog/blog-shared.js` 或 `blog-hub.js` | `python _minify.py`(重生 .min.js) | `_check_min_balance.py`, smoke;忘了重生也沒關係 —— `_check_min_sync.py` 已在 gate 裡擋(TD-28) |
 | 新增 TL;DR(`_inject_tldr.py` 的 map) | 醫師審核後 `python _inject_tldr.py --apply` → `python _run_quality.py build` | gate;絕不覆寫既有 dn-tldr |
 
 ## ⚠️ 三檔同步鐵則:AI 爬蟲政策

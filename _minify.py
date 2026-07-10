@@ -15,6 +15,12 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
+# Single source of truth for which blog/*.js bundles get a .min.js sibling.
+# _check_min_sync.py imports this so the sync checker can never drift out of
+# step with what actually gets minified.
+JS_BUNDLES = ('blog-shared', 'blog-hub', 'blog-article-reading', 'blog-diagrams',
+              'blog-calculators', 'blog-article-visuals', 'blog-article-footer')
+
 
 # ─────────────────────────────────────────────────────────────────
 # JS minifier — extremely conservative (only safe transforms)
@@ -157,7 +163,7 @@ def html_minify(src):
 
 def main():
     # JS
-    for name in ('blog-shared', 'blog-hub', 'blog-article-reading', 'blog-diagrams', 'blog-calculators', 'blog-article-visuals', 'blog-article-footer'):
+    for name in JS_BUNDLES:
         js_src_path = os.path.join(ROOT, 'blog', name + '.js')
         if not os.path.exists(js_src_path):
             continue

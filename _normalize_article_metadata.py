@@ -28,11 +28,9 @@ fields it touches are stable.
 """
 from __future__ import annotations
 
-import io
 import json
 import re
 import subprocess
-import sys
 import sys
 from pathlib import Path
 

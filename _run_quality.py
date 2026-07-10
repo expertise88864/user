@@ -196,6 +196,14 @@ BUILD_GENERATED_STEPS: list[list[str]] = [
     # HTML is generated (REGEN_STEPS) so it crawls the final on-disk file
     # tree. Non-fatal: skips gracefully if npx unavailable.
     [PY, "_run_pagefind.py"],
+    # CODE_REVIEW TD-28 — _minify is a GENERATOR (it writes blog/*.min.js), so
+    # it belongs in the generate phase, not after the checks. Moved here from
+    # POST_BUILD_STEPS so that (a) `_check_min_sync.py` in CHECK_STEPS sees a
+    # freshly-minified tree during `build`, and (b) `_check_performance_budget`
+    # / `_check_js_syntax` audit the min files this build actually produced
+    # instead of the previous build's. Kept after pagefind to preserve the
+    # existing pagefind→minify relative order.
+    [PY, "_minify.py"],
 ]
 
 CHECK_STEPS: list[list[str]] = [
@@ -225,9 +233,21 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_check_deployment.py"],
     [PY, "_check_api_security.py"],
     [PY, "_check_frontend_security.py"],
+    # CODE_REVIEW TD-31 — broad-scan companion to the two above. They are
+    # string-contract regression locks over a fixed file list, so a NEW
+    # api/admin/frontend file is unaudited and a new sink shape slips past. This
+    # globs the whole security surface, hard-forbids eval/new Function/
+    # document.write/outerHTML, and requires innerHTML to live only in files on
+    # a reviewed allowlist.
+    [PY, "_check_dangerous_sinks.py"],
     [PY, "_check_secrets.py"],
     [PY, "_check_supply_chain.py"],
     [PY, "_check_js_syntax.py"],
+    # CODE_REVIEW TD-28 — _check_js_syntax only proves the min files are valid
+    # JS, not that they still match their sources. Without this, editing a
+    # bundle and running only `check` (the push gate) would happily ship a stale
+    # .min.js. Asserts js_minify(source) == committed min for every bundle.
+    [PY, "_check_min_sync.py"],
     # 2026-05-18 — Lock in SERP CTR/impressions signals shipped in
     # batches 12-17 (robots SERP directives, JSON-LD enrichment,
     # OG article:* on every blog article, Organization+logo on
@@ -241,7 +261,7 @@ CHECK_STEPS: list[list[str]] = [
 ]
 
 POST_BUILD_STEPS: list[list[str]] = [
-    [PY, "_minify.py"],
+    # _minify.py moved to BUILD_GENERATED_STEPS (see TD-28 note there).
     [NPM, "run", "check-js"],
     [NPM, "run", "check-smoke"],
 ]

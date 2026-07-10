@@ -21,7 +21,6 @@ on every run. Wired into REGEN_STEPS after schema normalization.
 """
 from __future__ import annotations
 
-import io
 import json
 import re
 import sys
@@ -420,32 +419,10 @@ def update_article_about(html: str, conditions: list[dict],
     pattern = re.compile(r'"about":(\[|\{)', re.DOTALL)
     changed = False
 
-    def replace_about(m: re.Match) -> str:
-        nonlocal changed
-        start = m.end() - 1  # position of opening bracket/brace
-        open_ch = m.group(1)
-        close_ch = ']' if open_ch == '[' else '}'
-        depth = 1
-        pos = start + 1
-        while depth > 0 and pos < len(html):
-            ch = html[pos]
-            if ch == open_ch:
-                depth += 1
-            elif ch == close_ch:
-                depth -= 1
-                if depth == 0:
-                    break
-            pos += 1
-        if depth != 0:
-            return m.group(0)  # unbalanced, leave alone
-        # Replace from m.start() through pos (inclusive)
-        full_old = html[m.start():pos + 1]
-        full_new = f'"about":{new_about_str}'
-        if full_old != full_new:
-            changed = True
-        # Return marker — actual splice happens manually
-        return f'\x00ABOUT_REPLACE\x00{full_new}\x00END\x00'
-
+    # CODE_REVIEW TD-29 — a `replace_about()` re.sub-callable used to live here.
+    # It was left behind when this switched to the find-all-then-splice approach
+    # below and was never called. Removed.
+    #
     # Find ALL `"about":` and replace each one (typically 1-3 per article
     # for MedicalWebPage + MedicalScholarlyArticle blocks)
     matches = []

@@ -86,6 +86,34 @@ def main() -> int:
     require_header(errors, config, "/admin", "Content-Security-Policy", "frame-ancestors 'none'")
     require_header(errors, config, "/admin/(.*)", "X-Frame-Options", "DENY")
     require_header(errors, config, "/admin/(.*)", "Content-Security-Policy", "frame-ancestors 'none'")
+    # CODE_REVIEW TD-32 — the admin editor is the ONLY caller of these three
+    # hosts (GitHub contents API for save/upload, LanguageTool for the spell
+    # check, PubMed esummary for the citation button). They were removed from
+    # the global CSP; the /admin* rules must therefore keep them or the doctor
+    # silently loses save / spell-check / citation. Vercel applies matching
+    # header rules in declaration order and a later duplicate key overrides the
+    # earlier one, so these admin rules override the global CSP.
+    #
+    # Parse each admin CSP and check the connect-src directive specifically — a
+    # plain substring test would pass if a host were moved to, say, img-src,
+    # while the fetch stayed blocked.
+    for admin_path in ("/admin.html", "/admin", "/admin/(.*)"):
+        admin_entry = find_header_entry(config, admin_path)
+        if not admin_entry:
+            errors.append(f"vercel.json: missing headers entry for {admin_path}")
+            continue
+        admin_csp = header_map(admin_entry).get("content-security-policy")
+        if not admin_csp:
+            errors.append(f"vercel.json: {admin_path} missing Content-Security-Policy")
+            continue
+        admin_connect = set(parse_csp(admin_csp).get("connect-src", []))
+        for admin_host in (
+            "https://api.github.com",
+            "https://api.languagetool.org",
+            "https://eutils.ncbi.nlm.nih.gov",
+        ):
+            if admin_host not in admin_connect:
+                errors.append(f"vercel.json: {admin_path} CSP connect-src missing {admin_host}")
     for admin_source in ("/admin.html", "/admin", "/admin/(.*)"):
         admin_entry = find_header_entry(config, admin_source)
         if admin_entry:
@@ -251,22 +279,34 @@ def main() -> int:
                 "https://avatars.githubusercontent.com",
             ],
             "font-src": ["'self'", "data:", "https://fonts.gstatic.com"],
+            # CODE_REVIEW TD-32 — the GLOBAL connect-src carries only 'self' plus
+            # the analytics endpoints the public pages actually call. GitHub /
+            # LanguageTool are fetched exclusively by the admin editor and now
+            # live only in the /admin* CSP rules; eutils.ncbi + raw.githubusercontent
+            # were dead allowances (nothing in the repo ever fetched them — public
+            # pages only <a href> to pubmed, which connect-src does not govern).
             "connect-src": [
                 "'self'",
                 "https://www.google-analytics.com",
                 "https://*.clarity.ms",
                 "https://stats.g.doubleclick.net",
-                "https://eutils.ncbi.nlm.nih.gov",
-                "https://api.github.com",
-                "https://uploads.github.com",
-                "https://raw.githubusercontent.com",
-                "https://api.languagetool.org",
             ],
             "frame-src": ["https://www.google.com", "https://googleads.g.doubleclick.net", "https://www.youtube.com"],
         }
         for name, sources in required_sources.items():
             for source in sources:
                 require_csp_source(errors, directives, name, source)
+        # CODE_REVIEW TD-32 — keep admin-only + dead endpoints out of the GLOBAL
+        # connect-src. They belong to the /admin* CSP rules only; if one creeps
+        # back here every public page regains permission to call it.
+        for admin_only in (
+            "https://api.github.com",
+            "https://uploads.github.com",
+            "https://raw.githubusercontent.com",
+            "https://api.languagetool.org",
+            "https://eutils.ncbi.nlm.nih.gov",
+        ):
+            forbid_csp_source(errors, directives, "connect-src", admin_only)
         forbid_csp_source(errors, directives, "script-src", "https://fonts.googleapis.com")
         # 2026-05-25 — block the wildcard https: from sneaking back into img-src.
         forbid_csp_source(errors, directives, "img-src", "https:")
