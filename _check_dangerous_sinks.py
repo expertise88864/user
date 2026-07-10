@@ -25,17 +25,23 @@ guards. A naive grep flags all three. We reuse `_minify.js_minify()`, which is
 string- and regex-literal-aware, so `'https://…'` is never mistaken for a `//`
 comment.
 
-Sink-shaped TEXT inside a single/double-quoted string (e.g. `const w =
-"call eval("`) is NOT a false positive: the sink scan runs on a view where
-js_minify has blanked those string bodies. Template-literal bodies are kept
-(they can hold real code in `${…}`), so sink text inside a backtick string is a
-rare remaining false-positive — the message names the file so it's easy to spot.
+DESIGN CHOICE — bias toward false positives, never false negatives. The scan
+runs on comment-stripped code with STRING LITERALS INTACT. That is deliberate:
+a bracket-notation sink writes the property name as a string literal
+(`el['innerHTML'] = x`, `document['write'](...)`), so blanking string bodies to
+suppress "sink-shaped text inside a string" would erase the very token that
+makes those a sink — trading a harmless false positive for a dangerous false
+negative. We keep strings so every real sink is caught.
 
-KNOWN LIMIT (documented, not silently ignored): this is a lexical scan. It
-catches direct and bracket-notation sinks, but a deliberately obfuscated one
-(`el['inner' + 'HTML'] = x`, `Reflect.set(el, 'innerHTML', x)`) will pass. The
-goal is to stop accidental regressions and unaudited new files, not a hostile
-committer — who already has push access.
+KNOWN LIMITS (documented, not silently ignored):
+ - False positive: a string/template literal whose TEXT contains a sink spelling
+   (`const w = "please don't call eval("`) is reported. It fails safe — the
+   message names the file and line so it's trivial to refactor or allowlist —
+   and no file in the current tree trips it.
+ - False negative only via deliberate obfuscation (`el['inner' + 'HTML'] = x`,
+   `Reflect.set(el, 'innerHTML', x)`). This is a lexical scan; its job is to
+   stop accidental regressions and unaudited new files, not a hostile committer
+   who already holds push access.
 """
 from __future__ import annotations
 
@@ -165,25 +171,22 @@ def iter_files() -> tuple[list[Path], dict[str, int]]:
     return [seen[key] for key in sorted(seen)], per_pattern
 
 
-def code_of(path: Path, *, blank_strings: bool = False) -> str:
-    """Return the file's executable JS with comments stripped.
+def code_of(path: Path) -> str:
+    """Return the file's executable JS with comments stripped (strings intact).
 
-    blank_strings=True additionally blanks single/double-quoted string BODIES
-    (via js_minify) so sink-shaped TEXT inside a string is not mistaken for a
-    sink. The caller uses that view for the eval/innerHTML/etc. scan, but the
-    strings-intact view for the Authorization-literal scan (whose credential
-    lives inside the string).
+    Strings are intentionally KEPT: a bracket-notation sink writes the property
+    name AS a string literal (`el['innerHTML'] = x`, `document['write'](...)`),
+    so blanking string bodies would erase the very thing that makes those a
+    sink — a false negative, which is unacceptable for a security check. The
+    cost is the documented false-positive noted in the module docstring.
     """
     src = path.read_text(encoding="utf-8", errors="replace")
     if path.suffix.lower() == ".js":
-        return js_minify(src, blank_simple_strings=blank_strings)
+        return js_minify(src)
     # HTML: drop markup comments, then keep only <script> bodies (all the sinks
     # we care about live in JS), each run through the comment-aware minifier.
     src = HTML_COMMENT_RE.sub(" ", src)
-    return "\n".join(
-        js_minify(m.group(1), blank_simple_strings=blank_strings)
-        for m in SCRIPT_RE.finditer(src)
-    )
+    return "\n".join(js_minify(m.group(1)) for m in SCRIPT_RE.finditer(src))
 
 
 def main() -> int:
@@ -195,22 +198,17 @@ def main() -> int:
     for path in files:
         rel = path.relative_to(ROOT).as_posix()
         try:
-            # Sink scan runs on the string-BLANKED view so sink-shaped text
-            # inside a string literal (e.g. `const w = "call eval("`) is not a
-            # false positive. The Authorization scan needs the strings intact
-            # (the credential lives inside the string), so it uses its own view.
-            sink_code = code_of(path, blank_strings=True)
-            auth_code = code_of(path, blank_strings=False)
+            code = code_of(path)
         except Exception as exc:  # noqa: BLE001 — surface, never silently skip
             errors.append(f"{rel}: could not extract code for scanning ({exc})")
             continue
         scanned.add(rel)
 
         for pattern, label in FORBIDDEN:
-            if pattern.search(sink_code):
+            if pattern.search(code):
                 errors.append(f"{rel}: forbidden construct {label} — never allowed on the security surface")
 
-        hits = len(INNERHTML_RE.findall(sink_code))
+        hits = len(INNERHTML_RE.findall(code))
         if hits:
             if rel not in INNERHTML_ALLOWLIST:
                 errors.append(
@@ -221,7 +219,7 @@ def main() -> int:
             else:
                 innerhtml_sites += hits
 
-        if AUTH_LITERAL_RE.search(auth_code):
+        if AUTH_LITERAL_RE.search(code):
             errors.append(f"{rel}: Authorization header appears to embed a literal credential")
 
     # Guard against a broken glob silently scanning nothing (vacuous green).

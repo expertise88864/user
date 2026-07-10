@@ -129,8 +129,10 @@ function Test-Untrusted([int]$Rc, [string]$Result) {
     # grep-the-raw-log approach false-tripped whenever the reviewed DIFF itself
     # contained "rate limit" / "usage limit" / "try again at" (e.g. reviewing
     # this wrapper). A genuine rate-limit / crash makes codex exit non-zero and
-    # leaves no verdict in the freshly-truncated last-message file.
-    return ($Rc -ne 0 -and $Result -eq 'UNKNOWN')
+    # leaves no verdict in the freshly-truncated last-message file. Use OR, not
+    # AND: a zero-exit run that still produced no clean verdict (e.g. a final
+    # line of "…I cannot APPROVE.") must also be treated as untrusted.
+    return ($Rc -ne 0 -or $Result -eq 'UNKNOWN')
 }
 function Write-Usage([string]$M, [string]$E, [string]$B, [int]$Pass) {
     $sid = Get-SessionId; $tok = Get-TokensUsed; $res = Get-Result; $fnd = Get-FindingCount
@@ -319,6 +321,9 @@ $prompt = $PromptTemplate.
 
 $flags = Build-Flags $Effort
 Write-Host "[codex-review] mode=$Mode effort=$Effort base=$BaseRef model=$Model (pass 1/2, read-only, user-config ignored)"
+# Reset pass state at the START of a first pass so a stale pass=1 from a prior
+# aborted run can never wrongly make the resume flow eligible.
+'0' | Out-File -FilePath $PassFile -Encoding ascii -NoNewline
 '' | Out-File -FilePath $LastMsg -Encoding utf8
 $args1 = @('exec') + $flags + @($prompt)
 & codex @args1 2>&1 | Tee-Object -FilePath $RawLog

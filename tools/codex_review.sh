@@ -109,7 +109,10 @@ extract_findings() {
 # and leaves no APPROVE/REQUEST_CHANGES verdict in the (freshly-truncated)
 # last-message file.
 run_untrusted() {   # $1 = codex exit code ; $2 = extracted verdict
-  [ "$1" -ne 0 ] && [ "$2" = "UNKNOWN" ]
+  # Untrusted if EITHER codex exited non-zero OR no clean APPROVE/REQUEST_CHANGES
+  # verdict was produced. (An earlier AND let a zero-exit "…I cannot APPROVE."
+  # advance pass state and become resume-eligible.)
+  [ "$1" -ne 0 ] || [ "$2" = "UNKNOWN" ]
 }
 
 log_usage() {  # $1 mode $2 effort $3 base $4 pass
@@ -308,6 +311,9 @@ sed -i -e "/{{VERIFICATION_RESULTS}}/r $TMP/ver.txt" -e "/{{VERIFICATION_RESULTS
 
 build_flags "$EFFORT"
 echo "[codex-review] mode=$MODE effort=$EFFORT base=$BASE model=$MODEL (pass 1/2, read-only, user-config ignored)"
+# Reset pass state at the START of a first pass so a stale pass=1 from a prior
+# aborted run can never wrongly make the resume flow eligible.
+echo 0 > "$PASS_FILE"
 : > "$LAST_MSG"
 codex exec "${FLAGS[@]}" "$(cat "$TMP/prompt.txt")" 2>&1 | tee "$RAW_LOG"
 CODEX_RC="${PIPESTATUS[0]}"

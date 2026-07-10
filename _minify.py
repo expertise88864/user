@@ -25,20 +25,10 @@ JS_BUNDLES = ('blog-shared', 'blog-hub', 'blog-article-reading', 'blog-diagrams'
 # ─────────────────────────────────────────────────────────────────
 # JS minifier — extremely conservative (only safe transforms)
 # ─────────────────────────────────────────────────────────────────
-def js_minify(src, blank_simple_strings=False):
+def js_minify(src):
     """Strip comments + trim whitespace per line. Keep newlines for safety (avoids ASI bugs).
 
     Handles strings + regex literals so // inside an escaped-slash regex isn't read as comment.
-
-    blank_simple_strings: when True, replace the BODY of every single- and
-    double-quoted string literal with nothing (keep the quotes). Template
-    literals (backtick) are preserved verbatim because they can contain real
-    code inside ${...}. This is for security scanners (_check_dangerous_sinks)
-    that must not mistake sink-shaped TEXT inside a string (e.g. the literal
-    "eval(" or ".innerHTML =") for an executable sink. It reuses this function's
-    proven string/regex/comment tokenizer, so — unlike a bare regex over the
-    source — it never confuses a `/'/ ` regex literal for a string and cannot
-    hide a real sink. Off by default so minification output is unchanged.
     """
     out = []
     i, n = 0, len(src)
@@ -63,10 +53,7 @@ def js_minify(src, blank_simple_strings=False):
                 if quote != '`' and src[j] == '\n':
                     break  # broken string, bail
                 j += 1
-            if blank_simple_strings and quote in ("'", '"'):
-                out.append(quote + quote)  # keep the delimiters, drop the body
-            else:
-                out.append(src[i:j])
+            out.append(src[i:j])
             i = j
             last_signif = quote
             continue
