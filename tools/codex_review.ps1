@@ -173,7 +173,10 @@ tools. End with exactly APPROVE or REQUEST_CHANGES.
     Write-Host "[codex-review] resume session=$Sid effort=$ResumeEffort (pass 2/2)"
     '' | Out-File -FilePath $LastMsg -Encoding utf8
     $args2 = @('exec', 'resume', $Sid) + $flags + @($ResumePrompt)
-    & codex @args2 2>&1 | Tee-Object -FilePath $RawLog
+    # $null | ... closes codex's stdin immediately; the prompt is passed as an
+    # argv arg, so without this the CLI blocks on "Reading additional input from
+    # stdin..." when run non-interactively.
+    $null | & codex @args2 2>&1 | Tee-Object -FilePath $RawLog
     $rc = $LASTEXITCODE
     $result = Get-Result
     # Untrusted run: do NOT advance pass state (finding 3) — a failed pass-2 must
@@ -326,7 +329,9 @@ Write-Host "[codex-review] mode=$Mode effort=$Effort base=$BaseRef model=$Model 
 '0' | Out-File -FilePath $PassFile -Encoding ascii -NoNewline
 '' | Out-File -FilePath $LastMsg -Encoding utf8
 $args1 = @('exec') + $flags + @($prompt)
-& codex @args1 2>&1 | Tee-Object -FilePath $RawLog
+# $null | ... closes codex's stdin immediately (prompt is an argv arg); without
+# it the CLI blocks on "Reading additional input from stdin..." non-interactively.
+$null | & codex @args1 2>&1 | Tee-Object -FilePath $RawLog
 $rc = $LASTEXITCODE
 $result = Get-Result
 

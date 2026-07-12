@@ -154,7 +154,7 @@ RP
 
   echo "[codex-review] resume session=$SID effort=$RESUME_EFFORT (pass 2/2)"
   : > "$LAST_MSG"
-  codex exec resume "$SID" "${FLAGS[@]}" "$RESUME_PROMPT" 2>&1 | tee "$RAW_LOG"
+  codex exec resume "$SID" "${FLAGS[@]}" "$RESUME_PROMPT" </dev/null 2>&1 | tee "$RAW_LOG"
   CODEX_RC="${PIPESTATUS[0]}"
   RESULT="$(extract_result)"
   # Untrusted run: do NOT advance pass state (finding 3) — a failed pass-2 must
@@ -315,7 +315,11 @@ echo "[codex-review] mode=$MODE effort=$EFFORT base=$BASE model=$MODEL (pass 1/2
 # aborted run can never wrongly make the resume flow eligible.
 echo 0 > "$PASS_FILE"
 : > "$LAST_MSG"
-codex exec "${FLAGS[@]}" "$(cat "$TMP/prompt.txt")" 2>&1 | tee "$RAW_LOG"
+# CODE_REVIEW — read stdin from /dev/null. The prompt is passed as an argv
+# argument; without this, running non-interactively (background / no TTY) makes
+# the CLI block forever on "Reading additional input from stdin..." waiting for
+# a pipe that never closes.
+codex exec "${FLAGS[@]}" "$(cat "$TMP/prompt.txt")" </dev/null 2>&1 | tee "$RAW_LOG"
 CODEX_RC="${PIPESTATUS[0]}"
 RESULT="$(extract_result)"
 
