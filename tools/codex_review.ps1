@@ -332,9 +332,11 @@ $prompt = $PromptTemplate.
 
 $flags = Build-Flags $Effort
 Write-Host "[codex-review] mode=$Mode effort=$Effort base=$BaseRef model=$Model (pass 1/2, read-only, user-config ignored)"
-# Reset pass state at the START of a first pass so a stale pass=1 from a prior
-# aborted run can never wrongly make the resume flow eligible.
+# Reset pass state AND the recorded session id at the START of a first pass, so
+# neither a stale pass=1 nor a stale session id from a prior run can leak into
+# this task's resume eligibility.
 '0' | Out-File -FilePath $PassFile -Encoding ascii -NoNewline
+if (Test-Path $SessionFile) { Remove-Item $SessionFile -Force -ErrorAction SilentlyContinue }
 '' | Out-File -FilePath $LastMsg -Encoding utf8
 $args1 = @('exec') + $flags + @($prompt)
 # $null | ... closes codex's stdin immediately (prompt is an argv arg); without
@@ -350,7 +352,14 @@ if (Test-Untrusted $rc $result) {
     [void](Write-Usage $Mode $Effort $BaseRef 0)
     exit 4
 }
-'1' | Out-File -FilePath $PassFile -Encoding ascii -NoNewline
+# Only become resume-eligible if THIS pass's session id was actually captured.
+$sidNow = Get-SessionId
+if ($sidNow -and $sidNow -ne 'unavailable') {
+    '1' | Out-File -FilePath $PassFile -Encoding ascii -NoNewline
+} else {
+    '0' | Out-File -FilePath $PassFile -Encoding ascii -NoNewline
+    [Console]::Error.WriteLine('[codex-review] 警告:未擷取到本輪 session id;resume 不可用(如需第二輪請重跑第一輪)。')
+}
 [void](Write-Usage $Mode $Effort $BaseRef 1)
 Write-Host "`n[codex-review] result=$result (pass 1/2)  usage -> $UsageTsv"
 if ($result -eq 'APPROVE') { exit 0 }

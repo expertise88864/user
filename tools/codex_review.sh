@@ -320,9 +320,11 @@ sed -i -e "/{{VERIFICATION_RESULTS}}/r $TMP/ver.txt" -e "/{{VERIFICATION_RESULTS
 
 build_flags "$EFFORT"
 echo "[codex-review] mode=$MODE effort=$EFFORT base=$BASE model=$MODEL (pass 1/2, read-only, user-config ignored)"
-# Reset pass state at the START of a first pass so a stale pass=1 from a prior
-# aborted run can never wrongly make the resume flow eligible.
+# Reset pass state AND the recorded session id at the START of a first pass, so
+# neither a stale pass=1 nor a stale session id from a prior run can leak into
+# this task's resume eligibility.
 echo 0 > "$PASS_FILE"
+rm -f "$SESSION_FILE"
 : > "$LAST_MSG"
 # CODE_REVIEW — read stdin from /dev/null. The prompt is passed as an argv
 # argument; without this, running non-interactively (background / no TTY) makes
@@ -340,7 +342,15 @@ if run_untrusted "$CODEX_RC" "$RESULT"; then
   log_usage "$MODE" "$EFFORT" "$BASE" 0 >/dev/null   # record the attempt; pass stays 0
   exit 4
 fi
-echo 1 > "$PASS_FILE"
+# Only become resume-eligible if THIS pass's session id was actually captured.
+# Otherwise resume would have no verified session to continue (or worse, could
+# fall back to a stale one). log_usage persists the session id when present.
+if [ -n "$(extract_session_id)" ]; then
+  echo 1 > "$PASS_FILE"
+else
+  echo 0 > "$PASS_FILE"
+  echo "[codex-review] 警告:未擷取到本輪 session id;resume 不可用(如需第二輪請重跑第一輪)。" >&2
+fi
 log_usage "$MODE" "$EFFORT" "$BASE" 1 >/dev/null
 echo; echo "[codex-review] result=$RESULT (pass 1/2)  usage → $USAGE_TSV"
 case "$RESULT" in
