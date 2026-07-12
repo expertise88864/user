@@ -62,7 +62,9 @@ SCAN_GLOBS = (
     "admin/*.html",
     "middleware.js",
     "sw.js",
-    "assets/inline/*.js",
+    # Recursive so ANY authored frontend JS under assets/ is audited, not just
+    # assets/inline/ — a file like assets/search.js would otherwise slip past.
+    "assets/**/*.js",
     "blog/*.js",
     # CODE_REVIEW — frontend HTML carries inline <script> blocks too (index.html
     # has an innerHTML sink). Scanning only admin*.html left those unaudited.
@@ -125,9 +127,10 @@ _Q = r"""['"`]"""
 _ASSIGN = r"\s*(?:\+|\|\||&&|\?\?)?=(?!=)"
 
 FORBIDDEN = (
-    (re.compile(r"\beval\s*\("), "eval()"),
-    # `new Function(...)` and the bare `Function(...)` constructor call.
-    (re.compile(r"\bFunction\s*\("), "Function() constructor"),
+    # eval — direct `eval(` and bracket-notation `window['eval'](` / `[`eval`](`.
+    (re.compile(rf"\beval\s*\(|\[\s*{_Q}eval{_Q}\s*\]\s*\("), "eval()"),
+    # `new Function(...)`, bare `Function(...)`, and `window['Function'](`.
+    (re.compile(rf"\bFunction\s*\(|\[\s*{_Q}Function{_Q}\s*\]\s*\("), "Function() constructor"),
     # NB: `write(?:ln)?` — NOT `writeln?`, which parses as `writel` + optional
     # `n` and therefore never matches plain `document.write(`.
     (re.compile(rf"\bdocument\s*(?:\.\s*write(?:ln)?|\[\s*{_Q}write(?:ln)?{_Q}\s*\])\s*\("), "document.write()"),
@@ -149,6 +152,13 @@ AUTH_LITERAL_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Third-party bundles that live under a scanned glob but are NOT authored here.
+# Auditing vendored code for these patterns is noise (that is the supply-chain
+# checker's job); a hit here would only force a spurious allowlist entry.
+VENDORED = frozenset({
+    "assets/web-vitals.iife.js",  # web-vitals npm IIFE build (minified, no sinks)
+})
+
 HTML_COMMENT_RE = re.compile(r"<!--[\s\S]*?-->")
 SCRIPT_RE = re.compile(r"<script\b[^>]*>([\s\S]*?)</script>", re.IGNORECASE)
 
@@ -165,7 +175,10 @@ def iter_files() -> tuple[list[Path], dict[str, int]]:
                 continue
             if path.name.endswith(".min.js"):
                 continue  # generated artifact; its source is scanned instead
-            seen[path.relative_to(ROOT).as_posix()] = path
+            rel = path.relative_to(ROOT).as_posix()
+            if rel in VENDORED:
+                continue  # third-party bundle, not authored here
+            seen[rel] = path
             matched += 1
         per_pattern[pattern] = matched
     return [seen[key] for key in sorted(seen)], per_pattern

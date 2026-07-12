@@ -145,12 +145,20 @@ function Write-Usage([string]$M, [string]$E, [string]$B, [int]$Pass) {
 
 # ================= resume(第二輪) =================
 if ($Mode -eq 'resume') {
+    # CODE_REVIEW — resume MUST continue the SAME session the successful first
+    # pass recorded; an explicit id must equal the recorded one, else we'd resume
+    # an unrelated session while recording THIS task as pass 2 unreviewed.
+    $RecordedSid = if (Test-Path $SessionFile) { (Get-Content $SessionFile -Raw).Trim() } else { '' }
     $Sid = $BaseRef   # 第二個位置參數在 resume 模式下即 session-id
     if (-not $Sid) {
-        if (-not (Test-Path $SessionFile)) {
-            Die "找不到第一輪 session id($SessionFile 不存在)。請以明確 session id 執行:.\tools\codex_review.ps1 resume <session-id>。不要用 --last(可能 resume 到別的專案)。"
-        }
-        $Sid = (Get-Content $SessionFile -Raw).Trim()
+        if (-not $RecordedSid) { Die "找不到第一輪 session id($SessionFile 不存在)。請先在同一 repo 完成第一輪。" }
+        $Sid = $RecordedSid
+    }
+    elseif ($RecordedSid -and $Sid -ne $RecordedSid) {
+        Die "提供的 session id($Sid)與本 repo 第一輪紀錄的($RecordedSid)不符。resume 只能沿用同一 task 的 session,拒絕跨 session/跨 task resume。"
+    }
+    elseif (-not $RecordedSid) {
+        Die "本 repo 沒有第一輪 session 紀錄可比對;拒絕以未經驗證的 session id resume。"
     }
     $PrevPass = if (Test-Path $PassFile) { (Get-Content $PassFile -Raw).Trim() } else { '0' }
     if ($PrevPass -ne '1') { Die "第二輪只能在完成第一輪之後執行(目前 pass=$PrevPass)。每個 task 最多兩輪。" }

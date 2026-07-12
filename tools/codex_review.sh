@@ -129,10 +129,19 @@ log_usage() {  # $1 mode $2 effort $3 base $4 pass
 
 # ================= resume(第二輪) =================
 if [ "$MODE" = "resume" ]; then
+  # CODE_REVIEW — the resume MUST continue the SAME session the successful first
+  # pass recorded. Accepting an arbitrary explicit id would resume an unrelated
+  # session (e.g. another task's) while recording THIS task as pass 2 without
+  # ever reviewing its corrections. So an explicit id must equal the recorded one.
+  RECORDED_SID="$(cat "$SESSION_FILE" 2>/dev/null || true)"
   SID="${2:-}"
   if [ -z "$SID" ]; then
-    [ -s "$SESSION_FILE" ] || die "找不到第一輪 session id($SESSION_FILE 不存在)。請以明確 session id 執行:$0 resume <session-id>。不要用 --last(可能 resume 到別的專案)。"
-    SID="$(cat "$SESSION_FILE")"
+    [ -n "$RECORDED_SID" ] || die "找不到第一輪 session id($SESSION_FILE 不存在)。請先在同一 repo 完成第一輪。"
+    SID="$RECORDED_SID"
+  elif [ -n "$RECORDED_SID" ] && [ "$SID" != "$RECORDED_SID" ]; then
+    die "提供的 session id($SID)與本 repo 第一輪紀錄的($RECORDED_SID)不符。resume 只能沿用同一 task 的 session,拒絕跨 session/跨 task resume。"
+  elif [ -z "$RECORDED_SID" ]; then
+    die "本 repo 沒有第一輪 session 紀錄可比對;拒絕以未經驗證的 session id resume。"
   fi
   PREV_PASS="$(cat "$PASS_FILE" 2>/dev/null || echo 0)"
   [ "$PREV_PASS" = "1" ] || die "第二輪只能在完成第一輪之後執行(目前 pass=$PREV_PASS)。每個 task 最多兩輪。"
