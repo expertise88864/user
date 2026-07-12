@@ -89,6 +89,18 @@
 >
 > **未發現任何 P0/P1 未修項**;#14 source/min 全同步(無 stale);D-11 單一入口未繞過;CI 無 `pull_request_target`。
 
+## Phase 7(PART2 續審)— 剩餘驗證器 + 供應鏈/外部服務熱點(2026-07-12)結論
+> 依 `REVIEW_WORKORDER_2026-07_PART2.md`(V2,Codex 複核過)審上一輪只掃過沒逐行讀的長尾。
+> **3 支安全熱點 + 27 支剩餘 `_check_*` 驗證器**。**結論:體質良好,修 3 項供應鏈/覆蓋缺口,無 gate 內假綠燈。**
+> 驗證器 sweep:18 支 gate 驗證器結構健康(真 fail path、無吞失敗、抽讀 secrets/supply_chain/third_party/html_escape/inline_events 皆真檢查器);5 支「無 fail path」的**都不在 gate**(readability/link-density/meta_descriptions/links/inline_scripts = 診斷工具,exit-0 是設計、非 vacuous)。
+> 外部服務:`_ai_translate.py` API key 只走 env(不落檔/log)、AI 醫療翻譯餵 `/en/` 鏡像 = D-17 的 noindex courtesy MT(制度一致);`_translate_pipeline inject` data-en 有跳脫引號、進 innerHTML 屬全站既有 author-trust 模型。
+
+| ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
+|----|------|-----------|------|------|------|
+| ~~TD-37~~ ✅ | **DONE(Phase 7)** `_run_pagefind` 供應鏈:`pagefind@latest` 不釘版 | 該腳本在 `BUILD_GENERATED_STEPS`(每次 `build`/Vercel deploy 跑),`npx --yes pagefind@latest` **不釘版、download-on-demand**,產物 `/pagefind/*.js` **送到訪客瀏覽器**(gitignore 註解:每次 Vercel build 重建)。→ 每次部署拉未審 npm 最新版並上線(供應鏈)。且所有失敗路徑 `return 0`(非致命),`check=True` 抓不到→搜尋索引壞掉也 gate 綠。 | **✅ 已修**:釘 `pagefind@1.5.2`(= pin 時 `@latest` 解析值,凍結現行行為);未來升版要人工審。silent-failure 是**文件化的 graceful degradation**(壞了退回內建搜尋)→ 維持,降 P3。**⚠️ 需你上 Vercel 確認 build 是否真的跑此步**(本機驗不了)。 | py_compile + gate 綠 + `_check_supply_chain` 新鎖負向驗過 | 🟡 供應鏈(釘現版、低風險) |
+| ~~TD-38~~ ✅ | **DONE(Phase 7)** `_check_secrets` 覆蓋缺口:不掃 shell/PowerShell/batch | `TEXT_SUFFIXES` 少了 `.sh/.ps1/.cmd/.bat` → 8 支 tracked 腳本(`deploy.*`、`set-domain.*`、`new-article.ps1`、`tools/codex_review.*`、`_setup_pagefind.bat`)**完全不掃 secret**——這些正是硬編碼 token 常見處(TD-31 同類的覆蓋過窄)。 | **✅ 已修**:補 `.sh/.ps1/.cmd/.bat`;實測現有腳本 **0 誤報**。**+Codex round-2**:光補副檔名不夠——`.ps1`/`.bat` 常是 **UTF-16**(PowerShell 預設),原 `read_text(utf-8)` 會 `UnicodeDecodeError` 靜默跳過(覆蓋是假的)。改 `decode_text()` **BOM-aware**(utf-8-sig/utf-16 + NUL 啟發式),且**無法解碼的合格檔改「回報」不「跳過」**(fail closed)。負驗:UTF-16 `.ps1` 藏假 ghp_ token → **抓到**。 | `_check_secrets` 綠 + UTF-16 負驗 + gate 綠 | 🟡 安全覆蓋 |
+| ~~TD-39~~ ✅ | **DONE(Phase 7)** `_check_supply_chain` 看不到 npx `@latest` | package.json 釘版檢查**結構上看不到 `npx <pkg>@latest`** 這種 Python 腳本內的調用(TD-37 的缺口即源於此)。 | **✅ 已修**:新增掃描禁 tracked pipeline 腳本內的 `<pkg>@latest`。**+Codex round-2**:原只抓引號式 `"<pkg>@latest"`(Python argv),漏掉 shell/PowerShell 的**未引號** `npx pagefind@latest`(而我現在有掃 .sh/.ps1)。改**先剝行註解**(`#`/`//`,保留換行故行號準)再廣抓 `[\w@./-]*@latest`(涵蓋引號/未引號/npx 各形)+ 排除 checker 自身;`_run_pagefind` docstring 也改寫掉字面 `@latest`(否則 prose 誤判)。負驗:Python `"x@latest"`、shell `npx x@latest`、PS `x@latest` 皆 fail;`# ...@latest` 註解不誤判。 | 三形態負驗 + gate 綠 | 🟢 regression lock |
+
 ## P1(值得做,影響真實但不緊急)
 | ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
 |----|------|-----------|------|------|------|

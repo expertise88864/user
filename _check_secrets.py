@@ -13,14 +13,22 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 SKIP_DIRS = {".git", "node_modules", "__pycache__", ".venv", "_bin"}
 TEXT_SUFFIXES = {
+    # CODE_REVIEW Phase 7 — shell/PowerShell/batch scripts were NOT scanned,
+    # yet they are a classic place hard-coded tokens leak (deploy.*, set-domain.*,
+    # new-article.ps1, tools/codex_review.*). Added .sh/.ps1/.cmd/.bat; verified
+    # 0 false positives on the currently-tracked scripts.
+    ".bat",
     ".cjs",
+    ".cmd",
     ".css",
     ".html",
     ".js",
     ".json",
     ".md",
     ".mjs",
+    ".ps1",
     ".py",
+    ".sh",
     ".toml",
     ".txt",
     ".xml",
@@ -82,6 +90,33 @@ def tracked_files() -> list[Path]:
         return files
 
 
+def decode_text(raw: bytes) -> str | None:
+    """Decode a tracked text file BOM-aware. Windows PowerShell/batch files are
+    frequently UTF-16 (with or without BOM); a plain utf-8 read raises on those
+    (skipping them) or, BOM-less, yields NUL-interleaved text the patterns can't
+    match — either way a secret in a .ps1/.bat would slip through the scan.
+    Returns None only if the bytes are not decodable as any expected text
+    encoding (caller reports it rather than silently skipping)."""
+    if raw.startswith((b"\xff\xfe", b"\xfe\xff")):
+        try:
+            return raw.decode("utf-16")
+        except UnicodeDecodeError:
+            return None
+    if raw.startswith(b"\xef\xbb\xbf"):
+        return raw.decode("utf-8-sig", errors="replace")
+    # BOM-less UTF-16 heuristic: many NUL bytes early on.
+    if raw[:400].count(0) > 20:
+        for enc in ("utf-16-le", "utf-16-be"):
+            try:
+                return raw.decode(enc)
+            except UnicodeDecodeError:
+                continue
+    try:
+        return raw.decode("utf-8")
+    except UnicodeDecodeError:
+        return None
+
+
 def is_placeholder(text: str) -> bool:
     lowered = text.lower()
     return "..." in text or "example" in lowered or "placeholder" in lowered or "your_" in lowered
@@ -105,9 +140,11 @@ def main() -> int:
             continue
         if path.suffix.lower() not in TEXT_SUFFIXES:
             continue
-        try:
-            src = path.read_text(encoding="utf-8")
-        except UnicodeDecodeError:
+        src = decode_text(path.read_bytes())
+        if src is None:
+            # Fail closed: an eligible text file we cannot decode is an
+            # unscanned gap, not something to silently pass over.
+            errors.append(f"{rel}: eligible text file could not be decoded (UTF-8/UTF-16) — cannot scan for secrets")
             continue
         for label, pattern in SECRET_PATTERNS:
             for match in pattern.finditer(src):

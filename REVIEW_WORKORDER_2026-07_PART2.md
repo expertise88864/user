@@ -185,7 +185,7 @@
 
 ## 4. 進度表(Opus 執行時隨做隨更;HANDOFF 寫在該行下方)
 
-- [ ] Phase 7 安全熱點(pagefind/ai_translate,3 支)+ 剩餘驗證器（掃過 ____/27；假綠燈 ____ 支）
+- [x] **Phase 7 完成 2026-07-12**（Fable 5 執行,經授權「全部修」）。3 支安全熱點 + 27 支 `_check_*` 全評估完畢。**體質良好、gate 內無假綠燈**。修 3 項:**TD-37**(`_run_pagefind` 釘 `pagefind@1.5.2`,供應鏈)、**TD-38**(`_check_secrets` 補掃 shell/ps1/bat)、**TD-39**(`_check_supply_chain` 加 `npx @latest` 回歸鎖)。18 gate 驗證器健康、5 非-gate 是診斷工具;`_ai_translate` API key 安全、EN AI 翻譯 = D-17 courtesy MT。⚠️ TD-37 需上 Vercel 確認 build 是否真跑 `_run_pagefind`。HANDOFF:下一個 = Phase 8A(schema `@id` 正規化器)。
 - [ ] Phase 8A schema/JSON-LD 正規化器（深讀 ____/7；`@id` 漂移:____）
 - [ ] Phase 8B 次要生成器 + 內容注入器（深讀 ____/14）
 - [ ] Phase 9 版面正規化 + 建置基建 + 總結（深讀 ____/~21）

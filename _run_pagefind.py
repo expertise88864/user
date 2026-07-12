@@ -3,9 +3,9 @@
 """Run Pagefind via npx (download-on-demand, no manual binary install).
 
 The standalone binary downloader in _setup_pagefind.py kept hitting 404s
-because GitHub release filenames have drifted. npx pagefind@latest pulls
-the npm package which Just Works(tm) on any platform with Node — and
-Vercel build env already has Node + npm available.
+because GitHub release filenames have drifted. npx pulls a PINNED pagefind
+release (version pinned in install_binary below) from npm, which Just
+Works(tm) on any platform with Node — and Vercel build env has Node + npm.
 
 Pagefind crawls the static HTML on disk and writes /pagefind/ (UI bundle
 + chunked search index, total ~3 MB but loaded only on search-button
@@ -49,8 +49,14 @@ def main() -> int:
         )
         return 0
 
+    # CODE_REVIEW Phase 7 — pin the version. This runs on every Vercel build and
+    # writes /pagefind/*.js that is SERVED TO VISITORS' browsers, so an unpinned
+    # `pagefind@latest` means every deploy pulls (and ships) whatever npm's latest
+    # is at that moment — a supply-chain hole with no review step. 1.5.2 is what
+    # `@latest` resolved to at pin time; bump it deliberately after reviewing a
+    # new release, not silently on every deploy.
     args = [
-        npx, "--yes", "pagefind@latest",
+        npx, "--yes", "pagefind@1.5.2",
         "--site", str(ROOT),
         "--output-path", str(PAGEFIND_DIR),
         "--root-selector", "main",
