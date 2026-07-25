@@ -135,17 +135,16 @@ def score_related(cur: dict, all_articles: list[dict], TG: dict[str, list[str]])
         s = group_bonus + tag_bonus + cat_bonus + overlap
         if s > 0:
             scored.append((s, a))
-    # Sort by score desc, tiebreak by date desc (newer first)
-    # CODE_REVIEW — was 3 sequential sorts where only the last one
-    # (score desc) survived Python's stable-sort guarantee. Collapse
-    # to a single composite-key sort: primary = score desc, secondary
-    # = date desc (newer wins ties).
-    scored.sort(key=lambda x: (-x[0], "" if not x[1]["date"] else x[1]["date"]),
-                reverse=False)
-    # Hack: secondary needs to be DESC but the primary is ASC via -x[0].
-    # Use a tuple where date is negated by string-flipping. Simpler:
-    # do one composite sort with two pass-through keys at proper polarity.
-    scored.sort(key=lambda x: (-x[0], -_date_sort_key(x[1]["date"])))
+    # Sort by score desc, then date desc (newer first), then raw date string asc.
+    # CODE_REVIEW TD-45 — an earlier pass claimed to reduce this to "one composite
+    # sort" but left TWO: a first sort keyed on the raw date STRING ascending,
+    # immediately overwritten by the composite one. Collapsed for real here.
+    # The third key is NOT decoration: _date_sort_key() maps every malformed date
+    # to 0, so two candidates tied on score with non-canonical dates tie on the
+    # numeric key too, and the discarded sort was what ordered them. Keeping the
+    # raw string as the final tiebreak makes this single sort exactly equivalent
+    # to the old pair for canonical AND malformed dates alike.
+    scored.sort(key=lambda x: (-x[0], -_date_sort_key(x[1]["date"]), x[1]["date"] or ""))
     return [a for _, a in scored[:4]]
 
 

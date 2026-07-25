@@ -120,7 +120,7 @@
 
 ## Phase 10(逐行補完)— 尚未深讀的 58 支活躍腳本(2026-07-25 起,進行中)
 > 前面各 Phase 對 8B/9 是「掃描 + 抽讀 + 冪等驗證」;本 Phase 逐行補完剩下的 **58 支 / 7,323 行**。
-> **進度:6/58**(`_check_runtime_smoke` 257、`_check_article_runtime` 162、`_check_index_boundaries` 144、
+> **進度:9/58**(`_check_runtime_smoke` 257、`_check_article_runtime` 162、`_check_index_boundaries` 144、
 > `_gen_llms_full` 228、`_gen_search_index` 166,另交叉比對 `_gen_ai_faq`/`_gen_ai_service`/`_normalize_ai_well_known` 的日期慣例)。
 > 已讀者結論:皆為**真驗證器/健全生成器**——`_check_runtime_smoke` 真起 server 驗 content-type/needle/SW 快取/各 bundle;
 > `_check_article_runtime` 編碼 4 次真實事故(含 `data-zh` 屬性提前閉合偵測);`_check_index_boundaries` 正是擋下誤刪
@@ -129,6 +129,13 @@
 | ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
 |----|------|-----------|------|------|------|
 | ~~TD-43~~ ✅ | **DONE(Phase 10)** `_gen_llms_full` 用 `date.today()` 造成每日 590KB 檔 churn | header 寫 `Generated {dt.date.today()}` → **每逢跨日的 CI build 就整檔重寫**,而內容沒變。實證:最近 5 個 `auto-regen` commit 動到 `llms-full.txt`,**diff 全都只有那一行日期**(52 篇文章內容一字未改)。後果:雜訊 commit 淹沒真正的內容變更、git 歷史膨脹。**且與 repo 自身慣例不一致**——`_gen_ai_faq` docstring 明寫「Deterministic … never churns git」、`_gen_ai_service` 同、`_normalize_ai_well_known` 用 `latest_date or today`、`llms.txt` 本身用「Last updated: 最新文章日期」。**只有這支是異類。** | **✅ 已修**:改用**所含文章的最大 `dateModified`** 當戳記(catalog 發布日、today 僅為 fallback),標籤同步改成與 `llms.txt` 一致的「Last updated」。**⚠️ 第一版我誤用 catalog 發布日 → Codex 抓到「穩定但語意錯誤」**:既有文章被修訂時語料內容會變、發布日卻不動(實證:我的戳記寫 2026-06-05,語料內第一篇卻自稱 `Updated: 2026-07-06`)。改用 `dateModified` 後與 `llms.txt`(`_normalize_llms_counts` 用同一訊號)**完全一致 = 2026-07-06**。一次性 diff,之後只在內容真的變動時才變。 | 連跑兩次輸出相同;全量 `build` 綠、`llms-full.txt` 只變 header 一行、`llms.txt` KB 計數同步校正;30 步 gate 綠 | 🟢 |
+
+| ~~TD-44~~ ✅ | **DONE(Phase 10)** `llms.txt` 的 KB 數在本機/CI 之間無限彈跳(TD-34 同類) | `_normalize_llms_counts` 用 `full.stat().st_size` 量 `llms-full.txt` 的**原始位元組**。本機 Windows 檢出是 CRLF(602,627 B = 588.5 KB)、git/CI/部署是 LF(591,777 B = 577.9 KB)→ **每次本機 build 寫「~589 KB」、每次 CI build 寫回「~578 KB」,永久互相覆蓋**(實證:CI 剛推的 auto-regen 就是 589→578)。而且寫給 AI 爬蟲看的數字**不是它們實際抓到的大小**。 | **✅ 已修**:改量 LF-normalized 位元組(`read_bytes().replace(b'
+
+', b'
+')`),與 TD-34 同一手法。**過程中的自我修正**:我一度也把 `_gen_llms_full` 改成 `newline="
+"` 寫檔,實測發現本 repo 是 `core.autocrlf=true` 且無 `.gitattributes`,強制 LF 反而讓 `git status` **永久顯示該檔 modified** → 已還原,只保留量測面的修正(可攜、與工作區行尾無關)。 | 修後:本機 `llms.txt` 寫 ~578 KB = 部署實際大小;連跑兩次「already current」;`git status` 乾淨無幻影 modified;30 步 gate 綠 | 🟢 |
+| ~~TD-45~~ ✅ | **DONE(Phase 10)** `_inject_related.score_related` 有一個被立刻覆蓋的死 sort | :143-148 連續兩個 `scored.sort()`,第一個(以日期**字串**升冪)在下一行就被複合鍵 sort 覆蓋。諷刺的是正上方 CODE_REVIEW 註解宣稱已「collapse to a single composite-key sort」,實際留了兩個,連註解自己都寫「Hack」。 | **✅ 已收成單一 sort,鍵為 `(-score, -date_int, raw_date)`**。⚠️ **第一版我只刪掉舊 sort、沒補第三個鍵,那是行為變更而非純清理**——Codex 抓到:`_date_sort_key()` 把**所有畸形日期都映射成 0**,所以「score 相同 + 日期皆畸形」的候選在數值鍵上完全並列,舊版是靠被丟掉的那個 sort(原始日期字串遞增)決定順序。補上原始字串當第三鍵後才真正等價。**我原本「53 篇實測相同 = 可安全移除」的推論下得太滿**:現有 catalog 日期全為標準格式,測不到這個情境。 | 三重驗證:真實 catalog 53/53 相同;**畸形日期隨機壓力測試 3000 組 0 差異**;**對照組(少第三鍵)3000 組中 951 組不同** ← 證實 Codex 發現屬實。產物零 content diff + gate 綠 | 🟢 P3 |
 
 ## P1(值得做,影響真實但不緊急)
 | ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |

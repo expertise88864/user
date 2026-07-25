@@ -60,7 +60,13 @@ def main() -> int:
 
     zh = count_articles("blog/*.html")
     en = count_articles("en/blog/*.html")
-    kb = round(full.stat().st_size / 1024) if full.exists() else 0
+    # CODE_REVIEW TD-44 — measure the DEPLOYED (LF) size, not raw on-disk bytes.
+    # git stores LF and Vercel serves LF, but a Windows checkout has llms-full.txt
+    # in CRLF, which is ~11 KB larger. With stat().st_size every local build wrote
+    # "~589 KB" and every CI build wrote "~578 KB", so the two ping-ponged forever
+    # in git history — and the figure advertised to AI crawlers did not match the
+    # file they actually fetch. Same class as TD-34.
+    kb = round(len(full.read_bytes().replace(b"\r\n", b"\n")) / 1024) if full.exists() else 0
     entries = 0
     if full.exists():
         entries = len(set(re.findall(r"chendermatologist\.com/blog/([a-z0-9-]+)", full.read_text(encoding="utf-8"))))

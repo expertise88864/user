@@ -238,6 +238,11 @@ def main() -> int:
 
     out = "\n".join([header] + sections)
     out_path = ROOT / "llms-full.txt"
+    # NB: deliberately NOT newline="\n". This repo runs core.autocrlf=true with no
+    # .gitattributes, so git wants CRLF in the Windows working tree; forcing LF
+    # here makes `git status` report llms-full.txt as modified after every build
+    # forever. The deployed size is instead measured LF-normalized where it
+    # matters, in _normalize_llms_counts (TD-44).
     out_path.write_text(out, encoding="utf-8")
     size_kb = len(out.encode("utf-8")) / 1024
     print(f"Wrote llms-full.txt: {len(catalog) - skipped} articles, "
