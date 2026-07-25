@@ -120,7 +120,7 @@
 
 ## Phase 10(逐行補完)— 尚未深讀的 58 支活躍腳本(2026-07-25 起,進行中)
 > 前面各 Phase 對 8B/9 是「掃描 + 抽讀 + 冪等驗證」;本 Phase 逐行補完剩下的 **58 支 / 7,323 行**。
-> **進度:9/58**(`_check_runtime_smoke` 257、`_check_article_runtime` 162、`_check_index_boundaries` 144、
+> **進度:17/58**(`_check_runtime_smoke` 257、`_check_article_runtime` 162、`_check_index_boundaries` 144、
 > `_gen_llms_full` 228、`_gen_search_index` 166,另交叉比對 `_gen_ai_faq`/`_gen_ai_service`/`_normalize_ai_well_known` 的日期慣例)。
 > 已讀者結論:皆為**真驗證器/健全生成器**——`_check_runtime_smoke` 真起 server 驗 content-type/needle/SW 快取/各 bundle;
 > `_check_article_runtime` 編碼 4 次真實事故(含 `data-zh` 屬性提前閉合偵測);`_check_index_boundaries` 正是擋下誤刪
@@ -136,6 +136,8 @@
 ')`),與 TD-34 同一手法。**過程中的自我修正**:我一度也把 `_gen_llms_full` 改成 `newline="
 "` 寫檔,實測發現本 repo 是 `core.autocrlf=true` 且無 `.gitattributes`,強制 LF 反而讓 `git status` **永久顯示該檔 modified** → 已還原,只保留量測面的修正(可攜、與工作區行尾無關)。 | 修後:本機 `llms.txt` 寫 ~578 KB = 部署實際大小;連跑兩次「already current」;`git status` 乾淨無幻影 modified;30 步 gate 綠 | 🟢 |
 | ~~TD-45~~ ✅ | **DONE(Phase 10)** `_inject_related.score_related` 有一個被立刻覆蓋的死 sort | :143-148 連續兩個 `scored.sort()`,第一個(以日期**字串**升冪)在下一行就被複合鍵 sort 覆蓋。諷刺的是正上方 CODE_REVIEW 註解宣稱已「collapse to a single composite-key sort」,實際留了兩個,連註解自己都寫「Hack」。 | **✅ 已收成單一 sort,鍵為 `(-score, -date_int, raw_date)`**。⚠️ **第一版我只刪掉舊 sort、沒補第三個鍵,那是行為變更而非純清理**——Codex 抓到:`_date_sort_key()` 把**所有畸形日期都映射成 0**,所以「score 相同 + 日期皆畸形」的候選在數值鍵上完全並列,舊版是靠被丟掉的那個 sort(原始日期字串遞增)決定順序。補上原始字串當第三鍵後才真正等價。**我原本「53 篇實測相同 = 可安全移除」的推論下得太滿**:現有 catalog 日期全為標準格式,測不到這個情境。 | 三重驗證:真實 catalog 53/53 相同;**畸形日期隨機壓力測試 3000 組 0 差異**;**對照組(少第三鍵)3000 組中 951 組不同** ← 證實 Codex 發現屬實。產物零 content diff + gate 綠 | 🟢 P3 |
+
+| TD-46 | ⚠️ **`_normalize_bilingual_attrs.py` 是被凍結在 REGEN 第一步的一次性遷移腳本,會靜默還原醫師的編輯** | 它是 `REGEN_STEPS` 的**第 1 步**(每次 `build`/CI 都跑),內容卻是一次性內容遷移。**實際會觸發的覆寫路徑(逐一實測確認)**:① `acne-myths` 的 `<h1>`、② `sunscreen-myths` 的 `<h1>`、③ `acne-myths` 的「關鍵理解」`<p>`、④ `isotretinoin-clinical` 的 TL;DR `<p>`——這 4 處的完整 HTML 都硬編碼在腳本裡,每次 build 強制覆寫。**另有兩條靜默的破壞性遷移**:⑤ 一段 regex 會**刪除** `acne-myths` 中 `<h2 id="m5-en">Myth 5: Chocolate…` 起的整個英文區塊、並把 m6~m9-en 錨點**重新編號**成 m5~m8-en(實測:該區塊已不存在、m9-en 已無 = 遷移早就完成);⑥ `normalize_count_labels()` 對**全庫** `.html/.js/.json/.xml` 字串取代(「痘痘 9 大迷思」→「8 大迷思」、`9 Acne Myths`→`8 Acne Myths`…)。**實測危害**:把 `acne-myths` 的 H1 副標改掉(模擬醫師在 admin 編輯)→ 跑一次本腳本 → **編輯被靜默還原**。這與 repo 自身原則矛盾(`blog-shared.js` 的 `applyTextOnly` Case C 特地保留 admin 客製,註解:「Fixes 2026-05-14 incident」)。**⚠️ 更正(Codex 複核)**:本條初版誤把兩個 disclaimer 也列為風險——實測 `acne`/`sunscreen` **都不含**該選擇器要求的 `data-zh="<strong data-zh="提醒 ·"` 巢狀寫法(現行是單純的 `<strong>提醒 ·</strong>`),故那兩處 `replace_between` **從不觸發**,改 disclaimer 是安全的;初版也漏記了 ⑤ 的刪除+重編號。現況整體為 no-op(內容已與硬編碼一致),屬**潛伏陷阱**。 | **未動工——涉醫師寫作流程,需使用者定案**。建議:把本腳本移出 `REGEN_STEPS`、比照 TD-13 歸為歷史一次性工具(遷移早已完成、現在跑起來 0 檔異動;Codex 複核確認**無其他程式引用它**,移除安全)。若仍想保有保護,**替代驗證器應檢查「結構性雙語不變式」(如 data-zh/data-en 必須成對、不得巢狀),而非比對硬編碼的文案**——否則一樣會擋掉醫師的合法編輯。 | 實測:模擬編輯 → 跑腳本 → 編輯消失(已還原測試檔);4 條覆寫路徑 + 2 條遷移路徑逐一驗證命中與否 | 🟡 需使用者定案 |
 
 ## P1(值得做,影響真實但不緊急)
 | ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
