@@ -42,6 +42,8 @@ User-Agent: cohere-ai
 User-Agent: cohere-training-data-crawler
 User-Agent: Diffbot
 User-Agent: Bytespider
+User-Agent: Amazonbot
+User-Agent: FacebookBot
 User-Agent: omgilibot
 User-Agent: omgili
 User-Agent: AhrefsBot

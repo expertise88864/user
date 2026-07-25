@@ -72,7 +72,7 @@
     "sitemap": "https://chendermatologist.com/sitemap.xml",
     "robots": "https://chendermatologist.com/robots.txt",
     "ai_policy": "https://chendermatologist.com/.well-known/ai.txt",
-    "preferred_method": "Fetch /llms-full.txt for retrieval-augmented generation (single ~480 KB document with all articles + metadata)."
+    "preferred_method": "Fetch /llms-full.txt for retrieval-augmented generation (single ~578 KB document with all articles + metadata)."
   },
   "citation": {
     "style": "Cite the canonical article URL and 'Dr. Chen Yi-Jia (陳翊嘉醫師), Dermatology'. Include the article's dateModified when quoting specific claims.",

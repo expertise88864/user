@@ -116,6 +116,13 @@ def build_ai_txt(summary: dict, today: str) -> str:
         f"User-Agent: cohere-training-data-crawler\n"
         f"User-Agent: Diffbot\n"
         f"User-Agent: Bytespider\n"
+        # CODE_REVIEW TD-48 — robots.txt blocks these two site-wide, but ai.txt
+        # never named them, so they fell through to its `User-Agent: * / Allow: /`
+        # group and were EFFECTIVELY ALLOWED here: exactly the contradiction
+        # PIPELINE.md's three-file rule forbids. Listing them makes ai.txt reflect
+        # robots.txt's existing policy (no policy change; robots stays canonical).
+        f"User-Agent: Amazonbot\n"
+        f"User-Agent: FacebookBot\n"
         f"User-Agent: omgilibot\n"
         f"User-Agent: omgili\n"
         f"User-Agent: AhrefsBot\n"
@@ -152,6 +159,18 @@ def build_ai_txt(summary: dict, today: str) -> str:
         f"Contact: mailto:expertise88864@gmail.com\n"
         f"Security: {DOMAIN}/.well-known/security.txt\n"
     )
+
+
+def corpus_kb() -> int:
+    """Size of llms-full.txt as DEPLOYED (LF), matching what _normalize_llms_counts
+    writes into llms.txt. CODE_REVIEW TD-47 — this was a hardcoded "~480 KB" that
+    had drifted to 578 KB, i.e. ai/summary.json advertised a figure ~20% below
+    reality to the AI crawlers it exists to serve, and contradicted llms.txt.
+    LF-normalized for the same reason as TD-44 (a Windows checkout is CRLF)."""
+    full = ROOT / "llms-full.txt"
+    if not full.exists():
+        return 0
+    return round(len(full.read_bytes().replace(b"\r\n", b"\n")) / 1024)
 
 
 def build_summary_json(summary: dict, today: str) -> str:
@@ -194,9 +213,10 @@ def build_summary_json(summary: dict, today: str) -> str:
             "sitemap": DOMAIN + "/sitemap.xml",
             "robots": DOMAIN + "/robots.txt",
             "ai_policy": DOMAIN + "/.well-known/ai.txt",
-            "preferred_method": "Fetch /llms-full.txt for retrieval-augmented "
-                                "generation (single ~480 KB document with all "
-                                "articles + metadata).",
+            "preferred_method": (
+                "Fetch /llms-full.txt for retrieval-augmented generation "
+                f"(single ~{corpus_kb()} KB document with all articles + metadata)."
+            ),
         },
         "citation": {
             "style": "Cite the canonical article URL and 'Dr. Chen Yi-Jia (陳翊嘉醫師), Dermatology'. "

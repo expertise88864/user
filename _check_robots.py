@@ -163,13 +163,82 @@ def main() -> None:
             detail = 'no "Disallow: /"' if not has_broad_block else f'crawlable: {", ".join(crawlable)}'
             errors.append(f'training/scraper crawler {ua} is NOT broadly blocked ({detail})')
 
+    # CODE_REVIEW TD-48 — enforce PIPELINE.md's "three-file sync" rule. robots.txt,
+    # .well-known/ai.txt and llms.txt all describe the AI-crawler policy and must
+    # not contradict each other; ai.txt/llms.txt may be a curated SUBSET, but must
+    # never allow what robots.txt blocks nor block what it allows. That invariant
+    # had NO automated check at all despite Codex having rejected pushes over it
+    # twice (see PIPELINE.md). Nothing else in the gate reads ai.txt.
+    ai_txt = ROOT / '.well-known' / 'ai.txt'
+    if not ai_txt.exists():
+        errors.append('.well-known/ai.txt is missing (AI-crawler policy surface)')
+    else:
+        ai_groups = parse_robots(ai_txt.read_text(encoding='utf-8'))
+        if not ai_groups:
+            errors.append('.well-known/ai.txt declares no User-agent groups')
+
+        ai_src = ai_txt.read_text(encoding='utf-8')
+
+        def blocks_sitewide(ua: str, gs) -> bool:
+            """EFFECTIVE policy for `ua`, resolved through rules_for() so the
+            wildcard `User-agent: *` group is honoured as the fallback.
+            Comparing literal group names instead would miss the real hazard:
+            a UA that robots.txt names and blocks, but that ai.txt never names —
+            such a UA falls into ai.txt's `*  / Allow: /` group and is thereby
+            ALLOWED, contradicting robots.txt while looking fine to a
+            name-set comparison."""
+            return any(k == 'disallow' and p == '/' for k, p in rules_for(ua, gs))
+
+        # Only reason about UAs someone actually declared; a bot named in
+        # neither file is outside the curated-subset contract.
+        declared = {
+            ua.lower()
+            for gs in (groups, ai_groups)
+            for uas, _rules in gs
+            for ua in uas
+            if ua != '*'
+        }
+        for ua in sorted(declared):
+            in_robots = blocks_sitewide(ua, groups)
+            in_ai = blocks_sitewide(ua, ai_groups)
+            if in_robots and not in_ai:
+                errors.append(
+                    f'ai.txt effectively ALLOWS {ua} (via its wildcard group or an explicit Allow) '
+                    f'but robots.txt blocks it site-wide — policy contradiction (PIPELINE three-file rule)'
+                )
+            elif in_ai and not in_robots:
+                errors.append(
+                    f'ai.txt blocks {ua} site-wide but robots.txt allows it — policy contradiction'
+                )
+
+        # ai.txt must keep pointing at the canonical surfaces, with the RIGHT
+        # URLs — a present-but-wrong pointer (blank, or another host) hands AI
+        # consumers a broken endpoint, so match the exact canonical value.
+        domain = 'https://chendermatologist.com'
+        for directive, expected in (
+            ('LLMs-Manifest', f'{domain}/llms.txt'),
+            ('LLMs-FullCorpus', f'{domain}/llms-full.txt'),
+            ('Sitemap', f'{domain}/sitemap.xml'),
+        ):
+            found = [
+                line.split(':', 1)[1].strip()
+                for line in ai_src.splitlines()
+                if line.strip().lower().startswith(f'{directive.lower()}:')
+            ]
+            if not found:
+                errors.append(f'.well-known/ai.txt missing {directive}: pointer')
+            elif expected not in found:
+                errors.append(
+                    f'.well-known/ai.txt {directive}: should be {expected}, got {found[0] or "(empty)"}'
+                )
+
     if errors:
         print('[FAIL] robots.txt audit')
         for err in errors:
             print(' - ' + err)
         sys.exit(1)
 
-    print('[OK] robots.txt audit passed')
+    print('[OK] robots.txt audit passed (incl. ai.txt policy agreement)')
 
 
 if __name__ == '__main__':
