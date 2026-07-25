@@ -118,6 +118,18 @@
 | TD-41 | `_scaffold_article` 的 PLACEHOLDER 常數是死碼 | `PLACEHOLDER_TITLE_ZH/EN`、`PLACEHOLDER_DESC_ZH/EN`(:52-55)**定義後從未使用**;`scaffold()` 只做 `src.replace(OLD_SLUG, new_slug)` → 新文章**整份繼承模板(`blog/semaglutide-hair-loss.html`)的 title/desc/schema**,直到人工逐項替換(docstring 列了 9 步手動清單)。漏改就是重複中繼資料。 | **只記錄不修**(涉醫師的寫作流程、且 `WRITING_NEW_ARTICLE.md` 已文件化現行行為)。**兜底現在是真的了**——見 TD-42:原本我宣稱「`_check_metadata_uniqueness` 會擋」是**錯的**(它放行剛好 2 頁的重複,正是本情境),已修好門檻。若日後要改 scaffold:(a) 刪死常數,或 (b) 真的填入 placeholder(讓未完成文章一眼可辨)。 | 實測 scaffold 產物 → 收緊後的 checker 抓到 4 項 duplicate | 🟢 P3 |
 | ~~TD-42~~ ✅ | **DONE(Phase 8,Codex 抓到)** `_check_metadata_uniqueness` 放行「剛好 2 頁」的重複中繼資料 | `:78` 原為 `elif len(paths) > 2:` → title/description/og:title/og:description **要 3 頁以上才報**,**剛好 2 頁靜默放行**。這正好是 TD-41 的失敗情境(模板 + 1 篇新文章 = 2 頁),等於我在 TD-41 宣稱的「gate 兜底」**根本不存在**——canonical/og:url 走另一分支(≥2 就報),只有這四個欄位有這個洞。 | **✅ 已修**:改成 `else:`(任何重複即報)。**收緊前先實測全站現有「剛好 2 頁重複」= 0 組**,故只防未來、不會誤擋現況;日後若出現合法配對,應**明列白名單**而非恢復門檻。 | 現況 gate 綠(0 組);負向:`python _scaffold_article.py probe-dup-test` → checker **FAIL 4 項**(title/description/og:title/og:description,皆「on 2 indexable pages」= 舊門檻會全放行)→ 刪檔後回綠 | 🟡 修 checker |
 
+## Phase 10(逐行補完)— 尚未深讀的 58 支活躍腳本(2026-07-25 起,進行中)
+> 前面各 Phase 對 8B/9 是「掃描 + 抽讀 + 冪等驗證」;本 Phase 逐行補完剩下的 **58 支 / 7,323 行**。
+> **進度:6/58**(`_check_runtime_smoke` 257、`_check_article_runtime` 162、`_check_index_boundaries` 144、
+> `_gen_llms_full` 228、`_gen_search_index` 166,另交叉比對 `_gen_ai_faq`/`_gen_ai_service`/`_normalize_ai_well_known` 的日期慣例)。
+> 已讀者結論:皆為**真驗證器/健全生成器**——`_check_runtime_smoke` 真起 server 驗 content-type/needle/SW 快取/各 bundle;
+> `_check_article_runtime` 編碼 4 次真實事故(含 `data-zh` 屬性提前閉合偵測);`_check_index_boundaries` 正是擋下誤刪
+> `en/reset-sw.html` 的那支;`_gen_search_index` 用 HTMLParser 做 DOM-aware 抽取、不讀屬性。
+
+| ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
+|----|------|-----------|------|------|------|
+| ~~TD-43~~ ✅ | **DONE(Phase 10)** `_gen_llms_full` 用 `date.today()` 造成每日 590KB 檔 churn | header 寫 `Generated {dt.date.today()}` → **每逢跨日的 CI build 就整檔重寫**,而內容沒變。實證:最近 5 個 `auto-regen` commit 動到 `llms-full.txt`,**diff 全都只有那一行日期**(52 篇文章內容一字未改)。後果:雜訊 commit 淹沒真正的內容變更、git 歷史膨脹。**且與 repo 自身慣例不一致**——`_gen_ai_faq` docstring 明寫「Deterministic … never churns git」、`_gen_ai_service` 同、`_normalize_ai_well_known` 用 `latest_date or today`、`llms.txt` 本身用「Last updated: 最新文章日期」。**只有這支是異類。** | **✅ 已修**:改用**所含文章的最大 `dateModified`** 當戳記(catalog 發布日、today 僅為 fallback),標籤同步改成與 `llms.txt` 一致的「Last updated」。**⚠️ 第一版我誤用 catalog 發布日 → Codex 抓到「穩定但語意錯誤」**:既有文章被修訂時語料內容會變、發布日卻不動(實證:我的戳記寫 2026-06-05,語料內第一篇卻自稱 `Updated: 2026-07-06`)。改用 `dateModified` 後與 `llms.txt`(`_normalize_llms_counts` 用同一訊號)**完全一致 = 2026-07-06**。一次性 diff,之後只在內容真的變動時才變。 | 連跑兩次輸出相同;全量 `build` 綠、`llms-full.txt` 只變 header 一行、`llms.txt` KB 計數同步校正;30 步 gate 綠 | 🟢 |
+
 ## P1(值得做,影響真實但不緊急)
 | ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
 |----|------|-----------|------|------|------|

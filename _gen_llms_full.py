@@ -155,7 +155,9 @@ def extract_meta_from_html(html: str) -> dict[str, str]:
     return out
 
 
-def build_article_section(meta: dict[str, str], path: Path) -> str:
+def build_article_section(meta: dict[str, str], path: Path) -> tuple[str, str]:
+    """Return (section_text, dateModified) — the caller uses the dates to stamp
+    the corpus header with real content freshness (TD-43)."""
     html = path.read_text(encoding="utf-8", errors="replace")
     extra = extract_meta_from_html(html)
     body = extract_clean_body(html)
@@ -181,7 +183,9 @@ def build_article_section(meta: dict[str, str], path: Path) -> str:
     lines.append('')
     lines.append(body)
     lines.append('')
-    return '\n'.join(lines)
+    # Date-only prefix so it compares with the `"dateModified":"YYYY-MM-DD"`
+    # form _normalize_date_modified writes (and _normalize_llms_counts reads).
+    return '\n'.join(lines), (extra.get("dateModified") or "")[:10]
 
 
 def main() -> int:
@@ -189,11 +193,39 @@ def main() -> int:
     if not catalog:
         print("[llms-full] no articles found")
         return 1
-    today = dt.date.today().isoformat()
+    # CODE_REVIEW TD-43 — stamp from CONTENT, not dt.date.today(). With today's
+    # date this ~590 KB file was rewritten on every CI build that happened on a
+    # new day for a one-line change: the last five `auto-regen` commits touching
+    # llms-full.txt changed nothing but this line. That churn buries genuine
+    # content diffs. Every sibling already derives its stamp on purpose —
+    # _gen_ai_faq ("Deterministic … never churns git"), _gen_ai_service,
+    # _normalize_ai_well_known (latest_date or today), llms.txt itself.
+    #
+    # Use the newest `dateModified` across the articles actually included, NOT
+    # the catalog publish date: revising an existing article changes this
+    # corpus's body while its publish date stands still, so a publish-date stamp
+    # would be stable but WRONG. This mirrors _normalize_llms_counts, which
+    # derives llms.txt's "Last updated" from the same dateModified signal, so the
+    # two files now agree. Catalog date, then today, are fallbacks only.
+    sections: list[str] = []
+    skipped = 0
+    newest_modified = ""
+    for meta in catalog:
+        fp = ROOT / "blog" / f"{meta['slug']}.html"
+        if not fp.exists():
+            skipped += 1
+            continue
+        section, modified = build_article_section(meta, fp)
+        sections.append(section)
+        if modified > newest_modified:
+            newest_modified = modified
+
+    newest_published = next((a["date"] for a in catalog if a.get("date")), "")
+    stamp = newest_modified or newest_published or dt.date.today().isoformat()
     header = (
         f"# ChenDermatologist · 陳翊嘉醫師 · 皮膚科衛教筆記\n"
         f"\n"
-        f"Generated {today} · {len(catalog)} articles · "
+        f"Last updated {stamp} · {len(catalog)} articles · "
         f"by Dr. Chen Yi-Jia (R2 Dermatology Resident, Taiwan)\n"
         f"\n"
         f"Bilingual zh-Hant / en. ZH source is authoritative; EN mirror is "
@@ -204,16 +236,7 @@ def main() -> int:
         f"\n"
     )
 
-    sections: list[str] = [header]
-    skipped = 0
-    for meta in catalog:
-        fp = ROOT / "blog" / f"{meta['slug']}.html"
-        if not fp.exists():
-            skipped += 1
-            continue
-        sections.append(build_article_section(meta, fp))
-
-    out = "\n".join(sections)
+    out = "\n".join([header] + sections)
     out_path = ROOT / "llms-full.txt"
     out_path.write_text(out, encoding="utf-8")
     size_kb = len(out.encode("utf-8")) / 1024
