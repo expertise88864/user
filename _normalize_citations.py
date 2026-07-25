@@ -185,7 +185,12 @@ def inject_citations(html: str, citations: list[dict]) -> tuple[str, bool]:
         return html, False
     new_block = serialize_citations(citations)
     if EXISTING_RE.search(html):
-        new_html = EXISTING_RE.sub(new_block, html, count=1)
+        # CODE_REVIEW Phase 8A — lambda replacement (not the raw string). `new_block`
+        # is json.dumps output, so a backslash anywhere in a citation becomes `\\`;
+        # as an re.sub REPLACEMENT that collapses to `\` and the emitted JSON-LD
+        # stops parsing (crawlers silently lose the citation graph), while `\`+letter
+        # raises re.error and kills the build. Same guard as TD-07 / TD-27.
+        new_html = EXISTING_RE.sub(lambda _m: new_block, html, count=1)
         return new_html, new_html != html
     head_close = html.find("</head>")
     if head_close == -1:

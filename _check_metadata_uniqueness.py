@@ -75,7 +75,15 @@ def main() -> int:
                 errors.append(f'duplicate canonical "{value}" used by {len(paths)} pages: {paths[:6]}')
             elif field == "og:url":
                 errors.append(f'duplicate og:url "{value}" used by {len(paths)} pages: {paths[:6]}')
-            elif len(paths) > 2:
+            else:
+                # CODE_REVIEW TD-42 — was `elif len(paths) > 2`, i.e. EXACTLY two
+                # indexable pages sharing a title/description passed silently.
+                # That is precisely the _scaffold_article failure mode (template +
+                # one new article = 2 pages) that TD-41 claimed this checker
+                # backstopped — it did not. Verified before tightening: the repo
+                # currently has 0 exact-pair duplicates, so this only guards the
+                # future. If a legitimate pair ever appears, allowlist it
+                # explicitly rather than restoring a blanket threshold.
                 errors.append(f'duplicate {field} on {len(paths)} indexable pages: {value[:120]} :: {paths[:6]}')
 
     if errors:

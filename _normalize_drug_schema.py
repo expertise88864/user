@@ -285,7 +285,11 @@ def serialize_drugs(drugs: list[dict]) -> str:
 def inject(html: str, drugs: list[dict]) -> tuple[str, bool]:
     new_block = serialize_drugs(drugs) + "\n"
     if EXISTING_RE.search(html):
-        new_html = EXISTING_RE.sub(new_block, html, count=1)
+        # CODE_REVIEW Phase 8A — lambda replacement (same hazard as TD-40).
+        # inject() is currently unreachable (main() only strips these blocks after
+        # the GSC WNC-10030322 retraction) but is kept as the reference
+        # implementation, so fix it too rather than leave a footgun for re-enable.
+        new_html = EXISTING_RE.sub(lambda _m: new_block, html, count=1)
         return new_html, new_html != html
     # Insert right before </head>
     head_close = html.find("</head>")

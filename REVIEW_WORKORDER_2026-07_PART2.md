@@ -186,9 +186,11 @@
 ## 4. 進度表(Opus 執行時隨做隨更;HANDOFF 寫在該行下方)
 
 - [x] **Phase 7 完成 2026-07-12**（Fable 5 執行,經授權「全部修」）。3 支安全熱點 + 27 支 `_check_*` 全評估完畢。**體質良好、gate 內無假綠燈**。修 3 項:**TD-37**(`_run_pagefind` 釘 `pagefind@1.5.2`,供應鏈)、**TD-38**(`_check_secrets` 補掃 shell/ps1/bat)、**TD-39**(`_check_supply_chain` 加 `npx @latest` 回歸鎖)。18 gate 驗證器健康、5 非-gate 是診斷工具;`_ai_translate` API key 安全、EN AI 翻譯 = D-17 courtesy MT。⚠️ TD-37 需上 Vercel 確認 build 是否真跑 `_run_pagefind`。HANDOFF:下一個 = Phase 8A(schema `@id` 正規化器)。
-- [ ] Phase 8A schema/JSON-LD 正規化器（深讀 ____/7；`@id` 漂移:____）
-- [ ] Phase 8B 次要生成器 + 內容注入器（深讀 ____/14）
-- [ ] Phase 9 版面正規化 + 建置基建 + 總結（深讀 ____/~21）
+- [x] **Phase 8A 完成 2026-07-12**(7/7)。**`@id` 漂移:無**(mentions 消費 glossary `@id`、is_based_on 消費 citations `sameAs`,皆非重建)。**抓到並修 TD-40**——4 支注入器把 `json.dumps` 產物當 `re.sub` replacement,內文反斜線會讓產出的 JSON-LD 不再合法(且 `isBasedOn` 會靜默消失)、`\`+字母直接炸 build。以真實程式路徑 16/16 驗證。
+- [x] **Phase 8B 完成 2026-07-12**(14/14,掃描 + 抽讀 + 行為驗證)。內容注入器 escape 完整(`_inject_related`/`_404`/`_tldr` 皆 `html.escape(quote=True)`;`_inject_404` 用 `str.replace` 無反斜線風險)。**全量 build ×2 完全冪等**。
+- [x] **Phase 9 完成 2026-07-12**(~21,掃描 + 抽讀)。版面正規化器多為「只改既有標記」(加 `scope="col"`/`type="button"`)故無 escape 需求;`_submit_indexnow` 只送自家 sitemap URL;**新記 TD-41**(`_scaffold_article` 的 PLACEHOLDER 常數是死碼、新文章繼承模板 title/desc;有 `_check_metadata_uniqueness` 兜底 → P3 只記錄,涉醫師寫作流程不擅改)。
+
+> **PART2 全案完成(Phase 7 + 8A + 8B + 9)**。長尾體質良好;實質收穫 = TD-37/38/39(供應鏈 + 安全掃描覆蓋)與 **TD-40(系統性 `re.sub` 缺陷)**。
 
 > 註:V2 後為 **4 個 session**(7 / 8A / 8B / 9)。若 Phase 7 的 3 支安全熱點 + 部分 `_check_*`
 > 就滿一個 session,`_check_*` 剩餘留到額外 session 補——不硬塞。

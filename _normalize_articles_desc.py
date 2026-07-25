@@ -173,7 +173,11 @@ def main() -> int:
     new_block = build_desc_block(descs)
 
     if BLOCK_RE.search(hub_src):
-        new_hub = BLOCK_RE.sub(new_block, hub_src, count=1)
+        # CODE_REVIEW Phase 8A — lambda replacement: `new_block` carries
+        # js_string_escape()d descriptions, so an escaped backslash (`\\`) would
+        # be collapsed by re.sub's replacement processing and write a broken JS
+        # string literal into blog-hub.js (runtime SyntaxError). See TD-40.
+        new_hub = BLOCK_RE.sub(lambda _m: new_block, hub_src, count=1)
     else:
         # First-time insert: place right before the final `})();` IIFE close
         close_idx = hub_src.rfind("})();")

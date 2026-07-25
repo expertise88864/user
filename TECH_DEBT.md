@@ -101,6 +101,23 @@
 | ~~TD-38~~ ✅ | **DONE(Phase 7)** `_check_secrets` 覆蓋缺口:不掃 shell/PowerShell/batch | `TEXT_SUFFIXES` 少了 `.sh/.ps1/.cmd/.bat` → 8 支 tracked 腳本(`deploy.*`、`set-domain.*`、`new-article.ps1`、`tools/codex_review.*`、`_setup_pagefind.bat`)**完全不掃 secret**——這些正是硬編碼 token 常見處(TD-31 同類的覆蓋過窄)。 | **✅ 已修**:補 `.sh/.ps1/.cmd/.bat`;實測現有腳本 **0 誤報**。**+Codex round-2**:光補副檔名不夠——`.ps1`/`.bat` 常是 **UTF-16**(PowerShell 預設),原 `read_text(utf-8)` 會 `UnicodeDecodeError` 靜默跳過(覆蓋是假的)。改 `decode_text()` **BOM-aware**(utf-8-sig/utf-16 + NUL 啟發式),且**無法解碼的合格檔改「回報」不「跳過」**(fail closed)。負驗:UTF-16 `.ps1` 藏假 ghp_ token → **抓到**。 | `_check_secrets` 綠 + UTF-16 負驗 + gate 綠 | 🟡 安全覆蓋 |
 | ~~TD-39~~ ✅ | **DONE(Phase 7)** `_check_supply_chain` 看不到 npx `@latest` | package.json 釘版檢查**結構上看不到 `npx <pkg>@latest`** 這種 Python 腳本內的調用(TD-37 的缺口即源於此)。 | **✅ 已修**:新增掃描禁 tracked pipeline 腳本內的 `<pkg>@latest`。**+Codex round-2**:原只抓引號式 `"<pkg>@latest"`(Python argv),漏掉 shell/PowerShell 的**未引號** `npx pagefind@latest`(而我現在有掃 .sh/.ps1)。改**先剝行註解**(`#`/`//`,保留換行故行號準)再廣抓 `[\w@./-]*@latest`(涵蓋引號/未引號/npx 各形)+ 排除 checker 自身;`_run_pagefind` docstring 也改寫掉字面 `@latest`(否則 prose 誤判)。負驗:Python `"x@latest"`、shell `npx x@latest`、PS `x@latest` 皆 fail;`# ...@latest` 註解不誤判。 | 三形態負驗 + gate 綠 | 🟢 regression lock |
 
+## Phase 8A/8B/9(PART2 續審)— schema 正規化器 + 生成器/注入器 + 版面基建(2026-07-12)結論
+> 深讀 7 支 schema/JSON-LD 正規化器(`@id` 鏈)、掃 + 抽讀 14 支次要生成器/注入器、~21 支版面正規化與基建。
+> **結論:抓到 1 個系統性真缺陷(TD-40,已修),其餘體質良好。**
+> ① **`@id` 交叉引用鏈健全**:`_normalize_mentions` 直接消費 glossary 的 `@id`(非重建 → 無格式漂移);
+> `_normalize_is_based_on` 消費 citations 的 `sameAs/identifier`(docstring 提到 `@id` 是用詞不精確,程式正確)。
+> ② **`offset_drift` 接合正確**(用原始區塊位置 + 累計位移、純字串切片,無 replacement 跳脫風險)。
+> ③ **內容注入器 escape 完整**:`_inject_related`/`_inject_404`/`_inject_tldr` 都 `html.escape(..., quote=True)`;
+> `_inject_404` 用 `str.replace`(非 `re.sub`)故無反斜線風險;`_inject_cluster_nav` 只插受限 slug。
+> ④ **全量 `build` 跑兩次完全冪等**(涵蓋 8B/9 所有生成器的最強單一驗證);7 支 schema 正規化器各自單跑兩次亦 0 異動。
+> ⑤ `_submit_indexnow` 只送自家 sitemap URL、無外部輸入。
+
+| ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
+|----|------|-----------|------|------|------|
+| ~~TD-40~~ ✅ | **DONE(Phase 8A)** 4 支注入器把 `json.dumps`/跳脫過的內容當 **`re.sub` replacement**(bug 類 #1,TD-07/TD-27 同類) | `_normalize_citations:188`、`_normalize_tools_schema:193`、`_normalize_articles_desc:176`、`_normalize_drug_schema:288`(後者 inject 目前不可達但保留為參考實作)皆寫 `X_RE.sub(new_block, ...)`。**re.sub 的 replacement 會解析反斜線**:JSON 把內文的 `\` 轉成 `\\` → 被吃掉一層 → **產出的 JSON-LD 不再是合法 JSON**;`\`+字母則直接 `re.error` **炸掉 build**。可達性:`_normalize_citations.strip_tags` 會把 `&quot;` 解碼成 `"`、並保留內文反斜線(醫學參考文獻含 `\` 雖少見但可能);`_normalize_articles_desc` 餵的是 `js_string_escape` 產物 → 損壞會寫壞 `blog-hub.js` 的 JS 字串(runtime SyntaxError)。**下游波及**:`_normalize_is_based_on.load_citations` 遇 JSONDecodeError 直接 `return []` → `isBasedOn` 會**靜默消失**(E-E-A-T 訊號無聲流失,gate 也不會紅)。 | **✅ 已修**:4 支全改 `X_RE.sub(lambda _m: new_block, ...)`(callable replacement 逐字採用,不做跳脫處理)——即 TD-07/TD-27 的既定守衛。 | 以**真實 `inject_citations()` 程式路徑**跑 16 組案例(replace-existing / fresh-insert × 純 ASCII、引號、單反斜線、`\`+字母、`\`+數字、雙反斜線、CJK、角括號)→ 修前 3 組 CORRUPT、修後 **16/16 round-trip**;7 支正規化器冪等;全量 build ×2 冪等;30 步 gate 綠 | 🟡 生成器 |
+| TD-41 | `_scaffold_article` 的 PLACEHOLDER 常數是死碼 | `PLACEHOLDER_TITLE_ZH/EN`、`PLACEHOLDER_DESC_ZH/EN`(:52-55)**定義後從未使用**;`scaffold()` 只做 `src.replace(OLD_SLUG, new_slug)` → 新文章**整份繼承模板(`blog/semaglutide-hair-loss.html`)的 title/desc/schema**,直到人工逐項替換(docstring 列了 9 步手動清單)。漏改就是重複中繼資料。 | **只記錄不修**(涉醫師的寫作流程、且 `WRITING_NEW_ARTICLE.md` 已文件化現行行為)。**兜底現在是真的了**——見 TD-42:原本我宣稱「`_check_metadata_uniqueness` 會擋」是**錯的**(它放行剛好 2 頁的重複,正是本情境),已修好門檻。若日後要改 scaffold:(a) 刪死常數,或 (b) 真的填入 placeholder(讓未完成文章一眼可辨)。 | 實測 scaffold 產物 → 收緊後的 checker 抓到 4 項 duplicate | 🟢 P3 |
+| ~~TD-42~~ ✅ | **DONE(Phase 8,Codex 抓到)** `_check_metadata_uniqueness` 放行「剛好 2 頁」的重複中繼資料 | `:78` 原為 `elif len(paths) > 2:` → title/description/og:title/og:description **要 3 頁以上才報**,**剛好 2 頁靜默放行**。這正好是 TD-41 的失敗情境(模板 + 1 篇新文章 = 2 頁),等於我在 TD-41 宣稱的「gate 兜底」**根本不存在**——canonical/og:url 走另一分支(≥2 就報),只有這四個欄位有這個洞。 | **✅ 已修**:改成 `else:`(任何重複即報)。**收緊前先實測全站現有「剛好 2 頁重複」= 0 組**,故只防未來、不會誤擋現況;日後若出現合法配對,應**明列白名單**而非恢復門檻。 | 現況 gate 綠(0 組);負向:`python _scaffold_article.py probe-dup-test` → checker **FAIL 4 項**(title/description/og:title/og:description,皆「on 2 indexable pages」= 舊門檻會全放行)→ 刪檔後回綠 | 🟡 修 checker |
+
 ## P1(值得做,影響真實但不緊急)
 | ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
 |----|------|-----------|------|------|------|

@@ -190,7 +190,10 @@ def inject(html: str, graph: dict) -> tuple[str, bool]:
         '</script>\n'
     )
     if EXISTING_RE.search(html):
-        new_html = EXISTING_RE.sub(new_block, html, count=1)
+        # CODE_REVIEW Phase 8A — lambda replacement: `new_block` is json.dumps
+        # output, and a backslash in it would be eaten by re.sub's replacement
+        # escape processing (invalid JSON-LD) or raise re.error. See TD-40.
+        new_html = EXISTING_RE.sub(lambda _m: new_block, html, count=1)
         return new_html, new_html != html
     head_close = html.find("</head>")
     if head_close == -1:
