@@ -119,6 +119,53 @@ def main() -> int:
             if not re.search(r'rel="[^"]*\bnoopener\b', tag, re.I):
                 errors.append(f"{rel}: target=_blank missing rel=noopener: {tag[:140]}")
 
+        # CODE_REVIEW TD-49 — product assertions for two fail-soft normalizers.
+        # _normalize_th_scope (WCAG 1.3.1) and _normalize_breadcrumb_aria
+        # (WCAG 1.3.6) both no-op silently if their anchor stops matching, and
+        # nothing blocking verified the result: a11y.yml runs pa11y with
+        # continue-on-error and downgrades failures to warnings, so it cannot
+        # stop a deploy. Scoped to the article trees those normalizers target
+        # (blog/ and en/blog/), so admin.html — outside their scope — is not
+        # falsely flagged.
+        # Mirror _normalize_th_scope's own target list exactly: the two article
+        # trees PLUS the four named hub pages it also rewrites. Anything outside
+        # that list (e.g. admin.html, which does carry an unscoped <th>) is not
+        # part of the contract being asserted.
+        in_article_tree = bool(re.fullmatch(r"(?:en/)?blog/[^/]+\.html", rel))
+        if in_article_tree or rel in {"tools.html", "glossary.html",
+                                      "en/tools.html", "en/glossary.html"}:
+            for thead in re.finditer(r"<thead\b[\s\S]*?</thead>", dom, re.I):
+                for th in re.finditer(r"<th\b([^>]*)>", thead.group(0), re.I):
+                    if not re.search(r"\bscope\s*=", th.group(1), re.I):
+                        errors.append(
+                            f"{rel}: <thead> <th> missing scope= (WCAG 1.3.1) "
+                            f"— re-run _normalize_th_scope.py"
+                        )
+                        break
+                else:
+                    continue
+                break
+
+        # WCAG 1.3.6 — an article carries three <nav>s (site nav, breadcrumb,
+        # related-articles) and each needs its own accessible name. Identify the
+        # breadcrumb STRUCTURALLY (the nav that is neither the site nav nor the
+        # related-articles nav) rather than by its inline-style signature: a
+        # presentation-only reformat such as `margin-bottom: 18px` would
+        # otherwise make this check silently vacuous. index/topics are hubs, not
+        # articles, and are excluded like elsewhere in the gate.
+        if in_article_tree and Path(rel).name not in {"index.html", "topics.html"}:
+            for nav in re.finditer(r"<nav\b([^>]*)>", dom, re.I):
+                attrs = nav.group(1)
+                if re.search(r'class="[^"]*\bdn-nav\b', attrs, re.I) or \
+                        re.search(r'id="dn-related-static"', attrs, re.I):
+                    continue
+                if not re.search(r"aria-label(?:ledby)?\s*=", attrs, re.I):
+                    errors.append(
+                        f"{rel}: breadcrumb <nav> has no accessible name (WCAG 1.3.6) "
+                        f"— re-run _normalize_breadcrumb_aria.py"
+                    )
+                    break
+
     if errors:
         print("[FAIL] Static accessibility audit found issues:")
         for error in errors[:200]:

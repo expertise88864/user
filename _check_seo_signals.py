@@ -705,6 +705,83 @@ def check_article_metadata_fields() -> None:
         print(f"[OK] Article keywords + lastReviewed + audience fields present")
 
 
+def check_no_ad_placeholder_text() -> None:
+    """CODE_REVIEW TD-49 — SEO_AUDIT A2 stripped the visible '廣告位 · AdSense'
+    placeholder from ad-slot divs so Googlebot stops indexing empty ad inventory,
+    but nothing asserted the result. `_normalize_ad_slots.py` fails soft (it just
+    reports how many it cleared and returns 0), so if its anchors ever stop
+    matching, the placeholder text quietly returns to indexable pages with a
+    green gate. This is the missing product-side control for that generator.
+    """
+    # Scoped to ad-slot elements so prose that legitimately discusses AdSense is
+    # never flagged. The placeholder forms are enumerated INDEPENDENTLY of
+    # _normalize_ad_slots.PLACEHOLDER_BODY_RE on purpose — same rule as
+    # _check_robots.REQUIRED_BLOCKED: importing the generator's pattern would let
+    # a future narrowing of the stripper silently narrow this guard with it.
+    # Keep this list a superset of what the stripper handles.
+    # Match ANY element whose class token list contains ad-slot, with either
+    # quote style — not just `<div class="...">`. Copying the normalizer's
+    # narrower anchor would inherit its blind spots (e.g. `<section>` or
+    # single-quoted attributes) and defeat the point of an independent product
+    # assertion. The body is compared after stripping nested tags so
+    # `<span>AdSense</span>` inside the slot is still caught.
+    # Match only the OPENING tag, then read forward to its closing tag. Matching
+    # the whole element in one regex looks tidier but silently misses nested
+    # slots: an enclosing `<div class="prose">…` matches first and finditer
+    # resumes after it, swallowing the ad-slot inside. (Caught by testing a slot
+    # inserted into a real article rather than a bare string.)
+    slot_open_re = re.compile(
+        r"""<(?P<tag>[a-z][\w-]*)\b[^>]*\bclass\s*=\s*(?P<q>["'])(?P<cls>[^"']*)(?P=q)[^>]*>""",
+        re.I,
+    )
+    placeholder_body_re = re.compile(
+        r'^\s*(?:廣告位\s*[·•]?\s*AdSense|廣告位|Ad\s+slot[^<]*|Ad\s+placement[^<]*|AdSense)\s*$',
+        re.I,
+    )
+    # Either quote style, to match slot_open_re — a single-quoted
+    # data-zh='廣告位' is just as invisible to a reader of the rendered page.
+    placeholder_attr_re = re.compile(
+        r"""\bdata-(?:zh|en)\s*=\s*(?P<aq>["'])\s*"""
+        r"""(?:廣告位|Ad\s+slot|Ad\s+placement|AdSense)[^"']*(?P=aq)""",
+        re.I,
+    )
+    bad = 0
+    for fp in sorted(ROOT.rglob("*.html")):
+        rel = fp.relative_to(ROOT).as_posix()
+        if any(part in {".git", "node_modules", "pagefind"} for part in fp.relative_to(ROOT).parts):
+            continue
+        src = fp.read_text(encoding="utf-8", errors="replace")
+        if re.search(r'<meta\s+name="robots"\s+content="[^"]*noindex', src, re.I):
+            continue
+        for m in slot_open_re.finditer(src):
+            if "ad-slot" not in m.group("cls").split():
+                continue
+            # Depth-balanced close: taking the FIRST </tag> would stop at a
+            # same-tag child, e.g. `<div class="ad-slot"><div/>AdSense</div>`
+            # would yield only the inner div and miss the visible placeholder.
+            # Same counting approach as _normalize_schema._extract_prose_container.
+            tag = m.group("tag")
+            tag_re = re.compile(rf"<(?P<slash>/?){re.escape(tag)}\b[^>]*>", re.I)
+            depth, pos, end = 1, m.end(), None
+            while depth > 0:
+                nxt = tag_re.search(src, pos)
+                if not nxt:
+                    break
+                depth += -1 if nxt.group("slash") else 1
+                pos = nxt.end()
+                if depth == 0:
+                    end = nxt.start()
+            body = src[m.end():end] if end is not None else src[m.end():m.end() + 300]
+            rendered = re.sub(r"<[^>]+>", "", body)
+            if placeholder_body_re.match(rendered) or placeholder_attr_re.search(m.group(0)):
+                err(rel, "indexable page still renders ad-slot placeholder text/attrs "
+                         "— re-run _normalize_ad_slots.py")
+                bad += 1
+                break
+    if bad == 0:
+        print("[OK] No ad-slot placeholder text on indexable pages")
+
+
 def main() -> int:
     print("=== SEO signals audit ===")
     check_robots_serp_directives()
@@ -725,6 +802,7 @@ def main() -> int:
     check_glossary_termset_populated()
     check_tools_schema_present()
     check_article_metadata_fields()
+    check_no_ad_placeholder_text()
 
     if warnings:
         print(f"\n[!] Warnings ({len(warnings)}):")
