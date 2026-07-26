@@ -169,8 +169,46 @@ def main() -> int:
                     if inject_one(en_blog, slug, en_prev, en_next, "/en/blog/"):
                         total_changed += 1
 
+    # CODE_REVIEW TD-50 — sweep away blocks that should no longer exist. Old
+    # blocks are stripped inside inject_one(), which only runs for slugs that
+    # are STILL live, so an article that goes noindex or leaves CLUSTERS kept
+    # its stale rel=prev/next pointing into a chain it is no longer part of.
+    # Re-running could never clean that up. Only touches files outside the live
+    # set, so the injected output above is unaffected.
+    # ZH and EN need SEPARATE live sets, mirroring how injection decides. The EN
+    # side injects only when the EN mirror itself is indexable, so deriving the
+    # EN sweep from ZH indexability would skip an article whose EN mirror alone
+    # went noindex — leaving exactly the stale EN block this sweep exists to
+    # remove.
+    zh_live = set()
+    for cluster in CLUSTERS:
+        for s in cluster:
+            fp = zh_blog / f"{s}.html"
+            if fp.exists() and is_indexable(fp.read_text(encoding="utf-8")):
+                zh_live.add(s)
+    en_live = {
+        s for s in zh_live
+        if (en_blog / f"{s}.html").exists()
+        and is_indexable((en_blog / f"{s}.html").read_text(encoding="utf-8"))
+    }
+    swept = 0
+    for base, live_set in ((zh_blog, zh_live), (en_blog, en_live)):
+        if not base.exists():
+            continue
+        for fp in sorted(base.glob("*.html")):
+            if fp.stem in live_set:
+                continue
+            src = fp.read_text(encoding="utf-8")
+            if "dn-cluster-nav" not in src:
+                continue
+            cleaned = MARKER_RE.sub("", src)
+            if cleaned != src:
+                fp.write_text(cleaned, encoding="utf-8")
+                swept += 1
+
     print(f"[cluster-nav] injected rel=prev/next links into "
-          f"{total_changed} article files across {len(CLUSTERS)} clusters")
+          f"{total_changed} article files across {len(CLUSTERS)} clusters"
+          + (f"; swept {swept} stale block(s)" if swept else ""))
     return 0
 
 
