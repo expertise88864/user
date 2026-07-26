@@ -35,15 +35,44 @@ def blank_script_style(text: str) -> str:
     return SCRIPT_STYLE_RE.sub(lambda m: re.sub(r"[^\n]", " ", m.group(0)), text)
 
 
+def is_ascii_alpha(ch: str) -> bool:
+    """True only for A-Z / a-z.
+
+    CODE_REVIEW TD-60 — `str.isalpha()` is True for CJK, and this is a
+    Taiwanese site whose prose is mostly Chinese. `<中文說明>` would have been
+    taken for an opening tag, putting the walker into tag mode and making it
+    skip to the next `>` — which is the end of a REAL tag, so that tag is never
+    yielded and whatever it carries goes uninspected. HTML5's tag-open state
+    accepts ASCII letters only, so that is what is matched.
+    """
+    return ("A" <= ch <= "Z") or ("a" <= ch <= "z")
+
+
+# CODE_REVIEW TD-60 — RCDATA elements. Their contents are TEXT to a parser, so
+# `<button onclick="x">` typed inside a <textarea> is not a tag at all.
+# Skipping their interiors matters most for the NORMALIZERS built on this walk:
+# without it they would rewrite markup a user is merely looking at in the admin
+# editor's textarea.
+# script/style are deliberately NOT here. Their bodies are not markup either,
+# but this repo's inline <script> blocks build DOM from template strings, and
+# _check_button_types / _normalize_button_types are meant to reach those
+# (that is also why they scan *.js at all). Skipping script here dropped the
+# inspected counts from 436 buttons / 521 links to 423 / 519 — a silent
+# coverage loss. Consumers that do want script bodies out of the way call
+# blank_script_style() themselves, as _check_inline_events does.
+RCDATA_ELEMENTS = ("textarea", "title")
+
+
 def iter_tags(dom: str) -> Iterator[tuple[int, str]]:
     """Yield (start_offset, tag_text) for each element tag.
 
     Quote-aware: a `>` inside a quoted attribute value does not end the tag.
+    RCDATA interiors are skipped — see RCDATA_ELEMENTS.
     """
     i, n = 0, len(dom)
     while i < n:
         ch = dom[i]
-        if ch != "<" or i + 1 >= n or not (dom[i + 1].isalpha() or dom[i + 1] == "/"):
+        if ch != "<" or i + 1 >= n or not (is_ascii_alpha(dom[i + 1]) or dom[i + 1] == "/"):
             i += 1
             continue
         start = i
@@ -59,8 +88,14 @@ def iter_tags(dom: str) -> Iterator[tuple[int, str]]:
             elif c == ">":
                 break
             j += 1
-        yield start, dom[start:j + 1]
+        tag = dom[start:j + 1]
+        yield start, tag
         i = j + 1
+        name = tag_name(tag)
+        if not tag.startswith("</") and not tag.rstrip().endswith("/>") and name in RCDATA_ELEMENTS:
+            close = re.compile(rf"</{name}\s*>", re.I).search(dom, i)
+            if close is not None:
+                i = close.start()
 
 
 def tag_name(tag: str) -> str:

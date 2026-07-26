@@ -38,19 +38,27 @@ SCRIPT_BLOCK_RE = re.compile(
 STYLE_BLOCK_RE = re.compile(
     r"<style\b[^>]*>.*?</style>", re.IGNORECASE | re.DOTALL
 )
+# CODE_REVIEW TD-60 — textarea and title are RCDATA: inside them a bare `<` is
+# ordinary text, not a parse error, so `<textarea>目標值 < 2 cm</textarea>` is
+# perfectly valid HTML. Without blanking them this audit would have failed the
+# build on valid markup — and admin.html does use <textarea>.
+RCDATA_BLOCK_RE = re.compile(
+    r"<(textarea|title)\b[^>]*>.*?</\1>", re.IGNORECASE | re.DOTALL
+)
 
 
 def strip_script_style(text: str) -> str:
-    """Replace `<script>...</script>` and `<style>...</style>` content with
-    blanks of equal length so line/column numbers stay accurate but the
-    interior code (which may contain legal `<` comparisons in JS / CSS
-    selectors) isn't scanned."""
+    """Replace `<script>`, `<style>` and RCDATA (`<textarea>`, `<title>`)
+    content with blanks of equal length so line/column numbers stay accurate
+    but the interior text (which may legally contain a bare `<`) isn't
+    scanned."""
     def blank_keep_newlines(m: re.Match) -> str:
         s = m.group(0)
         return re.sub(r"[^\n]", " ", s)
 
     text = SCRIPT_BLOCK_RE.sub(blank_keep_newlines, text)
     text = STYLE_BLOCK_RE.sub(blank_keep_newlines, text)
+    text = RCDATA_BLOCK_RE.sub(blank_keep_newlines, text)
     return text
 
 
@@ -105,7 +113,12 @@ def scan_text(text: str) -> list[tuple[int, int, str]]:
                 i = end + 3
                 continue
             nxt = text[i + 1] if i + 1 < n else ""
-            if nxt.isalpha() or nxt in TAG_START_CHARS:
+            # CODE_REVIEW TD-60 — ASCII only. str.isalpha() is True for CJK, so
+            # on this Chinese-language site `<中文說明>` read as an opening tag:
+            # the violation went unreported AND the scanner entered tag mode,
+            # suppressing everything after it until the next `>`. HTML5's
+            # tag-open state accepts ASCII letters only.
+            if ("A" <= nxt <= "Z") or ("a" <= nxt <= "z") or nxt in TAG_START_CHARS:
                 in_tag = True
                 i += 1
                 continue
