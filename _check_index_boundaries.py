@@ -11,8 +11,10 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT))
+from _html_scan import blank_script_style  # noqa: E402
+
 DOMAIN = "https://chendermatologist.com"
-SCRIPT_STYLE_RE = re.compile(r"<(script|style)\b[\s\S]*?</\1>", re.I)
 NS = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 
 PRIVATE_PAGES = {
@@ -41,7 +43,10 @@ PUBLIC_STATIC_ROUTES = {
 
 
 def headish(path: Path) -> str:
-    return SCRIPT_STYLE_RE.sub("", path.read_text(encoding="utf-8"))
+    # CODE_REVIEW TD-64 — was a private `<(script|style)\b…</\1>` copy, which
+    # neither closes on `</script >` nor rejects `<style-template>`. The shared
+    # scanner is length-preserving, so offsets into the result stay usable.
+    return blank_script_style(path.read_text(encoding="utf-8"))
 
 
 def robots_meta(src: str) -> str:

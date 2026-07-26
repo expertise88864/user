@@ -229,6 +229,12 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_check_nav_critical.py"],
     [PY, "_check_performance_budget.py"],
     [PY, "_check_text_integrity.py"],
+    # CODE_REVIEW TD-64 — absolute-cure / sponsorship claims. The repo marked
+    # these `level: error` in styles/DermNotes/BannedYMYL.yml, but the only
+    # thing that ran them was vale.yml on `pull_request`, and this repo has
+    # never had a PR. Negation-aware, because the corpus's one match is the
+    # responsible sentence "現有療法皆無法保證根治".
+    [PY, "_check_ymyl_claims.py"],
     [PY, "_check_en_internal_links.py"],
     [PY, "_check_third_party.py"],
     [PY, "_check_external_links.py"],

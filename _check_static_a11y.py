@@ -13,10 +13,12 @@ if hasattr(sys.stdout, "buffer"):
 
 
 ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT))
+from _html_scan import blank_script_style  # noqa: E402
+
 SKIP_DIRS = {".git", "node_modules", ".next", "out", "dist"}
 
 
-SCRIPT_STYLE_RE = re.compile(r"<(script|style)\b[\s\S]*?</\1>", re.I)
 TAG_RE = re.compile(r"<[^>]+>")
 ID_RE = re.compile(r'\bid="([^"]+)"')
 HEADING_RE = re.compile(r"<h([1-6])\b[^>]*>([\s\S]*?)</h\1>", re.I)
@@ -54,7 +56,9 @@ def main() -> int:
     for path in iter_html_files():
         rel = path.relative_to(ROOT).as_posix()
         raw = path.read_text(encoding="utf-8")
-        dom = SCRIPT_STYLE_RE.sub("", raw)
+        # CODE_REVIEW TD-64 — see _check_index_boundaries: the private regex
+        # this replaces missed `</script >` and mis-read `<style-template>`.
+        dom = blank_script_style(raw)
 
         for bad in BAD_BILINGUAL_ATTR_RE.finditer(dom):
             snippet = re.sub(r"\s+", " ", dom[bad.start():bad.start() + 160])
