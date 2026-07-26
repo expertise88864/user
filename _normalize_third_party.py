@@ -28,10 +28,10 @@ THIRD_PARTY_BLOCK_RE = re.compile(
     re.I,
 )
 
-LOCAL_HELPER = """function isLocalStaticHost(){
-  return /^(localhost|127\\.0\\.0\\.1|\\[::1\\])$/.test(location.hostname);
-}
-"""
+# (LOCAL_HELPER lived here — the isLocalStaticHost() source this module used to
+# splice into inline loaders. Removed with the dead block below; the real guard
+# is in /assets/inline/analytics-loader.js and is asserted by
+# _check_third_party.py.)
 
 
 def normalize(src: str) -> str:
@@ -42,25 +42,17 @@ def normalize(src: str) -> str:
         next_src = THIRD_PARTY_BLOCK_RE.sub("", next_src)
         return next_src
 
-    if "function load() {" not in next_src:
-        return next_src
-
-    if "function isLocalStaticHost()" not in next_src:
-        next_src = re.sub(
-            r"(function isInternalPage\(\)\{\s*[\s\S]*?\n\})\nfunction getTrafficType\(\)",
-            r"\1\n" + LOCAL_HELPER + "function getTrafficType()",
-            next_src,
-            count=1,
-        )
-
-    next_src = next_src.replace(
-        "if (isBot()) return; // skip everything for bots",
-        "if (isBot() || isLocalStaticHost()) return; // skip everything for bots/local static tests",
-    )
-    next_src = next_src.replace(
-        "function load() {\n// AdSense",
-        "function load() {\nif (/^(localhost|127\\.0\\.0\\.1|\\[::1\\])$/.test(location.hostname)) return;\n// AdSense",
-    )
+    # CODE_REVIEW TD-51e — everything that used to follow was DEAD. It patched
+    # the analytics loader while that loader was an inline <script> in every
+    # page; the loader now lives in /assets/inline/analytics-loader.js, and the
+    # anchors this code needed measured 0 matches repo-wide: `function load() {`
+    # = 0, the isInternalPage() anchor = 0, the `isBot()` literal = 0. It looked
+    # like the localhost/bot guard was maintained here when nothing had touched
+    # it for months — the guards survived only because the extraction copied
+    # them. _check_third_party.py now asserts those guards against the file that
+    # actually ships (TD-51a), so this is removed rather than left to mislead.
+    # What stays above is still live: stripping an eager Clarity <script> and
+    # third-party dns-prefetch/preconnect hints, plus the noindex branch.
     return next_src
 
 

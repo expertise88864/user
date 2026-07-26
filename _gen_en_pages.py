@@ -41,7 +41,17 @@ EN_OG_OVERRIDES = {
     },
     'tools.html': {
         'title': 'Dermatology Calculators | PASI, DLQI, SCORAD, SALT',
-        'desc': 'Free clinical scoring calculators for dermatology, including PASI, DLQI, SCORAD, SALT, EASI, IGA, NRS, and more.',
+        # CODE_REVIEW TD-09 — this was 112 width units, below the 120 floor
+        # _check_meta_descriptions enforces, and it was the last standing
+        # problem that checker reported. Rewritten from the ZH description's own
+        # list so the two locales describe the same ten scales; every name in it
+        # was verified present on the page.
+        # MUST stay under 170 CHARACTERS: derive_meta() truncates above that.
+        # My first attempt was 214 and shipped as "…Hurley, Norwood..." — a
+        # description that claimed ten calculators and named nine, because I
+        # checked the width of this string instead of the emitted description.
+        'desc': 'Ten dermatology scoring calculators: SCORAD, PASI, DLQI, SALT, UAS7, GAGS, '
+                'MASI, Hurley, Norwood and Fitzpatrick — instant scoring with score interpretation.',
     },
     'glossary.html': {
         'title': 'Dermatology Glossary in Plain Mandarin and English',
@@ -716,25 +726,20 @@ def set_noindex(src: str) -> str:
         )
     else:
         src = src.replace('</head>', f'<meta name="robots" content="{content}" /></head>', 1)
-    # Strip third-party analytics/ads on noindex pages — _check_third_party.py
-    # forbids loading AdSense / GA4 / Clarity on noindex/internal pages. Both
-    # the inline late-loader <script> block and the static <meta> / <script src>
-    # references need to be removed (substring presence alone fails the audit).
+    # Keep the AdSense account meta off a page we are deliberately de-indexing.
+    # CODE_REVIEW TD-51e — this one is LIVE (measured: it matches on 61 of the
+    # 64 EN pages, and removes it here). Two sibling regexes that used to follow
+    # were not: they stripped inline and external <script> tags referencing the
+    # tracker domains, from the era when the GA4/Clarity/AdSense loader was an
+    # inline block in every page. The loader now lives in
+    # /assets/inline/analytics-loader.js and no HTML carries a tracker domain —
+    # measured 0 matches across all 64 EN pages — so they were removed. The
+    # comment they carried ("_check_third_party.py forbids loading AdSense /
+    # GA4 / Clarity on noindex pages") was itself stale: that rule is now
+    # ads-only and is enforced against the resolved loader, not against
+    # substrings in the HTML (TD-51a).
     src = re.sub(
         r'<meta\s+name="google-adsense-account"[^>]*/?>',
-        '',
-        src,
-        flags=re.I,
-    )
-    # Any <script> block (inline or external) that references the three trackers
-    src = re.sub(
-        r'<script(?:\s[^>]*)?>(?:(?!</script>).)*?(?:pagead2\.googlesyndication\.com|www\.clarity\.ms|googletagmanager\.com/gtag)(?:(?!</script>).)*?</script>',
-        '',
-        src,
-        flags=re.I | re.S,
-    )
-    src = re.sub(
-        r'<script[^>]*src="[^"]*(?:adsbygoogle\.js|googletagmanager\.com/gtag/js|clarity\.ms/tag)[^"]*"[^>]*>\s*</script>',
         '',
         src,
         flags=re.I,

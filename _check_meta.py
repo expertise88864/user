@@ -7,8 +7,9 @@ Checks:
   2. sitemap.xml URL hosts are consistent (one host, not mixed apex/www)
   3. Each public HTML has <link rel="canonical">
   4. canonical / og:url / hreflang use the same host as sitemap
-  5. <title> length 30-65 chars (Google snippet limit)
-  6. <meta name="description"> length 100-170 chars
+  5. <title> width 40-100 units (CJK-aware; see TD-09)
+  6. <meta name="description"> width 120-220 units (same window as
+     _check_meta_descriptions.py, which is the authority)
   7. og:image is either /api/og pattern OR the static file actually exists
   8. DN.ARTICLES has no future date (relative to today)
   9. No <h1> longer than 70 chars (mobile readability)
@@ -43,6 +44,36 @@ if hasattr(sys.stdout, "reconfigure"):
 
 
 ROOT = Path(__file__).parent
+sys.path.insert(0, str(ROOT))
+# CODE_REVIEW TD-09 — title and description length were measured in CHARACTERS
+# on a site whose prose is Chinese, so the numbers meant nothing: a perfectly
+# normal ZH title ("異位性皮膚炎完整指引 — 治療、共病、迷思 | 陳翊嘉醫師", 52 width
+# units) was reported "too short (29 chars)", while three genuinely oversized
+# titles at 103-114 width units were only borderline in chars. All 16 standing
+# warnings this checker printed on every run came from that — noise that trains
+# the reader to ignore the output.
+# The window and the width function now come from _check_meta_descriptions.py,
+# which was already CJK-aware; that file stays the authority for descriptions.
+from _check_meta_descriptions import (  # noqa: E402
+    WIDTH_MAX,
+    WIDTH_MIN,
+    cjk_width,
+)
+
+# Title width has no authority to defer to, so it is calibrated from the site's
+# own distribution (n=134: median 66, p90 86, max 114). 40-100 flags only real
+# outliers instead of manufacturing a new wall of warnings.
+TITLE_WIDTH_MIN = 40
+TITLE_WIDTH_MAX = 100
+
+# Utility pages are exempt from SERP-length rules — they are noindex or
+# robots-disallowed and are not competing for a snippet. Same list
+# _check_meta_descriptions.py skips.
+_UTILITY_PAGES = ("404.html", "offline.html", "reset-sw.html", "admin.html", "admin/")
+
+
+def UTILITY_PAGE(rel: str) -> bool:
+    return any(seg in rel for seg in _UTILITY_PAGES)
 EXPECTED_NAMESPACES = {
     'sitemap': 'http://www.sitemaps.org/schemas/sitemap/0.9',
     'image':   'http://www.google.com/schemas/sitemap-image/1.1',
@@ -157,21 +188,23 @@ def check_html(canonical_host: str | None, fast: bool = False):
         m_t = re.search(r'<title>([^<]+)</title>', src)
         if m_t:
             t = m_t.group(1)
-            if len(t) < 30:
-                warn(rel, f'<title> too short ({len(t)} chars): {t[:50]}')
-            elif len(t) > 75:
-                warn(rel, f'<title> too long ({len(t)} chars): {t[:50]}…')
+            if not UTILITY_PAGE(rel):
+                tw = cjk_width(t)
+                if tw < TITLE_WIDTH_MIN:
+                    warn(rel, f'<title> too short (width {tw} < {TITLE_WIDTH_MIN}): {t[:50]}')
+                elif tw > TITLE_WIDTH_MAX:
+                    warn(rel, f'<title> too long (width {tw} > {TITLE_WIDTH_MAX}): {t[:50]}…')
 
-        # 6. description length
+        # 6. description width
         m_d = re.search(r'<meta name="description" content="([^"]*)"', src)
         if not m_d:
             err(rel, 'missing <meta name="description">')
-        else:
-            d = m_d.group(1)
-            if len(d) < 100:
-                warn(rel, f'description too short ({len(d)} chars)')
-            elif len(d) > 300:
-                warn(rel, f'description too long ({len(d)} chars)')
+        elif not UTILITY_PAGE(rel):
+            w = cjk_width(m_d.group(1))
+            if w < WIDTH_MIN:
+                warn(rel, f'description too short (width {w} < {WIDTH_MIN})')
+            elif w > WIDTH_MAX:
+                warn(rel, f'description too long (width {w} > {WIDTH_MAX})')
 
         # 7. og:image existence
         m_oi = re.search(r'<meta property="og:image" content="([^"]*)"', src)
@@ -188,9 +221,22 @@ def check_html(canonical_host: str | None, fast: bool = False):
                         err(rel, f'og:image references missing file: /assets/og/{fn}')
 
     # 10. duplicate canonical
+    # CODE_REVIEW TD-09 — an EN mirror pointing at its ZH original is DECISION
+    # D-17, not a duplicate: /en is a translation whose ranking signal is
+    # deliberately consolidated onto the Chinese page. _check_metadata_uniqueness
+    # already exempts exactly this pair and says so. Here it produced 62 standing
+    # warnings on every full sweep — noise for something the repo chose on
+    # purpose, which is how a reader learns to skim past real findings.
     for url, paths in canonicals_seen.items():
-        if len(paths) > 1:
-            warn('canonical', f'duplicate canonical "{url}" used by {len(paths)} pages: {paths[:3]}')
+        if len(paths) <= 1:
+            continue
+        en_mirrors = [p for p in paths if p.startswith('en/')]
+        zh_originals = [p for p in paths if not p.startswith('en/')]
+        if len(zh_originals) == 1 and en_mirrors and all(
+            p[len('en/'):] == zh_originals[0] for p in en_mirrors
+        ):
+            continue  # D-17 EN→ZH consolidation
+        warn('canonical', f'duplicate canonical "{url}" used by {len(paths)} pages: {paths[:3]}')
 
 
 # ─── 8. DN.ARTICLES future-date check ────────────────────────────────

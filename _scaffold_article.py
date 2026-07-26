@@ -49,10 +49,15 @@ ROOT = Path(__file__).resolve().parent
 TEMPLATE_PATH = ROOT / "blog" / "semaglutide-hair-loss.html"
 OLD_SLUG = "semaglutide-hair-loss"
 
-PLACEHOLDER_TITLE_ZH = "新文章標題（請替換）"
-PLACEHOLDER_TITLE_EN = "New Article Title (please replace)"
-PLACEHOLDER_DESC_ZH = "新文章描述（請替換）"
-PLACEHOLDER_DESC_EN = "New article description (please replace)"
+# CODE_REVIEW TD-41 — four PLACEHOLDER_* constants used to sit here, defined
+# and never referenced. scaffold() only does src.replace(OLD_SLUG, new_slug),
+# so a new article inherits the template's title/description/schema verbatim
+# until they are replaced by hand (WRITING_NEW_ARTICLE.md documents that
+# workflow, and it is the physician's, not this script's, to change). Deleting
+# the constants removes the false impression that the scaffold fills anything
+# in. The real backstop is _check_metadata_uniqueness, which since TD-42 fails
+# on ANY duplicated title/description rather than only on three or more pages —
+# the scaffold case is exactly two.
 
 
 def scaffold(new_slug: str) -> None:
