@@ -71,27 +71,43 @@ SKIP_DIRS = {".git", "node_modules", "pagefind", "admin"}
 
 
 def inject_one(path: Path) -> bool:
-    src = path.read_text(encoding="utf-8")
-    changed = False
+    original = path.read_text(encoding="utf-8")
+    src = original
 
     # 1. OpenSearch <link rel="search"> — once per page
     if not EXISTING_SEARCH_RE.search(src):
         head_close = src.find("</head>")
         if head_close != -1:
             src = src[:head_close] + SEARCH_LINK + src[head_close:]
-            changed = True
 
     # 2. web-vitals attribution build — strip any prior version (old
     # cache-busted URL OR legacy non-marker tag), then re-insert with
     # current asset version.
-    src = EXISTING_VITALS_RE.sub("", src)
-    src = LEGACY_VITALS_RE.sub("", src)
-    head_close = src.find("</head>")
-    if head_close != -1:
-        src = src[:head_close] + VITALS_TAG + src[head_close:]
-        changed = True
+    # CODE_REVIEW TD-51e — but leave an ALREADY-CANONICAL tag exactly where it
+    # is. Unconditional strip-and-reinsert relocated it from its committed
+    # position (immediately before the nav-critical <style>) to the very end of
+    # <head>, rewriting all 128 pages on every run and reporting "128 of 128".
+    # The churn was invisible to the end-of-build idempotency check because the
+    # later _inject_nav_critical step moves nav-critical back after it and the
+    # final bytes match — so simply comparing content here was not enough, the
+    # content really did change mid-build.
+    # Note LEGACY_VITALS_RE also matches the canonical <script> on its own, so
+    # the canonical branch must skip it — running it here would strip the tag
+    # and leave an orphan marker comment.
+    existing = EXISTING_VITALS_RE.search(src)
+    if existing is not None and existing.group(0).strip() == VITALS_TAG:
+        pass  # already canonical and correctly placed — leave it alone
+    else:
+        src = EXISTING_VITALS_RE.sub("", src)
+        src = LEGACY_VITALS_RE.sub("", src)
+        head_close = src.find("</head>")
+        if head_close != -1:
+            src = src[:head_close] + VITALS_TAG + src[head_close:]
 
-    if changed:
+    # Compare content instead of setting a `changed` flag on the reinsert path:
+    # that flag was unconditionally True whenever the page had a </head>, so
+    # the summary could never report a no-op.
+    if src != original:
         path.write_text(src, encoding="utf-8")
         return True
     return False

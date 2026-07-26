@@ -68,8 +68,14 @@ zh /blog、與其 canonical=/en 不一致(Codex 抓到)。決策:把 /en 當純�
 實作(改源頭):`_gen_en_pages` en 頁 canonical+og:url→zh、hreflang_cluster **不再發 hreflang="en"**(2026-07-07 併移除 scaffold `new-article.ps1`/`admin.html` 的 hreflang="en",杜絕新文章重新引入);
 `_gen_feeds` `en_route_for` 一律回 None → **sitemap 變 zh-only**(無 /en URL、無 en 替代);
 `_check_metadata_uniqueness` 放行 en 與 zh 共用 canonical(刻意,非重複錯誤);dashboard.html 移除殘留 hreflang=en。
-**誠實註記**:跨語言 canonical 是 Google 可能忽略的**軟訊號**;真正硬去索引可再對 en 加 noindex —
-但目前 en 內容頁多數本就靠 CJK>500 規則 noindex,加上 canonical→zh + 退出 sitemap,已足夠收斂。
+**誠實註記**:跨語言 canonical 是 Google 可能忽略的**軟訊號**;真正硬去索引可再對 en 加 noindex。
+**⚠ 更正(2026-07-26 code review 實測)**:本則原寫「目前 en 內容頁**多數本就靠 CJK>500 規則
+noindex**」——**這句話在寫下當時就不成立**。實測 `en/**/*.html` 共 64 頁,`noindex` 只有 **2 頁**
+(2026-07-04 定案當天的 commit 量測結果同為 2/64,不是後來漂移的);其餘 **62 頁都是
+`index,follow`**。原因是 `_gen_en_pages` 的 CJK>500 門檻在翻譯品質提升後幾乎不再觸發。
+也就是說目前收斂**只靠** canonical→zh(軟訊號)+ 退出 sitemap + 不發 hreflang="en",
+**沒有任何硬去索引**。這是事實更正,不是政策變更;要不要對 en 全面加 noindex 仍是使用者決定
+(代價:GSC 會把 62 頁列為「已被 noindex 排除」,且日後想開 en 獨立索引要整批回退)。
 **要重開 en 獨立索引**:改回 `en_route_for` 與 canonical、恢復 hreflang="en" — 一併回退本則。
 內部連結仍指 `/en/...`(D-08,使用者仍可瀏覽英文;只是不餵 Google 獨立索引)。
 

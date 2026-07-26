@@ -25,12 +25,22 @@ def clean_text(src: str) -> str:
     return re.sub(r'\s+', ' ', html.unescape(src)).strip()
 
 
+# CODE_REVIEW TD-51 — strip the site-name suffix from the OG card headline.
+# The previous two `re.split` calls looked for `| ChenDermatologist` and
+# `· 陳翊嘉`, but every article actually ends its <title> with `| 陳翊嘉醫師`,
+# so neither ever fired: 22 of 27 dynamically-generated cards rendered the
+# site name inside the headline, and one (contact-dermatitis) was pushed past
+# the 80-char cap and truncated mid-phrase because of it.
+# Anchored to the END of the title on purpose — six articles use a FULLWIDTH
+# `｜` as an internal section separator ("…衛教｜症狀、診斷、分期"), and a
+# naive split on any pipe would amputate those headlines.
+SITE_SUFFIX_RE = re.compile(r'\s*[|｜·]\s*(?:陳翊嘉醫師|陳翊嘉|ChenDermatologist)\s*$')
+
+
 def title_from_page(src: str, slug: str) -> str:
     title_m = re.search(r'<title>([\s\S]*?)</title>', src, re.I)
     if title_m:
-        title = clean_text(title_m.group(1))
-        title = re.split(r'\s*[|]\s*ChenDermatologist', title, maxsplit=1)[0]
-        title = re.split(r'\s*[·]\s*陳翊嘉', title, maxsplit=1)[0]
+        title = SITE_SUFFIX_RE.sub('', clean_text(title_m.group(1)))
         if title:
             return title[:80]
     h1_m = re.search(r'<h1\b[^>]*>([\s\S]*?)</h1>', src, re.I)

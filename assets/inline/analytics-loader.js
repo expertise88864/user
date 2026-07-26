@@ -1,7 +1,12 @@
 (function(){
 // 2026-05-09 — Bot-aware analytics loader. Skip GA/Clarity/AdSense when:
 //   (a) UA matches known bots/crawlers (incl. AI training & SEO scrapers)
-//   (b) Page is /admin or /reset-sw (internal pages)
+//   (b) hostname is localhost / 127.0.0.1 / [::1] (local static tests)
+// CODE_REVIEW TD-51 — this header used to claim /admin and /reset-sw were
+// SKIPPED too. They are not: isInternalPage() only TAGS the session as
+// traffic_type="internal". Those pages simply never include this file, which
+// is what actually keeps trackers off them — now asserted by
+// _check_third_party.py instead of being left to a comment.
 // Tag GA traffic_type="internal" when ?ga_internal=1 or localStorage flag.
 // This dramatically reduces bot noise in GA4 (the platform's built-in
 // "filter known bots" only covers IAB/ABC list, missing AI crawlers + scrapers).

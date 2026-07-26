@@ -150,9 +150,15 @@ BLOCK_RE = re.compile(
 # without start/end markers, so BLOCK_RE alone couldn't catch the dup. This
 # regex strips a contiguous run of orphan metas immediately following the
 # end-marker so re-runs converge to a single block.
+# CODE_REVIEW TD-51 — the `[^"]+` suffix used to sit INSIDE the alternation,
+# attached to `twitter:` only. So `article:` and `og:image:` each had to be
+# followed immediately by the closing quote, which no real tag is
+# (`article:tag`, `og:image:width`, …) — two of the three branches could never
+# match, and the dedup this regex was added for only ever worked for
+# `twitter:*`. Hoisted out so all three branches take a suffix.
 ORPHAN_RUN_RE = re.compile(
     r'(<!-- dn-og-extras:end -->)'
-    r'(\s*(?:<meta\s+(?:property|name)="(?:article:|og:image:|twitter:[^"]+)"\s+content="[^"]*"\s*/?>)+)',
+    r'(\s*(?:<meta\s+(?:property|name)="(?:article:|og:image:|twitter:)[^"]+"\s+content="[^"]*"\s*/?>)+)',
     re.IGNORECASE,
 )
 OG_IMAGE_TAG_RE = re.compile(
@@ -162,15 +168,21 @@ OG_IMAGE_TAG_RE = re.compile(
 
 
 def inject(path: Path, catalog: dict[str, dict[str, str]]) -> bool:
-    src = path.read_text(encoding="utf-8")
+    original = path.read_text(encoding="utf-8")
     slug = path.stem
-    record = catalog.get(slug)
-    if not record:
-        return False  # unlisted / non-article
-    block = build_meta_block(slug, record, src)
+    # CODE_REVIEW TD-51 — DN.ARTICLES membership is a BLOG-LISTING decision,
+    # not an "is this an article" test. isotretinoin-clinical and
+    # topical-acids-clinical (plus their EN mirrors) are indexable, sitemapped
+    # and internally linked, yet sat outside the catalog and so silently lost
+    # every article:* / og:image:width|height tag — exactly the Discover
+    # large-card eligibility this normalizer exists to grant. build_meta_block
+    # already falls back to JSON-LD datePublished/dateModified and <title>, and
+    # emits section/tag lines only when it has them, so an empty record is safe.
+    record = catalog.get(slug, {})
+    block = build_meta_block(slug, record, original)
 
     # Strip orphan duplicate metas that follow end-marker (legacy artifacts).
-    src = ORPHAN_RUN_RE.sub(r'\1', src)
+    src = ORPHAN_RUN_RE.sub(r'\1', original)
     # Strip any prior injection (current-format block).
     cleaned = BLOCK_RE.sub("", src)
     # Insert right after the existing og:image meta tag for visual grouping.
@@ -178,7 +190,12 @@ def inject(path: Path, catalog: dict[str, dict[str, str]]) -> bool:
     if not og_m:
         return False
     new = cleaned[:og_m.end()] + block + cleaned[og_m.end():]
-    if new == src:
+    # CODE_REVIEW TD-51 — compare against the ORIGINAL bytes, not the
+    # orphan-stripped copy. `src` was reassigned above, so when the current
+    # block was already correct the comparison came out equal and the orphan
+    # removal was thrown away unwritten — i.e. the 2026-05-25 dedup fix could
+    # only ever take effect on a run that ALSO had to rewrite the block.
+    if new == original:
         return False
     path.write_text(new, encoding="utf-8")
     return True

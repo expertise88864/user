@@ -119,9 +119,17 @@ def check_og_article_props() -> None:
         "og:image:height",
         "og:image:alt",
     ]
-    # Article files known to lack DN.ARTICLES entry — skip them.
-    skip_slugs = {"isotretinoin-clinical", "topical-acids-clinical",
-                  "severe-scabies-treatment"}
+    # CODE_REVIEW TD-51 — this used to skip three slugs WHOLESALE because they
+    # lacked a DN.ARTICLES entry. Two problems: severe-scabies-treatment is in
+    # the catalog and carries every property, so its exemption hid nothing but
+    # cost coverage; and the two clinical pages are indexable, sitemapped and
+    # internally linked, so blanket-skipping them meant nothing noticed they
+    # had NO og-extras block at all. _normalize_og_article_meta now injects the
+    # catalog-independent fields there, so the exemption is narrowed to exactly
+    # the two properties that genuinely need a catalog record (cat -> section,
+    # tag -> article:tag) and everything else is enforced everywhere.
+    catalog_only_props = {"article:section", "article:tag"}
+    no_catalog_slugs = {"isotretinoin-clinical", "topical-acids-clinical"}
     targets: list[Path] = []
     for d in ("blog", "en/blog"):
         dpath = ROOT / d
@@ -129,14 +137,14 @@ def check_og_article_props() -> None:
             for fp in sorted(dpath.glob("*.html")):
                 if fp.name in {"index.html", "topics.html"}:
                     continue
-                if fp.stem in skip_slugs:
-                    continue
                 targets.append(fp)
     bad = 0
     for fp in targets:
         src = fp.read_text(encoding="utf-8", errors="replace")
+        exempt = catalog_only_props if fp.stem in no_catalog_slugs else set()
         missing = [p for p in required
-                   if f'property="{p}"' not in src
+                   if p not in exempt
+                   and f'property="{p}"' not in src
                    and f"property='{p}'" not in src]
         if missing:
             err(fp.relative_to(ROOT).as_posix(),
@@ -144,7 +152,8 @@ def check_og_article_props() -> None:
                 f"social cards (FB/LinkedIn/Discord) won't render rich")
             bad += 1
         # At least one article:tag
-        if 'property="article:tag"' not in src:
+        if ("article:tag" not in exempt
+                and 'property="article:tag"' not in src):
             err(fp.relative_to(ROOT).as_posix(),
                 f"no article:tag — required for topical relevance")
             bad += 1
@@ -154,17 +163,17 @@ def check_og_article_props() -> None:
 
 # ─── 4. Twitter card customization ───────────────────────────────────
 def check_twitter_cards() -> None:
+    # CODE_REVIEW TD-51 — none of these labels need a DN.ARTICLES record
+    # (label2/data2 are constants, image:alt falls back to <title>), so the
+    # three-slug exemption that used to sit here bought nothing and only
+    # removed coverage. All three now carry every property; enforced for all.
     required = ["twitter:image:alt", "twitter:label2", "twitter:data2"]
-    skip_slugs = {"isotretinoin-clinical", "topical-acids-clinical",
-                  "severe-scabies-treatment"}
     targets: list[Path] = []
     for d in ("blog", "en/blog"):
         dpath = ROOT / d
         if dpath.exists():
             for fp in sorted(dpath.glob("*.html")):
                 if fp.name in {"index.html", "topics.html"}:
-                    continue
-                if fp.stem in skip_slugs:
                     continue
                 targets.append(fp)
     bad = 0
