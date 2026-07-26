@@ -28,8 +28,16 @@ SKIP_DIRS = {".git", "node_modules", "__pycache__", "pagefind"}
 # Tags we strictly track — block-level structural tags where mismatch
 # definitely breaks the page. Mismatch in <p>/<span>/<em>/<strong>
 # rarely shows visually so we skip those.
+# CODE_REVIEW TD-54 — `div` was missing even though the failure message told
+# the reader to "ensure <section>/<div>/… are balanced", so the single most
+# common container in this repo was never checked (an unbalanced <div> passed
+# silently; see the negative test). Added together with ul/ol/table, all of
+# which have REQUIRED end tags in HTML5. Deliberately still excluded:
+# p, li, tr, td, th, tbody, thead — HTML5 lets their end tags be omitted, so
+# tracking them would reject valid markup.
 TRACKED_TAGS = {"article", "section", "main", "header", "footer",
-                "nav", "aside", "html", "body"}
+                "nav", "aside", "html", "body",
+                "div", "ul", "ol", "table"}
 
 # Tags that are self-closing / void per HTML5 (don't expect close tag)
 VOID_TAGS = {"br", "hr", "img", "input", "link", "meta", "area",
@@ -113,23 +121,37 @@ def check_file(path: Path) -> list[str]:
     return errs
 
 
+# CODE_REVIEW TD-54 — anti-vacuity floor. The old pass message reported no
+# count at all, so if the glob or the skip list ever stopped matching, this
+# audit would print exactly the same "[OK]" line while checking nothing.
+MIN_FILES_SCANNED = 100
+
+
 def main() -> int:
     total = 0
     err_files = 0
+    scanned = 0
     for path in sorted(ROOT.glob("**/*.html")):
         if any(part in SKIP_DIRS for part in path.relative_to(ROOT).parts):
             continue
+        scanned += 1
         errs = check_file(path)
         if errs:
             err_files += 1
             for e in errs:
                 print(f"  {e}")
                 total += 1
+    if scanned < MIN_FILES_SCANNED:
+        print(f"  only {scanned} HTML file(s) scanned (expected >= {MIN_FILES_SCANNED}) "
+              f"— file discovery is broken, so a pass here would mean nothing")
+        total += 1
     if total:
         print(f"\n[FAIL] HTML balance audit: {total} issue(s) in {err_files} file(s).")
-        print("Fix: ensure <section>/<div>/<article>/<header>/<footer>/<main>/<nav>/<aside> tags are balanced + properly nested.")
+        print("Fix: ensure " + "/".join(f"<{t}>" for t in sorted(TRACKED_TAGS))
+              + " tags are balanced + properly nested.")
         return 1
-    print("[OK] HTML balance audit passed (tracked block tags balanced)")
+    print(f"[OK] HTML balance audit passed "
+          f"({scanned} files, {len(TRACKED_TAGS)} tracked block tags balanced)")
     return 0
 
 

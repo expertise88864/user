@@ -97,12 +97,52 @@ def slugify(s: str) -> str:
 
 
 def extract_field(card: str, css_class: str) -> str:
-    m = re.search(
-        rf'<[a-z]+[^>]*class="{re.escape(css_class)}"[^>]*>([\s\S]*?)</[a-z]+>',
-        card,
+    """Text of the element carrying `css_class`, matched to ITS closing tag.
+
+    CODE_REVIEW TD-59 — the previous pattern was
+    `<[a-z]+[^>]*class="X"[^>]*>([\\s\\S]*?)</[a-z]+>`: non-greedy to the first
+    closing tag of ANY name. Glossary definitions are HTML-rich (the docstring
+    says so), so the first `</strong>` or `</span>` inside a definition ended
+    the capture. Measured on the live file: 48 of 64 `gloss-def` values were
+    truncated in the emitted DefinedTerm schema — e.g. "皮膚病生活品質量表"
+    instead of "皮膚病生活品質量表,10 題自評，0-30 分。生物製劑健保申請常見
+    門檻 DLQI ≥ 10。" — so three quarters of the definition rich-cards this
+    generator exists to produce shipped cut off. Depth-balanced now, matching
+    the technique find_cards() above already uses.
+    Class matching is token-aware and quote-agnostic so `class="gloss-def x"`
+    or single quotes keep working.
+    """
+    open_re = re.compile(
+        rf'<([a-z]+)\b[^>]*\bclass=(["\'])(?:[^"\']*\s)?{re.escape(css_class)}(?:\s[^"\']*)?\2',
         re.IGNORECASE,
     )
-    return strip_html(m.group(1)) if m else ""
+    m = open_re.search(card)
+    if not m:
+        return ""
+    tag = m.group(1).lower()
+    open_end = card.find(">", m.end())
+    if open_end == -1:
+        return ""
+    open_end += 1
+
+    open_tag_re = re.compile(rf"<{tag}\b", re.IGNORECASE)
+    close_tag_re = re.compile(rf"</{tag}\s*>", re.IGNORECASE)
+    pos = open_end
+    depth = 1
+    while pos < len(card) and depth > 0:
+        nxt_open = open_tag_re.search(card, pos)
+        nxt_close = close_tag_re.search(card, pos)
+        if nxt_close is None:
+            return strip_html(card[open_end:])
+        if nxt_open is not None and nxt_open.start() < nxt_close.start():
+            depth += 1
+            pos = nxt_open.end()
+        else:
+            depth -= 1
+            pos = nxt_close.end()
+            if depth == 0:
+                return strip_html(card[open_end:nxt_close.start()])
+    return strip_html(card[open_end:])
 
 
 def extract_link(card: str) -> str:
@@ -181,17 +221,22 @@ def build_termset(terms: list[dict], lang: str) -> dict:
     # to stay consistent with the canonical.
     set_url = CANONICAL_HOST + "/glossary"
     set_id = set_url + "#termset"
+    # CODE_REVIEW TD-59 — count derived from the cards actually parsed.
+    # It was hardcoded as 64 in both descriptions, so adding or removing a
+    # glossary card would have left the structured data asserting a number
+    # that no longer matched the page.
+    count = len(terms)
     if lang == "en":
         name = "Dermatology glossary (Chinese-English)"
         description = (
-            "Hand-curated bilingual dictionary of 64 dermatology terms "
+            f"Hand-curated bilingual dictionary of {count} dermatology terms "
             "(scoring scales, drug classes, symptoms, procedures, "
             "anatomy) referenced across the site."
         )
     else:
         name = "皮膚科醫學詞彙 中英對照字典"
         description = (
-            "陳翊嘉醫師整理的 64 條皮膚科常用名詞中英對照 "
+            f"陳翊嘉醫師整理的 {count} 條皮膚科常用名詞中英對照 "
             "(包含量表、藥物、症狀、手術、解剖)，每條附 5-30 字定義。"
         )
     return {

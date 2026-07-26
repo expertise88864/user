@@ -237,14 +237,20 @@ def main() -> int:
     ai_txt_dir.mkdir(exist_ok=True)
     ai_txt_path = ai_txt_dir / "ai.txt"
     fallback_date = summary.get("latest_date") or dt.date.today().isoformat()
+    # CODE_REVIEW TD-53 — no forced newline on write. This repo runs
+    # core.autocrlf=true with no .gitattributes, so every other worktree file is
+    # CRLF; forcing LF here left the generated file permanently reported as
+    # modified after every build (measured: 6 files, byte-identical content).
+    # git still normalises to LF in the blob, so the DEPLOYED bytes are unchanged.
+    # Same decision already documented in _gen_llms_full.py.
     ai_txt_date = existing_date(ai_txt_path, r"# Last update: (\d{4}-\d{2}-\d{2})", fallback_date)
-    ai_txt_path.write_text(build_ai_txt(summary, ai_txt_date), encoding="utf-8", newline="\n")
+    ai_txt_path.write_text(build_ai_txt(summary, ai_txt_date), encoding="utf-8")
 
     ai_json_dir = ROOT / "ai"
     ai_json_dir.mkdir(exist_ok=True)
     ai_json_path = ai_json_dir / "summary.json"
     ai_json_date = existing_date(ai_json_path, r'"generated_at": "(\d{4}-\d{2}-\d{2})"', fallback_date)
-    ai_json_path.write_text(build_summary_json(summary, ai_json_date), encoding="utf-8", newline="\n")
+    ai_json_path.write_text(build_summary_json(summary, ai_json_date), encoding="utf-8")
 
     print(f"[ai-well-known] wrote .well-known/ai.txt + ai/summary.json "
           f"({summary['count']} articles)")

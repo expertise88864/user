@@ -18,6 +18,12 @@ EXTENSIONS = {
     ".json",
     ".md",
     ".py",
+    # CODE_REVIEW TD-58 — .svg was missing. This repo generates SVGs carrying
+    # bilingual <text> (dn-site-graph.svg, and _svg_bilingual/_translate_svg
+    # rewrite more), and SVG text is exactly where character damage has bitten
+    # before — _check_static_a11y already carries a BROKEN_SVG_CASE_RE for it.
+    # Verified clean on the current tree before adding.
+    ".svg",
     ".txt",
     ".xml",
     ".yaml",
@@ -62,10 +68,17 @@ def line_col(src: str, index: int) -> tuple[int, int]:
     return line, col
 
 
+# CODE_REVIEW TD-58 — anti-vacuity floor: the pass line reported no count, so a
+# broken EXTENSIONS set or skip list would look exactly like a clean repo.
+MIN_FILES_SCANNED = 300
+
+
 def main() -> int:
     errors: list[str] = []
+    scanned = 0
 
     for path in iter_files():
+        scanned += 1
         rel = path.relative_to(ROOT).as_posix()
         try:
             src = path.read_text(encoding="utf-8")
@@ -85,13 +98,19 @@ def main() -> int:
                 snippet = src[match.start() : match.end()].replace("\n", " ")[:80]
                 errors.append(f"{rel}:{line}:{col}: {label}: {snippet!r}")
 
+    if scanned < MIN_FILES_SCANNED:
+        errors.append(
+            f"only {scanned} file(s) scanned (expected >= {MIN_FILES_SCANNED}) — file "
+            f"discovery is broken, so a pass here would mean nothing"
+        )
+
     if errors:
         print("[FAIL] Text integrity audit found issues:")
         for error in errors:
             print(" - " + error)
         return 1
 
-    print("[OK] Text integrity audit passed")
+    print(f"[OK] Text integrity audit passed ({scanned} files)")
     return 0
 
 

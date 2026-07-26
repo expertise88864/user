@@ -4,37 +4,65 @@
 
 from __future__ import annotations
 
-import re
+import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT))
+from _html_scan import attribute_spans, iter_tags, tag_name  # noqa: E402
+
 SKIP_DIRS = {".git", "node_modules", "__pycache__"}
-TARGET_BLANK_A_RE = re.compile(r"<a\b[^>]*\btarget=(['\"])_blank\1[^>]*>", re.I)
-REL_RE = re.compile(r"\brel=(['\"])(.*?)\1", re.I)
+REQUIRED_REL = ("noopener", "noreferrer")
 
 
 def normalize_anchor(tag: str) -> str:
-    rel_match = REL_RE.search(tag)
-    required = ["noopener", "noreferrer"]
-    if rel_match:
-        quote = rel_match.group(1)
-        tokens = rel_match.group(2).split()
-        lowered = {token.lower() for token in tokens}
-        for token in required:
+    """Ensure this <a target="_blank"> carries noopener + noreferrer.
+
+    CODE_REVIEW TD-57 — the previous matcher was
+    `<a\\b[^>]*\\btarget=(['"])_blank\\1[^>]*>`, which ends the tag at the first
+    `>`. On this site a `>` frequently sits INSIDE a quoted attribute value
+    (379 tags carry bilingual values like data-zh="<strong>…</strong>"), so an
+    anchor whose data-zh preceded target=_blank never matched — and the
+    reverse-tabnabbing hardening was silently skipped on exactly the links the
+    audit is meant to protect. `rel` is now located by parsing attributes, not
+    by searching the tag text, so a literal `rel=` inside prose cannot be
+    mistaken for the attribute.
+    """
+    spans = attribute_spans(tag)
+    target = spans.get("target")
+    if target is None or target[2].lower() != "_blank":
+        return tag
+
+    rel = spans.get("rel")
+    if rel is not None:
+        start, end, value, quote = rel
+        quote = quote or '"'
+        tokens = value.split()
+        lowered = {t.lower() for t in tokens}
+        for token in REQUIRED_REL:
             if token not in lowered:
                 tokens.append(token)
-        return tag[:rel_match.start()] + f"rel={quote}{' '.join(tokens)}{quote}" + tag[rel_match.end():]
+        return tag[:start] + f"rel={quote}{' '.join(tokens)}{quote}" + tag[end:]
 
-    target_match = re.search(r"\btarget=(['\"])_blank\1", tag, re.I)
-    if not target_match:
-        return tag
-    insert_at = target_match.end()
-    return tag[:insert_at] + ' rel="noopener noreferrer"' + tag[insert_at:]
+    insert_at = target[1]
+    return tag[:insert_at] + f' rel="{" ".join(REQUIRED_REL)}"' + tag[insert_at:]
 
 
 def normalize(src: str) -> str:
-    return TARGET_BLANK_A_RE.sub(lambda match: normalize_anchor(match.group(0)), src)
+    out: list[str] = []
+    cursor = 0
+    for start, tag in iter_tags(src):
+        if tag_name(tag) != "a" or tag.startswith("</"):
+            continue
+        fixed = normalize_anchor(tag)
+        if fixed == tag:
+            continue
+        out.append(src[cursor:start])
+        out.append(fixed)
+        cursor = start + len(tag)
+    out.append(src[cursor:])
+    return "".join(out)
 
 
 def main() -> None:

@@ -76,11 +76,19 @@ def anchors_for(path: Path, cache: dict[Path, set[str]]) -> set[str]:
     return cache[path]
 
 
+# CODE_REVIEW TD-58 — anti-vacuity floor. The pass line already reported the
+# file count, but a parser that stopped extracting hrefs would keep that number
+# intact while checking nothing, so the number of links actually resolved is
+# reported and floored too.
+MIN_LINKS_RESOLVED = 2000
+
+
 def main() -> int:
     errors: list[str] = []
     files = html_files()
     pages = {page_url(path): path for path in files}
     anchor_cache: dict[Path, set[str]] = {}
+    resolved_links = 0
 
     for source in files:
         source_url = page_url(source)
@@ -96,6 +104,7 @@ def main() -> int:
             split = urlsplit(resolved)
             if split.scheme or split.netloc:
                 continue
+            resolved_links += 1
             target_path_raw, fragment = urldefrag(split.path or source_url)
             target_path_raw = "/" + target_path_raw.lstrip("/")
             if target_path_raw != "/" and target_path_raw.endswith("/"):
@@ -120,12 +129,19 @@ def main() -> int:
                     f"{target_file.relative_to(ROOT).as_posix()}#{fragment}"
                 )
 
+    if resolved_links < MIN_LINKS_RESOLVED:
+        errors.append(
+            f"only {resolved_links} internal link(s) resolved (expected >= "
+            f"{MIN_LINKS_RESOLVED}) — link extraction is broken, so a pass means nothing"
+        )
+
     if errors:
         print("[FAIL] Internal link audit found issues:")
         for error in errors:
             print(" - " + error)
         return 1
-    print(f"[OK] Internal link audit passed ({len(files)} HTML files)")
+    print(f"[OK] Internal link audit passed "
+          f"({len(files)} HTML files, {resolved_links} internal links resolved)")
     return 0
 
 

@@ -23,14 +23,13 @@ if hasattr(sys.stdout, "reconfigure"):
 ROOT = Path(__file__).resolve().parent
 SKIP_DIRS = {".git", "node_modules", "__pycache__", "pagefind"}
 
-# Pattern: `<` followed by a space or digit, but NOT inside an attribute value.
-# We do a simple line-by-line scan: ignore lines that look like tag/attr.
-# The key sentinel is "< " or "<digit-not-followed-by-letter".
-# Real HTML tags always have <letter or </letter or <!-- or <?
-# So `<` + space + char is always an unescaped less-than sign.
-PATTERN = re.compile(r"<(?= )")
-# Also `<` followed directly by a digit (e.g. `<2 cm`)
-PATTERN_DIGIT = re.compile(r"<(?=\d)")
+# CODE_REVIEW TD-55 — what actually counts as a violation.
+# HTML5 "tag open state": after `<`, anything that is not an ASCII letter, `/`,
+# `!` or `?` is an invalid-first-character-of-tag-name parse error and the `<`
+# is emitted as text. The old rule only looked for `< ` and `<digit`, so `<=`,
+# `<%`, `<&` and friends — equally rejected by html5validator — went unseen.
+# Verified: the broadened rule reports 0 violations on the current site.
+TAG_START_CHARS = "/!?"
 
 
 SCRIPT_BLOCK_RE = re.compile(
@@ -55,54 +54,88 @@ def strip_script_style(text: str) -> str:
     return text
 
 
-def _inside_attribute_value(line: str, pos: int) -> bool:
-    """Return True if char at `pos` is inside an HTML attribute value.
+def scan_text(text: str) -> list[tuple[int, int, str]]:
+    """Positions of `<` a parser would treat as stray text, walking the document.
 
-    Heuristic: walk through the line tracking quote state. A `<` inside
-    `data-zh="..."`, `title="..."`, etc. is a legal text character (the
-    attribute parser delimits by quotes, not by `<`). Only `<` outside
-    quote-delimited attribute values can confuse html5validator.
+    CODE_REVIEW TD-55 — replaces a per-line quote-parity heuristic that decided
+    "is this inside an attribute value?" by counting quotes from the start of
+    the line. Prose apostrophes broke it: in
+
+        <p>Bowen's disease shows lesions < 2 cm across</p>
+
+    the apostrophe flipped the parity, so everything after it looked like it
+    sat inside an attribute and the genuine `< 2` was suppressed. This repo's
+    HTML is minified onto very long lines, so ONE apostrophe could blind an
+    entire page — in the checker whose whole job is to pre-empt the CI
+    html5validator failure.
+
+    Quotes only delimit attribute values INSIDE a tag, so that is what is
+    tracked here: whether we are between `<name` and its `>`. Comments are
+    skipped whole, and the scan runs over the entire document so a tag or an
+    attribute spanning several lines stays correctly understood.
     """
-    in_dq = False
-    in_sq = False
-    i = 0
-    while i < pos:
-        ch = line[i]
-        if ch == '"' and not in_sq:
-            in_dq = not in_dq
-        elif ch == "'" and not in_dq:
-            in_sq = not in_sq
+    issues: list[tuple[int, int, str]] = []
+    i, n = 0, len(text)
+    line_no, line_start = 1, 0
+    in_tag = False
+    quote = ""
+    while i < n:
+        ch = text[i]
+        if ch == "\n":
+            line_no += 1
+            line_start = i + 1
+            i += 1
+            continue
+        if in_tag:
+            if quote:
+                if ch == quote:
+                    quote = ""
+            elif ch in "\"'":
+                quote = ch
+            elif ch == ">":
+                in_tag = False
+            i += 1
+            continue
+        if ch == "<":
+            if text.startswith("<!--", i):
+                end = text.find("-->", i + 4)
+                if end == -1:
+                    break
+                line_no += text.count("\n", i, end)
+                i = end + 3
+                continue
+            nxt = text[i + 1] if i + 1 < n else ""
+            if nxt.isalpha() or nxt in TAG_START_CHARS:
+                in_tag = True
+                i += 1
+                continue
+            line_end = text.find("\n", i)
+            if line_end == -1:
+                line_end = n
+            ctx = text[max(line_start, i - 25):min(line_end, i + 26)]
+            issues.append((line_no, i - line_start + 1, ctx))
         i += 1
-    return in_dq or in_sq
+    return issues
 
 
 def scan_file(path: Path) -> list[tuple[int, int, str]]:
-    issues = []
     raw = path.read_text(encoding="utf-8", errors="replace")
-    text = strip_script_style(raw)
-    for lineno, line in enumerate(text.splitlines(), start=1):
-        for m in PATTERN.finditer(line):
-            if _inside_attribute_value(line, m.start()):
-                continue
-            col = m.start() + 1
-            ctx = line[max(0, m.start() - 25): m.end() + 25]
-            issues.append((lineno, col, ctx))
-        for m in PATTERN_DIGIT.finditer(line):
-            if _inside_attribute_value(line, m.start()):
-                continue
-            col = m.start() + 1
-            ctx = line[max(0, m.start() - 25): m.end() + 25]
-            issues.append((lineno, col, ctx))
-    return issues
+    return scan_text(strip_script_style(raw))
+
+
+# CODE_REVIEW TD-55 — anti-vacuity floor, same reasoning as _check_html_balance.
+MIN_FILES_SCANNED = 100
 
 
 def main() -> int:
     total = 0
     err_files = 0
+    scanned = 0
     for pattern in ("**/*.html",):
         for path in sorted(ROOT.glob(pattern)):
             if any(part in SKIP_DIRS for part in path.relative_to(ROOT).parts):
                 continue
+            scanned += 1
             issues = scan_file(path)
             if issues:
                 err_files += 1
@@ -111,12 +144,18 @@ def main() -> int:
                     print(f"  {rel}:{lineno}:{col}: unescaped '<' — ...{ctx}...")
                     total += 1
 
+    if scanned < MIN_FILES_SCANNED:
+        print(f"  only {scanned} HTML file(s) scanned (expected >= {MIN_FILES_SCANNED}) "
+              f"— file discovery is broken, so a pass here would mean nothing")
+        total += 1
+
     if total:
         print(f"\n[FAIL] HTML escape audit: {total} unescaped '<' in {err_files} files.")
-        print("Fix: replace `< 2 cm` with `&lt; 2 cm` (same for `< 1%`, `< 0.05`, etc.)")
+        print("Fix: replace `< 2 cm` with `&lt; 2 cm` (same for `< 1%`, `<= 5`, `<2cm`, etc.)")
         return 1
 
-    print("[OK] HTML escape audit passed (no unescaped '<' followed by space/digit)")
+    print(f"[OK] HTML escape audit passed "
+          f"({scanned} files; no stray '<' outside a tag)")
     return 0
 
 

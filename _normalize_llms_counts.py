@@ -84,8 +84,14 @@ def main() -> int:
     if newest:
         s = re.sub(r"Last updated: \d{4}-\d{2}-\d{2}", f"Last updated: {newest}", s)
 
+    # CODE_REVIEW TD-53 — no forced newline on write. This repo runs
+    # core.autocrlf=true with no .gitattributes, so every other worktree file is
+    # CRLF; forcing LF here left the generated file permanently reported as
+    # modified after every build (measured: 6 files, byte-identical content).
+    # git still normalises to LF in the blob, so the DEPLOYED bytes are unchanged.
+    # Same decision already documented in _gen_llms_full.py.
     if s != orig:
-        llms.write_text(s, encoding="utf-8", newline="\n")
+        llms.write_text(s, encoding="utf-8")
         print(f"Refreshed llms.txt counts — {zh} zh / {en} EN / {entries} in corpus / ~{kb} KB")
     else:
         print("llms.txt counts already current")

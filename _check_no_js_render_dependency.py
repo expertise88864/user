@@ -60,18 +60,28 @@ def visible_text_length(html_chunk: str) -> int:
     return len(re.sub(r"\s+", "", s))
 
 
-def check_article(path: Path) -> list[str]:
+# CODE_REVIEW TD-58 — the pass line reported the TARGET count, not how many
+# articles were actually analysed, while check_article() returns early in three
+# places (noindex, no <article>/<main>, no <h1>). If the template ever stopped
+# emitting <article>/<main> — say it moved to <div role="main"> — every article
+# would skip silently and the message would still read "all 55 articles".
+MIN_ANALYSED = 40
+
+
+def check_article(path: Path, stats: dict[str, int]) -> list[str]:
     issues: list[str] = []
     src = path.read_text(encoding="utf-8", errors="replace")
 
     # Skip noindex pages — JS-dependency doesn't matter if Google won't index.
     if re.search(r'<meta[^>]+name="robots"[^>]+content="[^"]*noindex',
                  src, re.I):
+        stats["noindex"] += 1
         return issues
 
     # Find the first <h1>...</h1> after <article> or <main>.
     main_m = re.search(r"<(article|main)\b[^>]*>([\s\S]*)", src, re.I)
     if not main_m:
+        stats["no_main"] += 1
         return issues  # not an article-style page
 
     body = main_m.group(2)
@@ -79,8 +89,10 @@ def check_article(path: Path) -> list[str]:
     if not h1_m:
         # Article without an h1 is its own bug; flagged elsewhere by
         # _check_static_a11y. Don't double-report.
+        stats["no_h1"] += 1
         return issues
 
+    stats["analysed"] += 1
     h1_text_len = visible_text_length(h1_m.group(1))
     if h1_text_len < 3:
         issues.append(
@@ -121,11 +133,19 @@ def main() -> int:
                     continue
                 targets.append(fp)
 
+    stats = {"analysed": 0, "noindex": 0, "no_main": 0, "no_h1": 0}
     failures: list[tuple[Path, list[str]]] = []
     for fp in targets:
-        issues = check_article(fp)
+        issues = check_article(fp, stats)
         if issues:
             failures.append((fp, issues))
+
+    if stats["analysed"] < MIN_ANALYSED:
+        print(f"[FAIL] JS-rendering audit only analysed {stats['analysed']} of "
+              f"{len(targets)} article(s) (expected >= {MIN_ANALYSED}); skipped "
+              f"{stats['noindex']} noindex, {stats['no_main']} without <article>/<main>, "
+              f"{stats['no_h1']} without <h1> — the audit is silently skipping its work")
+        return 1
 
     if failures:
         print(f"[FAIL] JS-rendering dependency audit found {len(failures)} "
@@ -138,8 +158,9 @@ def main() -> int:
             print(f" ... and {len(failures) - 25} more")
         return 1
 
-    print(f"[OK] JS-rendering audit: all {len(targets)} articles paint "
-          f"their H1 + lead paragraph from raw HTML")
+    print(f"[OK] JS-rendering audit: {stats['analysed']} of {len(targets)} articles "
+          f"paint their H1 + lead paragraph from raw HTML "
+          f"({stats['noindex']} noindex skipped)")
     return 0
 
 

@@ -17,6 +17,13 @@ from __future__ import annotations
 import io, re, sys
 from pathlib import Path
 
+# CODE_REVIEW TD-53 — no forced newline on write. This repo runs
+# core.autocrlf=true with no .gitattributes, so every other worktree file is
+# CRLF; forcing LF here left the generated file permanently reported as
+# modified after every build (measured: 6 files, byte-identical content).
+# git still normalises to LF in the blob, so the DEPLOYED bytes are unchanged.
+# Same decision already documented in _gen_llms_full.py.
+
 ROOT = Path(__file__).resolve().parent
 THEAD_RE = re.compile(r'<thead\b[^>]*>(.*?)</thead>', re.DOTALL | re.IGNORECASE)
 # a <th ...> opening tag that does NOT already contain scope=
@@ -35,7 +42,7 @@ def process(fp: Path) -> int:
         return 0
     new = THEAD_RE.sub(fix_thead, s)
     if new != s:
-        fp.write_text(new, encoding='utf-8', newline='')
+        fp.write_text(new, encoding='utf-8')
         return new.count('scope="col"') - s.count('scope="col"')
     return 0
 

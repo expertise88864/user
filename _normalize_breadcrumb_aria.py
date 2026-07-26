@@ -19,6 +19,13 @@ from __future__ import annotations
 import io, sys
 from pathlib import Path
 
+# CODE_REVIEW TD-53 — no forced newline on write. This repo runs
+# core.autocrlf=true with no .gitattributes, so every other worktree file is
+# CRLF; forcing LF here left the generated file permanently reported as
+# modified after every build (measured: 6 files, byte-identical content).
+# git still normalises to LF in the blob, so the DEPLOYED bytes are unchanged.
+# Same decision already documented in _gen_llms_full.py.
+
 ROOT = Path(__file__).resolve().parent
 
 OLD = '<nav style="font-size:12.5px; color:var(--muted); margin-bottom:18px;">'
@@ -31,7 +38,7 @@ def process(fp: Path) -> int:
         return 0
     s2 = s.replace(OLD, NEW)
     if s2 != s:
-        fp.write_text(s2, encoding='utf-8', newline='')
+        fp.write_text(s2, encoding='utf-8')
         return s.count(OLD)
     return 0
 

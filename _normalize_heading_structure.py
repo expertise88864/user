@@ -3,6 +3,13 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+# CODE_REVIEW TD-53 — no forced newline on write. This repo runs
+# core.autocrlf=true with no .gitattributes, so every other worktree file is
+# CRLF; forcing LF here left the generated file permanently reported as
+# modified after every build (measured: 6 files, byte-identical content).
+# git still normalises to LF in the blob, so the DEPLOYED bytes are unchanged.
+# Same decision already documented in _gen_llms_full.py.
+
 
 ROOT = Path(__file__).resolve().parent
 SKIP_DIRS = {".git", "node_modules", ".next", "out", "dist"}
@@ -113,7 +120,8 @@ def normalize_content_headings(html: str) -> str:
     html = html.replace("</h5>", "</div>")
 
     html = html.replace('class="visual-heading" data-zh=', 'class="infographic-title" data-zh=')
-    html = html.replace('class="visual-heading" style=', 'class="visual-heading" style=')
+    # CODE_REVIEW TD-59 — a second replace() here mapped
+    # 'class="visual-heading" style=' onto itself: a literal no-op. Removed.
     return html
 
 
@@ -123,7 +131,7 @@ def main() -> None:
         before = path.read_text(encoding="utf-8")
         after = normalize_content_headings(normalize_footer_headings(before))
         if after != before:
-            path.write_text(after, encoding="utf-8", newline="")
+            path.write_text(after, encoding="utf-8")
             changed += 1
     print(f"Normalized footer heading structure in {changed} HTML files.")
 

@@ -91,9 +91,15 @@ def main() -> int:
     }
 
     out_dir = ROOT / "ai"
+    # CODE_REVIEW TD-53 — no forced newline on write. This repo runs
+    # core.autocrlf=true with no .gitattributes, so every other worktree file is
+    # CRLF; forcing LF here left the generated file permanently reported as
+    # modified after every build (measured: 6 files, byte-identical content).
+    # git still normalises to LF in the blob, so the DEPLOYED bytes are unchanged.
+    # Same decision already documented in _gen_llms_full.py.
     out_dir.mkdir(exist_ok=True)
     (out_dir / "service.json").write_text(
-        json.dumps(payload, ensure_ascii=True, indent=1) + "\n", encoding="utf-8", newline="\n"
+        json.dumps(payload, ensure_ascii=True, indent=1) + "\n", encoding="utf-8"
     )
     print(f"Wrote ai/service.json — {count} articles (updated {newest})")
     return 0

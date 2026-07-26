@@ -26,6 +26,13 @@ from __future__ import annotations
 import io, re, json, sys, html
 from pathlib import Path
 
+# CODE_REVIEW TD-53 — no forced newline on write. This repo runs
+# core.autocrlf=true with no .gitattributes, so every other worktree file is
+# CRLF; forcing LF here left the generated file permanently reported as
+# modified after every build (measured: 6 files, byte-identical content).
+# git still normalises to LF in the blob, so the DEPLOYED bytes are unchanged.
+# Same decision already documented in _gen_llms_full.py.
+
 ROOT = Path(__file__).resolve().parent
 
 QA_RE = re.compile(r'<div class="qa">(.*?)</div>', re.DOTALL)
@@ -84,7 +91,7 @@ def process(fp: Path) -> int:
         # nothing to emit; strip any stale auto block
         new = OLD_RE.sub('', src)
         if new != src:
-            fp.write_text(new, encoding='utf-8', newline='')
+            fp.write_text(new, encoding='utf-8')
         return 0
     schema = {
         '@context': 'https://schema.org',
@@ -103,7 +110,7 @@ def process(fp: Path) -> int:
         return 0
     new = new.replace('</head>', block + '</head>', 1)
     if new != src:
-        fp.write_text(new, encoding='utf-8', newline='')
+        fp.write_text(new, encoding='utf-8')
         return len(faqs)
     return 0
 
@@ -118,7 +125,16 @@ def main() -> int:
             files += 1
             total_q += n
             print(f'  {fp.relative_to(ROOT)}: {n} Q&A')
-    print(f'[faq-from-qa] FAQPage injected into {files} files ({total_q} Q&A total)')
+    # CODE_REVIEW TD-58 — report COVERAGE, not just what changed. `process()`
+    # returns 0 both when the block is already correct and when the anchors
+    # (<h2 id="faq"> / <div class="qa">) stopped matching, so "injected into 0
+    # files" was the same message for "idempotent" and "silently doing
+    # nothing". The standing count makes the difference visible.
+    covered = sum(1 for fp in targets if 'data-faq-auto' in fp.read_text(encoding='utf-8'))
+    extractable = sum(len(extract(fp.read_text(encoding='utf-8'))) for fp in targets)
+    print(f'[faq-from-qa] FAQPage injected into {files} files ({total_q} Q&A written); '
+          f'{covered} article(s) currently carry a generated FAQPage, '
+          f'{extractable} Q&A extractable from .qa markup')
     return 0
 
 
