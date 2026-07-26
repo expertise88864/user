@@ -204,6 +204,12 @@ BUILD_GENERATED_STEPS: list[list[str]] = [
     # instead of the previous build's. Kept after pagefind to preserve the
     # existing pagefind→minify relative order.
     [PY, "_minify.py"],
+    # CODE_REVIEW TD-04 — must run AFTER _minify: minification rewrites inline
+    # script bodies, and a CSP hash has to be of the bytes that actually ship.
+    # _check_deployment.py (CHECK_STEPS) then asserts the CSP covers every
+    # inline script in the built HTML, so an edit without a rebuild fails the
+    # gate instead of silently losing that script in production.
+    [PY, "_gen_csp_hashes.py"],
 ]
 
 CHECK_STEPS: list[list[str]] = [

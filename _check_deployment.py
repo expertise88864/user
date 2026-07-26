@@ -6,6 +6,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT))
+from _html_scan import iter_inline_scripts, selftest as _html_scan_selftest  # noqa: E402
 
 
 def header_map(entry: dict) -> dict[str, str]:
@@ -52,6 +54,150 @@ def forbid_csp_source(errors: list[str], directives: dict[str, list[str]], name:
     sources = set(directives.get(name, []))
     if source in sources:
         errors.append(f"vercel.json: CSP {name} should not include {source}")
+
+
+# --- CODE_REVIEW TD-04 — the inline-script CSP contract -----------------------
+# `_gen_csp_hashes.py` writes a sha256 for every inline script that ships. This
+# is the product assertion for it: if a page's inline script changes and the
+# CSP is not regenerated, that script is silently BLOCKED in production, which
+# is the one failure mode a hash-based CSP can introduce. The gate has to catch
+# it, so this runs over the built HTML rather than trusting the generator.
+#
+# Deliberate asymmetry: the generator hashes an explicit allow-list of executable
+# types, while this checker demands a hash for EVERYTHING except
+# `application/ld+json` (the one type browsers never execute). Broader here is
+# the safe direction — a script type nobody anticipated makes the gate fail and
+# ask for a decision, instead of shipping unhashed.
+#
+# Scope matters as much as coverage. The admin CSPs must carry ONLY the hashes
+# their own pages need: with the site-wide union in there, every public inline
+# body was executable on /admin, including en/reset-sw.html's script, which
+# clears localStorage — where admin.html keeps the GitHub PAT and autosaved
+# drafts. Any markup injection reaching /admin would have had that as a
+# ready-made, CSP-approved gadget. So this asserts BOTH directions: every page's
+# hashes are present in each rule governing it, and the admin rules contain
+# nothing beyond what admin pages actually use.
+SKIP_HTML_DIRS = {".git", "node_modules", "__pycache__", "pagefind"}
+NON_EXECUTABLE_TYPES = {"application/ld+json"}
+MIN_INLINE_HASHES = 20
+MIN_HTML_FILES = 100
+# Same refusal as the generator: this scanner does not model HTML's script
+# double-escaped state, so a body carrying its precondition must not be hashed
+# silently.
+DOUBLE_ESCAPE_MARKERS = ("<!--", "<script")
+
+
+# Documents servable under ANY path, so their hashes belong in EVERY rule:
+# 404.html is the custom error document (a nonexistent /admin/* URL matches the
+# /admin/(.*) header rule but is answered with 404.html), and offline.html is
+# the service worker's navigation fallback.
+ANY_PATH_DOCUMENTS = {"404.html", "offline.html"}
+
+
+def csp_rule_governs(source: str, rel: str) -> bool:
+    """Does a vercel.json header `source` pattern govern this HTML file?
+
+    Derived from the pattern itself rather than a hardcoded scope list, so a
+    new or renamed admin route is classified correctly without editing this.
+    """
+    if rel in ANY_PATH_DOCUMENTS:
+        return True
+    clean = rel[: -len(".html")] if rel.endswith(".html") else rel
+    if source == "/(.*)":
+        return True
+    if source.endswith("/(.*)"):
+        return rel.startswith(source[1:-len("(.*)")])
+    return source.lstrip("/") in (rel, clean)
+
+
+def check_inline_script_hashes(errors: list[str], config: dict) -> None:
+    import base64
+    import hashlib
+
+    # The scanner that decides which bodies get hashed is shared with the
+    # generator, so a regression in it would make both agree on the wrong
+    # answer. Its fixtures run here, in the gate.
+    errors.extend(_html_scan_selftest())
+
+    csps = [
+        (entry.get("source", "?"), kv.get("value", ""))
+        for entry in config.get("headers", [])
+        for kv in entry.get("headers", [])
+        if kv.get("key", "").lower() == "content-security-policy"
+    ]
+    if not csps:
+        errors.append("vercel.json: no Content-Security-Policy rule found at all")
+        return
+
+    for source, csp in csps:
+        directives = parse_csp(csp)
+        if "'unsafe-inline'" in directives.get("script-src", []):
+            errors.append(
+                f"vercel.json: {source} script-src still allows 'unsafe-inline' — "
+                f"run _gen_csp_hashes.py (TD-04)"
+            )
+
+    required: dict[str, str] = {}
+    per_file: dict[str, set[str]] = {}
+    files = 0
+    for path in sorted(ROOT.rglob("*.html")):
+        if any(part in SKIP_HTML_DIRS for part in path.relative_to(ROOT).parts):
+            continue
+        files += 1
+        rel = path.relative_to(ROOT).as_posix()
+        for attrs, body in iter_inline_scripts(path.read_text(encoding="utf-8")):
+            if not body.strip():
+                continue
+            if attrs.get("type", "").strip().lower() in NON_EXECUTABLE_TYPES:
+                continue
+            lowered = body.lower()
+            if all(marker in lowered for marker in DOUBLE_ESCAPE_MARKERS):
+                errors.append(
+                    f"{rel}: an inline script contains both '<!--' and '<script', the "
+                    f"precondition for HTML's script double-escaped state. The CSP scanner "
+                    f"does not model it, so the hash could cover a truncated body and the "
+                    f"script would be blocked in production"
+                )
+                continue
+            digest = base64.b64encode(hashlib.sha256(body.encode("utf-8")).digest()).decode()
+            token = f"'sha256-{digest}'"
+            required.setdefault(token, rel)
+            per_file.setdefault(rel, set()).add(token)
+
+    if files < MIN_HTML_FILES or len(required) < MIN_INLINE_HASHES:
+        errors.append(
+            f"inline-script scan found {len(required)} hash(es) across {files} file(s) "
+            f"(expected >= {MIN_INLINE_HASHES} / {MIN_HTML_FILES}) — the scan is broken, so "
+            f"a pass here would mean nothing"
+        )
+        return
+
+    for source, csp in csps:
+        allowed = set(parse_csp(csp).get("script-src", []))
+        governed = {rel: hs for rel, hs in per_file.items() if csp_rule_governs(source, rel)}
+        needed = set().union(*governed.values()) if governed else set()
+
+        missing = sorted(needed - allowed)
+        if missing:
+            owners = {h: rel for rel, hs in governed.items() for h in hs}
+            shown = ", ".join(f"{owners[h]} ({h[:24]}…)" for h in missing[:3])
+            errors.append(
+                f"vercel.json: {source} script-src is missing {len(missing)} inline-script "
+                f"hash(es) — those scripts would be BLOCKED in production. First: {shown}. "
+                f"Run `python _gen_csp_hashes.py` (it runs automatically in `build`)"
+            )
+
+        # Minimality, admin scopes only. The global rule legitimately carries the
+        # union; a narrow rule carrying hashes none of its pages use hands an
+        # attacker pre-approved script bodies (see the note above).
+        if source != "/(.*)":
+            extra = sorted(h for h in allowed if h.startswith("'sha256-") and h not in needed)
+            if extra:
+                errors.append(
+                    f"vercel.json: {source} script-src carries {len(extra)} inline-script "
+                    f"hash(es) that no page it governs uses — a narrow scope must not accept "
+                    f"other pages' script bodies. Run `python _gen_csp_hashes.py`"
+                )
 
 
 def main() -> int:
@@ -183,12 +329,28 @@ def main() -> int:
             "python _run_quality.py regen",
             "python _gen_search_index.py",
             "python _minify.py",
+            "python _gen_csp_hashes.py",
             "python _run_quality.py check",
             "git add -A",
             "git commit --amend --no-edit",
         ]:
             if command not in quality:
                 errors.append(f"quality.yml: canonical auto-regen missing {command}")
+        # CODE_REVIEW TD-04 — quality.yml hand-copies the local BUILD pipeline
+        # instead of calling it, so the two can drift. Presence alone is not
+        # enough here: the CSP hashes must be regenerated AFTER minification,
+        # because minification rewrites inline script bodies. Assert the order
+        # at every _minify.py call site — the workflow retries the whole block
+        # on a push race, and a missing generator in the retry path would ship a
+        # stale CSP that blocks inline scripts in production.
+        for segment in quality.split("python _minify.py")[1:]:
+            head = segment.lstrip()
+            if not head.startswith("python _gen_csp_hashes.py"):
+                errors.append(
+                    "quality.yml: every `python _minify.py` must be immediately followed by "
+                    "`python _gen_csp_hashes.py` — minification rewrites inline scripts, so a "
+                    "CSP generated before it would block them (TD-04)"
+                )
 
     runner = (ROOT / "_run_quality.py").read_text(encoding="utf-8", errors="replace")
     date_step = '[PY, "_normalize_date_modified.py"]'
@@ -252,12 +414,10 @@ def main() -> int:
         required_sources = {
             "script-src": [
                 "'self'",
-                "'unsafe-inline'",
                 "https://www.googletagmanager.com",
                 "https://pagead2.googlesyndication.com",
                 "https://www.clarity.ms",
                 "https://*.clarity.ms",
-                "https://unpkg.com",
             ],
             "style-src": ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
             # 2026-05-25 — img-src tightened: was `'self' data: https: blob:`
@@ -308,8 +468,18 @@ def main() -> int:
         ):
             forbid_csp_source(errors, directives, "connect-src", admin_only)
         forbid_csp_source(errors, directives, "script-src", "https://fonts.googleapis.com")
+        # CODE_REVIEW TD-61 — unpkg was allowed for the CDN option of web-vitals.
+        # OPEN_SOURCE_INTEGRATIONS.md offered "import from unpkg OR self-host the
+        # iife build (recommended for CSP + offline reliability)" and the repo
+        # took the self-hosted path: /assets/web-vitals.iife.js. Nothing has
+        # fetched unpkg since, so the allowance was a third-party script origin
+        # granted to every page for nothing. Removed, and forbidden so it cannot
+        # come back without someone deciding to.
+        forbid_csp_source(errors, directives, "script-src", "https://unpkg.com")
         # 2026-05-25 — block the wildcard https: from sneaking back into img-src.
         forbid_csp_source(errors, directives, "img-src", "https:")
+
+    check_inline_script_hashes(errors, config)
 
     if errors:
         print("[FAIL] Deployment config audit found issues:")

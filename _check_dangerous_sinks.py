@@ -81,11 +81,11 @@ INNERHTML_ALLOWLIST = frozenset({
     "dashboard.html",
     "index.html",
     "en/index.html",
-    # Private, noindex, robots-disallowed service-worker reset utility (declared
-    # as an expected private page by _check_index_boundaries.py). Its sinks
-    # interpolate a registration count and a browser Error message, not user
-    # input. See TECH_DEBT TD-36: could use textContent instead.
-    "en/reset-sw.html",
+    # CODE_REVIEW TD-36 — `en/reset-sw.html` used to be exempted here because it
+    # built its result lines with innerHTML. It now uses the same
+    # textContent-based setResult() helper as the zh reset-sw.html, so the
+    # exemption is gone rather than left standing: an allowlist entry that no
+    # longer needs to be there is a hole waiting for the next sink.
     "admin/admin-extras.js",
     "admin/edit.html",
     "blog/blog-shared.js",

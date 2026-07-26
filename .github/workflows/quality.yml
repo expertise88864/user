@@ -34,6 +34,7 @@ jobs:
           python _run_quality.py regen
           python _gen_search_index.py
           python _minify.py
+          python _gen_csp_hashes.py
           python _run_quality.py check
       - name: Commit + push with retry on race
         run: |
@@ -64,6 +65,7 @@ jobs:
             python _run_quality.py regen
             python _gen_search_index.py
             python _minify.py
+            python _gen_csp_hashes.py
             python _run_quality.py check
             git add -A
             if ! git diff --cached --quiet; then

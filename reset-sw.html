@@ -14,7 +14,19 @@ span.className = className;
 span.textContent = text;
 target.appendChild(span);
 }
+// CODE_REVIEW TD-63 — refuse to run anywhere but this page. Everything below
+// is ORIGIN-scoped, not path-scoped: it unregisters service workers and clears
+// caches, localStorage, sessionStorage and IndexedDB for the whole site, which
+// is where the admin editor keeps its autosaved drafts and its GitHub token.
+// Since the CSP now allows this exact script body by hash on every page, a
+// markup injection elsewhere could replay it verbatim as a ready-made
+// destructive gadget. The pathname guard makes the body inert off its own page.
+function onResetPage() {
+var p = location.pathname.replace(/\.html$/, '');
+return p === '/reset-sw' || p === '/en/reset-sw';
+}
 (async function reset() {
+if (!onResetPage()) return;
 // Step 1: unregister SW
 try {
 if ('serviceWorker' in navigator) {

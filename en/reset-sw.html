@@ -5,7 +5,32 @@
 </details>
 <script>const log = document.getElementById('log');
 function L(msg) { log.textContent += msg + '\n'; }
+// CODE_REVIEW TD-36 — the same helper reset-sw.html already uses. This EN copy
+// had diverged and still built its result lines with innerHTML and a template
+// literal, interpolating a browser Error message straight into markup. Not
+// user input, so not an XSS today, but there is no reason for a markup sink
+// here at all.
+function setResult(id, className, text) {
+const target = document.getElementById(id);
+target.textContent = '';
+const span = document.createElement('span');
+span.className = className;
+span.textContent = text;
+target.appendChild(span);
+}
+// CODE_REVIEW TD-63 — refuse to run anywhere but this page. Everything below
+// is ORIGIN-scoped, not path-scoped: it unregisters service workers and clears
+// caches, localStorage, sessionStorage and IndexedDB for the whole site, which
+// is where the admin editor keeps its autosaved drafts and its GitHub token.
+// Since the CSP now allows this exact script body by hash on every page, a
+// markup injection elsewhere could replay it verbatim as a ready-made
+// destructive gadget. The pathname guard makes the body inert off its own page.
+function onResetPage() {
+var p = location.pathname.replace(/\.html$/, '');
+return p === '/reset-sw' || p === '/en/reset-sw';
+}
 (async function reset() {
+if (!onResetPage()) return;
 // Step 1: unregister SW
 try {
 if ('serviceWorker' in navigator) {
@@ -15,12 +40,12 @@ for (const r of regs) {
 const ok = await r.unregister();
 L(`  unregister ${r.scope} → ${ok}`);
 }
-document.getElementById('r1').innerHTML = `<span class="ok">✓ 取消註冊 ${regs.length} 個 SW</span>`;
+setResult('r1', 'ok', `✓ 取消註冊 ${regs.length} 個 SW`);
 } else {
-document.getElementById('r1').innerHTML = `<span class="ok">✓ 此瀏覽器不支援 SW(無事可做)</span>`;
+setResult('r1', 'ok', `✓ 此瀏覽器不支援 SW(無事可做)`);
 }
 } catch (e) {
-document.getElementById('r1').innerHTML = `<span class="err">✗ ${e.message}</span>`;
+setResult('r1', 'err', `✗ ${e.message}`);
 L('  err: ' + e);
 }
 // Step 2: clear all caches
@@ -32,12 +57,12 @@ for (const k of keys) {
 await caches.delete(k);
 L(`  deleted ${k}`);
 }
-document.getElementById('r2').innerHTML = `<span class="ok">✓ 刪掉 ${keys.length} 個快取</span>`;
+setResult('r2', 'ok', `✓ 刪掉 ${keys.length} 個快取`);
 } else {
-document.getElementById('r2').innerHTML = `<span class="ok">✓ 無 cache API</span>`;
+setResult('r2', 'ok', `✓ 無 cache API`);
 }
 } catch (e) {
-document.getElementById('r2').innerHTML = `<span class="err">✗ ${e.message}</span>`;
+setResult('r2', 'err', `✗ ${e.message}`);
 }
 // Step 3: clear storage
 try {
@@ -51,13 +76,13 @@ for (const db of dbs) {
 if (db.name) { indexedDB.deleteDatabase(db.name); count++; }
 }
 }
-document.getElementById('r3').innerHTML = `<span class="ok">✓ 清掉 ${count} 個 storage 項目</span>`;
+setResult('r3', 'ok', `✓ 清掉 ${count} 個 storage 項目`);
 L(`Cleared ${count} storage items`);
 } catch (e) {
-document.getElementById('r3').innerHTML = `<span class="err">✗ ${e.message}</span>`;
+setResult('r3', 'err', `✗ ${e.message}`);
 }
 // Step 4: done
-document.getElementById('r4').innerHTML = '<span class="ok">✓ 全部完成。請點上面按鈕進入新版首頁。</span>';
+setResult('r4', 'ok', `✓ 全部完成。請點上面按鈕進入新版首頁。`);
 L('\nAll done. Click the button to navigate.');
 })();</script>
 </main><script>document.getElementById('resetHome')?.addEventListener('click',()=>{location.href='/?fresh='+Date.now();});document.getElementById('resetBlog')?.addEventListener('click',()=>{location.href='/blog/?fresh='+Date.now();});</script></body></html>

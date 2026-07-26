@@ -98,6 +98,141 @@ def iter_tags(dom: str) -> Iterator[tuple[int, str]]:
                 i = close.start()
 
 
+# HTML5 "script data end tag name state": `</script` only closes the element
+# when the next character is whitespace, `/` or `>`.
+_SCRIPT_END_FOLLOWERS = "\t\n\f\r />"
+
+# Regions where a `<script>` is TEXT, not markup: HTML comments and RCDATA.
+# CODE_REVIEW TD-04 — without masking these, `<textarea><script>example</textarea>`
+# sitting before a real inline script made the scanner treat the inert text as an
+# opening tag, consume the REAL script's closing tag, and hash a phantom body
+# spanning both — leaving the real script unhashed and therefore blocked in
+# production. _minify.py deliberately preserves textarea contents, and admin.html
+# is built on textareas, so this is reachable. Masking is length-preserving so
+# every body outside the masked region stays byte-identical.
+_INERT_REGION_RE = re.compile(
+    r"<!--[\s\S]*?-->|<(textarea|title)\b[^>]*>[\s\S]*?</\1\s*>", re.I
+)
+
+
+def mask_inert_regions(html: str) -> str:
+    """Blank comments and RCDATA interiors, preserving length and newlines."""
+    return _INERT_REGION_RE.sub(lambda m: re.sub(r"[^\n]", " ", m.group(0)), html)
+
+
+def _find_script_end(lowered: str, start: int) -> int:
+    """Index of the `</script` that really closes the element, or -1.
+
+    CODE_REVIEW TD-04 — a plain `find("</script")` also matches the prefix of
+    `</scripture>`, which is ordinary text inside a script to a browser. The
+    body would then be hashed truncated while the browser hashes the whole
+    thing, and the script would be silently blocked in production — with the
+    checker agreeing, because it shares this scanner.
+    """
+    pos = start
+    while True:
+        idx = lowered.find("</script", pos)
+        if idx == -1:
+            return -1
+        nxt = idx + len("</script")
+        if nxt >= len(lowered) or lowered[nxt] in _SCRIPT_END_FOLLOWERS:
+            return idx
+        pos = nxt
+
+
+def iter_inline_scripts(html: str):
+    """Yield (attrs, body) for every <script> WITHOUT a src attribute.
+
+    CODE_REVIEW TD-04 — the CSP hash generator and its checker each had their
+    own `\\bsrc\\s*=` / `type\\s*=` substring tests. `\\b` sits between `-` and
+    `s`, so `data-src="x"` matched as a real `src` and the script was skipped
+    as external; `data-type="application/ld+json"` was read as the script's
+    type and the body treated as inert. Either mistake means an executable
+    script ships with no hash and is BLOCKED in production — and because both
+    sides made the same mistake, the gate agreed. Attribute names are parsed
+    and compared exactly here, once, for both.
+    """
+    # Scan positions are taken from a masked copy so an inert `<script>` inside
+    # a comment or a textarea cannot be mistaken for markup; bodies are still
+    # sliced out of the ORIGINAL string, which the mask leaves byte-identical
+    # everywhere outside those regions.
+    masked = mask_inert_regions(html)
+    lowered = masked.lower()
+    pos = 0
+    while True:
+        start = lowered.find("<script", pos)
+        if start == -1:
+            return
+        after = start + len("<script")
+        if after < len(html) and (html[after].isalnum() or html[after] in "-_:"):
+            pos = after
+            continue
+        i = after
+        quote = ""
+        while i < len(html):
+            c = html[i]
+            if quote:
+                if c == quote:
+                    quote = ""
+            elif c in "\"'":
+                quote = c
+            elif c == ">":
+                break
+            i += 1
+        attrs = attributes("<script" + html[after:i + 1])
+        end = _find_script_end(lowered, i + 1)
+        if end == -1:
+            return
+        body = html[i + 1:end]
+        close = html.find(">", end)
+        pos = (close + 1) if close != -1 else end + len("</script")
+        if "src" in attrs:
+            continue
+        yield attrs, body
+
+
+def selftest() -> list[str]:
+    """Fixtures for iter_inline_scripts, run from the gate.
+
+    CODE_REVIEW TD-04 — this scanner decides which bodies get a CSP hash, and
+    the generator and the checker BOTH use it, so a regression here makes them
+    agree on the wrong answer and silently blocks a script in production. There
+    is no unit-test harness in this repo (TD-15), so the fixtures live here and
+    _check_deployment.py runs them as part of the gate. Each case is a bug that
+    was actually found and fixed, not a hypothetical.
+    """
+    q = chr(34)
+    cases = [
+        # (html, expected [(type, body)], label)
+        ("<script>run()</script>", [("", "run()")], "plain"),
+        ("<script src=/a.js></script><script>x()</script>", [("", "x()")],
+         "external skipped"),
+        ("<script data-src=" + q + "x" + q + ">run()</script>", [("", "run()")],
+         "data-src is not src"),
+        ("<script data-type=" + q + "application/ld+json" + q + ">run()</script>",
+         [("", "run()")], "data-type is not type"),
+        ("<script type=" + q + "application/ld+json" + q + ">{}</script>",
+         [("application/ld+json", "{}")], "ld+json keeps its type"),
+        ("<script>const x = " + q + "</scripture>" + q + ";</script>",
+         [("", "const x = " + q + "</scripture>" + q + ";")],
+         "</scripture> is not a close tag"),
+        ("<script>a=1</script >b<script>c=2</script>", [("", "a=1"), ("", "c=2")],
+         "close tag with a space"),
+        ("<textarea><script>example</textarea><script>real()</script>",
+         [("", "real()")], "inert <script> inside a textarea"),
+        ("<!-- <script>x</script> --><script>real()</script>", [("", "real()")],
+         "inert <script> inside a comment"),
+        ("<title><script>t</script></title><script>real()</script>",
+         [("", "real()")], "inert <script> inside a title"),
+    ]
+    failures = []
+    for html, want, label in cases:
+        got = [(a.get("type", ""), b) for a, b in iter_inline_scripts(html)]
+        if got != want:
+            failures.append(f"_html_scan selftest [{label}]: expected {want!r}, got {got!r}")
+    return failures
+
+
 def tag_name(tag: str) -> str:
     m = TAG_NAME_RE.match(tag)
     return m.group(1).lower() if m else ""
