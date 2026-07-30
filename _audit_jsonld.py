@@ -87,14 +87,12 @@ def jsonld_blocks(src: str):
 
 
 PHYSICIAN_ID = f"{DOMAIN}/about#physician"
-# Two forms are legitimately in use and both are defensible, so both are
-# accepted rather than one being imposed: the DEFINITION nodes (about.html,
-# index.html) model it the schema.org way — name "陳翊嘉" with honorificSuffix
-# "M.D." and givenName/familyName alongside — while _normalize_schema's
-# reference form carries the honorific inline. Which one the site should settle
-# on is the physician's call (TD-72); what this rule exists to catch is a name
-# that is NEITHER, which is how a probe sentinel reached production.
-PHYSICIAN_NAMES = {"陳翊嘉", "陳翊嘉 醫師"}
+# CODE_REVIEW TD-72 — this used to accept two spellings, because the site was
+# publishing two and choosing between them was the physician's call. It now
+# publishes one: "陳翊嘉 醫師", the form every page visibly displays in both
+# locales, sourced from a single constant in _normalize_schema. An @id exists
+# to say "this is the same person"; two names under it says the opposite.
+PHYSICIAN_NAMES = {"陳翊嘉 醫師"}
 
 
 def require_ref_object(rel: str, typ: str, field: str, value, errors: list[str]) -> None:

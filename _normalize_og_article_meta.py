@@ -33,7 +33,10 @@ DOMAIN = "https://chendermatologist.com"
 sys.path.insert(0, str(ROOT))
 from _normalize_social_images import image_size  # noqa: E402
 AUTHOR_URL = f"{DOMAIN}/about"
-AUTHOR_NAME = "陳翊嘉醫師"
+# CODE_REVIEW TD-72 — this was a third spelling of the same person ("陳翊嘉醫師",
+# no space) sitting in twitter:data2 while the JSON-LD graph carried two others.
+# Imported rather than re-typed so there is one place the author's name exists.
+from _normalize_schema import PHYSICIAN_NAME as AUTHOR_NAME  # noqa: E402
 
 # Map cat -> human-readable section label (mirrors _normalize_schema.py).
 CAT_TO_SECTION = {

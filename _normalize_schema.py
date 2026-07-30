@@ -20,10 +20,28 @@ DOMAIN = "https://chendermatologist.com"
 PHYSICIAN_ID = f"{DOMAIN}/about#physician"
 
 
+# CODE_REVIEW TD-72 — one @id was publishing two names. The definition nodes
+# (about.html, index.html and their EN mirrors) said "陳翊嘉" while the 367
+# reference nodes said "陳翊嘉 醫師", so a consumer merging the graph saw the
+# same person under two identities — the opposite of what an @id is for, and on
+# a YMYL site the author entity IS the E-E-A-T signal.
+#
+# "陳翊嘉 醫師" wins because it is what every page visibly displays, in both
+# locales, including the About page's own H1 — Google asks that markup match
+# the visible content — and because it was already 367 nodes against 4. The
+# structured parts stay on the definition node: honorificSuffix "M.D.",
+# givenName 翊嘉, familyName 陳, alternateName "Chen, Yi-Jia". schema.org does
+# not require name to equal givenName + familyName, so nothing is lost by the
+# displayed form carrying the title.
+#
+# It is ONE constant on purpose. Two lists that happen to agree today is the
+# shape this repo has now been bitten by three times (TD-66, TD-05, this).
+PHYSICIAN_NAME = "陳翊嘉 醫師"
+
 PHYSICIAN_REF = {
     "@type": "Physician",
     "@id": PHYSICIAN_ID,
-    "name": "陳翊嘉 醫師",
+    "name": PHYSICIAN_NAME,
 }
 
 # 2026-05-17: schema.org's MedicalScholarlyArticle is for peer-reviewed
@@ -231,7 +249,10 @@ def physician_schema(existing: dict | None = None) -> dict:
         "@context": "https://schema.org",
         "@type": "Physician",
         "@id": PHYSICIAN_ID,
-        "name": obj.get("name") or "陳翊嘉",
+        # Direct assignment, not `obj.get("name") or …`: the whole point of
+        # TD-72 is that a drifted name must be CORRECTED, and a preserving
+        # fallback is exactly how the two forms stayed apart.
+        "name": PHYSICIAN_NAME,
         "alternateName": obj.get("alternateName") or ["Dr. Chen Yi-Jia", "Yi-Jia Chen, M.D."],
         "honorificPrefix": obj.get("honorificPrefix") or "Dr.",
         "jobTitle": obj.get("jobTitle") or "Dermatology Resident Physician",
