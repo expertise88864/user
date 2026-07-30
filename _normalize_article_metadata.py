@@ -38,6 +38,32 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = Path(__file__).resolve().parent
+
+# CODE_REVIEW TD-74 — the physician's record of when he last read each article.
+# Declared, never derived: nothing in this pipeline may advance a medical
+# review date, because nothing in this pipeline performs a medical review.
+# Seeded from the dates the site was already publishing, so it froze the
+# existing claim rather than inventing a new one; correcting those to real
+# review dates is the physician's job (TD-75).
+REVIEW_DATES_FILE = ROOT / "_review_dates.json"
+
+
+def _load_review_dates() -> dict[str, str]:
+    if not REVIEW_DATES_FILE.exists():
+        print(f"[article-meta] WARN {REVIEW_DATES_FILE.name} missing — every "
+              f"article keeps the lastReviewed it already has", file=sys.stderr)
+        return {}
+    try:
+        data = json.loads(REVIEW_DATES_FILE.read_text(encoding="utf-8"))
+    except (ValueError, OSError) as exc:
+        print(f"[article-meta] WARN {REVIEW_DATES_FILE.name} unreadable ({exc})",
+              file=sys.stderr)
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+REVIEW_DATES = _load_review_dates()
+_unledgered: set[str] = set()
 BLOG = ROOT / "blog"
 EN_BLOG = ROOT / "en" / "blog"
 INDEX = ROOT / "index.html"
@@ -249,8 +275,29 @@ def process_article(fp: Path, homepage_tags: dict[str, dict[str, str]],
             obj["keywords"] = keywords_str
 
         # ----- lastReviewed -----
-        if last_mod:
-            obj["lastReviewed"] = last_mod
+        # CODE_REVIEW TD-74 — this field is NOT DERIVED. It is a claim that a
+        # physician reviewed the page on that date, so it is read from a
+        # ledger the physician owns and is never computed from anything.
+        #
+        # Two wrong versions preceded this one. It first called
+        # git_last_modified(), so every rebuild advanced it — a typo fix on a
+        # new day moved it on 96 articles. It was then made to mirror
+        # dateModified, which is better but still wrong: an automated edit to
+        # the prose is not a physician reading the page either, and the gate
+        # rule enforcing that mirror was enforcing the false equivalence.
+        #
+        # A stale review date is a much smaller fault than one the site
+        # manufactures on its own, so an unknown slug keeps whatever the page
+        # already had and says so, rather than inventing a date.
+        reviewed = REVIEW_DATES.get(slug, "")
+        if not re.match(r"^\d{4}-\d{2}-\d{2}$", reviewed):
+            reviewed = str(obj.get("lastReviewed") or "")[:10]
+            if re.match(r"^\d{4}-\d{2}-\d{2}$", reviewed):
+                _unledgered.add(slug)
+            else:
+                reviewed = ""
+        if reviewed:
+            obj["lastReviewed"] = reviewed
 
         # ----- audience differentiation -----
         if clinical:
@@ -305,7 +352,12 @@ def main() -> int:
             total += 1
     print(f"[article-meta] injected keywords + lastReviewed + audience "
           f"into {total} article files ({len(homepage_tags)} homepage "
-          f"tags loaded)")
+          f"tags loaded, {len(REVIEW_DATES)} review dates)")
+    if _unledgered:
+        print(f"[article-meta] WARN no review date recorded for "
+              f"{len(_unledgered)} article(s); they keep the date already on "
+              f"the page. Add them to {REVIEW_DATES_FILE.name}: "
+              f"{', '.join(sorted(_unledgered)[:8])}", file=sys.stderr)
     return 0
 
 

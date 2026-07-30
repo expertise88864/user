@@ -86,12 +86,58 @@ def jsonld_blocks(src: str):
         yield i, m.group(1).strip()
 
 
+PHYSICIAN_ID = f"{DOMAIN}/about#physician"
+# Two forms are legitimately in use and both are defensible, so both are
+# accepted rather than one being imposed: the DEFINITION nodes (about.html,
+# index.html) model it the schema.org way — name "陳翊嘉" with honorificSuffix
+# "M.D." and givenName/familyName alongside — while _normalize_schema's
+# reference form carries the honorific inline. Which one the site should settle
+# on is the physician's call (TD-72); what this rule exists to catch is a name
+# that is NEITHER, which is how a probe sentinel reached production.
+PHYSICIAN_NAMES = {"陳翊嘉", "陳翊嘉 醫師"}
+
+
 def require_ref_object(rel: str, typ: str, field: str, value, errors: list[str]) -> None:
     if not isinstance(value, dict):
         errors.append(f"{rel}: {typ}.{field} should be an object reference")
         return
     if not (value.get("@id") or value.get("name")):
         errors.append(f"{rel}: {typ}.{field} missing @id or name")
+
+
+def check_physician_identity(rel: str, nodes: list[dict]) -> list[str]:
+    """Anything claiming to BE the physician must spell his name correctly.
+
+    CODE_REVIEW TD-66 — a measurement probe of mine appended a sentinel to
+    PHYSICIAN_REF's name, ran the normalizer, and restored only blog/. The
+    normalizer writes the whole site, so dashboard.html and tools.html shipped
+    the physician's name with `TD66-PROPAGATION-PROBE` glued to it — on two
+    public YMYL pages, through a gate that was entirely green. Nothing checked
+    the NAME: require_ref_object() accepts any reference carrying an @id, and
+    the article-field check reads blog/ only and compares the @id.
+
+    On a medical site the author's identity is the E-E-A-T signal, so it is
+    worth asserting exactly rather than structurally.
+    """
+    problems: list[str] = []
+
+    def walk(value) -> None:
+        if isinstance(value, dict):
+            if value.get("@id") == PHYSICIAN_ID:
+                name = value.get("name")
+                if name is not None and name not in PHYSICIAN_NAMES:
+                    problems.append(
+                        f"{rel}: a node claiming to be the physician spells the "
+                        f"name {name!r}, which is neither of the accepted forms "
+                        f"{sorted(PHYSICIAN_NAMES)}")
+            for item in value.values():
+                walk(item)
+        elif isinstance(value, list):
+            for item in value:
+                walk(item)
+
+    walk(nodes)
+    return problems
 
 
 def audit_object(rel: str, canonical: str, obj: dict, errors: list[str], type_counts: dict[str, int]) -> None:
@@ -136,10 +182,18 @@ def audit_object(rel: str, canonical: str, obj: dict, errors: list[str], type_co
         expected_id = canonical + "#webpage" if canonical else ""
         if expected_id and obj.get("@id") != expected_id:
             errors.append(f"{rel}: MedicalWebPage @id should be {expected_id}")
-        if "/blog/" in canonical:
-            main = obj.get("mainEntity")
-            if not isinstance(main, dict) or main.get("@id") != canonical + "#article":
-                errors.append(f"{rel}: MedicalWebPage mainEntity should point to article @id")
+        # CODE_REVIEW TD-66 — this used to REQUIRE
+        # `mainEntity -> <canonical>#article` on every blog MedicalWebPage,
+        # without ever asking whether such a node exists. On the 48
+        # non-research articles it does not: that block IS the article, and
+        # _normalize_schema had renamed it to `#webpage`. So the checker and
+        # the generator agreed on a shape that pointed at nothing, which is the
+        # most durable kind of wrong. The rule is now conditional, and
+        # dangling_same_page_refs() enforces that whatever it points at
+        # resolves.
+        main = obj.get("mainEntity")
+        if isinstance(main, dict) and main.get("@id") == obj.get("@id"):
+            errors.append(f"{rel}: MedicalWebPage mainEntity points at itself")
         for field in ("author", "reviewedBy"):
             require_ref_object(rel, "MedicalWebPage", field, obj.get(field), errors)
 
@@ -147,6 +201,69 @@ def audit_object(rel: str, canonical: str, obj: dict, errors: list[str], type_co
         entities = obj.get("mainEntity")
         if not isinstance(entities, list) or not entities:
             errors.append(f"{rel}: FAQPage mainEntity should be a non-empty list")
+
+
+def dangling_same_page_refs(rel: str, canonical: str,
+                            nodes: list[dict]) -> list[str]:
+    """A `{"@id": …}` pointing at THIS page must resolve to a node on it.
+
+    CODE_REVIEW TD-66 — _normalize_schema wrote
+    `mainEntity: {"@id": <canonical>#article}` onto every blog MedicalWebPage,
+    but on the 48 non-research articles no `#article` node exists: that block
+    WAS the article, and the same branch had renamed it to `#webpage`. So 48
+    pages pointed at themselves through an identifier that resolves to
+    nothing, and nothing noticed.
+
+    Scoped to same-page fragments on purpose. Cross-page identifiers are
+    normal here and must not be flagged: PHYSICIAN_REF points at
+    /about#physician, and `mentions` points at glossary entries.
+    """
+    if not canonical:
+        return []
+    # An @id is DEFINED by any object that also carries other keys, at any
+    # depth: index.html defines #logo inside the Organization node's `logo`,
+    # not as a sibling. Collecting only top-level @ids reported that as
+    # dangling — a false positive found while writing this check.
+    present: set[str] = set()
+
+    def collect(value) -> None:
+        if isinstance(value, dict):
+            ref = value.get("@id")
+            if isinstance(ref, str) and len(value) > 1:
+                present.add(ref)
+            for item in value.values():
+                collect(item)
+        elif isinstance(value, list):
+            for item in value:
+                collect(item)
+
+    collect(nodes)
+    problems: list[str] = []
+    seen: set[tuple[str, str]] = set()
+
+    def walk(value, field: str) -> None:
+        if isinstance(value, dict):
+            ref = value.get("@id")
+            # A bare reference: an @id and nothing that defines a node.
+            if ref and len(value) == 1 and isinstance(ref, str):
+                if ref.startswith(canonical + "#") and ref not in present:
+                    key = (field, ref)
+                    if key not in seen:
+                        seen.add(key)
+                        problems.append(
+                            f"{rel}: {field} points at {ref}, which is not a node "
+                            f"on this page")
+                return
+            for key, item in value.items():
+                if key != "@id":
+                    walk(item, key)
+        elif isinstance(value, list):
+            for item in value:
+                walk(item, field)
+
+    for node in nodes:
+        walk(node, "@graph")
+    return problems
 
 
 def main() -> int:
@@ -161,6 +278,7 @@ def main() -> int:
         canonical = canonical_of(src)
         n_files += 1
         page_types: list[str] = []
+        page_nodes: list[dict] = []
 
         for index, raw in jsonld_blocks(src):
             n_blocks += 1
@@ -176,6 +294,10 @@ def main() -> int:
                     continue
                 page_types.extend(type_list(obj.get("@type")))
                 audit_object(rel, canonical, obj, errors, type_counts)
+                page_nodes.append(obj)
+
+        errors.extend(dangling_same_page_refs(rel, canonical, page_nodes))
+        errors.extend(check_physician_identity(rel, page_nodes))
 
         if rel.startswith("blog/") and rel not in {"blog/index.html", "blog/topics.html"} and not is_noindex(src):
             # Schema type expectation depends on article category:

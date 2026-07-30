@@ -268,6 +268,65 @@ def webpage_id(meta: dict[str, str]) -> str:
     return meta["canonical"] + "#webpage"
 
 
+def _apply_article_fields(obj: dict, path: Path, meta: dict[str, str],
+                          metrics: dict[str, int] | None,
+                          is_blog_article: bool, primary: bool) -> None:
+    """Write every field an article node carries, for BOTH node roles.
+
+    CODE_REVIEW TD-66 — this used to be two hand-maintained copies: one in the
+    `Article/BlogPosting/MedicalScholarlyArticle` branch, one in the
+    `MedicalWebPage` branch. The first branch is what rewrites a block INTO a
+    MedicalWebPage, so it never matches its own output; from then on a block is
+    only ever touched by the second list. The two had already drifted —
+    `headline`, `publisher` and `mainEntityOfPage` were in the first and not
+    the second, so those three froze at whatever value a block held when it was
+    converted, on all 48 articles that had been through the conversion.
+
+    One list, called from both places, is what stops that happening again.
+
+    `primary` distinguishes the two roles. On a research article the page has
+    a separate `#article` node and the MedicalWebPage is a wrapper around it;
+    everywhere else the MedicalWebPage IS the article, and needs the fields
+    that identify it as such.
+    """
+    obj["author"] = PHYSICIAN_REF
+    obj["reviewedBy"] = PHYSICIAN_REF
+    if meta.get("title"):
+        # MedicalWebPage uses `name`; Article uses `headline`. Set both so the
+        # field is correct regardless of @type.
+        short_title = meta["title"].split("|")[0].strip()
+        obj["name"] = short_title
+        if primary:
+            obj["headline"] = short_title
+    if meta.get("description"):
+        obj["description"] = meta["description"]
+    if primary:
+        obj["publisher"] = PHYSICIAN_REF
+        if meta.get("canonical"):
+            obj["mainEntityOfPage"] = meta["canonical"]
+        obj.setdefault("isAccessibleForFree", True)
+        obj.setdefault("isFamilyFriendly", True)
+        article_image = resolve_article_image(path, meta)
+        if article_image:
+            obj["image"] = article_image
+    if metrics and is_blog_article:
+        obj["wordCount"] = metrics["wordCount"]
+        obj["timeRequired"] = f"PT{metrics['readingMinutes']}M"
+        # Direct assignment (not setdefault) so SPEAKABLE_SPEC updates
+        # propagate to existing blocks. CODE_REVIEW C4 fixed the selector list
+        # to target real DOM (h1 + #proseZh > p + .tldr) instead of the
+        # original nonexistent itemprop ref.
+        obj["speakable"] = SPEAKABLE_SPEC
+        # SEO_AUDIT D4 — accessibilityFeature for a11y signal
+        obj["accessibilityFeature"] = ACCESSIBILITY_FEATURES
+    if is_blog_article:
+        section = _article_section_for_slug(path.stem)
+        if section:
+            obj["articleSection"] = section
+        if meta.get("keywords"):
+            obj["keywords"] = meta["keywords"]
+
+
 def normalize_obj(obj: dict, path: Path, meta: dict[str, str],
                   metrics: dict[str, int] | None = None) -> dict:
     typ = obj.get("@type")
@@ -281,16 +340,18 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str],
     is_blog_article = (meta.get("canonical") and "/blog/" in meta["canonical"]
                        and path.name not in {"index.html", "topics.html"})
 
-    # CODE_REVIEW SEO-2 — this branch is what REWRITES an article block to
-    # MedicalWebPage, and MedicalWebPage is not in the set, so it never matches
-    # its own output: the normalizer is write-once per block. Any later
-    # correction to author / publisher / reviewedBy reaches only articles
-    # written after the change — which is why the TD-05 image fix first landed
-    # on 8 files instead of 55. Recorded as TD-66 rather than fixed here:
-    # simply adding MedicalWebPage to the set retypes the `#webpage` node of
-    # the seven research articles to MedicalScholarlyArticle, and the
-    # insert-if-missing check below then adds a SECOND MedicalWebPage with the
-    # same @id. The image is refreshed on its own, after this branch.
+    # CODE_REVIEW TD-66 — this branch is what REWRITES an article block to
+    # MedicalWebPage, so it never matches its own output: a block passes
+    # through here exactly once, and every run after that it is the
+    # MedicalWebPage branch below that owns it. That is fine as long as the
+    # two agree about what an article node carries — which they did not, so
+    # both now write their fields through _apply_article_fields().
+    #
+    # Adding MedicalWebPage to this set instead would be wrong: it retypes the
+    # `#webpage` node of the seven research articles to
+    # MedicalScholarlyArticle, and the insert-if-missing check further down
+    # then adds a SECOND MedicalWebPage with the same @id. Reproduced before
+    # settling on the split below.
     if typ in {"Article", "BlogPosting", "MedicalScholarlyArticle"}:
         # Keep MedicalScholarlyArticle only for research-summary articles
         # (cat: 'research'); downgrade patient-education articles to
@@ -300,94 +361,33 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str],
                             and _is_research_article(path))
         if meta.get("canonical"):
             obj["@id"] = article_id(meta)
-            obj["mainEntityOfPage"] = meta["canonical"]
         obj["@type"] = "MedicalScholarlyArticle" if is_research_blog else "MedicalWebPage"
-        obj["author"] = PHYSICIAN_REF
-        obj["publisher"] = PHYSICIAN_REF
-        obj["reviewedBy"] = PHYSICIAN_REF
-        obj.setdefault("isAccessibleForFree", True)
-        obj.setdefault("isFamilyFriendly", True)
-        # CODE_REVIEW TD-05 / SEO-2 — this was `obj.setdefault("image", …)`,
-        # and every article's JSON-LD block already carried
-        # image: logo-512.png from an earlier generation, so setdefault never
-        # fired and 55 articles told Google their illustration was the 512x512
-        # site logo. That is the image Search and Discover pick a thumbnail
-        # from, so every article looked identical in the results.
-        #
-        # Direct assignment, like the speakable/accessibility fields below, so
-        # a corrected value propagates into blocks that already exist. The
-        # value is an ImageObject rather than a bare URL: Google's Article
-        # guidance asks for dimensions, and a consumer should not have to
-        # fetch the file to learn them.
-        article_image = resolve_article_image(path, meta)
-        if article_image:
-            obj["image"] = article_image
-        if meta.get("title"):
-            # MedicalWebPage uses `name`; Article uses `headline`.
-            # Set both so the field is correct regardless of @type.
-            short_title = meta["title"].split("|")[0].strip()
-            obj["headline"] = short_title
-            obj["name"] = short_title
-        if meta.get("description"):
-            obj["description"] = meta["description"]
-        if metrics and is_blog_article:
-            obj["wordCount"] = metrics["wordCount"]
-            obj["timeRequired"] = f"PT{metrics['readingMinutes']}M"
-            # Direct assignment (not setdefault) so SPEAKABLE_SPEC updates
-            # propagate to existing blocks. CODE_REVIEW C4 fixed the
-            # selector list to target real DOM (h1 + #proseZh > p +
-            # .tldr) instead of the original nonexistent itemprop ref.
-            obj["speakable"] = SPEAKABLE_SPEC
-            # SEO_AUDIT D4 — accessibilityFeature for a11y signal
-            obj["accessibilityFeature"] = ACCESSIBILITY_FEATURES
-        if is_blog_article:
-            section = _article_section_for_slug(path.stem)
-            if section:
-                obj["articleSection"] = section
-            if meta.get("keywords"):
-                obj["keywords"] = meta["keywords"]
+        _apply_article_fields(obj, path, meta, metrics, is_blog_article, primary=True)
 
     if typ == "MedicalWebPage":
+        # A MedicalWebPage on a blog page is the article itself UNLESS the page
+        # also carries a separate `#article` node — only the research articles
+        # do, where this node is the wrapper around it.
+        primary = not (is_blog_article and _is_research_article(path))
         if meta.get("canonical"):
             obj["@id"] = webpage_id(meta)
-            if "/blog/" in meta["canonical"]:
+            # CODE_REVIEW TD-66 — this used to point at `#article`
+            # unconditionally, and on the 48 non-research articles no such node
+            # exists: the article block was converted to MedicalWebPage and
+            # renamed to `#webpage` by this very branch, so the page ended up
+            # referring to itself through an @id that resolves to nothing.
+            # Measured on all 48. _audit_jsonld now fails on a dangling @id.
+            if is_blog_article and not primary:
                 obj["mainEntity"] = {"@id": article_id(meta)}
-        obj["author"] = PHYSICIAN_REF
-        obj["reviewedBy"] = PHYSICIAN_REF
+            else:
+                obj.pop("mainEntity", None)
         obj.setdefault("about", {"@type": "MedicalSpecialty", "name": "Dermatology"})
-        if meta.get("title"):
-            obj["name"] = meta["title"].split("|")[0].strip()
-        if meta.get("description"):
-            obj["description"] = meta["description"]
-        if metrics and is_blog_article:
-            obj["wordCount"] = metrics["wordCount"]
-            obj["timeRequired"] = f"PT{metrics['readingMinutes']}M"
-            # Direct assignment (not setdefault) so SPEAKABLE_SPEC updates
-            # propagate to existing blocks. CODE_REVIEW C4 fixed the
-            # selector list to target real DOM (h1 + #proseZh > p +
-            # .tldr) instead of the original nonexistent itemprop ref.
-            obj["speakable"] = SPEAKABLE_SPEC
-            # SEO_AUDIT D4 — accessibilityFeature for a11y signal
-            obj["accessibilityFeature"] = ACCESSIBILITY_FEATURES
-        if is_blog_article:
-            section = _article_section_for_slug(path.stem)
-            if section:
-                obj["articleSection"] = section
-            if meta.get("keywords"):
-                obj["keywords"] = meta["keywords"]
+        _apply_article_fields(obj, path, meta, metrics, is_blog_article, primary)
 
-    # CODE_REVIEW TD-05 / SEO-2 — refresh the illustration on blog article
-    # blocks a previous pass already converted to MedicalWebPage. Those blocks
-    # never re-enter the branch above (see TD-66), so without this the 47
-    # oldest articles would keep telling Google their image is the 512x512 site
-    # logo — the picture Search and Discover draw a thumbnail from, which is
-    # why every article looked identical in the results. Scoped to the image
-    # alone: the other write-once fields are a separate, deliberate pass.
-    if typ == "MedicalWebPage" and is_blog_article:
-        article_image = resolve_article_image(path, meta)
-        if article_image:
-            obj["image"] = article_image
-
+    # CODE_REVIEW TD-66 — the standalone image refresh that used to sit here
+    # was the one-field version of this problem, added when only the image was
+    # being fixed. _apply_article_fields() now covers it along with everything
+    # else, so keeping it would be a second place to remember.
     return obj
 
 

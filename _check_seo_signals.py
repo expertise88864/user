@@ -1031,6 +1031,108 @@ def check_lastmod_matches_datemodified() -> None:
         print(f"[OK] sitemap lastmod agrees with dateModified on all {compared} articles")
 
 
+PHYSICIAN_ID = f"{DOMAIN}/about#physician"
+REVIEW_DATES_FILE = ROOT / "_review_dates.json"
+
+
+def _review_dates() -> dict[str, str]:
+    import json
+    try:
+        data = json.loads(REVIEW_DATES_FILE.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+REVIEW_DATES = _review_dates()
+
+
+def check_article_fields_current() -> None:
+    """An article node's fields must match the page they are derived from.
+
+    CODE_REVIEW TD-66 — presence was never the problem. _normalize_schema
+    rewrites an article block INTO a MedicalWebPage and so never matches its
+    own output again; from then on a second, shorter list of fields owned it.
+    `headline`, `publisher` and `mainEntityOfPage` were only in the first list,
+    so they FROZE at whatever value the block held when it was converted —
+    present, well-formed, and silently stale. Three articles were still
+    publishing a headline the page had stopped using.
+
+    Checking the value against its source is what makes that visible; checking
+    that the key exists would not have.
+    """
+    import json
+
+    targets = [p for p in sorted((ROOT / "blog").glob("*.html"))
+               if p.name not in {"index.html", "topics.html"}]
+    bad = 0
+    checked = 0
+    for fp in targets:
+        rel = fp.relative_to(ROOT).as_posix()
+        src = fp.read_text(encoding="utf-8", errors="replace")
+        tm = re.search(r"<title>([\s\S]*?)</title>", src, re.I)
+        cm = re.search(r'<link\s+rel="canonical"\s+href="([^"]*)"', src, re.I)
+        if not tm or not cm:
+            err(rel, "no <title> or no canonical — cannot verify article fields")
+            bad += 1
+            continue
+        expected_title = re.sub(r"\s+", " ", tm.group(1)).split("|")[0].strip()
+        canonical = cm.group(1)
+        for m in re.finditer(r'<script type="application/ld\+json">([\s\S]*?)</script>',
+                             src):
+            try:
+                doc = json.loads(m.group(1))
+            except ValueError:
+                continue
+            for node in (doc.get("@graph") or [doc]):
+                if node.get("@type") not in ("MedicalWebPage", "MedicalScholarlyArticle"):
+                    continue
+                # The primary node is the one that claims to BE the page.
+                if node.get("mainEntityOfPage") != canonical:
+                    continue
+                checked += 1
+                if node.get("name") != expected_title:
+                    err(rel, f"JSON-LD name is stale: {node.get('name')!r} vs the "
+                             f"page's own title {expected_title!r}")
+                    bad += 1
+                if node.get("headline") != expected_title:
+                    err(rel, f"JSON-LD headline is stale: {node.get('headline')!r} "
+                             f"vs {expected_title!r}")
+                    bad += 1
+                for field in ("author", "publisher", "reviewedBy"):
+                    value = node.get(field)
+                    if not isinstance(value, dict) or value.get("@id") != PHYSICIAN_ID:
+                        err(rel, f"{field} is not the physician reference: {value!r}")
+                        bad += 1
+                # CODE_REVIEW TD-74 — lastReviewed is a claim that a physician
+                # REVIEWED this page on that date. It must equal what the
+                # physician recorded, and must not be derived from anything the
+                # pipeline can move on its own.
+                #
+                # An earlier version of this rule required
+                # lastReviewed == dateModified. That was itself the bug: an
+                # automated edit to the prose moves dateModified, so the rule
+                # was enforcing "editing the text counts as a medical review".
+                # The gate has to compare against the declaration.
+                reviewed = str(node.get("lastReviewed") or "")[:10]
+                declared = REVIEW_DATES.get(fp.stem)
+                if declared and reviewed != declared:
+                    err(rel, f"lastReviewed {reviewed!r} does not match the "
+                             f"recorded review date {declared!r} — nothing in "
+                             f"the pipeline may move a medical review claim")
+                    bad += 1
+                elif not declared:
+                    err(rel, f"no review date recorded in "
+                             f"{REVIEW_DATES_FILE.name} for this article")
+                    bad += 1
+    if checked < MIN_SHARE_PAGES:
+        err("article-fields", f"only {checked} primary article node(s) found "
+                              f"(expected >= {MIN_SHARE_PAGES}) — every article "
+                              f"should have exactly one")
+    elif bad == 0:
+        print(f"[OK] article JSON-LD fields match their page ({checked} primary nodes)")
+
+
 def main() -> int:
     print("=== SEO signals audit ===")
     check_robots_serp_directives()
@@ -1055,6 +1157,7 @@ def main() -> int:
     check_share_images()
     check_article_jsonld_image()
     check_lastmod_matches_datemodified()
+    check_article_fields_current()
 
     if warnings:
         print(f"\n[!] Warnings ({len(warnings)}):")
