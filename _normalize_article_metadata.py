@@ -59,7 +59,23 @@ def _load_review_dates() -> dict[str, str]:
         print(f"[article-meta] WARN {REVIEW_DATES_FILE.name} unreadable ({exc})",
               file=sys.stderr)
         return {}
-    return data if isinstance(data, dict) else {}
+    if not isinstance(data, dict):
+        return {}
+    # CODE_REVIEW TD-75 — entries carry provenance now
+    # ({"date": …, "source": "published"|"reviewed"}), so the floor is
+    # distinguishable from a real re-read. Keys starting with "_" are the
+    # file's own documentation.
+    out: dict[str, str] = {}
+    for slug, entry in data.items():
+        if slug.startswith("_"):
+            continue
+        if isinstance(entry, dict) and re.match(r"^\d{4}-\d{2}-\d{2}$",
+                                                str(entry.get("date", ""))):
+            out[slug] = entry["date"]
+        else:
+            print(f"[article-meta] WARN {REVIEW_DATES_FILE.name}: {slug} has no "
+                  f"usable date, ignoring", file=sys.stderr)
+    return out
 
 
 REVIEW_DATES = _load_review_dates()

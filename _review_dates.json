@@ -1,57 +1,223 @@
 {
-  "acne-myths": "2026-05-25",
-  "acne-scar-treatment": "2026-05-25",
-  "actinic-keratosis-scc": "2026-05-23",
-  "ai-dermatology-roles": "2026-05-25",
-  "alopecia-areata": "2026-06-06",
-  "atopic-dermatitis-overview": "2026-05-25",
-  "atopic-dermatitis-special-populations": "2026-05-25",
-  "atopic-dermatitis-systemic": "2026-05-23",
-  "atopic-dermatitis-topical": "2026-05-10",
-  "bimekizumab-hidradenitis-suppurativa": "2026-06-05",
-  "biologics-overview": "2026-05-25",
-  "contact-dermatitis": "2026-05-17",
-  "cutaneous-t-cell-lymphoma": "2026-05-13",
-  "dermatologic-oral-examination": "2026-05-25",
-  "dermatology-faq": "2026-05-25",
-  "dupilumab-long-term-maintenance": "2026-05-25",
-  "epidermoid-cyst": "2026-05-25",
-  "hairloss-myths": "2026-06-06",
-  "hidradenitis-suppurativa": "2026-06-06",
-  "isotretinoin-clinical": "2026-05-25",
-  "isotretinoin-patient": "2026-05-25",
-  "jaki-switching-alopecia-areata": "2026-05-29",
-  "laser-dermatology": "2026-05-25",
-  "melasma-myths": "2026-05-25",
-  "mpox-care": "2026-05-25",
-  "nail-psoriasis-topical-intralesional": "2026-06-05",
-  "nhi-derm-drugs": "2026-05-25",
-  "pediatric-eczema": "2026-05-25",
-  "perioral-dermatitis-guide": "2026-05-25",
-  "photodynamic-therapy-overview": "2026-05-25",
-  "prurigo-nodularis": "2026-05-25",
-  "psoriasis-biologic-monitoring": "2026-05-25",
-  "psoriasis-myths": "2026-05-25",
-  "psoriasis-overview": "2026-05-17",
-  "psoriasis-special-populations": "2026-05-09",
-  "psoriasis-systemic": "2026-06-06",
-  "psoriasis-topical": "2026-05-25",
-  "rosacea-myths": "2026-05-25",
-  "semaglutide-hair-loss": "2026-05-25",
-  "severe-scabies-treatment": "2026-05-25",
-  "shingles-myths": "2026-05-08",
-  "skin-biopsy-excision": "2026-05-25",
-  "skin-whitening-agents": "2026-05-25",
-  "spironolactone-dermatology-safety": "2026-05-26",
-  "sunscreen-myths": "2026-05-25",
-  "targeted-therapy-skin": "2026-05-25",
-  "tinea-myths": "2026-05-16",
-  "toenail-mechanical-disorders": "2026-05-25",
-  "topical-acids-clinical": "2026-05-21",
-  "topical-acids-patient": "2026-05-08",
-  "topical-steroids-guide": "2026-05-25",
-  "urticaria-myths": "2026-05-25",
-  "vitiligo": "2026-05-25",
-  "vitiligo-maintenance-clinical": "2026-05-25",
-  "warts-myths": "2026-05-23"
+  "_README": "lastReviewed is a CLAIM THAT THE PHYSICIAN READ THE ARTICLE on that date. It is declared here and never derived: no pipeline step may move it. source='published' means this entry is the conservative FLOOR — the day the article was published, which the physician demonstrably reviewed because he wrote it. It understates on purpose. source='reviewed' means an actual re-read was recorded. Record one with:  python _record_review.py <slug> [YYYY-MM-DD]",
+  "acne-myths": {
+    "date": "2026-05-02",
+    "source": "published"
+  },
+  "acne-scar-treatment": {
+    "date": "2026-05-04",
+    "source": "published"
+  },
+  "actinic-keratosis-scc": {
+    "date": "2026-05-04",
+    "source": "published"
+  },
+  "ai-dermatology-roles": {
+    "date": "2026-05-16",
+    "source": "published"
+  },
+  "alopecia-areata": {
+    "date": "2026-05-04",
+    "source": "published"
+  },
+  "atopic-dermatitis-overview": {
+    "date": "2026-05-03",
+    "source": "published"
+  },
+  "atopic-dermatitis-special-populations": {
+    "date": "2026-05-09",
+    "source": "published"
+  },
+  "atopic-dermatitis-systemic": {
+    "date": "2026-05-09",
+    "source": "published"
+  },
+  "atopic-dermatitis-topical": {
+    "date": "2026-05-09",
+    "source": "published"
+  },
+  "bimekizumab-hidradenitis-suppurativa": {
+    "date": "2026-06-05",
+    "source": "published"
+  },
+  "biologics-overview": {
+    "date": "2026-05-04",
+    "source": "published"
+  },
+  "contact-dermatitis": {
+    "date": "2026-05-04",
+    "source": "published"
+  },
+  "cutaneous-t-cell-lymphoma": {
+    "date": "2026-05-07",
+    "source": "published"
+  },
+  "dermatologic-oral-examination": {
+    "date": "2026-05-13",
+    "source": "published"
+  },
+  "dermatology-faq": {
+    "date": "2026-05-05",
+    "source": "published"
+  },
+  "dupilumab-long-term-maintenance": {
+    "date": "2026-05-15",
+    "source": "published"
+  },
+  "epidermoid-cyst": {
+    "date": "2026-05-05",
+    "source": "published"
+  },
+  "hairloss-myths": {
+    "date": "2026-05-03",
+    "source": "published"
+  },
+  "hidradenitis-suppurativa": {
+    "date": "2026-05-04",
+    "source": "published"
+  },
+  "isotretinoin-clinical": {
+    "date": "2026-05-02",
+    "source": "published"
+  },
+  "isotretinoin-patient": {
+    "date": "2026-05-02",
+    "source": "published"
+  },
+  "jaki-switching-alopecia-areata": {
+    "date": "2026-05-26",
+    "source": "published"
+  },
+  "laser-dermatology": {
+    "date": "2026-05-05",
+    "source": "published"
+  },
+  "melasma-myths": {
+    "date": "2026-05-03",
+    "source": "published"
+  },
+  "mpox-care": {
+    "date": "2026-05-04",
+    "source": "published"
+  },
+  "nail-psoriasis-topical-intralesional": {
+    "date": "2026-05-31",
+    "source": "published"
+  },
+  "nhi-derm-drugs": {
+    "date": "2026-05-05",
+    "source": "published"
+  },
+  "pediatric-eczema": {
+    "date": "2026-05-05",
+    "source": "published"
+  },
+  "perioral-dermatitis-guide": {
+    "date": "2026-05-13",
+    "source": "published"
+  },
+  "photodynamic-therapy-overview": {
+    "date": "2026-05-23",
+    "source": "published"
+  },
+  "prurigo-nodularis": {
+    "date": "2026-05-07",
+    "source": "published"
+  },
+  "psoriasis-biologic-monitoring": {
+    "date": "2026-05-16",
+    "source": "published"
+  },
+  "psoriasis-myths": {
+    "date": "2026-05-04",
+    "source": "published"
+  },
+  "psoriasis-overview": {
+    "date": "2026-05-09",
+    "source": "published"
+  },
+  "psoriasis-special-populations": {
+    "date": "2026-05-09",
+    "source": "published"
+  },
+  "psoriasis-systemic": {
+    "date": "2026-05-09",
+    "source": "published"
+  },
+  "psoriasis-topical": {
+    "date": "2026-05-09",
+    "source": "published"
+  },
+  "rosacea-myths": {
+    "date": "2026-05-03",
+    "source": "published"
+  },
+  "semaglutide-hair-loss": {
+    "date": "2026-05-23",
+    "source": "published"
+  },
+  "severe-scabies-treatment": {
+    "date": "2026-05-13",
+    "source": "published"
+  },
+  "shingles-myths": {
+    "date": "2026-05-04",
+    "source": "published"
+  },
+  "skin-biopsy-excision": {
+    "date": "2026-05-09",
+    "source": "published"
+  },
+  "skin-whitening-agents": {
+    "date": "2026-05-04",
+    "source": "published"
+  },
+  "spironolactone-dermatology-safety": {
+    "date": "2026-05-26",
+    "source": "published"
+  },
+  "sunscreen-myths": {
+    "date": "2026-05-02",
+    "source": "published"
+  },
+  "targeted-therapy-skin": {
+    "date": "2026-05-04",
+    "source": "published"
+  },
+  "tinea-myths": {
+    "date": "2026-05-03",
+    "source": "published"
+  },
+  "toenail-mechanical-disorders": {
+    "date": "2026-05-13",
+    "source": "published"
+  },
+  "topical-acids-clinical": {
+    "date": "2026-05-02",
+    "source": "published"
+  },
+  "topical-acids-patient": {
+    "date": "2026-05-02",
+    "source": "published"
+  },
+  "topical-steroids-guide": {
+    "date": "2026-05-04",
+    "source": "published"
+  },
+  "urticaria-myths": {
+    "date": "2026-05-04",
+    "source": "published"
+  },
+  "vitiligo": {
+    "date": "2026-05-04",
+    "source": "published"
+  },
+  "vitiligo-maintenance-clinical": {
+    "date": "2026-05-23",
+    "source": "published"
+  },
+  "warts-myths": {
+    "date": "2026-05-04",
+    "source": "published"
+  }
 }

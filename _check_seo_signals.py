@@ -1066,10 +1066,24 @@ def _review_dates() -> dict[str, str]:
         data = json.loads(REVIEW_DATES_FILE.read_text(encoding="utf-8"))
     except (ValueError, OSError):
         return {}
-    return data if isinstance(data, dict) else {}
+    if not isinstance(data, dict):
+        return {}
+    return {slug: entry["date"] for slug, entry in data.items()
+            if not slug.startswith("_") and isinstance(entry, dict)
+            and isinstance(entry.get("date"), str)}
 
 
 REVIEW_DATES = _review_dates()
+_TODAY = __import__("datetime").date.today()
+
+
+def _as_date(value: str):
+    """A real calendar date, or None. Never a pattern match."""
+    from datetime import date as _date
+    try:
+        return _date.fromisoformat(str(value)[:10])
+    except ValueError:
+        return None
 
 
 def check_article_fields_current() -> None:
@@ -1150,6 +1164,30 @@ def check_article_fields_current() -> None:
                     err(rel, f"no review date recorded in "
                              f"{REVIEW_DATES_FILE.name} for this article")
                     bad += 1
+                # CODE_REVIEW TD-75 — bound the claim at both ends. A review
+                # cannot predate publication (nobody read an article that did
+                # not exist) and cannot be in the future. Neither was checkable
+                # while the date was derived; now that it is declared by hand,
+                # a typo is the realistic failure and these are what catch it.
+                #
+                # PARSED, not compared as strings: 2026-06-31 matches every
+                # date-shaped pattern in this repo and is not a day that
+                # exists. String ordering would have let it through both bounds
+                # while the page published an invalid dateline.
+                published = str(node.get("datePublished") or "")[:10]
+                reviewed_d = _as_date(reviewed)
+                published_d = _as_date(published)
+                if reviewed and reviewed_d is None:
+                    err(rel, f"lastReviewed {reviewed!r} is not a real date")
+                    bad += 1
+                elif reviewed_d:
+                    if published_d and reviewed_d < published_d:
+                        err(rel, f"lastReviewed {reviewed} predates "
+                                 f"datePublished {published}")
+                        bad += 1
+                    if reviewed_d > _TODAY:
+                        err(rel, f"lastReviewed {reviewed} is in the future")
+                        bad += 1
     if checked < MIN_ARTICLE_NODES:
         err("article-fields", f"only {checked} primary article node(s) found "
                               f"(expected >= {MIN_ARTICLE_NODES}) — every article "
