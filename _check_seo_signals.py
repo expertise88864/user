@@ -801,14 +801,29 @@ def check_no_ad_placeholder_text() -> None:
 # the site logo, so Search and Discover drew the same thumbnail for all of them.
 SHARE_PAGE_SKIP = {"404.html", "offline.html", "admin.html", "reset-sw.html"}
 RASTER_SUFFIXES = (".png", ".jpg", ".jpeg", ".webp")
-MIN_SHARE_PAGES = 55
+# Article-scoped floors (blog/ only). MIN_SHARE_PAGES below covers the
+# share-image sweep, which spans both locales and is therefore much larger.
+MIN_ARTICLE_NODES = 55
+MIN_SHARE_PAGES = 120
 MIN_SITEMAP_ARTICLES = 50      # a noindex article is legitimately not listed
 MIN_CARD_EDGE = 600            # Facebook/X want >=600px on the short side
 
 
 def _share_pages() -> list[Path]:
-    pages = [p for p in sorted(ROOT.glob("*.html")) if p.name not in SHARE_PAGE_SKIP]
-    pages += [p for p in sorted((ROOT / "blog").glob("*.html"))]
+    """Every page that can be shared — BOTH locales.
+
+    CODE_REVIEW TD-70 — this enumerated the ZH root and blog/ only, so the
+    whole /en mirror was outside every share-image rule here. Those pages are
+    index,follow and carry their own OG and Twitter metadata, so half the
+    site's share cards were unchecked while the gate reported success. They
+    happen to be clean (they inherit from the ZH pages), which is exactly why
+    nobody would have noticed the coverage hole.
+    """
+    pages: list[Path] = []
+    for directory in (ROOT, ROOT / "blog", ROOT / "en", ROOT / "en" / "blog"):
+        if directory.exists():
+            pages += [p for p in sorted(directory.glob("*.html"))
+                      if p.name not in SHARE_PAGE_SKIP]
     return pages
 
 
@@ -906,6 +921,16 @@ def check_share_images() -> None:
             err(rel, f"share image is only {size[0]}x{size[1]}; platforms want at "
                      f"least {MIN_CARD_EDGE}px on the long side")
             bad += 1
+        # CODE_REVIEW TD-70 — about.html shared an 800x1199 studio portrait.
+        # Facebook and X centre-crop a share image to roughly 1.91:1, so a tall
+        # portrait loses its subject: on that one it sliced a band across the
+        # coat and cut the head off entirely. Landscape is not a preference
+        # here, it is what survives the crop.
+        if size[0] <= size[1]:
+            err(rel, f"share image is {size[0]}x{size[1]} — portrait or square. "
+                     f"Platforms crop to landscape, so whatever the picture is "
+                     f"OF gets cropped out")
+            bad += 1
 
     if len(pages) < MIN_SHARE_PAGES:
         err("share-images", f"only {len(pages)} page(s) inspected (expected >= "
@@ -964,10 +989,10 @@ def check_article_jsonld_image() -> None:
             err(rel, "no article node carries this page's own card as its image — "
                      "Search and Discover have no thumbnail to pick")
             bad += 1
-    if checked < MIN_SHARE_PAGES:
+    if checked < MIN_ARTICLE_NODES:
         err("article-jsonld-image",
             f"only {checked} article image field(s) seen (expected >= "
-            f"{MIN_SHARE_PAGES}) — the scan found nothing to check")
+            f"{MIN_ARTICLE_NODES}) — the scan found nothing to check")
     elif bad == 0:
         print(f"[OK] every article's JSON-LD image is its own card "
               f"({len(targets)} pages, {checked} blocks)")
@@ -1021,7 +1046,7 @@ def check_lastmod_matches_datemodified() -> None:
                 f"sitemap lastmod {lastmod} disagrees with dateModified "
                 f"{dm.group(1)}")
             bad += 1
-    # Lower than MIN_SHARE_PAGES on purpose: a noindex article is correctly
+    # Lower than MIN_ARTICLE_NODES on purpose: a noindex article is correctly
     # absent from the sitemap, so the two counts are not meant to agree.
     if compared < MIN_SITEMAP_ARTICLES:
         err("sitemap-lastmod", f"only {compared} URL(s) compared (expected >= "
@@ -1125,9 +1150,9 @@ def check_article_fields_current() -> None:
                     err(rel, f"no review date recorded in "
                              f"{REVIEW_DATES_FILE.name} for this article")
                     bad += 1
-    if checked < MIN_SHARE_PAGES:
+    if checked < MIN_ARTICLE_NODES:
         err("article-fields", f"only {checked} primary article node(s) found "
-                              f"(expected >= {MIN_SHARE_PAGES}) — every article "
+                              f"(expected >= {MIN_ARTICLE_NODES}) — every article "
                               f"should have exactly one")
     elif bad == 0:
         print(f"[OK] article JSON-LD fields match their page ({checked} primary nodes)")

@@ -235,6 +235,29 @@ def wrap_cjk(text: str, font, max_width: int, max_lines: int) -> list[str]:
     return lines or [text[:20]]
 
 
+BLOCK_SPAN_RE = re.compile(r'<span[^>]*display\s*:\s*block', re.I)
+
+
+def _headline_parts(inner: str) -> tuple[str, str]:
+    """Split an <h1>'s inner HTML into headline and subtitle.
+
+    Most articles separate the two with <br/>. about.html instead uses two
+    `display:block` spans, which render on separate lines but concatenate when
+    tags are stripped — the card for that page read
+    "陳翊嘉 醫師Chen, Yi-Jia, M.D." with no space. Both forms are handled, and
+    the subtitle is returned rather than discarded because the portrait card
+    below has room to show it.
+    """
+    parts = re.split(r"<br\s*/?>", inner, maxsplit=1)
+    if len(parts) == 2:
+        return parts[0], parts[1]
+
+    starts = [m.start() for m in BLOCK_SPAN_RE.finditer(inner)]
+    if len(starts) >= 2:
+        return inner[starts[0]:starts[1]], inner[starts[1]:]
+    return inner, ""
+
+
 def strip_tags(fragment: str) -> str:
     return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", fragment))).strip()
 
@@ -307,8 +330,9 @@ def article_fields(path: Path, tags: dict[str, str] | None = None) -> dict[str, 
     # not: blog/index.html keeps markup inside data-zh, and blog/topics.html
     # splits 皮膚科衛教 / 主題地圖 across two spans of which only one carries
     # data-zh.
-    head = re.split(r"<br\s*/?>", inner, maxsplit=1)[0]
+    head, tail = _headline_parts(inner)
     title = strip_tags(head).rstrip(" —–-·、,")
+    subtitle = strip_tags(tail).rstrip(" —–-·、,")
 
     tag = (tags or {}).get(path.stem, "")
     if not tag:
@@ -323,7 +347,70 @@ def article_fields(path: Path, tags: dict[str, str] | None = None) -> dict[str, 
     if dm:
         date = dm.group(1)
 
-    return {"title": title.strip(), "tag": tag.strip(), "date": date}
+    return {"title": title.strip(), "subtitle": subtitle.strip(),
+            "tag": tag.strip(), "date": date}
+
+
+# CODE_REVIEW TD-70 — about.html shared its 800x1199 studio portrait directly.
+# Share cards are landscape: Facebook and X centre-crop to roughly 1.91:1, which
+# on a portrait that tall slices a band across the chest and cuts the head off
+# entirely — the one thing the picture is there for. Upscaling it is not an
+# option either; 800px is the largest original, and 800->1200 is visibly soft.
+#
+# So the photo goes on a landscape card at its own resolution or below, beside
+# the name. That keeps the face — which is the whole E-E-A-T point of an author
+# page — and fixes the ratio without inventing pixels.
+PORTRAIT_PAGES = {"about": ROOT / "blog" / "SUNN1327-800.jpg"}
+PORTRAIT_X = 800                 # photo occupies x 800..1200
+PORTRAIT_TITLE_TOP = 300
+PORTRAIT_SUBTITLE_GAP = 74
+SUBTITLE_SIZE = 26
+
+
+def render_portrait_card(fields: dict[str, str], plate, photo_path: Path):
+    from PIL import Image, ImageDraw
+
+    im = plate.copy()
+    photo = Image.open(photo_path).convert("RGB")
+    box_w, box_h = CARD_W - PORTRAIT_X, CARD_H
+
+    # Crop the source to the panel's aspect, then scale DOWN into it. Biased
+    # slightly above centre so the crop keeps the head rather than the coat.
+    target = box_w / box_h
+    src_w, src_h = photo.size
+    if src_w / src_h > target:
+        crop_w = int(src_h * target)
+        left = (src_w - crop_w) // 2
+        photo = photo.crop((left, 0, left + crop_w, src_h))
+    else:
+        crop_h = int(src_w / target)
+        top = int((src_h - crop_h) * 0.18)
+        photo = photo.crop((0, top, src_w, top + crop_h))
+    if photo.size[0] < box_w or photo.size[1] < box_h:
+        raise SystemExit(
+            f"[FAIL] {photo_path.name} is {photo.size[0]}x{photo.size[1]} after "
+            f"cropping, smaller than the {box_w}x{box_h} panel — scaling it up "
+            f"would ship a blurred portrait"
+        )
+    im.paste(photo.resize((box_w, box_h), Image.LANCZOS), (PORTRAIT_X, 0))
+
+    d = ImageDraw.Draw(im)
+    f_title = load_font(TITLE_SIZE, "Medium")
+    f_sub = load_font(SUBTITLE_SIZE, "Regular")
+    lines = wrap_cjk(fields["title"], f_title, PORTRAIT_X - MARGIN_X * 2,
+                     TITLE_MAX_LINES)
+    for i, line in enumerate(lines):
+        d.text((MARGIN_X, PORTRAIT_TITLE_TOP + i * TITLE_LEADING), line,
+               font=f_title, fill=INK_TITLE)
+    if fields.get("subtitle"):
+        d.text((MARGIN_X, PORTRAIT_TITLE_TOP + len(lines) * TITLE_LEADING
+                + PORTRAIT_SUBTITLE_GAP - TITLE_LEADING),
+               fields["subtitle"], font=f_sub, fill=INK_MUTED)
+    # Redraw the top/bottom rules across the photo so the frame stays unbroken.
+    bar = plate.getpixel((5, 2))
+    d.rectangle((PORTRAIT_X, 0, CARD_W - 1, 5), fill=bar)
+    d.rectangle((PORTRAIT_X, CARD_H - 6, CARD_W - 1, CARD_H - 1), fill=bar)
+    return im
 
 
 def render_card(fields: dict[str, str], plate):
@@ -364,7 +451,7 @@ def render_card(fields: dict[str, str], plate):
 # shares a real portrait, which beats a generated card. The rest of the root
 # (404, offline, admin, reset-sw) is not a share target.
 TOP_LEVEL_PAGES = ("index", "tools", "glossary", "notes", "privacy",
-                   "support", "dashboard")
+                   "support", "dashboard", "about")
 
 
 def card_slug(path: Path) -> str:
@@ -429,7 +516,23 @@ def main() -> int:
         if not fields or not fields["title"]:
             skipped.append(path.stem)
             continue
-        card = render_card(fields, plate)
+        # CODE_REVIEW TD-70 — `photo and photo.exists()` collapsed two
+        # different situations into one: "this page has no portrait" and "this
+        # page is CONFIGURED to have a portrait and the file is gone". The
+        # second silently produced a generic text card, and every gate would
+        # still pass — landscape, right size, dimensions matching — while the
+        # physician's face had quietly dropped off his own author page. A
+        # configured source that is missing is a failure, not a fallback.
+        photo = PORTRAIT_PAGES.get(path.stem)
+        if photo is not None and not photo.exists():
+            raise SystemExit(
+                f"[FAIL] {path.name} is configured to use the portrait "
+                f"{photo.relative_to(ROOT).as_posix()}, which does not exist. "
+                f"Restore it, or remove the page from PORTRAIT_PAGES if the "
+                f"card is meant to be text only."
+            )
+        card = (render_portrait_card(fields, plate, photo) if photo
+                else render_card(fields, plate))
         slug = card_slug(path)
         png = OG_DIR / f"{slug}.png"
         card.save(png, format="PNG", optimize=True)

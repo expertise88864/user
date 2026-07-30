@@ -162,8 +162,12 @@ def image_for(slug: str, src: str) -> str:
     for ext in ('png', 'webp'):
         if (OG_DIR / f'{slug}.{ext}').exists():
             return f'{DOMAIN}/assets/og/{slug}.{ext}'
-    # about.html keeps the portrait it already ships: a photograph of the
-    # physician is a better share image for that page than a generated card.
+    # CODE_REVIEW TD-70 — about.html used to stop here, keeping its 800x1199
+    # studio portrait, on the reasoning that a photograph beats a generated
+    # card for an author page. The photograph does beat it — but not in
+    # portrait orientation, which the platforms centre-crop to landscape and
+    # decapitate. It now has a card that CONTAINS the portrait beside the name.
+    # This branch survives for any page that ships its own landscape artwork.
     existing = re.search(r'<meta\s+property="og:image"\s+content="([^"]+)"', src, re.I)
     if existing and '/api/og' not in existing.group(1) \
             and 'logo-512' not in existing.group(1):
