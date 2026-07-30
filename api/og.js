@@ -8,10 +8,18 @@
 // Usage in HTML:
 //   <meta property="og:image" content="https://chendermatologist.com/api/og?title=異位性皮膚炎概論&tag=異膚&date=2026-05-14">
 //
-// Cached at the edge for 24 hours per unique query string. SVG is ~3 KB vs
-// PNG ~30 KB, so we serve SVG (Twitter, Facebook, LINE all accept image/svg+xml
-// in og:image). For maximum compatibility a `?png=1` query forces PNG fallback
-// (NOT yet implemented — would require a rasterization step).
+// ⚠️ NOT USED AS AN og:image, AND MUST NOT BE. This endpoint answers with
+// `image/svg+xml`, and no major platform renders an SVG share card: Facebook,
+// X and LINE all ignore it. The comment that used to sit here claimed the
+// opposite ("Twitter, Facebook, LINE all accept image/svg+xml") while the same
+// paragraph admitted the PNG path was never implemented — and on the strength
+// of that claim 28 articles shipped for months with no share preview at all.
+//
+// Every page now points og:image / twitter:image at its own committed
+// 1200x630 PNG under /assets/og/, rendered by _gen_og_cards.py.
+// _check_seo_signals fails the gate if anything references this endpoint as a
+// social image again. The route is kept because it is a working preview
+// renderer for humans, not because anything depends on it.
 //
 // Query params:
 //   title  (required, ≤ 80 chars)

@@ -176,6 +176,28 @@ def page_meta(src: str) -> dict[str, str]:
     }
 
 
+OG_CARD_W, OG_CARD_H = 1200, 630
+
+
+def resolve_article_image(path, meta: dict) -> dict | str | None:
+    """The article's own social card, as an ImageObject with dimensions.
+
+    Mirrors _gen_feeds.resolve_og: the committed card wins, the page's
+    og:image is the fallback. Dimensions are only claimed for the committed
+    card, whose size is known and asserted by _check_seo_signals — inventing
+    them for an arbitrary og:image URL would be a structured-data lie.
+    """
+    card = ROOT / "assets" / "og" / f"{path.stem}.png"
+    if card.exists():
+        return {
+            "@type": "ImageObject",
+            "url": f"{DOMAIN}/assets/og/{path.stem}.png",
+            "width": OG_CARD_W,
+            "height": OG_CARD_H,
+        }
+    return meta.get("image") or None
+
+
 # Map DN.ARTICLES cat field to human-friendly article section labels.
 # Used as the `articleSection` field in JSON-LD so Google can group
 # articles by topic in the SERP knowledge panel + topical clustering.
@@ -259,6 +281,16 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str],
     is_blog_article = (meta.get("canonical") and "/blog/" in meta["canonical"]
                        and path.name not in {"index.html", "topics.html"})
 
+    # CODE_REVIEW SEO-2 — this branch is what REWRITES an article block to
+    # MedicalWebPage, and MedicalWebPage is not in the set, so it never matches
+    # its own output: the normalizer is write-once per block. Any later
+    # correction to author / publisher / reviewedBy reaches only articles
+    # written after the change — which is why the TD-05 image fix first landed
+    # on 8 files instead of 55. Recorded as TD-66 rather than fixed here:
+    # simply adding MedicalWebPage to the set retypes the `#webpage` node of
+    # the seven research articles to MedicalScholarlyArticle, and the
+    # insert-if-missing check below then adds a SECOND MedicalWebPage with the
+    # same @id. The image is refreshed on its own, after this branch.
     if typ in {"Article", "BlogPosting", "MedicalScholarlyArticle"}:
         # Keep MedicalScholarlyArticle only for research-summary articles
         # (cat: 'research'); downgrade patient-education articles to
@@ -275,8 +307,21 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str],
         obj["reviewedBy"] = PHYSICIAN_REF
         obj.setdefault("isAccessibleForFree", True)
         obj.setdefault("isFamilyFriendly", True)
-        if meta.get("image"):
-            obj.setdefault("image", meta["image"])
+        # CODE_REVIEW TD-05 / SEO-2 — this was `obj.setdefault("image", …)`,
+        # and every article's JSON-LD block already carried
+        # image: logo-512.png from an earlier generation, so setdefault never
+        # fired and 55 articles told Google their illustration was the 512x512
+        # site logo. That is the image Search and Discover pick a thumbnail
+        # from, so every article looked identical in the results.
+        #
+        # Direct assignment, like the speakable/accessibility fields below, so
+        # a corrected value propagates into blocks that already exist. The
+        # value is an ImageObject rather than a bare URL: Google's Article
+        # guidance asks for dimensions, and a consumer should not have to
+        # fetch the file to learn them.
+        article_image = resolve_article_image(path, meta)
+        if article_image:
+            obj["image"] = article_image
         if meta.get("title"):
             # MedicalWebPage uses `name`; Article uses `headline`.
             # Set both so the field is correct regardless of @type.
@@ -330,6 +375,18 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str],
                 obj["articleSection"] = section
             if meta.get("keywords"):
                 obj["keywords"] = meta["keywords"]
+
+    # CODE_REVIEW TD-05 / SEO-2 — refresh the illustration on blog article
+    # blocks a previous pass already converted to MedicalWebPage. Those blocks
+    # never re-enter the branch above (see TD-66), so without this the 47
+    # oldest articles would keep telling Google their image is the 512x512 site
+    # logo — the picture Search and Discover draw a thumbnail from, which is
+    # why every article looked identical in the results. Scoped to the image
+    # alone: the other write-once fields are a separate, deliberate pass.
+    if typ == "MedicalWebPage" and is_blog_article:
+        article_image = resolve_article_image(path, meta)
+        if article_image:
+            obj["image"] = article_image
 
     return obj
 

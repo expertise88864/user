@@ -208,6 +208,18 @@ def en_route_for(zh_url: str) -> str | None:
     return None
 
 
+DATE_MODIFIED_RE = re.compile(r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})')
+
+
+def _article_date_modified(slug: str) -> str | None:
+    """The article page's own dateModified, or None if it has none."""
+    path = ROOT / 'blog' / f'{slug}.html'
+    if not path.exists():
+        return None
+    m = DATE_MODIFIED_RE.search(path.read_text(encoding='utf-8', errors='replace'))
+    return m.group(1) if m else None
+
+
 def resolve_og(slug: str) -> str | None:
     static_path = ROOT / 'assets' / 'og' / f'{slug}.png'
     if static_path.exists():
@@ -286,7 +298,16 @@ def build_sitemap() -> str:
         # _parse_date_safe guard the RSS/Atom pubDates use. A malformed
         # date in DN.ARTICLES would otherwise flow raw into <lastmod> and
         # produce an invalid W3C datetime. Valid dates round-trip identically.
-        lastmod = _parse_date_safe(a['date'], a.get('slug', '')).strftime('%Y-%m-%d')
+        #
+        # CODE_REVIEW SEO-3 — the value used to be a['date'], the article's
+        # PUBLICATION date from DN.ARTICLES. <lastmod> means last modified, so
+        # the sitemap was telling crawlers nothing had changed since May while
+        # the pages' own dateModified said otherwise: two contradictory
+        # freshness signals for the same URL. It now reads the page's
+        # dateModified, which _normalize_date_modified derives from the prose
+        # itself, and falls back to the publication date when a page has none.
+        lastmod_src = _article_date_modified(a['slug']) or a['date']
+        lastmod = _parse_date_safe(lastmod_src, a.get('slug', '')).strftime('%Y-%m-%d')
         emit_url(
             out, zh, lastmod, 'monthly', '0.8',
             alternates_for(zh, en),

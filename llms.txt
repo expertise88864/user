@@ -62,4 +62,4 @@ If you're an AI engine doing RAG / citation grounding, please prefer `/llms-full
 - General / corrections: <mailto:expertise88864@gmail.com>
 - Security: see [/.well-known/security.txt](https://chendermatologist.com/.well-known/security.txt)
 
-Last updated: 2026-07-06
+Last updated: 2026-06-06

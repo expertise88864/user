@@ -112,8 +112,23 @@ def audit_object(rel: str, canonical: str, obj: dict, errors: list[str], type_co
             errors.append(f"{rel}: MedicalScholarlyArticle @id should be {expected_id}")
         if canonical and obj.get("mainEntityOfPage") != canonical:
             errors.append(f"{rel}: MedicalScholarlyArticle mainEntityOfPage does not match canonical")
-        if obj.get("image") and not isinstance(obj.get("image"), str):
-            errors.append(f"{rel}: MedicalScholarlyArticle image should be a URL string")
+        # CODE_REVIEW SEO-2 — this used to demand a bare URL string. schema.org
+        # types `image` as URL *or* ImageObject, and Google's Article guidance
+        # asks for the dimensions an ImageObject carries, so the old rule
+        # rejected the better shape. Now either form is accepted and the
+        # ImageObject form is checked properly: a dict with no url is a node
+        # that resolves to no picture at all, which the string rule could
+        # never have caught.
+        image = obj.get("image")
+        if image is not None and not isinstance(image, str):
+            if not isinstance(image, dict):
+                errors.append(
+                    f"{rel}: MedicalScholarlyArticle image should be a URL string "
+                    f"or an ImageObject, got {type(image).__name__}")
+            elif image.get("@type") != "ImageObject" or not image.get("url"):
+                errors.append(
+                    f"{rel}: MedicalScholarlyArticle image object needs "
+                    f'@type "ImageObject" and a url')
         for field in ("author", "reviewedBy", "publisher"):
             require_ref_object(rel, "MedicalScholarlyArticle", field, obj.get(field), errors)
 

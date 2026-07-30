@@ -791,6 +791,246 @@ def check_no_ad_placeholder_text() -> None:
         print("[OK] No ad-slot placeholder text on indexable pages")
 
 
+# ─── 20. Share images are rasters, sized, and per-page ───────────────
+# CODE_REVIEW SEO-1/2/4 — every rule below is a defect that shipped, not a
+# hypothetical. og:image pointed at /api/og on 28 articles and on support.html,
+# and that endpoint answers image/svg+xml, which Facebook, X and LINE all
+# ignore: those pages shared with no preview card at all, for months, while
+# every checker here reported success. The homepage shared a 512x512 logo.
+# Ten pages declared no dimensions. And the JSON-LD `image` on 55 articles was
+# the site logo, so Search and Discover drew the same thumbnail for all of them.
+SHARE_PAGE_SKIP = {"404.html", "offline.html", "admin.html", "reset-sw.html"}
+RASTER_SUFFIXES = (".png", ".jpg", ".jpeg", ".webp")
+MIN_SHARE_PAGES = 55
+MIN_SITEMAP_ARTICLES = 50      # a noindex article is legitimately not listed
+MIN_CARD_EDGE = 600            # Facebook/X want >=600px on the short side
+
+
+def _share_pages() -> list[Path]:
+    pages = [p for p in sorted(ROOT.glob("*.html")) if p.name not in SHARE_PAGE_SKIP]
+    pages += [p for p in sorted((ROOT / "blog").glob("*.html"))]
+    return pages
+
+
+def _local_asset(url: str) -> Path | None:
+    if not url.startswith(DOMAIN + "/"):
+        return None
+    return ROOT / url[len(DOMAIN) + 1:].split("?")[0]
+
+
+def check_share_images() -> None:
+    from _normalize_social_images import image_size
+
+    pages = _share_pages()
+    bad = 0
+    sized = 0
+    for fp in pages:
+        rel = fp.relative_to(ROOT).as_posix()
+        src = fp.read_text(encoding="utf-8", errors="replace")
+        # CODE_REVIEW SEO-5 round 2 — twitter:image used to get the suffix
+        # tests but never the does-it-exist test, so pointing it at
+        # https://example.com/nope.png passed. Both fields now go through the
+        # same resolution, and they must agree: two different share images for
+        # one page is a defect whichever one is wrong.
+        urls: dict[str, str] = {}
+        for prop, attr in (("og:image", "property"), ("twitter:image", "name")):
+            found = re.findall(rf'<meta\s+{attr}="{prop}"\s+content="([^"]+)"',
+                               src, re.I)
+            if not found:
+                err(rel, f"no {prop} — the page has no share card")
+                bad += 1
+                continue
+            # CODE_REVIEW SEO-5 round 3 — this used re.search and looked at the
+            # first match only, so 44 articles carrying TWO twitter:image tags
+            # passed. They agreed at the time, which is precisely why nobody
+            # would notice until they stopped agreeing and a crawler took the
+            # stale one.
+            if len(found) > 1:
+                err(rel, f"{len(found)} {prop} tags — a page has one share "
+                         f"image, and a crawler may pick either: {sorted(set(found))}")
+                bad += 1
+            url = found[0]
+            urls[prop] = url
+            if "/api/og" in url:
+                err(rel, f"{prop} points at /api/og, which serves image/svg+xml; "
+                         f"no major platform renders an SVG share card")
+                bad += 1
+            elif not url.lower().endswith(RASTER_SUFFIXES):
+                err(rel, f"{prop} is not a raster image: {url}")
+                bad += 1
+            elif "logo-512" in url:
+                err(rel, f"{prop} is the 512x512 site logo, not a card for this "
+                         f"page — run: python _gen_og_cards.py")
+                bad += 1
+            else:
+                asset = _local_asset(url)
+                if asset is None or not asset.exists():
+                    err(rel, f"{prop} does not resolve to a committed file: {url}")
+                    bad += 1
+        if len(urls) == 2 and urls["og:image"] != urls["twitter:image"]:
+            err(rel, f"og:image and twitter:image disagree: "
+                     f"{urls['og:image']} vs {urls['twitter:image']}")
+            bad += 1
+
+        og_url = urls.get("og:image")
+        if not og_url:
+            continue
+        asset = _local_asset(og_url)
+        if asset is None or not asset.exists():
+            continue                    # already reported above
+        size = image_size(asset)
+        if size is None:
+            # CODE_REVIEW SEO-5 round 2 — an unparsed file used to fall
+            # straight into the success branch: a WebP or a truncated PNG
+            # skipped BOTH the dimension match and the minimum-edge test, so a
+            # corrupt share image would have been reported as verified.
+            err(rel, f"share image cannot be decoded, so its dimensions cannot "
+                     f"be verified: {og_url}")
+            bad += 1
+            continue
+        declared = {}
+        for key in ("og:image:width", "og:image:height"):
+            dm = re.search(rf'<meta\s+property="{key}"\s+content="(\d+)"', src, re.I)
+            declared[key] = int(dm.group(1)) if dm else None
+        if declared["og:image:width"] is None or declared["og:image:height"] is None:
+            err(rel, "og:image:width / og:image:height missing")
+            bad += 1
+        elif (declared["og:image:width"], declared["og:image:height"]) != size:
+            err(rel, f"og:image dimensions declared "
+                     f"{declared['og:image:width']}x{declared['og:image:height']} "
+                     f"but the file is {size[0]}x{size[1]}")
+            bad += 1
+        else:
+            sized += 1
+        if max(size) < MIN_CARD_EDGE:
+            err(rel, f"share image is only {size[0]}x{size[1]}; platforms want at "
+                     f"least {MIN_CARD_EDGE}px on the long side")
+            bad += 1
+
+    if len(pages) < MIN_SHARE_PAGES:
+        err("share-images", f"only {len(pages)} page(s) inspected (expected >= "
+                            f"{MIN_SHARE_PAGES}) — discovery is broken")
+    elif bad == 0:
+        print(f"[OK] share images: {len(pages)} pages carry a per-page raster card, "
+              f"{sized} with dimensions matching the file on disk")
+
+
+def check_article_jsonld_image() -> None:
+    """The article's structured-data image is its own card, not the site logo."""
+    import json
+
+    targets = [p for p in sorted((ROOT / "blog").glob("*.html"))
+               if p.name not in {"index.html", "topics.html"}]
+    bad = 0
+    checked = 0
+    # CODE_REVIEW SEO-5 round 2 — a node with no `image` used to be skipped,
+    # and the global floor stayed satisfied by the other 61 blocks, so
+    # DELETING an article's image passed the gate. Coverage is now per PAGE:
+    # every article must carry at least one article node with a good image.
+    for fp in targets:
+        rel = fp.relative_to(ROOT).as_posix()
+        src = fp.read_text(encoding="utf-8", errors="replace")
+        good_on_page = 0
+        nodes_on_page = 0
+        for m in re.finditer(r'<script type="application/ld\+json">([\s\S]*?)</script>',
+                             src):
+            try:
+                doc = json.loads(m.group(1))
+            except ValueError:
+                continue
+            for node in (doc.get("@graph") or [doc]):
+                if node.get("@type") not in ("MedicalWebPage", "MedicalScholarlyArticle"):
+                    continue
+                nodes_on_page += 1
+                image = node.get("image")
+                if image is None:
+                    continue
+                checked += 1
+                url = image.get("url") if isinstance(image, dict) else image
+                if not url or "logo-512" in str(url):
+                    err(rel, f"{node.get('@type')} image is the site logo — Search "
+                             f"and Discover pick their thumbnail from this field")
+                    bad += 1
+                elif f"/assets/og/{fp.stem}." not in str(url):
+                    err(rel, f"{node.get('@type')} image is not this article's own "
+                             f"card: {url}")
+                    bad += 1
+                else:
+                    good_on_page += 1
+        if nodes_on_page == 0:
+            err(rel, "no MedicalWebPage / MedicalScholarlyArticle block at all")
+            bad += 1
+        elif good_on_page == 0:
+            err(rel, "no article node carries this page's own card as its image — "
+                     "Search and Discover have no thumbnail to pick")
+            bad += 1
+    if checked < MIN_SHARE_PAGES:
+        err("article-jsonld-image",
+            f"only {checked} article image field(s) seen (expected >= "
+            f"{MIN_SHARE_PAGES}) — the scan found nothing to check")
+    elif bad == 0:
+        print(f"[OK] every article's JSON-LD image is its own card "
+              f"({len(targets)} pages, {checked} blocks)")
+
+
+def check_lastmod_matches_datemodified() -> None:
+    """One freshness answer per URL, not two.
+
+    CODE_REVIEW SEO-3 — <lastmod> was emitted from DN.ARTICLES' PUBLICATION
+    date while the page's own dateModified said something else, so 54 of 57
+    URLs carried two contradictory freshness claims.
+    """
+    sitemap = ROOT / "sitemap.xml"
+    if not sitemap.exists():
+        err("sitemap.xml", "missing")
+        return
+    entries = dict(re.findall(r"<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>",
+                              sitemap.read_text(encoding="utf-8", errors="replace")))
+    bad = 0
+    compared = 0
+    for fp in sorted((ROOT / "blog").glob("*.html")):
+        if fp.name in {"index.html", "topics.html"}:
+            continue
+        src = fp.read_text(encoding="utf-8", errors="replace")
+        rel = fp.relative_to(ROOT).as_posix()
+        # CODE_REVIEW SEO-5 round 2 — an article missing from sitemap.xml used
+        # to be silently skipped, so DELETING URLs from the sitemap — the
+        # failure that removes a page from discovery entirely — kept the gate
+        # green. An indexable article must be listed; a noindex one must not.
+        robots = re.search(r'<meta\s+name="robots"\s+content="([^"]*)"', src, re.I)
+        indexable = not (robots and "noindex" in robots.group(1).lower())
+        lastmod = entries.get(f"{DOMAIN}/blog/{fp.stem}")
+        if indexable and not lastmod:
+            err(rel, "indexable article is absent from sitemap.xml")
+            bad += 1
+            continue
+        if not indexable and lastmod:
+            err(rel, "noindex article is listed in sitemap.xml")
+            bad += 1
+            continue
+        dm = re.search(r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})', src)
+        if not lastmod:
+            continue                    # noindex, correctly unlisted
+        if not dm:
+            err(rel, "listed in sitemap.xml but the page has no dateModified")
+            bad += 1
+            continue
+        compared += 1
+        if not lastmod.startswith(dm.group(1)):
+            err(fp.relative_to(ROOT).as_posix(),
+                f"sitemap lastmod {lastmod} disagrees with dateModified "
+                f"{dm.group(1)}")
+            bad += 1
+    # Lower than MIN_SHARE_PAGES on purpose: a noindex article is correctly
+    # absent from the sitemap, so the two counts are not meant to agree.
+    if compared < MIN_SITEMAP_ARTICLES:
+        err("sitemap-lastmod", f"only {compared} URL(s) compared (expected >= "
+                               f"{MIN_SITEMAP_ARTICLES}) — the sitemap or the scan "
+                               f"is broken")
+    elif bad == 0:
+        print(f"[OK] sitemap lastmod agrees with dateModified on all {compared} articles")
+
+
 def main() -> int:
     print("=== SEO signals audit ===")
     check_robots_serp_directives()
@@ -812,6 +1052,9 @@ def main() -> int:
     check_tools_schema_present()
     check_article_metadata_fields()
     check_no_ad_placeholder_text()
+    check_share_images()
+    check_article_jsonld_image()
+    check_lastmod_matches_datemodified()
 
     if warnings:
         print(f"\n[!] Warnings ({len(warnings)}):")

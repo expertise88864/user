@@ -29,6 +29,9 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parent
 DOMAIN = "https://chendermatologist.com"
+
+sys.path.insert(0, str(ROOT))
+from _normalize_social_images import image_size  # noqa: E402
 AUTHOR_URL = f"{DOMAIN}/about"
 AUTHOR_NAME = "陳翊嘉醫師"
 
@@ -95,7 +98,18 @@ def build_meta_block(slug: str, meta_record: dict[str, str], src: str) -> str:
     minutes = int(time_m.group(1)) if time_m else 0
 
     # OG image dimensions — all api/og + assets/og are 1200x630 (standard).
-    img_w, img_h = "1200", "630"
+    # CODE_REVIEW SEO-4 — these were hardcoded "1200"/"630", which happened to
+    # be right only because every card is that size. Read from the file the
+    # page actually points at, so a differently-sized share image cannot ship
+    # with dimensions that quietly lie about it.
+    og_url = ""
+    og_m = re.search(r'<meta\s+property="og:image"\s+content="([^"]+)"', src, re.I)
+    if og_m:
+        og_url = og_m.group(1)
+    size = None
+    if og_url.startswith(DOMAIN + "/"):
+        size = image_size(ROOT / og_url[len(DOMAIN) + 1:].split("?")[0])
+    img_w, img_h = (str(size[0]), str(size[1])) if size else ("1200", "630")
 
     # OG image alt: same as title (already cleaned upstream).
     title = meta_record.get("title", "").strip()
@@ -129,6 +143,14 @@ def build_meta_block(slug: str, meta_record: dict[str, str], src: str) -> str:
     lines.append('<meta name="twitter:label2" content="Written by" />')
     lines.append(f'<meta name="twitter:data2" content="{AUTHOR_NAME}" />')
     lines.append(f'<meta name="twitter:image:alt" content="{_attr_escape(img_alt)}" />')
+    # CODE_REVIEW SEO-4 — twitter:image belongs in this block, not next to
+    # og:image. 13 articles had none, and inserting it after og:image did not
+    # stick: ORPHAN_RE below strips any article:/og:image:/twitter: meta that
+    # follows the end marker, so each build removed what the previous one had
+    # added and the two normalizers oscillated. The tag that owns the
+    # twitter:* family for articles is this one.
+    if og_url:
+        lines.append(f'<meta name="twitter:image" content="{_attr_escape(og_url)}" />')
     lines.append('<!-- dn-og-extras:end -->')
     return "".join(lines)
 
@@ -161,6 +183,10 @@ ORPHAN_RUN_RE = re.compile(
     r'(\s*(?:<meta\s+(?:property|name)="(?:article:|og:image:|twitter:)[^"]+"\s+content="[^"]*"\s*/?>)+)',
     re.IGNORECASE,
 )
+TWITTER_IMAGE_TAG_RE = re.compile(
+    r'\s*<meta\s+name="twitter:image"\s+content="[^"]*"\s*/?>',
+    re.IGNORECASE,
+)
 OG_IMAGE_TAG_RE = re.compile(
     r'<meta\s+property="og:image"\s+content="[^"]*"\s*/?>',
     re.IGNORECASE,
@@ -185,6 +211,13 @@ def inject(path: Path, catalog: dict[str, dict[str, str]]) -> bool:
     src = ORPHAN_RUN_RE.sub(r'\1', original)
     # Strip any prior injection (current-format block).
     cleaned = BLOCK_RE.sub("", src)
+    # CODE_REVIEW SEO-5 round 3 — this block now emits twitter:image, and 44
+    # articles already carried a standalone one elsewhere in <head>, so they
+    # ended up with TWO. They agree today, which is exactly why it would go
+    # unnoticed until they stopped agreeing and a crawler picked the stale one.
+    # ORPHAN_RUN_RE only reaches tags immediately after the end marker, so the
+    # standalone copies are removed here — the block below is the single owner.
+    cleaned = TWITTER_IMAGE_TAG_RE.sub("", cleaned)
     # Insert right after the existing og:image meta tag for visual grouping.
     og_m = OG_IMAGE_TAG_RE.search(cleaned)
     if not og_m:
