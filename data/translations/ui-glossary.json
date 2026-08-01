@@ -1,0 +1,625 @@
+{
+  "page": "glossary.html",
+  "strings": [
+    {
+      "zh": "皮膚科醫學詞彙<br/><span class=\"teal-text\">白話翻譯字典</span>",
+      "en": ""
+    },
+    {
+      "zh": "看懂自己的病歷、診斷單、衛教文章。本字典依「<strong>量表 / 機轉 / 藥物 / 疾病分型 / 檢查</strong>」分類、每個專業詞附最白話的解釋與對應衛教文章連結。",
+      "en": ""
+    },
+    {
+      "zh": "1 · 臨床量表 / 評估工具",
+      "en": ""
+    },
+    {
+      "zh": "量表",
+      "en": ""
+    },
+    {
+      "zh": "異位性皮膚炎嚴重度評分。<strong>面積 + 客觀症狀（紅、腫、滲、抓痕、苔癬化、乾）+ 主觀症狀（癢、失眠）</strong>三大項組合，0-103 分。&lt;25 輕、25-50 中、&gt;50 重。",
+      "en": ""
+    },
+    {
+      "zh": "SCORAD 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "乾癬嚴重度。頭頸 / 上肢 / 軀幹 / 下肢四區<strong>紅斑 + 浸潤 + 鱗屑 + 面積</strong>加權，0-72。健保生物製劑申請門檻 PASI ≥ 10。",
+      "en": ""
+    },
+    {
+      "zh": "PASI 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "皮膚病<strong>生活品質量表</strong>,10 題自評，0-30 分。生物製劑健保申請常見門檻 DLQI ≥ 10。",
+      "en": ""
+    },
+    {
+      "zh": "DLQI 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "蕁麻疹活動度。<strong>每天「風團數」+「癢感」各 0-3</strong>，連續 7 天加總，0-42。控制目標 ≤ 6。",
+      "en": ""
+    },
+    {
+      "zh": "UAS7 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "蕁麻疹控制測試，4 題快速評估。<strong>16 = 完全控制、12-15 = 部分控制、&lt; 12 = 控制不佳</strong>。",
+      "en": ""
+    },
+    {
+      "zh": "蕁麻疹文章 →",
+      "en": ""
+    },
+    {
+      "zh": "圓禿頭皮禿髮百分比。<strong>頂(40%)+ 後(24%)+ 左(18%)+ 右(18%)</strong>。SALT ≥ 50 為重度，JAK 抑制劑適應症。",
+      "en": ""
+    },
+    {
+      "zh": "SALT 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "痘痘嚴重度全球分級。6 部位 × 病灶嚴重度權重總和，0-44。<strong>≥ 31 為重度，Isotretinoin 適應症</strong>。",
+      "en": ""
+    },
+    {
+      "zh": "GAGS 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "肝斑嚴重度。前額 + 兩頰 + 下巴 4 區的<strong>面積 × （深淺 + 同質性）</strong>加權，0-48。",
+      "en": ""
+    },
+    {
+      "zh": "MASI 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "Hurley 分期",
+      "en": ""
+    },
+    {
+      "zh": "化膿性汗腺炎(HS)<strong>I 期 / II 期 / III 期</strong>分級。II 期以上為 Adalimumab 健保適應症參考。",
+      "en": ""
+    },
+    {
+      "zh": "Hurley 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "男性 Norwood I-VII / 女性 Ludwig I-III 雄性禿分級。<strong>越嚴重需越積極治療</strong>(Finasteride、植髮）。",
+      "en": ""
+    },
+    {
+      "zh": "分級計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "Fitzpatrick 膚色",
+      "en": ""
+    },
+    {
+      "zh": "膚色分型 I-VI。<strong>亞洲人多為 III-IV 型</strong>，雷射 / 化學換膚易反黑(PIH)，需嚴格防曬。",
+      "en": ""
+    },
+    {
+      "zh": "Fitzpatrick 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "異膚另一常用評估，SCORAD 替代品。<strong>EASI 75 / 90 / 100</strong> 表示改善 ≥75% / 90% / 100%。",
+      "en": ""
+    },
+    {
+      "zh": "異膚文章 →",
+      "en": ""
+    },
+    {
+      "zh": "結節性癢疹整體評估。0-4,<strong>0 = 清除、1 = 接近清除</strong>（治療目標）。",
+      "en": ""
+    },
+    {
+      "zh": "PN 文章 →",
+      "en": ""
+    },
+    {
+      "zh": "過去 24 小時最強搔癢 0-10 分。<strong>≥ 4 分降幅</strong>為臨床顯著反應。",
+      "en": ""
+    },
+    {
+      "zh": "白斑活動度評估。<strong>VIDA ≥ +2 為活動性</strong>，需口服治療壓制；VIDA ≤ 0 ≥ 1 年為穩定可手術。",
+      "en": ""
+    },
+    {
+      "zh": "白斑文章 →",
+      "en": ""
+    },
+    {
+      "zh": "TNMB 分期",
+      "en": ""
+    },
+    {
+      "zh": "皮膚 T 細胞淋巴瘤(MF/SS)分期。T（皮膚）+ N（淋巴結）+ M（內臟）+ B（血液）。<strong>B2 ≥ 1000/μL 自動為 SS</strong>。",
+      "en": ""
+    },
+    {
+      "zh": "CTCL 文章 →",
+      "en": ""
+    },
+    {
+      "zh": "2 · 機轉 / 細胞激素",
+      "en": ""
+    },
+    {
+      "zh": "機轉",
+      "en": ""
+    },
+    {
+      "zh": "<strong>異位性皮膚炎、過敏性氣喘、CRSwNP 的核心發炎細胞激素</strong>。Dupilumab 阻斷 IL-4Rα，同時關掉 IL-4 + IL-13 訊號。",
+      "en": ""
+    },
+    {
+      "zh": "<strong>乾癬、乾癬性關節炎、化膿性汗腺炎的主要驅動細胞激素</strong>。Secukinumab / Bimekizumab 抗 IL-17;Risankizumab / Guselkumab 抗 IL-23。",
+      "en": ""
+    },
+    {
+      "zh": "乾癬文章 →",
+      "en": ""
+    },
+    {
+      "zh": "「<strong>搔癢細胞激素</strong>」。在結節性癢疹、異膚高度活化。Nemolizumab 抗 IL-31R 後癢感 1-2 週內顯著改善。",
+      "en": ""
+    },
+    {
+      "zh": "JAK / STAT 路徑",
+      "en": ""
+    },
+    {
+      "zh": "細胞激素受體下游<strong>細胞內訊號傳遞</strong>路徑。JAK1-3 + TYK2。JAK 抑制劑(Baricitinib、Upadacitinib、Abrocitinib、Ritlecitinib)阻斷此路徑。",
+      "en": ""
+    },
+    {
+      "zh": "生物製劑文章 →",
+      "en": ""
+    },
+    {
+      "zh": "慢性發炎主軸細胞激素。<strong>Adalimumab、Etanercept、Infliximab、Certolizumab</strong> 為 TNF-α 抑制劑、用於乾癬、HS、PsA、IBD。",
+      "en": ""
+    },
+    {
+      "zh": "發炎後<strong>色素沉著</strong>(PIH，棕黑）或<strong>紅斑</strong>(PIE，紅）。亞洲人 PIH 風險高、雷射 / 痘痘後常見。",
+      "en": ""
+    },
+    {
+      "zh": "肝斑文章 →",
+      "en": ""
+    },
+    {
+      "zh": "Koebner 現象",
+      "en": ""
+    },
+    {
+      "zh": "受傷 / 摩擦 / 抓癢處<strong>誘發新病灶</strong>。常見於白斑、乾癬、扁平苔癬。手術前白斑必須穩定 1 年才適合移植。",
+      "en": ""
+    },
+    {
+      "zh": "輔助 T 細胞分支：<strong>Th1 = 細胞免疫（感染防禦）、Th2 = 過敏 / 異膚、Th17 = 乾癬 / HS / PsA</strong>。",
+      "en": ""
+    },
+    {
+      "zh": "3 · 重要藥物",
+      "en": ""
+    },
+    {
+      "zh": "藥物",
+      "en": ""
+    },
+    {
+      "zh": "Dupilumab（度普利尤單抗 / 杜避炎）",
+      "en": ""
+    },
+    {
+      "zh": "第一個皮膚科廣譜<strong>生物製劑</strong>。FDA 適應症：異膚 ≥ 6 個月、結節性癢疹、氣喘、CRSwNP、嗜酸性食道炎。每 2 週 1 針。",
+      "en": ""
+    },
+    {
+      "zh": "用法 →",
+      "en": ""
+    },
+    {
+      "zh": "2024 FDA 核准的<strong>結節性癢疹專用</strong>生物製劑。每 4 週 1 針（優勢：比 dupilumab 少注射）。",
+      "en": ""
+    },
+    {
+      "zh": "Omalizumab(Xolair / 樂無喘）",
+      "en": ""
+    },
+    {
+      "zh": "慢性自發性蕁麻疹(CSU)第二線。300 mg q4w，反應不佳可加量至 600 mg q2w(off-label)。",
+      "en": ""
+    },
+    {
+      "zh": "Baricitinib(Olumiant / 愛滅炎）",
+      "en": ""
+    },
+    {
+      "zh": "第一個 FDA / EMA 核准的<strong>圓禿口服 JAK 抑制劑</strong>（成人重度）；亦用於異膚、類風濕。",
+      "en": ""
+    },
+    {
+      "zh": "Ritlecitinib(Litfulo / 麗扶柔）",
+      "en": ""
+    },
+    {
+      "zh": "≥ 12 歲圓禿適應症。200 mg/day × 4 週 loading → 50 mg/day 維持。",
+      "en": ""
+    },
+    {
+      "zh": "Risankizumab(Skyrizi / 喜開麗）",
+      "en": ""
+    },
+    {
+      "zh": "乾癬 / PsA / 克隆氏症生物製劑。每 12 週 1 針（優勢：注射間隔長）。台灣健保有條件給付。",
+      "en": ""
+    },
+    {
+      "zh": "<strong>雙重 IL-17 抑制</strong>(A + F)。乾癬 PASI 100 達成率最高的生物製劑(60%+ 16w)。",
+      "en": ""
+    },
+    {
+      "zh": "第一個<strong>選擇性 TYK2 抑制劑</strong>口服乾癬藥。較傳統 JAK1-3 安全性更好（無 ORAL Surveillance 警示）。",
+      "en": ""
+    },
+    {
+      "zh": "Brentuximab vedotin(Adcetris / 安瑞凡）",
+      "en": ""
+    },
+    {
+      "zh": "CD30+ 皮膚 T 細胞淋巴瘤(MF / pcALCL)。ALCANZA 試驗：ORR4 56% vs 13%。",
+      "en": ""
+    },
+    {
+      "zh": "CTCL 用法 →",
+      "en": ""
+    },
+    {
+      "zh": "Sézary syndrome / 進展期 MF。MAVORIC 試驗中位 PFS 7.7 vs 3.1 月。",
+      "en": ""
+    },
+    {
+      "zh": "2022 FDA 核准的<strong>白斑外用藥</strong>(≥ 12 歲、NSV、≤ 10% 體表）。52 週 50% 達 F-VASI 75。",
+      "en": ""
+    },
+    {
+      "zh": "白斑用法 →",
+      "en": ""
+    },
+    {
+      "zh": "2020 FDA 核准的<strong>外用抗雄激素</strong>痘痘藥。40 年來第一個新機轉外用痘痘藥。",
+      "en": ""
+    },
+    {
+      "zh": "痘痘用法 →",
+      "en": ""
+    },
+    {
+      "zh": "低劑量口服 Minoxidil(LDOM)",
+      "en": ""
+    },
+    {
+      "zh": "≤ 5 mg/day 不影響血壓劑量。<strong>女性 1.25-2.5 mg、男性 2.5-5 mg</strong>(Olsen 2025 JAAD 共識）。",
+      "en": ""
+    },
+    {
+      "zh": "4 · 疾病分型",
+      "en": ""
+    },
+    {
+      "zh": "分型",
+      "en": ""
+    },
+    {
+      "zh": "皮膚 T 細胞淋巴瘤主要型（占 75%)。<strong>斑塊期(patch)→ 厚斑期(plaque)→ 結節期(tumor)</strong>三階段。",
+      "en": ""
+    },
+    {
+      "zh": "MF 紅皮症 + 血液 T 細胞侵犯。<strong>≥ 80% BSA 紅斑 + Sézary 細胞 ≥ 1000/μL</strong>。預後較差。",
+      "en": ""
+    },
+    {
+      "zh": "慢性自發性蕁麻疹（風團 ≥ 6 週、無外因）。<strong>50% 在 1 年內、80% 在 5 年內自然緩解</strong>。",
+      "en": ""
+    },
+    {
+      "zh": "白斑分節型(SV)vs 非分節型(NSV)。<strong>SV 預後較好、適合手術</strong>;NSV 對 ruxolitinib 反應好。",
+      "en": ""
+    },
+    {
+      "zh": "玫瑰痤瘡 4 表現型",
+      "en": ""
+    },
+    {
+      "zh": "表現型分類（取代舊亞型 I-IV):<strong>持續性紅斑、丘疹膿皰、毛細血管擴張、鼻贅</strong>。眼部酒糟為合併症。",
+      "en": ""
+    },
+    {
+      "zh": "酒糟文章 →",
+      "en": ""
+    },
+    {
+      "zh": "5 · 檢查 / 處置",
+      "en": ""
+    },
+    {
+      "zh": "處置",
+      "en": ""
+    },
+    {
+      "zh": "皮膚切片 + 免疫組織化學",
+      "en": ""
+    },
+    {
+      "zh": "疑似 CTCL / 大皰病 / 紅斑性狼瘡。常用 IHC 標記：CD3/CD4/CD8/CD30/CD20。",
+      "en": ""
+    },
+    {
+      "zh": "TCR 重排",
+      "en": ""
+    },
+    {
+      "zh": "皮膚切片送檢驗 T 細胞<strong>單株性</strong>(monoclonality)。MF 早期診斷必備。",
+      "en": ""
+    },
+    {
+      "zh": "Wood 燈 / 皮膚鏡",
+      "en": ""
+    },
+    {
+      "zh": "Wood 燈：無創照射、白斑變更亮、Tinea versicolor 黃綠螢光。皮膚鏡：10× 放大鏡輔助痣 / 黑色素瘤 / 圓禿診斷。",
+      "en": ""
+    },
+    {
+      "zh": "NB-UVB 光療",
+      "en": ""
+    },
+    {
+      "zh": "311-312 nm 窄波。乾癬、白斑、結節性癢疹、廣泛異膚的標準光療。每週 2-3 次。",
+      "en": ""
+    },
+    {
+      "zh": "308-nm 準分子雷射",
+      "en": ""
+    },
+    {
+      "zh": "局限性白斑、乾癬、頑固異膚的精準光療。比 NB-UVB 劑量高、療程短。",
+      "en": ""
+    },
+    {
+      "zh": "病灶內類固醇注射",
+      "en": ""
+    },
+    {
+      "zh": "最常用 Triamcinolone acetonide(TA)5-10 mg/mL。<strong>圓禿、肥厚疤、痘痘結節</strong>標準處置。每 4-6 週 1 次。",
+      "en": ""
+    },
+    {
+      "zh": "圓禿文章 →",
+      "en": ""
+    },
+    {
+      "zh": "6 · 常見症狀",
+      "en": ""
+    },
+    {
+      "zh": "症狀",
+      "en": ""
+    },
+    {
+      "zh": "苔癬化",
+      "en": ""
+    },
+    {
+      "zh": "慢性<strong>反覆抓癢</strong>導致皮膚增厚、皺紋加深、紋路明顯。常見於異膚、結節性癢疹、神經性皮膚炎。",
+      "en": ""
+    },
+    {
+      "zh": "水皰",
+      "en": ""
+    },
+    {
+      "zh": "皮膚內含液體的隆起病灶。<strong>&lt; 0.5 cm = vesicle、≥ 0.5 cm = bulla</strong>。常見於汗皰疹、單純皰疹、水痘、自體免疫大皰病。",
+      "en": ""
+    },
+    {
+      "zh": "皮蛇文章 →",
+      "en": ""
+    },
+    {
+      "zh": "膿皰",
+      "en": ""
+    },
+    {
+      "zh": "內含<strong>膿液</strong>（白色 / 黃色）的隆起病灶。常見於丘疹膿皰型酒糟、痘痘、毛囊炎。",
+      "en": ""
+    },
+    {
+      "zh": "蝴蝶徵象",
+      "en": ""
+    },
+    {
+      "zh": "背部上中央出現「<strong>三角形未受波及區</strong>」（因手抓不到）。結節性癢疹、慢性癢疹特徵。",
+      "en": ""
+    },
+    {
+      "zh": "血管性水腫",
+      "en": ""
+    },
+    {
+      "zh": "皮下深層腫脹、常見於眼瞼、嘴唇、手腳。<strong>40% 慢性蕁麻疹病人合併</strong>。喉頭水腫為急症。",
+      "en": ""
+    },
+    {
+      "zh": "獅面 leonine facies",
+      "en": ""
+    },
+    {
+      "zh": "臉部廣泛浸潤性紅斑與皮膚增厚、呈「獅子臉」外觀。可見於 MF 結節期、痲瘋病、淋巴瘤。",
+      "en": ""
+    },
+    {
+      "zh": "三色性 / 融合性",
+      "en": ""
+    },
+    {
+      "zh": "白斑活動性指標。<strong>Trichrome：中央白 → 過渡色 → 正常</strong>;<strong>Confetti：融合性小白點</strong>。預示快速進展。",
+      "en": ""
+    },
+    {
+      "zh": "用法說明：",
+      "en": ""
+    },
+    {
+      "zh": "乾癬治療成效指標。<strong>PASI 75</strong> ＝ 治療 16 週皮膚改善 ≥ 75%、<strong>PASI 90</strong> ≥ 90%、<strong>PASI 100</strong> ＝ 完全清除。傳統治療目標 PASI 50-75、現代生物製劑提升至 PASI 90/100。",
+      "en": ""
+    },
+    {
+      "zh": "乾癬全身性治療 →",
+      "en": ""
+    },
+    {
+      "zh": "異位性皮膚炎嚴重度（EASI 0-72；IGA 0-4）。EASI 75/90 = 改善 ≥ 75%/90%。台灣健保 dupilumab 給付門檻：EASI ≥ 24、IGA ≥ 4。",
+      "en": ""
+    },
+    {
+      "zh": "AD 全身性治療 →",
+      "en": ""
+    },
+    {
+      "zh": "Dupilumab（杜避炎®）",
+      "en": ""
+    },
+    {
+      "zh": "2017 年首支 FDA 核准的異位性皮膚炎生物製劑、阻斷 IL-4 / IL-13 訊號。每 2 週皮下注射、≥ 6 月嬰兒適用。台灣健保有給付（EASI ≥ 24 + IGA ≥ 4）。",
+      "en": ""
+    },
+    {
+      "zh": "Dupilumab 介紹 →",
+      "en": ""
+    },
+    {
+      "zh": "JAK 抑制劑",
+      "en": ""
+    },
+    {
+      "zh": "口服標靶藥、阻斷 JAK1/2/3 訊號。AD 用 abrocitinib（希必皮）、upadacitinib（銳虎），EASI 75 達 60-78%。<strong>FDA 黑框警告</strong>：MACE、靜脈血栓、惡性腫瘤風險、≥ 65 歲避用。",
+      "en": ""
+    },
+    {
+      "zh": "JAK 抑制劑 →",
+      "en": ""
+    },
+    {
+      "zh": "IL-23 抑制劑",
+      "en": ""
+    },
+    {
+      "zh": "最新一代乾癬生物製劑。Risankizumab（喜瑞莎）、guselkumab（創癬寧）、tildrakizumab（聖癬寧）。每 8-12 週皮下注射、感染風險最低、合併 IBD 可用。",
+      "en": ""
+    },
+    {
+      "zh": "IL-23 抑制劑 →",
+      "en": ""
+    },
+    {
+      "zh": "IL-17 抑制劑",
+      "en": ""
+    },
+    {
+      "zh": "第二代乾癬生物製劑。Secukinumab（可在新）、ixekizumab（達癬美）、bimekizumab（碧美時）。對指甲、頭皮、PsA 效果好。<strong>合併 IBD 禁用</strong>。",
+      "en": ""
+    },
+    {
+      "zh": "IL-17 抑制劑 →",
+      "en": ""
+    },
+    {
+      "zh": "皮膚切片",
+      "en": ""
+    },
+    {
+      "zh": "皮膚科診斷的關鍵工具。4 種技術：削皮（shave）淺、環鋸（punch）4 mm 全層、切口（incisional）取大病灶部分、切除（excisional）含邊緣完整切下。",
+      "en": ""
+    },
+    {
+      "zh": "4 種切片技術 →",
+      "en": ""
+    },
+    {
+      "zh": "梭形切除（Fusiform Excision）",
+      "en": ""
+    },
+    {
+      "zh": "皮膚腫瘤切除標準術式。3：1 長寬比、頂角 ≤ 30°、長軸平行 Langer 線（皮膚張力線）以降低疤痕張力。",
+      "en": ""
+    },
+    {
+      "zh": "梭形切除流程 →",
+      "en": ""
+    },
+    {
+      "zh": "疾病",
+      "en": ""
+    },
+    {
+      "zh": "乾癬性關節炎（PsA）",
+      "en": ""
+    },
+    {
+      "zh": "15-30% 乾癬病人合併。皮膚通常先發病 5-10 年。5 大警訊：晨僵 &gt; 30 分鐘、臘腸指、肌腱附著點炎、發炎性背痛、DIP 關節炎。陽性 → 風濕科 + 直接生物製劑。",
+      "en": ""
+    },
+    {
+      "zh": "PsA 合併症 →",
+      "en": ""
+    },
+    {
+      "zh": "<a href=\"/\" data-zh=\"首頁\" data-en=\"Home\">首頁</a>",
+      "en": ""
+    },
+    {
+      "zh": "<a href=\"/blog\" data-zh=\"衛教文章\" data-en=\"Articles\">衛教文章</a>",
+      "en": ""
+    },
+    {
+      "zh": "<a href=\"/blog/topics\" data-zh=\"主題地圖\" data-en=\"Topic map\">主題地圖</a>",
+      "en": ""
+    },
+    {
+      "zh": "<a href=\"/tools\" data-zh=\"量表計算器\" data-en=\"Calculators\">量表計算器</a>",
+      "en": ""
+    },
+    {
+      "zh": "<a href=\"/glossary\" data-zh=\"醫學詞彙\" data-en=\"Glossary\">醫學詞彙</a>",
+      "en": ""
+    },
+    {
+      "zh": "<a href=\"/about\" data-zh=\"作者\" data-en=\"Author\">作者</a>",
+      "en": ""
+    },
+    {
+      "zh": "<a href=\"/privacy\" data-zh=\"隱私權政策\" data-en=\"Privacy\">隱私權政策</a>",
+      "en": ""
+    },
+    {
+      "zh": "<a href=\"mailto:expertise88864@gmail.com\" data-zh=\"聯絡 Email\" data-en=\"Contact\">聯絡 Email</a>",
+      "en": ""
+    }
+  ]
+}
