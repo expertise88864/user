@@ -1,3 +1,20 @@
+"""RETIRED 2026-08-01 (TD-46) — do not put this back in the pipeline.
+
+This was a one-shot migration that carried hardcoded copies of four blocks (an
+<h1>, two disclaimers, a key-insight paragraph) and rewrote pages back to them.
+The migration finished long ago — it changes 0 files today — but it stayed
+wired into REGEN_STEPS, so rewording any of those blocks would have been
+silently reverted by the next build. A guard that overwrites the author is
+worse than no guard.
+
+The bilingual contract it was really protecting is now enforced structurally by
+_check_bilingual_attrs.py, which fails on a lost or missing translation and
+cannot fire on a legitimate rewording.
+
+Kept as a record of what the migration did. Running it is a no-op today; if it
+ever stops being one, that means a page drifted back and you should read the
+diff rather than apply this.
+"""
 from __future__ import annotations
 
 import re

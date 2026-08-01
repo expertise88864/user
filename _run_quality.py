@@ -10,7 +10,13 @@ PY = sys.executable
 NPM = "npm.cmd" if os.name == "nt" else "npm"
 
 REGEN_STEPS: list[list[str]] = [
-    [PY, "_normalize_bilingual_attrs.py"],
+    # CODE_REVIEW TD-46 — _normalize_bilingual_attrs.py was removed from
+    # this list on 2026-08-01. It was a one-shot migration carrying
+    # hardcoded copies of four blocks and rewriting pages back to them;
+    # the migration finished long ago (it changes 0 files today) but
+    # while it stayed here, rewording any of those blocks would have been
+    # silently reverted by the next build. _check_bilingual_attrs.py in
+    # CHECK_STEPS guards the same contract structurally instead.
     [PY, "_normalize_schema.py"],
     [PY, "_normalize_social_images.py"],
     [PY, "_normalize_css_links.py"],
@@ -265,6 +271,7 @@ CHECK_STEPS: list[list[str]] = [
     # OG article:* on every blog article, Organization+logo on
     # homepage, sitemap encoding). Each missing signal directly
     # reduces SERP visibility or rich-card eligibility.
+    [PY, "_check_bilingual_attrs.py"],
     [PY, "_check_seo_signals.py"],
     # 2026-05-19 — Tier 2D guard: every blog article's H1 + lead
     # paragraph must render from raw HTML (not be JS-injected).
