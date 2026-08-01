@@ -128,6 +128,9 @@
 > 已讀者結論:皆為**真驗證器/健全生成器**——`_check_runtime_smoke` 真起 server 驗 content-type/needle/SW 快取/各 bundle;
 > `_check_article_runtime` 編碼 4 次真實事故(含 `data-zh` 屬性提前閉合偵測);`_check_index_boundaries` 正是擋下誤刪
 > `en/reset-sw.html` 的那支;`_gen_search_index` 用 HTMLParser 做 DOM-aware 抽取、不讀屬性。
+> **補正(2026-08-01)**:上面第二輪對 `_normalize_css_links` 的「無缺陷」結論不完整。當時寫「`.js`/`.min.js` 同步 bump,漂移由 `_check_runtime_smoke` + `_check_min_sync` 兜底」——但 `BLOG_SHARED_SRC_RE` 只認 `\.min\.js`,所以引用未壓縮 `/blog/blog-shared.js` 的頁面**從來沒被 bump 過,也沒有任何 gate 會抱怨**。實際命中 3 篇文章 ×2 語系(`dermatologic-oral-examination`、`dupilumab-long-term-maintenance`、`severe-scabies-treatment`):載入 120,555 bytes 而非 76,878,且無 `?v=`。
+> 病灶是**單向守衛**——`_check_performance_budget` 兩處迴圈只在「找到了」時才會說話,零個是靜默通過。同一形狀另有 `ai-dermatology-roles` 載入 Google Fonts 卻無任何 preconnect(其餘 129 頁都有)。兩處都已補成雙向並各自通過突變測試(含刪除)。
+> 找法可複用:用 AST 掃全部 `_check_*.py`,找「迴圈跑 `findall`/`finditer`、迴圈體只有 `if … errors.append`」的形狀。10 筆命中,9 筆是對字典 `items()` 的走訪(空=乾淨,設計正確),第 10 筆就是上面那支。
 
 | ID | 項目 | 證據/症狀 | 修法 | 驗證 | 安全 |
 |----|------|-----------|------|------|------|
