@@ -64,6 +64,27 @@ if hasattr(sys.stdout, "reconfigure"):
 
 DATA = ROOT / "data" / "translations"
 HAN = re.compile(r"[一-鿿]")
+CRLF = chr(13) + chr(10)
+
+
+def decoded(value: str) -> str:
+    """The text a browser will actually show, entities resolved.
+
+    CODE_REVIEW 2026-08-01 — the Han guard used to test the raw string, so
+    `&#x4e2d;` sailed through: html.escape turns it into `&amp;#x4e2d;` in the
+    attribute, Python's HTMLParser decodes attribute entities when
+    _gen_en_pages.py reads it back, `&#x4e2d;` lands in the body, and the
+    browser renders 中. Verified end to end before fixing. Unescaping repeats
+    until stable so a double-encoded value cannot hide behind one round.
+    """
+    for _ in range(4):
+        nxt = html.unescape(value)
+        if nxt == value:
+            break
+        value = nxt
+    return value
+
+
 VOID = {"meta", "img", "input", "br", "hr", "link", "source", "area", "col"}
 
 # Only these carry translatable UI copy. Deliberately a list rather than "any
@@ -292,7 +313,7 @@ def cmd_status(pages: list[str]) -> int:
             continue
         strings = json.loads(dest.read_text(encoding="utf-8"))["strings"]
         done = [s for s in strings if s["en"].strip()]
-        bad = [s for s in done if HAN.search(s["en"])]
+        bad = [s for s in done if HAN.search(decoded(s["en"]))]
         print("%-18s %d/%d translated%s"
               % (page, len(done), len(strings),
                  "  — %d still contain Chinese and will be refused" % len(bad) if bad else ""))
@@ -300,6 +321,12 @@ def cmd_status(pages: list[str]) -> int:
 
 
 def cmd_inject(pages: list[str]) -> int:
+    failures = selftest()
+    if failures:
+        print("[FAIL] _translate_ui selftest — refusing to write:")
+        for line in failures:
+            print("  - " + line)
+        return 1
     for page in pages:
         path = ROOT / page
         dest = store(page)
@@ -315,18 +342,11 @@ def cmd_inject(pages: list[str]) -> int:
             if not en:
                 skipped_empty += 1
                 continue
-            if HAN.search(en):
-                refused.append(("still Chinese", en[:46]))
+            why = refuse_reason(inner, en)
+            if why:
+                refused.append((why, en[:46]))
                 continue
-            lost = classes_in(inner) - classes_in(en)
-            if lost:
-                refused.append(("drops class(es) %s" % ",".join(sorted(lost)),
-                                en[:46]))
-                continue
-            new_tag = tag[:-1].rstrip()
-            if new_tag.endswith("/"):
-                new_tag = new_tag[:-1].rstrip()
-            new_tag += ' data-en="%s">' % html.escape(en, quote=True)
+            new_tag = with_data_en(tag, en)
             edits.append((start, start + len(tag), new_tag))
         out = raw
         for s, e, new in sorted(edits, reverse=True):
@@ -341,8 +361,81 @@ def cmd_inject(pages: list[str]) -> int:
     return 0
 
 
+def refuse_reason(zh_inner: str, en: str) -> str:
+    """Why this translation must not be written, or "" if it may be.
+
+    Both rules exist because something got through them:
+      * Chinese in the English value — including entity-encoded Chinese, which
+        the raw-string check missed until external review found it. Browsers
+        resolve `&#x4e2d;` to 中, so the test has to look at decoded text.
+      * a translation that drops class-bearing markup. data-en replaces the
+        element's inner HTML wholesale, so prose offered for a container
+        deletes whatever it wrapped — nine <div class="gloss-card"> blocks, in
+        the incident that prompted this.
+    """
+    if HAN.search(decoded(en)):
+        return "still Chinese"
+    lost = classes_in(zh_inner) - classes_in(en)
+    if lost:
+        return "drops class(es) %s" % ",".join(sorted(lost))
+    return ""
+
+
+def with_data_en(tag: str, en: str) -> str:
+    """`tag` with a data-en attribute inserted, and nothing else touched.
+
+    Inserted immediately before the closing '>'. An earlier version rstrip()ped
+    the tag first, which consumed the space in `<p >` and the newline inside a
+    multiline tag: line-ending counts changed and removing the attribute could
+    no longer reconstruct the file. units() excludes void and self-closing
+    tags, so tag[-1] is a plain '>'.
+    """
+    assert tag.endswith(">") and not tag[:-1].rstrip().endswith("/"), tag[:60]
+    return tag[:-1] + ' data-en="%s"' % html.escape(en, quote=True) + ">"
+
+
+def selftest() -> list[str]:
+    """Fixtures for what inject() promises, run before every injection.
+
+    They call refuse_reason() and with_data_en() — the functions inject() uses
+    — rather than restating their logic. The first version of this selftest
+    restated it, and passed with both fixes reverted.
+
+    Every case below is a defect external review found in this file.
+    """
+    failures: list[str] = []
+
+    def check(label, got, want):
+        if got != want:
+            failures.append("%s: expected %r, got %r" % (label, want, got))
+
+    check("entity-encoded Chinese must be refused",
+          refuse_reason("<p>x</p>", "&#x4e2d;&#x6587;"), "still Chinese")
+    check("double-encoded Chinese must be refused",
+          refuse_reason("<p>x</p>", "&amp;#x4e2d;"), "still Chinese")
+    check("literal Chinese must be refused",
+          refuse_reason("<p>x</p>", "still 中文"), "still Chinese")
+    check("plain English must be accepted",
+          refuse_reason("<p>x</p>", "plain English"), "")
+    check("dropping a class-bearing child must be refused",
+          refuse_reason('<span class="gloss-card">x</span>', "prose"),
+          "drops class(es) gloss-card")
+    check("keeping the class must be accepted",
+          refuse_reason('<span class="gloss-card">x</span>',
+                        '<span class="gloss-card">prose</span>'), "")
+
+    for tag in ("<p >", "<li" + CRLF + '  class="a"' + CRLF + ">", "<td>",
+                '<span  data-x="1" >'):
+        rebuilt = with_data_en(tag, "EN")
+        insert = ' data-en="EN"'
+        if rebuilt.replace(insert, "", 1) != tag:
+            failures.append(
+                "data-en insertion moved other bytes in %r -> %r" % (tag, rebuilt))
+    return failures
+
+
 def main() -> int:
-    if len(sys.argv) < 3:
+    if len(sys.argv) < 2 or (len(sys.argv) < 3 and sys.argv[1] != "selftest"):
         print(__doc__)
         return 2
     mode, pages = sys.argv[1], sys.argv[2:]
@@ -352,7 +445,13 @@ def main() -> int:
         return cmd_inject(pages)
     if mode == "status":
         return cmd_status(pages)
-    print("[FAIL] unknown mode %r (extract | inject | status)" % mode)
+    if mode == "selftest":
+        failures = selftest()
+        for line in failures:
+            print("  - " + line)
+        print("[%s] _translate_ui selftest" % ("FAIL" if failures else "OK"))
+        return 1 if failures else 0
+    print("[FAIL] unknown mode %r (extract | inject | status | selftest)" % mode)
     return 2
 
 
