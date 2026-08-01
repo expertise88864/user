@@ -47,6 +47,21 @@ runtime, not only by _gen_en_pages.py when it builds the /en mirror.
      draft of this checker waved every one of them through. Found by external
      review, reproduced before fixing.
 
+  4. data-en repeating data-zh verbatim while holding Chinese — a translation
+     that fell back to its own source. This is the shape that shipped: three
+     renderers label a card `a.title_en || a.title`, and 26 of the 53 entries in
+     DN.ARTICLES had no title_en, so 182 data-en values across 88 pages were the
+     Chinese title. Fixed at the root (every entry now carries title_en, taken
+     from the English og:title the site already publishes for that article, not
+     from a translation written here) and locked at both ends: invariant 4 on
+     the rendered attributes, check_article_catalog() on the source they come
+     from. Measured after the fix: 0 of 17,051 pairs.
+
+     Chinese inside an English value is NOT the test — plenty of the English
+     copy legitimately quotes a Chinese term ("Rosacea (commonly called 酒糟肌)",
+     Taiwanese brand names). Those differ from data-zh, so they never trip it.
+     Nine such values exist and none is flagged.
+
 WHAT THIS CANNOT CHECK, AND NOTHING ELSE DOES EITHER
 ====================================================
 data-en being DELETED outright from one of those 1,002 elements. Afterwards it
@@ -75,7 +90,9 @@ wording — which is exactly what the normalizer got wrong.
 """
 from __future__ import annotations
 
+import re
 import sys
+from html import unescape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -87,6 +104,72 @@ if hasattr(sys.stdout, "reconfigure"):
 
 SKIP_DIRS = {".git", "node_modules", "__pycache__", "pagefind"}
 SKIP_NAMES = {"404.html", "offline.html", "admin.html", "reset-sw.html"}
+
+HAN = re.compile(r"[一-鿿]")
+
+# The article catalog three components read to label a card or a chip.
+SHARED_JS = ROOT / "blog" / "blog-shared.js"
+CATALOG_ENTRY = re.compile(r"\{[^{}]*\}")
+CATALOG_SLUG = re.compile(r"""slug\s*:\s*(['"])(.*?)\1""")
+# Measured 2026-08-01: 53 published entries. 40 leaves room for retirement
+# without the floor firing on ordinary editing.
+MIN_CATALOG_ENTRIES = 40
+
+
+def article_catalog() -> list[tuple[str, str]]:
+    """(slug, entry-source) for each real article in DN.ARTICLES.
+
+    Objects without a quoted slug are function bodies and short-lived literals
+    that happen to live in the same region — `{ slug: a.slug, date: ... }` — not
+    catalog entries, so they are skipped rather than counted or validated.
+    """
+    src = SHARED_JS.read_text(encoding="utf-8", errors="replace")
+    start = src.find("DN.ARTICLES = [")
+    if start < 0:
+        return []
+    end = src.find("\n  ];", start)
+    if end < 0:
+        return []
+    out = []
+    for match in CATALOG_ENTRY.finditer(src[start:end]):
+        slug = CATALOG_SLUG.search(match.group(0))
+        if slug:
+            out.append((slug.group(2), match.group(0)))
+    return out
+
+
+def check_article_catalog() -> list[str]:
+    """Every card label must have an English form that is actually English.
+
+    blog-article-footer.js, blog-hub.js (twice) all render an English label as
+    `a.title_en || a.title`, so a missing title_en silently emits the Chinese
+    title into data-en and the /en mirror shows Chinese. That is exactly how 182
+    Chinese data-en values reached production across 88 pages. The fallbacks are
+    left in place as defensive code; this makes them unreachable.
+    """
+    errors: list[str] = []
+    entries = article_catalog()
+    for slug, entry in entries:
+        for field in ("title_en", "tag_en"):
+            m = re.search(field + r"""\s*:\s*(['"])((?:[^'"\\]|\\.)*)\1""", entry)
+            if not m:
+                errors.append(
+                    f"blog/blog-shared.js: article {slug!r} has no {field} — "
+                    f"the card renderers fall back to the Chinese title, which "
+                    f"lands in data-en and ships Chinese to the /en mirror")
+            elif not m.group(2).strip():
+                errors.append(
+                    f"blog/blog-shared.js: article {slug!r} has an empty {field}")
+            elif HAN.search(m.group(2)):
+                errors.append(
+                    f"blog/blog-shared.js: article {slug!r} has a Chinese "
+                    f"{field}: {m.group(2)[:50]!r}")
+    if len(entries) < MIN_CATALOG_ENTRIES:
+        errors.append(
+            f"only {len(entries)} catalog entr(ies) parsed from DN.ARTICLES "
+            f"(expected >= {MIN_CATALOG_ENTRIES}) — the parse is broken, so a "
+            f"pass here would mean nothing")
+    return errors
 
 # Anti-vacuity floor. The site carries ~17,000 pairs; if a scan ever reports a
 # few hundred, discovery broke and a pass would mean nothing.
@@ -106,7 +189,7 @@ def pages() -> list[Path]:
 
 
 def main() -> int:
-    errors: list[str] = []
+    errors: list[str] = check_article_catalog()
     pairs = 0
     en_only = 0
     files = pages()
@@ -144,6 +227,11 @@ def main() -> int:
                 errors.append(
                     f"{rel}: {missing} is empty while its counterpart is not — "
                     f"a translation was lost: {tag[:120]}")
+            elif (unescape(zh) == unescape(en)) and HAN.search(unescape(en)):
+                errors.append(
+                    f"{rel}: data-en repeats data-zh verbatim and is Chinese — "
+                    f"this is a translation that fell back to the source, not a "
+                    f"translation: {unescape(en)[:70]}")
 
     if pairs < MIN_PAIRS:
         errors.append(
@@ -160,7 +248,8 @@ def main() -> int:
         return 1
 
     print(f"[OK] bilingual attributes consistent ({len(files)} files, "
-          f"{pairs} pairs, {en_only} elements whose own text is the Chinese)")
+          f"{pairs} pairs, {en_only} elements whose own text is the Chinese, "
+          f"{len(article_catalog())} catalog entries with an English label)")
     return 0
 
 
