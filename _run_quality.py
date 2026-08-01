@@ -272,6 +272,7 @@ CHECK_STEPS: list[list[str]] = [
     # homepage, sitemap encoding). Each missing signal directly
     # reduces SERP visibility or rich-card eligibility.
     [PY, "_check_bilingual_attrs.py"],
+    [PY, "_check_hant_only.py"],
     [PY, "_check_seo_signals.py"],
     # 2026-05-19 — Tier 2D guard: every blog article's H1 + lead
     # paragraph must render from raw HTML (not be JS-injected).

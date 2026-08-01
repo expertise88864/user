@@ -340,7 +340,7 @@ Q1. 指甲乾癬擦藥都沒效，是不是一定要打針？
 ---
 ## Spironolactone 在皮膚科安全嗎？2026 JAAD 兩篇研究：≥45 歲女性高血鉀風險與合併 minoxidil 開立指南
 URL: https://chendermatologist.com/blog/spironolactone-dermatology-safety
-Updated: 2026-05-26
+Updated: 2026-08-01
 Section: Research Summary
 Reading time: PT30M
 Tags: Spironolactone 安全性, Spironolactone safety
@@ -6656,7 +6656,7 @@ PN 為臨床診斷、須同時符合下列 3 項：
 抓癢行為（目前或過去）
 多發性、局部性結節型癢疹皮膚病灶
 鑑別診斷（必須排除）:
-結節型疥瘡 — 採疥螨檢驗、家人接觸史
+結節型疥瘡 — 採疥蟎檢驗、家人接觸史
 結節型皮膚 T 細胞淋巴瘤(MF/SS) — 皮膚切片 + 免疫組織化學
 類天皰瘡前期(pemphigoid prurigoides) — 抗 BP180/BP230 抗體、DIF
 反應性穿透性膠原病（尤其慢性腎病者）
@@ -10191,7 +10191,7 @@ UpToDate: Melasma: Management. Accessed 2026.
 ---
 ## 玫瑰痤瘡 6 大迷思
 URL: https://chendermatologist.com/blog/rosacea-myths
-Updated: 2026-05-25
+Updated: 2026-08-01
 Section: Myths & Facts
 Reading time: PT17M
 Tags: 酒糟肌, Rosacea
@@ -10260,7 +10260,7 @@ Key FactDemodex folliculorum（毛囊蠕形蟎）與 Demodex brevis（短蠕形�
 玫瑰痤瘡病人皮膚 Demodex 密度比一般人高 5-10 倍，尤其在丘疹膿皰型（PPR）與眼部型最明顯。
 外用 Ivermectin 治療同時改善蟎蟲密度與發炎症狀，但其機轉主要被認為是抗發炎，殺蟎為次要作用。
 BAD 2021 指引將 Demodex 視為「促成因子（contributor）」而非單一致病原因，且僅有部分病人從抗 Demodex 治療獲益(Hampton 2021, BJD)。所以 — 蟎蟲多半是「發炎的結果」而非「發炎的原因」，光殺蟲不夠，要同時抗發炎。
-市售「除螨皂」、「除螨洗面乳」對玫瑰痤瘡幾乎都沒實證，且許多含刺激性成分（酒精、薄荷、強界面活性劑），反而會讓酒糟惡化。
+市售「除蟎皂」、「除蟎洗面乳」對玫瑰痤瘡幾乎都沒實證，且許多含刺激性成分（酒精、薄荷、強界面活性劑），反而會讓酒糟惡化。
 如何診斷？需要驗蟎蟲嗎？
 玫瑰痤瘡主要為臨床診斷 — 醫師依分布（中央臉、對稱）、表現（潮紅、紅斑、丘疹膿皰、毛細血管擴張、眼部不適）、病程（慢性、反覆）即可判斷。常見的鑑別診斷包括：
 脂漏性皮膚炎：T 字部位（眉間、鼻翼、頭皮）、油性脫屑為主
@@ -10324,7 +10324,7 @@ Schaller 2020 重度玫瑰斑組合療法：外用 Ivermectin 1% qd ＋ 口服�
 逐漸進展為持久性紅斑、毛細血管擴張、丘疹膿皰
 常見部位：兩頰、鼻頭、下巴、額頭中央（對稱）
 抗組織胺通常無效；需要抗發炎處方
-迷思 3：酒糟是「螨蟲」造成的，殺蟲就好
+迷思 3：酒糟是「蟎蟲」造成的，殺蟲就好
 
 [... truncated; fetch canonical URL for full text ...]
 
