@@ -73,6 +73,13 @@ GSTATIC_PRECONNECT_RE = re.compile(
     r'<link\s+rel="preconnect"\s+href="https://fonts\.gstatic\.com"([^>]*)>', re.I)
 
 
+# Anti-vacuity floor. Measured 2026-08-01: the tree serves 134 HTML files
+# (both locales plus the utility pages). 100 leaves room for pages being
+# retired without the floor firing spuriously, while still catching a scan
+# that has stopped finding the corpus.
+MIN_HTML_FILES = 100
+
+
 def iter_html_files() -> list[Path]:
     files: list[Path] = []
     for path in ROOT.rglob("*.html"):
@@ -121,7 +128,8 @@ def main() -> int:
             if f"'/blog/{bundle}.min.js'" in sw_src or f'"/blog/{bundle}.min.js"' in sw_src:
                 errors.append(f"sw.js: {bundle}.min.js should be runtime-cached on demand, not precached during install")
 
-    for path in iter_html_files():
+    html_files = iter_html_files()
+    for path in html_files:
         rel = path.relative_to(ROOT).as_posix()
         src = path.read_text(encoding="utf-8")
         if BLOG_SHARED_PRELOAD_RE.search(src):
@@ -186,6 +194,17 @@ def main() -> int:
             errors.append(f"{rel}: blog-shared runtime is loaded {script_count} times")
         if is_noindex and "blog-shared.min.js" in src and "DN.initBlog" not in src:
             errors.append(f"{rel}: noindex page references blog-shared without using DN.initBlog")
+
+    # CODE_REVIEW 2026-08-01 — every per-page rule above lives inside that one
+    # loop, and nothing recorded how many pages it actually saw. If discovery
+    # ever returns nothing, `errors` stays empty and this prints [OK]: a broken
+    # scan would read as a clean audit. Every other guard in this file was just
+    # made two-sided; the scan itself was still one-sided.
+    if len(html_files) < MIN_HTML_FILES:
+        errors.append(
+            f"only {len(html_files)} HTML file(s) discovered (expected >= "
+            f"{MIN_HTML_FILES}) — the scan is broken, so a pass here would "
+            f"mean nothing")
 
     if errors:
         print("[FAIL] Performance budget audit found issues:")

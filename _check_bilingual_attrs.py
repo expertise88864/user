@@ -26,9 +26,10 @@ runtime, not only by _gen_en_pages.py when it builds the /en mirror.
 
   1. data-zh without data-en — nothing can render this element in English.
      _gen_en_pages.py rewrites an element only when it carries data-en, so the
-     mirror keeps the Chinese (the D-11 failure class), and DN.translate()
-     falls back to the zh value, so the toggle cannot switch it either.
-     Measured: 0 across both locales.
+     mirror keeps the Chinese, and DN.translate() falls back to the zh value,
+     so the toggle cannot switch it either. Measured: 0 across both locales.
+     (This is NOT decision D-11 — an earlier draft of this docstring said so
+     and was wrong. D-11 is the single analytics entry point, DECISIONS.md:52.)
 
   2. one side of a pair empty while the other is not — a translation lost
      rather than never written. Both directions break something, and neither
@@ -39,6 +40,22 @@ runtime, not only by _gen_en_pages.py when it builds the /en mirror.
      not-null. A cell blank in BOTH languages is fine and does occur (an
      intentionally empty <td>), so emptiness alone is not the test; asymmetry
      is. Measured: 0 across both locales.
+
+  3. an element carrying data-en and NO data-zh — its own text is the Chinese
+     and data-en is the whole translation — must not have an empty data-en, for
+     the same reason as invariant 2. There are 1,002 of these and the first
+     draft of this checker waved every one of them through. Found by external
+     review, reproduced before fixing.
+
+WHAT THIS CANNOT CHECK, AND NOTHING ELSE DOES EITHER
+====================================================
+data-en being DELETED outright from one of those 1,002 elements. Afterwards it
+carries no bilingual attribute at all, which is indistinguishable from ordinary
+Chinese prose that was never meant to be translated — there is no structural
+signal left to fire on. The consequence is real (that element stays Chinese on
+the /en mirror), and no other gate covers it: nothing in the pipeline asserts
+that the /en tree is free of Han characters. Recorded here rather than papered
+over; closing it needs a per-element inventory, which is a different design.
 
 WHAT THIS DELIBERATELY DOES NOT CHECK
 =====================================
@@ -109,7 +126,17 @@ def main() -> int:
                 continue
             if zh is None:
                 # The element's own text is the Chinese; data-en translates it.
+                # The value still has to say something. _gen_en_pages.py
+                # replaces the element's contents with whatever data-en holds,
+                # so an empty one blanks it on the mirror exactly as it does in
+                # a pair — verified: `<a data-en="">首頁</a>` renders as
+                # `<a data-en=""></a>`.
                 en_only += 1
+                if not en.strip():
+                    errors.append(
+                        f"{rel}: data-en is empty on an element whose own text "
+                        f"is the Chinese — the /en mirror will render it "
+                        f"blank: {tag[:120]}")
                 continue
             pairs += 1
             if bool(zh.strip()) != bool(en.strip()):
