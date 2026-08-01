@@ -16,20 +16,41 @@ checked structurally instead of by remembering four paragraphs of copy.
 
 THE CONTRACT, AS THE SITE ACTUALLY USES IT
 ===========================================
-The in-place language swap was retired on 2026-05-24 (see the comment above
-DN.bindLangToggle): switching language now navigates to the pre-translated
-/en/ mirror instead of rewriting the page. So the consumer of these attributes
-today is _gen_en_pages.py, which builds that mirror, and the invariants worth
-enforcing are the ones whose violation puts Chinese into an English page.
+Two things read these attributes, and it is worth being exact about which,
+because the obvious answer is wrong. The language TOGGLE was switched to full
+navigation on 2026-05-24 (see the comment above DN.bindLangToggle) — but
+DN.applyTextOnly(), the in-place swap it used to drive, is still live: 404.html
+calls it on load, and blog-shared.js calls it again after every dynamic
+injection (related articles, comments, word count). So both values are read at
+runtime, not only by _gen_en_pages.py when it builds the /en mirror.
 
-  1. data-zh without data-en — the element has Chinese with nothing to
-     translate it to, so the mirror keeps the Chinese. This is the D-11
-     failure class. Measured: 0 across both locales.
+  1. data-zh without data-en — nothing can render this element in English.
+     _gen_en_pages.py rewrites an element only when it carries data-en, so the
+     mirror keeps the Chinese (the D-11 failure class), and DN.translate()
+     falls back to the zh value, so the toggle cannot switch it either.
+     Measured: 0 across both locales.
 
-  2. one side of a pair empty while the other is not — a translation that was
-     lost rather than never written. A cell that is blank in BOTH languages is
-     fine and does occur (an intentionally empty <td>), so emptiness alone is
-     not the test; asymmetry is. Measured: 0 across both locales.
+  2. one side of a pair empty while the other is not — a translation lost
+     rather than never written. Both directions break something, and neither
+     is theoretical: an empty data-en makes _gen_en_pages.py replace the
+     element's contents with the empty string (verified — DataEnRenderer emits
+     `<p data-en=""></p>`), and an empty data-zh does the same at runtime,
+     because DN.translate() returns "" rather than falling through, "" being
+     not-null. A cell blank in BOTH languages is fine and does occur (an
+     intentionally empty <td>), so emptiness alone is not the test; asymmetry
+     is. Measured: 0 across both locales.
+
+WHAT THIS DELIBERATELY DOES NOT CHECK
+=====================================
+Whether data-zh still matches the element's own visible text. It often does
+not: measured across the 70 zh-Hant pages, 11,291 of 11,757 agree and 125
+differ in wording — stale citations, sentences added to the prose but not to
+the attribute. That drift is expected and already handled. Edits saved through
+admin.html land in the visible text without being pushed back into the
+attributes, and applyTextOnly()'s Case C exists precisely to trust the visible
+text instead of reverting it to the data-zh boilerplate on every page load
+(that reversion was the 2026-05-14 incident). Enforcing equality here would
+re-create the bug the Case C branch was written to fix.
 
 Both hold today, which is what makes them worth locking: this checker fails the
 moment either stops being true, and it cannot fail for a legitimate edit to the
