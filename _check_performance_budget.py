@@ -59,6 +59,18 @@ FONT_PRECONNECT_RE = re.compile(
     r'<link\s+rel="preconnect"\s+href="https://fonts\.(googleapis|gstatic)\.com"',
     re.I,
 )
+# Pages that actually fetch the Google Fonts stylesheet. Only those owe the
+# hints; nothing else should be nagged into adding them.
+GOOGLE_FONTS_CSS_RE = re.compile(
+    r'<link\b[^>]+href="https://fonts\.googleapis\.com/css2\?[^"]*"[^>]*rel="stylesheet"'
+    r'|<link\b[^>]+rel="stylesheet"[^>]*href="https://fonts\.googleapis\.com/css2\?[^"]*"',
+    re.I,
+)
+# The gstatic hint is worthless without crossorigin: font files are fetched in
+# CORS mode, so a hint that opens a non-CORS connection warms the wrong socket
+# and the browser opens a second one anyway.
+GSTATIC_PRECONNECT_RE = re.compile(
+    r'<link\s+rel="preconnect"\s+href="https://fonts\.gstatic\.com"([^>]*)>', re.I)
 
 
 def iter_html_files() -> list[Path]:
@@ -137,6 +149,25 @@ def main() -> int:
         for host, count in font_hints.items():
             if count > 1:
                 errors.append(f"{rel}: duplicate fonts.{host}.com preconnect appears {count} times")
+        # This check used to fire only on count > 1, so ZERO hints passed in
+        # silence — which is how blog/ai-dermatology-roles.html shipped loading
+        # the Google Fonts stylesheet with no preconnect at all while the other
+        # 129 pages had both. A one-sided guard reads as coverage it does not
+        # have. Measured before locking: 130 pages load the stylesheet, 128 had
+        # both hints, 0 were missing crossorigin.
+        if GOOGLE_FONTS_CSS_RE.search(src):
+            for host in ("googleapis", "gstatic"):
+                if not font_hints.get(host):
+                    errors.append(
+                        f"{rel}: loads the Google Fonts stylesheet with no "
+                        f"preconnect to fonts.{host}.com — the render-blocking "
+                        f"request pays for DNS and TLS it could have overlapped")
+            for attrs in GSTATIC_PRECONNECT_RE.findall(src):
+                if "crossorigin" not in attrs.lower():
+                    errors.append(
+                        f"{rel}: fonts.gstatic.com preconnect is missing "
+                        f"crossorigin — font files are fetched in CORS mode, so "
+                        f"this warms a connection the browser cannot reuse")
         script_count = len(BLOG_SHARED_SCRIPT_RE.findall(src))
         is_noindex = bool(re.search(r'<meta\s+name="robots"\s+content="[^"]*\bnoindex\b', src, re.I))
         if script_count > 1:
