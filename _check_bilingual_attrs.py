@@ -115,6 +115,12 @@ CATALOG_SLUG = re.compile(r"""slug\s*:\s*(['"])(.*?)\1""")
 # without the floor firing on ordinary editing.
 MIN_CATALOG_ENTRIES = 40
 
+# blog/*.html that are legitimately not catalog entries: two hub pages, and the
+# two clinician-facing companions to patient articles, which are reached from
+# their patient version rather than listed as separate reading.
+NON_CATALOG_PAGES = {"index", "topics",
+                     "isotretinoin-clinical", "topical-acids-clinical"}
+
 
 def article_catalog() -> list[tuple[str, str]]:
     """(slug, entry-source) for each real article in DN.ARTICLES.
@@ -169,6 +175,25 @@ def check_article_catalog() -> list[str]:
             f"only {len(entries)} catalog entr(ies) parsed from DN.ARTICLES "
             f"(expected >= {MIN_CATALOG_ENTRIES}) — the parse is broken, so a "
             f"pass here would mean nothing")
+
+    # A floor cannot see one missing row: delete a single entry and 52 still
+    # clears 40. Compare against the article files instead, which is an exact
+    # relationship rather than a threshold — measured, every catalog slug has a
+    # page and every page outside NON_CATALOG_PAGES has an entry. An article
+    # dropped from the catalog vanishes from search, from the /blog listing
+    # blog-hub.js completes at runtime, and from every recommendation, while the
+    # page itself still serves.
+    catalog_slugs = {slug for slug, _ in entries}
+    on_disk = {p.stem for p in (ROOT / "blog").glob("*.html")}
+    for slug in sorted(catalog_slugs - on_disk):
+        errors.append(
+            f"blog/blog-shared.js: catalog lists {slug!r} but blog/{slug}.html "
+            f"does not exist")
+    for slug in sorted(on_disk - catalog_slugs - NON_CATALOG_PAGES):
+        errors.append(
+            f"blog/blog-shared.js: blog/{slug}.html exists but no DN.ARTICLES "
+            f"entry — the page still serves, yet it is absent from search, from "
+            f"the /blog listing and from every recommendation")
     return errors
 
 # Anti-vacuity floor. The site carries ~17,000 pairs; if a scan ever reports a

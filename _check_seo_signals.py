@@ -1074,7 +1074,14 @@ def _review_dates() -> dict[str, str]:
 
 
 REVIEW_DATES = _review_dates()
-_TODAY = __import__("datetime").date.today()
+# Taipei, not the host clock. CI runs this on ubuntu-latest with no TZ set, so
+# date.today() there is UTC — and a review the physician records between 00:00
+# and 08:00 Taipei is then "in the future" for up to eight hours, failing the
+# gate on a correct date. Fixed +08:00 rather than ZoneInfo: Taiwan has had no
+# DST since 1979, so the offset is exact and needs no tzdata. Must stay in step
+# with _record_review.taipei_today(), which writes the values this compares.
+_TAIPEI = __import__("datetime").timezone(__import__("datetime").timedelta(hours=8))
+_TODAY = __import__("datetime").datetime.now(_TAIPEI).date()
 
 
 def _as_date(value: str):

@@ -38,7 +38,20 @@ import argparse
 import json
 import re
 import sys
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
+
+# The site's dates are Taiwan dates: the physician records a review in Taipei,
+# but CI runs the gate on ubuntu-latest with no TZ configured, i.e. UTC. A
+# review recorded between 00:00 and 08:00 Taipei carries tomorrow's date as far
+# as UTC is concerned, and _check_seo_signals.py rejects it as future-dated —
+# blocking deployment for up to eight hours over a date that is perfectly
+# correct. A fixed offset rather than ZoneInfo("Asia/Taipei"): Taiwan has had no
+# DST since 1979, so +08:00 is exact, and it needs no tzdata on Windows.
+TAIPEI = timezone(timedelta(hours=8))
+
+
+def taipei_today() -> date:
+    return datetime.now(TAIPEI).date()
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -128,7 +141,7 @@ def main() -> int:
     # Parsed, not pattern-matched: 2026-06-31 satisfies the regex and is not a
     # day that exists. Comparisons are between date objects for the same
     # reason — string ordering only happens to work while both are valid.
-    today = date.today()
+    today = taipei_today()
     if raw_when is None:
         when_d = today
     else:

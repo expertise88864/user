@@ -76,10 +76,7 @@ def normalize_acne(path: Path) -> bool:
     src = src.replace('id="m7-en">Myth 6:', 'id="m6-en">Myth 6:')
     src = src.replace('id="m8-en">Myth 7:', 'id="m7-en">Myth 7:')
     src = src.replace('id="m9-en">Myth 8:', 'id="m8-en">Myth 8:')
-    if src != before:
-        path.write_text(src, encoding="utf-8")
-        return True
-    return False
+    return src != before
 
 
 def normalize_sunscreen(path: Path) -> bool:
@@ -87,10 +84,7 @@ def normalize_sunscreen(path: Path) -> bool:
     before = src
     src = replace_between(src, '<h1 class="font-display font-bold leading-[1.18] text-[32px] sm:text-[44px]"', '</h1>', SUNSCREEN_H1)
     src = replace_between(src, '<div class="disclaimer" data-zh="<strong data-zh="提醒 ·"', '</div>', SUNSCREEN_DISCLAIMER)
-    if src != before:
-        path.write_text(src, encoding="utf-8")
-        return True
-    return False
+    return src != before
 
 
 def normalize_isotretinoin(path: Path) -> bool:
@@ -102,10 +96,7 @@ def normalize_isotretinoin(path: Path) -> bool:
         src,
         count=1,
     )
-    if src != before:
-        path.write_text(src, encoding="utf-8")
-        return True
-    return False
+    return src != before
 
 
 def normalize_count_labels() -> int:
@@ -123,22 +114,37 @@ def normalize_count_labels() -> int:
         out = out.replace("9 Sunscreen Myths", "8 Sunscreen Myths")
         out = out.replace("9 sunscreen myths", "8 sunscreen myths")
         if out != src:
-            path.write_text(out, encoding="utf-8")
             changed += 1
     return changed
 
 
 def main() -> None:
-    touched: list[str] = []
-    for rel, fn in {
+    """Report what this migration WOULD have changed. It no longer writes.
+
+    CODE_REVIEW 2026-08-01 — removing this from REGEN_STEPS stopped the build
+    from running it, but main() still called the mutating routines, so anyone
+    invoking the file directly would revert the physician's wording to the
+    hardcoded copies below. The docstring already told maintainers to read the
+    diff rather than apply this; the code did the opposite. Now they agree:
+    nothing here calls write_text.
+    """
+    drift = [rel for rel, fn in {
         "blog/acne-myths.html": normalize_acne,
         "blog/sunscreen-myths.html": normalize_sunscreen,
         "blog/isotretinoin-clinical.html": normalize_isotretinoin,
-    }.items():
-        if fn(ROOT / rel):
-            touched.append(rel)
+    }.items() if fn(ROOT / rel)]
     count_files = normalize_count_labels()
-    print(f"Normalized bilingual attrs in {len(touched)} source files; count labels touched in {count_files} files")
+    print("RETIRED — this script reports drift and writes nothing.")
+    if not drift and not count_files:
+        print("No drift: the pages still match the blocks this migration set.")
+        return
+    for rel in drift:
+        print(f"  would rewrite {rel}")
+    if count_files:
+        print(f"  would rewrite count labels in {count_files} file(s)")
+    print("Read the diff and decide by hand. Do not re-enable this script: the "
+          "blocks below are frozen copies, and applying them overwrites whatever "
+          "the author has written since.")
 
 
 if __name__ == "__main__":
