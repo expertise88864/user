@@ -5,10 +5,12 @@
 HOW THIS WAS FOUND
 ==================
 While measuring what a self-hosted CJK subset would need (TD-02), two of the
-2,202 characters the site uses turned out to be absent from Noto Sans TC's
-coverage: 湿 and 螨. Not a font gap — those are the SIMPLIFIED forms of 濕 and
-蟎, on a zh-Hant-TW site. The site itself was inconsistent about it: 濕 appeared
-438 times against 湿 twice, and 蟎 61 times against 螨 28.
+site's ~2,200 distinct Han characters turned out to be absent from Noto Sans
+TC's coverage: 湿 and 螨. Not a font gap — those are the SIMPLIFIED forms of 濕
+and 蟎, on a zh-Hant-TW site. The site itself was inconsistent about it. Counted
+across the 70 zh-Hant pages, before the fix: 濕 430 against 湿 2, and 蟎 61
+against 螨 28. (The /en mirror carried one 湿 and four 螨 of its own, inherited
+from the ZH source; rebuilding cleared them.)
 
 WHY A LIST AND NOT A CONVERSION TABLE
 =====================================
