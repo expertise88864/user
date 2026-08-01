@@ -127,7 +127,15 @@ ADJACENT_NEGATORS = ("不", "未", "非", "無", "沒", "別", "勿", "毋", "�
 # use, so it is not whitespace and no helper touches it — and main() asserts the
 # corpus never contains it, so the "cannot occur" property is verified on every
 # run rather than assumed.
-BLOCK_BREAK = ""
+#
+# Written as an escape, never as the literal character. U+E000 is invisible,
+# so the literal form renders as `BLOCK_BREAK = ""` and reads like an empty
+# string to whoever maintains this next — and an invisible character does not
+# survive every editor, patch tool, or paste. selftest() asserts the value is
+# still a single private-use character, because an empty BLOCK_BREAK would
+# erase the statement boundaries flatten_body() emits and let a negator in one
+# block excuse a claim in the next.
+BLOCK_BREAK = "\ue000"
 CLAUSE_BOUNDARIES = ("。", "；", "！", "？", ".", ";", "!", "?", BLOCK_BREAK)
 CONTRAST_MARKERS = ("但是", "但", "然而", "不過", "可是", "卻", "however", "but ")
 
@@ -592,6 +600,19 @@ def extraction_selftest() -> list[str]:
 
 
 def main() -> int:
+    # The sentinel, before anything else. Losing it is already DETECTED twice
+    # over — "" is a boundary that matches everywhere, so the negation fixtures
+    # break, and "" is a substring of every file, so the corpus assertion below
+    # fires on all of them. Measured: 80 errors, of which none names the cause;
+    # the first twenty accuse the negation logic. What was missing was never
+    # detection but diagnosis, so this runs first and says the one true thing.
+    if len(BLOCK_BREAK) != 1 or not (0xE000 <= ord(BLOCK_BREAK) <= 0xF8FF):
+        print(f"[FAIL] BLOCK_BREAK is {BLOCK_BREAK!r}, expected a single "
+              f"private-use character — flatten_body() emits it as the statement "
+              f"boundary between block elements, and no other result from this "
+              f"checker means anything until it is restored")
+        return 1
+
     errors = check_policy_in_sync() + selftest() + extraction_selftest()
     scanned = 0
     findings: list[str] = []
