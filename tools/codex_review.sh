@@ -15,7 +15,8 @@
 #   * 絕不把完整 diff 放進 prompt 或 argv;Codex 在 repo 內自行跑 git。
 #   * --ignore-user-config 隔離 ~/.codex/config.toml(不載 plugins/apps/browser/notify/node_repl)。
 #   * --sandbox read-only:Codex 不得寫檔、commit、跑 tests/build/lint/probe。
-#   * 每個 task 最多兩輪;第二輪必須 resume 同一 session,不得重建。
+#   * 迭代到 APPROVE 為止,無輪數上限(使用者定案 2026-07-13,取代舊「最多兩輪」);
+#     每一輪都必須 resume 同一 session,不得重建。
 #   * 結果只讀「最後一則訊息」(-o),不掃整份輸出 —— 否則 prompt 回顯裡的
 #     "APPROVE or REQUEST_CHANGES" 會被誤判(舊 gate script 的真實 bug)。
 #
@@ -79,7 +80,9 @@ build_flags() {   # $1 = effort ; $2 = "resume" to build resume-compatible flags
 }
 
 # ---------- 解析輸出 ----------
-extract_session_id() { grep -oiE 'session id:[[:space:]]*[0-9a-f-]{36}' "$RAW_LOG" 2>/dev/null | head -1 | grep -oiE '[0-9a-f-]{36}' || true; }
+# 舊版接受「任意 36 個 hex 或連字號」,那不是 UUID 形狀 —— 例如全連字號也會過,
+# 然後被寫進 last_session_id 成為之後每一輪都信任的壞紀錄。改為錨定 8-4-4-4-12。
+extract_session_id() { grep -oiE 'session id:[[:space:]]*[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}' "$RAW_LOG" 2>/dev/null | head -1 | grep -oiE '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}' || true; }
 extract_tokens() { awk 'tolower($0) ~ /tokens used/ {found=1; next} found && $0 ~ /[0-9]/ {gsub(/[^0-9]/,"",$0); if (length($0)) {print $0; exit}}' "$RAW_LOG" 2>/dev/null || true; }
 extract_result() {
   # CODE_REVIEW — the verdict is the LAST non-blank line, matched EXACTLY. A
@@ -133,8 +136,11 @@ if [ "$MODE" = "resume" ]; then
   # pass recorded. Accepting an arbitrary explicit id would resume an unrelated
   # session (e.g. another task's) while recording THIS task as pass 2 without
   # ever reviewing its corrections. So an explicit id must equal the recorded one.
-  RECORDED_SID="$(cat "$SESSION_FILE" 2>/dev/null || true)"
-  SID="${2:-}"
+  # UUID 大小寫不敏感,但 shell 字串比較敏感。格式檢查接受 A-F,所以貼上大寫版本
+  # 的**同一個** session 會被判成「不同 session」而拒絕 —— 那會把人推去開新
+  # session,正是本守衛要防的事。兩邊都正規化成小寫再比(codex 輸出本即小寫)。
+  RECORDED_SID="$(cat "$SESSION_FILE" 2>/dev/null | tr 'A-Z' 'a-z' || true)"
+  SID="$(printf '%s' "${2:-}" | tr 'A-Z' 'a-z')"
   if [ -z "$SID" ]; then
     [ -n "$RECORDED_SID" ] || die "找不到第一輪 session id($SESSION_FILE 不存在)。請先在同一 repo 完成第一輪。"
     SID="$RECORDED_SID"
@@ -143,8 +149,21 @@ if [ "$MODE" = "resume" ]; then
   elif [ -z "$RECORDED_SID" ]; then
     die "本 repo 沒有第一輪 session 紀錄可比對;拒絕以未經驗證的 session id resume。"
   fi
+  # 比對相符還不夠:紀錄本身可能是壞的(檔案損毀,或 extract_session_id 的
+  # 寬鬆 regex 收到 36 個 hex/連字號的雜訊)。那種值會通過「有紀錄」與「相符」
+  # 兩道檢查後直接送進 codex —— 而 `codex exec resume <非UUID>` 不會報錯,
+  # 它會**靜默開一個全新 session**,其裁決會被當成本次結果放行 push。
+  # 所以必須驗**最終選定**的 SID 形狀,不是只驗來源。
+  if ! printf '%s' "$SID" | grep -Eq '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'; then
+    die "session id 不是合法 UUID:'$SID'。若 $SESSION_FILE 內容已損毀,請刪除它並重跑第一輪。"
+  fi
   PREV_PASS="$(cat "$PASS_FILE" 2>/dev/null || echo 0)"
-  [ "$PREV_PASS" = "1" ] || die "第二輪只能在完成第一輪之後執行(目前 pass=$PREV_PASS)。每個 task 最多兩輪。"
+  # 舊版硬性 `= "1"`,即「每個 task 最多兩輪」——那與 CLAUDE.md 現行「迭代到
+  # APPROVE 為止、無輪數上限」(使用者 2026-07-13 定案)衝突。實務上只能靠
+  # **開新 session 繞過**,而那會丟掉前一輪上下文、讓審查者重新探索整個 repo
+  # (更貴,且會重複回報已修的東西)。改為只要求「至少完成過第一輪」。
+  case "$PREV_PASS" in (''|*[!0-9]*) PREV_PASS=0 ;; esac
+  [ "$PREV_PASS" -ge 1 ] || die "續審只能在完成第一輪之後執行(目前 pass=$PREV_PASS)。"
 
   # 第二輪的 effort 沿用第一輪(從 usage.tsv 最後一筆讀回),預設 medium。
   RESUME_EFFORT="$(tail -1 "$USAGE_TSV" | cut -f5)"; [ -n "$RESUME_EFFORT" ] || RESUME_EFFORT="medium"
