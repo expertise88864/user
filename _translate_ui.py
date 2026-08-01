@@ -52,6 +52,7 @@ import html
 import json
 import re
 import sys
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -203,16 +204,11 @@ def units(path: Path):
             continue
         if not cheap and not eligible(tag, view[inner_start:inner_end]):
             continue
-        # CODE_REVIEW 2026-08-01 — a data-en replaces the element's inner HTML
-        # wholesale, so a unit must never wrap structural markup: the English
-        # value is prose and cannot reproduce it. The glossary's closing note
-        # turned out to enclose nine <div class="gloss-card"> blocks, and
-        # translating it destroyed them on the mirror — 64 DefinedTerms became
-        # 55, and _normalize_mentions.py then dropped those terms from 30+
-        # articles' JSON-LD. Inline <strong>/<em>/<a> inside a sentence are
-        # fine; anything carrying a class is a structure someone builds on.
-        if re.search(r"<[a-zA-Z][^>]*\sclass\s*=", view[inner_start:inner_end]):
-            continue
+        # Units wrapping class-bearing markup are allowed, but only because
+        # inject() refuses a translation that fails to reproduce those classes
+        # — see classes_in() and cmd_inject. Rejecting them outright (the first
+        # fix for the gloss-card incident) was too blunt: it also blocked the
+        # <h1>, whose only offence is a presentational <span class="teal-text">.
         inner = raw[inner_start:inner_end]
         if not HAN.search(html.unescape(re.sub(r"<[^>]*>", "", uncovered(view, inner_start, inner_end)))):
             # Either no Chinese, or all of it sits inside descendants that are
@@ -223,6 +219,28 @@ def units(path: Path):
         out.append((start, tag, inner_start, inner_end, inner))
         covered_to = inner_end          # outermost only
     return raw, out
+
+
+def classes_in(fragment: str) -> Counter:
+    """Every class token in a fragment, with multiplicity.
+
+    CODE_REVIEW 2026-08-01 — a data-en replaces its element's inner HTML
+    wholesale, so a translation that drops the markup deletes it from the
+    mirror. The glossary's closing note enclosed nine <div class="gloss-card">
+    blocks; translating it as prose destroyed them, en/glossary.html fell from
+    64 DefinedTerms to 55, and _normalize_mentions.py then dropped those terms
+    from thirty-odd articles' JSON-LD — with every gate green. Comparing class
+    tokens either side of the translation catches that, and unlike a blanket
+    ban on class-bearing units it still allows an <h1> whose only child is a
+    presentational <span class="teal-text">.
+    """
+    found: Counter = Counter()
+    for _start, tag in iter_tags(fragment):
+        if tag.startswith("</"):
+            continue
+        for token in (attributes(tag).get("class") or "").split():
+            found[token] += 1
+    return found
 
 
 def store(page: str) -> Path:
@@ -298,7 +316,12 @@ def cmd_inject(pages: list[str]) -> int:
                 skipped_empty += 1
                 continue
             if HAN.search(en):
-                refused.append(en[:50])
+                refused.append(("still Chinese", en[:46]))
+                continue
+            lost = classes_in(inner) - classes_in(en)
+            if lost:
+                refused.append(("drops class(es) %s" % ",".join(sorted(lost)),
+                                en[:46]))
                 continue
             new_tag = tag[:-1].rstrip()
             if new_tag.endswith("/"):
@@ -312,10 +335,9 @@ def cmd_inject(pages: list[str]) -> int:
             path.write_text(out, encoding="utf-8", newline="")
         print("%-18s injected %d, still blank %d%s"
               % (page, len(edits), skipped_empty,
-                 ", REFUSED %d (English value still contains Chinese)" % len(refused)
-                 if refused else ""))
-        for value in refused[:5]:
-            print("      refused: %s" % value)
+                 ", REFUSED %d" % len(refused) if refused else ""))
+        for why, value in refused[:6]:
+            print("      refused (%s): %s" % (why, value))
     return 0
 
 

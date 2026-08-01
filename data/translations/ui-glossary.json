@@ -10,6 +10,14 @@
       "en": "Dermatology terms in plain English"
     },
     {
+      "zh": "皮膚科醫學詞彙<br/><span class=\"teal-text\" data-en=\"in plain English\">白話翻譯字典</span>",
+      "en": "Dermatology terms<br/><span class=\"teal-text\">in plain English</span>"
+    },
+    {
+      "zh": "量表 / 機轉 / 藥物 / 疾病分型 / 檢查",
+      "en": "scales / mechanisms / drugs / disease subtypes / investigations"
+    },
+    {
       "zh": "量表",
       "en": "Scale"
     },
@@ -34,6 +42,186 @@
       "en": "Sign"
     },
     {
+      "zh": "面積 + 客觀症狀（紅、腫、滲、抓痕、苔癬化、乾）+ 主觀症狀（癢、失眠）",
+      "en": "area + objective signs (erythema, oedema, oozing, excoriation, lichenification, dryness) + subjective symptoms (itch, sleep loss)"
+    },
+    {
+      "zh": "紅斑 + 浸潤 + 鱗屑 + 面積",
+      "en": "erythema + induration + scaling + area"
+    },
+    {
+      "zh": "生活品質量表",
+      "en": "Dermatology Life Quality Index"
+    },
+    {
+      "zh": "每天「風團數」+「癢感」各 0-3",
+      "en": "daily wheal count and itch, each 0-3"
+    },
+    {
+      "zh": "16 = 完全控制、12-15 = 部分控制、&lt; 12 = 控制不佳",
+      "en": "16 = complete control, 12-15 = partial control, &lt; 12 = poorly controlled"
+    },
+    {
+      "zh": "頂(40%)+ 後(24%)+ 左(18%)+ 右(18%)",
+      "en": "vertex (40%) + occiput (24%) + left (18%) + right (18%)"
+    },
+    {
+      "zh": "≥ 31 為重度，Isotretinoin 適應症",
+      "en": "≥ 31 is severe and an indication for isotretinoin"
+    },
+    {
+      "zh": "面積 × （深淺 + 同質性）",
+      "en": "area × (darkness + homogeneity)"
+    },
+    {
+      "zh": "I 期 / II 期 / III 期",
+      "en": "stage I / II / III"
+    },
+    {
+      "zh": "越嚴重需越積極治療",
+      "en": "the more advanced, the more aggressive the treatment"
+    },
+    {
+      "zh": "亞洲人多為 III-IV 型",
+      "en": "most Asians are type III-IV"
+    },
+    {
+      "zh": "0 = 清除、1 = 接近清除",
+      "en": "0 = clear, 1 = almost clear"
+    },
+    {
+      "zh": "≥ 4 分降幅",
+      "en": "a drop of ≥ 4 points"
+    },
+    {
+      "zh": "VIDA ≥ +2 為活動性",
+      "en": "VIDA ≥ +2 means active disease"
+    },
+    {
+      "zh": "B2 ≥ 1000/μL 自動為 SS",
+      "en": "B2 ≥ 1000/μL is automatically Sézary syndrome"
+    },
+    {
+      "zh": "異位性皮膚炎、過敏性氣喘、CRSwNP 的核心發炎細胞激素",
+      "en": "the core inflammatory cytokines of atopic dermatitis, allergic asthma and CRSwNP"
+    },
+    {
+      "zh": "乾癬、乾癬性關節炎、化膿性汗腺炎的主要驅動細胞激素",
+      "en": "the main drivers of psoriasis, psoriatic arthritis and hidradenitis suppurativa"
+    },
+    {
+      "zh": "搔癢細胞激素",
+      "en": "the itch cytokine"
+    },
+    {
+      "zh": "細胞內訊號傳遞",
+      "en": "intracellular signalling"
+    },
+    {
+      "zh": "色素沉著",
+      "en": "hyperpigmentation"
+    },
+    {
+      "zh": "紅斑",
+      "en": "erythema"
+    },
+    {
+      "zh": "誘發新病灶",
+      "en": "new lesions appear"
+    },
+    {
+      "zh": "Th1 = 細胞免疫（感染防禦）、Th2 = 過敏 / 異膚、Th17 = 乾癬 / HS / PsA",
+      "en": "Th1 = cellular immunity (defence against infection), Th2 = allergy / atopic dermatitis, Th17 = psoriasis / HS / PsA"
+    },
+    {
+      "zh": "生物製劑",
+      "en": "biologic"
+    },
+    {
+      "zh": "結節性癢疹專用",
+      "en": "specifically for prurigo nodularis"
+    },
+    {
+      "zh": "圓禿口服 JAK 抑制劑",
+      "en": "oral JAK inhibitor for alopecia areata"
+    },
+    {
+      "zh": "雙重 IL-17 抑制",
+      "en": "Dual IL-17 inhibition"
+    },
+    {
+      "zh": "選擇性 TYK2 抑制劑",
+      "en": "selective TYK2 inhibitor"
+    },
+    {
+      "zh": "白斑外用藥",
+      "en": "topical for vitiligo"
+    },
+    {
+      "zh": "外用抗雄激素",
+      "en": "topical antiandrogen"
+    },
+    {
+      "zh": "女性 1.25-2.5 mg、男性 2.5-5 mg",
+      "en": "women 1.25-2.5 mg, men 2.5-5 mg"
+    },
+    {
+      "zh": "斑塊期(patch)→ 厚斑期(plaque)→ 結節期(tumor)",
+      "en": "patch → plaque → tumour"
+    },
+    {
+      "zh": "≥ 80% BSA 紅斑 + Sézary 細胞 ≥ 1000/μL",
+      "en": "≥ 80% BSA erythema + Sézary cells ≥ 1000/μL"
+    },
+    {
+      "zh": "50% 在 1 年內、80% 在 5 年內自然緩解",
+      "en": "half remit spontaneously within a year, 80% within five"
+    },
+    {
+      "zh": "SV 預後較好、適合手術",
+      "en": "SV has the better prognosis and suits surgery"
+    },
+    {
+      "zh": "持續性紅斑、丘疹膿皰、毛細血管擴張、鼻贅",
+      "en": "persistent erythema, papules and pustules, telangiectasia, phyma"
+    },
+    {
+      "zh": "單株性",
+      "en": "monoclonality"
+    },
+    {
+      "zh": "圓禿、肥厚疤、痘痘結節",
+      "en": "alopecia areata, hypertrophic scars and acne nodules"
+    },
+    {
+      "zh": "反覆抓癢",
+      "en": "repeated scratching"
+    },
+    {
+      "zh": "膿液",
+      "en": "pus"
+    },
+    {
+      "zh": "三角形未受波及區",
+      "en": "spared triangle"
+    },
+    {
+      "zh": "40% 慢性蕁麻疹病人合併",
+      "en": "around 40% of chronic urticaria patients have it"
+    },
+    {
+      "zh": "Trichrome：中央白 → 過渡色 → 正常",
+      "en": "Trichrome: white centre → intermediate shade → normal skin"
+    },
+    {
+      "zh": "Confetti：融合性小白點",
+      "en": "Confetti: coalescing small white macules"
+    },
+    {
+      "zh": "<strong data-en=\"How to read this:\">用法說明：</strong>本字典為衛教輔助工具。詞彙解釋以本站常用程度與病人實際遇到的情境設計、完整定義請參考各文章 / 學會共識。發現錯誤或希望新增詞彙、請<a href=\"mailto:expertise88864@gmail.com?subject=詞彙字典回饋\" style=\"color:#7c2d12;text-decoration:underline\" data-en=\"email us\">寫信告知</a>。\r\n<div class=\"gloss-card\" id=\"term-pasi-improvement-endpoints\"><span class=\"gloss-cat\" style=\"background:#dcfce7;color:#14532d\" data-en=\"Scale\">量表</span><div class=\"gloss-term\">PASI 75 / 90 / 100</div><div class=\"gloss-en\">PASI improvement endpoints</div><div class=\"gloss-def\" data-en=\"Psoriasis outcome measures. &lt;strong&gt;PASI 75&lt;/strong&gt; = at least 75% skin improvement at 16 weeks, &lt;strong&gt;PASI 90&lt;/strong&gt; ≥ 90%, &lt;strong&gt;PASI 100&lt;/strong&gt; = complete clearance. The old target was PASI 50-75; modern biologics have raised it to PASI 90/100.\">乾癬治療成效指標。<strong>PASI 75</strong> ＝ 治療 16 週皮膚改善 ≥ 75%、<strong>PASI 90</strong> ≥ 90%、<strong>PASI 100</strong> ＝ 完全清除。傳統治療目標 PASI 50-75、現代生物製劑提升至 PASI 90/100。</div><a class=\"gloss-link\" href=\"/blog/psoriasis-systemic#biologics-chart\" data-en=\"Systemic psoriasis therapy →\">乾癬全身性治療 →</a></div><div class=\"gloss-card\" id=\"term-eczema-area-and-severity-index-investigator-global-assessment\"><span class=\"gloss-cat\" style=\"background:#dcfce7;color:#14532d\" data-en=\"Scale\">量表</span><div class=\"gloss-term\">EASI / IGA</div><div class=\"gloss-en\">Eczema Area and Severity Index / Investigator Global Assessment</div><div class=\"gloss-def\" data-en=\"Atopic dermatitis severity (EASI 0-72; IGA 0-4). EASI 75/90 = ≥ 75%/90% improvement. Taiwan NHI threshold for dupilumab: EASI ≥ 24 and IGA ≥ 4.\">異位性皮膚炎嚴重度（EASI 0-72；IGA 0-4）。EASI 75/90 = 改善 ≥ 75%/90%。台灣健保 dupilumab 給付門檻：EASI ≥ 24、IGA ≥ 4。</div><a class=\"gloss-link\" href=\"/blog/atopic-dermatitis-systemic#biologics-chart\" data-en=\"Systemic AD therapy →\">AD 全身性治療 →</a></div><div class=\"gloss-card\" id=\"term-anti-il-4r-monoclonal-antibody\"><span class=\"gloss-cat\" style=\"background:#fef3c7;color:#854d0e\" data-en=\"Drug\">藥物</span><div class=\"gloss-term\" data-en=\"Dupilumab (Dupixent®)\">Dupilumab（杜避炎®）</div><div class=\"gloss-en\">anti-IL-4Rα monoclonal antibody</div><div class=\"gloss-def\" data-en=\"The first FDA-approved biologic for atopic dermatitis, approved in 2017, blocking IL-4 and IL-13 signalling. Subcutaneous injection every 2 weeks, licensed from 6 months of age. Covered by Taiwan NHI at EASI ≥ 24 and IGA ≥ 4.\">2017 年首支 FDA 核准的異位性皮膚炎生物製劑、阻斷 IL-4 / IL-13 訊號。每 2 週皮下注射、≥ 6 月嬰兒適用。台灣健保有給付（EASI ≥ 24 + IGA ≥ 4）。</div><a class=\"gloss-link\" href=\"/blog/atopic-dermatitis-systemic#biologics-detail\" data-en=\"About dupilumab →\">Dupilumab 介紹 →</a></div><div class=\"gloss-card\" id=\"term-janus-kinase-inhibitors\"><span class=\"gloss-cat\" style=\"background:#fef3c7;color:#854d0e\" data-en=\"Drug\">藥物</span><div class=\"gloss-term\" data-en=\"JAK inhibitors\">JAK 抑制劑</div><div class=\"gloss-en\">Janus kinase inhibitors</div><div class=\"gloss-def\" data-en=\"Oral targeted drugs blocking JAK1/2/3 signalling. For AD: abrocitinib and upadacitinib, reaching EASI 75 in 60-78%. &lt;strong&gt;FDA boxed warning&lt;/strong&gt;: MACE, venous thromboembolism and malignancy; avoid from age 65.\">口服標靶藥、阻斷 JAK1/2/3 訊號。AD 用 abrocitinib（希必皮）、upadacitinib（銳虎），EASI 75 達 60-78%。<strong>FDA 黑框警告</strong>：MACE、靜脈血栓、惡性腫瘤風險、≥ 65 歲避用。</div><a class=\"gloss-link\" href=\"/blog/atopic-dermatitis-systemic#jak-detail\" data-en=\"JAK inhibitors →\">JAK 抑制劑 →</a></div><div class=\"gloss-card\" id=\"term-il-23-inhibitors\"><span class=\"gloss-cat\" style=\"background:#fef3c7;color:#854d0e\" data-en=\"Drug\">藥物</span><div class=\"gloss-term\" data-en=\"IL-23 inhibitors\">IL-23 抑制劑</div><div class=\"gloss-en\">IL-23 inhibitors</div><div class=\"gloss-def\" data-en=\"The newest generation of psoriasis biologics: risankizumab, guselkumab, tildrakizumab. Subcutaneous every 8-12 weeks, the lowest infection risk of the classes, and usable alongside IBD.\">最新一代乾癬生物製劑。Risankizumab（喜瑞莎）、guselkumab（創癬寧）、tildrakizumab（聖癬寧）。每 8-12 週皮下注射、感染風險最低、合併 IBD 可用。</div><a class=\"gloss-link\" href=\"/blog/psoriasis-systemic#biologics-detail\" data-en=\"IL-23 inhibitors →\">IL-23 抑制劑 →</a></div><div class=\"gloss-card\" id=\"term-il-17-inhibitors\"><span class=\"gloss-cat\" style=\"background:#fef3c7;color:#854d0e\" data-en=\"Drug\">藥物</span><div class=\"gloss-term\" data-en=\"IL-17 inhibitors\">IL-17 抑制劑</div><div class=\"gloss-en\">IL-17 inhibitors</div><div class=\"gloss-def\" data-en=\"The second generation of psoriasis biologics: secukinumab, ixekizumab, bimekizumab. Strong on nails, scalp and PsA. &lt;strong&gt;Contraindicated with IBD&lt;/strong&gt;.\">第二代乾癬生物製劑。Secukinumab（可在新）、ixekizumab（達癬美）、bimekizumab（碧美時）。對指甲、頭皮、PsA 效果好。<strong>合併 IBD 禁用</strong>。</div><a class=\"gloss-link\" href=\"/blog/psoriasis-systemic#biologics-detail\" data-en=\"IL-17 inhibitors →\">IL-17 抑制劑 →</a></div><div class=\"gloss-card\" id=\"term-skin-biopsy-shave-punch-incisional-excisional\"><span class=\"gloss-cat\" style=\"background:#dbeafe;color:#1e3a8a\" data-en=\"Procedure\">處置</span><div class=\"gloss-term\" data-en=\"Skin biopsy\">皮膚切片</div><div class=\"gloss-en\">skin biopsy (shave / punch / incisional / excisional)</div><div class=\"gloss-def\" data-en=\"The key diagnostic tool in dermatology. Four techniques: shave (superficial), punch (4 mm, full thickness), incisional (part of a large lesion) and excisional (the whole lesion with a margin).\">皮膚科診斷的關鍵工具。4 種技術：削皮（shave）淺、環鋸（punch）4 mm 全層、切口（incisional）取大病灶部分、切除（excisional）含邊緣完整切下。</div><a class=\"gloss-link\" href=\"/blog/skin-biopsy-excision#techniques\" data-en=\"The four biopsy techniques →\">4 種切片技術 →</a></div><div class=\"gloss-card\" id=\"term-fusiform-elliptical-excision\"><span class=\"gloss-cat\" style=\"background:#dbeafe;color:#1e3a8a\" data-en=\"Procedure\">處置</span><div class=\"gloss-term\" data-en=\"Fusiform excision\">梭形切除（Fusiform Excision）</div><div class=\"gloss-en\">fusiform / elliptical excision</div><div class=\"gloss-def\" data-en=\"The standard operation for excising a skin tumour. A 3:1 length-to-width ratio, apical angles ≤ 30°, long axis parallel to Langer&#x27;s lines, so the scar sits under less tension.\">皮膚腫瘤切除標準術式。3：1 長寬比、頂角 ≤ 30°、長軸平行 Langer 線（皮膚張力線）以降低疤痕張力。</div><a class=\"gloss-link\" href=\"/blog/skin-biopsy-excision#excision\" data-en=\"The fusiform excision procedure →\">梭形切除流程 →</a></div><div class=\"gloss-card\" id=\"term-psoriatic-arthritis\"><span class=\"gloss-cat\" style=\"background:#fce7f3;color:#831843\" data-en=\"Disease\">疾病</span><div class=\"gloss-term\" data-en=\"Psoriatic arthritis (PsA)\">乾癬性關節炎（PsA）</div><div class=\"gloss-en\">Psoriatic arthritis</div><div class=\"gloss-def\" data-en=\"Affects 15-30% of psoriasis patients, with skin disease usually preceding it by 5-10 years. Five red flags: morning stiffness &amp;gt; 30 minutes, dactylitis, enthesitis, inflammatory back pain, DIP arthritis. If positive → rheumatology, and biologics directly.\">15-30% 乾癬病人合併。皮膚通常先發病 5-10 年。5 大警訊：晨僵 &gt; 30 分鐘、臘腸指、肌腱附著點炎、發炎性背痛、DIP 關節炎。陽性 → 風濕科 + 直接生物製劑。</div><a class=\"gloss-link\" href=\"/blog/psoriasis-special-populations#comorbid\" data-en=\"PsA comorbidity →\">PsA 合併症 →</a></div>",
+      "en": "<strong>How to read this:</strong> This glossary is a patient-education aid. Entries are written around how often a term comes up on this site and the situations patients actually meet, so for a complete definition see the individual articles or the relevant society consensus. If you spot an error, or would like a term added, please <a href=\"mailto:expertise88864@gmail.com\">email us</a>."
+    },
+    {
       "zh": "<a href=\"/\">首頁</a><span style=\"margin:0 6px;opacity:.5\">/</span><span>醫學詞彙白話翻譯</span>",
       "en": "<a href=\"/\">Home</a><span style=\"margin:0 6px;opacity:.5\">/</span><span>Dermatology terms in plain English</span>",
       "injected": true
@@ -49,168 +237,8 @@
       "injected": true
     },
     {
-      "zh": "量表 / 機轉 / 藥物 / 疾病分型 / 檢查",
-      "en": "scales / mechanisms / drugs / disease subtypes / investigations",
-      "injected": true
-    },
-    {
       "zh": "<a href=\"#cat-scale\">量表</a><a href=\"#cat-mechanism\">機轉</a><a href=\"#cat-drug\">藥物</a><a href=\"#cat-classification\">分型</a><a href=\"#cat-procedure\">檢查 / 處置</a><a href=\"#cat-symptom\">症狀</a>",
       "en": "<a href=\"#cat-scale\">Scales</a><a href=\"#cat-mechanism\">Mechanisms</a><a href=\"#cat-drug\">Drugs</a><a href=\"#cat-classification\">Subtypes</a><a href=\"#cat-procedure\">Investigations</a><a href=\"#cat-symptom\">Signs</a>",
-      "injected": true
-    },
-    {
-      "zh": "面積 + 客觀症狀（紅、腫、滲、抓痕、苔癬化、乾）+ 主觀症狀（癢、失眠）",
-      "en": "area + objective signs (erythema, oedema, oozing, excoriation, lichenification, dryness) + subjective symptoms (itch, sleep loss)",
-      "injected": true
-    },
-    {
-      "zh": "紅斑 + 浸潤 + 鱗屑 + 面積",
-      "en": "erythema + induration + scaling + area",
-      "injected": true
-    },
-    {
-      "zh": "生活品質量表",
-      "en": "Dermatology Life Quality Index",
-      "injected": true
-    },
-    {
-      "zh": "每天「風團數」+「癢感」各 0-3",
-      "en": "daily wheal count and itch, each 0-3",
-      "injected": true
-    },
-    {
-      "zh": "16 = 完全控制、12-15 = 部分控制、&lt; 12 = 控制不佳",
-      "en": "16 = complete control, 12-15 = partial control, &lt; 12 = poorly controlled",
-      "injected": true
-    },
-    {
-      "zh": "頂(40%)+ 後(24%)+ 左(18%)+ 右(18%)",
-      "en": "vertex (40%) + occiput (24%) + left (18%) + right (18%)",
-      "injected": true
-    },
-    {
-      "zh": "≥ 31 為重度，Isotretinoin 適應症",
-      "en": "≥ 31 is severe and an indication for isotretinoin",
-      "injected": true
-    },
-    {
-      "zh": "面積 × （深淺 + 同質性）",
-      "en": "area × (darkness + homogeneity)",
-      "injected": true
-    },
-    {
-      "zh": "I 期 / II 期 / III 期",
-      "en": "stage I / II / III",
-      "injected": true
-    },
-    {
-      "zh": "越嚴重需越積極治療",
-      "en": "the more advanced, the more aggressive the treatment",
-      "injected": true
-    },
-    {
-      "zh": "亞洲人多為 III-IV 型",
-      "en": "most Asians are type III-IV",
-      "injected": true
-    },
-    {
-      "zh": "0 = 清除、1 = 接近清除",
-      "en": "0 = clear, 1 = almost clear",
-      "injected": true
-    },
-    {
-      "zh": "≥ 4 分降幅",
-      "en": "a drop of ≥ 4 points",
-      "injected": true
-    },
-    {
-      "zh": "VIDA ≥ +2 為活動性",
-      "en": "VIDA ≥ +2 means active disease",
-      "injected": true
-    },
-    {
-      "zh": "B2 ≥ 1000/μL 自動為 SS",
-      "en": "B2 ≥ 1000/μL is automatically Sézary syndrome",
-      "injected": true
-    },
-    {
-      "zh": "異位性皮膚炎、過敏性氣喘、CRSwNP 的核心發炎細胞激素",
-      "en": "the core inflammatory cytokines of atopic dermatitis, allergic asthma and CRSwNP",
-      "injected": true
-    },
-    {
-      "zh": "乾癬、乾癬性關節炎、化膿性汗腺炎的主要驅動細胞激素",
-      "en": "the main drivers of psoriasis, psoriatic arthritis and hidradenitis suppurativa",
-      "injected": true
-    },
-    {
-      "zh": "搔癢細胞激素",
-      "en": "the itch cytokine",
-      "injected": true
-    },
-    {
-      "zh": "細胞內訊號傳遞",
-      "en": "intracellular signalling",
-      "injected": true
-    },
-    {
-      "zh": "色素沉著",
-      "en": "hyperpigmentation",
-      "injected": true
-    },
-    {
-      "zh": "紅斑",
-      "en": "erythema",
-      "injected": true
-    },
-    {
-      "zh": "誘發新病灶",
-      "en": "new lesions appear",
-      "injected": true
-    },
-    {
-      "zh": "Th1 = 細胞免疫（感染防禦）、Th2 = 過敏 / 異膚、Th17 = 乾癬 / HS / PsA",
-      "en": "Th1 = cellular immunity (defence against infection), Th2 = allergy / atopic dermatitis, Th17 = psoriasis / HS / PsA",
-      "injected": true
-    },
-    {
-      "zh": "生物製劑",
-      "en": "biologic",
-      "injected": true
-    },
-    {
-      "zh": "結節性癢疹專用",
-      "en": "specifically for prurigo nodularis",
-      "injected": true
-    },
-    {
-      "zh": "圓禿口服 JAK 抑制劑",
-      "en": "oral JAK inhibitor for alopecia areata",
-      "injected": true
-    },
-    {
-      "zh": "雙重 IL-17 抑制",
-      "en": "Dual IL-17 inhibition",
-      "injected": true
-    },
-    {
-      "zh": "選擇性 TYK2 抑制劑",
-      "en": "selective TYK2 inhibitor",
-      "injected": true
-    },
-    {
-      "zh": "白斑外用藥",
-      "en": "topical for vitiligo",
-      "injected": true
-    },
-    {
-      "zh": "外用抗雄激素",
-      "en": "topical antiandrogen",
-      "injected": true
-    },
-    {
-      "zh": "女性 1.25-2.5 mg、男性 2.5-5 mg",
-      "en": "women 1.25-2.5 mg, men 2.5-5 mg",
       "injected": true
     },
     {
@@ -219,73 +247,8 @@
       "injected": true
     },
     {
-      "zh": "斑塊期(patch)→ 厚斑期(plaque)→ 結節期(tumor)",
-      "en": "patch → plaque → tumour",
-      "injected": true
-    },
-    {
       "zh": "紅皮症型 CTCL",
       "en": "Erythrodermic CTCL",
-      "injected": true
-    },
-    {
-      "zh": "≥ 80% BSA 紅斑 + Sézary 細胞 ≥ 1000/μL",
-      "en": "≥ 80% BSA erythema + Sézary cells ≥ 1000/μL",
-      "injected": true
-    },
-    {
-      "zh": "50% 在 1 年內、80% 在 5 年內自然緩解",
-      "en": "half remit spontaneously within a year, 80% within five",
-      "injected": true
-    },
-    {
-      "zh": "SV 預後較好、適合手術",
-      "en": "SV has the better prognosis and suits surgery",
-      "injected": true
-    },
-    {
-      "zh": "持續性紅斑、丘疹膿皰、毛細血管擴張、鼻贅",
-      "en": "persistent erythema, papules and pustules, telangiectasia, phyma",
-      "injected": true
-    },
-    {
-      "zh": "單株性",
-      "en": "monoclonality",
-      "injected": true
-    },
-    {
-      "zh": "圓禿、肥厚疤、痘痘結節",
-      "en": "alopecia areata, hypertrophic scars and acne nodules",
-      "injected": true
-    },
-    {
-      "zh": "反覆抓癢",
-      "en": "repeated scratching",
-      "injected": true
-    },
-    {
-      "zh": "膿液",
-      "en": "pus",
-      "injected": true
-    },
-    {
-      "zh": "三角形未受波及區",
-      "en": "spared triangle",
-      "injected": true
-    },
-    {
-      "zh": "40% 慢性蕁麻疹病人合併",
-      "en": "around 40% of chronic urticaria patients have it",
-      "injected": true
-    },
-    {
-      "zh": "Trichrome：中央白 → 過渡色 → 正常",
-      "en": "Trichrome: white centre → intermediate shade → normal skin",
-      "injected": true
-    },
-    {
-      "zh": "Confetti：融合性小白點",
-      "en": "Confetti: coalescing small white macules",
       "injected": true
     },
     {

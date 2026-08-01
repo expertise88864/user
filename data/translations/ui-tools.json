@@ -2,19 +2,23 @@
   "page": "tools.html",
   "strings": [
     {
-      "zh": "<a href=\"/\">首頁</a><span style=\"margin:0 6px;opacity:.5\">/</span><span>量表計算器使用指南</span>",
+      "zh": "首頁",
       "en": ""
     },
     {
-      "zh": "衛教 · 互動工具",
+      "zh": "量表計算器使用指南",
       "en": ""
     },
     {
-      "zh": "皮膚科量表計算器<br/><span class=\"teal-text\">完整使用指南</span>",
+      "zh": "皮膚科量表計算器<br/><span class=\"teal-text\" data-en=\"a complete guide\">完整使用指南</span>",
+      "en": "Dermatology severity scales<br/><span class=\"teal-text\">a complete guide</span>"
+    },
+    {
+      "zh": "客觀量化嚴重度、追蹤治療反應、判斷生物製劑健保資格",
       "en": ""
     },
     {
-      "zh": "臨床量表(scoring tools)是皮膚科醫師<strong>客觀量化嚴重度、追蹤治療反應、判斷生物製劑健保資格</strong>的關鍵工具。本指南整理 10 大常用量表的<strong>適用對象、評估方法、分數解讀、結果對應治療策略、限制與原始引用</strong>，讓您看懂自己的病情並與醫師有效溝通。",
+      "zh": "適用對象、評估方法、分數解讀、結果對應治療策略、限制與原始引用",
       "en": ""
     },
     {
@@ -30,1319 +34,579 @@
       "en": ""
     },
     {
-      "zh": "10 個量表 · 快速跳轉",
+      "zh": "1 · SCORAD（異膚）",
       "en": ""
     },
     {
-      "zh": "<a href=\"#scorad\">1 · SCORAD（異膚）</a>",
+      "zh": "2 · PASI（乾癬）",
       "en": ""
     },
     {
-      "zh": "<a href=\"#pasi\">2 · PASI（乾癬）</a>",
+      "zh": "3 · DLQI（生活品質）",
       "en": ""
     },
     {
-      "zh": "<a href=\"#dlqi\">3 · DLQI（生活品質）</a>",
+      "zh": "4 · SALT（圓禿）",
       "en": ""
     },
     {
-      "zh": "<a href=\"#salt\">4 · SALT（圓禿）</a>",
+      "zh": "5 · UAS7（蕁麻疹）",
       "en": ""
     },
     {
-      "zh": "<a href=\"#uas7\">5 · UAS7（蕁麻疹）</a>",
+      "zh": "6 · GAGS（痘痘）",
       "en": ""
     },
     {
-      "zh": "<a href=\"#gags\">6 · GAGS（痘痘）</a>",
+      "zh": "7 · MASI（肝斑）",
       "en": ""
     },
     {
-      "zh": "<a href=\"#masi\">7 · MASI（肝斑）</a>",
+      "zh": "8 · Hurley（化膿性汗腺炎）",
       "en": ""
     },
     {
-      "zh": "<a href=\"#hurley\">8 · Hurley（化膿性汗腺炎）</a>",
+      "zh": "9 · Norwood-Ludwig（雄性禿）",
       "en": ""
     },
     {
-      "zh": "<a href=\"#norwood\">9 · Norwood-Ludwig（雄性禿）</a>",
+      "zh": "10 · Fitzpatrick（膚色分型）",
       "en": ""
     },
     {
-      "zh": "<a href=\"#fitzpatrick\">10 · Fitzpatrick（膚色分型）</a>",
+      "zh": "所有年齡層異位性皮膚炎(AD)",
       "en": ""
     },
     {
-      "zh": "分數 0-103",
+      "zh": "治療前後反應",
       "en": ""
     },
     {
-      "zh": "異位性皮膚炎",
+      "zh": "生物製劑申請參考",
       "en": ""
     },
     {
-      "zh": "適用對象",
+      "zh": "A · 受影響面積(0-100%)",
       "en": ""
     },
     {
-      "zh": "<strong>所有年齡層異位性皮膚炎(AD)</strong>：嬰幼兒、兒童、成人皆可",
+      "zh": "九分法",
       "en": ""
     },
     {
-      "zh": "追蹤<strong>治療前後反應</strong>（用藥前 / 4 週 / 12 週對照）",
+      "zh": "頭頸部 9% / 上肢各 9%（雙側 18%)/ 軀幹前 18% / 軀幹後 18% / 下肢各 18%（雙側 36%)/ 會陰 1%",
       "en": ""
     },
     {
-      "zh": "判定 Dupilumab、JAK 抑制劑、Tralokinumab、Lebrikizumab 等<strong>生物製劑申請參考</strong>",
+      "zh": "嬰幼兒比例不同：頭部 18%、下肢各 13.5%",
       "en": ""
     },
     {
-      "zh": "評估方式 — 三大組件",
+      "zh": "B · 6 項客觀症狀總分(0-18，每項 0-3)",
       "en": ""
     },
     {
-      "zh": "<strong>A · 受影響面積(0-100%)</strong>：依「<strong>九分法</strong>」估算\r\n<ul><li>頭頸部 9% / 上肢各 9%（雙側 18%)/ 軀幹前 18% / 軀幹後 18% / 下肢各 18%（雙側 36%)/ 會陰 1%</li><li>嬰幼兒比例不同：頭部 18%、下肢各 13.5%</li></ul>",
+      "zh": "紅斑(Erythema)、水腫 / 丘疹(Edema/Papulation)、滲出 / 結痂(Oozing/Crust)、抓痕(Excoriation)、苔癬化(Lichenification)、乾燥(Dryness — 評估「未影響」區域）",
       "en": ""
     },
     {
-      "zh": "<strong>B · 6 項客觀症狀總分(0-18，每項 0-3)</strong><ul><li>紅斑(Erythema)、水腫 / 丘疹(Edema/Papulation)、滲出 / 結痂(Oozing/Crust)、抓痕(Excoriation)、苔癬化(Lichenification)、乾燥(Dryness — 評估「未影響」區域）</li><li>0 = 無 / 1 = 輕 / 2 = 中 / 3 = 重</li></ul>",
+      "zh": "0 = 無 / 1 = 輕 / 2 = 中 / 3 = 重",
       "en": ""
     },
     {
-      "zh": "<strong>C · 主觀症狀總分(0-20)</strong><ul><li>癢感(Pruritus)0-10 + 失眠(Sleep loss)0-10</li><li>取<strong>過去 3 天平均</strong>，病人自評</li></ul>",
+      "zh": "C · 主觀症狀總分(0-20)",
       "en": ""
     },
     {
-      "zh": "分數解讀",
+      "zh": "癢感(Pruritus)0-10 + 失眠(Sleep loss)0-10",
       "en": ""
     },
     {
-      "zh": "分數",
+      "zh": "取<strong>過去 3 天平均</strong>，病人自評",
       "en": ""
     },
     {
-      "zh": "嚴重度",
+      "zh": "治療反應",
       "en": ""
     },
     {
-      "zh": "對應治療策略",
+      "zh": "每 4-12 週評估一次",
       "en": ""
     },
     {
-      "zh": "<span class=\"severity-mild\">輕度</span>",
+      "zh": "嬰幼兒",
       "en": ""
     },
     {
-      "zh": "外用類固醇 + 保濕 + Tacrolimus / Pimecrolimus",
+      "zh": "限制：",
       "en": ""
     },
     {
-      "zh": "<span class=\"severity-mod\">中度</span>",
+      "zh": "由皮膚科醫師評估",
       "en": ""
     },
     {
-      "zh": "+ NB-UVB 光療、Proactive therapy（週末預防擦藥）",
+      "zh": "斑塊型乾癬(plaque psoriasis)",
       "en": ""
     },
     {
-      "zh": "<span class=\"severity-sev\">重度</span>",
+      "zh": "台灣健保生物製劑申請門檻",
       "en": ""
     },
     {
-      "zh": "+ Dupilumab / JAK 抑制劑 / Cyclosporine（短期）",
+      "zh": "4 個身體區域權重",
       "en": ""
     },
     {
-      "zh": "結果意義 + 下一步建議",
+      "zh": "每區評估 3 項症狀(0-4)",
       "en": ""
     },
     {
-      "zh": "<strong>SCORAD ≥ 50</strong> 是台灣健保 Dupilumab 申請參考門檻之一（配合 EASI、DLQI、外用治療失敗）",
+      "zh": "<strong>E · 紅斑(Erythema)</strong>：無 / 淡紅 / 中紅 / 深紅 / 暗紅",
       "en": ""
     },
     {
-      "zh": "<strong>治療反應</strong>:SCORAD-50 = 治療後降幅 ≥ 50%（臨床顯著反應）;SCORAD-75 = 良好反應",
+      "zh": "<strong>I · 浸潤(Infiltration)</strong>：厚度 — 無 / 薄 / 中 / 厚 / 極厚",
       "en": ""
     },
     {
-      "zh": "追蹤頻率：中重度建議<strong>每 4-12 週評估一次</strong>",
+      "zh": "<strong>D · 鱗屑(Desquamation)</strong>：無 / 細鱗 / 粗鱗 / 厚鱗 / 黏附",
       "en": ""
     },
     {
-      "zh": "<strong>嬰幼兒</strong>請參考 Werfel 2024 S3 兒童版調整（面積比例不同）",
+      "zh": "面積分級(0-6)",
       "en": ""
     },
     {
-      "zh": "限制 + 注意事項",
+      "zh": "達健保生物製劑門檻",
       "en": ""
     },
     {
-      "zh": "<strong>限制：</strong>(1) 客觀症狀(B)需<strong>由皮膚科醫師評估</strong>，病人自評難以準確；(2) 受過去 3 天波動影響；(3) 未涵蓋手部、生殖器等特殊部位的功能性影響（可改用 EASI 或 POEM);(4) 嬰幼兒哭鬧時誤判紅斑。",
+      "zh": "PASI ≥ 10 + BSA ≥ 10% + DLQI ≥ 10 + 雙線失敗",
       "en": ""
     },
     {
-      "zh": "原始引用",
+      "zh": "輕度乾癬靈敏度低",
       "en": ""
     },
     {
-      "zh": "啟動 SCORAD 計算器 →",
+      "zh": "16 歲以上",
       "en": ""
     },
     {
-      "zh": "分數 0-72",
+      "zh": "生物製劑健保申請門檻",
       "en": ""
     },
     {
-      "zh": "乾癬",
+      "zh": "生活品質",
       "en": ""
     },
     {
-      "zh": "<strong>斑塊型乾癬(plaque psoriasis)</strong>嚴重度評估",
+      "zh": "10 題自評、每題 0-3 分、總分 0-30",
       "en": ""
     },
     {
-      "zh": "<strong>台灣健保生物製劑申請門檻</strong>:PASI ≥ 10 + BSA ≥ 10% + DLQI ≥ 10 + 兩線傳統治療(MTX / 光療 / Acitretin)失敗",
+      "zh": "症狀",
       "en": ""
     },
     {
-      "zh": "不適用：膿皰型、紅皮型、guttate（滴狀）、頭皮型（改用 PSSI)",
+      "zh": "感受",
       "en": ""
     },
     {
-      "zh": "評估方式",
+      "zh": "日常活動",
       "en": ""
     },
     {
-      "zh": "PASI = 0.1×(Eh+Ih+Dh)×Ah + 0.2×(Ea+Ia+Da)×Aa + 0.3×(Et+It+Dt)×At + 0.4×(El+Il+Dl)×Al<br/>\r\nh = 頭頸 / a = 上肢 / t = 軀幹 / l = 下肢",
+      "zh": "休閒",
       "en": ""
     },
     {
-      "zh": "<strong>4 個身體區域權重</strong>：頭頸 ×0.1、上肢 ×0.2、軀幹 ×0.3、下肢 ×0.4（總和 = 1.0)",
+      "zh": "工作 / 學業",
       "en": ""
     },
     {
-      "zh": "<strong>每區評估 3 項症狀(0-4)</strong>:\r\n<ul><li><strong>E · 紅斑(Erythema)</strong>：無 / 淡紅 / 中紅 / 深紅 / 暗紅</li><li><strong>I · 浸潤(Infiltration)</strong>：厚度 — 無 / 薄 / 中 / 厚 / 極厚</li><li><strong>D · 鱗屑(Desquamation)</strong>：無 / 細鱗 / 粗鱗 / 厚鱗 / 黏附</li></ul>",
+      "zh": "人際",
       "en": ""
     },
     {
-      "zh": "<strong>面積分級(0-6)</strong>:0 = 0%、1 = &lt;10%、2 = 10-29%、3 = 30-49%、4 = 50-69%、5 = 70-89%、6 = 90-100%",
+      "zh": "治療負擔",
       "en": ""
     },
     {
-      "zh": "外用 Calcipotriol（達力士）/ Daivobet / 類固醇",
+      "zh": "0 完全沒有 / 1 一點點 / 2 中等 / 3 非常",
       "en": ""
     },
     {
-      "zh": "+ NB-UVB / Acitretin / Methotrexate；準備生物製劑申請條件",
+      "zh": "達生物製劑健保申請門檻",
       "en": ""
     },
     {
-      "zh": "<span class=\"severity-modsev\">中重度</span>",
+      "zh": "非常大或極大的負面影響",
       "en": ""
     },
     {
-      "zh": "<strong>達健保生物製劑門檻</strong>(IL-17 / IL-23 / Deucravacitinib)",
+      "zh": "連續 2 次評估",
       "en": ""
     },
     {
-      "zh": "Bimekizumab / Risankizumab / Guselkumab 三線最強；注意關節炎共病",
+      "zh": "「不適用」(N/A)",
       "en": ""
     },
     {
-      "zh": "治療反應指標",
+      "zh": "心理適應或忽略",
       "en": ""
     },
     {
-      "zh": "<strong>PASI 75</strong>：治療後降幅 ≥ 75%（傳統治療目標）",
-      "en": ""
-    },
-    {
-      "zh": "<strong>PASI 90</strong>：降幅 ≥ 90%(IL-23 級生物製劑常規目標）",
-      "en": ""
-    },
-    {
-      "zh": "<strong>PASI 100</strong>：完全清除(Bimekizumab 16 週可達 60%+)",
-      "en": ""
-    },
-    {
-      "zh": "<strong>PASI ≥ 10 + BSA ≥ 10% + DLQI ≥ 10 + 雙線失敗</strong> = 健保生物製劑可申請",
-      "en": ""
-    },
-    {
-      "zh": "選擇生物製劑時考慮共病：乾癬性關節炎 → IL-17；發炎性腸道疾病 → IL-23 或 Deucravacitinib",
-      "en": ""
-    },
-    {
-      "zh": "頭皮乾癬建議改用 <strong>PSSI</strong>(Psoriasis Scalp Severity Index)",
-      "en": ""
-    },
-    {
-      "zh": "<strong>限制：</strong>(1) 觀察者間差異大、需訓練；(2) 對<strong>輕度乾癬靈敏度低</strong>（分數變化 1-2 分但臨床改善明顯）;(3) 不適用膿皰型、紅皮型、皺褶型；(4) 局部嚴重（如手 / 臉）但 PASI 低 → 改用 BSA + DLQI 補充；(5) 深膚色紅斑判讀困難。",
-      "en": ""
-    },
-    {
-      "zh": "啟動 PASI 計算器 →",
-      "en": ""
-    },
-    {
-      "zh": "分數 0-30",
-      "en": ""
-    },
-    {
-      "zh": "所有皮膚病",
-      "en": ""
-    },
-    {
-      "zh": "<strong>16 歲以上</strong>所有慢性皮膚病（乾癬、異膚、蕁麻疹、結節性癢疹、HS、白斑等）",
-      "en": ""
-    },
-    {
-      "zh": "<strong>生物製劑健保申請門檻</strong>：多數疾病 DLQI ≥ 10",
-      "en": ""
-    },
-    {
-      "zh": "追蹤治療對<strong>生活品質</strong>的影響（不只是皮膚外觀）",
-      "en": ""
-    },
-    {
-      "zh": "兒童版用 <strong>CDLQI</strong>(Children's DLQI,4-16 歲）、嬰幼兒用 <strong>IDQOL</strong>",
-      "en": ""
-    },
-    {
-      "zh": "<strong>10 題自評、每題 0-3 分、總分 0-30</strong>。每題問「過去 1 週」皮膚問題對該面向的影響程度。",
-      "en": ""
-    },
-    {
-      "zh": "題目",
-      "en": ""
-    },
-    {
-      "zh": "面向",
-      "en": ""
-    },
-    {
-      "zh": "癢、痠痛、刺痛(<strong>症狀</strong>)",
-      "en": ""
-    },
-    {
-      "zh": "困窘、自卑、難為情(<strong>感受</strong>)",
-      "en": ""
-    },
-    {
-      "zh": "購物、家務、整理花園(<strong>日常活動</strong>)",
-      "en": ""
-    },
-    {
-      "zh": "穿著選擇(<strong>日常活動</strong>)",
-      "en": ""
-    },
-    {
-      "zh": "社交活動、休閒(<strong>休閒</strong>)",
-      "en": ""
-    },
-    {
-      "zh": "運動(<strong>休閒</strong>)",
-      "en": ""
-    },
-    {
-      "zh": "無法工作或念書(<strong>工作 / 學業</strong>)",
-      "en": ""
-    },
-    {
-      "zh": "與伴侶 / 親友 / 家人關係(<strong>人際</strong>)",
-      "en": ""
-    },
-    {
-      "zh": "性生活(<strong>人際</strong>)",
-      "en": ""
-    },
-    {
-      "zh": "治療造成的困擾(<strong>治療負擔</strong>)",
-      "en": ""
-    },
-    {
-      "zh": "每題：<strong>0 完全沒有 / 1 一點點 / 2 中等 / 3 非常</strong>（若該題不適用 = 0)。",
-      "en": ""
-    },
-    {
-      "zh": "影響",
-      "en": ""
-    },
-    {
-      "zh": "意義",
-      "en": ""
-    },
-    {
-      "zh": "<span class=\"severity-mild\">無影響</span>",
-      "en": ""
-    },
-    {
-      "zh": "皮膚問題不影響生活",
-      "en": ""
-    },
-    {
-      "zh": "對生活有小影響",
-      "en": ""
-    },
-    {
-      "zh": "對生活有中等影響",
-      "en": ""
-    },
-    {
-      "zh": "<span class=\"severity-modsev\">重度</span>",
-      "en": ""
-    },
-    {
-      "zh": "<strong>達生物製劑健保申請門檻</strong>（配合疾病活動度）",
-      "en": ""
-    },
-    {
-      "zh": "<span class=\"severity-sev\">極重度</span>",
-      "en": ""
-    },
-    {
-      "zh": "嚴重影響生活、建議生物製劑 + 心理共病評估",
-      "en": ""
-    },
-    {
-      "zh": "<strong>DLQI ≥ 10</strong> 在多數慢性皮膚病代表「<strong>非常大或極大的負面影響</strong>」",
-      "en": ""
-    },
-    {
-      "zh": "用於健保生物製劑申請時通常需要<strong>連續 2 次評估</strong>都 ≥ 10",
-      "en": ""
-    },
-    {
-      "zh": "注意題目<strong>「不適用」(N/A)</strong>計 0 分（例如：單身者 Q9 性生活不適用）— 可能造成低估",
-      "en": ""
-    },
-    {
-      "zh": "分數突然下降但客觀疾病未改善 → 評估<strong>心理適應或忽略</strong>（精神共病可能掩蓋）",
-      "en": ""
-    },
-    {
-      "zh": "<strong>限制：</strong>(1) 主觀、易受情緒、文化差異影響；(2) Q9 性生活在亞洲常被低估；(3) 兒童 / 老年人需替代版本；(4) 不能取代客觀疾病評估；(5) <strong>單純對 DLQI ≥ 10 申請生物製劑、需配合疾病活動度量表</strong>(PASI、SCORAD、UAS7 等）。",
-      "en": ""
-    },
-    {
-      "zh": "啟動 DLQI 計算器 →",
-      "en": ""
-    },
-    {
-      "zh": "分數 0-100",
+      "zh": "單純對 DLQI ≥ 10 申請生物製劑、需配合疾病活動度量表",
       "en": ""
     },
     {
       "zh": "圓禿(Alopecia areata)",
+      "en": "Alopecia areata"
+    },
+    {
+      "zh": "JAK 抑制劑",
       "en": ""
     },
     {
-      "zh": "<strong>圓禿(Alopecia areata)</strong>頭皮禿髮面積評估",
+      "zh": "不適用",
       "en": ""
     },
     {
-      "zh": "判定 <strong>JAK 抑制劑</strong>(Baricitinib、Ritlecitinib)適應症",
+      "zh": "頂部(40%)",
       "en": ""
     },
     {
-      "zh": "追蹤治療反應(SALT-50、SALT-30、SALT-20)",
+      "zh": "後部(24%)",
       "en": ""
     },
     {
-      "zh": "<strong>不適用</strong>：雄性禿（用 Norwood-Ludwig)、瀰漫性落髮、瘢痕性禿髮",
+      "zh": "左側(18%)",
       "en": ""
     },
     {
-      "zh": "評估方式 — 頭皮分 4 區",
+      "zh": "右側(18%)",
       "en": ""
     },
     {
-      "zh": "SALT = （頂部 % × 0.40) + （後部 % × 0.24) + （左側 % × 0.18) + （右側 % × 0.18)",
+      "zh": "該區內禿髮面積百分比",
       "en": ""
     },
     {
-      "zh": "<strong>頂部(40%)</strong>：從髮際線到頭頂中央",
+      "zh": "實作建議",
       "en": ""
     },
     {
-      "zh": "<strong>後部(24%)</strong>：後枕部",
+      "zh": "Baricitinib（成人）或 Ritlecitinib(≥ 12 歲）",
       "en": ""
     },
     {
-      "zh": "<strong>左側(18%)</strong>：左耳上方至顳部",
+      "zh": "特殊型別",
       "en": ""
     },
     {
-      "zh": "<strong>右側(18%)</strong>：右耳上方至顳部",
+      "zh": "結核、B/C 肝、HIV、CBC、肝腎、血脂、CPK、惡性腫瘤史",
       "en": ""
     },
     {
-      "zh": "每區估算「<strong>該區內禿髮面積百分比</strong>」(0-100%)，建議以 5% 為單位",
-      "en": ""
-    },
-    {
-      "zh": "<strong>實作建議</strong>：對著鏡子或手機拍頭頂、後頸、兩側照片、印 / 描繪頭皮輪廓並圈出禿髮區域、用方格紙估算面積比例。家屬協助評估更精準。",
-      "en": ""
-    },
-    {
-      "zh": "病灶內類固醇注射(Triamcinolone 5-10 mg/mL)± 外用 Minoxidil 5%",
-      "en": ""
-    },
-    {
-      "zh": "+ DPCP 外用免疫療法、Methotrexate、低劑量口服 Minoxidil 輔助",
-      "en": ""
-    },
-    {
-      "zh": "<strong>Baricitinib（成人）或 Ritlecitinib(≥ 12 歲）</strong>—Rudnicka 2024 EU 共識首選",
-      "en": ""
-    },
-    {
-      "zh": "<strong>特殊型別</strong>:<strong>Alopecia totalis</strong>（全頭禿）= SALT 100%;<strong>Alopecia universalis</strong>（全身禿）= SALT 100% + 全身體毛",
-      "en": ""
-    },
-    {
-      "zh": "<strong>SALT-30 / 50 / 75 / 90</strong>：治療後 SALT 降幅(%)",
-      "en": ""
-    },
-    {
-      "zh": "BRAVE-AA(Baricitinib)4 mg 36 週 SALT ≤ 20 達成 38.8%(vs 安慰劑 6.2%)",
-      "en": ""
-    },
-    {
-      "zh": "ALLEGRO(Ritlecitinib)50 mg 24 週 SALT ≤ 20 達成 23%(vs 2%)",
-      "en": ""
-    },
-    {
-      "zh": "<strong>SALT ≥ 50</strong> 為 JAK 抑制劑的核准適應症 — 但 EMA 2023 警示 ≥ 65 歲、CV 高風險、惡性腫瘤、VTE 高風險者應僅在無替代時使用",
-      "en": ""
-    },
-    {
-      "zh": "用藥前必須篩檢：<strong>結核、B/C 肝、HIV、CBC、肝腎、血脂、CPK、惡性腫瘤史</strong>",
-      "en": ""
-    },
-    {
-      "zh": "家族史 / 兒童早發 / 異膚共病者預後較差",
-      "en": ""
-    },
-    {
-      "zh": "追蹤頻率：治療開始後 12 週、24 週、36 週評估反應",
-      "en": ""
-    },
-    {
-      "zh": "<strong>限制：</strong>(1) 估算誤差大（尤其重度 30-70% 區間）;(2) 不評估<strong>眉毛、睫毛、體毛</strong>（可改用 ALLEGRO 評估的 EBA / ELA scale);(3) 主觀性高、觀察者間差異；(4) AAS(Alopecia Areata Scale, King 2022)是更新的替代、涵蓋眉毛 / 睫毛。",
-      "en": ""
-    },
-    {
-      "zh": "啟動 SALT 計算器 →",
-      "en": ""
-    },
-    {
-      "zh": "分數 0-42",
+      "zh": "眉毛、睫毛、體毛",
       "en": ""
     },
     {
       "zh": "慢性自發性蕁麻疹(CSU)",
-      "en": ""
-    },
-    {
-      "zh": "<strong>慢性自發性蕁麻疹(CSU)</strong>每天活動度追蹤、<strong>必須連續 7 天記錄</strong>",
-      "en": ""
-    },
-    {
-      "zh": "判定 <strong>Omalizumab 健保 PASS 評估</strong>適應症",
-      "en": ""
-    },
-    {
-      "zh": "<strong>不適用</strong>：急性蕁麻疹(&lt; 6 週）、誘發性蕁麻疹（改用 trigger threshold test)、血管性水腫",
-      "en": ""
-    },
-    {
-      "zh": "評估方式 — 連續 7 天日記",
-      "en": ""
-    },
-    {
-      "zh": "UAS7 = Σ（每天 風團數 + 癢感）從 Day 1 到 Day 7",
-      "en": ""
-    },
-    {
-      "zh": "項目",
-      "en": ""
-    },
-    {
-      "zh": "每日評分",
-      "en": ""
-    },
-    {
-      "zh": "<strong>風團數(Wheal)</strong>",
-      "en": ""
-    },
-    {
-      "zh": "0 = 無 / 1 = 1-10 顆 / 2 = 10-50 顆 / 3 = &gt; 50 顆或大融合",
-      "en": ""
-    },
-    {
-      "zh": "<strong>癢感(Pruritus)</strong>",
-      "en": ""
-    },
-    {
-      "zh": "0 = 無 / 1 = 輕（在意但不困擾） / 2 = 中（干擾日常但可入眠） / 3 = 重（干擾日常且失眠）",
-      "en": ""
-    },
-    {
-      "zh": "每天最多 6 分（風團 0-3 + 癢感 0-3),7 天累積最高 42 分。<strong>建議搭配 EAACI 蕁麻疹日記 App</strong>（免費）。",
-      "en": ""
-    },
-    {
-      "zh": "活動度",
-      "en": ""
-    },
-    {
-      "zh": "<span class=\"severity-mild\">完全控制</span>",
-      "en": ""
-    },
-    {
-      "zh": "維持治療目標已達成、定期回診評估減量",
-      "en": ""
-    },
-    {
-      "zh": "<span class=\"severity-mild\">良好控制</span>",
-      "en": ""
-    },
-    {
-      "zh": "持續抗組織胺，4-6 個月後考慮減量",
-      "en": ""
-    },
-    {
-      "zh": "<span class=\"severity-mod\">輕度</span>",
-      "en": ""
-    },
-    {
-      "zh": "抗組織胺<strong>加量至 4 倍標準劑量</strong>(2022 EAACI)",
-      "en": ""
-    },
-    {
-      "zh": "<span class=\"severity-modsev\">中度</span>",
-      "en": ""
-    },
-    {
-      "zh": "+ Omalizumab 300 mg q4w（健保 PASS 申請）",
-      "en": ""
-    },
-    {
-      "zh": "+ Omalizumab（可加量至 600 mg q2w)± Cyclosporine(off-label)",
-      "en": ""
-    },
-    {
-      "zh": "<strong>治療目標 UAS7 ≤ 6</strong>（良好控制）,<strong>理想 UAS7 = 0</strong>",
-      "en": ""
-    },
-    {
-      "zh": "UAS7 與 <strong>UCT</strong>(Urticaria Control Test, 4 題）互補，UCT 易記但 UAS7 更精確",
-      "en": ""
-    },
-    {
-      "zh": "<strong>30% CSU 病人對 Omalizumab 反應不足</strong>（尤其低 IgE / 高抗 TPO IgG 的 Type IIb 自體免疫型）",
-      "en": ""
-    },
-    {
-      "zh": "新藥前景：Remibrutinib(BTK)、Dupilumab(2024 FDA 核准）為 omalizumab 失敗替代",
-      "en": ""
-    },
-    {
-      "zh": "<strong>限制：</strong>(1) 需<strong>連續 7 天</strong>記錄、病人配合度差；(2) 不涵蓋<strong>血管性水腫</strong>（改用 AAS / AAS7);(3) 不適用誘發性蕁麻疹；(4) 自評有低估或高估傾向；(5) UAS7 = 0 但仍痛苦 → 評估<strong>焦慮共病</strong>(7-29% CSU 合併憂鬱焦慮）。",
-      "en": ""
-    },
-    {
-      "zh": "啟動 UAS7 計算器 →",
-      "en": ""
-    },
-    {
-      "zh": "分數 0-44",
-      "en": ""
-    },
-    {
-      "zh": "痤瘡(Acne vulgaris)",
-      "en": ""
-    },
-    {
-      "zh": "<strong>所有痤瘡</strong>嚴重度評估（青少年、成人皆可）",
-      "en": ""
-    },
-    {
-      "zh": "判定<strong>口服 Isotretinoin（羅可坦）</strong>健保適應症",
-      "en": ""
-    },
-    {
-      "zh": "追蹤治療反應",
-      "en": ""
-    },
-    {
-      "zh": "GAGS = Σ（部位最嚴重病灶分級 × 部位權重）",
-      "en": ""
-    },
-    {
-      "zh": "部位",
-      "en": ""
-    },
-    {
-      "zh": "權重",
-      "en": ""
-    },
-    {
-      "zh": "前額",
-      "en": ""
-    },
-    {
-      "zh": "右臉頰",
-      "en": ""
-    },
-    {
-      "zh": "左臉頰",
-      "en": ""
-    },
-    {
-      "zh": "鼻部",
-      "en": ""
-    },
-    {
-      "zh": "下巴",
-      "en": ""
-    },
-    {
-      "zh": "胸 / 上背",
-      "en": ""
-    },
-    {
-      "zh": "每部位的<strong>「最嚴重病灶」</strong>分級：",
-      "en": ""
-    },
-    {
-      "zh": "0 = 無病灶",
-      "en": ""
-    },
-    {
-      "zh": "1 = ≥1 個粉刺(comedone)",
-      "en": ""
-    },
-    {
-      "zh": "2 = ≥1 個丘疹(papule)",
-      "en": ""
-    },
-    {
-      "zh": "3 = ≥1 個膿皰(pustule)",
-      "en": ""
-    },
-    {
-      "zh": "4 = ≥1 個結節 / 囊腫(nodule / cyst)",
-      "en": ""
+      "en": "Chronic spontaneous urticaria (CSU)"
     },
     {
-      "zh": "對應治療策略(AAD 2024)",
+      "zh": "必須連續 7 天記錄",
       "en": ""
     },
     {
-      "zh": "外用 BPO + Adapalene 0.1% 或 Tretinoin(2024 強建議）",
+      "zh": "Omalizumab 健保 PASS 評估",
       "en": ""
     },
     {
-      "zh": "+ 口服 Doxycycline 100 mg BID × 8-12 週、Spironolactone（女性）、Clascoterone",
+      "zh": "風團數(Wheal)",
       "en": ""
     },
     {
-      "zh": "<strong>口服 Isotretinoin</strong>（健保條件：重度發炎 / 反覆失敗 / 疤痕風險）",
+      "zh": "癢感(Pruritus)",
       "en": ""
     },
     {
-      "zh": "Isotretinoin + 病灶內類固醇 + 早期介入避免疤痕",
+      "zh": "建議搭配 EAACI 蕁麻疹日記 App",
       "en": ""
     },
     {
-      "zh": "GAGS 不評估<strong>痘疤、紅印、心理影響</strong> — 需配合 ECCA（痘疤）、DLQI（心理）",
+      "zh": "加量至 4 倍標準劑量",
       "en": ""
     },
     {
-      "zh": "女性 + 月經前惡化 + 下顎 / 頸部 + 多毛症 + 月經不規則 → 考慮 <strong>PCOS 內分泌評估</strong>",
+      "zh": "治療目標 UAS7 ≤ 6",
       "en": ""
     },
     {
-      "zh": "30 歲以上女性新發痤瘡 → 排除<strong>多囊卵巢、雄激素瘤、月經不調</strong>",
+      "zh": "理想 UAS7 = 0",
       "en": ""
     },
     {
-      "zh": "口服 A 酸前必做：<strong>肝功能、血脂、孕婦驗孕（育齡女性嚴格避孕）</strong>",
+      "zh": "30% CSU 病人對 Omalizumab 反應不足",
       "en": ""
     },
     {
-      "zh": "<strong>限制：</strong>(1) 不評估<strong>痘疤</strong>(ECCA、Goodman scar scale 替代）;(2) 不評估<strong>紅印 PIE / 黑印 PIH</strong>（亞洲人重要）;(3) 評估「最嚴重病灶」可能高估（只要 1 顆結節 = 4 分）;(4) IGA(Investigator's Global Assessment, 0-4 整體印象）更簡便；(5) IAA-GES(Investigator's Acne Assessment, 6 grade)為近年 FDA 試驗常用。",
+      "zh": "連續 7 天",
       "en": ""
     },
     {
-      "zh": "啟動 GAGS 計算器 →",
+      "zh": "血管性水腫",
       "en": ""
     },
     {
-      "zh": "分數 0-48",
+      "zh": "焦慮共病",
       "en": ""
     },
     {
-      "zh": "肝斑(Melasma)",
+      "zh": "所有痤瘡",
       "en": ""
     },
     {
-      "zh": "<strong>肝斑(melasma)</strong>嚴重度與治療反應追蹤",
+      "zh": "口服 Isotretinoin（羅可坦）",
       "en": ""
     },
     {
-      "zh": "<strong>不適用</strong>：單純曬斑(solar lentigo)、太田 / 顴骨母斑（改用 OMRA / ABRA)、PIH（改用 PGA)",
+      "zh": "「最嚴重病灶」",
       "en": ""
     },
     {
-      "zh": "近年常用簡化版 <strong>mMASI</strong>(modified MASI)，省去同質性項目",
+      "zh": "口服 Isotretinoin",
       "en": ""
     },
     {
-      "zh": "MASI = 0.3×Af×(Df+Hf) + 0.3×Ar×(Dr+Hr) + 0.3×Al×(Dl+Hl) + 0.1×Ac×(Dc+Hc)<br/>\r\nf = 前額 / r = 右臉頰 / l = 左臉頰 / c = 下巴",
+      "zh": "痘疤、紅印、心理影響",
       "en": ""
     },
     {
-      "zh": "<strong>4 個臉部區域權重</strong>：前額 ×0.3、右臉頰 ×0.3、左臉頰 ×0.3、下巴 ×0.1",
+      "zh": "PCOS 內分泌評估",
       "en": ""
     },
     {
-      "zh": "<strong>面積 A(0-6)</strong>：同 PASI 面積等級(0 = 0%、1 = &lt;10%、2 = 10-29%... 6 = 90-100%)",
+      "zh": "多囊卵巢、雄激素瘤、月經不調",
       "en": ""
     },
     {
-      "zh": "<strong>深淺 D(0-4)</strong>:0 = 無 / 1 = 略深 / 2 = 中 / 3 = 深 / 4 = 極深",
+      "zh": "肝功能、血脂、孕婦驗孕（育齡女性嚴格避孕）",
       "en": ""
     },
     {
-      "zh": "<strong>同質性 H(0-4)</strong>：色塊內顏色一致性，0 = 無 / 4 = 完全均勻",
+      "zh": "痘疤",
       "en": ""
     },
     {
-      "zh": "嚴格防曬(SPF 50+ 含氧化鐵）+ Azelaic acid 15-20% / Niacinamide",
+      "zh": "紅印 PIE / 黑印 PIH",
       "en": ""
     },
     {
-      "zh": "+ Tri-Luma（對苯二酚 4% + Tretinoin + Fluocinolone)8-12 週 → 維持",
+      "zh": "肝斑(melasma)",
       "en": ""
     },
     {
-      "zh": "+ 口服 Tranexamic acid 250 mg BID-TID + 低能量 Q-switched 1064 nm toning;Cysteamine 5%",
+      "zh": "4 個臉部區域權重",
       "en": ""
     },
     {
-      "zh": "<strong>MASI-50</strong>：治療後降幅 ≥ 50%（臨床顯著）",
+      "zh": "面積 A(0-6)",
       "en": ""
     },
     {
-      "zh": "典型療程<strong>需 8-16 週</strong>才看到顯著變化",
+      "zh": "深淺 D(0-4)",
       "en": ""
     },
     {
-      "zh": "<strong>「肝斑無法根治、只能控制」</strong>— 停藥就反黑、需終身防曬",
+      "zh": "同質性 H(0-4)",
       "en": ""
     },
     {
-      "zh": "口服 TXA 禁忌：深部靜脈栓塞史、孕婦、口服避孕藥（高血栓風險）",
+      "zh": "需 8-16 週",
       "en": ""
     },
     {
-      "zh": "<strong>傳統強脈衝雷射會誘發肝斑反黑</strong> — 需用低能量 toning（蜂巢皮秒）",
+      "zh": "「肝斑無法根治、只能控制」",
       "en": ""
     },
     {
-      "zh": "女性懷孕 / 哺乳期建議：防曬 + Azelaic acid(L3 安全），避開 hydroquinone、TXA、Tri-Luma",
+      "zh": "傳統強脈衝雷射會誘發肝斑反黑",
       "en": ""
     },
     {
-      "zh": "<strong>限制：</strong>(1) 主觀評分、觀察者間差異大；(2) 同質性(H)在亞洲人深褐色肝斑難判讀；(3) 不評估「<strong>真皮型 vs 表皮型</strong>」（可用 Wood lamp 輔助）;(4) 治療前後攝影應<strong>固定光源、距離、角度</strong>避免誤差；(5) mMASI（去除 H)觀察者間信度更高。",
+      "zh": "真皮型 vs 表皮型",
       "en": ""
     },
     {
-      "zh": "啟動 MASI 計算器 →",
+      "zh": "固定光源、距離、角度",
       "en": ""
     },
     {
       "zh": "<span class=\"tool-num\">08</span>Hurley 分期 <span class=\"tool-disease\">— Hidradenitis Suppurativa Staging</span>",
-      "en": ""
-    },
-    {
-      "zh": "化膿性汗腺炎(HS)",
-      "en": ""
-    },
-    {
-      "zh": "<strong>化膿性汗腺炎(HS / 反常性痤瘡）</strong>嚴重度分期",
-      "en": ""
-    },
-    {
-      "zh": "判定 <strong>Adalimumab（復邁）健保條件給付</strong>適應症(Hurley II/III)",
-      "en": ""
-    },
-    {
-      "zh": "<strong>不適用</strong>：單純癤、急性毛囊炎、藏毛囊腫",
-      "en": ""
-    },
-    {
-      "zh": "評估方式 — 三期分級",
-      "en": ""
-    },
-    {
-      "zh": "分期",
-      "en": ""
-    },
-    {
-      "zh": "定義",
-      "en": ""
-    },
-    {
-      "zh": "<strong>Stage I 輕度</strong>",
-      "en": ""
-    },
-    {
-      "zh": "單一或多個獨立膿瘍 / 結節、<strong>無通道、無疤痕</strong>",
-      "en": ""
-    },
-    {
-      "zh": "<strong>Stage II 中度</strong>",
-      "en": ""
-    },
-    {
-      "zh": "反覆膿瘍、<strong>形成通道(sinus tract)與疤痕</strong>，但病灶獨立分隔",
-      "en": ""
-    },
-    {
-      "zh": "<strong>Stage III 重度</strong>",
-      "en": ""
-    },
-    {
-      "zh": "<strong>多個互相連結的通道與膿瘍</strong>，大面積疤痕與纖維化",
-      "en": ""
-    },
-    {
-      "zh": "分數解讀 + 對應治療",
-      "en": ""
-    },
-    {
-      "zh": "外用 Clindamycin 1% + 短期口服 Doxycycline 50-100 mg BID × 12 週 + 生活調整（減重、戒菸、寬鬆衣物）+ 切開引流",
-      "en": ""
-    },
-    {
-      "zh": "長期口服 Clindamycin 300 mg + Rifampicin 600 mg 各 BID × 10-12 週；Acitretin / 抗雄激素；<strong>Adalimumab（健保條件給付）</strong>；局部 deroofing 手術",
-      "en": ""
-    },
-    {
-      "zh": "Adalimumab + 廣泛切除 + 皮瓣重建；<strong>Secukinumab</strong>(2023 FDA 新核准 IL-17 抑制劑）為新選項",
-      "en": ""
-    },
-    {
-      "zh": "輔助量表",
-      "en": ""
-    },
-    {
-      "zh": "<strong>Sartorius score</strong>：更精細的計數系統（病灶數 × 解剖位置 × 距離）",
-      "en": ""
-    },
-    {
-      "zh": "<strong>IHS4(International HS Severity Score System)</strong>：結節數 + 膿瘍數 ×2 + 通道 ×4（用於試驗反應追蹤）",
-      "en": ""
-    },
-    {
-      "zh": "<strong>HiSCR(HS Clinical Response)</strong>：膿瘍 + 結節數降幅 ≥ 50% 且通道未增加 = 反應(Adalimumab 試驗指標）",
-      "en": ""
-    },
-    {
-      "zh": "<strong>HS 平均延遲診斷 7-10 年</strong>（常被誤認為癤瘡 / 毛囊炎），早期介入可避免不可逆通道形成",
-      "en": ""
-    },
-    {
-      "zh": "<strong>Hurley II/III + DLQI ≥ 10 + 兩線傳統治療失敗</strong> = Adalimumab 健保申請門檻",
-      "en": ""
-    },
-    {
-      "zh": "合併症高：克隆氏症、PsA、PsC、代謝症候群、憂鬱 — 應系統性篩檢",
-      "en": ""
-    },
-    {
-      "zh": "戒菸 + 減重 + 規律治療為長期成效關鍵",
-      "en": ""
-    },
-    {
-      "zh": "<strong>限制：</strong>(1) 三期分級<strong>過於粗糙</strong>,Stage II 涵蓋範圍極廣；(2) 不評估「目前活動度」（可能 Stage III 但無新發病灶）;(3) 不適合用於追蹤治療反應（改用 IHS4 或 HiSCR);(4) 主觀、通道 vs 疤痕鑑別需經驗。",
-      "en": ""
-    },
-    {
-      "zh": "啟動 Hurley 分期工具 →",
-      "en": ""
-    },
-    {
-      "zh": "<span class=\"tool-num\">09</span>Norwood-Hamilton / Ludwig <span class=\"tool-disease\">— 雄性禿臨床分級</span>",
-      "en": ""
-    },
-    {
-      "zh": "男 I-VII / 女 I-III",
-      "en": ""
-    },
-    {
-      "zh": "雄性禿(AGA)",
-      "en": ""
-    },
-    {
-      "zh": "<strong>男性雄性禿</strong> → 用 Norwood-Hamilton(I-VII)",
-      "en": ""
-    },
-    {
-      "zh": "<strong>女性雄性禿</strong> → 用 Ludwig(I-III)或 Olsen（中央型）",
-      "en": ""
-    },
-    {
-      "zh": "<strong>不適用</strong>：圓禿（用 SALT)、瀰漫性休止期落髮（改用拔毛測試 + Trichoscopy)、瘢痕性禿髮",
-      "en": ""
-    },
-    {
-      "zh": "Norwood-Hamilton 分級（男性）",
-      "en": ""
-    },
-    {
-      "zh": "分級",
-      "en": ""
-    },
-    {
-      "zh": "特徵",
-      "en": ""
-    },
-    {
-      "zh": "無明顯禿髮 / 微微髮際後退",
-      "en": ""
-    },
-    {
-      "zh": "輕度 M 型髮際後退",
-      "en": ""
-    },
-    {
-      "zh": "明顯 M 型禿、可能合併頭頂稀疏",
-      "en": ""
-    },
-    {
-      "zh": "頭頂明顯稀疏 + III 級髮際",
-      "en": ""
-    },
-    {
-      "zh": "髮際線顯著後退 + 頭頂禿髮 + 中間有髮帶",
-      "en": ""
-    },
-    {
-      "zh": "大面積頭頂禿、中間髮帶減少、僅後方環狀剩餘",
-      "en": ""
-    },
-    {
-      "zh": "頭頂與前方禿髮融合、中間髮帶消失",
-      "en": ""
-    },
-    {
-      "zh": "僅後枕部 / 兩側馬蹄形剩餘（最嚴重）",
-      "en": ""
-    },
-    {
-      "zh": "Ludwig 分級（女性）",
-      "en": ""
-    },
-    {
-      "zh": "頭頂中央輕度稀疏、前髮際保留",
-      "en": ""
-    },
-    {
-      "zh": "頭頂中央明顯稀疏、前髮際保留",
-      "en": ""
-    },
-    {
-      "zh": "頭頂中央近乎全禿、前髮際仍可保留",
-      "en": ""
-    },
-    {
-      "zh": "女性特徵：「<strong>聖誕樹徵象(Christmas tree pattern)</strong>」— 頭頂中央分線變寬如三角形、但前髮際線保留（與男性不同）。",
-      "en": ""
-    },
-    {
-      "zh": "男性",
-      "en": ""
-    },
-    {
-      "zh": "女性",
-      "en": ""
-    },
-    {
-      "zh": "<span class=\"severity-mild\">輕度<br/>(I-II)</span>",
-      "en": ""
-    },
-    {
-      "zh": "外用 Minoxidil 5% bid<br/>± Finasteride 1 mg/day",
-      "en": ""
-    },
-    {
-      "zh": "外用 Minoxidil 2-5%<br/>± LDOM 0.5-1.25 mg/day(Olsen 2025)<br/>± Spironolactone 100 mg",
-      "en": ""
-    },
-    {
-      "zh": "<span class=\"severity-mod\">中度<br/>(III-IV)</span>",
-      "en": ""
-    },
-    {
-      "zh": "Finasteride + Minoxidil 雙標準<br/>± PRP 注射<br/>規劃植髮諮詢",
-      "en": ""
-    },
-    {
-      "zh": "Minoxidil + Spironolactone 主軸<br/>+ LDOM 1.25-2.5 mg<br/>± PRP",
-      "en": ""
-    },
-    {
-      "zh": "<span class=\"severity-sev\">重度<br/>(V-VII)</span>",
-      "en": ""
-    },
-    {
-      "zh": "植髮(FUE / FUT) + 持續藥物維持",
-      "en": ""
-    },
-    {
-      "zh": "植髮 + 持續藥物",
-      "en": ""
-    },
-    {
-      "zh": "<strong>「Minoxidil 不能停」</strong> — 停藥後 3-6 個月失去療效，2 年內恢復原本進度",
-      "en": ""
-    },
-    {
-      "zh": "<strong>Finasteride 副作用</strong>：性慾下降 / 勃起困難 ~1-2%，停藥可逆；PFS(post-finasteride syndrome)極罕見",
-      "en": ""
-    },
-    {
-      "zh": "<strong>女性禁用 Finasteride / Dutasteride</strong>（致畸風險、即使懷孕前）",
-      "en": ""
-    },
-    {
-      "zh": "植髮前先吃 Finasteride 6 個月穩定、避免 2-5 年後旁邊未植區繼續禿掉",
-      "en": ""
-    },
-    {
-      "zh": "<strong>限制：</strong>(1) Norwood 早期變化(I-II)觀察者間差異大；(2) Ludwig 不適合<strong>前髮際後退型</strong>女性禿（改用 Olsen 中央型分級）;(3) 不評估<strong>毛幹直徑變細</strong>(Trichoscopy 看毛幹細化更靈敏）;(4) 部分女性禿合併雄激素過多 → 需檢驗 testosterone、DHEAS、PCOS 篩檢。",
-      "en": ""
-    },
-    {
-      "zh": "啟動 Norwood-Ludwig 分級工具 →",
-      "en": ""
-    },
-    {
-      "zh": "<span class=\"tool-num\">10</span>Fitzpatrick 膚色分型 <span class=\"tool-disease\">— 防曬 / 雷射安全參考</span>",
-      "en": ""
-    },
-    {
-      "zh": "所有皮膚科 / 美容",
-      "en": ""
-    },
-    {
-      "zh": "所有<strong>雷射 / 化學換膚 / 醫美</strong>術前評估（預測 PIH 反黑風險）",
-      "en": ""
-    },
-    {
-      "zh": "<strong>防曬與皮膚癌風險</strong>分層",
-      "en": ""
-    },
-    {
-      "zh": "<strong>不直接代表</strong>絕對膚色 — 反映「曬太陽後皮膚反應」（光照敏感度）",
-      "en": ""
-    },
-    {
-      "zh": "評估方式 — 兩維度",
-      "en": ""
-    },
-    {
-      "zh": "結合「<strong>未曬太陽時的基礎膚色</strong>」+「<strong>初夏中午陽光下 30-60 分鐘後的反應</strong>」綜合評估。",
-      "en": ""
-    },
-    {
-      "zh": "類型",
-      "en": ""
-    },
-    {
-      "zh": "未曬時膚色",
-      "en": ""
-    },
-    {
-      "zh": "曬後反應",
-      "en": ""
-    },
-    {
-      "zh": "典型族群",
-      "en": ""
-    },
-    {
-      "zh": "極白（蒼白、雀斑多）",
-      "en": ""
+      "en": "<span class=\"tool-num\">08</span>Hurley staging <span class=\"tool-disease\">— Hidradenitis Suppurativa Staging</span>"
     },
     {
-      "zh": "總是曬傷、從不曬黑",
+      "zh": "化膿性汗腺炎(HS / 反常性痤瘡）",
       "en": ""
     },
     {
-      "zh": "北歐、紅髮藍眼",
+      "zh": "Adalimumab（復邁）健保條件給付",
       "en": ""
     },
     {
-      "zh": "白（輕度雀斑）",
+      "zh": "Stage I 輕度",
       "en": ""
     },
     {
-      "zh": "容易曬傷、輕微曬黑",
+      "zh": "無通道、無疤痕",
       "en": ""
     },
     {
-      "zh": "歐洲北部",
+      "zh": "Stage II 中度",
       "en": ""
     },
     {
-      "zh": "白偏黃 / 米白",
+      "zh": "形成通道(sinus tract)與疤痕",
       "en": ""
     },
     {
-      "zh": "有時曬傷、逐漸曬黑",
+      "zh": "Stage III 重度",
       "en": ""
     },
     {
-      "zh": "南歐、東亞輕色",
+      "zh": "多個互相連結的通道與膿瘍",
       "en": ""
     },
     {
-      "zh": "淺褐 / 偏深",
+      "zh": "Adalimumab（健保條件給付）",
       "en": ""
     },
     {
-      "zh": "很少曬傷、容易曬黑",
+      "zh": "HS 平均延遲診斷 7-10 年",
       "en": ""
     },
     {
-      "zh": "<strong>多數台灣 / 東亞</strong>、地中海",
+      "zh": "Hurley II/III + DLQI ≥ 10 + 兩線傳統治療失敗",
       "en": ""
     },
     {
-      "zh": "褐色",
+      "zh": "過於粗糙",
       "en": ""
     },
     {
-      "zh": "幾乎不曬傷、深度曬黑",
+      "zh": "男性雄性禿",
       "en": ""
     },
     {
-      "zh": "東南亞、印度、拉丁",
+      "zh": "女性雄性禿",
       "en": ""
     },
     {
-      "zh": "深褐 / 黑色",
+      "zh": "聖誕樹徵象(Christmas tree pattern)",
       "en": ""
     },
     {
-      "zh": "從不曬傷",
+      "zh": "「Minoxidil 不能停」",
       "en": ""
     },
     {
-      "zh": "非裔",
+      "zh": "Finasteride 副作用",
       "en": ""
     },
     {
-      "zh": "分型對應臨床建議",
+      "zh": "女性禁用 Finasteride / Dutasteride",
       "en": ""
     },
     {
-      "zh": "防曬建議",
+      "zh": "前髮際後退型",
       "en": ""
     },
     {
-      "zh": "雷射安全",
+      "zh": "毛幹直徑變細",
       "en": ""
     },
     {
-      "zh": "皮膚癌風險",
-      "en": ""
-    },
-    {
-      "zh": "SPF 50+ PA++++ 強烈建議",
-      "en": ""
+      "zh": "<span class=\"tool-num\">10</span>Fitzpatrick 膚色分型 <span class=\"tool-disease\" data-en=\"— a reference for photoprotection and laser safety\">— 防曬 / 雷射安全參考</span>",
+      "en": "<span class=\"tool-num\">10</span>Fitzpatrick skin phototype <span class=\"tool-disease\">— a reference for photoprotection and laser safety</span>"
     },
     {
-      "zh": "大多波長安全",
+      "zh": "雷射 / 化學換膚 / 醫美",
       "en": ""
     },
     {
-      "zh": "<strong>高</strong>(BCC、SCC、Melanoma)",
+      "zh": "防曬與皮膚癌風險",
       "en": ""
     },
     {
-      "zh": "易反黑(PIH)，先試打 1 cm² 觀察 4 週",
+      "zh": "不直接代表",
       "en": ""
     },
     {
-      "zh": "中",
+      "zh": "未曬太陽時的基礎膚色",
       "en": ""
     },
     {
-      "zh": "SPF 30+（避免 PIH)",
+      "zh": "初夏中午陽光下 30-60 分鐘後的反應",
       "en": ""
     },
     {
-      "zh": "1064 nm Nd:YAG 較安全；532/694/755 nm 易引起色素沉著",
+      "zh": "多數台灣 / 東亞",
       "en": ""
     },
     {
-      "zh": "<strong>低但易延誤診斷</strong>(SCC 預後較差）",
+      "zh": "高",
       "en": ""
     },
     {
-      "zh": "多數<strong>台灣人為 III-IV 型</strong> — 雷射 / 化學換膚後反黑風險高、需嚴格防曬 4 週以上",
+      "zh": "低但易延誤診斷",
       "en": ""
     },
     {
-      "zh": "I-II 型應每年接受<strong>全身皮膚檢查</strong>（尤其 50 歲以上）",
+      "zh": "台灣人為 III-IV 型",
       "en": ""
     },
     {
-      "zh": "V-VI 型雖皮膚癌風險低、但 SCC 多發生於足底 / 指甲下、且<strong>容易被忽略</strong>（色素掩蓋）",
+      "zh": "全身皮膚檢查",
       "en": ""
     },
     {
-      "zh": "<strong>含氧化鐵防曬</strong>對 III-VI 型亞洲人特別重要（可阻擋可見光誘發肝斑）",
+      "zh": "容易被忽略",
       "en": ""
     },
     {
-      "zh": "<strong>限制：</strong>(1) <strong>主觀回答</strong>，有自我認知偏差；(2) 同一人冬夏不同；(3) 不直接反映黑色素含量（可用客觀儀器 Mexameter / spectrophotometer);(4) 國際分類無法完全代表亞洲族群、可參考更細緻的 ITA(Individual Typology Angle);(5) 膚色分型不等於皮膚癌絕對風險（基因 / 累積 UV 暴露 / 家族史更重要）。",
+      "zh": "含氧化鐵防曬",
       "en": ""
     },
     {
-      "zh": "啟動 Fitzpatrick 分型工具 →",
+      "zh": "主觀回答",
       "en": ""
     },
     {
-      "zh": "使用建議 — 量表只是工具、不是診斷",
+      "zh": "量表是「客觀化主觀」的工具",
       "en": ""
     },
     {
-      "zh": "<strong>量表是「客觀化主觀」的工具</strong>，讓您與醫師對話時能精確描述病情變化、而非單純「比上次好一點」這種模糊感受。",
+      "zh": "追蹤更重要",
       "en": ""
     },
     {
-      "zh": "<strong>追蹤更重要</strong>：第一次計算分數沒意義、連續 4-12 週對照才看得到趨勢。建議拍照 + 寫日記。",
+      "zh": "多個量表合用",
       "en": ""
     },
     {
-      "zh": "<strong>多個量表合用</strong>：疾病活動度(SCORAD / PASI)+ 生活品質(DLQI)+ 心理共病(PHQ-9 / GAD-7)三方視角才完整。",
+      "zh": "健保生物製劑申請",
       "en": ""
     },
     {
-      "zh": "<strong>健保生物製劑申請</strong>需專科醫師親自評估與簽署、自評分數僅供參考、不能直接申請。",
+      "zh": "本網站所有量表均無業配、無贊助、無聯盟連結",
       "en": ""
     },
     {
-      "zh": "<strong>本網站所有量表均無業配、無贊助、無聯盟連結</strong>，引用的學會共識可點擊 PubMed 查證。發現錯誤請<a href=\"mailto:expertise88864@gmail.com?subject=量表計算器回饋\" style=\"color:var(--teal-deep);text-decoration:underline\">寫信告知</a>。",
+      "zh": "寫信告知",
       "en": ""
     },
     {
@@ -1356,6 +620,1651 @@
     {
       "zh": "醫學詞彙白話字典",
       "en": ""
+    },
+    {
+      "zh": "<a href=\"/\">首頁</a><span style=\"margin:0 6px;opacity:.5\">/</span><span>量表計算器使用指南</span>",
+      "en": "<a href=\"/\">Home</a><span style=\"margin:0 6px;opacity:.5\">/</span><span>Guide to the severity scales</span>",
+      "injected": true
+    },
+    {
+      "zh": "衛教 · 互動工具",
+      "en": "Patient guide · Interactive tools",
+      "injected": true
+    },
+    {
+      "zh": "完整使用指南",
+      "en": "a complete guide",
+      "injected": true
+    },
+    {
+      "zh": "臨床量表(scoring tools)是皮膚科醫師<strong>客觀量化嚴重度、追蹤治療反應、判斷生物製劑健保資格</strong>的關鍵工具。本指南整理 10 大常用量表的<strong>適用對象、評估方法、分數解讀、結果對應治療策略、限制與原始引用</strong>，讓您看懂自己的病情並與醫師有效溝通。",
+      "en": "Clinical scoring tools are how dermatologists <strong>quantify severity objectively, track response to treatment, and judge eligibility for NHI-funded biologics</strong>. This guide covers the <strong>intended patient, method, how to read the score, the treatment strategy it points to, the limitations and the original citation</strong> for the ten scales used most, so you can understand your own disease and discuss it precisely with your doctor.",
+      "injected": true
+    },
+    {
+      "zh": "<strong>重要提醒：</strong>本指南所有量表為「<strong>病人自評輔助工具</strong>」，不取代專科醫師面對面評估。生物製劑健保申請、處方治療決策需由皮膚專科醫師依完整病史與檢查決定。本網站<strong>無業配、無贊助</strong>，所有引用學會共識可點擊 PubMed 查證。",
+      "en": "<strong>Important:</strong> every scale here is a <strong>patient self-assessment aid</strong> and does not replace a face-to-face specialist assessment. NHI biologic applications and prescribing decisions must be made by a dermatologist on the full history and examination. This site carries <strong>no advertising and no sponsorship</strong>; every society consensus cited can be checked on PubMed.",
+      "injected": true
+    },
+    {
+      "zh": "10 個量表 · 快速跳轉",
+      "en": "10 scales · quick jump",
+      "injected": true
+    },
+    {
+      "zh": "<a href=\"#scorad\">1 · SCORAD（異膚）</a>",
+      "en": "<a href=\"#scorad\">1 · SCORAD (atopic dermatitis)</a>",
+      "injected": true
+    },
+    {
+      "zh": "<a href=\"#pasi\">2 · PASI（乾癬）</a>",
+      "en": "<a href=\"#pasi\">2 · PASI (psoriasis)</a>",
+      "injected": true
+    },
+    {
+      "zh": "<a href=\"#dlqi\">3 · DLQI（生活品質）</a>",
+      "en": "<a href=\"#dlqi\">3 · DLQI (quality of life)</a>",
+      "injected": true
+    },
+    {
+      "zh": "<a href=\"#salt\">4 · SALT（圓禿）</a>",
+      "en": "<a href=\"#salt\">4 · SALT (alopecia areata)</a>",
+      "injected": true
+    },
+    {
+      "zh": "<a href=\"#uas7\">5 · UAS7（蕁麻疹）</a>",
+      "en": "<a href=\"#uas7\">5 · UAS7 (urticaria)</a>",
+      "injected": true
+    },
+    {
+      "zh": "<a href=\"#gags\">6 · GAGS（痘痘）</a>",
+      "en": "<a href=\"#gags\">6 · GAGS (acne)</a>",
+      "injected": true
+    },
+    {
+      "zh": "<a href=\"#masi\">7 · MASI（肝斑）</a>",
+      "en": "<a href=\"#masi\">7 · MASI (melasma)</a>",
+      "injected": true
+    },
+    {
+      "zh": "<a href=\"#hurley\">8 · Hurley（化膿性汗腺炎）</a>",
+      "en": "<a href=\"#hurley\">8 · Hurley (hidradenitis suppurativa)</a>",
+      "injected": true
+    },
+    {
+      "zh": "<a href=\"#norwood\">9 · Norwood-Ludwig（雄性禿）</a>",
+      "en": "<a href=\"#norwood\">9 · Norwood-Ludwig (androgenetic alopecia)</a>",
+      "injected": true
+    },
+    {
+      "zh": "<a href=\"#fitzpatrick\">10 · Fitzpatrick（膚色分型）</a>",
+      "en": "<a href=\"#fitzpatrick\">10 · Fitzpatrick (skin phototype)</a>",
+      "injected": true
+    },
+    {
+      "zh": "分數 0-103",
+      "en": "Score 0-103",
+      "injected": true
+    },
+    {
+      "zh": "異位性皮膚炎",
+      "en": "Atopic dermatitis",
+      "injected": true
+    },
+    {
+      "zh": "適用對象",
+      "en": "Who it is for",
+      "injected": true
+    },
+    {
+      "zh": "<strong>所有年齡層異位性皮膚炎(AD)</strong>：嬰幼兒、兒童、成人皆可",
+      "en": "<strong>Atopic dermatitis (AD) at any age</strong>: infants, children and adults alike",
+      "injected": true
+    },
+    {
+      "zh": "追蹤<strong>治療前後反應</strong>（用藥前 / 4 週 / 12 週對照）",
+      "en": "Tracking <strong>response before and after treatment</strong> (baseline / 4 weeks / 12 weeks)",
+      "injected": true
+    },
+    {
+      "zh": "判定 Dupilumab、JAK 抑制劑、Tralokinumab、Lebrikizumab 等<strong>生物製劑申請參考</strong>",
+      "en": "A reference point when applying for <strong>biologics</strong> such as dupilumab, JAK inhibitors, tralokinumab or lebrikizumab",
+      "injected": true
+    },
+    {
+      "zh": "評估方式 — 三大組件",
+      "en": "Method — three components",
+      "injected": true
+    },
+    {
+      "zh": "<strong>A · 受影響面積(0-100%)</strong>：依「<strong>九分法</strong>」估算\r\n<ul><li>頭頸部 9% / 上肢各 9%（雙側 18%)/ 軀幹前 18% / 軀幹後 18% / 下肢各 18%（雙側 36%)/ 會陰 1%</li><li>嬰幼兒比例不同：頭部 18%、下肢各 13.5%</li></ul>",
+      "en": "<strong>A · Affected area (0-100%)</strong>, estimated by the <strong>rule of nines</strong> <ul><li>Head and neck 9% / each upper limb 9% (18% both) / front of trunk 18% / back of trunk 18% / each lower limb 18% (36% both) / perineum 1%</li><li>Infants differ: head 18%, each lower limb 13.5%</li></ul>",
+      "injected": true
+    },
+    {
+      "zh": "<strong>B · 6 項客觀症狀總分(0-18，每項 0-3)</strong><ul><li>紅斑(Erythema)、水腫 / 丘疹(Edema/Papulation)、滲出 / 結痂(Oozing/Crust)、抓痕(Excoriation)、苔癬化(Lichenification)、乾燥(Dryness — 評估「未影響」區域）</li><li>0 = 無 / 1 = 輕 / 2 = 中 / 3 = 重</li></ul>",
+      "en": "<strong>B · Six objective signs, total 0-18 (each 0-3)</strong><ul><li>Erythema, oedema/papulation, oozing/crust, excoriation, lichenification, dryness (assessed on unaffected skin)</li><li>0 = none / 1 = mild / 2 = moderate / 3 = severe</li></ul>",
+      "injected": true
+    },
+    {
+      "zh": "<strong>C · 主觀症狀總分(0-20)</strong><ul><li>癢感(Pruritus)0-10 + 失眠(Sleep loss)0-10</li><li>取<strong>過去 3 天平均</strong>，病人自評</li></ul>",
+      "en": "<strong>C · Subjective symptoms, total 0-20</strong><ul><li>Pruritus 0-10 + sleep loss 0-10</li><li>The <strong>average over the past 3 days</strong>, rated by the patient</li></ul>",
+      "injected": true
+    },
+    {
+      "zh": "分數解讀",
+      "en": "How to read the score",
+      "injected": true
+    },
+    {
+      "zh": "分數",
+      "en": "Score",
+      "injected": true
+    },
+    {
+      "zh": "嚴重度",
+      "en": "Severity",
+      "injected": true
+    },
+    {
+      "zh": "對應治療策略",
+      "en": "Treatment strategy it points to",
+      "injected": true
+    },
+    {
+      "zh": "輕度",
+      "en": "Mild",
+      "injected": true
+    },
+    {
+      "zh": "外用類固醇 + 保濕 + Tacrolimus / Pimecrolimus",
+      "en": "Topical corticosteroid + emollient + tacrolimus / pimecrolimus",
+      "injected": true
+    },
+    {
+      "zh": "中度",
+      "en": "Moderate",
+      "injected": true
+    },
+    {
+      "zh": "+ NB-UVB 光療、Proactive therapy（週末預防擦藥）",
+      "en": "+ NB-UVB phototherapy, proactive therapy (weekend maintenance application)",
+      "injected": true
+    },
+    {
+      "zh": "重度",
+      "en": "Severe",
+      "injected": true
+    },
+    {
+      "zh": "+ Dupilumab / JAK 抑制劑 / Cyclosporine（短期）",
+      "en": "+ Dupilumab / JAK inhibitor / ciclosporin (short course)",
+      "injected": true
+    },
+    {
+      "zh": "結果意義 + 下一步建議",
+      "en": "What the result means, and what to do next",
+      "injected": true
+    },
+    {
+      "zh": "<strong>SCORAD ≥ 50</strong> 是台灣健保 Dupilumab 申請參考門檻之一（配合 EASI、DLQI、外用治療失敗）",
+      "en": "<strong>SCORAD ≥ 50</strong> is one of the reference thresholds for a Taiwan NHI dupilumab application (alongside EASI, DLQI and failure of topical therapy)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>治療反應</strong>:SCORAD-50 = 治療後降幅 ≥ 50%（臨床顯著反應）;SCORAD-75 = 良好反應",
+      "en": "<strong>Response</strong>: SCORAD-50 = a fall of ≥ 50% after treatment (clinically meaningful); SCORAD-75 = a good response",
+      "injected": true
+    },
+    {
+      "zh": "追蹤頻率：中重度建議<strong>每 4-12 週評估一次</strong>",
+      "en": "Follow-up: moderate-to-severe disease should be <strong>reassessed every 4-12 weeks</strong>",
+      "injected": true
+    },
+    {
+      "zh": "<strong>嬰幼兒</strong>請參考 Werfel 2024 S3 兒童版調整（面積比例不同）",
+      "en": "<strong>For infants</strong>, adjust per the Werfel 2024 S3 paediatric version — the area proportions differ",
+      "injected": true
+    },
+    {
+      "zh": "限制 + 注意事項",
+      "en": "Limitations and cautions",
+      "injected": true
+    },
+    {
+      "zh": "<strong>限制：</strong>(1) 客觀症狀(B)需<strong>由皮膚科醫師評估</strong>，病人自評難以準確；(2) 受過去 3 天波動影響；(3) 未涵蓋手部、生殖器等特殊部位的功能性影響（可改用 EASI 或 POEM);(4) 嬰幼兒哭鬧時誤判紅斑。",
+      "en": "<strong>Limitations:</strong> (1) the objective signs (B) need <strong>a dermatologist's assessment</strong> and are hard for a patient to rate accurately; (2) it is sensitive to fluctuation over the past 3 days; (3) it does not capture the functional impact of hand or genital involvement (use EASI or POEM instead); (4) erythema is easily overcalled in a crying infant.",
+      "injected": true
+    },
+    {
+      "zh": "原始引用",
+      "en": "Original citation",
+      "injected": true
+    },
+    {
+      "zh": "啟動 SCORAD 計算器 →",
+      "en": "Open the SCORAD calculator →",
+      "injected": true
+    },
+    {
+      "zh": "分數 0-72",
+      "en": "Score 0-72",
+      "injected": true
+    },
+    {
+      "zh": "乾癬",
+      "en": "Psoriasis",
+      "injected": true
+    },
+    {
+      "zh": "<strong>斑塊型乾癬(plaque psoriasis)</strong>嚴重度評估",
+      "en": "Severity assessment for <strong>plaque psoriasis</strong>",
+      "injected": true
+    },
+    {
+      "zh": "<strong>台灣健保生物製劑申請門檻</strong>:PASI ≥ 10 + BSA ≥ 10% + DLQI ≥ 10 + 兩線傳統治療(MTX / 光療 / Acitretin)失敗",
+      "en": "<strong>Taiwan NHI biologic threshold</strong>: PASI ≥ 10 + BSA ≥ 10% + DLQI ≥ 10, plus failure of two conventional therapies (methotrexate / phototherapy / acitretin)",
+      "injected": true
+    },
+    {
+      "zh": "不適用：膿皰型、紅皮型、guttate（滴狀）、頭皮型（改用 PSSI)",
+      "en": "Not for: pustular, erythrodermic, guttate or scalp psoriasis (use PSSI for scalp)",
+      "injected": true
+    },
+    {
+      "zh": "評估方式",
+      "en": "Method",
+      "injected": true
+    },
+    {
+      "zh": "PASI = 0.1×(Eh+Ih+Dh)×Ah + 0.2×(Ea+Ia+Da)×Aa + 0.3×(Et+It+Dt)×At + 0.4×(El+Il+Dl)×Al<br/>\r\nh = 頭頸 / a = 上肢 / t = 軀幹 / l = 下肢",
+      "en": "PASI = 0.1×(Eh+Ih+Dh)×Ah + 0.2×(Ea+Ia+Da)×Aa + 0.3×(Et+It+Dt)×At + 0.4×(El+Il+Dl)×Al<br/> h = head and neck / a = upper limbs / t = trunk / l = lower limbs",
+      "injected": true
+    },
+    {
+      "zh": "<strong>4 個身體區域權重</strong>：頭頸 ×0.1、上肢 ×0.2、軀幹 ×0.3、下肢 ×0.4（總和 = 1.0)",
+      "en": "<strong>Four body regions, weighted</strong>: head and neck ×0.1, upper limbs ×0.2, trunk ×0.3, lower limbs ×0.4 (summing to 1.0)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>每區評估 3 項症狀(0-4)</strong>:\r\n<ul><li><strong>E · 紅斑(Erythema)</strong>：無 / 淡紅 / 中紅 / 深紅 / 暗紅</li><li><strong>I · 浸潤(Infiltration)</strong>：厚度 — 無 / 薄 / 中 / 厚 / 極厚</li><li><strong>D · 鱗屑(Desquamation)</strong>：無 / 細鱗 / 粗鱗 / 厚鱗 / 黏附</li></ul>",
+      "en": "<strong>Three signs per region (0-4)</strong>: <ul><li><strong>E · erythema</strong>: none / light red / red / dark red / deep red</li><li><strong>I · induration</strong> (thickness): none / slight / moderate / thick / very thick</li><li><strong>D · desquamation</strong>: none / fine / coarse / thick / adherent</li></ul>",
+      "injected": true
+    },
+    {
+      "zh": "<strong>面積分級(0-6)</strong>:0 = 0%、1 = &lt;10%、2 = 10-29%、3 = 30-49%、4 = 50-69%、5 = 70-89%、6 = 90-100%",
+      "en": "<strong>Area grade (0-6)</strong>: 0 = 0%, 1 = &lt;10%, 2 = 10-29%, 3 = 30-49%, 4 = 50-69%, 5 = 70-89%, 6 = 90-100%",
+      "injected": true
+    },
+    {
+      "zh": "外用 Calcipotriol（達力士）/ Daivobet / 類固醇",
+      "en": "Topical calcipotriol / calcipotriol-betamethasone / corticosteroid",
+      "injected": true
+    },
+    {
+      "zh": "+ NB-UVB / Acitretin / Methotrexate；準備生物製劑申請條件",
+      "en": "+ NB-UVB / acitretin / methotrexate; start assembling the biologic application criteria",
+      "injected": true
+    },
+    {
+      "zh": "中重度",
+      "en": "Moderate to severe",
+      "injected": true
+    },
+    {
+      "zh": "<strong>達健保生物製劑門檻</strong>(IL-17 / IL-23 / Deucravacitinib)",
+      "en": "<strong>Meets the NHI biologic threshold</strong> (IL-17 / IL-23 / deucravacitinib)",
+      "injected": true
+    },
+    {
+      "zh": "Bimekizumab / Risankizumab / Guselkumab 三線最強；注意關節炎共病",
+      "en": "Bimekizumab, risankizumab and guselkumab are the strongest three; watch for coexisting arthritis",
+      "injected": true
+    },
+    {
+      "zh": "治療反應指標",
+      "en": "Response endpoints",
+      "injected": true
+    },
+    {
+      "zh": "<strong>PASI 75</strong>：治療後降幅 ≥ 75%（傳統治療目標）",
+      "en": "<strong>PASI 75</strong>: a fall of ≥ 75% after treatment (the conventional target)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>PASI 90</strong>：降幅 ≥ 90%(IL-23 級生物製劑常規目標）",
+      "en": "<strong>PASI 90</strong>: a fall of ≥ 90% (the routine target for IL-23-class biologics)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>PASI 100</strong>：完全清除(Bimekizumab 16 週可達 60%+)",
+      "en": "<strong>PASI 100</strong>: complete clearance (bimekizumab reaches over 60% at 16 weeks)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>PASI ≥ 10 + BSA ≥ 10% + DLQI ≥ 10 + 雙線失敗</strong> = 健保生物製劑可申請",
+      "en": "<strong>PASI ≥ 10 + BSA ≥ 10% + DLQI ≥ 10 + two failed conventional therapies</strong> = eligible to apply for an NHI biologic",
+      "injected": true
+    },
+    {
+      "zh": "選擇生物製劑時考慮共病：乾癬性關節炎 → IL-17；發炎性腸道疾病 → IL-23 或 Deucravacitinib",
+      "en": "Choose the biologic around the comorbidity: psoriatic arthritis → IL-17; inflammatory bowel disease → IL-23 or deucravacitinib",
+      "injected": true
+    },
+    {
+      "zh": "頭皮乾癬建議改用 <strong>PSSI</strong>(Psoriasis Scalp Severity Index)",
+      "en": "For scalp psoriasis use <strong>PSSI</strong> (Psoriasis Scalp Severity Index) instead",
+      "injected": true
+    },
+    {
+      "zh": "<strong>限制：</strong>(1) 觀察者間差異大、需訓練；(2) 對<strong>輕度乾癬靈敏度低</strong>（分數變化 1-2 分但臨床改善明顯）;(3) 不適用膿皰型、紅皮型、皺褶型；(4) 局部嚴重（如手 / 臉）但 PASI 低 → 改用 BSA + DLQI 補充；(5) 深膚色紅斑判讀困難。",
+      "en": "<strong>Limitations:</strong> (1) inter-observer variation is wide and training is needed; (2) it is <strong>insensitive in mild psoriasis</strong> (a 1-2 point change can accompany obvious clinical improvement); (3) it does not apply to pustular, erythrodermic or inverse forms; (4) severe but localised disease (hands, face) can give a low PASI — supplement with BSA and DLQI; (5) erythema is harder to grade in darker skin.",
+      "injected": true
+    },
+    {
+      "zh": "啟動 PASI 計算器 →",
+      "en": "Open the PASI calculator →",
+      "injected": true
+    },
+    {
+      "zh": "分數 0-30",
+      "en": "Score 0-30",
+      "injected": true
+    },
+    {
+      "zh": "所有皮膚病",
+      "en": "Any skin disease",
+      "injected": true
+    },
+    {
+      "zh": "<strong>16 歲以上</strong>所有慢性皮膚病（乾癬、異膚、蕁麻疹、結節性癢疹、HS、白斑等）",
+      "en": "Any chronic skin disease <strong>from age 16</strong> — psoriasis, atopic dermatitis, urticaria, prurigo nodularis, HS, vitiligo and others",
+      "injected": true
+    },
+    {
+      "zh": "<strong>生物製劑健保申請門檻</strong>：多數疾病 DLQI ≥ 10",
+      "en": "<strong>NHI biologic threshold</strong>: DLQI ≥ 10 for most conditions",
+      "injected": true
+    },
+    {
+      "zh": "追蹤治療對<strong>生活品質</strong>的影響（不只是皮膚外觀）",
+      "en": "Tracking what treatment does to <strong>quality of life</strong>, not just to the appearance of the skin",
+      "injected": true
+    },
+    {
+      "zh": "兒童版用 <strong>CDLQI</strong>(Children's DLQI,4-16 歲）、嬰幼兒用 <strong>IDQOL</strong>",
+      "en": "Children use <strong>CDLQI</strong> (Children's DLQI, ages 4-16); infants use <strong>IDQOL</strong>",
+      "injected": true
+    },
+    {
+      "zh": "<strong>10 題自評、每題 0-3 分、總分 0-30</strong>。每題問「過去 1 週」皮膚問題對該面向的影響程度。",
+      "en": "<strong>Ten self-rated items, 0-3 each, total 0-30</strong>. Each asks how much your skin affected that aspect of life <strong>over the past week</strong>.",
+      "injected": true
+    },
+    {
+      "zh": "題目",
+      "en": "Item",
+      "injected": true
+    },
+    {
+      "zh": "面向",
+      "en": "Aspect",
+      "injected": true
+    },
+    {
+      "zh": "癢、痠痛、刺痛(<strong>症狀</strong>)",
+      "en": "Itch, soreness, stinging (<strong>symptoms</strong>)",
+      "injected": true
+    },
+    {
+      "zh": "困窘、自卑、難為情(<strong>感受</strong>)",
+      "en": "Embarrassment and self-consciousness (<strong>feelings</strong>)",
+      "injected": true
+    },
+    {
+      "zh": "購物、家務、整理花園(<strong>日常活動</strong>)",
+      "en": "Shopping, housework, gardening (<strong>daily activities</strong>)",
+      "injected": true
+    },
+    {
+      "zh": "穿著選擇(<strong>日常活動</strong>)",
+      "en": "Choice of clothing (<strong>daily activities</strong>)",
+      "injected": true
+    },
+    {
+      "zh": "社交活動、休閒(<strong>休閒</strong>)",
+      "en": "Social and leisure activities (<strong>leisure</strong>)",
+      "injected": true
+    },
+    {
+      "zh": "運動(<strong>休閒</strong>)",
+      "en": "Sport (<strong>leisure</strong>)",
+      "injected": true
+    },
+    {
+      "zh": "無法工作或念書(<strong>工作 / 學業</strong>)",
+      "en": "Prevented from working or studying (<strong>work / study</strong>)",
+      "injected": true
+    },
+    {
+      "zh": "與伴侶 / 親友 / 家人關係(<strong>人際</strong>)",
+      "en": "Relationships with partner, friends and family (<strong>personal relationships</strong>)",
+      "injected": true
+    },
+    {
+      "zh": "性生活(<strong>人際</strong>)",
+      "en": "Sexual difficulties (<strong>personal relationships</strong>)",
+      "injected": true
+    },
+    {
+      "zh": "治療造成的困擾(<strong>治療負擔</strong>)",
+      "en": "Problems caused by the treatment itself (<strong>treatment burden</strong>)",
+      "injected": true
+    },
+    {
+      "zh": "每題：<strong>0 完全沒有 / 1 一點點 / 2 中等 / 3 非常</strong>（若該題不適用 = 0)。",
+      "en": "Each item: <strong>0 not at all / 1 a little / 2 a lot / 3 very much</strong> (score 0 if not relevant).",
+      "injected": true
+    },
+    {
+      "zh": "影響",
+      "en": "Impact",
+      "injected": true
+    },
+    {
+      "zh": "意義",
+      "en": "What it means",
+      "injected": true
+    },
+    {
+      "zh": "無影響",
+      "en": "No effect",
+      "injected": true
+    },
+    {
+      "zh": "皮膚問題不影響生活",
+      "en": "The skin problem is not affecting daily life",
+      "injected": true
+    },
+    {
+      "zh": "對生活有小影響",
+      "en": "A small effect on daily life",
+      "injected": true
+    },
+    {
+      "zh": "對生活有中等影響",
+      "en": "A moderate effect on daily life",
+      "injected": true
+    },
+    {
+      "zh": "<strong>達生物製劑健保申請門檻</strong>（配合疾病活動度）",
+      "en": "<strong>Meets the NHI biologic threshold</strong> (together with disease activity)",
+      "injected": true
+    },
+    {
+      "zh": "極重度",
+      "en": "Extremely severe",
+      "injected": true
+    },
+    {
+      "zh": "嚴重影響生活、建議生物製劑 + 心理共病評估",
+      "en": "Severely affecting life; consider a biologic plus assessment for psychological comorbidity",
+      "injected": true
+    },
+    {
+      "zh": "<strong>DLQI ≥ 10</strong> 在多數慢性皮膚病代表「<strong>非常大或極大的負面影響</strong>」",
+      "en": "<strong>DLQI ≥ 10</strong> means <strong>a very large or extremely large negative effect</strong> in most chronic skin disease",
+      "injected": true
+    },
+    {
+      "zh": "用於健保生物製劑申請時通常需要<strong>連續 2 次評估</strong>都 ≥ 10",
+      "en": "An NHI biologic application usually needs <strong>two consecutive assessments</strong> both ≥ 10",
+      "injected": true
+    },
+    {
+      "zh": "注意題目<strong>「不適用」(N/A)</strong>計 0 分（例如：單身者 Q9 性生活不適用）— 可能造成低估",
+      "en": "Note that an item marked <strong>\"not relevant\" (N/A)</strong> scores 0 — for instance Q9 on sexual difficulties for someone single — which can understate the true impact",
+      "injected": true
+    },
+    {
+      "zh": "分數突然下降但客觀疾病未改善 → 評估<strong>心理適應或忽略</strong>（精神共病可能掩蓋）",
+      "en": "A sudden fall in score without objective improvement → assess for <strong>psychological adaptation or avoidance</strong>; a psychiatric comorbidity can mask the picture",
+      "injected": true
+    },
+    {
+      "zh": "<strong>限制：</strong>(1) 主觀、易受情緒、文化差異影響；(2) Q9 性生活在亞洲常被低估；(3) 兒童 / 老年人需替代版本；(4) 不能取代客觀疾病評估；(5) <strong>單純對 DLQI ≥ 10 申請生物製劑、需配合疾病活動度量表</strong>(PASI、SCORAD、UAS7 等）。",
+      "en": "<strong>Limitations:</strong> (1) subjective, and sensitive to mood and cultural differences; (2) Q9 on sexual difficulties is commonly understated in Asia; (3) children and older people need the alternative versions; (4) it cannot replace objective disease assessment; (5) <strong>DLQI ≥ 10 alone does not support a biologic application — it must accompany a disease-activity scale</strong> (PASI, SCORAD, UAS7 and so on).",
+      "injected": true
+    },
+    {
+      "zh": "啟動 DLQI 計算器 →",
+      "en": "Open the DLQI calculator →",
+      "injected": true
+    },
+    {
+      "zh": "分數 0-100",
+      "en": "Score 0-100",
+      "injected": true
+    },
+    {
+      "zh": "<strong>圓禿(Alopecia areata)</strong>頭皮禿髮面積評估",
+      "en": "Scalp hair-loss area in <strong>alopecia areata</strong>",
+      "injected": true
+    },
+    {
+      "zh": "判定 <strong>JAK 抑制劑</strong>(Baricitinib、Ritlecitinib)適應症",
+      "en": "Establishing the indication for a <strong>JAK inhibitor</strong> (baricitinib, ritlecitinib)",
+      "injected": true
+    },
+    {
+      "zh": "追蹤治療反應(SALT-50、SALT-30、SALT-20)",
+      "en": "Tracking response (SALT-50, SALT-30, SALT-20)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>不適用</strong>：雄性禿（用 Norwood-Ludwig)、瀰漫性落髮、瘢痕性禿髮",
+      "en": "<strong>Not for</strong>: androgenetic alopecia (use Norwood-Ludwig), diffuse telogen effluvium, or cicatricial alopecia",
+      "injected": true
+    },
+    {
+      "zh": "評估方式 — 頭皮分 4 區",
+      "en": "Method — the scalp in four regions",
+      "injected": true
+    },
+    {
+      "zh": "SALT = （頂部 % × 0.40) + （後部 % × 0.24) + （左側 % × 0.18) + （右側 % × 0.18)",
+      "en": "SALT = (vertex % × 0.40) + (occiput % × 0.24) + (left side % × 0.18) + (right side % × 0.18)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>頂部(40%)</strong>：從髮際線到頭頂中央",
+      "en": "<strong>Vertex (40%)</strong>: from the hairline to the crown",
+      "injected": true
+    },
+    {
+      "zh": "<strong>後部(24%)</strong>：後枕部",
+      "en": "<strong>Occiput (24%)</strong>: the back of the head",
+      "injected": true
+    },
+    {
+      "zh": "<strong>左側(18%)</strong>：左耳上方至顳部",
+      "en": "<strong>Left side (18%)</strong>: above the left ear to the temple",
+      "injected": true
+    },
+    {
+      "zh": "<strong>右側(18%)</strong>：右耳上方至顳部",
+      "en": "<strong>Right side (18%)</strong>: above the right ear to the temple",
+      "injected": true
+    },
+    {
+      "zh": "每區估算「<strong>該區內禿髮面積百分比</strong>」(0-100%)，建議以 5% 為單位",
+      "en": "For each region estimate the <strong>percentage of that region that is bald</strong> (0-100%), in steps of about 5%",
+      "injected": true
+    },
+    {
+      "zh": "<strong>實作建議</strong>：對著鏡子或手機拍頭頂、後頸、兩側照片、印 / 描繪頭皮輪廓並圈出禿髮區域、用方格紙估算面積比例。家屬協助評估更精準。",
+      "en": "<strong>In practice</strong>: photograph the crown, nape and both sides in a mirror or with a phone, print or sketch the scalp outline, circle the bald areas and estimate the proportion on squared paper. A family member helping makes it more accurate.",
+      "injected": true
+    },
+    {
+      "zh": "病灶內類固醇注射(Triamcinolone 5-10 mg/mL)± 外用 Minoxidil 5%",
+      "en": "Intralesional triamcinolone 5-10 mg/mL ± topical minoxidil 5%",
+      "injected": true
+    },
+    {
+      "zh": "+ DPCP 外用免疫療法、Methotrexate、低劑量口服 Minoxidil 輔助",
+      "en": "+ topical immunotherapy with DPCP, methotrexate, or low-dose oral minoxidil as an adjunct",
+      "injected": true
+    },
+    {
+      "zh": "<strong>Baricitinib（成人）或 Ritlecitinib(≥ 12 歲）</strong>—Rudnicka 2024 EU 共識首選",
+      "en": "<strong>Baricitinib (adults) or ritlecitinib (age ≥ 12)</strong> — first choice in the Rudnicka 2024 EU consensus",
+      "injected": true
+    },
+    {
+      "zh": "<strong>特殊型別</strong>:<strong>Alopecia totalis</strong>（全頭禿）= SALT 100%;<strong>Alopecia universalis</strong>（全身禿）= SALT 100% + 全身體毛",
+      "en": "<strong>Special forms</strong>: <strong>alopecia totalis</strong> (whole scalp) = SALT 100%; <strong>alopecia universalis</strong> (whole body) = SALT 100% plus all body hair",
+      "injected": true
+    },
+    {
+      "zh": "<strong>SALT-30 / 50 / 75 / 90</strong>：治療後 SALT 降幅(%)",
+      "en": "<strong>SALT-30 / 50 / 75 / 90</strong>: the percentage fall in SALT after treatment",
+      "injected": true
+    },
+    {
+      "zh": "BRAVE-AA(Baricitinib)4 mg 36 週 SALT ≤ 20 達成 38.8%(vs 安慰劑 6.2%)",
+      "en": "BRAVE-AA (baricitinib) 4 mg: 38.8% reached SALT ≤ 20 at 36 weeks, against 6.2% on placebo",
+      "injected": true
+    },
+    {
+      "zh": "ALLEGRO(Ritlecitinib)50 mg 24 週 SALT ≤ 20 達成 23%(vs 2%)",
+      "en": "ALLEGRO (ritlecitinib) 50 mg: 23% reached SALT ≤ 20 at 24 weeks, against 2%",
+      "injected": true
+    },
+    {
+      "zh": "<strong>SALT ≥ 50</strong> 為 JAK 抑制劑的核准適應症 — 但 EMA 2023 警示 ≥ 65 歲、CV 高風險、惡性腫瘤、VTE 高風險者應僅在無替代時使用",
+      "en": "<strong>SALT ≥ 50</strong> is the approved indication for a JAK inhibitor — but the EMA warned in 2023 that people aged 65+, or at high cardiovascular, malignancy or VTE risk, should receive one only where no alternative exists",
+      "injected": true
+    },
+    {
+      "zh": "用藥前必須篩檢：<strong>結核、B/C 肝、HIV、CBC、肝腎、血脂、CPK、惡性腫瘤史</strong>",
+      "en": "Screen before starting: <strong>tuberculosis, hepatitis B and C, HIV, full blood count, liver and renal function, lipids, CPK, and any history of malignancy</strong>",
+      "injected": true
+    },
+    {
+      "zh": "家族史 / 兒童早發 / 異膚共病者預後較差",
+      "en": "A family history, childhood onset or coexisting atopic dermatitis all carry a poorer prognosis",
+      "injected": true
+    },
+    {
+      "zh": "追蹤頻率：治療開始後 12 週、24 週、36 週評估反應",
+      "en": "Follow-up: assess response at 12, 24 and 36 weeks after starting",
+      "injected": true
+    },
+    {
+      "zh": "<strong>限制：</strong>(1) 估算誤差大（尤其重度 30-70% 區間）;(2) 不評估<strong>眉毛、睫毛、體毛</strong>（可改用 ALLEGRO 評估的 EBA / ELA scale);(3) 主觀性高、觀察者間差異；(4) AAS(Alopecia Areata Scale, King 2022)是更新的替代、涵蓋眉毛 / 睫毛。",
+      "en": "<strong>Limitations:</strong> (1) estimation error is large, especially in the 30-70% range; (2) it does not assess <strong>eyebrows, eyelashes or body hair</strong> (the EBA / ELA scales used in ALLEGRO cover those); (3) it is highly subjective, with wide inter-observer variation; (4) the AAS (Alopecia Areata Scale, King 2022) is a newer alternative that includes brows and lashes.",
+      "injected": true
+    },
+    {
+      "zh": "啟動 SALT 計算器 →",
+      "en": "Open the SALT calculator →",
+      "injected": true
+    },
+    {
+      "zh": "分數 0-42",
+      "en": "Score 0-42",
+      "injected": true
+    },
+    {
+      "zh": "<strong>慢性自發性蕁麻疹(CSU)</strong>每天活動度追蹤、<strong>必須連續 7 天記錄</strong>",
+      "en": "Daily activity tracking in <strong>chronic spontaneous urticaria (CSU)</strong>; it <strong>must be recorded on seven consecutive days</strong>",
+      "injected": true
+    },
+    {
+      "zh": "判定 <strong>Omalizumab 健保 PASS 評估</strong>適應症",
+      "en": "Establishing the indication for <strong>omalizumab under the NHI PASS assessment</strong>",
+      "injected": true
+    },
+    {
+      "zh": "<strong>不適用</strong>：急性蕁麻疹(&lt; 6 週）、誘發性蕁麻疹（改用 trigger threshold test)、血管性水腫",
+      "en": "<strong>Not for</strong>: acute urticaria (&lt; 6 weeks), inducible urticaria (use a trigger threshold test), or angioedema",
+      "injected": true
+    },
+    {
+      "zh": "評估方式 — 連續 7 天日記",
+      "en": "Method — a diary over seven consecutive days",
+      "injected": true
+    },
+    {
+      "zh": "UAS7 = Σ（每天 風團數 + 癢感）從 Day 1 到 Day 7",
+      "en": "UAS7 = Σ (wheal count + itch) from day 1 to day 7",
+      "injected": true
+    },
+    {
+      "zh": "項目",
+      "en": "Item",
+      "injected": true
+    },
+    {
+      "zh": "每日評分",
+      "en": "Daily score",
+      "injected": true
+    },
+    {
+      "zh": "<strong>風團數(Wheal)</strong>",
+      "en": "<strong>Wheals</strong>",
+      "injected": true
+    },
+    {
+      "zh": "0 = 無 / 1 = 1-10 顆 / 2 = 10-50 顆 / 3 = &gt; 50 顆或大融合",
+      "en": "0 = none / 1 = 1-10 / 2 = 10-50 / 3 = &gt; 50 or large confluent areas",
+      "injected": true
+    },
+    {
+      "zh": "<strong>癢感(Pruritus)</strong>",
+      "en": "<strong>Itch</strong>",
+      "injected": true
+    },
+    {
+      "zh": "0 = 無 / 1 = 輕（在意但不困擾） / 2 = 中（干擾日常但可入眠） / 3 = 重（干擾日常且失眠）",
+      "en": "0 = none / 1 = mild (noticeable but not troublesome) / 2 = moderate (interferes with the day but sleep is possible) / 3 = severe (interferes with the day and disturbs sleep)",
+      "injected": true
+    },
+    {
+      "zh": "每天最多 6 分（風團 0-3 + 癢感 0-3),7 天累積最高 42 分。<strong>建議搭配 EAACI 蕁麻疹日記 App</strong>（免費）。",
+      "en": "Up to 6 points a day (wheals 0-3 + itch 0-3), so at most 42 over seven days. <strong>The free EAACI urticaria diary app pairs well with it.</strong>",
+      "injected": true
+    },
+    {
+      "zh": "活動度",
+      "en": "Activity",
+      "injected": true
+    },
+    {
+      "zh": "完全控制",
+      "en": "Complete control",
+      "injected": true
+    },
+    {
+      "zh": "維持治療目標已達成、定期回診評估減量",
+      "en": "The maintenance target is met; review periodically with a view to stepping down",
+      "injected": true
+    },
+    {
+      "zh": "良好控制",
+      "en": "Well controlled",
+      "injected": true
+    },
+    {
+      "zh": "持續抗組織胺，4-6 個月後考慮減量",
+      "en": "Continue the antihistamine and consider stepping down after 4-6 months",
+      "injected": true
+    },
+    {
+      "zh": "抗組織胺<strong>加量至 4 倍標準劑量</strong>(2022 EAACI)",
+      "en": "Increase the antihistamine <strong>to four times the standard dose</strong> (2022 EAACI)",
+      "injected": true
+    },
+    {
+      "zh": "+ Omalizumab 300 mg q4w（健保 PASS 申請）",
+      "en": "+ omalizumab 300 mg q4w (NHI PASS application)",
+      "injected": true
+    },
+    {
+      "zh": "+ Omalizumab（可加量至 600 mg q2w)± Cyclosporine(off-label)",
+      "en": "+ omalizumab (escalable to 600 mg q2w) ± ciclosporin (off-label)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>治療目標 UAS7 ≤ 6</strong>（良好控制）,<strong>理想 UAS7 = 0</strong>",
+      "en": "<strong>The treatment target is UAS7 ≤ 6</strong> (well controlled); <strong>UAS7 = 0 is the ideal</strong>",
+      "injected": true
+    },
+    {
+      "zh": "UAS7 與 <strong>UCT</strong>(Urticaria Control Test, 4 題）互補，UCT 易記但 UAS7 更精確",
+      "en": "UAS7 and the <strong>UCT</strong> (Urticaria Control Test, 4 items) complement each other: the UCT is easier to remember, UAS7 is more precise",
+      "injected": true
+    },
+    {
+      "zh": "<strong>30% CSU 病人對 Omalizumab 反應不足</strong>（尤其低 IgE / 高抗 TPO IgG 的 Type IIb 自體免疫型）",
+      "en": "<strong>Around 30% of CSU patients respond inadequately to omalizumab</strong>, particularly the type IIb autoimmune group with low IgE and high anti-TPO IgG",
+      "injected": true
+    },
+    {
+      "zh": "新藥前景：Remibrutinib(BTK)、Dupilumab(2024 FDA 核准）為 omalizumab 失敗替代",
+      "en": "On the horizon: remibrutinib (BTK) and dupilumab (FDA-approved 2024) as alternatives after omalizumab failure",
+      "injected": true
+    },
+    {
+      "zh": "<strong>限制：</strong>(1) 需<strong>連續 7 天</strong>記錄、病人配合度差；(2) 不涵蓋<strong>血管性水腫</strong>（改用 AAS / AAS7);(3) 不適用誘發性蕁麻疹；(4) 自評有低估或高估傾向；(5) UAS7 = 0 但仍痛苦 → 評估<strong>焦慮共病</strong>(7-29% CSU 合併憂鬱焦慮）。",
+      "en": "<strong>Limitations:</strong> (1) it needs <strong>seven consecutive days</strong> of recording, and adherence is often poor; (2) it does not cover <strong>angioedema</strong> (use AAS / AAS7); (3) it does not apply to inducible urticaria; (4) self-rating tends to under- or over-state; (5) UAS7 = 0 with continuing distress → assess for <strong>anxiety</strong>, which coexists with depression or anxiety in 7-29% of CSU.",
+      "injected": true
+    },
+    {
+      "zh": "啟動 UAS7 計算器 →",
+      "en": "Open the UAS7 calculator →",
+      "injected": true
+    },
+    {
+      "zh": "分數 0-44",
+      "en": "Score 0-44",
+      "injected": true
+    },
+    {
+      "zh": "痤瘡(Acne vulgaris)",
+      "en": "Acne vulgaris",
+      "injected": true
+    },
+    {
+      "zh": "<strong>所有痤瘡</strong>嚴重度評估（青少年、成人皆可）",
+      "en": "Severity assessment for <strong>any acne</strong>, in adolescents and adults alike",
+      "injected": true
+    },
+    {
+      "zh": "判定<strong>口服 Isotretinoin（羅可坦）</strong>健保適應症",
+      "en": "Establishing the NHI indication for <strong>oral isotretinoin</strong>",
+      "injected": true
+    },
+    {
+      "zh": "追蹤治療反應",
+      "en": "Tracking response to treatment",
+      "injected": true
+    },
+    {
+      "zh": "GAGS = Σ（部位最嚴重病灶分級 × 部位權重）",
+      "en": "GAGS = Σ (grade of the most severe lesion at a site × the site's weight)",
+      "injected": true
+    },
+    {
+      "zh": "部位",
+      "en": "Site",
+      "injected": true
+    },
+    {
+      "zh": "權重",
+      "en": "Weight",
+      "injected": true
+    },
+    {
+      "zh": "前額",
+      "en": "Forehead",
+      "injected": true
+    },
+    {
+      "zh": "右臉頰",
+      "en": "Right cheek",
+      "injected": true
+    },
+    {
+      "zh": "左臉頰",
+      "en": "Left cheek",
+      "injected": true
+    },
+    {
+      "zh": "鼻部",
+      "en": "Nose",
+      "injected": true
+    },
+    {
+      "zh": "下巴",
+      "en": "Chin",
+      "injected": true
+    },
+    {
+      "zh": "胸 / 上背",
+      "en": "Chest / upper back",
+      "injected": true
+    },
+    {
+      "zh": "每部位的<strong>「最嚴重病灶」</strong>分級：",
+      "en": "Grade the <strong>most severe lesion</strong> at each site:",
+      "injected": true
+    },
+    {
+      "zh": "0 = 無病灶",
+      "en": "0 = no lesions",
+      "injected": true
+    },
+    {
+      "zh": "1 = ≥1 個粉刺(comedone)",
+      "en": "1 = ≥1 comedone",
+      "injected": true
+    },
+    {
+      "zh": "2 = ≥1 個丘疹(papule)",
+      "en": "2 = ≥1 papule",
+      "injected": true
+    },
+    {
+      "zh": "3 = ≥1 個膿皰(pustule)",
+      "en": "3 = ≥1 pustule",
+      "injected": true
+    },
+    {
+      "zh": "4 = ≥1 個結節 / 囊腫(nodule / cyst)",
+      "en": "4 = ≥1 nodule or cyst",
+      "injected": true
+    },
+    {
+      "zh": "對應治療策略(AAD 2024)",
+      "en": "Treatment strategy it points to (AAD 2024)",
+      "injected": true
+    },
+    {
+      "zh": "外用 BPO + Adapalene 0.1% 或 Tretinoin(2024 強建議）",
+      "en": "Topical benzoyl peroxide + adapalene 0.1% or tretinoin (strongly recommended in 2024)",
+      "injected": true
+    },
+    {
+      "zh": "+ 口服 Doxycycline 100 mg BID × 8-12 週、Spironolactone（女性）、Clascoterone",
+      "en": "+ oral doxycycline 100 mg BID for 8-12 weeks, spironolactone (in women), clascoterone",
+      "injected": true
+    },
+    {
+      "zh": "<strong>口服 Isotretinoin</strong>（健保條件：重度發炎 / 反覆失敗 / 疤痕風險）",
+      "en": "<strong>Oral isotretinoin</strong> (NHI criteria: severe inflammation, repeated failure, or scarring risk)",
+      "injected": true
+    },
+    {
+      "zh": "Isotretinoin + 病灶內類固醇 + 早期介入避免疤痕",
+      "en": "Isotretinoin + intralesional corticosteroid, intervening early to avoid scarring",
+      "injected": true
+    },
+    {
+      "zh": "GAGS 不評估<strong>痘疤、紅印、心理影響</strong> — 需配合 ECCA（痘疤）、DLQI（心理）",
+      "en": "GAGS does not assess <strong>scarring, post-inflammatory marks or psychological impact</strong> — pair it with ECCA (scarring) and DLQI (psychological)",
+      "injected": true
+    },
+    {
+      "zh": "女性 + 月經前惡化 + 下顎 / 頸部 + 多毛症 + 月經不規則 → 考慮 <strong>PCOS 內分泌評估</strong>",
+      "en": "A woman with premenstrual flares, jawline or neck distribution, hirsutism and irregular periods → consider <strong>endocrine assessment for PCOS</strong>",
+      "injected": true
+    },
+    {
+      "zh": "30 歲以上女性新發痤瘡 → 排除<strong>多囊卵巢、雄激素瘤、月經不調</strong>",
+      "en": "New-onset acne in a woman over 30 → exclude <strong>polycystic ovary syndrome, an androgen-secreting tumour and menstrual irregularity</strong>",
+      "injected": true
+    },
+    {
+      "zh": "口服 A 酸前必做：<strong>肝功能、血脂、孕婦驗孕（育齡女性嚴格避孕）</strong>",
+      "en": "Before oral isotretinoin: <strong>liver function, lipids, and a pregnancy test — with strict contraception for anyone of childbearing potential</strong>",
+      "injected": true
+    },
+    {
+      "zh": "<strong>限制：</strong>(1) 不評估<strong>痘疤</strong>(ECCA、Goodman scar scale 替代）;(2) 不評估<strong>紅印 PIE / 黑印 PIH</strong>（亞洲人重要）;(3) 評估「最嚴重病灶」可能高估（只要 1 顆結節 = 4 分）;(4) IGA(Investigator's Global Assessment, 0-4 整體印象）更簡便；(5) IAA-GES(Investigator's Acne Assessment, 6 grade)為近年 FDA 試驗常用。",
+      "en": "<strong>Limitations:</strong> (1) it does not assess <strong>scarring</strong> (use ECCA or the Goodman scar scale); (2) it does not assess <strong>post-inflammatory erythema or hyperpigmentation</strong>, which matter in Asian skin; (3) grading by the most severe lesion can overstate — a single nodule scores 4; (4) the IGA (Investigator's Global Assessment, 0-4) is simpler; (5) the six-grade IAA-GES has become common in recent FDA trials.",
+      "injected": true
+    },
+    {
+      "zh": "啟動 GAGS 計算器 →",
+      "en": "Open the GAGS calculator →",
+      "injected": true
+    },
+    {
+      "zh": "分數 0-48",
+      "en": "Score 0-48",
+      "injected": true
+    },
+    {
+      "zh": "肝斑(Melasma)",
+      "en": "Melasma",
+      "injected": true
+    },
+    {
+      "zh": "<strong>肝斑(melasma)</strong>嚴重度與治療反應追蹤",
+      "en": "Severity and treatment response in <strong>melasma</strong>",
+      "injected": true
+    },
+    {
+      "zh": "<strong>不適用</strong>：單純曬斑(solar lentigo)、太田 / 顴骨母斑（改用 OMRA / ABRA)、PIH（改用 PGA)",
+      "en": "<strong>Not for</strong>: solar lentigines, naevus of Ota or Hori's naevus (use OMRA / ABRA), or post-inflammatory hyperpigmentation (use PGA)",
+      "injected": true
+    },
+    {
+      "zh": "近年常用簡化版 <strong>mMASI</strong>(modified MASI)，省去同質性項目",
+      "en": "The simplified <strong>mMASI</strong> (modified MASI), which drops the homogeneity item, is now widely used",
+      "injected": true
+    },
+    {
+      "zh": "MASI = 0.3×Af×(Df+Hf) + 0.3×Ar×(Dr+Hr) + 0.3×Al×(Dl+Hl) + 0.1×Ac×(Dc+Hc)<br/>\r\nf = 前額 / r = 右臉頰 / l = 左臉頰 / c = 下巴",
+      "en": "MASI = 0.3×Af×(Df+Hf) + 0.3×Ar×(Dr+Hr) + 0.3×Al×(Dl+Hl) + 0.1×Ac×(Dc+Hc)<br/> f = forehead / r = right cheek / l = left cheek / c = chin",
+      "injected": true
+    },
+    {
+      "zh": "<strong>4 個臉部區域權重</strong>：前額 ×0.3、右臉頰 ×0.3、左臉頰 ×0.3、下巴 ×0.1",
+      "en": "<strong>Four facial regions, weighted</strong>: forehead ×0.3, right cheek ×0.3, left cheek ×0.3, chin ×0.1",
+      "injected": true
+    },
+    {
+      "zh": "<strong>面積 A(0-6)</strong>：同 PASI 面積等級(0 = 0%、1 = &lt;10%、2 = 10-29%... 6 = 90-100%)",
+      "en": "<strong>Area A (0-6)</strong>: the same grades as PASI (0 = 0%, 1 = &lt;10%, 2 = 10-29% … 6 = 90-100%)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>深淺 D(0-4)</strong>:0 = 無 / 1 = 略深 / 2 = 中 / 3 = 深 / 4 = 極深",
+      "en": "<strong>Darkness D (0-4)</strong>: 0 = absent / 1 = slight / 2 = moderate / 3 = marked / 4 = severe",
+      "injected": true
+    },
+    {
+      "zh": "<strong>同質性 H(0-4)</strong>：色塊內顏色一致性，0 = 無 / 4 = 完全均勻",
+      "en": "<strong>Homogeneity H (0-4)</strong>: how uniform the colour is within the patch, 0 = minimal / 4 = completely uniform",
+      "injected": true
+    },
+    {
+      "zh": "嚴格防曬(SPF 50+ 含氧化鐵）+ Azelaic acid 15-20% / Niacinamide",
+      "en": "Strict photoprotection (SPF 50+ containing iron oxide) + azelaic acid 15-20% / niacinamide",
+      "injected": true
+    },
+    {
+      "zh": "+ Tri-Luma（對苯二酚 4% + Tretinoin + Fluocinolone)8-12 週 → 維持",
+      "en": "+ triple combination cream (hydroquinone 4% + tretinoin + fluocinolone) for 8-12 weeks, then maintenance",
+      "injected": true
+    },
+    {
+      "zh": "+ 口服 Tranexamic acid 250 mg BID-TID + 低能量 Q-switched 1064 nm toning;Cysteamine 5%",
+      "en": "+ oral tranexamic acid 250 mg BID-TID + low-fluence 1064 nm Q-switched toning; cysteamine 5%",
+      "injected": true
+    },
+    {
+      "zh": "<strong>MASI-50</strong>：治療後降幅 ≥ 50%（臨床顯著）",
+      "en": "<strong>MASI-50</strong>: a fall of ≥ 50% after treatment (clinically meaningful)",
+      "injected": true
+    },
+    {
+      "zh": "典型療程<strong>需 8-16 週</strong>才看到顯著變化",
+      "en": "A typical course <strong>takes 8-16 weeks</strong> before the change is obvious",
+      "injected": true
+    },
+    {
+      "zh": "<strong>「肝斑無法根治、只能控制」</strong>— 停藥就反黑、需終身防曬",
+      "en": "<strong>Melasma cannot be cured, only controlled</strong> — it darkens again once treatment stops, and photoprotection is lifelong",
+      "injected": true
+    },
+    {
+      "zh": "口服 TXA 禁忌：深部靜脈栓塞史、孕婦、口服避孕藥（高血栓風險）",
+      "en": "Oral tranexamic acid is contraindicated with a history of deep vein thrombosis, in pregnancy, and with the combined oral contraceptive pill (thrombotic risk)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>傳統強脈衝雷射會誘發肝斑反黑</strong> — 需用低能量 toning（蜂巢皮秒）",
+      "en": "<strong>Conventional high-fluence lasers can drive melasma darker</strong> — use low-fluence toning (picosecond) instead",
+      "injected": true
+    },
+    {
+      "zh": "女性懷孕 / 哺乳期建議：防曬 + Azelaic acid(L3 安全），避開 hydroquinone、TXA、Tri-Luma",
+      "en": "In pregnancy and breastfeeding: photoprotection plus azelaic acid (L3, safe); avoid hydroquinone, tranexamic acid and the triple combination cream",
+      "injected": true
+    },
+    {
+      "zh": "<strong>限制：</strong>(1) 主觀評分、觀察者間差異大；(2) 同質性(H)在亞洲人深褐色肝斑難判讀；(3) 不評估「<strong>真皮型 vs 表皮型</strong>」（可用 Wood lamp 輔助）;(4) 治療前後攝影應<strong>固定光源、距離、角度</strong>避免誤差；(5) mMASI（去除 H)觀察者間信度更高。",
+      "en": "<strong>Limitations:</strong> (1) subjective, with wide inter-observer variation; (2) homogeneity (H) is hard to judge in the deep brown melasma common in Asian skin; (3) it does not distinguish <strong>dermal from epidermal</strong> melasma (a Wood's lamp helps); (4) before-and-after photographs must use <strong>fixed lighting, distance and angle</strong>; (5) mMASI, without H, has better inter-observer reliability.",
+      "injected": true
+    },
+    {
+      "zh": "啟動 MASI 計算器 →",
+      "en": "Open the MASI calculator →",
+      "injected": true
+    },
+    {
+      "zh": "化膿性汗腺炎(HS)",
+      "en": "Hidradenitis suppurativa (HS)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>化膿性汗腺炎(HS / 反常性痤瘡）</strong>嚴重度分期",
+      "en": "Severity staging for <strong>hidradenitis suppurativa (HS, acne inversa)</strong>",
+      "injected": true
+    },
+    {
+      "zh": "判定 <strong>Adalimumab（復邁）健保條件給付</strong>適應症(Hurley II/III)",
+      "en": "Establishing the indication for <strong>conditionally NHI-funded adalimumab</strong> (Hurley II/III)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>不適用</strong>：單純癤、急性毛囊炎、藏毛囊腫",
+      "en": "<strong>Not for</strong>: a simple furuncle, acute folliculitis, or pilonidal sinus",
+      "injected": true
+    },
+    {
+      "zh": "評估方式 — 三期分級",
+      "en": "Method — three stages",
+      "injected": true
+    },
+    {
+      "zh": "分期",
+      "en": "Stage",
+      "injected": true
+    },
+    {
+      "zh": "定義",
+      "en": "Definition",
+      "injected": true
+    },
+    {
+      "zh": "<strong>Stage I 輕度</strong>",
+      "en": "<strong>Stage I, mild</strong>",
+      "injected": true
+    },
+    {
+      "zh": "單一或多個獨立膿瘍 / 結節、<strong>無通道、無疤痕</strong>",
+      "en": "One or more isolated abscesses or nodules, <strong>with no sinus tracts and no scarring</strong>",
+      "injected": true
+    },
+    {
+      "zh": "<strong>Stage II 中度</strong>",
+      "en": "<strong>Stage II, moderate</strong>",
+      "injected": true
+    },
+    {
+      "zh": "反覆膿瘍、<strong>形成通道(sinus tract)與疤痕</strong>，但病灶獨立分隔",
+      "en": "Recurrent abscesses with <strong>sinus tracts and scarring</strong>, but the lesions remain separated",
+      "injected": true
+    },
+    {
+      "zh": "<strong>Stage III 重度</strong>",
+      "en": "<strong>Stage III, severe</strong>",
+      "injected": true
+    },
+    {
+      "zh": "<strong>多個互相連結的通道與膿瘍</strong>，大面積疤痕與纖維化",
+      "en": "<strong>Multiple interconnected tracts and abscesses</strong>, with extensive scarring and fibrosis",
+      "injected": true
+    },
+    {
+      "zh": "分數解讀 + 對應治療",
+      "en": "How to read it, and the treatment it points to",
+      "injected": true
+    },
+    {
+      "zh": "外用 Clindamycin 1% + 短期口服 Doxycycline 50-100 mg BID × 12 週 + 生活調整（減重、戒菸、寬鬆衣物）+ 切開引流",
+      "en": "Topical clindamycin 1% + a short course of oral doxycycline 50-100 mg BID for 12 weeks + lifestyle measures (weight loss, stopping smoking, loose clothing) + incision and drainage",
+      "injected": true
+    },
+    {
+      "zh": "長期口服 Clindamycin 300 mg + Rifampicin 600 mg 各 BID × 10-12 週；Acitretin / 抗雄激素；<strong>Adalimumab（健保條件給付）</strong>；局部 deroofing 手術",
+      "en": "Long-course oral clindamycin 300 mg + rifampicin 600 mg, both BID for 10-12 weeks; acitretin or antiandrogens; <strong>adalimumab (conditionally NHI-funded)</strong>; local deroofing",
+      "injected": true
+    },
+    {
+      "zh": "Adalimumab + 廣泛切除 + 皮瓣重建；<strong>Secukinumab</strong>(2023 FDA 新核准 IL-17 抑制劑）為新選項",
+      "en": "Adalimumab + wide excision + flap reconstruction; <strong>secukinumab</strong>, the IL-17 inhibitor approved by the FDA in 2023, is a newer option",
+      "injected": true
+    },
+    {
+      "zh": "輔助量表",
+      "en": "Supporting scales",
+      "injected": true
+    },
+    {
+      "zh": "<strong>Sartorius score</strong>：更精細的計數系統（病灶數 × 解剖位置 × 距離）",
+      "en": "<strong>Sartorius score</strong>: a finer counting system (lesion count × anatomical site × distance)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>IHS4(International HS Severity Score System)</strong>：結節數 + 膿瘍數 ×2 + 通道 ×4（用於試驗反應追蹤）",
+      "en": "<strong>IHS4 (International HS Severity Score System)</strong>: nodules + abscesses ×2 + tracts ×4, used to track trial response",
+      "injected": true
+    },
+    {
+      "zh": "<strong>HiSCR(HS Clinical Response)</strong>：膿瘍 + 結節數降幅 ≥ 50% 且通道未增加 = 反應(Adalimumab 試驗指標）",
+      "en": "<strong>HiSCR (HS Clinical Response)</strong>: a fall of ≥ 50% in abscess and nodule count with no increase in tracts counts as a response — the adalimumab trial endpoint",
+      "injected": true
+    },
+    {
+      "zh": "<strong>HS 平均延遲診斷 7-10 年</strong>（常被誤認為癤瘡 / 毛囊炎），早期介入可避免不可逆通道形成",
+      "en": "<strong>HS is diagnosed an average of 7-10 years late</strong>, often mistaken for boils or folliculitis; intervening early avoids irreversible tract formation",
+      "injected": true
+    },
+    {
+      "zh": "<strong>Hurley II/III + DLQI ≥ 10 + 兩線傳統治療失敗</strong> = Adalimumab 健保申請門檻",
+      "en": "<strong>Hurley II/III + DLQI ≥ 10 + failure of two conventional therapies</strong> = the NHI threshold for adalimumab",
+      "injected": true
+    },
+    {
+      "zh": "合併症高：克隆氏症、PsA、PsC、代謝症候群、憂鬱 — 應系統性篩檢",
+      "en": "Comorbidity is common — Crohn's disease, psoriatic arthritis, pyoderma gangrenosum, metabolic syndrome, depression — and should be screened for systematically",
+      "injected": true
+    },
+    {
+      "zh": "戒菸 + 減重 + 規律治療為長期成效關鍵",
+      "en": "Stopping smoking, losing weight and treating consistently are what determine the long-term result",
+      "injected": true
+    },
+    {
+      "zh": "<strong>限制：</strong>(1) 三期分級<strong>過於粗糙</strong>,Stage II 涵蓋範圍極廣；(2) 不評估「目前活動度」（可能 Stage III 但無新發病灶）;(3) 不適合用於追蹤治療反應（改用 IHS4 或 HiSCR);(4) 主觀、通道 vs 疤痕鑑別需經驗。",
+      "en": "<strong>Limitations:</strong> (1) three stages are <strong>too coarse</strong>, and stage II covers a very wide range; (2) it says nothing about current activity — someone can be stage III with no new lesions; (3) it is unsuited to tracking response (use IHS4 or HiSCR); (4) it is subjective, and telling a tract from a scar takes experience.",
+      "injected": true
+    },
+    {
+      "zh": "啟動 Hurley 分期工具 →",
+      "en": "Open the Hurley staging tool →",
+      "injected": true
+    },
+    {
+      "zh": "— 雄性禿臨床分級",
+      "en": "— clinical grading of androgenetic alopecia",
+      "injected": true
+    },
+    {
+      "zh": "男 I-VII / 女 I-III",
+      "en": "Men I-VII / women I-III",
+      "injected": true
+    },
+    {
+      "zh": "雄性禿(AGA)",
+      "en": "Androgenetic alopecia (AGA)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>男性雄性禿</strong> → 用 Norwood-Hamilton(I-VII)",
+      "en": "<strong>Male pattern hair loss</strong> → use Norwood-Hamilton (I-VII)",
+      "injected": true
+    },
+    {
+      "zh": "<strong>女性雄性禿</strong> → 用 Ludwig(I-III)或 Olsen（中央型）",
+      "en": "<strong>Female pattern hair loss</strong> → use Ludwig (I-III), or Olsen for the central pattern",
+      "injected": true
+    },
+    {
+      "zh": "<strong>不適用</strong>：圓禿（用 SALT)、瀰漫性休止期落髮（改用拔毛測試 + Trichoscopy)、瘢痕性禿髮",
+      "en": "<strong>Not for</strong>: alopecia areata (use SALT), diffuse telogen effluvium (use a pull test with trichoscopy), or cicatricial alopecia",
+      "injected": true
+    },
+    {
+      "zh": "Norwood-Hamilton 分級（男性）",
+      "en": "Norwood-Hamilton grades (men)",
+      "injected": true
+    },
+    {
+      "zh": "分級",
+      "en": "Grade",
+      "injected": true
+    },
+    {
+      "zh": "特徵",
+      "en": "Features",
+      "injected": true
+    },
+    {
+      "zh": "無明顯禿髮 / 微微髮際後退",
+      "en": "No obvious loss, or minimal hairline recession",
+      "injected": true
+    },
+    {
+      "zh": "輕度 M 型髮際後退",
+      "en": "Mild M-shaped hairline recession",
+      "injected": true
+    },
+    {
+      "zh": "明顯 M 型禿、可能合併頭頂稀疏",
+      "en": "Marked M-shaped recession, possibly with crown thinning",
+      "injected": true
+    },
+    {
+      "zh": "頭頂明顯稀疏 + III 級髮際",
+      "en": "Obvious crown thinning plus a grade III hairline",
+      "injected": true
+    },
+    {
+      "zh": "髮際線顯著後退 + 頭頂禿髮 + 中間有髮帶",
+      "en": "Marked hairline recession plus crown baldness, with a bridge of hair between them",
+      "injected": true
+    },
+    {
+      "zh": "大面積頭頂禿、中間髮帶減少、僅後方環狀剩餘",
+      "en": "Extensive crown baldness, the bridge thinning, only a rim remaining behind",
+      "injected": true
+    },
+    {
+      "zh": "頭頂與前方禿髮融合、中間髮帶消失",
+      "en": "Crown and frontal baldness merge and the bridge disappears",
+      "injected": true
+    },
+    {
+      "zh": "僅後枕部 / 兩側馬蹄形剩餘（最嚴重）",
+      "en": "Only the horseshoe of occipital and lateral hair remains — the most advanced",
+      "injected": true
+    },
+    {
+      "zh": "Ludwig 分級（女性）",
+      "en": "Ludwig grades (women)",
+      "injected": true
+    },
+    {
+      "zh": "頭頂中央輕度稀疏、前髮際保留",
+      "en": "Mild central thinning with the frontal hairline preserved",
+      "injected": true
+    },
+    {
+      "zh": "頭頂中央明顯稀疏、前髮際保留",
+      "en": "Marked central thinning with the frontal hairline preserved",
+      "injected": true
+    },
+    {
+      "zh": "頭頂中央近乎全禿、前髮際仍可保留",
+      "en": "Near-complete central loss, the frontal hairline still preserved",
+      "injected": true
+    },
+    {
+      "zh": "女性特徵：「<strong>聖誕樹徵象(Christmas tree pattern)</strong>」— 頭頂中央分線變寬如三角形、但前髮際線保留（與男性不同）。",
+      "en": "The female pattern: the <strong>Christmas tree sign</strong> — the central parting widens into a triangle while the frontal hairline is preserved, unlike the male pattern.",
+      "injected": true
+    },
+    {
+      "zh": "男性",
+      "en": "Men",
+      "injected": true
+    },
+    {
+      "zh": "女性",
+      "en": "Women",
+      "injected": true
+    },
+    {
+      "zh": "輕度<br/>(I-II)",
+      "en": "Mild<br/>(I-II)",
+      "injected": true
+    },
+    {
+      "zh": "外用 Minoxidil 5% bid<br/>± Finasteride 1 mg/day",
+      "en": "Topical minoxidil 5% BID<br/>± finasteride 1 mg/day",
+      "injected": true
+    },
+    {
+      "zh": "外用 Minoxidil 2-5%<br/>± LDOM 0.5-1.25 mg/day(Olsen 2025)<br/>± Spironolactone 100 mg",
+      "en": "Topical minoxidil 2-5%<br/>± LDOM 0.5-1.25 mg/day (Olsen 2025)<br/>± spironolactone 100 mg",
+      "injected": true
+    },
+    {
+      "zh": "中度<br/>(III-IV)",
+      "en": "Moderate<br/>(III-IV)",
+      "injected": true
+    },
+    {
+      "zh": "Finasteride + Minoxidil 雙標準<br/>± PRP 注射<br/>規劃植髮諮詢",
+      "en": "Finasteride + minoxidil, the standard pair<br/>± PRP injections<br/>discuss transplantation",
+      "injected": true
+    },
+    {
+      "zh": "Minoxidil + Spironolactone 主軸<br/>+ LDOM 1.25-2.5 mg<br/>± PRP",
+      "en": "Minoxidil + spironolactone as the mainstay<br/>+ LDOM 1.25-2.5 mg<br/>± PRP",
+      "injected": true
+    },
+    {
+      "zh": "重度<br/>(V-VII)",
+      "en": "Severe<br/>(V-VII)",
+      "injected": true
+    },
+    {
+      "zh": "植髮(FUE / FUT) + 持續藥物維持",
+      "en": "Transplantation (FUE / FUT) with continued medical maintenance",
+      "injected": true
+    },
+    {
+      "zh": "植髮 + 持續藥物",
+      "en": "Transplantation with continued medical therapy",
+      "injected": true
+    },
+    {
+      "zh": "<strong>「Minoxidil 不能停」</strong> — 停藥後 3-6 個月失去療效，2 年內恢復原本進度",
+      "en": "<strong>Minoxidil cannot be stopped</strong> — the benefit is lost 3-6 months after stopping, and within two years the loss returns to where it would have been",
+      "injected": true
+    },
+    {
+      "zh": "<strong>Finasteride 副作用</strong>：性慾下降 / 勃起困難 ~1-2%，停藥可逆；PFS(post-finasteride syndrome)極罕見",
+      "en": "<strong>Finasteride side effects</strong>: reduced libido or erectile difficulty in about 1-2%, reversible on stopping; post-finasteride syndrome is very rare",
+      "injected": true
+    },
+    {
+      "zh": "<strong>女性禁用 Finasteride / Dutasteride</strong>（致畸風險、即使懷孕前）",
+      "en": "<strong>Finasteride and dutasteride are contraindicated in women</strong> because of teratogenicity, even before a pregnancy",
+      "injected": true
+    },
+    {
+      "zh": "植髮前先吃 Finasteride 6 個月穩定、避免 2-5 年後旁邊未植區繼續禿掉",
+      "en": "Take finasteride for six months before transplantation to stabilise the loss, so the untransplanted areas do not continue receding two to five years later",
+      "injected": true
+    },
+    {
+      "zh": "<strong>限制：</strong>(1) Norwood 早期變化(I-II)觀察者間差異大；(2) Ludwig 不適合<strong>前髮際後退型</strong>女性禿（改用 Olsen 中央型分級）;(3) 不評估<strong>毛幹直徑變細</strong>(Trichoscopy 看毛幹細化更靈敏）;(4) 部分女性禿合併雄激素過多 → 需檢驗 testosterone、DHEAS、PCOS 篩檢。",
+      "en": "<strong>Limitations:</strong> (1) inter-observer variation is wide for early Norwood grades (I-II); (2) Ludwig does not suit women with <strong>frontal recession</strong> (use Olsen's central pattern grading); (3) it does not measure <strong>shaft miniaturisation</strong>, which trichoscopy detects far earlier; (4) some female pattern loss coexists with androgen excess — check testosterone, DHEAS and screen for PCOS.",
+      "injected": true
+    },
+    {
+      "zh": "啟動 Norwood-Ludwig 分級工具 →",
+      "en": "Open the Norwood-Ludwig grading tool →",
+      "injected": true
+    },
+    {
+      "zh": "— 防曬 / 雷射安全參考",
+      "en": "— a reference for photoprotection and laser safety",
+      "injected": true
+    },
+    {
+      "zh": "所有皮膚科 / 美容",
+      "en": "All of dermatology and aesthetics",
+      "injected": true
+    },
+    {
+      "zh": "所有<strong>雷射 / 化學換膚 / 醫美</strong>術前評估（預測 PIH 反黑風險）",
+      "en": "Pre-procedure assessment for any <strong>laser, chemical peel or aesthetic treatment</strong>, predicting the risk of post-inflammatory hyperpigmentation",
+      "injected": true
+    },
+    {
+      "zh": "<strong>防曬與皮膚癌風險</strong>分層",
+      "en": "Stratifying <strong>photoprotection needs and skin cancer risk</strong>",
+      "injected": true
+    },
+    {
+      "zh": "<strong>不直接代表</strong>絕對膚色 — 反映「曬太陽後皮膚反應」（光照敏感度）",
+      "en": "It <strong>does not simply mean skin colour</strong> — it reflects how skin reacts to sun exposure, i.e. photosensitivity",
+      "injected": true
+    },
+    {
+      "zh": "評估方式 — 兩維度",
+      "en": "Method — two dimensions",
+      "injected": true
+    },
+    {
+      "zh": "結合「<strong>未曬太陽時的基礎膚色</strong>」+「<strong>初夏中午陽光下 30-60 分鐘後的反應</strong>」綜合評估。",
+      "en": "Combines <strong>your unexposed baseline skin colour</strong> with <strong>how it reacts after 30-60 minutes of early-summer midday sun</strong>.",
+      "injected": true
+    },
+    {
+      "zh": "類型",
+      "en": "Type",
+      "injected": true
+    },
+    {
+      "zh": "未曬時膚色",
+      "en": "Unexposed skin colour",
+      "injected": true
+    },
+    {
+      "zh": "曬後反應",
+      "en": "Reaction to sun",
+      "injected": true
+    },
+    {
+      "zh": "典型族群",
+      "en": "Typical populations",
+      "injected": true
+    },
+    {
+      "zh": "極白（蒼白、雀斑多）",
+      "en": "Very pale, often freckled",
+      "injected": true
+    },
+    {
+      "zh": "總是曬傷、從不曬黑",
+      "en": "Always burns, never tans",
+      "injected": true
+    },
+    {
+      "zh": "北歐、紅髮藍眼",
+      "en": "Northern Europe; red hair, blue eyes",
+      "injected": true
+    },
+    {
+      "zh": "白（輕度雀斑）",
+      "en": "Pale, lightly freckled",
+      "injected": true
+    },
+    {
+      "zh": "容易曬傷、輕微曬黑",
+      "en": "Burns easily, tans minimally",
+      "injected": true
+    },
+    {
+      "zh": "歐洲北部",
+      "en": "Northern Europe",
+      "injected": true
+    },
+    {
+      "zh": "白偏黃 / 米白",
+      "en": "Fair to cream",
+      "injected": true
+    },
+    {
+      "zh": "有時曬傷、逐漸曬黑",
+      "en": "Sometimes burns, tans gradually",
+      "injected": true
+    },
+    {
+      "zh": "南歐、東亞輕色",
+      "en": "Southern Europe; lighter East Asian skin",
+      "injected": true
+    },
+    {
+      "zh": "淺褐 / 偏深",
+      "en": "Light brown to olive",
+      "injected": true
+    },
+    {
+      "zh": "很少曬傷、容易曬黑",
+      "en": "Rarely burns, tans easily",
+      "injected": true
+    },
+    {
+      "zh": "<strong>多數台灣 / 東亞</strong>、地中海",
+      "en": "<strong>Most people in Taiwan and East Asia</strong>; the Mediterranean",
+      "injected": true
+    },
+    {
+      "zh": "褐色",
+      "en": "Brown",
+      "injected": true
+    },
+    {
+      "zh": "幾乎不曬傷、深度曬黑",
+      "en": "Very rarely burns, tans deeply",
+      "injected": true
+    },
+    {
+      "zh": "東南亞、印度、拉丁",
+      "en": "South-east Asia, India, Latin America",
+      "injected": true
+    },
+    {
+      "zh": "深褐 / 黑色",
+      "en": "Dark brown to black",
+      "injected": true
+    },
+    {
+      "zh": "從不曬傷",
+      "en": "Never burns",
+      "injected": true
+    },
+    {
+      "zh": "非裔",
+      "en": "People of African descent",
+      "injected": true
+    },
+    {
+      "zh": "分型對應臨床建議",
+      "en": "What each type means in practice",
+      "injected": true
+    },
+    {
+      "zh": "防曬建議",
+      "en": "Photoprotection",
+      "injected": true
+    },
+    {
+      "zh": "雷射安全",
+      "en": "Laser safety",
+      "injected": true
+    },
+    {
+      "zh": "皮膚癌風險",
+      "en": "Skin cancer risk",
+      "injected": true
+    },
+    {
+      "zh": "SPF 50+ PA++++ 強烈建議",
+      "en": "SPF 50+ PA++++ strongly advised",
+      "injected": true
+    },
+    {
+      "zh": "大多波長安全",
+      "en": "Most wavelengths are safe",
+      "injected": true
+    },
+    {
+      "zh": "<strong>高</strong>(BCC、SCC、Melanoma)",
+      "en": "<strong>High</strong> (BCC, SCC, melanoma)",
+      "injected": true
+    },
+    {
+      "zh": "易反黑(PIH)，先試打 1 cm² 觀察 4 週",
+      "en": "Prone to post-inflammatory hyperpigmentation — test a 1 cm² patch first and watch it for four weeks",
+      "injected": true
+    },
+    {
+      "zh": "中",
+      "en": "Intermediate",
+      "injected": true
+    },
+    {
+      "zh": "SPF 30+（避免 PIH)",
+      "en": "SPF 30+, to avoid post-inflammatory hyperpigmentation",
+      "injected": true
+    },
+    {
+      "zh": "1064 nm Nd:YAG 較安全；532/694/755 nm 易引起色素沉著",
+      "en": "1064 nm Nd:YAG is safer; 532, 694 and 755 nm readily cause pigmentation",
+      "injected": true
+    },
+    {
+      "zh": "<strong>低但易延誤診斷</strong>(SCC 預後較差）",
+      "en": "<strong>Low, but easily diagnosed late</strong> — SCC carries a worse prognosis here",
+      "injected": true
+    },
+    {
+      "zh": "多數<strong>台灣人為 III-IV 型</strong> — 雷射 / 化學換膚後反黑風險高、需嚴格防曬 4 週以上",
+      "en": "<strong>Most Taiwanese are type III-IV</strong> — the risk of darkening after a laser or peel is high, so photoprotect strictly for at least four weeks",
+      "injected": true
+    },
+    {
+      "zh": "I-II 型應每年接受<strong>全身皮膚檢查</strong>（尤其 50 歲以上）",
+      "en": "Types I-II should have a <strong>full skin examination annually</strong>, particularly over the age of 50",
+      "injected": true
+    },
+    {
+      "zh": "V-VI 型雖皮膚癌風險低、但 SCC 多發生於足底 / 指甲下、且<strong>容易被忽略</strong>（色素掩蓋）",
+      "en": "Skin cancer risk is low in types V-VI, but SCC often arises on the sole or under a nail and is <strong>easily missed</strong>, since pigment obscures it",
+      "injected": true
+    },
+    {
+      "zh": "<strong>含氧化鐵防曬</strong>對 III-VI 型亞洲人特別重要（可阻擋可見光誘發肝斑）",
+      "en": "<strong>Sunscreen containing iron oxide</strong> matters particularly for Asian types III-VI, because it blocks the visible light that drives melasma",
+      "injected": true
+    },
+    {
+      "zh": "<strong>限制：</strong>(1) <strong>主觀回答</strong>，有自我認知偏差；(2) 同一人冬夏不同；(3) 不直接反映黑色素含量（可用客觀儀器 Mexameter / spectrophotometer);(4) 國際分類無法完全代表亞洲族群、可參考更細緻的 ITA(Individual Typology Angle);(5) 膚色分型不等於皮膚癌絕對風險（基因 / 累積 UV 暴露 / 家族史更重要）。",
+      "en": "<strong>Limitations:</strong> (1) it relies on <strong>self-report</strong>, with its own biases; (2) the same person answers differently in winter and summer; (3) it does not directly measure melanin — a Mexameter or spectrophotometer does; (4) the international classification does not fit Asian populations well, and the ITA (Individual Typology Angle) is finer; (5) phototype is not an absolute cancer risk — genetics, cumulative UV exposure and family history matter more.",
+      "injected": true
+    },
+    {
+      "zh": "啟動 Fitzpatrick 分型工具 →",
+      "en": "Open the Fitzpatrick typing tool →",
+      "injected": true
+    },
+    {
+      "zh": "使用建議 — 量表只是工具、不是診斷",
+      "en": "How to use these — a scale is a tool, not a diagnosis",
+      "injected": true
+    },
+    {
+      "zh": "<strong>量表是「客觀化主觀」的工具</strong>，讓您與醫師對話時能精確描述病情變化、而非單純「比上次好一點」這種模糊感受。",
+      "en": "<strong>A scale makes something subjective measurable</strong>, so you can describe how your disease has changed precisely rather than as a vague \"a bit better than last time\".",
+      "injected": true
+    },
+    {
+      "zh": "<strong>追蹤更重要</strong>：第一次計算分數沒意義、連續 4-12 週對照才看得到趨勢。建議拍照 + 寫日記。",
+      "en": "<strong>The trend matters more than the number</strong>: a single score means little, and only 4-12 weeks of consecutive readings show a direction. Photographs and a diary help.",
+      "injected": true
+    },
+    {
+      "zh": "<strong>多個量表合用</strong>：疾病活動度(SCORAD / PASI)+ 生活品質(DLQI)+ 心理共病(PHQ-9 / GAD-7)三方視角才完整。",
+      "en": "<strong>Use more than one</strong>: disease activity (SCORAD / PASI) + quality of life (DLQI) + psychological comorbidity (PHQ-9 / GAD-7) together give the full picture.",
+      "injected": true
+    },
+    {
+      "zh": "<strong>健保生物製劑申請</strong>需專科醫師親自評估與簽署、自評分數僅供參考、不能直接申請。",
+      "en": "<strong>An NHI biologic application</strong> requires a specialist's own assessment and signature; a self-rated score is for reference only and cannot be submitted on its own.",
+      "injected": true
+    },
+    {
+      "zh": "<strong>本網站所有量表均無業配、無贊助、無聯盟連結</strong>，引用的學會共識可點擊 PubMed 查證。發現錯誤請<a href=\"mailto:expertise88864@gmail.com?subject=量表計算器回饋\" style=\"color:var(--teal-deep);text-decoration:underline\">寫信告知</a>。",
+      "en": "<strong>None of the scales on this site carries advertising, sponsorship or affiliate links</strong>, and every society consensus cited can be checked on PubMed. If you spot an error, please <a href=\"mailto:expertise88864@gmail.com?subject=Calculator%20feedback\" style=\"color:var(--teal-deep);text-decoration:underline\">email us</a>.",
+      "injected": true
+    },
+    {
+      "zh": "<strong style=\"color:#0c5159\">延伸閱讀：</strong>\r\n想看完整衛教文章請至 <a href=\"/blog\" style=\"color:var(--teal-deep);font-weight:700;text-decoration:underline\">衛教文章索引</a>；查詢專業詞彙白話解釋至 <a href=\"/glossary\" style=\"color:var(--teal-deep);font-weight:700;text-decoration:underline\">醫學詞彙白話字典</a>。實際病情評估、處方、療程、請就近至皮膚科專科醫師門診面對面看診。",
+      "en": "<strong style=\"color:#0c5159\">Further reading:</strong> for the full patient guides see the <a href=\"/blog\" style=\"color:var(--teal-deep);font-weight:700;text-decoration:underline\">article index</a>; for plain-English explanations of the terminology see the <a href=\"/glossary\" style=\"color:var(--teal-deep);font-weight:700;text-decoration:underline\">dermatology glossary</a>. For assessment, prescribing and treatment itself, please see a dermatologist in person.",
+      "injected": true
     }
   ]
 }
