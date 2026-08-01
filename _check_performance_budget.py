@@ -129,6 +129,18 @@ def main() -> int:
         for version in BLOG_SHARED_VERSION_RE.findall(src):
             if version != ASSET_VERSION:
                 errors.append(f"{rel}: blog-shared asset version is {version}, expected {ASSET_VERSION}")
+        # …and the same one-sided hole as the font hints below: the loop above
+        # can only complain about a version it FOUND. Three articles referenced
+        # /blog/blog-shared.js — the unminified bundle, 120KB against 77KB, with
+        # no ?v= at all — so the version check never ran on them and a returning
+        # reader could hold that copy indefinitely. _normalize_css_links.py
+        # cannot stamp them either: BLOG_SHARED_SRC_RE requires `.min.js`.
+        for tag in BLOG_SHARED_SCRIPT_RE.findall(src):
+            if not BLOG_SHARED_VERSION_RE.search(tag):
+                errors.append(
+                    f"{rel}: loads blog-shared without the versioned minified "
+                    f"URL — use /blog/blog-shared.min.js?v={ASSET_VERSION}; "
+                    f"got {tag.strip()[:80]}")
         if BLOG_DIAGRAMS_EAGER_RE.search(src):
             errors.append(f"{rel}: blog-diagrams should stay dynamically loaded only on article pages that need it")
         if BLOG_CALCULATORS_EAGER_RE.search(src):
