@@ -69,9 +69,16 @@ VOID = {"meta", "img", "input", "br", "hr", "link", "source", "area", "col"}
 # element with Chinese": the outermost-qualifying rule would otherwise climb to
 # <body> and propose the page as one string.
 TARGET_TAGS = {"h1", "h2", "h3", "h4", "h5", "p", "li", "td", "th",
-               "strong", "em", "figcaption", "summary", "option", "caption"}
+               "strong", "em", "figcaption", "summary", "option", "caption",
+               "a", "span", "button", "label"}
 TARGET_CLASSES = {"gloss-def", "gloss-term", "gloss-cat", "gloss-link",
+                  "gloss-en", "gloss-jump", "crumbs",
                   "tool-warn", "ans", "tool-note"}
+
+# div and section are containers, so they qualify only when they are the
+# INNERMOST block holding the Chinese — otherwise the outermost-eligible rule
+# walks up to a page wrapper and offers half the document as one string.
+BLOCK_TAGS = {"div", "section"}
 
 # The language switcher labels its Chinese option "中文" — correctly, in both
 # locales. Excluded by ancestor rather than by matching the string, so it holds
@@ -79,13 +86,33 @@ TARGET_CLASSES = {"gloss-def", "gloss-term", "gloss-cat", "gloss-link",
 SKIP_ANCESTOR_CLASSES = {"lang-select", "lang-toggle"}
 
 
-def eligible(tag: str) -> bool:
+def eligible(tag: str, inner: str = "") -> bool:
     attrs = attributes(tag)
     if "data-en" in attrs:
         return False
     if tag_name(tag) in TARGET_TAGS:
         return True
-    return bool(TARGET_CLASSES & set((attrs.get("class") or "").split()))
+    if TARGET_CLASSES & set((attrs.get("class") or "").split()):
+        return True
+    if tag_name(tag) in BLOCK_TAGS:
+        # Only when the container holds Chinese in its OWN text. Requiring that
+        # no descendant holds any was too strict: the glossary's closing note is
+        # a <div> with its own prose plus an <a> inside, and that rule rejected
+        # it, leaving the paragraph untranslated on the mirror.
+        depth, pos, own = 0, 0, []
+        for start, child in iter_tags(inner):
+            if depth == 0:
+                own.append(inner[pos:start])
+            pos = start + len(child)
+            name = tag_name(child)
+            if name in VOID or child.rstrip().endswith("/>"):
+                continue
+            depth += -1 if child.startswith("</") else 1
+            depth = max(depth, 0)
+        if depth == 0:
+            own.append(inner[pos:])
+        return bool(HAN.search(html.unescape("".join(own))))
+    return False
 
 
 def find_end(src: str, open_end: int, name: str) -> int | None:
@@ -104,6 +131,34 @@ def find_end(src: str, open_end: int, name: str) -> int | None:
             depth += 1
         pos = start
     return None
+
+
+def uncovered(view: str, start: int, end: int) -> str:
+    """The slice with already-translated descendants blanked out.
+
+    A container whose Chinese lives entirely inside elements that already carry
+    data-en needs nothing: those elements render themselves in English, and
+    putting data-en on the container would replace them wholesale — anchors,
+    hrefs and all.
+    """
+    out = list(view[start:end])
+    pos = start
+    for tag_start, tag in iter_tags(view[start:end]):
+        tag_start += start
+        if tag_start < pos or tag.startswith("</"):
+            continue
+        name = tag_name(tag)
+        if name in VOID or tag.rstrip().endswith("/>"):
+            continue
+        if "data-en" not in attributes(tag):
+            continue
+        inner_end = find_end(view, tag_start + len(tag), name)
+        if inner_end is None or inner_end > end:
+            continue
+        for i in range(tag_start - start, inner_end - start):
+            out[i] = " "
+        pos = inner_end
+    return "".join(out)
 
 
 def units(path: Path):
@@ -135,14 +190,35 @@ def units(path: Path):
         name = tag_name(tag)
         if name in VOID or tag.rstrip().endswith("/>"):
             continue
-        if not eligible(tag):
+        attrs = attributes(tag)
+        if "data-en" in attrs:
+            continue
+        cheap = (name in TARGET_TAGS
+                 or bool(TARGET_CLASSES & set((attrs.get("class") or "").split())))
+        if not cheap and name not in BLOCK_TAGS:
             continue
         inner_start = start + len(tag)
         inner_end = find_end(view, inner_start, name)
         if inner_end is None:
             continue
+        if not cheap and not eligible(tag, view[inner_start:inner_end]):
+            continue
+        # CODE_REVIEW 2026-08-01 — a data-en replaces the element's inner HTML
+        # wholesale, so a unit must never wrap structural markup: the English
+        # value is prose and cannot reproduce it. The glossary's closing note
+        # turned out to enclose nine <div class="gloss-card"> blocks, and
+        # translating it destroyed them on the mirror — 64 DefinedTerms became
+        # 55, and _normalize_mentions.py then dropped those terms from 30+
+        # articles' JSON-LD. Inline <strong>/<em>/<a> inside a sentence are
+        # fine; anything carrying a class is a structure someone builds on.
+        if re.search(r"<[a-zA-Z][^>]*\sclass\s*=", view[inner_start:inner_end]):
+            continue
         inner = raw[inner_start:inner_end]
-        if not HAN.search(html.unescape(re.sub(r"<[^>]*>", "", inner))):
+        if not HAN.search(html.unescape(re.sub(r"<[^>]*>", "", uncovered(view, inner_start, inner_end)))):
+            # Either no Chinese, or all of it sits inside descendants that are
+            # already translated. The navigation lists are the second case:
+            # <li> holds <a data-zh="首頁" data-en="Home">首頁</a>, and putting
+            # data-en on the <li> would replace the anchor, href and all.
             continue
         out.append((start, tag, inner_start, inner_end, inner))
         covered_to = inner_end          # outermost only
@@ -173,6 +249,13 @@ def cmd_extract(pages: list[str]) -> int:
                 continue
             seen.add(zh)
             strings.append({"zh": zh, "en": previous.get(zh, "")})
+        # Entries already injected no longer turn up in the scan — they carry a
+        # data-en now. Keep them anyway: this file is the record of what English
+        # was written, which is what the physician reviews. Dropping them would
+        # leave the translation visible only as an HTML attribute.
+        for zh, en in previous.items():
+            if en and zh not in seen:
+                strings.append({"zh": zh, "en": en, "injected": True})
         dest.write_text(json.dumps({"page": page, "strings": strings},
                                    ensure_ascii=False, indent=2),
                         encoding="utf-8")

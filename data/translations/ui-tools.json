@@ -2,6 +2,14 @@
   "page": "tools.html",
   "strings": [
     {
+      "zh": "<a href=\"/\">首頁</a><span style=\"margin:0 6px;opacity:.5\">/</span><span>量表計算器使用指南</span>",
+      "en": ""
+    },
+    {
+      "zh": "衛教 · 互動工具",
+      "en": ""
+    },
+    {
       "zh": "皮膚科量表計算器<br/><span class=\"teal-text\">完整使用指南</span>",
       "en": ""
     },
@@ -66,6 +74,14 @@
       "en": ""
     },
     {
+      "zh": "分數 0-103",
+      "en": ""
+    },
+    {
+      "zh": "異位性皮膚炎",
+      "en": ""
+    },
+    {
       "zh": "適用對象",
       "en": ""
     },
@@ -86,7 +102,7 @@
       "en": ""
     },
     {
-      "zh": "<strong>A · 受影響面積(0-100%)</strong>：依「<strong>九分法</strong>」估算\n<ul><li>頭頸部 9% / 上肢各 9%（雙側 18%)/ 軀幹前 18% / 軀幹後 18% / 下肢各 18%（雙側 36%)/ 會陰 1%</li><li>嬰幼兒比例不同：頭部 18%、下肢各 13.5%</li></ul>",
+      "zh": "<strong>A · 受影響面積(0-100%)</strong>：依「<strong>九分法</strong>」估算\r\n<ul><li>頭頸部 9% / 上肢各 9%（雙側 18%)/ 軀幹前 18% / 軀幹後 18% / 下肢各 18%（雙側 36%)/ 會陰 1%</li><li>嬰幼兒比例不同：頭部 18%、下肢各 13.5%</li></ul>",
       "en": ""
     },
     {
@@ -170,6 +186,18 @@
       "en": ""
     },
     {
+      "zh": "啟動 SCORAD 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "分數 0-72",
+      "en": ""
+    },
+    {
+      "zh": "乾癬",
+      "en": ""
+    },
+    {
       "zh": "<strong>斑塊型乾癬(plaque psoriasis)</strong>嚴重度評估",
       "en": ""
     },
@@ -186,11 +214,15 @@
       "en": ""
     },
     {
+      "zh": "PASI = 0.1×(Eh+Ih+Dh)×Ah + 0.2×(Ea+Ia+Da)×Aa + 0.3×(Et+It+Dt)×At + 0.4×(El+Il+Dl)×Al<br/>\r\nh = 頭頸 / a = 上肢 / t = 軀幹 / l = 下肢",
+      "en": ""
+    },
+    {
       "zh": "<strong>4 個身體區域權重</strong>：頭頸 ×0.1、上肢 ×0.2、軀幹 ×0.3、下肢 ×0.4（總和 = 1.0)",
       "en": ""
     },
     {
-      "zh": "<strong>每區評估 3 項症狀(0-4)</strong>:\n<ul><li><strong>E · 紅斑(Erythema)</strong>：無 / 淡紅 / 中紅 / 深紅 / 暗紅</li><li><strong>I · 浸潤(Infiltration)</strong>：厚度 — 無 / 薄 / 中 / 厚 / 極厚</li><li><strong>D · 鱗屑(Desquamation)</strong>：無 / 細鱗 / 粗鱗 / 厚鱗 / 黏附</li></ul>",
+      "zh": "<strong>每區評估 3 項症狀(0-4)</strong>:\r\n<ul><li><strong>E · 紅斑(Erythema)</strong>：無 / 淡紅 / 中紅 / 深紅 / 暗紅</li><li><strong>I · 浸潤(Infiltration)</strong>：厚度 — 無 / 薄 / 中 / 厚 / 極厚</li><li><strong>D · 鱗屑(Desquamation)</strong>：無 / 細鱗 / 粗鱗 / 厚鱗 / 黏附</li></ul>",
       "en": ""
     },
     {
@@ -247,6 +279,18 @@
     },
     {
       "zh": "<strong>限制：</strong>(1) 觀察者間差異大、需訓練；(2) 對<strong>輕度乾癬靈敏度低</strong>（分數變化 1-2 分但臨床改善明顯）;(3) 不適用膿皰型、紅皮型、皺褶型；(4) 局部嚴重（如手 / 臉）但 PASI 低 → 改用 BSA + DLQI 補充；(5) 深膚色紅斑判讀困難。",
+      "en": ""
+    },
+    {
+      "zh": "啟動 PASI 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "分數 0-30",
+      "en": ""
+    },
+    {
+      "zh": "所有皮膚病",
       "en": ""
     },
     {
@@ -382,6 +426,18 @@
       "en": ""
     },
     {
+      "zh": "啟動 DLQI 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "分數 0-100",
+      "en": ""
+    },
+    {
+      "zh": "圓禿(Alopecia areata)",
+      "en": ""
+    },
+    {
       "zh": "<strong>圓禿(Alopecia areata)</strong>頭皮禿髮面積評估",
       "en": ""
     },
@@ -399,6 +455,10 @@
     },
     {
       "zh": "評估方式 — 頭皮分 4 區",
+      "en": ""
+    },
+    {
+      "zh": "SALT = （頂部 % × 0.40) + （後部 % × 0.24) + （左側 % × 0.18) + （右側 % × 0.18)",
       "en": ""
     },
     {
@@ -474,6 +534,18 @@
       "en": ""
     },
     {
+      "zh": "啟動 SALT 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "分數 0-42",
+      "en": ""
+    },
+    {
+      "zh": "慢性自發性蕁麻疹(CSU)",
+      "en": ""
+    },
+    {
       "zh": "<strong>慢性自發性蕁麻疹(CSU)</strong>每天活動度追蹤、<strong>必須連續 7 天記錄</strong>",
       "en": ""
     },
@@ -487,6 +559,10 @@
     },
     {
       "zh": "評估方式 — 連續 7 天日記",
+      "en": ""
+    },
+    {
+      "zh": "UAS7 = Σ（每天 風團數 + 癢感）從 Day 1 到 Day 7",
       "en": ""
     },
     {
@@ -578,6 +654,18 @@
       "en": ""
     },
     {
+      "zh": "啟動 UAS7 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "分數 0-44",
+      "en": ""
+    },
+    {
+      "zh": "痤瘡(Acne vulgaris)",
+      "en": ""
+    },
+    {
       "zh": "<strong>所有痤瘡</strong>嚴重度評估（青少年、成人皆可）",
       "en": ""
     },
@@ -587,6 +675,10 @@
     },
     {
       "zh": "追蹤治療反應",
+      "en": ""
+    },
+    {
+      "zh": "GAGS = Σ（部位最嚴重病灶分級 × 部位權重）",
       "en": ""
     },
     {
@@ -686,6 +778,18 @@
       "en": ""
     },
     {
+      "zh": "啟動 GAGS 計算器 →",
+      "en": ""
+    },
+    {
+      "zh": "分數 0-48",
+      "en": ""
+    },
+    {
+      "zh": "肝斑(Melasma)",
+      "en": ""
+    },
+    {
       "zh": "<strong>肝斑(melasma)</strong>嚴重度與治療反應追蹤",
       "en": ""
     },
@@ -695,6 +799,10 @@
     },
     {
       "zh": "近年常用簡化版 <strong>mMASI</strong>(modified MASI)，省去同質性項目",
+      "en": ""
+    },
+    {
+      "zh": "MASI = 0.3×Af×(Df+Hf) + 0.3×Ar×(Dr+Hr) + 0.3×Al×(Dl+Hl) + 0.1×Ac×(Dc+Hc)<br/>\r\nf = 前額 / r = 右臉頰 / l = 左臉頰 / c = 下巴",
       "en": ""
     },
     {
@@ -754,7 +862,15 @@
       "en": ""
     },
     {
+      "zh": "啟動 MASI 計算器 →",
+      "en": ""
+    },
+    {
       "zh": "<span class=\"tool-num\">08</span>Hurley 分期 <span class=\"tool-disease\">— Hidradenitis Suppurativa Staging</span>",
+      "en": ""
+    },
+    {
+      "zh": "化膿性汗腺炎(HS)",
       "en": ""
     },
     {
@@ -858,7 +974,19 @@
       "en": ""
     },
     {
+      "zh": "啟動 Hurley 分期工具 →",
+      "en": ""
+    },
+    {
       "zh": "<span class=\"tool-num\">09</span>Norwood-Hamilton / Ludwig <span class=\"tool-disease\">— 雄性禿臨床分級</span>",
+      "en": ""
+    },
+    {
+      "zh": "男 I-VII / 女 I-III",
+      "en": ""
+    },
+    {
+      "zh": "雄性禿(AGA)",
       "en": ""
     },
     {
@@ -1002,7 +1130,15 @@
       "en": ""
     },
     {
+      "zh": "啟動 Norwood-Ludwig 分級工具 →",
+      "en": ""
+    },
+    {
       "zh": "<span class=\"tool-num\">10</span>Fitzpatrick 膚色分型 <span class=\"tool-disease\">— 防曬 / 雷射安全參考</span>",
+      "en": ""
+    },
+    {
+      "zh": "所有皮膚科 / 美容",
       "en": ""
     },
     {
@@ -1182,6 +1318,10 @@
       "en": ""
     },
     {
+      "zh": "啟動 Fitzpatrick 分型工具 →",
+      "en": ""
+    },
+    {
       "zh": "使用建議 — 量表只是工具、不是診斷",
       "en": ""
     },
@@ -1210,35 +1350,11 @@
       "en": ""
     },
     {
-      "zh": "<a href=\"/\" data-zh=\"首頁\" data-en=\"Home\">首頁</a>",
+      "zh": "衛教文章索引",
       "en": ""
     },
     {
-      "zh": "<a href=\"/blog\" data-zh=\"衛教文章\" data-en=\"Articles\">衛教文章</a>",
-      "en": ""
-    },
-    {
-      "zh": "<a href=\"/blog/topics\" data-zh=\"主題地圖\" data-en=\"Topic map\">主題地圖</a>",
-      "en": ""
-    },
-    {
-      "zh": "<a href=\"/tools\" data-zh=\"量表計算器\" data-en=\"Calculators\">量表計算器</a>",
-      "en": ""
-    },
-    {
-      "zh": "<a href=\"/glossary\" data-zh=\"醫學詞彙\" data-en=\"Glossary\">醫學詞彙</a>",
-      "en": ""
-    },
-    {
-      "zh": "<a href=\"/about\" data-zh=\"作者\" data-en=\"Author\">作者</a>",
-      "en": ""
-    },
-    {
-      "zh": "<a href=\"/privacy\" data-zh=\"隱私權政策\" data-en=\"Privacy\">隱私權政策</a>",
-      "en": ""
-    },
-    {
-      "zh": "<a href=\"mailto:expertise88864@gmail.com\" data-zh=\"聯絡 Email\" data-en=\"Contact\">聯絡 Email</a>",
+      "zh": "醫學詞彙白話字典",
       "en": ""
     }
   ]

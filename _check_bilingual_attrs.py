@@ -90,6 +90,7 @@ wording — which is exactly what the normalizer got wrong.
 """
 from __future__ import annotations
 
+import json
 import re
 import sys
 from html import unescape
@@ -213,8 +214,54 @@ def pages() -> list[Path]:
     return out
 
 
+def glossary_terms(path: Path) -> int:
+    """How many DefinedTerms this glossary page publishes."""
+    if not path.exists():
+        return -1
+    for match in re.finditer(
+            r'<script type="application/ld\+json">([\s\S]*?)</script>',
+            path.read_text(encoding="utf-8", errors="replace")):
+        try:
+            obj = json.loads(match.group(1))
+        except json.JSONDecodeError:
+            continue
+        if isinstance(obj, dict) and obj.get("@type") == "DefinedTermSet":
+            return len(obj.get("hasDefinedTerm") or [])
+    return -1
+
+
+def check_glossary_parity() -> list[str]:
+    """The two glossaries must publish the same number of terms.
+
+    CODE_REVIEW 2026-08-01 — a data-en added while translating the glossary
+    landed on a <div> that turned out to enclose nine <div class="gloss-card">
+    blocks. Since data-en replaces an element's inner HTML wholesale, those
+    cards ceased to exist on the mirror: 64 DefinedTerms became 55, and
+    _normalize_mentions.py — which reads the term list out of the glossary —
+    then dropped those terms from the JSON-LD of thirty-odd articles. Every
+    gate stayed green, because nothing compared the two pages.
+
+    A general "the mirror must not lose elements" rule is not available: 55
+    pages legitimately have fewer, because prefer_static_english_blocks() drops
+    the Chinese body when an English one exists. This is the narrow version,
+    aimed at the structure that actually broke and that other files depend on.
+    """
+    zh = glossary_terms(ROOT / "glossary.html")
+    en = glossary_terms(ROOT / "en" / "glossary.html")
+    if zh < 1:
+        return ["glossary.html: no DefinedTermSet found — the schema "
+                "normalizer did not run, so parity here would mean nothing"]
+    if en < 0:
+        return ["en/glossary.html: no DefinedTermSet found"]
+    if zh != en:
+        return [f"glossary term count differs: glossary.html has {zh}, "
+                f"en/glossary.html has {en} — a data-en on a container has "
+                f"most likely swallowed whole gloss-card blocks on the mirror"]
+    return []
+
+
 def main() -> int:
-    errors: list[str] = check_article_catalog()
+    errors: list[str] = check_article_catalog() + check_glossary_parity()
     pairs = 0
     en_only = 0
     files = pages()
