@@ -105,6 +105,14 @@ def article_prose(src: str) -> str:
     """
     dom = blank_script_style(mask_inert_regions(src))
     heading = re.search(r"<h1\b[\s\S]*?</h1>", dom, re.I)
+    # CODE_REVIEW TD-01 — the TL;DR sits between </h1> and the prose container,
+    # so it was outside the hash and adding one to 29 articles did not register
+    # as a content change. It is authored text about THIS article and changes
+    # only when someone rewrites this article's summary — unlike the related-
+    # article list or reading time, which move when OTHER articles are
+    # published and are excluded for exactly that reason. Owner's call
+    # (2026-08-01): a new summary counts as a content update.
+    tldr = re.search(r'<div[^>]*class="dn-tldr"[\s\S]*?</div>', dom, re.I)
     start = _tag_start(dom, dom.find('id="proseZh"'))
     if start != -1:
         # CODE_REVIEW SEO-5 round 3 — both boundaries used to land INSIDE the
@@ -125,7 +133,9 @@ def article_prose(src: str) -> str:
             return ""
         end = dom.find("</article>", start)
     body = dom[start:end if end != -1 else len(dom)]
-    text = (heading.group(0) if heading else "") + body
+    text = ((heading.group(0) if heading else "")
+            + (tldr.group(0) if tldr else "")
+            + body)
 
     # Tags collapse to NOTHING and every space is dropped. Wrapping a phrase in
     # a <span> to hang a data-en translation on it is not an edit the reader
