@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import http.client
 import json
 import re
 import socket
@@ -72,15 +73,22 @@ def free_port() -> int:
 
 def fetch(base_url: str, path: str) -> tuple[str, str]:
     url = base_url + path
-    try:
-        with urllib.request.urlopen(url, timeout=10) as response:
-            body = response.read().decode("utf-8", errors="replace")
-            content_type = response.headers.get("content-type", "")
-            return body, content_type
-    except urllib.error.HTTPError as exc:
-        raise AssertionError(f"{path} returned HTTP {exc.code}") from exc
-    except Exception as exc:
-        raise AssertionError(f"{path} failed: {exc}") from exc
+    # The local Windows HTTP transport can reset or truncate back-to-back
+    # connections. Retry only transport failures, never HTTP errors or failed
+    # content assertions. A fresh request must still pass every smoke check.
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(url, timeout=10) as response:
+                body = response.read().decode("utf-8", errors="replace")
+                content_type = response.headers.get("content-type", "")
+                return body, content_type
+        except urllib.error.HTTPError as exc:
+            raise AssertionError(f"{path} returned HTTP {exc.code}") from exc
+        except (OSError, http.client.HTTPException) as exc:
+            if attempt == 2:
+                raise AssertionError(f"{path} failed after 3 attempts: {exc}") from exc
+            time.sleep(0.1 * (attempt + 1))
+    raise AssertionError("unreachable")
 
 
 def wait_for_server(proc: subprocess.Popen[str], base_url: str) -> None:

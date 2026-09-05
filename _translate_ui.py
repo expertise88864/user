@@ -53,7 +53,9 @@ import json
 import re
 import sys
 from collections import Counter
+from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
@@ -189,7 +191,9 @@ def units(path: Path):
     # universal-newline translation and the CRLF these pages use comes back as
     # LF, so writing them out rewrites every line ending in the file — a
     # whole-file diff hiding the handful of attributes actually added.
-    raw = path.read_text(encoding="utf-8", errors="replace", newline="")
+    # Path.read_text gained newline only in Python 3.13; CI runs 3.12.
+    with path.open(encoding="utf-8", errors="replace", newline="") as source:
+        raw = source.read()
     view = blank_script_style(mask_comments(raw))
 
     # Regions whose contents are never translatable, whatever they contain.
@@ -268,6 +272,52 @@ def store(page: str) -> Path:
     return DATA / ("ui-%s.json" % Path(page).stem)
 
 
+# Preserve interactive elements even if they have no CSS class, and bind each
+# functional attribute to its element (an id moved to another tag is not equal).
+FUNCTIONAL_TAGS = {"a", "button", "input", "select", "option", "textarea",
+                   "form", "img", "video", "audio", "source", "iframe"}
+FUNCTIONAL_ATTRS = {"id", "href", "src", "srcset", "for", "name", "type",
+                    "value", "action", "method", "target", "rel", "download",
+                    "role", "aria-controls", "aria-labelledby", "aria-describedby"}
+
+
+def link_identity(value: str) -> str:
+    """Allow a translated mail subject; keep recipients and other parameters."""
+    parts = urlsplit(value)
+    if parts.scheme.lower() == "mailto":
+        query = [(k, v) for k, v in parse_qsl(parts.query, keep_blank_values=True)
+                 if k.lower() != "subject"]
+        return urlunsplit((parts.scheme, parts.netloc, parts.path,
+                           urlencode(sorted(query)), parts.fragment))
+    # The EN generator also performs this same-site locale switch.
+    if value == "/en" or value.startswith("/en/"):
+        return value[3:] or "/"
+    return value
+
+
+def functional_markup(fragment: str) -> Counter:
+    class Inventory(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.items: Counter = Counter()
+
+        def handle_starttag(self, tag, attrs):
+            keys = tuple(sorted(
+                (key, link_identity(value or "") if key == "href" else value)
+                for key, value in attrs
+                if key in FUNCTIONAL_ATTRS or key.startswith("data-action")
+            ))
+            if tag in FUNCTIONAL_TAGS or keys:
+                self.items[(tag, keys)] += 1
+
+        handle_startendtag = handle_starttag
+
+    parser = Inventory()
+    parser.feed(fragment)
+    parser.close()
+    return parser.items
+
+
 def cmd_extract(pages: list[str]) -> int:
     DATA.mkdir(parents=True, exist_ok=True)
     for page in pages:
@@ -327,6 +377,7 @@ def cmd_inject(pages: list[str]) -> int:
         for line in failures:
             print("  - " + line)
         return 1
+    total_refused = 0
     for page in pages:
         path = ROOT / page
         dest = store(page)
@@ -358,7 +409,10 @@ def cmd_inject(pages: list[str]) -> int:
                  ", REFUSED %d" % len(refused) if refused else ""))
         for why, value in refused[:6]:
             print("      refused (%s): %s" % (why, value))
-    return 0
+        total_refused += len(refused)
+    # Empty entries may be deliberately unfinished. A filled but invalid entry
+    # is an error, even when other valid entries were applied successfully.
+    return 1 if total_refused else 0
 
 
 def refuse_reason(zh_inner: str, en: str) -> str:
@@ -378,6 +432,10 @@ def refuse_reason(zh_inner: str, en: str) -> str:
     lost = classes_in(zh_inner) - classes_in(en)
     if lost:
         return "drops class(es) %s" % ",".join(sorted(lost))
+    lost_functions = functional_markup(zh_inner) - functional_markup(en)
+    if lost_functions:
+        return "drops or changes functional markup: %s" % ",".join(
+            sorted({tag for tag, _attrs in lost_functions}))
     return ""
 
 

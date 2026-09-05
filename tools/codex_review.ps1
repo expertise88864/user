@@ -16,7 +16,7 @@ mode:
   * 絕不把完整 diff 放進 prompt 或 argv;Codex 在 repo 內自行跑 git。
   * --ignore-user-config 隔離 ~/.codex/config.toml(不載 plugins/apps/browser/notify/node_repl)。
   * --sandbox read-only:Codex 不得寫檔、commit、跑 tests/build/lint/probe。
-  * 每個 task 最多兩輪;第二輪必須 resume 同一 session。
+  * 持續修正至通過;後續各輪必須 resume 同一 session。
   * 結果只讀「最後一則訊息」(-o),不掃整份輸出(prompt 回顯會誤判)。
 
 環境變數(選用):
@@ -69,7 +69,7 @@ switch ($Mode) {
 function Build-Flags([string]$EffortValue, [string]$ForMode = '') {
     # 不含內層引號的 -c key=value:codex 對 value 先試 TOML,失敗即當字面字串。
     # 明確不使用:--ask-for-approval(exec 無此旗標)、--skip-git-repo-check、--ephemeral、--dangerously-*。
-    $f = @('--ignore-user-config', '--model', $Model,
+    $f = @('--ignore-user-config', '--json', '--model', $Model,
            '-c', "model_reasoning_effort=$EffortValue", '-o', $LastMsg)
     # CODE_REVIEW — `codex exec resume` does NOT accept --sandbox/--cd (they are
     # `codex exec` flags). For resume, enforce read-only via the sandbox_mode
@@ -84,22 +84,31 @@ function Build-Flags([string]$EffortValue, [string]$ForMode = '') {
     return $f
 }
 
+function Test-SessionId([string]$Value) {
+    return $Value -match '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+}
+function Get-ReviewEvents {
+    if (Test-Path $RawLog) {
+        foreach ($line in Get-Content $RawLog) {
+            try { $line | ConvertFrom-Json -ErrorAction Stop } catch { }
+        }
+    }
+}
 function Get-SessionId {
-    if (-not (Test-Path $RawLog)) { return 'unavailable' }
-    $m = Select-String -Path $RawLog -Pattern 'session id:\s*([0-9a-fA-F-]{36})' | Select-Object -First 1
-    if ($m) { return $m.Matches[0].Groups[1].Value }
+    # Only machine-readable thread.started metadata can establish identity.
+    # Text printed by the model (or a quoted transcript) is not evidence.
+    $ids = @(Get-ReviewEvents | Where-Object { $_.type -eq 'thread.started' } |
+        ForEach-Object { $_.thread_id })
+    if ($ids.Count -eq 1 -and (Test-SessionId $ids[0])) {
+        return $ids[0].ToLowerInvariant()
+    }
     return 'unavailable'
 }
 function Get-TokensUsed {
-    if (-not (Test-Path $RawLog)) { return 'unavailable' }
-    $lines = Get-Content $RawLog
-    for ($i = 0; $i -lt $lines.Count; $i++) {
-        if ($lines[$i] -match '(?i)tokens used') {
-            for ($j = $i; $j -lt [Math]::Min($i + 3, $lines.Count); $j++) {
-                $d = ($lines[$j] -replace '[^0-9]', '')
-                if ($d) { return $d }
-            }
-        }
+    $events = @(Get-ReviewEvents | Where-Object { $_.type -eq 'turn.completed' })
+    if ($events.Count) {
+        $usage = $events[-1].usage
+        return ([long]$usage.input_tokens + [long]$usage.output_tokens)
     }
     return 'unavailable'
 }
@@ -134,12 +143,12 @@ function Test-Untrusted([int]$Rc, [string]$Result) {
     # line of "…I cannot APPROVE.") must also be treated as untrusted.
     return ($Rc -ne 0 -or $Result -eq 'UNKNOWN')
 }
-function Write-Usage([string]$M, [string]$E, [string]$B, [int]$Pass) {
+function Write-Usage([string]$M, [string]$E, [string]$B, [int]$Pass, [string]$Verdict = '') {
     $sid = Get-SessionId; $tok = Get-TokensUsed; $res = Get-Result; $fnd = Get-FindingCount
+    if ($Verdict) { $res = $Verdict }
     $ts = (Get-Date).ToUniversalTime().ToString('yyyy-MM-ddTHH:mm:ssZ')
     "$ts`t$RepoName`t$M`t$Model`t$E`t$B`t$sid`t$tok`t$res`t$fnd`t$Pass" |
         Out-File -FilePath $UsageTsv -Append -Encoding utf8
-    if ($sid -ne 'unavailable') { $sid | Out-File -FilePath $SessionFile -Encoding ascii -NoNewline }
     return $res
 }
 
@@ -160,15 +169,21 @@ if ($Mode -eq 'resume') {
     elseif (-not $RecordedSid) {
         Die "本 repo 沒有第一輪 session 紀錄可比對;拒絕以未經驗證的 session id resume。"
     }
+    if (-not (Test-SessionId $Sid)) { Die "session id 不是合法 UUID: '$Sid'。" }
+    $Sid = $Sid.ToLowerInvariant()
     $PrevPass = if (Test-Path $PassFile) { (Get-Content $PassFile -Raw).Trim() } else { '0' }
-    if ($PrevPass -ne '1') { Die "第二輪只能在完成第一輪之後執行(目前 pass=$PrevPass)。每個 task 最多兩輪。" }
+    $PassNumber = 0
+    if (-not [int]::TryParse($PrevPass, [ref]$PassNumber) -or $PassNumber -lt 1 -or $PassNumber -eq [int]::MaxValue) {
+        Die "後續審查必須先有成功的第一輪(目前 pass=$PrevPass)。"
+    }
+    $NextPass = $PassNumber + 1
 
     $last = (Get-Content $UsageTsv | Select-Object -Last 1) -split "`t"
     $ResumeEffort = if ($last.Count -ge 5 -and $last[4]) { $last[4] } else { 'medium' }
     $ResumeBase   = if ($last.Count -ge 6 -and $last[5]) { $last[5] } else { 'unavailable' }
 
     $ResumePrompt = @'
-Second and final review pass. Inspect only the corrections made for CONFIRMED
+Follow-up review pass. Inspect the corrections made for CONFIRMED
 findings from the previous review. Verify that those defects are resolved and
 that the corrections introduced no concrete regression. Do not repeat the
 original full repository exploration. Remain strictly read-only: do not modify
@@ -178,7 +193,7 @@ tools. End with exactly APPROVE or REQUEST_CHANGES.
 '@
 
     $flags = Build-Flags $ResumeEffort 'resume'
-    Write-Host "[codex-review] resume session=$Sid effort=$ResumeEffort (pass 2/2)"
+    Write-Host "[codex-review] resume session=$Sid effort=$ResumeEffort (pass $NextPass)"
     '' | Out-File -FilePath $LastMsg -Encoding utf8
     $args2 = @('exec', 'resume', $Sid) + $flags + @($ResumePrompt)
     # $null | ... closes codex's stdin immediately; the prompt is passed as an
@@ -189,14 +204,15 @@ tools. End with exactly APPROVE or REQUEST_CHANGES.
     $result = Get-Result
     # Untrusted run: do NOT advance pass state (finding 3) — a failed pass-2 must
     # not be permanently recorded as done.
-    if (Test-Untrusted $rc $result) {
+    $ReturnedSid = Get-SessionId
+    if ((Test-Untrusted $rc $result) -or $ReturnedSid -ne $Sid) {
         [Console]::Error.WriteLine("[codex-review] codex exec resume 未正常完成(rc=$rc,無明確結論)—— 結果不可信,勿據此 push。")
-        [void](Write-Usage 'resume' $ResumeEffort $ResumeBase 1)
+        [void](Write-Usage 'resume' $ResumeEffort $ResumeBase $PassNumber 'UNKNOWN')
         exit 4
     }
-    '2' | Out-File -FilePath $PassFile -Encoding ascii -NoNewline
-    [void](Write-Usage 'resume' $ResumeEffort $ResumeBase 2)
-    Write-Host "`n[codex-review] result=$result (pass 2/2)"
+    [string]$NextPass | Out-File -FilePath $PassFile -Encoding ascii -NoNewline
+    [void](Write-Usage 'resume' $ResumeEffort $ResumeBase $NextPass)
+    Write-Host "`n[codex-review] result=$result (pass $NextPass)"
     if ($result -eq 'APPROVE') { exit 0 } elseif ($result -eq 'REQUEST_CHANGES') { exit 2 } else { exit 5 }
 }
 
@@ -347,13 +363,14 @@ $result = Get-Result
 
 # Decide trust BEFORE recording pass state (finding 3): an incomplete /
 # rate-limited first pass must not become eligible for the resume flow.
-if (Test-Untrusted $rc $result) {
+if ((Test-Untrusted $rc $result) -or (Get-SessionId) -eq 'unavailable') {
     [Console]::Error.WriteLine("[codex-review] codex exec 未正常完成(rc=$rc,無明確結論)—— 結果不可信,勿據此 push。")
-    [void](Write-Usage $Mode $Effort $BaseRef 0)
+    [void](Write-Usage $Mode $Effort $BaseRef 0 'UNKNOWN')
     exit 4
 }
 # Only become resume-eligible if THIS pass's session id was actually captured.
 $sidNow = Get-SessionId
+$sidNow | Out-File -FilePath $SessionFile -Encoding ascii -NoNewline
 if ($sidNow -and $sidNow -ne 'unavailable') {
     '1' | Out-File -FilePath $PassFile -Encoding ascii -NoNewline
 } else {
