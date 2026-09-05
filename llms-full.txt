@@ -1,6 +1,6 @@
 # ChenDermatologist · 陳翊嘉醫師 · 皮膚科衛教筆記
 
-Last updated 2026-08-01 · 52 articles · by Dr. Chen Yi-Jia (R2 Dermatology Resident, Taiwan)
+Last updated 2026-09-06 · 52 articles · by Dr. Chen Yi-Jia (R2 Dermatology Resident, Taiwan)
 
 Bilingual zh-Hant / en. ZH source is authoritative; EN mirror is machine-translated and provided for accessibility only.
 
@@ -1406,11 +1406,11 @@ HBV 狀態
 [... truncated; fetch canonical URL for full text ...]
 
 ---
-## 杜避炎®（dupilumab）維持治療要打多久？2026 JAAD 真實世界研究：減量竟比停藥更容易復發
+## 杜避炎要打多久？停藥、減量與維持治療的研究整理
 URL: https://chendermatologist.com/blog/dupilumab-long-term-maintenance
-Updated: 2026-05-25
+Updated: 2026-09-06
 Section: Research Summary
-Reading time: PT20M
+Reading time: PT21M
 Tags: dupilumab, Dupilumab
 
 30 秒重點
@@ -1438,6 +1438,8 @@ Dupilumab 於 2017 年取得美國 FDA 中重度 AD 適應症後，迅速成為�
 患者實務上常自行（或被迫）停藥的原因包括：搬家、健保續用門檻、自費負擔、療效已滿意、計畫懷孕等。這些非計畫性停藥造成真實世界缺乏結構化的維持期數據。Qiu 等人 2026 年 5 月發表於《JAAD》的這篇單中心回溯性研究，是少數能在真實患者群裡比較「持續 q2w / 延長間隔 / 停藥」三種策略 52 週結果的研究。
 
 研究設計
+
+2026 年 5 月《JAAD》發表的真實世界回溯性研究（Qiu et al, n=79, 中國新疆人民醫院）追蹤中重度異位性皮膚炎（AD）患者使用杜避炎®（dupilumab，Dupixent®）一年。三組維持策略中，「持續 q2w 至 52 週」組的平均無復發天數 159.55 天，遠勝「減量延長至 q8w」組 48.17 天與「16 週後停藥」組 66.40 天。最反直覺的發現：減量組比直接停藥組更早復發，作者推測 sub-therapeutic 藥物濃度反而造成不穩定的發炎抑制。本文整合研究數據、復發風險因子、首例視神經萎縮個案、五種 AD 表型與台灣健保給付條件（事前審查、EASI ≧ 16、皮膚科或風濕免疫科處方）。
 
 項目
 內容
@@ -1673,27 +1675,6 @@ Upa 與 Abro 劑量限制：Upadacitinib — EASI 16–20 限每日 15 mg；≥ 
 停藥超過 3 個月再申請：視同新申請案件
 
 不可併用：dupilumab、upadacitinib、abrocitinib 三者擇一；upadacitinib / abrocitinib 不可與 cyclosporin 併用
-
-禁忌與停藥條件
-
-懷孕或哺乳期
-
-寄生蟲（蠕蟲）感染
-
-6 個月療效未達 EASI 50（療效不彰）→ 停止治療
-
-出現惡性腫瘤 → 停止治療
-
-進階補充：研究限制與不能外推台灣
-
-研究方法學限制
-
-單中心、回溯性：選擇偏差難以排除；無法確認三組基線真正可比。
-
-分組非隨機：shared decision-making 表面上尊重病人偏好，實則使重症 / 反應較差者集中於某些組（特別是減量組），造成「減量比停藥更糟」可能部分來自選擇偏差。
-
-樣本量小（n=79，三組分別 31/18/30）：次群組分析統計力不足；多變量分析中病程因素 p=0.093 達邊緣顯著。
-
 
 [... truncated; fetch canonical URL for full text ...]
 
@@ -5403,9 +5384,9 @@ Menter A, et al. Joint AAD-NPF guidelines of care for the management of psoriasi
 [... truncated; fetch canonical URL for full text ...]
 
 ---
-## 外用酸類完整衛教
+## A酸、A醇、杜鵑花酸怎麼選？五大酸類差別與搭配
 URL: https://chendermatologist.com/blog/topical-acids-patient
-Updated: 2026-05-08
+Updated: 2026-09-06
 Section: Products & Drugs
 Reading time: PT8M
 Tags: 酸類, Topical acids
@@ -6631,9 +6612,9 @@ NT$ 1,800-2,500/條(30g)
 [... truncated; fetch canonical URL for full text ...]
 
 ---
-## 結節性癢疹完整衛教
+## 結節性癢疹是什麼？Prurigo nodularis 中文、症狀與治療
 URL: https://chendermatologist.com/blog/prurigo-nodularis
-Updated: 2026-08-01
+Updated: 2026-09-06
 Section: Treatment & Therapy
 Reading time: PT6M
 Tags: 結節性癢疹, Prurigo Nodularis

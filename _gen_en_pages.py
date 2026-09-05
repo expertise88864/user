@@ -31,6 +31,10 @@ DOMAIN = 'https://chendermatologist.com'
 SKIP = {'404.html', 'offline.html', 'admin.html', 'dashboard.html', 'notes.html', 'reset-sw.html'}
 
 EN_OG_OVERRIDES = {
+    'blog/prurigo-nodularis.html': {'title': 'Prurigo Nodularis: Meaning, Symptoms and Treatment', 'desc': 'Prurigo nodularis (PN) is called 結節性癢疹 in Chinese. Read about its definition, itch and nodules, diagnostic assessment, treatment options and references.'},
+
+    'blog/topical-acids-patient.html': {'title': 'Retinoids, Retinol and Azelaic Acid: Differences and Combinations', 'desc': 'Compare retinoids, retinol, azelaic acid, AHA and salicylic acid. Find sections on their differences, getting started, combining products and irritation.'},
+
     'index.html': {
         'title': 'Dr. Yi-Jia Chen | Dermatology Patient Education (Taiwan)',
         'desc': 'Plain-language dermatology articles by Dr. Chen: acne, sunscreen, eczema, melasma, hair loss, biologics, isotretinoin, and topical steroids.',
@@ -73,10 +77,7 @@ EN_OG_OVERRIDES = {
         'title': 'Oral Isotretinoin Clinical Guide | Dermatology Notes',
         'desc': 'Resident-level isotretinoin notes covering pharmacology, mechanisms, indications, dosing, adverse effects, drug interactions, monitoring, and acne guideline integration.',
     },
-    'blog/perioral-dermatitis-guide.html': {
-        'title': 'Periorificial (Perioral) Dermatitis: Complete Patient Guide',
-        'desc': 'Patient-friendly dermatology guide to periorificial / perioral dermatitis: how to tell it apart from acne, rosacea, and eczema; the corticosteroid trap; gentle skincare; topical metronidazole / tacrolimus / pimecrolimus / ivermectin; oral doxycycline; Taiwan NHI status and brand names. Integrates Acevedo-Fontanez 2026 JAAD review.',
-    },
+    'blog/perioral-dermatitis-guide.html': {'title': 'Periorificial (Perioral) Dermatitis: Complete Patient Guide', 'desc': 'Recurring rash around the mouth or nose: perioral dermatitis, acne or eczema? Read about symptoms, possible triggers, diagnosis and when to seek care.'},
     'blog/toenail-mechanical-disorders.html': {
         # SEO_AUDIT B1 — shortened from 76 → 63 chars so SERP doesn't truncate.
         'title': 'Toenail Mechanical Disorders — 12-Type Atlas & Diabetic Foot',
@@ -91,10 +92,7 @@ EN_OG_OVERRIDES = {
         'title': 'Severe Scabies: Complete Oral Ivermectin + 5% Permethrin Treatment Guide',
         'desc': 'Severe scabies (profuse or crusted, with hundreds to thousands of mites) does not respond to single-dose treatment. Patient-friendly guide based on the May 2026 NEJM GALE CRUSTED randomized trial: standard regimen is ivermectin 200 μg/kg on Days 0, 7, 14 plus 5% permethrin head-to-toe on Days 0 and 7 plus daily emollient — Day 28 cure rate around 82%. Covers life cycle, household co-treatment, environmental cleaning, long-term care outbreak protocols, infant/pregnancy safety, and Taiwan drug availability.',
     },
-    'blog/dupilumab-long-term-maintenance.html': {
-        'title': 'Dupilumab Long-Term Maintenance: JAAD 2026 Real-World Study (Tapering Relapses Earlier than Stopping)',
-        'desc': 'Real-world 79-patient retrospective from Xinjiang, China, published in May 2026 JAAD, comparing three dupilumab maintenance strategies in moderate-to-severe atopic dermatitis: continuous q2w, interval extension (tapering), and abrupt stop. Continuous q2w yielded the longest relapse-free duration (mean 159.55 days, some >300 days); paradoxically, the tapering group relapsed earlier than the abrupt-stop group, possibly due to sub-therapeutic drug levels or selection bias. Relapse predictors: higher baseline IgE, longer disease duration, non-classic AD phenotype. Includes a first-reported optic-nerve-atrophy case (1 year post-discontinuation, causality unconfirmed) and Taiwan NHI Article 13.17.1 reimbursement criteria.',
-    },
+    'blog/dupilumab-long-term-maintenance.html': {'title': 'Dupilumab: How Long, When to Stop, and Maintenance Treatment', 'desc': 'When is reducing or stopping dupilumab discussed? Review maintenance and relapse research, its limitations, and questions to discuss with your doctor.'},
     'blog/ai-dermatology-roles.html': {
         'title': 'AI in Dermatology Today: Dermoscopy Heat Maps, Explainability, and Education',
         'desc': 'Resident-level research review integrating 2026 JAAD Reviews and the JAAD eye-tracking study comparing dermatologist gaze maps with DEXI dermoscopy AI heat maps. Covers diagnostic support, explainable AI, generative AI for education, and why AI cannot yet replace clinical judgment.',
