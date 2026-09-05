@@ -10,6 +10,8 @@ PY = sys.executable
 NPM = "npm.cmd" if os.name == "nt" else "npm"
 
 REGEN_STEPS: list[list[str]] = [
+    # Complete static hub links from the public catalog before EN generation.
+    [PY, "_sync_hub_catalog.py"],
     # CODE_REVIEW TD-46 — _normalize_bilingual_attrs.py was removed from
     # this list on 2026-08-01. It was a one-shot migration carrying
     # hardcoded copies of four blocks and rewriting pages back to them;
@@ -279,6 +281,8 @@ CHECK_STEPS: list[list[str]] = [
     # paragraph must render from raw HTML (not be JS-injected).
     # Googlebot's first pass + AI/LLM crawlers don't always run JS.
     [PY, "_check_no_js_render_dependency.py"],
+    [PY, "_sync_hub_catalog.py", "--check"],
+    [PY, "_test_hub_catalog.py"],
 ]
 
 POST_BUILD_STEPS: list[list[str]] = [
