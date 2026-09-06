@@ -10,9 +10,29 @@ import _normalize_tools_schema as tools_schema
 import _check_en_internal_links as en_links
 import _check_supply_chain as supply
 import _normalize_mentions as mentions
+from _normalize_css_links import normalize_font_loading
+from _gen_search_index import extract as search_extract
 
 
 class FragmentTests(unittest.TestCase):
+    def test_search_extraction_recovers_after_hidden_void_elements(self):
+        source = ('<head><noscript><link rel="stylesheet" href="/fonts.css"></noscript></head>'
+                  '<body><h1>Visible title</h1><div hidden><img src="hidden.png"><p>Hidden text</p></div>'
+                  '<p>This visible paragraph must still be available to the search index.</p></body>')
+        result = search_extract(source)
+        self.assertEqual(result['title'], 'Visible title')
+        self.assertEqual(result['snippet'], 'This visible paragraph must still be available to the search index.')
+
+    def test_font_loading_is_nonblocking_and_idempotent(self):
+        source = '<head><link href="https://fonts.googleapis.com/css2?family=Inter&amp;display=optional" rel="stylesheet"></head><body>Text</body>'
+        result = normalize_font_loading(source)
+        self.assertEqual(normalize_font_loading(result), result)
+        self.assertIn('media="print"', result)
+        self.assertIn('<noscript><link rel="stylesheet"', result)
+        self.assertEqual(result.count('font-loader.js?'), 1)
+        self.assertNotIn('onload=', result)
+        self.assertTrue(result.endswith('<body>Text</body>'))
+
     def test_language_links_with_markup_in_attributes(self):
         parser = en_links.PageLinks()
         parser.feed('<a data-en="<strong>Open</strong>" href="/tools?a=1&amp;b=2">Open</a>')

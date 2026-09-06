@@ -6,10 +6,40 @@ from __future__ import annotations
 
 import os
 import re
+import html
+from _html_scan import iter_tags, tag_name, attributes, blank_script_style, mask_inert_regions
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-ASSET_VERSION = "202609060300"
+ASSET_VERSION = "202609061330"
+
+
+def normalize_font_loading(src: str) -> str:
+    """Web fonts enhance the system-font page without blocking its first paint."""
+    src = re.sub(r'<noscript><link\b[^>]*data-dn-fonts-fallback[^>]*></noscript>', '', src)
+    src = re.sub(r'<script\b[^>]*src="/assets/inline/font-loader\.js(?:\?v=\d+)?"[^>]*></script>', '', src)
+    edits = []
+    for offset, tag in iter_tags(mask_inert_regions(blank_script_style(src))):
+        attrs = attributes(tag)
+        if tag_name(tag) != 'link' or attrs.get('rel') != 'stylesheet':
+            continue
+        url = html.unescape(attrs.get('href', ''))
+        if not url.startswith('https://fonts.googleapis.com/css2?'):
+            continue
+        attrs['media'] = 'print'
+        attrs['data-dn-fonts'] = ''
+        rendered = '<link' + ''.join(
+            f' {key}="{html.escape(html.unescape(value), quote=True)}"'
+            for key, value in attrs.items()) + '>'
+        rendered += ('<noscript><link rel="stylesheet" href="'
+                     + html.escape(url, quote=True) + '" data-dn-fonts-fallback=""></noscript>')
+        edits.append((offset, offset + len(tag), rendered))
+    for start, end, replacement in reversed(edits):
+        src = src[:start] + replacement + src[end:]
+    if edits:
+        loader = f'<script defer src="/assets/inline/font-loader.js?v={ASSET_VERSION}"></script>'
+        src = src.replace('</head>', loader + '</head>', 1)
+    return src
 
 PRELOAD_TW_MINI_RE = re.compile(
     r'<link\s+rel="preload"\s+as="style"\s+href="([^"]*tw-mini\.css[^"]*)"\s+'
@@ -64,6 +94,7 @@ def normalize_file(path: str) -> bool:
         next_src,
     )
     next_src = PRELOAD_GOOGLE_FONTS_RE.sub("", next_src)
+    next_src = normalize_font_loading(next_src)
     next_src = PRELOAD_BLOG_SHARED_RE.sub("", next_src)
     next_src = BLOG_SHARED_SRC_RE.sub(rf"\1?v={ASSET_VERSION}", next_src)
     next_src = SHARED_CSS_SRC_RE.sub(rf"\1?v={ASSET_VERSION}", next_src)

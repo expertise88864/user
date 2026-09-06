@@ -5,7 +5,6 @@
 from __future__ import annotations
 
 import html as html_lib
-import io
 import json
 import os
 import re
@@ -13,7 +12,8 @@ import sys
 from html.parser import HTMLParser
 
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BLOG = os.path.join(ROOT, "blog")
@@ -31,6 +31,8 @@ class VisibleTextExtractor(HTMLParser):
 
     TEXT_TAGS = {"h1", "h2", "h3", "p"}
     SKIP_TAGS = {"script", "style", "svg", "noscript"}
+    VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input",
+                 "link", "meta", "param", "source", "track", "wbr"}
 
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
@@ -50,6 +52,8 @@ class VisibleTextExtractor(HTMLParser):
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         tag = tag.lower()
+        if tag in self.VOID_TAGS:
+            return
         if self.skip_depth:
             self.skip_depth += 1
             return
@@ -61,6 +65,8 @@ class VisibleTextExtractor(HTMLParser):
 
     def handle_endtag(self, tag: str) -> None:
         tag = tag.lower()
+        if tag in self.VOID_TAGS:
+            return
         if self.skip_depth:
             self.skip_depth -= 1
             return

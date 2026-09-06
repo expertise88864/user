@@ -4,6 +4,19 @@ import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 import path from 'node:path';
 
+test('optional font CSS applies on load and when already cached', () => {
+  const listeners = new Map();
+  const links = [false, true].map(cached => ({media:'print', sheet:cached ? {} : null,
+    addEventListener(name, fn) { listeners.set(this, {name, fn}); }}));
+  vm.runInNewContext(readFileSync(new URL('./assets/inline/font-loader.js', import.meta.url), 'utf8'),
+    {document:{querySelectorAll(){return links;}}});
+  assert.equal(links[0].media, 'print');
+  assert.equal(links[1].media, 'all');
+  assert.equal(listeners.get(links[0]).name, 'load');
+  listeners.get(links[0]).fn();
+  assert.equal(links[0].media, 'all');
+});
+
 async function installWorker(offlineFails) {
   const listeners = {};
   let stored = false;
