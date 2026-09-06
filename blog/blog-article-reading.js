@@ -20,7 +20,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202609062140';
+          s.src = '/blog/blog-diagrams.min.js?v=202609062210';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -205,7 +205,19 @@
   DN.addInlineTOC = function () {
     var proseEl = document.getElementById('proseZh') || document.querySelector('article .prose');
     if (!proseEl) return;
-    if (document.getElementById('dn-inline-toc')) return;
+    var existingTOC = document.getElementById('dn-inline-toc');
+    if (existingTOC) {
+      // Generated links work without JS. Add analytics without replacing
+      // native disclosure/anchor behavior or moving the reader's content.
+      if (!existingTOC.dataset.dnBound) {
+        existingTOC.dataset.dnBound = 'true';
+        existingTOC.addEventListener('click', function (event) {
+          var link = event.target.closest('a[data-toc-inline]');
+          if (link && window.gtag) window.gtag('event', 'toc_click', { section_id: link.dataset.tocInline });
+        });
+      }
+      return;
+    }
     var h2s = proseEl.querySelectorAll('h2[id]');
     if (h2s.length < 3) return;
 

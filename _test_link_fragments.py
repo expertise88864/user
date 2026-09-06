@@ -14,9 +14,41 @@ from _normalize_css_links import normalize_font_loading, normalize_file as norma
 from _gen_search_index import extract as search_extract
 from _normalize_heading_structure import normalize_content_headings
 from _gen_en_pages import extract_faqs
+from _normalize_reading_shell import normalize as reading_shell, BLOCK as reading_shell_block
 
 
 class FragmentTests(unittest.TestCase):
+    def test_reading_shell_preserves_content_and_is_idempotent(self):
+        source = '<main><h1>Title</h1><article><div id="proseZh"><h2 id="one">First &amp; second</h2><p>Approved clinical text.</p><h2 id="two">Two</h2><h2 id="three">Three</h2></div></article></main>'
+        result = reading_shell(source)
+        self.assertEqual(reading_shell_block.sub('', result), source)
+        self.assertEqual(reading_shell(result), result)
+        self.assertEqual(result.count('id="dn-inline-toc"'), 1)
+        self.assertIn('href="#one"', result)
+        self.assertIn('First &amp; second</a>', result)
+        self.assertEqual(extract_faqs(result), [])
+        english = reading_shell(result, True)
+        self.assertIn('Cover and reading information', english)
+        self.assertIn('In this article', english)
+
+    def test_reading_shell_keeps_existing_patient_metadata_and_article_h1(self):
+        source = '<details id="dn-secondary-meta">Existing</details><article><h1>Title</h1><div id="proseZh">' + ''.join(f'<h2 id="h{i}">Heading {i}</h2>' for i in range(3)) + '</div></article>'
+        result = reading_shell(source)
+        self.assertEqual(result.count('id="dn-secondary-meta"'), 1)
+        self.assertLess(result.index('</h1>'), result.index('id="dn-inline-toc"'))
+        self.assertEqual(reading_shell_block.sub('', result), source)
+
+    def test_reading_shell_uses_only_the_active_language_prose(self):
+        zh = '<div id="proseZh">' + ''.join(f'<h2 id="zh{i}">中文 {i}</h2>' for i in range(3)) + '</div>'
+        en = '<div id="proseEn">' + ''.join(f'<h2 id="en{i}">English {i}</h2>' for i in range(3)) + '</div>'
+        source = '<article>' + zh + en + '</article>'
+        result = reading_shell(source)
+        self.assertIn('href="#zh0"', result)
+        self.assertNotIn('href="#en0"', result)
+        english = reading_shell('<article>' + en + '</article>', True)
+        self.assertIn('href="#en0"', english)
+        self.assertEqual(reading_shell(english, True), english)
+
     def test_english_faq_ignores_reading_disclosures_but_keeps_real_questions(self):
         source = '''<details class="dn-article-details"><summary>Article background</summary>
             <p>Background, cover and reading information.</p></details>

@@ -196,8 +196,8 @@ def run_smoke(base_url: str) -> list[str]:
     if "javascript" not in content_type:
         errors.append(f"service-worker: expected JavaScript content-type, got {content_type!r}")
     errors.extend(assert_contains("service-worker", sw_body, [
-        "const CACHE = 'cd-v163'",
-        "const RUNTIME = 'cd-runtime-v161'",
+        "const CACHE = 'cd-v164'",
+        "const RUNTIME = 'cd-runtime-v162'",
         "/[?&]v=/",
         "url.pathname === '/assets/search-index.json'",
         "url.pathname.startsWith('/admin')",

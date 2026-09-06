@@ -49,6 +49,7 @@ REGEN_STEPS: list[list[str]] = [
     [PY, "_normalize_button_types.py"],
     [PY, "_normalize_css_links.py"],
     [PY, "_normalize_heading_structure.py"],
+    [PY, "_normalize_reading_shell.py"],
     [PY, "_gen_feeds.py"],
     [PY, "_normalize_robots.py"],
     # 2026-05-18 — Inject max-image-preview:large + max-snippet:-1 into
