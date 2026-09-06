@@ -8,10 +8,11 @@ name: Prose lint (Vale)
 #                            (disabled per-article for clinical-depth pages)
 #   • Disclaimer.yml      — flag YMYL keywords missing disclaimer block
 #
-# Phase-in: errata-ai/vale-action runs as warning-only (fail_on_error: false)
-# until the initial fallout is cleared. Promote to blocking after cleanup.
+# Errors block publication; existing terminology warnings remain warnings.
 
 on:
+  push:
+    branches: [main, 'codex/**']
   pull_request:
     branches: [main]
     paths:
@@ -23,11 +24,12 @@ on:
 
 permissions:
   contents: read
+  checks: write
   pull-requests: write
 
 jobs:
   vale:
-    name: Vale prose lint (informational)
+    name: Vale prose lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # pin v4 (was @v4)
@@ -40,6 +42,7 @@ jobs:
           version: 3.7.1
           # Restrict to article files (not navigation pages with structural markup)
           files: 'blog en/blog'
-          fail_on_error: false   # informational until fallout cleared
-          # Surface findings as PR comments
-          reporter: github-pr-check
+          fail_on_error: true
+          filter_mode: nofilter
+          # Surface findings as GitHub checks, including push-triggered runs.
+          reporter: github-check

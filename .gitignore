@@ -61,3 +61,8 @@ _*.txt
 # Codex external review state (raw transcripts + usage log). Never commit:
 # last_raw.log can contain verbatim source snippets from the review session.
 .codex-review/
+# Read-only preview acceptance artifacts
+delivery-preview/
+
+# Local independent review evidence is not published to the website/repository.
+.claude-review/

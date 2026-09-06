@@ -6,11 +6,11 @@ name: Accessibility (pa11y-ci + axe-core)
 # Python `_check_static_a11y.py` (~10 hand-rolled rules) with the
 # de-facto industry-standard accessibility engine.
 #
-# Phase-in plan: informational only (continue-on-error) for the first
-# few weeks while we fix the initial fallout (color contrast, ARIA
-# misuse, etc.) Once clean, flip to blocking.
+# Required on the exact candidate SHA and again after promotion.
 
 on:
+  push:
+    branches: [main, 'codex/**']
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -26,7 +26,6 @@ jobs:
   pa11y:
     name: pa11y-ci (axe + HTMLCS)
     runs-on: ubuntu-latest
-    continue-on-error: true   # informational until fallout cleared
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # pin v4 (was @v4)
         with:
@@ -56,8 +55,7 @@ jobs:
 
       - name: Run pa11y-ci
         run: |
-          pa11y-ci --config .pa11yci.json \
-            || echo "::warning::pa11y-ci found accessibility issues — see log"
+          pa11y-ci --config .pa11yci.json
 
       - name: Upload pa11y report
         if: always()

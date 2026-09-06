@@ -1,5 +1,7 @@
 # PIPELINE.md — 建置管線地圖(源頭 → 生成器 → 產物)
 
+> 2026-09-06 發佈入口更新：生成器順序不變；發佈改走 `REMOTE_CI_DELIVERY.md` 的 codex/* → PR/Preview → 完整候選 CI → 同 SHA main。`deploy.ps1` 只發布乾淨且候選驗證通過的 SHA，不再自行 stage/rebase。排程文章先合併到候選、完整檢查與 Preview 綠燈後才快轉 main；失敗保留正式 queue 與來源草稿分支。
+
 > 目的:讓任何 session 一眼分清「哪些檔案是**源頭**(可手改)、哪些是**生成物**(絕不手改)」,
 > 以及「改了 X 之後要跑什麼」。順序的唯一權威是 `_run_quality.py` 的 `REGEN_STEPS`(~46 步)
 > 與 `CHECK_STEPS`(當前 30 步,以該檔為準)—— **本檔不複製完整清單**(會漂移),只給結構與配方。

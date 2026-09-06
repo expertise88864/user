@@ -1,11 +1,10 @@
 name: Structured data validator (sdtt)
 
-# Tier 1C from OPEN_SOURCE_INTEGRATIONS.md — non-blocking sdtt check.
-# Complements _audit_jsonld.py with Google's rich-result preset
-# validation. Surfaces warnings without blocking deploy so it doesn't
-# duplicate the existing JSON-LD audit's enforcement role.
+# Validate the actual schema types on the exact candidate and main SHA.
 
 on:
+  push:
+    branches: [main, 'codex/**']
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -16,9 +15,8 @@ permissions:
 
 jobs:
   sdtt:
-    name: structured-data-testing-tool (informational)
+    name: structured-data-testing-tool
     runs-on: ubuntu-latest
-    continue-on-error: true   # informational only — never block deploy
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # pin v4 (was @v4)
         with:
@@ -61,9 +59,10 @@ jobs:
               sdtt --file "$f" \
                 || fail=$((fail+1))
               echo "::endgroup::"
+            else
+              echo "Missing required sample: $f"
+              fail=$((fail+1))
             fi
           done < /tmp/sample.txt
-          # Always exit 0 — this is informational. The Python
-          # _audit_jsonld.py + _check_seo_signals.py guards still
-          # enforce in the main Quality gate workflow.
-          echo "sdtt completed; $fail file(s) had warnings (non-blocking)"
+          echo "sdtt completed; $fail file(s) failed validation"
+          test "$fail" -eq 0

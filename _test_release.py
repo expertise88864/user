@@ -51,13 +51,13 @@ class RemoteEvidenceTests(unittest.TestCase):
 
 
 class ScheduledPublicationTests(unittest.TestCase):
-    def execute(self, fail_script):
+    def execute(self, fail_script=None):
         source = (ROOT / '.github/workflows/scheduled-publish.yml').read_text(encoding='utf-8')
         program = textwrap.dedent(source.split("python3 <<'PY'\n", 1)[1].rsplit('          PY', 1)[0])
         calls = []
         def check(command, **kwargs):
             calls.append(command)
-            if fail_script in command:
+            if fail_script and fail_script in command:
                 raise subprocess.CalledProcessError(1, command)
             return 0
         def run(command, **kwargs):
@@ -79,8 +79,13 @@ class ScheduledPublicationTests(unittest.TestCase):
             try:
                 os.chdir(root)
                 with patch('subprocess.check_call', side_effect=check), patch('subprocess.run', side_effect=run), \
-                        patch('subprocess.check_output', side_effect=output), redirect_stdout(io.StringIO()):
-                    with self.assertRaises((subprocess.CalledProcessError, RuntimeError)):
+                        patch('subprocess.check_output', side_effect=output), \
+                        patch.dict(os.environ, {'GITHUB_RUN_ID':'123','GITHUB_RUN_ATTEMPT':'1','RUNNER_TEMP':directory}), \
+                        redirect_stdout(io.StringIO()):
+                    if fail_script:
+                        with self.assertRaises((subprocess.CalledProcessError, RuntimeError)):
+                            exec(compile(program, 'scheduled-publish.yml', 'exec'), {})
+                    else:
                         exec(compile(program, 'scheduled-publish.yml', 'exec'), {})
             finally:
                 os.chdir(previous)
@@ -90,10 +95,11 @@ class ScheduledPublicationTests(unittest.TestCase):
         calls = self.execute('_run_ci.py')
         self.assertFalse(any('push' in command for command in calls), calls)
 
-    def test_failed_remote_ci_preserves_draft_branch(self):
-        calls = self.execute('_verify_remote_ci.py')
-        self.assertIn(['git','push','origin','main'], calls)
-        self.assertFalse(any('--delete' in command for command in calls), calls)
+    def test_success_prepares_review_bundle_without_publishing_or_claiming_review(self):
+        calls = self.execute()
+        self.assertTrue(any(command[:3] == ['git','bundle','create'] for command in calls), calls)
+        self.assertFalse(any('push' in command or '--delete' in command for command in calls), calls)
+        self.assertFalse(any('Claude-Opus-5-Review: pending' in str(command) for command in calls), calls)
 
     def test_untracked_generated_file_cannot_publish(self):
         calls = self.execute('untracked')
@@ -119,15 +125,17 @@ function git {
             if ($env:RELEASE_SCENARIO -eq 'dirty' -or ($env:RELEASE_SCENARIO -eq 'build-drift' -and $global:statusCalls -gt 1)) { ' M article.html' }
         }
         'rev-parse' { if ($args[1] -eq 'HEAD') { 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' } else { 'true' } }
-        'fetch' { if ($env:RELEASE_SCENARIO -eq 'fetch-failed') { $global:LASTEXITCODE = 1 } }
+        'push' { if ($env:RELEASE_SCENARIO -eq 'push-blocked') { $global:LASTEXITCODE = 1 } }
     }
 }
 function gh { $global:LASTEXITCODE = 0 }
 function python {
     Add-Content -LiteralPath calls.txt -Value ('python ' + ($args -join ' '))
     $global:LASTEXITCODE = 0
-    if (($env:RELEASE_SCENARIO -eq 'ci-failed' -and $args[0] -eq '_run_ci.py') -or
-        ($env:RELEASE_SCENARIO -eq 'remote-failed' -and $args[0] -eq '_verify_remote_ci.py')) { $global:LASTEXITCODE = 1 }
+    if (($env:RELEASE_SCENARIO -eq 'ci-failed' -and ($args -contains 'candidate')) -or
+        ($env:RELEASE_SCENARIO -eq 'remote-failed' -and ($args -contains 'main')) -or
+        ($env:RELEASE_SCENARIO -eq 'deploy-failed' -and ($args -contains 'production')) -or
+        ($env:RELEASE_SCENARIO -eq 'smoke-failed' -and ($args -contains 'smoke'))) { $global:LASTEXITCODE = 1 }
 }
 & ./deploy.ps1
 exit $LASTEXITCODE
@@ -141,7 +149,7 @@ exit $LASTEXITCODE
             return result.returncode, calls, result.stdout + result.stderr
 
     def test_failures_before_push_preserve_work_and_do_not_publish(self):
-        for scenario in ('dirty','fetch-failed','ci-failed','build-drift'):
+        for scenario in ('dirty','ci-failed','build-drift'):
             code, calls, output = self.execute(scenario)
             self.assertNotEqual(code, 0, output)
             for forbidden in ('git push','git add','git stash','git rebase','git checkout','git commit'):
@@ -150,14 +158,22 @@ exit $LASTEXITCODE
     def test_remote_failure_is_not_delivery(self):
         code, calls, output = self.execute('remote-failed')
         self.assertNotEqual(code, 0, output)
-        self.assertIn('git push origin HEAD:refs/heads/main', calls)
+        self.assertIn('git push origin aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:refs/heads/main', calls)
         self.assertNotIn('Delivered ', output)
 
     def test_complete_release_order(self):
         code, calls, output = self.execute('success')
         self.assertEqual(code, 0, output)
-        self.assertLess(calls.index('python _run_ci.py'), calls.index('git push'))
-        self.assertLess(calls.index('git push'), calls.index('python _verify_remote_ci.py'))
+        self.assertLess(calls.index('--phase candidate'), calls.index('git push'))
+        self.assertLess(calls.index('git push'), calls.index('--phase main'))
+        self.assertLess(calls.index('--phase main'), calls.index('_delivery.py production'))
+        self.assertLess(calls.index('_delivery.py production'), calls.index('_delivery.py smoke'))
+
+    def test_production_failure_is_not_delivery(self):
+        for scenario in ('deploy-failed', 'smoke-failed'):
+            code, calls, output = self.execute(scenario)
+            self.assertNotEqual(code, 0, output)
+            self.assertNotIn('Delivered ', output)
 
 
 if __name__ == '__main__':

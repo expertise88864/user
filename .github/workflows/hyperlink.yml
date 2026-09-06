@@ -11,7 +11,7 @@ name: Link & anchor check (hyperlink)
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'codex/**']
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -57,7 +57,11 @@ jobs:
           fi
           tar -xJf /tmp/hyperlink.tar.xz -C "$HOME/.local/bin" --strip-components=0
           # Some release tarballs nest the binary in a subdirectory; flatten.
-          find "$HOME/.local/bin" -name hyperlink -type f -exec mv {} "$HOME/.local/bin/hyperlink" \; 2>/dev/null || true
+          if [ ! -f "$HOME/.local/bin/hyperlink" ]; then
+            binary=$(find "$HOME/.local/bin" -name hyperlink -type f -print -quit)
+            test -n "$binary"
+            mv "$binary" "$HOME/.local/bin/hyperlink"
+          fi
           chmod +x "$HOME/.local/bin/hyperlink"
 
       - name: Add hyperlink to PATH
@@ -68,26 +72,13 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with: { node-version: '20' }
       - name: Validate production routes and fragments (blocking)
-        # Unlike the raw filesystem scan below, this resolves Vercel clean URLs
-        # and only the calculator that actually mounts on the target article.
+        # Independent Python check for clean URLs and runtime calculator targets.
         run: python _check_internal_links.py
 
       - name: Verify hyperlink installed
         run: hyperlink --version
 
       - name: Check links + anchor IDs across all HTML
-        run: |
-          # `--check-anchors`  also validates href="#id" against in-page IDs.
-          # `--github-actions` emits errors inline on PR diffs.
-          # Restrict scan to the static-HTML tree; skip generated noise.
-          hyperlink . \
-            --check-anchors \
-            --github-actions \
-            --sources . \
-          || {
-            echo "::warning::hyperlink found issues — see annotations above."
-            # Don't FAIL the build yet. Phase in as informational until
-            # the existing internal-link audit has been deprecated. Flip
-            # the trailing `|| true` to remove this safety net later.
-            true
-          }
+        # Hyperlink requires a filesystem routing mirror for Vercel clean URLs.
+        # Every bad file or fragment remains a nonzero, blocking failure.
+        run: python _check_hyperlink.py

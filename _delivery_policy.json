@@ -1,0 +1,190 @@
+{
+  "repository": "expertise88864/user",
+  "require_pr": true,
+  "allow_dispatch": false,
+  "preview_paths": [
+    "/",
+    "/tools",
+    "/blog/acne-myths",
+    "/en",
+    "/blog/dupilumab-long-term-maintenance",
+    "/blog/perioral-dermatitis-guide",
+    "/blog/topical-acids-patient",
+    "/en/blog/perioral-dermatitis-guide"
+  ],
+  "workflows": [
+    {
+      "path": ".github/workflows/quality.yml",
+      "jobs": [
+        "Canonical generated file consistency",
+        "HTML structural validation",
+        "Internal link check (broken anchors / bad hrefs)",
+        "SEO/meta sanity (title / description / canonical / OG)",
+        "Lighthouse CI (perf + a11y + SEO + best practices)"
+      ],
+      "steps": {
+        "Canonical generated file consistency": {
+          "required": [
+            "Setup Python",
+            "Setup Node",
+            "Verify canonical generated files"
+          ],
+          "conditional": []
+        },
+        "HTML structural validation": {
+          "required": [
+            "Setup Python",
+            "Setup Java for html5validator",
+            "Install validators",
+            "Run html5validator (whitelist common Tailwind/SVG/modern-CSS noise)",
+            "Quick lint \u2014 JSON-LD blocks parse cleanly"
+          ],
+          "conditional": []
+        },
+        "Internal link check (broken anchors / bad hrefs)": {
+          "required": [
+            "Setup Python",
+            "Run link audit"
+          ],
+          "conditional": []
+        },
+        "SEO/meta sanity (title / description / canonical / OG)": {
+          "required": [
+            "Setup Python",
+            "Pre-audit regen (mirror the canonical validation job)",
+            "Quick required-tag audit",
+            "Deep meta + sitemap consistency audit (_check_meta.py)",
+            "Metadata uniqueness audit",
+            "Robots/sitemap consistency audit",
+            "Sitemap URL/canonical audit",
+            "Internal link and anchor audit",
+            "Public/private index boundary audit",
+            "Static accessibility audit",
+            "Inline event audit",
+            "Structured data audit",
+            "PWA manifest/offline/SW audit",
+            "Performance budget audit",
+            "Text integrity audit",
+            "English internal-link audit",
+            "Third-party loading audit",
+            "External link rel audit",
+            "Button type audit",
+            "Deployment config audit",
+            "API security audit",
+            "Secret leak audit",
+            "Supply-chain audit",
+            "JavaScript syntax audit",
+            "Runtime smoke audit"
+          ],
+          "conditional": []
+        },
+        "Lighthouse CI (perf + a11y + SEO + best practices)": {
+          "required": [
+            "Install LHCI",
+            "Serve site",
+            "Wait for server",
+            "Run Lighthouse CI",
+            "Render Lighthouse summary to job step"
+          ],
+          "conditional": []
+        }
+      }
+    },
+    {
+      "path": ".github/workflows/hyperlink.yml",
+      "jobs": [
+        "Link and anchor validation (Vercel routes + hyperlink diagnostics)"
+      ],
+      "steps": {
+        "Link and anchor validation (Vercel routes + hyperlink diagnostics)": {
+          "required": [
+            "Cache hyperlink binary",
+            "Add hyperlink to PATH",
+            "Validate production routes and fragments (blocking)",
+            "Verify hyperlink installed",
+            "Check links + anchor IDs across all HTML"
+          ],
+          "conditional": [
+            "Install hyperlink (Rust CLI)"
+          ]
+        }
+      }
+    },
+    {
+      "path": ".github/workflows/delivery.yml",
+      "jobs": [
+        "Delivery contract",
+        "Preview browser"
+      ],
+      "candidate_skips": [],
+      "main_skips": [
+        "Preview browser"
+      ],
+      "steps": {
+        "Delivery contract": {
+          "required": [
+            "Delivery Python regression tests",
+            "Production deployment gate regression tests"
+          ],
+          "conditional": []
+        },
+        "Preview browser": {
+          "required": [
+            "Resolve exact-SHA preview (never production)",
+            "Install browser",
+            "Verify preview pages in desktop and mobile browsers"
+          ],
+          "conditional": []
+        }
+      }
+    },
+    {
+      "path": ".github/workflows/a11y.yml",
+      "jobs": [
+        "pa11y-ci (axe + HTMLCS)"
+      ],
+      "steps": {
+        "pa11y-ci (axe + HTMLCS)": {
+          "required": [
+            "Install pa11y-ci",
+            "Install Python (for site server)",
+            "Serve site",
+            "Wait for server",
+            "Run pa11y-ci"
+          ],
+          "conditional": []
+        }
+      }
+    },
+    {
+      "path": ".github/workflows/schema-validator.yml",
+      "jobs": [
+        "structured-data-testing-tool"
+      ],
+      "steps": {
+        "structured-data-testing-tool": {
+          "required": [
+            "Install structured-data-testing-tool",
+            "Pick 8 representative articles",
+            "Run sdtt against each sample"
+          ],
+          "conditional": []
+        }
+      }
+    },
+    {
+      "path": ".github/workflows/vale.yml",
+      "jobs": [
+        "Vale prose lint"
+      ],
+      "steps": {
+        "Vale prose lint": {
+          "required": [
+            "Run Vale"
+          ],
+          "conditional": []
+        }
+      }
+    }
+  ]
+}

@@ -299,12 +299,19 @@ def main() -> int:
         errors.append(".github/workflows/scheduled-publish.yml: missing scheduled publish workflow")
     else:
         scheduled = scheduled_path.read_text(encoding="utf-8", errors="replace")
-        push_main = "subprocess.check_call(['git', 'push', 'origin', 'main'])"
-        delete_branch = "subprocess.check_call(['git', 'push', 'origin', '--delete', branch])"
-        if push_main not in scheduled or delete_branch not in scheduled:
-            errors.append("scheduled-publish.yml: expected main push and draft cleanup commands")
-        elif scheduled.index(delete_branch) < scheduled.index(push_main):
-            errors.append("scheduled-publish.yml: draft branches must be deleted only after main is pushed")
+        # The scheduler prepares a reviewable artifact; model review and the
+        # exact-SHA candidate gates must precede any remote mutation.
+        import re
+        if re.search(r"['\"]git['\"]\s*,\s*['\"]push['\"]|\bgit\s+push\b", scheduled):
+            errors.append("scheduled-publish.yml: unreviewed preparation must not push or delete remote branches")
+        if "contents: read" not in scheduled or "contents: write" in scheduled:
+            errors.append("scheduled-publish.yml: preparation token must be read-only")
+        if "Claude-Opus-5-Review: pending" in scheduled:
+            errors.append("scheduled-publish.yml: preparation cannot fabricate a quota-pending review")
+        for guard in ("'git', 'bundle', 'create'", "'origin/main..HEAD'",
+                      "scheduled-candidate.bundle", "actions/upload-artifact@"):
+            if guard not in scheduled:
+                errors.append(f"scheduled-publish.yml: missing review artifact safeguard {guard}")
         if "remaining.append(item)" not in scheduled:
             errors.append("scheduled-publish.yml: failed or missing drafts should remain queued for recovery")
         if "group: scheduled-publish-main" not in scheduled:
