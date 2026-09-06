@@ -4,6 +4,62 @@ import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 import path from 'node:path';
 
+const hubContext = {window:{DN:{ARTICLES:[]}}};
+vm.runInNewContext(readFileSync(new URL('./blog/blog-hub.js', import.meta.url),'utf8'), hubContext);
+const searchCatalog = hubContext.window.DN.searchArticleCatalog;
+test('reading completion requires foreground dwell and scroll, and fires once', () => {
+  let now = 0, tick, reads = 0, events = 0, visibleBottom = 200;
+  const documentListeners = new Map(), windowListeners = new Map();
+  const article = {scrollHeight:1000, getBoundingClientRect:()=>({top:0})};
+  const lead = {parentNode:{insertBefore(){}}};
+  const doc = {
+    hidden:false,
+    getElementById:id=>id==='proseZh' ? {textContent:'閱讀內容'} : null,
+    querySelector:selector=>selector.includes('h1') ? {parentElement:{querySelector:()=>lead}} : article,
+    createElement:()=>({style:{}}),
+    addEventListener:(name,fn)=>documentListeners.set(name,fn),
+    removeEventListener:(name,fn)=>{if(documentListeners.get(name)===fn) documentListeners.delete(name);},
+  };
+  const win = {DN:{currentSlug:()=> 'article',getArticleNumber:()=>null,markRead:()=>reads++},scrollY:0,
+    get innerHeight(){return visibleBottom;},
+    addEventListener:(name,fn)=>windowListeners.set(name,fn),
+    removeEventListener:(name,fn)=>{if(windowListeners.get(name)===fn) windowListeners.delete(name);}};
+  vm.runInNewContext(readFileSync(new URL('./blog/blog-article-reading.js',import.meta.url),'utf8'), {
+    window:win,document:doc,performance:{now:()=>now},gtag:()=>events++,
+    setInterval:fn=>{tick=fn;return 1;},clearInterval(){},requestAnimationFrame:fn=>fn(),
+  });
+  win.DN.addReadingMeta();
+  now=10000; doc.hidden=true; documentListeners.get('visibilitychange')();
+  now=100000; tick(); assert.equal(reads,0);
+  doc.hidden=false; documentListeners.get('visibilitychange')();
+  now=119000; visibleBottom=800; tick(); assert.equal(reads,0);
+  now=120000; visibleBottom=200; tick(); assert.equal(reads,0);
+  visibleBottom=800; tick(); assert.equal(reads,1);
+  now=150000; tick(); assert.equal(reads,1); assert.equal(events,1);
+  assert.equal(windowListeners.has('scroll'),false);
+  assert.equal(documentListeners.has('visibilitychange'),false);
+});
+const searchFixtures = [
+  {slug:'dupilumab-long-term-maintenance',title:'杜避炎要打多久？停藥、減量與維持治療',tag:'異位性皮膚炎'},
+  {slug:'topical-acids-patient',title:'A酸、A醇、杜鵑花酸怎麼選？',tag:'酸類'},
+  {slug:'perioral-dermatitis-guide',title:'嘴角紅疹是痘痘還是濕疹？',tag:'口周皮膚炎'},
+  {slug:'draft',title:'杜避炎 打多久',unpublished:true},
+];
+test('patient search accepts whitespace, multiple words and full-width characters', () => {
+  for (const [query, slug] of [['杜避炎 打多久','dupilumab-long-term-maintenance'], ['Ａ　醇','topical-acids-patient'], ['嘴角 紅疹','perioral-dermatitis-guide']]) {
+    assert.equal(searchCatalog(searchFixtures,query,{})[0]?.slug, slug);
+  }
+  assert.equal(searchCatalog(searchFixtures,'沒有符合的問題',{}).length,0);
+  assert.equal(searchCatalog(searchFixtures,'   ',{}).length,3);
+});
+test('patient search ranks title matches before descriptions and keeps drafts private', () => {
+  const descriptions={'topical-acids-patient':{desc:'杜避炎 打多久'}};
+  const results=searchCatalog(searchFixtures,'杜避炎 打多久',descriptions);
+  assert.equal(results[0].slug,'dupilumab-long-term-maintenance');
+  assert.equal(results[1].slug,'topical-acids-patient');
+  assert.equal(results.some(a=>a.slug==='draft'),false);
+});
+
 test('optional font CSS applies on load and when already cached', () => {
   const listeners = new Map();
   const links = [false, true].map(cached => ({media:'print', sheet:cached ? {} : null,

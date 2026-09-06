@@ -17,6 +17,7 @@ import sys
 import html as html_lib
 from html.parser import HTMLParser
 from pathlib import Path
+from _html_scan import attributes
 
 # CODE_REVIEW — Windows cp950 console crashes on print() with CJK
 # unless stdout is reconfigured to UTF-8. Guard with hasattr because
@@ -337,6 +338,10 @@ def prefer_static_english_blocks(src: str) -> str:
     src = re.sub(r'(<div\s+class="ad-slot"[^>]*>)廣告位 · AdSense(</div>)', r'\1Ad slot · AdSense\2', src)
     src = src.replace('aria-label="主導覽"', 'aria-label="Main navigation"')
     src = src.replace('aria-label="搜尋"', 'aria-label="Search"')
+    src = src.replace('aria-label="搜尋症狀、疾病或藥名"', 'aria-label="Search symptoms, conditions or medicines"')
+    src = src.replace('aria-label="依問題找文章"', 'aria-label="Browse by question"')
+    src = src.replace('aria-label="比較表格，可左右捲動"', 'aria-label="Comparison table; scroll horizontally"')
+    src = src.replace('placeholder="例如：杜避炎 打多久"', 'placeholder="For example: dupilumab duration"')
     src = src.replace('title="搜尋文章 (Cmd/Ctrl + K)"', 'title="Search articles (Cmd/Ctrl + K)"')
     src = src.replace('aria-label="贊助本站"', 'aria-label="Support this site"')
     src = src.replace('title="街口轉帳支持作者"', 'title="Support this site"')
@@ -775,8 +780,13 @@ def replace_hreflang_cluster(src: str, cluster: str | None) -> str:
 
 def extract_faqs(src: str) -> list[dict[str, object]]:
     faqs = []
-    for m in re.finditer(r'<details\b[^>]*>([\s\S]*?)</details>', src, re.I):
-        body = m.group(1)
+    for m in re.finditer(r'(<details\b[^>]*>)([\s\S]*?)</details>', src, re.I):
+        attrs = attributes(m.group(1))
+        # Reading controls and article background are disclosure UI, not FAQ.
+        if ('dn-article-details' in attrs.get('class', '').split() or
+                attrs.get('id') in {'dn-reading-settings', 'dn-article-details'}):
+            continue
+        body = m.group(2)
         sm = re.search(r'<summary\b[^>]*>([\s\S]*?)</summary>', body, re.I)
         if not sm:
             continue

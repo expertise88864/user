@@ -595,7 +595,9 @@
       svg.style.cssText = 'display:block;width:100%;height:auto';
       svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
     }
-    h1.parentNode.insertBefore(fig, h1.nextSibling);
+    var secondaryMeta = document.getElementById('dn-secondary-meta');
+    if (secondaryMeta) secondaryMeta.appendChild(fig);
+    else h1.parentNode.insertBefore(fig, h1.nextSibling);
   };
 
   DN.enhanceArticleImages = function () {

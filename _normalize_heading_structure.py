@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
+from _html_scan import iter_tags, tag_name, attributes, blank_script_style, mask_inert_regions
 
 # CODE_REVIEW TD-53 — no forced newline on write. This repo runs
 # core.autocrlf=true with no .gitattributes, so every other worktree file is
@@ -64,6 +65,16 @@ def with_added_class(attrs: str, class_name: str) -> str:
 
 
 def normalize_content_headings(html: str) -> str:
+    tags = list(iter_tags(mask_inert_regions(blank_script_style(html))))
+    if any(tag_name(tag) == 'article' and not tag.startswith('</') for _, tag in tags):
+        for offset, tag in tags:
+            if tag_name(tag) != 'h1' or tag.startswith('</'):
+                continue
+            if 'dn-article-title' not in attributes(tag).get('class', '').split():
+                attrs = tag[len('<h1'):-1]
+                replacement = '<h1' + with_added_class(attrs, 'dn-article-title') + '>'
+                html = html[:offset] + replacement + html[offset + len(tag):]
+            break
     replacements = {
         ".infographic h4{": ".infographic .infographic-title{",
         ".toc h4{": ".toc .toc-title{",

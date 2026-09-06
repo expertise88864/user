@@ -10,11 +10,43 @@ import _normalize_tools_schema as tools_schema
 import _check_en_internal_links as en_links
 import _check_supply_chain as supply
 import _normalize_mentions as mentions
-from _normalize_css_links import normalize_font_loading
+from _normalize_css_links import normalize_font_loading, normalize_file as normalize_css_file
 from _gen_search_index import extract as search_extract
+from _normalize_heading_structure import normalize_content_headings
+from _gen_en_pages import extract_faqs
 
 
 class FragmentTests(unittest.TestCase):
+    def test_english_faq_ignores_reading_disclosures_but_keeps_real_questions(self):
+        source = '''<details class="dn-article-details"><summary>Article background</summary>
+            <p>Background, cover and reading information.</p></details>
+            <details id='dn-reading-settings'><summary>Reading settings</summary>
+            <p>Choose a comfortable text size.</p></details>
+            <details class="faq"><summary>Where can I find references?</summary>
+            <p>References are listed at the end of this article.</p></details>'''
+        faqs = extract_faqs(source)
+        self.assertEqual(len(faqs), 1)
+        self.assertEqual(faqs[0]['name'], 'Where can I find references?')
+        self.assertEqual(faqs[0]['acceptedAnswer']['text'],
+                         'References are listed at the end of this article.')
+
+    def test_article_missing_shared_stylesheet_is_repaired_once(self):
+        with tempfile.TemporaryDirectory() as directory:
+            p = Path(directory) / 'article.html'
+            p.write_text('<head></head><body><h1>Title</h1><article>Body</article></body>', encoding='utf-8')
+            self.assertTrue(normalize_css_file(str(p)))
+            result = p.read_text(encoding='utf-8')
+            self.assertEqual(result.count('id="dn-below-fold-css"'), 1)
+            self.assertFalse(normalize_css_file(str(p)))
+
+    def test_article_title_has_stable_shared_style(self):
+        source = '<main><h1 class="text-[28px]">Title</h1><article><p>Body</p></article></main>'
+        result = normalize_content_headings(source)
+        self.assertIn('text-[28px] dn-article-title', result)
+        self.assertEqual(normalize_content_headings(result), result)
+        non_article = '<h1>Home</h1><script>const example = "<article>";</script>'
+        self.assertEqual(normalize_content_headings(non_article), non_article)
+
     def test_search_extraction_recovers_after_hidden_void_elements(self):
         source = ('<head><noscript><link rel="stylesheet" href="/fonts.css"></noscript></head>'
                   '<body><h1>Visible title</h1><div hidden><img src="hidden.png"><p>Hidden text</p></div>'

@@ -11,7 +11,7 @@ from _html_scan import iter_tags, tag_name, attributes, blank_script_style, mask
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-ASSET_VERSION = "202609061330"
+ASSET_VERSION = "202609061500"
 
 
 def normalize_font_loading(src: str) -> str:
@@ -95,6 +95,14 @@ def normalize_file(path: str) -> bool:
     )
     next_src = PRELOAD_GOOGLE_FONTS_RE.sub("", next_src)
     next_src = normalize_font_loading(next_src)
+    tags = list(iter_tags(mask_inert_regions(blank_script_style(next_src))))
+    is_article = any(tag_name(tag) == 'article' and not tag.startswith('</') for _, tag in tags)
+    has_shared_css = any(tag_name(tag) == 'link' and
+                         attributes(tag).get('href', '').split('?')[0] == '/assets/dn-below-fold.css'
+                         for _, tag in tags)
+    if is_article and not has_shared_css:
+        next_src = next_src.replace('</head>',
+            f'<link rel="stylesheet" href="/assets/dn-below-fold.css?v={ASSET_VERSION}" id="dn-below-fold-css"></head>', 1)
     next_src = PRELOAD_BLOG_SHARED_RE.sub("", next_src)
     next_src = BLOG_SHARED_SRC_RE.sub(rf"\1?v={ASSET_VERSION}", next_src)
     next_src = SHARED_CSS_SRC_RE.sub(rf"\1?v={ASSET_VERSION}", next_src)

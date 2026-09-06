@@ -3,6 +3,28 @@
   'use strict';
   var DN = window.DN = window.DN || {};
 
+  // Keep query preparation and scoring independent of the DOM. All matching
+  // uses the catalog plus its generated descriptions, not a second keyword list.
+  DN.normalizeSearchText = function (value) {
+    return String(value || '').normalize('NFKC').toLowerCase().trim();
+  };
+  DN.searchArticleCatalog = function (articles, query, descriptions) {
+    var normalized = DN.normalizeSearchText(query).slice(0, 120);
+    var terms = normalized.split(/[\s,，、;；]+/).filter(Boolean);
+    var compact = normalized.replace(/\s+/g, '');
+    if (!terms.length) return articles.filter(function (a) { return !a.unpublished; });
+    return articles.filter(function (a) { return !a.unpublished; }).map(function (a, i) {
+      var title = DN.normalizeSearchText(a.title + ' ' + (a.title_en || ''));
+      var desc = (descriptions || {})[a.slug] || {};
+      var text = DN.normalizeSearchText([title, a.tag, a.tag_en, a.slug, desc.desc, desc.desc_en].filter(Boolean).join(' '));
+      var tight = text.replace(/\s+/g, '');
+      var match = terms.every(function (term) { return tight.includes(term); });
+      return {article:a, index:i, score:match ? (title.replace(/\s+/g, '').includes(compact) ? 3 : terms.every(function (term) { return title.includes(term); }) ? 2 : 1) : 0};
+    }).filter(function (entry) { return entry.score; }).sort(function (a, b) {
+      return b.score - a.score || a.index - b.index;
+    }).map(function (entry) { return entry.article; });
+  };
+
   // Tag the newest articles with a yellow "NEW" pulse badge on any card list.
   // Moved here 2026-05-16 from blog-shared.js — only useful where article cards
   // are rendered, so it does not need to run as part of the first-paint runtime.
@@ -323,9 +345,10 @@
     hub.innerHTML =
       '<div class="dn-hub-title"><span data-zh="快速查找皮膚科主題" data-en="Quick find by topic">快速查找皮膚科主題</span></div>' +
       '<div class="dn-search-row">' +
-        '<input id="dn-search-input" type="search" placeholder="搜尋文章標題或關鍵字..." aria-label="搜尋文章" />' +
-        '<div id="dn-search-status"></div>' +
+        '<input id="dn-search-input" type="search" maxlength="120" placeholder="搜尋症狀、疾病或藥名..." aria-label="搜尋文章" aria-describedby="dn-search-status" />' +
+        '<div id="dn-search-status" role="status" aria-live="polite"></div>' +
       '</div>' +
+      '<p id="dn-search-help" hidden><a href="' + (document.documentElement.lang.startsWith('en') ? '/en' : '') + '/blog/topics" data-zh="試試較短的詞，或依主題找文章 →" data-en="Try fewer words, or browse by topic →">試試較短的詞，或依主題找文章 →</a></p>' +
       '<div class="dn-tag-chips-group" id="dn-tag-chips"></div>';
 
     var tagsDiv = document.getElementById('dn-tag-chips');
@@ -419,6 +442,8 @@
     var showingAll = (mode === 'full');
     var showMoreBtn = null;
     var allCards = Array.prototype.slice.call(document.querySelectorAll('.article-list-item'));
+    var searchTimer = null;
+    var lastTrackedQuery = '';
 
     function setActive(tag) {
       var chips = tagsDiv.querySelectorAll('.dn-tag-chip');
@@ -429,6 +454,20 @@
     function setStatus(t) { document.getElementById('dn-search-status').textContent = t; }
 
     function showBySlugs(slugs) {
+      // Keep visual, keyboard and screen-reader order identical. Restore the
+      // original catalog order when a topic filter replaces a ranked search.
+      var order = slugs || [];
+      var parents = new Set(allCards.map(function (card) { return card.parentNode; }));
+      parents.forEach(function (parent) {
+        allCards.filter(function (card) { return card.parentNode === parent; }).sort(function (a, b) {
+          function rank(card) {
+            var match = (card.getAttribute('href') || '').match(/\/blog\/([a-z0-9-]+)/);
+            var index = match ? order.indexOf(match[1]) : -1;
+            return slugs && index !== -1 ? index : order.length + allCards.indexOf(card);
+          }
+          return rank(a) - rank(b);
+        }).forEach(function (card) { parent.appendChild(card); });
+      });
       var shown = 0;
       for (var i = 0; i < allCards.length; i++) {
         var href = allCards[i].getAttribute('href') || '';
@@ -442,12 +481,15 @@
     }
 
     function applyFilter(tag) {
+      clearTimeout(searchTimer);
+      document.getElementById('dn-search-help').hidden = true;
       setActive(tag);
       var inp = document.getElementById('dn-search-input');
       if (tag !== '__search__') inp.value = '';
 
       if (tag === '__all__') {
         if (mode === 'homepage' && !showingAll) {
+          showBySlugs(null);
           // Initial homepage paint only: show first N curated cards in
           // DOM order. EXPLICIT 全部主題 click sets showingAll=true (see
           // chip-click handler) → falls through to the else branch.
@@ -489,22 +531,40 @@
       }
     }
 
-    document.getElementById('dn-search-input').addEventListener('input', function (e) {
-      var q = e.target.value.trim().toLowerCase();
+    function search(query) {
+      var q = DN.normalizeSearchText(query).slice(0, 120);
+      clearTimeout(searchTimer);
       if (!q) { applyFilter('__all__'); return; }
       setActive('__search__');
-      var matched = articles.filter(function (a) {
-        return a.title.toLowerCase().indexOf(q) !== -1 ||
-               (a.tag || '').toLowerCase().indexOf(q) !== -1 ||
-               (a.tag_en || '').toLowerCase().indexOf(q) !== -1 ||
-               a.slug.toLowerCase().indexOf(q) !== -1;
-      }).map(function (a) { return a.slug; });
+      var matched = DN.searchArticleCatalog(articles, q, DN.ARTICLES_DESC).map(function (a) { return a.slug; });
       var shown = showBySlugs(matched);
-      setStatus(shown > 0 ? '搜尋「' + q + '」結果' : '「' + q + '」沒有結果');
+      setStatus(document.documentElement.lang.startsWith('en') ? shown + ' results' : '找到 ' + shown + ' 篇文章');
+      document.getElementById('dn-search-help').hidden = shown > 0;
       if (showMoreBtn) showMoreBtn.style.display = 'none';
-      if (typeof gtag === 'function') {
-        try { gtag('event', 'site_search', { search_term: q, results_count: shown }); } catch (err) {}
-      }
+      // Record one settled query, without sending free-form health information.
+      searchTimer = setTimeout(function () {
+        if (q === lastTrackedQuery || typeof gtag !== 'function') return;
+        lastTrackedQuery = q;
+        try { gtag('event', 'site_search', { results_count: shown, search_surface: 'article_hub' }); } catch (err) {}
+      }, 700);
+    }
+    var searchInput = document.getElementById('dn-search-input');
+    if (document.documentElement.lang.startsWith('en')) {
+      searchInput.placeholder = 'Search symptoms, conditions or medicines…';
+      searchInput.setAttribute('aria-label', 'Search articles');
+    }
+    searchInput.addEventListener('input', function (e) {
+      if (!e.isComposing) search(e.target.value);
+    });
+    searchInput.addEventListener('compositionstart', function () { clearTimeout(searchTimer); });
+    searchInput.addEventListener('compositionend', function () { search(searchInput.value); });
+    var homeSearch = document.getElementById('dn-home-search');
+    if (homeSearch) homeSearch.addEventListener('submit', function (e) {
+      e.preventDefault();
+      searchInput.value = homeSearch.querySelector('input').value;
+      search(searchInput.value);
+      hub.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'});
+      searchInput.focus({preventScroll:true});
     });
 
     if (mode === 'homepage') {
@@ -532,6 +592,7 @@
     //       (newest 5 were written after this listing was last hand-edited)
     if (mode === 'full') {
       try { sortAndCompleteFullList(); } catch (e) { /* ignore */ }
+      allCards = Array.prototype.slice.call(document.querySelectorAll('.article-list-item'));
     }
 
     applyFilter('__all__');

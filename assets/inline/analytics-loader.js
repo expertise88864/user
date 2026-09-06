@@ -76,7 +76,9 @@ function load() {
       if (!a) return;
       var href = a.getAttribute("href") || "";
       if (/^\/(en\/)?blog\/[a-z0-9-]+/.test(href)) {
-        gtag("event", "select_content", { content_type: "article", item_id: href });
+        var area = a.closest('#article-quick-links, #dn-related-static, #dn-related, .dn-home-topics, .article-list, article');
+        var surface = area ? (area.id || (area.matches('.dn-home-topics') ? 'home_topics' : area.matches('.article-list') ? 'article_list' : 'article_body')) : 'navigation';
+        gtag("event", "select_content", { content_type: "article", item_id: href, navigation_area: surface });
       }
     }, { capture: true, passive: true });
     // Search intent — Pagefind opens a JS modal EM cannot see.

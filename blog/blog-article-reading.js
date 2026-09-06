@@ -20,7 +20,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202609061330';
+          s.src = '/blog/blog-diagrams.min.js?v=202609061500';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -136,7 +136,9 @@
         '<span data-zh="最後審閱 ' + reviewedDate + '" data-en="Last reviewed · ' + reviewedDate + '">最後審閱 ' + reviewedDate + '</span>' +
       '</span>' +
       '<a href="/about" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:9999px;background:#fff;border:1px solid var(--border);color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="陳翊嘉醫師 →" data-en="Dr. Chen Yi-Jia →">陳翊嘉醫師 →</a>';
-    target.parentNode.insertBefore(bar, target.nextSibling);
+    const secondaryMeta = document.getElementById('dn-secondary-meta');
+    if (secondaryMeta) secondaryMeta.appendChild(bar);
+    else target.parentNode.insertBefore(bar, target.nextSibling);
 
     // Mark this article as read — but ONLY when the reader has truly engaged.
     // Threshold: scrolled past ≥ 70% of article body AND spent ≥ 30 seconds on page.
@@ -144,13 +146,23 @@
     if (slug) {
       var article = document.querySelector('article.max-w-3xl') || document.querySelector('article');
       if (!article) return;
-      var pageOpenTime = Date.now();
+      var activeMs = 0;
+      var lastTick = performance.now();
+      var wasVisible = !document.hidden;
       var marked = false;
       var THRESHOLD_PCT = 0.70;   // must scroll past 70% of article
       var MIN_DWELL_MS = 30000;   // minimum 30 seconds on page
+      function updateActiveTime() {
+        var now = performance.now();
+        if (wasVisible) activeMs += now - lastTick;
+        lastTick = now;
+        wasVisible = !document.hidden;
+      }
+      document.addEventListener('visibilitychange', updateActiveTime);
       function checkProgress() {
         if (marked) return;
-        if (Date.now() - pageOpenTime < MIN_DWELL_MS) return;
+        updateActiveTime();
+        if (document.hidden || activeMs < MIN_DWELL_MS) return;
         var rect = article.getBoundingClientRect();
         var articleTop = rect.top + window.scrollY;
         var articleHeight = article.scrollHeight;
@@ -159,7 +171,9 @@
         if (pct >= THRESHOLD_PCT) {
           marked = true;
           DN.markRead(slug);
-          window.removeEventListener('scroll', checkProgress);
+          window.removeEventListener('scroll', onScroll);
+          document.removeEventListener('visibilitychange', updateActiveTime);
+          clearInterval(iv);
           if (typeof gtag === 'function') {
             try { gtag('event', 'article_read_threshold', { slug: slug }); } catch (e) {}
           }
@@ -167,12 +181,13 @@
       }
       // Throttle scroll listener
       var ticking = false;
-      window.addEventListener('scroll', function () {
+      function onScroll() {
         if (!ticking) {
           requestAnimationFrame(function () { checkProgress(); ticking = false; });
           ticking = true;
         }
-      }, { passive: true });
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
       // Also check on interval (handles short articles where 70% is below fold)
       var iv = setInterval(function () {
         checkProgress();
@@ -196,7 +211,7 @@
 
     var details = document.createElement('details');
     details.id = 'dn-inline-toc';
-    details.open = true;
+    details.open = !window.matchMedia('(max-width: 767px)').matches;
     details.style.cssText = 'margin:18px 0 24px;background:linear-gradient(135deg,#f5fbfa 0%,#ecfeff 100%);border:1px solid #a5f3fc;border-radius:14px;padding:0;overflow:hidden';
 
     var summary = document.createElement('summary');
@@ -210,8 +225,19 @@
         '<span data-zh="本篇大綱" data-en="In this article">本篇大綱</span>' +
         '<span style="font-size:11px;font-weight:600;color:#4d6358;opacity:.7">· ' + h2s.length + ' 段</span>' +
       '</span>' +
-      '<span style="font-size:11px;color:#4d6358;opacity:.7" data-zh="點擊收合" data-en="Click to collapse">點擊收合</span>';
+      '<span data-toc-state style="font-size:11px;color:#4d6358">' +
+      (details.open ? '收合' : '展開') + '</span>';
     details.appendChild(summary);
+    function updateTOCState() {
+      var state = summary.querySelector('[data-toc-state]');
+      var zh = details.open ? '收合' : '展開';
+      var en = details.open ? 'Collapse' : 'Expand';
+      state.setAttribute('data-zh', zh);
+      state.setAttribute('data-en', en);
+      state.textContent = document.documentElement.lang.startsWith('en') ? en : zh;
+    }
+    details.addEventListener('toggle', updateTOCState);
+    updateTOCState();
 
     var ol = document.createElement('ol');
     ol.style.cssText = 'list-style:none;counter-reset:toc;padding:4px 18px 14px;margin:0;display:flex;flex-direction:column;gap:2px';
@@ -536,6 +562,7 @@
     try { savedSize = localStorage.getItem('dn-font-size') || 'M'; } catch (e) {}
     // H8 — added XL (大型字體模式) for elderly / low-vision users.
     var sizeMap = { 'S': '15px', 'M': '16.5px', 'L': '18.5px', 'XL': '21px' };
+    if (!Object.prototype.hasOwnProperty.call(sizeMap, savedSize)) savedSize = 'M';
     var lineHeightMap = { 'S': '1.7', 'M': '1.85', 'L': '1.95', 'XL': '2.05' };
     function applyFontSize(s) {
       var styleEl = document.getElementById('dn-font-size-style');
@@ -560,7 +587,8 @@
     var wrap = document.createElement('div');
     wrap.id = 'dn-font-sizer';
     wrap.setAttribute('role', 'group');
-    wrap.setAttribute('aria-label', '字型大小調整');
+    var english = document.documentElement.lang.startsWith('en');
+    wrap.setAttribute('aria-label', english ? 'Text size' : '字型大小調整');
     // Sits at the bottom-right edge; back-to-top stacks above (bottom:182px).
     // On mobile (<768px) the sticky-CTA bar (~64px) sits at bottom:0 — push
     // font-sizer up to bottom:88px to avoid overlapping the 「關於我」 button.
@@ -582,23 +610,33 @@
         'color:' + (s === savedSize ? '#fff' : '#4d6358') + ';';
       var labels = { 'S': { px: '11px', txt: '小' }, 'M': { px: '13px', txt: '中' }, 'L': { px: '15px', txt: '大' }, 'XL': { px: '17px', txt: '特大' } };
       b.style.fontSize = labels[s].px;
-      b.textContent = labels[s].txt;
-      b.setAttribute('aria-label', '字型大小 ' + s);
+      b.setAttribute('data-zh', labels[s].txt);
+      b.setAttribute('data-en', s);
+      b.textContent = english ? s : labels[s].txt;
+      b.setAttribute('aria-label', (english ? 'Text size ' : '字型大小 ') + s);
+      b.setAttribute('aria-pressed', String(s === savedSize));
       b.title = '字型大小 ' + labels[s].txt + (s === 'XL' ? '(高齡友善)' : '');
       b.addEventListener('click', function () {
         applyFontSize(s);
         wrap.querySelectorAll('button').forEach(function (x) {
           x.style.background = 'transparent';
           x.style.color = '#4d6358';
+          x.setAttribute('aria-pressed', 'false');
         });
         b.style.background = 'linear-gradient(180deg,#a4b5a8,#4d6358)';
         b.style.color = '#fff';
+        b.setAttribute('aria-pressed', 'true');
         if (typeof gtag === 'function') {
           try { gtag('event', 'font_size_change', { size: s, page_path: location.pathname }); } catch (e) {}
         }
       });
       wrap.appendChild(b);
     });
+    var settings = document.getElementById('dn-reading-settings');
+    if (settings) {
+      settings.appendChild(wrap);
+      return;
+    }
     document.body.appendChild(wrap);
 
     // Show after scroll > 400 (similar trigger to back-to-top)
