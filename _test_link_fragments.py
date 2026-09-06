@@ -13,7 +13,7 @@ import _normalize_mentions as mentions
 from _normalize_css_links import normalize_font_loading, normalize_file as normalize_css_file
 from _gen_search_index import extract as search_extract
 from _normalize_heading_structure import normalize_content_headings
-from _gen_en_pages import extract_faqs
+from _gen_en_pages import extract_faqs, transform as transform_english
 from _normalize_reading_shell import normalize as reading_shell, BLOCK as reading_shell_block
 
 
@@ -48,6 +48,20 @@ class FragmentTests(unittest.TestCase):
         english = reading_shell('<article>' + en + '</article>', True)
         self.assertIn('href="#en0"', english)
         self.assertEqual(reading_shell(english, True), english)
+
+    def test_standalone_english_transform_rebuilds_copied_navigation(self):
+        # These published templates use separately authored EN prose with
+        # different IDs; standalone mirror generation must not retain ZH TOCs.
+        for slug in ('psoriasis-systemic', 'atopic-dermatitis-topical', 'epidermoid-cyst'):
+            with self.subTest(slug=slug):
+                source = (Path(__file__).parent / 'blog' / (slug + '.html')).read_text(encoding='utf-8')
+                result = transform_english(source, '/blog/' + slug, '/en/blog/' + slug, 'blog/' + slug + '.html')
+                parser = links.LinkParser()
+                parser.feed(result)
+                ids = {value for _, value in links.ID_RE.findall(result)}
+                for href in parser.links:
+                    if href.startswith('#') and len(href) > 1:
+                        self.assertIn(href[1:], ids)
 
     def test_english_faq_ignores_reading_disclosures_but_keeps_real_questions(self):
         source = '''<details class="dn-article-details"><summary>Article background</summary>

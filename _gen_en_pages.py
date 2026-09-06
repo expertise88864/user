@@ -949,6 +949,11 @@ def transform(src: str, zh_canonical_path: str, en_canonical_path: str, source_r
     s = translate_aria_labels(s)
     s = translate_hub_jsonld(s)
     s = prefer_static_english_blocks(s)
+    if en_canonical_path.startswith('/en/blog/'):
+        # Rebuild copied ZH navigation against the selected EN prose before
+        # language-quality checks and before standalone mirror output is used.
+        from _normalize_reading_shell import normalize as normalize_reading_shell
+        s = normalize_reading_shell(s, english=True)
     if source_rel == 'privacy.html':
         s = replace_privacy_body(s)
     en_title, en_desc = derive_meta(s, EN_OG_OVERRIDES.get(source_rel or ''))
