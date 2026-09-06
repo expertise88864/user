@@ -62,14 +62,21 @@ test('patient search ranks title matches before descriptions and keeps drafts pr
 
 test('optional font CSS applies on load and when already cached', () => {
   const listeners = new Map();
+  const frames = [];
   const links = [false, true].map(cached => ({media:'print', sheet:cached ? {} : null,
     addEventListener(name, fn) { listeners.set(this, {name, fn}); }}));
   vm.runInNewContext(readFileSync(new URL('./assets/inline/font-loader.js', import.meta.url), 'utf8'),
-    {document:{querySelectorAll(){return links;}}});
+    {document:{querySelectorAll(){return links;}},requestAnimationFrame:fn=>frames.push(fn)});
   assert.equal(links[0].media, 'print');
+  assert.equal(links[1].media, 'print');
+  frames.shift()();
+  assert.equal(links[1].media, 'print');
+  frames.shift()();
   assert.equal(links[1].media, 'all');
   assert.equal(listeners.get(links[0]).name, 'load');
   listeners.get(links[0]).fn();
+  assert.equal(links[0].media, 'print');
+  frames.shift()(); frames.shift()();
   assert.equal(links[0].media, 'all');
 });
 
@@ -98,10 +105,10 @@ test('optional precache failures do not prevent installation with an offline fal
   await installWorker(false);
 });
 
-function runtime(cookie) {
+function runtime(cookie, pathname = '/blog/acne-myths', language = 'zh-TW') {
   const context = {
-    window: {}, document: { cookie }, location: { pathname: '/blog/acne-myths' },
-    navigator: { language: 'zh-TW' }, localStorage: { getItem: () => null },
+    window: {}, document: { cookie }, location: { pathname },
+    navigator: { language }, localStorage: { getItem: () => 'en' },
     console,
   };
   vm.runInNewContext(readFileSync(new URL('./blog/blog-shared.js', import.meta.url), 'utf8'), context);
@@ -116,9 +123,18 @@ test('malformed language cookie does not abort language detection', () => {
 
 test('cookie reader preserves encoded values and tolerates delimiter spacing', () => {
   const dn = runtime('other=1;dn_lang=en; value=a%3Db');
-  assert.equal(dn.detectLang(), 'en');
+  assert.equal(dn.detectLang(), 'zh');
   assert.equal(dn.cookieGet('value'), 'a=b');
   assert.equal(dn.cookieGet('missing'), null);
+});
+
+test('URL language stays stable across browser language and saved preferences', () => {
+  for (const path of ['/', '/tools', '/blog/acne-myths', '/enough']) {
+    assert.equal(runtime('dn_lang=en', path, 'en-US').detectLang(), 'zh');
+  }
+  for (const path of ['/en', '/en/', '/en/tools', '/en/blog/acne-myths']) {
+    assert.equal(runtime('dn_lang=zh', path, 'zh-TW').detectLang(), 'en');
+  }
 });
 
 // Exercise the exact server path resolver on both platforms, without opening

@@ -180,6 +180,7 @@
       "steps": {
         "Vale prose lint": {
           "required": [
+            "Install pinned Vale",
             "Run Vale"
           ],
           "conditional": []

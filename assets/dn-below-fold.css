@@ -81,3 +81,6 @@ h1.dn-article-title{font-size:clamp(28px,4vw,40px);line-height:1.3;letter-spacin
 
 /* First-paint key facts: delayed JS styling shifted the article header. */
 .key-fact{ background:#fafaf6; border:1px solid var(--border,#dcd5c8); border-left:4px solid var(--teal,#7a9285); border-radius:12px; padding:14px 18px 16px; margin:18px 0 22px; box-shadow:0 1px 2px rgba(15,23,42,.04) }.key-fact .lbl{ font-family:Inter,ui-monospace,monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:var(--teal-deep,#4d6358); margin:0 0 8px; display:flex; align-items:center; gap:6px }.key-fact .lbl::before{ content:"📌"; font-family:"Apple Color Emoji","Segoe UI Emoji",sans-serif; font-size:14px; opacity:.85 }.key-fact p, .key-fact div:not(.lbl){ margin:0; font-size:14px; line-height:1.85; color:var(--ink-2,#5e574e) }.key-fact .cite{ color:var(--teal-deep,#4d6358); font-style:italic; font-size:12px }
+
+/* Keep long scale guides responsive while retaining search and anchor access. */
+@media screen{.tool-block{content-visibility:auto;contain-intrinsic-size:auto 1800px}}

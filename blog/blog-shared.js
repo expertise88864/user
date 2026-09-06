@@ -1,7 +1,7 @@
 /* ============================================================
  * ChenDermatologist - shared runtime (zh / en only)
  *   - simple 2-button language toggle (the existing #langToggle in HTML)
- *   - language detection (cookie > localStorage > navigator > zh)
+ *   - language selection from the rendered URL
  *   - reading progress bar
  *   - scroll-to-top button
  *   - mobile hamburger drawer
@@ -36,24 +36,12 @@
 
   // URL is the source of truth for which language the user is currently
   // viewing. /en/* paths serve pre-translated mirrors; everything else
-  // is ZH. Cookie/localStorage are only consulted when there's no URL
-  // hint (e.g., first-time visitor on the homepage redirected to /).
+  // is ZH. Saved preferences and browser language must not silently replace
+  // already-painted ZH content with a partial EN translation. The language
+  // toggle navigates to the complete pre-rendered mirror.
   DN.detectLang = function () {
     if (location.pathname.startsWith('/en/') ||
         location.pathname === '/en') return 'en';
-    const fromCookie = DN.cookieGet('dn_lang');
-    if (fromCookie && DN.LANG_KEY[fromCookie]) return fromCookie;
-    // CODE_REVIEW Phase 5 — guard localStorage access. Every other
-    // localStorage read/write in this file is wrapped; this one wasn't, so a
-    // browser with storage fully blocked (SecurityError on access) threw here
-    // and, because detectLang() runs first inside initBlog(), took the whole
-    // interactive layer (menu / lang toggle / search) down with it.
-    let stored = null;
-    try { stored = localStorage.getItem('dn_lang'); } catch (e) { /* storage blocked/disabled */ }
-    if (stored && DN.LANG_KEY[stored]) return stored;
-    const nav = (navigator.language || 'zh').toLowerCase();
-    if (nav.startsWith('zh')) return 'zh';
-    if (nav.startsWith('en')) return 'en';
     return 'zh';
   };
 
@@ -233,7 +221,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202609061500';
+        s.src = '/blog/blog-article-visuals.min.js?v=202609062110';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1086,7 +1074,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202609061500';
+        s.src = '/blog/blog-article-reading.min.js?v=202609062110';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1122,7 +1110,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202609061500';
+        s.src = '/blog/blog-article-footer.min.js?v=202609062110';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1152,7 +1140,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202609061500';
+        s.src = '/blog/blog-calculators.min.js?v=202609062110';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1287,7 +1275,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202609061500';
+        s.src = '/blog/blog-hub.min.js?v=202609062110';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
