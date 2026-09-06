@@ -65,6 +65,13 @@ class FragmentTests(unittest.TestCase):
         self.assertNotIn('onload=', result)
         self.assertTrue(result.endswith('<body>Text</body>'))
 
+    def test_optional_webfonts_do_not_download_cjk_shards(self):
+        source = '<head><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Noto+Sans+TC:wght@400;500&amp;family=Noto+Serif+TC:wght@600;700&amp;display=optional"></head>'
+        result = normalize_font_loading(source)
+        self.assertIn('family=Inter', result)
+        self.assertNotIn('Noto', result)
+        self.assertEqual(normalize_font_loading(result), result)
+
     def test_language_links_with_markup_in_attributes(self):
         parser = en_links.PageLinks()
         parser.feed('<a data-en="<strong>Open</strong>" href="/tools?a=1&amp;b=2">Open</a>')

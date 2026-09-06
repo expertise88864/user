@@ -7,11 +7,12 @@ from __future__ import annotations
 import os
 import re
 import html
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from _html_scan import iter_tags, tag_name, attributes, blank_script_style, mask_inert_regions
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-ASSET_VERSION = "202609062110"
+ASSET_VERSION = "202609062140"
 
 
 def normalize_font_loading(src: str) -> str:
@@ -26,6 +27,17 @@ def normalize_font_loading(src: str) -> str:
         url = html.unescape(attrs.get('href', ''))
         if not url.startswith('https://fonts.googleapis.com/css2?'):
             continue
+        # CJK unicode-range webfont shards caused dozens of downloads and
+        # repeated whole-page layout. Keep the existing system CJK fallbacks;
+        # retain the small Latin family for the site's labels and numerals.
+        parts = urlsplit(url)
+        query = [(key, value) for key, value in parse_qsl(parts.query)
+                 if not (key == 'family' and value.split(':')[0] in ('Noto Sans TC', 'Noto Serif TC'))]
+        if not any(key == 'family' for key, _ in query):
+            edits.append((offset, offset + len(tag), ''))
+            continue
+        url = urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(query), parts.fragment))
+        attrs['href'] = url
         attrs['media'] = 'print'
         attrs['data-dn-fonts'] = ''
         rendered = '<link' + ''.join(
