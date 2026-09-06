@@ -20,6 +20,7 @@ def normalize_font_loading(src: str) -> str:
     src = re.sub(r'<noscript><link\b[^>]*data-dn-fonts-fallback[^>]*></noscript>', '', src)
     src = re.sub(r'<script\b[^>]*src="/assets/inline/font-loader\.js(?:\?v=\d+)?"[^>]*></script>', '', src)
     edits = []
+    loader_added = False
     for offset, tag in iter_tags(mask_inert_regions(blank_script_style(src))):
         attrs = attributes(tag)
         if tag_name(tag) != 'link' or attrs.get('rel') != 'stylesheet':
@@ -45,12 +46,15 @@ def normalize_font_loading(src: str) -> str:
             for key, value in attrs.items()) + '>'
         rendered += ('<noscript><link rel="stylesheet" href="'
                      + html.escape(url, quote=True) + '" data-dn-fonts-fallback=""></noscript>')
+        # Keep the loader beside its stylesheet. Other generators append
+        # head entries, so placing it at </head> makes rebuild order drift.
+        if not loader_added:
+            rendered = (f'<script defer src="/assets/inline/font-loader.js?v={ASSET_VERSION}"></script>'
+                        + rendered)
+            loader_added = True
         edits.append((offset, offset + len(tag), rendered))
     for start, end, replacement in reversed(edits):
         src = src[:start] + replacement + src[end:]
-    if edits:
-        loader = f'<script defer src="/assets/inline/font-loader.js?v={ASSET_VERSION}"></script>'
-        src = src.replace('</head>', loader + '</head>', 1)
     return src
 
 PRELOAD_TW_MINI_RE = re.compile(

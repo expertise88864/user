@@ -72,6 +72,16 @@ class FragmentTests(unittest.TestCase):
         self.assertNotIn('Noto', result)
         self.assertEqual(normalize_font_loading(result), result)
 
+    def test_font_loader_stays_stable_when_other_generators_append_head_entries(self):
+        source = '<head><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter"></head>'
+        result = normalize_font_loading(source)
+        appended = result.replace('</head>', '<script defer src="/assets/web-vitals.iife.js"></script><style id="dn-nav-critical">nav{display:flex}</style></head>')
+        self.assertEqual(normalize_font_loading(appended), appended)
+
+    def test_cjk_only_stylesheet_does_not_leave_an_unused_font_loader(self):
+        source = '<head><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC"></head>'
+        self.assertEqual(normalize_font_loading(source), '<head></head>')
+
     def test_language_links_with_markup_in_attributes(self):
         parser = en_links.PageLinks()
         parser.feed('<a data-en="<strong>Open</strong>" href="/tools?a=1&amp;b=2">Open</a>')
