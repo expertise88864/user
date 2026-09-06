@@ -55,8 +55,21 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
 + 手改 `llms.txt` 的 Robots policy 段 → 三處一起改 → `_check_robots.py`(含 REQUIRED_BLOCKED 防護)。
 
 ## 發佈與 CI
-- **push main = 立即部署**(Vercel)。CI(quality.yml)跑同一套 gate,並可能回推
-  `auto-regen ... [skip actions]` commit → **每次 push 前 fetch+rebase**。
+- **push main = 立即部署**(Vercel)。每次 push 前先跑 `python _run_ci.py`：完整 build、
+  HTML validator、Lighthouse collect 與 assertion；門檻由 `.lighthouserc.json` 共用。
+  檢查失敗或缺少工具即停止。紀錄寫到系統暫存目錄，保留各項退出碼與日誌。
+- 環境：Python 3.12、Node 20、Java 21、OpenSSL；
+  `pip install html5validator==0.4.2 lxml==6.1.3`；
+  `npm install -g @lhci/cli@0.13.0 puppeteer@24.43.1`。
+  將全域 npm 模組目錄 (`npm root -g`) 設為 `NODE_PATH`，必要時以 `CHROME_PATH` 指定測試 Chrome。
+  Windows 的 Git 附帶 OpenSSL 可加入 PATH。本機 HTTPS 使用暫時憑證；只信任該次
+  憑證的公鑰，不更動系統信任或網路防護設定。
+- `deploy.ps1` 只發布已準備好的 main commit，不自動 stage、stash、rebase 或處理衝突。
+  須先完成 review／醫療內容核可，且工作目錄乾淨；build 產生差異時，先審查、提交生成物再重跑。
+  推送後執行 `python _verify_remote_ci.py <完整 SHA>`（需已登入的 GitHub CLI），
+  同一 SHA 的所有適用 GitHub 檢查全綠才能宣告交付。
+- CI 只驗證生成物一致性，不自行回推或使用 skip token。後台直接編輯造成生成物過期時，
+  必須先同步、重生與驗證，CI 不會替未驗證的版本另建發布 commit。
 - **排程發佈**:`drafts/<slug>` 分支 + `.github/scheduled-publish/queue.json`,
   scheduled-publish.yml 每 15 分鐘 merge 到期項目。
 - **IndexNow**(indexnow.yml + `_submit_indexnow.py`):deploy 後 ping Bing/Yandex 等。

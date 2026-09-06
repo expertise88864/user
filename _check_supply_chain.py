@@ -20,8 +20,36 @@ FLOATING_RE = re.compile(r"^(?:[\^~*]|latest$|>|<|>=|<=)", re.I)
 # must be reworded, and the checker excludes its own file (it necessarily
 # contains the signature).
 LATEST_SPEC_RE = re.compile(r"[\w@./-]*@latest\b")
-LINE_COMMENT_RE = re.compile(r"(?m)(?:#|//).*$")
 NPX_SCAN_SUFFIXES = (".py", ".sh", ".ps1", ".mjs", ".js", ".cjs")
+
+
+def strip_line_comments(source: str, suffix: str) -> str:
+    """Keep quoted strings, including URLs, and preserve source offsets."""
+    marker = '//' if suffix in ('.js', '.mjs', '.cjs') else '#'
+    output = list(source)
+    position, quote = 0, ''
+    while position < len(source):
+        if quote:
+            if source.startswith(quote, position):
+                position += len(quote)
+                quote = ''
+            elif source[position] == ('`' if suffix == '.ps1' else '\\'):
+                position += 2
+            else:
+                position += 1
+        elif source[position] in "\"'`":
+            char = source[position]
+            quote = char * 3 if suffix == '.py' and source.startswith(char * 3, position) else char
+            position += len(quote)
+        elif source.startswith(marker, position):
+            end = source.find('\n', position)
+            if end < 0:
+                end = len(source)
+            output[position:end] = ' ' * (end - position)
+            position = end
+        else:
+            position += 1
+    return ''.join(output)
 
 
 def load_json(path: Path) -> dict:
@@ -89,7 +117,7 @@ def main() -> int:
         except (UnicodeDecodeError, OSError):
             continue
         # Strip line comments (keeps newlines, so line numbers stay accurate).
-        scrubbed = LINE_COMMENT_RE.sub("", src)
+        scrubbed = strip_line_comments(src, path.suffix)
         for m in LATEST_SPEC_RE.finditer(scrubbed):
             line = scrubbed.count("\n", 0, m.start()) + 1
             errors.append(f"{rel}:{line}: unpinned '{m.group(0)}' — pin an exact version (build-time npx pulls ship to users)")

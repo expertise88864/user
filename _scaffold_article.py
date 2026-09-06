@@ -102,12 +102,16 @@ def scaffold(new_slug: str) -> None:
     print(f"  3. Add card to index.html (.article-list-item)")
     print(f"  4. Add entry to blog/blog-shared.js DN.ARTICLES")
     print(f"  5. Run: python _run_quality.py build (must be 45+ [OK] / 0 [FAIL])")
-    print(f"  6. git add -A && git commit -m 'feat(article): {new_slug}' && git push")
+    print('  6. Obtain physician/diff review; commit only task files; run python _run_ci.py before push')
+    print('  7. Verify the exact pushed SHA with python _verify_remote_ci.py <SHA> before delivery')
 
 
 def main() -> int:
     if len(sys.argv) != 2:
         print(__doc__)
+        return 1
+    if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', sys.argv[1]):
+        print('Invalid slug: use lowercase words separated by single hyphens')
         return 1
     scaffold(sys.argv[1])
     return 0

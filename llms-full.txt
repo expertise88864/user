@@ -10583,7 +10583,7 @@ UpToDate: Onychomycosis: Management. Accessed 2026. 「來源」
 ---
 ## 異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思
 URL: https://chendermatologist.com/blog/atopic-dermatitis-overview
-Updated: 2026-05-25
+Updated: 2026-09-06
 Section: Treatment & Therapy
 Reading time: PT32M
 Tags: 異位性皮膚炎, AD complete guide
@@ -10733,7 +10733,7 @@ DLQI 0-30、癢 NRS 0-10
 DLQI > 10 為健保生物製劑門檻；癢 NRS 為主訴指標
 DLQI 不分疾病、異位性皮膚炎特異性差
 
-本網站線上計算器：EASI · SCORAD · DLQI · POEM
+量表說明與計算器：EASI · SCORAD · DLQI · POEM
 
 五、共病系統評估 — 回診每次篩檢
 

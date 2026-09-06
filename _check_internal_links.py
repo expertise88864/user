@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 import re
+import json
+import subprocess
 import sys
 from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urldefrag, urljoin, urlsplit
+from urllib.parse import unquote, urljoin, urlsplit
 
 
 ROOT = Path(__file__).resolve().parent
@@ -58,7 +60,7 @@ def page_path(url_path: str) -> Path | None:
 
 
 def is_template_or_unsupported(raw: str) -> bool:
-    if not raw or raw.startswith(("#", "mailto:", "tel:", "javascript:", "data:", "blob:")):
+    if not raw or raw.startswith(("mailto:", "tel:", "javascript:", "data:", "blob:")):
         return True
     if raw.startswith(VERCEL_RUNTIME_PREFIXES):
         return True
@@ -72,8 +74,67 @@ def is_template_or_unsupported(raw: str) -> bool:
 def anchors_for(path: Path, cache: dict[Path, set[str]]) -> set[str]:
     if path not in cache:
         text = path.read_text(encoding="utf-8", errors="replace")
-        cache[path] = {unescape(match.group(2)) for match in ID_RE.finditer(text)}
+        class Anchors(HTMLParser):
+            def handle_starttag(self, tag, attrs):
+                found.update(value for key,value in attrs if (key == 'id' or (tag == 'a' and key == 'name')) and value)
+        found: set[str] = set()
+        Anchors(convert_charrefs=True).feed(text)
+        cache[path] = found
     return cache[path]
+
+
+def calculator_anchors() -> dict[str, str]:
+    """Model only the calculator actually auto-injected on each article.
+
+    No blanket dn-* exemption: derive IDs and the first-choice mapping from
+    the production JS. Browser coverage checks these live DOM targets too.
+    """
+    script = r"""
+const fs=require('node:fs'),vm=require('node:vm');
+const context={window:{}};
+vm.runInNewContext(fs.readFileSync(process.argv[1],'utf8'),context,{timeout:1000});
+const dn=context.window.DN, ids={};
+const shared=fs.readFileSync(process.argv[2],'utf8');
+const registry=shared.match(/var CALC_FN\s*=\s*(\{[\s\S]*?\});/);
+if(!registry) throw Error('Missing calculator dispatch registry');
+const functions=vm.runInNewContext('('+registry[1]+')',{DN:dn},{timeout:1000});
+for(const [name,fn] of Object.entries(functions)) {
+  if(typeof fn!=='function') throw Error('Missing calculator '+name);
+  const match=String(fn).match(/\bid:\s*'(dn-[a-z0-9-]+)'|\bid="(dn-[a-z0-9-]+)"/);
+  if(!match) throw Error('Missing calculator ID '+name);
+  ids[name]=match[1]||match[2];
+}
+const result={'*':ids.DLQI};
+for(const [slug,names] of Object.entries(dn.CALC_ORDER)) {
+  if(!ids[names[0]]) throw Error('Unknown primary calculator '+names[0]);
+  result[slug]=ids[names[0]];
+}
+process.stdout.write(JSON.stringify(result));
+"""
+    return json.loads(subprocess.check_output(['node','-e',script,
+        str(ROOT / 'blog/blog-calculators.js'), str(ROOT / 'blog/blog-shared.js')], text=True, encoding='utf-8'))
+
+
+def has_fragment(target: Path, fragment: str, cache: dict, calculators: dict) -> bool:
+    if fragment in anchors_for(target, cache):
+        return True
+    text = target.read_text(encoding='utf-8')
+    has_prose = re.search(r'id="proseZh"|class="[^"]*\bprose(?:\s|")', text)
+    return bool(target.parent.name == 'blog' and has_prose and 'blog-shared.min.js' in text
+                and fragment == calculators.get(target.stem, calculators.get('*')))
+
+
+def needs_zh_fragment(href: str, cache: dict, calculators: dict) -> bool:
+    """A section absent from a courtesy EN mirror must link to its real source."""
+    split = urlsplit(href)
+    if not split.fragment or split.scheme or split.netloc:
+        return False
+    zh_path = split.path[3:] if split.path.startswith('/en/') else split.path
+    zh, en = page_path(zh_path), page_path('/en' + zh_path)
+    fragment = unquote(split.fragment)
+    return bool(zh and en and zh.suffix == '.html' and en.suffix == '.html'
+                and has_fragment(zh, fragment, cache, calculators)
+                and not has_fragment(en, fragment, cache, calculators))
 
 
 # CODE_REVIEW TD-58 — anti-vacuity floor. The pass line already reported the
@@ -88,6 +149,7 @@ def main() -> int:
     files = html_files()
     pages = {page_url(path): path for path in files}
     anchor_cache: dict[Path, set[str]] = {}
+    calculators = calculator_anchors()
     resolved_links = 0
 
     for source in files:
@@ -105,7 +167,7 @@ def main() -> int:
             if split.scheme or split.netloc:
                 continue
             resolved_links += 1
-            target_path_raw, fragment = urldefrag(split.path or source_url)
+            target_path_raw, fragment = split.path or source_url, unquote(split.fragment)
             target_path_raw = "/" + target_path_raw.lstrip("/")
             if target_path_raw != "/" and target_path_raw.endswith("/"):
                 target_path_raw = target_path_raw.rstrip("/")
@@ -123,7 +185,7 @@ def main() -> int:
                 errors.append(f"{source.relative_to(ROOT).as_posix()}: broken internal link {raw!r}")
                 continue
 
-            if fragment and target_file.suffix == ".html" and fragment not in anchors_for(target_file, anchor_cache):
+            if fragment and target_file.suffix == ".html" and not has_fragment(target_file, fragment, anchor_cache, calculators):
                 errors.append(
                     f"{source.relative_to(ROOT).as_posix()}: missing anchor {raw!r} -> "
                     f"{target_file.relative_to(ROOT).as_posix()}#{fragment}"

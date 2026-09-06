@@ -4,15 +4,27 @@
 
 from __future__ import annotations
 
-import re
+from html.parser import HTMLParser
 import sys
 from pathlib import Path
+from _html_scan import blank_script_style, mask_inert_regions
 
 
 ROOT = Path(__file__).resolve().parent
 EN_ROOT = ROOT / "en"
-HREF_RE = re.compile(r'<a\b[^>]*\bhref=["\']([^"\']+)["\']', re.I)
 SKIP = {"404.html", "offline.html", "admin.html", "dashboard.html", "notes.html", "reset-sw.html"}
+
+
+class PageLinks(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.hrefs = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'a':
+            href = dict(attrs).get('href')
+            if href:
+                self.hrefs.append(href)
 
 
 def local_html_for_path(path: str) -> Path | None:
@@ -59,14 +71,19 @@ def main() -> int:
         print("[OK] English internal-link audit skipped; en/ not found")
         return 0
 
+    from _check_internal_links import calculator_anchors, needs_zh_fragment
+    calculators, anchor_cache = calculator_anchors(), {}
     for path in sorted(EN_ROOT.rglob("*.html")):
         src = path.read_text(encoding="utf-8")
         rel = path.relative_to(ROOT).as_posix()
-        for match in HREF_RE.finditer(src):
-            href = match.group(1)
+        parser = PageLinks()
+        parser.feed(mask_inert_regions(blank_script_style(src)))
+        for href in parser.hrefs:
             if not should_check(href):
                 continue
             if local_html_for_path(href) is not None and en_mirror_expected(href):
+                if needs_zh_fragment(href, anchor_cache, calculators):
+                    continue
                 errors.append(f"{rel}: local page link should stay in /en/: {href}")
 
     if errors:

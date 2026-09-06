@@ -231,12 +231,18 @@ def derive_mentions(body: str, index: list[dict], own_slug: str,
             continue
         n = count_matches(body, entry["tokens"])
         if n > 0:
-            scored.append((n, entry))
+            positions = []
+            for token, kind in entry['tokens']:
+                match = token.search(body) if kind == 'regex' else None
+                position = (match.start() if match else -1) if kind == 'regex' else body.find(token)
+                if position >= 0:
+                    positions.append(position)
+            scored.append((n, min(positions), entry))
     if not scored:
         return []
-    scored.sort(key=lambda t: -t[0])
+    scored.sort(key=lambda t: (-t[0], t[1]))
     mentions: list[dict] = []
-    for _, entry in scored[:max_mentions]:
+    for _, _, entry in scored[:max_mentions]:
         m: dict = {
             "@type": "DefinedTerm",
             "@id": entry["@id"],

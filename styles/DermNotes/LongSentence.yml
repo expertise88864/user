@@ -1,10 +1,9 @@
-extends: occurrence
+extends: existence
 message: "Sentence exceeds 50 CJK chars — for patient-ed articles, split into shorter sentences for readability. (Disable per-article in .vale.ini for clinical-depth pages.)"
 level: suggestion
 scope: sentence
 ignorecase: false
-max: 1
 # Match Chinese sentences > 50 characters (rough heuristic — Vale's
 # sentence scope splits on 。！？/.! ? automatically).
 tokens:
-  - '[一-鿿]{50,}'
+  - '[一-鿿]{51,}'

@@ -1126,6 +1126,19 @@ def main() -> None:
         pairs.append((zh_path, zh_canonical, en_canonical))
         n += 1
 
+    # Resolve fragment links only after ALL mirrors exist, so results do not
+    # depend on filesystem traversal order or the previous build's EN files.
+    from _check_internal_links import calculator_anchors, needs_zh_fragment
+    calculators, anchor_cache = calculator_anchors(), {}
+    for target in sorted(Path(en_dir).rglob('*.html')):
+        text = target.read_text(encoding='utf-8')
+        def patch_fragment(match):
+            prefix, quote, href = match.groups()
+            if href.startswith('/en/') and needs_zh_fragment(href, anchor_cache, calculators):
+                return prefix + quote + href[3:] + quote
+            return match.group(0)
+        text = re.sub(r'(<a\b[^>]*\bhref=)(["\'])([^"\']+)\2', patch_fragment, text, flags=re.I)
+        target.write_text(text, encoding='utf-8')
     print(f'Generated {n} /en/ pages')
     changed = sync_source_hreflang(pairs)
     if changed:

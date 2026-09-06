@@ -306,7 +306,7 @@
         '.dn-tag-chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0; }' +
         '.dn-tag-chips-group{ display:flex; flex-direction:column; gap:10px; margin:0; }' +
         '.dn-tag-chips-row{ display:flex; flex-wrap:wrap; gap:6px; }' +
-        '.dn-tag-chips-row-label{ font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:#8b8378; margin:6px 0 -2px; padding-top:8px; border-top:1px dashed var(--line, #ebe4d8); width:100%; }' +
+        '.dn-tag-chips-row-label{ font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:var(--muted,#71695e); margin:6px 0 -2px; padding-top:8px; border-top:1px dashed var(--line, #ebe4d8); width:100%; }' +
         '.dn-tag-chips-row-secondary .dn-tag-chip{ background:#f8fafc; color:#5e574e; font-size:11.5px; padding:4px 10px; border-color:#ebe4d8; }' +
         '.dn-tag-chips-row-secondary .dn-tag-chip.active{ background:linear-gradient(180deg,#94a3b8,#475569); color:#fff; border-color:transparent; }' +
         '.dn-tag-chip{ padding:5px 11px; border-radius:9999px; font-size:12px; font-weight:600; color:var(--ink-2); background:#fff; border:1px solid var(--border); cursor:pointer; transition:all .15s; line-height:1.4; }' +

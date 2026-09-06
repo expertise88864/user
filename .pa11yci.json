@@ -1,5 +1,5 @@
 {
-  "_comment": "pa11y-ci config — runs axe + HTMLCS against representative URLs. Round 2-G from OPEN_SOURCE_INTEGRATIONS.md.",
+  "_comment": "pa11y-ci config — runs axe + HTMLCS against representative URLs. Round 2-G from OPEN_SOURCE_INTEGRATIONS.md. Existing color-contrast ignores remain until the palette audit is completed.",
   "defaults": {
     "standard": "WCAG2AA",
     "runners": ["axe", "htmlcs"],
@@ -10,8 +10,7 @@
     },
     "ignore": [
       "WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail",
-      "color-contrast",
-      "_comment_above": "Color-contrast initial ignore until palette is audited. Remove once we fix the contrast issues axe surfaces."
+      "color-contrast"
     ],
     "reporters": [
       "cli",

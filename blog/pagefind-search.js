@@ -61,11 +61,11 @@ function buildModal() {
   <div class="pf-modal" style="background:#fff;border-radius:14px;width:min(620px,92%);max-height:80vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 50px -16px rgba(12,81,89,.55)">
     <div style="padding:14px;border-bottom:1px solid #ebe4d8;display:flex;align-items:center;gap:10px">
       <span style="font-size:18px">🔍</span>
-      <input class="pf-q" type="search" placeholder="搜尋衛教文章..." autofocus style="flex:1;padding:10px 14px;font-size:15px;border:1px solid #dcd5c8;border-radius:8px;font-family:inherit"/>
+      <input class="pf-q" type="search" aria-label="搜尋衛教文章 / Search articles" placeholder="搜尋衛教文章..." autofocus style="flex:1;padding:10px 14px;font-size:15px;border:1px solid #dcd5c8;border-radius:8px;font-family:inherit"/>
       <button type="button" class="pf-close" aria-label="關閉" style="border:none;background:transparent;font-size:22px;cursor:pointer;color:#5e574e">×</button>
     </div>
     <div class="pf-results" style="flex:1;overflow-y:auto;padding:8px"></div>
-    <div class="pf-foot" style="padding:8px 14px;border-top:1px solid #ebe4d8;font-size:11.5px;color:#8b8378">
+    <div class="pf-foot" style="padding:8px 14px;border-top:1px solid #ebe4d8;font-size:11.5px;color:var(--muted,#71695e)">
       Powered by <a href="https://pagefind.app" target="_blank" rel="noopener noreferrer">Pagefind</a> · 全文索引 · ESC 關閉
     </div>
   </div>
@@ -94,7 +94,7 @@ async function doSearch(q) {
     list.innerHTML = '<div style="padding:24px;text-align:center;color:#7f1d1d">Pagefind index 尚未建立。請執行 _setup_pagefind.bat 後重新部署。</div>';
     return;
   }
-  list.innerHTML = '<div style="padding:24px;text-align:center;color:#8b8378">搜尋中...</div>';
+  list.innerHTML = '<div style="padding:24px;text-align:center;color:var(--muted,#71695e)">搜尋中...</div>';
   try {
     const search = await pagefind.search(q);
     if (requestId !== searchRequestId) return;

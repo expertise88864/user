@@ -61,7 +61,7 @@ TOOL_BLOCK_RE = re.compile(
 )
 H2_RE = re.compile(r'<h2[^>]*>([\s\S]*?)</h2>', re.IGNORECASE)
 DEEP_LINK_RE = re.compile(
-    r'<a[^>]+href="(/blog/[^"]+#[^"]+)"',
+    r'<a[^>]+href="(/(?:en/)?blog/[^"]+#[^"]+)"',
     re.IGNORECASE,
 )
 SUB_PARA_RE = re.compile(
@@ -123,7 +123,8 @@ def build_app(tool: dict, lang: str) -> dict:
     # EN-consolidation (DECISIONS D-17): EN /tools canonicals to the ZH /tools,
     # so its WebApplication @id + url must reference the ZH canonical (not /en).
     # inLanguage stays "en" (the tool UI is English) — only the URLs consolidate.
-    abs_url = CANONICAL_HOST + tool["url"]
+    canonical_path = re.sub(r'^/en/', '/', tool["url"])
+    abs_url = CANONICAL_HOST + canonical_path
     app: dict = {
         "@type": "WebApplication",
         "@id": CANONICAL_HOST + "/tools#tool-" + tool["id"],

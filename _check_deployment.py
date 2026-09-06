@@ -325,32 +325,12 @@ def main() -> int:
         errors.append(".github/workflows/quality.yml: missing quality workflow")
     else:
         quality = quality_path.read_text(encoding="utf-8", errors="replace")
-        for command in [
-            "python _run_quality.py regen",
-            "python _gen_search_index.py",
-            "python _minify.py",
-            "python _gen_csp_hashes.py",
-            "python _run_quality.py check",
-            "git add -A",
-            "git commit --amend --no-edit",
-        ]:
+        for command in ('python _run_quality.py build', 'git diff --exit-code',
+                        'git ls-files --others --exclude-standard'):
             if command not in quality:
-                errors.append(f"quality.yml: canonical auto-regen missing {command}")
-        # CODE_REVIEW TD-04 — quality.yml hand-copies the local BUILD pipeline
-        # instead of calling it, so the two can drift. Presence alone is not
-        # enough here: the CSP hashes must be regenerated AFTER minification,
-        # because minification rewrites inline script bodies. Assert the order
-        # at every _minify.py call site — the workflow retries the whole block
-        # on a push race, and a missing generator in the retry path would ship a
-        # stale CSP that blocks inline scripts in production.
-        for segment in quality.split("python _minify.py")[1:]:
-            head = segment.lstrip()
-            if not head.startswith("python _gen_csp_hashes.py"):
-                errors.append(
-                    "quality.yml: every `python _minify.py` must be immediately followed by "
-                    "`python _gen_csp_hashes.py` — minification rewrites inline scripts, so a "
-                    "CSP generated before it would block them (TD-04)"
-                )
+                errors.append(f"quality.yml: canonical consistency check missing {command}")
+        if 'git push' in quality or '[skip actions]' in quality or '[skip ci]' in quality:
+            errors.append("quality.yml: CI must not publish unchecked commits or suppress checks")
 
     runner = (ROOT / "_run_quality.py").read_text(encoding="utf-8", errors="replace")
     date_step = '[PY, "_normalize_date_modified.py"]'

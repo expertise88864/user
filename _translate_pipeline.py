@@ -196,11 +196,14 @@ def inject(slug):
 
 def main():
     if len(sys.argv) < 3:
-        print(__doc__); sys.exit(0)
+        print(__doc__); return 2
     cmd = sys.argv[1]; slug = sys.argv[2]
     if cmd == 'extract': extract(slug)
     elif cmd == 'inject': inject(slug)
-    else: print('Unknown command:', cmd)
+    else:
+        print('Unknown command:', cmd)
+        return 2
+    return 0
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

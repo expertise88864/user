@@ -15,9 +15,10 @@ After translation, runs:
     python _translate_pipeline.py inject <slug>
 to write data-en attributes into the actual HTML.
 """
-import os, json, sys, io, time
+import os, json, sys, io, time, re
 import urllib.request, urllib.error
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, 'data', 'translations')
@@ -104,13 +105,13 @@ def translate_file(slug):
     path = os.path.join(DATA, slug + '.json')
     if not os.path.exists(path):
         log(f'  ! not found: {path}')
-        return
+        return 1
     with open(path, 'r', encoding='utf-8') as f:
         data = json.load(f)
     todo = [s for s in data['strings'] if not s.get('en', '').strip()]
     if not todo:
         log(f'  ✓ {slug}: already complete ({len(data["strings"])} strings)')
-        return
+        return 0
     log(f'  → {slug}: {len(todo)} strings to translate (in batches of {BATCH_SIZE})')
     done = 0
     for i in range(0, len(todo), BATCH_SIZE):
@@ -131,6 +132,7 @@ def translate_file(slug):
             json.dump(data, f, ensure_ascii=False, indent=2)
         log(f'    saved batch {i//BATCH_SIZE+1} ({done}/{len(todo)})')
     log(f'  ✓ {slug}: {done}/{len(todo)} translated')
+    return 0 if all(s.get('en', '').strip() for s in data['strings']) else 1
 
 REMAINING = ['topical-acids-patient', 'biologics-overview', 'laser-dermatology',
              'nhi-derm-drugs', 'alopecia-areata']
@@ -139,17 +141,25 @@ def main():
     args = sys.argv[1:]
     if not args:
         print('Usage: python _ai_translate.py <slug> [<slug>...] | --all')
-        return
-    slugs = REMAINING if '--all' in args else [a for a in args if not a.startswith('-')]
+        return 2
+    if args != ['--all'] and not all(re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', arg) for arg in args):
+        print('Use valid article slugs, or --all alone')
+        return 2
+    slugs = REMAINING if args == ['--all'] else args
     log(f'Starting AI translation for {len(slugs)} article(s)')
     if not API_KEY:
         log('  ! Set ANTHROPIC_API_KEY first')
-        return
+        return 1
+    failed = False
     for slug in slugs:
-        translate_file(slug)
+        failed = translate_file(slug) != 0 or failed
+    if failed:
+        log('Translation incomplete; saved batches can be resumed. Do not inject unfinished output.')
+        return 1
     log('\nDone. Now run:')
     log('  python _translate_pipeline.py inject <slug>')
     log('for each file to write data-en attributes into the HTML.')
+    return 0
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

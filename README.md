@@ -45,21 +45,15 @@ https://vercel.com/signup → 選 **Continue with GitHub** → 授權 → 完成
 
 ---
 
-## 2. 第一次上架（5 分鐘）
+## 2. 上架與驗證
 
 ### 2-1 上傳檔案到 GitHub
-**雙擊 `deploy.bat`**（在 DermNotes 資料夾裡）。腳本會：
+先完成 Git repository／origin 設定、登入 GitHub CLI，並依 [PIPELINE.md](PIPELINE.md) 安裝完整 CI 工具。
+完成程式審查及醫療內容核可，只提交本次工作相關檔案，再雙擊 `deploy.bat`。
 
-1. 檢查 Git 安裝
-2. 第一次會問你 GitHub 帳號名 + email（自動 `git config --global` 一次）
-3. 第一次會問你 **GitHub repo URL**（貼上 1-3 複製的 URL）
-4. 自動 `git init` → `git add` → 問你 commit message → `git push`
-
-成功後會看到：
-```
-Pushed to GitHub.
-If Vercel is connected, it will auto-deploy in ~30 seconds.
-```
+腳本要求乾淨的 main 分支，先 fetch 確認整合狀態，執行完整本機 CI，成功後才 push。
+如果生成物有變更，先審查並提交，再重跑；腳本不會自動 stage、stash、rebase、處理衝突或略過失敗。
+推送後還會核對同一 SHA 的 GitHub CI。只有看到 `Delivered <SHA>` 才算交付完成。
 
 ### 2-2 把 GitHub repo 連到 Vercel
 1. 登入 https://vercel.com/dashboard
@@ -120,7 +114,7 @@ DNS 生效後 Vercel 自動幫你**簽發免費 SSL 憑證（Let's Encrypt）**�
    ```html
    <meta name="google-site-verification" content="你的驗證字串" />
    ```
-5. 雙擊 `deploy.bat` → commit message 寫 `add GSC verification`
+5. 雙擊 `deploy.bat` （先自行提交 `add GSC verification`，再跑完整 CI）
 6. 等 1 分鐘 Vercel 重新部署 → 回 GSC 點 **Verify**
 7. 驗證通過後，左欄 **Sitemaps** → 輸入 `sitemap.xml` → 提交
 
@@ -179,7 +173,7 @@ AdSense 對「全新且內容少」的站很挑剔。建議 **至少累積以下
 
 精簡版：
 
-1. 跑 `powershell -ExecutionPolicy Bypass -File new-article.ps1`（自動 scaffold + 註冊 sitemap / sw / blog-shared.js）
+1. 跑 `powershell -ExecutionPolicy Bypass -File new-article.ps1`（使用共用模板建立本機草稿；目錄登錄與醫師審查另行完成）
 2. 在 `<div id="proseZh">` 內寫 ZH 內容，再加 `<div id="proseEn" class="prose" style="display:none">` 寫 EN 內容（兩個版本是必須）
 3. 在 [`_gen_en_pages.py`](_gen_en_pages.py) 的 `EN_OG_OVERRIDES` 加上新文章的英文 title / description
 4. 跑 local quality check（`_audit_jsonld.py`、`_check_sitemap.py`、`_check_meta.py`、`_check_internal_links.py`、`_check_static_a11y.py`、`_check_balance.py`）全綠

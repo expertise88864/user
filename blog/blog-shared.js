@@ -21,8 +21,13 @@
   DN.LANG_KEY = { 'zh': 'zh', 'en': 'en' };
 
   DN.cookieGet = function (name) {
-    const found = document.cookie.split('; ').find(c => c.startsWith(name + '='));
-    return found ? decodeURIComponent(found.split('=').slice(1).join('=')) : null;
+    try {
+      const found = document.cookie.split(';').map(c => c.trim()).find(c => c.startsWith(name + '='));
+      return found ? decodeURIComponent(found.slice(name.length + 1)) : null;
+    } catch (_) {
+      // Invalid or inaccessible cookies must not disable the article runtime.
+      return null;
+    }
   };
   DN.cookieSet = function (name, val, days) {
     const exp = new Date(Date.now() + (days || 365) * 86400e3).toUTCString();
@@ -110,18 +115,8 @@
   // Key Fact box styling — runs on EVERY page (article + index + homepage).
   // Was previously inside bindArticleHub which only ran when #dn-hub existed
   // (i.e. NOT on individual article pages where Key Fact actually appears).
-  DN.injectKeyFactCSS = function () {
-    if (document.getElementById('dn-key-fact-css')) return;
-    var kfStyle = document.createElement('style');
-    kfStyle.id = 'dn-key-fact-css';
-    kfStyle.textContent =
-      '.key-fact{ background:#fafaf6; border:1px solid var(--border,#dcd5c8); border-left:4px solid var(--teal,#7a9285); border-radius:12px; padding:14px 18px 16px; margin:18px 0 22px; box-shadow:0 1px 2px rgba(15,23,42,.04) }' +
-      '.key-fact .lbl{ font-family:Inter,ui-monospace,monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:var(--teal-deep,#4d6358); margin:0 0 8px; display:flex; align-items:center; gap:6px }' +
-      '.key-fact .lbl::before{ content:"📌"; font-family:"Apple Color Emoji","Segoe UI Emoji",sans-serif; font-size:14px; opacity:.85 }' +
-      '.key-fact p, .key-fact div:not(.lbl){ margin:0; font-size:14px; line-height:1.85; color:var(--ink-2,#5e574e) }' +
-      '.key-fact .cite{ color:var(--teal-deep,#4d6358); font-style:italic; font-size:12px }';
-    document.head.appendChild(kfStyle);
-  };
+  // Key-fact styles ship in the shared stylesheet before the first paint.
+  DN.injectKeyFactCSS = function () {};
 
   // Sticky-scroll table wrapper for tall comparison charts (2026-05-10).
   // Keeps the horizontal scrollbar within the viewport (max-height: 78vh)
@@ -238,7 +233,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202605232100';
+        s.src = '/blog/blog-article-visuals.min.js?v=202609060300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -333,7 +328,7 @@
       : '搜尋文章 / 主題 / 量表⋯ （按 Esc 關閉）';
     overlay.innerHTML =
       '<div id="dn-cmdk-modal" role="dialog" aria-label="' + (isEn ? 'Search' : '搜尋') + '">' +
-        '<input id="dn-cmdk-input" type="text" placeholder="' + ph + '" autocomplete="off" spellcheck="false" data-zh-placeholder="搜尋文章 / 主題 / 量表⋯ （按 Esc 關閉）" data-en-placeholder="Search articles / topics / calculators… (press Esc to close)" />' +
+        '<input id="dn-cmdk-input" type="text" aria-label="搜尋 / Search" placeholder="' + ph + '" autocomplete="off" spellcheck="false" data-zh-placeholder="搜尋文章 / 主題 / 量表⋯ （按 Esc 關閉）" data-en-placeholder="Search articles / topics / calculators… (press Esc to close)" />' +
         '<div id="dn-cmdk-results"></div>' +
         '<div id="dn-cmdk-foot">' +
           '<span><kbd>↑</kbd><kbd>↓</kbd> <span data-zh="移動" data-en="navigate">移動</span></span>' +
@@ -1034,7 +1029,7 @@
             '</div>' +
             (read > 0
               ? '<button id="dn-read-reset" type="button" data-zh="重設進度" data-en="Reset" style="background:#fff;border:1px solid var(--border, #dcd5c8);color:#5e574e;padding:5px 10px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer">重設進度</button>'
-              : '<span data-zh="逐篇閱讀後自動記錄" data-en="Auto-tracked as you read" style="font-size:12px;color:#8b8378;font-style:italic">逐篇閱讀後自動記錄</span>') +
+              : '<span data-zh="逐篇閱讀後自動記錄" data-en="Auto-tracked as you read" style="font-size:12px;color:var(--muted,#71695e);font-style:italic">逐篇閱讀後自動記錄</span>') +
           '</div>' +
           '<div style="height:8px;background:#f1ece4;border-radius:9999px;overflow:hidden">' +
             '<div style="height:100%;width:' + pct + '%;background:linear-gradient(90deg,#a4b5a8,#0c5159);transition:width .35s ease;"></div>' +
@@ -1091,7 +1086,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202605232100';
+        s.src = '/blog/blog-article-reading.min.js?v=202609060300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1127,7 +1122,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202605232100';
+        s.src = '/blog/blog-article-footer.min.js?v=202609060300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1157,7 +1152,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202605232100';
+        s.src = '/blog/blog-calculators.min.js?v=202609060300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1292,7 +1287,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202605232100';
+        s.src = '/blog/blog-hub.min.js?v=202609060300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;

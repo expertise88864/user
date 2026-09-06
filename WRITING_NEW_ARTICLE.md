@@ -49,11 +49,10 @@
 powershell -ExecutionPolicy Bypass -File new-article.ps1
 ```
 
-互動式輸入 slug / 標題 / 副標 / meta / tag / emoji / category 後，這支 PS 腳本會自動：
-- 寫 `blog/<slug>.html`（含 4 組 JSON-LD、OG、hreflang）
-- 註冊 `sitemap.xml`
-- 註冊 `sw.js`（如有 precache）
-- 註冊 `blog/blog-shared.js` 的 `DN.ARTICLES` 陣列
+輸入 slug 後，PS 腳本呼叫 `_scaffold_article.py`，從維護中的既有文章複製結構至 `blog/<slug>.html`。
+這是本機草稿：必須更換模板的標題、內文、圖表、引用與 metadata，取得醫師核可，
+另行登錄 `DN.ARTICLES` 並生成該頁的 PNG 分享卡。腳本不直接修改 sitemap、feeds 或 SW precache；
+這些由正式生成管線負責。發布流程與完整 CI 工具設定見 [PIPELINE.md](PIPELINE.md)。
 
 ### Step 2：補完 ZH 內容（proseZh）
 
@@ -105,36 +104,30 @@ powershell -ExecutionPolicy Bypass -File new-article.ps1
 ### Step 5：跑生成腳本
 
 ```bash
-python _gen_en_pages.py                       # 生 /en/ 鏡像 50 個檔
-python _normalize_schema.py --include-en      # 重寫 EN 頁面 JSON-LD @id 為 /en/...
-python _gen_feeds.py                          # 重生 sitemap / RSS / Atom
+python _run_quality.py build
 ```
 
-或者直接交給 GitHub Actions auto-regen workflow 跑（push 後它會自動跑這 3 個 + 一堆 normalize 腳本，並 commit 回 main）。
+這會依正式順序生成英文鏡像、schema、feeds、搜尋索引及 runtime bundles，並執行完整品質檢查。英文 canonical 依 D-17 維持指向中文版本。GitHub Actions 只核對生成物是否一致，不會自動提交缺少的生成物；所有此次需要交付的來源與生成檔都必須先在本機完成。
 
 ### Step 6：跑 local quality check
 
 ```bash
-python _check_balance.py        # delimiter 平衡
-python _check_sitemap.py        # sitemap URL audit
-python _check_meta.py           # title / description / canonical / OG 必填
-python _check_internal_links.py # 內部連結 anchor
-python _check_static_a11y.py    # heading 層級、alt、aria
-python _audit_jsonld.py         # JSON-LD 必填欄位、@id、mainEntity
-python _check_metadata_uniqueness.py
+python _run_ci.py
 ```
 
-全綠才 push。
+完整 build、品質閘、HTML 結構驗證及 Lighthouse 都必須成功；局部檢查不能代替。環境需求與日誌位置見 [PIPELINE.md](PIPELINE.md)。修改、生成或新增提交後，須重新驗證實際待推版本。
 
 ### Step 7：commit + push
 
-```bash
-git add blog/<slug>.html en/ sitemap.xml blog/feed.xml blog/atom.xml blog/blog-shared.js _gen_en_pages.py
-git commit -m "feat(blog): add <主題> full guide + English mirror"
-git push origin main
+先以 `git status --short` 和 `git diff` 核對此次來源與生成檔，逐項加入本次提交，不要混入其他工作。醫療文字須取得醫師核可；完成專案要求的獨立模型審查後，再建立此次提交。
+
+Windows 發布入口：
+
+```powershell
+.\deploy.ps1
 ```
 
-注意：CI 的 `feeds-regen` job 會 auto-commit 回 main，你下次 push 前要先 `git pull --rebase`。
+此入口要求乾淨的 `main`、已登入的 GitHub CLI，重新執行完整本機 CI，才正常 push；接著驗證同一完整 SHA 的 GitHub CI。所有適用遠端檢查成功才算交付。遠端 CI 不會替作者自動補檔或提交；若失敗，需在本機修正、重新驗證並依相同流程發布修正。
 
 ---
 

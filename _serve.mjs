@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { createServer } from 'node:http';
-import { createReadStream } from 'node:fs';
+import { createServer as createSecureServer } from 'node:https';
+import { createReadStream, readFileSync } from 'node:fs';
 import { stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -16,6 +17,14 @@ for (let i = 2; i < process.argv.length; i += 1) {
 
 const port = Number(args.get('port') || process.env.PORT || 8080);
 const host = args.get('host') || process.env.HOST || '127.0.0.1';
+const certPath = args.get('tls-cert');
+const keyPath = args.get('tls-key');
+if (Boolean(certPath) !== Boolean(keyPath)) {
+  throw new Error('Provide both --tls-cert and --tls-key');
+}
+const makeServer = certPath
+  ? handler => createSecureServer({cert: readFileSync(certPath), key: readFileSync(keyPath)}, handler)
+  : createServer;
 
 const TYPES = new Map([
   ['.css', 'text/css; charset=utf-8'],
@@ -42,11 +51,15 @@ function send(res, status, body, type = 'text/plain; charset=utf-8') {
 }
 
 function safePath(urlPath) {
-  const decoded = decodeURIComponent(urlPath.split('?')[0]);
+  let decoded;
+  try { decoded = decodeURIComponent(urlPath.split('?')[0]); }
+  catch { return null; }
   const normalized = path.normalize(decoded).replace(/^(\.\.[/\\])+/, '');
   const relative = normalized.replace(/^[/\\]+/, '');
   const absolute = path.resolve(ROOT, relative);
-  return absolute.startsWith(ROOT) ? absolute : null;
+  const fromRoot = path.relative(ROOT, absolute);
+  return fromRoot === '..' || fromRoot.startsWith('..' + path.sep) || path.isAbsolute(fromRoot)
+    ? null : absolute;
 }
 
 async function resolveFile(urlPath) {
@@ -71,7 +84,7 @@ async function resolveFile(urlPath) {
   return null;
 }
 
-const server = createServer(async (req, res) => {
+const server = makeServer(async (req, res) => {
   try {
     const url = new URL(req.url || '/', `http://${req.headers.host || `${host}:${port}`}`);
     if (req.method !== 'GET' && req.method !== 'HEAD') {
@@ -107,5 +120,5 @@ const server = createServer(async (req, res) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`DermNotes dev server: http://${host}:${port}/`);
+  console.log(`DermNotes dev server: ${certPath ? 'https' : 'http'}://${host}:${server.address().port}/`);
 });

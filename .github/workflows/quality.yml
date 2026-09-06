@@ -7,19 +7,17 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-# Serialize canonical regeneration runs so two pushes do not race each
-# other to write generated files back to main.
+# Serialize canonical validation runs for each branch.
 concurrency:
   group: feeds-regen-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
   feeds-regen:
-    name: Auto-regen canonical generated files
+    name: Canonical generated file consistency
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
     permissions:
-      contents: write
+      contents: read
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # pin v4 (was @v4)
         with: { token: '${{ secrets.GITHUB_TOKEN }}', fetch-depth: 0 }
@@ -29,51 +27,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # pin v4 (was @v4)
         with: { node-version: '20' }
-      - name: Regenerate canonical site files
+      - name: Verify canonical generated files
         run: |
-          python _run_quality.py regen
-          python _gen_search_index.py
-          python _minify.py
-          python _gen_csp_hashes.py
-          python _run_quality.py check
-      - name: Commit + push with retry on race
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "generated files already up-to-date"
-            exit 0
-          fi
-          # Commit-message tokens:
-          # - `[skip actions]` skips GH Actions only (prevents regen loop).
-          # - `[skip actions]` is NOT recognized by Vercel, so Vercel WILL
-          #   deploy this commit — exactly what we want, since this commit
-          #   reflects the canonical state (admin edit + auto-regen).
-          # - Previously used `[skip ci]` which Vercel ALSO honors, causing
-          #   admin saves to silently not deploy. Switched 2026-05-14.
-          git commit -m "auto-regen canonical generated files [skip actions]"
-          # Regenerate after every rebase so generated files describe the
-          # newest source tree, not the commit that originally triggered us.
-          for attempt in 1 2 3 4 5; do
-            if git push; then
-              echo "Pushed on attempt $attempt"
-              exit 0
-            fi
-            echo "Push attempt $attempt rejected — pulling + rebasing"
-            git pull --rebase origin main
-            python _run_quality.py regen
-            python _gen_search_index.py
-            python _minify.py
-            python _gen_csp_hashes.py
-            python _run_quality.py check
-            git add -A
-            if ! git diff --cached --quiet; then
-              git commit --amend --no-edit
-            fi
-          done
-          echo "::error::Failed to push after 5 attempts"
-          exit 1
+          python _run_quality.py build
+          # Publishing is a separate, reviewed operation. CI must never create
+          # an unverified commit or use skip tokens to bypass its own checks.
+          git diff --exit-code
+          test -z "$(git ls-files --others --exclude-standard)"
 
   html-validate:
     name: HTML structural validation
@@ -201,18 +161,9 @@ jobs:
         with: { python-version: '3.12' }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # pin v4 (was @v4)
         with: { node-version: '20' }
-      - name: Pre-audit regen (mirror feeds-regen so audit doesn't race against it)
-        # feeds-regen runs in parallel and commits [skip actions]; meta-check picks
-        # up the pre-regen state and would fail on @id mismatches in /en/ mirrors OR
-        # on a stale sitemap.xml that includes pages just flipped to noindex.
-        # Re-run the FULL regen subset that affects audited surfaces:
-        #   - EN gen rewrites en/ mirrors (canonical, hreflang)
-        #   - schema normalize fixes JSON-LD @ids
-        #   - feeds regen rebuilds sitemap.xml with current noindex state
-        #
-        # Without _gen_feeds.py here, a commit that flips a page noindex but
-        # forgets to re-stage sitemap.xml will cause _check_sitemap.py to red-line
-        # this job until the parallel feeds-regen workflow commits a fresh sitemap.
+      - name: Pre-audit regen (mirror the canonical validation job)
+        # Audit regenerated mirrors/schema/feeds; the separate consistency job
+        # fails if the committed artifacts differ from these canonical outputs.
         run: |
           python _gen_en_pages.py
           python _normalize_schema.py --include-en
@@ -302,18 +253,7 @@ jobs:
         run: sleep 3
       - name: Run Lighthouse CI
         run: |
-          lhci autorun \
-            --collect.url=http://localhost:8080/ \
-            --collect.url=http://localhost:8080/blog/ \
-            --collect.url=http://localhost:8080/blog/acne-myths.html \
-            --collect.url=http://localhost:8080/about.html \
-            --collect.url=http://localhost:8080/tools.html \
-            --collect.numberOfRuns=1 \
-            --upload.target=temporary-public-storage \
-            --assert.assertions.categories:performance=0.7 \
-            --assert.assertions.categories:accessibility=0.85 \
-            --assert.assertions.categories:best-practices=0.85 \
-            --assert.assertions.categories:seo=0.95
+          lhci autorun --config=.lighthouserc.json
       - name: Render Lighthouse summary to job step
         if: always()
         run: |

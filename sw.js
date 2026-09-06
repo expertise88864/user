@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v158';
-const RUNTIME = 'cd-runtime-v156';
+const CACHE = 'cd-v159';
+const RUNTIME = 'cd-runtime-v157';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
 // Popular articles getting evicted after ~5 navigations caused repeat-
@@ -61,7 +61,7 @@ self.addEventListener('install', (e) => {
     // doesn't leave us without an offline fallback for the lifetime of
     // this SW generation.
     if (!(await c.match('/offline.html'))) {
-      try { await c.add('/offline.html'); } catch (_) {}
+      await c.add('/offline.html');
     }
   })());
 });

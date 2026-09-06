@@ -20,16 +20,16 @@
       '.dn-calc-row:last-of-type{ padding-bottom:20px }' +
       '.dn-calc .dn-calc-result{ margin:0;padding:20px 28px 22px;background:linear-gradient(135deg,#ecfeff,#f5fbfa);border-top:1px solid #a5f3fc;border-radius:0 }' +
       '.dn-calc .dn-calc-tools-link{ margin:14px 28px 4px;display:inline-flex }' +
-      '.dn-calc .dn-calc-disclaimer{ margin:0;padding:14px 28px 22px;background:#fafaf6;color:#8b8378;border-top:1px solid #ebe4d8 }' +
+      '.dn-calc .dn-calc-disclaimer{ margin:0;padding:14px 28px 22px;background:#fafaf6;color:#71695e;border-top:1px solid #ebe4d8 }' +
       '.dn-calc-row label{ font-size:13.5px;color:#2a2620;font-weight:600 }' +
-      '.dn-calc-row .dn-calc-hint{ display:block;font-size:11.5px;color:#8b8378;font-weight:400;margin-top:2px;line-height:1.4 }' +
+      '.dn-calc-row .dn-calc-hint{ display:block;font-size:11.5px;color:#71695e;font-weight:400;margin-top:2px;line-height:1.4 }' +
       '.dn-calc-input{ width:90px;padding:6px 10px;border:1px solid var(--border, #dcd5c8);border-radius:8px;font-size:14px;text-align:center;color:#0f172a;font-weight:700 }' +
       '.dn-calc-input:focus{ outline:none;border-color:rgba(122,146,133,.6);box-shadow:0 0 0 3px rgba(164,181,168,.20) }' +
       '.dn-calc-result{ margin-top:14px;padding:14px 16px;background:linear-gradient(135deg,#ecfeff,#f5fbfa);border:1px solid #a5f3fc;border-radius:12px }' +
       '.dn-calc-score{ font-family:\'Noto Serif TC\',Georgia,serif;font-size:32px;font-weight:800;color:#0c5159;line-height:1;margin:0 }' +
       '.dn-calc-band{ display:inline-block;margin-left:10px;padding:4px 12px;border-radius:9999px;font-size:12px;font-weight:700;letter-spacing:.04em;vertical-align:middle }' +
       '.dn-calc-interp{ font-size:13px;color:#0f172a;line-height:1.7;margin-top:6px }' +
-      '.dn-calc-disclaimer{ font-size:11px;color:#8b8378;margin-top:10px;line-height:1.6;font-style:italic }' +
+      '.dn-calc-disclaimer{ font-size:11px;color:#71695e;margin-top:10px;line-height:1.6;font-style:italic }' +
       '.dn-calc-tools-link{ display:inline-flex;align-items:center;gap:5px;margin-top:10px;padding:6px 12px;border-radius:9999px;background:#ede7da;color:#4d6358;font-size:12px;font-weight:700;text-decoration:none;border:1px solid #a5f3fc }' +
       '.dn-calc-tools-link:hover{ background:#d8d2c5 }' +
       '.dn-radio-group{ display:flex;gap:6px;flex-wrap:wrap }' +
@@ -53,15 +53,15 @@
         '<h3 class="dn-calc-title" data-zh="SCORAD 計算器 — 異膚嚴重度自評" data-en="SCORAD Calculator — AD severity self-assessment">SCORAD 計算器 — 異膚嚴重度自評</h3>' +
         '<div class="dn-calc-sub" data-zh="SCORAD = A/5 + 7B/2 + C。A：受影響面積(0-100%)、B:6 項客觀症狀總分、C:2 項主觀症狀總分。完整版需臨床評估，本工具為簡易自評。" data-en="SCORAD = A/5 + 7B/2 + C. A: BSA, B: 6 objective signs, C: 2 subjective. Self-assessment only.">SCORAD = A/5 + 7B/2 + C。A：受影響面積(0-100%)、B:6 項客觀症狀總分、C:2 項主觀症狀總分。完整版需臨床評估，本工具為簡易自評。</div>' +
         '<div class="dn-calc-row">' +
-          '<label data-zh="A · 受影響體表面積(%)" data-en="A · Affected BSA (%)">A · 受影響體表面積(%)<span class="dn-calc-hint" data-zh="0-100，可用九分法估算" data-en="0-100, use rule of nines">0-100，可用九分法估算</span></label>' +
+          '<label for="dn-scorad-A" data-zh="A · 受影響體表面積(%)" data-en="A · Affected BSA (%)">A · 受影響體表面積(%)<span class="dn-calc-hint" data-zh="0-100，可用九分法估算" data-en="0-100, use rule of nines">0-100，可用九分法估算</span></label>' +
           '<input type="number" min="0" max="100" step="1" value="20" class="dn-calc-input" id="dn-scorad-A" />' +
         '</div>' +
         '<div class="dn-calc-row">' +
-          '<label data-zh="B · 6 項客觀症狀總分(0-18)" data-en="B · Objective signs (0-18)">B · 6 項客觀症狀總分<span class="dn-calc-hint" data-zh="紅斑、水腫/丘疹、滲出/結痂、抓痕、苔癬化、乾燥；每項 0-3" data-en="Erythema, edema, oozing, excoriation, lichenification, dryness; each 0-3">紅斑、水腫/丘疹、滲出/結痂、抓痕、苔癬化、乾燥；每項 0-3</span></label>' +
+          '<label for="dn-scorad-B" data-zh="B · 6 項客觀症狀總分(0-18)" data-en="B · Objective signs (0-18)">B · 6 項客觀症狀總分<span class="dn-calc-hint" data-zh="紅斑、水腫/丘疹、滲出/結痂、抓痕、苔癬化、乾燥；每項 0-3" data-en="Erythema, edema, oozing, excoriation, lichenification, dryness; each 0-3">紅斑、水腫/丘疹、滲出/結痂、抓痕、苔癬化、乾燥；每項 0-3</span></label>' +
           '<input type="number" min="0" max="18" step="1" value="6" class="dn-calc-input" id="dn-scorad-B" />' +
         '</div>' +
         '<div class="dn-calc-row">' +
-          '<label data-zh="C · 主觀症狀總分(0-20)" data-en="C · Subjective (0-20)">C · 主觀症狀總分<span class="dn-calc-hint" data-zh="癢感(0-10)+ 失眠(0-10)，取過去 3 天平均" data-en="Itch (0-10) + sleep loss (0-10), past 3 days">癢感(0-10)+ 失眠(0-10)，過去 3 天平均</span></label>' +
+          '<label for="dn-scorad-C" data-zh="C · 主觀症狀總分(0-20)" data-en="C · Subjective (0-20)">C · 主觀症狀總分<span class="dn-calc-hint" data-zh="癢感(0-10)+ 失眠(0-10)，取過去 3 天平均" data-en="Itch (0-10) + sleep loss (0-10), past 3 days">癢感(0-10)+ 失眠(0-10)，過去 3 天平均</span></label>' +
           '<input type="number" min="0" max="20" step="1" value="6" class="dn-calc-input" id="dn-scorad-C" />' +
         '</div>' +
         '<div class="dn-calc-result">' +
@@ -112,10 +112,10 @@
       '<div class="dn-calc" id="dn-salt">' +
         '<h3 class="dn-calc-title" data-zh="SALT 計算器 — 圓禿頭皮禿髮面積" data-en="SALT Calculator — alopecia areata scalp">SALT 計算器 — 圓禿頭皮禿髮面積</h3>' +
         '<div class="dn-calc-sub" data-zh="頭皮分 4 區：頂(40%)、後(24%)、左(18%)、右(18%)。SALT = Σ（各區禿髮 % × 該區權重）。" data-en="Scalp divided into 4 zones: vertex (40%), back (24%), left (18%), right (18%). SALT = sum of each zone hair-loss % × weight.">頭皮分 4 區：頂(40%)、後(24%)、左(18%)、右(18%)。SALT = Σ（各區禿髮 % × 該區權重）。</div>' +
-        '<div class="dn-calc-row"><label data-zh="頂部禿髮 %（權重 40)" data-en="Vertex (weight 40)">頂部禿髮 %<span class="dn-calc-hint">權重 0.40</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-V" /></div>' +
-        '<div class="dn-calc-row"><label data-zh="後部禿髮 %（權重 24)" data-en="Back (weight 24)">後部禿髮 %<span class="dn-calc-hint">權重 0.24</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-B" /></div>' +
-        '<div class="dn-calc-row"><label data-zh="左側禿髮 %（權重 18)" data-en="Left (weight 18)">左側禿髮 %<span class="dn-calc-hint">權重 0.18</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-L" /></div>' +
-        '<div class="dn-calc-row"><label data-zh="右側禿髮 %（權重 18)" data-en="Right (weight 18)">右側禿髮 %<span class="dn-calc-hint">權重 0.18</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-R" /></div>' +
+        '<div class="dn-calc-row"><label for="dn-salt-V" data-zh="頂部禿髮 %（權重 40)" data-en="Vertex (weight 40)">頂部禿髮 %<span class="dn-calc-hint">權重 0.40</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-V" /></div>' +
+        '<div class="dn-calc-row"><label for="dn-salt-B" data-zh="後部禿髮 %（權重 24)" data-en="Back (weight 24)">後部禿髮 %<span class="dn-calc-hint">權重 0.24</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-B" /></div>' +
+        '<div class="dn-calc-row"><label for="dn-salt-L" data-zh="左側禿髮 %（權重 18)" data-en="Left (weight 18)">左側禿髮 %<span class="dn-calc-hint">權重 0.18</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-L" /></div>' +
+        '<div class="dn-calc-row"><label for="dn-salt-R" data-zh="右側禿髮 %（權重 18)" data-en="Right (weight 18)">右側禿髮 %<span class="dn-calc-hint">權重 0.18</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-R" /></div>' +
         '<div class="dn-calc-result">' +
           '<div><span class="dn-calc-score" id="dn-salt-score">—</span><span class="dn-calc-band" id="dn-salt-band"></span></div>' +
           '<div class="dn-calc-interp" id="dn-salt-interp"></div>' +
@@ -164,8 +164,8 @@
     for (var i = 1; i <= 7; i++) {
       html +=
         '<div class="dn-calc-row" style="grid-template-columns:1fr auto auto;gap:12px"><label>第 ' + i + ' 天<span class="dn-calc-hint" data-zh="風團 + 癢感" data-en="Wheal + Itch">風團 + 癢感</span></label>' +
-        '<input type="number" min="0" max="3" step="1" value="0" class="dn-calc-input" data-day="' + i + '" data-kind="W" placeholder="風團" />' +
-        '<input type="number" min="0" max="3" step="1" value="0" class="dn-calc-input" data-day="' + i + '" data-kind="I" placeholder="癢感" /></div>';
+        '<input type="number" min="0" max="3" step="1" value="0" class="dn-calc-input" data-day="' + i + '" data-kind="W" aria-label="第 ' + i + ' 天風團 / Day ' + i + ' wheals" placeholder="風團" />' +
+        '<input type="number" min="0" max="3" step="1" value="0" class="dn-calc-input" data-day="' + i + '" data-kind="I" aria-label="第 ' + i + ' 天癢感 / Day ' + i + ' itch" placeholder="癢感" /></div>';
     }
     html +=
         '<div class="dn-calc-result">' +
@@ -214,12 +214,12 @@
     var rowsHTML = cfg.rows.map(function (r) {
       var hint = r.hint ? '<span class="dn-calc-hint">' + r.hint + '</span>' : '';
       if (r.type === 'number') {
-        return '<div class="dn-calc-row"><label>' + r.label + hint + '</label>' +
-          '<input type="number" min="' + (r.min||0) + '" max="' + (r.max||100) + '" step="' + (r.step||1) + '" value="' + (r.def||0) + '" class="dn-calc-input" data-key="' + r.key + '" /></div>';
+        return '<div class="dn-calc-row"><label for="' + cfg.id + '-' + r.key + '">' + r.label + hint + '</label>' +
+          '<input type="number" min="' + (r.min||0) + '" max="' + (r.max||100) + '" step="' + (r.step||1) + '" value="' + (r.def||0) + '" class="dn-calc-input" id="' + cfg.id + '-' + r.key + '" data-key="' + r.key + '" /></div>';
       } else if (r.type === 'select') {
         var opts = r.options.map(function (o) { return '<option value="' + o.v + '">' + o.label + '</option>'; }).join('');
-        return '<div class="dn-calc-row"><label>' + r.label + hint + '</label>' +
-          '<select class="dn-calc-input" data-key="' + r.key + '" style="width:auto;min-width:140px">' + opts + '</select></div>';
+        return '<div class="dn-calc-row"><label for="' + cfg.id + '-' + r.key + '">' + r.label + hint + '</label>' +
+          '<select class="dn-calc-input" id="' + cfg.id + '-' + r.key + '" data-key="' + r.key + '" style="width:auto;min-width:140px">' + opts + '</select></div>';
       }
       return '';
     }).join('');

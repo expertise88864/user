@@ -20,7 +20,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202605232100';
+          s.src = '/blog/blog-diagrams.min.js?v=202609060300';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -559,6 +559,7 @@
 
     var wrap = document.createElement('div');
     wrap.id = 'dn-font-sizer';
+    wrap.setAttribute('role', 'group');
     wrap.setAttribute('aria-label', '字型大小調整');
     // Sits at the bottom-right edge; back-to-top stacks above (bottom:182px).
     // On mobile (<768px) the sticky-CTA bar (~64px) sits at bottom:0 — push
