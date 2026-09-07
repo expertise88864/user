@@ -33,6 +33,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from _html_scan import ATTR_RE, TAG_NAME_RE, attributes, iter_tags, mask_inert_regions
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -159,7 +160,16 @@ def extract_link(card: str) -> str:
 CANONICAL_HOST = "https://chendermatologist.com"
 
 
-def build_terms(cards: list[str], lang: str) -> list[dict]:
+def card_slugs(cards: list[str]) -> list[str]:
+    """Derive identities from the canonical source, before locale rendering."""
+    slugs = [slugify(extract_field(c, "gloss-en") or extract_field(c, "gloss-term"))
+             for c in cards]
+    if any(not slug for slug in slugs) or len(set(slugs)) != len(slugs):
+        raise ValueError("Glossary term identities must be nonempty and unique")
+    return slugs
+
+
+def build_terms(cards: list[str], lang: str, slugs: list[str] | None = None) -> list[dict]:
     """Return a list of DefinedTerm dicts.
 
     `lang` is 'zh' or 'en' — controls which fields become `name` vs
@@ -170,8 +180,11 @@ def build_terms(cards: list[str], lang: str) -> list[dict]:
     set_url = CANONICAL_HOST + "/glossary"
     set_id = set_url + "#termset"
 
+    slugs = card_slugs(cards) if slugs is None else slugs
+    if len(cards) != len(slugs):
+        raise ValueError("Glossary mirror card count differs from canonical source")
     terms: list[dict] = []
-    for card in cards:
+    for card, slug in zip(cards, slugs):
         zh = extract_field(card, "gloss-term")
         en = extract_field(card, "gloss-en")
         cat = extract_field(card, "gloss-cat")
@@ -186,7 +199,6 @@ def build_terms(cards: list[str], lang: str) -> list[dict]:
             primary = alternate
             alternate = ""
 
-        slug = slugify(en or zh)
         term_id = set_url + "#term-" + slug
 
         term: dict = {
@@ -361,35 +373,35 @@ def inject(html: str, termset: dict) -> tuple[str, bool]:
 
 # --- Main -------------------------------------------------------------------
 
-def inject_card_ids(src: str, cards: list[str], lang: str) -> str:
+def inject_card_ids(src: str, cards: list[str], lang: str,
+                    slugs: list[str] | None = None) -> str:
     """Add id="term-<slug>" to each <div class="gloss-card"> so the
     DefinedTerm.@id anchors resolve. Without this, scroll-to-text-
     fragment from SERP definition cards lands on the page top
     instead of the right term.
 
-    Iterates cards in document order; replaces only the FIRST naked
-    `<div class="gloss-card">` for each iteration, so we never
-    re-process already-id'd cards. Idempotent.
+    Update existing IDs as well as missing ones, preserving other attributes.
+    The mirror keeps source card order; both locales receive canonical slugs.
     """
-    new_src = src
-    cursor = 0
-    for card in cards:
-        zh = extract_field(card, "gloss-term")
-        en = extract_field(card, "gloss-en")
-        if not zh and not en:
-            cursor += 1
-            continue
-        slug = slugify(en or zh)
-        target_id = f"term-{slug}"
-        # Find the next naked card from cursor onward
-        naked = new_src.find('<div class="gloss-card">', cursor)
-        if naked == -1:
-            break
-        end_of_tag = new_src.find('>', naked) + 1
-        replacement = f'<div class="gloss-card" id="{target_id}">'
-        new_src = new_src[:naked] + replacement + new_src[end_of_tag:]
-        cursor = naked + len(replacement)
-    return new_src
+    slugs = card_slugs(cards) if slugs is None else slugs
+    tags = [(pos, src[pos:pos + len(tag)])
+            for pos, tag in iter_tags(mask_inert_regions(src))
+            if re.match(r'<div\s', tag, re.I)
+            and 'gloss-card' in attributes(tag).get('class', '').split()]
+    if len(tags) != len(cards) or len(cards) != len(slugs):
+        raise ValueError("Glossary card/identity alignment differs from canonical source")
+    for (pos, tag), slug in reversed(list(zip(tags, slugs))):
+        target = f'"term-{slug}"'
+        id_attr = next((m for m in ATTR_RE.finditer(tag, TAG_NAME_RE.match(tag).end())
+                        if m.group(1).lower() == 'id'), None)
+        if id_attr and id_attr.group(2) is not None:
+            replacement = tag[:id_attr.start(2)] + target + tag[id_attr.end(2):]
+        elif id_attr:
+            replacement = tag[:id_attr.end(1)] + '=' + target + tag[id_attr.end(1):]
+        else:
+            replacement = tag[:-1] + ' id=' + target + '>'
+        src = src[:pos] + replacement + src[pos + len(tag):]
+    return src
 
 
 def process(fp: Path, lang: str) -> bool:
@@ -399,11 +411,13 @@ def process(fp: Path, lang: str) -> bool:
     cards = find_cards(src)
     if not cards:
         return False
+    canonical_cards = find_cards(GLOSSARY.read_text(encoding="utf-8")) if lang == "en" else cards
+    slugs = card_slugs(canonical_cards)
 
     # Phase 1: ensure each card has an id matching DefinedTerm.@id
-    src_with_ids = inject_card_ids(src, cards, lang)
+    src_with_ids = inject_card_ids(src, cards, lang, slugs)
 
-    terms = build_terms(cards, lang)
+    terms = build_terms(cards, lang, slugs)
     if not terms:
         if src_with_ids != src:
             fp.write_text(src_with_ids, encoding="utf-8")

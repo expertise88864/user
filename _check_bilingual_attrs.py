@@ -257,7 +257,31 @@ def check_glossary_parity() -> list[str]:
         return [f"glossary term count differs: glossary.html has {zh}, "
                 f"en/glossary.html has {en} — a data-en on a container has "
                 f"most likely swallowed whole gloss-card blocks on the mirror"]
-    return []
+    # Counts alone miss a translated term acquiring a different canonical IRI.
+    from _normalize_mentions import load_glossary_terms
+    from urllib.parse import unquote, urlsplit
+    term_ids = []
+    card_ids = []
+    errors = []
+    for rel in ('glossary.html', 'en/glossary.html'):
+        path = ROOT / rel
+        ids = [term.get('@id', '') for term in load_glossary_terms(path)]
+        cards = [attributes(tag).get('id', '')
+                 for _, tag in iter_tags(mask_inert_regions(path.read_text(encoding='utf-8')))
+                 if 'gloss-card' in attributes(tag).get('class', '').split()]
+        if len(set(ids)) != len(ids) or len(set(cards)) != len(cards):
+            errors.append(f'{rel}: duplicate glossary identities or card anchors')
+        if len(cards) != len(ids):
+            errors.append(f'{rel}: glossary schema/card count differs')
+        for iri in ids:
+            if (not iri.startswith('https://chendermatologist.com/glossary#term-')
+                    or unquote(urlsplit(iri).fragment) not in cards):
+                errors.append(f'{rel}: DefinedTerm identity has no matching card: {iri}')
+        term_ids.append(set(ids))
+        card_ids.append(set(cards))
+    if term_ids[0] != term_ids[1] or card_ids[0] != card_ids[1]:
+        errors.append('glossary canonical identities/anchors differ between ZH and EN')
+    return errors
 
 
 def main() -> int:

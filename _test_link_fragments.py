@@ -15,9 +15,41 @@ from _gen_search_index import extract as search_extract
 from _normalize_heading_structure import normalize_content_headings
 from _gen_en_pages import extract_faqs, transform as transform_english
 from _normalize_reading_shell import normalize as reading_shell, BLOCK as reading_shell_block
+import _normalize_glossary_schema as glossary_schema
+import _check_bilingual_attrs as bilingual
 
 
 class FragmentTests(unittest.TestCase):
+    def test_glossary_mirror_keeps_canonical_identity_after_translation(self):
+        zh = '<div class="gloss-card" id="term-old" data-note="id=keep"><div class="gloss-term">蕈狀肉芽腫</div><div class="gloss-en">蕈狀肉芽腫</div></div>'
+        en = zh.replace('蕈狀肉芽腫', 'Mycosis fungoides')
+        cards = glossary_schema.find_cards(zh)
+        slugs = glossary_schema.card_slugs(cards)
+        en_cards = glossary_schema.find_cards(en)
+        terms = glossary_schema.build_terms(en_cards, 'en', slugs)
+        result = glossary_schema.inject_card_ids(en, en_cards, 'en', slugs)
+        self.assertEqual(terms[0]['@id'], 'https://chendermatologist.com/glossary#term-蕈狀肉芽腫')
+        self.assertIn('id="term-蕈狀肉芽腫"', result)
+        self.assertIn('data-note="id=keep"', result)
+        self.assertEqual(glossary_schema.inject_card_ids(result, en_cards, 'en', slugs), result)
+        with self.assertRaises(ValueError):
+            glossary_schema.build_terms(en_cards, 'en', [])
+
+    def test_glossary_identity_audit_catches_same_count_drift(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'en').mkdir()
+            for rel in ('glossary.html', 'en/glossary.html'):
+                src = (Path(__file__).parent / rel).read_text(encoding='utf-8')
+                (root / rel).write_text(src, encoding='utf-8')
+            with patch.object(bilingual, 'ROOT', root):
+                self.assertEqual(bilingual.check_glossary_parity(), [])
+                page = root / 'en/glossary.html'
+                src = page.read_text(encoding='utf-8')
+                term = mentions.load_glossary_terms(page)[0]['@id']
+                page.write_text(src.replace(term, term + '-broken'), encoding='utf-8')
+                self.assertTrue(bilingual.check_glossary_parity())
+
     def test_reading_shell_preserves_content_and_is_idempotent(self):
         source = '<main><h1>Title</h1><article><div id="proseZh"><h2 id="one">First &amp; second</h2><p>Approved clinical text.</p><h2 id="two">Two</h2><h2 id="three">Three</h2></div></article></main>'
         result = reading_shell(source)
