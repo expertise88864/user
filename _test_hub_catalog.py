@@ -30,6 +30,40 @@ class HubCatalogTests(unittest.TestCase):
         self.assertEqual([c[0] for c in CardList(result, "list").cards], ["first"])
         self.assertTrue(result.startswith('<a href="/blog/draft">Outside</a>'))
 
+    def test_homepage_emits_newest_first_without_changing_card_markup(self):
+        third = dict(self.second, slug='third')
+        cards = [render_card(item) for item in (self.first, self.second, third)]
+        source = '<div id="dn-article-list">' + '\r\n'.join(cards) + '</div>'
+        articles = [self.first, self.second, third]
+        result = sync_source(source, 'dn-article-list', articles)
+        self.assertEqual([c[0] for c in CardList(result, 'dn-article-list').cards],
+                         ['third', 'second', 'first'])
+        for card in cards:
+            self.assertIn(card, result)
+        self.assertEqual(result.count('\r\n'), source.count('\r\n'))
+        self.assertEqual(sync_source(result, 'dn-article-list', articles), result)
+
+    def test_homepage_sorts_visible_dates_before_catalog_or_datetime(self):
+        first = render_card(self.first).replace(">2026-05-01</time>", "> <span>2026-05-03</span> </time>")
+        second = render_card(self.second)
+        source = '<div id="dn-article-list">' + second + first + '</div>'
+        result = sync_source(source, 'dn-article-list', [self.first, self.second])
+        self.assertEqual([card[0] for card in CardList(result, 'dn-article-list').cards],
+                         ['first', 'second'])
+        self.assertIn(first, result)
+        self.assertIn(second, result)
+        self.assertEqual(result, sync_source(result, 'dn-article-list', [self.first, self.second]))
+
+    def test_homepage_uses_catalog_when_visible_date_is_missing(self):
+        first = render_card(self.first)
+        second = render_card(self.second).replace(
+            '<time datetime="2026-05-02">2026-05-02</time>', '')
+        source = '<div id="dn-article-list">' + first + second + '</div>'
+        result = sync_source(source, 'dn-article-list', [self.first, self.second])
+        self.assertEqual([card[0] for card in CardList(result, 'dn-article-list').cards],
+                         ['second', 'first'])
+        self.assertIn(second, result)
+
     def test_missing_or_duplicate_list_fails_closed(self):
         for source in ('<div></div>', '<div id="list">', '<div id="list"></div><div id="list"></div>'):
             with self.subTest(source=source), self.assertRaises(ValueError):

@@ -60,6 +60,9 @@ class CardList(HTMLParser):
         self.start = self.end = None
         self.card_start = None
         self.cards = []
+        self.dates = {}
+        self.time_text = None
+        self.in_time = False
         self.feed(source)
         if self.start is None or self.end is None or self.card_start is not None:
             raise ValueError(f"Missing or malformed article list: {element_id}")
@@ -88,11 +91,24 @@ class CardList(HTMLParser):
                 raise ValueError("Noncanonical article card URL")
             self.card_start = self.source_offset()
             self.slug = match[1]
+            self.time_text = None
+            self.in_time = False
+        if tag == "time" and self.card_start is not None and self.time_text is None:
+            self.time_text = []
+            self.in_time = True
+
+    def handle_data(self, data):
+        if self.in_time:
+            self.time_text.append(data)
 
     def handle_endtag(self, tag):
+        if tag == "time":
+            self.in_time = False
         if tag == "a" and self.card_start is not None:
             end = self.source_offset() + len("</a>")
             self.cards.append((self.slug, self.card_start, end))
+            self.dates[self.slug] = "".join(self.time_text or []).strip()
+            self.in_time = False
             self.card_start = None
         if tag == "div" and self.depth:
             self.depth -= 1
@@ -150,12 +166,25 @@ def sync_source(source: str, element_id: str, articles: list[dict]) -> str:
             removals.append((start, end))
         else:
             existing.add(slug)
-    # Retain the editorial order and artwork. Runtime filtering can sort cards;
-    # static readers still receive every published link exactly once.
+    # Preserve complete editorial cards and artwork while filling the catalog.
     additions = "".join(render_card(item) for item in articles if item["slug"] not in existing)
     updated = source[:parsed.end] + additions + source[parsed.end:]
     for start, end in reversed(removals):
         updated = updated[:start] + updated[end:]
+    if element_id == 'dn-article-list':
+        # Homepage previously moved every card at parse time. Emit that order
+        # directly; catalog position breaks date ties without oscillating on
+        # repeated builds or relying on the previously generated DOM order.
+        parsed = CardList(updated, element_id)
+        # Authored cards may display dates different from the catalog. Preserve
+        # their visible date ordering without rewriting published content.
+        rank = {item['slug']: (parsed.dates[item['slug']] or item.get('date') or '', i)
+                for i, item in enumerate(articles)}
+        cards = parsed.cards
+        ordered = sorted(cards, key=lambda card: rank[card[0]], reverse=True)
+        markup = [updated[start:end] for _, start, end in ordered]
+        for (_, start, end), card_html in reversed(list(zip(cards, markup))):
+            updated = updated[:start] + card_html + updated[end:]
     return updated
 
 
