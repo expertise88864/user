@@ -17,7 +17,7 @@ if (require.main === module) (async () => {
   fs.mkdirSync('delivery-preview', { recursive: true });
   const browser = await chromium.launch();
   try {
-    for (const width of [390, 1440]) {
+    for (const width of [390, 800, 1440]) {
       const context = await browser.newContext({ viewport: { width, height: 900 }, locale: 'zh-TW' });
       try {
         await context.route('**/*', async route => {
@@ -39,6 +39,31 @@ if (require.main === module) (async () => {
           assert.equal(new URL(page.url()).hostname, base.hostname, 'Preview must not redirect to production/login');
           assert.ok((await page.title()).trim().length > 0, 'Document title missing');
           assert.ok(await page.locator('main').count() > 0, 'Main content missing');
+          const nav = page.locator('nav.dn-nav');
+          if (await nav.count()) {
+            const burger = page.locator('#dn-nav-burger');
+            const search = page.locator('#dn-nav-search');
+            if (width <= 899) {
+              assert.ok(await burger.isVisible(), 'Mobile/tablet menu control missing');
+              assert.equal(await nav.isVisible(), false, 'Mobile/tablet menu must start collapsed');
+              await burger.click();
+              assert.ok(await nav.isVisible(), 'Mobile/tablet menu did not open');
+              assert.ok(await search.evaluate(el => el.getBoundingClientRect().width > 100
+                && getComputedStyle(el, '::after').display !== 'none'), 'Menu labels must have room');
+              for (const id of ['dn-nav-search', 'dn-nav-support', 'dn-nav-theme']) {
+                assert.ok(await page.locator('#' + id).evaluate(el =>
+                  getComputedStyle(el, '::after').content === JSON.stringify(el.getAttribute('aria-label'))),
+                  'Visible menu label must match the current page language: ' + id);
+              }
+              await burger.click();
+              assert.equal(await nav.isVisible(), false, 'Mobile/tablet menu did not close');
+            } else {
+              assert.ok(await nav.isVisible(), 'Desktop navigation missing');
+              assert.equal(await burger.isVisible(), false, 'Desktop hamburger should be hidden');
+              assert.equal(await search.evaluate(el => getComputedStyle(el, '::after').display),
+                'none', 'Desktop icon labels must not overflow compact buttons');
+            }
+          }
           await page.screenshot({ path: 'delivery-preview/' + width + '-' + index + '.png', fullPage: true });
           assert.deepEqual(errors, [], 'Page JavaScript errors');
           await page.close();
