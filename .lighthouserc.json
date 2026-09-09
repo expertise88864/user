@@ -8,7 +8,10 @@
         "http://localhost:8080/about.html",
         "http://localhost:8080/tools.html"
       ],
-      "numberOfRuns": 1
+      "numberOfRuns": 1,
+      "settings": {
+        "saveAssets": true
+      }
     },
     "assert": {
       "assertions": {

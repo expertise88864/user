@@ -267,6 +267,18 @@ jobs:
       - name: Run Lighthouse CI
         run: |
           lhci autorun --config=.lighthouserc.json
+      - name: Preserve Lighthouse diagnostic artifacts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: lighthouse-diagnostics-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            *.trace.json
+            *.devtoolslog.json
+            .lighthouseci/lhr-*.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
       - name: Render Lighthouse summary to job step
         if: always()
         run: |

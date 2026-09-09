@@ -84,7 +84,8 @@
             "Serve site",
             "Wait for server",
             "Run Lighthouse CI",
-            "Render Lighthouse summary to job step"
+            "Render Lighthouse summary to job step",
+            "Preserve Lighthouse diagnostic artifacts"
           ],
           "conditional": []
         }
