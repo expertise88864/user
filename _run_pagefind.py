@@ -17,7 +17,7 @@ generators but before any check that might reference the pagefind paths.
 
 Usage:
     python _run_pagefind.py             # full build (default)
-    python _run_pagefind.py --skip-if-cached  # skip if /pagefind/ already exists
+    # Every invocation rebuilds: old fragments must not survive a new crawl.
 """
 from __future__ import annotations
 
@@ -28,26 +28,30 @@ import subprocess
 import sys
 from pathlib import Path
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parent
 PAGEFIND_DIR = ROOT / "pagefind"
+PUBLIC_HTML_GLOB = "{*.html,blog/*.html,en/*.html,en/blog/*.html}"
 
 
 def main() -> int:
-    skip_if_cached = "--skip-if-cached" in sys.argv
-    if skip_if_cached and PAGEFIND_DIR.exists() and any(PAGEFIND_DIR.iterdir()):
-        print(f"[pagefind] /pagefind/ exists, skipping rebuild")
-        return 0
+    # Never reuse an existing directory: it may contain fragments of private
+    # files indexed by an older, broader crawl. Only this generated child is removed.
+    if PAGEFIND_DIR.is_symlink() or PAGEFIND_DIR.resolve() != ROOT.resolve() / "pagefind":
+        raise ValueError("Refuse clearing a Pagefind output outside the site root")
+    if PAGEFIND_DIR.exists():
+        shutil.rmtree(PAGEFIND_DIR)
 
     # Locate npx — Vercel has it, local dev probably has it
     npx = shutil.which("npx") or shutil.which("npx.cmd")
     if not npx:
         print(
             "[pagefind] npx not found in PATH. Install Node.js + npm, then retry.\n"
-            "           Skipping pagefind build (not fatal — site still works with built-in search)."
+            "           Pagefind build cannot complete."
         )
-        return 0
+        return 1
 
     # CODE_REVIEW Phase 7 — pin the version. This runs on every Vercel build and
     # writes /pagefind/*.js that is SERVED TO VISITORS' browsers, so an unpinned
@@ -60,6 +64,8 @@ def main() -> int:
         "--site", str(ROOT),
         "--output-path", str(PAGEFIND_DIR),
         "--root-selector", "main",
+        # Public route roots only: never index Git archives or local review files.
+        "--glob", PUBLIC_HTML_GLOB,
     ]
     print(f"[pagefind] {' '.join(args[:5])} ...")
     try:
@@ -67,11 +73,11 @@ def main() -> int:
                                 encoding="utf-8", errors="replace",
                                 capture_output=True, timeout=180)
     except subprocess.TimeoutExpired:
-        print("[pagefind] timed out after 180s — skipping (not fatal)")
-        return 0
+        print("[pagefind] timed out after 180s — build failed")
+        return 1
     except Exception as exc:
         print(f"[pagefind] failed to invoke npx: {exc}")
-        return 0  # Non-fatal — site still works with built-in search
+        return 1
 
     # Print only the summary lines from pagefind output
     out_lines = (result.stdout or "").splitlines() + (result.stderr or "").splitlines()
@@ -80,8 +86,8 @@ def main() -> int:
             print(f"  {line}")
 
     if result.returncode != 0:
-        print(f"[pagefind] exited with code {result.returncode} (non-fatal — search will fall back to built-in)")
-        return 0
+        print(f"[pagefind] exited with code {result.returncode} (build failed)")
+        return 1
     return 0
 
 

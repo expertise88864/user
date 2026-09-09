@@ -371,10 +371,10 @@
         var slug = safeSlug(a.slug);
         if (!slug) return;
         idx.push({
-          title: a.title || a.slug,
-          meta: (a.tag || '') + ' · ' + (a.date || ''),
-          url: '/blog/' + slug,
-          search: ((a.title || '') + ' ' + (a.tag || '') + ' ' + (a.tag_en || '') + ' ' + slug).toLowerCase()
+          title: (isEn ? a.title_en : a.title) || a.title || a.slug,
+          meta: ((isEn ? a.tag_en : a.tag) || a.tag || '') + ' · ' + (a.date || ''),
+          url: (isEn ? '/en/blog/' : '/blog/') + slug,
+          search: ((a.title || '') + ' ' + (a.title_en || '') + ' ' + (a.tag || '') + ' ' + (a.tag_en || '') + ' ' + slug).toLowerCase()
         });
       });
       // Tools / glossary / about / dashboard quick-jumps
@@ -384,7 +384,15 @@
         { title: '主題地圖', meta: 'Topic Map', url: '/blog/topics', search: 'topics 主題 地圖' },
         { title: '關於作者', meta: 'About', url: '/about', search: 'about 作者 陳翊嘉' },
         { title: '衛教文章索引', meta: 'Articles', url: '/blog/', search: 'blog articles 文章 索引' },
-      ].forEach(function (it) { idx.push(it); });
+      ].forEach(function (it, i) {
+        if (isEn) {
+          it.title = ['Clinical calculators', 'Medical glossary', 'Topic map', 'About the author', 'Patient education articles'][i];
+          it.meta = '';
+          it.url = '/en' + it.url;
+        }
+        it.search += ' ' + it.title.toLowerCase();
+        idx.push(it);
+      });
       return idx;
     }
     var INDEX = null;
@@ -407,12 +415,12 @@
           var bySlug = {};
           data.forEach(function (e) { bySlug[e.slug] = e; });
           INDEX.forEach(function (it) {
-            var slug = it.url.replace(/^\/blog\//, '').replace(/\/$/, '');
+            var slug = it.url.replace(/^\/(?:en\/)?blog\//, '').replace(/\/$/, '');
             var e = bySlug[slug];
             if (e) {
               var extra = ' ' + (e.h || []).join(' ') + ' ' + (e.snippet || '');
               it.search = (it.search + extra).toLowerCase();
-              if (e.snippet && !it.meta.includes('—')) it.meta = it.meta + ' — ' + e.snippet.slice(0, 50);
+              if (!isEn && e.snippet && !it.meta.includes('—')) it.meta = it.meta + ' — ' + e.snippet.slice(0, 50);
             }
           });
         })
@@ -457,21 +465,25 @@
       loadPagefind();
       loadFulltextIndex().then(function () { if (overlay.classList.contains('open')) render(input.value); });
     }
+    var searchEpoch = 0;
     function close() {
+      searchEpoch += 1;
       overlay.classList.remove('open');
     }
 
-    function renderPagefind(q) {
+    function renderPagefind(q, epoch) {
       if (!PAGEFIND) return false;  // signal fallback to substring path
+      currentMatches = []; activeIdx = 0;
+      results.innerHTML = '<div id="dn-cmdk-empty">' + (isEn ? 'Searching…' : '搜尋中…') + '</div>';
       // PAGEFIND.search is async; show "searching" placeholder, then update
-      PAGEFIND.search(q).then(function (res) {
-        if (!overlay.classList.contains('open') || input.value.toLowerCase().trim() !== q) return;
-        Promise.all(res.results.slice(0, 10).map(function (r) { return r.data(); })).then(function (datas) {
+      Promise.resolve().then(function () { return PAGEFIND.search(q); }).then(function (res) {
+        if (epoch !== searchEpoch || !overlay.classList.contains('open') || input.value.toLowerCase().trim() !== q) return;
+        return Promise.all(res.results.slice(0, 10).map(function (r) { return r.data(); })).then(function (datas) {
           // CODE_REVIEW Phase 5 — re-check freshness AFTER the r.data() batch
           // resolves, not just after PAGEFIND.search(). A slower earlier query
           // could otherwise land its data() here and clobber a newer query's
           // results. (blog/pagefind-search.js already re-checks at both stages.)
-          if (!overlay.classList.contains('open') || input.value.toLowerCase().trim() !== q) return;
+          if (epoch !== searchEpoch || !overlay.classList.contains('open') || input.value.toLowerCase().trim() !== q) return;
           var matches = datas.map(function (d) {
             // Drop the URL query/hash; show title + excerpt as meta
             var clean = d.url.split('?')[0].split('#')[0];
@@ -479,7 +491,7 @@
           });
           currentMatches = matches; activeIdx = 0;
           if (matches.length === 0) {
-            results.innerHTML = '<div id="dn-cmdk-empty">找不到符合的內容</div>';
+            results.innerHTML = '<div id="dn-cmdk-empty">' + (isEn ? 'No matching content found' : '找不到符合的內容') + '</div>';
             return;
           }
           results.innerHTML = matches.map(function (m, i) {
@@ -495,14 +507,17 @@
               '</a>';
           }).join('');
         });
+      }).catch(function () {
+        if (epoch === searchEpoch && overlay.classList.contains('open') && input.value.toLowerCase().trim() === q) render(q, true);
       });
       return true;
     }
 
-    function render(q) {
+    function render(q, fallbackOnly) {
       q = (q || '').toLowerCase().trim();
-      // Prefer pagefind once it's loaded
-      if (q && renderPagefind(q)) return;
+      var epoch = ++searchEpoch;
+      // Prefer pagefind once it's loaded; failures use the local catalog.
+      if (q && !fallbackOnly && renderPagefind(q, epoch)) return;
       var matches;
       if (!q) {
         matches = INDEX.slice(0, 8);
@@ -517,7 +532,7 @@
       currentMatches = matches;
       activeIdx = 0;
       if (matches.length === 0) {
-        results.innerHTML = '<div id="dn-cmdk-empty">找不到符合的內容</div>';
+        results.innerHTML = '<div id="dn-cmdk-empty">' + (isEn ? 'No matching content found' : '找不到符合的內容') + '</div>';
         return;
       }
       results.innerHTML = matches.map(function (m, i) {
