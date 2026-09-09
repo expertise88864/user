@@ -221,7 +221,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202609100020';
+        s.src = '/blog/blog-article-visuals.min.js?v=202609100055';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -248,8 +248,17 @@
       const max = h.scrollHeight - h.clientHeight;
       bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
     }
-    document.addEventListener('scroll', update, { passive: true });
-    update();
+    let scheduled = false;
+    function scheduleUpdate() {
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(function () { scheduled = false; update(); });
+    }
+    // Batch geometry reads after initialization and once per animation frame,
+    // rather than forcing article layout between other startup DOM changes.
+    document.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate, { passive: true });
+    scheduleUpdate();
   };
 
   DN.addScrollToTop = function () {
@@ -1080,7 +1089,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202609100020';
+        s.src = '/blog/blog-article-reading.min.js?v=202609100055';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1116,7 +1125,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202609100020';
+        s.src = '/blog/blog-article-footer.min.js?v=202609100055';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1146,7 +1155,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202609100020';
+        s.src = '/blog/blog-calculators.min.js?v=202609100055';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1281,7 +1290,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202609100020';
+        s.src = '/blog/blog-hub.min.js?v=202609100055';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1412,6 +1421,7 @@
     if (document.getElementById('dn-sticky-cta')) return;
     if (location.pathname === '/about' || location.pathname === '/about/') return;
     if (location.pathname.startsWith('/admin')) return;
+    var lastY = window.scrollY || 0;
 
     var bar = document.createElement('div');
     bar.id = 'dn-sticky-cta';
@@ -1455,7 +1465,6 @@
 
     // Auto-hide on scroll-down, show on scroll-up (mobile reading mode).
     // Always reveal at the very top + when nearly at page bottom.
-    var lastY = window.scrollY || 0;
     var ticking = false;
     function onScroll() {
       var y = window.scrollY || 0;

@@ -212,3 +212,21 @@ test('search works when analytics is absent or throws',()=>{
   h.ctx.DN.closeSearch(); h.ctx.window.gtag=()=>{throw new Error('blocked');};
   h.click(); assert.equal(h.open(),true);
 });
+
+test('reading progress defers geometry and batches scroll and resize updates',()=>{
+  const source=readFileSync(new URL('./blog/blog-shared.js',import.meta.url),'utf8');
+  const start=source.indexOf('  DN.addReadingProgress = function () {');
+  const end=source.indexOf('  DN.addScrollToTop = function () {',start);
+  const frames=[],listeners={},elements=new Map();let reads=0,scrollTop=0,height=2000;
+  const doc={getElementById:id=>elements.get(id),createElement:()=>({style:{}}),
+    body:{appendChild:e=>elements.set(e.id,e)},
+    documentElement:{get scrollHeight(){reads++;return height;},clientHeight:1000,get scrollTop(){return scrollTop;}},
+    addEventListener:(name,fn)=>listeners[name]=fn};
+  const ctx={DN:{},document:doc,window:{addEventListener:(name,fn)=>listeners[name]=fn},requestAnimationFrame:fn=>frames.push(fn)};
+  vm.runInNewContext(source.slice(start,end),ctx);ctx.DN.addReadingProgress();
+  assert.equal(reads,0);assert.equal(frames.length,1);
+  scrollTop=250;listeners.scroll();listeners.scroll();listeners.resize();assert.equal(frames.length,1);
+  frames.shift()();assert.equal(elements.get('dn-progress').style.width,'25%');assert.equal(reads,1);
+  height=1500;listeners.resize();frames.shift()();assert.equal(elements.get('dn-progress').style.width,'50%');
+  ctx.DN.addReadingProgress();assert.equal(elements.size,1);assert.equal(frames.length,0);
+});

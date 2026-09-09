@@ -8,6 +8,9 @@
 
 /* ─── mag-footer (article + page footer family) ─────────────────── */
 .mag-footer{ background:var(--ink); color:var(--bg); padding:80px clamp(20px,5vw,72px) 32px; margin-top:clamp(40px,6vw,80px); }
+/* This footer uses light lettering in both themes. Do not invert its surface
+   when --ink switches to a light foreground in dark mode. */
+footer.mag-footer{ background:#2a2620; color:#f7f3ec; content-visibility:visible; }
 .mag-foot-top{ max-width:1440px; margin:0 auto; display:grid; grid-template-columns:1.4fr 2fr; gap:clamp(40px,5vw,80px); padding-bottom:60px; border-bottom:1px solid rgba(247,243,236,.12); }
 .mag-foot-brand .mag-foot-brand-title{ font-family:'Noto Serif TC','Fraunces',Georgia,serif; font-weight:600; margin:0 0 12px; letter-spacing:-0.01em; line-height:1.18; }
 .mag-foot-brand .mfb-en{ display:block; font-style:normal; font-weight:600; font-size:clamp(24px,2.6vw,32px); color:#f7f3ec; letter-spacing:.02em; }
