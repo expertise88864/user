@@ -81,11 +81,8 @@ function load() {
         gtag("event", "select_content", { content_type: "article", item_id: href, navigation_area: surface });
       }
     }, { capture: true, passive: true });
-    // Search intent — Pagefind opens a JS modal EM cannot see.
-    var sb = document.getElementById("dn-nav-search");
-    if (sb) sb.addEventListener("click", function () {
-      gtag("event", "site_search_open");
-    }, { passive: true });
+    // site_search_open is emitted by the modal's actual opening transition,
+    // covering every header button and keyboard entry without double counting.
     // Language toggle usage.
     var lt = document.getElementById("langToggle");
     if (lt) lt.addEventListener("change", function () {

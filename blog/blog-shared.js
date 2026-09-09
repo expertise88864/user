@@ -221,7 +221,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202609091600';
+        s.src = '/blog/blog-article-visuals.min.js?v=202609100020';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -428,11 +428,17 @@
     }
 
     function open() {
+      // Several header handlers can receive the same click. Preserve the query
+      // and count only a real closed-to-open transition.
+      if (overlay.classList.contains('open')) return;
       if (!INDEX) INDEX = buildIndex();
       overlay.classList.add('open');
       input.value = '';
       input.focus();
       render('');
+      try {
+        if (typeof window.gtag === 'function') window.gtag('event', 'site_search_open');
+      } catch (e) { /* Analytics must never prevent searching. */ }
       // Kick off lazy loads — both pagefind (preferred) and the legacy
       // fulltext json (fallback). Whichever responds first wins next render.
       loadPagefind();
@@ -1074,7 +1080,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202609091600';
+        s.src = '/blog/blog-article-reading.min.js?v=202609100020';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1110,7 +1116,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202609091600';
+        s.src = '/blog/blog-article-footer.min.js?v=202609100020';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1140,7 +1146,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202609091600';
+        s.src = '/blog/blog-calculators.min.js?v=202609100020';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1275,7 +1281,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202609091600';
+        s.src = '/blog/blog-hub.min.js?v=202609100020';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1705,6 +1711,9 @@
       }
     }
     function bootstrapKey(e) {
+      // Once initialized, the modal's own key handler owns the toggle.
+      // Otherwise this handler opens it and the next handler closes it again.
+      if (cmdkReady) return;
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
         ensureCmdK();

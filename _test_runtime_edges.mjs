@@ -157,3 +157,58 @@ test('malformed percent escapes fail closed and normal encoded assets resolve', 
   assert.equal(resolve('/%E0%A4%A'), null);
   assert.equal(resolve('/assets/a%20b.png'), '/site/assets/a b.png');
 });
+
+function searchModalHarness({idleReady = true, analytics = true} = {}) {
+  const source = readFileSync(new URL('./blog/blog-shared.js', import.meta.url), 'utf8');
+  const listeners = new Map(), elements = new Map(), classes = new Set(), events = [];
+  const input = {value:'', addEventListener(){}, focus(){doc.activeElement = input;}, tagName:'INPUT'};
+  const results = {innerHTML:'', querySelectorAll:()=>[]};
+  const overlay = {classList:{contains:x=>classes.has(x),add:x=>classes.add(x),remove:x=>classes.delete(x)},
+    querySelector:s=>s.includes('input') ? input : results, addEventListener(){}};
+  const doc = {activeElement:{tagName:'BODY'},
+    getElementById:id=>elements.get(id),
+    createElement:tag=>tag==='style' ? {} : overlay,
+    head:{appendChild:el=>elements.set(el.id,el)}, body:{appendChild:el=>elements.set(el.id,el)},
+    addEventListener:(name,fn)=>{if(!listeners.has(name))listeners.set(name,[]);listeners.get(name).push(fn);}};
+  let idle;
+  const win = analytics ? {gtag:(...args)=>events.push(args)} : {};
+  const ctx = {DN:{ARTICLES:[]},document:doc,window:win,
+    fetch:()=>Promise.resolve({ok:false}),idle:fn=>{idle=fn;},console};
+  const initStart = source.indexOf('  DN.initCmdK = function () {');
+  const initEnd = source.indexOf('\n  // -----------------------------------------------------------------------',initStart);
+  const bootstrapStart = source.indexOf('    var cmdkReady = false;');
+  const bootstrapEnd = source.indexOf('    // 2026-05-17 — wire up the SearchAction',bootstrapStart);
+  assert.ok(initStart>=0 && initEnd>initStart && bootstrapStart>initEnd && bootstrapEnd>bootstrapStart);
+  vm.runInNewContext(source.slice(initStart,initEnd)+source.slice(bootstrapStart,bootstrapEnd),ctx);
+  if(idleReady)idle();
+  const dispatch = (type,extra={})=>{
+    const e={key:'k',ctrlKey:true,preventDefault(){},...extra};
+    // DOM listeners added during dispatch do not run on that same target/event.
+    for(const fn of [...(listeners.get(type)||[])]) fn(e);
+  };
+  return {ctx,events,input,open:()=>classes.has('open'),
+    key:extra=>dispatch('keydown',extra),
+    click:()=>dispatch('click',{target:{closest:()=>({})}})};
+}
+
+for(const idleReady of [false,true]) {
+  test(`search shortcut opens and toggles once (${idleReady ? 'after' : 'before'} idle init)`,()=>{
+    const h=searchModalHarness({idleReady});
+    h.key(); assert.equal(h.open(),true); assert.equal(h.events.length,1);
+    h.key(); assert.equal(h.open(),false); assert.equal(h.events.length,1);
+    h.key({ctrlKey:false,metaKey:true}); assert.equal(h.open(),true); assert.equal(h.events.length,2);
+  });
+}
+test('overlapping header handlers count one opening and preserve an active query',()=>{
+  const h=searchModalHarness(); h.click();
+  assert.equal(h.open(),true); assert.deepEqual(h.events,[['event','site_search_open']]);
+  h.input.value='private query'; h.click(); h.ctx.DN.openSearch();
+  assert.equal(h.input.value,'private query'); assert.equal(h.events.length,1);
+  h.ctx.DN.closeSearch(); h.click(); assert.equal(h.events.length,2);
+  assert.equal(JSON.stringify(h.events).includes('private query'),false);
+});
+test('search works when analytics is absent or throws',()=>{
+  const h=searchModalHarness({analytics:false}); h.key(); assert.equal(h.open(),true);
+  h.ctx.DN.closeSearch(); h.ctx.window.gtag=()=>{throw new Error('blocked');};
+  h.click(); assert.equal(h.open(),true);
+});
