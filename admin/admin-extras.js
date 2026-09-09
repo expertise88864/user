@@ -69,7 +69,7 @@
   function injectStyles() {
     if (document.getElementById('admin-extras-css')) return;
     const css = `
-.ax-panel{position:fixed;right:14px;top:74px;width:316px;max-height:calc(100vh - 96px);overflow-y:auto;background:#fff;border:1px solid #dcd5c8;border-radius:14px;box-shadow:0 14px 36px -16px rgba(12,81,89,.32);z-index:60;font-family:'Inter','Noto Sans TC',sans-serif;font-size:13px;color:#2a2620}
+.ax-panel{position:fixed;right:14px;top:auto;bottom:14px;width:316px;max-height:60vh;overflow-y:auto;background:#fff;border:1px solid #dcd5c8;border-radius:14px;box-shadow:0 14px 36px -16px rgba(12,81,89,.32);z-index:60;font-family:'Inter','Noto Sans TC',sans-serif;font-size:13px;color:#2a2620}
 .ax-panel.collapsed{height:42px;overflow:hidden}
 .ax-panel header{padding:10px 14px;border-bottom:1px solid #ebe4d8;display:flex;align-items:center;justify-content:space-between;cursor:pointer;background:#f5fbfa}
 .ax-panel header h3{margin:0;font-size:13px;font-weight:700;color:#0c5159}
@@ -138,7 +138,7 @@
   // ─────────────────────────────────────────────────────────────
   function buildPanel() {
     const panel = document.createElement('div');
-    panel.className = 'ax-panel';
+    panel.className = 'ax-panel collapsed';
     panel.id = 'axPanel';
     panel.innerHTML = `
 <header><h3>🛠 編輯助手</h3><span style="font-size:11px;color:#8b8378">▾ 點此摺疊</span></header>

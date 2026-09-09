@@ -115,6 +115,9 @@ let CURRENT_FILE = null;
 let CURRENT_SHA = null;
 let CURRENT_CONTENT = '';     // raw HTML as fetched from GitHub
 let DIRTY = false;
+let SAVE_PENDING = false;
+let EDITOR_LOADING = false;
+let EDITOR_LOAD_ID = 0;
 let SOURCE_MODE = false;       // false = visual, true = textarea
 let editFrame = null;
 let sourceTextarea = null;
@@ -231,7 +234,9 @@ body: body ? JSON.stringify(body) : null
 const data = await r.json();
 if(!r.ok){
 const msg = (data && data.message) ? data.message : ('HTTP '+r.status);
-throw new Error(msg);
+const error = new Error(msg);
+error.status = r.status;
+throw error;
 }
 return data;
 }
@@ -292,10 +297,14 @@ setStatus('讀取失敗，請稍後再試', true);
 }
 // =========== load file (visual mode) ===========
 async function loadFile(path){
+if(SAVE_PENDING){ setStatus('儲存作業尚未結束，請稍後再切換文章'); return false; }
 if(DIRTY && !confirm('目前有未儲存的改動，要捨棄嗎？')) return;
+const loadId = ++EDITOR_LOAD_ID;
+EDITOR_LOADING = true;
 setStatus('載入 ' + path + ' ...');
 try {
 const data = await gh('GET', 'contents/' + path);
+if(loadId !== EDITOR_LOAD_ID) return false;
 CURRENT_SHA = data.sha;
 CURRENT_FILE = path;
 CURRENT_CONTENT = decodeUtf8Base64(data.content);
@@ -314,16 +323,24 @@ setStatus('已載入 ' + path + ' — ' + (path.endsWith('.html') ? '直接點�
 if (typeof refreshUnpublishBtn === 'function') {
   refreshUnpublishBtn();
 }
+return true;
 } catch(e){
+if(loadId !== EDITOR_LOAD_ID) return false;
 setStatus('載入失敗，請稍後再試', true);
+return false;
+} finally {
+if(loadId === EDITOR_LOAD_ID) EDITOR_LOADING = false;
 }
 }
 // =========== mount visual iframe ===========
 function mountIframe(html){
+SOURCE_MODE = false;
+BILINGUAL_MODE = false;
+bilingualZhTa = null; bilingualEnTa = null;
 // Strip empty states
 elEmpty.style.display = 'none';
 // Remove any old iframe / textarea
-const old = elFrameWrap.querySelector('iframe, textarea');
+const old = elFrameWrap.querySelector('#bilingualWrap, iframe, textarea');
 if(old) old.remove();
 const frame = document.createElement('iframe');
 frame.className = 'editor';
@@ -344,8 +361,11 @@ bindFrameEvents();
 }
 // =========== mount source-mode textarea ===========
 function mountSource(content){
+SOURCE_MODE = true;
+BILINGUAL_MODE = false;
+bilingualZhTa = null; bilingualEnTa = null;
 elEmpty.style.display = 'none';
-const old = elFrameWrap.querySelector('iframe, textarea');
+const old = elFrameWrap.querySelector('#bilingualWrap, iframe, textarea');
 if(old) old.remove();
 const ta = document.createElement('textarea');
 ta.className = 'source';
@@ -546,19 +566,10 @@ if(url) execInFrame('createLink', url);
 // =========== source mode toggle ===========
 document.getElementById('sourceBtn').addEventListener('click', ()=>{
 if(!CURRENT_FILE){ alert('請先選一個檔案'); return; }
-if(SOURCE_MODE){
-// Source -> Visual
-SOURCE_MODE = false;
-const newContent = sourceTextarea ? sourceTextarea.value : CURRENT_CONTENT;
-CURRENT_CONTENT = newContent;
-mountIframe(newContent);
-} else {
-// Visual -> Source
-SOURCE_MODE = true;
-const merged = mergeIframeIntoOriginal(); // serialize edited prose back into CURRENT_CONTENT
-CURRENT_CONTENT = merged;
-mountSource(merged);
-}
+const toVisual = SOURCE_MODE && !BILINGUAL_MODE;
+CURRENT_CONTENT = getCurrentEditorContent();
+if(toVisual) mountIframe(CURRENT_CONTENT);
+else mountSource(CURRENT_CONTENT);
 });
 // =========== reload (discard changes) ===========
 document.getElementById('reloadBtn').addEventListener('click', ()=>{
@@ -614,7 +625,7 @@ try {
     branch: BRANCH,
     sha: bsSha
   });
-  setStatus(action + ' ✓ — Vercel 約 30 秒後重新部署。文章本身未動，仍在後台。', false);
+  setStatus(action + '設定已存到 GitHub；待審查與 CI／Preview 驗證後才會正式生效。文章仍保留在後台。', false);
   // Update button label so user sees the new state
   refreshUnpublishBtn();
 } catch(e){
@@ -655,67 +666,7 @@ e.preventDefault();
 save();
 }
 });
-async function save(){
-if(!CURRENT_FILE){ alert('請先選一個檔案'); return; }
-if(!PAT){ alert('請先登入 GitHub PAT'); return; }
-let newContent;
-if(SOURCE_MODE){
-newContent = sourceTextarea ? sourceTextarea.value : CURRENT_CONTENT;
-} else {
-newContent = mergeIframeIntoOriginal();
-}
-if(newContent === CURRENT_CONTENT){
-if(!confirm('內容沒變更，還是要送出嗎？')) return;
-}
-const msg = prompt('Commit 訊息（留空使用 "edit ' + CURRENT_FILE + '"):', '');
-const message = (msg && msg.trim()) ? msg.trim() : ('edit ' + CURRENT_FILE);
-setStatus('儲存中...');
-try {
-const data = await gh('PUT', 'contents/' + CURRENT_FILE, {
-message: message,
-content: encodeUtf8Base64(newContent),
-branch: BRANCH,
-sha: CURRENT_SHA
-});
-CURRENT_SHA = data.content.sha;
-CURRENT_CONTENT = newContent;
-DIRTY = false;
-elShaInfo.textContent = 'SHA: ' + CURRENT_SHA.substring(0,7);
-setStatus('已儲存並推送 ' + CURRENT_FILE + ' — 1 秒後驗證 GitHub 內容...');
-// SAFETY: After every save, re-fetch the file from GitHub and verify the
-// server actually has the bytes we sent. Then re-mount the iframe so the
-// editor DOM is bit-identical to GitHub state — that way the NEXT save
-// can't silently revert this one if something quirky happens in DOM
-// re-serialization. (Root cause of 2026-05-14 incident.)
-await new Promise(r => setTimeout(r, 800));
-try {
-  const verify = await gh('GET', 'contents/' + CURRENT_FILE);
-  const serverContent = decodeUtf8Base64(verify.content);
-  CURRENT_SHA = verify.sha;
-  CURRENT_CONTENT = serverContent;
-  elShaInfo.textContent = 'SHA: ' + CURRENT_SHA.substring(0,7);
-  const matches = (serverContent === newContent);
-  setStatus(
-    '已儲存並推送 ' + CURRENT_FILE +
-    (matches ? ' ✓ 已驗證 — Vercel 約 30 秒後重新部署'
-             : ' ⚠ GitHub 內容與送出版本不完全一致（多半是 DOM 重新序列化造成），iframe 已重新載入伺服器版本'),
-    !matches
-  );
-  // Re-mount iframe with the authoritative server content so subsequent
-  // edits work from the exact state on GitHub. Restore source mode if
-  // user was in it.
-  if (SOURCE_MODE && sourceTextarea) {
-    sourceTextarea.value = serverContent;
-  } else if (editFrame && CURRENT_FILE.endsWith('.html')) {
-    mountIframe(serverContent);
-  }
-} catch (verifyErr) {
-  setStatus('已儲存但驗證失敗：' + (verifyErr.message || verifyErr), true);
-}
-} catch(e){
-setStatus('儲存失敗，請稍後再試', true);
-}
-}
+async function save(){ return saveWithModal(); }
 // =========== merge edited iframe content back into CURRENT_CONTENT ===========
 //
 // CRITICAL FIX (2026-05-11): the original regex `(<[^>]+id="${id}"[^>]*>)([\s\S]*?)(</[a-zA-Z]+>)`
@@ -834,6 +785,7 @@ const AUTOSAVE_INTERVAL_MS = 20000;
 let lastAutosaveAt = 0;
 function autosaveKey(path){ return AUTOSAVE_KEY_PREFIX + path; }
 function getCurrentEditorContent(){
+if(BILINGUAL_MODE) return mergeBilingualBack();
 if(SOURCE_MODE && sourceTextarea) return sourceTextarea.value;
 if(editFrame) return mergeIframeIntoOriginal();
 return CURRENT_CONTENT;
@@ -842,7 +794,6 @@ function autosave(){
 if(!CURRENT_FILE || !DIRTY) return;
 try {
 const content = getCurrentEditorContent();
-if(content === CURRENT_CONTENT) return;
 localStorage.setItem(autosaveKey(CURRENT_FILE), JSON.stringify({
 ts: Date.now(),
 sha: CURRENT_SHA,
@@ -1558,6 +1509,7 @@ branch: BRANCH
 }
 // Auto-add an entry to DN.ARTICLES in blog/blog-shared.js so the new article
 // appears in the article hub / search / related links / 學習筆記 + 最新研究 filters.
+let catalogRegistered = false;
 try {
   const sharedFile = await gh('GET', 'contents/blog/blog-shared.js');
   const sharedSrc = decodeUtf8Base64(sharedFile.content);
@@ -1576,13 +1528,15 @@ try {
         branch: BRANCH,
         sha: sharedFile.sha
       });
+      catalogRegistered = true;
     }
   }
 } catch(e){
   console.warn('auto-register in DN.ARTICLES failed; you may need to add manually:', e.message);
 }
-setStatus('已建立 blog/' + slug + '.html' + (mirror ? ' + 英文鏡像' : '') + '、自動註冊到 DN.ARTICLES');
-toast('文章已建立並註冊。CI 約 30 秒後自動 minify + 部署', 'success');
+const registrationNote = catalogRegistered ? '文章目錄已更新' : '文章目錄尚未更新，請先完成目錄註冊';
+setStatus('已建立 blog/' + slug + '.html' + '；' + registrationNote + '；尚未正式發布', !catalogRegistered);
+toast('文章已存到 GitHub。' + registrationNote + '，待審查與 CI／Preview 驗證後發布。', catalogRegistered ? 'success' : 'error');
 document.getElementById('newFileName').value = '';
 bg.remove();
 await refreshFileList();
@@ -1673,27 +1627,12 @@ loadFile = async function(path){
 // Hide stale banners
 document.getElementById('behindBanner').style.display = 'none';
 document.getElementById('draftBanner').style.display = 'none';
-await _origLoadFile(path);
+if(!await _origLoadFile(path)) return;
 // Check for autosaved draft
 checkAutosaveOnLoad(path);
 // First word-count update after iframe loads
 setTimeout(updateWordCount, 800);
 };
-// Override save() to clear autosave on success
-const _origSave = save;
-save = async function(){
-const before = CURRENT_FILE;
-await _origSave();
-if(!DIRTY && before){
-clearAutosaveFor(before);
-lastAutosaveAt = 0;
-updateAutosaveIndicator();
-}
-};
-document.getElementById('saveBtn').removeEventListener('click', save);  // can't actually remove, but rebind:
-const _saveBtn = document.getElementById('saveBtn').cloneNode(true);
-document.getElementById('saveBtn').replaceWith(_saveBtn);
-_saveBtn.addEventListener('click', save);
 // Word count input listener (after iframe load)
 const _origBindFrameEvents = bindFrameEvents;
 bindFrameEvents = function(){
@@ -1714,7 +1653,8 @@ function enhanceExtrasPanel(){
   // Move starting position to be less obstructive (smaller width)
   panel.style.width = '300px';
   panel.style.right = '14px';
-  panel.style.top = 'calc(54px + 60px)';  // below header + toolbar
+  panel.style.top = 'auto';
+  panel.style.bottom = '14px';
   const header = panel.querySelector('header');
   if(!header) return;
   // Replace right-side hint with explicit controls
@@ -1756,6 +1696,7 @@ function enhanceExtrasPanel(){
     const ny = Math.max(0, Math.min(window.innerHeight - 60, oy + (e.clientY - sy)));
     panel.style.left = nx + 'px';
     panel.style.top = ny + 'px';
+    panel.style.bottom = 'auto';
     panel.style.right = 'auto';
   });
   document.addEventListener('mouseup', ()=>{
@@ -1773,11 +1714,11 @@ function enhanceExtrasPanel(){
     const t = e.touches[0];
     panel.style.left = Math.max(0, Math.min(window.innerWidth - 200, ox + (t.clientX - sx))) + 'px';
     panel.style.top = Math.max(0, Math.min(window.innerHeight - 60, oy + (t.clientY - sy))) + 'px';
+    panel.style.bottom = 'auto';
     panel.style.right = 'auto';
   });
   document.addEventListener('touchend', ()=>{ dragging = false; });
-  // Start COLLAPSED so it doesn't block content
-  panel.classList.add('collapsed');
+  // buildPanel starts collapsed; preserve an early user expansion here.
 }
 function showReopenBtn(){
   if(document.getElementById('axReopenBtn')) return;
@@ -2014,49 +1955,50 @@ function renderDiff(oldText, newText){
 document.getElementById('draftBtn').addEventListener('click', ()=>saveAsDraft(false));
 
 async function saveAsDraft(silent){
+  if(SAVE_PENDING || EDITOR_LOADING){ setStatus('請等目前載入或儲存作業結束'); return null; }
   if(!CURRENT_FILE){ alert('請先選一個檔案'); return null; }
   if(!PAT){ alert('請先登入 PAT'); return null; }
-  const slug = CURRENT_FILE.replace(/.*\//, '').replace(/\.[^.]+$/, '');
-  const draftBranch = 'drafts/' + slug;
-  const newContent = BILINGUAL_MODE ? mergeBilingualBack() : (SOURCE_MODE ? sourceTextarea.value : (editFrame ? mergeIframeIntoOriginal() : CURRENT_CONTENT));
-  setStatus('準備存到草稿分支 ' + draftBranch + ' ...');
+  SAVE_PENDING = true;
+  let snapshot, acceptedSha;
   try {
-    // Check if branch exists
-    let exists = false;
-    try { await gh('GET', 'branches/' + encodeURIComponent(draftBranch)); exists = true; }
-    catch(e){ if(!/not found/i.test(e.message)) throw e; }
-    if(!exists){
-      // Create from main
+    snapshot = captureSaveSnapshot();
+    const slug = snapshot.file.replace(/.*\//, '').replace(/\.[^.]+$/, '');
+    const draftBranch = 'drafts/' + slug;
+    DIRTY = true;
+    autosave();
+    setStatus('儲存草稿 ' + snapshot.file + ' ...');
+    try {
+      await gh('GET', 'branches/' + encodeURIComponent(draftBranch));
+    } catch(e){
+      if(e.status !== 404) throw e;
       const mainRef = await gh('GET', 'git/refs/heads/' + BRANCH);
-      await gh('POST', 'git/refs', { ref: 'refs/heads/' + draftBranch, sha: mainRef.object.sha });
-      setStatus('已建立 ' + draftBranch + '，繼續儲存 ...');
+      await gh('POST', 'git/refs', {ref:'refs/heads/' + draftBranch, sha:mainRef.object.sha});
     }
-    // Get current SHA of file on draft branch (may be different from main)
     let draftSha = null;
     try {
-      const f = await gh('GET', 'contents/' + CURRENT_FILE + '?ref=' + encodeURIComponent(draftBranch));
-      draftSha = f.sha;
-    } catch(e){ /* file not on branch yet */ }
-    const body = {
-      message: '[draft] edit ' + CURRENT_FILE,
-      content: encodeUtf8Base64(newContent),
-      branch: draftBranch,
-    };
-    if(draftSha) body.sha = draftSha;
-    const result = await gh('PUT', 'contents/' + CURRENT_FILE, body);
-    DIRTY = false;
-    clearAutosaveFor(CURRENT_FILE);
-    setStatus('已存到草稿分支 ' + draftBranch + ' — Vercel 約 60 秒後可看 preview');
-    if(!silent){
-      const previewMsg = '已儲存到草稿分支 ' + draftBranch + '。\n\n要開啟 GitHub 分支頁面 (可看 Vercel preview link) 嗎？';
-      if(confirm(previewMsg)){
-        window.open('https://github.com/' + REPO + '/tree/' + draftBranch, '_blank');
-      }
+      const file = await gh('GET', 'contents/' + snapshot.file + '?ref=' + encodeURIComponent(draftBranch));
+      draftSha = file.sha;
+    } catch(e){
+      if(e.status !== 404) throw e;
     }
-    return { branch: draftBranch, sha: result.content.sha };
+    const body = {message:'[draft] edit ' + snapshot.file, content:encodeUtf8Base64(snapshot.content), branch:draftBranch};
+    if(draftSha) body.sha = draftSha;
+    const result = await gh('PUT', 'contents/' + snapshot.file, body);
+    acceptedSha = savedBlobSha(result);
+    await verifySavedContent(snapshot, result);
+    const clean = finishSaveSnapshot(snapshot, acceptedSha, false, true);
+    setStatus('草稿已儲存並驗證' + (clean ? '' : '；後續編輯仍未儲存，已保留暫存') + '。尚未正式發布');
+    if(silent && !clean) return null;
+    if(!silent && confirm('草稿已存到 ' + draftBranch + '，尚未正式發布。\n\n要開啟 GitHub 草稿分支嗎？')){
+      window.open('https://github.com/' + REPO + '/tree/' + draftBranch, '_blank', 'noopener');
+    }
+    return {...snapshot, branch:draftBranch, sha:acceptedSha};
   } catch(e){
-    setStatus('草稿儲存失敗，請稍後再試', true);
+    if(snapshot && acceptedSha) finishSaveSnapshot(snapshot, acceptedSha, false, false);
+    setStatus('草稿儲存或驗證未完成；編輯與暫存保留：' + (e.message || e), true);
     return null;
+  } finally {
+    SAVE_PENDING = false;
   }
 }
 
@@ -2072,7 +2014,9 @@ function openScheduleModal(){
     alert('排程發布僅支援 blog/<slug>.html 文章');
     return;
   }
-  const slug = CURRENT_FILE.replace(/.*\//, '').replace(/\.[^.]+$/, '');
+  const scheduleFile = CURRENT_FILE;
+  const scheduleLoadId = EDITOR_LOAD_ID;
+  const slug = scheduleFile.replace(/.*\//, '').replace(/\.[^.]+$/, '');
   const slugLabel = escapeHtml(slug);
   // Default: 1 hour from now, local datetime format
   const oneHourLater = new Date(Date.now() + 60*60*1000);
@@ -2080,7 +2024,7 @@ function openScheduleModal(){
   const defaultLocal = oneHourLater.getFullYear() + '-' + pad(oneHourLater.getMonth()+1) + '-' + pad(oneHourLater.getDate()) + 'T' + pad(oneHourLater.getHours()) + ':' + pad(oneHourLater.getMinutes());
   const bg = document.createElement('div');
   bg.className = 'modal-bg';
-  bg.innerHTML = '<div class="modal" style="max-width:560px"><h2>排程自動發布</h2><p style="font-size:12.5px;color:#5e574e">會把目前編輯內容存到草稿分支 <code style="background:#f1ece4;padding:2px 6px;border-radius:4px">drafts/' + slugLabel + '</code>，並安排在指定時間由 GitHub Actions 自動 merge 到 main 發布、Vercel 隨即部署。</p><label style="font-size:12px;font-weight:600;color:#0c5159;display:block;margin:14px 0 4px">發布時間（你的本地時間）<input id="schedAt" type="datetime-local" value="' + defaultLocal + '" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" /></label><p style="font-size:11px;color:#8b8378;margin:6px 0 14px">⏱ GitHub Actions cron 每 15 分鐘檢查一次隊列、到時間自動 merge。</p><div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" id="schedCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button><button type="button" id="schedConfirm">📤 存草稿並排程</button></div></div>';
+  bg.innerHTML = '<div class="modal" style="max-width:560px"><h2>排程準備發布候選</h2><p style="font-size:12.5px;color:#5e574e">會把目前編輯內容存到草稿分支 <code style="background:#f1ece4;padding:2px 6px;border-radius:4px">drafts/' + slugLabel + '</code>，並在指定時間後準備發布候選。完成獨立審查、CI 與 Preview 驗證後，才會正式上線。</p><label style="font-size:12px;font-weight:600;color:#0c5159;display:block;margin:14px 0 4px">發布時間（你的本地時間）<input id="schedAt" type="datetime-local" value="' + defaultLocal + '" style="display:block;width:100%;padding:8px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px;margin-top:4px" /></label><p style="font-size:11px;color:#8b8378;margin:6px 0 14px">⏱ GitHub Actions cron 每 15 分鐘檢查一次隊列、到時間準備候選檔案；排程完成不代表已上線。</p><div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" id="schedCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button><button type="button" id="schedConfirm">📤 存草稿並排程</button></div></div>';
   document.body.appendChild(bg);
   bg.querySelector('#schedCancel').addEventListener('click', ()=>bg.remove());
   bg.querySelector('#schedConfirm').addEventListener('click', async ()=>{
@@ -2092,8 +2036,11 @@ function openScheduleModal(){
     btn.disabled = true;
     btn.textContent = '存草稿中...';
     try {
+      if(CURRENT_FILE !== scheduleFile || EDITOR_LOAD_ID !== scheduleLoadId){
+        throw new Error('目前文章已切換，請重新開啟排程');
+      }
       const draft = await saveAsDraft(true);
-      if(!draft) throw new Error('草稿儲存失敗');
+      assertSchedulableDraft(draft, scheduleFile);
       btn.textContent = '加入隊列中...';
       // Update .github/scheduled-publish/queue.json
       const QUEUE_PATH = '.github/scheduled-publish/queue.json';
@@ -2102,18 +2049,19 @@ function openScheduleModal(){
         const f = await gh('GET', 'contents/' + QUEUE_PATH);
         queue = JSON.parse(decodeUtf8Base64(f.content));
         queueSha = f.sha;
-      } catch(e){ /* queue not exist yet; create */ }
+      } catch(e){ if(e.status !== 404) throw e; }
+      if(!Array.isArray(queue)) throw new Error('排程資料格式不正確，未覆寫既有資料');
       // Remove existing entry for same slug
       queue = queue.filter(q => q.slug !== slug);
       // Extract title
-      const src = BILINGUAL_MODE ? mergeBilingualBack() : (SOURCE_MODE ? sourceTextarea.value : (editFrame ? mergeIframeIntoOriginal() : CURRENT_CONTENT));
+      const src = draft.content;
       const titleM = src.match(/<title>([^<]*)<\/title>/);
       queue.push({
         slug,
-        file: CURRENT_FILE,
+        file: draft.file,
         branch: draft.branch,
         at: atDate.toISOString(),
-        title: titleM ? titleM[1].split('—')[0].trim() : CURRENT_FILE,
+        title: titleM ? titleM[1].split('—')[0].trim() : draft.file,
         added_at: new Date().toISOString(),
       });
       queue.sort((a,b)=>a.at.localeCompare(b.at));
@@ -2123,13 +2071,15 @@ function openScheduleModal(){
         branch: BRANCH,
       };
       if(queueSha) body.sha = queueSha;
+      assertSchedulableDraft(draft, scheduleFile);
       await gh('PUT', 'contents/' + QUEUE_PATH, body);
-      setStatus('已排程 ' + slug + ' 於 ' + atDate.toLocaleString('zh-TW') + ' 自動發布（共 ' + queue.length + ' 件待發布）');
+      setStatus('已排程 ' + slug + ' 於 ' + atDate.toLocaleString('zh-TW') + ' 準備發布候選（共 ' + queue.length + ' 件待準備）；正式發布仍須審查與驗證');
       bg.remove();
     } catch(e){
       btn.disabled = false;
       btn.textContent = '📤 存草稿並排程';
-      alert('排程失敗，請稍後再試');
+      autosave();
+      alert('排程未完成：' + (e.message || e));
     }
   });
 }
@@ -2212,63 +2162,109 @@ function toast(msg, type){
 }
 window.toast = toast;
 
-function showSaveModal(callback){
-  const bg = document.createElement('div');
-  bg.className = 'modal-bg';
-  const currentFileLabel = escapeHtml(CURRENT_FILE);
-  bg.innerHTML = '<div class="modal" style="max-width:500px"><h2>儲存並推送到 GitHub</h2><p style="font-size:13px;color:#5e574e;margin:8px 0 14px">檔案：<code style="background:#f1ece4;padding:2px 8px;border-radius:4px;font-family:JetBrains Mono,monospace">' + currentFileLabel + '</code></p><label style="display:block;font-size:12px;font-weight:600;color:#0c5159;margin-bottom:4px">Commit 訊息（選填）</label><input id="saveModalMsg" placeholder="例：更新治療階梯數據 / 修正錯字" style="display:block;width:100%;padding:9px 12px;font-size:13px;border:1px solid #dcd5c8;border-radius:6px" autocomplete="off" /><p style="font-size:11.5px;color:#8b8378;margin:8px 0 18px">留空會用「edit ' + currentFileLabel + '」</p><div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" id="saveModalCancel">取消</button><button type="button" id="saveModalConfirm" class="primary">確認儲存並推送</button></div></div>';
-  document.body.appendChild(bg);
-  const input = bg.querySelector('#saveModalMsg');
-  setTimeout(()=>input.focus(), 50);
-  const submit = ()=>{
-    const msg = (input.value || '').trim() || ('edit ' + CURRENT_FILE);
-    bg.remove();
-    callback(msg);
-  };
-  bg.querySelector('#saveModalConfirm').addEventListener('click', submit);
-  bg.querySelector('#saveModalCancel').addEventListener('click', ()=>bg.remove());
-  input.addEventListener('keydown', e=>{
-    if(e.key === 'Enter'){ e.preventDefault(); submit(); }
-    if(e.key === 'Escape') bg.remove();
+function showSaveModal(file){
+  return new Promise(resolve=>{
+    const bg = document.createElement('div');
+    bg.className = 'modal-bg';
+    const label = escapeHtml(file);
+    bg.innerHTML = '<div class="modal" style="max-width:500px"><h2>儲存文章到 GitHub</h2><p>檔案：<code>' + label + '</code></p><p style="font-size:13px">這一步只儲存文章。完成審查、候選 CI 與 Preview 驗證後，才會正式發布。</p><label for="saveModalMsg">儲存說明（選填）</label><input id="saveModalMsg" placeholder="例如：修正錯字" autocomplete="off" /><div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" id="saveModalCancel">取消</button><button type="button" id="saveModalConfirm" class="primary">確認儲存</button></div></div>';
+    document.body.appendChild(bg);
+    const input = bg.querySelector('#saveModalMsg');
+    input.focus();
+    let settled = false;
+    const finish = value=>{ if(settled) return; settled = true; bg.remove(); resolve(value); };
+    const submit = ()=>finish((input.value || '').trim() || ('edit ' + file));
+    bg.querySelector('#saveModalConfirm').addEventListener('click', submit);
+    bg.querySelector('#saveModalCancel').addEventListener('click', ()=>finish(null));
+    bg.addEventListener('keydown', e=>{
+      if(e.key === 'Escape'){ e.preventDefault(); finish(null); }
+      if(e.key === 'Enter' && e.target === input){ e.preventDefault(); submit(); }
+    });
   });
 }
 
-// Replace save() flow with modal + toast version
+function captureSaveSnapshot(){
+  return {file:CURRENT_FILE, sha:CURRENT_SHA, content:getCurrentEditorContent(), loadId:EDITOR_LOAD_ID};
+}
+function snapshotIsActive(snapshot){
+  return CURRENT_FILE === snapshot.file && EDITOR_LOAD_ID === snapshot.loadId;
+}
+function assertSchedulableDraft(draft, file){
+  if(!draft || draft.file !== file || !snapshotIsActive(draft) || getCurrentEditorContent() !== draft.content){
+    throw new Error('目前內容與已保存草稿不同，請先儲存最新編輯，再重新排程');
+  }
+}
+function savedBlobSha(data){
+  const sha = data && data.content && data.content.sha;
+  if(typeof sha !== 'string' || !/^[a-f0-9]{40}$/.test(sha)) throw new Error('GitHub 未回傳有效檔案版本');
+  return sha;
+}
+async function verifySavedContent(snapshot, data){
+  const blobSha = savedBlobSha(data);
+  const commitSha = data && data.commit && data.commit.sha;
+  if(typeof commitSha !== 'string' || !/^[a-f0-9]{40}$/.test(commitSha)) throw new Error('GitHub 未回傳有效提交版本');
+  // Read the immutable commit, not a moving main/draft branch or cached GET.
+  const verified = await gh('GET', 'contents/' + snapshot.file + '?ref=' + commitSha);
+  if(verified.sha !== blobSha || decodeUtf8Base64(verified.content) !== snapshot.content){
+    throw new Error('GitHub 內容驗證不一致；本機編輯與暫存已保留');
+  }
+}
+function finishSaveSnapshot(snapshot, blobSha, updateMain, verified){
+  if(!snapshotIsActive(snapshot)) return false;
+  const unchanged = getCurrentEditorContent() === snapshot.content;
+  if(updateMain){
+    CURRENT_SHA = blobSha;
+    elShaInfo.textContent = 'SHA: ' + blobSha.substring(0,7);
+  }
+  if(verified && unchanged){
+    if(updateMain) CURRENT_CONTENT = snapshot.content;
+    DIRTY = false;
+    clearAutosaveFor(snapshot.file);
+    lastAutosaveAt = 0;
+    updateAutosaveIndicator();
+  } else {
+    // Never replace the live editor/base or erase edits made while awaiting I/O.
+    DIRTY = true;
+    autosave();
+  }
+  return verified && unchanged;
+}
+
 async function saveWithModal(){
+  if(SAVE_PENDING){ setStatus('儲存作業尚未結束，請稍候'); return; }
+  if(EDITOR_LOADING){ setStatus('文章仍在載入，請稍後儲存'); return; }
   if(!CURRENT_FILE){ toast('請先選一個檔案', 'error'); return; }
   if(!PAT){ toast('請先登入 GitHub PAT', 'error'); return; }
-  let newContent;
-  if(BILINGUAL_MODE) newContent = mergeBilingualBack();
-  else if(SOURCE_MODE) newContent = sourceTextarea ? sourceTextarea.value : CURRENT_CONTENT;
-  else newContent = mergeIframeIntoOriginal();
-  if(newContent === CURRENT_CONTENT){
-    const proceed = confirm('看起來內容沒變化（也許 iframe 還沒讀到你的編輯）。仍要送出嗎？\n\nTip: 如果你確實有改過字、請先點一下 iframe 外面（讓編輯區失去焦點），再按儲存。');
-    if(!proceed) return;
+  SAVE_PENDING = true;
+  let snapshot, acceptedSha;
+  try {
+    const file = CURRENT_FILE;
+    const loadId = EDITOR_LOAD_ID;
+    const message = await showSaveModal(file);
+    if(message === null) return;
+    if(file !== CURRENT_FILE || loadId !== EDITOR_LOAD_ID) throw new Error('目前文章已切換，請重新儲存');
+    // Capture at confirmation, so edits made before confirming are included.
+    snapshot = captureSaveSnapshot();
+    DIRTY = true;
+    autosave();
+    setStatus('儲存中 ' + snapshot.file + ' ...');
+    const data = await gh('PUT', 'contents/' + snapshot.file, {
+      message, content:encodeUtf8Base64(snapshot.content), branch:BRANCH, sha:snapshot.sha,
+    });
+    acceptedSha = savedBlobSha(data);
+    await verifySavedContent(snapshot, data);
+    const clean = finishSaveSnapshot(snapshot, acceptedSha, true, true);
+    const detail = clean ? '' : '；後續編輯仍未儲存，已保留暫存';
+    setStatus('已儲存並驗證 ' + snapshot.file + detail + '；待審查與 CI／Preview 驗證後發布');
+    toast('文章已存到 GitHub' + detail + '。這不代表已正式上線。', 'success');
+  } catch(e){
+    if(snapshot && acceptedSha) finishSaveSnapshot(snapshot, acceptedSha, true, false);
+    const prefix = acceptedSha ? 'GitHub 已接受，但內容驗證未完成；暫存保留：' : '儲存未完成；編輯與暫存保留：';
+    setStatus(prefix + (e.message || e), true);
+    toast(prefix + (e.message || e), 'error');
+  } finally {
+    SAVE_PENDING = false;
   }
-  showSaveModal(async (message)=>{
-    setStatus('儲存中 ' + CURRENT_FILE + ' ...');
-    toast('儲存中...', 'info');
-    try {
-      const data = await gh('PUT', 'contents/' + CURRENT_FILE, {
-        message: message,
-        content: encodeUtf8Base64(newContent),
-        branch: BRANCH,
-        sha: CURRENT_SHA,
-      });
-      CURRENT_SHA = data.content.sha;
-      CURRENT_CONTENT = newContent;
-      DIRTY = false;
-      if(CURRENT_FILE) clearAutosaveFor(CURRENT_FILE);
-      lastAutosaveAt = 0;
-      updateAutosaveIndicator();
-      elShaInfo.textContent = 'SHA: ' + CURRENT_SHA.substring(0,7);
-      setStatus('已推送到 GitHub — Vercel 部署中');
-      toast('已儲存並推送到 GitHub。Vercel 約 30 秒後重新部署、上線。', 'success');
-    } catch(e){
-      setStatus('儲存失敗，請稍後再試', true);
-      toast('儲存失敗，請稍後再試', 'error');
-    }
-  });
 }
 
 // Re-wire save button + Ctrl+S to the new flow (replace old listeners by cloning)
@@ -2288,7 +2284,7 @@ save = saveWithModal;
 // init
 if(auth) auth.restoreSession().catch(()=>{});
 loadPat();</script>
-<script type="module" src="/admin/admin-extras.js?v=202609100400"></script>
+<script type="module" src="/admin/admin-extras.js?v=202609100535"></script>
 <script>
 // === Mobile sidebar collapse (2026-05-13c — inline collapse) ===
 (function(){
