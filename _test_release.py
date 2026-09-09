@@ -135,7 +135,7 @@ function python {
     if (($env:RELEASE_SCENARIO -eq 'ci-failed' -and ($args -contains 'candidate')) -or
         ($env:RELEASE_SCENARIO -eq 'remote-failed' -and ($args -contains 'main')) -or
         ($env:RELEASE_SCENARIO -eq 'deploy-failed' -and ($args -contains 'production')) -or
-        ($env:RELEASE_SCENARIO -eq 'smoke-failed' -and ($args -contains 'smoke'))) { $global:LASTEXITCODE = 1 }
+        ($env:RELEASE_SCENARIO -eq 'smoke-failed' -and ($args -contains 'main'))) { $global:LASTEXITCODE = 1 }
 }
 & ./deploy.ps1
 exit $LASTEXITCODE
@@ -167,7 +167,13 @@ exit $LASTEXITCODE
         self.assertLess(calls.index('--phase candidate'), calls.index('git push'))
         self.assertLess(calls.index('git push'), calls.index('--phase main'))
         self.assertLess(calls.index('--phase main'), calls.index('_delivery.py production'))
-        self.assertLess(calls.index('_delivery.py production'), calls.index('_delivery.py smoke'))
+        # Hosted smoke is a required main step, before the final deployment resolution.
+        import _delivery
+        workflow = next(w for w in _delivery.policy()['workflows'] if w['path'] == '.github/workflows/delivery.yml')
+        self.assertIn('Production smoke', workflow['jobs'])
+        self.assertNotIn('Production smoke', workflow['main_skips'])
+        self.assertIn('Verify exact-SHA production pages and assets', workflow['steps']['Production smoke']['required'])
+        self.assertIn('hosted smoke checks verified', output)
 
     def test_production_failure_is_not_delivery(self):
         for scenario in ('deploy-failed', 'smoke-failed'):
