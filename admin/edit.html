@@ -20,6 +20,7 @@ originalHTML: null,    // original article HTML (full file)
 originalBody: null,    // original <main> contents
 dirty: false,
 lastSavedAt: null,
+loadId: 0,
 };
 // ─── DOM ──────────────────────────────────────────────────────────────
 var $sel = document.getElementById('article-select');
@@ -73,38 +74,55 @@ $sel.appendChild(opt);
 }
 // ─── Load article HTML + extract editable body ────────────────────────
 function loadArticle(slug) {
-state.currentSlug = slug;
-// Try draft first
-var draft = localStorage.getItem('dn-admin-draft:' + slug);
-if (draft) {
-var loadDraft = confirm('發現此文章有 localStorage 草稿、要載入嗎？\n\n按「確定」載入草稿、「取消」直接從 server 載入原版。');
-if (loadDraft) {
-applyEditorContent(draft);
+var draft = null;
+try {
+draft = localStorage.getItem('dn-admin-draft:' + slug);
+} catch (err) {
+toast('無法讀取本機草稿，將載入原版', 4000);
+}
+if (draft !== null && !confirm('發現此文章有 localStorage 草稿、要載入嗎？\n\n按「確定」載入草稿、「取消」直接從 server 載入原版。')) {
+draft = null;
+}
+return fetchAndRender(slug, draft);
+}
+function resetArticle(slug) {
+state.loadId++;
+state.currentSlug = slug || null;
+state.originalHTML = null;
+state.originalBody = null;
+state.lastSavedAt = null;
 markDirty(false);
-$lastSaved.textContent = '已從草稿載入';
-toast('已載入 localStorage 草稿');
-return;
+$editor.innerHTML = '';
+$empty.hidden = false;
+$editor.hidden = true;
+$toolbar.hidden = true;
+$meta.hidden = true;
+$statusBar.hidden = true;
 }
-}
-fetchAndRender(slug);
-}
-function fetchAndRender(slug) {
+function fetchAndRender(slug, draft) {
+resetArticle(slug);
+var loadId = state.loadId;
+toast('正在載入文章…');
 var url = '/blog/' + slug + '.html?_cb=' + Date.now();
-fetch(url).then(function (r) {
+return fetch(url).then(function (r) {
 if (!r.ok) throw new Error('Article fetch failed: ' + r.status);
 return r.text();
 }).then(function (html) {
-state.originalHTML = html;
+if (loadId !== state.loadId) return;
 // Extract <main>...</main> content
 var bodyMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
 if (!bodyMatch) throw new Error('No <main> tag found in article');
 var bodyContent = bodyMatch[1];
+state.originalHTML = html;
 state.originalBody = bodyContent;
-applyEditorContent(bodyContent);
+var hasDraft = draft !== null && draft !== undefined;
+applyEditorContent(hasDraft ? draft : bodyContent);
 markDirty(false);
-$lastSaved.textContent = '已從 server 載入';
-toast('已從 server 載入原版');
+$lastSaved.textContent = hasDraft ? '已從草稿載入' : '已從 server 載入';
+toast(hasDraft ? '已載入 localStorage 草稿' : '已從 server 載入原版');
 }).catch(function (err) {
+if (loadId !== state.loadId) return;
+state.originalHTML = null;
 toast('載入失敗：' + err.message, 4000);
 console.error(err);
 });
@@ -269,8 +287,8 @@ $wordCount.textContent = (cjk + words).toLocaleString() + ' 字';
 }
 // ─── Save draft to localStorage ───────────────────────────────────────
 function saveDraft() {
-if (!state.currentSlug) {
-toast('請先選文章再存草稿', 2400);
+if (!state.currentSlug || !state.originalHTML) {
+toast('請先載入文章再存草稿', 2400);
 return;
 }
 var html = sanitizeEditableHtml($editor.innerHTML);
@@ -313,7 +331,7 @@ toast('已匯出 ' + state.currentSlug + '.html');
 }
 // ─── Copy body to clipboard ───────────────────────────────────────────
 function copyBody() {
-if (!state.currentSlug) return toast('請先載入文章', 2400);
+if (!state.currentSlug || !state.originalHTML) return toast('請先載入文章', 2400);
 var html = sanitizeEditableHtml($editor.innerHTML);
 navigator.clipboard.writeText(html).then(function () {
 toast('內文已複製（' + Math.round(html.length / 1024) + ' KB）');
@@ -338,19 +356,15 @@ toast('已清除 ' + n + ' 個草稿項目', 3000);
 // ─── Wire up ──────────────────────────────────────────────────────────
 $sel.addEventListener('change', function () {
 var slug = $sel.value;
-if (!slug) {
-$empty.hidden = false;
-$editor.hidden = true;
-$toolbar.hidden = true;
-$meta.hidden = true;
-$statusBar.hidden = true;
-return;
-}
 if (state.dirty && state.currentSlug && state.currentSlug !== slug) {
 if (!confirm('當前文章有未存檔變更、切換會丟失。確定要切換嗎？')) {
 $sel.value = state.currentSlug;
 return;
 }
+}
+if (!slug) {
+resetArticle(null);
+return;
 }
 var opt = $sel.options[$sel.selectedIndex];
 $metaSlug.textContent = slug;
