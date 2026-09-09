@@ -4,6 +4,27 @@ const { allowed } = require('./_vercel_gate.cjs');
 const cfg = require('./_delivery_policy.json');
 const sha = 'a'.repeat(40);
 const env = { VERCEL_ENV: 'production', VERCEL_GIT_COMMIT_SHA: sha };
+test('preview teardown drains in-flight routes before closing and preserves failures', async () => {
+  const { finishPreviewPage } = require('./_delivery_preview.cjs');
+  let release, closed = false;
+  const pending = new Promise(resolve => { release = resolve; });
+  const context = { unrouteAll: async options => {
+    assert.deepEqual(options, { behavior: 'wait' });
+    await pending;
+  } };
+  const page = { close: async () => { closed = true; } };
+  const done = finishPreviewPage(context, page);
+  await Promise.resolve();
+  assert.equal(closed, false);
+  release();
+  await done;
+  assert.equal(closed, true);
+  closed = false;
+  await assert.rejects(finishPreviewPage({ unrouteAll: async () => {
+    throw Error('request failed');
+  } }, page), /request failed/);
+  assert.equal(closed, false);
+});
 test('preview credential stays on the exact deployment origin', () => {
   const { previewHeaders } = require('./_delivery_preview.cjs');
   const origin = 'https://candidate-team.vercel.app';

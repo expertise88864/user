@@ -59,7 +59,8 @@
 
   DN.applyTextOnly = function (lang) {
     const meta = DN.LANGS.find(function (l) { return l.code === lang; }) || DN.LANGS[0];
-    document.documentElement.lang = meta.htmlLang;
+    // Repeated enhancement passes must not invalidate an already-correct page language.
+    if (document.documentElement.lang !== meta.htmlLang) document.documentElement.lang = meta.htmlLang;
     const otherLang = lang === 'en' ? 'zh' : 'en';
     function plain(s) { return String(s || '').replace(/<[^>]+>/g, ''); }
     document.querySelectorAll('[data-zh],[data-en]').forEach(function (el) {
@@ -94,7 +95,10 @@
         const order = lang === 'en' ? ['en', 'zh'] : ['zh', 'en'];
         for (const k of order) {
           const v = el.getAttribute('data-' + k + '-' + attr);
-          if (v != null) { el.setAttribute(attr, v); return; }
+          if (v != null) {
+            if (el.getAttribute(attr) !== v) el.setAttribute(attr, v);
+            return;
+          }
         }
       });
     });
@@ -221,7 +225,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202609100250';
+        s.src = '/blog/blog-article-visuals.min.js?v=202609100310';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1089,7 +1093,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202609100250';
+        s.src = '/blog/blog-article-reading.min.js?v=202609100310';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1125,7 +1129,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202609100250';
+        s.src = '/blog/blog-article-footer.min.js?v=202609100310';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1155,7 +1159,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202609100250';
+        s.src = '/blog/blog-calculators.min.js?v=202609100310';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1290,7 +1294,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202609100250';
+        s.src = '/blog/blog-hub.min.js?v=202609100310';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;

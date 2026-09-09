@@ -7,6 +7,42 @@ import path from 'node:path';
 const hubContext = {window:{DN:{ARTICLES:[]}}};
 vm.runInNewContext(readFileSync(new URL('./blog/blog-hub.js', import.meta.url),'utf8'), hubContext);
 const searchCatalog = hubContext.window.DN.searchArticleCatalog;
+test('language refresh avoids redundant mutations but translates new content and repairs labels', () => {
+  let lang = 'zh-TW', langWrites = 0, attrWrites = 0;
+  const attrs = new Map([['aria-label', '搜尋'], ['data-zh-aria-label', '搜尋'], ['data-en-aria-label', 'Search']]);
+  const label = { getAttribute: name => attrs.get(name) ?? null,
+    setAttribute: (name, value) => { attrWrites++; attrs.set(name, value); } };
+  const text = { dataset: {zh:'原文',en:'Original'}, textContent:'原文' };
+  const edited = { dataset: {zh:'舊文',en:'Old'}, textContent:'醫師修改內容' };
+  const content = [text, edited];
+  const document = {
+    documentElement: { get lang() { return lang; }, set lang(value) { langWrites++; lang = value; } },
+    querySelectorAll: selector => selector === '[data-zh],[data-en]' ? content
+      : selector.includes('aria-label') ? [label] : [],
+  };
+  const window = {DN:{}};
+  vm.runInNewContext(readFileSync(new URL('./blog/blog-shared.js', import.meta.url), 'utf8'), {window,document});
+  const dn = window.DN;
+  dn.applyTextOnly('zh');
+  assert.equal(langWrites, 0);
+  assert.equal(attrWrites, 0);
+  dn.applyTextOnly('en');
+  assert.equal(lang, 'en');
+  assert.equal(text.textContent, 'Original');
+  assert.equal(edited.textContent, '醫師修改內容');
+  assert.equal(attrs.get('aria-label'), 'Search');
+  assert.equal(langWrites, 1);
+  assert.equal(attrWrites, 1);
+  content.push({dataset:{zh:'新增',en:'Added'},textContent:'新增'});
+  attrs.set('aria-label', 'stale label');
+  dn.applyTextOnly('en');
+  assert.equal(content[2].textContent, 'Added');
+  assert.equal(attrs.get('aria-label'), 'Search');
+  assert.equal(langWrites, 1);
+  assert.equal(attrWrites, 2);
+  dn.applyTextOnly('en');
+  assert.equal(attrWrites, 2);
+});
 test('reading completion requires foreground dwell and scroll, and fires once', () => {
   let now = 0, tick, reads = 0, events = 0, visibleBottom = 200;
   const documentListeners = new Map(), windowListeners = new Map();

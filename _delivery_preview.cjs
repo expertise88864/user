@@ -35,7 +35,13 @@ async function checkHubStatus(page) {
   await input.fill('');
   await assertStatus(english ? /^\d+ articles?$/ : /^\d+ 篇文章$/);
 }
-module.exports = { previewHeaders, checkHubStatus };
+async function finishPreviewPage(context, page) {
+  // Drain intercepted requests (including SW precache) before closing their page.
+  // Waiting preserves request failures; ignoreErrors would hide them.
+  await context.unrouteAll({ behavior: 'wait' });
+  await page.close();
+}
+module.exports = { previewHeaders, checkHubStatus, finishPreviewPage };
 
 if (require.main === module) (async () => {
   const { chromium } = require('playwright');
@@ -49,17 +55,17 @@ if (require.main === module) (async () => {
     for (const width of [390, 800, 1440]) {
       const context = await browser.newContext({ viewport: { width, height: 900 }, locale: 'zh-TW' });
       try {
-        await context.route('**/*', async route => {
-          const request = route.request();
-          const headers = { ...request.headers() };
-          delete headers['x-vercel-protection-bypass'];
-          Object.assign(headers, previewHeaders(request.url(), base.origin, process.env.VERCEL_AUTOMATION_BYPASS_SECRET));
-          // A redirect becomes a fresh intercepted browser request. Never let
-          // the API client follow it while carrying the preview credential.
-          const response = await route.fetch({ headers, maxRedirects: 0 });
-          await route.fulfill({ response });
-        });
         for (const [index, route] of policy.preview_paths.entries()) {
+          await context.route('**/*', async route => {
+            const request = route.request();
+            const headers = { ...request.headers() };
+            delete headers['x-vercel-protection-bypass'];
+            Object.assign(headers, previewHeaders(request.url(), base.origin, process.env.VERCEL_AUTOMATION_BYPASS_SECRET));
+            // A redirect becomes a fresh intercepted browser request. Never let
+            // the API client follow it while carrying the preview credential.
+            const response = await route.fetch({ headers, maxRedirects: 0 });
+            await route.fulfill({ response });
+          });
           const page = await context.newPage();
           const errors = [];
           page.on('pageerror', e => errors.push(e.message));
@@ -96,9 +102,12 @@ if (require.main === module) (async () => {
           await page.screenshot({ path: 'delivery-preview/' + width + '-' + index + '.png', fullPage: true });
           if (route === '/' || route === '/en') await checkHubStatus(page);
           assert.deepEqual(errors, [], 'Page JavaScript errors');
-          await page.close();
+          await finishPreviewPage(context, page);
         }
-      } finally { await context.close(); }
+      } finally {
+        await context.unrouteAll({ behavior: 'wait' });
+        await context.close();
+      }
     }
   } finally { await browser.close(); }
 })().catch(error => { console.error(error.message); process.exitCode = 1; });
