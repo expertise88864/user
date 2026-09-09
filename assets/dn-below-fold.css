@@ -103,6 +103,8 @@ article h2[id]{scroll-margin-top:84px}
   :root[data-theme="dark"] table.dn th:not([style*="background"]){background:#3a352c!important}
   :root[data-theme="dark"] table.dn tbody tr:nth-child(even){background:#2e2924}
   :root[data-theme="dark"] table.dn .cite{color:var(--ink-2)}
+  :root[data-theme="dark"] .dn-comparison-card,:root[data-theme="dark"] .dn-advice{background:var(--surface)!important}
+  :root[data-theme="dark"] .dn-advice>strong[style]{color:#99f6e4!important}
 }
 
 /* Keep long scale guides responsive while retaining search and anchor access. */
