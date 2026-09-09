@@ -30,6 +30,11 @@ jobs:
     name: Preview browser
     if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && startsWith(github.ref, 'refs/heads/codex/')
     runs-on: ubuntu-latest
+    # Match the npm version below. The image supplies browser OS dependencies
+    # without refreshing unrelated package repositories on the hosted runner.
+    container:
+      image: mcr.microsoft.com/playwright:v1.60.0-noble@sha256:9bd26ad900bb5e0f4dee75839e957a89ae89c2b7ab1e76050e559790e946b948
+      options: --shm-size=1g
     timeout-minutes: 20
     permissions:
       contents: read
@@ -54,7 +59,7 @@ jobs:
         run: |
           npm install --global playwright@1.60.0
           echo "NODE_PATH=$(npm root --global)" >> "$GITHUB_ENV"
-          playwright install --with-deps chromium
+          playwright install chromium
       - name: Verify preview pages in desktop and mobile browsers
         env:
           VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
