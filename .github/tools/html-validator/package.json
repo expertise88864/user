@@ -1,0 +1,7 @@
+{
+  "name": "dermnotes-html-validator",
+  "private": true,
+  "dependencies": {
+    "vnu-jar": "26.9.7"
+  }
+}

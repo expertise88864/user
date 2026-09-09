@@ -55,7 +55,20 @@ jobs:
         with: { node-version: '20' }
       - name: Install validators
         run: |
-          pip install html5validator lxml
+          pip install html5validator==0.4.2 lxml
+          npm ci --prefix .github/tools/html-validator --ignore-scripts --no-audit --no-fund
+          # Keep the existing CLI, file coverage and filters; update its old
+          # bundled Nu checker so current standard CSS is validated correctly.
+          python <<'PY'
+          from pathlib import Path
+          import shutil, vnujar
+          shutil.copyfile(
+              '.github/tools/html-validator/node_modules/vnu-jar/build/dist/vnu.jar',
+              Path(vnujar.__file__).with_name('vnu.jar'),
+          )
+          PY
+          java -jar .github/tools/html-validator/node_modules/vnu-jar/build/dist/vnu.jar --version
+          python .github/tools/html-validator/check.py
       - name: Run html5validator (whitelist common Tailwind/SVG/modern-CSS noise)
         # NOTE: html5validator uses argparse nargs='+' for --ignore-re with action='store',
         # so repeating the flag OVERWRITES (only the last wins). All patterns must be

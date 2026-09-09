@@ -27,13 +27,13 @@ already have a <script type="speculationrules">.
 """
 from __future__ import annotations
 
-import io
 import json
 import re
 import sys
 from pathlib import Path
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parent
 
@@ -97,7 +97,9 @@ def inject_one(path: Path) -> bool:
     body_close = cleaned.rfind("</body>")
     if body_close == -1:
         return False
-    new = cleaned[:body_close] + BLOCK + "\n" + cleaned[body_close:]
+    # Normalize the separator: removing an old block leaves its trailing newline.
+    # Without rstrip each generator pass adds another blank line.
+    new = cleaned[:body_close].rstrip() + BLOCK + "\n" + cleaned[body_close:]
     if new == src:
         return False
     path.write_text(new, encoding="utf-8")

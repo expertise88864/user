@@ -1,6 +1,8 @@
 import unittest
 from unittest.mock import patch
 from pathlib import Path
+from tempfile import TemporaryDirectory
+from _inject_speculation_rules import inject_one
 from _sync_article_navigation import canonical_header, migrate_article, update_editor
 from _check_article_runtime import check_article, ROOT
 
@@ -8,6 +10,26 @@ HEADER='<header><nav class="dn-nav">shared links</nav></header>'
 BODY='<main><article><h1>Physician headline</h1><p data-en="Original">醫師原文</p><code>class="dn-nav"</code></article></main>'
 
 class NavigationGenerationTests(unittest.TestCase):
+    def test_speculation_rules_repeated_passes_are_byte_identical(self):
+        with TemporaryDirectory() as directory:
+            path = Path(directory) / 'article.html'
+            path.write_text('<html><body>' + BODY + '\n\n</body></html>', encoding='utf-8')
+            self.assertTrue(inject_one(path))
+            first = path.read_bytes()
+            for _ in range(3):
+                self.assertFalse(inject_one(path))
+                self.assertEqual(path.read_bytes(), first)
+            self.assertIn(BODY, path.read_text(encoding='utf-8'))
+
+    def test_native_speculation_rules_are_preserved(self):
+        with TemporaryDirectory() as directory:
+            path = Path(directory) / 'article.html'
+            source = '<html><body>' + BODY + '<script type="speculationrules">{"prefetch":[]}</script>\n</body></html>'
+            path.write_text(source, encoding='utf-8')
+            before = path.read_bytes()
+            self.assertFalse(inject_one(path))
+            self.assertEqual(path.read_bytes(), before)
+
     def test_only_legacy_header_changes_and_second_pass_is_identical(self):
         original='<html><head></head><body><header>legacy</header>'+BODY+'</body></html>'
         result=migrate_article(original,HEADER)
