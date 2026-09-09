@@ -6,7 +6,36 @@ function previewHeaders(url, origin, secret) {
   return secret && new URL(url).origin === origin
     ? { 'x-vercel-protection-bypass': secret } : {};
 }
-module.exports = { previewHeaders };
+async function checkHubStatus(page) {
+  const status = page.locator('#dn-search-status');
+  await status.waitFor();
+  await page.waitForFunction(() => document.getElementById('dn-search-status')?.getAttribute('data-en'));
+  const english = await page.locator('html').getAttribute('lang').then(lang => lang.startsWith('en'));
+  async function assertStatus(pattern) {
+    const text = await status.textContent();
+    assert.match(text, pattern);
+    assert.equal(text, await status.getAttribute(english ? 'data-en' : 'data-zh'));
+  }
+  await assertStatus(english ? /^\d+ featured articles?$/ : /^\d+ 篇精選文章$/);
+  await page.locator('.dn-tag-all').click();
+  await assertStatus(english ? /^\d+ articles?$/ : /^\d+ 篇文章$/);
+  const topics = page.locator('.dn-tag-chip:not(.dn-tag-all)');
+  for (const topic of await topics.all()) {
+    const label = await topic.getAttribute(english ? 'data-en' : 'data-zh');
+    assert.ok(label, 'Every topic must have a localized label');
+    if (english) assert.doesNotMatch(label, /[\u3400-\u9fff]/, 'English topic label must be translated');
+    await topic.click();
+    assert.equal(await status.textContent(), english ? 'Articles about ' + label : label + ' 相關文章');
+  }
+  const input = page.locator('#dn-search-input');
+  await input.fill('杜避炎 打多久');
+  await assertStatus(english ? /^\d+ results?$/ : /^找到 \d+ 篇文章$/);
+  await input.fill('zzzznomatchingarticlezzzz');
+  await assertStatus(english ? /^0 results$/ : /^找到 0 篇文章$/);
+  await input.fill('');
+  await assertStatus(english ? /^\d+ articles?$/ : /^\d+ 篇文章$/);
+}
+module.exports = { previewHeaders, checkHubStatus };
 
 if (require.main === module) (async () => {
   const { chromium } = require('playwright');
@@ -65,6 +94,7 @@ if (require.main === module) (async () => {
             }
           }
           await page.screenshot({ path: 'delivery-preview/' + width + '-' + index + '.png', fullPage: true });
+          if (route === '/' || route === '/en') await checkHubStatus(page);
           assert.deepEqual(errors, [], 'Page JavaScript errors');
           await page.close();
         }

@@ -206,6 +206,7 @@
     '接觸性皮膚炎': 'Contact dermatitis',
     '玫瑰斑 / 酒糟': 'Rosacea',
     '病毒疣 / HPV': 'Warts / HPV',
+    '病毒性皮膚感染': 'Viral skin infections',
     '帶狀皰疹 / 皮蛇': 'Shingles',
     '香港腳 / 灰指甲': 'Tinea / onychomycosis',
     '落髮 / 圓禿': 'Hair loss / alopecia areata',
@@ -226,6 +227,7 @@
     '健保 / 自費': 'NHI / self-pay',
     '常見問題 FAQ': 'FAQ',
     '學習筆記': 'Study notes',
+    '皮膚科 AI / 數位工具': 'Dermatology AI / digital tools',
     '最新研究': 'Latest research',
     '全部主題': 'All topics'
   };
@@ -451,7 +453,12 @@
         chips[i].classList.toggle('active', chips[i].dataset.tag === tag);
       }
     }
-    function setStatus(t) { document.getElementById('dn-search-status').textContent = t; }
+    function setStatus(zh, en) {
+      var status = document.getElementById('dn-search-status');
+      status.setAttribute('data-zh', zh);
+      status.setAttribute('data-en', en);
+      status.textContent = document.documentElement.lang.startsWith('en') ? en : zh;
+    }
 
     function showBySlugs(slugs) {
       // Keep visual, keyboard and screen-reader order identical. Restore the
@@ -506,7 +513,7 @@
             if (!isUnpub) allCards[i].style.display = visible ? 'flex' : 'none';
             if (visible) shown++;
           }
-          setStatus(shown + ' 篇精選文章');
+          setStatus(shown + ' 篇精選文章', shown + ' featured article' + (shown === 1 ? '' : 's'));
           if (showMoreBtn) showMoreBtn.style.display = 'block';
         } else {
           showBySlugs(null);
@@ -519,13 +526,14 @@
             var sA = mSlugA ? mSlugA[1] : '';
             if (sA && unpubAll.indexOf(sA) === -1) totalShown++;
           }
-          setStatus(totalShown + ' 篇文章');
+          setStatus(totalShown + ' 篇文章', totalShown + ' article' + (totalShown === 1 ? '' : 's'));
           if (showMoreBtn) showMoreBtn.style.display = 'none';
         }
       } else if (tag !== '__search__') {
         var ss = DN.TAG_GROUPS[tag] || [];
         var n = showBySlugs(ss);
-        setStatus(tag + ' 相關文章');
+        var tagEn = DN.TAG_EN && DN.TAG_EN[tag];
+        setStatus(tag + ' 相關文章', tagEn ? 'Articles about ' + tagEn : 'Related articles');
         if (showMoreBtn) showMoreBtn.style.display = 'none';
         showingAll = true;
       }
@@ -538,7 +546,7 @@
       setActive('__search__');
       var matched = DN.searchArticleCatalog(articles, q, DN.ARTICLES_DESC).map(function (a) { return a.slug; });
       var shown = showBySlugs(matched);
-      setStatus(document.documentElement.lang.startsWith('en') ? shown + ' results' : '找到 ' + shown + ' 篇文章');
+      setStatus('找到 ' + shown + ' 篇文章', shown + ' result' + (shown === 1 ? '' : 's'));
       document.getElementById('dn-search-help').hidden = shown > 0;
       if (showMoreBtn) showMoreBtn.style.display = 'none';
       // Record one settled query, without sending free-form health information.
