@@ -115,21 +115,8 @@
   // and pins thead so column names stay visible while scrolling vertically
   // inside the table. Used by psoriasis-systemic + atopic-dermatitis-systemic
   // biologics comparison tables.
-  DN.injectChartScrollCSS = function () {
-    if (document.getElementById('dn-chart-scroll-css')) return;
-    var s = document.createElement('style');
-    s.id = 'dn-chart-scroll-css';
-    s.textContent =
-      '.dn-chart-scroll{ max-height:78vh; overflow:auto; position:relative; margin:6px 0 4px; border-radius:10px; border:1px solid var(--line,#ebe4d8); -webkit-overflow-scrolling:touch; background:#fff }' +
-      // CRITICAL: override the global table.dn `overflow:hidden` which becomes a
-      // scroll container and breaks position:sticky on descendants. Also
-      // border-collapse:collapse (the global default) breaks sticky on table
-      // cells in some browsers. Force separate + visible inside our wrapper.
-      '.dn-chart-scroll table{ margin:0 !important; border-collapse:separate !important; border-spacing:0 !important; overflow:visible !important; box-shadow:none !important; border-radius:0 !important }' +
-      '.dn-chart-scroll thead th{ position:-webkit-sticky !important; position:sticky !important; top:0 !important; z-index:3 !important; background:#f1ece4 !important; box-shadow:inset 0 -1px 0 var(--line,#ebe4d8) }' +
-      '@media (max-width:640px){ .dn-chart-scroll{ max-height:70vh } }';
-    document.head.appendChild(s);
-  };
+  // Comparison-table styles ship in the shared stylesheet before initialization.
+  DN.injectChartScrollCSS = function () {};
 
 
 
@@ -225,7 +212,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202609100310';
+        s.src = '/blog/blog-article-visuals.min.js?v=202609100730';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1108,7 +1095,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202609100310';
+        s.src = '/blog/blog-article-reading.min.js?v=202609100730';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1144,7 +1131,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202609100310';
+        s.src = '/blog/blog-article-footer.min.js?v=202609100730';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1174,7 +1161,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202609100310';
+        s.src = '/blog/blog-calculators.min.js?v=202609100730';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1309,7 +1296,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202609100310';
+        s.src = '/blog/blog-hub.min.js?v=202609100730';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1438,13 +1425,16 @@
   // -----------------------------------------------------------------------
   DN.addStickyCTA = function () {
     if (document.getElementById('dn-sticky-cta')) return;
-    if (location.pathname === '/about' || location.pathname === '/about/') return;
-    if (location.pathname.startsWith('/admin')) return;
-    var lastY = window.scrollY || 0;
+    var pagePath = location.pathname.replace(/^\/en(?=\/|$)/, '').replace(/\/$/, '').replace(/\.html$/, '');
+    if (pagePath === '/about' || pagePath.startsWith('/admin')) return;
+    var isEn = DN.detectLang() === 'en';
+    var prefix = isEn ? '/en' : '';
+    var mobile = window.matchMedia && window.matchMedia('(max-width: 767px)');
+    var lastY = null;
 
     var bar = document.createElement('div');
     bar.id = 'dn-sticky-cta';
-    bar.setAttribute('aria-label', '快速操作工具列');
+    bar.setAttribute('aria-label', isEn ? 'Quick navigation' : '快速操作工具列');
     bar.style.cssText =
       'position:fixed;bottom:0;left:0;right:0;z-index:50;display:grid;grid-template-columns:1fr 1fr 1fr;' +
       'background:rgba(250,247,242,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);' +
@@ -1452,23 +1442,23 @@
       'padding-bottom:env(safe-area-inset-bottom);' +
       'transform:translateY(0);transition:transform .25s ease';
     bar.innerHTML =
-      '<a href="/" ' +
+      '<a href="' + (prefix || '/') + '" ' +
         'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
-        'data-cta="home" aria-label="首頁">' +
+        'data-cta="home" aria-label="' + (isEn ? 'Home' : '首頁') + '">' +
         '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>' +
-        '<span data-zh="首頁" data-en="Home">首頁</span>' +
+        '<span data-zh="首頁" data-en="Home">' + (isEn ? 'Home' : '首頁') + '</span>' +
       '</a>' +
-      '<a href="/blog/" ' +
+      '<a href="' + prefix + '/blog/" ' +
         'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
-        'data-cta="latest" aria-label="最新文章">' +
+        'data-cta="latest" aria-label="' + (isEn ? 'Latest articles' : '最新文章') + '">' +
         '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>' +
-        '<span data-zh="最新文章" data-en="Latest">最新文章</span>' +
+        '<span data-zh="最新文章" data-en="Latest">' + (isEn ? 'Latest' : '最新文章') + '</span>' +
       '</a>' +
-      '<a href="/about" ' +
+      '<a href="' + prefix + '/about" ' +
         'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700" ' +
-        'data-cta="about" aria-label="關於我">' +
+        'data-cta="about" aria-label="' + (isEn ? 'About' : '關於我') + '">' +
         '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></svg>' +
-        '<span data-zh="關於我" data-en="About">關於我</span>' +
+        '<span data-zh="關於我" data-en="About">' + (isEn ? 'About' : '關於我') + '</span>' +
       '</a>';
 
     var style = document.createElement('style');
@@ -1485,9 +1475,16 @@
     // Auto-hide on scroll-down, show on scroll-up (mobile reading mode).
     // Always reveal at the very top + when nearly at page bottom.
     var ticking = false;
+    function isMobile() { return mobile ? mobile.matches : window.innerWidth < 768; }
     function onScroll() {
+      ticking = false;
+      if (!isMobile()) {
+        lastY = null;
+        bar.style.transform = 'translateY(0)';
+        return;
+      }
       var y = window.scrollY || 0;
-      var dy = y - lastY;
+      var dy = lastY == null ? 0 : y - lastY;
       var nearBottom = (window.innerHeight + y) >= (document.documentElement.scrollHeight - 80);
       if (y < 120 || nearBottom) {
         bar.style.transform = 'translateY(0)';
@@ -1497,11 +1494,19 @@
         bar.style.transform = 'translateY(0)'; // show
       }
       lastY = y;
-      ticking = false;
     }
-    window.addEventListener('scroll', function () {
-      if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+    function scheduleUpdate() {
+      if (!isMobile()) { lastY = null; return; }
+      if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+    }
+    // Read geometry after startup DOM writes, and only for the visible toolbar.
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', function () {
+      lastY = null;
+      bar.style.transform = 'translateY(0)';
+      scheduleUpdate();
     }, { passive: true });
+    scheduleUpdate();
 
     // Track CTA clicks
     if (typeof gtag === 'function') {

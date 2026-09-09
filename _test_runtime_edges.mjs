@@ -305,3 +305,57 @@ test('font controls defer geometry, restore visibility and preserve size selecti
   win.DN.addFontSizer();
   assert.equal(doc.body.children.length,1);
 });
+
+function toolbarHarness(pathname = '/', narrow = true) {
+  const source = readFileSync(new URL('./blog/blog-shared.js', import.meta.url), 'utf8');
+  const nodes = new Map(), listeners = new Map(), frames = [];
+  let y = 0, reads = 0;
+  const mobile = {matches:narrow};
+  const node = () => ({style:{}, attrs:{}, setAttribute(k,v){this.attrs[k]=v;}, querySelectorAll(){return [];}});
+  const document = {getElementById:id=>nodes.get(id),createElement:node,
+    head:{appendChild:n=>nodes.set(n.id,n)},body:{appendChild:n=>nodes.set(n.id,n),classList:{add(){}}},
+    documentElement:{get scrollHeight(){reads++;return 2400;}}};
+  const window = {DN:{},matchMedia:()=>mobile,innerHeight:800,
+    get scrollY(){reads++;return y;},addEventListener:(n,fn)=>listeners.set(n,fn)};
+  const start=source.indexOf('  DN.addStickyCTA = function () {');
+  const end=source.indexOf('\n  // -----------------------------------------------------------------------',start);
+  window.DN.detectLang=()=>pathname === '/en' || pathname.startsWith('/en/') ? 'en' : 'zh';
+  vm.runInNewContext(source.slice(start,end),{DN:window.DN,window,document,location:{pathname},requestAnimationFrame:fn=>frames.push(fn)});
+  window.DN.addStickyCTA();
+  return {nodes,listeners,frames,mobile,setY(v){y=v;},reads:()=>reads,init:()=>window.DN.addStickyCTA()};
+}
+test('mobile toolbar defers geometry, batches scrolls and restores navigation at the bottom',()=>{
+  const h=toolbarHarness();const bar=h.nodes.get('dn-sticky-cta');
+  assert.equal(h.reads(),0);assert.equal(h.frames.length,1);
+  h.frames.shift()();
+  h.setY(400);h.listeners.get('scroll')();h.listeners.get('scroll')();
+  assert.equal(h.frames.length,1);h.frames.shift()();assert.equal(bar.style.transform,'translateY(110%)');
+  h.setY(350);h.listeners.get('scroll')();h.frames.shift()();assert.equal(bar.style.transform,'translateY(0)');
+  h.setY(1550);h.listeners.get('scroll')();h.frames.shift()();assert.equal(bar.style.transform,'translateY(0)');
+  h.init();assert.equal(h.nodes.size,2);assert.equal(h.frames.length,0);
+});
+test('desktop toolbar avoids geometry and resumes safely after viewport changes',()=>{
+  const h=toolbarHarness('/',false);h.listeners.get('scroll')();
+  assert.equal(h.reads(),0);assert.equal(h.frames.length,0);
+  h.mobile.matches=true;h.setY(400);h.listeners.get('resize')();h.frames.shift()();
+  const bar=h.nodes.get('dn-sticky-cta');assert.equal(bar.style.transform,'translateY(0)');
+  h.setY(500);h.listeners.get('scroll')();h.frames.shift()();assert.equal(bar.style.transform,'translateY(110%)');
+  h.mobile.matches=false;h.listeners.get('resize')();const count=h.reads();h.listeners.get('scroll')();
+  assert.equal(h.frames.length,0);assert.equal(h.reads(),count);assert.equal(bar.style.transform,'translateY(0)');
+});
+test('toolbar links and accessible labels stay in the rendered language',()=>{
+  for(const path of ['/en','/en/','/en/blog/acne-myths']){
+    const bar=toolbarHarness(path).nodes.get('dn-sticky-cta');
+    assert.equal(bar.attrs['aria-label'],'Quick navigation');
+    assert.match(bar.innerHTML,/href="\/en"/);assert.match(bar.innerHTML,/href="\/en\/blog\/"/);
+    assert.match(bar.innerHTML,/href="\/en\/about"/);assert.match(bar.innerHTML,/aria-label="Latest articles"/);
+    assert.match(bar.innerHTML,/>Home<\/span>/);
+  }
+  const bar=toolbarHarness('/blog/acne-myths').nodes.get('dn-sticky-cta');
+  assert.match(bar.innerHTML,/href="\/blog\/"/);assert.match(bar.innerHTML,/aria-label="最新文章"/);
+});
+test('toolbar consistently excludes about and admin routes in both languages',()=>{
+  for(const path of ['/about','/about/','/about.html','/en/about','/en/about/','/en/about.html','/admin.html','/en/admin']){
+    const h=toolbarHarness(path);assert.equal(h.nodes.size,0,path);assert.equal(h.reads(),0);assert.equal(h.frames.length,0);
+  }
+});
