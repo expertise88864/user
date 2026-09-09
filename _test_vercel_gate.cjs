@@ -4,26 +4,42 @@ const { allowed } = require('./_vercel_gate.cjs');
 const cfg = require('./_delivery_policy.json');
 const sha = 'a'.repeat(40);
 const env = { VERCEL_ENV: 'production', VERCEL_GIT_COMMIT_SHA: sha };
-test('preview teardown drains in-flight routes before closing and preserves failures', async () => {
-  const { finishPreviewPage } = require('./_delivery_preview.cjs');
-  let release, closed = false;
-  const pending = new Promise(resolve => { release = resolve; });
-  const context = { unrouteAll: async options => {
-    assert.deepEqual(options, { behavior: 'wait' });
-    await pending;
-  } };
-  const page = { close: async () => { closed = true; } };
-  const done = finishPreviewPage(context, page);
-  await Promise.resolve();
-  assert.equal(closed, false);
-  release();
-  await done;
-  assert.equal(closed, true);
-  closed = false;
-  await assert.rejects(finishPreviewPage({ unrouteAll: async () => {
-    throw Error('request failed');
-  } }, page), /request failed/);
-  assert.equal(closed, false);
+test('preview login sends the secret once without following redirects or exporting cookies', async () => {
+  const { authenticatePreview } = require('./_delivery_preview.cjs');
+  const base = new URL('https://candidate-team.vercel.app');
+  const calls = [];
+  const context = {
+    request: { get: async (url, options) => {
+      calls.push({url,options});
+      return {status:()=>307,headers:()=>({location:'/'})};
+    } },
+    cookies: async () => [{domain:base.hostname,secure:true,httpOnly:true}],
+  };
+  await authenticatePreview(context, base, 'fixture-secret');
+  assert.deepEqual(calls, [{url:base.origin+'/',options:{headers:{
+    'x-vercel-protection-bypass':'fixture-secret','x-vercel-set-bypass-cookie':'true'
+  },maxRedirects:0}}]);
+  await authenticatePreview(context, base, '');
+  assert.equal(calls.length, 1);
+});
+test('preview login rejects unsafe redirects, missing or unsafe cookies and sanitizes request failures', async () => {
+  const { authenticatePreview } = require('./_delivery_preview.cjs');
+  const base = new URL('https://candidate-team.vercel.app');
+  const safe = {domain:base.hostname,secure:true,httpOnly:true};
+  const context = (status, location, cookies) => ({
+    request:{get:async()=>({status:()=>status,headers:()=>({location})})},
+    cookies:async()=>cookies,
+  });
+  for (const location of ['https://other.vercel.app/','http://candidate-team.vercel.app/','http://[',undefined]) {
+    await assert.rejects(authenticatePreview(context(307,location,[safe]),base,'fixture'), /redirect/);
+  }
+  for (const cookies of [[],[{...safe,domain:'.'+base.hostname}], [{...safe,domain:'other.vercel.app'}],
+    [{...safe,secure:false}],[{...safe,httpOnly:false}]]) {
+    await assert.rejects(authenticatePreview(context(307,'/',cookies),base,'fixture'), /cookies/);
+  }
+  await assert.rejects(authenticatePreview(context(500,undefined,[safe]),base,'fixture'), /authentication failed/);
+  await assert.rejects(authenticatePreview({request:{get:async()=>{throw Error('header: fixture-secret');}}},base,'fixture-secret'),
+    error=>error.message==='Preview authentication request failed');
 });
 test('preview credential stays on the exact deployment origin', () => {
   const { previewHeaders } = require('./_delivery_preview.cjs');

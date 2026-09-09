@@ -35,13 +35,34 @@ async function checkHubStatus(page) {
   await input.fill('');
   await assertStatus(english ? /^\d+ articles?$/ : /^\d+ 篇文章$/);
 }
-async function finishPreviewPage(context, page) {
-  // Drain intercepted requests (including SW precache) before closing their page.
-  // Waiting preserves request failures; ignoreErrors would hide them.
-  await context.unrouteAll({ behavior: 'wait' });
-  await page.close();
+async function authenticatePreview(context, base, secret) {
+  if (!secret) return;
+  // Bootstrap a host-only Vercel session without forwarding the secret on redirects.
+  // Native browser requests then retain normal service-worker/cache behavior.
+  let response;
+  try {
+    response = await context.request.get(base.origin + '/', {
+      headers: { ...previewHeaders(base.href, base.origin, secret), 'x-vercel-set-bypass-cookie': 'true' },
+      maxRedirects: 0,
+    });
+  } catch (_) {
+    // Playwright request errors can contain request headers: keep credentials out of logs.
+    throw new Error('Preview authentication request failed');
+  }
+  assert.ok([200, 301, 302, 303, 307, 308].includes(response.status()), 'Preview authentication failed');
+  const redirect = response.headers().location;
+  if (response.status() !== 200) {
+    let redirectOrigin;
+    try { redirectOrigin = redirect && new URL(redirect, base).origin; } catch (_) {}
+    assert.ok(redirectOrigin === base.origin,
+      'Preview authentication redirect must stay on the verified origin');
+  }
+  const cookies = await context.cookies();
+  assert.ok(cookies.length > 0 && cookies.every(cookie =>
+    cookie.domain === base.hostname && cookie.secure && cookie.httpOnly),
+    'Preview authentication requires secure, HttpOnly, exact-host cookies');
 }
-module.exports = { previewHeaders, checkHubStatus, finishPreviewPage };
+module.exports = { previewHeaders, checkHubStatus, authenticatePreview };
 
 if (require.main === module) (async () => {
   const { chromium } = require('playwright');
@@ -55,17 +76,8 @@ if (require.main === module) (async () => {
     for (const width of [390, 800, 1440]) {
       const context = await browser.newContext({ viewport: { width, height: 900 }, locale: 'zh-TW' });
       try {
+        await authenticatePreview(context, base, process.env.VERCEL_AUTOMATION_BYPASS_SECRET);
         for (const [index, route] of policy.preview_paths.entries()) {
-          await context.route('**/*', async route => {
-            const request = route.request();
-            const headers = { ...request.headers() };
-            delete headers['x-vercel-protection-bypass'];
-            Object.assign(headers, previewHeaders(request.url(), base.origin, process.env.VERCEL_AUTOMATION_BYPASS_SECRET));
-            // A redirect becomes a fresh intercepted browser request. Never let
-            // the API client follow it while carrying the preview credential.
-            const response = await route.fetch({ headers, maxRedirects: 0 });
-            await route.fulfill({ response });
-          });
           const page = await context.newPage();
           const errors = [];
           page.on('pageerror', e => errors.push(e.message));
@@ -102,10 +114,9 @@ if (require.main === module) (async () => {
           await page.screenshot({ path: 'delivery-preview/' + width + '-' + index + '.png', fullPage: true });
           if (route === '/' || route === '/en') await checkHubStatus(page);
           assert.deepEqual(errors, [], 'Page JavaScript errors');
-          await finishPreviewPage(context, page);
+          await page.close();
         }
       } finally {
-        await context.unrouteAll({ behavior: 'wait' });
         await context.close();
       }
     }

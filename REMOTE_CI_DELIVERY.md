@@ -20,8 +20,12 @@ change medical content, visual baselines, credentials, recipients or scoring.
 Protected Vercel previews require the project automation bypass credential stored
 as the encrypted repository Actions secret VERCEL_AUTOMATION_BYPASS_SECRET.
 Configure that access explicitly; do not disable Preview protection. The browser
-runner sends the credential only to the exact verified deployment origin, never
-in a URL, artifact or log, and intercepts redirects before forwarding credentials.
+runner sends the credential only once to the exact verified deployment origin,
+never in a URL, artifact or log. It does not follow the authentication redirect;
+it checks the destination and accepts only secure, HttpOnly, exact-host cookies.
+Subsequent browser and service-worker requests use this isolated native session,
+without a global credential header or request interception. Session cookies are
+never exported and are discarded when the browser context closes.
 
 ## Promotion
 Fetch main again. It must be an ancestor of the exact successful candidate;
