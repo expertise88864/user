@@ -58,22 +58,31 @@ async function kvSetEx(key, value, ttlSeconds) {
       body: JSON.stringify(value),
     },
   );
-  if (!r.ok) {
-    const t = await r.text();
-    throw new Error(`KV set failed: ${r.status} ${t}`);
-  }
+  if (!r.ok) throw new Error('KV set failed');
+  const result = await r.json();
+  if (!result || result.error || result.result !== 'OK') throw new Error('KV set failed');
 }
 
 async function kvDel(key) {
   const url = process.env.KV_REST_API_URL;
   const token = process.env.KV_REST_API_TOKEN;
-  if (!url || !token) return;
+  if (!url || !token) throw new Error('KV not configured');
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 5000);
   try {
-    await fetch(`${url}/del/${encodeURIComponent(key)}`, {
+    const response = await fetch(`${url}/del/${encodeURIComponent(key)}`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` },
+      signal: controller.signal,
     });
-  } catch (_) { /* ignore */ }
+    if (!response.ok) throw new Error('KV deletion failed');
+    const result = await response.json();
+    if (!result || result.error || ![0, 1].includes(result.result)) {
+      throw new Error('KV deletion failed');
+    }
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 function parseCookies(cookieHeader) {
@@ -127,12 +136,12 @@ async function getSession(req) {
   const data = await kvGet(KV_KEY_PREFIX + token);
   if (!data) return null;
   if (data.exp && Date.now() / 1000 > data.exp) {
-    await kvDel(KV_KEY_PREFIX + token);
+    try { await kvDel(KV_KEY_PREFIX + token); } catch (_) { /* Still deny expired sessions. */ }
     return null;
   }
   if (!REPO_OWNER_ALLOWLIST.has(data.login)) {
     // Defensive: if allowlist was tightened since the session was issued
-    await kvDel(KV_KEY_PREFIX + token);
+    try { await kvDel(KV_KEY_PREFIX + token); } catch (_) { /* Still deny disallowed users. */ }
     return null;
   }
   return { token, pat: data.pat, login: data.login };

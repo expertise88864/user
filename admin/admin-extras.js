@@ -10,27 +10,23 @@
  *   7. Image editor       — crop / resize before upload
  *   8. FAQPage JSON-LD    — auto-extract <details>/<summary> Q&A → schema
  *
- * Self-contained: reads PAT from sessionStorage.cd_gh_pat (with 24-hour
- * server-side expiry stored alongside) and the current file from the DOM
- * (#filePath text), so admin.html requires no refactor.
+ * Uses the editor's shared session-auth.js controller for its tab-scoped
+ * credential and reads the current file from the DOM (#filePath text).
  *
  * SECURITY 2026-05-25 — migrated PAT from localStorage to sessionStorage:
  *   1. sessionStorage clears on tab close → drastically smaller XSS
  *      attack window than localStorage (which persists indefinitely).
  *   2. 24-hour expiry timestamp stored alongside; getPat() returns ''
  *      after expiry and clears the entry → forces re-paste.
- *   3. promptForPat() shows a one-time prompt that nudges the admin to
- *      paste the PAT each session instead of leaving it on disk.
- *   4. One-time migration: if an old PAT is still in localStorage, copy
- *      it to sessionStorage (with default 24h expiry) and DELETE the
- *      localStorage entry so it can never be exfiltrated again.
+ *   3. The shared controller removes legacy localStorage credentials;
+ *      the main editor prompts for a new PAT when login is required.
  *
  * SECURITY 2026-05-25 (Phase 2) — hybrid cookie auth for /api/admin/*:
  *   - When setPat() is called we ALSO POST the PAT to /api/admin/login,
  *     which stores it in Vercel KV server-side and sets an HttpOnly
- *     cookie. From then on, any fetch to /api/admin/* automatically
- *     authenticates via the cookie — the PAT itself never travels back
- *     to the browser, and an XSS on the origin cannot read it.
+ *     cookie. Same-origin API calls use that cookie. Direct GitHub calls
+ *     still use the JS-readable, tab-scoped PAT; HttpOnly does not protect
+ *     that separate copy from XSS.
  *   - The 8 direct-to-api.github.com calls (commits, image upload via
  *     GitHub Contents API, version rollback, etc.) still send the PAT
  *     in an Authorization header because the browser is the one talking
@@ -49,78 +45,8 @@
 
   const REPO = 'expertise88864/user';
   const BRANCH = 'main';
-  const PAT_KEY = 'cd_gh_pat';
-  const PAT_EXP_KEY = 'cd_gh_pat_exp';
-  const PAT_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
-
-  async function createServerSession(token) {
-    const response = await fetch('/api/admin/login', {
-      method: 'POST',
-      credentials: 'same-origin',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ pat: token }),
-    });
-    if (!response.ok) throw new Error('Admin login failed');
-  }
-
-  async function setPat(token) {
-    if (!token) return;
-    await createServerSession(token);
-    try {
-      sessionStorage.setItem(PAT_KEY, token);
-      sessionStorage.setItem(PAT_EXP_KEY, String(Date.now() + PAT_TTL_MS));
-    } catch (_) {}
-    return true;
-  }
-
-  function clearPat() {
-    try {
-      sessionStorage.removeItem(PAT_KEY);
-      sessionStorage.removeItem(PAT_EXP_KEY);
-      localStorage.removeItem(PAT_KEY); // belt-and-braces
-    } catch (_) {}
-    // Phase 2 — also tear down the HttpOnly cookie session. Same
-    // fire-and-forget shape so a transient failure doesn't block logout
-    // (the cookie has Max-Age=86400 so it dies on its own anyway).
-    try {
-      fetch('/api/admin/logout', {
-        method: 'POST',
-        credentials: 'same-origin',
-        keepalive: true,
-      }).catch(() => {});
-    } catch (_) {}
-  }
-
-  function getPat() {
-    try {
-      // One-time migration: if legacy PAT sits in localStorage, move it
-      // to sessionStorage and purge the localStorage copy.
-      const legacy = localStorage.getItem(PAT_KEY);
-      if (legacy && !sessionStorage.getItem(PAT_KEY)) {
-        setPat(legacy).catch(() => {});
-        localStorage.removeItem(PAT_KEY);
-        console.info('[admin-extras] PAT migrated from localStorage to sessionStorage');
-      }
-      const tok = sessionStorage.getItem(PAT_KEY) || '';
-      if (!tok) return '';
-      // Check expiry — if past, clear and treat as missing.
-      const exp = Number(sessionStorage.getItem(PAT_EXP_KEY));
-      if (!Number.isFinite(exp) || exp <= Date.now()) {
-        clearPat();
-        return '';
-      }
-      return tok;
-    } catch (_) {
-      return '';
-    }
-  }
-
-  // Expose helpers globally for the admin UI's "Login" / "Logout" buttons.
-  window.cdAdminAuth = { setPat, clearPat, getPat };
-  const existingPat = getPat();
-  // Recreate the HttpOnly session without extending the fixed browser-side
-  // deadline on every reload.
-  if (existingPat) createServerSession(existingPat).catch(() => {});
+  // The main editor loads the shared authentication controller first.
+  const getPat = () => window.cdAdminAuth ? window.cdAdminAuth.getPat() : '';
   function getCurrentFile() {
     const t = (document.getElementById('filePath') || {}).textContent || '';
     return t === '尚未選擇檔案' ? null : t;
@@ -935,6 +861,7 @@
     renderPicks();
   }
   async function savePicks() {
+    if (!getPat()) { toast('請先完成登入，再儲存熱門文章'); return; }
     if (!_picksArr.length) { toast('清單不能空'); return; }
     // Cookie-first: setPat() waits for /api/admin/login, so the HttpOnly
     // session is ready before this control can be used. Do not resend the

@@ -167,8 +167,8 @@ def run_smoke(base_url: str) -> list[str]:
         errors.extend(assert_no_eager_dynamic(label, body))
 
     admin_pages = [
-        ("/admin.html", "full admin", ["/api/admin/login", "frame.setAttribute('sandbox', 'allow-same-origin');"]),
-        ("/admin/", "clean-url full admin", ["/api/admin/login", "frame.setAttribute('sandbox', 'allow-same-origin');"]),
+        ("/admin.html", "full admin", ["/admin/session-auth.js?v=202609100400", "await auth.setPat(value);", "frame.setAttribute('sandbox', 'allow-same-origin');"]),
+        ("/admin/", "clean-url full admin", ["/admin/session-auth.js?v=202609100400", "await auth.setPat(value);", "frame.setAttribute('sandbox', 'allow-same-origin');"]),
         ("/admin/edit.html", "simple editor", ["function sanitizeEditableHtml(html)", "anchor.textContent = url;"]),
     ]
     for path, label, needles in admin_pages:
@@ -178,6 +178,12 @@ def run_smoke(base_url: str) -> list[str]:
         errors.extend(assert_contains(label, body, needles))
         if "Decap CMS" in body or "/api/auth" in body:
             errors.append(f"{label}: references retired Decap/OAuth workflow")
+
+    auth_body, content_type = fetch(base_url, "/admin/session-auth.js?v=202609100400")
+    if "javascript" not in content_type:
+        errors.append(f"admin session controller: expected JavaScript, got {content_type!r}")
+    errors.extend(assert_contains("admin session controller", auth_body,
+                                  ["/api/admin/login", "/api/admin/logout", "serialize(revoke)"]))
 
     json_body, content_type = fetch(base_url, "/assets/search-index.json")
     if "application/json" not in content_type:

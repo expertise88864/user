@@ -107,6 +107,7 @@
 ③ Expiration 建議 90 天，Repository permissions 只開 <strong>Contents: Read and write</strong><br/>
 ④ 若使用 classic token，公開儲存庫只需勾 <code style="font-family:'JetBrains Mono',monospace">public_repo</code><br/>
 ⑤ Generate → 複製 token 貼下面</p><input id="patInput" type="password" placeholder="ghp_..." autocomplete="off" aria-label="GitHub Personal Access Token" /><div style="display:flex;gap:8px;align-items:center"><button type="button" id="patSave">儲存並登入</button><small style="color:var(--muted)">token 只存在這個分頁(關閉即清除)</small></div></div></div>
+<script src="/admin/session-auth.js?v=202609100400"></script>
 <script>const REPO = 'expertise88864/user';
 const BRANCH = 'main';
 let PAT = '';
@@ -137,75 +138,77 @@ const elFrameWrap  = document.getElementById('frameWrap');
 const elEmpty      = document.getElementById('emptyState');
 const elStatusbar  = document.getElementById('statusbar');
 // =========== PAT login ===========
-// Security: the PAT is kept in sessionStorage (cleared when the tab/session
-// closes) instead of localStorage, so a stolen token cannot persist across
-// browser restarts. Clear any legacy localStorage token from older builds.
-try{ localStorage.removeItem('cd_gh_pat'); }catch(e){}
+const auth = window.cdAdminAuth;
+const logoutButton = document.getElementById('logoutBtn');
+const loginButton = document.getElementById('patSave');
+const logoutNotice = document.createElement('p');
+logoutNotice.setAttribute('role', 'status');
+loginButton.parentNode.parentNode.appendChild(logoutNotice);
+const retryLogout = document.createElement('button');
+retryLogout.type = 'button';
+retryLogout.textContent = '重試登出';
+retryLogout.hidden = true;
+loginButton.parentNode.parentNode.appendChild(retryLogout);
+let authBusy = false;
 function loadPat(){
-try {
-  PAT = sessionStorage.getItem('cd_gh_pat') || '';
-  const exp = Number(sessionStorage.getItem('cd_gh_pat_exp'));
-  if(PAT && (!Number.isFinite(exp) || exp <= Date.now())){
-    PAT = '';
-    sessionStorage.removeItem('cd_gh_pat');
-    sessionStorage.removeItem('cd_gh_pat_exp');
-    fetch('/api/admin/logout', { method:'POST', credentials:'same-origin', keepalive:true }).catch(()=>{});
+  PAT = auth ? auth.getPat() : '';
+  const pending = auth && auth.isLogoutPending();
+  elPatStatus.textContent = pending ? '登出尚未確認' : PAT ? '已登入' : '未登入';
+  elPatStatus.className = PAT ? 'pat-status ok' : 'pat-status no';
+  elPatModal.style.display = PAT ? 'none' : 'flex';
+  loginButton.disabled = !auth || pending || authBusy;
+  elPatInput.disabled = !auth || pending || authBusy;
+  retryLogout.hidden = !pending;
+  retryLogout.disabled = authBusy;
+  logoutNotice.textContent = !auth ? '登入元件未載入，請重新整理後再試。' :
+    pending ? '本機憑證已清除；伺服器登出尚未確認。請重試登出後再登入。' : '';
+  if(PAT) refreshFileList();
+}
+loginButton.addEventListener('click', async ()=>{
+  if(authBusy || !auth || auth.isLogoutPending()) return;
+  const value = elPatInput.value.trim();
+  if(!value){ alert('請貼上 PAT'); return; }
+  authBusy = true;
+  loginButton.disabled = true;
+  elPatInput.disabled = true;
+  try {
+    await auth.setPat(value);
+    elPatInput.value = '';
+  } catch(e) {
+    if(!auth.isLogoutPending()) alert('GitHub 登入失敗，請確認 PAT、KV 設定與網路連線。');
+  } finally {
+    authBusy = false;
+    loadPat();
   }
-} catch(e) {
-  PAT = '';
-}
-if(PAT){
-elPatStatus.textContent = '已登入';
-elPatStatus.className = 'pat-status ok';
-elPatModal.style.display = 'none';
-refreshFileList();
-} else {
-elPatStatus.textContent = '未登入';
-elPatStatus.className = 'pat-status no';
-elPatModal.style.display = 'flex';
-setTimeout(()=>elPatInput.focus(), 50);
-}
-}
-document.getElementById('patSave').addEventListener('click', async ()=>{
-const v = elPatInput.value.trim();
-if(!v){ alert('請貼上 PAT'); return; }
-try {
-  if(window.cdAdminAuth && typeof window.cdAdminAuth.setPat === 'function'){
-    await window.cdAdminAuth.setPat(v);
-  } else {
-    const login = await fetch('/api/admin/login', {
-      method: 'POST',
-      credentials: 'same-origin',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ pat: v })
-    });
-    if(!login.ok) throw new Error('Admin login failed');
-    sessionStorage.setItem('cd_gh_pat', v);
-    sessionStorage.setItem('cd_gh_pat_exp', String(Date.now() + 24*60*60*1000));
-  }
-  elPatInput.value = '';
-  loadPat();
-} catch(e) {
-  alert('GitHub 登入失敗，請確認 PAT、KV 設定與網路連線。');
-}
 });
 elPatInput.addEventListener('keydown', e=>{
-if(e.key === 'Enter') document.getElementById('patSave').click();
+  if(e.key === 'Enter') loginButton.click();
 });
-document.getElementById('logoutBtn').addEventListener('click', ()=>{
-if(confirm('清除 PAT?下次需要重新登入。')){
-if(window.cdAdminAuth && typeof window.cdAdminAuth.clearPat === 'function'){
-window.cdAdminAuth.clearPat();
-} else {
-sessionStorage.removeItem('cd_gh_pat');
-sessionStorage.removeItem('cd_gh_pat_exp');
-fetch('/api/admin/logout', { method:'POST', credentials:'same-origin', keepalive:true }).catch(()=>{});
+async function logout(){
+  if(!auth) return;
+  // Clear the in-memory credential immediately; preserve the open article.
+  PAT = '';
+  elPatInput.value = '';
+  authBusy = true;
+  logoutButton.disabled = true;
+  const operation = auth.clearPat();
+  loadPat();
+  try { await operation; }
+  catch(e) { /* loadPat keeps the retry message visible. */ }
+  finally {
+    authBusy = false;
+    logoutButton.disabled = false;
+    loadPat();
+  }
 }
-location.reload();
-}
+logoutButton.addEventListener('click', ()=>{
+  if(confirm('清除登入？未儲存的文章會保留在目前頁面，下次需要重新登入。')) logout();
 });
+retryLogout.addEventListener('click', logout);
 // =========== GitHub API helper ===========
 async function gh(method, path, body){
+PAT = auth ? auth.getPat() : '';
+if(!PAT) { loadPat(); throw new Error('請重新登入'); }
 // Always bypass browser HTTP cache. GitHub API responses are sometimes
 // cached for a few seconds by the browser, and a stale GET right after a
 // PUT can hand admin the PRE-commit content + PRE-commit SHA. If the user
@@ -2278,8 +2281,9 @@ async function saveWithModal(){
 save = saveWithModal;
 
 // init
+if(auth) auth.restoreSession().catch(()=>{});
 loadPat();</script>
-<script type="module" src="/admin/admin-extras.js?v=202609092350"></script>
+<script type="module" src="/admin/admin-extras.js?v=202609100400"></script>
 <script>
 // === Mobile sidebar collapse (2026-05-13c — inline collapse) ===
 (function(){

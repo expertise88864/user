@@ -5,6 +5,7 @@
 //
 // Method:
 //   POST → 200 { ok: true } + Set-Cookie: dn_admin_session=; Max-Age=0
+//   Unconfirmed deletion → 503 { ok: false }, cookie retained for retry.
 //   anything else → 405
 //
 // Safe to call without an active session (idempotent).
@@ -17,6 +18,11 @@ export default async function handler(req) {
   if (req.method !== 'POST') {
     return jsonResp(405, { error: 'POST only' }, { Allow: 'POST' });
   }
-  const setCookieHeader = await destroySession(req);
-  return jsonResp(200, { ok: true }, { 'Set-Cookie': setCookieHeader });
+  try {
+    const setCookieHeader = await destroySession(req);
+    return jsonResp(200, { ok: true }, { 'Set-Cookie': setCookieHeader });
+  } catch (_) {
+    // Retain the cookie so a retry can revoke the same server session.
+    return jsonResp(503, { ok: false, error: 'Logout not confirmed; retry' });
+  }
 }

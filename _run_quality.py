@@ -225,7 +225,7 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_test_release.py"],
     [PY, "_test_translation_failures.py"],
     [PY, "_test_link_fragments.py"],
-    ["node", "--test", "_test_runtime_edges.mjs", "_test_admin_skeleton.mjs"],
+    ["node", "--test", "_test_runtime_edges.mjs", "_test_admin_skeleton.mjs", "_test_admin_sessions.cjs"],
     [PY, "_test_review_fixes.py"],
     [PY, "_check_meta.py", "--fast"],
     [PY, "_check_metadata_uniqueness.py"],
