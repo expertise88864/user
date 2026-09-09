@@ -37,7 +37,7 @@
             "Setup Java for html5validator",
             "Install validators",
             "Run html5validator (whitelist common Tailwind/SVG/modern-CSS noise)",
-            "Quick lint \u2014 JSON-LD blocks parse cleanly"
+            "Quick lint — JSON-LD blocks parse cleanly"
           ],
           "conditional": []
         },
@@ -114,9 +114,12 @@
       "path": ".github/workflows/delivery.yml",
       "jobs": [
         "Delivery contract",
-        "Preview browser"
+        "Preview browser",
+        "Production smoke"
       ],
-      "candidate_skips": [],
+      "candidate_skips": [
+        "Production smoke"
+      ],
       "main_skips": [
         "Preview browser"
       ],
@@ -133,6 +136,12 @@
             "Resolve exact-SHA preview (never production)",
             "Install browser",
             "Verify preview pages in desktop and mobile browsers"
+          ],
+          "conditional": []
+        },
+        "Production smoke": {
+          "required": [
+            "Verify exact-SHA production pages and assets"
           ],
           "conditional": []
         }

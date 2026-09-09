@@ -32,6 +32,29 @@ class DeliveryTests(unittest.TestCase):
         script = '<script>const s = \'<a href="/tools">\';</script>'
         self.assertEqual(h.routed_html(script, d.ROOT / 'index.html'), script)
 
+    def test_hosted_smoke_is_required_on_main_but_not_candidate(self):
+        entry = next(w for w in d.policy()['workflows'] if w['path'] == '.github/workflows/delivery.yml')
+        def jobs(phase):
+            return [{'name': name, 'status': 'completed',
+                     'conclusion': 'skipped' if name in entry[phase + '_skips'] else 'success',
+                     'steps': [{'name': step, 'status': 'completed', 'conclusion': 'success'}
+                               for step in entry['steps'][name]['required']]}
+                    for name in entry['jobs']]
+        for phase in ('candidate', 'main'):
+            d.assess_jobs(jobs(phase), entry['jobs'], entry[phase + '_skips'], entry['steps'], phase)
+        main_jobs = jobs('main')
+        smoke = next(j for j in main_jobs if j['name'] == 'Production smoke')
+        for outcome in ('skipped', 'failure', 'cancelled', 'timed_out', None):
+            smoke['conclusion'] = outcome
+            with self.subTest(outcome=outcome), self.assertRaises(d.Blocked):
+                d.assess_jobs(main_jobs, entry['jobs'], entry['main_skips'], entry['steps'], 'main')
+        smoke['conclusion'] = 'success'
+        smoke['steps'][0]['conclusion'] = 'skipped'
+        with self.assertRaises(d.Blocked):
+            d.assess_jobs(main_jobs, entry['jobs'], entry['main_skips'], entry['steps'], 'main')
+        with self.assertRaises(d.Blocked):
+            d.assess_jobs([j for j in main_jobs if j is not smoke], entry['jobs'], entry['main_skips'], entry['steps'], 'main')
+
     def test_production_smoke_rejects_stale_assets_and_checks_all_routes(self):
         from types import SimpleNamespace
         cfg = {**d.policy(), 'preview_paths': ['/']}

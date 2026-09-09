@@ -17,9 +17,9 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'Published SHA still needs successful hosted verification.' }
     & python _delivery.py production $deliverySha --wait 1800
     if ($LASTEXITCODE -ne 0) { throw 'Exact-SHA production deployment not verified.' }
-    & python _delivery.py smoke $deliverySha --wait 300
-    if ($LASTEXITCODE -ne 0) { throw 'Production page and asset smoke checks failed.' }
-    Write-Host "Delivered ${deliverySha}: candidate/main CI, production deployment and smoke checks verified."
+    # Main verification above includes the required hosted Production smoke job.
+    # It runs the same exact-SHA page/asset checks independently of local networking.
+    Write-Host "Delivered ${deliverySha}: candidate/main CI, production deployment and hosted smoke checks verified."
     exit 0
 } catch {
     Write-Host "[STOPPED] $($_.Exception.Message)" -ForegroundColor Red

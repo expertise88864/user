@@ -37,8 +37,13 @@ environment override, skip token or --no-verify is accepted.
 Then run:
     python _delivery.py verify FULL_SHA --phase main --wait 1800
 Record all applicable CI and actual deployment/smoke evidence separately.
-`deploy.ps1` also resolves the exact-SHA Production deployment and runs
-`python _delivery.py smoke FULL_SHA --wait 300` before reporting delivery.
+`deploy.ps1` also resolves the exact-SHA Production deployment before reporting delivery.
+Main CI includes the required **Production smoke** job, which runs
+`python _delivery.py smoke "$GITHUB_SHA" --wait 600` on GitHub Actions and saves its
+JSON evidence. Candidate runs explicitly skip this production-only job. Main
+verification requires its successful exact-SHA validation step; failed, missing or
+skipped production checks block delivery. The same command can still be run
+locally for diagnosis, but local connectivity is not the authoritative hosted gate.
 The smoke checks verify public pages, the built search bundle and exact committed
 runtime/search/SW assets on the production domain.
 
