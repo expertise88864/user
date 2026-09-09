@@ -230,3 +230,42 @@ test('reading progress defers geometry and batches scroll and resize updates',()
   height=1500;listeners.resize();frames.shift()();assert.equal(elements.get('dn-progress').style.width,'50%');
   ctx.DN.addReadingProgress();assert.equal(elements.size,1);assert.equal(frames.length,0);
 });
+
+test('font controls defer geometry, restore visibility and preserve size selection', () => {
+  const nodes = new Map(), frames = [], listeners = new Map(), storage = new Map();
+  let y = 700, scrollReads = 0;
+  function node() {
+    return {style:{},dataset:{},children:[],attrs:{},handlers:{},
+      setAttribute(k,v){this.attrs[k]=v;},
+      appendChild(child){this.children.push(child);if(child.id) nodes.set(child.id,child);},
+      addEventListener(k,v){this.handlers[k]=v;},
+      querySelectorAll(){return this.children;}};
+  }
+  const doc = {documentElement:{lang:'zh-Hant'},head:node(),body:node(),
+    getElementById:id=>nodes.get(id)||null, querySelector:()=>({}),createElement:node};
+  const win = {DN:{},get scrollY(){scrollReads++;return y;},
+    matchMedia:()=>({matches:true}),addEventListener:(k,v)=>listeners.set(k,v)};
+  vm.runInNewContext(readFileSync(new URL('./blog/blog-article-reading.js',import.meta.url),'utf8'), {
+    window:win,document:doc,location:{pathname:'/blog/acne-myths'},
+    localStorage:{getItem:k=>storage.get(k),setItem:(k,v)=>storage.set(k,v)},
+    requestAnimationFrame:fn=>frames.push(fn),
+  });
+  win.DN.addFontSizer();
+  const controls = nodes.get('dn-font-sizer');
+  assert.equal(scrollReads,0);
+  listeners.get('scroll')(); listeners.get('scroll')();
+  assert.equal(frames.length,1);
+  frames.shift()();
+  assert.equal(controls.style.opacity,'1');
+  assert.equal(controls.style.pointerEvents,'auto');
+  const xl = controls.children.find(b=>b.dataset.size==='XL');
+  xl.handlers.click();
+  assert.equal(storage.get('dn-font-size'),'XL');
+  assert.equal(xl.attrs['aria-pressed'],'true');
+  assert.match(nodes.get('dn-font-size-style').textContent,/21px/);
+  y=0; listeners.get('scroll')(); frames.shift()();
+  assert.equal(controls.style.opacity,'0');
+  assert.equal(controls.style.pointerEvents,'none');
+  win.DN.addFontSizer();
+  assert.equal(doc.body.children.length,1);
+});

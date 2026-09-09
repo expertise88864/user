@@ -20,7 +20,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202609100055';
+          s.src = '/blog/blog-diagrams.min.js?v=202609100130';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -662,7 +662,10 @@
     window.addEventListener('scroll', function () {
       if (!ticking) { requestAnimationFrame(update); ticking = true; }
     }, { passive: true });
-    update();
+    // Font styles and controls were just inserted. Read restored scroll in the
+    // next frame, alongside scroll updates, rather than forcing layout here.
+    ticking = true;
+    requestAnimationFrame(update);
   };
 
 })();
