@@ -81,10 +81,19 @@ def check_article(path: Path) -> list[str]:
     if rel in SKIP_FILES:
         return []
     text = path.read_text(encoding="utf-8", errors="replace")
-    # Skip if noindex (admin / placeholder pages may not need the runtime)
-    if re.search(r'<meta\s+name="robots"\s+content="[^"]*noindex', text, re.I):
-        return []
     errs = []
+    header = re.search(r'<header\b[^>]*>(.*?)</header>', text, re.S | re.I)
+    if not header or 'class="dn-nav"' not in header[1]:
+        errs.append(f"{rel}: missing shared article navigation")
+    elif not all(f'id="{control}"' in header[1] for control in
+                 ['dn-nav-burger', 'dn-nav-search', 'dn-nav-theme', 'langToggle']):
+        errs.append(f"{rel}: missing shared navigation controls")
+    if '/assets/inline/nav-burger.js?v=202609100440' not in text:
+        errs.append(f"{rel}: missing versioned navigation controller")
+    # Indexability does not exempt an article's visible navigation. Preserve
+    # the older noindex exception only for the remaining runtime/prose checks.
+    if re.search(r'<meta\s+name="robots"\s+content="[^"]*noindex', text, re.I):
+        return errs
     if not RUNTIME_RE.search(text):
         errs.append(f"{rel}: missing <script src=\"/blog/blog-shared(.min).js\">")
     # The <article class="max-w-3xl"> is the hook for blog-article-footer.js
@@ -149,12 +158,10 @@ def main() -> int:
     if errors:
         for e in errors:
             print(f"  {e}")
-        print(f"\n[FAIL] Article runtime audit: {len(errors)} article(s) missing blog-shared script.")
-        print("Fix: add <script src=\"/blog/blog-shared.min.js?v=ASSET_VERSION\" defer></script>")
-        print("     + <script>document.addEventListener('DOMContentLoaded',function(){if(window.DN)DN.initBlog({});});</script>")
-        print("     before <!-- dn-spec-rules --> at the end of <body>.")
+        print(f"\n[FAIL] Article runtime audit: {len(errors)} issue(s) listed above.")
+        print("Restore missing runtime/layout contracts; run _sync_article_navigation.py for shared nav controls.")
         return 1
-    print("[OK] Article runtime audit passed (all articles load blog-shared script)")
+    print("[OK] Article runtime audit passed (runtime, navigation and article structure)")
     return 0
 
 

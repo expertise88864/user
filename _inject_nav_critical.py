@@ -29,12 +29,12 @@ Usage:
 """
 from __future__ import annotations
 
-import io
 import re
 import sys
 from pathlib import Path
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parent
 
@@ -55,18 +55,21 @@ NAV_CSS = (
     ".dn-nav-icon::after{display:none}"
     '.dn-nav-icon[id="dn-nav-support"]{color:#0c5159}'
     ".dn-nav .lang-select{margin:0 0 0 6px;padding:6px 22px 6px 10px;min-height:32px;font-size:11.5px}"
-    ".dn-nav-burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;"
+    ".dn-nav-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;"
     "border-radius:9999px;color:var(--teal-deep,#4d6358);background:transparent;border:0;cursor:pointer;"
     "flex-shrink:0;margin-left:auto}"
     "@media(max-width:899px){"
-    ".dn-nav{display:none;position:fixed;top:64px;right:0;left:0;background:rgba(250,247,242,.98);"
+    "header.dn-nav-expanded{z-index:70}"
+    ".dn-nav{display:none;position:fixed;top:64px;right:0;left:0;background:var(--bg,#faf7f2);"
+    "max-height:calc(100dvh - 64px);overflow-y:auto;overscroll-behavior:contain;"
     "flex-direction:column;align-items:stretch;padding:14px 18px;border-bottom:1px solid var(--border,#dcd5c8);gap:2px}"
     ".dn-nav.open,.dn-nav.dn-nav-open{display:flex}"
-    ".dn-nav-link{padding:11px 14px;font-size:14px;border-radius:10px;justify-content:flex-start}"
-    ".dn-nav-icon{width:auto;height:auto;padding:11px 14px;border-radius:10px;justify-content:flex-start;gap:10px;font-size:14px}"
+    ".dn-nav-link{min-height:44px;padding:11px 14px;font-size:14px;border-radius:10px;justify-content:flex-start}"
+    ".dn-nav-icon{width:auto;min-height:44px;height:auto;padding:11px 14px;border-radius:10px;justify-content:flex-start;gap:10px;font-size:14px}"
     # Legacy per-ID label rules must not override the page's accessible locale.
     ".dn-nav-icon::after{display:inline;content:attr(aria-label)!important;white-space:nowrap;font-size:14px;font-weight:600}"
     ".dn-nav .dn-nav-divider{display:none}"
+    ".dn-nav .lang-select{min-height:44px;flex-shrink:0}"
     ".dn-nav-burger{display:inline-flex}"
     "}"
 )

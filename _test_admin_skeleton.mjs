@@ -25,6 +25,11 @@ for (const type of ['myth','rx','overview','note','research']) {
     assert.ok(image.endsWith('.png'));
     assert.ok(readFileSync(new URL('.' + new URL(image).pathname, import.meta.url)).length > 0);
     assert.ok(html.includes('name="twitter:image" content="' + image + '"'));
+    assert.ok(html.includes('class="dn-nav"'));
+    assert.ok(html.includes('id="dn-nav-burger"'));
+    assert.ok(html.includes('id="dn-nav-theme"'));
+    assert.ok(html.includes('id="dn-nav-critical"'));
+    assert.ok(html.includes('/assets/inline/nav-burger.js?v=202609100440'));
   });
 }
 test('unsafe slug rejected before constructing markup', () => {

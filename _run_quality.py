@@ -10,6 +10,7 @@ PY = sys.executable
 NPM = "npm.cmd" if os.name == "nt" else "npm"
 
 REGEN_STEPS: list[list[str]] = [
+    [PY, "_sync_article_navigation.py"],
     # Complete static hub links from the public catalog before EN generation.
     [PY, "_sync_hub_catalog.py"],
     # CODE_REVIEW TD-46 — _normalize_bilingual_attrs.py was removed from
@@ -225,7 +226,8 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_test_release.py"],
     [PY, "_test_translation_failures.py"],
     [PY, "_test_link_fragments.py"],
-    ["node", "--test", "_test_runtime_edges.mjs", "_test_admin_skeleton.mjs", "_test_admin_sessions.cjs"],
+    ["node", "--test", "_test_runtime_edges.mjs", "_test_admin_skeleton.mjs", "_test_admin_sessions.cjs", "_test_navigation.cjs"],
+    [PY, "_test_navigation_generation.py"],
     [PY, "_test_review_fixes.py"],
     [PY, "_check_meta.py", "--fast"],
     [PY, "_check_metadata_uniqueness.py"],
