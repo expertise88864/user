@@ -124,3 +124,48 @@ test('empty saved draft is restored; declining a draft or unavailable storage lo
     assert.equal(ctx.state.originalHTML,articleHTML('b'));
   }
 });
+
+const extras = readFileSync(new URL('./admin/admin-extras.js', import.meta.url), 'utf8');
+const seoContext = vm.createContext({URL});
+vm.runInContext(extras.slice(extras.indexOf('  function analyzeSeoFacts('), extras.indexOf('  function runSeoCheck(')), seoContext);
+const seoFacts = () => ({file:'blog/example.html',title:'短標題',description:'清楚的摘要',text:'文章內容',h1Count:1,h2Count:1,
+  links:['/blog/related'],images:[],canonicals:['https://chendermatologist.com/blog/example'],jsonld:['{"@context":"https://schema.org","@type":"MedicalWebPage"}']});
+const seoCheck = (facts,id) => seoContext.analyzeSeoFacts(facts).find(c=>c.id===id);
+
+test('SEO guidance does not require filler words, headings or nofollow on editorial references', () => {
+  const facts=seoFacts();facts.links=['https://pubmed.ncbi.nlm.nih.gov/123/'];
+  assert.equal(seoCheck(facts,'title').ok,'ok');assert.equal(seoCheck(facts,'body').ok,'ok');
+  assert.equal(seoCheck(facts,'links').ok,'ok');assert.equal(seoCheck(facts,'citations').ok,'ok');
+  assert.equal(seoContext.analyzeSeoFacts(facts).some(c=>c.msg.includes('缺 nofollow')),false);
+});
+test('SEO link classification uses exact origin and excludes same-page anchors', () => {
+  const facts=seoFacts();facts.links=['#section','https://chendermatologist.com/blog/example#other','/blog/related','relative',
+    'https://chendermatologist.com.example.invalid/x','https://example.invalid/?q=chendermatologist.com','//example.invalid/a','javascript:alert(1)',''];
+  const result=seoCheck(facts,'links');assert.equal(result.ok,'err');
+  assert.match(result.msg,/2 個站內頁面、3 個外部參考、2 個無效或不安全網址/);
+});
+test('canonical rejects absent, blank, unsafe, multiple and wrong-origin values', () => {
+  for(const canonicals of [[],[''],['javascript:alert(1)'],['/blog/example'],['https://chendermatologist.com.evil.invalid/blog/example'],
+    ['https://chendermatologist.com/blog/example#fragment'],['https://chendermatologist.com/blog/example?a=1'],
+    ['https://user:password@chendermatologist.com/blog/example'],['https://chendermatologist.com/blog/example','https://chendermatologist.com/blog/example']]) {
+    assert.equal(seoCheck({...seoFacts(),canonicals},'canonical').ok,'err');
+  }
+  assert.equal(seoCheck({...seoFacts(),canonicals:['https://chendermatologist.com/blog/other']},'canonical').ok,'warn');
+  for(const [file,url] of [['index.html','/'],['en/index.html','/en'],['blog/index.html','/blog'],['en/blog/example.html','/en/blog/example']]) {
+    assert.equal(seoCheck({...seoFacts(),file,canonicals:['https://chendermatologist.com'+url]},'canonical').ok,'ok');
+  }
+});
+test('JSON-LD checks parsing and basic structure rather than script presence', () => {
+  for(const raw of ['{bad','null','[]','{}','"MedicalWebPage"','{"@graph":[]}','{"@type":[]}']) {
+    assert.equal(seoCheck({...seoFacts(),jsonld:[raw]},'jsonld').ok,'err');
+  }
+  for(const raw of ['{"@type":"MedicalWebPage"}','{"@graph":[{"@type":"MedicalWebPage"},{"@id":"#author"}]}','[{"@type":["Article","MedicalWebPage"]}]']) {
+    assert.equal(seoCheck({...seoFacts(),jsonld:[raw]},'jsonld').ok,'ok');
+  }
+});
+test('missing alt is an error; decorative empty alt needs human confirmation', () => {
+  assert.equal(seoCheck({...seoFacts(),images:[null]},'alt').ok,'err');
+  assert.equal(seoCheck({...seoFacts(),images:['']},'alt').ok,'ok');
+  assert.equal(seoCheck({...seoFacts(),images:['']},'decorative').ok,'warn');
+  assert.equal(seoCheck({...seoFacts(),text:''},'body').ok,'err');
+});

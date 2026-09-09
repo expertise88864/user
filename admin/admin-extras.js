@@ -227,9 +227,13 @@
 </div>
 <div class="ax-body">
   <div class="ax-tab active" data-tab="seo">
-    <div style="font-size:12px;color:#5e574e;margin-bottom:6px">即時 SEO 分數（滿分 100）</div>
-    <div style="font-size:30px;font-weight:800;color:#0c5159" id="axSeoScore">—</div>
-    <div class="ax-meter"><div class="ax-meter-fill" id="axSeoMeter" style="width:0%"></div></div>
+    <div style="font-size:12px;color:#5e574e;margin-bottom:6px">文章檢查與搜尋摘要</div>
+    <div style="font-size:18px;font-weight:800;color:#0c5159" id="axSeoScore" role="status">請先載入文章</div>
+    <p style="font-size:12px;color:#5e574e">檢查待儲存內容；提示不代表搜尋排名、點閱率或發布通過。</p>
+    <div style="padding:10px;border:1px solid #dcd5c8;border-radius:8px;overflow-wrap:anywhere">
+      <strong id="axSeoTitle"></strong><div id="axSeoUrl" style="font-size:11px"></div><p id="axSeoDescription" style="margin:6px 0;font-size:13px"></p>
+      <small>摘要示意，Google 可能依查詢與裝置改寫。</small>
+    </div>
     <ul class="ax-checks" id="axSeoChecks"></ul>
     <button type="button" class="ax-btn" id="axSeoRefresh">重新檢查</button>
     <button type="button" class="ax-btn" id="axFaqGen">產生 FAQPage JSON-LD</button>
@@ -333,81 +337,103 @@
     return (f && f.contentDocument) || null;
   }
 
-  function runSeoCheck() {
-    const doc = getEditorDocument();
-    if (!doc) { toast('先載入文章'); return; }
+  function collectSeoFacts(doc, file) {
+    const language = doc.documentElement.lang.toLowerCase();
+    // Some generated English pages retain #proseZh for their translated body.
+    // Follow the visible body, not the historical ID's language suffix.
+    const bodies = (language.startsWith('en') ? ['#proseEn','#proseZh'] : ['#proseZh','#proseEn']).map(id => doc.querySelector(id));
+    const region = bodies.find(el => el && !el.hidden && el.style.display !== 'none' && el.getAttribute('aria-hidden') !== 'true') ||
+      doc.querySelector('[data-edit-region]') || doc.querySelector('article .prose') ||
+      doc.querySelector('article') || doc.querySelector('main');
+    const content = region ? region.cloneNode(true) : doc.createElement('div');
+    content.querySelectorAll('script,style,template,noscript,nav,footer,[hidden],[aria-hidden="true"]').forEach(n => n.remove());
+    content.querySelectorAll('[style]').forEach(n => {if (n.style.display === 'none') n.remove();});
+    // Count one language only when the fallback region contains bilingual bodies.
+    content.querySelectorAll(language.startsWith('en') ? '#proseZh' : '#proseEn').forEach(n => n.remove());
+    const headingRoot = doc.querySelector('main') || region;
+    return {
+      file, title:(doc.querySelector('title')?.textContent || '').trim(),
+      description:(doc.querySelector('meta[name="description"]')?.getAttribute('content') || '').trim(),
+      text:(content.textContent || '').replace(/\s+/g,''),
+      h1Count:headingRoot ? headingRoot.querySelectorAll('h1').length : 0,
+      h2Count:content.querySelectorAll('h2').length,
+      links:Array.from(content.querySelectorAll('a[href]'), a => a.getAttribute('href')),
+      images:Array.from(content.querySelectorAll('img'), img => img.getAttribute('alt')),
+      canonicals:Array.from(doc.querySelectorAll('link[rel~="canonical"]'), n => n.getAttribute('href') || ''),
+      jsonld:Array.from(doc.querySelectorAll('script[type="application/ld+json"]'), n => n.textContent),
+    };
+  }
+
+  function analyzeSeoFacts(facts) {
     const checks = [];
-    const html = doc.documentElement.outerHTML;
+    const add = (id, ok, msg) => checks.push({id,ok,msg});
+    const origin = 'https://chendermatologist.com';
+    const route = ('/' + facts.file.replace(/^\/+/, '').replace(/(^|\/)index\.html$/, '$1').replace(/\.html$/, '')).replace(/\/$/, '') || '/';
+    const expected = new URL(route, origin);
+    add('title', facts.title ? 'ok' : 'err', facts.title ? `標題 ${Array.from(facts.title).length} 字；確認能直接說明文章主題` : '缺少標題');
+    add('description', facts.description ? 'ok' : 'err', facts.description ? `摘要 ${Array.from(facts.description).length} 字；確認能回答讀者來此的問題` : '缺少搜尋摘要');
+    add('h1', facts.h1Count === 1 ? 'ok' : facts.h1Count ? 'warn' : 'err', facts.h1Count ? `${facts.h1Count} 個主標題；確認主題清楚且層級一致` : '找不到文章主標題');
+    add('body', facts.text ? 'ok' : 'err', facts.text ? `本文 ${Array.from(facts.text).length} 字元、${facts.h2Count} 個小節；不含導覽列與頁尾，不需為湊字數擴寫` : '本文沒有可閱讀文字');
+    let internal = 0, external = 0, invalid = 0;
+    for (const href of facts.links) {
+      try {
+        if (!href.trim()) { invalid++; continue; }
+        const url = new URL(href, expected);
+        if (['mailto:','tel:'].includes(url.protocol)) continue;
+        if (!['http:','https:'].includes(url.protocol)) { invalid++; continue; }
+        if (url.origin === origin) { if (url.pathname !== expected.pathname || url.search !== expected.search) internal++; }
+        else external++;
+      } catch (_) { invalid++; }
+    }
+    add('links', invalid ? 'err' : 'ok', `本文連結：${internal} 個站內頁面、${external} 個外部參考${invalid ? `、${invalid} 個無效或不安全網址` : ''}`);
+    if (!internal) add('related', 'warn', '本文尚無其他站內頁面連結；有相關內容時再加入，不需硬湊數量');
+    if (external) add('citations', 'ok', '一般編輯引用不必加 nofollow；付費或使用者內容的連結需另依性質標示');
+    const missingAlt = facts.images.filter(alt => alt === null).length;
+    const emptyAlt = facts.images.filter(alt => alt !== null && !alt.trim()).length;
+    if (missingAlt) add('alt', 'err', `${missingAlt} 張圖片缺少 alt 屬性`);
+    else if (facts.images.length) add('alt', 'ok', `${facts.images.length} 張圖片都有 alt 屬性`);
+    if (emptyAlt) add('decorative', 'warn', `${emptyAlt} 張圖使用空白 alt；確認為裝飾圖，資訊圖需描述內容`);
+    let canonical;
+    try { canonical = new URL(facts.canonicals[0]); } catch (_) { /* reported below */ }
+    if (facts.canonicals.length !== 1 || !canonical || canonical.origin !== origin || canonical.hash || canonical.search || canonical.username || canonical.password) {
+      add('canonical','err','需有一個有效的本站 HTTPS canonical，且不含查詢參數或片段');
+    } else if (canonical.href !== expected.href) {
+      add('canonical','warn',`canonical 指向 ${canonical.href}，與目前檔案 ${expected.href} 不同；確認是否刻意合併重複頁面`);
+    } else add('canonical','ok','canonical 與目前檔案網址一致');
+    const validNode = node => node && typeof node === 'object' && !Array.isArray(node) &&
+      (typeof node['@type'] === 'string' && node['@type'].trim() ||
+       Array.isArray(node['@type']) && node['@type'].length && node['@type'].every(t => typeof t === 'string' && t.trim()) ||
+       typeof node['@id'] === 'string' && node['@id'].trim() ||
+       Array.isArray(node['@graph']) && node['@graph'].length && node['@graph'].every(validNode));
+    let invalidJson = 0;
+    facts.jsonld.forEach(raw => {
+      try { const data = JSON.parse(raw); if (!(Array.isArray(data) ? data.length && data.every(validNode) : validNode(data))) invalidJson++; }
+      catch (_) { invalidJson++; }
+    });
+    if (!facts.jsonld.length) add('jsonld','err','缺少 JSON-LD 結構化資料');
+    else if (invalidJson) add('jsonld','err',`${invalidJson} 個 JSON-LD 無法解析或缺少基本型別／圖譜`);
+    else add('jsonld','ok',`${facts.jsonld.length} 個 JSON-LD 通過基本格式檢查；完整 schema 由發布 CI 驗證`);
+    return checks;
+  }
 
-    // Title
-    const titleEl = doc.querySelector('title');
-    const title = titleEl ? titleEl.textContent.trim() : '';
-    if (!title) checks.push({ ok: 'err', msg: '缺 <title>' });
-    else if (title.length < 25) checks.push({ ok: 'warn', msg: `<title> 太短 (${title.length} 字)，建議 30-60` });
-    else if (title.length > 65) checks.push({ ok: 'warn', msg: `<title> 太長 (${title.length} 字)，建議 ≤ 60` });
-    else checks.push({ ok: 'ok', msg: `<title> 長度 ${title.length} 字 ✓` });
-
-    // Meta description
-    const desc = doc.querySelector('meta[name="description"]');
-    const descText = desc ? desc.getAttribute('content') || '' : '';
-    if (!descText) checks.push({ ok: 'err', msg: '缺 meta description' });
-    else if (descText.length < 70) checks.push({ ok: 'warn', msg: `description 太短 (${descText.length})` });
-    else if (descText.length > 165) checks.push({ ok: 'warn', msg: `description 太長 (${descText.length})` });
-    else checks.push({ ok: 'ok', msg: `description ${descText.length} 字 ✓` });
-
-    // H1 count
-    const h1s = doc.querySelectorAll('h1');
-    if (h1s.length === 0) checks.push({ ok: 'err', msg: '缺 H1' });
-    else if (h1s.length > 1) checks.push({ ok: 'warn', msg: `多個 H1 (${h1s.length})，建議只 1` });
-    else checks.push({ ok: 'ok', msg: '1 個 H1 ✓' });
-
-    // H2 count
-    const h2s = doc.querySelectorAll('h2');
-    if (h2s.length < 3) checks.push({ ok: 'warn', msg: `H2 太少 (${h2s.length})，建議 ≥ 4` });
-    else if (h2s.length > 12) checks.push({ ok: 'warn', msg: `H2 太多 (${h2s.length})` });
-    else checks.push({ ok: 'ok', msg: `${h2s.length} 個 H2 ✓` });
-
-    // Word count (Chinese)
-    const text = (doc.body.textContent || '').replace(/\s+/g, '');
-    if (text.length < 600) checks.push({ ok: 'warn', msg: `字數 ${text.length}，太短` });
-    else if (text.length > 8000) checks.push({ ok: 'warn', msg: `字數 ${text.length}，太長` });
-    else checks.push({ ok: 'ok', msg: `字數 ${text.length} ✓` });
-
-    // Internal links
-    const internal = doc.querySelectorAll('a[href^="/"], a[href^="https://chendermatologist.com"]');
-    if (internal.length < 3) checks.push({ ok: 'warn', msg: `內連太少 (${internal.length})，建議 ≥ 4` });
-    else checks.push({ ok: 'ok', msg: `${internal.length} 個內連 ✓` });
-
-    // External links nofollow
-    const externals = Array.from(doc.querySelectorAll('a[href^="http"]')).filter(a => !a.href.includes('chendermatologist.com'));
-    const missingNofollow = externals.filter(a => !(a.rel || '').includes('nofollow') && !(a.rel || '').includes('noopener'));
-    if (missingNofollow.length) checks.push({ ok: 'warn', msg: `${missingNofollow.length} 個外連缺 nofollow / noopener` });
-    else if (externals.length) checks.push({ ok: 'ok', msg: `${externals.length} 個外連都有 rel ✓` });
-
-    // Images alt
-    const imgs = doc.querySelectorAll('img');
-    const noAlt = Array.from(imgs).filter(i => !i.alt);
-    if (noAlt.length) checks.push({ ok: 'err', msg: `${noAlt.length} 張圖缺 alt` });
-    else if (imgs.length) checks.push({ ok: 'ok', msg: `${imgs.length} 張圖都有 alt ✓` });
-
-    // JSON-LD presence
-    const jsonld = doc.querySelectorAll('script[type="application/ld+json"]');
-    if (jsonld.length === 0) checks.push({ ok: 'err', msg: '缺 JSON-LD 結構化資料' });
-    else checks.push({ ok: 'ok', msg: `${jsonld.length} 個 JSON-LD ✓` });
-
-    // Canonical
-    if (!doc.querySelector('link[rel="canonical"]')) checks.push({ ok: 'err', msg: '缺 canonical' });
-    else checks.push({ ok: 'ok', msg: 'canonical ✓' });
-
-    // Update UI
-    const total = checks.length;
-    const okN = checks.filter(c => c.ok === 'ok').length;
-    const warnN = checks.filter(c => c.ok === 'warn').length;
-    const errN = checks.filter(c => c.ok === 'err').length;
-    const score = Math.max(0, Math.round((okN * 10 - warnN * 3 - errN * 8) / total * 10));
-
-    document.getElementById('axSeoScore').textContent = score + ' / 100';
-    document.getElementById('axSeoMeter').style.width = score + '%';
+  function runSeoCheck() {
+    const file = getCurrentFile();
+    const raw = window.adminState?.editedContent;
+    if (!file || !file.endsWith('.html') || !raw) {
+      document.getElementById('axSeoScore').textContent = '請先載入 HTML 文章';
+      ['axSeoTitle','axSeoUrl','axSeoDescription','axSeoChecks'].forEach(id => {document.getElementById(id).textContent = '';});
+      return;
+    }
+    // Inspect the save snapshot, not the script-free WYSIWYG preview.
+    const doc = new DOMParser().parseFromString(raw, 'text/html');
+    const facts = collectSeoFacts(doc, file);
+    const checks = analyzeSeoFacts(facts);
+    const warnings = checks.filter(c => c.ok === 'warn').length;
+    const errors = checks.filter(c => c.ok === 'err').length;
+    document.getElementById('axSeoScore').textContent = `${errors} 個需修正 · ${warnings} 個待確認`;
+    document.getElementById('axSeoTitle').textContent = facts.title || '（尚無標題）';
+    document.getElementById('axSeoUrl').textContent = facts.canonicals[0] || '（尚無 canonical）';
+    document.getElementById('axSeoDescription').textContent = facts.description || '（尚無摘要）';
     const ul = document.getElementById('axSeoChecks');
     ul.textContent = '';
     checks.forEach(c => {
@@ -968,7 +994,7 @@
     }
     function scheduleSeoCheck() {
       if (!seoTabActive()) return;
-      if (!getEditorDocument()) return;
+      if (!getCurrentFile()) return;
       clearTimeout(seoTimer);
       seoTimer = setTimeout(runSeoCheck, 600);
     }
@@ -977,6 +1003,7 @@
       if (!doc || doc._seoInputHooked) return;
       doc._seoInputHooked = true;
       doc.addEventListener('input', scheduleSeoCheck, { passive: true });
+      scheduleSeoCheck();
     }
     function wireEditorSeoInput() {
       const f = document.querySelector('iframe.editor');
@@ -988,12 +1015,21 @@
       attachSeoInput();
     }
     document.addEventListener('click', function (e) {
-      if (e.target && e.target.closest && e.target.closest('.ax-tab[data-tab="seo"]')) {
+      if (e.target && e.target.closest && e.target.closest('.ax-tabs [data-tab="seo"], .ax-tab[data-tab="seo"]')) {
         wireEditorSeoInput();
         setTimeout(scheduleSeoCheck, 50);
       }
     });
+    document.addEventListener('input', function (e) {
+      if (e.target && e.target.closest && e.target.closest('#editorPane textarea')) scheduleSeoCheck();
+    });
+    document.addEventListener('cd-editor-content-changed', scheduleSeoCheck);
     wireEditorSeoInput();
+    const frameWrap = document.querySelector('.frame-wrap');
+    if (frameWrap) new MutationObserver(() => {
+      wireEditorSeoInput();
+      scheduleSeoCheck();
+    }).observe(frameWrap, {childList:true});
 
     // Run once on first file load
     setTimeout(runSeoCheck, 1500);

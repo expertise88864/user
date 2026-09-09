@@ -817,6 +817,7 @@ window.adminState = {
 get file(){ return CURRENT_FILE; },
 get sha(){ return CURRENT_SHA; },
 get content(){ return CURRENT_CONTENT; },
+get editedContent(){ return BILINGUAL_MODE ? mergeBilingualBack() : getCurrentEditorContent(); },
 get dirty(){ return DIRTY; },
 get frame(){ return editFrame; },
 get pat(){ return PAT; },
@@ -1441,7 +1442,7 @@ const noi = bg.querySelector('#metaOgImg').value;
 const ndate = bg.querySelector('#metaDate').value;
 const ndmod = bg.querySelector('#metaDateMod').value;
 const nc = bg.querySelector('#metaCanonical').value;
-let s = SOURCE_MODE ? sourceTextarea.value : CURRENT_CONTENT;
+let s = window.adminState.editedContent;
 const setAttr = (re, val)=>{ s = s.replace(re, (m)=>m.replace(/content="[^"]*"/, 'content="'+escapeHtml(val)+'"')); };
 s = s.replace(/<title>[^<]*<\/title>/, '<title>'+escapeHtml(nt)+'</title>');
 setAttr(/<meta name="description" content="[^"]*"/, nd);
@@ -1455,8 +1456,11 @@ s = s.replace(/"datePublished":"[^"]*"/, '"datePublished":"'+ndate+'"');
 s = s.replace(/"dateModified":"[^"]*"/, '"dateModified":"'+ndmod+'"');
 s = s.replace(/<link rel="canonical" href="[^"]*"/, '<link rel="canonical" href="'+escapeHtml(nc)+'"');
 CURRENT_CONTENT = s;
+if(!BILINGUAL_MODE){
 if(SOURCE_MODE) sourceTextarea.value = s;
 else mountIframe(s);  // remount iframe with new metadata
+}
+document.dispatchEvent(new Event('cd-editor-content-changed'));
 DIRTY = true;
 bg.remove();
 setStatus('後設資料已套用（記得儲存）');
@@ -2275,7 +2279,7 @@ save = saveWithModal;
 
 // init
 loadPat();</script>
-<script type="module" src="/admin/admin-extras.js?v=202605170730"></script>
+<script type="module" src="/admin/admin-extras.js?v=202609092350"></script>
 <script>
 // === Mobile sidebar collapse (2026-05-13c — inline collapse) ===
 (function(){
