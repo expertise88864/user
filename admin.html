@@ -452,12 +452,7 @@ doc.addEventListener('input', ()=>{ DIRTY = true; }, true);
 doc.addEventListener('drop', async (e)=>{
 if(!e.dataTransfer.files || !e.dataTransfer.files.length) return;
 e.preventDefault();
-for(const f of e.dataTransfer.files){
-if(f.type.startsWith('image/')){
-const url = await uploadImage(f);
-insertImageAtSelection(url);
-}
-}
+await uploadAndInsertImages(Array.from(e.dataTransfer.files).filter(f=>f.type.startsWith('image/')));
 }, true);
 doc.addEventListener('dragover', e=>e.preventDefault(), true);
 // Paste image
@@ -467,8 +462,7 @@ for(const it of e.clipboardData.items){
 if(it.type && it.type.startsWith('image/')){
 e.preventDefault();
 const file = it.getAsFile();
-const url = await uploadImage(file, 'pasted');
-insertImageAtSelection(url);
+if(file) await uploadAndInsertImages([file], 'pasted');
 return;
 }
 }
@@ -514,13 +508,57 @@ DIRTY = true;
 // =========== image upload to /blog/images/ ===========
 elImageInput.addEventListener('change', async (e)=>{
 if(!editFrame){ alert('請先選一個檔案再上傳圖片'); elImageInput.value=''; return; }
-for(const f of e.target.files){
-const url = await uploadImage(f);
-insertImageAtSelection(url);
-}
-elImageInput.value = '';
+try { await uploadAndInsertImages(Array.from(e.target.files)); }
+finally { elImageInput.value = ''; }
 });
-async function uploadImage(file, prefix){
+async function uploadAndInsertImages(files, prefix){
+  if(!files.length) return;
+  if(SAVE_PENDING || EDITOR_LOADING){ setStatus('請等目前載入、儲存或圖片上傳結束'); return; }
+  const token = auth && auth.getPat();
+  const frame = editFrame, doc = frame && frame.contentDocument;
+  if(!token || auth.isLogoutPending() || !CURRENT_FILE || !doc || SOURCE_MODE || BILINGUAL_MODE){
+    setStatus('請先登入並開啟文章的視覺編輯模式', true); return;
+  }
+  const file = CURRENT_FILE, loadId = EDITOR_LOAD_ID;
+  const selection = doc.getSelection();
+  let range = selection && selection.rangeCount ? selection.getRangeAt(0).cloneRange() : null;
+  const ancestor = range && range.commonAncestorContainer;
+  const element = ancestor && (ancestor.nodeType === 1 ? ancestor : ancestor.parentElement);
+  if(!element || !element.closest('[data-cd-editable="1"]')){
+    const region = doc.querySelector('[data-cd-editable="1"]');
+    if(!region){ setStatus('找不到可插入圖片的編輯區域', true); return; }
+    range = doc.createRange(); range.selectNodeContents(region); range.collapse(false);
+  }
+  function ensureCurrent(){
+    const container = range.commonAncestorContainer;
+    const currentElement = container.nodeType === 1 ? container : container.parentElement;
+    if(auth.getPat() !== token || auth.isLogoutPending() || CURRENT_FILE !== file ||
+       EDITOR_LOAD_ID !== loadId || EDITOR_LOADING || editFrame !== frame ||
+       frame.contentDocument !== doc || SOURCE_MODE || BILINGUAL_MODE ||
+       !container.isConnected || !currentElement || !currentElement.closest('[data-cd-editable="1"]')){
+      throw new Error('編輯狀態已變更，圖片未插入；如圖片已上傳，可從圖庫選取。');
+    }
+  }
+  const controls = Array.from(document.querySelectorAll('#toolbarWrap button, #toolbarWrap input, #newFileBtn'));
+  const disabled = controls.map(control=>control.disabled);
+  SAVE_PENDING = true;
+  controls.forEach(control=>{ control.disabled = true; });
+  try {
+    for(const image of files){
+      ensureCurrent();
+      const result = await uploadImage(image, prefix, (...args)=>{ ensureCurrent(); return gh(...args); });
+      ensureCurrent();
+      insertImageAtSelection(result.url, range, result.alt);
+    }
+  } catch(error){
+    setStatus('圖片處理未完成：' + error.message, true);
+  } finally {
+    SAVE_PENDING = false;
+    controls.forEach((control,index)=>{ control.disabled = disabled[index]; });
+  }
+}
+
+async function uploadImage(file, prefix, request = gh){
 setStatus('上傳 ' + file.name + ' ...');
 return new Promise((resolve, reject)=>{
 const reader = new FileReader();
@@ -531,7 +569,7 @@ const safeName = (prefix?prefix+'-':'') + (file.name||'image').replace(/[^a-zA-Z
 const ext = (file.type==='image/png')?'.png':(file.type==='image/jpeg'?'.jpg':(file.type==='image/webp'?'.webp':(file.type==='image/gif'?'.gif':'.bin')));
 const filename = Date.now() + '_' + (safeName.match(/\.[a-z0-9]+$/i) ? safeName : safeName + ext);
 const path = 'blog/images/' + filename;
-await gh('PUT', 'contents/' + path, {
+await request('PUT', 'contents/' + path, {
 message: 'upload ' + filename,
 content: b64,
 branch: BRANCH
@@ -544,6 +582,8 @@ setStatus('圖片上傳失敗，請稍後再試', true);
 reject(e);
 }
 };
+reader.onerror = ()=>reject(new Error('圖片檔案讀取失敗'));
+reader.onabort = ()=>reject(new Error('圖片檔案讀取已取消'));
 reader.readAsDataURL(file);
 });
 }
@@ -1146,6 +1186,7 @@ const img = new Image();
 const reader = new FileReader();
 reader.onload = e=>{
 img.onload = ()=>{
+try {
 const ratio = Math.min(maxDim / img.naturalWidth, maxDim / img.naturalHeight, 1);
 const w = Math.round(img.naturalWidth * ratio);
 const h = Math.round(img.naturalHeight * ratio);
@@ -1162,25 +1203,33 @@ resolve({blob: file, ext: '.jpg', mime: 'image/jpeg', w, h, originalSize: file.s
 resolve({blob, ext: '.webp', mime: 'image/webp', w, h, originalSize: file.size, newSize: blob.size});
 }
 }, 'image/webp', quality);
+} catch(error){ reject(error); }
 };
 img.onerror = ()=>reject(new Error('image decode failed'));
 img.src = e.target.result;
 };
 reader.onerror = ()=>reject(new Error('FileReader failed'));
+reader.onabort = ()=>reject(new Error('FileReader aborted'));
 reader.readAsDataURL(file);
 });
 }
 // Override original uploadImage with compression-enabled version
 const _originalUploadImage = uploadImage;
-uploadImage = async function(file, prefix){
-// If GIF or already WebP, skip compression
+uploadImage = async function(file, prefix, request = gh){
+const altText = prompt('輸入圖片替代文字 (alt) — SEO + 無障礙必要：', '');
+if(altText === null) throw new Error('已取消圖片上傳');
+// Preserve animated GIF and vector SVG without rasterizing them.
 if(file.type === 'image/gif' || file.type === 'image/svg+xml'){
-return _originalUploadImage(file, prefix);
+return {url:await _originalUploadImage(file, prefix, request), alt:altText};
 }
 setStatus('壓縮 ' + file.name + ' ...');
+let c;
 try {
-const c = await compressImage(file);
-const altText = prompt('輸入圖片替代文字 (alt) — SEO + 無障礙必要：', '');
+c = await compressImage(file);
+} catch(e){
+setStatus('壓縮失敗，改用原圖上傳', true);
+return {url:await _originalUploadImage(file, prefix, request), alt:altText};
+}
 setStatus('上傳壓縮後 ' + (c.newSize/1024).toFixed(1) + 'KB（原 ' + (file.size/1024).toFixed(1) + 'KB）...');
 const safeName = (file.name||'image').replace(/\.[^.]+$/, '').replace(/[^a-zA-Z0-9._-]+/g,'-').toLowerCase();
 const filename = Date.now() + '_' + safeName + c.ext;
@@ -1190,47 +1239,44 @@ return await new Promise((resolve, reject)=>{
 reader.onload = async ()=>{
 try {
 const b64 = reader.result.split(',')[1];
-await gh('PUT', 'contents/' + path, {
+await request('PUT', 'contents/' + path, {
 message: 'upload ' + filename + ' (compressed ' + (c.newSize/1024).toFixed(1) + 'KB)',
 content: b64,
 branch: BRANCH
 });
 const url = '/blog/images/' + filename;
 setStatus('已上傳 ' + url + ' (' + c.w + '×' + c.h + ')');
-window._lastAlt = altText || '';
-resolve(url);
+resolve({url, alt:altText});
 } catch(e){ reject(e); }
 };
+reader.onerror = ()=>reject(new Error('圖片檔案讀取失敗'));
+reader.onabort = ()=>reject(new Error('圖片檔案讀取已取消'));
 reader.readAsDataURL(c.blob);
 });
-} catch(e){
-setStatus('壓縮失敗，已改用原圖上傳', true);
-return _originalUploadImage(file, prefix);
-}
 };
 // Override insertImageAtSelection to include alt text
 const _originalInsertImage = insertImageAtSelection;
-insertImageAtSelection = function(url){
+insertImageAtSelection = function(url, insertionRange, altText = ''){
 if(!editFrame) return;
 const doc = editFrame.contentDocument;
 const sel = doc.getSelection();
-let range;
-if(sel && sel.rangeCount){ range = sel.getRangeAt(0); }
-else { const region = doc.querySelector('[data-cd-editable="1"]'); if(!region) return;
+let range = insertionRange;
+if(!range && sel && sel.rangeCount){ range = sel.getRangeAt(0); }
+if(!range){ const region = doc.querySelector('[data-cd-editable="1"]'); if(!region) return;
 range = doc.createRange(); range.selectNodeContents(region); range.collapse(false); }
 const fig = doc.createElement('figure');
 fig.style.cssText = 'margin:18px 0; text-align:center;';
 const img = doc.createElement('img');
 img.src = url;
-img.alt = window._lastAlt || '';
+img.alt = altText;
 img.loading = 'lazy';
 img.decoding = 'async';
 img.style.cssText = 'max-width:100%; height:auto; border-radius:12px; box-shadow:0 8px 18px -10px rgba(77,99,88,.25);';
 fig.appendChild(img);
-if(window._lastAlt){
+if(altText){
 const cap = doc.createElement('figcaption');
 cap.style.cssText = 'margin-top:6px;font-size:13px;color:#5e574e';
-cap.textContent = window._lastAlt;
+cap.textContent = altText;
 fig.appendChild(cap);
 }
 range.deleteContents();
@@ -1238,7 +1284,6 @@ range.insertNode(fig);
 range.setStartAfter(fig); range.collapse(true);
 if(sel){ sel.removeAllRanges(); sel.addRange(range); }
 DIRTY = true;
-window._lastAlt = '';
 };
 // ─────────────────────────────────────────────────────────────
 // IMAGE LIBRARY — modal listing /blog/images/ with thumbnails
@@ -1859,20 +1904,32 @@ document.getElementById('historyBtn').addEventListener('click', openVersionHisto
 
 function openVersionHistory(){
   if(!CURRENT_FILE){ alert('請先選一個檔案'); return; }
-  if(!PAT){ alert('請先登入 PAT'); return; }
+  if(SAVE_PENDING || EDITOR_LOADING){ setStatus('請等目前載入或儲存作業結束'); return; }
+  const token = auth && auth.getPat();
+  if(!token || auth.isLogoutPending()){ alert('請先登入 PAT'); return; }
   const bg = document.createElement('div');
   bg.className = 'modal-bg';
+  bg.historyContext = { file:CURRENT_FILE, loadId:EDITOR_LOAD_ID, token, requestId:0 };
   const currentFileLabel = escapeHtml(CURRENT_FILE);
-  bg.innerHTML = '<div class="modal" style="max-width:920px;height:85vh;display:flex;flex-direction:column"><h2>📜 ' + currentFileLabel + ' — 版本歷史</h2><p style="font-size:12.5px;color:#5e574e">最近 30 次修改。點任一版本看 diff、按「還原此版本」會把檔案內容載入到編輯器（需手動按儲存才會真的發布）。</p><div style="display:flex;flex:1;gap:10px;overflow:hidden;margin-top:10px;min-height:0"><div id="histList" style="flex:0 0 290px;overflow-y:auto;border:1px solid #ebe4d8;border-radius:8px;padding:6px;background:#fafaf6"></div><div id="histDiff" style="flex:1;overflow:auto;border:1px solid #ebe4d8;border-radius:8px;padding:14px;font-family:JetBrains Mono,monospace;font-size:11.5px;line-height:1.55;background:#fff;min-width:0">點選左側任一版本查看 diff</div></div><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"><button type="button" id="histClose" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">關閉</button></div></div>';
+  bg.innerHTML = '<div class="modal" style="max-width:920px;height:85vh;display:flex;flex-direction:column"><h2>📜 ' + currentFileLabel + ' — 版本歷史</h2><p style="font-size:12.5px;color:#5e574e">最近 30 次修改。點任一版本看 diff、按「還原此版本」會把檔案內容載入到編輯器（需手動儲存到 GitHub，通過發布驗證後才會上線）。</p><div style="display:flex;flex:1;gap:10px;overflow:hidden;margin-top:10px;min-height:0"><div id="histList" style="flex:0 0 290px;overflow-y:auto;border:1px solid #ebe4d8;border-radius:8px;padding:6px;background:#fafaf6"></div><div id="histDiff" style="flex:1;overflow:auto;border:1px solid #ebe4d8;border-radius:8px;padding:14px;font-family:JetBrains Mono,monospace;font-size:11.5px;line-height:1.55;background:#fff;min-width:0">點選左側任一版本查看 diff</div></div><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"><button type="button" id="histClose" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">關閉</button></div></div>';
   document.body.appendChild(bg);
   bg.querySelector('#histClose').addEventListener('click', ()=>bg.remove());
   loadHistoryList(bg);
 }
 
+function historyContextIsCurrent(bg){
+  const context = bg.historyContext;
+  return !!(bg.isConnected && context && context.file === CURRENT_FILE &&
+    context.loadId === EDITOR_LOAD_ID && !EDITOR_LOADING && !SAVE_PENDING &&
+    auth && auth.getPat() === context.token && !auth.isLogoutPending());
+}
+
 async function loadHistoryList(bg){
+  if(!historyContextIsCurrent(bg)) return;
   setStatus('讀取版本歷史 ...');
   try {
-    const commits = await gh('GET', 'commits?path=' + encodeURIComponent(CURRENT_FILE) + '&per_page=30');
+    const commits = await gh('GET', 'commits?path=' + encodeURIComponent(bg.historyContext.file) + '&sha=' + encodeURIComponent(BRANCH) + '&per_page=30');
+    if(!historyContextIsCurrent(bg)) return;
     const list = bg.querySelector('#histList');
     list.textContent = '';
     commits.forEach((c, idx)=>{
@@ -1898,16 +1955,22 @@ async function loadHistoryList(bg){
     });
     setStatus('載入 ' + commits.length + ' 個版本');
   } catch(e){
+    if(!historyContextIsCurrent(bg)) return;
     setStatus('版本歷史失敗，請稍後再試', true);
     bg.querySelector('#histList').textContent = '讀取失敗，請稍後再試';
   }
 }
 
 async function showCommitDiff(bg, sha, isLatest){
+  if(!historyContextIsCurrent(bg) || !/^[a-f0-9]{40}$/.test(sha)) return;
+  const context = bg.historyContext;
+  const requestId = ++context.requestId;
+  const isCurrent = ()=>historyContextIsCurrent(bg) && requestId === context.requestId;
   const diffEl = bg.querySelector('#histDiff');
   diffEl.textContent = '讀取版本 ' + sha.slice(0,7) + ' 內容...';
   try {
-    const data = await gh('GET', 'contents/' + CURRENT_FILE + '?ref=' + sha);
+    const data = await gh('GET', 'contents/' + context.file + '?ref=' + sha);
+    if(!isCurrent()) return;
     const oldContent = decodeUtf8Base64(data.content);
     const cur = BILINGUAL_MODE ? mergeBilingualBack() : (SOURCE_MODE ? sourceTextarea.value : (editFrame ? mergeIframeIntoOriginal() : CURRENT_CONTENT));
     const diffHTML = renderDiff(oldContent, cur);
@@ -1916,7 +1979,12 @@ async function showCommitDiff(bg, sha, isLatest){
     const r = diffEl.querySelector('#restoreBtn');
     if(r){
       r.addEventListener('click', ()=>{
+        if(!isCurrent()){
+          diffEl.textContent = '文章或登入狀態已變更，請關閉後重新開啟版本歷史。';
+          return;
+        }
         if(!confirm('將版本 ' + sha.slice(0,7) + ' 的內容載入編輯器（你目前未存的改動會丟失）。\n\n載入後需要手動按「儲存並推送」才會真的還原到 GitHub。\n\n確定？')) return;
+        if(!isCurrent()) return;
         if(BILINGUAL_MODE){
           alert('請先按「雙語編輯」切回單一視窗模式再還原');
           return;
@@ -1926,10 +1994,11 @@ async function showCommitDiff(bg, sha, isLatest){
         if(SOURCE_MODE){ sourceTextarea.value = oldContent; }
         else mountIframe(oldContent);
         bg.remove();
-        setStatus('已載入 ' + sha.slice(0,7) + ' 版本 — 按 儲存才會真的還原發布');
+        setStatus('已載入 ' + sha.slice(0,7) + ' 版本 — 尚未儲存；正式上線仍須通過發布驗證');
       });
     }
   } catch(e){
+    if(!isCurrent()) return;
     diffEl.textContent = '讀取失敗，請稍後再試';
   }
 }
