@@ -8,8 +8,23 @@ import shutil
 import subprocess
 import tempfile
 import unittest
+import _setup_pagefind as legacy_builder
 
 class SearchScopeTest(unittest.TestCase):
+    def test_legacy_arguments_and_exit_status(self):
+        for args in ([], ['--reindex']):
+            with self.subTest(args=args):
+                with patch.object(legacy_builder, 'build_index', return_value=7) as build:
+                    self.assertEqual(legacy_builder.main(args), 7)
+                    build.assert_called_once_with()
+        for args in (['--version', '1.1.1'], ['--unknown']):
+            with self.subTest(args=args):
+                with patch.object(legacy_builder, 'build_index') as build:
+                    with self.assertRaises(SystemExit) as error:
+                        legacy_builder.main(args)
+                    self.assertEqual(error.exception.code, 2)
+                    build.assert_not_called()
+
     def test_only_public_route_roots_are_indexed(self):
         spec = importlib.util.spec_from_file_location('search_builder', '_run_pagefind.py')
         builder = importlib.util.module_from_spec(spec)
@@ -32,7 +47,9 @@ class SearchScopeTest(unittest.TestCase):
             before = list((root / 'pagefind/fragment').glob('*.pf_fragment'))
             self.assertGreater(len(before), len(public))
             with patch.object(builder, 'ROOT', root), patch.object(builder, 'PAGEFIND_DIR', root / 'pagefind'):
-                self.assertEqual(builder.main(), 0)
+                # The legacy command must also clean contaminated old fragments.
+                with patch.object(legacy_builder, 'build_index', builder.main):
+                    self.assertEqual(legacy_builder.main(['--reindex']), 0)
             urls = set()
             for fragment in (root / 'pagefind/fragment').glob('*.pf_fragment'):
                 data = gzip.decompress(fragment.read_bytes())
