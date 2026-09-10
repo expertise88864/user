@@ -272,6 +272,7 @@ test('font controls defer geometry, restore visibility and preserve size selecti
   let y = 700, scrollReads = 0;
   function node() {
     return {style:{},dataset:{},children:[],attrs:{},handlers:{},
+      remove(){nodes.delete(this.id);},
       setAttribute(k,v){this.attrs[k]=v;},
       appendChild(child){this.children.push(child);if(child.id) nodes.set(child.id,child);},
       addEventListener(k,v){this.handlers[k]=v;},
@@ -288,6 +289,7 @@ test('font controls defer geometry, restore visibility and preserve size selecti
   });
   win.DN.addFontSizer();
   const controls = nodes.get('dn-font-sizer');
+  assert.equal(nodes.has('dn-font-size-style'),false,'default M must use the initial stylesheet');
   assert.equal(scrollReads,0);
   listeners.get('scroll')(); listeners.get('scroll')();
   assert.equal(frames.length,1);
@@ -299,6 +301,12 @@ test('font controls defer geometry, restore visibility and preserve size selecti
   assert.equal(storage.get('dn-font-size'),'XL');
   assert.equal(xl.attrs['aria-pressed'],'true');
   assert.match(nodes.get('dn-font-size-style').textContent,/21px/);
+  const medium = controls.children.find(b=>b.dataset.size==='M');
+  medium.handlers.click();
+  assert.equal(nodes.has('dn-font-size-style'),false,'returning to M removes the custom heading and body overrides');
+  assert.equal(storage.get('dn-font-size'),'M');
+  assert.equal(medium.attrs['aria-pressed'],'true');
+  assert.equal(xl.attrs['aria-pressed'],'false');
   y=0; listeners.get('scroll')(); frames.shift()();
   assert.equal(controls.style.opacity,'0');
   assert.equal(controls.style.pointerEvents,'none');

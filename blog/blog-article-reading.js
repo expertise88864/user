@@ -20,7 +20,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202609100730';
+          s.src = '/blog/blog-diagrams.min.js?v=202609101410';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -578,6 +578,13 @@
     var lineHeightMap = { 'S': '1.7', 'M': '1.85', 'L': '1.95', 'XL': '2.05' };
     function applyFontSize(s) {
       var styleEl = document.getElementById('dn-font-size-style');
+      // The default already ships in CSS before first paint. Re-injecting it
+      // after the reading bundle loads needlessly lays out the entire article.
+      if (s === 'M') {
+        if (styleEl) styleEl.remove();
+        try { localStorage.setItem('dn-font-size', s); } catch (e) {}
+        return;
+      }
       if (!styleEl) {
         styleEl = document.createElement('style');
         styleEl.id = 'dn-font-size-style';

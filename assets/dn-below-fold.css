@@ -108,6 +108,9 @@ article h2[id]{scroll-margin-top:84px}
 }
 
 /* Keep long scale guides responsive while retaining search and anchor access. */
+/* Match the reader's default M size before the optional controls load. */
+.prose,.prose-zh,.prose-en,#proseZh,#proseEn,article.prose{font-size:16.5px!important;line-height:1.85!important}
+.prose p,.prose-zh p,.prose-en p,#proseZh p,#proseEn p,article.prose p,article.prose li{font-size:16.5px!important;line-height:1.85!important}
 @media screen{.tool-block{content-visibility:auto;contain-intrinsic-size:auto 1800px}}
 
 /* Keep tall comparison tables scrollable, with headers inside their scrollport. */
