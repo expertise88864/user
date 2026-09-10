@@ -1428,6 +1428,57 @@ document.getElementById('newFileBtn').removeEventListener('click', ()=>{});  // 
 const _oldNewFileBtn = document.getElementById('newFileBtn').cloneNode(true);
 document.getElementById('newFileBtn').replaceWith(_oldNewFileBtn);
 _oldNewFileBtn.addEventListener('click', openNewArticleWizard);
+async function createArticleAtomically({slug, html, mirror, title, sub, tag, type, date}, request = gh){
+if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error('文章網址格式不正確');
+const refPath = 'git/ref/heads/' + BRANCH;
+const base = await request('GET', refPath);
+const baseSha = base.object && base.object.sha;
+if(!/^[a-f0-9]{40}$/.test(baseSha || '')) throw new Error('無法確認目前的儲存版本');
+const parent = await request('GET', 'git/commits/' + baseSha);
+if(!/^[a-f0-9]{40}$/.test(parent.tree && parent.tree.sha || '')) throw new Error('無法讀取目前的檔案目錄');
+const paths = ['blog/' + slug + '.html'];
+if(mirror) paths.push('en/blog/' + slug + '.html');
+for(const path of paths){
+  try {
+    await request('GET', 'contents/' + path + '?ref=' + baseSha);
+  } catch(e){
+    if(e.status === 404) continue;
+    throw e;
+  }
+  throw new Error('此文章網址已存在，請改用其他網址或開啟既有文章');
+}
+const catalogFile = await request('GET', 'contents/blog/blog-shared.js?ref=' + baseSha);
+const catalog = decodeUtf8Base64(catalogFile.content);
+const start = catalog.indexOf('DN.ARTICLES = [');
+const end = start < 0 ? -1 : catalog.indexOf('\n  ];', start);
+if(start < 0 || end < 0) throw new Error('文章目錄格式無法辨識，尚未建立文章');
+const entries = catalog.slice(start, end);
+const duplicate = new RegExp('(?:\\bslug|["\']slug["\'])\\s*:\\s*["\']' + slug + '["\']');
+if(duplicate.test(entries)) throw new Error('文章目錄已有此網址，請先檢查既有文章');
+const cat = type === 'note' ? 'note' : type === 'research' ? 'research' : type === 'rx' || type === 'overview' ? 'rx' : 'myth';
+// Keep the catalog's existing single-quoted slug format for editor controls.
+const entry = "    { slug:'" + slug + "', title:" + JSON.stringify(title + (sub ? ' — ' + sub : '')) + ', cat:' + JSON.stringify(cat) + ', tag:' + JSON.stringify(tag) + ', date:' + JSON.stringify(date) + ", emoji:'', tag_en:" + JSON.stringify(tag) + ' },\n';
+const files = [{path:paths[0], content:html}];
+if(mirror) files.push({path:paths[1], content:html.replace('<html lang="zh-Hant-TW">', '<html lang="en">').replace('https://chendermatologist.com/blog/' + slug, 'https://chendermatologist.com/en/blog/' + slug)});
+files.push({path:'blog/blog-shared.js', content:catalog.slice(0,end+1) + entry + catalog.slice(end+1)});
+// Prepare one tree and one commit. No published file changes until the final ref update.
+const tree = await request('POST', 'git/trees', {base_tree:parent.tree.sha, tree:files.map(f=>({...f,mode:'100644',type:'blob'}))});
+if(!/^[a-f0-9]{40}$/.test(tree.sha || '')) throw new Error('無法確認新文章的檔案目錄');
+const commit = await request('POST', 'git/commits', {message:'create blog/' + slug + '.html with article catalog' + (mirror ? ' and English mirror' : ''), tree:tree.sha, parents:[baseSha]});
+if(!/^[a-f0-9]{40}$/.test(commit.sha || '')) throw new Error('無法確認新文章的儲存版本');
+try {
+  const updated = await request('PATCH', 'git/refs/heads/' + BRANCH, {sha:commit.sha,force:false});
+  if(updated.object && updated.object.sha === commit.sha) return commit.sha;
+} catch(e){
+  if(e.status === 409 || e.status === 422) throw new Error('遠端版本已更新或拒絕儲存；文章尚未建立，請重讀後再試');
+}
+// A lost response may follow a successful update; never blindly repeat the write.
+try {
+  const current = await request('GET', refPath);
+  if(current.object && current.object.sha === commit.sha) return commit.sha;
+} catch(e) { /* Keep the outcome explicitly uncertain. */ }
+throw new Error('尚無法確認是否建立成功，請先重新讀取文章清單確認；輸入內容已保留');
+}
 function openNewArticleWizard(){
 const slug = document.getElementById('newFileName').value.trim().toLowerCase().replace(/[^a-z0-9-]/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
 if(!slug){ alert('請先輸入文章 slug（左邊輸入框），例如 melasma-myths'); return; }
@@ -1465,6 +1516,7 @@ bg.innerHTML = `
 <input type="checkbox" id="wizMirror" checked /> 同時建立英文版 (en/blog/${slug}.html)
 </label>
 </div>
+<p id="wizStatus" role="alert" style="color:#b91c1c;font-size:13px;line-height:1.6"></p>
 <div style="display:flex;gap:8px;justify-content:flex-end">
 <button type="button" id="wizCancel" style="background:#fff;color:#5e574e;border:1px solid #dcd5c8">取消</button>
 <button type="button" id="wizCreate">建立 →</button>
@@ -1473,6 +1525,7 @@ bg.innerHTML = `
 document.body.appendChild(bg);
 bg.querySelector('#wizCancel').addEventListener('click', ()=>bg.remove());
 bg.querySelector('#wizCreate').addEventListener('click', async ()=>{
+if(SAVE_PENDING || EDITOR_LOADING) return;
 const type = bg.querySelector('#wizType').value;
 const title = bg.querySelector('#wizTitle').value.trim();
 const sub = bg.querySelector('#wizSub').value.trim();
@@ -1480,12 +1533,23 @@ const tag = bg.querySelector('#wizTag').value.trim();
 const desc = bg.querySelector('#wizDesc').value.trim();
 const mirror = bg.querySelector('#wizMirror').checked;
 if(!title || !tag || !desc){ alert('標題 / 標籤 / 描述都必填'); return; }
+const creationPat = auth ? auth.getPat() : '';
+if(!creationPat || auth.isLogoutPending()){ setStatus('請先完成登入',true); return; }
+const request = async (method,path,body)=>{
+  if(auth.getPat() !== creationPat || auth.isLogoutPending()) throw new Error('登入狀態已變更，請重新確認儲存結果');
+  return gh(method,path,body);
+};
+SAVE_PENDING = true;
+const controls = Array.from(bg.querySelectorAll('input,select,button,textarea'));
+controls.forEach(el=>{el.disabled=true;});
+bg.querySelector('#wizStatus').textContent = '';
+let created = false;
 setStatus('產生 ' + type + ' 範本 ...');
 try {
 const today = new Date().toISOString().slice(0,10);
 let html;
 if(type === 'blank'){
-const tpl = await gh('GET', 'contents/blog/acne-myths.html');
+const tpl = await request('GET', 'contents/blog/acne-myths.html');
 html = decodeUtf8Base64(tpl.content);
 // Substitute title/desc/tag
 html = html.replace(/<title>[^<]*<\/title>/, '<title>'+title+' — '+sub+' | ChenDermatologist · 陳翊嘉醫師</title>');
@@ -1494,56 +1558,22 @@ html = html.replace(/<link rel="canonical" href="[^"]*"/, '<link rel="canonical"
 } else {
 html = generateNewArticleSkeleton({slug, type, title, sub, tag, desc, date: today});
 }
-await gh('PUT', 'contents/blog/' + slug + '.html', {
-message: 'create blog/' + slug + '.html — ' + title,
-content: encodeUtf8Base64(html),
-branch: BRANCH
-});
-if(mirror){
-// English mirror — same file structurally, will be filled in by Claude/human later
-await gh('PUT', 'contents/en/blog/' + slug + '.html', {
-message: 'create en/blog/' + slug + '.html mirror',
-content: encodeUtf8Base64(html.replace('<html lang="zh-Hant-TW">', '<html lang="en">').replace('https://chendermatologist.com/blog/'+slug, 'https://chendermatologist.com/en/blog/'+slug)),
-branch: BRANCH
-});
-}
-// Auto-add an entry to DN.ARTICLES in blog/blog-shared.js so the new article
-// appears in the article hub / search / related links / 學習筆記 + 最新研究 filters.
-let catalogRegistered = false;
-try {
-  const sharedFile = await gh('GET', 'contents/blog/blog-shared.js');
-  const sharedSrc = decodeUtf8Base64(sharedFile.content);
-  // Find the end of DN.ARTICLES array (first "  ];" line after the array opening)
-  const articlesStart = sharedSrc.indexOf('DN.ARTICLES = [');
-  if(articlesStart >= 0){
-    // Walk forward to find matching closing bracket — look for the literal "\n  ];" pattern
-    const closeIdx = sharedSrc.indexOf('\n  ];', articlesStart);
-    if(closeIdx >= 0){
-      const catValue = type === 'note' ? 'note' : type === 'research' ? 'research' : type === 'rx' ? 'rx' : type === 'overview' ? 'rx' : 'myth';
-      const entry = '    { slug:' + JSON.stringify(slug) + ', title:' + JSON.stringify(title + (sub ? ' — ' + sub : '')) + ', cat:' + JSON.stringify(catValue) + ', tag:' + JSON.stringify(tag) + ', date:' + JSON.stringify(today) + ', emoji:\'\', tag_en:' + JSON.stringify(tag) + ' },\n';
-      const newShared = sharedSrc.slice(0, closeIdx + 1) + entry + sharedSrc.slice(closeIdx + 1);
-      await gh('PUT', 'contents/blog/blog-shared.js', {
-        message: 'register ' + slug + ' in DN.ARTICLES (cat=' + catValue + ')',
-        content: encodeUtf8Base64(newShared),
-        branch: BRANCH,
-        sha: sharedFile.sha
-      });
-      catalogRegistered = true;
-    }
-  }
-} catch(e){
-  console.warn('auto-register in DN.ARTICLES failed; you may need to add manually:', e.message);
-}
-const registrationNote = catalogRegistered ? '文章目錄已更新' : '文章目錄尚未更新，請先完成目錄註冊';
-setStatus('已建立 blog/' + slug + '.html' + '；' + registrationNote + '；尚未正式發布', !catalogRegistered);
-toast('文章已存到 GitHub。' + registrationNote + '，待審查與 CI／Preview 驗證後發布。', catalogRegistered ? 'success' : 'error');
+await createArticleAtomically({slug,html,mirror,title,sub,tag,type,date:today},request);
+created = true;
+setStatus('文章與目錄已完整存到 GitHub；尚未正式發布');
+toast('文章與目錄已儲存，待審查與 CI／Preview 驗證後發布。','success');
 document.getElementById('newFileName').value = '';
 bg.remove();
-await refreshFileList();
-setTimeout(()=>loadFile('blog/' + slug + '.html'), 400);
+try { await refreshFileList(); } catch(e){ setStatus('文章已儲存，但清單更新失敗，請重新整理',true); }
 } catch(e){
-setStatus('建立失敗，請稍後再試', true);
+const message = e.message || '建立失敗，輸入內容已保留';
+bg.querySelector('#wizStatus').textContent = message;
+setStatus(message, true);
+} finally {
+  SAVE_PENDING = false;
+  controls.forEach(el=>{el.disabled=false;});
 }
+if(created) await loadFile('blog/' + slug + '.html');
 });
 }
 function generateNewArticleSkeleton(opts){

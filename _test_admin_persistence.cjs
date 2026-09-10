@@ -153,3 +153,86 @@ test('out-of-order loads cannot restore an older selected article',async()=>{
   const pa=c.loadFile('blog/a.html'),pb=c.loadFile('blog/b.html');b.resolve({sha:BLOB,content:'B'});await pb;
   a.resolve({sha:OLD,content:'A'});await pa;assert.equal(c.CURRENT_FILE,'blog/b.html');assert.equal(c.CURRENT_CONTENT,'B');assert.equal(c.EDITOR_LOADING,false);
 });
+
+function creationHarness({mirror=true,fail='',existing=false,catalog="  DN.ARTICLES = [\n    { slug:'old', title:'Original' },\n  ];",lostResponse=false,readFailure=false,unconfirmed=false}={}) {
+  const requests=[];let published=OLD,prepared;
+  const c={BRANCH:'main',decodeUtf8Base64:s=>s,gh:async(method,path,body)=>{
+    requests.push({method,path,body});
+    if(method==='PUT') throw new Error('Partial Contents write forbidden');
+    if(method==='GET' && path==='git/ref/heads/main')return {object:{sha:published}};
+    if(method==='GET' && path==='git/commits/'+OLD)return {tree:{sha:BLOB}};
+    if(method==='GET' && path.startsWith('contents/blog/blog-shared.js?ref=')){
+      assert.ok(path.endsWith(OLD));return {content:catalog};
+    }
+    if(method==='GET' && path.startsWith('contents/')){
+      assert.ok(path.endsWith('?ref='+OLD));if(readFailure)throw Object.assign(new Error('forbidden'),{status:403});if(existing)return {sha:BLOB};
+      throw Object.assign(new Error('not found'),{status:404});
+    }
+    if(path===fail)throw Object.assign(new Error('simulated failure'),{status:path.startsWith('git/refs/')?409:500});
+    if(path==='git/trees'){prepared=body;return {sha:BLOB};}
+    if(path==='git/commits'){assert.deepEqual(Array.from(body.parents),[OLD]);assert.equal(body.tree,BLOB);return {sha:COMMIT};}
+    if(path==='git/refs/heads/main'){
+      assert.equal(body.force,false);assert.equal(body.sha,COMMIT);published=COMMIT;
+      if(unconfirmed){published='d'.repeat(40);throw new Error('connection lost');}
+      if(lostResponse)throw new Error('connection lost');return {object:{sha:COMMIT}};
+    }
+    throw new Error('Unexpected request '+path);
+  }};
+  vm.createContext(c);vm.runInContext(section('async function createArticleAtomically(', 'function openNewArticleWizard(){'),c);
+  return {requests,published:()=>published,prepared:()=>prepared,run:()=>c.createArticleAtomically({slug:'new-article',html:'<html lang="zh-Hant-TW">原文</html>',mirror,title:'Title',sub:'Subtitle',tag:'Tag',type:'note',date:'2026-09-10'})};
+}
+test('article creation publishes source, optional mirror and catalog with one ref update',async()=>{
+  for(const mirror of [true,false]){
+    const h=creationHarness({mirror});assert.equal(await h.run(),COMMIT);
+    assert.equal(h.published(),COMMIT);assert.equal(h.prepared().base_tree,BLOB);
+    const files=h.prepared().tree;assert.equal(files.length,mirror?3:2);
+    assert.equal(files[0].path,'blog/new-article.html');assert.match(files[0].content,/原文/);
+    if(mirror){assert.equal(files[1].path,'en/blog/new-article.html');assert.match(files[1].content,/lang="en"/);}
+    assert.match(files.at(-1).content,/slug:'old'/);assert.match(files.at(-1).content,/slug:'new-article'/);
+    assert.equal(h.requests.filter(r=>r.method==='PATCH').length,1);
+  }
+});
+for(const fail of ['git/trees','git/commits','git/refs/heads/main'])test('creation failure preserves branch at '+fail,async()=>{
+  const h=creationHarness({fail});await assert.rejects(h.run());assert.equal(h.published(),OLD);
+  assert.ok(h.requests.every(r=>r.method!=='PUT'));
+});
+test('duplicate files and invalid or duplicate catalog fail before writing objects',async()=>{
+  for(const options of [{existing:true},{catalog:'unrecognized catalog'},{catalog:"DN.ARTICLES = [\n {slug:'new-article'},\n  ];"}]){
+    const h=creationHarness(options);await assert.rejects(h.run());assert.equal(h.published(),OLD);
+    assert.ok(h.requests.every(r=>r.method==='GET'));
+  }
+});
+test('lost successful ref response is verified without duplicate creation',async()=>{
+  const h=creationHarness({lostResponse:true});assert.equal(await h.run(),COMMIT);
+  assert.equal(h.requests.filter(r=>r.method==='PATCH').length,1);
+  assert.equal(h.requests.filter(r=>r.path==='git/commits' && r.method==='POST').length,1);
+});
+
+test('unreadable paths do not masquerade as absent files',async()=>{
+ const h=creationHarness({readFailure:true});await assert.rejects(h.run(),/forbidden/);
+ assert.equal(h.published(),OLD);assert.ok(h.requests.every(r=>r.method==='GET'));
+});
+test('uncertain creation outcome never triggers another ref update',async()=>{
+ const h=creationHarness({unconfirmed:true});await assert.rejects(h.run(),/尚無法確認/);
+ assert.equal(h.requests.filter(r=>r.method==='PATCH').length,1);
+});
+test('wizard blocks duplicate creation and preserves input when creation fails',async()=>{
+ const pending=deferred();let handler,calls=0,removed=0;
+ const fields=Object.fromEntries(['Type','Title','Sub','Tag','Desc','Mirror'].map(k=>['#wiz'+k,{value:k==='Type'?'myth':k,checked:true,disabled:false}]));
+ const controls=Object.values(fields);fields['#wizStatus']={textContent:''};fields['#wizCreate']={addEventListener:(name,fn)=>{handler=fn;}};
+ const c={SAVE_PENDING:false,EDITOR_LOADING:false,auth:{getPat:()=> 'same-session',isLogoutPending:()=>false},
+  bg:{querySelector:s=>fields[s],querySelectorAll:()=>controls,remove:()=>removed++},slug:'new-article',
+  generateNewArticleSkeleton:()=>'<html>draft</html>',createArticleAtomically:()=>{calls++;return pending.promise;},
+  setStatus:()=>{},toast:()=>{},alert:()=>{},gh:()=>{},
+  document:{getElementById:()=>({value:'new-article'})},refreshFileList:async()=>{},loadFile:async()=>{throw new Error('Must not load a failed creation');}};
+ vm.createContext(c);
+ const wizardSource=source.replace(/\r\n/g,'\n');
+ const start=wizardSource.indexOf("bg.querySelector('#wizCreate').addEventListener('click', async ()=>{");
+ const end=wizardSource.indexOf('\n});\n}',start);
+ assert.ok(start>=0 && end>start);
+ vm.runInContext(wizardSource.slice(start,end+4),c);
+ const first=handler();await handler();assert.equal(calls,1);assert.equal(c.SAVE_PENDING,true);
+ assert.ok(controls.every(x=>x.disabled));pending.reject(new Error('simulated failure'));await first;
+ assert.equal(c.SAVE_PENDING,false);assert.equal(fields['#wizStatus'].textContent,'simulated failure');assert.equal(removed,0);assert.equal(fields['#wizTitle'].value,'Title');
+ assert.ok(controls.every(x=>!x.disabled));
+});
