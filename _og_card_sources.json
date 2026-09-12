@@ -1,0 +1,38 @@
+{
+  "dupilumab-long-term-maintenance": {
+    "source": {
+      "title": "杜避炎要打多久？停藥、減量與維持治療的研究整理",
+      "subtitle": "",
+      "date": "2026-05-15"
+    },
+    "rendered_tag": "異位性皮膚炎",
+    "files": {
+      "png": "1fa4204c8ec7338d434768f2658850b3e9b3ed4f4625e7b08e05def6afa33aaf",
+      "webp": "e16bb7993622a5f39d22462fa5b26c089ecf6161392c447df346d94a35d74415"
+    }
+  },
+  "topical-acids-patient": {
+    "source": {
+      "title": "A酸、A醇、杜鵑花酸怎麼選？五大酸類差別與搭配",
+      "subtitle": "",
+      "date": "2026-05-02"
+    },
+    "rendered_tag": "酸類",
+    "files": {
+      "png": "d47e69c743fb53d5628b12205bdaf67b34a2634493f3f683250dfb3ae2cf889f",
+      "webp": "18defa444d1adb52944e87f8d7c54db2cad9b10a999cee7903ded198f627de28"
+    }
+  },
+  "prurigo-nodularis": {
+    "source": {
+      "title": "結節性癢疹是什麼？Prurigo nodularis 中文、症狀與治療",
+      "subtitle": "",
+      "date": "2026-05-07"
+    },
+    "rendered_tag": "結節性癢疹",
+    "files": {
+      "png": "b98e00988a3cfe4cce4b390f3084f5549eef101a05143ef03a1253056a4e96f9",
+      "webp": "503e34cf0a2377984ab99604f168628366932f23a51bfef9e6863ef0cd7862c4"
+    }
+  }
+}

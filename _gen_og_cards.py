@@ -33,15 +33,19 @@ USAGE
     python _gen_og_cards.py             # render only the cards that are missing
     python _gen_og_cards.py --check     # exit 1 if any article has no card
     python _gen_og_cards.py --force     # re-render everything (rebuilds the set)
+    python _gen_og_cards.py --only slug --tag 'Approved tag'
 
-This is a local authoring tool, not a gate step: the cards are committed
-assets, and CI has no CJK font. _check_seo_signals asserts the coverage.
+Rendering is local authoring work: cards are committed assets, and CI has no
+CJK font. The read-only --check path validates coverage and recorded sources
+without importing Pillow or requiring fonts.
 """
 from __future__ import annotations
 
 import argparse
 import collections
 import html
+import hashlib
+import json
 import re
 import sys
 from pathlib import Path
@@ -49,6 +53,53 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 BLOG = ROOT / "blog"
 OG_DIR = ROOT / "assets" / "og"
+SOURCES_FILE = ROOT / "_og_card_sources.json"
+# Reviewed cards cannot silently revert to legacy/unverified status when their
+# evidence entry is deleted. Extend this explicit migration scope when adopting
+# additional cards; do not infer it from the evidence file being validated.
+APPROVED_CARD_TAGS = {
+    'dupilumab-long-term-maintenance': '異位性皮膚炎',
+    'topical-acids-patient': '酸類',
+    'prurigo-nodularis': '結節性癢疹',
+}
+REQUIRED_CARD_SOURCES = frozenset(APPROVED_CARD_TAGS)
+
+
+def read_card_sources() -> dict:
+    if not SOURCES_FILE.exists():
+        return {}
+    records = json.loads(SOURCES_FILE.read_text(encoding="utf-8"))
+    if not isinstance(records, dict):
+        raise ValueError("OG source records must be an object")
+    return records
+
+
+def check_card_sources(records: dict) -> list[str]:
+    """Check recorded renders only; legacy cards are explicitly unverified."""
+    targets = {card_slug(p): p for p in card_targets()}
+    errors = [f"{slug}: required render source evidence missing"
+              for slug in sorted(REQUIRED_CARD_SOURCES - records.keys())]
+    for slug, record in records.items():
+        if (slug not in targets or not isinstance(record, dict)
+                or not isinstance(record.get('files'), dict)
+                or not isinstance(record.get('source'), dict)):
+            errors.append(f"{slug}: invalid source record")
+            continue
+        fields = article_fields(targets[slug])
+        tag = record.get('rendered_tag')
+        if not isinstance(tag, str) or not tag.strip():
+            errors.append(f"{slug}: rendered tag is missing or invalid")
+        elif slug in APPROVED_CARD_TAGS and tag != APPROVED_CARD_TAGS[slug]:
+            errors.append(f"{slug}: rendered tag differs from the approved label")
+        source = {k: fields.get(k, '') for k in ('title', 'subtitle', 'date')} if fields else None
+        if source != record.get('source'):
+            errors.append(f"{slug}: article title/subtitle/date changed; refresh card")
+        for ext in ('png', 'webp'):
+            path = OG_DIR / f"{slug}.{ext}"
+            digest = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
+            if not digest or digest != record.get('files', {}).get(ext):
+                errors.append(f"{slug}: {ext} differs from the recorded render")
+    return errors
 
 sys.path.insert(0, str(ROOT))
 from _html_scan import iter_tags, tag_name  # noqa: E402
@@ -486,18 +537,46 @@ def main() -> int:
                     help="report missing cards and exit 1; render nothing")
     ap.add_argument("--force", action="store_true",
                     help="re-render every article's card, not just the missing ones")
+    ap.add_argument("--only", nargs='+', help="re-render only these exact card filename stems")
+    ap.add_argument("--tag", help="preserve an approved tag when rendering one --only card")
     args = ap.parse_args()
 
+    if args.only and (args.force or args.check):
+        ap.error('--only cannot be combined with --force or --check')
+    if args.tag is not None and (not args.only or len(args.only) != 1):
+        ap.error('--tag requires exactly one --only card')
+    if args.tag is not None:
+        if not args.tag.strip():
+            ap.error('--tag must not be blank')
+        approved = APPROVED_CARD_TAGS.get(args.only[0])
+        if approved is not None and args.tag != approved:
+            ap.error('--tag differs from the approved label; review the label mapping first')
+    records = read_card_sources()
+
     todo = slugs_needing_cards(args.force)
+    if args.only:
+        targets = {card_slug(p): p for p in card_targets()}
+        unknown = set(args.only) - targets.keys()
+        if unknown:
+            ap.error('unknown card(s): ' + ', '.join(sorted(unknown)))
+        todo = [targets[slug] for slug in dict.fromkeys(args.only)]
     if args.check:
+        if not SOURCES_FILE.is_file():
+            print('[FAIL] OG render source evidence is missing')
+            return 1
         missing = slugs_needing_cards(False)
         if missing:
             print(f"[FAIL] {len(missing)} article(s) have no OG card:")
             for p in missing[:20]:
                 print(f"  - assets/og/{card_slug(p)}.png")
             return 1
-        print(f"[OK] every article has an OG card "
-              f"({len(list(OG_DIR.glob('*.png')))} cards)")
+        errors = check_card_sources(records)
+        if errors:
+            for error in errors:
+                print(f"[FAIL] {error}")
+            return 1
+        print(f"[OK] card coverage; {len(records)} recorded renders match sources and files. "
+              f"{len(card_targets()) - len(records)} legacy cards have no source evidence.")
         return 0
 
     if not todo:
@@ -516,6 +595,15 @@ def main() -> int:
         if not fields or not fields["title"]:
             skipped.append(path.stem)
             continue
+        if args.tag is not None:
+            fields['tag'] = args.tag
+        elif card_slug(path) in APPROVED_CARD_TAGS:
+            fields['tag'] = APPROVED_CARD_TAGS[card_slug(path)]
+        elif isinstance(records.get(card_slug(path)), dict):
+            # A broad topic classification must not replace a reviewed card label.
+            previous_tag = records[card_slug(path)].get('rendered_tag')
+            if isinstance(previous_tag, str):
+                fields['tag'] = previous_tag
         # CODE_REVIEW TD-70 — `photo and photo.exists()` collapsed two
         # different situations into one: "this page has no portrait" and "this
         # page is CONFIGURED to have a portrait and the file is gone". The
@@ -537,9 +625,17 @@ def main() -> int:
         png = OG_DIR / f"{slug}.png"
         card.save(png, format="PNG", optimize=True)
         card.save(OG_DIR / f"{slug}.webp", format="WEBP", quality=88, method=6)
+        records[slug] = {
+            'source': {k: fields.get(k, '') for k in ('title', 'subtitle', 'date')},
+            'rendered_tag': fields['tag'],
+            'files': {ext: hashlib.sha256((OG_DIR / f"{slug}.{ext}").read_bytes()).hexdigest()
+                      for ext in ('png', 'webp')},
+        }
         written += 1
         print(f"  + {png.relative_to(ROOT).as_posix()}  {fields['title'][:34]}")
 
+    if written:
+        SOURCES_FILE.write_text(json.dumps(records, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f"[OK] rendered {written} card(s) (+ webp)")
     if skipped:
         print(f"[WARN] skipped {len(skipped)} page(s) with no usable <h1>: "
