@@ -62,6 +62,24 @@ async function authenticatePreview(context, base, secret) {
     cookie.domain === base.hostname && cookie.secure && cookie.httpOnly),
     'Preview authentication requires secure, HttpOnly, exact-host cookies');
 }
+async function checkHomeNavigation(page, base, route) {
+  await page.evaluate(() => navigator.serviceWorker.ready.then(() => true));
+  await page.reload({waitUntil: 'load'});
+  await page.waitForFunction(() => !!navigator.serviceWorker.controller);
+  const target = route === '/en' ? '/en/blog' : '/blog';
+  const link = page.locator('a.dn-show-more');
+  assert.equal(await link.getAttribute('href'), target);
+  await Promise.all([
+    page.waitForURL(base.origin + target),
+    link.click(),
+  ]);
+  await page.locator('.article-list-item').first().waitFor();
+  // Exercise the old bookmarked route too, with the service worker active.
+  const response = await page.goto(base.origin + target + '/', {waitUntil: 'load'});
+  assert.equal(response.status(), 200);
+  assert.equal(new URL(page.url()).pathname, target);
+  await page.locator('.article-list-item').first().waitFor();
+}
 module.exports = { previewHeaders, checkHubStatus, authenticatePreview };
 
 if (require.main === module) (async () => {
@@ -112,7 +130,10 @@ if (require.main === module) (async () => {
             }
           }
           await page.screenshot({ path: 'delivery-preview/' + width + '-' + index + '.png', fullPage: true });
-          if (route === '/' || route === '/en') await checkHubStatus(page);
+          if (route === '/' || route === '/en') {
+            await checkHubStatus(page);
+            await checkHomeNavigation(page, base, route);
+          }
           assert.deepEqual(errors, [], 'Page JavaScript errors');
           await page.close();
         }

@@ -120,14 +120,16 @@ async function installWorker(offlineFails) {
   const listeners = {};
   let stored = false;
   const cache = {
-    async add(url) {
-      if (url !== '/offline.html' || offlineFails) throw new Error('network unavailable');
+    async add(request) {
+      assert.equal(request.redirect, 'error');
+      if (new URL(request.url).pathname !== '/offline' || offlineFails) throw new Error('network unavailable');
       stored = true;
     },
     async match() { return stored ? {} : undefined; },
   };
   const context = {self:{addEventListener(name, fn){listeners[name]=fn;},skipWaiting(){}},
-    caches:{async open(){return cache;}}, URL, console};
+    caches:{async open(){return cache;}}, URL, console,
+    Request: class extends Request { constructor(url, options) {super(new URL(url,'https://site.test'),options);} }};
   vm.runInNewContext(readFileSync(new URL('./sw.js', import.meta.url),'utf8'), context);
   let completion;
   listeners.install({waitUntil(promise){completion=promise;}});
@@ -139,6 +141,24 @@ test('service worker cannot activate without its required offline fallback', asy
 });
 test('optional precache failures do not prevent installation with an offline fallback', async () => {
   await installWorker(false);
+});
+
+test('navigation ignores a followed redirect in cache and preserves valid cached HTML', async () => {
+  for (const redirected of [true, false]) {
+    const handlers = {}, waits = [];
+    const cached = {redirected}, fresh = {ok:false,status:0,type:'opaqueredirect'};
+    const cache = {match: async () => cached};
+    vm.runInNewContext(readFileSync(new URL('./sw.js', import.meta.url),'utf8'), {
+      self:{addEventListener:(name,fn)=>handlers[name]=fn},
+      caches:{open:async()=>cache},location:{origin:'https://site.test'},URL,
+      fetch:async()=>fresh,
+    });
+    let response;
+    handlers.fetch({request:{method:'GET',url:'https://site.test/blog/',mode:'navigate'},
+      respondWith:p=>response=p,waitUntil:p=>waits.push(p)});
+    assert.equal(await response, redirected ? fresh : cached);
+    await Promise.all(waits);
+  }
 });
 
 function runtime(cookie, pathname = '/blog/acne-myths', language = 'zh-TW') {

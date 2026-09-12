@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v171';
-const RUNTIME = 'cd-runtime-v169';
+const CACHE = 'cd-v172';
+const RUNTIME = 'cd-runtime-v170';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
 // Popular articles getting evicted after ~5 navigations caused repeat-
@@ -19,8 +19,7 @@ const HTML_CACHE_MAX_ENTRIES = 150;
 // (was caching 30+ blog HTML × ~50 KB each = ~1.5 MB) and avoids slow SW activation on mobile.
 const PRECACHE = [
   '/',
-  '/index.html',
-  '/offline.html',
+  '/offline',
   '/icon.svg',
   '/favicon.ico',
   '/apple-touch-icon.png',
@@ -30,7 +29,7 @@ const PRECACHE = [
   // match the unversioned PRECACHE key — so the precache entry was a
   // useless duplicate. The versioned URL falls through to network-first
   // for ?v= which already caches it in cd-runtime.
-  '/blog/'
+  '/blog'
 ];
 
 self.addEventListener('install', (e) => {
@@ -56,12 +55,14 @@ self.addEventListener('install', (e) => {
   // PRECACHE entries can fail without harming the user).
   e.waitUntil((async () => {
     const c = await caches.open(CACHE);
-    await Promise.allSettled(PRECACHE.map((u) => c.add(u)));
+    // Cache.add follows redirects by default. A followed response cannot
+    // satisfy a navigation request with redirect:manual (ERR_FAILED).
+    await Promise.allSettled(PRECACHE.map((u) => c.add(new Request(u, {redirect: 'error'}))));
     // Re-fetch /offline.html explicitly so a transient install failure
     // doesn't leave us without an offline fallback for the lifetime of
     // this SW generation.
-    if (!(await c.match('/offline.html'))) {
-      await c.add('/offline.html');
+    if (!(await c.match('/offline'))) {
+      await c.add(new Request('/offline', {redirect: 'error'}));
     }
   })());
 });
@@ -176,11 +177,11 @@ self.addEventListener('fetch', (e) => {
 
       // Serve cached HTML immediately if we have it (the SWR win).
       // First-ever visit to this URL waits for network.
-      if (cached) return cached;
+      if (cached && !cached.redirected) return cached;
       const fresh = await networkPromise;
       if (fresh) return fresh;
       // Offline + no cache for this URL → fallback chain.
-      return (await cache.match('/offline.html')) || (await cache.match('/'));
+      return (await cache.match('/offline')) || (await cache.match('/'));
     })());
     return;
   }
@@ -292,7 +293,7 @@ self.addEventListener('message', (e) => {
           p.startsWith('/blog/') ||
           p.startsWith('/en/') ||
           p.startsWith('/assets/') ||
-          p === '/offline.html' ||
+          p === '/offline' ||
           p === '/manifest.json' ||
           p === '/icon.svg'
         );

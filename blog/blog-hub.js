@@ -576,17 +576,10 @@
     });
 
     if (mode === 'homepage') {
-      showMoreBtn = document.createElement('button');
-      showMoreBtn.type = 'button';
+      showMoreBtn = document.createElement('a');
+      showMoreBtn.href = document.documentElement.lang.startsWith('en') ? '/en/blog' : '/blog';
       showMoreBtn.className = 'dn-show-more';
       showMoreBtn.textContent = '↓ 瀏覽全部文章 →';
-      showMoreBtn.addEventListener('click', function () {
-        // 2026-05-17 — user wants the show-more action to take them to
-        // the full /blog/ index (which has every article sorted by date),
-        // rather than expanding inline on the homepage. /blog/ is the
-        // canonical "browse all" experience.
-        window.location.href = '/blog/';
-      });
       hub.appendChild(showMoreMakeAccessibility(showMoreBtn));
     }
 
@@ -612,7 +605,9 @@
   function showMoreMakeAccessibility(btn) {
     btn.setAttribute('data-zh', '↓ 瀏覽全部文章 →');
     btn.setAttribute('data-en', '↓ Browse all articles →');
-    btn.setAttribute('aria-label', '瀏覽全部文章');
+    btn.setAttribute('data-zh-aria-label', '瀏覽全部文章');
+    btn.setAttribute('data-en-aria-label', 'Browse all articles');
+    btn.setAttribute('aria-label', document.documentElement.lang.startsWith('en') ? 'Browse all articles' : '瀏覽全部文章');
     return btn;
   }
 
