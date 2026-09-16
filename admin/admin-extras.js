@@ -917,13 +917,17 @@
     // degrades gracefully to the manual refresh button if the iframe can't be
     // wired.
     function seoTabActive() {
-      return !!document.querySelector('.ax-tab[data-tab="seo"].active');
+      const panel = document.getElementById('axPanel');
+      return !!(panel && !panel.classList.contains('collapsed') && panel.getClientRects().length &&
+        panel.querySelector('.ax-tab[data-tab="seo"].active'));
     }
     function scheduleSeoCheck() {
+      clearTimeout(seoTimer);
       if (!seoTabActive()) return;
       if (!getCurrentFile()) return;
-      clearTimeout(seoTimer);
-      seoTimer = setTimeout(runSeoCheck, 600);
+      seoTimer = setTimeout(() => {
+        if (seoTabActive() && getCurrentFile()) runSeoCheck();
+      }, 600);
     }
     function attachSeoInput() {
       const doc = getEditorDocument();
@@ -951,6 +955,10 @@
       if (e.target && e.target.closest && e.target.closest('#editorPane textarea')) scheduleSeoCheck();
     });
     document.addEventListener('cd-editor-content-changed', scheduleSeoCheck);
+    const seoPanel = document.getElementById('axPanel');
+    if (seoPanel) new MutationObserver(scheduleSeoCheck).observe(seoPanel, {
+      attributes: true, attributeFilter: ['class', 'style']
+    });
     wireEditorSeoInput();
     const frameWrap = document.querySelector('.frame-wrap');
     if (frameWrap) new MutationObserver(() => {
@@ -959,6 +967,6 @@
     }).observe(frameWrap, {childList:true});
 
     // Run once on first file load
-    setTimeout(runSeoCheck, 1500);
+    setTimeout(scheduleSeoCheck, 1500);
   });
 })();

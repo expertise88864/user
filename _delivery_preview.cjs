@@ -91,6 +91,7 @@ if (require.main === module) (async () => {
   fs.mkdirSync('delivery-preview', { recursive: true });
   const browser = await chromium.launch();
   try {
+    await require('./_test_admin_editing_browser.cjs')(browser);
     for (const width of [390, 800, 1440]) {
       const context = await browser.newContext({ viewport: { width, height: 900 }, locale: 'zh-TW' });
       try {

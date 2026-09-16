@@ -44,6 +44,17 @@ test('history drops results for a closed dialog or changed editor identity',asyn
   }
 });
 function section(start,end){ const a=source.indexOf(start); assert.ok(a>=0,start); const b=source.indexOf(end,a); assert.ok(b>a,end); return source.slice(a,b); }
+test('editor snapshots never mutate the live editing host',()=>{
+  for (const id of ['proseZh','']) {
+    const region=Object.freeze({id,innerHTML:'<p>Unsaved body</p>',
+      removeAttribute(){assert.fail('snapshot must not remove live attributes')}});
+    const c={CURRENT_CONTENT:id?'<main><div id="proseZh"><p>Old</p></div></main>':'<main><p>Old</p></main>',
+      editFrame:{contentDocument:{querySelector:()=>region}},console};
+    vm.createContext(c);
+    vm.runInContext(section('function spliceElementById(', '// =========== new file from template'),c);
+    assert.match(c.mergeIframeIntoOriginal(),/<p>Unsaved body<\/p>/);
+  }
+});
 function uploadSetup(){
   const calls=[];
   const c={window:{},BRANCH:'main',prompt:()=> 'image description',setStatus:()=>{},

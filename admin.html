@@ -745,15 +745,10 @@ function mergeIframeIntoOriginal(){
   const doc = editFrame.contentDocument;
   const region = doc.querySelector('[data-cd-editable="1"]');
   if(!region) return CURRENT_CONTENT;
-  // Strip our markers before serialising the inner HTML
-  region.removeAttribute('contenteditable');
-  region.removeAttribute('data-cd-editable');
-  region.removeAttribute('spellcheck');
+  // Only the children are serialized; host attributes are never included.
+  // Keep the live editing host untouched so focus, selection and IME survive.
   const innerHTML = region.innerHTML;
   const id = region.id || null;
-  // Restore editable state so user can keep editing
-  region.contentEditable = 'true';
-  region.dataset.cdEditable = '1';
   if(!id){
     // Fall back to <main>
     const reMain = /(<main[^>]*>)([\s\S]*?)(<\/main>)/;
@@ -2383,7 +2378,7 @@ save = saveWithModal;
 // init
 if(auth) auth.restoreSession().catch(()=>{});
 loadPat();</script>
-<script type="module" src="/admin/admin-extras.js?v=202609100535"></script>
+<script type="module" src="/admin/admin-extras.js?v=202609161855"></script>
 <script>
 // === Mobile sidebar collapse (2026-05-13c — inline collapse) ===
 (function(){
