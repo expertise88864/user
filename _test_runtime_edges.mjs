@@ -60,6 +60,33 @@ test('language refresh avoids redundant mutations but translates new content and
   dn.applyTextOnly('en');
   assert.equal(attrWrites, 2);
 });
+
+test('reading metadata counts spaced English words and includes the badge without locale initialization', () => {
+  const bars = [];
+  const prose = {textContent:'皮'.repeat(3500) + ' ' + Array(800).fill('word').join(' ')};
+  const lead = {};
+  const h1 = {parentElement:{querySelector:()=>lead}};
+  const doc = {
+    getElementById:id=>id==='proseZh'?prose:id==='dn-reading-meta'?bars[0]:id==='dn-secondary-meta'?{appendChild:bar=>bars.push(bar)}:null,
+    querySelector:selector=>selector==='article h1, section h1'?h1:null,
+    createElement:()=>({style:{},innerHTML:''})
+  };
+  const context = vm.createContext({window:{DN:{currentSlug:()=>null,getArticleNumber:()=>null,ARTICLES:[]}},document:doc});
+  vm.runInContext("Number.prototype.toLocaleString=function(){throw Error('Unexpected locale formatter');};",context);
+  vm.runInContext(readFileSync(new URL('./blog/blog-article-reading.js',import.meta.url),'utf8'),context);
+  context.window.DN.addReadingMeta();
+  assert.equal(bars.length,1);
+  assert.match(bars[0].innerHTML,/14 min read/);
+  assert.match(bars[0].innerHTML,/data-dn-wordcount/);
+  assert.match(bars[0].innerHTML,/3,500 characters \/ 800 words/);
+  context.window.DN.addReadingMeta();
+  assert.equal(bars.length,1,'Repeated initialization must not duplicate metadata');
+  bars.length=0;
+  prose.textContent=Array(1000).fill('word').join(' ');
+  context.window.DN.addReadingMeta();
+  assert.match(bars[0].innerHTML,/5 min read/);
+  assert.match(bars[0].innerHTML,/1,000 words/);
+});
 test('reading completion requires foreground dwell and scroll, and fires once', () => {
   let now = 0, tick, reads = 0, events = 0, visibleBottom = 200;
   const documentListeners = new Map(), windowListeners = new Map();

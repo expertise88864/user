@@ -311,29 +311,6 @@
   };
 
   // ─────────────────────────────────────────────────────────────────────
-  // H4 — Enhanced word/character count badge (added to reading meta bar)
-  // Appends a "字數 N" chip alongside the existing reading-time chip.
-  // ─────────────────────────────────────────────────────────────────────
-  DN.injectWordCount = function () {
-    var bar = document.getElementById('dn-reading-meta');
-    if (!bar || bar.querySelector('[data-dn-wordcount]')) return;
-    var proseEl = document.getElementById('proseZh') || document.querySelector('article .prose') || document.querySelector('article.max-w-3xl');
-    if (!proseEl) return;
-    var text = (proseEl.textContent || '').replace(/\s+/g, '');
-    var cjk = (text.match(/[一-鿿]/g) || []).length;
-    var en = (text.match(/[A-Za-z0-9]+/g) || []).length;
-    var totalLabel = cjk > en * 4
-      ? cjk.toLocaleString() + ' 字'
-      : (cjk + en).toLocaleString() + ' 字 / words';
-    var chip = document.createElement('span');
-    chip.setAttribute('data-dn-wordcount', '');
-    chip.style.cssText = 'display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#fef3c7;border:1px solid #fcd34d;color:#854d0e;font-weight:600';
-    chip.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>' +
-      '<span data-zh="' + totalLabel + '" data-en="' + (cjk + en).toLocaleString() + ' words">' + totalLabel + '</span>';
-    bar.appendChild(chip);
-  };
-
-  // ─────────────────────────────────────────────────────────────────────
   // H9 — "Continue reading" recommendation (collaborative-filter-lite)
   // Picks 3 articles user hasn't read yet, biased toward same tag as current.
   // Storage: localStorage.dn-read-articles-v1 (already populated by markRead)

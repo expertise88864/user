@@ -112,3 +112,25 @@ Windows Chrome 148 的隔離對照：首次互動前 live DOM 元素 1281 → 55
 所有 52 張原始卡片內容仍相同。這個對照沒有證明首屏速度改善：兩次 first paint 約 912／928 ms，處於相近範圍。
 首頁仍有初始排版工作，Lighthouse 的實際改善與發布完成條件須由新 SHA 的完整遠端 CI 判定。
 未更動字體、文字換行策略、插圖或評分門檻，未採用診斷試驗的視覺版本。
+
+## 閱讀資訊的字數與載入競態
+
+`3cc5b1a0653bca607098a347a46eb4fbcc851cd0` 的六個候選 push workflows 全綠，
+[Quality](https://github.com/expertise88864/user/actions/runs/36661328607) 首頁 79／TBT 522 ms、痘痘 78／TBT 415 ms；
+[Delivery／Preview](https://github.com/expertise88864/user/actions/runs/36661328744) 成功。
+但 [PR Quality](https://github.com/expertise88864/user/actions/runs/36661331560) 首頁與痘痘均為 66，尚未進 main。
+首頁 benchmarkIndex 為 1180（候選 2205），其他 PR 頁面約 2467，報告沒有 CPU 校準警告；
+這是實際執行差異的證據，不能直接免除失敗或把未查證原因一律稱為 runner 問題。
+
+痘痘失敗報告中 footer bundle 的 script evaluation 約 1012 ms。
+程式核對發現字數徽章不必要地初始化 locale formatter，而且先移除所有空白，
+會把英文段落的單字合併並低估閱讀時間。徽章另由 footer 加入，footer 較早到達時會因 reading bar 尚未存在而永久漏掉。
+本次讓字數與閱讀時間共用保留空白的文本計算，區分中文字數與英文單字；以固定的 ZH／EN 整數分組代替 locale formatter。
+字數徽章與 reading bar 一次建立，取消 footer 的第二次掛載及文字重算。
+沒有改變前景可見 30 秒＋文章 70% 的有效閱讀門檻。
+
+新增回歸先重現 800 個英文單字被合併成 1 個造成的錯誤；analytics/runtime 共 34 項通過。
+隔離瀏覽器在停用 Number locale formatter、阻擋 footer bundle 的條件下驗證 ZH／EN 痘痘與 EN 杜避炎：
+閱讀資訊與唯一字數徽章仍出現，重複初始化不重複；新增檢查也接到 Preview。
+生成、min sync、部署設定、JS 語法與 runtime smoke 通過；這批採相關本機驗證，完整 CI 仍以新 SHA 的遠端結果為準。
+新的資源版本 `202609301115`，兩個 SW cache generation 同時更新，不沿用舊候選的成功證據。

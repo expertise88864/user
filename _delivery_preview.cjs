@@ -140,6 +140,7 @@ if (require.main === module) (async () => {
   const browser = await chromium.launch();
   try {
     await require('./_test_admin_editing_browser.cjs')(browser);
+    await require('./_test_reading_meta_browser.cjs')(browser);
     for (const width of [390, 800, 1440]) {
       await checkStaticHome(browser, base, process.env.VERCEL_AUTOMATION_BYPASS_SECRET, width);
       const context = await browser.newContext({ viewport: { width, height: 900 }, locale: 'zh-TW' });

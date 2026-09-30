@@ -212,7 +212,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202609301040';
+        s.src = '/blog/blog-article-visuals.min.js?v=202609301115';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1102,7 +1102,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202609301040';
+        s.src = '/blog/blog-article-reading.min.js?v=202609301115';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1138,7 +1138,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202609301040';
+        s.src = '/blog/blog-article-footer.min.js?v=202609301115';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1168,7 +1168,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202609301040';
+        s.src = '/blog/blog-calculators.min.js?v=202609301115';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1303,7 +1303,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202609301040';
+        s.src = '/blog/blog-hub.min.js?v=202609301115';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1822,10 +1822,10 @@
       }
       // Floating BMC button disabled — replaced by the visible tip CARD
       // (DN.injectTipCard) at article footer with Ko-fi + 街口 side-by-side.
-      // H4 word count badge, H1 Giscus, H6 PDF — all article-page only
+      // Word count is built atomically with reading metadata in the reading bundle.
+      // Giscus remains an article-only footer enhancement.
       idle(function () {
         DN.ensureArticleFooterBundle().then(function () {
-          DN.injectWordCount && DN.injectWordCount();
           DN.injectGiscus && DN.injectGiscus();
           try { DN.applyTextOnly(curLang); } catch (e) {}
         }).catch(function () {});

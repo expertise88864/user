@@ -20,7 +20,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202609301040';
+          s.src = '/blog/blog-diagrams.min.js?v=202609301115';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -98,7 +98,9 @@
   DN.addReadingMeta = function () {
     const proseEl = document.getElementById('proseZh') || document.querySelector('article .prose');
     if (!proseEl) return;
-    const text = (proseEl.textContent || '').replace(/\s+/g, '');
+    // Keep word boundaries: removing whitespace merges an English article
+    // into one token and understates both its reading time and word count.
+    const text = proseEl.textContent || '';
     const cjkChars = (text.match(/[一-鿿]/g) || []).length;
     const otherWords = (text.match(/[A-Za-z0-9]+/g) || []).length;
     // Reading speed: ~350 zh chars/min OR ~200 en words/min
@@ -124,6 +126,15 @@
     const numBadge = articleNum
       ? '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;font-weight:700;letter-spacing:.04em;font-family:Inter,sans-serif"><span aria-hidden="true">№</span><span>' + articleNum + '</span></span>'
       : '';
+    // ZH/EN badges use comma-grouped integer counts. Avoid initializing a
+    // browser locale formatter just for three small labels on article startup.
+    function formatCount(value) { return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+    const totalLabel = cjkChars
+      ? formatCount(cjkChars) + ' 字' + (otherWords ? ' / ' + formatCount(otherWords) + ' words' : '')
+      : formatCount(otherWords) + ' words';
+    const countLabelEn = cjkChars
+      ? formatCount(cjkChars) + ' characters' + (otherWords ? ' / ' + formatCount(otherWords) + ' words' : '')
+      : formatCount(otherWords) + ' words';
 
     bar.innerHTML =
       numBadge +
@@ -135,7 +146,11 @@
         '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
         '<span data-zh="最後審閱 ' + reviewedDate + '" data-en="Last reviewed · ' + reviewedDate + '">最後審閱 ' + reviewedDate + '</span>' +
       '</span>' +
-      '<a href="/about" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:9999px;background:#fff;border:1px solid var(--border);color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="陳翊嘉醫師 →" data-en="Dr. Chen Yi-Jia →">陳翊嘉醫師 →</a>';
+      '<a href="/about" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:9999px;background:#fff;border:1px solid var(--border);color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="陳翊嘉醫師 →" data-en="Dr. Chen Yi-Jia →">陳翊嘉醫師 →</a>' +
+      '<span data-dn-wordcount style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#fef3c7;border:1px solid #fcd34d;color:#854d0e;font-weight:600">' +
+        '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>' +
+        '<span data-zh="' + totalLabel + '" data-en="' + countLabelEn + '">' + totalLabel + '</span>' +
+      '</span>';
     const secondaryMeta = document.getElementById('dn-secondary-meta');
     if (secondaryMeta) secondaryMeta.appendChild(bar);
     else target.parentNode.insertBefore(bar, target.nextSibling);
