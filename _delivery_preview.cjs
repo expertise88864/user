@@ -141,6 +141,13 @@ if (require.main === module) (async () => {
   try {
     await require('./_test_admin_editing_browser.cjs')(browser);
     await require('./_test_reading_meta_browser.cjs')(browser);
+    await require('./_test_draft_media_browser.cjs')(browser);
+    await require('./_test_editor_drafts_browser.cjs')(browser);
+    await require('./_test_article_publication_browser.cjs')(browser);
+    await require('./_test_word_editor_browser.cjs')(browser);
+    await require('./_test_word_security_browser.cjs')(browser);
+    await require('./_test_word_admin_browser.cjs')(browser);
+    await require('./_test_word_ime_browser.cjs')(browser);
     for (const width of [390, 800, 1440]) {
       await checkStaticHome(browser, base, process.env.VERCEL_AUTOMATION_BYPASS_SECRET, width);
       const context = await browser.newContext({ viewport: { width, height: 900 }, locale: 'zh-TW' });

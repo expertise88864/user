@@ -35,6 +35,10 @@ def policy() -> dict:
 
 
 def validate_policy(cfg: dict) -> None:
+    if cfg.get("cms_author_intent", False) not in (True, False) or ("cms_author_intent" in cfg and type(cfg["cms_author_intent"]) is not bool):
+        raise Blocked("Invalid CMS author-intent policy")
+    if cfg.get("repository") == "expertise88864/user" and cfg.get("cms_author_intent") is not True:
+        raise Blocked("This website requires live CMS author-intent verification")
     entries = cfg.get("workflows")
     if not isinstance(entries, list) or not entries:
         raise Blocked("A nonempty workflow contract is required")
@@ -91,14 +95,19 @@ class API:
     def get(self, path: str):
         if not path.startswith("/") or "://" in path:
             raise Blocked("Only relative repository API paths are accepted")
-        headers = {"User-Agent": "remote-ci-delivery", "Accept": "application/vnd.github+json"}
+        headers = {"User-Agent": "remote-ci-delivery", "Accept": "application/vnd.github+json", "Cache-Control": "no-cache"}
+        if path.startswith("/contents/"):
+            headers["Accept"] = "application/vnd.github.object+json"
         if self.auth:
             headers["Authorization"] = "Bearer " + self.auth
         request = urllib.request.Request(self.base + path, headers=headers)
         # A redirected API URL must never carry the user's credential elsewhere.
         opener = urllib.request.build_opener(NoRedirect)
         with opener.open(request, timeout=30) as response:
-            return json.load(response)
+            raw = response.read(10_000_001)
+            if len(raw) > 10_000_000:
+                raise Blocked("GitHub evidence response exceeds its byte limit")
+            return json.loads(raw)
 
     def pages(self, path: str, key: str | None = None) -> list:
         rows = []
@@ -207,6 +216,12 @@ def verify(sha: str, phase: str, cfg: dict, api: API) -> list:
             ci = next(e for e in cfg["workflows"] if e["path"] == ".github/workflows/ci.yml")
             assess_jobs(jobs, ["test", "dry-run-preview"], [], ci["steps"])
             evidence.append({"sha": sha, "dry_run_id": run["id"], "url": run["html_url"]})
+    if cfg.get("cms_author_intent"):
+        from _cms_delivery import verify as verify_author_intent
+        try:
+            evidence.append({"cms": verify_author_intent(sha, api)})
+        except (ValueError, KeyError, TypeError) as error:
+            raise Blocked("CMS author intent / approved payload is no longer valid") from error
     return evidence
 
 
@@ -330,10 +345,21 @@ def main() -> int:
             lines = list(sys.stdin)
             pre_push(lines, args.remote, cfg)
             if cfg.get("claude_hook"):
-                return subprocess.run(
+                review_code = subprocess.run(
                     [sys.executable, "tools/claude_diff_review.py", "push", "--remote-name", args.remote],
                     cwd=ROOT, input="".join(lines), text=True, encoding="utf-8",
                 ).returncode
+                if review_code:
+                    return review_code
+            # A model review can take long enough for the author to withdraw a
+            # request. Recheck main delivery immediately after the review too.
+            if cfg.get("cms_author_intent"):
+                from _cms_delivery import verify as verify_author_intent
+                for line in lines:
+                    fields = line.split()
+                    if fields[2] == "refs/heads/main":
+                        verify_author_intent(fields[1], API(cfg["repository"]))
+                        clean(fields[1])
             return 0
         sha = check_sha(args.sha or git("rev-parse", "HEAD"))
         api = API(cfg["repository"])

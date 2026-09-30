@@ -11,8 +11,7 @@ import shutil
 import subprocess
 import tempfile
 import unittest
-from unittest.mock import patch
-import urllib.error
+from unittest.mock import Mock, patch
 
 import _check_runtime_smoke as smoke
 from _gen_en_pages import DataEnRenderer
@@ -109,32 +108,59 @@ class TranslationTests(unittest.TestCase):
 
 
 class SmokeTransportTests(unittest.TestCase):
-    def response(self, content=b'page'):
+    def response(self, content=b'page',status=200):
         response = io.BytesIO(content)
+        response.status = status
         response.headers = {'content-type': 'text/html'}
         return response
+
+    def connection(self,response=None,failure=None):
+        connection=Mock()
+        connection.getresponse.side_effect=failure
+        connection.getresponse.return_value=response
+        return connection
 
     def test_transient_failure_then_fresh_response(self):
         for failure in (ConnectionResetError(), TimeoutError(), http.client.IncompleteRead(b'half')):
             with self.subTest(failure=type(failure).__name__):
-                with patch.object(smoke.urllib.request, 'urlopen', side_effect=[failure, self.response()]) as request:
+                connections=[self.connection(failure=failure),self.connection(self.response())]
+                with patch.object(smoke.http.client, 'HTTPConnection', side_effect=connections) as request:
                     with patch.object(smoke.time, 'sleep'):
                         self.assertEqual(smoke.fetch('http://127.0.0.1:1', '/'), ('page', 'text/html'))
                     self.assertEqual(request.call_count, 2)
+                    for connection in connections:
+                        connection.close.assert_called_once()
+                        connection.request.assert_called_once_with('GET','/',headers={'Connection':'keep-alive'})
 
     def test_persistent_failure_stops(self):
-        with patch.object(smoke.urllib.request, 'urlopen', side_effect=ConnectionResetError()) as request:
+        connections=[self.connection(failure=ConnectionResetError()) for _ in range(3)]
+        with patch.object(smoke.http.client, 'HTTPConnection', side_effect=connections) as request:
             with patch.object(smoke.time, 'sleep'), self.assertRaises(AssertionError):
                 smoke.fetch('http://127.0.0.1:1', '/')
             self.assertEqual(request.call_count, 3)
+        for connection in connections:connection.close.assert_called_once()
 
     def test_http_error_is_not_retried(self):
-        for code in (404, 500):
-            error = urllib.error.HTTPError('http://127.0.0.1:1', code, 'failed', {}, None)
-            with patch.object(smoke.urllib.request, 'urlopen', side_effect=error) as request:
+        for code in (301,404,500):
+            connection=self.connection(self.response(status=code))
+            with patch.object(smoke.http.client, 'HTTPConnection', return_value=connection) as request:
                 with self.assertRaisesRegex(AssertionError, f'HTTP {code}'):
                     smoke.fetch('http://127.0.0.1:1', '/')
                 self.assertEqual(request.call_count, 1)
+                connection.close.assert_called_once()
+
+    def test_external_target_is_rejected_before_connection(self):
+        with patch.object(smoke.http.client,'HTTPConnection') as request:
+            for base in ('https://127.0.0.1','http://example.invalid','http://user@127.0.0.1'):
+                with self.assertRaises(AssertionError):smoke.fetch(base,'/')
+            request.assert_not_called()
+
+    def test_content_contract_still_rejects_missing_runtime(self):
+        connection=self.connection(self.response(b'wrong page'))
+        with patch.object(smoke.http.client,'HTTPConnection',return_value=connection) as request:
+            body,_=smoke.fetch('http://127.0.0.1:1','/')
+            self.assertEqual(smoke.assert_contains('probe',body,['required runtime']),['probe: missing required runtime'])
+            self.assertEqual(request.call_count,1)
 
 
 @unittest.skipUnless(os.name == 'nt', 'PowerShell wrapper runs on Windows')

@@ -211,6 +211,11 @@ def sync_homepage_limit(source: str) -> str:
     Keep every card's markup and artwork in the HTML. Only the initial cards
     are live DOM nodes; the rest stay in an inert template until interaction.
     The full index and native All articles link remain usable without JS.
+
+    Keep the hero rendered. The lower-section size hint reduces initial layout
+    before first paint in the local diagnostic; auto remembers actual heights
+    once rendered. This rule is homepage-only and must not target :first-child:
+    main also contains inline style elements before its first section.
     """
     class HomeConfig(HTMLParser):
         def __init__(self):
@@ -261,7 +266,8 @@ def sync_homepage_limit(source: str) -> str:
     config.feed(source)
     existing = list(re.finditer(r'<style data-home-card-limit>[\s\S]*?</style>', source))
     rule = (f'<style data-home-card-limit>#dn-article-list>.article-list-item:'
-            f'nth-of-type(n+{int(count) + 1}){{display:none}}</style>')
+            f'nth-of-type(n+{int(count) + 1}){{display:none}}'
+            'main>section:not(.mag-hero){content-visibility:auto;contain-intrinsic-size:auto 1000px}</style>')
     if existing:
         match = existing[0]
         if match.end() > config.head_ends[0]:

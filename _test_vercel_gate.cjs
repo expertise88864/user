@@ -1,5 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const { createHash } = require('node:crypto');
 const { allowed } = require('./_vercel_gate.cjs');
 const cfg = require('./_delivery_policy.json');
 const sha = 'a'.repeat(40);
@@ -53,8 +54,18 @@ test('preview credential stays on the exact deployment origin', () => {
   assert.deepEqual(previewHeaders(origin, origin, ''), {});
 });
 function fake(bad = '') {
+  const raw = Buffer.from(JSON.stringify({ version: 1, requests: [] }, null, 2) + '\n');
+  const proofSha = createHash('sha1').update(Buffer.concat([Buffer.from('blob ' + raw.length + '\0'), raw])).digest('hex');
   return async (url) => {
     if (bad === 'http') return { ok: false };
+    if (url.includes('/contents/.cms-delivery.json?ref=')) {
+      if (bad === 'cms') return new Response('{}', { status: 404 });
+      return new Response(JSON.stringify({ type: 'file', path: '.cms-delivery.json', encoding: 'base64', size: raw.length,
+        content: raw.toString('base64'), sha: proofSha }));
+    }
+    if (url.includes('/git/commits/')) return new Response(JSON.stringify({ sha, tree: { sha: '1'.repeat(40) } }));
+    if (url.includes('/git/trees/')) return new Response(JSON.stringify({ sha: '1'.repeat(40), truncated: false,
+      tree: [{ path: '.cms-delivery.json', type: 'blob', mode: '100644', sha: proofSha }] }));
     if (url.includes('/pulls?')) return { ok: true, json: async () => bad === 'pr' ? [] : [
       { state: 'open', head: { sha, repo: { full_name: cfg.repository } }, base: { ref: 'main' } }
     ] };
@@ -84,7 +95,23 @@ test('unknown environment and missing SHA deny deployment', async () => {
   assert.equal(await allowed({ VERCEL_ENV: 'production' }), false);
 });
 test('exact complete candidate may deploy', async () => assert.equal(await allowed(env, fake()), true));
-for (const bad of ['sha', 'main', 'run', 'missing', 'skip', 'step', 'http', 'pr', 'steps', 'step-skipped']) {
+test('CMS metadata uses the large-file object media type and uncached bounded same-repository reads', async () => {
+  const base = fake(); const calls = [];
+  const request = async (url, options) => {
+    if (url.includes('/contents/') || url.includes('/git/')) calls.push({ url, options });
+    return base(url, options);
+  };
+  assert.equal(await allowed(env, request), true);
+  assert.equal(calls.length, 3);
+  for (const { url, options } of calls) {
+    assert.ok(url.startsWith('https://api.github.com/repos/' + cfg.repository + '/'));
+    assert.equal(options.headers['Cache-Control'], 'no-cache');
+    assert.equal(options.redirect, 'error');
+    assert.equal(options.cache, 'no-store');
+  }
+  assert.equal(calls.find(call => call.url.includes('/contents/')).options.headers.Accept, 'application/vnd.github.object+json');
+});
+for (const bad of ['sha', 'main', 'run', 'missing', 'skip', 'step', 'http', 'pr', 'steps', 'step-skipped', 'cms']) {
   test(bad + ' never authorizes production', async () => {
     await assert.rejects(() => allowed(env, fake(bad)));
   });
@@ -115,6 +142,32 @@ test('this site requires push evidence even for bot scheduled dispatch', async (
 test('successful dispatch cannot mask failed push evidence', async () => {
   await assert.rejects(() => allowed(env, dispatchEvidence({}, true)));
 });
+test('latest retry is selected; old green cannot mask failed or pending latest attempt', async () => {
+  for (const status of ['success','failure','pending']) {
+    const base = fake();
+    const request = async (url, options) => {
+      const response = await base(url, options);
+      if (!url.includes('/actions/runs?')) return response;
+      const data = await response.json();
+      return { ok: true, json: async () => ({ workflow_runs: data.workflow_runs.flatMap(run => [
+        { ...run, run_attempt: 1, conclusion: status === 'success' ? 'failure' : 'success' },
+        { ...run, run_attempt: 2, status: status === 'pending' ? 'in_progress' : 'completed', conclusion: status === 'pending' ? null : status },
+      ]) }) };
+    };
+    if (status === 'success') assert.equal(await allowed(env, request), true);
+    else await assert.rejects(allowed(env, request));
+  }
+});
+test('latest attempt missing a required matrix job cannot borrow it from an earlier attempt', async () => {
+  const base = fake();
+  const request = async (url, options) => {
+    const response = await base(url, options);
+    if (!url.includes('/jobs?')) return response;
+    const data = await response.json();
+    return { ok: true, json: async () => ({ jobs: data.jobs.slice(0, 1) }) };
+  };
+  await assert.rejects(allowed(env, request));
+});
 for (const overrides of [
   { actor: { login: 'maintainer' } }, { actor: undefined },
   { head_branch: 'codex/manual-test' }, { head_branch: 'main' }
@@ -124,7 +177,7 @@ for (const overrides of [
   });
 }
 
-test('Vercel validates before generating production artifacts', () => {
+test('Vercel validates before and after generating production artifacts', () => {
   const config = require('./vercel.json');
-  assert.equal(config.buildCommand, 'node _vercel_gate.cjs --build && npm run build');
+  assert.equal(config.buildCommand, 'node _vercel_gate.cjs --build && npm run build && node _vercel_gate.cjs --build');
 });

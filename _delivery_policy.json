@@ -2,6 +2,7 @@
   "repository": "expertise88864/user",
   "require_pr": true,
   "allow_dispatch": false,
+  "cms_author_intent": true,
   "preview_paths": [
     "/",
     "/tools",
@@ -128,7 +129,8 @@
         "Delivery contract": {
           "required": [
             "Delivery Python regression tests",
-            "Production deployment gate regression tests"
+            "Production deployment gate regression tests",
+            "Verify live CMS author intent and payload"
           ],
           "conditional": []
         },

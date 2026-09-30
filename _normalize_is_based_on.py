@@ -1,41 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Inject `isBasedOn` on each article's MedicalWebPage / Medical-
-ScholarlyArticle, deriving the authority guideline list from the
-`#dn-citations` ScholarlyArticle @graph already emitted by
-_normalize_citations.py.
+"""Link matching guideline citations via schema.org isBasedOn.
 
-Why: schema.org `isBasedOn` is the E-E-A-T signal Google uses to
-verify "this article's medical claims are anchored in peer-reviewed
-authority." Without it, the article looks like opinion + its
-citation graph reads as a passive bibliography. With it, the
-authority chain is explicit:
+Derive links from the existing dn-citations graph using this module's guideline
+name filters. A string match does not prove that a guideline supports a specific
+clinical recommendation, and isBasedOn is not a documented automatic Google
+E-E-A-T certification or ranking boost.
+See https://developers.google.com/search/docs/appearance/structured-data/sd-policies
 
-  MedicalWebPage
-    └─ isBasedOn → [
-         "Sidbury 2023 AAD topical guideline",
-         "Davis 2024 AAD systemic guideline",
-         "ETFAD/EADV 2020 position paper",
-         ...]
-
-Filtering rules: an @graph citation qualifies for `isBasedOn` if its
-name matches BOTH:
-  - a treatment-guideline phrase ("guidelines of care", "consensus",
-    "S3 guideline", "joint AAD-NPF", "EuroGuiDerm", "management of",
-    "task force", "focused update", "position paper")
-  - OR contains a recognized authority body acronym (AAD, EADV,
-    ETFAD, EAACI, GA²LEN, British Association of Dermatologists, etc.)
-
-Excludes pure methodological references ("validation of the SCORAD
-index") via a negative-match list. Top 5 matches per article, sorted
-by article-graph order (which is already the original document
-order — usually disease guidelines first, drug guidelines second).
-
-Reuses each citation's @id / sameAs (PubMed + DOI) so the
-isBasedOn entries cross-link to the same authority URLs.
-
-Idempotent: replaces `isBasedOn` field on every run.
-Runs LAST in REGEN_STEPS, after _normalize_mentions.py.
+The existing filtering algorithm and citation data remain unchanged. Authors
+must assess the relevance and currency of the cited clinical guidance.
 """
 from __future__ import annotations
 

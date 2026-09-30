@@ -53,24 +53,17 @@ REGEN_STEPS: list[list[str]] = [
     [PY, "_normalize_reading_shell.py"],
     [PY, "_gen_feeds.py"],
     [PY, "_normalize_robots.py"],
-    # 2026-05-18 — Inject max-image-preview:large + max-snippet:-1 into
-    # every page's <meta name="robots">. Largest single-action CTR uplift:
-    # unlocks LARGE image previews (vs tiny default thumbs) and FULL
-    # snippet length (vs 155-char truncation) in Google SERPs. Safe to
-    # apply site-wide; preserves any existing noindex.
+    # Permit larger image previews and let Google choose snippet length.
+    # Neither guarantees search appearance or CTR growth. Preserve noindex;
+    # there is no universal 155-character snippet limit.
     [PY, "_normalize_robots_meta.py"],
-    # 2026-05-18 — Inject OpenGraph article:* + Twitter custom labels +
-    # og:image dimensions into every article. Major off-Google CTR uplift:
-    # Facebook / LinkedIn / Discord / Slack render shared cards with
-    # author + date + section + tag chips; Twitter shows reading time
-    # underneath the title; Google Discover requires width/height to
-    # classify image for the large card variant.
+    # Describe article sharing metadata and image dimensions.
+    # Each platform decides presentation; no guaranteed chips or CTR gain.
+    # Image dimensions alone do not establish Discover eligibility.
     [PY, "_normalize_og_article_meta.py"],
-    # 2026-05-18 — Inject Speculation Rules so cross-article navigation
-    # prerenders on hover. Drops bounce + improves INP (Core Web Vital)
-    # + improves engagement signals Google uses for ranking. Each page
-    # gets the same prerender(/blog/*) + prefetch(/*) rule set; pages
-    # with a native (homepage) speculationrules block are left alone.
+    # Offer speculative navigation in supported browsers.
+    # Measure activated navigation benefit and resource waste; do not promise
+    # ranking gains, mobile data savings, or a fixed INP improvement.
     [PY, "_inject_speculation_rules.py"],
     # 2026-05-18 — Regenerate llms-full.txt (concatenated clean article
     # text for AI/LLM crawlers like Perplexity, ChatGPT, Claude). Runs
@@ -92,11 +85,9 @@ REGEN_STEPS: list[list[str]] = [
     # standards and machine-readable site-summary consumers have a
     # canonical surface (parallel to robots.txt / llms.txt).
     [PY, "_normalize_ai_well_known.py"],
-    # 2026-05-20 — Round 2-H from OPEN_SOURCE_INTEGRATIONS.md:
-    # extract @media print rules from inline <style> blocks to a
-    # shared external CSS loaded with media="print" so browsers
-    # only fetch when printing. ~1 KB savings per page × 114 pages
-    # = ~110 KB redundant inline weight removed site-wide.
+    # Extract print rules to shared media="print" CSS.
+    # Browsers may fetch it before printing at lower priority; it does not
+    # block screen rendering. Saves repeated inline bytes, not all requests.
     [PY, "_normalize_critical_css.py"],
     # 2026-05-20 — Round 2-K visualization: regenerate the
     # internal-link force-directed SVG after every catalog change.
@@ -108,44 +99,35 @@ REGEN_STEPS: list[list[str]] = [
     [PY, "_normalize_ad_slots.py"],
     # 2026-05-21 — SEO_AUDIT C4: inject <link rel="prev/next"> for
     # 8 curated article clusters (atopic-dermatitis, psoriasis, etc.).
-    # Strengthens topic-cluster signal + crawl-budget allocation hint
-    # for Googlebot.
+    # Preserve curated topic-neighbor metadata; no ranking or crawl-budget
+    # improvement is established by rel=prev/next alone.
     [PY, "_inject_cluster_nav.py"],
-    # 2026-05-21 — Inject ICD-10/SNOMED/MeSH codes into MedicalCondition
-    # `about` fields. Eligible for Google Medical Q&A rich results;
-    # discoverable via medical-professional diagnosis-code search.
-    # Must run AFTER _normalize_schema (which sets the about field
-    # baseline) and AFTER any --include-en pass so EN mirrors get codes too.
+    # Add diagnosis-code metadata after schema normalization.
+    # No dedicated Google Medical Q&A feature or ranking gain is promised.
+    # Existing clinical mappings still require editorial validation.
     [PY, "_normalize_medical_codes.py"],
-    # 2026-05-21 — Inject Drug JSON-LD blocks for drug-focused articles
-    # (isotretinoin, dupilumab, biologics, topical retinoids/steroids/acids).
-    # Eligible for Google "About this medication" rich-card. ATC codes +
-    # Wikidata + DrugBank cross-references for Knowledge Graph linkage.
+    # Remove historical standalone Drug JSON-LD blocks (cleanup mode).
+    # Current main() does not generate the retained legacy Drug mappings.
+    # Do not promise a medication rich card or invent offers/reviews.
     [PY, "_normalize_drug_schema.py"],
-    # 2026-05-21 — Parse <ol class="references"> Vancouver citations and
-    # emit a ScholarlyArticle @graph as #dn-citations JSON-LD. Powers
-    # E-E-A-T (peer-reviewed source trail), SERP "Sources: N publications",
-    # and AI-crawler trust signals (Perplexity / ChatGPT / Claude). PMID
-    # + DOI identifiers cross-link to PubMed + Crossref.
+    # Describe visible references with a citation graph.
+    # PMID/DOI links retain the bibliography without automatic E-E-A-T
+    # certification or a promised Sources search-result feature.
     [PY, "_normalize_citations.py"],
     # 2026-05-21 — Final pass over MedicalWebPage / MedicalScholarlyArticle
     # JSON-LD: inject `keywords` (from homepage data-tag-en + alternateName),
-    # `lastReviewed` (git last-modified date), and differentiate
+    # lastReviewed from the author ledger (or retain existing), and differentiate
     # `audience.audienceType` (Patient default, Patient+Clinician for
     # clinical-depth slugs). Must run LAST so previously-injected fields
     # like `about` are stable when we harvest alternateName from them.
     [PY, "_normalize_article_metadata.py"],
-    # 2026-05-21 — Emit a DefinedTermSet JSON-LD block with all 64
-    # /glossary terms (SCORAD/PASI/EASI/DLQI/IL-17/JAK/etc.) so each
-    # surfaces a SERP definition rich-card on its own. Major impressions
-    # win for medical-term queries that currently miss the long-form
-    # article cards. Deep-link via #anchor URL to scroll-to-text.
+    # Describe visible glossary definitions and canonical anchors.
+    # DefinedTermSet is not a dedicated Google definition rich-result type;
+    # no automatic scroll-to-text, impressions, or CTR gain is promised.
     [PY, "_normalize_glossary_schema.py"],
-    # 2026-05-21 — Emit a WebApplication @graph for /tools' 10 calculators
-    # (SCORAD/PASI/DLQI/SALT/UAS7/GAGS/MASI/Hurley/Norwood/Fitzpatrick).
-    # applicationCategory=MedicalApplication + isAccessibleForFree=true
-    # qualifies the entries for Google's "free interactive tool" rich-card.
-    # Deep-link URL points to the calculator anchor inside the host article.
+    # Describe visible calculators with WebApplication metadata.
+    # applicationCategory alone does not establish software-app eligibility.
+    # Do not invent ratings or offers. Preserve existing calculator anchors.
     [PY, "_normalize_tools_schema.py"],
     # 2026-05-21 — Stitch each article's body to the glossary schema graph:
     # scan body text for DefinedTerm names + acronyms + ASCII drug-name
@@ -159,7 +141,7 @@ REGEN_STEPS: list[list[str]] = [
     # filter ScholarlyArticles by authority-guideline keywords (AAD /
     # EADV / ETFAD / S3 / Consensus / "guidelines of care") and emit
     # top 5 as isBasedOn on MedicalWebPage. Makes the article→authority
-    # chain explicit for Google's E-E-A-T scoring + LLM crawler trust.
+    # links explicit as metadata, without automatic E-E-A-T or trust scoring.
     # Must run AFTER _normalize_citations.py so #dn-citations exists.
     [PY, "_normalize_is_based_on.py"],
     # 2026-05-26 — Inline the critical sticky-nav CSS (.dn-nav family) into
@@ -213,6 +195,7 @@ BUILD_GENERATED_STEPS: list[list[str]] = [
     # / `_check_js_syntax` audit the min files this build actually produced
     # instead of the previous build's. Kept after pagefind to preserve the
     # existing pagefind→minify relative order.
+    ["node", "_build_editor.mjs"],
     [PY, "_minify.py"],
     [PY, "_gen_asset_release.py", "--write"],
     # CODE_REVIEW TD-04 — must run AFTER _minify: minification rewrites inline
@@ -224,15 +207,25 @@ BUILD_GENERATED_STEPS: list[list[str]] = [
 ]
 
 CHECK_STEPS: list[list[str]] = [
+    ["node", "_build_editor.mjs", "--check"],
+    ["node", "--test", "_test_word_editor_source.mjs"],
+    ["node", "--test", "_test_article_publication.cjs"],
     [PY, "_test_asset_release.py"],
     [PY, "_test_csp_source_scope.py"],
     [PY, "_gen_asset_release.py", "--check"],
     [PY, "_test_release.py"],
     [PY, "_test_translation_failures.py"],
     [PY, "_test_link_fragments.py"],
-    ["node", "--test", "_test_runtime_edges.mjs", "_test_admin_skeleton.mjs", "_test_admin_sessions.cjs", "_test_admin_persistence.cjs", "_test_navigation.cjs", "_test_search_integrity.cjs", "_test_analytics.cjs"],
+    [PY, "_test_article_candidate.py"],
+    [PY, "_test_article_request.py"],
+    [PY, "_test_article_visibility.py"],
+    [PY, "_test_cms_delivery.py"],
+    ["node", "--test", "_test_cms_delivery.cjs", "_test_vercel_gate.cjs"],
+    [PY, "_test_scheduled_candidate.py"],
+    ["node", "--test", "_test_runtime_edges.mjs", "_test_admin_skeleton.mjs", "_test_admin_sessions.cjs", "_test_admin_persistence.cjs", "_test_article_draft.cjs", "_test_article_draft_client.cjs", "_test_navigation.cjs", "_test_search_integrity.cjs", "_test_analytics.cjs"],
     [PY, "_test_navigation_generation.py"],
     [PY, "_test_search_scope.py"],
+    [PY, "_test_search_index_visibility.py"],
     [PY, "_test_og_card_sources.py"],
     [PY, "_gen_og_cards.py", "--check"],
     [PY, "_test_review_fixes.py"],
@@ -274,6 +267,7 @@ CHECK_STEPS: list[list[str]] = [
     # globs the whole security surface, hard-forbids eval/new Function/
     # document.write/outerHTML, and requires innerHTML to live only in files on
     # a reviewed allowlist.
+    [PY, "_test_dangerous_sinks.py"],
     [PY, "_check_dangerous_sinks.py"],
     [PY, "_check_secrets.py"],
     [PY, "_check_supply_chain.py"],
@@ -283,11 +277,9 @@ CHECK_STEPS: list[list[str]] = [
     # bundle and running only `check` (the push gate) would happily ship a stale
     # .min.js. Asserts js_minify(source) == committed min for every bundle.
     [PY, "_check_min_sync.py"],
-    # 2026-05-18 — Lock in SERP CTR/impressions signals shipped in
-    # batches 12-17 (robots SERP directives, JSON-LD enrichment,
-    # OG article:* on every blog article, Organization+logo on
-    # homepage, sitemap encoding). Each missing signal directly
-    # reduces SERP visibility or rich-card eligibility.
+    # Preserve bilingual and search metadata contracts.
+    # Consistency checks do not prove each field raises rankings or enables
+    # a rich result. Measure actual impressions, clicks, and reading behavior.
     [PY, "_check_bilingual_attrs.py"],
     [PY, "_check_hant_only.py"],
     [PY, "_check_seo_signals.py"],

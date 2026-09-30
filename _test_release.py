@@ -1,4 +1,4 @@
-"""Release failure paths, with no network or real Git mutations."""
+"""Release failure paths; Git writes stay in disposable fixtures, never hosted."""
 from __future__ import annotations
 import json
 import os
@@ -6,10 +6,9 @@ from pathlib import Path
 import shutil
 import subprocess
 import tempfile
-import textwrap
+import shlex
 import io
 from contextlib import redirect_stdout
-from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
@@ -51,59 +50,89 @@ class RemoteEvidenceTests(unittest.TestCase):
 
 
 class ScheduledPublicationTests(unittest.TestCase):
-    def execute(self, fail_script=None):
-        source = (ROOT / '.github/workflows/scheduled-publish.yml').read_text(encoding='utf-8')
-        program = textwrap.dedent(source.split("python3 <<'PY'\n", 1)[1].rsplit('          PY', 1)[0])
-        calls = []
-        def check(command, **kwargs):
-            calls.append(command)
-            if fail_script and fail_script in command:
-                raise subprocess.CalledProcessError(1, command)
-            return 0
-        def run(command, **kwargs):
-            calls.append(command)
-            return SimpleNamespace(returncode=0 if 'ls-remote' in command else 1,
-                                   stdout='abc refs/heads/drafts/example\n', stderr='')
-        def output(command, **kwargs):
-            calls.append(command)
-            if 'ls-files' in command:
-                return 'en/blog/example.html\n' if fail_script == 'untracked' else ''
-            return 'a' * 40
-        with tempfile.TemporaryDirectory(prefix='scheduled-fixture-') as directory:
-            root = Path(directory)
-            queue = root / '.github/scheduled-publish/queue.json'
-            queue.parent.mkdir(parents=True)
-            queue.write_text(json.dumps([dict(slug='example', branch='drafts/example',
-                file='blog/example.html', at='2000-01-01T00:00:00Z')]), encoding='utf-8')
-            previous = Path.cwd()
-            try:
-                os.chdir(root)
-                with patch('subprocess.check_call', side_effect=check), patch('subprocess.run', side_effect=run), \
-                        patch('subprocess.check_output', side_effect=output), \
-                        patch.dict(os.environ, {'GITHUB_RUN_ID':'123','GITHUB_RUN_ATTEMPT':'1','RUNNER_TEMP':directory}), \
-                        redirect_stdout(io.StringIO()):
-                    if fail_script:
-                        with self.assertRaises((subprocess.CalledProcessError, RuntimeError)):
-                            exec(compile(program, 'scheduled-publish.yml', 'exec'), {})
-                    else:
-                        exec(compile(program, 'scheduled-publish.yml', 'exec'), {})
-            finally:
-                os.chdir(previous)
-        return calls
+    def setUp(self):
+        from _test_scheduled_candidate import ScheduledCandidateTests
+        self.fixture = ScheduledCandidateTests(methodName='runTest')
+        self.fixture.setUp()
+        self.addCleanup(self.fixture.doCleanups)
+        self.fixture.output = Path(self.fixture.artifacts.name) / 'cms-source-artifacts'
 
-    def test_failed_local_ci_cannot_publish_or_delete_drafts(self):
-        calls = self.execute('_run_ci.py')
+    def execute(self, fail_preparation=False):
+        import _process_article_requests as requests
+        source = (ROOT / '.github/workflows/scheduled-publish.yml').read_text(encoding='utf-8')
+        commands = [line.strip()[len('run: '):] for line in source.splitlines()
+                    if line.strip().startswith('run: ')]
+        self.assertEqual(len(commands), 1, 'Review every operational workflow command')
+        command = shlex.split(commands[0])
+        self.assertEqual(command, ['python', '_process_article_requests.py', '--output',
+                                   '$RUNNER_TEMP/cms-source-artifacts'])
+        fixture = self.fixture
+        calls = []
+        actual_run, actual_git = subprocess.run, requests.git
+
+        def run(argv, **kwargs):
+            calls.append(list(argv))
+            self.assertFalse(argv[0] == 'git' and ('push' in argv or '--delete' in argv), argv)
+            return actual_run(argv, **kwargs)
+
+        def git(root, *args):
+            # Only the runner's identity check is stubbed. Transport and bundle
+            # content use real Git against the isolated local fixture origin.
+            if args == ('remote', 'get-url', 'origin'):
+                return ('https://github.com/' + requests.REPO).encode()
+            return actual_git(root, *args)
+
+        output = io.StringIO()
+        argv = [command[1], command[2], str(fixture.output)]
+        env = {'GITHUB_ACTIONS': 'true', 'GITHUB_REPOSITORY': requests.REPO,
+               'GITHUB_REF': 'refs/heads/main', 'RUNNER_TEMP': fixture.artifacts.name}
+        with patch.object(requests, '__file__', str(fixture.root / command[1])), \
+                patch('sys.argv', argv), patch.dict(os.environ, env), \
+                patch.object(requests, 'git', side_effect=git), \
+                patch('subprocess.run', side_effect=run), redirect_stdout(output):
+            if fail_preparation:
+                with patch.object(requests, 'unchanged_main', side_effect=ValueError('Main advanced')):
+                    with self.assertRaisesRegex(ValueError, 'Main advanced'):
+                        requests.main()
+            elif (fixture.root / 'en/blog/example.html').exists():
+                with self.assertRaisesRegex(ValueError, 'Trusted checkout must be clean'):
+                    requests.main()
+            else:
+                requests.main()
+        return calls, output.getvalue()
+
+    def test_failed_preparation_cannot_publish_or_delete_drafts(self):
+        calls, output = self.execute(fail_preparation=True)
         self.assertFalse(any('push' in command for command in calls), calls)
+        self.assertFalse(output)
+        self.assertFalse(list(self.fixture.output.glob('*.bundle')))
+        self.assertFalse((self.fixture.output / 'report.json').exists())
+        self.fixture.assert_preserved()
 
     def test_success_prepares_review_bundle_without_publishing_or_claiming_review(self):
-        calls = self.execute()
+        calls, output = self.execute()
         self.assertTrue(any(command[:3] == ['git','bundle','create'] for command in calls), calls)
         self.assertFalse(any('push' in command or '--delete' in command for command in calls), calls)
         self.assertFalse(any('Claude-Opus-5-Review: pending' in str(command) for command in calls), calls)
+        self.assertEqual(json.loads(output), {'prepared': 1, 'deferred': 0,
+                         'reviewVerified': False, 'ciVerified': False, 'published': False})
+        report = json.loads((self.fixture.output / 'report.json').read_text(encoding='utf-8'))
+        destination = self.fixture.recipient(report['prepared'][0])
+        self.assertEqual((destination / 'blog/article.html').read_bytes(), self.fixture.content)
+        self.assertEqual((destination / self.fixture.image_path).read_bytes(), self.fixture.image)
+        self.assertFalse((destination / 'api/unrelated.js').exists())
+        self.fixture.assert_preserved()
 
     def test_untracked_generated_file_cannot_publish(self):
-        calls = self.execute('untracked')
+        self.fixture.write('en/blog/example.html', b'<h1>Untracked generated output</h1>')
+        status = self.fixture.run_git('status', '--porcelain')
+        calls, output = self.execute()
         self.assertFalse(any('push' in command for command in calls), calls)
+        self.assertFalse(output)
+        self.assertFalse(self.fixture.output.exists())
+        self.assertEqual(self.fixture.run_git('status', '--porcelain'), status)
+        self.assertEqual(self.fixture.run_git('show-ref'), self.fixture.refs)
+        self.assertEqual((self.fixture.root / '.github/scheduled-publish/queue.json').read_bytes(), self.fixture.queue)
 
 
 @unittest.skipUnless(shutil.which('pwsh') or shutil.which('powershell'), 'PowerShell is required')

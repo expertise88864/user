@@ -1,9 +1,8 @@
 name: Scheduled publication preparation
 
-# Runs every 15 minutes. Reads .github/scheduled-publish/queue.json,
-# prepares a local candidate bundle for independent review. It never pushes
-# an unreviewed commit or fabricates quota evidence. Remote queue/drafts stay intact.
-
+# Trusted main discovers version-bound author requests. This stage creates
+# source-only review artifacts; it does not run/claim release CI or publish.
+# Every resulting candidate still requires the unchanged full delivery gates.
 on:
   schedule:
     - cron: '*/15 * * * *'
@@ -14,162 +13,32 @@ permissions:
 
 jobs:
   process:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     concurrency:
       group: scheduled-publish-main
       cancel-in-progress: false
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # pin v4 (was @v4)
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
         with:
+          ref: main
           fetch-depth: 0
-          persist-credentials: false
-
+          # Read-only authentication stays in this trusted checkout. Disposable
+          # clones share objects only, not the GitHub credential configuration.
+          persist-credentials: true
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with: { python-version: '3.12' }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with: { node-version: '20' }
-      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9
-        with: { distribution: temurin, java-version: '21' }
-      - name: Install validation tools
-        run: |
-          pip install html5validator==0.4.2 lxml==6.1.3
-          npm install -g @lhci/cli@0.13.0 puppeteer@24.43.1
-          echo "NODE_PATH=$(npm root -g)" >> "$GITHUB_ENV"
-
-      - name: Configure git
-        run: |
-          git config user.name "Scheduled Publish Bot"
-          git config user.email "bot@chendermatologist.com"
-
-      - name: Process scheduled queue
+      - name: Discover author-approved source requests
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python3 <<'PY'
-          import json, subprocess, os, re, sys
-          from datetime import datetime, timezone
-
-          QUEUE_PATH = '.github/scheduled-publish/queue.json'
-          SLUG_RE = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
-          if not os.path.exists(QUEUE_PATH):
-              print('No queue file at', QUEUE_PATH, '— nothing to do.')
-              sys.exit(0)
-
-          with open(QUEUE_PATH, encoding='utf-8') as f:
-              queue = json.load(f)
-
-          if not isinstance(queue, list):
-              raise ValueError('Scheduled publish queue must be a JSON array')
-
-          if not queue:
-              print('Queue is empty.')
-              sys.exit(0)
-
-          now = datetime.now(timezone.utc)
-          due, remaining = [], []
-          for item in queue:
-              try:
-                  if not isinstance(item, dict):
-                      raise ValueError('entry must be an object')
-                  slug = item.get('slug')
-                  branch = item.get('branch')
-                  file_path = item.get('file')
-                  if not isinstance(slug, str) or not SLUG_RE.fullmatch(slug):
-                      raise ValueError('invalid slug')
-                  if branch != f'drafts/{slug}':
-                      raise ValueError('branch must exactly match drafts/<slug>')
-                  if file_path != f'blog/{slug}.html':
-                      raise ValueError('file must exactly match blog/<slug>.html')
-                  at_str = item['at'].replace('Z', '+00:00')
-                  at = datetime.fromisoformat(at_str)
-                  if at.tzinfo is None:
-                      raise ValueError('scheduled time must include a timezone')
-                  at = at.astimezone(timezone.utc)
-              except Exception as e:
-                  print(f'  skip malformed entry: {item} ({e})')
-                  remaining.append(item)
-                  continue
-              if at <= now:
-                  due.append(item)
-              else:
-                  remaining.append(item)
-
-          print(f'Queue: {len(due)} due, {len(remaining)} pending')
-
-          if not due:
-              sys.exit(0)
-
-          subprocess.check_call(['git', 'fetch', 'origin'])
-          subprocess.check_call(['git', 'pull', '--ff-only', 'origin', 'main'])
-          candidate = f'codex/scheduled-{os.environ["GITHUB_RUN_ID"]}-{os.environ["GITHUB_RUN_ATTEMPT"]}'
-          subprocess.check_call(['git', 'switch', '-c', candidate])
-
-          merged_any = False
-          merged_branches = []
-          for item in due:
-              slug = item['slug']
-              branch = item['branch']
-              print(f'\n>>> Processing {slug} from {branch}')
-              # Check that branch exists on origin
-              r = subprocess.run(['git', 'ls-remote', '--heads', 'origin', branch],
-                                 capture_output=True, text=True)
-              if r.returncode != 0:
-                  print(f'  Failed to query origin for {branch}: {r.stderr.strip()}')
-                  raise subprocess.CalledProcessError(
-                      r.returncode, r.args, output=r.stdout, stderr=r.stderr
-                  )
-              if not r.stdout.strip():
-                  print(f'  Branch {branch} not found on origin — keeping queue entry for manual recovery')
-                  remaining.append(item)
-                  continue
-              try:
-                  subprocess.check_call(['git', 'merge', '--no-ff', f'origin/{branch}',
-                                         '-m', f'scheduled candidate: {slug} (queued {item.get("added_at","?")})'])
-                  print(f'  Merged {branch} into isolated candidate')
-                  merged_any = True
-                  merged_branches.append(branch)
-              except subprocess.CalledProcessError as e:
-                  print(f'  ✗ Merge conflict for {branch}: {e}')
-                  # Re-queue for manual handling
-                  remaining.append(item)
-                  subprocess.run(['git', 'merge', '--abort'], check=False)
-
-          # Write updated queue
-          with open(QUEUE_PATH, 'w', encoding='utf-8') as f:
-              json.dump(remaining, f, indent=2, ensure_ascii=False)
-              f.write('\n')
-          subprocess.check_call(['git', 'add', QUEUE_PATH])
-
-          # Commit queue update (only if there's something to commit)
-          r = subprocess.run(['git', 'diff', '--cached', '--quiet'])
-          if r.returncode != 0:
-              subprocess.check_call(['git', 'commit', '-m', f'scheduled candidate: processed {len(due)} due item(s)'])
-
-          if merged_any or r.returncode != 0:
-              subprocess.check_call([sys.executable, '_run_ci.py'])
-              subprocess.check_call(['git', 'add', '-u'])
-              generated = subprocess.run(['git', 'diff', '--cached', '--quiet'])
-              if generated.returncode == 1:
-                  subprocess.check_call(['git', 'commit', '-m', 'scheduled candidate: regenerate canonical files'])
-                  subprocess.check_call([sys.executable, '_run_ci.py'])
-              elif generated.returncode != 0:
-                  raise subprocess.CalledProcessError(generated.returncode, generated.args)
-              subprocess.check_call(['git', 'diff', '--exit-code'])
-              untracked = subprocess.check_output(
-                  ['git', 'ls-files', '--others', '--exclude-standard'], text=True).strip()
-              if untracked:
-                  raise RuntimeError('Untracked generated files must be reviewed and committed before publishing:\n' + untracked)
-              sha = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
-              bundle = os.path.join(os.environ['RUNNER_TEMP'], 'scheduled-candidate.bundle')
-              subprocess.check_call(['git', 'bundle', 'create', bundle, 'origin/main..HEAD'])
-              print(f'Prepared {sha} for independent review. Nothing was pushed or published.')
-              print('After review, use the normal codex candidate CI/PR/Preview/main flow.')
-          PY
-      - name: Preserve candidate for independent review
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python _process_article_requests.py --output "$RUNNER_TEMP/cms-source-artifacts"
+      - name: Preserve source bundles for independent review
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: scheduled-candidate-${{ github.run_id }}
-          path: ${{ runner.temp }}/scheduled-candidate.bundle
-          if-no-files-found: ignore
+          name: cms-source-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/cms-source-artifacts/
+          if-no-files-found: error
           retention-days: 14

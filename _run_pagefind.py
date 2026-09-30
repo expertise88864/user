@@ -26,7 +26,11 @@ import os
 import shutil
 import subprocess
 import sys
+import re
 from pathlib import Path
+
+from _gen_search_index import VisibleTextExtractor
+from _sync_hub_catalog import load_catalog
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -36,14 +40,39 @@ PAGEFIND_DIR = ROOT / "pagefind"
 PUBLIC_HTML_GLOB = "{*.html,blog/*.html,en/*.html,en/blog/*.html}"
 
 
+def indexable_glob(root: Path) -> str:
+    """Limit the crawler to current public visibility, including EN mirrors.
+
+    Pagefind does not apply robots/noindex or the author catalog by itself.
+    Inspect every candidate before clearing old output; malformed/missing
+    visibility data must fail the build rather than index every HTML file.
+    """
+    unpublished = {item['slug'] for item in load_catalog(root) if item.get('unpublished')}
+    paths = []
+    for folder in (root, root / 'blog', root / 'en', root / 'en/blog'):
+        for target in sorted(folder.glob('*.html')):
+            relative = target.relative_to(root).as_posix()
+            if target.is_symlink() or not target.resolve().is_relative_to(root.resolve()):
+                raise ValueError('Refuse indexing an HTML source outside the site root')
+            if not re.fullmatch(r'(?:en/)?(?:blog/)?[a-z0-9-]+\.html', relative):
+                raise ValueError('Unsupported public HTML path: ' + relative)
+            if target.parent.name == 'blog' and target.stem in unpublished:
+                continue
+            parser = VisibleTextExtractor()
+            parser.feed(target.read_text(encoding='utf-8'))
+            parser.close()
+            if not parser.noindex:
+                paths.append(relative)
+    if not paths:
+        raise ValueError('No indexable public HTML sources')
+    return paths[0] if len(paths) == 1 else '{' + ','.join(paths) + '}'
+
+
 def main() -> int:
     # Never reuse an existing directory: it may contain fragments of private
     # files indexed by an older, broader crawl. Only this generated child is removed.
     if PAGEFIND_DIR.is_symlink() or PAGEFIND_DIR.resolve() != ROOT.resolve() / "pagefind":
         raise ValueError("Refuse clearing a Pagefind output outside the site root")
-    if PAGEFIND_DIR.exists():
-        shutil.rmtree(PAGEFIND_DIR)
-
     # Locate npx — Vercel has it, local dev probably has it
     npx = shutil.which("npx") or shutil.which("npx.cmd")
     if not npx:
@@ -52,6 +81,10 @@ def main() -> int:
             "           Pagefind build cannot complete."
         )
         return 1
+
+    public_glob = indexable_glob(ROOT)
+    if PAGEFIND_DIR.exists():
+        shutil.rmtree(PAGEFIND_DIR)
 
     # CODE_REVIEW Phase 7 — pin the version. This runs on every Vercel build and
     # writes /pagefind/*.js that is SERVED TO VISITORS' browsers, so an unpinned
@@ -64,8 +97,9 @@ def main() -> int:
         "--site", str(ROOT),
         "--output-path", str(PAGEFIND_DIR),
         "--root-selector", "main",
-        # Public route roots only: never index Git archives or local review files.
-        "--glob", PUBLIC_HTML_GLOB,
+        # Exact visible files in public route roots only. Excludes private
+        # evidence, noindex pages and author-withdrawn articles in both locales.
+        "--glob", public_glob,
     ]
     print(f"[pagefind] {' '.join(args[:5])} ...")
     try:

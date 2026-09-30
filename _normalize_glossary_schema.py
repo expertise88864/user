@@ -1,31 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Inject a DefinedTermSet JSON-LD block into /glossary.html.
+"""Describe visible glossary definitions with DefinedTermSet JSON-LD.
 
-Why: /glossary.html has 64 hand-curated dermatology terms (scoring
-scales, drug classes, symptoms, anatomy) but currently exposes only
-generic MedicalWebPage + BreadcrumbList schema. Adding an explicit
-DefinedTermSet with 64 DefinedTerm entries unlocks:
+Terms retain names, descriptions, and canonical anchor URLs so machine-readable
+metadata can correspond to the visible glossary. DefinedTermSet is not listed
+as a dedicated Google rich result; there is no promised definition card, ranking
+improvement, scroll-to-text behavior, or CTR increase.
+See https://developers.google.com/search/docs/appearance/structured-data/search-gallery
 
-  • Google's "definition" rich-card in SERPs (very high CTR for
-    medical-term queries: "PASI definition", "SCORAD scoring",
-    "IL-17 inhibitor")
-  • Anchor deep-linking — each DefinedTerm carries its #anchor so
-    Google can scroll-to-text-fragment into the right card
-  • LLM/AI-crawler entity disambiguation (Perplexity, ChatGPT)
-  • Bing / Yandex definition surfacing
-
-Source format (in glossary.html):
-  <div class="gloss-card">
-    <span class="gloss-cat" ...>量表</span>
-    <div class="gloss-term">SCORAD</div>
-    <div class="gloss-en">Severity Scoring of Atopic Dermatitis</div>
-    <div class="gloss-def">...HTML-rich definition...</div>
-    <a class="gloss-link" href="/blog/...#anchor">SCORAD 計算器 →</a>
-  </div>
-
-Idempotent: replaces existing #dn-glossary-terms block on each run.
-Wired into REGEN_STEPS after _normalize_article_metadata.py.
+Parse each gloss-card's gloss-term, gloss-en, and HTML-rich gloss-def. Replace
+the existing schema block on each run without changing visible definitions.
 """
 from __future__ import annotations
 
@@ -107,8 +91,8 @@ def extract_field(card: str, css_class: str) -> str:
     the capture. Measured on the live file: 48 of 64 `gloss-def` values were
     truncated in the emitted DefinedTerm schema — e.g. "皮膚病生活品質量表"
     instead of "皮膚病生活品質量表,10 題自評，0-30 分。生物製劑健保申請常見
-    門檻 DLQI ≥ 10。" — so three quarters of the definition rich-cards this
-    generator exists to produce shipped cut off. Depth-balanced now, matching
+    門檻 DLQI ≥ 10。" — so three quarters of the generated definition metadata
+    was truncated. Depth-balanced now, matching
     the technique find_cards() above already uses.
     Class matching is token-aware and quote-agnostic so `class="gloss-def x"`
     or single quotes keep working.
@@ -376,9 +360,9 @@ def inject(html: str, termset: dict) -> tuple[str, bool]:
 def inject_card_ids(src: str, cards: list[str], lang: str,
                     slugs: list[str] | None = None) -> str:
     """Add id="term-<slug>" to each <div class="gloss-card"> so the
-    DefinedTerm.@id anchors resolve. Without this, scroll-to-text-
-    fragment from SERP definition cards lands on the page top
-    instead of the right term.
+    DefinedTerm.@id anchors resolve to the intended visible term.
+    These are ordinary fragment links; no dedicated search-result definition
+    card or automatic scroll-to-text behavior is promised.
 
     Update existing IDs as well as missing ones, preserving other attributes.
     The mirror keeps source card order; both locales receive canonical slugs.

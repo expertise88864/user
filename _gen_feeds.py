@@ -109,51 +109,19 @@ def is_indexable(path: Path) -> bool:
 
 
 def parse_article_catalog() -> dict[str, dict[str, str]]:
-    js_path = ROOT / 'blog' / 'blog-shared.js'
-    src = js_path.read_text(encoding='utf-8')
-    m = re.search(r'DN\.ARTICLES\s*=\s*\[(.*?)\];', src, re.DOTALL)
-    out: dict[str, dict[str, str]] = {}
-    if not m:
-        return out
-    for line in m.group(1).splitlines():
-        slug_m = re.search(r"slug:'([^']+)'", line)
-        title_m = re.search(r"title:'([^']+)'", line)
-        if not (slug_m and title_m):
-            continue
-        slug = slug_m.group(1)
-        # Skip articles marked {unpublished:true} in the catalog — they
-        # shouldn't appear in sitemap.xml, blog/feed.xml, blog/atom.xml,
-        # or any other public listing.
-        if re.search(r'\bunpublished\s*:\s*true\b', line):
-            continue
-        tag_m = re.search(r"tag:'([^']+)'", line)
-        date_m = re.search(r"date:'([^']+)'", line)
-        cat_m = re.search(r"cat:'([^']+)'", line)
-        out[slug] = {
-            'slug': slug,
-            'title': title_m.group(1),
-            'tag': tag_m.group(1) if tag_m else '',
-            'date': date_m.group(1) if date_m else '2026-01-01',
-            'cat': cat_m.group(1) if cat_m else 'myth',
-        }
-    return out
+    from _sync_hub_catalog import load_catalog
+    # Use the shared trusted JS-literal reader. Regex truncates escaped
+    # apostrophes and cannot read JSON-keyed legacy/new catalog entries.
+    return {item['slug']: {'slug': item['slug'], 'title': item['title'],
+                          'tag': item.get('tag', ''), 'date': item.get('date', '2026-01-01'),
+                          'cat': item.get('cat', 'myth')}
+            for item in load_catalog(ROOT) if not item.get('unpublished')}
 
 
 def get_unpublished_slugs() -> set[str]:
     """Read blog-shared.js and return slugs marked unpublished:true."""
-    js_path = ROOT / 'blog' / 'blog-shared.js'
-    src = js_path.read_text(encoding='utf-8')
-    m = re.search(r'DN\.ARTICLES\s*=\s*\[(.*?)\];', src, re.DOTALL)
-    if not m:
-        return set()
-    unpublished: set[str] = set()
-    for line in m.group(1).splitlines():
-        if not re.search(r'\bunpublished\s*:\s*true\b', line):
-            continue
-        slug_m = re.search(r"slug:'([^']+)'", line)
-        if slug_m:
-            unpublished.add(slug_m.group(1))
-    return unpublished
+    from _sync_hub_catalog import load_catalog
+    return {item['slug'] for item in load_catalog(ROOT) if item.get('unpublished')}
 
 
 def discover_articles() -> list[dict[str, str]]:
@@ -183,7 +151,7 @@ def discover_articles() -> list[dict[str, str]]:
     return articles
 
 
-ARTICLES = discover_articles()
+ARTICLES: list[dict[str, str]] = []
 
 STATIC_PAGES = [
     {'url': '/', 'priority': '1.0', 'changefreq': 'weekly'},
@@ -403,12 +371,17 @@ def build_atom() -> str:
     return '\n'.join(out) + '\n'
 
 
-(ROOT / 'sitemap.xml').write_text(build_sitemap(), encoding='utf-8')
-print(f'Wrote sitemap.xml ({len(ARTICLES)} articles + {len(STATIC_PAGES)} static candidates)')
+def main() -> None:
+    global ARTICLES
+    ARTICLES = discover_articles()
+    (ROOT / 'sitemap.xml').write_text(build_sitemap(), encoding='utf-8')
+    print(f'Wrote sitemap.xml ({len(ARTICLES)} articles + {len(STATIC_PAGES)} static candidates)')
+    (ROOT / 'blog').mkdir(exist_ok=True)
+    (ROOT / 'blog' / 'feed.xml').write_text(build_rss(), encoding='utf-8')
+    print(f'Wrote blog/feed.xml ({min(30, len(ARTICLES))} items)')
+    (ROOT / 'blog' / 'atom.xml').write_text(build_atom(), encoding='utf-8')
+    print(f'Wrote blog/atom.xml ({min(30, len(ARTICLES))} items)')
 
-(ROOT / 'blog').mkdir(exist_ok=True)
-(ROOT / 'blog' / 'feed.xml').write_text(build_rss(), encoding='utf-8')
-print(f'Wrote blog/feed.xml ({min(30, len(ARTICLES))} items)')
 
-(ROOT / 'blog' / 'atom.xml').write_text(build_atom(), encoding='utf-8')
-print(f'Wrote blog/atom.xml ({min(30, len(ARTICLES))} items)')
+if __name__ == '__main__':
+    main()

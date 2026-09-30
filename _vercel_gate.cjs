@@ -9,6 +9,8 @@ async function allowed(env = process.env, request = fetch) {
   if (env.VERCEL_ENV === 'preview') return true;
   if (env.VERCEL_ENV !== 'production' || !/^[a-f0-9]{40}$/.test(env.VERCEL_GIT_COMMIT_SHA || '')) return false;
   const cfg = JSON.parse(fs.readFileSync(__dirname + '/_delivery_policy.json', 'utf8'));
+  assert.equal(cfg.repository, 'expertise88864/user', 'Unexpected website repository');
+  assert.equal(cfg.cms_author_intent, true, 'Live CMS author-intent verification is required');
   assert.match(cfg.repository, /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/);
   assert.ok(Array.isArray(cfg.workflows) && cfg.workflows.length > 0, 'Missing workflow contract');
   for (const entry of cfg.workflows) {
@@ -42,7 +44,7 @@ async function allowed(env = process.env, request = fetch) {
     const pushed = matching.filter(r => r.event === 'push');
     const candidates = (pushed.length ? pushed : matching.filter(r => cfg.allow_dispatch === true &&
       r.event === 'workflow_dispatch' && r.actor?.login === 'github-actions[bot]' &&
-      r.head_branch.startsWith('codex/scheduled-'))).sort((a, b) => b.id - a.id);
+      r.head_branch.startsWith('codex/scheduled-'))).sort((a, b) => b.id - a.id || (b.run_attempt || 1) - (a.run_attempt || 1));
     const run = candidates[0];
     assert.ok(run && run.status === 'completed' && run.conclusion === 'success', 'Candidate CI is not green');
     const jobs = await pages('/actions/runs/' + run.id + '/attempts/' + (run.run_attempt || 1) + '/jobs', 'jobs');
@@ -69,6 +71,30 @@ async function allowed(env = process.env, request = fetch) {
     const prs = await pages('/commits/' + sha + '/pulls');
     assert.ok(prs.some(p => p.head?.sha === sha && p.base?.ref === 'main' &&
       p.head?.repo?.full_name === cfg.repository && (p.state === 'open' || p.merged_at)), 'No reviewed candidate PR');
+  }
+  if (cfg.cms_author_intent) {
+    const { verifyLiveIntent } = require('./_cms_delivery.cjs');
+    await verifyLiveIntent(sha, async path => {
+      const response = await request('https://api.github.com/repos/' + cfg.repository + path,
+        { headers: { ...headers, Accept: path.startsWith('/contents/') ? 'application/vnd.github.object+json' : headers.Accept,
+          'Cache-Control': 'no-cache' }, redirect: 'error', cache: 'no-store', signal: AbortSignal.timeout(15000) });
+      assert.ok(response.ok, 'CMS intent evidence unavailable');
+      // Bound the actual stream, including chunked responses with no length.
+      assert.ok(response.body, 'CMS intent response unavailable');
+      const reader = response.body.getReader();
+      let total = 0;
+      const chunks = [];
+      try {
+        for (;;) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          total += value.byteLength;
+          assert.ok(total <= 10000000, 'CMS intent response too large');
+          chunks.push(Buffer.from(value));
+        }
+      } finally { await reader.cancel(); }
+      return JSON.parse(Buffer.concat(chunks).toString('utf8'));
+    });
   }
   return true;
 }

@@ -71,7 +71,8 @@ class HubCatalogTests(unittest.TestCase):
                   '<div id="dn-article-list">' + ''.join(map(render_card, articles)) +
                   '</div><a href="/blog">All articles</a></body></html>')
         result = sync_source(source, 'dn-article-list', articles)
-        rule = '<style data-home-card-limit>#dn-article-list>.article-list-item:nth-of-type(n+6){display:none}</style>'
+        rule = ('<style data-home-card-limit>#dn-article-list>.article-list-item:nth-of-type(n+6){display:none}'
+                'main>section:not(.mag-hero){content-visibility:auto;contain-intrinsic-size:auto 1000px}</style>')
         self.assertIn(rule, result[:result.index('</head>')])
         self.assertEqual(len(CardList(result, 'dn-article-list').cards), 8)
         rest = result.split('<template id="dn-home-card-rest">')[1].split('</template>')[0]
@@ -102,6 +103,23 @@ class HubCatalogTests(unittest.TestCase):
                       f'data-show-count="{count}"></section><div id="dn-article-list">' + card + '</div>')
             with self.subTest(count=count), self.assertRaises(ValueError):
                 sync_source(source, 'dn-article-list', [self.first])
+
+    def test_home_rendering_excludes_hero_even_when_main_starts_with_styles(self):
+        card = render_card(self.first)
+        source = ('<head></head><main><style>.keep{color:red}</style><section class="mag-hero">Hero</section>'
+                  '<section id="dn-hub" data-hub-mode="homepage" data-show-count="5">'
+                  '<div id="dn-article-list">' + card + '</div></section></main>')
+        result = sync_source(source, 'dn-article-list', [self.first])
+        rule = 'main>section:not(.mag-hero){content-visibility:auto;contain-intrinsic-size:auto 1000px}'
+        self.assertIn(rule, result)
+        self.assertNotIn('section:not(:first-child)', result)
+        self.assertIn('<section class="mag-hero">Hero</section>', result)
+        self.assertIn(card, result)
+        self.assertEqual(result, sync_source(result, 'dn-article-list', [self.first]))
+        full = sync_source(result.replace('data-hub-mode="homepage"', 'data-hub-mode="full"'),
+                           'dn-article-list', [self.first])
+        self.assertNotIn(rule, full)
+        self.assertNotIn('data-home-card-limit', full)
 
     def test_home_template_survives_catalog_changes_and_can_be_removed(self):
         articles = [dict(self.first, slug=f'card-{i}') for i in range(8)]

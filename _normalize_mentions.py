@@ -1,44 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Inject `mentions` array on MedicalWebPage / MedicalScholarlyArticle
-schema, listing every glossary DefinedTerm the article body actually
-references.
+"""Connect article text to existing glossary DefinedTerm identifiers.
 
-Why: We've built two strong schema graphs:
-  • /glossary's 64 DefinedTerm objects (commit f2ca910c)
-  • Each blog article's MedicalWebPage / about / Drug / citation schema
-…but the two graphs are disconnected. Adding `mentions` with
-DefinedTerm @id references stitches them together, so Google /
-Bing / LLM crawlers see:
-  "This article discusses [SCORAD, IL-17, dupilumab, EASI, …]
-   each of which has a canonical Definition over here."
+Match glossary names against clean article text and emit at most ten mentions
+in the page's JSON-LD. This connects descriptive metadata to canonical glossary
+anchors; it is not a verified Google MedLM query-routing mechanism, authority
+transfer, "topics covered" feature, or promise of citations by other services.
+See https://developers.google.com/search/docs/appearance/structured-data/search-gallery
 
-Effect:
-  • Entity-mention signals (Google's MedLM uses mentions to route
-    queries to articles)
-  • Cross-page authority transfer (glossary boosts article, vice
-    versa)
-  • Eligible for "topics covered" SERP feature (when supported)
-  • LLM crawlers cite the canonical definition page when answering
-    queries about scoring scales / drugs
-
-Algorithm:
-  1. Load /glossary's DefinedTermSet from the JSON-LD block.
-  2. Build a token table: each term contributes its name (acronym /
-     Chinese) and alternateName (full English), with locale-aware
-     match rules.
-  3. For each article, extract clean body text (strip script/style/
-     JSON-LD/HTML tags) and scan for token occurrences.
-  4. Rank matches by occurrence count; cap at 10 mentions per article
-     (over-stuffing harms ranking).
-  5. Emit a `mentions` field on MedicalWebPage / MedicalScholarlyArticle:
-        "mentions": [
-          {"@type":"DefinedTerm", "@id":"…/glossary#term-…", "name":"PASI"},
-          …
-        ]
-
-Idempotent: replaces existing `mentions` field on each run.
-Wired into REGEN_STEPS after _normalize_glossary_schema.py.
+Existing matching, ranking by occurrence count, and the output cap are retained.
+Schema must continue to describe the visible article, not additional topics.
 """
 from __future__ import annotations
 

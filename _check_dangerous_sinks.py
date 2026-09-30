@@ -47,6 +47,7 @@ from __future__ import annotations
 
 import re
 import sys
+import hashlib
 from pathlib import Path
 
 from _minify import js_minify
@@ -88,6 +89,11 @@ INNERHTML_ALLOWLIST = frozenset({
     # longer needs to be there is a hole waiting for the next sink.
     "admin/admin-extras.js",
     "admin/edit.html",
+    # ProseMirror's readHTML parses clipboard HTML in createHTMLDocument(),
+    # never in the live editor. Authored Word/draft sources have no such sink.
+    # This one remaining vendor assignment is bound to the audited build bytes
+    # below; changing the bundle or adding a sink requires a new full audit.
+    "admin/word-model.bundle.js",
     "blog/blog-shared.js",
     "blog/blog-hub.js",
     "blog/blog-calculators.js",
@@ -96,6 +102,20 @@ INNERHTML_ALLOWLIST = frozenset({
     "blog/blog-article-visuals.js",
     "blog/pagefind-search.js",
 })
+
+AUDITED_GENERATED_SINKS = {
+    "admin/word-model.bundle.js": (1, "abbe3ff21ebb7a12ca6ba2a13c91d3cb90655ba678ff71b6cb8236ddd5968af1"),
+}
+
+def generated_sink_errors(path: Path, rel: str, hits: int) -> list[str]:
+    proof = AUDITED_GENERATED_SINKS.get(rel)
+    if proof is None:
+        return []
+    count, digest = proof
+    actual = hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+    if hits != count or actual != digest:
+        return [f"{rel}: generated HTML sink differs from its audited count/bytes; review the complete new build"]
+    return []
 
 # If a glob silently stops matching, the audit would go vacuously green. Two
 # independent guards:
@@ -222,6 +242,7 @@ def main() -> int:
                 errors.append(f"{rel}: forbidden construct {label} — never allowed on the security surface")
 
         hits = len(INNERHTML_RE.findall(code))
+        errors.extend(generated_sink_errors(path, rel, hits))
         if hits:
             if rel not in INNERHTML_ALLOWLIST:
                 errors.append(

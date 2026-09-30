@@ -34,9 +34,23 @@
     "check-secrets": "python _check_secrets.py",
     "check-supply-chain": "python _check_supply_chain.py",
     "check-js": "python _check_js_syntax.py",
-    "check-smoke": "python _check_runtime_smoke.py"
+    "check-smoke": "python _check_runtime_smoke.py",
+    "build-editor": "node _build_editor.mjs",
+    "check-editor": "node _build_editor.mjs --check"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.19.0"
+  },
+  "dependencies": {
+    "parse5": "8.0.1",
+    "esbuild": "0.28.2",
+    "prosemirror-commands": "1.7.2",
+    "prosemirror-history": "1.5.1",
+    "prosemirror-keymap": "1.2.3",
+    "prosemirror-model": "1.25.12",
+    "prosemirror-schema-list": "1.5.1",
+    "prosemirror-state": "1.4.4",
+    "prosemirror-tables": "1.8.5",
+    "prosemirror-view": "1.42.6"
   }
 }

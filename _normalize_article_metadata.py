@@ -1,30 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Inject three high-ROI MedicalWebPage fields:
+"""Add topic, freshness, and intended-audience metadata to article schemas.
 
-  1. `keywords` — comma-separated topic chain pulled from:
-       a. The homepage card's data-tag-en (e.g. "Eczema", "Psoriasis")
-       b. The MedicalCondition.alternateName already injected by
-          _normalize_medical_codes.py (gives the Chinese disease name)
-       c. Generic anchors: "dermatology", "patient education", site brand
-     Bing + Yandex still use `keywords` for ranking; Google uses it as a
-     topical-cluster signal even though it dropped meta-keywords years ago.
+keywords come from existing catalog tags and MedicalCondition names. They
+provide descriptive metadata, not a documented Google ranking mechanism.
+lastReviewed uses the existing author-owned _review_dates.json ledger, or keeps
+an existing page date when no usable entry exists. It is not derived from a
+Git modification. Publication-floor entries differ from a recorded re-review;
+the ledger's provenance still needs editorial checking.
+audience distinguishes patient and clinical-depth material without promising
+a separate professional search feature.
+See https://developers.google.com/search/docs/appearance/structured-data/sd-policies
 
-  2. `lastReviewed` — mirrors the git-derived dateModified that
-     _normalize_date_modified.py already writes. Google's medical-content
-     rich-result documentation specifically lists `lastReviewed` as the
-     freshness signal for YMYL pages (different from dateModified, which
-     can include trivial edits).
-
-  3. `audience.audienceType` — differentiates Patient vs Clinician.
-     Default Patient (most articles are patient-ed). Clinical-depth
-     articles (slugs ending in -clinical / -systemic / -topical /
-     -special-populations / -biologic-monitoring) get a dual
-     ["Patient","Clinician"] audience so Google can surface them in
-     professional dermatology SERPs too.
-
-Runs LAST in REGEN_STEPS, after every other JSON-LD modifier, so the
-fields it touches are stable.
+Run after other JSON-LD modifiers so the existing fields are stable. This
+comment correction does not change generated dates or clinical content.
 """
 from __future__ import annotations
 
@@ -246,7 +235,7 @@ def derive_keywords(slug: str, tag_en: str,
                 if g not in parts:
                     parts.append(g)
 
-    return ", ".join(parts[:12])  # cap at 12 — over-stuffing penalizes ranking
+    return ", ".join(parts[:12])  # cap at 12 — keep descriptive metadata bounded
 
 
 # --- Single-article processor -----------------------------------------------
@@ -258,9 +247,8 @@ def process_article(fp: Path, homepage_tags: dict[str, dict[str, str]],
     from datetime import date as _date
     slug = fp.stem
     src = fp.read_text(encoding="utf-8")
-    # Prefer git's last-commit date; for newly-authored files not yet
-    # tracked by git, fall back to today's date so _check_seo_signals
-    # doesn't fail with "MedicalWebPage missing lastReviewed".
+    # Legacy local calculation is retained here but does not set lastReviewed;
+    # that field uses the author ledger or the existing page value below.
     last_mod = git_last_modified(fp) or _date.today().isoformat()
 
     tag_en = ""

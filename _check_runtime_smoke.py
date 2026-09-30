@@ -8,8 +8,7 @@ import socket
 import subprocess
 import sys
 import time
-import urllib.error
-import urllib.request
+from urllib.parse import urlsplit
 from pathlib import Path
 
 
@@ -73,21 +72,32 @@ def free_port() -> int:
 
 def fetch(base_url: str, path: str) -> tuple[str, str]:
     url = base_url + path
+    target = urlsplit(url)
+    if target.scheme != 'http' or target.hostname not in {'127.0.0.1','localhost','::1'} or target.username or target.password:
+        raise AssertionError('Runtime smoke requires the local HTTP fixture')
     # The local Windows HTTP transport can reset or truncate back-to-back
     # connections. Retry only transport failures, never HTTP errors or failed
     # content assertions. A fresh request must still pass every smoke check.
     for attempt in range(3):
+        connection = http.client.HTTPConnection(target.hostname, target.port or 80, timeout=10)
         try:
-            with urllib.request.urlopen(url, timeout=10) as response:
+            # urllib forces Connection: close. Windows AdGuard's injected
+            # chunked HTML can then stall; keep-alive framing completes with
+            # the filter still enabled. Close our socket after the full body.
+            connection.request('GET', target.path + ('?' + target.query if target.query else ''),
+                               headers={'Connection':'keep-alive'})
+            with connection.getresponse() as response:
+                if response.status != 200:
+                    raise AssertionError(f"{path} returned HTTP {response.status}")
                 body = response.read().decode("utf-8", errors="replace")
                 content_type = response.headers.get("content-type", "")
                 return body, content_type
-        except urllib.error.HTTPError as exc:
-            raise AssertionError(f"{path} returned HTTP {exc.code}") from exc
         except (OSError, http.client.HTTPException) as exc:
             if attempt == 2:
                 raise AssertionError(f"{path} failed after 3 attempts: {exc}") from exc
             time.sleep(0.1 * (attempt + 1))
+        finally:
+            connection.close()
     raise AssertionError("unreachable")
 
 

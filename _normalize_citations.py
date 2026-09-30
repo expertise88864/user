@@ -1,24 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Parse <ol class="references"> Vancouver citations and emit a
-top-level JSON-LD `citation` block (ScholarlyArticle @graph).
+"""Parse visible Vancouver references into a citation JSON-LD graph.
 
-Why: Google + AI crawlers (Perplexity, ChatGPT, Claude) actively use
-schema.org citation graphs to:
-  • Assess E-E-A-T (Experience, Expertise, Authoritativeness, Trust)
-  • Trace medical claims to peer-reviewed sources (YMYL ranking factor)
-  • Surface "Sources: this article cites N publications" in SERPs
-  • Disambiguate medical claims via PMID/DOI cross-reference
+Extract PMID, DOI, journal, publication year, and a heuristic title from each
+reference. The graph makes the existing bibliography machine-readable; it does
+not verify a study, prove that it supports a clinical claim, assign E-E-A-T,
+or guarantee a Google "Sources: N publications" search feature.
+See https://developers.google.com/search/docs/appearance/structured-data/search-gallery
 
-Each <li> in <ol class="references"> is parsed for:
-  - PMID (regex `PMID:\\s*\\d+`)
-  - DOI (from <a href="https://doi.org/..."> or doi.org/... text)
-  - Journal name (from <em>...</em>)
-  - Publication year (4-digit after journal)
-  - Title (heuristic: text between authors and journal)
-
-Emits a new <script type="application/ld+json" id="dn-citations">
-block before </head>. Idempotent.
+Replace dn-citations before the closing head tag. Visible references and their
+medical relevance still need editorial checking.
 """
 from __future__ import annotations
 

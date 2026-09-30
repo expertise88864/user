@@ -302,33 +302,35 @@ def main() -> int:
         errors.append(".github/workflows/scheduled-publish.yml: missing scheduled publish workflow")
     else:
         scheduled = scheduled_path.read_text(encoding="utf-8", errors="replace")
+        preparer_path = ROOT / "_process_article_requests.py"
+        preparer = preparer_path.read_text(encoding="utf-8") if preparer_path.exists() else ""
         # The scheduler prepares a reviewable artifact; model review and the
         # exact-SHA candidate gates must precede any remote mutation.
         import re
-        if re.search(r"['\"]git['\"]\s*,\s*['\"]push['\"]|\bgit\s+push\b", scheduled):
+        if re.search(r"['\"]git['\"]\s*,\s*['\"]push['\"]|\bgit\s+push\b", scheduled + preparer):
             errors.append("scheduled-publish.yml: unreviewed preparation must not push or delete remote branches")
         if "contents: read" not in scheduled or "contents: write" in scheduled:
             errors.append("scheduled-publish.yml: preparation token must be read-only")
-        if "Claude-Opus-5-Review: pending" in scheduled:
+        if "Claude-Opus-5-Review: pending" in scheduled + preparer:
             errors.append("scheduled-publish.yml: preparation cannot fabricate a quota-pending review")
-        for guard in ("'git', 'bundle', 'create'", "'origin/main..HEAD'",
-                      "scheduled-candidate.bundle", "actions/upload-artifact@"):
+        for guard in ("python _process_article_requests.py --output", "ref: main",
+                      "if: github.ref == 'refs/heads/main'", "cms-source-artifacts/",
+                      "actions/upload-artifact@", "if-no-files-found: error"):
             if guard not in scheduled:
                 errors.append(f"scheduled-publish.yml: missing review artifact safeguard {guard}")
-        if "remaining.append(item)" not in scheduled:
-            errors.append("scheduled-publish.yml: failed or missing drafts should remain queued for recovery")
         if "group: scheduled-publish-main" not in scheduled:
             errors.append("scheduled-publish.yml: scheduled runs should be serialized")
-        if "if r.returncode != 0:" not in scheduled or "raise subprocess.CalledProcessError" not in scheduled:
-            errors.append("scheduled-publish.yml: remote branch lookup failures should fail visibly")
-        for guard in [
-            "SLUG_RE.fullmatch(slug)",
-            "branch != f'drafts/{slug}'",
-            "file_path != f'blog/{slug}.html'",
-            "if at.tzinfo is None:",
-        ]:
-            if guard not in scheduled:
-                errors.append(f"scheduled-publish.yml: missing queue safety guard {guard}")
+        # Real-Git regression tests exercise these source-only stage contracts;
+        # full candidate CI remains in Quality/Delivery, never waived here.
+        for guard in ('"git", "ls-remote", "--heads", "origin"', 'check=True, timeout=30',
+                      'request_record(', 'article_slug(file)', 'with_receipt(',
+                      'live_root=root', 'verify_request_head(root', 'unchanged_main(root',
+                      '"--no-write-fetch-head"', '"bundle", "create"', 'main + "..HEAD"',
+                      'read_blob(checkout, candidate, path)[1] != raw',
+                      'refs != git(root, "show-ref")', 'read_blob(root, main, QUEUE, optional=True) != queue',
+                      '"reviewVerified": False', '"ciVerified": False', '"published": False'):
+            if guard not in preparer:
+                errors.append(f"scheduled-publish.yml: source preparer missing safety guard {guard}")
 
     quality_path = ROOT / ".github" / "workflows" / "quality.yml"
     if not quality_path.exists():

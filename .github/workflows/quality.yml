@@ -27,6 +27,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # pin v4 (was @v4)
         with: { node-version: '20' }
+      - name: Install locked project dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Verify canonical generated files
         run: |
           python _run_quality.py build

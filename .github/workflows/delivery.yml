@@ -20,12 +20,18 @@ jobs:
         with:
           python-version: '3.12'
       - name: Delivery Python regression tests
-        run: python -m unittest _test_delivery
+        run: python -m unittest _test_delivery _test_cms_delivery
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '24'
       - name: Production deployment gate regression tests
-        run: node --test _test_vercel_gate.cjs
+        run: node --test _test_vercel_gate.cjs _test_cms_delivery.cjs
+      - name: Verify live CMS author intent and payload
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # PR checks use the actual source head, not GitHub's synthetic merge SHA.
+          CMS_CANDIDATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python _cms_delivery.py "$CMS_CANDIDATE_SHA"
   preview:
     name: Preview browser
     if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && startsWith(github.ref, 'refs/heads/codex/')

@@ -13,7 +13,7 @@ vm.runInContext(source.slice(start, end), context);
 const opts = {slug:'new-article', date:'2026-09-06', title:'A "quote" & <tag>',
   sub:'A subtitle', tag:'Example', desc:'A backslash \\ and </script> in prose'};
 
-for (const type of ['myth','rx','overview','note','research']) {
+for (const type of ['myth','rx','overview','note','research','blank']) {
   test(`article skeleton: ${type}`, () => {
     const html = context.generateNewArticleSkeleton({...opts,type});
     const json = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1];
@@ -34,6 +34,16 @@ for (const type of ['myth','rx','overview','note','research']) {
     assert.ok(html.includes('/assets/inline/nav-burger.js?v=' + releaseVersion));
   });
 }
+test('blank draft has its own escaped bilingual heading, canonical and no copied disease article', () => {
+  const html = context.generateNewArticleSkeleton({ ...opts, type: 'blank', sub: '', title_en: 'Author "English" title' });
+  assert.ok(html.includes('data-en="Author &quot;English&quot; title"'));
+  assert.ok(html.includes('href="https://chendermatologist.com/blog/new-article"'));
+  assert.ok(!html.includes('acne-myths')); assert.ok(!html.includes('迷思 1'));
+  assert.ok(html.includes('（請貼上或輸入文章內容）'));
+  assert.match(html, /<title>[^<]+ \| 陳翊嘉醫師<\/title>/);
+  const schema = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  assert.equal(schema.headline, opts.title);
+});
 test('unsafe slug rejected before constructing markup', () => {
   assert.throws(() => context.generateNewArticleSkeleton({...opts,slug:'../"bad'}));
 });

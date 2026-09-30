@@ -10,6 +10,9 @@ import os
 import re
 import sys
 from html.parser import HTMLParser
+from pathlib import Path
+
+from _sync_hub_catalog import load_catalog
 
 
 if hasattr(sys.stdout, 'reconfigure'):
@@ -30,7 +33,7 @@ class VisibleTextExtractor(HTMLParser):
     """Extract visible heading and paragraph text without reading attributes."""
 
     TEXT_TAGS = {"h1", "h2", "h3", "p"}
-    SKIP_TAGS = {"script", "style", "svg", "noscript"}
+    SKIP_TAGS = {"script", "style", "svg", "noscript", "template", "textarea", "title"}
     VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input",
                  "link", "meta", "param", "source", "track", "wbr"}
 
@@ -39,6 +42,7 @@ class VisibleTextExtractor(HTMLParser):
         self.skip_depth = 0
         self.current: list[object] | None = None
         self.items: list[tuple[str, str]] = []
+        self.noindex = False
 
     def _is_hidden(self, tag: str, attrs: list[tuple[str, str | None]]) -> bool:
         attr_map = {name.lower(): (value or "") for name, value in attrs}
@@ -52,6 +56,16 @@ class VisibleTextExtractor(HTMLParser):
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         tag = tag.lower()
+        if tag == 'meta' and not self.skip_depth:
+            values = {name.lower(): (value or '') for name, value in attrs}
+            names = [(value or '').lower() for name, value in attrs if name.lower() == 'name']
+            if set(names) & {'robots', 'googlebot'}:
+                # Browsers keep the first duplicate attribute, while dict()
+                # keeps the last. Ambiguous author visibility must not leak.
+                if len(names) != 1 or sum(name.lower() == 'content' for name, _ in attrs) != 1:
+                    self.noindex = True
+                directives = set(re.split(r'[\s,]+', values.get('content', '').lower()))
+                self.noindex |= bool(directives & {'noindex', 'none'})
         if tag in self.VOID_TAGS:
             return
         if self.skip_depth:
@@ -94,6 +108,8 @@ def extract(page_html: str) -> dict[str, object]:
     parser = VisibleTextExtractor()
     parser.feed(page_html)
     parser.close()
+    if parser.noindex:
+        return out
 
     title = next((text for tag, text in parser.items if tag == "h1"), "")
     if title:
@@ -114,25 +130,12 @@ def extract(page_html: str) -> dict[str, object]:
 
 
 def get_unpublished_slugs() -> set[str]:
-    """Read blog-shared.js and return slugs that have {unpublished:true} in
-    the DN.ARTICLES catalog. Same logic as _gen_feeds.py.get_unpublished_slugs."""
-    js_path = os.path.join(ROOT, 'blog', 'blog-shared.js')
-    try:
-        with open(js_path, 'r', encoding='utf-8') as fh:
-            src = fh.read()
-    except FileNotFoundError:
-        return set()
-    m = re.search(r"DN\.ARTICLES\s*=\s*\[([\s\S]*?)\];", src)
-    if not m:
-        return set()
-    unpublished: set[str] = set()
-    for line in m.group(1).splitlines():
-        if not re.search(r"\bunpublished\s*:\s*true\b", line):
-            continue
-        slug_m = re.search(r"slug:'([^']+)'", line)
-        if slug_m:
-            unpublished.add(slug_m.group(1))
-    return unpublished
+    """Use the same trusted catalog semantics as CMS, hub cards, and feeds.
+
+    Invalid/missing author visibility data stops generation before output writes.
+    A JS-literal reader supports both quotes and multiline CMS catalog entries.
+    """
+    return {item['slug'] for item in load_catalog(Path(ROOT)) if item.get('unpublished')}
 
 
 def main() -> None:

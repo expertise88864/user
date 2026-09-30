@@ -1,12 +1,17 @@
 # PIPELINE.md — 建置管線地圖(源頭 → 生成器 → 產物)
 
-> 2026-09-06 發佈入口更新：生成器順序不變；發佈改走 `REMOTE_CI_DELIVERY.md` 的 codex/* → PR/Preview → 完整候選 CI → 同 SHA main。`deploy.ps1` 只發布乾淨且候選驗證通過的 SHA，不再自行 stage/rebase。排程文章先合併到候選、完整檢查與 Preview 綠燈後才快轉 main；失敗保留正式 queue 與來源草稿分支。
+> 發佈入口：生成器順序不變；發佈改走 `REMOTE_CI_DELIVERY.md` 的 codex/* → 完整候選 CI／PR／Preview → 同 SHA main。`deploy.ps1` 只發布乾淨且候選驗證通過的 SHA，不自行 stage/rebase。排程工作只準備本機候選 bundle，保留遠端 queue 與來源草稿分支，不自行推送或上線。
 
 > 目的:讓任何 session 一眼分清「哪些檔案是**源頭**(可手改)、哪些是**生成物**(絕不手改)」,
 > 以及「改了 X 之後要跑什麼」。順序的唯一權威是 `_run_quality.py` 的 `REGEN_STEPS`(~46 步)
 > 與 `CHECK_STEPS`(當前 30 步,以該檔為準)—— **本檔不複製完整清單**(會漂移),只給結構與配方。
 
 ## 一張圖看懂資料流
+
+本機第一次執行建置／檢查前，使用 Node 20.19.0 以上並執行
+`npm ci --ignore-scripts --no-audit --no-fund`。文章草稿驗證依賴鎖定的 parse5；
+品質生成與完整候選 CI 的乾淨 runner 也先安裝同一份 lockfile。
+排程的源碼準備階段只使用 Python 與 Node 讀取可信目錄，不執行生成器或聲稱 CI 通過。
 
 ```
 源頭(手改這些)                     生成器                        產物(絕不手改)
@@ -57,9 +62,11 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
 + 手改 `llms.txt` 的 Robots policy 段 → 三處一起改 → `_check_robots.py`(含 REQUIRED_BLOCKED 防護)。
 
 ## 發佈與 CI
-- **push main = 立即部署**(Vercel)。每次 push 前先跑 `python _run_ci.py`：完整 build、
-  HTML validator、Lighthouse collect 與 assertion；門檻由 `.lighthouserc.json` 共用。
-  檢查失敗或缺少工具即停止。紀錄寫到系統暫存目錄，保留各項退出碼與日誌。
+- **候選與正式發布**：本機快速檢查／相關回歸後 push `codex/*`，取得完整遠端 CI、
+  同庫 PR、同 SHA Preview 與瀏覽器證據，才正常快轉相同 SHA 到 main。
+  main 的正式 CI／部署／smoke 都成功才交付。詳見 `REMOTE_CI_DELIVERY.md`。
+  本機 `python _run_ci.py` 可驗證完整 build、HTML validator、Lighthouse；
+  門檻由 `.lighthouserc.json` 共用，本機成功不代表遠端 CI 已通過。
 - 環境：Python 3.12、Node 20、Java 21、OpenSSL；
   `pip install html5validator==0.4.2 lxml==6.1.3`；
   `npm install -g @lhci/cli@0.13.0 puppeteer@24.43.1`。
@@ -72,8 +79,30 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
   同一 SHA 的所有適用 GitHub 檢查全綠才能宣告交付。
 - CI 只驗證生成物一致性，不自行回推或使用 skip token。後台直接編輯造成生成物過期時，
   必須先同步、重生與驗證，CI 不會替未驗證的版本另建發布 commit。
-- **排程發佈**:`drafts/<slug>` 分支 + `.github/scheduled-publish/queue.json`,
-  scheduled-publish.yml 每 15 分鐘 merge 到期項目。
+- **排程候選源碼準備（本機未發布）**：可信 main 的排程每 15 分鐘唯讀發現
+  `drafts/<slug>` 上的 `.cms-requests/<slug>.json`，不再以舊 queue 代替作者核可。
+  `_process_article_requests.py` 核對固定 repo、乾淨 checkout／即時 main、申請及到期時間；
+  每篇使用同一 main 的獨立暫存 clone，只複製核可文章／manifest 圖片及必要 catalog。
+  不執行草稿分支程式、不合併分支、不改本機或遠端 refs／queue。Git clean filter 改動
+  核可 bytes 時拒絕；建立 bundle 前後及最終報告前重查 live main／作者申請。
+  舊 queue 原樣保留，缺申請、未到期、改版或衝突不自動猜測授權。產物限 runner 暫存
+  目錄內的 bundle 與 report，明示 source_prepared／reviewVerified=false／ciVerified=false／
+  published=false。這一階段不執行生成器或完整 CI；後續仍須獨立審查、醫療核可、
+  codex 候選完整 CI／PR／Preview、同 SHA main 及正式 CI／部署核對，不能直接發布。
+- **版本綁定申請驗證（開發中）**：候選抽取器的 --request 模式先唯讀核對 origin
+  當前 drafts/<slug> head、作者申請 schema、原草稿直接 parent、文章與 manifest SHA、
+  main 原文章版本及排程到期時間，結束前再次查 origin，避免使用已取消／改版的申請。
+  只產生待獨立審查的源碼與準備證據，不寫 Git refs；寫檔前也重新確認工作區未變更。
+  下架採專用 catalog＋noindex 候選，只改目前 main 文章的索引政策，不複製未完成草稿。
+  先前 robots 政策保存在目錄，以供另經核可的恢復操作；目前不自動重新公開隱藏文章。
+  --request 準備時會附上 .cms-delivery.json 的版本證據；Delivery contract 查目前申請、
+  唯一 parent／申請檔 diff、原草稿／manifest／圖片與候選源碼摘要，PR 查實際 head SHA。
+  main 推送重新查作者申請（若 hook 執行模型審查，審查後再查一次），Vercel 在正式建置
+  前後另查即時申請。取消或後續編輯使舊候選失效；API 錯誤、缺證據、未到期都不能通過。
+  證據不代表已部署，這些新門檻目前仍未正式發布。申請發現與隔離源碼 bundle 已接入
+  本機排程修改；已發布申請的證據退役與新版草稿重設、可信部署狀態尚待接入。
+  生成器若改動核可源碼，摘要門檻會拒絕，不能手改摘要或刪除證據以規避；須完成生成內容
+  與核可源碼的正式驗證流程。不能把此模式當成直接發布许可或已核可新生成英文內容。
 - **IndexNow**(indexnow.yml + `_submit_indexnow.py`):deploy 後 ping Bing/Yandex 等。
   Google 不吃 IndexNow — Google 收錄靠 GSC sitemap(已提交)。
 - 其他 CI:a11y.yml(pa11y)、hyperlink.yml(斷鏈)、schema-validator.yml、vale.yml(文風)。
@@ -83,3 +112,19 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
   重跑會 crash — 它們是歷史工具,不在 REGEN_STEPS 裡,**不要跑也不必修**(除非要用)。
 - `_check_balance.py`/`_check_min_balance.py` 已改為相對路徑(2026-06 修復),可正常跑。
 - regen 全量約需數分鐘;只想驗單項時先跑對應 `_check_*.py`,但 push 前仍要完整 gate。
+# Word 式編輯（本機整合中，尚未正式發布）
+
+在後台開啟文章後，按「Word 編輯」。也可以在原始碼模式確認完整文章後切入。
+貼上圖文會整理段落、巢狀清單、文獻連結與表格；圖片留在本機草稿，按保存後才與同一份文章快照送入雲端草稿。
+「圖片說明／排序」可補替代文字、調整位置；「復原／重做」處理文件模型內的編輯。
+SVG、計算器及未支援格式顯示受保護標記，保存時保留原始區塊，不在後台執行文章腳本。
+
+Word 模式目前提供粗體、斜體、底線、刪除線、標題、清單及圖文貼上。
+尚未接入的後設資料、雙語並排、圖庫等按鈕會停用；回到原有編輯或原始碼模式後恢復。
+原有預覽模式若已有修改，先切換原始碼確認內容，再進入 Word 模式，避免用經過清理的預覽覆蓋原始區塊。
+貼上失敗時保留原稿與剪貼簿；圖片正在整理或中文輸入仍在選字時，保存會暫緩；完成後再保存。
+草稿保存與送審仍遵守候選 CI／Preview／正式發布門檻；雲端草稿保存成功不代表正式上線。
+
+字型與文章排序目前也先存成本機設定草稿，可在同一瀏覽器重新載入。
+排序草稿只有在已載入的目錄 SHA 與文章集合一致時恢復；正式來源更新時保留舊草稿，不自動套用。
+這兩項設定尚未接入雲端候選發布，介面會明示未發布，不再直接寫 main。

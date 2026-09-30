@@ -1,0 +1,16 @@
+.word-editor-panel{position:absolute;inset:0;width:100%;min-width:0;overflow:auto;background:#fff;color:#162f33;padding:16px;box-sizing:border-box}
+.word-editor-tools{display:flex;flex-wrap:wrap;gap:8px;position:sticky;top:0;background:#fff;padding:8px 0;z-index:1}
+.word-editor-tools button,.word-image-row button{padding:8px 12px;border:1px solid #b7c6c8;border-radius:6px;background:#f4f8f8;color:#163d43;font:inherit;cursor:pointer}
+.word-editor-message{font-size:13px;line-height:1.6;color:#526b70;margin:8px 0 16px}
+.word-document .ProseMirror{outline:none;min-height:50vh;max-width:900px;margin:auto;line-height:1.8;overflow-wrap:anywhere}
+.word-document .ProseMirror:focus-visible{outline:2px solid #227b8c;outline-offset:4px}
+.word-document h2,.word-document h3,.word-document h4{line-height:1.4;margin:1.3em 0 .6em}
+.word-document p{margin:.8em 0}.word-document img{max-width:100%;height:auto}
+.word-document table{border-collapse:collapse;display:block;max-width:100%;overflow:auto;margin:1em 0}
+.word-document th,.word-document td{border:1px solid #bacbd0;padding:8px;vertical-align:top;min-width:40px}
+.word-document .selectedCell{background:#e0f2f6}.word-document .ProseMirror-selectednode{outline:2px solid #227b8c}
+.word-document [data-pilot-protected]{border:1px dashed #748c92;background:#f3f6f6;color:#526b70;padding:8px;font-size:13px}
+.word-image-list{border-top:1px solid #bacbd0;padding:12px 0;margin-top:20px}
+.word-image-row{display:flex;flex-wrap:wrap;align-items:end;gap:8px;margin:12px 0}
+.word-image-row label{display:grid;gap:4px;flex:1 1 220px}.word-image-row input{box-sizing:border-box;width:100%;font:inherit;padding:8px;border:1px solid #748c92;border-radius:4px}
+@media(max-width:600px){.word-editor-panel{padding:12px}.word-document .ProseMirror{font-size:16px}}

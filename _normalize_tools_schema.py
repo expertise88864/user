@@ -1,27 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Inject a WebApplication @graph into /tools.html for the 10 calculators.
+"""Describe the site's visible calculators with WebApplication JSON-LD.
 
-Why: /tools.html is the calculator hub linking to 10 embedded
-calculators (SCORAD, PASI, DLQI, SALT, UAS7, GAGS, MASI, Hurley,
-Norwood-Hamilton/Ludwig, Fitzpatrick). Each one is interactive but
-currently has no schema.org SoftwareApplication signal — so Google
-treats them as plain page content instead of "free tools."
+Each tool exposes a name, description, and existing article anchor. This is
+semantic metadata; applicationCategory alone does not qualify the page for a
+Google "free interactive tool" feature or guarantee CTR growth. Any supported
+software-app rich result must satisfy its own documented requirements; never
+add invented prices, ratings, or reviews to satisfy those requirements.
+See https://developers.google.com/search/docs/appearance/structured-data/software-app
 
-Adding a WebApplication @graph unlocks:
-  • Google's "free interactive tool" rich-card in SERPs (high CTR for
-    queries like "PASI calculator", "SCORAD score online")
-  • Deep-linking via the #anchor URL inside the article that hosts it
-  • applicationCategory=MedicalApplication routes to medical app
-    cluster in app-store-style results
-
-Each tool is parsed from <article class="tool-block"> in tools.html.
-We extract: id (anchor), name (H2 text), deep-link URL (first /blog/
-href inside the block), and one-line description (the .tool-sub p
-or first <p> body).
-
-Mirrored to /en/tools.html with same structure but EN naming.
-Idempotent: replaces #dn-tools-schema block on each run.
+Read article.tool-block entries in tools.html; mirror the metadata to en/tools
+and replace dn-tools-schema on every run. Preserve existing tool behavior.
 """
 from __future__ import annotations
 
@@ -89,7 +78,7 @@ def parse_tools(src: str) -> list[dict]:
         if not sub:
             sub = ANY_PARA_RE.search(body)
         description = strip_html(sub.group(1)) if sub else ""
-        # Cap at 250 chars (rich-card description budget)
+        # Bound the metadata description; this is not a Google rich-result limit
         description = description[:250]
         out.append({
             "id": tool_id,
@@ -103,7 +92,7 @@ def parse_tools(src: str) -> list[dict]:
 # --- Build SoftwareApplication objects --------------------------------------
 
 # Map tool_id → ICD-10 / target condition for the relatedDisease field.
-# Helps Google route the calculator to disease-specific search clusters.
+# Describes the calculator's disease context without promising search routing.
 TOOL_TO_DISEASE = {
     "scorad": {"name": "Atopic dermatitis", "icd10": "L20.9"},
     "pasi": {"name": "Psoriasis vulgaris", "icd10": "L40.0"},

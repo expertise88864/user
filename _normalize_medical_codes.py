@@ -1,23 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Inject ICD-10 + SNOMED-CT codes into each article's MedicalCondition
-schema `about` field.
+"""Inject diagnosis-code metadata into the article's MedicalCondition about field.
 
-Why: Google's Medical Q&A rich-result eligibility requires structured
-medical entity codes (ICD-10 / SNOMED) on YMYL content. Currently our
-`about` field carries only `name` + `alternateName`. Adding `code:`
-with `codingSystem` lets:
-  • Google's MedLM classifier recognize entities for Q&A snippets
-  • Medical professionals find articles via diagnosis-code search
-  • Knowledge Graph link the article to the disease entity
+This is semantic entity metadata, not eligibility for a Google "Medical Q&A"
+rich result. Code mappings and clinical claims still require source checking.
+No ranking, Knowledge Graph display, or query-routing outcome is guaranteed.
+See https://developers.google.com/search/docs/appearance/structured-data/search-gallery
 
-Each article's slug maps to one or more conditions. We use ICD-10-CM
-(WHO 2024) as primary; SNOMED-CT as secondary where ICD-10 is too
-coarse. Mappings are hand-curated against WHO ICD-10 browser +
-NHS UK Read codes for dermatology.
-
-Idempotent: replaces existing about field with the enriched version
-on every run. Wired into REGEN_STEPS after schema normalization.
+Each slug uses the existing curated mappings. This documentation correction
+changes neither those mappings nor generated article content. Replaces the
+about field on each run after schema normalization.
 """
 from __future__ import annotations
 
@@ -40,10 +32,9 @@ def medical_condition(name_en: str, name_zh: str,
     """Build a fully-coded MedicalCondition schema object.
 
     `wikidata`: a Q-identifier (e.g. "Q83320" for psoriasis). Emitted as
-    `sameAs: ["https://www.wikidata.org/wiki/Q..."]` which Google uses to
-    link the article to its Knowledge Graph entity. Critical for AI-snippet
-    eligibility — Google's MedLM + Bing's BioBERT match on Wikidata QIDs
-    when no schema.org @id exists. Verified against Wikidata 2025-05.
+    `sameAs: ["https://www.wikidata.org/wiki/Q..."]` identifies the intended
+    entity for metadata consumers. It does not establish AI-snippet eligibility
+    or prove that a search engine uses this mapping for query routing.
     """
     cond: dict = {
         "@type": "MedicalCondition",

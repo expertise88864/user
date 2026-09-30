@@ -1,24 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Inject `Drug` schema.org JSON-LD blocks for drug-focused articles.
+"""Remove legacy standalone Drug JSON-LD blocks from article pages.
 
-Why: For articles that primarily describe a medication (isotretinoin,
-dupilumab, biologics, topical retinoids/steroids/acids), Google rewards
-explicit `Drug` schema with:
-  • Eligibility for the "About this medication" rich-card on SERPs
-  • Knowledge Graph linkage via `sameAs` Wikidata + DrugBank IDs
-  • Bing / Apple intelligence drug-info card surfacing
-  • LLM crawler (Perplexity, ChatGPT, Claude) entity disambiguation
+Current main() runs in cleanup mode: it removes dn-drug-schema blocks and does
+not inject the historical Drug mappings retained in this module. Those legacy
+helpers are not a promise of a Google medication rich card. Do not invent offers
+or reviews to make medical education look like a commercial product.
+See https://developers.google.com/search/docs/appearance/structured-data/search-gallery
 
-The `Drug` block is a SEPARATE top-level JSON-LD block (not nested in
-MedicalWebPage's `about`) — schema.org permits multiple top-level
-@types per page, and Google's parser prefers this for drug rich-cards.
-
-ATC codes verified against WHOCC (WHO Collaborating Centre for Drug
-Statistics, 2025). Wikidata QIDs hand-verified.
-
-Idempotent: replaces existing #dn-drug-schema block on every run.
-Wired into REGEN_STEPS after _normalize_medical_codes.py.
+The cleanup remains in REGEN_STEPS to prevent old blocks from reappearing.
 """
 from __future__ import annotations
 

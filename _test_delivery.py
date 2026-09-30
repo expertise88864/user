@@ -97,6 +97,62 @@ class DeliveryTests(unittest.TestCase):
             self.assertEqual(d.main(), 1)
             review.assert_not_called()
 
+    def test_author_intent_is_rechecked_after_a_successful_model_review(self):
+        import _cms_delivery as cms
+        cfg = {**d.policy(), "claude_hook": True}
+        lines = f"HEAD {SHA} refs/heads/main {'b'*40}\n"
+        order = []
+        with patch.object(d, "policy", return_value=cfg), \
+             patch.object(d.sys, "argv", ["_delivery.py", "pre-push"]), \
+             patch.object(d.sys, "stdin", io.StringIO(lines)), \
+             patch.object(d, "pre_push", side_effect=lambda *args: order.append("CI")), \
+             patch.object(d.subprocess, "run", side_effect=lambda *args, **kwargs: (order.append("review") or subprocess.CompletedProcess([], 0))), \
+             patch.object(d, "API"), patch.object(d, "clean"), \
+             patch.object(cms, "verify", side_effect=lambda *args: order.append("intent")):
+            self.assertEqual(d.main(), 0)
+        self.assertEqual(order, ["CI", "review", "intent"])
+
+    def test_green_ci_does_not_replace_current_author_intent(self):
+        from types import SimpleNamespace
+        import _cms_delivery as cms
+        cfg = {"repository": "expertise88864/user", "cms_author_intent": True,
+               "workflows": [{"path": ".github/workflows/ci.yml", "jobs": ["test"], "steps": {"test": {"required": ["check"]}}}]}
+        run = {"id": 1, "path": ".github/workflows/ci.yml", "event": "push", "head_branch": "codex/test",
+               "head_sha": SHA, "status": "completed", "conclusion": "success", "html_url": "https://github.com/example/run"}
+        jobs = [{"id": 2, "name": "test", "status": "completed", "conclusion": "success",
+                 "steps": [{"name": "check", "status": "completed", "conclusion": "success"}]}]
+        api = SimpleNamespace(pages=lambda path, key: [run] if key == "workflow_runs" else jobs)
+        with patch.object(cms, "verify", side_effect=ValueError("author cancelled")) as live:
+            with self.assertRaisesRegex(d.Blocked, "author intent"):
+                d.verify(SHA, "candidate", cfg, api)
+            live.assert_called_once_with(SHA, api)
+
+    def test_api_does_not_use_cached_intent_or_unbounded_response_bytes(self):
+        import json
+        api = object.__new__(d.API)
+        api.base = "https://api.github.com/repos/expertise88864/user"
+        api.auth = "isolated-fixture"
+        class Response(io.BytesIO):
+            def read(self, size=-1):
+                self.limit = size
+                return super().read(size)
+        response = Response(json.dumps({"verified": True}).encode())
+        opener = unittest.mock.MagicMock()
+        opener.open.return_value = response
+        with patch.object(d.urllib.request, "build_opener", return_value=opener):
+            self.assertEqual(api.get("/git/ref/heads/drafts/article"), {"verified": True})
+        self.assertEqual(response.limit, 10_000_001)
+        self.assertEqual(opener.open.call_args.args[0].get_header("Cache-control"), "no-cache")
+        response = Response(b'{}')
+        opener.open.return_value = response
+        with patch.object(d.urllib.request, "build_opener", return_value=opener):
+            api.get("/contents/blog/article.html?ref=" + SHA)
+        self.assertEqual(opener.open.call_args.args[0].get_header("Accept"), "application/vnd.github.object+json")
+        response = Response(b"x" * 10_000_001)
+        opener.open.return_value = response
+        with patch.object(d.urllib.request, "build_opener", return_value=opener), self.assertRaises(d.Blocked):
+            api.get("/git/ref/heads/drafts/article")
+
     def test_sha(self):
         for value in ("a", "0" * 40, "g" * 40, "a" * 40 + "\n"):
             with self.assertRaises(d.Blocked):
@@ -163,6 +219,9 @@ class DeliveryTests(unittest.TestCase):
             with self.assertRaises(d.Blocked):
                 d.validate_policy(cfg)
         d.validate_policy(d.policy())
+        for flag in (None, False, 1, "true"):
+            with self.subTest(flag=flag), self.assertRaises(d.Blocked):
+                d.validate_policy({**d.policy(), "cms_author_intent": flag})
 
     def test_dispatch_requires_explicit_project_support(self):
         run = {"id": 1, "path": "ci.yml", "event": "workflow_dispatch", "head_branch": "codex/scheduled-test",
@@ -211,6 +270,24 @@ class DeliveryTests(unittest.TestCase):
                 "head_sha": SHA, "status": "completed", "conclusion": "success"}
         with self.assertRaises(d.Blocked):
             d.select_run([good, {**good, "id": 2, "conclusion": "failure"}], "ci.yml", SHA, "candidate")
+
+    def test_latest_full_successful_retry_is_evidence_not_a_permanent_historical_failure(self):
+        failed = {"id": 1, "run_attempt": 1, "path": "ci.yml", "event": "push", "head_branch": "codex/test",
+                  "head_sha": SHA, "status": "completed", "conclusion": "failure"}
+        latest = {**failed, "run_attempt": 2, "conclusion": "success"}
+        self.assertEqual(d.select_run([failed, latest], "ci.yml", SHA, "candidate"), latest)
+        for changes in ({"status": "in_progress", "conclusion": None}, {"conclusion": "cancelled"}, {"conclusion": "timed_out"}):
+            with self.subTest(changes=changes), self.assertRaises(d.Blocked):
+                d.select_run([{**failed, "conclusion": "success"}, {**latest, **changes}], "ci.yml", SHA, "candidate")
+
+    def test_latest_attempt_still_needs_every_job_and_step(self):
+        # A retry of only one failed job does not prove the complete required
+        # matrix on that attempt. Never fill gaps with earlier attempt evidence.
+        contract = {"a": {"required": ["check-a"]}, "b": {"required": ["check-b"]}}
+        latest_jobs = [{"name": "a", "status": "completed", "conclusion": "success",
+                        "steps": [{"name": "check-a", "status": "completed", "conclusion": "success"}]}]
+        with self.assertRaises(d.Blocked):
+            d.assess_jobs(latest_jobs, ["a", "b"], [], contract)
 
     def test_reject_other_ref_and_deletion(self):
         cfg = {"repository": "owner/repo"}

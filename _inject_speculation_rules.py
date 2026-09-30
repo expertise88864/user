@@ -1,29 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Inject Speculation Rules into every article so cross-article navigation
-feels instant.
+"""Offer speculative article navigation as a progressive enhancement.
 
-The Speculation Rules API tells Chromium-based browsers (~70% of TW
-desktop + mobile share) to prerender or prefetch the most-likely-next
-page when the user shows intent (hover, focus, conservative engagement
-signal). When the user clicks, the page swap is instant — no white
-flash, no network wait.
+Supported browsers may prefetch or prerender a likely next page on a qualifying
+interaction. Browsers can decline the hint, and a navigation can still require
+network loading. Prerendering also consumes bandwidth, memory, and CPU; it does
+not promise mobile data savings, lower bounce rates, ranking gains, or a fixed
+INP improvement. Measure activated navigation latency and wasted requests.
+See https://developer.chrome.com/docs/web-platform/prerender-pages
 
-Why this matters for SEO/CTR:
-  - Bounce rate drops because the first click feels instant. Engagement
-    signals (dwell time, pages-per-session) improve, which Google uses
-    as a quality / ranking input.
-  - INP (Interaction to Next Paint) — a 2024 Core Web Vital — improves
-    dramatically because navigation is pre-prepared.
-  - Mobile data savings: prefetch is conservative, so it's only
-    triggered when the browser is confident.
-
-We inject the same rule set the homepage already uses:
-  - prerender: any /blog/* link (moderate eagerness = on viewport+hover)
-  - prefetch:  any /* link (conservative = on stronger signal)
-
-Idempotent via the dn-spec-rules marker comment. Skips pages that
-already have a <script type="speculationrules">.
+Keep the existing prerender/prefetch rules and exclusions. Skip pages that
+already contain speculationrules; mark generated blocks with dn-spec-rules.
 """
 from __future__ import annotations
 
