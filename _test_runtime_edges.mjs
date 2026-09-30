@@ -7,6 +7,21 @@ import path from 'node:path';
 const hubContext = {window:{DN:{ARTICLES:[]}}};
 vm.runInNewContext(readFileSync(new URL('./blog/blog-hub.js', import.meta.url),'utf8'), hubContext);
 const searchCatalog = hubContext.window.DN.searchArticleCatalog;
+
+test('article numbering keeps ISO-date order without initializing locale collation', () => {
+  const source = readFileSync(new URL('./blog/blog-shared.js', import.meta.url), 'utf8');
+  const context = vm.createContext({window:{DN:{}}});
+  vm.runInContext("String.prototype.localeCompare = function () { throw new Error('Unexpected locale collation during startup'); };", context);
+  vm.runInContext(source, context);
+  const dn = context.window.DN;
+  const expected = [...dn.ARTICLES].sort((a,b) => (a.date || '').localeCompare(b.date || ''));
+  expected.forEach((article,index) => assert.equal(dn.getArticleNumber(article.slug), String(index+1).padStart(3,'0')));
+  assert.equal(dn.compareDates('2026-01-31','2026-02-01'), -1);
+  assert.equal(dn.compareDates('2026-09-30','2025-12-31'), 1);
+  assert.equal(dn.compareDates('2026-09-30','2026-09-30'), 0);
+  assert.equal(dn.compareDates(undefined,'2026-09-30'), -1);
+  assert.equal(dn.compareDates(null,''), 0);
+});
 test('language refresh avoids redundant mutations but translates new content and repairs labels', () => {
   let lang = 'zh-TW', langWrites = 0, attrWrites = 0;
   const attrs = new Map([['aria-label', '搜尋'], ['data-zh-aria-label', '搜尋'], ['data-en-aria-label', 'Search']]);

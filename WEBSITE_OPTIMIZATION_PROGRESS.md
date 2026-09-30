@@ -34,7 +34,7 @@
 - 2026-09-30：快取發布檢查新增版本回滾拒絕、雙 SW generation 更新、Windows／Ubuntu 換行一致性、舊量測 loader 遷移與未版本化載入拒絕；導航生成與驗證共用中央版本，保留原有導航功能檢查。
 - 2026-09-30：修正本機 Python PATH 後完整 `python _run_quality.py build` exit 0；後續 review 找到的標籤修正使該版本證據失效，最終版本需重新取得對應檢查與遠端 CI。
 - 基準 main 的歷史 pending review trailers 已逐 SHA 核對，未解決數量為 0。Opus 5.5 的前兩次實際審查找出外站 URL 與 immutable 快取版本問題，已修正並補回歸；完整最終範圍尚未通過。最新 provider 429 的重置時間為今日台灣時間 13:10，`modelUsage` 空，不能視為通過；補審安排每日 13:15，無待審範圍時停止。
-- 快取修正後 analytics/runtime 32 項、目錄 12 項、資源發布 9 項、導航生成 8 項、admin skeleton 17 項及本機 runtime smoke 通過。完整 diff 的 Codex 審查曾因上下文容量不足中斷，需以新上下文重審完整範圍；不沿用較早版本的 APPROVE。
+- 快取修正後 analytics/runtime 32 項、目錄 12 項、資源發布 9 項、導航生成 8 項、admin skeleton 17 項及本機 runtime smoke 通過。新上下文的獨立 Codex `gpt-5.5`／high 已核對 `13ae58b75f4f05472bf9ba43769c13d1cfea4a0e` 的完整 153 檔範圍並 APPROVE；後續日期排序修改仍須重新審查。
 - 上述是本機回歸，不是 GitHub CI、Preview 或正式交付證據。
 
 ## 發布與資料保護
@@ -54,3 +54,22 @@ Enhanced Measurement 的自動搜尋與 history page_view 已停用；必須另�
 Clarity 的 URL 收集也尚未驗證，不能把 GA 自訂事件的修正說成全站所有
 collector 都已完成隱私檢查。延後載入期間的事件只存在記憶體；讀者提早離開
 仍可能遺失，不能宣稱已消除所有量測漏失。
+
+## 第一批正式驗證與效能修正
+
+- 第一批 SHA：`13ae58b75f4f05472bf9ba43769c13d1cfea4a0e`；[PR #39](https://github.com/expertise88864/user/pull/39)。六個候選 push workflows 全部成功，PR Quality 同內容首次失敗、一次完整重跑成功；保留首次失敗報告。
+- [候選 Quality](https://github.com/expertise88864/user/actions/runs/36653078266) 與 [Delivery／Preview](https://github.com/expertise88864/user/actions/runs/36653078214) 成功，完成同 SHA Preview 桌面／手機瀏覽器檢查後正常快轉 main。
+- [正式 Delivery／部署與 smoke](https://github.com/expertise88864/user/actions/runs/36654109134) 成功，但 [正式 Quality](https://github.com/expertise88864/user/actions/runs/36654109136) 的首頁 Lighthouse performance 為 61，未達既有 70 門檻。因此第一批交付尚未完成，部署成功不等於 CI 全綠。
+- 正式報告首頁 TBT 約 1743 ms、LCP 約 3751 ms，沒有 CPU 校準警告。trace 顯示首屏 layout／paint 與 shared runtime 初始化耗時；不以重跑取代修正。
+- 移除 ISO 日期排序的語系 collation 初始化；文章編號維持原排序及同日期次序，首頁／文章推薦使用同一比較契約。新增回歸先重現初始化呼叫，再確認修正後全部編號一致。
+- Windows 本機 Chrome 148 對照僅供診斷；Ubuntu CI 使用不同 Chrome／平台，不能把本機分數當成正式 CI 結果。保留插圖及文字排版，未採用改字體或移除插圖的試驗版本。
+
+## GSC 基線重新核對
+
+2026-09-30 在 Search Console UI 重新選取 `https://chendermatologist.com/`，
+比較 2026-08-29～09-25 與 2026-08-01～08-28、台灣、網頁搜尋。
+UI 同樣顯示總計 233／154 clicks、9383／4887 impressions，頁面表共 95 列；
+原 ZIP 的頁面加總 38／23 clicks 仍與總計不一致。已排除重複 CSV 欄名解析、
+選錯 property／日期及 1000 列匯出上限的解釋，但尚未證明實際差距原因。
+匿名查詢只足以解釋查詢表缺項，不能擅自套用來解釋頁面表。
+本次 GA 網頁遇到 DNS 解析失敗，Enhanced Measurement／Clarity 設定仍待核對。

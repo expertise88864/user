@@ -80,7 +80,7 @@
       .filter(function (x) { return x.s > 0; })
       .sort(function (x, y) {
         if (y.s !== x.s) return y.s - x.s;
-        return (y.a.date || '').localeCompare(x.a.date || ''); // tiebreak: newer
+        return DN.compareDates(y.a.date, x.a.date); // tiebreak: newer
       })
       .slice(0, 4)   // 2026-05-08: 4 articles (2×2 grid on desktop, 1-col on mobile) per user
       .map(function (x) { return x.a; });

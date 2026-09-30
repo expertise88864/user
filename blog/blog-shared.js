@@ -212,7 +212,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202609300830';
+        s.src = '/blog/blog-article-visuals.min.js?v=202609300935';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1061,11 +1061,19 @@
     });
   };
 
+  // Catalog dates are ISO YYYY-MM-DD strings, so lexical order is chronological.
+  // Avoid starting the locale collator while the first screen is rendering.
+  DN.compareDates = function (a, b) {
+    a = a || '';
+    b = b || '';
+    return a < b ? -1 : a > b ? 1 : 0;
+  };
+
   DN.numberMap = (function () {
     var sorted = (DN.ARTICLES || []).slice()
       .map(function (a, i) { return { slug: a.slug, date: a.date || '', _orig: i }; })
       .sort(function (a, b) {
-        return (a.date.localeCompare(b.date)) || (a._orig - b._orig);
+        return DN.compareDates(a.date, b.date) || (a._orig - b._orig);
       });
     var map = {};
     sorted.forEach(function (a, i) {
@@ -1094,7 +1102,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202609300830';
+        s.src = '/blog/blog-article-reading.min.js?v=202609300935';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1130,7 +1138,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202609300830';
+        s.src = '/blog/blog-article-footer.min.js?v=202609300935';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1160,7 +1168,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202609300830';
+        s.src = '/blog/blog-calculators.min.js?v=202609300935';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1245,7 +1253,7 @@
     });
     // Then recent by date
     (DN.ARTICLES || []).slice()
-      .sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); })
+      .sort(function (a, b) { return DN.compareDates(b.date, a.date); })
       .forEach(function (a) {
         if (!seen[a.slug] && urls.length < limit) {
           seen[a.slug] = 1;
@@ -1295,7 +1303,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202609300830';
+        s.src = '/blog/blog-hub.min.js?v=202609300935';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
