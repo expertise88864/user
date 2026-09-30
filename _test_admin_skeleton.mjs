@@ -4,6 +4,8 @@ import vm from 'node:vm';
 import test from 'node:test';
 
 const source = readFileSync(new URL('./admin.html', import.meta.url), 'utf8');
+const releaseVersion = JSON.parse(readFileSync(new URL('./_asset_release.json', import.meta.url), 'utf8')).version;
+assert.match(releaseVersion, /^\d{12}$/);
 const start = source.indexOf('function generateNewArticleSkeleton(opts){');
 const end = source.indexOf('// ───', start);
 const context = vm.createContext({});
@@ -29,7 +31,7 @@ for (const type of ['myth','rx','overview','note','research']) {
     assert.ok(html.includes('id="dn-nav-burger"'));
     assert.ok(html.includes('id="dn-nav-theme"'));
     assert.ok(html.includes('id="dn-nav-critical"'));
-    assert.ok(html.includes('/assets/inline/nav-burger.js?v=202609100440'));
+    assert.ok(html.includes('/assets/inline/nav-burger.js?v=' + releaseVersion));
   });
 }
 test('unsafe slug rejected before constructing markup', () => {

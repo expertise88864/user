@@ -12,7 +12,7 @@ from _html_scan import iter_tags, tag_name, attributes, blank_script_style, mask
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-ASSET_VERSION = "202609121640"
+ASSET_VERSION = "202609300830"
 
 
 def normalize_font_loading(src: str) -> str:
@@ -86,6 +86,7 @@ BLOG_SHARED_SCRIPT_RE = re.compile(
 )
 BLOG_SHARED_SRC_RE = re.compile(r'(/blog/blog-shared\.min\.js)(?:\?v=\d+)?')
 SHARED_CSS_SRC_RE = re.compile(r'(/assets/dn-(?:below-fold|print)\.css)(?:\?v=\d+)?')
+INLINE_SCRIPT_SRC_RE = re.compile(r'(/assets/inline/[a-z0-9-]+\.js)(?:\?v=\d+)?', re.I)
 
 
 def html_files() -> list[str]:
@@ -122,6 +123,7 @@ def normalize_file(path: str) -> bool:
     next_src = PRELOAD_BLOG_SHARED_RE.sub("", next_src)
     next_src = BLOG_SHARED_SRC_RE.sub(rf"\1?v={ASSET_VERSION}", next_src)
     next_src = SHARED_CSS_SRC_RE.sub(rf"\1?v={ASSET_VERSION}", next_src)
+    next_src = INLINE_SCRIPT_SRC_RE.sub(rf"\1?v={ASSET_VERSION}", next_src)
     # 2026-05-25 — old heuristic was: "if DN.initBlog is not in the HTML
     # source, the blog-shared.min.js script must be unused, so strip it."
     # That broke after audit follow-up E extracted the inline DN.initBlog

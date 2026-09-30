@@ -18,8 +18,8 @@ Usage:  python _normalize_analytics.py            # dry-run (report only)
         python _normalize_analytics.py --apply     # write changes
 """
 import os, io, sys, re
+from _normalize_css_links import ASSET_VERSION
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 APPLY = '--apply' in sys.argv
 
@@ -36,7 +36,11 @@ EXCLUDE = {
     'offline.html',
 }
 
-KEEPER = '<script src="/assets/inline/analytics-loader.js" defer></script>'
+KEEPER = f'<script src="/assets/inline/analytics-loader.js?v={ASSET_VERSION}" defer></script>'
+LOADER_TAG_RE = re.compile(
+    r'''<script\b[^>]*\bsrc\s*=\s*(["'])/assets/inline/analytics-loader\.js(?:\?[^"']*)?\1[^>]*>\s*</script>''',
+    re.I,
+)
 
 # Exact legacy src-tags to remove.
 LEGACY_TAGS = [
@@ -66,7 +70,7 @@ def collect_html():
 
 def normalize(src):
     """Return (new_src, n_removed_tags, n_removed_inline)."""
-    s = src
+    s = LOADER_TAG_RE.sub(lambda _: KEEPER, src)
     n_tags = 0
     for tag in LEGACY_TAGS:
         c = s.count(tag)
@@ -146,4 +150,5 @@ def main():
 
 
 if __name__ == '__main__':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
     main()

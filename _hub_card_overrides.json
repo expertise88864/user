@@ -1,0 +1,357 @@
+{
+  "index.html": {
+    "photodynamic-therapy-overview": {
+      "tag": "光動力治療 / PDT"
+    },
+    "semaglutide-hair-loss": {
+      "tag": "GLP-1 與落髮 / GLP-1 & hair loss"
+    },
+    "vitiligo-maintenance-clinical": {
+      "tag": "白斑復發 / Vitiligo relapse"
+    },
+    "ai-dermatology-roles": {
+      "title_en": "Can AI help dermatologists diagnose today? Three realistic answers from the 2026 JAAD eye-tracking study"
+    },
+    "dermatologic-oral-examination": {
+      "title_en": "Mouth sores, white patches, peeling gums — when to see a dermatologist: oral mucosa exam & biopsy guide"
+    },
+    "toenail-mechanical-disorders": {
+      "title_en": "Toenail mechanical disorders: 12-type atlas — footwear, foot deformity, joints, diabetes"
+    },
+    "perioral-dermatitis-guide": {
+      "title": "嘴角紅疹是痘痘還是濕疹？口周皮膚炎成因、症狀與治療",
+      "title_en": "Periorificial (perioral) dermatitis: complete patient guide"
+    },
+    "atopic-dermatitis-special-populations": {
+      "tag_en": "Atopic dermatitis",
+      "title_en": "AD comorbidities & special populations — atopic march, mental health, pregnancy, infections"
+    },
+    "atopic-dermatitis-systemic": {
+      "tag_en": "Atopic dermatitis",
+      "title_en": "Systemic therapy for AD — biologics, JAK inhibitors, phototherapy"
+    },
+    "atopic-dermatitis-topical": {
+      "tag_en": "Atopic dermatitis",
+      "title_en": "Topical therapy for AD — moisturizers, steroids, TCI, PDE4, JAK creams"
+    },
+    "psoriasis-special-populations": {
+      "tag_en": "Psoriasis",
+      "title_en": "Psoriasis comorbidities + special populations — PsA, CV, pregnancy, pediatric, nail, erythroderma"
+    },
+    "psoriasis-systemic": {
+      "tag_en": "Psoriasis",
+      "title": "乾癬全身性治療 — 光療、口服、生物製劑、健保給付",
+      "title_en": "Psoriasis systemic therapy — phototherapy, oral, biologics, NHI coverage"
+    },
+    "psoriasis-topical": {
+      "tag_en": "Psoriasis",
+      "title": "乾癬外用藥治療 — 類固醇、維生素 D、特殊部位用法",
+      "title_en": "Psoriasis topical therapy — steroids, vitamin D, special site applications"
+    },
+    "psoriasis-overview": {
+      "tag_en": "Psoriasis",
+      "title": "乾癬完整衛教 — 分型、嚴重度評估、誘發因子與診斷",
+      "title_en": "Psoriasis complete guide — subtypes, severity assessment, triggers, diagnosis"
+    },
+    "skin-biopsy-excision": {
+      "title_en": "Skin biopsy & tumor excision — why, how, post-op"
+    },
+    "actinic-keratosis-scc": {
+      "title_en": "Actinic keratosis (AK) + squamous cell carcinoma (SCC) — complete guide"
+    },
+    "contact-dermatitis": {
+      "title_en": "Contact dermatitis (allergic vs irritant) complete guide"
+    },
+    "nhi-derm-drugs": {
+      "title": "皮膚科常用藥物健保規範完整整理 — 給付條件、劑量、PASS",
+      "title_en": "Dermatology drugs NHI rules — coverage criteria, dose, prior authorization (PASS)"
+    },
+    "pediatric-eczema": {
+      "tag": "兒童異膚",
+      "tag_en": "Pediatric AD",
+      "title_en": "Pediatric Atopic Dermatitis — Complete Care Guide"
+    },
+    "epidermoid-cyst": {
+      "title": "粉瘤完整衛教 — 為什麼不能自己擠？何時該手術切除？",
+      "title_en": "Epidermoid cyst complete guide — why not to squeeze, when to excise"
+    },
+    "dermatology-faq": {
+      "tag": "FAQ",
+      "title": "皮膚科 25 個最常見問題 — 為什麼 A 酸晚上擦？ 類固醇能擦多久？",
+      "title_en": "Top 25 dermatology FAQs — why apply retinoids at night? How long can you use topical steroids?"
+    },
+    "skin-whitening-agents": {
+      "tag": "美白成分",
+      "title": "美白成分完整解析 — 8 大成分機轉、濃度、安全使用",
+      "title_en": "Whitening agents complete review — 8 ingredients, mechanism, concentration, safe use"
+    },
+    "biologics-overview": {
+      "title": "皮膚科生物製劑與小分子標靶藥總覽 — 機轉、頻率、價格",
+      "title_en": "Dermatology biologics + targeted therapy overview — mechanism, frequency, cost"
+    },
+    "topical-steroids-guide": {
+      "title": "外用類固醇完整指南 — 7 級分類、FTU、TCI 比較",
+      "title_en": "Topical steroid complete guide — 7-level potency, FTU, TCI comparison"
+    },
+    "targeted-therapy-skin": {
+      "tag": "標靶藥物副作用",
+      "tag_en": "Targeted therapy SE",
+      "title": "標靶藥物（TKI）皮膚副作用完整衛教 — TLCS + TDA 共識",
+      "title_en": "Targeted therapy (TKI) skin side effects complete guide — TLCS + TDA consensus"
+    },
+    "hidradenitis-suppurativa": {
+      "tag": "化膿性汗腺炎 HS",
+      "tag_en": "Hidradenitis suppurativa",
+      "title": "化膿性汗腺炎（HS）完整衛教 — TDA 共識",
+      "title_en": "Hidradenitis suppurativa (HS) complete guide — TDA consensus"
+    },
+    "mpox-care": {
+      "tag": "猴痘 Mpox",
+      "title": "猴痘（Mpox）皮膚照護完整指南 — TDA 官方建議",
+      "title_en": "Mpox skin care complete guide — TDA official recommendations"
+    },
+    "vitiligo": {
+      "tag": "白斑 / Vitiligo",
+      "title": "白斑（Vitiligo）完整衛教 — JAK 抑制劑時代",
+      "title_en": "Vitiligo complete guide — the JAK inhibitor era"
+    },
+    "alopecia-areata": {
+      "tag": "圓禿 / 鬼剃頭",
+      "title": "圓禿（鬼剃頭）完整衛教 — JAK 抑制劑時代",
+      "title_en": "Alopecia areata complete guide — the JAK inhibitor era"
+    },
+    "acne-scar-treatment": {
+      "tag": "痘疤治療",
+      "tag_en": "Acne scar treatment",
+      "title": "痘疤完整治療指引 — 4 種凹疤、紅疤、黑疤、肥厚疤",
+      "title_en": "Complete Acne Scar Treatment Guide — 4 atrophic, erythema, pigment, hypertrophic"
+    },
+    "shingles-myths": {
+      "tag": "帶狀皰疹 / 皮蛇",
+      "title": "帶狀皰疹（皮蛇）6 大迷思 — 繞一圈會死？疫苗值得嗎？",
+      "title_en": "Shingles 6 myths — will it kill if it wraps around? Is the vaccine worth it?"
+    },
+    "warts-myths": {
+      "tag": "病毒疣 / HPV",
+      "tag_en": "Viral warts / HPV",
+      "title": "病毒疣 6 大迷思 — 香蕉皮、雷射打一次就好？",
+      "title_en": "Viral warts 6 myths — banana peel? One laser treatment enough?"
+    },
+    "psoriasis-myths": {
+      "title": "乾癬 7 大迷思 — 不是癬、不會傳染、生物製劑安全嗎？",
+      "title_en": "Psoriasis 7 myths — not a fungus, not contagious, are biologics safe?"
+    },
+    "urticaria-myths": {
+      "title": "蕁麻疹 6 大迷思 — 一定是過敏嗎？抗組織胺嗜睡？",
+      "title_en": "Urticaria 6 myths — is it always an allergy? Do antihistamines cause drowsiness?"
+    },
+    "atopic-dermatitis-overview": {
+      "tag_en": "Atopic dermatitis",
+      "title_en": "Atopic Dermatitis Complete Guide — Treatment, Comorbidity, 6 Myths"
+    },
+    "tinea-myths": {
+      "tag": "香港腳 / 灰指甲",
+      "tag_en": "Tinea / Onychomycosis",
+      "title": "香港腳 / 灰指甲 7 大迷思 — 塗藥膏就好？熱水殺菌？不痛不癢就不用治？",
+      "title_en": "7 tinea / onychomycosis myths — topical only? Hot water? No pain = no treatment?"
+    },
+    "hairloss-myths": {
+      "tag": "落髮 / 雄性禿",
+      "title": "落髮 / 雄性禿 7 大迷思 — Minoxidil、Finasteride、植髮真相",
+      "title_en": "7 hair loss myths — Minoxidil, Finasteride, transplant"
+    },
+    "rosacea-myths": {
+      "tag": "玫瑰痤瘡",
+      "title": "玫瑰痤瘡（酒糟肌）6 大迷思 — 不是過敏、不是蟎蟲、能治好",
+      "title_en": "6 rosacea myths — not allergy, not mites, treatable"
+    },
+    "melasma-myths": {
+      "title": "肝斑 7 大迷思 — 雷射打不掉？藥膏越濃越好？停藥就反黑？",
+      "title_en": "7 melasma myths — laser, creams, rebound, pregnancy"
+    },
+    "sunscreen-myths": {
+      "title": "防曬 8 大迷思 — 室內、陰天、SPF、物理化學一次釐清",
+      "title_en": "8 sunscreen myths — indoors, cloudy days, SPF, mineral vs chemical"
+    },
+    "acne-myths": {
+      "title": "痘痘 8 大迷思 — 民眾最常誤會的觀念",
+      "title_en": "8 acne myths the public still believes"
+    },
+    "isotretinoin-patient": {
+      "title": "口服 A 酸完整衛教 — 適合誰吃、副作用、療程、復發率、雷射禁忌",
+      "title_en": "Oral isotretinoin — every clinic FAQ in plain language"
+    },
+    "topical-acids-patient": {
+      "tag": "外用酸類"
+    }
+  },
+  "blog/index.html": {
+    "acne-myths": {
+      "title": "痘痘 8 大迷思 — 民眾最常誤會的觀念",
+      "title_en": "8 acne myths the public still believes"
+    },
+    "sunscreen-myths": {
+      "title": "防曬 8 大迷思 — 室內、陰天、SPF、物理化學一次釐清",
+      "title_en": "8 sunscreen myths — indoors, cloudy days, SPF, mineral vs chemical"
+    },
+    "melasma-myths": {
+      "title": "肝斑 7 大迷思 — 雷射打不掉？藥膏越濃越好？停藥就反黑？",
+      "title_en": "7 melasma myths — laser, creams, rebound, pregnancy"
+    },
+    "rosacea-myths": {
+      "tag": "玫瑰痤瘡",
+      "title": "玫瑰痤瘡 / 酒糟肌 6 大迷思 — 不是過敏、不是蟎蟲、能治好",
+      "title_en": "6 rosacea myths — not allergy, not mites, treatable"
+    },
+    "hairloss-myths": {
+      "tag": "落髮 / 雄性禿",
+      "title": "落髮 / 雄性禿 7 大迷思 — Minoxidil、Finasteride、植髮真相",
+      "title_en": "7 hair loss myths — Minoxidil, Finasteride, transplant"
+    },
+    "acne-scar-treatment": {
+      "tag": "痘疤治療",
+      "tag_en": "Acne scar treatment",
+      "title": "痘疤完整治療指引 — 4 種凹疤、紅疤、黑疤、肥厚疤怎麼選",
+      "title_en": "Complete acne-scar treatment guide — choosing among 4 atrophic, erythema, pigment, and hypertrophic scars"
+    },
+    "alopecia-areata": {
+      "tag": "圓禿 / 鬼剃頭",
+      "title": "圓禿（鬼剃頭）完整衛教 — JAK 抑制劑時代",
+      "title_en": "Alopecia areata complete guide — the JAK inhibitor era"
+    },
+    "vitiligo": {
+      "tag": "白斑 / Vitiligo",
+      "title": "白斑（Vitiligo）完整衛教 — JAK 抑制劑時代",
+      "title_en": "Vitiligo complete guide — the JAK inhibitor era"
+    },
+    "topical-steroids-guide": {
+      "title": "外用類固醇完整指南 — 7 級分類、FTU、TCI 比較",
+      "title_en": "Topical steroid complete guide — 7-level potency, FTU, TCI comparison"
+    },
+    "biologics-overview": {
+      "title": "皮膚科生物製劑與小分子標靶藥總覽 — 機轉、頻率、價格",
+      "title_en": "Dermatology biologics + targeted therapy overview — mechanism, frequency, cost"
+    },
+    "skin-whitening-agents": {
+      "tag": "美白成分",
+      "tag_en": "Brightening ingredients",
+      "title": "美白成分完整解析 — 8 大成分機轉、濃度、安全使用",
+      "title_en": "Whitening agents complete review — 8 ingredients, mechanism, concentration, safe use"
+    },
+    "dermatology-faq": {
+      "tag": "FAQ",
+      "title": "皮膚科 25 個最常見問題 — 為什麼 A 酸晚上擦？ 類固醇能擦多久？",
+      "title_en": "Top 25 dermatology FAQs — why apply retinoids at night, how long can you use topical steroids?"
+    },
+    "epidermoid-cyst": {
+      "title": "粉瘤完整衛教 — 為什麼不能自己擠？何時該手術切除？",
+      "title_en": "Epidermoid cyst complete guide — why not to squeeze, when to excise"
+    },
+    "nhi-derm-drugs": {
+      "tag_en": "Taiwan NHI rules",
+      "title": "皮膚科常用藥物健保規範完整整理 — 給付條件、劑量、PASS",
+      "title_en": "Dermatology drugs NHI rules — coverage criteria, dose, prior authorization (PASS)"
+    },
+    "laser-dermatology": {
+      "tag_en": "Laser / Light",
+      "title": "皮膚科雷射完整對照 — 波長 × 適應症 × 證據強度",
+      "title_en": "Dermatologic laser comparison — wavelength × indication × evidence"
+    },
+    "pediatric-eczema": {
+      "tag": "兒童異膚",
+      "tag_en": "Pediatric eczema",
+      "title_en": "Infant & pediatric atopic dermatitis — complete care guide"
+    },
+    "atopic-dermatitis-overview": {
+      "tag_en": "Atopic dermatitis",
+      "title_en": "Atopic Dermatitis Complete Guide — Treatment, Comorbidity, 6 Myths"
+    },
+    "cutaneous-t-cell-lymphoma": {
+      "title": "皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教 — TDA + 血液腫瘤學會 2024",
+      "title_en": "Cutaneous T-cell Lymphoma (CTCL/MF) — TDA + HST 2024 Consensus"
+    },
+    "targeted-therapy-skin": {
+      "tag": "標靶藥物副作用",
+      "tag_en": "Targeted-therapy side effects",
+      "title": "標靶藥物（TKI）皮膚副作用完整衛教 — TLCS + TDA 共識",
+      "title_en": "Targeted-therapy (TKI) cutaneous side effects — TLCS + TDA consensus"
+    },
+    "mpox-care": {
+      "tag": "猴痘 Mpox",
+      "tag_en": "Monkeypox / Mpox",
+      "title": "猴痘（Mpox）皮膚照護完整指南 — TDA 官方建議",
+      "title_en": "Monkeypox (Mpox) skin care — full guide per TDA recommendations"
+    },
+    "hidradenitis-suppurativa": {
+      "tag": "化膿性汗腺炎 HS",
+      "tag_en": "Hidradenitis suppurativa (HS)",
+      "title": "化膿性汗腺炎（HS）完整衛教 — TDA 共識",
+      "title_en": "Hidradenitis suppurativa (HS) — patient guide per TDA consensus"
+    },
+    "shingles-myths": {
+      "tag": "帶狀皰疹 / 皮蛇",
+      "tag_en": "Shingles / Herpes zoster",
+      "title": "帶狀皰疹（皮蛇）6 大迷思 — 繞一圈會死？疫苗值得嗎？神經痛多久？",
+      "title_en": "6 Shingles Myths — does it kill if it circles? is the vaccine worth it? how long does neuralgia last?"
+    },
+    "warts-myths": {
+      "tag": "病毒疣 / HPV",
+      "tag_en": "Warts / HPV",
+      "title": "病毒疣 6 大迷思 — 香蕉皮、雷射打一次就好？HPV 疫苗值得？",
+      "title_en": "6 Wart Myths — banana peel, one-laser cure? Is the HPV vaccine worth it?"
+    },
+    "skin-biopsy-excision": {
+      "title_en": "Skin biopsy & tumor excision — why, how, post-op"
+    },
+    "psoriasis-overview": {
+      "tag_en": "Psoriasis",
+      "title": "乾癬完整衛教 — 分型、嚴重度評估、誘發因子與診斷",
+      "title_en": "Psoriasis overview — classification, severity, triggers"
+    },
+    "psoriasis-topical": {
+      "tag_en": "Psoriasis",
+      "title": "乾癬外用藥治療 — 類固醇、維生素 D、特殊部位用法",
+      "title_en": "Topical therapy for psoriasis — steroids, vitamin D, special sites"
+    },
+    "psoriasis-systemic": {
+      "tag_en": "Psoriasis",
+      "title": "乾癬全身性治療 — 光療、口服、生物製劑、健保給付",
+      "title_en": "Systemic therapy for psoriasis — phototherapy, oral, biologics, NHI"
+    },
+    "psoriasis-special-populations": {
+      "tag_en": "Psoriasis"
+    },
+    "atopic-dermatitis-topical": {
+      "tag_en": "Atopic dermatitis",
+      "title_en": "Topical therapy for AD — moisturizers, steroids, TCI, PDE4, JAK creams"
+    },
+    "atopic-dermatitis-systemic": {
+      "tag_en": "Atopic dermatitis",
+      "title_en": "Systemic therapy for AD — biologics, JAK inhibitors, phototherapy"
+    },
+    "atopic-dermatitis-special-populations": {
+      "tag_en": "Atopic dermatitis"
+    },
+    "psoriasis-myths": {
+      "title": "乾癬 7 大迷思 — 不是癬、不會傳染、生物製劑很安全嗎？",
+      "title_en": "7 Psoriasis Myths — not tinea, not contagious, are biologics safe?"
+    },
+    "urticaria-myths": {
+      "title": "蕁麻疹 6 大迷思 — 一定是過敏？抗組織胺嗜睡？慢性能治好？",
+      "title_en": "6 Urticaria Myths — is it always allergy? do antihistamines cause drowsiness? can chronic urticaria be cured?"
+    },
+    "tinea-myths": {
+      "tag": "香港腳 / 灰指甲",
+      "tag_en": "Tinea / Onychomycosis",
+      "title": "香港腳 / 灰指甲 7 大迷思 — 塗藥膏就好？熱水殺菌？不痛不癢就不用治？",
+      "title_en": "7 tinea / onychomycosis myths — topical only? Hot water? No pain = no treatment?"
+    },
+    "topical-acids-patient": {
+      "tag": "外用酸類"
+    },
+    "isotretinoin-patient": {
+      "title": "口服 A 酸完整衛教 — 適合誰吃、副作用、療程、復發率、雷射禁忌",
+      "title_en": "Oral isotretinoin — every clinic FAQ in plain language"
+    }
+  }
+}

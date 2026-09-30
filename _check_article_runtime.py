@@ -20,6 +20,7 @@ from __future__ import annotations
 import re
 import sys
 from pathlib import Path
+from _normalize_css_links import ASSET_VERSION
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -88,7 +89,7 @@ def check_article(path: Path) -> list[str]:
     elif not all(f'id="{control}"' in header[1] for control in
                  ['dn-nav-burger', 'dn-nav-search', 'dn-nav-theme', 'langToggle']):
         errs.append(f"{rel}: missing shared navigation controls")
-    if '/assets/inline/nav-burger.js?v=202609100440' not in text:
+    if f'/assets/inline/nav-burger.js?v={ASSET_VERSION}' not in text:
         errs.append(f"{rel}: missing versioned navigation controller")
     # Indexability does not exempt an article's visible navigation. Preserve
     # the older noindex exception only for the remaining runtime/prose checks.

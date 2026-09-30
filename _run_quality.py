@@ -214,6 +214,7 @@ BUILD_GENERATED_STEPS: list[list[str]] = [
     # instead of the previous build's. Kept after pagefind to preserve the
     # existing pagefind→minify relative order.
     [PY, "_minify.py"],
+    [PY, "_gen_asset_release.py", "--write"],
     # CODE_REVIEW TD-04 — must run AFTER _minify: minification rewrites inline
     # script bodies, and a CSP hash has to be of the bytes that actually ship.
     # _check_deployment.py (CHECK_STEPS) then asserts the CSP covers every
@@ -223,10 +224,12 @@ BUILD_GENERATED_STEPS: list[list[str]] = [
 ]
 
 CHECK_STEPS: list[list[str]] = [
+    [PY, "_test_asset_release.py"],
+    [PY, "_gen_asset_release.py", "--check"],
     [PY, "_test_release.py"],
     [PY, "_test_translation_failures.py"],
     [PY, "_test_link_fragments.py"],
-    ["node", "--test", "_test_runtime_edges.mjs", "_test_admin_skeleton.mjs", "_test_admin_sessions.cjs", "_test_admin_persistence.cjs", "_test_navigation.cjs", "_test_search_integrity.cjs"],
+    ["node", "--test", "_test_runtime_edges.mjs", "_test_admin_skeleton.mjs", "_test_admin_sessions.cjs", "_test_admin_persistence.cjs", "_test_navigation.cjs", "_test_search_integrity.cjs", "_test_analytics.cjs"],
     [PY, "_test_navigation_generation.py"],
     [PY, "_test_search_scope.py"],
     [PY, "_test_og_card_sources.py"],

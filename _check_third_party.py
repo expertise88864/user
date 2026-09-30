@@ -37,6 +37,7 @@ import re
 import sys
 import urllib.parse
 from pathlib import Path
+from _normalize_css_links import ASSET_VERSION
 
 
 ROOT = Path(__file__).resolve().parent
@@ -565,6 +566,13 @@ def main() -> int:
         # Character references decoded once, up front — every match below runs
         # against what the browser actually sees, not the source spelling.
         decoded = decode_page(src)
+        for script in SCRIPT_SRC_RE.finditer(decoded):
+            raw_url = script[2]
+            parts = urllib.parse.urlsplit(raw_url)
+            if not parts.scheme and not parts.netloc and resolve_href(rel, parts.path) in CANONICAL_TRACKER_FILES:
+                query = urllib.parse.parse_qs(parts.query)
+                if query.get("v") != [ASSET_VERSION]:
+                    errors.append(f"{rel}: analytics loader must use current ?v={ASSET_VERSION}")
 
         # --- 1 + 2. HTML-level rules (unchanged, still meaningful). ----------
         if EAGER_CLARITY_RE.search(decoded):

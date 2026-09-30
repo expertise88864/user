@@ -9,10 +9,11 @@ import json
 import re
 
 from _inject_nav_critical import BLOCK
+from _normalize_css_links import ASSET_VERSION
 
 ROOT = Path(__file__).resolve().parent
 HEADER = re.compile(r'<header\b[^>]*>.*?</header>', re.S | re.I)
-NAV_VERSION = '202609100440'
+NAV_VERSION = ASSET_VERSION
 NAV_SCRIPT = f'<script defer src="/assets/inline/nav-burger.js?v={NAV_VERSION}"></script>'
 
 

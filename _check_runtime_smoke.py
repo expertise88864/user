@@ -201,9 +201,10 @@ def run_smoke(base_url: str) -> list[str]:
     sw_body, content_type = fetch(base_url, "/sw.js")
     if "javascript" not in content_type:
         errors.append(f"service-worker: expected JavaScript content-type, got {content_type!r}")
+    release = json.loads((ROOT / '_asset_release.json').read_text(encoding='utf-8'))
     errors.extend(assert_contains("service-worker", sw_body, [
-        "const CACHE = 'cd-v172'",
-        "const RUNTIME = 'cd-runtime-v170'",
+        "const CACHE = '" + release['caches']['CACHE'] + "'",
+        "const RUNTIME = '" + release['caches']['RUNTIME'] + "'",
         "/[?&]v=/",
         "url.pathname === '/assets/search-index.json'",
         "url.pathname.startsWith('/admin')",

@@ -1,7 +1,7 @@
 """Keep public article cards in raw HTML; JavaScript only enhances navigation.
 
-Preserve existing editorial cards and artwork. Fill missing cards from the
-catalog's existing bilingual titles, and remove unpublished cards from hubs.
+Preserve artwork and explicit editorial overrides while reconciling metadata
+with the catalog. Remove unpublished cards from hubs.
 Run before EN generation. --check verifies both language mirrors without writes.
 """
 from __future__ import annotations
@@ -16,6 +16,57 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parent
 HUBS = {"index.html": "dn-article-list", "blog/index.html": "articleList"}
+OVERRIDE_FIELDS = {"title", "title_en", "tag", "tag_en"}
+
+
+def load_overrides(catalog: list[dict], root: Path = ROOT) -> dict:
+    overrides = json.loads((root / "_hub_card_overrides.json").read_text(encoding="utf-8"))
+    slugs = {item["slug"] for item in catalog}
+    if not isinstance(overrides, dict) or set(overrides) - set(HUBS):
+        raise ValueError("Invalid card override hubs")
+    for hub, cards in overrides.items():
+        if not isinstance(cards, dict) or set(cards) - slugs:
+            raise ValueError(f"Unknown card override slug: {hub}")
+        for slug, fields in cards.items():
+            if not isinstance(fields, dict) or set(fields) - OVERRIDE_FIELDS:
+                raise ValueError(f"Invalid card override fields: {hub}/{slug}")
+            if any(not isinstance(value, str) or not value.strip() for value in fields.values()):
+                raise ValueError(f"Empty card override: {hub}/{slug}")
+    return overrides
+
+
+def set_attribute(tag: str, name: str, value: str) -> str:
+    value = html.escape(value, quote=True)
+    pattern = rf'''\s+{re.escape(name)}\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)'''
+    tag = re.sub(pattern, "", tag, flags=re.I)
+    return tag[:-1] + f' {name}="{value}">'
+
+
+def sync_card(card: str, item: dict, overrides: dict, language: str = "zh") -> str:
+    metadata = {**item, **overrides}
+    opening = re.match(r"<a\b[^>]*>", card, flags=re.I)
+    if not opening:
+        raise ValueError(f"Missing card anchor: {item['slug']}")
+    tag = set_attribute(opening[0], "data-cat", item.get("cat") or "note")
+    tag = set_attribute(tag, "data-tag-en", metadata.get("tag_en") or "")
+    card = tag + card[opening.end():]
+
+    def title(match):
+        tag = set_attribute(match[1], "data-zh", metadata["title"])
+        tag = set_attribute(tag, "data-en", metadata["title_en"])
+        return tag + html.escape(metadata["title_en" if language == "en" else "title"]) + match[3]
+
+    card, count = re.subn(r"(<h[23]\b[^>]*>)([\s\S]*?)(</h[23]>)", title, card, count=1, flags=re.I)
+    if count != 1:
+        raise ValueError(f"Missing card title: {item['slug']}")
+    if metadata.get("tag"):
+        def topic(match):
+            tag = set_attribute(match[1], "data-zh", metadata["tag"])
+            tag = set_attribute(tag, "data-en", metadata.get("tag_en") or metadata["tag"])
+            display = (metadata.get("tag_en") or metadata["tag"]) if language == "en" else metadata["tag"]
+            return tag + html.escape(display) + match[3]
+        card = re.sub(r'(<span\b[^>]*class="chip tag"[^>]*>)([\s\S]*?)(</span>)', topic, card, count=1)
+    return card
 
 
 def load_catalog(root: Path = ROOT) -> list[dict]:
@@ -154,10 +205,12 @@ def render_card(item: dict) -> str:
     )
 
 
-def sync_source(source: str, element_id: str, articles: list[dict]) -> str:
+def sync_source(source: str, element_id: str, articles: list[dict], overrides: dict | None = None) -> str:
     parsed = CardList(source, element_id)
     existing = set()
     wanted = {item["slug"] for item in articles}
+    catalog = {item["slug"]: item for item in articles}
+    overrides = overrides or {}
     removals = []
     for slug, start, end in parsed.cards:
         # Legacy hubs can contain a second minimal card for the same article.
@@ -166,11 +219,17 @@ def sync_source(source: str, element_id: str, articles: list[dict]) -> str:
             removals.append((start, end))
         else:
             existing.add(slug)
-    # Preserve complete editorial cards and artwork while filling the catalog.
-    additions = "".join(render_card(item) for item in articles if item["slug"] not in existing)
+    # Reconcile metadata while retaining artwork, dates, descriptions and layout.
+    replacements = [(start, end, "") for start, end in removals]
+    for slug, start, end in parsed.cards:
+        if (start, end) not in removals:
+            card = sync_card(source[start:end], catalog[slug], overrides.get(slug, {}))
+            replacements.append((start, end, card))
+    additions = "".join(render_card({**item, **overrides.get(item["slug"], {})})
+                        for item in articles if item["slug"] not in existing)
     updated = source[:parsed.end] + additions + source[parsed.end:]
-    for start, end in reversed(removals):
-        updated = updated[:start] + updated[end:]
+    for start, end, card in sorted(replacements, reverse=True):
+        updated = updated[:start] + card + updated[end:]
     if element_id == 'dn-article-list':
         # Homepage previously moved every card at parse time. Emit that order
         # directly; catalog position breaks date ties without oscillating on
@@ -192,21 +251,35 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
-    articles = public_catalog(load_catalog(), ROOT)
+    catalog = load_catalog()
+    articles = public_catalog(catalog, ROOT)
+    overrides = load_overrides(catalog)
     expected = {item["slug"] for item in articles}
     pending = []
     for relative, element_id in HUBS.items():
         path = ROOT / relative
         with path.open(encoding="utf-8", newline="") as stream:
             source = stream.read()
-        updated = sync_source(source, element_id, articles)
+        updated = sync_source(source, element_id, articles, overrides.get(relative))
         pending.append((path, updated, source != updated))
         if args.check:
+            if source != updated:
+                raise ValueError(f"{relative}: stale public card metadata; regenerate hubs")
             for target in (path, ROOT / "en" / relative):
                 parsed = CardList(target.read_text(encoding="utf-8"), element_id)
                 slugs = [slug for slug, _, _ in parsed.cards]
                 if set(slugs) != expected or len(slugs) != len(expected):
                     raise ValueError(f"{target.relative_to(ROOT)}: stale public article cards")
+                if 'en' in target.relative_to(ROOT).parts:
+                    english_source = target.read_text(encoding="utf-8")
+                    by_slug = {item["slug"]: item for item in articles}
+                    for slug, start, end in parsed.cards:
+                        card = english_source[start:end]
+                        normalized = sync_card(card, by_slug[slug], overrides.get(relative, {}).get(slug, {}), "en")
+                        # The EN generator may serialize a text '&' literally.
+                        # Compare decoded markup, not equivalent entity spellings.
+                        if html.unescape(card) != html.unescape(normalized):
+                            raise ValueError(f"{target.relative_to(ROOT)}: stale card metadata: {slug}")
     # Validate every target before writing any of them.
     if not args.check:
         for path, updated, changed in pending:

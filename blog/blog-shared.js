@@ -212,7 +212,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202609121640';
+        s.src = '/blog/blog-article-visuals.min.js?v=202609300830';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -541,7 +541,6 @@
       if (m) {
         try {
           if (typeof gtag === 'function') gtag('event', 'search_result_click', {
-            search_term: (input.value || '').slice(0, 80),
             result_url: m.url,
             result_position: activeIdx,
           });
@@ -1095,7 +1094,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202609121640';
+        s.src = '/blog/blog-article-reading.min.js?v=202609300830';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1131,7 +1130,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202609121640';
+        s.src = '/blog/blog-article-footer.min.js?v=202609300830';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1161,7 +1160,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202609121640';
+        s.src = '/blog/blog-calculators.min.js?v=202609300830';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1296,7 +1295,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202609121640';
+        s.src = '/blog/blog-hub.min.js?v=202609300830';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1525,7 +1524,8 @@
   // Legacy inline CTA injection removed; calculator CTAs now live in the article footer/tool flow.
 
   DN.bindGAEvents = function () {
-    if (typeof gtag !== 'function') return;
+    if (DN._gaEventsBound) return;
+    DN._gaEventsBound = true;
     function fire(name, params) {
       try { gtag('event', name, params || {}); } catch (e) { /* ignore */ }
     }
@@ -1549,41 +1549,15 @@
         fire('rss_subscribe_click', { feed: a.getAttribute('href'), page_path: location.pathname });
       });
     });
-    // Lang toggle
-    const lt = document.getElementById('langToggle');
-    if (lt && lt.tagName === 'SELECT') {
-      lt.addEventListener('change', function () {
-        fire('lang_switch', { lang: lt.value });
-      });
-    }
-    // Article internal navigation (cross-link clicks)
-    document.querySelectorAll('article a[href^="/blog/"]').forEach(function (a) {
-      a.addEventListener('click', function () {
-        fire('internal_link', { destination: a.getAttribute('href'), source: location.pathname });
-      });
-    });
-    // CODE_REVIEW — collapsed two separate `document.click` delegated
-    // handlers (related-card + outbound) into one. Saves one event-
-    // listener pass per click; both checks share `e.target.closest`
-    // walk. Also dropped `capture:true` from the outbound branch —
-    // related-card handler used bubble phase and they're independent
-    // anyway. `{passive:true}` is honored.
+    // Language and article navigation use the loader's single delegated
+    // language_toggle / select_content contract, including English mirrors.
+    // Outbound links exclude query strings and fragments. Internal article
+    // navigation is handled once by the loader's select_content event.
     document.addEventListener('click', function (e) {
       var target = e.target;
       if (!target || !target.closest) return;
 
-      // Related-articles card (SSG #dn-related-static + JS #dn-related)
-      var card = target.closest('a.dn-related-card');
-      if (card) {
-        fire('related_card_click', {
-          destination: card.getAttribute('href') || '',
-          source: location.pathname,
-        });
-      }
-
-      // Outbound link — any <a> pointing off-host. Single closest()
-      // call shared with the card check above when the card is also
-      // an outbound link (rare but possible for future link types).
+      // Outbound link — any <a> pointing off-host.
       var a = target.closest('a[href]');
       if (!a) return;
       var href = a.getAttribute('href') || '';
@@ -1592,7 +1566,7 @@
         var u = new URL(href, location.href);
         if (u.host === location.host) return;
         fire('outbound_click', {
-          destination: u.host + u.pathname,
+          destination: u.origin + u.pathname,
           host: u.host,
           page_path: location.pathname,
         });
@@ -1616,7 +1590,7 @@
   // DN.markNewArticles moved to blog-hub.js (only fires on card list pages).
 
   DN.bindWebVitals = function () {
-    if (typeof gtag !== 'function') return;
+    if (DN._webVitalsBound) return;
     // CODE_REVIEW Tier 1A — official GoogleChrome/web-vitals library
     // (attribution build) loaded via <script defer src="/assets/
     // web-vitals.iife.js">. Replaces ~85 lines of hand-rolled
@@ -1635,6 +1609,7 @@
       }, 800);
       return;
     }
+    DN._webVitalsBound = true;
     function send(metric) {
       try {
         var attr = metric.attribution || {};
