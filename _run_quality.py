@@ -225,6 +225,7 @@ BUILD_GENERATED_STEPS: list[list[str]] = [
 
 CHECK_STEPS: list[list[str]] = [
     [PY, "_test_asset_release.py"],
+    [PY, "_test_csp_source_scope.py"],
     [PY, "_gen_asset_release.py", "--check"],
     [PY, "_test_release.py"],
     [PY, "_test_translation_failures.py"],

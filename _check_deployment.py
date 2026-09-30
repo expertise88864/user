@@ -78,6 +78,8 @@ def forbid_csp_source(errors: list[str], directives: dict[str, list[str]], name:
 # hashes are present in each rule governing it, and the admin rules contain
 # nothing beyond what admin pages actually use.
 SKIP_HTML_DIRS = {".git", "node_modules", "__pycache__", "pagefind"}
+# These exact root directories contain local evidence, never deployed pages.
+LOCAL_AUDIT_DIRS = {".codex-review", ".claude-review", ".lighthouseci", "delivery-preview"}
 NON_EXECUTABLE_TYPES = {"application/ld+json"}
 MIN_INLINE_HASHES = 20
 MIN_HTML_FILES = 100
@@ -141,7 +143,8 @@ def check_inline_script_hashes(errors: list[str], config: dict) -> None:
     per_file: dict[str, set[str]] = {}
     files = 0
     for path in sorted(ROOT.rglob("*.html")):
-        if any(part in SKIP_HTML_DIRS for part in path.relative_to(ROOT).parts):
+        parts = path.relative_to(ROOT).parts
+        if parts[0] in LOCAL_AUDIT_DIRS or any(part in SKIP_HTML_DIRS for part in parts):
             continue
         files += 1
         rel = path.relative_to(ROOT).as_posix()

@@ -48,6 +48,9 @@ from _html_scan import iter_inline_scripts  # noqa: E402
 
 VERCEL = ROOT / "vercel.json"
 SKIP_DIRS = {".git", "node_modules", "__pycache__", "pagefind"}
+# Local, Git-ignored evidence is not website source. Restrict this exclusion
+# to exact repository-root directories; similarly named public paths still scan.
+LOCAL_AUDIT_DIRS = {".codex-review", ".claude-review", ".lighthouseci", "delivery-preview"}
 
 # Script types the browser EXECUTES, so `script-src` applies. An empty type is
 # classic JavaScript. `speculationrules` is included deliberately: the
@@ -121,7 +124,8 @@ def collect_hashes() -> tuple[dict[str, set[str]], int, int, list[str]]:
     scripts = 0
     refusals: list[str] = []
     for path in sorted(ROOT.rglob("*.html")):
-        if any(part in SKIP_DIRS for part in path.relative_to(ROOT).parts):
+        parts = path.relative_to(ROOT).parts
+        if parts[0] in LOCAL_AUDIT_DIRS or any(part in SKIP_DIRS for part in parts):
             continue
         files += 1
         rel = path.relative_to(ROOT).as_posix()

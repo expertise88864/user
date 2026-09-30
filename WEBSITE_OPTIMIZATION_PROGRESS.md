@@ -73,3 +73,18 @@ UI 同樣顯示總計 233／154 clicks、9383／4887 impressions，頁面表共 
 選錯 property／日期及 1000 列匯出上限的解釋，但尚未證明實際差距原因。
 匿名查詢只足以解釋查詢表缺項，不能擅自套用來解釋頁面表。
 本次 GA 網頁遇到 DNS 解析失敗，Enhanced Measurement／Clarity 設定仍待核對。
+
+## 日期排序候選結果與生成來源修正
+
+`47cba8b3fc428d141190b4c8d8597913a7586a01`／[PR #40](https://github.com/expertise88864/user/pull/40)：
+[push Quality](https://github.com/expertise88864/user/actions/runs/36656624668) 的首頁 performance 80、TBT 489 ms；
+[PR Quality](https://github.com/expertise88864/user/actions/runs/36656666505) 的首頁 performance 93、TBT 68 ms。
+五個代表頁的 Lighthouse 都通過，兩份報告都沒有 CPU 校準警告。這是 lab 結果，不是搜尋排名或實際 CWV 成效。
+
+兩個 Quality workflow 仍失敗：Canonical consistency 重建 `vercel.json` 時移除了
+本機 Lighthouse 報告帶入的兩個額外 CSP 雜湊。已確認是生成器把 Git 忽略的
+診斷 HTML 誤當網站來源；並非網站缺少必需腳本雜湊。
+修正僅排除四個精確的根目錄診斷資料夾，保留 root／blog／admin／en 的完整來源檢查、
+原有腳本數量下限與 CSP 門檻。加入三個先失敗後通過的測試，涵蓋診斷報告不影響輸出、
+相似名稱及巢狀公共路徑仍接受檢查、真正文章缺少雜湊仍失敗。
+後續新 SHA 須重新跑完整候選 CI／Preview；不沿用此版本的 Lighthouse 成功作為交付證據。

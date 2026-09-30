@@ -66,3 +66,5 @@ delivery-preview/
 
 # Local independent review evidence is not published to the website/repository.
 .claude-review/
+# Lighthouse produces diagnostic HTML; these are audit evidence, not pages.
+.lighthouseci/
