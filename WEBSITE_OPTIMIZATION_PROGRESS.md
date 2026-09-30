@@ -7,9 +7,10 @@
 這是進行中紀錄。程式閱讀、回歸測試、瀏覽器檢查與正式交付分別記錄；
 單次 diff review 不代表整個專案已逐模組完成。
 
-最新狀態：全 Goal 尚未完成。候選 HEAD 為 `89d58e23a8d37eb014efd1c44e54d70ae9892fc8`，
-main 為 `13ae58b75f4f05472bf9ba43769c13d1cfea4a0e`；兩者 Quality 都有失敗，
-本機新增修改尚未提交／上線。五個精確 pending commit 的 Opus 完整補審仍待額度；
+最新狀態：全 Goal 尚未完成。已推送候選為 `9aa42774f09a63f980da78394144fbeefb3020e8`，
+main 為 `13ae58b75f4f05472bf9ba43769c13d1cfea4a0e`，未更新正式站。新候選首頁
+Lighthouse 63，低於既有 70 門檻；Vercel Preview 的 Pagefind 建置退出碼 2，
+因此候選瀏覽器 CI 未執行。六個精確 pending commit 的 Opus 完整補審仍待額度；
 最新 provider 重置為 2026-10-01 台灣時間 09:10，既有本機排程 09:15 重試，須開機並登入。
 以下表格記錄目前覆蓋，後面各節保留歷次檢查與失敗，不沿用舊版本證據核可新差異。
 
@@ -29,17 +30,26 @@ main 為 `13ae58b75f4f05472bf9ba43769c13d1cfea4a0e`；兩者 Quality 都有失�
 | 媒體／草稿 | 批次圖片來源準備、魔術位元組／尺寸／摘要驗證、rollback；圖文混貼、多圖、alt／順序、undo／redo 與草稿恢復；Chromium 原生 IME 回歸 | 真實外部剪貼簿與實機長文操作；正式 API／候選流程中的斷網、配額與衝突回復 |
 | PWA／導覽 | 確認修改程式仍沿用舊 immutable URL；改用中央資源版本、更新 SW 快取，新增內容 fingerprint／版本遞移檢查；基準已有 redirect cache 修復 | 舊 SW 升級瀏覽器實測、離線／恢復、正式版本 smoke |
 | 效能／可及性 | Lab 及 field 分開；GSC 沒有足夠 CWV field 資料 | 390／800／1440、主要瀏覽器、鍵盤 focus、表格與固定列驗證 |
-| GSC／GA4 | 已保存 2026-09-29 分析基線；台灣 28 天 GSC 233 clicks，GA4 日期不同 | 頁面 CSV 38 與國家／裝置 233 clicks 的差距；同日期／條件重新匯出 |
+| GSC／GA4 | 已保存分析基線；台灣 28 天 GSC 233 clicks，GA4 日期不同；同條件 reload 前後六份 CSV 位元組相同 | 頁面 CSV 38 與國家／裝置 233 clicks 的差距仍未釐清；GA 設定及日期口徑核對 |
 | CI／正式交付 | 採 codex 候選→完整遠端 CI→同 SHA Preview→main→正式 CI／部署／smoke | 獨立 Codex／Opus 5.5 high 唯讀 review 及每批 exact-SHA 證據 |
 
 ## 本機驗證
 
-### 2026-10-01 Word 編輯器安全邊界修正（進行中）
+### 2026-10-01 新候選與 Preview 建置修正（進行中）
+
+- 81 個工程檔完成獨立 `gpt-5.5`／high 唯讀審查的完整增量組合，保留原 `REQUEST_CHANGES` 與修正證據。隔離的完整 `build`／check／postbuild smoke exit 0（181 Python、274 Node）；原本機目錄的私人診斷 HTML 未混入候選。
+- 正常推送 `9aa4277` 到既有候選分支及 [PR #40](https://github.com/expertise88864/user/pull/40)，未推 main。[push Quality](https://github.com/expertise88864/user/actions/runs/36783551824) 的四個其他 jobs 成功，首頁 Lighthouse 63 未達 70；[Delivery](https://github.com/expertise88864/user/actions/runs/36783551866) 因 Preview 失敗無法取得成功瀏覽器證據。其他適用 push workflows 成功，不代表候選全部通過。
+- [Vercel Preview](https://vercel.com/expertise88864s-projects/chendermatologist/31MAFS4xSghaNo6QuhqotwkAwRHc) 在 Pagefind 建置退出碼 2。現有輸出篩選隱藏了小寫 `error:`；本機以實際 npx／Bash 重現 brace 清單展開後的 `unexpected argument 'dashboard.html'`，相同來源用原 Windows shell 成功 125 頁。
+- 修改 `_run_pagefind.py`，把相同、已驗證的可見頁清單經官方支援的 `PAGEFIND_GLOB` 子程序環境傳入；覆寫繼承值但不更動父程序設定。Bash 診斷成功索引相同 125 頁；新增真實 npx／Bash 公開與排除頁回歸、父環境不變及失敗診斷測試，共 8 項通過。[Pagefind 官方設定](https://pagefind.app/docs/config-options/)
+- 這項新修正尚未取得新 SHA 的遠端 CI／Preview，不能把本機重現等同於 Vercel 已修復。既有 Node／依賴版本、noindex／未發布可見性、超時與失敗退出門檻都保留。
+- 首頁卡片 layer／transition／標誌動畫的七次成對本機診斷沒有明顯改善，未採用為效能修正；Lighthouse 問題仍待可驗證的根因處理。
+
+### 2026-10-01 Word 編輯器安全邊界修正（候選驗證）
 
 - 實際瀏覽器重現文章 CSS、`srcset` 與舊式表格 `background` 載入外部資源；原始來源改為受保護區塊，保留原始位元組，避免在登入後的編輯區啟用。
 - 移除自寫 Word／草稿視窗的 `innerHTML` 指派。ProseMirror 剪貼簿解析剩餘一處在無 browsing context 的文件內；完整掃描保留，生成檔另以一處 sink 數量與確切 SHA-256 綁定，任何變動須重新審查。
-- 首次可讀的獨立 Codex 審查為 `REQUEST_CHANGES`：新增 `image-set()` 與實際 drop 路徑測試，前者已重現外部请求。修正 CSS 函數保護及 `handleDOMEvents.drop` 解析前攔截；須重新審查最終差異，不能沿用先前核可。
-- 初版修正三引擎各 19 組來源／貼上事件、52 篇文章往返及三種後台寬度通過；該版完整本機 `check` 成功（179 Python、274 Node 測試）。新增兩項審查修正後，舊版完整檢查不代表新版結果；最新 20 組與完整建置重新驗證中。
+- 首次可讀的獨立 Codex 審查為 `REQUEST_CHANGES`：新增 `image-set()` 與實際 drop 路徑測試，前者已重現外部請求，後者重現舊版會先解析貼上 HTML。修正 CSS 函數保護及 `handleDOMEvents.drop` 解析前攔截；最終獨立審查 `WORD_SECURITY_INCREMENT_APPROVE`，實際 model／effort／唯讀 metadata 已核對。
+- 最終三引擎各 20 組來源、20 組貼上事件、實際 drop、52 篇文章往返與 390／800／1440 後台流程通過；以上 81 檔候選完整本機建置亦通過。生成 license 尾端空行及本機 AdGuard 的 close-response smoke 問題另有最小修正、回歸與獨立審查；沒有停用 AdGuard 或降低檢查門檻。
 - 貼上事件使用隔離合成剪貼簿，Firefox 測試明確提供 event data；尚非 Windows Word OS 剪貼簿測試。所有外部目的地攔截，未寫正式內容或遙測。
 - 全 Goal、Claude Opus 補審、exact-SHA 遠端 CI／Preview／main／正式部署仍未完成。
 

@@ -97,15 +97,18 @@ def main() -> int:
         "--site", str(ROOT),
         "--output-path", str(PAGEFIND_DIR),
         "--root-selector", "main",
-        # Exact visible files in public route roots only. Excludes private
-        # evidence, noindex pages and author-withdrawn articles in both locales.
-        "--glob", public_glob,
     ]
+    # npm exec forwards arguments through its script shell. Bash expands the
+    # brace list before Pagefind receives --glob (unlike Windows cmd or dash).
+    # Set the exact validated list through Pagefind's supported environment
+    # option instead; override any inherited glob without changing the parent.
+    env = os.environ.copy()
+    env['PAGEFIND_GLOB'] = public_glob
     print(f"[pagefind] {' '.join(args[:5])} ...")
     try:
         result = subprocess.run(args, cwd=str(ROOT), check=False, text=True,
                                 encoding="utf-8", errors="replace",
-                                capture_output=True, timeout=180)
+                                capture_output=True, timeout=180, env=env)
     except subprocess.TimeoutExpired:
         print("[pagefind] timed out after 180s — build failed")
         return 1
@@ -113,10 +116,11 @@ def main() -> int:
         print(f"[pagefind] failed to invoke npx: {exc}")
         return 1
 
-    # Print only the summary lines from pagefind output
+    # Keep successful builds concise, but retain actionable failure diagnostics
+    # (the CLI emits lowercase 'error:', which the old summary filter hid).
     out_lines = (result.stdout or "").splitlines() + (result.stderr or "").splitlines()
-    for line in out_lines:
-        if any(kw in line for kw in ["Indexed", "Finished", "language", "Warning", "Error"]):
+    for line in out_lines[-60:] if result.returncode != 0 else out_lines:
+        if result.returncode != 0 or any(kw in line for kw in ["Indexed", "Finished", "language", "Warning", "Error"]):
             print(f"  {line}")
 
     if result.returncode != 0:

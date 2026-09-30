@@ -1,6 +1,9 @@
 """Exercise the production Pagefind glob against public and private HTML fixtures."""
 import importlib.util
 from unittest.mock import patch
+import contextlib
+import io
+import os
 import gzip
 import json
 from pathlib import Path
@@ -113,6 +116,63 @@ class SearchScopeTest(unittest.TestCase):
                         with self.assertRaises((ValueError, OSError, subprocess.CalledProcessError)):
                             builder.main()
                     self.assertEqual(sentinel.read_text(encoding='utf-8'), 'previous index')
+
+    def test_bash_npx_receives_exact_visibility_without_brace_expansion(self):
+        import _run_pagefind as builder
+        # The hosted Vercel shell expands a brace-list CLI argument; Ubuntu's
+        # dash and Windows cmd do not. Exercise the real npx -> Bash -> binary
+        # path, rather than a mock that cannot reveal this transport bug.
+        bash = shutil.which('bash')
+        if not bash and os.name == 'nt':
+            candidate = Path('C:/Program Files/Git/bin/bash.exe')
+            if candidate.is_file():
+                bash = str(candidate)
+        self.assertIsNotNone(bash, 'Pagefind shell integration requires Bash')
+        with tempfile.TemporaryDirectory(prefix='pagefind-bash-') as folder:
+            root = Path(folder)
+            self.write_catalog(root)
+            for route in ['index.html','blog/article.html','blog/draft.html','admin.html']:
+                path = root / route
+                meta = '<meta name="robots" content="noindex">' if route == 'admin.html' else ''
+                path.write_text('<html lang="en"><head><title>Fixture</title>'+meta+
+                                '</head><body><main><h1>Public search fixture</h1></main></body></html>', encoding='utf-8')
+            original_glob = os.environ.get('PAGEFIND_GLOB')
+            with patch.dict(os.environ, {'npm_config_script_shell':bash,'PAGEFIND_GLOB':'**/*.html'}):
+                with patch.object(builder, 'ROOT', root), patch.object(builder, 'PAGEFIND_DIR', root / 'pagefind'):
+                    self.assertEqual(builder.main(), 0)
+                self.assertEqual(os.environ['PAGEFIND_GLOB'], '**/*.html')
+            self.assertEqual(os.environ.get('PAGEFIND_GLOB'), original_glob)
+            urls = set()
+            for fragment in (root / 'pagefind/fragment').glob('*.pf_fragment'):
+                raw = gzip.decompress(fragment.read_bytes())
+                urls.add(json.loads(raw[raw.index(b'{'):])['url'])
+            self.assertEqual(urls, {'/', '/blog/article.html'})
+
+    def test_lowercase_failed_cli_diagnostics_are_visible(self):
+        import _run_pagefind as builder
+        with tempfile.TemporaryDirectory(prefix='pagefind-diagnostics-') as folder:
+            root = Path(folder)
+            self.write_catalog(root)
+            (root / 'index.html').write_text('<html><main><h1>Public fixture</h1></main></html>', encoding='utf-8')
+            real_run = subprocess.run
+            calls = []
+            def fail_pagefind(command, *args, **kwargs):
+                if command[0] == 'fake-npx':
+                    calls.append((command, kwargs))
+                    return subprocess.CompletedProcess(command, 2, '', 'error: unexpected argument\nUsage: pagefind [OPTIONS]')
+                return real_run(command, *args, **kwargs)
+            stdout = io.StringIO()
+            with patch.object(builder, 'ROOT', root), patch.object(builder, 'PAGEFIND_DIR', root / 'pagefind'):
+                with patch.object(builder.shutil, 'which', return_value='fake-npx'):
+                    with patch.object(builder.subprocess, 'run', side_effect=fail_pagefind), contextlib.redirect_stdout(stdout):
+                        self.assertEqual(builder.main(), 1)
+            self.assertEqual(len(calls), 1)
+            command, kwargs = calls[0]
+            self.assertNotIn('--glob', command)
+            self.assertEqual(kwargs['env']['PAGEFIND_GLOB'], 'index.html')
+            self.assertEqual(kwargs['timeout'], 180)
+            self.assertIn('error: unexpected argument', stdout.getvalue())
+            self.assertIn('Usage: pagefind [OPTIONS]', stdout.getvalue())
 
     def test_output_boundary_preserves_unrelated_directory(self):
         spec = importlib.util.spec_from_file_location('search_builder', '_run_pagefind.py')
