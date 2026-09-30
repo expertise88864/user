@@ -205,6 +205,72 @@ def render_card(item: dict) -> str:
     )
 
 
+def sync_homepage_limit(source: str) -> str:
+    """Match the enhanced hub's initial limit before its deferred JS runs.
+
+    Keep every card's markup and artwork in the HTML. Only the initial cards
+    are live DOM nodes; the rest stay in an inert template until interaction.
+    The full index and native All articles link remain usable without JS.
+    """
+    class HomeConfig(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.hubs = []
+            self.head_ends = []
+            self.lines = [0] + [match.end() for match in re.finditer("\n", source)]
+
+        def handle_starttag(self, tag, attrs):
+            attrs = dict(attrs)
+            if attrs.get('id') == 'dn-hub':
+                self.hubs.append(attrs)
+
+        def handle_endtag(self, tag):
+            if tag == 'head':
+                row, col = self.getpos()
+                self.head_ends.append(self.lines[row - 1] + col)
+
+    config = HomeConfig()
+    config.feed(source)
+    if len(config.hubs) > 1:
+        raise ValueError('Duplicate homepage hub')
+    existing = list(re.finditer(r'<style data-home-card-limit>[\s\S]*?</style>', source))
+    if len(existing) > 1:
+        raise ValueError('Duplicate homepage card limit')
+    templates = list(re.finditer(r'<template id="dn-home-card-rest">([\s\S]*?)</template>', source))
+    if len(templates) > 1:
+        raise ValueError('Duplicate remaining-home-card template')
+    if templates:
+        match = templates[0]
+        parsed = CardList(source, 'dn-article-list')
+        if not parsed.start <= match.start() < match.end() <= parsed.end:
+            raise ValueError('Remaining home cards must be inside their list')
+        source = source[:match.start()] + match[1] + source[match.end():]
+    if not config.hubs or config.hubs[0].get('data-hub-mode') != 'homepage':
+        return re.sub(r'<style data-home-card-limit>[\s\S]*?</style>', '', source)
+    count = config.hubs[0].get('data-show-count', '6')
+    if not re.fullmatch(r'[1-9][0-9]{0,3}', count) or len(config.head_ends) != 1:
+        raise ValueError('Missing head or invalid homepage card limit')
+    parsed = CardList(source, 'dn-article-list')
+    if len(parsed.cards) > int(count):
+        start, end = parsed.cards[int(count)][1], parsed.cards[-1][2]
+        source = (source[:start] + '<template id="dn-home-card-rest">' + source[start:end] +
+                  '</template>' + source[end:])
+    # Retire the old fixed-six rule; the authored hub count is authoritative.
+    source = re.sub(r'#dn-article-list\s*>\s*\.article-list-item:nth-child\(n\+7\)\s*\{\s*display:\s*none;\s*\}', '', source)
+    config = HomeConfig()
+    config.feed(source)
+    existing = list(re.finditer(r'<style data-home-card-limit>[\s\S]*?</style>', source))
+    rule = (f'<style data-home-card-limit>#dn-article-list>.article-list-item:'
+            f'nth-of-type(n+{int(count) + 1}){{display:none}}</style>')
+    if existing:
+        match = existing[0]
+        if match.end() > config.head_ends[0]:
+            raise ValueError('Homepage card limit must be in the head')
+        return source[:match.start()] + rule + source[match.end():]
+    offset = config.head_ends[0]
+    return source[:offset] + rule + source[offset:]
+
+
 def sync_source(source: str, element_id: str, articles: list[dict], overrides: dict | None = None) -> str:
     parsed = CardList(source, element_id)
     existing = set()
@@ -244,6 +310,7 @@ def sync_source(source: str, element_id: str, articles: list[dict], overrides: d
         markup = [updated[start:end] for _, start, end in ordered]
         for (_, start, end), card_html in reversed(list(zip(cards, markup))):
             updated = updated[:start] + card_html + updated[end:]
+        updated = sync_homepage_limit(updated)
     return updated
 
 
@@ -266,7 +333,10 @@ def main() -> int:
             if source != updated:
                 raise ValueError(f"{relative}: stale public card metadata; regenerate hubs")
             for target in (path, ROOT / "en" / relative):
-                parsed = CardList(target.read_text(encoding="utf-8"), element_id)
+                target_source = target.read_text(encoding="utf-8")
+                if element_id == 'dn-article-list' and sync_homepage_limit(target_source) != target_source:
+                    raise ValueError(f"{target.relative_to(ROOT)}: stale homepage card limit")
+                parsed = CardList(target_source, element_id)
                 slugs = [slug for slug, _, _ in parsed.cards]
                 if set(slugs) != expected or len(slugs) != len(expected):
                     raise ValueError(f"{target.relative_to(ROOT)}: stale public article cards")

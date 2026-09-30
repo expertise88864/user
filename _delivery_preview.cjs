@@ -17,8 +17,30 @@ async function checkHubStatus(page) {
     assert.equal(text, await status.getAttribute(english ? 'data-en' : 'data-zh'));
   }
   await assertStatus(english ? /^\d+ featured articles?$/ : /^\d+ 篇精選文章$/);
+  const cards = page.locator('#dn-article-list > .article-list-item');
+  const total = await page.evaluate(() => document.querySelectorAll('#dn-article-list > .article-list-item').length +
+    (document.getElementById('dn-home-card-rest')?.content.querySelectorAll('.article-list-item').length || 0));
+  const limit = Number(await page.locator('#dn-hub').getAttribute('data-show-count'));
+  assert.equal(await cards.count(), Math.min(limit,total),
+    'The initial homepage must keep remaining cards inert');
+  assert.equal(await page.locator('#dn-article-list > .article-list-item:visible').count(), Math.min(limit, total),
+    'Homepage must initially display only its configured latest articles');
+  const initialOrder = await page.locator('#dn-article-list > .article-list-item:visible').evaluateAll(
+    nodes => nodes.map(node => node.getAttribute('href')));
+  const input = page.locator('#dn-search-input');
+  // Search first: revealing the full catalog beforehand would mask lazy-load failures.
+  await input.fill('杜避炎 打多久');
+  await assertStatus(english ? /^\d+ results?$/ : /^找到 \d+ 篇文章$/);
+  assert.ok(await page.locator('#dn-article-list > a[href$="/dupilumab-long-term-maintenance"]').isVisible());
+  await input.fill('');
+  await assertStatus(english ? /^\d+ featured articles?$/ : /^\d+ 篇精選文章$/);
+  assert.deepEqual(await page.locator('#dn-article-list > .article-list-item:visible').evaluateAll(
+    nodes => nodes.map(node => node.getAttribute('href'))), initialOrder,
+    'Clearing the first search must restore the initial date order');
   await page.locator('.dn-tag-all').click();
   await assertStatus(english ? /^\d+ articles?$/ : /^\d+ 篇文章$/);
+  assert.equal(await page.locator('#dn-article-list > .article-list-item:visible').count(), total,
+    'All topics must reveal the complete catalog despite the initial CSS limit');
   const topics = page.locator('.dn-tag-chip:not(.dn-tag-all)');
   for (const topic of await topics.all()) {
     const label = await topic.getAttribute(english ? 'data-en' : 'data-zh');
@@ -27,13 +49,39 @@ async function checkHubStatus(page) {
     await topic.click();
     assert.equal(await status.textContent(), english ? 'Articles about ' + label : label + ' 相關文章');
   }
-  const input = page.locator('#dn-search-input');
   await input.fill('杜避炎 打多久');
   await assertStatus(english ? /^\d+ results?$/ : /^找到 \d+ 篇文章$/);
+  assert.ok(await page.locator('#dn-article-list > a[href$="/dupilumab-long-term-maintenance"]').isVisible(),
+    'Search must reveal matching articles outside the initial latest-card limit');
   await input.fill('zzzznomatchingarticlezzzz');
   await assertStatus(english ? /^0 results$/ : /^找到 0 篇文章$/);
   await input.fill('');
   await assertStatus(english ? /^\d+ articles?$/ : /^\d+ 篇文章$/);
+  assert.equal(await page.locator('#dn-article-list > .article-list-item:visible').count(), total);
+}
+async function checkStaticHome(browser, base, secret, width) {
+  const context = await browser.newContext({viewport:{width,height:900},javaScriptEnabled:false});
+  try {
+    await authenticatePreview(context, base, secret);
+    for (const route of ['/', '/en']) {
+      const page = await context.newPage();
+      await page.goto(new URL(route, base).href, {waitUntil:'load'});
+      const cards = page.locator('#dn-article-list > .article-list-item');
+      const total = await page.evaluate(() => document.querySelectorAll('#dn-article-list > .article-list-item').length +
+        (document.getElementById('dn-home-card-rest')?.content.querySelectorAll('.article-list-item').length || 0));
+      const limit = Number(await page.locator('#dn-hub').getAttribute('data-show-count'));
+      assert.ok(total > limit, 'Static home must retain the complete catalog');
+      assert.equal(await cards.count(), limit, 'Only initial cards may be live DOM nodes');
+      assert.equal(await page.locator('#dn-article-list > .article-list-item:visible').count(), limit,
+        'The initial card limit must apply even when JavaScript is unavailable');
+      const target = route === '/en' ? '/en/blog' : '/blog';
+      const link = page.locator('#articles a[href="' + target + '"]').first();
+      await Promise.all([page.waitForURL(base.origin + target),link.click()]);
+      assert.equal(await page.locator('.article-list-item:visible').count(), total,
+        'Native All articles navigation must expose every article without JavaScript');
+      await page.close();
+    }
+  } finally { await context.close(); }
 }
 async function authenticatePreview(context, base, secret) {
   if (!secret) return;
@@ -80,7 +128,7 @@ async function checkHomeNavigation(page, base, route) {
   assert.equal(new URL(page.url()).pathname, target);
   await page.locator('.article-list-item').first().waitFor();
 }
-module.exports = { previewHeaders, checkHubStatus, authenticatePreview };
+module.exports = { previewHeaders, checkHubStatus, authenticatePreview, checkStaticHome };
 
 if (require.main === module) (async () => {
   const { chromium } = require('playwright');
@@ -93,6 +141,7 @@ if (require.main === module) (async () => {
   try {
     await require('./_test_admin_editing_browser.cjs')(browser);
     for (const width of [390, 800, 1440]) {
+      await checkStaticHome(browser, base, process.env.VERCEL_AUTOMATION_BYPASS_SECRET, width);
       const context = await browser.newContext({ viewport: { width, height: 900 }, locale: 'zh-TW' });
       try {
         await authenticatePreview(context, base, process.env.VERCEL_AUTOMATION_BYPASS_SECRET);

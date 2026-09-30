@@ -88,3 +88,27 @@ UI 同樣顯示總計 233／154 clicks、9383／4887 impressions，頁面表共 
 原有腳本數量下限與 CSP 門檻。加入三個先失敗後通過的測試，涵蓋診斷報告不影響輸出、
 相似名稱及巢狀公共路徑仍接受檢查、真正文章缺少雜湊仍失敗。
 後續新 SHA 須重新跑完整候選 CI／Preview；不沿用此版本的 Lighthouse 成功作為交付證據。
+
+## 首頁初始 DOM 與互動完整性
+
+`c08b9d5b95efa7e0c1a20ddc5902347ac404f3e0` 的生成一致性與 Preview 已成功。
+但 [push Quality](https://github.com/expertise88864/user/actions/runs/36657702916)
+首頁 performance 65／TBT 1053 ms，仍未達 70；
+[PR Quality](https://github.com/expertise88864/user/actions/runs/36657706716)
+首頁 performance 83／TBT 228 ms。兩份報告沒有 CPU 校準警告，不能以 PR 綠燈代替候選 push 全綠，也沒有推進 main。
+
+再讀原始 CSS 確認首頁原本已隱藏第 7 張之後的卡片；並非 52 張都在首屏顯示。
+舊 CSS 的 6 張與 hub 設定的 5 張不一致，所有卡片仍是 live DOM。
+本次改由設定生成初始篇數，其餘卡片保留於原始 HTML 的 inert template，首次搜尋／選主題時一次移入清單。
+完整文章索引保持 52 張原生卡片，停用 JavaScript 的首頁仍能從原生「全部文章」連結前往索引。
+搜尋、清除搜尋後的日期順序、全部主題與分類篩選保留；作者卡片及 SVG 插圖逐張比較沒有改寫。
+
+本機隔離瀏覽器通過 390／800／1440、ZH／EN、JS／no-JS。
+新增 Preview 檢查先搜尋模板內的杜避炎文章，再驗證清除後的原日期順序，避免先展開全部文章掩蓋載入缺陷。
+目錄回歸 15 項、analytics/runtime 33 項通過；新增卡片、改變初始篇數、移除模板模式與插圖完整性皆有回歸。
+資源版本 `202609301040`，兩個 SW cache generation 同時更新。
+
+Windows Chrome 148 的隔離對照：首次互動前 live DOM 元素 1281 → 551、live 文章卡片 52 → 5；
+所有 52 張原始卡片內容仍相同。這個對照沒有證明首屏速度改善：兩次 first paint 約 912／928 ms，處於相近範圍。
+首頁仍有初始排版工作，Lighthouse 的實際改善與發布完成條件須由新 SHA 的完整遠端 CI 判定。
+未更動字體、文字換行策略、插圖或評分門檻，未採用診斷試驗的視覺版本。

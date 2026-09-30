@@ -64,6 +64,66 @@ class HubCatalogTests(unittest.TestCase):
                          ['second', 'first'])
         self.assertIn(second, result)
 
+    def test_homepage_initial_limit_follows_config_and_keeps_all_cards(self):
+        articles = [dict(self.first, slug=f'card-{i}') for i in range(8)]
+        source = ('<html><head><title>Home</title></head><body>'
+                  '<section id="dn-hub" data-hub-mode="homepage" data-show-count="5"></section>'
+                  '<div id="dn-article-list">' + ''.join(map(render_card, articles)) +
+                  '</div><a href="/blog">All articles</a></body></html>')
+        result = sync_source(source, 'dn-article-list', articles)
+        rule = '<style data-home-card-limit>#dn-article-list>.article-list-item:nth-of-type(n+6){display:none}</style>'
+        self.assertIn(rule, result[:result.index('</head>')])
+        self.assertEqual(len(CardList(result, 'dn-article-list').cards), 8)
+        rest = result.split('<template id="dn-home-card-rest">')[1].split('</template>')[0]
+        self.assertEqual(rest.count('class="article-list-item"'), 3)
+        self.assertIn('<a href="/blog">All articles</a>', result)
+        self.assertEqual(result, sync_source(result, 'dn-article-list', articles))
+        changed = result.replace('data-show-count="5"', 'data-show-count="3"')
+        changed = sync_source(changed, 'dn-article-list', articles)
+        self.assertEqual(changed.count('data-home-card-limit'), 1)
+        self.assertIn('nth-of-type(n+4)', changed)
+        self.assertNotIn('nth-of-type(n+6)', changed)
+        rest = changed.split('<template id="dn-home-card-rest">')[1].split('</template>')[0]
+        self.assertEqual(rest.count('class="article-list-item"'), 5)
+        # A later author limit above six must not inherit the legacy CSS cap.
+        changed = changed.replace('data-show-count="3"', 'data-show-count="7"').replace(
+            '</head>', '<style>#dn-article-list > .article-list-item:nth-child(n+7){ display:none; }</style></head>')
+        changed = sync_source(changed, 'dn-article-list', articles)
+        self.assertNotIn('nth-child(n+7)', changed)
+        rest = changed.split('<template id="dn-home-card-rest">')[1].split('</template>')[0]
+        self.assertEqual(rest.count('class="article-list-item"'), 1)
+
+    def test_initial_limit_never_applies_to_full_index_or_invalid_home_config(self):
+        card = render_card(self.first)
+        index = '<head></head><div id="articleList">' + card + '</div>'
+        self.assertNotIn('data-home-card-limit', sync_source(index, 'articleList', [self.first]))
+        for count in ('0', '-1', '5oops', '5;display:none', ''):
+            source = ('<head></head><section id="dn-hub" data-hub-mode="homepage" '
+                      f'data-show-count="{count}"></section><div id="dn-article-list">' + card + '</div>')
+            with self.subTest(count=count), self.assertRaises(ValueError):
+                sync_source(source, 'dn-article-list', [self.first])
+
+    def test_home_template_survives_catalog_changes_and_can_be_removed(self):
+        articles = [dict(self.first, slug=f'card-{i}') for i in range(8)]
+        cards = [render_card(item).replace('<div class="al-body">',
+                 f'<div class="al-body"><svg id="art-{i}"><path d="M0 1"/></svg>')
+                 for i, item in enumerate(articles)]
+        source = ('<head></head><section id="dn-hub" data-hub-mode="homepage" data-show-count="5"></section>'
+                  '<div id="dn-article-list">' + '\r\n'.join(cards) + '</div>')
+        first = sync_source(source, 'dn-article-list', articles)
+        newest = dict(self.second, slug='newest', date='2026-09-30')
+        changed = sync_source(first, 'dn-article-list', articles + [newest])
+        self.assertEqual(CardList(changed, 'dn-article-list').cards[0][0], 'newest')
+        for card in cards:
+            self.assertIn(card, changed)
+        self.assertEqual(changed.count('\r\n'), source.count('\r\n'))
+        self.assertEqual(changed, sync_source(changed, 'dn-article-list', articles + [newest]))
+        full = sync_source(changed.replace('data-hub-mode="homepage"', 'data-hub-mode="full"'),
+                           'dn-article-list', articles + [newest])
+        self.assertNotIn('dn-home-card-rest', full)
+        self.assertNotIn('data-home-card-limit', full)
+        self.assertEqual(len(CardList(full, 'dn-article-list').cards), 9)
+
     def test_missing_or_duplicate_list_fails_closed(self):
         for source in ('<div></div>', '<div id="list">', '<div id="list"></div><div id="list"></div>'):
             with self.subTest(source=source), self.assertRaises(ValueError):

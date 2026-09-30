@@ -14,6 +14,8 @@ test('article numbering keeps ISO-date order without initializing locale collati
   vm.runInContext("String.prototype.localeCompare = function () { throw new Error('Unexpected locale collation during startup'); };", context);
   vm.runInContext(source, context);
   const dn = context.window.DN;
+  // VM intrinsics are isolated. This callback runs in the host realm; retain
+  // the old locale comparator as an independent article-numbering oracle.
   const expected = [...dn.ARTICLES].sort((a,b) => (a.date || '').localeCompare(b.date || ''));
   expected.forEach((article,index) => assert.equal(dn.getArticleNumber(article.slug), String(index+1).padStart(3,'0')));
   assert.equal(dn.compareDates('2026-01-31','2026-02-01'), -1);

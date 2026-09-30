@@ -447,6 +447,19 @@
     var searchTimer = null;
     var lastTrackedQuery = '';
 
+    function attachRemainingHomeCards() {
+      var rest = mode === 'homepage' && document.getElementById('dn-home-card-rest');
+      if (!rest) return;
+      // Move the original authored nodes once: keep SVGs, metadata and links.
+      // The initial homepage never materializes the hidden full catalog.
+      var list = document.getElementById('dn-article-list');
+      if (!list || rest.parentNode !== list) return;
+      list.insertBefore(rest.content, rest);
+      rest.remove();
+      allCards = Array.prototype.slice.call(document.querySelectorAll('.article-list-item'));
+      try { DN.markNewArticles(); } catch (e) { /* ignore */ }
+    }
+
     function setActive(tag) {
       var chips = tagsDiv.querySelectorAll('.dn-tag-chip');
       for (var i = 0; i < chips.length; i++) {
@@ -460,7 +473,8 @@
       status.textContent = document.documentElement.lang.startsWith('en') ? en : zh;
     }
 
-    function showBySlugs(slugs) {
+    function showBySlugs(slugs, includeRemaining) {
+      if (includeRemaining !== false) attachRemainingHomeCards();
       // Keep visual, keyboard and screen-reader order identical. Restore the
       // original catalog order when a topic filter replaces a ranked search.
       var order = slugs || [];
@@ -473,7 +487,10 @@
             return slugs && index !== -1 ? index : order.length + allCards.indexOf(card);
           }
           return rank(a) - rank(b);
-        }).forEach(function (card) { parent.appendChild(card); });
+        }).forEach(function (card) {
+          var rest = document.getElementById('dn-home-card-rest');
+          parent.insertBefore(card, rest && rest.parentNode === parent ? rest : null);
+        });
       });
       var shown = 0;
       for (var i = 0; i < allCards.length; i++) {
@@ -496,7 +513,7 @@
 
       if (tag === '__all__') {
         if (mode === 'homepage' && !showingAll) {
-          showBySlugs(null);
+          showBySlugs(null, false);
           // Initial homepage paint only: show first N curated cards in
           // DOM order. EXPLICIT 全部主題 click sets showingAll=true (see
           // chip-click handler) → falls through to the else branch.
