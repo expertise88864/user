@@ -1,17 +1,23 @@
 """The navigation cleanup must preserve author text and accessibility styles."""
 from pathlib import Path
-import subprocess
 import unittest
 
-from _normalize_native_navigation import MARKER, META, RULES, normalize
+from _normalize_native_navigation import normalize
+
+# Fixed historical fragment, independent of the normalizer's constants and
+# repository history. Vercel/CI may use a shallow checkout of the fixed HEAD.
+LEGACY = ('<!-- a11y-vt-applied --><meta name="view-transition" content="same-origin"><style>'
+          '@view-transition{navigation:auto}'
+          '::view-transition-old(root),::view-transition-new(root){animation-duration:.25s}'
+          '@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}')
+NORMAL = '<!-- a11y-vt-applied --><style>'
 
 
 class NativeNavigationTests(unittest.TestCase):
     def test_actual_legacy_article_preserves_everything_else(self):
-        original = subprocess.check_output(['git', 'show', 'HEAD:blog/tinea-myths.html']).decode('utf-8')
-        expected = original.replace(META, '')
-        for rule in RULES:
-            expected = expected.replace(rule, '')
+        expected = Path('blog/tinea-myths.html').read_text(encoding='utf-8')
+        self.assertEqual(expected.count(NORMAL), 1)
+        original = expected.replace(NORMAL, LEGACY, 1)
         self.assertNotEqual(original, expected)
         actual = normalize(original)
         self.assertEqual(actual, expected)
@@ -20,9 +26,9 @@ class NativeNavigationTests(unittest.TestCase):
         self.assertEqual(normalize(actual), actual)
 
     def test_examples_scripts_and_unmarked_styles_are_preserved(self):
-        example = MARKER + META + '<style>' + RULES[0] + '</style>'
+        example = LEGACY + '</style>'
         source = '<html><head><script>const sample = ' + repr(example) + ';</script>'
-        source += '<style>' + RULES[0] + '</style></head><body><textarea>' + example + '</textarea>'
+        source += '<style>@view-transition{navigation:auto}</style></head><body><textarea>' + example + '</textarea>'
         source += '<p>Explain @view-transition{navigation:auto}</p></body></html>'
         self.assertEqual(normalize(source), source)
 
