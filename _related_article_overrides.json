@@ -26,5 +26,24 @@
     "epidermoid-cyst",
     "actinic-keratosis-scc",
     "dermatologic-oral-examination"
+  ],
+  "dermatologic-oral-examination": [
+    "skin-biopsy-excision",
+    "actinic-keratosis-scc",
+    "perioral-dermatitis-guide"
+  ],
+  "toenail-mechanical-disorders": [
+    "tinea-myths",
+    "skin-biopsy-excision"
+  ],
+  "semaglutide-hair-loss": [
+    "hairloss-myths",
+    "spironolactone-dermatology-safety",
+    "alopecia-areata"
+  ],
+  "hairloss-myths": [
+    "spironolactone-dermatology-safety",
+    "alopecia-areata",
+    "semaglutide-hair-loss"
   ]
 }

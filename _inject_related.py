@@ -3,7 +3,7 @@
 """SSG-inject the "你可能也會想看 / You might also like" related-articles section.
 
 Render named native article links for readers with or without JavaScript.
-Six patient journeys use explicit existing-article selections; avoid padding
+Selected patient journeys use explicit existing-article selections; avoid padding
 them with unrelated articles merely because both have the same content type.
 Other pages keep the existing scoring order. All destinations use the public
 catalog visibility policy. Static HTML does not promise ranking or CTR gains.
