@@ -18,6 +18,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from _json_html import script_json
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -173,7 +174,7 @@ EXISTING_RE = re.compile(
 
 
 def inject(html: str, graph: dict) -> tuple[str, bool]:
-    body = json.dumps(graph, ensure_ascii=False, separators=(',', ':'))
+    body = script_json(graph)
     new_block = (
         '<script type="application/ld+json" id="dn-tools-schema">'
         f'{body}'

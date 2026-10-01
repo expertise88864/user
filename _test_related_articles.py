@@ -8,6 +8,19 @@ from unittest.mock import patch
 import _inject_related as related
 
 
+def browser_fixture():
+    from _gen_en_pages import DataEnRenderer, localize_jsonld
+    payload = '<img src="x" onerror="window.__relatedInjected=1"> & "quoted"'
+    article = dict(slug='fixture', title='Fixture title', title_en=payload,
+                   tag='Fixture topic', tag_en=payload, date='2026-01-01')
+    block = related.build_related_html('current', [article])
+    script_payload = '</script><img src="x" onerror="window.__jsonldInjected=1">'
+    script_block = related.build_related_html('current', [{**article, 'title': script_payload}])
+    return {'payload': payload, 'blocks': [block, DataEnRenderer().render(block)],
+            'scriptPayload': script_payload,
+            'jsonldBlocks': [script_block, localize_jsonld(DataEnRenderer().render(script_block), 'Fixture', 'Fixture')]}
+
+
 class RelatedArticlesTests(unittest.TestCase):
     def test_real_catalog_does_not_truncate_english_apostrophes(self):
         article = next(a for a in related.parse_articles() if a['slug'] == 'tinea-myths')
@@ -72,13 +85,61 @@ class RelatedArticlesTests(unittest.TestCase):
     def test_existing_bilingual_tags_are_rendered_in_the_selected_language(self):
         article = dict(slug='next', title='原有標題', title_en="Reader's guide", tag='原有標籤', tag_en='Existing topic', date='2026-01-01')
         block = related.build_related_html('current', [article])
-        self.assertIn('data-zh="原有標籤" data-en="Existing topic">原有標籤</span>', block)
+        self.assertIn('data-zh="原有標籤" data-en="Existing topic" data-dn-text-only>原有標籤</span>', block)
         from _gen_en_pages import DataEnRenderer
         mirror = DataEnRenderer().render(block)
         self.assertIn('>Existing topic</span>', mirror)
         self.assertIn("Reader&#x27;s guide", block)
         self.assertNotIn('>原有標籤</span>', mirror)
 
+    def test_related_metadata_remains_plain_in_both_generated_languages(self):
+        from html.parser import HTMLParser
+        class Fields(HTMLParser):
+            def __init__(self, source):
+                super().__init__(); self.fields = []; self.images = 0; self.feed(source)
+            def handle_starttag(self, tag, attrs):
+                values = dict(attrs)
+                if values.get('data-zh') in ('Fixture title', 'Fixture topic'):
+                    self.fields.append(values)
+                if tag == 'img': self.images += 1
+        fixture = browser_fixture()
+        for block in fixture['blocks']:
+            parsed = Fields(block)
+            self.assertEqual(len(parsed.fields), 3)
+            self.assertEqual(parsed.images, 0)
+            for values in parsed.fields:
+                self.assertIn('data-dn-text-only', values)
+                self.assertEqual(values['data-en'], fixture['payload'])
+
+    def test_related_jsonld_cannot_break_out_of_script_in_either_language(self):
+        import re
+        fixture = browser_fixture()
+        for block in fixture['jsonldBlocks']:
+            scripts = re.findall(r'<script type="application/ld\+json">(.*?)</script>', block, re.S)
+            self.assertEqual(len(scripts), 1)
+            self.assertEqual(json.loads(scripts[0])['itemListElement'][0]['name'], fixture['scriptPayload'])
+            self.assertNotIn('<img', block)
+
+    def test_schema_normalization_keeps_related_script_safe_and_idempotent(self):
+        import _normalize_schema as schema
+        fixture = browser_fixture()
+        with tempfile.TemporaryDirectory() as directory:
+            page = Path(directory) / 'fixture.html'
+            for block in fixture['jsonldBlocks']:
+                page.write_text('<html><head></head><body>'+block+'</body></html>', encoding='utf8')
+                schema.normalize_file(page)
+                normalized = page.read_text(encoding='utf8')
+                self.assertNotIn('<img', normalized)
+                self.assertEqual(normalized.count('</script>'), 1)
+                self.assertEqual(list(schema.iter_jsonld(normalized))[0]['itemListElement'][0]['name'], fixture['scriptPayload'])
+                schema.normalize_file(page)
+                self.assertEqual(page.read_text(encoding='utf8'), normalized)
+
 
 if __name__ == '__main__':
-    unittest.main()
+    import sys
+    if sys.argv[1:] == ['--browser-fixture']:
+        sys.stdout.reconfigure(encoding='utf-8')
+        print(json.dumps(browser_fixture(), ensure_ascii=False))
+    else:
+        unittest.main()

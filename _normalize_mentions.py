@@ -17,6 +17,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from _json_html import script_json
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -270,7 +271,7 @@ def update_article(fp: Path, index: list[dict]) -> bool:
             # No mentions detected — strip any stale field from prior runs
             obj.pop("mentions", None)
 
-        new_body = json.dumps(obj, ensure_ascii=False, separators=(',', ':'))
+        new_body = script_json(obj)
         new_block = opening_tag + new_body + '</script>'
         new_src = (
             new_src[:start + offset_drift]

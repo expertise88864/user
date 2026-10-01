@@ -17,6 +17,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from _json_html import script_json
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -194,7 +195,7 @@ def update_article(fp: Path) -> tuple[bool, int]:
         else:
             obj.pop("isBasedOn", None)
 
-        new_body = json.dumps(obj, ensure_ascii=False, separators=(',', ':'))
+        new_body = script_json(obj)
         new_block = opening_tag + new_body + '</script>'
         new_src = (
             new_src[:start + offset_drift]

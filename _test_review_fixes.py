@@ -6,9 +6,11 @@ import http.client
 import io
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 import tempfile
 import unittest
 from unittest.mock import Mock, patch
@@ -21,6 +23,130 @@ ROOT = Path(__file__).resolve().parent
 
 
 class TranslationTests(unittest.TestCase):
+    def test_plain_fields_escape_markup_and_preserve_literal_entities(self):
+        from html import escape
+        from html.parser import HTMLParser
+        class Text(HTMLParser):
+            def __init__(self, source):
+                super().__init__(); self.parts = []; self.images = 0; self.feed(source)
+            def handle_data(self, data): self.parts.append(data)
+            def handle_starttag(self, tag, attrs):
+                if tag == 'img': self.images += 1
+        for marker in ('data-dn-text-only', 'data-dn-text-only=""'):
+            for value in ('<img src="x" onerror="window.__injected=1"> & "quoted"',
+                          '&lt;literal&gt; &copy; < 2', '</span><script>alert(1)</script>'):
+                with self.subTest(marker=marker, value=value):
+                    source = f'<span {marker} data-en="{escape(value, quote=True)}"><span>原文</span></span>'
+                    rendered = DataEnRenderer().render(source)
+                    parsed = Text(rendered)
+                    self.assertEqual(''.join(parsed.parts), value)
+                    self.assertEqual(parsed.images, 0)
+                    self.assertNotIn('<script>', rendered)
+
+    def test_rich_translation_without_plain_marker_preserves_links(self):
+        source = '<p data-en="See &lt;a href=&quot;/en/tools&quot;&gt;tools&lt;/a&gt; &amp; notes">原文</p>'
+        self.assertIn('See <a href="/en/tools">tools</a> & notes', DataEnRenderer().render(source))
+
+    def test_localized_jsonld_plain_metadata_cannot_close_script(self):
+        from _gen_en_pages import localize_jsonld
+        title = '</script><img src="x" onerror="window.__injected=1">'
+        source = '<script type="application/ld+json" id="keep">{"@type":"Article","headline":"Original"}</script>'
+        rendered = localize_jsonld(source, title, 'Notes & examples')
+        self.assertEqual(rendered.count('</script>'), 1)
+        self.assertNotIn('<img', rendered)
+        self.assertEqual(json.loads(rendered.split('>', 1)[1].rsplit('</script>', 1)[0])['headline'], title)
+
+    def test_late_article_jsonld_passes_keep_two_blocks_safe_and_idempotent(self):
+        import _normalize_article_metadata as metadata
+        import _normalize_mentions as mentions
+        import _normalize_is_based_on as based_on
+        from _normalize_citations import serialize_citations
+        from _json_html import script_json
+        from html.parser import HTMLParser
+        payload = '</script><img src="x" onerror="window.__injected=1"> <!-- <script>'
+        citations = serialize_citations([{'@type':'ScholarlyArticle','name':payload}])
+        blocks = ''.join('<script type="application/ld+json" id="block-'+str(i)+'">'+script_json({
+            '@type':'MedicalWebPage','name':payload,'description':'Preserve block '+str(i),
+            'keywords':'Existing','audience':{'@type':'MedicalAudience','audienceType':'Patient'}})+'</script>' for i in range(2))
+        class Scripts(HTMLParser):
+            def __init__(self, source):
+                super().__init__();self.images=0;self.scripts=[];self.current=None;self.feed(source)
+            def handle_starttag(self, tag, attrs):
+                if tag=='img':self.images+=1
+                if tag=='script':self.current=''
+            def handle_data(self, data):
+                if self.current is not None:self.current+=data
+            def handle_endtag(self, tag):
+                if tag=='script' and self.current is not None:
+                    self.scripts.append(json.loads(self.current));self.current=None
+        with tempfile.TemporaryDirectory() as directory:
+            page=Path(directory)/'fixture.html'
+            source='<html><head>'+citations+blocks+'</head><body><p>Fixture prose</p></body></html>'
+            page.write_text(source,encoding='utf8')
+            def run():
+                with patch.object(metadata,'git_last_modified',return_value=None):
+                    metadata.process_article(page,{},is_en=False)
+                mentions.update_article(page,[])
+                based_on.update_article(page)
+            run();first=page.read_text(encoding='utf8');run()
+            self.assertEqual(page.read_text(encoding='utf8'),first)
+            parsed=Scripts(first);self.assertEqual(parsed.images,0)
+            self.assertEqual(len(parsed.scripts),3)
+            self.assertEqual(parsed.scripts[0]['@graph'][0]['name'],payload)
+            for i,obj in enumerate(parsed.scripts[1:]):
+                self.assertEqual(obj['name'],payload)
+                self.assertEqual(obj['description'],'Preserve block '+str(i))
+
+    def test_tools_and_medical_about_preserve_literal_values_without_script_breakout(self):
+        import _normalize_tools_schema as tools
+        import _normalize_medical_codes as codes
+        from _json_html import script_json
+        payload='</script><img src="x" onerror="window.__injected=1">'
+        template='<html><head><script type="application/ld+json">'+script_json({
+            '@type':'MedicalWebPage','about':{'@type':'MedicalCondition','name':'Old'}})+'</script></head></html>'
+        source,_=tools.inject(template,{'@context':'https://schema.org','@graph':[{'@type':'WebApplication','name':payload}]})
+        source,_=codes.update_article_about(source,[{'@type':'MedicalCondition','name':payload}],[])
+        self.assertNotIn('<img',source)
+        bodies=re.findall(r'<script\b[^>]*>(.*?)</script>',source,re.S)
+        objects=[json.loads(body) for body in bodies]
+        self.assertEqual(objects[0]['about']['name'],payload)
+        self.assertEqual(objects[1]['@graph'][0]['name'],payload)
+
+    def test_generated_qa_jsonld_is_safe_and_repeated_build_preserves_prose(self):
+        import _gen_faq_from_qa as faq
+        from html import escape
+        payload='</script><img src="x" onerror="window.__injected=1">'
+        with tempfile.TemporaryDirectory() as directory:
+            page=Path(directory)/'fixture.html'
+            body='<body><h2 id="faq">FAQ</h2><div class="qa"><h3>'+escape(payload)+'</h3><p>Fixture answer long enough.</p></div></body>'
+            page.write_text('<html><head></head>'+body+'</html>',encoding='utf8')
+            self.assertEqual(faq.process(page),1)
+            first=page.read_text(encoding='utf8');self.assertIn(body,first)
+            self.assertNotIn('<img',first)
+            raw=re.search(r'<script\b[^>]*>(.*?)</script>',first,re.S)[1]
+            self.assertEqual(json.loads(raw)['mainEntity'][0]['name'],payload)
+            self.assertEqual(faq.process(page),0)
+            self.assertEqual(page.read_text(encoding='utf8'),first)
+
+    def test_authoring_details_faq_uses_safe_json_without_changing_values(self):
+        # This older authoring helper replaces stdout at import. Run its real
+        # extractor/injector in a child so it cannot close the test runner's IO.
+        code = '''import json
+import _gen_faqpage_jsonld as faq
+source='<html><head></head><body><article><details><summary>&lt;/script&gt;&lt;img src=x&gt;</summary><p>A literal answer long enough.</p></details></article></body></html>'
+items=faq.extract_faqs(source)
+first,_=faq.inject(source,items)
+second,_=faq.inject(first,items)
+print(json.dumps({'html':first,'stable':first==second,'question':items[0]['q']}))
+'''
+        result=subprocess.run([sys.executable,'-c',code],cwd=ROOT,capture_output=True,
+                              text=True,encoding='utf8',timeout=15,check=True)
+        fixture=json.loads(result.stdout)
+        self.assertTrue(fixture['stable'])
+        self.assertNotIn('<img',fixture['html'])
+        body=re.search(r'<script\b[^>]*>(.*?)</script>',fixture['html'],re.S)[1]
+        self.assertEqual(json.loads(body)['mainEntity'][0]['name'],fixture['question'])
+
     def test_python312_read_text_interface_and_crlf(self):
         # Exercise the production path with the read_text API available in CI.
         original = Path.read_text

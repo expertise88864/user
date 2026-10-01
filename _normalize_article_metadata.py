@@ -22,6 +22,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+from _json_html import script_json
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -171,7 +172,7 @@ def iter_jsonld_blocks(src: str):
 
 def replace_jsonld_block(src: str, start: int, end: int,
                           opening_tag: str, new_obj: dict) -> str:
-    body = json.dumps(new_obj, ensure_ascii=False, separators=(',', ':'))
+    body = script_json(new_obj)
     return src[:start] + opening_tag + body + '</script>' + src[end:]
 
 
@@ -329,7 +330,7 @@ def process_article(fp: Path, homepage_tags: dict[str, dict[str, str]],
             opening_tag,
             obj,
         )
-        new_body = json.dumps(obj, ensure_ascii=False, separators=(',', ':'))
+        new_body = script_json(obj)
         new_block_len = len(opening_tag) + len(new_body) + len('</script>')
         old_block_len = end - start
         offset_drift += new_block_len - old_block_len

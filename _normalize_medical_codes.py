@@ -17,6 +17,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from _json_html import script_json
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -398,10 +399,10 @@ def update_article_about(html: str, conditions: list[dict],
 
     # Combine conditions + procedures into one `about` array
     about_value = conditions + procedures
-    new_about = json.dumps(about_value, ensure_ascii=False, separators=(",", ":"))
+    new_about = script_json(about_value)
     # Strip surrounding [ ] if single item — schema.org accepts both
     if len(about_value) == 1:
-        new_about_str = json.dumps(about_value[0], ensure_ascii=False, separators=(",", ":"))
+        new_about_str = script_json(about_value[0])
     else:
         new_about_str = new_about
 

@@ -239,6 +239,7 @@ def browser_fixture():
     """Exercise the real generator's plain-field contract in native browsers."""
     import json
     import sys
+    from _gen_en_pages import DataEnRenderer
     root = Path(__file__).resolve().parent
     item = dict(load_catalog(root)[0])
     payload = '<img src="x" onerror="window.__staticCardInjected=1"> & "quoted"'
@@ -248,7 +249,8 @@ def browser_fixture():
     sys.stdout.reconfigure(encoding='utf-8')
     print(json.dumps({'payload': payload, 'cards': [render_card(item),
         sync_card(source[start:stop], item, {}, 'zh'),
-        sync_card(source[start:stop], item, {}, 'en')]}, ensure_ascii=False))
+        sync_card(source[start:stop], item, {}, 'en'),
+        DataEnRenderer().render(render_card(item))]}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

@@ -10,6 +10,7 @@ Idempotent: removes any prior auto-generated <script data-faq-auto>
 before injecting the fresh version.
 """
 import os, re, json, sys, io, html
+from _json_html import script_json
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -71,7 +72,7 @@ def inject(html_text, faqs):
         ]
     }
     block = '<script type="application/ld+json" data-faq-auto>' + \
-            json.dumps(schema, ensure_ascii=False, separators=(',', ':')) + \
+            script_json(schema) + \
             '</script>'
     new = remove_old(html_text)
     if '</head>' in new:

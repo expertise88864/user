@@ -25,6 +25,7 @@ Safe: only adds a JSON-LD <script> in <head>; no visible/layout change.
 from __future__ import annotations
 import io, re, json, sys, html
 from pathlib import Path
+from _json_html import script_json
 
 # CODE_REVIEW TD-53 — no forced newline on write. This repo runs
 # core.autocrlf=true with no .gitattributes, so every other worktree file is
@@ -103,7 +104,7 @@ def process(fp: Path) -> int:
         ],
     }
     block = ('<script type="application/ld+json" data-faq-auto>'
-             + json.dumps(schema, ensure_ascii=False, separators=(',', ':'))
+             + script_json(schema)
              + '</script>')
     new = OLD_RE.sub('', src)
     if '</head>' not in new:

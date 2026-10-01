@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import html as html_lib
 import json
+from _json_html import script_json
 import re
 import sys
 from pathlib import Path
@@ -176,14 +177,14 @@ def build_related_html(cur_slug: str, related: list[dict]) -> str:
             f'transition:all .15s;box-shadow:0 1px 2px rgba(15,23,42,.04)">'
             f'<div style="display:flex;align-items:center;gap:6px">'
             f'<span style="font-size:10.5px;font-weight:700;letter-spacing:.18em;color:var(--teal-deep);'
-            f'text-transform:uppercase" data-zh="{tag_zh}" data-en="{tag_en}">{tag_zh}</span>{badge}</div>'
-            f'<span data-zh="{title_escaped}" data-en="{title_en_escaped}" '
+            f'text-transform:uppercase" data-zh="{tag_zh}" data-en="{tag_en}" data-dn-text-only>{tag_zh}</span>{badge}</div>'
+            f'<span data-zh="{title_escaped}" data-en="{title_en_escaped}" data-dn-text-only '
             f'style="font-size:14.5px;font-weight:700;line-height:1.4;'
             f'font-family:Noto Serif TC,Georgia,serif;color:var(--ink);'
             f'display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">'
             f'{html_lib.escape(a["title"])}</span>'
             f'<span style="font-size:11.5px;color:var(--muted);margin-top:auto">'
-            f'<span data-zh="{tag_zh}" data-en="{tag_en}">{tag_zh}</span> · {html_lib.escape(a["date"])}</span>'
+            f'<span data-zh="{tag_zh}" data-en="{tag_en}" data-dn-text-only>{tag_zh}</span> · {html_lib.escape(a["date"])}</span>'
             f'</a>'
         )
 
@@ -207,7 +208,7 @@ def build_related_html(cur_slug: str, related: list[dict]) -> str:
     }
     jsonld = (
         '<script type="application/ld+json">'
-        + json.dumps(item_list, ensure_ascii=False, separators=(",", ":"))
+        + script_json(item_list)
         + '</script>'
     )
     return (

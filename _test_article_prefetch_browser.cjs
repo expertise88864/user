@@ -6,6 +6,7 @@ const {execFileSync} = require('node:child_process');
 
 module.exports = async function checkArticlePrefetch(browser) {
   const staticFixture=JSON.parse(execFileSync('python',['_test_hub_catalog.py','--browser-fixture'],{encoding:'utf8',timeout:15000}));
+  const relatedFixture=JSON.parse(execFileSync('python',['_test_related_articles.py','--browser-fixture'],{encoding:'utf8',timeout:15000}));
   const context = await browser.newContext({viewport:{width:390,height:844},serviceWorkers:'block'});
   try {
     const page = await context.newPage();
@@ -119,6 +120,8 @@ module.exports = async function checkArticlePrefetch(browser) {
     await staticPage.route('**/*',route => route.abort());
     for (const card of staticFixture.cards) {
       await staticPage.setContent('<html lang="zh-Hant"><body><section id="static-card-fixture">'+card+'</section></body></html>');
+      assert.equal(await staticPage.locator('#static-card-fixture img').count(),0,
+        'English server-rendered catalogue text must be safe before JavaScript loads');
       await staticPage.addScriptTag({content:fs.readFileSync('blog/blog-shared.min.js','utf8')});
       const result=await staticPage.evaluate(() => {
         const host=document.querySelector('#static-card-fixture');DN.applyTextOnly('en');
@@ -134,7 +137,36 @@ module.exports = async function checkArticlePrefetch(browser) {
       assert.equal(result.images,0);assert.equal(result.injected,false);
       assert.equal(result.zhTitle,'Fixture title');assert.equal(result.customTitle,'Custom static author wording');
     }
+    for (const block of relatedFixture.blocks) {
+      await staticPage.setContent('<html lang="zh-Hant"><body><section id="related-fixture">'+block+'</section></body></html>');
+      assert.equal(await staticPage.locator('#related-fixture img').count(),0,
+        'English server-rendered related metadata must be safe before JavaScript loads');
+      await staticPage.addScriptTag({content:fs.readFileSync('blog/blog-shared.min.js','utf8')});
+      const result=await staticPage.evaluate(() => {
+        DN.applyTextOnly('en');const host=document.querySelector('#related-fixture');
+        const fields=Array.from(host.querySelectorAll('a.dn-related-card [data-dn-text-only]'));
+        const result={texts:fields.map(node=>node.textContent),images:host.querySelectorAll('img').length,
+          injected:!!window.__relatedInjected};
+        DN.applyTextOnly('zh');result.zhTexts=fields.map(node=>node.textContent);
+        fields[1].textContent='Custom related author wording';DN.applyTextOnly('en');
+        result.customTitle=fields[1].textContent;return result;
+      });
+      assert.deepEqual(result.texts,Array(3).fill(relatedFixture.payload));
+      assert.equal(result.images,0);assert.equal(result.injected,false);
+      assert.deepEqual(result.zhTexts,['Fixture topic','Fixture title','Fixture topic']);
+      assert.equal(result.customTitle,'Custom related author wording');
+    }
+    for (const block of relatedFixture.jsonldBlocks) {
+      await staticPage.setContent('<html><body><section id="jsonld-fixture">'+block+'</section></body></html>');
+      const result=await staticPage.evaluate(() => {
+        const host=document.querySelector('#jsonld-fixture');
+        return {images:host.querySelectorAll('img').length,injected:!!window.__jsonldInjected,
+          title:JSON.parse(host.querySelector('script[type="application/ld+json"]').textContent).itemListElement[0].name};
+      });
+      assert.equal(result.images,0);assert.equal(result.injected,false);
+      assert.equal(result.title,relatedFixture.scriptPayload,'JSON escaping must preserve exact metadata values');
+    }
     await staticPage.close();
-    return {startupHints:0,intentHints:1,compiledRuntime:true,lazyReadingProgress:true,missingCardFallback:true,plainCatalogueTranslation:true,staticPlainCatalogueTranslation:true};
+    return {startupHints:0,intentHints:1,compiledRuntime:true,lazyReadingProgress:true,missingCardFallback:true,plainCatalogueTranslation:true,staticPlainCatalogueTranslation:true,relatedPlainTranslation:true,serverRenderedPlainTranslation:true};
   } finally {await context.close();}
 };

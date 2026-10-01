@@ -9,6 +9,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from _json_html import script_json
 
 
 # CODE_REVIEW — UTF-8 console on Windows (cp950 default crashes on CJK).
@@ -413,7 +414,7 @@ def normalize_obj(obj: dict, path: Path, meta: dict[str, str],
 
 
 def script_for(obj: dict) -> str:
-    return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False, separators=(",", ":")) + "</script>"
+    return '<script type="application/ld+json">' + script_json(obj) + "</script>"
 
 
 def iter_jsonld(src: str):
@@ -547,7 +548,7 @@ def normalize_file(path: Path) -> bool:
         if not isinstance(obj, dict):
             return match.group(0)
         new_obj = normalize_obj(obj, path, meta, metrics)
-        new = '<script type="application/ld+json"' + attrs + ">" + json.dumps(new_obj, ensure_ascii=False, separators=(",", ":")) + "</script>"
+        new = '<script type="application/ld+json"' + attrs + ">" + script_json(new_obj) + "</script>"
         if new != match.group(0):
             changed = True
         return new

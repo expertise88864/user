@@ -18,6 +18,7 @@ import html as html_lib
 from html.parser import HTMLParser
 from pathlib import Path
 from _html_scan import attributes
+from _json_html import script_json
 
 # CODE_REVIEW — Windows cp950 console crashes on print() with CJK
 # unless stdout is reconfigured to UTF-8. Guard with hasattr because
@@ -157,7 +158,7 @@ FALLBACK_EN_DESC = (
 
 
 class DataEnRenderer(HTMLParser):
-    """Render elements carrying data-en with that value as their inner HTML."""
+    """Render bilingual copy, keeping marked catalogue fields as plain text."""
 
     def __init__(self):
         super().__init__(convert_charrefs=False)
@@ -176,7 +177,8 @@ class DataEnRenderer(HTMLParser):
                 self.active['depth'] = int(self.active['depth']) + 1
             return
         if data_en is not None:
-            self.active = {'tag': tag, 'depth': 1, 'start': start, 'en': data_en}
+            self.active = {'tag': tag, 'depth': 1, 'start': start, 'en': data_en,
+                           'text_only': any(name == 'data-dn-text-only' for name, _ in attrs)}
             return
         self.out.append(start)
 
@@ -194,7 +196,10 @@ class DataEnRenderer(HTMLParser):
                     # Re-escape lone '<' that doesn't start an HTML tag so the
                     # html5validator does not flag "Bad character ' ' after '<'".
                     en_text = str(self.active['en'])
-                    en_text = re.sub(r'<(?![a-zA-Z!/?])', '&lt;', en_text)
+                    if self.active['text_only']:
+                        en_text = html_lib.escape(en_text, quote=False)
+                    else:
+                        en_text = re.sub(r'<(?![a-zA-Z!/?])', '&lt;', en_text)
                     self.out.append(en_text)
                     self.out.append(f'</{tag}>')
                     self.active = None
@@ -844,7 +849,10 @@ def localize_jsonld(src: str, title: str, desc: str) -> str:
         # id="dn-citations" / id="dn-drug-schema" survive mirroring. Without
         # this, _normalize_citations.py + _normalize_drug_schema.py can't
         # find the existing block on subsequent runs and inject duplicates.
-        return opening_tag + json.dumps(obj, ensure_ascii=False, separators=(',', ':')) + '</script>'
+        # JSON strings may contain HTML-like author text. Keep raw-text script
+        # delimiters escaped after localization, without changing JSON values.
+        encoded = script_json(obj)
+        return opening_tag + encoded + '</script>'
 
     return re.sub(
         r'(<script\s+type="application/ld\+json"[^>]*>)([\s\S]*?)</script>',
