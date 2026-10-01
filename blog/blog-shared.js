@@ -215,7 +215,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202610020028';
+        s.src = '/blog/blog-article-visuals.min.js?v=202610020240';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -662,36 +662,50 @@
   };
 
   // -----------------------------------------------------------------------
-  // Prefetch popular articles on idle (improves next-page LCP)
-  // Only same-origin links visible in viewport that haven't been visited.
+  // Fallback hints follow reader intent, rather than downloading every visible
+  // navigation link during startup. Native speculation rules already do this
+  // in supported browsers; neither mechanism guarantees a cached navigation.
   // -----------------------------------------------------------------------
   DN.prefetchOnIdle = function () {
-    if (!('IntersectionObserver' in window)) return;
-    const idle = window.requestIdleCallback || function (cb) { return setTimeout(cb, 1500); };
-    idle(function () {
-      const seen = new Set();
-      const io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          const a = e.target;
-          const href = a.getAttribute('href');
-          if (!href || seen.has(href)) return;
-          seen.add(href);
-          // Same-origin, non-anchor, non-mailto
-          if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
-          if (/^https?:\/\//.test(href) && !href.startsWith(location.origin)) return;
-          const link = document.createElement('link');
-          link.rel = 'prefetch';
-          link.href = href;
-          link.as = 'document';
-          document.head.appendChild(link);
-          io.unobserve(a);
-        });
-      }, { rootMargin: '200px' });
-      document.querySelectorAll('a[href^="/"], a[href^="' + location.origin + '"]').forEach(function (a) {
-        io.observe(a);
-      });
-    });
+    if (DN._articlePrefetchBound) return;
+    var connection = navigator.connection;
+    if (navigator.onLine === false || (connection &&
+        (connection.saveData || /^(slow-)?2g$/.test(connection.effectiveType)))) return;
+    if (window.HTMLScriptElement && typeof window.HTMLScriptElement.supports === 'function' &&
+        window.HTMLScriptElement.supports('speculationrules') &&
+        document.querySelector('script[type="speculationrules"]')) return;
+    DN._articlePrefetchBound = true;
+    var seen = new Set();
+    function hint(event) {
+      // Recheck preferences: a connection can change after initialization.
+      if (navigator.onLine === false || (connection &&
+          (connection.saveData || /^(slow-)?2g$/.test(connection.effectiveType)))) return;
+      if (seen.size >= 4) return;
+      var target = event.target;
+      var a = target && target.closest && target.closest('a[href]');
+      if (!a || a.closest('[data-no-prerender],[hidden],[aria-hidden="true"]')) return;
+      var url;
+      try { url = new URL(a.getAttribute('href'), location.href); } catch (_) { return; }
+      if (!/^https?:$/.test(url.protocol) || url.origin !== location.origin ||
+          url.username || url.password || url.search) return;
+      var path = url.pathname.replace(/\.html$/, '').replace(/\/$/, '');
+      var match = path.match(/^\/(?:en\/)?blog\/([a-z0-9-]+)$/);
+      if (!match || path === location.pathname.replace(/\.html$/, '').replace(/\/$/, '')) return;
+      if (!(DN.ARTICLES || []).some(function (article) {
+        return article.slug === match[1] && !article.unpublished;
+      })) return;
+      url.hash = '';
+      if (seen.has(url.href)) return;
+      seen.add(url.href);
+      var link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = url.href;
+      link.as = 'document';
+      document.head.appendChild(link);
+    }
+    document.addEventListener('mouseover', hint);
+    document.addEventListener('focusin', hint);
+    document.addEventListener('touchstart', hint, { passive: true });
   };
 
   // -----------------------------------------------------------------------
@@ -976,7 +990,7 @@
   };
 
   DN.markRead = function (slug) {
-    if (!slug) return;
+    if (!DN.publishedArticles().some(function (article) { return article.slug === slug; })) return;
     var slugs = DN.getReadSlugs();
     if (slugs.indexOf(slug) !== -1) return;
     slugs.push(slug);
@@ -984,71 +998,30 @@
       localStorage.setItem(DN.READ_KEY, JSON.stringify(slugs));
       // Notify any active progress widgets
       window.dispatchEvent(new CustomEvent('dn-read-updated'));
+      var totalRead = DN.getReadCount();
       if (typeof gtag === 'function') {
         try {
           gtag('event', 'article_read', {
             slug: slug,
-            total_read: slugs.length,
+            total_read: totalRead,
             page_path: location.pathname
           });
           // Milestones
-          if (slugs.length === 5 || slugs.length === 10 || slugs.length === 20 || slugs.length === DN.totalArticles) {
-            gtag('event', 'reading_milestone', { milestone: slugs.length, total: DN.totalArticles });
+          if (totalRead === 5 || totalRead === 10 || totalRead === 20 || totalRead === DN.totalArticles) {
+            gtag('event', 'reading_milestone', { milestone: totalRead, total: DN.totalArticles });
           }
         } catch (e) {}
       }
     } catch (e) {}
   };
 
-  DN.getReadCount = function () { return DN.getReadSlugs().length; };
+  DN.getReadCount = function () {
+    var published = new Set(DN.publishedArticles().map(function (article) { return article.slug; }));
+    return new Set(DN.getReadSlugs().filter(function (slug) { return published.has(slug); })).size;
+  };
 
   DN.resetRead = function () {
     try { localStorage.removeItem(DN.READ_KEY); window.dispatchEvent(new CustomEvent('dn-read-updated')); } catch (e) {}
-  };
-
-  // Reading progress widget — injects into target element with id="dn-read-progress"
-  DN.injectReadProgress = function () {
-    var host = document.getElementById('dn-read-progress');
-    if (!host) return;
-
-    function render() {
-      var read = DN.getReadCount();
-      var total = DN.totalArticles || 1;
-      var pct = Math.round((read / total) * 100);
-
-      var readZh = '已讀 ' + read + ' 篇 (' + pct + '%)';
-      var readEn = read + ' read (' + pct + '%)';
-      host.innerHTML =
-        '<div style="background:#fff;border:1px solid var(--border, #dcd5c8);border-radius:14px;padding:18px 22px;box-shadow:0 1px 2px rgba(15,23,42,.04)">' +
-          '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px">' +
-            '<div>' +
-              '<div data-zh="閱讀進度" data-en="Reading progress" style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#4d6358;font-weight:700;margin-bottom:2px">閱讀進度</div>' +
-              '<div data-zh="' + readZh + '" data-en="' + readEn + '" style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#0f172a">' + readZh + '</div>' +
-            '</div>' +
-            (read > 0
-              ? '<button id="dn-read-reset" type="button" data-zh="重設進度" data-en="Reset" style="background:#fff;border:1px solid var(--border, #dcd5c8);color:#5e574e;padding:5px 10px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer">重設進度</button>'
-              : '<span data-zh="逐篇閱讀後自動記錄" data-en="Auto-tracked as you read" style="font-size:12px;color:var(--muted,#71695e);font-style:italic">逐篇閱讀後自動記錄</span>') +
-          '</div>' +
-          '<div style="height:8px;background:#f1ece4;border-radius:9999px;overflow:hidden">' +
-            '<div style="height:100%;width:' + pct + '%;background:linear-gradient(90deg,#a4b5a8,#0c5159);transition:width .35s ease;"></div>' +
-          '</div>' +
-        '</div>';
-
-      var resetBtn = document.getElementById('dn-read-reset');
-      if (resetBtn) resetBtn.addEventListener('click', function () {
-        var msg = (DN.detectLang && DN.detectLang() === 'en')
-          ? 'Reset reading progress? This only clears local records on this device.'
-          : '要重設閱讀進度嗎？ 本動作只會清除本裝置的紀錄，不會影響網站。';
-        if (confirm(msg)) {
-          DN.resetRead();
-        }
-      });
-    }
-    render();
-    window.addEventListener('dn-read-updated', render);
-    window.addEventListener('storage', function (e) {
-      if (e.key === DN.READ_KEY) render();
-    });
   };
 
   // Catalog dates are ISO YYYY-MM-DD strings, so lexical order is chronological.
@@ -1074,7 +1047,9 @@
   DN.getArticleNumber = function (slug) {
     return DN.numberMap[slug] || null;
   };
-  DN.totalArticles = (DN.ARTICLES || []).length;
+  // Stable article identifiers include historical entries; public progress does
+  // not require reading an unlisted or removed article to reach completion.
+  DN.totalArticles = DN.publishedArticles().length;
 
   DN.currentSlug = function () {
     const m = location.pathname.match(/\/blog\/([a-z0-9-]+)\/?$/i);
@@ -1092,7 +1067,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202610020028';
+        s.src = '/blog/blog-article-reading.min.js?v=202610020240';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1128,7 +1103,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202610020028';
+        s.src = '/blog/blog-article-footer.min.js?v=202610020240';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1158,7 +1133,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202610020028';
+        s.src = '/blog/blog-calculators.min.js?v=202610020240';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1234,15 +1209,20 @@
   // Lets future navigation be instant + works offline.
   DN.precacheArticles = function (n) {
     if (!('serviceWorker' in navigator) || !navigator.serviceWorker.controller) return;
-    var limit = n || 10;
+    var connection = navigator.connection;
+    if (navigator.onLine === false || (connection &&
+        (connection.saveData || /^(slow-)?2g$/.test(connection.effectiveType)))) return;
+    var limit = Number.isInteger(n) && n > 0 ? Math.min(n, 20) : 10;
+    var published = DN.publishedArticles();
+    var publicSlugs = new Set(published.map(function (article) { return article.slug; }));
     var urls = [];
     var seen = {};
     // Popular picks first
     (DN.POPULAR_PICKS || []).forEach(function (s) {
-      if (!seen[s]) { seen[s] = 1; urls.push(DN.articleUrlForRuntime(s)); }
+      if (publicSlugs.has(s) && !seen[s] && urls.length < limit) { seen[s] = 1; urls.push(DN.articleUrlForRuntime(s)); }
     });
     // Then recent by date
-    (DN.ARTICLES || []).slice()
+    published.slice()
       .sort(function (a, b) { return DN.compareDates(b.date, a.date); })
       .forEach(function (a) {
         if (!seen[a.slug] && urls.length < limit) {
@@ -1293,7 +1273,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202610020028';
+        s.src = '/blog/blog-hub.min.js?v=202610020240';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1888,16 +1868,16 @@
     DN.lazyLoadAudit();
     DN.bindWebVitals();
     DN.bindGAEvents();
-    if (document.getElementById('dn-hub') || document.getElementById('dn-recent-list') || document.getElementById('dn-popular-list')) {
+    if (document.getElementById('dn-hub') || document.getElementById('dn-recent-list') || document.getElementById('dn-popular-list') || document.getElementById('dn-read-progress')) {
       idle(function () {
         DN.ensureHubBundle().then(function () {
           if (typeof DN.bindArticleHub === 'function') DN.bindArticleHub();
           if (typeof DN.injectSpotlight === 'function') DN.injectSpotlight();
+          if (typeof DN.injectReadProgress === 'function') DN.injectReadProgress();
           try { DN.applyTextOnly(curLang); } catch (e) {}
         }).catch(function () {});
       }, { timeout: 800 });
     }
-    DN.injectReadProgress();
 
     // ── Re-apply language to ALL injected content (related/share/author-bio/etc.)
     // 2026-05-17 — trimmed from 5 timers [100,600,1500,3000,5000] to 2.

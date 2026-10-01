@@ -141,6 +141,7 @@ if (require.main === module) (async () => {
   try {
     await require('./_test_analytics_origin_browser.cjs')(browser);
     await require('./_test_nav_search_browser.cjs')(browser);
+    await require('./_test_article_prefetch_browser.cjs')(browser);
     await require('./_test_settings_public_browser.cjs')(browser);
     await require('./_test_admin_editing_browser.cjs')(browser);
     await require('./_test_settings_panel_browser.cjs')(browser);

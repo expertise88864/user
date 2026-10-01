@@ -10,6 +10,13 @@ module.exports = async function checkWordAdmin(browser, options = {}) {
     const source='<!doctype html><html lang="zh-Hant"><head><title>Fixture</title></head><body><header>Immutable header 😀</header><div id="proseZh"><p id="intro">原稿文字</p><section id="semantic"><h2>小標</h2><p>保留 section</p></section><svg id="art"><path d="M0 0"/></svg><script>window.CLINICAL_RUN=1</script></div><div id="proseEn">English remains</div><footer>Immutable footer</footer></body></html>';
     let head=HEAD, accepted=source, releaseSave, rejectBundle=true, failRead=false;
     const writes=[], externalWrites=[];
+    const settingsWrites=[];
+    const clone=value=>JSON.parse(JSON.stringify(value));
+    const settingsDefaults={version:1,legacyPicks:true,font:{bodyFont:'',headFont:'',bodySize:''},order:[],picks:['first']};
+    let settings={main:BASE,head:null,blobSha:BLOB,baseSha:BLOB,catalogSha:'9'.repeat(40),
+      mainBlobSha:BLOB,mainCatalogSha:'9'.repeat(40),sourceSettings:clone(settingsDefaults),settings:clone(settingsDefaults),
+      articles:[{slug:'first',title:'第一篇',title_en:'First article'},{slug:'second',title:'第二篇',title_en:'Second article'}],
+      conflict:false,status:'source_base',request:null,manifestRecord:null,published:false,deploymentVerified:false};
     try {
       const page=await context.newPage();
       await page.addInitScript(()=>{
@@ -24,6 +31,18 @@ module.exports = async function checkWordAdmin(browser, options = {}) {
         }
         if(url.origin!=='https://word-admin.test')return route.abort();
         if(url.pathname==='/api/admin/login')return route.fulfill({json:{ok:true,login:'expertise88864'}});
+        if(url.pathname==='/api/admin/site-settings') {
+          assert.equal(request.headers().authorization,undefined,'settings must use the fixed cookie channel');
+          if(request.method()==='GET')return route.fulfill({json:clone(settings)});
+          assert.equal(request.method(),'POST');
+          const input=request.postDataJSON();
+          assert.ok(['font','order'].includes(input.kind));assert.equal(input.action,undefined,'save is not publication');
+          assert.equal(input.expectedHead,settings.head);assert.equal(input.baseSha,settings.baseSha);assert.equal(input.catalogSha,settings.catalogSha);
+          settingsWrites.push(input);
+          settings={...settings,head:(settingsWrites.length===1?'e':'f').repeat(40),blobSha:(settingsWrites.length===1?'7':'8').repeat(40),
+            settings:{...settings.settings,[input.kind]:clone(input.values)},verified:true,status:'cloud_draft'};
+          return route.fulfill({json:clone(settings)});
+        }
         if(url.pathname==='/api/admin/article-draft') {
           if(request.method()==='GET') {
             if(failRead){failRead=false;return route.fulfill({status:503,json:{error:'draft_unavailable'}});}
@@ -57,16 +76,31 @@ module.exports = async function checkWordAdmin(browser, options = {}) {
       assert.equal(await page.evaluate(()=>window.CLINICAL_RUN),undefined,'protected script must never execute');
       assert.ok(await page.locator('#metaBtn').isDisabled());
       assert.ok(await page.locator('#axDictRun').isDisabled(),'legacy helper must not mutate the hidden preview in Word mode');
-      await page.evaluate(()=>{document.getElementById('axBodySize').value='17px';document.getElementById('axFontApply').click();});
-      const fontDraft=await page.evaluate(()=>JSON.parse(localStorage.getItem('cd_admin_settings_draft_font')));
-      assert.equal(fontDraft.bodySize,'17px');assert.equal(fontDraft.version,1);assert.equal(fontDraft.kind,'font');
-      await page.evaluate(base=>{
-        const list=document.getElementById('axReorderList');list.replaceChildren();
-        for(const slug of ['second','first']){const item=document.createElement('li');item.dataset.slug=slug;list.appendChild(item);}
-        document.getElementById('axReorderSave')._sha=base;document.getElementById('axReorderSave').click();
-      },BASE);
-      const orderDraft=await page.evaluate(()=>JSON.parse(localStorage.getItem('cd_admin_settings_draft_reorder')));
-      assert.deepEqual(orderDraft.order,['second','first']);assert.equal(orderDraft.baseSha,BASE);assert.equal(orderDraft.kind,'reorder');
+      await page.waitForFunction(()=>document.getElementById('axPanel')?.dataset.settingsMounted==='1');
+      assert.equal(await page.locator('#axFontApply').isDisabled(),true,'settings require an explicit cloud load');
+      await page.evaluate(()=>document.getElementById('axSettingsLoad').click());
+      await page.waitForFunction(()=>!document.getElementById('axFontApply').disabled);
+      await page.evaluate(()=>{
+        const size=document.getElementById('axBodySize');size.value='17px';size.dispatchEvent(new Event('change',{bubbles:true}));
+        document.getElementById('axFontApply').click();
+      });
+      await page.waitForFunction(()=>!document.getElementById('axFontApply').disabled&&document.getElementById('axSettingsStatus').textContent.includes('已核對並保存'));
+      assert.equal(settingsWrites.length,1);assert.equal(settingsWrites[0].kind,'font');assert.equal(settingsWrites[0].expectedHead,null);
+      assert.equal(settings.settings.font.bodySize,'17px');assert.equal(settings.published,false);
+      await page.evaluate(()=>{
+        document.querySelector('#axReorderList [data-slug="second"] button[data-move="-1"]').click();
+        document.getElementById('axReorderSave').click();
+      });
+      await page.waitForFunction(()=>!document.getElementById('axReorderSave').disabled&&document.getElementById('axSettingsStatus').textContent.includes('已核對並保存'));
+      assert.equal(settingsWrites.length,2);assert.equal(settingsWrites[1].kind,'order');assert.equal(settingsWrites[1].expectedHead,'e'.repeat(40));
+      assert.deepEqual(settings.settings.order,['second','first']);assert.equal(settings.settings.font.bodySize,'17px');
+      await page.evaluate(()=>document.getElementById('axSettingsLocalSave').click());
+      const recoverySettings=await page.evaluate(()=>JSON.parse(localStorage.getItem('cd_site_settings_local_v2')));
+      assert.equal(recoverySettings.version,2);assert.equal(recoverySettings.head,settings.head);
+      assert.deepEqual(recoverySettings.settings,settings.settings);
+      assert.equal(await page.evaluate(()=>localStorage.getItem('cd_admin_settings_draft_font')),null,'legacy settings are not silently recreated');
+      assert.equal(await page.evaluate(()=>getCurrentEditorContent()),source,'website settings never mutate the Word article');
+      assert.equal(writes.length,0,'website settings never save the article');
       const editor=page.locator('.word-document .ProseMirror');
       await editor.locator('#intro').click();await editor.press('End');await editor.pressSequentially(' Word編輯');
       await page.locator('#boldBtn').click();await editor.pressSequentially('粗體');
@@ -114,6 +148,7 @@ module.exports = async function checkWordAdmin(browser, options = {}) {
       await page.locator('#wordEditBtn').click();await page.locator('.word-document .ProseMirror').waitFor();
       assert.equal(await page.evaluate(()=>getCurrentEditorContent()),afterSave,'dirty source mode can re-enter Word without losing protected bytes');
       assert.deepEqual(externalWrites,[],'editor must not write GitHub/main directly');
+      assert.equal(settingsWrites.length,2,'only the two explicitly requested settings draft saves are allowed');
       console.log('Actual Word admin flow passed at '+width+'px');
     } finally {await context.close();}
   }
