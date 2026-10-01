@@ -3,13 +3,35 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from _sync_hub_catalog import CardList, load_catalog, load_overrides, public_catalog, render_card, sync_source
+from _sync_hub_catalog import CardList, load_catalog, load_overrides, public_catalog, render_card, sync_card, sync_source
 
 
 class HubCatalogTests(unittest.TestCase):
     def setUp(self):
         self.first = dict(slug="first", title="原有文章", title_en="Reader's guide", cat="rx", date="2026-05-01")
         self.second = dict(slug="second", title="新增文章", title_en='A & B "guide"', cat="myth", date="2026-05-02")
+
+    def test_catalogue_plain_text_stays_marked_for_language_switches(self):
+        from html.parser import HTMLParser
+        payload = '<img src="x" onerror="window.__cardInjected=1"> & "quoted"'
+        item = dict(self.first, title_en=payload, tag='Fixture tag', tag_en=payload)
+        class Fields(HTMLParser):
+            def __init__(self, source):
+                super().__init__(); self.fields = []; self.images = 0; self.feed(source)
+            def handle_starttag(self, tag, attrs):
+                attributes = dict(attrs)
+                if tag == 'img': self.images += 1
+                if tag == 'h2' or attributes.get('class') == 'chip tag':
+                    self.fields.append(attributes)
+        for language in ('zh', 'en'):
+            original = render_card(item).replace('</h2>', '</h2><span class="chip tag">Fixture tag</span>')
+            card = sync_card(original, item, {}, language)
+            parsed = Fields(card)
+            self.assertEqual(parsed.images, 0)
+            self.assertEqual(len(parsed.fields), 2)
+            self.assertTrue(all('data-dn-text-only' in field and field['data-en'] == payload for field in parsed.fields))
+            self.assertEqual(sync_card(card, item, {}, language), card)
+        self.assertIn('data-dn-text-only=""', render_card(item))
 
     def test_missing_card_is_static_and_existing_markup_is_preserved(self):
         card = render_card(self.first).replace('<div class="al-body">', '<div class="al-body"><span>Artwork</span>')
@@ -176,7 +198,7 @@ class HubCatalogTests(unittest.TestCase):
         self.assertIn('data-cat="rx"', result)
         self.assertIn('data-tag-en="Biopsy"', result)
         self.assertIn('>原有文章</h2>', result)
-        self.assertIn('data-en="Biopsy">處置 / 手術</span>', result)
+        self.assertIn('data-en="Biopsy" data-dn-text-only="">處置 / 手術</span>', result)
         self.assertIn('<svg id="artwork"><path d="M0 1"/></svg>', result)
         self.assertNotIn('乾癬', result)
         self.assertEqual(sync_source(result, 'list', [item]), result)
@@ -213,5 +235,25 @@ class HubCatalogTests(unittest.TestCase):
                     self.assertNotIn('psoriasis', effective['tag_en'].lower(), (hub, item['slug']))
 
 
+def browser_fixture():
+    """Exercise the real generator's plain-field contract in native browsers."""
+    import json
+    import sys
+    root = Path(__file__).resolve().parent
+    item = dict(load_catalog(root)[0])
+    payload = '<img src="x" onerror="window.__staticCardInjected=1"> & "quoted"'
+    item.update(title='Fixture title', title_en=payload, tag='Fixture tag', tag_en=payload)
+    source = (root / 'blog/index.html').read_text(encoding='utf-8')
+    _, start, stop = CardList(source, 'articleList').cards[0]
+    sys.stdout.reconfigure(encoding='utf-8')
+    print(json.dumps({'payload': payload, 'cards': [render_card(item),
+        sync_card(source[start:stop], item, {}, 'zh'),
+        sync_card(source[start:stop], item, {}, 'en')]}, ensure_ascii=False))
+
+
 if __name__ == "__main__":
-    unittest.main()
+    import sys
+    if sys.argv[1:] == ['--browser-fixture']:
+        browser_fixture()
+    else:
+        unittest.main()

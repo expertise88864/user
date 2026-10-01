@@ -118,7 +118,7 @@ process.stdout.write(JSON.stringify(input.cases.map(text=>{try{return {ok:true,v
         self.assertEqual(settings["font"], {"bodyFont": "", "headFont": "", "bodySize": ""})
         self.assertEqual(settings["order"], [])
         self.assertIs(settings['legacyPicks'], True, 'bootstrap retains the existing public KV source')
-        self.assertNotIn("severe-scabies", {row["slug"] for row in actual["articles"]})
+        self.assertNotIn("severe-scabies-treatment", {row["slug"] for row in actual["articles"]})
 
     def test_default_order_matches_homepage_authored_dates_and_catalogue_ties(self):
         from _sync_hub_catalog import CardList

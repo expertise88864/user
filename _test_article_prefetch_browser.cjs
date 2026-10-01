@@ -2,8 +2,10 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const {execFileSync} = require('node:child_process');
 
 module.exports = async function checkArticlePrefetch(browser) {
+  const staticFixture=JSON.parse(execFileSync('python',['_test_hub_catalog.py','--browser-fixture'],{encoding:'utf8',timeout:15000}));
   const context = await browser.newContext({viewport:{width:390,height:844},serviceWorkers:'block'});
   try {
     const page = await context.newPage();
@@ -20,7 +22,9 @@ module.exports = async function checkArticlePrefetch(browser) {
       const contentType = file.endsWith('.js') ? 'application/javascript' : file.endsWith('.css') ? 'text/css' : file.endsWith('.html') ? 'text/html' : 'application/octet-stream';
       return route.fulfill({contentType,body:fs.readFileSync(file)});
     });
-    await page.goto(origin + '/');
+    // WebKit includes the deliberately held dynamic script in the load event.
+    // DOM readiness lets us assert the pre-hub state before releasing it.
+    await page.goto(origin + '/', {waitUntil:'domcontentloaded'});
     await page.waitForFunction(() => !!window.DN?.prefetchOnIdle);
     const initial = await page.evaluate(() => {
       DN.prefetchOnIdle();
@@ -67,6 +71,70 @@ module.exports = async function checkArticlePrefetch(browser) {
     await page.locator('#dn-read-reset').click();
     assert.match(await page.locator('#dn-read-progress').textContent(),/已讀 0 篇 \(0%\)/);
     assert.equal(await page.evaluate(() => localStorage.getItem(DN.READ_KEY)),null);
-    return {startupHints:0,intentHints:1,compiledRuntime:true,lazyReadingProgress:true};
+    await page.goto(origin+'/en/blog/index.html');
+    await page.waitForFunction(() => !!window.DN?.bindArticleHub && !!DN.ARTICLES_DESC?.['psoriasis-systemic']);
+    const fallback = await page.evaluate(() => {
+      const cards = () => Array.from(document.querySelectorAll('a.article-list-item'))
+        .filter(card => /\/blog\/psoriasis-systemic\/?$/.test(new URL(card.href).pathname));
+      cards().forEach(card => card.remove());
+      DN.bindArticleHub();DN.bindArticleHub();DN.applyTextOnly('en');
+      return {count:cards().length,text:cards()[0]?.querySelector('p')?.textContent,
+        expected:DN.ARTICLES_DESC['psoriasis-systemic'].desc_en};
+    });
+    assert.equal(fallback.count,1,'A missing public card must be recreated once, including repeat binding');
+    assert.equal(fallback.text,fallback.expected,'The recreated card must translate using its generated description');
+    assert.doesNotMatch(fallback.text,/&(?:gt|lt|amp|quot);/,'Generated descriptions must not display double-escaped entities');
+    const safeText = await page.evaluate(() => {
+      const article=DN.ARTICLES.find(row => row.slug==='psoriasis-systemic');
+      const payload='<img src="x" onerror="window.__cardInjected=1"> & "quoted"';
+      Object.assign(article,{title:'Fixture title',title_en:payload,tag:'Fixture tag',tag_en:payload});
+      DN.ARTICLES_DESC[article.slug]={desc:'Fixture description',desc_en:payload};
+      document.querySelectorAll('a.article-list-item').forEach(card => {
+        if (/\/blog\/psoriasis-systemic\/?$/.test(new URL(card.href).pathname)) card.remove();
+      });
+      DN.bindArticleHub();DN.applyTextOnly('en');
+      const card=Array.from(document.querySelectorAll('a.article-list-item'))
+        .find(node => /\/blog\/psoriasis-systemic\/?$/.test(new URL(node.href).pathname));
+      const result={payload,title:card.querySelector('h2').textContent,description:card.querySelector('p').textContent,
+        tag:card.querySelector('.tag').textContent,images:card.querySelectorAll('img').length,
+        injected:!!window.__cardInjected};
+      DN.applyTextOnly('zh');result.zhTitle=card.querySelector('h2').textContent;
+      card.querySelector('h2').textContent='Custom author wording';
+      DN.applyTextOnly('en');result.customTitle=card.querySelector('h2').textContent;
+      const popular=document.createElement('ul');popular.id='dn-popular-list';document.body.appendChild(popular);
+      DN.POPULAR_PICKS=[article.slug];DN.injectSpotlight();DN.applyTextOnly('en');
+      const fields=Array.from(popular.querySelectorAll('[data-dn-text-only]'));
+      result.spotlightText=fields.map(node => node.textContent);
+      result.spotlightImages=popular.querySelectorAll('img').length;
+      return result;
+    });
+    for (const field of ['title','description','tag']) assert.equal(safeText[field],safeText.payload,
+      'Public catalogue strings must remain text through translation');
+    assert.equal(safeText.images,0);assert.equal(safeText.injected,false);
+    assert.equal(safeText.zhTitle,'Fixture title');
+    assert.equal(safeText.customTitle,'Custom author wording','Translation must preserve custom visible wording');
+    assert.deepEqual(safeText.spotlightText,[safeText.payload,safeText.payload]);
+    assert.equal(safeText.spotlightImages,0,'Spotlight catalogue fields must also remain plain text');
+    const staticPage=await context.newPage();
+    await staticPage.route('**/*',route => route.abort());
+    for (const card of staticFixture.cards) {
+      await staticPage.setContent('<html lang="zh-Hant"><body><section id="static-card-fixture">'+card+'</section></body></html>');
+      await staticPage.addScriptTag({content:fs.readFileSync('blog/blog-shared.min.js','utf8')});
+      const result=await staticPage.evaluate(() => {
+        const host=document.querySelector('#static-card-fixture');DN.applyTextOnly('en');
+        const title=host.querySelector('h2,h3'),tag=host.querySelector('.tag');
+        const result={title:title.textContent,tag:tag?.textContent,
+          images:host.querySelectorAll('img').length,injected:!!window.__staticCardInjected};
+        DN.applyTextOnly('zh');result.zhTitle=title.textContent;
+        title.textContent='Custom static author wording';DN.applyTextOnly('en');result.customTitle=title.textContent;
+        return result;
+      });
+      assert.equal(result.title,staticFixture.payload,'Generated static titles must remain text after language switching');
+      if (result.tag !== undefined) assert.equal(result.tag,staticFixture.payload);
+      assert.equal(result.images,0);assert.equal(result.injected,false);
+      assert.equal(result.zhTitle,'Fixture title');assert.equal(result.customTitle,'Custom static author wording');
+    }
+    await staticPage.close();
+    return {startupHints:0,intentHints:1,compiledRuntime:true,lazyReadingProgress:true,missingCardFallback:true,plainCatalogueTranslation:true,staticPlainCatalogueTranslation:true};
   } finally {await context.close();}
 };

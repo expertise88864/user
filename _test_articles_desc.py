@@ -5,6 +5,15 @@ from unittest.mock import patch
 import _normalize_articles_desc as generator
 
 class DescriptionsTests(unittest.TestCase):
+    def test_double_escaped_attribute_text_and_script_characters(self):
+        self.assertEqual(generator.js_string_escape('BSA &amp;gt; 10% &amp;amp; PASI &gt; 10'),
+                         'BSA › 10% & PASI › 10')
+        rendered=generator.js_string_escape('&amp;lt;img src=&quot;x&quot;&amp;gt; \' \\ path\nnext')
+        self.assertEqual(rendered,'‹img src=”x”› ’ \\\\ path next')
+        self.assertNotIn('<',rendered)
+        self.assertNotIn('"',rendered)
+        self.assertNotIn("'",rendered)
+
     def test_public_projection_and_repeat_generation_preserve_visible_descriptions(self):
         with tempfile.TemporaryDirectory(prefix='article-desc-fixture-') as folder:
             root=Path(folder).resolve()

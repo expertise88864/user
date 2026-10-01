@@ -69,7 +69,8 @@
     document.querySelectorAll('[data-zh],[data-en]').forEach(function (el) {
       const txt = DN.translate(el, lang);
       if (txt == null) return;
-      const txtPlain = plain(txt);
+      const textOnly = el.hasAttribute('data-dn-text-only');
+      const txtPlain = textOnly ? String(txt) : plain(txt);
       const elText = el.textContent;
       // Case A: visible text already matches target language → already correct,
       // skip (preserves inline edits like <b>/<br> the editor added).
@@ -77,8 +78,8 @@
       // Case B: visible text matches the OTHER language → genuine language
       // switch. Run the swap.
       const otherSrc = el.dataset[otherLang];
-      if (otherSrc != null && elText === plain(otherSrc)) {
-        if (/[<&]/.test(txt) && /<\/?[a-z]/i.test(txt)) el.innerHTML = txt;
+      if (otherSrc != null && elText === (textOnly ? String(otherSrc) : plain(otherSrc))) {
+        if (!textOnly && /[<&]/.test(txt) && /<\/?[a-z]/i.test(txt)) el.innerHTML = txt;
         else el.textContent = txt;
         return;
       }
@@ -215,7 +216,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202610020240';
+        s.src = '/blog/blog-article-visuals.min.js?v=202610020415';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1067,7 +1068,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202610020240';
+        s.src = '/blog/blog-article-reading.min.js?v=202610020415';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1103,7 +1104,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202610020240';
+        s.src = '/blog/blog-article-footer.min.js?v=202610020415';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1133,7 +1134,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202610020240';
+        s.src = '/blog/blog-calculators.min.js?v=202610020415';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1273,7 +1274,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202610020240';
+        s.src = '/blog/blog-hub.min.js?v=202610020415';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;

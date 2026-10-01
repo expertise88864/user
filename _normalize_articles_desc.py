@@ -80,7 +80,10 @@ def js_string_escape(value: str) -> str:
     well in prose.
     """
     import html as html_lib
-    decoded = html_lib.unescape(value)
+    # Meta attributes can contain an entity escaped once more by EN generation.
+    # Decode exactly those two layers, never repeatedly decode to a fixed point.
+    # The existing JS/HTML-safe replacements still apply after both passes.
+    decoded = html_lib.unescape(html_lib.unescape(value))
     return (
         decoded
         .replace("\\", "\\\\")

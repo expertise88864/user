@@ -29,8 +29,8 @@ test('language refresh avoids redundant mutations but translates new content and
   const attrs = new Map([['aria-label', '搜尋'], ['data-zh-aria-label', '搜尋'], ['data-en-aria-label', 'Search']]);
   const label = { getAttribute: name => attrs.get(name) ?? null,
     setAttribute: (name, value) => { attrWrites++; attrs.set(name, value); } };
-  const text = { dataset: {zh:'原文',en:'Original'}, textContent:'原文' };
-  const edited = { dataset: {zh:'舊文',en:'Old'}, textContent:'醫師修改內容' };
+  const text = { dataset: {zh:'原文',en:'Original'}, textContent:'原文', hasAttribute:() => false };
+  const edited = { dataset: {zh:'舊文',en:'Old'}, textContent:'醫師修改內容', hasAttribute:() => false };
   const content = [text, edited];
   const document = {
     documentElement: { get lang() { return lang; }, set lang(value) { langWrites++; lang = value; } },
@@ -50,7 +50,7 @@ test('language refresh avoids redundant mutations but translates new content and
   assert.equal(attrs.get('aria-label'), 'Search');
   assert.equal(langWrites, 1);
   assert.equal(attrWrites, 1);
-  content.push({dataset:{zh:'新增',en:'Added'},textContent:'新增'});
+  content.push({dataset:{zh:'新增',en:'Added'},textContent:'新增',hasAttribute:() => false});
   attrs.set('aria-label', 'stale label');
   dn.applyTextOnly('en');
   assert.equal(content[2].textContent, 'Added');
@@ -59,6 +59,17 @@ test('language refresh avoids redundant mutations but translates new content and
   assert.equal(attrWrites, 2);
   dn.applyTextOnly('en');
   assert.equal(attrWrites, 2);
+  const plainText={dataset:{zh:'文字',en:'<img src="x"> & text'},textContent:'文字',
+    hasAttribute:name => name==='data-dn-text-only',
+    set innerHTML(value) { throw new Error('Plain catalogue text must never use innerHTML: '+value); }};
+  content.push(plainText);
+  dn.applyTextOnly('en');
+  assert.equal(plainText.textContent,'<img src="x"> & text');
+  dn.applyTextOnly('zh');
+  assert.equal(plainText.textContent,'文字');
+  plainText.textContent='Custom visible text';
+  dn.applyTextOnly('en');
+  assert.equal(plainText.textContent,'Custom visible text');
 });
 
 test('reading metadata counts spaced English words and includes the badge without locale initialization', () => {

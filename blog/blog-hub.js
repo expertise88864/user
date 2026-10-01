@@ -3,6 +3,15 @@
   'use strict';
   var DN = window.DN = window.DN || {};
 
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
   // Reading progress widget — injects into target element with id="dn-read-progress"
   DN.injectReadProgress = function () {
     var host = document.getElementById('dn-read-progress');
@@ -178,14 +187,6 @@
       return '<svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" style="flex-shrink:0">' + content + '</svg>';
     }
 
-    function escapeHtml(value) {
-      return String(value || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-    }
 
     function safeSlug(value) {
       var slug = String(value || '');
@@ -209,13 +210,13 @@
         '<div style="display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#4d6358">' +
           (badge ? '<span style="padding:2px 8px;border-radius:9999px;background:' + badge.bg + ';color:' + badge.fg + ';letter-spacing:.08em;font-size:10px">' + badge.label + '</span>' : '') +
           (num ? '<span style="font-family:Inter,sans-serif;letter-spacing:.06em;color:#4d6358;font-weight:800">№' + num + '</span><span style="opacity:.5">·</span>' : '') +
-          '<span data-zh="' + tagZh + '" data-en="' + tagEn + '">' + tagZh + '</span>' +
+          '<span data-dn-text-only data-zh="' + tagZh + '" data-en="' + tagEn + '">' + tagZh + '</span>' +
           '<span style="opacity:.5">·</span>' +
           '<time style="font-weight:500;font-family:Inter,sans-serif;letter-spacing:0">' + dateLabel + '</time>' +
         '</div>' +
         '<div style="display:flex;align-items:center;gap:10px">' +
           iconSvg +
-          '<div data-zh="' + titleZh + '" data-en="' + titleEn + '" style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:15px;font-weight:700;line-height:1.5;color:#0f172a;flex:1">' + titleZh + '</div>' +
+          '<div data-dn-text-only data-zh="' + titleZh + '" data-en="' + titleEn + '" style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:15px;font-weight:700;line-height:1.5;color:#0f172a;flex:1">' + titleZh + '</div>' +
         '</div>' +
       '</a>';
     }
@@ -736,12 +737,12 @@
       card.innerHTML =
         '<div class="al-icon cat-' + cat + '">' + generic_svg + '</div>' +
         '<div class="al-body"><div class="al-meta">' +
-          '<span class="chip cat-' + cat + '" data-zh="' + catZh + '" data-en="' + catEn + '">' + catZh + '</span>' +
-          (tagZh ? '<span class="chip tag" data-zh="' + tagZh + '" data-en="' + tagEn + '">' + tagZh + '</span>' : '') +
+          '<span class="chip cat-' + cat + '" data-dn-text-only data-zh="' + catZh + '" data-en="' + catEn + '">' + catZh + '</span>' +
+          (tagZh ? '<span class="chip tag" data-dn-text-only data-zh="' + tagZh + '" data-en="' + tagEn + '">' + tagZh + '</span>' : '') +
           '<time>' + date + '</time>' +
         '</div>' +
-        '<h2 data-zh="' + titleZh + '" data-en="' + titleEn + '">' + titleZh + '</h2>' +
-        (descZh ? '<p data-zh="' + descZh + '" data-en="' + descEn + '">' + descZh + '</p>' : '') +
+        '<h2 data-dn-text-only data-zh="' + titleZh + '" data-en="' + titleEn + '">' + titleZh + '</h2>' +
+        (descZh ? '<p data-dn-text-only data-zh="' + descZh + '" data-en="' + descEn + '">' + descZh + '</p>' : '') +
         '</div><div class="al-arrow">→</div>';
       listEl.appendChild(card);
       existing[a.slug] = card;
@@ -796,7 +797,7 @@
     'psoriasis-myths': {desc:'乾癬是癬嗎？會傳染？要避開太陽？類固醇會傷皮膚？生物製劑會傷免疫？7 個最常誤會的乾癬(psoriasis)觀念 + IL-17 / IL-23 致病機轉圖 + 健保給付條件。',desc_en:'Immune system dysregulation Plain-language dermatology patient education by Dr. Yi-Jia Chen, summarized from medical literature and clinical guidelines.'},
     'psoriasis-overview': {desc:'乾癬（psoriasis）是免疫介導 Th17 / IL-23 慢性發炎皮膚病。本文整理 6 大臨床亞型、嚴重度評估（BSA / PASI / IGA / DLQI）、誘發因子、合併症警訊、鑑別診斷重點。皮膚科醫師整理。',desc_en:'Psoriasis is an immune-mediated chronic inflammatory skin disease — sharply demarcated erythematous plaques with silvery scale on scalp/elbows/knees/lower back. It is...'},
     'psoriasis-special-populations': {desc:'乾癬合併症(乾癬性關節炎 PsA、心血管、代謝症候群、肝病、憂鬱、IBD)篩檢與處理；特殊族群(懷孕、哺乳、兒童、指甲乾癬、紅皮症型)治療策略。整理 AAD-NPF 2019-2020 指引。',desc_en:'Psoriasis comorbidities and special populations: psoriatic arthritis screening, cardiovascular risk, pregnancy / breastfeeding biologic safety, pediatric...'},
-    'psoriasis-systemic': {desc:'乾癬中重度全身性治療完整衛教：光療（NB-UVB / PUVA / Excimer）、口服 MTX / cyclosporine / acitretin / apremilast / deucravacitinib、生物製劑、台灣健保給付完整解析。',desc_en:'For moderate-to-severe psoriasis (BSA &gt; 10%, PASI &gt; 10, DLQI &gt; 10) or topical-refractory disease, three modern options: (1) Phototherapy NB-UVB (first-line...'},
+    'psoriasis-systemic': {desc:'乾癬中重度全身性治療完整衛教：光療（NB-UVB / PUVA / Excimer）、口服 MTX / cyclosporine / acitretin / apremilast / deucravacitinib、生物製劑、台灣健保給付完整解析。',desc_en:'For moderate-to-severe psoriasis (BSA › 10%, PASI › 10, DLQI › 10) or topical-refractory disease, three modern options: (1) Phototherapy NB-UVB (first-line...'},
     'psoriasis-topical': {desc:'乾癬外用治療階梯：類固醇 1-7 級、calcipotriol / calcitriol、強強複方（Daivobet）、tazarotene、TCI、coal tar 與特殊部位（臉、皺褶、頭皮、指甲）治療 — 依 AAD-NPF 2021 整理。',desc_en:'Topical therapy controls 80% of mild-moderate psoriasis . Three pillars per AAD-NPF 2021 (Elmets): (1) topical corticosteroids (potency 1-7 by site), (2) vitamin D...'},
     'rosacea-myths': {desc:'玫瑰痤瘡（酒糟）會自己好嗎？要用類固醇嗎？整理 BAD 2021 + TDA 2022 共識：表現型分類、Demodex 角色、外用 Ivermectin / Metronidazole / Azelaic acid、口服低劑量 doxycycline、雷射 6 大迷思。',desc_en:'Rosacea myth-busting: subtype identification, ETR vs PPR vs phymatous vs ocular, treatment ladder (topical metronidazole / ivermectin / brimonidine, oral doxycycline...'},
     'semaglutide-hair-loss': {desc:'2026 JAAD 兩篇 TriNetX 研究：semaglutide / tirzepatide 1 年新發掉髮風險 1.77–1.98 倍、雄性禿 anytime 2.41 倍；但對已有疤痕性禿髮患者反而降低治療需求 30–47%。患者 7 題 FAQ + 機轉雙路徑解析。',desc_en:'In June 2026 the Journal of the American Academy of Dermatology published two large TriNetX cohort studies whose conclusions look contradictory but are in fact...'},

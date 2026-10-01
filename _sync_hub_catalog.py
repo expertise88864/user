@@ -54,6 +54,7 @@ def sync_card(card: str, item: dict, overrides: dict, language: str = "zh") -> s
     def title(match):
         tag = set_attribute(match[1], "data-zh", metadata["title"])
         tag = set_attribute(tag, "data-en", metadata["title_en"])
+        tag = set_attribute(tag, "data-dn-text-only", "")
         return tag + html.escape(metadata["title_en" if language == "en" else "title"]) + match[3]
 
     card, count = re.subn(r"(<h[23]\b[^>]*>)([\s\S]*?)(</h[23]>)", title, card, count=1, flags=re.I)
@@ -63,6 +64,7 @@ def sync_card(card: str, item: dict, overrides: dict, language: str = "zh") -> s
         def topic(match):
             tag = set_attribute(match[1], "data-zh", metadata["tag"])
             tag = set_attribute(tag, "data-en", metadata.get("tag_en") or metadata["tag"])
+            tag = set_attribute(tag, "data-dn-text-only", "")
             display = (metadata.get("tag_en") or metadata["tag"]) if language == "en" else metadata["tag"]
             return tag + html.escape(display) + match[3]
         card = re.sub(r'(<span\b[^>]*class="chip tag"[^>]*>)([\s\S]*?)(</span>)', topic, card, count=1)
@@ -202,7 +204,7 @@ def render_card(item: dict) -> str:
     return (
         f'<a href="/blog/{slug}" class="article-list-item" data-cat="{category}" data-tag-en="{tag_en}">'
         f'<div class="al-body"><div class="al-meta"><time datetime="{date}">{date}</time></div>'
-        f'<h2 data-zh="{title}" data-en="{english}">{title}</h2></div>'
+        f'<h2 data-zh="{title}" data-en="{english}" data-dn-text-only="">{title}</h2></div>'
         '<div class="al-arrow" aria-hidden="true">→</div></a>'
     )
 
