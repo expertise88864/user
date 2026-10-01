@@ -2,6 +2,50 @@
 (function () {
   var DN = (window.DN = window.DN || {});
 
+  // Input validity belongs to the shared UI, before any clinical calculation.
+  // Preserve entered values so a reader can correct them rather than silently
+  // substituting zero or a boundary value for an incomplete assessment.
+  DN.calcInputsReady = function (box) {
+    var calculator = box.querySelector('.dn-calc');
+    var noticeId = calculator.id + '-input-notice';
+    var result = box.querySelector('.dn-calc-result');
+    var summary = result.firstElementChild;
+    summary.setAttribute('role', 'status');
+    summary.setAttribute('aria-live', 'polite');
+    summary.setAttribute('aria-atomic', 'true');
+    var valid = true;
+    box.querySelectorAll('input[type="number"], select').forEach(function (input) {
+      var ready = input.value !== '' && (input.tagName === 'SELECT'
+        ? Array.from(input.options).some(function (option) { return option.value === input.value; })
+        : Number.isFinite(input.valueAsNumber) && input.validity.valid);
+      input.setAttribute('aria-invalid', ready ? 'false' : 'true');
+      var described = (input.getAttribute('aria-describedby') || '').split(/\s+/).filter(function (id) { return id && id !== noticeId; });
+      if (!ready) { valid = false; described.push(noticeId); }
+      if (described.length) input.setAttribute('aria-describedby', described.join(' '));
+      else input.removeAttribute('aria-describedby');
+    });
+    var notice = box.querySelector('.dn-calc-input-notice');
+    if (valid) {
+      if (notice) { notice.hidden = true; notice.textContent = ''; notice.removeAttribute('data-zh'); notice.removeAttribute('data-en'); }
+      return true;
+    }
+    box.querySelector('.dn-calc-score').textContent = '—';
+    var band = box.querySelector('.dn-calc-band');
+    band.textContent = ''; band.style.background = ''; band.style.color = '';
+    box.querySelector('.dn-calc-interp').textContent = '';
+    if (!notice) {
+      notice = document.createElement('p'); notice.className = 'dn-calc-input-notice'; notice.id = noticeId;
+      notice.setAttribute('role', 'status'); notice.setAttribute('aria-live', 'polite');
+      result.appendChild(notice);
+    }
+    var zh = '請檢查標示的欄位與可輸入範圍；有效資料填齊後才會顯示結果。';
+    var en = 'Check the highlighted fields and allowed values. Complete all fields before viewing the result.';
+    notice.hidden = false; notice.setAttribute('data-zh', zh); notice.setAttribute('data-en', en);
+    var message = document.documentElement.lang === 'en' ? en : zh;
+    if (notice.textContent !== message) notice.textContent = message;
+    return false;
+  };
+
   // Interactive clinical calculators — SCORAD / SALT / UAS7
   // Auto-injected into specific articles by slug match.
   // Pure-JS, no backend, results live-update.
@@ -25,6 +69,8 @@
       '.dn-calc-row .dn-calc-hint{ display:block;font-size:11.5px;color:#71695e;font-weight:400;margin-top:2px;line-height:1.4 }' +
       '.dn-calc-input{ width:90px;padding:6px 10px;border:1px solid var(--border, #dcd5c8);border-radius:8px;font-size:14px;text-align:center;color:#0f172a;font-weight:700 }' +
       '.dn-calc-input:focus{ outline:none;border-color:rgba(122,146,133,.6);box-shadow:0 0 0 3px rgba(164,181,168,.20) }' +
+      '.dn-calc-input[aria-invalid="true"]{border-color:#b91c1c;outline:2px solid #b91c1c;outline-offset:2px}' +
+      '.dn-calc-input-notice{margin:10px 0 0;font-size:13px;line-height:1.7;color:#991b1b}' +
       '.dn-calc-result{ margin-top:14px;padding:14px 16px;background:linear-gradient(135deg,#ecfeff,#f5fbfa);border:1px solid #a5f3fc;border-radius:12px }' +
       '.dn-calc-score{ font-family:\'Noto Serif TC\',Georgia,serif;font-size:32px;font-weight:800;color:#0c5159;line-height:1;margin:0 }' +
       '.dn-calc-band{ display:inline-block;margin-left:10px;padding:4px 12px;border-radius:9999px;font-size:12px;font-weight:700;letter-spacing:.04em;vertical-align:middle }' +
@@ -74,6 +120,7 @@
     anchor.parentNode.insertBefore(box, anchor.nextSibling);
 
     function calc() {
+      if (!DN.calcInputsReady(box)) return;
       var A = Math.max(0, Math.min(100, parseFloat(document.getElementById('dn-scorad-A').value) || 0));
       var B = Math.max(0, Math.min(18, parseFloat(document.getElementById('dn-scorad-B').value) || 0));
       var C = Math.max(0, Math.min(20, parseFloat(document.getElementById('dn-scorad-C').value) || 0));
@@ -126,6 +173,7 @@
     anchor.parentNode.insertBefore(box, anchor.nextSibling);
 
     function calc() {
+      if (!DN.calcInputsReady(box)) return;
       var V = Math.max(0, Math.min(100, parseFloat(document.getElementById('dn-salt-V').value) || 0));
       var B = Math.max(0, Math.min(100, parseFloat(document.getElementById('dn-salt-B').value) || 0));
       var L = Math.max(0, Math.min(100, parseFloat(document.getElementById('dn-salt-L').value) || 0));
@@ -179,6 +227,7 @@
     anchor.parentNode.insertBefore(box, anchor.nextSibling);
 
     function calc() {
+      if (!DN.calcInputsReady(box)) return;
       var total = 0;
       box.querySelectorAll('input').forEach(function (i) {
         var v = Math.max(0, Math.min(3, parseFloat(i.value) || 0));
@@ -248,6 +297,7 @@
       return v;
     }
     function update() {
+      if (!DN.calcInputsReady(box)) return;
       var r = cfg.calc(readVals());
       box.querySelector('[data-result="score"]').textContent = r.score;
       var bEl = box.querySelector('[data-result="band"]');
@@ -299,7 +349,7 @@
   // DLQI (Dermatology Life Quality Index, 0-30) — multi-article
   DN.injectDLQI = function () {
     var slug = DN.currentSlug();
-    if (!['atopic-dermatitis-overview','psoriasis-myths','urticaria-myths','alopecia-areata','vitiligo','hidradenitis-suppurativa','prurigo-nodularis'].includes(slug)) return;
+    if (!DN._forceInject && !['atopic-dermatitis-overview','psoriasis-myths','urticaria-myths','alopecia-areata','vitiligo','hidradenitis-suppurativa','prurigo-nodularis'].includes(slug)) return;
     var rows = [];
     var qs = [
       '過去 1 週，皮膚<strong>癢、痠痛、刺痛</strong>的程度？',
@@ -392,12 +442,12 @@
       '<div class="dn-calc" id="dn-hair-scale">' +
         '<h3 class="dn-calc-title" data-zh="Norwood-Hamilton（男性）/ Ludwig（女性）雄性禿分級" data-en="Norwood-Hamilton (male) / Ludwig (female) AGA staging">Norwood-Hamilton（男性）/ Ludwig（女性）雄性禿分級</h3>' +
         '<div class="dn-calc-sub" data-zh="雄性禿臨床分級。男性使用 Norwood-Hamilton（I–VII），女性使用 Ludwig（I–III）。" data-en="Male: Norwood-Hamilton I–VII. Female: Ludwig I–III.">雄性禿臨床分級。男性使用 Norwood-Hamilton（I–VII），女性使用 Ludwig（I–III）。</div>' +
-        '<div class="dn-calc-row"><label data-zh="性別" data-en="Sex">性別</label>' +
+        '<div class="dn-calc-row"><label for="dn-hair-sex" data-zh="性別" data-en="Sex">性別</label>' +
           '<select class="dn-calc-input" id="dn-hair-sex" style="width:auto;min-width:190px">' +
             '<option value="M" data-zh="男性 → Norwood-Hamilton" data-en="Male → Norwood-Hamilton">男性 → Norwood-Hamilton</option>' +
             '<option value="F" data-zh="女性 → Ludwig" data-en="Female → Ludwig">女性 → Ludwig</option>' +
           '</select></div>' +
-        '<div class="dn-calc-row"><label data-zh="目前髮量狀態" data-en="Current stage">目前髮量狀態</label>' +
+        '<div class="dn-calc-row"><label for="dn-hair-stage" data-zh="目前髮量狀態" data-en="Current stage">目前髮量狀態</label>' +
           '<select class="dn-calc-input" id="dn-hair-stage" style="width:auto;min-width:190px"></select></div>' +
         '<div class="dn-calc-result">' +
           '<div><span class="dn-calc-score" id="dn-hair-score">—</span><span class="dn-calc-band" id="dn-hair-band"></span></div>' +
@@ -419,6 +469,7 @@
     }
 
     function calc() {
+      if (!DN.calcInputsReady(box)) return;
       var sex = sexEl.value || 'M';
       var maxStage = sex === 'F' ? 3 : 7;
       var s = Math.max(1, Math.min(maxStage, parseInt(stageEl.value, 10) || 1));

@@ -79,7 +79,7 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
   同一 SHA 的所有適用 GitHub 檢查全綠才能宣告交付。
 - CI 只驗證生成物一致性，不自行回推或使用 skip token。後台直接編輯造成生成物過期時，
   必須先同步、重生與驗證，CI 不會替未驗證的版本另建發布 commit。
-- **排程候選源碼準備（本機未發布）**：可信 main 的排程每 15 分鐘唯讀發現
+- **排程候選源碼準備（工程已隨 6c6814d 發布）**：可信 main 的排程每 15 分鐘唯讀發現
   `drafts/<slug>` 上的 `.cms-requests/<slug>.json`，不再以舊 queue 代替作者核可。
   `_process_article_requests.py` 核對固定 repo、乾淨 checkout／即時 main、申請及到期時間；
   每篇使用同一 main 的獨立暫存 clone，只複製核可文章／manifest 圖片及必要 catalog。
@@ -89,7 +89,7 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
   目錄內的 bundle 與 report，明示 source_prepared／reviewVerified=false／ciVerified=false／
   published=false。這一階段不執行生成器或完整 CI；後續仍須獨立審查、醫療核可、
   codex 候選完整 CI／PR／Preview、同 SHA main 及正式 CI／部署核對，不能直接發布。
-- **版本綁定申請驗證（開發中）**：候選抽取器的 --request 模式先唯讀核對 origin
+- **版本綁定申請驗證（工程已發布，完整作者流程尚待完成）**：候選抽取器的 --request 模式先唯讀核對 origin
   當前 drafts/<slug> head、作者申請 schema、原草稿直接 parent、文章與 manifest SHA、
   main 原文章版本及排程到期時間，結束前再次查 origin，避免使用已取消／改版的申請。
   只產生待獨立審查的源碼與準備證據，不寫 Git refs；寫檔前也重新確認工作區未變更。
@@ -99,8 +99,9 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
   唯一 parent／申請檔 diff、原草稿／manifest／圖片與候選源碼摘要，PR 查實際 head SHA。
   main 推送重新查作者申請（若 hook 執行模型審查，審查後再查一次），Vercel 在正式建置
   前後另查即時申請。取消或後續編輯使舊候選失效；API 錯誤、缺證據、未到期都不能通過。
-  證據不代表已部署，這些新門檻目前仍未正式發布。申請發現與隔離源碼 bundle 已接入
-  本機排程修改；已發布申請的證據退役與新版草稿重設、可信部署狀態尚待接入。
+  證據本身不代表已部署；工程門檻、申請發現及隔離源碼 bundle 已隨 6c6814d 正式發布。
+  新版草稿重設與 exact-main CI／部署觀察已接入；已發布申請的證據退役仍待完成。
+  此處記錄工程上線，不宣稱已實際完成作者申請到文章發布的完整操作。
   生成器若改動核可源碼，摘要門檻會拒絕，不能手改摘要或刪除證據以規避；須完成生成內容
   與核可源碼的正式驗證流程。不能把此模式當成直接發布许可或已核可新生成英文內容。
 - **IndexNow**(indexnow.yml + `_submit_indexnow.py`):deploy 後 ping Bing/Yandex 等。
@@ -112,7 +113,7 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
   重跑會 crash — 它們是歷史工具,不在 REGEN_STEPS 裡,**不要跑也不必修**(除非要用)。
 - `_check_balance.py`/`_check_min_balance.py` 已改為相對路徑(2026-06 修復),可正常跑。
 - regen 全量約需數分鐘;只想驗單項時先跑對應 `_check_*.py`,但 push 前仍要完整 gate。
-# Word 式編輯（本機整合中，尚未正式發布）
+# Word 式編輯（工程已隨 6c6814d 正式發布）
 
 在後台開啟文章後，按「Word 編輯」。也可以在原始碼模式確認完整文章後切入。
 貼上圖文會整理段落、巢狀清單、文獻連結與表格；圖片留在本機草稿，按保存後才與同一份文章快照送入雲端草稿。

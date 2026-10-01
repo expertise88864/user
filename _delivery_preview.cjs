@@ -144,6 +144,7 @@ if (require.main === module) (async () => {
     await require('./_test_draft_media_browser.cjs')(browser);
     await require('./_test_editor_drafts_browser.cjs')(browser);
     await require('./_test_editor_version_browser.cjs')(browser);
+    await require('./_test_calculators_browser.cjs')(browser);
     await require('./_test_article_publication_browser.cjs')(browser);
     await require('./_test_word_editor_browser.cjs')(browser);
     await require('./_test_word_security_browser.cjs')(browser);

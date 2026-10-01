@@ -1,0 +1,115 @@
+{
+  "scope": "Existing valid UI output identity, not approval of medical correctness",
+  "snapshots": {
+    "SCORAD": {
+      "initial": "25cd3464db99bccd69f9b5eebd4801b221e1d636feb91c3a3d7fee64298da4a3",
+      "min": "edc73be51d63be1d01bce4a081da8286a4e2568b450e7175c77bddab0ac75b2b",
+      "max": "73cc6c7403c5fb76352bbcd4ee1b8febadd65bb8eb52593e0b6edb862851bbeb",
+      "middle": "c73934bd0506d658539d49dec9070dad7cea0380fa72bda5acaeddd6c6827abb"
+    },
+    "SALT": {
+      "initial": "23a05ce7a83b7b334e35099b8850d9760c9fbe5a0f638e2517f6989a392b79ad",
+      "min": "23a05ce7a83b7b334e35099b8850d9760c9fbe5a0f638e2517f6989a392b79ad",
+      "max": "bb3d8bc893a2ece84dc45457c1865f2a2a957aa9c0d5d5cd3df0e83dec4cbd48",
+      "middle": "4ddd272812a165d805f5121c49477b3bee4eca5d4a8b3c13ddee9e28c6020613"
+    },
+    "UAS7": {
+      "initial": "fb81806a995ed50d1823ed44207bacf920e58a598781d076631765add17b861b",
+      "min": "fb81806a995ed50d1823ed44207bacf920e58a598781d076631765add17b861b",
+      "max": "17a23219b84b89281dc597a8cb38dfa9992a77c04e6714e0bb4844167a9cb69c",
+      "middle": "2325f907b3c17b58137f60693fb4cc988a669927e1ba80c0d13a6dc964381456"
+    },
+    "PASI": {
+      "initial": "a9e012e30789a75a40877f4741fc61303aa6a66339b21e899cfa3d114e7017c1",
+      "min": "a9e012e30789a75a40877f4741fc61303aa6a66339b21e899cfa3d114e7017c1",
+      "max": "34570e43aafad87b86d0733e5bb252223b080db2425f5abc2c890a9f5acf7286",
+      "middle": "b611d3e31b17fef7a1fb9939388fafe6519a7317b66f7d715a8d95aa626577c2"
+    },
+    "DLQI": {
+      "initial": "76854695cc4ac4837e6146a28eb61ec468876a7c80da6bab8d61b7dff856e9a8",
+      "min": "76854695cc4ac4837e6146a28eb61ec468876a7c80da6bab8d61b7dff856e9a8",
+      "max": "5e4b135b91b3c11c5bf8090b683d3a3784ea2273c3780f00ac008611ccc0d673",
+      "middle": "b1a8dda4e8e1528f038446fadb87cca2216ab6863dd8fcfc63aed50e3a7db2e2"
+    },
+    "Hurley": {
+      "initial": "48940c381433a3a4b5a6400fd5cb4da35d5346a6dd0283956b24ca210a81404a",
+      "min": "48940c381433a3a4b5a6400fd5cb4da35d5346a6dd0283956b24ca210a81404a",
+      "max": "9a9384a086996f70be9d13e6c516402f36815674eb3fac9b1c976e03cd6e9f93",
+      "middle": "7cc7d72c63574d6b6c1717e83c87bf0fa349660c7ae8fff44ad838e7ea300e65"
+    },
+    "HairScale": {
+      "initial": "6778f18b19decd3b42efeb4e6439cf4b970988936defead41887413309c27ab4",
+      "min": "6778f18b19decd3b42efeb4e6439cf4b970988936defead41887413309c27ab4",
+      "max": "aa1e01f95a4423974286415276e1cc4ad190ef033a28954513fcdd931dad3771",
+      "middle": "2acdce5b528037498e4eda59530240426ec6e276ac34222bd3928ea70413b210"
+    },
+    "Fitzpatrick": {
+      "initial": "b463bec452f354e83b1c1da8057f10de489f48e5bb8e217f1438553ec4e41859",
+      "min": "b463bec452f354e83b1c1da8057f10de489f48e5bb8e217f1438553ec4e41859",
+      "max": "d8d81b71657857da8755539196e88843ca02fa57cfd0a9a5bd4f630e8d2eda39",
+      "middle": "d3e8fc451f56849bc734e5bdc4ec8a2b92a266e8865123853c729a6465ecf127"
+    },
+    "GAGS": {
+      "initial": "9839ad46ad0c4a16f90c2caa6bc5ee564057e0d40c13e4d2bf682655b2b4fff6",
+      "min": "9839ad46ad0c4a16f90c2caa6bc5ee564057e0d40c13e4d2bf682655b2b4fff6",
+      "max": "6791fc79abd4849a84f072c7d11ba35bb034da14d050c311abc4875a05603f7f",
+      "middle": "1cf5914d0c5f7c1a98aa31639dcf6c0a30269635c158f5ed3d0c4732fedde39c"
+    },
+    "MASI": {
+      "initial": "2059d26ab35a8852e519cf0f15c46381de7216013269a9145e8790514f5cadfe",
+      "min": "2059d26ab35a8852e519cf0f15c46381de7216013269a9145e8790514f5cadfe",
+      "max": "26efe58cad0c05e496d4aee39d4f5d357da3e20eb8c00958c6d8ad2e6a4a1950",
+      "middle": "4230cd8a605bfb0712f48ec19ca73074132289a9581d9d8ae5f5d873ad4f360f"
+    },
+    "POEM": {
+      "initial": "704ac8c179dc3dc42efc8abb6335b14a0981f856602abb0ea9b02cc0f76f16b3",
+      "min": "704ac8c179dc3dc42efc8abb6335b14a0981f856602abb0ea9b02cc0f76f16b3",
+      "max": "283a769abe15c68a9379e4e5b4c3efbf04b4cb7a487d7961b04eb0eacd08dc38",
+      "middle": "b4cab49368b9474bebfce73582b0e90505a9fa3c2a1a555ebb78beba306c6b38"
+    },
+    "IHS4": {
+      "initial": "846291e8fd0d4f4732be5501ec873dbea552d7bd44a87171cd3525ae524bd70e",
+      "min": "846291e8fd0d4f4732be5501ec873dbea552d7bd44a87171cd3525ae524bd70e",
+      "max": "390de0aa8f73c614d3fb6d35d2ee37cb35c336f8a01e3203c0caae8325ba4325",
+      "middle": "e6b3a06661f1f3f52dd96b5a863df31dfb968789c5398ef3669cc91757fba1da"
+    },
+    "NAPSI": {
+      "initial": "56c1c2d7dc780413077d1ce23246a64a2dea8d26d9f3f2e214aa98b211397fd8",
+      "min": "56c1c2d7dc780413077d1ce23246a64a2dea8d26d9f3f2e214aa98b211397fd8",
+      "max": "8be88b1f0bd5ca380547074bbd1ee1abfadc36342dd2d8a9deaf0283c20f5dda",
+      "middle": "1a688a4829e6cf3f6abd68c11dc8dc772acf6da39aa98572b6593c884362364f"
+    },
+    "VASPruritus": {
+      "initial": "df6c2b2f641e4dd65b92a7aa7e91816c3e776763f396b98a9c0f32b939dc6742",
+      "min": "378178b4289fa400330955edfdf19b2560d216e6e86281ddee9a16ac523e03b4",
+      "max": "f3f863ac8843d6133836e920ba59ad4dcc72138f81c4465298bf2f4d9c57f502",
+      "middle": "df6c2b2f641e4dd65b92a7aa7e91816c3e776763f396b98a9c0f32b939dc6742"
+    },
+    "IGA": {
+      "initial": "3f53b017547c79f66c528f5ca781492fef3289e2561c8fef52af584da172c945",
+      "min": "3f53b017547c79f66c528f5ca781492fef3289e2561c8fef52af584da172c945",
+      "max": "354384766f2f0f90fe2153cbc588da5d9a211bd826c6a0c4ea9ea516c276e769",
+      "middle": "cf800564d22c416e6290e783c1f86ce5adaade5706c8f2278e30db8b8ced420e"
+    },
+    "ASIS": {
+      "initial": "889b83e0aa608ce90fea231b05c66781481a0b5a86391c6d83a523a19b5bbbc3",
+      "min": "889b83e0aa608ce90fea231b05c66781481a0b5a86391c6d83a523a19b5bbbc3",
+      "max": "dee35d7210922162ad04a31c1d66fa91be9fcf57c2082ac7ada783a8704c014f",
+      "middle": "e548bbd9809041e1dce8e12a9c82d1a823ac6772d72e1bb03f524315db084baa"
+    },
+    "VASI": {
+      "initial": "1f8addc7bf5014ec6a89dc46b4b22c578134757f75de1e54056a0423be6456eb",
+      "min": "1f8addc7bf5014ec6a89dc46b4b22c578134757f75de1e54056a0423be6456eb",
+      "max": "76c701f54297de7978d1f395b2ac6d9b91a3ccd6e80e230f816f39acc7cc2197",
+      "middle": "36739d5361aa81e494b3c0aeff55b9f4786b8ed4972dc1f7e7b406fd9aecc633"
+    },
+    "EASI": {
+      "initial": "5b0641e90b0fde3e8a734ee5ac9f85692994ef2c8849b85762735222a7d21bab",
+      "min": "5b0641e90b0fde3e8a734ee5ac9f85692994ef2c8849b85762735222a7d21bab",
+      "max": "e85deed561d21de19563c67b336fb8efeb71ddadca483dd40ad180db938cb8df",
+      "middle": "151e473342ea85acd29c3ef23d149a99a7cf45ad20f269a991785bbd31148029"
+    }
+  },
+  "originalCommit": "6c6814d607c7ecd07d84430b95a3e3390eff6982",
+  "originalCanonicalSourceSha256": "e0a03cf75487ff31c177f706372aadc6d52c16868f18a69eaa727dbd74264262"
+}
