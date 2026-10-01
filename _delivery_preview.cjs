@@ -143,6 +143,7 @@ if (require.main === module) (async () => {
     await require('./_test_dictionary_undo_browser.cjs')(browser);
     await require('./_test_font_loader_browser.cjs')(browser);
     await require('./_test_diagram_loading_browser.cjs')(browser);
+    await require('./_test_diagram_viewer_browser.cjs')(browser);
     await require('./_test_reading_meta_browser.cjs')(browser);
     await require('./_test_patient_journeys_browser.cjs')(browser);
     await require('./_test_draft_media_browser.cjs')(browser);

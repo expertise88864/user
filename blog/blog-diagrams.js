@@ -362,9 +362,9 @@
 
     // Laser wavelength chromophore absorption
     'laser-wavelength': function () {
-      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" aria-labelledby="laser-title">' +
+      return '<figure class="dn-med-fig"><svg viewBox="-16 -16 780 450" xmlns="http://www.w3.org/2000/svg" aria-labelledby="laser-title">' +
         '<title id="laser-title">皮膚科雷射波長與目標</title>' +
-        '<rect width="720" height="360" fill="#faf7f2" rx="10"/>' +
+        '<rect x="-16" y="-16" width="780" height="450" fill="#faf7f2" rx="10"/>' +
         '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">雷射波長 vs 主要吸收目標(chromophore)</text>' +
         // X axis = wavelength
         '<g transform="translate(60 70)">' +
@@ -1073,9 +1073,9 @@
 
     // Dermatome map for shingles
     'dermatome-map': function () {
-      return '<figure class="dn-med-fig"><svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" aria-labelledby="derm-title">' +
+      return '<figure class="dn-med-fig"><svg viewBox="-16 -16 850 392" xmlns="http://www.w3.org/2000/svg" aria-labelledby="derm-title">' +
         '<title id="derm-title">皮節分布（神經皮節）— 帶狀皰疹定位</title>' +
-        '<rect width="720" height="360" fill="#faf7f2" rx="10"/>' +
+        '<rect x="-16" y="-16" width="850" height="392" fill="#faf7f2" rx="10"/>' +
         '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">皮節分布 Dermatomes — 帶狀皰疹常見位置</text>' +
         // Body outline (front)
         '<g transform="translate(120 60)">' +

@@ -58,7 +58,10 @@ module.exports = async function checkDiagramLoading(browser) {
               renderedContentPreserved: figures.every(figure => {
                 const fixture = document.createElement('div');
                 fixture.innerHTML = DN.medDiagrams[figure.dataset.diagramKey]();
-                return fixture.firstElementChild.innerHTML === figure.innerHTML;
+                const original = fixture.firstElementChild;
+                return original.querySelector('svg').outerHTML === figure.querySelector('svg').outerHTML &&
+                  original.querySelector('figcaption').outerHTML === figure.querySelector('figcaption').outerHTML &&
+                  figure.querySelectorAll('.dn-med-enlarge').length === 1;
               }),
             };
           });
