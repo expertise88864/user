@@ -7,6 +7,26 @@
 這是進行中紀錄。程式閱讀、回歸測試、瀏覽器檢查與正式交付分別記錄；
 單次 diff review 不代表整個專案已逐模組完成。
 
+最新進行中狀態（2026-10-01 14:10 台灣時間）：全 Goal 尚未完成。
+`f29efef44cd07804311669e40802da732f5897d6`／[PR 44](https://github.com/expertise88864/user/pull/44)
+已完成 150 檔完整獨立 `gpt-5.5`／high 唯讀審查、完整隔離 build／check／runtime smoke，
+同 SHA 六個候選 push／六個 PR workflows／Preview／瀏覽器全部成功後正常快轉 main。
+[候選 Quality 36821532654](https://github.com/expertise88864/user/actions/runs/36821532654)
+首頁 Lighthouse 81（前一候選 62），FCP 5236→1672 ms、LCP 8670→3170 ms，
+但 TBT 0→444 ms，仍有互動工作需改善；單次 lab 差異不等於 field／CTR 成效。
+
+正式 [Vercel 部署](https://vercel.com/expertise88864s-projects/chendermatologist/HAdpwdrpkzS2wgf7UwhPpos1Zjap)
+最後 gate 明確回傳 `Evidence=cms-author-intent; failure=http; HTTP=403; GitHub rate-limit remaining=0`。
+GitHub API 額度耗盡已確認，正式部署與 Production smoke 未通過，不能稱已上線或 CI 全綠。
+已提出僅限 `expertise88864/user`、Actions／Contents／Pull requests 唯讀的 Vercel Production
+`GH_TOKEN` 設定供使用者核可；未新增或傳送憑證，也未取消 gate 或無修改重跑。
+
+其他工程繼續：原圖解初始化重複插入 SVG，三引擎重現重複 ID。新本機修正將同一 key
+保留於待載入及已渲染 figure，重複初始化不再插入第二份。三引擎各 18 個案例（390／800／1440，
+一般、受控延遲與原生延遲載入，兩篇代表文章）通過，原圖解內容、正文及標題位置保留。
+本批圖解變更尚待完整生成、獨立審查及新 SHA CI；另外的圖解裁切／放大與閱讀記憶仍未完成。
+14 個精確 Opus pending 等額度恢復後完整補審，不能用補審或單批發布替全 Goal 結案。
+
 最新進行中狀態（2026-10-01 13:35 台灣時間）：全 Goal 尚未完成。
 六篇續讀／原生導覽候選 `ad29b485e61a6f48b83ae9eceac8209b98355924` 的完整候選 CI、
 同 SHA Preview 與瀏覽器檢查通過後正常快轉 main，但正式 Vercel final gate 失敗，

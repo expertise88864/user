@@ -20,7 +20,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202610011335';
+          s.src = '/blog/blog-diagrams.min.js?v=202610011410';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -66,7 +66,10 @@
         var wrap = document.createElement('div');
         wrap.innerHTML = fn();
         var fig = wrap.firstElementChild;
-        if (fig && ph.parentNode) ph.parentNode.replaceChild(fig, ph);
+        if (fig && ph.parentNode) {
+          fig.dataset.diagramKey = key;
+          ph.parentNode.replaceChild(fig, ph);
+        }
         observer.unobserve(ph);
       });
     }, { rootMargin: '300px 0px' }) : null;
@@ -74,6 +77,12 @@
     spec.forEach(function (item) {
       var fn = DN.medDiagrams[item.key];
       if (typeof fn !== 'function') return;
+      // Keep both pending and rendered figures identifiable. A second init
+      // must not insert another SVG with the same title/description IDs.
+      var existing = prose.querySelectorAll('.dn-med-fig');
+      for (var i = 0; i < existing.length; i++) {
+        if (existing[i].dataset.diagramKey === item.key) return;
+      }
       var anchor = h2s[item.after];
       if (!anchor) anchor = h2s[h2s.length - 1] || prose.firstElementChild;
       if (!anchor) return;
@@ -89,7 +98,10 @@
         var wrap = document.createElement('div');
         wrap.innerHTML = fn();
         var fig = wrap.firstElementChild;
-        if (fig) anchor.parentNode.insertBefore(fig, anchor.nextSibling);
+        if (fig) {
+          fig.dataset.diagramKey = item.key;
+          anchor.parentNode.insertBefore(fig, anchor.nextSibling);
+        }
       }
     });
   };
