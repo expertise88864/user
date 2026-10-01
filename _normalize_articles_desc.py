@@ -95,15 +95,11 @@ def js_string_escape(value: str) -> str:
 
 
 def parse_slugs_from_shared() -> list[str]:
-    """Read DN.ARTICLES from blog-shared.js, return slug list (in source
-    order)."""
+    """Use the same public/indexable catalogue as cards and author settings."""
     if not SHARED.exists():
         return []
-    src = SHARED.read_text(encoding="utf-8")
-    m = re.search(r"DN\.ARTICLES\s*=\s*\[([\s\S]*?)\];", src)
-    if not m:
-        return []
-    return re.findall(r"slug:'([a-z0-9-]+)'", m.group(1))
+    from _sync_hub_catalog import load_catalog, public_catalog
+    return [item['slug'] for item in public_catalog(load_catalog(ROOT), ROOT)]
 
 
 def strip_desc_from_shared() -> int:

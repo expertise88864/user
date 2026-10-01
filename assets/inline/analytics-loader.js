@@ -4,6 +4,8 @@ window.dnAnalyticsInstalled = true;
 // 2026-05-09 — Bot-aware analytics loader. Skip GA/Clarity/AdSense when:
 //   (a) UA matches known bots/crawlers (incl. AI training & SEO scrapers)
 //   (b) hostname is localhost / 127.0.0.1 / [::1] (local static tests)
+//   (c) origin differs from the canonical HTTPS production site. Preview and
+//       alias traffic must not enter the production GA4 or Clarity property.
 // CODE_REVIEW TD-51 — this header used to claim /admin and /reset-sw were
 // SKIPPED too. They are not: isInternalPage() only TAGS the session as
 // traffic_type="internal". Those pages simply never include this file, which
@@ -20,6 +22,9 @@ function isInternalPage(){
 }
 function isLocalStaticHost(){
   return /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+}
+function isProductionOrigin(){
+  return location.origin === 'https://chendermatologist.com';
 }
 function getTrafficType(){
   // Allow flagging via ?ga_internal=1 (sticks via localStorage)
@@ -42,7 +47,7 @@ function getTrafficType(){
 var pending = [];
 var started = false;
 var ready = false;
-var enabled = !isBot() && !isLocalStaticHost();
+var enabled = !isBot() && !isLocalStaticHost() && isProductionOrigin();
 function cleanUrl(value) {
   if (!value) return '';
   try {
@@ -83,6 +88,7 @@ window.gtag = function (kind, name, params) {
 };
 function load() {
   if (isBot() || isLocalStaticHost()) return; // skip everything for bots/local static tests
+  if (!isProductionOrigin()) return;
   if (started) return;
   started = true;
   // AdSense — DISABLED until AdSense approval (audit period).

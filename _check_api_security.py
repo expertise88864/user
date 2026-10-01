@@ -55,11 +55,14 @@ def main() -> int:
     for rel in retired_endpoints:
         require_absent(errors, rel, "retired or unwired endpoint should remain removed")
 
-    require(errors, "api/admin/popular-picks.js", "import { getSession } from './_session.js';", "admin popular-picks should use the shared cookie session")
-    require(errors, "api/admin/popular-picks.js", "const session = await getSession(req);", "admin popular-picks writes should require the cookie session")
+    require(errors, "api/admin/popular-picks.js", "if (req.method !== 'GET')", "retired popular-picks writes must fail before any provider access")
+    forbid(errors, "api/admin/popular-picks.js", "kvSet", "popular-picks must never bypass version-bound settings delivery")
+    forbid(errors, "api/admin/popular-picks.js", "/set/", "popular-picks must not retain a direct KV write transport")
     require(errors, "api/admin/popular-picks.js", "'Cache-Control': 'no-store'", "admin popular-picks write and error responses should not be cached by default")
-    require(errors, "api/admin/popular-picks.js", "{ Allow: 'GET, POST' }", "admin popular-picks 405 response should declare allowed methods")
-    require(errors, "api/admin/popular-picks.js", "new Set(cleaned).size !== cleaned.length", "admin popular-picks should reject duplicate slugs server-side")
+    require(errors, "api/admin/popular-picks.js", "{ Allow: 'GET' }", "popular-picks 405 response must declare its read-only contract")
+    require(errors, "api/admin/popular-picks.js", "new Set(picks).size !== picks.length", "legacy recommendations must reject duplicate slugs")
+    require(errors, "api/admin/popular-picks.js", "!publicSlugs.has(slug)", "public recommendations must not expose unpublished slugs")
+    require(errors, "api/admin/popular-picks.js", "redirect: 'error'", "provider redirects must not forward credentials")
     forbid(errors, "api/admin/popular-picks.js", "req.headers.get('authorization')", "admin popular-picks should not accept PAT headers")
     forbid(errors, "api/admin/popular-picks.js", "const REPO =", "admin popular-picks should not keep unused REPO constants")
     forbid(errors, "api/admin/popular-picks.js", "error: e.message", "admin popular-picks should not expose raw KV error messages")

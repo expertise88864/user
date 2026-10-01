@@ -3,10 +3,14 @@ from pathlib import Path
 import hashlib
 import json
 import subprocess
+import sys
 import tempfile
+import time
 import unittest
+from unittest.mock import patch
 
 from _prepare_article_candidate import apply, plan
+GIT_LAUNCH_RETRY_ON_WINDOWS = sys.platform == 'win32'
 
 
 class CandidateTests(unittest.TestCase):
@@ -44,7 +48,55 @@ class CandidateTests(unittest.TestCase):
         self.run_git("switch", "main")
 
     def run_git(self, *args):
-        return subprocess.check_output(["git", *args], cwd=self.root, stderr=subprocess.PIPE).decode().strip()
+        command = ["git", *args]
+        # Windows can transiently refuse CreateProcess under a long fixture
+        # suite. Retry only construction of a child that never started. Once
+        # Git starts, failures/communication errors must never replay a write.
+        for attempt in range(3):
+            try:
+                child = subprocess.Popen(command, cwd=self.root, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                break
+            except PermissionError as error:
+                if not GIT_LAUNCH_RETRY_ON_WINDOWS or getattr(error, 'winerror', None) != 5 or attempt == 2:
+                    raise
+                print('Fixture Git process not started: Windows access denied; bounded launch retry.', file=sys.stderr)
+                time.sleep(0.1)
+        with child:
+            stdout, stderr = child.communicate()
+            if child.returncode:
+                raise subprocess.CalledProcessError(child.returncode, command, output=stdout, stderr=stderr)
+            return stdout.decode().strip()
+
+    def test_unstarted_git_retry_does_not_duplicate_a_started_write_or_hide_git_failure(self):
+        actual = subprocess.Popen
+        calls = []
+        denied = PermissionError('fixture-only process creation denied')
+        denied.winerror = 5
+        def launch(command, **kwargs):
+            calls.append(command)
+            if len(calls) == 1:
+                raise denied
+            return actual(command, **kwargs)
+        before = self.run_git('rev-list', '--count', 'HEAD')
+        with patch(__name__+'.GIT_LAUNCH_RETRY_ON_WINDOWS', True), patch('subprocess.Popen', side_effect=launch):
+            self.run_git('commit', '--allow-empty', '-m', 'single fixture write')
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(int(self.run_git('rev-list', '--count', 'HEAD')), int(before) + 1)
+        calls.clear()
+        with patch('subprocess.Popen', wraps=actual) as started:
+            with self.assertRaises(subprocess.CalledProcessError):
+                self.run_git('not-a-real-fixture-command')
+            self.assertEqual(started.call_count, 1)
+
+    def test_persistent_launch_denial_is_bounded_and_never_changes_git_history(self):
+        before = self.run_git('rev-parse', 'HEAD')
+        denied = PermissionError('fixture-only persistent creation denial')
+        denied.winerror = 5
+        with patch(__name__+'.GIT_LAUNCH_RETRY_ON_WINDOWS', True), patch('subprocess.Popen', side_effect=denied) as launch:
+            with self.assertRaises(PermissionError):
+                self.run_git('commit', '--allow-empty', '-m', 'must never execute')
+            self.assertEqual(launch.call_count, 3)
+        self.assertEqual(self.run_git('rev-parse', 'HEAD'), before)
 
     def write(self, path, content):
         destination = self.root / path
@@ -149,7 +201,7 @@ class CandidateTests(unittest.TestCase):
             apply(self.root, files, expected_head=self.base)
         self.assertEqual((self.root / "blog/article.html").read_bytes(), self.original)
 
-    def test_new_article_adds_only_safe_catalog_entry_and_source(self):
+    def test_new_article_adds_only_safe_catalog_entry_and_source(self, category="note"):
         self.run_git("switch", "drafts/article")
         self.slug = "new-patient-page"
         source = '<html><h1 data-zh="新的文章">新的文章<br>副標</h1><p>作者自己的草稿</p></html>'
@@ -157,7 +209,7 @@ class CandidateTests(unittest.TestCase):
         self.commit("new article")
         self.blob = self.run_git("rev-parse", "HEAD:blog/" + self.slug + ".html")
         self.record.update(file="blog/" + self.slug + ".html", baseSha=None, blobSha=self.blob, assets=[],
-                           metadata={"title_en": "Author's title", "tag": "標籤", "tag_en": "Topic", "cat": "note", "date": "2026-09-30"})
+                           metadata={"title_en": "Author's title", "tag": "標籤", "tag_en": "Topic", "cat": category, "date": "2026-09-30"})
         self.save_manifest()
         self.head = self.run_git("rev-parse", "HEAD")
         self.run_git("switch", "main")
@@ -176,7 +228,10 @@ class CandidateTests(unittest.TestCase):
         with patch.object(_gen_feeds, "ROOT", self.root):
             parsed = _gen_feeds.parse_article_catalog()
         self.assertEqual(parsed[self.slug]["title"], "新的文章")
-        self.assertEqual(parsed[self.slug]["cat"], "note")
+        self.assertEqual(parsed[self.slug]["cat"], category)
+
+    def test_new_product_article_preserves_category_through_candidate_and_feed(self):
+        self.test_new_article_adds_only_safe_catalog_entry_and_source(category="product")
 
     def test_catalog_strings_preserve_apostrophes_and_literal_escape_sequences(self):
         from _prepare_article_candidate import catalog_literal

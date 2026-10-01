@@ -139,7 +139,11 @@ if (require.main === module) (async () => {
   fs.mkdirSync('delivery-preview', { recursive: true });
   const browser = await chromium.launch();
   try {
+    await require('./_test_analytics_origin_browser.cjs')(browser);
+    await require('./_test_nav_search_browser.cjs')(browser);
+    await require('./_test_settings_public_browser.cjs')(browser);
     await require('./_test_admin_editing_browser.cjs')(browser);
+    await require('./_test_settings_panel_browser.cjs')(browser);
     await require('./_test_dictionary_undo_browser.cjs')(browser);
     await require('./_test_font_loader_browser.cjs')(browser);
     await require('./_test_diagram_loading_browser.cjs')(browser);

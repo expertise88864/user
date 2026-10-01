@@ -8,6 +8,9 @@
   let pending = false;
   let generation = 0;
   let queue = Promise.resolve();
+  function notify() {
+    if (typeof window.dispatchEvent === 'function') window.dispatchEvent(new Event('cd-admin-auth-changed'));
+  }
   try { pending = sessionStorage.getItem(PENDING_KEY) === '1'; } catch (_) {}
 
   function serialize(operation) {
@@ -34,8 +37,10 @@
       const token = sessionStorage.getItem(PAT_KEY) || '';
       const expiry = Number(sessionStorage.getItem(EXP_KEY));
       if (token && (!Number.isFinite(expiry) || expiry <= Date.now())) {
+        generation++;
         clearLocal();
         markPending(true);
+        notify();
         return '';
       }
       return token;
@@ -54,6 +59,7 @@
     generation++;
     clearLocal();
     markPending(true);
+    notify();
     // An earlier login may still set a cookie. Revoke only after it settles.
     return serialize(revoke);
   }
@@ -79,6 +85,7 @@
         await revoke();
         throw new Error('Session storage unavailable');
       }
+      notify();
       return true;
     });
   }
@@ -87,5 +94,5 @@
     return token ? setPat(token, true) : Promise.resolve();
   }
   try { localStorage.removeItem(PAT_KEY); } catch (_) {}
-  window.cdAdminAuth = { getPat, setPat, clearPat, restoreSession, isLogoutPending: () => pending };
+  window.cdAdminAuth = { getPat, setPat, clearPat, restoreSession, isLogoutPending: () => pending, getRevision: () => generation };
 })();

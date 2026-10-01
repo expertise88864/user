@@ -39,6 +39,8 @@ def validate_policy(cfg: dict) -> None:
         raise Blocked("Invalid CMS author-intent policy")
     if cfg.get("repository") == "expertise88864/user" and cfg.get("cms_author_intent") is not True:
         raise Blocked("This website requires live CMS author-intent verification")
+    if cfg.get("repository") == "expertise88864/user" and cfg.get("site_settings_author_intent") is not True:
+        raise Blocked("This website requires live site-settings author-intent verification")
     entries = cfg.get("workflows")
     if not isinstance(entries, list) or not entries:
         raise Blocked("A nonempty workflow contract is required")
@@ -222,6 +224,12 @@ def verify(sha: str, phase: str, cfg: dict, api: API) -> list:
             evidence.append({"cms": verify_author_intent(sha, api)})
         except (ValueError, KeyError, TypeError) as error:
             raise Blocked("CMS author intent / approved payload is no longer valid") from error
+    if cfg.get("site_settings_author_intent"):
+        from _site_settings_delivery import verify as verify_settings_intent
+        try:
+            evidence.append({"siteSettings": verify_settings_intent(sha, api)})
+        except (ValueError, KeyError, TypeError) as error:
+            raise Blocked("Site settings author intent / approved payload is no longer valid") from error
     return evidence
 
 
@@ -359,6 +367,13 @@ def main() -> int:
                     fields = line.split()
                     if fields[2] == "refs/heads/main":
                         verify_author_intent(fields[1], API(cfg["repository"]))
+                        clean(fields[1])
+            if cfg.get("site_settings_author_intent"):
+                from _site_settings_delivery import verify as verify_settings_intent
+                for line in lines:
+                    fields = line.split()
+                    if fields[2] == "refs/heads/main":
+                        verify_settings_intent(fields[1], API(cfg["repository"]))
                         clean(fields[1])
             return 0
         sha = check_sha(args.sha or git("rev-parse", "HEAD"))

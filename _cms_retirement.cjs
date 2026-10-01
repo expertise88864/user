@@ -106,4 +106,4 @@ async function verifyTransition(candidate,api,currentItems,now,trees){
  assert.equal(await mainSha(api),current,'Retirement main changed during validation');
  return {retiredRequests:removed.length,baseline:base};
 }
-module.exports={verifyTransition};
+module.exports={verifyTransition,baseline,mainSha,publicationEvidence};

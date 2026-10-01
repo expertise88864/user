@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "legacyPicks": true,
+  "font": {
+    "bodyFont": "",
+    "headFont": "",
+    "bodySize": ""
+  },
+  "order": [],
+  "picks": [
+    "acne-myths",
+    "sunscreen-myths",
+    "atopic-dermatitis-overview",
+    "topical-steroids-guide",
+    "hairloss-myths"
+  ]
+}

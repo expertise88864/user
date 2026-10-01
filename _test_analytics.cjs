@@ -7,9 +7,9 @@ const loader = fs.readFileSync('assets/inline/analytics-loader.js', 'utf8');
 const shared = fs.readFileSync('blog/blog-shared.js', 'utf8');
 
 // No browser or network collector: only the documented dataLayer command queue.
-function fixture({hostname = 'chendermatologist.com', userAgent = 'Firefox', referrer = ''} = {}) {
+function fixture({hostname = 'chendermatologist.com', protocol = 'https:', userAgent = 'Firefox', referrer = ''} = {}) {
   const handlers = {}, scripts = [], idle = [], timers = [], metricCallbacks = {};
-  const location = new URL(`https://${hostname}/blog/example?q=private#medical`);
+  const location = new URL(`${protocol}//${hostname}/blog/example?q=private#medical`);
   const document = {referrer,
     head: {appendChild: node => { if (node.tagName === 'SCRIPT') scripts.push(node); }},
     createElement: tag => ({tagName: tag.toUpperCase()}),
@@ -101,6 +101,36 @@ for (const options of [{hostname: 'localhost'}, {hostname: '127.0.0.1'}, {userAg
     assert.equal(f.scripts.length, 0);
   });
 }
+
+for (const options of [
+  {hostname: 'chendermatologist-clpruakvg-expertise88864s-projects.vercel.app'},
+  {hostname: 'chendermatologist.com.attacker.test'},
+  {hostname: 'www.chendermatologist.com'},
+  {hostname: 'chendermatologist.com:444'},
+  {hostname: '[::1]'},
+  {hostname: 'staging.example.test'},
+  {protocol: 'http:'},
+]) {
+  test(`non-production origin cannot collect initial or later events: ${JSON.stringify(options)}`, () => {
+    const f = fixture(options);
+    f.context.DN.bindGAEvents();
+    f.context.DN.bindWebVitals();
+    f.context.gtag('event', 'article_read_threshold', {slug: 'example'});
+    f.idle[0]();
+    f.context.gtag('event', 'toc_click', {target: 'dx'});
+    for (const callback of f.metricCallbacks.LCP || []) callback({name: 'LCP', value: 2000, delta: 2000, id: 'fixture'});
+    assert.equal(f.commands().length, 0);
+    assert.equal(f.scripts.length, 0);
+    assert.equal(f.context.clarity, undefined);
+  });
+}
+
+test('explicit default HTTPS port normalizes to the canonical production origin', () => {
+  const f = fixture({hostname: 'chendermatologist.com:443'});
+  f.idle[0]();
+  assert.equal(f.commands().filter(c => c[1] === 'page_view').length, 1);
+  assert.equal(f.scripts.length, 2);
+});
 
 test('canonical navigation emits one contextual event without legacy duplicates', () => {
   const f = fixture();

@@ -11,6 +11,7 @@ NPM = "npm.cmd" if os.name == "nt" else "npm"
 
 REGEN_STEPS: list[list[str]] = [
     [PY, "_sync_article_navigation.py"],
+    [PY, "_gen_site_settings.py"],
     # Complete static hub links from the public catalog before EN generation.
     [PY, "_sync_hub_catalog.py"],
     # CODE_REVIEW TD-46 — _normalize_bilingual_attrs.py was removed from
@@ -209,6 +210,15 @@ BUILD_GENERATED_STEPS: list[list[str]] = [
 ]
 
 CHECK_STEPS: list[list[str]] = [
+    [PY, "_gen_site_settings.py", "--check"],
+    [PY, "_test_site_settings_data.py"],
+    [PY, "-m", "unittest", "_test_site_settings_render"],
+    [PY, "-m", "unittest", "_test_site_settings_delivery"],
+    [PY, "-m", "unittest", "_test_site_settings_preparation"],
+    [PY, "-m", "unittest", "_test_site_settings_retirement"],
+    ["node", "--test", "_test_site_settings_delivery.cjs"],
+    ["node", "--test", "_test_settings_delivery_integration.cjs"],
+    ["node", "--test", "_test_site_settings.cjs", "_test_site_settings_client.cjs", "_test_popular_picks.cjs"],
     [PY, "_test_native_navigation.py"],
     ["node", "_build_editor.mjs", "--check"],
     ["node", "--test", "_test_word_editor_source.mjs"],
@@ -293,6 +303,7 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_check_no_js_render_dependency.py"],
     [PY, "_sync_hub_catalog.py", "--check"],
     [PY, "_test_hub_catalog.py"],
+    [PY, "_test_articles_desc.py"],
     [PY, "_test_related_articles.py"],
 ]
 

@@ -62,7 +62,10 @@ class ScheduledPublicationTests(unittest.TestCase):
         source = (ROOT / '.github/workflows/scheduled-publish.yml').read_text(encoding='utf-8')
         commands = [line.strip()[len('run: '):] for line in source.splitlines()
                     if line.strip().startswith('run: ')]
-        self.assertEqual(len(commands), 1, 'Review every operational workflow command')
+        self.assertEqual([shlex.split(command) for command in commands], [
+            ['python', '_process_article_requests.py', '--output', '$RUNNER_TEMP/cms-source-artifacts'],
+            ['python', '_process_site_settings_requests.py', '--output', '$RUNNER_TEMP/site-settings-source-artifacts'],
+        ], 'Review every operational workflow command')
         command = shlex.split(commands[0])
         self.assertEqual(command, ['python', '_process_article_requests.py', '--output',
                                    '$RUNNER_TEMP/cms-source-artifacts'])
@@ -133,6 +136,55 @@ class ScheduledPublicationTests(unittest.TestCase):
         self.assertEqual(self.fixture.run_git('status', '--porcelain'), status)
         self.assertEqual(self.fixture.run_git('show-ref'), self.fixture.refs)
         self.assertEqual((self.fixture.root / '.github/scheduled-publish/queue.json').read_bytes(), self.fixture.queue)
+
+
+class ScheduledSettingsPublicationTests(unittest.TestCase):
+    def execute(self, fail_preparation=False):
+        import _process_site_settings_requests as requests
+        from _test_site_settings_preparation import GitFixture
+        source = (ROOT / '.github/workflows/scheduled-publish.yml').read_text(encoding='utf8')
+        commands = [shlex.split(line.strip()[len('run: '):]) for line in source.splitlines()
+                    if line.strip().startswith('run: ')]
+        self.assertEqual(commands, [
+            ['python', '_process_article_requests.py', '--output', '$RUNNER_TEMP/cms-source-artifacts'],
+            ['python', '_process_site_settings_requests.py', '--output', '$RUNNER_TEMP/site-settings-source-artifacts'],
+        ])
+        with tempfile.TemporaryDirectory(prefix='release-settings-fixture-') as directory:
+            parent=Path(directory);fixture=GitFixture(parent/'trusted');fixture.approval()
+            fixture.command('remote','add','origin','https://github.com/'+requests.REPO)
+            refs=fixture.command('show-ref');out=parent/'site-settings-source-artifacts';calls=[]
+            actual_run=subprocess.run
+            def run(argv, **kwargs):
+                calls.append(list(argv))
+                self.assertFalse(argv[0]=='git' and any(arg in argv for arg in ('push','--delete','merge')),argv)
+                return actual_run(argv, **kwargs)
+            def entry():
+                if fail_preparation:
+                    with patch.object(requests,'source_bundle',side_effect=ValueError('Invalid prepared bundle')):
+                        with self.assertRaisesRegex(ValueError,'Invalid prepared bundle'):requests.main()
+                else:requests.main()
+            output=io.StringIO()
+            env={'GITHUB_ACTIONS':'true','GITHUB_REPOSITORY':requests.REPO,'GITHUB_REF':'refs/heads/main','RUNNER_TEMP':directory}
+            with patch.object(requests,'ROOT',fixture.root), patch.dict(os.environ,env), \
+                    patch('sys.argv',[commands[1][1],'--output',str(out)]), \
+                    patch('_delivery.API',return_value=fixture), patch('subprocess.run',side_effect=run), redirect_stdout(output):
+                entry()
+            self.assertEqual(fixture.command('show-ref'),refs)
+            self.assertEqual(fixture.command('status','--porcelain').strip(),b'')
+            self.assertFalse(any('Claude-Opus-5-Review: pending' in str(command) for command in calls))
+            if fail_preparation:
+                self.assertEqual(output.getvalue(),'');self.assertFalse((out/'report.json').exists())
+            else:
+                self.assertEqual(json.loads(output.getvalue()),{'prepared':1,'deferred':0,'reviewVerified':False,'ciVerified':False,'published':False})
+                report=json.loads((out/'report.json').read_text(encoding='utf8'))
+                self.assertEqual(len(report['prepared']),1)
+                self.assertTrue((out/report['prepared'][0]['bundle']).is_file())
+
+    def test_settings_workflow_command_prepares_source_only_with_fixed_runner_context(self):
+        self.execute()
+
+    def test_settings_workflow_failure_is_not_delivery_or_a_deferred_request(self):
+        self.execute(fail_preparation=True)
 
 
 @unittest.skipUnless(shutil.which('pwsh') or shutil.which('powershell'), 'PowerShell is required')

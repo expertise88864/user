@@ -13,7 +13,7 @@ vm.runInContext(source.slice(start, end), context);
 const opts = {slug:'new-article', date:'2026-09-06', title:'A "quote" & <tag>',
   sub:'A subtitle', tag:'Example', desc:'A backslash \\ and </script> in prose'};
 
-for (const type of ['myth','rx','overview','note','research','blank']) {
+for (const type of ['myth','rx','product','overview','note','research','blank']) {
   test(`article skeleton: ${type}`, () => {
     const html = context.generateNewArticleSkeleton({...opts,type});
     const json = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1];
@@ -32,6 +32,10 @@ for (const type of ['myth','rx','overview','note','research','blank']) {
     assert.ok(html.includes('id="dn-nav-theme"'));
     assert.ok(html.includes('id="dn-nav-critical"'));
     assert.ok(html.includes('/assets/inline/nav-burger.js?v=' + releaseVersion));
+    if (type === 'product') {
+      assert.ok(html.includes('（請貼上或輸入文章內容）'));
+      assert.ok(!html.includes('id="diagnosis"') && !html.includes('迷思 1'));
+    }
   });
 }
 test('blank draft has its own escaped bilingual heading, canonical and no copied disease article', () => {
@@ -43,6 +47,21 @@ test('blank draft has its own escaped bilingual heading, canonical and no copied
   assert.match(html, /<title>[^<]+ \| 陳翊嘉醫師<\/title>/);
   const schema = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
   assert.equal(schema.headline, opts.title);
+});
+
+test('ingredient wizard preserves the existing product category through the real cloud bridge',async()=>{
+  const bridge=readFileSync(new URL('./admin/draft-editor.js',import.meta.url),'utf8');
+  const begin=bridge.indexOf('  async function createArticle('),end=bridge.indexOf('  function current(',begin);
+  assert.ok(begin>=0&&end>begin);
+  const calls=[];
+  const fixture={auth:{getPat:()=> 'fixture-only',isLogoutPending:()=>false},
+    drafts:{create:async(...args)=>{calls.push(args);return {head:'verified-fixture-head'};}}};
+  vm.runInNewContext(bridge.slice(begin,end)+'\nthis.create=createArticle;',fixture);
+  const input={slug:'ingredient-fixture',html:'author fixture',title_en:'Ingredient',tag:'Fixture',tag_en:'Fixture',type:'product',date:'2026-10-02'};
+  assert.equal(await fixture.create(input),'verified-fixture-head');
+  assert.equal(calls.length,1);assert.equal(calls[0][0],'blog/ingredient-fixture.html');
+  assert.equal(calls[0][1],input.html);assert.equal(calls[0][2].cat,'product');
+  assert.equal(calls[0][2].title_en,input.title_en);
 });
 test('unsafe slug rejected before constructing markup', () => {
   assert.throws(() => context.generateNewArticleSkeleton({...opts,slug:'../"bad'}));

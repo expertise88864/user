@@ -57,7 +57,7 @@ def validate_metadata(value: object) -> dict:
         text = value[name]
         if not isinstance(text, str) or not text.strip() or len(text) > (180 if name == "title_en" else 64) or re.search(r"[\x00-\x1f]", text):
             raise ValueError("Invalid article metadata: " + name)
-    if value["cat"] not in {"myth", "rx", "note", "research"} or not isinstance(value["date"], str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value["date"]):
+    if value["cat"] not in {"myth", "rx", "product", "note", "research"} or not isinstance(value["date"], str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value["date"]):
         raise ValueError("Invalid article category/date")
     date.fromisoformat(value["date"])
     return value

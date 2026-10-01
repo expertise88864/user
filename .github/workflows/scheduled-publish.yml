@@ -42,3 +42,15 @@ jobs:
           path: ${{ runner.temp }}/cms-source-artifacts/
           if-no-files-found: error
           retention-days: 14
+      - name: Discover approved site settings source request
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python _process_site_settings_requests.py --output "$RUNNER_TEMP/site-settings-source-artifacts"
+      - name: Preserve site settings bundle for independent review
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: site-settings-source-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/site-settings-source-artifacts/
+          if-no-files-found: error
+          retention-days: 14

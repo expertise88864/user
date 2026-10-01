@@ -114,6 +114,25 @@ function verifiedProduction(h) {
   h.deployments = [{ id: 700, sha: h.main, environment: 'Production', production_environment: true, creator: { login: 'vercel[bot]' } }];
   h.deploymentStatuses = [{ id: 800, state: 'success', creator: { login: 'vercel[bot]' }, environment_url: 'https://chendermatologist-fixture-expertise88864s-projects.vercel.app' }];
 }
+for (const address of ['javascript:alert(1)', 'JavaScript:alert(1)', 'java&#115;cript:alert(1)',
+  'java&#9;script:alert(1)', 'vbscript:msgbox(1)', 'data:text/html,test', 'blob:local', 'file:///tmp/link']) {
+  test('source drafts reject active link schemes before repository writes: '+address,async()=>{
+    const h=fixture();
+    const content=HTML.replace('本機測試','<a href="'+address+'">Fixture link</a>');
+    assert.equal((await h.request(h.input({content}))).status,400);
+    assert.ok(h.calls.every(call=>call.method==='GET'),'Unsafe source must not create objects or update refs');
+  });
+}
+for (const address of ['https://example.test/paper','http://example.test/paper','mailto:example@example.test',
+  'tel:+88612345678','#main-content','/blog/acne-myths']) {
+  test('source drafts preserve ordinary reference links: '+address,async()=>{
+    const h=fixture();
+    const content=HTML.replace('本機測試','<a href="'+address+'">Fixture link</a>');
+    const response=await h.request(h.input({content}));
+    assert.equal(response.status,200);
+    const saved=await response.json();assert.equal(h.blobs.get(saved.blobSha).toString(),content);
+  });
+}
 function putMain(h, file, content) {
   const bytes = Buffer.from(content), id = blobSha(bytes); h.blobs.set(id, bytes);
   h.trees.get(h.commits.get(h.main).tree.sha).set(file, id);
@@ -446,6 +465,15 @@ test('new-article metadata is required, validated and retained with the immutabl
   assert.equal((await h.request(h.input({ baseSha: null, expectedHead: first.head }))).status, 200);
   const loaded = await (await h.request()).json(); assert.deepEqual(loaded.metadata, metadata);
   assert.equal(h.refs.get('main'), h.main);
+});
+test('existing product category remains product across save, reload and later editing',async()=>{
+  const h=fixture();h.trees.get(h.commits.get(h.main).tree.sha).delete(FILE);
+  const metadata={title_en:'Ingredient fixture',tag:'Fixture',tag_en:'Fixture',cat:'product',date:'2026-09-30'};
+  const response=await h.request(h.input({baseSha:null,metadata}));assert.equal(response.status,200);
+  const saved=await response.json();assert.deepEqual(saved.metadata,metadata);
+  const loaded=await (await h.request()).json();assert.deepEqual(loaded.metadata,metadata);
+  assert.equal((await h.request(h.input({baseSha:null,expectedHead:saved.head}))).status,200);
+  assert.deepEqual((await (await h.request()).json()).metadata,metadata);assert.equal(h.refs.get('main'),h.main);
 });
 test('draft list is cookie-authenticated, immutable, bounded and reports unsupported engineering drafts', async () => {
   const h = fixture(), first = await (await h.request(h.input())).json();

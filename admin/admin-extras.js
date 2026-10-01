@@ -4,11 +4,10 @@
  *   1. SEO Score panel    — live-updates as you type
  *   2. Spell-check        — Chinese typo detection (LanguageTool API)
  *   3. Medical dictionary — auto-link first mention with <dfn title="…">
- *   4. Article reorder    — drag-drop to set DN.ARTICLES order in blog-shared.js
+ *   4. Site settings      — cloud drafts, keyboard ordering and version comparison
  *   5. Version rollback   — pick from last 30 commits, restore any
- *   6. Font / typography  — change body-font / heading-font live, persist as CSS var
+ *   6. Font / typography  — preview fixed font choices; publish approved settings through delivery gates
  *   7. Image editor       — crop / resize before upload
- *   8. FAQPage JSON-LD    — auto-extract <details>/<summary> Q&A → schema
  *
  * Uses the editor's shared session-auth.js controller for its tab-scoped
  * credential and reads the current file from the DOM (#filePath text).
@@ -156,7 +155,6 @@
     </div>
     <ul class="ax-checks" id="axSeoChecks"></ul>
     <button type="button" class="ax-btn" id="axSeoRefresh">重新檢查</button>
-    <button type="button" class="ax-btn" id="axFaqGen">產生 FAQPage JSON-LD</button>
   </div>
   <div class="ax-tab" data-tab="spell">
     <div style="font-size:12px;color:#5e574e">中文錯字 / 標點 / 全形偵測（用 LanguageTool API）</div>
@@ -173,11 +171,11 @@
     <div id="axDictList" style="font-size:11px;line-height:1.7;margin-top:6px;max-height:240px;overflow-y:auto"></div></details>
   </div>
   <div class="ax-tab" data-tab="font">
-    <div style="font-size:12px;color:#5e574e;margin-bottom:8px">即時調整網站字型（會寫進 /assets/theme.css）</div>
+    <div style="font-size:12px;color:#5e574e;margin-bottom:8px">預覽文章字型；存雲端草稿後再確認發布。字型依本機可用字型回退。</div>
     <div class="ax-font-row">
-      <label>內文字型</label>
+      <label for="axBodyFont">內文字型</label>
       <select id="axBodyFont">
-        <option value="">— 維持目前 —</option>
+        <option value="">— 網站預設 —</option>
         <option value="'Inter','Noto Sans TC',sans-serif">Inter + Noto Sans TC（預設）</option>
         <option value="'Source Han Sans TC','Noto Sans TC',sans-serif">思源黑體</option>
         <option value="'PingFang TC','Microsoft JhengHei',sans-serif">PingFang / 微軟正黑</option>
@@ -185,27 +183,27 @@
       </select>
     </div>
     <div class="ax-font-row">
-      <label>標題字型</label>
+      <label for="axHeadFont">標題字型</label>
       <select id="axHeadFont">
-        <option value="">— 維持目前 —</option>
+        <option value="">— 網站預設 —</option>
         <option value="'Noto Serif TC',Georgia,serif">Noto Serif TC（預設）</option>
         <option value="'Source Han Serif TC','Noto Serif TC',serif">思源宋體</option>
         <option value="'Inter','Noto Sans TC',sans-serif">Inter（無襯線）</option>
       </select>
     </div>
     <div class="ax-font-row">
-      <label>內文字級</label>
+      <label for="axBodySize">內文字級</label>
       <select id="axBodySize">
-        <option value="">— 維持 —</option>
+        <option value="">— 網站預設 —</option>
         <option value="14.5px">14.5px (緊湊)</option>
         <option value="16px">16px (標準)</option>
         <option value="17px">17px (舒適)</option>
         <option value="18px">18px (大字)</option>
       </select>
     </div>
-    <button type="button" class="ax-btn primary" id="axFontApply" style="margin-top:8px">存字型草稿（本機）</button>
+    <button type="button" class="ax-btn primary" id="axFontApply" disabled style="margin-top:8px">存字型到雲端草稿</button>
     <button type="button" class="ax-btn" id="axFontPreview">僅預覽（不存）</button>
-    <p>字型設定先保留在這個瀏覽器；候選發布流程整合中，尚未套用正式網站。</p>
+    <button type="button" class="ax-btn" id="axSettingsLegacyFont" disabled>套用舊本機字型草稿</button>
   </div>
   <div class="ax-tab" data-tab="version">
     <div style="font-size:12px;color:#5e574e">最近 30 個版本（點任一版本可還原）</div>
@@ -213,21 +211,21 @@
     <div id="axVersionList" style="margin-top:8px"></div>
   </div>
   <div class="ax-tab" data-tab="reorder">
-    <div style="font-size:12px;color:#5e574e">拖曳調整文章在「最新文章」清單的順序</div>
-    <button type="button" class="ax-btn primary" id="axReorderLoad" style="margin-top:8px">📋 載入清單</button>
+    <div style="font-size:12px;color:#5e574e">用上移／下移按鈕調整首頁文章順序。文章網址與全文清單保持不變。</div>
+    <button type="button" class="ax-btn primary" id="axReorderLoad" style="margin-top:8px">載入雲端設定</button>
     <ol class="ax-reorder-list" id="axReorderList"></ol>
-    <button type="button" class="ax-btn primary" id="axReorderSave" style="display:none;margin-top:8px">存排序草稿（本機）</button>
-    <p>排序草稿保留在這個瀏覽器；正式網站順序須經候選驗證後發布。</p>
+    <button type="button" class="ax-btn primary" id="axReorderSave" disabled style="margin-top:8px">存排序到雲端草稿</button>
+    <button type="button" class="ax-btn" id="axOrderDefault" disabled>恢復依日期排序</button><button type="button" class="ax-btn" id="axSettingsLegacyOrder" disabled>套用舊本機排序草稿</button>
   </div>
   <div class="ax-tab" data-tab="picks">
-    <div style="font-size:12px;color:#5e574e">設定首頁「熱門推薦」5-12 篇文章(立即生效,不需 redeploy)</div>
-    <button type="button" class="ax-btn primary" id="axPicksLoad" style="margin-top:8px">📥 載入目前清單</button>
+    <div style="font-size:12px;color:#5e574e">選擇首頁「熱門推薦」1–12 篇公開文章；存雲端後再確認發布。</div>
+    <button type="button" class="ax-btn primary" id="axPicksLoad" style="margin-top:8px">載入雲端設定</button>
     <ol class="ax-reorder-list" id="axPicksList" style="margin-top:8px"></ol>
     <div style="display:flex;gap:6px;margin-top:8px">
-      <input id="axPicksAdd" placeholder="新增 slug (如 acne-myths)" style="flex:1;padding:5px 8px;font-size:12px;border:1px solid #dcd5c8;border-radius:6px"/>
-      <button type="button" class="ax-btn" id="axPicksAddBtn">+</button>
+      <label for="axPicksAdd">新增推薦</label><select id="axPicksAdd" disabled style="flex:1;min-width:0;padding:5px 8px;font-size:12px;border:1px solid #dcd5c8;border-radius:6px"><option value="">請先載入設定</option></select>
+      <button type="button" class="ax-btn" id="axPicksAddBtn" disabled>加入</button>
     </div>
-    <button type="button" class="ax-btn primary" id="axPicksSave" style="display:none;margin-top:8px">💾 儲存(寫入 KV)</button>
+    <button type="button" class="ax-btn primary" id="axPicksSave" disabled style="margin-top:8px">存推薦到雲端草稿</button>
     <div id="axPicksStats" style="font-size:11px;color:#8b8378;margin-top:8px"></div>
   </div>
 </div>`;
@@ -367,45 +365,6 @@
       li.textContent = c.msg;
       ul.appendChild(li);
     });
-  }
-
-  // ─────────────────────────────────────────────────────────────
-  // ② FAQ-Page JSON-LD generator (E11)
-  // ─────────────────────────────────────────────────────────────
-  function generateFaqJsonLd() {
-    const doc = getEditorDocument();
-    if (!doc) { toast('先載入文章'); return; }
-    const faqs = [];
-    doc.querySelectorAll('details').forEach(d => {
-      const sum = d.querySelector('summary');
-      if (!sum) return;
-      const q = sum.textContent.trim();
-      const ansEl = d.cloneNode(true);
-      ansEl.querySelector('summary').remove();
-      const a = ansEl.textContent.trim();
-      if (q && a) faqs.push({ q, a });
-    });
-    if (!faqs.length) {
-      toast('沒找到 <details><summary> 結構，跳過');
-      return;
-    }
-    const json = {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqs.map(f => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
-      })),
-    };
-    const script = doc.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(json, null, 2);
-    // Remove old auto-generated one first
-    doc.querySelectorAll('script[data-ax="faq-jsonld"]').forEach(s => s.remove());
-    script.setAttribute('data-ax', 'faq-jsonld');
-    doc.head.appendChild(script);
-    toast(`✓ 加了 ${faqs.length} 個 FAQ 到 JSON-LD`);
   }
 
   // ─────────────────────────────────────────────────────────────
@@ -594,25 +553,6 @@
   // ─────────────────────────────────────────────────────────────
   // ⑤ Font / typography control
   // ─────────────────────────────────────────────────────────────
-  const SETTINGS_PREFIX = 'cd_admin_settings_draft_';
-  function storeSettingsDraft(kind, values) {
-    try {
-      localStorage.setItem(SETTINGS_PREFIX + kind, JSON.stringify({version:1,kind,savedAt:Date.now(),...values}));
-      toast('已保存本機設定草稿；尚未正式發布。'); return true;
-    } catch (_) { toast('本機儲存空間不足或不可用，設定仍保留在畫面；尚未保存或發布。'); return false; }
-  }
-  function settingsDraft(kind) {
-    try { const value=JSON.parse(localStorage.getItem(SETTINGS_PREFIX+kind));return value?.version===1&&value.kind===kind?value:null; }
-    catch (_) { return null; } // Keep unreadable recovery copies intact.
-  }
-  function restoreFontDraft() {
-    const saved=settingsDraft('font');if(!saved)return;
-    for(const [field,id]of [['bodyFont','axBodyFont'],['headFont','axHeadFont'],['bodySize','axBodySize']]) {
-      const select=document.getElementById(id);
-      if(typeof saved[field]==='string'&&[...select.options].some(option=>option.value===saved[field]))select.value=saved[field];
-    }
-  }
-
   function buildThemeCss(bodyFont, headFont, bodySize) {
     let css = '/* admin-managed theme overrides — generated by /admin/admin-extras.js */\n:root{\n';
     if (bodyFont) css += `  --font-body: ${bodyFont};\n`;
@@ -640,14 +580,6 @@
     }
     style.textContent = css;
     toast('預覽已套用（未儲存）');
-  }
-
-  async function applyFont() {
-    const bodyFont = document.getElementById('axBodyFont').value;
-    const headFont = document.getElementById('axHeadFont').value;
-    const bodySize = document.getElementById('axBodySize').value;
-    if (!bodyFont && !headFont && !bodySize) { toast('未選擇任何項目'); return; }
-    return storeSettingsDraft('font',{bodyFont,headFont,bodySize});
   }
 
   // ─────────────────────────────────────────────────────────────
@@ -698,191 +630,22 @@
   }
 
   // ─────────────────────────────────────────────────────────────
-  // ⑦ Article reorder (changes DN.ARTICLES order in blog-shared.js)
-  // ─────────────────────────────────────────────────────────────
-  let _orderArr = [];
-  async function loadReorder() {
-    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/blog/blog-shared.js?ref=${BRANCH}`, {
-      headers: { Authorization: 'token ' + getPat(), Accept: 'application/vnd.github+json' },
-    });
-    const j = await r.json();
-    if (!j.content) { toast('讀取 blog-shared.js 失敗'); return; }
-    const src = atob(j.content.replace(/\n/g, ''));
-    // Find DN.ARTICLES = [ ... ]; and parse top-level slug strings
-    const m = src.match(/DN\.ARTICLES\s*=\s*\[([\s\S]*?)\];/);
-    if (!m) { toast('找不到 DN.ARTICLES'); return; }
-    // Pull slugs (first quoted string in each object)
-    const slugRegex = /\{[^}]*?slug:\s*['"]([^'"]+)['"]/g;
-    const slugs = [];
-    let mm;
-    while ((mm = slugRegex.exec(m[1])) !== null) slugs.push(mm[1]);
-    const saved=settingsDraft('reorder');
-    if(saved?.baseSha===j.sha&&Array.isArray(saved.order)&&saved.order.length===slugs.length&&
-       new Set(saved.order).size===slugs.length&&saved.order.every(slug=>slugs.includes(slug)))slugs.splice(0,slugs.length,...saved.order);
-    _orderArr = slugs.slice();
-    const ol = document.getElementById('axReorderList');
-    ol.textContent = '';
-    slugs.forEach(s => {
-      const li = document.createElement('li');
-      li.draggable = true;
-      li.dataset.slug = s;
-      li.textContent = s;
-      ol.appendChild(li);
-    });
-    addDragHandlers(ol);
-    document.getElementById('axReorderSave').style.display = 'inline-flex';
-    document.getElementById('axReorderSave')._sha = j.sha;
-    document.getElementById('axReorderSave')._origSrc = src;
-    toast(`載入 ${slugs.length} 篇文章`);
-  }
-
-  function addDragHandlers(ol) {
-    let dragSrc = null;
-    ol.querySelectorAll('li').forEach(li => {
-      li.addEventListener('dragstart', e => { dragSrc = li; li.classList.add('dragging'); });
-      li.addEventListener('dragend', () => { li.classList.remove('dragging'); ol.querySelectorAll('li').forEach(x => x.classList.remove('drag-over')); });
-      li.addEventListener('dragover', e => { e.preventDefault(); li.classList.add('drag-over'); });
-      li.addEventListener('dragleave', () => li.classList.remove('drag-over'));
-      li.addEventListener('drop', e => {
-        e.preventDefault();
-        if (dragSrc && dragSrc !== li) {
-          const rect = li.getBoundingClientRect();
-          const after = e.clientY > rect.top + rect.height / 2;
-          ol.insertBefore(dragSrc, after ? li.nextSibling : li);
-          _orderArr = Array.from(ol.querySelectorAll('li')).map(x => x.dataset.slug);
-        }
-      });
-    });
-  }
-
-  async function saveReorder() {
-    const btn = document.getElementById('axReorderSave');
-    const order=Array.from(document.getElementById('axReorderList').querySelectorAll('li')).map(item=>item.dataset.slug);
-    if(!/^[a-f0-9]{40}$/.test(btn._sha||'')||!order.length||order.length>200||new Set(order).size!==order.length||
-      order.some(slug=>!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)||slug.length>100))return toast('排序來源不完整，請重新載入清單；尚未保存或發布。');
-    return storeSettingsDraft('reorder',{baseSha:btn._sha,order});
-  }
-
-  // ─────────────────────────────────────────────────────────────
-  // ⑧ G2 — POPULAR_PICKS admin (KV-backed; no redeploy needed)
-  // ─────────────────────────────────────────────────────────────
-  let _picksArr = [];
-  let _picksObserver = null;
-  function renderPicks() {
-    const ol = document.getElementById('axPicksList');
-    ol.textContent = '';
-    _picksArr.forEach((s, idx) => {
-      const slug = String(s || '');
-      const li = document.createElement('li');
-      li.draggable = true;
-      li.dataset.slug = slug;
-      const span = document.createElement('span');
-      span.style.flex = '1';
-      span.textContent = slug;
-      const remove = document.createElement('button');
-      remove.type = 'button';
-      remove.className = 'ax-btn';
-      remove.dataset.rm = String(idx);
-      remove.style.margin = '0 0 0 4px';
-      remove.style.padding = '2px 8px';
-      remove.textContent = '×';
-      li.append(span, remove);
-      li.style.display = 'flex';
-      li.style.alignItems = 'center';
-      ol.appendChild(li);
-    });
-    addDragHandlers(ol);
-    ol.querySelectorAll('button[data-rm]').forEach(b => {
-      b.addEventListener('click', e => {
-        e.stopPropagation();
-        const i = parseInt(b.dataset.rm, 10);
-        _picksArr.splice(i, 1);
-        renderPicks();
-      });
-    });
-    document.getElementById('axPicksSave').style.display = _picksArr.length ? 'inline-flex' : 'none';
-    // Watch for drag reorder. CODE_REVIEW 2026-05-31 — was `new MutationObserver()
-    // .observe()` on EVERY renderPicks() call (load + each add/remove), so N
-    // observers accumulated and all fired on the next mutation (O(N²) + leak in
-    // a long admin session). Reuse a single observer: disconnect, then re-observe
-    // the (stable-id) list element.
-    if (!_picksObserver) {
-      _picksObserver = new MutationObserver(() => {
-        const list = document.getElementById('axPicksList');
-        if (list) _picksArr = Array.from(list.querySelectorAll('li')).map(x => x.dataset.slug);
-      });
-    }
-    _picksObserver.disconnect();
-    _picksObserver.observe(ol, { childList: true });
-  }
-  async function loadPicks() {
-    document.getElementById('axPicksStats').textContent = '載入中...';
-    try {
-      const r = await fetch('/api/admin/popular-picks');
-      const j = await r.json();
-      _picksArr = (j.picks || []).slice();
-      renderPicks();
-      document.getElementById('axPicksStats').textContent = j.fallback
-        ? `(KV 為空,顯示預設 fallback ${_picksArr.length} 篇)`
-        : `已載入 ${_picksArr.length} 篇 (來自 KV)`;
-    } catch (e) {
-      document.getElementById('axPicksStats').textContent = '載入失敗，請稍後再試';
-    }
-  }
-  function addPick() {
-    const inp = document.getElementById('axPicksAdd');
-    const v = inp.value.trim();
-    if (!/^[a-z0-9-]+$/.test(v)) { toast('slug 格式錯誤(只允許 a-z 0-9 -)'); return; }
-    if (_picksArr.includes(v)) { toast('已在清單中'); return; }
-    if (_picksArr.length >= 12) { toast('最多 12 篇'); return; }
-    _picksArr.push(v);
-    inp.value = '';
-    renderPicks();
-  }
-  async function savePicks() {
-    if (!getPat()) { toast('請先完成登入，再儲存熱門文章'); return; }
-    if (!_picksArr.length) { toast('清單不能空'); return; }
-    // Cookie-first: setPat() waits for /api/admin/login, so the HttpOnly
-    // session is ready before this control can be used. Do not resend the
-    // browser-held PAT to same-origin admin APIs.
-    const r = await fetch('/api/admin/popular-picks', {
-      method: 'POST',
-      credentials: 'same-origin',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ picks: _picksArr }),
-    });
-    const j = await r.json();
-    if (r.ok) {
-      toast('✓ 已儲存到 KV ' + _picksArr.length + ' 篇,前台立即生效');
-      document.getElementById('axPicksStats').textContent = '已儲存 (' + new Date().toLocaleTimeString() + ')';
-    } else {
-      toast('儲存失敗，請稍後再試（HTTP ' + r.status + '）');
-    }
-  }
-
-  // ─────────────────────────────────────────────────────────────
+  // ⑦ Site settings are isolated in settings-panel.js / settings-drafts.js.
   // BOOTSTRAP
   // ─────────────────────────────────────────────────────────────
   ready(() => {
     injectStyles();
-    buildPanel();
-    restoreFontDraft();
+    const panel = buildPanel();
+    const mountSettings = () => window.CDSettingsPanel?.mount({panel, previewFont, toast});
+    mountSettings();
+    document.addEventListener('cd-settings-ready', mountSettings, {once: true});
     fillDictList();
 
     document.getElementById('axSeoRefresh').addEventListener('click', runSeoCheck);
-    document.getElementById('axFaqGen').addEventListener('click', generateFaqJsonLd);
     document.getElementById('axSpellRun').addEventListener('click', runSpellCheck);
     document.getElementById('axDictRun').addEventListener('click', applyDict);
     document.getElementById('axDictUndo').addEventListener('click', undoDict);
-    document.getElementById('axFontApply').addEventListener('click', applyFont);
-    document.getElementById('axFontPreview').addEventListener('click', previewFont);
     document.getElementById('axVersionLoad').addEventListener('click', loadVersions);
-    document.getElementById('axReorderLoad').addEventListener('click', loadReorder);
-    document.getElementById('axReorderSave').addEventListener('click', saveReorder);
-    document.getElementById('axPicksLoad').addEventListener('click', loadPicks);
-    document.getElementById('axPicksAddBtn').addEventListener('click', addPick);
-    document.getElementById('axPicksAdd').addEventListener('keydown', e => { if (e.key === 'Enter') addPick(); });
-    document.getElementById('axPicksSave').addEventListener('click', savePicks);
 
     // Auto-run SEO check whenever editor content changes (debounced)
     let seoTimer = null;

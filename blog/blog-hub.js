@@ -635,6 +635,9 @@
     var listEl = document.getElementById('dn-article-list')
       || document.querySelector('.article-list');
     if (!listEl) return;
+    // Trusted SSG already emitted the complete approved order, including cards
+    // in the homepage template. Do not replace it with a runtime date sort.
+    if (listEl.getAttribute('data-dn-settings-order') === 'custom') return;
     var articles = (DN.ARTICLES || []).slice().filter(function (a) {
       return !a.unpublished;
     });
@@ -752,7 +755,6 @@
     'psoriasis-topical': {desc:'乾癬外用治療階梯：類固醇 1-7 級、calcipotriol / calcitriol、強強複方（Daivobet）、tazarotene、TCI、coal tar 與特殊部位（臉、皺褶、頭皮、指甲）治療 — 依 AAD-NPF 2021 整理。',desc_en:'Topical therapy controls 80% of mild-moderate psoriasis . Three pillars per AAD-NPF 2021 (Elmets): (1) topical corticosteroids (potency 1-7 by site), (2) vitamin D...'},
     'rosacea-myths': {desc:'玫瑰痤瘡（酒糟）會自己好嗎？要用類固醇嗎？整理 BAD 2021 + TDA 2022 共識：表現型分類、Demodex 角色、外用 Ivermectin / Metronidazole / Azelaic acid、口服低劑量 doxycycline、雷射 6 大迷思。',desc_en:'Rosacea myth-busting: subtype identification, ETR vs PPR vs phymatous vs ocular, treatment ladder (topical metronidazole / ivermectin / brimonidine, oral doxycycline...'},
     'semaglutide-hair-loss': {desc:'2026 JAAD 兩篇 TriNetX 研究：semaglutide / tirzepatide 1 年新發掉髮風險 1.77–1.98 倍、雄性禿 anytime 2.41 倍；但對已有疤痕性禿髮患者反而降低治療需求 30–47%。患者 7 題 FAQ + 機轉雙路徑解析。',desc_en:'In June 2026 the Journal of the American Academy of Dermatology published two large TriNetX cohort studies whose conclusions look contradictory but are in fact...'},
-    'severe-scabies-treatment': {desc:'嚴重疥瘡反覆治不好？廣泛 + 結痂型疥瘡標準治療：口服 ivermectin（D0 / 7 / 14）+ 外用 5% permethrin（D0 / 7），Day 28 治癒率 ~82%。依 2026 NEJM GALE CRUSTED RCT 整理。',desc_en:'Severe scabies (profuse or crusted, with hundreds to thousands of mites) does not respond to single-dose treatment. Patient-friendly guide based on the May 2026 NEJM...'},
     'shingles-myths': {desc:'皮蛇繞一圈會死？是壓力造成？年輕人不會得？抗病毒藥要 72 小時內吃？Shingrix 疫苗值得嗎？6 個最常誤會的帶狀皰疹(herpes zoster)觀念 + 治療階梯 + 疫苗比較。',desc_en:'Shingles varicella zoster virus (VZV) Antiviral not started within 72 hours Plain-language dermatology patient education by Dr. Yi-Jia Chen, summarized from medical...'},
     'skin-biopsy-excision': {desc:'皮膚切片(shave / punch / excisional)與良性腫瘤切除手術完整衛教：4 種切片技術、痣 / 老人斑 / 脂肪瘤、ABCDE 警訊、梭形切除、麻醉、縫合、術後敷料、拆線時間、健保自費。',desc_en:'Patient-friendly dermatology guide to skin biopsy and tumor excision: indications, technique, post-op wound care, scar care, and follow-up. Integrates AAD biopsy...'},
     'skin-whitening-agents': {desc:'美白淡斑成分大解析：氫醌、傳明酸、杜鵑花酸、維他命 C、菸鹼醯胺、A 酸、麴酸、熊果素 — 每個成分機轉、有效濃度、副作用、孕期能否使用、混搭禁忌、藥用 vs 醫美 vs 保養品差別、痘疤與肝斑適用一次看完。',desc_en:'For brightening, fading post-inflammatory marks, melasma, and sun spots — which ingredients actually work, and which are marketing fluff? This article reviews the...'},

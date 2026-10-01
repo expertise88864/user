@@ -13,6 +13,9 @@
  * ============================================================ */
 (function () {
   const DN = (window.DN = window.DN || {});
+  // The accessible label changes with the page language. Use the stable nav
+  // identity first; keep both labels for older headers without that ID.
+  const NAV_SEARCH_SELECTOR = 'button#dn-nav-search,button[aria-label="搜尋"],button[aria-label="Search"]';
 
   DN.LANGS = [
     { code: 'zh', label: '中文',    htmlLang: 'zh-TW' },
@@ -212,7 +215,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202610011540';
+        s.src = '/blog/blog-article-visuals.min.js?v=202610020028';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -355,6 +358,7 @@
       var idx = [];
       // From DN.ARTICLES
       (DN.ARTICLES || []).forEach(function (a) {
+        if (!a || a.unpublished) return;
         var slug = safeSlug(a.slug);
         if (!slug) return;
         idx.push({
@@ -574,9 +578,9 @@
       }
     });
 
-    // Wire up search button in header (button[aria-label="搜尋"])
+    // Resolve SVG/text clicks through the same language-independent selector.
     document.addEventListener('click', function (e) {
-      var btn = e.target.closest('button[aria-label="搜尋"]');
+      var btn = e.target.closest(NAV_SEARCH_SELECTOR);
       if (btn) { e.preventDefault(); open(); }
     });
   };
@@ -894,7 +898,7 @@
 
   // Inject "本文暫時下架" banner at top of article body when the current
   // article is marked unpublished. Banner is visible to anyone who lands
-  // on the direct URL (e.g. via bookmark) so they know it's not public.
+  // on the direct URL (e.g. via bookmark). Unlisting is not access control.
   DN.injectUnpublishedBanner = function () {
     try {
       var slug = DN.currentSlug && DN.currentSlug();
@@ -904,9 +908,9 @@
       var b = document.createElement('div');
       b.id = 'dn-unpub-banner';
       b.style.cssText = 'position:sticky;top:0;z-index:60;background:#fef3c7;border-bottom:2px solid #ca8a04;color:#7c4a03;padding:10px 18px;font-size:13.5px;font-weight:600;text-align:center;font-family:Inter,"Noto Sans TC",sans-serif;line-height:1.6';
-      b.setAttribute('data-zh', '⚠️ 本文目前已暫時下架，僅作者可見。一般訪客連結至此會看到此提示。');
-      b.setAttribute('data-en', '⚠️ This article is temporarily unpublished. Only the author should see this URL.');
-      b.textContent = '⚠️ 本文目前已暫時下架，僅作者可見。一般訪客連結至此會看到此提示。';
+      b.setAttribute('data-zh', '⚠️ 本文目前已暫時下架，未列入公開文章目錄。持有直接連結仍可開啟此頁。');
+      b.setAttribute('data-en', '⚠️ This article is currently unpublished and excluded from the article directory. A direct link can still open this page.');
+      b.textContent = '⚠️ 本文目前已暫時下架，未列入公開文章目錄。持有直接連結仍可開啟此頁。';
       var first = document.body.firstElementChild;
       document.body.insertBefore(b, first);
       // Also add noindex meta if not already there
@@ -1088,7 +1092,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202610011540';
+        s.src = '/blog/blog-article-reading.min.js?v=202610020028';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1124,7 +1128,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202610011540';
+        s.src = '/blog/blog-article-footer.min.js?v=202610020028';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1154,7 +1158,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202610011540';
+        s.src = '/blog/blog-calculators.min.js?v=202610020028';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1289,7 +1293,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202610011540';
+        s.src = '/blog/blog-hub.min.js?v=202610020028';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1393,7 +1397,7 @@
       '</svg>' +
       '<span class="hidden sm:inline" data-zh="支持作者" data-en="Buy me a coffee">支持作者</span>';
     // Insert immediately AFTER the search button (i.e. between search and language toggle)
-    var searchBtn = headerInner.querySelector('button[aria-label="搜尋"]');
+    var searchBtn = headerInner.querySelector(NAV_SEARCH_SELECTOR);
     if (searchBtn && searchBtn.parentNode === headerInner) {
       searchBtn.insertAdjacentElement('afterend', a);
     } else {
@@ -1705,7 +1709,7 @@
       }
     }
     function bootstrapClick(e) {
-      var btn = e.target.closest && e.target.closest('button[aria-label="搜尋"]');
+      var btn = e.target.closest && e.target.closest(NAV_SEARCH_SELECTOR);
       if (btn) {
         e.preventDefault();
         ensureCmdK();

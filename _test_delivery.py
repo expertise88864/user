@@ -99,6 +99,7 @@ class DeliveryTests(unittest.TestCase):
 
     def test_author_intent_is_rechecked_after_a_successful_model_review(self):
         import _cms_delivery as cms
+        import _site_settings_delivery as settings
         cfg = {**d.policy(), "claude_hook": True}
         lines = f"HEAD {SHA} refs/heads/main {'b'*40}\n"
         order = []
@@ -108,14 +109,15 @@ class DeliveryTests(unittest.TestCase):
              patch.object(d, "pre_push", side_effect=lambda *args: order.append("CI")), \
              patch.object(d.subprocess, "run", side_effect=lambda *args, **kwargs: (order.append("review") or subprocess.CompletedProcess([], 0))), \
              patch.object(d, "API"), patch.object(d, "clean"), \
-             patch.object(cms, "verify", side_effect=lambda *args: order.append("intent")):
+             patch.object(cms, "verify", side_effect=lambda *args: order.append("intent")), \
+             patch.object(settings, "verify", side_effect=lambda *args: order.append("settings")):
             self.assertEqual(d.main(), 0)
-        self.assertEqual(order, ["CI", "review", "intent"])
+        self.assertEqual(order, ["CI", "review", "intent", "settings"])
 
     def test_green_ci_does_not_replace_current_author_intent(self):
         from types import SimpleNamespace
         import _cms_delivery as cms
-        cfg = {"repository": "expertise88864/user", "cms_author_intent": True,
+        cfg = {"repository": "expertise88864/user", "cms_author_intent": True, "site_settings_author_intent": True,
                "workflows": [{"path": ".github/workflows/ci.yml", "jobs": ["test"], "steps": {"test": {"required": ["check"]}}}]}
         run = {"id": 1, "path": ".github/workflows/ci.yml", "event": "push", "head_branch": "codex/test",
                "head_sha": SHA, "status": "completed", "conclusion": "success", "html_url": "https://github.com/example/run"}
@@ -126,6 +128,32 @@ class DeliveryTests(unittest.TestCase):
             with self.assertRaisesRegex(d.Blocked, "author intent"):
                 d.verify(SHA, "candidate", cfg, api)
             live.assert_called_once_with(SHA, api)
+
+    def test_green_ci_does_not_replace_current_settings_approval(self):
+        from types import SimpleNamespace
+        import _cms_delivery as cms
+        import _site_settings_delivery as settings
+        cfg={"repository":"expertise88864/user","cms_author_intent":True,"site_settings_author_intent":True,
+             "workflows":[{"path":".github/workflows/ci.yml","jobs":["test"],"steps":{"test":{"required":["check"]}}}]}
+        run={"id":1,"path":".github/workflows/ci.yml","event":"push","head_branch":"codex/test","head_sha":SHA,
+             "status":"completed","conclusion":"success","html_url":"https://github.com/example/run"}
+        jobs=[{"id":2,"name":"test","status":"completed","conclusion":"success","steps":[{"name":"check","status":"completed","conclusion":"success"}]}]
+        api=SimpleNamespace(pages=lambda path,key:[run] if key=="workflow_runs" else jobs)
+        with patch.object(cms,"verify",return_value={}),patch.object(settings,"verify",side_effect=ValueError("request cancelled")) as live:
+            with self.assertRaisesRegex(d.Blocked,"Site settings author intent"):d.verify(SHA,"candidate",cfg,api)
+            live.assert_called_once_with(SHA,api)
+
+    def test_settings_cancelled_during_model_review_blocks_main_hook(self):
+        import _cms_delivery as cms
+        import _site_settings_delivery as settings
+        cfg={**d.policy(),"claude_hook":True};lines=f"HEAD {SHA} refs/heads/main {'b'*40}\n";order=[]
+        def cancelled(*args):order.append('settings');raise ValueError('author withdrew settings')
+        with patch.object(d,"policy",return_value=cfg),patch.object(d.sys,"argv",["_delivery.py","pre-push"]), \
+             patch.object(d.sys,"stdin",io.StringIO(lines)),patch.object(d,"pre_push",side_effect=lambda *a:order.append('CI')), \
+             patch.object(d.subprocess,"run",side_effect=lambda *a,**k:(order.append('review') or subprocess.CompletedProcess([],0))), \
+             patch.object(d,"API"),patch.object(d,"clean"),patch.object(cms,"verify",side_effect=lambda *a:order.append('cms')), \
+             patch.object(settings,"verify",side_effect=cancelled):self.assertEqual(d.main(),1)
+        self.assertEqual(order,['CI','review','cms','settings'])
 
     def test_api_does_not_use_cached_intent_or_unbounded_response_bytes(self):
         import json
@@ -222,6 +250,8 @@ class DeliveryTests(unittest.TestCase):
         for flag in (None, False, 1, "true"):
             with self.subTest(flag=flag), self.assertRaises(d.Blocked):
                 d.validate_policy({**d.policy(), "cms_author_intent": flag})
+            with self.subTest(settings_flag=flag), self.assertRaises(d.Blocked):
+                d.validate_policy({**d.policy(), "site_settings_author_intent": flag})
 
     def test_dispatch_requires_explicit_project_support(self):
         run = {"id": 1, "path": "ci.yml", "event": "workflow_dispatch", "head_branch": "codex/scheduled-test",

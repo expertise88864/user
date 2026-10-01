@@ -20,18 +20,23 @@ jobs:
         with:
           python-version: '3.12'
       - name: Delivery Python regression tests
-        run: python -m unittest _test_delivery _test_cms_delivery _test_cms_retirement
+        run: python -m unittest _test_delivery _test_cms_delivery _test_cms_retirement _test_site_settings_delivery _test_site_settings_preparation
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '24'
       - name: Production deployment gate regression tests
-        run: node --test _test_vercel_gate.cjs _test_cms_delivery.cjs
+        run: node --test _test_vercel_gate.cjs _test_cms_delivery.cjs _test_site_settings_delivery.cjs _test_settings_delivery_integration.cjs
       - name: Verify live CMS author intent and payload
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # PR checks use the actual source head, not GitHub's synthetic merge SHA.
           CMS_CANDIDATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: python _cms_delivery.py "$CMS_CANDIDATE_SHA"
+      - name: Verify live site settings author intent and payload
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SETTINGS_CANDIDATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python _site_settings_delivery.py "$SETTINGS_CANDIDATE_SHA"
   preview:
     name: Preview browser
     if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && startsWith(github.ref, 'refs/heads/codex/')

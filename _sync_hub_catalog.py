@@ -109,6 +109,7 @@ class CardList(HTMLParser):
             self.lines.append(match.end())
         self.depth = 0
         self.start = self.end = None
+        self.open_start = None
         self.card_start = None
         self.cards = []
         self.dates = {}
@@ -129,6 +130,7 @@ class CardList(HTMLParser):
                 if self.start is not None:
                     raise ValueError(f"Duplicate list: {self.element_id}")
                 self.start = self.source_offset() + len(self.get_starttag_text())
+                self.open_start = self.source_offset()
                 self.depth = 1
             elif self.depth:
                 self.depth += 1
@@ -277,10 +279,15 @@ def sync_homepage_limit(source: str) -> str:
     return source[:offset] + rule + source[offset:]
 
 
-def sync_source(source: str, element_id: str, articles: list[dict], overrides: dict | None = None) -> str:
+def sync_source(source: str, element_id: str, articles: list[dict], overrides: dict | None = None,
+                *, order: list[str] | None = None) -> str:
     parsed = CardList(source, element_id)
     existing = set()
     wanted = {item["slug"] for item in articles}
+    if order is not None and not isinstance(order, list):
+        raise ValueError('Invalid public article order')
+    if order and (len(order) != len(wanted) or set(order) != wanted):
+        raise ValueError('Incomplete public article order')
     catalog = {item["slug"]: item for item in articles}
     overrides = overrides or {}
     removals = []
@@ -302,7 +309,7 @@ def sync_source(source: str, element_id: str, articles: list[dict], overrides: d
     updated = source[:parsed.end] + additions + source[parsed.end:]
     for start, end, card in sorted(replacements, reverse=True):
         updated = updated[:start] + card + updated[end:]
-    if element_id == 'dn-article-list':
+    if order or element_id == 'dn-article-list':
         # Homepage previously moved every card at parse time. Emit that order
         # directly; catalog position breaks date ties without oscillating on
         # repeated builds or relying on the previously generated DOM order.
@@ -312,10 +319,21 @@ def sync_source(source: str, element_id: str, articles: list[dict], overrides: d
         rank = {item['slug']: (parsed.dates[item['slug']] or item.get('date') or '', i)
                 for i, item in enumerate(articles)}
         cards = parsed.cards
-        ordered = sorted(cards, key=lambda card: rank[card[0]], reverse=True)
+        if order:
+            positions = {slug: index for index, slug in enumerate(order)}
+            ordered = sorted(cards, key=lambda card: positions[card[0]])
+        else:
+            ordered = sorted(cards, key=lambda card: rank[card[0]], reverse=True)
         markup = [updated[start:end] for _, start, end in ordered]
         for (_, start, end), card_html in reversed(list(zip(cards, markup))):
             updated = updated[:start] + card_html + updated[end:]
+    parsed = CardList(updated, element_id)
+    opening = updated[parsed.open_start:parsed.start]
+    opening = re.sub(r'''\s+data-dn-settings-order\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)''', '', opening, flags=re.I)
+    if order:
+        opening = set_attribute(opening, 'data-dn-settings-order', 'custom')
+    updated = updated[:parsed.open_start] + opening + updated[parsed.start:]
+    if element_id == 'dn-article-list':
         updated = sync_homepage_limit(updated)
     return updated
 
@@ -327,13 +345,15 @@ def main() -> int:
     catalog = load_catalog()
     articles = public_catalog(catalog, ROOT)
     overrides = load_overrides(catalog)
+    from _site_settings_data import load_settings
+    settings, _ = load_settings(ROOT)
     expected = {item["slug"] for item in articles}
     pending = []
     for relative, element_id in HUBS.items():
         path = ROOT / relative
         with path.open(encoding="utf-8", newline="") as stream:
             source = stream.read()
-        updated = sync_source(source, element_id, articles, overrides.get(relative))
+        updated = sync_source(source, element_id, articles, overrides.get(relative), order=settings['order'])
         pending.append((path, updated, source != updated))
         if args.check:
             if source != updated:

@@ -266,7 +266,7 @@ test('malformed percent escapes fail closed and normal encoded assets resolve', 
   assert.equal(resolve('/assets/a%20b.png'), '/site/assets/a b.png');
 });
 
-function searchModalHarness({idleReady = true, analytics = true} = {}) {
+function searchModalHarness({idleReady = true, analytics = true, articles = []} = {}) {
   const source = readFileSync(new URL('./blog/blog-shared.js', import.meta.url), 'utf8');
   const listeners = new Map(), elements = new Map(), classes = new Set(), events = [];
   const input = {value:'', addEventListener(){}, focus(){doc.activeElement = input;}, tagName:'INPUT'};
@@ -280,24 +280,37 @@ function searchModalHarness({idleReady = true, analytics = true} = {}) {
     addEventListener:(name,fn)=>{if(!listeners.has(name))listeners.set(name,[]);listeners.get(name).push(fn);}};
   let idle;
   const win = analytics ? {gtag:(...args)=>events.push(args)} : {};
-  const ctx = {DN:{ARTICLES:[]},document:doc,window:win,
+  const ctx = {DN:{ARTICLES:articles},document:doc,window:win,
     fetch:()=>Promise.resolve({ok:false}),idle:fn=>{idle=fn;},console};
   const initStart = source.indexOf('  DN.initCmdK = function () {');
   const initEnd = source.indexOf('\n  // -----------------------------------------------------------------------',initStart);
   const bootstrapStart = source.indexOf('    var cmdkReady = false;');
   const bootstrapEnd = source.indexOf('    // 2026-05-17 — wire up the SearchAction',bootstrapStart);
   assert.ok(initStart>=0 && initEnd>initStart && bootstrapStart>initEnd && bootstrapEnd>bootstrapStart);
-  vm.runInNewContext(source.slice(initStart,initEnd)+source.slice(bootstrapStart,bootstrapEnd),ctx);
+  const searchSelectors = source.match(/^  const NAV_SEARCH_SELECTOR = [^\n]+;$/gm) || [];
+  assert.equal(searchSelectors.length,1,'Search bootstrap must share its actual navigation selector');
+  vm.runInNewContext(searchSelectors[0]+'\n'+source.slice(initStart,initEnd)+source.slice(bootstrapStart,bootstrapEnd),ctx);
   if(idleReady)idle();
   const dispatch = (type,extra={})=>{
     const e={key:'k',ctrlKey:true,preventDefault(){},...extra};
     // DOM listeners added during dispatch do not run on that same target/event.
     for(const fn of [...(listeners.get(type)||[])]) fn(e);
   };
-  return {ctx,events,input,open:()=>classes.has('open'),
+  return {ctx,events,input,results,open:()=>classes.has('open'),
     key:extra=>dispatch('keydown',extra),
     click:()=>dispatch('click',{target:{closest:()=>({})}})};
 }
+
+test('shortcut search excludes unpublished entries without CSS hiding',()=>{
+  const h=searchModalHarness({articles:[
+    {slug:'draft-fixture',title:'Unpublished fixture',unpublished:true},
+    {slug:'public-fixture',title:'Published fixture'}
+  ]});
+  h.key();
+  assert.ok(h.results.innerHTML.includes('/blog/public-fixture'));
+  assert.ok(!h.results.innerHTML.includes('/blog/draft-fixture'));
+  assert.ok(!h.results.innerHTML.includes('Unpublished fixture'));
+});
 
 for(const idleReady of [false,true]) {
   test(`search shortcut opens and toggles once (${idleReady ? 'after' : 'before'} idle init)`,()=>{

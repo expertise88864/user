@@ -56,6 +56,13 @@ test('preview credential stays on the exact deployment origin', () => {
 function fake(bad = '') {
   const raw = Buffer.from(JSON.stringify({ version: 1, requests: [] }, null, 2) + '\n');
   const proofSha = createHash('sha1').update(Buffer.concat([Buffer.from('blob ' + raw.length + '\0'), raw])).digest('hex');
+  const settingsDefault=require('./_site_settings_delivery.cjs').DEFAULT;
+  const settingsFiles={
+    '_site_settings.json':Buffer.from(JSON.stringify(settingsDefault,null,2)+'\n'),
+    '.site-settings-delivery.json':Buffer.from(JSON.stringify({version:1,request:null},null,2)+'\n'),
+    'assets/settings-catalog.json':Buffer.from(JSON.stringify({version:1,articles:settingsDefault.picks.map(slug=>({slug,title:slug,title_en:slug}))},null,2)+'\n'),
+  };
+  const settingsBlob=bytes=>createHash('sha1').update(Buffer.concat([Buffer.from('blob '+bytes.length+'\0'),bytes])).digest('hex');
   return async (url) => {
     if (bad === 'http') return { ok: false };
     if (url.includes('/git/ref/heads/main')) return new Response(JSON.stringify({ ref: 'refs/heads/main', object: { type: 'commit', sha: '9'.repeat(40) } }));
@@ -67,9 +74,14 @@ function fake(bad = '') {
       return new Response(JSON.stringify({ type: 'file', path: '.cms-delivery.json', encoding: 'base64', size: raw.length,
         content: raw.toString('base64'), sha: proofSha }));
     }
+    if(url.includes('/contents/')){
+      const path=url.split('/contents/')[1].split('?')[0],bytes=settingsFiles[path];
+      assert.ok(bytes,'Unexpected fixture settings path');
+      return Response.json({type:'file',path,sha:settingsBlob(bytes),size:bytes.length,encoding:'base64',content:bytes.toString('base64')});
+    }
     if (url.includes('/git/commits/')) return new Response(JSON.stringify({ sha, tree: { sha: '1'.repeat(40) } }));
     if (url.includes('/git/trees/')) return new Response(JSON.stringify({ sha: '1'.repeat(40), truncated: false,
-      tree: [{ path: '.cms-delivery.json', type: 'blob', mode: '100644', sha: proofSha }] }));
+      tree: [{ path: '.cms-delivery.json', type: 'blob', mode: '100644', sha: proofSha },...Object.entries(settingsFiles).map(([path,bytes])=>({path,type:'blob',mode:'100644',sha:settingsBlob(bytes)}))] }));
     if (url.includes('/pulls?')) return { ok: true, json: async () => bad === 'pr' ? [] : [
       { state: 'open', head: { sha, repo: { full_name: cfg.repository } }, base: { ref: 'main' } }
     ] };
@@ -99,6 +111,20 @@ test('unknown environment and missing SHA deny deployment', async () => {
   assert.equal(await allowed({ VERCEL_ENV: 'production' }), false);
 });
 test('exact complete candidate may deploy', async () => assert.equal(await allowed(env, fake()), true));
+test('green candidate CI cannot authorize unapproved bootstrap settings',async()=>{
+  const base=fake();let changed;
+  const request=async(url,options)=>{
+    const response=await base(url,options);
+    if(url.includes('/contents/_site_settings.json')){
+      const data=await response.json(),value=JSON.parse(Buffer.from(data.content,'base64'));value.font.bodySize='18px';
+      const bytes=Buffer.from(JSON.stringify(value,null,2)+'\n');changed=createHash('sha1').update(Buffer.concat([Buffer.from('blob '+bytes.length+'\0'),bytes])).digest('hex');
+      return Response.json({...data,sha:changed,size:bytes.length,content:bytes.toString('base64')});
+    }
+    if(url.includes('/git/trees/')&&changed){const data=await response.json();for(const row of data.tree)if(row.path==='_site_settings.json')row.sha=changed;return Response.json(data);}
+    return response;
+  };
+  await assert.rejects(allowed(env,request),/Bootstrap/);
+});
 test('fresh failed candidate evidence cannot be masked by a cached green response', async () => {
   const base=fake();
   const request=async(url,options)=>{
@@ -133,7 +159,9 @@ test('CMS metadata uses the large-file object media type and uncached bounded sa
     return base(url, options);
   };
   assert.equal(await allowed(env, request), true);
-  assert.equal(calls.filter(call => call.url.includes('/git/ref/heads/main')).length, 2);
+  // Article and settings intent checks each re-read main; the separate
+  // settings retirement transition also checks its initial/final revision.
+  assert.equal(calls.filter(call => call.url.includes('/git/ref/heads/main')).length, 6);
   assert.equal(calls.filter(call => call.url.includes('/contents/.cms-delivery.json')).length, 1);
   for (const { url, options } of calls) {
     assert.ok(url.startsWith('https://api.github.com/repos/' + cfg.repository + '/'));

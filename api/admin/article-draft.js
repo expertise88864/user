@@ -46,7 +46,7 @@ function articleMetadata(value) {
   for (const name of ['title_en', 'tag', 'tag_en']) {
     if (typeof value[name] !== 'string' || !value[name].trim() || value[name].length > (name === 'title_en' ? 180 : 64) || /[\x00-\x1f]/.test(value[name])) fail(400, 'invalid_article_metadata');
   }
-  if (!['myth', 'rx', 'note', 'research'].includes(value.cat) || !/^\d{4}-\d{2}-\d{2}$/.test(value.date || '') ||
+  if (!['myth', 'rx', 'product', 'note', 'research'].includes(value.cat) || !/^\d{4}-\d{2}-\d{2}$/.test(value.date || '') ||
       !Number.isFinite(Date.parse(value.date)) || new Date(value.date).toISOString().slice(0, 10) !== value.date) fail(400, 'invalid_article_metadata');
   return { title_en: value.title_en.trim(), tag: value.tag.trim(), tag_en: value.tag_en.trim(), cat: value.cat, date: value.date };
 }
@@ -450,7 +450,9 @@ function referencedMedia(content, target) {
     let parsed;
     try { parsed = new URL(value, 'https://chendermatologist.com/' + target.file); }
     catch (_) { fail(400, 'invalid_article_content'); }
-    if (['data:', 'blob:', 'file:'].includes(parsed.protocol)) fail(400, 'invalid_article_content');
+    // Source mode must not bypass the Word editor's active-URL protection.
+    // URL parsing also normalizes mixed case, decoded entities and controls.
+    if (!['https:', 'http:', 'mailto:', 'tel:'].includes(parsed.protocol)) fail(400, 'invalid_article_content');
     if (parsed.origin !== 'https://chendermatologist.com') return;
     let path;
     try { path = decodeURIComponent(parsed.pathname).replace(/^\//, ''); }

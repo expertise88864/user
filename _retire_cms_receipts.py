@@ -19,7 +19,7 @@ def git(root, *args):
     return subprocess.check_output(["git", *args], cwd=root, stderr=subprocess.PIPE, timeout=20).decode("utf-8").strip()
 
 
-def write_bundle(root: Path, destination: Path, expected: str, files: dict[str, bytes]):
+def write_bundle(root: Path, destination: Path, expected: str, files: dict[str, bytes], *, settings=False):
     """Exclusive new directory outside the checkout; never overwrite sources."""
     root = root.resolve()
     expected = revision(expected)
@@ -27,8 +27,15 @@ def write_bundle(root: Path, destination: Path, expected: str, files: dict[str, 
         raise ValueError("Local revision changed after retirement preparation")
     if not files:
         return
-    archive = PREFIX + expected + ".json"
-    if set(files) != {FILE, archive} or any(not isinstance(raw, bytes) for raw in files.values()):
+    # Fixed contracts only: callers cannot supply arbitrary output paths.
+    if type(settings) is not bool:
+        raise ValueError("Unexpected retirement bundle contract")
+    if settings:
+        from _site_settings_retirement import FILE as receipt_file, PREFIX as archive_prefix
+    else:
+        receipt_file, archive_prefix = FILE, PREFIX
+    archive = archive_prefix + expected + ".json"
+    if set(files) != {receipt_file, archive} or any(not isinstance(raw, bytes) for raw in files.values()):
         raise ValueError("Unexpected retirement bundle paths")
     destination = destination.absolute()
     if destination.exists() or destination.is_symlink():

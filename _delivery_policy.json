@@ -3,6 +3,7 @@
   "require_pr": true,
   "allow_dispatch": false,
   "cms_author_intent": true,
+  "site_settings_author_intent": true,
   "preview_paths": [
     "/",
     "/tools",
@@ -130,7 +131,8 @@
           "required": [
             "Delivery Python regression tests",
             "Production deployment gate regression tests",
-            "Verify live CMS author intent and payload"
+            "Verify live CMS author intent and payload",
+            "Verify live site settings author intent and payload"
           ],
           "conditional": []
         },

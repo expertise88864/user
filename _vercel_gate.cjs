@@ -31,6 +31,7 @@ async function allowed(env = process.env, request = fetch) {
   const cfg = JSON.parse(fs.readFileSync(__dirname + '/_delivery_policy.json', 'utf8'));
   assert.equal(cfg.repository, 'expertise88864/user', 'Unexpected website repository');
   assert.equal(cfg.cms_author_intent, true, 'Live CMS author-intent verification is required');
+  assert.equal(cfg.site_settings_author_intent, true, 'Live site-settings author-intent verification is required');
   assert.match(cfg.repository, /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/);
   assert.ok(Array.isArray(cfg.workflows) && cfg.workflows.length > 0, 'Missing workflow contract');
   for (const entry of cfg.workflows) {
@@ -105,7 +106,7 @@ async function allowed(env = process.env, request = fetch) {
   }
   if (cfg.cms_author_intent) {
     const { verifyLiveIntent } = require('./_cms_delivery.cjs');
-    await verifyLiveIntent(sha, async path => {
+    const authorEvidence = async path => {
       const response = await evidenceRequest(path, 'cms-author-intent',
         { headers: { ...headers, Accept: path.startsWith('/contents/') ? 'application/vnd.github.object+json' : headers.Accept,
           'Cache-Control': 'no-cache' }, redirect: 'error', cache: 'no-store', signal: AbortSignal.timeout(15000) });
@@ -124,7 +125,9 @@ async function allowed(env = process.env, request = fetch) {
         }
       } finally { await reader.cancel(); }
       return JSON.parse(Buffer.concat(chunks).toString('utf8'));
-    });
+    };
+    await verifyLiveIntent(sha, authorEvidence);
+    await require('./_site_settings_delivery.cjs').verify(sha, authorEvidence);
   }
   return true;
 }

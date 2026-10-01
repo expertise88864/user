@@ -21,7 +21,7 @@ module.exports = async function checkEditorSnapshots(browser) {
     await page.locator('#axSeoRefresh').waitFor({state:'attached'});
     await page.evaluate(() => {
       CURRENT_FILE = 'blog/example.html';
-      CURRENT_CONTENT = '<html lang="zh-Hant"><head><title>Editor fixture</title></head><body><main><div id="proseZh"><p>Initial</p></div></main></body></html>';
+      CURRENT_CONTENT = '<html lang="zh-Hant"><head><title>Editor fixture</title><script type="application/ld+json">{"@type":"FAQPage","mainEntity":[]}</script></head><body><main><div id="proseZh"><p>Initial</p><details><summary>Fixture question?</summary><p>Fixture answer with enough plain text.</p></details></div></main></body></html>';
       document.getElementById('filePath').textContent = CURRENT_FILE;
       document.getElementById('patModal').style.display = 'none';
       mountIframe(CURRENT_CONTENT);
@@ -31,6 +31,17 @@ module.exports = async function checkEditorSnapshots(browser) {
     await editor.waitFor();
     await page.locator('#axSeoTitle').getByText('Editor fixture',{exact:true}).waitFor();
     await page.waitForFunction(() => document.getElementById('axPanel')._enhanced);
+    // Checking SEO must not silently mutate a preview-only head, lose the
+    // author's existing schema, or pretend to persist something outside the
+    // actual editable-region serializer. Exercise every available SEO action.
+    const beforeSeo = await page.evaluate(() => ({head: editFrame.contentDocument.head.innerHTML,
+      content: getCurrentEditorContent(), raw: CURRENT_CONTENT, dirty: DIRTY}));
+    for (const action of await page.locator('.ax-tab[data-tab="seo"] button').all()) {
+      await action.click();
+      const afterSeo = await page.evaluate(() => ({head: editFrame.contentDocument.head.innerHTML,
+        content: getCurrentEditorContent(), raw: CURRENT_CONTENT, dirty: DIRTY}));
+      assert.deepEqual(afterSeo, beforeSeo, 'SEO checks preserve preview head, authored source/schema and dirty state');
+    }
     await page.evaluate(() => document.getElementById('axSeoTitle').textContent='awaiting input check');
     await editor.click();
     await editor.press('End');

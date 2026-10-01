@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "repository": "expertise88864/user",
+  "branch": "cms-settings/site",
+  "source": "_site_settings.json",
+  "manifest": ".cms-settings/site.json",
+  "request": ".cms-settings-requests/site.json",
+  "catalog": "assets/settings-catalog.json",
+  "maxArticles": 200,
+  "maxPicks": 12,
+  "fonts": {
+    "bodyFont": ["", "'Inter','Noto Sans TC',sans-serif", "'Source Han Sans TC','Noto Sans TC',sans-serif", "'PingFang TC','Microsoft JhengHei',sans-serif", "Georgia,'Noto Serif TC',serif"],
+    "headFont": ["", "'Noto Serif TC',Georgia,serif", "'Source Han Serif TC','Noto Serif TC',serif", "'Inter','Noto Sans TC',sans-serif"],
+    "bodySize": ["", "14.5px", "16px", "17px", "18px"]
+  }
+}

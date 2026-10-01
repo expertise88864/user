@@ -85,7 +85,7 @@
   async function createArticle({ slug, html, title_en, tag, tag_en, type, date }) {
     const token = auth.getPat();
     if (!token || auth.isLogoutPending()) throw new Error('請先完成登入；輸入內容仍保留。');
-    const cat = type === 'note' ? 'note' : type === 'research' ? 'research' : ['rx', 'overview'].includes(type) ? 'rx' : 'myth';
+    const cat = type === 'product' ? 'product' : type === 'note' ? 'note' : type === 'research' ? 'research' : ['rx', 'overview'].includes(type) ? 'rx' : 'myth';
     const accepted = await drafts.create('blog/' + slug + '.html', html, { title_en, tag, tag_en, cat, date });
     if (auth.getPat() !== token || auth.isLogoutPending()) throw new Error('登入已變更，請重讀草稿清單確認建立結果；勿重複建立。');
     return accepted.head;
