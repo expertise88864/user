@@ -62,7 +62,12 @@ function fixture() {
       assert.ok(bytes); result = { sha: id, size: bytes.length, encoding: 'base64', content: bytes.toString('base64') };
     } else if (path.startsWith('git/commits/')) {
       const value = commits.get(path.slice(12));
-      result = { ...value, parents: (value.parents || []).map(sha => ({ sha })) };
+      result = { sha: path.slice(12), ...value, parents: (value.parents || []).map(sha => ({ sha })) };
+    } else if (path.startsWith('git/trees/')) {
+      const id = path.slice(10);
+      result = { sha: id, truncated: false, tree: [...trees.get(id)].map(([path, sha]) => ({
+        path, sha, type: 'blob', mode: '100644', size: blobs.get(sha).length,
+      })) };
     }
     else if (path === 'git/blobs') result = { sha: store(Buffer.from(body.content, 'base64')) };
     else if (path === 'git/trees') {
@@ -98,6 +103,134 @@ function fixture() {
   h.input = (extra = {}) => ({ file: FILE, expectedHead: null, baseSha: mainBlob, content: HTML.replace('本機測試', '已編輯'), media: [], ...extra });
   return h;
 }
+function verifiedProduction(h) {
+  h.workflowRuns = publicationPolicy.workflows.map((entry, index) => ({ id: 100 + index, run_attempt: 1,
+    path: entry.path, head_sha: h.main, head_branch: 'main', event: 'push',
+    head_repository: { full_name: publicationPolicy.repository }, status: 'completed', conclusion: 'success' }));
+  h.workflowJobs = new Map(h.workflowRuns.map((run, index) => [run.id, publicationPolicy.workflows[index].jobs.map(name => ({
+    name, head_sha: h.main, status: 'completed', conclusion: (publicationPolicy.workflows[index].main_skips || []).includes(name) ? 'skipped' : 'success',
+    steps: publicationPolicy.workflows[index].steps[name].required.map(name => ({ name, status: 'completed', conclusion: 'success' })),
+  }))]));
+  h.deployments = [{ id: 700, sha: h.main, environment: 'Production', production_environment: true, creator: { login: 'vercel[bot]' } }];
+  h.deploymentStatuses = [{ id: 800, state: 'success', creator: { login: 'vercel[bot]' }, environment_url: 'https://chendermatologist-fixture-expertise88864s-projects.vercel.app' }];
+}
+function putMain(h, file, content) {
+  const bytes = Buffer.from(content), id = blobSha(bytes); h.blobs.set(id, bytes);
+  h.trees.get(h.commits.get(h.main).tree.sha).set(file, id);
+  return id;
+}
+async function newVersionFixture() {
+  const h = fixture();
+  putMain(h, '.cms-delivery.json', '{"version":1,"requests":[]}\n');
+  let saved = await (await h.request(h.input())).json();
+  saved = await (await h.request(publicationInput(saved))).json();
+  const oldHead = saved.head, oldMain = h.main;
+  const nextMain = sha('published main'), nextTree = sha('published tree');
+  const tree = new Map(h.trees.get(h.commits.get(oldMain).tree.sha));
+  const bytes = Buffer.from(HTML.replace('本機測試', '正式版內容')), published = blobSha(bytes);
+  h.blobs.set(published, bytes); tree.set(FILE, published);
+  h.trees.set(nextTree, tree); h.commits.set(nextMain, { tree: { sha: nextTree }, parents: [oldMain] });
+  h.main = nextMain; h.mainBlob = published; h.refs.set('main', nextMain);
+  verifiedProduction(h);
+  h.newInput = extra => ({ file: FILE, action: 'new-version', expectedHead: oldHead,
+    expectedBlob: saved.blobSha, expectedMain: nextMain, expectedMainBlob: published, confirmed: true, ...extra });
+  h.oldHead = oldHead; h.start = h.calls.length;
+  return h;
+}
+test('new editing cycle copies verified production, retains history, removes only the old draft request', async () => {
+  const h = await newVersionFixture();
+  assert.equal((await (await h.request()).json()).conflict, true, 'reproduces the post-publication stale base');
+  const response = await h.request(h.newInput()), result = await response.json();
+  assert.equal(response.status, 200); assert.equal(result.verified, true); assert.equal(result.published, false);
+  assert.equal(result.blobSha, h.mainBlob); assert.equal(result.baseSha, h.mainBlob);
+  assert.equal(h.commits.get(result.head).parents[0], h.oldHead); assert.equal(h.refs.get('main'), h.main);
+  const after = await (await h.request()).json();
+  assert.equal(after.conflict, false); assert.equal(after.request, null); assert.equal(after.metadata, null);
+  assert.equal(after.content, h.blobs.get(h.mainBlob).toString());
+  assert.ok(h.trees.get(h.commits.get(h.oldHead).tree.sha).has('.cms-requests/example.json'), 'old request remains in history');
+  const writes = h.calls.slice(h.start).filter(call => call.method !== 'GET');
+  assert.deepEqual(writes.map(call => call.path), ['git/trees', 'git/commits', 'git/refs/heads/drafts/example']);
+  assert.ok(writes[0].body.tree.every(entry => entry.path !== '.cms-delivery.json'));
+});
+test('new version fails closed before writes for unverified production, active receipts and stale expectations', async () => {
+  for (const kind of ['ci', 'deployment', 'receipt', 'missing-receipt', 'bad-receipt', 'main', 'blob', 'head', 'confirm', 'extra', 'noindex', 'symlink', 'truncated']) {
+    const h = await newVersionFixture(); let extra = {};
+    if (kind === 'ci') h.workflowRuns[0].conclusion = 'failure';
+    if (kind === 'deployment') h.deploymentStatuses[0].state = 'pending';
+    if (kind === 'receipt') putMain(h, '.cms-delivery.json', JSON.stringify({ version: 1, requests: [{ file: FILE }] }));
+    if (kind === 'missing-receipt') h.trees.get(h.commits.get(h.main).tree.sha).delete('.cms-delivery.json');
+    if (kind === 'bad-receipt') putMain(h, '.cms-delivery.json', '{"version":2,"requests":[]}');
+    if (kind === 'main') extra.expectedMain = sha('stale');
+    if (kind === 'blob') extra.expectedMainBlob = sha('stale');
+    if (kind === 'head') extra.expectedHead = sha('stale');
+    if (kind === 'confirm') extra.confirmed = false;
+    if (kind === 'extra') extra.content = 'unapproved content';
+    if (kind === 'noindex') { const id = putMain(h, FILE, HTML.replace('</head>', '<meta name="robots" content="noindex"></head>')); extra.expectedMainBlob = id; }
+    if (['symlink', 'truncated'].includes(kind)) h.tamper = (path, result) => {
+      if (path.startsWith('git/trees/')) {
+        if (kind === 'truncated') result.truncated = true;
+        else result.tree.find(entry => entry.path === FILE).mode = '120000';
+      }
+      return result;
+    };
+    const before = h.calls.length, response = await h.request(h.newInput(extra));
+    assert.ok(response.status >= 400, kind);
+    assert.ok(h.calls.slice(before).every(call => call.method === 'GET'), kind + ' must not write');
+    assert.equal(h.refs.get('drafts/example'), h.oldHead);
+  }
+});
+test('new version rechecks main before writes and refuses concurrent draft updates without force', async () => {
+  for (const kind of ['main', 'draft']) {
+    const h = await newVersionFixture();
+    if (kind === 'main') h.tamper = (path, result) => {
+      if (path.startsWith('git/trees/')) h.refs.set('main', sha('advanced main'));
+      return result;
+    };
+    else h.race = true;
+    const response = await h.request(h.newInput());
+    assert.equal(response.status, 409, kind);
+    assert.equal(h.refs.get('drafts/example'), h.oldHead);
+    if (kind === 'main') assert.ok(h.calls.slice(h.start).every(call => call.method === 'GET'));
+  }
+});
+test('accepted new version with a lost response is unknown, never retried or reported verified', async () => {
+  const h = await newVersionFixture(); h.outcomeUnknown = true;
+  const response = await h.request(h.newInput());
+  assert.equal(response.status, 502); assert.notEqual(h.refs.get('drafts/example'), h.oldHead);
+  assert.equal(h.calls.slice(h.start).filter(call => call.method === 'PATCH').length, 1);
+  assert.ok(!(await response.text()).includes('fixture-secret'));
+});
+test('new version adopts only verified ordinary production images, preserving their exact bytes', async () => {
+  for (const kind of ['valid', 'bad-digest', 'executable', 'advance-after-patch']) {
+    const h = await newVersionFixture();
+    const bytes = Buffer.from('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7', 'base64');
+    const digest = crypto.createHash('sha256').update(bytes).digest('hex');
+    const path = 'blog/images/example/' + (kind === 'bad-digest' ? '0'.repeat(64) : digest) + '.gif';
+    const id = blobSha(bytes); h.blobs.set(id, bytes); h.trees.get(h.commits.get(h.main).tree.sha).set(path, id);
+    const published = putMain(h, FILE, HTML.replace('</main>', '<img src="/' + path + '" alt="Fixture"></main>'));
+    h.tamper = (apiPath, result) => {
+      if (kind === 'executable' && apiPath.startsWith('git/trees/')) result.tree.find(entry => entry.path === path).mode = '100755';
+      if (kind === 'advance-after-patch' && apiPath.startsWith('git/refs/heads/')) {
+        const next = sha('concurrent production'); h.commits.set(next, h.commits.get(h.main)); h.refs.set('main', next);
+      }
+      return result;
+    };
+    const response = await h.request(h.newInput({ expectedMainBlob: published }));
+    if (kind === 'valid') {
+      assert.equal(response.status, 200); const result = await response.json();
+      const loaded = await (await h.request()).json();
+      assert.equal(loaded.blobSha, published); assert.equal(loaded.assets.length, 1);
+      assert.equal(loaded.media[0].base64, bytes.toString('base64')); assert.equal(loaded.media[0].path, path);
+      assert.equal(h.trees.get(h.commits.get(result.head).tree.sha).get(path), id);
+    } else if (kind === 'advance-after-patch') {
+      assert.equal(response.status, 502); assert.equal((await response.json()).error, 'new_version_not_verified');
+      assert.equal(h.calls.slice(h.start).filter(call => call.method === 'PATCH').length, 1);
+    } else {
+      assert.ok(response.status >= 400, kind);
+      assert.ok(h.calls.slice(h.start).every(call => call.method === 'GET'));
+    }
+  }
+});
 test('a missing article is not reported as published and can become a new draft', async () => {
   const h = fixture(); h.trees.get(h.commits.get(h.main).tree.sha).delete(FILE);
   const response = await h.request(), body = await response.json();

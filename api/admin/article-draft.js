@@ -263,6 +263,92 @@ async function requestPublication(api, target, input) {
   return { file: target.file, head: next, baseSha: loaded.baseSha, blobSha: loaded.blobSha,
     request: accepted, verified: true, published: false };
 }
+// Start a new editing cycle from an independently verified production version.
+// Keep the old draft as a parent; do not rewrite history or retire delivery proof.
+async function newVersion(api, target, input) {
+  const keys = ['file', 'action', 'expectedHead', 'expectedBlob', 'expectedMain', 'expectedMainBlob', 'confirmed'];
+  if (Object.keys(input).some(key => !keys.includes(key))) fail(400, 'invalid_publication_request');
+  for (const key of ['expectedHead', 'expectedBlob', 'expectedMain', 'expectedMainBlob']) validSha(input[key]);
+  if (input.confirmed !== true) fail(400, 'author_confirmation_required');
+  const loaded = await state(api, target);
+  if (loaded.legacy) fail(409, 'legacy_draft_requires_review');
+  if (loaded.head !== input.expectedHead || loaded.blobSha !== input.expectedBlob ||
+      loaded.main !== input.expectedMain || loaded.mainBlobSha !== input.expectedMainBlob) fail(409, 'draft_conflict');
+  const proof = await observePublication(api, loaded, publicationPolicy);
+  if (proof.state !== 'live' || !proof.ciVerified || !proof.deploymentVerified ||
+      proof.mainSha !== input.expectedMain || proof.mainBlobSha !== input.expectedMainBlob) fail(409, 'publication_not_verified');
+
+  const published = await fileAt(api, target.file, loaded.main);
+  const productionCommit = await api('GET', 'git/commits/' + loaded.main);
+  if (productionCommit.sha !== loaded.main || !SHA.test(productionCommit.tree?.sha || '')) fail(502, 'invalid_repository_content');
+  const tree = await api('GET', 'git/trees/' + productionCommit.tree.sha + '?recursive=1');
+  if (tree.sha !== productionCommit.tree.sha || tree.truncated !== false ||
+      !Array.isArray(tree.tree) || tree.tree.length > 10000) fail(502, 'invalid_repository_content');
+  const entries = new Map();
+  for (const entry of tree.tree) {
+    if (typeof entry.path !== 'string' || entries.has(entry.path)) fail(502, 'invalid_repository_content');
+    entries.set(entry.path, entry);
+  }
+  function ordinary(path, sha) {
+    const entry = entries.get(path);
+    if (!entry || entry.mode !== '100644' || entry.type !== 'blob' || !SHA.test(entry.sha || '') ||
+        (sha && entry.sha !== sha)) fail(409, 'invalid_repository_content');
+    return entry;
+  }
+  ordinary(target.file, published.sha);
+  if (published.sha !== input.expectedMainBlob || !mainIndexable(published.content)) fail(409, 'publication_not_verified');
+  const receipt = await fileAt(api, '.cms-delivery.json', loaded.main, true);
+  if (!receipt) fail(409, 'publication_receipt_not_retired');
+  ordinary('.cms-delivery.json', receipt.sha);
+  let delivery;
+  try { delivery = JSON.parse(receipt.content); } catch (_) { fail(409, 'publication_receipt_not_retired'); }
+  if (!delivery || delivery.version !== 1 || Object.keys(delivery).some(key => !['version', 'requests'].includes(key)) ||
+      !Array.isArray(delivery.requests) || delivery.requests.some(record => !record ||
+        typeof record.file !== 'string' || !/^blog\/[a-z0-9]+(?:-[a-z0-9]+)*\.html$/.test(record.file) || record.file === target.file)) {
+    fail(409, 'publication_receipt_not_retired');
+  }
+  const paths = [...referencedMedia(published.content, target)];
+  if (paths.length > MAX_MEDIA) fail(413, 'draft_too_large');
+  const assets = paths.map(path => {
+    const entry = ordinary(path);
+    if (!Number.isInteger(entry.size) || entry.size < 8 || entry.size > MAX_MEDIA_RAW_BYTES) fail(409, 'invalid_draft_media');
+    return { path, sha: entry.sha, size: entry.size };
+  });
+  if (assets.reduce((sum, asset) => sum + Math.ceil(asset.size / 3) * 4, 0) > MAX_MEDIA_BASE64) fail(413, 'draft_too_large');
+  const media = await draftMedia(api, { head: loaded.main, assets });
+  await validateMedia(media, target.slug);
+  const parent = await api('GET', 'git/commits/' + loaded.head);
+  if (!SHA.test(parent.tree?.sha || '')) fail(502, 'invalid_repository_content');
+  const previousRequest = await fileAt(api, target.request, loaded.head, true);
+  async function unchanged() {
+    if (await ref(api, 'main') !== loaded.main || await ref(api, target.branch) !== loaded.head) fail(409, 'draft_conflict');
+  }
+  await unchanged();
+  const manifest = JSON.stringify({ version: 1, file: target.file, baseMain: loaded.main,
+    baseSha: published.sha, blobSha: published.sha, assets, metadata: null, status: 'draft' }) + '\n';
+  const changes = [{ path: target.file, mode: '100644', type: 'blob', sha: published.sha },
+    { path: target.manifest, mode: '100644', type: 'blob', content: manifest },
+    ...assets.map(asset => ({ path: asset.path, mode: '100644', type: 'blob', sha: asset.sha }))];
+  if (previousRequest) changes.push({ path: target.request, mode: '100644', type: 'blob', sha: null });
+  const nextTree = await api('POST', 'git/trees', { base_tree: parent.tree.sha, tree: changes });
+  const nextCommit = await api('POST', 'git/commits', { message: '[draft] new version ' + target.file,
+    tree: validSha(nextTree.sha), parents: [loaded.head] });
+  const next = validSha(nextCommit.sha);
+  await unchanged();
+  const result = await api('PATCH', 'git/refs/heads/' + encodeURIComponent(target.branch), { sha: next, force: false });
+  if (result.object?.sha !== next) fail(502, 'new_version_not_verified');
+  try {
+    const after = await state(api, target);
+    const savedManifest = await fileAt(api, target.manifest, next);
+    const savedMedia = await draftMedia(api, after);
+    if (after.main !== loaded.main || after.head !== next || after.blobSha !== published.sha ||
+        after.baseSha !== published.sha || after.conflict || after.content !== published.content ||
+        savedManifest.content !== manifest || await fileAt(api, target.request, next, true) !== null ||
+        JSON.stringify(savedMedia) !== JSON.stringify(media)) fail(502, 'new_version_not_verified');
+  } catch (_) { fail(502, 'new_version_not_verified'); }
+  return { file: target.file, head: next, baseSha: published.sha, blobSha: published.sha,
+    branch: target.branch, metadata: null, status: 'cloud_draft', verified: true, published: false };
+}
 async function listDrafts(api, query) {
   const offsetText = query.get('offset') || '0';
   if (!/^(?:0|[1-9]\d{0,2})$/.test(offsetText)) fail(400, 'invalid_list_offset');
@@ -501,7 +587,8 @@ export default async function handler(req) {
     }
     const input = await bodyOf(req);
     const target = article(input && input.file);
-    return json(200, input.action === undefined ? await save(api, target, input) : await requestPublication(api, target, input));
+    return json(200, input.action === undefined ? await save(api, target, input) : input.action === 'new-version'
+      ? await newVersion(api, target, input) : await requestPublication(api, target, input));
   } catch (error) {
     return json(error instanceof DraftError ? error.status : 503,
       { ok: false, error: error instanceof DraftError ? error.code : 'draft_unavailable' });

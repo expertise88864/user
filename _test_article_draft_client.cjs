@@ -22,6 +22,58 @@ function publicationResult(h, extra = {}) {
     publication: { mainSha: 'f'.repeat(40), mainBlobSha: BLOB, matchesLoadedVersion: true, sourceIndexable: true,
       ciVerified: true, deploymentVerified: true, published: true, state: 'live', checks: [], observedAt: new Date().toISOString(), ...extra } };
 }
+function newVersionObservation() {
+  return { file: FILE, head: HEAD, baseSha: BASE, blobSha: BLOB,
+    publication: { state: 'live', ciVerified: true, deploymentVerified: true, sourceIndexable: true,
+      mainSha: 'd'.repeat(40), mainBlobSha: 'e'.repeat(40) } };
+}
+function newVersionAcceptance(extra = {}) {
+  return { file: FILE, head: 'f'.repeat(40), baseSha: 'e'.repeat(40), blobSha: 'e'.repeat(40),
+    status: 'cloud_draft', verified: true, published: false, ...extra };
+}
+test('new-version capture allows a published stale base but never changes the loaded CAS automatically', async () => {
+  const h = fixture(); await h.load({ head: HEAD, conflict: true });
+  const snapshot = h.api.captureNewVersion(FILE, newVersionObservation()), pending = h.api.startNewVersion(snapshot);
+  const request = h.requests.at(-1), payload = JSON.parse(request.options.body);
+  assert.deepEqual(payload, { file: FILE, action: 'new-version', expectedHead: HEAD, expectedBlob: BLOB,
+    expectedMain: 'd'.repeat(40), expectedMainBlob: 'e'.repeat(40), confirmed: true });
+  assert.equal(request.options.credentials, 'same-origin');
+  h.respond(request, newVersionAcceptance()); assert.equal((await pending).verified, true);
+  assert.equal(h.api.localState(FILE).head, HEAD, 'caller must preserve new typing and explicitly re-read before activating');
+});
+test('new-version capture rejects unseen drafts, incomplete production evidence and mismatched loaded snapshots', async () => {
+  for (const kind of ['missing', 'legacy', 'failed', 'head', 'blob', 'base', 'zero']) {
+    const h = fixture(); await h.load({ head: kind === 'missing' ? null : HEAD, legacy: kind === 'legacy' });
+    const observed = newVersionObservation();
+    if (kind === 'failed') observed.publication.ciVerified = false;
+    if (['head', 'blob', 'base'].includes(kind)) observed[{ head: 'head', blob: 'blobSha', base: 'baseSha' }[kind]] = 'f'.repeat(40);
+    if (kind === 'zero') observed.publication.mainSha = '0'.repeat(40);
+    assert.throws(() => h.api.captureNewVersion(FILE, observed), kind);
+    assert.equal(h.requests.filter(request => request.options.method === 'POST').length, 0);
+  }
+});
+test('a reloaded context invalidates a previously captured new version before POST', async () => {
+  const h = fixture(); await h.load({ head: HEAD });
+  const snapshot = h.api.captureNewVersion(FILE, newVersionObservation()); await h.load({ head: HEAD });
+  await assert.rejects(h.api.startNewVersion(snapshot), error => error.code === 'publication_changed');
+  assert.equal(h.requests.filter(request => request.options.method === 'POST').length, 0);
+});
+test('ambiguous and malformed new-version acceptance never retries or replaces the local revision', async () => {
+  for (const kind of ['network', 'gateway', 'same-head', 'wrong-blob', 'published', 'not-verified']) {
+    const h = fixture(); await h.load({ head: HEAD });
+    const pending = h.api.startNewVersion(h.api.captureNewVersion(FILE, newVersionObservation()));
+    const rejected = assert.rejects(pending, error => error.code === 'new_version_not_verified');
+    const request = h.requests.at(-1);
+    if (kind === 'network') request.reject(Error('private provider detail'));
+    else if (kind === 'gateway') h.respond(request, {}, 503);
+    else h.respond(request, newVersionAcceptance({
+      ...kind === 'same-head' ? { head: HEAD } : {}, ...kind === 'wrong-blob' ? { blobSha: BASE } : {},
+      ...kind === 'published' ? { published: true } : {}, ...kind === 'not-verified' ? { verified: false } : {},
+    }));
+    await rejected; assert.equal(h.api.localState(FILE).head, HEAD);
+    assert.equal(h.requests.filter(request => request.options.method === 'POST').length, 1);
+  }
+});
 test('publication reads cookie-authenticated exact saved revision without advancing CAS or writing', async () => {
   const h = fixture(); await h.load();
   const before = h.api.capture(FILE, 'later local edits'), pending = h.api.observe(FILE), request = h.requests.at(-1);

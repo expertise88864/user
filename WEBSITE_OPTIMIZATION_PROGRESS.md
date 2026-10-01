@@ -7,10 +7,12 @@
 這是進行中紀錄。程式閱讀、回歸測試、瀏覽器檢查與正式交付分別記錄；
 單次 diff review 不代表整個專案已逐模組完成。
 
-最新狀態：全 Goal 尚未完成。已推送候選為 `9aa42774f09a63f980da78394144fbeefb3020e8`，
-main 為 `13ae58b75f4f05472bf9ba43769c13d1cfea4a0e`，未更新正式站。新候選首頁
-Lighthouse 63，低於既有 70 門檻；Vercel Preview 的 Pagefind 建置退出碼 2，
-因此候選瀏覽器 CI 未執行。六個精確 pending commit 的 Opus 完整補審仍待額度；
+最新狀態：全 Goal 尚未完成。已推送候選為 `452ca96e7c1fda5facf04855f8e2811eb47532ec`，
+main 為 `13ae58b75f4f05472bf9ba43769c13d1cfea4a0e`，未更新正式站。Pagefind 的 Bash 參數問題
+已修，六個候選 push workflows 與 exact-SHA Preview／瀏覽器檢查成功；
+但同庫 PR Quality `36787513883` 的首頁 Lighthouse 49，低於既有 70 門檻，仍禁止推 main。
+push Quality `36787509140` 的同樹來源首頁為 93；兩次使用的實際瀏覽器版本不同，
+這不能當作正式效能提升或豁免 PR 失敗的依據。七個精確 pending commit 的 Opus 完整補審仍待額度；
 最新 provider 重置為 2026-10-01 台灣時間 09:10，既有本機排程 09:15 重試，須開機並登入。
 以下表格記錄目前覆蓋，後面各節保留歷次檢查與失敗，不沿用舊版本證據核可新差異。
 
@@ -25,10 +27,10 @@ Lighthouse 63，低於既有 70 門檻；Vercel Preview 的 Pagefind 建置退�
 | 雙語 | 保留 EN canonical 指向 ZH 的 D-17 決策；卡片雙語 metadata 檢查 | 完整生成管線、主要瀏覽器實測 |
 | 詞彙／工具／圖表 | 現有程式及延後載入邊界已盤點 | 圖表／計算器／詞彙逐模組檢阅及適用回歸 |
 | SEO／生成 | 全量 schema／sitemap／描述／索引檢查；九個模組效益宣稱校正；52 篇、104 份中英文頁面日期與作者帳冊一致，全部為發表日基準 | 醫師實際重新審閱日期的核可來源；完整生成與正式 CI；不把發表日當近期審閱 |
-| CMS／認證 | 本機文章雲端草稿、immutable snapshot／blob bytes、SHA 衝突及切換保護；版本綁定作者申請、獨立源碼 bundle 準備及伺服端交付門檻；新增 exact-main 正式 CI／部署觀察入口 | 生成內容核可一致性、已發布證據退役／新版草稿、雲端設定與衝突 UI；正式 API／候選交付驗證 |
+| CMS／認證 | 本機文章雲端草稿、immutable snapshot／blob bytes、SHA 衝突及切換保護；版本綁定作者申請、獨立源碼 bundle 準備及伺服端交付門檻；exact-main 正式 CI／部署觀察入口；新版草稿／可還原本機快照在隔離環境實作驗證 | 新版草稿尚未交付；生成內容核可一致性、已發布證據退役、雲端設定與衝突 UI；正式 API／候選交付驗證 |
 | Word 式編輯 | 成熟文件模型已接入實際後台；三引擎各 52 篇內容往返、特殊區塊保護及 390／800／1440 後台流程通過 | 真實 Windows Word 剪貼簿、實機 iOS／Android、其他格式操作；Opus 完整補審與正式發布 |
 | 媒體／草稿 | 批次圖片來源準備、魔術位元組／尺寸／摘要驗證、rollback；圖文混貼、多圖、alt／順序、undo／redo 與草稿恢復；Chromium 原生 IME 回歸 | 真實外部剪貼簿與實機長文操作；正式 API／候選流程中的斷網、配額與衝突回復 |
-| PWA／導覽 | 確認修改程式仍沿用舊 immutable URL；改用中央資源版本、更新 SW 快取，新增內容 fingerprint／版本遞移檢查；基準已有 redirect cache 修復 | 舊 SW 升級瀏覽器實測、離線／恢復、正式版本 smoke |
+| PWA／導覽 | 中央資源版本及 SW 快取／fingerprint 遷移；13ae → 452 的双分頁原生升級、清除舊快取、文章導覽、實際伺服器斷線／恢復在三引擎通過；Chromium／Firefox 離線旗標通過；52 卡片及查詢／篩選／零結果／清除已測 | WebKit 離線旗標模擬仍有内部導覽錯誤，不能代表實機 Safari；安裝 PWA／實機離線、其他工具模組及正式 smoke |
 | 效能／可及性 | Lab 及 field 分開；GSC 沒有足夠 CWV field 資料 | 390／800／1440、主要瀏覽器、鍵盤 focus、表格與固定列驗證 |
 | GSC／GA4 | 已保存分析基線；台灣 28 天 GSC 233 clicks，GA4 日期不同；同條件 reload 前後六份 CSV 位元組相同 | 頁面 CSV 38 與國家／裝置 233 clicks 的差距仍未釐清；GA 設定及日期口徑核對 |
 | CI／正式交付 | 採 codex 候選→完整遠端 CI→同 SHA Preview→main→正式 CI／部署／smoke | 獨立 Codex／Opus 5.5 high 唯讀 review 及每批 exact-SHA 證據 |

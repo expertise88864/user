@@ -22,6 +22,12 @@
   websiteButton.id = 'checkPublicationBtn'; websiteButton.type = 'button'; websiteButton.textContent = '查看上線狀態';
   websiteButton.style.cssText = 'min-height:44px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;background:#fff;color:var(--ink);cursor:pointer;flex-shrink:0';
   websiteNotice.append(websiteLabel, websiteButton);
+  const newVersionButton = document.createElement('button'), versionBackupButton = document.createElement('button');
+  newVersionButton.type = 'button'; versionBackupButton.type = 'button';
+  for (const button of [newVersionButton, versionBackupButton]) button.style.cssText = websiteButton.style.cssText;
+  newVersionButton.id = 'newDraftVersionBtn'; newVersionButton.textContent = '從上線版建立新版草稿';
+  versionBackupButton.id = 'restoreDraftVersionBtn'; versionBackupButton.textContent = '還原新版前快照';
+  websiteNotice.append(newVersionButton, versionBackupButton);
   document.getElementById('frameWrap').before(websiteNotice);
   function resetPublication() {
     observationGeneration++;
@@ -85,6 +91,78 @@
     return accepted.head;
   }
   function current(file, loadId) { return CURRENT_FILE === file && EDITOR_LOAD_ID === loadId; }
+  const versionBackupKey = file => 'cd-draft-version-backup:' + file;
+  function preserveVersion(snapshot) {
+    const raw = JSON.stringify({ file: snapshot.file, ts: Date.now(), sha: snapshot.sha,
+      content: snapshot.content, draft: drafts.localState(snapshot.file) });
+    localStorage.setItem(versionBackupKey(snapshot.file), raw);
+    if (localStorage.getItem(versionBackupKey(snapshot.file)) !== raw) throw new Error('local_snapshot_failed');
+  }
+  async function startNewVersion() {
+    const editorIdentity = identity();
+    if (!isCurrent(editorIdentity) || !auth.getPat() || !drafts.isArticle(editorIdentity.file)) return;
+    const snapshot = captureSaveSnapshot();
+    let created = false;
+    const active = () => current(snapshot.file, snapshot.loadId) && identityTokens.get(editorIdentity) === auth.getPat() && !auth.isLogoutPending();
+    SAVE_PENDING = true; newVersionButton.disabled = true; versionBackupButton.disabled = true;
+    setStatus('核對正式版本、CI 與部署；目前編輯保留…');
+    try {
+      const observed = await drafts.observe(snapshot.file);
+      if (!active() || getCurrentEditorContent() !== snapshot.content) { setStatus('核對期間編輯已改變，請重新操作；尚未建立新版。', true); return; }
+      const request = drafts.captureNewVersion(snapshot.file, observed);
+      let previous;
+      try { previous = localStorage.getItem(versionBackupKey(snapshot.file)); }
+      catch (_) { setStatus('無法保存本機快照，尚未建立新版；請確認瀏覽器儲存空間。', true); return; }
+      if (!confirm('將從已驗證的正式上線版建立新版草稿，舊雲端版本與申請保留在歷史。' +
+          '目前內容及圖片會保存為本機「新版前快照」，不會自動上線。' +
+          (previous ? '這會取代這篇先前的新版前快照；一般自動暫存仍保留。' : '') + '確定繼續？')) return;
+      try { preserveVersion(snapshot); }
+      catch (_) { setStatus('本機快照未能完整保存，尚未建立新版；目前內容保留。', true); return; }
+      if (!active() || getCurrentEditorContent() !== snapshot.content) return;
+      const accepted = await drafts.startNewVersion(request);
+      created = true;
+      if (!active()) return;
+      if (getCurrentEditorContent() !== snapshot.content) { DIRTY = true; autosave(); setStatus('新版雲端草稿已建立；作業中的新編輯保留，請重讀比對，未覆寫編輯。', true); return; }
+      const data = await drafts.load(snapshot.file, { activate: false });
+      if (!active()) return;
+      if (getCurrentEditorContent() !== snapshot.content) { DIRTY = true; autosave(); setStatus('新版草稿已建立；重讀期間的新編輯保留，請比對版本。', true); return; }
+      if (data.head !== accepted.head || data.baseSha !== accepted.baseSha || data.blobSha !== accepted.blobSha ||
+          data.legacy || data.conflict || data.request || typeof data.content !== 'string') throw new Error('new_version_reload_failed');
+      drafts.activate(data); status = data;
+      CURRENT_SHA = data.blobSha; CURRENT_CONTENT = data.content; DIRTY = false;
+      elShaInfo.textContent = '草稿 SHA: ' + data.blobSha.slice(0, 7);
+      if (SOURCE_MODE) mountSource(data.content); else mountIframe(data.content);
+      if (sourceTextarea) sourceTextarea.readOnly = false;
+      renderRequestState(null); resetPublication();
+      document.getElementById('behindBanner').style.display = 'none';
+      setStatus('新版雲端草稿已建立，尚未上線。可用「還原新版前快照」比對舊編輯；一般暫存仍保留。');
+      checkAutosaveOnLoad(snapshot.file); scheduleWordCount();
+    } catch (failure) { if (active()) setStatus((created ? '新版雲端草稿已建立，但重讀核對未完成，請比對版本，勿重複建立。' : '') + drafts.message(failure), true); }
+    finally { SAVE_PENDING = false; newVersionButton.disabled = false; versionBackupButton.disabled = false; }
+  }
+  newVersionButton.addEventListener('click', startNewVersion);
+  versionBackupButton.addEventListener('click', async () => {
+    const editorIdentity = identity();
+    if (!isCurrent(editorIdentity) || !auth.getPat() || !drafts.isArticle(editorIdentity.file)) return;
+    const snapshot = captureSaveSnapshot();
+    try {
+      const saved = JSON.parse(localStorage.getItem(versionBackupKey(snapshot.file)) || 'null');
+      if (!saved || saved.file !== snapshot.file || typeof saved.content !== 'string' || !saved.draft) { setStatus('這篇尚無新版前快照；目前編輯保留。'); return; }
+      if (!confirm('還原新版前的內容與圖片，雲端草稿不變；目前編輯會先保存到一般本機暫存。版本不同時需比對整合。')) return;
+      const raw = JSON.stringify({ ts: Date.now(), sha: snapshot.sha, content: snapshot.content, draft: drafts.localState(snapshot.file) });
+      localStorage.setItem(autosaveKey(snapshot.file), raw);
+      if (localStorage.getItem(autosaveKey(snapshot.file)) !== raw) throw new Error('local_snapshot_failed');
+      const active = () => isCurrent(editorIdentity) && getCurrentEditorContent() === snapshot.content;
+      versionBackupButton.disabled = true;
+      const result = await drafts.restore(snapshot.file, saved.draft, { isCurrent: active });
+      if (!active()) return;
+      CURRENT_CONTENT = saved.content;
+      if (SOURCE_MODE) mountSource(saved.content); else mountIframe(saved.content);
+      DIRTY = true;
+      setStatus(result.conflict ? '已還原新版前內容與圖片；版本不同，需比對整合，尚未保存雲端。' : '已還原新版前快照，尚未保存雲端。', result.conflict);
+    } catch (_) { if (isCurrent(editorIdentity)) setStatus('快照還原未完成；目前編輯與原快照保留，請確認儲存空間及版本。', true); }
+    finally { versionBackupButton.disabled = false; }
+  });
   function displayState(data) {
     renderRequestState(data.request);
     if (data.legacy) setStatus('已載入舊雲端草稿；須先比對整合，目前僅供檢閱。', true);
@@ -303,6 +381,6 @@
     await showCommitDiff(dialog, sha, false);
     return historyContextIsCurrent(dialog);
   }
-  window.DNEditorDraftBridge = { poll, save: saveDraft, createArticle, openRequest, identity, isCurrent, compareVersion };
+  window.DNEditorDraftBridge = { poll, save: saveDraft, createArticle, openRequest, identity, isCurrent, compareVersion, startNewVersion };
   if (auth.getPat()) refreshFileList();
 })();

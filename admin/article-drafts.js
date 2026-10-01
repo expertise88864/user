@@ -28,6 +28,9 @@
     invalid_local_draft: '暫存圖片不完整或版本不符，尚未還原；原暫存與編輯保留。',
     publication_unavailable: '網站上線狀態尚未確認，請稍後重試；編輯與草稿保留。',
     publication_changed: '確認期間版本已變更，請先重讀比對；本機編輯仍保留。',
+    publication_not_verified: '正式 CI 與部署尚未全部確認，暫時無法從網站建立新版草稿。',
+    publication_receipt_not_retired: '這篇的發布證據尚未完成封存，暫時不能開啟下一輪草稿；舊版本保留。',
+    new_version_not_verified: '新版草稿可能已建立，但驗證未完成；請重讀比對，勿重複建立。本機快照保留。',
   };
   class DraftClientError extends Error {
     constructor(code) { super(labels[code] || '草稿作業未完成；編輯與暫存仍保留。'); this.code = code; }
@@ -35,6 +38,7 @@
   function error(code) { return new DraftClientError(code); }
   function isArticle(file) { return /^blog\/(?!index\.html$|topics\.html$|charts\.html$)[a-z0-9]+(?:-[a-z0-9]+)*\.html$/.test(file || ''); }
   async function request(method, file, body, mode) {
+    const unknownWrite = body && body.action === 'new-version' ? 'new_version_not_verified' : body && body.action ? 'request_not_verified' : 'save_not_verified';
     const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 45_000);
     try {
       const response = await fetch('/api/admin/article-draft' + (method === 'GET' ? mode === 'list' ? '?mode=list&offset=' + encodeURIComponent(file) : '?file=' + encodeURIComponent(file) + (['status', 'publication'].includes(mode) ? '&mode=' + mode : '') : ''), {
@@ -42,13 +46,13 @@
         headers: { 'Content-Type': 'application/json' }, ...(body ? { body: JSON.stringify(body) } : {}),
       });
       const data = await response.json();
-      if (!response.ok) throw error(method === 'POST' && response.status >= 500 ? body && body.action ? 'request_not_verified' : 'save_not_verified' : data.error);
+      if (!response.ok) throw error(method === 'POST' && response.status >= 500 ? unknownWrite : data.error);
       return data;
     } catch (failure) {
       if (failure instanceof DraftClientError) throw failure;
       // An HTML gateway response or broken connection may follow an accepted
       // commit. Never expose raw parsing/provider details or retry the POST.
-      throw error(method === 'POST' ? body && body.action ? 'request_not_verified' : 'save_not_verified' : mode === 'publication' ? 'publication_unavailable' : 'draft_unavailable');
+      throw error(method === 'POST' ? unknownWrite : mode === 'publication' ? 'publication_unavailable' : 'draft_unavailable');
     } finally { clearTimeout(timer); }
   }
   function mediaUrl(item) {
@@ -328,6 +332,27 @@
     if (contexts.get(file) !== context || ['head', 'baseSha', 'blobSha'].some(key => context[key] !== expected[key] || data[key] !== expected[key])) throw error('publication_changed');
     return data;
   }
+  function captureNewVersion(file, observation) {
+    const context = contexts.get(file), proof = observation && observation.publication;
+    const nonzero = value => typeof value === 'string' && SHA.test(value) && value !== '0'.repeat(40);
+    if (!context || context.legacy || !nonzero(context.head) || !nonzero(context.blobSha)) throw error('cloud_draft_required');
+    if (!proof || observation.file !== file || observation.head !== context.head || observation.blobSha !== context.blobSha ||
+        observation.baseSha !== context.baseSha || proof.state !== 'live' || proof.ciVerified !== true ||
+        proof.deploymentVerified !== true || proof.sourceIndexable !== true || !nonzero(proof.mainSha) || !nonzero(proof.mainBlobSha)) throw error('publication_not_verified');
+    return { context, file, action: 'new-version', expectedHead: context.head, expectedBlob: context.blobSha,
+      expectedMain: proof.mainSha, expectedMainBlob: proof.mainBlobSha, confirmed: true };
+  }
+  async function startNewVersion(snapshot) {
+    const { context, ...payload } = snapshot;
+    if (contexts.get(payload.file) !== context || context.head !== payload.expectedHead || context.blobSha !== payload.expectedBlob) throw error('publication_changed');
+    const accepted = await request('POST', payload.file, payload);
+    if (!accepted || accepted.file !== payload.file || !SHA.test(accepted.head || '') || accepted.head === '0'.repeat(40) ||
+        accepted.head === payload.expectedHead || accepted.baseSha !== payload.expectedMainBlob || accepted.blobSha !== payload.expectedMainBlob ||
+        accepted.status !== 'cloud_draft' || accepted.verified !== true || accepted.published !== false) throw error('new_version_not_verified');
+    // The caller must re-read the immutable accepted revision and preserve any
+    // typing during this request before activating a replacement editor.
+    return accepted;
+  }
   function publicationMessage(proof) {
     const messages = { not_published: '文章仍在草稿階段，尚未正式上線。',
       ci_missing: '網站來源已更新；正式驗證尚未完成。', ci_running: '網站版本正在驗證，尚未確認上線。',
@@ -339,5 +364,5 @@
     return messages[proof.state] || messages.unverified;
   }
   function message(failure) { return failure instanceof DraftClientError ? failure.message : '草稿作業未完成；本機編輯與暫存仍保留。'; }
-  window.DNArticleDrafts = { isArticle, load, activate, capture, save, captureRequest, bindView, hasUnsavedChanges, submit, create, list, stage, prepareImages, canonical, preview, localState, restore, inspect, observe, publicationMessage, message };
+  window.DNArticleDrafts = { isArticle, load, activate, capture, save, captureRequest, bindView, hasUnsavedChanges, submit, create, list, stage, prepareImages, canonical, preview, localState, restore, inspect, observe, captureNewVersion, startNewVersion, publicationMessage, message };
 })();
