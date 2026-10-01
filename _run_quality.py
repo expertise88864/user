@@ -51,6 +51,8 @@ REGEN_STEPS: list[list[str]] = [
     [PY, "_normalize_css_links.py"],
     [PY, "_normalize_heading_structure.py"],
     [PY, "_normalize_reading_shell.py"],
+    # Preserve native full-document navigation and the legacy a11y styles.
+    [PY, "_normalize_native_navigation.py"],
     [PY, "_gen_feeds.py"],
     [PY, "_normalize_robots.py"],
     # Permit larger image previews and let Google choose snippet length.
@@ -207,6 +209,7 @@ BUILD_GENERATED_STEPS: list[list[str]] = [
 ]
 
 CHECK_STEPS: list[list[str]] = [
+    [PY, "_test_native_navigation.py"],
     ["node", "_build_editor.mjs", "--check"],
     ["node", "--test", "_test_word_editor_source.mjs"],
     ["node", "--test", "_test_article_publication.cjs"],
@@ -290,6 +293,7 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_check_no_js_render_dependency.py"],
     [PY, "_sync_hub_catalog.py", "--check"],
     [PY, "_test_hub_catalog.py"],
+    [PY, "_test_related_articles.py"],
 ]
 
 POST_BUILD_STEPS: list[list[str]] = [

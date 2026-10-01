@@ -2,21 +2,13 @@
 # -*- coding: utf-8 -*-
 """SSG-inject the "你可能也會想看 / You might also like" related-articles section.
 
-The original implementation lives in blog/blog-article-footer.js
-(`DN.addRelatedArticles`) and runs client-side via JS injection. That works
-for end users but Googlebot only sees what's in the static HTML, so 4
-internal links per article × 47 articles = 188 internal links were
-invisible to crawl-budget allocation.
+Render named native article links for readers with or without JavaScript.
+Six patient journeys use explicit existing-article selections; avoid padding
+them with unrelated articles merely because both have the same content type.
+Other pages keep the existing scoring order. All destinations use the public
+catalog visibility policy. Static HTML does not promise ranking or CTR gains.
 
-This script pre-renders the same 4 cards into static HTML inside a
-<nav id="dn-related-static"> block, then:
-  - blog/blog-article-footer.js DN.addRelatedArticles() bails early if
-    document.getElementById('dn-related-static') exists (no double-render)
-  - Googlebot + readers with JS disabled both see the 4 internal links
-
-Scoring algorithm: identical port of the JS logic — TAG_GROUPS shared
-membership (×20) + same tag (×12) + same cat (×2) + token overlap
-fallback for unrelated topics. Top 4 by score, tiebreak newer.
+The static nav also tells the legacy client renderer not to duplicate cards.
 
 Run as part of the build pipeline (after blog-shared.js DN.ARTICLES is
 the source of truth, before _gen_en_pages.py copies HTML).
@@ -24,45 +16,47 @@ the source of truth, before _gen_en_pages.py copies HTML).
 from __future__ import annotations
 
 import html as html_lib
-import io
-import os
+import json
 import re
 import sys
 from pathlib import Path
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+from _sync_hub_catalog import load_catalog, public_catalog
 
 ROOT = Path(__file__).resolve().parent
 DOMAIN = "https://chendermatologist.com"
 
 # ─── 1. Parse DN.ARTICLES catalog from blog-shared.js ─────────────────────
 def parse_articles() -> list[dict]:
-    js = (ROOT / "blog" / "blog-shared.js").read_text(encoding="utf-8")
-    m = re.search(r"DN\.ARTICLES\s*=\s*\[([\s\S]*?)\];", js)
-    if not m:
-        raise SystemExit("DN.ARTICLES not found in blog-shared.js")
-    block = m.group(1)
-    articles = []
-    for entry_m in re.finditer(r"\{[^{}]*?slug:\s*'([a-z0-9-]+)'[^{}]*?\}", block):
-        e = entry_m.group(0)
-        slug = entry_m.group(1)
+    # Use the same trusted JS-literal parser as hubs/search. A regex field
+    # parser truncated escaped apostrophes, e.g. "7 Athlete's Foot ...".
+    fields = ("slug", "title", "title_en", "cat", "tag", "tag_en", "date")
+    return [{**{key: item.get(key) or "" for key in fields},
+             "unpublished": bool(item.get("unpublished"))} for item in load_catalog(ROOT)]
 
-        def get(field):
-            mm = re.search(rf"{field}:\s*'([^']*)'", e)
-            return mm.group(1) if mm else None
 
-        is_unpub = bool(re.search(r"\bunpublished\s*:\s*true\b", e))
-        articles.append({
-            "slug": slug,
-            "title": get("title") or "",
-            "title_en": get("title_en") or "",
-            "cat": get("cat") or "",
-            "tag": get("tag") or "",
-            "tag_en": get("tag_en") or "",
-            "date": get("date") or "",
-            "unpublished": is_unpub,
-        })
-    return articles
+def load_overrides(catalog: list[dict], root: Path = ROOT) -> dict[str, list[str]]:
+    overrides = json.loads((root / "_related_article_overrides.json").read_text(encoding="utf-8"))
+    slugs = {item["slug"] for item in catalog}
+    if not isinstance(overrides, dict) or set(overrides) - slugs:
+        raise ValueError("Unknown related-article source")
+    for source, targets in overrides.items():
+        if not isinstance(targets, list) or not 1 <= len(targets) <= 4 or any(
+                not isinstance(target, str) or target not in slugs or target == source for target in targets):
+            raise ValueError("Invalid related-article destinations: " + source)
+        if len(set(targets)) != len(targets):
+            raise ValueError("Duplicate related-article destination: " + source)
+    return overrides
+
+
+def select_related(cur: dict, public: list[dict], groups: dict[str, list[str]],
+                   overrides: dict[str, list[str]]) -> list[dict]:
+    if cur["slug"] not in overrides:
+        return score_related(cur, public, groups)
+    visible = {item["slug"]: item for item in public}
+    # If an author hides a selected article, remove it without unrelated
+    # fallback cards. Unknown catalog slugs are rejected by load_overrides.
+    return [visible[slug] for slug in overrides[cur["slug"]] if slug in visible]
 
 # ─── 2. Reconstruct TAG_GROUPS the same way blog-hub.js does ──────────────
 def parse_tag_categories() -> list[dict]:
@@ -160,7 +154,10 @@ def _date_sort_key(date_str: str) -> int:
 # ─── 4. Build the SSG HTML block (mirrors the JS-injected layout) ────────
 def build_related_html(cur_slug: str, related: list[dict]) -> str:
     if not related:
-        return ""
+        # Keep the static signal so legacy JS cannot repopulate stale cards.
+        return ('\n<nav id="dn-related-static" class="max-w-3xl mx-auto px-5 sm:px-8 my-10" '
+                'aria-label="Related articles"><a href="/blog" data-zh="瀏覽全部文章 →" '
+                'data-en="Browse all →">瀏覽全部文章 →</a></nav>\n')
     cards = []
     for i, a in enumerate(related):
         badge = (
@@ -179,14 +176,14 @@ def build_related_html(cur_slug: str, related: list[dict]) -> str:
             f'transition:all .15s;box-shadow:0 1px 2px rgba(15,23,42,.04)">'
             f'<div style="display:flex;align-items:center;gap:6px">'
             f'<span style="font-size:10.5px;font-weight:700;letter-spacing:.18em;color:var(--teal-deep);'
-            f'text-transform:uppercase">{tag_en}</span>{badge}</div>'
+            f'text-transform:uppercase" data-zh="{tag_zh}" data-en="{tag_en}">{tag_zh}</span>{badge}</div>'
             f'<span data-zh="{title_escaped}" data-en="{title_en_escaped}" '
             f'style="font-size:14.5px;font-weight:700;line-height:1.4;'
             f'font-family:Noto Serif TC,Georgia,serif;color:var(--ink);'
             f'display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">'
             f'{html_lib.escape(a["title"])}</span>'
             f'<span style="font-size:11.5px;color:var(--muted);margin-top:auto">'
-            f'{tag_zh} · {a["date"]}</span>'
+            f'<span data-zh="{tag_zh}" data-en="{tag_en}">{tag_zh}</span> · {html_lib.escape(a["date"])}</span>'
             f'</a>'
         )
 
@@ -194,7 +191,6 @@ def build_related_html(cur_slug: str, related: list[dict]) -> str:
     # DN.addRelatedArticles() to bail early and not double-render.
     # Also embed an ItemList JSON-LD block so Googlebot sees the
     # related-articles structured data without needing to execute JS.
-    import json
     item_list = {
         "@context": "https://schema.org",
         "@type": "ItemList",
@@ -244,11 +240,14 @@ RELATED_BLOCK_RE = re.compile(
     r'\n?<nav id="dn-related-static"[\s\S]*?</nav>\n?',
     re.IGNORECASE,
 )
-def inject(catalog: list[dict], TG: dict[str, list[str]]) -> tuple[int, int]:
+def inject(catalog: list[dict], TG: dict[str, list[str]], *, public: list[dict] | None = None,
+           overrides: dict[str, list[str]] | None = None) -> tuple[int, int]:
     files_changed = 0
     cards_total = 0
     by_slug = {a["slug"]: a for a in catalog}
     blog_dir = ROOT / "blog"
+    public = public_catalog(catalog, ROOT) if public is None else public
+    overrides = load_overrides(catalog) if overrides is None else overrides
 
     for fp in sorted(blog_dir.glob("*.html")):
         # Skip listing pages and the home page
@@ -258,19 +257,17 @@ def inject(catalog: list[dict], TG: dict[str, list[str]]) -> tuple[int, int]:
         cur = by_slug.get(slug)
         if not cur or cur["unpublished"]:
             continue
-        related = score_related(cur, catalog, TG)
-        if not related:
-            continue
+        related = select_related(cur, public, TG, overrides)
         block = build_related_html(slug, related)
 
-        src = fp.read_text(encoding="utf-8")
+        original = fp.read_text(encoding="utf-8")
         # Remove any prior injection (so re-runs are idempotent)
-        src = RELATED_BLOCK_RE.sub("", src)
+        src = RELATED_BLOCK_RE.sub("", original)
         # Insert right before </main>
         if "</main>" not in src:
             continue
         new = src.replace("</main>", block + "</main>", 1)
-        if new == src:
+        if new == original:
             continue
         fp.write_text(new, encoding="utf-8")
         files_changed += 1

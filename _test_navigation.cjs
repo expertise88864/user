@@ -2,6 +2,26 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const vm=require('node:vm');
+test('article document links preserve native activation even when view transitions are available',()=>{
+  const handlers=[],location={href:'https://reader.test/blog/first',origin:'https://reader.test',pathname:'/blog/first',search:''};
+  let transitions=0;
+  const window={DN:{}};
+  const document={addEventListener:(type,fn)=>{if(type==='click')handlers.push(fn);},
+    startViewTransition:fn=>{transitions++;fn();return {};}};
+  vm.runInNewContext(fs.readFileSync('blog/blog-shared.js','utf8'),{window,document,location,URL});
+  window.DN.bindViewTransitions();
+  window.DN.bindViewTransitions();
+  for(const activation of [{button:0},{button:0,ctrlKey:true},{button:0,metaKey:true},
+    {button:0,shiftKey:true},{button:1},{button:0,target:'reader-pane'}]){
+    let prevented=false;
+    const link={target:activation.target||'',hasAttribute:()=>false,getAttribute:()=>'/blog/next'};
+    const event={...activation,target:{closest:()=>link},preventDefault:()=>{prevented=true;}};
+    handlers.forEach(fn=>fn(event));
+    assert.equal(prevented,false,'Native navigation must retain modifier/target behavior');
+    assert.equal(location.href,'https://reader.test/blog/first','An enhancement must not force location assignment');
+  }
+  assert.equal(transitions,0,'Do not run a same-document transition around a full-document navigation');
+});
 function fixture(lang='zh-Hant',legacyMedia=false) {
   const handlers={}, elements={}, doc={documentElement:{lang,getAttribute:()=>null,setAttribute(){}},activeElement:null};
   function element(id,parent=null,tag='button') {

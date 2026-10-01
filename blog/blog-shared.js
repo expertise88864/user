@@ -212,7 +212,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202610010855';
+        s.src = '/blog/blog-article-visuals.min.js?v=202610011120';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -719,28 +719,14 @@
   };
 
   // -----------------------------------------------------------------------
-  // View Transitions API page transitions (Chrome 111+, Edge, Safari 18+)
-  // Falls back to no-op on unsupported browsers
+  // Preserve native document navigation. startViewTransition is intended for
+  // updating the current document; assigning location.href inside its callback
+  // unloads that document and can reject ready with "Transition was skipped".
+  // Keep this initializer compatible with existing callers without intercepting
+  // ordinary links, modifier clicks, named targets or browser history.
   // -----------------------------------------------------------------------
   DN.bindViewTransitions = function () {
-    if (!document.startViewTransition) return;
-    document.addEventListener('click', function (e) {
-      const a = e.target.closest('a');
-      if (!a) return;
-      const href = a.getAttribute('href');
-      if (!href) return;
-      // Only handle same-origin navigations (not anchors, downloads, target=_blank)
-      if (a.target === '_blank' || a.hasAttribute('download')) return;
-      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
-      const url = new URL(href, location.href);
-      if (url.origin !== location.origin) return;
-      // Only navigations to a different path (skip in-page clicks)
-      if (url.pathname === location.pathname && url.search === location.search) return;
-      e.preventDefault();
-      document.startViewTransition(function () {
-        location.href = url.href;
-      });
-    });
+    // Full-document links remain native in every browser.
   };
 
   // -----------------------------------------------------------------------
@@ -1102,7 +1088,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202610010855';
+        s.src = '/blog/blog-article-reading.min.js?v=202610011120';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1138,7 +1124,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202610010855';
+        s.src = '/blog/blog-article-footer.min.js?v=202610011120';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1168,7 +1154,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202610010855';
+        s.src = '/blog/blog-calculators.min.js?v=202610011120';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1303,7 +1289,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202610010855';
+        s.src = '/blog/blog-hub.min.js?v=202610011120';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;

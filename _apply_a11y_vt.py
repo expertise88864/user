@@ -1,32 +1,26 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Apply E12 (a11y skip-link + main landmark) + E6 (view transitions) +
-E5 (resource hints补强) to all HTML files in the site.
+"""Legacy migration for a11y skip-link, focus styling and main landmarks.
 
 Idempotent: skips files that already have the patches applied.
 """
-import os, re, sys, io
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+import os, re
+from _normalize_native_navigation import normalize
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Marker we add to <head> indicating the patch is applied
 SENTINEL = '<!-- a11y-vt-applied -->'
 
-# 1) Meta + style for view transitions, skip link styling
+# 1) Accessibility styles; document navigation remains native.
 HEAD_PATCH = (
     SENTINEL +
-    '<meta name="view-transition" content="same-origin">'
     '<style>'
     # Skip-link
     '.skip-to-main{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999}'
     '.skip-to-main:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;background:#0c5159;color:#fff;padding:10px 18px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.2)}'
     # Focus visible (replaces default browser ring with branded teal)
     '*:focus-visible{outline:2px solid #0c5159;outline-offset:2px;border-radius:4px}'
-    # View transitions
-    '@view-transition{navigation:auto}'
-    '::view-transition-old(root),::view-transition-new(root){animation-duration:.25s}'
-    '@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}'
     '</style>'
 )
 
@@ -37,7 +31,8 @@ SKIP_LINK = '<a href="#main-content" class="skip-to-main" data-zh="跳至主要�
 def patch_html(html):
     """Returns (new_html, modified_bool)."""
     if SENTINEL in html:
-        return html, False
+        normalized = normalize(html)
+        return normalized, normalized != html
 
     # 1) Inject HEAD_PATCH right before </head>
     if '</head>' not in html:
@@ -78,7 +73,7 @@ def main():
                 with open(p, 'w', encoding='utf-8') as fp:
                     fp.write(new)
                 n += 1
-    print(f'Patched {n} HTML files with a11y + view-transitions')
+    print(f'Patched {n} HTML files with a11y and native navigation')
 
 if __name__ == '__main__':
     main()

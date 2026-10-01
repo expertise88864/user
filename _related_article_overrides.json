@@ -1,0 +1,30 @@
+{
+  "dupilumab-long-term-maintenance": [
+    "atopic-dermatitis-overview",
+    "atopic-dermatitis-systemic",
+    "atopic-dermatitis-special-populations",
+    "biologics-overview"
+  ],
+  "perioral-dermatitis-guide": [
+    "acne-myths",
+    "rosacea-myths",
+    "contact-dermatitis"
+  ],
+  "topical-acids-patient": [
+    "acne-myths",
+    "skin-whitening-agents",
+    "sunscreen-myths"
+  ],
+  "prurigo-nodularis": [
+    "biologics-overview",
+    "dupilumab-long-term-maintenance"
+  ],
+  "tinea-myths": [
+    "toenail-mechanical-disorders"
+  ],
+  "skin-biopsy-excision": [
+    "epidermoid-cyst",
+    "actinic-keratosis-scc",
+    "dermatologic-oral-examination"
+  ]
+}
