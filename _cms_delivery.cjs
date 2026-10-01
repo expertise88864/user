@@ -25,6 +25,26 @@ function time(value) {
   assert.ok(Number.isFinite(stamp) && new Date(stamp).toISOString() === value, 'Invalid CMS timestamp');
   return stamp;
 }
+function validateReceiptEntry(entry, now) {
+    assert.ok(exactKeys(entry, FIELDS) && entry.version === 1 && entry.repository === 'expertise88864/user' && entry.approvedBy === 'expertise88864' && ['review','schedule','unpublish'].includes(entry.action), 'Invalid CMS request proof');
+    const name = slug(entry.file);
+    for (const field of ['requestHead','requestBlobSha','draftHead','manifestSha','articleBlobSha','preparedAgainst']) assert.ok(sha(entry[field]), 'Invalid CMS proof SHA');
+    assert.ok(entry.baseSha === null || sha(entry.baseSha), 'Invalid CMS article base');
+    assert.ok(entry.action !== 'unpublish' || entry.baseSha !== null, 'Cannot unpublish a new article');
+    const created = time(entry.requestedAt);
+    assert.ok(created <= now, 'CMS request is in the future');
+    if (entry.action === 'schedule') {
+      const due = time(entry.scheduledAt);
+      assert.ok(created < due && due <= created + 365 * 86400000 && due <= now, 'CMS schedule is not valid / due');
+    } else assert.equal(entry.scheduledAt, null, 'Unexpected CMS schedule');
+    assert.ok(entry.sourceSha256 && typeof entry.sourceSha256 === 'object' && !Array.isArray(entry.sourceSha256) && Object.hasOwn(entry.sourceSha256, entry.file), 'Missing CMS source evidence');
+    const sources = Object.entries(entry.sourceSha256);
+    assert.ok(sources.length >= 1 && sources.length <= 18, 'Invalid CMS source count');
+    for (const [path, digest] of sources) {
+      assert.ok((path === entry.file || path === 'blog/blog-shared.js' || new RegExp('^blog/images/' + name + '/[a-f0-9]{64}\\.(png|jpg|gif|webp)$').test(path)) && typeof digest === 'string' && /^[a-f0-9]{64}$/.test(digest), 'Invalid CMS source identity');
+    }
+    return { name, sources };
+}
 async function blob(api, path, commit, limit, trees) {
   assert.ok(sha(commit), 'CMS requires an exact SHA');
   const data = await api('/contents/' + path + '?ref=' + commit);
@@ -41,6 +61,12 @@ async function blob(api, path, commit, limit, trees) {
   const raw = Buffer.from(encoded, 'base64');
   assert.ok(raw.length === data.size && raw.toString('base64') === encoded, 'CMS blob encoding invalid');
   assert.equal(hash('sha1', Buffer.concat([Buffer.from('blob ' + raw.length + '\0'), raw])), data.sha, 'CMS immutable digest invalid');
+  const entries = await tree(api, commit, trees);
+  const entry = entries.get(path);
+  assert.ok(entry?.mode === '100644' && entry.type === 'blob' && entry.sha === data.sha, 'CMS inputs must be ordinary non-executable Git blobs');
+  return { sha: data.sha, raw };
+}
+async function tree(api, commit, trees) {
   if (!trees.has(commit)) {
     const record = await api('/git/commits/' + commit);
     assert.ok(record?.sha === commit && sha(record.tree?.sha), 'CMS commit tree unavailable');
@@ -53,9 +79,7 @@ async function blob(api, path, commit, limit, trees) {
     }
     trees.set(commit, paths);
   }
-  const entry = trees.get(commit).get(path);
-  assert.ok(entry?.mode === '100644' && entry.type === 'blob' && entry.sha === data.sha, 'CMS inputs must be ordinary non-executable Git blobs');
-  return { sha: data.sha, raw };
+  return trees.get(commit);
 }
 async function verifyLiveIntent(candidate, api, now = Date.now()) {
   assert.ok(sha(candidate) && Number.isFinite(now), 'Invalid CMS candidate or clock');
@@ -65,6 +89,7 @@ async function verifyLiveIntent(candidate, api, now = Date.now()) {
   const value = JSON.parse(raw.toString('utf8'));
   assert.equal(Buffer.from(JSON.stringify(value, null, 2) + '\n').equals(raw), true, 'CMS proof is not canonical');
   assert.ok(exactKeys(value, ['version','requests']) && value.version === 1 && Array.isArray(value.requests) && value.requests.length <= 20, 'Invalid CMS proof');
+  await require('./_cms_retirement.cjs').verifyTransition(candidate, api, value.requests, now, trees);
   const seen = new Set();
   async function live(entry) {
     const name = 'refs/heads/drafts/' + slug(entry.file);
@@ -72,24 +97,10 @@ async function verifyLiveIntent(candidate, api, now = Date.now()) {
     assert.ok(ref?.ref === name && ref.object?.type === 'commit' && ref.object.sha === entry.requestHead, 'CMS author request cancelled or superseded');
   }
   for (const entry of value.requests) {
-    assert.ok(exactKeys(entry, FIELDS) && entry.version === 1 && entry.repository === 'expertise88864/user' && entry.approvedBy === 'expertise88864' && ['review','schedule','unpublish'].includes(entry.action), 'Invalid CMS request proof');
-    const name = slug(entry.file);
+    const { name, sources } = validateReceiptEntry(entry, now);
     assert.ok(!seen.has(name), 'Duplicate CMS request');
     seen.add(name);
-    for (const field of ['requestHead','requestBlobSha','draftHead','manifestSha','articleBlobSha','preparedAgainst']) assert.ok(sha(entry[field]), 'Invalid CMS proof SHA');
-    assert.ok(entry.baseSha === null || sha(entry.baseSha), 'Invalid CMS article base');
-    assert.ok(entry.action !== 'unpublish' || entry.baseSha !== null, 'Cannot unpublish a new article');
-    const created = time(entry.requestedAt);
-    assert.ok(created <= now, 'CMS request is in the future');
-    if (entry.action === 'schedule') {
-      const due = time(entry.scheduledAt);
-      assert.ok(created < due && due <= created + 365 * 86400000 && due <= now, 'CMS schedule is not valid / due');
-    } else assert.equal(entry.scheduledAt, null, 'Unexpected CMS schedule');
-    assert.ok(entry.sourceSha256 && typeof entry.sourceSha256 === 'object' && !Array.isArray(entry.sourceSha256) && Object.hasOwn(entry.sourceSha256, entry.file), 'Missing CMS source evidence');
-    const sources = Object.entries(entry.sourceSha256);
-    assert.ok(sources.length >= 1 && sources.length <= 18, 'Invalid CMS source count');
     for (const [path, digest] of sources) {
-      assert.ok((path === entry.file || path === 'blog/blog-shared.js' || new RegExp('^blog/images/' + name + '/[a-f0-9]{64}\\.(png|jpg|gif|webp)$').test(path)) && typeof digest === 'string' && /^[a-f0-9]{64}$/.test(digest), 'Invalid CMS source identity');
       const payload = await blob(api, path, candidate, 1500000, trees);
       assert.equal(hash('sha256', payload.raw), digest, 'CMS payload changed after preparation');
     }
@@ -118,4 +129,4 @@ async function verifyLiveIntent(candidate, api, now = Date.now()) {
   for (const entry of value.requests) await live(entry);
   return { sha: candidate, activeRequests: value.requests.length, authorIntentVerified: true, published: false };
 }
-module.exports = { verifyLiveIntent };
+module.exports = { verifyLiveIntent, validateReceiptEntry, blob, tree, exactKeys, sha, time, slug, FIELDS };

@@ -220,6 +220,7 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_test_article_request.py"],
     [PY, "_test_article_visibility.py"],
     [PY, "_test_cms_delivery.py"],
+    [PY, "_test_cms_retirement.py"],
     ["node", "--test", "_test_cms_delivery.cjs", "_test_vercel_gate.cjs"],
     [PY, "_test_scheduled_candidate.py"],
     ["node", "--test", "_test_runtime_edges.mjs", "_test_admin_skeleton.mjs", "_test_admin_sessions.cjs", "_test_admin_persistence.cjs", "_test_article_draft.cjs", "_test_article_draft_client.cjs", "_test_navigation.cjs", "_test_search_integrity.cjs", "_test_analytics.cjs"],

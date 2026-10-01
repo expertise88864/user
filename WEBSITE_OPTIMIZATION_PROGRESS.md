@@ -7,16 +7,17 @@
 這是進行中紀錄。程式閱讀、回歸測試、瀏覽器檢查與正式交付分別記錄；
 單次 diff review 不代表整個專案已逐模組完成。
 
-最新狀態：全 Goal 尚未完成。正式 main 為 `6c6814d607c7ecd07d84430b95a3e3390eff6982`。
-這批已完成同 SHA 的六個候選 push workflows、六個 PR workflows、Preview／瀏覽器與正常
+最新狀態（2026-10-01）：全 Goal 尚未完成。正式 main 為 d8e123251121ed86f881226130e7b12b60e65fa3。
+計算器修正已完成同 SHA 的六個候選 push workflows、六個 PR workflows、Preview／瀏覽器與正常
 快轉 main；正式六個 workflows、部署及 Production smoke 都成功。
-正式 [Quality 36795557873](https://github.com/expertise88864/user/actions/runs/36795557873)、
-[Delivery 36795557919](https://github.com/expertise88864/user/actions/runs/36795557919) 可核對。
+正式 [Quality 36800086068](https://github.com/expertise88864/user/actions/runs/36800086068)、
+[Delivery 36800085926](https://github.com/expertise88864/user/actions/runs/36800085926) 及
+[PR 41](https://github.com/expertise88864/user/pull/41) 可核對。公開正式站三引擎／三寬度共 18 個工具與文章情境通過；未改醫療公式或說明。
 新增版本草稿、Word 編輯及發布狀態觀察的工程程式已上線；這不代表已替作者實際發布文章，
 也不代表真實 Word 剪貼簿、全部醫療內容或全專案已驗證完。
-八個精確 pending commit 的 Opus 完整補審仍待額度；最新 provider 重置為
-2026-10-01 台灣時間 09:10，既有本機排程 09:15 重試，須開機並登入。
-計算器輸入與標籤修正目前為本機工作，尚未取得新 SHA 的交付證據。
+九個精確 pending commit 的 Opus 完整補審仍待額度；09:10 完整審查實際使用 Opus 5.5 後遭 session quota，並未核可。
+最新 provider 重置為 2026-10-01 台灣時間 14:10，既有本機排程 14:15 重試，須開機並登入。
+CMS 發布申請退役目前為本機新修改：保存不可覆寫歷史、核對正式 CI／部署及禁止混入內容改動，尚未取得這批新 SHA 的交付證據。
 以下表格記錄目前覆蓋，後面各節保留歷次檢查與失敗；舊候選失敗屬歷史紀錄，
 不能沿用舊版本證據核可新差異。
 
@@ -29,7 +30,7 @@
 | 全文章內容 | 52 篇逐篇分類／metadata／URL／搜尋／sitemap 結構核對；134 HTML 內鏈及 413 JSON-LD 檢查通過，anchor 數量留存 | 逐篇內容閱讀與關鍵旅程 anchor 的語意／瀏覽器驗證；醫療文字與三項長度提醒核可 |
 | 搜尋／主題 | 既有空白、多詞、全形查詢回歸；共同目錄解析器及 noindex／下架／隱藏文字保護新增十項回歸；主要 Pagefind 搜尋套用相同可見性規則，保留兩篇專業入口 | 搜尋成功事件、零結果、鍵盤／手機實測；完整生成後的同 SHA 候選驗證 |
 | 雙語 | 保留 EN canonical 指向 ZH 的 D-17 決策；卡片雙語 metadata 檢查 | 完整生成管線、主要瀏覽器實測 |
-| 詞彙／工具／圖表 | 計算器完整 924 行及 18 個元件檢閱；修正空白／範圍／step 驗證、HairScale 標籤與 DLQI registry 入口；三引擎各三寬度、960 個無效輸入案例及有效結果契約通過 | 本批新版本獨立 review／完整交付；完整文章／工具頁與詞彙／圖表覆蓋、實機與輔助科技驗證 |
+| 詞彙／工具／圖表 | 計算器完整 924 行及 18 個元件檢閱；修正空白／範圍／step 驗證、HairScale 標籤與 DLQI registry 入口；三引擎各三寬度、960 個無效輸入案例及有效結果契約通過 | 本批已隨 d8e1232 正式交付；完整文章／工具頁與詞彙／圖表覆蓋、實機與輔助科技驗證 |
 | SEO／生成 | 全量 schema／sitemap／描述／索引檢查；九個模組效益宣稱校正；52 篇、104 份中英文頁面日期與作者帳冊一致，全部為發表日基準 | 醫師實際重新審閱日期的核可來源；完整生成與正式 CI；不把發表日當近期審閱 |
 | CMS／認證 | 本機文章雲端草稿、immutable snapshot／blob bytes、SHA 衝突及切換保護；版本綁定作者申請、獨立源碼 bundle 準備及伺服端交付門檻；exact-main 正式 CI／部署觀察入口；新版草稿／可還原本機快照在隔離環境實作驗證並隨 6c6814d 正式交付 | 生成內容核可一致性、已發布證據退役、雲端設定與其餘衝突 UI；正式認證作者 API 操作驗證 |
 | Word 式編輯 | 成熟文件模型已接入實際後台；三引擎各 52 篇內容往返、特殊區塊保護及 390／800／1440 後台流程通過 | 真實 Windows Word 剪貼簿、實機 iOS／Android、其他格式操作；Opus 完整補審（工程已隨 6c6814d 正式發布） |

@@ -83,6 +83,7 @@ class CMSDeliveryTests(unittest.TestCase):
         fixtures.RequestTests.setUp(self)
         files, self.proof = self.prepare()
         files = delivery.with_receipt(self.root, files, self.proof, now=self.now)
+        self.run_git("switch", "-c", "codex/cms-gate")
         apply(self.root, files, expected_head=self.base)
         self.commit("isolated approved candidate")
         self.candidate = self.run_git("rev-parse", "HEAD")
@@ -110,6 +111,12 @@ class CMSDeliveryTests(unittest.TestCase):
     def test_actual_api_request_bytes_and_git_proof_pass_both_delivery_engines(self):
         self.verify()
         self.node_verify_snapshot()
+
+    def test_published_receipt_cannot_be_deleted_to_disable_author_checks(self):
+        self.run_git("update-ref", "refs/heads/main", self.candidate)
+        self.rewrite_receipt(lambda value: value.update(requests=[]))
+        with self.assertRaisesRegex(ValueError, "retirement"):
+            self.verify()
 
     def node_verify_snapshot(self):
         responses = {path: self.api.get(path) for path in list(dict.fromkeys(self.api.calls))}
@@ -154,7 +161,9 @@ class CMSDeliveryTests(unittest.TestCase):
         result = self.verify()
         self.assertEqual(result["activeRequests"], 0)
         self.assertFalse(result["published"])
-        self.assertEqual(len(self.api.calls), 3)
+        self.assertEqual(self.api.calls.count("/git/ref/heads/main"), 2)
+        self.assertEqual(sum(path.startswith("/deployments") for path in self.api.calls), 0)
+        self.assertEqual(self.api.calls.count("/contents/" + delivery.FILE + "?ref=" + self.candidate), 1)
 
     def test_compact_api_json_and_duplicate_properties(self):
         record = {"version": 1, "label": "核可"}
@@ -313,6 +322,7 @@ class CMSDeliveryTests(unittest.TestCase):
         self.run_git("reset", "--hard", self.base)  # Disposable fixture only.
         self.request.update(action="unpublish", contentApproved=False)
         self.store(amend=True)
+        self.run_git("switch", "codex/cms-gate")
         files, self.proof = self.prepare()
         apply(self.root, delivery.with_receipt(self.root, files, self.proof, now=self.now), expected_head=self.base)
         self.commit("isolated visibility candidate")

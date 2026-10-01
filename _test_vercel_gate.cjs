@@ -58,6 +58,10 @@ function fake(bad = '') {
   const proofSha = createHash('sha1').update(Buffer.concat([Buffer.from('blob ' + raw.length + '\0'), raw])).digest('hex');
   return async (url) => {
     if (bad === 'http') return { ok: false };
+    if (url.includes('/git/ref/heads/main')) return new Response(JSON.stringify({ ref: 'refs/heads/main', object: { type: 'commit', sha: '9'.repeat(40) } }));
+    if (url.includes('/compare/' + '9'.repeat(40) + '...')) return new Response(JSON.stringify({ status: 'ahead', merge_base_commit: { sha: '9'.repeat(40) } }));
+    if (url.includes('/git/commits/' + '9'.repeat(40))) return new Response(JSON.stringify({ sha: '9'.repeat(40), tree: { sha: '8'.repeat(40) }, parents: [] }));
+    if (url.includes('/git/trees/' + '8'.repeat(40))) return new Response(JSON.stringify({ sha: '8'.repeat(40), truncated: false, tree: [] }));
     if (url.includes('/contents/.cms-delivery.json?ref=')) {
       if (bad === 'cms') return new Response('{}', { status: 404 });
       return new Response(JSON.stringify({ type: 'file', path: '.cms-delivery.json', encoding: 'base64', size: raw.length,
@@ -102,7 +106,8 @@ test('CMS metadata uses the large-file object media type and uncached bounded sa
     return base(url, options);
   };
   assert.equal(await allowed(env, request), true);
-  assert.equal(calls.length, 3);
+  assert.equal(calls.filter(call => call.url.includes('/git/ref/heads/main')).length, 2);
+  assert.equal(calls.filter(call => call.url.includes('/contents/.cms-delivery.json')).length, 1);
   for (const { url, options } of calls) {
     assert.ok(url.startsWith('https://api.github.com/repos/' + cfg.repository + '/'));
     assert.equal(options.headers['Cache-Control'], 'no-cache');

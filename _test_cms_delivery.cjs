@@ -24,6 +24,10 @@ function fixture({ empty = false, large = false } = {}) {
     requestedAt: record.requestedAt, scheduledAt: null, sourceSha256: { [file]: digest('sha256', Buffer.from(articleText)) } };
   const value = { version: 1, requests: empty ? [] : [proof] };
   const responses = {
+    '/git/ref/heads/main': { ref: 'refs/heads/main', object: { type: 'commit', sha: '9'.repeat(40) } },
+    ['/git/commits/' + '9'.repeat(40)]: { sha: '9'.repeat(40), tree: { sha: '8'.repeat(40) }, parents: [] },
+    ['/git/trees/' + '8'.repeat(40) + '?recursive=1']: { sha: '8'.repeat(40), truncated: false, tree: [] },
+    ['/compare/' + '9'.repeat(40) + '...' + sha]: { status: 'ahead', merge_base_commit: { sha: '9'.repeat(40) } },
     ['/contents/.cms-delivery.json?ref=' + sha]: stored('.cms-delivery.json', JSON.stringify(value, null, 2) + '\n'),
     ['/contents/' + file + '?ref=' + sha]: article,
     ['/contents/' + requestPath + '?ref=' + head]: request,
@@ -59,7 +63,8 @@ test('Vercel live recheck binds immutable payload and current author intent, not
 test('empty proof checks its ordinary immutable blob and does not pretend to deploy', async () => {
   const f = fixture({ empty: true });
   assert.equal((await verifyLiveIntent(sha, f.api, now)).activeRequests, 0);
-  assert.equal(f.calls.length, 3);
+  assert.equal(f.calls.filter(path => path === '/git/ref/heads/main').length, 2);
+  assert.equal(f.calls.filter(path => path === '/contents/.cms-delivery.json?ref=' + sha).length, 1);
 });
 for (const field of ['requestHead','requestBlobSha','manifestSha','articleBlobSha','baseSha','action','approvedBy','repository','file','scheduledAt','requestedAt','sourceSha256']) {
   test('wrong proof field is rejected: ' + field, async () => {

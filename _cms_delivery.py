@@ -35,6 +35,11 @@ class ImmutableBlobs:
         return self.api.get(path)
 
     def ordinary(self, path, commit, blob):
+        entry = self.entries(commit).get(path)
+        if not entry or entry.get("mode") != "100644" or entry.get("type") != "blob" or entry.get("sha") != blob:
+            raise ValueError("CMS inputs must be ordinary non-executable Git blobs")
+
+    def entries(self, commit):
         if commit not in self.trees:
             record = self.get("/git/commits/" + commit)
             if not isinstance(record, dict) or record.get("sha") != commit:
@@ -50,9 +55,7 @@ class ImmutableBlobs:
                     raise ValueError("CMS Git tree paths are ambiguous")
                 entries[name] = entry
             self.trees[commit] = entries
-        entry = self.trees[commit].get(path)
-        if not entry or entry.get("mode") != "100644" or entry.get("type") != "blob" or entry.get("sha") != blob:
-            raise ValueError("CMS inputs must be ordinary non-executable Git blobs")
+        return self.trees[commit]
 
 
 def revision(value):
@@ -241,6 +244,8 @@ def verify(sha, api, *, now=None):
     api = ImmutableBlobs(api)
     _, raw = github_file(api, FILE, sha)
     items = receipts(raw, now=now)
+    from _cms_retirement import verify_transition
+    verify_transition(sha, api, items, now=now)
     def live(entry):
         ref = api.get("/git/ref/heads/drafts/" + slug_for(entry["file"]))
         if not isinstance(ref, dict) or ref.get("ref") != "refs/heads/drafts/" + slug_for(entry["file"]) or ref.get("object", {}).get("type") != "commit" or ref["object"].get("sha") != entry["requestHead"]:

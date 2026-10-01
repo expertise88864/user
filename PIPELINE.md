@@ -109,6 +109,17 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
 - 其他 CI:a11y.yml(pa11y)、hyperlink.yml(斷鏈)、schema-validator.yml、vale.yml(文風)。
 
 ## 已知管線地雷
+- **CMS 申請紀錄退役（2026-10-01 本機新實作，尚未发布）**：
+  `python _retire_cms_receipts.py --expected-main <完整正式 SHA> --check` 唯讀準備並檢查；
+  沒有 active receipts 時回報 noOp，不會宣稱正式發布或建立檔案。
+  要保存待審 bundle，指定 `--output <系統暫存目錄內尚不存在的新資料夾>`。
+  此工具只輸出兩份待審 source bytes，不 stage／commit／push，也不寫作者草稿或 refs。
+  將 bundle 套用到以同一最新 main 建立的乾淨候選，再走獨立審查／完整候選 CI／同庫
+  PR／Preview／正常 main／正式 CI／部署／smoke；退役不能混入任何其他來源修改。
+  `.cms-retirements/` 原有紀錄不可移除、改名或改寫；Python Delivery contract 與
+  Vercel 建置前後都核對 exact published receipt、最新正式 run attempt／job／step、
+  trusted Production deployment／status 及即時 main。來源或正式狀態變動使舊 bundle 失效。
+  本批工程修改必須先正常交付，再另做真正的 retirement-only 候選；不能合併兩個範圍。
 - 一次性 `_build_ad_*.py`、`_fix_ad_articles.py`、`_extract_pdfs.py` 寫死**舊電腦路徑**,
   重跑會 crash — 它們是歷史工具,不在 REGEN_STEPS 裡,**不要跑也不必修**(除非要用)。
 - `_check_balance.py`/`_check_min_balance.py` 已改為相對路徑(2026-06 修復),可正常跑。
