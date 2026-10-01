@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { createHash } = require('node:crypto');
-const { allowed } = require('./_vercel_gate.cjs');
+const { allowed, failureSummary } = require('./_vercel_gate.cjs');
 const cfg = require('./_delivery_policy.json');
 const sha = 'a'.repeat(40);
 const env = { VERCEL_ENV: 'production', VERCEL_GIT_COMMIT_SHA: sha };
@@ -99,6 +99,33 @@ test('unknown environment and missing SHA deny deployment', async () => {
   assert.equal(await allowed({ VERCEL_ENV: 'production' }), false);
 });
 test('exact complete candidate may deploy', async () => assert.equal(await allowed(env, fake()), true));
+test('fresh failed candidate evidence cannot be masked by a cached green response', async () => {
+  const base=fake();
+  const request=async(url,options)=>{
+    const response=await base(url,options);
+    if(!url.includes('/actions/runs?'))return response;
+    if(options.cache!=='no-store'||options.headers['Cache-Control']!=='no-cache')return response;
+    const data=await response.json();
+    data.workflow_runs=data.workflow_runs.map(run=>({...run,run_attempt:2,conclusion:'failure'}));
+    return {ok:true,json:async()=>data};
+  };
+  await assert.rejects(allowed(env,request),/Candidate CI is not green/);
+});
+test('HTTP and network failures stay blocking and log only safe numeric metadata', async () => {
+  const secret='example-upstream-secret';
+  for(const status of [401,403,429,500]){
+    let error;
+    try{await allowed(env,async()=>new Response(secret,{status,headers:{'x-ratelimit-remaining':'0','x-secret':secret}}));}
+    catch(value){error=value;}
+    assert.ok(error,'Unavailable evidence must reject');
+    assert.equal(failureSummary(error),'Production blocked: exact-SHA candidate CI verification failed. Evidence=candidate-ci; failure=http; HTTP='+status+'; GitHub rate-limit remaining=0');
+  }
+  for(const request of [async()=>{throw Error(secret);},async()=>new Response(secret),async()=>new Response(secret,{status:403,headers:{'x-ratelimit-remaining':secret}})]){
+    let error;try{await allowed(env,request);}catch(value){error=value;}
+    assert.ok(error);assert.ok(!failureSummary(error).includes(secret));
+  }
+  assert.equal(failureSummary(Error(secret)),'Production blocked: exact-SHA candidate CI verification failed.');
+});
 test('CMS metadata uses the large-file object media type and uncached bounded same-repository reads', async () => {
   const base = fake(); const calls = [];
   const request = async (url, options) => {

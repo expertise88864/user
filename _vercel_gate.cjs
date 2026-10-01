@@ -5,6 +5,26 @@
 const fs = require('node:fs');
 const assert = require('node:assert/strict');
 
+// Only fixed labels and bounded numeric response metadata may reach build logs.
+// Never report upstream bodies, arbitrary error messages, URLs or credentials.
+class EvidenceError extends Error {
+  constructor(stage, kind, response) {
+    super('GitHub evidence unavailable');
+    this.stage = stage;
+    this.kind = kind;
+    this.http = Number.isInteger(response?.status) && response.status >= 100 && response.status <= 599 ? response.status : null;
+    const remaining = response?.headers?.get('x-ratelimit-remaining');
+    this.remaining = typeof remaining === 'string' && /^\d{1,9}$/.test(remaining) ? Number(remaining) : null;
+  }
+}
+function failureSummary(error) {
+  const prefix = 'Production blocked: exact-SHA candidate CI verification failed.';
+  if (!(error instanceof EvidenceError)) return prefix;
+  return prefix + ' Evidence=' + error.stage + '; failure=' + error.kind +
+    (error.http === null ? '' : '; HTTP=' + error.http) +
+    (error.remaining === null ? '' : '; GitHub rate-limit remaining=' + error.remaining);
+}
+
 async function allowed(env = process.env, request = fetch) {
   if (env.VERCEL_ENV === 'preview') return true;
   if (env.VERCEL_ENV !== 'production' || !/^[a-f0-9]{40}$/.test(env.VERCEL_GIT_COMMIT_SHA || '')) return false;
@@ -22,14 +42,25 @@ async function allowed(env = process.env, request = fetch) {
   const headers = { Accept: 'application/vnd.github+json', 'User-Agent': 'verified-production-only' };
   const credential = env.GH_TOKEN || env.GITHUB_TOKEN;
   if (credential) headers.Authorization = 'Bearer ' + credential;
+  async function evidenceRequest(path, stage, options) {
+    let response;
+    try {
+      response = await request('https://api.github.com/repos/' + cfg.repository + path,
+        { headers: { ...headers, 'Cache-Control': 'no-cache' }, redirect: 'error',
+          cache: 'no-store', signal: AbortSignal.timeout(15000), ...options });
+    } catch (_) { throw new EvidenceError(stage, 'network'); }
+    if (!response.ok) throw new EvidenceError(stage, 'http', response);
+    return response;
+  }
   async function pages(path, key) {
     const rows = [];
     for (let page = 1; page <= 20; page++) {
-      const response = await request('https://api.github.com/repos/' + cfg.repository + path +
+      const response = await evidenceRequest(path +
         (path.includes('?') ? '&' : '?') + 'per_page=100&page=' + page,
-        { headers, redirect: 'error', signal: AbortSignal.timeout(15000) });
-      assert.ok(response.ok, 'GitHub evidence unavailable');
-      const data = await response.json();
+        path.startsWith('/commits/') ? 'candidate-pr' : 'candidate-ci');
+      let data;
+      try { data = await response.json(); }
+      catch (_) { throw new EvidenceError('candidate-response', 'json'); }
       const list = key ? data[key] : data;
       assert.ok(Array.isArray(list), 'Malformed GitHub evidence');
       rows.push(...list);
@@ -75,10 +106,9 @@ async function allowed(env = process.env, request = fetch) {
   if (cfg.cms_author_intent) {
     const { verifyLiveIntent } = require('./_cms_delivery.cjs');
     await verifyLiveIntent(sha, async path => {
-      const response = await request('https://api.github.com/repos/' + cfg.repository + path,
+      const response = await evidenceRequest(path, 'cms-author-intent',
         { headers: { ...headers, Accept: path.startsWith('/contents/') ? 'application/vnd.github.object+json' : headers.Accept,
           'Cache-Control': 'no-cache' }, redirect: 'error', cache: 'no-store', signal: AbortSignal.timeout(15000) });
-      assert.ok(response.ok, 'CMS intent evidence unavailable');
       // Bound the actual stream, including chunked responses with no length.
       assert.ok(response.body, 'CMS intent response unavailable');
       const reader = response.body.getReader();
@@ -98,15 +128,15 @@ async function allowed(env = process.env, request = fetch) {
   }
   return true;
 }
-module.exports = { allowed };
+module.exports = { allowed, failureSummary };
 if (require.main === module) {
   // Build mode uses normal failure semantics, so a missing/broken gate cannot deploy.
   const buildMode = process.argv.includes('--build');
   allowed().then(ok => {
     console.log(ok ? 'Verified candidate or Preview: build allowed.' : 'Production blocked: candidate evidence unavailable.');
     process.exitCode = buildMode ? (ok ? 0 : 1) : (ok ? 1 : 0);
-  }).catch(() => {
-    console.error('Production blocked: exact-SHA candidate CI verification failed.');
+  }).catch(error => {
+    console.error(failureSummary(error));
     process.exitCode = buildMode ? 1 : 0;
   });
 }

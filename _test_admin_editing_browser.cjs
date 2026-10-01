@@ -67,6 +67,26 @@ module.exports = async function checkEditorSnapshots(browser) {
     await page.evaluate(() => document.getElementById('axPanel').classList.remove('collapsed'));
     await page.locator('#axSeoTitle').getByText('Editor fixture',{exact:true}).waitFor();
     console.log('PASS CMS caret/selection/attributes survive SEO debounce; collapsed panel skips work and refreshes on reopening.');
+    // Actual root editor/controller: undo from A must never enter B's source.
+    await page.evaluate(() => {
+      CURRENT_FILE='blog/article-a.html';EDITOR_LOAD_ID++;
+      CURRENT_CONTENT='<html lang="zh-Hant"><head><title>A</title></head><body><main><article id="proseZh"><p>EASI First fixture</p></article></main></body></html>';
+      document.getElementById('filePath').textContent=CURRENT_FILE;mountIframe(CURRENT_CONTENT);
+    });
+    await page.frameLocator('iframe.editor').locator('article').waitFor();
+    await page.locator('.ax-tabs button[data-tab="dict"]').click();
+    await page.locator('#axDictRun').click();
+    assert.equal(await page.frameLocator('iframe.editor').locator('dfn').count(),1);
+    await page.evaluate(() => {
+      CURRENT_FILE='blog/article-b.html';EDITOR_LOAD_ID++;
+      CURRENT_CONTENT='<html lang="zh-Hant"><head><title>B</title></head><body><main><article id="proseZh"><p>Keep second fixture</p></article></main></body></html>';
+      document.getElementById('filePath').textContent=CURRENT_FILE;mountIframe(CURRENT_CONTENT);
+    });
+    await page.frameLocator('iframe.editor').locator('article').getByText('Keep second fixture',{exact:true}).waitFor();
+    const untouched=await page.evaluate(()=>window.adminState.editedContent);
+    await page.locator('#axDictUndo').click();
+    assert.equal(await page.evaluate(()=>window.adminState.editedContent),untouched,'Actual root saved source preserves B after A dictionary undo');
+    console.log('PASS actual root dictionary undo cannot cross article/load identity.');
   } finally { await context.close(); }
 };
 

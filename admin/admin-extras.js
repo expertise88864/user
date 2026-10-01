@@ -515,8 +515,13 @@
   function applyDict() {
     const doc = getEditorDocument();
     if (!doc) { toast('先載入文章'); return; }
+    const file = getCurrentFile(), bridge = window.DNEditorDraftBridge;
+    const identity = bridge && bridge.identity();
+    if (!file || (identity && !bridge.isCurrent(identity))) {
+      toast('文章或編輯狀態已變更，請重新載入；目前內容保留'); return;
+    }
     const article = doc.querySelector('article') || doc.body;
-    _dictUndo = article.innerHTML;
+    const inserted = [];
     let added = 0;
     const seen = new Set();
     Object.keys(MEDICAL_DICT).sort((a, b) => b.length - a.length).forEach(term => {
@@ -548,11 +553,14 @@
         frag.appendChild(dfn);
         if (after) frag.appendChild(doc.createTextNode(after));
         node.parentNode.replaceChild(frag, node);
+        inserted.push({node:dfn, attributes:Array.from(dfn.attributes, attr => [attr.name, attr.value])});
         added++;
         seen.add(term);
         break;
       }
     });
+    // Retain the last useful undo when a repeated scan adds nothing.
+    if (inserted.length) _dictUndo = {file, doc, article, bridge, identity, inserted};
     document.getElementById('axDictStats').textContent = `✓ 加了 ${added} 個 dfn`;
     toast(`✓ 加了 ${added} 個專業詞彙 dfn`);
   }
@@ -561,10 +569,26 @@
     const doc = getEditorDocument();
     if (!doc) return;
     const article = doc.querySelector('article') || doc.body;
-    article.innerHTML = _dictUndo;
+    const saved = _dictUndo;
+    if (getCurrentFile() !== saved.file || doc !== saved.doc || article !== saved.article ||
+        (saved.identity && (window.DNEditorDraftBridge !== saved.bridge || !saved.bridge.isCurrent(saved.identity)))) {
+      _dictUndo = null;
+      toast('文章或編輯狀態已變更，未套用舊的復原；目前內容保留'); return;
+    }
+    let removed = 0;
+    saved.inserted.forEach(({node, attributes}) => {
+      // Unwrap only our original definitions. Keep later typing and formatting,
+      // manually removed nodes, and author-modified tooltip attributes intact.
+      if (!article.contains(node) || node.attributes.length !== attributes.length ||
+          attributes.some(([name, value]) => node.getAttribute(name) !== value)) return;
+      const fragment = doc.createDocumentFragment();
+      while (node.firstChild) fragment.appendChild(node.firstChild);
+      node.replaceWith(fragment);
+      removed++;
+    });
     _dictUndo = null;
-    document.getElementById('axDictStats').textContent = '已復原';
-    toast('已復原');
+    document.getElementById('axDictStats').textContent = `已復原 ${removed} 個標註；其餘內容保留`;
+    toast(removed ? '已復原標註，保留後續編輯' : '沒有可復原的標註；目前內容保留');
   }
 
   // ─────────────────────────────────────────────────────────────
