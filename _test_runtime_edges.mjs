@@ -140,23 +140,31 @@ test('patient search ranks title matches before descriptions and keeps drafts pr
   assert.equal(results.some(a=>a.slug==='draft'),false);
 });
 
-test('optional font CSS applies on load and when already cached', () => {
+test('optional font CSS preserves cached and later loads after content paints', () => {
   const listeners = new Map();
   const frames = [];
+  let paint;
+  class PaintObserver {
+    static supportedEntryTypes = ['paint'];
+    constructor(callback) { paint = callback; }
+    observe() {}
+    disconnect() {}
+  }
   const links = [false, true].map(cached => ({media:'print', sheet:cached ? {} : null,
     addEventListener(name, fn) { listeners.set(this, {name, fn}); }}));
   vm.runInNewContext(readFileSync(new URL('./assets/inline/font-loader.js', import.meta.url), 'utf8'),
-    {document:{querySelectorAll(){return links;}},requestAnimationFrame:fn=>frames.push(fn)});
+    {window:{addEventListener(){}},document:{querySelectorAll(){return links;}},
+      performance:{getEntriesByName(){return [];}},PerformanceObserver:PaintObserver,
+      clearTimeout(){},requestAnimationFrame:fn=>frames.push(fn)});
   assert.equal(links[0].media, 'print');
   assert.equal(links[1].media, 'print');
-  frames.shift()();
+  // RAF callbacks alone must never substitute for an actual content paint.
+  while (frames.length) frames.shift()();
   assert.equal(links[1].media, 'print');
-  frames.shift()();
+  paint({getEntries(){return [{name:'first-contentful-paint'}];}});
   assert.equal(links[1].media, 'all');
   assert.equal(listeners.get(links[0]).name, 'load');
   listeners.get(links[0]).fn();
-  assert.equal(links[0].media, 'print');
-  frames.shift()(); frames.shift()();
   assert.equal(links[0].media, 'all');
 });
 

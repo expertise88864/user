@@ -7,6 +7,27 @@
 這是進行中紀錄。程式閱讀、回歸測試、瀏覽器檢查與正式交付分別記錄；
 單次 diff review 不代表整個專案已逐模組完成。
 
+最新進行中狀態（2026-10-01 13:35 台灣時間）：全 Goal 尚未完成。
+六篇續讀／原生導覽候選 `ad29b485e61a6f48b83ae9eceac8209b98355924` 的完整候選 CI、
+同 SHA Preview 與瀏覽器檢查通過後正常快轉 main，但正式 Vercel final gate 失敗，
+[正式 Delivery 36814555464](https://github.com/expertise88864/user/actions/runs/36814555464)
+的 Production smoke 失敗，不能稱正式交付完成。原因仍未確認，本機使用既有認證的唯讀 gate
+檢查成功不代表 Vercel 的認證／網路狀態相同；沒有新增憑證或無修改重部署。
+
+後續 `250b2daf730855fa62cdc655e5ca9993ddd042db`／[PR 44](https://github.com/expertise88864/user/pull/44)
+修正辭典 undo 跨文章覆蓋與發布證據快取，六檔完整獨立 `gpt-5.5`／high 唯讀審查、
+隔離完整 build／check／runtime smoke，以及三引擎 36 個辭典 fixture／3 個實際後台切換案例通過。
+但 [候選 Quality 36817429231](https://github.com/expertise88864/user/actions/runs/36817429231)
+首頁 Lighthouse 62 未達既有 70 門檻；其餘四個 Quality jobs 成功。候選驗證退出碼 1，尚未推 main。
+
+這次 trace 確認字型 loader 兩次 RAF（482／499 ms）早於實際 FCP（989 ms），
+不能用兩次 RAF 當成文字已顯示。新本機修正等待實際 FCP，保留字型／字重／原版面；
+六個單元案例與三引擎各六個隔離瀏覽器案例通過，WebKit 缺少 paint timing 時走 post-load fallback。
+中央資源版本 `202610011335`、兩個 SW generation 及原管線生成物已重建；
+完整新差異審查、完整 build、新 SHA 候選 CI／Preview 和正式部署仍待驗證。
+以上是載入時機缺陷的實測，不能保證 Lighthouse、field CWV 或點擊率已改善。
+Opus 5.5 有 13 個精確 pending SHA；等 14:10 額度重置、既有 14:15 排程補審，quota 不等於核可。
+
 最新已驗證交付快照（2026-10-01，本節不代表後續新修改已交付）：全 Goal 尚未完成。
 正式 main `c284e343e80d34582574d1d22c3ee7798a9519d4`／[PR 42](https://github.com/expertise88864/user/pull/42)
 已完成 CMS 發布證據退役檢查，同 SHA 候選六個 push workflows、五個適用 PR workflows、

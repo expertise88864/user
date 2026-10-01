@@ -5,24 +5,24 @@
     "assets/inline/analytics-loader.js": "dd768e2fe3c2d8a247d21ee564c6f1cdc3d6b46139389abd3980cc8c896397c6",
     "assets/inline/dn-init.js": "85a2bde719cab2b1a3affafc226c8a322e8e780363799e1e6040516f35280941",
     "assets/inline/en-locale-banner.js": "c672939699260098b3d55386a4fd0a0e9008df2680f42975a8f86cddaa3191b8",
-    "assets/inline/font-loader.js": "983a528385cb144ce4c347b20c93d83afa0ef648d822fb0e87f799b03672ff53",
+    "assets/inline/font-loader.js": "f1a44c32f02cf376a7a89fe5ed9d1d60bd226b562ec125173ab95c90ca93445e",
     "assets/inline/gtag-bootstrap.js": "9376670c2c284b25faddae51180506f62b7bdef3786f94592f37ffd3e96168a8",
     "assets/inline/nav-burger.js": "8806a35218f37fc62667e4f4761e566acbe46284b2094588ab1e0ff99f9910dd",
     "assets/tw-mini.css": "1ed6d7d1f2e8486b3e122fa03b4edf5b36edd828da6a30cbadbfb6bf356c5fb5",
     "assets/web-vitals.iife.js": "77b2dfc9e065286d780c87f72b5cad08761346ff564ddd3f79102f4d4027e9a6",
     "blog/blog-article-footer.min.js": "eaae2bfabe233ee371ef39aafb373a28e93aea83261b5e5b0b5befa69843f145",
-    "blog/blog-article-reading.min.js": "a66dc23eb20fe7bfa4ca5b3e6ad373358e2b188f5ec97daa3e590fe78f8004db",
+    "blog/blog-article-reading.min.js": "309693dbf0b713f136328ea11496cdbd914a130c5f65f802550875f9c9dd6cb5",
     "blog/blog-article-visuals.min.js": "02a1eb571209448e281b717ac153cd2fe885462cf660de3352b469aa43cb2340",
     "blog/blog-calculators.min.js": "e56e3b612d7d3b4652a5b86f81db6a827c37e2ad0112c529332347b738745e5e",
     "blog/blog-diagrams.min.js": "9e27add62ff3d046ee8f51002da1d505c87030aa23078dd15c71373e120152fb",
     "blog/blog-hub.min.js": "083727ee67edc777b2693650f5a09403ce73d90889ba0ba444d73307338d0125",
-    "blog/blog-shared.min.js": "0667529f5f563294c1b25d293904e4e7f354435fba9762c651fe59b05c47f408"
+    "blog/blog-shared.min.js": "8b82bb7584ee653e7e4a3c107e5a33a4a5303771c72d50765692da9dc61bb82c"
   },
   "caches": {
-    "CACHE": "cd-v178",
-    "RUNTIME": "cd-runtime-v176"
+    "CACHE": "cd-v179",
+    "RUNTIME": "cd-runtime-v177"
   },
   "hash_format": "sha256-utf8-lf",
-  "version": "202610011120",
-  "worker_sha256": "d5bf4edf10322084c8835ae2c73d7ded632b84fce2f572c106f062f2ad86cdf7"
+  "version": "202610011335",
+  "worker_sha256": "bd65db97a96f8b5f1c91503962b62f09bac0e2f8da1b520a56e3ad4e31e30b0a"
 }
