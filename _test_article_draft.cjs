@@ -30,6 +30,7 @@ function fixture() {
     if (path.startsWith('contents/')) assert.equal(options.headers.Accept, 'application/vnd.github.object+json', 'large Contents files require the supported object media type');
     const body = options.body && JSON.parse(options.body);
     calls.push({ method: options.method, path, body });
+    if (h.beforeRequest) await h.beforeRequest(path, options.method, body);
     if (options.method !== 'GET' && path === h.failWrite) return Response.json({ message: 'private upstream detail' }, { status: 503 });
     let result;
     if (path === 'actions/runs') {
@@ -137,6 +138,47 @@ function putMain(h, file, content) {
   const bytes = Buffer.from(content), id = blobSha(bytes); h.blobs.set(id, bytes);
   h.trees.get(h.commits.get(h.main).tree.sha).set(file, id);
   return id;
+}
+function advanceMainWithDeliveryReceipt(h) {
+  // Create a different immutable Git tree/commit; do not mutate the old main.
+  const tree = new Map(h.trees.get(h.commits.get(h.main).tree.sha));
+  const receipt = Buffer.from(JSON.stringify({ version: 1, requests: [{ file: FILE }] }, null, 2) + '\n');
+  const id = blobSha(receipt); h.blobs.set(id, receipt); tree.set('.cms-delivery.json', id);
+  const nextTree = sha(JSON.stringify([...tree])), next = sha('late delivery receipt main');
+  h.trees.set(nextTree, tree); h.commits.set(next, { tree: { sha: nextTree }, parents: [h.main] });
+  h.refs.set('main', next);
+}
+for (const action of ['save-create', 'save-update', 'review', 'schedule', 'unpublish', 'cancel']) {
+  for (const timing of ['ref-write', 'verification-read']) {
+    test('late main receipt never acknowledges a verified ' + action + ': ' + timing, async () => {
+      const h = fixture(); let saved;
+      if (action !== 'save-create') saved = await (await h.request(h.input({ content: HTML }))).json();
+      if (action === 'cancel') saved = await (await h.request(publicationInput(saved))).json();
+      const old = h.refs.get('drafts/example'); let advanced = false;
+      h.beforeRequest = (route, method) => {
+        const write = method === 'PATCH' && route === 'git/refs/heads/drafts/example' ||
+          method === 'POST' && route === 'git/refs';
+        const verify = method === 'GET' && route.startsWith('contents/') && h.refs.get('drafts/example') !== old;
+        if (!advanced && (timing === 'ref-write' ? write : verify)) {
+          advanceMainWithDeliveryReceipt(h); advanced = true;
+        }
+      };
+      const input = action === 'save-create' ? h.input() : action === 'save-update'
+        ? h.input({ expectedHead: saved.head })
+        : publicationInput(saved, action, action === 'schedule'
+          ? { scheduledAt: new Date(Date.now() + 86400000).toISOString() } : {});
+      const response = await h.request(input); assert.equal(advanced, true);
+      assert.equal(response.status, 409); const body = await response.json();
+      assert.equal(body.error, 'draft_conflict'); assert.notEqual(body.verified, true);
+      // Separate refs cannot be rolled back atomically. Preserve bytes/history
+      // for recovery and let exact author-intent delivery gates reject staleness.
+      assert.notEqual(h.refs.get('drafts/example'), old);
+      const loaded = await (await h.request()).json(); assert.equal(loaded.requestLocked, true);
+      const before = h.calls.length;
+      assert.equal((await h.request(h.input({ expectedHead: loaded.head }))).status, 409);
+      assert.ok(h.calls.slice(before).every(call => call.method === 'GET'));
+    });
+  }
 }
 async function newVersionFixture() {
   const h = fixture();

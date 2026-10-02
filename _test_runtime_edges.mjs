@@ -8,6 +8,26 @@ const hubContext = {window:{DN:{ARTICLES:[]}}};
 vm.runInNewContext(readFileSync(new URL('./blog/blog-hub.js', import.meta.url),'utf8'), hubContext);
 const searchCatalog = hubContext.window.DN.searchArticleCatalog;
 
+test('article slug recognizes clean and static HTML paths in both locales', () => {
+  for (const name of ['blog-shared.js','blog-shared.min.js']) {
+    const location = {pathname:'/'};
+    const context = {window:{DN:{}},location};
+    vm.runInNewContext(readFileSync(new URL('./blog/'+name, import.meta.url),'utf8'), context);
+    const dn = context.window.DN;
+    for (const prefix of ['/blog/','/en/blog/']) {
+      for (const suffix of ['','/','.html','.html/']) {
+        location.pathname = prefix+'skin-biopsy-excision'+suffix;
+        assert.equal(dn.currentSlug(),'skin-biopsy-excision',name+' '+location.pathname);
+        assert.ok(dn.getArticleNumber(dn.currentSlug()),'Article-specific runtime receives its stable identifier');
+      }
+    }
+    for (const pathname of ['/about.html','/blog/','.html','/blog/x.html/other','/blog/x.html.html']) {
+      location.pathname = pathname;
+      assert.equal(dn.currentSlug(),null,name+' '+pathname);
+    }
+  }
+});
+
 test('English return links preserve current URL context and map only explicit primary IDs', () => {
   const source = readFileSync(new URL('./assets/inline/en-locale-banner.js', import.meta.url), 'utf8');
   const events = {}, location = {origin:'https://example.test',search:'?from=reader',hash:'#en-dx'};

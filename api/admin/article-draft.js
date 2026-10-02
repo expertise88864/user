@@ -294,6 +294,9 @@ async function requestPublication(api, target, input) {
     accepted = await publicationState(api, target, after);
     if (content === null ? accepted !== null : !accepted || accepted.status === 'invalidated') fail(502, 'request_not_verified');
   } catch (_) { fail(502, 'request_not_verified'); }
+  // Main and the draft ref are separate transactions. Recheck after the write
+  // before acknowledging it; a concurrent promotion leaves an unverified draft.
+  await unchangedMain(api, loaded.main);
   return { file: target.file, head: next, baseSha: loaded.baseSha, blobSha: loaded.blobSha,
     request: accepted, verified: true, published: false };
 }
@@ -593,6 +596,9 @@ async function save(api, target, input) {
       if (!saved || saved.base64 !== item.base64) fail(502, 'save_not_verified');
     }
   } catch (_) { fail(502, 'save_not_verified'); }
+  // Preserve the accepted draft bytes for recovery, but never report a verified
+  // save against an obsolete main revision or newly active delivery receipt.
+  await unchangedMain(api, loaded.main);
   return { file: target.file, head: next, baseSha: input.baseSha, blobSha,
     branch: target.branch, metadata, status: 'cloud_draft', verified: true, published: false };
 }

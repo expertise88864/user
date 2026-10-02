@@ -5,6 +5,7 @@
 from __future__ import annotations
 
 import html
+from html.parser import HTMLParser
 import json
 import re
 import sys
@@ -74,6 +75,36 @@ def clean_text(src: str) -> str:
     return re.sub(r"\s+", " ", html.unescape(src)).strip()
 
 
+class RenderedReadingText(HTMLParser):
+    """Count English text nodes once; translation attributes are not prose."""
+    INERT = {'script', 'style', 'template', 'noscript'}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.blocked = []
+        self.text = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag in self.INERT:
+            self.blocked.append(tag)
+
+    def handle_endtag(self, tag):
+        if tag in self.blocked:
+            index = len(self.blocked) - 1 - self.blocked[::-1].index(tag)
+            del self.blocked[index:]
+
+    def handle_data(self, data):
+        if not self.blocked:
+            self.text.append(data)
+
+
+def rendered_reading_text(src: str) -> str:
+    parser = RenderedReadingText()
+    parser.feed(src)
+    parser.close()
+    return ' '.join(parser.text)
+
+
 def _extract_prose_container(src: str, prose_id: str) -> str | None:
     """Find <div id="proseZh"> (or proseEn) and return its inner HTML,
     correctly handling nested <div> blocks by counting open/close tags.
@@ -114,14 +145,11 @@ def compute_metrics(src: str, lang: str = "zh") -> dict[str, int]:
     """
     prose_id = "proseEn" if lang.startswith("en") else "proseZh"
     body_src = _extract_prose_container(src, prose_id)
-    # 2026-05-31 — bilingual EN-mirror fix. These pages keep #proseEn as an
-    # empty placeholder and store the real content in #proseZh with data-en=""
-    # swaps (DN.applyTextOnly renders EN at runtime). Reading #proseEn for an
-    # EN page therefore yielded an EMPTY body → wordCount:0 / timeRequired:PT2M
-    # (false structured data flagged by audit). When the EN container is
-    # missing or near-empty, fall back to #proseZh, whose data-en attributes
-    # the lang=="en" branch below already harvests. Verified: jaki EN goes
-    # 0 → 3331 words.
+    # Some EN mirrors retain an empty proseEn placeholder and render their
+    # English body inside proseZh. The generator renders translations before
+    # the include-en schema pass. Fall back to that rendered body, then count
+    # text nodes only: harvesting data-en too counts a second copy and can
+    # replace authored visible wording with a stale translation attribute.
     if lang.startswith("en") and (body_src is None or len(clean_text(body_src)) < 200):
         zh = _extract_prose_container(src, "proseZh")
         if zh is not None and len(zh) > (len(body_src or "")):
@@ -131,9 +159,7 @@ def compute_metrics(src: str, lang: str = "zh") -> dict[str, int]:
         body_src = article_m.group(1) if article_m else src
 
     if lang.startswith("en"):
-        data_en_text = " ".join(re.findall(r'data-en="([^"]*)"', body_src))
-        visible_text = clean_text(re.sub(r'\sdata-en="[^"]*"', '', body_src))
-        text = data_en_text + " " + visible_text
+        text = rendered_reading_text(body_src)
         tokens = len(re.findall(r"[A-Za-z0-9]+", text))
         minutes = max(2, round(tokens / 200))
         return {"wordCount": tokens, "readingMinutes": minutes}

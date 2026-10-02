@@ -12,7 +12,7 @@ from _html_scan import iter_tags, tag_name, attributes, blank_script_style, mask
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-ASSET_VERSION = "202610021300"
+ASSET_VERSION = "202610021400"
 
 
 def normalize_font_loading(src: str) -> str:
