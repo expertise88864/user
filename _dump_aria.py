@@ -5,9 +5,39 @@ suitable for pasting into _gen_en_pages.py ARIA_LABEL_TRANSLATIONS.
 Provide EN translations manually in this script.
 """
 import re
+from html.parser import HTMLParser
 from pathlib import Path
+from _html_scan import mask_inert_regions
 
 ROOT = Path(__file__).resolve().parent
+
+
+class SVGLabels(HTMLParser):
+    """Collect labels on actual SVG elements, excluding inert examples."""
+
+    BLOCKED = {'script', 'style', 'template', 'noscript', 'textarea', 'title'}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self.blocked = []
+        self.labels = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag in self.BLOCKED:
+            self.blocked.append(tag)
+        if not self.blocked and tag == 'svg':
+            label = dict(attrs).get('aria-label')
+            if label and re.search(r'[\u4e00-\u9fff]', label):
+                self.labels.append(label)
+
+    def handle_endtag(self, tag):
+        if tag in self.blocked:
+            index = len(self.blocked) - 1 - self.blocked[::-1].index(tag)
+            del self.blocked[index:]
+
+    def handle_startendtag(self, tag, attrs):
+        self.handle_starttag(tag, attrs)
+        self.handle_endtag(tag)
 
 
 def extract_zh_arias(rel: str) -> list[str]:
@@ -22,15 +52,17 @@ def extract_zh_arias(rel: str) -> list[str]:
     Now we only pick aria-labels on <svg> tags.
     """
     text = (ROOT / rel).read_text(encoding="utf-8")
-    out = []
-    for m in re.finditer(r'<svg\b[^>]*aria-label="([^"]+)"', text):
-        if re.search(r"[一-鿿]", m.group(1)):
-            out.append(m.group(1))
-    return out
+    parser = SVGLabels()
+    parser.feed(mask_inert_regions(text))
+    parser.close()
+    return parser.labels
 
 
 def dump(rel: str, en_translations: list[str], out_lines: list[str]) -> None:
     zhs = extract_zh_arias(rel)
+    if len(zhs) != len(en_translations):
+        raise ValueError(f'{rel}: {len(zhs)} SVG labels require exactly '
+                         f'{len(zhs)} translations; received {len(en_translations)}')
     out_lines.append(f"# from {rel}")
     for zh, en in zip(zhs, en_translations):
         bs = chr(92)
@@ -83,5 +115,5 @@ if __name__ == "__main__":
         "Bar chart of biologic-associated HBV reactivation risk in psoriasis patients with chronic HBV carriage: 26% without antiviral prophylaxis; 7.7% with antiviral prophylaxis (entecavir or tenofovir); secukinumab + prophylaxis and ustekinumab + prophylaxis show no reactivation cases in current data; TNF-α inhibitors have the most reactivation events.",
         "Biologic class decision tree: required screening and mechanism-of-action questions before initiating any biologic. TNF-α → strict annual TB + HBV screening; IL-12/23 and IL-23 → individual-risk based; IL-17 → mucocutaneous fungal infection prophylaxis + IBD considerations.",
     ], out_lines)
-    Path('_aria_lines.txt').write_text('\n'.join(out_lines), encoding='utf-8')
+    (ROOT / '_aria_lines.txt').write_text('\n'.join(out_lines), encoding='utf-8')
     print(f"Wrote {len(out_lines)} lines to _aria_lines.txt")

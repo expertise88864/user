@@ -1,5 +1,7 @@
 """Regression tests for manual maintenance tools; no image decoder or real writes."""
 from contextlib import redirect_stdout
+import ast
+import html
 import importlib.util
 import io
 from pathlib import Path
@@ -25,7 +27,7 @@ class MaintenanceImportTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             originals = {}
-            for name in ('_clean_dead_slugs', '_convert_images'):
+            for name in ('_clean_dead_slugs', '_convert_images', '_dump_aria', '_wrap_citations', '_html_scan'):
                 (root / f'{name}.py').write_bytes((ROOT / f'{name}.py').read_bytes())
             for name in ('blog/index.html', 'blog/topics.html', 'en/blog/index.html', 'en/blog/topics.html'):
                 path = root / name
@@ -41,7 +43,7 @@ class NoCodecs(importlib.abc.MetaPathFinder):
             raise AssertionError('Codec imported during helper import')
 sys.meta_path.insert(0, NoCodecs())
 original = sys.stdout
-import _clean_dead_slugs, _convert_images
+import _clean_dead_slugs, _convert_images, _dump_aria, _wrap_citations
 assert sys.stdout is original
 print('import-safe')
 """
@@ -50,6 +52,122 @@ print('import-safe')
             self.assertEqual(run.returncode, 0, run.stderr)
             self.assertEqual(run.stdout.strip(), 'import-safe')
             self.assertEqual({n: (root / n).read_bytes() for n in originals}, originals)
+
+
+class SVGLabelExtractionTests(unittest.TestCase):
+    def setUp(self):
+        self.script = load_script('_dump_aria')
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.page = self.root / 'fixture.html'
+
+    def labels(self, source):
+        self.page.write_text(source, encoding='utf8')
+        with patch.object(self.script, 'ROOT', self.root):
+            return self.script.extract_zh_arias('fixture.html')
+
+    def test_quoted_greater_than_single_quotes_and_entities_do_not_lose_labels(self):
+        source = '<SVG data-note="1 > 0" aria-label=\'甲 &amp; 乙\'></SVG><svg aria-label="丙"></svg>'
+        self.assertEqual(self.labels(source), ['甲 & 乙', '丙'])
+
+    def test_non_svg_and_inert_examples_do_not_shift_translation_order(self):
+        source = '<button aria-label="導航"></button><!-- <svg aria-label="註解"></svg> -->'
+        for tag in ('script', 'style', 'template', 'noscript', 'textarea', 'title'):
+            source += f'<{tag}><svg aria-label="範例"></svg></{tag}>'
+        source += '<svg aria-label="實際圖"></svg><svg aria-label="English only"/>'
+        self.assertEqual(self.labels(source), ['實際圖'])
+
+    def test_translation_count_mismatch_fails_before_appending_output(self):
+        self.labels('<svg aria-label="甲"></svg><svg aria-label="乙"></svg>')
+        for translations in ([], ['One'], ['One', 'Two', 'Three']):
+            with self.subTest(translations=translations), patch.object(self.script, 'ROOT', self.root):
+                lines = ['Previous output']
+                with self.assertRaisesRegex(ValueError, 'fixture.html'):
+                    self.script.dump('fixture.html', translations, lines)
+                self.assertEqual(lines, ['Previous output'])
+
+    def test_matching_labels_preserve_exact_order_and_escape_quotes(self):
+        self.labels('<svg aria-label="甲 &quot;引文&quot;"></svg><svg aria-label="乙"></svg>')
+        lines = []
+        with patch.object(self.script, 'ROOT', self.root):
+            self.script.dump('fixture.html', ['First "quote"', 'Second'], lines)
+        self.assertEqual(len(lines), 5)
+        self.assertIn('甲 ' + chr(92) + '"引文' + chr(92) + '"', lines[1])
+        self.assertIn('First ' + chr(92) + '"quote' + chr(92) + '"', lines[2])
+        self.assertIn('Second', lines[4])
+
+
+class CitationWrappingTests(unittest.TestCase):
+    def setUp(self):
+        self.script = load_script('_wrap_citations')
+
+    def test_only_visible_text_changes_preserving_attributes_and_surrounding_bytes(self):
+        source = '<p title="(Hill 2014)" data-zh="(Hill 2014)" data-en="(Hill 2014)">\n原文 (Hill 2014) 結尾 &amp;\n</p>'
+        expected = source.replace('原文 (Hill 2014)', '原文 (<span class="cite">Hill 2014</span>)')
+        result, count = self.script.wrap(source)
+        self.assertEqual((result, count), (expected, 1))
+        self.assertEqual(self.script.wrap(result), (result, 0))
+
+    def test_inert_foreign_preformatted_and_existing_citations_are_preserved(self):
+        for tag in ('script', 'style', 'template', 'noscript', 'textarea', 'title', 'pre', 'code', 'kbd', 'svg', 'math'):
+            source = f'<{tag}>(Hill 2014)</{tag}>'
+            with self.subTest(tag=tag):
+                self.assertEqual(self.script.wrap(source), (source, 0))
+        for source in ('<!-- (Hill 2014) -->', '<span class="cite other">(Hill 2014)</span>'):
+            with self.subTest(source=source):
+                self.assertEqual(self.script.wrap(source), (source, 0))
+
+    def test_visible_citation_after_skipped_block_is_wrapped_and_rate_like_numbers_ignored(self):
+        source = '<template><p>(Hill 2014)</p></template><p>(Hill 2014) (Fraxel 1550) (Hill 2044)</p>'
+        expected = '<template><p>(Hill 2014)</p></template><p>(<span class="cite">Hill 2014</span>) (Fraxel 1550) (Hill 2044)</p>'
+        self.assertEqual(self.script.wrap(source), (expected, 1))
+
+    def test_raw_text_fake_tags_cannot_corrupt_following_real_text(self):
+        for tag in ('textarea', 'title'):
+            source = f'<div><{tag}><script></div>(Hill 2014)</{tag}><p>(Hill 2014)</p></div>'
+            expected = source.replace('<p>(Hill 2014)</p>', '<p>(<span class="cite">Hill 2014</span>)</p>')
+            with self.subTest(tag=tag):
+                self.assertEqual(self.script.wrap(source), (expected, 1))
+
+    def test_manual_main_targets_script_root_and_rerun_does_not_write_again(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            page = root / 'blog/fixture.html'
+            page.parent.mkdir()
+            page.write_text('<p>(Hill 2014)</p>', encoding='utf8')
+            with patch.object(self.script, 'ROOT', root), redirect_stdout(io.StringIO()):
+                self.script.main()
+                once = page.read_bytes()
+                self.script.main()
+            self.assertEqual(page.read_bytes(), once)
+            self.assertEqual(once, b'<p>(<span class="cite">Hill 2014</span>)</p>')
+
+
+class SVGTranslationConsumerTests(unittest.TestCase):
+    def test_extracted_entity_label_works_with_real_generator_lookup_and_legacy_keys(self):
+        # Execute the actual pure consumer function without importing the whole
+        # generator or its stdout configuration. Use nonmedical UI fixture text.
+        tree = ast.parse((ROOT / '_gen_en_pages.py').read_text(encoding='utf8'))
+        functions = [node for node in tree.body if isinstance(node, ast.FunctionDef)
+                     and node.name == 'translate_aria_labels']
+        self.assertEqual(len(functions), 1)
+        import re
+        context = {'re': re, 'html_lib': html, 'ARIA_LABEL_TRANSLATIONS': {}}
+        exec(compile(ast.Module(body=functions, type_ignores=[]), '_gen_en_pages.py', 'exec'), context)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = '<svg aria-label="卡片 &amp; 排版" data-note="原屬性"></svg>'
+            (root / 'fixture.html').write_text(source, encoding='utf8')
+            helper = load_script('_dump_aria')
+            with patch.object(helper, 'ROOT', root):
+                labels = helper.extract_zh_arias('fixture.html')
+            context['ARIA_LABEL_TRANSLATIONS'][labels[0]] = 'Card & layout'
+            expected = source.replace('卡片 &amp; 排版', 'Card &amp; layout')
+            self.assertEqual(context['translate_aria_labels'](source), expected)
+            # Existing raw-entity dictionary keys remain preferred and supported.
+            context['ARIA_LABEL_TRANSLATIONS']['卡片 &amp; 排版'] = 'Legacy card'
+            self.assertEqual(context['translate_aria_labels'](source), source.replace('卡片 &amp; 排版', 'Legacy card'))
 
 
 class DeletedNavigationTests(unittest.TestCase):

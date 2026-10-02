@@ -913,7 +913,9 @@ def translate_aria_labels(src: str) -> str:
     """Swap ZH aria-label values for known EN translations."""
     def repl(m: re.Match) -> str:
         label = m.group(1)
-        en = ARIA_LABEL_TRANSLATIONS.get(label)
+        # Extraction parses HTML attributes into decoded labels. Keep legacy
+        # raw-entity keys first, then accept the same decoded dictionary value.
+        en = ARIA_LABEL_TRANSLATIONS.get(label) or ARIA_LABEL_TRANSLATIONS.get(html_lib.unescape(label))
         if en:
             return f'aria-label="{html_lib.escape(en, quote=True)}"'
         return m.group(0)
