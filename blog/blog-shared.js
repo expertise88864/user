@@ -216,7 +216,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202610020655';
+        s.src = '/blog/blog-article-visuals.min.js?v=202610020830';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -298,7 +298,8 @@
     var st = document.createElement('style');
     st.id = 'dn-cmdk-style';
     st.textContent =
-      '#dn-cmdk-overlay{position:fixed;inset:0;background:rgba(42,38,32,.55);z-index:9998;display:none;align-items:flex-start;justify-content:center;padding:88px 18px 18px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}' +
+      '#dn-cmdk-overlay{position:fixed;inset:0;width:auto;height:auto;max-width:none;max-height:none;margin:0;border:0;color:inherit;background:rgba(42,38,32,.55);z-index:9998;display:none;align-items:flex-start;justify-content:center;padding:88px 18px 18px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}' +
+      '#dn-cmdk-overlay::backdrop{background:transparent}' +
       '#dn-cmdk-overlay.open{display:flex}' +
       '#dn-cmdk-modal{width:100%;max-width:640px;background:var(--surface,#fff);border:1px solid var(--border,#dcd5c8);border-radius:14px;box-shadow:0 30px 80px -20px rgba(0,0,0,.35);overflow:hidden;font-family:Inter,system-ui,sans-serif}' +
       '#dn-cmdk-input{width:100%;padding:18px 20px;border:0;border-bottom:1px solid var(--border,#dcd5c8);font-size:16px;outline:none;background:transparent;color:var(--ink,#2a2620);font-family:inherit}' +
@@ -312,20 +313,28 @@
       '#dn-cmdk-foot kbd{padding:1px 6px;border:1px solid var(--border,#dcd5c8);border-radius:3px;background:#fff;font-family:inherit;font-size:10.5px}';
     document.head.appendChild(st);
 
-    var overlay = document.createElement('div');
+    var overlay = document.createElement('dialog');
+    var nativeDialog = typeof overlay.showModal === 'function';
+    if (!nativeDialog) overlay = document.createElement('div');
     overlay.id = 'dn-cmdk-overlay';
     var isEn = (DN.detectLang && DN.detectLang() === 'en');
+    if (overlay.setAttribute) {
+      overlay.setAttribute('role', 'dialog');
+      overlay.setAttribute('aria-modal', 'true');
+      overlay.setAttribute('aria-label', isEn ? 'Search' : '搜尋');
+    }
     var ph = isEn
       ? 'Search articles / topics / calculators… (press Esc to close)'
       : '搜尋文章 / 主題 / 量表⋯ （按 Esc 關閉）';
     overlay.innerHTML =
-      '<div id="dn-cmdk-modal" role="dialog" aria-label="' + (isEn ? 'Search' : '搜尋') + '">' +
+      '<div id="dn-cmdk-modal">' +
         '<input id="dn-cmdk-input" type="text" aria-label="搜尋 / Search" placeholder="' + ph + '" autocomplete="off" spellcheck="false" data-zh-placeholder="搜尋文章 / 主題 / 量表⋯ （按 Esc 關閉）" data-en-placeholder="Search articles / topics / calculators… (press Esc to close)" />' +
         '<div id="dn-cmdk-results"></div>' +
         '<div id="dn-cmdk-foot">' +
           '<span><kbd>↑</kbd><kbd>↓</kbd> <span data-zh="移動" data-en="navigate">移動</span></span>' +
           '<span><kbd>Enter</kbd> <span data-zh="開啟" data-en="open">開啟</span></span>' +
           '<span><kbd>Esc</kbd> <span data-zh="關閉" data-en="close">關閉</span></span>' +
+          '<button id="dn-cmdk-close" type="button">' + (isEn ? 'Close' : '關閉') + '</button>' +
         '</div>' +
       '</div>';
     document.body.appendChild(overlay);
@@ -440,12 +449,15 @@
       });
     }
 
+    var returnFocus = null;
     function open() {
       // Several header handlers can receive the same click. Preserve the query
       // and count only a real closed-to-open transition.
       if (overlay.classList.contains('open')) return;
+      returnFocus = document.activeElement;
       if (!INDEX) INDEX = buildIndex();
       overlay.classList.add('open');
+      if (nativeDialog) overlay.showModal();
       input.value = '';
       input.focus();
       render('');
@@ -461,6 +473,12 @@
     function close() {
       searchEpoch += 1;
       overlay.classList.remove('open');
+      if (nativeDialog && overlay.open) overlay.close();
+      var target = [returnFocus, document.getElementById('dn-nav-search'), document.getElementById('dn-nav-burger')].find(function (el) {
+        return el && el !== document.body && el.isConnected !== false && typeof el.focus === 'function' && (!el.getClientRects || el.getClientRects().length);
+      });
+      if (target) target.focus();
+      returnFocus = null;
     }
 
     function renderPagefind(q, epoch) {
@@ -563,13 +581,24 @@
       if (e.key === 'ArrowDown') { e.preventDefault(); setActive(activeIdx + 1); }
       else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(activeIdx - 1); }
       else if (e.key === 'Enter') { e.preventDefault(); go(); }
-      else if (e.key === 'Escape') { close(); }
     });
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) close();
     });
+    overlay.addEventListener('cancel', function (e) { e.preventDefault(); close(); });
+    overlay.querySelector('#dn-cmdk-close').onclick = close;
 
     document.addEventListener('keydown', function (e) {
+      if (overlay.classList.contains('open')) {
+        if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+        if (e.key === 'Tab') {
+          var items = overlay.querySelectorAll('input,button,a[href]');
+          var edge = items[e.shiftKey ? 0 : items.length - 1];
+          if (document.activeElement === edge) {
+            e.preventDefault(); items[e.shiftKey ? items.length - 1 : 0].focus();
+          }
+        }
+      }
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
         if (overlay.classList.contains('open')) close(); else open();
@@ -577,6 +606,9 @@
         e.preventDefault();
         open();
       }
+    });
+    document.addEventListener('focusin', function (e) {
+      if (!nativeDialog && overlay.classList.contains('open') && !overlay.contains(e.target)) input.focus();
     });
 
     // Resolve SVG/text clicks through the same language-independent selector.
@@ -1068,7 +1100,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202610020655';
+        s.src = '/blog/blog-article-reading.min.js?v=202610020830';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1104,7 +1136,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202610020655';
+        s.src = '/blog/blog-article-footer.min.js?v=202610020830';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1134,7 +1166,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202610020655';
+        s.src = '/blog/blog-calculators.min.js?v=202610020830';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1274,7 +1306,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202610020655';
+        s.src = '/blog/blog-hub.min.js?v=202610020830';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;

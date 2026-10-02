@@ -135,7 +135,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202610020655';
+          s.src = '/blog/blog-diagrams.min.js?v=202610020830';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;

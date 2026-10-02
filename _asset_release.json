@@ -11,18 +11,18 @@
     "assets/tw-mini.css": "1ed6d7d1f2e8486b3e122fa03b4edf5b36edd828da6a30cbadbfb6bf356c5fb5",
     "assets/web-vitals.iife.js": "77b2dfc9e065286d780c87f72b5cad08761346ff564ddd3f79102f4d4027e9a6",
     "blog/blog-article-footer.min.js": "eaae2bfabe233ee371ef39aafb373a28e93aea83261b5e5b0b5befa69843f145",
-    "blog/blog-article-reading.min.js": "1e9bfff1648f5b8d39a56649ede1a1775fedadb030a8d0d90141cfdf4ad22165",
+    "blog/blog-article-reading.min.js": "1c174c1fe4d4e251eebbf7292521a02b4a1ef62049c63a799296c8ce62d2f3d3",
     "blog/blog-article-visuals.min.js": "02a1eb571209448e281b717ac153cd2fe885462cf660de3352b469aa43cb2340",
     "blog/blog-calculators.min.js": "e56e3b612d7d3b4652a5b86f81db6a827c37e2ad0112c529332347b738745e5e",
     "blog/blog-diagrams.min.js": "e90160bbc4f239ff3eff7aaf1aa2b1b4c304fc7b2cd38cd58db4c156419fc43e",
     "blog/blog-hub.min.js": "252879493d054e978785cb2717368af2aff946a9e501cea17ac8547aac24413a",
-    "blog/blog-shared.min.js": "8c66533697158dbe95b61a082ebd318a00312337d70e9696e729d4aba3c170f9"
+    "blog/blog-shared.min.js": "979be2f71cfd5c7036cf9850e6a43a06e77d92ff08312aae1986e64e6c6209cd"
   },
   "caches": {
-    "CACHE": "cd-v190",
-    "RUNTIME": "cd-runtime-v188"
+    "CACHE": "cd-v191",
+    "RUNTIME": "cd-runtime-v189"
   },
   "hash_format": "sha256-utf8-lf",
-  "version": "202610020655",
-  "worker_sha256": "45989d1dad09a78349671c462d9b7cb0bbb757ab2b9f1742cc39384cd2127d47"
+  "version": "202610020830",
+  "worker_sha256": "31c802ce5ece7f90f63b2f3c418bd7fce4b275f6813349ce4d8bcea5595b96d7"
 }
