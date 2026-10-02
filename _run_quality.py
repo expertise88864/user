@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import os
 import subprocess
 import sys
@@ -31,7 +32,7 @@ REGEN_STEPS: list[list[str]] = [
     # early when it sees #dn-related-static. ~174 internal links added,
     # all crawlable by Googlebot without JS.
     [PY, "_inject_related.py"],
-    # Resolve git-derived freshness before generating EN mirrors, feeds,
+    # Resolve content-ledger dates before generating EN mirrors, feeds,
     # LLM corpora, and search artifacts. Running this after llms-full used
     # to leave aggregate freshness metadata one build behind.
     [PY, "_normalize_date_modified.py"],
@@ -189,7 +190,7 @@ BUILD_GENERATED_STEPS: list[list[str]] = [
     [PY, "_gen_search_index.py"],
     # 2026-05-17 — Pagefind CJK-aware full-text search index. Runs AFTER all
     # HTML is generated (REGEN_STEPS) so it crawls the final on-disk file
-    # tree. Non-fatal: skips gracefully if npx unavailable.
+    # tree. Missing npx fails generation; do not publish a partial index.
     [PY, "_run_pagefind.py"],
     # CODE_REVIEW TD-28 — _minify is a GENERATOR (it writes blog/*.min.js), so
     # it belongs in the generate phase, not after the checks. Moved here from
@@ -234,6 +235,7 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_test_article_visibility.py"],
     [PY, "_test_cms_delivery.py"],
     [PY, "_test_cms_generated_package.py"],
+    [PY, "_test_generation_clock.py"],
     [PY, "_test_cms_retirement.py"],
     ["node", "--test", "_test_cms_delivery.cjs", "_test_vercel_gate.cjs"],
     [PY, "_test_scheduled_candidate.py"],
@@ -328,21 +330,43 @@ def run_steps(name: str, steps: Sequence[Sequence[str]]) -> None:
         subprocess.run(command, check=True)
 
 
-def main() -> int:
-    mode = sys.argv[1] if len(sys.argv) > 1 else "build"
+def regeneration_steps(content_date: str | None = None) -> list[list[str]]:
+    """Bind the content clock without changing the shared pipeline recipe."""
+    steps = [list(command) for command in REGEN_STEPS]
+    if content_date is None:
+        return steps
+    from _normalize_date_modified import content_date_argument
+
+    frozen_date = content_date_argument(content_date)
+    target = [PY, "_normalize_date_modified.py"]
+    matches = [command for command in steps if command == target]
+    if len(matches) != 1:
+        raise ValueError("expected exactly one content-date generation step")
+    matches[0].extend(["--content-date", frozen_date])
+    return steps
+
+
+def main(argv: Sequence[str] | None = None) -> int:
+    from _normalize_date_modified import content_date_argument
+
+    parser = argparse.ArgumentParser(description="Generate and validate the complete site.")
+    parser.add_argument("mode", nargs="?", default="build", choices=("regen", "check", "build"))
+    parser.add_argument("--content-date", type=content_date_argument,
+                        help="freeze the date for new or changed prose during generation")
+    args = parser.parse_args(argv)
+    if args.mode == "check" and args.content_date is not None:
+        parser.error("--content-date requires regen or build; check does not generate files")
+    mode = args.mode
     try:
         if mode == "regen":
-            run_steps("Regenerate generated site files", REGEN_STEPS)
+            run_steps("Regenerate generated site files", regeneration_steps(args.content_date))
         elif mode == "check":
             run_steps("Run quality checks", CHECK_STEPS)
         elif mode == "build":
-            run_steps("Regenerate generated site files", REGEN_STEPS)
+            run_steps("Regenerate generated site files", regeneration_steps(args.content_date))
             run_steps("Generate build artifacts", BUILD_GENERATED_STEPS)
             run_steps("Run quality checks", CHECK_STEPS)
             run_steps("Finalize and smoke-test build", POST_BUILD_STEPS)
-        else:
-            print("Usage: python _run_quality.py [regen|check|build]")
-            return 2
     except subprocess.CalledProcessError as exc:
         print(f"\n[FAIL] {label(exc.cmd)} exited with {exc.returncode}")
         return exc.returncode

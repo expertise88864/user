@@ -1,48 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Auto-bump JSON-LD `dateModified` when an article's content body
-actually changes between builds.
+"""Keep article update dates tied to changes in physician-authored text.
 
-Why: GSC reported `atopic-dermatitis-overview` (and likely others) in
-"Crawled — currently not indexed" status. The article had:
-  datePublished: 2026-05-03
-  dateModified:  2026-05-03   ← UNCHANGED for 17 days
-despite heavy SEO + schema updates over that period.
+The committed _content_dates.json ledger stores a hash of the headline,
+TL;DR and Chinese prose, and the date that content was first observed. A
+matching hash keeps its existing date. New or changed prose uses today's
+date, or an explicit --content-date YYYY-MM-DD for reproducible generation.
+An explicit date does not restamp unchanged articles or approve their text.
 
-Without a dateModified bump, Google's freshness signal stays cold,
-the article stays in the "crawled but not indexed" bucket, and the
-many internal improvements we've shipped don't trigger re-evaluation.
-
-Algorithm:
-  1. Extract each article's <article> body text (drop scripts / styles /
-     SVGs / JSON-LD / data-* attribute values — anything BUILD touches
-     should NOT count as content change).
-  2. SHA-256 of the cleaned text.
-  3. Compare to last-seen hash in .dn-content-hash.json.
-  4. If hash changed: bump dateModified in every MedicalWebPage /
-     MedicalScholarlyArticle JSON-LD block AND `article:modified_time`
-     OG meta on that page to today.
-  5. Persist new hash.
-
-The hash file is gitignored (operational state) but checked into Vercel
-build via _run_quality.py REGEN_STEPS so it persists across deploys.
-
-Wait — Vercel CI runs fresh each build, so the hash file WOULDN'T persist.
-For that, we either:
-  (a) commit the hash file (loses gitignore semantics but works)
-  (b) git mtime: use the last commit timestamp that touched the article
-      file as the canonical dateModified
-
-Option (b) is cleaner and matches reality. Switching to it:
-  - For each article, read the latest non-auto-regen git commit that
-    touched the file
-  - Use that ISO date as dateModified
-
-This avoids needing a hash sidecar entirely AND correctly reflects
-actual git history.
+If extraction is too short, retain the existing Git-history fallback, then
+use the selected date if no history is available. Update JSON-LD and Open
+Graph metadata, and the existing English mirror when the source changes.
+These dates describe content changes; they do not guarantee indexing,
+search rankings or more clicks.
 """
 from __future__ import annotations
 
+import argparse
 import hashlib
 import io
 import json
@@ -246,12 +220,25 @@ def update_article(path: Path, new_date: str) -> int:
     return n
 
 
-def main() -> int:
+def content_date_argument(value: str) -> str:
+    """Accept only a real calendar date in the public CLI's exact format."""
+    if not isinstance(value, str) or not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value):
+        raise argparse.ArgumentTypeError("content date must be YYYY-MM-DD")
+    try:
+        date.fromisoformat(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("content date must be a valid calendar date") from exc
+    return value
+
+
+def main(*, content_date: str | None = None) -> int:
+    # Validate before reading or writing the article tree, including callers
+    # that bypass the CLI parser. Keep main() compatible with existing users.
+    today = content_date_argument(content_date) if content_date is not None else date.today().isoformat()
     if not BLOG.exists():
         print("[date-modified] blog/ missing")
         return 0
 
-    today = date.today().isoformat()
     skip = {"index.html", "topics.html"}
     total_bumped = 0
     pages_changed = 0
@@ -278,7 +265,7 @@ def main() -> int:
                 last_touched = entry["date"]
             else:
                 # First sighting, or the prose actually changed. Either way
-                # today is when this text became what it is.
+                # use the generation's selected content date.
                 last_touched = today
                 if entry:
                     content_moved.append(fp.stem)
@@ -311,4 +298,7 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--content-date", type=content_date_argument,
+                        help="freeze the date for new or changed prose (YYYY-MM-DD)")
+    sys.exit(main(content_date=parser.parse_args().content_date))
