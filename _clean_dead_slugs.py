@@ -6,13 +6,13 @@ Targets:
   - blog/index.html, en/blog/index.html: <a class="article-list-item" href="/blog/$slug">…</a>
   - blog/topics.html, en/blog/topics.html: <li><a href="/blog/$slug">…</a></li>
 
-Slugs cleaned: atopic-dermatitis-comorbidity, eczema-myths.
-(atopic-dermatitis-topical and atopic-dermatitis-systemic were already merged
-in a previous round but their card residue lingers in topics.html — clean
-those too while we're here.)
+The historical candidates below are removed only when both article sources
+are absent. Restored articles keep their navigation links.
 """
-import re, sys, io
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+from pathlib import Path
+import re
+
+ROOT = Path(__file__).resolve().parent
 
 DEAD = ['atopic-dermatitis-comorbidity', 'eczema-myths',
         'atopic-dermatitis-topical', 'atopic-dermatitis-systemic']
@@ -35,11 +35,19 @@ def strip_li(html, slug):
     new = pat.sub('', html, count=1)
     return new, new != html
 
-def clean(path):
+def missing_slugs(root=ROOT):
+    """Do not treat a historical deletion list as current publishing state."""
+    root = Path(root)
+    return [slug for slug in DEAD
+            if not any((root / prefix / f'{slug}.html').is_file()
+                       for prefix in ('blog', 'en/blog'))]
+
+
+def clean(path, root=ROOT):
     with open(path, 'r', encoding='utf-8') as f:
         s = f.read()
     orig = s
-    for slug in DEAD:
+    for slug in missing_slugs(root):
         s, _ = strip_article_list_item(s, slug)
         s, _ = strip_li(s, slug)
     if s != orig:
@@ -48,6 +56,11 @@ def clean(path):
         return True
     return False
 
-for path in ['blog/index.html', 'en/blog/index.html', 'blog/topics.html', 'en/blog/topics.html']:
-    changed = clean(path)
-    print(f'  {path}: {"changed" if changed else "no change"}')
+def main():
+    for name in ['blog/index.html', 'en/blog/index.html', 'blog/topics.html', 'en/blog/topics.html']:
+        changed = clean(ROOT / name, ROOT)
+        print(f'  {name}: {"changed" if changed else "no change"}')
+
+
+if __name__ == '__main__':
+    main()

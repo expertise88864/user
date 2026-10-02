@@ -14,30 +14,41 @@ Setup once:
 Re-run after adding new images. Idempotent: skips already-converted files
 and HTML <img> already wrapped in <picture>.
 """
-import os, re, sys, io
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+import html as html_module
+from html.parser import HTMLParser
+import os
+from pathlib import Path
+from urllib.parse import unquote, urlsplit, urlunsplit
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
-try:
-    from PIL import Image
-    import pillow_avif  # noqa: F401  — registers AVIF support
-    HAS_AVIF = True
-except ImportError as e:
-    print(f'WARN: {e} — install with: pip install Pillow pillow-avif-plugin')
-    HAS_AVIF = False
+# Importing the HTML helper must not require codecs or change stdout.
+Image = None
+HAS_AVIF = False
+
+
+def load_image_backend():
+    global Image, HAS_AVIF
     try:
         from PIL import Image
     except ImportError:
-        print('Pillow missing — pip install Pillow')
-        sys.exit(1)
+        raise SystemExit('Pillow missing — pip install Pillow')
+    try:
+        import pillow_avif  # noqa: F401 — registers AVIF support
+        HAS_AVIF = True
+    except ImportError:
+        print('WARN: AVIF unavailable — install pillow-avif-plugin')
 
 WEBP_QUALITY = 82
 AVIF_QUALITY = 60
 SOURCE_EXTS = {'.jpg', '.jpeg', '.png'}
+SKIP_DIRS = {'.git', '.codex-review', 'node_modules', '__pycache__',
+             'astro-rewrite', '_bin', 'pagefind'}
 
 def convert_image(src_path):
     """Generate sibling .webp + .avif. Returns (webp_made, avif_made)."""
+    if Image is None:
+        load_image_backend()
     base, ext = os.path.splitext(src_path)
     webp_path = base + '.webp'
     avif_path = base + '.avif'
@@ -62,9 +73,8 @@ def convert_image(src_path):
 
 def find_images(root):
     out = []
-    for d, _, fs in os.walk(root):
-        if any(x in d for x in ['.git', 'node_modules', '__pycache__', 'astro-rewrite', '_bin', 'pagefind', '/en/']):
-            continue
+    for d, dirs, fs in os.walk(root):
+        dirs[:] = [name for name in dirs if name not in SKIP_DIRS and name != 'en']
         for f in fs:
             ext = os.path.splitext(f)[1].lower()
             if ext in SOURCE_EXTS:
@@ -72,41 +82,92 @@ def find_images(root):
     return out
 
 # ─── HTML rewriter: <img src=…> → <picture>... ───
-IMG_TAG_RE = re.compile(r'<img\s+([^>]*?)/?>', re.IGNORECASE)
-SRC_ATTR_RE = re.compile(r'\bsrc\s*=\s*"([^"]+\.(?:jpg|jpeg|png))"', re.IGNORECASE)
+class PictureRewriter(HTMLParser):
+    """Edit only original img spans; never serialize the surrounding document."""
+    VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link',
+            'meta', 'param', 'source', 'track', 'wbr'}
+    EXCLUDED = {'picture', 'script', 'style', 'template', 'noscript',
+                'textarea', 'title', 'svg', 'math'}
 
-def rewrite_html_imgs(html, image_set):
-    """Wrap <img src="…jpg"> in <picture> serving AVIF / WebP / original."""
-    def repl(m):
-        attrs = m.group(1)
-        # Skip if already wrapped or in picture
-        if 'data-no-picture' in attrs:
-            return m.group(0)
-        sm = SRC_ATTR_RE.search(attrs)
-        if not sm:
-            return m.group(0)
-        src = sm.group(1)
-        # Convert local-path src to fs path for existence check
-        fs_path = src.lstrip('/').replace('/', os.sep)
-        # Resolve relative to root
-        if not os.path.isabs(fs_path):
-            fs_path = os.path.join(ROOT, fs_path)
-        base, ext = os.path.splitext(src)
-        webp = base + '.webp'
-        avif = base + '.avif'
-        webp_fs = os.path.splitext(fs_path)[0] + '.webp'
-        avif_fs = os.path.splitext(fs_path)[0] + '.avif'
+    def __init__(self, source, image_set, html_path):
+        super().__init__(convert_charrefs=False)
+        self.source = source
+        self.stack = []
+        self.edits = []
+        self.root = Path(ROOT).resolve()
+        self.directory = Path(html_path).resolve().parent if html_path else self.root
+        self.images = {Path(p).resolve() for p in image_set}
+        self.line_starts = [0]
+        for i, char in enumerate(source):
+            if char == '\n':
+                self.line_starts.append(i + 1)
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'img' and not self.EXCLUDED.intersection(self.stack):
+            self.wrap_image(attrs)
+        if tag not in self.VOID:
+            self.stack.append(tag)
+
+    def handle_startendtag(self, tag, attrs):
+        if tag == 'img' and not self.EXCLUDED.intersection(self.stack):
+            self.wrap_image(attrs)
+
+    def handle_endtag(self, tag):
+        if tag in self.stack:
+            index = len(self.stack) - 1 - self.stack[::-1].index(tag)
+            del self.stack[index:]
+
+    def wrap_image(self, attrs):
+        values = dict(attrs)
+        # Preserve explicit opt-outs and existing responsive-image choices.
+        if any(key in values for key in ('data-no-picture', 'srcset', 'sizes')):
+            return
+        src = values.get('src')
+        if not src or sum(key == 'src' for key, _ in attrs) != 1:
+            return
+        try:
+            parsed = urlsplit(src)
+        except ValueError:
+            return
+        if (parsed.scheme or parsed.netloc or '\\' in parsed.path
+                or Path(parsed.path).suffix.lower() not in SOURCE_EXTS):
+            return
+        decoded = unquote(parsed.path)
+        if '\\' in decoded or Path(decoded).suffix.lower() not in SOURCE_EXTS:
+            return
+        try:
+            fs_path = ((self.root / decoded.lstrip('/')) if decoded.startswith('/')
+                       else (self.directory / decoded)).resolve()
+        except (ValueError, OSError, RuntimeError):
+            return
+        if not fs_path.is_relative_to(self.root) or fs_path not in self.images:
+            return
         sources = []
-        if os.path.exists(avif_fs):
-            sources.append(f'<source srcset="{avif}" type="image/avif">')
-        if os.path.exists(webp_fs):
-            sources.append(f'<source srcset="{webp}" type="image/webp">')
+        for suffix, mime in (('.avif', 'image/avif'), ('.webp', 'image/webp')):
+            if fs_path.with_suffix(suffix).is_file():
+                path = os.path.splitext(parsed.path)[0] + suffix
+                url = urlunsplit((parsed.scheme, parsed.netloc, path, parsed.query, parsed.fragment))
+                sources.append(f'<source srcset="{html_module.escape(url, quote=True)}" type="{mime}">')
         if not sources:
-            return m.group(0)
-        return '<picture>' + ''.join(sources) + '<img ' + attrs + '></picture>'
-    return IMG_TAG_RE.sub(repl, html)
+            return
+        line, column = self.getpos()
+        start = self.line_starts[line - 1] + column
+        original = self.get_starttag_text()
+        self.edits.append((start, start + len(original),
+                           '<picture>' + ''.join(sources) + original + '</picture>'))
+
+
+def rewrite_html_imgs(html, image_set, html_path=None):
+    """Wrap eligible local images once, preserving all existing HTML bytes."""
+    parser = PictureRewriter(html, image_set, html_path)
+    parser.feed(html)
+    parser.close()
+    for start, end, replacement in reversed(parser.edits):
+        html = html[:start] + replacement + html[end:]
+    return html
 
 def main():
+    load_image_backend()
     print('=== Step 1: convert images ===')
     imgs = find_images(ROOT)
     print(f'Found {len(imgs)} JPG/PNG files')
@@ -123,16 +184,15 @@ def main():
     print('\n=== Step 2: rewrite <img> in HTML to <picture> ===')
     image_set = set(imgs)
     n_html = 0
-    for d, _, fs in os.walk(ROOT):
-        if any(x in d for x in ['.git', 'node_modules', '__pycache__', 'astro-rewrite', '_bin']):
-            continue
+    for d, dirs, fs in os.walk(ROOT):
+        dirs[:] = [name for name in dirs if name not in SKIP_DIRS]
         for f in fs:
             if not f.endswith('.html'):
                 continue
             p = os.path.join(d, f)
             with open(p, 'r', encoding='utf-8') as fp:
                 src = fp.read()
-            new = rewrite_html_imgs(src, image_set)
+            new = rewrite_html_imgs(src, image_set, p)
             if new != src:
                 with open(p, 'w', encoding='utf-8') as fp:
                     fp.write(new)
