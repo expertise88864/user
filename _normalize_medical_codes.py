@@ -403,9 +403,22 @@ def update_article_about(html: str, conditions: list[dict],
         close_ch = ']' if open_ch == '[' else '}'
         depth = 1
         pos = start + 1
+        in_string = False
+        escaped = False
         while depth > 0 and pos < len(html):
             ch = html[pos]
-            if ch == open_ch:
+            # Braces/brackets inside JSON strings are literal text. Escaped
+            # quotes and backslashes must not end the string prematurely.
+            if in_string:
+                if escaped:
+                    escaped = False
+                elif ch == '\\':
+                    escaped = True
+                elif ch == '"':
+                    in_string = False
+            elif ch == '"':
+                in_string = True
+            elif ch == open_ch:
                 depth += 1
             elif ch == close_ch:
                 depth -= 1

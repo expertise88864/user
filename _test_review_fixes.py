@@ -401,6 +401,46 @@ class EnglishReturnLinkTests(unittest.TestCase):
 
 
 class MedicalEntityConsistencyTests(unittest.TestCase):
+    def test_about_replacement_handles_quoted_delimiters_and_escaped_quotes(self):
+        from _normalize_medical_codes import update_article_about
+        from _json_html import script_json
+        replacement = {'@type': 'Thing', 'name': 'Nonmedical fixture'}
+        for value in ('Example } value', 'Example { value', 'Example ] value',
+                      'Example [ value', 'Quote " then } and ]',
+                      'Backslash \\ then " [ and {', 'Final backslash \\',
+                      'Nested-looking [{"key": "]}"}]'):
+            for about in ({'name': value}, [{'name': value}],
+                          [{'name': value, 'nested': {'items': [1, 2]}}]):
+                with self.subTest(value=value, about=about):
+                    original = {'@type': 'MedicalWebPage', 'about': about,
+                                'description': 'Keep all other values'}
+                    source = '<script type="application/ld+json">' + script_json(original) + '</script>'
+                    actual, changed = update_article_about(source, [replacement], [])
+                    self.assertTrue(changed)
+                    decoded = json.loads(actual.split('>', 1)[1].rsplit('<', 1)[0])
+                    self.assertEqual(decoded, {**original, 'about': replacement})
+                    self.assertEqual(update_article_about(actual, [replacement], []), (actual, False))
+
+    def test_about_replacement_preserves_surrounding_blocks_and_literal_values(self):
+        from _normalize_medical_codes import update_article_about
+        from _json_html import script_json
+        first = {'@type': 'MedicalWebPage', 'about': {'name': 'Original } text'},
+                 'description': 'Literal "about":{ and quoted ] } stay intact'}
+        second = {'@type': 'Article', 'about': [{'name': 'Original ] text'}],
+                  'headline': 'Unchanged headline'}
+        prefix = '<html><head><!-- unchanged -->'
+        divider = '</script><meta name="fixture" content="keep"><script type="application/ld+json">'
+        suffix = '</script></head><body><p>Unchanged visible prose &amp; markup.</p></body></html>'
+        source = prefix + '<script type="application/ld+json">' + script_json(first) + divider + script_json(second) + suffix
+        things = [{'@type': 'Thing', 'name': '</script> ] } literal'},
+                  {'@type': 'Thing', 'name': 'Second nonmedical fixture'}]
+        actual, changed = update_article_about(source, things, [])
+        self.assertTrue(changed)
+        expected = prefix + '<script type="application/ld+json">' + script_json({**first, 'about': things}) + divider + script_json({**second, 'about': things}) + suffix
+        self.assertEqual(actual, expected)
+        self.assertEqual(actual.count('</script>'), 2)
+        self.assertEqual(update_article_about(actual, things, []), (actual, False))
+
     def test_condition_identity_links_use_verified_matching_entities(self):
         # Primary Wikidata identity audit, 2026-10-02: e.g. Q864350 is a
         # ropeway, Q188601 a bird, Q83320 nitric acid. A syntactically valid
