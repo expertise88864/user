@@ -16,6 +16,7 @@ from unittest.mock import patch
 
 import _normalize_date_modified as normalizer
 import _run_quality as quality
+from _check_deployment import check_content_date_order
 
 
 def article(text: str = "這是純格式測試文字，沒有醫療建議。" * 40) -> str:
@@ -192,6 +193,52 @@ class GenerationClockTests(unittest.TestCase):
         with patch.object(quality, "run_steps", side_effect=subprocess.CalledProcessError(7, ["fixture"])), \
                 contextlib.redirect_stdout(io.StringIO()):
             self.assertEqual(quality.main(["check"]), 7)
+
+    def recipe_source(self, scripts):
+        return 'REGEN_STEPS = ' + repr([["python", script] for script in scripts]).replace("'python'", "PY")
+
+    def test_deployment_audit_reads_recipe_not_helper_strings(self):
+        source = self.recipe_source(["_normalize_date_modified.py", "_gen_en_pages.py",
+                                     "_gen_feeds.py", "_gen_llms_full.py"])
+        source += '\ntarget = [PY, "_normalize_date_modified.py"]\n'
+        self.assertEqual(check_content_date_order(source), [])
+        self.assertEqual(check_content_date_order(Path(quality.__file__).read_text(encoding="utf-8")), [])
+
+    def test_deployment_audit_still_rejects_missing_and_duplicate_actual_steps(self):
+        dependencies = ["_gen_en_pages.py", "_gen_feeds.py", "_gen_llms_full.py"]
+        for scripts in (dependencies, ["_normalize_date_modified.py"] * 2 + dependencies):
+            source = self.recipe_source(scripts) + '\nfake = [PY, "_normalize_date_modified.py"]\n'
+            self.assertTrue(check_content_date_order(source))
+
+    def test_deployment_audit_still_rejects_each_reordered_or_missing_dependency(self):
+        dependencies = ["_gen_en_pages.py", "_gen_feeds.py", "_gen_llms_full.py"]
+        for dependent in dependencies:
+            with self.subTest(dependent=dependent):
+                others = [script for script in dependencies if script != dependent]
+                reordered = self.recipe_source([dependent, "_normalize_date_modified.py"] + others)
+                missing = self.recipe_source(["_normalize_date_modified.py"] + others)
+                self.assertTrue(check_content_date_order(reordered))
+                self.assertTrue(check_content_date_order(missing))
+
+    def test_deployment_audit_rejects_ambiguous_or_computed_recipes_without_execution(self):
+        for source in ('broken syntax!', 'REGEN_STEPS = make_recipe()', 'REGEN_STEPS = [[PY, script]]',
+                       'REGEN_STEPS = []\nREGEN_STEPS = []', 'REGEN_STEPS += []', 'no_recipe = []'):
+            with self.subTest(source=source):
+                self.assertTrue(check_content_date_order(source))
+
+    def test_deployment_audit_supports_the_annotated_literal_recipe(self):
+        source = self.recipe_source(["_normalize_date_modified.py", "_gen_en_pages.py",
+                                     "_gen_feeds.py", "_gen_llms_full.py"])
+        source = source.replace('REGEN_STEPS =', 'REGEN_STEPS: list[list[str]] =')
+        self.assertEqual(check_content_date_order(source), [])
+
+    def test_deployment_audit_rejects_wrong_executable_or_unreviewed_arguments(self):
+        source = self.recipe_source(["_normalize_date_modified.py", "_gen_en_pages.py",
+                                     "_gen_feeds.py", "_gen_llms_full.py"])
+        for bad in (source.replace("[PY, '_normalize_date_modified.py']", "['echo', '_normalize_date_modified.py']"),
+                    source.replace("[PY, '_gen_en_pages.py']", "[OTHER, '_gen_en_pages.py']"),
+                    source.replace("[PY, '_normalize_date_modified.py']", "[PY, '_normalize_date_modified.py', '--unknown']")):
+            self.assertTrue(check_content_date_order(bad))
 
 
 if __name__ == "__main__":

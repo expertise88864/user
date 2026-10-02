@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import ast
 import json
 import sys
 from pathlib import Path
@@ -8,6 +9,47 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 from _html_scan import iter_inline_scripts, selftest as _html_scan_selftest  # noqa: E402
+
+
+def check_content_date_order(runner: str) -> list[str]:
+    """Audit the actual literal regeneration recipe, without executing code."""
+    try:
+        definitions = []
+        for node in ast.parse(runner).body:
+            targets = node.targets if isinstance(node, ast.Assign) else (
+                [node.target] if isinstance(node, (ast.AnnAssign, ast.AugAssign)) else [])
+            if any(isinstance(target, ast.Name) and target.id == "REGEN_STEPS" for target in targets):
+                definitions.append(node)
+        if len(definitions) != 1 or isinstance(definitions[0], ast.AugAssign):
+            raise ValueError("expected one literal REGEN_STEPS definition")
+        recipe = definitions[0].value
+        if not isinstance(recipe, ast.List):
+            raise ValueError("REGEN_STEPS must be a literal command list")
+        scripts = []
+        required_python_scripts = {"_normalize_date_modified.py", "_gen_en_pages.py",
+                                   "_gen_feeds.py", "_gen_llms_full.py"}
+        for command in recipe.elts:
+            if (not isinstance(command, ast.List) or len(command.elts) < 2 or
+                    not isinstance(command.elts[1], ast.Constant) or
+                    not isinstance(command.elts[1].value, str)):
+                raise ValueError("regeneration commands must identify their script literally")
+            if command.elts[1].value in required_python_scripts and (
+                    len(command.elts) != 2 or not isinstance(command.elts[0], ast.Name) or
+                    command.elts[0].id != "PY"):
+                raise ValueError("content-date generation commands must use the reviewed PY recipe")
+            scripts.append(command.elts[1].value)
+    except (SyntaxError, ValueError) as exc:
+        return [f"_run_quality.py: cannot verify regeneration recipe ({exc})"]
+
+    date_script = "_normalize_date_modified.py"
+    if scripts.count(date_script) != 1:
+        return ["_run_quality.py: dateModified normalizer should appear exactly once"]
+    errors = []
+    for dependent in ("_gen_en_pages.py", "_gen_feeds.py", "_gen_llms_full.py"):
+        if dependent not in scripts or scripts.index(date_script) > scripts.index(dependent):
+            errors.append(f"_run_quality.py: {date_script} must run before {dependent} "
+                          "to keep generated freshness metadata consistent")
+    return errors
 
 
 def header_map(entry: dict) -> dict[str, str]:
@@ -345,21 +387,7 @@ def main() -> int:
             errors.append("quality.yml: CI must not publish unchecked commits or suppress checks")
 
     runner = (ROOT / "_run_quality.py").read_text(encoding="utf-8", errors="replace")
-    date_step = '[PY, "_normalize_date_modified.py"]'
-    if runner.count(date_step) != 1:
-        errors.append("_run_quality.py: dateModified normalizer should appear exactly once")
-    else:
-        date_index = runner.index(date_step)
-        for dependent_step in (
-            '[PY, "_gen_en_pages.py"]',
-            '[PY, "_gen_feeds.py"]',
-            '[PY, "_gen_llms_full.py"]',
-        ):
-            if dependent_step not in runner or date_index > runner.index(dependent_step):
-                errors.append(
-                    f"_run_quality.py: {date_step} must run before {dependent_step} "
-                    "to keep generated freshness metadata consistent"
-                )
+    errors.extend(check_content_date_order(runner))
 
     graph_generator = (ROOT / "_gen_site_graph.py").read_text(encoding="utf-8", errors="replace")
     if "return sorted(edges)" not in graph_generator:
