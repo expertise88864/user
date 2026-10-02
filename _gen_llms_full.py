@@ -226,7 +226,7 @@ def main() -> int:
         f"# ChenDermatologist · 陳翊嘉醫師 · 皮膚科衛教筆記\n"
         f"\n"
         f"Last updated {stamp} · {len(catalog)} articles · "
-        f"by Dr. Chen Yi-Jia (R2 Dermatology Resident, Taiwan)\n"
+        f"by Dr. Chen Yi-Jia (R3 Dermatology Resident, Taiwan)\n"
         f"\n"
         f"Bilingual zh-Hant / en. ZH source is authoritative; EN mirror is "
         f"machine-translated and provided for accessibility only.\n"

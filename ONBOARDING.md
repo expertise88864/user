@@ -10,7 +10,7 @@
 ## 1. 站台與身份
 
 - **網址**：[chendermatologist.com](https://chendermatologist.com)
-- **作者**：陳翊嘉醫師（KMU medicine → KMUH PGY → CMUH 皮膚科 R2）
+- **作者**：陳翊嘉醫師（KMU medicine → KMUH PGY → CMUH 皮膚科 R3）
 - **定位**：皮膚科醫師個人衛教 + 學習筆記網站（**不是**醫院制式衛教、**不是**診所廣告頁）
 - **雙語**：繁體中文主、英文鏡像（zh-Hant-TW / en）
 - **雙軌**：

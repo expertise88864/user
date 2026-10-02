@@ -1,6 +1,6 @@
 # DermNotes · 皮膚科筆記與衛教
 
-A Taiwanese dermatology R2 resident's bilingual study-notes & patient-education site.
+A Taiwanese dermatology R3 resident's bilingual study-notes & patient-education site.
 Static HTML + Tailwind CDN, no build step.
 
 > Domain: **chendermatologist.com**
