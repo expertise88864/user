@@ -11,6 +11,7 @@ import re
 import sys
 from pathlib import Path
 from _json_html import script_json
+from _site_html import site_html_files
 
 
 # CODE_REVIEW — UTF-8 console on Windows (cp950 default crashes on CJK).
@@ -599,10 +600,8 @@ def main() -> None:
     include_en = "--include-en" in sys.argv
     targets = [
         path
-        for path in sorted(ROOT.rglob("*.html"))
-        if not any(part in {".git", "node_modules"} for part in path.relative_to(ROOT).parts)
-        and (include_en or path.relative_to(ROOT).parts[0] != "en")
-        and path.name not in {"404.html", "offline.html", "admin.html", "reset-sw.html"}
+        for path in site_html_files(ROOT, include_en=include_en)
+        if path.name not in {"404.html", "offline.html", "admin.html", "reset-sw.html"}
     ]
     n = 0
     for path in targets:

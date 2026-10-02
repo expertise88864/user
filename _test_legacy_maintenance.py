@@ -22,6 +22,96 @@ def load_script(name):
     return module
 
 
+class AutomaticHTMLScopeTests(unittest.TestCase):
+    def setUp(self):
+        self.css=load_script('_normalize_css_links')
+        self.schema=load_script('_normalize_schema')
+        self.temp=tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name)
+
+    def write(self,name,body):
+        p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True)
+        p.write_text(body,encoding='utf8');return p
+
+    def test_css_batch_leaves_private_generated_nested_and_backup_html_bytes_intact(self):
+        body='<head><script src="/assets/inline/nonmedical-ui.js?v=1"></script></head>'
+        public=['index.html','blog/new.html','admin/edit.html','en/index.html','en/blog/new.html']
+        excluded=['.codex-review/evidence.html','node_modules/package/page.html','pagefind/page.html',
+                  'backups/previous.html','blog/backup/previous.html','en/blog/backup/previous.html',
+                  '.venv/lib/page.html','fixtures/previous.html','assets/example.html']
+        for name in public+excluded:self.write(name,body)
+        originals={n:(self.root/n).read_bytes() for n in excluded}
+        with patch.object(self.css,'ROOT',str(self.root)),redirect_stdout(io.StringIO()):
+            self.css.main()
+            self.assertEqual({Path(p).relative_to(self.root).as_posix() for p in self.css.html_files()},set(public))
+            once={n:(self.root/n).read_bytes() for n in public}
+            self.css.main()
+        self.assertEqual({n:(self.root/n).read_bytes() for n in excluded},originals)
+        self.assertTrue(all(b'v=1"' not in value for value in once.values()))
+        self.assertEqual({n:(self.root/n).read_bytes() for n in public},once)
+
+    def test_schema_batch_respects_include_en_and_existing_utility_exclusions(self):
+        body='<head><title>Nonmedical UI fixture</title><script type="application/ld+json">{"@type":"MedicalWebPage","name":"Old fixture"}</script></head>'
+        public=['index.html','blog/new.html','admin/edit.html']
+        english=['en/index.html','en/blog/new.html']
+        excluded=['404.html','offline.html','admin.html','reset-sw.html','en/reset-sw.html',
+                  '.codex-review/evidence.html','blog/backup/previous.html','fixtures/previous.html',
+                  '.git/private.html','node_modules/page.html','pagefind/page.html']
+        for name in public+english+excluded:self.write(name,body)
+        originals={n:(self.root/n).read_bytes() for n in english+excluded}
+        with patch.object(self.schema,'ROOT',self.root),patch.object(sys,'argv',['_normalize_schema.py']),redirect_stdout(io.StringIO()):
+            self.schema.main()
+        self.assertEqual({n:(self.root/n).read_bytes() for n in english+excluded},originals)
+        self.assertTrue(all((self.root/n).read_bytes()!=body.encode() for n in public))
+        with patch.object(self.schema,'ROOT',self.root),patch.object(sys,'argv',['_normalize_schema.py','--include-en']),redirect_stdout(io.StringIO()):
+            self.schema.main()
+            once={n:(self.root/n).read_bytes() for n in public+english}
+            self.schema.main()
+        self.assertTrue(all((self.root/n).read_bytes()!=body.encode() for n in english))
+        self.assertEqual({n:(self.root/n).read_bytes() for n in excluded},{n:originals[n] for n in excluded})
+        self.assertEqual({n:(self.root/n).read_bytes() for n in public+english},once)
+
+    def test_both_batch_writers_preflight_all_html_before_linked_source_failure(self):
+        from _site_html import site_html_files
+        css_body='<head><script src="/assets/inline/nonmedical-ui.js?v=1"></script></head>'
+        schema_body='<head><script type="application/ld+json">{"@type":"MedicalWebPage","name":"Old nonmedical fixture"}</script></head>'
+        for script,body,root_value in [(self.css,css_body,str(self.root)),(self.schema,schema_body,self.root)]:
+            for kind in ['file','directory']:
+                with self.subTest(writer=script.__name__,kind=kind):
+                    first=self.write('index.html',body)
+                    linked=self.write('blog/zz.html',body)
+                    blocked=linked if kind=='file' else linked.parent
+                    with patch('_site_html._linked',side_effect=lambda p:p==blocked),patch.object(script,'ROOT',root_value),patch.object(sys,'argv',[script.__name__]),redirect_stdout(io.StringIO()):
+                        with self.assertRaisesRegex(ValueError,'[Ll]inked|ordinary file'):
+                            script.main()
+                    self.assertEqual(first.read_bytes(),body.encode())
+                    self.assertEqual(linked.read_bytes(),body.encode())
+        self.assertEqual(site_html_files(self.root),sorted(site_html_files(self.root),key=lambda p:p.relative_to(self.root).as_posix()))
+
+    def test_shared_inventory_handles_optional_en_and_rejects_nonfile_html(self):
+        from _site_html import site_html_files
+        self.write('blog/new.html','Nonmedical UI')
+        self.write('en/blog/new.html','Nonmedical UI')
+        self.assertEqual([p.relative_to(self.root).as_posix() for p in site_html_files(self.root,include_en=False)],['blog/new.html'])
+        self.assertEqual([p.relative_to(self.root).as_posix() for p in site_html_files(self.root)],['blog/new.html','en/blog/new.html'])
+        (self.root/'blog/not-a-file.html').mkdir()
+        with self.assertRaisesRegex(ValueError,'ordinary file'):
+            site_html_files(self.root)
+        with self.assertRaisesRegex(ValueError,'not a directory'):
+            site_html_files(self.root/'blog/new.html')
+
+    def test_junction_detector_and_all_tracked_deployed_html_coverage(self):
+        from _site_html import _linked,site_html_files
+        p=self.write('blog/new.html','Nonmedical UI')
+        with patch.object(Path,'is_junction',return_value=True,create=True):
+            self.assertTrue(_linked(p))
+        tracked=set(subprocess.check_output(['git','ls-files','*.html'],cwd=ROOT).decode('utf8').splitlines())
+        seen={p.relative_to(ROOT).as_posix() for p in site_html_files(ROOT)}
+        self.assertTrue(tracked)
+        self.assertEqual(seen,tracked)
+
+
 class MaintenanceImportTests(unittest.TestCase):
     def test_import_does_not_touch_navigation_stdout_or_load_codecs(self):
         with tempfile.TemporaryDirectory() as directory:

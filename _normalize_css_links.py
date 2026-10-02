@@ -9,6 +9,7 @@ import re
 import html
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from _html_scan import iter_tags, tag_name, attributes, blank_script_style, mask_inert_regions
+from _site_html import site_html_files
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -90,13 +91,7 @@ INLINE_SCRIPT_SRC_RE = re.compile(r'(/assets/inline/[a-z0-9-]+\.js)(?:\?v=\d+)?'
 
 
 def html_files() -> list[str]:
-    files: list[str] = []
-    for dirpath, dirnames, filenames in os.walk(ROOT):
-        dirnames[:] = [d for d in dirnames if d not in {'.git', 'node_modules'}]
-        for filename in filenames:
-            if filename.endswith('.html'):
-                files.append(os.path.join(dirpath, filename))
-    return files
+    return [str(path) for path in site_html_files(ROOT)]
 
 
 def normalize_file(path: str) -> bool:
