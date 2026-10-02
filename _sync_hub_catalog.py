@@ -10,6 +10,7 @@ import argparse
 import html
 from html.parser import HTMLParser
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -81,9 +82,14 @@ const match = source.match(/DN\\.ARTICLES\\s*=\\s*(\\[[\\s\\S]*?\\]);/);
 if (!match) throw Error('Missing DN.ARTICLES');
 process.stdout.write(JSON.stringify(vm.runInNewContext('(' + match[1] + ')', {}, {timeout: 1000})));
 """
+    # The reader needs only the system toolchain and locale. Inherited Node
+    # preloads can execute before our VM/script, including early CMS planning
+    # that runs before the disposable rebuild's separate environment exists.
+    allowed = {'PATH', 'PATHEXT', 'SYSTEMROOT', 'WINDIR', 'COMSPEC', 'LANG', 'LC_ALL'}
+    env = {key.upper(): value for key, value in os.environ.items() if key.upper() in allowed}
     result = subprocess.run(
         ["node", "-e", script, str(root / "blog/blog-shared.js")],
-        check=True, capture_output=True, encoding="utf-8", timeout=10,
+        check=True, capture_output=True, encoding="utf-8", timeout=10, env=env,
     )
     catalog = json.loads(result.stdout)
     if not isinstance(catalog, list) or not catalog:

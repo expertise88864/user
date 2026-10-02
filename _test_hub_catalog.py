@@ -1,7 +1,10 @@
 """Regression tests for raw-HTML article discovery and draft boundaries."""
 import tempfile
+import json
+import os
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 
 from _sync_hub_catalog import CardList, load_catalog, load_overrides, public_catalog, render_card, sync_card, sync_source
 
@@ -10,6 +13,23 @@ class HubCatalogTests(unittest.TestCase):
     def setUp(self):
         self.first = dict(slug="first", title="原有文章", title_en="Reader's guide", cat="rx", date="2026-05-01")
         self.second = dict(slug="second", title="新增文章", title_en='A & B "guide"', cat="myth", date="2026-05-02")
+
+    def test_catalog_reader_does_not_run_inherited_node_preloads(self):
+        with tempfile.TemporaryDirectory(prefix='catalog-node-boundary-') as temporary:
+            root = Path(temporary)
+            (root / 'blog').mkdir()
+            (root / 'blog/blog-shared.js').write_text(
+                'DN.ARTICLES = ' + json.dumps([self.first]) + ';', encoding='utf8')
+            marker = root / 'preload-executed.txt'
+            preload = root / 'preload.cjs'
+            preload.write_text("require('node:fs').writeFileSync(" + json.dumps(str(marker)) +
+                               ", 'Harmless test marker');", encoding='utf8')
+            options = '--require ' + json.dumps(str(preload))
+            with patch.dict(os.environ, {'NODE_OPTIONS': options, 'NODE_PATH': str(root)}):
+                self.assertEqual(load_catalog(root), [self.first])
+                self.assertEqual(os.environ['NODE_OPTIONS'], options)
+                self.assertEqual(os.environ['NODE_PATH'], str(root))
+            self.assertFalse(marker.exists())
 
     def test_catalogue_plain_text_stays_marked_for_language_switches(self):
         from html.parser import HTMLParser

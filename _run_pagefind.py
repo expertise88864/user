@@ -154,6 +154,63 @@ def indexable_glob(root: Path) -> str:
     return paths[0] if len(paths) == 1 else '{' + ','.join(paths) + '}'
 
 
+def canonicalize_entry(directory: Path) -> None:
+    """Make the pinned native tool's unordered language map reproducible.
+
+    Pagefind 1.5.2 serializes languages from a Rust HashMap. Preserve every JSON
+    value, array order and index hash; only object key order/whitespace changes.
+    The patient archive still compares EVERY final file's exact raw bytes.
+    """
+    path = directory / 'pagefind-entry.json'
+    info = path.lstat()
+    reparse = getattr(stat, 'FILE_ATTRIBUTE_REPARSE_POINT', 0x400)
+    if (not stat.S_ISREG(info.st_mode) or info.st_nlink != 1 or
+            getattr(info, 'st_file_attributes', 0) & reparse or
+            path.resolve() != path or not 0 < info.st_size <= 1_500_000):
+        raise ValueError('Pagefind entry must be a bounded ordinary local file')
+
+    def identity(value):
+        clock = value.st_birthtime_ns if os.name == 'nt' else value.st_ctime_ns
+        return value.st_dev, value.st_ino, value.st_size, value.st_mtime_ns, clock
+
+    def unique_object(pairs):
+        value = {}
+        for key, item in pairs:
+            if key in value:
+                raise ValueError('Duplicate Pagefind entry key')
+            value[key] = item
+        return value
+
+    def reject_constant(value):
+        raise ValueError('Non-finite Pagefind entry value: ' + value)
+
+    with path.open('r+b') as stream:
+        if identity(os.fstat(stream.fileno())) != identity(info):
+            raise ValueError('Pagefind entry changed while opening')
+        raw = stream.read(1_500_001)
+        if (len(raw) != info.st_size or identity(os.fstat(stream.fileno())) != identity(info) or
+                identity(path.lstat()) != identity(info)):
+            raise ValueError('Pagefind entry changed while reading')
+        value = json.loads(raw, object_pairs_hook=unique_object, parse_constant=reject_constant)
+        if (not isinstance(value, dict) or value.get('version') != PAGEFIND_VERSION or
+                not isinstance(value.get('languages'), dict) or not value['languages'] or
+                not isinstance(value.get('include_characters'), list)):
+            raise ValueError('Pagefind entry differs from the pinned metadata contract')
+        canonical = (json.dumps(value, ensure_ascii=False, sort_keys=True,
+                                separators=(',', ':'), allow_nan=False) + '\n').encode('utf8')
+        if raw == canonical:
+            return
+        # Keep the validated open file: do not reopen a possibly replaced path.
+        stream.seek(0)
+        stream.write(canonical)
+        stream.truncate()
+        stream.flush()
+        written = os.fstat(stream.fileno())
+        if (written.st_size != len(canonical) or not stat.S_ISREG(written.st_mode) or
+                written.st_nlink != 1 or identity(path.lstat()) != identity(written)):
+            raise ValueError('Pagefind entry changed during normalization')
+
+
 def main() -> int:
     # Never reuse an existing directory: it may contain fragments of private
     # files indexed by an older, broader crawl. Only this generated child is removed.
@@ -201,6 +258,7 @@ def main() -> int:
     if result.returncode != 0:
         print(f"[pagefind] exited with code {result.returncode} (build failed)")
         return 1
+    canonicalize_entry(PAGEFIND_DIR)
     return 0
 
 

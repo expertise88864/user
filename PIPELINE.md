@@ -37,6 +37,23 @@ ZIP 的檔案排序與時間戳固定，同一份來源與搜尋輸出會得到�
 `record` 與 `verify` 仍只核對內容快照，所有 generation／content／CI／published
 旗標維持 false。要另做完整輸出重建，使用
 `python _cms_patient_package.py rebuild <封存.zip> --pipeline-head <目前可信 HEAD 的完整 SHA> --content-date YYYY-MM-DD`。
+
+`_prepare_patient_review.py` 將「原稿申請」接到完整生成審閱包。指定可信 main、
+不可變申請 SHA 與固定內容日期，在乾淨的隔離 checkout 執行生成及第二次完整
+重播；原工作區、遠端 refs 與原稿保持不動。輸出目錄必須是系統暫存區內尚未存在的
+外部目錄，包含全部 Git／Pagefind 原始輸出、manifest、source／generated Git
+bundle 與摘要報告。bundle 不夾帶原稿分支的其他檔案；使用前須另以唯讀傳輸取得
+同一個、仍有效的原稿申請物件。此流程尚未接入雲端自動工作流。
+
+執行入口：`python _prepare_patient_review.py --root <乾淨隔離 checkout> --output <新系統暫存目錄> --request-head <完整申請 SHA> --file blog/<slug>.html --expected-main <完整 main SHA> --content-date YYYY-MM-DD`。
+入口腳本必須位於該 `--root` checkout，HEAD 與所有 helper 原始碼均須匹配指定 main。
+先驗證乾淨 checkout 與 Git blob，再從已核對的原始碼載入 helper，忽略舊 `.pyc`
+及其他 checkout 的已載入模組。輸出路徑可正常化，但父目錄不得是 symlink／junction。
+Pagefind 1.5.2 的入口 JSON 以固定物件鍵順序生成；保留語言、雜湊、頁數與陣列順序。
+這避免原生工具的 HashMap 序列化順序漂移；審閱包仍逐檔比較全部原始位元組。
+`generationVerified` 只表示兩次完整生成結果一致；報告仍標示等待生成內容核可，
+不核可英文或新增摘要、不通過 CI，也不發布。後續作者核可 UI／API、完整內容
+核可紀錄、Python／Node 發布門檻及實際作者雲端試用仍須完成。
 日期必須與原始生成時相同；pipeline SHA 由操作者明確指定，不從封存自動取信。
 重建只在系統暫存目錄執行該 SHA 的可信程式：先獨立重建原草稿與目錄、核對完整源碼樹，
 再以 `npm ci` 安裝 lockfile 中的相依（停用安裝腳本）並執行現有生成步驟。

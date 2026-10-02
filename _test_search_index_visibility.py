@@ -1,5 +1,6 @@
 """Full-text search respects author visibility and inert article fragments."""
 import json
+import os
 from pathlib import Path
 import subprocess
 import tempfile
@@ -7,6 +8,7 @@ import unittest
 from unittest.mock import patch
 
 import _gen_search_index as search
+import _run_pagefind as pagefind
 from _article_visibility import unpublish_plan
 
 
@@ -107,6 +109,54 @@ class SearchVisibilityTests(unittest.TestCase):
         p = self.root / 'blog/companion.html'
         p.write_text('<html><head><meta name="robots" content="index,follow"></head><body><h1>Clinical companion</h1></body></html>', encoding='utf-8')
         self.assertEqual([item['slug'] for item in self.generate()], ['companion', 'hidden', 'visible'])
+
+
+class PagefindEntryTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory(prefix='pagefind-entry-')
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name).resolve()
+        self.path = self.root / 'pagefind-entry.json'
+        self.entry = {'version': '1.5.2', 'languages': {
+            'zh-hant-tw': {'hash': 'zh-hant-tw_5649cd189228c9597b', 'wasm': None, 'page_count': 63},
+            'en': {'hash': 'en_937ac1ac7e', 'wasm': 'en', 'page_count': 62}},
+            'include_characters': ['_', '\u203f', '\u2040', '\uff3f']}
+
+    def test_different_native_language_orders_produce_identical_bytes_and_values(self):
+        self.path.write_text(json.dumps(self.entry, ensure_ascii=False), encoding='utf8')
+        pagefind.canonicalize_entry(self.root)
+        first = self.path.read_bytes()
+        self.entry['languages'] = dict(reversed(list(self.entry['languages'].items())))
+        self.path.write_text(json.dumps(self.entry, ensure_ascii=False), encoding='utf8')
+        pagefind.canonicalize_entry(self.root)
+        self.assertEqual(self.path.read_bytes(), first)
+        self.assertEqual(json.loads(first), self.entry)
+        pagefind.canonicalize_entry(self.root)
+        self.assertEqual(self.path.read_bytes(), first)
+
+    def test_duplicate_nonfinite_invalid_or_wrong_version_entry_is_not_rewritten(self):
+        valid = json.dumps(self.entry)
+        for raw in ['not JSON', valid.replace('"version": "1.5.2"', '"version": "1.5.2", "version": "1.5.2"'),
+                    valid.replace('63', 'NaN'), valid.replace('1.5.2', '0.0.0')]:
+            with self.subTest(raw=raw[:40]):
+                self.path.write_bytes(raw.encode('utf8'))
+                with self.assertRaises(ValueError):
+                    pagefind.canonicalize_entry(self.root)
+                self.assertEqual(self.path.read_bytes(), raw.encode('utf8'))
+
+    def test_hardlinked_and_oversized_entry_do_not_modify_other_files(self):
+        outside = self.root / 'keep.json'
+        raw = json.dumps(self.entry).encode('utf8')
+        outside.write_bytes(raw)
+        os.link(outside, self.path)
+        with self.assertRaisesRegex(ValueError, 'ordinary'):
+            pagefind.canonicalize_entry(self.root)
+        self.assertEqual(outside.read_bytes(), raw)
+        self.path.unlink()
+        self.path.write_bytes(b' ' * 1_500_001)
+        with self.assertRaisesRegex(ValueError, 'bounded'):
+            pagefind.canonicalize_entry(self.root)
+        self.assertEqual(self.path.stat().st_size, 1_500_001)
 
 
 if __name__ == '__main__':
