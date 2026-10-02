@@ -34,9 +34,22 @@ CMS 內容包的離線準備分成兩層：`_cms_generated_package.py` 記錄完
 ZIP 的檔案排序與時間戳固定，同一份來源與搜尋輸出會得到相同封存摘要。
 封存工具拒絕連結、檔案競態、超出大小限制及缺少搜尋入口的輸出；不修改 repository
 中的檔案或 Git refs。CLI 的新封存必須寫到 repository 外，既有封存不會被覆寫。
-這只是內容快照：實際生成重建、可信工具／相依版本、作者對完整生成內容的核可、
-雲端介面與正式發布仍須接入，所有 generation／content／CI／published 旗標維持 false。
-不得把封存驗證成功當作醫療核可、完整部署輸出核對或任何交付門檻的替代證據。
+`record` 與 `verify` 仍只核對內容快照，所有 generation／content／CI／published
+旗標維持 false。要另做完整輸出重建，使用
+`python _cms_patient_package.py rebuild <封存.zip> --pipeline-head <目前可信 HEAD 的完整 SHA> --content-date YYYY-MM-DD`。
+日期必須與原始生成時相同；pipeline SHA 由操作者明確指定，不從封存自動取信。
+重建只在系統暫存目錄執行該 SHA 的可信程式：先獨立重建原草稿與目錄、核對完整源碼樹，
+再以 `npm ci` 安裝 lockfile 中的相依（停用安裝腳本）並執行現有生成步驟。
+首次安裝可能需連線取得套件；生成時直接使用 lockfile 鎖定的 Pagefind 平台執行檔，
+並比對七個官方平台套件中已驗證的執行檔大小與 SHA256。套件版本升級須連同
+lockfile、官方套件 SHA512 與執行檔雜湊一併更新，不能只改版本號。
+不使用 npx 即時解析或重新下載。封存內容不解壓執行、不使用
+使用者目前的 Pagefind 檔案或 session 密鑰，原專案及 Git refs 保持原狀。
+全部 Git 檔案與完整 Pagefind 原始輸出相同，才回報本次 `generationVerified=true`。
+結果另記錄固定日期、pipeline／source／generated SHA、lockfile 摘要及實際工具版本；
+原封存不重寫，content／live author intent／CI／published 仍為 false。
+作者對完整生成內容的核可、雲端介面與正式發布仍須接入。不得把封存或重建成功當作
+醫療核可、候選 CI、正式部署輸出核對或任何交付門檻的替代證據。
 
 ```
 源頭(手改這些)                     生成器                        產物(絕不手改)

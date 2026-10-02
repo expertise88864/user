@@ -6,6 +6,7 @@ import io
 import os
 import gzip
 import json
+import hashlib
 from pathlib import Path
 import shutil
 import subprocess
@@ -14,6 +15,58 @@ import unittest
 import _setup_pagefind as legacy_builder
 
 class SearchScopeTest(unittest.TestCase):
+    def test_locked_tool_rejects_dependency_drift_and_ignores_executable_overrides(self):
+        import _run_pagefind as builder
+        with tempfile.TemporaryDirectory(prefix='pagefind-lock-') as folder:
+            root = Path(folder).resolve()
+            native_name = '@pagefind/windows-x64'
+            entry = {'version': '1.5.2', 'integrity': 'sha512-' + 'A' * 86 + '=='}
+            lock = {'packages': {'': {'dependencies': {'pagefind': '1.5.2'}},
+                                 'node_modules/pagefind': entry,
+                                 'node_modules/' + native_name: entry}}
+            def write(name, value):
+                path = root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(json.dumps(value), encoding='utf8')
+            write('package.json', {'dependencies': {'pagefind': '1.5.2'}})
+            write('package-lock.json', lock)
+            write('node_modules/pagefind/package.json', {'name': 'pagefind', 'version': '1.5.2'})
+            native_meta = 'node_modules/' + native_name + '/package.json'
+            write(native_meta, {'name': native_name, 'version': '1.5.2'})
+            binary = root / 'node_modules' / native_name / 'bin/pagefind_extended.exe'
+            binary.parent.mkdir()
+            binary.write_bytes(b'Non-executed locked fixture')
+            fixture_pin = {native_name: {'integrity': entry['integrity'],
+                                        'size': binary.stat().st_size,
+                                        'sha256': hashlib.sha256(binary.read_bytes()).hexdigest()}}
+            with patch.object(builder, 'PAGEFIND_NATIVE', fixture_pin), patch.object(builder.sys, 'platform', 'win32'), patch.object(builder.platform, 'machine', return_value='AMD64'):
+                with patch.dict(os.environ, {'PAGEFIND_EXTENDED_BINARY_PATH': '/untrusted', 'PAGEFIND_BINARY_PATH': '/untrusted'}):
+                    self.assertEqual(builder.locked_binary(root), binary)
+                original = binary.read_bytes()
+                binary.write_bytes(b'X' + original[1:])
+                with self.assertRaisesRegex(ValueError, 'pinned bytes'):
+                    builder.locked_binary(root)
+                binary.write_bytes(original)
+                changed = json.loads(json.dumps(lock))
+                changed['packages']['node_modules/' + native_name]['integrity'] = 'sha512-' + 'B' * 86 + '=='
+                write('package-lock.json', changed)
+                with self.assertRaisesRegex(ValueError, 'pinned tarball'):
+                    builder.locked_binary(root)
+                write('package-lock.json', lock)
+                write(native_meta, {'name': native_name, 'version': '1.4.0'})
+                with self.assertRaisesRegex(ValueError, 'locked identity'):
+                    builder.locked_binary(root)
+                write(native_meta, {'name': native_name, 'version': '1.5.2'})
+                write('package.json', {'dependencies': {'pagefind': '^1.5.2'}})
+                with self.assertRaisesRegex(ValueError, 'exact root dependency'):
+                    builder.locked_binary(root)
+                write('package.json', {'dependencies': {'pagefind': '1.5.2'}})
+                changed = json.loads(json.dumps(lock))
+                changed['packages']['node_modules/' + native_name].pop('integrity')
+                write('package-lock.json', changed)
+                with self.assertRaisesRegex(ValueError, 'locked identity'):
+                    builder.locked_binary(root)
+
     @staticmethod
     def write_catalog(root):
         (root / 'blog').mkdir(exist_ok=True)
@@ -50,9 +103,8 @@ class SearchScopeTest(unittest.TestCase):
                 p.parent.mkdir(parents=True, exist_ok=True)
                 p.write_text('<html lang="en"><head><title>Fixture</title></head><body><main>'
                              '<h1>Search fixture</h1><p>Unique dermatology content.</p></main></body></html>', encoding='utf-8')
-            npx = shutil.which('npx') or shutil.which('npx.cmd')
-            self.assertIsNotNone(npx, 'Pagefind integration requires Node.js/npm')
-            subprocess.run([npx, '--yes', 'pagefind@1.5.2', '--site', str(root),
+            binary = builder.locked_binary()
+            subprocess.run([str(binary), '--site', str(root),
                             '--output-path', str(root / 'pagefind'), '--root-selector', 'main',
                             '--glob', '**/*.html'], check=True, capture_output=True, timeout=180)
             before = list((root / 'pagefind/fragment').glob('*.pf_fragment'))
@@ -117,10 +169,10 @@ class SearchScopeTest(unittest.TestCase):
                             builder.main()
                     self.assertEqual(sentinel.read_text(encoding='utf-8'), 'previous index')
 
-    def test_bash_npx_receives_exact_visibility_without_brace_expansion(self):
+    def test_script_shell_setting_cannot_expand_direct_native_visibility(self):
         import _run_pagefind as builder
         # The hosted Vercel shell expands a brace-list CLI argument; Ubuntu's
-        # dash and Windows cmd do not. Exercise the real npx -> Bash -> binary
+        # dash and Windows cmd do not. Exercise the direct locked native binary
         # path, rather than a mock that cannot reveal this transport bug.
         bash = shutil.which('bash')
         if not bash and os.name == 'nt':
@@ -157,13 +209,13 @@ class SearchScopeTest(unittest.TestCase):
             real_run = subprocess.run
             calls = []
             def fail_pagefind(command, *args, **kwargs):
-                if command[0] == 'fake-npx':
+                if command[0] == 'fake-pagefind':
                     calls.append((command, kwargs))
                     return subprocess.CompletedProcess(command, 2, '', 'error: unexpected argument\nUsage: pagefind [OPTIONS]')
                 return real_run(command, *args, **kwargs)
             stdout = io.StringIO()
             with patch.object(builder, 'ROOT', root), patch.object(builder, 'PAGEFIND_DIR', root / 'pagefind'):
-                with patch.object(builder.shutil, 'which', return_value='fake-npx'):
+                with patch.object(builder, 'locked_binary', return_value=Path('fake-pagefind')):
                     with patch.object(builder.subprocess, 'run', side_effect=fail_pagefind), contextlib.redirect_stdout(stdout):
                         self.assertEqual(builder.main(), 1)
             self.assertEqual(len(calls), 1)
@@ -198,16 +250,16 @@ class SearchScopeTest(unittest.TestCase):
             self.write_catalog(root)
             (root / 'index.html').write_text('<html><main><h1>Public fixture</h1></main></html>', encoding='utf-8')
             with patch.object(builder, 'ROOT', root), patch.object(builder, 'PAGEFIND_DIR', root / 'pagefind'):
-                with patch.object(builder.shutil, 'which', return_value=None):
+                with patch.object(builder, 'locked_binary', side_effect=FileNotFoundError('missing locked dependency')):
                     self.assertEqual(builder.main(), 1)
-                with patch.object(builder.shutil, 'which', return_value='fake-npx'):
+                with patch.object(builder, 'locked_binary', return_value=Path('fake-pagefind')):
                     real_run = subprocess.run
                     def failed_build(command, *args, **kwargs):
-                        if command[0] == 'fake-npx':
+                        if command[0] == 'fake-pagefind':
                             return subprocess.CompletedProcess(command, 1, '', 'failure')
                         return real_run(command, *args, **kwargs)
                     def timed_out_build(command, *args, **kwargs):
-                        if command[0] == 'fake-npx':
+                        if command[0] == 'fake-pagefind':
                             raise subprocess.TimeoutExpired(command, 180)
                         return real_run(command, *args, **kwargs)
                     with patch.object(builder.subprocess, 'run', side_effect=failed_build):

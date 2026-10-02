@@ -1,9 +1,10 @@
 """Archive immutable Git outputs and all ignored Pagefind bytes for review.
 
-This is a portable content snapshot, not a generation replay or publication
-receipt. Neither an archive nor its digest approves medical content, verifies
-live author intent, passes CI or publishes anything. No generator is executed,
-Git object/ref is written or file in the repository is modified by this module.
+Recording and ordinary verification only inspect portable content snapshots.
+The explicit rebuild command delegates to a system-temporary trusted pipeline;
+it never runs archive code or modifies the original checkout. Neither an archive
+nor a rebuild approves medical content, verifies live author intent, passes CI
+or publishes anything.
 """
 from __future__ import annotations
 
@@ -229,6 +230,10 @@ def main() -> None:
     capture.add_argument('--output', type=Path, required=True)
     check = sub.add_parser('verify')
     check.add_argument('archive', type=Path)
+    rebuild = sub.add_parser('rebuild', help='Compare every output to isolated trusted generation')
+    rebuild.add_argument('archive', type=Path)
+    rebuild.add_argument('--pipeline-head', required=True, help='Exact trusted current HEAD, not inferred from the archive')
+    rebuild.add_argument('--content-date', required=True, help='Frozen YYYY-MM-DD used for the recorded generation')
     args = parser.parse_args()
     if args.command == 'record':
         if args.output.resolve().is_relative_to(args.root.resolve()):
@@ -244,7 +249,11 @@ def main() -> None:
         if args.archive.stat().st_size > MAX_ARCHIVE:
             raise ValueError('Patient archive exceeds its bound')
         raw = args.archive.read_bytes()
-        result = verify(args.root, raw)
+        if args.command == 'rebuild':
+            from _cms_patient_rebuild import verify as rebuild_package
+            result = rebuild_package(args.root, raw, args.pipeline_head, args.content_date)
+        else:
+            result = verify(args.root, raw)
     print(json.dumps(result, ensure_ascii=True))
 
 

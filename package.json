@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "parse5": "8.0.1",
+    "pagefind": "1.5.2",
     "esbuild": "0.28.2",
     "prosemirror-commands": "1.7.2",
     "prosemirror-history": "1.5.1",
