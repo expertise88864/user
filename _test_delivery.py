@@ -354,5 +354,101 @@ class DeliveryTests(unittest.TestCase):
             self.assertTrue(d.needs_morning_preview([path]))
 
 
+class PullRequestDeliveryTests(unittest.TestCase):
+    def setUp(self):
+        from types import SimpleNamespace
+        self.entry = {"path": ".github/workflows/ci.yml", "jobs": ["test"],
+                      "steps": {"test": {"required": ["check"]}}, "pull_request": {}}
+        self.cfg = {"repository": "owner/repo", "require_pr": True, "workflows": [self.entry]}
+        self.pr = {"number": 48, "state": "open", "changed_files": 1,
+                   "head": {"sha": SHA, "ref": "codex/test", "repo": {"full_name": "owner/repo"}},
+                   "base": {"sha": "b" * 40, "ref": "main", "repo": {"full_name": "owner/repo"}}}
+        self.run = {"id": 1, "run_attempt": 1, "path": self.entry["path"], "event": "push",
+                    "head_branch": "codex/test", "head_sha": SHA, "status": "completed",
+                    "conclusion": "success", "html_url": "https://github.com/owner/repo/actions/runs/1"}
+        self.runs = [self.run, {**self.run, "id": 2, "event": "pull_request"}]
+        self.jobs = [{"id": 3, "name": "test", "status": "completed", "conclusion": "success",
+                      "steps": [{"name": "check", "status": "completed", "conclusion": "success"}]}]
+        self.pr_jobs = self.jobs
+        self.files = [{"filename": "blog/example.html"}]
+        self.reads = []
+        def pages(path, key=None):
+            self.reads.append(path)
+            if path.startswith('/actions/runs?'): return self.runs
+            if path.startswith('/commits/'): return [self.pr]
+            if path.startswith('/pulls/48/files'): return self.files
+            if '/runs/2/' in path: return self.pr_jobs
+            if '/runs/1/' in path: return self.jobs
+            self.fail('Unexpected fixture API read: ' + path)
+        self.api = SimpleNamespace(pages=pages, get=lambda path: self.pr)
+
+    def verify(self):
+        return d.verify(SHA, "candidate", self.cfg, self.api)
+
+    def test_failed_pr_cannot_be_hidden_by_green_push(self):
+        self.runs[1] = {**self.runs[1], "conclusion": "failure"}
+        with self.assertRaises(d.Blocked): self.verify()
+
+    def test_pr_requires_exact_sha_branch_event_and_complete_latest_run(self):
+        for change in ({"head_sha": "c" * 40}, {"head_branch": "main"}, {"event": "workflow_dispatch"},
+                       {"status": "in_progress", "conclusion": None}, {"conclusion": "cancelled"},
+                       {"conclusion": "skipped"}, {"conclusion": "timed_out"}):
+            with self.subTest(change=change):
+                self.runs[1] = {**self.run, "id": 2, "event": "pull_request", **change}
+                with self.assertRaises(d.Blocked): self.verify()
+
+    def test_missing_pr_workflow_is_not_push_approval(self):
+        self.runs.pop()
+        with self.assertRaises(d.Blocked): self.verify()
+
+    def test_failed_pr_job_or_hidden_step_is_not_a_green_workflow(self):
+        for jobs in ([], [{**self.jobs[0], "conclusion": "failure"}],
+                     [{**self.jobs[0], "steps": [{"name": "check", "status": "completed", "conclusion": "skipped"}]}],
+                     [{**self.jobs[0], "steps": self.jobs[0]['steps'] + [{"name": "hidden", "conclusion": "failure"}]}]):
+            with self.subTest(jobs=jobs):
+                self.pr_jobs = jobs
+                with self.assertRaises(d.Blocked): self.verify()
+
+    def test_green_push_and_pr_record_distinct_evidence(self):
+        evidence = self.verify()
+        self.assertEqual({row.get('event') for row in evidence}, {'push', 'pull_request'})
+        self.assertIn('/actions/runs/2/attempts/1/jobs', self.reads)
+
+    def test_latest_pr_attempt_cannot_reuse_old_green(self):
+        self.runs.append({**self.runs[1], "run_attempt": 2, "conclusion": "failure"})
+        with self.assertRaises(d.Blocked): self.verify()
+
+    def test_filtered_absence_requires_complete_pr_file_evidence(self):
+        self.entry['pull_request'] = {'paths': ['blog/**.html']}
+        self.runs.pop()
+        self.files = [{'filename': '_delivery.py'}]
+        self.verify()  # The existing workflow path filter makes this PR run inapplicable.
+        self.pr['changed_files'] = 2
+        with self.assertRaises(d.Blocked): self.verify()
+
+    def test_matching_filtered_file_or_existing_failed_run_still_blocks(self):
+        self.entry['pull_request'] = {'paths': ['blog/**.html']}
+        self.runs.pop()
+        with self.assertRaises(d.Blocked): self.verify()
+        self.files = [{'filename': '_delivery.py'}]
+        self.runs.append({**self.run, 'id': 2, 'event': 'pull_request', 'conclusion': 'failure'})
+        with self.assertRaises(d.Blocked): self.verify()
+
+    def test_renamed_article_also_matches_the_original_path(self):
+        self.entry['pull_request'] = {'paths': ['blog/**.html']}
+        self.files = [{'filename': 'notes.txt', 'previous_filename': 'blog/old.html'}]
+        self.runs.pop()
+        with self.assertRaises(d.Blocked): self.verify()
+
+    def test_changed_pr_identity_during_verification_blocks(self):
+        reads = 0
+        def detail(path):
+            nonlocal reads
+            reads += 1
+            return self.pr if reads == 1 else {**self.pr, 'base': {**self.pr['base'], 'sha': 'c' * 40}}
+        self.api.get = detail
+        with self.assertRaises(d.Blocked): self.verify()
+
+
 if __name__ == "__main__":
     unittest.main()

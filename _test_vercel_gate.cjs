@@ -54,6 +54,9 @@ test('preview credential stays on the exact deployment origin', () => {
   assert.deepEqual(previewHeaders(origin, origin, ''), {});
 });
 function fake(bad = '') {
+  const pr = { number: 48, state: 'open', changed_files: 1,
+    head: { sha, ref: 'codex/test', repo: { full_name: cfg.repository } },
+    base: { sha: 'c'.repeat(40), ref: 'main', repo: { full_name: cfg.repository } } };
   const raw = Buffer.from(JSON.stringify({ version: 1, requests: [] }, null, 2) + '\n');
   const proofSha = createHash('sha1').update(Buffer.concat([Buffer.from('blob ' + raw.length + '\0'), raw])).digest('hex');
   const settingsDefault=require('./_site_settings_delivery.cjs').DEFAULT;
@@ -83,23 +86,28 @@ function fake(bad = '') {
     if (url.includes('/git/trees/')) return new Response(JSON.stringify({ sha: '1'.repeat(40), truncated: false,
       tree: [{ path: '.cms-delivery.json', type: 'blob', mode: '100644', sha: proofSha },...Object.entries(settingsFiles).map(([path,bytes])=>({path,type:'blob',mode:'100644',sha:settingsBlob(bytes)}))] }));
     if (url.includes('/pulls?')) return { ok: true, json: async () => bad === 'pr' ? [] : [
-      { state: 'open', head: { sha, repo: { full_name: cfg.repository } }, base: { ref: 'main' } }
+      pr
     ] };
+    if (url.includes('/pulls/48/files?')) return Response.json([{filename:'blog/example.html'}]);
+    if (new URL(url).pathname.endsWith('/pulls/48')) return Response.json(pr);
     if (url.includes('/actions/runs?')) return { ok: true, json: async () => ({
-      workflow_runs: cfg.workflows.map((e, i) => ({
+      workflow_runs: cfg.workflows.flatMap((e, i) => [{
         id: i + 101, path: e.path, head_sha: bad === 'sha' ? 'b'.repeat(40) : sha,
         head_branch: bad === 'main' ? 'main' : 'codex/test', event: 'push',
         status: 'completed', conclusion: bad === 'run' ? 'failure' : 'success'
-      }))
+      }, ...(bad === 'pr-missing' ? [] : [{id:i+201,path:e.path,head_sha:sha,head_branch:'codex/test',
+        event:'pull_request',status:'completed',conclusion:bad==='pr-run'?'failure':'success'}])])
     }) };
-    const id = Number(url.match(/runs\/(\d+)/)[1]) - 100;
+    const runId = Number(url.match(/runs\/(\d+)/)[1]);
+    const isPR = runId >= 201;
+    const id = runId - (isPR ? 200 : 100);
     return { ok: true, json: async () => ({ jobs: bad === 'missing' ? [] : cfg.workflows[id - 1].jobs.map(name => ({
-      name, status: 'completed', conclusion: bad === 'skip' ? 'skipped' : 'success',
+      name, status: 'completed', conclusion: bad === 'skip' || (isPR && ['Preview browser','Production smoke'].includes(name)) ? 'skipped' : 'success',
       steps: bad === 'steps' ? [] : [
         ...cfg.workflows[id - 1].steps[name].required,
         ...(cfg.workflows[id - 1].steps[name].candidate_required || [])
       ].map(step => ({ name: step, status: 'completed',
-        conclusion: bad === 'step' ? 'failure' : bad === 'step-skipped' ? 'skipped' : 'success' }))
+        conclusion: bad === 'step' || (isPR && bad === 'pr-step') ? 'failure' : bad === 'step-skipped' ? 'skipped' : 'success' }))
     })) }) };
   };
 }
@@ -111,6 +119,87 @@ test('unknown environment and missing SHA deny deployment', async () => {
   assert.equal(await allowed({ VERCEL_ENV: 'production' }), false);
 });
 test('exact complete candidate may deploy', async () => assert.equal(await allowed(env, fake()), true));
+for (const bad of ['pr-run', 'pr-step', 'pr-missing']) {
+  test('green push cannot waive ' + bad, async () => await assert.rejects(allowed(env, fake(bad)),
+    bad === 'pr-step' ? /Required step not successful/ : /PR CI is not green/));
+}
+test('PR path-filter absence is allowed only for a complete nonmatching diff', async () => {
+  for (const [files, changed, passes] of [
+    [[{filename:'_delivery.py'}], 1, true],
+    [[{filename:'blog/deep/example.html'}], 1, false],
+    [[{filename:'notes.txt',previous_filename:'blog/old.html'}], 1, false],
+    [[{filename:'_delivery.py'}], 2, false],
+    [[{filename:'_delivery.py'},{filename:'_delivery.py'}], 2, false]
+  ]) {
+    const base = fake();
+    const request = async (url, options) => {
+      const response = await base(url, options);
+      if (url.includes('/actions/runs?')) {
+        const data = await response.json();
+        return Response.json({workflow_runs:data.workflow_runs.filter(run => !(run.event === 'pull_request' && run.path.endsWith('/vale.yml')))});
+      }
+      if (url.includes('/pulls/48/files?')) return Response.json(files);
+      if (new URL(url).pathname.endsWith('/pulls/48')) return Response.json({...await response.json(),changed_files:changed});
+      return response;
+    };
+    if (passes) assert.equal(await allowed(env, request), true);
+    else await assert.rejects(allowed(env, request));
+  }
+});
+test('a failed observed PR run cannot disappear behind a nonmatching path filter', async () => {
+  const base = fake();
+  const request = async (url, options) => {
+    const response = await base(url, options);
+    if (url.includes('/pulls/48/files?')) return Response.json([{filename:'_delivery.py'}]);
+    if (!url.includes('/actions/runs?')) return response;
+    const data = await response.json();
+    return Response.json({workflow_runs:data.workflow_runs.map(run => run.event === 'pull_request' && run.path.endsWith('/vale.yml') ? {...run,conclusion:'failure'} : run)});
+  };
+  await assert.rejects(allowed(env, request), /PR CI is not green/);
+});
+test('PR head branch and latest complete attempt are required separately from push', async () => {
+  for (const change of [{head_sha:'b'.repeat(40)}, {head_branch:'main'}, {event:'workflow_dispatch'},
+    {status:'in_progress',conclusion:null}, {conclusion:'cancelled'}, {conclusion:'timed_out'}]) {
+    const base = fake();
+    const request = async (url, options) => {
+      const response = await base(url, options);
+      if (!url.includes('/actions/runs?')) return response;
+      const data = await response.json();
+      return Response.json({workflow_runs:data.workflow_runs.flatMap(run => run.event === 'pull_request'
+        ? [run,{...run,run_attempt:2,...change}] : [run])});
+    };
+    // Wrong identities do not overwrite the old exact successful run, so remove
+    // that prior run for those missing-identity cases rather than invent a retry.
+    const wrongIdentity = ['head_sha','head_branch','event'].some(key => key in change);
+    const exactRequest = wrongIdentity ? async (url, options) => {
+      const response = await request(url, options);
+      if (!url.includes('/actions/runs?')) return response;
+      const data = await response.json();
+      return Response.json({workflow_runs:data.workflow_runs.filter(run => run.event !== 'pull_request' || run.run_attempt === 2)});
+    } : request;
+    await assert.rejects(allowed(env, exactRequest), /PR CI is not green/);
+  }
+});
+test('PR identity moving during verification cannot authorize production', async () => {
+  const base = fake(); let reads = 0;
+  const request = async (url, options) => {
+    const response = await base(url, options);
+    if (!new URL(url).pathname.endsWith('/pulls/48')) return response;
+    const pr = await response.json();
+    return Response.json(++reads === 1 ? pr : {...pr,base:{...pr.base,sha:'d'.repeat(40)}});
+  };
+  await assert.rejects(allowed(env, request), /advanced during verification/);
+});
+test('PR job skips and Vale filters mirror the existing workflow event contract', () => {
+  const fs = require('node:fs');
+  const delivery = cfg.workflows.find(entry => entry.path.endsWith('/delivery.yml'));
+  assert.deepEqual(delivery.pull_request.skips, ['Preview browser','Production smoke']);
+  const vale = cfg.workflows.find(entry => entry.path.endsWith('/vale.yml'));
+  const source = fs.readFileSync(vale.path, 'utf8');
+  const section = source.split('  pull_request:')[1].split('  workflow_dispatch:')[0];
+  const paths = [...section.matchAll(/^      - '([^']+)'$/gm)].map(match => match[1]);
+  assert.deepEqual(vale.pull_request.paths, paths);
+});
 test('green candidate CI cannot authorize unapproved bootstrap settings',async()=>{
   const base=fake();let changed;
   const request=async(url,options)=>{

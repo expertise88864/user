@@ -17,6 +17,7 @@
   "workflows": [
     {
       "path": ".github/workflows/quality.yml",
+      "pull_request": {},
       "jobs": [
         "Canonical generated file consistency",
         "HTML structural validation",
@@ -95,6 +96,7 @@
     },
     {
       "path": ".github/workflows/hyperlink.yml",
+      "pull_request": {},
       "jobs": [
         "Link and anchor validation (Vercel routes + hyperlink diagnostics)"
       ],
@@ -115,6 +117,7 @@
     },
     {
       "path": ".github/workflows/delivery.yml",
+      "pull_request": {"skips": ["Preview browser", "Production smoke"]},
       "jobs": [
         "Delivery contract",
         "Preview browser",
@@ -154,6 +157,7 @@
     },
     {
       "path": ".github/workflows/a11y.yml",
+      "pull_request": {},
       "jobs": [
         "pa11y-ci (axe + HTMLCS)"
       ],
@@ -172,6 +176,7 @@
     },
     {
       "path": ".github/workflows/schema-validator.yml",
+      "pull_request": {},
       "jobs": [
         "structured-data-testing-tool"
       ],
@@ -188,6 +193,7 @@
     },
     {
       "path": ".github/workflows/vale.yml",
+      "pull_request": {"paths": ["blog/**.html", "en/blog/**.html", ".vale.ini", "styles/**"]},
       "jobs": [
         "Vale prose lint"
       ],

@@ -55,6 +55,18 @@ def validate_policy(cfg: dict) -> None:
             raise Blocked("Each workflow needs named required jobs")
         if any(not entry.get("steps", {}).get(job, {}).get("required") for job in jobs):
             raise Blocked("Required jobs need explicit validation step contracts")
+        if cfg.get("require_pr"):
+            contract = entry.get("pull_request")
+            if not isinstance(contract, dict):
+                raise Blocked("PR workflows need explicit applicability contracts")
+            skips = contract.get("skips", [])
+            patterns = contract.get("paths")
+            if (not isinstance(skips, list) or any(not isinstance(j, str) for j in skips)
+                    or len(set(skips)) != len(skips) or not set(skips) < set(jobs)):
+                raise Blocked("Invalid PR conditional jobs")
+            if patterns is not None and (not isinstance(patterns, list) or not patterns
+                    or any(not isinstance(p, str) or not re.fullmatch(r"[A-Za-z0-9_./*\-]+", p) for p in patterns)):
+                raise Blocked("Invalid positive PR path filters")
     if cfg.get("allow_dispatch", False) not in (True, False):
         raise Blocked("Invalid dispatch policy")
 
@@ -192,15 +204,17 @@ def verify(sha: str, phase: str, cfg: dict, api: API) -> list:
         run = select_run(runs, entry["path"], sha, phase, cfg.get("allow_dispatch", False))
         jobs = api.pages(f"/actions/runs/{run['id']}/attempts/{run.get('run_attempt', 1)}/jobs", "jobs")
         assess_jobs(jobs, entry["jobs"], entry.get(phase + "_skips", []), entry["steps"], phase)
-        evidence.append({"sha": sha, "run_id": run["id"], "url": run["html_url"],
+        evidence.append({"sha": sha, "event": run["event"], "run_id": run["id"], "url": run["html_url"],
                          "jobs": [{"name": j["name"], "id": j["id"],
                                    "conclusion": j["conclusion"]} for j in jobs]})
     if phase == "candidate" and cfg.get("require_pr"):
         prs = api.pages(f"/commits/{sha}/pulls")
-        if not any(p.get("state") == "open" and p.get("head", {}).get("sha") == sha
+        matching = [p for p in prs if p.get("state") == "open" and p.get("head", {}).get("sha") == sha
                    and p.get("base", {}).get("ref") == "main"
-                   and p.get("head", {}).get("repo", {}).get("full_name") == cfg["repository"] for p in prs):
-            raise Blocked("An open, same-repository PR for this exact candidate is required")
+                   and p.get("head", {}).get("repo", {}).get("full_name") == cfg["repository"]]
+        if len(matching) != 1:
+            raise Blocked("One open, same-repository PR for this exact candidate is required")
+        evidence.extend(verify_pr_checks(sha, cfg, api, runs, matching[0]))
     if phase == "candidate" and cfg.get("morning_dry_run"):
         base = check_sha(api.get("/git/ref/heads/main")["object"]["sha"])
         changed = git("diff", "--name-only", base, sha).splitlines()
@@ -230,6 +244,66 @@ def verify(sha: str, phase: str, cfg: dict, api: API) -> list:
             evidence.append({"siteSettings": verify_settings_intent(sha, api)})
         except (ValueError, KeyError, TypeError) as error:
             raise Blocked("Site settings author intent / approved payload is no longer valid") from error
+    return evidence
+
+
+def pr_identity(pr: dict, sha: str, repo: str) -> tuple:
+    """Bind all API reads to one source head, main base and complete file census."""
+    number, count = pr.get("number"), pr.get("changed_files")
+    head, base = pr.get("head", {}), pr.get("base", {})
+    if (type(number) is not int or number <= 0 or type(count) is not int or not 0 <= count < 2000
+            or pr.get("state") != "open" or head.get("sha") != sha
+            or not isinstance(head.get("ref"), str) or not head["ref"].startswith("codex/")
+            or base.get("ref") != "main"
+            or any(node.get("repo", {}).get("full_name") != repo for node in (head, base))):
+        raise Blocked("Incomplete or foreign candidate PR identity")
+    return number, head["ref"], check_sha(base.get("sha", "")), count
+
+
+def pr_path_matches(filename: str, pattern: str) -> bool:
+    # Only the positive * / ** syntax used by our declared GitHub path filters.
+    expression = re.escape(pattern).replace(r"\*\*/", "(?:.*/)?")
+    expression = expression.replace(r"\*\*", ".*").replace(r"\*", "[^/]*")
+    return re.fullmatch(expression, filename) is not None
+
+
+def verify_pr_checks(sha: str, cfg: dict, api: API, runs: list, candidate: dict) -> list:
+    number = candidate.get("number")
+    if type(number) is not int or number <= 0:
+        raise Blocked("Candidate PR number is absent")
+    detail = api.get(f"/pulls/{number}")
+    identity = pr_identity(detail, sha, cfg["repository"])
+    if identity[0] != number:
+        raise Blocked("Candidate PR identity changed")
+    files = api.pages(f"/pulls/{number}/files")
+    names = [f.get("filename") for f in files]
+    if (len(files) != identity[3] or any(not isinstance(n, str) or not n for n in names)
+            or len(set(names)) != len(names)):
+        raise Blocked("PR file evidence is incomplete")
+    names += [f["previous_filename"] for f in files if "previous_filename" in f]
+    if any(not isinstance(n, str) or not n or n.startswith("/") or ".." in n.split("/") for n in names):
+        raise Blocked("Invalid PR file path")
+    evidence = []
+    for entry in cfg["workflows"]:
+        contract = entry["pull_request"]
+        observed = [r for r in runs if r.get("head_sha") == sha and r.get("path") == entry["path"]
+                    and r.get("event") == "pull_request"]
+        applicable = "paths" not in contract or any(pr_path_matches(n, p) for n in names for p in contract["paths"])
+        if not applicable and not observed:
+            continue  # Existing workflow filter; never discard a run that actually exists.
+        matches = [r for r in observed if r.get("head_branch") == identity[1]]
+        if not matches:
+            raise Blocked(f"No exact-SHA PR run for {entry['path']}")
+        run = max(matches, key=lambda r: (r["id"], r.get("run_attempt", 1)))
+        if run.get("status") != "completed" or run.get("conclusion") != "success":
+            raise Blocked(f"PR {entry['path']}: {run.get('status')}/{run.get('conclusion')} ({run.get('html_url')})")
+        jobs = api.pages(f"/actions/runs/{run['id']}/attempts/{run.get('run_attempt', 1)}/jobs", "jobs")
+        assess_jobs(jobs, entry["jobs"], contract.get("skips", []), entry["steps"], "pull_request")
+        evidence.append({"sha": sha, "event": "pull_request", "pr": number, "base_sha": identity[2],
+                         "run_id": run["id"], "url": run["html_url"],
+                         "jobs": [{"name": j["name"], "id": j["id"], "conclusion": j["conclusion"]} for j in jobs]})
+    if pr_identity(api.get(f"/pulls/{number}"), sha, cfg["repository"]) != identity:
+        raise Blocked("Candidate PR advanced during verification")
     return evidence
 
 

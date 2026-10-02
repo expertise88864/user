@@ -2,6 +2,14 @@
 
 > 發佈入口：生成器順序不變；發佈改走 `REMOTE_CI_DELIVERY.md` 的 codex/* → 完整候選 CI／PR／Preview → 同 SHA main。`deploy.ps1` 只發布乾淨且候選驗證通過的 SHA，不自行 stage/rebase。排程工作只準備本機候選 bundle，保留遠端 queue 與來源草稿分支，不自行推送或上線。
 
+候選驗證同時核對該來源 SHA 的 push 與適用 PR workflows、最新完整 attempt、jobs 與 steps。
+PR 的來源分支、同庫 main 基線和完整差異檔案數必須一致，驗證後會再次核對 PR 身分。
+Vale 沿用工作流原有文章／樣式路徑篩選；僅在完整 PR 檔案證據證明不適用且沒有實際
+PR 執行紀錄時，才不要求該 PR workflow。已有失敗紀錄不能藉路徑篩選忽略。
+PR Delivery 的 Preview browser／Production smoke 沿用原本 event 條件略過，候選 push
+的 Preview 與正式 main 的 Production smoke 仍必須通過。Python pre-push 門檻與
+Vercel 正式建置前後門檻共同執行這份 `_delivery_policy.json` 契約。
+
 > 目的:讓任何 session 一眼分清「哪些檔案是**源頭**(可手改)、哪些是**生成物**(絕不手改)」,
 > 以及「改了 X 之後要跑什麼」。順序的唯一權威是 `_run_quality.py` 的 `REGEN_STEPS`(~46 步)
 > 與 `CHECK_STEPS`(當前 30 步,以該檔為準)—— **本檔不複製完整清單**(會漂移),只給結構與配方。
