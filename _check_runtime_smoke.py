@@ -14,6 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 DYNAMIC_BUNDLES = [
+    "blog-support",
     "blog-hub",
     "blog-article-reading",
     "blog-diagrams",
@@ -45,7 +46,7 @@ def assert_dynamic_loader_versions_match_html(html_version: str) -> None:
     disappeared at the same time.
     """
     pat = re.compile(
-        r"/blog/blog-(?:shared|hub|article-reading|diagrams|calculators|article-visuals|article-footer)\.min\.js\?v=(\d+)"
+        r"/blog/blog-(?:shared|support|hub|article-reading|diagrams|calculators|article-visuals|article-footer)\.min\.js\?v=(\d+)"
     )
     drift: list[str] = []
     for src_name in ("blog/blog-shared.js", "blog/blog-article-reading.js",
@@ -230,6 +231,7 @@ def run_smoke(base_url: str) -> list[str]:
 
     js_checks = [
         (shared, "shared", ["ensureArticleReadingBundle", "ensureHubBundle", "ensureCalculatorBundle"]),
+        (f"/blog/blog-support.min.js?v={version}", "support", ["DN.injectBMCFooter", "DN.injectSupportUI"]),
         (f"/blog/blog-hub.min.js?v={version}", "hub", ["DN.bindArticleHub", "DN.injectSpotlight"]),
         (f"/blog/blog-article-reading.min.js?v={version}", "article-reading", ["DN.addReadingMeta", "DN.injectMedDiagrams"]),
         (f"/blog/blog-diagrams.min.js?v={version}", "diagrams", ["DN.medDiagrams", "DN.MED_DIAGRAM_MAP"]),

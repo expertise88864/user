@@ -11,6 +11,7 @@ Usage: python _minify.py
 Output: blog/blog-shared.min.js (preserve original); HTML files in-place (idempotent).
 """
 import os, re, sys, io
+from _site_html import site_html_files
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -18,7 +19,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 # Single source of truth for which blog/*.js bundles get a .min.js sibling.
 # _check_min_sync.py imports this so the sync checker can never drift out of
 # step with what actually gets minified.
-JS_BUNDLES = ('blog-shared', 'blog-hub', 'blog-article-reading', 'blog-diagrams',
+JS_BUNDLES = ('blog-shared', 'blog-support', 'blog-hub', 'blog-article-reading', 'blog-diagrams',
               'blog-calculators', 'blog-article-visuals', 'blog-article-footer')
 
 
@@ -162,6 +163,9 @@ def html_minify(src):
 
 
 def main():
+    # Complete source discovery before writing; private audit/backup HTML is
+    # outside this build, and linked sources must fail before any mutation.
+    html_files = site_html_files(ROOT)
     # JS
     for name in JS_BUNDLES:
         js_src_path = os.path.join(ROOT, 'blog', name + '.js')
@@ -178,23 +182,18 @@ def main():
     # HTML
     n_changed = 0
     total_in = total_out = 0
-    for d, _, fs in os.walk(ROOT):
-        if any(x in d for x in ['.git', '__pycache__', 'assets', '.github']):
-            continue
-        for f in fs:
-            if not f.endswith('.html'):
-                continue
-            p = os.path.join(d, f)
-            with open(p, 'r', encoding='utf-8') as fp:
-                src = fp.read()
-            minified = html_minify(src)
-            total_in += len(src)
-            total_out += len(minified)
-            if len(minified) < len(src) * 0.97:
-                with open(p, 'w', encoding='utf-8') as fp:
-                    fp.write(minified)
-                n_changed += 1
-    print(f'HTML: {n_changed} files minified · total {total_in/1024:.0f} KB → {total_out/1024:.0f} KB ({total_out/total_in*100:.1f}%)')
+    for p in html_files:
+        with open(p, 'r', encoding='utf-8') as fp:
+            src = fp.read()
+        minified = html_minify(src)
+        total_in += len(src)
+        total_out += len(minified)
+        if len(minified) < len(src) * 0.97:
+            with open(p, 'w', encoding='utf-8') as fp:
+                fp.write(minified)
+            n_changed += 1
+    percent = total_out / total_in * 100 if total_in else 0
+    print(f'HTML: {n_changed} files minified · total {total_in/1024:.0f} KB → {total_out/1024:.0f} KB ({percent:.1f}%)')
 
 
 if __name__ == '__main__':

@@ -18,12 +18,13 @@ reset-sw and any page where the link is already present.
 """
 from __future__ import annotations
 
-import io
 import re
 import sys
 from pathlib import Path
+from _site_html import site_html_files
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
 ROOT = Path(__file__).resolve().parent
 
@@ -95,8 +96,9 @@ def inject_one(path: Path) -> bool:
     # the canonical branch must skip it — running it here would strip the tag
     # and leave an orphan marker comment.
     existing = EXISTING_VITALS_RE.search(src)
-    if existing is not None and existing.group(0).strip() == VITALS_TAG:
-        pass  # already canonical and correctly placed — leave it alone
+    if existing is not None and re.sub(r'\?v=\d+', '?v='+_ASSET_VERSION, existing.group(0).strip()) == VITALS_TAG:
+        # Updating a cache version must preserve the canonical tag position.
+        src = src[:existing.start()] + VITALS_TAG + src[existing.end():]
     else:
         src = EXISTING_VITALS_RE.sub("", src)
         src = LEGACY_VITALS_RE.sub("", src)
@@ -115,7 +117,7 @@ def inject_one(path: Path) -> bool:
 
 def main() -> int:
     targets: list[Path] = []
-    for fp in sorted(ROOT.rglob("*.html")):
+    for fp in site_html_files(ROOT):
         parts = fp.relative_to(ROOT).parts
         if any(p in SKIP_DIRS for p in parts):
             continue

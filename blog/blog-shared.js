@@ -60,13 +60,20 @@
     return null;
   };
 
-  DN.applyTextOnly = function (lang) {
+  DN.applyTextOnly = function (lang, root) {
+    root = root || document;
     const meta = DN.LANGS.find(function (l) { return l.code === lang; }) || DN.LANGS[0];
     // Repeated enhancement passes must not invalidate an already-correct page language.
-    if (document.documentElement.lang !== meta.htmlLang) document.documentElement.lang = meta.htmlLang;
+    if (root === document && document.documentElement.lang !== meta.htmlLang) document.documentElement.lang = meta.htmlLang;
     const otherLang = lang === 'en' ? 'zh' : 'en';
     function plain(s) { return String(s || '').replace(/<[^>]+>/g, ''); }
-    document.querySelectorAll('[data-zh],[data-en]').forEach(function (el) {
+    // Detached enhancements can be translated before insertion. Include an
+    // element root itself, while also supporting document/fragment roots.
+    function each(selector, callback) {
+      if (root.matches && root.matches(selector)) callback(root);
+      root.querySelectorAll(selector).forEach(callback);
+    }
+    each('[data-zh],[data-en]', function (el) {
       const txt = DN.translate(el, lang);
       if (txt == null) return;
       const textOnly = el.hasAttribute('data-dn-text-only');
@@ -95,7 +102,7 @@
     // variants are provided as data-zh-* / data-en-* attrs.
     ['placeholder', 'aria-label', 'title', 'alt'].forEach(function (attr) {
       const sel = '[data-zh-' + attr + '],[data-en-' + attr + ']';
-      document.querySelectorAll(sel).forEach(function (el) {
+      each(sel, function (el) {
         const order = lang === 'en' ? ['en', 'zh'] : ['zh', 'en'];
         for (const k of order) {
           const v = el.getAttribute('data-' + k + '-' + attr);
@@ -216,7 +223,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202610021400';
+        s.src = '/blog/blog-article-visuals.min.js?v=202610030155';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1100,7 +1107,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202610021400';
+        s.src = '/blog/blog-article-reading.min.js?v=202610030155';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1136,7 +1143,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202610021400';
+        s.src = '/blog/blog-article-footer.min.js?v=202610030155';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1166,7 +1173,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202610021400';
+        s.src = '/blog/blog-calculators.min.js?v=202610030155';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1306,7 +1313,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202610021400';
+        s.src = '/blog/blog-hub.min.js?v=202610030155';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1332,100 +1339,31 @@
   // Visible "Buy Me a Coffee" tip CARD (separate from the floating button).
   // Renders inline at the article footer per user spec.
   // ─────────────────────────────────────────────────────────────────────
-  // Pre-set Ko-fi + 街口支付 URLs (replace BMC entirely — Ko-fi is 0% commission)
-  DN.KOFI_URL = 'https://ko-fi.com/expertise88864';
-  DN.JKO_URL = 'https://service.jkopay.com/r/transfer?j=Transfer:901070305';
-
-  // exposed as DN.KOFI_URL / DN.JKO_URL but only used on /support itself.
   DN.SUPPORT_URL = '/support';
-  DN.SUPPORT_PROVIDER = '街口支付';
-
-  DN.injectBMCFooter = function () {
-    if (!DN.SUPPORT_URL) return;   // 等待 ezPay 審核中,先不注入
-    if (document.getElementById('dn-bmc-footer')) return;
-    var footer = document.querySelector('footer');
-    if (!footer) return;
-    var section = document.createElement('section');
-    section.id = 'dn-bmc-footer';
-    // 2026-05-08 — align width + horizontal padding with addAuthorBio for visual
-    // consistency (same .max-w-3xl mx-auto px-5 sm:px-8 my-6 wrapper).
-    section.className = 'max-w-3xl mx-auto px-5 sm:px-8 my-6';
-    section.style.cssText = 'text-align:center';
-    // Subtle white card matching the rest of the site
-    section.innerHTML =
-      '<div style="background:#fff;border:1px solid var(--border,#e7e2d8);border-radius:18px;padding:22px 24px;box-shadow:0 1px 2px rgba(15,23,42,.04), 0 14px 30px -18px rgba(77,99,88,.18)">' +
-        '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#0e7c86;font-weight:700;margin-bottom:6px" data-zh="如果這個網站對您有幫助" data-en="If this site has helped you">如果這個網站對您有幫助</div>' +
-        '<h3 style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:20px;font-weight:700;color:#0f172a;margin:0 0 8px" data-zh="請我喝杯咖啡 ☕" data-en="Buy me a coffee ☕">請我喝杯咖啡 ☕</h3>' +
-        '<p style="font-size:13px;color:#5e574e;line-height:1.85;margin:0 auto 14px;max-width:540px" data-zh="本網站<strong>無業配、無贊助</strong>，所有衛教文章與量表計算器都<strong>免費</strong>。本贊助為讀者自願性的內容打賞，<strong>非醫療服務費用</strong>，不涉及任何醫療諮詢、診斷或治療。" data-en="No ads, no sponsorships. All articles and calculators are free. This support is a voluntary content tip, not a medical-service fee, and does not involve any medical consultation, diagnosis, or treatment.">本網站<strong>無業配、無贊助</strong>，所有衛教文章與量表計算器都<strong>免費</strong>。本贊助為讀者自願性的內容打賞，<strong>非醫療服務費用</strong>，不涉及任何醫療諮詢、診斷或治療。</p>' +
-        '<a href="' + DN.SUPPORT_URL + '" data-bmc-footer-link ' +
-          'style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:9999px;background:#0e7c86;color:#fff;text-decoration:none;font-size:14px;font-weight:700;border:1px solid #0e7c86;box-shadow:0 4px 12px -4px rgba(14,124,134,.4);transition:background .15s">' +
-          '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>' +
-          '<span data-zh="贊助本站" data-en="Support this site">贊助本站</span>' +
-        '</a>' +
-      '</div>';
-    footer.parentNode.insertBefore(section, footer);
-
-    if (typeof gtag === 'function') {
-      var link = section.querySelector('[data-bmc-footer-link]');
-      if (link) link.addEventListener('click', function () {
-        try { gtag('event', 'support_click', { source: 'footer', page_path: location.pathname }); } catch (e) {}
+  DN.ensureSupportBundle = function () {
+    if (DN.injectSupportUI) return Promise.resolve();
+    if (!DN._supportBundleLoading) {
+      DN._supportBundleLoading = new Promise(function (resolve, reject) {
+        var script = document.createElement('script');
+        script.src = '/blog/blog-support.min.js?v=202610030155';
+        script.onload = function () {
+          if (typeof DN.injectSupportUI === 'function') resolve();
+          else reject(new Error('Support bundle unavailable'));
+        };
+        script.onerror = reject;
+        document.head.appendChild(script);
+      }).catch(function (error) {
+        DN._supportBundleLoading = null;
+        throw error;
       });
     }
+    return DN._supportBundleLoading;
   };
-
   DN.injectBMC = function () {
-    DN.injectBMCFooter();
-    if (!DN.SUPPORT_URL) return;
-    // R25: skip header pill — static #dn-nav-support icon already covers this slot
-    if (document.getElementById('dn-nav-support')) return;
-    if (document.getElementById('dn-bmc-header')) return;
-    var headerInner = document.querySelector('header.sticky .h-16 > div:last-child');
-    if (!headerInner) return;
-    if (!document.getElementById('dn-bmc-header-css')) {
-      var supportStyle = document.createElement('style');
-      supportStyle.id = 'dn-bmc-header-css';
-      supportStyle.textContent =
-        '.dn-bmc-header-link:hover,.dn-bmc-header-link:focus-visible{' +
-        'background:#eaf6f3!important;color:#0e7c86!important;outline:none}';
-      document.head.appendChild(supportStyle);
-    }
-    var a = document.createElement('a');
-    a.id = 'dn-bmc-header';
-    a.className = 'dn-bmc-header-link';
-    a.href = DN.SUPPORT_URL;
-    // Same-tab navigation: /support is an internal page now.
-    a.setAttribute('aria-label', '支持作者');
-    a.setAttribute('data-zh-aria-label', '支持作者');
-    a.setAttribute('data-en-aria-label', 'Support the author');
-    // Low-key teal pill matching the existing header nav links — no yellow background
-    a.style.cssText =
-      'display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:9999px;' +
-      'background:transparent;color:#0c5159;text-decoration:none;' +
-      'font-size:12px;font-weight:600;border:1px solid #a7d8ce;' +
-      'transition:background .15s,color .15s';
-    a.innerHTML =
-      '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
-        '<path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>' +
-        '<line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>' +
-      '</svg>' +
-      '<span class="hidden sm:inline" data-zh="支持作者" data-en="Buy me a coffee">支持作者</span>';
-    // Insert immediately AFTER the search button (i.e. between search and language toggle)
-    var searchBtn = headerInner.querySelector(NAV_SEARCH_SELECTOR);
-    if (searchBtn && searchBtn.parentNode === headerInner) {
-      searchBtn.insertAdjacentElement('afterend', a);
-    } else {
-      // Fallback: place before the language selector
-      var langSel = headerInner.querySelector('#langToggle');
-      if (langSel) headerInner.insertBefore(a, langSel);
-      else headerInner.appendChild(a);
-    }
-
-    // GA4 tracking
-    if (typeof gtag === 'function') {
-      a.addEventListener('click', function () {
-        try { gtag('event', 'bmc_click', { source: 'header', page_path: location.pathname }); } catch (e) {}
-      });
-    }
+    if (!DN.SUPPORT_URL) return Promise.resolve();
+    return DN.ensureSupportBundle().then(function () { DN.injectSupportUI(); }).catch(function () {
+      // Optional footer UI may fail offline; the static support link remains.
+    });
   };
 
   // -----------------------------------------------------------------------
@@ -1945,24 +1883,34 @@
     // applyTextOnly() retries at the bottom of initBlog catch any miss.
     if ('MutationObserver' in window) {
       var pending = false;
+      var languageRoots = new Set();
+      var languageSelector = '[data-zh],[data-en]';
+      ['placeholder', 'aria-label', 'title', 'alt'].forEach(function (attr) {
+        languageSelector += ',[data-zh-' + attr + '],[data-en-' + attr + ']';
+      });
       var obs = new MutationObserver(function (mutations) {
-        if (pending) return;
-        var hasNew = false;
-        for (var i = 0; i < mutations.length && !hasNew; i++) {
+        // Keep collecting while a batch is pending; a second injection within
+        // the debounce window must not lose its translation.
+        for (var i = 0; i < mutations.length; i++) {
           var added = mutations[i].addedNodes;
           for (var j = 0; j < added.length; j++) {
             var n = added[j];
             if (n.nodeType !== 1) continue;
-            if (n.hasAttribute && n.hasAttribute('data-zh')) { hasNew = true; break; }
-            if (n.querySelector && n.querySelector('[data-zh]')) { hasNew = true; break; }
+            if (n.matches(languageSelector) || n.querySelector(languageSelector)) languageRoots.add(n);
           }
         }
-        if (hasNew) {
+        if (languageRoots.size && !pending) {
           pending = true;
-          // Debounce 80ms — skip applyTextOnly's own mutations (they
-          // change textContent, not addedNodes)
           setTimeout(function () {
-            try { DN.applyTextOnly(curLang); } catch (e) {}
+            var roots = languageRoots;
+            languageRoots = new Set();
+            roots.forEach(function (root) {
+              if (!root.isConnected) return;
+              for (var parent = root.parentElement; parent; parent = parent.parentElement) {
+                if (roots.has(parent)) return;
+              }
+              try { DN.applyTextOnly(curLang, root); } catch (e) {}
+            });
             pending = false;
           }, 80);
         }

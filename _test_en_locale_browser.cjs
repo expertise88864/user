@@ -41,6 +41,7 @@ async function checkEnglishReturn(browser) {
    }
   } finally {await context.close();}
  }
- return {cases:results.length,results};
+ const enhancements=await require('./_test_language_enhancement_browser.cjs')(browser);
+ return {cases:results.length+enhancements.cases,results,enhancements};
 }
 module.exports=checkEnglishReturn;

@@ -48,8 +48,8 @@ def main() -> int:
     forbid(errors, "blog/blog-hub.js", "onmouseout=", "Spotlight cards should not inject inline event attributes")
     forbid(errors, "blog/blog-hub.js", 'href="/blog/\' + a.slug', "Spotlight card hrefs should not interpolate raw slugs")
 
-    require(errors, "blog/blog-shared.js", "dn-bmc-header-css", "Header support link hover/focus styles should live in CSS")
-    require(errors, "blog/blog-shared.js", "a.className = 'dn-bmc-header-link';", "Header support link should use a class for interaction styling")
+    require(errors, "blog/blog-support.js", "dn-bmc-header-css", "Header support link hover/focus styles should live in CSS")
+    require(errors, "blog/blog-support.js", "a.className = 'dn-bmc-header-link';", "Header support link should use a class for interaction styling")
     require(errors, "blog/blog-shared.js", "function escapeHtml(value)", "Command palette result text should be escaped before template insertion")
     require(errors, "blog/blog-shared.js", "function safeSiteUrl(value)", "Command palette result URLs should be restricted to same-site paths")
     require(errors, "blog/blog-shared.js", "url.includes('\\\\')", "Command palette URLs should reject browser-normalized backslash authorities")
@@ -62,6 +62,8 @@ def main() -> int:
     # TDA guideline injector removed 2026-05-16 (was dead code; never called).
     forbid(errors, "blog/blog-shared.js", ".onmouseover", "Runtime code should not assign mouseover handlers via DOM properties")
     forbid(errors, "blog/blog-shared.js", ".onmouseout", "Runtime code should not assign mouseout handlers via DOM properties")
+    forbid(errors, "blog/blog-support.js", ".onmouseover", "Runtime code should not assign mouseover handlers via DOM properties")
+    forbid(errors, "blog/blog-support.js", ".onmouseout", "Runtime code should not assign mouseout handlers via DOM properties")
     forbid(errors, "blog/blog-shared.js", 'href="\' + m.url', "Command palette hrefs should not interpolate raw URLs")
     forbid(errors, "blog/blog-shared.js", "'<span class=\"t\">' + m.title", "Command palette titles should not be inserted raw")
 

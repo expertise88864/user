@@ -22,6 +22,28 @@ def load_script(name):
     return module
 
 
+class SupportSecurityScopeTests(unittest.TestCase):
+    def test_split_support_module_keeps_style_and_handler_security_checks(self):
+        audit = load_script('_check_frontend_security')
+        original_read = audit.read
+        support = original_read('blog/blog-support.js')
+        with redirect_stdout(io.StringIO()):
+            self.assertEqual(audit.main(), 0)
+        mutations = [
+            (support.replace('dn-bmc-header-css', 'missing-header-css'), 'hover/focus'),
+            (support.replace("a.className = 'dn-bmc-header-link';", ''), 'use a class'),
+            (support + '\na.onmouseover = unsafeHandler;', 'mouseover handlers'),
+            (support + '\na.onmouseout = unsafeHandler;', 'mouseout handlers'),
+        ]
+        for source, expected in mutations:
+            with self.subTest(expected=expected):
+                output = io.StringIO()
+                with patch.object(audit, 'read', side_effect=lambda name: source if name == 'blog/blog-support.js' else original_read(name)), redirect_stdout(output):
+                    self.assertEqual(audit.main(), 1)
+                self.assertIn('blog/blog-support.js:', output.getvalue())
+                self.assertIn(expected, output.getvalue())
+
+
 class AutomaticHTMLScopeTests(unittest.TestCase):
     def setUp(self):
         self.css=load_script('_normalize_css_links')
@@ -110,6 +132,66 @@ class AutomaticHTMLScopeTests(unittest.TestCase):
         seen={p.relative_to(ROOT).as_posix() for p in site_html_files(ROOT)}
         self.assertTrue(tracked)
         self.assertEqual(seen,tracked)
+
+    def test_minifier_never_rewrites_private_or_nested_backup_documents(self):
+        # Run the actual CLI in a fixture checkout, including its stdout setup.
+        for name in ['_minify.py', '_site_html.py']:
+            (self.root/name).write_bytes((ROOT/name).read_bytes())
+        body='<!doctype html>\n<html>\n'+('    <!-- Nonmedical fixture spacing -->\n    <p>Visible UI</p>\n'*30)+'</html>\n'
+        public=['index.html','blog/new.html','admin/edit.html','en/index.html','en/blog/new.html']
+        excluded=['.codex-review/evidence.html','backups/previous.html','blog/backup/previous.html',
+                  'node_modules/package/page.html','pagefind/page.html','fixtures/previous.html']
+        for name in public+excluded:self.write(name,body)
+        originals={n:(self.root/n).read_bytes() for n in excluded}
+        run=subprocess.run([sys.executable,str(self.root/'_minify.py')],cwd=self.root,capture_output=True)
+        self.assertEqual(run.returncode,0,run.stdout.decode('utf8',errors='replace')+run.stderr.decode('utf8',errors='replace'))
+        self.assertTrue(all((self.root/n).read_bytes()!=body.encode() for n in public))
+        self.assertEqual({n:(self.root/n).read_bytes() for n in excluded},originals)
+
+    def test_print_extraction_never_uses_private_rules_or_rewrites_private_documents(self):
+        script=load_script('_normalize_critical_css')
+        body='<head><style>@media print { body { color:black } }</style></head>'
+        private='<head><style>@media print { body { color:hotpink } }</style></head>'
+        public=['index.html','blog/new.html','en/index.html','en/blog/new.html']
+        excluded=['.codex-review/evidence.html','backups/previous.html','blog/backup/previous.html',
+                  'fixtures/previous.html','node_modules/page.html','admin/edit.html','404.html']
+        for name in public:self.write(name,body)
+        for name in excluded:self.write(name,private)
+        with patch.object(script,'ROOT',self.root),patch.object(script,'PRINT_CSS_PATH',self.root/'assets/dn-print.css'),patch.object(script,'BELOW_FOLD_CSS_PATH',self.root/'assets/dn-below-fold.css'),redirect_stdout(io.StringIO()):
+            self.assertEqual(script.main(),0)
+        self.assertTrue(all((self.root/n).read_bytes()!=body.encode() for n in public))
+        self.assertEqual({n:(self.root/n).read_bytes() for n in excluded},{n:private.encode() for n in excluded})
+        css=(self.root/'assets/dn-print.css').read_text(encoding='utf8')
+        self.assertIn('color:black',css)
+        self.assertNotIn('hotpink',css)
+
+    def test_performance_discovery_covers_all_source_roots_without_private_output(self):
+        script=load_script('_check_performance_budget')
+        public=['index.html','blog/new.html','admin/edit.html','en/index.html','en/blog/new.html']
+        excluded=['.codex-review/evidence.html','blog/backups/new.html','node_modules/page.html','pagefind/page.html']
+        for name in public+excluded:self.write(name,'Nonmedical UI')
+        with patch.object(script,'ROOT',self.root):
+            self.assertEqual({p.relative_to(self.root).as_posix() for p in script.iter_html_files()},set(public))
+
+    def test_head_extras_version_update_preserves_tag_position_and_is_idempotent(self):
+        script=load_script('_normalize_head_extras')
+        old=script.VITALS_TAG.replace('?v='+script._ASSET_VERSION,'?v=1')
+        before='<head>'+script.SEARCH_LINK+old+'<style id="nonmedical-fixture">p{color:black}</style><meta name="x" content="y"></head><body>Nonmedical UI</body>'
+        page=self.write('index.html',before)
+        self.assertTrue(script.inject_one(page))
+        self.assertEqual(page.read_text(encoding='utf8'),before.replace(old,script.VITALS_TAG))
+        self.assertFalse(script.inject_one(page))
+
+    def test_head_extras_batch_preserves_private_html_and_existing_utility_exclusions(self):
+        script=load_script('_normalize_head_extras')
+        body='<head></head><body>Nonmedical UI</body>'
+        public=['index.html','blog/new.html','en/index.html','en/blog/new.html']
+        excluded=['.codex-review/evidence.html','blog/backups/new.html','node_modules/page.html','pagefind/page.html','admin/edit.html','404.html']
+        for name in public+excluded:self.write(name,body)
+        with patch.object(script,'ROOT',self.root),redirect_stdout(io.StringIO()):
+            self.assertEqual(script.main(),0)
+        self.assertTrue(all((self.root/n).read_text(encoding='utf8')!=body for n in public))
+        self.assertTrue(all((self.root/n).read_text(encoding='utf8')==body for n in excluded))
 
 
 class MaintenanceImportTests(unittest.TestCase):

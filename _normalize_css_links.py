@@ -13,7 +13,7 @@ from _site_html import site_html_files
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-ASSET_VERSION = "202610021400"
+ASSET_VERSION = "202610030155"
 
 
 def normalize_font_loading(src: str) -> str:
@@ -154,7 +154,7 @@ def normalize_file(path: str) -> bool:
 
 
 JS_LOADER_RE = re.compile(
-    r"(/blog/blog-(?:shared|hub|article-reading|diagrams|calculators|article-visuals|article-footer)\.min\.js\?v=)(\d+)"
+    r"(/blog/blog-(?:shared|support|hub|article-reading|diagrams|calculators|article-visuals|article-footer)\.min\.js\?v=)(\d+)"
 )
 
 

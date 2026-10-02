@@ -7,10 +7,10 @@ from __future__ import annotations
 import re
 import sys
 from pathlib import Path
+from _site_html import site_html_files
 
 
 ROOT = Path(__file__).resolve().parent
-SKIP_DIRS = {".git", "node_modules", ".next", "out", "dist", "__pycache__"}
 # Single source of truth: _normalize_css_links.ASSET_VERSION. Mirrored here
 # because this checker runs standalone in CI. Import to stay in sync.
 try:
@@ -51,6 +51,10 @@ BLOG_ARTICLE_FOOTER_EAGER_RE = re.compile(
     r'<(?:script|link)\b[^>]+\b(?:src|href)="[^"]*/blog/blog-article-footer(?:\.min)?\.js[^"]*"',
     re.I,
 )
+BLOG_SUPPORT_EAGER_RE = re.compile(
+    r'<(?:script|link)\b[^>]+\b(?:src|href)="[^"]*/blog/blog-support(?:\.min)?\.js[^"]*"',
+    re.I,
+)
 PRELOAD_GOOGLE_FONTS_RE = re.compile(
     r'<link\s+rel="preload"\s+as="style"\s+href="https://fonts\.googleapis\.com/css2\?[^"]+"',
     re.I,
@@ -81,12 +85,7 @@ MIN_HTML_FILES = 100
 
 
 def iter_html_files() -> list[Path]:
-    files: list[Path] = []
-    for path in ROOT.rglob("*.html"):
-        if any(part in SKIP_DIRS for part in path.relative_to(ROOT).parts):
-            continue
-        files.append(path)
-    return files
+    return site_html_files(ROOT)
 
 
 def main() -> int:
@@ -118,6 +117,7 @@ def main() -> int:
     if sw_path.exists():
         sw_src = sw_path.read_text(encoding="utf-8")
         for bundle in (
+            "blog-support",
             "blog-hub",
             "blog-article-reading",
             "blog-diagrams",
@@ -161,6 +161,8 @@ def main() -> int:
             errors.append(f"{rel}: blog-article-visuals should stay dynamically loaded only on article pages")
         if BLOG_ARTICLE_FOOTER_EAGER_RE.search(src):
             errors.append(f"{rel}: blog-article-footer should stay dynamically loaded only on article pages")
+        if BLOG_SUPPORT_EAGER_RE.search(src):
+            errors.append(f"{rel}: blog-support should stay dynamically loaded as an optional enhancement")
         if PRELOAD_GOOGLE_FONTS_RE.search(src):
             errors.append(f"{rel}: Google Fonts CSS preload is unused unless the same URL is applied as a stylesheet")
         font_hints: dict[str, int] = {}
