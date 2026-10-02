@@ -99,6 +99,18 @@ class RetirementTests(unittest.TestCase):
             self.api.adjust=alter
             with self.subTest(field=field),self.assertRaises(Exception):retirement.prepare(self.api,self.published,now=self.now)
 
+    def test_preview_history_does_not_exhaust_production_query_for_python_or_node(self):
+        def alter(path,data):
+            if path.startswith('/deployments?'):
+                query=parse_qs(urlsplit(path).query)
+                self.assertNotIn('sha',query, 'Production rollbacks must remain visible')
+                if query.get('environment')!=['Production']:
+                    return [dict(data[0],id=1000+i,environment='Preview',production_environment=False) for i in range(100)]
+            return data
+        self.api.adjust=alter
+        self.assertEqual(retirement.prepare(self.api,self.published,now=self.now),self.files)
+        self.assertEqual(self.both()['activeRequests'],0)
+
     def test_failed_missing_duplicate_skipped_or_wrong_sha_formal_jobs_block_both(self):
         cases=[lambda d:d.update(jobs=[]),lambda d:d['jobs'].append(deepcopy(d['jobs'][0])),
                lambda d:d['jobs'][0].update(conclusion='skipped'),lambda d:d['jobs'][0].update(head_sha='a'*40),

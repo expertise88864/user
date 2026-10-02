@@ -140,7 +140,7 @@ function putMain(h, file, content) {
 }
 async function newVersionFixture() {
   const h = fixture();
-  putMain(h, '.cms-delivery.json', '{"version":1,"requests":[]}\n');
+  putMain(h, '.cms-delivery.json', JSON.stringify({ version: 1, requests: [] }, null, 2) + '\n');
   let saved = await (await h.request(h.input())).json();
   saved = await (await h.request(publicationInput(saved))).json();
   const oldHead = saved.head, oldMain = h.main;
@@ -395,6 +395,51 @@ test('cancellation removes only the saved request and advances CAS without publi
   const before = h.calls.length;
   assert.equal((await h.request(publicationInput(cancelled, 'cancel'))).status, 409);
   assert.ok(h.calls.slice(before).every(c => c.method === 'GET'));
+});
+
+test('active main receipts lock cancellation and edits even if the published article bytes did not change', async () => {
+  for (const changed of [false, true]) {
+    const h = fixture(), saved = await (await h.request(h.input({ content: HTML }))).json();
+    const requested = await (await h.request(publicationInput(saved))).json();
+    if (changed) putMain(h, FILE, HTML.replace('本機測試', '已發布修改'));
+    putMain(h, '.cms-delivery.json', JSON.stringify({ version: 1, requests: [{ file: FILE }] }, null, 2) + '\n');
+    const loaded = await (await h.request()).json();
+    assert.equal(loaded.conflict, changed);
+    assert.equal(loaded.requestLocked, true);
+    const before = h.calls.length;
+    const response = await h.request(publicationInput(requested, 'cancel'));
+    assert.equal(response.status, 409); assert.equal((await response.json()).error, 'publication_request_locked');
+    assert.equal((await h.request(h.input({ expectedHead: requested.head }))).status, 409);
+    assert.ok(h.calls.slice(before).every(call => call.method === 'GET'));
+    assert.equal(h.refs.get('drafts/example'), requested.head);
+  }
+});
+
+test('retired or unrelated receipts allow cancelling a stale request, malformed receipt evidence fails closed', async () => {
+  for (const kind of ['retired', 'unrelated', 'malformed', 'duplicate', 'symlink', 'truncated', 'main-race']) {
+    const h = fixture(), saved = await (await h.request(h.input())).json();
+    const requested = await (await h.request(publicationInput(saved))).json();
+    putMain(h, FILE, HTML.replace('本機測試', '另一版'));
+    const requests = kind === 'unrelated' ? [{ file: 'blog/another.html' }] : [];
+    if (kind === 'duplicate') requests.push({ file: 'blog/another.html' }, { file: 'blog/another.html' });
+    putMain(h, '.cms-delivery.json', kind === 'malformed' ? '{"version":2,"requests":[]}' : JSON.stringify({ version: 1, requests }, null, 2) + '\n');
+    if (['symlink', 'truncated', 'main-race'].includes(kind)) h.tamper = (path, result) => {
+      if (path.startsWith('git/trees/')) {
+        if (kind === 'symlink') result.tree.find(entry => entry.path === '.cms-delivery.json').mode = '120000';
+        if (kind === 'truncated') result.truncated = true;
+        if (kind === 'main-race') h.refs.set('main', sha('advanced main'));
+      }
+      return result;
+    };
+    const before = h.calls.length, response = await h.request(publicationInput(requested, 'cancel'));
+    if (['retired', 'unrelated'].includes(kind)) {
+      assert.equal(response.status, 200, kind); assert.equal((await response.json()).request, null);
+    } else {
+      assert.ok(response.status >= 400, kind);
+      assert.ok(h.calls.slice(before).every(call => call.method === 'GET'), kind);
+      assert.equal(h.refs.get('drafts/example'), requested.head);
+    }
+  }
 });
 test('an active request cannot be silently replaced and a concurrent request cannot force the ref', async () => {
   const h = fixture(), saved = await (await h.request(h.input())).json();

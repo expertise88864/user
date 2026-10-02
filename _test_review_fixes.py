@@ -370,5 +370,73 @@ exit $LASTEXITCODE
         self.assertEqual(result[2:4], (self.sid, '1'))
 
 
+class EnglishReturnLinkTests(unittest.TestCase):
+    def test_static_return_link_targets_original_page(self):
+        from _gen_en_pages import transform
+        from html.parser import HTMLParser
+        class Links(HTMLParser):
+            def handle_starttag(self, tag, attrs):
+                if tag == 'a' and dict(attrs).get('id') == 'dn-en-banner-zh':
+                    self.link = dict(attrs)
+        source = '<html lang="zh-Hant"><head><title>Example</title></head><body><main id="main-content"><h1 data-en="Example">範例</h1></main><script src="/blog/blog-shared.min.js" defer></script></body></html>'
+        for zh, en in [('/', '/en'), ('/blog', '/en/blog'), ('/tools', '/en/tools'), ('/glossary', '/en/glossary'), ('/blog/example', '/en/blog/example')]:
+            with self.subTest(zh=zh):
+                parser = Links(); parser.feed(transform(source, zh, en))
+                self.assertEqual(parser.link['href'], zh)
+
+    def test_return_map_uses_existing_primary_anchors(self):
+        from _gen_en_pages import chinese_fragment_map
+        source = '<div id="proseZh"><h2 id="dx">診斷</h2><h2 id="care">照顧</h2></div><div id="proseEn" style="display:none"><h2 id="en-dx">Diagnosis</h2><h2 id="en-foreign">Other</h2></div><script>"<h2 id=\"foreign\">fake</h2>"</script>'
+        english = '<h2 id="en-dx">Diagnosis</h2><h2 id="care-en">Care</h2><h2 id="en-foreign">Other</h2><h2 id="care">Shared</h2>'
+        self.assertEqual(chinese_fragment_map(source, english), {'en-dx': 'dx', 'care-en': 'care'})
+
+    def test_ambiguous_fragment_names_are_not_guessed(self):
+        from _gen_en_pages import chinese_fragment_map
+        self.assertEqual(chinese_fragment_map('<h2 id="x-en">A</h2><h2 id="en-x">B</h2>', '<h2 id="en-x-en">C</h2>'), {})
+
+    def test_english_bootstrap_uses_the_maintained_locale_asset(self):
+        from _gen_en_pages import EN_LANG_BOOTSTRAP
+        self.assertIn('/assets/inline/en-locale-banner.js', EN_LANG_BOOTSTRAP)
+        self.assertNotIn('location.pathname', EN_LANG_BOOTSTRAP)
+
+
+class MedicalEntityConsistencyTests(unittest.TestCase):
+    def test_condition_identity_links_use_verified_matching_entities(self):
+        # Primary Wikidata identity audit, 2026-10-02: e.g. Q864350 is a
+        # ropeway, Q188601 a bird, Q83320 nitric acid. A syntactically valid
+        # URL must not claim these are the article's diagnosis. Unknown links
+        # are omitted until the condition identity is independently verified.
+        from _normalize_medical_codes import SLUG_CONDITIONS
+        verified = {'Actinic keratosis': ['https://www.wikidata.org/wiki/Q422225']}
+        for slug, conditions in SLUG_CONDITIONS.items():
+            for condition in conditions:
+                with self.subTest(slug=slug, condition=condition['name']):
+                    self.assertEqual(condition.get('sameAs', []), verified.get(condition['name'], []))
+
+    def test_same_named_conditions_use_one_entity_across_articles(self):
+        from _normalize_medical_codes import SLUG_CONDITIONS
+        names = {}
+        for conditions in SLUG_CONDITIONS.values():
+            for condition in conditions:
+                names.setdefault(condition['name'].casefold(), set()).update(condition.get('sameAs', []))
+        for name, entities in names.items():
+            with self.subTest(name=name):
+                self.assertLessEqual(len(entities), 1)
+
+    def test_actinic_keratosis_points_to_the_verified_condition_entity(self):
+        # Primary entity: https://www.wikidata.org/wiki/Q422225 (2026-10-02).
+        # Q934820 is David Douglas Duncan; Q576550 is Xiph.Org Foundation.
+        from _normalize_medical_codes import SLUG_CONDITIONS
+        found = [condition for conditions in SLUG_CONDITIONS.values() for condition in conditions
+                 if condition['name'] == 'Actinic keratosis']
+        self.assertEqual(len(found), 2)
+        for condition in found:
+            self.assertEqual(condition['sameAs'], ['https://www.wikidata.org/wiki/Q422225'])
+
+    def test_articles_do_not_advertise_unimplemented_mathml(self):
+        from _normalize_schema import ACCESSIBILITY_FEATURES
+        self.assertNotIn('MathML', ACCESSIBILITY_FEATURES)
+
+
 if __name__ == '__main__':
     unittest.main()

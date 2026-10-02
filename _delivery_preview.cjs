@@ -150,7 +150,11 @@ if (require.main === module) (async () => {
     await require('./_test_diagram_loading_browser.cjs')(browser);
     await require('./_test_diagram_viewer_browser.cjs')(browser);
     await require('./_test_reading_meta_browser.cjs')(browser);
+    await require('./_test_reader_controls_browser.cjs')(browser, {
+      readingSource: fs.readFileSync('blog/blog-article-reading.min.js', 'utf8'),
+    });
     await require('./_test_patient_journeys_browser.cjs')(browser);
+    await require('./_test_en_locale_browser.cjs')(browser);
     await require('./_test_draft_media_browser.cjs')(browser);
     await require('./_test_editor_drafts_browser.cjs')(browser);
     await require('./_test_editor_version_browser.cjs')(browser);

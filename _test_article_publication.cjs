@@ -127,6 +127,20 @@ test('a newer production rollback for another SHA cannot borrow old exact-main s
   assert.equal(result.state, 'unverified'); assert.equal(result.published, false); assert.equal(result.deploymentVerified, false);
   assert.ok(h.calls.some(path => path.startsWith('deployments?') && !new URLSearchParams(path.split('?')[1]).has('sha')));
 });
+test('busy preview history cannot crowd production out of its bounded query', async () => {
+  const h = fixture();
+  h.mutate = (path, data) => {
+    if (!path.startsWith('deployments?')) return data;
+    const query = new URLSearchParams(path.split('?')[1]);
+    assert.equal(query.has('sha'), false, 'rollback deployments must remain visible');
+    if (query.get('environment') === 'Production') return data;
+    return Array.from({ length: 100 }, (_, i) => ({ ...h.deployment, id: 1000 + i,
+      environment: 'Preview', production_environment: false }));
+  };
+  const result = await h.observe();
+  assert.equal(result.state, 'live'); assert.equal(result.published, true);
+  assert.equal(h.calls.filter(path => path.startsWith('deployments?')).length, 2);
+});
 test('main, CI rerun, deployment or status changing during observation invalidates publication', async () => {
   for (const mode of ['main', 'runs', 'deployment', 'deployment-sha', 'status']) {
     const h = fixture(); h.changedMain = mode === 'main';

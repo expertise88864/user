@@ -19,10 +19,13 @@ class PageLinks(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.hrefs = []
+        self.anchors = []
 
     def handle_starttag(self, tag, attrs):
         if tag == 'a':
-            href = dict(attrs).get('href')
+            values = dict(attrs)
+            href = values.get('href')
+            self.anchors.append((href, values.get('id')))
             if href:
                 self.hrefs.append(href)
 
@@ -65,6 +68,19 @@ def should_check(href: str) -> bool:
     return href.startswith("/") and not href.startswith("//") and not href.startswith("/en/")
 
 
+def chinese_return_errors(parser: PageLinks, relative: str) -> list[str]:
+    """Only the explicit locale control may return to its own source document."""
+    source = relative.removeprefix('en/').removesuffix('.html')
+    expected = '/' if source == 'index' else '/' + source.removesuffix('/index')
+    controls = [href for href, ident in parser.anchors if ident == 'dn-en-banner-zh']
+    errors = []
+    if len(controls) > 1:
+        errors.append(f'{relative}: duplicate Chinese return controls')
+    if any(href != expected for href in controls):
+        errors.append(f'{relative}: Chinese return control must link exactly to {expected}')
+    return errors
+
+
 def main() -> int:
     errors: list[str] = []
     if not EN_ROOT.exists():
@@ -78,7 +94,12 @@ def main() -> int:
         rel = path.relative_to(ROOT).as_posix()
         parser = PageLinks()
         parser.feed(mask_inert_regions(blank_script_style(src)))
-        for href in parser.hrefs:
+        errors.extend(chinese_return_errors(parser, rel))
+        for href, ident in parser.anchors:
+            if ident == 'dn-en-banner-zh':
+                continue  # Its same-source URL and uniqueness are checked above.
+            if not href:
+                continue
             if not should_check(href):
                 continue
             if local_html_for_path(href) is not None and en_mirror_expected(href):

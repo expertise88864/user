@@ -23,6 +23,8 @@
     invalid_schedule: '請選擇未來一年內的排程時間；尚未送出申請。',
     request_already_saved: '這個版本已有申請；請先取消，或編輯並保存新版本後重新確認。',
     request_missing: '目前沒有可取消的申請；請重讀確認，編輯保留。',
+    publication_request_locked: '申請已進入發布流程，請先確認上線狀態，再開始新版草稿；目前編輯保留。',
+    invalid_delivery_receipt: '發布資料暫時無法核對，請稍後重讀；目前編輯保留。',
     request_not_verified: '申請可能已保存，但驗證未完成；請重讀確認，勿重複送出。',
     article_not_published: '這篇尚未正式發布，無需申請下架。',
     invalid_local_draft: '暫存圖片不完整或版本不符，尚未還原；原暫存與編輯保留。',
@@ -69,10 +71,10 @@
     if (data.file !== file || !(data.head === null || SHA.test(data.head)) ||
         !(data.baseSha === null || SHA.test(data.baseSha)) || !(data.blobSha === null || SHA.test(data.blobSha)) ||
         !(data.content === null || typeof data.content === 'string') ||
-        !Array.isArray(data.media)) throw error('invalid_draft_response');
+        !Array.isArray(data.media) || (data.requestLocked !== undefined && typeof data.requestLocked !== 'boolean')) throw error('invalid_draft_response');
     const context = { file, head: data.head, baseSha: data.baseSha, legacy: data.legacy,
       conflict: data.conflict, media: new Map(), generation, blobSha: data.blobSha,
-      savedContent: data.content, request: data.request || null };
+      savedContent: data.content, request: data.request || null, requestLocked: data.requestLocked === true };
     for (const item of data.media) context.media.set(item.path, { ...item, url: mediaUrl(item), accepted: true });
     if (!options || options.activate !== false) contexts.set(file, context);
     return { ...data, context };
@@ -102,6 +104,7 @@
   }
   function capture(file, content, options) {
     const context = contexts.get(file);
+    if (context && context.requestLocked) throw error('publication_request_locked');
     if (!context || context.legacy || context.conflict) throw error(context && context.legacy ? 'legacy_draft_requires_review' : 'draft_conflict');
     const html = canonical(file, content);
     const media = [...context.media.values()].filter(item => !item.accepted && html.includes('/' + item.path))
@@ -134,6 +137,7 @@
   }
   function captureRequest(file, content, options) {
     const context = contexts.get(file), action = options && options.action;
+    if (context && context.requestLocked) throw error('publication_request_locked');
     if (!context || context.legacy || (context.conflict && action !== 'cancel')) throw error('draft_conflict');
     if (!SHA.test(context.head || '') || !SHA.test(context.blobSha || '')) throw error('cloud_draft_required');
     const currentContent = canonical(file, content);

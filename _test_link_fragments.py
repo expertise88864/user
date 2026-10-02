@@ -20,6 +20,29 @@ import _check_bilingual_attrs as bilingual
 
 
 class FragmentTests(unittest.TestCase):
+    def test_chinese_return_control_is_bound_to_its_source_page(self):
+        for rel, href in [('en/index.html', '/'), ('en/blog/index.html', '/blog'),
+                          ('en/blog/example.html', '/blog/example'), ('en/tools.html', '/tools')]:
+            with self.subTest(rel=rel):
+                parser = en_links.PageLinks()
+                parser.feed(f'<a id="dn-en-banner-zh" href="{href}">Chinese</a>')
+                self.assertEqual(en_links.chinese_return_errors(parser, rel), [])
+
+    def test_chinese_return_control_rejects_other_pages_queries_and_schemes(self):
+        for href in ['/tools', '/blog/example?x=1', '/blog/example#x',
+                     'https://other.test/blog/example', '//other.test', 'javascript:alert(1)', '#', '']:
+            with self.subTest(href=href):
+                parser = en_links.PageLinks()
+                parser.feed(f'<a id="dn-en-banner-zh" href="{href}">Chinese</a>')
+                self.assertTrue(en_links.chinese_return_errors(parser, 'en/blog/example.html'))
+
+    def test_chinese_return_control_is_unique_and_other_links_remain_audited(self):
+        parser = en_links.PageLinks()
+        parser.feed('<a id="dn-en-banner-zh" href="/tools">Chinese</a>' * 2)
+        self.assertTrue(en_links.chinese_return_errors(parser, 'en/tools.html'))
+        self.assertTrue(en_links.should_check('/blog/example'))
+        self.assertFalse(en_links.should_check('/en/blog/example'))
+
     def test_glossary_mirror_keeps_canonical_identity_after_translation(self):
         zh = '<div class="gloss-card" id="term-old" data-note="id=keep"><div class="gloss-term">蕈狀肉芽腫</div><div class="gloss-en">蕈狀肉芽腫</div></div>'
         en = zh.replace('蕈狀肉芽腫', 'Mycosis fungoides')

@@ -117,7 +117,7 @@ export async function observePublication(api, source, policy) {
     if (ciVerified) {
       // A rollback/manual redeploy may replace production without changing
       // main. A SHA-filtered list would hide that newer deployment entirely.
-      deployment = productionFor(await pages('deployments'));
+      deployment = productionFor(await pages('deployments?environment=Production'));
       if (!deployment) state = 'deployment_missing';
       else if (deployment.sha !== source.main) state = 'unverified';
       else {
@@ -135,7 +135,7 @@ export async function observePublication(api, source, policy) {
       return { ...base, state: 'changed', checks };
     }
     if (state === 'live') {
-      const freshDeployment = productionFor(await pages('deployments'));
+      const freshDeployment = productionFor(await pages('deployments?environment=Production'));
       if (!freshDeployment || freshDeployment.id !== deployment.id || freshDeployment.sha !== source.main) return { ...base, state: 'changed', checks };
       const freshStatus = statusFor(await pages('deployments/' + deployment.id + '/statuses'));
       if (!freshStatus || freshStatus.id !== deploymentStatus.id || freshStatus.state !== 'success' ||

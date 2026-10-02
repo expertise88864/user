@@ -129,6 +129,37 @@ async function fileAt(api, file, commit, optional = false) {
   catch (_) { fail(502, 'invalid_repository_content'); }
   return { sha: data.sha, content };
 }
+// Identify revisions captured by the main delivery contract. This is a write
+// lock, not evidence of CI success or publication. Retirement removes the lock.
+async function deliveryLock(api, target, main) {
+  const receipt = await fileAt(api, '.cms-delivery.json', main, true);
+  if (!receipt) return false;
+  const commit = await api('GET', 'git/commits/' + main);
+  if (commit.sha !== main || !SHA.test(commit.tree?.sha || '')) fail(502, 'invalid_delivery_receipt');
+  const tree = await api('GET', 'git/trees/' + commit.tree.sha + '?recursive=1');
+  if (tree.sha !== commit.tree.sha || tree.truncated !== false || !Array.isArray(tree.tree) ||
+      tree.tree.length > 10000) fail(502, 'invalid_delivery_receipt');
+  const entries = tree.tree.filter(entry => entry.path === '.cms-delivery.json');
+  if (entries.length !== 1 || entries[0].mode !== '100644' || entries[0].type !== 'blob' ||
+      entries[0].sha !== receipt.sha) fail(502, 'invalid_delivery_receipt');
+  let value;
+  try { value = JSON.parse(receipt.content); } catch (_) { fail(502, 'invalid_delivery_receipt'); }
+  if (!value || Array.isArray(value) || value.version !== 1 ||
+      Object.keys(value).some(key => !['version', 'requests'].includes(key)) ||
+      !Array.isArray(value.requests) || value.requests.length > 20 ||
+      JSON.stringify(value, null, 2) + '\n' !== receipt.content) fail(502, 'invalid_delivery_receipt');
+  const files = new Set();
+  for (const record of value.requests) {
+    if (!record || Array.isArray(record) || typeof record.file !== 'string') fail(502, 'invalid_delivery_receipt');
+    try { article(record.file); } catch (_) { fail(502, 'invalid_delivery_receipt'); }
+    if (files.has(record.file)) fail(502, 'invalid_delivery_receipt');
+    files.add(record.file);
+  }
+  return files.has(target.file);
+}
+async function unchangedMain(api, main) {
+  if (await ref(api, 'main') !== main) fail(409, 'draft_conflict');
+}
 function mainIndexable(content) {
   if (content === null) return false;
   const errors = [];
@@ -230,6 +261,7 @@ async function requestPublication(api, target, input) {
   } else if (input.scheduledAt !== undefined && input.scheduledAt !== null) fail(400, 'invalid_schedule');
   const loaded = await state(api, target);
   if (loaded.legacy) fail(409, 'legacy_draft_requires_review');
+  if (await deliveryLock(api, target, loaded.main)) fail(409, 'publication_request_locked');
   if (!loaded.head || loaded.head !== input.expectedHead || loaded.baseSha !== input.baseSha ||
       loaded.blobSha !== input.expectedBlob || (loaded.conflict && input.action !== 'cancel')) fail(409, 'draft_conflict');
   if (input.action === 'unpublish' && loaded.baseSha === null) fail(400, 'article_not_published');
@@ -244,11 +276,13 @@ async function requestPublication(api, target, input) {
     approvedBy: 'expertise88864', contentApproved: input.action !== 'unpublish',
     requestedAt: new Date().toISOString(), scheduledAt };
   const content = input.action === 'cancel' ? null : JSON.stringify(record) + '\n';
+  await unchangedMain(api, loaded.main);
   const tree = await api('POST', 'git/trees', { base_tree: parent.tree.sha,
     tree: [{ path: target.request, mode: '100644', type: 'blob', ...(content === null ? { sha: null } : { content }) }] });
   const commit = await api('POST', 'git/commits', { message: '[request] ' + input.action + ' ' + target.file,
     tree: validSha(tree.sha), parents: [loaded.head] });
   const next = validSha(commit.sha);
+  await unchangedMain(api, loaded.main);
   const result = await api('PATCH', 'git/refs/heads/' + encodeURIComponent(target.branch), { sha: next, force: false });
   if (!result.object || result.object.sha !== next) fail(502, 'request_not_verified');
   let accepted;
@@ -491,6 +525,7 @@ async function save(api, target, input) {
   const loaded = await state(api, target);
   if (loaded.legacy) fail(409, 'legacy_draft_requires_review');
   if (loaded.head !== input.expectedHead || loaded.baseSha !== input.baseSha || loaded.conflict) fail(409, 'draft_conflict');
+  if (await deliveryLock(api, target, loaded.main)) fail(409, 'publication_request_locked');
   const metadata = input.metadata === undefined ? loaded.metadata || null : articleMetadata(input.metadata);
   if (loaded.baseSha === null && !metadata) fail(400, 'article_metadata_required');
   const assets = new Map(loaded.assets.filter(a => references.has(a.path)).map(a => [a.path, a]));
@@ -521,6 +556,7 @@ async function save(api, target, input) {
   const parent = await api('GET', 'git/commits/' + parentSha);
   if (!parent.tree || !SHA.test(parent.tree.sha)) fail(502, 'invalid_repository_content');
   const previousRequest = await fileAt(api, target.request, parentSha, true);
+  await unchangedMain(api, loaded.main);
   const articleBlob = await api('POST', 'git/blobs', { content: encode(input.content), encoding: 'base64' });
   const blobSha = validSha(articleBlob.sha);
   const tree = [{ path: target.file, mode: '100644', type: 'blob', sha: blobSha }];
@@ -540,6 +576,7 @@ async function save(api, target, input) {
   const next = validSha(commit.sha);
   // Non-force update is a CAS: a concurrent writer makes this sibling commit
   // non-fast-forward. New drafts create the ref only after the complete bundle.
+  await unchangedMain(api, loaded.main);
   const result = loaded.head
     ? await api('PATCH', 'git/refs/heads/' + encodeURIComponent(target.branch), { sha: next, force: false })
     : await api('POST', 'git/refs', { ref: 'refs/heads/' + target.branch, sha: next });
@@ -581,8 +618,10 @@ export default async function handler(req) {
       if (new URL(req.url).searchParams.get('mode') === 'status') return json(200, {
         file: target.file, head: loaded.head, baseSha: loaded.baseSha, blobSha: loaded.blobSha,
         conflict: loaded.conflict, legacy: loaded.legacy, request: publication,
+        requestLocked: await deliveryLock(api, target, loaded.main),
       });
       return json(200, { file: target.file, branch: target.branch, ...loaded, request: publication,
+        requestLocked: await deliveryLock(api, target, loaded.main),
         media: await draftMedia(api, loaded),
         status: loaded.head ? 'cloud_draft' : loaded.content !== null ? 'published_base' : 'not_created',
         sourceOnMain: loaded.mainBlobSha !== null, published: false, deploymentVerified: false });

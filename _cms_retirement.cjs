@@ -42,7 +42,7 @@ async function selectedRuns(api,head,policy){
  return selected;
 }
 async function production(api){
- const rows=(await pages(api,'/deployments')).filter(d=>String(d.environment).toLowerCase()==='production'&&typeof d.production_environment==='boolean'&&['vercel[bot]','vercel'].includes(d.creator?.login));
+ const rows=(await pages(api,'/deployments?environment=Production')).filter(d=>String(d.environment).toLowerCase()==='production'&&typeof d.production_environment==='boolean'&&['vercel[bot]','vercel'].includes(d.creator?.login));
  assert.ok(rows.length&&rows.every(d=>positive(d.id)),'Retirement trusted deployment missing');const d=rows.sort((a,b)=>b.id-a.id)[0];assert.ok(sha(d.sha),'Retirement deployment SHA invalid');return d;
 }
 function validStatus(status){

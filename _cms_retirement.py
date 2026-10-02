@@ -92,7 +92,7 @@ def selected_runs(api, sha, policy):
 
 
 def production(api):
-    rows = [d for d in pages(api, "/deployments") if str(d.get("environment", "")).lower() == "production"
+    rows = [d for d in pages(api, "/deployments?environment=Production") if str(d.get("environment", "")).lower() == "production"
             and type(d.get("production_environment")) is bool and d.get("creator", {}).get("login") in {"vercel[bot]", "vercel"}]
     if not rows or any(type(d.get("id")) is not int or d["id"] <= 0 for d in rows):
         raise ValueError("Retirement trusted production deployment missing")

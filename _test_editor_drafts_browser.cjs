@@ -10,7 +10,7 @@ module.exports = async function checkEditorDraftBridge(browser) {
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, serviceWorkers: 'block' });
   const writes = [], externalWrites = []; let release, remoteHead = null, acceptedHtml = html;
   let conflict = false, pauseNextLoad = false, loadRelease, newDraft = null; const media = new Map();
-  let publication = null, pauseNextRequest = false, requestRelease, requestSerial = 0;
+  let publication = null, pauseNextRequest = false, requestRelease, requestSerial = 0, requestLocked = false;
   try {
     const page = await context.newPage();
     await page.addInitScript(() => {
@@ -46,7 +46,7 @@ module.exports = async function checkEditorDraftBridge(browser) {
           }
           return route.fulfill({ status: 200, json: {
           file: 'blog/example.html', head: remoteHead, baseSha: BASE, blobSha: remoteHead ? BLOB : BASE,
-          content: acceptedHtml, media: [...media.values()], assets: [], legacy: false, conflict: false, status: remoteHead ? 'cloud_draft' : 'published_base', request: publication,
+          content: acceptedHtml, media: [...media.values()], assets: [], legacy: false, conflict: false, status: remoteHead ? 'cloud_draft' : 'published_base', request: publication, requestLocked,
           } });
         }
         const body = request.postDataJSON(); writes.push(body);
@@ -228,6 +228,16 @@ module.exports = async function checkEditorDraftBridge(browser) {
     assert.equal(writes.length, 9, 'reloaded editor identity invalidates the old request dialog');
     await page.locator('#requestClose').click();
     assert.deepEqual(externalWrites, []);
+    requestLocked = true;
+    assert.equal(await page.evaluate(() => loadFile('blog/example.html')), true);
+    assert.equal(await page.locator('#cancelRequestBtn').isDisabled(), true);
+    assert.match(await page.locator('#cancelRequestBtn').getAttribute('title'), /申請已進入發布流程/);
+    assert.equal(await page.evaluate(() => {
+      try { window.DNArticleDrafts.captureRequest(CURRENT_FILE, getCurrentEditorContent(), { action: 'cancel', confirmed: true }); }
+      catch (error) { return error.code; }
+    }), 'publication_request_locked');
+    assert.equal(writes.length, 9, 'delivery-locked revision must remain unchanged');
+    requestLocked = false;
     const beforeNewArticle = writes.length;
     await page.locator('#newFileName').fill('new-fixture'); await page.locator('#newFileBtn').click();
     await page.locator('#wizType').selectOption('overview');

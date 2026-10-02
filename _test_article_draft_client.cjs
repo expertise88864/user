@@ -210,6 +210,17 @@ test('cancellation advances the head, clears only request state, and later edits
   assert.equal(h.api.captureRequest(FILE, h.loaded.content, { action: 'review', contentApproved: true }).expectedHead, 'd'.repeat(40));
   assert.throws(() => h.api.captureRequest(FILE, '<html>later</html>', { action: 'review', contentApproved: true }), e => e.code === 'unsaved_request');
 });
+
+test('active delivery lock prevents cancelling or editing the captured author revision', async () => {
+  for (const conflict of [false, true]) {
+    const h = fixture();
+    await h.load({ head: HEAD, requestLocked: true, conflict, request: { status: 'invalidated' } });
+    assert.throws(() => h.api.captureRequest(FILE, h.loaded.content, { action: 'cancel', confirmed: true }),
+      e => e.code === 'publication_request_locked');
+    assert.throws(() => h.api.capture(FILE, h.loaded.content), e => e.code === 'publication_request_locked');
+    assert.equal(h.requests.length, 1, 'locked actions never send a write');
+  }
+});
 test('an ordinary verified save invalidates old request state and updates requestable content', async () => {
   const h = fixture(); await h.load({ head: HEAD, request: { status: 'awaiting_review' } });
   const content = '<html><body>new saved article</body></html>', pending = h.api.save(h.api.capture(FILE, content));

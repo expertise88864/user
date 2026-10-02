@@ -17,7 +17,7 @@ import sys
 import html as html_lib
 from html.parser import HTMLParser
 from pathlib import Path
-from _html_scan import attributes
+from _html_scan import attributes, blank_script_style, iter_tags, mask_inert_regions, tag_name
 from _json_html import script_json
 
 # CODE_REVIEW — Windows cp950 console crashes on print() with CJK
@@ -140,16 +140,7 @@ EN_BANNER = '''<div id="dn-en-banner" style="background:linear-gradient(180deg,#
   <a href="#" id="dn-en-banner-zh" style="margin-left:8px;color:#083a40;font-weight:800;text-decoration:underline">Switch to Chinese</a>
 </div>'''
 
-EN_LANG_BOOTSTRAP = '''<script>
-try {
-  localStorage.setItem('dn_lang', 'en');
-  document.cookie = 'dn_lang=en;path=/;max-age=31536000;samesite=lax';
-} catch (e) {}
-document.addEventListener('DOMContentLoaded', function () {
-  var sw = document.getElementById('dn-en-banner-zh');
-  if (sw) sw.href = location.pathname.replace(/^\\/en\\//, '/').replace(/^\\/en$/, '/');
-});
-</script>'''
+EN_LANG_BOOTSTRAP = '<script defer src="/assets/inline/en-locale-banner.js"></script>'
 
 FALLBACK_EN_DESC = (
     'Plain-language dermatology patient education by Dr. Yi-Jia Chen, '
@@ -952,6 +943,41 @@ def translate_hub_jsonld(src: str) -> str:
     return src
 
 
+def chinese_fragment_map(source: str, english: str) -> dict[str, str]:
+    """Map explicit EN-prefixed/suffixed IDs only to existing primary IDs.
+
+    Hidden proseEn IDs must not appear as Chinese destinations. Ambiguous
+    names and unrelated IDs are retained rather than guessed by heading order.
+    """
+    tags = list(iter_tags(mask_inert_regions(blank_script_style(source))))
+    english_ranges = []
+    for index, (start, opening) in enumerate(tags):
+        if opening.startswith('</') or attributes(opening).get('id') != 'proseEn':
+            continue
+        depth = 1
+        for stop, closing in tags[index + 1:]:
+            if tag_name(closing) == tag_name(opening):
+                depth += -1 if closing.startswith('</') else 1
+            if depth == 0:
+                english_ranges.append((start, stop + len(closing)))
+                break
+    primary = {attributes(tag)['id'] for position, tag in tags
+               if not tag.startswith('</') and 'id' in attributes(tag)
+               and not any(start <= position < stop for start, stop in english_ranges)}
+    result = {}
+    for _, tag in iter_tags(mask_inert_regions(blank_script_style(english))):
+        ident = attributes(tag).get('id')
+        if not ident or ident in primary:
+            continue
+        choices = {candidate for candidate in
+                   (ident[3:] if ident.startswith('en-') else '',
+                    ident[:-3] if ident.endswith('-en') else '')
+                   if candidate in primary}
+        if len(choices) == 1:
+            result[ident] = choices.pop()
+    return result
+
+
 def transform(src: str, zh_canonical_path: str, en_canonical_path: str, source_rel: str | None = None) -> str:
     s = apply_data_en(src)
     s = translate_aria_labels(s)
@@ -1037,10 +1063,12 @@ def transform(src: str, zh_canonical_path: str, en_canonical_path: str, source_r
     )
     s = rewrite_en_internal_links(s)
 
+    fragments = html_lib.escape(json.dumps(chinese_fragment_map(src, s), ensure_ascii=False), quote=True)
+    banner = EN_BANNER.replace('href="#"', 'href="' + html_lib.escape(zh_canonical_path, quote=True) + '" data-dn-zh-fragments="' + fragments + '"', 1)
     if '<main id="main-content">' in s:
-        s = s.replace('<main id="main-content">', '<main id="main-content">\n' + EN_BANNER, 1)
+        s = s.replace('<main id="main-content">', '<main id="main-content">\n' + banner, 1)
     else:
-        s = re.sub(r'(</header>)', r'\1\n' + EN_BANNER, s, count=1)
+        s = re.sub(r'(</header>)', lambda m: m.group(1) + '\n' + banner, s, count=1)
 
     s = re.sub(r'<meta property="og:locale" content="[^"]*" ?/?>', '<meta property="og:locale" content="en_US" />', s, count=1)
     s = re.sub(r'<meta property="og:locale:alternate" content="[^"]*" ?/?>', '<meta property="og:locale:alternate" content="zh_TW" />', s, count=1)

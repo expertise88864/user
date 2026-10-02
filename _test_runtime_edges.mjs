@@ -8,6 +8,28 @@ const hubContext = {window:{DN:{ARTICLES:[]}}};
 vm.runInNewContext(readFileSync(new URL('./blog/blog-hub.js', import.meta.url),'utf8'), hubContext);
 const searchCatalog = hubContext.window.DN.searchArticleCatalog;
 
+test('English return links preserve current URL context and map only explicit primary IDs', () => {
+  const source = readFileSync(new URL('./assets/inline/en-locale-banner.js', import.meta.url), 'utf8');
+  const events = {}, location = {origin:'https://example.test',search:'?from=reader',hash:'#en-dx'};
+  const link = {href:'https://example.test/blog/example', getAttribute:()=>'{"en-dx":"dx"}',
+    addEventListener:(name, handler)=>{events[name]=handler;}};
+  const context = {URL,location,window:{addEventListener:(name,handler)=>{events[name]=handler;}},
+    localStorage:{setItem(){}},document:{getElementById:()=>link,addEventListener:(name,handler)=>{events[name]=handler;}}};
+  vm.runInNewContext(source,context);events.DOMContentLoaded();
+  assert.equal(link.href,'/blog/example?from=reader#dx');
+  location.hash='#term-%E8%95%88';events.hashchange();assert.equal(link.href,'/blog/example?from=reader#term-%E8%95%88');
+  location.search='?from=changed';location.hash='#main-content';events.click();assert.equal(link.href,'/blog/example?from=changed#main-content');
+  location.hash='#bad%ZZ';events.click();assert.equal(link.href,'/blog/example?from=changed#bad%ZZ');
+});
+
+test('English return-link helper leaves foreign-origin links untouched', () => {
+  const source = readFileSync(new URL('./assets/inline/en-locale-banner.js', import.meta.url), 'utf8');
+  let boot;const link={href:'https://foreign.test/'};
+  const context={URL,location:{origin:'https://example.test'},localStorage:{setItem(){}},
+    document:{getElementById:()=>link,addEventListener:(name,handler)=>{boot=handler;}}};
+  vm.runInNewContext(source,context);boot();assert.equal(link.href,'https://foreign.test/');
+});
+
 test('article numbering keeps ISO-date order without initializing locale collation', () => {
   const source = readFileSync(new URL('./blog/blog-shared.js', import.meta.url), 'utf8');
   const context = vm.createContext({window:{DN:{}}});
@@ -238,6 +260,26 @@ async function offlineAssetResponse(pathname, cached) {
   return response;
 }
 
+test('offline navigation returns a Response even when both fallback cache entries are absent', async () => {
+  for (const available of [null, '/offline', '/']) {
+    const handlers = {}, cached = new Response('cached fallback');
+    const cache = { match: async key => key === available ? cached : undefined };
+    vm.runInNewContext(readFileSync(new URL('./sw.js', import.meta.url), 'utf8'), {
+      self: { addEventListener: (name, fn) => handlers[name] = fn },
+      location: { origin: 'https://site.test' }, URL, Response,
+      caches: { open: async () => cache },
+      fetch: async () => { throw Error('network disconnected'); },
+    });
+    let response;
+    handlers.fetch({ request: { method: 'GET', url: 'https://site.test/blog/uncached', mode: 'navigate' },
+      respondWith: promise => response = promise, waitUntil() {} });
+    const result = await response;
+    assert.ok(result instanceof Response, 'respondWith must not resolve to undefined');
+    if (available) assert.equal(result, cached);
+    else { assert.equal(result.type, 'error'); assert.equal(result.status, 0); }
+  }
+});
+
 for (const pathname of ['/assets/search-index.json','/_vercel/speed-insights/script.js']) {
   test(`offline cache miss returns a valid network-error response (${pathname})`,async()=>{
     const response=await offlineAssetResponse(pathname);
@@ -265,6 +307,26 @@ function runtime(cookie, pathname = '/blog/acne-myths', language = 'zh-TW') {
   vm.runInNewContext(readFileSync(new URL('./blog/blog-shared.js', import.meta.url), 'utf8'), context);
   return context.window.DN;
 }
+
+test('reading memory rejects malformed storage and safely tolerates blocked cleanup', () => {
+  const valid = {y:600,pct:35,ts:Date.now(),h2:'Heading'};
+  for (const raw of ['{bad', JSON.stringify(null), JSON.stringify([]),
+    ...[{pct:'<img src=x onerror="bad">'},{pct:'35'},{pct:101},{pct:-1},{pct:5.5},
+      {y:'600'},{y:-1},{y:null},{ts:'recent'},{ts:Date.now()+86400000},{ts:1},{h2:[]}]
+      .map(extra=>JSON.stringify({...valid,...extra}))]) {
+    const timers = [], created = [], prose = {};
+    const win = {DN:{},location:{hash:''},addEventListener(){}};
+    const document = {getElementById:id=>id==='proseZh'?prose:null,
+      querySelector:()=>prose,addEventListener(){},createElement:tag=>{created.push(tag);return {};}};
+    vm.runInNewContext(readFileSync(new URL('./blog/blog-article-reading.js',import.meta.url),'utf8'), {
+      window:win,document,setTimeout:fn=>timers.push(fn),
+      localStorage:{getItem:()=>raw,removeItem(){throw Error('storage cleanup blocked');}},
+    });
+    win.DN.currentSlug=()=> 'fixture'; win.DN.bindScrollMemory();
+    assert.doesNotThrow(()=>timers.shift()(),raw);
+    assert.deepEqual(created,[], 'Invalid storage must not create a restore prompt');
+  }
+});
 
 test('malformed language cookie does not abort language detection', () => {
   const dn = runtime('dn_lang=%E0%A4%A');

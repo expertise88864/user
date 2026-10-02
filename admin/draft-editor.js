@@ -59,7 +59,10 @@
   function renderRequestState(request) {
     publicationLabel.textContent = request ? requestLabels[request.status] || '申請狀態需重讀確認' : '尚未送審';
     const cancel = document.getElementById('cancelRequestBtn');
-    if (cancel) cancel.disabled = !request;
+    if (cancel) {
+      cancel.disabled = !request || !!status?.requestLocked;
+      cancel.title = status?.requestLocked ? '申請已進入發布流程，請先確認上線狀態，再開始新版草稿。' : '';
+    }
   }
   let listGeneration = 0;
   const originalRefresh = refreshFileList;

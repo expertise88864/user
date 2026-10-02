@@ -160,11 +160,8 @@ SPEAKABLE_SPEC = {
     "cssSelector": ["[data-speakable]", "h1", ".prose p:first-of-type", ".tldr", ".dn-tldr"],
 }
 
-# SEO_AUDIT D4 — accessibilityFeature signals that articles support
-# multiple a11y modes. Aligns with WCAG AA + Google's accessibility
-# scoring. Static across all blog articles (we set the same baseline
-# in tw-mini.css + Speculation Rules + the bilingual data-zh/data-en
-# system). Add to every MedicalWebPage + MedicalScholarlyArticle.
+# Describe the implemented reading features. These annotations alone do not
+# establish WCAG conformance, search eligibility or an accessibility score.
 ACCESSIBILITY_FEATURES = [
     "alternativeText",          # all imgs have alt
     "highContrastDisplay",      # tw-mini has prefers-color-scheme:dark
@@ -173,7 +170,6 @@ ACCESSIBILITY_FEATURES = [
     "structuralNavigation",     # h2/h3/h4 + nav landmarks
     "tableOfContents",          # DN.addInlineTOC auto-generates
     "displayTransformability",  # prefers-reduced-motion respected
-    "MathML",                   # no math content, but declares no proprietary
     "bilingualText",            # ZH ↔ EN swap via DN.applyTextOnly
 ]
 
