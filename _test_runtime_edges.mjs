@@ -224,6 +224,38 @@ test('navigation ignores a followed redirect in cache and preserves valid cached
   }
 });
 
+async function offlineAssetResponse(pathname, cached) {
+  const handlers = {};
+  vm.runInNewContext(readFileSync(new URL('./sw.js', import.meta.url), 'utf8'), {
+    self: {addEventListener:(name,fn)=>handlers[name]=fn},
+    location: {origin:'https://site.test'}, URL, Response,
+    caches: {match:async()=>cached},
+    fetch: async()=>{throw Error('network disconnected');},
+  });
+  let response;
+  handlers.fetch({request:{method:'GET',url:'https://site.test'+pathname,mode:'cors',headers:{get:()=>null}},
+    respondWith:p=>response=p,waitUntil(){}});
+  return response;
+}
+
+for (const pathname of ['/assets/search-index.json','/_vercel/speed-insights/script.js']) {
+  test(`offline cache miss returns a valid network-error response (${pathname})`,async()=>{
+    const response=await offlineAssetResponse(pathname);
+    assert.ok(response instanceof Response,'respondWith must never resolve to undefined');
+    assert.equal(response.type,'error');
+    assert.equal(response.status,0,'Missing content must not become a synthetic success');
+  });
+  test(`offline cached content remains readable (${pathname})`,async()=>{
+    const cached=new Response('existing cached bytes');
+    assert.equal(await offlineAssetResponse(pathname,cached),cached);
+  });
+}
+test('offline versioned cache miss keeps the same network-error contract',async()=>{
+  const response=await offlineAssetResponse('/assets/local.js?v=202610020910');
+  assert.ok(response instanceof Response);
+  assert.equal(response.type,'error');
+});
+
 function runtime(cookie, pathname = '/blog/acne-myths', language = 'zh-TW') {
   const context = {
     window: {}, document: { cookie }, location: { pathname },

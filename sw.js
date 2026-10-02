@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v191';
-const RUNTIME = 'cd-runtime-v189';
+const CACHE = 'cd-v192';
+const RUNTIME = 'cd-runtime-v190';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
 // Popular articles getting evicted after ~5 navigations caused repeat-
@@ -243,7 +243,7 @@ self.addEventListener('fetch', (e) => {
           }
           return resp;
         })
-        .catch(() => caches.match(req))
+        .catch(async () => (await caches.match(req)) || Response.error())
     );
     return;
   }
@@ -265,7 +265,7 @@ self.addEventListener('fetch', (e) => {
           })());
         }
         return resp;
-      }).catch(() => cached);
+      }).catch(() => cached || Response.error());
     })
   );
 });

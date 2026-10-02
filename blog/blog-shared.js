@@ -216,7 +216,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202610020830';
+        s.src = '/blog/blog-article-visuals.min.js?v=202610020910';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1100,7 +1100,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202610020830';
+        s.src = '/blog/blog-article-reading.min.js?v=202610020910';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1136,7 +1136,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202610020830';
+        s.src = '/blog/blog-article-footer.min.js?v=202610020910';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1166,7 +1166,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202610020830';
+        s.src = '/blog/blog-calculators.min.js?v=202610020910';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1306,7 +1306,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202610020830';
+        s.src = '/blog/blog-hub.min.js?v=202610020910';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
