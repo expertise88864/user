@@ -210,7 +210,7 @@ def trusted_context(root: Path, main: str):
 
 
 def prepare_release(root: Path, output: Path, approval_head: str, file: str,
-                    expected_main: str, archive_path: Path, *, now=None, log=None) -> dict:
+                    expected_main: str, archive_path: Path | None, *, now=None, log=None) -> dict:
     """Build an exact candidate from explicit approval, without remote writes.
 
     Execute the trusted pipeline before materializing the reviewed Git history.
@@ -256,17 +256,19 @@ def prepare_release(root: Path, output: Path, approval_head: str, file: str,
         if trusted_runtime(root,expected_main) != sources:
             raise ValueError('Preparation helper changed during execution')
     still_current()
-    archive_path = archive_path.absolute()
-    for parent_path in archive_path.parents:
-        if not patient.ordinary(parent_path.lstat(),directory=True) or parent_path.resolve() != parent_path:
-            raise ValueError('Patient archive has a linked parent')
-    archive = review.read_control(archive_path.parent,archive_path.name,patient.MAX_ARCHIVE)
-    if hashlib.sha256(archive).hexdigest() != frozen['archiveSha256']:
-        raise ValueError('Patient archive differs from final author approval')
-    patient.verify(root,archive,now=now)
-    with zipfile.ZipFile(io.BytesIO(archive)) as stored:
-        if stored.read('manifest.json') != package.encode(descriptor):
-            raise ValueError('Patient archive manifest differs from final author approval')
+    archive = None
+    if archive_path is not None:
+        archive_path = archive_path.absolute()
+        for parent_path in archive_path.parents:
+            if not patient.ordinary(parent_path.lstat(),directory=True) or parent_path.resolve() != parent_path:
+                raise ValueError('Patient archive has a linked parent')
+        archive = review.read_control(archive_path.parent,archive_path.name,patient.MAX_ARCHIVE)
+        if hashlib.sha256(archive).hexdigest() != frozen['archiveSha256']:
+            raise ValueError('Patient archive differs from final author approval')
+        patient.verify(root,archive,now=now)
+        with zipfile.ZipFile(io.BytesIO(archive)) as stored:
+            if stored.read('manifest.json') != package.encode(descriptor):
+                raise ValueError('Patient archive manifest differs from final author approval')
     private_log = tempfile.TemporaryFile() if log is None else None
     build_log = private_log if private_log is not None else log
     try:
@@ -291,6 +293,18 @@ def prepare_release(root: Path, output: Path, approval_head: str, file: str,
             generated = descriptor['trackedPackage']['generatedHead']
             if git('write-tree').decode().strip() != package.commit(checkout,generated)[0]:
                 raise ValueError('Regenerated tree differs from approved patient outputs')
+            if archive is None:
+                # Canonical ZIP_STORED packaging has fixed timestamps/modes.
+                # Rebuild only from trusted generation and immutable approved
+                # blobs; equality to the owner's original archive hash is
+                # mandatory. A missing supplied archive never selects this mode.
+                archive = patient.record(checkout,package.encode(descriptor['trackedPackage']),now=now)
+                if hashlib.sha256(archive).hexdigest() != frozen['archiveSha256']:
+                    raise ValueError('Rebuilt patient archive differs from final author approval')
+                patient.verify(checkout,archive,now=now)
+                with zipfile.ZipFile(io.BytesIO(archive)) as stored:
+                    if stored.read('manifest.json') != package.encode(descriptor):
+                        raise ValueError('Rebuilt archive manifest differs from final author approval')
             # Bind HEAD only after the independently generated complete tree
             # matches. No untrusted branch is checked out or executed.
             git('update-ref','--no-deref','HEAD',generated)
@@ -323,8 +337,14 @@ def prepare_release(root: Path, output: Path, approval_head: str, file: str,
                       'immutableApprovalObjectFetchRequired':True,'generationVerified':True,
                       'finalAuthorIntentVerified':True,'contentApproved':True,
                       'independentReviewVerified':False,'ciVerified':False,'published':False,
+                      'archiveRebuiltFromTrustedPipeline':archive_path is None,
                       'tools':tools,**counts}
-            write_artifacts(output,{'objects.bundle':bundle,'report.json':package.encode(report)},still_current,patient)
+            files = {'objects.bundle':bundle}
+            if archive_path is None:
+                report['archive'] = 'patient-package.zip'
+                files['patient-package.zip'] = archive
+            files['report.json'] = package.encode(report)
+            write_artifacts(output,files,still_current,patient)
             return report
     finally:
         if private_log is not None:
@@ -489,15 +509,17 @@ def main() -> None:
     parser.add_argument('--expected-main', required=True)
     parser.add_argument('--content-date')
     parser.add_argument('--archive',type=Path,help='Complete archive bound by final approval')
+    parser.add_argument('--rebuild-approved-archive',action='store_true',
+                        help='Reconstruct the exact already-approved canonical archive from trusted generation')
     args = parser.parse_args()
     if args.approval_head:
-        if args.archive is None or args.content_date is not None:
-            parser.error('--approval-head requires --archive and uses the approved content date')
+        if (args.archive is not None) == args.rebuild_approved_archive or args.content_date is not None:
+            parser.error('--approval-head requires exactly one of --archive or --rebuild-approved-archive and uses the approved content date')
         result = prepare_release(args.root,args.output,args.approval_head,args.file,
                                  args.expected_main,args.archive)
     else:
-        if args.content_date is None or args.archive is not None:
-            parser.error('--request-head requires --content-date and cannot accept --archive')
+        if args.content_date is None or args.archive is not None or args.rebuild_approved_archive:
+            parser.error('--request-head requires --content-date and cannot accept final-archive options')
         result = prepare(args.root, args.output, args.request_head, args.file,
                          args.expected_main, args.content_date)
     print(json.dumps(result, ensure_ascii=True))

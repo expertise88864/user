@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Delivery Python regression tests
-        run: python -m unittest _test_delivery _test_cms_delivery _test_cms_patient_review _test_cms_retirement _test_patient_review_retirement _test_site_settings_delivery _test_site_settings_preparation
+        run: python -m unittest _test_delivery _test_cms_delivery _test_cms_patient_review _test_cms_retirement _test_patient_review_retirement _test_patient_request_discovery _test_site_settings_delivery _test_site_settings_preparation
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '24'

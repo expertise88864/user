@@ -241,6 +241,7 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_test_cms_patient_rebuild.py"],
     [PY, "_test_patient_review_preparation.py"],
     [PY, "_test_patient_release_preparation.py"],
+    [PY, "_test_patient_request_discovery.py"],
     [PY, "_test_generation_clock.py"],
     [PY, "_test_cms_retirement.py"],
     [PY, "_test_patient_review_retirement.py"],
