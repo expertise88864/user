@@ -50,6 +50,23 @@ test('English return-link helper leaves foreign-origin links untouched', () => {
   vm.runInNewContext(source,context);boot();assert.equal(link.href,'https://foreign.test/');
 });
 
+test('language dropdown maps explicit English fragments and preserves unknown URL context', () => {
+  for (const name of ['blog-shared.js','blog-shared.min.js']) {
+    for (const [fragment,expected] of [['#postop-en','#postop'],['#en-dx','#dx'],
+                                    ['#term-%E8%95%88','#term-%E8%95%88'],['#bad%ZZ','#bad%ZZ']]) {
+      let change;
+      const toggle = {tagName:'SELECT',value:'en',addEventListener:(event,handler)=>{if(event==='change')change=handler;}};
+      const banner = {getAttribute:()=>'{"postop-en":"postop","en-dx":"dx"}'};
+      const location = {pathname:'/en/blog/skin-biopsy-excision',search:'?source=journey',hash:fragment};
+      const context = {window:{DN:{}},location,localStorage:{setItem(){}},
+        document:{cookie:'',getElementById:id=>id==='langToggle'?toggle:id==='dn-en-banner-zh'?banner:null}};
+      vm.runInNewContext(readFileSync(new URL('./blog/'+name,import.meta.url),'utf8'),context);
+      context.window.DN.bindLangToggle();toggle.value='zh';change();
+      assert.equal(location.href,'/blog/skin-biopsy-excision?source=journey'+expected,name+' '+fragment);
+    }
+  }
+});
+
 test('article numbering keeps ISO-date order without initializing locale collation', () => {
   const source = readFileSync(new URL('./blog/blog-shared.js', import.meta.url), 'utf8');
   const context = vm.createContext({window:{DN:{}}});

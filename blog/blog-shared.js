@@ -156,7 +156,16 @@
         // Strip /en prefix. '/en' or '/en/' → '/'.
         let newPath = path.replace(/^\/en(?=\/|$)/, '') || '/';
         if (!newPath.startsWith('/')) newPath = '/' + newPath;
-        return newPath + location.search + location.hash;
+        let fragment = location.hash;
+        const banner = document.getElementById('dn-en-banner-zh');
+        if (banner && fragment) try {
+          const fragments = JSON.parse(banner.getAttribute('data-dn-zh-fragments') || '{}');
+          const id = decodeURIComponent(fragment.slice(1));
+          if (fragments && Object.prototype.hasOwnProperty.call(fragments, id) && typeof fragments[id] === 'string') {
+            fragment = '#' + encodeURIComponent(fragments[id]);
+          }
+        } catch (_) { /* Keep unknown or malformed fragments unchanged. */ }
+        return newPath + location.search + fragment;
       }
       return null;  // already on correct lang, no-op
     }
@@ -223,7 +232,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202610032329';
+        s.src = '/blog/blog-article-visuals.min.js?v=202610040249';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1107,7 +1116,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202610032329';
+        s.src = '/blog/blog-article-reading.min.js?v=202610040249';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1143,7 +1152,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202610032329';
+        s.src = '/blog/blog-article-footer.min.js?v=202610040249';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1173,7 +1182,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202610032329';
+        s.src = '/blog/blog-calculators.min.js?v=202610040249';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1313,7 +1322,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202610032329';
+        s.src = '/blog/blog-hub.min.js?v=202610040249';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1345,7 +1354,7 @@
     if (!DN._supportBundleLoading) {
       DN._supportBundleLoading = new Promise(function (resolve, reject) {
         var script = document.createElement('script');
-        script.src = '/blog/blog-support.min.js?v=202610032329';
+        script.src = '/blog/blog-support.min.js?v=202610040249';
         script.onload = function () {
           if (typeof DN.injectSupportUI === 'function') resolve();
           else reject(new Error('Support bundle unavailable'));

@@ -4,7 +4,7 @@ from _normalize_schema import compute_metrics
 from _normalize_reading_shell import BLOCK, normalize
 from _normalize_date_modified import prose_hash
 from _gen_llms_full import extract_clean_body
-from _gen_en_pages import apply_data_en, chinese_fragment_map
+from _gen_en_pages import add_chinese_fragment_aliases, apply_data_en, chinese_fragment_map
 from _html_scan import attributes, iter_tags, tag_name
 from _normalize_mentions import extract_body_text, build_term_index, derive_mentions
 
@@ -44,6 +44,42 @@ class ReadingMetricsTests(unittest.TestCase):
 
 class ReadingNavigationTests(unittest.TestCase):
     """Root/translated articles need usable navigation without desktop JS."""
+
+    def test_primary_aliases_preserve_english_heading_and_authored_bytes(self):
+        english = '<article><h2 id="postop-en">Authored heading</h2><p>Keep body.</p></article>'
+        alias = '<span id="postop" class="dn-locale-anchor" aria-hidden="true" data-pagefind-ignore></span>'
+        result = add_chinese_fragment_aliases(english, {'postop-en':'postop'})
+        self.assertEqual(result, english.replace('<h2', alias + '<h2', 1))
+        self.assertEqual(add_chinese_fragment_aliases(result, {'postop-en':'postop'}), result)
+        self.assertEqual(extract_clean_body(result), extract_clean_body(english))
+        self.assertEqual(prose_hash(result), prose_hash(english))
+
+    def test_aliases_never_collide_or_choose_ambiguous_destinations(self):
+        for english, mapping in [
+            ('<aside id="care"></aside><h2 id="care-en">One</h2>', {'care-en':'care'}),
+            ('<h2 id="care-en">One</h2><h2 id="en-care">Two</h2>', {'care-en':'care','en-care':'care'}),
+            ('<svg><g id="care-en"></g></svg>', {'care-en':'care'}),
+            ('<template><h2 id="care-en">Example</h2></template>', {'care-en':'care'}),
+            ('<template><template><h2 id="care-en">Example</h2></template></template>', {'care-en':'care'}),
+            ('<svg><foreignObject><h2 id="care-en">Example</h2></foreignObject></svg>', {'care-en':'care'}),
+            ('<math><h2 id="care-en">Example</h2></math>', {'care-en':'care'}),
+        ]:
+            with self.subTest(english=english):
+                self.assertEqual(add_chinese_fragment_aliases(english, mapping), english)
+
+    def test_primary_alias_escapes_authored_attribute_characters(self):
+        english = '<h2 id="care-en">One</h2>'
+        self.assertIn('id="care&amp;&quot;note"', add_chinese_fragment_aliases(english, {'care-en':'care&"note'}))
+
+    def test_fragment_entities_match_browser_ids_and_reserve_equivalent_collisions(self):
+        source = '<h2 id="care&amp;note">Care</h2>'
+        english = '<h2 id="care&amp;note-en">Care</h2>'
+        mapping = chinese_fragment_map(source, english)
+        self.assertEqual(mapping, {'care&note-en':'care&note'})
+        alias = '<span id="care&amp;note" class="dn-locale-anchor" aria-hidden="true" data-pagefind-ignore></span>'
+        self.assertEqual(add_chinese_fragment_aliases(english, mapping), alias + english)
+        collision = '<aside id="care&#38;note"></aside>' + english
+        self.assertEqual(add_chinese_fragment_aliases(collision, mapping), collision)
 
     def test_generated_source_ids_do_not_replace_legacy_english_fragments(self):
         source = ('<article class="prose"><h1>Guide</h1>'

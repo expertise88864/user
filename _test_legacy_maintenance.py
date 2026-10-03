@@ -216,7 +216,8 @@ class AnalyticsMaintenanceScopeTests(unittest.TestCase):
         public = ['index.html', 'blog/article.html', 'en/index.html', 'en/blog/article.html']
         excluded = ['.codex-review/evidence.html', 'backups/old.html', 'fixtures/paste.html',
                     'blog/backup/old.html', 'assets/private.html', 'node_modules/page.html', 'pagefind/page.html']
-        utilities = ['admin.html', 'admin/edit.html', 'reset-sw.html', 'en/reset-sw.html', 'offline.html']
+        utilities = ['admin.html', 'admin/edit.html', 'admin/new-private-tool.html',
+                     'reset-sw.html', 'en/reset-sw.html', 'offline.html', 'en/admin.html', 'en/offline.html']
         for name in public + excluded + utilities:
             self.write(name, body)
         self.run_apply()
@@ -235,6 +236,20 @@ class AnalyticsMaintenanceScopeTests(unittest.TestCase):
             self.run_apply()
         self.assertEqual([first.read_bytes(), invalid.read_bytes()], originals)
 
+    def test_optional_private_utilities_strip_existing_current_and_legacy_loaders(self):
+        body = ('<head>' + self.script.KEEPER + self.script.LEGACY_TAGS[0] +
+                '<script>gtag("config", "G-XFF3L5QD10");</script></head><body>Private fixture</body>').encode()
+        utilities = ['en/admin.html', 'en/offline.html', 'admin/new-private-tool.html']
+        for name in utilities:
+            self.write(name, body)
+        self.run_apply()
+        expected = b'<head></head><body>Private fixture</body>'
+        self.assertEqual({name: (self.root / name).read_bytes() for name in utilities},
+                         {name: expected for name in utilities})
+        self.run_apply()
+        self.assertEqual({name: (self.root / name).read_bytes() for name in utilities},
+                         {name: expected for name in utilities})
+
     def test_linked_source_aborts_before_any_source_or_target_write(self):
         first = self.write('index.html', b'<head></head>Nonmedical fixture')
         target = self.write('fixtures/original.html', b'<head></head>Protected fixture')
@@ -250,12 +265,149 @@ class AnalyticsMaintenanceScopeTests(unittest.TestCase):
         self.assertEqual([first.read_bytes(), target.read_bytes()], originals)
 
 
+class CacheStampMaintenanceScopeTests(unittest.TestCase):
+    def setUp(self):
+        self.script = load_script('_bump_v')
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+
+    def write(self, name, raw):
+        path = self.root / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(raw)
+        return path
+
+    def run_apply(self, stamp='202610040250'):
+        with patch.object(self.script, 'ROOT', self.root), redirect_stdout(io.StringIO()):
+            return self.script.main([stamp])
+
+    def test_visible_exports_and_backups_remain_unchanged_and_newlines_survive(self):
+        raw = b'<head>\r\n<script src="/ui.js?v=202609010000"></script></head>\r\n'
+        public = ['index.html', 'blog/article.html', 'admin/edit.html', 'en/index.html', 'en/blog/article.html']
+        excluded = ['exports/author-draft.html', 'backups/site-copy.html', 'blog/backups/old.html',
+                    'en/blog/backups/old.html', '.codex-review/evidence.html', 'pagefind/private.html',
+                    'node_modules/private.html', 'fixtures/paste.html']
+        for name in public + excluded:
+            self.write(name, raw)
+        self.assertEqual(self.run_apply(), 0)
+        expected = raw.replace(b'202609010000', b'202610040250')
+        self.assertEqual({name: (self.root / name).read_bytes() for name in public},
+                         {name: expected for name in public})
+        self.assertEqual({name: (self.root / name).read_bytes() for name in excluded},
+                         {name: raw for name in excluded})
+        with patch.object(Path, 'write_bytes', side_effect=AssertionError('Unchanged source was rewritten')):
+            self.assertEqual(self.run_apply(), 0)
+
+    def test_invalid_later_source_aborts_before_any_write(self):
+        first = self.write('index.html', b'<script src="/ui.js?v=202609010000"></script>')
+        last = self.write('en/index.html', b'Invalid \xff fixture')
+        originals = [first.read_bytes(), last.read_bytes()]
+        with self.assertRaises(UnicodeDecodeError):
+            self.run_apply()
+        self.assertEqual([first.read_bytes(), last.read_bytes()], originals)
+
+    def test_linked_source_roots_and_files_abort_before_any_write(self):
+        first = self.write('index.html', b'<script src="/ui.js?v=202609010000"></script>')
+        last = self.write('en/blog/last.html', b'<script src="/ui.js?v=202609010000"></script>')
+        originals = [first.read_bytes(), last.read_bytes()]
+        for blocked in [last, last.parent]:
+            with self.subTest(blocked=blocked), patch('_site_html._linked', side_effect=lambda p: p == blocked):
+                with self.assertRaisesRegex(ValueError, '[Ll]inked|ordinary file'):
+                    self.run_apply()
+            self.assertEqual([first.read_bytes(), last.read_bytes()], originals)
+
+    def test_invalid_stamp_cannot_inject_into_or_rewrite_html(self):
+        first = self.write('index.html', b'<script src="/ui.js?v=202609010000"></script>')
+        for stamp in ['x', '12345', '1' * 15, '202610040250"><script>', '１２３４５６']:
+            with self.subTest(stamp=stamp), self.assertRaisesRegex(ValueError, 'ASCII digits'):
+                self.run_apply(stamp)
+        self.assertEqual(first.read_bytes(), b'<script src="/ui.js?v=202609010000"></script>')
+
+    def test_private_invalid_utf8_is_never_read(self):
+        public = self.write('index.html', b'<script src="/ui.js?v=202609010000"></script>')
+        private = self.write('exports/author-draft.html', b'Protected \xff fixture')
+        self.assertEqual(self.run_apply(), 0)
+        self.assertIn(b'202610040250', public.read_bytes())
+        self.assertEqual(private.read_bytes(), b'Protected \xff fixture')
+
+
+class SpeedInsightsMaintenanceScopeTests(unittest.TestCase):
+    def setUp(self):
+        self.script = load_script('_apply_vercel_insights')
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+
+    def write(self, name, body):
+        path = self.root / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(body)
+        return path
+
+    def run_apply(self):
+        with patch.object(self.script, 'ROOT', self.root), redirect_stdout(io.StringIO()):
+            return self.script.main()
+
+    def test_deployed_content_only_and_repeat_preserves_bytes(self):
+        body = b'<head>\r\n</head><body>Nonmedical fixture</body>\r\n'
+        public = ['index.html', 'blog/article.html', 'en/index.html', 'en/blog/article.html', '404.html']
+        excluded = ['.codex-review/evidence.html', 'backups/old.html', 'blog/backups/old.html',
+                    'fixtures/paste.html', 'assets/private.html', 'node_modules/page.html', 'pagefind/page.html',
+                    'admin.html', 'admin/edit.html', 'admin/cms.html', 'reset-sw.html', 'offline.html',
+                    'en/admin.html', 'en/offline.html', 'en/reset-sw.html']
+        for name in public + excluded:
+            self.write(name, body)
+        self.assertEqual(self.run_apply(), 0)
+        expected = body.replace(b'</head>', self.script.TAG.encode() + b'</head>', 1)
+        self.assertEqual({name: (self.root / name).read_bytes() for name in public},
+                         {name: expected for name in public})
+        self.assertEqual({name: (self.root / name).read_bytes() for name in excluded},
+                         {name: body for name in excluded})
+        self.assertEqual(self.run_apply(), 0)
+        self.assertEqual({name: (self.root / name).read_bytes() for name in public},
+                         {name: expected for name in public})
+
+    def test_invalid_later_source_aborts_before_any_write(self):
+        first = self.write('blog/first.html', b'<head></head>Valid nonmedical fixture')
+        invalid = self.write('en/index.html', b'<head></head>Invalid \xff fixture')
+        originals = [first.read_bytes(), invalid.read_bytes()]
+        with self.assertRaises(UnicodeDecodeError):
+            self.run_apply()
+        self.assertEqual([first.read_bytes(), invalid.read_bytes()], originals)
+
+    def test_linked_file_and_directory_abort_before_any_write(self):
+        first = self.write('index.html', b'<head></head>Nonmedical fixture')
+        linked = self.write('blog/zz.html', b'<head></head>Protected fixture')
+        originals = [first.read_bytes(), linked.read_bytes()]
+        for blocked in (linked, linked.parent):
+            with self.subTest(blocked=blocked), patch('_site_html._linked', side_effect=lambda p: p == blocked):
+                with self.assertRaisesRegex(ValueError, '[Ll]inked|ordinary file'):
+                    self.run_apply()
+            self.assertEqual([first.read_bytes(), linked.read_bytes()], originals)
+
+    def test_private_invalid_utf8_is_never_read(self):
+        public = self.write('index.html', b'<head></head>Nonmedical fixture')
+        private = self.write('.codex-review/evidence.html', b'Protected \xff fixture')
+        self.assertEqual(self.run_apply(), 0)
+        self.assertIn(self.script.TAG.encode(), public.read_bytes())
+        self.assertEqual(private.read_bytes(), b'Protected \xff fixture')
+
+    def test_existing_script_and_headless_content_remain_unchanged(self):
+        existing = self.write('index.html', b'<head>' + self.script.TAG.encode() + b'</head>')
+        headless = self.write('blog/headless.html', b'<body>Nonmedical fragment</body>')
+        originals = [existing.read_bytes(), headless.read_bytes()]
+        self.assertEqual(self.run_apply(), 0)
+        self.assertEqual([existing.read_bytes(), headless.read_bytes()], originals)
+
+
 class MaintenanceImportTests(unittest.TestCase):
     def test_import_does_not_touch_navigation_stdout_or_load_codecs(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             originals = {}
-            for name in ('_clean_dead_slugs', '_convert_images', '_dump_aria', '_wrap_citations', '_html_scan'):
+            for name in ('_clean_dead_slugs', '_convert_images', '_dump_aria', '_wrap_citations', '_html_scan',
+                         '_apply_vercel_insights', '_site_html', '_bump_v'):
                 (root / f'{name}.py').write_bytes((ROOT / f'{name}.py').read_bytes())
             for name in ('blog/index.html', 'blog/topics.html', 'en/blog/index.html', 'en/blog/topics.html'):
                 path = root / name
@@ -271,7 +423,7 @@ class NoCodecs(importlib.abc.MetaPathFinder):
             raise AssertionError('Codec imported during helper import')
 sys.meta_path.insert(0, NoCodecs())
 original = sys.stdout
-import _clean_dead_slugs, _convert_images, _dump_aria, _wrap_citations
+import _clean_dead_slugs, _convert_images, _dump_aria, _wrap_citations, _apply_vercel_insights, _bump_v
 assert sys.stdout is original
 print('import-safe')
 """

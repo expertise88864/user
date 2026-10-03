@@ -431,3 +431,4 @@ ol.references a,article ol.references a{color:#0c5159;font-weight:600}
 /* Sticky header is 64px tall; anchor scrolls (#section) need to land BELOW it.
    Otherwise the linked-to heading is obscured by the header. */
 article h2[id], article h3[id], #proseZh h2[id], #proseZh h3[id]{scroll-margin-top:80px}
+.dn-locale-anchor{display:block;scroll-margin-top:80px}

@@ -110,5 +110,84 @@ module.exports = async function checkReadingNavigation(browser, {readingSource, 
       }
     } finally { await staticContext.close(); }
   }
+  if (generated) results.push(...await checkLanguageFragments(browser));
   return {cases:results.length,results};
 };
+
+async function checkLanguageFragments(browser) {
+  const journeys = [
+    {slug:'skin-biopsy-excision',zh:'postop',en:'postop-en'},
+    {slug:'perioral-dermatitis-guide',zh:'dx',en:'en-dx'},
+    {slug:'photodynamic-therapy-overview',zh:'pdt-\u4e09\u8981\u7d20\u8207\u5206\u5b50\u5c64\u7d1a\u6a5f\u8f49',en:'the-three-pillars-of-pdt-and-molecular-m'},
+  ];
+  const origin = 'https://reading-locale.test', results = [];
+  async function selectLanguage(page, lang, pathname) {
+    const toggle = page.locator('#langToggle');
+    if (!await toggle.isVisible()) {
+      await page.locator('#dn-nav-burger').click();
+      await toggle.waitFor({state:'visible'});
+    }
+    await Promise.all([
+      page.waitForURL(url => url.pathname === pathname, {waitUntil:'load'}),
+      toggle.selectOption(lang),
+    ]);
+  }
+  async function atHeading(page, id) {
+    await page.waitForFunction(id => {
+      const target = document.getElementById(id);
+      if (!target || !target.getClientRects().length) return false;
+      const top = target.getBoundingClientRect().top;
+      return window.scrollY > 100 && top >= -5 && top < 220;
+    }, id, {timeout:5000});
+  }
+  for (const width of [390,800,1440]) {
+    for (const javaScriptEnabled of [true,false]) {
+      const context = await browser.newContext({viewport:{width,height:900},javaScriptEnabled,serviceWorkers:'block'});
+      try {
+        await context.route('**/*', route => {
+          const url = new URL(route.request().url());
+          if (url.origin !== origin || route.request().method() !== 'GET') return route.abort();
+          const root = process.cwd();
+          let file = path.resolve(root, '.' + url.pathname);
+          if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file,'index.html');
+          else if (!path.extname(file)) file += '.html';
+          if (!file.startsWith(root + path.sep) || !fs.existsSync(file) || !fs.statSync(file).isFile()) return route.fulfill({status:404,body:''});
+          const extension = path.extname(file);
+          const contentType = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json'}[extension] || 'application/octet-stream';
+          return route.fulfill({contentType,body:fs.readFileSync(file)});
+        });
+        for (const journey of journeys) {
+          const page = await context.newPage(), errors = [];
+          page.on('pageerror', error => errors.push(error.message));
+          const zhPath = '/blog/' + journey.slug, enPath = '/en' + zhPath;
+          if (javaScriptEnabled) {
+            await page.goto(origin + zhPath + '?source=journey#' + encodeURIComponent(journey.zh));
+            await atHeading(page, journey.zh);
+            await selectLanguage(page, 'en', enPath);
+            assert.equal(new URL(page.url()).search,'?source=journey');
+            assert.equal(decodeURIComponent(new URL(page.url()).hash.slice(1)),journey.zh);
+            await atHeading(page,journey.en);
+            // Exercise an authored English fragment, rather than returning
+            // through the new Chinese alias and hiding the reverse defect.
+            await page.goto(origin + enPath + '?source=journey#' + encodeURIComponent(journey.en));
+            await atHeading(page,journey.en);
+            await selectLanguage(page, 'zh', zhPath);
+            assert.equal(new URL(page.url()).search,'?source=journey');
+            assert.equal(decodeURIComponent(new URL(page.url()).hash.slice(1)),journey.zh);
+            await atHeading(page,journey.zh);
+          } else {
+            await page.goto(origin + enPath + '#' + encodeURIComponent(journey.zh));
+            await atHeading(page,journey.en);
+            await atHeading(page,journey.zh);
+          }
+          assert.deepEqual(errors,[],journey.slug + ' locale navigation must not throw');
+          results.push({width,journey:journey.slug,javaScriptEnabled,localeFragments:true});
+          await page.close();
+        }
+      } finally { await context.close(); }
+    }
+  }
+  return results;
+}
+
+module.exports.checkLanguageFragments = checkLanguageFragments;

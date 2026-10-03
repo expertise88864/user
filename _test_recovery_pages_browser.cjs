@@ -58,6 +58,26 @@ module.exports = async function testRecoveryPages(browser) {
           const background=await page.locator('body').evaluate(el=>getComputedStyle(el).backgroundColor);
           const x=luminance(color),y=luminance(background);
           assert((Math.max(x,y)+0.05)/(Math.min(x,y)+0.05)>=4.5, 'Recovery notice contrast');
+          const query = 'UI test 中文 & literal=1';
+          await page.getByRole('searchbox').fill(query);
+          const entries = await page.locator('form').evaluate(form => Array.from(new FormData(form).entries()));
+          const params = new URLSearchParams(entries);
+          assert.equal(params.getAll('q').length, 0, 'No duplicated Google search parameter');
+          assert.deepEqual(params.getAll('as_q'), [query]);
+          assert.deepEqual(params.getAll('as_sitesearch'), ['chendermatologist.com']);
+          const [request] = await Promise.all([
+            context.waitForEvent('request', {predicate: request => {
+              const url = new URL(request.url());
+              return url.origin === 'https://www.google.com' && url.pathname === '/search';
+            }}),
+            button.press('Enter'),
+          ]);
+          const submitted = new URL(request.url());
+          assert.equal(request.method(), 'GET');
+          assert.deepEqual(submitted.searchParams.getAll('as_q'), [query]);
+          assert.deepEqual(submitted.searchParams.getAll('as_sitesearch'), ['chendermatologist.com']);
+          // The fixture router aborts every external request, including this
+          // harmless query; nothing reaches Google or a real analytics collector.
         } else {
           const navigation = page.waitForNavigation({waitUntil:'load'});
           await page.keyboard.press('Enter');

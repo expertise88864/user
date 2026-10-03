@@ -963,16 +963,16 @@ def chinese_fragment_map(source: str, english: str) -> dict[str, str]:
             if depth == 0:
                 english_ranges.append((start, stop + len(closing)))
                 break
-    primary = {attributes(tag)['id'] for position, tag in tags
+    primary = {html_lib.unescape(attributes(tag)['id']) for position, tag in tags
                if not tag.startswith('</') and 'id' in attributes(tag)
                and not any(start <= position < stop for start, stop in english_ranges)}
     result = {}
     for _, tag in iter_tags(mask_inert_regions(blank_script_style(english))):
         attrs = attributes(tag)
-        ident = attrs.get('id')
+        ident = html_lib.unescape(attrs.get('id', ''))
         if not ident or ident in primary:
             continue
-        generated_source = attrs.get('data-dn-heading-id', '') if tag_name(tag) == 'h2' else ''
+        generated_source = html_lib.unescape(attrs.get('data-dn-heading-id', '')) if tag_name(tag) == 'h2' else ''
         choices = {candidate for candidate in
                    (generated_source,
                     ident[3:] if ident.startswith('en-') else '',
@@ -981,6 +981,45 @@ def chinese_fragment_map(source: str, english: str) -> dict[str, str]:
         if len(choices) == 1:
             result[ident] = choices.pop()
     return result
+
+
+def add_chinese_fragment_aliases(english: str, fragments: dict[str, str]) -> str:
+    """Keep explicit primary heading fragments usable in the English mirror.
+
+    Never rename authored English IDs, guess by heading order, insert HTML
+    into SVG, or choose between multiple English destinations for one ID.
+    Empty aliases work with native fragment navigation even without JS.
+    """
+    tags = list(iter_tags(mask_inert_regions(blank_script_style(english))))
+    existing = {html_lib.unescape(attributes(tag).get('id', '')) for _, tag in tags if not tag.startswith('</')}
+    destinations = {}
+    for english_id, primary_id in fragments.items():
+        destinations.setdefault(primary_id, []).append(english_id)
+    edits = []
+    inert_depth = {'template': 0, 'svg': 0, 'math': 0}
+    for position, tag in tags:
+        name = tag_name(tag)
+        if name in inert_depth:
+            if tag.startswith('</'):
+                inert_depth[name] = max(0, inert_depth[name] - 1)
+            elif not tag.rstrip().endswith('/>'):
+                inert_depth[name] += 1
+            continue
+        if any(inert_depth.values()):
+            continue
+        if tag.startswith('</') or tag_name(tag) not in {'h2', 'h3', 'h4'}:
+            continue
+        english_id = html_lib.unescape(attributes(tag).get('id', ''))
+        primary_id = fragments.get(english_id)
+        if not primary_id or primary_id in existing or destinations[primary_id] != [english_id]:
+            continue
+        alias = ('<span id="' + html_lib.escape(primary_id, quote=True)
+                 + '" class="dn-locale-anchor" aria-hidden="true" data-pagefind-ignore></span>')
+        edits.append((position, alias))
+        existing.add(primary_id)
+    for position, alias in reversed(edits):
+        english = english[:position] + alias + english[position:]
+    return english
 
 
 def transform(src: str, zh_canonical_path: str, en_canonical_path: str, source_rel: str | None = None) -> str:
@@ -1035,11 +1074,10 @@ def transform(src: str, zh_canonical_path: str, en_canonical_path: str, source_r
 
     # EN-consolidation (DECISIONS D-17): point the EN page's canonical + og:url
     # at the ZH original so ranking signal consolidates onto the authoritative
-    # Chinese page instead of the thin machine-translated mirror (which Google
-    # crawls but declines to index). Note: cross-language canonical is a SOFT
-    # signal Google may ignore — the hard de-index is the existing noindex on
-    # EN article pages; this makes canonical + JSON-LD (which already use /blog)
-    # internally consistent.
+    # Chinese page. Cross-language canonical is a soft signal Google may ignore;
+    # most EN mirrors remain index,follow under the current D-17 policy. Only
+    # the explicit quality guards above set noindex. Canonical and JSON-LD
+    # (which already use /blog) remain internally consistent.
     new_canonical = f'{DOMAIN}{zh_canonical_path}'
     # CODE_REVIEW — lambda replacement (not a raw f-string) so a backslash or
     # digit sequence in new_canonical can't be parsed as a regex backreference.
@@ -1068,7 +1106,9 @@ def transform(src: str, zh_canonical_path: str, en_canonical_path: str, source_r
     )
     s = rewrite_en_internal_links(s)
 
-    fragments = html_lib.escape(json.dumps(chinese_fragment_map(src, s), ensure_ascii=False), quote=True)
+    fragment_map = chinese_fragment_map(src, s)
+    s = add_chinese_fragment_aliases(s, fragment_map)
+    fragments = html_lib.escape(json.dumps(fragment_map, ensure_ascii=False), quote=True)
     banner = EN_BANNER.replace('href="#"', 'href="' + html_lib.escape(zh_canonical_path, quote=True) + '" data-dn-zh-fragments="' + fragments + '"', 1)
     if '<main id="main-content">' in s:
         s = s.replace('<main id="main-content">', '<main id="main-content">\n' + banner, 1)

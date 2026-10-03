@@ -33,6 +33,8 @@ EXCLUDE = {
     'reset-sw.html',
     os.path.join('en', 'reset-sw.html'),
     'offline.html',
+    os.path.join('en', 'admin.html'),
+    os.path.join('en', 'offline.html'),
 }
 
 KEEPER = f'<script src="/assets/inline/analytics-loader.js?v={ASSET_VERSION}" defer></script>'
@@ -89,7 +91,7 @@ def main():
     changes = []
     for p, src in sources:
         rel = os.path.relpath(p, HERE)
-        excluded = rel in EXCLUDE
+        excluded = rel in EXCLUDE or rel.startswith('admin' + os.sep)
         s, n_tags, n_inline = normalize(src)
 
         # Dedup keeper: keep first, drop the rest.
