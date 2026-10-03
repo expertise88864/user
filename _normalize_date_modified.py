@@ -38,6 +38,7 @@ AUTO_REGEN_SUBJECT_RE = (
 
 sys.path.insert(0, str(ROOT))
 from _html_scan import blank_script_style, mask_inert_regions  # noqa: E402
+from _normalize_reading_shell import BLOCK as READING_SHELL_BLOCK  # noqa: E402
 
 # CODE_REVIEW SEO-3 — the date used to come from `git log -1` with auto-regen
 # commits filtered out BY SUBJECT PREFIX. Any site-wide maintenance commit that
@@ -77,7 +78,9 @@ def article_prose(src: str) -> str:
     published, and letting those move a date would recreate the same
     everything-updated-at-once signal this replaced.
     """
-    dom = blank_script_style(mask_inert_regions(src))
+    # An outline repeats authored headings for navigation. It must not look
+    # like a physician changed the body of a legacy article.prose page.
+    dom = blank_script_style(mask_inert_regions(READING_SHELL_BLOCK.sub('', src)))
     heading = re.search(r"<h1\b[\s\S]*?</h1>", dom, re.I)
     # CODE_REVIEW TD-01 — the TL;DR sits between </h1> and the prose container,
     # so it was outside the hash and adding one to 29 articles did not register

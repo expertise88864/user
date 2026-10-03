@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import io
+import html
 import re
 import sys
 from pathlib import Path
@@ -8,19 +8,18 @@ from pathlib import Path
 # Force UTF-8 stdout so error messages containing non-cp950 chars (≥, →,
 # CJK garbled bytes from broken HTML attrs, etc.) print without crashing
 # on Windows CI runners that default to cp950.
-if hasattr(sys.stdout, "buffer"):
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
-from _html_scan import blank_script_style  # noqa: E402
+from _html_scan import attributes, blank_script_style, iter_tags, mask_comments  # noqa: E402
 
 SKIP_DIRS = {".git", "node_modules", ".next", "out", "dist"}
 
 
 TAG_RE = re.compile(r"<[^>]+>")
-ID_RE = re.compile(r'\bid="([^"]+)"')
 HEADING_RE = re.compile(r"<h([1-6])\b[^>]*>([\s\S]*?)</h\1>", re.I)
 IMG_RE = re.compile(r"<img\b[^>]*>", re.I)
 BUTTON_RE = re.compile(r"<button\b([^>]*)>([\s\S]*?)</button>", re.I)
@@ -70,7 +69,11 @@ def main() -> int:
         if PRELOAD_BLOG_SHARED_RE.search(dom):
             errors.append(f"{rel}: large deferred blog-shared.js should not be head-preloaded before first paint")
 
-        ids = ID_RE.findall(dom)
+        # A suffix such as data-dn-heading-id is metadata, not a second DOM ID.
+        # Parse real attributes, including single/unquoted values and entities.
+        ids = [html.unescape(attrs['id'])
+               for _,tag in iter_tags(mask_comments(dom)) if not tag.startswith('</')
+               for attrs in [attributes(tag)] if 'id' in attrs]
         seen: set[str] = set()
         dupes: set[str] = set()
         for item in ids:

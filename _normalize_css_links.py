@@ -13,7 +13,7 @@ from _site_html import site_html_files
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-ASSET_VERSION = "202610030155"
+ASSET_VERSION = "202610031715"
 
 
 def normalize_font_loading(src: str) -> str:

@@ -32,7 +32,7 @@ EXECUTION_ROOT = Path(__file__).resolve().parent
 HELPER_NAMES = ('_prepare_patient_review', '_cms_generated_package', '_cms_patient_package',
                 '_cms_patient_rebuild', '_cms_patient_review', '_cms_delivery', '_normalize_date_modified',
                 '_prepare_article_candidate', '_process_article_requests', '_validate_article_request',
-                '_article_visibility', '_sync_hub_catalog', '_html_scan')
+                '_article_visibility', '_sync_hub_catalog', '_html_scan', '_normalize_reading_shell')
 HELPER_PATHS = {name + '.py': EXECUTION_ROOT / (name + '.py') for name in HELPER_NAMES}
 # No project helper executes at import time. Bind the already-running entry
 # point, then validate every helper before compiling its immutable Git bytes.

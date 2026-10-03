@@ -259,6 +259,26 @@ class PreparationTests(unittest.TestCase):
         self.assertFalse(marker.exists())
         self.assertIs(sys.modules['_cms_delivery'], existing)
 
+    def test_transitive_reading_helper_is_verified_before_execution(self):
+        marker = Path(self.artifacts.name) / 'reading-import-executed.txt'
+        helper = self.root / '_normalize_reading_shell.py'
+        helper.write_bytes(helper.read_bytes() +
+                          ('\nfrom pathlib import Path\nPath(' + repr(str(marker)) +
+                           ').write_text("Harmless transitive import marker")\n').encode('utf8'))
+        with patch.object(preparation, 'EXECUTION_ROOT', self.root), \
+             self.assertRaisesRegex(ValueError, 'differs from the trusted pipeline'):
+            preparation.load_runtime(
+                self.root, preparation.trusted_runtime(self.root, self.fixture.base))
+        self.assertFalse(marker.exists())
+        self.assertFalse(self.output.exists())
+
+    def test_missing_verified_transitive_reading_helper_still_fails_closed(self):
+        with patch.object(preparation, 'EXECUTION_ROOT', self.root):
+            sources = preparation.trusted_runtime(self.root, self.fixture.base)
+        sources.pop('_normalize_reading_shell')
+        with self.assertRaisesRegex(ImportError, 'Unbound preparation dependency: _normalize_reading_shell'):
+            preparation.load_runtime(self.root, sources)
+
     def test_output_normalizes_safe_parent_and_rejects_link_alias(self):
         parent = Path(self.artifacts.name)
         (parent / 'child').mkdir()

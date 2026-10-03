@@ -144,6 +144,10 @@ def compute_metrics(src: str, lang: str = "zh") -> dict[str, int]:
       - reading speed: 350 CJK chars/min + 200 Latin/digit tokens/min
       - count [A-Za-z0-9]+ (same regex as the JS counter)
     """
+    # Root article.prose pages include their generated outline in <article>.
+    # Exclude that repeated UI before counting, including subsequent builds.
+    from _normalize_reading_shell import BLOCK as READING_SHELL_BLOCK
+    src = READING_SHELL_BLOCK.sub('', src)
     prose_id = "proseEn" if lang.startswith("en") else "proseZh"
     body_src = _extract_prose_container(src, prose_id)
     # Some EN mirrors retain an empty proseEn placeholder and render their

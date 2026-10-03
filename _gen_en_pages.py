@@ -946,7 +946,7 @@ def translate_hub_jsonld(src: str) -> str:
 
 
 def chinese_fragment_map(source: str, english: str) -> dict[str, str]:
-    """Map explicit EN-prefixed/suffixed IDs only to existing primary IDs.
+    """Map explicit EN identities or generated provenance to primary IDs.
 
     Hidden proseEn IDs must not appear as Chinese destinations. Ambiguous
     names and unrelated IDs are retained rather than guessed by heading order.
@@ -968,11 +968,14 @@ def chinese_fragment_map(source: str, english: str) -> dict[str, str]:
                and not any(start <= position < stop for start, stop in english_ranges)}
     result = {}
     for _, tag in iter_tags(mask_inert_regions(blank_script_style(english))):
-        ident = attributes(tag).get('id')
+        attrs = attributes(tag)
+        ident = attrs.get('id')
         if not ident or ident in primary:
             continue
+        generated_source = attrs.get('data-dn-heading-id', '') if tag_name(tag) == 'h2' else ''
         choices = {candidate for candidate in
-                   (ident[3:] if ident.startswith('en-') else '',
+                   (generated_source,
+                    ident[3:] if ident.startswith('en-') else '',
                     ident[:-3] if ident.endswith('-en') else '')
                    if candidate in primary}
         if len(choices) == 1:

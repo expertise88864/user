@@ -33,6 +33,9 @@ REGEN_STEPS: list[list[str]] = [
     # early when it sees #dn-related-static. ~174 internal links added,
     # all crawlable by Googlebot without JS.
     [PY, "_inject_related.py"],
+    # Freeze source-generated heading identities before copying the source to
+    # EN. Mirrors derive their own legacy fragments from explicit provenance.
+    [PY, "_normalize_reading_shell.py"],
     # Resolve content-ledger dates before generating EN mirrors, feeds,
     # LLM corpora, and search artifacts. Running this after llms-full used
     # to leave aggregate freshness metadata one build behind.
@@ -262,6 +265,7 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_check_sitemap.py"],
     [PY, "_check_internal_links.py"],
     [PY, "_check_index_boundaries.py"],
+    [PY, "-m", "unittest", "_test_static_a11y_ids"],
     [PY, "_check_static_a11y.py"],
     [PY, "_check_inline_events.py"],
     [PY, "_audit_jsonld.py"],
