@@ -32,12 +32,12 @@ Skips unpublished + EN mirrors (LLMs follow the canonical URL anyway).
 from __future__ import annotations
 
 import datetime as dt
-import io
 import re
 import sys
 from pathlib import Path
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
 ROOT = Path(__file__).resolve().parent
 DOMAIN = "https://chendermatologist.com"
@@ -86,6 +86,10 @@ def extract_clean_body(html: str) -> str:
     Strips: scripts, styles, SVGs, JSON-LD, all HTML tags.
     Collapses whitespace and dedupes blank lines.
     """
+    # Generated navigation repeats headings and must not displace authored
+    # paragraphs from the length-limited corpus, including article.prose roots.
+    from _normalize_reading_shell import BLOCK as READING_SHELL_BLOCK
+    html = READING_SHELL_BLOCK.sub('', html)
     # Find proseZh with balanced-div extraction (same approach as
     # _normalize_schema._extract_prose_container).
     open_m = re.search(r'<div\b[^>]*\bid="proseZh"[^>]*>', html, re.I)

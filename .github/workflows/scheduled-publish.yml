@@ -1,7 +1,8 @@
 name: Scheduled publication preparation
 
 # Trusted main discovers version-bound author requests. This stage creates
-# source-only review artifacts; it does not run/claim release CI or publish.
+# source artifacts or exact rebuilt candidates after generated-content approval.
+# It does not run/claim release CI or publish.
 # Every resulting candidate still requires the unchanged full delivery gates.
 on:
   schedule:
@@ -31,11 +32,13 @@ jobs:
         with: { python-version: '3.12' }
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with: { node-version: '20' }
-      - name: Discover author-approved source requests
+      - name: Discover source requests and exact generated-content approvals
         env:
           PYTHONDONTWRITEBYTECODE: '1'
+          # Python's artifact guard and the collector must agree on this root.
+          TMPDIR: ${{ runner.temp }}
         run: python _process_article_requests.py --output "$RUNNER_TEMP/cms-source-artifacts"
-      - name: Preserve source bundles for independent review
+      - name: Preserve article candidates for independent review
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: cms-source-${{ github.run_id }}-${{ github.run_attempt }}

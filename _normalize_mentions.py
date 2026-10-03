@@ -18,6 +18,7 @@ import re
 import sys
 from pathlib import Path
 from _json_html import script_json
+from _normalize_reading_shell import BLOCK as READING_SHELL_BLOCK
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -41,7 +42,9 @@ def extract_body_text(html: str) -> str:
     """Return the article's visible text content, with all scripts /
     styles / SVGs / HTML tags stripped. Used to match glossary terms
     against actual prose (not schema or markup)."""
-    body = html
+    # Generated navigation repeats authored headings; it must not alter the
+    # occurrence counts or ranking of actual glossary references.
+    body = READING_SHELL_BLOCK.sub('', html)
     # Drop everything before <article…> or <main…> if either exists
     art = re.search(r'<article\b[^>]*>', body, re.IGNORECASE)
     if art:

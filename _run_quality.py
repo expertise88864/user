@@ -33,6 +33,9 @@ REGEN_STEPS: list[list[str]] = [
     # early when it sees #dn-related-static. ~174 internal links added,
     # all crawlable by Googlebot without JS.
     [PY, "_inject_related.py"],
+    # Freeze source-generated heading identities before copying the source to
+    # EN. Mirrors derive their own legacy fragments from explicit provenance.
+    [PY, "_normalize_reading_shell.py"],
     # Resolve content-ledger dates before generating EN mirrors, feeds,
     # LLM corpora, and search artifacts. Running this after llms-full used
     # to leave aggregate freshness metadata one build behind.
@@ -241,12 +244,13 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_test_cms_patient_rebuild.py"],
     [PY, "_test_patient_review_preparation.py"],
     [PY, "_test_patient_release_preparation.py"],
+    [PY, "_test_patient_request_discovery.py"],
     [PY, "_test_generation_clock.py"],
     [PY, "_test_cms_retirement.py"],
     [PY, "_test_patient_review_retirement.py"],
     ["node", "--test", "_test_cms_delivery.cjs", "_test_vercel_gate.cjs"],
     [PY, "_test_scheduled_candidate.py"],
-    ["node", "--test", "_test_serve.mjs", "_test_runtime_edges.mjs", "_test_article_prefetch.mjs", "_test_admin_skeleton.mjs", "_test_admin_sessions.cjs", "_test_admin_persistence.cjs", "_test_article_draft.cjs", "_test_article_draft_client.cjs", "_test_navigation.cjs", "_test_search_integrity.cjs", "_test_analytics.cjs", "_test_font_loader.cjs"],
+    ["node", "--test", "_test_serve.mjs", "_test_runtime_edges.mjs", "_test_reset_cache.mjs", "_test_article_prefetch.mjs", "_test_admin_skeleton.mjs", "_test_admin_sessions.cjs", "_test_admin_persistence.cjs", "_test_article_draft.cjs", "_test_article_draft_client.cjs", "_test_navigation.cjs", "_test_search_integrity.cjs", "_test_analytics.cjs", "_test_font_loader.cjs"],
     [PY, "_test_navigation_generation.py"],
     [PY, "_test_search_scope.py"],
     [PY, "_test_search_index_visibility.py"],
@@ -261,6 +265,7 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_check_sitemap.py"],
     [PY, "_check_internal_links.py"],
     [PY, "_check_index_boundaries.py"],
+    [PY, "-m", "unittest", "_test_static_a11y_ids"],
     [PY, "_check_static_a11y.py"],
     [PY, "_check_inline_events.py"],
     [PY, "_audit_jsonld.py"],

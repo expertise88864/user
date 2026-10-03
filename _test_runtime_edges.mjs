@@ -50,6 +50,23 @@ test('English return-link helper leaves foreign-origin links untouched', () => {
   vm.runInNewContext(source,context);boot();assert.equal(link.href,'https://foreign.test/');
 });
 
+test('language dropdown maps explicit English fragments and preserves unknown URL context', () => {
+  for (const name of ['blog-shared.js','blog-shared.min.js']) {
+    for (const [fragment,expected] of [['#postop-en','#postop'],['#en-dx','#dx'],
+                                    ['#term-%E8%95%88','#term-%E8%95%88'],['#bad%ZZ','#bad%ZZ']]) {
+      let change;
+      const toggle = {tagName:'SELECT',value:'en',addEventListener:(event,handler)=>{if(event==='change')change=handler;}};
+      const banner = {getAttribute:()=>'{"postop-en":"postop","en-dx":"dx"}'};
+      const location = {pathname:'/en/blog/skin-biopsy-excision',search:'?source=journey',hash:fragment};
+      const context = {window:{DN:{}},location,localStorage:{setItem(){}},
+        document:{cookie:'',getElementById:id=>id==='langToggle'?toggle:id==='dn-en-banner-zh'?banner:null}};
+      vm.runInNewContext(readFileSync(new URL('./blog/'+name,import.meta.url),'utf8'),context);
+      context.window.DN.bindLangToggle();toggle.value='zh';change();
+      assert.equal(location.href,'/blog/skin-biopsy-excision?source=journey'+expected,name+' '+fragment);
+    }
+  }
+});
+
 test('article numbering keeps ISO-date order without initializing locale collation', () => {
   const source = readFileSync(new URL('./blog/blog-shared.js', import.meta.url), 'utf8');
   const context = vm.createContext({window:{DN:{}}});
@@ -117,11 +134,13 @@ test('language refresh avoids redundant mutations but translates new content and
 test('reading metadata counts spaced English words and includes the badge without locale initialization', () => {
   const bars = [];
   const prose = {textContent:'皮'.repeat(3500) + ' ' + Array(800).fill('word').join(' ')};
+  const article = {contains:element=>element===prose};
   const lead = {};
   const h1 = {parentElement:{querySelector:()=>lead}};
   const doc = {
+    documentElement:{lang:'en'},
     getElementById:id=>id==='proseZh'?prose:id==='dn-reading-meta'?bars[0]:id==='dn-secondary-meta'?{appendChild:bar=>bars.push(bar)}:null,
-    querySelector:selector=>selector==='article h1, section h1'?h1:null,
+    querySelector:selector=>selector==='article'?article:selector==='article h1, section h1'?h1:null,
     createElement:()=>({style:{},innerHTML:''})
   };
   const context = vm.createContext({window:{DN:{currentSlug:()=>null,getArticleNumber:()=>null,ARTICLES:[]}},document:doc});
@@ -144,10 +163,13 @@ test('reading completion requires foreground dwell and scroll, and fires once', 
   let now = 0, tick, reads = 0, events = 0, visibleBottom = 200;
   const documentListeners = new Map(), windowListeners = new Map();
   const article = {scrollHeight:1000, getBoundingClientRect:()=>({top:0})};
+  const prose = {textContent:'閱讀內容'};
+  article.contains = element=>element===prose;
   const lead = {parentNode:{insertBefore(){}}};
   const doc = {
+    documentElement:{lang:'zh-Hant'},
     hidden:false,
-    getElementById:id=>id==='proseZh' ? {textContent:'閱讀內容'} : null,
+    getElementById:id=>id==='proseZh' ? prose : null,
     querySelector:selector=>selector.includes('h1') ? {parentElement:{querySelector:()=>lead}} : article,
     createElement:()=>({style:{}}),
     addEventListener:(name,fn)=>documentListeners.set(name,fn),
@@ -248,6 +270,41 @@ test('optional precache failures do not prevent installation with an offline fal
   await installWorker(false);
 });
 
+test('worker activation retires only old site caches and preserves author or other caches', async () => {
+  const source = readFileSync(new URL('./sw.js', import.meta.url), 'utf8');
+  const current = [...source.matchAll(/const (?:CACHE|RUNTIME) = '([^']+)'/g)].map(m => m[1]);
+  assert.equal(current.length, 2);
+  const keys = ['cd-v1', 'cd-runtime-v1', ...current, 'author-media-fixture', 'another-app-cache', 'cd-files'];
+  const handlers = {}, removed = [];
+  let claimed = 0, completion;
+  vm.runInNewContext(source, {self:{addEventListener:(name,fn)=>handlers[name]=fn,clients:{claim:async()=>claimed++}},
+    caches:{keys:async()=>keys,delete:async key=>{removed.push(key);return true;}}});
+  handlers.activate({waitUntil:promise=>completion=promise});
+  await completion;
+  assert.deepEqual(removed, ['cd-v1', 'cd-runtime-v1']);
+  assert.equal(claimed, 1);
+});
+
+test('both language reset utilities bypass worker caches, while similarly named pages do not', async () => {
+  for (const pathname of ['/reset-sw', '/reset-sw.html', '/en/reset-sw', '/en/reset-sw.html',
+    '/reset-sw-other', '/en/reset-sw-other', '/en/blog/acne-myths']) {
+    const handlers = {}, waits = [];
+    let response, reads = 0;
+    vm.runInNewContext(readFileSync(new URL('./sw.js', import.meta.url), 'utf8'), {
+      self:{addEventListener:(name,fn)=>handlers[name]=fn},location:{origin:'https://worker-fixture.invalid'},URL,Response,
+      caches:{open:async()=>{reads++;return {match:async()=>new Response('cached page')};}},
+      fetch:async()=>new Response('network page'),
+    });
+    handlers.fetch({request:{method:'GET',url:'https://worker-fixture.invalid'+pathname,mode:'navigate'},
+      respondWith:promise=>response=promise,waitUntil:promise=>waits.push(promise)});
+    const bypass = ['/reset-sw', '/reset-sw.html', '/en/reset-sw', '/en/reset-sw.html'].includes(pathname);
+    assert.equal(Boolean(response), !bypass, pathname);
+    assert.equal(reads, bypass ? 0 : 1, pathname);
+    if (response) await response;
+    await Promise.all(waits);
+  }
+});
+
 test('navigation ignores a followed redirect in cache and preserves valid cached HTML', async () => {
   for (const redirected of [true, false]) {
     const handlers = {}, waits = [];
@@ -334,10 +391,11 @@ test('reading memory rejects malformed storage and safely tolerates blocked clea
     ...[{pct:'<img src=x onerror="bad">'},{pct:'35'},{pct:101},{pct:-1},{pct:5.5},
       {y:'600'},{y:-1},{y:null},{ts:'recent'},{ts:Date.now()+86400000},{ts:1},{h2:[]}]
       .map(extra=>JSON.stringify({...valid,...extra}))]) {
-    const timers = [], created = [], prose = {};
+    const timers = [], created = [], prose = {textContent:'Fixture heading'};
+    const article = {contains:element=>element===prose};
     const win = {DN:{},location:{hash:''},addEventListener(){}};
-    const document = {getElementById:id=>id==='proseZh'?prose:null,
-      querySelector:()=>prose,addEventListener(){},createElement:tag=>{created.push(tag);return {};}};
+    const document = {documentElement:{lang:'zh-Hant'},getElementById:id=>id==='proseZh'?prose:null,
+      querySelector:()=>article,addEventListener(){},createElement:tag=>{created.push(tag);return {};}};
     vm.runInNewContext(readFileSync(new URL('./blog/blog-article-reading.js',import.meta.url),'utf8'), {
       window:win,document,setTimeout:fn=>timers.push(fn),
       localStorage:{getItem:()=>raw,removeItem(){throw Error('storage cleanup blocked');}},

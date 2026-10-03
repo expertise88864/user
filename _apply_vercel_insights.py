@@ -1,23 +1,28 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""F12 — Inject Vercel Speed Insights script tag into all HTML files.
+"""F12 — Inject Vercel Speed Insights into deployed content pages.
 
 Vercel Speed Insights gathers real-user Core Web Vitals (LCP / INP / CLS)
-from the production deployment. The free tier covers ~25k page views / month
-which is plenty for a personal medical blog.
+from the production deployment. Availability and usage limits depend on the
+project's current Vercel plan and dashboard configuration.
 
 The injected tag is just `<script defer src="/_vercel/speed-insights/script.js"></script>`
 and Vercel auto-serves the script when the project has Speed Insights enabled
 in the dashboard. No npm install needed.
 
-Idempotent: skips files already containing the sentinel.
+Idempotent: skips files already containing the sentinel. Private evidence,
+backups and internal utility pages are outside this maintenance operation.
 """
-import os, re, sys, io
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+from pathlib import Path
+import sys
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+from _site_html import site_html_files
+
+ROOT = Path(__file__).resolve().parent
 SENTINEL = '/_vercel/speed-insights/'
 TAG = '<script defer src="/_vercel/speed-insights/script.js"></script>'
+EXCLUDE = {'admin.html', 'offline.html', 'reset-sw.html',
+           'en/admin.html', 'en/offline.html', 'en/reset-sw.html'}
 
 def patch(html):
     if SENTINEL in html:
@@ -27,22 +32,29 @@ def patch(html):
     return html.replace('</head>', TAG + '</head>', 1), True
 
 def main():
-    n = 0
-    for d, _, fs in os.walk(ROOT):
-        if any(x in d for x in ['.git', 'node_modules', '__pycache__', 'astro-rewrite', '_bin']):
+    # Inventory validation and UTF-8 decoding finish before the first write.
+    # A bad later source must not leave an earlier page partially maintained.
+    root = Path(ROOT).resolve()
+    sources = []
+    for path in site_html_files(root):
+        relative = path.relative_to(root).as_posix()
+        if relative in EXCLUDE or relative.startswith('admin/'):
             continue
-        for f in fs:
-            if not f.endswith('.html'):
-                continue
-            p = os.path.join(d, f)
-            with open(p, 'r', encoding='utf-8') as fp:
-                src = fp.read()
-            new, changed = patch(src)
-            if changed:
-                with open(p, 'w', encoding='utf-8') as fp:
-                    fp.write(new)
-                n += 1
+        with path.open('r', encoding='utf-8', newline='') as fp:
+            sources.append((path, fp.read()))
+
+    n = 0
+    for path, src in sources:
+        new, changed = patch(src)
+        if not changed:
+            continue
+        with path.open('w', encoding='utf-8', newline='') as fp:
+            fp.write(new)
+        n += 1
     print(f'Injected Vercel Speed Insights into {n} HTML files')
+    return 0
 
 if __name__ == '__main__':
-    main()
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    sys.exit(main())

@@ -1,13 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Inject <link rel="prev"> + <link rel="next"> hreflang-style cluster
-navigation hints for article series.
+"""Inject <link rel="prev"> + <link rel="next"> relationships for article series.
 
-SEO_AUDIT C4 — strengthens topic-cluster signal for series like
-the 5-article atopic-dermatitis cluster. Google previously used
-rel=prev/next as a strong signal (now treated as a discovery hint
-rather than ranking factor since 2019, but still parsed and
-helpful for crawl budget allocation).
+These tags describe a curated reading sequence. Google no longer uses them;
+do not claim ranking, discovery or crawl-budget improvements from these tags.
+Visible <a href> navigation and the sitemap provide separate discovery paths.
+See https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading
 
 Each cluster is a hand-curated ordered list. The first article gets
 only rel="next"; the last gets only rel="prev"; middle ones get

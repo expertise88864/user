@@ -133,7 +133,7 @@ class GenerationClockTests(unittest.TestCase):
     def test_real_normalizer_cli_in_disposable_tree(self):
         source_root = Path(__file__).resolve().parent
         with self.fixture() as root:
-            for name in ("_normalize_date_modified.py", "_html_scan.py"):
+            for name in ("_normalize_date_modified.py", "_normalize_reading_shell.py", "_html_scan.py"):
                 (root / name).write_bytes((source_root / name).read_bytes())
             result = subprocess.run([sys.executable, str(root / "_normalize_date_modified.py"),
                                      "--content-date", "2026-09-30"], cwd=root,

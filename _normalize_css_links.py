@@ -13,7 +13,20 @@ from _site_html import site_html_files
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-ASSET_VERSION = "202610030155"
+ASSET_VERSION = "202610040249"
+
+
+def normalize_text_color_utilities(src: str) -> str:
+    """Repair the mini stylesheet's three known color-valued text utilities.
+
+    Arbitrary text values can represent sizes or colors. These existing site
+    tokens are colors; leave numeric sizes and other custom variables alone.
+    """
+    for variable in ('muted', 'teal-deep', 'ink-2'):
+        selector = '.text-\\[var\\(--' + variable + '\\)\\]'
+        src = src.replace(selector + '{font-size:var(--' + variable + ')}',
+                          selector + '{color:var(--' + variable + ')}')
+    return src
 
 
 def normalize_font_loading(src: str) -> str:
@@ -86,6 +99,7 @@ BLOG_SHARED_SCRIPT_RE = re.compile(
     re.IGNORECASE,
 )
 BLOG_SHARED_SRC_RE = re.compile(r'(/blog/blog-shared\.min\.js)(?:\?v=\d+)?')
+TW_MINI_SRC_RE = re.compile(r"(/assets/tw-mini\.css)(?:\?v=\d+)?(?=[\"'])")
 SHARED_CSS_SRC_RE = re.compile(r'(/assets/dn-(?:below-fold|print)\.css)(?:\?v=\d+)?')
 INLINE_SCRIPT_SRC_RE = re.compile(r'(/assets/inline/[a-z0-9-]+\.js)(?:\?v=\d+)?', re.I)
 
@@ -117,6 +131,7 @@ def normalize_file(path: str) -> bool:
             f'<link rel="stylesheet" href="/assets/dn-below-fold.css?v={ASSET_VERSION}" id="dn-below-fold-css"></head>', 1)
     next_src = PRELOAD_BLOG_SHARED_RE.sub("", next_src)
     next_src = BLOG_SHARED_SRC_RE.sub(rf"\1?v={ASSET_VERSION}", next_src)
+    next_src = TW_MINI_SRC_RE.sub(rf"\1?v={ASSET_VERSION}", next_src)
     next_src = SHARED_CSS_SRC_RE.sub(rf"\1?v={ASSET_VERSION}", next_src)
     next_src = INLINE_SCRIPT_SRC_RE.sub(rf"\1?v={ASSET_VERSION}", next_src)
     # 2026-05-25 — old heuristic was: "if DN.initBlog is not in the HTML
@@ -189,7 +204,17 @@ def normalize_js_loaders() -> int:
 
 
 def main() -> None:
-    changed = sum(1 for path in html_files() if normalize_file(path))
+    paths = html_files()
+    css_path = os.path.join(ROOT, 'assets', 'tw-mini.css')
+    if os.path.exists(css_path):
+        with open(css_path, 'r', encoding='utf-8') as fp:
+            css = fp.read()
+        next_css = normalize_text_color_utilities(css)
+        if next_css != css:
+            with open(css_path, 'w', encoding='utf-8') as fp:
+                fp.write(next_css)
+            print('Normalized mini stylesheet text-color utilities')
+    changed = sum(1 for path in paths if normalize_file(path))
     print(f'Normalized CSS links in {changed} files')
     js_changed = normalize_js_loaders()
     if js_changed:

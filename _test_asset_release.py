@@ -8,12 +8,26 @@ import unittest
 from unittest.mock import patch
 
 from _gen_asset_release import text_hash, validate_transition
-from _normalize_css_links import ASSET_VERSION, normalize_file
+from _normalize_css_links import ASSET_VERSION, normalize_file, normalize_text_color_utilities
 from _normalize_analytics import KEEPER, normalize
 import _check_third_party as third_party
 
 
 class AssetReleaseTests(unittest.TestCase):
+    def test_color_variables_generate_color_without_overwriting_font_sizes(self):
+        source = ('.text-\\[var\\(--muted\\)\\]{font-size:var(--muted)}\n'
+                  '.text-\\[var\\(--teal-deep\\)\\]{font-size:var(--teal-deep)}\n'
+                  '.text-\\[var\\(--ink-2\\)\\]{font-size:var(--ink-2)}\n'
+                  '.text-\\[14px\\]{font-size:14px}\n'
+                  '.text-\\[var\\(--reading-size\\)\\]{font-size:var(--reading-size)}')
+        result = normalize_text_color_utilities(source)
+        for variable in ('muted', 'teal-deep', 'ink-2'):
+            self.assertIn('color:var(--' + variable + ')', result)
+            self.assertNotIn('font-size:var(--' + variable + ')', result)
+        self.assertIn('.text-\\[14px\\]{font-size:14px}', result)
+        self.assertIn('font-size:var(--reading-size)', result)
+        self.assertEqual(normalize_text_color_utilities(result), result)
+
     def setUp(self):
         self.old = {'version': '202609121640', 'caches': {'CACHE': 'old', 'RUNTIME': 'old-runtime'},
                     'assets': {'blog/blog-shared.min.js': 'old-code'}, 'worker_sha256': 'old-worker'}
@@ -62,6 +76,20 @@ class AssetReleaseTests(unittest.TestCase):
             self.assertIn(f'nav-burger.js?v={ASSET_VERSION}', generated)
             self.assertEqual(generated.count('analytics-loader.js'), 1)
             self.assertFalse(normalize_file(str(page)))
+
+    def test_shared_stylesheet_cannot_reuse_old_immutable_url(self):
+        for href in ('/assets/tw-mini.css?v=23', '/assets/tw-mini.css'):
+            with self.subTest(href=href), tempfile.TemporaryDirectory() as directory:
+                page = Path(directory) / 'index.html'
+                page.write_text('<html><head><link id="shared-style" rel="stylesheet" media="screen" href="'
+                                + href + '"></head><body></body></html>', encoding='utf-8')
+                self.assertTrue(normalize_file(str(page)))
+                result = page.read_text(encoding='utf-8')
+                self.assertIn(f'/assets/tw-mini.css?v={ASSET_VERSION}', result)
+                self.assertIn('id="shared-style"', result)
+                self.assertIn('media="screen"', result)
+                self.assertEqual(result.count('/assets/tw-mini.css'), 1)
+                self.assertFalse(normalize_file(str(page)))
 
     def test_windows_checkout_and_ubuntu_have_identical_release_digests(self):
         with tempfile.TemporaryDirectory() as directory:

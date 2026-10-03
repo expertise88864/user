@@ -1,8 +1,9 @@
-"""Discover author requests and preserve isolated source bundles for review.
+"""Discover author requests and preserve isolated candidates for review.
 
-No remote writes, queue edits, generators, draft code execution or release
-permission. Each bundle is independently based on the same live main. CI and
-model review must still run through the normal candidate delivery workflow.
+Legacy requests create source bundles. Exact final generated approvals rebuild
+only the trusted current pipeline and must reproduce the full approved archive.
+No remote writes, queue edits, draft code execution or release permission. CI
+and model review still run through the normal candidate delivery workflow.
 """
 from __future__ import annotations
 
@@ -15,13 +16,78 @@ from pathlib import Path
 import subprocess
 import tempfile
 
-from _cms_delivery import FILE as RECEIPT, REPO, with_receipt
+from _cms_delivery import FILE as RECEIPT, REPO, parse, with_receipt
 from _prepare_article_candidate import apply, git, read_blob, revision
 from _validate_article_request import article_slug, request_plan, request_record, timestamp, verify_request_head
 
 MAX_BRANCHES = 200
 MAX_BUNDLES = 20
 QUEUE = ".github/scheduled-publish/queue.json"
+
+
+class GeneratedReviewNeedsRefresh(ValueError):
+    """An authentic immutable preview belongs to an older trusted pipeline."""
+
+
+def final_request(root: Path, main: str, head: str, file: str, raw: bytes, now: datetime) -> dict:
+    """Validate the complete final envelope before executing any generation."""
+    import _cms_generated_package as package
+    import _cms_patient_review as review
+    record = parse(raw, canonical='compact', limit=8_000)
+    if (not isinstance(record, dict) or set(record) != review.REQUEST_FIELDS or
+            type(record.get('version')) is not int or record['version'] != 2 or
+            record.get('file') != file or type(record.get('contentApproved')) is not bool or
+            record['contentApproved'] is not True):
+        raise ValueError('Invalid final patient request schema')
+    original = request_record((json.dumps(record['sourceRequest'], ensure_ascii=False,
+                                         separators=(',', ':')) + '\n').encode('utf8'),
+                              file, now=now, require_due=False)
+    if original['action'] == 'unpublish':
+        raise ValueError('Unpublish cannot use final generated approval')
+    review_head = revision(record['reviewHead'])
+    try:
+        immutable_source(root, review_head)
+    except subprocess.CalledProcessError as error:
+        # Only an explicit no-such-object Git protocol response rejects this
+        # request. Authentication, rate-limit and other transport failures
+        # remain visible job failures; never report them as an empty queue.
+        messages = (error.stderr or b'').decode('utf8', errors='replace').splitlines()
+        missing = ('not our ref ' + review_head, "couldn't find remote ref " + review_head)
+        if error.returncode == 128 and any(line.strip().endswith(missing) for line in messages):
+            raise ValueError('Final patient preview commit is unavailable') from None
+        raise
+    if git(root, 'cat-file', '-t', review_head).strip() != b'commit':
+        raise ValueError('Final patient preview must identify a commit')
+    evidence = package.GitEvidence(root)
+    frozen, blob, manifest_raw = review.load_review(evidence, review_head, file, now=now)
+    proof = frozen['patientManifest']['trackedPackage']['sourceEvidence']
+    request_blob, _ = read_blob(root, head, '.cms-requests/' + article_slug(file) + '.json')
+    entry = {**proof, 'version': 2, 'patientApproval': {
+        'reviewHead': review_head, 'manifestBlobSha': blob,
+        'manifestSha256': hashlib.sha256(manifest_raw).hexdigest(),
+        'approvalHead': head, 'approvalBlobSha': request_blob, 'approvedAt': record['approvedAt']}}
+    review.validate_approval(entry['patientApproval'], now=now)
+    if timestamp(record['approvedAt']) < timestamp(original['requestedAt']) or record != review.expected_request(entry, frozen):
+        raise ValueError('Final request differs from the complete approved patient preview')
+    review.parent(evidence, head, proof['requestHead'])
+    review.changed_one(evidence, proof['requestHead'], head,
+                       '.cms-requests/' + article_slug(file) + '.json', request_blob)
+    verify_request_head(root, head, file)
+    if frozen['patientManifest']['trackedPackage']['pipelineHead'] != main:
+        raise GeneratedReviewNeedsRefresh('Final preview belongs to an older trusted pipeline')
+    return original
+
+
+def prepared_patient_bundle(root: Path, output: Path, main: str, head: str,
+                            file: str, record: dict, now: datetime) -> dict:
+    from _prepare_patient_review import prepare_release
+    name = head + '-' + main
+    report = prepare_release(root, output / name, head, file, main, None, now=now)
+    return {'file': file, 'action': record['action'], 'requestHead': head,
+            'mainSha': main, 'candidateSha': report['candidateHead'], 'artifacts': name,
+            'bundle': name + '/objects.bundle', 'bundleSha256': report['objectsSha256'],
+            'archiveSha256': report['archiveSha256'], 'generationVerified': True,
+            'state': report['state'], 'reviewVerified': False, 'ciVerified': False, 'published': False}
 
 
 def remote_heads(root: Path, pattern: str) -> dict[str, str]:
@@ -146,18 +212,30 @@ def process(root: Path, output: Path, *, now: datetime | None = None) -> dict:
             if request is None:
                 report["deferred"].append({"file": file, "requestHead": head, "reason": "author_request_required"})
                 continue
-            record = request_record(request[1], file, now=now, require_due=False)
+            envelope = parse(request[1], canonical='compact', limit=8_000)
+            final = isinstance(envelope, dict) and envelope.get('version') == 2
+            record = (final_request(root, main, head, file, request[1], now) if final else
+                      request_record(request[1], file, now=now, require_due=False))
             if record["action"] == "schedule" and timestamp(record["scheduledAt"]) > now:
                 report["deferred"].append({"file": file, "requestHead": head, "reason": "not_due"})
                 continue
             if len(report["prepared"]) >= MAX_BUNDLES:
                 report["deferred"].append({"file": file, "requestHead": head, "reason": "preparation_limit"})
                 continue
-            report["prepared"].append(prepared_bundle(root, output, main, head, file, record, now))
+            if not final:
+                report["prepared"].append(prepared_bundle(root, output, main, head, file, record, now))
+        except GeneratedReviewNeedsRefresh:
+            report['deferred'].append({'file': file, 'requestHead': head,
+                                       'reason': 'generated_review_requires_refresh'})
         except (ValueError, UnicodeError, json.JSONDecodeError) as error:
             # Preserve drafts/queue; do not expose user content via parser errors.
             report["deferred"].append({"file": file, "requestHead": head,
                                        "reason": "request_rejected", "errorType": type(error).__name__})
+        else:
+            if final:
+                # Generation/packaging failures are engineering failures, not
+                # an invalid author request. Fail the job and upload no report.
+                report['prepared'].append(prepared_patient_bundle(root, output, main, head, file, record, now))
     unchanged_main(root, main)
     # No new refs, stage/working tree changes, or queue edits in the trusted root.
     if refs != git(root, "show-ref") or git(root, "status", "--porcelain", "--untracked-files=all").strip():

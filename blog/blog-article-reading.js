@@ -135,7 +135,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202610030155';
+          s.src = '/blog/blog-diagrams.min.js?v=202610040249';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -235,7 +235,7 @@
 
 
   DN.addReadingMeta = function () {
-    const proseEl = document.getElementById('proseZh') || document.querySelector('article .prose');
+    const proseEl = outlineProse();
     if (!proseEl) return;
     // Keep word boundaries: removing whitespace merges an English article
     // into one token and understates both its reading time and word count.
@@ -356,9 +356,46 @@
   // listing all H2 headings. Saves scroll position to localStorage and
   // offers a "continue reading" toast if the user reopens the page.
   // -----------------------------------------------------------------------
+  function outlineProse() {
+    var article = document.querySelector('article');
+    if (!article) return null;
+    var english = document.documentElement.lang.indexOf('en') === 0;
+    var preferred = english ? ['proseEn', 'proseZh'] : ['proseZh'];
+    for (var i = 0; i < preferred.length; i++) {
+      var candidate = document.getElementById(preferred[i]);
+      if (candidate && article.contains(candidate) && candidate.textContent.trim()) return candidate;
+    }
+    if (article.classList.contains('prose')) return article;
+    var children = article.querySelectorAll('.prose');
+    for (var j = 0; j < children.length; j++) {
+      if (children[j].textContent.trim()) return children[j];
+    }
+    return null;
+  }
+
+  function outlineHeadings(prose) {
+    var headings = prose.querySelectorAll('h2');
+    if (headings.length < 3) return headings;
+    var used = new Set(Array.from(document.querySelectorAll('[id]'), function (element) { return element.id; }));
+    headings.forEach(function (heading, index) {
+      if (heading.id) return;
+      // Preserve the desktop fragments used by older cached article HTML.
+      var base = (heading.textContent || '').toLowerCase()
+        .replace(/[^\w一-鿿]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40) || ('h2-' + index);
+      var id = base, suffix = 2;
+      while (used.has(id)) id = base + '-' + (suffix++);
+      used.add(id);
+      heading.id = id;
+    });
+    return headings;
+  }
+
+  function trackTOC(section) {
+    if (typeof window.gtag !== 'function') return;
+    try { window.gtag('event', 'toc_click', { section_id: section }); } catch (e) { /* collector unavailable */ }
+  }
+
   DN.addInlineTOC = function () {
-    var proseEl = document.getElementById('proseZh') || document.querySelector('article .prose');
-    if (!proseEl) return;
     var existingTOC = document.getElementById('dn-inline-toc');
     if (existingTOC) {
       // Generated links work without JS. Add analytics without replacing
@@ -367,16 +404,21 @@
         existingTOC.dataset.dnBound = 'true';
         existingTOC.addEventListener('click', function (event) {
           var link = event.target.closest('a[data-toc-inline]');
-          if (link && window.gtag) window.gtag('event', 'toc_click', { section_id: link.dataset.tocInline });
+          if (link) trackTOC(link.dataset.tocInline);
         });
       }
       return;
     }
-    var h2s = proseEl.querySelectorAll('h2[id]');
+    var proseEl = outlineProse();
+    if (!proseEl) return;
+    var h2s = outlineHeadings(proseEl);
     if (h2s.length < 3) return;
 
     var details = document.createElement('details');
     details.id = 'dn-inline-toc';
+    // This renderer owns its click listener; a second init must not add the
+    // delegated static-outline listener too.
+    details.dataset.dnBound = 'true';
     details.open = !window.matchMedia('(max-width: 767px)').matches;
     details.style.cssText = 'margin:18px 0 24px;background:linear-gradient(135deg,#f5fbfa 0%,#ecfeff 100%);border:1px solid #a5f3fc;border-radius:14px;padding:0;overflow:hidden';
 
@@ -388,8 +430,10 @@
           '<line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>' +
           '<line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>' +
         '</svg>' +
-        '<span data-zh="本篇大綱" data-en="In this article">本篇大綱</span>' +
-        '<span style="font-size:11px;font-weight:600;color:#4d6358;opacity:.7">· ' + h2s.length + ' 段</span>' +
+        '<span data-zh="本篇大綱" data-en="In this article">' +
+        (document.documentElement.lang.startsWith('en') ? 'In this article' : '本篇大綱') + '</span>' +
+        '<span data-zh="· ' + h2s.length + ' 段" data-en="· ' + h2s.length + ' sections" style="font-size:11px;font-weight:600;color:#4d6358;opacity:.7">· ' +
+        h2s.length + (document.documentElement.lang.startsWith('en') ? ' sections' : ' 段') + '</span>' +
       '</span>' +
       '<span data-toc-state style="font-size:11px;color:#4d6358">' +
       (details.open ? '收合' : '展開') + '</span>';
@@ -442,7 +486,7 @@
         var top = target.getBoundingClientRect().top + window.pageYOffset - 80;
         window.scrollTo({ top: top, behavior: 'smooth' });
         history.pushState(null, '', '#' + id);
-        if (window.gtag) window.gtag('event', 'toc_click', { section_id: id });
+        trackTOC(id);
       }
     });
   };
@@ -451,7 +495,7 @@
   DN.bindScrollMemory = function () {
     var slug = DN.currentSlug();
     if (!slug) return;
-    var proseEl = document.getElementById('proseZh') || document.querySelector('article .prose');
+    var proseEl = outlineProse();
     if (!proseEl) return;
     var KEY = 'dn:scroll:' + slug;
     var MAX_AGE_MS = 14 * 24 * 60 * 60 * 1000; // 14 days
@@ -579,24 +623,9 @@
     // Minimum viewport: 768 + 2*(180+40) = 1208px. We use 1180 for safety.
     const TOC_MIN_WIDTH = 1180;
     if (window.innerWidth < TOC_MIN_WIDTH) return;
-    // Match article that IS .prose OR contains a .prose child
-    const proseEl = document.getElementById('proseZh')
-      || document.querySelector('article.prose')
-      || document.querySelector('article .prose')
-      || document.querySelector('article.max-w-3xl');
+    const proseEl = outlineProse();
     if (!proseEl) return;
-    // Auto-id any h2 missing one (so TOC links work for newer articles)
-    var allH2 = proseEl.querySelectorAll('h2');
-    allH2.forEach(function (h, i) {
-      if (!h.id) {
-        var slug = (h.textContent || '').toLowerCase()
-          .replace(/[^\w一-鿿]+/g, '-')
-          .replace(/^-+|-+$/g, '')
-          .slice(0, 40) || ('h2-' + i);
-        h.id = slug;
-      }
-    });
-    const h2s = proseEl.querySelectorAll('h2[id]');
+    const h2s = outlineHeadings(proseEl);
     if (h2s.length < 3) return;
     if (document.getElementById('dn-toc-float')) return;
 

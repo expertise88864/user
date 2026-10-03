@@ -114,8 +114,9 @@ def audit_service_worker(errors: list[str]) -> None:
         errors.append("sw.js should bypass /admin so the editor is always fresh")
     if "url.pathname.startsWith('/api/')" not in src:
         errors.append("sw.js should bypass /api so dynamic API responses are never cached")
-    if "url.pathname === '/reset-sw'" not in src:
-        errors.append("sw.js should bypass reset-sw pages")
+    for route in ('/reset-sw', '/reset-sw.html', '/en/reset-sw', '/en/reset-sw.html'):
+        if f"url.pathname === '{route}'" not in src:
+            errors.append(f"sw.js should bypass the reset utility: {route}")
     if "self.addEventListener('push'" in src or "self.addEventListener('notificationclick'" in src:
         errors.append("sw.js should not retain the retired push-notification runtime")
 
