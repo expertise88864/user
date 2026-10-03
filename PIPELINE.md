@@ -195,3 +195,27 @@ Word 模式目前提供粗體、斜體、底線、刪除線、標題、清單及
 字型與文章排序目前也先存成本機設定草稿，可在同一瀏覽器重新載入。
 排序草稿只有在已載入的目錄 SHA 與文章集合一致時恢復；正式來源更新時保留舊草稿，不自動套用。
 這兩項設定尚未接入雲端候選發布，介面會明示未發布，不再直接寫 main。
+
+## 生成內容二次核可（本機實作，尚未發布）
+
+原文章送審只核可來源，不代表新生成的英文、摘要與搜尋內容已核可。
+受信任的 main 管線先在系統暫存目錄生成完整病人預覽，固定內容日期與全部檔案摘要，
+以 `.cms-review/<slug>.json` 保存不可變版本。預覽候選的來源核可不足以通過正式 Delivery contract。
+後台「確認生成預覽」只接受同庫、相同 SHA 的成功 Preview；作者逐項檢查中文、英文、摘要
+及其他變更後，勾選核可，伺服器才在既有草稿分支保存第二份版本綁定申請。
+取消、較新存檔、main 更新、預覽版本錯誤或生成內容變動皆須重新準備與核可。
+初次預覽與最後候選重建都沿用紀錄中的內容日期；隔天重建不會自行換成當天日期。
+
+準備初次預覽，在與即時 main 一致的乾淨、受信任 checkout 執行：
+`python _prepare_patient_review.py --request-head <來源申請完整SHA> --file blog/<slug>.html --expected-main <main完整SHA> --content-date YYYY-MM-DD --output <系統暫存新資料夾>`。
+保存包內的 `patient-package.zip`、`review-manifest.json`、`objects.bundle` 與報告；
+原作者草稿歷史另以完整 SHA 唯讀取得，不作為執行程式的來源。
+
+作者在後台核可生成預覽後，使用同一受信任 main checkout：
+`python _prepare_patient_review.py --approval-head <最終核可完整SHA> --file blog/<slug>.html --expected-main <main完整SHA> --archive <原patient-package.zip> --output <系統暫存新資料夾>`。
+此模式從可信 main 獨立重建來源與完整生成物，全部 raw bytes 與原核可包相符才建立候選；
+相對於作者預覽只升級 `.cms-delivery.json`，不再修改任何已核可病人內容。
+輸出的 Git bundle 不含原作者分支歷史，驗證時須另取得最終核可 SHA。
+工具不推送、不寫 main、不執行草稿或封存包中的程式，也不自動宣稱模型審查或 CI 通過。
+完整獨立審查後仍走 codex 候選、完整遠端 CI、同庫 PR／同 SHA Preview／瀏覽器、
+正常快轉 main，再核對正式 CI／部署／smoke。候選包及雲端核可成功都不等於已上線。

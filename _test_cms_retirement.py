@@ -53,7 +53,8 @@ class RetirementTests(unittest.TestCase):
     save_manifest = fixture.CMSDeliveryTests.save_manifest
     store = fixture.CMSDeliveryTests.store
     prepare = fixture.CMSDeliveryTests.prepare
-    verify = fixture.CMSDeliveryTests.verify
+    def verify(self):
+        return delivery.verify(self.candidate, self.api, now=self.now)
 
     def setUp(self):
         fixture.CMSDeliveryTests.setUp(self)

@@ -4,8 +4,8 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const crypto = require('node:crypto');
-let parse;
-test.before(async () => { ({ parse } = await import('parse5')); });
+let parse, patientReview;
+test.before(async () => { ({ parse } = await import('parse5')); patientReview = await import('./api/admin/_patient-review-contract.js'); });
 const FILE = 'blog/example.html';
 const HTML = '<html lang="zh-Hant"><head><title>Fixture</title></head><body><main>本機測試</main></body></html>';
 const source = fs.readFileSync('api/admin/article-draft.js', 'utf8')
@@ -21,7 +21,7 @@ function fixture() {
   const store = value => { const bytes = Buffer.isBuffer(value) ? value : Buffer.from(value); const id = blobSha(bytes); blobs.set(id, bytes); return id; };
   const mainBlob = store(HTML), mainTree = sha('main-tree'), main = sha('main');
   trees.set(mainTree, new Map([[FILE, mainBlob]])); commits.set(main, { tree: { sha: mainTree }, parents: [] }); refs.set('main', main);
-  const h = { calls, blobs, trees, commits, refs, mainBlob, main, session: true, race: false, corrupt: false, corruptRecord: false, corruptRequest: false, outcomeUnknown: false, failBlob: false, failWrite: null };
+  const h = { calls, blobs, trees, commits, refs, store, mainBlob, main, session: true, race: false, corrupt: false, corruptRecord: false, corruptRequest: false, outcomeUnknown: false, failBlob: false, failWrite: null };
   async function fetch(url, options) {
     assert.equal(new URL(url).origin, 'https://api.github.com');
     assert.equal(options.redirect, 'error');
@@ -41,8 +41,19 @@ function fixture() {
       result = h.deployments || [];
     } else if (path.startsWith('deployments/') && path.endsWith('/statuses')) {
       result = h.deploymentStatuses || [];
-    } else if (path === 'git/matching-refs/heads/drafts/') {
-      result = [...refs].filter(([name]) => name.startsWith('drafts/')).map(([name, id]) => ({ ref: 'refs/heads/' + name, object: { sha: id } }));
+    } else if (path.startsWith('git/matching-refs/heads/')) {
+      const prefix = path.slice('git/matching-refs/heads/'.length);
+      result = [...refs].filter(([name]) => name.startsWith(prefix)).map(([name, id]) => ({ ref: 'refs/heads/' + name, object: { type: 'commit', sha: id } }));
+    } else if (path.startsWith('commits/') && path.endsWith('/pulls')) {
+      result = h.reviewPRs || [];
+    } else if (path.startsWith('compare/')) {
+      const [base, head] = path.slice('compare/'.length).split('...'), before = trees.get(commits.get(base).tree.sha), after = trees.get(commits.get(head).tree.sha);
+      let cursor = head, count = 0;
+      while (cursor !== base && commits.get(cursor)?.parents.length === 1 && count < 100) { cursor = commits.get(cursor).parents[0]; count++; }
+      result = { status: base === head ? 'identical' : cursor === base ? 'ahead' : 'diverged', total_commits: count,
+        merge_base_commit: { sha: cursor === base ? base : null },
+        files: [...new Set([...before.keys(), ...after.keys()])].filter(name => before.get(name) !== after.get(name)).map(name => ({ filename: name,
+          status: !after.has(name) ? 'removed' : !before.has(name) ? 'added' : 'modified', sha: after.get(name) || null, changes: 1 })) };
     } else if (path.startsWith('git/ref/heads/')) {
       const value = refs.get(path.slice(14));
       if (!value) return Response.json({}, { status: 404 });
@@ -94,7 +105,7 @@ function fixture() {
   }
   const context = { URL, Request, Response, TextEncoder, TextDecoder, Uint8Array, AbortController,
     setTimeout, clearTimeout, atob, btoa, crypto: crypto.webcrypto, fetch, parse,
-    observePublication: publicationContext.observePublication, publicationPolicy,
+    observePublication: publicationContext.observePublication, publicationPolicy, patientReview,
     getSession: async () => h.session ? { pat: 'fixture-secret', login: 'expertise88864' } : null };
   vm.runInNewContext(source + '\nthis.handler=handler;', context);
   h.request = (input, extra = {}) => context.handler(new Request('https://editor.test/api/admin/article-draft' + (input ? '' : '?file=' + FILE + (extra.query || '')), {
@@ -113,7 +124,7 @@ function verifiedProduction(h) {
     steps: publicationPolicy.workflows[index].steps[name].required.map(name => ({ name, status: 'completed', conclusion: 'success' })),
   }))]));
   h.deployments = [{ id: 700, sha: h.main, environment: 'Production', production_environment: true, creator: { login: 'vercel[bot]' } }];
-  h.deploymentStatuses = [{ id: 800, state: 'success', creator: { login: 'vercel[bot]' }, environment_url: 'https://chendermatologist-fixture-expertise88864s-projects.vercel.app' }];
+  h.deploymentStatuses = [{ id: 800, state: 'success', creator: { login: 'vercel[bot]' }, environment_url: 'https://chendermatologist-fixture00-expertise88864s-projects.vercel.app' }];
 }
 for (const address of ['javascript:alert(1)', 'JavaScript:alert(1)', 'java&#115;cript:alert(1)',
   'java&#9;script:alert(1)', 'vbscript:msgbox(1)', 'data:text/html,test', 'blob:local', 'file:///tmp/link']) {
@@ -362,7 +373,7 @@ test('publication observation distinguishes indexable deployed source, noindex a
     steps: publicationPolicy.workflows[index].steps[name].required.map(name => ({ name, status: 'completed', conclusion: 'success' })),
   }))]));
   h.deployments = [{ id: 700, sha: h.main, environment: 'Production', production_environment: true, creator: { login: 'vercel[bot]' } }];
-  h.deploymentStatuses = [{ id: 800, state: 'success', creator: { login: 'vercel[bot]' }, environment_url: 'https://chendermatologist-fixture-expertise88864s-projects.vercel.app' }];
+  h.deploymentStatuses = [{ id: 800, state: 'success', creator: { login: 'vercel[bot]' }, environment_url: 'https://chendermatologist-fixture00-expertise88864s-projects.vercel.app' }];
   let observed = await (await h.request(null, { query: '&mode=publication' })).json();
   assert.equal(observed.publication.state, 'live'); assert.equal(observed.publication.published, true);
   const draft = await (await h.request(h.input())).json();
@@ -800,4 +811,133 @@ test('draft image reload rejects same-size corrupted Git bytes before returning 
     const bytes = Buffer.from(data.content, 'base64'); bytes[bytes.length - 1] ^= 1; return { ...data, content: bytes.toString('base64') }; };
   const response = await h.request(); assert.equal(response.status, 409); assert.equal((await response.json()).error, 'invalid_draft_media');
   assert.ok(h.calls.slice(before).every(c => c.method === 'GET')); assert.equal(h.refs.get('drafts/example'), saved.head);
+});
+
+
+async function generatedFixture() {
+  const h = fixture();
+  const baseline = h.trees.get(h.commits.get(h.main).tree.sha);
+  baseline.set('blog/retired-fixture.html', h.store('<p>Removed nonclinical fixture</p>'));
+  baseline.set('admin/removed-fixture.html', h.store('<p>Private fixture</p>'));
+  const saved = await (await h.request(h.input())).json();
+  const request = await (await h.request({ file: FILE, action: 'review', expectedHead: saved.head, baseSha: saved.baseSha,
+    expectedBlob: saved.blobSha, contentApproved: true })).json();
+  const record = JSON.parse(h.blobs.get(h.trees.get(h.commits.get(request.head).tree.sha).get('.cms-requests/example.json')));
+  const digest = raw => crypto.createHash('sha256').update(raw).digest('hex');
+  const proof = { version: 1, repository: 'expertise88864/user', file: FILE, requestHead: request.head,
+    requestBlobSha: h.trees.get(h.commits.get(request.head).tree.sha).get('.cms-requests/example.json'),
+    draftHead: saved.head, manifestSha: record.manifestSha, articleBlobSha: saved.blobSha,
+    baseSha: saved.baseSha, preparedAgainst: h.main, action: 'review', approvedBy: 'expertise88864',
+    requestedAt: record.requestedAt, scheduledAt: null, sourceSha256: { [FILE]: digest(h.blobs.get(saved.blobSha)) } };
+  function commit(label, parent, tree) {
+    const treeSha = sha(label + ':tree'), head = sha(label + ':head');
+    h.trees.set(treeSha, tree); h.commits.set(head, { tree: { sha: treeSha }, parents: [parent] }); return head;
+  }
+  const sourceTree = new Map(h.trees.get(h.commits.get(h.main).tree.sha));
+  sourceTree.set(FILE, saved.blobSha); sourceTree.set('.cms-delivery.json', h.store(JSON.stringify({ version: 1, requests: [proof] }, null, 2) + '\n'));
+  const sourceHead = commit('patient source', h.main, sourceTree), generatedTree = new Map(sourceTree);
+  generatedTree.set('en/' + FILE, h.store('<html><p>English fixture only</p></html>'));
+  generatedTree.set('ai/example.json', h.store('{"summary":"Synthetic fixture only"}\n'));
+  for (const path of ['index.html', 'glossary.html', 'en/glossary.html', 'tools.html', 'en/tools.html', 'admin.html']) {
+    generatedTree.set(path, h.store('<html><p>Changed nonclinical fixture: ' + path + '</p></html>'));
+  }
+  generatedTree.set('assets/search-index.json', h.store('{"summary":"Search fixture only"}\n'));
+  generatedTree.set('blog/feed.xml', h.store('<feed>Nonclinical fixture</feed>'));
+  generatedTree.set('assets/fixture-diagram.svg', h.store('<svg xmlns="http://www.w3.org/2000/svg"><title>Fixture</title></svg>'));
+  generatedTree.delete('blog/retired-fixture.html'); generatedTree.delete('admin/removed-fixture.html');
+  const generatedHead = commit('patient generated', sourceHead, generatedTree);
+  const files = Object.fromEntries([...generatedTree].sort(([a],[b])=>a.localeCompare(b)).map(([path,id])=>[path,{ mode: '100644', blobSha: id,
+    size: h.blobs.get(id).length, sha256: digest(h.blobs.get(id)) }]));
+  const review = { version: 1, repository: 'expertise88864/user', file: FILE, contentDate: new Date().toISOString().slice(0,10),
+    archiveSha256: digest(Buffer.from('Synthetic complete archive identity')), patientManifest: {
+      version: 1, state: 'patient_package_recorded', trackedPackage: { version: 1, repository: 'expertise88864/user', file: FILE,
+        pipelineHead: h.main, sourceHead, generatedHead, generatedTreeSha: h.commits.get(generatedHead).tree.sha, sourceEvidence: proof,
+        files, state: 'generated_package_recorded', generationVerified: false, contentApproved: false, ciVerified: false, published: false },
+      extraFiles: { 'pagefind/pagefind.js': { size: 7, sha256: digest(Buffer.from('Fixture')) } },
+      generationVerified: false, liveAuthorIntentVerified: false, contentApproved: false, ciVerified: false, published: false } };
+  const reviewTree = new Map(generatedTree), raw = JSON.stringify(review,null,2)+'\n', manifestBlob = h.store(raw);
+  reviewTree.set('.cms-review/example.json', manifestBlob);
+  const reviewHead = commit('patient review', generatedHead, reviewTree), branch = 'codex/cms-review/example-fixture';
+  h.refs.set(branch, reviewHead);
+  h.reviewPRs = [{ number: 71, state: 'open', head: { sha: reviewHead, ref: branch, repo: { full_name: 'expertise88864/user' } },
+    base: { ref: 'main', sha: h.main, repo: { full_name: 'expertise88864/user' } } }];
+  h.deployments = [{ id: 701, sha: reviewHead, environment: 'Preview', production_environment: false, creator: { login: 'vercel[bot]' } }];
+  h.deploymentStatuses = [{ id: 801, state: 'success', creator: { login: 'vercel[bot]' },
+    environment_url: 'https://chendermatologist-fixture00-expertise88864s-projects.vercel.app' }];
+  h.approval = { file: FILE, action: 'approve-generated', expectedHead: request.head, baseSha: saved.baseSha, expectedBlob: saved.blobSha,
+    reviewHead, manifestBlobSha: manifestBlob, manifestSha256: digest(Buffer.from(raw)), contentApproved: true };
+  h.prepared = { request, review, reviewHead, branch }; return h;
+}
+test('generated review discovery binds actual source, complete outputs and exact trusted Preview with no writes', async () => {
+  const h = await generatedFixture(), before = h.calls.length;
+  const response = await h.request(null, { query: '&mode=generated' }); assert.equal(response.status,200);
+  const result = await response.json();
+  assert.equal(result.reviewHead,h.prepared.reviewHead); assert.equal(result.state,'awaiting_generated_content_approval');
+  for (const key of ['contentApproved','ciVerified','published']) assert.equal(result[key],false);
+  assert.equal(result.finalRequest,undefined); assert.ok(result.contentPaths.includes('en/'+FILE)); assert.ok(result.contentPaths.includes('ai/example.json'));
+  for (const path of ['index.html', 'glossary.html', 'en/glossary.html', 'tools.html', 'en/tools.html', 'assets/search-index.json', 'blog/feed.xml', 'assets/fixture-diagram.svg']) {
+    assert.ok(result.contentPaths.includes(path), 'Author must see this changed patient surface: ' + path);
+  }
+  assert.ok(!result.contentPaths.includes('admin.html'));
+  assert.deepEqual(result.removedContentPaths, ['blog/retired-fixture.html']);
+  assert.ok(h.calls.slice(before).every(call=>call.method==='GET'));
+});
+test('explicit generated approval writes only the existing intent on a direct draft successor, never main', async () => {
+  const h = await generatedFixture(), before = h.calls.length, main = h.refs.get('main');
+  const response = await h.request(h.approval); assert.equal(response.status,200);
+  const accepted = await response.json(); assert.equal(accepted.request.status,'generated_content_approved'); assert.equal(accepted.published,false);
+  assert.equal(accepted.request.reviewHead,h.prepared.reviewHead); assert.equal(h.refs.get('main'),main);
+  const writes = h.calls.slice(before).filter(call=>call.method!=='GET');
+  assert.deepEqual(writes.map(c=>c.method),['POST','POST','PATCH']);
+  assert.deepEqual(writes[0].body.tree.map(e=>e.path),['.cms-requests/example.json']);
+  assert.deepEqual(h.commits.get(accepted.head).parents,[h.approval.expectedHead]);
+  const final = JSON.parse(h.blobs.get(h.trees.get(h.commits.get(accepted.head).tree.sha).get('.cms-requests/example.json')));
+  assert.equal(final.version,2); assert.equal(final.approvedBy,'expertise88864'); assert.equal(final.contentApproved,true);
+  assert.equal(final.sourceRequestHead,h.approval.expectedHead);
+  assert.equal((await (await h.request()).json()).request.status,'generated_content_approved');
+  assert.equal((await h.request(h.approval)).status,409,'A stale retry cannot replace or duplicate final approval');
+});
+for (const issue of ['confirmation','head','blob','manifest','digest','owner','extra','preview-state','preview-actor','preview-sha','preview-url','duplicate-review']) {
+  test('generated approval rejects '+issue+' before repository writes', async () => {
+    const h = await generatedFixture(), before = h.calls.length, input = { ...h.approval };
+    if (issue==='confirmation') input.contentApproved=false;
+    if (issue==='head') input.expectedHead=sha('another head');
+    if (issue==='blob') input.expectedBlob=sha('another blob');
+    if (issue==='manifest') input.manifestBlobSha=sha('another manifest');
+    if (issue==='digest') input.manifestSha256='a'.repeat(64);
+    if (issue==='owner') input.approvedBy='another-user';
+    if (issue==='extra') input.repository='another/repo';
+    if (issue==='preview-state') h.deploymentStatuses[0].state='failure';
+    if (issue==='preview-actor') h.deploymentStatuses[0].creator.login='maintainer';
+    if (issue==='preview-sha') h.deployments[0].sha=sha('another preview');
+    if (issue==='preview-url') h.deploymentStatuses[0].environment_url='https://untrusted.test';
+    if (issue==='duplicate-review') h.refs.set('codex/cms-review/example-other',h.prepared.reviewHead);
+    const response = await h.request(input); assert.ok([400,409].includes(response.status),await response.text());
+    assert.ok(h.calls.slice(before).every(call=>call.method==='GET'));
+    assert.equal(h.refs.get('drafts/example'),h.approval.expectedHead); assert.equal(h.refs.get('main'),h.main);
+  });
+}
+test('source or review ref changes during final confirmation are not acknowledged as approval', async () => {
+  for (const which of ['source','review']) {
+    const h = await generatedFixture(), before = h.calls.length;
+    h.beforeRequest = (path,method) => {
+      if (method==='GET' && path.startsWith('deployments/')) h.refs.set(which==='source'?'drafts/example':h.prepared.branch,sha('concurrent edit'));
+    };
+    const response = await h.request(h.approval); assert.equal(response.status,409);
+    assert.ok(h.calls.slice(before).every(call=>call.method==='GET')); assert.equal(h.refs.get('main'),h.main);
+  }
+});
+test('late review changes or Preview withdrawal prevent the final author branch write', async () => {
+  for (const which of ['source','review','preview']) {
+    const h = await generatedFixture(), before = h.calls.length;
+    h.beforeRequest = (path,method) => {
+      if (method !== 'POST' || path !== 'git/commits') return;
+      if (which === 'preview') h.deploymentStatuses[0].state = 'failure';
+      else h.refs.set(which === 'source' ? 'drafts/example' : h.prepared.branch, sha('late concurrent edit'));
+    };
+    const response = await h.request(h.approval); assert.equal(response.status,409);
+    assert.ok(h.calls.slice(before).every(call => call.method !== 'PATCH'));
+    if (which !== 'source') assert.equal(h.refs.get('drafts/example'),h.approval.expectedHead);
+    assert.equal(h.refs.get('main'),h.main);
+  }
 });

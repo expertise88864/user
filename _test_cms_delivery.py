@@ -1,4 +1,4 @@
-"""Live author-intent / payload gates against disposable Git histories.
+"""Source preparation intent / payload checks against disposable Git histories.
 
 No credentials, hosted requests, hooks, remote writes or production deployments.
 """
@@ -60,11 +60,15 @@ class LocalAPI:
         elif path.startswith("/compare/"):
             base, head = path[len("/compare/"):].split("...")
             merge = f.run_git("merge-base", base, head)
+            files = []
+            for name in f.run_git("diff", "--name-only", base, head).splitlines():
+                exists = bool(f.run_git("ls-tree", head, "--", name))
+                files.append({"filename": name, "status": "removed" if not exists else
+                              "modified" if f.run_git("ls-tree", base, "--", name) else "added",
+                              "sha": f.run_git("rev-parse", head + ":" + name) if exists else None, "changes": 1})
             data = {"status": "identical" if base == head else "ahead" if merge == base else "diverged",
                     "merge_base_commit": {"sha": merge}, "total_commits": int(f.run_git("rev-list", "--count", base + ".." + head)),
-                    "files": [{"filename": name, "status": "modified" if f.run_git("ls-tree", base, "--", name) else "added",
-                               "sha": f.run_git("rev-parse", head + ":" + name), "changes": 1}
-                              for name in f.run_git("diff", "--name-only", base, head).splitlines()]}
+                    "files": files}
         else:
             raise AssertionError("Unexpected repository API path: " + path)
         return self.adjust(path, deepcopy(data))
@@ -90,7 +94,12 @@ class CMSDeliveryTests(unittest.TestCase):
         self.api = LocalAPI(self)
 
     def verify(self):
-        return delivery.verify(self.candidate, self.api, now=self.now)
+        return delivery.verify_preparation(self.candidate, self.api, now=self.now)
+
+    def test_source_approval_is_not_final_generated_content_approval(self):
+        self.assertEqual(self.verify()["activeRequests"], 1)
+        with self.assertRaisesRegex(ValueError, "Final generated patient content approval"):
+            delivery.verify(self.candidate, self.api, now=self.now)
 
     def rewrite_receipt(self, mutate):
         record = json.loads((self.root / delivery.FILE).read_bytes())
@@ -121,7 +130,7 @@ class CMSDeliveryTests(unittest.TestCase):
     def node_verify_snapshot(self):
         responses = {path: self.api.get(path) for path in list(dict.fromkeys(self.api.calls))}
         helper = Path(__file__).resolve().parent / "_cms_delivery.cjs"
-        code = "const fs=require('node:fs'),v=require(process.argv[1]);const i=JSON.parse(fs.readFileSync(0,'utf8'));v.verifyLiveIntent(i.sha,async p=>i.responses[p],i.now).then(r=>console.log(JSON.stringify(r))).catch(()=>process.exitCode=1);"
+        code = "const fs=require('node:fs'),v=require(process.argv[1]);const i=JSON.parse(fs.readFileSync(0,'utf8'));v.verifySourceIntent(i.sha,async p=>i.responses[p],i.now).then(r=>console.log(JSON.stringify(r))).catch(()=>process.exitCode=1);"
         result = subprocess.run(["node", "-e", code, str(helper)], input=json.dumps({
             "sha": self.candidate, "responses": responses, "now": int(self.now.timestamp() * 1000)}),
             capture_output=True, text=True, encoding="utf-8", timeout=20)

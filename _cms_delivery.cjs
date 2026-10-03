@@ -9,42 +9,7 @@ const { createHash } = require('node:crypto');
 const FILE = '.cms-delivery.json';
 const sha = value => typeof value === 'string' && /^[a-f0-9]{40}$/.test(value) && value !== '0'.repeat(40);
 const hash = (algorithm, value) => createHash(algorithm).update(value).digest('hex');
-const FIELDS = ['version','repository','file','requestHead','requestBlobSha','draftHead','manifestSha',
-  'articleBlobSha','baseSha','preparedAgainst','action','approvedBy','requestedAt','scheduledAt','sourceSha256'];
-const exactKeys = (value, keys) => value && typeof value === 'object' && !Array.isArray(value) &&
-  Object.keys(value).length === keys.length && keys.every(key => Object.hasOwn(value, key));
-function slug(file) {
-  assert.equal(typeof file, 'string', 'Invalid CMS article path');
-  const match = /^blog\/([a-z0-9]+(?:-[a-z0-9]+)*)\.html$/.exec(file);
-  assert.ok(match && match[1].length <= 100 && !['index','topics','charts'].includes(match[1]), 'Invalid CMS article path');
-  return match[1];
-}
-function time(value) {
-  assert.ok(typeof value === 'string' && /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d{3}Z$/.test(value), 'Invalid CMS timestamp');
-  const stamp = Date.parse(value);
-  assert.ok(Number.isFinite(stamp) && new Date(stamp).toISOString() === value, 'Invalid CMS timestamp');
-  return stamp;
-}
-function validateReceiptEntry(entry, now) {
-    assert.ok(exactKeys(entry, FIELDS) && entry.version === 1 && entry.repository === 'expertise88864/user' && entry.approvedBy === 'expertise88864' && ['review','schedule','unpublish'].includes(entry.action), 'Invalid CMS request proof');
-    const name = slug(entry.file);
-    for (const field of ['requestHead','requestBlobSha','draftHead','manifestSha','articleBlobSha','preparedAgainst']) assert.ok(sha(entry[field]), 'Invalid CMS proof SHA');
-    assert.ok(entry.baseSha === null || sha(entry.baseSha), 'Invalid CMS article base');
-    assert.ok(entry.action !== 'unpublish' || entry.baseSha !== null, 'Cannot unpublish a new article');
-    const created = time(entry.requestedAt);
-    assert.ok(created <= now, 'CMS request is in the future');
-    if (entry.action === 'schedule') {
-      const due = time(entry.scheduledAt);
-      assert.ok(created < due && due <= created + 365 * 86400000 && due <= now, 'CMS schedule is not valid / due');
-    } else assert.equal(entry.scheduledAt, null, 'Unexpected CMS schedule');
-    assert.ok(entry.sourceSha256 && typeof entry.sourceSha256 === 'object' && !Array.isArray(entry.sourceSha256) && Object.hasOwn(entry.sourceSha256, entry.file), 'Missing CMS source evidence');
-    const sources = Object.entries(entry.sourceSha256);
-    assert.ok(sources.length >= 1 && sources.length <= 18, 'Invalid CMS source count');
-    for (const [path, digest] of sources) {
-      assert.ok((path === entry.file || path === 'blog/blog-shared.js' || new RegExp('^blog/images/' + name + '/[a-f0-9]{64}\\.(png|jpg|gif|webp)$').test(path)) && typeof digest === 'string' && /^[a-f0-9]{64}$/.test(digest), 'Invalid CMS source identity');
-    }
-    return { name, sources };
-}
+const { FIELDS, exactKeys, slug, time, validateReceiptEntry } = require('./api/admin/_patient-review-contract.js');
 async function blob(api, path, commit, limit, trees) {
   assert.ok(sha(commit), 'CMS requires an exact SHA');
   const data = await api('/contents/' + path + '?ref=' + commit);
@@ -81,7 +46,7 @@ async function tree(api, commit, trees) {
   }
   return trees.get(commit);
 }
-async function verifyLiveIntent(candidate, api, now = Date.now()) {
+async function verifyIntent(candidate, api, now, finalApproval) {
   assert.ok(sha(candidate) && Number.isFinite(now), 'Invalid CMS candidate or clock');
   const trees = new Map();
   const { raw } = await blob(api, FILE, candidate, 128000, trees);
@@ -92,15 +57,16 @@ async function verifyLiveIntent(candidate, api, now = Date.now()) {
   await require('./_cms_retirement.cjs').verifyTransition(candidate, api, value.requests, now, trees);
   const seen = new Set();
   async function live(entry) {
+    const expected = entry.version === 2 ? entry.patientApproval.approvalHead : entry.requestHead;
     const name = 'refs/heads/drafts/' + slug(entry.file);
     const ref = await api('/git/ref/heads/drafts/' + slug(entry.file));
-    assert.ok(ref?.ref === name && ref.object?.type === 'commit' && ref.object.sha === entry.requestHead, 'CMS author request cancelled or superseded');
+    assert.ok(ref?.ref === name && ref.object?.type === 'commit' && ref.object.sha === expected, 'CMS author request cancelled or superseded');
   }
   for (const entry of value.requests) {
     const { name, sources } = validateReceiptEntry(entry, now);
     assert.ok(!seen.has(name), 'Duplicate CMS request');
     seen.add(name);
-    for (const [path, digest] of sources) {
+    if (entry.version === 1) for (const [path, digest] of sources) {
       const payload = await blob(api, path, candidate, 1500000, trees);
       assert.equal(hash('sha256', payload.raw), digest, 'CMS payload changed after preparation');
     }
@@ -124,9 +90,17 @@ async function verifyLiveIntent(candidate, api, now = Date.now()) {
     assert.deepEqual(compare.files?.map(file => file.filename), [requestPath], 'CMS request changed more than intent');
     const changed = compare.files[0];
     assert.ok(['added','modified'].includes(changed.status) && changed.sha === entry.requestBlobSha && Number.isInteger(changed.changes) && changed.changes >= 1 && !Object.hasOwn(changed, 'previous_filename'), 'CMS request diff is not an ordinary added/modified intent file');
+    if (entry.version === 2) await require('./_cms_patient_review.cjs').verifyDelivery(candidate, api, entry, now, trees);
+    else if (finalApproval && entry.action !== 'unpublish') throw Error('Final generated patient content approval is required before delivery');
   }
   // Always query the live refs again; immutable CI success is not current intent.
   for (const entry of value.requests) await live(entry);
   return { sha: candidate, activeRequests: value.requests.length, authorIntentVerified: true, published: false };
 }
-module.exports = { verifyLiveIntent, validateReceiptEntry, blob, tree, exactKeys, sha, time, slug, FIELDS };
+async function verifySourceIntent(candidate, api, now = Date.now()) {
+  return verifyIntent(candidate, api, now, false);
+}
+async function verifyLiveIntent(candidate, api, now = Date.now()) {
+  return verifyIntent(candidate, api, now, true);
+}
+module.exports = { verifyLiveIntent, verifySourceIntent, validateReceiptEntry, blob, tree, exactKeys, sha, time, slug, FIELDS };

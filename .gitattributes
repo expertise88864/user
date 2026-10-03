@@ -2,3 +2,7 @@
 .githooks/* text eol=lf
 scripts/pre-push text eol=lf
 scripts/*.sh text eol=lf
+# Approval identities bind canonical JSON bytes on Windows and Linux.
+.cms-delivery.json text eol=lf
+.cms-requests/*.json text eol=lf
+.cms-review/*.json text eol=lf

@@ -160,6 +160,7 @@ if (require.main === module) (async () => {
     await require('./_test_editor_version_browser.cjs')(browser);
     await require('./_test_calculators_browser.cjs')(browser);
     await require('./_test_article_publication_browser.cjs')(browser);
+    await require('./_test_generated_approval_browser.cjs')(browser);
     await require('./_test_word_editor_browser.cjs')(browser);
     await require('./_test_word_security_browser.cjs')(browser);
     await require('./_test_word_admin_browser.cjs')(browser);

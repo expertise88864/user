@@ -1,5 +1,5 @@
 {
-  "buildCommand": "node _vercel_gate.cjs --build && npm run build && node _vercel_gate.cjs --build",
+  "buildCommand": "node _vercel_gate.cjs --build && npm run build && node _vercel_gate.cjs --build --post-build",
   "ignoreCommand": "node _vercel_gate.cjs --build && exit 1; exit 0",
   "outputDirectory": ".",
   "cleanUrls": true,

@@ -30,8 +30,11 @@ jobs:
       - name: Install locked project dependencies
         run: npm ci --ignore-scripts --no-audit --no-fund
       - name: Verify canonical generated files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python _run_quality.py build
+          python _cms_patient_review.py --workspace "$GITHUB_SHA"
           # Publishing is a separate, reviewed operation. CI must never create
           # an unverified commit or use skip tokens to bypass its own checks.
           git diff --exit-code

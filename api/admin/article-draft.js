@@ -4,6 +4,7 @@ import { getSession } from './_session.js';
 import { parse } from 'parse5';
 import { observePublication } from './_article-publication.js';
 import publicationPolicy from '../../_delivery_policy.json';
+import * as patientReview from './_patient-review-contract.js';
 
 export const config = { runtime: 'edge' };
 
@@ -129,6 +130,142 @@ async function fileAt(api, file, commit, optional = false) {
   catch (_) { fail(502, 'invalid_repository_content'); }
   return { sha: data.sha, content };
 }
+function reviewReaders(api) {
+  const read = path => api('GET', path.slice(1));
+  async function tree(_read, head, cache) {
+    if (!cache.has(head)) {
+      const commit = await read('/git/commits/' + validSha(head));
+      if (commit.sha !== head || !SHA.test(commit.tree?.sha || '')) fail(502, 'invalid_generated_review');
+      const data = await read('/git/trees/' + commit.tree.sha + '?recursive=1');
+      if (data.sha !== commit.tree.sha || data.truncated !== false || !Array.isArray(data.tree) || data.tree.length > 10000) fail(502, 'invalid_generated_review');
+      const rows = new Map();
+      for (const row of data.tree) {
+        if (!row || typeof row.path !== 'string' || rows.has(row.path)) fail(502, 'invalid_generated_review');
+        rows.set(row.path, row);
+      }
+      cache.set(head, rows);
+    }
+    return cache.get(head);
+  }
+  async function blob(_read, path, head, limit, cache) {
+    const data = await read('/contents/' + path + '?ref=' + validSha(head));
+    const stored = await repositoryBlob(api, data, limit, 502, 'invalid_generated_review');
+    const entry = (await tree(read, head, cache)).get(path);
+    if (!entry || entry.mode !== '100644' || entry.type !== 'blob' || entry.sha !== data.sha) fail(502, 'invalid_generated_review');
+    return { sha: data.sha, raw: stored.bytes };
+  }
+  const digest = async bytes => Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), b => b.toString(16).padStart(2, '0')).join('');
+  return { read, ops: { tree, blob, digest } };
+}
+async function reviewPreview(api, head, branch, main) {
+  const prs = await api('GET', 'commits/' + head + '/pulls?per_page=100');
+  if (!Array.isArray(prs) || prs.length >= 100) fail(502, 'generated_review_unavailable');
+  const matching = prs.filter(p => p.state === 'open' && p.head?.sha === head && p.head?.ref === branch &&
+    p.base?.ref === 'main' && p.base?.sha === main && p.head?.repo?.full_name === REPO && p.base?.repo?.full_name === REPO &&
+    Number.isInteger(p.number) && p.number > 0);
+  if (matching.length !== 1) fail(409, 'generated_review_not_ready');
+  const deployments = await api('GET', 'deployments?sha=' + head + '&environment=Preview&per_page=100');
+  if (!Array.isArray(deployments) || deployments.length >= 100) fail(502, 'generated_review_unavailable');
+  const candidates = deployments.filter(d => d.sha === head && d.environment === 'Preview' && d.production_environment === false &&
+    ['vercel[bot]', 'vercel'].includes(d.creator?.login) && Number.isInteger(d.id) && d.id > 0).sort((a,b) => b.id-a.id);
+  if (!candidates.length) fail(409, 'generated_review_not_ready');
+  const statuses = await api('GET', 'deployments/' + candidates[0].id + '/statuses?per_page=100');
+  if (!Array.isArray(statuses) || !statuses.length || statuses.length >= 100 || statuses.some(s => !Number.isInteger(s.id) || s.id <= 0)) fail(502, 'generated_review_unavailable');
+  const status = [...statuses].sort((a,b) => b.id-a.id)[0];
+  let url;
+  try { url = new URL(status.environment_url); } catch (_) { fail(409, 'generated_review_not_ready'); }
+  if (status.state !== 'success' || !['vercel[bot]', 'vercel'].includes(status.creator?.login) || url.protocol !== 'https:' ||
+      url.username || url.password || url.port || url.search || url.hash || url.pathname !== '/' ||
+      !/^chendermatologist-[a-z0-9]{9}-expertise88864s-projects\.vercel\.app$/.test(url.hostname)) fail(409, 'generated_review_not_ready');
+  return { origin: url.origin, pr: matching[0].number, deploymentId: candidates[0].id, statusId: status.id };
+}
+async function generatedReview(api, target, loaded, selected = null) {
+  if (!loaded.head || loaded.legacy || loaded.conflict || await deliveryLock(api, target, loaded.main)) fail(409, 'draft_conflict');
+  const request = await publicationState(api, target, loaded);
+  if (!request || !['awaiting_review', 'schedule_requested'].includes(request.status)) fail(409, 'generated_review_not_ready');
+  const prefix = 'codex/cms-review/' + target.slug + '-';
+  const refs = await api('GET', 'git/matching-refs/heads/' + prefix);
+  if (!Array.isArray(refs) || refs.length > 50) fail(502, 'generated_review_unavailable');
+  const candidates = refs.filter(r => typeof r.ref === 'string' && r.ref.startsWith('refs/heads/' + prefix) &&
+    /^[a-z0-9-]{1,80}$/.test(r.ref.slice(('refs/heads/' + prefix).length)) && r.object?.type === 'commit' && SHA.test(r.object.sha || ''));
+  if (selected !== null) validSha(selected);
+  // Do not guess which prepared version the author should approve. An exact
+  // loaded selection must still be one of the current repository review refs.
+  if (candidates.length !== 1 || selected !== null && candidates[0].object.sha !== selected) fail(409, 'generated_review_changed');
+  const branch = candidates[0].ref.slice('refs/heads/'.length), head = candidates[0].object.sha;
+  const { read, ops } = reviewReaders(api);
+  let saved;
+  try { saved = await patientReview.loadReview(read, head, target.file, new Map(), null, Date.now(), ops); }
+  catch (_) { fail(409, 'invalid_generated_review'); }
+  const proof = saved.value.patientManifest.trackedPackage.sourceEvidence;
+  if (saved.value.patientManifest.trackedPackage.pipelineHead !== loaded.main || proof.requestHead !== loaded.head ||
+      proof.articleBlobSha !== loaded.blobSha || proof.baseSha !== loaded.baseSha || proof.manifestSha !== loaded.manifestSha) fail(409, 'generated_review_changed');
+  const original = await fileAt(api, target.request, loaded.head);
+  const approval = { reviewHead: head, manifestBlobSha: saved.sha, manifestSha256: await ops.digest(saved.raw), approvedAt: new Date().toISOString() };
+  const expected = patientReview.expectedRequest({ ...proof, patientApproval: approval }, saved.value);
+  if (JSON.stringify(expected.sourceRequest) + '\n' !== original.content) fail(409, 'invalid_generated_review');
+  const preview = await reviewPreview(api, head, branch, loaded.main);
+  const baseline = await ops.tree(read, loaded.main, new Map());
+  const rows = saved.value.patientManifest.trackedPackage.files;
+  const patientContent = path =>
+    (/\.html$/.test(path) && !/^(?:en\/)?(?:admin(?:\/|\.html$)|(?:dashboard|reset-sw|offline|404)\.html$)/.test(path)) ||
+    /^ai\/.+\.json$|^assets\/search-index\.json$|^llms(?:-full)?\.txt$|^(?:blog\/)?(?:feed|atom)\.xml$|^\.well-known\/ai\.txt$/.test(path) ||
+    /\.(?:svg|png|jpe?g|gif|webp|avif)$/i.test(path) && !/^admin\//.test(path);
+  const contentPaths = Object.keys(rows).filter(path => patientContent(path) && baseline.get(path)?.sha !== rows[path].blobSha);
+  const removedContentPaths = [...baseline.keys()].filter(path => patientContent(path) && !Object.hasOwn(rows, path));
+  for (const path of [target.file, 'en/' + target.file]) if (!contentPaths.includes(path)) contentPaths.push(path);
+  await unchangedMain(api, loaded.main);
+  if (await ref(api, target.branch) !== loaded.head || await ref(api, branch) !== head) fail(409, 'generated_review_changed');
+  return { file: target.file, head: loaded.head, baseSha: loaded.baseSha, blobSha: loaded.blobSha,
+    reviewHead: head, manifestBlobSha: saved.sha, manifestSha256: approval.manifestSha256,
+    archiveSha256: saved.value.archiveSha256, contentDate: saved.value.contentDate,
+    contentPaths: contentPaths.sort(), removedContentPaths: removedContentPaths.sort(),
+    outputFiles: Object.keys(saved.value.patientManifest.trackedPackage.files).length + Object.keys(saved.value.patientManifest.extraFiles).length,
+    preview, reviewBranch: branch, state: 'awaiting_generated_content_approval', contentApproved: false, ciVerified: false, published: false,
+    // Server-only record. The handler omits it from the read response.
+    finalRequest: expected };
+}
+async function unchangedGeneratedReview(api, target, loaded, review) {
+  const preview = await reviewPreview(api, review.reviewHead, review.reviewBranch, loaded.main);
+  if (preview.origin !== review.preview.origin) fail(409, 'generated_review_changed');
+  await unchangedMain(api, loaded.main);
+  if (await ref(api, target.branch) !== loaded.head || await ref(api, review.reviewBranch) !== review.reviewHead) {
+    fail(409, 'generated_review_changed');
+  }
+}
+async function approveGenerated(api, target, input) {
+  const keys = ['file', 'action', 'expectedHead', 'baseSha', 'expectedBlob', 'reviewHead', 'manifestBlobSha', 'manifestSha256', 'contentApproved'];
+  if (Object.keys(input).some(k => !keys.includes(k)) || input.contentApproved !== true) fail(400, 'author_confirmation_required');
+  for (const name of ['expectedHead','expectedBlob','reviewHead','manifestBlobSha']) validSha(input[name]);
+  validSha(input.baseSha, true);
+  if (!/^[a-f0-9]{64}$/.test(input.manifestSha256 || '')) fail(400, 'invalid_generated_review');
+  const loaded = await state(api, target);
+  if (loaded.head !== input.expectedHead || loaded.baseSha !== input.baseSha || loaded.blobSha !== input.expectedBlob) fail(409, 'draft_conflict');
+  const review = await generatedReview(api, target, loaded, input.reviewHead);
+  if (review.manifestBlobSha !== input.manifestBlobSha || review.manifestSha256 !== input.manifestSha256) fail(409, 'generated_review_changed');
+  const parent = await api('GET', 'git/commits/' + loaded.head);
+  if (parent.sha !== loaded.head || !SHA.test(parent.tree?.sha || '')) fail(502, 'invalid_generated_review');
+  const content = JSON.stringify(review.finalRequest) + '\n';
+  await unchangedGeneratedReview(api, target, loaded, review);
+  const tree = await api('POST', 'git/trees', { base_tree: parent.tree.sha,
+    tree: [{ path: target.request, mode: '100644', type: 'blob', content }] });
+  const commit = await api('POST', 'git/commits', { message: '[request] approve generated ' + target.file,
+    tree: validSha(tree.sha), parents: [loaded.head] });
+  const next = validSha(commit.sha);
+  await unchangedGeneratedReview(api, target, loaded, review);
+  const result = await api('PATCH', 'git/refs/heads/' + encodeURIComponent(target.branch), { sha: next, force: false });
+  if (result.object?.sha !== next) fail(502, 'request_not_verified');
+  let accepted;
+  try {
+    const stored = await fileAt(api, target.request, next);
+    const after = await state(api, target);
+    accepted = await publicationState(api, target, after);
+    if (stored.content !== content || after.head !== next || after.main !== loaded.main ||
+        accepted?.status !== 'generated_content_approved') fail(502, 'request_not_verified');
+  } catch (_) { fail(502, 'request_not_verified'); }
+  await unchangedMain(api, loaded.main);
+  return { file: target.file, head: next, baseSha: loaded.baseSha, blobSha: loaded.blobSha, request: accepted, verified: true, published: false };
+}
 // Identify revisions captured by the main delivery contract. This is a write
 // lock, not evidence of CI success or publication. Retirement removes the lock.
 async function deliveryLock(api, target, main) {
@@ -233,7 +370,31 @@ async function publicationState(api, target, loaded) {
   const stored = await fileAt(api, target.request, loaded.head, true);
   if (!stored) return null;
   let record;
-  try { record = requestRecord(JSON.parse(stored.content), target); }
+  try {
+    record = JSON.parse(stored.content);
+    if (JSON.stringify(record) + '\n' !== stored.content) throw Error('noncanonical_request');
+    if (record.version === 2) {
+      if (!patientReview.exactKeys(record, patientReview.REQUEST_FIELDS) || record.file !== target.file ||
+          record.approvedBy !== 'expertise88864' || record.contentApproved !== true ||
+          !SHA.test(record.sourceRequestHead || '') || !SHA.test(record.reviewHead || '') || !SHA.test(record.manifestBlobSha || '') ||
+          !/^[a-f0-9]{64}$/.test(record.manifestSha256 || '') || !/^[a-f0-9]{64}$/.test(record.archiveSha256 || '') ||
+          !/^\d{4}-\d\d-\d\d$/.test(record.contentDate || '') ||
+          new Date(record.contentDate).toISOString().slice(0, 10) !== record.contentDate ||
+          patientReview.time(record.approvedAt) > Date.now()) throw Error('invalid_final_request');
+      const original = requestRecord(record.sourceRequest, target);
+      if (original.action === 'unpublish' || patientReview.time(record.approvedAt) < patientReview.time(original.requestedAt)) throw Error('invalid_final_request');
+      const parent = await api('GET', 'git/commits/' + loaded.head);
+      const originalBytes = await fileAt(api, target.request, record.sourceRequestHead);
+      if (loaded.legacy || loaded.conflict || original.blobSha !== loaded.blobSha || original.baseSha !== loaded.baseSha ||
+          original.manifestSha !== loaded.manifestSha || parent.sha !== loaded.head ||
+          parent.parents?.length !== 1 || parent.parents[0].sha !== record.sourceRequestHead ||
+          JSON.stringify(original) + '\n' !== originalBytes.content) throw Error('invalid_final_request');
+      return { action: 'approve-generated', status: 'generated_content_approved', requestedAt: original.requestedAt,
+        scheduledAt: original.scheduledAt, blobSha: original.blobSha, reviewHead: record.reviewHead,
+        manifestBlobSha: record.manifestBlobSha, manifestSha256: record.manifestSha256, approvedAt: record.approvedAt };
+    }
+    record = requestRecord(record, target);
+  }
   catch (_) { return { status: 'invalidated' }; }
   const parent = await api('GET', 'git/commits/' + loaded.head);
   // A request approves the loaded draft, and its own commit must be the one
@@ -617,6 +778,11 @@ export default async function handler(req) {
       const target = article(new URL(req.url).searchParams.get('file'));
       const loaded = await state(api, target);
       const publication = await publicationState(api, target, loaded);
+      if (query.get('mode') === 'generated') {
+        const result = await generatedReview(api, target, loaded);
+        const { finalRequest, reviewBranch, ...visible } = result;
+        return json(200, visible);
+      }
       if (query.get('mode') === 'publication') return json(200, {
         file: target.file, head: loaded.head, baseSha: loaded.baseSha, blobSha: loaded.blobSha,
         publication: await observePublication(api, loaded, publicationPolicy),
@@ -635,7 +801,8 @@ export default async function handler(req) {
     const input = await bodyOf(req);
     const target = article(input && input.file);
     return json(200, input.action === undefined ? await save(api, target, input) : input.action === 'new-version'
-      ? await newVersion(api, target, input) : await requestPublication(api, target, input));
+      ? await newVersion(api, target, input) : input.action === 'approve-generated'
+        ? await approveGenerated(api, target, input) : await requestPublication(api, target, input));
   } catch (error) {
     return json(error instanceof DraftError ? error.status : 503,
       { ok: false, error: error instanceof DraftError ? error.code : 'draft_unavailable' });

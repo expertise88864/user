@@ -328,5 +328,5 @@ for (const overrides of [
 
 test('Vercel validates before and after generating production artifacts', () => {
   const config = require('./vercel.json');
-  assert.equal(config.buildCommand, 'node _vercel_gate.cjs --build && npm run build && node _vercel_gate.cjs --build');
+  assert.equal(config.buildCommand, 'node _vercel_gate.cjs --build && npm run build && node _vercel_gate.cjs --build --post-build');
 });

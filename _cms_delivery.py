@@ -108,8 +108,13 @@ def receipts(raw: bytes, *, now=None):
         raise ValueError("CMS validation clock requires a timezone")
     seen = set()
     for entry in items:
-        if not isinstance(entry, dict) or set(entry) != FIELDS or type(entry["version"]) is not int or entry["version"] != 1:
+        if not isinstance(entry, dict) or type(entry.get("version")) is not int or entry["version"] not in {1, 2} or set(entry) != (FIELDS | {"patientApproval"} if entry["version"] == 2 else FIELDS):
             raise ValueError("Invalid CMS receipt schema")
+        if entry["version"] == 2:
+            from _cms_patient_review import validate_approval
+            approval = validate_approval(entry["patientApproval"], now=current)
+            if entry["action"] == "unpublish" or utc(approval["approvedAt"]) < utc(entry["requestedAt"]):
+                raise ValueError("Final patient approval must follow its source request")
         slug = slug_for(entry["file"])
         if slug in seen:
             raise ValueError("Duplicate CMS article receipt")
@@ -239,7 +244,7 @@ def approved_sources(api, entry):
             raise ValueError("Unpublish candidate changed published prose")
 
 
-def verify(sha, api, *, now=None):
+def _verify(sha, api, *, now=None, final_approval):
     sha = revision(sha)
     api = ImmutableBlobs(api)
     _, raw = github_file(api, FILE, sha)
@@ -247,8 +252,9 @@ def verify(sha, api, *, now=None):
     from _cms_retirement import verify_transition
     verify_transition(sha, api, items, now=now)
     def live(entry):
+        expected = entry["patientApproval"]["approvalHead"] if entry["version"] == 2 else entry["requestHead"]
         ref = api.get("/git/ref/heads/drafts/" + slug_for(entry["file"]))
-        if not isinstance(ref, dict) or ref.get("ref") != "refs/heads/drafts/" + slug_for(entry["file"]) or ref.get("object", {}).get("type") != "commit" or ref["object"].get("sha") != entry["requestHead"]:
+        if not isinstance(ref, dict) or ref.get("ref") != "refs/heads/drafts/" + slug_for(entry["file"]) or ref.get("object", {}).get("type") != "commit" or ref["object"].get("sha") != expected:
             raise ValueError("CMS author request was cancelled or superseded")
     for entry in items:
         live(entry)
@@ -272,15 +278,31 @@ def verify(sha, api, *, now=None):
             raise ValueError("CMS request diff is not an ordinary added/modified intent file")
         ancestor(api, entry["preparedAgainst"], sha)
         approved_sources(api, entry)
-        for path, digest in entry["sourceSha256"].items():
-            _, candidate = github_file(api, path, sha, 1_500_000)
-            if hashlib.sha256(candidate).hexdigest() != digest:
-                raise ValueError("CMS candidate payload differs from its preparation receipt")
+        if entry["version"] == 2:
+            from _cms_patient_review import verify_delivery
+            verify_delivery(sha, api, entry, now=now)
+        else:
+            for path, digest in entry["sourceSha256"].items():
+                _, candidate = github_file(api, path, sha, 1_500_000)
+                if hashlib.sha256(candidate).hexdigest() != digest:
+                    raise ValueError("CMS candidate payload differs from its preparation receipt")
+            if final_approval and entry["action"] != "unpublish":
+                raise ValueError("Final generated patient content approval is required before delivery")
     # Recheck all heads after validation; never accept a cached tracking ref.
     for entry in items:
         live(entry)
     return {"sha": sha, "activeRequests": len(items), "authorIntentVerified": True,
             "candidatePayloadVerified": True, "published": False}
+
+
+def verify_preparation(sha, api, *, now=None):
+    """Source-input validation only; never used as the publication gate."""
+    return _verify(sha, api, now=now, final_approval=False)
+
+
+def verify(sha, api, *, now=None):
+    """The delivery gate requires current approval of all generated outputs."""
+    return _verify(sha, api, now=now, final_approval=True)
 
 
 def with_receipt(root: Path, files: dict[str, bytes], proof: dict, *, now=None):

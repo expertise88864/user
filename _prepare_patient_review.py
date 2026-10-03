@@ -25,10 +25,12 @@ import types
 import zipfile
 
 GENERATED_REF = 'refs/patient-review/generated'
+REVIEW_REF = 'refs/patient-review/candidate'
+RELEASE_REF = 'refs/patient-release/candidate'
 MAX_BUNDLE = 280_000_000
 EXECUTION_ROOT = Path(__file__).resolve().parent
 HELPER_NAMES = ('_prepare_patient_review', '_cms_generated_package', '_cms_patient_package',
-                '_cms_patient_rebuild', '_cms_delivery', '_normalize_date_modified',
+                '_cms_patient_rebuild', '_cms_patient_review', '_cms_delivery', '_normalize_date_modified',
                 '_prepare_article_candidate', '_process_article_requests', '_validate_article_request',
                 '_article_visibility', '_sync_hub_catalog', '_html_scan')
 HELPER_PATHS = {name + '.py': EXECUTION_ROOT / (name + '.py') for name in HELPER_NAMES}
@@ -99,6 +101,7 @@ def load_runtime(root: Path, sources: dict[str, bytes]):
     return types.SimpleNamespace(
         package=import_verified('_cms_generated_package'),
         patient=import_verified('_cms_patient_package'),
+        review=import_verified('_cms_patient_review'),
         rebuild=import_verified('_cms_patient_rebuild'),
         delivery=import_verified('_cms_delivery'),
         dates=import_verified('_normalize_date_modified'),
@@ -184,6 +187,148 @@ def write_artifacts(output: Path, files: dict[str, bytes], check_current, patien
         except FileNotFoundError:
             pass
         raise
+
+
+def trusted_context(root: Path, main: str):
+    """Establish provenance before importing any project helper."""
+    root = root.resolve()
+    if root != EXECUTION_ROOT:
+        raise ValueError('Preparation must execute from the trusted checkout itself')
+    if not isinstance(main,str) or not re.fullmatch(r'(?!0{40})[a-f0-9]{40}',main):
+        raise ValueError('Preparation requires a full nonzero pipeline identity')
+    def read(*args):
+        return subprocess.run(['git',*args],cwd=root,capture_output=True,check=True,timeout=60).stdout
+    if read('rev-parse','HEAD').decode().strip() != main:
+        raise ValueError('Explicit pipeline must match trusted checkout and current main')
+    status = read('status','--porcelain','--untracked-files=all')
+    if status.strip():
+        raise ValueError('Trusted checkout must be clean; preserve edits in the original checkout')
+    sources = trusted_runtime(root,main)
+    runtime = load_runtime(root,sources)
+    runtime.process.unchanged_main(root,main)
+    return root,sources,runtime,status,read('show-ref')
+
+
+def prepare_release(root: Path, output: Path, approval_head: str, file: str,
+                    expected_main: str, archive_path: Path, *, now=None, log=None) -> dict:
+    """Build an exact candidate from explicit approval, without remote writes.
+
+    Execute the trusted pipeline before materializing the reviewed Git history.
+    Neither draft code nor archive code executes. Only the delivery receipt
+    differs from the frozen author preview. The bundle still needs independent
+    model review and the complete remote candidate/production delivery gates.
+    """
+    root,sources,runtime,status,refs = trusted_context(root,expected_main)
+    package,patient,rebuild,review = runtime.package,runtime.patient,runtime.rebuild,runtime.review
+    now = now or datetime.now(timezone.utc)
+    if now.tzinfo is None:
+        raise ValueError('Preparation clock requires a timezone')
+    now = now.astimezone(timezone.utc)
+    approval_head = runtime.candidate.revision(approval_head)
+    slug = runtime.request.article_slug(file)
+    output = artifact_destination(output,root)
+    evidence = package.GitEvidence(root)
+    request_path = '.cms-requests/' + slug + '.json'
+    request_blob,request_raw = runtime.delivery.github_file(
+        runtime.delivery.ImmutableBlobs(evidence),request_path,approval_head,8000)
+    request = runtime.delivery.parse(request_raw,canonical='compact',limit=8000)
+    if (not isinstance(request,dict) or set(request) != review.REQUEST_FIELDS or
+            type(request.get('version')) is not int or request['version'] != 2 or
+            request.get('file') != file or type(request.get('contentApproved')) is not bool):
+        raise ValueError('Release preparation requires exact final generated approval')
+    frozen,manifest_blob,manifest_raw = review.load_review(evidence,request['reviewHead'],file,now=now)
+    descriptor = frozen['patientManifest']
+    proof = descriptor['trackedPackage']['sourceEvidence']
+    if descriptor['trackedPackage']['pipelineHead'] != expected_main:
+        raise ValueError('Final approval belongs to an older trusted pipeline')
+    entry = {**proof,'version':2,'patientApproval':{
+        'reviewHead':request['reviewHead'],'manifestBlobSha':manifest_blob,
+        'manifestSha256':hashlib.sha256(manifest_raw).hexdigest(),
+        'approvalHead':approval_head,'approvalBlobSha':request_blob,'approvedAt':request['approvedAt']}}
+    receipt = package.encode({'version':1,'requests':[entry]})
+    runtime.delivery.receipts(receipt,now=now)
+    if request != review.expected_request(entry,frozen):
+        raise ValueError('Final approval differs from the complete immutable patient preview')
+    review.parent(evidence,approval_head,proof['requestHead'])
+    review.changed_one(evidence,proof['requestHead'],approval_head,request_path,request_blob)
+    def still_current():
+        unchanged_source(root,expected_main,approval_head,file,refs,status,runtime)
+        if trusted_runtime(root,expected_main) != sources:
+            raise ValueError('Preparation helper changed during execution')
+    still_current()
+    archive_path = archive_path.absolute()
+    for parent_path in archive_path.parents:
+        if not patient.ordinary(parent_path.lstat(),directory=True) or parent_path.resolve() != parent_path:
+            raise ValueError('Patient archive has a linked parent')
+    archive = review.read_control(archive_path.parent,archive_path.name,patient.MAX_ARCHIVE)
+    if hashlib.sha256(archive).hexdigest() != frozen['archiveSha256']:
+        raise ValueError('Patient archive differs from final author approval')
+    patient.verify(root,archive,now=now)
+    with zipfile.ZipFile(io.BytesIO(archive)) as stored:
+        if stored.read('manifest.json') != package.encode(descriptor):
+            raise ValueError('Patient archive manifest differs from final author approval')
+    private_log = tempfile.TemporaryFile() if log is None else None
+    build_log = private_log if private_log is not None else log
+    try:
+        with rebuild.workspace(root) as temporary:
+            env = rebuild.environment(temporary)
+            checkout = temporary/'checkout'
+            rebuild.command(temporary,['git','clone','--no-hardlinks','--no-checkout','--',
+                                      str(root),str(checkout)],env,build_log)
+            git = lambda *args: rebuild.git(checkout,env,build_log,*args)
+            git('config','core.autocrlf','false')
+            git('config','user.name','Patient Release Preparation')
+            git('config','user.email','patient-release@example.invalid')
+            git('fetch','--no-tags','--no-write-fetch-head','--',str(root),
+                request['reviewHead'],approval_head)
+            git('checkout','--detach',expected_main)
+            # Reconstruct and generate from trusted main; archive bytes are
+            # validated but never extracted or used as executable inputs.
+            rebuild.reconstruct_source(checkout,descriptor,env,build_log,now=now)
+            tools = rebuild.install_dependencies(checkout,env,build_log)
+            rebuild.generate(checkout,frozen['contentDate'],env,build_log)
+            counts = rebuild.compare_outputs(checkout,descriptor,env,build_log)
+            generated = descriptor['trackedPackage']['generatedHead']
+            if git('write-tree').decode().strip() != package.commit(checkout,generated)[0]:
+                raise ValueError('Regenerated tree differs from approved patient outputs')
+            # Bind HEAD only after the independently generated complete tree
+            # matches. No untrusted branch is checked out or executed.
+            git('update-ref','--no-deref','HEAD',generated)
+            runtime.candidate.apply(checkout,{review.review_path(file):manifest_raw},expected_head=generated)
+            git('add','--',review.review_path(file))
+            if git('write-tree').decode().strip() != package.commit(checkout,request['reviewHead'])[0]:
+                raise ValueError('Reconstructed review tree differs from final approval')
+            git('update-ref','--no-deref','HEAD',request['reviewHead'])
+            runtime.candidate.apply(checkout,{runtime.delivery.FILE:receipt},expected_head=request['reviewHead'])
+            git('add','--',runtime.delivery.FILE)
+            env.update({'GIT_AUTHOR_DATE':request['approvedAt'],'GIT_COMMITTER_DATE':request['approvedAt']})
+            git('commit','-m','Prepare approved patient candidate: '+slug)
+            candidate = runtime.candidate.revision(git('rev-parse','HEAD').decode().strip())
+            review.verify_delivery(candidate,package.GitEvidence(checkout),entry,now=now)
+            review.verify_workspace(checkout,candidate,package.GitEvidence(checkout),now=now)
+            if git('diff','--name-only',request['reviewHead'],candidate).decode().splitlines() != [runtime.delivery.FILE]:
+                raise ValueError('Release candidate changed reviewed patient content')
+            still_current()
+            git('update-ref',RELEASE_REF,candidate)
+            bundle_path = temporary/'objects.bundle'
+            git('bundle','create',str(bundle_path),RELEASE_REF,'^'+expected_main)
+            bundle = review.read_control(temporary,bundle_path.name,MAX_BUNDLE)
+            report = {'version':1,'repository':runtime.delivery.REPO,'file':file,
+                      'state':'approved_candidate_prepared','pipelineHead':expected_main,
+                      'reviewHead':request['reviewHead'],'approvalHead':approval_head,
+                      'candidateHead':candidate,'contentDate':frozen['contentDate'],
+                      'patientApproval':entry['patientApproval'],'archiveSha256':frozen['archiveSha256'],
+                      'objects':'objects.bundle','objectsSha256':hashlib.sha256(bundle).hexdigest(),
+                      'bundleRefs':{RELEASE_REF:candidate},'originalDraftHistoryIncluded':False,
+                      'immutableApprovalObjectFetchRequired':True,'generationVerified':True,
+                      'finalAuthorIntentVerified':True,'contentApproved':True,
+                      'independentReviewVerified':False,'ciVerified':False,'published':False,
+                      'tools':tools,**counts}
+            write_artifacts(output,{'objects.bundle':bundle,'report.json':package.encode(report)},still_current,patient)
+            return report
+    finally:
+        if private_log is not None:
+            private_log.close()
 
 
 def prepare(root: Path, output: Path, request_head: str, file: str,
@@ -276,13 +421,27 @@ def prepare(root: Path, output: Path, request_head: str, file: str,
             with zipfile.ZipFile(io.BytesIO(archive)) as stored:
                 descriptor_raw = stored.read('manifest.json')
                 descriptor = package.parse(descriptor_raw, canonical=True, limit=patient.MAX_MANIFEST)
+            # Freeze the complete package in the previewable Git history. This
+            # commit records outputs for the author; it is not final approval.
+            review_raw = runtime.review.create(descriptor_raw, hashlib.sha256(archive).hexdigest(), content_date, now=now)
+            review_path = runtime.review.review_path(file)
+            if review_path in package.inventory(checkout, package.commit(checkout, generated)[0]):
+                raise ValueError('Prior patient review requires a separate reviewed retirement')
+            runtime.candidate.apply(checkout, {review_path: review_raw}, expected_head=generated)
+            git('add', '--', review_path)
+            git('commit', '-m', 'Freeze complete patient review: ' + slug)
+            review_head = revision(git('rev-parse', 'HEAD').decode().strip())
+            review_blob = read_blob(checkout, review_head, review_path)[0]
+            runtime.review.load_review(package.GitEvidence(checkout), review_head, file,
+                                       expected_source=proof, now=now)
             # Transport source/generated history only. Packaging the original
             # draft history would also export unrelated draft-controlled files.
             # Later validation must fetch the exact still-live author request
             # separately through its trusted, read-only repository transport.
             git('update-ref', GENERATED_REF, generated)
+            git('update-ref', REVIEW_REF, review_head)
             bundle_path = temporary / 'objects.bundle'
-            git('bundle', 'create', str(bundle_path), GENERATED_REF, '^' + main)
+            git('bundle', 'create', str(bundle_path), GENERATED_REF, REVIEW_REF, '^' + main)
             if bundle_path.stat().st_size > MAX_BUNDLE:
                 raise ValueError('Immutable Git transport exceeds its bound')
             bundle = bundle_path.read_bytes()
@@ -292,12 +451,14 @@ def prepare(root: Path, output: Path, request_head: str, file: str,
             report = {'version': 1, 'repository': runtime.delivery.REPO, 'file': file,
                       'state': 'awaiting_generated_content_approval', 'pipelineHead': main,
                       'requestHead': head, 'sourceHead': source, 'generatedHead': generated,
+                      'reviewHead': review_head, 'reviewPath': review_path, 'reviewBlobSha': review_blob,
+                      'reviewManifest': 'review-manifest.json', 'reviewManifestSha256': hashlib.sha256(review_raw).hexdigest(),
                       'generatedTreeSha': descriptor['trackedPackage']['generatedTreeSha'],
                       'contentDate': content_date, 'sourceEvidence': proof,
                       'archive': 'patient-package.zip', 'archiveSha256': hashlib.sha256(archive).hexdigest(),
                       'manifest': 'patient-manifest.json', 'manifestSha256': hashlib.sha256(descriptor_raw).hexdigest(),
                       'objects': 'objects.bundle', 'objectsSha256': hashlib.sha256(bundle).hexdigest(),
-                      'bundleRefs': {GENERATED_REF: generated},
+                      'bundleRefs': {GENERATED_REF: generated, REVIEW_REF: review_head},
                       'originalDraftHistoryIncluded': False,
                       'immutableRequestObjectFetchRequired': True,
                       'trackedFiles': replay['trackedFiles'], 'pagefindFiles': replay['pagefindFiles'],
@@ -309,6 +470,7 @@ def prepare(root: Path, output: Path, request_head: str, file: str,
                 if trusted_runtime(root, main) != sources:
                     raise ValueError('Preparation helper changed during execution')
             write_artifacts(output, {'patient-package.zip': archive, 'patient-manifest.json': descriptor_raw,
+                                     'review-manifest.json': review_raw,
                                      'objects.bundle': bundle, 'report.json': package.encode(report)}, still_current, patient)
             return report
     finally:
@@ -320,13 +482,24 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parent)
     parser.add_argument('--output', type=Path, required=True)
-    parser.add_argument('--request-head', required=True)
+    choice = parser.add_mutually_exclusive_group(required=True)
+    choice.add_argument('--request-head')
+    choice.add_argument('--approval-head',help='Exact live final generated-content approval')
     parser.add_argument('--file', required=True)
     parser.add_argument('--expected-main', required=True)
-    parser.add_argument('--content-date', required=True)
+    parser.add_argument('--content-date')
+    parser.add_argument('--archive',type=Path,help='Complete archive bound by final approval')
     args = parser.parse_args()
-    result = prepare(args.root, args.output, args.request_head, args.file,
-                     args.expected_main, args.content_date)
+    if args.approval_head:
+        if args.archive is None or args.content_date is not None:
+            parser.error('--approval-head requires --archive and uses the approved content date')
+        result = prepare_release(args.root,args.output,args.approval_head,args.file,
+                                 args.expected_main,args.archive)
+    else:
+        if args.content_date is None or args.archive is not None:
+            parser.error('--request-head requires --content-date and cannot accept --archive')
+        result = prepare(args.root, args.output, args.request_head, args.file,
+                         args.expected_main, args.content_date)
     print(json.dumps(result, ensure_ascii=True))
 
 

@@ -9,7 +9,7 @@
   let viewObserver = null;
   let requestDialog = null;
   const requestLabels = { awaiting_review: '待審核', schedule_requested: '排程申請已保存',
-    unpublish_requested: '下架申請已保存', invalidated: '舊申請已失效，需重新確認' };
+    unpublish_requested: '下架申請已保存', generated_content_approved: '生成內容已核可，等待發布驗證', invalidated: '舊申請已失效，需重新確認' };
   const publicationLabel = document.createElement('span');
   publicationLabel.id = 'publicationState'; publicationLabel.setAttribute('aria-live', 'polite');
   elStatusbar.appendChild(publicationLabel);
@@ -269,44 +269,102 @@
     document.getElementById('draftBtn').after(button);
   }
   renderRequestState(null);
-  function openRequest(action) {
+  const generatedButton = document.createElement('button');
+  generatedButton.type = 'button'; generatedButton.id = 'generatedReviewBtn'; generatedButton.textContent = '確認生成預覽';
+  generatedButton.addEventListener('click', async () => {
+    if (requestDialog || SAVE_PENDING) return;
+    const editorIdentity = identity(), content = getCurrentEditorContent();
+    if (!isCurrent(editorIdentity) || !drafts.isArticle(CURRENT_FILE)) { setStatus('請先登入並開啟已送審的文章。', true); return; }
+    generatedButton.disabled = true;
+    setStatus('正在核對這篇的生成預覽…');
+    try {
+      if (drafts.hasUnsavedChanges(editorIdentity.file, content)) { setStatus('目前有新編輯，請先保存雲端草稿，再確認生成預覽。', true); return; }
+      const prepared = await drafts.generated(editorIdentity.file);
+      if (!isCurrent(editorIdentity) || getCurrentEditorContent() !== content) { setStatus('核對期間編輯已改變，請先保存並重新確認。', true); return; }
+      openRequest('approve-generated', prepared, generatedButton);
+    } catch (failure) { if (isCurrent(editorIdentity)) setStatus(drafts.message(failure), true); }
+    finally { generatedButton.disabled = false; }
+  });
+  document.getElementById('reviewRequestBtn').after(generatedButton);
+  function openRequest(action, generated, requestOpener) {
     if (requestDialog) { setStatus('請先完成或關閉目前的申請視窗。'); return; }
     const editorIdentity = identity();
     if (!isCurrent(editorIdentity) || !drafts.isArticle(CURRENT_FILE)) { setStatus('請先登入並開啟文章，等待保存完成後再申請。', true); return; }
     const file = CURRENT_FILE, content = getCurrentEditorContent();
     let observed;
-    try { observed = drafts.captureRequest(file, content, { action }); }
+    try { observed = drafts.captureRequest(file, content, { action, generated }); }
     catch (failure) { setStatus(drafts.message(failure), true); return; }
-    const labels = { review: '送出這個版本審核', schedule: '申請排程發布', unpublish: '申請文章下架', cancel: '取消這個版本的申請' };
+    const labels = { review: '送出這個版本審核', schedule: '申請排程發布', unpublish: '申請文章下架', cancel: '取消這個版本的申請', 'approve-generated': '核可生成內容' };
     const bg = document.createElement('div'); bg.className = 'modal-bg'; requestDialog = bg;
     const modal = new DOMParser().parseFromString('<div class="modal" role="dialog" aria-modal="true" aria-labelledby="requestDialogTitle"><h2 id="requestDialogTitle"></h2><p id="requestArticleTitle"></p><p>確認只適用這個已保存版本；再編輯需重新確認。申請保存後，仍須完成審查、CI、預覽與正式發布，才會在網站生效。</p><label id="requestTimeLabel" for="requestAt">候選準備時間（本地時間）<input id="requestAt" type="datetime-local"></label><label style="display:flex;align-items:flex-start;gap:8px"><input id="requestApproval" type="checkbox" style="width:auto"><span id="requestApprovalText"></span></label><p id="requestError" role="alert"></p><div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" id="requestClose">關閉</button><button type="button" id="requestConfirm">確認申請</button></div></div>', 'text/html');
     bg.appendChild(document.importNode(modal.body.firstElementChild, true));
     bg.querySelector('#requestDialogTitle').textContent = labels[action];
     const parsed = new DOMParser().parseFromString(content, 'text/html');
     bg.querySelector('#requestArticleTitle').textContent = parsed.querySelector('h1')?.textContent.trim() || file;
+    if (generated) {
+      const intro = document.createElement('p');
+      intro.textContent = '請查看本文的中文、英文、摘要與其他變更的醫療內容及圖片。原稿的確認不包含這次生成內容；核可後仍須通過發布驗證才會上線。';
+      const links = document.createElement('details'), title = document.createElement('summary'), list = document.createElement('ul');
+      title.textContent = '開啟生成內容預覽'; links.open = true; links.append(title, list);
+      for (const path of generated.contentPaths) {
+        const item = document.createElement('li'), link = document.createElement('a');
+        const route = path.replace(/\.html$/, '').split('/').map(encodeURIComponent).join('/');
+        link.href = generated.preview.origin + '/' + route; link.target = '_blank'; link.rel = 'noopener noreferrer';
+        link.textContent = path === file ? '本文中文預覽' : path === 'en/' + file ? '本文英文預覽' :
+          path === 'assets/search-index.json' ? '搜尋結果摘要' : path.startsWith('ai/') ? 'AI 摘要：' + path.slice(3) :
+          path === 'index.html' ? '首頁預覽' : path === 'en/index.html' ? '英文首頁預覽' :
+          /^(?:en\/)?glossary\.html$/.test(path) ? (path.startsWith('en/') ? '英文詞彙預覽' : '詞彙預覽') :
+          /^(?:en\/)?tools\.html$/.test(path) ? (path.startsWith('en/') ? '英文工具預覽' : '工具預覽') : path;
+        item.append(link); list.append(item);
+      }
+      bg.querySelector('#requestArticleTitle').after(intro, links);
+      if (generated.removedContentPaths.length) {
+        const removed = document.createElement('p');
+        removed.textContent = '此版本也會移除以下內容，請一併確認：' + generated.removedContentPaths.join('、');
+        links.after(removed);
+      }
+    }
     bg.querySelector('#requestApprovalText').textContent = action === 'cancel' ? '確認撤回這個版本的申請，文章與草稿保留。' :
-      action === 'unpublish' ? '確認申請文章下架，正文與草稿保留。' : '我已逐句確認這個已保存版本的醫療文字、圖片與出處。';
+      action === 'unpublish' ? '確認申請文章下架，正文與草稿保留。' : action === 'approve-generated'
+        ? '我已確認此預覽中的中文、英文、摘要及其他變更或移除的醫療文字、圖片與出處，核可這個生成版本。'
+        : '我已逐句確認這個已保存版本的醫療文字、圖片與出處。';
     const time = bg.querySelector('#requestAt');
     bg.querySelector('#requestTimeLabel').hidden = action !== 'schedule';
     const later = new Date(Date.now() + 3600_000);
     time.value = new Date(later.getTime() - later.getTimezoneOffset() * 60_000).toISOString().slice(0, 16);
-    const opener = document.activeElement, close = bg.querySelector('#requestClose'), submit = bg.querySelector('#requestConfirm'), checkbox = bg.querySelector('#requestApproval');
+    const opener = requestOpener || document.activeElement, close = bg.querySelector('#requestClose'), submit = bg.querySelector('#requestConfirm'), checkbox = bg.querySelector('#requestApproval');
+    const background = [...document.body.children].map(element => [element, element.inert]);
     let pending = false;
-    const finish = () => { if (pending) return; bg.remove(); requestDialog = null; if (opener && opener.isConnected) opener.focus(); };
+    const finish = () => {
+      if (pending) return;
+      document.removeEventListener('keydown', onDialogKey, true);
+      bg.remove(); requestDialog = null;
+      for (const [element, previous] of background) element.inert = previous;
+      if (opener && opener.isConnected) opener.focus();
+    };
     close.addEventListener('click', finish);
-    bg.addEventListener('keydown', event => {
-      if (event.key === 'Escape') { event.preventDefault(); finish(); }
+    const onDialogKey = event => {
+      if (requestDialog !== bg) return;
+      if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); finish(); return; }
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 's') {
+        event.preventDefault(); event.stopPropagation();
+        bg.querySelector('#requestError').textContent = '請先完成或關閉目前的核可視窗。';
+        return;
+      }
       if (event.key === 'Tab') {
-        const controls = [time, checkbox, close, submit].filter(element => !element.disabled && element.closest('[hidden]') === null);
+        const controls = [...bg.querySelectorAll('summary, a[href], input, button')].filter(element => !element.disabled && element.closest('[hidden]') === null);
         const first = controls[0], last = controls.at(-1);
-        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        if (!first) { event.preventDefault(); return; }
+        if (!bg.contains(document.activeElement)) { event.preventDefault(); (event.shiftKey ? last : first).focus(); }
+        else if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
         else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
       }
-    });
+    };
+    document.addEventListener('keydown', onDialogKey, true);
     submit.addEventListener('click', async () => {
       if (pending) return;
       const error = bg.querySelector('#requestError');
-      if (!checkbox.checked) { error.textContent = '請先勾選確認；尚未送出申請。'; return; }
+      if (!checkbox.checked) { error.textContent = '請先勾選確認；尚未送出申請。'; checkbox.focus(); return; }
       const local = drafts.localState(file);
       if (!isCurrent(editorIdentity) || getCurrentEditorContent() !== content ||
           !local || local.head !== observed.expectedHead || local.blobSha !== observed.expectedBlob) {
@@ -318,7 +376,7 @@
           error.textContent = '請選擇有效的未來時間；尚未送出申請。'; return;
         }
         const scheduledAt = action === 'schedule' ? new Date(time.value).toISOString() : undefined;
-        snapshot = drafts.captureRequest(file, content, { action, contentApproved: checkbox.checked, confirmed: checkbox.checked, scheduledAt });
+        snapshot = drafts.captureRequest(file, content, { action, generated, contentApproved: checkbox.checked, confirmed: checkbox.checked, scheduledAt });
       } catch (failure) { error.textContent = drafts.message(failure); return; }
       pending = true; SAVE_PENDING = true; submit.disabled = true; close.disabled = true; checkbox.disabled = true; time.disabled = true;
       resetPublication();
@@ -339,7 +397,9 @@
         pending = false; submit.disabled = false; close.disabled = false; checkbox.disabled = false; time.disabled = false;
       } finally { SAVE_PENDING = false; }
     });
-    document.body.appendChild(bg); checkbox.focus();
+    document.body.appendChild(bg);
+    for (const [element] of background) element.inert = true;
+    checkbox.focus();
   }
   uploadImage = async function (file) {
     const target = CURRENT_FILE, alt = prompt('輸入圖片替代文字（說明圖片內容）', '');

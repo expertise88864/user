@@ -59,7 +59,7 @@ class PreparationTests(unittest.TestCase):
         report = self.prepare()
         self.assertEqual(self.original(), before)
         self.assertEqual(set(p.name for p in self.output.iterdir()),
-                         {'patient-package.zip', 'patient-manifest.json', 'objects.bundle', 'report.json'})
+                         {'patient-package.zip', 'patient-manifest.json', 'review-manifest.json', 'objects.bundle', 'report.json'})
         self.assertEqual(report, json.loads((self.output/'report.json').read_text(encoding='utf8')))
         self.assertEqual(report['state'], 'awaiting_generated_content_approval')
         self.assertTrue(report['generationVerified'])
@@ -87,7 +87,7 @@ class PreparationTests(unittest.TestCase):
             self.assertNotEqual(subprocess.run(['git','cat-file','-e',unrelated],cwd=imported,
                                               capture_output=True).returncode,0)
             subprocess.run(['git','fetch','--no-write-fetch-head','--',str(self.output/'objects.bundle'),
-                            preparation.GENERATED_REF],cwd=imported,
+                            preparation.GENERATED_REF, preparation.REVIEW_REF],cwd=imported,
                            check=True,capture_output=True)
             self.assertNotEqual(subprocess.run(['git','cat-file','-e',unrelated],cwd=imported,
                                               capture_output=True).returncode,0)
@@ -98,12 +98,19 @@ class PreparationTests(unittest.TestCase):
             result = patient.verify(imported, archive, now=self.fixture.now)
             self.assertEqual(result['files'],report['trackedFiles']+report['pagefindFiles'])
             self.assertFalse(result['contentApproved'])
+            import _cms_patient_review as review
+            import _cms_generated_package as tracked
+            frozen, blob, raw = review.load_review(tracked.GitEvidence(imported), report['reviewHead'],
+                                                 'blog/article.html', now=self.fixture.now)
+            self.assertEqual(blob, report['reviewBlobSha'])
+            self.assertEqual(raw, (self.output/'review-manifest.json').read_bytes())
+            self.assertEqual(frozen['archiveSha256'], report['archiveSha256'])
 
     def test_same_frozen_inputs_keep_commit_and_complete_archive_identity(self):
         first = self.prepare()
         second = self.prepare(output=Path(self.artifacts.name)/'second')
         for field in ('pipelineHead','sourceHead','generatedHead','generatedTreeSha',
-                      'archiveSha256','manifestSha256','contentDate'):
+                      'archiveSha256','manifestSha256','contentDate','reviewHead','reviewBlobSha','reviewManifestSha256'):
             self.assertEqual(first[field],second[field],field)
 
     def test_dirty_original_is_preserved_and_no_artifact_is_created(self):
@@ -205,7 +212,7 @@ class PreparationTests(unittest.TestCase):
             calls=[]
             def current():
                 calls.append(1)
-                if len(calls)==5:
+                if len(calls)==6:
                     self.fixture.run_git('update-ref','refs/heads/drafts/article',self.fixture.saved)
                 check()
             return writer(output,files,current,patient)

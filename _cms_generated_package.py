@@ -109,8 +109,19 @@ class GitEvidence:
                                     cwd=self.root, capture_output=True, timeout=20)
             if result.returncode not in {0, 1}:
                 raise subprocess.CalledProcessError(result.returncode, result.args)
+            files = []
+            for row in run(self.root, 'diff', '--numstat', '--no-renames', '-z', base, head).split(b'\0'):
+                if not row:
+                    continue
+                added, removed, name = row.split(b'\t', 2)
+                name = name.decode('utf-8')
+                old, new = read_blob(self.root, base, name, optional=True), read_blob(self.root, head, name, optional=True)
+                files.append({'filename': name, 'status': 'removed' if new is None else 'added' if old is None else 'modified',
+                              'sha': new[0] if new else None,
+                              'changes': int(added) + int(removed) if added != b'-' and removed != b'-' else 0})
             return {'status': 'identical' if base == head else 'ahead' if result.returncode == 0 else 'diverged',
-                    'merge_base_commit': {'sha': base if result.returncode == 0 else None}}
+                    'merge_base_commit': {'sha': base if result.returncode == 0 else None},
+                    'total_commits': int(run(self.root, 'rev-list', '--count', base + '..' + head)), 'files': files}
         raise ValueError('Unsupported immutable package evidence query')
 
 

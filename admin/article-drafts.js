@@ -4,7 +4,7 @@
   'use strict';
   const contexts = new Map(), generations = new Map();
   const MAX_BODY = 3_500_000;
-  const SHA = /^[a-f0-9]{40}$/;
+  const SHA = /^(?!0{40}$)[a-f0-9]{40}$/;
   const labels = {
     login_required: '登入已失效，請重新登入；編輯與暫存仍保留。',
     draft_conflict: '雲端草稿或正式文章已有新版本，請先比對並整合；未覆寫任何版本。',
@@ -33,6 +33,10 @@
     publication_not_verified: '正式 CI 與部署尚未全部確認，暫時無法從網站建立新版草稿。',
     publication_receipt_not_retired: '這篇的發布證據尚未完成封存，暫時不能開啟下一輪草稿；舊版本保留。',
     new_version_not_verified: '新版草稿可能已建立，但驗證未完成；請重讀比對，勿重複建立。本機快照保留。',
+    generated_review_not_ready: '生成內容的預覽尚未備妥，請保留草稿，稍後再查看。',
+    generated_review_changed: '草稿或生成預覽已更新，請重讀並重新確認；尚未核可新版本。',
+    generated_review_unavailable: '生成預覽暫時無法核對，請稍後重試；編輯與草稿保留。',
+    invalid_generated_review: '生成內容與原稿版本尚未完整核對，暫時不能核可；草稿保留。',
   };
   class DraftClientError extends Error {
     constructor(code) { super(labels[code] || '草稿作業未完成；編輯與暫存仍保留。'); this.code = code; }
@@ -43,7 +47,7 @@
     const unknownWrite = body && body.action === 'new-version' ? 'new_version_not_verified' : body && body.action ? 'request_not_verified' : 'save_not_verified';
     const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 45_000);
     try {
-      const response = await fetch('/api/admin/article-draft' + (method === 'GET' ? mode === 'list' ? '?mode=list&offset=' + encodeURIComponent(file) : '?file=' + encodeURIComponent(file) + (['status', 'publication'].includes(mode) ? '&mode=' + mode : '') : ''), {
+      const response = await fetch('/api/admin/article-draft' + (method === 'GET' ? mode === 'list' ? '?mode=list&offset=' + encodeURIComponent(file) : '?file=' + encodeURIComponent(file) + (['status', 'publication', 'generated'].includes(mode) ? '&mode=' + mode : '') : ''), {
         method, credentials: 'same-origin', cache: 'no-store', redirect: 'error', signal: controller.signal,
         headers: { 'Content-Type': 'application/json' }, ...(body ? { body: JSON.stringify(body) } : {}),
       });
@@ -142,7 +146,16 @@
     if (!SHA.test(context.head || '') || !SHA.test(context.blobSha || '')) throw error('cloud_draft_required');
     const currentContent = canonical(file, content);
     if (currentContent !== (context.viewContent ?? context.savedContent)) throw error('unsaved_request');
-    if (!['review', 'schedule', 'unpublish', 'cancel'].includes(action)) throw error('invalid_publication_request');
+    if (!['review', 'schedule', 'unpublish', 'cancel', 'approve-generated'].includes(action)) throw error('invalid_publication_request');
+    if (action === 'approve-generated') {
+      const prepared = options.generated;
+      if (!prepared || prepared.file !== file || prepared.head !== context.head || prepared.baseSha !== context.baseSha ||
+          prepared.blobSha !== context.blobSha || prepared.state !== 'awaiting_generated_content_approval' ||
+          !['awaiting_review', 'schedule_requested'].includes(context.request?.status)) throw error('generated_review_changed');
+      return Object.freeze({ file, action, expectedHead: context.head, baseSha: context.baseSha,
+        expectedBlob: context.blobSha, content: currentContent, context, contentApproved: options.contentApproved === true,
+        reviewHead: prepared.reviewHead, manifestBlobSha: prepared.manifestBlobSha, manifestSha256: prepared.manifestSha256 });
+    }
     return Object.freeze({ file, action, expectedHead: context.head, baseSha: context.baseSha,
       expectedBlob: context.blobSha, content: currentContent, context,
       ...(action === 'unpublish' || action === 'cancel' ? { confirmed: options.confirmed === true } : { contentApproved: options.contentApproved === true }),
@@ -162,21 +175,42 @@
   async function submit(snapshot) {
     const context = contexts.get(snapshot.file);
     if (context !== snapshot.context || context.head !== snapshot.expectedHead || context.blobSha !== snapshot.expectedBlob) throw error('editor_changed');
-    const { file, action, expectedHead, baseSha, expectedBlob, contentApproved, confirmed, scheduledAt } = snapshot;
+    const { file, action, expectedHead, baseSha, expectedBlob, contentApproved, confirmed, scheduledAt, reviewHead, manifestBlobSha, manifestSha256 } = snapshot;
     const accepted = await request('POST', file, { file, action, expectedHead, baseSha, expectedBlob,
       ...(contentApproved !== undefined ? { contentApproved } : {}),
-      ...(confirmed !== undefined ? { confirmed } : {}), ...(scheduledAt !== undefined ? { scheduledAt } : {}) });
-    const expectedStatus = { review: 'awaiting_review', schedule: 'schedule_requested', unpublish: 'unpublish_requested' }[action];
+      ...(confirmed !== undefined ? { confirmed } : {}), ...(scheduledAt !== undefined ? { scheduledAt } : {}),
+      ...(action === 'approve-generated' ? { reviewHead, manifestBlobSha, manifestSha256 } : {}) });
+    const expectedStatus = { review: 'awaiting_review', schedule: 'schedule_requested', unpublish: 'unpublish_requested', 'approve-generated': 'generated_content_approved' }[action];
     if (accepted.file !== file || !SHA.test(accepted.head || '') || accepted.head === expectedHead ||
         accepted.baseSha !== baseSha || accepted.blobSha !== expectedBlob ||
         accepted.verified !== true || accepted.published !== false ||
         (action === 'cancel' ? accepted.request !== null :
           !accepted.request || accepted.request.action !== action || accepted.request.status !== expectedStatus ||
-          accepted.request.blobSha !== expectedBlob || (action === 'schedule' && accepted.request.scheduledAt !== scheduledAt))) throw error('request_not_verified');
+          accepted.request.blobSha !== expectedBlob || (action === 'schedule' && accepted.request.scheduledAt !== scheduledAt) ||
+          (action === 'approve-generated' && (accepted.request.reviewHead !== reviewHead || accepted.request.manifestBlobSha !== manifestBlobSha ||
+            accepted.request.manifestSha256 !== manifestSha256)))) throw error('request_not_verified');
     if (contexts.get(file) === context) {
       context.head = accepted.head; context.request = accepted.request;
     }
     return accepted;
+  }
+  async function generated(file) {
+    const context = contexts.get(file);
+    if (!context || !SHA.test(context.head || '') || context.requestLocked || context.legacy || context.conflict) throw error('cloud_draft_required');
+    const data = await request('GET', file, null, 'generated');
+    if (contexts.get(file) !== context || data.file !== file || data.head !== context.head || data.baseSha !== context.baseSha || data.blobSha !== context.blobSha) throw error('generated_review_changed');
+    const pathsValid = paths => Array.isArray(paths) && paths.length <= 10000 && new Set(paths).size === paths.length &&
+      paths.every(p => typeof p === 'string' && p && !p.startsWith('/') && !/[\\:\x00-\x1f\x7f]/.test(p) && p.split('/').every(x => x && x !== '.' && x !== '..'));
+    if (data.state !== 'awaiting_generated_content_approval' || data.contentApproved !== false || data.ciVerified !== false || data.published !== false ||
+        !SHA.test(data.reviewHead || '') || !SHA.test(data.manifestBlobSha || '') || !/^[a-f0-9]{64}$/.test(data.manifestSha256 || '') ||
+        !pathsValid(data.contentPaths) || !pathsValid(data.removedContentPaths) ||
+        data.contentPaths.length + data.removedContentPaths.length > 10000 ||
+        data.removedContentPaths.some(p => data.contentPaths.includes(p))) throw error('invalid_generated_review');
+    let url;
+    try { url = new URL(data.preview?.origin); } catch (_) { throw error('invalid_generated_review'); }
+    if (url.protocol !== 'https:' || url.username || url.password || url.port || url.pathname !== '/' || url.search || url.hash ||
+        !/^chendermatologist-[a-z0-9]{9}-expertise88864s-projects\.vercel\.app$/.test(url.hostname)) throw error('invalid_generated_review');
+    return Object.freeze({ ...data, contentPaths: Object.freeze([...data.contentPaths]), removedContentPaths: Object.freeze([...data.removedContentPaths]), preview: Object.freeze({ ...data.preview }) });
   }
   async function create(file, content, metadata) {
     const data = await load(file, { activate: false });
@@ -368,5 +402,5 @@
     return messages[proof.state] || messages.unverified;
   }
   function message(failure) { return failure instanceof DraftClientError ? failure.message : '草稿作業未完成；本機編輯與暫存仍保留。'; }
-  window.DNArticleDrafts = { isArticle, load, activate, capture, save, captureRequest, bindView, hasUnsavedChanges, submit, create, list, stage, prepareImages, canonical, preview, localState, restore, inspect, observe, captureNewVersion, startNewVersion, publicationMessage, message };
+  window.DNArticleDrafts = { isArticle, load, activate, capture, save, captureRequest, bindView, hasUnsavedChanges, submit, generated, create, list, stage, prepareImages, canonical, preview, localState, restore, inspect, observe, captureNewVersion, startNewVersion, publicationMessage, message };
 })();

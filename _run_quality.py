@@ -5,6 +5,7 @@ import os
 import subprocess
 import sys
 from collections.abc import Sequence
+from pathlib import Path
 
 
 PY = sys.executable
@@ -236,8 +237,10 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_test_cms_delivery.py"],
     [PY, "_test_cms_generated_package.py"],
     [PY, "_test_cms_patient_package.py"],
+    [PY, "_test_cms_patient_review.py"],
     [PY, "_test_cms_patient_rebuild.py"],
     [PY, "_test_patient_review_preparation.py"],
+    [PY, "_test_patient_release_preparation.py"],
     [PY, "_test_generation_clock.py"],
     [PY, "_test_cms_retirement.py"],
     ["node", "--test", "_test_cms_delivery.cjs", "_test_vercel_gate.cjs"],
@@ -360,6 +363,13 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.mode == "check" and args.content_date is not None:
         parser.error("--content-date requires regen or build; check does not generate files")
     mode = args.mode
+    if mode in {'regen', 'build'}:
+        from _cms_patient_review import frozen_content_date
+        approved_date = frozen_content_date(Path(__file__).resolve().parent)
+        if approved_date is not None:
+            if args.content_date is not None and args.content_date != approved_date:
+                raise ValueError('Generation date differs from the recorded patient package')
+            args.content_date = approved_date
     try:
         if mode == "regen":
             run_steps("Regenerate generated site files", regeneration_steps(args.content_date))

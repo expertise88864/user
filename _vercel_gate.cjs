@@ -47,9 +47,15 @@ function prPathMatches(filename, pattern) {
   return new RegExp('^' + expression + '$').test(filename);
 }
 
-async function allowed(env = process.env, request = fetch) {
-  if (env.VERCEL_ENV === 'preview') return true;
-  if (env.VERCEL_ENV !== 'production' || !/^[a-f0-9]{40}$/.test(env.VERCEL_GIT_COMMIT_SHA || '')) return false;
+async function allowed(env = process.env, request = fetch, { postBuild = false } = {}) {
+  const preview = env.VERCEL_ENV === 'preview';
+  if (preview && !postBuild) return true;
+  if (preview) {
+    const raw = fs.readFileSync(__dirname + '/.cms-delivery.json', 'utf8'), receipt = JSON.parse(raw);
+    assert.ok(JSON.stringify(receipt,null,2)+'\n' === raw && receipt.version === 1 && Array.isArray(receipt.requests), 'Invalid Preview CMS receipt');
+    if (!receipt.requests.length) return true;
+  }
+  if ((!preview && env.VERCEL_ENV !== 'production') || !/^[a-f0-9]{40}$/.test(env.VERCEL_GIT_COMMIT_SHA || '')) return false;
   const cfg = JSON.parse(fs.readFileSync(__dirname + '/_delivery_policy.json', 'utf8'));
   assert.equal(cfg.repository, 'expertise88864/user', 'Unexpected website repository');
   assert.equal(cfg.cms_author_intent, true, 'Live CMS author-intent verification is required');
@@ -82,6 +88,25 @@ async function allowed(env = process.env, request = fetch) {
     } catch (_) { throw new EvidenceError(stage, 'network'); }
     if (!response.ok) throw new EvidenceError(stage, 'http', response);
     return response;
+  }
+  const authorEvidence = async path => {
+    const response = await evidenceRequest(path, 'cms-author-intent',
+      { headers: { ...headers, Accept: path.startsWith('/contents/') ? 'application/vnd.github.object+json' : headers.Accept,
+        'Cache-Control': 'no-cache' }, redirect: 'error', cache: 'no-store', signal: AbortSignal.timeout(15000) });
+    assert.ok(response.body, 'CMS intent response unavailable');
+    const reader = response.body.getReader(); let total = 0; const chunks = [];
+    try {
+      for (;;) {
+        const { done, value } = await reader.read(); if (done) break;
+        total += value.byteLength; assert.ok(total <= 10000000, 'CMS intent response too large');
+        chunks.push(Buffer.from(value));
+      }
+    } finally { await reader.cancel(); }
+    return JSON.parse(Buffer.concat(chunks).toString('utf8'));
+  };
+  if (preview) {
+    await require('./_cms_patient_review.cjs').verifyWorkspace(__dirname, sha, authorEvidence, Date.now(), { preview: true });
+    return true;
   }
   async function pages(path, key) {
     const rows = [];
@@ -162,28 +187,14 @@ async function allowed(env = process.env, request = fetch) {
   }
   if (cfg.cms_author_intent) {
     const { verifyLiveIntent } = require('./_cms_delivery.cjs');
-    const authorEvidence = async path => {
-      const response = await evidenceRequest(path, 'cms-author-intent',
-        { headers: { ...headers, Accept: path.startsWith('/contents/') ? 'application/vnd.github.object+json' : headers.Accept,
-          'Cache-Control': 'no-cache' }, redirect: 'error', cache: 'no-store', signal: AbortSignal.timeout(15000) });
-      // Bound the actual stream, including chunked responses with no length.
-      assert.ok(response.body, 'CMS intent response unavailable');
-      const reader = response.body.getReader();
-      let total = 0;
-      const chunks = [];
-      try {
-        for (;;) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          total += value.byteLength;
-          assert.ok(total <= 10000000, 'CMS intent response too large');
-          chunks.push(Buffer.from(value));
-        }
-      } finally { await reader.cancel(); }
-      return JSON.parse(Buffer.concat(chunks).toString('utf8'));
-    };
     await verifyLiveIntent(sha, authorEvidence);
     await require('./_site_settings_delivery.cjs').verify(sha, authorEvidence);
+    if (postBuild) {
+      await require('./_cms_patient_review.cjs').verifyWorkspace(__dirname, sha, authorEvidence);
+      // Recheck mutable intent after reading every real build output.
+      await verifyLiveIntent(sha, authorEvidence);
+      await require('./_site_settings_delivery.cjs').verify(sha, authorEvidence);
+    }
   }
   return true;
 }
@@ -191,7 +202,7 @@ module.exports = { allowed, failureSummary };
 if (require.main === module) {
   // Build mode uses normal failure semantics, so a missing/broken gate cannot deploy.
   const buildMode = process.argv.includes('--build');
-  allowed().then(ok => {
+  allowed(process.env, fetch, { postBuild: process.argv.includes('--post-build') }).then(ok => {
     console.log(ok ? 'Verified candidate or Preview: build allowed.' : 'Production blocked: candidate evidence unavailable.');
     process.exitCode = buildMode ? (ok ? 0 : 1) : (ok ? 1 : 0);
   }).catch(error => {

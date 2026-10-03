@@ -6,7 +6,7 @@ const crypto = require('node:crypto');
 const FILE = 'blog/example.html', BASE = 'a'.repeat(40), HEAD = 'b'.repeat(40), BLOB = 'c'.repeat(40);
 function fixture(overrides = {}) {
   const requests = [];
-  const context = { window: {}, AbortController, TextEncoder, Uint8Array, Blob,
+  const context = { window: {}, URL, AbortController, TextEncoder, Uint8Array, Blob,
     setTimeout, clearTimeout, atob, btoa, crypto: overrides.crypto || crypto.webcrypto,
     fetch: (url, options) => new Promise((resolve, reject) => requests.push({ url, options, resolve, reject })) };
   vm.runInNewContext(fs.readFileSync('admin/article-drafts.js', 'utf8'), context);
@@ -374,4 +374,46 @@ test('a deferred reload preserves the outgoing revision and image mapping until 
   assert.deepEqual(h.api.localState(FILE), before, 'incoming response must not replace the live serializer mapping');
   assert.ok(h.api.canonical(FILE, '<img src="' + image.url + '">').includes(image.path));
   h.api.activate(next); assert.equal(h.api.localState(FILE).head, HEAD);
+});
+
+function generatedResponse(patch = {}) {
+  return { file: FILE, head: HEAD, baseSha: BASE, blobSha: BLOB, reviewHead: 'd'.repeat(40), manifestBlobSha: 'e'.repeat(40),
+    manifestSha256: 'f'.repeat(64), state: 'awaiting_generated_content_approval', contentApproved: false, ciVerified: false, published: false,
+    contentPaths: [FILE,'en/'+FILE,'ai/example.json'], removedContentPaths: [], preview: { origin: 'https://chendermatologist-fixture00-expertise88864s-projects.vercel.app' }, ...patch };
+}
+test('generated Preview read and explicit approval bind the loaded source and complete selected version', async () => {
+  const h = fixture(); await h.load({ head: HEAD, request: { status: 'awaiting_review' } });
+  const pending = h.api.generated(FILE); assert.match(h.requests.at(-1).url,/&mode=generated$/);
+  h.respond(h.requests.at(-1),generatedResponse()); const prepared = await pending;
+  assert.equal(prepared.contentApproved,false); assert.equal(Object.isFrozen(prepared),true);
+  const snapshot = h.api.captureRequest(FILE,h.loaded.content,{ action: 'approve-generated', generated: prepared, contentApproved: true });
+  const writing = h.api.submit(snapshot), request = h.requests.at(-1), body = JSON.parse(request.options.body);
+  assert.equal(body.reviewHead,prepared.reviewHead); assert.equal(body.manifestSha256,prepared.manifestSha256); assert.equal(body.contentApproved,true);
+  const accepted = { file: FILE, head: '9'.repeat(40), baseSha: BASE, blobSha: BLOB, verified: true, published: false,
+    request: { action: 'approve-generated', status: 'generated_content_approved', blobSha: BLOB, reviewHead: prepared.reviewHead,
+      manifestBlobSha: prepared.manifestBlobSha, manifestSha256: prepared.manifestSha256 } };
+  h.respond(request,accepted); await writing; assert.equal(h.api.localState(FILE).head,accepted.head);
+  assert.equal(h.api.localState(FILE).request.status,'generated_content_approved');
+});
+for (const patch of [{ head: '9'.repeat(40) },{ reviewHead: '0'.repeat(40) },{ contentApproved: true },{ ciVerified: true },{ published: true },
+  { preview: { origin: 'https://untrusted.test' } },{ contentPaths: ['../escape'] },{ manifestSha256: 'wrong' },
+  { removedContentPaths: ['../escape'] },{ removedContentPaths: null },{ removedContentPaths: [FILE] },{ contentPaths: [FILE,FILE] }]) {
+  test('generated read rejects unseen identities or misleading status: '+JSON.stringify(patch),async()=>{
+    const h=fixture(); await h.load({ head: HEAD, request: { status: 'awaiting_review' } });
+    const pending=h.api.generated(FILE), rejected=assert.rejects(pending);
+    h.respond(h.requests.at(-1),generatedResponse(patch)); await rejected;
+    assert.equal(h.requests.filter(r=>r.options.method==='POST').length,0); assert.equal(h.api.localState(FILE).head,HEAD);
+  });
+}
+test('editing, changing source context or unverified acceptance cannot silently approve a generated version',async()=>{
+  const h=fixture(); await h.load({ head: HEAD, request: { status: 'awaiting_review' } });
+  assert.throws(()=>h.api.captureRequest(FILE,'changed',{ action:'approve-generated',generated:generatedResponse(),contentApproved:true }),e=>e.code==='unsaved_request');
+  const snapshot=h.api.captureRequest(FILE,h.loaded.content,{ action:'approve-generated',generated:generatedResponse(),contentApproved:true });
+  await h.load({ head: HEAD, request: { status: 'awaiting_review' } });
+  await assert.rejects(h.api.submit(snapshot),e=>e.code==='editor_changed');
+  const fresh=h.api.captureRequest(FILE,h.loaded.content,{ action:'approve-generated',generated:generatedResponse(),contentApproved:true });
+  const pending=h.api.submit(fresh), rejected=assert.rejects(pending,e=>e.code==='request_not_verified');
+  h.respond(h.requests.at(-1),{ file:FILE,head:'9'.repeat(40),baseSha:BASE,blobSha:BLOB,verified:true,published:true,request:{} });
+  await rejected; assert.equal(h.api.localState(FILE).head,HEAD);
+  assert.equal(h.requests.filter(r=>r.options.method==='POST').length,1);
 });
