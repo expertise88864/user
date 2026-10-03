@@ -4,6 +4,7 @@ Never writes Git refs, edits patient content or treats saved drafts as published
 """
 from __future__ import annotations
 from datetime import datetime, timezone
+import hashlib
 import json
 import re
 from urllib.parse import urlsplit
@@ -13,6 +14,50 @@ from _cms_delivery import FILE, REPO, ImmutableBlobs, ancestor, github_file, par
 PREFIX = ".cms-retirements/"
 ARCHIVE = re.compile(r"\.cms-retirements/([a-f0-9]{40})\.json")
 FIELDS = {"version", "repository", "publishedSha", "receiptBlobSha", "requests", "evidence", "preparedAt"}
+
+
+def published_reviews(api, published, items, *, now=None):
+    """Bind removable control files to the exact already-published v2 approval.
+
+    A later author edit may supersede live intent; retirement never reuses that
+    intent to publish. Original manifest bytes remain in the published Git tree.
+    Legacy source-only and visibility-only receipts do not authorize removals.
+    """
+    from _cms_patient_review import MAX_REVIEW_BYTES, manifest, review_path, source_entry
+    result = {}
+    for entry in sorted(items, key=lambda item: item['file']):
+        if entry['version'] != 2:
+            continue
+        path = review_path(entry['file'])
+        identity = entry['patientApproval']
+        blob, raw = github_file(api, path, published, MAX_REVIEW_BYTES)
+        digest = hashlib.sha256(raw).hexdigest()
+        value = manifest(raw, now=now)
+        if (blob != identity['manifestBlobSha'] or digest != identity['manifestSha256'] or
+                value['file'] != entry['file'] or
+                value['patientManifest']['trackedPackage']['sourceEvidence'] != source_entry(entry)):
+            raise ValueError('Retirement patient manifest differs from exact published approval')
+        result[path] = {'blobSha': blob, 'sha256': digest}
+    return result
+
+
+def validate_record(raw, published, receipt_blob, items, reviews, *, now=None):
+    """One archive schema for both live gates and offline bundle application."""
+    record = parse(raw, canonical=True, limit=256_000)
+    version = 2 if reviews else 1
+    fields = FIELDS | {'reviewManifests'} if reviews else FIELDS
+    if (not isinstance(record, dict) or set(record) != fields or
+            type(record['version']) is not int or record['version'] != version or
+            record['repository'] != REPO or record['publishedSha'] != published or
+            record['receiptBlobSha'] != receipt_blob or
+            record['requests'] != sorted(items, key=lambda item: item['file']) or
+            (reviews and record['reviewManifests'] != reviews)):
+        raise ValueError('Retirement does not preserve the exact published receipt and reviews')
+    if utc(record['preparedAt']) > (now or datetime.now(timezone.utc)):
+        raise ValueError('Retirement preparation timestamp is in the future')
+    if not isinstance(record['evidence'], dict) or set(record['evidence']) != {'workflows', 'deploymentId', 'statusId'}:
+        raise ValueError('Retirement publication evidence incomplete')
+    return record
 
 
 def pages(api, path, key=None):
@@ -196,21 +241,13 @@ def verify_transition(candidate, api, current_items, *, now=None):
         before_files = {p: (e.get("mode"), e.get("type"), e.get("sha")) for p, e in api.entries(base).items() if e.get("type") != "tree"}
         after_files = {p: (e.get("mode"), e.get("type"), e.get("sha")) for p, e in api.entries(candidate).items() if e.get("type") != "tree"}
         changed = {p for p in set(before_files) | set(after_files) if before_files.get(p) != after_files.get(p)}
-        if changed != {FILE, path}:
+        items = [old[f] for f in sorted(removed)]
+        reviews = published_reviews(api, base, items, now=now)
+        if changed != {FILE, path, *reviews} or any(name in after_files for name in reviews):
             raise ValueError("Retirement must not change patient content or other source files")
         _, raw = github_file(api, path, candidate, 256_000)
-        record = parse(raw, canonical=True, limit=256_000)
-        if (not isinstance(record, dict) or set(record) != FIELDS or type(record["version"]) is not int or record["version"] != 1
-                or record["repository"] != REPO or record["publishedSha"] != base or record["receiptBlobSha"] != before[0]
-                or record["requests"] != [old[f] for f in sorted(removed)]):
-            raise ValueError("Retirement does not preserve the exact published receipt")
-        stamp = utc(record["preparedAt"])
-        if stamp > (now or datetime.now(timezone.utc)):
-            raise ValueError("Retirement preparation timestamp is in the future")
-        claimed = record["evidence"]
-        if not isinstance(claimed, dict) or set(claimed) != {"workflows", "deploymentId", "statusId"}:
-            raise ValueError("Retirement publication evidence incomplete")
-        publication_evidence(api, base, candidate, claimed)
+        record = validate_record(raw, base, before[0], items, reviews, now=now)
+        publication_evidence(api, base, candidate, record['evidence'])
     if main_sha(api) != current:
         raise ValueError("Retirement main changed during validation")
     return {"retiredRequests": len(removed), "baseline": base}
@@ -235,9 +272,12 @@ def prepare(api, expected_main, *, now=None):
     if path in api.entries(expected_main):
         raise ValueError("Retirement archive already exists")
     evidence = publication_evidence(api, expected_main, expected_main)
-    record = {"version": 1, "repository": REPO, "publishedSha": expected_main, "receiptBlobSha": receipt_sha,
+    reviews = published_reviews(api, expected_main, items, now=now)
+    record = {"version": 2 if reviews else 1, "repository": REPO, "publishedSha": expected_main, "receiptBlobSha": receipt_sha,
               "requests": sorted(items, key=lambda item: item["file"]), "evidence": evidence,
               "preparedAt": (now or datetime.now(timezone.utc)).isoformat(timespec="milliseconds").replace("+00:00", "Z")}
+    if reviews:
+        record['reviewManifests'] = reviews
     if main_sha(api) != expected_main:
         raise ValueError("Retirement preparation main changed")
     encode = lambda value: (json.dumps(value, ensure_ascii=False, indent=2) + "\n").encode("utf-8")

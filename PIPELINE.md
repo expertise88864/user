@@ -169,6 +169,12 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
   沒有 active receipts 時回報 noOp，不會宣稱正式發布或建立檔案。
   要保存待審 bundle，指定 `--output <系統暫存目錄內尚不存在的新資料夾>`。
   此工具只輸出兩份待審 source bytes，不 stage／commit／push，也不寫作者草稿或 refs。
+  已核可完整生成內容的 v2 申請，退役 archive 另記錄該次 `.cms-review/<slug>.json`
+  的 exact Git blob／SHA-256。退役候選須移除這些作用中紀錄，讓同篇文章可準備下一版；
+  原始核可文字、manifest 與摘要仍保留在 archive 指向的完整 published SHA。
+  在同一 SHA 的乾淨候選執行 `python _retire_cms_receipts.py --expected-main <完整正式 SHA>
+  --apply <已審查的外部 bundle>`，只套用兩份檔案及上述精確移除，不 stage／commit／push。
+  工具核對 bundle、目前 checkout 與 published bytes；尚未取得 CI／正式發布許可。
   將 bundle 套用到以同一最新 main 建立的乾淨候選，再走獨立審查／完整候選 CI／同庫
   PR／Preview／正常 main／正式 CI／部署／smoke；退役不能混入任何其他來源修改。
   `.cms-retirements/` 原有紀錄不可移除、改名或改寫；Python Delivery contract 與

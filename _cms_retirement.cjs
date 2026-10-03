@@ -1,6 +1,7 @@
 /* Separately verified immutable retirement. No Git writes or release permit. */
 'use strict';
 const assert = require('node:assert/strict');
+const { createHash } = require('node:crypto');
 const { blob, tree, exactKeys, sha, time, validateReceiptEntry } = require('./_cms_delivery.cjs');
 const FILE='.cms-delivery.json', PREFIX='.cms-retirements/', REPO='expertise88864/user';
 const archive=/^\.cms-retirements\/([a-f0-9]{40})\.json$/;
@@ -32,6 +33,18 @@ function archivePaths(entries){
   if(!path.startsWith(PREFIX)||e.type==='tree')continue;
   const m=archive.exec(path);assert.ok(m&&sha(m[1])&&e.type==='blob'&&e.mode==='100644'&&sha(e.sha),'Malformed retirement archive');paths.set(path,e.sha);
  }return paths;
+}
+async function publishedReviews(api,published,items,now,trees){
+ const review=require('./_cms_patient_review.cjs'),result={};
+ for(const entry of [...items].sort((a,b)=>a.file<b.file?-1:a.file>b.file?1:0)){
+  if(entry.version!==2)continue;
+  const path=review.reviewPath(entry.file),saved=await blob(api,path,published,review.MAX_REVIEW_BYTES,trees);
+  const digest=createHash('sha256').update(saved.raw).digest('hex'),value=review.manifest(saved.raw,now),identity=entry.patientApproval;
+  assert.ok(saved.sha===identity.manifestBlobSha&&digest===identity.manifestSha256&&value.file===entry.file,'Retirement patient manifest differs from exact published approval');
+  assert.deepEqual(value.patientManifest.trackedPackage.sourceEvidence,review.sourceEntry(entry),'Retirement review belongs to another source request');
+  result[path]={blobSha:saved.sha,sha256:digest};
+ }
+ return result;
 }
 async function selectedRuns(api,head,policy){
  const rows=await mainRuns(api,head),selected=[];
@@ -96,10 +109,14 @@ async function verifyTransition(candidate,api,currentItems,now,trees){
   for(const [file,value]of fresh)assert.deepEqual(value,old.get(file),'Retirement changed another active request');
   const flatten=t=>new Map([...t].filter(([,e])=>e.type!=='tree').map(([p,e])=>[p,JSON.stringify([e.mode,e.type,e.sha])]));
   const a=flatten(beforeTree),b=flatten(afterTree),changed=[...new Set([...a.keys(),...b.keys()])].filter(p=>a.get(p)!==b.get(p)).sort();
-  assert.deepEqual(changed,[FILE,path].sort(),'Retirement changed patient content or other source');
+  const items=removed.map(p=>old.get(p)),reviews=await publishedReviews(api,base,items,now,trees),hasReviews=Object.keys(reviews).length>0;
+  assert.deepEqual(changed,[FILE,path,...Object.keys(reviews)].sort(),'Retirement changed patient content or other source');
+  assert.ok(Object.keys(reviews).every(name=>!b.has(name)),'Retirement must remove exact active review controls');
   const saved=await blob(api,path,candidate,256000,trees),record=decode(saved.raw);
-  assert.ok(exactKeys(record,['version','repository','publishedSha','receiptBlobSha','requests','evidence','preparedAt'])&&record.version===1&&record.repository===REPO&&record.publishedSha===base&&record.receiptBlobSha===before.sha,'Retirement does not bind published receipt');
-  assert.deepEqual(record.requests,removed.map(p=>old.get(p)),'Retirement lost exact published requests');assert.ok(time(record.preparedAt)<=now,'Retirement preparation is in future');
+  const fields=['version','repository','publishedSha','receiptBlobSha','requests','evidence','preparedAt',...(hasReviews?['reviewManifests']:[])];
+  assert.ok(exactKeys(record,fields)&&record.version===(hasReviews?2:1)&&record.repository===REPO&&record.publishedSha===base&&record.receiptBlobSha===before.sha,'Retirement does not bind published receipt');
+  if(hasReviews)assert.deepEqual(record.reviewManifests,reviews,'Retirement lost exact published review identities');
+  assert.deepEqual(record.requests,items,'Retirement lost exact published requests');assert.ok(time(record.preparedAt)<=now,'Retirement preparation is in future');
   assert.ok(exactKeys(record.evidence,['workflows','deploymentId','statusId']),'Retirement publication evidence incomplete');
   await publicationEvidence(api,base,candidate,record.evidence,trees);
  }
