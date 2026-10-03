@@ -45,7 +45,19 @@ def final_request(root: Path, main: str, head: str, file: str, raw: bytes, now: 
     if original['action'] == 'unpublish':
         raise ValueError('Unpublish cannot use final generated approval')
     review_head = revision(record['reviewHead'])
-    immutable_source(root, review_head)
+    try:
+        immutable_source(root, review_head)
+    except subprocess.CalledProcessError as error:
+        # Only an explicit no-such-object Git protocol response rejects this
+        # request. Authentication, rate-limit and other transport failures
+        # remain visible job failures; never report them as an empty queue.
+        messages = (error.stderr or b'').decode('utf8', errors='replace').splitlines()
+        missing = ('not our ref ' + review_head, "couldn't find remote ref " + review_head)
+        if error.returncode == 128 and any(line.strip().endswith(missing) for line in messages):
+            raise ValueError('Final patient preview commit is unavailable') from None
+        raise
+    if git(root, 'cat-file', '-t', review_head).strip() != b'commit':
+        raise ValueError('Final patient preview must identify a commit')
     evidence = package.GitEvidence(root)
     frozen, blob, manifest_raw = review.load_review(evidence, review_head, file, now=now)
     proof = frozen['patientManifest']['trackedPackage']['sourceEvidence']

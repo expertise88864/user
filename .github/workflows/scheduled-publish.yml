@@ -35,6 +35,8 @@ jobs:
       - name: Discover source requests and exact generated-content approvals
         env:
           PYTHONDONTWRITEBYTECODE: '1'
+          # Python's artifact guard and the collector must agree on this root.
+          TMPDIR: ${{ runner.temp }}
         run: python _process_article_requests.py --output "$RUNNER_TEMP/cms-source-artifacts"
       - name: Preserve article candidates for independent review
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

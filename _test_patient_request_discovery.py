@@ -1,8 +1,11 @@
 """Discover genuine generated approvals in isolated nonclinical Git histories."""
 import hashlib
 import json
+import os
 from pathlib import Path
+import re
 import subprocess
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -142,6 +145,67 @@ class PatientDiscoveryTests(unittest.TestCase):
         self.assertFalse((output / 'report.json').exists())
         self.assertFalse(list(output.rglob('report.json')))
         self.assertEqual(before, self.original())
+
+    def test_missing_preview_is_rejected_while_another_valid_request_is_prepared(self):
+        # A real missing SHA in a separate immutable author request must not
+        # prevent the genuine article request from producing its exact bundle.
+        self.fixture.run_git('switch', '-c', 'drafts/aaa-missing', self.source_report['requestHead'])
+        invalid = {**self.request, 'file': 'blog/aaa-missing.html', 'reviewHead': 'd' * 40,
+                   'sourceRequest': {**self.request['sourceRequest'], 'file': 'blog/aaa-missing.html'}}
+        self.fixture.write('.cms-requests/aaa-missing.json',
+                           (json.dumps(invalid, ensure_ascii=False, separators=(',', ':')) + '\n').encode('utf8'))
+        self.fixture.commit('synthetic unavailable preview')
+        missing = self.fixture.run_git('rev-parse', 'HEAD')
+        self.fixture.run_git('checkout', '--detach', self.fixture.base)
+        before = self.original()
+        result = self.process(self.output.parent / 'missing-and-valid')
+        self.assertEqual(before, self.original())
+        self.assertEqual([row['requestHead'] for row in result['prepared']], [self.approval])
+        self.assertEqual(result['deferred'], [{'file': 'blog/aaa-missing.html', 'requestHead': missing,
+                                             'reason': 'request_rejected', 'errorType': 'ValueError'}])
+
+    def test_preview_transport_failure_still_fails_the_job(self):
+        fetch = discovery.immutable_source
+        def unavailable(root, head):
+            if head == self.review_head:
+                raise subprocess.CalledProcessError(128, ['git', 'fetch'], stderr=b'controlled transport failure')
+            return fetch(root, head)
+        output = self.output.parent / 'transport-failed'
+        before = self.original()
+        with patch.object(discovery, 'immutable_source', unavailable):
+            with self.assertRaises(subprocess.CalledProcessError):
+                self.process(output)
+        self.assertFalse((output / 'report.json').exists())
+        self.assertEqual(before, self.original())
+
+
+class ScheduledArtifactPathTests(unittest.TestCase):
+    def test_workflow_artifacts_use_the_same_python_temporary_root(self):
+        root = Path(__file__).resolve().parent
+        workflow = (root / '.github/workflows/scheduled-publish.yml').read_text(encoding='utf8')
+        step = workflow.split('      - name: Discover source requests and exact generated-content approvals\n')[1]
+        step = step.split('      - name:', 1)[0]
+        configured = bool(re.search(r'^          TMPDIR: \$\{\{ runner\.temp \}\}$', step, re.MULTILINE))
+        with tempfile.TemporaryDirectory(prefix='patient-runner-path-') as directory:
+            parent = Path(directory)
+            runner, default = parent / 'runner-temp', parent / 'default-temp'
+            runner.mkdir(); default.mkdir()
+            artifacts = runner / 'cms-source-artifacts'
+            artifacts.mkdir()
+            environment = {**os.environ, 'RUNNER_TEMP': str(runner),
+                           'TMPDIR': str(runner if configured else default), 'PYTHONDONTWRITEBYTECODE': '1'}
+            # A fresh Python process follows its actual startup temp selection.
+            # Runner temp and platform fallback are deliberately distinct.
+            program = ('import sys; from pathlib import Path; '
+                       'from _prepare_patient_review import artifact_destination; '
+                       'print(artifact_destination(Path(sys.argv[1]), Path(sys.argv[2])))')
+            valid = subprocess.run([sys.executable, '-c', program, str(artifacts / 'candidate'), str(root)],
+                                   cwd=root, env=environment, capture_output=True, timeout=30)
+            self.assertEqual(valid.returncode, 0, valid.stderr.decode('utf8', errors='replace'))
+            outside = subprocess.run([sys.executable, '-c', program, str(default / 'candidate'), str(root)],
+                                     cwd=root, env=environment, capture_output=True, timeout=30)
+            self.assertNotEqual(outside.returncode, 0)
+            self.assertIn(b'new directory in system temporary storage', outside.stderr)
 
 
 if __name__ == '__main__':
