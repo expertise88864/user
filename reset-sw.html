@@ -1,10 +1,41 @@
-<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow"><title>SW 強制重置 · ChenDermatologist</title>
-<style>body{font-family:Inter,'Noto Sans TC',sans-serif;background:#faf7f2;color:#2a2620;padding:40px 24px;max-width:640px;margin:0 auto;line-height:1.7} h1{font-family:'Noto Serif TC',Georgia,serif;color:#0c5159;font-size:26px;margin:0 0 12px} .step{background:#fff;border:1px solid #dcd5c8;border-radius:12px;padding:14px 18px;margin:10px 0} .ok{color:#065f46;font-weight:600} .err{color:#7f1d1d;font-weight:600} .pending{color:#92400e} pre{background:#f5fbfa;padding:12px;border-radius:8px;font-size:12px;overflow:auto;margin:8px 0} a{color:#0c5159;font-weight:600} button{padding:10px 18px;background:linear-gradient(180deg,#a4b5a8,#4d6358);color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600;font-size:14px;margin:8px 4px}</style>
-<!-- i-series-applied -->
-</head><body><main id="main-content"><h1>🔄 強制重置快取與 Service Worker</h1><p>這個頁面會徹底清掉舊版的 SW + 快取，讓你下次打開 chendermatologist.com 看到最新版。</p><div class="step" id="s1"><strong>1. 取消註冊所有 Service Worker</strong><div id="r1" class="pending">執行中...</div></div><div class="step" id="s2"><strong>2. 清空所有 Cache Storage</strong><div id="r2" class="pending">等待中</div></div><div class="step" id="s3"><strong>3. 清空 LocalStorage / SessionStorage / IndexedDB</strong><div id="r3" class="pending">等待中</div></div><div class="step" id="s4"><strong>4. 結果</strong><div id="r4" class="pending">等待中</div></div><p><button id="resetHome" type="button">→ 進首頁(新版)</button><button id="resetBlog" type="button">→ 進衛教文章</button></p><details style="margin-top:24px"><summary style="cursor:pointer;color:#0c5159">📋 詳細執行記錄(點開看)</summary>
-<pre id="log"></pre>
-</details>
-<script>const log = document.getElementById('log');
+<!doctype html><html lang="zh-Hant-TW"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow"><title>清除網站離線快取 | ChenDermatologist</title>
+<style>body{font-family:Inter,'Microsoft JhengHei',sans-serif;background:#faf7f2;color:#2a2620;padding:24px;max-width:640px;margin:0 auto;line-height:1.7}h1{color:#0c5159;font-size:26px;margin:0 0 12px}.step{background:#fff;border:1px solid #dcd5c8;border-radius:12px;padding:14px 18px;margin:10px 0}.ok{color:#065f46}.err{color:#7f1d1d}.pending{color:#92400e}pre{background:#f5fbfa;padding:12px;border-radius:8px;font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere}a{color:#0c5159;font-weight:600}button{padding:12px 18px;background:#0c5159;color:#fff;border:0;border-radius:8px;cursor:pointer;font-weight:600;font-size:16px;min-height:44px}button:disabled{cursor:default;opacity:.7}:focus-visible{outline:3px solid #0c5159;outline-offset:3px}.links{display:flex;gap:20px;flex-wrap:wrap}</style></head><body><main id="main-content"><h1>清除網站離線快取</h1><p>若網頁顯示舊版，可清除本站 Service Worker 與離線快取，再開啟首頁。</p><p>本機草稿、登入資料、閱讀設定及圖片資料庫會保留。清除後，已下載的離線頁面需連網重新載入。</p><button id="resetStart" type="button">清除網站快取</button><noscript><p>此工具需要 JavaScript。請啟用後再清除快取。</p></noscript>
+<div class="step"><strong>1. 取消註冊本站 Service Worker</strong><div id="r1" class="pending">尚未開始</div></div><div class="step"><strong>2. 清除本站 Cache Storage</strong><div id="r2" class="pending">尚未開始</div></div><div class="step"><strong>3. 保留作者與閱讀資料</strong><div id="r3" class="ok">保留，不會清除</div></div><div class="step"><strong>4. 結果</strong><div id="r4" role="status" aria-live="polite" class="pending">尚未開始</div></div>
+<p class="links"><a href="/">回首頁</a><a href="/blog">衛教文章</a></p><details><summary>詳細執行記錄</summary><pre id="log"></pre></details><script>(function () {
+function onResetPage() {
+var p = location.pathname.replace(/\.html$/, '');
+return p === '/reset-sw' || p === '/en/reset-sw';
+}
+// Cache recovery must be inert elsewhere and must never erase author storage.
+if (!onResetPage()) return;
+const start = document.getElementById('resetStart');
+if (!start || start.dataset.dnResetBound === 'true') return;
+start.dataset.dnResetBound = 'true';
+const english = document.documentElement.lang === 'en';
+const text = english ? {
+running: 'Resetting…', waiting: 'Waiting', retry: 'Retry cache reset',
+workers: count => `✓ Unregistered ${count} site service worker(s).`,
+noWorkers: 'This browser does not support service workers.',
+workerError: '✗ Service worker reset failed. Try again.',
+caches: count => `✓ Deleted ${count} site cache(s).`,
+noCaches: 'This browser does not support Cache Storage.',
+cacheError: '✗ Cache reset failed. Try again.',
+kept: '✓ Local drafts, login data, reading settings and image databases are preserved.',
+done: '✓ Reset complete. Open the home page. Save edits before reloading any other open tab.',
+failed: 'Some steps failed. Your drafts are preserved. Retry the reset.',
+} : {
+running: '清除中…', waiting: '等待中', retry: '重新清除網站快取',
+workers: count => `✓ 已取消註冊 ${count} 個本站 Service Worker。`,
+noWorkers: '此瀏覽器不支援 Service Worker，無須清除。',
+workerError: '✗ Service Worker 清除失敗，請重試。',
+caches: count => `✓ 已刪除 ${count} 個本站快取。`,
+noCaches: '此瀏覽器不支援 Cache Storage，無須清除。',
+cacheError: '✗ 快取清除失敗，請重試。',
+kept: '✓ 保留本機草稿、登入資料、閱讀設定及圖片資料庫。',
+done: '✓ 清除完成，請進入首頁。其他開啟中的分頁若要重新載入，請先儲存編輯。',
+failed: '部分步驟失敗，草稿仍保留。請重新清除快取。',
+};
+const log = document.getElementById('log');
 function L(msg) { log.textContent += msg + '\n'; }
 function setResult(id, className, text) {
 const target = document.getElementById(id);
@@ -14,71 +45,70 @@ span.className = className;
 span.textContent = text;
 target.appendChild(span);
 }
-// CODE_REVIEW TD-63 — refuse to run anywhere but this page. Everything below
-// is ORIGIN-scoped, not path-scoped: it unregisters service workers and clears
-// caches, localStorage, sessionStorage and IndexedDB for the whole site, which
-// is where the admin editor keeps its autosaved drafts and its GitHub token.
-// Since the CSP now allows this exact script body by hash on every page, a
-// markup injection elsewhere could replay it verbatim as a ready-made
-// destructive gadget. The pathname guard makes the body inert off its own page.
-function onResetPage() {
-var p = location.pathname.replace(/\.html$/, '');
-return p === '/reset-sw' || p === '/en/reset-sw';
+function isSiteWorker(registration) {
+if (registration.scope !== location.origin + '/') return false;
+return [registration.active, registration.waiting, registration.installing].some(worker => {
+if (!worker) return false;
+const url = new URL(worker.scriptURL);
+return url.origin === location.origin && url.pathname === '/sw.js';
+});
 }
-(async function reset() {
-if (!onResetPage()) return;
-// Step 1: unregister SW
+let running = false;
+let completed = false;
+start.addEventListener('click', async function () {
+if (running || completed) return;
+running = true;
+start.disabled = true;
+start.textContent = text.running;
+log.textContent = '';
+setResult('r1', 'pending', text.running);
+setResult('r2', 'pending', text.waiting);
+setResult('r3', 'ok', text.kept);
+setResult('r4', 'pending', text.running);
+let failed = false;
 try {
 if ('serviceWorker' in navigator) {
-const regs = await navigator.serviceWorker.getRegistrations();
-L(`Found ${regs.length} SW registration(s)`);
-for (const r of regs) {
-const ok = await r.unregister();
-L(`  unregister ${r.scope} → ${ok}`);
+const registrations = (await navigator.serviceWorker.getRegistrations()).filter(isSiteWorker);
+let count = 0;
+for (const registration of registrations) {
+if (!await registration.unregister()) throw new Error('Service worker was not unregistered');
+count++;
 }
-setResult('r1', 'ok', `✓ 取消註冊 ${regs.length} 個 SW`);
+setResult('r1', 'ok', text.workers(count));
+L(text.workers(count));
 } else {
-setResult('r1', 'ok', '✓ 此瀏覽器不支援 SW(無事可做)');
+setResult('r1', 'ok', text.noWorkers);
 }
-} catch (e) {
-setResult('r1', 'err', '✗ Service Worker 清除失敗，請稍後再試');
-L('  err: ' + e);
+} catch (_) {
+failed = true;
+setResult('r1', 'err', text.workerError);
+L(text.workerError);
 }
-// Step 2: clear all caches
 try {
 if ('caches' in window) {
-const keys = await caches.keys();
-L(`Found ${keys.length} cache(s): ${keys.join(', ')}`);
-for (const k of keys) {
-await caches.delete(k);
-L(`  deleted ${k}`);
-}
-setResult('r2', 'ok', `✓ 刪掉 ${keys.length} 個快取`);
-} else {
-setResult('r2', 'ok', '✓ 無 cache API');
-}
-} catch (e) {
-setResult('r2', 'err', '✗ Cache 清除失敗，請稍後再試');
-}
-// Step 3: clear storage
-try {
+const names = (await caches.keys()).filter(name => /^cd-(?:v\d+|runtime-v\d+)$/.test(name));
 let count = 0;
-if (localStorage.length > 0) { count += localStorage.length; localStorage.clear(); }
-if (sessionStorage.length > 0) { count += sessionStorage.length; sessionStorage.clear(); }
-// IndexedDB
-if ('databases' in indexedDB) {
-const dbs = await indexedDB.databases();
-for (const db of dbs) {
-if (db.name) { indexedDB.deleteDatabase(db.name); count++; }
+for (const name of names) {
+if (!await caches.delete(name)) throw new Error('Site cache was not deleted');
+count++;
 }
+setResult('r2', 'ok', text.caches(count));
+L(text.caches(count));
+} else {
+setResult('r2', 'ok', text.noCaches);
 }
-setResult('r3', 'ok', `✓ 清掉 ${count} 個 storage 項目`);
-L(`Cleared ${count} storage items`);
-} catch (e) {
-setResult('r3', 'err', '✗ Storage 清除失敗，請稍後再試');
+} catch (_) {
+failed = true;
+setResult('r2', 'err', text.cacheError);
+L(text.cacheError);
 }
-// Step 4: done
-setResult('r4', 'ok', '✓ 全部完成。請點上面按鈕進入新版首頁。');
-L('\nAll done. Click the button to navigate.');
-})();</script>
-</main><script>document.getElementById('resetHome')?.addEventListener('click',()=>{location.href='/?fresh='+Date.now();});document.getElementById('resetBlog')?.addEventListener('click',()=>{location.href='/blog/?fresh='+Date.now();});</script></body></html>
+// Deliberately do not access LocalStorage, SessionStorage or IndexedDB.
+// They contain recoverable CMS edits and media, not stale website responses.
+setResult('r4', failed ? 'err' : 'ok', failed ? text.failed : text.done);
+L(failed ? text.failed : text.done);
+completed = !failed;
+running = false;
+start.disabled = completed;
+start.textContent = failed ? text.retry : (english ? 'Reset complete' : '已清除快取');
+});
+})();</script></main></body></html>

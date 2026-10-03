@@ -1,6 +1,6 @@
 # 新增一篇衛教文章 SOP
 
-> 適用於 DermNotes 這個 repo。寫完照這個 checklist 跑過一遍，CI 全綠 + EN 版本自動有 + 上線即時可見。
+> 適用於 ChenDermatologist。醫療文字與英文翻譯取得醫師核可後，完成來源與生成物、本機相關檢查、候選 CI／Preview、正常快轉 main，以及同 SHA 正式 CI／部署／smoke，才算正式交付。存檔、生成英文版或單次 CI 成功各代表不同階段。
 
 ---
 
@@ -24,7 +24,7 @@
 1. 從元素的 `data-en` 屬性取代 inner HTML
 2. 或者整段以 `<div id="proseEn">` 並排區塊取代 `<div id="proseZh">`
 
-**推薦做法（也是 POD 文章用的方式）：proseEn 並排區塊**，內容更完整、SEO 更乾淨：
+**推薦做法（也是 POD 文章用的方式）：proseEn 並排區塊**，保留完整對照內容，方便生成英文鏡像；英文索引策略維持 D-17：
 
 ```html
 <article ...>
@@ -109,47 +109,47 @@ python _run_quality.py build
 
 這會依正式順序生成英文鏡像、schema、feeds、搜尋索引及 runtime bundles，並執行完整品質檢查。英文 canonical 依 D-17 維持指向中文版本。GitHub Actions 只核對生成物是否一致，不會自動提交缺少的生成物；所有此次需要交付的來源與生成檔都必須先在本機完成。
 
-### Step 6：跑 local quality check
+### Step 6：核對本機檢查與獨立審查
 
 ```bash
-python _run_ci.py
+python _run_quality.py check
 ```
 
-完整 build、品質閘、HTML 結構驗證及 Lighthouse 都必須成功；局部檢查不能代替。環境需求與日誌位置見 [PIPELINE.md](PIPELINE.md)。修改、生成或新增提交後，須重新驗證實際待推版本。
+依實際變更執行本機快速檢查、相關回歸及必要生成，並完成專案要求的獨立模型審查。完整本機 CI 可作額外診斷；候選 push 依 2026-09-06 定案，不要求先跑完整本機 CI。環境需求與日誌位置見 [PIPELINE.md](PIPELINE.md)。新的修改、生成或整合會使舊版本證據失效。
 
-### Step 7：commit + push
+### Step 7：候選、Preview 與正式發布
 
 先以 `git status --short` 和 `git diff` 核對此次來源與生成檔，逐項加入本次提交，不要混入其他工作。醫療文字須取得醫師核可；完成專案要求的獨立模型審查後，再建立此次提交。
 
-Windows 發布入口：
+將本次來源與生成物提交至 `codex/*` 候選分支，正常 push，沿用或建立同庫 PR。完整遠端 CI、同 SHA Vercel Preview 與瀏覽器驗收全部通過後，才可正常快轉 main。候選驗證命令：
 
-```powershell
-.\deploy.ps1
+```text
+python _delivery.py verify <候選完整SHA> --phase candidate --wait 1800
 ```
 
-此入口要求乾淨的 `main`、已登入的 GitHub CLI，重新執行完整本機 CI，才正常 push；接著驗證同一完整 SHA 的 GitHub CI。所有適用遠端檢查成功才算交付。遠端 CI 不會替作者自動補檔或提交；若失敗，需在本機修正、重新驗證並依相同流程發布修正。
+main 更新後，另核對同 SHA 正式 CI、Production 部署與 smoke 成功，再確認公開頁面。完整步驟依 [REMOTE_CI_DELIVERY.md](REMOTE_CI_DELIVERY.md)；後台作者操作見 [AUTHOR_WORKFLOW.md](AUTHOR_WORKFLOW.md)。遠端 CI 不會替作者自動補檔或提交；若失敗，在本機修正並以新版本重新走完整交付流程，不沿用舊綠燈。
 
 ---
 
-## 3. 看不到新文章？99% 是 Service Worker 快取
+## 3. 看不到新文章？先確認正式發布，再檢查快取
 
-**這個 repo 用了 PWA service worker (`sw.js`)，會把 shell + `/blog/` 索引頁強力快取。** Vercel 部署成功不代表你看得到新內容。
+**這個 repo 使用 PWA Service Worker (`sw.js`) 保存網站外殼與 `/blog` 索引。** 先核對目前版本的正式 CI、部署及公開頁 smoke；舊快取只是可能原因，不能先假設文章已上線。
 
 ### 三種解法
 
 | 方式 | 怎麼做 |
 |---|---|
-| **最簡單** | 訪問 [`https://chendermatologist.com/reset-sw.html`](reset-sw.html) — 這頁專門 unregister SW |
+| **快取恢復** | 開啟 [`清除網站快取`](https://chendermatologist.com/reset-sw)，再按「清除網站快取」。開啟頁面不會自動清除；工具保留作者草稿、登入與圖片資料庫。 |
 | Hard refresh | Ctrl + Shift + R（Windows）或 Cmd + Shift + R（Mac） |
-| DevTools | F12 → Application → Service Workers → Unregister；或 Storage → Clear site data |
+| DevTools | F12 → Application → Service Workers → Unregister。不要使用 Clear site data 清掉未保存的本機草稿與圖片。 |
 
 ### 怎麼確認 Vercel 真的部署完了
 
-1. 去 [Vercel Dashboard](https://vercel.com/dashboard) → DermNotes project → Deployments
-2. 看最新 commit hash 是否顯示 **Ready** 綠燈
-3. 點進去看 Build Logs 有沒有錯
+1. 去 [Vercel Dashboard](https://vercel.com/dashboard) → chendermatologist → Deployments。
+2. 核對正式部署的完整 commit SHA，不能用較早的 Ready 部署代表目前版本。
+3. 核對同 SHA 的完整正式 GitHub CI、Production smoke 與公開頁資源驗證，並檢查 Build Logs。
 
-**Vercel 跟 GitHub Actions Quality Gate 是完全獨立的**：CI fail 不會擋 Vercel 部署。
+候選 CI 未通過不可正式發布；Vercel Ready 也不代表正式 CI 已成功。交付依 [REMOTE_CI_DELIVERY.md](REMOTE_CI_DELIVERY.md) 的候選、Preview、正常快轉 main 與正式驗證流程。
 
 ---
 
@@ -168,9 +168,9 @@ Windows 發布入口：
 
 ---
 
-## 5. CI 全綠 checklist
+## 5. 本機檢查與交付 checklist
 
-push 前在 local 確認：
+本機相關檢查與內容準備：
 
 - [ ] `python _audit_jsonld.py` 顯示 `Errors: 0`
 - [ ] `python _check_sitemap.py` 顯示 `[OK]`
@@ -181,6 +181,10 @@ push 前在 local 確認：
 - [ ] 文章內所有 `<` 用於不等號的地方都跳脫成 `&lt;`（驗證器會誤判）
 - [ ] EN proseEn 區塊存在且不是空的
 - [ ] `_gen_en_pages.py` 的 `EN_OG_OVERRIDES` 有對應條目
+- [ ] 醫療文字及英文翻譯已取得醫師核可
+- [ ] 完整交付差異已依專案規則獨立審查；額度 pending 依既有規則明示
+- [ ] 候選完整 SHA 的遠端 CI、同庫 PR、Preview 與瀏覽器驗收成功
+- [ ] 同 SHA 正常快轉 main 後，正式 CI、部署與 smoke 成功
 
 ---
 
@@ -277,5 +281,5 @@ push 前在 local 確認：
 
 ---
 
-更新時間：2026-05-13。
+更新時間：2026-10-03。
 維護：陳翊嘉醫師（[`expertise88864@gmail.com`](mailto:expertise88864@gmail.com)）。

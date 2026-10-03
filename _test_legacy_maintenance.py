@@ -194,6 +194,62 @@ class AutomaticHTMLScopeTests(unittest.TestCase):
         self.assertTrue(all((self.root/n).read_text(encoding='utf8')==body for n in excluded))
 
 
+class AnalyticsMaintenanceScopeTests(unittest.TestCase):
+    def setUp(self):
+        self.script = load_script('_normalize_analytics')
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+
+    def write(self, name, body):
+        path = self.root / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(body)
+        return path
+
+    def run_apply(self):
+        with patch.object(self.script, 'HERE', str(self.root)), patch.object(self.script, 'APPLY', True), redirect_stdout(io.StringIO()):
+            self.script.main()
+
+    def test_only_deployed_sources_change_and_utility_pages_remain_uninstrumented(self):
+        body = b'<head></head><body>Nonmedical fixture</body>'
+        public = ['index.html', 'blog/article.html', 'en/index.html', 'en/blog/article.html']
+        excluded = ['.codex-review/evidence.html', 'backups/old.html', 'fixtures/paste.html',
+                    'blog/backup/old.html', 'assets/private.html', 'node_modules/page.html', 'pagefind/page.html']
+        utilities = ['admin.html', 'admin/edit.html', 'reset-sw.html', 'en/reset-sw.html', 'offline.html']
+        for name in public + excluded + utilities:
+            self.write(name, body)
+        self.run_apply()
+        self.assertTrue(all(b'analytics-loader.js' in (self.root / name).read_bytes() for name in public))
+        self.assertEqual({name: (self.root / name).read_bytes() for name in excluded + utilities},
+                         {name: body for name in excluded + utilities})
+        once = {name: (self.root / name).read_bytes() for name in public}
+        self.run_apply()
+        self.assertEqual({name: (self.root / name).read_bytes() for name in public}, once)
+
+    def test_invalid_utf8_aborts_before_rewriting_an_earlier_source(self):
+        first = self.write('blog/first.html', b'<head></head>Nonmedical valid fixture')
+        invalid = self.write('en/index.html', b'<head></head>Nonmedical invalid \xff fixture')
+        originals = [first.read_bytes(), invalid.read_bytes()]
+        with self.assertRaises(UnicodeDecodeError):
+            self.run_apply()
+        self.assertEqual([first.read_bytes(), invalid.read_bytes()], originals)
+
+    def test_linked_source_aborts_before_any_source_or_target_write(self):
+        first = self.write('index.html', b'<head></head>Nonmedical fixture')
+        target = self.write('fixtures/original.html', b'<head></head>Protected fixture')
+        linked = self.root / 'blog/linked.html'
+        linked.parent.mkdir()
+        try:
+            linked.symlink_to(target)
+        except OSError as exc:
+            self.skipTest(f'Filesystem does not permit symlinks: {exc}')
+        originals = [first.read_bytes(), target.read_bytes()]
+        with self.assertRaisesRegex(ValueError, 'ordinary file'):
+            self.run_apply()
+        self.assertEqual([first.read_bytes(), target.read_bytes()], originals)
+
+
 class MaintenanceImportTests(unittest.TestCase):
     def test_import_does_not_touch_navigation_stdout_or_load_codecs(self):
         with tempfile.TemporaryDirectory() as directory:

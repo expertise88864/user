@@ -19,11 +19,10 @@ Usage:  python _normalize_analytics.py            # dry-run (report only)
 """
 import os, io, sys, re
 from _normalize_css_links import ASSET_VERSION
+from _site_html import site_html_files
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 APPLY = '--apply' in sys.argv
-
-SKIP_DIRS = ('.git', 'pagefind', '__pycache__', 'astro-rewrite', '_pdf_extracts', 'node_modules')
 
 # Pages that should NOT carry audience analytics.
 EXCLUDE = {
@@ -59,13 +58,7 @@ INLINE_GA_RE = re.compile(r'<script>(?:(?!</script>).)*?G-XFF3L5QD10(?:(?!</scri
 
 
 def collect_html():
-    out = []
-    for root, dirs, files in os.walk(HERE):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
-        for fn in files:
-            if fn.endswith('.html'):
-                out.append(os.path.join(root, fn))
-    return sorted(out)
+    return [str(path) for path in site_html_files(HERE)]
 
 
 def normalize(src):
@@ -87,11 +80,16 @@ def normalize(src):
 
 
 def main():
+    # Validate the complete inventory and decode every source before any write.
+    # An invalid or linked later source must not leave a partly rewritten site.
+    sources = []
+    for path in collect_html():
+        with open(path, 'r', encoding='utf-8') as fp:
+            sources.append((path, fp.read()))
     changes = []
-    for p in collect_html():
+    for p, src in sources:
         rel = os.path.relpath(p, HERE)
         excluded = rel in EXCLUDE
-        src = open(p, 'r', encoding='utf-8', errors='replace').read()
         s, n_tags, n_inline = normalize(src)
 
         # Dedup keeper: keep first, drop the rest.
@@ -124,7 +122,8 @@ def main():
         if s != src:
             changes.append((rel, n_tags, n_inline, n_dedup, injected, stripped_excluded))
             if APPLY:
-                open(p, 'w', encoding='utf-8').write(s)
+                with open(p, 'w', encoding='utf-8') as fp:
+                    fp.write(s)
 
     print(("APPLIED" if APPLY else "DRY-RUN") + " — analytics normalization")
     print("files changed:", len(changes))

@@ -135,7 +135,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202610031715';
+          s.src = '/blog/blog-diagrams.min.js?v=202610032329';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -235,7 +235,7 @@
 
 
   DN.addReadingMeta = function () {
-    const proseEl = document.getElementById('proseZh') || document.querySelector('article .prose');
+    const proseEl = outlineProse();
     if (!proseEl) return;
     // Keep word boundaries: removing whitespace merges an English article
     // into one token and understates both its reading time and word count.
@@ -495,7 +495,7 @@
   DN.bindScrollMemory = function () {
     var slug = DN.currentSlug();
     if (!slug) return;
-    var proseEl = document.getElementById('proseZh') || document.querySelector('article .prose');
+    var proseEl = outlineProse();
     if (!proseEl) return;
     var KEY = 'dn:scroll:' + slug;
     var MAX_AGE_MS = 14 * 24 * 60 * 60 * 1000; // 14 days

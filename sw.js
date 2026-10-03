@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v201';
-const RUNTIME = 'cd-runtime-v199';
+const CACHE = 'cd-v203';
+const RUNTIME = 'cd-runtime-v201';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
 // Popular articles getting evicted after ~5 navigations caused repeat-
@@ -71,7 +71,8 @@ self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys()
       .then((keys) => Promise.all(
-        keys.filter((k) => k !== CACHE && k !== RUNTIME).map((k) => caches.delete(k))
+        keys.filter((k) => /^cd-(?:v|runtime-v)\d+$/.test(k) && k !== CACHE && k !== RUNTIME)
+          .map((k) => caches.delete(k))
       ))
       .then(() => self.clients.claim())
   );
@@ -133,7 +134,8 @@ self.addEventListener('fetch', (e) => {
   // Always bypass /admin so user gets the freshest editor
   if (url.pathname.startsWith('/admin')) return;
   // Bypass the SW reset page so it can talk to the SW directly
-  if (url.pathname === '/reset-sw' || url.pathname === '/reset-sw.html') return;
+  if (url.pathname === '/reset-sw' || url.pathname === '/reset-sw.html' ||
+      url.pathname === '/en/reset-sw' || url.pathname === '/en/reset-sw.html') return;
 
   // Stale-while-revalidate for HTML navigation.
   // 2026-05-24 — switched from network-first to SWR to cut Vercel Edge
