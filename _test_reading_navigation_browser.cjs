@@ -27,16 +27,17 @@ module.exports = async function checkReadingNavigation(browser, {readingSource, 
     {name:'inert', body:'<article class="prose"><h2 id="first">First</h2><h2 id="second">Second</h2><template><h2>Not rendered</h2></template><!-- <h2>Example</h2> --></article>', ids:[]},
   ];
   const results = [];
-  for (const width of [390,800,1440]) {
+  for (const missingIO of [false,true]) for (const width of [390,800,1440]) {
     const context = await browser.newContext({viewport:{width,height:900},serviceWorkers:'block'});
     try {
+      if (missingIO) await context.addInitScript(() => { delete window.IntersectionObserver; });
       await context.route('**/*', route => {
         const url = new URL(route.request().url());
         if (url.origin !== 'https://reading-navigation.test' || route.request().method() !== 'GET') return route.abort();
         if (url.pathname === '/runtime.js') return route.fulfill({contentType:'text/javascript',body:source});
         const fixture = fixtures.find(row => url.pathname === '/' + row.name);
         if (!fixture) return route.fulfill({status:404,body:''});
-        return route.fulfill({contentType:'text/html; charset=utf-8',body:'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Isolated outline</title><style>article{max-width:768px;margin:auto}h2{margin-top:400px}</style></head><body>' + fixture.body + '<footer>End</footer><script src="/runtime.js"></script></body></html>'});
+        return route.fulfill({contentType:'text/html; charset=utf-8',body:'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Isolated outline</title><style>article{max-width:768px;margin:auto}h2{margin-top:400px}</style></head><body>' + fixture.body + '<footer style="min-height:1100px">End</footer><script src="/runtime.js"></script></body></html>'});
       });
       for (const fixture of fixtures) {
         const page = await context.newPage(), errors = [];
@@ -67,12 +68,28 @@ module.exports = async function checkReadingNavigation(browser, {readingSource, 
           await page.evaluate(() => { window.gtag = () => { throw Error('blocked collector'); }; });
           await activateFragmentLink(page,links.first(),fixture.ids[0]);
         }
+        if (width === 1440 && fixture.name === 'root') {
+          const outline = page.locator('#dn-toc-float');
+          // Exercise actual scroll geometry, active-heading updates and footer
+          // hide/restore through the native browser, including the no-IO path.
+          await page.evaluate(() => {
+            const heading = document.getElementById('second');
+            window.scrollTo(0, heading.getBoundingClientRect().top + window.scrollY - innerHeight * 0.4);
+          });
+          if (missingIO) await page.waitForFunction(() => document.querySelector('#dn-toc-float a[data-toc="second"]').style.fontWeight === '700');
+          await page.evaluate(() => window.scrollTo(0, document.querySelector('footer').offsetTop));
+          await page.waitForFunction(() => getComputedStyle(document.getElementById('dn-toc-float')).visibility === 'hidden');
+          assert.equal(await outline.evaluate(node => node.style.pointerEvents), 'none');
+          await page.evaluate(() => window.scrollTo(0, 0));
+          await page.waitForFunction(() => getComputedStyle(document.getElementById('dn-toc-float')).visibility === 'visible');
+          assert.notEqual(await outline.evaluate(node => node.style.pointerEvents), 'none');
+        }
         assert.deepEqual(errors,[],fixture.name + ' reading controls must not throw');
-        results.push({width,fixture:fixture.name,runtime:true});
+        results.push({width,fixture:fixture.name,missingIO,runtime:true});
         await page.close();
       }
     } finally { await context.close(); }
-    if (!generated) continue;
+    if (!generated || missingIO) continue;
     const staticContext = await browser.newContext({viewport:{width,height:900},javaScriptEnabled:false,serviceWorkers:'block'});
     try {
       await staticContext.route('**/*', route => {
@@ -99,6 +116,25 @@ module.exports = async function checkReadingNavigation(browser, {readingSource, 
         await activateFragmentLink(page,links.last(),expected);
         if (route.includes('psoriasis-overview')) assert.deepEqual(await links.evaluateAll(nodes => nodes.map(node => node.dataset.tocInline)),['what-is-psoriasis','six-clinical-subtypes','severity-assessment','triggers','diagnosis','bottom-line']);
         if (route.includes('photodynamic-therapy-overview')) {
+          const ports=page.locator('article .dn-table-scroll');
+          assert.equal(await ports.count(),3,'PDT comparison tables need static scrollports without JavaScript');
+          assert(await page.locator('html').evaluate(el=>el.scrollWidth<=innerWidth),'Tables must not widen the mobile document');
+          assert.deepEqual(await ports.evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-label'))),Array(3).fill('Comparison table; scroll horizontally'));
+          if(width===390){
+            const wide=ports.filter({has:page.locator('table')}).first();
+            await wide.focus();
+            assert(await wide.evaluate(el=>el.scrollWidth>el.clientWidth),'The full comparison remains available inside its scrollport');
+            await wide.press('ArrowRight');
+            // In a no-JS page, an animation-frame poll can stall after native
+            // scrolling. Observe from the test process while preserving the
+            // actual keyboard event and focused scrollport requirement.
+            const deadline=Date.now()+5000;
+            while(!await wide.evaluate(el=>el===document.activeElement&&el.scrollLeft>0)){
+              assert(Date.now()<deadline,'ArrowRight must scroll the focused comparison table');
+              await new Promise(resolve=>setTimeout(resolve,50));
+            }
+          }
+
           const fragments = await links.evaluateAll(nodes => nodes.map(node => node.dataset.tocInline));
           assert.equal(fragments[0],'why-does-dermatology-use-light-a-brief-1','The reproduced PDT page must retain its previous English fragment');
           const sourceMap = JSON.parse(await page.locator('[data-dn-zh-fragments]').getAttribute('data-dn-zh-fragments'));
@@ -111,7 +147,7 @@ module.exports = async function checkReadingNavigation(browser, {readingSource, 
     } finally { await staticContext.close(); }
   }
   if (generated) results.push(...await checkLanguageFragments(browser));
-  return {cases:results.length,results};
+  return {cases:results.length,results,topicEntries:generated ? await checkPublishedTopicEntry(browser) : {cases:0,results:[]}};
 };
 
 async function checkLanguageFragments(browser) {
@@ -191,3 +227,45 @@ async function checkLanguageFragments(browser) {
 }
 
 module.exports.checkLanguageFragments = checkLanguageFragments;
+
+async function checkPublishedTopicEntry(browser) {
+  const origin = 'https://published-topic-entry.test', results = [];
+  for (const width of [390,800,1440]) for (const javaScriptEnabled of [true,false]) {
+    const context = await browser.newContext({viewport:{width,height:900},javaScriptEnabled,serviceWorkers:'block'});
+    try {
+      await context.route('**/*', route => {
+        const url = new URL(route.request().url());
+        if (url.origin !== origin || route.request().method() !== 'GET') return route.abort();
+        if (url.pathname === '/api/admin/popular-picks') return route.fulfill({contentType:'application/json',body:JSON.stringify({picks:[],fallback:true})});
+        const root = process.cwd();
+        let file = path.resolve(root, '.' + url.pathname);
+        if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file,'index.html');
+        else if (!path.extname(file)) file += '.html';
+        if (!file.startsWith(root + path.sep) || !fs.existsSync(file) || !fs.statSync(file).isFile()) return route.fulfill({status:404,body:''});
+        const types = {'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.woff2':'font/woff2'};
+        return route.fulfill({contentType:types[path.extname(file)] || 'application/octet-stream',body:fs.readFileSync(file)});
+      });
+      for (const locale of ['zh','en']) {
+        const page = await context.newPage(), errors = [];
+        page.on('pageerror', error => errors.push(error.message));
+        const prefix = locale === 'en' ? '/en' : '';
+        await page.goto(origin + prefix + '/blog/topics');
+        if (javaScriptEnabled) await page.waitForFunction(() => typeof window.DN === 'object');
+        const pathname = prefix + '/blog/topical-steroids-guide';
+        const link = page.locator('main a[href="' + pathname + '"]');
+        assert.equal(await link.count(),1,'A published guide needs one visible topic entry');
+        assert.ok(await link.isVisible(),'A published guide must not remain hidden as coming soon');
+        assert.equal(await link.textContent(),locale === 'en' ? 'Topical steroid full-use guide' : '類固醇藥膏完整使用指南','Preserve the existing authored guide name');
+        assert.equal(await page.locator('a[data-en="Topical steroid full-use guide (coming)"]').count(),0);
+        await link.focus();
+        await Promise.all([page.waitForURL(url => url.pathname === pathname,{waitUntil:'load'}),page.keyboard.press('Enter')]);
+        assert.equal(new URL(page.url()).pathname,pathname,'The focused topic link must open its published article');
+        assert.equal(await page.locator('main h1').count(),1,'The native route must render the actual published guide header');
+        assert.deepEqual(errors,[],'Topic navigation must work without runtime exceptions');
+        results.push({width,javaScriptEnabled,locale,publishedTopicEntry:true,nativeKeyboardNavigation:true});
+        await page.close();
+      }
+    } finally { await context.close(); }
+  }
+  return {cases:results.length,results};
+}

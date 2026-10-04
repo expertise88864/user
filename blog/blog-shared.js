@@ -232,7 +232,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202610040249';
+        s.src = '/blog/blog-article-visuals.min.js?v=202610050441';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -277,8 +277,11 @@
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.id = 'dn-totop';
-    btn.setAttribute('aria-label', 'Scroll to top');
-    btn.title = '回到頂端';
+    btn.setAttribute('data-zh-aria-label', '回到頂端');
+    btn.setAttribute('data-en-aria-label', 'Scroll to top');
+    btn.setAttribute('data-zh-title', '回到頂端');
+    btn.setAttribute('data-en-title', 'Scroll to top');
+    DN.applyTextOnly(DN.detectLang(), btn);
     btn.innerHTML = '↑';
     // Position adapts:
     //   - desktop article: font-sizer at bottom:24px (~130px tall) → totop at 182px above
@@ -380,6 +383,12 @@
       return /^[a-z0-9-]+$/.test(slug) ? slug : '';
     }
 
+    function normalizeSearch(value) {
+      var text = String(value || '');
+      if (text.normalize) text = text.normalize('NFKC');
+      return text.toLowerCase().replace(/\s+/g, ' ').trim();
+    }
+
     function buildIndex() {
       var idx = [];
       // From DN.ARTICLES
@@ -391,7 +400,7 @@
           title: (isEn ? a.title_en : a.title) || a.title || a.slug,
           meta: ((isEn ? a.tag_en : a.tag) || a.tag || '') + ' · ' + (a.date || ''),
           url: (isEn ? '/en/blog/' : '/blog/') + slug,
-          search: ((a.title || '') + ' ' + (a.title_en || '') + ' ' + (a.tag || '') + ' ' + (a.tag_en || '') + ' ' + slug).toLowerCase()
+          search: normalizeSearch((a.title || '') + ' ' + (a.title_en || '') + ' ' + (a.tag || '') + ' ' + (a.tag_en || '') + ' ' + slug)
         });
       });
       // Tools / glossary / about / dashboard quick-jumps
@@ -400,14 +409,14 @@
         { title: '醫學詞彙白話字典', meta: 'Glossary', url: '/glossary', search: 'glossary 詞彙 字典 名詞' },
         { title: '主題地圖', meta: 'Topic Map', url: '/blog/topics', search: 'topics 主題 地圖' },
         { title: '關於作者', meta: 'About', url: '/about', search: 'about 作者 陳翊嘉' },
-        { title: '衛教文章索引', meta: 'Articles', url: '/blog/', search: 'blog articles 文章 索引' },
+        { title: '衛教文章索引', meta: 'Articles', url: '/blog', search: 'blog articles 文章 索引' },
       ].forEach(function (it, i) {
         if (isEn) {
           it.title = ['Clinical calculators', 'Medical glossary', 'Topic map', 'About the author', 'Patient education articles'][i];
           it.meta = '';
           it.url = '/en' + it.url;
         }
-        it.search += ' ' + it.title.toLowerCase();
+        it.search = normalizeSearch(it.search + ' ' + it.title);
         idx.push(it);
       });
       return idx;
@@ -436,7 +445,7 @@
             var e = bySlug[slug];
             if (e) {
               var extra = ' ' + (e.h || []).join(' ') + ' ' + (e.snippet || '');
-              it.search = (it.search + extra).toLowerCase();
+              it.search = normalizeSearch(it.search + extra);
               if (!isEn && e.snippet && !it.meta.includes('—')) it.meta = it.meta + ' — ' + e.snippet.slice(0, 50);
             }
           });
@@ -503,13 +512,13 @@
       results.innerHTML = '<div id="dn-cmdk-empty">' + (isEn ? 'Searching…' : '搜尋中…') + '</div>';
       // PAGEFIND.search is async; show "searching" placeholder, then update
       Promise.resolve().then(function () { return PAGEFIND.search(q); }).then(function (res) {
-        if (epoch !== searchEpoch || !overlay.classList.contains('open') || input.value.toLowerCase().trim() !== q) return;
+        if (epoch !== searchEpoch || !overlay.classList.contains('open') || normalizeSearch(input.value) !== q) return;
         return Promise.all(res.results.slice(0, 10).map(function (r) { return r.data(); })).then(function (datas) {
           // CODE_REVIEW Phase 5 — re-check freshness AFTER the r.data() batch
           // resolves, not just after PAGEFIND.search(). A slower earlier query
           // could otherwise land its data() here and clobber a newer query's
           // results. (blog/pagefind-search.js already re-checks at both stages.)
-          if (epoch !== searchEpoch || !overlay.classList.contains('open') || input.value.toLowerCase().trim() !== q) return;
+          if (epoch !== searchEpoch || !overlay.classList.contains('open') || normalizeSearch(input.value) !== q) return;
           var matches = datas.map(function (d) {
             // Drop the URL query/hash; show title + excerpt as meta
             var clean = d.url.split('?')[0].split('#')[0];
@@ -534,22 +543,29 @@
           }).join('');
         });
       }).catch(function () {
-        if (epoch === searchEpoch && overlay.classList.contains('open') && input.value.toLowerCase().trim() === q) render(q, true);
+        if (epoch === searchEpoch && overlay.classList.contains('open') && normalizeSearch(input.value) === q) render(q, true);
       });
       return true;
     }
 
     function render(q, fallbackOnly) {
-      q = (q || '').toLowerCase().trim();
+      q = normalizeSearch(q);
       var epoch = ++searchEpoch;
       // Prefer pagefind once it's loaded; failures use the local catalog.
       if (q && !fallbackOnly && renderPagefind(q, epoch)) return;
       var matches;
+      var words = q.split(' ');
       if (!q) {
         matches = INDEX.slice(0, 8);
       } else {
         matches = INDEX
-          .map(function (it) { return { it: it, s: it.search.indexOf(q) >= 0 ? (it.search.indexOf(q) === 0 ? 100 : 50) : (q.split('').every(function (c) { return it.search.indexOf(c) >= 0; }) ? 1 : 0) }; })
+          .map(function (it) {
+            var exact = it.search.indexOf(q);
+            var score = exact >= 0 ? (exact === 0 ? 100 : 50) :
+              words.every(function (word) { return it.search.indexOf(word) >= 0; }) ? 40 :
+              words.length === 1 && q.split('').every(function (c) { return it.search.indexOf(c) >= 0; }) ? 1 : 0;
+            return { it: it, s: score };
+          })
           .filter(function (x) { return x.s > 0; })
           .sort(function (x, y) { return y.s - x.s; })
           .slice(0, 10)
@@ -806,7 +822,8 @@
       const toast = document.createElement('div');
       toast.id = 'dn-sw-toast';
       toast.style.cssText = 'position:fixed;left:50%;bottom:max(24px,env(safe-area-inset-bottom));transform:translateX(-50%);background:#0c5159;color:#fff;padding:10px 16px 10px 18px;border-radius:9999px;display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;z-index:60;box-shadow:0 12px 28px -8px rgba(12,81,89,.55);max-width:calc(100vw - 24px);';
-      toast.innerHTML = '<span>網站已更新 — </span><button type="button" style="background:#fff;color:#4d6358;border:none;padding:5px 12px;border-radius:9999px;font-weight:700;font-size:12px;cursor:pointer">重新載入</button>';
+      toast.innerHTML = '<span data-zh="網站已更新 — " data-en="Website updated — ">網站已更新 — </span><button data-zh="重新載入" data-en="Reload" type="button" style="background:#fff;color:#4d6358;border:none;padding:5px 12px;border-radius:9999px;font-weight:700;font-size:12px;cursor:pointer">重新載入</button>';
+      DN.applyTextOnly(DN.detectLang(), toast);
       toast.querySelector('button').addEventListener('click', function () {
         if (registration.waiting) registration.waiting.postMessage({ type: 'SKIP_WAITING' });
         location.reload();
@@ -1116,7 +1133,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202610040249';
+        s.src = '/blog/blog-article-reading.min.js?v=202610050441';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1152,7 +1169,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202610040249';
+        s.src = '/blog/blog-article-footer.min.js?v=202610050441';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1182,7 +1199,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202610040249';
+        s.src = '/blog/blog-calculators.min.js?v=202610050441';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1193,6 +1210,59 @@
       });
     }
     return DN._calculatorBundleLoading;
+  };
+
+  // A calculator may arrive after native fragment navigation has already run.
+  // Align only that requested late block, while the reader has not interacted.
+  DN.prepareRequestedCalculatorScroll = function () {
+    var fragment = location.hash || '';
+    var noop = function () {};
+    if (!/^#dn-[a-z0-9-]+$/.test(fragment) || (window.scrollY || 0) !== 0 ||
+        document.getElementById(fragment.slice(1))) return noop;
+    var done = false, mounted = false, framePending = false, observer = null, expiry = null;
+    var signals = ['wheel', 'touchmove', 'keydown', 'pointerdown', 'hashchange', 'pagehide'];
+    function cancel() {
+      if (done) return;
+      done = true;
+      signals.forEach(function (name) { window.removeEventListener(name, cancel); });
+      window.removeEventListener('scroll', schedule);
+      if (observer) observer.disconnect();
+      if (expiry !== null) window.clearTimeout(expiry);
+    }
+    function align() {
+      framePending = false;
+      if (done) return;
+      var target = document.getElementById(fragment.slice(1));
+      if (location.hash !== fragment || !target || !target.classList.contains('dn-calc') ||
+          document.visibilityState === 'hidden') { cancel(); return; }
+      var rect = target.getBoundingClientRect();
+      if (Math.abs(rect.top - 80) > 1) {
+        window.scrollTo({ top: Math.max(0, rect.top + (window.scrollY || 0) - 80), behavior: 'instant' });
+      }
+    }
+    function schedule() {
+      if (done || !mounted || framePending) return;
+      framePending = true;
+      if (typeof window.requestAnimationFrame === 'function') {
+        window.requestAnimationFrame(function () { window.requestAnimationFrame(align); });
+      } else { align(); }
+    }
+    signals.forEach(function (name) { window.addEventListener(name, cancel, { passive: true }); });
+    return function finish(success) {
+      if (done || mounted) return;
+      if (!success) { cancel(); return; }
+      mounted = true;
+      // Native anchor scrolling and deferred layout can both follow insertion.
+      // Observe only this initial destination, with a hard lifetime and input
+      // cancellation; ordinary reading/history positions never enter here.
+      window.addEventListener('scroll', schedule, { passive: true });
+      if (typeof window.ResizeObserver === 'function' && document.body) {
+        observer = new window.ResizeObserver(schedule);
+        observer.observe(document.body);
+      }
+      expiry = window.setTimeout(cancel, 2000);
+      schedule();
+    };
   };
 
   DN.injectCalculatorByName = function (name) {
@@ -1251,7 +1321,7 @@
   };
 
   DN.articleUrlForRuntime = function (slug) {
-    return '/blog/' + slug + (DN.isLocalStaticHost() ? '.html' : '');
+    return (DN.detectLang() === 'en' ? '/en/blog/' : '/blog/') + slug + (DN.isLocalStaticHost() ? '.html' : '');
   };
 
   // I11 — Tell the SW to precache N popular + recent articles when idle.
@@ -1287,7 +1357,16 @@
   // G2 — Refresh DN.POPULAR_PICKS from /api/admin/popular-picks (KV-backed).
   // Allows admin to change the curated list without a redeploy.
   // Falls back silently to the hard-coded list above if KV is empty or fetch fails.
+  // A deferred refresh can run while a native navigation discards its
+  // document. Skip that work, and permit it again after a pageshow/BFCache
+  // return. Keep the curated fallback and never mutate an inactive page.
+  var popularPicksPageInactive = false;
+  if (typeof window.addEventListener === 'function') {
+    window.addEventListener('pagehide', function () { popularPicksPageInactive = true; });
+    window.addEventListener('pageshow', function () { popularPicksPageInactive = false; });
+  }
   DN.refreshPopularPicks = function () {
+    if (popularPicksPageInactive) return Promise.resolve();
     if (!('fetch' in window)) return Promise.resolve();
     if (DN.isLocalStaticHost()) return Promise.resolve();
     // CODE_REVIEW 2026-05-31 - dropped { cache: 'no-cache' }. Runs on every
@@ -1295,9 +1374,12 @@
     // hit the edge fn + Upstash KV per page view. Endpoint already sets
     // s-maxage=60, stale-while-revalidate=300, so a plain fetch lets the CDN
     // serve it ~60s across visitors. Admin writes are a POST (not CDN-cached).
-    return fetch('/api/admin/popular-picks')
-      .then(function (r) { return r.ok ? r.json() : null; })
+    var request;
+    try { request = fetch('/api/admin/popular-picks'); }
+    catch (_) { return Promise.resolve(); }
+    return request.then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
+        if (popularPicksPageInactive) return;
         if (data && Array.isArray(data.picks) && data.picks.length) {
           DN.POPULAR_PICKS = data.picks;
           // Re-render spotlight if already on a page that has it.
@@ -1322,7 +1404,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202610040249';
+        s.src = '/blog/blog-hub.min.js?v=202610050441';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1354,7 +1436,7 @@
     if (!DN._supportBundleLoading) {
       DN._supportBundleLoading = new Promise(function (resolve, reject) {
         var script = document.createElement('script');
-        script.src = '/blog/blog-support.min.js?v=202610040249';
+        script.src = '/blog/blog-support.min.js?v=202610050441';
         script.onload = function () {
           if (typeof DN.injectSupportUI === 'function') resolve();
           else reject(new Error('Support bundle unavailable'));
@@ -1405,7 +1487,7 @@
         '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>' +
         '<span data-zh="首頁" data-en="Home">' + (isEn ? 'Home' : '首頁') + '</span>' +
       '</a>' +
-      '<a href="' + prefix + '/blog/" ' +
+      '<a href="' + prefix + '/blog" ' +
         'style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 4px;text-decoration:none;color:#4d6358;font-size:11px;font-weight:700;border-right:1px solid var(--border, #dcd5c8)" ' +
         'data-cta="latest" aria-label="' + (isEn ? 'Latest articles' : '最新文章') + '">' +
         '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>' +
@@ -1489,24 +1571,6 @@
     }
     // (Removed for compliance) Booking-related CTA tracking — site no longer
     // includes any booking, appointment, or hospital-affiliation links.
-    // Email clicks
-    document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
-      a.addEventListener('click', function () {
-        fire('email_click', { email: 'expertise88864', page_path: location.pathname });
-      });
-    });
-    // Newsletter subscribe (data-subscribe-link)
-    document.querySelectorAll('[data-subscribe-link]').forEach(function (a) {
-      a.addEventListener('click', function () {
-        fire('newsletter_subscribe_click', { method: 'mailto', page_path: location.pathname });
-      });
-    });
-    // RSS link click
-    document.querySelectorAll('a[href$="/feed.xml"], a[href$="/atom.xml"]').forEach(function (a) {
-      a.addEventListener('click', function () {
-        fire('rss_subscribe_click', { feed: a.getAttribute('href'), page_path: location.pathname });
-      });
-    });
     // Language and article navigation use the loader's single delegated
     // language_toggle / select_content contract, including English mirrors.
     // Outbound links exclude query strings and fragments. Internal article
@@ -1519,6 +1583,14 @@
       var a = target.closest('a[href]');
       if (!a) return;
       var href = a.getAttribute('href') || '';
+      // Delegation covers the feedback/subscription links inserted after boot.
+      if (href.indexOf('mailto:') === 0) fire('email_click', { page_path: location.pathname });
+      if (a.hasAttribute && a.hasAttribute('data-subscribe-link')) {
+        fire('newsletter_subscribe_click', { method: 'mailto', page_path: location.pathname });
+      }
+      if (/\/(feed|atom)\.xml$/.test(href)) {
+        fire('rss_subscribe_click', { feed: href, page_path: location.pathname });
+      }
       if (!/^https?:\/\//i.test(href)) return;  // relative / mailto / tel
       try {
         var u = new URL(href, location.href);
@@ -1555,9 +1627,8 @@
     // PerformanceObserver code with:
     //   • bfcache restore handling (re-fires with new metric id)
     //   • Cross-browser parity (Chromium / Firefox / Safari)
-    //   • `.attribution` debug data — WHICH element caused poor LCP,
-    //     which interactionTarget caused INP, which layout-shift source
-    //     caused CLS. Turns GA4 into actionable diagnostics.
+    //   • `.attribution` timing breakdowns for local diagnostics.
+    //     Third-party events omit DOM selectors and resource URLs.
     //   • Standardized algorithm matching the CrUX dataset.
     var lib = window.webVitals;
     if (!lib) {
@@ -1581,18 +1652,14 @@
           navigation_type: metric.navigationType,
           non_interaction: true,
         };
-        // Per-metric attribution. Bounded ≤100 chars per GA4 param limit.
-        if (metric.name === 'LCP' && attr.element) {
-          params.lcp_element = String(attr.element).slice(0, 100);
-          params.lcp_url = (attr.url || '').slice(0, 100);
+        // Send timing/count diagnostics only; DOM selectors and resource URLs stay local.
+        if (metric.name === 'LCP') {
           params.lcp_ttfb = Math.round(attr.timeToFirstByte || 0);
           params.lcp_render_delay = Math.round(attr.elementRenderDelay || 0);
-        } else if (metric.name === 'CLS' && attr.largestShiftTarget) {
-          params.cls_target = String(attr.largestShiftTarget).slice(0, 100);
+        } else if (metric.name === 'CLS') {
           params.cls_time = Math.round(attr.largestShiftTime || 0);
-        } else if (metric.name === 'INP' && attr.interactionTarget) {
-          params.inp_target = String(attr.interactionTarget).slice(0, 100);
-          params.inp_type = attr.interactionType || '';
+        } else if (metric.name === 'INP') {
+          if (['pointer','keyboard'].indexOf(attr.interactionType) !== -1) params.inp_type = attr.interactionType;
           params.inp_input_delay = Math.round(attr.inputDelay || 0);
           params.inp_processing = Math.round(attr.processingDuration || 0);
           params.inp_presentation = Math.round(attr.presentationDelay || 0);
@@ -1824,13 +1891,15 @@
       // so articles without calculators don't pay for the bundle. ~30
       // articles saved ~57 KB each before this change.
       if (DN.CALC_SLUGS && DN.CALC_SLUGS.indexOf(DN.currentSlug && DN.currentSlug()) !== -1) {
+        var finishCalculatorScroll = DN.prepareRequestedCalculatorScroll();
         idle(function () {
           DN.ensureCalculatorBundle().then(function () {
             if (typeof DN.autoInjectCalculators === 'function') {
               DN.autoInjectCalculators(DN.currentSlug());
             }
             try { DN.applyTextOnly(curLang); } catch (e) {}
-          }).catch(function () {});
+            finishCalculatorScroll(true);
+          }).catch(function () { finishCalculatorScroll(false); });
         }, { timeout: 1800 });
       }
       // 2026-05-07 — yellow article-footer tip card disabled per user.

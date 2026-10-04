@@ -20,6 +20,38 @@ import _check_bilingual_attrs as bilingual
 
 
 class FragmentTests(unittest.TestCase):
+    def test_english_audit_resolves_clean_directory_and_explicit_html_links(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for rel in ('index.html', 'blog/index.html', 'blog/example.html', 'about.html',
+                        'en/index.html', 'en/blog/index.html', 'en/blog/example.html', 'en/about.html',
+                        'admin.html', 'private/index.html'):
+                target = root / rel
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text('<h1 id="article">Fixture</h1>', encoding='utf8')
+            with patch.object(en_links, 'ROOT', root), patch.object(en_links, 'EN_ROOT', root / 'en'):
+                for route, expected in [('/blog', 'blog/index.html'),
+                                        ('/blog?x=1#article', 'blog/index.html'),
+                                        ('/blog/', 'blog/index.html'),
+                                        ('/blog/index.html', 'blog/index.html'),
+                                        ('/blog/example.html', 'blog/example.html'),
+                                        ('/about', 'about.html')]:
+                    with self.subTest(route=route):
+                        self.assertEqual(en_links.local_html_for_path(route), root / expected)
+                        self.assertTrue(en_links.en_mirror_expected(route))
+                self.assertFalse(en_links.en_mirror_expected('/admin'))
+                self.assertFalse(en_links.en_mirror_expected('/private'))
+                self.assertIsNone(en_links.local_html_for_path('/missing.html'))
+
+                with patch.object(links, 'ROOT', root), \
+                        patch.object(links, 'calculator_anchors', return_value={}):
+                    for href, expected in [('/blog', 1), ('/blog?x=1#article', 1),
+                                           ('/blog/index.html', 1), ('/blog/example.html', 1),
+                                           ('/en/blog', 0), ('/en/blog/example', 0), ('/admin', 0)]:
+                        with self.subTest(href=href), contextlib.redirect_stdout(io.StringIO()):
+                            (root / 'en/about.html').write_text(f'<a href="{href}">Fixture</a>', encoding='utf8')
+                            self.assertEqual(en_links.main(), expected)
+
     def test_chinese_return_control_is_bound_to_its_source_page(self):
         for rel, href in [('en/index.html', '/'), ('en/blog/index.html', '/blog'),
                           ('en/blog/example.html', '/blog/example'), ('en/tools.html', '/tools')]:

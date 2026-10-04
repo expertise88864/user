@@ -29,11 +29,12 @@ function isProductionOrigin(){
 function getTrafficType(){
   // Allow flagging via ?ga_internal=1 (sticks via localStorage)
   try {
-    if (location.search.indexOf('ga_internal=1') !== -1) {
+    var internalFlag = new URL(location.href).searchParams.get('ga_internal');
+    if (internalFlag === '1') {
       localStorage.setItem('dn-ga-internal', '1');
       return 'internal';
     }
-    if (location.search.indexOf('ga_internal=0') !== -1) {
+    if (internalFlag === '0') {
       localStorage.removeItem('dn-ga-internal');
     }
     if (localStorage.getItem('dn-ga-internal') === '1') return 'internal';
@@ -60,7 +61,7 @@ function safeParams(params) {
   var safe = {};
   Object.keys(params || {}).forEach(function (key) {
     // Free-form medical searches and URL query/fragment values are private.
-    if (/search_term|search_query|query|email/i.test(key)) return;
+    if (/search_term|search_query|query|email/i.test(key) || /^(lcp_element|lcp_url|cls_target|inp_target)$/.test(key)) return;
     var value = params[key];
     if (typeof value === 'string') {
       if (/url|destination|item_id|page_location|page_referrer|feed|lcp_url/.test(key)) {
@@ -101,10 +102,9 @@ function load() {
   ad.crossOrigin = "anonymous";
   document.head.appendChild(ad);
   */
-  // Clarity
-  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wkvhe0mf7y");
+  // Session replay is disabled under the search/PII exclusion policy.
+  // DOM masking does not protect all page/referrer/clicked URL values.
+  // Public content performance remains measured by sanitized GA events below.
   // GA4
   var ga = document.createElement("script");
   ga.async = true;

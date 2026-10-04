@@ -169,3 +169,32 @@ test('original source approval cannot authorize generated patient delivery', asy
   await verifySourceIntent(sha, f.api, now);
   await assert.rejects(require('./_cms_delivery.cjs').verifyLiveIntent(sha, f.api, now), /Final generated patient content approval/);
 });
+
+test('patient workspace validates empty and legitimate unpublish receipts without patient outputs', async () => {
+  const { verifyWorkspace } = require('./_cms_patient_review.cjs');
+  for (const empty of [true, false]) {
+    const f = fixture({ empty });
+    if (!empty) { f.proof.action = 'unpublish'; f.setProof(); }
+    assert.deepEqual(await verifyWorkspace(process.cwd(), sha, f.api, now, { preview: true }),
+      { patientPackages: 0, outputFilesVerified: 0, published: false });
+  }
+});
+
+test('patient workspace cannot skip malformed, duplicate or excessive unpublish receipts', async () => {
+  const { verifyWorkspace } = require('./_cms_patient_review.cjs');
+  for (const kind of ['missing', 'repository', 'future', 'duplicate', 'excessive']) {
+    const f = fixture(); f.proof.action = 'unpublish';
+    if (kind === 'missing') f.value.requests = [{ action: 'unpublish' }];
+    if (kind === 'repository') f.proof.repository = 'other/repository';
+    if (kind === 'future') f.proof.requestedAt = '2030-01-01T00:00:00.000Z';
+    if (kind === 'duplicate') f.value.requests.push({ ...f.proof });
+    if (kind === 'excessive') f.value.requests = Array.from({ length: 21 }, (_, index) => {
+      const file = 'blog/article-' + index + '.html';
+      return { ...f.proof, file, sourceSha256: { [file]: 'a'.repeat(64) } };
+    });
+    f.setProof();
+    for (const preview of [true, false]) {
+      await assert.rejects(verifyWorkspace(process.cwd(), sha, f.api, now, { preview }), undefined, kind);
+    }
+  }
+});

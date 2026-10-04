@@ -27,6 +27,8 @@ import re
 import sys
 from pathlib import Path
 
+from _gen_csp_hashes import LOCAL_AUDIT_DIRS
+
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parent
@@ -51,6 +53,8 @@ def check_robots_serp_directives() -> None:
     skip_dirs = {".git", "node_modules", "pagefind", "admin"}
     bad = 0
     for fp in sorted(ROOT.rglob("*.html")):
+        if fp.relative_to(ROOT).parts[0] in LOCAL_AUDIT_DIRS:
+            continue
         parts = fp.relative_to(ROOT).parts
         if any(p in skip_dirs for p in parts):
             continue
@@ -235,6 +239,8 @@ def check_canonical_coverage() -> None:
     bad = 0
     total = 0
     for fp in sorted(ROOT.rglob("*.html")):
+        if fp.relative_to(ROOT).parts[0] in LOCAL_AUDIT_DIRS:
+            continue
         parts = fp.relative_to(ROOT).parts
         if any(p in skip_dirs for p in parts):
             continue
@@ -521,6 +527,8 @@ def check_no_mojibake_in_data_attrs() -> None:
         re.IGNORECASE,
     )
     for fp in sorted(ROOT.rglob("*.html")):
+        if fp.relative_to(ROOT).parts[0] in LOCAL_AUDIT_DIRS:
+            continue
         parts = fp.relative_to(ROOT).parts
         if any(p in skip_dirs for p in parts):
             continue
@@ -756,6 +764,8 @@ def check_no_ad_placeholder_text() -> None:
     )
     bad = 0
     for fp in sorted(ROOT.rglob("*.html")):
+        if fp.relative_to(ROOT).parts[0] in LOCAL_AUDIT_DIRS:
+            continue
         rel = fp.relative_to(ROOT).as_posix()
         if any(part in {".git", "node_modules", "pagefind"} for part in fp.relative_to(ROOT).parts):
             continue

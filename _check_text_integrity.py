@@ -8,6 +8,8 @@ import re
 import sys
 from pathlib import Path
 
+from _gen_csp_hashes import LOCAL_AUDIT_DIRS
+
 
 ROOT = Path(__file__).resolve().parent
 SKIP_DIRS = {".git", ".github", "node_modules", "__pycache__", ".lighthouseci"}
@@ -52,6 +54,8 @@ QUESTION_MARK_TITLE_SEPARATOR_RE = re.compile(
 def iter_files() -> list[Path]:
     paths: list[Path] = []
     for path in ROOT.rglob("*"):
+        if path.relative_to(ROOT).parts[0] in LOCAL_AUDIT_DIRS:
+            continue
         if not path.is_file():
             continue
         if any(part in SKIP_DIRS for part in path.relative_to(ROOT).parts):

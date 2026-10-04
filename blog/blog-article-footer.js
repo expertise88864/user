@@ -139,7 +139,8 @@
   DN.addShareToolbar = function () {
     const article = document.querySelector('article.max-w-3xl');
     if (!article || document.getElementById('dn-share')) return;
-    const url = encodeURIComponent(location.href);
+    const shareUrl = location.origin + location.pathname;
+    const url = encodeURIComponent(shareUrl);
     const title = encodeURIComponent(document.title);
 
     const sec = document.createElement('section');
@@ -168,7 +169,7 @@
     const copyBtn = sec.querySelector('#dn-copy');
     if (copyBtn) {
       copyBtn.addEventListener('click', function () {
-        navigator.clipboard.writeText(location.href).then(function () {
+        navigator.clipboard.writeText(shareUrl).then(function () {
           const orig = copyBtn.textContent;
           copyBtn.textContent = '✓ 已複製';
           setTimeout(function () { copyBtn.textContent = orig; }, 1800);
@@ -179,7 +180,7 @@
     const ns = sec.querySelector('#dn-native-share');
     if (ns) {
       ns.addEventListener('click', function () {
-        navigator.share({ title: document.title, url: location.href }).catch(function () {});
+        navigator.share({ title: document.title, url: shareUrl }).catch(function () {});
       });
     }
   };
@@ -474,7 +475,7 @@
       '醫師您好，\n\n' +
       '我想針對下列文章提供回饋：\n' +
       '文章： ' + pageTitle + '\n' +
-      '網址： ' + location.href + '\n\n' +
+      '網址： ' + (location.origin + location.pathname) + '\n\n' +
       '回饋內容（請填寫）:\n' +
       '□ 內容更正建議\n' +
       '□ 引用爭議\n' +

@@ -15,6 +15,7 @@ if hasattr(sys.stdout, "reconfigure"):
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 from _html_scan import attributes, blank_script_style, iter_tags, mask_comments  # noqa: E402
+from _gen_csp_hashes import LOCAL_AUDIT_DIRS  # noqa: E402
 
 SKIP_DIRS = {".git", "node_modules", ".next", "out", "dist"}
 
@@ -35,6 +36,8 @@ PRELOAD_BLOG_SHARED_RE = re.compile(r'<link\s+rel="(?:modulepreload|preload)"(?:
 def iter_html_files() -> list[Path]:
     files: list[Path] = []
     for path in ROOT.rglob("*.html"):
+        if path.relative_to(ROOT).parts[0] in LOCAL_AUDIT_DIRS:
+            continue
         if any(part in SKIP_DIRS for part in path.relative_to(ROOT).parts):
             continue
         files.append(path)

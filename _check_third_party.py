@@ -38,6 +38,7 @@ import sys
 import urllib.parse
 from pathlib import Path
 from _normalize_css_links import ASSET_VERSION
+from _gen_csp_hashes import LOCAL_AUDIT_DIRS
 
 
 ROOT = Path(__file__).resolve().parent
@@ -337,6 +338,8 @@ def resolve_href(page_rel: str, href: str) -> str:
 def iter_html() -> list[Path]:
     out: list[Path] = []
     for path in sorted(ROOT.rglob("*.html")):
+        if path.relative_to(ROOT).parts[0] in LOCAL_AUDIT_DIRS:
+            continue
         if any(part in SKIP_DIRS for part in path.relative_to(ROOT).parts):
             continue
         out.append(path)
@@ -352,6 +355,8 @@ def find_tracker_files() -> dict[str, set[str]]:
     hits: dict[str, set[str]] = {}
     for path in sorted(ROOT.rglob("*.js")):
         parts = path.relative_to(ROOT).parts
+        if parts[0] in LOCAL_AUDIT_DIRS:
+            continue
         if any(part in SKIP_DIRS for part in parts):
             continue
         # decode_page() here too, not just on the HTML side: a tracker URL
@@ -542,6 +547,8 @@ def main() -> int:
     # below would never see that page.
     for js in sorted(ROOT.rglob("*.js")):
         parts = js.relative_to(ROOT).parts
+        if parts[0] in LOCAL_AUDIT_DIRS:
+            continue
         if any(part in SKIP_DIRS for part in parts):
             continue
         rel_js = js.relative_to(ROOT).as_posix()

@@ -9,6 +9,8 @@ module.exports = async function testRecoveryPages(browser) {
   const origin = 'https://recovery-pages.invalid';
   const types = {'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8',
     '.js':'application/javascript; charset=utf-8','.svg':'image/svg+xml','.png':'image/png'};
+  const recoveryRoutes = {'/404':'404.html','/offline':'offline.html',
+    '/en/missing-recovery-fixture':'404.html','/en/blog/unvisited-recovery-fixture':'offline.html'};
   let cases = 0;
   for (const width of [390, 800, 1440]) {
     const context = await browser.newContext({viewport:{width,height:900},serviceWorkers:'block'});
@@ -17,8 +19,8 @@ module.exports = async function testRecoveryPages(browser) {
         const request = route.request(), url = new URL(request.url());
         if (url.origin !== origin || request.method() !== 'GET') {await route.abort();return;}
         const rel = decodeURIComponent(url.pathname).replace(/^\/+/, '');
-        if (!['404','offline'].includes(rel) && !rel.startsWith('assets/')) {await route.abort();return;}
-        const file = path.resolve(root, ['404','offline'].includes(rel) ? rel+'.html' : rel);
+        if (!recoveryRoutes[url.pathname] && !rel.startsWith('assets/')) {await route.abort();return;}
+        const file = path.resolve(root, recoveryRoutes[url.pathname] || rel);
         const fromRoot = path.relative(root,file);
         if (fromRoot.startsWith('..') || path.isAbsolute(fromRoot) || !fs.existsSync(file) || !fs.statSync(file).isFile()) {
           await route.abort();return;
@@ -26,8 +28,17 @@ module.exports = async function testRecoveryPages(browser) {
         await route.fulfill({status:200,contentType:types[path.extname(file)]||'application/octet-stream',body:fs.readFileSync(file)});
       });
       const page = await context.newPage();
-      for (const utility of ['404','offline']) {
-        await page.goto(origin+'/'+utility,{waitUntil:'load'});
+      for (const utility of ['404','offline']) for (const locale of ['zh','en']) {
+        const route = locale==='zh' ? '/'+utility : utility==='404' ? '/en/missing-recovery-fixture' : '/en/blog/unvisited-recovery-fixture';
+        const prefix = locale==='en' ? '/en' : '';
+        // Saved preferences cannot turn a Chinese URL into English or vice versa.
+        await context.addCookies([{name:'dn_lang',value:locale==='en'?'zh':'en',url:origin}]);
+        await page.goto(origin+route,{waitUntil:'load'});
+        assert.equal(await page.locator('html').getAttribute('lang'),locale==='en'?'en':'zh-Hant-TW');
+        assert.equal(await page.locator('.skip-to-main').textContent(),locale==='en'?'Skip to main content':'跳至主要內容');
+        assert.equal(await page.title(),(utility==='404' ? locale==='en'?'Page not found':'找不到頁面' : locale==='en'?'Offline':'離線中')+' · ChenDermatologist');
+        assert.equal(await page.locator('a[href="'+prefix+'/blog"]').count(),1);
+        assert.equal(await page.locator('a[href="'+prefix+'/"]').count(),1);
         const button = page.locator(utility==='404' ? 'form button[type="submit"]' : '#retryConnection');
         assert.equal(await button.count(),1);
         const styles = await button.evaluate(el => {
@@ -49,8 +60,11 @@ module.exports = async function testRecoveryPages(browser) {
         for (let i=0;i<10 && !(await button.evaluate(el=>el===document.activeElement));i++) await page.keyboard.press('Tab');
         assert(await button.evaluate(el=>el===document.activeElement), 'Keyboard can reach the recovery button');
         assert(await button.evaluate(el=>getComputedStyle(el).outlineStyle!=='none'), 'Keyboard focus remains visible');
-        assert.equal(await page.locator('a[href="/blog"]').count(),1);
         if (utility==='404') {
+          assert.equal(styles.text,locale==='en'?'Search':'Google 搜尋');
+          assert.equal(await page.getByRole('searchbox').getAttribute('placeholder'),locale==='en'?'Search the site…':'搜尋本站文章…');
+          assert.equal(await page.getByRole('searchbox').getAttribute('aria-label'),locale==='en'?'Search the site':'搜尋本站文章 / Search the site','The accessible search name follows the rendered URL locale');
+          assert.equal(await page.locator('a[href="mailto:expertise88864@gmail.com"]').count(),1,'Locale changes retain the usable contact link');
           const notice=page.locator('p.mt-10');
           assert.equal(await notice.count(),1);
           assert(await notice.evaluate(el=>parseFloat(getComputedStyle(el).fontSize)>=13.5));
@@ -79,10 +93,12 @@ module.exports = async function testRecoveryPages(browser) {
           // The fixture router aborts every external request, including this
           // harmless query; nothing reaches Google or a real analytics collector.
         } else {
+          assert.equal(styles.text,locale==='en'?'↻ Retry connection':'↻ 重新嘗試連線');
+          assert.equal(await page.locator('a[href="'+prefix+'/blog/atopic-dermatitis-overview"]').textContent(),'異位性皮膚炎 6 大迷思','Authored medical label remains exact pending separate disposition');
           const navigation = page.waitForNavigation({waitUntil:'load'});
           await page.keyboard.press('Enter');
           await navigation;
-          assert.equal(page.url(),origin+'/offline', 'Explicit retry preserves the route while reloading');
+          assert.equal(page.url(),origin+route, 'Explicit retry preserves the route while reloading');
         }
         cases++;
       }

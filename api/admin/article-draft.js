@@ -724,6 +724,9 @@ async function save(api, target, input) {
   const articleBlob = await api('POST', 'git/blobs', { content: encode(input.content), encoding: 'base64' });
   const blobSha = validSha(articleBlob.sha);
   const tree = [{ path: target.file, mode: '100644', type: 'blob', sha: blobSha }];
+  // An existing draft can predate these verified immutable main assets.
+  // Include their blobs explicitly instead of assuming the draft base has them.
+  for (const asset of adopted) tree.push({ path: asset.path, mode: '100644', type: 'blob', sha: asset.sha });
   for (const item of media) {
     const blob = await api('POST', 'git/blobs', { content: item.base64, encoding: 'base64' });
     const sha = validSha(blob.sha);

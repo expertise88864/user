@@ -135,7 +135,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202610040249';
+          s.src = '/blog/blog-diagrams.min.js?v=202610050441';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -237,9 +237,15 @@
   DN.addReadingMeta = function () {
     const proseEl = outlineProse();
     if (!proseEl) return;
+    if (document.getElementById('dn-reading-meta')) return;
+    // Build-generated navigation can sit inside article.prose. Count a detached
+    // copy without those repeated UI labels; never alter the live article.
+    const readingBody = proseEl.cloneNode(true);
+    readingBody.querySelectorAll('#dn-inline-toc, #dn-secondary-meta, #dn-reading-meta')
+      .forEach(function (element) { element.remove(); });
     // Keep word boundaries: removing whitespace merges an English article
     // into one token and understates both its reading time and word count.
-    const text = proseEl.textContent || '';
+    const text = readingBody.textContent || '';
     const cjkChars = (text.match(/[一-鿿]/g) || []).length;
     const otherWords = (text.match(/[A-Za-z0-9]+/g) || []).length;
     // Reading speed: ~350 zh chars/min OR ~200 en words/min
@@ -254,8 +260,6 @@
     const lead = h1 ? h1.parentElement.querySelector('p') : null;
     const target = lead || h1;
     if (!target) return;
-    if (document.getElementById('dn-reading-meta')) return;
-
     const bar = document.createElement('div');
     bar.id = 'dn-reading-meta';
     bar.style.cssText = 'display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0 8px;font-size:12.5px;color:var(--ink-2);';
@@ -679,11 +683,14 @@
         l.style.fontWeight = active ? '700' : '500';
       });
     }
-    const io = new IntersectionObserver(function (entries) {
-      const visible = entries.filter(function (e) { return e.isIntersecting; });
-      if (visible.length) setActive(visible[0].target.id);
-    }, { rootMargin: '-30% 0px -50% 0px' });
-    h2s.forEach(function (h) { io.observe(h); });
+    const hasIO = typeof window.IntersectionObserver === 'function';
+    if (hasIO) {
+      const io = new IntersectionObserver(function (entries) {
+        const visible = entries.filter(function (e) { return e.isIntersecting; });
+        if (visible.length) setActive(visible[0].target.id);
+      }, { rootMargin: '-30% 0px -50% 0px' });
+      h2s.forEach(function (h) { io.observe(h); });
+    }
 
     // 2026-05-08 — Auto-hide floating TOC when user scrolls into article-end zone
     // (author bio / disclaimer / mag-footer). Without this the TOC stays visible
@@ -693,7 +700,7 @@
     aside.style.transition = 'opacity .25s, visibility .25s';
     aside.style.willChange = 'opacity';
     var hideAnchor = document.querySelector('#dn-author-bio, #dn-legal-disclaimer, footer.mag-footer, footer');
-    if (!hideAnchor) {
+    if (!hideAnchor && hasIO) {
       // The bio/disclaimer haven't been injected yet at this moment; defer the
       // observer wiring. Observe the document body for additions, then attach.
       var attachObs = new MutationObserver(function () {
@@ -704,10 +711,11 @@
         }
       });
       attachObs.observe(document.body, { childList: true, subtree: true });
-    } else {
+    } else if (hideAnchor) {
       attachHide(hideAnchor);
     }
     function attachHide(target) {
+      if (!hasIO) return;
       var io2 = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
           if (e.isIntersecting) {
@@ -722,6 +730,37 @@
         });
       }, { rootMargin: '0px 0px -40% 0px' });
       io2.observe(target);
+    }
+
+    // Older readers keep the same outline and footer behavior without IO.
+    // One scheduled geometry read per frame keeps scrolling inexpensive.
+    if (!hasIO) {
+      const fallbackHeadings = Array.from(h2s);
+      let scheduled = false;
+      function updateOutline() {
+        scheduled = false;
+        const height = window.innerHeight;
+        const visible = fallbackHeadings.find(function (heading) {
+          const rect = heading.getBoundingClientRect();
+          return rect.bottom > height * 0.3 && rect.top < height * 0.5;
+        });
+        if (visible) setActive(visible.id);
+        const footer = document.querySelector('#dn-author-bio, #dn-legal-disclaimer, footer.mag-footer, footer');
+        const rect = footer && footer.getBoundingClientRect();
+        const hidden = rect && rect.bottom > 0 && rect.top < height * 0.6;
+        aside.style.opacity = hidden ? '0' : '';
+        aside.style.visibility = hidden ? 'hidden' : '';
+        aside.style.pointerEvents = hidden ? 'none' : '';
+      }
+      function scheduleOutline() {
+        if (scheduled) return;
+        scheduled = true;
+        if (typeof window.requestAnimationFrame === 'function') window.requestAnimationFrame(updateOutline);
+        else setTimeout(updateOutline, 16);
+      }
+      window.addEventListener('scroll', scheduleOutline, { passive: true });
+      window.addEventListener('resize', scheduleOutline, { passive: true });
+      scheduleOutline();
     }
 
     // Hide on resize below threshold (matches initial TOC_MIN_WIDTH).

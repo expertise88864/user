@@ -298,3 +298,29 @@ test('wizard blocks duplicate creation and preserves input when creation fails',
  assert.equal(fields['#wizTitleEn'].value,'TitleEn');assert.equal(fields['#wizTagEn'].value,'TagEn');
  assert.ok(controls.every(x=>!x.disabled));
 });
+
+test('autosave load wrapper preserves success, denial and cancellation results', async () => {
+  for (const result of [true, false, undefined]) {
+    const autosaves = [], timers = [];
+    const c = { loadFile: async () => result,
+      document: { getElementById: () => ({ style: {} }) },
+      checkAutosaveOnLoad: file => autosaves.push(file),
+      updateWordCount: () => {}, setTimeout: (callback, delay) => timers.push(delay) };
+    vm.createContext(c);
+    vm.runInContext(section('const _origLoadFile = loadFile;', '// Word count input listener'), c);
+    assert.equal(await c.loadFile('index.html'), result);
+    assert.deepEqual(autosaves, result ? ['index.html'] : []);
+    assert.deepEqual(timers, result ? [800] : []);
+  }
+});
+
+test('autosave load wrapper propagates failed loads without scheduling recovery work', async () => {
+  const error = Error('load failed');
+  const c = { loadFile: async () => { throw error; },
+    document: { getElementById: () => ({ style: {} }) },
+    checkAutosaveOnLoad: () => assert.fail('failed load cannot restore an autosave'),
+    updateWordCount: () => {}, setTimeout: () => assert.fail('failed load cannot schedule word count') };
+  vm.createContext(c);
+  vm.runInContext(section('const _origLoadFile = loadFile;', '// Word count input listener'), c);
+  await assert.rejects(c.loadFile('index.html'), failure => failure === error);
+});

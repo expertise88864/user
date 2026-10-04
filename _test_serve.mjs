@@ -1,14 +1,32 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {spawn} from 'node:child_process';
-import {request} from 'node:http';
-import {readFileSync} from 'node:fs';
+import {spawn,spawnSync,execFileSync} from 'node:child_process';
+import {request} from 'node:https';
+import {readFileSync,mkdtempSync,realpathSync,rmSync} from 'node:fs';
+import path from 'node:path';
+import os from 'node:os';
 import {gunzipSync} from 'node:zlib';
 
-test('actual static server negotiates production-like compression without changing content', async () => {
-  const child=spawn(process.execPath,['_serve.mjs','--port','0'],{stdio:['ignore','pipe','pipe']});
-  let errors='';child.stderr.on('data',data=>{errors+=data;});
+test('actual static server negotiates production-like compression without changing content', {timeout:30000}, async () => {
+  // Production uses TLS. A dedicated local CA keeps byte-exact compression
+  // assertions independent of HTTP filtering, without disabling TLS checks or
+  // modifying the user's OS trust store, proxy or security configuration.
+  const temporary=mkdtempSync(path.join(os.tmpdir(),'chenderm-serve-test-'));
+  const cert=path.join(temporary,'localhost-cert.pem'),key=path.join(temporary,'localhost-key.pem');
+  let child;
   try {
+    const candidates=['openssl'];
+    if(process.platform==='win32'){
+      const gitExecPath=execFileSync('git',['--exec-path'],{encoding:'utf8'}).trim();
+      candidates.push(path.resolve(gitExecPath,'../../../usr/bin/openssl.exe'));
+    }
+    const openssl=candidates.find(binary=>spawnSync(binary,['version'],{stdio:'pipe'}).status===0);
+    assert.ok(openssl,'OpenSSL is required for the isolated loopback TLS fixture');
+    const generated=spawnSync(openssl,['req','-x509','-newkey','rsa:2048','-nodes','-keyout',key,'-out',cert,'-days','1','-subj','/CN=localhost','-addext','subjectAltName=IP:127.0.0.1,DNS:localhost'],{stdio:'pipe'});
+    assert.equal(generated.status,0,'The isolated test certificate must be created successfully');
+    const ca=readFileSync(cert);
+    child=spawn(process.execPath,['_serve.mjs','--host','127.0.0.1','--port','0','--tls-cert',cert,'--tls-key',key],{stdio:['ignore','pipe','pipe']});
+  let errors='';child.stderr.on('data',data=>{errors+=data;});
     const origin=await new Promise((resolve,reject)=>{
       const timer=setTimeout(()=>reject(Error('Server startup timed out: '+errors)),10000);
       let output='';
@@ -17,9 +35,9 @@ test('actual static server negotiates production-like compression without changi
       child.once('exit',code=>{clearTimeout(timer);reject(Error('Server exited '+code+': '+errors));});
     });
     const get=(route,encoding,method='GET')=>new Promise((resolve,reject)=>{
-      const req=request(origin+route,{method,headers:encoding===null?{}:{'Accept-Encoding':encoding}},res=>{
+      const req=request(origin+route,{method,ca,headers:encoding===null?{}:{'Accept-Encoding':encoding}},res=>{
         const chunks=[];res.on('data',data=>chunks.push(data));res.on('end',()=>resolve({status:res.statusCode,headers:res.headers,body:Buffer.concat(chunks)}));res.on('error',reject);
-      });req.on('error',reject);req.end();
+      });req.on('error',reject);req.setTimeout(5000,()=>req.destroy(Error('Loopback TLS request timed out')));req.end();
     });
     for (const [route,file] of [['/','index.html'],['/blog','blog/index.html'],['/blog/blog-shared.min.js?v=test','blog/blog-shared.min.js'],['/assets/tw-mini.css','assets/tw-mini.css']]) {
       const raw=readFileSync(file),compressed=await get(route,'gzip, deflate, br');
@@ -39,6 +57,9 @@ test('actual static server negotiates production-like compression without changi
     assert.equal((await get('/missing-server-fixture','gzip')).status,404);
     assert.equal((await get('/','gzip','POST')).status,405);
   } finally {
-    if(child.exitCode===null){const exited=new Promise(resolve=>child.once('exit',resolve));child.kill();await exited;}
+    if(child?.pid&&child.exitCode===null&&child.signalCode===null){const exited=new Promise(resolve=>child.once('exit',resolve));child.kill();await exited;}
+    assert.equal(realpathSync(path.dirname(temporary)),realpathSync(os.tmpdir()),'Only remove the exact owned system-temp fixture');
+    assert.ok(path.basename(temporary).startsWith('chenderm-serve-test-'));
+    rmSync(temporary,{recursive:true,force:true});
   }
 });

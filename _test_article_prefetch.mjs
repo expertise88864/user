@@ -102,7 +102,7 @@ test('offline precache excludes unpublished picks and recent drafts and respects
   const messages = [], window = {DN:{}};
   vm.runInNewContext(readFileSync(new URL('./blog/blog-shared.js', import.meta.url),'utf8'), {
     window, navigator:{serviceWorker:{controller:{postMessage: message => messages.push(message)}}},
-    location:{hostname:'localhost'},
+    location:{hostname:'localhost',pathname:'/'},
   });
   const dn=window.DN, draft=dn.ARTICLES.find(a=>a.unpublished);assert.ok(draft);
   draft.date='2099-01-01';
@@ -135,4 +135,30 @@ test('public reading count excludes stale, duplicate and unpublished history wit
   assert.equal(dn.getArticleNumber(publicSlugs[1]),number,'publication filtering never renumbers article identifiers');
   values.set(dn.READ_KEY,JSON.stringify([...publicSlugs,draft.slug,'removed-article']));
   assert.equal(dn.getReadCount(),dn.totalArticles);
+});
+
+
+test('idle article cache destinations follow URL language on hosted and static origins',()=>{
+ for(const hostname of ['chendermatologist.com','localhost','127.0.0.1','[::1]']){
+  for(const pathname of ['/blog/acne-myths','/en','/en/blog/acne-myths','/enough/blog/acne-myths']){
+   const messages=[],window={DN:{}};
+   vm.runInNewContext(readFileSync(new URL('./blog/blog-shared.js', import.meta.url),'utf8'),{
+    window,location:{hostname,pathname},navigator:{onLine:true,serviceWorker:{controller:{postMessage:value=>messages.push(value)}}}
+   });
+   window.DN.precacheArticles(2);assert.equal(messages.length,1);
+   const prefix=pathname==='/en'||pathname.startsWith('/en/')?'/en/blog/':'/blog/';
+   const suffix=hostname==='chendermatologist.com'?'':'.html';
+   assert.deepEqual(Array.from(messages[0].urls),['acne-myths','sunscreen-myths'].map(slug=>prefix+slug+suffix));
+  }
+ }
+});
+test('idle article cache does not fetch on offline or data-saving connections',()=>{
+ for(const options of [{onLine:false},{connection:{saveData:true}},{connection:{effectiveType:'2g'}},{connection:{effectiveType:'slow-2g'}}]){
+  const messages=[],window={DN:{}};
+  vm.runInNewContext(readFileSync(new URL('./blog/blog-shared.js', import.meta.url),'utf8'),{
+   window,location:{hostname:'chendermatologist.com',pathname:'/en/blog/acne-myths'},
+   navigator:{...options,serviceWorker:{controller:{postMessage:value=>messages.push(value)}}}
+  });
+  window.DN.precacheArticles(2);assert.equal(messages.length,0);
+ }
 });

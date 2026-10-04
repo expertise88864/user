@@ -39,6 +39,9 @@ def local_html_for_path(path: str) -> Path | None:
         candidate = ROOT / clean.strip("/") / "index.html"
         return candidate if candidate.exists() else None
     rel = clean.lstrip("/")
+    if rel.endswith(".html"):
+        candidate = ROOT / rel
+        return candidate if candidate.is_file() else None
     for candidate in (ROOT / f"{rel}.html", ROOT / rel / "index.html"):
         if candidate.exists():
             return candidate
@@ -56,6 +59,8 @@ def en_mirror_expected(path: str) -> bool:
     rel = clean.lstrip("/")
     if rel.endswith(".html"):
         rel = rel[:-5]
+    if (ROOT / rel / "index.html").is_file():
+        return (EN_ROOT / rel / "index.html").is_file()
     source_file = f"{rel}.html"
     if "/" not in rel:
         return (ROOT / source_file).exists() and source_file not in SKIP

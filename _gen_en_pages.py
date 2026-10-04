@@ -33,6 +33,10 @@ DOMAIN = 'https://chendermatologist.com'
 SKIP = {'404.html', 'offline.html', 'admin.html', 'dashboard.html', 'notes.html', 'reset-sw.html'}
 
 EN_OG_OVERRIDES = {
+    'privacy.html': {
+        'title': 'Privacy Policy | ChenDermatologist',
+        'desc': 'How ChenDermatologist uses cookies, local storage, Google Analytics 4, Clarity and Speed Insights; privacy choices and contact information.',
+    },
     'blog/prurigo-nodularis.html': {'title': 'Prurigo Nodularis: Meaning, Symptoms and Treatment', 'desc': 'Prurigo nodularis (PN) is called 結節性癢疹 in Chinese. Read about its definition, itch and nodules, diagnostic assessment, treatment options and references.'},
 
     'blog/topical-acids-patient.html': {'title': 'Retinoids, Retinol and Azelaic Acid: Differences and Combinations', 'desc': 'Compare retinoids, retinol, azelaic acid, AHA and salicylic acid. Find sections on their differences, getting started, combining products and irritation.'},
@@ -350,34 +354,42 @@ def prefer_static_english_blocks(src: str) -> str:
 
 
 EN_PRIVACY_ARTICLE = '''<main id="main-content">
-<section class="pt-12 sm:pt-16 pb-6"><div class="max-w-3xl mx-auto px-5 sm:px-8"><div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold">Site Policy</div><h1 class="font-display font-bold text-[34px] sm:text-[42px] mt-3 leading-tight">Privacy Policy</h1><p class="mt-4 text-[13px] text-ink-500">Last updated: May 11, 2026</p></div></section>
+<section class="pt-12 sm:pt-16 pb-6"><div class="max-w-3xl mx-auto px-5 sm:px-8"><div class="text-[11px] uppercase tracking-[.24em] text-teal-700 font-semibold">Site Policy</div><h1 class="font-display font-bold text-[34px] sm:text-[42px] mt-3 leading-tight">Privacy Policy</h1><p class="mt-4 text-[13px] text-ink-500">Last updated: October 5, 2026</p></div></section>
 <article class="max-w-3xl mx-auto px-5 sm:px-8 mb-16"><div id="proseEn" class="prose">
 <p>Welcome to ChenDermatologist. This policy explains what information may be collected when you use this website, how it is used, and what choices you have.</p>
-<h2>1. Information We Collect</h2>
+<h2>1. Information and Browser Storage</h2>
 <h3>1-1 Information You Provide</h3>
-<p>This website does not require account registration and does not ask you to submit your name, national ID number, medical record, photographs, symptoms, or contact information. If you use an external clinic or hospital booking system, that data is handled by that medical institution under its own privacy policy.</p>
-<h3>1-2 Automatically Collected Technical Data</h3>
-<p>When you browse this website, the hosting provider may record standard web logs such as partially anonymized IP address, browser type, operating system, pages visited, timestamps, and referrer. These logs are used for traffic statistics, site improvement, and security protection.</p>
-<h3>1-3 Cookies</h3>
-<p>This website may use a first-party cookie named <code>dn_lang</code> to remember your preferred language. Third-party analytics or advertising services may also use cookies as described below. You can clear or block cookies in your browser settings.</p>
+<p>Public reading does not require an account or your name, national ID number or medical record. Author sign-in, drafts and media are separate management functions. If you use the footer email link to contact us, the information you send is processed through the email service.</p>
+<h3>1-2 Technical Data</h3>
+<p>Vercel hosts this website. When pages and third-party resources load, providers may receive IP addresses, browser information, page paths, timestamps and other technical data needed to operate, secure and maintain the services. Processing and retention differ by service; see the relevant privacy notices.</p>
+<h3>1-3 Cookies and Local Storage</h3>
+<p>The first-party <code>dn_lang</code> cookie remembers your language choice for 365 days. Browser storage remembers language, theme, font size, read articles and reading position. Author drafts may also be stored locally in the browser used for editing. GA4 may use identifiers and cookies as described below. The Microsoft Clarity script is currently disabled.</p>
+<p>You can clear cookies and site storage or block third-party cookies in your browser. Preferences and reading memory may reset; authors should confirm that drafts are saved before clearing local storage.</p>
 <h2>2. Third-Party Services</h2>
-<h3>2-1 Google AdSense</h3>
-<p>This website may use Google AdSense to display ads. Google and its partners may use cookies, including advertising cookies, to serve and measure ads. You can manage Google ad personalization in Google Ads Settings.</p>
-<h3>2-2 Microsoft Clarity</h3>
-<p>This website may use Microsoft Clarity to understand aggregate browsing behavior such as clicks, scroll depth, and time on page. Sensitive input fields are not intentionally collected by this website.</p>
+<h3>2-1 Google Analytics 4 (GA4)</h3>
+<p>This website uses GA4 for page views, reading progress and site navigation to improve content and reading. Custom analytics events do not include the search terms you enter; page and link URLs sent by those events omit query strings and fragments. GA4 may still process cookies, technical identifiers, device information and coarse location data. This does not mean that all analytics data is fully anonymous. See the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</p>
+<h3>2-2 Microsoft Clarity (Disabled)</h3>
+<p>This website currently does not load Microsoft Clarity or enable its click recording or session replay. Stopping the script does not automatically delete data already held by the service. See the <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft Privacy Statement</a> for information about the provider's data handling.</p>
 <h3>2-3 Search Console and Webmaster Tools</h3>
-<p>Google Search Console and Bing Webmaster Tools are used to verify site ownership, submit sitemaps, and monitor search visibility. They do not require this website to collect personal medical information from visitors.</p>
+<p>Google Search Console and Bing Webmaster Tools verify site ownership, submit sitemaps and report search performance. Using these management tools does not require readers to provide personal information to this website.</p>
 <h3>2-4 Google Fonts and Local CSS</h3>
 <p>Fonts may be loaded from Google Fonts. The main site styling is served from local CSS files and no longer depends on the Tailwind CDN. Google Fonts may receive your IP address when font resources are requested.</p>
-<h2>3. What We Do Not Do</h2>
-<ul><li>We do not sell, rent, or trade your personal data.</li><li>We do not collect your medical records, symptoms, photographs, or contact information through this public website.</li><li>We do not provide individual medical advice through analytics, ads, or cookies.</li></ul>
+<h3>2-5 Vercel Speed Insights</h3>
+<p>This website uses Speed Insights for loading, interaction and layout-stability measurements. Vercel describes data points such as page paths, device and browser types, country and Web Vitals, without reconstructing browsing sessions across pages. This differs from general hosting logs. See the <a href="https://vercel.com/docs/speed-insights/privacy-policy" target="_blank" rel="noopener noreferrer">Speed Insights privacy documentation</a>.</p>
+<h3>2-6 Advertising Status</h3>
+<p>AdSense is currently disabled. This policy will be updated if advertising is enabled.</p>
+<h2>3. How We Handle Information</h2>
+<ul><li>We do not sell, rent or trade your personal data.</li><li>Reading public articles does not require medical records, symptom descriptions or photographs.</li><li>If you email us, we may reply by email. Reading articles alone does not provide us with your email address.</li></ul>
 <h2>4. Your Choices</h2>
-<p>You may clear cookies, block third-party cookies, opt out of personalized advertising through the relevant third-party settings, or contact the site owner through the information on the About page.</p>
+<p>For access, correction, deletion or processing questions, use the email link in the website footer. For third-party processing and opt-out options, consult each provider's privacy information.</p>
+<p>Clearing browser cookies and site storage removes preferences and identifiers on this device. It does not automatically delete data already sent to third-party services; requests for data held by providers follow their procedures.</p>
 <h2>5. Children</h2>
 <p>This website is intended for general educational reading. It does not knowingly collect personal information from children under 13.</p>
 <h2>6. Updates</h2>
-<p>This policy may be updated when services, laws, or technical settings change. Material changes will be reflected on this page.</p>
-<h2>7. Medical Disclaimer</h2>
+<p>This policy may be updated when services, laws or technical settings change. Material changes will be reflected on this page.</p>
+<h2>7. Contact</h2>
+<p>For privacy questions, use the footer email link. The <a href="/en/about">About page</a> explains the site's educational purpose.</p>
+<h2>8. Medical Disclaimer</h2>
 <p>All content is for general medical education only and does not replace an in-person consultation, examination, diagnosis, or prescription. Decisions about medications or treatment should be made with your treating physician.</p>
 </div></article></main>'''
 
@@ -492,36 +504,40 @@ def strip_tags(src: str) -> str:
 # translated away. Switch to a DOM-aware counter: parse the HTML and walk
 # the tree, skipping descendants of any element with data-en.
 class _VisibleCJKCounter(HTMLParser):
+    _VOID = frozenset({'area', 'base', 'br', 'col', 'embed', 'hr', 'img',
+                       'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'})
+
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
-        self.depth = 0
-        self.skip_depth = 0
+        self._skip_tags: list[str] = []
         self.count = 0
         self._cjk_re = re.compile(r'[\u4e00-\u9fff]')
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        if tag in ('script', 'style', 'svg'):
-            self.skip_depth += 1
+        # HTML void elements have no descendants or matching end tag.
+        if tag in self._VOID:
             return
-        has_data_en = any(name == 'data-en' for name, _ in attrs)
-        if has_data_en or self.skip_depth:
-            self.skip_depth += 1
+        if (self._skip_tags or tag in {'script', 'style', 'svg'}
+                or any(name == 'data-en' for name, _ in attrs)):
+            self._skip_tags.append(tag)
 
     def handle_endtag(self, tag: str) -> None:
-        if self.skip_depth:
-            self.skip_depth -= 1
+        # An unrelated closing tag must not release a translated subtree.
+        for index in range(len(self._skip_tags) - 1, -1, -1):
+            if self._skip_tags[index] == tag:
+                del self._skip_tags[index:]
+                return
 
     def handle_data(self, data: str) -> None:
-        if self.skip_depth:
-            return
-        self.count += len(self._cjk_re.findall(data))
+        if not self._skip_tags:
+            self.count += len(self._cjk_re.findall(data))
 
 
 def visible_cjk_count(src: str) -> int:
-    """Count CJK characters that a JS-disabled crawler (e.g., legacy
-    GoogleBot, Bingbot Lite) would see in the rendered text. Skips
-    script/style/svg blocks AND any element subtree carrying data-en
-    (which DN.applyTextOnly swaps to English at runtime).
+    """Estimate untranslated CJK for the English generation quality guard.
+
+    Excludes script/style/svg and subtrees carrying an English data-en value.
+    This source-level estimate is not a browser visibility measurement.
     """
     counter = _VisibleCJKCounter()
     try:

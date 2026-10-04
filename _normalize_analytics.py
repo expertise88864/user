@@ -18,6 +18,8 @@ Usage:  python _normalize_analytics.py            # dry-run (report only)
         python _normalize_analytics.py --apply     # write changes
 """
 import os, io, sys, re
+from html.parser import HTMLParser
+from urllib.parse import urlsplit, parse_qs
 from _normalize_css_links import ASSET_VERSION
 from _site_html import site_html_files
 
@@ -38,10 +40,6 @@ EXCLUDE = {
 }
 
 KEEPER = f'<script src="/assets/inline/analytics-loader.js?v={ASSET_VERSION}" defer></script>'
-LOADER_TAG_RE = re.compile(
-    r'''<script\b[^>]*\bsrc\s*=\s*(["'])/assets/inline/analytics-loader\.js(?:\?[^"']*)?\1[^>]*>\s*</script>''',
-    re.I,
-)
 
 # Exact legacy src-tags to remove.
 LEGACY_TAGS = [
@@ -52,11 +50,87 @@ LEGACY_TAGS = [
     '<script defer src="/assets/inline/gtag-bootstrap.js"></script>',
 ]
 
-# Inline <script> blocks (opening tag EXACTLY "<script>", no attributes) that
-# contain the GA id — covers the inline gtag('config') block AND the inline
-# loader copy. The DN i18n init and the admin app block do NOT contain the id,
-# so they are never matched.
-INLINE_GA_RE = re.compile(r'<script>(?:(?!</script>).)*?G-XFF3L5QD10(?:(?!</script>).)*?</script>', re.S)
+# Inspect actual executable script elements, preserving comments and inert JSON.
+# Offsets refer to the original source so unrelated article markup stays exact.
+class _ScriptBlocks(HTMLParser):
+    def __init__(self, source):
+        super().__init__(convert_charrefs=False)
+        self.source = source
+        self.line_offsets = [0] + [match.end() for match in re.finditer('\n', source)]
+        self.current = None
+        self.blocks = []
+        self.inert_depth = 0
+
+    def source_offset(self):
+        line, column = self.getpos()
+        return self.line_offsets[line - 1] + column
+
+    def handle_starttag(self, tag, attrs):
+        if tag in {'template', 'noscript'}:
+            self.inert_depth += 1
+        elif tag == 'script' and not self.inert_depth:
+            start = self.source_offset()
+            self.current = (start, start + len(self.get_starttag_text()), dict(attrs))
+
+    def handle_startendtag(self, tag, attrs):
+        if tag == 'script':
+            raise ValueError('Self-closing script block; analytics normalization aborted')
+
+    def handle_endtag(self, tag):
+        if tag in {'template', 'noscript'}:
+            self.inert_depth = max(0, self.inert_depth - 1)
+        elif tag == 'script' and self.current is not None:
+            start, content_start, attrs = self.current
+            content_end = self.source_offset()
+            end = self.source.index('>', content_end) + 1
+            self.blocks.append((start, end, attrs, self.source[content_start:content_end]))
+            self.current = None
+
+
+def script_blocks(source):
+    parser = _ScriptBlocks(source)
+    parser.feed(source)
+    parser.close()
+    if parser.current is not None:
+        raise ValueError('Unclosed script block; analytics normalization aborted')
+    return parser.blocks
+
+
+def executable_script(attrs):
+    script_type = (attrs.get('type') or '').split(';', 1)[0].strip().lower()
+    return script_type in {'', 'module', 'text/javascript', 'application/javascript'}
+
+
+def current_loader(attrs):
+    url = urlsplit(attrs.get('src') or '')
+    return (executable_script(attrs) and not url.scheme and not url.netloc
+            and url.path == '/assets/inline/analytics-loader.js')
+
+
+def legacy_script_edits(source):
+    edits = []
+    for start, end, attrs, body in script_blocks(source):
+        if not executable_script(attrs):
+            continue
+        src = attrs.get('src')
+        if src:
+            url = urlsplit(src)
+            bootstrap = not url.scheme and not url.netloc and url.path == '/assets/inline/gtag-bootstrap.js'
+            google = (url.hostname in {'www.googletagmanager.com', 'googletagmanager.com'}
+                      and url.path == '/gtag/js'
+                      and 'G-XFF3L5QD10' in parse_qs(url.query).get('id', []))
+            clarity = url.hostname == 'www.clarity.ms' and url.path.startswith('/tag/')
+            if bootstrap or google or clarity:
+                edits.append((start, end, 'external'))
+            continue
+        google = ('G-XFF3L5QD10' in body and
+                  (re.search(r"\bgtag\s*\(\s*(['\"])config\1", body)
+                   or 'googletagmanager.com/gtag/js' in body))
+        clarity = ('clarity.ms/tag/' in body and
+                   ('createElement' in body or re.search(r'\bclarity\s*\(', body)))
+        if google or clarity:
+            edits.append((start, end, 'inline'))
+    return edits
 
 
 def collect_html():
@@ -65,19 +139,18 @@ def collect_html():
 
 def normalize(src):
     """Return (new_src, n_removed_tags, n_removed_inline)."""
-    s = LOADER_TAG_RE.sub(lambda _: KEEPER, src)
-    n_tags = 0
-    for tag in LEGACY_TAGS:
-        c = s.count(tag)
-        if c:
-            s = s.replace(tag, '')
-            n_tags += c
-    n_inline = 0
-    def _sub(m):
-        nonlocal n_inline
-        n_inline += 1
-        return ''
-    s = INLINE_GA_RE.sub(_sub, s)
+    # Only actual executable elements count as loaders. Comments, script
+    # examples and inert JSON must not be normalized, deduplicated or stripped.
+    s = src
+    loaders = [(start, end) for start, end, attrs, _ in script_blocks(s)
+               if current_loader(attrs)]
+    for start, end in reversed(loaders):
+        s = s[:start] + KEEPER + s[end:]
+    edits = legacy_script_edits(s)
+    n_tags = sum(kind == 'external' for _, _, kind in edits)
+    n_inline = sum(kind == 'inline' for _, _, kind in edits)
+    for start, end, _ in reversed(edits):
+        s = s[:start] + s[end:]
     return s, n_tags, n_inline
 
 
@@ -89,20 +162,21 @@ def main():
         with open(path, 'r', encoding='utf-8') as fp:
             sources.append((path, fp.read()))
     changes = []
+    prepared = []
     for p, src in sources:
         rel = os.path.relpath(p, HERE)
         excluded = rel in EXCLUDE or rel.startswith('admin' + os.sep)
         s, n_tags, n_inline = normalize(src)
 
         # Dedup keeper: keep first, drop the rest.
-        k = s.count(KEEPER)
+        loaders = [(start, end) for start, end, attrs, _ in script_blocks(s)
+                   if current_loader(attrs)]
+        k = len(loaders)
         n_dedup = 0
         if k > 1:
-            first = s.index(KEEPER)
-            head = s[:first + len(KEEPER)]
-            tail = s[first + len(KEEPER):].replace(KEEPER, '')
+            for start, end in reversed(loaders[1:]):
+                s = s[:start] + s[end:]
             n_dedup = k - 1
-            s = head + tail
             k = 1
 
         # Inject keeper if a content page is missing it.
@@ -118,14 +192,19 @@ def main():
         # If excluded but somehow has a keeper, strip it.
         stripped_excluded = 0
         if excluded and k >= 1:
-            stripped_excluded = s.count(KEEPER)
-            s = s.replace(KEEPER, '')
+            stripped_excluded = k
+            for start, end, attrs, _ in reversed(script_blocks(s)):
+                if current_loader(attrs):
+                    s = s[:start] + s[end:]
 
         if s != src:
             changes.append((rel, n_tags, n_inline, n_dedup, injected, stripped_excluded))
-            if APPLY:
-                with open(p, 'w', encoding='utf-8') as fp:
-                    fp.write(s)
+            prepared.append((p, s))
+
+    if APPLY:
+        for p, s in prepared:
+            with open(p, 'w', encoding='utf-8') as fp:
+                fp.write(s)
 
     print(("APPLIED" if APPLY else "DRY-RUN") + " — analytics normalization")
     print("files changed:", len(changes))

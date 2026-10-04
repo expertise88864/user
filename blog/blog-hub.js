@@ -102,12 +102,12 @@
       if (!meta) return;
       var pub = Date.parse(meta.date);
       if (!pub || NOW - pub > SEVEN_DAYS) return;
-      var h3 = a.querySelector('h3');
-      if (!h3 || h3.querySelector('.dn-new-pulse')) return;
+      var heading = a.querySelector('h2, h3');
+      if (!heading || heading.querySelector('.dn-new-pulse')) return;
       var tag = document.createElement('span');
       tag.className = 'dn-new-pulse';
       tag.textContent = 'NEW';
-      h3.appendChild(tag);
+      heading.appendChild(tag);
     });
   };
 
@@ -520,6 +520,8 @@
     }
 
     function showBySlugs(slugs, includeRemaining) {
+      var focused = document.activeElement;
+      var focusedCard = focused && focused.closest && focused.closest('.article-list-item');
       if (includeRemaining !== false) attachRemainingHomeCards();
       // Keep visual, keyboard and screen-reader order identical. Restore the
       // original catalog order when a topic filter replaces a ranked search.
@@ -547,6 +549,8 @@
         allCards[i].style.display = match ? 'flex' : 'none';
         if (match) shown++;
       }
+      // Reparenting cards drops native focus; retain it only on a still-visible card.
+      if (focusedCard && allCards.indexOf(focusedCard) !== -1 && focused.isConnected && document.activeElement === document.body && focused.getClientRects().length) focused.focus({ preventScroll: true });
       return shown;
     }
 
@@ -758,7 +762,11 @@
         if (da !== db) return db < da ? -1 : 1;
         return (sa ? sa[1] : '') < (sb ? sb[1] : '') ? -1 : 1;
       });
+    var focused = document.activeElement;
+    var preserveFocus = focused && listEl.contains(focused);
     ordered.forEach(function (c) { listEl.appendChild(c); }); // re-append = move to end in new order
+    // The bundle may arrive after a keyboard reader has already focused a card.
+    if (preserveFocus && focused.isConnected && document.activeElement === document.body && focused.getClientRects().length) focused.focus({ preventScroll: true });
   }
 
 // dn-articles-desc:start

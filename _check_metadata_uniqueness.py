@@ -8,6 +8,7 @@ import re
 import sys
 from collections import defaultdict
 from pathlib import Path
+from _gen_csp_hashes import LOCAL_AUDIT_DIRS
 
 
 ROOT = Path(__file__).resolve().parent
@@ -35,6 +36,8 @@ def iter_html() -> list[Path]:
     files: list[Path] = []
     for path in ROOT.rglob("*.html"):
         rel_parts = path.relative_to(ROOT).parts
+        if rel_parts[0] in LOCAL_AUDIT_DIRS:
+            continue
         if any(part in SKIP_DIRS for part in rel_parts):
             continue
         if path.name in SKIP_FILES:

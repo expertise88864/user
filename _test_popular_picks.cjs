@@ -88,3 +88,76 @@ for (const invalid of ['../private', '<script>', '', 'a'.repeat(101)]) {
     assert.equal((await h.request('GET')).status, 503); assert.equal(h.calls.length, 0);
   });
 }
+
+// Public recommendations must keep their fallback when browser fetch throws
+// synchronously, as well as when the returned request rejects asynchronously.
+const clientSource = fs.readFileSync('blog/blog-shared.js', 'utf8');
+function clientFixture(fetch) {
+  const lifecycleListeners = new Map();
+  const context = {URL, Promise, fetch,
+    addEventListener: (name, handler) => {
+      if (!lifecycleListeners.has(name)) lifecycleListeners.set(name, []);
+      lifecycleListeners.get(name).push(handler);
+    },
+    dispatchLifecycle: name => (lifecycleListeners.get(name) || []).forEach(handler => handler()),
+    location: new URL('https://fixture.test/'),
+    navigator: {userAgent: 'Fixture'}, setTimeout, clearTimeout,
+    document: {addEventListener() {}, getElementById() { return null; }, querySelector() { return null; }, querySelectorAll() { return []; }}};
+  context.window = context;
+  vm.runInNewContext(clientSource, context);
+  return context;
+}
+for (const [label, fetch] of [
+  ['synchronous browser security failure', () => { throw Error('fixture security restriction'); }],
+  ['asynchronous request rejection', () => Promise.reject(Error('fixture offline'))],
+  ['unavailable response', async () => ({ok: false})],
+  ['malformed JSON response', async () => ({ok: true, json: async () => { throw Error('fixture invalid JSON'); }})],
+]) test('public recommendation client preserves fallback: ' + label, async () => {
+  const context = clientFixture(fetch), before = JSON.stringify(context.DN.POPULAR_PICKS);
+  await assert.doesNotReject(async () => context.DN.refreshPopularPicks());
+  assert.equal(JSON.stringify(context.DN.POPULAR_PICKS), before);
+});
+test('public recommendation client still applies a successful selection', async () => {
+  const context = clientFixture(async () => ({ok: true, json: async () => ({picks: ['published-fixture']})}));
+  await context.DN.refreshPopularPicks();
+  assert.equal(JSON.stringify(context.DN.POPULAR_PICKS), '["published-fixture"]');
+});
+
+test('public recommendations skip a departed document and resume after pageshow', async () => {
+  let requests = 0;
+  const context = clientFixture(async () => {
+    requests++;
+    return {ok: true, json: async () => ({picks: ['published-lifecycle-fixture']})};
+  });
+  const before = JSON.stringify(context.DN.POPULAR_PICKS);
+  context.dispatchLifecycle('pagehide');
+  await context.DN.refreshPopularPicks();
+  assert.equal(requests, 0, 'No fetch starts after document departure');
+  assert.equal(JSON.stringify(context.DN.POPULAR_PICKS), before);
+  context.dispatchLifecycle('pageshow');
+  await context.DN.refreshPopularPicks();
+  assert.equal(requests, 1, 'A restored document can refresh normally');
+  assert.equal(JSON.stringify(context.DN.POPULAR_PICKS), '["published-lifecycle-fixture"]');
+});
+
+test('a response settling after pagehide cannot mutate recommendations', async () => {
+  let release;
+  const context = clientFixture(() => new Promise(resolve => { release = resolve; }));
+  const before = JSON.stringify(context.DN.POPULAR_PICKS);
+  const pending = context.DN.refreshPopularPicks();
+  context.dispatchLifecycle('pagehide');
+  release({ok: true, json: async () => ({picks: ['late-departed-fixture']})});
+  await pending;
+  assert.equal(JSON.stringify(context.DN.POPULAR_PICKS), before);
+});
+
+test('a response settling after a BFCache-style return can update the restored document', async () => {
+  let release;
+  const context = clientFixture(() => new Promise(resolve => { release = resolve; }));
+  const pending = context.DN.refreshPopularPicks();
+  context.dispatchLifecycle('pagehide');
+  context.dispatchLifecycle('pageshow');
+  release({ok: true, json: async () => ({picks: ['restored-page-fixture']})});
+  await pending;
+  assert.equal(JSON.stringify(context.DN.POPULAR_PICKS), '["restored-page-fixture"]');
+});

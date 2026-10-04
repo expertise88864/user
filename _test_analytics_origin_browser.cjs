@@ -43,7 +43,8 @@ module.exports = async function checkAnalyticsOrigins(browser) {
       const commands = await page.evaluate(() => Array.from(window.dataLayer || [], args => Array.from(args)));
       assert.deepEqual(errors, [], 'the production guard must not break page initialization');
       if (production) {
-        assert.deepEqual(vendor.map(item => item.host).sort(), ['www.clarity.ms', 'www.googletagmanager.com']);
+        assert.deepEqual(vendor.map(item => item.host).sort(), ['www.googletagmanager.com']);
+        assert.equal(await page.evaluate(() => typeof window.clarity), 'undefined');
         assert.equal(commands.filter(item => item[1] === 'page_view').length, 1);
         assert.equal(commands.filter(item => item[1] === 'article_read_threshold').length, 1);
         assert.equal(commands.find(item => item[1] === 'page_view')[2].page_location,

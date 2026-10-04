@@ -73,14 +73,20 @@
     try {
       const data = await drafts.list();
       if (generation !== listGeneration || token !== auth.getPat()) return;
+      // A failed repository refresh retains existing rows. Replace only our
+      // status markers so repeated refreshes and removed drafts stay accurate.
+      elFileList.querySelectorAll('[data-cd-draft-label]').forEach(label => label.remove());
       const existing = new Map(Array.from(elFileList.querySelectorAll('.file-item')).map(el => [el.dataset.path, el]));
       for (const draft of data.drafts) {
         let item = existing.get(draft.file);
         if (!item) {
           item = document.createElement('div'); item.className = 'file-item'; item.dataset.path = draft.file;
           item.textContent = draft.file; item.addEventListener('click', () => loadFile(draft.file)); elFileList.appendChild(item);
+          existing.set(draft.file, item);
         }
-        const label = document.createElement('span'); label.textContent = draft.legacy ? ' · 舊草稿（需比對）' : ' · 雲端草稿'; item.appendChild(label);
+        let label = item.querySelector('[data-cd-draft-label]');
+        if (!label) { label = document.createElement('span'); label.setAttribute('data-cd-draft-label', ''); item.appendChild(label); }
+        label.textContent = draft.legacy ? ' · 舊草稿（需比對）' : ' · 雲端草稿';
       }
       if (data.unsupportedRefs) setStatus('文章草稿已載入；另有 ' + data.unsupportedRefs + ' 個工程草稿需由專案流程處理。');
     } catch (failure) { setStatus('雲端草稿清單讀取未完成，可重試；目前編輯保留：' + drafts.message(failure), true); }

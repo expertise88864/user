@@ -89,12 +89,18 @@ async function verifyWorkspace(root, candidate, api, now = Date.now(), { preview
   const trees = new Map(), receipt = await blob(api, FILE, candidate, 128000, trees);
   const record = JSON.parse(receipt.raw.toString('utf8'));
   assert.ok(Buffer.from(JSON.stringify(record,null,2)+'\n').equals(receipt.raw) && exactKeys(record,['version','requests']) && record.version === 1 && Array.isArray(record.requests), 'Invalid patient build receipt');
+  assert.ok(record.requests.length <= 20, 'Too many patient build requests');
+  const seen = new Set();
+  for (const entry of record.requests) {
+    const { name } = contract.validateReceiptEntry(entry, now);
+    assert.ok(!seen.has(name), 'Duplicate CMS request');
+    seen.add(name);
+  }
   const entries = record.requests.filter(e => e.action !== 'unpublish');
   if (!entries.length) return { patientPackages: 0, outputFilesVerified: 0, published: false };
   root = fs.realpathSync(root);
   let count = 0;
   for (const entry of entries) {
-    contract.validateReceiptEntry(entry, now);
     const pending = preview && entry.version === 1;
     const approved = pending ? (await loadReview(api, candidate, entry.file, trees, entry, now)).value
       : await verifyDelivery(candidate, api, entry, now, trees);

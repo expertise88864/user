@@ -122,5 +122,77 @@ class AssetReleaseTests(unittest.TestCase):
                     self.assertEqual(third_party.main(), expected, query)
 
 
+class ThirdPartyPublishedScopeTests(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name)
+        loader=Path(__file__).parent/'assets/inline/analytics-loader.js'
+        self.write('assets/inline/analytics-loader.js',loader.read_text(encoding='utf8'))
+        self.public=f'<script defer src="/assets/inline/analytics-loader.js?v={ASSET_VERSION}"></script>'
+        for number in range(third_party.MIN_PAGES_WITH_ANALYTICS):
+            self.write(f'page-{number}.html',self.public)
+
+    def write(self,name,source):
+        path=self.root/name
+        path.parent.mkdir(parents=True,exist_ok=True)
+        path.write_text(source,encoding='utf8')
+        return path
+
+    def result(self):
+        output=io.StringIO()
+        with patch.object(third_party,'ROOT',self.root),contextlib.redirect_stdout(output):
+            code=third_party.main()
+        return code,output.getvalue()
+
+    def test_exact_root_private_html_and_js_evidence_are_not_site_loaders(self):
+        for name in ['.codex-review','.claude-review','.lighthouseci','delivery-preview']:
+            self.write(name+'/old.html','<script src="/assets/inline/analytics-loader.js?v=old"></script>')
+            self.write(name+'/unpublished.js','load("https://www.googletagmanager.com/gtag/js");')
+        code,output=self.result()
+        self.assertEqual(code,0,output)
+        with patch.object(third_party,'ROOT',self.root):
+            self.assertEqual(len(third_party.iter_html()),third_party.MIN_PAGES_WITH_ANALYTICS)
+            self.assertEqual(set(third_party.find_tracker_files()),{'assets/inline/analytics-loader.js'})
+
+    def test_public_stale_internal_and_unguarded_tracker_violations_still_fail(self):
+        for name,source,label in [
+            ('blog/new.html','<script src="/assets/inline/analytics-loader.js?v=old"></script>','analytics loader must use current'),
+            ('admin-preview.html',self.public,'internal page must not load analytics'),
+            ('assets/unreviewed.js','load("https://www.googletagmanager.com/gtag/js");','outside the canonical loader'),
+            ('assets/injected.js','import("/assets/inline/analytics-loader.js");','must be included directly from HTML'),
+        ]:
+            with self.subTest(name=name):
+                path=self.write(name,source)
+                code,output=self.result()
+                self.assertEqual(code,1)
+                self.assertIn(name+':',output)
+                self.assertIn(label,output)
+                path.unlink()
+
+    def test_similar_root_and_nested_evidence_paths_remain_checked(self):
+        for prefix in ['.codex-review-public','blog/.codex-review','blog/delivery-preview']:
+            for suffix,source,label in [
+                ('guide.html','<script src="/assets/inline/analytics-loader.js?v=old"></script>','analytics loader must use current'),
+                ('guide.js','load("https://www.googletagmanager.com/gtag/js");','outside the canonical loader'),
+            ]:
+                name=prefix+'/'+suffix
+                with self.subTest(name=name):
+                    path=self.write(name,source)
+                    code,output=self.result()
+                    self.assertEqual(code,1)
+                    self.assertIn(name+':',output)
+                    self.assertIn(label,output)
+                    path.unlink()
+
+    def test_private_copies_cannot_satisfy_public_analytics_floor(self):
+        for path in self.root.glob('page-*.html'):
+            path.unlink()
+        for number in range(third_party.MIN_PAGES_WITH_ANALYTICS):
+            self.write(f'.codex-review/page-{number}.html',self.public)
+        code,output=self.result()
+        self.assertEqual(code,1)
+        self.assertIn('only 0 page(s) resolve to loading analytics',output)
+
 if __name__ == '__main__':
     unittest.main()

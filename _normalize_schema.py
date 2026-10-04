@@ -551,6 +551,7 @@ def build_medical_webpage(src: str, path: Path,
 
 def normalize_file(path: Path) -> bool:
     src = path.read_text(encoding="utf-8")
+    original = src
     src = src.replace(f"{DOMAIN}/#person", PHYSICIAN_ID)
     src = src.replace(f"{DOMAIN}/about#person", PHYSICIAN_ID)
     meta = page_meta(src)
@@ -594,7 +595,7 @@ def normalize_file(path: Path) -> bool:
         src2 = src2.replace("</head>", block + "</head>", 1)
         changed = True
 
-    if src2 != src:
+    if src2 != original:
         path.write_text(src2, encoding="utf-8")
         return True
     return changed

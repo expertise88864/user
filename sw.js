@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v205';
-const RUNTIME = 'cd-runtime-v203';
+const CACHE = 'cd-v219';
+const RUNTIME = 'cd-runtime-v217';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
 // Popular articles getting evicted after ~5 navigations caused repeat-
@@ -121,6 +121,13 @@ async function fetchWithRetry(req, retries = 1) {
   }
 }
 
+// Keep author/API/recovery routes out of every worker cache entry point.
+function bypassWorker(url) {
+  return url.pathname.startsWith('/api/') || url.pathname.startsWith('/admin') ||
+    url.pathname.startsWith('/en/admin') || url.pathname === '/reset-sw' ||
+    url.pathname === '/reset-sw.html' || url.pathname === '/en/reset-sw' || url.pathname === '/en/reset-sw.html';
+}
+
 self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET') return;
@@ -130,12 +137,7 @@ self.addEventListener('fetch', (e) => {
   // API responses must never enter service-worker caches. OAuth callback
   // HTML can carry one-time credentials, and dynamic API reads must honor
   // their server/CDN cache policy.
-  if (url.pathname.startsWith('/api/')) return;
-  // Always bypass /admin so user gets the freshest editor
-  if (url.pathname.startsWith('/admin')) return;
-  // Bypass the SW reset page so it can talk to the SW directly
-  if (url.pathname === '/reset-sw' || url.pathname === '/reset-sw.html' ||
-      url.pathname === '/en/reset-sw' || url.pathname === '/en/reset-sw.html') return;
+  if (bypassWorker(url)) return;
 
   // Stale-while-revalidate for HTML navigation.
   // 2026-05-24 — switched from network-first to SWR to cut Vercel Edge
@@ -290,6 +292,7 @@ self.addEventListener('message', (e) => {
         const url = new URL(u, self.location.origin);
         if (url.origin !== self.location.origin) return false;
         const p = url.pathname;
+        if (bypassWorker(url)) return false;
         return (
           p === '/' ||
           p.startsWith('/blog/') ||

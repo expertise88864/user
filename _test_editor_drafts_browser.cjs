@@ -11,6 +11,7 @@ module.exports = async function checkEditorDraftBridge(browser) {
   const writes = [], externalWrites = []; let release, remoteHead = null, acceptedHtml = html;
   let conflict = false, pauseNextLoad = false, loadRelease, newDraft = null; const media = new Map();
   let publication = null, pauseNextRequest = false, requestRelease, requestSerial = 0, requestLocked = false;
+  let failRepositoryList = false, listLegacy = false, includeNewDraftInList = true;
   try {
     const page = await context.newPage();
     await page.addInitScript(() => {
@@ -22,6 +23,9 @@ module.exports = async function checkEditorDraftBridge(browser) {
       const request = route.request(), url = new URL(request.url());
       if (url.origin === 'https://api.github.com') {
         if (request.method() !== 'GET') { externalWrites.push(request.url()); return route.abort(); }
+        if (failRepositoryList && /\/contents(?:\/blog)?\/?$/.test(url.pathname)) {
+          return route.fulfill({status:503,json:{message:'Isolated repository-list failure'}});
+        }
         if (url.pathname.endsWith('/commits')) return route.fulfill({ status: 200, json: [{ sha: OLD,
           commit: { message: 'Older fixture', author: { date: '2026-09-01T00:00:00Z' } } }] });
         if (url.pathname.endsWith('/contents/blog/example.html') && url.searchParams.get('ref') === OLD) return route.fulfill({ status: 200, json: {
@@ -34,7 +38,7 @@ module.exports = async function checkEditorDraftBridge(browser) {
         if (request.method() === 'GET') {
           if (url.searchParams.get('mode') === 'list') return route.fulfill({ status: 200, json: { drafts: [
             ...(remoteHead ? [{ file: 'blog/example.html', head: remoteHead, legacy: false }] : []),
-            ...(newDraft ? [{ file: 'blog/new-fixture.html', head: NEW_HEAD, legacy: false }] : []),
+            ...(newDraft && includeNewDraftInList ? [{ file: 'blog/new-fixture.html', head: NEW_HEAD, legacy: listLegacy }] : []),
           ], nextOffset: null, unsupportedRefs: 0 } });
           if (url.searchParams.get('file') === 'blog/new-fixture.html') return route.fulfill({ status: 200, json: {
             file: 'blog/new-fixture.html', head: newDraft ? NEW_HEAD : null, baseSha: null, blobSha: newDraft ? NEW_BLOB : null,
@@ -257,6 +261,22 @@ module.exports = async function checkEditorDraftBridge(browser) {
     assert.match(await page.locator('#wizStatus').textContent(), /已有正式文章或雲端草稿/); assert.equal(writes.length, beforeNewArticle + 1);
     assert.equal(await page.locator('#wizTitle').inputValue(), '重複文章', 'failed creation retains wizard inputs');
     await page.locator('#wizCancel').click(); assert.deepEqual(externalWrites, []);
+    // Failed repository refresh keeps the old DOM. A successful cloud-draft
+    // refresh must replace its status rather than append another label.
+    failRepositoryList = true;
+    const newItem = page.locator('.file-item[data-path="blog/new-fixture.html"]');
+    for (let i = 0; i < 2; i++) {
+      await page.evaluate(() => refreshFileList());
+      assert.equal((await newItem.textContent()).match(/雲端草稿/g)?.length,1,'Retained file rows show one cloud-draft status');
+    }
+    listLegacy = true;
+    await page.evaluate(() => refreshFileList());
+    assert.match(await newItem.textContent(),/舊草稿（需比對）/);
+    assert.doesNotMatch(await newItem.textContent(),/雲端草稿/,'Legacy status replaces the previous cloud label');
+    includeNewDraftInList = false;
+    await page.evaluate(() => refreshFileList());
+    assert.doesNotMatch(await newItem.textContent(),/舊草稿|雲端草稿/,'A removed draft leaves no stale status label');
+    assert.deepEqual(externalWrites, []);
     console.log('CMS draft bridge: images/recovery/save typing/conflict/history/new article; version-bound confirmation, request typing/recovery, schedule/cancel/unpublish/status and stale dialogs; no direct writes passed');
   } finally { if (release) release(); if (loadRelease) loadRelease(); if (requestRelease) requestRelease(); await context.close(); }
 };

@@ -134,6 +134,7 @@ test('language refresh avoids redundant mutations but translates new content and
 test('reading metadata counts spaced English words and includes the badge without locale initialization', () => {
   const bars = [];
   const prose = {textContent:'皮'.repeat(3500) + ' ' + Array(800).fill('word').join(' ')};
+  prose.cloneNode = () => ({textContent:prose.textContent,querySelectorAll:()=>[]});
   const article = {contains:element=>element===prose};
   const lead = {};
   const h1 = {parentElement:{querySelector:()=>lead}};
@@ -164,6 +165,7 @@ test('reading completion requires foreground dwell and scroll, and fires once', 
   const documentListeners = new Map(), windowListeners = new Map();
   const article = {scrollHeight:1000, getBoundingClientRect:()=>({top:0})};
   const prose = {textContent:'閱讀內容'};
+  prose.cloneNode = () => ({textContent:prose.textContent,querySelectorAll:()=>[]});
   article.contains = element=>element===prose;
   const lead = {parentNode:{insertBefore(){}}};
   const doc = {
@@ -285,8 +287,9 @@ test('worker activation retires only old site caches and preserves author or oth
   assert.equal(claimed, 1);
 });
 
-test('both language reset utilities bypass worker caches, while similarly named pages do not', async () => {
+test('private and both language reset routes bypass worker caches, while similarly named pages do not', async () => {
   for (const pathname of ['/reset-sw', '/reset-sw.html', '/en/reset-sw', '/en/reset-sw.html',
+    '/admin', '/admin.html', '/admin/word-model.bundle.js', '/en/admin', '/en/admin.html', '/api/admin/login',
     '/reset-sw-other', '/en/reset-sw-other', '/en/blog/acne-myths']) {
     const handlers = {}, waits = [];
     let response, reads = 0;
@@ -297,12 +300,32 @@ test('both language reset utilities bypass worker caches, while similarly named 
     });
     handlers.fetch({request:{method:'GET',url:'https://worker-fixture.invalid'+pathname,mode:'navigate'},
       respondWith:promise=>response=promise,waitUntil:promise=>waits.push(promise)});
-    const bypass = ['/reset-sw', '/reset-sw.html', '/en/reset-sw', '/en/reset-sw.html'].includes(pathname);
+    const bypass = ['/reset-sw', '/reset-sw.html', '/en/reset-sw', '/en/reset-sw.html',
+      '/admin', '/admin.html', '/admin/word-model.bundle.js', '/en/admin', '/en/admin.html', '/api/admin/login'].includes(pathname);
     assert.equal(Boolean(response), !bypass, pathname);
     assert.equal(reads, bypass ? 0 : 1, pathname);
     if (response) await response;
     await Promise.all(waits);
   }
+});
+
+test('precache messages never fetch or store private routes, but retain public bilingual controls', async () => {
+  const origin='https://worker-fixture.invalid',handlers={},waits=[],requested=[],stored=[];
+  const allowed=['/blog/acne-myths','/en/blog/acne-myths','/en/reset-sw-other','/assets/search-index.json','/'];
+  const rejected=['/admin','/admin.html','/admin/word-model.bundle.js','/en/admin','/en/admin.html',
+    '/api/admin/login','/reset-sw','/reset-sw.html','/en/reset-sw','/en/reset-sw.html',
+    '/en/reset-sw?source=fixture','https://another.invalid/en/blog/acne-myths'];
+  const cache={match:async()=>undefined,put:async url=>stored.push(url),keys:async()=>[]};
+  vm.runInNewContext(readFileSync(new URL('./sw.js',import.meta.url),'utf8'),{
+    URL,location:{origin},self:{location:{origin},addEventListener:(name,fn)=>handlers[name]=fn},
+    caches:{open:async()=>cache},fetch:async(url,options)=>{
+      assert.equal(options.credentials,'omit');requested.push(url);return {ok:true,type:'basic',redirected:false};
+    },
+  });
+  handlers.message({data:{type:'PRECACHE',urls:[...rejected,...allowed]},waitUntil:p=>waits.push(p)});
+  await Promise.all(waits);
+  assert.deepEqual(requested,allowed);
+  assert.deepEqual(stored,allowed);
 });
 
 test('navigation ignores a followed redirect in cache and preserves valid cached HTML', async () => {
@@ -623,15 +646,156 @@ test('toolbar links and accessible labels stay in the rendered language',()=>{
   for(const path of ['/en','/en/','/en/blog/acne-myths']){
     const bar=toolbarHarness(path).nodes.get('dn-sticky-cta');
     assert.equal(bar.attrs['aria-label'],'Quick navigation');
-    assert.match(bar.innerHTML,/href="\/en"/);assert.match(bar.innerHTML,/href="\/en\/blog\/"/);
+    assert.match(bar.innerHTML,/href="\/en"/);assert.match(bar.innerHTML,/href="\/en\/blog"/);
     assert.match(bar.innerHTML,/href="\/en\/about"/);assert.match(bar.innerHTML,/aria-label="Latest articles"/);
     assert.match(bar.innerHTML,/>Home<\/span>/);
   }
   const bar=toolbarHarness('/blog/acne-myths').nodes.get('dn-sticky-cta');
-  assert.match(bar.innerHTML,/href="\/blog\/"/);assert.match(bar.innerHTML,/aria-label="最新文章"/);
+  assert.match(bar.innerHTML,/href="\/blog"/);assert.match(bar.innerHTML,/aria-label="最新文章"/);
 });
 test('toolbar consistently excludes about and admin routes in both languages',()=>{
   for(const path of ['/about','/about/','/about.html','/en/about','/en/about/','/en/about.html','/admin.html','/en/admin']){
     const h=toolbarHarness(path);assert.equal(h.nodes.size,0,path);assert.equal(h.reads(),0);assert.equal(h.frames.length,0);
   }
 });
+
+// These tests execute the source and its shipped minified counterpart. Browser
+// acceptance separately checks actual article layout and native fragment timing.
+function calculatorScrollHarness(name, {initialY = 0, hash = '#dn-scorad', existing = false,
+  raf = true, resizeObserver = true} = {}) {
+  const source = readFileSync(new URL('./blog/' + name, import.meta.url), 'utf8');
+  const state = {y:initialY, absoluteTop:4000, targetPresent:existing, validClass:true,
+    calls:[], resizeDisconnects:0, observed:[], now:0};
+  const listeners = new Map(), frames = [], timers = new Map();
+  let nextTimer = 0, resizeCallback;
+  const dispatch = name => [...(listeners.get(name) || [])].forEach(fn => fn({type:name}));
+  const target = {classList:{contains:name => name === 'dn-calc' && state.validClass},
+    getBoundingClientRect:() => ({top:state.absoluteTop - state.y})};
+  const document = {body:{}, visibilityState:'visible',
+    getElementById:id => state.targetPresent && id === 'dn-scorad' ? target : null};
+  const window = {DN:{}, get scrollY() { return state.y; },
+    addEventListener(name, fn) {
+      if (!listeners.has(name)) listeners.set(name, new Set());
+      listeners.get(name).add(fn);
+    },
+    removeEventListener:(name, fn) => listeners.get(name)?.delete(fn),
+    scrollTo(options) { state.calls.push(options); state.y = options.top; dispatch('scroll'); },
+    setTimeout(fn, delay) { const id = ++nextTimer; timers.set(id, {fn, at:state.now + delay}); return id; },
+    clearTimeout:id => timers.delete(id),
+    ...(raf ? {requestAnimationFrame:fn => frames.push(fn)} : {}),
+    ...(resizeObserver ? {ResizeObserver:class {
+      constructor(fn) { resizeCallback = fn; }
+      observe(node) { state.observed.push(node); }
+      disconnect() { state.resizeDisconnects++; resizeCallback = null; }
+    }} : {}),
+  };
+  const location = {hash};
+  vm.runInNewContext(source, {window, document, location});
+  const baselineListeners = new Map([...listeners].map(([name, handlers]) => [name, new Set(handlers)]));
+  return {state, location, document, dispatch, prepare:window.DN.prepareRequestedCalculatorScroll,
+    flush() { let count = 0; while (frames.length) { assert.ok(++count < 20, 'Alignment must settle'); frames.shift()(); } },
+    resize() { resizeCallback?.(); },
+    advance(ms) { state.now += ms; for (const [id, timer] of [...timers]) if (timer.at <= state.now) { timers.delete(id); timer.fn(); } },
+    targetTop:() => target.getBoundingClientRect().top,
+    listeners() {
+      let added = 0;
+      for (const [name, handlers] of listeners) {
+        const baseline = baselineListeners.get(name) || new Set();
+        for (const handler of baseline) assert.ok(handlers.has(handler), 'Unrelated runtime listeners stay registered');
+        for (const handler of handlers) if (!baseline.has(handler)) added++;
+      }
+      return added;
+    },
+    timers:() => timers.size, frames:() => frames.length};
+}
+
+for (const name of ['blog-shared.js', 'blog-shared.min.js']) {
+  test('requested calculator remains visible after late native anchor scrolling: ' + name, () => {
+    const h = calculatorScrollHarness(name), finish = h.prepare();
+    h.state.targetPresent = true; h.state.y = 4229; h.dispatch('scroll'); finish(true); h.flush();
+    assert.equal(h.targetTop(), 80); assert.equal(h.state.calls.length, 1);
+    // Browsers can perform fragment scrolling after the first scheduled paint.
+    h.state.y = 4309; h.dispatch('scroll'); h.flush();
+    assert.equal(h.targetTop(), 80); assert.equal(h.state.calls.length, 2);
+    assert.equal(h.state.calls[1].behavior, 'instant');
+  });
+  test('requested calculator follows later layout above its target: ' + name, () => {
+    const h = calculatorScrollHarness(name), finish = h.prepare();
+    h.state.targetPresent = true; finish(true); h.flush();
+    h.state.absoluteTop = 4500; h.resize(); h.resize(); h.dispatch('scroll');
+    assert.equal(h.frames(), 1, 'Resize and scroll signals share a pending frame');
+    h.flush(); assert.equal(h.targetTop(), 80); assert.equal(h.state.calls.length, 2);
+    h.resize(); h.flush(); assert.equal(h.state.calls.length, 2, 'Stable geometry must not cause another scroll');
+    assert.equal(h.state.observed.length, 1);
+  });
+  test('calculator alignment expires and removes observers, timers and listeners: ' + name, () => {
+    const h = calculatorScrollHarness(name), finish = h.prepare();
+    h.state.targetPresent = true; finish(true); finish(true); h.flush();
+    assert.equal(h.timers(), 1); assert.equal(h.state.observed.length, 1);
+    h.advance(1999); h.state.absoluteTop += 250; h.resize(); h.flush(); assert.equal(h.targetTop(), 80);
+    const calls = h.state.calls.length;
+    h.advance(1); assert.equal(h.listeners(), 0); assert.equal(h.timers(), 0); assert.equal(h.state.resizeDisconnects, 1);
+    h.state.y = 123; h.state.absoluteTop += 500; h.resize(); h.dispatch('scroll'); finish(true); h.flush();
+    assert.equal(h.state.y, 123); assert.equal(h.state.calls.length, calls);
+  });
+  test('expiry prevents an already queued calculator alignment: ' + name, () => {
+    const h = calculatorScrollHarness(name), finish = h.prepare();
+    h.state.targetPresent = true; finish(true); h.advance(2000); h.flush();
+    assert.equal(h.state.calls.length, 0); assert.equal(h.listeners(), 0); assert.equal(h.timers(), 0);
+  });
+  for (const signal of ['wheel', 'touchmove', 'keydown', 'pointerdown', 'hashchange', 'pagehide']) {
+    for (const phase of ['before mount', 'before paint', 'after initial alignment']) {
+      test('calculator respects ' + signal + ' ' + phase + ': ' + name, () => {
+        const h = calculatorScrollHarness(name), finish = h.prepare();
+        if (phase !== 'before mount') { h.state.targetPresent = true; finish(true); }
+        if (phase === 'after initial alignment') h.flush();
+        const calls = h.state.calls.length;
+        h.state.y = 321; h.dispatch(signal); h.state.targetPresent = true; finish(true);
+        h.resize(); h.dispatch('scroll'); h.flush();
+        assert.equal(h.state.y, 321); assert.equal(h.state.calls.length, calls);
+        assert.equal(h.listeners(), 0); assert.equal(h.timers(), 0);
+        if (phase !== 'before mount') assert.equal(h.state.resizeDisconnects, 1);
+      });
+    }
+  }
+  test('existing native fragment and history reading position stay unchanged: ' + name, () => {
+    for (const options of [{initialY:777}, {existing:true}]) {
+      const h = calculatorScrollHarness(name, options), finish = h.prepare();
+      h.state.targetPresent = true; finish(true); h.resize(); h.dispatch('scroll'); h.flush();
+      assert.equal(h.state.y, options.initialY || 0); assert.equal(h.state.calls.length, 0);
+      assert.equal(h.listeners(), 0); assert.equal(h.timers(), 0); assert.equal(h.state.observed.length, 0);
+    }
+  });
+  for (const hash of ['', '#dx', '#DN-scorad', '#dn-%bad']) {
+    test('calculator leaves unrelated or malformed fragments untouched ' + hash + ': ' + name, () => {
+      const h = calculatorScrollHarness(name, {hash}), finish = h.prepare();
+      h.state.targetPresent = true; finish(true); h.flush();
+      assert.equal(h.state.calls.length, 0); assert.equal(h.listeners(), 0); assert.equal(h.timers(), 0);
+    });
+  }
+  test('hash change without an event, hidden document or invalid target cancels alignment: ' + name, () => {
+    for (const change of ['hash', 'hidden', 'missing', 'wrong class']) {
+      const h = calculatorScrollHarness(name), finish = h.prepare();
+      h.state.targetPresent = true; finish(true);
+      if (change === 'hash') h.location.hash = '#other';
+      if (change === 'hidden') h.document.visibilityState = 'hidden';
+      if (change === 'missing') h.state.targetPresent = false;
+      if (change === 'wrong class') h.state.validClass = false;
+      h.flush(); assert.equal(h.state.calls.length, 0); assert.equal(h.listeners(), 0); assert.equal(h.timers(), 0);
+      assert.equal(h.state.resizeDisconnects, 1);
+    }
+  });
+  test('calculator failure leaves no listeners or new resource: ' + name, () => {
+    const h = calculatorScrollHarness(name), finish = h.prepare();
+    finish(false); h.state.targetPresent = true; finish(true); h.flush();
+    assert.equal(h.state.calls.length, 0); assert.equal(h.listeners(), 0); assert.equal(h.timers(), 0);
+    assert.equal(h.state.observed.length, 0);
+  });
+  test('calculator aligns without RAF or ResizeObserver, then releases its fallback: ' + name, () => {
+    const h = calculatorScrollHarness(name, {raf:false, resizeObserver:false}), finish = h.prepare();
+    h.state.targetPresent = true; h.state.y = 4500; finish(true);
+    assert.equal(h.targetTop(), 80); assert.equal(h.state.calls.length, 1);
+    h.state.y = 4230; h.dispatch('scroll'); assert.equal(h.targetTop(), 80);
+    h.advance(2000); assert.equal(h.listeners(), 0); assert.equal(h.timers(), 0);
+  });
+}

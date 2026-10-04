@@ -39,6 +39,14 @@ module.exports = async function checkReadingEngagement(browser, {readingSource, 
         await page.addScriptTag({content:reading});
         await page.evaluate(() => {
           localStorage.clear();
+          // Root prose includes the build-generated outline and metadata panel.
+          // Repeated navigation labels must not inflate the article word count.
+          const prose = document.querySelector('article.prose, article .prose');
+          const toc = document.createElement('details');
+          toc.id = 'dn-inline-toc';
+          toc.innerHTML = '<summary>Article outline</summary><nav>' + 'Repeated navigation. '.repeat(800) + '</nav>';
+          prose.prepend(toc);
+          document.getElementById('dn-secondary-meta').append(' Repeated metadata. '.repeat(300));
           window.READING_TEST = {now:0,hidden:false,intervals:[],events:[]};
           // Exercise the real foreground-time algorithm without waiting 30s
           // or confusing this fixture with a physical background-tab trial.

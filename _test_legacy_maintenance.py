@@ -22,6 +22,38 @@ def load_script(name):
     return module
 
 
+class VisibleEnglishCounterTests(unittest.TestCase):
+    def setUp(self):
+        self.generator = load_script('_gen_en_pages')
+
+    def test_void_elements_do_not_hide_later_untranslated_text(self):
+        for tag in ('area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input',
+                    'link', 'meta', 'param', 'source', 'track', 'wbr'):
+            for ending in ('>', '/>'):
+                with self.subTest(tag=tag, ending=ending):
+                    source = '<div data-en="Translated"><' + tag + ending + '</div><p>中文</p>'
+                    self.assertEqual(self.generator.visible_cjk_count(source), 2)
+
+    def test_nested_translated_subtree_does_not_hide_following_text(self):
+        source = '<div data-en="English"><section><br><span>隱藏</span></section></div><p>中文</p>'
+        self.assertEqual(self.generator.visible_cjk_count(source), 2)
+
+    def test_unrelated_end_tag_does_not_release_translated_scope(self):
+        source = '<div data-en="English">隱藏</unused>隱藏</div><p>中文</p>'
+        self.assertEqual(self.generator.visible_cjk_count(source), 2)
+
+    def test_inert_and_self_closing_scopes_are_balanced(self):
+        source = '<script>中文</script><style>中文</style><svg><text>中文</text></svg><svg/><p>中文</p>'
+        self.assertEqual(self.generator.visible_cjk_count(source), 2)
+
+    def test_translated_void_attribute_does_not_hide_following_text(self):
+        self.assertEqual(self.generator.visible_cjk_count('<img data-en="English"><p>中文</p>'), 2)
+
+    def test_quality_threshold_sees_untranslated_text_after_void(self):
+        source = '<div data-en="English"><img></div><p>' + '中' * 501 + '</p>'
+        self.assertGreater(self.generator.visible_cjk_count(source), 500)
+
+
 class SupportSecurityScopeTests(unittest.TestCase):
     def test_split_support_module_keeps_style_and_handler_security_checks(self):
         audit = load_script('_check_frontend_security')
@@ -72,6 +104,20 @@ class AutomaticHTMLScopeTests(unittest.TestCase):
         self.assertEqual({n:(self.root/n).read_bytes() for n in excluded},originals)
         self.assertTrue(all(b'v=1"' not in value for value in once.values()))
         self.assertEqual({n:(self.root/n).read_bytes() for n in public},once)
+
+    def test_schema_identity_only_rewrite_is_persisted_and_then_idempotent(self):
+        for legacy in (self.schema.DOMAIN + '/#person', self.schema.DOMAIN + '/about#person'):
+            with self.subTest(legacy=legacy):
+                # No article or JSON-LD normalization can cause an incidental
+                # write: the physician reference is the only difference.
+                before = '<head></head><body><a href="' + legacy + '">Nonmedical author reference</a></body>'
+                page = self.write('index.html', before)
+                self.assertTrue(self.schema.normalize_file(page))
+                expected = before.replace(legacy, self.schema.PHYSICIAN_ID)
+                self.assertEqual(page.read_text(encoding='utf8'), expected)
+                once = page.read_bytes()
+                self.assertFalse(self.schema.normalize_file(page))
+                self.assertEqual(page.read_bytes(), once)
 
     def test_schema_batch_respects_include_en_and_existing_utility_exclusions(self):
         body='<head><title>Nonmedical UI fixture</title><script type="application/ld+json">{"@type":"MedicalWebPage","name":"Old fixture"}</script></head>'
@@ -263,6 +309,69 @@ class AnalyticsMaintenanceScopeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'ordinary file'):
             self.run_apply()
         self.assertEqual([first.read_bytes(), target.read_bytes()], originals)
+
+
+    def test_versioned_bootstrap_attribute_ga_and_clarity_are_removed(self):
+        snippets = [
+            '<script defer src="/assets/inline/gtag-bootstrap.js?v=old"></script>',
+            '<script type="text/javascript">gtag("config", "G-XFF3L5QD10");</script>',
+            '<script async src="https://www.clarity.ms/tag/fixture-id"></script>',
+            '<script>(function(c,l){var t=l.createElement("script");t.src="https://www.clarity.ms/tag/fixture-id";})(window,document);</script>',
+        ]
+        for snippet in snippets:
+            with self.subTest(snippet=snippet):
+                src = '<head>' + snippet + '</head><main>Untouched</main>'
+                cleaned, _, _ = self.script.normalize(src)
+                self.assertEqual(cleaned, '<head></head><main>Untouched</main>')
+                self.assertEqual(self.script.normalize(cleaned)[0], cleaned)
+
+    def test_inert_json_comments_and_nontracking_scripts_stay_exact(self):
+        snippets = [
+            '<!-- <script>gtag("config", "G-XFF3L5QD10");</script> -->',
+            '<script type="application/ld+json">{"name":"G-XFF3L5QD10","note":"clarity.ms/tag/"}</script>',
+            '<script>window.fixture = "G-XFF3L5QD10";</script>',
+            '<script src="/assets/inline/other.js?v=old"></script>',
+        ]
+        for snippet in snippets:
+            with self.subTest(snippet=snippet):
+                self.assertEqual(self.script.normalize(snippet)[0], snippet)
+
+    def test_malformed_later_script_aborts_before_any_write(self):
+        first = self.write('blog/first.html', b'<head></head><main>First</main>')
+        later = self.write('en/index.html', b'<head><script>gtag("config", "G-XFF3L5QD10");')
+        originals = [first.read_bytes(), later.read_bytes()]
+        with self.assertRaisesRegex(ValueError, 'Unclosed script'):
+            self.run_apply()
+        self.assertEqual([first.read_bytes(), later.read_bytes()], originals)
+
+
+    def test_actual_loaders_ignore_commented_examples_when_deduplicating(self):
+        example = '<!-- ' + self.script.KEEPER + ' -->'
+        inert = '<script type="application/json" src="/assets/inline/analytics-loader.js?v=example"></script>'
+        index = self.write('index.html', ('<head>' + example + inert + '</head>').encode())
+        private = self.write('offline.html', ('<head>' + example + self.script.KEEPER + '</head>').encode())
+        self.run_apply()
+        self.assertEqual(index.read_text(), '<head>' + example + inert + self.script.KEEPER + '</head>')
+        self.assertEqual(private.read_text(), '<head>' + example + '</head>')
+        once = [index.read_bytes(), private.read_bytes()]
+        self.run_apply()
+        self.assertEqual([index.read_bytes(), private.read_bytes()], once)
+
+    def test_self_closing_later_script_aborts_before_any_write(self):
+        first = self.write('index.html', b'<head></head>First')
+        later = self.write('en/index.html', b'<head><script src="/assets/inline/gtag-bootstrap.js" /></head>')
+        originals = [first.read_bytes(), later.read_bytes()]
+        with self.assertRaisesRegex(ValueError, 'Self-closing script'):
+            self.run_apply()
+        self.assertEqual([first.read_bytes(), later.read_bytes()], originals)
+
+
+    def test_nested_inert_containers_keep_script_examples_exact(self):
+        for wrapper in ['template', 'noscript']:
+            snippet = ('<' + wrapper + '><template><script src="/assets/inline/gtag-bootstrap.js?v=example"></script>'
+                       '<script>gtag("config", "G-XFF3L5QD10");</script></template></' + wrapper + '>')
+            with self.subTest(wrapper=wrapper):
+                self.assertEqual(self.script.normalize(snippet)[0], snippet)
 
 
 class CacheStampMaintenanceScopeTests(unittest.TestCase):
@@ -670,6 +779,178 @@ class PictureRewriteTests(unittest.TestCase):
             (directory / 'private.jpg').write_bytes(b'not an image')
         self.assertEqual(self.script.find_images(self.root), [str(self.source)])
 
+
+class MetadataPublicScopeTests(unittest.TestCase):
+    def setUp(self):
+        self.audit=load_script('_check_metadata_uniqueness')
+        self.temp=tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name)
+
+    def page(self,name,title='Authored page',description='Original public summary',noindex=False):
+        source=('<html><head><title>'+title+'</title><meta name="description" content="'+description+'">'
+                '<meta property="og:title" content="'+title+'"><meta property="og:description" content="'+description+'">'
+                '<meta property="og:url" content="https://example.test/guide"><link rel="canonical" href="https://example.test/guide">'
+                + ('<meta name="robots" content="noindex">' if noindex else '') + '</head><body>Fixture</body></html>')
+        p=self.root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(source,encoding='utf8')
+
+    def result(self):
+        output=io.StringIO()
+        with patch.object(self.audit,'ROOT',self.root),redirect_stdout(output):
+            code=self.audit.main()
+        return code,output.getvalue()
+
+    def test_root_local_evidence_copies_are_not_published_pages(self):
+        self.page('index.html')
+        for directory in ['.codex-review','.claude-review','.lighthouseci','delivery-preview']:
+            self.page(directory+'/nested/old.html')
+        self.assertEqual(self.result()[0],0)
+        with patch.object(self.audit,'ROOT',self.root):
+            self.assertEqual([p.relative_to(self.root).as_posix() for p in self.audit.iter_html()],['index.html'])
+
+    def test_two_genuine_public_pages_keep_every_duplicate_gate(self):
+        self.page('index.html');self.page('blog/new.html')
+        code,output=self.result();self.assertEqual(code,1)
+        for field in ['title','description','og:title','og:description','canonical','og:url']:
+            self.assertIn('duplicate '+field,output)
+        self.assertIn('2 indexable pages',output)
+
+    def test_similar_root_names_and_nested_audit_names_remain_checked(self):
+        self.page('index.html')
+        for name in ['.codex-review-public/new.html','blog/.codex-review/new.html','blog/delivery-preview/new.html']:
+            with self.subTest(name=name):
+                self.page(name)
+                code,output=self.result();self.assertEqual(code,1)
+                self.assertIn(name,output)
+                (self.root/name).unlink()
+
+    def test_english_canonical_exception_retains_english_metadata_checks(self):
+        self.page('index.html',title='中文頁面',description='中文摘要')
+        self.page('en/index.html',title='English page',description='English summary')
+        self.assertEqual(self.result()[0],0)
+        self.page('en/another.html',title='English page',description='English summary')
+        code,output=self.result();self.assertEqual(code,1)
+        self.assertIn('duplicate title on 2 indexable pages',output)
+        self.assertIn('duplicate description on 2 indexable pages',output)
+
+    def test_existing_noindex_admin_and_recovery_controls_remain_excluded(self):
+        self.page('index.html')
+        self.page('notes.html',noindex=True)
+        for name in ['admin/source.html','404.html','offline.html','reset-sw.html']:
+            self.page(name)
+        self.assertEqual(self.result()[0],0)
+
+
+class TextIntegrityPublishedScopeTests(unittest.TestCase):
+    def setUp(self):
+        self.audit=load_script('_check_text_integrity')
+        self.temp=tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name)
+        for number in range(self.audit.MIN_FILES_SCANNED):
+            (self.root/f'public-{number}.txt').write_text('Author supplied content',encoding='utf8')
+
+    def write(self,name,raw):
+        path=self.root/name
+        path.parent.mkdir(parents=True,exist_ok=True)
+        path.write_bytes(raw)
+        return path
+
+    def result(self):
+        output=io.StringIO()
+        with patch.object(self.audit,'ROOT',self.root),redirect_stdout(output):
+            code=self.audit.main()
+        return code,output.getvalue()
+
+    def test_exact_root_private_evidence_is_not_site_text(self):
+        for name in ['.codex-review','.claude-review','.lighthouseci','delivery-preview']:
+            self.write(name+'/failed-evidence.txt',b'\xff\xfeprivate historical output')
+        code,output=self.result()
+        self.assertEqual(code,0,output)
+        with patch.object(self.audit,'ROOT',self.root):
+            self.assertEqual(len(self.audit.iter_files()),self.audit.MIN_FILES_SCANNED)
+
+    def test_actual_public_text_preserves_all_character_and_title_gates(self):
+        for raw,label in [
+            (b'\xff\xfeinvalid public bytes','not valid UTF-8'),
+            (chr(0xfffd).encode('utf8'),'Unicode replacement character'),
+            ((chr(0xc3)+'X').encode('utf8'),'likely mojibake text'),
+            (('<title>Author '+chr(0xb7)+' '+chr(0xb7)+' ChenDermatologist</title>').encode('utf8'),'duplicated title separator'),
+            (b'<title>Author '+bytes([63])+b' ChenDermatologist</title>','likely corrupted title separator'),
+        ]:
+            with self.subTest(label=label):
+                path=self.write('blog/public-guide.svg',raw)
+                code,output=self.result()
+                self.assertEqual(code,1)
+                self.assertIn('blog/public-guide.svg:',output)
+                self.assertIn(label,output)
+                path.unlink()
+
+    def test_similar_and_nested_evidence_names_remain_audited(self):
+        for name in ['.codex-review-public/guide.html','blog/.codex-review/guide.html','blog/delivery-preview/guide.html']:
+            with self.subTest(name=name):
+                path=self.write(name,chr(0xfffd).encode('utf8'))
+                code,output=self.result()
+                self.assertEqual(code,1)
+                self.assertIn(name+':',output)
+                path.unlink()
+
+    def test_private_evidence_cannot_satisfy_public_anti_vacuity_floor(self):
+        for path in self.root.glob('public-*.txt'):
+            path.unlink()
+        for number in range(self.audit.MIN_FILES_SCANNED):
+            self.write(f'.codex-review/evidence-{number}.txt',b'Historical evidence')
+        code,output=self.result()
+        self.assertEqual(code,1)
+        self.assertIn('only 0 file(s) scanned',output)
+
+class SEOPublishedScopeTests(unittest.TestCase):
+    def setUp(self):
+        fake=io.TextIOWrapper(io.BytesIO(),encoding='utf8')
+        with patch.object(sys,'stdout',fake):
+            self.audit=load_script('_check_seo_signals')
+        self.temp=tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name)
+        self.good='<meta name="robots" content="max-image-preview:large,max-snippet:-1"><link rel="canonical" href="https://example.test/guide">'
+        self.bad='<span data-zh="???">Fixture</span><div class="ad-slot">AdSense</div>'
+        self.checks=['check_robots_serp_directives','check_canonical_coverage','check_no_mojibake_in_data_attrs','check_no_ad_placeholder_text']
+
+    def write(self,name,source):
+        path=self.root/name
+        path.parent.mkdir(parents=True,exist_ok=True)
+        path.write_text(source,encoding='utf8')
+        return path
+
+    def errors(self,method):
+        self.audit.errors.clear()
+        with patch.object(self.audit,'ROOT',self.root),redirect_stdout(io.StringIO()):
+            getattr(self.audit,method)()
+        return list(self.audit.errors)
+
+    def test_exact_root_private_evidence_is_not_public_seo_content(self):
+        self.write('index.html',self.good)
+        for prefix in ['.codex-review','.claude-review','.lighthouseci','delivery-preview']:
+            self.write(prefix+'/failed.html',self.bad)
+        for method in self.checks:
+            with self.subTest(method=method):
+                self.assertEqual(self.errors(method),[])
+
+    def test_real_public_robots_canonical_mojibake_and_placeholder_fail(self):
+        self.write('blog/new.html',self.bad)
+        for method in self.checks:
+            with self.subTest(method=method):
+                errors=self.errors(method)
+                self.assertTrue(errors)
+                self.assertTrue(any('[blog/new.html]' in row for row in errors))
+
+    def test_similar_root_and_nested_evidence_names_remain_checked(self):
+        for name in ['.codex-review-public/guide.html','blog/.codex-review/guide.html','blog/delivery-preview/guide.html']:
+            path=self.write(name,self.bad)
+            for method in self.checks:
+                with self.subTest(name=name,method=method):
+                    self.assertTrue(any('['+name+']' in row for row in self.errors(method)))
+            path.unlink()
 
 if __name__ == '__main__':
     unittest.main()

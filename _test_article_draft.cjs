@@ -941,3 +941,24 @@ test('late review changes or Preview withdrawal prevent the final author branch 
     assert.equal(h.refs.get('main'),h.main);
   }
 });
+
+test('existing draft adopts an image added in a later immutable main without losing it',async()=>{
+ const h=fixture();
+ const firstResponse=await h.request(h.input({content:HTML}));assert.equal(firstResponse.status,200);
+ const first=await firstResponse.json();
+ const gif=Buffer.from('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7','base64');
+ const path='blog/images/example/'+crypto.createHash('sha256').update(gif).digest('hex')+'.gif';
+ const id=blobSha(gif);h.blobs.set(id,gif);
+ const tree=new Map(h.trees.get(h.commits.get(h.main).tree.sha));tree.set(path,id);
+ const treeId=sha(JSON.stringify([...tree])),nextMain=sha('main added an immutable image after draft creation');
+ h.trees.set(treeId,tree);h.commits.set(nextMain,{tree:{sha:treeId},parents:[h.main]});h.main=nextMain;h.refs.set('main',nextMain);
+ assert.equal(h.trees.get(h.commits.get(first.head).tree.sha).has(path),false);
+ const content=HTML.replace('</main>','<img src="/'+path+'" alt="Local fixture"></main>');
+ const response=await h.request(h.input({content,expectedHead:first.head}));
+ assert.equal(response.status,200);
+ const accepted=await response.json();assert.equal(accepted.verified,true);assert.equal(accepted.published,false);
+ assert.equal(h.trees.get(h.commits.get(accepted.head).tree.sha).get(path),id);
+ const loaded=await (await h.request()).json();assert.deepEqual(loaded.assets,[{path,sha:id,size:gif.length}]);
+ assert.deepEqual(loaded.media,[{path,base64:gif.toString('base64')}]);assert.equal(loaded.content,content);
+ assert.equal(h.refs.get('main'),nextMain,'saving never changes main');
+});
