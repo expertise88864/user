@@ -199,6 +199,17 @@ def workspace(root: Path):
             raise ValueError('Rebuild cleanup target changed')
         def remove_readonly(function, name, error):
             target = Path(name)
+            # Python 3.12 reports children removed after directory enumeration.
+            # Only an already-absent verified descendant is safe to ignore;
+            # retain root, replacement, escaped-path and other error failures.
+            resolved = target.resolve()
+            if (isinstance(error, FileNotFoundError) and resolved != temporary and
+                    resolved.is_relative_to(temporary)):
+                try:
+                    target.lstat()
+                except FileNotFoundError:
+                    return
+                raise error
             # Windows Git objects can carry the readonly attribute. Clear it
             # only on the verified ordinary temporary child that failed; never
             # retry against a link, replacement target or unrelated OS error.

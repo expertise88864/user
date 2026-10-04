@@ -243,5 +243,88 @@ class RebuildTests(unittest.TestCase):
             self.assertTrue(Path(env['NPM_CONFIG_USERCONFIG']).is_relative_to(Path(folder)))
 
 
+class WorkspaceCleanupTests(unittest.TestCase):
+    """Replay a child disappearing between rmtree enumeration and removal."""
+
+    def cleanup_with(self, callback, body_error=None):
+        original = rebuild.shutil.rmtree
+
+        def interrupted_cleanup(name, *, onexc):
+            temporary = Path(name)
+            try:
+                callback(temporary, onexc)
+            finally:
+                # Only the ordinary SYSTEM TEMP workspace created by the real
+                # context manager is removed; no injected error path is used.
+                original(temporary, onexc=onexc)
+
+        with patch.object(rebuild.shutil, 'rmtree', interrupted_cleanup):
+            with rebuild.workspace(Path(__file__).resolve().parent) as temporary:
+                if body_error is not None:
+                    raise body_error
+            self.assertFalse(temporary.exists())
+
+    def test_disappeared_nested_file_and_directory_finish_cleanup(self):
+        for directory in (False, True):
+            with self.subTest(directory=directory):
+                def disappear(temporary, onexc):
+                    parent = temporary / 'recipient' / '.git'
+                    parent.mkdir(parents=True)
+                    target = parent / 'objects'
+                    if directory:
+                        target.mkdir()
+                        target.rmdir()
+                    else:
+                        target.write_bytes(b'Nonclinical cleanup fixture')
+                        target.unlink()
+                    error = FileNotFoundError(2, 'Disappeared after enumeration', str(target))
+                    onexc(os.unlink, str(target), error)
+                self.cleanup_with(disappear)
+
+    def test_top_level_missing_error_is_not_ignored(self):
+        def missing_top(temporary, onexc):
+            onexc(os.rmdir, str(temporary), FileNotFoundError(2, 'Missing workspace', str(temporary)))
+        with self.assertRaises(FileNotFoundError):
+            self.cleanup_with(missing_top)
+
+    def test_missing_path_outside_workspace_is_not_ignored(self):
+        def missing_outside(temporary, onexc):
+            target = temporary.parent / ('absent-' + temporary.name)
+            self.assertFalse(target.exists())
+            onexc(os.unlink, str(target), FileNotFoundError(2, 'Outside workspace', str(target)))
+        with self.assertRaises(FileNotFoundError):
+            self.cleanup_with(missing_outside)
+
+    def test_reappeared_child_is_not_ignored_or_removed_by_callback(self):
+        def reappeared(temporary, onexc):
+            target = temporary / 'returned.txt'
+            target.write_bytes(b'Keep until verified normal cleanup')
+            error = FileNotFoundError(2, 'Earlier disappearance', str(target))
+            try:
+                onexc(os.unlink, str(target), error)
+            finally:
+                self.assertEqual(target.read_bytes(), b'Keep until verified normal cleanup')
+        with self.assertRaises(FileNotFoundError):
+            self.cleanup_with(reappeared)
+
+    def test_other_errors_are_propagated(self):
+        for error in (OSError(5, 'I/O failure'), RuntimeError('Unexpected callback error')):
+            with self.subTest(error=type(error).__name__):
+                def fail(temporary, onexc):
+                    onexc(os.unlink, str(temporary / 'absent-child'), error)
+                with self.assertRaises(type(error)) as caught:
+                    self.cleanup_with(fail)
+                self.assertIs(caught.exception, error)
+
+    def test_disappeared_child_does_not_mask_original_body_failure(self):
+        error = RuntimeError('Generation failed before cleanup')
+        def missing_child(temporary, onexc):
+            target = temporary / 'absent-child'
+            onexc(os.unlink, str(target), FileNotFoundError(2, 'Already removed', str(target)))
+        with self.assertRaises(RuntimeError) as caught:
+            self.cleanup_with(missing_child, body_error=error)
+        self.assertIs(caught.exception, error)
+
+
 if __name__ == '__main__':
     unittest.main()
