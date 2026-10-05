@@ -260,6 +260,7 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_test_review_fixes.py"],
     [PY, "-m", "unittest", "_test_codex_review_identity"],
     [PY, "_test_legacy_maintenance.py"],
+    [PY, "_test_dashboard.py"],
     [PY, "_test_reading_metrics.py"],
     [PY, "_check_meta.py", "--fast"],
     [PY, "_check_metadata_uniqueness.py"],
