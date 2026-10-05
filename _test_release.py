@@ -12,41 +12,110 @@ from contextlib import redirect_stdout
 import unittest
 from unittest.mock import patch
 
-from _verify_remote_ci import REQUIRED, assess
+from types import SimpleNamespace
+
+import _delivery as delivery
 
 ROOT = Path(__file__).resolve().parent
 
 
 class RemoteEvidenceTests(unittest.TestCase):
-    def runs(self):
-        return [dict(id=i, path=p, event='push', status='completed', conclusion='success',
-                     html_url=f'https://example.test/{i}') for i,p in enumerate(sorted(REQUIRED))]
+    def setUp(self):
+        self.sha = 'a' * 40
+        # Exercise the actual six-workflow contract. PR and live author approval
+        # are independently covered by _test_delivery.py; this collector is offline.
+        self.cfg = {**delivery.policy(), 'require_pr': False}
+        self.runs = []
+        self.jobs = {}
+        for index, entry in enumerate(self.cfg['workflows'], 1):
+            self.runs.append(dict(id=index, path=entry['path'], event='push',
+                                  head_sha=self.sha, head_branch='codex/release-fixture',
+                                  run_attempt=1, status='completed', conclusion='success',
+                                  html_url=f'https://example.test/{index}'))
+            skips = entry.get('candidate_skips', [])
+            self.jobs[index] = [dict(
+                id=index * 100 + offset, name=name, status='completed',
+                conclusion='skipped' if name in skips else 'success',
+                steps=[dict(name=step, status='completed', conclusion='success')
+                       for step in entry['steps'][name]['required']
+                       + entry['steps'][name].get('candidate_required', [])],
+            ) for offset, name in enumerate(entry['jobs'])]
+
+    def verify(self):
+        def pages(path, key):
+            if key == 'workflow_runs':
+                self.assertEqual(path, f'/actions/runs?head_sha={self.sha}')
+                return self.runs
+            self.assertEqual(key, 'jobs')
+            run_id = int(path.split('/')[3])
+            return self.jobs[run_id]
+        with patch('_cms_delivery.verify', return_value={}), \
+                patch('_site_settings_delivery.verify', return_value={}):
+            evidence = delivery.verify(self.sha, 'candidate', self.cfg,
+                                       SimpleNamespace(pages=pages))
+        return [record for record in evidence if 'run_id' in record]
 
     def test_no_evidence_is_not_success(self):
-        pending, failed = assess([], [], [])
-        self.assertTrue(pending)
-        self.assertFalse(failed)
+        self.runs = []
+        with self.assertRaises(delivery.Blocked):
+            self.verify()
 
     def test_complete_success(self):
-        self.assertEqual(assess(self.runs(), [], []), ([], []))
+        evidence = self.verify()
+        self.assertEqual(len(evidence), len(self.cfg['workflows']))
+        self.assertEqual({record['run_id'] for record in evidence}, set(self.jobs))
+        self.assertTrue(all(record['sha'] == self.sha for record in evidence))
 
     def test_failure_cancellation_and_timeout_are_not_success(self):
         for conclusion in ('failure', 'cancelled', 'timed_out', 'skipped', None):
-            runs = self.runs()
-            runs[0]['conclusion'] = conclusion
-            self.assertTrue(assess(runs, [], [])[1], conclusion)
+            with self.subTest(conclusion=conclusion):
+                self.runs[0]['conclusion'] = conclusion
+                with self.assertRaises(delivery.Blocked):
+                    self.verify()
 
-    def test_pending_status_and_external_failure_are_not_success(self):
-        status = dict(context='deploy', state='pending', target_url='https://example.test/deploy')
-        self.assertTrue(assess(self.runs(), [], [status])[0])
-        check = dict(name='external', status='completed', conclusion='failure', html_url='https://example.test/check')
-        self.assertTrue(assess(self.runs(), [check], [])[1])
+    def test_pending_or_failed_job_and_step_are_not_success(self):
+        job = self.jobs[1][0]
+        for field, value in (('status', 'in_progress'), ('conclusion', 'failure')):
+            with self.subTest(field=field):
+                original = job[field]
+                job[field] = value
+                with self.assertRaises(delivery.Blocked):
+                    self.verify()
+                job[field] = original
+        for conclusion in ('pending', 'failure', 'cancelled', 'timed_out', 'skipped', None):
+            with self.subTest(step=conclusion):
+                job['steps'][0]['conclusion'] = conclusion
+                with self.assertRaises(delivery.Blocked):
+                    self.verify()
 
     def test_rerun_supersedes_failed_attempt(self):
-        runs = self.runs()
-        old = dict(runs[0], conclusion='failure', run_attempt=1)
-        runs[0]['run_attempt'] = 2
-        self.assertEqual(assess([old] + runs, [], []), ([], []))
+        old = dict(self.runs[0], conclusion='failure', run_attempt=1)
+        self.runs[0]['run_attempt'] = 2
+        self.runs.insert(0, old)
+        self.assertEqual(len(self.verify()), len(self.cfg['workflows']))
+        self.runs[1]['conclusion'] = 'failure'
+        self.runs[0]['conclusion'] = 'success'
+        with self.assertRaises(delivery.Blocked):
+            self.verify()
+
+    def test_missing_any_workflow_cannot_be_replaced_by_other_green_runs(self):
+        complete = self.runs[:]
+        for absent in complete:
+            with self.subTest(path=absent['path']):
+                self.runs = [run for run in complete if run is not absent]
+                with self.assertRaises(delivery.Blocked):
+                    self.verify()
+
+    def test_wrong_sha_branch_or_event_cannot_supply_evidence(self):
+        run = self.runs[0]
+        for field, value in (('head_sha', 'b' * 40), ('head_branch', 'main'),
+                             ('event', 'pull_request')):
+            with self.subTest(field=field):
+                original = run[field]
+                run[field] = value
+                with self.assertRaises(delivery.Blocked):
+                    self.verify()
+                run[field] = original
 
 
 class ScheduledPublicationTests(unittest.TestCase):
