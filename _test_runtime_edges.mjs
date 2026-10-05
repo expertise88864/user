@@ -455,8 +455,10 @@ test('URL language stays stable across browser language and saved preferences', 
 // a listener or relying on the host OS to reproduce Windows drive paths.
 function resolver(platform, root) {
   const source = readFileSync(new URL('./_serve.mjs', import.meta.url), 'utf8');
+  const policy = source.slice(source.indexOf('const PUBLIC_DIRECTORIES ='), source.indexOf('\nfunction encodingQuality'));
+  assert.ok(policy.startsWith('const PUBLIC_DIRECTORIES ='), 'Use the actual server public-file policy');
   const fn = source.slice(source.indexOf('function safePath('), source.indexOf('\nasync function resolveFile'));
-  return vm.runInNewContext(`${fn}; safePath`, { path: platform, ROOT: root });
+  return vm.runInNewContext(`${policy}\n${fn}; safePath`, { path: platform, ROOT: root });
 }
 
 test('Windows absolute paths cannot escape into a similarly named sibling', () => {

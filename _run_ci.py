@@ -1,8 +1,11 @@
-"""Blocking local equivalents of the Quality gate, including browser budgets.
+"""Local Quality/lab diagnostics, including browser budgets.
 
 Requires Python 3.12 with html5validator/lxml, Java 21, Node 20 and
 @lhci/cli 0.13.x with Puppeteer on PATH. Reports go outside the source tree.
-The other workflows retain their documented informational/operational scope.
+This helper does not verify every required project workflow or formal delivery.
+Its installed validator/dependency versions and local filters can differ from
+hosted CI. Use _delivery.py for exact-SHA candidate/PR and formal evidence;
+an exit-zero local result must never be described as all project CI passing.
 """
 from __future__ import annotations
 
@@ -32,9 +35,10 @@ HTML_IGNORE = [
 
 def main() -> int:
     output = Path(tempfile.mkdtemp(prefix='dermnotes-ci-'))
-    print(f'CI evidence: {output}', flush=True)
+    print(f'Local Quality evidence (not complete project CI): {output}', flush=True)
     results = {'head': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT,
-                                               text=True).strip(), 'checks': [], 'passed': False}
+                                               text=True).strip(), 'checks': [], 'passed': False,
+               'scope': 'local-quality-lab', 'all_project_remote_ci_verified': False}
     server = None
 
     def run(name, command, cwd=ROOT):

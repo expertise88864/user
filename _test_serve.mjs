@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {spawn,spawnSync,execFileSync} from 'node:child_process';
 import {request} from 'node:https';
-import {readFileSync,mkdtempSync,realpathSync,rmSync} from 'node:fs';
+import {request as plainRequest} from 'node:http';
+import {readFileSync,writeFileSync,mkdirSync,copyFileSync,mkdtempSync,realpathSync,rmSync,symlinkSync,unlinkSync} from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import {gunzipSync} from 'node:zlib';
@@ -60,6 +61,68 @@ test('actual static server negotiates production-like compression without changi
     if(child?.pid&&child.exitCode===null&&child.signalCode===null){const exited=new Promise(resolve=>child.once('exit',resolve));child.kill();await exited;}
     assert.equal(realpathSync(path.dirname(temporary)),realpathSync(os.tmpdir()),'Only remove the exact owned system-temp fixture');
     assert.ok(path.basename(temporary).startsWith('chenderm-serve-test-'));
+    rmSync(temporary,{recursive:true,force:true});
+  }
+});
+
+test('local preview serves public routes while private files and aliases stay unavailable', {timeout:30000}, async () => {
+  const temporary=mkdtempSync(path.join(os.tmpdir(),'chenderm-serve-private-'));
+  const site=path.join(temporary,'site'),outside=path.join(temporary,'outside');
+  const links=[];
+  let child;
+  try {
+  mkdirSync(site);mkdirSync(outside);
+  copyFileSync('_serve.mjs',path.join(site,'_serve.mjs'));
+  const fixture=(name,body)=>{const target=path.join(site,name);mkdirSync(path.dirname(target),{recursive:true});writeFileSync(target,body);};
+  const privateFiles=['.git/config','.codex-review/report.txt','.env','.env.local',
+    '_delivery_policy.json','api/admin/example.js','tools/codex_review.sh',
+    'node_modules/example/index.js','delivery-preview/report.html',
+    'local.pem','local.key','google-credentials.json','x-service-account-key.json',
+    'PIPELINE.md','package.json','package-lock.json','vercel.json','middleware.js',
+    'astro-rewrite/source.js','data/private.json','styles/config.ini','unpublished.html',
+    'plausible-verification-key.txt'];
+  for(const name of privateFiles)fixture(name,'ISOLATED_PRIVATE_MARKER');
+  const publicFiles=new Map([['index.html','PUBLIC_HOME'],['tools.html','PUBLIC_TOOLS'],
+    ['blog/index.html','PUBLIC_BLOG'],['assets/public.svg','PUBLIC_SVG'],
+    ['admin/word-editor.js','PUBLIC_EDITOR'],['.well-known/ai.txt','PUBLIC_AI_POLICY'],
+    ['en/index.html','PUBLIC_EN'],['ai/faq.json','PUBLIC_AI'],['pagefind/wasm.en.pagefind','PUBLIC_SEARCH'],
+    ['robots.txt','PUBLIC_ROBOTS'],['sitemap.xml','PUBLIC_SITEMAP'],['llms.txt','PUBLIC_LLM'],
+    ['llms-full.txt','PUBLIC_LLM_FULL'],['manifest.json','PUBLIC_MANIFEST'],['sw.js','PUBLIC_SW'],
+    ['icon-192.png','PUBLIC_ICON'],['public-fixture-indexnow-key.txt','public-fixture-indexnow-key\n']]);
+  for(const [name,body] of publicFiles)fixture(name,body);
+  writeFileSync(path.join(outside,'private.txt'),'ISOLATED_OUTSIDE_MARKER');
+  // Junctions on Windows avoid requiring symlink privileges or OS changes.
+  const linkKind=process.platform==='win32'?'junction':'dir';
+  for(const [target,name] of [[outside,'outside-alias'],[path.join(site,'.git'),'private-alias'],
+    [outside,'assets/outside-alias'],[path.join(site,'.git'),'assets/private-alias']]) {
+    const link=path.join(site,name);symlinkSync(target,link,linkKind);links.push(link);
+  }
+    child=spawn(process.execPath,[path.join(site,'_serve.mjs'),'--host','127.0.0.1','--port','0'],{cwd:site,stdio:['ignore','pipe','pipe']});
+    const origin=await new Promise((resolve,reject)=>{
+      let output='';const timer=setTimeout(()=>reject(Error('Private fixture startup timed out')),10000);
+      child.stdout.on('data',data=>{output+=data;const match=output.match(/http:\/\/127\.0\.0\.1:\d+/);if(match){clearTimeout(timer);resolve(match[0]);}});
+      child.once('error',error=>{clearTimeout(timer);reject(error);});
+      child.once('exit',code=>{clearTimeout(timer);reject(Error('Private fixture exited '+code));});
+    });
+    // Direct loopback transport has no configured proxy or third-party collector.
+    const get=(route,method='GET')=>new Promise((resolve,reject)=>{
+      const req=plainRequest(origin+route,{method},res=>{const chunks=[];res.on('data',d=>chunks.push(d));res.on('end',()=>resolve({status:res.statusCode,body:Buffer.concat(chunks).toString()}));res.on('error',reject);});
+      req.on('error',reject);req.setTimeout(5000,()=>req.destroy(Error('Private fixture request timeout')));req.end();
+    });
+    for(const name of privateFiles){for(const method of ['GET','HEAD']){const response=await get('/'+name,method);assert.equal(response.status,404,name);assert.doesNotMatch(response.body,/ISOLATED_PRIVATE_MARKER/);}}
+    for(const route of ['/%2egit/config','/%5fgate.json','/API/admin/example.js','/TOOLS/codex_review.sh',
+      '/outside-alias/private.txt','/private-alias/config','/assets/outside-alias/private.txt',
+      '/assets/private-alias/config']){const response=await get(route);assert.equal(response.status,404,route);assert.doesNotMatch(response.body,/ISOLATED_(?:PRIVATE|OUTSIDE)_MARKER/);}
+    for(const [route,body] of [['/','PUBLIC_HOME'],['/tools','PUBLIC_TOOLS'],['/blog','PUBLIC_BLOG'],
+      ...[...publicFiles].filter(([name])=>!['index.html','tools.html','blog/index.html'].includes(name)).map(([name,body])=>['/'+name,body])]){
+      const response=await get(route);assert.equal(response.status,200,route);assert.equal(response.body,body,route);
+    }
+    const picks=await get('/api/admin/popular-picks');assert.equal(picks.status,200);assert.deepEqual(JSON.parse(picks.body),{picks:[]});
+  } finally {
+    if(child?.pid&&child.exitCode===null&&child.signalCode===null){const exited=new Promise(resolve=>child.once('exit',resolve));child.kill();await exited;}
+    for(const link of links){assert.ok([realpathSync(site),realpathSync(path.join(site,'assets'))].includes(realpathSync(path.dirname(link))));unlinkSync(link);}
+    assert.equal(realpathSync(path.dirname(temporary)),realpathSync(os.tmpdir()));
+    assert.ok(path.basename(temporary).startsWith('chenderm-serve-private-'));
     rmSync(temporary,{recursive:true,force:true});
   }
 });

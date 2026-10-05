@@ -132,8 +132,11 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
   憑證的公鑰，不更動系統信任或網路防護設定。
 - `deploy.ps1` 只發布已準備好的 main commit，不自動 stage、stash、rebase 或處理衝突。
   須先完成 review／醫療內容核可，且工作目錄乾淨；build 產生差異時，先審查、提交生成物再重跑。
-  推送後執行 `python _verify_remote_ci.py <完整 SHA>`（需已登入的 GitHub CLI），
-  同一 SHA 的所有適用 GitHub 檢查全綠才能宣告交付。
+  候選核對使用 `python _delivery.py verify <完整 SHA> --phase candidate --wait 1800`；
+  正式推送後使用同一入口的 `--phase main`，核對政策要求的全部 workflows、jobs 與 steps。
+  舊的 `python _verify_remote_ci.py <完整 SHA>` 也委派中央驗證器，預設核對正式 main；
+  候選須明示 `--phase candidate`。沿用既有 GitHub 登入，無須另外安裝 GitHub CLI 或新增憑證。
+  候選成功仍須完成同 SHA 正式 CI、部署與 smoke，才能宣告交付。
 - CI 只驗證生成物一致性，不自行回推或使用 skip token。後台直接編輯造成生成物過期時，
   必須先同步、重生與驗證，CI 不會替未驗證的版本另建發布 commit。
 - **排程候選源碼準備（工程已隨 6c6814d 發布）**：可信 main 的排程每 15 分鐘唯讀發現

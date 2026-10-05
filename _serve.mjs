@@ -2,7 +2,7 @@
 import { createServer } from 'node:http';
 import { createServer as createSecureServer } from 'node:https';
 import { createReadStream, readFileSync } from 'node:fs';
-import { stat } from 'node:fs/promises';
+import { realpath, stat } from 'node:fs/promises';
 import { createGzip } from 'node:zlib';
 import { pipeline } from 'node:stream/promises';
 import path from 'node:path';
@@ -44,6 +44,17 @@ const TYPES = new Map([
 ]);
 
 const COMPRESSIBLE = new Set(['.css', '.html', '.js', '.json', '.svg', '.txt', '.xml']);
+const PUBLIC_DIRECTORIES = new Set(['admin', 'ai', 'assets', 'blog', 'en', 'pagefind', '.well-known']);
+const PUBLIC_ROOT_FILES = new Set([
+  '404.html', 'about.html', 'admin.html', 'dashboard.html', 'glossary.html', 'index.html',
+  'notes.html', 'offline.html', 'privacy.html', 'reset-sw.html', 'support.html', 'tools.html',
+  'ads.txt', 'humans.txt', 'llms.txt', 'llms-full.txt', 'robots.txt', 'sitemap.xml',
+  'manifest.json', 'opensearch.xml', 'sw.js', 'favicon.ico', 'apple-touch-icon.png', 'icon.svg',
+  'icon-16.png', 'icon-32.png', 'icon-48.png', 'icon-64.png', 'icon-96.png', 'icon-128.png',
+  'icon-180.png', 'icon-192.png', 'icon-256.png', 'icon-512.png', 'logo-512.png',
+]);
+const PUBLIC_ROOT_ROUTES = new Set([...PUBLIC_ROOT_FILES].filter(name => name.endsWith('.html')).map(name => name.slice(0, -5)));
+const VERIFICATION_FILE = /^[A-Za-z0-9-]{8,128}\.txt$/;
 
 function encodingQuality(header) {
   const weights = new Map();
@@ -81,14 +92,27 @@ function safePath(urlPath) {
   const normalized = path.normalize(decoded).replace(/^(\.\.[/\\])+/, '');
   const relative = normalized.replace(/^[/\\]+/, '');
   const absolute = path.resolve(ROOT, relative);
+  return publicFilePath(absolute) ? absolute : null;
+}
+
+function publicFilePath(absolute, isFile = false) {
   const fromRoot = path.relative(ROOT, absolute);
-  return fromRoot === '..' || fromRoot.startsWith('..' + path.sep) || path.isAbsolute(fromRoot)
-    ? null : absolute;
+  if (fromRoot === '..' || fromRoot.startsWith('..' + path.sep) || path.isAbsolute(fromRoot)) return false;
+  const parts = fromRoot.split(/[/\\]+/).filter(Boolean);
+  // Only known site roots are public. The popular-picks fixture is handled
+  // before resolution; API source, project docs/config and tooling stay private.
+  if (parts.some(part => /\.(?:pem|key|pyc)$/i.test(part) ||
+    /(?:service-account|credentials|firebase-adminsdk|gcloud-key|positive-guild-).*\.json$/i.test(part))) return false;
+  if (parts.some((part, index) => part.startsWith('_') ||
+    (part.startsWith('.') && !(index === 0 && part.toLowerCase() === '.well-known')))) return false;
+  const first = parts[0]?.toLowerCase();
+  if (parts.length > 1) return PUBLIC_DIRECTORIES.has(first);
+  return PUBLIC_ROOT_FILES.has(first) || VERIFICATION_FILE.test(parts[0] || '') ||
+    (!isFile && (PUBLIC_DIRECTORIES.has(first) || PUBLIC_ROOT_ROUTES.has(first)));
 }
 
 async function resolveFile(urlPath) {
-  if (urlPath === '/') return path.join(ROOT, 'index.html');
-  const direct = safePath(urlPath);
+  const direct = safePath(urlPath === '/' ? '/index.html' : urlPath);
   if (!direct) return null;
 
   const candidates = [direct];
@@ -100,7 +124,17 @@ async function resolveFile(urlPath) {
   for (const candidate of candidates) {
     try {
       const info = await stat(candidate);
-      if (info.isFile()) return candidate;
+      if (info.isFile()) {
+        const resolved = await realpath(candidate);
+        if (!publicFilePath(resolved, true)) continue;
+        const relative = path.relative(ROOT, resolved);
+        if (!relative.includes(path.sep) && !PUBLIC_ROOT_FILES.has(relative.toLowerCase())) {
+          // IndexNow root verification files contain only their public key.
+          // A plausible filename alone must not expose arbitrary text files.
+          if (info.size > 130 || readFileSync(resolved, 'utf8').trim() !== relative.slice(0, -4)) continue;
+        }
+        return resolved;
+      }
     } catch {
       // try next candidate
     }

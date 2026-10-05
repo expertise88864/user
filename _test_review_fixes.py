@@ -531,5 +531,51 @@ class MedicalEntityConsistencyTests(unittest.TestCase):
         self.assertNotIn('MathML', ACCESSIBILITY_FEATURES)
 
 
+class LegacyRemoteCIVerifierTests(unittest.TestCase):
+    def test_default_old_invocation_requires_formal_main_policy(self):
+        import _verify_remote_ci as entry
+        with patch.object(entry.subprocess, 'run', return_value=Mock(returncode=0)) as run:
+            self.assertEqual(entry.main(['a' * 40]), 0)
+        self.assertEqual(run.call_args.args[0], [sys.executable, str(ROOT / '_delivery.py'),
+                         'verify', 'a' * 40, '--phase', 'main', '--wait', '1800'])
+        self.assertEqual(run.call_args.kwargs['cwd'], ROOT)
+
+    def test_candidate_requires_explicit_scope_and_preserves_bounded_wait(self):
+        import _verify_remote_ci as entry
+        with patch.object(entry.subprocess, 'run', return_value=Mock(returncode=0)) as run:
+            self.assertEqual(entry.main(['a' * 40, '--phase', 'candidate', '--wait', '0']), 0)
+        self.assertEqual(run.call_args.args[0][-4:], ['--phase', 'candidate', '--wait', '0'])
+
+    def test_missing_failed_or_cancelled_policy_result_is_not_changed_to_success(self):
+        import _verify_remote_ci as entry
+        for code in (1, 2, 7, 130):
+            with self.subTest(code=code), patch.object(entry.subprocess, 'run', return_value=Mock(returncode=code)):
+                self.assertEqual(entry.main(['a' * 40]), code)
+
+    def test_invalid_sha_never_starts_verification(self):
+        import _verify_remote_ci as entry
+        for sha in ('a' * 39, 'A' * 40, 'HEAD', 'a' * 40 + ';echo unsafe'):
+            with self.subTest(sha=sha), patch.object(entry.subprocess, 'run') as run, contextlib.redirect_stderr(io.StringIO()):
+                with self.assertRaises(SystemExit) as error:
+                    entry.main([sha])
+                self.assertEqual(error.exception.code, 2)
+                run.assert_not_called()
+
+    def test_unknown_scope_and_negative_wait_never_start_verification(self):
+        import _verify_remote_ci as entry
+        for args in (['--phase', 'preview'], ['--wait', '-1']):
+            with self.subTest(args=args), patch.object(entry.subprocess, 'run') as run, contextlib.redirect_stderr(io.StringIO()):
+                with self.assertRaises(SystemExit) as error:
+                    entry.main(['a' * 40, *args])
+                self.assertEqual(error.exception.code, 2)
+                run.assert_not_called()
+
+    def test_unavailable_shared_verifier_blocks_instead_of_reporting_green(self):
+        import _verify_remote_ci as entry
+        with patch.object(entry.subprocess, 'run', side_effect=OSError('isolated unavailable child')), contextlib.redirect_stderr(io.StringIO()) as output:
+            self.assertEqual(entry.main(['a' * 40]), 1)
+        self.assertIn('DELIVERY BLOCKED', output.getvalue())
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -6,10 +6,9 @@
 #   tools/codex_review.sh resume [session-id]
 #
 # mode:
-#   diff      低風險/局部(文案、註解、CSS、tests-only)     medium / 額外檔 3 / findings 3
-#   targeted  一般非 trivial 實作(預設)                     medium / 額外檔 12 / findings 5
-#   deep      auth、金流、DB migration、併發、資安、大重構    high   / 額外檔 30 / findings 8
-#   resume    第二輪(僅限 confirmed P0/P1/material P2 修正後);沿用第一輪 session
+#   diff / targeted / deep  相容模式名稱；皆固定 gpt-5.5 / xhigh / read-only。
+#                           完整交付差異，沒有檔案、finding 或輪數上限。
+#   resume                  修正後沿用同一個已驗證 session，完整重審至通過。
 #
 # 設計原則(勿改):
 #   * 絕不把完整 diff 放進 prompt 或 argv;Codex 在 repo 內自行跑 git。
