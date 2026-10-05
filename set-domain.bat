@@ -1,14 +1,6 @@
 @echo off
-REM ============================================================
-REM  set-domain.bat
-REM  Wrapper that calls set-domain.ps1 in the same folder.
-REM  Usage:
-REM    set-domain.bat dermnotes.vercel.app
-REM    set-domain.bat chendermatologist.com
-REM  Or just double-click and it will prompt.
-REM ============================================================
-chcp 65001 >/dev/null
-cd /d "%~dp0"
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0set-domain.ps1" %*
-echo.
-pause
+REM Retired bulk domain replacement; do not discard the failure with pause.
+echo [STOPPED] Retired bulk domain replacement: no files were changed. 1>&2
+echo Prepare a reviewed codex/* candidate with source-specific changes and regenerated outputs. 1>&2
+echo Verify exact candidate CI, PR and Preview, then main, deployment and smoke with _delivery.py. 1>&2
+exit /b 1

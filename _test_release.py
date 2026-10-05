@@ -256,6 +256,52 @@ class ScheduledSettingsPublicationTests(unittest.TestCase):
         self.execute(fail_preparation=True)
 
 
+@unittest.skipUnless(os.name == 'nt', 'Legacy domain entrypoints are Windows-only')
+class DomainEntrypointSafetyTests(unittest.TestCase):
+    def execute(self, entrypoint):
+        with tempfile.TemporaryDirectory(prefix='retired-domain-fixture-') as directory:
+            root = Path(directory)
+            for script in ('set-domain.ps1', 'set-domain.bat'):
+                shutil.copy2(ROOT / script, root / script)
+            protected = {
+                'index.html': '<link rel="canonical" href="https://old-domain.example/">',
+                'AGENTS.md': 'User rules for old-domain.example',
+                'CLAUDE.md': 'User rules for old-domain.example',
+                'REMOTE_CI_DELIVERY.md': 'User rules for old-domain.example',
+                '.codex-review/evidence.json': '{"original":"old-domain.example"}',
+                '.git/config': '[remote "origin"]\nurl = https://old-domain.example/',
+                'node_modules/fixture.json': '{"host":"old-domain.example"}',
+                'en/index.html': '<a href="https://old-domain.example/">Generated</a>',
+            }
+            for name, value in protected.items():
+                target = root / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(value.encode('utf8'))
+            before = {str(path.relative_to(root)): path.read_bytes()
+                      for path in root.rglob('*') if path.is_file()}
+            if entrypoint == 'powershell':
+                binary = shutil.which('pwsh') or shutil.which('powershell')
+                self.assertIsNotNone(binary, 'Windows must execute the real PowerShell entrypoint')
+                argv = [binary, '-NoProfile', '-File', str(root / 'set-domain.ps1'),
+                        '-NewDomain', 'new-domain.example']
+            else:
+                argv = [os.environ.get('COMSPEC', 'cmd.exe'), '/d', '/c',
+                        str(root / 'set-domain.bat'), 'new-domain.example']
+            result = subprocess.run(argv, cwd=root, input=b'', stdout=subprocess.PIPE,
+                                    stderr=subprocess.PIPE, timeout=15)
+            self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+            self.assertIn(b'Retired bulk domain replacement', result.stderr)
+            after = {str(path.relative_to(root)): path.read_bytes()
+                     for path in root.rglob('*') if path.is_file()}
+            self.assertEqual(after, before, 'Retired helpers must preserve every file and create no evidence')
+
+    def test_powershell_preserves_rules_evidence_sources_and_generated_files(self):
+        self.execute('powershell')
+
+    def test_batch_preserves_failure_and_never_mutates_files(self):
+        self.execute('batch')
+
+
 @unittest.skipUnless(shutil.which('pwsh') or shutil.which('powershell'), 'PowerShell is required')
 class DeploymentTests(unittest.TestCase):
     def execute(self, scenario):
