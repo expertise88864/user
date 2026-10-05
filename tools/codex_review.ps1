@@ -34,7 +34,7 @@ param(
 # 刻意用 Continue 而非 Stop:PS 5.1 對 native exe 做 2>&1 會把每行 stderr 包成 NativeCommandError,
 # 在 Stop 模式下被誤判為終止錯誤。本腳本改以 $LASTEXITCODE 與明確 Die() 控制流程。
 $ErrorActionPreference = 'Continue'
-$Model = 'gpt-5.6-sol'
+$Model = 'gpt-5.5'
 $Harden = if ($env:CODEX_REVIEW_HARDEN) { $env:CODEX_REVIEW_HARDEN } else { '1' }
 $Strict = if ($env:CODEX_REVIEW_STRICT) { $env:CODEX_REVIEW_STRICT } else { '1' }
 
@@ -59,10 +59,10 @@ if (-not (Test-Path $UsageTsv)) {
 }
 
 switch ($Mode) {
-    'diff'     { $Effort = 'medium'; $ExtraFileLimit = 3;  $FindingLimit = 3 }
-    'targeted' { $Effort = 'medium'; $ExtraFileLimit = 12; $FindingLimit = 5 }
-    'deep'     { $Effort = 'high';   $ExtraFileLimit = 30; $FindingLimit = 8 }
-    'resume'   { $Effort = '';       $ExtraFileLimit = ''; $FindingLimit = '' }
+    'diff'     { $Effort = 'xhigh' }
+    'targeted' { $Effort = 'xhigh' }
+    'deep'     { $Effort = 'xhigh' }
+    'resume'   { $Effort = '' }
     default    { Die "未知 mode '$Mode'(可用:diff | targeted | deep | resume)" }
 }
 
@@ -94,23 +94,23 @@ function Get-ReviewEvents {
         }
     }
 }
-function Get-SessionId {
-    # Only machine-readable thread.started metadata can establish identity.
-    # Text printed by the model (or a quoted transcript) is not evidence.
-    $ids = @(Get-ReviewEvents | Where-Object { $_.type -eq 'thread.started' } |
-        ForEach-Object { $_.thread_id })
-    if ($ids.Count -eq 1 -and (Test-SessionId $ids[0])) {
-        return $ids[0].ToLowerInvariant()
-    }
-    return 'unavailable'
-}
-function Get-TokensUsed {
-    $events = @(Get-ReviewEvents | Where-Object { $_.type -eq 'turn.completed' })
-    if ($events.Count) {
-        $usage = $events[-1].usage
-        return ([long]$usage.input_tokens + [long]$usage.output_tokens)
-    }
-    return 'unavailable'
+$VerifiedSid = 'unavailable'
+$VerifiedTokens = 'unavailable'
+function Get-SessionId { return $script:VerifiedSid }
+function Get-TokensUsed { return $script:VerifiedTokens }
+function Verify-ActualSession([string]$ExpectedSid = '') {
+    $proof = Join-Path $StateDir 'last_identity.json'
+    if (Test-Path $proof) { Remove-Item -LiteralPath $proof -ErrorAction Stop }
+    $a = @((Join-Path $ScriptDir 'codex_review_identity.py'), '--raw-log', $RawLog,
+           '--repo', $RepoRoot, '--started-at', [string]$ReviewStartedAt, '--proof', $proof)
+    if ($ExpectedSid) { $a += @('--expected-session', $ExpectedSid) }
+    $identity = @(& python @a)
+    if ($LASTEXITCODE -ne 0 -or $identity.Count -ne 1) { return $false }
+    $fields = $identity[0] -split "`t"
+    if ($fields.Count -ne 2 -or -not (Test-SessionId $fields[0])) { return $false }
+    $script:VerifiedSid = $fields[0]
+    $script:VerifiedTokens = $fields[1]
+    return $true
 }
 function Get-Result {
     # CODE_REVIEW — the verdict is the LAST non-blank line, matched EXACTLY. A
@@ -178,18 +178,31 @@ if ($Mode -eq 'resume') {
     }
     $NextPass = $PassNumber + 1
 
-    $last = (Get-Content $UsageTsv | Select-Object -Last 1) -split "`t"
-    $ResumeEffort = if ($last.Count -ge 5 -and $last[4]) { $last[4] } else { 'medium' }
+    # Failed attempts remain in the usage history but cannot replace the last
+    # completed, identity-verified profile for this exact recorded session.
+    $verifiedRows = @(Get-Content $UsageTsv | Where-Object {
+        $row = $_ -split "`t"
+        $pass = 0
+        $row.Count -ge 11 -and $row[6] -eq $Sid -and
+            $row[8] -in @('APPROVE', 'REQUEST_CHANGES') -and
+            [int]::TryParse($row[10], [ref]$pass) -and $pass -ge 1
+    })
+    if (-not $verifiedRows.Count) { Die '???? session ??????????????' }
+    $last = $verifiedRows[-1] -split "`t"
+    if ($last.Count -lt 7 -or $last[3] -ne $Model -or $last[4] -ne 'xhigh' -or $last[6] -ne $Sid) {
+        Die '? session ????effort ????????????;???????????'
+    }
+    $ResumeEffort = 'xhigh'
     $ResumeBase   = if ($last.Count -ge 6 -and $last[5]) { $last[5] } else { 'unavailable' }
 
     $ResumePrompt = @'
-Follow-up review pass. Inspect the corrections made for CONFIRMED
-findings from the previous review. Verify that those defects are resolved and
-that the corrections introduced no concrete regression. Do not repeat the
-original full repository exploration. Remain strictly read-only: do not modify
-files, run tests, builds, linters, package managers, application code, or ad hoc
-probes, and do not use web search, browser, apps, connectors, or external MCP
-tools. End with exactly APPROVE or REQUEST_CHANGES.
+Follow-up review pass. Re-read the COMPLETE current delivery scope: staged,
+unstaged, committed-but-unpushed, relevant untracked and generated files. Verify
+confirmed prior findings and read all changed OLD/NEW content through END in
+bounded chunks; do not sample or restrict this pass to corrections only.
+Remain strictly read-only: do not modify files, run tests, builds, linters,
+package managers, application code, probes, web search, browser, apps,
+connectors, or external MCP tools. End with exactly APPROVE or REQUEST_CHANGES.
 '@
 
     $flags = Build-Flags $ResumeEffort 'resume'
@@ -199,13 +212,13 @@ tools. End with exactly APPROVE or REQUEST_CHANGES.
     # $null | ... closes codex's stdin immediately; the prompt is passed as an
     # argv arg, so without this the CLI blocks on "Reading additional input from
     # stdin..." when run non-interactively.
+    $ReviewStartedAt = [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds() / 1000.0
     $null | & codex @args2 2>&1 | Tee-Object -FilePath $RawLog
     $rc = $LASTEXITCODE
     $result = Get-Result
     # Untrusted run: do NOT advance pass state (finding 3) — a failed pass-2 must
     # not be permanently recorded as done.
-    $ReturnedSid = Get-SessionId
-    if ((Test-Untrusted $rc $result) -or $ReturnedSid -ne $Sid) {
+    if ((Test-Untrusted $rc $result) -or -not (Verify-ActualSession $Sid)) {
         [Console]::Error.WriteLine("[codex-review] codex exec resume 未正常完成(rc=$rc,無明確結論)—— 結果不可信,勿據此 push。")
         [void](Write-Usage 'resume' $ResumeEffort $ResumeBase $PassNumber 'UNKNOWN')
         exit 4
@@ -281,16 +294,13 @@ Prioritize:
 3. Tests directly related to the changed behavior.
 4. One analogous implementation when required.
 
-Do not perform a whole-repository audit.
-
-Unless a concrete P0 or P1 risk requires expansion:
-
-- inspect no more than {{EXTRA_FILE_LIMIT}} additional files outside the diff
-- report no more than {{FINDING_LIMIT}} findings
-- do not inspect unrelated directories
-- do not inspect generated files, vendored code, build output, caches, or
-  dependency directories
-- stop when no high-confidence actionable failure path remains
+Review the COMPLETE delivery scope: staged, unstaged, committed-but-unpushed,
+relevant untracked files, and generated output. Read every changed file in full,
+including old/new generated bundles, using bounded chunks through END; continue
+when output is truncated. Do not sample, cap additional related files/findings,
+or omit generated output merely because it is repetitive. Expand into directly
+related callers, contracts, and tests as needed. This diff review is separate
+from the project's module-by-module audit and medical/user acceptance.
 
 Report only concrete defects involving:
 
@@ -341,13 +351,11 @@ REQUEST_CHANGES
 $prompt = $PromptTemplate.
     Replace('{{MODE}}', $Mode).
     Replace('{{BASE}}', $BaseRef).
-    Replace('{{EXTRA_FILE_LIMIT}}', [string]$ExtraFileLimit).
-    Replace('{{FINDING_LIMIT}}', [string]$FindingLimit).
     Replace('{{TASK_CONTEXT}}', $ctx).
     Replace('{{VERIFICATION_RESULTS}}', $ver)
 
 $flags = Build-Flags $Effort
-Write-Host "[codex-review] mode=$Mode effort=$Effort base=$BaseRef model=$Model (pass 1/2, read-only, user-config ignored)"
+Write-Host "[codex-review] mode=$Mode effort=$Effort base=$BaseRef model=$Model (pass 1, read-only, user-config ignored)"
 # Reset pass state AND the recorded session id at the START of a first pass, so
 # neither a stale pass=1 nor a stale session id from a prior run can leak into
 # this task's resume eligibility.
@@ -357,13 +365,14 @@ if (Test-Path $SessionFile) { Remove-Item $SessionFile -Force -ErrorAction Silen
 $args1 = @('exec') + $flags + @($prompt)
 # $null | ... closes codex's stdin immediately (prompt is an argv arg); without
 # it the CLI blocks on "Reading additional input from stdin..." non-interactively.
+$ReviewStartedAt = [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds() / 1000.0
 $null | & codex @args1 2>&1 | Tee-Object -FilePath $RawLog
 $rc = $LASTEXITCODE
 $result = Get-Result
 
 # Decide trust BEFORE recording pass state (finding 3): an incomplete /
 # rate-limited first pass must not become eligible for the resume flow.
-if ((Test-Untrusted $rc $result) -or (Get-SessionId) -eq 'unavailable') {
+if ((Test-Untrusted $rc $result) -or -not (Verify-ActualSession)) {
     [Console]::Error.WriteLine("[codex-review] codex exec 未正常完成(rc=$rc,無明確結論)—— 結果不可信,勿據此 push。")
     [void](Write-Usage $Mode $Effort $BaseRef 0 'UNKNOWN')
     exit 4
@@ -378,7 +387,7 @@ if ($sidNow -and $sidNow -ne 'unavailable') {
     [Console]::Error.WriteLine('[codex-review] 警告:未擷取到本輪 session id;resume 不可用(如需第二輪請重跑第一輪)。')
 }
 [void](Write-Usage $Mode $Effort $BaseRef 1)
-Write-Host "`n[codex-review] result=$result (pass 1/2)  usage -> $UsageTsv"
+Write-Host "`n[codex-review] result=$result (pass 1)  usage -> $UsageTsv"
 if ($result -eq 'APPROVE') { exit 0 }
 elseif ($result -eq 'REQUEST_CHANGES') { exit 2 }
 else { [Console]::Error.WriteLine("[codex-review] 未取得明確 APPROVE/REQUEST_CHANGES;請人工檢視 $LastMsg"); exit 5 }

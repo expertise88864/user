@@ -294,7 +294,7 @@ class ReviewSessionTests(unittest.TestCase):
     sid = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa'
     other = 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb'
 
-    def run_wrapper(self, recorded=None, returned=None, mode='resume', explicit=None, count=1, rc=0):
+    def run_wrapper(self, recorded=None, returned=None, mode='resume', explicit=None, count=1, rc=0, actual_model='gpt-5.5', actual_effort='xhigh', actual_sandbox='read-only', legacy_profile=False, retry_after_failure=False):
         shell = shutil.which('pwsh') or shutil.which('powershell')
         self.assertIsNotNone(shell)
         with tempfile.TemporaryDirectory() as directory:
@@ -306,6 +306,7 @@ class ReviewSessionTests(unittest.TestCase):
             tools.mkdir()
             wrapper = tools / 'codex_review.ps1'
             wrapper.write_text((ROOT / 'tools/codex_review.ps1').read_text(encoding='utf-8-sig'), encoding='utf-8-sig')
+            shutil.copyfile(ROOT / 'tools/codex_review_identity.py', tools / 'codex_review_identity.py')
             state = root / '.codex-review'
             state.mkdir()
             if recorded is not None:
@@ -313,15 +314,34 @@ class ReviewSessionTests(unittest.TestCase):
             (state / 'last_pass').write_text(str(count))
             (state / 'usage.tsv').write_text(
                 'timestamp\trepository\tmode\tmodel\teffort\tbase_ref\tsession_id\ttokens_used\tresult\tfindings\tpass\n'
-                f'now\tfixture\tdeep\tgpt-5.6-sol\thigh\tHEAD\t{recorded}\t0\tREQUEST_CHANGES\t1\t{count}\n')
+                f"now\tfixture\tdeep\t{'gpt-5.6-sol' if legacy_profile else 'gpt-5.5'}\t{'high' if legacy_profile else 'xhigh'}\tHEAD\t{recorded}\t0\tREQUEST_CHANGES\t1\t{count}\n")
             events = [{'type': 'turn.completed', 'usage': {'input_tokens': 3, 'output_tokens': 2}}]
             if returned is not None:
                 events.insert(0, {'type': 'thread.started', 'thread_id': returned})
             (root / 'events.txt').write_text('\n'.join(json.dumps(e) for e in events))
+            sessions = root / 'sessions'
+            sessions.mkdir()
+            fixture_sid = returned if returned and len(returned) == 36 else self.sid
+            fixture_records = [
+                {'type': 'session_meta', 'payload': {'id': fixture_sid, 'cwd': str(root)}},
+                {'type': 'turn_context', 'timestamp': '2026-01-01T00:00:00Z', 'payload': {
+                    'cwd': str(root), 'model': actual_model, 'effort': actual_effort,
+                    'sandbox_policy': {'type': actual_sandbox}, 'turn_id': 'fixture-turn'}}]
+            (root / 'session-template.json').write_text(json.dumps(fixture_records))
+            session_path = sessions / f'rollout-{fixture_sid}.jsonl'
             driver = root / 'driver.ps1'
             driver.write_text('''
+function python {
+    $all = @($args) + @('--session-directory', (Join-Path (Get-Location) 'sessions'))
+    & $env:REVIEW_TEST_PYTHON @all
+}
 function codex {
     'called' | Set-Content called.txt
+    $args | ConvertTo-Json -Compress | Set-Content called-args.json
+    $records = @(Get-Content session-template.json -Raw | ConvertFrom-Json)
+    $records[1].timestamp = [DateTimeOffset]::UtcNow.ToString('o')
+    $records | ForEach-Object { $_ | ConvertTo-Json -Depth 10 -Compress } |
+        Set-Content -LiteralPath $env:REVIEW_TEST_SESSION -Encoding utf8
     $index = [array]::IndexOf($args, '-o')
     'APPROVE' | Set-Content -LiteralPath $args[$index + 1]
     Get-Content events.txt
@@ -330,13 +350,46 @@ function codex {
 & ./tools/codex_review.ps1 $env:REVIEW_TEST_MODE $env:REVIEW_TEST_ARG
 exit $LASTEXITCODE
 ''', encoding='utf-8-sig')
-            env = dict(os.environ, REVIEW_TEST_MODE=mode, REVIEW_TEST_ARG=explicit or ('HEAD' if mode != 'resume' else ''), REVIEW_TEST_RC=str(rc))
+            env = dict(os.environ, REVIEW_TEST_MODE=mode, REVIEW_TEST_ARG=explicit or ('HEAD' if mode != 'resume' else ''), REVIEW_TEST_RC=str(rc), REVIEW_TEST_PYTHON=sys.executable, REVIEW_TEST_SESSION=str(session_path))
             result = subprocess.run([shell, '-NoProfile', '-File', str(driver)], cwd=root,
                                     env=env, capture_output=True, text=True, errors='replace')
+            if retry_after_failure:
+                self.assertEqual(result.returncode, 4, result.stdout + result.stderr)
+                self.assertEqual((state / 'last_session_id').read_text(), self.sid)
+                self.assertEqual((state / 'last_pass').read_text().strip(), str(count))
+                env['REVIEW_TEST_RC'] = '0'
+                result = subprocess.run([shell, '-NoProfile', '-File', str(driver)], cwd=root,
+                                        env=env, capture_output=True, text=True, errors='replace')
+            if (root / 'called-args.json').exists():
+                args = json.loads((root / 'called-args.json').read_text(encoding='utf-8-sig'))
+                self.assertEqual(args[args.index('--model') + 1], 'gpt-5.5')
+                self.assertIn('model_reasoning_effort=xhigh', args)
+                self.assertIn('--json', args)
+                self.assertIn('COMPLETE', args[-1])
             session_file = state / 'last_session_id'
             return (result.returncode, (root / 'called.txt').exists(),
                     session_file.read_text() if session_file.exists() else None,
                     (state / 'last_pass').read_text(), result.stdout + result.stderr)
+
+    def test_failed_resume_then_successful_retry_keeps_same_session(self):
+        result = self.run_wrapper(recorded=self.sid, returned=self.sid, rc=1, count=3,
+                                  retry_after_failure=True)
+        self.assertEqual(result[0], 0, result[-1])
+        self.assertEqual(result[2:4], (self.sid, '4'))
+
+    def test_wrong_actual_model_effort_or_sandbox_never_approves(self):
+        for changes in ({'actual_model': 'gpt-5.6-sol'}, {'actual_effort': 'high'},
+                        {'actual_sandbox': 'workspace-write'}):
+            with self.subTest(changes=changes):
+                result = self.run_wrapper(recorded=self.sid, returned=self.sid, **changes)
+                self.assertEqual(result[0], 4, result[-1])
+                self.assertEqual(result[2:4], (self.sid, '1'))
+
+    def test_old_profile_never_resumes_or_upgrades_old_approval(self):
+        result = self.run_wrapper(recorded=self.sid, returned=self.sid, legacy_profile=True)
+        self.assertEqual(result[0], 64, result[-1])
+        self.assertFalse(result[1])
+        self.assertEqual(result[2:4], (self.sid, '1'))
 
     def test_invalid_record_never_launches_cli(self):
         result = self.run_wrapper(recorded='-' * 36, returned=self.sid)

@@ -26,7 +26,7 @@
 #   CODEX_REVIEW_STRICT=0      關閉 --strict-config。
 set -uo pipefail
 
-MODEL="gpt-5.6-sol"
+MODEL="gpt-5.5"
 HARDEN="${CODEX_REVIEW_HARDEN:-1}"
 STRICT="${CODEX_REVIEW_STRICT:-1}"
 
@@ -50,10 +50,10 @@ MODE="${1:-}"
 [ -n "$MODE" ] || die "缺少 mode。用法: $0 <diff|targeted|deep> <base-ref> [task-context-file] | $0 resume [session-id]"
 
 case "$MODE" in
-  diff)     EFFORT="medium"; EXTRA_FILE_LIMIT=3;  FINDING_LIMIT=3 ;;
-  targeted) EFFORT="medium"; EXTRA_FILE_LIMIT=12; FINDING_LIMIT=5 ;;
-  deep)     EFFORT="high";   EXTRA_FILE_LIMIT=30; FINDING_LIMIT=8 ;;
-  resume)   EFFORT="";       EXTRA_FILE_LIMIT="";  FINDING_LIMIT="" ;;
+  diff) EFFORT="xhigh" ;;
+  targeted) EFFORT="xhigh" ;;
+  deep) EFFORT="xhigh" ;;
+  resume) EFFORT="" ;;
   *) die "未知 mode '$MODE'(可用:diff | targeted | deep | resume)" ;;
 esac
 
@@ -61,7 +61,7 @@ esac
 build_flags() {   # $1 = effort ; $2 = "resume" to build resume-compatible flags
   # 刻意用不含內層引號的 -c key=value:codex 對 value 先試 TOML,失敗即當字面字串
   # (bare `medium`/`disabled` → 字串;`false` → 布林)。跨 bash/PowerShell quoting 最穩。
-  FLAGS=(--ignore-user-config --model "$MODEL" -c "model_reasoning_effort=$1" -o "$LAST_MSG")
+  FLAGS=(--ignore-user-config --json --model "$MODEL" -c "model_reasoning_effort=$1" -o "$LAST_MSG")
   # CODE_REVIEW — `codex exec resume` (this CLI, 0.145.0-alpha.2) does NOT accept
   # `--sandbox` or `--cd`; those belong to `codex exec`. For resume, enforce
   # read-only via the `sandbox_mode` config override and run in the current dir
@@ -82,8 +82,21 @@ build_flags() {   # $1 = effort ; $2 = "resume" to build resume-compatible flags
 # ---------- 解析輸出 ----------
 # 舊版接受「任意 36 個 hex 或連字號」,那不是 UUID 形狀 —— 例如全連字號也會過,
 # 然後被寫進 last_session_id 成為之後每一輪都信任的壞紀錄。改為錨定 8-4-4-4-12。
-extract_session_id() { grep -oiE 'session id:[[:space:]]*[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}' "$RAW_LOG" 2>/dev/null | head -1 | grep -oiE '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}' || true; }
-extract_tokens() { awk 'tolower($0) ~ /tokens used/ {found=1; next} found && $0 ~ /[0-9]/ {gsub(/[^0-9]/,"",$0); if (length($0)) {print $0; exit}}' "$RAW_LOG" 2>/dev/null || true; }
+VERIFIED_SID="unavailable"
+VERIFIED_TOKENS="unavailable"
+extract_session_id() { printf '%s' "$VERIFIED_SID"; }
+extract_tokens() { printf '%s' "$VERIFIED_TOKENS"; }
+verify_actual_session() {
+  local identity
+  local a=("$SCRIPT_DIR/codex_review_identity.py" --raw-log "$RAW_LOG"
+           --repo "$REPO_ROOT" --started-at "$REVIEW_STARTED_AT"
+           --proof "$STATE_DIR/last_identity.json")
+  rm -f "$STATE_DIR/last_identity.json"
+  [ -z "${1:-}" ] || a+=(--expected-session "$1")
+  identity="$(python "${a[@]}")" || return 1
+  IFS=$'\t' read -r VERIFIED_SID VERIFIED_TOKENS <<< "$identity"
+  [ -n "$VERIFIED_SID" ] && [ -n "$VERIFIED_TOKENS" ]
+}
 extract_result() {
   # CODE_REVIEW — the verdict is the LAST non-blank line, matched EXACTLY. A
   # substring grep over the whole message misreads "...I cannot APPROVE." as
@@ -126,7 +139,6 @@ log_usage() {  # $1 mode $2 effort $3 base $4 pass
   fnd="$(extract_findings)"
   printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
     "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$REPO_NAME" "$1" "$MODEL" "$2" "$3" "$sid" "$tok" "$res" "$fnd" "$4" >> "$USAGE_TSV"
-  [ "$sid" = "unavailable" ] || printf '%s' "$sid" > "$SESSION_FILE"
   echo "$res"
 }
 
@@ -163,38 +175,52 @@ if [ "$MODE" = "resume" ]; then
   # **開新 session 繞過**,而那會丟掉前一輪上下文、讓審查者重新探索整個 repo
   # (更貴,且會重複回報已修的東西)。改為只要求「至少完成過第一輪」。
   case "$PREV_PASS" in (''|*[!0-9]*) PREV_PASS=0 ;; esac
+  [ "${#PREV_PASS}" -le 10 ] && [ "$PREV_PASS" -le 2147483646 ] || die "pass ???????"
   [ "$PREV_PASS" -ge 1 ] || die "續審只能在完成第一輪之後執行(目前 pass=$PREV_PASS)。"
 
   # 第二輪的 effort 沿用第一輪(從 usage.tsv 最後一筆讀回),預設 medium。
-  RESUME_EFFORT="$(tail -1 "$USAGE_TSV" | cut -f5)"; [ -n "$RESUME_EFFORT" ] || RESUME_EFFORT="medium"
-  RESUME_BASE="$(tail -1 "$USAGE_TSV" | cut -f6)";   [ -n "$RESUME_BASE" ] || RESUME_BASE="unavailable"
+  # Keep every failed attempt, but use only a completed verified row for the
+  # exact recorded session to select the resume profile.
+  VERIFIED_ROW="$(awk -F '\t' -v sid="$SID" '
+    tolower($7) == sid && ($9 == "APPROVE" || $9 == "REQUEST_CHANGES") &&
+      $11 ~ /^[0-9]+$/ && $11 >= 1 { last=$0 }
+    END { print last }' "$USAGE_TSV")"
+  [ -n "$VERIFIED_ROW" ] || die "???? session ??????????????"
+  [ "$(printf '%s' "$VERIFIED_ROW" | cut -f4)" = "$MODEL" ] &&
+    [ "$(printf '%s' "$VERIFIED_ROW" | cut -f5)" = "xhigh" ] &&
+    [ "$(printf '%s' "$VERIFIED_ROW" | cut -f7 | tr 'A-Z' 'a-z')" = "$SID" ] ||
+    die "? session ????effort ????????????;???????????"
+  RESUME_EFFORT="xhigh"
+  RESUME_BASE="$(printf '%s' "$VERIFIED_ROW" | cut -f6)";   [ -n "$RESUME_BASE" ] || RESUME_BASE="unavailable"
+  NEXT_PASS=$((PREV_PASS + 1))
   build_flags "$RESUME_EFFORT" resume
 
   read -r -d '' RESUME_PROMPT <<'RP' || true
-Second and final review pass. Inspect only the corrections made for CONFIRMED
-findings from the previous review. Verify that those defects are resolved and
-that the corrections introduced no concrete regression. Do not repeat the
-original full repository exploration. Remain strictly read-only: do not modify
-files, run tests, builds, linters, package managers, application code, or ad hoc
-probes, and do not use web search, browser, apps, connectors, or external MCP
-tools. End with exactly APPROVE or REQUEST_CHANGES.
+Follow-up review pass. Re-read the COMPLETE current delivery scope: staged,
+unstaged, committed-but-unpushed, relevant untracked and generated files. Verify
+confirmed prior findings and read all changed OLD/NEW content through END in
+bounded chunks; do not sample or restrict this pass to corrections only.
+Remain strictly read-only: do not modify files, run tests, builds, linters,
+package managers, application code, probes, web search, browser, apps,
+connectors, or external MCP tools. End with exactly APPROVE or REQUEST_CHANGES.
 RP
 
-  echo "[codex-review] resume session=$SID effort=$RESUME_EFFORT (pass 2/2)"
+  echo "[codex-review] resume session=$SID effort=$RESUME_EFFORT (pass $NEXT_PASS)"
   : > "$LAST_MSG"
+  REVIEW_STARTED_AT="$(python -c 'import time; print(time.time())')" || die "Python unavailable"
   codex exec resume "$SID" "${FLAGS[@]}" "$RESUME_PROMPT" </dev/null 2>&1 | tee "$RAW_LOG"
   CODEX_RC="${PIPESTATUS[0]}"
   RESULT="$(extract_result)"
   # Untrusted run: do NOT advance pass state (finding 3) — a failed pass-2 must
   # not be permanently recorded as "done".
-  if run_untrusted "$CODEX_RC" "$RESULT"; then
+  if run_untrusted "$CODEX_RC" "$RESULT" || ! verify_actual_session "$SID"; then
     echo "[codex-review] codex exec resume 未正常完成(rc=$CODEX_RC,無明確結論)—— 結果不可信,勿據此 push。" >&2
-    log_usage "resume" "$RESUME_EFFORT" "$RESUME_BASE" 1 >/dev/null   # pass stays 1
+    log_usage "resume" "$RESUME_EFFORT" "$RESUME_BASE" "$PREV_PASS" >/dev/null   # pass stays 1
     exit 4
   fi
-  echo 2 > "$PASS_FILE"
-  log_usage "resume" "$RESUME_EFFORT" "$RESUME_BASE" 2 >/dev/null
-  echo; echo "[codex-review] result=$RESULT (pass 2/2)"
+  echo "$NEXT_PASS" > "$PASS_FILE"
+  log_usage "resume" "$RESUME_EFFORT" "$RESUME_BASE" "$NEXT_PASS" >/dev/null
+  echo; echo "[codex-review] result=$RESULT (pass $NEXT_PASS)"
   case "$RESULT" in
     APPROVE) exit 0 ;;
     REQUEST_CHANGES) exit 2 ;;
@@ -274,16 +300,13 @@ Prioritize:
 3. Tests directly related to the changed behavior.
 4. One analogous implementation when required.
 
-Do not perform a whole-repository audit.
-
-Unless a concrete P0 or P1 risk requires expansion:
-
-- inspect no more than {{EXTRA_FILE_LIMIT}} additional files outside the diff
-- report no more than {{FINDING_LIMIT}} findings
-- do not inspect unrelated directories
-- do not inspect generated files, vendored code, build output, caches, or
-  dependency directories
-- stop when no high-confidence actionable failure path remains
+Review the COMPLETE delivery scope: staged, unstaged, committed-but-unpushed,
+relevant untracked files, and generated output. Read every changed file in full,
+including old/new generated bundles, using bounded chunks through END; continue
+when output is truncated. Do not sample, cap additional related files/findings,
+or omit generated output merely because it is repetitive. Expand into directly
+related callers, contracts, and tests as needed. This diff review is separate
+from the project's module-by-module audit and medical/user acceptance.
 
 Report only concrete defects involving:
 
@@ -333,12 +356,12 @@ PROMPT
 
 # 以 sed 注入(多行內容用 r/d,避免特殊字元問題)
 sed -i -e "s|{{MODE}}|$MODE|" -e "s|{{BASE}}|$BASE|" \
-       -e "s|{{EXTRA_FILE_LIMIT}}|$EXTRA_FILE_LIMIT|" -e "s|{{FINDING_LIMIT}}|$FINDING_LIMIT|" "$TMP/prompt.txt"
+       "$TMP/prompt.txt"
 sed -i -e "/{{TASK_CONTEXT}}/r $TMP/ctx.txt" -e "/{{TASK_CONTEXT}}/d" "$TMP/prompt.txt"
 sed -i -e "/{{VERIFICATION_RESULTS}}/r $TMP/ver.txt" -e "/{{VERIFICATION_RESULTS}}/d" "$TMP/prompt.txt"
 
 build_flags "$EFFORT"
-echo "[codex-review] mode=$MODE effort=$EFFORT base=$BASE model=$MODEL (pass 1/2, read-only, user-config ignored)"
+echo "[codex-review] mode=$MODE effort=$EFFORT base=$BASE model=$MODEL (pass 1, read-only, user-config ignored)"
 # Reset pass state AND the recorded session id at the START of a first pass, so
 # neither a stale pass=1 nor a stale session id from a prior run can leak into
 # this task's resume eligibility.
@@ -349,6 +372,7 @@ rm -f "$SESSION_FILE"
 # argument; without this, running non-interactively (background / no TTY) makes
 # the CLI block forever on "Reading additional input from stdin..." waiting for
 # a pipe that never closes.
+REVIEW_STARTED_AT="$(python -c 'import time; print(time.time())')" || die "Python unavailable"
 codex exec "${FLAGS[@]}" "$(cat "$TMP/prompt.txt")" </dev/null 2>&1 | tee "$RAW_LOG"
 CODEX_RC="${PIPESTATUS[0]}"
 RESULT="$(extract_result)"
@@ -356,7 +380,7 @@ RESULT="$(extract_result)"
 # CODE_REVIEW — decide trust BEFORE recording pass state (finding 3): an
 # incomplete/rate-limited first pass must not become eligible for the
 # corrections-only resume flow.
-if run_untrusted "$CODEX_RC" "$RESULT"; then
+if run_untrusted "$CODEX_RC" "$RESULT" || ! verify_actual_session; then
   echo "[codex-review] codex exec 未正常完成(rc=$CODEX_RC,無明確結論)—— 結果不可信,勿據此 push。" >&2
   log_usage "$MODE" "$EFFORT" "$BASE" 0 >/dev/null   # record the attempt; pass stays 0
   exit 4
@@ -364,14 +388,15 @@ fi
 # Only become resume-eligible if THIS pass's session id was actually captured.
 # Otherwise resume would have no verified session to continue (or worse, could
 # fall back to a stale one). log_usage persists the session id when present.
-if [ -n "$(extract_session_id)" ]; then
+if [ "$VERIFIED_SID" != "unavailable" ]; then
+  printf '%s' "$VERIFIED_SID" > "$SESSION_FILE"
   echo 1 > "$PASS_FILE"
 else
   echo 0 > "$PASS_FILE"
   echo "[codex-review] 警告:未擷取到本輪 session id;resume 不可用(如需第二輪請重跑第一輪)。" >&2
 fi
 log_usage "$MODE" "$EFFORT" "$BASE" 1 >/dev/null
-echo; echo "[codex-review] result=$RESULT (pass 1/2)  usage → $USAGE_TSV"
+echo; echo "[codex-review] result=$RESULT (pass 1)  usage → $USAGE_TSV"
 case "$RESULT" in
   APPROVE) exit 0 ;;
   REQUEST_CHANGES) exit 2 ;;

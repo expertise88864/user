@@ -249,3 +249,6 @@ Word 模式目前提供粗體、斜體、底線、刪除線、標題、清單及
 取消或較新作者存檔使準備失效，生成失敗則讓工作流失敗，不以成功報告掩蓋。
 收集器只上傳候選 artefacts；不 commit／push／合併，且審查、CI 與已發布旗標仍為 false。
 目前的本機回歸與隔離實作證據不能代表真實作者雲端試用或正式發布成功。
+# 獨立程式審查入口
+
+`tools/codex_review.ps1` 與 `tools/codex_review.sh` 的 `diff`、`targeted`、`deep` 模式均固定使用 `gpt-5.5`／`xhigh`（extrahigh）／唯讀，完整涵蓋 staged、unstaged、未推送提交、相關 untracked 與生成物。模式名稱保留供既有操作使用，不代表可縮小範圍或降低 effort。入口會用實際 session 的模型、effort、唯讀設定、專案路徑及本輪時間戳核對 JSON 事件；缺少或不符時拒絕核可並保留上一輪狀態。證據存於 `.codex-review/last_identity.json`；這是程式審查證據，不代表醫療核可、CI 或正式發布成功。後續修正須續用同一已核對 session，重新完整審查目前差異；舊模型或 effort 的 session 不得沿用為現行核可。
