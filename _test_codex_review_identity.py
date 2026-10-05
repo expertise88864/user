@@ -53,6 +53,42 @@ class IdentityTests(unittest.TestCase):
         self.assertEqual(result["actualEffort"], "xhigh")
         self.assertEqual(len(result["sessionLogSHA256"]), 64)
 
+    def test_bom_tagged_utf16_events_preserve_actual_identity(self):
+        for bom, encoding in ((b"\xff\xfe", "utf-16-le"), (b"\xfe\xff", "utf-16-be")):
+            with self.subTest(encoding=encoding):
+                self.save()
+                payload = "diagnostic \u4e2d\u6587\n" + "\n".join(map(json.dumps, self.events))
+                self.raw.write_bytes(bom + payload.encode(encoding))
+                result = identity.verify(self.raw, self.root, self.sessions, self.started, SID)
+                self.assertEqual((result["sessionId"], result["tokensUsed"]), (SID, 7))
+                self.assertEqual(result["actualModel"], "gpt-5.5")
+                self.assertEqual(result["actualEffort"], "xhigh")
+
+    def test_malformed_encoding_is_not_silently_trusted(self):
+        for raw in (b"\xff", b"\xff\xfe{", b"\xfe\xff\x00"):
+            with self.subTest(raw=raw):
+                self.save()
+                self.raw.write_bytes(raw)
+                with self.assertRaises(UnicodeDecodeError):
+                    identity.verify(self.raw, self.root, self.sessions, self.started, SID)
+
+    @unittest.skipUnless(os.name == "nt", "Windows PowerShell encoding contract")
+    def test_windows_powershell_tee_event_log_keeps_identity(self):
+        self.save()
+        shell = Path(os.environ["SystemRoot"]) / "System32/WindowsPowerShell/v1.0/powershell.exe"
+        self.assertTrue(shell.is_file())
+        # No real reviewer runs. Exercise the actual shell's Tee-Object encoding
+        # with isolated machine-event fixtures and the real identity verifier.
+        lines = ",".join("'" + json.dumps(e).replace("'", "''") + "'" for e in self.events)
+        command = "@(" + lines + ") | Tee-Object -FilePath $env:CD_REVIEW_ENCODING_TEST_LOG"
+        env = dict(os.environ, CD_REVIEW_ENCODING_TEST_LOG=str(self.raw))
+        result = subprocess.run([str(shell), "-NoProfile", "-NonInteractive", "-Command", command],
+                                cwd=self.root, env=env, capture_output=True, timeout=30)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertTrue(self.raw.read_bytes().startswith(b"\xff\xfe"))
+        proof = identity.verify(self.raw, self.root, self.sessions, self.started, SID)
+        self.assertEqual((proof["sessionId"], proof["tokensUsed"]), (SID, 7))
+
     def test_quoted_model_output_cannot_establish_identity(self):
         self.events = [{"type": "item.completed", "item": {"type": "agent_message", "text":
                         json.dumps({"type": "thread.started", "thread_id": SID})}}, self.events[1]]

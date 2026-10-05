@@ -95,9 +95,14 @@ function github(pat) {
     } finally { clearTimeout(timeout); }
   };
 }
+function repositoryRefSha(data, branch) {
+  if (!data || data.ref !== 'refs/heads/' + branch || data.object?.type !== 'commit' ||
+      typeof data.object.sha !== 'string' || !SHA.test(data.object.sha)) fail(502, 'invalid_repository_ref');
+  return data.object.sha;
+}
 async function ref(api, branch) {
   const data = await api('GET', 'git/ref/heads/' + encodeURIComponent(branch), null, true);
-  return data ? validSha(data.object && data.object.sha) : null;
+  return data === null ? null : repositoryRefSha(data, branch);
 }
 async function repositoryBlob(api, data, limit, status, code) {
   if (!data || data.type !== 'file' || !SHA.test(data.sha || '') ||
@@ -553,14 +558,17 @@ async function listDrafts(api, query) {
   const offset = Number(offsetText), refs = await api('GET', 'git/matching-refs/heads/drafts/');
   if (!Array.isArray(refs) || refs.length > 200) fail(502, 'draft_list_unavailable');
   const valid = refs.filter(item => {
-    const match = /^refs\/heads\/drafts\/([a-z0-9]+(?:-[a-z0-9]+)*)$/.exec(item.ref || '');
+    if (!item || typeof item.ref !== 'string') fail(502, 'draft_list_unavailable');
+    const match = /^refs\/heads\/drafts\/([a-z0-9]+(?:-[a-z0-9]+)*)$/.exec(item.ref);
     return match && match[1].length <= 100 && !RESERVED.has(match[1]);
   });
+  // Validate the whole supported inventory before pagination or content reads.
+  for (const item of valid) repositoryRefSha(item, item.ref.slice('refs/heads/'.length));
   if (offset > valid.length) fail(400, 'invalid_list_offset');
   const selected = valid.slice(offset, offset + 20), drafts = [];
   for (let i = 0; i < selected.length; i += 4) {
     const batch = await Promise.all(selected.slice(i, i + 4).map(async item => {
-      const slug = item.ref.slice('refs/heads/drafts/'.length), target = article('blog/' + slug + '.html'), head = validSha(item.object && item.object.sha);
+      const slug = item.ref.slice('refs/heads/drafts/'.length), target = article('blog/' + slug + '.html'), head = item.object.sha;
       const saved = await fileAt(api, target.manifest, head, true);
       if (!saved) return { file: target.file, head, legacy: true };
       let record;

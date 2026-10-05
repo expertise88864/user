@@ -2,6 +2,7 @@ import {build, transform} from 'esbuild';
 import {readFile, writeFile, readdir} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
+import {sameGitTextArtifact} from './_editor_artifact_text.mjs';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const output = path.join(root, 'admin/word-model.bundle.js');
@@ -33,7 +34,7 @@ if (process.argv.slice(2).includes('--check')) {
   for(const [file,bytes] of outputs) {
     let actual;
     try { actual = await readFile(file); } catch (_) { throw Error('Word editor artifact is missing: '+path.basename(file)); }
-    if (!actual.equals(Buffer.from(bytes))) throw Error('Word editor artifact is stale: '+path.basename(file));
+    if (!sameGitTextArtifact(actual, bytes)) throw Error('Word editor artifact is stale: '+path.basename(file));
   }
   console.log('Word editor JS/CSS/licenses match pinned source and dependencies');
 } else {

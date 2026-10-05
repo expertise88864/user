@@ -5,6 +5,8 @@
 Idempotent: skips files that already have the patches applied.
 """
 import os, re
+from pathlib import Path
+from _site_html import site_html_files
 from _normalize_native_navigation import normalize
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -59,20 +61,12 @@ def patch_html(html):
 
 def main():
     n = 0
-    for d, _, fs in os.walk(ROOT):
-        if any(x in d for x in ['.git', '__pycache__', 'node_modules', 'astro-rewrite']):
-            continue
-        for f in fs:
-            if not f.endswith('.html'):
-                continue
-            p = os.path.join(d, f)
-            with open(p, 'r', encoding='utf-8') as fp:
-                src = fp.read()
-            new, changed = patch_html(src)
-            if changed:
-                with open(p, 'w', encoding='utf-8') as fp:
-                    fp.write(new)
-                n += 1
+    for path in site_html_files(Path(ROOT)):
+        src = path.read_text(encoding='utf8')
+        new, changed = patch_html(src)
+        if changed:
+            path.write_text(new, encoding='utf8')
+            n += 1
     print(f'Patched {n} HTML files with a11y and native navigation')
 
 if __name__ == '__main__':

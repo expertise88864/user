@@ -28,6 +28,20 @@ class AccessibilityIDTests(unittest.TestCase):
         self.assertEqual(code,1)
         self.assertIn('duplicate id #overview',output)
 
+    def test_image_metadata_and_quoted_examples_are_not_intrinsic_dimensions(self):
+        for attrs in ['data-width="640" data-height="480"', 'title="width=640 height=480"',
+                      'width="640" data-height="480"']:
+            with self.subTest(attrs=attrs):
+                code,output=self.check('<img src="fixture.png" alt="Fixture" '+attrs+'>')
+                self.assertEqual(code,1)
+                self.assertIn('image missing width/height',output)
+
+    def test_real_single_quoted_unquoted_and_uppercase_image_dimensions_pass(self):
+        for attrs in ['width=640 height=480', "width='640' height='480'", 'WIDTH="640" HEIGHT="480"']:
+            with self.subTest(attrs=attrs):
+                code,output=self.check('<img src="fixture.png" alt="Fixture" '+attrs+'>')
+                self.assertEqual(code,0,output)
+
     def test_single_unquoted_and_entity_decoded_duplicate_ids_also_fail(self):
         code,output=self.check('<h2 id=overview>Overview</h2><aside ID=\'overview\'></aside>'
                                '<div id="a&amp;b"></div><div id=\'a&b\'></div>')

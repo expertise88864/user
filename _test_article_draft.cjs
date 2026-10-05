@@ -57,7 +57,7 @@ function fixture() {
     } else if (path.startsWith('git/ref/heads/')) {
       const value = refs.get(path.slice(14));
       if (!value) return Response.json({}, { status: 404 });
-      result = { object: { sha: value } };
+      result = { ref: 'refs/heads/' + path.slice(14), object: { type: 'commit', sha: value } };
     } else if (path.startsWith('contents/')) {
       const commit = commits.get(u.searchParams.get('ref'));
       assert.ok(commit, 'read must use a known immutable commit');
@@ -126,6 +126,61 @@ function verifiedProduction(h) {
   h.deployments = [{ id: 700, sha: h.main, environment: 'Production', production_environment: true, creator: { login: 'vercel[bot]' } }];
   h.deploymentStatuses = [{ id: 800, state: 'success', creator: { login: 'vercel[bot]' }, environment_url: 'https://chendermatologist-fixture00-expertise88864s-projects.vercel.app' }];
 }
+function malformedRef(data, kind) {
+  const result = { ...data, object: { ...data.object } };
+  if (kind === 'wrong-ref') result.ref = 'refs/heads/unrelated';
+  if (kind === 'missing-ref') delete result.ref;
+  if (kind === 'missing-type') delete result.object.type;
+  if (kind === 'tree') result.object.type = 'tree';
+  if (kind === 'missing-object') delete result.object;
+  if (kind === 'invalid-sha') result.object.sha = 'not-a-commit';
+  if (kind === 'zero-sha') result.object.sha = '0'.repeat(40);
+  return result;
+}
+for (const branch of ['main', 'drafts/example']) {
+  for (const action of ['load', 'save']) {
+    for (const kind of ['wrong-ref', 'missing-ref', 'missing-type', 'tree', 'missing-object', 'invalid-sha', 'zero-sha']) {
+      test('draft ' + action + ' rejects malformed ' + branch + ' ref before writes: ' + kind, async () => {
+        const h = fixture(), saved = await (await h.request(h.input())).json();
+        const before = h.calls.length, original = new Map(h.refs), blobCount = h.blobs.size;
+        h.tamper = (route, data) => route === 'git/ref/heads/' + branch ? malformedRef(data, kind) : data;
+        const response = await h.request(action === 'save' ? h.input({ expectedHead: saved.head }) : null);
+        const result = await response.json();
+        assert.equal(response.status, 502); assert.equal(result.error, 'invalid_repository_ref');
+        assert.notEqual(result.verified, true);
+        assert.ok(h.calls.slice(before).every(call => call.method === 'GET'));
+        assert.deepEqual(h.refs, original); assert.equal(h.blobs.size, blobCount);
+      });
+    }
+  }
+}
+for (const kind of ['missing-type', 'tree', 'missing-object', 'invalid-sha', 'zero-sha']) {
+  test('draft list rejects malformed supported ref without content reads: ' + kind, async () => {
+    const h = fixture(); await h.request(h.input());
+    const before = h.calls.length;
+    h.tamper = (route, data) => route.startsWith('git/matching-refs/') ? data.map(item => malformedRef(item, kind)) : data;
+    const response = await h.request(null, { query: '&mode=list' });
+    assert.equal(response.status, 502); assert.equal((await response.json()).error, 'invalid_repository_ref');
+    assert.deepEqual(h.calls.slice(before).map(call => call.path), ['git/matching-refs/heads/drafts/']);
+  });
+}
+test('draft list validates later pages and malformed rows before any content read', async () => {
+  for (const kind of ['later-page-tree', 'null-row', 'non-string-ref']) {
+    const h = fixture(); await h.request(h.input());
+    const before = h.calls.length;
+    h.tamper = (route, data) => {
+      if (!route.startsWith('git/matching-refs/')) return data;
+      if (kind === 'null-row') return [...data, null];
+      if (kind === 'non-string-ref') return [...data, { ref: 123 }];
+      return [...data, ...Array.from({ length: 20 }, (_, i) => ({
+        ref: 'refs/heads/drafts/later-' + i, object: { type: i === 19 ? 'tree' : 'commit', sha: h.main },
+      }))];
+    };
+    const response = await h.request(null, { query: '&mode=list' });
+    assert.equal(response.status, 502);
+    assert.deepEqual(h.calls.slice(before).map(call => call.path), ['git/matching-refs/heads/drafts/']);
+  }
+});
 for (const address of ['javascript:alert(1)', 'JavaScript:alert(1)', 'java&#115;cript:alert(1)',
   'java&#9;script:alert(1)', 'vbscript:msgbox(1)', 'data:text/html,test', 'blob:local', 'file:///tmp/link']) {
   test('source drafts reject active link schemes before repository writes: '+address,async()=>{

@@ -79,13 +79,27 @@ EXISTING_LINK_RE = re.compile(
 SKIP_NAMES = {"404.html", "offline.html", "reset-sw.html", "admin.html"}
 SKIP_DIRS = {".git", "node_modules", "pagefind", "admin"}
 
+# A translucent background must not reduce opacity of child text/controls.
+MINT_ALPHA_RE = re.compile(
+    r'(\.bg-mint-50\\/60)\{\s*background-color:\s*(#[a-f0-9]{6});\s*opacity:\s*0?\.6;?\s*\}',
+    re.IGNORECASE,
+)
+
+
+def normalize_background_alpha(css: str) -> str:
+    def replace(match: re.Match) -> str:
+        selector, color = match.groups()
+        channels = [int(color[i:i + 2], 16) for i in (1, 3, 5)]
+        return selector + '{background-color:rgba(' + ','.join(map(str, channels)) + ',.6)}'
+    return MINT_ALPHA_RE.sub(replace, css)
+
 
 def extract_from_file(path: Path,
                        canonical_print_css: list[str],
-                       canonical_below_fold_css: list[str]) -> int:
+                       canonical_below_fold_css: list[str], *, extract_print: bool = True) -> int:
     """Extract @media print + below-fold rules from inline <style>.
 
-    Returns total number of rules extracted (0 if no change).
+    Returns total number of rules normalized/extracted (0 if no change).
     canonical_* lists mutate — first-run rules get appended for
     later writing to the shared external stylesheets.
     """
@@ -93,10 +107,13 @@ def extract_from_file(path: Path,
     extracted_count = 0
     print_extracted = 0
     below_fold_extracted = 0
+    normalized_count = 0
 
     def replace_style(m: re.Match) -> str:
-        nonlocal extracted_count, print_extracted, below_fold_extracted
-        css = m.group(1)
+        nonlocal extracted_count, print_extracted, below_fold_extracted, normalized_count
+        original_css = m.group(1)
+        normalized_count += len(MINT_ALPHA_RE.findall(original_css))
+        css = normalize_background_alpha(original_css)
         print_chunks = []
         below_fold_chunks = []
 
@@ -112,9 +129,10 @@ def extract_from_file(path: Path,
             below_fold_extracted += 1
             return ""
 
-        new_css = PRINT_MEDIA_RE.sub(collect_print, css)
-        for pattern in BELOW_FOLD_RULE_RES:
-            new_css = pattern.sub(collect_below, new_css)
+        new_css = PRINT_MEDIA_RE.sub(collect_print, css) if extract_print else css
+        if extract_print:
+            for pattern in BELOW_FOLD_RULE_RES:
+                new_css = pattern.sub(collect_below, new_css)
 
         # First file we see contributes the canonical version; later
         # files just strip locally (they should be identical).
@@ -123,7 +141,7 @@ def extract_from_file(path: Path,
         if below_fold_chunks and not canonical_below_fold_css:
             canonical_below_fold_css.extend(below_fold_chunks)
         extracted_count = print_extracted + below_fold_extracted
-        return m.group(0).replace(css, new_css)
+        return m.group(0).replace(original_css, new_css)
 
     new_src = re.sub(
         r"<style\b[^>]*>([\s\S]*?)</style>",
@@ -131,7 +149,7 @@ def extract_from_file(path: Path,
         src,
     )
 
-    if extracted_count == 0:
+    if extracted_count == 0 and normalized_count == 0:
         return 0
 
     # Inject the <link> tags if not already present.
@@ -146,19 +164,21 @@ def extract_from_file(path: Path,
 
     if new_src != src:
         path.write_text(new_src, encoding="utf-8")
-        return extracted_count
+        return extracted_count + normalized_count
     return 0
 
 
 def main() -> int:
-    targets: list[Path] = []
-    for fp in site_html_files(ROOT):
-        parts = fp.relative_to(ROOT).parts
-        if any(p in SKIP_DIRS for p in parts):
-            continue
-        if fp.name in SKIP_NAMES:
-            continue
-        targets.append(fp)
+    targets = site_html_files(ROOT)
+
+    tw_css = ROOT / 'assets' / 'tw-mini.css'
+    if tw_css.is_symlink() or (tw_css.parent.exists() and tw_css.parent.resolve() != ROOT.resolve() / 'assets'):
+        raise ValueError('Linked stylesheet source is not supported')
+    if tw_css.is_file():
+        before = tw_css.read_text(encoding='utf8')
+        after = normalize_background_alpha(before)
+        if after != before:
+            tw_css.write_text(after, encoding='utf8')
 
     canonical_print_chunks: list[str] = []
     canonical_below_fold_chunks: list[str] = []
@@ -166,7 +186,9 @@ def main() -> int:
     files_changed = 0
 
     for fp in targets:
-        n = extract_from_file(fp, canonical_print_chunks, canonical_below_fold_chunks)
+        parts = fp.relative_to(ROOT).parts
+        extract_print = fp.name not in SKIP_NAMES and not any(p in SKIP_DIRS for p in parts)
+        n = extract_from_file(fp, canonical_print_chunks, canonical_below_fold_chunks, extract_print=extract_print)
         if n:
             total_extracted += n
             files_changed += 1
@@ -202,7 +224,7 @@ def main() -> int:
             encoding="utf-8",
         )
 
-    print(f"[critical-css] extracted {total_extracted} rules from "
+    print(f"[critical-css] normalized/extracted {total_extracted} rules from "
           f"{files_changed} pages")
     if PRINT_CSS_PATH.exists():
         print(f"  - {PRINT_CSS_PATH.relative_to(ROOT).as_posix()}: "

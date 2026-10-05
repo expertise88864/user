@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 from _html_scan import iter_tags, tag_name, attributes, blank_script_style, mask_inert_regions
+from _site_html import site_html_files
 
 # CODE_REVIEW TD-53 — no forced newline on write. This repo runs
 # core.autocrlf=true with no .gitattributes, so every other worktree file is
@@ -13,7 +14,6 @@ from _html_scan import iter_tags, tag_name, attributes, blank_script_style, mask
 
 
 ROOT = Path(__file__).resolve().parent
-SKIP_DIRS = {".git", "node_modules", ".next", "out", "dist"}
 HTML_RE = re.compile(r"(<footer\b[^>]*class=\"[^\"]*\bmag-footer\b[^\"]*\"[^>]*>)(.*?)(</footer>)", re.S)
 ARTICLE_CARD_RE = re.compile(
     r"(<a\b(?=[^>]*\barticle-list-item\b)[^>]*>)(.*?)(</a>)",
@@ -22,12 +22,7 @@ ARTICLE_CARD_RE = re.compile(
 
 
 def iter_html_files() -> list[Path]:
-    files: list[Path] = []
-    for path in ROOT.rglob("*.html"):
-        if any(part in SKIP_DIRS for part in path.relative_to(ROOT).parts):
-            continue
-        files.append(path)
-    return files
+    return site_html_files(ROOT)
 
 
 def normalize_footer_headings(html: str) -> str:

@@ -16,7 +16,12 @@ UUID = re.compile(r"[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}", re.I)
 
 def objects(path: Path, *, allow_diagnostics: bool = False) -> list[dict]:
     result = []
-    for line in path.read_text(encoding="utf-8-sig").splitlines():
+    raw = path.read_bytes()
+    # Windows PowerShell 5.1 Tee-Object emits BOM-tagged UTF-16; the CLI
+    # and PowerShell 7 emit UTF-8. Decode only explicit BOMs, without guessing
+    # or suppressing malformed input before the machine identity checks.
+    encoding = "utf-16" if raw.startswith((b"\xff\xfe", b"\xfe\xff")) else "utf-8-sig"
+    for line in raw.decode(encoding).splitlines():
         if not line.strip():
             continue
         try:

@@ -20,8 +20,9 @@ Idempotent: skips files already processed (look for `data-critical`).
 Run after every CSS change:
   python _extract_critical_css.py
 """
-import os, re, sys, io
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+import os, re
+from pathlib import Path
+from _site_html import site_html_files
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CSS_PATH = os.path.join(ROOT, 'assets', 'tw-mini.css')
@@ -163,6 +164,7 @@ def patch_html(html, critical):
     return html, True
 
 def main():
+    targets = site_html_files(Path(ROOT))
     if not os.path.exists(CSS_PATH):
         print(f'WARN: {CSS_PATH} not found')
         return
@@ -174,20 +176,12 @@ def main():
         print(f'  WARN: critical CSS exceeds 14 KB (HTTP/2 initial CWND)')
 
     n = 0
-    for d, _, fs in os.walk(ROOT):
-        if any(x in d for x in ['.git', 'node_modules', '__pycache__', 'astro-rewrite']):
-            continue
-        for f in fs:
-            if not f.endswith('.html'):
-                continue
-            p = os.path.join(d, f)
-            with open(p, 'r', encoding='utf-8') as fp:
-                src = fp.read()
-            new, changed = patch_html(src, critical)
-            if changed:
-                with open(p, 'w', encoding='utf-8') as fp:
-                    fp.write(new)
-                n += 1
+    for path in targets:
+        src = path.read_text(encoding='utf8')
+        new, changed = patch_html(src, critical)
+        if changed:
+            path.write_text(new, encoding='utf8')
+            n += 1
     print(f'Patched {n} HTML files with critical CSS inline')
 
 if __name__ == '__main__':

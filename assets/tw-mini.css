@@ -228,7 +228,7 @@ footer.mag-footer {
 .h-16{height:4rem}
 .leading-tight{line-height:1.25}
 .text-ink-700{color:#334155}
-.bg-mint-50\/60{background-color:#f5fbfa;opacity:.6}
+.bg-mint-50\/60{background-color:rgba(245,251,250,.6)}
 .opacity-15{opacity:.15}
 .grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
 .truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}

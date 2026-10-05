@@ -11,12 +11,10 @@ Steps performed by this script:
 Run once: python _self_host_fonts.py
 Then: manually replace the Google Fonts <link> in HTML <head> with the local CSS.
 """
-import os, sys, io, urllib.request
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+import os, urllib.request
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 FONTS_DIR = os.path.join(ROOT, 'assets', 'fonts')
-os.makedirs(FONTS_DIR, exist_ok=True)
 
 # Use rsms.me/inter for Inter (MIT, no-redirect raw woff2)
 # Use jsdelivr CDN for Noto fonts (most reliable mirror)
@@ -48,29 +46,6 @@ def download(url, dest):
         print(f'  failed: {e}')
         return False
 
-print('=== A7. Self-host fonts ===')
-ok = 0
-for family, weight, url, fname in FONTS:
-    dest = os.path.join(FONTS_DIR, fname)
-    if download(url, dest):
-        ok += 1
-print(f'\nDownloaded {ok}/{len(FONTS)} Inter weights.')
-
-print('''
-=== Manual step required for CJK fonts ===
-Download manually from https://fonts.google.com/noto/specimen/Noto+Sans+TC and
-https://fonts.google.com/noto/specimen/Noto+Serif+TC, then place these files in
-/assets/fonts/ :
-  NotoSansTC-Regular.woff2
-  NotoSansTC-Medium.woff2
-  NotoSerifTC-SemiBold.woff2
-  NotoSerifTC-Bold.woff2
-
-Or use the variable-font versions for smaller total size:
-  NotoSansTC[wght].woff2
-  NotoSerifTC[wght].woff2
-''')
-
 # Generate the CSS block
 CSS = '''/* ─── Self-hosted fonts (A7) — replaces Google Fonts CDN ─── */
 /* Inter — Latin only, woff2 with unicode-range */
@@ -101,20 +76,50 @@ CSS = '''/* ─── Self-hosted fonts (A7) — replaces Google Fonts CDN ─�
   unicode-range:U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;}
 '''
 
-css_path = os.path.join(ROOT, 'assets', 'fonts.css')
-with open(css_path, 'w', encoding='utf-8') as f:
-    f.write(CSS)
-print(f'CSS written → {css_path}')
 
-print('''
-=== Final HTML replacement ===
-In all HTML <head>, replace:
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?...">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?..." rel="stylesheet">
-With:
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Inter-Regular.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/NotoSerifTC-Bold.woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/fonts.css?v=1">
-''')
+def main():
+    os.makedirs(FONTS_DIR, exist_ok=True)
+    print('=== A7. Self-host fonts ===')
+    ok = 0
+    for family, weight, url, fname in FONTS:
+        dest = os.path.join(FONTS_DIR, fname)
+        if download(url, dest):
+            ok += 1
+    print(f'\nDownloaded {ok}/{len(FONTS)} Inter weights.')
+
+    print('''
+    === Manual step required for CJK fonts ===
+    Download manually from https://fonts.google.com/noto/specimen/Noto+Sans+TC and
+    https://fonts.google.com/noto/specimen/Noto+Serif+TC, then place these files in
+    /assets/fonts/ :
+      NotoSansTC-Regular.woff2
+      NotoSansTC-Medium.woff2
+      NotoSerifTC-SemiBold.woff2
+      NotoSerifTC-Bold.woff2
+
+    Or use the variable-font versions for smaller total size:
+      NotoSansTC[wght].woff2
+      NotoSerifTC[wght].woff2
+    ''')
+
+
+    css_path = os.path.join(ROOT, 'assets', 'fonts.css')
+    with open(css_path, 'w', encoding='utf-8') as f:
+        f.write(CSS)
+    print(f'CSS written → {css_path}')
+
+    print('''
+    === Final HTML replacement ===
+    In all HTML <head>, replace:
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?...">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?..." rel="stylesheet">
+    With:
+      <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Inter-Regular.woff2" crossorigin>
+      <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/NotoSerifTC-Bold.woff2" crossorigin>
+      <link rel="stylesheet" href="/assets/fonts.css?v=1">
+    ''')
+
+if __name__ == '__main__':
+    main()

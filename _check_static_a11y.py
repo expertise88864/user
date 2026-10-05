@@ -49,7 +49,7 @@ def plain_text(html: str) -> str:
 
 
 def has_attr(tag: str, name: str) -> bool:
-    return re.search(rf"\b{name}\s*=", tag, re.I) is not None
+    return name.lower() in attributes(tag)
 
 
 def main() -> int:
