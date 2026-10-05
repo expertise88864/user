@@ -161,8 +161,16 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
   此處記錄工程上線，不宣稱已實際完成作者申請到文章發布的完整操作。
   生成器若改動核可源碼，摘要門檻會拒絕，不能手改摘要或刪除證據以規避；須完成生成內容
   與核可源碼的正式驗證流程。不能把此模式當成直接發布许可或已核可新生成英文內容。
-- **IndexNow**(indexnow.yml + `_submit_indexnow.py`):deploy 後 ping Bing/Yandex 等。
-  Google 不吃 IndexNow — Google 收錄靠 GSC sitemap(已提交)。
+- **IndexNow**（indexnow.yml + `_submit_indexnow.py`）：Delivery verification 的 main
+  push 成功後，checkout 該完整 SHA，再確認目前 main、六項正式 CI／jobs／steps、
+  可信 Vercel Production 及 hosted Production smoke。普通 Quality 綠燈不代表已部署。
+  每次 POST／retry 都重新驗證；缺證據、過期版本或取消的部署不能通知搜尋引擎。
+  只接受公開 sitemap 的 HTTPS 網址，不送搜尋參數、fragment、私人路徑或外站網址。
+  HTTP 200／202 代表收到通知，不保證爬取、收錄、排名或流量；每次 POST 上限
+  10,000 個網址。上游暫時性故障仍依既有 best-effort 策略處理，門檻失敗不適用此豁免。
+  手動執行須在乾淨、完整且與正式 main 相同的版本上使用：
+  `python _submit_indexnow.py --sha <完整正式 SHA> --since 7 --wait 600`。
+  此通知不是 GA4。GA4 依使用者定案保留公開內容分組，不傳任意搜尋輸入或讀者個人資訊。
 - 其他 CI:a11y.yml(pa11y)、hyperlink.yml(斷鏈)、schema-validator.yml、vale.yml(文風)。
 
 ## 已知管線地雷

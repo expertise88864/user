@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Push URL list to IndexNow for fast Bing / Yandex / Seznam re-crawl.
+"""Notify IndexNow of public URLs only after exact-SHA production verification.
 
-IndexNow lets us proactively notify search engines that content has
-changed, so they re-crawl within hours instead of the usual days-to-
-weeks polling cycle. Supported by Bing, Yandex, Seznam, Naver — NOT
-Google directly (Google uses its own GSC URL Inspection API).
+IndexNow tells participating search engines that public content has changed.
+HTTP 200/202 confirms receipt, not a crawl/index/ranking result or deadline.
+Protocol reference: https://www.indexnow.org/documentation
 
 Setup:
   1. Random key file is committed at /KEY.txt (root) so Vercel serves
@@ -14,23 +13,30 @@ Setup:
   2. This script POSTs the URL list to the IndexNow API.
 
 Usage:
-  python _submit_indexnow.py                 # submit all URLs from sitemap.xml
-  python _submit_indexnow.py URL1 URL2 ...   # submit specific URLs
-  python _submit_indexnow.py --since 7       # only URLs with lastmod within last N days
+  python _submit_indexnow.py --sha FULL_SHA               # current public sitemap
+  python _submit_indexnow.py --sha FULL_SHA URL1 URL2      # public sitemap subset
+  python _submit_indexnow.py --sha FULL_SHA --since 7      # recently changed URLs
+  python _submit_indexnow.py --sha FULL_SHA --wait 600     # bounded evidence wait
 
-Idempotent + safe to re-run; IndexNow rate-limits to 10,000 URLs/day
-per host. Sitemap has ~100 URLs so we're nowhere near the limit.
+Use the clean, exact current main revision. Candidate/failed/stale versions and
+URLs with search parameters, fragments, foreign hosts or private paths cannot
+notify IndexNow. Existing Actions credentials remain read-only and are never
+sent to IndexNow. The protocol allows at most 10,000 URLs per POST.
 """
 from __future__ import annotations
 
+import argparse
 import datetime as dt
 import json
-import os
 import re
+import subprocess
 import sys
 import time
+import urllib.parse
 import urllib.request
 from pathlib import Path
+
+import _delivery as delivery
 
 ROOT = Path(__file__).resolve().parent
 DOMAIN = "https://chendermatologist.com"
@@ -64,12 +70,54 @@ def parse_sitemap_urls(max_age_days: int | None = None) -> list[str]:
     return urls
 
 
-def submit(urls: list[str]) -> int:
+def public_urls(urls: list[str]) -> list[str]:
+    """Keep a stable public sitemap subset; never send arbitrary URL input."""
+    published = set(parse_sitemap_urls())
+    result = []
+    for value in urls:
+        parsed = urllib.parse.urlsplit(value)
+        if (parsed.scheme != 'https' or parsed.netloc != 'chendermatologist.com'
+                or parsed.query or parsed.fragment or value not in published):
+            raise ValueError('Only public canonical sitemap URLs without query or fragment are allowed')
+        if value not in result:
+            result.append(value)
+    return result
+
+
+def production_ready(sha: str, api: delivery.API) -> None:
+    """Required formal jobs/steps, trusted deployment and still-current main."""
+    delivery.check_sha(sha)
+    delivery.clean(sha)
+    if api.get('/branches/main')['commit']['sha'] != sha:
+        raise delivery.Blocked('IndexNow target is not current production main')
+    cfg = delivery.policy()
+    if cfg['repository'] != 'expertise88864/user':
+        raise delivery.Blocked('Unexpected IndexNow repository')
+    # Includes the independently executed exact-SHA Production smoke step.
+    delivery.verify(sha, 'main', cfg, api)
+    delivery.deployment_url(api, sha, 'production')
+    if api.get('/branches/main')['commit']['sha'] != sha:
+        raise delivery.Blocked('Production main advanced during IndexNow verification')
+    delivery.clean(sha)
+
+
+def submit(urls: list[str], *, sha: str, wait: int = 0) -> int:
     if not urls:
         print("[indexnow] no URLs to submit")
         return 0
+    try:
+        delivery.check_sha(sha)
+        delivery.clean(sha)
+        if type(wait) is not int or not 0 <= wait <= 900:
+            raise ValueError('Evidence wait must be between 0 and 900 seconds')
+        urls = public_urls(urls)
+    except (delivery.Blocked, ValueError, OSError, subprocess.SubprocessError):
+        print('[indexnow] blocked: invalid target, workspace or non-public URL input')
+        return 2
+    api = delivery.API('expertise88864/user')
+    deadline = time.monotonic() + wait
     if len(urls) > 10000:
-        print(f"[indexnow] truncating from {len(urls)} to 10000 (per-host daily cap)")
+        print(f"[indexnow] truncating from {len(urls)} to 10000 (per-POST limit)")
         urls = urls[:10000]
     payload = {
         "host": DOMAIN.removeprefix("https://").removeprefix("http://"),
@@ -119,6 +167,18 @@ def submit(urls: list[str]) -> int:
     status: int | None = None
     body_text = ""
     for i in range(max_attempts):
+        # Gate errors must never fall into the best-effort upstream-error path.
+        # Recheck all mutable evidence immediately before every POST/retry.
+        while True:
+            try:
+                production_ready(sha, api)
+                break
+            except (delivery.Blocked, OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError):
+                if time.monotonic() >= deadline:
+                    print('[indexnow] blocked: exact current formal CI/deployment evidence unavailable; no notification')
+                    return 2
+                print('[indexnow] waiting for exact current formal CI/deployment evidence')
+                time.sleep(min(30, max(0, deadline - time.monotonic())))
         status, body_text = attempt()
         if status in (200, 202):
             print(f"[indexnow] submitted {len(urls)} URLs -> HTTP {status}")
@@ -153,23 +213,24 @@ def submit(urls: list[str]) -> int:
     return 0
 
 
-def main() -> int:
-    args = sys.argv[1:]
-    if "--since" in args:
-        i = args.index("--since")
-        try:
-            days = int(args[i + 1])
-        except (IndexError, ValueError):
-            print("Usage: --since N (days)")
-            return 2
-        urls = parse_sitemap_urls(max_age_days=days)
-        print(f"[indexnow] {len(urls)} URLs updated in last {days} days")
-    elif args:
-        urls = [a for a in args if a.startswith("http")]
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--sha', required=True, help='Full, current production main SHA')
+    parser.add_argument('--since', type=int, help='Public URLs modified within N days')
+    parser.add_argument('--wait', type=int, default=0, help='Bounded formal evidence wait (0–900 seconds)')
+    parser.add_argument('urls', nargs='*', help='Optional public sitemap URL subset')
+    args = parser.parse_args(argv)
+    if args.since is not None and (args.since < 0 or args.urls):
+        parser.error('--since must be non-negative and cannot be combined with explicit URLs')
+    if args.since is not None:
+        urls = parse_sitemap_urls(max_age_days=args.since)
+        print(f"[indexnow] {len(urls)} URLs updated in last {args.since} days")
+    elif args.urls:
+        urls = args.urls
     else:
         urls = parse_sitemap_urls()
         print(f"[indexnow] {len(urls)} URLs from full sitemap")
-    return submit(urls)
+    return submit(urls, sha=args.sha, wait=args.wait)
 
 
 if __name__ == "__main__":
