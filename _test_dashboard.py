@@ -102,6 +102,100 @@ class DashboardTests(unittest.TestCase):
                              {"first": 2, "second": 1, "third": 0})
         self.assertEqual(parser.call_count, 3)
 
+    def test_inert_examples_do_not_become_public_links_or_metadata(self):
+        self.article('target')
+        fake = ('<a href="/blog/target">Example</a>'
+                '<meta name="robots" content="noindex">'
+                '<script type="application/ld+json">{"wordCount":999}</script>')
+        for opener, closer in [('textarea', 'textarea'), ('title', 'title'),
+                               ('template', 'template')]:
+            with self.subTest(element=opener):
+                page = dashboard.PageMetadata()
+                page.feed('<'+opener+'>'+fake+'</'+closer+'><a href="/blog/real">Real</a>')
+                self.assertEqual(page.links, ['/blog/real'])
+                self.assertFalse(page.noindex)
+                self.assertEqual(page.schemas, [])
+        page = dashboard.PageMetadata()
+        page.feed('<template><template>'+fake+'</template>'+fake+'</template>'
+                  '<a href="/blog/real">Real</a>')
+        self.assertEqual(page.links, ['/blog/real'])
+        self.assertFalse(page.noindex)
+
+    def test_malformed_external_url_does_not_abort_public_link_inventory(self):
+        self.article('target')
+        self.article('source', extra=(
+            '<a href="https://[broken">Broken external URL</a>'
+            '<a href="/blog/target">Working internal link</a>'))
+        self.assertEqual(dashboard.incoming_link_counts(self.root / 'blog', ['target', 'source']),
+                         {'target': 1, 'source': 0})
+
+    def test_inert_robots_examples_remain_public_through_report_generation(self):
+        self.article('target')
+        fake = '<meta name="robots" content="noindex">'
+        for element in ('template', 'textarea', 'title', 'script', 'style'):
+            self.article(element + '-example', extra=(
+                '<' + element + '>' + fake + '</' + element + '>'
+                '<a href="/blog/target">Real link</a>'))
+        self.article('nested-example', extra=(
+            '<template><template>' + fake + '</template>' + fake + '</template>'
+            '<meta name><meta name="robots" content>'
+            '<a href="/blog/target">Real link</a>'))
+        public = dashboard.public_catalog(dashboard.parse_articles(), self.root)
+        self.assertEqual([row['slug'] for row in public], [row['slug'] for row in self.entries])
+        with redirect_stdout(io.StringIO()):
+            self.assertEqual(dashboard.main(), 0)
+        report = (self.root / '_dashboard.md').read_text(encoding='utf-8')
+        self.assertIn('**Published articles:** 7', report)
+        self.assertIn('| target | Clinical Notes | 1200 | 6 | 6 |', report)
+        for entry in self.entries:
+            self.assertIn('| ' + entry['slug'] + ' |', report)
+        self.assertNotIn('### noindex articles', report)
+
+    def test_live_robots_after_inert_examples_still_exclude_articles(self):
+        example = ('<template><template><meta name="robots" content="noindex">'
+                   '</template></template>')
+        self.article('excluded', extra=example + '<meta name="googlebot" content="NOINDEX, follow">')
+        self.article('visible', extra=example)
+        public = dashboard.public_catalog(dashboard.parse_articles(), self.root)
+        self.assertEqual([row['slug'] for row in public], ['visible'])
+        with redirect_stdout(io.StringIO()):
+            self.assertEqual(dashboard.main(), 0)
+        report = (self.root / '_dashboard.md').read_text(encoding='utf-8')
+        self.assertIn('**Published articles:** 1', report)
+        self.assertIn('### noindex articles', report)
+        self.assertIn('- `excluded`', report)
+        self.assertNotIn('| excluded |', report)
+        self.assertIn('| visible |', report)
+
+    def test_robots_none_and_ambiguous_attributes_fail_closed(self):
+        directives = [
+            '<meta name="robots" content="none">',
+            '<meta name="googlebot" content="NONE, follow">',
+            '<meta name="robots" content="noindex" content="index">',
+            '<meta name="robots" content="index" content="noindex">',
+            '<meta name="robots" name="description" content="index">',
+            '<meta name="description" name="googlebot" content="index">',
+            '<meta name="robots">',
+        ]
+        self.article('visible', robots='<meta name="robots" content="index, follow">')
+        for index, directive in enumerate(directives):
+            self.article('excluded-' + str(index), robots=directive, english_robots=directive)
+            with self.subTest(directive=directive):
+                page = dashboard.PageMetadata()
+                page.feed(directive)
+                self.assertTrue(page.noindex)
+        public = dashboard.public_catalog(dashboard.parse_articles(), self.root)
+        self.assertEqual([row['slug'] for row in public], ['visible'])
+        self.assertEqual(dashboard.en_indexable_count([row['slug'] for row in self.entries]), 0)
+        with redirect_stdout(io.StringIO()):
+            self.assertEqual(dashboard.main(), 0)
+        report = (self.root / '_dashboard.md').read_text(encoding='utf-8')
+        self.assertIn('**Published articles:** 1', report)
+        self.assertIn('### noindex articles', report)
+        for index in range(len(directives)):
+            self.assertIn('- `excluded-' + str(index) + '`', report)
+            self.assertNotIn('| excluded-' + str(index) + ' |', report)
+
     def test_english_count_uses_public_catalogue_and_parsed_directives(self):
         self.article("visible", english_robots="")
         self.article("excluded", english_robots=(

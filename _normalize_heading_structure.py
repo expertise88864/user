@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 import re
+from html import escape, unescape
 from pathlib import Path
-from _html_scan import iter_tags, tag_name, attributes, blank_script_style, mask_inert_regions
+from _html_scan import iter_tags, tag_name, attributes, attribute_spans, blank_script_style, mask_inert_regions
 from _site_html import site_html_files
 
 # CODE_REVIEW TD-53 — no forced newline on write. This repo runs
@@ -49,23 +50,25 @@ def normalize_footer_headings(html: str) -> str:
 
 
 def with_added_class(attrs: str, class_name: str) -> str:
-    if "class=" in attrs:
-        return re.sub(
-            r'class="([^"]*)"',
-            lambda match: f'class="{match.group(1)} {class_name}"',
-            attrs,
-            count=1,
-        )
-    return f' class="{class_name}"{attrs}'
+    prefix = '<x'
+    span = attribute_spans(prefix + attrs + '>').get('class')
+    if span is None:
+        return f' class="{class_name}"{attrs}'
+    start, end, raw_value, _ = span
+    value = unescape(raw_value)
+    if class_name in re.split(r'[\t\n\f\r ]+', value):
+        return attrs
+    replacement = 'class="' + escape((value + ' ' + class_name).strip(' \t\n\f\r'), quote=True) + '"'
+    return attrs[:start - len(prefix)] + replacement + attrs[end - len(prefix):]
 
 
 def normalize_content_headings(html: str) -> str:
     tags = list(iter_tags(mask_inert_regions(blank_script_style(html))))
     if any(tag_name(tag) == 'article' and not tag.startswith('</') for _, tag in tags):
         for offset, tag in tags:
-            if tag_name(tag) != 'h1' or tag.startswith('</'):
+            if tag_name(tag) != 'h1' or tag.startswith('</') or not tag.endswith('>'):
                 continue
-            if 'dn-article-title' not in attributes(tag).get('class', '').split():
+            if 'dn-article-title' not in re.split(r'[\t\n\f\r ]+', unescape(attributes(tag).get('class', ''))):
                 attrs = tag[len('<h1'):-1]
                 replacement = '<h1' + with_added_class(attrs, 'dn-article-title') + '>'
                 html = html[:offset] + replacement + html[offset + len(tag):]
@@ -106,24 +109,27 @@ def normalize_content_headings(html: str) -> str:
     html = re.sub(r'(<div class="tool-toc"[^>]*>)<h3\b', r"\1<h2", html)
     html = html.replace("</h3><ul><li><a href=\"#scorad\"", "</h2><ul><li><a href=\"#scorad\"")
 
-    html = re.sub(
-        r"<h4\b([^>]*\bid=\"lt[^>]*>)(.*?)</h4>",
-        r"<h3\1\2</h3>",
-        html,
-        flags=re.S,
-    )
-    html = re.sub(
-        r"<h4\b([^>]*)>",
-        lambda match: f"<div{with_added_class(match.group(1), 'visual-heading')}>",
-        html,
-    )
-    html = html.replace("</h4>", "</div>")
-    html = re.sub(
-        r"<h5\b([^>]*)>",
-        lambda match: f"<div{with_added_class(match.group(1), 'visual-heading')}>",
-        html,
-    )
-    html = html.replace("</h5>", "</div>")
+    # Pair real heading tags without rewriting quoted or inert HTML examples.
+    open_headings = {'h4': [], 'h5': []}
+    edits = []
+    for offset, tag in iter_tags(mask_inert_regions(blank_script_style(html))):
+        name = tag_name(tag)
+        if name not in open_headings or not tag.endswith('>'):
+            continue
+        if tag.startswith('</'):
+            if not open_headings[name]:
+                continue
+            replacement = '</' + open_headings[name].pop() + '>'
+        else:
+            attrs = tag[3:-1]
+            target = 'h3' if name == 'h4' and attributes(tag).get('id', '').startswith('lt') else 'div'
+            if target == 'div':
+                attrs = with_added_class(attrs, 'visual-heading')
+            replacement = '<' + target + attrs + '>'
+            open_headings[name].append(target)
+        edits.append((offset, offset + len(tag), replacement))
+    for start, stop, replacement in reversed(edits):
+        html = html[:start] + replacement + html[stop:]
 
     html = html.replace('class="visual-heading" data-zh=', 'class="infographic-title" data-zh=')
     # CODE_REVIEW TD-59 — a second replace() here mapped

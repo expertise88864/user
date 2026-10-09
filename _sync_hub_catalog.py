@@ -186,12 +186,30 @@ def public_catalog(catalog: list[dict], root: Path) -> list[dict]:
         source = path.read_text(encoding="utf-8")
         # Use parsed attributes; noindex may be beyond the first 5 KB.
         class Robots(HTMLParser):
-            noindex = False
+            CDATA_CONTENT_ELEMENTS = ('script', 'style', 'textarea', 'title')
 
-            def handle_starttag(self, tag, attrs):
-                attrs = dict(attrs)
-                if tag == "meta" and attrs.get("name", "").lower() in {"robots", "googlebot"}:
-                    self.noindex |= "noindex" in re.split(r"[\s,]+", attrs.get("content", "").lower())
+            def __init__(self):
+                super().__init__()
+                self.noindex = False
+                self.template_depth = 0
+
+            def handle_starttag(self, tag, attributes):
+                if tag == 'template':
+                    self.template_depth += 1
+                if self.template_depth:
+                    return
+                attrs = dict(attributes)
+                names = [(value or '').lower() for key, value in attributes if key == 'name']
+                if tag == "meta" and set(names) & {"robots", "googlebot"}:
+                    # Match search indexing: ambiguous visibility must not become public.
+                    if len(names) != 1 or sum(key == 'content' for key, _ in attributes) != 1:
+                        self.noindex = True
+                    directives = set(re.split(r"[\s,]+", (attrs.get("content") or "").lower()))
+                    self.noindex |= bool(directives & {'noindex', 'none'})
+
+            def handle_endtag(self, tag):
+                if tag == 'template' and self.template_depth:
+                    self.template_depth -= 1
 
         robots = Robots()
         robots.feed(source)

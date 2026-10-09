@@ -53,6 +53,8 @@ def parse_articles() -> list[dict]:
 class PageMetadata(HTMLParser):
     """Read real anchors, robots directives and JSON-LD, excluding text lookalikes."""
 
+    CDATA_CONTENT_ELEMENTS = ('script', 'style', 'textarea', 'title')
+
     def __init__(self):
         super().__init__()
         self.links = []
@@ -60,8 +62,13 @@ class PageMetadata(HTMLParser):
         self.noindex = False
         self.schemas = []
         self.json_script = None
+        self.template_depth = 0
 
     def handle_starttag(self, tag, attributes):
+        if tag == 'template':
+            self.template_depth += 1
+        if self.template_depth:
+            return
         attrs = dict(attributes)
         if tag == "a" and attrs.get("href"):
             self.links.append(attrs["href"])
@@ -69,8 +76,13 @@ class PageMetadata(HTMLParser):
             name = (attrs.get("name") or attrs.get("property") or "").lower()
             content = attrs.get("content") or ""
             self.meta[name] = content
-            if name in {"robots", "googlebot"}:
-                self.noindex |= "noindex" in re.split(r"[\s,]+", content.lower())
+            names = [(value or '').lower() for key, value in attributes if key == 'name']
+            if name in {"robots", "googlebot"} or set(names) & {'robots', 'googlebot'}:
+                # Match search indexing: ambiguous visibility must not become public.
+                if len(names) != 1 or sum(key == 'content' for key, _ in attributes) != 1:
+                    self.noindex = True
+                directives = set(re.split(r"[\s,]+", content.lower()))
+                self.noindex |= bool(directives & {'noindex', 'none'})
         elif tag == "script":
             self.json_script = [] if (attrs.get("type") or "").lower() == "application/ld+json" else None
 
@@ -79,6 +91,11 @@ class PageMetadata(HTMLParser):
             self.json_script.append(value)
 
     def handle_endtag(self, tag):
+        if tag == 'template' and self.template_depth:
+            self.template_depth -= 1
+            return
+        if self.template_depth:
+            return
         if tag == "script" and self.json_script is not None:
             try:
                 self.schemas.append(json.loads("".join(self.json_script)))
@@ -118,7 +135,12 @@ def incoming_link_counts(blog_dir: Path, public_slugs: list[str]) -> dict[str, i
     for source_slug in public_slugs:
         page = PageMetadata()
         page.feed((blog_dir / (source_slug + ".html")).read_text(encoding="utf-8"))
-        destinations = [urlsplit(urljoin(DOMAIN + "/blog/" + source_slug, href)) for href in page.links]
+        destinations = []
+        for href in page.links:
+            try:
+                destinations.append(urlsplit(urljoin(DOMAIN + "/blog/" + source_slug, href)))
+            except ValueError:
+                continue  # A malformed URL is not an incoming link; link validation reports it separately.
         linked = {url.path.rstrip("/").removesuffix(".html").removeprefix("/blog/")
                   for url in destinations if url.scheme in {"http", "https"}
                   and url.netloc == urlsplit(DOMAIN).netloc}

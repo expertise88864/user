@@ -23,6 +23,7 @@ from typing import Iterator
 # was removed rather than left around to be copied again. Use
 # blank_script_style(); _check_index_boundaries and _check_static_a11y now do.
 TAG_NAME_RE = re.compile(r"</?([A-Za-z][-\w:.]*)")
+COMMENT_END_RE = re.compile(r"--!?>")
 # One attribute: a name, then optionally `= value` with the value consumed
 # whole. Consuming the value is the point — it is why prose inside data-zh
 # cannot be mistaken for an attribute name.
@@ -30,73 +31,14 @@ ATTR_RE = re.compile(r"""\s*([^\s=/>]+)(?:\s*=\s*("[^"]*"|'[^']*'|[^\s>]*))?""")
 
 
 def blank_script_style(text: str) -> str:
-    """Blank <script>/<style> bodies, preserving length and newlines.
-
-    Length-preserving on purpose: callers report line numbers from offsets
-    into the returned text, so deleting instead of blanking would silently
-    shift every reported position.
-
-    CODE_REVIEW TD-64 — this used a `</\\1>` regex, which demands an
-    exact `</script>`, while _find_script_end() two functions below already
-    implements the real HTML5 rule. So this module disagreed with itself:
-    `</script >` — valid, and what a browser closes on — left the whole script
-    body looking like visible copy. _check_inline_events read a JS `onclick=`
-    as an inline handler, and _check_ymyl_claims read a JS string literal as
-    published prose.
-
-    Positions come from an inert-masked view and the blanking is applied to
-    the ORIGINAL string — the same discipline iter_inline_scripts() already
-    used, and for the same reason. The first version of this fix scanned the
-    raw text, so `<!-- Example: <script> -->` looked like a real unclosed
-    script and blanked everything after it to EOF, hiding whatever followed
-    from the caller. `<style>` had the identical hole: the regex would run
-    from a commented-out `<style>` to the next real `</style>`.
-    """
-    view = mask_inert_regions(text)
-    spans = _element_spans(view, "script") + _element_spans(view, "style")
-    if not spans:
-        return text
-    pieces: list[str] = []
-    pos = 0
-    for start, stop in sorted(spans):
-        if start < pos:            # overlapping regions: keep the outer one
-            continue
-        pieces.append(text[pos:start])
-        pieces.append(re.sub(r"[^\n]", " ", text[start:stop]))
-        pos = stop
-    pieces.append(text[pos:])
-    return "".join(pieces)
+    """Blank real script/style elements while preserving source offsets."""
+    return _mask_regions(text, {'script', 'style'})
 
 
 def _element_spans(view: str, name: str) -> list[tuple[int, int]]:
-    """(start, stop) of every <name> element, located in an inert-masked view.
-
-    <script> and <style> are both raw-text elements with the same end-tag rule,
-    so they get the same scanner rather than a scanner and a regex that
-    disagree — which is how <style-template> survived a round longer than
-    <script-template>.
-    """
-    lowered = view.lower()
-    opener = "<" + name
-    spans: list[tuple[int, int]] = []
-    pos = 0
-    while True:
-        start = lowered.find(opener, pos)
-        if start == -1:
-            return spans
-        if not _opens(lowered, start, name):
-            pos = start + len(opener)      # <scripture>, <style-template>, …
-            continue
-        open_end = view.find(">", start)
-        if open_end == -1:
-            return spans + [(start, len(view))]
-        end = _find_end_tag(lowered, open_end + 1, name)
-        if end == -1:
-            return spans + [(start, len(view))]
-        close = view.find(">", end)
-        stop = len(view) if close == -1 else close + 1
-        spans.append((start, stop))
-        pos = stop
+    """Return whole raw-text element spans, excluding quoted examples."""
+    return [(start, stop) for kind, start, _, _, stop in _raw_regions(view)
+            if kind == name]
 
 
 def is_ascii_alpha(ch: str) -> bool:
@@ -140,21 +82,12 @@ def iter_tags(dom: str) -> Iterator[tuple[int, str]]:
             i += 1
             continue
         start = i
-        j = i + 1
-        quote = ""
-        while j < n:
-            c = dom[j]
-            if quote:
-                if c == quote:
-                    quote = ""
-            elif c in "\"'":
-                quote = c
-            elif c == ">":
-                break
-            j += 1
-        tag = dom[start:j + 1]
+        stop = _tag_stop(dom, start)
+        if stop == -1:
+            stop = n
+        tag = dom[start:stop]
         yield start, tag
-        i = j + 1
+        i = stop
         name = tag_name(tag)
         if not tag.startswith("</") and not tag.rstrip().endswith("/>") and name in RCDATA_ELEMENTS:
             close = re.compile(rf"</{name}\s*>", re.I).search(dom, i)
@@ -201,27 +134,26 @@ def _opens_script(text: str, start: int) -> bool:
 # production. _minify.py deliberately preserves textarea contents, and admin.html
 # is built on textareas, so this is reachable. Masking is length-preserving so
 # every body outside the masked region stays byte-identical.
-_COMMENT_RE = re.compile(r"<!--[\s\S]*?-->")
-_RCDATA_RE = re.compile(r"<(textarea|title)\b[^>]*>[\s\S]*?</\1\s*>", re.I)
-
-
-def _blank(match: "re.Match[str]") -> str:
-    return re.sub(r"[^\n]", " ", match.group(0))
+def _mask_regions(html: str, names: set[str]) -> str:
+    pieces = []
+    pos = 0
+    for name, start, _, _, stop in _raw_regions(html):
+        if name in names:
+            pieces.append(html[pos:start])
+            pieces.append(re.sub(r"[^\n]", " ", html[start:stop]))
+            pos = stop
+    pieces.append(html[pos:])
+    return ''.join(pieces)
 
 
 def mask_comments(html: str) -> str:
-    """Blank HTML comments only, preserving length and newlines.
-
-    Split out from mask_inert_regions() for callers that need to read a
-    RCDATA element's text — <title> above all — while still refusing to treat
-    a commented-out copy of it as published.
-    """
-    return _COMMENT_RE.sub(_blank, html)
+    """Blank HTML comments, preserving quoted examples and raw script text."""
+    return _mask_regions(html, {'#comment'})
 
 
 def mask_inert_regions(html: str) -> str:
-    """Blank comments and RCDATA interiors, preserving length and newlines."""
-    return _RCDATA_RE.sub(_blank, mask_comments(html))
+    """Blank HTML comments and RCDATA elements without shifting source offsets."""
+    return _mask_regions(html, {'#comment', 'textarea', 'title'})
 
 
 def _find_end_tag(lowered: str, start: int, name: str) -> int:
@@ -249,54 +181,113 @@ def _find_script_end(lowered: str, start: int) -> int:
     return _find_end_tag(lowered, start, "script")
 
 
-def iter_inline_scripts(html: str):
-    """Yield (attrs, body) for every <script> WITHOUT a src attribute.
+def _tag_stop(html: str, start: int) -> int:
+    """Exclusive tag end, honoring quoted values rather than stray quotes."""
+    if (html.startswith(('<!', '<?'), start)
+            or (html.startswith('</', start)
+                and (start + 2 >= len(html) or not is_ascii_alpha(html[start + 2])))):
+        end = html.find('>', start + 2)
+        return end + 1 if end != -1 else -1
 
-    CODE_REVIEW TD-04 — the CSP hash generator and its checker each had their
-    own `\\bsrc\\s*=` / `type\\s*=` substring tests. `\\b` sits between `-` and
-    `s`, so `data-src="x"` matched as a real `src` and the script was skipped
-    as external; `data-type="application/ld+json"` was read as the script's
-    type and the body treated as inert. Either mistake means an executable
-    script ships with no hash and is BLOCKED in production — and because both
-    sides made the same mistake, the gate agreed. Attribute names are parsed
-    and compared exactly here, once, for both.
-    """
-    # Scan positions are taken from a masked copy so an inert `<script>` inside
-    # a comment or a textarea cannot be mistaken for markup; bodies are still
-    # sliced out of the ORIGINAL string, which the mask leaves byte-identical
-    # everywhere outside those regions.
-    masked = mask_inert_regions(html)
-    lowered = masked.lower()
+    # In unquoted values and attribute names, quotes are ordinary characters.
+    # Only a quote that starts the value after '=' protects a following '>'.
+    quote = ''
+    state = 'name'
+    for pos in range(start + 1, len(html)):
+        char = html[pos]
+        if state == 'quoted':
+            if char == quote:
+                state = 'after_quote'
+            continue
+        if char == '>':
+            return pos + 1
+        space = char in '\t\n\f\r '
+        if state == 'name':
+            if space or char == '/':
+                state = 'before_attribute'
+        elif state in ('before_attribute', 'after_attribute', 'after_quote'):
+            if space:
+                continue
+            if char == '/':
+                state = 'before_attribute'
+                continue
+            if char == '=' and state == 'after_attribute':
+                state = 'before_value'
+            else:
+                state = 'attribute'
+        elif state == 'attribute':
+            if space:
+                state = 'after_attribute'
+            elif char == '/':
+                state = 'before_attribute'
+            elif char == '=':
+                state = 'before_value'
+        elif state == 'before_value':
+            if space:
+                continue
+            if char in "\"'":
+                quote = char
+                state = 'quoted'
+            else:
+                state = 'unquoted'
+        elif state == 'unquoted' and space:
+            state = 'before_attribute'
+    return -1
+
+
+def _raw_regions(html: str):
+    """Yield comment/raw-text spans while skipping whole quoted markup tags."""
+    # Unicode lower() can expand U+0130 and shift subsequent source offsets.
+    lowered = html.translate(str.maketrans('ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'))
     pos = 0
-    while True:
-        start = lowered.find("<script", pos)
+    while pos < len(html):
+        start = html.find('<', pos)
         if start == -1:
             return
-        if not _opens_script(html, start):
-            pos = start + len("<script")
+        if html.startswith('<!--', start):
+            content = start + 4
+            if html.startswith('>', content):
+                end, stop = content, content + 1
+            elif html.startswith('->', content):
+                end, stop = content, content + 2
+            else:
+                close = COMMENT_END_RE.search(html, content)
+                end = close.start() if close else -1
+                stop = close.end() if close else len(html)
+            yield '#comment', start, start + 4, end, stop
+            pos = stop
             continue
-        i = start + len("<script")
-        quote = ""
-        while i < len(html):
-            c = html[i]
-            if quote:
-                if c == quote:
-                    quote = ""
-            elif c in "\"'":
-                quote = c
-            elif c == ">":
-                break
-            i += 1
-        attrs = attributes("<script" + html[start + len("<script"):i + 1])
-        end = _find_script_end(lowered, i + 1)
-        if end == -1:
+        if start + 1 == len(html):
             return
-        body = html[i + 1:end]
-        close = html.find(">", end)
-        pos = (close + 1) if close != -1 else end + len("</script")
-        if "src" in attrs:
+        if not is_ascii_alpha(html[start + 1]) and html[start + 1] not in '/!?':
+            pos = start + 1
             continue
-        yield attrs, body
+        opening_stop = _tag_stop(html, start)
+        if opening_stop == -1:
+            return
+        tag = html[start:opening_stop]
+        name = tag_name(tag)
+        pos = opening_stop
+        if (tag.startswith('</') or name not in ('script', 'style', 'textarea', 'title')
+                or not _opens(lowered, start, name)):
+            continue
+        end = _find_end_tag(lowered, opening_stop, name)
+        stop = _tag_stop(html, end) if end != -1 else -1
+        if stop == -1:
+            yield name, start, opening_stop, -1, len(html)
+            return
+        yield name, start, opening_stop, end, stop
+        pos = stop
+
+
+def iter_inline_scripts(html: str):
+    """Yield attributes and exact original bodies of real inline scripts."""
+    for name, start, opening_stop, end, _ in _raw_regions(html):
+        if name != 'script' or end == -1:
+            continue
+        attrs = attributes(html[start:opening_stop])
+        if 'src' not in attrs:
+            yield attrs, html[opening_stop:end]
 
 
 def selftest() -> list[str]:
@@ -336,6 +327,22 @@ def selftest() -> list[str]:
          "inert <script> inside a comment"),
         ("<title><script>t</script></title><script>real()</script>",
          [("", "real()")], "inert <script> inside a title"),
+        ('<div data-en="<script>example()</script>"></div><script>real()</script>',
+         [("", "real()")], "quoted attribute examples are not scripts"),
+        ('<p>\u0130</p><script>real()</script>',
+         [("", "real()")], "Unicode case folding must not shift script offsets"),
+        ('<style>.x{content:"<script>example()</script>"}</style><script>real()</script>',
+         [("", "real()")], "script text inside CSS is not a script element"),
+        ('<textarea data-x="> </textarea>"><script>example()</script></textarea>'
+         '<script>real()</script>', [("", "real()")], "RCDATA opener respects quoted greater-than"),
+        ("<img alt=Patient's src=/a.png><script>real()</script>",
+         [("", "real()")], "quote inside an unquoted attribute is not a delimiter"),
+        ("x <y it's</p><script>real()</script>",
+         [("", "real()")], "stray attribute-name quote must not hide later scripts"),
+        ('<!-- example --!><script>real()</script><!-- tail -->',
+         [("", "real()")], "comment end bang does not hide a live script"),
+        ('<!--><script>real()</script>', [("", "real()")], "abrupt comment end"),
+        ('<!---><script>real()</script>', [("", "real()")], "abrupt dashed comment end"),
     ]
     failures = []
     for html, want, label in cases:
@@ -369,6 +376,10 @@ def selftest() -> list[str]:
          "keep_me", True, "a <script> inside a comment must not blank the rest"),
         ("<textarea><script></textarea><button onclick=" + q + "keep_me()" + q + ">",
          "keep_me", True, "a <script> inside a textarea must not blank the rest"),
+        ('<div data-en="<script>"></div><button onclick="keep_me()">Click</button>'
+         '<script>real()</script>', "keep_me", True, "quoted script opener must not hide a handler"),
+        ('<script data-x="before > </script>">keep_me()</script>',
+         "keep_me", False, "quoted closing script text is part of the opener"),
         ("<!-- <style> --><button onclick=" + q + "keep_me()" + q + "><style>.a{}</style>",
          "keep_me", True, "a <style> inside a comment must not swallow real markup"),
     ]
@@ -392,6 +403,10 @@ def selftest() -> list[str]:
          "mask_comments blanks comment text"),
         (mask_inert_regions, "<!-- keep_me --><title>keep_me</title>", "keep_me", False,
          "mask_inert_regions blanks both"),
+        (mask_comments, '<div data-en="<!-- keep_me -->">Text</div>', 'keep_me', True,
+         'comment example inside an attribute is not a comment'),
+        (mask_inert_regions, '<script>const s="<textarea>keep_me</textarea>";</script>',
+         'keep_me', True, 'script strings must not become RCDATA elements'),
     ]
     for fn, html, needle, want_present, label in mask_cases:
         out = fn(html)
