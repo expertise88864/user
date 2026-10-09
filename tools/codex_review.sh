@@ -35,6 +35,17 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(git -C "$SCRIPT_DIR" rev-parse --show-toplevel 2>/dev/null)" \
   || die "必須在 git repository 內執行。"
 REPO_NAME="$(basename "$REPO_ROOT")"
+if [ -x "$REPO_ROOT/.venv/Scripts/python.exe" ]; then
+  PYTHON="$REPO_ROOT/.venv/Scripts/python.exe"
+elif [ -x "$REPO_ROOT/.venv/bin/python" ]; then
+  PYTHON="$REPO_ROOT/.venv/bin/python"
+elif command -v python >/dev/null 2>&1; then
+  PYTHON="python"
+elif command -v python3 >/dev/null 2>&1; then
+  PYTHON="python3"
+else
+  die "Python unavailable: install python3 or create the repository .venv."
+fi
 STATE_DIR="$REPO_ROOT/.codex-review"
 mkdir -p "$STATE_DIR"
 USAGE_TSV="$STATE_DIR/usage.tsv"
@@ -92,7 +103,7 @@ verify_actual_session() {
            --proof "$STATE_DIR/last_identity.json")
   rm -f "$STATE_DIR/last_identity.json"
   [ -z "${1:-}" ] || a+=(--expected-session "$1")
-  identity="$(python "${a[@]}")" || return 1
+  identity="$("$PYTHON" "${a[@]}")" || return 1
   IFS=$'\t' read -r VERIFIED_SID VERIFIED_TOKENS <<< "$identity"
   [ -n "$VERIFIED_SID" ] && [ -n "$VERIFIED_TOKENS" ]
 }
@@ -130,11 +141,12 @@ run_untrusted() {   # $1 = codex exit code ; $2 = extracted verdict
   [ "$1" -ne 0 ] || [ "$2" = "UNKNOWN" ]
 }
 
-log_usage() {  # $1 mode $2 effort $3 base $4 pass
+log_usage() {  # $1 mode $2 effort $3 base $4 pass $5 optional verdict
   local sid tok res fnd
   sid="$(extract_session_id)"; [ -n "$sid" ] || sid="unavailable"
   tok="$(extract_tokens)";     [ -n "$tok" ] || tok="unavailable"
   res="$(extract_result)"
+  [ -z "${5:-}" ] || res="$5"
   fnd="$(extract_findings)"
   printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
     "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$REPO_NAME" "$1" "$MODEL" "$2" "$3" "$sid" "$tok" "$res" "$fnd" "$4" >> "$USAGE_TSV"
@@ -174,21 +186,21 @@ if [ "$MODE" = "resume" ]; then
   # **開新 session 繞過**,而那會丟掉前一輪上下文、讓審查者重新探索整個 repo
   # (更貴,且會重複回報已修的東西)。改為只要求「至少完成過第一輪」。
   case "$PREV_PASS" in (''|*[!0-9]*) PREV_PASS=0 ;; esac
-  [ "${#PREV_PASS}" -le 10 ] && [ "$PREV_PASS" -le 2147483646 ] || die "pass ???????"
+  [ "${#PREV_PASS}" -le 10 ] && [ "$PREV_PASS" -le 2147483646 ] || die "Invalid pass counter; start a fresh first review."
   [ "$PREV_PASS" -ge 1 ] || die "續審只能在完成第一輪之後執行(目前 pass=$PREV_PASS)。"
 
-  # 第二輪的 effort 沿用第一輪(從 usage.tsv 最後一筆讀回),預設 medium。
   # Keep every failed attempt, but use only a completed verified row for the
   # exact recorded session to select the resume profile.
   VERIFIED_ROW="$(awk -F '\t' -v sid="$SID" '
+    { sub(/\r$/, "") }
     tolower($7) == sid && ($9 == "APPROVE" || $9 == "REQUEST_CHANGES") &&
       $11 ~ /^[0-9]+$/ && $11 >= 1 { last=$0 }
     END { print last }' "$USAGE_TSV")"
-  [ -n "$VERIFIED_ROW" ] || die "???? session ??????????????"
+  [ -n "$VERIFIED_ROW" ] || die "No completed verified row for this session; start a fresh first review."
   [ "$(printf '%s' "$VERIFIED_ROW" | cut -f4)" = "$MODEL" ] &&
     [ "$(printf '%s' "$VERIFIED_ROW" | cut -f5)" = "xhigh" ] &&
     [ "$(printf '%s' "$VERIFIED_ROW" | cut -f7 | tr 'A-Z' 'a-z')" = "$SID" ] ||
-    die "? session ????effort ????????????;???????????"
+    die "Recorded session profile is not gpt-5.5/xhigh; start a fresh first review."
   RESUME_EFFORT="xhigh"
   RESUME_BASE="$(printf '%s' "$VERIFIED_ROW" | cut -f6)";   [ -n "$RESUME_BASE" ] || RESUME_BASE="unavailable"
   NEXT_PASS=$((PREV_PASS + 1))
@@ -206,15 +218,15 @@ RP
 
   echo "[codex-review] resume session=$SID effort=$RESUME_EFFORT (pass $NEXT_PASS)"
   : > "$LAST_MSG"
-  REVIEW_STARTED_AT="$(python -c 'import time; print(time.time())')" || die "Python unavailable"
-  codex exec resume "$SID" "${FLAGS[@]}" "$RESUME_PROMPT" </dev/null 2>&1 | tee "$RAW_LOG"
+  REVIEW_STARTED_AT="$("$PYTHON" -c 'import time; print(time.time())')" || die "Python unavailable"
+  (cd "$REPO_ROOT" && codex exec resume "$SID" "${FLAGS[@]}" "$RESUME_PROMPT" </dev/null) 2>&1 | tee "$RAW_LOG"
   CODEX_RC="${PIPESTATUS[0]}"
   RESULT="$(extract_result)"
   # Untrusted run: do NOT advance pass state (finding 3) — a failed pass-2 must
   # not be permanently recorded as "done".
   if run_untrusted "$CODEX_RC" "$RESULT" || ! verify_actual_session "$SID"; then
     echo "[codex-review] codex exec resume 未正常完成(rc=$CODEX_RC,無明確結論)—— 結果不可信,勿據此 push。" >&2
-    log_usage "resume" "$RESUME_EFFORT" "$RESUME_BASE" "$PREV_PASS" >/dev/null   # pass stays 1
+    log_usage "resume" "$RESUME_EFFORT" "$RESUME_BASE" "$PREV_PASS" UNKNOWN >/dev/null
     exit 4
   fi
   echo "$NEXT_PASS" > "$PASS_FILE"
@@ -371,7 +383,7 @@ rm -f "$SESSION_FILE"
 # argument; without this, running non-interactively (background / no TTY) makes
 # the CLI block forever on "Reading additional input from stdin..." waiting for
 # a pipe that never closes.
-REVIEW_STARTED_AT="$(python -c 'import time; print(time.time())')" || die "Python unavailable"
+REVIEW_STARTED_AT="$("$PYTHON" -c 'import time; print(time.time())')" || die "Python unavailable"
 codex exec "${FLAGS[@]}" "$(cat "$TMP/prompt.txt")" </dev/null 2>&1 | tee "$RAW_LOG"
 CODEX_RC="${PIPESTATUS[0]}"
 RESULT="$(extract_result)"
@@ -381,7 +393,7 @@ RESULT="$(extract_result)"
 # corrections-only resume flow.
 if run_untrusted "$CODEX_RC" "$RESULT" || ! verify_actual_session; then
   echo "[codex-review] codex exec 未正常完成(rc=$CODEX_RC,無明確結論)—— 結果不可信,勿據此 push。" >&2
-  log_usage "$MODE" "$EFFORT" "$BASE" 0 >/dev/null   # record the attempt; pass stays 0
+  log_usage "$MODE" "$EFFORT" "$BASE" 0 UNKNOWN >/dev/null
   exit 4
 fi
 # Only become resume-eligible if THIS pass's session id was actually captured.

@@ -294,7 +294,7 @@ class ReviewSessionTests(unittest.TestCase):
     sid = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa'
     other = 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb'
 
-    def run_wrapper(self, recorded=None, returned=None, mode='resume', explicit=None, count=1, rc=0, actual_model='gpt-5.5', actual_effort='xhigh', actual_sandbox='read-only', legacy_profile=False, retry_after_failure=False):
+    def run_wrapper(self, recorded=None, returned=None, mode='resume', explicit=None, count=1, rc=0, actual_model='gpt-5.5', actual_effort='xhigh', actual_sandbox='read-only', legacy_profile=False, retry_after_failure=False, from_subdir=False):
         shell = shutil.which('pwsh') or shutil.which('powershell')
         self.assertIsNotNone(shell)
         with tempfile.TemporaryDirectory() as directory:
@@ -332,33 +332,36 @@ class ReviewSessionTests(unittest.TestCase):
             driver = root / 'driver.ps1'
             driver.write_text('''
 function python {
-    $all = @($args) + @('--session-directory', (Join-Path (Get-Location) 'sessions'))
+    $all = @($args) + @('--session-directory', (Join-Path $env:REVIEW_TEST_ROOT 'sessions'))
     & $env:REVIEW_TEST_PYTHON @all
 }
 function codex {
-    'called' | Set-Content called.txt
-    $args | ConvertTo-Json -Compress | Set-Content called-args.json
-    $records = @(Get-Content session-template.json -Raw | ConvertFrom-Json)
+    'called' | Set-Content (Join-Path $env:REVIEW_TEST_ROOT 'called.txt')
+    $args | ConvertTo-Json -Compress | Set-Content (Join-Path $env:REVIEW_TEST_ROOT 'called-args.json')
+    $records = @(Get-Content (Join-Path $env:REVIEW_TEST_ROOT 'session-template.json') -Raw | ConvertFrom-Json)
     $records[1].timestamp = [DateTimeOffset]::UtcNow.ToString('o')
+    $records[1].payload.cwd = [string](Get-Location)
     $records | ForEach-Object { $_ | ConvertTo-Json -Depth 10 -Compress } |
         Set-Content -LiteralPath $env:REVIEW_TEST_SESSION -Encoding utf8
     $index = [array]::IndexOf($args, '-o')
     'APPROVE' | Set-Content -LiteralPath $args[$index + 1]
-    Get-Content events.txt
+    Get-Content (Join-Path $env:REVIEW_TEST_ROOT 'events.txt')
     $global:LASTEXITCODE = [int]$env:REVIEW_TEST_RC
 }
-& ./tools/codex_review.ps1 $env:REVIEW_TEST_MODE $env:REVIEW_TEST_ARG
+& (Join-Path $env:REVIEW_TEST_ROOT 'tools/codex_review.ps1') $env:REVIEW_TEST_MODE $env:REVIEW_TEST_ARG
 exit $LASTEXITCODE
 ''', encoding='utf-8-sig')
-            env = dict(os.environ, REVIEW_TEST_MODE=mode, REVIEW_TEST_ARG=explicit or ('HEAD' if mode != 'resume' else ''), REVIEW_TEST_RC=str(rc), REVIEW_TEST_PYTHON=sys.executable, REVIEW_TEST_SESSION=str(session_path))
-            result = subprocess.run([shell, '-NoProfile', '-File', str(driver)], cwd=root,
+            env = dict(os.environ, REVIEW_TEST_ROOT=str(root), REVIEW_TEST_MODE=mode, REVIEW_TEST_ARG=explicit or ('HEAD' if mode != 'resume' else ''), REVIEW_TEST_RC=str(rc), REVIEW_TEST_PYTHON=sys.executable, REVIEW_TEST_SESSION=str(session_path))
+            cwd = root / 'nested' if from_subdir else root
+            cwd.mkdir(exist_ok=True)
+            result = subprocess.run([shell, '-NoProfile', '-File', str(driver)], cwd=cwd,
                                     env=env, capture_output=True, text=True, errors='replace')
             if retry_after_failure:
                 self.assertEqual(result.returncode, 4, result.stdout + result.stderr)
                 self.assertEqual((state / 'last_session_id').read_text(), self.sid)
                 self.assertEqual((state / 'last_pass').read_text().strip(), str(count))
                 env['REVIEW_TEST_RC'] = '0'
-                result = subprocess.run([shell, '-NoProfile', '-File', str(driver)], cwd=root,
+                result = subprocess.run([shell, '-NoProfile', '-File', str(driver)], cwd=cwd,
                                         env=env, capture_output=True, text=True, errors='replace')
             if (root / 'called-args.json').exists():
                 args = json.loads((root / 'called-args.json').read_text(encoding='utf-8-sig'))
@@ -370,6 +373,11 @@ exit $LASTEXITCODE
             return (result.returncode, (root / 'called.txt').exists(),
                     session_file.read_text() if session_file.exists() else None,
                     (state / 'last_pass').read_text(), result.stdout + result.stderr)
+
+    def test_resume_from_subdirectory_keeps_repository_context(self):
+        result = self.run_wrapper(recorded=self.sid, returned=self.sid, from_subdir=True)
+        self.assertEqual(result[0], 0, result[-1])
+        self.assertEqual(result[2:4], (self.sid, '2'))
 
     def test_failed_resume_then_successful_retry_keeps_same_session(self):
         result = self.run_wrapper(recorded=self.sid, returned=self.sid, rc=1, count=3,

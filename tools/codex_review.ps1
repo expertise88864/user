@@ -44,6 +44,15 @@ $RepoRoot = & git -C $ScriptDir rev-parse --show-toplevel 2>$null
 if ($LASTEXITCODE -ne 0 -or -not $RepoRoot) { Die '必須在 git repository 內執行。' }
 $RepoRoot = $RepoRoot.Trim()
 $RepoName = Split-Path -Leaf $RepoRoot
+$Python = if (Test-Path -LiteralPath (Join-Path $RepoRoot '.venv/Scripts/python.exe') -PathType Leaf) {
+    Join-Path $RepoRoot '.venv/Scripts/python.exe'
+} elseif (Test-Path -LiteralPath (Join-Path $RepoRoot '.venv/bin/python') -PathType Leaf) {
+    Join-Path $RepoRoot '.venv/bin/python'
+} elseif (Get-Command python -ErrorAction SilentlyContinue) {
+    'python'
+} elseif (Get-Command python3 -ErrorAction SilentlyContinue) {
+    'python3'
+} else { Die 'Python unavailable: install python3 or create the repository .venv.' }
 $StateDir = Join-Path $RepoRoot '.codex-review'
 if (-not (Test-Path $StateDir)) { New-Item -ItemType Directory -Path $StateDir | Out-Null }
 $UsageTsv    = Join-Path $StateDir 'usage.tsv'
@@ -103,7 +112,7 @@ function Verify-ActualSession([string]$ExpectedSid = '') {
     $a = @((Join-Path $ScriptDir 'codex_review_identity.py'), '--raw-log', $RawLog,
            '--repo', $RepoRoot, '--started-at', [string]$ReviewStartedAt, '--proof', $proof)
     if ($ExpectedSid) { $a += @('--expected-session', $ExpectedSid) }
-    $identity = @(& python @a)
+    $identity = @(& $Python @a)
     if ($LASTEXITCODE -ne 0 -or $identity.Count -ne 1) { return $false }
     $fields = $identity[0] -split "`t"
     if ($fields.Count -ne 2 -or -not (Test-SessionId $fields[0])) { return $false }
@@ -186,10 +195,10 @@ if ($Mode -eq 'resume') {
             $row[8] -in @('APPROVE', 'REQUEST_CHANGES') -and
             [int]::TryParse($row[10], [ref]$pass) -and $pass -ge 1
     })
-    if (-not $verifiedRows.Count) { Die '???? session ??????????????' }
+    if (-not $verifiedRows.Count) { Die 'No completed verified row for this session; start a fresh first review.' }
     $last = $verifiedRows[-1] -split "`t"
     if ($last.Count -lt 7 -or $last[3] -ne $Model -or $last[4] -ne 'xhigh' -or $last[6] -ne $Sid) {
-        Die '? session ????effort ????????????;???????????'
+        Die 'Recorded session profile is not gpt-5.5/xhigh; start a fresh first review.'
     }
     $ResumeEffort = 'xhigh'
     $ResumeBase   = if ($last.Count -ge 6 -and $last[5]) { $last[5] } else { 'unavailable' }
@@ -212,8 +221,11 @@ connectors, or external MCP tools. End with exactly APPROVE or REQUEST_CHANGES.
     # argv arg, so without this the CLI blocks on "Reading additional input from
     # stdin..." when run non-interactively.
     $ReviewStartedAt = [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds() / 1000.0
-    $null | & codex @args2 2>&1 | Tee-Object -FilePath $RawLog
-    $rc = $LASTEXITCODE
+    Push-Location -LiteralPath $RepoRoot -ErrorAction Stop
+    try {
+        $null | & codex @args2 2>&1 | Tee-Object -FilePath $RawLog
+        $rc = $LASTEXITCODE
+    } finally { Pop-Location }
     $result = Get-Result
     # Untrusted run: do NOT advance pass state (finding 3) — a failed pass-2 must
     # not be permanently recorded as done.

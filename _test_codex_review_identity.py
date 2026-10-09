@@ -172,7 +172,8 @@ BASH = shutil.which("bash") or ("C:/Program Files/Git/bin/bash.exe" if Path("C:/
 @unittest.skipUnless(BASH, "Bash operator requires Bash")
 class BashWrapperTests(unittest.TestCase):
     def run_wrapper(self, *, resume=False, returned=SID, rc=0, actual_model="gpt-5.5",
-                    actual_effort="xhigh", actual_sandbox="read-only", count=1, legacy=False, retry_after_failure=False):
+                    actual_effort="xhigh", actual_sandbox="read-only", count=1, legacy=False,
+                    retry_after_failure=False, crlf=False, python3_only=False, from_subdir=False):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             subprocess.run(["git", "init", "-q", str(root)], check=True)
@@ -188,7 +189,8 @@ class BashWrapperTests(unittest.TestCase):
             (state / "last_session_id").write_text(SID)
             model, effort = ("gpt-5.6-sol", "high") if legacy else ("gpt-5.5", "xhigh")
             (state / "usage.tsv").write_text("timestamp\trepository\tmode\tmodel\teffort\tbase_ref\tsession_id\ttokens_used\tresult\tfindings\tpass\n"
-                f"now\tfixture\tdeep\t{model}\t{effort}\tHEAD\t{SID}\t0\tREQUEST_CHANGES\t1\t{count}\n")
+                f"now\tfixture\tdeep\t{model}\t{effort}\tHEAD\t{SID}\t0\tREQUEST_CHANGES\t1\t{count}\n",
+                newline="\r\n" if crlf else "\n")
             sessions = root / "sessions"
             sessions.mkdir()
             emitter = root / "emit.py"
@@ -207,13 +209,15 @@ sys.exit(int(os.environ['REVIEW_FIXTURE_RC']))
             bin_dir.mkdir()
             python = shlex.quote(sys.executable.replace("\\", "/"))
             (bin_dir / "codex").write_text(f"#!/usr/bin/env bash\nexec {python} {shlex.quote(emitter.as_posix())} \"$@\"\n", encoding="utf-8")
-            (bin_dir / "python").write_text(f'''#!/usr/bin/env bash
+            (bin_dir / ("python3" if python3_only else "python")).write_text(f'''#!/usr/bin/env bash
 if [[ "$1" == *codex_review_identity.py ]]; then
   exec {python} "$@" --session-directory {shlex.quote(sessions.as_posix())}
 else
   exec {python} "$@"
 fi
 ''', encoding="utf-8")
+            if python3_only:
+                (bin_dir / "python").write_text("#!/usr/bin/env bash\nexit 91\n", encoding="utf-8")
             for entry in bin_dir.iterdir():
                 entry.chmod(0o755)
             env = dict(os.environ, REVIEW_FIXTURE_SID=returned, REVIEW_FIXTURE_MODEL=actual_model,
@@ -224,15 +228,23 @@ fi
             if os.name == "nt":
                 fixture_path = "/" + fixture_path[0].lower() + fixture_path[2:]
             # Never fall back to the user's real Codex installation in a test.
-            command = f"export PATH={shlex.quote(fixture_path)}:/usr/bin:/bin:/mingw64/bin; exec bash tools/codex_review.sh " + (f"resume {SID.upper()}" if resume else "deep HEAD")
+            command = f"export PATH={shlex.quote(fixture_path)}:/usr/bin:/bin:/mingw64/bin; "
+            if python3_only:
+                # Hide python discovery even on CI hosts that provide both names.
+                command += 'command() { if [[ "$1" == -v && "$2" == python ]]; then return 1; fi; builtin command "$@"; }; export -f command; '
+            command += "exec bash " + ("../tools/" if from_subdir else "tools/") + "codex_review.sh " + (f"resume {SID.upper()}" if resume else "deep HEAD")
             env.pop("BASH_ENV", None)
-            result = subprocess.run([BASH, "--noprofile", "--norc", "-c", command], cwd=root, env=env, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=30)
+            cwd = root / "nested" if from_subdir else root
+            cwd.mkdir(exist_ok=True)
+            result = subprocess.run([BASH, "--noprofile", "--norc", "-c", command], cwd=cwd, env=env, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=30)
+            if result.returncode == 4:
+                self.assertEqual((state / "usage.tsv").read_text().splitlines()[-1].split("\t")[8], "UNKNOWN")
             if retry_after_failure:
                 self.assertEqual(result.returncode, 4, result.stdout + result.stderr)
                 self.assertEqual((state / "last_session_id").read_text(), SID)
                 self.assertEqual((state / "last_pass").read_text().strip(), str(count))
                 env["REVIEW_FIXTURE_RC"] = "0"
-                result = subprocess.run([BASH, "--noprofile", "--norc", "-c", command], cwd=root, env=env,
+                result = subprocess.run([BASH, "--noprofile", "--norc", "-c", command], cwd=cwd, env=env,
                                         capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=30)
             called = (root / "called-args.json").exists()
             if called:
@@ -243,6 +255,20 @@ fi
                 self.assertIn("COMPLETE", args[-1])
             sid_file = state / "last_session_id"
             return result.returncode, called, (sid_file.read_text() if sid_file.exists() else None), (state / "last_pass").read_text().strip(), result.stdout + result.stderr
+
+    def test_resume_reads_powershell_crlf_ledger(self):
+        result = self.run_wrapper(resume=True, crlf=True, count=3)
+        self.assertEqual(result[:4], (0, True, SID, "4"), result[-1])
+
+    def test_python3_only_first_and_resumed_pass(self):
+        for resume in (False, True):
+            with self.subTest(resume=resume):
+                result = self.run_wrapper(resume=resume, python3_only=True)
+                self.assertEqual(result[:4], (0, True, SID, "2" if resume else "1"), result[-1])
+
+    def test_resume_from_subdirectory_keeps_repository_context(self):
+        result = self.run_wrapper(resume=True, from_subdir=True)
+        self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
 
     def test_failed_resume_then_successful_retry_keeps_same_session(self):
         result = self.run_wrapper(resume=True, rc=1, count=3, retry_after_failure=True)
