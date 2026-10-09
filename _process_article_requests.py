@@ -58,6 +58,8 @@ def final_request(root: Path, main: str, head: str, file: str, raw: bytes, now: 
         raise
     if git(root, 'cat-file', '-t', review_head).strip() != b'commit':
         raise ValueError('Final patient preview must identify a commit')
+    if read_blob(root, review_head, review.review_path(file), optional=True) is None:
+        raise ValueError('Final patient preview manifest is unavailable')
     evidence = package.GitEvidence(root)
     frozen, blob, manifest_raw = review.load_review(evidence, review_head, file, now=now)
     proof = frozen['patientManifest']['trackedPackage']['sourceEvidence']

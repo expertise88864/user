@@ -400,7 +400,11 @@ async function publicationState(api, target, loaded) {
     }
     record = requestRecord(record, target);
   }
-  catch (_) { return { status: 'invalidated' }; }
+  catch (error) {
+    // Unavailable evidence cannot revoke a saved approval or permit replacement.
+    if (error instanceof DraftError && error.status >= 500) throw error;
+    return { status: 'invalidated' };
+  }
   const parent = await api('GET', 'git/commits/' + loaded.head);
   // A request approves the loaded draft, and its own commit must be the one
   // immediate successor. Later edits or arbitrary branch commits invalidate it.

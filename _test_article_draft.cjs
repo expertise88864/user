@@ -31,6 +31,7 @@ function fixture() {
     const body = options.body && JSON.parse(options.body);
     calls.push({ method: options.method, path, body });
     if (h.beforeRequest) await h.beforeRequest(path, options.method, body);
+    if (options.method === 'GET' && path === h.failRead) return Response.json({}, { status: 503 });
     if (options.method !== 'GET' && path === h.failWrite) return Response.json({ message: 'private upstream detail' }, { status: 503 });
     let result;
     if (path === 'actions/runs') {
@@ -951,6 +952,22 @@ test('explicit generated approval writes only the existing intent on a direct dr
   assert.equal(final.sourceRequestHead,h.approval.expectedHead);
   assert.equal((await (await h.request()).json()).request.status,'generated_content_approved');
   assert.equal((await h.request(h.approval)).status,409,'A stale retry cannot replace or duplicate final approval');
+});
+test('unavailable final approval evidence neither invalidates nor replaces the saved request', async () => {
+  const h = await generatedFixture();
+  const accepted = await (await h.request(h.approval)).json();
+  h.failRead = 'git/commits/' + accepted.head;
+  for (const input of [null, { file: FILE, action: 'review', expectedHead: accepted.head,
+    baseSha: h.approval.baseSha, expectedBlob: h.approval.expectedBlob, contentApproved: true }]) {
+    const before = h.calls.length, refs = new Map(h.refs), objects = h.commits.size;
+    const response = await h.request(input);
+    assert.equal(response.status, 502);
+    assert.equal((await response.json()).error, 'repository_unavailable');
+    assert.ok(h.calls.slice(before).every(call => call.method === 'GET'));
+    assert.deepEqual(h.refs, refs); assert.equal(h.commits.size, objects);
+  }
+  h.failRead = null;
+  assert.equal((await (await h.request()).json()).request.status, 'generated_content_approved');
 });
 for (const issue of ['confirmation','head','blob','manifest','digest','owner','extra','preview-state','preview-actor','preview-sha','preview-url','duplicate-review']) {
   test('generated approval rejects '+issue+' before repository writes', async () => {

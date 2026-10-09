@@ -178,6 +178,22 @@ class PatientDiscoveryTests(unittest.TestCase):
         self.assertFalse((output / 'report.json').exists())
         self.assertEqual(before, self.original())
 
+    def test_existing_commit_without_review_manifest_rejects_only_that_request(self):
+        self.fixture.run_git('switch', '-c', 'drafts/aaa-missing', self.source_report['requestHead'])
+        invalid = {**self.request, 'file': 'blog/aaa-missing.html', 'reviewHead': self.fixture.base,
+                   'sourceRequest': {**self.request['sourceRequest'], 'file': 'blog/aaa-missing.html'}}
+        self.fixture.write('.cms-requests/aaa-missing.json',
+                           (json.dumps(invalid, ensure_ascii=False, separators=(',', ':')) + '\n').encode('utf8'))
+        self.fixture.commit('synthetic existing preview without manifest')
+        missing = self.fixture.run_git('rev-parse', 'HEAD')
+        self.fixture.run_git('checkout', '--detach', self.fixture.base)
+        before = self.original()
+        result = self.process(self.output.parent / 'missing-manifest-and-valid')
+        self.assertEqual(before, self.original())
+        self.assertEqual([row['requestHead'] for row in result['prepared']], [self.approval])
+        self.assertEqual(result['deferred'], [{'file': 'blog/aaa-missing.html', 'requestHead': missing,
+                                             'reason': 'request_rejected', 'errorType': 'ValueError'}])
+
 
 class ScheduledArtifactPathTests(unittest.TestCase):
     def test_workflow_artifacts_use_the_same_python_temporary_root(self):

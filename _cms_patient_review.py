@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from datetime import date, datetime, timezone
 import hashlib
+import json
 import os
 import re
 
@@ -240,7 +241,8 @@ def verify_delivery(candidate: str, api, entry: dict, *, now=None) -> dict:
     request = parse(request_raw, canonical='compact', limit=8_000)
     if (request_blob != approval['approvalBlobSha'] or not isinstance(request, dict) or
             set(request) != REQUEST_FIELDS or type(request.get('version')) is not int or
-            type(request.get('contentApproved')) is not bool or request != expected):
+            type(request.get('contentApproved')) is not bool or
+            request_raw != (json.dumps(expected, ensure_ascii=False, separators=(',', ':')) + '\n').encode('utf8')):
         raise ValueError('Patient receipt lost its explicit final author approval')
     parent(api, approval['approvalHead'], entry['requestHead'])
     changed_one(api, entry['requestHead'], approval['approvalHead'], request_path, request_blob)
@@ -257,7 +259,7 @@ def verify_delivery(candidate: str, api, entry: dict, *, now=None) -> dict:
     return review
 
 
-def verify_workspace(root, sha: str, api, *, now=None) -> dict:
+def verify_workspace(root, sha: str, api, *, now=None, preview=False) -> dict:
     """Check actual build output, including ignored Pagefind, before deployment."""
     from pathlib import Path
     import _cms_generated_package as tracked
@@ -272,12 +274,18 @@ def verify_workspace(root, sha: str, api, *, now=None) -> dict:
     for entry in items:
         if entry['action'] == 'unpublish':
             continue
-        review = verify_delivery(sha, api, entry, now=now)
+        pending = preview and entry['version'] == 1
+        if pending:
+            from _cms_delivery import verify_preparation
+            review, _, frozen_raw = load_review(api, sha, entry['file'], expected_source=entry, now=now)
+            verify_preparation(review['patientManifest']['trackedPackage']['sourceHead'], api, now=now)
+        else:
+            review = verify_delivery(sha, api, entry, now=now)
         package = review['patientManifest']['trackedPackage']
         path = review_path(entry['file'])
         current_manifest = read_control(root, path, MAX_REVIEW_BYTES)
-        approval = entry['patientApproval']
-        if hashlib.sha256(current_manifest).hexdigest() != approval['manifestSha256']:
+        digest = hashlib.sha256(frozen_raw).hexdigest() if pending else entry['patientApproval']['manifestSha256']
+        if hashlib.sha256(current_manifest).hexdigest() != digest:
             raise ValueError('Patient build manifest differs from final approval')
         # Git object bytes are immutable and independent of checkout CRLF.
         # Generation drift remains independently blocking in the quality job;
@@ -296,6 +304,16 @@ def verify_workspace(root, sha: str, api, *, now=None) -> dict:
                  for n, content in patient.pagefind_files(root).items()}
         if extra != review['patientManifest']['extraFiles']:
             raise ValueError('Patient ignored search outputs changed after approval')
+        ignored = tracked.run(root, 'ls-files', '--others', '--ignored', '--exclude-standard', '-z')
+        for raw_name in ignored.split(b'\0'):
+            if not raw_name:
+                continue
+            name = raw_name.decode('utf8')
+            if (name.startswith(('node_modules/', '.vercel/')) or '__pycache__' in Path(name).parts or name in extra):
+                continue
+            raise ValueError('Patient build introduced unrecorded files in ignored output')
+        if pending:
+            verify_preparation(package['sourceHead'], api, now=now)
         count += len(actual) - len(excluded) + len(extra)
     return {'sha': sha, 'patientPackages': len([e for e in items if e['action'] != 'unpublish']),
             'outputFilesVerified': count, 'published': False}
@@ -367,5 +385,6 @@ if __name__ == '__main__':
     from _delivery import API
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--workspace', required=True, help='exact built candidate SHA')
+    parser.add_argument('--preview', action='store_true', help='verify an unapproved frozen Preview, never grant publication')
     args = parser.parse_args()
-    print(json.dumps(verify_workspace(Path(__file__).resolve().parent, revision(args.workspace), API(REPO))))
+    print(json.dumps(verify_workspace(Path(__file__).resolve().parent, revision(args.workspace), API(REPO), preview=args.preview)))

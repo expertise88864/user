@@ -5,6 +5,9 @@ const { allowed, failureSummary } = require('./_vercel_gate.cjs');
 const cfg = require('./_delivery_policy.json');
 const sha = 'a'.repeat(40);
 const env = { VERCEL_ENV: 'production', VERCEL_GIT_COMMIT_SHA: sha };
+test('Vercel installs the locked dependency graph without lifecycle scripts', () => {
+  assert.equal(require('./vercel.json').installCommand, 'npm ci --ignore-scripts --no-audit --no-fund');
+});
 test('preview login sends the secret once without following redirects or exporting cookies', async () => {
   const { authenticatePreview } = require('./_delivery_preview.cjs');
   const base = new URL('https://candidate-team.vercel.app');

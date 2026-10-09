@@ -19,6 +19,19 @@ import _test_cms_patient_package as fixtures
 from _test_cms_delivery import LocalAPI
 
 
+class WorkspaceWorkflowTests(unittest.TestCase):
+    def test_quality_build_and_receipt_share_exact_pr_head_not_merge_sha(self):
+        workflow = (Path(__file__).resolve().parent / '.github/workflows/quality.yml').read_text(encoding='utf8')
+        job = workflow.split('  feeds-regen:', 1)[1].split('  html-validate:', 1)[0]
+        identity = '${{ github.event.pull_request.head.sha || github.sha }}'
+        self.assertIn('ref: ' + identity, job)
+        self.assertIn('BUILD_SHA: ' + identity, job)
+        self.assertIn('persist-credentials: false', job)
+        self.assertIn('env -u GH_TOKEN python _run_quality.py build', job)
+        self.assertEqual(job.count('--workspace "$BUILD_SHA"'), 2)
+        self.assertNotIn('--workspace "$GITHUB_SHA"', job)
+
+
 class PatientReviewTests(unittest.TestCase):
     original_source = fixtures.PatientPackageTests.original_source
     run_git = fixtures.PatientPackageTests.run_git
@@ -180,7 +193,9 @@ class PatientReviewTests(unittest.TestCase):
         original = review.expected_request(self.entry, review.manifest(self.review_raw, now=self.now))
         for field, value in [('contentApproved', False), ('approvedBy', 'another'),
                              ('sourceRequestHead', 'a' * 40), ('archiveSha256', 'b' * 64),
-                             ('contentDate', '2026-09-29'), ('sourceRequest', {})]:
+                             ('contentDate', '2026-09-29'), ('sourceRequest', {}),
+                             ('sourceRequest', {**original['sourceRequest'], 'contentApproved': 1}),
+                             ('sourceRequest', {**original['sourceRequest'], 'version': True})]:
             with self.subTest(field=field):
                 # Keep genuine Git objects and both digests consistent. This
                 # tests the confirmation contract beyond transport corruption.
@@ -250,6 +265,14 @@ class PatientReviewTests(unittest.TestCase):
             review.verify_workspace(self.root, self.candidate, self.api, now=self.now)
         self.node_workspace(False, 'added or omitted')
 
+    def test_build_cannot_hide_unrecorded_files_in_ignored_directories(self):
+        self.run_git('config', 'core.excludesFile', str(self.root / '.git' / 'fixture-excludes'))
+        (self.root / '.git' / 'fixture-excludes').write_text('hidden-output/\n', encoding='utf8')
+        self.write('hidden-output/patient.html', b'<p>Unapproved ignored fixture</p>')
+        with self.assertRaisesRegex(ValueError, 'unrecorded files'):
+            review.verify_workspace(self.root, self.candidate, self.api, now=self.now)
+        self.node_workspace(False, 'added or omitted')
+
     def test_build_control_files_cannot_change_after_immutable_validation(self):
         for name, expected in ((delivery.FILE, 'receipt'), (self.review_path, 'manifest')):
             with self.subTest(name=name):
@@ -306,10 +329,15 @@ class PatientReviewTests(unittest.TestCase):
         delivery.verify_preparation(self.source,self.api,now=self.now)
         review.load_review(self.api,self.review_head,'blog/article.html',expected_source=self.proof,now=self.now)
         self.responses.update({p:self.api.get(p) for p in dict.fromkeys(self.api.calls)})
+        self.assertFalse(review.verify_workspace(self.root, self.candidate, self.api, now=self.now, preview=True)['published'])
+        with self.assertRaisesRegex(ValueError, 'final patient approval'):
+            review.verify_workspace(self.root, self.candidate, self.api, now=self.now)
         self.assertFalse(self.node_workspace(preview=True)['result']['published'])
         with self.assertRaisesRegex(ValueError,'Final generated patient content approval'):
             delivery.verify(self.candidate,self.api,now=self.now)
         self.write('en/blog/article.html',b'<p>Unexpected Preview build change</p>')
+        with self.assertRaisesRegex(ValueError, 'tracked build outputs'):
+            review.verify_workspace(self.root, self.candidate, self.api, now=self.now, preview=True)
         self.node_workspace(False,'output|file',preview=True)
 
     def test_source_preparation_without_a_review_does_not_invent_a_date(self):

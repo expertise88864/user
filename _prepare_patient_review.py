@@ -145,7 +145,7 @@ def write_artifacts(output: Path, files: dict[str, bytes], check_current, patien
     # The caller receives a complete report only after exclusive writes succeed.
     # A partial directory after an I/O failure is retained for diagnosis, never
     # presented as a prepared package and never recursively removed here.
-    output.mkdir()
+    output.mkdir(mode=0o700)
     directory = output.lstat()
     if not patient.ordinary(directory, directory=True) or output.resolve() != output:
         raise ValueError('Artifact directory changed before writing')
@@ -158,7 +158,7 @@ def write_artifacts(output: Path, files: dict[str, bytes], check_current, patien
                     (current.st_dev, current.st_ino) != (directory.st_dev, directory.st_ino)):
                 raise ValueError('Artifact directory changed during writing')
             path = output / name
-            with path.open('xb') as stream:
+            with os.fdopen(os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600), 'wb') as stream:
                 stream.write(raw)
                 stream.flush()
                 written = os.fstat(stream.fileno())

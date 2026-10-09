@@ -18,6 +18,20 @@ import _prepare_patient_review as preparation
 import _test_cms_patient_rebuild as fixtures
 
 
+class PrivateArtifactTests(unittest.TestCase):
+    def test_artifacts_remain_exclusive_and_owner_only(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary).resolve() / 'private'
+            preparation.write_artifacts(output, {'report.json': b'{}\n'}, lambda: None, patient)
+            self.assertEqual((output / 'report.json').read_bytes(), b'{}\n')
+            if os.name != 'nt':
+                self.assertEqual(output.stat().st_mode & 0o777, 0o700)
+                self.assertEqual((output / 'report.json').stat().st_mode & 0o777, 0o600)
+            with self.assertRaises(FileExistsError):
+                preparation.write_artifacts(output, {'report.json': b'replacement'}, lambda: None, patient)
+            self.assertEqual((output / 'report.json').read_bytes(), b'{}\n')
+
+
 class PreparationTests(unittest.TestCase):
     def setUp(self):
         self.fixture = fixtures.RebuildTests('test_rebuild_compares_complete_raw_outputs_and_preserves_original_checkout')

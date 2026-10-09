@@ -20,7 +20,11 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # pin v4 (was @v4)
-        with: { token: '${{ secrets.GITHUB_TOKEN }}', fetch-depth: 0 }
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Setup Python
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # pin v5 (was @v5)
         with: { python-version: '3.12' }
@@ -32,9 +36,14 @@ jobs:
       - name: Verify canonical generated files
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUILD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
-          python _run_quality.py build
-          python _cms_patient_review.py --workspace "$GITHUB_SHA"
+          env -u GH_TOKEN python _run_quality.py build
+          if [ "$GITHUB_REF" = refs/heads/main ]; then
+            python _cms_patient_review.py --workspace "$BUILD_SHA"
+          else
+            python _cms_patient_review.py --workspace "$BUILD_SHA" --preview
+          fi
           # Publishing is a separate, reviewed operation. CI must never create
           # an unverified commit or use skip tokens to bypass its own checks.
           git diff --exit-code
