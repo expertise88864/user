@@ -9,6 +9,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
+// Compare resolved files against a root canonicalized by the same native API.
+const REAL_ROOT = await realpath(ROOT);
 const args = new Map();
 for (let i = 2; i < process.argv.length; i += 1) {
   if (process.argv[i].startsWith('--')) {
@@ -95,8 +97,8 @@ function safePath(urlPath) {
   return publicFilePath(absolute) ? absolute : null;
 }
 
-function publicFilePath(absolute, isFile = false) {
-  const fromRoot = path.relative(ROOT, absolute);
+function publicFilePath(absolute, isFile = false, root = ROOT) {
+  const fromRoot = path.relative(root, absolute);
   if (fromRoot === '..' || fromRoot.startsWith('..' + path.sep) || path.isAbsolute(fromRoot)) return false;
   const parts = fromRoot.split(/[/\\]+/).filter(Boolean);
   // Only known site roots are public. The popular-picks fixture is handled
@@ -126,8 +128,8 @@ async function resolveFile(urlPath) {
       const info = await stat(candidate);
       if (info.isFile()) {
         const resolved = await realpath(candidate);
-        if (!publicFilePath(resolved, true)) continue;
-        const relative = path.relative(ROOT, resolved);
+        if (!publicFilePath(resolved, true, REAL_ROOT)) continue;
+        const relative = path.relative(REAL_ROOT, resolved);
         if (!relative.includes(path.sep) && !PUBLIC_ROOT_FILES.has(relative.toLowerCase())) {
           // IndexNow root verification files contain only their public key.
           // A plausible filename alone must not expose arbitrary text files.

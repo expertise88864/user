@@ -65,11 +65,12 @@ test('actual static server negotiates production-like compression without changi
   }
 });
 
-test('local preview serves public routes while private files and aliases stay unavailable', {timeout:30000}, async () => {
+for (const aliasedRoot of [false, true]) {
+test(`local preview serves public routes while private files and aliases stay unavailable (aliased root: ${aliasedRoot})`, {timeout:30000}, async () => {
   const temporary=mkdtempSync(path.join(os.tmpdir(),'chenderm-serve-private-'));
   const site=path.join(temporary,'site'),outside=path.join(temporary,'outside');
   const links=[];
-  let child;
+  let child, rootAlias;
   try {
   mkdirSync(site);mkdirSync(outside);
   copyFileSync('_serve.mjs',path.join(site,'_serve.mjs'));
@@ -93,11 +94,15 @@ test('local preview serves public routes while private files and aliases stay un
   writeFileSync(path.join(outside,'private.txt'),'ISOLATED_OUTSIDE_MARKER');
   // Junctions on Windows avoid requiring symlink privileges or OS changes.
   const linkKind=process.platform==='win32'?'junction':'dir';
+  if(aliasedRoot){
+    const link=path.join(temporary,'site-alias');
+    symlinkSync(site,link,linkKind);rootAlias=link;
+  }
   for(const [target,name] of [[outside,'outside-alias'],[path.join(site,'.git'),'private-alias'],
     [outside,'assets/outside-alias'],[path.join(site,'.git'),'assets/private-alias']]) {
     const link=path.join(site,name);symlinkSync(target,link,linkKind);links.push(link);
   }
-    child=spawn(process.execPath,[path.join(site,'_serve.mjs'),'--host','127.0.0.1','--port','0'],{cwd:site,stdio:['ignore','pipe','pipe']});
+    child=spawn(process.execPath,[...(aliasedRoot?['--preserve-symlinks-main']:[]),path.join(rootAlias||site,'_serve.mjs'),'--host','127.0.0.1','--port','0'],{cwd:site,stdio:['ignore','pipe','pipe']});
     const origin=await new Promise((resolve,reject)=>{
       let output='';const timer=setTimeout(()=>reject(Error('Private fixture startup timed out')),10000);
       child.stdout.on('data',data=>{output+=data;const match=output.match(/http:\/\/127\.0\.0\.1:\d+/);if(match){clearTimeout(timer);resolve(match[0]);}});
@@ -121,8 +126,10 @@ test('local preview serves public routes while private files and aliases stay un
   } finally {
     if(child?.pid&&child.exitCode===null&&child.signalCode===null){const exited=new Promise(resolve=>child.once('exit',resolve));child.kill();await exited;}
     for(const link of links){assert.ok([realpathSync(site),realpathSync(path.join(site,'assets'))].includes(realpathSync(path.dirname(link))));unlinkSync(link);}
+    if(rootAlias){assert.equal(realpathSync(path.dirname(rootAlias)),realpathSync(temporary));unlinkSync(rootAlias);}
     assert.equal(realpathSync(path.dirname(temporary)),realpathSync(os.tmpdir()));
     assert.ok(path.basename(temporary).startsWith('chenderm-serve-private-'));
     rmSync(temporary,{recursive:true,force:true});
   }
 });
+}
