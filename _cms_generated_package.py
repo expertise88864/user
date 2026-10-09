@@ -13,6 +13,7 @@ import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import subprocess
+import sys
 import urllib.error
 
 from _cms_delivery import FILE, REPO, ImmutableBlobs, approved_sources, parse, receipts, slug_for
@@ -151,7 +152,7 @@ def approved_source(root: Path, source_head: str, file: str, *, now=None) -> dic
             [name for name in changed if name] != [request_path.encode('utf8')]):
         raise ValueError('Package source does not bind the immutable author request')
     approved_sources(ImmutableBlobs(GitEvidence(root)), proof)
-    paths = run(root, 'diff', '--name-only', '-z', pipeline, source_head).split(b'\0')
+    paths = run(root, 'diff', '--name-only', '--no-renames', '-z', pipeline, source_head).split(b'\0')
     actual = {name.decode('utf8') for name in paths if name}
     if FILE not in actual or not actual <= set(proof['sourceSha256']) | {FILE}:
         raise ValueError('Source preparation changed unrelated files')
@@ -263,7 +264,7 @@ def main():
     check.add_argument('manifest', type=Path)
     args = parser.parse_args()
     if args.command == 'record':
-        print(encode(create(args.root, args.source_head, args.generated_head, args.file)).decode('utf8'), end='')
+        sys.stdout.buffer.write(encode(create(args.root, args.source_head, args.generated_head, args.file)))
     else:
         # Bound before reading; the parser also checks the actual byte length.
         if args.manifest.stat().st_size > MAX_MANIFEST:

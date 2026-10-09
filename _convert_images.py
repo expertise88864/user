@@ -18,7 +18,10 @@ import html as html_module
 from html.parser import HTMLParser
 import os
 from pathlib import Path
-from urllib.parse import unquote, urlsplit, urlunsplit
+import tempfile
+from urllib.parse import quote, unquote, urlsplit, urlunsplit
+
+from _site_html import _linked, site_html_files
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -35,51 +38,77 @@ def load_image_backend():
         raise SystemExit('Pillow missing — pip install Pillow')
     try:
         import pillow_avif  # noqa: F401 — registers AVIF support
-        HAS_AVIF = True
     except ImportError:
-        print('WARN: AVIF unavailable — install pillow-avif-plugin')
+        pass
+    Image.init()
+    HAS_AVIF = 'AVIF' in Image.SAVE
 
 WEBP_QUALITY = 82
 AVIF_QUALITY = 60
 SOURCE_EXTS = {'.jpg', '.jpeg', '.png'}
 SKIP_DIRS = {'.git', '.codex-review', 'node_modules', '__pycache__',
-             'astro-rewrite', '_bin', 'pagefind'}
+             'astro-rewrite', '_bin', 'pagefind', '.claude-review', '.lighthouseci',
+             'delivery-preview', 'backups', 'exports', 'fixtures', '.venv'}
 
 def convert_image(src_path):
     """Generate sibling .webp + .avif. Returns (webp_made, avif_made)."""
     if Image is None:
         load_image_backend()
-    base, ext = os.path.splitext(src_path)
-    webp_path = base + '.webp'
-    avif_path = base + '.avif'
-    webp_made = False
-    avif_made = False
-    src_mtime = os.path.getmtime(src_path)
-    try:
-        img = Image.open(src_path)
-        if img.mode in ('RGBA', 'LA') and ext.lower() in ('.jpg', '.jpeg'):
-            img = img.convert('RGB')
-        # Generate WebP
-        if not os.path.exists(webp_path) or os.path.getmtime(webp_path) < src_mtime:
-            img.save(webp_path, 'WEBP', quality=WEBP_QUALITY, method=6)
-            webp_made = True
-        # Generate AVIF
-        if HAS_AVIF and (not os.path.exists(avif_path) or os.path.getmtime(avif_path) < src_mtime):
-            img.save(avif_path, 'AVIF', quality=AVIF_QUALITY)
-            avif_made = True
-    except Exception as e:
-        print(f'  ! skip {src_path}: {e}')
-    return webp_made, avif_made
+    source = Path(src_path)
+    if _linked(source) or not source.is_file():
+        raise ValueError('Image source must be an ordinary file')
+    made = []
+    with Image.open(source) as img:
+        for suffix, codec, quality, supported in (
+                ('.webp', 'WEBP', WEBP_QUALITY, True), ('.avif', 'AVIF', AVIF_QUALITY, HAS_AVIF)):
+            target = source.with_suffix(suffix)
+            if _linked(target) or target.exists() and not target.is_file():
+                raise ValueError('Image output must be an ordinary file')
+            fresh = target.is_file() and target.stat().st_mtime_ns >= source.stat().st_mtime_ns
+            if fresh:
+                with Image.open(target) as existing:
+                    if existing.format != codec:
+                        raise ValueError('Image output has the wrong codec')
+                    existing.verify()
+            if not supported:
+                if target.exists() and not fresh:
+                    raise ValueError('Cannot refresh stale AVIF without an AVIF encoder')
+                made.append(False)
+                continue
+            if fresh:
+                made.append(False)
+                continue
+            handle, temporary = tempfile.mkstemp(prefix='.image-convert-', dir=source.parent)
+            os.close(handle)
+            try:
+                img.save(temporary, codec, quality=quality, **({'method': 6} if codec == 'WEBP' else {}))
+                os.replace(temporary, target)
+            finally:
+                if os.path.exists(temporary):
+                    os.unlink(temporary)
+            made.append(True)
+    return tuple(made)
 
 def find_images(root):
+    root = Path(root).resolve()
     out = []
-    for d, dirs, fs in os.walk(root):
-        dirs[:] = [name for name in dirs if name not in SKIP_DIRS and name != 'en']
-        for f in fs:
-            ext = os.path.splitext(f)[1].lower()
-            if ext in SOURCE_EXTS:
-                out.append(os.path.join(d, f))
-    return out
+    pending = [(root, False), (root / 'blog', False), (root / 'assets', True), (root / 'blog/images', True)]
+    while pending:
+        directory, recursive = pending.pop()
+        if any(_linked(parent) for parent in (directory, *directory.parents) if parent.is_relative_to(root)):
+            raise ValueError('Linked image directory')
+        if not directory.exists():
+            continue
+        for path in directory.iterdir():
+            if path.name in SKIP_DIRS:
+                continue
+            if _linked(path):
+                raise ValueError('Linked image asset')
+            if recursive and path.is_dir():
+                pending.append((path, True))
+            elif path.is_file() and path.suffix.lower() in SOURCE_EXTS:
+                out.append(str(path))
+    return sorted(out)
 
 # ─── HTML rewriter: <img src=…> → <picture>... ───
 class PictureRewriter(HTMLParser):
@@ -144,8 +173,9 @@ class PictureRewriter(HTMLParser):
             return
         sources = []
         for suffix, mime in (('.avif', 'image/avif'), ('.webp', 'image/webp')):
-            if fs_path.with_suffix(suffix).is_file():
-                path = os.path.splitext(parsed.path)[0] + suffix
+            sibling = fs_path.with_suffix(suffix)
+            if sibling.is_file() and not _linked(sibling) and sibling.stat().st_mtime_ns >= fs_path.stat().st_mtime_ns:
+                path = quote(os.path.splitext(parsed.path)[0] + suffix, safe='/%:@!$&\'()*+;=-._~')
                 url = urlunsplit((parsed.scheme, parsed.netloc, path, parsed.query, parsed.fragment))
                 sources.append(f'<source srcset="{html_module.escape(url, quote=True)}" type="{mime}">')
         if not sources:
@@ -167,6 +197,7 @@ def rewrite_html_imgs(html, image_set, html_path=None):
     return html
 
 def main():
+    pages = site_html_files(ROOT)
     load_image_backend()
     print('=== Step 1: convert images ===')
     imgs = find_images(ROOT)
@@ -184,19 +215,12 @@ def main():
     print('\n=== Step 2: rewrite <img> in HTML to <picture> ===')
     image_set = set(imgs)
     n_html = 0
-    for d, dirs, fs in os.walk(ROOT):
-        dirs[:] = [name for name in dirs if name not in SKIP_DIRS]
-        for f in fs:
-            if not f.endswith('.html'):
-                continue
-            p = os.path.join(d, f)
-            with open(p, 'r', encoding='utf-8') as fp:
-                src = fp.read()
-            new = rewrite_html_imgs(src, image_set, p)
-            if new != src:
-                with open(p, 'w', encoding='utf-8') as fp:
-                    fp.write(new)
-                n_html += 1
+    for p in pages:
+        src = p.read_text(encoding='utf8')
+        new = rewrite_html_imgs(src, image_set, p)
+        if new != src:
+            p.write_text(new, encoding='utf8')
+            n_html += 1
     print(f'Rewrote {n_html} HTML files to use <picture>')
 
 if __name__ == '__main__':

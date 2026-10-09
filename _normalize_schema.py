@@ -18,7 +18,7 @@ from _site_html import site_html_files
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).resolve().parent
 DOMAIN = "https://chendermatologist.com"
 PHYSICIAN_ID = f"{DOMAIN}/about#physician"
 
@@ -612,7 +612,7 @@ def main() -> None:
     for path in targets:
         if path.exists() and normalize_file(path):
             n += 1
-            print("normalized", path.relative_to(ROOT).as_posix())
+            print("normalized", path.relative_to(ROOT.resolve()).as_posix())
     print(f"Normalized schema in {n} files")
 
 

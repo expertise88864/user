@@ -71,6 +71,27 @@ class PackageTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Invalid CMS delivery schema'):
             delivery.receipts(package.encode(value), now=self.now)
 
+    def test_source_scope_rejects_deletion_hidden_by_rename_detection(self):
+        proof = self.create()['sourceEvidence']
+        destination = 'blog/article.html'
+        copied = subprocess.check_output(['git', 'show', self.source + ':' + destination], cwd=self.root)
+        self.run_git('switch', '--detach', proof['preparedAgainst'])
+        self.write('unrelated-copy.html', copied)
+        self.run_git('rm', destination)
+        self.commit('synthetic unrelated identical file')
+        pipeline = self.run_git('rev-parse', 'HEAD')
+        self.run_git('restore', '--source', self.source, '--', *proof['sourceSha256'], delivery.FILE)
+        self.run_git('rm', 'unrelated-copy.html')
+        self.commit('synthetic source with hidden deletion')
+        source = self.run_git('rev-parse', 'HEAD')
+        proof['preparedAgainst'] = pipeline
+        detected = self.run_git('-c', 'diff.renames=true', 'diff', '--name-only', pipeline, source).splitlines()
+        self.assertNotIn('unrelated-copy.html', detected)
+        with patch.object(package, 'receipts', return_value=[proof]), \
+                patch.object(package, 'approved_sources'), \
+                self.assertRaisesRegex(ValueError, 'unrelated files'):
+            package.approved_source(self.root, source, destination, now=self.now)
+
     def test_actual_schema_generation_is_recorded_but_never_rebinds_source_approval(self):
         # Use an actual generator with ROOT redirected only into the fixture.
         self.run_git('switch', '--detach', self.source)

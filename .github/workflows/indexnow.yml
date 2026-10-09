@@ -30,7 +30,7 @@ jobs:
     name: Submit URLs to IndexNow
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    # Reject foreign/PR/candidate origins before checking out executable code.
+    # Reject stale/foreign origins before an old checkout can run an ungated submitter.
     if: >
       github.repository == 'expertise88864/user' &&
       ((github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
@@ -38,6 +38,7 @@ jobs:
         github.event.workflow_run.conclusion == 'success' &&
         github.event.workflow_run.event == 'push' &&
         github.event.workflow_run.head_branch == 'main' &&
+        github.event.workflow_run.head_sha == github.sha &&
         github.event.workflow_run.head_repository.full_name == github.repository))
     env:
       INDEXNOW_TARGET_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}

@@ -4,12 +4,13 @@ import ast
 import html
 import importlib.util
 import io
+import os
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 
 ROOT = Path(__file__).resolve().parent
@@ -139,6 +140,15 @@ class AutomaticHTMLScopeTests(unittest.TestCase):
         self.assertTrue(all((self.root/n).read_bytes()!=body.encode() for n in english))
         self.assertEqual({n:(self.root/n).read_bytes() for n in excluded},{n:originals[n] for n in excluded})
         self.assertEqual({n:(self.root/n).read_bytes() for n in public+english},once)
+
+    def test_schema_batch_accepts_a_lexical_root_with_parent_segments(self):
+        (self.root / 'alias').mkdir()
+        body = '<head><script type="application/ld+json">{"@type":"MedicalWebPage","name":"Old fixture"}</script></head>'
+        page = self.write('index.html', body)
+        with patch.object(self.schema, 'ROOT', self.root / 'alias' / '..'), \
+                patch.object(sys, 'argv', ['_normalize_schema.py']), redirect_stdout(io.StringIO()):
+            self.schema.main()
+        self.assertNotEqual(page.read_text(encoding='utf8'), body)
 
     def test_both_batch_writers_preflight_all_html_before_linked_source_failure(self):
         from _site_html import site_html_files
@@ -773,11 +783,57 @@ class PictureRewriteTests(unittest.TestCase):
         self.assertEqual(result, '<picture><source srcset="../assets/photo.avif?v=1&amp;x=2#figure" type="image/avif"><source srcset="../assets/photo.webp?v=1&amp;x=2#figure" type="image/webp">' + original + '</picture>')
 
     def test_image_discovery_excludes_private_and_generated_directories(self):
-        for name in ('.codex-review', 'node_modules', '.git', 'en', 'pagefind'):
+        for name in ('.codex-review', 'node_modules', '.git', 'en', 'pagefind', '.claude-review',
+                     '.lighthouseci', 'delivery-preview', 'backups', 'exports', 'fixtures', '.venv'):
             directory = self.root / name / 'nested'
             directory.mkdir(parents=True)
             (directory / 'private.jpg').write_bytes(b'not an image')
         self.assertEqual(self.script.find_images(self.root), [str(self.source)])
+
+    def test_main_only_rewrites_public_html_and_preflights_before_conversion(self):
+        body = '<img src="/assets/photo.jpg">'
+        self.page.write_text(body, encoding='utf8')
+        private = self.root / '.claude-review' / 'proof.html'
+        private.parent.mkdir()
+        private.write_text(body, encoding='utf8')
+        with patch.object(self.script, 'ROOT', str(self.root)), \
+                patch.object(self.script, 'load_image_backend'), \
+                patch.object(self.script, 'convert_image', return_value=(False, False)), redirect_stdout(io.StringIO()):
+            self.script.main()
+        self.assertIn('<picture>', self.page.read_text(encoding='utf8'))
+        self.assertEqual(private.read_text(encoding='utf8'), body)
+        with patch.object(self.script, 'site_html_files', side_effect=ValueError('linked source')), \
+                patch.object(self.script, 'convert_image') as convert, self.assertRaises(ValueError):
+            self.script.main()
+        convert.assert_not_called()
+
+    def test_stale_outputs_are_not_advertised(self):
+        os.utime(self.source.with_suffix('.webp'), (1, 1))
+        body = '<img src="/assets/photo.jpg">'
+        self.assertEqual(self.rewrite(body), body)
+
+    def test_failed_encoding_preserves_previous_bytes_and_removes_partial_temp(self):
+        target = self.source.with_suffix('.webp')
+        old = target.read_bytes()
+        os.utime(target, (1, 1))
+        backend = MagicMock()
+        def fail(path, *args, **kwargs):
+            Path(path).write_bytes(b'partial codec output')
+            raise OSError('synthetic codec failure')
+        backend.open.return_value.__enter__.return_value.save.side_effect = fail
+        with patch.object(self.script, 'Image', backend), self.assertRaisesRegex(OSError, 'codec failure'):
+            self.script.convert_image(self.source)
+        self.assertEqual(target.read_bytes(), old)
+        self.assertFalse(list(self.source.parent.glob('.image-convert-*')))
+
+    def test_stale_avif_without_encoder_fails_before_html_rewrite(self):
+        self.source.with_suffix('.avif').write_bytes(b'old figure')
+        os.utime(self.source.with_suffix('.avif'), (1, 1))
+        backend = MagicMock()
+        backend.open.return_value.__enter__.return_value.format = 'WEBP'
+        with patch.object(self.script, 'Image', backend), patch.object(self.script, 'HAS_AVIF', False), \
+                self.assertRaisesRegex(ValueError, 'stale AVIF'):
+            self.script.convert_image(self.source)
 
 
 class MetadataPublicScopeTests(unittest.TestCase):

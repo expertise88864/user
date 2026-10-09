@@ -2,7 +2,9 @@
 from contextlib import ExitStack, redirect_stderr, redirect_stdout
 from copy import deepcopy
 from io import StringIO
+import ast
 import json
+from pathlib import Path
 import unittest
 from unittest import mock
 import urllib.error
@@ -251,6 +253,43 @@ class IndexNowDeliveryTests(unittest.TestCase):
                 self.assertEqual(indexnow.submit([PUBLIC], sha=SHA, wait=wait), 2)
         self.api_constructor.assert_not_called()
         self.transport.assert_not_called()
+
+
+class IndexNowWorkflowTests(unittest.TestCase):
+    def allowed(self, *, target=SHA, current=SHA, event='workflow_run', run_event='push', ref='refs/heads/main', **changes):
+        workflow = (Path(__file__).resolve().parent / '.github/workflows/indexnow.yml').read_text(encoding='utf8')
+        condition = workflow.split('    if: >\n', 1)[1].split('    env:\n', 1)[0]
+        expression = ' '.join(condition.split()).replace('&&', ' and ').replace('||', ' or ')
+        context = {'repository': 'expertise88864/user', 'event_name': event, 'ref': ref, 'sha': current,
+                   'event': {'workflow_run': {'head_sha': target, 'conclusion': 'success', 'event': run_event,
+                             'head_branch': 'main', 'head_repository': {'full_name': 'expertise88864/user'}, **changes}}}
+
+        def evaluate(node):
+            if isinstance(node, ast.Constant):
+                return node.value
+            if isinstance(node, ast.Name) and node.id == 'github':
+                return context
+            if isinstance(node, ast.Attribute):
+                return evaluate(node.value)[node.attr]
+            if isinstance(node, ast.BoolOp) and isinstance(node.op, (ast.And, ast.Or)):
+                return (all if isinstance(node.op, ast.And) else any)(evaluate(value) for value in node.values)
+            if isinstance(node, ast.Compare) and len(node.ops) == 1 and isinstance(node.ops[0], ast.Eq):
+                return evaluate(node.left) == evaluate(node.comparators[0])
+            self.fail('Unsupported workflow guard expression')
+
+        return evaluate(ast.parse(expression, mode='eval').body)
+
+    def test_stale_delivery_completion_cannot_checkout_a_legacy_submitter(self):
+        self.assertTrue(self.allowed())
+        self.assertFalse(self.allowed(target=OTHER))
+        for changes in ({'run_event': 'pull_request'}, {'run_event': 'workflow_dispatch'}, {'head_branch': 'codex/fixture'},
+                        {'conclusion': 'failure'}, {'head_repository': {'full_name': 'foreign/repo'}}):
+            with self.subTest(changes=changes):
+                self.assertFalse(self.allowed(**changes))
+
+    def test_manual_submission_remains_limited_to_main(self):
+        self.assertTrue(self.allowed(event='workflow_dispatch'))
+        self.assertFalse(self.allowed(event='workflow_dispatch', ref='refs/heads/codex/fixture'))
 
 
 if __name__ == '__main__':

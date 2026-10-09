@@ -167,7 +167,8 @@ class GenerationClockTests(unittest.TestCase):
         for args, expected in ((["regen", "--content-date", "2026-09-30"], 1),
                                (["build", "--content-date", "2026-09-30"], 4),
                                (["--content-date", "2026-09-30"], 4)):
-            with self.subTest(args=args), patch.object(quality, "run_steps") as runner:
+            with self.subTest(args=args), patch.object(quality, "run_steps") as runner, \
+                    patch('_cms_patient_review.frozen_content_date', return_value=None):
                 self.assertEqual(quality.main(args), 0)
                 self.assertEqual(runner.call_count, expected)
                 self.assertEqual(runner.call_args_list[0].args[1], quality.regeneration_steps("2026-09-30"))
@@ -185,7 +186,8 @@ class GenerationClockTests(unittest.TestCase):
             runner.assert_not_called()
 
     def test_quality_defaults_and_failure_exit_codes_unchanged(self):
-        with patch.object(quality, "run_steps") as runner:
+        with patch.object(quality, "run_steps") as runner, \
+                patch('_cms_patient_review.frozen_content_date', return_value=None):
             self.assertEqual(quality.main([]), 0)
             self.assertEqual([call.args[1] for call in runner.call_args_list],
                              [quality.REGEN_STEPS, quality.BUILD_GENERATED_STEPS,
@@ -193,6 +195,16 @@ class GenerationClockTests(unittest.TestCase):
         with patch.object(quality, "run_steps", side_effect=subprocess.CalledProcessError(7, ["fixture"])), \
                 contextlib.redirect_stdout(io.StringIO()):
             self.assertEqual(quality.main(["check"]), 7)
+
+    def test_quality_uses_frozen_preview_clock_and_rejects_conflicts_before_generation(self):
+        with patch('_cms_patient_review.frozen_content_date', return_value='2026-09-29'), \
+                patch.object(quality, 'run_steps') as runner:
+            self.assertEqual(quality.main(['build']), 0)
+            self.assertEqual(runner.call_args_list[0].args[1], quality.regeneration_steps('2026-09-29'))
+            runner.reset_mock()
+            with self.assertRaisesRegex(ValueError, 'Generation date differs'):
+                quality.main(['build', '--content-date', '2026-09-30'])
+            runner.assert_not_called()
 
     def recipe_source(self, scripts):
         return 'REGEN_STEPS = ' + repr([["python", script] for script in scripts]).replace("'python'", "PY")
