@@ -1,8 +1,10 @@
 """Release failure paths; Git writes stay in disposable fixtures, never hosted."""
 from __future__ import annotations
+from copy import deepcopy
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import tempfile
@@ -33,7 +35,7 @@ class RemoteEvidenceTests(unittest.TestCase):
                                   run_attempt=1, status='completed', conclusion='success',
                                   html_url=f'https://example.test/{index}'))
             skips = entry.get('candidate_skips', [])
-            self.jobs[index] = [dict(
+            self.jobs[index, 1] = [dict(
                 id=index * 100 + offset, name=name, status='completed',
                 conclusion='skipped' if name in skips else 'success',
                 steps=[dict(name=step, status='completed', conclusion='success')
@@ -47,13 +49,23 @@ class RemoteEvidenceTests(unittest.TestCase):
                 self.assertEqual(path, f'/actions/runs?head_sha={self.sha}')
                 return self.runs
             self.assertEqual(key, 'jobs')
-            run_id = int(path.split('/')[3])
-            return self.jobs[run_id]
+            match = re.fullmatch(r'/actions/runs/([1-9][0-9]*)/attempts/([1-9][0-9]*)/jobs', path)
+            self.assertIsNotNone(match, 'Job evidence must be bound to an exact run attempt')
+            return self.jobs[int(match[1]), int(match[2])]
         with patch('_cms_delivery.verify', return_value={}), \
                 patch('_site_settings_delivery.verify', return_value={}):
             evidence = delivery.verify(self.sha, 'candidate', self.cfg,
                                        SimpleNamespace(pages=pages))
         return [record for record in evidence if 'run_id' in record]
+
+    def retry_first_run(self):
+        run = self.runs[0]
+        run['run_attempt'] = 2
+        jobs = deepcopy(self.jobs[run['id'], 1])
+        for job in jobs:
+            job['id'] += 10000
+        self.jobs[run['id'], 2] = jobs
+        return jobs
 
     def test_no_evidence_is_not_success(self):
         self.runs = []
@@ -63,7 +75,7 @@ class RemoteEvidenceTests(unittest.TestCase):
     def test_complete_success(self):
         evidence = self.verify()
         self.assertEqual(len(evidence), len(self.cfg['workflows']))
-        self.assertEqual({record['run_id'] for record in evidence}, set(self.jobs))
+        self.assertEqual({record['run_id'] for record in evidence}, {run_id for run_id, _ in self.jobs})
         self.assertTrue(all(record['sha'] == self.sha for record in evidence))
 
     def test_failure_cancellation_and_timeout_are_not_success(self):
@@ -74,7 +86,7 @@ class RemoteEvidenceTests(unittest.TestCase):
                     self.verify()
 
     def test_pending_or_failed_job_and_step_are_not_success(self):
-        job = self.jobs[1][0]
+        job = self.jobs[1, 1][0]
         for field, value in (('status', 'in_progress'), ('conclusion', 'failure')):
             with self.subTest(field=field):
                 original = job[field]
@@ -90,13 +102,50 @@ class RemoteEvidenceTests(unittest.TestCase):
 
     def test_rerun_supersedes_failed_attempt(self):
         old = dict(self.runs[0], conclusion='failure', run_attempt=1)
-        self.runs[0]['run_attempt'] = 2
+        latest_jobs = self.retry_first_run()
+        self.jobs[old['id'], 1][0]['conclusion'] = 'failure'
         self.runs.insert(0, old)
-        self.assertEqual(len(self.verify()), len(self.cfg['workflows']))
+        evidence = self.verify()
+        self.assertEqual(len(evidence), len(self.cfg['workflows']))
+        self.assertEqual([job['id'] for job in evidence[0]['jobs']], [job['id'] for job in latest_jobs])
         self.runs[1]['conclusion'] = 'failure'
         self.runs[0]['conclusion'] = 'success'
         with self.assertRaises(delivery.Blocked):
             self.verify()
+
+    def test_latest_attempt_cannot_borrow_previous_green_jobs_or_steps(self):
+        latest = self.retry_first_run()
+        missing_step = deepcopy(latest)
+        missing_step[0]['steps'] = []
+        failed_step = deepcopy(latest)
+        failed_step[0]['steps'][0]['conclusion'] = 'failure'
+        failed_job = deepcopy(latest)
+        failed_job[0]['conclusion'] = 'failure'
+        for label, jobs in [('all jobs absent', []), ('required job absent', latest[1:]),
+                            ('required step absent', missing_step), ('required step failed', failed_step),
+                            ('required job failed', failed_job)]:
+            with self.subTest(case=label):
+                self.jobs[1, 2] = jobs
+                with self.assertRaises(delivery.Blocked):
+                    self.verify()
+
+    def test_each_required_job_and_step_is_checked_by_the_collector(self):
+        for run_id, jobs in list(self.jobs.items()):
+            for index, job in enumerate(jobs):
+                with self.subTest(run=run_id, missing_job=job['name']):
+                    self.jobs[run_id] = jobs[:index] + jobs[index + 1:]
+                    with self.assertRaises(delivery.Blocked):
+                        self.verify()
+                self.jobs[run_id] = jobs
+                if job['conclusion'] == 'skipped':
+                    continue
+                steps = job['steps']
+                for offset, step in enumerate(steps):
+                    with self.subTest(run=run_id, job=job['name'], missing_step=step['name']):
+                        job['steps'] = steps[:offset] + steps[offset + 1:]
+                        with self.assertRaises(delivery.Blocked):
+                            self.verify()
+                    job['steps'] = steps
 
     def test_missing_any_workflow_cannot_be_replaced_by_other_green_runs(self):
         complete = self.runs[:]
