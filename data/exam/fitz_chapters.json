@@ -1,0 +1,1521 @@
+[
+ {
+  "chapter": 1,
+  "title": "Fundamentals of Clinical Dermatology: Morphology and Special Clinical Considerations",
+  "part": "PART 1 FOUNDATIONS OF CLINICAL DERMATOLOGY",
+  "pageStart": 1,
+  "pageEnd": 17
+ },
+ {
+  "chapter": 2,
+  "title": "Pathology of Skin Lesions",
+  "part": "PART 1 FOUNDATIONS OF CLINICAL DERMATOLOGY",
+  "pageStart": 18,
+  "pageEnd": 39
+ },
+ {
+  "chapter": 3,
+  "title": "Epidemiology and Public Health in Dermatology",
+  "part": "PART 1 FOUNDATIONS OF CLINICAL DERMATOLOGY",
+  "pageStart": 40,
+  "pageEnd": 48
+ },
+ {
+  "chapter": 4,
+  "title": "Developmental Biology of the Skin",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 49,
+  "pageEnd": 61
+ },
+ {
+  "chapter": 5,
+  "title": "Growth and Differentiation of the Epidermis",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 62,
+  "pageEnd": 69
+ },
+ {
+  "chapter": 6,
+  "title": "Skin Glands: Sebaceous, Eccrine, and Apocrine Glands",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 70,
+  "pageEnd": 88
+ },
+ {
+  "chapter": 7,
+  "title": "Biology of Hair Follicles",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 89,
+  "pageEnd": 105
+ },
+ {
+  "chapter": 8,
+  "title": "Nail",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 106,
+  "pageEnd": 115
+ },
+ {
+  "chapter": 9,
+  "title": "Cutaneous Vasculature",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 116,
+  "pageEnd": 129
+ },
+ {
+  "chapter": 10,
+  "title": "The Immunological Structure of the Skin",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 130,
+  "pageEnd": 142
+ },
+ {
+  "chapter": 11,
+  "title": "Cellular Components of the Cutaneous Immune System",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 143,
+  "pageEnd": 158
+ },
+ {
+  "chapter": 12,
+  "title": "Soluble Mediators of the Cutaneous Immune System",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 159,
+  "pageEnd": 191
+ },
+ {
+  "chapter": 13,
+  "title": "Basic Principles of Immunologic Diseases in Skin (Pathophysiology of Immunologic/Inflammatory Skin Diseases)",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 192,
+  "pageEnd": 205
+ },
+ {
+  "chapter": 14,
+  "title": "Skin Barrier",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 206,
+  "pageEnd": 231
+ },
+ {
+  "chapter": 15,
+  "title": "Epidermal and Dermal Adhesion",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 232,
+  "pageEnd": 252
+ },
+ {
+  "chapter": 16,
+  "title": "Microbiome of the Skin",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 253,
+  "pageEnd": 264
+ },
+ {
+  "chapter": 17,
+  "title": "Cutaneous Photobiology",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 265,
+  "pageEnd": 288
+ },
+ {
+  "chapter": 18,
+  "title": "Genetics in Relation to the Skin",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 289,
+  "pageEnd": 309
+ },
+ {
+  "chapter": 19,
+  "title": "Carcinogenesis and Skin",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 310,
+  "pageEnd": 327
+ },
+ {
+  "chapter": 20,
+  "title": "Pigmentation and Melanocyte Biology",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 328,
+  "pageEnd": 350
+ },
+ {
+  "chapter": 21,
+  "title": "Neurobiology of the Skin",
+  "part": "PART 2 STRUCTURE AND FUNCTION OF SKIN",
+  "pageStart": 351,
+  "pageEnd": 362
+ },
+ {
+  "chapter": 22,
+  "title": "Atopic Dermatitis",
+  "part": "PART 3 DERMATITIS",
+  "pageStart": 363,
+  "pageEnd": 384
+ },
+ {
+  "chapter": 23,
+  "title": "Nummular Eczema, Lichen Simplex Chronicus, and Prurigo Nodularis",
+  "part": "PART 3 DERMATITIS",
+  "pageStart": 385,
+  "pageEnd": 394
+ },
+ {
+  "chapter": 24,
+  "title": "Allergic Contact Dermatitis",
+  "part": "PART 3 DERMATITIS",
+  "pageStart": 395,
+  "pageEnd": 413
+ },
+ {
+  "chapter": 25,
+  "title": "Irritant Dermatitis",
+  "part": "PART 3 DERMATITIS",
+  "pageStart": 414,
+  "pageEnd": 427
+ },
+ {
+  "chapter": 26,
+  "title": "Seborrheic Dermatitis",
+  "part": "PART 3 DERMATITIS",
+  "pageStart": 428,
+  "pageEnd": 437
+ },
+ {
+  "chapter": 27,
+  "title": "Occupational Skin Diseases",
+  "part": "PART 3 DERMATITIS",
+  "pageStart": 438,
+  "pageEnd": 456
+ },
+ {
+  "chapter": 28,
+  "title": "Psoriasis",
+  "part": "PART 4 PSORIASIFORM DISORDERS",
+  "pageStart": 457,
+  "pageEnd": 497
+ },
+ {
+  "chapter": 29,
+  "title": "Pityriasis Rubra Pilaris",
+  "part": "PART 4 PSORIASIFORM DISORDERS",
+  "pageStart": 498,
+  "pageEnd": 504
+ },
+ {
+  "chapter": 30,
+  "title": "Parapsoriasis and Pityriasis Lichenoides",
+  "part": "PART 4 PSORIASIFORM DISORDERS",
+  "pageStart": 505,
+  "pageEnd": 517
+ },
+ {
+  "chapter": 31,
+  "title": "Pityriasis Rosea",
+  "part": "PART 4 PSORIASIFORM DISORDERS",
+  "pageStart": 518,
+  "pageEnd": 526
+ },
+ {
+  "chapter": 32,
+  "title": "Lichen Planus",
+  "part": "PART 5 LICHENOID AND GRANULOMATOUS DISORDERS",
+  "pageStart": 527,
+  "pageEnd": 553
+ },
+ {
+  "chapter": 33,
+  "title": "Lichen Nitidus and Lichen Striatus",
+  "part": "PART 5 LICHENOID AND GRANULOMATOUS DISORDERS",
+  "pageStart": 554,
+  "pageEnd": 563
+ },
+ {
+  "chapter": 34,
+  "title": "Granuloma Annulare",
+  "part": "PART 5 LICHENOID AND GRANULOMATOUS DISORDERS",
+  "pageStart": 564,
+  "pageEnd": 571
+ },
+ {
+  "chapter": 35,
+  "title": "Sarcoidosis",
+  "part": "PART 5 LICHENOID AND GRANULOMATOUS DISORDERS",
+  "pageStart": 572,
+  "pageEnd": 586
+ },
+ {
+  "chapter": 36,
+  "title": "Sweet Syndrome",
+  "part": "PART 6 NEUTROPHILIC, EOSINOPHILIC, AND MAST CELL DISORDERS",
+  "pageStart": 587,
+  "pageEnd": 604
+ },
+ {
+  "chapter": 37,
+  "title": "Pyoderma Gangrenosum",
+  "part": "PART 6 NEUTROPHILIC, EOSINOPHILIC, AND MAST CELL DISORDERS",
+  "pageStart": 605,
+  "pageEnd": 616
+ },
+ {
+  "chapter": 38,
+  "title": "Subcorneal Pustular Dermatosis (Sneddon-Wilkinson Disease)",
+  "part": "PART 6 NEUTROPHILIC, EOSINOPHILIC, AND MAST CELL DISORDERS",
+  "pageStart": 617,
+  "pageEnd": 620
+ },
+ {
+  "chapter": 39,
+  "title": "Autoinflammatory Disorders",
+  "part": "PART 6 NEUTROPHILIC, EOSINOPHILIC, AND MAST CELL DISORDERS",
+  "pageStart": 621,
+  "pageEnd": 648
+ },
+ {
+  "chapter": 40,
+  "title": "Eosinophilic Diseases",
+  "part": "PART 6 NEUTROPHILIC, EOSINOPHILIC, AND MAST CELL DISORDERS",
+  "pageStart": 649,
+  "pageEnd": 683
+ },
+ {
+  "chapter": 41,
+  "title": "Urticaria and Angioedema",
+  "part": "PART 6 NEUTROPHILIC, EOSINOPHILIC, AND MAST CELL DISORDERS",
+  "pageStart": 684,
+  "pageEnd": 709
+ },
+ {
+  "chapter": 42,
+  "title": "Mastocytosis",
+  "part": "PART 6 NEUTROPHILIC, EOSINOPHILIC, AND MAST CELL DISORDERS",
+  "pageStart": 710,
+  "pageEnd": 722
+ },
+ {
+  "chapter": 43,
+  "title": "Erythema Multiforme",
+  "part": "PART 7 REACTIVE ERYTHEMAS",
+  "pageStart": 723,
+  "pageEnd": 732
+ },
+ {
+  "chapter": 44,
+  "title": "Epidermal Necrolysis (Stevens-Johnson Syndrome and Toxic Epidermal Necrolysis)",
+  "part": "PART 7 REACTIVE ERYTHEMAS",
+  "pageStart": 733,
+  "pageEnd": 748
+ },
+ {
+  "chapter": 45,
+  "title": "Cutaneous Reactions to Drugs",
+  "part": "PART 7 REACTIVE ERYTHEMAS",
+  "pageStart": 749,
+  "pageEnd": 764
+ },
+ {
+  "chapter": 46,
+  "title": "Erythema Annulare Centrifugum and Other Figurate Erythemas",
+  "part": "PART 7 REACTIVE ERYTHEMAS",
+  "pageStart": 765,
+  "pageEnd": 774
+ },
+ {
+  "chapter": 47,
+  "title": "The Ichthyoses",
+  "part": "PART 8 DISORDERS OF CORNIFICATION",
+  "pageStart": 775,
+  "pageEnd": 815
+ },
+ {
+  "chapter": 48,
+  "title": "Inherited Palmoplantar Keratodermas",
+  "part": "PART 8 DISORDERS OF CORNIFICATION",
+  "pageStart": 816,
+  "pageEnd": 866
+ },
+ {
+  "chapter": 49,
+  "title": "Keratosis Pilaris and Other Follicular Keratotic Disorders",
+  "part": "PART 8 DISORDERS OF CORNIFICATION",
+  "pageStart": 867,
+  "pageEnd": 876
+ },
+ {
+  "chapter": 50,
+  "title": "Acantholytic Disorders of the Skin",
+  "part": "PART 8 DISORDERS OF CORNIFICATION",
+  "pageStart": 877,
+  "pageEnd": 900
+ },
+ {
+  "chapter": 51,
+  "title": "Porokeratosis",
+  "part": "PART 8 DISORDERS OF CORNIFICATION",
+  "pageStart": 901,
+  "pageEnd": 908
+ },
+ {
+  "chapter": 52,
+  "title": "Pemphigus",
+  "part": "PART 9 VESICULOBULLOUS DISORDERS",
+  "pageStart": 909,
+  "pageEnd": 933
+ },
+ {
+  "chapter": 53,
+  "title": "Paraneoplastic Pemphigus",
+  "part": "PART 9 VESICULOBULLOUS DISORDERS",
+  "pageStart": 934,
+  "pageEnd": 943
+ },
+ {
+  "chapter": 54,
+  "title": "Bullous Pemphigoid",
+  "part": "PART 9 VESICULOBULLOUS DISORDERS",
+  "pageStart": 944,
+  "pageEnd": 959
+ },
+ {
+  "chapter": 55,
+  "title": "Mucous Membrane Pemphigoid",
+  "part": "PART 9 VESICULOBULLOUS DISORDERS",
+  "pageStart": 960,
+  "pageEnd": 970
+ },
+ {
+  "chapter": 56,
+  "title": "Epidermolysis Bullosa Acquisita",
+  "part": "PART 9 VESICULOBULLOUS DISORDERS",
+  "pageStart": 971,
+  "pageEnd": 980
+ },
+ {
+  "chapter": 57,
+  "title": "Intercellular Immunoglobulin (Ig) A Dermatosis (IgA Pemphigus)",
+  "part": "PART 9 VESICULOBULLOUS DISORDERS",
+  "pageStart": 981,
+  "pageEnd": 991
+ },
+ {
+  "chapter": 58,
+  "title": "Linear Immunoglobulin A Dermatosis and Chronic Bullous Disease of Childhood",
+  "part": "PART 9 VESICULOBULLOUS DISORDERS",
+  "pageStart": 992,
+  "pageEnd": 1001
+ },
+ {
+  "chapter": 59,
+  "title": "Dermatitis Herpetiformis",
+  "part": "PART 9 VESICULOBULLOUS DISORDERS",
+  "pageStart": 1002,
+  "pageEnd": 1010
+ },
+ {
+  "chapter": 60,
+  "title": "Inherited Epidermolysis Bullosa",
+  "part": "PART 9 VESICULOBULLOUS DISORDERS",
+  "pageStart": 1011,
+  "pageEnd": 1036
+ },
+ {
+  "chapter": 61,
+  "title": "Lupus Erythematosus",
+  "part": "PART 10 AUTOIMMUNE CONNECTIVE TISSUE AND RHEUMATOLOGIC DISORDERS",
+  "pageStart": 1037,
+  "pageEnd": 1060
+ },
+ {
+  "chapter": 62,
+  "title": "Dermatomyositis",
+  "part": "PART 10 AUTOIMMUNE CONNECTIVE TISSUE AND RHEUMATOLOGIC DISORDERS",
+  "pageStart": 1061,
+  "pageEnd": 1085
+ },
+ {
+  "chapter": 63,
+  "title": "Systemic Sclerosis",
+  "part": "PART 10 AUTOIMMUNE CONNECTIVE TISSUE AND RHEUMATOLOGIC DISORDERS",
+  "pageStart": 1086,
+  "pageEnd": 1105
+ },
+ {
+  "chapter": 64,
+  "title": "Morphea and Lichen Sclerosus",
+  "part": "PART 10 AUTOIMMUNE CONNECTIVE TISSUE AND RHEUMATOLOGIC DISORDERS",
+  "pageStart": 1106,
+  "pageEnd": 1126
+ },
+ {
+  "chapter": 65,
+  "title": "Psoriatic Arthritis and Reactive Arthritis",
+  "part": "PART 10 AUTOIMMUNE CONNECTIVE TISSUE AND RHEUMATOLOGIC DISORDERS",
+  "pageStart": 1127,
+  "pageEnd": 1145
+ },
+ {
+  "chapter": 66,
+  "title": "Rheumatoid Arthritis, Juvenile Idiopathic Arthritis, Adult-Onset Still Disease, and Rheumatic Fever",
+  "part": "PART 10 AUTOIMMUNE CONNECTIVE TISSUE AND RHEUMATOLOGIC DISORDERS",
+  "pageStart": 1146,
+  "pageEnd": 1162
+ },
+ {
+  "chapter": 67,
+  "title": "Scleredema and Scleromyxedema",
+  "part": "PART 10 AUTOIMMUNE CONNECTIVE TISSUE AND RHEUMATOLOGIC DISORDERS",
+  "pageStart": 1163,
+  "pageEnd": 1169
+ },
+ {
+  "chapter": 68,
+  "title": "Sjögren Syndrome",
+  "part": "PART 10 AUTOIMMUNE CONNECTIVE TISSUE AND RHEUMATOLOGIC DISORDERS",
+  "pageStart": 1170,
+  "pageEnd": 1185
+ },
+ {
+  "chapter": 69,
+  "title": "Relapsing Polychondritis",
+  "part": "PART 10 AUTOIMMUNE CONNECTIVE TISSUE AND RHEUMATOLOGIC DISORDERS",
+  "pageStart": 1186,
+  "pageEnd": 1192
+ },
+ {
+  "chapter": 70,
+  "title": "Anetoderma and Other Atrophic Disorders of the Skin",
+  "part": "PART 11 DERMAL CONNECTIVE TISSUE DISORDERS",
+  "pageStart": 1193,
+  "pageEnd": 1202
+ },
+ {
+  "chapter": 71,
+  "title": "Acquired Perforating Disorders",
+  "part": "PART 11 DERMAL CONNECTIVE TISSUE DISORDERS",
+  "pageStart": 1203,
+  "pageEnd": 1211
+ },
+ {
+  "chapter": 72,
+  "title": "Genetic Disorders Affecting Dermal Connective Tissue",
+  "part": "PART 11 DERMAL CONNECTIVE TISSUE DISORDERS",
+  "pageStart": 1212,
+  "pageEnd": 1250
+ },
+ {
+  "chapter": 73,
+  "title": "Panniculitis",
+  "part": "PART 12 SUBCUTANEOUS TISSUE DISORDERS",
+  "pageStart": 1251,
+  "pageEnd": 1294
+ },
+ {
+  "chapter": 74,
+  "title": "Lipodystrophy",
+  "part": "PART 12 SUBCUTANEOUS TISSUE DISORDERS",
+  "pageStart": 1295,
+  "pageEnd": 1308
+ },
+ {
+  "chapter": 75,
+  "title": "Albinism and Other Genetic Disorders of Pigmentation",
+  "part": "PART 13 MELANOCYTIC DISORDERS",
+  "pageStart": 1309,
+  "pageEnd": 1329
+ },
+ {
+  "chapter": 76,
+  "title": "Vitiligo",
+  "part": "PART 13 MELANOCYTIC DISORDERS",
+  "pageStart": 1330,
+  "pageEnd": 1350
+ },
+ {
+  "chapter": 77,
+  "title": "Hypermelanoses",
+  "part": "PART 13 MELANOCYTIC DISORDERS",
+  "pageStart": 1351,
+  "pageEnd": 1390
+ },
+ {
+  "chapter": 78,
+  "title": "Acne Vulgaris",
+  "part": "PART 14 ACNEIFORM DISORDERS",
+  "pageStart": 1391,
+  "pageEnd": 1418
+ },
+ {
+  "chapter": 79,
+  "title": "Rosacea",
+  "part": "PART 14 ACNEIFORM DISORDERS",
+  "pageStart": 1419,
+  "pageEnd": 1447
+ },
+ {
+  "chapter": 80,
+  "title": "Acne Variants and Acneiform Eruptions",
+  "part": "PART 14 ACNEIFORM DISORDERS",
+  "pageStart": 1448,
+  "pageEnd": 1458
+ },
+ {
+  "chapter": 81,
+  "title": "Hyperhidrosis and Anhidrosis",
+  "part": "PART 15 DISORDERS OF ECCRINE AND APOCRINE SWEAT GLANDS",
+  "pageStart": 1459,
+  "pageEnd": 1468
+ },
+ {
+  "chapter": 82,
+  "title": "Bromhidrosis and Chromhidrosis",
+  "part": "PART 15 DISORDERS OF ECCRINE AND APOCRINE SWEAT GLANDS",
+  "pageStart": 1469,
+  "pageEnd": 1474
+ },
+ {
+  "chapter": 83,
+  "title": "Fox-Fordyce Disease",
+  "part": "PART 15 DISORDERS OF ECCRINE AND APOCRINE SWEAT GLANDS",
+  "pageStart": 1475,
+  "pageEnd": 1479
+ },
+ {
+  "chapter": 84,
+  "title": "Hidradenitis Suppurativa",
+  "part": "PART 15 DISORDERS OF ECCRINE AND APOCRINE SWEAT GLANDS",
+  "pageStart": 1480,
+  "pageEnd": 1494
+ },
+ {
+  "chapter": 85,
+  "title": "Androgenetic Alopecia",
+  "part": "PART 16 DISORDERS OF THE HAIR AND NAILS",
+  "pageStart": 1495,
+  "pageEnd": 1506
+ },
+ {
+  "chapter": 86,
+  "title": "Telogen Effluvium",
+  "part": "PART 16 DISORDERS OF THE HAIR AND NAILS",
+  "pageStart": 1507,
+  "pageEnd": 1516
+ },
+ {
+  "chapter": 87,
+  "title": "Alopecia Areata",
+  "part": "PART 16 DISORDERS OF THE HAIR AND NAILS",
+  "pageStart": 1517,
+  "pageEnd": 1523
+ },
+ {
+  "chapter": 88,
+  "title": "Cicatricial Alopecias",
+  "part": "PART 16 DISORDERS OF THE HAIR AND NAILS",
+  "pageStart": 1524,
+  "pageEnd": 1536
+ },
+ {
+  "chapter": 89,
+  "title": "Hair Shaft Disorders",
+  "part": "PART 16 DISORDERS OF THE HAIR AND NAILS",
+  "pageStart": 1537,
+  "pageEnd": 1554
+ },
+ {
+  "chapter": 90,
+  "title": "Hirsutism and Hypertrichosis",
+  "part": "PART 16 DISORDERS OF THE HAIR AND NAILS",
+  "pageStart": 1555,
+  "pageEnd": 1567
+ },
+ {
+  "chapter": 91,
+  "title": "Nail Disorders",
+  "part": "PART 16 DISORDERS OF THE HAIR AND NAILS",
+  "pageStart": 1568,
+  "pageEnd": 1610
+ },
+ {
+  "chapter": 92,
+  "title": "Polymorphic Light Eruption",
+  "part": "PART 17 DISORDERS DUE TO THE ENVIRONMENT",
+  "pageStart": 1611,
+  "pageEnd": 1627
+ },
+ {
+  "chapter": 93,
+  "title": "Actinic Prurigo",
+  "part": "PART 17 DISORDERS DUE TO THE ENVIRONMENT",
+  "pageStart": 1628,
+  "pageEnd": 1633
+ },
+ {
+  "chapter": 94,
+  "title": "Hydroa Vacciniforme",
+  "part": "PART 17 DISORDERS DUE TO THE ENVIRONMENT",
+  "pageStart": 1634,
+  "pageEnd": 1638
+ },
+ {
+  "chapter": 95,
+  "title": "Actinic Dermatitis",
+  "part": "PART 17 DISORDERS DUE TO THE ENVIRONMENT",
+  "pageStart": 1639,
+  "pageEnd": 1649
+ },
+ {
+  "chapter": 96,
+  "title": "Solar Urticaria",
+  "part": "PART 17 DISORDERS DUE TO THE ENVIRONMENT",
+  "pageStart": 1650,
+  "pageEnd": 1656
+ },
+ {
+  "chapter": 97,
+  "title": "Phototoxicity and Photoallergy",
+  "part": "PART 17 DISORDERS DUE TO THE ENVIRONMENT",
+  "pageStart": 1657,
+  "pageEnd": 1665
+ },
+ {
+  "chapter": 98,
+  "title": "Cold Injuries",
+  "part": "PART 17 DISORDERS DUE TO THE ENVIRONMENT",
+  "pageStart": 1666,
+  "pageEnd": 1678
+ },
+ {
+  "chapter": 99,
+  "title": "Burns",
+  "part": "PART 17 DISORDERS DUE TO THE ENVIRONMENT",
+  "pageStart": 1679,
+  "pageEnd": 1692
+ },
+ {
+  "chapter": 100,
+  "title": "Delusional, Obsessive-Compulsive, and Factitious Skin Diseases",
+  "part": "PART 18 PSYCHOSOCIAL SKIN DISEASE",
+  "pageStart": 1693,
+  "pageEnd": 1704
+ },
+ {
+  "chapter": 101,
+  "title": "Drug Abuse",
+  "part": "PART 18 PSYCHOSOCIAL SKIN DISEASE",
+  "pageStart": 1705,
+  "pageEnd": 1716
+ },
+ {
+  "chapter": 102,
+  "title": "Physical Abuse",
+  "part": "PART 18 PSYCHOSOCIAL SKIN DISEASE",
+  "pageStart": 1717,
+  "pageEnd": 1726
+ },
+ {
+  "chapter": 103,
+  "title": "Neonatal Dermatology",
+  "part": "PART 19 SKIN CHANGES ACROSS THE SPAN OF LIFE",
+  "pageStart": 1727,
+  "pageEnd": 1749
+ },
+ {
+  "chapter": 104,
+  "title": "Pediatric and Adolescent Dermatology",
+  "part": "PART 19 SKIN CHANGES ACROSS THE SPAN OF LIFE",
+  "pageStart": 1750,
+  "pageEnd": 1764
+ },
+ {
+  "chapter": 105,
+  "title": "Skin Changes and Diseases in Pregnancy",
+  "part": "PART 19 SKIN CHANGES ACROSS THE SPAN OF LIFE",
+  "pageStart": 1765,
+  "pageEnd": 1778
+ },
+ {
+  "chapter": 106,
+  "title": "Skin Aging",
+  "part": "PART 19 SKIN CHANGES ACROSS THE SPAN OF LIFE",
+  "pageStart": 1779,
+  "pageEnd": 1791
+ },
+ {
+  "chapter": 107,
+  "title": "Caring for LGBT Persons in Dermatology",
+  "part": "PART 19 SKIN CHANGES ACROSS THE SPAN OF LIFE",
+  "pageStart": 1792,
+  "pageEnd": 1798
+ },
+ {
+  "chapter": 108,
+  "title": "Benign Epithelial Tumors, Hamartomas, and Hyperplasias",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 1799,
+  "pageEnd": 1819
+ },
+ {
+  "chapter": 109,
+  "title": "Appendage Tumors of the Skin",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 1820,
+  "pageEnd": 1856
+ },
+ {
+  "chapter": 110,
+  "title": "Epithelial Precancerous Lesions",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 1857,
+  "pageEnd": 1883
+ },
+ {
+  "chapter": 111,
+  "title": "Basal Cell Carcinoma and Basal Cell Nevus Syndrome",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 1884,
+  "pageEnd": 1900
+ },
+ {
+  "chapter": 112,
+  "title": "Squamous Cell Carcinoma and Keratoacanthoma",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 1901,
+  "pageEnd": 1919
+ },
+ {
+  "chapter": 113,
+  "title": "Merkel Cell Carcinoma",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 1920,
+  "pageEnd": 1933
+ },
+ {
+  "chapter": 114,
+  "title": "Paget’s Disease",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 1934,
+  "pageEnd": 1943
+ },
+ {
+  "chapter": 115,
+  "title": "Melanocytic Nevi",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 1944,
+  "pageEnd": 1981
+ },
+ {
+  "chapter": 116,
+  "title": "Melanoma",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 1982,
+  "pageEnd": 2017
+ },
+ {
+  "chapter": 117,
+  "title": "Histiocytosis",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 2018,
+  "pageEnd": 2041
+ },
+ {
+  "chapter": 118,
+  "title": "Vascular Tumors",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 2042,
+  "pageEnd": 2071
+ },
+ {
+  "chapter": 119,
+  "title": "Cutaneous Lymphoma",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 2072,
+  "pageEnd": 2107
+ },
+ {
+  "chapter": 120,
+  "title": "Cutaneous Pseudolymphoma",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 2108,
+  "pageEnd": 2129
+ },
+ {
+  "chapter": 121,
+  "title": "Neoplasias and Hyperplasias of Muscular and Neural Origin",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 2130,
+  "pageEnd": 2171
+ },
+ {
+  "chapter": 122,
+  "title": "Lipogenic Neoplasms",
+  "part": "PART 20 NEOPLASIA",
+  "pageStart": 2172,
+  "pageEnd": 2198
+ },
+ {
+  "chapter": 123,
+  "title": "Cutaneous Changes in Nutritional Disease",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2199,
+  "pageEnd": 2233
+ },
+ {
+  "chapter": 124,
+  "title": "The Porphyrias",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2234,
+  "pageEnd": 2257
+ },
+ {
+  "chapter": 125,
+  "title": "Amyloidosis",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2258,
+  "pageEnd": 2272
+ },
+ {
+  "chapter": 126,
+  "title": "Xanthomas and Lipoprotein Disorders",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2273,
+  "pageEnd": 2291
+ },
+ {
+  "chapter": 127,
+  "title": "Fabry Disease",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2292,
+  "pageEnd": 2306
+ },
+ {
+  "chapter": 128,
+  "title": "Calcium and Other Mineral Deposition Disorders",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2307,
+  "pageEnd": 2319
+ },
+ {
+  "chapter": 129,
+  "title": "Graft-Versus-Host Disease",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2320,
+  "pageEnd": 2341
+ },
+ {
+  "chapter": 130,
+  "title": "Hereditary Disorders of Genome Instability and DNA Repair",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2342,
+  "pageEnd": 2371
+ },
+ {
+  "chapter": 131,
+  "title": "Ectodermal Dysplasias",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2372,
+  "pageEnd": 2393
+ },
+ {
+  "chapter": 132,
+  "title": "Genetic Immunodeficiency Diseases",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2394,
+  "pageEnd": 2424
+ },
+ {
+  "chapter": 133,
+  "title": "Skin Manifestations of Internal Organ Disorders",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2425,
+  "pageEnd": 2440
+ },
+ {
+  "chapter": 134,
+  "title": "Cutaneous Paraneoplastic Syndromes",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2441,
+  "pageEnd": 2464
+ },
+ {
+  "chapter": 135,
+  "title": "The Neurofibromatoses",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2465,
+  "pageEnd": 2479
+ },
+ {
+  "chapter": 136,
+  "title": "Tuberous Sclerosis Complex",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2480,
+  "pageEnd": 2492
+ },
+ {
+  "chapter": 137,
+  "title": "Diabetes and Other Endocrine Diseases",
+  "part": "PART 21 METABOLIC, GENETIC, AND SYSTEMIC DISEASES",
+  "pageStart": 2493,
+  "pageEnd": 2526
+ },
+ {
+  "chapter": 138,
+  "title": "Cutaneous Necrotizing Venulitis",
+  "part": "PART 22 VASCULAR DISEASES",
+  "pageStart": 2527,
+  "pageEnd": 2538
+ },
+ {
+  "chapter": 139,
+  "title": "Systemic Necrotizing Arteritis",
+  "part": "PART 22 VASCULAR DISEASES",
+  "pageStart": 2539,
+  "pageEnd": 2561
+ },
+ {
+  "chapter": 140,
+  "title": "Erythema Elevatum Diutinum",
+  "part": "PART 22 VASCULAR DISEASES",
+  "pageStart": 2562,
+  "pageEnd": 2566
+ },
+ {
+  "chapter": 141,
+  "title": "Adamantiades–Behçet Disease",
+  "part": "PART 22 VASCULAR DISEASES",
+  "pageStart": 2567,
+  "pageEnd": 2579
+ },
+ {
+  "chapter": 142,
+  "title": "Kawasaki Disease",
+  "part": "PART 22 VASCULAR DISEASES",
+  "pageStart": 2580,
+  "pageEnd": 2589
+ },
+ {
+  "chapter": 143,
+  "title": "Pigmented Purpuric Dermatoses",
+  "part": "PART 22 VASCULAR DISEASES",
+  "pageStart": 2590,
+  "pageEnd": 2598
+ },
+ {
+  "chapter": 144,
+  "title": "Cryoglobulinemia and Cryofibrinogenemia",
+  "part": "PART 22 VASCULAR DISEASES",
+  "pageStart": 2599,
+  "pageEnd": 2612
+ },
+ {
+  "chapter": 145,
+  "title": "Raynaud Phenomenon",
+  "part": "PART 22 VASCULAR DISEASES",
+  "pageStart": 2613,
+  "pageEnd": 2629
+ },
+ {
+  "chapter": 146,
+  "title": "Malignant Atrophic Papulosis (Degos Disease)",
+  "part": "PART 22 VASCULAR DISEASES",
+  "pageStart": 2630,
+  "pageEnd": 2635
+ },
+ {
+  "chapter": 147,
+  "title": "Vascular Malformations",
+  "part": "PART 22 VASCULAR DISEASES",
+  "pageStart": 2636,
+  "pageEnd": 2668
+ },
+ {
+  "chapter": 148,
+  "title": "Cutaneous Changes in Arterial, Venous, and Lymphatic Dysfunction",
+  "part": "PART 22 VASCULAR DISEASES",
+  "pageStart": 2669,
+  "pageEnd": 2699
+ },
+ {
+  "chapter": 149,
+  "title": "Wound Healing",
+  "part": "PART 22 VASCULAR DISEASES",
+  "pageStart": 2700,
+  "pageEnd": 2718
+ },
+ {
+  "chapter": 150,
+  "title": "Superficial Cutaneous Infections and Pyodermas",
+  "part": "PART 23 BACTERIAL DISEASES",
+  "pageStart": 2719,
+  "pageEnd": 2745
+ },
+ {
+  "chapter": 151,
+  "title": "Cellulitis and Erysipelas",
+  "part": "PART 23 BACTERIAL DISEASES",
+  "pageStart": 2746,
+  "pageEnd": 2756
+ },
+ {
+  "chapter": 152,
+  "title": "Gram-Positive Infections Associated with Toxin Production",
+  "part": "PART 23 BACTERIAL DISEASES",
+  "pageStart": 2757,
+  "pageEnd": 2769
+ },
+ {
+  "chapter": 153,
+  "title": "Necrotizing Fasciitis, Necrotizing Cellulitis, and Myonecrosis",
+  "part": "PART 23 BACTERIAL DISEASES",
+  "pageStart": 2770,
+  "pageEnd": 2781
+ },
+ {
+  "chapter": 154,
+  "title": "Gram-Negative Coccal and Bacillary Infections",
+  "part": "PART 23 BACTERIAL DISEASES",
+  "pageStart": 2782,
+  "pageEnd": 2814
+ },
+ {
+  "chapter": 155,
+  "title": "The Skin in Infective Endocarditis, Sepsis, Septic Shock, and Disseminated Intravascular Coagulation",
+  "part": "PART 23 BACTERIAL DISEASES",
+  "pageStart": 2815,
+  "pageEnd": 2826
+ },
+ {
+  "chapter": 156,
+  "title": "Miscellaneous Bacterial Infections with Cutaneous Manifestations",
+  "part": "PART 23 BACTERIAL DISEASES",
+  "pageStart": 2827,
+  "pageEnd": 2857
+ },
+ {
+  "chapter": 157,
+  "title": "Tuberculosis and Infections with Atypical Mycobacteria",
+  "part": "PART 23 BACTERIAL DISEASES",
+  "pageStart": 2858,
+  "pageEnd": 2875
+ },
+ {
+  "chapter": 158,
+  "title": "Actinomycosis, Nocardiosis, and Actinomycetoma",
+  "part": "PART 23 BACTERIAL DISEASES",
+  "pageStart": 2876,
+  "pageEnd": 2891
+ },
+ {
+  "chapter": 159,
+  "title": "Leprosy",
+  "part": "PART 23 BACTERIAL DISEASES",
+  "pageStart": 2892,
+  "pageEnd": 2924
+ },
+ {
+  "chapter": 160,
+  "title": "Superficial Fungal Infection",
+  "part": "PART 24 FUNGAL DISEASES",
+  "pageStart": 2925,
+  "pageEnd": 2951
+ },
+ {
+  "chapter": 161,
+  "title": "Yeast Infections",
+  "part": "PART 24 FUNGAL DISEASES",
+  "pageStart": 2952,
+  "pageEnd": 2964
+ },
+ {
+  "chapter": 162,
+  "title": "Deep Fungal Infections",
+  "part": "PART 24 FUNGAL DISEASES",
+  "pageStart": 2965,
+  "pageEnd": 2988
+ },
+ {
+  "chapter": 163,
+  "title": "Exanthematous Viral Diseases",
+  "part": "PART 25 VIRAL DISEASES",
+  "pageStart": 2989,
+  "pageEnd": 3020
+ },
+ {
+  "chapter": 164,
+  "title": "Herpes Simplex",
+  "part": "PART 25 VIRAL DISEASES",
+  "pageStart": 3021,
+  "pageEnd": 3034
+ },
+ {
+  "chapter": 165,
+  "title": "Varicella and Herpes Zoster",
+  "part": "PART 25 VIRAL DISEASES",
+  "pageStart": 3035,
+  "pageEnd": 3064
+ },
+ {
+  "chapter": 166,
+  "title": "Poxvirus Infections",
+  "part": "PART 25 VIRAL DISEASES",
+  "pageStart": 3065,
+  "pageEnd": 3094
+ },
+ {
+  "chapter": 167,
+  "title": "Human Papillomavirus Infections",
+  "part": "PART 25 VIRAL DISEASES",
+  "pageStart": 3095,
+  "pageEnd": 3106
+ },
+ {
+  "chapter": 168,
+  "title": "Cutaneous Manifestations of HIV and Human T-Lymphotropic Virus",
+  "part": "PART 25 VIRAL DISEASES",
+  "pageStart": 3107,
+  "pageEnd": 3134
+ },
+ {
+  "chapter": 169,
+  "title": "Mosquito-Borne Viral Diseases",
+  "part": "PART 25 VIRAL DISEASES",
+  "pageStart": 3135,
+  "pageEnd": 3144
+ },
+ {
+  "chapter": 170,
+  "title": "Syphilis",
+  "part": "PART 26 SEXUALLY TRANSMITTED DISEASES",
+  "pageStart": 3145,
+  "pageEnd": 3172
+ },
+ {
+  "chapter": 171,
+  "title": "Endemic (Nonvenereal) Treponematoses",
+  "part": "PART 26 SEXUALLY TRANSMITTED DISEASES",
+  "pageStart": 3173,
+  "pageEnd": 3185
+ },
+ {
+  "chapter": 172,
+  "title": "Chancroid",
+  "part": "PART 26 SEXUALLY TRANSMITTED DISEASES",
+  "pageStart": 3186,
+  "pageEnd": 3192
+ },
+ {
+  "chapter": 173,
+  "title": "Lymphogranuloma Venereum",
+  "part": "PART 26 SEXUALLY TRANSMITTED DISEASES",
+  "pageStart": 3193,
+  "pageEnd": 3201
+ },
+ {
+  "chapter": 174,
+  "title": "Granuloma Inguinale",
+  "part": "PART 26 SEXUALLY TRANSMITTED DISEASES",
+  "pageStart": 3202,
+  "pageEnd": 3206
+ },
+ {
+  "chapter": 175,
+  "title": "Gonorrhea, Mycoplasma, and Vaginosis",
+  "part": "PART 26 SEXUALLY TRANSMITTED DISEASES",
+  "pageStart": 3207,
+  "pageEnd": 3222
+ },
+ {
+  "chapter": 176,
+  "title": "Leishmaniasis and Other Protozoan Infections",
+  "part": "PART 27 INFESTATIONS, BITES, AND STINGS",
+  "pageStart": 3223,
+  "pageEnd": 3250
+ },
+ {
+  "chapter": 177,
+  "title": "Helminthic Infections",
+  "part": "PART 27 INFESTATIONS, BITES, AND STINGS",
+  "pageStart": 3251,
+  "pageEnd": 3273
+ },
+ {
+  "chapter": 178,
+  "title": "Scabies, Other Mites, and Pediculosis",
+  "part": "PART 27 INFESTATIONS, BITES, AND STINGS",
+  "pageStart": 3274,
+  "pageEnd": 3286
+ },
+ {
+  "chapter": 179,
+  "title": "Lyme Borreliosis",
+  "part": "PART 27 INFESTATIONS, BITES, AND STINGS",
+  "pageStart": 3287,
+  "pageEnd": 3305
+ },
+ {
+  "chapter": 180,
+  "title": "The Rickettsioses, Ehrlichioses, and Anaplasmoses",
+  "part": "PART 27 INFESTATIONS, BITES, AND STINGS",
+  "pageStart": 3306,
+  "pageEnd": 3323
+ },
+ {
+  "chapter": 181,
+  "title": "Arthropod Bites and Stings",
+  "part": "PART 27 INFESTATIONS, BITES, AND STINGS",
+  "pageStart": 3324,
+  "pageEnd": 3337
+ },
+ {
+  "chapter": 182,
+  "title": "Bites and Stings of Terrestrial and Aquatic Life",
+  "part": "PART 27 INFESTATIONS, BITES, AND STINGS",
+  "pageStart": 3338,
+  "pageEnd": 3362
+ },
+ {
+  "chapter": 183,
+  "title": "Principles of Topical Therapy",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3363,
+  "pageEnd": 3381
+ },
+ {
+  "chapter": 184,
+  "title": "Glucocorticoids",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3382,
+  "pageEnd": 3394
+ },
+ {
+  "chapter": 185,
+  "title": "Retinoids",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3395,
+  "pageEnd": 3406
+ },
+ {
+  "chapter": 186,
+  "title": "Systemic and Topical Antibiotics",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3407,
+  "pageEnd": 3422
+ },
+ {
+  "chapter": 187,
+  "title": "Dapsone",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3423,
+  "pageEnd": 3435
+ },
+ {
+  "chapter": 188,
+  "title": "Antifungals",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3436,
+  "pageEnd": 3450
+ },
+ {
+  "chapter": 189,
+  "title": "Antihistamines",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3451,
+  "pageEnd": 3462
+ },
+ {
+  "chapter": 190,
+  "title": "Cytotoxic and Antimetabolic Agents",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3463,
+  "pageEnd": 3492
+ },
+ {
+  "chapter": 191,
+  "title": "Antiviral Drugs",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3493,
+  "pageEnd": 3516
+ },
+ {
+  "chapter": 192,
+  "title": "Immunosuppressive and Immunomodulatory Drugs",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3517,
+  "pageEnd": 3530
+ },
+ {
+  "chapter": 193,
+  "title": "Immunobiologics: Targeted Therapy Against Cytokines, Cytokine Receptors, and Growth Factors in Dermatology",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3531,
+  "pageEnd": 3557
+ },
+ {
+  "chapter": 194,
+  "title": "Molecular Targeted Therapies",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3558,
+  "pageEnd": 3589
+ },
+ {
+  "chapter": 195,
+  "title": "Antiangiogenic Agents",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3590,
+  "pageEnd": 3609
+ },
+ {
+  "chapter": 196,
+  "title": "Other Topical Medications",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3610,
+  "pageEnd": 3622
+ },
+ {
+  "chapter": 197,
+  "title": "Photoprotection",
+  "part": "PART 28 TOPICAL AND SYSTEMIC TREATMENTS",
+  "pageStart": 3623,
+  "pageEnd": 3634
+ },
+ {
+  "chapter": 198,
+  "title": "Phototherapy",
+  "part": "PART 29 PHYSICAL TREATMENTS",
+  "pageStart": 3635,
+  "pageEnd": 3663
+ },
+ {
+  "chapter": 199,
+  "title": "Photochemotherapy and Photodynamic Therapy",
+  "part": "PART 29 PHYSICAL TREATMENTS",
+  "pageStart": 3664,
+  "pageEnd": 3686
+ },
+ {
+  "chapter": 200,
+  "title": "Radiotherapy",
+  "part": "PART 29 PHYSICAL TREATMENTS",
+  "pageStart": 3687,
+  "pageEnd": 3696
+ },
+ {
+  "chapter": 201,
+  "title": "Cutaneous Surgical Anatomy",
+  "part": "PART 30 DERMATOLOGIC SURGERY",
+  "pageStart": 3697,
+  "pageEnd": 3705
+ },
+ {
+  "chapter": 202,
+  "title": "Perioperative Considerations in Dermatologic Surgery",
+  "part": "PART 30 DERMATOLOGIC SURGERY",
+  "pageStart": 3706,
+  "pageEnd": 3725
+ },
+ {
+  "chapter": 203,
+  "title": "Excisional Surgery and Repair, Flaps, and Grafts",
+  "part": "PART 30 DERMATOLOGIC SURGERY",
+  "pageStart": 3726,
+  "pageEnd": 3760
+ },
+ {
+  "chapter": 204,
+  "title": "Mohs Micrographic Surgery",
+  "part": "PART 30 DERMATOLOGIC SURGERY",
+  "pageStart": 3761,
+  "pageEnd": 3773
+ },
+ {
+  "chapter": 205,
+  "title": "Nail Surgery",
+  "part": "PART 30 DERMATOLOGIC SURGERY",
+  "pageStart": 3774,
+  "pageEnd": 3790
+ },
+ {
+  "chapter": 206,
+  "title": "Cryosurgery and Electrosurgery",
+  "part": "PART 30 DERMATOLOGIC SURGERY",
+  "pageStart": 3791,
+  "pageEnd": 3802
+ },
+ {
+  "chapter": 207,
+  "title": "Cosmeceuticals and Skin Care in Dermatology",
+  "part": "PART 31 COSMETIC DERMATOLOGY",
+  "pageStart": 3803,
+  "pageEnd": 3819
+ },
+ {
+  "chapter": 208,
+  "title": "Fundamentals of Laser and Light-Based Treatments",
+  "part": "PART 31 COSMETIC DERMATOLOGY",
+  "pageStart": 3820,
+  "pageEnd": 3833
+ },
+ {
+  "chapter": 209,
+  "title": "Laser Skin Resurfacing: Cosmetic and Medical Applications",
+  "part": "PART 31 COSMETIC DERMATOLOGY",
+  "pageStart": 3834,
+  "pageEnd": 3845
+ },
+ {
+  "chapter": 210,
+  "title": "Nonablative Laser and Light-Based Therapy: Cosmetic and Medical Indications",
+  "part": "PART 31 COSMETIC DERMATOLOGY",
+  "pageStart": 3846,
+  "pageEnd": 3856
+ },
+ {
+  "chapter": 211,
+  "title": "Noninvasive Body Contouring",
+  "part": "PART 31 COSMETIC DERMATOLOGY",
+  "pageStart": 3857,
+  "pageEnd": 3870
+ },
+ {
+  "chapter": 212,
+  "title": "Treatment of Varicose Veins and Telangiectatic Lower-Extremity Vessels",
+  "part": "PART 31 COSMETIC DERMATOLOGY",
+  "pageStart": 3871,
+  "pageEnd": 3894
+ },
+ {
+  "chapter": 213,
+  "title": "Chemical Peels and Dermabrasion",
+  "part": "PART 31 COSMETIC DERMATOLOGY",
+  "pageStart": 3895,
+  "pageEnd": 3905
+ },
+ {
+  "chapter": 214,
+  "title": "Liposuction Using Tumescent Local Anesthesia",
+  "part": "PART 31 COSMETIC DERMATOLOGY",
+  "pageStart": 3906,
+  "pageEnd": 3910
+ },
+ {
+  "chapter": 215,
+  "title": "Soft-Tissue Augmentation",
+  "part": "PART 31 COSMETIC DERMATOLOGY",
+  "pageStart": 3911,
+  "pageEnd": 3920
+ },
+ {
+  "chapter": 216,
+  "title": "Botulinum Toxin",
+  "part": "PART 31 COSMETIC DERMATOLOGY",
+  "pageStart": 3921,
+  "pageEnd": 3930
+ },
+ {
+  "chapter": 217,
+  "title": "Hair Transplantation",
+  "part": "PART 31 COSMETIC DERMATOLOGY",
+  "pageStart": 3931,
+  "pageEnd": 3950
+ }
+]

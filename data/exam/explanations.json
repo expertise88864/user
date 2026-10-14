@@ -1,0 +1,933 @@
+{
+ "101-47": {
+  "summary": "只有④正確，答案 D。這題把 EM 與 EN 的口腔分布、HLA 配對、檢驗值意義混在一起考。",
+  "items": [
+   {
+    "key": "①",
+    "label": "錯誤",
+    "ok": false,
+    "text": "EM 的黏膜病灶好發於嘴唇（皮膚側與黏膜側）、非附著牙齦與舌腹；硬顎與附著牙齦通常不受影響（usually spared）。",
+    "refs": [
+     [
+      43,
+      "726"
+     ]
+    ]
+   },
+   {
+    "key": "②",
+    "label": "錯誤",
+    "ok": false,
+    "text": "兩個 HLA 寫反了。台灣漢人中 HLA-B*1502 與 carbamazepine 引起的 EN 強烈相關，HLA-B*5801 則與 allopurinol 引起的 EN 相關。",
+    "refs": [
+     [
+      44,
+      "735"
+     ],
+     [
+      45,
+      "760"
+     ]
+    ]
+   },
+   {
+    "key": "③",
+    "label": "錯誤",
+    "ok": false,
+    "text": "肝指數與 amylase 輕度上升很常見，但對預後沒有影響（without impact on prognosis）；而且 amylase 最可能來自唾液腺，不是胰臟。",
+    "refs": [
+     [
+      44,
+      "738"
+     ]
+    ]
+   },
+   {
+    "key": "④",
+    "label": "正確",
+    "ok": true,
+    "text": "Atypical EMM（大型 target、中央分布、明顯黏膜糜爛）病人較年輕，且較常與 [i]Mycoplasma pneumoniae[/i] 相關；兒童與青少年 [i]M. pneumoniae[/i] 相關個案的唇與口腔黏膜常侵犯得非常嚴重。課本沒有直接比較兩者的死亡率，「更嚴重」指的是黏膜表現。",
+    "refs": [
+     [
+      43,
+      "723-724"
+     ],
+     [
+      43,
+      "726"
+     ]
+    ]
+   }
+  ]
+ },
+ "102-42": {
+  "summary": "只有④正確，答案 D。",
+  "items": [
+   {
+    "key": "①",
+    "label": "錯誤",
+    "ok": false,
+    "text": "Diclofenac 屬 acetic acid 類 NSAID，是中度風險（moderate risk）；高風險的 NSAID 只有 oxicam 類（如 meloxicam），propionic acid 類（如 ibuprofen）則沒有增加風險。",
+    "refs": [
+     [
+      44,
+      "734"
+     ]
+    ]
+   },
+   {
+    "key": "②",
+    "label": "錯誤",
+    "ok": false,
+    "text": "HLA-B*1502 與 carbamazepine 引起 EN 的關聯在台灣漢人很強、在數個東南亞國家獲得確認，但在日本、韓國不成立，在沒有亞洲血統的歐洲病人中也不存在。",
+    "refs": [
+     [
+      44,
+      "735"
+     ]
+    ]
+   },
+   {
+    "key": "③",
+    "label": "錯誤",
+    "ok": false,
+    "text": "全身性類固醇的使用仍有爭議，不能作為 EN 的主要治療（cannot be recommended as the mainstay）；只有中劑量、短期（數天）可能有益。",
+    "refs": [
+     [
+      44,
+      "743-744"
+     ]
+    ]
+   },
+   {
+    "key": "④",
+    "label": "正確",
+    "ok": true,
+    "text": "SCORTEN 共 7 項：age > 40 years、heart rate > 120/min、cancer or hematologic malignancy、BSA involved > 10%、serum urea > 10 mM、serum bicarbonate < 20 mM、serum glucose > 14 mM。",
+    "refs": [
+     [
+      44,
+      "734"
+     ]
+    ]
+   }
+  ],
+  "flags": [
+   "Fitzpatrick 9e 的 Table 44-2 把 bicarbonate 印成「>20 mM」，但 p.738 內文寫的是「低於 20 mM 表示預後差」，SCORTEN 原始定義也是 <20 mM，應以 <20 mM 為準。"
+  ]
+ },
+ "103-14": {
+  "summary": "Pseudoporphyria 最不會侵犯黏膜，答案 D。",
+  "items": [
+   {
+    "key": "A",
+    "label": "常侵犯黏膜",
+    "ok": false,
+    "text": "Linear IgA dermatosis 的黏膜侵犯是重要表現，口腔病灶可達 70%，嚴重者可出現類似 cicatricial pemphigoid 的眼與口腔病變。",
+    "refs": [
+     [
+      58,
+      "996"
+     ]
+    ]
+   },
+   {
+    "key": "B",
+    "label": "少數侵犯黏膜",
+    "ok": false,
+    "text": "Bullous pemphigoid 約 10% 有黏膜病灶，幾乎只限口腔，且癒合不留疤。比例低，但仍會侵犯。",
+    "refs": [
+     [
+      54,
+      "945"
+     ]
+    ]
+   },
+   {
+    "key": "C",
+    "label": "幾乎都侵犯黏膜",
+    "ok": false,
+    "text": "EN（SJS/TEN）約 90% 有黏膜侵犯，而且幾乎都至少兩處。",
+    "refs": [
+     [
+      44,
+      "736"
+     ]
+    ]
+   },
+   {
+    "key": "D",
+    "label": "本題答案",
+    "ok": true,
+    "text": "Pseudoporphyria 的臨床與病理表現類似 PCT（曝光處水疱、皮膚脆弱），但血漿 porphyrin 沒有明顯上升；ch45 將其歸為單純型（simple）水疱型藥物疹。課本沒有描述黏膜侵犯，是四者中最不會侵犯黏膜的。",
+    "refs": [
+     [
+      124,
+      "2241"
+     ],
+     [
+      45,
+      "750"
+     ]
+    ]
+   }
+  ]
+ },
+ "104-34": {
+  "summary": "四個都是課本列出的危險因子，答案 E。",
+  "items": [
+   {
+    "key": "①",
+    "label": "正確",
+    "ok": true,
+    "text": "體質因子包括藥物代謝酶的藥物遺傳學變異，例如 acetylator phenotype 影響 hydralazine、procainamide、isoniazid 引起藥物性狼瘡的風險；芳香族抗癲癇藥的毒性代謝物無法解毒時易發生過敏症候群。",
+    "refs": [
+     [
+      45,
+      "759-760"
+     ]
+    ]
+   },
+   {
+    "key": "②",
+    "label": "正確",
+    "ok": true,
+    "text": "後天因子：同時使用其他藥物會改變藥物疹的發生頻率。",
+    "refs": [
+     [
+      45,
+      "760"
+     ]
+    ]
+   },
+   {
+    "key": "③",
+    "label": "正確",
+    "ok": true,
+    "text": "特定 HLA class I 對偶基因與嚴重藥物反應相關，例如 HLA-B*1502／carbamazepine 引起的 SJS-TEN、HLA-B*5801／allopurinol、HLA-B*5701／abacavir。",
+    "refs": [
+     [
+      45,
+      "760"
+     ],
+     [
+      44,
+      "735"
+     ]
+    ]
+   },
+   {
+    "key": "④",
+    "label": "正確",
+    "ok": true,
+    "text": "活動性病毒感染會改變藥物疹的發生頻率；藥物過敏症候群常見 HHV-6 再活化。EN 的部分也指出 HIV 感染者風險增加。",
+    "refs": [
+     [
+      45,
+      "760"
+     ],
+     [
+      44,
+      "733"
+     ]
+    ]
+   }
+  ]
+ },
+ "105-21": {
+  "summary": "Serum albumin 不在 SCORTEN 內，答案 D。",
+  "items": [
+   {
+    "key": "A",
+    "label": "是 SCORTEN 指標",
+    "ok": false,
+    "text": "心跳 >120 beats/min，計 1 分。",
+    "refs": [
+     [
+      44,
+      "734"
+     ]
+    ]
+   },
+   {
+    "key": "B",
+    "label": "是 SCORTEN 指標",
+    "ok": false,
+    "text": "Serum glucose >14 mM，計 1 分；高代謝狀態造成胰島素分泌抑制或阻抗，所以血糖是嚴重度指標。",
+    "refs": [
+     [
+      44,
+      "734"
+     ],
+     [
+      44,
+      "738"
+     ]
+    ]
+   },
+   {
+    "key": "C",
+    "label": "是 SCORTEN 指標",
+    "ok": false,
+    "text": "Serum urea >10 mM，計 1 分。",
+    "refs": [
+     [
+      44,
+      "734"
+     ]
+    ]
+   },
+   {
+    "key": "D",
+    "label": "本題答案：不是指標",
+    "ok": true,
+    "text": "大量經皮液體流失會造成低白蛋白血症，但 albumin 並不是 SCORTEN 的項目。SCORTEN 的 7 項：age > 40 years、heart rate > 120/min、cancer or hematologic malignancy、BSA > 10%、serum urea > 10 mM、serum bicarbonate < 20 mM、serum glucose > 14 mM。",
+    "refs": [
+     [
+      44,
+      "734"
+     ],
+     [
+      44,
+      "738"
+     ]
+    ]
+   }
+  ]
+ },
+ "105-23": {
+  "summary": "①③是高風險藥物，答案 A。",
+  "items": [
+   {
+    "key": "①",
+    "label": "高風險",
+    "ok": true,
+    "text": "抗感染用 sulfonamide（cotrimoxazole 等，含 sulfasalazine）屬高風險藥物。",
+    "refs": [
+     [
+      44,
+      "734"
+     ]
+    ]
+   },
+   {
+    "key": "②",
+    "label": "非高風險",
+    "ok": false,
+    "text": "Sulfonylurea 類降血糖藥雖然有 sulfonamide 結構，但沒有增加 SJS/TEN 風險；含 sulfonamide 結構的利尿劑也一樣。",
+    "refs": [
+     [
+      44,
+      "734"
+     ]
+    ]
+   },
+   {
+    "key": "③",
+    "label": "高風險",
+    "ok": true,
+    "text": "Allopurinol 是高風險藥物（在歐洲是最常見的致病藥物）。",
+    "refs": [
+     [
+      44,
+      "733-734"
+     ]
+    ]
+   },
+   {
+    "key": "④",
+    "label": "非高風險",
+    "ok": false,
+    "text": "Aspirin 不在 Table 44-3 的高風險名單中；NSAID 只有 oxicam 類屬高風險。",
+    "refs": [
+     [
+      44,
+      "734"
+     ]
+    ]
+   }
+  ]
+ },
+ "106-27": {
+  "summary": "①③正確，答案 A。",
+  "items": [
+   {
+    "key": "①",
+    "label": "正確",
+    "ok": true,
+    "text": "Granulysin 是 EN 中殺死 keratinocyte 的主要可溶性死亡媒介；水疱液中的濃度遠高於 perforin、granzyme B、Fas-L，在小鼠真皮注射即可造成 EN 樣病灶。",
+    "refs": [
+     [
+      44,
+      "735"
+     ]
+    ]
+   },
+   {
+    "key": "②",
+    "label": "錯誤",
+    "ok": false,
+    "text": "Oxicam 類 NSAID 是高風險，但 diclofenac 是中度風險，aspirin 不在高風險名單中。",
+    "refs": [
+     [
+      44,
+      "734"
+     ]
+    ]
+   },
+   {
+    "key": "③",
+    "label": "正確",
+    "ok": true,
+    "text": "早期病灶中可見 natural killer T cells（NKT）與 drug-specific CD8+ T 淋巴球等細胞毒性細胞，誘發 keratinocyte 大量凋亡。",
+    "refs": [
+     [
+      44,
+      "735"
+     ]
+    ]
+   },
+   {
+    "key": "④",
+    "label": "錯誤",
+    "ok": false,
+    "text": "美國 FDA 建議檢測的對象是漢人（Han Chinese）與泰國（Thai）血統的病人，不是所有亞裔；而且課本中 HLA-B*1502 是與 carbamazepine 引起的 SJS/TEN 相關，沒有列 DRESS。",
+    "refs": [
+     [
+      44,
+      "745"
+     ],
+     [
+      45,
+      "760"
+     ]
+    ]
+   }
+  ]
+ },
+ "107-09": {
+  "summary": "①②③正確，答案 C。",
+  "items": [
+   {
+    "key": "①",
+    "label": "正確",
+    "ok": true,
+    "text": "SCORTEN 7 項：age > 40 years、cancer or hematologic malignancy、heart rate > 120/min、BSA > 10%、serum urea > 10 mM、serum bicarbonate < 20 mM、serum glucose > 14 mM。",
+    "refs": [
+     [
+      44,
+      "734"
+     ]
+    ]
+   },
+   {
+    "key": "②",
+    "label": "正確",
+    "ok": true,
+    "text": "Serum bicarbonate <20 mM 表示預後差，通常是支氣管特異性侵犯造成的呼吸性鹼中毒，較少是代謝性酸中毒。",
+    "refs": [
+     [
+      44,
+      "738"
+     ]
+    ]
+   },
+   {
+    "key": "③",
+    "label": "正確",
+    "ok": true,
+    "text": "急性期最常見的併發症是 sepsis；上皮缺損讓病人容易感染，感染是主要死因。",
+    "refs": [
+     [
+      44,
+      "740"
+     ]
+    ]
+   },
+   {
+    "key": "④",
+    "label": "錯誤",
+    "ok": false,
+    "text": "肺部症狀並不少見：約 25% 病人有早期肺部併發症（呼吸變快、咳嗽），可進展為 ARDS；反而腸胃道侵犯較少見。腎臟侵犯（蛋白尿、血尿、氮血症）也有報告。",
+    "refs": [
+     [
+      44,
+      "737-738"
+     ]
+    ]
+   }
+  ]
+ },
+ "108-44": {
+  "summary": "①②③正確，答案 C。",
+  "items": [
+   {
+    "key": "①",
+    "label": "正確",
+    "ok": true,
+    "text": "Nikolsky sign 是對未起水疱的皮膚施以側向壓力造成表皮剝離，見於病理位在基底膜帶以上的水疱病，包括 pemphigus vulgaris 與 TEN。",
+    "refs": [
+     [
+      1,
+      "12"
+     ],
+     [
+      44,
+      "736"
+     ]
+    ]
+   },
+   {
+    "key": "②",
+    "label": "正確（依官方答案）",
+    "ok": true,
+    "text": "Trousseau syndrome 原指合併胃癌的遊走性血栓靜脈炎，之後擴大為癌症相關高凝狀態，胰臟癌是常見關聯腫瘤；Behçet disease 也有表淺性血栓靜脈炎。注意：課本沒有把 Behçet 的表淺靜脈炎稱為 Trousseau sign。",
+    "refs": [
+     [
+      134,
+      "2443"
+     ],
+     [
+      134,
+      "2460"
+     ],
+     [
+      141,
+      "2574"
+     ]
+    ]
+   },
+   {
+    "key": "③",
+    "label": "正確",
+    "ok": true,
+    "text": "Pseudo-Darier sign：搓揉後病灶暫時變硬或毛髮豎起，見於 congenital smooth muscle hamartoma。",
+    "refs": [
+     [
+      1,
+      "12"
+     ]
+    ]
+   },
+   {
+    "key": "④",
+    "label": "錯誤",
+    "ok": false,
+    "text": "Darier sign 在兒童 urticaria pigmentosa 與 mastocytoma 很明顯，但成人病灶常較不明顯，所以不是「一定」；而且風疹塊可能要數分鐘才出現，不一定在數秒內。",
+    "refs": [
+     [
+      42,
+      "713"
+     ],
+     [
+      1,
+      "12"
+     ]
+    ]
+   }
+  ]
+ },
+ "109-13": {
+  "summary": "四個敘述都正確，答案 E。",
+  "items": [
+   {
+    "key": "①",
+    "label": "正確",
+    "ok": true,
+    "text": "泛發性 FDE 可類似 TEN，但沒有全身性侵犯、色素沉著更明顯；ch44 也指出 generalized bullous FDE 黏膜侵犯輕、沒有內臟併發症，預後好得多。",
+    "refs": [
+     [
+      45,
+      "753-754"
+     ],
+     [
+      44,
+      "739"
+     ]
+    ]
+   },
+   {
+    "key": "②",
+    "label": "正確",
+    "ok": true,
+    "text": "FDE 常見於外生殖器與肛門周圍，但可發生在任何部位。",
+    "refs": [
+     [
+      45,
+      "754"
+     ]
+    ]
+   },
+   {
+    "key": "③",
+    "label": "正確",
+    "ok": true,
+    "text": "FDE 可在服藥後 30 分鐘到 8–16 小時出現。",
+    "refs": [
+     [
+      45,
+      "754"
+     ]
+    ]
+   },
+   {
+    "key": "④",
+    "label": "正確",
+    "ok": true,
+    "text": "最常見的致病藥物是 NSAIDs、acetaminophen 與抗生素。",
+    "refs": [
+     [
+      45,
+      "754"
+     ]
+    ]
+   }
+  ]
+ },
+ "109-42": {
+  "summary": "C 錯誤，答案 C。",
+  "items": [
+   {
+    "key": "A",
+    "label": "正確",
+    "ok": true,
+    "text": "EN 的確切病生理仍不清楚，但藥物是最重要的病因。",
+    "refs": [
+     [
+      44,
+      "733"
+     ]
+    ]
+   },
+   {
+    "key": "B",
+    "label": "正確",
+    "ok": true,
+    "text": "高風險藥物：抗菌用 sulfonamides、芳香族抗癲癇藥、allopurinol、oxicam 類 NSAIDs、lamotrigine、nevirapine。",
+    "refs": [
+     [
+      44,
+      "733"
+     ]
+    ]
+   },
+   {
+    "key": "C",
+    "label": "錯誤（本題答案）",
+    "ok": false,
+    "text": "最具提示性的時間是開始用藥後 4–28 天，風險侷限在用藥前 8 週；不是前三天。前驅期才開始使用的感冒藥、退燒止痛藥常被誤判為元凶（protopathic bias）。",
+    "refs": [
+     [
+      44,
+      "733-734"
+     ],
+     [
+      44,
+      "736"
+     ]
+    ]
+   },
+   {
+    "key": "D",
+    "label": "正確",
+    "ok": true,
+    "text": "已有 [i]Mycoplasma pneumoniae[/i] 感染、病毒感染與疫苗相關 EN 的報告，尤其在兒童。",
+    "refs": [
+     [
+      44,
+      "735"
+     ]
+    ]
+   }
+  ]
+ },
+ "110-30": {
+  "summary": "D 錯誤，答案 D。",
+  "items": [
+   {
+    "key": "A",
+    "label": "正確",
+    "ok": true,
+    "text": "ACLE（malar rash）幾乎總是合併內臟侵犯。",
+    "refs": [
+     [
+      61,
+      "1037"
+     ]
+    ]
+   },
+   {
+    "key": "B",
+    "label": "正確",
+    "ok": true,
+    "text": "SCLE 分為 annular 與 papulosquamous（psoriasiform）兩型。",
+    "refs": [
+     [
+      61,
+      "1038"
+     ]
+    ]
+   },
+   {
+    "key": "C",
+    "label": "正確",
+    "ok": true,
+    "text": "DLE 可因皮膚外傷誘發（Koebner phenomenon）；掀起附著鱗屑可見毛囊角栓（carpet tack sign）。",
+    "refs": [
+     [
+      61,
+      "1045"
+     ]
+    ]
+   },
+   {
+    "key": "D",
+    "label": "錯誤（本題答案）",
+    "ok": false,
+    "text": "依 Gilliam 分類，TEN-like ACLE 屬於 generalized ACLE 的亞型，是 LE-specific 皮膚病變，不是非特異性表現。ch44 也提到 erosive LE 是 EN 的鑑別診斷。",
+    "refs": [
+     [
+      61,
+      "1038"
+     ],
+     [
+      44,
+      "735"
+     ]
+    ]
+   }
+  ]
+ },
+ "111-42": {
+  "summary": "B 正確，答案 B。",
+  "items": [
+   {
+    "key": "A",
+    "label": "錯誤",
+    "ok": false,
+    "text": "推翻 Fas-L 學說的關鍵分子是 granulysin，不是 granzyme B；水疱液中 granulysin 的濃度高於 perforin、granzyme B 與 Fas-L。",
+    "refs": [
+     [
+      44,
+      "735"
+     ]
+    ]
+   },
+   {
+    "key": "B",
+    "label": "正確（本題答案）",
+    "ok": true,
+    "text": "IL-15 已證實與 EN 的嚴重度及死亡率相關。",
+    "refs": [
+     [
+      44,
+      "735"
+     ]
+    ]
+   },
+   {
+    "key": "C",
+    "label": "錯誤",
+    "ok": false,
+    "text": "Cyclosporine 早期使用可能有益；etanercept 可能有益但需極度小心；thalidomide 的隨機對照試驗則因死亡率顯著上升而中止，不能當作有效藥物。",
+    "refs": [
+     [
+      44,
+      "744"
+     ]
+    ]
+   },
+   {
+    "key": "D",
+    "label": "錯誤",
+    "ok": false,
+    "text": "Allopurinol 對應的是 HLA-B*5801；HLA-B*1502 對應 carbamazepine。",
+    "refs": [
+     [
+      44,
+      "735"
+     ]
+    ]
+   }
+  ]
+ },
+ "112-42": {
+  "summary": "①②③正確，答案 C。",
+  "items": [
+   {
+    "key": "①",
+    "label": "正確",
+    "ok": true,
+    "text": "藥物引起的鞭痕狀（flagellated）色素沉著：fluorouracil 與 bleomycin；bleomycin 通常在累積劑量 90–285 mg 後出現。",
+    "refs": [
+     [
+      45,
+      "755"
+     ],
+     [
+      190,
+      "3484"
+     ]
+    ]
+   },
+   {
+    "key": "②",
+    "label": "正確（依官方答案）",
+    "ok": true,
+    "text": "Immune checkpoint inhibitors 常見 lichenoid drug eruption（約 17%），anti-PD-1 治療後也有 bullous pemphigoid 的報告。注意：Fitzpatrick 9e 並未明確寫出 ICI 會引起 SJS/TEN。",
+    "refs": [
+     [
+      32,
+      "537"
+     ],
+     [
+      54,
+      "946"
+     ]
+    ]
+   },
+   {
+    "key": "③",
+    "label": "正確",
+    "ok": true,
+    "text": "台灣漢人中 HLA-B*5801 與 allopurinol 引起的 EN 強烈相關，且關聯強度高於日本與歐洲。",
+    "refs": [
+     [
+      44,
+      "735"
+     ]
+    ]
+   },
+   {
+    "key": "④",
+    "label": "錯誤",
+    "ok": false,
+    "text": "Acetaminophen 正是 FDE 最常見的致病藥物之一（與 NSAIDs、抗生素並列）。",
+    "refs": [
+     [
+      45,
+      "754"
+     ]
+    ]
+   }
+  ]
+ },
+ "114-31": {
+  "summary": "A 正確，答案 A。",
+  "items": [
+   {
+    "key": "A",
+    "label": "正確（本題答案）",
+    "ok": true,
+    "text": "課本的干擾因子例子正是如此：抽菸與飲酒在乾癬病人中較盛行，又與癌症風險相關，研究乾癬與癌症關係時必須考慮。",
+    "refs": [
+     [
+      3,
+      "41"
+     ]
+    ]
+   },
+   {
+    "key": "B",
+    "label": "錯誤",
+    "ok": false,
+    "text": "統計上顯著的關聯不足以推論因果。另外，沒有 HLA-B*1502 的人仍可能發生 carbamazepine 引起的 TEN，例如沒有亞洲血統的歐洲病人就沒有這個關聯。",
+    "refs": [
+     [
+      3,
+      "40-41"
+     ],
+     [
+      44,
+      "735"
+     ]
+    ]
+   },
+   {
+    "key": "C",
+    "label": "錯誤",
+    "ok": false,
+    "text": "課本用的就是這個例子：輕症病人被選去用外用藥、重症被選去用全身性藥物，這是 selection bias，不是 information bias。",
+    "refs": [
+     [
+      3,
+      "41"
+     ]
+    ]
+   },
+   {
+    "key": "D",
+    "label": "錯誤",
+    "ok": false,
+    "text": "NPV 是檢驗陰性的人中真正沒有病的比例（TN / (TN + FN)）。原題附表沒有收錄在題庫原檔中，無法核算數值；官方答案為 A。",
+    "refs": [
+     [
+      3,
+      "46"
+     ]
+    ]
+   }
+  ]
+ },
+ "115-41": {
+  "summary": "B 錯誤，答案 B。",
+  "items": [
+   {
+    "key": "A",
+    "label": "正確",
+    "ok": true,
+    "text": "多數 EM 與感染相關（HSV、[i]Mycoplasma pneumoniae[/i]）；藥物引起 EM 雖有報告，但真正的關聯不太可能，很多其實是類似 EM 的其他疾病。",
+    "refs": [
+     [
+      43,
+      "723"
+     ],
+     [
+      43,
+      "727"
+     ]
+    ]
+   },
+   {
+    "key": "B",
+    "label": "錯誤（本題答案）",
+    "ok": false,
+    "text": "美國 FDA 建議檢測的是漢人與泰國血統的病人，不是所有亞裔；且課本中 HLA-B*1502 是與 carbamazepine 引起的 SJS/TEN 相關，沒有列 DRESS。",
+    "refs": [
+     [
+      44,
+      "745"
+     ],
+     [
+      45,
+      "760"
+     ]
+    ]
+   },
+   {
+    "key": "C",
+    "label": "正確",
+    "ok": true,
+    "text": "藥物過敏症候群（HSR/DRESS）多在接觸藥物後 1–6 週出現；免疫相關甲狀腺功能異常（亢進或低下）可能在症狀出現後 3–12 個月才發生。",
+    "refs": [
+     [
+      45,
+      "750"
+     ]
+    ]
+   },
+   {
+    "key": "D",
+    "label": "正確",
+    "ok": true,
+    "text": "AGEP 是小而單一型態的非毛囊性無菌膿疱，集中在軀幹與皺摺處；常見藥物有 β-lactam、macrolide、quinolone、抗癲癇藥、sulfonamides、diltiazem、terbinafine。",
+    "refs": [
+     [
+      45,
+      "751"
+     ]
+    ]
+   }
+  ]
+ }
+}

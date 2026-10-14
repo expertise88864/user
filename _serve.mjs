@@ -46,7 +46,7 @@ const TYPES = new Map([
 ]);
 
 const COMPRESSIBLE = new Set(['.css', '.html', '.js', '.json', '.svg', '.txt', '.xml']);
-const PUBLIC_DIRECTORIES = new Set(['admin', 'ai', 'assets', 'blog', 'en', 'pagefind', '.well-known']);
+const PUBLIC_DIRECTORIES = new Set(['admin', 'ai', 'assets', 'blog', 'en', 'exam', 'pagefind', '.well-known']);
 const PUBLIC_ROOT_FILES = new Set([
   '404.html', 'about.html', 'admin.html', 'dashboard.html', 'glossary.html', 'index.html',
   'notes.html', 'offline.html', 'privacy.html', 'reset-sw.html', 'support.html', 'tools.html',

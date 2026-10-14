@@ -232,7 +232,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202610141530';
+        s.src = '/blog/blog-article-visuals.min.js?v=202610142300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -867,6 +867,7 @@
       '<nav class="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-1">' +
         '<a href="/" class="block px-3 py-2.5 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="首頁" data-en="Home">首頁</a>' +
         '<a href="/blog/" class="block px-3 py-2.5 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="衛教文章" data-en="Articles">衛教文章</a>' +
+        '<a href="/exam" class="block px-3 py-2 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="皮膚科專科考試" data-en="Board Exam">皮膚科專科考試</a>' +
         '<a href="/about" class="block px-3 py-2 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="關於我" data-en="About">關於我</a>' +
         '<a href="/tools" class="block px-3 py-2 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="量表計算器" data-en="Calculators">量表計算器</a>' +
         '<a href="/glossary" class="block px-3 py-2 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="詞彙字典" data-en="Glossary">詞彙字典</a>' +
@@ -1133,7 +1134,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202610141530';
+        s.src = '/blog/blog-article-reading.min.js?v=202610142300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1169,7 +1170,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202610141530';
+        s.src = '/blog/blog-article-footer.min.js?v=202610142300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1199,7 +1200,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202610141530';
+        s.src = '/blog/blog-calculators.min.js?v=202610142300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1404,7 +1405,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202610141530';
+        s.src = '/blog/blog-hub.min.js?v=202610142300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1436,7 +1437,7 @@
     if (!DN._supportBundleLoading) {
       DN._supportBundleLoading = new Promise(function (resolve, reject) {
         var script = document.createElement('script');
-        script.src = '/blog/blog-support.min.js?v=202610141530';
+        script.src = '/blog/blog-support.min.js?v=202610142300';
         script.onload = function () {
           if (typeof DN.injectSupportUI === 'function') resolve();
           else reject(new Error('Support bundle unavailable'));

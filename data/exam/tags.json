@@ -1,0 +1,6151 @@
+{
+ "101-01": {
+  "fitz": [
+   81,
+   216,
+   196
+  ],
+  "other": [],
+  "topic": "Hyperhidrosis treatment"
+ },
+ "101-02": {
+  "fitz": [
+   68,
+   61,
+   133
+  ],
+  "other": [],
+  "topic": "Neonatal lupus erythematosus"
+ },
+ "101-03": {
+  "fitz": [
+   133,
+   21,
+   137
+  ],
+  "other": [],
+  "topic": "Systemic causes of generalized pruritus"
+ },
+ "101-04": {
+  "fitz": [
+   117
+  ],
+  "other": [],
+  "topic": "LCH poor prognostic factors"
+ },
+ "101-05": {
+  "fitz": [
+   27,
+   41
+  ],
+  "other": [],
+  "topic": "Contact urticaria causes and diagnosis"
+ },
+ "101-06": {
+  "fitz": [
+   138
+  ],
+  "other": [],
+  "topic": "IgA vasculitis (Henoch-Schonlein purpura)"
+ },
+ "101-07": {
+  "fitz": [
+   118
+  ],
+  "other": [],
+  "topic": "Infantile hemangioma"
+ },
+ "101-08": {
+  "fitz": [
+   199,
+   198,
+   76
+  ],
+  "other": [],
+  "topic": "NB-UVB and PUVA phototherapy"
+ },
+ "101-09": {
+  "fitz": [
+   80,
+   104
+  ],
+  "other": [],
+  "topic": "Perioral dermatitis treatment"
+ },
+ "101-10": {
+  "fitz": [
+   160,
+   91,
+   188
+  ],
+  "other": [],
+  "topic": "Onychomycosis"
+ },
+ "101-11": {
+  "fitz": [
+   80,
+   45,
+   194
+  ],
+  "other": [],
+  "topic": "Drug-induced acneiform eruption"
+ },
+ "101-12": {
+  "fitz": [
+   78,
+   186,
+   185
+  ],
+  "other": [],
+  "topic": "Acne vulgaris management"
+ },
+ "101-13": {
+  "fitz": [
+   128,
+   72,
+   63,
+   137
+  ],
+  "other": [],
+  "topic": "Cutaneous calcification types"
+ },
+ "101-14": {
+  "fitz": [
+   65,
+   28,
+   190,
+   192
+  ],
+  "other": [],
+  "topic": "Psoriatic arthritis and systemic therapy"
+ },
+ "101-15": {
+  "fitz": [
+   68,
+   66,
+   128
+  ],
+  "other": [],
+  "topic": "Sjogren, gout, rheumatoid nodule"
+ },
+ "101-16": {
+  "fitz": [
+   158,
+   162,
+   187
+  ],
+  "other": [],
+  "topic": "Actinomycetoma"
+ },
+ "101-17": {
+  "fitz": [
+   25,
+   27
+  ],
+  "other": [],
+  "topic": "Airborne irritant dermatitis"
+ },
+ "101-18": {
+  "fitz": [
+   105,
+   28
+  ],
+  "other": [],
+  "topic": "Pustular psoriasis of pregnancy"
+ },
+ "101-19": {
+  "fitz": [
+   51
+  ],
+  "other": [],
+  "topic": "Porokeratosis malignant potential"
+ },
+ "101-20": {
+  "fitz": [
+   112,
+   167
+  ],
+  "other": [],
+  "topic": "Verrucous carcinoma"
+ },
+ "101-21": {
+  "fitz": [
+   18
+  ],
+  "other": [],
+  "topic": "Mutation types"
+ },
+ "101-22": {
+  "fitz": [
+   160
+  ],
+  "other": [],
+  "topic": "Tinea imbricata pathogen"
+ },
+ "101-23": {
+  "fitz": [
+   24,
+   27
+  ],
+  "other": [],
+  "topic": "Contact allergens and sources"
+ },
+ "101-24": {
+  "fitz": [
+   15,
+   52,
+   150,
+   152,
+   48
+  ],
+  "other": [],
+  "topic": "Desmoglein 1 disorders"
+ },
+ "101-25": {
+  "fitz": [
+   160,
+   150,
+   161,
+   124
+  ],
+  "other": [],
+  "topic": "Wood's lamp fluorescence"
+ },
+ "101-26": {
+  "fitz": [
+   170,
+   172,
+   173,
+   174
+  ],
+  "other": [],
+  "topic": "STD pathogens"
+ },
+ "101-27": {
+  "fitz": [
+   28,
+   45,
+   119
+  ],
+  "other": [],
+  "topic": "Exfoliative dermatitis (no dedicated chapter)"
+ },
+ "101-28": {
+  "fitz": [
+   196,
+   192,
+   28
+  ],
+  "other": [],
+  "topic": "Topical agents: TCIs, calcipotriene, imiquimod"
+ },
+ "101-29": {
+  "fitz": [
+   208,
+   210,
+   209,
+   147,
+   77
+  ],
+  "other": [],
+  "topic": "Laser wavelengths and indications"
+ },
+ "101-30": {
+  "fitz": [
+   50,
+   47,
+   91
+  ],
+  "other": [],
+  "topic": "Calcium pump genodermatoses"
+ },
+ "101-31": {
+  "fitz": [
+   184
+  ],
+  "other": [],
+  "topic": "Systemic glucocorticoid pharmacology"
+ },
+ "101-32": {
+  "fitz": [
+   138,
+   141,
+   66,
+   139
+  ],
+  "other": [],
+  "topic": "Cutaneous vasculitis associations"
+ },
+ "101-33": {
+  "fitz": [
+   2,
+   204,
+   194
+  ],
+  "other": [
+   "mckee"
+  ],
+  "topic": "Dermatofibrosarcoma protuberans"
+ },
+ "101-34": {
+  "fitz": [
+   91,
+   133
+  ],
+  "other": [],
+  "topic": "Clubbing causes"
+ },
+ "101-35": {
+  "fitz": [
+   49
+  ],
+  "other": [],
+  "topic": "Keratosis pilaris"
+ },
+ "101-36": {
+  "fitz": [
+   190,
+   45
+  ],
+  "other": [],
+  "topic": "Methotrexate interactions, chemo reactions"
+ },
+ "101-37": {
+  "fitz": [
+   125,
+   134
+  ],
+  "other": [],
+  "topic": "Systemic AL amyloidosis"
+ },
+ "101-38": {
+  "fitz": [
+   41
+  ],
+  "other": [],
+  "topic": "Urticaria subtypes"
+ },
+ "101-39": {
+  "fitz": [
+   3
+  ],
+  "other": [],
+  "topic": "Evidence levels in EBM"
+ },
+ "101-40": {
+  "fitz": [
+   77,
+   45
+  ],
+  "other": [],
+  "topic": "Blue-gray hyperpigmentation causes"
+ },
+ "101-41": {
+  "fitz": [
+   53,
+   137,
+   133,
+   124
+  ],
+  "other": [],
+  "topic": "Blistering with systemic disease"
+ },
+ "101-42": {
+  "fitz": [
+   215
+  ],
+  "other": [],
+  "topic": "Hyaluronic acid filler complications"
+ },
+ "101-43": {
+  "fitz": [
+   45
+  ],
+  "other": [],
+  "topic": "DRESS clinical features"
+ },
+ "101-44": {
+  "fitz": [
+   47,
+   14
+  ],
+  "other": [],
+  "topic": "Cornified envelope and ceramides"
+ },
+ "101-45": {
+  "fitz": [
+   112
+  ],
+  "other": [],
+  "topic": "High-risk cutaneous SCC"
+ },
+ "101-46": {
+  "fitz": [
+   105,
+   54
+  ],
+  "other": [],
+  "topic": "Pemphigoid gestationis"
+ },
+ "101-47": {
+  "fitz": [
+   43,
+   44
+  ],
+  "other": [],
+  "topic": "Erythema multiforme vs SJS/TEN"
+ },
+ "101-48": {
+  "fitz": [
+   135
+  ],
+  "other": [],
+  "topic": "Neurofibromatosis type 1"
+ },
+ "101-49": {
+  "fitz": [
+   28,
+   190,
+   105,
+   193
+  ],
+  "other": [],
+  "topic": "Psoriasis systemic therapy in pregnancy"
+ },
+ "101-50": {
+  "fitz": [
+   110,
+   111,
+   112
+  ],
+  "other": [],
+  "topic": "Chronic arsenicism"
+ },
+ "102-01": {
+  "fitz": [
+   98
+  ],
+  "other": [],
+  "topic": "Cold injuries"
+ },
+ "102-02": {
+  "fitz": [
+   52,
+   45
+  ],
+  "other": [],
+  "topic": "Drug-induced pemphigus"
+ },
+ "102-03": {
+  "fitz": [
+   169
+  ],
+  "other": [],
+  "topic": "Dengue fever"
+ },
+ "102-04": {
+  "fitz": [
+   6,
+   81,
+   21
+  ],
+  "other": [],
+  "topic": "Eccrine gland innervation"
+ },
+ "102-05": {
+  "fitz": [
+   40
+  ],
+  "other": [],
+  "topic": "Hypereosinophilic syndrome"
+ },
+ "102-06": {
+  "fitz": [
+   60
+  ],
+  "other": [],
+  "topic": "Inherited epidermolysis bullosa"
+ },
+ "102-07": {
+  "fitz": [
+   38,
+   187
+  ],
+  "other": [],
+  "topic": "Subcorneal pustular dermatosis"
+ },
+ "102-08": {
+  "fitz": [
+   105
+  ],
+  "other": [],
+  "topic": "PUPPP"
+ },
+ "102-09": {
+  "fitz": [
+   160
+  ],
+  "other": [],
+  "topic": "Dermatophyte species and infections"
+ },
+ "102-10": {
+  "fitz": [
+   103,
+   121
+  ],
+  "other": [],
+  "topic": "Midline lesions and dysraphism"
+ },
+ "102-11": {
+  "fitz": [
+   91,
+   116,
+   28,
+   154
+  ],
+  "other": [],
+  "topic": "Nail signs"
+ },
+ "102-12": {
+  "fitz": [
+   170,
+   179,
+   156,
+   160
+  ],
+  "other": [],
+  "topic": "Bacterial diseases and pathogens"
+ },
+ "102-13": {
+  "fitz": [
+   37
+  ],
+  "other": [],
+  "topic": "Pyoderma gangrenosum variants"
+ },
+ "102-14": {
+  "fitz": [
+   196,
+   79,
+   186,
+   78
+  ],
+  "other": [],
+  "topic": "Acne and rosacea topical therapy"
+ },
+ "102-15": {
+  "fitz": [
+   27,
+   41
+  ],
+  "other": [],
+  "topic": "Contact urticaria"
+ },
+ "102-16": {
+  "fitz": [
+   92,
+   94,
+   97,
+   130,
+   17
+  ],
+  "other": [],
+  "topic": "Photodermatoses action spectra"
+ },
+ "102-17": {
+  "fitz": [
+   134,
+   37,
+   90
+  ],
+  "other": [],
+  "topic": "Paraneoplastic dermatoses"
+ },
+ "102-18": {
+  "fitz": [
+   124,
+   17
+  ],
+  "other": [],
+  "topic": "Porphyrin metabolism"
+ },
+ "102-19": {
+  "fitz": [
+   47,
+   192
+  ],
+  "other": [],
+  "topic": "Ichthyoses"
+ },
+ "102-20": {
+  "fitz": [
+   154,
+   182,
+   156
+  ],
+  "other": [],
+  "topic": "Cat-scratch disease and cat bites"
+ },
+ "102-21": {
+  "fitz": [
+   196
+  ],
+  "other": [],
+  "topic": "Topical agents causing methemoglobinemia"
+ },
+ "102-22": {
+  "fitz": [
+   207,
+   183
+  ],
+  "other": [],
+  "topic": "Moisturizer humectants"
+ },
+ "102-23": {
+  "fitz": [
+   161,
+   16
+  ],
+  "other": [],
+  "topic": "Malassezia in pityriasis versicolor"
+ },
+ "102-24": {
+  "fitz": [
+   21
+  ],
+  "other": [],
+  "topic": "Cutaneous sensory nerve interactions"
+ },
+ "102-25": {
+  "fitz": [
+   41
+  ],
+  "other": [],
+  "topic": "Cholinergic urticaria"
+ },
+ "102-26": {
+  "fitz": [
+   40,
+   120
+  ],
+  "other": [],
+  "topic": "ALHE vs Kimura disease"
+ },
+ "102-27": {
+  "fitz": [
+   184
+  ],
+  "other": [],
+  "topic": "Systemic corticosteroid adverse effects"
+ },
+ "102-28": {
+  "fitz": [
+   133,
+   21,
+   137
+  ],
+  "other": [],
+  "topic": "Systemic diseases with pruritus"
+ },
+ "102-29": {
+  "fitz": [
+   101
+  ],
+  "other": [],
+  "topic": "Drug abuse soft tissue infections"
+ },
+ "102-30": {
+  "fitz": [
+   45,
+   58,
+   61
+  ],
+  "other": [],
+  "topic": "Cutaneous adverse drug eruptions"
+ },
+ "102-31": {
+  "fitz": [
+   15,
+   52,
+   152,
+   89
+  ],
+  "other": [],
+  "topic": "Desmosome components and diseases"
+ },
+ "102-32": {
+  "fitz": [
+   84,
+   193
+  ],
+  "other": [],
+  "topic": "Hidradenitis suppurativa"
+ },
+ "102-33": {
+  "fitz": [
+   6
+  ],
+  "other": [],
+  "topic": "Sebaceous gland biology"
+ },
+ "102-34": {
+  "fitz": [
+   43
+  ],
+  "other": [],
+  "topic": "Erythema multiforme etiology"
+ },
+ "102-35": {
+  "fitz": [
+   63
+  ],
+  "other": [],
+  "topic": "Systemic sclerosis subtypes"
+ },
+ "102-36": {
+  "fitz": [
+   147
+  ],
+  "other": [],
+  "topic": "Vascular malformation syndromes"
+ },
+ "102-37": {
+  "fitz": [
+   27,
+   162,
+   160,
+   157,
+   156
+  ],
+  "other": [],
+  "topic": "Occupational infections"
+ },
+ "102-38": {
+  "fitz": [
+   97,
+   197,
+   188
+  ],
+  "other": [],
+  "topic": "Photoallergens"
+ },
+ "102-39": {
+  "fitz": [
+   7
+  ],
+  "other": [],
+  "topic": "Hair follicle biology"
+ },
+ "102-40": {
+  "fitz": [
+   79
+  ],
+  "other": [],
+  "topic": "Rosacea"
+ },
+ "102-41": {
+  "fitz": [
+   36
+  ],
+  "other": [],
+  "topic": "Sweet syndrome"
+ },
+ "102-42": {
+  "fitz": [
+   44
+  ],
+  "other": [],
+  "topic": "SJS/TEN risk drugs, SCORTEN"
+ },
+ "102-43": {
+  "fitz": [
+   156
+  ],
+  "other": [],
+  "topic": "Anthrax"
+ },
+ "102-44": {
+  "fitz": [
+   200,
+   110
+  ],
+  "other": [],
+  "topic": "Radiation skin injury"
+ },
+ "102-45": {
+  "fitz": [
+   190,
+   45
+  ],
+  "other": [],
+  "topic": "Chemotherapy cutaneous toxicities"
+ },
+ "102-46": {
+  "fitz": [
+   103,
+   77,
+   147
+  ],
+  "other": [],
+  "topic": "Neonatal birthmarks"
+ },
+ "102-47": {
+  "fitz": [
+   105,
+   28
+  ],
+  "other": [],
+  "topic": "Impetigo herpetiformis"
+ },
+ "102-48": {
+  "fitz": [
+   112
+  ],
+  "other": [],
+  "topic": "High-risk cutaneous SCC"
+ },
+ "102-49": {
+  "fitz": [
+   163,
+   165,
+   31,
+   118,
+   168
+  ],
+  "other": [],
+  "topic": "Human herpesviruses"
+ },
+ "102-50": {
+  "fitz": [
+   53
+  ],
+  "other": [],
+  "topic": "Paraneoplastic pemphigus"
+ },
+ "103-01": {
+  "fitz": [
+   21,
+   6
+  ],
+  "other": [],
+  "topic": "Cutaneous autonomic nerves"
+ },
+ "103-02": {
+  "fitz": [
+   64
+  ],
+  "other": [],
+  "topic": "Causes of phimosis (only LS covered)"
+ },
+ "103-03": {
+  "fitz": [
+   11,
+   10
+  ],
+  "other": [],
+  "topic": "Adaptive immune cells"
+ },
+ "103-04": {
+  "fitz": [
+   31,
+   170
+  ],
+  "other": [],
+  "topic": "Pityriasis rosea vs secondary syphilis"
+ },
+ "103-05": {
+  "fitz": [
+   78
+  ],
+  "other": [],
+  "topic": "Acne pathogenesis mediators"
+ },
+ "103-06": {
+  "fitz": [
+   94
+  ],
+  "other": [],
+  "topic": "Hydroa vacciniforme"
+ },
+ "103-07": {
+  "fitz": [
+   17,
+   106
+  ],
+  "other": [],
+  "topic": "UVA vs UVB effects"
+ },
+ "103-08": {
+  "fitz": [
+   110,
+   200,
+   112
+  ],
+  "other": [],
+  "topic": "Chronic radiation keratosis"
+ },
+ "103-09": {
+  "fitz": [
+   128,
+   137
+  ],
+  "other": [],
+  "topic": "Calciphylaxis"
+ },
+ "103-10": {
+  "fitz": [
+   168,
+   154
+  ],
+  "other": [],
+  "topic": "HIV skin signs by CD4"
+ },
+ "103-11": {
+  "fitz": [
+   193,
+   52
+  ],
+  "other": [],
+  "topic": "Biologic agents"
+ },
+ "103-12": {
+  "fitz": [
+   206,
+   167
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Cryosurgery principles"
+ },
+ "103-13": {
+  "fitz": [
+   3
+  ],
+  "other": [],
+  "topic": "Evidence-based dermatology"
+ },
+ "103-14": {
+  "fitz": [
+   58,
+   54,
+   44,
+   124,
+   97
+  ],
+  "other": [],
+  "topic": "Mucosal involvement in bullous disease"
+ },
+ "103-15": {
+  "fitz": [
+   45
+  ],
+  "other": [],
+  "topic": "Drug-induced exfoliative dermatitis"
+ },
+ "103-16": {
+  "fitz": [
+   40
+  ],
+  "other": [],
+  "topic": "Eosinophilic pustular folliculitis"
+ },
+ "103-17": {
+  "fitz": [
+   86,
+   190
+  ],
+  "other": [],
+  "topic": "Telogen effluvium causes"
+ },
+ "103-18": {
+  "fitz": [
+   137,
+   196
+  ],
+  "other": [],
+  "topic": "Corns (clavus), minimal Fitz coverage"
+ },
+ "103-19": {
+  "fitz": [
+   106
+  ],
+  "other": [],
+  "topic": "Aging stratum corneum"
+ },
+ "103-20": {
+  "fitz": [
+   130,
+   17,
+   19
+  ],
+  "other": [],
+  "topic": "UV DNA damage repair"
+ },
+ "103-21": {
+  "fitz": [
+   119
+  ],
+  "other": [],
+  "topic": "Sezary syndrome"
+ },
+ "103-22": {
+  "fitz": [
+   161,
+   162
+  ],
+  "other": [],
+  "topic": "Fungal infection in immunocompromised"
+ },
+ "103-23": {
+  "fitz": [
+   199
+  ],
+  "other": [],
+  "topic": "Photodynamic therapy"
+ },
+ "103-24": {
+  "fitz": [
+   216,
+   81
+  ],
+  "other": [],
+  "topic": "Botulinum toxin"
+ },
+ "103-25": {
+  "fitz": [
+   101
+  ],
+  "other": [],
+  "topic": "Drug abuse skin effects"
+ },
+ "103-26": {
+  "fitz": [
+   77,
+   210,
+   208
+  ],
+  "other": [],
+  "topic": "Laser for dermal melanocytosis"
+ },
+ "103-27": {
+  "fitz": [
+   28,
+   199,
+   198
+  ],
+  "other": [],
+  "topic": "Palmoplantar pustulosis management"
+ },
+ "103-28": {
+  "fitz": [
+   41
+  ],
+  "other": [],
+  "topic": "Cholinergic urticaria"
+ },
+ "103-29": {
+  "fitz": [
+   34
+  ],
+  "other": [],
+  "topic": "Granuloma annulare"
+ },
+ "103-30": {
+  "fitz": [
+   49
+  ],
+  "other": [],
+  "topic": "Keratosis pilaris"
+ },
+ "103-31": {
+  "fitz": [
+   78,
+   90,
+   137
+  ],
+  "other": [],
+  "topic": "Acne and PCOS"
+ },
+ "103-32": {
+  "fitz": [
+   210,
+   208
+  ],
+  "other": [],
+  "topic": "Tattoo laser paradoxical darkening"
+ },
+ "103-33": {
+  "fitz": [
+   105
+  ],
+  "other": [],
+  "topic": "Intrahepatic cholestasis of pregnancy"
+ },
+ "103-34": {
+  "fitz": [
+   112
+  ],
+  "other": [],
+  "topic": "High-risk cutaneous SCC"
+ },
+ "103-35": {
+  "fitz": [
+   141
+  ],
+  "other": [],
+  "topic": "Behcet disease"
+ },
+ "103-36": {
+  "fitz": [
+   160
+  ],
+  "other": [],
+  "topic": "Black dot tinea capitis"
+ },
+ "103-37": {
+  "fitz": [
+   187
+  ],
+  "other": [],
+  "topic": "Dapsone methemoglobinemia treatment"
+ },
+ "103-38": {
+  "fitz": [
+   217,
+   85
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Hair transplantation"
+ },
+ "103-39": {
+  "fitz": [
+   40,
+   103,
+   131,
+   117
+  ],
+  "other": [
+   "mckee"
+  ],
+  "topic": "Eosinophil-rich histopathology"
+ },
+ "103-40": {
+  "fitz": [
+   91,
+   87,
+   163,
+   133
+  ],
+  "other": [],
+  "topic": "Nail findings and systemic disease"
+ },
+ "103-41": {
+  "fitz": [
+   97,
+   95
+  ],
+  "other": [],
+  "topic": "Photosensitivity evaluation"
+ },
+ "103-42": {
+  "fitz": [
+   91,
+   205,
+   116
+  ],
+  "other": [],
+  "topic": "Longitudinal melanonychia biopsy criteria"
+ },
+ "103-43": {
+  "fitz": [
+   49,
+   70,
+   109,
+   111
+  ],
+  "other": [],
+  "topic": "Rombo syndrome"
+ },
+ "103-44": {
+  "fitz": [
+   108,
+   109
+  ],
+  "other": [],
+  "topic": "Epidermal nevus syndrome"
+ },
+ "103-45": {
+  "fitz": [
+   119
+  ],
+  "other": [],
+  "topic": "Mycosis fungoides"
+ },
+ "103-46": {
+  "fitz": [
+   207,
+   14
+  ],
+  "other": [],
+  "topic": "Skin hydration and moisturizers"
+ },
+ "103-47": {
+  "fitz": [
+   159
+  ],
+  "other": [],
+  "topic": "Leprosy"
+ },
+ "103-48": {
+  "fitz": [
+   77,
+   207
+  ],
+  "other": [],
+  "topic": "Kligman's formula"
+ },
+ "103-49": {
+  "fitz": [
+   149,
+   137
+  ],
+  "other": [],
+  "topic": "Wound healing and dressings"
+ },
+ "103-50": {
+  "fitz": [
+   202,
+   203
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Postoperative wound complications"
+ },
+ "104-01": {
+  "fitz": [
+   76,
+   198
+  ],
+  "other": [],
+  "topic": "Vitiligo features and NB-UVB"
+ },
+ "104-02": {
+  "fitz": [
+   187,
+   13,
+   38,
+   159
+  ],
+  "other": [],
+  "topic": "Dapsone pharmacology and hypersensitivity"
+ },
+ "104-03": {
+  "fitz": [
+   43
+  ],
+  "other": [],
+  "topic": "Erythema multiforme causes and treatment"
+ },
+ "104-04": {
+  "fitz": [
+   117
+  ],
+  "other": [
+   "mckee"
+  ],
+  "topic": "Langerhans cell histiocytosis immunophenotype"
+ },
+ "104-05": {
+  "fitz": [
+   137,
+   67
+  ],
+  "other": [],
+  "topic": "Cutaneous signs of diabetes"
+ },
+ "104-06": {
+  "fitz": [
+   99
+  ],
+  "other": [],
+  "topic": "Burn assessment and care"
+ },
+ "104-07": {
+  "fitz": [
+   199,
+   110,
+   111,
+   78,
+   17
+  ],
+  "other": [],
+  "topic": "Photodynamic therapy principles"
+ },
+ "104-08": {
+  "fitz": [
+   193,
+   28,
+   190
+  ],
+  "other": [],
+  "topic": "Anti-TNF biologics"
+ },
+ "104-09": {
+  "fitz": [
+   162
+  ],
+  "other": [],
+  "topic": "Sporotrichosis"
+ },
+ "104-10": {
+  "fitz": [
+   189,
+   185,
+   78,
+   186,
+   191,
+   165,
+   188
+  ],
+  "other": [],
+  "topic": "Systemic dermatologic drug facts"
+ },
+ "104-11": {
+  "fitz": [
+   142,
+   66
+  ],
+  "other": [],
+  "topic": "Kawasaki vs rheumatic fever"
+ },
+ "104-12": {
+  "fitz": [
+   139,
+   138
+  ],
+  "other": [],
+  "topic": "Vasculitis workup"
+ },
+ "104-13": {
+  "fitz": [
+   97,
+   45,
+   124
+  ],
+  "other": [],
+  "topic": "Phototoxicity and photoallergy"
+ },
+ "104-14": {
+  "fitz": [
+   202
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Surgical antisepsis and infection"
+ },
+ "104-15": {
+  "fitz": [
+   192
+  ],
+  "other": [],
+  "topic": "Cyclosporine adverse effects"
+ },
+ "104-16": {
+  "fitz": [
+   197,
+   17,
+   97
+  ],
+  "other": [],
+  "topic": "UV and sunscreens"
+ },
+ "104-17": {
+  "fitz": [
+   27,
+   99
+  ],
+  "other": [],
+  "topic": "Chemical burn first aid"
+ },
+ "104-18": {
+  "fitz": [
+   188
+  ],
+  "other": [],
+  "topic": "Itraconazole pharmacology"
+ },
+ "104-19": {
+  "fitz": [
+   105,
+   28
+  ],
+  "other": [],
+  "topic": "Dermatoses of pregnancy fetal risk"
+ },
+ "104-20": {
+  "fitz": [
+   77,
+   210
+  ],
+  "other": [],
+  "topic": "Dermal melanocytosis"
+ },
+ "104-21": {
+  "fitz": [
+   87,
+   91
+  ],
+  "other": [],
+  "topic": "Alopecia areata features"
+ },
+ "104-22": {
+  "fitz": [
+   65
+  ],
+  "other": [],
+  "topic": "CASPAR criteria psoriatic arthritis"
+ },
+ "104-23": {
+  "fitz": [
+   34
+  ],
+  "other": [],
+  "topic": "Photosensitive granuloma annulare HIV"
+ },
+ "104-24": {
+  "fitz": [
+   104,
+   103
+  ],
+  "other": [],
+  "topic": "Pediatric skin biopsy pitfalls"
+ },
+ "104-25": {
+  "fitz": [
+   184
+  ],
+  "other": [],
+  "topic": "Systemic glucocorticoids"
+ },
+ "104-26": {
+  "fitz": [
+   15,
+   56,
+   60,
+   53,
+   55,
+   52
+  ],
+  "other": [],
+  "topic": "Bullous diseases target antigens"
+ },
+ "104-27": {
+  "fitz": [
+   24
+  ],
+  "other": [],
+  "topic": "Systemic contact dermatitis"
+ },
+ "104-28": {
+  "fitz": [
+   22
+  ],
+  "other": [],
+  "topic": "Atopic dermatitis histopathology"
+ },
+ "104-29": {
+  "fitz": [
+   40,
+   119,
+   12
+  ],
+  "other": [],
+  "topic": "Sezary syndrome eosinophilia IL-5"
+ },
+ "104-30": {
+  "fitz": [
+   40,
+   34,
+   120
+  ],
+  "other": [
+   "mckee"
+  ],
+  "topic": "Eosinophil-rich dermatoses histology"
+ },
+ "104-31": {
+  "fitz": [
+   104,
+   103,
+   160
+  ],
+  "other": [],
+  "topic": "Infant dermatology treatment"
+ },
+ "104-32": {
+  "fitz": [
+   14,
+   183,
+   207
+  ],
+  "other": [],
+  "topic": "Skin barrier structure function"
+ },
+ "104-33": {
+  "fitz": [
+   32,
+   45
+  ],
+  "other": [],
+  "topic": "Lichenoid drug eruption culprits"
+ },
+ "104-34": {
+  "fitz": [
+   45,
+   44
+  ],
+  "other": [],
+  "topic": "Adverse drug reaction risk factors"
+ },
+ "104-35": {
+  "fitz": [
+   79,
+   210
+  ],
+  "other": [],
+  "topic": "Rosacea triggers and treatment"
+ },
+ "104-36": {
+  "fitz": [
+   24,
+   13
+  ],
+  "other": [],
+  "topic": "Allergic contact dermatitis immunology"
+ },
+ "104-37": {
+  "fitz": [
+   85
+  ],
+  "other": [],
+  "topic": "Finasteride for androgenetic alopecia"
+ },
+ "104-38": {
+  "fitz": [
+   190
+  ],
+  "other": [],
+  "topic": "Methotrexate pharmacology"
+ },
+ "104-39": {
+  "fitz": [
+   91,
+   77,
+   137,
+   168
+  ],
+  "other": [],
+  "topic": "Longitudinal melanonychia causes"
+ },
+ "104-40": {
+  "fitz": [
+   22,
+   12,
+   11
+  ],
+  "other": [],
+  "topic": "Skin-homing T cell chemokines"
+ },
+ "104-41": {
+  "fitz": [
+   35
+  ],
+  "other": [],
+  "topic": "Sarcoidosis prognosis"
+ },
+ "104-42": {
+  "fitz": [
+   191
+  ],
+  "other": [],
+  "topic": "Needlestick viral transmission"
+ },
+ "104-43": {
+  "fitz": [
+   17
+  ],
+  "other": [],
+  "topic": "UVA vs UVB biology"
+ },
+ "104-44": {
+  "fitz": [
+   149,
+   202
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Wound healing and care"
+ },
+ "104-45": {
+  "fitz": [
+   191
+  ],
+  "other": [],
+  "topic": "Antiviral drugs"
+ },
+ "104-46": {
+  "fitz": [
+   208,
+   198,
+   209,
+   76
+  ],
+  "other": [],
+  "topic": "Laser and light sources"
+ },
+ "104-47": {
+  "fitz": [
+   150,
+   186
+  ],
+  "other": [],
+  "topic": "Community-acquired MRSA"
+ },
+ "104-48": {
+  "fitz": [
+   210,
+   208,
+   77
+  ],
+  "other": [],
+  "topic": "Dermatologic laser applications"
+ },
+ "104-49": {
+  "fitz": [
+   50,
+   91
+  ],
+  "other": [],
+  "topic": "Darier and Hailey-Hailey"
+ },
+ "104-50": {
+  "fitz": [
+   162
+  ],
+  "other": [],
+  "topic": "Chromoblastomycosis"
+ },
+ "105-01": {
+  "fitz": [
+   79
+  ],
+  "other": [],
+  "topic": "Rosacea management"
+ },
+ "105-02": {
+  "fitz": [
+   158,
+   162
+  ],
+  "other": [],
+  "topic": "Actinomycetoma vs eumycetoma"
+ },
+ "105-03": {
+  "fitz": [
+   89
+  ],
+  "other": [],
+  "topic": "Loose anagen syndrome"
+ },
+ "105-04": {
+  "fitz": [
+   28,
+   12
+  ],
+  "other": [],
+  "topic": "Psoriasis immunopathogenesis"
+ },
+ "105-05": {
+  "fitz": [
+   114,
+   204
+  ],
+  "other": [
+   "mckee"
+  ],
+  "topic": "Paget disease IHC and treatment"
+ },
+ "105-06": {
+  "fitz": [
+   22,
+   12
+  ],
+  "other": [],
+  "topic": "Atopic dermatitis cytokines"
+ },
+ "105-07": {
+  "fitz": [
+   101
+  ],
+  "other": [],
+  "topic": "Substance abuse skin signs"
+ },
+ "105-08": {
+  "fitz": [
+   185,
+   78
+  ],
+  "other": [],
+  "topic": "Isotretinoin safety"
+ },
+ "105-09": {
+  "fitz": [
+   6,
+   78
+  ],
+  "other": [],
+  "topic": "Sebum lipid composition"
+ },
+ "105-10": {
+  "fitz": [
+   93,
+   95,
+   96,
+   130
+  ],
+  "other": [],
+  "topic": "Photodermatoses epidemiology and mechanisms"
+ },
+ "105-11": {
+  "fitz": [
+   210,
+   24,
+   120,
+   208
+  ],
+  "other": [],
+  "topic": "Tattoo reactions and removal"
+ },
+ "105-12": {
+  "fitz": [
+   132,
+   161
+  ],
+  "other": [],
+  "topic": "Chronic mucocutaneous candidiasis"
+ },
+ "105-13": {
+  "fitz": [
+   160,
+   91
+  ],
+  "other": [],
+  "topic": "Onychomycosis pathogen determination"
+ },
+ "105-14": {
+  "fitz": [
+   76,
+   198,
+   199
+  ],
+  "other": [],
+  "topic": "Vitiligo repigmentation and phototherapy"
+ },
+ "105-15": {
+  "fitz": [
+   76,
+   119,
+   159,
+   75
+  ],
+  "other": [],
+  "topic": "Hypomelanosis differential diagnosis"
+ },
+ "105-16": {
+  "fitz": [
+   204,
+   2,
+   194
+  ],
+  "other": [
+   "mckee"
+  ],
+  "topic": "Dermatofibrosarcoma protuberans"
+ },
+ "105-17": {
+  "fitz": [
+   37
+  ],
+  "other": [],
+  "topic": "Pyoderma gangrenosum variants"
+ },
+ "105-18": {
+  "fitz": [
+   108,
+   33
+  ],
+  "other": [],
+  "topic": "Epidermal nevus"
+ },
+ "105-19": {
+  "fitz": [
+   116
+  ],
+  "other": [],
+  "topic": "Melanoma biopsy and staging"
+ },
+ "105-20": {
+  "fitz": [
+   116,
+   115,
+   168
+  ],
+  "other": [],
+  "topic": "Melanoma risk factors and genetics"
+ },
+ "105-21": {
+  "fitz": [
+   44
+  ],
+  "other": [],
+  "topic": "SCORTEN"
+ },
+ "105-22": {
+  "fitz": [
+   98
+  ],
+  "other": [],
+  "topic": "Cold injury physiology"
+ },
+ "105-23": {
+  "fitz": [
+   44
+  ],
+  "other": [],
+  "topic": "TEN high-risk drugs"
+ },
+ "105-24": {
+  "fitz": [
+   215,
+   216,
+   81
+  ],
+  "other": [],
+  "topic": "Fillers and botulinum toxin"
+ },
+ "105-25": {
+  "fitz": [
+   210,
+   212,
+   208
+  ],
+  "other": [],
+  "topic": "Laser, IPL, endovenous laser"
+ },
+ "105-26": {
+  "fitz": [
+   202,
+   203
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Dermatologic surgery complications"
+ },
+ "105-27": {
+  "fitz": [
+   104,
+   47,
+   178,
+   192,
+   181
+  ],
+  "other": [],
+  "topic": "Pediatric topical systemic toxicity"
+ },
+ "105-28": {
+  "fitz": [
+   150,
+   186,
+   154,
+   156,
+   157
+  ],
+  "other": [],
+  "topic": "Athlete bacterial skin infections"
+ },
+ "105-29": {
+  "fitz": [
+   25
+  ],
+  "other": [],
+  "topic": "Amputee and ostomy skin care"
+ },
+ "105-30": {
+  "fitz": [
+   187,
+   59,
+   158
+  ],
+  "other": [],
+  "topic": "Dapsone indications and toxicity"
+ },
+ "105-31": {
+  "fitz": [
+   138,
+   148
+  ],
+  "other": [],
+  "topic": "Livedoid vasculopathy associations"
+ },
+ "105-32": {
+  "fitz": [
+   15,
+   20,
+   5,
+   50
+  ],
+  "other": [],
+  "topic": "Epidermal structure and DEJ"
+ },
+ "105-33": {
+  "fitz": [
+   3
+  ],
+  "other": [],
+  "topic": "Epidemiologic study design"
+ },
+ "105-34": {
+  "fitz": [
+   149
+  ],
+  "other": [],
+  "topic": "Pressure ulcers"
+ },
+ "105-35": {
+  "fitz": [
+   1,
+   121,
+   135,
+   54,
+   52,
+   35,
+   157
+  ],
+  "other": [],
+  "topic": "Cutaneous clinical signs"
+ },
+ "105-36": {
+  "fitz": [
+   10,
+   11,
+   12
+  ],
+  "other": [],
+  "topic": "Toll-like receptors"
+ },
+ "105-37": {
+  "fitz": [
+   24,
+   13
+  ],
+  "other": [],
+  "topic": "Allergic contact dermatitis immunology"
+ },
+ "105-38": {
+  "fitz": [
+   22,
+   47
+  ],
+  "other": [],
+  "topic": "Atopic dermatitis clinical signs"
+ },
+ "105-39": {
+  "fitz": [
+   28,
+   198,
+   190,
+   185,
+   192
+  ],
+  "other": [],
+  "topic": "Psoriasis treatment in pregnancy"
+ },
+ "105-40": {
+  "fitz": [
+   50,
+   91
+  ],
+  "other": [],
+  "topic": "Darier disease"
+ },
+ "105-41": {
+  "fitz": [
+   123,
+   77
+  ],
+  "other": [],
+  "topic": "Vitamin B12 deficiency"
+ },
+ "105-42": {
+  "fitz": [
+   163
+  ],
+  "other": [],
+  "topic": "Gianotti-Crosti syndrome"
+ },
+ "105-43": {
+  "fitz": [
+   145,
+   63
+  ],
+  "other": [],
+  "topic": "Raynaud nailfold capillaroscopy"
+ },
+ "105-44": {
+  "fitz": [
+   42
+  ],
+  "other": [],
+  "topic": "Pediatric mastocytosis management"
+ },
+ "105-45": {
+  "fitz": [
+   149,
+   202,
+   150,
+   186
+  ],
+  "other": [],
+  "topic": "Wound care and dressings"
+ },
+ "105-46": {
+  "fitz": [
+   18
+  ],
+  "other": [],
+  "topic": "Mosaicism and genetic methods"
+ },
+ "105-47": {
+  "fitz": [
+   27,
+   99,
+   80
+  ],
+  "other": [],
+  "topic": "Occupational dermatoses"
+ },
+ "105-48": {
+  "fitz": [
+   53
+  ],
+  "other": [],
+  "topic": "Paraneoplastic pemphigus"
+ },
+ "105-49": {
+  "fitz": [
+   60,
+   56,
+   15
+  ],
+  "other": [],
+  "topic": "Collagen VII blistering diseases"
+ },
+ "105-50": {
+  "fitz": [
+   47,
+   131,
+   130,
+   103
+  ],
+  "other": [],
+  "topic": "Collodion baby causes"
+ },
+ "106-01": {
+  "fitz": [
+   84,
+   193
+  ],
+  "other": [],
+  "topic": "Hidradenitis suppurativa treatment"
+ },
+ "106-02": {
+  "fitz": [
+   86,
+   85,
+   89
+  ],
+  "other": [],
+  "topic": "Hair pull test"
+ },
+ "106-03": {
+  "fitz": [
+   86
+  ],
+  "other": [],
+  "topic": "Acute telogen effluvium"
+ },
+ "106-04": {
+  "fitz": [
+   207,
+   77
+  ],
+  "other": [],
+  "topic": "Depigmenting agents"
+ },
+ "106-05": {
+  "fitz": [
+   108
+  ],
+  "other": [
+   "mckee"
+  ],
+  "topic": "Clear cell acanthoma"
+ },
+ "106-06": {
+  "fitz": [
+   203,
+   202,
+   201
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Flaps and surgical repair"
+ },
+ "106-07": {
+  "fitz": [
+   45,
+   41,
+   97
+  ],
+  "other": [],
+  "topic": "Cutaneous drug eruptions"
+ },
+ "106-08": {
+  "fitz": [
+   22,
+   11,
+   6,
+   79
+  ],
+  "other": [],
+  "topic": "Cathelicidin LL-37"
+ },
+ "106-09": {
+  "fitz": [
+   24,
+   13
+  ],
+  "other": [],
+  "topic": "Allergic contact dermatitis patch testing"
+ },
+ "106-10": {
+  "fitz": [
+   5,
+   47,
+   22,
+   14
+  ],
+  "other": [],
+  "topic": "Cornified envelope composition"
+ },
+ "106-11": {
+  "fitz": [
+   27,
+   80,
+   196
+  ],
+  "other": [],
+  "topic": "Occupational dermatoses"
+ },
+ "106-12": {
+  "fitz": [
+   205,
+   91
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Nail surgery"
+ },
+ "106-13": {
+  "fitz": [
+   185,
+   78
+  ],
+  "other": [],
+  "topic": "Topical retinoid use"
+ },
+ "106-14": {
+  "fitz": [
+   118,
+   168
+  ],
+  "other": [],
+  "topic": "Kaposi sarcoma"
+ },
+ "106-15": {
+  "fitz": [
+   142
+  ],
+  "other": [],
+  "topic": "Kawasaki disease"
+ },
+ "106-16": {
+  "fitz": [
+   45,
+   190,
+   36
+  ],
+  "other": [],
+  "topic": "Neutrophilic eccrine hidradenitis"
+ },
+ "106-17": {
+  "fitz": [
+   101,
+   106,
+   202
+  ],
+  "other": [],
+  "topic": "Smoking cutaneous effects"
+ },
+ "106-18": {
+  "fitz": [
+   204
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Mohs micrographic surgery"
+ },
+ "106-19": {
+  "fitz": [
+   35,
+   88
+  ],
+  "other": [],
+  "topic": "Sarcoidosis features"
+ },
+ "106-20": {
+  "fitz": [
+   17,
+   199,
+   106,
+   116
+  ],
+  "other": [],
+  "topic": "UV photoaging and carcinogenesis"
+ },
+ "106-21": {
+  "fitz": [
+   187,
+   36,
+   186,
+   195,
+   59,
+   38
+  ],
+  "other": [],
+  "topic": "Drugs targeting neutrophils"
+ },
+ "106-22": {
+  "fitz": [
+   17
+  ],
+  "other": [],
+  "topic": "Cutaneous photobiology"
+ },
+ "106-23": {
+  "fitz": [
+   149
+  ],
+  "other": [],
+  "topic": "Pressure ulcer management"
+ },
+ "106-24": {
+  "fitz": [
+   3
+  ],
+  "other": [],
+  "topic": "Evidence-based dermatology"
+ },
+ "106-25": {
+  "fitz": [
+   188,
+   160,
+   161
+  ],
+  "other": [],
+  "topic": "Topical antifungal use"
+ },
+ "106-26": {
+  "fitz": [
+   31,
+   179,
+   34,
+   46
+  ],
+  "other": [],
+  "topic": "Figurate and papulosquamous eruptions"
+ },
+ "106-27": {
+  "fitz": [
+   44,
+   45
+  ],
+  "other": [],
+  "topic": "SJS/TEN and DRESS"
+ },
+ "106-28": {
+  "fitz": [
+   38,
+   57
+  ],
+  "other": [],
+  "topic": "Subcorneal pustular dermatosis"
+ },
+ "106-29": {
+  "fitz": [
+   21,
+   192,
+   22
+  ],
+  "other": [],
+  "topic": "Itch neurobiology"
+ },
+ "106-30": {
+  "fitz": [
+   22
+  ],
+  "other": [],
+  "topic": "Atopic dermatitis pathogenesis"
+ },
+ "106-31": {
+  "fitz": [
+   209,
+   208
+  ],
+  "other": [],
+  "topic": "Er:YAG vs CO2 laser"
+ },
+ "106-32": {
+  "fitz": [
+   76,
+   116
+  ],
+  "other": [],
+  "topic": "Vitiligo features"
+ },
+ "106-33": {
+  "fitz": [
+   24,
+   184
+  ],
+  "other": [],
+  "topic": "Corticosteroid contact allergy"
+ },
+ "106-34": {
+  "fitz": [
+   112,
+   113,
+   110
+  ],
+  "other": [],
+  "topic": "Merkel cell, SCC, AK"
+ },
+ "106-35": {
+  "fitz": [
+   184
+  ],
+  "other": [],
+  "topic": "Topical steroid tachyphylaxis"
+ },
+ "106-36": {
+  "fitz": [
+   198,
+   199
+  ],
+  "other": [],
+  "topic": "Phototherapy dosing"
+ },
+ "106-37": {
+  "fitz": [
+   168,
+   162,
+   161
+  ],
+  "other": [],
+  "topic": "Fungal infections in AIDS"
+ },
+ "106-38": {
+  "fitz": [
+   178,
+   196
+  ],
+  "other": [],
+  "topic": "Scabies treatment"
+ },
+ "106-39": {
+  "fitz": [
+   42
+  ],
+  "other": [],
+  "topic": "Mastocytosis"
+ },
+ "106-40": {
+  "fitz": [
+   123
+  ],
+  "other": [],
+  "topic": "Zinc deficiency"
+ },
+ "106-41": {
+  "fitz": [
+   160
+  ],
+  "other": [],
+  "topic": "Geophilic dermatophytes"
+ },
+ "106-42": {
+  "fitz": [
+   105,
+   28
+  ],
+  "other": [],
+  "topic": "Impetigo herpetiformis"
+ },
+ "106-43": {
+  "fitz": [
+   103,
+   104,
+   25
+  ],
+  "other": [],
+  "topic": "Diaper dermatitis"
+ },
+ "106-44": {
+  "fitz": [
+   184
+  ],
+  "other": [],
+  "topic": "Systemic glucocorticoid immunology"
+ },
+ "106-45": {
+  "fitz": [
+   64,
+   63
+  ],
+  "other": [],
+  "topic": "Morphea"
+ },
+ "106-46": {
+  "fitz": [
+   75,
+   77,
+   131,
+   103
+  ],
+  "other": [],
+  "topic": "Incontinentia pigmenti"
+ },
+ "106-47": {
+  "fitz": [
+   59,
+   187
+  ],
+  "other": [],
+  "topic": "Dermatitis herpetiformis"
+ },
+ "106-48": {
+  "fitz": [
+   140
+  ],
+  "other": [],
+  "topic": "Erythema elevatum diutinum"
+ },
+ "106-49": {
+  "fitz": [
+   22
+  ],
+  "other": [],
+  "topic": "Atopic dermatitis clinical criteria"
+ },
+ "106-50": {
+  "fitz": [
+   24
+  ],
+  "other": [],
+  "topic": "Eyelid contact dermatitis"
+ },
+ "107-01": {
+  "fitz": [
+   99,
+   102
+  ],
+  "other": [],
+  "topic": "Burn assessment and care"
+ },
+ "107-02": {
+  "fitz": [
+   197,
+   17
+  ],
+  "other": [],
+  "topic": "UV index determinants"
+ },
+ "107-03": {
+  "fitz": [
+   25,
+   24,
+   45
+  ],
+  "other": [],
+  "topic": "Amputee stump and peristomal skin"
+ },
+ "107-04": {
+  "fitz": [
+   103
+  ],
+  "other": [],
+  "topic": "Erythema toxicum neonatorum"
+ },
+ "107-05": {
+  "fitz": [
+   49
+  ],
+  "other": [],
+  "topic": "Keratosis pilaris variants"
+ },
+ "107-06": {
+  "fitz": [
+   103,
+   147,
+   77
+  ],
+  "other": [],
+  "topic": "Nevus simplex and Mongolian spots"
+ },
+ "107-07": {
+  "fitz": [
+   105,
+   28,
+   185
+  ],
+  "other": [],
+  "topic": "Impetigo herpetiformis"
+ },
+ "107-08": {
+  "fitz": [
+   43
+  ],
+  "other": [],
+  "topic": "Erythema multiforme"
+ },
+ "107-09": {
+  "fitz": [
+   44
+  ],
+  "other": [],
+  "topic": "SJS/TEN SCORTEN and complications"
+ },
+ "107-10": {
+  "fitz": [
+   36
+  ],
+  "other": [],
+  "topic": "Sweet syndrome"
+ },
+ "107-11": {
+  "fitz": [
+   40,
+   11
+  ],
+  "other": [],
+  "topic": "Eosinophil biology"
+ },
+ "107-12": {
+  "fitz": [
+   38,
+   45
+  ],
+  "other": [],
+  "topic": "Subcorneal pustular dermatosis vs AGEP"
+ },
+ "107-13": {
+  "fitz": [
+   114
+  ],
+  "other": [],
+  "topic": "Mammary and extramammary Paget"
+ },
+ "107-14": {
+  "fitz": [
+   111,
+   19
+  ],
+  "other": [],
+  "topic": "Gorlin syndrome"
+ },
+ "107-15": {
+  "fitz": [
+   115
+  ],
+  "other": [],
+  "topic": "Acral nevus dermoscopy"
+ },
+ "107-16": {
+  "fitz": [
+   188,
+   160
+  ],
+  "other": [],
+  "topic": "Oral antifungal pregnancy categories"
+ },
+ "107-17": {
+  "fitz": [
+   65,
+   190
+  ],
+  "other": [],
+  "topic": "Psoriatic arthritis diagnosis and treatment"
+ },
+ "107-18": {
+  "fitz": [
+   160,
+   188
+  ],
+  "other": [],
+  "topic": "Topical antifungals for dermatophytes"
+ },
+ "107-19": {
+  "fitz": [
+   169
+  ],
+  "other": [],
+  "topic": "Dengue clinical features"
+ },
+ "107-20": {
+  "fitz": [
+   134
+  ],
+  "other": [],
+  "topic": "Necrolytic migratory erythema"
+ },
+ "107-21": {
+  "fitz": [
+   170,
+   179,
+   163,
+   150
+  ],
+  "other": [],
+  "topic": "Disease-pathogen matching"
+ },
+ "107-22": {
+  "fitz": [
+   154,
+   182,
+   156
+  ],
+  "other": [],
+  "topic": "Cat scratch disease and bites"
+ },
+ "107-23": {
+  "fitz": [
+   14,
+   47,
+   22,
+   5,
+   28
+  ],
+  "other": [],
+  "topic": "Filaggrin"
+ },
+ "107-24": {
+  "fitz": [
+   47,
+   89,
+   192,
+   14
+  ],
+  "other": [],
+  "topic": "Netherton syndrome"
+ },
+ "107-25": {
+  "fitz": [
+   53
+  ],
+  "other": [],
+  "topic": "Paraneoplastic pemphigus"
+ },
+ "107-26": {
+  "fitz": [
+   86,
+   190
+  ],
+  "other": [],
+  "topic": "Anagen effluvium causes"
+ },
+ "107-27": {
+  "fitz": [
+   109,
+   130
+  ],
+  "other": [],
+  "topic": "Muir-Torre syndrome"
+ },
+ "107-28": {
+  "fitz": [
+   20,
+   7,
+   112,
+   210
+  ],
+  "other": [],
+  "topic": "Skin of color differences"
+ },
+ "107-29": {
+  "fitz": [
+   3
+  ],
+  "other": [],
+  "topic": "Evidence-based medicine levels"
+ },
+ "107-30": {
+  "fitz": [
+   84,
+   193
+  ],
+  "other": [],
+  "topic": "Hidradenitis suppurativa"
+ },
+ "107-31": {
+  "fitz": [
+   75,
+   77,
+   131,
+   18
+  ],
+  "other": [],
+  "topic": "Whorled pigmentation disorders"
+ },
+ "107-32": {
+  "fitz": [
+   204,
+   111
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Mohs indications for BCC"
+ },
+ "107-33": {
+  "fitz": [
+   216,
+   201
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Botulinum toxin glabellar lines"
+ },
+ "107-34": {
+  "fitz": [
+   215
+  ],
+  "other": [],
+  "topic": "Hyaluronic acid filler complications"
+ },
+ "107-35": {
+  "fitz": [
+   212
+  ],
+  "other": [],
+  "topic": "Varicose vein treatment"
+ },
+ "107-36": {
+  "fitz": [
+   193,
+   28
+  ],
+  "other": [],
+  "topic": "Biologic targets"
+ },
+ "107-37": {
+  "fitz": [
+   183,
+   184
+  ],
+  "other": [],
+  "topic": "Regional percutaneous absorption"
+ },
+ "107-38": {
+  "fitz": [
+   192
+  ],
+  "other": [],
+  "topic": "Cyclosporine adverse effects"
+ },
+ "107-39": {
+  "fitz": [
+   163,
+   31,
+   168
+  ],
+  "other": [],
+  "topic": "Human herpesviruses"
+ },
+ "107-40": {
+  "fitz": [
+   141
+  ],
+  "other": [],
+  "topic": "Behcet disease"
+ },
+ "107-41": {
+  "fitz": [
+   116,
+   115
+  ],
+  "other": [],
+  "topic": "Melanoma risk and nevi"
+ },
+ "107-42": {
+  "fitz": [
+   118
+  ],
+  "other": [],
+  "topic": "Infantile hemangioma"
+ },
+ "107-43": {
+  "fitz": [
+   119
+  ],
+  "other": [],
+  "topic": "Mycosis fungoides early features"
+ },
+ "107-44": {
+  "fitz": [
+   22
+  ],
+  "other": [],
+  "topic": "Atopic dermatitis treatment"
+ },
+ "107-45": {
+  "fitz": [
+   6,
+   9,
+   189
+  ],
+  "other": [],
+  "topic": "Thermoregulation and sweating"
+ },
+ "107-46": {
+  "fitz": [
+   97
+  ],
+  "other": [],
+  "topic": "Exogenous photosensitivity"
+ },
+ "107-47": {
+  "fitz": [
+   56,
+   61
+  ],
+  "other": [],
+  "topic": "Bullous SLE"
+ },
+ "107-48": {
+  "fitz": [
+   27,
+   24,
+   25,
+   76
+  ],
+  "other": [],
+  "topic": "Occupational skin disease"
+ },
+ "107-49": {
+  "fitz": [
+   17,
+   123,
+   197
+  ],
+  "other": [],
+  "topic": "Vitamin D synthesis"
+ },
+ "107-50": {
+  "fitz": [
+   17,
+   19
+  ],
+  "other": [],
+  "topic": "UVA vs UVB effects"
+ },
+ "108-01": {
+  "fitz": [
+   47,
+   103
+  ],
+  "other": [],
+  "topic": "Collodion baby"
+ },
+ "108-02": {
+  "fitz": [
+   21,
+   196,
+   189,
+   133
+  ],
+  "other": [],
+  "topic": "Antipruritic therapy"
+ },
+ "108-03": {
+  "fitz": [
+   28,
+   91
+  ],
+  "other": [],
+  "topic": "Nail psoriasis features"
+ },
+ "108-04": {
+  "fitz": [
+   53,
+   59,
+   58,
+   52
+  ],
+  "other": [],
+  "topic": "Bullous disease and lymphoproliferative"
+ },
+ "108-05": {
+  "fitz": [
+   105
+  ],
+  "other": [],
+  "topic": "Pregnancy dermatoses fetal risk"
+ },
+ "108-06": {
+  "fitz": [
+   168,
+   40,
+   166
+  ],
+  "other": [],
+  "topic": "HIV-associated skin signs"
+ },
+ "108-07": {
+  "fitz": [
+   79
+  ],
+  "other": [],
+  "topic": "Rosacea treatment"
+ },
+ "108-08": {
+  "fitz": [
+   2,
+   150,
+   164,
+   52,
+   43,
+   60
+  ],
+  "other": [
+   "mckee"
+  ],
+  "topic": "Blister cleavage levels"
+ },
+ "108-09": {
+  "fitz": [
+   94,
+   95,
+   123,
+   93
+  ],
+  "other": [],
+  "topic": "Photodermatoses and pellagra"
+ },
+ "108-10": {
+  "fitz": [
+   109,
+   110,
+   112,
+   167
+  ],
+  "other": [],
+  "topic": "Genital SCC and sebaceous neoplasms"
+ },
+ "108-11": {
+  "fitz": [
+   150,
+   98,
+   27,
+   137
+  ],
+  "other": [],
+  "topic": "MRSA, sports ACD, corns, frostbite"
+ },
+ "108-12": {
+  "fitz": [
+   210,
+   208,
+   120,
+   24
+  ],
+  "other": [],
+  "topic": "Tattoo reactions and removal"
+ },
+ "108-13": {
+  "fitz": [
+   198,
+   17
+  ],
+  "other": [],
+  "topic": "UV spectrum biology"
+ },
+ "108-14": {
+  "fitz": [
+   134,
+   62
+  ],
+  "other": [],
+  "topic": "Cutaneous signs of internal malignancy"
+ },
+ "108-15": {
+  "fitz": [
+   106
+  ],
+  "other": [],
+  "topic": "Aging skin histology"
+ },
+ "108-16": {
+  "fitz": [
+   103,
+   140,
+   59,
+   37
+  ],
+  "other": [
+   "mckee"
+  ],
+  "topic": "Neutrophilic histology"
+ },
+ "108-17": {
+  "fitz": [
+   40,
+   168
+  ],
+  "other": [],
+  "topic": "Eosinophilic pustular folliculitis"
+ },
+ "108-18": {
+  "fitz": [
+   111,
+   49,
+   70,
+   109
+  ],
+  "other": [],
+  "topic": "Hereditary BCC syndromes"
+ },
+ "108-19": {
+  "fitz": [
+   113
+  ],
+  "other": [],
+  "topic": "Merkel cell carcinoma"
+ },
+ "108-20": {
+  "fitz": [
+   161,
+   188
+  ],
+  "other": [],
+  "topic": "Malassezia folliculitis treatment"
+ },
+ "108-21": {
+  "fitz": [
+   121,
+   135
+  ],
+  "other": [],
+  "topic": "Neural tumors"
+ },
+ "108-22": {
+  "fitz": [
+   163
+  ],
+  "other": [],
+  "topic": "Measles"
+ },
+ "108-23": {
+  "fitz": [
+   163
+  ],
+  "other": [],
+  "topic": "Erythema infectiosum"
+ },
+ "108-24": {
+  "fitz": [
+   103,
+   164
+  ],
+  "other": [],
+  "topic": "Neonatal skin conditions"
+ },
+ "108-25": {
+  "fitz": [
+   118
+  ],
+  "other": [],
+  "topic": "Infantile hemangioma"
+ },
+ "108-26": {
+  "fitz": [
+   18,
+   47,
+   131
+  ],
+  "other": [],
+  "topic": "Inheritance patterns"
+ },
+ "108-27": {
+  "fitz": [
+   50
+  ],
+  "other": [],
+  "topic": "Acantholytic disorders"
+ },
+ "108-28": {
+  "fitz": [
+   105,
+   54,
+   56
+  ],
+  "other": [],
+  "topic": "Pemphigoid gestationis and EBA"
+ },
+ "108-29": {
+  "fitz": [
+   187,
+   59,
+   140
+  ],
+  "other": [],
+  "topic": "Dapsone"
+ },
+ "108-30": {
+  "fitz": [
+   43
+  ],
+  "other": [],
+  "topic": "Erythema multiforme"
+ },
+ "108-31": {
+  "fitz": [
+   129
+  ],
+  "other": [],
+  "topic": "Graft-versus-host disease"
+ },
+ "108-32": {
+  "fitz": [
+   203
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Island pedicle flap"
+ },
+ "108-33": {
+  "fitz": [
+   64
+  ],
+  "other": [],
+  "topic": "Morphea"
+ },
+ "108-34": {
+  "fitz": [
+   110,
+   141,
+   32,
+   168
+  ],
+  "other": [],
+  "topic": "Oral mucosal lesions"
+ },
+ "108-35": {
+  "fitz": [
+   24,
+   45
+  ],
+  "other": [],
+  "topic": "Allergic contact dermatitis"
+ },
+ "108-36": {
+  "fitz": [
+   38
+  ],
+  "other": [],
+  "topic": "Subcorneal pustular dermatosis"
+ },
+ "108-37": {
+  "fitz": [
+   212
+  ],
+  "other": [],
+  "topic": "Lower-extremity venous anatomy"
+ },
+ "108-38": {
+  "fitz": [
+   188,
+   162,
+   97
+  ],
+  "other": [],
+  "topic": "Oral antifungals"
+ },
+ "108-39": {
+  "fitz": [
+   84
+  ],
+  "other": [],
+  "topic": "Hidradenitis suppurativa"
+ },
+ "108-40": {
+  "fitz": [
+   65
+  ],
+  "other": [],
+  "topic": "Reactive and psoriatic arthritis"
+ },
+ "108-41": {
+  "fitz": [
+   196,
+   192,
+   81,
+   178
+  ],
+  "other": [],
+  "topic": "Topical medications"
+ },
+ "108-42": {
+  "fitz": [
+   183,
+   184,
+   185
+  ],
+  "other": [],
+  "topic": "Topical absorption and steroids"
+ },
+ "108-43": {
+  "fitz": [
+   76
+  ],
+  "other": [],
+  "topic": "Vitiligo"
+ },
+ "108-44": {
+  "fitz": [
+   1,
+   52,
+   44,
+   134,
+   121,
+   42
+  ],
+  "other": [],
+  "topic": "Clinical signs in dermatology"
+ },
+ "108-45": {
+  "fitz": [
+   210,
+   208
+  ],
+  "other": [],
+  "topic": "Laser indications"
+ },
+ "108-46": {
+  "fitz": [
+   86
+  ],
+  "other": [],
+  "topic": "Acute telogen effluvium"
+ },
+ "108-47": {
+  "fitz": [
+   32,
+   88,
+   91
+  ],
+  "other": [],
+  "topic": "Lichen planus variants"
+ },
+ "108-48": {
+  "fitz": [
+   201
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Facial danger zones"
+ },
+ "108-49": {
+  "fitz": [
+   26
+  ],
+  "other": [],
+  "topic": "Seborrheic dermatitis"
+ },
+ "108-50": {
+  "fitz": [
+   22,
+   12,
+   193
+  ],
+  "other": [],
+  "topic": "Atopic dermatitis immunopathogenesis"
+ },
+ "109-01": {
+  "fitz": [
+   115,
+   116
+  ],
+  "other": [],
+  "topic": "Congenital melanocytic nevus"
+ },
+ "109-02": {
+  "fitz": [
+   106
+  ],
+  "other": [],
+  "topic": "Intrinsic vs extrinsic aging"
+ },
+ "109-03": {
+  "fitz": [
+   216,
+   81
+  ],
+  "other": [],
+  "topic": "Botulinum toxin injection"
+ },
+ "109-04": {
+  "fitz": [
+   136
+  ],
+  "other": [],
+  "topic": "Tuberous sclerosis complex"
+ },
+ "109-05": {
+  "fitz": [
+   148
+  ],
+  "other": [],
+  "topic": "Livedo reticularis"
+ },
+ "109-06": {
+  "fitz": [
+   117
+  ],
+  "other": [],
+  "topic": "Langerhans cell histiocytosis"
+ },
+ "109-07": {
+  "fitz": [
+   187,
+   78
+  ],
+  "other": [],
+  "topic": "Dapsone"
+ },
+ "109-08": {
+  "fitz": [
+   42
+  ],
+  "other": [],
+  "topic": "Mastocytosis"
+ },
+ "109-09": {
+  "fitz": [
+   28,
+   91,
+   8
+  ],
+  "other": [],
+  "topic": "Psoriatic nail changes"
+ },
+ "109-10": {
+  "fitz": [
+   11,
+   10
+  ],
+  "other": [],
+  "topic": "Innate immunity of skin"
+ },
+ "109-11": {
+  "fitz": [
+   129
+  ],
+  "other": [],
+  "topic": "Chronic GVHD"
+ },
+ "109-12": {
+  "fitz": [
+   124
+  ],
+  "other": [],
+  "topic": "Porphyrias"
+ },
+ "109-13": {
+  "fitz": [
+   45,
+   44
+  ],
+  "other": [],
+  "topic": "Fixed drug eruption"
+ },
+ "109-14": {
+  "fitz": [
+   10,
+   11
+  ],
+  "other": [],
+  "topic": "Adaptive immunity of skin"
+ },
+ "109-15": {
+  "fitz": [
+   159,
+   187
+  ],
+  "other": [],
+  "topic": "Leprosy treatment"
+ },
+ "109-16": {
+  "fitz": [
+   131,
+   132
+  ],
+  "other": [],
+  "topic": "Hypohidrotic ectodermal dysplasia"
+ },
+ "109-17": {
+  "fitz": [
+   78,
+   90,
+   137
+  ],
+  "other": [],
+  "topic": "Hyperandrogenic adult acne"
+ },
+ "109-18": {
+  "fitz": [
+   126,
+   117
+  ],
+  "other": [],
+  "topic": "Xanthomas"
+ },
+ "109-19": {
+  "fitz": [
+   52,
+   193
+  ],
+  "other": [],
+  "topic": "Rituximab for pemphigus"
+ },
+ "109-20": {
+  "fitz": [
+   51
+  ],
+  "other": [],
+  "topic": "Porokeratosis malignant potential"
+ },
+ "109-21": {
+  "fitz": [
+   64
+  ],
+  "other": [],
+  "topic": "Morphea clinical features"
+ },
+ "109-22": {
+  "fitz": [
+   88
+  ],
+  "other": [],
+  "topic": "Primary cicatricial alopecia"
+ },
+ "109-23": {
+  "fitz": [
+   97
+  ],
+  "other": [],
+  "topic": "Phototoxicity vs photoallergy"
+ },
+ "109-24": {
+  "fitz": [
+   41,
+   193
+  ],
+  "other": [],
+  "topic": "Chronic urticaria"
+ },
+ "109-25": {
+  "fitz": [
+   112
+  ],
+  "other": [],
+  "topic": "cSCC high-risk factors"
+ },
+ "109-26": {
+  "fitz": [
+   113
+  ],
+  "other": [],
+  "topic": "Merkel cell carcinoma"
+ },
+ "109-27": {
+  "fitz": [
+   184
+  ],
+  "other": [],
+  "topic": "Glucocorticoids and live vaccines"
+ },
+ "109-28": {
+  "fitz": [
+   71,
+   137
+  ],
+  "other": [],
+  "topic": "Acquired perforating dermatosis"
+ },
+ "109-29": {
+  "fitz": [
+   178
+  ],
+  "other": [],
+  "topic": "Scabies"
+ },
+ "109-30": {
+  "fitz": [
+   162,
+   158,
+   188
+  ],
+  "other": [],
+  "topic": "Deep fungal infections"
+ },
+ "109-31": {
+  "fitz": [
+   63,
+   145
+  ],
+  "other": [],
+  "topic": "SSc Raynaud digital ulcers"
+ },
+ "109-32": {
+  "fitz": [
+   149
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Wound dressings"
+ },
+ "109-33": {
+  "fitz": [
+   114
+  ],
+  "other": [],
+  "topic": "Extramammary Paget prognosis"
+ },
+ "109-34": {
+  "fitz": [
+   181,
+   179
+  ],
+  "other": [],
+  "topic": "Insect repellents"
+ },
+ "109-35": {
+  "fitz": [
+   170
+  ],
+  "other": [],
+  "topic": "Syphilis serology"
+ },
+ "109-36": {
+  "fitz": [
+   202,
+   203
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Perioperative dermatologic surgery"
+ },
+ "109-37": {
+  "fitz": [
+   119,
+   185,
+   196
+  ],
+  "other": [],
+  "topic": "Mycosis fungoides"
+ },
+ "109-38": {
+  "fitz": [
+   210,
+   208
+  ],
+  "other": [],
+  "topic": "Tattoo laser selection"
+ },
+ "109-39": {
+  "fitz": [
+   207,
+   78
+  ],
+  "other": [],
+  "topic": "Sebum-reducing agents"
+ },
+ "109-40": {
+  "fitz": [
+   205
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Nail surgery"
+ },
+ "109-41": {
+  "fitz": [
+   22,
+   16
+  ],
+  "other": [],
+  "topic": "Atopic dermatitis and S. aureus"
+ },
+ "109-42": {
+  "fitz": [
+   44
+  ],
+  "other": [],
+  "topic": "TEN causes"
+ },
+ "109-43": {
+  "fitz": [
+   198,
+   199
+  ],
+  "other": [],
+  "topic": "NB-UVB vs PUVA indications"
+ },
+ "109-44": {
+  "fitz": [
+   215,
+   216,
+   201
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Fillers, botox, facial anatomy"
+ },
+ "109-45": {
+  "fitz": [
+   123
+  ],
+  "other": [],
+  "topic": "Nutritional deficiency dermatoses"
+ },
+ "109-46": {
+  "fitz": [
+   183,
+   24
+  ],
+  "other": [],
+  "topic": "Topical vehicle additives"
+ },
+ "109-47": {
+  "fitz": [
+   35,
+   73
+  ],
+  "other": [],
+  "topic": "Sarcoidosis"
+ },
+ "109-48": {
+  "fitz": [
+   198,
+   28
+  ],
+  "other": [],
+  "topic": "Phototherapy for psoriasis"
+ },
+ "109-49": {
+  "fitz": [
+   103
+  ],
+  "other": [],
+  "topic": "Neonatal transient conditions"
+ },
+ "109-50": {
+  "fitz": [
+   134,
+   36,
+   117
+  ],
+  "other": [],
+  "topic": "Paraneoplastic dermatoses"
+ },
+ "110-01": {
+  "fitz": [
+   28,
+   91
+  ],
+  "other": [],
+  "topic": "Psoriasis pathogenesis and comorbidity"
+ },
+ "110-02": {
+  "fitz": [
+   81,
+   103
+  ],
+  "other": [],
+  "topic": "Miliaria types"
+ },
+ "110-03": {
+  "fitz": [
+   105
+  ],
+  "other": [],
+  "topic": "Pregnancy dermatoses fetal risk"
+ },
+ "110-04": {
+  "fitz": [
+   106,
+   197,
+   207,
+   20
+  ],
+  "other": [],
+  "topic": "Skin antioxidant systems"
+ },
+ "110-05": {
+  "fitz": [
+   193,
+   28,
+   185,
+   190,
+   192,
+   198
+  ],
+  "other": [],
+  "topic": "Psoriasis treatment with IBD, pregnancy"
+ },
+ "110-06": {
+  "fitz": [
+   118,
+   147
+  ],
+  "other": [],
+  "topic": "Vascular tumors"
+ },
+ "110-07": {
+  "fitz": [
+   168
+  ],
+  "other": [],
+  "topic": "Oral hairy leukoplakia"
+ },
+ "110-08": {
+  "fitz": [
+   190,
+   192,
+   185,
+   85
+  ],
+  "other": [],
+  "topic": "Drugs and male fertility"
+ },
+ "110-09": {
+  "fitz": [
+   40,
+   168
+  ],
+  "other": [],
+  "topic": "Eosinophilic pustular folliculitis"
+ },
+ "110-10": {
+  "fitz": [
+   41,
+   189
+  ],
+  "other": [],
+  "topic": "Chronic spontaneous urticaria"
+ },
+ "110-11": {
+  "fitz": [
+   110,
+   199,
+   167,
+   112
+  ],
+  "other": [],
+  "topic": "Epidermal precancerous lesions"
+ },
+ "110-12": {
+  "fitz": [
+   45,
+   77,
+   97,
+   61,
+   195,
+   194
+  ],
+  "other": [],
+  "topic": "Cutaneous drug reactions"
+ },
+ "110-13": {
+  "fitz": [
+   196
+  ],
+  "other": [],
+  "topic": "Topical keratolytic agents"
+ },
+ "110-14": {
+  "fitz": [
+   109,
+   130
+  ],
+  "other": [],
+  "topic": "Muir-Torre syndrome"
+ },
+ "110-15": {
+  "fitz": [
+   142
+  ],
+  "other": [],
+  "topic": "Kawasaki disease"
+ },
+ "110-16": {
+  "fitz": [
+   149
+  ],
+  "other": [],
+  "topic": "Wound healing phases"
+ },
+ "110-17": {
+  "fitz": [
+   121,
+   77,
+   103
+  ],
+  "other": [],
+  "topic": "Smooth muscle hamartoma"
+ },
+ "110-18": {
+  "fitz": [
+   160,
+   161
+  ],
+  "other": [],
+  "topic": "Wood lamp in fungal infections"
+ },
+ "110-19": {
+  "fitz": [
+   149,
+   73
+  ],
+  "other": [],
+  "topic": "Wound care principles"
+ },
+ "110-20": {
+  "fitz": [
+   125
+  ],
+  "other": [],
+  "topic": "Amyloidosis"
+ },
+ "110-21": {
+  "fitz": [
+   114
+  ],
+  "other": [
+   "mckee"
+  ],
+  "topic": "Extramammary Paget disease"
+ },
+ "110-22": {
+  "fitz": [
+   37,
+   39
+  ],
+  "other": [],
+  "topic": "Pyoderma gangrenosum workup"
+ },
+ "110-23": {
+  "fitz": [
+   127
+  ],
+  "other": [],
+  "topic": "Fabry disease"
+ },
+ "110-24": {
+  "fitz": [
+   54,
+   55
+  ],
+  "other": [],
+  "topic": "Bullous pemphigoid"
+ },
+ "110-25": {
+  "fitz": [
+   158
+  ],
+  "other": [],
+  "topic": "Nocardiosis"
+ },
+ "110-26": {
+  "fitz": [
+   204,
+   201,
+   202
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Mohs surgery and facial anatomy"
+ },
+ "110-27": {
+  "fitz": [
+   22,
+   189,
+   193
+  ],
+  "other": [],
+  "topic": "Atopic dermatitis clinical and treatment"
+ },
+ "110-28": {
+  "fitz": [
+   174
+  ],
+  "other": [],
+  "topic": "Granuloma inguinale"
+ },
+ "110-29": {
+  "fitz": [
+   208,
+   210
+  ],
+  "other": [],
+  "topic": "Laser principles and tattoos"
+ },
+ "110-30": {
+  "fitz": [
+   61,
+   44
+  ],
+  "other": [],
+  "topic": "Cutaneous lupus erythematosus"
+ },
+ "110-31": {
+  "fitz": [
+   137,
+   34
+  ],
+  "other": [],
+  "topic": "Diabetic skin manifestations"
+ },
+ "110-32": {
+  "fitz": [
+   147
+  ],
+  "other": [],
+  "topic": "Vascular malformations"
+ },
+ "110-33": {
+  "fitz": [
+   139
+  ],
+  "other": [],
+  "topic": "ANCA-associated vasculitis"
+ },
+ "110-34": {
+  "fitz": [
+   76
+  ],
+  "other": [],
+  "topic": "Vitiligo"
+ },
+ "110-35": {
+  "fitz": [
+   145
+  ],
+  "other": [],
+  "topic": "Primary Raynaud phenomenon"
+ },
+ "110-36": {
+  "fitz": [
+   52,
+   57
+  ],
+  "other": [],
+  "topic": "Pemphigus variants"
+ },
+ "110-37": {
+  "fitz": [
+   159
+  ],
+  "other": [],
+  "topic": "Leprosy"
+ },
+ "110-38": {
+  "fitz": [
+   128,
+   109
+  ],
+  "other": [],
+  "topic": "Calcium deposition disorders"
+ },
+ "110-39": {
+  "fitz": [
+   48
+  ],
+  "other": [],
+  "topic": "Palmoplantar keratodermas"
+ },
+ "110-40": {
+  "fitz": [
+   65
+  ],
+  "other": [],
+  "topic": "Psoriatic arthritis"
+ },
+ "110-41": {
+  "fitz": [
+   116,
+   194
+  ],
+  "other": [],
+  "topic": "Melanoma workup and therapy"
+ },
+ "110-42": {
+  "fitz": [
+   203,
+   201
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Flaps and excision design"
+ },
+ "110-43": {
+  "fitz": [
+   205
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Nail surgery"
+ },
+ "110-44": {
+  "fitz": [
+   157
+  ],
+  "other": [],
+  "topic": "QuantiFERON TB test"
+ },
+ "110-45": {
+  "fitz": [
+   190
+  ],
+  "other": [],
+  "topic": "Azathioprine"
+ },
+ "110-46": {
+  "fitz": [
+   60
+  ],
+  "other": [],
+  "topic": "Inherited epidermolysis bullosa"
+ },
+ "110-47": {
+  "fitz": [
+   35
+  ],
+  "other": [],
+  "topic": "Sarcoidosis systemic evaluation"
+ },
+ "110-48": {
+  "fitz": [
+   92,
+   93,
+   94,
+   95
+  ],
+  "other": [],
+  "topic": "Idiopathic photodermatoses"
+ },
+ "110-49": {
+  "fitz": [
+   50
+  ],
+  "other": [],
+  "topic": "Acantholytic disorders"
+ },
+ "110-50": {
+  "fitz": [
+   131,
+   48
+  ],
+  "other": [],
+  "topic": "Ectodermal dysplasias"
+ },
+ "111-01": {
+  "fitz": [
+   23,
+   21
+  ],
+  "other": [],
+  "topic": "Prurigo nodularis"
+ },
+ "111-02": {
+  "fitz": [
+   28,
+   105,
+   91
+  ],
+  "other": [],
+  "topic": "Pustular psoriasis variants"
+ },
+ "111-03": {
+  "fitz": [
+   29
+  ],
+  "other": [],
+  "topic": "Pityriasis rubra pilaris"
+ },
+ "111-04": {
+  "fitz": [
+   103,
+   108,
+   121
+  ],
+  "other": [],
+  "topic": "Midline lesions CNS association"
+ },
+ "111-05": {
+  "fitz": [
+   84
+  ],
+  "other": [],
+  "topic": "Hidradenitis suppurativa"
+ },
+ "111-06": {
+  "fitz": [
+   100,
+   88
+  ],
+  "other": [],
+  "topic": "Trichotillomania"
+ },
+ "111-07": {
+  "fitz": [
+   97
+  ],
+  "other": [],
+  "topic": "Phototoxicity vs photoallergy"
+ },
+ "111-08": {
+  "fitz": [
+   73,
+   157
+  ],
+  "other": [],
+  "topic": "Erythema nodosum vs induratum"
+ },
+ "111-09": {
+  "fitz": [
+   78,
+   185,
+   80,
+   187,
+   186
+  ],
+  "other": [],
+  "topic": "Acne treatment"
+ },
+ "111-10": {
+  "fitz": [
+   76,
+   75
+  ],
+  "other": [],
+  "topic": "Vitiligo"
+ },
+ "111-11": {
+  "fitz": [
+   72
+  ],
+  "other": [],
+  "topic": "Cutis laxa"
+ },
+ "111-12": {
+  "fitz": [
+   28,
+   193,
+   192,
+   183,
+   196
+  ],
+  "other": [],
+  "topic": "Plaque psoriasis management"
+ },
+ "111-13": {
+  "fitz": [
+   45,
+   80
+  ],
+  "other": [],
+  "topic": "Drug-induced acneiform eruptions"
+ },
+ "111-14": {
+  "fitz": [
+   77,
+   190
+  ],
+  "other": [],
+  "topic": "Reticulate hyperpigmentation"
+ },
+ "111-15": {
+  "fitz": [
+   11,
+   10,
+   13
+  ],
+  "other": [],
+  "topic": "Memory T cell subsets"
+ },
+ "111-16": {
+  "fitz": [
+   124
+  ],
+  "other": [],
+  "topic": "Porphyria cutanea tarda"
+ },
+ "111-17": {
+  "fitz": [
+   129
+  ],
+  "other": [],
+  "topic": "Chronic GVHD"
+ },
+ "111-18": {
+  "fitz": [
+   47,
+   15,
+   5,
+   14,
+   89
+  ],
+  "other": [],
+  "topic": "Skin barrier and desquamation"
+ },
+ "111-19": {
+  "fitz": [
+   137,
+   67,
+   71,
+   34
+  ],
+  "other": [],
+  "topic": "Diabetic skin manifestations"
+ },
+ "111-20": {
+  "fitz": [
+   123
+  ],
+  "other": [],
+  "topic": "Zinc and skin"
+ },
+ "111-21": {
+  "fitz": [
+   147
+  ],
+  "other": [],
+  "topic": "Capillary malformation"
+ },
+ "111-22": {
+  "fitz": [
+   148
+  ],
+  "other": [],
+  "topic": "Arterial and venous disease"
+ },
+ "111-23": {
+  "fitz": [
+   65
+  ],
+  "other": [],
+  "topic": "Psoriatic arthritis"
+ },
+ "111-24": {
+  "fitz": [
+   22,
+   196,
+   193
+  ],
+  "other": [],
+  "topic": "Atopic dermatitis pathogenesis treatment"
+ },
+ "111-25": {
+  "fitz": [
+   159
+  ],
+  "other": [],
+  "topic": "Leprosy"
+ },
+ "111-26": {
+  "fitz": [
+   168
+  ],
+  "other": [],
+  "topic": "AIDS-defining illnesses"
+ },
+ "111-27": {
+  "fitz": [
+   169
+  ],
+  "other": [],
+  "topic": "Dengue fever"
+ },
+ "111-28": {
+  "fitz": [
+   157,
+   154,
+   152,
+   150
+  ],
+  "other": [],
+  "topic": "Culture-negative infectious lesions"
+ },
+ "111-29": {
+  "fitz": [
+   202
+  ],
+  "other": [],
+  "topic": "Preoperative antiplatelet supplements"
+ },
+ "111-30": {
+  "fitz": [
+   202
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Local anesthetic complications"
+ },
+ "111-31": {
+  "fitz": [
+   201,
+   122
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Frontalis-associated lipoma excision"
+ },
+ "111-32": {
+  "fitz": [
+   198,
+   199,
+   97,
+   42
+  ],
+  "other": [],
+  "topic": "Phototherapy effects"
+ },
+ "111-33": {
+  "fitz": [
+   33,
+   32
+  ],
+  "other": [],
+  "topic": "Lichen striatus and planus"
+ },
+ "111-34": {
+  "fitz": [
+   37,
+   141,
+   39
+  ],
+  "other": [],
+  "topic": "Pyoderma gangrenosum"
+ },
+ "111-35": {
+  "fitz": [
+   180
+  ],
+  "other": [],
+  "topic": "Scrub typhus"
+ },
+ "111-36": {
+  "fitz": [
+   126,
+   137
+  ],
+  "other": [],
+  "topic": "Xanthomas"
+ },
+ "111-37": {
+  "fitz": [
+   116
+  ],
+  "other": [],
+  "topic": "Melanoma staging and genetics"
+ },
+ "111-38": {
+  "fitz": [
+   110,
+   112,
+   111
+  ],
+  "other": [],
+  "topic": "Actinic and arsenic keratosis"
+ },
+ "111-39": {
+  "fitz": [
+   63,
+   145
+  ],
+  "other": [],
+  "topic": "Systemic sclerosis"
+ },
+ "111-40": {
+  "fitz": [
+   45,
+   97,
+   52,
+   61,
+   124
+  ],
+  "other": [],
+  "topic": "Drug-induced autoimmune reactions"
+ },
+ "111-41": {
+  "fitz": [
+   170
+  ],
+  "other": [],
+  "topic": "Syphilis"
+ },
+ "111-42": {
+  "fitz": [
+   44
+  ],
+  "other": [],
+  "topic": "SJS/TEN pathogenesis and treatment"
+ },
+ "111-43": {
+  "fitz": [
+   201
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "SMAS anatomy"
+ },
+ "111-44": {
+  "fitz": [
+   208
+  ],
+  "other": [],
+  "topic": "Laser-tissue interaction"
+ },
+ "111-45": {
+  "fitz": [
+   138,
+   144,
+   140,
+   39,
+   41
+  ],
+  "other": [],
+  "topic": "Cutaneous vasculitis variants"
+ },
+ "111-46": {
+  "fitz": [
+   189
+  ],
+  "other": [],
+  "topic": "Antihistamines"
+ },
+ "111-47": {
+  "fitz": [
+   5,
+   14,
+   47,
+   22
+  ],
+  "other": [],
+  "topic": "Filaggrin"
+ },
+ "111-48": {
+  "fitz": [
+   62
+  ],
+  "other": [],
+  "topic": "Dermatomyositis"
+ },
+ "111-49": {
+  "fitz": [
+   52,
+   53
+  ],
+  "other": [],
+  "topic": "Pemphigus and paraneoplastic pemphigus"
+ },
+ "111-50": {
+  "fitz": [
+   114,
+   113,
+   118,
+   2
+  ],
+  "other": [
+   "mckee"
+  ],
+  "topic": "Immunohistochemistry stains"
+ },
+ "112-01": {
+  "fitz": [
+   88,
+   89,
+   48,
+   47,
+   160
+  ],
+  "other": [],
+  "topic": "Hair disorders and alopecia"
+ },
+ "112-02": {
+  "fitz": [
+   170
+  ],
+  "other": [],
+  "topic": "Congenital syphilis"
+ },
+ "112-03": {
+  "fitz": [
+   170,
+   172,
+   173,
+   174
+  ],
+  "other": [],
+  "topic": "Genital ulcer STD differential"
+ },
+ "112-04": {
+  "fitz": [
+   182
+  ],
+  "other": [],
+  "topic": "Sea urchin injury"
+ },
+ "112-05": {
+  "fitz": [
+   112
+  ],
+  "other": [],
+  "topic": "cSCC high-risk factors"
+ },
+ "112-06": {
+  "fitz": [
+   115,
+   116
+  ],
+  "other": [],
+  "topic": "Congenital nevus and melanoma"
+ },
+ "112-07": {
+  "fitz": [
+   78,
+   80,
+   103,
+   92
+  ],
+  "other": [],
+  "topic": "Acne variants and workup"
+ },
+ "112-08": {
+  "fitz": [
+   181
+  ],
+  "other": [],
+  "topic": "Hymenoptera stings"
+ },
+ "112-09": {
+  "fitz": [
+   17
+  ],
+  "other": [],
+  "topic": "UV and immune response"
+ },
+ "112-10": {
+  "fitz": [
+   206
+  ],
+  "other": [],
+  "topic": "Cryotherapy"
+ },
+ "112-11": {
+  "fitz": [
+   19,
+   17,
+   130
+  ],
+  "other": [],
+  "topic": "UV-induced mutations"
+ },
+ "112-12": {
+  "fitz": [
+   205,
+   91
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Nail procedures"
+ },
+ "112-13": {
+  "fitz": [
+   132,
+   161
+  ],
+  "other": [],
+  "topic": "Hyper-IgE syndrome and CMC"
+ },
+ "112-14": {
+  "fitz": [
+   161,
+   91
+  ],
+  "other": [],
+  "topic": "Candidal nail disease"
+ },
+ "112-15": {
+  "fitz": [
+   160,
+   188
+  ],
+  "other": [],
+  "topic": "Superficial fungal infections"
+ },
+ "112-16": {
+  "fitz": [
+   135
+  ],
+  "other": [],
+  "topic": "Neurofibromatosis type 1"
+ },
+ "112-17": {
+  "fitz": [
+   129
+  ],
+  "other": [],
+  "topic": "Acute and chronic GVHD"
+ },
+ "112-18": {
+  "fitz": [
+   42
+  ],
+  "other": [],
+  "topic": "Mastocytosis"
+ },
+ "112-19": {
+  "fitz": [
+   178,
+   105
+  ],
+  "other": [],
+  "topic": "Scabies in pregnancy and infants"
+ },
+ "112-20": {
+  "fitz": [
+   181,
+   180,
+   176,
+   179,
+   177
+  ],
+  "other": [],
+  "topic": "Insect vectors and DEET"
+ },
+ "112-21": {
+  "fitz": [
+   62,
+   61
+  ],
+  "other": [],
+  "topic": "Dermatomyositis"
+ },
+ "112-22": {
+  "fitz": [
+   113
+  ],
+  "other": [],
+  "topic": "Merkel cell carcinoma"
+ },
+ "112-23": {
+  "fitz": [
+   116
+  ],
+  "other": [],
+  "topic": "Melanoma subtypes and mutations"
+ },
+ "112-24": {
+  "fitz": [
+   70
+  ],
+  "other": [],
+  "topic": "Striae and anetoderma"
+ },
+ "112-25": {
+  "fitz": [
+   28,
+   105
+  ],
+  "other": [],
+  "topic": "Pustular psoriasis variants"
+ },
+ "112-26": {
+  "fitz": [
+   40,
+   120
+  ],
+  "other": [],
+  "topic": "Kimura disease vs ALHE"
+ },
+ "112-27": {
+  "fitz": [
+   97,
+   199,
+   124
+  ],
+  "other": [],
+  "topic": "Photosensitivity reactions"
+ },
+ "112-28": {
+  "fitz": [
+   34,
+   137
+  ],
+  "other": [],
+  "topic": "Granuloma annulare"
+ },
+ "112-29": {
+  "fitz": [
+   14
+  ],
+  "other": [],
+  "topic": "Tight junctions"
+ },
+ "112-30": {
+  "fitz": [
+   12,
+   194
+  ],
+  "other": [],
+  "topic": "JAK/STAT pathway"
+ },
+ "112-31": {
+  "fitz": [
+   204,
+   112,
+   111,
+   116
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Mohs surgery indications"
+ },
+ "112-32": {
+  "fitz": [
+   92,
+   96,
+   95
+  ],
+  "other": [],
+  "topic": "Photodermatoses distribution"
+ },
+ "112-33": {
+  "fitz": [
+   215
+  ],
+  "other": [],
+  "topic": "Lip augmentation fillers"
+ },
+ "112-34": {
+  "fitz": [
+   202,
+   203,
+   149
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Sutures and perioperative care"
+ },
+ "112-35": {
+  "fitz": [
+   23,
+   21
+  ],
+  "other": [],
+  "topic": "Prurigo nodularis pathogenesis"
+ },
+ "112-36": {
+  "fitz": [
+   25,
+   24
+  ],
+  "other": [],
+  "topic": "Irritant vs allergic dermatitis"
+ },
+ "112-37": {
+  "fitz": [
+   202
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Local and topical anesthetics"
+ },
+ "112-38": {
+  "fitz": [
+   203
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Flaps and skin grafts"
+ },
+ "112-39": {
+  "fitz": [
+   201
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Head and neck danger zones"
+ },
+ "112-40": {
+  "fitz": [
+   124
+  ],
+  "other": [],
+  "topic": "Porphyrias"
+ },
+ "112-41": {
+  "fitz": [
+   141,
+   37,
+   36
+  ],
+  "other": [],
+  "topic": "Pathergy test"
+ },
+ "112-42": {
+  "fitz": [
+   45,
+   77,
+   44,
+   32,
+   54
+  ],
+  "other": [],
+  "topic": "Adverse drug reactions"
+ },
+ "112-43": {
+  "fitz": [
+   43,
+   46,
+   61,
+   66,
+   179,
+   134
+  ],
+  "other": [],
+  "topic": "Annular erythemas"
+ },
+ "112-44": {
+  "fitz": [
+   71,
+   73,
+   74,
+   45,
+   80
+  ],
+  "other": [],
+  "topic": "Drug side effect pairing"
+ },
+ "112-45": {
+  "fitz": [
+   63,
+   64
+  ],
+  "other": [],
+  "topic": "Scleroderma and morphea"
+ },
+ "112-46": {
+  "fitz": [
+   59,
+   53,
+   54,
+   56
+  ],
+  "other": [],
+  "topic": "Autoimmune blistering diseases"
+ },
+ "112-47": {
+  "fitz": [
+   84
+  ],
+  "other": [],
+  "topic": "Hidradenitis suppurativa"
+ },
+ "112-48": {
+  "fitz": [
+   32,
+   64
+  ],
+  "other": [],
+  "topic": "Lichen planus variants"
+ },
+ "112-49": {
+  "fitz": [
+   200,
+   190
+  ],
+  "other": [],
+  "topic": "Radiation dermatitis"
+ },
+ "112-50": {
+  "fitz": [
+   61,
+   62
+  ],
+  "other": [],
+  "topic": "Lupus vs dermatomyositis"
+ },
+ "113-01": {
+  "fitz": [
+   124
+  ],
+  "other": [],
+  "topic": "Porphyria cutanea tarda"
+ },
+ "113-02": {
+  "fitz": [
+   200
+  ],
+  "other": [],
+  "topic": "Radiotherapy effects and indications"
+ },
+ "113-03": {
+  "fitz": [
+   105,
+   28
+  ],
+  "other": [],
+  "topic": "Pregnancy dermatoses with fetal risk"
+ },
+ "113-04": {
+  "fitz": [
+   81
+  ],
+  "other": [],
+  "topic": "Hyperhidrosis systemic drugs"
+ },
+ "113-05": {
+  "fitz": [
+   166
+  ],
+  "other": [],
+  "topic": "Mpox vs smallpox/varicella"
+ },
+ "113-06": {
+  "fitz": [
+   203,
+   149
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Wound repair, Z-plasty, grafts"
+ },
+ "113-07": {
+  "fitz": [
+   216
+  ],
+  "other": [],
+  "topic": "Botulinum toxin complications"
+ },
+ "113-08": {
+  "fitz": [
+   110
+  ],
+  "other": [],
+  "topic": "Bowen disease vs bowenoid papulosis"
+ },
+ "113-09": {
+  "fitz": [
+   167,
+   110
+  ],
+  "other": [],
+  "topic": "Epidermodysplasia verruciformis"
+ },
+ "113-10": {
+  "fitz": [
+   145,
+   63
+  ],
+  "other": [],
+  "topic": "Raynaud nailfold capillaroscopy"
+ },
+ "113-11": {
+  "fitz": [
+   77
+  ],
+  "other": [],
+  "topic": "Prurigo pigmentosa"
+ },
+ "113-12": {
+  "fitz": [
+   73,
+   148,
+   151
+  ],
+  "other": [],
+  "topic": "Lipodermatosclerosis"
+ },
+ "113-13": {
+  "fitz": [
+   45,
+   54,
+   59,
+   58,
+   52
+  ],
+  "other": [],
+  "topic": "Drug-induced bullous diseases"
+ },
+ "113-14": {
+  "fitz": [
+   210,
+   211,
+   206
+  ],
+  "other": [],
+  "topic": "Cosmetic devices and electrosurgery safety"
+ },
+ "113-15": {
+  "fitz": [
+   205,
+   212,
+   206,
+   202
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Nail anesthesia, EVLA, pacemakers"
+ },
+ "113-16": {
+  "fitz": [
+   203
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Skin grafts FTSG vs STSG"
+ },
+ "113-17": {
+  "fitz": [
+   202
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Surgical antiseptics"
+ },
+ "113-18": {
+  "fitz": [
+   39,
+   41
+  ],
+  "other": [],
+  "topic": "Schnitzler syndrome and CAPS"
+ },
+ "113-19": {
+  "fitz": [
+   28,
+   91,
+   65
+  ],
+  "other": [],
+  "topic": "Psoriatic nail changes"
+ },
+ "113-20": {
+  "fitz": [
+   35
+  ],
+  "other": [],
+  "topic": "Sarcoidosis clinical features"
+ },
+ "113-21": {
+  "fitz": [
+   76
+  ],
+  "other": [],
+  "topic": "Vitiligo pathogenesis and JAK inhibitors"
+ },
+ "113-22": {
+  "fitz": [
+   17,
+   97,
+   20
+  ],
+  "other": [],
+  "topic": "UVA vs UVB photobiology"
+ },
+ "113-23": {
+  "fitz": [
+   131,
+   77,
+   75
+  ],
+  "other": [],
+  "topic": "Incontinentia pigmenti stages"
+ },
+ "113-24": {
+  "fitz": [
+   180
+  ],
+  "other": [],
+  "topic": "Scrub typhus"
+ },
+ "113-25": {
+  "fitz": [
+   40,
+   168
+  ],
+  "other": [],
+  "topic": "Eosinophilic pustular folliculitis"
+ },
+ "113-26": {
+  "fitz": [
+   38
+  ],
+  "other": [],
+  "topic": "Subcorneal pustular dermatosis"
+ },
+ "113-27": {
+  "fitz": [
+   37
+  ],
+  "other": [],
+  "topic": "Pyoderma gangrenosum"
+ },
+ "113-28": {
+  "fitz": [
+   172
+  ],
+  "other": [],
+  "topic": "Chancroid"
+ },
+ "113-29": {
+  "fitz": [
+   182,
+   156,
+   154
+  ],
+  "other": [],
+  "topic": "Cat and dog bites"
+ },
+ "113-30": {
+  "fitz": [
+   26,
+   117,
+   103
+  ],
+  "other": [],
+  "topic": "Seborrheic dermatitis"
+ },
+ "113-31": {
+  "fitz": [
+   22,
+   163,
+   164
+  ],
+  "other": [],
+  "topic": "Viral infections in atopic dermatitis"
+ },
+ "113-32": {
+  "fitz": [
+   30
+  ],
+  "other": [],
+  "topic": "Pityriasis lichenoides"
+ },
+ "113-33": {
+  "fitz": [
+   29,
+   28
+  ],
+  "other": [],
+  "topic": "PRP vs psoriasis"
+ },
+ "113-34": {
+  "fitz": [
+   24
+  ],
+  "other": [],
+  "topic": "Topical corticosteroid allergy"
+ },
+ "113-35": {
+  "fitz": [
+   48
+  ],
+  "other": [],
+  "topic": "Palmoplantar keratoderma treatment"
+ },
+ "113-36": {
+  "fitz": [
+   50
+  ],
+  "other": [],
+  "topic": "Darier disease"
+ },
+ "113-37": {
+  "fitz": [
+   62,
+   128,
+   63
+  ],
+  "other": [],
+  "topic": "Dermatomyositis criteria and malignancy"
+ },
+ "113-38": {
+  "fitz": [
+   15,
+   52,
+   53,
+   57,
+   48,
+   60,
+   56
+  ],
+  "other": [],
+  "topic": "Adhesion protein disease targets"
+ },
+ "113-39": {
+  "fitz": [
+   85
+  ],
+  "other": [],
+  "topic": "Androgenetic alopecia"
+ },
+ "113-40": {
+  "fitz": [
+   81,
+   82
+  ],
+  "other": [],
+  "topic": "Hyperhidrosis, anhidrosis, bromhidrosis"
+ },
+ "113-41": {
+  "fitz": [
+   140
+  ],
+  "other": [],
+  "topic": "EED mimic in HIV"
+ },
+ "113-42": {
+  "fitz": [
+   175
+  ],
+  "other": [],
+  "topic": "Gonorrhea"
+ },
+ "113-43": {
+  "fitz": [
+   11,
+   10
+  ],
+  "other": [],
+  "topic": "Cutaneous immune cells"
+ },
+ "113-44": {
+  "fitz": [
+   33,
+   32
+  ],
+  "other": [],
+  "topic": "Lichen nitidus, striatus, planus"
+ },
+ "113-45": {
+  "fitz": [
+   41,
+   189
+  ],
+  "other": [],
+  "topic": "Drugs in urticaria/angioedema"
+ },
+ "113-46": {
+  "fitz": [
+   73
+  ],
+  "other": [],
+  "topic": "Alpha-1-antitrypsin panniculitis"
+ },
+ "113-47": {
+  "fitz": [
+   67
+  ],
+  "other": [],
+  "topic": "Scleredema vs scleromyxedema"
+ },
+ "113-48": {
+  "fitz": [
+   115,
+   116
+  ],
+  "other": [],
+  "topic": "Dysplastic nevus"
+ },
+ "113-49": {
+  "fitz": [
+   112,
+   204
+  ],
+  "other": [],
+  "topic": "cSCC staging and treatment"
+ },
+ "113-50": {
+  "fitz": [
+   110,
+   112
+  ],
+  "other": [],
+  "topic": "Actinic keratosis"
+ },
+ "114-01": {
+  "fitz": [
+   48,
+   50,
+   47
+  ],
+  "other": [],
+  "topic": "PPK in genodermatoses"
+ },
+ "114-02": {
+  "fitz": [
+   172,
+   170,
+   173,
+   174
+  ],
+  "other": [],
+  "topic": "Genital ulcer: chancroid"
+ },
+ "114-03": {
+  "fitz": [
+   170
+  ],
+  "other": [],
+  "topic": "Syphilis serology"
+ },
+ "114-04": {
+  "fitz": [
+   28,
+   193
+  ],
+  "other": [],
+  "topic": "Psoriasis pathogenesis and biologics"
+ },
+ "114-05": {
+  "fitz": [
+   28,
+   91,
+   65
+  ],
+  "other": [],
+  "topic": "Psoriatic nail changes"
+ },
+ "114-06": {
+  "fitz": [
+   22,
+   47
+  ],
+  "other": [],
+  "topic": "Atopic dermatitis pathogenesis, therapy"
+ },
+ "114-07": {
+  "fitz": [
+   33,
+   34,
+   35
+  ],
+  "other": [],
+  "topic": "Self-limited granulomatous/lichenoid diseases"
+ },
+ "114-08": {
+  "fitz": [
+   41
+  ],
+  "other": [],
+  "topic": "Angioedema"
+ },
+ "114-09": {
+  "fitz": [
+   152,
+   150
+  ],
+  "other": [],
+  "topic": "Bacterial toxin-mediated diseases"
+ },
+ "114-10": {
+  "fitz": [
+   166
+  ],
+  "other": [],
+  "topic": "Mpox"
+ },
+ "114-11": {
+  "fitz": [
+   118
+  ],
+  "other": [],
+  "topic": "Kasabach-Merritt phenomenon"
+ },
+ "114-12": {
+  "fitz": [
+   116
+  ],
+  "other": [],
+  "topic": "Melanoma"
+ },
+ "114-13": {
+  "fitz": [
+   125
+  ],
+  "other": [],
+  "topic": "Amyloidosis"
+ },
+ "114-14": {
+  "fitz": [
+   128,
+   62
+  ],
+  "other": [],
+  "topic": "Cutaneous calcification and ossification"
+ },
+ "114-15": {
+  "fitz": [
+   27,
+   24,
+   25,
+   41
+  ],
+  "other": [],
+  "topic": "Occupational contact dermatitis/urticaria"
+ },
+ "114-16": {
+  "fitz": [
+   137,
+   126
+  ],
+  "other": [],
+  "topic": "Endocrine skin manifestations"
+ },
+ "114-17": {
+  "fitz": [
+   133,
+   155,
+   139,
+   91
+  ],
+  "other": [],
+  "topic": "Skin signs of internal disease"
+ },
+ "114-18": {
+  "fitz": [
+   129
+  ],
+  "other": [],
+  "topic": "Graft-versus-host disease"
+ },
+ "114-19": {
+  "fitz": [
+   135
+  ],
+  "other": [],
+  "topic": "Neurofibromatosis"
+ },
+ "114-20": {
+  "fitz": [
+   134,
+   117,
+   47
+  ],
+  "other": [],
+  "topic": "Paraneoplastic dermatoses"
+ },
+ "114-21": {
+  "fitz": [
+   208
+  ],
+  "other": [],
+  "topic": "Laser safety"
+ },
+ "114-22": {
+  "fitz": [
+   15,
+   52,
+   53,
+   57,
+   48,
+   60
+  ],
+  "other": [],
+  "topic": "Adhesion protein disease targets"
+ },
+ "114-23": {
+  "fitz": [
+   212
+  ],
+  "other": [],
+  "topic": "Sclerotherapy complications"
+ },
+ "114-24": {
+  "fitz": [
+   78,
+   185,
+   186
+  ],
+  "other": [],
+  "topic": "Acne treatment"
+ },
+ "114-25": {
+  "fitz": [
+   80,
+   103,
+   78
+  ],
+  "other": [],
+  "topic": "Acne variants and perioral dermatitis"
+ },
+ "114-26": {
+  "fitz": [
+   77,
+   137,
+   32
+  ],
+  "other": [],
+  "topic": "Hypermelanoses"
+ },
+ "114-27": {
+  "fitz": [
+   80,
+   78
+  ],
+  "other": [],
+  "topic": "Acne fulminans and folliculitides"
+ },
+ "114-28": {
+  "fitz": [
+   201,
+   206,
+   202,
+   203
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Temple anatomy and flap repair"
+ },
+ "114-29": {
+  "fitz": [
+   169
+  ],
+  "other": [],
+  "topic": "Chikungunya"
+ },
+ "114-30": {
+  "fitz": [
+   76
+  ],
+  "other": [],
+  "topic": "Vitiligo"
+ },
+ "114-31": {
+  "fitz": [
+   3,
+   44
+  ],
+  "other": [],
+  "topic": "Epidemiology study design"
+ },
+ "114-32": {
+  "fitz": [
+   45
+  ],
+  "other": [],
+  "topic": "AGEP, FDE, DRESS comparison"
+ },
+ "114-33": {
+  "fitz": [
+   40,
+   120
+  ],
+  "other": [],
+  "topic": "Eosinophilic diseases, Kimura, Ofuji"
+ },
+ "114-34": {
+  "fitz": [
+   93,
+   92,
+   95
+  ],
+  "other": [],
+  "topic": "Photodermatoses phototesting"
+ },
+ "114-35": {
+  "fitz": [
+   142
+  ],
+  "other": [],
+  "topic": "Kawasaki disease"
+ },
+ "114-36": {
+  "fitz": [
+   61,
+   98
+  ],
+  "other": [],
+  "topic": "Chilblain lupus"
+ },
+ "114-37": {
+  "fitz": [
+   53
+  ],
+  "other": [],
+  "topic": "Paraneoplastic pemphigus"
+ },
+ "114-38": {
+  "fitz": [
+   205,
+   91
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Nail surgery"
+ },
+ "114-39": {
+  "fitz": [
+   202
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Local anesthetics"
+ },
+ "114-40": {
+  "fitz": [
+   136
+  ],
+  "other": [],
+  "topic": "Tuberous sclerosis complex"
+ },
+ "114-41": {
+  "fitz": [
+   124
+  ],
+  "other": [],
+  "topic": "Porphyrias"
+ },
+ "114-42": {
+  "fitz": [
+   89,
+   47
+  ],
+  "other": [],
+  "topic": "Hair shaft disorders"
+ },
+ "114-43": {
+  "fitz": [
+   101
+  ],
+  "other": [],
+  "topic": "Drug abuse skin signs"
+ },
+ "114-44": {
+  "fitz": [
+   105,
+   28
+  ],
+  "other": [],
+  "topic": "Pregnancy dermatoses"
+ },
+ "114-45": {
+  "fitz": [
+   112,
+   204
+  ],
+  "other": [],
+  "topic": "High-risk SCC"
+ },
+ "114-46": {
+  "fitz": [
+   114
+  ],
+  "other": [
+   "mckee"
+  ],
+  "topic": "Secondary extramammary Paget disease"
+ },
+ "114-47": {
+  "fitz": [
+   117
+  ],
+  "other": [],
+  "topic": "Langerhans cell histiocytosis"
+ },
+ "114-48": {
+  "fitz": [
+   116
+  ],
+  "other": [],
+  "topic": "Melanoma management"
+ },
+ "114-49": {
+  "fitz": [
+   118
+  ],
+  "other": [],
+  "topic": "Infantile hemangioma treatment"
+ },
+ "114-50": {
+  "fitz": [
+   113
+  ],
+  "other": [],
+  "topic": "Merkel cell carcinoma"
+ },
+ "115-01": {
+  "fitz": [
+   119
+  ],
+  "other": [],
+  "topic": "Mycosis fungoides"
+ },
+ "115-02": {
+  "fitz": [
+   196,
+   202
+  ],
+  "other": [],
+  "topic": "EMLA and coal tar"
+ },
+ "115-03": {
+  "fitz": [
+   216
+  ],
+  "other": [],
+  "topic": "Botulinum toxin diffusion side effects"
+ },
+ "115-04": {
+  "fitz": [
+   141
+  ],
+  "other": [],
+  "topic": "Behcet disease"
+ },
+ "115-05": {
+  "fitz": [
+   103,
+   4
+  ],
+  "other": [],
+  "topic": "Neonatal skin barrier"
+ },
+ "115-06": {
+  "fitz": [
+   190
+  ],
+  "other": [],
+  "topic": "Methotrexate and folate"
+ },
+ "115-07": {
+  "fitz": [
+   170,
+   168
+  ],
+  "other": [],
+  "topic": "Syphilis in HIV"
+ },
+ "115-08": {
+  "fitz": [
+   114
+  ],
+  "other": [
+   "mckee"
+  ],
+  "topic": "Primary extramammary Paget disease"
+ },
+ "115-09": {
+  "fitz": [
+   129
+  ],
+  "other": [],
+  "topic": "GVHD pathogenesis and classification"
+ },
+ "115-10": {
+  "fitz": [
+   205,
+   91
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Ingrown nail management"
+ },
+ "115-11": {
+  "fitz": [
+   203,
+   201
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Lip advancement flap design"
+ },
+ "115-12": {
+  "fitz": [
+   24
+  ],
+  "other": [],
+  "topic": "Allergic contact dermatitis"
+ },
+ "115-13": {
+  "fitz": [
+   23,
+   41
+  ],
+  "other": [],
+  "topic": "Prurigo nodularis and urticaria"
+ },
+ "115-14": {
+  "fitz": [
+   110,
+   112
+  ],
+  "other": [],
+  "topic": "Actinic keratosis and arsenic"
+ },
+ "115-15": {
+  "fitz": [
+   65
+  ],
+  "other": [],
+  "topic": "Psoriatic arthritis"
+ },
+ "115-16": {
+  "fitz": [
+   53,
+   54,
+   56,
+   59
+  ],
+  "other": [],
+  "topic": "Bullous disease comorbidities"
+ },
+ "115-17": {
+  "fitz": [
+   67
+  ],
+  "other": [],
+  "topic": "Scleredema"
+ },
+ "115-18": {
+  "fitz": [
+   73,
+   157
+  ],
+  "other": [],
+  "topic": "Panniculitis etiologies"
+ },
+ "115-19": {
+  "fitz": [
+   116,
+   115
+  ],
+  "other": [],
+  "topic": "Melanoma risk and management"
+ },
+ "115-20": {
+  "fitz": [
+   17,
+   20,
+   97
+  ],
+  "other": [],
+  "topic": "UV photobiology"
+ },
+ "115-21": {
+  "fitz": [
+   84
+  ],
+  "other": [],
+  "topic": "Hidradenitis suppurativa"
+ },
+ "115-22": {
+  "fitz": [
+   103
+  ],
+  "other": [],
+  "topic": "ETN vs TNPM"
+ },
+ "115-23": {
+  "fitz": [
+   7,
+   86
+  ],
+  "other": [],
+  "topic": "Hair cycle physiology"
+ },
+ "115-24": {
+  "fitz": [
+   50
+  ],
+  "other": [],
+  "topic": "Darier disease"
+ },
+ "115-25": {
+  "fitz": [
+   207
+  ],
+  "other": [],
+  "topic": "Cosmeceutical ingredients"
+ },
+ "115-26": {
+  "fitz": [
+   76
+  ],
+  "other": [],
+  "topic": "Vitiligo pathogenesis"
+ },
+ "115-27": {
+  "fitz": [
+   22
+  ],
+  "other": [],
+  "topic": "Atopic dermatitis pathogenesis"
+ },
+ "115-28": {
+  "fitz": [
+   179
+  ],
+  "other": [],
+  "topic": "Lyme disease"
+ },
+ "115-29": {
+  "fitz": [
+   185
+  ],
+  "other": [],
+  "topic": "Topical retinoids"
+ },
+ "115-30": {
+  "fitz": [
+   210,
+   208
+  ],
+  "other": [],
+  "topic": "Vascular lasers for telangiectasia"
+ },
+ "115-31": {
+  "fitz": [
+   15,
+   5,
+   52
+  ],
+  "other": [],
+  "topic": "Keratins and desmoglein distribution"
+ },
+ "115-32": {
+  "fitz": [
+   80,
+   79,
+   78
+  ],
+  "other": [],
+  "topic": "Acne and rosacea pathogenesis"
+ },
+ "115-33": {
+  "fitz": [
+   86
+  ],
+  "other": [],
+  "topic": "Telogen effluvium"
+ },
+ "115-34": {
+  "fitz": [
+   32
+  ],
+  "other": [],
+  "topic": "Lichen planus"
+ },
+ "115-35": {
+  "fitz": [
+   193,
+   28,
+   65
+  ],
+  "other": [],
+  "topic": "Psoriasis drug indications"
+ },
+ "115-36": {
+  "fitz": [
+   182,
+   177
+  ],
+  "other": [],
+  "topic": "Marine stings and eruptions"
+ },
+ "115-37": {
+  "fitz": [
+   35
+  ],
+  "other": [],
+  "topic": "Sarcoidosis, lupus pernio"
+ },
+ "115-38": {
+  "fitz": [
+   183,
+   184
+  ],
+  "other": [],
+  "topic": "Topical therapy principles"
+ },
+ "115-39": {
+  "fitz": [
+   36,
+   37
+  ],
+  "other": [],
+  "topic": "Sweet syndrome and PG"
+ },
+ "115-40": {
+  "fitz": [
+   178
+  ],
+  "other": [],
+  "topic": "Scabies and pediculosis treatment"
+ },
+ "115-41": {
+  "fitz": [
+   45,
+   43,
+   44
+  ],
+  "other": [],
+  "topic": "Drug eruptions"
+ },
+ "115-42": {
+  "fitz": [
+   202
+  ],
+  "other": [
+   "kantor"
+  ],
+  "topic": "Preoperative evaluation"
+ },
+ "115-43": {
+  "fitz": [
+   76
+  ],
+  "other": [],
+  "topic": "Vitiligo treatment and prognosis"
+ },
+ "115-44": {
+  "fitz": [
+   137,
+   128
+  ],
+  "other": [],
+  "topic": "Thyroid/parathyroid skin signs"
+ },
+ "115-45": {
+  "fitz": [
+   81
+  ],
+  "other": [],
+  "topic": "Hyperhidrosis"
+ },
+ "115-46": {
+  "fitz": [
+   138,
+   39,
+   148
+  ],
+  "other": [],
+  "topic": "Cutaneous vasculitis syndromes"
+ },
+ "115-47": {
+  "fitz": [
+   150,
+   154,
+   156
+  ],
+  "other": [],
+  "topic": "Bacterial skin infections"
+ },
+ "115-48": {
+  "fitz": [
+   152
+  ],
+  "other": [],
+  "topic": "Scarlet fever"
+ },
+ "115-49": {
+  "fitz": [
+   137,
+   67
+  ],
+  "other": [],
+  "topic": "Diabetic skin diseases"
+ },
+ "115-50": {
+  "fitz": [
+   168,
+   118,
+   160,
+   45
+  ],
+  "other": [],
+  "topic": "HIV skin manifestations"
+ }
+}

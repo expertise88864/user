@@ -14,6 +14,9 @@ NPM = "npm.cmd" if os.name == "nt" else "npm"
 REGEN_STEPS: list[list[str]] = [
     [PY, "_sync_article_navigation.py"],
     [PY, "_gen_site_settings.py"],
+    # Board-exam section (/exam/**) is rebuilt from data/exam/ on the
+    # normalized notes.html shell, before the normalizers below touch it.
+    [PY, "_gen_exam.py"],
     # Complete static hub links from the public catalog before EN generation.
     [PY, "_sync_hub_catalog.py"],
     # CODE_REVIEW TD-46 — _normalize_bilingual_attrs.py was removed from

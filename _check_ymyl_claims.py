@@ -599,6 +599,20 @@ def extraction_selftest() -> list[str]:
     return failures
 
 
+# Board-exam pages (/exam/**) quote the medical society's official question
+# text verbatim inside <div data-ymyl="quoted-exam">. That wording is a cited
+# exam item, not the site's own claim, so it is blanked before scanning; the
+# explanations and notes around it are still audited. The block never nests a
+# <div>, so the first </div> closes it.
+QUOTED_EXAM = re.compile(r'<div class="ex-quote" data-ymyl="quoted-exam">.*?</div>', re.S)
+
+
+def mask_quoted_exam(rel: str, src: str) -> str:
+    if not rel.startswith("exam/"):
+        return src
+    return QUOTED_EXAM.sub(" ", src)
+
+
 def main() -> int:
     # The sentinel, before anything else. Losing it is already DETECTED twice
     # over — "" is a boundary that matches everywhere, so the negation fixtures
@@ -629,7 +643,7 @@ def main() -> int:
                 f"{rel} contains U+E000, which flatten_body() uses as its statement "
                 f"separator — pick a different sentinel before this file ships"
             )
-        for kind, text in published_surfaces(src):
+        for kind, text in published_surfaces(mask_quoted_exam(rel, src)):
             for phrase, ctx in scan_text(text):
                 findings.append(
                     f"{rel} [{kind}]: absolute-cure / sponsorship claim {phrase!r} — …{ctx}…"

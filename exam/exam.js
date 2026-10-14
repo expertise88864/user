@@ -1,0 +1,364 @@
+/* Board-exam review pages (/exam/**): quiz/browse mode, timed year papers,
+ * wrong-answer notebook and Anki export. Pages are fully rendered as static
+ * HTML; this script only adds interaction. Progress lives in localStorage on
+ * this device only. All dynamic text is inserted with textContent. */
+(function () {
+  'use strict';
+  var MODE_KEY = 'dnExamMode';
+  var WRONG_KEY = 'dnExamWrong';
+  var body = document.body;
+
+  function store(key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* storage disabled */ }
+  }
+  function load(key, fallback) {
+    try {
+      var raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch (e) { return fallback; }
+  }
+  function wrongSet() {
+    var list = load(WRONG_KEY, []);
+    return Array.isArray(list) ? list : [];
+  }
+  function markWrong(id, isWrong) {
+    var list = wrongSet().filter(function (x) { return x !== id; });
+    if (isWrong) list.push(id);
+    store(WRONG_KEY, list);
+  }
+
+  function setMode(mode) {
+    body.classList.toggle('ex-quiz', mode === 'quiz');
+    document.querySelectorAll('.ex-mode').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', btn.getAttribute('data-mode') === mode ? 'true' : 'false');
+    });
+    store(MODE_KEY, mode);
+  }
+
+  function resetQuestion(card) {
+    card.classList.remove('ex-done');
+    card.querySelectorAll('.ex-opt').forEach(function (opt) { opt.classList.remove('ex-picked'); });
+    card.querySelectorAll('input[type=radio]').forEach(function (input) { input.checked = false; input.disabled = false; });
+    var result = card.querySelector('.ex-result');
+    if (result) result.textContent = '';
+  }
+
+  function grade(card, silent) {
+    var picked = card.querySelector('input[type=radio]:checked');
+    var result = card.querySelector('.ex-result');
+    if (!picked) {
+      if (!silent && result) result.textContent = '請先選擇一個選項';
+      return null;
+    }
+    var answer = card.getAttribute('data-answer') || '';
+    var ok = answer.indexOf(picked.value) !== -1;
+    card.classList.add('ex-done');
+    picked.closest('.ex-opt').classList.add('ex-picked');
+    card.querySelectorAll('input[type=radio]').forEach(function (input) { input.disabled = true; });
+    if (result) result.textContent = ok ? '答對了' : '答錯了，正確答案是 ' + answer.split('').join('、');
+    markWrong(card.getAttribute('data-qid'), !ok);
+    return ok;
+  }
+
+  function wireQuestion(card) {
+    var submit = card.querySelector('.ex-submit');
+    var reset = card.querySelector('.ex-reset');
+    if (submit) submit.addEventListener('click', function () { grade(card, false); });
+    if (reset) reset.addEventListener('click', function () { resetQuestion(card); });
+    card.querySelectorAll('input[type=radio]').forEach(function (input) {
+      input.addEventListener('change', function () {
+        var result = card.querySelector('.ex-result');
+        if (result) result.textContent = '';
+      });
+    });
+  }
+
+  function wireExamBar(bar) {
+    var timerEl = bar.querySelector('.ex-timer');
+    var scoreEl = bar.querySelector('.ex-score');
+    var startedAt = null;
+    var timer = null;
+    function tick() {
+      var s = Math.floor((Date.now() - startedAt) / 1000);
+      var m = Math.floor(s / 60);
+      timerEl.textContent = (m < 10 ? '0' : '') + m + ':' + (s % 60 < 10 ? '0' : '') + (s % 60);
+    }
+    function start() {
+      setMode('quiz');
+      document.querySelectorAll('.ex-q').forEach(resetQuestion);
+      scoreEl.textContent = '';
+      startedAt = Date.now();
+      if (timer) clearInterval(timer);
+      timer = setInterval(tick, 1000);
+      tick();
+    }
+    var startBtn = bar.querySelector('.ex-start');
+    if (startBtn) startBtn.addEventListener('click', start);
+    bar.querySelector('.ex-finish').addEventListener('click', function () {
+      if (timer) { clearInterval(timer); timer = null; }
+      setMode('quiz');
+      var cards = document.querySelectorAll('.ex-q');
+      var right = 0;
+      var blank = 0;
+      cards.forEach(function (card) {
+        if (card.classList.contains('ex-done')) {
+          if (card.querySelector('.ex-picked[data-correct]')) right += 1;
+          return;
+        }
+        var ok = grade(card, true);
+        if (ok === null) {
+          blank += 1;
+          card.classList.add('ex-done');
+        } else if (ok) {
+          right += 1;
+        }
+      });
+      scoreEl.textContent = '得分 ' + right + ' / ' + cards.length + (blank ? '（未作答 ' + blank + ' 題）' : '');
+    });
+    return { start: start };
+  }
+
+  // ---------------------------------------------------------- review page
+  function el(tag, cls, text) {
+    var node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  // Explanation text marks organism names as [i]Genus species[/i]; render them in italics.
+  function richText(tag, cls, text) {
+    var node = el(tag, cls);
+    String(text).split(/(\[i\].+?\[\/i\])/).forEach(function (part) {
+      if (/^\[i\].+\[\/i\]$/.test(part)) node.appendChild(el('em', null, part.slice(3, -4)));
+      else if (part) node.appendChild(document.createTextNode(part));
+    });
+    return node;
+  }
+
+  function renderCard(q, removable) {
+    var card = el('article', 'ex-q');
+    card.id = 'q-' + q.id;
+    card.setAttribute('data-qid', q.id);
+    card.setAttribute('data-answer', q.answer.join(''));
+    var head = el('header', 'ex-q-head');
+    var link = el('a', null, q.year + ' 年第 ' + q.number + ' 題');
+    link.href = '/exam/year-' + q.year + '#q-' + q.id;
+    var no = el('span', 'ex-q-no');
+    no.appendChild(link);
+    head.appendChild(no);
+    var chips = el('span', 'ex-chips');
+    q.fitz.forEach(function (c) {
+      var chip = el('a', 'ex-chip', 'Ch.' + c);
+      chip.href = '/exam/fitz-' + c + '#q-' + q.id;
+      chips.appendChild(chip);
+    });
+    head.appendChild(chips);
+    card.appendChild(head);
+    card.appendChild(el('p', 'ex-stem', q.stem));
+    if (q.statements) {
+      var ul = el('ul', 'ex-stmts');
+      q.statements.forEach(function (s) {
+        var li = el('li');
+        li.appendChild(el('span', 'ex-stmt-id', s.id));
+        li.appendChild(document.createTextNode(s.text));
+        ul.appendChild(li);
+      });
+      card.appendChild(ul);
+    }
+    var fs = el('fieldset', 'ex-opts');
+    fs.appendChild(el('legend', 'ex-sr', '選項'));
+    Object.keys(q.options).forEach(function (k) {
+      var label = el('label', 'ex-opt');
+      label.setAttribute('data-key', k);
+      if (q.answer.indexOf(k) !== -1) label.setAttribute('data-correct', '');
+      var input = el('input');
+      input.type = 'radio';
+      input.name = 'ans-' + q.id;
+      input.value = k;
+      input.setAttribute('aria-label', '選項 ' + k);
+      label.appendChild(input);
+      label.appendChild(el('span', 'ex-opt-key', k));
+      label.appendChild(el('span', 'ex-opt-text', q.options[k]));
+      fs.appendChild(label);
+    });
+    card.appendChild(fs);
+    var actions = el('div', 'ex-actions');
+    actions.appendChild(el('button', 'ex-submit', '送出答案'));
+    actions.appendChild(el('button', 'ex-reset', '重新作答'));
+    if (removable) {
+      var remove = el('button', 'ex-remove', '移出錯題本');
+      remove.addEventListener('click', function () {
+        markWrong(q.id, false);
+        card.remove();
+      });
+      actions.appendChild(remove);
+    }
+    actions.querySelectorAll('button').forEach(function (b) { b.type = 'button'; });
+    actions.appendChild(el('span', 'ex-result'));
+    card.appendChild(actions);
+    var reveal = el('div', 'ex-reveal');
+    var ans = el('p', 'ex-answer', '官方答案：');
+    ans.appendChild(el('strong', null, q.answer.join('、')));
+    reveal.appendChild(ans);
+    if (q.expl) {
+      reveal.appendChild(richText('p', 'ex-summary', q.expl.summary));
+      var items = el('ul', 'ex-items');
+      q.expl.items.forEach(function (it) {
+        var li = el('li');
+        li.appendChild(el('span', 'ex-item-key', it.key));
+        li.appendChild(el('span', 'ex-item-label', it.label));
+        li.appendChild(richText('span', 'ex-item-text', it.text));
+        li.appendChild(el('span', 'ex-item-refs', 'Fitzpatrick 9e ' + it.refs.join('；')));
+        items.appendChild(li);
+      });
+      reveal.appendChild(items);
+    } else {
+      reveal.appendChild(el('p', 'ex-pending', '詳解尚未整理。'));
+    }
+    card.appendChild(reveal);
+    wireQuestion(card);
+    return card;
+  }
+
+  var dataPromise = null;
+  function examData() {
+    if (!dataPromise) {
+      dataPromise = fetch('/exam/exam-data.json', { credentials: 'same-origin' })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+    }
+    return dataPromise;
+  }
+
+  function renderReview(list) {
+    examData().then(function (data) {
+      var wrong = wrongSet();
+      var byId = {};
+      data.questions.forEach(function (q) { byId[q.id] = q; });
+      while (list.firstChild) list.removeChild(list.firstChild);
+      var rows = wrong.map(function (id) { return byId[id]; }).filter(Boolean);
+      if (!rows.length) {
+        list.appendChild(el('p', 'ex-pending', '目前沒有錯題。到章節頁或年度考古卷切換「作答模式」作答，答錯的題目會出現在這裡。'));
+        return;
+      }
+      list.appendChild(el('p', 'ex-meta', '共 ' + rows.length + ' 題錯題'));
+      rows.forEach(function (q) { list.appendChild(renderCard(q, true)); });
+    }).catch(function () {
+      list.appendChild(el('p', 'ex-pending', '題庫載入失敗，請重新整理頁面。'));
+    });
+  }
+
+  function csvCell(text) {
+    return '"' + String(text).replace(/"/g, '""') + '"';
+  }
+  function htmlText(text) {
+    return String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\[i\](.+?)\[\/i\]/g, '<i>$1</i>').replace(/\n/g, '<br>');
+  }
+  function ankiRows(questions) {
+    return questions.map(function (q) {
+      var front = htmlText(q.stem) + '<br>';
+      (q.statements || []).forEach(function (s) { front += htmlText(s.id + ' ' + s.text) + '<br>'; });
+      Object.keys(q.options).forEach(function (k) { front += htmlText('(' + k + ') ' + q.options[k]) + '<br>'; });
+      front += '<small>' + q.year + ' 年第 ' + q.number + ' 題</small>';
+      var back = '答案：' + q.answer.join('、');
+      if (q.expl) {
+        back += '<br>' + htmlText(q.expl.summary);
+        q.expl.items.forEach(function (it) {
+          back += '<br>' + htmlText(it.key + ' ' + it.label + '：' + it.text + '（' + it.refs.join('；') + '）');
+        });
+      }
+      return csvCell(front) + ',' + csvCell(back);
+    }).join('\n');
+  }
+  function download(name, text) {
+    var blob = new Blob(['﻿' + text], { type: 'text/csv;charset=utf-8' });
+    var a = el('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 0);
+  }
+
+  function shuffle(list) {
+    for (var i = list.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = list[i]; list[i] = list[j]; list[j] = tmp;
+    }
+    return list;
+  }
+
+  function initPractice(form, barApi) {
+    var list = document.getElementById('ex-practice-list');
+    var note = form.querySelector('.ex-build-note');
+    var bar = document.querySelector('[data-exam-bar]');
+    function setAll(checked) {
+      form.querySelectorAll('input[name=ex-year]').forEach(function (box) { box.checked = checked; });
+    }
+    form.querySelector('.ex-years-all').addEventListener('click', function () { setAll(true); });
+    form.querySelector('.ex-years-none').addEventListener('click', function () { setAll(false); });
+    form.querySelector('.ex-build').addEventListener('click', function () {
+      var years = [];
+      form.querySelectorAll('input[name=ex-year]:checked').forEach(function (box) { years.push(Number(box.value)); });
+      if (!years.length) { note.textContent = '請至少選一個年份'; return; }
+      var count = Number(form.querySelector('select[name=ex-count]').value);
+      var order = form.querySelector('input[name=ex-order]:checked').value;
+      note.textContent = '題目載入中…';
+      examData().then(function (data) {
+        var pool = data.questions.filter(function (q) { return years.indexOf(q.year) !== -1; });
+        if (order === 'random') shuffle(pool);
+        if (count > 0) pool = pool.slice(0, count);
+        while (list.firstChild) list.removeChild(list.firstChild);
+        pool.forEach(function (q, i) {
+          var card = renderCard(q, false);
+          var no = card.querySelector('.ex-q-no');
+          if (no) no.insertBefore(document.createTextNode((i + 1) + '. '), no.firstChild);
+          list.appendChild(card);
+        });
+        note.textContent = '共 ' + pool.length + ' 題，計時開始';
+        if (bar) bar.hidden = false;
+        barApi.start();
+        list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }).catch(function () {
+        note.textContent = '題庫載入失敗，請重新整理頁面。';
+      });
+    });
+  }
+
+  function init() {
+    document.querySelectorAll('.ex-mode').forEach(function (btn) {
+      btn.addEventListener('click', function () { setMode(btn.getAttribute('data-mode')); });
+    });
+    setMode(load(MODE_KEY, 'browse') === 'quiz' ? 'quiz' : 'browse');
+    document.querySelectorAll('.ex-q').forEach(wireQuestion);
+    var bar = document.querySelector('[data-exam-bar]');
+    var barApi = bar ? wireExamBar(bar) : null;
+    var form = document.querySelector('[data-practice-form]');
+    if (form && barApi) initPractice(form, barApi);
+    var list = document.getElementById('ex-review-list');
+    if (list) renderReview(list);
+    document.querySelectorAll('.ex-anki').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        examData().then(function (data) {
+          var scope = btn.getAttribute('data-scope');
+          var wrong = wrongSet();
+          var rows = scope === 'wrong'
+            ? data.questions.filter(function (q) { return wrong.indexOf(q.id) !== -1; })
+            : data.questions;
+          download(scope === 'wrong' ? 'derm-board-wrong.csv' : 'derm-board-all.csv', ankiRows(rows));
+        });
+      });
+    });
+    var clear = document.querySelector('.ex-clear-wrong');
+    if (clear) {
+      clear.addEventListener('click', function () {
+        store(WRONG_KEY, []);
+        if (list) renderReview(list);
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();

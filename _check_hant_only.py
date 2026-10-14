@@ -45,6 +45,9 @@ if hasattr(sys.stdout, "reconfigure"):
 SIMPLIFIED = {
     "湿": "濕",
     "螨": "蟎",
+    # Found 2026-10 in the board-exam source files (data/exam/questions.json).
+    "红": "紅",
+    "脱": "脫",
 }
 
 SKIP_DIRS = {".git", "node_modules", "__pycache__", "pagefind"}

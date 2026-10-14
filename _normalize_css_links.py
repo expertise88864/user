@@ -13,7 +13,7 @@ from _site_html import site_html_files
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-ASSET_VERSION = "202610141530"
+ASSET_VERSION = "202610142300"
 
 
 def normalize_text_color_utilities(src: str) -> str:

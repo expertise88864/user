@@ -31,6 +31,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 DOMAIN = 'https://chendermatologist.com'
 
 SKIP = {'404.html', 'offline.html', 'admin.html', 'dashboard.html', 'notes.html', 'reset-sw.html'}
+NO_EN_MIRROR_DIRS = {'exam'}
 
 EN_OG_OVERRIDES = {
     'privacy.html': {
@@ -438,6 +439,9 @@ def en_mirror_exists(path: str) -> bool:
     rel = clean.lstrip('/')
     if rel.endswith('.html'):
         rel = rel[:-5]
+    # The board-exam section (/exam/**) is zh-only by design; it has no EN mirror.
+    if rel.split('/', 1)[0] in NO_EN_MIRROR_DIRS:
+        return False
     # No-slash directory form (e.g. /blog, /tools) → <dir>/index.html.
     # Needed since nav links use the canonical no-trailing-slash form
     # (trailingSlash:false); without this the EN rewriter would leave a
