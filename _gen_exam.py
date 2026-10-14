@@ -11,9 +11,11 @@ Outputs (generated, never hand-edit):
   exam/index.html, exam/fitz-<n>.html, exam/year-<y>.html, exam/mckee.html,
   exam/kantor.html, exam/review.html, exam/exam-data.json
 
-Pages reuse the normalized notes.html shell (head, header, footer) so the
-site-wide normalizers and checks treat them like any other root page. Run this
-before the normalizers in REGEN_STEPS; it rewrites every output from scratch.
+Pages reuse the normalized notes.html shell (head, header, footer), and the
+output is already in its final normalized form. REGEN_STEPS runs it twice:
+early (so the sitemap and normalizers see every page) and last (after every
+step that edits notes.html); `--check` in CHECK_STEPS proves the committed
+exam/** matches. It rewrites every output from scratch.
 """
 from __future__ import annotations
 
@@ -117,7 +119,14 @@ def set_head(head: str, *, title: str, description: str, path: str, og_title: st
     head, n = re.subn(r'(?:<script type="application/ld\+json">.*?</script>\s*)+', lambda _m: blocks, head, count=1, flags=re.S)
     if n != 1:
         raise SystemExit("notes.html template has no JSON-LD block")
-    return head.replace("</head>", "") + EXAM_STYLE
+    head = head.replace("</head>", "")
+    # _inject_nav_critical keeps its <style id="dn-nav-critical"> as the last
+    # thing in <head>; inserting before it makes the raw output identical to
+    # the normalized page, so this generator is order-independent and --check works.
+    nav = head.rfind('<style id="dn-nav-critical"')
+    if nav < 0:
+        return head + EXAM_STYLE
+    return head[:nav] + EXAM_STYLE + head[nav:]
 
 
 def breadcrumb(items: list[tuple[str, str]]) -> dict:
@@ -139,6 +148,9 @@ def crumbs_html(items: list[tuple[str, str]]) -> str:
             parts.append(f'<a href="{path}">{esc(name)}</a>')
     sep = '<span class="ex-sep" aria-hidden="true">/</span>'
     return f'<nav class="crumbs" aria-label="麵包屑">{sep.join(parts)}</nav>'
+
+
+DATA_VERSION = [""]  # content hash of exam-data.json, set by build() before any page renders
 
 
 def script_version() -> str:
@@ -165,7 +177,8 @@ def page(shell, *, path, title, description, og_title, crumbs, jsonld_type, body
         inner = f'<div class="ex-layout">{toc}<div class="ex-content">{content}</div></div>'
     else:
         inner = f'<div class="max-w-3xl mx-auto px-5 sm:px-8 pt-12 sm:pt-14 pb-16">{content}</div>'
-    main = f'<main id="main-content" class="ex-main" data-exam-page="{page_kind}">{inner}</main>'
+    main = (f'<main id="main-content" class="ex-main" data-exam-page="{page_kind}" '
+            f'data-exam-data="/exam/exam-data.json?v={DATA_VERSION[0]}">{inner}</main>')
     tail = tail.replace("</body>", f'<script src="/exam/exam.js?v={script_version()}" defer></script>\n</body>', 1)
     return out + mid + main + tail
 
@@ -191,10 +204,13 @@ def chapter_title(ch: dict) -> str:
     return f"Ch.{ch['chapter']} {ch['title']}"
 
 
+CHAPTER_PAGES: set[int] = set()  # chapters that get an exam/fitz-<n>.html page; set by build()
+
+
 def ref_html(ref, current_chapter: int | None, chapters: dict) -> str:
     chap, pages = ref
     label = f"Fitzpatrick 9e ch.{chap} p.{pages}"
-    if chap == current_chapter or chap not in chapters:
+    if chap == current_chapter or chap not in CHAPTER_PAGES:
         return f'<span class="ex-ref">{esc(label)}</span>'
     return f'<a class="ex-ref" href="/exam/fitz-{chap}">{esc(label)}</a>'
 
@@ -222,8 +238,9 @@ def question_html(q: dict, data: dict, *, current_chapter: int | None = None, sh
     answer = set(q["answer"])
     opts = "".join(
         f'<label class="ex-opt" data-key="{k}"{" data-correct" if k in answer else ""}>'
-        f'<input type="radio" name="ans-{qid}" value="{k}" aria-label="選項 {k}">'
-        f'<span class="ex-opt-key">{k}</span><span class="ex-opt-text">{esc_lines(v)}</span></label>'
+        f'<input type="radio" name="ans-{qid}" value="{k}" aria-labelledby="o-{qid}-{k} t-{qid}-{k}">'
+        f'<span class="ex-opt-key" id="o-{qid}-{k}">{k}</span>'
+        f'<span class="ex-opt-text" id="t-{qid}-{k}">{esc_lines(v)}</span></label>'
         for k, v in q["options"].items()
     )
     note = f'<span class="ex-flag">{esc(q["note"])}</span>' if q.get("note") else ""
@@ -527,6 +544,10 @@ def build() -> dict[str, str]:
     for qid in data["explanations"]:
         if not data["tags"][qid]["fitz"]:
             raise SystemExit(f"{qid} has an explanation but no Fitzpatrick chapter")
+    CHAPTER_PAGES.clear()
+    CHAPTER_PAGES.update(by_chapter)
+    client = json.dumps(client_data(data), ensure_ascii=False, separators=(",", ":")) + "\n"
+    DATA_VERSION[0] = hashlib.sha256(client.encode("utf-8")).hexdigest()[:10]
     files: dict[str, str] = {}
     files["index.html"] = hub_page(shell, data, by_chapter, by_year, by_book)
     for n, qs in sorted(by_chapter.items()):
@@ -537,7 +558,7 @@ def build() -> dict[str, str]:
         files[f"{b}.html"] = book_page(shell, data, b, qs)
     files["practice.html"] = practice_page(shell, by_year)
     files["review.html"] = review_page(shell)
-    files["exam-data.json"] = json.dumps(client_data(data), ensure_ascii=False, separators=(",", ":")) + "\n"
+    files["exam-data.json"] = client
     return files
 
 
@@ -578,6 +599,7 @@ EXAM_STYLE = """<style data-exam-style>
 .ex-years{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0}
 .ex-years a{display:inline-block;border:1px solid var(--border);border-radius:9999px;padding:4px 14px;background:#fff;text-decoration:none;font-weight:600}
 .ex-toolbar,.ex-exam-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0}
+.ex-exam-bar[hidden]{display:none}
 .ex-toolbar button,.ex-exam-bar button,.ex-actions button{border:1px solid #4d6358;border-radius:9999px;padding:6px 14px;font-size:13px;font-weight:600;background:#fff;color:#4d6358;cursor:pointer}
 .ex-mode[aria-pressed="true"]{background:#4d6358;color:#fff}
 .ex-toolbar-hint{font-size:12px;color:var(--muted)}

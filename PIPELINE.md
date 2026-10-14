@@ -83,6 +83,8 @@ _normalize_robots.py 的         _normalize_robots.py      ──►  robots.txt
   ALLOW_UAS/BLOCK_UAS           _gen_search_index/_run_pagefind ► search index + pagefind/
 vercel.json(手改,要審)       _minify.py                ──►  blog/*.min.js(由同名 .js 生成)
 assets/inline/*.js(手改)      _gen_site_graph.py        ──►  站內連結圖 SVG
+data/exam/**(考試題庫/標註/    _gen_exam.py              ──►  exam/**(考試區頁面＋exam-data.json；exam.js 手改)
+  詳解/notes *.frag)
 ```
 \* `llms.txt` 手維護,但其中的文章數/大小由 `_normalize_llms_counts.py` 自動校正。
 
@@ -104,6 +106,7 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
 | `_normalize_robots.py` 的 UA 清單 | `python _normalize_robots.py` + **同步三檔**(見下) | `_check_robots.py` |
 | `vercel.json`(redirect/header) | 不用 regen | `_check_deployment.py` + codex review |
 | `assets/inline/*.js` | 不用 regen(非 min 化對象);跑 `_check_js_syntax.py` | `_check_runtime_smoke.py` |
+| `data/exam/**`（詳解、標註、章節重點）或 `exam/exam.js` | `python _gen_exam.py`（建置流程會在開頭與結尾各跑一次） | `_gen_exam.py --check`、`_check_static_a11y.py` |
 | `blog/blog-shared.js` 或 `blog-hub.js` | `python _minify.py`(重生 .min.js) | `_check_min_balance.py`, smoke;忘了重生也沒關係 —— `_check_min_sync.py` 已在 gate 裡擋(TD-28) |
 | 新增 TL;DR(`_inject_tldr.py` 的 map) | 醫師審核後 `python _inject_tldr.py --apply` → `python _run_quality.py build` | gate;絕不覆寫既有 dn-tldr |
 

@@ -39,7 +39,8 @@ zh-Hant 為源頭、`/en/` 鏡像為生成物。~53 篇文章 + ~130 支根目�
    codex 不可用且使用者未明示跳過 → **不 push**。本專案 codex 已實際攔下多次真問題。
 4. **生成物不手改**。哪些是生成物、改了源頭要跑什麼:見 PIPELINE.md。
    通則:`en/**`、`sitemap.xml`、feeds、`llms-full.txt`、`ai/*.json`、`.well-known/ai.txt`、
-   `robots.txt`、`*.min.js`、pagefind/ 都是生成物 → 改對應的 `_normalize_*/_gen_*` 源頭再重跑。
+   `robots.txt`、`*.min.js`、pagefind/、`exam/**`（除 `exam/exam.js`；由 `_gen_exam.py` 從 `data/exam/` 產生）
+   都是生成物 → 改對應的 `_normalize_*/_gen_*` 源頭再重跑。
 5. **push 前必過品質閘**:`python _run_quality.py check` 必須 exit 0(跑完整套 CHECK_STEPS 驗證器)。
    只動 1-2 檔時可先跑對應單一 `_check_*.py` 快篩,但 push 前仍跑完整 gate。
 6. **DECISIONS.md 裡的定案不得重議/回退**(例:mainEntity→#article 是刻意契約、

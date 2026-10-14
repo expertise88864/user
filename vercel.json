@@ -492,6 +492,16 @@
       "permanent": true
     },
     {
+      "source": "/en/exam",
+      "destination": "/exam",
+      "permanent": true
+    },
+    {
+      "source": "/en/exam/:path*",
+      "destination": "/exam/:path*",
+      "permanent": true
+    },
+    {
       "source": "/blog/atopic-dermatitis-comorbidity",
       "destination": "/blog/atopic-dermatitis-overview",
       "permanent": true

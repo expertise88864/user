@@ -55,7 +55,11 @@
     card.classList.add('ex-done');
     picked.closest('.ex-opt').classList.add('ex-picked');
     card.querySelectorAll('input[type=radio]').forEach(function (input) { input.disabled = true; });
-    if (result) result.textContent = ok ? '答對了' : '答錯了，正確答案是 ' + answer.split('').join('、');
+    if (result) {
+      // Grading a whole paper at once must not queue 50 screen-reader announcements.
+      result.setAttribute('aria-live', silent ? 'off' : 'polite');
+      result.textContent = ok ? '答對了' : '答錯了，正確答案是 ' + answer.split('').join('、');
+    }
     markWrong(card.getAttribute('data-qid'), !ok);
     return ok;
   }
@@ -176,10 +180,14 @@
       input.type = 'radio';
       input.name = 'ans-' + q.id;
       input.value = k;
-      input.setAttribute('aria-label', '選項 ' + k);
+      var keyEl = el('span', 'ex-opt-key', k);
+      var textEl = el('span', 'ex-opt-text', q.options[k]);
+      keyEl.id = 'o-' + q.id + '-' + k;
+      textEl.id = 't-' + q.id + '-' + k;
+      input.setAttribute('aria-labelledby', keyEl.id + ' ' + textEl.id);
       label.appendChild(input);
-      label.appendChild(el('span', 'ex-opt-key', k));
-      label.appendChild(el('span', 'ex-opt-text', q.options[k]));
+      label.appendChild(keyEl);
+      label.appendChild(textEl);
       fs.appendChild(label);
     });
     card.appendChild(fs);
@@ -224,7 +232,9 @@
   var dataPromise = null;
   function examData() {
     if (!dataPromise) {
-      dataPromise = fetch('/exam/exam-data.json', { credentials: 'same-origin' })
+      var main = document.querySelector('[data-exam-data]');
+      var url = (main && main.getAttribute('data-exam-data')) || '/exam/exam-data.json';
+      dataPromise = fetch(url, { credentials: 'same-origin' })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
     }
     return dataPromise;

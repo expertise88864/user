@@ -14,8 +14,9 @@ NPM = "npm.cmd" if os.name == "nt" else "npm"
 REGEN_STEPS: list[list[str]] = [
     [PY, "_sync_article_navigation.py"],
     [PY, "_gen_site_settings.py"],
-    # Board-exam section (/exam/**) is rebuilt from data/exam/ on the
-    # normalized notes.html shell, before the normalizers below touch it.
+    # Board-exam section (/exam/**), first pass: makes the page set exist so
+    # _gen_feeds (sitemap) and the normalizers see every exam page. The final
+    # pass at the end of this list re-renders on the finished notes.html shell.
     [PY, "_gen_exam.py"],
     # Complete static hub links from the public catalog before EN generation.
     [PY, "_sync_hub_catalog.py"],
@@ -191,6 +192,10 @@ REGEN_STEPS: list[list[str]] = [
     # (article/EN-mirror counts, corpus entry count, corpus KB) from on-disk
     # truth. Runs after _gen_llms_full.py so the size/entries are current.
     [PY, "_normalize_llms_counts.py"],
+    # Board-exam section, final pass: exam/** copies the notes.html shell, so
+    # it must run after every step above that edits notes.html (e.g. the
+    # ASSET_VERSION ?v= rewrite) or a version bump needs two builds to settle.
+    [PY, "_gen_exam.py"],
 ]
 
 BUILD_GENERATED_STEPS: list[list[str]] = [
@@ -219,6 +224,7 @@ BUILD_GENERATED_STEPS: list[list[str]] = [
 
 CHECK_STEPS: list[list[str]] = [
     [PY, "_gen_site_settings.py", "--check"],
+    [PY, "_gen_exam.py", "--check"],
     [PY, "_test_site_settings_data.py"],
     [PY, "-m", "unittest", "_test_site_settings_render"],
     [PY, "-m", "unittest", "_test_site_settings_delivery"],
