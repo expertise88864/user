@@ -450,6 +450,44 @@ exit $code
         self.assertEqual(result[2:4], (self.sid, '1'))
 
 
+class ReviewCliUnicodePathTests(unittest.TestCase):
+    """Automatic CLI selection must return a non-ASCII path intact.
+
+    The wrapper suites pin CODEX_REVIEW_CLI and so never run this branch. Here
+    the real Resolve-Cli from tools/codex_review.ps1 runs against a stand-in
+    `which` helper that prints with Python's default (locale) encoding, under
+    a console code page that differs from UTF-8.
+    """
+    CLI = 'C:/Users/\u9673\u7fca\u5609/AppData/Local/OpenAI/Codex/bin/x/codex.exe'
+
+    @unittest.skipUnless(os.name == 'nt', 'Windows PowerShell 5.1 code-page behaviour')
+    def test_resolve_cli_keeps_unicode_path(self):
+        shell = shutil.which('powershell')
+        self.assertIsNotNone(shell)
+        source = (ROOT / 'tools/codex_review.ps1').read_text(encoding='utf-8-sig')
+        start = source.index('function Resolve-Cli {')
+        end = source.index('function Test-SessionId', start)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'codex_review_identity.py').write_text(
+                'import sys\nassert sys.argv[1:] == ["which"], sys.argv\n'
+                f'print({self.CLI!r})\nprint("codex-cli 0.0.0")\n', encoding='utf-8')
+            out = root / 'cli.txt'
+            script = root / 'probe.ps1'
+            script.write_text(
+                "function Die([string]$Msg) { [Console]::Error.WriteLine($Msg); exit 64 }\n"
+                f"$Python = '{sys.executable}'\n$ScriptDir = '{root}'\n"
+                + source[start:end]
+                + f"\n$cli = Resolve-Cli\n[IO.File]::WriteAllText('{out}', $cli, (New-Object System.Text.UTF8Encoding $false))\n",
+                encoding='utf-8-sig')
+            env = {k: v for k, v in os.environ.items()
+                   if k not in ('PYTHONUTF8', 'PYTHONIOENCODING', 'CODEX_REVIEW_CLI')}
+            result = subprocess.run([shell, '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', str(script)],
+                                    env=env, capture_output=True, text=True, errors='replace')
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertEqual(out.read_text(encoding='utf-8'), self.CLI)
+
+
 class ReviewCliSelectionTests(unittest.TestCase):
     def setUp(self):
         sys.path.insert(0, str(ROOT / 'tools'))

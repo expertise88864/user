@@ -130,8 +130,17 @@ function Invoke-ReviewCli([string]$Cli, [string[]]$CliArgs) {
 function Resolve-Cli {
     if ($env:CODEX_REVIEW_CLI) { $cli = $env:CODEX_REVIEW_CLI }
     else {
-        $found = @(& $Python (Join-Path $ScriptDir 'codex_review_identity.py') which)
-        $cli = if ($LASTEXITCODE -eq 0 -and $found.Count -ge 1) { $found[0].Trim() } else { '' }
+        # Both ends UTF-8, or a non-ASCII CLI path (e.g. under a Chinese user name)
+        # comes back garbled: `-X utf8` makes Python write UTF-8 even when redirected
+        # (otherwise the Windows locale code page), and PowerShell 5.1 decodes native
+        # output with [Console]::OutputEncoding (otherwise the console code page).
+        $prevEncoding = [Console]::OutputEncoding
+        try {
+            [Console]::OutputEncoding = New-Object System.Text.UTF8Encoding $false
+            $found = @(& $Python -X utf8 (Join-Path $ScriptDir 'codex_review_identity.py') which)
+            $whichCode = $LASTEXITCODE
+        } finally { [Console]::OutputEncoding = $prevEncoding }
+        $cli = if ($whichCode -eq 0 -and $found.Count -ge 1) { $found[0].Trim() } else { '' }
     }
     if (-not $cli) { Die '找不到可用的 Codex CLI;不降級到其他模型。' }
     Write-Host "[codex-review] cli=$cli"
