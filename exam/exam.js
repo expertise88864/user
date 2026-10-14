@@ -47,17 +47,18 @@
   function grade(card, silent) {
     var picked = card.querySelector('input[type=radio]:checked');
     var result = card.querySelector('.ex-result');
-    if (!picked) {
+    // Free-credit questions (官方公告送分) earn the point whatever is chosen —
+    // including nothing at all when a whole paper is handed in.
+    var free = card.hasAttribute('data-free');
+    if (!picked && !(free && silent)) {
       if (!silent && result) result.textContent = '請先選擇一個選項';
       return null;
     }
     var answer = card.getAttribute('data-answer') || '';
-    // Free-credit questions (官方公告送分) count every choice as correct.
-    var free = card.hasAttribute('data-free');
     var ok = free || answer.indexOf(picked.value) !== -1;
     card.setAttribute('data-graded', ok ? 'right' : 'wrong');
     card.classList.add('ex-done');
-    picked.closest('.ex-opt').classList.add('ex-picked');
+    if (picked) picked.closest('.ex-opt').classList.add('ex-picked');
     card.querySelectorAll('input[type=radio]').forEach(function (input) { input.disabled = true; });
     if (result) {
       // Grading a whole paper at once must not queue 50 screen-reader announcements.
