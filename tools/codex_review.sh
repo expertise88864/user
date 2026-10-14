@@ -6,7 +6,8 @@
 #   tools/codex_review.sh resume [session-id]
 #
 # mode:
-#   diff / targeted / deep  相容模式名稱；皆固定 gpt-5.5 / xhigh / read-only。
+#   diff / targeted / deep  相容模式名稱；皆固定 gpt-6.1-sol / high / read-only
+#                           (使用者 2026-10-14 定案:任何 diff review 一律如此,不降級)。
 #                           完整交付差異，沒有檔案、finding 或輪數上限。
 #   resume                  修正後沿用同一個已驗證 session，完整重審至通過。
 #
@@ -23,9 +24,12 @@
 #   CODEX_REVIEW_VERIFICATION  本機驗證結果摘要(單/多行字串),會填入 prompt。
 #   CODEX_REVIEW_HARDEN=0      關閉 web_search/apps 的額外 -c 硬化(若該 CLI 版本不認這些鍵)。
 #   CODEX_REVIEW_STRICT=0      關閉 --strict-config。
+#   CODEX_REVIEW_CLI           明示要用的 Codex CLI;未設時由 codex_review_identity.py which
+#                              挑版本最高者(npm 0.155.1 不支援 gpt-6.1-sol,桌面版內附的可以)。
+#                              不論哪一支,實際模型/effort 一律由 session 紀錄驗證。
 set -uo pipefail
 
-MODEL="gpt-5.5"
+MODEL="gpt-6.1-sol"
 HARDEN="${CODEX_REVIEW_HARDEN:-1}"
 STRICT="${CODEX_REVIEW_STRICT:-1}"
 
@@ -60,9 +64,9 @@ MODE="${1:-}"
 [ -n "$MODE" ] || die "缺少 mode。用法: $0 <diff|targeted|deep> <base-ref> [task-context-file] | $0 resume [session-id]"
 
 case "$MODE" in
-  diff) EFFORT="xhigh" ;;
-  targeted) EFFORT="xhigh" ;;
-  deep) EFFORT="xhigh" ;;
+  diff) EFFORT="high" ;;
+  targeted) EFFORT="high" ;;
+  deep) EFFORT="high" ;;
   resume) EFFORT="" ;;
   *) die "未知 mode '$MODE'(可用:diff | targeted | deep | resume)" ;;
 esac
@@ -85,8 +89,25 @@ build_flags() {   # $1 = effort ; $2 = "resume" to build resume-compatible flags
   if [ "$HARDEN" = "1" ]; then
     FLAGS+=(-c "web_search=disabled" -c "features.apps=false")
   fi
+  # --ignore-user-config also drops the user's [windows] sandbox setting; without
+  # it the Windows read-only sandbox refuses every command (even git diff), and
+  # the reviewer reads nothing.
+  case "${OS:-}$(uname -s 2>/dev/null)" in
+    *Windows_NT*|*MINGW*|*MSYS*|*CYGWIN*) FLAGS+=(-c "windows.sandbox=unelevated") ;;
+  esac
   # 明確不使用:--ask-for-approval(此 CLI 的 exec 無此旗標,非互動預設即 never)、
   #             --skip-git-repo-check、--ephemeral(第二輪要 resume)、--dangerously-*。
+}
+
+resolve_cli() {
+  if [ -n "${CODEX_REVIEW_CLI:-}" ]; then
+    CODEX_CLI="$CODEX_REVIEW_CLI"
+  else
+    CODEX_CLI="$("$PYTHON" "$SCRIPT_DIR/codex_review_identity.py" which | head -1 | tr -d '\r')" ||
+      CODEX_CLI=""
+  fi
+  [ -n "$CODEX_CLI" ] || die "找不到可用的 Codex CLI;不降級到其他模型。"
+  echo "[codex-review] cli=$CODEX_CLI"
 }
 
 # ---------- 解析輸出 ----------
@@ -198,10 +219,10 @@ if [ "$MODE" = "resume" ]; then
     END { print last }' "$USAGE_TSV")"
   [ -n "$VERIFIED_ROW" ] || die "No completed verified row for this session; start a fresh first review."
   [ "$(printf '%s' "$VERIFIED_ROW" | cut -f4)" = "$MODEL" ] &&
-    [ "$(printf '%s' "$VERIFIED_ROW" | cut -f5)" = "xhigh" ] &&
+    [ "$(printf '%s' "$VERIFIED_ROW" | cut -f5)" = "high" ] &&
     [ "$(printf '%s' "$VERIFIED_ROW" | cut -f7 | tr 'A-Z' 'a-z')" = "$SID" ] ||
-    die "Recorded session profile is not gpt-5.5/xhigh; start a fresh first review."
-  RESUME_EFFORT="xhigh"
+    die "Recorded session profile is not $MODEL/high; start a fresh first review."
+  RESUME_EFFORT="high"
   RESUME_BASE="$(printf '%s' "$VERIFIED_ROW" | cut -f6)";   [ -n "$RESUME_BASE" ] || RESUME_BASE="unavailable"
   NEXT_PASS=$((PREV_PASS + 1))
   build_flags "$RESUME_EFFORT" resume
@@ -219,7 +240,8 @@ RP
   echo "[codex-review] resume session=$SID effort=$RESUME_EFFORT (pass $NEXT_PASS)"
   : > "$LAST_MSG"
   REVIEW_STARTED_AT="$("$PYTHON" -c 'import time; print(time.time())')" || die "Python unavailable"
-  (cd "$REPO_ROOT" && codex exec resume "$SID" "${FLAGS[@]}" "$RESUME_PROMPT" </dev/null) 2>&1 | tee "$RAW_LOG"
+  resolve_cli
+  (cd "$REPO_ROOT" && "$CODEX_CLI" exec resume "$SID" "${FLAGS[@]}" "$RESUME_PROMPT" </dev/null) 2>&1 | tee "$RAW_LOG"
   CODEX_RC="${PIPESTATUS[0]}"
   RESULT="$(extract_result)"
   # Untrusted run: do NOT advance pass state (finding 3) — a failed pass-2 must
@@ -384,7 +406,8 @@ rm -f "$SESSION_FILE"
 # the CLI block forever on "Reading additional input from stdin..." waiting for
 # a pipe that never closes.
 REVIEW_STARTED_AT="$("$PYTHON" -c 'import time; print(time.time())')" || die "Python unavailable"
-codex exec "${FLAGS[@]}" "$(cat "$TMP/prompt.txt")" </dev/null 2>&1 | tee "$RAW_LOG"
+resolve_cli
+"$CODEX_CLI" exec "${FLAGS[@]}" "$(cat "$TMP/prompt.txt")" </dev/null 2>&1 | tee "$RAW_LOG"
 CODEX_RC="${PIPESTATUS[0]}"
 RESULT="$(extract_result)"
 

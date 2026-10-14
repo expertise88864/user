@@ -294,7 +294,7 @@ class ReviewSessionTests(unittest.TestCase):
     sid = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa'
     other = 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb'
 
-    def run_wrapper(self, recorded=None, returned=None, mode='resume', explicit=None, count=1, rc=0, actual_model='gpt-5.5', actual_effort='xhigh', actual_sandbox='read-only', legacy_profile=False, retry_after_failure=False, from_subdir=False):
+    def run_wrapper(self, recorded=None, returned=None, mode='resume', explicit=None, count=1, rc=0, actual_model='gpt-6.1-sol', actual_effort='high', actual_sandbox='read-only', legacy_profile=False, retry_after_failure=False, from_subdir=False):
         shell = shutil.which('pwsh') or shutil.which('powershell')
         self.assertIsNotNone(shell)
         with tempfile.TemporaryDirectory() as directory:
@@ -314,7 +314,7 @@ class ReviewSessionTests(unittest.TestCase):
             (state / 'last_pass').write_text(str(count))
             (state / 'usage.tsv').write_text(
                 'timestamp\trepository\tmode\tmodel\teffort\tbase_ref\tsession_id\ttokens_used\tresult\tfindings\tpass\n'
-                f"now\tfixture\tdeep\t{'gpt-5.6-sol' if legacy_profile else 'gpt-5.5'}\t{'high' if legacy_profile else 'xhigh'}\tHEAD\t{recorded}\t0\tREQUEST_CHANGES\t1\t{count}\n")
+                f"now\tfixture\tdeep\t{'gpt-5.5' if legacy_profile else 'gpt-6.1-sol'}\t{'xhigh' if legacy_profile else 'high'}\tHEAD\t{recorded}\t0\tREQUEST_CHANGES\t1\t{count}\n")
             events = [{'type': 'turn.completed', 'usage': {'input_tokens': 3, 'output_tokens': 2}}]
             if returned is not None:
                 events.insert(0, {'type': 'thread.started', 'thread_id': returned})
@@ -354,7 +354,10 @@ function codex {
 & (Join-Path $env:REVIEW_TEST_ROOT 'tools/codex_review.ps1') $env:REVIEW_TEST_MODE $env:REVIEW_TEST_ARG
 exit $LASTEXITCODE
 ''', encoding='utf-8-sig')
-            env = dict(os.environ, REVIEW_TEST_ROOT=str(root), REVIEW_TEST_MODE=mode, REVIEW_TEST_ARG=explicit or ('HEAD' if mode != 'resume' else ''), REVIEW_TEST_RC=str(rc), REVIEW_TEST_PYTHON=sys.executable, REVIEW_TEST_SESSION=str(session_path))
+            env = dict(os.environ, REVIEW_TEST_ROOT=str(root), REVIEW_TEST_MODE=mode, REVIEW_TEST_ARG=explicit or ('HEAD' if mode != 'resume' else ''), REVIEW_TEST_RC=str(rc), REVIEW_TEST_PYTHON=sys.executable, REVIEW_TEST_SESSION=str(session_path),
+                       # Route the wrapper to the fake `codex` function above
+                       # instead of the highest-version CLI on this machine.
+                       CODEX_REVIEW_CLI='codex')
             cwd = root / 'nested' if from_subdir else root
             cwd.mkdir(exist_ok=True)
             result = subprocess.run([shell, '-NoProfile', '-File', str(driver)], cwd=cwd,
@@ -368,8 +371,10 @@ exit $LASTEXITCODE
                                         env=env, capture_output=True, text=True, errors='replace')
             if (root / 'called-args.json').exists():
                 args = json.loads((root / 'called-args.json').read_text(encoding='utf-8-sig'))
-                self.assertEqual(args[args.index('--model') + 1], 'gpt-5.5')
-                self.assertIn('model_reasoning_effort=xhigh', args)
+                self.assertEqual(args[args.index('--model') + 1], 'gpt-6.1-sol')
+                self.assertIn('model_reasoning_effort=high', args)
+                if os.name == 'nt':
+                    self.assertIn('windows.sandbox=unelevated', args)
                 self.assertIn('--json', args)
                 self.assertIn('COMPLETE', args[-1])
             session_file = state / 'last_session_id'
@@ -389,7 +394,7 @@ exit $LASTEXITCODE
         self.assertEqual(result[2:4], (self.sid, '4'))
 
     def test_wrong_actual_model_effort_or_sandbox_never_approves(self):
-        for changes in ({'actual_model': 'gpt-5.6-sol'}, {'actual_effort': 'high'},
+        for changes in ({'actual_model': 'gpt-5.5'}, {'actual_effort': 'xhigh'},
                         {'actual_sandbox': 'workspace-write'}):
             with self.subTest(changes=changes):
                 result = self.run_wrapper(recorded=self.sid, returned=self.sid, **changes)
@@ -432,6 +437,31 @@ exit $LASTEXITCODE
         result = self.run_wrapper(mode='deep', returned=self.sid)
         self.assertEqual(result[0], 0, result[-1])
         self.assertEqual(result[2:4], (self.sid, '1'))
+
+
+class ReviewCliSelectionTests(unittest.TestCase):
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / 'tools'))
+        self.addCleanup(sys.path.remove, str(ROOT / 'tools'))
+        import codex_review_identity
+        self.identity = codex_review_identity
+
+    def test_version_order_prefers_newer_cli_over_older_release(self):
+        key = self.identity.version_key
+        self.assertGreater(key('codex-cli 0.162.0-alpha.17.2'), key('codex-cli 0.155.1'))
+        self.assertGreater(key('codex-cli 0.162.0'), key('codex-cli 0.162.0-alpha.17.2'))
+        self.assertGreater(key('codex-cli 0.162.0-alpha.17.10'), key('codex-cli 0.162.0-alpha.17.2'))
+        self.assertLess(key('not a version'), key('codex-cli 0.0.1'))
+
+    def test_highest_runnable_version_wins_and_none_fails_closed(self):
+        versions = {'old': 'codex-cli 0.155.1', 'new': 'codex-cli 0.162.0-alpha.17.2', 'broken': ''}
+        with patch.object(self.identity, 'codex_candidates', return_value=['old', 'new', 'broken']), \
+                patch.object(self.identity, 'cli_version', side_effect=versions.get):
+            self.assertEqual(self.identity.find_codex(), ('new', versions['new']))
+        with patch.object(self.identity, 'codex_candidates', return_value=['broken']), \
+                patch.object(self.identity, 'cli_version', side_effect=versions.get):
+            with self.assertRaises(ValueError):
+                self.identity.find_codex()
 
 
 class EnglishReturnLinkTests(unittest.TestCase):

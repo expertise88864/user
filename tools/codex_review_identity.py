@@ -3,15 +3,80 @@
 from __future__ import annotations
 
 import argparse
+import glob
 import hashlib
 import json
 import math
 import os
 from pathlib import Path
 import re
+import shutil
+import subprocess
 import sys
 
 UUID = re.compile(r"[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}", re.I)
+# User decision 2026-10-14: every diff review runs gpt-6.1-sol at high effort.
+# There is no fallback model or effort; a session that cannot prove both fails.
+MODEL = "gpt-6.1-sol"
+EFFORT = "high"
+_VERSION = re.compile(r"(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z.]+))?")
+
+
+def version_key(text: str) -> tuple:
+    """`codex-cli 0.162.0-alpha.17.2` -> sortable key; a release sorts after its pre-releases."""
+    match = _VERSION.search(text or "")
+    if not match:
+        return (-1,)
+    major, minor, patch, pre = match.groups()
+    pre_key = (1, ()) if not pre else (0, tuple(
+        (0, int(part), "") if part.isdigit() else (1, 0, part) for part in pre.split(".")))
+    return (int(major), int(minor), int(patch), pre_key)
+
+
+def cli_version(path: str) -> str:
+    try:
+        proc = subprocess.run([path, "--version"], capture_output=True, text=True,
+                              encoding="utf-8", errors="replace", timeout=60, check=False)
+    except (OSError, subprocess.SubprocessError):
+        return ""
+    lines = (proc.stdout or "").strip().splitlines()
+    return lines[0] if proc.returncode == 0 and lines else ""
+
+
+def codex_candidates() -> list[str]:
+    """Codex CLIs on this machine: the desktop app's bundled builds, then PATH."""
+    found = []
+    local = os.environ.get("LOCALAPPDATA", "")
+    if local:
+        found.extend(sorted(glob.glob(os.path.join(local, "OpenAI", "Codex", "bin", "*", "codex.exe"))))
+    for name in (("codex.cmd", "codex.exe", "codex") if os.name == "nt" else ("codex",)):
+        hit = shutil.which(name)
+        if hit:
+            found.append(hit)
+    seen, unique = set(), []
+    for path in found:
+        key = os.path.normcase(os.path.abspath(path))
+        if key not in seen and os.path.isfile(path):
+            seen.add(key)
+            unique.append(path)
+    return unique
+
+
+def find_codex() -> tuple[str, str]:
+    """Highest-version runnable CLI. The npm build (0.155.1) rejects gpt-6.1-sol
+    for ChatGPT accounts while the desktop app's bundled alpha accepts it, so a
+    PATH-only lookup would pick a CLI that cannot run the required model. The
+    chosen CLI is not trusted for the model either: verify() still checks the
+    actual session record."""
+    ranked = []
+    for path in codex_candidates():
+        version = cli_version(path)
+        if version:
+            ranked.append((version_key(version), path, version))
+    if not ranked:
+        raise ValueError("no runnable Codex CLI found")
+    ranked.sort(key=lambda item: item[0])
+    return ranked[-1][1], ranked[-1][2]
 
 
 def objects(path: Path, *, allow_diagnostics: bool = False) -> list[dict]:
@@ -76,18 +141,27 @@ def verify(raw: Path, repo: Path, sessions: Path, started_at: float,
     context = latest.get("payload", {})
     if not context.get("cwd") or Path(context["cwd"]).resolve() != repo.resolve():
         raise ValueError("actual turn belongs to another repository")
-    if context.get("model") != "gpt-5.5" or context.get("effort") != "xhigh":
-        raise ValueError("actual model/effort differs from gpt-5.5/xhigh")
+    if context.get("model") != MODEL or context.get("effort") != EFFORT:
+        raise ValueError(f"actual model/effort differs from {MODEL}/{EFFORT}")
     if context.get("sandbox_policy", {}).get("type") != "read-only":
         raise ValueError("actual review sandbox is not read-only")
-    return {"sessionId": sid, "tokensUsed": sum(numbers), "actualModel": "gpt-5.5",
-            "actualEffort": "xhigh", "readOnly": True,
+    return {"sessionId": sid, "tokensUsed": sum(numbers), "actualModel": MODEL,
+            "actualEffort": EFFORT, "readOnly": True,
             "turnId": context.get("turn_id"), "contextTimestamp": latest["timestamp"],
             "sessionLogSHA256": hashlib.sha256(log.read_bytes()).hexdigest(),
             "eventsSHA256": hashlib.sha256(raw.read_bytes()).hexdigest()}
 
 
 def main() -> int:
+    if sys.argv[1:] == ["which"]:
+        try:
+            path, version = find_codex()
+        except ValueError as exc:
+            print(f"[codex-review] {exc}", file=sys.stderr)
+            return 4
+        print(path)
+        print(version)
+        return 0
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--raw-log", type=Path, required=True)
     parser.add_argument("--repo", type=Path, required=True)

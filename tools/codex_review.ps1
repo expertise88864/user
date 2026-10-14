@@ -7,7 +7,8 @@ tools/codex_review.ps1 — 本 repo 唯一的外部 code-review 入口(Codex CLI
   .\tools\codex_review.ps1 resume [session-id]
 
 mode:
-  diff / targeted / deep  相容模式名稱；皆固定 gpt-5.5 / xhigh / read-only。
+  diff / targeted / deep  相容模式名稱；皆固定 gpt-6.1-sol / high / read-only
+                          (使用者 2026-10-14 定案:任何 diff review 一律如此,不降級)。
                           完整交付差異，沒有檔案、finding 或輪數上限。
   resume                  修正後沿用同一個已驗證 session，完整重審至通過。
 
@@ -22,6 +23,9 @@ mode:
   CODEX_REVIEW_VERIFICATION  本機驗證結果摘要,填入 prompt。
   CODEX_REVIEW_HARDEN=0      關閉 web_search/apps 的額外 -c 硬化。
   CODEX_REVIEW_STRICT=0      關閉 --strict-config。
+  CODEX_REVIEW_CLI           明示要用的 Codex CLI;未設時由 codex_review_identity.py which
+                             挑版本最高者(npm 0.155.1 不支援 gpt-6.1-sol,桌面版內附的可以)。
+                             不論哪一支,實際模型/effort 一律由 session 紀錄驗證。
 #>
 [CmdletBinding()]
 param(
@@ -33,7 +37,7 @@ param(
 # 刻意用 Continue 而非 Stop:PS 5.1 對 native exe 做 2>&1 會把每行 stderr 包成 NativeCommandError,
 # 在 Stop 模式下被誤判為終止錯誤。本腳本改以 $LASTEXITCODE 與明確 Die() 控制流程。
 $ErrorActionPreference = 'Continue'
-$Model = 'gpt-5.5'
+$Model = 'gpt-6.1-sol'
 $Harden = if ($env:CODEX_REVIEW_HARDEN) { $env:CODEX_REVIEW_HARDEN } else { '1' }
 $Strict = if ($env:CODEX_REVIEW_STRICT) { $env:CODEX_REVIEW_STRICT } else { '1' }
 
@@ -67,9 +71,9 @@ if (-not (Test-Path $UsageTsv)) {
 }
 
 switch ($Mode) {
-    'diff'     { $Effort = 'xhigh' }
-    'targeted' { $Effort = 'xhigh' }
-    'deep'     { $Effort = 'xhigh' }
+    'diff'     { $Effort = 'high' }
+    'targeted' { $Effort = 'high' }
+    'deep'     { $Effort = 'high' }
     'resume'   { $Effort = '' }
     default    { Die "未知 mode '$Mode'(可用:diff | targeted | deep | resume)" }
 }
@@ -89,7 +93,22 @@ function Build-Flags([string]$EffortValue, [string]$ForMode = '') {
     }
     if ($Strict -eq '1') { $f += '--strict-config' }
     if ($Harden -eq '1') { $f += @('-c', 'web_search=disabled', '-c', 'features.apps=false') }
+    # --ignore-user-config also drops the user's [windows] sandbox setting; without
+    # it the Windows read-only sandbox refuses every command (even git diff), and
+    # the reviewer reads nothing.
+    if ($env:OS -eq 'Windows_NT') { $f += @('-c', 'windows.sandbox=unelevated') }
     return $f
+}
+
+function Resolve-Cli {
+    if ($env:CODEX_REVIEW_CLI) { $cli = $env:CODEX_REVIEW_CLI }
+    else {
+        $found = @(& $Python (Join-Path $ScriptDir 'codex_review_identity.py') which)
+        $cli = if ($LASTEXITCODE -eq 0 -and $found.Count -ge 1) { $found[0].Trim() } else { '' }
+    }
+    if (-not $cli) { Die '找不到可用的 Codex CLI;不降級到其他模型。' }
+    Write-Host "[codex-review] cli=$cli"
+    return $cli
 }
 
 function Test-SessionId([string]$Value) {
@@ -197,10 +216,10 @@ if ($Mode -eq 'resume') {
     })
     if (-not $verifiedRows.Count) { Die 'No completed verified row for this session; start a fresh first review.' }
     $last = $verifiedRows[-1] -split "`t"
-    if ($last.Count -lt 7 -or $last[3] -ne $Model -or $last[4] -ne 'xhigh' -or $last[6] -ne $Sid) {
-        Die 'Recorded session profile is not gpt-5.5/xhigh; start a fresh first review.'
+    if ($last.Count -lt 7 -or $last[3] -ne $Model -or $last[4] -ne 'high' -or $last[6] -ne $Sid) {
+        Die "Recorded session profile is not $Model/high; start a fresh first review."
     }
-    $ResumeEffort = 'xhigh'
+    $ResumeEffort = 'high'
     $ResumeBase   = if ($last.Count -ge 6 -and $last[5]) { $last[5] } else { 'unavailable' }
 
     $ResumePrompt = @'
@@ -220,10 +239,11 @@ connectors, or external MCP tools. End with exactly APPROVE or REQUEST_CHANGES.
     # $null | ... closes codex's stdin immediately; the prompt is passed as an
     # argv arg, so without this the CLI blocks on "Reading additional input from
     # stdin..." when run non-interactively.
+    $CodexCli = Resolve-Cli
     $ReviewStartedAt = [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds() / 1000.0
     Push-Location -LiteralPath $RepoRoot -ErrorAction Stop
     try {
-        $null | & codex @args2 2>&1 | Tee-Object -FilePath $RawLog
+        $null | & $CodexCli @args2 2>&1 | Tee-Object -FilePath $RawLog
         $rc = $LASTEXITCODE
     } finally { Pop-Location }
     $result = Get-Result
@@ -376,8 +396,9 @@ if (Test-Path $SessionFile) { Remove-Item $SessionFile -Force -ErrorAction Silen
 $args1 = @('exec') + $flags + @($prompt)
 # $null | ... closes codex's stdin immediately (prompt is an argv arg); without
 # it the CLI blocks on "Reading additional input from stdin..." non-interactively.
+$CodexCli = Resolve-Cli
 $ReviewStartedAt = [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds() / 1000.0
-$null | & codex @args1 2>&1 | Tee-Object -FilePath $RawLog
+$null | & $CodexCli @args1 2>&1 | Tee-Object -FilePath $RawLog
 $rc = $LASTEXITCODE
 $result = Get-Result
 

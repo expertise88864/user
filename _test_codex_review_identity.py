@@ -36,7 +36,7 @@ class IdentityTests(unittest.TestCase):
                        {"type": "turn.completed", "usage": {"input_tokens": 5, "output_tokens": 2}}]
         self.records = [{"type": "session_meta", "payload": {"id": SID, "cwd": str(self.root)}},
                         {"type": "turn_context", "timestamp": datetime.now(timezone.utc).isoformat(),
-                         "payload": {"cwd": str(self.root), "model": "gpt-5.5", "effort": "xhigh",
+                         "payload": {"cwd": str(self.root), "model": "gpt-6.1-sol", "effort": "high",
                                      "turn_id": "current-turn", "sandbox_policy": {"type": "read-only"}}}]
 
     def save(self):
@@ -50,7 +50,7 @@ class IdentityTests(unittest.TestCase):
     def test_actual_metadata_and_hashes(self):
         result = self.verify(expected=SID.upper())
         self.assertEqual((result["sessionId"], result["tokensUsed"]), (SID, 7))
-        self.assertEqual(result["actualEffort"], "xhigh")
+        self.assertEqual(result["actualEffort"], "high")
         self.assertEqual(len(result["sessionLogSHA256"]), 64)
 
     def test_bom_tagged_utf16_events_preserve_actual_identity(self):
@@ -61,8 +61,8 @@ class IdentityTests(unittest.TestCase):
                 self.raw.write_bytes(bom + payload.encode(encoding))
                 result = identity.verify(self.raw, self.root, self.sessions, self.started, SID)
                 self.assertEqual((result["sessionId"], result["tokensUsed"]), (SID, 7))
-                self.assertEqual(result["actualModel"], "gpt-5.5")
-                self.assertEqual(result["actualEffort"], "xhigh")
+                self.assertEqual(result["actualModel"], "gpt-6.1-sol")
+                self.assertEqual(result["actualEffort"], "high")
 
     def test_malformed_encoding_is_not_silently_trusted(self):
         for raw in (b"\xff", b"\xff\xfe{", b"\xfe\xff\x00"):
@@ -131,7 +131,7 @@ class IdentityTests(unittest.TestCase):
 
     def test_latest_context_model_effort_and_sandbox(self):
         context = self.records[-1]["payload"]
-        for key, bad in (("model", "gpt-5.6-sol"), ("effort", "high"),
+        for key, bad in (("model", "gpt-5.5"), ("effort", "xhigh"),
                          ("sandbox_policy", {"type": "workspace-write"})):
             original = context[key]
             context[key] = bad
@@ -141,7 +141,7 @@ class IdentityTests(unittest.TestCase):
 
     def test_previous_context_does_not_mask_wrong_current_context(self):
         self.records.append(json.loads(json.dumps(self.records[-1])))
-        self.records[-1]["payload"]["model"] = "gpt-5.6-sol"
+        self.records[-1]["payload"]["model"] = "gpt-5.5"
         with self.assertRaisesRegex(ValueError, "model/effort"):
             self.verify()
 
@@ -171,8 +171,8 @@ BASH = shutil.which("bash") or ("C:/Program Files/Git/bin/bash.exe" if Path("C:/
 
 @unittest.skipUnless(BASH, "Bash operator requires Bash")
 class BashWrapperTests(unittest.TestCase):
-    def run_wrapper(self, *, resume=False, returned=SID, rc=0, actual_model="gpt-5.5",
-                    actual_effort="xhigh", actual_sandbox="read-only", count=1, legacy=False,
+    def run_wrapper(self, *, resume=False, returned=SID, rc=0, actual_model="gpt-6.1-sol",
+                    actual_effort="high", actual_sandbox="read-only", count=1, legacy=False,
                     retry_after_failure=False, crlf=False, python3_only=False, from_subdir=False):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -187,7 +187,7 @@ class BashWrapperTests(unittest.TestCase):
             state.mkdir()
             (state / "last_pass").write_text(str(count))
             (state / "last_session_id").write_text(SID)
-            model, effort = ("gpt-5.6-sol", "high") if legacy else ("gpt-5.5", "xhigh")
+            model, effort = ("gpt-5.5", "xhigh") if legacy else ("gpt-6.1-sol", "high")
             (state / "usage.tsv").write_text("timestamp\trepository\tmode\tmodel\teffort\tbase_ref\tsession_id\ttokens_used\tresult\tfindings\tpass\n"
                 f"now\tfixture\tdeep\t{model}\t{effort}\tHEAD\t{SID}\t0\tREQUEST_CHANGES\t1\t{count}\n",
                 newline="\r\n" if crlf else "\n")
@@ -222,7 +222,9 @@ fi
                 entry.chmod(0o755)
             env = dict(os.environ, REVIEW_FIXTURE_SID=returned, REVIEW_FIXTURE_MODEL=actual_model,
                        REVIEW_FIXTURE_EFFORT=actual_effort, REVIEW_FIXTURE_SANDBOX=actual_sandbox,
-                       REVIEW_FIXTURE_RC=str(rc))
+                       REVIEW_FIXTURE_RC=str(rc),
+                       # The fixture `codex` on PATH, not the highest-version CLI on this machine.
+                       CODEX_REVIEW_CLI="codex")
             # Bash itself receives native PATH. Its fixture PATH changes only in this child.
             fixture_path = bin_dir.as_posix()
             if os.name == "nt":
@@ -249,8 +251,10 @@ fi
             called = (root / "called-args.json").exists()
             if called:
                 args = json.loads((root / "called-args.json").read_text())
-                self.assertEqual(args[args.index("--model") + 1], "gpt-5.5")
-                self.assertIn("model_reasoning_effort=xhigh", args)
+                self.assertEqual(args[args.index("--model") + 1], "gpt-6.1-sol")
+                self.assertIn("model_reasoning_effort=high", args)
+                if os.name == "nt":
+                    self.assertIn("windows.sandbox=unelevated", args)
                 self.assertIn("--json", args)
                 self.assertIn("COMPLETE", args[-1])
             sid_file = state / "last_session_id"
@@ -287,7 +291,7 @@ fi
         self.assertEqual(result[:4], (4, True, SID, "1"), result[-1])
 
     def test_wrong_actual_profile_cannot_approve(self):
-        for kwargs in ({"actual_model": "gpt-5.6-sol"}, {"actual_effort": "high"}, {"actual_sandbox": "workspace-write"}):
+        for kwargs in ({"actual_model": "gpt-5.5"}, {"actual_effort": "xhigh"}, {"actual_sandbox": "workspace-write"}):
             with self.subTest(kwargs=kwargs):
                 result = self.run_wrapper(**kwargs)
                 self.assertEqual(result[:4], (4, True, None, "0"), result[-1])

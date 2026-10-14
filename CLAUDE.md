@@ -33,8 +33,9 @@ zh-Hant 為源頭、`/en/` 鏡像為生成物。~53 篇文章 + ~130 支根目�
    模型不得自行判斷臨床正確性。流程:草稿 → 使用者說「通過」→ 注入 → codex review → push。
 2. **合規紅線**:作者是住院醫師 —— schema/內文**不得**掛醫院隸屬(worksFor/affiliation)、
    不得出現掛號/預約/價格/診所名(醫療法 §9)。`hasCredential` 只放「醫師」執照、不放號碼。
-3. **push 前必過 Codex GPT-5.5 review**(全域規則,見 ~/.claude/CLAUDE.md)。流程:
-   diff → `mcp__codex__codex`(或 CLI `codex exec -c model="gpt-5.5"`)→ 修 blocking → APPROVE 才 push。
+3. **push 前必過 Codex `gpt-6.1-sol`/`high` review**(全域規則 2026-10-14,見 ~/.claude/CLAUDE.md)。流程:
+   只走 repo wrapper `tools/codex_review.sh` / `tools/codex_review.ps1`(唯讀、不貼 diff;MCP 與直接 `codex exec` 都不用)
+   → 逐條驗證 finding、只修 CONFIRMED → resume 同一 session 直到 APPROVE 才 push。
    codex 不可用且使用者未明示跳過 → **不 push**。本專案 codex 已實際攔下多次真問題。
 4. **生成物不手改**。哪些是生成物、改了源頭要跑什麼:見 PIPELINE.md。
    通則:`en/**`、`sitemap.xml`、feeds、`llms-full.txt`、`ai/*.json`、`.well-known/ai.txt`、

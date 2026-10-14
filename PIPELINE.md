@@ -259,4 +259,4 @@ Word 模式目前提供粗體、斜體、底線、刪除線、標題、清單及
 目前的本機回歸與隔離實作證據不能代表真實作者雲端試用或正式發布成功。
 # 獨立程式審查入口
 
-`tools/codex_review.ps1` 與 `tools/codex_review.sh` 的 `diff`、`targeted`、`deep` 模式均固定使用 `gpt-5.5`／`xhigh`（extrahigh）／唯讀，完整涵蓋 staged、unstaged、未推送提交、相關 untracked 與生成物。模式名稱保留供既有操作使用，不代表可縮小範圍或降低 effort。入口會用實際 session 的模型、effort、唯讀設定、專案路徑及本輪時間戳核對 JSON 事件；缺少或不符時拒絕核可並保留上一輪狀態。證據存於 `.codex-review/last_identity.json`；這是程式審查證據，不代表醫療核可、CI 或正式發布成功。後續修正須續用同一已核對 session，重新完整審查目前差異；舊模型或 effort 的 session 不得沿用為現行核可。
+`tools/codex_review.ps1` 與 `tools/codex_review.sh` 的 `diff`、`targeted`、`deep` 模式均固定使用 `gpt-6.1-sol`／`high`／唯讀（使用者 2026-10-14 定案，不降級到其他模型或 effort），完整涵蓋 staged、unstaged、未推送提交、相關 untracked 與生成物。模式名稱保留供既有操作使用，不代表可縮小範圍或降低 effort。入口會用實際 session 的模型、effort、唯讀設定、專案路徑及本輪時間戳核對 JSON 事件；缺少或不符時拒絕核可並保留上一輪狀態。證據存於 `.codex-review/last_identity.json`；這是程式審查證據，不代表醫療核可、CI 或正式發布成功。後續修正須續用同一已核對 session，重新完整審查目前差異；舊模型或 effort 的 session 不得沿用為現行核可。Codex CLI 預設由 `tools/codex_review_identity.py which` 挑本機版本最高者（npm 0.155.1 不支援 `gpt-6.1-sol`，Codex 桌面版內附的較新 CLI 可以），可用 `CODEX_REVIEW_CLI` 明示；選哪一支都不構成核可，實際模型仍以 session 紀錄驗證。Windows 上另帶 `windows.sandbox=unelevated`，因為 `--ignore-user-config` 會丟掉使用者的沙箱設定，否則唯讀沙箱會拒絕所有指令。
