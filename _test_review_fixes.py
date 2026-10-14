@@ -298,7 +298,10 @@ class ReviewSessionTests(unittest.TestCase):
         shell = shutil.which('pwsh') or shutil.which('powershell')
         self.assertIsNotNone(shell)
         with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
+            # Non-ASCII like the real checkout (...\程式\user-main): Windows PowerShell 5.1
+            # decodes native output with the console code page, so path bugs only show here.
+            root = Path(directory) / '程式'
+            root.mkdir()
             subprocess.run(['git', 'init', '-q', str(root)], check=True)
             subprocess.run(['git', '-C', str(root), '-c', 'user.name=Fixture', '-c',
                             'user.email=fixture@example.invalid', 'commit', '--allow-empty', '-qm', 'fixture'], check=True)
@@ -337,8 +340,8 @@ function python {
 }
 function codex {
     'called' | Set-Content (Join-Path $env:REVIEW_TEST_ROOT 'called.txt')
-    $args | ConvertTo-Json -Compress | Set-Content (Join-Path $env:REVIEW_TEST_ROOT 'called-args.json')
-    [string]$env:GIT_CONFIG_PARAMETERS | Set-Content (Join-Path $env:REVIEW_TEST_ROOT 'called-env.txt')
+    $args | ConvertTo-Json -Compress | Set-Content (Join-Path $env:REVIEW_TEST_ROOT 'called-args.json') -Encoding utf8
+    [string]$env:GIT_CONFIG_PARAMETERS | Set-Content (Join-Path $env:REVIEW_TEST_ROOT 'called-env.txt') -Encoding utf8
     # Windows PowerShell 5.1 emits a JSON array as one object; PowerShell 7
     # enumerates it. Unroll explicitly so both shells see two records.
     $parsed = Get-Content (Join-Path $env:REVIEW_TEST_ROOT 'session-template.json') -Raw | ConvertFrom-Json
@@ -380,7 +383,7 @@ exit $code
                 if os.name == 'nt':
                     self.assertIn('windows.sandbox=unelevated', args)
                 top = subprocess.run(['git', '-C', str(root), 'rev-parse', '--show-toplevel'],
-                                     capture_output=True, text=True, check=True).stdout.strip()
+                                     capture_output=True, text=True, encoding='utf-8', check=True).stdout.strip()
                 self.assertEqual((root / 'called-env.txt').read_text(encoding='utf-8-sig').strip(),
                                  f"'safe.directory'='{top}'")
                 self.assertIn('--json', args)

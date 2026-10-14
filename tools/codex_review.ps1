@@ -44,7 +44,15 @@ $Strict = if ($env:CODEX_REVIEW_STRICT) { $env:CODEX_REVIEW_STRICT } else { '1' 
 function Die([string]$Msg) { [Console]::Error.WriteLine("[codex-review] ERROR: $Msg"); exit 64 }
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$RepoRoot = & git -C $ScriptDir rev-parse --show-toplevel 2>$null
+# Windows PowerShell 5.1 decodes native output with [Console]::OutputEncoding (the
+# ANSI/OEM code page by default), which garbles this checkout's non-ASCII path
+# (程式). Every later step - state files, Push-Location, the identity check and the
+# safe.directory entry - depends on this value, so read git's UTF-8 output as UTF-8.
+$PrevOutputEncoding = [Console]::OutputEncoding
+try {
+    [Console]::OutputEncoding = New-Object System.Text.UTF8Encoding $false
+    $RepoRoot = & git -C $ScriptDir rev-parse --show-toplevel 2>$null
+} finally { [Console]::OutputEncoding = $PrevOutputEncoding }
 if ($LASTEXITCODE -ne 0 -or -not $RepoRoot) { Die '必須在 git repository 內執行。' }
 $RepoRoot = $RepoRoot.Trim()
 $RepoName = Split-Path -Leaf $RepoRoot

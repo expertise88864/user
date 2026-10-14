@@ -260,7 +260,7 @@ fi
                 self.assertEqual((root / "called-env.txt").read_text(),
                                  "'safe.directory'='" + subprocess.run(
                                      ["git", "-C", str(root), "rev-parse", "--show-toplevel"],
-                                     capture_output=True, text=True, check=True).stdout.strip() + "'")
+                                     capture_output=True, text=True, encoding="utf-8", check=True).stdout.strip() + "'")
                 self.assertIn("--json", args)
                 self.assertIn("COMPLETE", args[-1])
             sid_file = state / "last_session_id"
