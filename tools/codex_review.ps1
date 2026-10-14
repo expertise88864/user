@@ -100,6 +100,25 @@ function Build-Flags([string]$EffortValue, [string]$ForMode = '') {
     return $f
 }
 
+# The Windows read-only sandbox runs the reviewer under a restricted token, so
+# git refuses a repository owned by BUILTIN\Administrators ("dubious
+# ownership") and the reviewer cannot read the diff. Mark only this repository
+# safe, only for the review child: GIT_CONFIG_PARAMETERS is command-line scope,
+# which git honours for safe.directory; the user's global config is untouched.
+function Invoke-ReviewCli([string]$Cli, [string[]]$CliArgs) {
+    $saved = $env:GIT_CONFIG_PARAMETERS
+    $entry = "'safe.directory'='" + $RepoRoot.Replace("'", "'\''") + "'"
+    $env:GIT_CONFIG_PARAMETERS = if ($saved) { "$saved $entry" } else { $entry }
+    try {
+        # $null | ... closes the CLI's stdin immediately (the prompt is an argv
+        # arg); without it the CLI blocks on "Reading additional input from stdin...".
+        # Out-Host keeps the transcript out of this function's return value.
+        $null | & $Cli @CliArgs 2>&1 | Tee-Object -FilePath $RawLog | Out-Host
+        $code = $LASTEXITCODE
+    } finally { $env:GIT_CONFIG_PARAMETERS = $saved }
+    return $code
+}
+
 function Resolve-Cli {
     if ($env:CODEX_REVIEW_CLI) { $cli = $env:CODEX_REVIEW_CLI }
     else {
@@ -243,8 +262,7 @@ connectors, or external MCP tools. End with exactly APPROVE or REQUEST_CHANGES.
     $ReviewStartedAt = [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds() / 1000.0
     Push-Location -LiteralPath $RepoRoot -ErrorAction Stop
     try {
-        $null | & $CodexCli @args2 2>&1 | Tee-Object -FilePath $RawLog
-        $rc = $LASTEXITCODE
+        $rc = Invoke-ReviewCli $CodexCli $args2
     } finally { Pop-Location }
     $result = Get-Result
     # Untrusted run: do NOT advance pass state (finding 3) — a failed pass-2 must
@@ -398,8 +416,7 @@ $args1 = @('exec') + $flags + @($prompt)
 # it the CLI blocks on "Reading additional input from stdin..." non-interactively.
 $CodexCli = Resolve-Cli
 $ReviewStartedAt = [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds() / 1000.0
-$null | & $CodexCli @args1 2>&1 | Tee-Object -FilePath $RawLog
-$rc = $LASTEXITCODE
+$rc = Invoke-ReviewCli $CodexCli $args1
 $result = Get-Result
 
 # Decide trust BEFORE recording pass state (finding 3): an incomplete /

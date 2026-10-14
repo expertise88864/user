@@ -338,6 +338,7 @@ function python {
 function codex {
     'called' | Set-Content (Join-Path $env:REVIEW_TEST_ROOT 'called.txt')
     $args | ConvertTo-Json -Compress | Set-Content (Join-Path $env:REVIEW_TEST_ROOT 'called-args.json')
+    [string]$env:GIT_CONFIG_PARAMETERS | Set-Content (Join-Path $env:REVIEW_TEST_ROOT 'called-env.txt')
     # Windows PowerShell 5.1 emits a JSON array as one object; PowerShell 7
     # enumerates it. Unroll explicitly so both shells see two records.
     $parsed = Get-Content (Join-Path $env:REVIEW_TEST_ROOT 'session-template.json') -Raw | ConvertFrom-Json
@@ -352,7 +353,10 @@ function codex {
     $global:LASTEXITCODE = [int]$env:REVIEW_TEST_RC
 }
 & (Join-Path $env:REVIEW_TEST_ROOT 'tools/codex_review.ps1') $env:REVIEW_TEST_MODE $env:REVIEW_TEST_ARG
-exit $LASTEXITCODE
+$code = $LASTEXITCODE
+# The wrapper runs in this session: its safe.directory entry must not leak out.
+if ($env:GIT_CONFIG_PARAMETERS) { exit 97 }
+exit $code
 ''', encoding='utf-8-sig')
             env = dict(os.environ, REVIEW_TEST_ROOT=str(root), REVIEW_TEST_MODE=mode, REVIEW_TEST_ARG=explicit or ('HEAD' if mode != 'resume' else ''), REVIEW_TEST_RC=str(rc), REVIEW_TEST_PYTHON=sys.executable, REVIEW_TEST_SESSION=str(session_path),
                        # Route the wrapper to the fake `codex` function above
@@ -375,6 +379,10 @@ exit $LASTEXITCODE
                 self.assertIn('model_reasoning_effort=high', args)
                 if os.name == 'nt':
                     self.assertIn('windows.sandbox=unelevated', args)
+                top = subprocess.run(['git', '-C', str(root), 'rev-parse', '--show-toplevel'],
+                                     capture_output=True, text=True, check=True).stdout.strip()
+                self.assertEqual((root / 'called-env.txt').read_text(encoding='utf-8-sig').strip(),
+                                 f"'safe.directory'='{top}'")
                 self.assertIn('--json', args)
                 self.assertIn('COMPLETE', args[-1])
             session_file = state / 'last_session_id'

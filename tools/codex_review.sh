@@ -99,6 +99,17 @@ build_flags() {   # $1 = effort ; $2 = "resume" to build resume-compatible flags
   #             --skip-git-repo-check、--ephemeral(第二輪要 resume)、--dangerously-*。
 }
 
+# The Windows read-only sandbox runs the reviewer under a restricted token, so
+# git refuses a repository owned by BUILTIN\Administrators ("dubious
+# ownership") and the reviewer cannot read the diff. Mark only this repository
+# safe, only for the review child: GIT_CONFIG_PARAMETERS is command-line scope,
+# which git honours for safe.directory; the user's global config is untouched.
+review_git_scope() {
+  local quoted
+  quoted="$(printf '%s' "$REPO_ROOT" | sed "s/'/'\\\\''/g")"
+  export GIT_CONFIG_PARAMETERS="${GIT_CONFIG_PARAMETERS:+$GIT_CONFIG_PARAMETERS }'safe.directory'='$quoted'"
+}
+
 resolve_cli() {
   if [ -n "${CODEX_REVIEW_CLI:-}" ]; then
     CODEX_CLI="$CODEX_REVIEW_CLI"
@@ -108,6 +119,7 @@ resolve_cli() {
   fi
   [ -n "$CODEX_CLI" ] || die "找不到可用的 Codex CLI;不降級到其他模型。"
   echo "[codex-review] cli=$CODEX_CLI"
+  review_git_scope
 }
 
 # ---------- 解析輸出 ----------

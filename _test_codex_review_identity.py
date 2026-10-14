@@ -197,6 +197,7 @@ class BashWrapperTests(unittest.TestCase):
             emitter.write_text('''import json,sys,pathlib,datetime,os
 root=pathlib.Path.cwd(); args=sys.argv[1:]
 (root/'called-args.json').write_text(json.dumps(args))
+(root/'called-env.txt').write_text(os.environ.get('GIT_CONFIG_PARAMETERS',''))
 pathlib.Path(args[args.index('-o')+1]).write_text('NO_ACTIONABLE_FINDINGS\\nAPPROVE\\n')
 sid=os.environ['REVIEW_FIXTURE_SID']; context={'cwd':str(root),'model':os.environ['REVIEW_FIXTURE_MODEL'],'effort':os.environ['REVIEW_FIXTURE_EFFORT'],'sandbox_policy':{'type':os.environ['REVIEW_FIXTURE_SANDBOX']},'turn_id':'fixture'}
 rows=[{'type':'session_meta','payload':{'id':sid,'cwd':str(root)}},{'type':'turn_context','timestamp':datetime.datetime.now(datetime.timezone.utc).isoformat(),'payload':context}]
@@ -255,6 +256,11 @@ fi
                 self.assertIn("model_reasoning_effort=high", args)
                 if os.name == "nt":
                     self.assertIn("windows.sandbox=unelevated", args)
+                # Only this repository is marked safe, only for the review child.
+                self.assertEqual((root / "called-env.txt").read_text(),
+                                 "'safe.directory'='" + subprocess.run(
+                                     ["git", "-C", str(root), "rev-parse", "--show-toplevel"],
+                                     capture_output=True, text=True, check=True).stdout.strip() + "'")
                 self.assertIn("--json", args)
                 self.assertIn("COMPLETE", args[-1])
             sid_file = state / "last_session_id"
