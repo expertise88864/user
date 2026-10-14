@@ -112,12 +112,15 @@
       var blank = 0;
       cards.forEach(function (card) {
         if (card.classList.contains('ex-done')) {
-          if (card.getAttribute('data-graded') === 'right') right += 1;
+          var graded = card.getAttribute('data-graded');
+          if (graded === 'right') right += 1;
+          else if (graded === 'blank') blank += 1;
           return;
         }
         var ok = grade(card, true);
         if (ok === null) {
           blank += 1;
+          card.setAttribute('data-graded', 'blank');
           card.classList.add('ex-done');
         } else if (ok) {
           right += 1;
@@ -205,7 +208,9 @@
       var remove = el('button', 'ex-remove', '移出錯題本');
       remove.addEventListener('click', function () {
         markWrong(q.id, false);
-        card.remove();
+        // Re-render so the 「共 N 題錯題」 count and the empty state stay current.
+        var list = document.getElementById('ex-review-list');
+        if (list) renderReview(list); else card.remove();
       });
       actions.appendChild(remove);
     }
