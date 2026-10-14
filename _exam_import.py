@@ -270,6 +270,7 @@ def main() -> int:
                 problems.append(f"{year}-{number:02d}: answer key {raw!r} needs review")
             if "送分" in raw or "給分" in raw:
                 q["note"] = "官方公告此題送分"
+                q["free"] = True  # every choice is graded as correct
             out.append({
                 "id": f"{year}-{number:02d}",
                 "year": year,
@@ -282,10 +283,14 @@ def main() -> int:
     print(f"parsed {len(out)} questions from {len({q['year'] for q in out})} years")
     for p in problems:
         print("ISSUE", p)
+    if problems:
+        # Never replace the committed bank with partial or unvalidated data.
+        print(f"{len(problems)} issue(s); questions.json left unchanged")
+        return 1
     if not args.check:
         OUT_DIR.mkdir(parents=True, exist_ok=True)
         path = OUT_DIR / "questions.json"
-        path.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        path.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
         print(f"wrote {path.relative_to(ROOT)}")
     return 0
 

@@ -37,6 +37,7 @@
 
   function resetQuestion(card) {
     card.classList.remove('ex-done');
+    card.removeAttribute('data-graded');
     card.querySelectorAll('.ex-opt').forEach(function (opt) { opt.classList.remove('ex-picked'); });
     card.querySelectorAll('input[type=radio]').forEach(function (input) { input.checked = false; input.disabled = false; });
     var result = card.querySelector('.ex-result');
@@ -51,14 +52,18 @@
       return null;
     }
     var answer = card.getAttribute('data-answer') || '';
-    var ok = answer.indexOf(picked.value) !== -1;
+    // Free-credit questions (官方公告送分) count every choice as correct.
+    var free = card.hasAttribute('data-free');
+    var ok = free || answer.indexOf(picked.value) !== -1;
+    card.setAttribute('data-graded', ok ? 'right' : 'wrong');
     card.classList.add('ex-done');
     picked.closest('.ex-opt').classList.add('ex-picked');
     card.querySelectorAll('input[type=radio]').forEach(function (input) { input.disabled = true; });
     if (result) {
       // Grading a whole paper at once must not queue 50 screen-reader announcements.
       result.setAttribute('aria-live', silent ? 'off' : 'polite');
-      result.textContent = ok ? '答對了' : '答錯了，正確答案是 ' + answer.split('').join('、');
+      result.textContent = free ? '此題官方公告送分，任何選項皆給分'
+        : ok ? '答對了' : '答錯了，正確答案是 ' + answer.split('').join('、');
     }
     markWrong(card.getAttribute('data-qid'), !ok);
     return ok;
@@ -106,7 +111,7 @@
       var blank = 0;
       cards.forEach(function (card) {
         if (card.classList.contains('ex-done')) {
-          if (card.querySelector('.ex-picked[data-correct]')) right += 1;
+          if (card.getAttribute('data-graded') === 'right') right += 1;
           return;
         }
         var ok = grade(card, true);
@@ -145,6 +150,7 @@
     card.id = 'q-' + q.id;
     card.setAttribute('data-qid', q.id);
     card.setAttribute('data-answer', q.answer.join(''));
+    if (q.free) card.setAttribute('data-free', '');
     var head = el('header', 'ex-q-head');
     var link = el('a', null, q.year + ' 年第 ' + q.number + ' 題');
     link.href = '/exam/year-' + q.year + '#q-' + q.id;
@@ -208,12 +214,13 @@
     var reveal = el('div', 'ex-reveal');
     var ans = el('p', 'ex-answer', '官方答案：');
     ans.appendChild(el('strong', null, q.answer.join('、')));
+    if (q.note) ans.appendChild(el('span', 'ex-flag', q.note));
     reveal.appendChild(ans);
     if (q.expl) {
       reveal.appendChild(richText('p', 'ex-summary', q.expl.summary));
       var items = el('ul', 'ex-items');
       q.expl.items.forEach(function (it) {
-        var li = el('li');
+        var li = el('li', it.ok ? 'ex-ok' : 'ex-no');
         li.appendChild(el('span', 'ex-item-key', it.key));
         li.appendChild(el('span', 'ex-item-label', it.label));
         li.appendChild(richText('span', 'ex-item-text', it.text));
@@ -221,6 +228,9 @@
         items.appendChild(li);
       });
       reveal.appendChild(items);
+      (q.expl.flags || []).forEach(function (flag) {
+        reveal.appendChild(richText('p', 'ex-warn', '⚠ ' + flag));
+      });
     } else {
       reveal.appendChild(el('p', 'ex-pending', '詳解尚未整理。'));
     }
@@ -271,12 +281,13 @@
       (q.statements || []).forEach(function (s) { front += htmlText(s.id + ' ' + s.text) + '<br>'; });
       Object.keys(q.options).forEach(function (k) { front += htmlText('(' + k + ') ' + q.options[k]) + '<br>'; });
       front += '<small>' + q.year + ' 年第 ' + q.number + ' 題</small>';
-      var back = '答案：' + q.answer.join('、');
+      var back = '答案：' + q.answer.join('、') + (q.note ? htmlText('（' + q.note + '）') : '');
       if (q.expl) {
         back += '<br>' + htmlText(q.expl.summary);
         q.expl.items.forEach(function (it) {
           back += '<br>' + htmlText(it.key + ' ' + it.label + '：' + it.text + '（' + it.refs.join('；') + '）');
         });
+        (q.expl.flags || []).forEach(function (flag) { back += '<br>' + htmlText('⚠ ' + flag); });
       }
       return csvCell(front) + ',' + csvCell(back);
     }).join('\n');

@@ -260,7 +260,8 @@ def question_html(q: dict, data: dict, *, current_chapter: int | None = None, sh
         where = f'（相關章節：{"、".join(homes)}）' if homes else ""
         expl_html = f'<p class="ex-pending">詳解尚未整理{where}。</p>'
     return (
-        f'<article class="ex-q" id="q-{qid}" data-qid="{qid}" data-answer="{"".join(sorted(answer))}">'
+        f'<article class="ex-q" id="q-{qid}" data-qid="{qid}" data-answer="{"".join(sorted(answer))}"'
+        f'{" data-free" if q.get("free") else ""}>'
         f'<header class="ex-q-head"><span class="ex-q-no">{year_label}</span>'
         f'<span class="ex-chips">{"".join(chips)}</span></header>'
         # Verbatim official exam text: the YMYL claim audit skips this block
@@ -514,12 +515,17 @@ def client_data(data) -> dict:
         row = {k: q[k] for k in ("id", "year", "number", "stem", "options", "answer")}
         if q.get("statements"):
             row["statements"] = q["statements"]
+        if q.get("free"):
+            row["free"] = True
+            row["note"] = q.get("note", "")
         row["fitz"] = data["tags"][q["id"]]["fitz"]
         expl = data["explanations"].get(q["id"])
         if expl:
             row["expl"] = {"summary": expl["summary"], "items": [
-                {"key": it["key"], "label": it["label"], "text": it["text"],
+                {"key": it["key"], "label": it["label"], "ok": it["ok"], "text": it["text"],
                  "refs": [f"ch.{c} p.{p}" for c, p in it["refs"]]} for it in expl["items"]]}
+            if expl.get("flags"):
+                row["expl"]["flags"] = expl["flags"]
         out.append(row)
     return {"questions": out}
 
