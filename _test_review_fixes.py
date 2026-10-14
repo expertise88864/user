@@ -338,7 +338,10 @@ function python {
 function codex {
     'called' | Set-Content (Join-Path $env:REVIEW_TEST_ROOT 'called.txt')
     $args | ConvertTo-Json -Compress | Set-Content (Join-Path $env:REVIEW_TEST_ROOT 'called-args.json')
-    $records = @(Get-Content (Join-Path $env:REVIEW_TEST_ROOT 'session-template.json') -Raw | ConvertFrom-Json)
+    # Windows PowerShell 5.1 emits a JSON array as one object; PowerShell 7
+    # enumerates it. Unroll explicitly so both shells see two records.
+    $parsed = Get-Content (Join-Path $env:REVIEW_TEST_ROOT 'session-template.json') -Raw | ConvertFrom-Json
+    $records = @($parsed | ForEach-Object { $_ })
     $records[1].timestamp = [DateTimeOffset]::UtcNow.ToString('o')
     $records[1].payload.cwd = [string](Get-Location)
     $records | ForEach-Object { $_ | ConvertTo-Json -Depth 10 -Compress } |

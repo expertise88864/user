@@ -29,7 +29,8 @@ async function profile(page, id, mode) {
       if (input.tagName === 'SELECT') {
         input.selectedIndex = mode === 'min' ? 0 : mode === 'max' ? input.options.length - 1 : Math.floor(input.options.length / 2);
       } else {
-        const min = Number(input.min), max = Number(input.max), step = Number(input.step || 1);
+        // step="any" fields keep the historical 1-unit profile so contract hashes are stable.
+        const min = Number(input.min), max = Number(input.max), step = input.step === 'any' ? 1 : Number(input.step || 1);
         input.value = String(mode === 'min' ? min : mode === 'max' ? max : min + Math.floor((max - min) / step / 2) * step);
       }
       input.dispatchEvent(new Event('input', { bubbles: true }));
@@ -69,6 +70,7 @@ async function checkCalculators(browser) {
   const context = await browser.newContext({ serviceWorkers: 'block' });
   await context.route('**/*', route => route.abort());
   let invalidCases = 0;
+  let decimalCases = 0;
   try {
     const page = await context.newPage();
     const shared = fs.readFileSync('blog/blog-shared.js', 'utf8');
@@ -100,7 +102,9 @@ async function checkCalculators(browser) {
           const results = [];
           for (const input of box.querySelectorAll('input[type="number"]')) {
             const saved = input.value;
-            for (const value of ['', String(Number(input.min) - 1), String(Number(input.max) + 1), String(Number(input.min) + Number(input.step || 1) / 2)]) {
+            // A half-step value is invalid only where the field declares a step grid.
+            const offGrid = input.step === 'any' ? [] : [String(Number(input.min) + Number(input.step || 1) / 2)];
+            for (const value of ['', String(Number(input.min) - 1), String(Number(input.max) + 1), ...offGrid]) {
               input.value = value; input.dispatchEvent(new Event('input', { bubbles: true }));
               const notice = box.querySelector('.dn-calc-input-notice');
               results.push({ value: input.value, expected: value, invalid: input.getAttribute('aria-invalid'),
@@ -117,6 +121,22 @@ async function checkCalculators(browser) {
           assert.equal(result.score, '—'); assert.equal(result.band, ''); assert.equal(result.interpretation, '');
           assert.equal(result.visible, true); assert.equal(result.linked, true); assert.equal(result.role, 'status');
         }
+        const decimals = await box.evaluate(box => {
+          const out = [];
+          for (const input of box.querySelectorAll('input[type="number"][step="any"]')) {
+            const saved = input.value, value = String(Number(input.min) + 13.5);
+            input.value = value; input.dispatchEvent(new Event('input', { bubbles: true }));
+            out.push({ id: input.id, value, invalid: input.getAttribute('aria-invalid'),
+              score: box.querySelector('.dn-calc-score').textContent });
+            input.value = saved; input.dispatchEvent(new Event('input', { bubbles: true }));
+          }
+          return out;
+        });
+        for (const result of decimals) {
+          assert.equal(result.invalid, 'false', name + ' ' + result.id + ' rejects a decimal area ' + result.value);
+          assert.notEqual(result.score, '—', name + ' ' + result.id + ' does not score a decimal area');
+        }
+        decimalCases += decimals.length;
         invalidCases += results.length;
         assert.equal(await clinicalHash(page, id), before, name + ' recovery');
         const first = box.locator('input[type="number"]').first();
@@ -134,7 +154,10 @@ async function checkCalculators(browser) {
         assert.ok(events.every(event => event[0] === 'event' && event[1] === 'calculator_view' && Object.keys(event[2]).sort().join(',') === 'page_path,tool'), 'no input/result telemetry');
       }
     }
-    console.log('Calculator UI passed: 18 components, 390/800/1440, preserved valid medical text/results, ' + invalidCases + ' invalid input cases, correction/keyboard/labels, isolated collectors');
+    console.log('Calculator UI passed: 18 components, 390/800/1440, preserved valid medical text/results, ' + invalidCases + ' invalid input cases, ' + decimalCases + ' decimal area cases, correction/keyboard/labels, isolated collectors');
+    // SCORAD A + SALT V/B/L/R, at each of the three viewport widths: the
+    // decimal check must actually run (5 fields x 3 widths).
+    assert.equal(decimalCases, 5 * 3, 'decimal area coverage changed');
   } finally { await context.close(); }
 }
 module.exports = checkCalculators;

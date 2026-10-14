@@ -2,6 +2,10 @@
 (function () {
   var DN = (window.DN = window.DN || {});
 
+  // Area estimates (SCORAD A, SALT regions) use step="any": validity.valid
+  // includes stepMismatch, so step="1"/"5" rejected the rule-of-nines values
+  // the tools guide itself teaches (13.5% infant lower limb) and SALT regions
+  // the guide only *recommends* rounding to 5%. Ordinal 0-6 area grades stay integer.
   // Input validity belongs to the shared UI, before any clinical calculation.
   // Preserve entered values so a reader can correct them rather than silently
   // substituting zero or a boundary value for an incomplete assessment.
@@ -100,7 +104,7 @@
         '<div class="dn-calc-sub" data-zh="SCORAD = A/5 + 7B/2 + C。A：受影響面積(0-100%)、B:6 項客觀症狀總分、C:2 項主觀症狀總分。完整版需臨床評估，本工具為簡易自評。" data-en="SCORAD = A/5 + 7B/2 + C. A: BSA, B: 6 objective signs, C: 2 subjective. Self-assessment only.">SCORAD = A/5 + 7B/2 + C。A：受影響面積(0-100%)、B:6 項客觀症狀總分、C:2 項主觀症狀總分。完整版需臨床評估，本工具為簡易自評。</div>' +
         '<div class="dn-calc-row">' +
           '<label for="dn-scorad-A" data-zh="A · 受影響體表面積(%)" data-en="A · Affected BSA (%)">A · 受影響體表面積(%)<span class="dn-calc-hint" data-zh="0-100，可用九分法估算" data-en="0-100, use rule of nines">0-100，可用九分法估算</span></label>' +
-          '<input type="number" min="0" max="100" step="1" value="20" class="dn-calc-input" id="dn-scorad-A" />' +
+          '<input type="number" min="0" max="100" step="any" value="20" class="dn-calc-input" id="dn-scorad-A" />' +
         '</div>' +
         '<div class="dn-calc-row">' +
           '<label for="dn-scorad-B" data-zh="B · 6 項客觀症狀總分(0-18)" data-en="B · Objective signs (0-18)">B · 6 項客觀症狀總分<span class="dn-calc-hint" data-zh="紅斑、水腫/丘疹、滲出/結痂、抓痕、苔癬化、乾燥；每項 0-3" data-en="Erythema, edema, oozing, excoriation, lichenification, dryness; each 0-3">紅斑、水腫/丘疹、滲出/結痂、抓痕、苔癬化、乾燥；每項 0-3</span></label>' +
@@ -159,10 +163,10 @@
       '<div class="dn-calc" id="dn-salt">' +
         '<h3 class="dn-calc-title" data-zh="SALT 計算器 — 圓禿頭皮禿髮面積" data-en="SALT Calculator — alopecia areata scalp">SALT 計算器 — 圓禿頭皮禿髮面積</h3>' +
         '<div class="dn-calc-sub" data-zh="頭皮分 4 區：頂(40%)、後(24%)、左(18%)、右(18%)。SALT = Σ（各區禿髮 % × 該區權重）。" data-en="Scalp divided into 4 zones: vertex (40%), back (24%), left (18%), right (18%). SALT = sum of each zone hair-loss % × weight.">頭皮分 4 區：頂(40%)、後(24%)、左(18%)、右(18%)。SALT = Σ（各區禿髮 % × 該區權重）。</div>' +
-        '<div class="dn-calc-row"><label for="dn-salt-V" data-zh="頂部禿髮 %（權重 40)" data-en="Vertex (weight 40)">頂部禿髮 %<span class="dn-calc-hint">權重 0.40</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-V" /></div>' +
-        '<div class="dn-calc-row"><label for="dn-salt-B" data-zh="後部禿髮 %（權重 24)" data-en="Back (weight 24)">後部禿髮 %<span class="dn-calc-hint">權重 0.24</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-B" /></div>' +
-        '<div class="dn-calc-row"><label for="dn-salt-L" data-zh="左側禿髮 %（權重 18)" data-en="Left (weight 18)">左側禿髮 %<span class="dn-calc-hint">權重 0.18</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-L" /></div>' +
-        '<div class="dn-calc-row"><label for="dn-salt-R" data-zh="右側禿髮 %（權重 18)" data-en="Right (weight 18)">右側禿髮 %<span class="dn-calc-hint">權重 0.18</span></label><input type="number" min="0" max="100" step="5" value="0" class="dn-calc-input" id="dn-salt-R" /></div>' +
+        '<div class="dn-calc-row"><label for="dn-salt-V" data-zh="頂部禿髮 %（權重 40)" data-en="Vertex (weight 40)">頂部禿髮 %<span class="dn-calc-hint">權重 0.40</span></label><input type="number" min="0" max="100" step="any" value="0" class="dn-calc-input" id="dn-salt-V" /></div>' +
+        '<div class="dn-calc-row"><label for="dn-salt-B" data-zh="後部禿髮 %（權重 24)" data-en="Back (weight 24)">後部禿髮 %<span class="dn-calc-hint">權重 0.24</span></label><input type="number" min="0" max="100" step="any" value="0" class="dn-calc-input" id="dn-salt-B" /></div>' +
+        '<div class="dn-calc-row"><label for="dn-salt-L" data-zh="左側禿髮 %（權重 18)" data-en="Left (weight 18)">左側禿髮 %<span class="dn-calc-hint">權重 0.18</span></label><input type="number" min="0" max="100" step="any" value="0" class="dn-calc-input" id="dn-salt-L" /></div>' +
+        '<div class="dn-calc-row"><label for="dn-salt-R" data-zh="右側禿髮 %（權重 18)" data-en="Right (weight 18)">右側禿髮 %<span class="dn-calc-hint">權重 0.18</span></label><input type="number" min="0" max="100" step="any" value="0" class="dn-calc-input" id="dn-salt-R" /></div>' +
         '<div class="dn-calc-result">' +
           '<div><span class="dn-calc-score" id="dn-salt-score">—</span><span class="dn-calc-band" id="dn-salt-band"></span></div>' +
           '<div class="dn-calc-interp" id="dn-salt-interp"></div>' +
