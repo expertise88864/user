@@ -36,7 +36,7 @@ class IdentityTests(unittest.TestCase):
                        {"type": "turn.completed", "usage": {"input_tokens": 5, "output_tokens": 2}}]
         self.records = [{"type": "session_meta", "payload": {"id": SID, "cwd": str(self.root)}},
                         {"type": "turn_context", "timestamp": datetime.now(timezone.utc).isoformat(),
-                         "payload": {"cwd": str(self.root), "model": "gpt-6.1-sol", "effort": "high",
+                         "payload": {"cwd": str(self.root), "model": "gpt-6.1-sol", "effort": "xhigh",
                                      "turn_id": "current-turn", "sandbox_policy": {"type": "read-only"}}}]
 
     def save(self):
@@ -50,7 +50,7 @@ class IdentityTests(unittest.TestCase):
     def test_actual_metadata_and_hashes(self):
         result = self.verify(expected=SID.upper())
         self.assertEqual((result["sessionId"], result["tokensUsed"]), (SID, 7))
-        self.assertEqual(result["actualEffort"], "high")
+        self.assertEqual(result["actualEffort"], "xhigh")
         self.assertEqual(len(result["sessionLogSHA256"]), 64)
 
     def test_bom_tagged_utf16_events_preserve_actual_identity(self):
@@ -62,7 +62,7 @@ class IdentityTests(unittest.TestCase):
                 result = identity.verify(self.raw, self.root, self.sessions, self.started, SID)
                 self.assertEqual((result["sessionId"], result["tokensUsed"]), (SID, 7))
                 self.assertEqual(result["actualModel"], "gpt-6.1-sol")
-                self.assertEqual(result["actualEffort"], "high")
+                self.assertEqual(result["actualEffort"], "xhigh")
 
     def test_malformed_encoding_is_not_silently_trusted(self):
         for raw in (b"\xff", b"\xff\xfe{", b"\xfe\xff\x00"):
@@ -131,7 +131,7 @@ class IdentityTests(unittest.TestCase):
 
     def test_latest_context_model_effort_and_sandbox(self):
         context = self.records[-1]["payload"]
-        for key, bad in (("model", "gpt-5.5"), ("effort", "xhigh"),
+        for key, bad in (("model", "gpt-5.5"), ("effort", "high"),
                          ("sandbox_policy", {"type": "workspace-write"})):
             original = context[key]
             context[key] = bad
@@ -172,7 +172,7 @@ BASH = shutil.which("bash") or ("C:/Program Files/Git/bin/bash.exe" if Path("C:/
 @unittest.skipUnless(BASH, "Bash operator requires Bash")
 class BashWrapperTests(unittest.TestCase):
     def run_wrapper(self, *, resume=False, returned=SID, rc=0, actual_model="gpt-6.1-sol",
-                    actual_effort="high", actual_sandbox="read-only", count=1, legacy=False,
+                    actual_effort="xhigh", actual_sandbox="read-only", count=1, legacy=False,
                     retry_after_failure=False, crlf=False, python3_only=False, from_subdir=False):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -187,7 +187,7 @@ class BashWrapperTests(unittest.TestCase):
             state.mkdir()
             (state / "last_pass").write_text(str(count))
             (state / "last_session_id").write_text(SID)
-            model, effort = ("gpt-5.5", "xhigh") if legacy else ("gpt-6.1-sol", "high")
+            model, effort = ("gpt-6.1-sol", "high") if legacy else ("gpt-6.1-sol", "xhigh")
             (state / "usage.tsv").write_text("timestamp\trepository\tmode\tmodel\teffort\tbase_ref\tsession_id\ttokens_used\tresult\tfindings\tpass\n"
                 f"now\tfixture\tdeep\t{model}\t{effort}\tHEAD\t{SID}\t0\tREQUEST_CHANGES\t1\t{count}\n",
                 newline="\r\n" if crlf else "\n")
@@ -253,7 +253,7 @@ fi
             if called:
                 args = json.loads((root / "called-args.json").read_text())
                 self.assertEqual(args[args.index("--model") + 1], "gpt-6.1-sol")
-                self.assertIn("model_reasoning_effort=high", args)
+                self.assertIn("model_reasoning_effort=xhigh", args)
                 if os.name == "nt":
                     self.assertIn("windows.sandbox=unelevated", args)
                 # Only this repository is marked safe, only for the review child.
@@ -297,7 +297,7 @@ fi
         self.assertEqual(result[:4], (4, True, SID, "1"), result[-1])
 
     def test_wrong_actual_profile_cannot_approve(self):
-        for kwargs in ({"actual_model": "gpt-5.5"}, {"actual_effort": "xhigh"}, {"actual_sandbox": "workspace-write"}):
+        for kwargs in ({"actual_model": "gpt-5.5"}, {"actual_effort": "high"}, {"actual_sandbox": "workspace-write"}):
             with self.subTest(kwargs=kwargs):
                 result = self.run_wrapper(**kwargs)
                 self.assertEqual(result[:4], (4, True, None, "0"), result[-1])

@@ -33,7 +33,7 @@ zh-Hant 為源頭、`/en/` 鏡像為生成物。~53 篇文章 + ~130 支根目�
    模型不得自行判斷臨床正確性。流程:草稿 → 使用者說「通過」→ 注入 → codex review → push。
 2. **合規紅線**:作者是住院醫師 —— schema/內文**不得**掛醫院隸屬(worksFor/affiliation)、
    不得出現掛號/預約/價格/診所名(醫療法 §9)。`hasCredential` 只放「醫師」執照、不放號碼。
-3. **push 前必過 Codex `gpt-6.1-sol`/`high` review**(全域規則 2026-10-14,見 ~/.claude/CLAUDE.md)。流程:
+3. **push 前必過 Codex `gpt-6.1-sol`/`xhigh` review**(全域規則 2026-10-14,見 ~/.claude/CLAUDE.md)。流程:
    只走 repo wrapper `tools/codex_review.sh` / `tools/codex_review.ps1`(唯讀、不貼 diff;MCP 與直接 `codex exec` 都不用)
    → 逐條驗證 finding、只修 CONFIRMED → resume 同一 session 直到 APPROVE 才 push。
    codex 不可用且使用者未明示跳過 → **不 push**。本專案 codex 已實際攔下多次真問題。

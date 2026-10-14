@@ -7,7 +7,7 @@ tools/codex_review.ps1 — 本 repo 唯一的外部 code-review 入口(Codex CLI
   .\tools\codex_review.ps1 resume [session-id]
 
 mode:
-  diff / targeted / deep  相容模式名稱；皆固定 gpt-6.1-sol / high / read-only
+  diff / targeted / deep  相容模式名稱；皆固定 gpt-6.1-sol / xhigh / read-only
                           (使用者 2026-10-14 定案:任何 diff review 一律如此,不降級)。
                           完整交付差異，沒有檔案、finding 或輪數上限。
   resume                  修正後沿用同一個已驗證 session，完整重審至通過。
@@ -79,9 +79,9 @@ if (-not (Test-Path $UsageTsv)) {
 }
 
 switch ($Mode) {
-    'diff'     { $Effort = 'high' }
-    'targeted' { $Effort = 'high' }
-    'deep'     { $Effort = 'high' }
+    'diff'     { $Effort = 'xhigh' }
+    'targeted' { $Effort = 'xhigh' }
+    'deep'     { $Effort = 'xhigh' }
     'resume'   { $Effort = '' }
     default    { Die "未知 mode '$Mode'(可用:diff | targeted | deep | resume)" }
 }
@@ -252,10 +252,10 @@ if ($Mode -eq 'resume') {
     })
     if (-not $verifiedRows.Count) { Die 'No completed verified row for this session; start a fresh first review.' }
     $last = $verifiedRows[-1] -split "`t"
-    if ($last.Count -lt 7 -or $last[3] -ne $Model -or $last[4] -ne 'high' -or $last[6] -ne $Sid) {
-        Die "Recorded session profile is not $Model/high; start a fresh first review."
+    if ($last.Count -lt 7 -or $last[3] -ne $Model -or $last[4] -ne 'xhigh' -or $last[6] -ne $Sid) {
+        Die "Recorded session profile is not $Model/xhigh; start a fresh first review."
     }
-    $ResumeEffort = 'high'
+    $ResumeEffort = 'xhigh'
     $ResumeBase   = if ($last.Count -ge 6 -and $last[5]) { $last[5] } else { 'unavailable' }
 
     $ResumePrompt = @'

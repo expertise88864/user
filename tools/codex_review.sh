@@ -6,7 +6,7 @@
 #   tools/codex_review.sh resume [session-id]
 #
 # mode:
-#   diff / targeted / deep  相容模式名稱；皆固定 gpt-6.1-sol / high / read-only
+#   diff / targeted / deep  相容模式名稱；皆固定 gpt-6.1-sol / xhigh / read-only
 #                           (使用者 2026-10-14 定案:任何 diff review 一律如此,不降級)。
 #                           完整交付差異，沒有檔案、finding 或輪數上限。
 #   resume                  修正後沿用同一個已驗證 session，完整重審至通過。
@@ -64,9 +64,9 @@ MODE="${1:-}"
 [ -n "$MODE" ] || die "缺少 mode。用法: $0 <diff|targeted|deep> <base-ref> [task-context-file] | $0 resume [session-id]"
 
 case "$MODE" in
-  diff) EFFORT="high" ;;
-  targeted) EFFORT="high" ;;
-  deep) EFFORT="high" ;;
+  diff) EFFORT="xhigh" ;;
+  targeted) EFFORT="xhigh" ;;
+  deep) EFFORT="xhigh" ;;
   resume) EFFORT="" ;;
   *) die "未知 mode '$MODE'(可用:diff | targeted | deep | resume)" ;;
 esac
@@ -232,10 +232,10 @@ if [ "$MODE" = "resume" ]; then
     END { print last }' "$USAGE_TSV")"
   [ -n "$VERIFIED_ROW" ] || die "No completed verified row for this session; start a fresh first review."
   [ "$(printf '%s' "$VERIFIED_ROW" | cut -f4)" = "$MODEL" ] &&
-    [ "$(printf '%s' "$VERIFIED_ROW" | cut -f5)" = "high" ] &&
+    [ "$(printf '%s' "$VERIFIED_ROW" | cut -f5)" = "xhigh" ] &&
     [ "$(printf '%s' "$VERIFIED_ROW" | cut -f7 | tr 'A-Z' 'a-z')" = "$SID" ] ||
-    die "Recorded session profile is not $MODEL/high; start a fresh first review."
-  RESUME_EFFORT="high"
+    die "Recorded session profile is not $MODEL/xhigh; start a fresh first review."
+  RESUME_EFFORT="xhigh"
   RESUME_BASE="$(printf '%s' "$VERIFIED_ROW" | cut -f6)";   [ -n "$RESUME_BASE" ] || RESUME_BASE="unavailable"
   NEXT_PASS=$((PREV_PASS + 1))
   build_flags "$RESUME_EFFORT" resume

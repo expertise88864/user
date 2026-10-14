@@ -294,7 +294,7 @@ class ReviewSessionTests(unittest.TestCase):
     sid = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa'
     other = 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb'
 
-    def run_wrapper(self, recorded=None, returned=None, mode='resume', explicit=None, count=1, rc=0, actual_model='gpt-6.1-sol', actual_effort='high', actual_sandbox='read-only', legacy_profile=False, retry_after_failure=False, from_subdir=False):
+    def run_wrapper(self, recorded=None, returned=None, mode='resume', explicit=None, count=1, rc=0, actual_model='gpt-6.1-sol', actual_effort='xhigh', actual_sandbox='read-only', legacy_profile=False, retry_after_failure=False, from_subdir=False):
         shell = shutil.which('pwsh') or shutil.which('powershell')
         self.assertIsNotNone(shell)
         with tempfile.TemporaryDirectory() as directory:
@@ -317,7 +317,7 @@ class ReviewSessionTests(unittest.TestCase):
             (state / 'last_pass').write_text(str(count))
             (state / 'usage.tsv').write_text(
                 'timestamp\trepository\tmode\tmodel\teffort\tbase_ref\tsession_id\ttokens_used\tresult\tfindings\tpass\n'
-                f"now\tfixture\tdeep\t{'gpt-5.5' if legacy_profile else 'gpt-6.1-sol'}\t{'xhigh' if legacy_profile else 'high'}\tHEAD\t{recorded}\t0\tREQUEST_CHANGES\t1\t{count}\n")
+                f"now\tfixture\tdeep\t{'gpt-6.1-sol'}\t{'high' if legacy_profile else 'xhigh'}\tHEAD\t{recorded}\t0\tREQUEST_CHANGES\t1\t{count}\n")
             events = [{'type': 'turn.completed', 'usage': {'input_tokens': 3, 'output_tokens': 2}}]
             if returned is not None:
                 events.insert(0, {'type': 'thread.started', 'thread_id': returned})
@@ -379,7 +379,7 @@ exit $code
             if (root / 'called-args.json').exists():
                 args = json.loads((root / 'called-args.json').read_text(encoding='utf-8-sig'))
                 self.assertEqual(args[args.index('--model') + 1], 'gpt-6.1-sol')
-                self.assertIn('model_reasoning_effort=high', args)
+                self.assertIn('model_reasoning_effort=xhigh', args)
                 if os.name == 'nt':
                     self.assertIn('windows.sandbox=unelevated', args)
                 top = subprocess.run(['git', '-C', str(root), 'rev-parse', '--show-toplevel'],
@@ -405,7 +405,7 @@ exit $code
         self.assertEqual(result[2:4], (self.sid, '4'))
 
     def test_wrong_actual_model_effort_or_sandbox_never_approves(self):
-        for changes in ({'actual_model': 'gpt-5.5'}, {'actual_effort': 'xhigh'},
+        for changes in ({'actual_model': 'gpt-5.5'}, {'actual_effort': 'high'},
                         {'actual_sandbox': 'workspace-write'}):
             with self.subTest(changes=changes):
                 result = self.run_wrapper(recorded=self.sid, returned=self.sid, **changes)
