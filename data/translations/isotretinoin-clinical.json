@@ -12,7 +12,6 @@
     { "zh": "爭議題目整理", "en": "Controversial topics", "tag": "h2" },
     { "zh": "AAD 2024 acne guideline 整理(Isotretinoin 段落要點）", "en": "AAD 2024 acne guideline summary (key isotretinoin points)", "tag": "h2" },
     { "zh": "參考資料", "en": "References", "tag": "h2" },
-    { "zh": "FDA / 健保通用適應症", "en": "FDA / NHI standard indications", "tag": "h3" },
     { "zh": "常見 off-label uses", "en": "Common off-label uses", "tag": "h3" },
     { "zh": "標準 protocol（經典 Layton-style）", "en": "Standard protocol (classic Layton-style)", "tag": "h3" },
     { "zh": "低劑量(low-dose)protocol", "en": "Low-dose protocol", "tag": "h3" },

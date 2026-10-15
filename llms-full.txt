@@ -1,6 +1,6 @@
 # ChenDermatologist · 陳翊嘉醫師 · 皮膚科衛教筆記
 
-Last updated 2026-09-06 · 52 articles · by Dr. Chen Yi-Jia (R3 Dermatology Resident, Taiwan)
+Last updated 2026-10-15 · 52 articles · by Dr. Chen Yi-Jia (R3 Dermatology Resident, Taiwan)
 
 Bilingual zh-Hant / en. ZH source is authoritative; EN mirror is machine-translated and provided for accessibility only.
 
@@ -10,9 +10,9 @@ For citation rules and structural metadata, see https://chendermatologist.com/ll
 ---
 ## 化膿性汗腺炎打 bimekizumab 有效嗎？IL-17A/F 雙抑制與 BE-HEARD I/II 三期試驗的嚴格評讀
 URL: https://chendermatologist.com/blog/bimekizumab-hidradenitis-suppurativa
-Updated: 2026-06-05
+Updated: 2026-10-15
 Section: Research Summary
-Reading time: PT18M
+Reading time: PT19M
 Tags: 化膿性汗腺炎生物製劑, HS biologic (bimekizumab)
 
 30 秒重點
@@ -158,15 +158,13 @@ DLQI 生活品質（自基準變化）
 台灣現況與定位
 
 台灣定位 · 重點
-在台灣討論 HS 的系統性 / 生物製劑治療時，目前比較常被提到的是 adalimumab（復邁®，抗 TNF-α）與 secukinumab（抗 IL-17A）。這兩者在 HS 的角色、健保給付條件與監測，本站的化膿性汗腺炎總覽有較完整的整理。
-
 
 [... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 指甲乾癬怎麼治？擦藥、病灶內注射到雷射輔助穿透：2026 JAAD 評論的局部治療整理
 URL: https://chendermatologist.com/blog/nail-psoriasis-topical-intralesional
-Updated: 2026-06-05
+Updated: 2026-10-15
 Section: Research Summary
 Reading time: PT19M
 Tags: 指甲乾癬治療, Nail psoriasis therapy
@@ -187,7 +185,7 @@ Key Points
 
 本期藥動學新發現（Mello et al.）：單次甲周 MTX 注射可誘導「數月」緩解；血漿 MTX 濃度比口服 / 注射有利、清除率相對低，提示藥物在甲基質形成「緩釋 depot」，可能解釋為何效果能持續這麼久。作者強調這是建立患者安全性的重要一步，但仍需更多研究確認緩釋的安全性是否與每週口服 / 注射相當。
 
-台灣現況：calcipotriol 單方、含類固醇複方（如 Daivobet、Enstilar）、tazarotene、calcitriol 等局部維生素 D 衍生物 / A 酸有健保給付（限尋常性乾癬、每週用量上限）。但病灶內注射（MTX / 類固醇 / 5-FU）、CO2 雷射輔助穿透、局部 MTX 凝膠，在台灣健保並無指甲乾癬適應症，屬自費 off-label。
+台灣現況：calcipotriol 單方、含類固醇複方（如 Daivobet、Enstilar）、tazarotene、calcitriol 等局部維生素 D 衍生物 / A 酸有健保給付（限尋常性乾癬、每週用量上限）。但病灶內注射（MTX / 類固醇 / 5-FU）、CO2 雷射輔助穿透、局部 MTX 凝膠，在健保藥品給付規定中沒有指甲乾癬的專屬條文，多屬 off-label 使用，是否給付請依醫療院所當下說明。
 
 指甲乾癬是什麼？跟灰指甲怎麼分？
 
@@ -225,7 +223,7 @@ calcipotriol 是維生素 D3 的衍生物，能調節角質細胞過度增生，
 
 局部 methotrexate 1% 凝膠 + 分次 CO2 雷射輔助穿透
 
-methotrexate（MTX）是治療乾癬的老藥，也能做成局部劑型。Elston 引用資料指出，局部 MTX 1% 凝膠對指甲乾癬「有部分療效」。問題還是滲透：要讓 MTX 凝膠真的進到指甲下，可搭配「分次（fractional）CO2 雷射」——雷射在甲板打出許多微小通道，藥物循著通道滲入。一份隨機比較研究（Moftah 2024）顯示，「分次 CO2 雷射 + MTX 1% 凝膠」比單用 MTX 1% 凝膠能改善「至少部分」的指標。要注意這是一份單中心 RCT，受試者數不多，且雷射屬於儀器處置——在台灣這類雷射輔助給藥沒有指甲乾癬健保適應症，屬自費。
+methotrexate（MTX）是治療乾癬的老藥，也能做成局部劑型。Elston 引用資料指出，局部 MTX 1% 凝膠對指甲乾癬「有部分療效」。問題還是滲透：要讓 MTX 凝膠真的進到指甲下，可搭配「分次（fractional）CO2 雷射」——雷射在甲板打出許多微小通道，藥物循著通道滲入。一份隨機比較研究（Moftah 2024）顯示，「分次 CO2 雷射 + MTX 1% 凝膠」比單用 MTX 1% 凝膠能改善「至少部分」的指標。要注意這是一份單中心 RCT，受試者數不多，且雷射屬於儀器處置——在台灣這類雷射輔助給藥沒有指甲乾癬專屬的健保給付項目，給付與否請依醫療院所當下說明。
 
 評論裡也提到，有研究系統性比較各種「促滲」方法把 MTX 送進指甲：純局部 MTX、加化學促滲劑、奈米技術、蛋白質穿膜域（protein transduction domains）、液晶系統、物理促滲 + 雷射，以及病灶內注射。整體來看，局部劑型的安全性都不錯；而對局部治療無效的人，25 mg/mL 的 MTX 病灶內注射效果不錯——這就把我們帶到下一段的「病灶內注射」。
 
@@ -259,7 +257,7 @@ Calcipotriol（± 類固醇複方）
 
 部分療效（小型研究）
 
-無指甲乾癬適應症；自費 off-label
+無指甲乾癬專屬給付條文；off-label，給付請依院所說明
 
 分次 CO2 雷射 + MTX 凝膠
 
@@ -267,7 +265,7 @@ Calcipotriol（± 類固醇複方）
 
 改善部分指標（Moftah 2024 單中心 RCT）
 
-自費；雷射屬儀器處置
+無指甲乾癬專屬給付項目；給付請依院所說明
 
 進階：病灶內注射（難治者的自費 off-label 選項）
 
@@ -293,7 +291,7 @@ Elston 這篇評論之所以出現，是為了介紹同期《JAAD》Mello 等人
 
 安全性是「重要一步」但未定論：作者把這份藥動學資料定位為「為患者安全性建立基礎的重要一步」，因為知道血中濃度高低對諮商病人很重要。但他們也誠實寫道：雖然血中濃度相對低，仍需更多研究確認「基質緩釋」的安全性是否真的跟每週口服 / 注射 MTX 相當。
 
-重點解讀「緩釋 depot」是這篇評論最有意思的概念：把藥打在甲基質，等於放了一個會慢慢釋放的小藥庫，讓藥效持續、又不讓血中濃度一次衝高，理論上兼顧療效與全身安全。但 Elston 與原作者都強調這還在「探索具成本效益選項」的階段，不是已拍板的標準療法——這也是為什麼本文把它定位成難治者的進階自費選項。
+重點解讀「緩釋 depot」是這篇評論最有意思的概念：把藥打在甲基質，等於放了一個會慢慢釋放的小藥庫，讓藥效持續、又不讓血中濃度一次衝高，理論上兼顧療效與全身安全。但 Elston 與原作者都強調這還在「探索具成本效益選項」的階段，不是已拍板的標準療法——這也是為什麼本文把它定位成難治者的進階選項。
 
 證據其實是分歧的：MTX vs 類固醇，誰比較好？
 
@@ -314,25 +312,17 @@ Elston 這篇評論之所以出現，是為了介紹同期《JAAD》Mello 等人
 
 Calcipotriol 外用單方：限確診尋常性乾癬，每週 ≤ 30 gm 或 30 mL，超量需病歷記載。
 
-含 calcipotriol + 類固醇複方（如 Daivobet、Enstilar）：限尋常性乾癬，每週 ≤ 30 gm；連續使用超過 8 週需病歷詳細記錄理由。
+含 calcipotriol + 類固醇複方（如 Daivobet、Enstilar）：限尋常性乾癬，每週以 30 gm 為原則（超量需病歷記錄理由）；連續使用超過 8 週需病歷詳細記錄理由。
 
-Tazarotene 外用、Calcitriol（如 Silkis，限 < 35% 體表面積）：同屬乾癬局部給付，每週用量上限 30 gm/mL。
+Tazarotene 外用、Calcitriol（如 Silkis，限 < 35% 體表面積）：同屬乾癬局部給付，每週用量以 30 gm 為原則（超量需病歷記載理由）。
 
-但本文討論的進階選項，在台灣健保都沒有「指甲乾癬」這個適應症，所以多屬自費 off-label：
+但本文討論的進階選項，在健保藥品給付規定中都沒有「指甲乾癬」的專屬條文，多屬 off-label 使用，是否給付需個別確認：
 
-病灶內注射（intralesional MTX / triamcinolone / 5-FU）治療指甲乾癬：健保皮膚科製劑章節沒有此適應症，屬自費 off-label。
+病灶內注射（intralesional MTX / triamcinolone / 5-FU）治療指甲乾癬：藥品給付規定沒有指甲乾癬的專屬條文；醫療服務給付項目的「皮膚病灶內部注射」（51009C–51011C）限用於蟹足腫、囊腫、圓禿、結節性癢疹及其他經公認病灶內注射治療有效之皮症，用於指甲乾癬是否給付，請依醫療院所當下說明。
 
-分次 CO2 雷射輔助給藥：雷射屬儀器處置，無指甲乾癬給付，自費。
+分次 CO2 雷射輔助給藥：屬醫療處置，醫療服務給付項目中沒有針對指甲乾癬雷射輔助給藥的項目，健保給付與否請依醫療院所當下說明。
 
-局部 MTX 1% 凝膠：非健保品項，自費 off-label。
-
-另外要分清楚：如果你的乾癬不只是指甲、而是中重度且合併乾癬性關節炎，全身性治療（口服免疫調節劑或生物製劑）走的是另一套健保給付規定（有 PASI / 體表面積 / 關節等條件），那跟「指甲乾癬局部治療」是不同的給付路徑。實際費用、自費與否，務必當面向你的皮膚科醫師與診所確認。
-
-（健保給付資訊整理自衛生福利部中央健康保險署《全民健康保險藥品給付規定》115/4/23 版；實際給付以健保署最新公告為準。）
-
-常見問答
-
-Q1. 指甲乾癬擦藥都沒效，是不是一定要打針？
+局部 MTX 1% 凝膠：屬 off-label 使用，健保藥品給付規定沒有相關條文；是否有健保品項或需自費，請依醫療院所當下說明。
 
 
 [... truncated; fetch canonical URL for full text ...]
@@ -340,7 +330,7 @@ Q1. 指甲乾癬擦藥都沒效，是不是一定要打針？
 ---
 ## Spironolactone 在皮膚科安全嗎？2026 JAAD 兩篇研究：≥45 歲女性高血鉀風險與合併 minoxidil 開立指南
 URL: https://chendermatologist.com/blog/spironolactone-dermatology-safety
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Research Summary
 Reading time: PT30M
 Tags: Spironolactone 安全性, Spironolactone safety
@@ -363,7 +353,7 @@ Spironolactone + LDOM 合併：總副作用率 37.7%，多毛 hypertrichosis 12.
 
 同時起始 vs 序貫起始：兩藥同時 day-1 起始反而比一藥先一藥後少 64.8% 多毛（OR 0.35，95% CI 0.13-0.94，P=.037），不增加姿態性低血壓風險。但併用其他降血壓藥的患者，姿態性症狀風險 3.29 倍（OR 3.29，95% CI 1.65-6.58，P=.001）。
 
-台灣現況：spironolactone 健保僅給付高血壓、心衰竭、原發性醛固酮症、水腫等心腎適應症；皮膚科適應症（青春痘、雄性禿、多毛、化膿性汗腺炎）皆為 off-label 純自費。商品名常見「愛達信錠 / 安達通® / Aldactone® / generic spironolactone」。
+台灣現況：spironolactone 的健保處方須符合藥品許可證適應症（通則七；屬高血壓、水腫等內科用途，實際範圍以仿單為準）；皮膚科適應症（青春痘、雄性禿、多毛、化膿性汗腺炎）皆為 off-label 純自費。商品名常見「愛達信錠 / 安達通® / Aldactone® / generic spironolactone」。
 
 為什麼這兩篇研究值得讀
 
@@ -390,7 +380,7 @@ Spironolactone 在皮膚科是 off-label 但已使用 40 年的老藥。它在�
 化膿性汗腺炎（hidradenitis suppurativa，HS）：腋下、股溝等皺褶處反覆膿瘍與瘻管。spironolactone 是女性 HS 的次線選項。Gregoire 研究 10.1%。
 
 台灣健保 / 自費實況
-台灣健保藥品給付規定中，spironolactone 只給付「高血壓、原發性醛固酮症、心衰竭水腫、肝硬化腹水、低血鉀症」等心腎適應症。皮膚科用於青春痘 / 雄性禿 / 多毛 / 化膿性汗腺炎，全部屬於 off-label 純自費，需病人自付。商品名實際在台灣常見的有「愛達信錠 / 安達通® / Aldactone® / generic spironolactone」等，本文以「spironolactone」統稱、不指定特定廠牌。
+依台灣健保藥品給付規定通則（處方用藥需符合許可證登載之適應症），spironolactone 的健保給付以許可證登載的適應症為限（屬高血壓、水腫等內科用途，詳細範圍以仿單為準）。皮膚科用於青春痘 / 雄性禿 / 多毛 / 化膿性汗腺炎，全部屬於 off-label 純自費，需病人自付。商品名實際在台灣常見的有「愛達信錠 / 安達通® / Aldactone® / generic spironolactone」等，本文以「spironolactone」統稱、不指定特定廠牌。
 
 研究一：≥45 歲女性高血鉀真實數據（Gregoire 2026）
 
@@ -652,7 +642,7 @@ Q3. 換哪一種 JAK 抑制劑最好？
 ---
 ## AI 現在能幫皮膚科醫師看病嗎？2026 三篇 JAAD 研究的綜合解答
 URL: https://chendermatologist.com/blog/ai-dermatology-roles
-Updated: 2026-05-25
+Updated: 2026-10-15
 Section: Research Summary
 Reading time: PT21M
 Tags: AI 與皮膚科, AI in dermatology
@@ -1015,7 +1005,7 @@ Hill MA 等人(Case Western Reserve + Cleveland Clinic)2026 年 6 月發表於�
 ---
 ## 光動力治療（PDT）皮膚科完整指南 — 從 AK、BCC 到痘痘的 2026 JAAD 雙篇 Review 整合
 URL: https://chendermatologist.com/blog/photodynamic-therapy-overview
-Updated: 2026-05-25
+Updated: 2026-10-15
 Section: Research Summary
 Reading time: PT24M
 Tags: 光動力治療, Photodynamic therapy
@@ -1120,7 +1110,7 @@ ALA 比 MAL 略痛、但證據尚不一致
 
 疼痛管理選項（一個 RCT 顯示效果優劣）：
 
-「神經阻斷（nerve block）」 — 頭皮神經阻斷效果最佳、比冷空氣 + 靜脈鎮痛還好
+「神經阻斷（nerve block）」 — 頭皮神經阻斷止痛效果優於冷空氣 + 靜脈鎮痛
 
 「冷空氣鎮痛（cold-air analgesia）」 — 對流式吹冷風、簡單便宜、效果中等
 
@@ -1281,9 +1271,9 @@ Type I 反應（次要）：PS 直接與受質分子反應、產生超氧自由�
 ---
 ## 打乾癬生物製劑要不要每年抽血？2026 JAAD 證據評級重新看這件事
 URL: https://chendermatologist.com/blog/psoriasis-biologic-monitoring
-Updated: 2026-05-25
+Updated: 2026-10-15
 Section: Research Summary
-Reading time: PT19M
+Reading time: PT20M
 Tags: 生物製劑安全, Biologic safety
 
 30 秒重點
@@ -1300,13 +1290,13 @@ IL-12/23（ustekinumab）與 IL-23 p19（guselkumab／risankizumab／tildrakizum
 
 所有類別共通的 D 級：HCV、CBC、CMP、血脂血糖、ANA、COVID-19、惡性腫瘤、全身皮膚檢查、CHF、懷孕測試（除非有特定臨床理由）。HIV：I 級（證據不足）。
 
-證據評級不等於健保政策：台灣健保申請生物製劑仍要求結核（IGRA 或 X 光）、B 肝、C 肝、HIV、CBC、CMP 等基線；續用每 6 個月再審。需要做的不一定全是「臨床獲益」，部分是「申請與審查程序」的需要。
+證據評級不等於健保政策：台灣健保申請乾癬生物製劑須檢附潛伏結核感染篩檢與治療紀錄，續用每 6 個月再申請（§8.2.4.6.1）；B 肝、C 肝、HIV、CBC、CMP 等抽血並非給付規定列出的固定必附項目，是否檢查由醫師依仿單與個別風險決定。
 
 本研究限制：USPSTF 評級不納入成本考量；多數證據來自世代研究與臨床試驗的 post-hoc safety pooled analysis，缺少設計用來比較「篩檢 vs 不篩檢」的 RCT；風濕科／消化科病人合併使用 MTX 等可能拉高 TNF-α 的 B 肝 reactivation 率。
 
 為什麼這個問題重要
 
-生物製劑（biologics）是現在中重度乾癬的主力武器。台灣健保涵蓋 10 種以上：TNF-α 系（etanercept、adalimumab、infliximab、certolizumab）、IL-12/23（ustekinumab）、IL-17 系（secukinumab、ixekizumab、brodalumab、bimekizumab）、IL-23 p19 系（guselkumab、risankizumab、tildrakizumab）等。一旦進入這個治療階段，過去的傳統做法是「治療前抽全套基線、每半年到一年再抽一次」。
+生物製劑（biologics）是現在中重度乾癬的主力武器。台灣健保乾癬給付涵蓋 10 種：TNF-α 系（etanercept、adalimumab、certolizumab）、IL-12/23（ustekinumab）、IL-17 系（secukinumab、ixekizumab、brodalumab、bimekizumab）、IL-23 p19 系（guselkumab、risankizumab）；infliximab 與 tildrakizumab 目前不在健保乾癬給付名單內（全身型膿疱性乾癬另有 spesolimab 給付）。一旦進入這個治療階段，過去的傳統做法是「治療前抽全套基線、每半年到一年再抽一次」。
 
 這個做法的依據主要是早期 TNF-α 抑制劑時代的安全性訊號（結核活化、B 肝 reactivation、CHF 加重等）。隨後上市的 IL-17、IL-23 抑制劑機轉不同，安全性也不同，但專業學會（美國 AAD、英國 BAD、歐洲 EADV、日本 JDA）的篩檢清單卻大多原樣保留。結果是：很多病人每半年到一年抽一次血，但大部分異常都是「偽陽性」、暫時性的、或對臨床決策沒有影響。Duong 等人這篇 JAAD 2026 系統性回顧的核心問題就是：哪些篩檢真的有用，哪些只是慣性？
 
@@ -1314,11 +1304,11 @@ IL-12/23（ustekinumab）與 IL-23 p19（guselkumab／risankizumab／tildrakizum
 
 Q1：我打生物製劑要不要每年抽血？
 
-看你打的是哪一類。TNF-α 抑制劑（adalimumab 復邁、infliximab 類克、etanercept 恩博、certolizumab Cimzia）仍建議每年做一次結核篩檢（IGRA 或胸部 X 光），慢性 B 肝帶原者另外要追蹤病毒量與肝功能。IL-17 抑制劑（secukinumab 可善挺、ixekizumab 達癬通、brodalumab Lumicef、bimekizumab Bimzelx）與 IL-23 抑制劑（guselkumab 特諾雅、risankizumab 喜開麗、tildrakizumab Ilumya、ustekinumab 喜達諾）幾乎不需要常規抽血。但台灣健保申請與每 6 個月續用審查仍會要求多項基線與追蹤，這部分是健保政策的需要，不是臨床獲益的必要。
+看你打的是哪一類。TNF-α 抑制劑（adalimumab 復邁、infliximab 類克、etanercept 恩博、certolizumab Cimzia）仍建議每年做一次結核篩檢（IGRA 或胸部 X 光），慢性 B 肝帶原者另外要追蹤病毒量與肝功能。IL-17 抑制劑（secukinumab 可善挺、ixekizumab 達癬通、brodalumab Lumicef、bimekizumab Bimzelx）與 IL-23 抑制劑（guselkumab 特諾雅、risankizumab 喜開麗、tildrakizumab Ilumya、ustekinumab 喜達諾）幾乎不需要常規抽血。但台灣健保申請與每 6 個月續用審查仍會要求結核篩檢紀錄與療效評估，這部分是健保申請程序的需要；其他抽血是否要做，由醫師依個別風險判斷。
 
 Q2：那為什麼以前我每年都被抽？
 
-兩個原因。歷史慣性：早期 TNF-α 抑制劑時代的篩檢清單後來原樣套用到 IL-17、IL-23 系，但兩類藥的安全風險很不同。政策／審查需要：台灣健保事前審查（PASS）與每 6 個月續用申請會要求附 CBC、肝腎功能、血脂、B 肝、C 肝、HIV、結核（IGRA 或 X 光）等資料，作為核准與審計用。許多臨床醫師也習慣性開單以避免遺漏。
+兩個原因。歷史慣性：早期 TNF-α 抑制劑時代的篩檢清單後來原樣套用到 IL-17、IL-23 系，但兩類藥的安全風險很不同。政策／審查需要：台灣健保乾癬生物製劑須經事前審查、每 6 個月再申請續用；給付規定（§8.2.4.6.1）明文要求申請時檢附潛伏結核感染篩檢紀錄及治療紀錄，但沒有把 CBC、肝腎功能、血脂、B 肝、C 肝、HIV 列為固定必附檢驗，這些多是醫師依仿單與個別風險安排的安全評估。許多臨床醫師也習慣性開單以避免遺漏。
 
 Q3：我打 IL-17 抑制劑（例如可善挺），醫師為什麼會問我嘴巴有沒有白白的？
 
@@ -1348,7 +1338,7 @@ Q7：我想懷孕，要先停藥嗎？要不要驗孕？
 不必做的（D 級）
 
 TNF-α 抑制劑
-Adalimumab（復邁 Humira）、infliximab（類克 Remicade）、etanercept（恩博 Enbrel）、certolizumab pegol（Cimzia）
+Adalimumab（復邁 Humira）、etanercept（恩博 Enbrel）、certolizumab pegol（Cimzia）
 初次 + 每年結核篩檢（B 級）；慢性 B 肝帶原者考慮 HBV viral load + LFT 監測（C 級）
 HCV、HIV、CBC、CMP、血脂、ANA、COVID、惡性腫瘤、全身皮膚檢查、CHF、懷孕（除非有特定臨床理由）
 
@@ -1358,7 +1348,7 @@ Ustekinumab（喜達諾 Stelara）
 結核、HBV、HCV、CBC、CMP、血脂、ANA、COVID、惡性腫瘤、CHF、念珠菌、IBD、懷孕（全部 D 級）
 
 IL-23 p19 抑制劑
-Guselkumab（特諾雅 Tremfya）、risankizumab（喜開麗 Skyrizi）、tildrakizumab（Ilumya）
+Guselkumab（特諾雅 Tremfya）、risankizumab（喜開麗 Skyrizi）
 同上：無常規必要篩檢；門診依個別風險評估
 同 IL-12/23（幾乎全部 D 級）
 
@@ -1400,17 +1390,15 @@ HBV 狀態
 
 慢性帶原（HBsAg+、HBcAb+）
 未預防約 26%；有預防約 7.7%（entecavir / tenofovir）；TNF-α 抑制劑風險最高
-與感染科 / 肝膽科協同：開立預防性抗病毒治療 + 監測 HBV viral load + LFT
-
 
 [... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 杜避炎要打多久？停藥、減量與維持治療的研究整理
 URL: https://chendermatologist.com/blog/dupilumab-long-term-maintenance
-Updated: 2026-09-06
+Updated: 2026-10-15
 Section: Research Summary
-Reading time: PT21M
+Reading time: PT22M
 Tags: dupilumab, Dupilumab
 
 30 秒重點
@@ -1429,7 +1417,7 @@ Key Points
 
 安全性：7 件不良反應，0 人停藥。首報 1 例視神經萎縮（停藥 1 年後出現，因果關係未證實）；另有過敏性結膜炎、免疫漂移、注射部位紅腫等已知 AE。
 
-台灣健保（2025/4 版）：杜避炎® 中重度 AD 給付限皮膚科或風濕免疫科專科醫師處方；EASI ≧ 16、體表面積 ≧ 30%、IGA 3-4；須先試過 NB-UVB + 至少兩種傳統免疫抑制劑（methotrexate / azathioprine / cyclosporin 各 12 週無效）；事前審查。
+台灣健保（115/9/22 版）：杜避炎® 中重度 AD 給付限皮膚科或風濕免疫科專科醫師處方；EASI ≧ 16、體表面積 ≧ 30%、IGA 3-4；須先試過 NB-UVB + 至少兩種傳統免疫抑制劑（methotrexate / azathioprine / cyclosporin 各 12 週無效）；事前審查。
 
 為什麼這篇研究重要
 
@@ -1607,8 +1595,8 @@ classic → 較低復發；其他表型 → 較高復發
 
 台灣健保給付條件（杜避炎® / Dupixent®）
 
-健保署 13.17.1 條 · 2025/04 修正
-以下整理自衛福部中央健康保險署「藥品給付規定」13.17.1 條（114/4/23 公告版本）。實際申請時請以最新版本為準。
+健保署 13.17.1 條 · 115/9/22 版
+以下整理自衛福部中央健康保險署「藥品給付規定」13.17.1 條（115/9/22 版）。實際申請時請以最新版本為準。
 
 處方科別與適應症
 
@@ -1668,20 +1656,17 @@ IGA 3–4（中度至重度）
 
 續用：每 6 個月須再次事前審查，需附治療前後照片
 
-暫緩續用：生物製劑（dupilumab）使用 1 年後若 EASI ≤ 16，須暫停；JAK 抑制劑（upadacitinib / abrocitinib）114/6/1 起改為使用 2 年後若 EASI ≤ 16 才須暫停。復發後（再復發 50% 或 EASI ≥ 16）可重新申請
+暫緩續用：dupilumab 使用 1 年後，或 JAK 抑制劑（upadacitinib / abrocitinib，114/6/1 起）、lebrikizumab（115/6/1 起）使用 2 年後，若 EASI ≤ 16 須暫緩續用。復發後（再復發 50% 或 EASI ≥ 16）可重新申請
 
 Upa 與 Abro 劑量限制：Upadacitinib — EASI 16–20 限每日 15 mg；≥ 18 歲且 EASI ≥ 20 才可每日 30 mg。Abrocitinib — 12 歲以上每日 100 mg 或 200 mg 均可，於 16 週需達 EASI 50 才能續用。Upa 與 Abro 只能擇一使用，僅於無法耐受時可互換
 
-停藥超過 3 個月再申請：視同新申請案件
-
-不可併用：dupilumab、upadacitinib、abrocitinib 三者擇一；upadacitinib / abrocitinib 不可與 cyclosporin 併用
 
 [... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 嘴角紅疹是痘痘還是濕疹？口周皮膚炎完整衛教
 URL: https://chendermatologist.com/blog/perioral-dermatitis-guide
-Updated: 2026-05-25
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT20M
 Tags: 口周皮膚炎, Perioral dermatitis
@@ -1821,7 +1806,7 @@ Lupus miliaris disseminatus faciei (LMDF)：少見肉芽腫疾病，病灶可能
 
 Metronidazole 0.75% gel
 益膚康、膚麗、柔潔、潔諾
-健保給付，適應症為玫瑰斑（丘疹膿皰型）
+仿單適應症為玫瑰斑（丘疹膿皰型）；健保有給付（依醫師處方）
 第一線；POD 屬 off-label
 
 Pimecrolimus 1% cream
@@ -1836,45 +1821,42 @@ NHI ：≥ 2 歲、患部面積 > 30% 中重度異膚第二線；POD 用途多�
 
 Ivermectin 1% cream
 舒利達（Soolantra）
-全自費（30 g 約 NT$ 1,800–3,000）；NHI 對 ivermectin 的給付僅限口服劑型用於鏡檢確診疥瘡，外用 1% 乳膏未給付任何適應症
+自費（健保不給付）；健保藥品給付規定 §13.16 的 ivermectin 條文僅限口服劑型用於疥瘡（原則須鏡檢確診；住宿型長照機構住民等另有規定），外用 1% 乳膏不在此條文內
 第二線；POD 屬 off-label
 
 Erythromycin 2 / 3% gel
 處方調配 / 部分院內製劑
-視院所
+健保有給付（依醫師處方）
 兒童 / 孕婦首選之一
 
 Azelaic acid 20% cream
 思麗安（Skinoren，僅 20% cream）
-處方自費為主
+健保有給付（依醫師處方）
 第二線；對色素沉著有幫助
 
 Clindamycin lotion / gel
 多種學名藥
-部分品項健保給付（適應症為痤瘡）
+仿單適應症為痤瘡；健保有給付（依醫師處方）
 第二線；POD 屬 off-label
 
-Sarecycline / 外用 roflumilast / 外用 ruxolitinib
+Sarecycline / 外用 roflumilast
 —
 台灣尚未上市
 新興選項；目前無法在台灣取得
 
-註：「POD 屬 off-label」意指該藥品的健保適應症不是口周皮膚炎；醫師基於臨床判斷使用是常見而合理的，但部分藥品健保不會給付到這個用途，可能需自費。實際給付以開立當下的台灣健保藥品給付規定為準。
-口服藥：誰需要、怎麼選
-口服藥
-劑量（成人）
-適合對象
-注意事項
+外用 ruxolitinib
+—
+台灣已上市、自費（健保不給付）
+用於口周皮膚炎屬仿單外使用
 
-Doxycycline
-50-100 mg 一天 1-2 次
+註：「POD 屬 off-label」意指該藥品的健保適應症不是口周皮膚炎；醫師基於臨床判斷使用是常見而合理的，但部分藥品健保不會給付到這個用途，可能需自費。實際給付以開立當下的台灣健保藥品給付規定為準。
 
 [... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 腳趾甲變形 12 種型態完整圖鑑 — 從鞋子、腳型、關節到糖尿病
 URL: https://chendermatologist.com/blog/toenail-mechanical-disorders
-Updated: 2026-05-25
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT18M
 Tags: 趾甲與足部, Toenail disorders
@@ -1901,12 +1883,12 @@ Q2：拇指外翻會讓趾甲怎樣？
 Q3：Morton 趾是什麼？需要治療嗎？
 Morton 趾是「第二趾比大拇趾長」的腳型，盛行率約 2.95% 到 35.3%。因為一般鞋子是按大拇趾長度設計的，第二趾就會受到鞋頭擠壓，容易出現甲下角化、甲剝離、Beau's line（橫向溝紋）、甲色素沉著等問題，也容易發展成槌狀趾或拇指外翻。對策：選寬鞋頭、深的鞋子，鞋墊減少摩擦。
 Q4：嵌甲（凍甲）一定要拔甲嗎？台灣健保怎麼給付？
-輕度嵌甲不用拔。可以先用 taping（膠帶把周圍肉拉開）或塞棉花減壓，嚴重才考慮手術。台灣健保有給付的選項是「甲床重建術」
+輕度嵌甲不用拔。可以先用 taping（膠帶把周圍肉拉開）或塞棉花減壓，嚴重才考慮手術。台灣健保醫療服務給付項目有「甲床重建術」相關項目（64140C 甲床與手指重建術）；phenol matricectomy 在支付標準中沒有獨立項目，健保給付與否請依醫療院所當下說明。
 Q5：灰指甲台灣健保有給付什麼藥？
 健保給付的口服藥有兩種：
 療黴舒（Terbinafine 250mg）
 適撲諾（Itraconazole 100mg）
-療程結束後 12個月內不能再申請同類藥物。外用藥如樂指利（Loceryl，amorolfine 5% 油劑）、易黴樂（ciclopirox 8%）皆需自費。
+療程結束後，手指甲 6 個月、足趾甲 12 個月內不能再使用同類口服藥物。外用藥如樂指利（Loceryl，amorolfine 5% 油劑）、易黴樂（ciclopirox 8%）皆需自費；amorolfine 若為處方藥許可證（如 Amocoat），健保限用於甲癬、每年限 1 瓶 5 mL，許可證為指示用藥者不給付。
 Q6：糖尿病人趾甲要怎麼照顧？
 糖尿病人比一般人多 2.77 倍容易得灰指甲，且灰指甲與糖尿病潰瘍風險相關（HR 1.37，48,212 人 cohort）。重點：趾甲一定要「平剪不剪圓」避免嵌甲；每天保濕避免周圍皮膚乾裂；不要自己挖嵌甲或修甲下角化；任何趾甲變化建議在皮膚科追蹤；血糖控制好；確認灰指甲時要積極治療避免潰瘍。
 Q7：穿什麼鞋對趾甲最好？
@@ -2017,12 +1999,12 @@ Q8：趾甲長黑線一定是癌症嗎？
 
 療黴舒（Terbinafine 250mg）
 1 顆/天
-
+足趾甲限 84 顆、16 週內用完（手指甲 42 顆、8 週）
 肝功能監測；療程後 12個月內不得重複申請
 
 適撲諾（Itraconazole 100mg）
 2 顆/天（連續）或 pulse 4 顆/天 × 1 週、停 3 週 × 3-4 cycle
-
+足趾甲限 168 顆、17 週內用完（手指甲 84 顆、9 週）
 多種藥物交互作用（statin、抗心律不整等）；療程後限制同上
 
 樂指利（Loceryl, amorolfine 5% 油劑）
@@ -2050,17 +2032,17 @@ Efinaconazole（更新型外用）
 單純拔甲
 把整片或部分甲板拔掉
 高（甲長回後常再嵌）
-有給付但點數低（295 點）
+健保給付（56006C 拔指甲）
 
 甲床重建術（wedge resection）
 切除嵌入側 + 縫合
 約 15%
-健保給付
+健保給付（相關項目：64140C 甲床與手指重建術）
 
 酚甲母去除術（phenol matricectomy）
 用酚把該側甲基質破壞
 < 5%（最低）
-健保點數低，多數需自費
+支付標準無獨立項目，健保給付與否請依醫療院所當下說明
 
 正甲器（Orthonyx braces）
 用鋼絲 / 塑膠夾矯正甲板捲曲
@@ -2103,15 +2085,6 @@ Zaias 等人提出 AGNUS 假說：兩腳長度或結構不對稱會破壞正常�
 
 反應性關節炎（Reiter's）
 20-30% 有甲變化
-甲剝離、甲坑、甲下角化、甲溝膿皰
-
-Myxoid cyst 分型與處理
-骨關節囊液漏出形成 myxoid cyst（黏液囊腫），按位置分三型：
-Type A（背側型）：DIP 關節上方表淺；冷凍、類固醇針注射、polidocanol sclerotherapy 多可處理
-Type B（甲基質上方型）：縱向波浪型溝紋；多需手術
-Type C（甲基質下型）：半月變色、夾擊甲、甲板崩解；多需手術
-手術切除治癒率 ~95%、復發率 2-21%；穿刺抽吸復發率 ~50%。
-Carpal Tunnel Syndrome 的手指甲變化
 
 [... truncated; fetch canonical URL for full text ...]
 
@@ -2297,9 +2270,9 @@ Wang YP et al. 2018; Lin HP et al. 201915,16
 ---
 ## 皮膚切片與腫瘤切除手術完整衛教 — 為什麼要切？怎麼切？術後怎麼照顧？
 URL: https://chendermatologist.com/blog/skin-biopsy-excision
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
-Reading time: PT14M
+Reading time: PT15M
 Tags: 處置 / 手術, Skin biopsy & excision
 
 切片 vs 切除：差別在哪？
@@ -2436,7 +2409,7 @@ seborrheic keratosis / solar lentigo
 軟纖維瘤 / 皮垂
 acrochordon / skin tag
 頸、腋下、鼠蹊小柄狀軟突起
-剪除＋電燒、冷凍；衣物摩擦健保、美觀自費
+剪除＋電燒、冷凍；美觀目的屬自費，有症狀者是否給付依醫師評估
 
 脂肪瘤
 lipoma
@@ -2559,7 +2532,7 @@ SK、皮垂、汗管瘤；通常自費
 ② 第幾天可以洗澡？傳統 vs 實證
 
 爭議解析
-主流實務建議（多數台灣醫院、診所衛教）：「傷口拆線前以防水為主、洗澡時貼防水貼布或膠膜、避免持續沾濕、約 7-14 天直到拆線」。這仍是最穩當、保險的做法、特別是高風險部位（如下肢、糖尿病、免疫抑制者）、深層縫合、皮瓣 / 植皮、臉部美觀切除。
+主流實務建議（多數台灣醫院、診所衛教）：「傷口拆線前以防水為主、洗澡時貼防水貼布或膠膜、避免持續沾濕、約 7-14 天直到拆線」。這仍是較穩當、保險的做法、特別是高風險部位（如下肢、糖尿病、免疫抑制者）、深層縫合、皮瓣 / 植皮、臉部美觀切除。
 
 但「輕微碰到水」不必過度緊張：洗手、刷牙、洗臉時不慎沾到傷口邊緣、用乾淨毛巾輕輕拍乾、傷口附近清潔後重新擦上抗生素藥膏即可、不會直接導致感染。
 
@@ -2628,7 +2601,7 @@ SK、皮垂、汗管瘤；通常自費
 
 ⑥ 防曬與疤痕照護
 
-術後 6-12 個月嚴格防曬是最有效的疤痕照護 — 防止疤痕變黑（PIH 色素沉著）
+術後 6-12 個月嚴格防曬是重要的疤痕照護 — 防止疤痕變黑（PIH 色素沉著）
 
 SPF ≥ 30、寬邊帽、傷口癒合後可貼 UV cut 醫療膠帶
 
@@ -2642,39 +2615,27 @@ SPF ≥ 30、寬邊帽、傷口癒合後可貼 UV cut 醫療膠帶
 
 術後 4-12 週、傷口可能冒出小白點或硬結 — 這是皮下吸收線排斥反應（spitting suture）、不是感染、用無菌鑷子輕拉即出、不需擔心。
 
-健保 vs 自費實際金額
+健保給付與自費項目
 
-整理台灣 2024-2025 年實務（依各醫療院所略有差異、不含掛號費／病理費）：
+依健保「醫療服務給付項目及支付標準」整理（括號內為診療項目代碼）；實際是否給付以醫師評估病灶性質為準，自費項目費用依醫療院所而定：
 
 處置
 健保
-自費（參考）
 
 診斷性切片（shave / punch）
-有給付（97003 / 97004）
-—
+有給付（51001C–51003C 皮膚切片、穿片與縫合）
 
 診斷性切除送病理（懷疑惡性）
-有給付（依面積級距）
-—
+有給付（切除依部位與腫瘤直徑分級：顏面 62001C–62003C、臉部以外 62010C–62012C；病理檢查另依外科病理分級給付）
 
-已知惡性腫瘤切除（基底細胞癌 BCC、鱗狀細胞癌 SCC、日光性角化症 AK）
-有給付
-—
-
-表皮囊腫切除
-反覆發炎或大型囊腫可給付（急性感染期不建議當下切除、應先治療發炎）
-NT$ 3,000-8,000（依大小／部位）
-
-單顆痣美觀切除（無 ABCDE）
-不給付
+已知惡性腫瘤或癌前病變（基底細胞癌 BCC、鱗狀細胞癌 SCC、日光性角化症 AK）
 
 [... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 乾癬完整衛教 — 分型、嚴重度、誘發因子
 URL: https://chendermatologist.com/blog/psoriasis-overview
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT6M
 Tags: 乾癬, Psoriasis overview
@@ -2743,7 +2704,7 @@ DLQI（Dermatology Life Quality Index）
 病人填問卷、0-30 分；衡量生活、心情、工作、性影響
 ≤ 5 / 6-10 / > 10
 
-台灣健保「重度乾癬」生物製劑給付門檻（114/6/1 修正版本）：PASI ≥ 10（或膿疱性等不適用 PASI 者改用 BSA ≥ 10%）+「照光治療（PUVA/nb-UVB 每週 ≥ 2 次達 12 週）」+「至少二種傳統系統性治療失敗（MTX、acitretin、CsA、apremilast、deucravacitinib 五者中至少 2 種，各 ≥ 3 個月）」，需專科醫師事前審查 PASS。「PASI 10／10／10 三 10 標準」的 DLQI ≥ 10 是 BAD/AAD 臨床口訣，非健保條文的硬性要求（健保申請表通常會記錄 DLQI 作為療效與生活品質依據，但不是法定門檻）。
+台灣健保「重度乾癬」生物製劑給付門檻（依 115/9/22 版給付規定 §8.2.4.6.1）：PASI ≥ 10（或膿疱性等不適用 PASI 者改用 BSA ≥ 10%）+「照光治療（PUVA/nb-UVB 每週 ≥ 2 次達 12 週）」+「至少二種傳統系統性治療失敗（MTX、acitretin、CsA、apremilast、deucravacitinib 五者中至少 2 種，各 ≥ 3 個月）」，需專科醫師事前審查 PASS。「PASI 10／10／10 三 10 標準」的 DLQI ≥ 10 是 BAD/AAD 臨床口訣，非健保條文的硬性要求（健保乾癬生物製劑申請表〔附表二十四之一〕記錄的是 PASI 或體表面積，沒有 DLQI 欄位）。
 
 誘發與惡化因子
 
@@ -2849,7 +2810,7 @@ UpToDate: Chronic plaque psoriasis in adults: Overview of management. Accessed 2
 ---
 ## 乾癬外用藥治療 — 類固醇、維生素 D、特殊部位
 URL: https://chendermatologist.com/blog/psoriasis-topical
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 乾癬, Psoriasis topical
@@ -3021,7 +2982,7 @@ calcitriol 軟膏比 calcipotriol 對臉刺激小
 
 有效但需門診操作：類固醇局部注射（triamcinolone 2.5-5 mg/mL）注入近端甲皺襞、每 4-8 週
 
-中重度 / 多趾受影響 / 影響生活：直接考慮全身性治療（生物製劑對指甲乾癬最有效，詳見乾癬合併症與特殊族群）
+中重度 / 多趾受影響 / 影響生活：直接考慮全身性治療（生物製劑對指甲乾癬的療效證據較明確，詳見乾癬合併症與特殊族群）
 
 聰明的合併與順序療法
 
@@ -3029,7 +2990,7 @@ calcitriol 軟膏比 calcipotriol 對臉刺激小
 
 類固醇（早）+ 維生素 D（晚）：協同作用、刺激最低、清除率提升
 
-複方 calcipotriol／betamethasone：一支搞定、依從性最佳
+複方 calcipotriol／betamethasone：一支搞定、使用方便，有助規則用藥
 
 誘導期類固醇 → 維持期 TCI 或維 D：避免類固醇副作用
 
@@ -3037,7 +2998,7 @@ calcitriol 軟膏比 calcipotriol 對臉刺激小
 
 結語
 
-乾癬外用藥是 70-80% 病人的長期主力。掌握 4 個原則就能事半功倍：（1）強類固醇短期用、特殊部位避免；（2）維生素 D 衍生物作為維持與長期治療；（3）合併使用比單方更有效（複方 calcipotriol／betamethasone 是首選）；（4）頑固或特殊部位儘早升階（光療、全身性、生物製劑）。如果你已認真規律topicals fail to control after 6 months、別自責沒擦對藥、是時候和醫師討論升階。
+乾癬外用藥是 70-80% 病人的長期主力。掌握 4 個原則就能事半功倍：（1）強類固醇短期用、特殊部位避免；（2）維生素 D 衍生物作為維持與長期治療；（3）合併使用比單方更有效（複方 calcipotriol／betamethasone 是常用選擇）；（4）頑固或特殊部位儘早升階（光療、全身性、生物製劑）。如果你已認真規律topicals fail to control after 6 months、別自責沒擦對藥、是時候和醫師討論升階。
 
 參考資料
 
@@ -3054,7 +3015,7 @@ Stein Gold L, Lebwohl M, Sugarman J, et al. Calcipotriene/betamethasone dipropio
 ---
 ## 乾癬全身性治療 — 光療、口服、生物製劑
 URL: https://chendermatologist.com/blog/psoriasis-systemic
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 乾癬, Psoriasis systemic
@@ -3102,9 +3063,9 @@ PASI 75 ≈ 60-70%
 308 nm Excimer 雷射
 每週 2 次 × 6-10 次
 對局部病灶（頭皮 / 手腳 / 斑塊）有效
-適合 BSA < 10% 局部頑固型；自費為主
+適合 BSA < 10% 局部頑固型；自費（健保不給付）
 
-台灣現況：NB-UVB 在多數醫學中心 / 教學醫院皮膚科有設備、健保有給付；診所自費約 NT$ 200-500/次。Excimer 雷射多為自費。
+台灣現況：NB-UVB 等照光治療屬健保醫療服務給付項目（51019C 光線治療；PUVA 為 51018C 光化治療），適應症包含乾癬，須由皮膚科專科醫師執行；是否有照光設備依各醫療院所而定。Excimer 雷射為自費（健保不給付）。
 
 口服系統性治療
 
@@ -3140,11 +3101,11 @@ Deucravacitinib（TYK2 抑制劑、新藥）
 
 選擇實務：
 
-MTX：合併 PsA、健保給付、便宜、長年大量臨床經驗 → 仍是傳統首選
+MTX：合併 PsA 也適用、健保藥品給付規定對口服 MTX 沒有額外限制條文、長年大量臨床經驗 → 仍是傳統首選
 
 Cyclosporine：需要快速控制（紅皮症、嚴重 flare）、過渡到生物製劑前的橋接藥
 
-Acitretin：掌蹠 / 膿皰型、合併光療效果好；男性可、女性育齡謹慎
+Acitretin：掌蹠 / 膿皰型、與光療合併可提升療效；男性可、女性育齡謹慎
 
 Apremilast：不想打針、不適合 MTX/CsA 者；療效中等、副作用輕
 
@@ -3152,9 +3113,9 @@ Deucravacitinib：口服且療效接近生物製劑、新適應症
 
 生物製劑（biologics）— 自費病人決策指南
 
-過去 15 年改變了乾癬治療格局、PASI 90/100 變成新目標（Menter 2019, JAAD；Sbidian 2022, Cochrane NMA）。依機轉分 4 大類、共 13 支藥物。給自費病人選擇的關鍵：療效（PASI 90）、施打頻率（注射頻次）、安全性（合併症友善度）、年費。
+過去 15 年改變了乾癬治療格局、PASI 90/100 變成新目標（Menter 2019, JAAD；Sbidian 2022, Cochrane NMA）。依機轉分 4 大類。給自費病人選擇的關鍵：療效（PASI 90）、施打頻率（注射頻次）、安全性（合併症友善度）。
 
-一目了然 · 13 支乾癬生物製劑詳細比較
+一目了然 · 乾癬生物製劑詳細比較
 
 什麼是 PASI 75 / PASI 90 / PASI 100？「PASI 75」= 治療 16 週後、皮膚改善程度達到原本的 75% 以上（也就是病灶剩下 25% 以下）。PASI 90 = 改善 ≥ 90%、PASI 100 = 完全清除。過去傳統治療目標是 PASI 50-75、現代生物製劑目標已提升到 PASI 90 / 100（皮膚幾乎全乾淨）。
 
@@ -3176,7 +3137,7 @@ PASI 90（16 週）
 
 長期留藥率（5 年）
 
-台灣自費年費
+健保（乾癬）
 
 關鍵注意
 
@@ -3196,7 +3157,7 @@ Adalimumab（Humira®／復邁）
 停藥 3-6 月
 ≈ 40-50%
 
-NT$ 30-40 萬
+有條件給付（需事前審查）
 
 合併乾癬性關節炎／葡萄膜炎首選；TB 篩檢必
 
@@ -3214,27 +3175,9 @@ Etanercept（Enbrel®／恩博）
 停藥 2-3 月即復發（半衰期短）
 ≈ 30-40%
 
-NT$ 35-45 萬
+有條件給付（需事前審查）
 
 療效較弱、安全紀錄最久；兒童 ≥ 4 歲可用
-
-Infliximab（Remicade®／類克）
-
-每 8 週 IV 點滴
-
-≈ 80%
-≈ 75%
-
-1-2 週（最快）
-
-★★★★（強）
-
-停藥 3-6 月（部分早復發）
-≈ 40%
-
-NT$ 30-50 萬（依體重）
-
-需來院點滴；急性紅皮症／GPP 首選
 
 Certolizumab pegol（Cimzia®／喜美樂）
 
@@ -3250,7 +3193,7 @@ Certolizumab pegol（Cimzia®／喜美樂）
 停藥 3-6 月
 ≈ 40%
 
-NT$ 35-45 萬
+有條件給付（需事前審查）
 
 無 Fc 段、不通過胎盤 → 孕婦首選
 
@@ -3270,7 +3213,7 @@ Secukinumab（Cosentyx®／可在新）
 停藥 6-12 週
 ≈ 60-70%
 
-NT$ 38-48 萬
+有條件給付（需事前審查）
 
 對指甲、頭皮、PsA 都好；IBD 禁用；兒童 ≥ 6 歲
 
@@ -3288,7 +3231,7 @@ Ixekizumab（Taltz®／達癬美）
 停藥 8-16 週
 ≈ 65%
 
-NT$ 40-50 萬
+有條件給付（需事前審查）
 
 同 IL-17A、療效略高；指甲乾癬首選；IBD 禁用
 
@@ -3306,7 +3249,7 @@ Brodalumab（Lumicef®／樂癬清）
 停藥 4-12 週（最快復發之一）
 ≈ 50-60%
 
-NT$ 35-45 萬
+有條件給付（需事前審查）
 
 抗受體、最廣譜；有自殺意念警示、憂鬱史避用
 
@@ -3316,7 +3259,7 @@ Bimekizumab（Bimzelx®／碧美時）雙抗 IL-17A／F、最新
 
 ≈ 92%
 
-≈ 85%（榜首）
+≈ 85%
 
 2 週
 
@@ -3325,11 +3268,11 @@ Bimekizumab（Bimzelx®／碧美時）雙抗 IL-17A／F、最新
 停藥 12-24 週（最久之一）
 ≈ 70%
 
-NT$ 45-55 萬
+有條件給付（需事前審查）
 
-網絡分析最高 PASI 90；念珠菌感染風險較高；IBD 禁用
+網絡分析 PASI 90 名列前段；念珠菌感染風險較高；IBD 禁用
 
-IL-23抑制劑（CP 值首選）
+IL-23抑制劑
 
 Guselkumab（Tremfya®／創癬寧）
 
@@ -3345,9 +3288,9 @@ Guselkumab（Tremfya®／創癬寧）
 停藥 24+ 週才復發
 ≈ 80%
 
-NT$ 40-50 萬
+有條件給付（需事前審查）
 
-合併 IBD 可用；長期感染率最低
+合併 IBD 可用；長期感染率低
 
 Risankizumab（Skyrizi®／喜瑞莎）
 
@@ -3361,29 +3304,11 @@ Risankizumab（Skyrizi®／喜瑞莎）
 ★★★★（強）
 
 停藥 28+ 週才復發（最久）
-≈ 85%（最高）
+≈ 85%
 
-NT$ 40-50 萬
+有條件給付（需事前審查）
 
-注射頻率最低、便利性最高；克隆氏症也有效
-
-Tildrakizumab（Ilumetri®／聖癬寧）
-
-每 12 週 SC
-
-≈ 64%
-≈ 56%
-
-8-12 週
-
-★★★（中等）
-
-停藥 16-24 週
-≈ 70%
-
-NT$ 35-45 萬
-
-療效中等、副作用最少；體重大者效果較差
+注射頻率最低（每 12 週）；克隆氏症也有效
 
 IL-12／23共抑制
 
@@ -3401,35 +3326,35 @@ Ustekinumab（Stelara®／喜達諾）
 停藥 16-24 週
 ≈ 70%
 
-NT$ 38-48 萬
+有條件給付（需事前審查）
 
 第一代、長期安全紀錄最長（> 15 年）；兒童 ≥ 6 歲
 
-PASI 75／90 = 16 週時皮膚改善 ≥ 75%／90%；PsA 療效星等為相對排名（4 顆=強、3 顆=中等）；停藥復發時間 = 中位數、依個人差異很大；長期留藥率 = 5 年仍持續使用該藥的比例（越高代表病人越滿意）；自費年費為 2024-2025 台灣市場概略區間（依劑型／針數／藥廠優惠浮動 ± 20%、實際請洽醫療院所）。健保通過後實際自負額僅部分負擔。
+PASI 75／90 = 16 週時皮膚改善 ≥ 75%／90%；PsA 療效星等為相對排名（4 顆=強、3 顆=中等）；停藥復發時間 = 中位數、依個人差異很大；長期留藥率 = 5 年仍持續使用該藥的比例（越高代表病人越滿意）；健保欄依藥品給付規定 §8.2.4.6.1（115/9/22 版）：列名藥品須符合條件並經事前審查才給付；不符合條件者可自費使用，費用依藥品與醫療院所而定。
 
 給自費病人的 5 個決策建議
 
 怕打針／忙碌族 → 選 risankizumab（Skyrizi）每 12 週 1 針、一年只 4-5 針
 
-追求最高清除率（要 PASI 90+ 甚至完全清除）→ 選 bimekizumab（Bimzelx）網絡分析榜首
+追求高清除率（要 PASI 90+ 甚至完全清除）→ 選 bimekizumab（Bimzelx）網絡分析 PASI 90 名列前段
 
 合併 IBD（克隆氏症／潰瘍性結腸炎）→ 避開所有 IL-17、選 IL-23（risankizumab、guselkumab）或 TNFi（infliximab、adalimumab）
 
-合併乾癬性關節炎（PsA）→ TNFi、IL-17、IL-23 都可、且台灣健保 PsA 給付門檻較皮膚低
+合併乾癬性關節炎（PsA）→ TNFi、IL-17、IL-23 都可；健保 PsA 另有獨立給付條件（§8.2.4.4），與皮膚乾癬不同
 
 女性懷孕或計畫懷孕 → certolizumab pegol（Cimzia®）無 Fc、不通過胎盤、是唯一具完整懷孕證據的選項
 
-① TNF-α 抑制劑（最早期、最便宜）
+① TNF-α 抑制劑（最早期）
 
 第一代生物製劑、PASI 75 多在 50-75% 間。對合併乾癬性關節炎（PsA）、葡萄膜炎有特別優勢。Infliximab 是急性紅皮症型／GPP 的首選之一（起效最快）。Certolizumab 是唯一無 Fc 段、不通過胎盤的 TNFi、孕婦保留首選。施打前必先篩 TB（IGRA／X-ray）、B/C 肝、HIV。
 
 ② IL-17 抑制劑（療效高、起效快）
 
-第二代生物製劑、PASI 90 普遍 70-85%。對指甲乾癬、頭皮乾癬效果特別好（IL-17 在這些部位扮演主要角色）。禁忌：合併活動性 IBD（克隆氏症、潰瘍性結腸炎）— IL-17 抑制劑可能誘發或惡化 IBD；念珠菌（口腔／皮膚／陰道）感染微升、長期可控制。Bimekizumab 是雙抗 IL-17A 與 IL-17F 的新一代、目前網絡分析 PASI 90 排名第一（≈ 85%）。
+第二代生物製劑、PASI 90 普遍 70-85%。對指甲乾癬、頭皮乾癬效果特別好（IL-17 在這些部位扮演主要角色）。禁忌：合併活動性 IBD（克隆氏症、潰瘍性結腸炎）— IL-17 抑制劑可能誘發或惡化 IBD；念珠菌（口腔／皮膚／陰道）感染微升、長期可控制。Bimekizumab 是雙抗 IL-17A 與 IL-17F 的新一代、目前網絡分析 PASI 90 名列前段（≈ 85%）。
 
-③ IL-23 抑制劑（最新一代、CP 值最高）
+③ IL-23 抑制劑（最新一代）
 
-第三代生物製劑、PASI 90 達 56-80%。3 大優勢：（1）施打頻率最低（risankizumab、tildrakizumab 每 12 週 1 針）、（2）感染風險最低（IL-23 比 IL-17 更上游、選擇性高）、（3）合併 IBD 仍可使用（risankizumab、guselkumab 對 IBD 也有效）。是綜合 CP 值首選。
+第三代生物製劑、PASI 90 達 56-80%。3 大優勢：（1）施打頻率最低（risankizumab、tildrakizumab 每 12 週 1 針）、（2）感染風險較低（IL-23 比 IL-17 更上游、選擇性高）、（3）合併 IBD 仍可使用（risankizumab、guselkumab 對 IBD 也有效）。
 
 ④ IL-12／23 共抑制（ustekinumab）
 
@@ -3437,30 +3362,30 @@ Ustekinumab（Stelara®）是第一代「IL-23 路徑」抑制劑、靶向 IL-12
 
 台灣健保給付規範與實務
 
-健保生物製劑給付條件（健保署事前審查 PASS 通過後給付，114/6/1 修正版本）：
+健保生物製劑給付條件（健保署事前審查 PASS 通過後給付，115/9/22 版）：
 
 慢性中重度乾癬：病灶 ≥ 6 個月、PASI ≥ 10（或膿疱性等不適用 PASI 者改用 BSA ≥ 10%）
 
-須先完成「照光治療（PUVA 或 nb-UVB 每週 ≥ 2 次達 12 週）」+「以下五種系統性治療中至少 二種各使用 ≥ 3 個月仍失敗」: methotrexate、acitretin、cyclosporin、apremilast、deucravacitinib（114/6/1 起 apremilast 與 deucravacitinib 已加入此清單）
+須先完成「照光治療（PUVA 或 nb-UVB 每週 ≥ 2 次達 12 週）」+「以下五種系統性治療中至少 二種各使用 ≥ 3 個月仍失敗」: methotrexate、acitretin、cyclosporin、apremilast、deucravacitinib（apremilast 與 deucravacitinib 已列入現行條文此清單；該款修訂日期為 113/3/1、114/6/1）
 
 足量定義：MTX ≥ 15 mg/週、CsA 2.5–5 mg/kg/d、acitretin 0.3–1 mg/kg/d；育齡女性可不經 acitretin
 
-12 週評估需達 PASI 25（risankizumab、bimekizumab 為 16 週、risankizumab 須達 PASI 75）才能續用
+12 週評估需達 PASI 25（ustekinumab、risankizumab、bimekizumab 為 16 週，risankizumab 須達 PASI 75）才能續用
 
 續用每 6 個月須再次事前審查；初次治療後續用需達 PASI 50（risankizumab 需 PASI 75）
 
-暫緩續用：使用生物製劑 2 年後若 PASI ≤ 10 須暫停（與 AD 不同 — AD 生物製劑 1 年）；但有連續兩次暫緩後復發病史者不在此限
+暫緩續用：使用生物製劑 2 年後若 PASI ≤ 10 須暫停（與 AD 不同 — AD 的 dupilumab 為 1 年）；但有連續兩次暫緩後復發病史者不在此限
 
-新增藥物：Bimekizumab（115/5/1）IL-17A/F 雙重抑制，第 16 週 PASI 25 評估；Spesolimab（113/7/1）抗 IL-36R，限全身型急性膿疱性乾癬使用
+新增藥物：Bimekizumab（115/5/1）IL-17A/F 雙重抑制，第 16 週 PASI 25 評估；Spesolimab（113/7/1）抗 IL-36R，限經確診具 IL36RN 突變之全身型急性膿疱性乾癬使用
 
 注意：「PASI 10／10／10 三 10 標準」是臨床常見口訣，但與健保條文不完全一致。健保條文只要求 PASI ≥ 10（或 BSA ≥ 10% 用於膿疱性）+「兩種傳統治療失敗」+「照光無效或不適合」；DLQI ≥ 10 並非健保條文的硬性要求（雖然申請表通常會記錄）。BAD/AAD 國際指引把 DLQI ≥ 10 列為臨床「升階治療」考量之一，但不是 NHI 法定門檻。
 不符合條件怎麼辦？
 
-合併 乾癬性關節炎（PsA）且風濕科診斷成立 → 走 PsA 給付路徑（門檻較低）
+合併 乾癬性關節炎（PsA）且風濕科診斷成立 → 可評估是否符合 PsA 給付路徑（§8.2.4.4，條件與皮膚乾癬不同，例如需 3 個以上疼痛關節及 3 個以上腫脹關節）；PsA 路徑須先以至少 2 種疾病修飾藥物（DMARDs）充分治療仍效果不佳，115/8/1 起，原已經事前審查符合 apremilast 給付規定並接受治療者，apremilast 可視同第一線 DMARD
 
 用生物製劑期間到底要不要每年抽血篩檢？參考 2026 JAAD 證據評級對篩檢必要性的重新檢視。
 
-自費生物製劑：年費約 NT$ 25-60 萬不等
+不符合健保條件者可自費使用生物製劑，費用依藥品與醫療院所而定
 
 治療目標與切換策略
 
@@ -3470,7 +3395,7 @@ Ustekinumab（Stelara®）是第一代「IL-23 路徑」抑制劑、靶向 IL-12
 ---
 ## 乾癬合併症與特殊族群 — PsA、心血管、懷孕、兒童、指甲、紅皮症
 URL: https://chendermatologist.com/blog/psoriasis-special-populations
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 乾癬, Psoriasis special populations
@@ -3657,7 +3582,7 @@ Adalimumab ≥ 4 歲（部分國家）
 
 中度：類固醇局部注射（triamcinolone 2.5-5 mg/mL 注入近端甲皺襞）每 4-8 週、Pulsed Dye Laser 照射
 
-中重度（≥ 3 指 + DLQI 高 / 影響工作）：直接全身性 — 對指甲最有效的是 IL-17i（ixekizumab）、IL-23i（risankizumab）、TNFi（adalimumab、infliximab）、12 個月清除率 50-70%
+中重度（≥ 3 指 + DLQI 高 / 影響工作）：直接全身性 — 指甲改善證據較充分的有 IL-17i（ixekizumab）、IL-23i（risankizumab）、TNFi（adalimumab、infliximab）、12 個月清除率 50-70%
 
 紅皮症型乾癬（erythrodermic psoriasis）— 急症
 
@@ -3671,7 +3596,7 @@ Adalimumab ≥ 4 歲（部分國家）
 
 溫和外用 — 凡士林 + 弱效類固醇 + 淋濕包紮（wet wraps）
 
-第一線全身性藥物：cyclosporine（2-5 mg/kg/day、起效最快、4-8 週內穩定）或 infliximab（5 mg/kg IV、最快、48 小時內有反應）
+第一線全身性藥物：cyclosporine（2-5 mg/kg/day、起效較快、4-8 週內穩定）或 infliximab（5 mg/kg IV、起效快、48 小時內有反應）
 
 過渡到長期：IL-17i 或 IL-23i（或 ustekinumab）
 
@@ -3679,7 +3604,7 @@ Adalimumab ≥ 4 歲（部分國家）
 
 結語
 
-乾癬是系統性疾病、皮膚只是冰山。AAD-NPF 2019 把「合併症篩檢」寫進指引等級不是裝飾、而是真實降低長期心血管 / 失能 / 自殺風險。每個乾癬病人每年至少要做：問關節 + 量血壓 + 測血糖血脂 + 心情快篩 + DLQI 評分。懷孕、兒童、紅皮症型、嚴重指甲乾癬都有實證最佳策略 — 別讓「我以為只是皮膚問題」延誤治療。
+乾癬是系統性疾病、皮膚只是冰山。AAD-NPF 2019 把「合併症篩檢」寫進指引等級不是裝飾、而是真實降低長期心血管 / 失能 / 自殺風險。每個乾癬病人每年至少要做：問關節 + 量血壓 + 測血糖血脂 + 心情快篩 + DLQI 評分。懷孕、兒童、紅皮症型、嚴重指甲乾癬都有實證治療策略 — 別讓「我以為只是皮膚問題」延誤治療。
 
 參考資料
 
@@ -3704,7 +3629,7 @@ Bachelez H, Choon SE, Marrakchi S, et al. Trial of spesolimab for generalized pu
 ---
 ## 異位性皮膚炎外用治療 — 保濕、類固醇、TCI、PDE4、JAK 軟膏
 URL: https://chendermatologist.com/blog/atopic-dermatitis-topical
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 異位性皮膚炎, AD topical
@@ -3769,7 +3694,7 @@ AAD 2023 強推（A 級）：急性期可替代類固醇、長期維持優於類
 
 Tacrolimus 0.03% / 0.1% 軟膏（Protopic®）—兒童用 0.03%、成人 0.1%；每日 2 次（BID）、急性期 ≤ 6 週、之後改 proactive 每週 2 次（週二、週五）
 
-Pimecrolimus 1% 乳膏（Elidel®）—輕度、敏感肌、臉部首選
+Pimecrolimus 1% 乳膏（Elidel®）—輕度、敏感肌、臉部常用
 
 常見「點點刺痛」如何處理：初次使用 1-2 週可能有燒灼、刺癢、通常會自行消退。技巧：（1）冷藏後使用、（2）先擦保濕 5 分鐘再擦 TCI、（3）剛開始可短期合併低效類固醇 3-5 天。
 
@@ -3793,13 +3718,13 @@ Crisaborole 2%（Eucrisa®／恩萊膚®）
 第四型磷酸二酯酶抑制劑（PDE4 抑制劑）
 一日 2 次（BID）
 ≈ 50%
-已上市、自費；輕中度、≥ 3 月嬰兒可用
+已上市、自費（健保不給付）；輕中度、≥ 3 月嬰兒可用
 
 Ruxolitinib 1.5% 乳膏（Opzelura®）
 外用 JAK1／2 抑制劑
 一日 2 次（BID）× 8 週
 EASI 75 ≈ 53%；IGA 0/1 ≈ 50%
-台灣已上市、自費約 NT$ 4 萬／100 g；療效最高、近似中強類固醇
+台灣已上市、自費（健保不給付）；試驗中療效近似中強類固醇
 
 Tapinarof 1%（Vtama®）
 AhR 受體調節劑
@@ -3884,9 +3809,9 @@ Papier A, Strowd LC. Atopic dermatitis: a review of topical nonsteroid therapy. 
 ---
 ## 異位性皮膚炎全身性治療 — 生物製劑、JAK 抑制劑、光療
 URL: https://chendermatologist.com/blog/atopic-dermatitis-systemic
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
-Reading time: PT10M
+Reading time: PT12M
 Tags: 異位性皮膚炎, AD systemic
 
 什麼時候要從外用升階到全身性？
@@ -3933,7 +3858,7 @@ PUVA
 
 一目了然 · 7 支現代 AD 全身性藥物詳細比較
 
-什麼是 EASI 75 / EASI 90？「EASI 75」= 治療 16 週後、皮膚改善程度達原本的 75% 以上（EASI 分數從 24 降到 6 以下）；EASI 90 = 改善 ≥ 90%。這是評估治療有效的國際標準。台灣健保 dupilumab（杜避炎）給付門檻為 EASI ≥ 24 + IGA ≥ 4。
+什麼是 EASI 75 / EASI 90？「EASI 75」= 治療 16 週後、皮膚改善程度達原本的 75% 以上（EASI 分數從 24 降到 6 以下）；EASI 90 = 改善 ≥ 90%。這是評估治療有效的國際標準。台灣健保 dupilumab（杜避炎）12 歲以上的給付門檻為 EASI ≥ 16、紅腫體表面積 ≥ 30% 且 IGA 3–4（並須先經照光與傳統全身性治療無效）。
 
 類別
 
@@ -3953,11 +3878,9 @@ EASI 90
 
 長期留藥率（2 年）
 
-台灣自費年費
-
 台灣現況
 
-生物製劑（皮下注射、安全性最好）
+生物製劑（皮下注射、長期安全性資料較完整）
 
 Dupilumab（Dupixent®／杜避炎®）抗 IL-4Rα
 
@@ -3972,11 +3895,9 @@ Dupilumab（Dupixent®／杜避炎®）抗 IL-4Rα
 
 停藥 12-24 週復發（半衰期長）
 
-≈ 80%（最高）
+≈ 80%
 
-NT$ 35-45 萬
-
-台灣已上市、健保有條件給付（EASI ≥ 24 + IGA ≥ 4）；≥ 6 月嬰兒
+台灣已上市、健保有條件給付（12 歲以上：EASI ≥ 16、紅腫面積 ≥ 30%、IGA 3–4；6 歲以上未滿 12 歲另有兒童條件）；≥ 6 月嬰兒
 
 Tralokinumab（Adbry®／Adtralza®）抗 IL-13
 
@@ -3992,8 +3913,6 @@ Tralokinumab（Adbry®／Adtralza®）抗 IL-13
 停藥 8-16 週復發
 
 ≈ 65%
-
-NT$ 40-50 萬
 
 台灣已上市自費；≥ 12 歲
 
@@ -4012,9 +3931,7 @@ Lebrikizumab（Ebglyss®）抗 IL-13、最新
 
 ≈ 75%
 
-NT$ 40-50 萬
-
-台灣 2024-2025 上市自費；≥ 12 歲；維持期每月 1 針、便利
+台灣已上市、健保自 115/6/1 起有條件給付（12 歲以上且體重 ≥ 40 公斤，其餘條件同 dupilumab）；維持期每月 1 針、便利
 
 Nemolizumab（Nemluvio®）抗 IL-31R、止癢專攻
 
@@ -4023,7 +3940,7 @@ Nemolizumab（Nemluvio®）抗 IL-31R、止癢專攻
 ≈ 36%
 ≈ 19%
 
-≈ 70%（止癢最強）
+≈ 70%
 
 1-2 週
 
@@ -4031,18 +3948,16 @@ Nemolizumab（Nemluvio®）抗 IL-31R、止癢專攻
 
 —（短期數據）
 
-NT$ 40-55 萬（國際參考價）
-
 台灣尚未上市（FDA 2024 核准、預計 2025-2026 引進）；≥ 12 歲
 
-口服 JAK 抑制劑（傑納斯激酶、最快、有黑框警告）
+口服 JAK 抑制劑（傑納斯激酶、起效較快、有黑框警告）
 
 Upadacitinib（Rinvoq®／銳虎®）JAK1
 
 口服 15 或 30 mg／日
 
-≈ 78%（榜首）
-≈ 65%（榜首）
+≈ 78%
+≈ 65%
 
 ≈ 70-80%
 
@@ -4052,9 +3967,7 @@ Upadacitinib（Rinvoq®／銳虎®）JAK1
 
 ≈ 70%
 
-NT$ 35-55 萬
-
-台灣已上市自費；≥ 12 歲；FDA 黑框警告
+台灣已上市、健保有條件給付（條件同 dupilumab）；≥ 12 歲；FDA 黑框警告
 
 Abrocitinib（Cibinqo®／希必皮®）JAK1
 
@@ -4071,9 +3984,7 @@ Abrocitinib（Cibinqo®／希必皮®）JAK1
 
 ≈ 65%
 
-NT$ 30-50 萬
-
-台灣已上市自費；≥ 12 歲；FDA 黑框警告
+台灣已上市、健保有條件給付（條件同 dupilumab）；≥ 12 歲；FDA 黑框警告
 
 Baricitinib（Olumiant®）JAK1／2
 
@@ -4090,19 +4001,17 @@ Baricitinib（Olumiant®）JAK1／2
 
 ≈ 50%
 
-NT$ 25-40 萬
-
 台灣 AD 適應症未上市（僅 RA）；EU/日本核准 AD
 
-EASI 75／90 = 16 週時皮膚改善 ≥ 75%／90%；長期留藥率 = 2 年仍持續使用該藥的比例（越高代表病人越滿意）；停藥復發時間 = 中位數、依個人病情差異很大；自費年費為 2024-2025 台灣市場概略區間（依劑型／針數／藥廠優惠浮動 ± 25%）。健保通過後實際自負額僅部分負擔。
+EASI 75／90 = 16 週時皮膚改善 ≥ 75%／90%；長期留藥率 = 2 年仍持續使用該藥的比例（越高代表病人越滿意）；停藥復發時間 = 中位數、依個人病情差異很大；未符合健保條件者須自費，費用依醫療院所而定；經事前審查核准由健保給付者，仍須依健保規定繳交部分負擔。
 
 給自費病人的 6 個決策建議
 
-追求最高清除率（EASI 90+）→ 選 upadacitinib（Rinvoq）30 mg但需接受黑框警告與較高副作用率
+追求較高清除率（EASI 90+）→ 選 upadacitinib（Rinvoq）30 mg但需接受黑框警告與較高副作用率
 
-長期安全性最重要、不想驗血 → 選 dupilumab（Dupixent）是台灣最早、健保有給付、長期 5+ 年安全紀錄最佳
+長期安全性最重要、不想驗血 → 選 dupilumab（Dupixent）是台灣最早、健保有給付、長期 5+ 年安全性資料較完整
 
-癢主導型（半夜癢醒）→ 期待 nemolizumab（Nemluvio）抗 IL-31R 直接針對「癢」、止癢效果最快、但台灣尚未上市。在此期間 dupilumab 也是合理選擇。
+癢主導型（半夜癢醒）→ 期待 nemolizumab（Nemluvio）抗 IL-31R 直接針對「癢」、止癢起效較快、但台灣尚未上市。在此期間 dupilumab 也是合理選擇。
 
 怕針、要口服 → 選 abrocitinib 或 upadacitinib但需理解 JAK 黑框警告（≥ 65 歲、心血管病史、惡性腫瘤史避開）
 
@@ -4120,7 +4029,7 @@ EASI 75／90 = 16 週時皮膚改善 ≥ 75%／90%；長期留藥率 = 2 年仍�
 
 常見副作用：注射處反應（10%）、結膜炎（8-15%、AD 特有現象、機轉不明）、齒齦炎；很少需停藥
 
-台灣健保給付條件（自 2021 起）：EASI ≥ 24 + IGA ≥ 4 + 至少 2 種傳統治療失敗 + 專科醫師事前審查；通過後自費降至每針數千
+台灣健保給付條件（12 歲以上）：病灶持續 ≥ 6 個月、EASI ≥ 16、紅腫體表面積 ≥ 30%、IGA 3–4，且足量照光治療加上 methotrexate、azathioprine、cyclosporin 其中至少 2 種治療無效（或因醫療因素無法接受）；限皮膚科等專科醫師處方，並須事前審查核准。6 歲以上未滿 12 歲兒童另有條件較寬的規定
 
 ② Tralokinumab（Adbry®／Adtralza®）
 
@@ -4128,11 +4037,11 @@ EASI 75／90 = 16 週時皮膚改善 ≥ 75%／90%；長期留藥率 = 2 年仍�
 
 ③ Lebrikizumab（Ebglyss®）
 
-同抗 IL-13、但與 IL-13 結合的抗原表位不同、療效近似 dupilumab、維持期每月 1 針（更便利）。FDA 2024 核准、≥ 12 歲。台灣尚未上市（預計 2025-2026 引進）。
+同抗 IL-13、但與 IL-13 結合的抗原表位不同、療效近似 dupilumab、維持期每月 1 針（更便利）。FDA 2024 核准、≥ 12 歲。台灣已上市，健保自 115/6/1 起納入有條件給付（12 歲以上且體重至少 40 公斤，其餘條件與 dupilumab 相同；第 16 週須達 EASI 50 才可續用）。
 
 ④ Nemolizumab（Nemluvio®）
 
-抗 IL-31 受體單株抗體 — IL-31 是癢的主要訊息分子。止癢效果最快最強（1-2 週內癢分數降 60-70%）、適合「半夜癢到睡不著」的癢主導病人。但EASI 改善幅度較其他 IL-4／13 低、AAD 2024 建議搭配外用治療。FDA 2024 核准、≥ 12 歲。
+抗 IL-31 受體單株抗體 — IL-31 是癢的主要訊息分子。止癢起效快、試驗中止癢效果較顯著（1-2 週內癢分數降 60-70%）、適合「半夜癢到睡不著」的癢主導病人。但EASI 改善幅度較其他 IL-4／13 低、AAD 2024 建議搭配外用治療。FDA 2024 核准、≥ 12 歲。
 
 JAK 抑制劑詳細介紹
 
@@ -4140,11 +4049,11 @@ FDA 黑框警告（適用於所有口服 JAKi）：重大心血管不良事件�
 
 ① Upadacitinib（Rinvoq®）
 
-選擇性 JAK1 抑制劑、≥ 12 歲。30 mg／日是目前所有 AD 全身性治療中 EASI 75 達成率最高的選項（≈ 78%）。15 mg 為起始劑量、嚴重者可加至 30 mg。台灣已上市自費。
+選擇性 JAK1 抑制劑、≥ 12 歲。30 mg／日在試驗中 EASI 75 達成率約 78%，高於本文比較的其他全身性藥物。15 mg 為起始劑量、嚴重者可加至 30 mg。台灣已上市，健保有條件給付（條件同 dupilumab；健保規定 EASI 16–20 限每日 15 mg，18 歲以上且 EASI 20 以上才可每日 30 mg）。
 
 ② Abrocitinib（Cibinqo®）
 
-選擇性 JAK1 抑制劑、≥ 12 歲。100 mg 為標準、嚴重可 200 mg。起效快（一週內）、可間歇使用（停 2-4 週再啟動）。台灣已上市自費。
+選擇性 JAK1 抑制劑、≥ 12 歲。100 mg 為標準、嚴重可 200 mg。起效快（一週內）、可間歇使用（停 2-4 週再啟動）。台灣已上市，健保有條件給付（條件同 dupilumab；第 16 週須達 EASI 50 才可續用）。
 
 ③ Baricitinib（Olumiant®）
 
@@ -4184,7 +4093,7 @@ GI 副作用
 
 台灣健保給付實務
 
-健保 NHI（114/6/1 修正版本）同時給付 dupilumab、upadacitinib、abrocitinib 用於 12 歲以上中重度異膚；6–12 歲兒童適用（dupilumab only，條件較寬）。
+健保 NHI（依 115/9/22 版藥品給付規定；lebrikizumab 自 115/6/1 起納入）同時給付 dupilumab、upadacitinib、abrocitinib、lebrikizumab 用於 12 歲以上中重度異膚（lebrikizumab 另限體重至少 40 公斤）；6 歲以上未滿 12 歲兒童適用（dupilumab only，條件較寬）。
 
 客觀條件（12 歲以上）
 
@@ -4192,19 +4101,19 @@ GI 副作用
 
 EASI ≥ 16、紅腫體表面積 ≥ 30%（只算紅腫濕疹部位）、IGA 3–4
 
-完整療程：① 照光治療（PUVA 或 nb-UVB）每週 ≥ 2 次、療程達 12 週 + ② 三種傳統免疫抑制劑中的至少二種，各足量使用 ≥ 12 週仍無效或不可耐受（成人足量：MTX ≥ 15 mg/週、AZA 2 mg/kg/d、CsA 5 mg/kg/d；青少年劑量減半）
+完整療程：① 照光治療（PUVA 或 nb-UVB）每週 ≥ 2 次、療程達 12 週 + ② 三種傳統免疫抑制劑中的至少二種，各足量使用 ≥ 12 週仍無效或不可耐受（成人足量：MTX ≥ 15 mg/週、AZA 2 mg/kg/d、CsA 5 mg/kg/d；12 歲以上未滿 18 歲：MTX 10 mg/週、AZA 1.0 mg/kg/d、CsA 2.5 mg/kg/d）
 
 或具有照光禁忌的醫療因素（光過敏、白化症、紅斑性狼瘡、皮膚癌等）可豁免照光要求
 
 續用、暫緩與評估時點
 
-初次申請：以 6 個月為一個療程，須事前審查（PASS）核准
+初次申請：以 6 個月為一個療程，須經事前審查核准
 
-16 週評估：未達 EASI 50 不可續用（dupilumab、upadacitinib、abrocitinib 三者均需此 gate）
+16 週評估：未達 EASI 50 不可續用（dupilumab、abrocitinib、lebrikizumab 規定第 16 週評估；upadacitinib 則以治療滿 6 個月達 EASI 50 作為續用條件）
 
 續用：每 6 個月須再次事前審查，附治療前後照片
 
-暫緩續用：生物製劑（dupilumab）使用 1 年後若 EASI ≤ 16，須暫停；JAK 抑制劑（upa / abro）114/6/1 起改為使用 2 年後若 EASI ≤ 16 才須暫停
+暫緩續用：生物製劑（dupilumab）使用 1 年後若 EASI ≤ 16，須暫停；JAK 抑制劑（upa / abro，114/6/1 起）與 lebrikizumab（115/6/1 起）為使用 2 年後若 EASI ≤ 16 才須暫停
 
 復發後（再復發 50% 或 EASI ≥ 16）可重新申請；停藥 > 3 個月再申請視同新案
 
@@ -4218,25 +4127,17 @@ Abrocitinib：≥ 12 歲，每日 100 mg 或 200 mg 均可
 
 Upa 與 Abro 只能擇一使用，僅於無法耐受副作用時可互換；皆不可與 cyclosporin 併用
 
-其他生物製劑與 JAK 抑制劑（tralokinumab、lebrikizumab、nemolizumab、baricitinib）目前 NHI 未列入 AD 給付，須完全自費，月費約 NT$ 30,000–50,000。
+Lebrikizumab（115/6/1 起）：限 12 歲以上且體重至少 40 公斤；第 0、2 週各 500 mg（250 mg × 2），第 4 週起 250 mg 每 2 週至第 16 週，之後 250 mg 每 4 週；第 16 週須達 EASI 50 才可續用
+
+Dupilumab、upadacitinib、abrocitinib 與 lebrikizumab 不得併用
+
+其他生物製劑與 JAK 抑制劑（tralokinumab、nemolizumab、baricitinib）目前 NHI 未列入 AD 給付，須完全自費，費用依醫療院所而定。
 
 維持期該繼續打、減量還是停藥？參考 2026 JAAD 真實世界研究：杜避炎® 減量竟比停藥更早復發。
 
 完整逐條對照請見 皮膚科常用藥物健保規範完整整理。
 
 結語
-
-異位性皮膚炎中重度治療在 2017 後完全改變、現在不必再忍著「就是會癢」。生物製劑（dupilumab、lebrikizumab）安全性最好、是長期首選；JAK 抑制劑（upadacitinib、abrocitinib）起效最快、清除率最高、但需理解黑框警告。NB-UVB 光療是經濟過渡選項。和您的皮膚科醫師依「療效目標、安全顧慮、便利性、預算」共同決定。新藥輩出、選擇前諮詢專科、別自行停藥。
-
-延伸閱讀：異位性皮膚炎完整系列 — 外用治療完整衛教、合併症與特殊族群、嬰幼兒 AD 完整照護。
-
-參考資料
-
-Davis DMR, Drucker AM, Alikhan A, et al. Guidelines of care for the management of atopic dermatitis in adults with phototherapy and systemic therapies. J Am Acad Dermatol. 2024;90(2):e57-e96. 「來源」
-
-Davis DMR, Frazer-Green L, Alikhan A, et al. Focused update: Guidelines of care for the management of atopic dermatitis in adults. J Am Acad Dermatol. 2024;90(2):e43-e56.
-
-Drucker AM, Morra DE, Prieto-Merino D, et al. Systemic immunomodulatory treatments for atopic dermatitis: update of network meta-analysis. JAMA Dermatol. 2022;158(5):523-532.
 
 
 [... truncated; fetch canonical URL for full text ...]
@@ -4450,7 +4351,7 @@ UpToDate: Management of severe, refractory atopic dermatitis (eczema) in infants
 ---
 ## 接觸性皮膚炎(過敏 vs 刺激)完整衛教
 URL: https://chendermatologist.com/blog/contact-dermatitis
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 接觸性皮膚炎, Contact dermatitis
@@ -4560,7 +4461,7 @@ Lanolin（羊毛脂）
 
 如何診斷？ Patch Test 貼膚試驗
 
-台灣現況提醒 ─ 目前台灣只有少數醫學中心 / 教學醫院的皮膚科有提供 patch test 服務、且常需自費。建議疑似嚴重 ACD 或職業相關的病人、就診前先電話詢問醫院是否有此服務、避免白跑一趟。
+台灣現況提醒 ─ 目前台灣只有少數醫學中心 / 教學醫院的皮膚科有提供 patch test 服務；皮膚貼布試驗屬健保醫療服務給付項目（30508C），實際提供的過敏原項目與是否另需自費，請依醫院當下說明。建議疑似嚴重 ACD 或職業相關的病人、就診前先電話詢問醫院是否有此服務、避免白跑一趟。
 Patch test 是 ACD 的金標準診斷工具（Johnston 2017, BJD ）。流程：
 
 第 0 天 ─ 醫師在背部以特殊小室(Finn chamber 或 IQ chamber)貼上一系列稀釋過敏原(歐洲基礎組合 European baseline series 含 30 種 + 額外懷疑物)、貼 48 小時、不可碰水洗澡。
@@ -4710,7 +4611,7 @@ UpToDate: Common allergens in allergic contact dermatitis. Accessed 2026.
 ---
 ## 日光性角化症 AK + 鱗狀細胞癌 SCC 完整衛教
 URL: https://chendermatologist.com/blog/actinic-keratosis-scc
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT10M
 Tags: 皮膚癌, AK / SCC
@@ -4830,7 +4731,7 @@ Lesion-directed （單顆病灶）
 
 冷凍治療(液態氮 cryotherapy)
 單顆 / 少數日光性角化症（< 5 顆）
-健保給付、療程短；可能留色素變化、起水泡
+健保給付（51017C 液態氮冷凍治療）、療程短；可能留色素變化、起水泡
 
 刮除術 + 電燒(curettage + cautery)
 厚日光性角化症或可疑鱗狀細胞癌排除
@@ -4848,7 +4749,7 @@ Field-directed （全區域治療）
 
 5-Fluorouracil 5% cream (5-FU) 台灣目前沒有
 每天 1-2 次 × 2-4 週
-清除率 50-70%（AAD A 級）、皮膚會紅腫脫屑、需忍耐；avg 最有效 field 療法
+清除率 50-70%（AAD A 級）、皮膚會紅腫脫屑、需忍耐；在比較試驗中清除率較高的 field 療法之一
 
 Imiquimod 5% cream
 每週 3 次 × 4-16 週
@@ -4856,7 +4757,7 @@ Imiquimod 5% cream
 
 Photodynamic therapy 光動力療法 (PDT)
 MAL 或 ALA 塗抹後、紅光照射；1-2 次
-美觀效果好、清除率 ~70%（臉部）、價位高
+美觀結果通常較佳、清除率 ~70%（臉部）、自費（健保不給付）
 
 Tirbanibulin 1% ointment
 每天 1 次 × 5 天
@@ -4866,7 +4767,7 @@ Diclofenac 3% gel
 每天 2 次 × 60-90 天
 效果較溫和、療程長
 
-台灣健保給付情況：冷凍治療通常有給付；5-FU、imiquimod、PDT、tirbanibulin 多為自費或部分自費。Ingenol mebutate (Picato) 因 2020 年 EMA 因可能促進腫瘤的安全疑慮而下市、目前不再使用 (de Berker 2017, BJD updated note)。
+台灣健保給付情況：液態氮冷凍治療屬健保醫療服務給付項目（51017C，適應症含日光性角化症、波文氏症）；5-FU、imiquimod、tirbanibulin 等外用藥在健保藥品給付規定中沒有額外限制條文（其中 5-FU 乳膏目前台灣無供貨），是否給付以醫師處方當下的健保收載品項為準；光動力療法（PDT）為自費（健保不給付）。Ingenol mebutate (Picato) 因 2020 年 EMA 因可能促進腫瘤的安全疑慮而下市、目前不再使用 (de Berker 2017, BJD updated note)。
 
 波文氏症（原位鱗狀細胞癌）治療
 
@@ -5002,7 +4903,7 @@ AAD JAAD cutaneous SCC management
 ---
 ## 痘痘 8 大迷思
 URL: https://chendermatologist.com/blog/acne-myths
-Updated: 2026-05-25
+Updated: 2026-10-15
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 痘痘, Acne
@@ -5015,7 +4916,7 @@ Tags: 痘痘, Acne
 正確處理：
 白頭粉刺：可用消毒過的粉刺棒輕壓，不要用指甲擠
 紅腫發炎痘：不要動，改擦含過氧化苯醯(BPO)或抗生素藥膏，1-3 天會自行消退
-大顆囊腫型痘痘：皮膚科可注射稀釋類固醇，24 小時內顯著消腫，不留疤
+大顆囊腫型痘痘：皮膚科可注射稀釋類固醇，通常 24 小時左右明顯消腫，有助降低留疤風險
 迷思 3：油性肌的人才會長痘，乾性肌不會
 「我皮膚很乾，怎麼會長痘？」乾性肌與混合肌也會長痘，且常常更難治。痘痘的四大成因是：皮脂多、毛孔角化異常、痤瘡桿菌、發炎。只有第一個跟出油有關，後三個跟膚質乾濕無關。乾性肌的人若毛孔角化失常，粉刺照樣會長；且因為皮膚屏障較脆弱，擦痘痘藥膏(A 酸、果酸）更容易刺激，治療反而更棘手。
 處理乾性肌痘痘的關鍵：強化保濕（神經醯胺、玻尿酸）、選溫和不致粉刺的痘痘成分(adapalene、azelaic acid)、避免高濃度去角質。
@@ -5027,11 +4928,11 @@ Tags: 痘痘, Acne
 真正有效的「點痘」：含 BPO 2.5-5%、水楊酸 1-2% 或 硫磺 的局部痘痘藥膏 / 痘痘貼。2024 AAD 強調：BPO 是輕中度痘痘第一線，但要「合併」外用 A 酸或抗生素同時用，避免單用抗生素產生抗藥性。
 迷思 6：痘痘藥膏越濃越強越快好
 「我買最高濃度的水楊酸，效果應該最猛吧。」越濃越容易把皮膚屏障弄壞，反而拖長療程。痘痘治療的關鍵不是「濃度」而是「持續性」。突然用高濃度的果酸 / 水楊酸 / A 酸，皮膚會 1-2 週內出現脫皮、紅、刺，屏障壞掉之後反而更敏感、更容易爆痘 / 反黑。
-正確策略：從低濃度低頻率開始（每週 2-3 次），適應後再升級。新手挑 Adapalene 0.1%（處方）或 Azelaic acid 15-20% 最安全。詳細的酸類入門看 外用酸類完整衛教。
+正確策略：從低濃度低頻率開始（每週 2-3 次），適應後再升級。新手可從 Adapalene 0.1%（處方）或 Azelaic acid 15-20% 開始，刺激性相對較低。詳細的酸類入門看 外用酸類完整衛教。
 迷思 7：痘痘吃保健食品就會好
 「聽說吃鋅、月見草、Omega-3 對痘痘有效。」大多數保健食品的證據很弱；真的有效的就那 1-2 種。目前有較合理證據的：
 口服鋅(zinc gluconate 30 mg/day)：對發炎性痘痘有輕度改善效果，證據等級中等。
-低升糖指數飲食(low-GI diet)：不算保健食品，但飲食調整對痘痘最有效。
+低升糖指數飲食(low-GI diet)：不算保健食品，但在飲食調整中證據相對較多。
 證據不足或無效的常見保健食品：月見草油、酵母 B 群、膠原蛋白、青木瓜酵素、各式排毒產品。沒有任何保健食品能取代外用 / 口服處方治療。
 迷思 8：痘痘消了就沒事
 「痘痘平了就好，反正會自己變淡。」痘印 / 痘疤拖越久越難處理，黃金期是6 個月內。痘痘平了之後留下的問題分兩種：
@@ -5043,13 +4944,13 @@ Q痘痘 PTT / Dcard 上常被推薦的藥膏值得買嗎？
 APTT/Dcard 上常被推薦的有 Differin(Adapalene 0.1%)、Skinoren(Azelaic acid 20%)、Effaclar Duo+。這些都是皮膚科常用、有實證的藥膏，但「適不適合你」要看痘痘類型（粉刺型 vs 發炎型 vs 囊腫型），建議先看一次皮膚科確認。網路推薦的「痘痘救星 OOO 神膏」如果是處方藥（如 Duac、Acnatac），沒有醫師處方買得到的多半是水貨或假藥，不建議。Q痘痘多久會好？為什麼我吃藥/擦藥沒效？
 A輕度粉刺擦藥 4-8 週看到變化；發炎型痘痘抗生素+外用藥需 8-12 週；中重度口服 A 酸完整療程約 6-9 個月。「沒效」最常見原因是用藥時間不夠（停藥太早）、沒同時清粉刺（只治發炎不治源頭）、沒避開誘發因素（高升糖食物、乳清蛋白、特定藥物）、或診斷錯誤（其實是玫瑰痤瘡、毛囊炎、酒糟）。Q痘痘飲食真的有差嗎？
 A有實證有差的：高升糖食物（白飯、白麵、含糖飲料、甜食）、低脂牛奶/脫脂奶（全脂反而較少相關）、乳清蛋白(whey protein)。沒有實證需禁的：巧克力、油炸、辣椒、海鮮、堅果。建議減糖減奶 3 個月看是否改善，不需「完全戒」造成壓力。Q痘痘看皮膚科會開什麼藥？健保 vs 自費差別？
-A健保：外用 Adapalene、BPO、克林黴素、Acnatac/Duac、口服抗生素(Doxycycline、Minocycline)、口服 A 酸（Isotretinoin，但需符合條件）。自費常見：雷射（脈衝染料、皮秒）、化學換膚、痘痘針（局部類固醇注射）、進階保養品。健保藥物已涵蓋 90% 痘痘需求，自費主要是處理痘疤或加速改善。Q痘痘是不是要忌口豆漿、雞蛋、巧克力？
+A常用藥物：外用 Adapalene、BPO、克林黴素、Acnatac/Duac，以及口服抗生素（Doxycycline、Minocycline）；外用痘痘藥健保有給付（依醫師處方）；口服抗生素用於痘痘，健保藥品給付規定沒有額外限制條文，是否給付以醫師處方當下的健保收載品項為準。口服 A 酸（Isotretinoin）限皮膚科專科醫師使用，需經健保事前審查核准（藥品給付規定 §13.4）。自費常見：雷射（脈衝染料、皮秒）、化學換膚、進階保養品；痘痘針（病灶內類固醇注射）是否給付請依醫師評估與醫療院所說明。多數痘痘可先以健保藥物治療，自費主要是處理痘疤或美容需求。Q痘痘是不是要忌口豆漿、雞蛋、巧克力？
 A沒有實證需要全面忌口。豆漿、雞蛋、巧克力對多數痘痘病人沒有顯著影響。如果你發現吃完特定食物 24-48 小時內必爆痘（個人觀察記錄 4 週以上），那是個人體質，可避開。否則無需忌口造成飲食偏差。其他常見皮膚科問題
 
 痘痘以外的常見皮膚問題 — 異位性皮膚炎、乾癬、肝斑、玫瑰斑、落髮、白斑 — 一次解答，請看 皮膚科常見問題大解答。
 
 結語
-痘痘是可治療的疾病，不是體質、不是排毒、不是時間到就會好。除了常識性的清潔保濕之外，找對處方、規律使用、做好防曬,3-6 個月幾乎都會看到顯著改善。如果你已經試過很多 OTC 沒效，該到皮膚科了。
+痘痘是可治療的疾病，不是體質、不是排毒、不是時間到就會好。除了常識性的清潔保濕之外，找對處方、規律使用、做好防曬,多數人 3-6 個月可看到明顯改善。如果你已經試過很多 OTC 沒效，該到皮膚科了。
 延伸閱讀：想了解市售痘痘成分，看 外用酸類完整衛教；中重度痘痘的最終武器，看 口服 A 酸完整衛教。
 
 2024 AAD 痤瘡治療指引重點(Reynolds et al., JAAD 2024)
@@ -5077,7 +4978,7 @@ Taiwan Dermatological Association. 痤瘡臨床治療共識. 2024.
 ---
 ## 蕁麻疹 6 大迷思
 URL: https://chendermatologist.com/blog/urticaria-myths
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Myths & Facts
 Reading time: PT13M
 Tags: 蕁麻疹, Urticaria
@@ -5126,7 +5027,7 @@ Cetirizine、Loratadine、Fexofenadine、Bilastine、Levocetirizine、Desloratad
 約 50% 在 1 年內緩解
 約 80% 在 5 年內緩解
 少數頑固型可能持續 10 年以上
-近年治療突破：Omalizumab（Xolair 樂無喘）是抗 IgE 單株抗體，皮下注射每月 1 次。EAACI/GA²LEN/EDF/WAO 2022 與台灣皮膚科醫學會(TDA)蕁麻疹治療共識將 Omalizumab 列為抗組織胺加倍劑量無效後的第二線、Cyclosporine 等免疫調節劑列為第三線(refractory) Zuberbier 2022 EAACI · TDA 蕁麻疹治療共識。BAD 2021 R25/R26 則將 Omalizumab 與 Cyclosporine 並列為「offer」強建議(↑↑) Sabroe 2021, BJD、未明確排序;但 BAD R27 同時提醒避免長期使用 Cyclosporine。JAMA 2024 系統綜述確認 300 mg 月劑量可使絕大多數對抗組織胺無效的 CSU 病人顯著改善，且效應 4 週內出現。對 300 mg 反應不佳者，可加量至600 mg 每 2 週(off-label)。健保對 Omalizumab 的給付條文僅列「重度持續性氣喘」；2025/4/23 公告版本中 CSU 適應症未列入給付，CSU 使用須以最新 NHIA 公告為準（多數病人仍需自費，月費約 NT$ 14,000–22,000/針）。詳見健保規範整理。
+近年治療突破：Omalizumab（Xolair 樂無喘）是抗 IgE 單株抗體，皮下注射每月 1 次。EAACI/GA²LEN/EDF/WAO 2022 與台灣皮膚科醫學會(TDA)蕁麻疹治療共識將 Omalizumab 列為抗組織胺加倍劑量無效後的第二線、Cyclosporine 等免疫調節劑列為第三線(refractory) Zuberbier 2022 EAACI · TDA 蕁麻疹治療共識。BAD 2021 R25/R26 則將 Omalizumab 與 Cyclosporine 並列為「offer」強建議(↑↑) Sabroe 2021, BJD、未明確排序;但 BAD R27 同時提醒避免長期使用 Cyclosporine。JAMA 2024 系統綜述確認 300 mg 月劑量可使絕大多數對抗組織胺無效的 CSU 病人顯著改善，且效應 4 週內出現。對 300 mg 反應不佳者，可加量至600 mg 每 2 週(off-label)。健保對 Omalizumab 的給付條文僅列「重度持續性氣喘」；115/9/22 版給付規定（§6.2.6）中 CSU 適應症仍未列入給付，CSU 使用須自費。詳見健保規範整理。
 第三期臨床試驗中的新藥（2026 預期上市）:Remibrutinib、Rilzabrutinib（口服 BTK 抑制劑）、Dupilumab（抗 IL-4Rα）、Tezepelumab（抗 TSLP）、Barzolvolimab、Briquilimab（抗 KIT，直接耗竭肥大細胞）。BTK 抑制劑特別適合對 Omalizumab 反應差的「自體免疫型 CSU」（總 IgE 過低、抗 TPO IgG 高者）。
 迷思 6：做過敏原檢測就能找出蕁麻疹病因
 「自費做 IgE 檢測，測 100 種食物，測完就能避開。」慢性蕁麻疹病人做食物 IgE 檢測大多沒幫助 — 結果常與症狀無關。原因：
@@ -5155,7 +5056,7 @@ EAACI/GA²LEN/EuroGuiDerm 2022 與 WAO 共識認可4 倍劑量比「換 4 種藥
 
 第 2 線(加 Omalizumab)
 加上 Omalizumab(Xolair 樂無喘）皮下注射，起始 300 mg 每 4 週(≥12 歲）反應不佳可加量至 600 mg 每 2 週(off-label)BAD 2021 強建議使用（R25，↑↑）；可考慮先測總 IgE，IgE 偏高者反應較佳（R23，↑）(Sabroe 2021, BJD)
-JAMA 2024 系統性綜述：300 mg 月劑量比安慰劑顯著有效(SMD -0.77)；效應 4 週內出現健保須符合條件，詳見健保規範
+JAMA 2024 系統性綜述：300 mg 月劑量比安慰劑顯著有效(SMD -0.77)；效應 4 週內出現CSU 適應症健保未給付（須自費），詳見健保規範
 
 第 3 線(加 Cyclosporine 等免疫調節劑)
 Cyclosporine 環孢素口服 1-5 mg/kg/day，起始建議 3 mg/kg/day(off-label)BAD 2021 建議療程 3-6 個月(R26，↑↑)，避免長期使用(Sabroe 2021, BJD)
@@ -5211,7 +5112,7 @@ Comorbidities（共病）：甲狀腺、自體免疫、代謝、心理（見上�
 ---
 ## 乾癬 7 大迷思
 URL: https://chendermatologist.com/blog/psoriasis-myths
-Updated: 2026-05-25
+Updated: 2026-10-15
 Section: Myths & Facts
 Reading time: PT12M
 Tags: 乾癬, Psoriasis
@@ -5257,7 +5158,7 @@ Tags: 乾癬, Psoriasis
 真正會出問題的是「自己長期亂擦最強類固醇」，不是醫師處方。詳細參考 異膚 6 大迷思 中的類固醇恐懼症說明。
 迷思 4：乾癬只是皮膚問題，不會影響其他器官
 「不痛不癢就只是皮膚問題，可以不管。」乾癬是全身性發炎疾病，不只影響皮膚。可能合併關節炎、代謝症候群、心血管疾病、憂鬱。乾癬病人需注意的合併症：
-乾癬性關節炎（PsA）：約 30% 乾癬病人會有，典型對稱性遠端指間關節腫痛、晨間僵硬，延誤治療會關節變形不可逆
+乾癬性關節炎（PsA）：約 30% 乾癬病人會有，典型對稱性遠端指間關節腫痛、晨間僵硬，延誤治療會關節變形不可逆。健保給付 PsA 生物製劑前，須先使用至少 2 種疾病修飾藥物（DMARDs）治療效果不佳；115/8/1 起，原本已經事前審查符合 apremilast 給付規定並接受治療者，apremilast 可視同 DMARDs 第一線藥物（§8.2.4.4）
 代謝症候群：肥胖、糖尿病、高血脂、高血壓盛行率高於一般人
 心血管疾病：中重度乾癬的心肌梗塞風險 1.5-2 倍
 非酒精性脂肪肝（NAFLD）：盛行率高 2 倍
@@ -5280,7 +5181,7 @@ Tags: 乾癬, Psoriasis
 感染風險
 
 IL-23 抑制劑
-Guselkumab（特諾雅）、Risankizumab（喜開麗）、Tildrakizumab
+Guselkumab（特諾雅）、Risankizumab（喜開麗）
 每 8-12 週皮下 1 針
 低
 
@@ -5295,8 +5196,8 @@ Ustekinumab（喜達諾）
 低
 
 TNF 抑制劑
-Adalimumab（復邁）、Etanercept（恩博）、Infliximab（類克）
-每 1-2 週皮下 / 點滴
+Adalimumab（復邁）、Etanercept（恩博）
+每 1-2 週皮下
 較高（結核、B肝再活化需特別注意）
 
 口服小分子
@@ -5316,7 +5217,7 @@ Apremilast（喜樂寶 Otezla）、Deucravacitinib(Sotyktu)
 越拖治療反應越差（過去叫 "delay = miss the opportunity"）
 嚴重影響工作、社交、心理
 治療階梯（依嚴重度）
-圖：乾癬治療階梯流程圖。實線箭頭=向上升階；虛線箭頭=符合健保門檻時轉用生物製劑。資料來源：AAD-NPF 2019 + Reich 2023 + 2024 健保乾癬給付規範。嚴重度（PASI / BSA）
+圖：乾癬治療階梯流程圖。實線箭頭=向上升階；虛線箭頭=符合健保門檻時轉用生物製劑。資料來源：AAD-NPF 2019 + Reich 2023 + 健保乾癬給付規定（115/9/22 版）。嚴重度（PASI / BSA）
 治療
 
 輕度（BSA < 3%, PASI < 5）
@@ -5328,10 +5229,10 @@ Apremilast（喜樂寶 Otezla）、Deucravacitinib(Sotyktu)
 中重度（BSA > 10%, PASI > 10, DLQI > 10）
 口服：Methotrexate、Cyclosporine、Acitretin（Neotigason 新定康癬，25-50 mg/day；育齡女性需停藥後避孕 3 年）、Apremilast
 
-重度 / 健保生物製劑條件（PASI > 10 + DLQI > 10 + 至少 2 種傳統療法失敗）
-IL-23 抑制劑（Guselkumab / Risankizumab / Tildrakizumab）— 給藥最方便、安全性最佳
+重度 / 健保生物製劑條件（PASI ≥ 10（膿疱性用 BSA ≥ 10%）+ 照光及至少 2 種傳統療法無效；DLQI 非健保條文門檻）
+IL-23 抑制劑（Guselkumab / Risankizumab）— 給藥間隔較長、感染風險較低
 
-IL-17 抑制劑（Secukinumab / Ixekizumab）— 起效快、皮膚清除率最高
+IL-17 抑制劑（Secukinumab / Ixekizumab）— 起效快、皮膚清除率高
 
 合併乾癬性關節炎
 TNF 抑制劑、IL-17 抑制劑、JAK 抑制劑都可選
@@ -5343,7 +5244,7 @@ TNF 抑制劑、IL-17 抑制劑、JAK 抑制劑都可選
 Q乾癬 PTT 推薦的乳液 / 洗髮精有用嗎？
 A頭皮乾癬常被推薦：Nizoral(Ketoconazole)、Capasal、T/Sal、Sebcur 含焦油/水楊酸、Clobetasol scalp solution（處方）。身體乾癬：QV、Cetaphil、Eucerin、CeraVe 大量保濕。重點：單純保養品無法治乾癬，要搭配 Calcipotriol+類固醇藥膏（健保有 Daivobet 合一藥膏），嚴重者光療或生物製劑。Q乾癬多久會好？一輩子治不好嗎？
 A慢性反覆性疾病，不可斷根但能高度控制。新一代IL-17/23 抑制劑可達PASI 90-100（病灶幾乎完全清除），持續打藥維持。冬季比夏季嚴重（光療效應），戒菸戒酒減重對控制有實質幫助。Q乾癬健保給付生物製劑條件？
-A中重度乾癬(健保要求：PASI ≥ 10（或膿疱性 BSA ≥ 10%）+ 照光無效或不適合 + 至少二種傳統治療失敗（MTX、acitretin、CsA、apremilast、deucravacitinib，114/6/1 起新增後二者）)健保給付 IL-17 抑制劑(Secukinumab、Ixekizumab、Bimekizumab 115/5/1 新增)、IL-23 抑制劑(Guselkumab、Risankizumab)、IL-12/23(Ustekinumab)、TNF 抑制劑等。新增 Spesolimab（113/7/1）限全身型急性膿疱性乾癬使用。「PASI 10／10／10 三 10 標準」中 DLQI ≥ 10 是臨床口訣，非健保條文硬性要求。自費約每 4-12 週 NT$ 30,000-50,000/針。Q乾癬會不會傳染給家人？
+A中重度乾癬(健保要求：PASI ≥ 10（或膿疱性 BSA ≥ 10%）+ 照光無效或不適合 + 至少二種傳統治療失敗（MTX、acitretin、CsA、apremilast、deucravacitinib；apremilast 於 113/3/1、deucravacitinib 於 114/6/1 列入）)健保給付 IL-17 抑制劑(Secukinumab、Ixekizumab、Bimekizumab 115/5/1 新增)、IL-23 抑制劑(Guselkumab、Risankizumab)、IL-12/23(Ustekinumab)、TNF 抑制劑等。新增 Spesolimab（113/7/1，§8.2.4.6.2）限具 IL36RN 突變之全身型急性膿疱性乾癬使用。「PASI 10／10／10 三 10 標準」中 DLQI ≥ 10 是臨床口訣，非健保條文硬性要求。不符合健保條件者可自費使用，費用依醫療院所而定。Q乾癬會不會傳染給家人？
 A絕對不會傳染。但有家族傾向：單親有乾癬子女風險 10-15%，雙親都有 40-50%。共用毛巾、抱抱、共桌吃飯不會傳染。Q乾癬可以曬太陽嗎？飲食要避什麼？
 A適度日曬有助病灶（這就是 NBUVB 光療的原理）。但要避免曬到曬傷。飲食戒菸戒酒有實證有助，沒有「絕對禁區」。地中海飲食（蔬果橄欖油魚）有觀察性證據改善。減重 5-10% 可顯著改善。臺灣皮膚科醫學會 2024 乾癬治療共識重點
 TDA 2024 尋常型乾癬治療共識整理重點：
@@ -5352,7 +5253,7 @@ TDA 2024 尋常型乾癬治療共識整理重點：
 最佳治療目標：現代乾癬治療目標已提高到△PASI ≥ 75（病灶減少 75% 以上）維持原方案；△PASI 50-75 + DLQI > 5 應調整；<50 必須調整。最終目標 PASI 100（完全清除）。
 外用藥物優先順序（輕度乾癬）:
 第一線：Calcipotriol（維生素 D 衍生物）+ 外用類固醇。台灣健保已有 Calcipotriol/Betamethasone 合一藥膏（Daivobet 得膚寧），軟膏 / 凝膠 / 泡沫液三種劑型。
-泡沫液生物可利用性最高，軟膏對厚塊療效最好。
+泡沫液生物可利用性最高，軟膏較適合厚斑塊。
 水楊酸、煤焦油(coal tar)為輔助 / 緩和性治療。
 
 指甲乾癬：採用mNAPSI（改良版指甲乾癬嚴重程度指數）評估，觀察 6 項指甲特徵 — 點狀凹陷、白甲、紅色斑點（月牙）、甲床剝離、甲下線狀出血、粉碎狀指甲、甲床增厚角質化。
@@ -5379,14 +5280,13 @@ Goulden 2022, BJD
 延伸閱讀：乾癬完整系列 — 乾癬完整衛教(分型、診斷、嚴重度)、乾癬外用治療、乾癬全身性治療。
 
 參考資料
-Menter A, et al. Joint AAD-NPF guidelines of care for the management of psoriasis with biologics.J Am Acad Dermatol. 2019;80(4):1029-1072. 「來源」
 
 [... truncated; fetch canonical URL for full text ...]
 
 ---
 ## A酸、A醇、杜鵑花酸怎麼選？五大酸類差別與搭配
 URL: https://chendermatologist.com/blog/topical-acids-patient
-Updated: 2026-09-06
+Updated: 2026-10-15
 Section: Products & Drugs
 Reading time: PT8M
 Tags: 酸類, Topical acids
@@ -5436,10 +5336,10 @@ Salicylic acid 0.5-2%
 外用 A 酸 — Topical Retinoids
 1. Tretinoin（全反式 A 酸，第一代）
 處方孕期禁用
-商品名：Retin-A、A-Ret、A-Acne、Stieva-A、Retacnyl 等。常用濃度：0.025% / 0.05% / 0.1%。主要功能：痘痘、粉刺、抗老、輕度色素沉澱。特性：歷史最悠久(1970s)、效果最直接，但刺激性也最強。光不穩定、被 BPO（過氧化苯醯）分解，所以這兩個不能同時擦。建議晚上用。
+商品名：Retin-A、A-Ret、A-Acne、Stieva-A、Retacnyl 等。常用濃度：0.025% / 0.05% / 0.1%。主要功能：痘痘、粉刺、抗老、輕度色素沉澱。特性：歷史最悠久(1970s)、作用直接，但刺激性也最強。光不穩定、被 BPO（過氧化苯醯）分解，所以這兩個不能同時擦。建議晚上用。
 2. Adapalene（第三代，Differin / 痘膚潤）
 處方孕期禁用
-常用濃度：0.1% / 0.3%。在美國 0.1% 已轉成 OTC。主要功能：痘痘 first-line；角質正常化、抗發炎雙效。特性：比 Tretinoin 溫和許多、光穩定、可以跟 BPO 同時用。新手最推薦從 Adapalene 0.1% 開始。
+常用濃度：0.1% / 0.3%。在美國 0.1% 已轉成 OTC。主要功能：痘痘 first-line；角質正常化、抗發炎雙效。特性：比 Tretinoin 溫和許多、光穩定、可以跟 BPO 同時用。新手可以從 Adapalene 0.1% 開始。
 3. Tazarotene / Trifarotene（第三、四代）
 處方孕期禁用
 Tazarotene 0.045%-0.1%（藥膏 / 藥乳液）；效力強、用於頑固痘痘與乾癬。Trifarotene 0.005%(Aklief)是最新第四代，專為痘痘設計、可以擦軀幹（背痘、胸痘），刺激性介於 Tretinoin 與 Adapalene 之間。
@@ -5462,7 +5362,7 @@ A 醇 / 視黃醛 — Retinol / Retinaldehyde
 抗發炎 — 對發炎性痘痘、玫瑰痤瘡的紅腫很有效。
 抑制酪胺酸酶(tyrosinase) — 能美白，對痘印、肝斑都有幫助。
 抑制痤瘡桿菌 — 抗菌不產生抗藥性。
-特性：個性溫和、不光敏感、孕期哺乳期可以使用（列入孕期可用首選）。可早晚用。可與多數成分共用。缺點：有人擦了會輕微刺癢、燒灼，通常 1-2 週適應後消失。
+特性：個性溫和、不光敏感、孕期哺乳期可以使用（為孕期常用選擇之一）。可早晚用。可與多數成分共用。缺點：有人擦了會輕微刺癢、燒灼，通常 1-2 週適應後消失。
 果酸 — AHA
 8. Glycolic acid（甘醇酸，從甘蔗來）
 開架低濃度可
@@ -5512,7 +5412,7 @@ pH 不同、刺激加成
 
 杜鵑花酸 + 任何成分
 幾乎都可以共用
-個性最溫和的酸
+個性溫和的酸
 
 外用酸 + 雷射 / 醫美術後
 術後 1-2 週暫停
@@ -5539,7 +5439,7 @@ A 醇 / 視黃醛(Retinol, Retinaldehyde)
 
 杜鵑花酸(Azelaic acid)
 
-孕期可用首選 — 對痘痘、玫瑰痤瘡、淡斑都有用
+孕期常用選擇之一 — 對痘痘、玫瑰痤瘡、淡斑都有用
 
 果酸(AHA, 5-10% 居家）
 （低濃度小範圍）
@@ -5585,22 +5485,22 @@ Bakuchiol（補骨脂酚）
 用酸用到屏障壞掉怎麼救？
 停用所有活性成分至少 2 週。只用：溫和洗面乳（無皂鹼、低 pH)、神經醯胺乳液、凡士林、防曬。等紅、刺、脫皮完全消失後再考慮重啟，且要降頻率重來。
 有沒有「成分溫和但有效」的萬用酸？
-有 — 杜鵑花酸 Azelaic acid。它同時抗痘、抗發炎、抗菌、美白、孕期可用、敏感肌可用。如果你只能挑一個酸，杜鵑花酸是 R2 我自己會推薦的萬金油。
+有 — 杜鵑花酸 Azelaic acid。它同時抗痘、抗發炎、抗菌、美白、孕期可用、敏感肌可用。如果你只能挑一個酸，杜鵑花酸是適用範圍較廣的選擇之一。
 最後
-外用酸類是皮膚科最便宜、最有實證、最值得長期投資的保養之一。重點不是「用什麼牌子」，而是選對成分、低頻開始、做足防曬、給皮膚適應時間。如果你願意配合 8-12 週，通常會看到明顯成果。
+外用酸類是實證充分、適合長期使用的保養之一。重點不是「用什麼牌子」，而是選對成分、低頻開始、做足防曬、給皮膚適應時間。如果你願意配合 8-12 週，通常會看到明顯成果。
 下一步：把這篇傳給也在猶豫的朋友。如果你是醫師同行想看完整學理（receptor selectivity、pH/penetration、與 BPO/L-AA 相容性），歡迎跳到 學習筆記版 — Topical Retinoids & Acid Actives 完整整理。
 
 ---
 ## 口服 A 酸完整衛教
 URL: https://chendermatologist.com/blog/isotretinoin-patient
-Updated: 2026-05-25
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 口服 A 酸, Isotretinoin
 
 口服 A 酸是什麼？
 口服 A 酸的學名叫做 Isotretinoin(13-cis-retinoic acid)，它是維他命 A 的衍生物，1982 年在美國上市。常見的商品名有 羅可坦 Roaccutane、艾諾汀 Acnotin、異維 A 酸（中國）、Accutane、Absorica、Claravis 等等。
-它是目前公認對中重度痘痘最有效的口服藥物，而且是唯一能同時對付痘痘四個成因的藥：
+它是對中重度痘痘療效顯著的口服藥物，而且是唯一能同時對付痘痘四個成因的藥：
 皮脂腺縮小 — 油就少了，粉刺與痘痘的「燃料」變少。
 毛孔角化正常化 — 毛孔不再被角質塞住，粉刺自然減少。
 降低痤瘡桿菌(Cutibacterium acnes)— 因為皮脂變少，菌也跟著少。
@@ -5614,7 +5514,7 @@ Tags: 口服 A 酸, Isotretinoin
 已經開始留下永久痘疤（凹疤、肥厚性疤、痘印）
 發炎性後色素沉澱(PIH)很厲害的人，皮膚科醫師為了降低色素影響也會考慮提早使用
 反覆復發、嚴重影響心理與社交的痘痘
-另外，有些「健保不給付但醫師也常用」的情境(off-label)，例如玫瑰痤瘡(rosacea)、革蘭氏陰性毛囊炎、化膿性汗腺炎、皮脂分泌過旺的患者，醫師可能會用更低的劑量來治療。
+另外，有些仿單適應症以外、但醫師也常用的情境(off-label)，例如玫瑰痤瘡(rosacea)、革蘭氏陰性毛囊炎、化膿性汗腺炎、皮脂分泌過旺的患者，醫師可能會用更低的劑量來治療；健保藥品給付規定 §13.4 未限定適應症，但須經傳統治療無效並經事前審查，這類用途能否給付依審查結果而定。
 不適合或要小心的族群：已經懷孕或準備懷孕的女性、肝功能異常者、嚴重高血脂者、對維他命 A 嚴重過敏者。年紀小於 12 歲一般不建議。
 
 療程多久？累積劑量怎麼算？
@@ -5732,14 +5632,14 @@ Tags: 口服 A 酸, Isotretinoin
 家族痘痘史很強
 對這類人，醫師可能會考慮在療程後維持低劑量（每週 10-20 mg)或搭配外用 A 酸，以降低復發。
 健保 vs 自費 — 在台灣
-台灣健保 有條件給付口服 A 酸（Isotretinoin / Roaccutane），依衛福部中央健保署 114/4/23 公告版本，主要條件：
+台灣健保 有條件給付口服 A 酸（Isotretinoin / Roaccutane），依衛福部中央健保署藥品給付規定 115/9/22 版（§13.4），主要條件：
 限皮膚科專科醫師處方
 需檢附「服藥同意書」（附表十）— 包含致畸胎風險告知、避孕方式等
 需檢附傳統治療無效的病歷資料或治療前照片
 需經事前審查（PASS）核准後才能開立健保處方
 每次申請以一療程為限；每一療程最高總劑量為 100–120 mg/kg，於 4–6 個月完成
 若需再次療程，須檢附原來照片與最近照片再次申請事前審查
-不符合健保條件的輕中度痘痘仍可自費使用，費用視藥廠、商品與劑量，大致每月台幣數百到一兩千元不等。
+不符合健保條件的輕中度痘痘仍可自費使用，費用依藥廠、商品、劑量與醫療院所而定。
 實際健保條件、申報細節隨時可能更新，請以就診時醫師說明為準。
 
 常見迷思澄清
@@ -5749,7 +5649,7 @@ Tags: 口服 A 酸, Isotretinoin
 迷思 2:「吃 A 酸會得發炎性腸道疾病(IBD)」
 過去曾有研究擔心 A 酸會增加 IBD（克隆氏症、潰瘍性結腸炎）風險，但近年大型族群研究並未支持這個關聯。痘痘本身就跟 IBD 有些重疊體質。如果腸胃明顯不適、便血，告訴醫師。
 迷思 3:「越早吃越好，不要拖」
-不一定。輕度粉刺或丘疹型痘痘，外用藥 + 生活調整通常就夠。A 酸保留給中重度、留疤、頑固型的痘痘最划算。
+不一定。輕度粉刺或丘疹型痘痘，外用藥 + 生活調整通常就夠。A 酸通常保留給中重度、留疤、頑固型的痘痘。
 迷思 4:「吃 A 酸會永久不長痘」
 不是。約 1/3 病人會復發，但通常變輕微許多。把它想成「按下重啟鍵 + 改變皮脂腺體質」，而不是永久根治。
 迷思 5:「吃 A 酸不能運動」
@@ -5789,7 +5689,7 @@ A 酸要怎麼吃？空腹還是飯後？
 ---
 ## 痘疤完整治療指引
 URL: https://chendermatologist.com/blog/acne-scar-treatment
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 痘疤, Acne scars
@@ -5809,16 +5709,16 @@ Tags: 痘疤, Acne scars
 雷射加速：低能量皮秒 toning（蜂巢皮秒）6-10 次，每 2-4 週一次。要小心反黑（深膚色族群更需謹慎）
 凹疤 1：冰鑿型 → TCA CROSS
 特徵：很窄(< 2 mm)、很深(> 0.5 mm)，像被冰鑿子鑿過，垂直深入真皮甚至皮下。手指捏皮膚拉開時凹點不會消失。
-最佳治療：TCA CROSS（高濃度三氯乙酸點狀化學重建）
+常用治療：TCA CROSS（高濃度三氯乙酸點狀化學重建）
 用 90-100% 高濃度 TCA 點入單一凹疤，引發局部凝固性壞死，促進新膠原生成
 每次治療 4-8 週間隔，通常需 4-8 次
-單次效果好，改善率 50-70%
-價格：每次 NT$ 3,000-8,000（依疤量）
+單次改善幅度相對明顯，改善率約 50-70%（個別差異大）
+費用：自費，依醫療院所而定
 缺點：操作者技術差異大，過深會加深疤，需找有經驗醫師
 飛梭雷射對冰鑿型效果較差（深度打不到底），通常作為輔助而非主治療。
 凹疤 2：廂車型 → 飛梭雷射
 特徵：寬(2-4 mm)、淺至中深、邊界垂直，像被挖了個小方井。頰部最常見。
-最佳治療：飛梭雷射(Fractional laser)
+常用治療：飛梭雷射(Fractional laser)
 類型
 原理
 恢復期
@@ -5849,15 +5749,15 @@ RF 微針 / 點陣電波
 幾乎無
 溫和，適合輕度
 
-價格：飛梭 CO2 NT$ 8,000-25,000/次；蜂巢皮秒 NT$ 6,000-15,000/次。建議組合 4-6 次，間隔 6-8 週。
+建議組合 4-6 次，間隔 6-8 週。
 凹疤 3：滾動型 → 皮下分離
 特徵：寬(>4 mm)、淺、邊界平滑波浪狀，皮下有「纖維束牽絆」把表皮往下拉。手指拉開皮膚時凹會「展開」變淺。
-最佳治療：皮下分離(Subcision)+ 玻尿酸填補
+常用治療：皮下分離(Subcision)+ 玻尿酸填補
 皮下分離：用尖針(Nokor)或鈍針從旁邊切入皮下，把牽絆組織切斷，讓凹陷彈起來
 切斷後皮下會形成暫時性血腫，促進膠原新生
 同次或後續可注射玻尿酸（交聯型，如 Restylane、Juvederm）填補，撐起皮膚
 每次間隔 4-8 週，通常 2-4 次達到效果
-價格：皮下分離單次 NT$ 5,000-15,000；玻尿酸 NT$ 12,000-30,000/支(0.5-1 mL)
+費用：皮下分離與玻尿酸皆屬自費，依醫療院所而定（玻尿酸每支 0.5-1 mL）
 常合併飛梭雷射處理表面殘餘
 肥厚疤 / 蟹足腫
 絕對不能雷射磨平 — 反而會更紅更腫更大。處理策略：
@@ -5889,20 +5789,17 @@ RF 微針 / 點陣電波
 中重度（廂車 + 滾動）：皮下分離 + 玻尿酸 + 飛梭 CO2 + 蜂巢皮秒
 冰鑿型佔多數：TCA CROSS 4-8 次 + 飛梭輔助 + 後期皮秒
 合併肥厚疤：類固醇注射 + 凹疤治療分開療程
-療程預期 / 價格 / 副作用
+療程預期 / 給付與費用 / 副作用
 合理預期：
 多數治療改善率 50-70%，完全消除幾乎不可能
 看到變化通常需 3-6 個月（膠原重塑時間）
 全程療程從6 個月到 2 年不等
 停止後仍會持續改善，但需維持治療避免回頭
 常見副作用：紅、結痂、暫時色素沉著（深膚色族群更明顯）、極少數疤痕加重、感染、皰疹活化（需預防性抗病毒藥）。
-價格參考（台灣 2026 行情，個別差異大）：
-蜂巢皮秒：NT$ 6,000-15,000/次
-飛梭 CO2：NT$ 8,000-25,000/次
-皮下分離 + 玻尿酸：NT$ 18,000-45,000/次
-TCA CROSS：NT$ 3,000-8,000/次
-類固醇注射（肥厚疤）:NT$ 1,500-3,000/次
-完整療程預算建議 NT$ 50,000-200,000
+健保給付與費用：
+蜂巢皮秒、飛梭 CO2、皮下分離 + 玻尿酸、TCA CROSS：以改善外觀為目的，屬自費項目，健保不給付，費用依醫療院所而定
+類固醇注射（肥厚疤 / 蟹足腫）：屬健保醫療服務給付項目「皮膚病灶內部注射」（51009C–51011C，適應症含蟹足腫），是否適用依醫師評估
+療程次數與總花費因人而異，開始前請與醫師討論完整計畫
 最常見的迷思
 「擠一擠把疤擠掉就好」 → 凹疤是真皮缺損，擠不出來，反而擴大
 「打一次就好」 → 任何雷射都是多次累積，單次預期不切實際
@@ -5912,8 +5809,8 @@ TCA CROSS：NT$ 3,000-8,000/次
 「自己刷酸刷夠久就會好」 → 只能改善紅黑疤，凹疤需處方治療
 常見問題（PTT / Dcard 上常被問的）
 Q痘疤雷射 PTT 推薦哪一台機器？
-APTT/Dcard 高討論：Picosure 蜂巢皮秒（美國，755 nm）、Picoway（中波長，適合反黑風險高）、Discovery Pico、飛梭 CO2(UltraPulse、Mosaic)、RF 微針(Sylfirm X、Genius、Morpheus8)。重點不是機器品牌，是選對疤型 + 醫師參數設定 + 多次累積。Q痘疤雷射多少錢？健保有嗎？
-A健保不給付痘疤雷射（屬美容）。自費價格（2026 行情）：蜂巢皮秒 NT$ 6,000-15,000/次、飛梭 CO2 NT$ 8,000-25,000/次、皮下分離+玻尿酸 NT$ 18,000-45,000/次、TCA CROSS NT$ 3,000-8,000/次。完整療程預算 NT$ 50,000-200,000。Q痘疤多久看得到改善？
+APTT/Dcard 高討論：Picosure 蜂巢皮秒（美國，755 nm）、Picoway（中波長，適合反黑風險高）、Discovery Pico、飛梭 CO2(UltraPulse、Mosaic)、RF 微針(Sylfirm X、Genius、Morpheus8)。重點不是機器品牌，是選對疤型 + 醫師參數設定 + 多次累積。Q痘疤雷射健保有給付嗎？
+A痘疤雷射以改善外觀為目的，屬自費項目，健保不給付痘疤雷射；蜂巢皮秒、飛梭 CO2、皮下分離 + 玻尿酸、TCA CROSS 亦同，費用依醫療院所而定，療程次數請與醫師事先討論。若合併肥厚疤或蟹足腫，病灶內類固醇注射屬健保醫療服務給付項目（51009C–51011C，適應症含蟹足腫）。Q痘疤多久看得到改善？
 A雷射後膠原重塑需3-6 個月才看到變化。完整療程 6-12 個月，改善率 50-70%（完全消除幾乎不可能）。期間穩定痘痘 + 嚴格防曬 + 規律保養是關鍵。Q紅疤(PIE)多久會自己消？
 A多數 6-12 個月自然淡化。急著淡可考慮脈衝染料雷射 PDL、皮秒、Niacinamide 保養。嚴格防曬避免轉成黑疤(PIH)。Q蟹足腫能不能用雷射磨平？
 A絕對不行。雷射磨平會誘發更大蟹足腫。正確處理是類固醇注射(Triamcinolone)± 5-FU每 4-6 週一次，持續 3-6 次，搭配矽膠片、脈衝染料雷射輔助。雷射波長對照（痘疤、斑、刺青、毛）
@@ -5944,7 +5841,7 @@ UpToDate: Treatment of acne scars. Accessed 2026. 「來源」
 ---
 ## 白斑（Vitiligo）完整衛教
 URL: https://chendermatologist.com/blog/vitiligo
-Updated: 2026-05-25
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 白斑, Vitiligo
@@ -6055,7 +5952,7 @@ NB-UVB（窄波 UVB,311 nm）
 BAD 2021 vitiligo R20(↑↑)+ BAD 2022 NB-UVB R14(↑↑)雙重強建議：對外用無效或廣泛 / 進展型；可全身或居家手持式裝置(R14 明確支持經校正的居家設備、R4 GPP)；R13(GPP)凡符合適應症者均應告知此選項Eleftheriadou 2021, BJDGoulden 2022, BJD
 每週 2-3 次、可持續達 1 年；3-6 個月評估反應；部位反應順序:臉 ＞ 軀幹 ＞ 四肢 ＞ 末端肢體；停藥後易復發要先告知；BAD 2022 R15(↑)活動性快速進展型可考慮合併口服 mini-pulse 類固醇(同 vitiligo 指引)
 
-308-nm Excimer laser/lamp (自費)
+308-nm Excimer laser/lamp 自費（健保不給付）
 第一線、局限型(臉部、頸部、軀幹)
 每週 2 次、光劑量精準靶向
 
@@ -6144,7 +6041,7 @@ systemic JAK 抑制劑(ritlecitinib 試驗中)
 實務提醒 ─ 末端肢體與嘴唇是公認最難治部位、即便 JAK 抑制劑試驗也顯示這些部位反應率較低。要先和病人講清楚:不是治療失敗、是這個部位本來就難。對於這些難治部位、可以考慮:外用治療延長至 ≥ 12 個月、合併 308-nm Excimer、或穩定後考慮自體表皮移植。維持治療
 色素再生穩定後、改每週 2 次外用 Calcineurin inhibitor 或外用皮質類固醇避免復發。
 ✦ 深入閱讀：手腳病灶、甲狀腺疾病、其他自體免疫共病是復發的三大獨立預測因子(2026 長庚 809 人 BJD 世代研究) — 請見〈白斑停藥後會復發嗎？維持治療與復發風險評估〉。
-重點：外用 Ruxolitinib（Opzelura）— 白斑治療的突破
+重點：外用 Ruxolitinib（Opzelura）— 首個 FDA 核准的白斑外用藥
 Ruxolitinib 1.5% 乳霜（Opzelura）是 2022 年 FDA 核准的第一個白斑專用藥物：
 項目
 內容
@@ -6164,11 +6061,11 @@ JAK1 / JAK2 抑制劑 — 阻斷自體免疫攻擊黑色素細胞的訊號路徑
 副作用
 用藥處輕度發紅、痤瘡、搔癢
 
-價格
-台灣自費、目前約 NT$ 4 萬/100 g(實際售價依代理通路浮動、請以開立處方診所為準)
+費用
+台灣自費（健保不給付）
 
 健保
-白斑適應症未給付。NHI 對 ruxolitinib 的給付僅限口服劑型用於骨髓纖維化，外用 1.5% 乳霜（Opzelura）白斑適應症全自費
+白斑適應症未給付。NHI 對 ruxolitinib 的給付僅限口服劑型（Jakavi）用於骨髓纖維化及類固醇反應不佳的急性移植物抗宿主疾病，外用 1.5% 乳霜（Opzelura）白斑適應症全自費
 
 禁忌
 ≤ 12 歲（目前未核准）、廣泛型 > 10% 體表、活動性嚴重感染、孕婦哺乳
@@ -6202,9 +6099,9 @@ TDA 2024 共識聲明 16:狀態穩定的白斑病灶可使用手術方式治療�
 ---
 ## 皮膚科常用藥物健保規範完整整理
 URL: https://chendermatologist.com/blog/nhi-derm-drugs
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
-Reading time: PT13M
+Reading time: PT15M
 Tags: 健保規範, NHI rules
 
 外用藥物 — 類固醇、A 酸、TCI、抗生素藥膏
@@ -6222,7 +6119,7 @@ Tags: 健保規範, NHI rules
 
 Adapalene 0.1%(Differin)
 ✓
-痤瘡(diagnosis 706.1)
+痤瘡
 晚上 1 次薄塗整臉
 3-6 個月
 
@@ -6234,7 +6131,7 @@ Tretinoin 0.025-0.1%(Stieva-A)
 
 Tazarotene 0.05-0.1%
 ✓
-痤瘡、乾癬
+乾癬（健保限乾癬使用，每週 ≤ 30 g 為原則；用於痤瘡須自費）
 晚上 1 次
 ≥ 12 週
 
@@ -6276,26 +6173,26 @@ Azelaic acid 15-20%(Skinoren 雅若）
 
 Tacrolimus 0.03% / 0.1%（普特皮 Protopic)
 ▲
-異位性皮膚炎（中重度）;0.03% ≥ 2 歲、0.1% ≥ 16 歲
+異位性皮膚炎（中重度且患部面積 > 30%，第二線使用；健保限 ≥ 2 歲；仿單 0.03% ≥ 2 歲、0.1% ≥ 16 歲）；不可合併紫外線治療
 每天 2 次
 急性期 / 維持治療皆可
 
 Pimecrolimus 1%（醫立妥 Elidel)
 ▲
-異位性皮膚炎（輕中度）;≥ 2 歲
+異位性皮膚炎（中重度且患部面積 > 30%，或頭頸部、眼瞼、皮膚彎曲處等敏感部位）;≥ 2 歲，第二線使用；不可合併紫外線治療
 每天 2 次
 長期可用
 
 Crisaborole 2%（寇緹斯 Eucrisa)
-▲
-異膚輕中度；≥ 3 個月
+✗（自費）
+輕至中度異位性皮膚炎（適用年齡依仿單）；自費（健保不給付）
 每天 2 次
 長期
 
 Calcipotriol(Daivonex 達力士）
 ✓
 乾癬
-每天 2 次，單周 ≤ 100 g
+每天 2 次；健保以每週 ≤ 30 g 為原則（超過需於病歷記錄理由）
 長期
 
 Calcipotriol + Betamethasone(Daivobet 得膚寧）
@@ -6336,13 +6233,13 @@ Terbinafine 1%(Lamisil)
 ▲ 有條件給付，需事前審查
 
 適應症 / 健保條件
-診斷碼 706.1（尋常痤瘡）、中重度痤瘡(IGA 3-4)、結節囊腫型、外用 + 口服抗生素 ≥ 3 個月失敗、易留疤、復發頻率高
+健保條文（§13.4）：限皮膚科專科醫師使用，需檢附病人服藥同意書，以及經傳統治療無效之病歷資料或治療前照片，經事前審查核准後使用。臨床上多用於中重度、結節囊腫型、傳統治療效果不佳、易留疤或反覆復發的痤瘡（這些是臨床考量，不是健保條文要件）
 
 劑量
 初始 0.5 mg/kg/day，可調至 0.5-1 mg/kg/day
 
 療程
-6-9 個月，目標累積劑量體重 × 120-150 mg/kg
+健保每一療程於 4–6 個月完成，最高總劑量體重 × 100–120 mg/kg；需再次療程須檢附原來與最近照片，重新申請事前審查
 
 給藥
 口服，隨餐服用增加吸收（高脂食物）
@@ -6352,9 +6249,6 @@ Terbinafine 1%(Lamisil)
 
 女性育齡
 嚴格避孕 — 療程開始前 1 個月 + 整個療程 + 結束後 1 個月，建議使用兩種避孕方式
-
-自費價格
-10 mg 約 NT$ 30-50/顆；20 mg 約 NT$ 50-80/顆；月費約 NT$ 1,500-3,500
 
 禁忌
 懷孕、哺乳、嚴重肝病、高血脂未控制、Vitamin A 過量、四環黴素併用
@@ -6413,25 +6307,25 @@ Trimethoprim/Sulfamethoxazole(Septrin/Baktar)
 
 Cyclosporine
 ✓
-嚴重異膚短期
+替代性療法無效或不適用之嚴重異膚，或異膚引起之全身性紅皮症（需檢附病歷與用藥紀錄／照片）
 2-5 mg/kg/day，口服
 否
 
 Methotrexate
-✓
-異膚 / 乾癬中重度
+見條件欄
+異膚 / 乾癬中重度。藥品給付規定沒有 MTX 的專屬條文；依通則七，健保處方須符合許可證適應症，用於異膚是否給付請依醫師處方當下說明。§13.17.1 將 MTX、azathioprine、cyclosporin 列為申請異膚生物製劑／JAK 抑制劑前須足量使用的傳統全身治療
 7.5-25 mg/週，合併葉酸
 否
 
 Azathioprine
-✓
-異膚難治型（適應症外使用）
+見條件欄
+異膚難治型（屬適應症外使用）。藥品給付規定沒有此藥用於異膚的條文；依通則七，健保處方須符合許可證適應症，是否給付請依醫師處方當下說明。§13.17.1 將其列為申請異膚生物製劑前可選用的傳統全身治療之一
 1-3 mg/kg/day
 否
 
 Dupilumab（杜避炎）
 ▲
-13.17.1（114/6/1 更新）；≥ 12 歲、慢性中重度（EASI ≥ 16 + BSA ≥ 30% + IGA 3–4、病灶 ≥ 6 個月） + 照光（PUVA / NB-UVB 每週 ≥ 2 次達 12 週）+ MTX、AZA、CsA 三種至少 二種足量使用 ≥ 12 週失敗或不可耐受；或具光敏感等醫療因素不能照光與系統治療；6–12 歲兒童另適用 13.17.2（標準較寬）
+13.17.1（115/6/1 更新）；≥ 12 歲、慢性中重度（EASI ≥ 16 + BSA ≥ 30% + IGA 3–4、病灶 ≥ 6 個月） + 照光（PUVA / NB-UVB 每週 ≥ 2 次達 12 週）+ MTX、AZA、CsA 三種至少 二種足量使用 ≥ 12 週失敗或不可耐受；或具光敏感等醫療因素不能照光與系統治療；6–12 歲兒童另適用 13.17.2（標準較寬）
 成人：第 0 週 600 mg → 每 2 週 300 mg；16 週需達 EASI 50 才能續用
 是 (PASS)
 
@@ -6447,78 +6341,77 @@ Abrocitinib（喜開憶 Cibinqo)
 100 mg/day 或 200 mg/day
 是
 
+Lebrikizumab（Ebglyss）
+▲
+13.17.1（115/6/1 新增）；限 ≥ 12 歲且體重 ≥ 40 公斤，其餘條件同 Dupilumab。16 週須達 EASI 50 才能續用。暫緩續用：dupilumab 治療 1 年後，或 upadacitinib、abrocitinib、lebrikizumab 治療 2 年後 EASI ≦ 16 者。Dupilumab、upadacitinib、abrocitinib、lebrikizumab 不得併用
+第 0、2 週各 500 mg（250 mg 兩劑）→ 第 4 週起每 2 週 250 mg 至第 16 週 → 之後每 4 週 250 mg
+是
+
 Baricitinib（愛滅炎 Olumiant)
 ✗
-異膚適應症在台灣未廣泛（歐洲有）；圓禿有條件給付
+異膚、圓禿適應症健保皆未給付（健保 baricitinib 僅給付類風濕性關節炎與 COVID-19 住院病人）
 —
 —
 
 詳細請看 異位性皮膚炎 6 大迷思 與 生物製劑總覽。
 乾癬生物製劑與小分子藥
-乾癬生物製劑統一健保條件（114/6/1 修正）PASI ≥ 10（或膿疱性等不適用 PASI 者改用 BSA ≥ 10%）+「照光治療 PUVA / nb-UVB 每週 ≥ 2 次達 12 週」+「以下五種傳統治療中至少 二種各使用 ≥ 3 個月仍失敗」: MTX、acitretin、cyclosporin、apremilast、deucravacitinib（114/6/1 起 apremilast 與 deucravacitinib 已加入此清單）。需事前審查（PASS）通過。12 週評估需達 PASI 25（risankizumab、bimekizumab 於 16 週評估、risankizumab 須達 PASI 75）才能續用；續用每 6 個月需達 PASI 50（risankizumab 需 PASI 75）。暫緩續用：生物製劑使用 2 年後若 PASI ≤ 10 須暫停。新增藥物：Bimekizumab（115/5/1）；Spesolimab（113/7/1）限全身型急性膿疱性乾癬。注意：「PASI 10／10／10 三 10 標準」中 DLQI ≥ 10 是 BAD/AAD 臨床口訣，並非健保條文的硬性要求。
+乾癬生物製劑統一健保條件（依 115/9/22 版給付規定；本節最近修訂 115/5/1）PASI ≥ 10（或膿疱性等不適用 PASI 者改用 BSA ≥ 10%）+「照光治療 PUVA / nb-UVB 每週 ≥ 2 次達 12 週」+「以下五種傳統治療中至少 二種各使用 ≥ 3 個月仍失敗」: MTX、acitretin、cyclosporin、apremilast、deucravacitinib（apremilast 與 deucravacitinib 已列入此清單，該款最近修訂 114/6/1）。需事前審查（PASS）通過。12 週評估需達 PASI 25（ustekinumab、risankizumab、bimekizumab 於 16 週評估、risankizumab 須達 PASI 75）才能續用；續用每 6 個月需達 PASI 50（risankizumab 需 PASI 75）。暫緩續用：生物製劑使用 2 年後若 PASI ≤ 10 須暫停。新增藥物：Bimekizumab（115/5/1）；Spesolimab（113/7/1）限全身型急性膿疱性乾癬。注意：「PASI 10／10／10 三 10 標準」中 DLQI ≥ 10 是 BAD/AAD 臨床口訣，並非健保條文的硬性要求。
+乾癬性關節炎（周邊關節）：原經事前審查符合 apremilast 給付規定且已接受治療者，apremilast 可視同疾病修飾藥物（DMARDs）第一線藥物（§8.2.4.4，115/8/1）。
 藥物
 劑量 / 頻率
-每月自費（若不給付）
+健保
 
 IL-17 抑制劑
 
 Secukinumab（可善挺）
 第 0,1,2,3,4 週每週 300 mg → 每 4 週 300 mg
-NT$ 35,000-45,000
+▲ 有條件給付（§8.2.4.6，需事前審查）
 
 Ixekizumab（達癬通）
 第 0 週 160 mg → 每 2 週 80 mg（共 6 次）→ 每 4 週 80 mg
-NT$ 35,000-45,000
+▲ 有條件給付（§8.2.4.6，需事前審查）
 
 Bimekizumab(Bimzelx)
-第 0,4,8,12 週 320 mg → 每 8 週 320 mg
-NT$ 50,000+
+第 0,4,8,12,16 週 320 mg → 每 8 週 320 mg
+▲ 有條件給付（§8.2.4.6，需事前審查）
 
 IL-23 抑制劑
 
 Guselkumab（特諾雅）
 第 0、4 週 100 mg → 每 8 週 100 mg
-NT$ 50,000-65,000/針（每 2 月）
+▲ 有條件給付（§8.2.4.6，需事前審查）
 
 Risankizumab（喜開麗）
 第 0、4 週 150 mg → 每 12 週 150 mg
-NT$ 60,000-80,000/針（每 3 月）
-
-Tildrakizumab(Ilumya)
-第 0、4 週 100 mg → 每 12 週 100 mg
-類似
+▲ 有條件給付（§8.2.4.6，需事前審查）
 
 Ustekinumab（喜達諾，IL-12/23)
 第 0、4 週 → 每 12 週（體重決定 45 或 90 mg)
-NT$ 50,000-65,000/針
+▲ 有條件給付（§8.2.4.6，需事前審查）
 
-TNF 抑制劑（較舊代，較便宜）
+TNF 抑制劑（較早上市）
 
 Adalimumab（復邁）
 第 0 週 80 mg → 每 2 週 40 mg
-NT$ 25,000-35,000/月
+▲ 有條件給付（§8.2.4.6，需事前審查）
 
 Etanercept（恩博）
-每週 50 mg
-NT$ 25,000-35,000/月
-
-Infliximab（類克）
-第 0、2、6 週 → 每 8 週（體重 5 mg/kg IV)
-NT$ 30,000-40,000/次
+健保：前 3 個月 50 mg 每週 2 次，之後 25 mg 每週 2 次
+▲ 有條件給付（§8.2.4.6，需事前審查）
 
 口服小分子
 
 Apremilast（喜樂寶 Otezla)
 每天 30 mg BID（漸進加量）
-NT$ 15,000-25,000/月
+▲ 有條件給付（§8.2.16，需事前審查）
 
 Deucravacitinib(Sotyktu)
 每天 6 mg
-NT$ 30,000-50,000/月
+▲ 有條件給付（§8.2.16，需事前審查）
 
 Acitretin(Neotigason)
 25-50 mg/day，口服育齡女性需簽署知情同意書 + 每月驗孕；停藥後須避孕 3 年（須完全戒酒）；定期追蹤 ALT/AST、空腹三酸甘油酯/膽固醇
-健保 ✓（中重度乾癬，傳統治療失敗 ≥ 6 個月）
+健保 ✓（申報時需檢具病患同意書，並檢送含確定診斷之病歷資料）
 
 詳細請看 乾癬 7 大迷思。
 圓禿用 JAK 抑制劑
@@ -6537,19 +6430,19 @@ Ritlecitinib（麗扶柔 Litfulo)
 ≥ 12 歲重度圓禿
 50 mg/day
 
-自費月費約 NT$ 30,000-50,000。詳細請看 圓禿完整衛教。
+詳細請看 圓禿完整衛教。
 慢性自發性蕁麻疹(CSU)— Omalizumab
 項目
 內容
 
 健保狀態
-▲ 條件待最新公告確認
+✗ CSU 適應症健保未給付（自費）
 
-2025/4/23 NHI 公告版本
-Omalizumab 給付條文僅列「重度持續性氣喘」（12 歲以上或 6–12 歲），慢性自發性蕁麻疹未列入給付項目。實際 CSU 給付可能在後續補充公告中加入，請以健保署最新公告為準。
+115/9/22 版給付規定
+Omalizumab 給付條文（§6.2.6）僅列「重度持續性氣喘」（12 歲以上，或 6 歲以上未滿 13 歲兒童），慢性自發性蕁麻疹至 115/9/22 版仍未列入給付，CSU 使用須自費。日後若有修訂，以健保署公告為準。
 
-臨床常用條件（依國際指引與 PASS 慣例）
-慢性自發性蕁麻疹 ≥ 6 週、UAS7 ≥ 28、抗組織胺（包括加量到 4 倍劑量）≥ 4 週仍未改善；PASS 評估通過
+臨床常用條件（依國際指引；健保未給付 CSU）
+慢性自發性蕁麻疹 ≥ 6 週、UAS7 ≥ 28、抗組織胺（包括加量到 4 倍劑量）≥ 4 週仍未改善（健保無 CSU 事前審查途徑，須自費）
 
 劑量
 每 4 週皮下 300 mg（成人）；兒童體重調整
@@ -6557,64 +6450,15 @@ Omalizumab 給付條文僅列「重度持續性氣喘」（12 歲以上或 6–1
 療程
 初期評估 12-24 週，持續使用 6-12 個月後評估減量
 
-自費
-單針約 NT$ 14,000-22,000
-
 詳細請看 蕁麻疹 6 大迷思。
 化膿性汗腺炎(HS)— Secukinumab 與 Adalimumab
-項目
-Secukinumab（可善挺）
-Adalimumab（復邁）
-
-健保狀態
-▲ 2025/7/1 起有條件給付
-✗ 目前健保未列入 HS 適應症（仿單適應症但需自費）
-
-條件
-成人中重度 HS：Hurley 2–3、至少 5 處發炎病灶、影響 ≥ 2 個解剖區域；傳統全身治療（tetracycline 系、acitretin、clindamycin+rifampicin 中至少二種）≥ 3 個月未達 HiSCR 50，或達 HiSCR 50 但仍為 Hurley 2；需事前審查
-—
-
-劑量
-每次 300 mg；第 0、1、2、3、4 週每週給予，之後每 4 週給予
-若自費，HS 劑量：第 0 週 160 mg → 第 2 週 80 mg → 之後每週 40 mg（HS 是每週，不是每兩週）
-
-自費
-月費約 NT$ 35,000–45,000
-月費約 NT$ 30,000–50,000
-
-健保 HS 給付以 Secukinumab 為主（2025/7/1 起）；Adalimumab 用於 HS 仍須自費。詳細請看 化膿性汗腺炎完整衛教。
-主要自費藥物清單（健保不給付）
-藥物
-適應症
-自費價
-
-Hydroquinone 4%
-肝斑、色素沉著
-NT$ 600-1,500/條
-
-Tri-Luma 三合一藥膏(Hydroquinone+Tretinoin+Fluocinolone)
-肝斑（限期 8-12 週）
-NT$ 1,200-2,000/條
-
-Tranexamic acid 口服
-肝斑（限非血栓高風險者）
-NT$ 800-1,500/月
-
-Ruxolitinib 1.5% 乳霜(Opzelura)
-白斑、異膚（臉部 ≥ 12 歲）
-NT$ 4,000-6,000/條(60g)
-
-Ivermectin 1% 乳霜(Soolantra 舒立美）
-玫瑰斑（丘疹膿皰型）
-NT$ 1,800-2,500/條(30g)
-
 
 [... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 結節性癢疹是什麼？Prurigo nodularis 中文、症狀與治療
 URL: https://chendermatologist.com/blog/prurigo-nodularis
-Updated: 2026-09-06
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT6M
 Tags: 結節性癢疹, Prurigo Nodularis
@@ -6737,7 +6581,7 @@ WI-NRS 降 ≥ 4 分：60.0% vs 18.4%（安慰劑）;IGA-PN 0/1:48.0% vs 18.4%
 同時改善異膚、氣喘、CRSwNP、嗜酸性食道炎（若有）
 
 台灣健保(2026)
-PN 適應症需自費（每針約 NT$ 16,000-20,000);AD 給付條件可申請
+PN 適應症需自費（費用依醫療院所而定）；AD 符合 §13.17 條件可申請給付
 
 重點：Nemolizumab(2024 FDA 新核准）
 機轉：抗 IL-31 受體(IL-31R)單株抗體；IL-31 是 PN 主要「搔癢細胞激素」。
@@ -6796,7 +6640,7 @@ UpToDate: Prurigo nodularis. Accessed 2026.
 ---
 ## 皮膚 T 細胞淋巴瘤(CTCL/MF)完整衛教
 URL: https://chendermatologist.com/blog/cutaneous-t-cell-lymphoma
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 皮膚淋巴瘤, CTCL / MF
@@ -6823,7 +6667,7 @@ MF 臨床分期（經典三期）
 
 斑塊期(Patch)
 扁平、鱗屑、淡紅或棕紅、不規則邊界、好發遮陽部位（臀部、大腿內側、軀幹）、可癢可不癢
-慢性濕疹、副银屑癬、體癬、藥疹、白斑（色素脫失型）
+慢性濕疹、副銀屑癬、體癬、藥疹、白斑（色素脫失型）
 
 厚斑期(Plaque)
 明顯隆起、紅褐色、可有萎縮 / 皺紋紙感、邊界較清楚
@@ -6843,7 +6687,7 @@ Pagetoid reticulosis：單一斑塊持續多年、預後極佳
 肉芽腫性鬆弛皮膚(granulomatous slack skin)：皺褶部位皮膚下垂、彈性消失；極罕
 Sézary syndrome：紅皮症 ≥ 80% 體表 + 血液 Sézary 細胞 > 1000/μL 或 CD4:CD8 ≥ 10 + TCR 重排陽性；5 年存活率 ~40%
 診斷流程(ISCL 演算法）
-MF 早期診斷困難 — 病灶與濕疹、副银屑癬、乾癬重疊。ISCL 2005 演算法結合臨床、組織學、分子、免疫表型評分：
+MF 早期診斷困難 — 病灶與濕疹、副銀屑癬、乾癬重疊。ISCL 2005 演算法結合臨床、組織學、分子、免疫表型評分：
 臨床標準：持續性 / 進展性 patches、非曝光部位、不對稱、皮膚萎縮 / 皺紋紙感（各 2-1 分）
 組織學標準：表皮親性(epidermotropism)、Pautrier 微膿瘍、線性基底層 T 細胞排列(2-1 分）
 免疫表型:CD2/3/5 部分喪失、CD4/CD8 比例 > 6 或 CD7 表現 < 50%（各 1 分）
@@ -6917,7 +6761,7 @@ RXR 選擇性 retinoid
 
 低劑量 Methotrexate
 抗代謝免疫調節
-5-25 mg/週；反應率 ~30%；健保有給付（其他適應症）
+5-25 mg/週；反應率 ~30%；藥品給付規定沒有 MTX 專屬條文，依通則七須符合許可證適應症，用於 CTCL 是否給付請依醫師處方當下說明
 
 Interferon-α
 免疫調節
@@ -6925,11 +6769,11 @@ Interferon-α
 
 Brentuximab vedotin(Adcetris 安瑞凡）
 抗 CD30 ADC
-ALCANZA 試驗：CD30+ MF / pcALCL ORR4 56% vs 13%；周邊神經病變副作用；台灣有條件給付
+ALCANZA 試驗：CD30+ MF / pcALCL ORR4 56% vs 13%；周邊神經病變副作用；健保有條件給付：CD30 陽性（超過 10% 腫瘤細胞）之 MF 第 IIB 期以上、SS 或 pcALCL 成人，先前已接受照光及至少一種注射型全身性化學治療，需事前審查，總計以 6 個療程為上限
 
 Mogamulizumab(Poteligeo)
 抗 CCR4 單株抗體
-MAVORIC 試驗：SS / MF 中位 PFS 7.7 個月 vs vorinostat 3.1；特別對 SS 有效
+MAVORIC 試驗：SS / MF 中位 PFS 7.7 個月 vs vorinostat 3.1；特別對 SS 有效；健保自 115/10/1 起有條件給付：MF 第 IIB 期以上或 SS 成人，先前已接受照光及至少一種注射型全身性化學治療，需事前審查；與 brentuximab vedotin 僅得擇一使用（耐受不良時方可轉換）
 
 Histone deacetylase inhibitor(Vorinostat、Romidepsin)
 表觀遺傳調節
@@ -6981,9 +6825,9 @@ UpToDate: Treatment of mycosis fungoides. Accessed 2026.
 ---
 ## 皮膚科 25 個最常見問題
 URL: https://chendermatologist.com/blog/dermatology-faq
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Myths & Facts
-Reading time: PT12M
+Reading time: PT13M
 Tags: 常見問題, FAQ
 
 藥物使用
@@ -7025,10 +6869,10 @@ TDA 2024 痤瘡共識：
 
 5. 普特皮(Tacrolimus)、醫立妥(Pimecrolimus)、寇緹斯(Crisaborole)差別？
 都是非類固醇外用藥，主要用於異位性皮膚炎：
-Tacrolimus 0.03% / 0.1% （普特皮）:Calcineurin 抑制劑，2 歲以上用 0.03%、16 歲以上可用 0.1%。最強
+Tacrolimus 0.03% / 0.1% （普特皮）:Calcineurin 抑制劑，2 歲以上用 0.03%、16 歲以上可用 0.1%。效力較 pimecrolimus 強
 Pimecrolimus 1% （醫立妥）：類似但較弱，適合輕度
 Crisaborole 2% （寇緹斯）:PDE-4 抑制劑，3 個月以上嬰兒可用
-共同優點：不會皮膚萎縮、可長期、可用於臉與皺褶處。共同缺點：初期 5-10 天有灼熱感、需嚴格防曬。台灣健保異膚適應症都有給付。
+共同優點：不會皮膚萎縮、可長期、可用於臉與皺褶處。共同缺點：初期 5-10 天有灼熱感、需嚴格防曬。健保對 tacrolimus、pimecrolimus 用於異膚是有條件給付（限 2 歲以上、作為第二線使用，並依患部面積限制用量）；crisaborole 為自費（健保不給付）。
 詳見 外用類固醇完整指南 中的 TCI 比較
 
 保養品搭配
@@ -7152,9 +6996,10 @@ Studies show that 40-55% 的 25-44 歲女性仍有不同程度痘痘。常見原
 
 20. 健保 vs 自費皮膚科，差別？
 核心差異：
-健保覆蓋：看診、抽血、皮膚切片、傳統處方藥（類固醇、抗生素、抗組織胺）、口服 A 酸（需條件）、生物製劑（需條件）
-自費：醫美雷射（皮秒、飛梭、IPL）、肝斑 / 美白治療、除毛、肉毒、玻尿酸、植髮、HQ 4%、Tri-Luma、口服傳明酸、Ruxolitinib(Opzelura)
-有些藥物兩種都有：Adalimumab（復邁）健保有條件給付乾癬 / HS;Dupilumab 健保有條件給付異膚。診斷不確定先看健保，有美容需求才考慮自費。
+健保覆蓋：依病情所需的看診、抽血檢驗、皮膚切片（屬醫療服務給付項目）；傳統處方藥（類固醇、抗生素、抗組織胺）在健保藥品給付規定中多無額外限制條文，是否給付以處方當下的健保收載品項為準；口服 A 酸（需事前審查，§13.4）、生物製劑（需條件）
+自費：醫美雷射（皮秒、飛梭、IPL）、肝斑雷射 / 美白療程、除毛、肉毒、玻尿酸、植髮等美容項目；外用 Ruxolitinib 乳膏（Opzelura）亦為自費（健保不給付）
+需向醫師確認：HQ 4%、Tri-Luma、口服傳明酸（用於肝斑屬仿單適應症以外的使用） — 健保藥品給付規定對這些藥沒有相關條文，是否給付以處方當下的健保收載品項為準
+有些藥物兩種都有：Adalimumab（復邁）健保有條件給付乾癬；化膿性汗腺炎（HS）的健保生物製劑給付目前為 secukinumab（可善挺）;Dupilumab 健保有條件給付異膚。診斷不確定先看健保，有美容需求才考慮自費。
 
 孕婦 / 哺乳
 21. 孕婦哺乳可以擦什麼皮膚科藥？
@@ -7183,23 +7028,13 @@ Tri-Luma 三合一
 可以。台灣 TDA 異膚 2020 共識認可類固醇藥膏是嬰幼兒異膚第一線治療。安全使用：
 選弱效(Hydrocortisone 1%、Desonide)
 急性期每天 1-2 次連用 7-14 天
-緩解後改週末療法（週六、日各 1 次）
-避開大面積、長期、高強度
-≥3 個月可加 Crisaborole 寇緹斯;≥2 歲可加 Tacrolimus 0.03% / Pimecrolimus
-「不敢擦類固醇」是異膚兒童惡化最大原因。每天保濕 + 急性期積極治療 + 緩解期 proactive 維持 = 控制良好。
-詳見 異位性皮膚炎 6 大迷思
-
-24. 寶寶皮膚常見問題：濕疹、汗疹、奶癬、尿布疹怎麼分？
-常見鑑別：
-嬰兒濕疹 / 異膚：臉頰、頭皮先發，反覆癢疹，慢性
-汗疹 (miliaria)：熱悶後出現透明小水泡或紅疹，在頸部、皺褶，涼快就退
 
 [... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 粉瘤完整衛教
 URL: https://chendermatologist.com/blog/epidermoid-cyst
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 粉瘤, Epidermoid cyst
@@ -7349,12 +7184,12 @@ Minimal excision（微創切除）
 ~70%（只是減壓，不算治療）
 
 健保給付條件
-台灣健保有給付粉瘤切除手術：
-診斷碼：L72.0（表皮囊腫）、L72.1（毛根鞘囊腫）、L72.2（皮脂囊腫）
-手術代碼：依大小與部位有不同代碼
-急性發炎引流也健保給付
-多發性粉瘤、特殊部位（陰囊、會陰、肛周）亦給付
-純美容目的不給付（極小、無症狀、要求特殊整形縫合）
+粉瘤切除屬健保醫療服務給付項目，依部位與大小申報：
+診斷碼：L72.0（表皮囊腫）、L72.1（毛根鞘囊腫）、L72.3（皮脂囊腫）
+手術代碼：臉部為顏面皮膚及皮下腫瘤切除術（62001C–62003C，依直徑分級）；臉部以外為皮膚及皮下腫瘤摘除術（62010C–62012C，依大小分級）
+急性發炎引流：切開排膿（51020C）屬健保給付項目；發炎期病灶內注射（51009C–51011C 皮膚病灶內部注射）適用範圍也包含囊腫
+多發性粉瘤或陰囊、會陰、肛周等特殊部位：給付與申報方式請依醫療院所當下說明
+純美容目的不給付（是否屬美容目的由醫師評估）
 注意：皮膚科 / 整形外科 / 一般外科都可做粉瘤切除。臉部建議皮膚科或整形外科（美觀考量），體幹則一般外科常見。
 常見問題
 粉瘤會自己消嗎？
@@ -7415,7 +7250,7 @@ Minimal excision（微創切除）
 不要自己擠 — 反覆刺激、發炎、留疤
 急性發炎時先消炎，不要急著完整切除
 穩定期才做完整橢圓形切除，確保囊袋完整取出 → 復發率 < 5%
-如果你身上有反覆發炎或變大的腫塊，別再嘗試擠它了 — 一次完整手術切除，從此根治。健保有給付。
+如果你身上有反覆發炎或變大的腫塊，別再嘗試擠它了 — 一次完整的手術切除可明顯降低復發機會，切除手術屬健保醫療服務給付項目。
 延伸閱讀：跟粉瘤鑑別的常見發炎性腫塊看 化膿性汗腺炎（皺褶處反覆膿瘍）；類似但機轉不同的痤瘡看 痘痘 8 大迷思；術後減疤看 Acne scar treatment — full guide 中的肥厚疤 / 蟹足腫處置。
 
 參考資料
@@ -7427,7 +7262,7 @@ UpToDate: Cutaneous cysts overview — Epidermoid, pilar, and other cysts. Acces
 ---
 ## 皮膚科雷射完整對照
 URL: https://chendermatologist.com/blog/laser-dermatology
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT12M
 Tags: 雷射 / 光電, Laser dermatology
@@ -7440,7 +7275,7 @@ Tags: 雷射 / 光電, Laser dermatology
 外來色素（刺青墨水）：依顏色不同對波長有特異吸收 — 黑藍綠用 1064/755/694，紅黃用 532
 所以醫師選雷射時會問：「目標是色素？血管？水？」「位置在表皮還是真皮？」「Fitzpatrick 膚色幾型？」「有沒有發炎中？」
 12 種臨床常用波長
-308 nm準分子雷射 Excimer白斑、乾癬、皮膚淋巴瘤532 nmKTP / 倍頻 Nd:YAG表淺色素、紅斑、紅點（血管痣）585-595 nm脈衝染料雷射 PDL (V Beam)血管瘤、葡萄酒色斑、酒糟紅、紅疤694 nm紅寶石 Ruby深層色素、刺青（黑藍綠）、太田母斑755 nm亞歷山大 Alexandrite深層色素、除毛、皮秒(PicoSure)800-980 nm二極體 Diode除毛（較深膚色適用）1064 nmNd:YAG深層色素、深層血管、刺青、除毛、皮秒1450-1565 nm鉺玻璃 / 二極體飛梭非破壞性、痘疤、燒燙傷疤、皺紋1927 nm銩 Thulium飛梭非破壞性、表淺色素、肝斑、光老化2940 nm鉺雅鉻 Er:YAG磨皮、痣、汗管瘤、CO₂ 替代10600 nmCO₂ 雷射磨皮、飛梭、痣、菜花、鼻贅、雞眼IPL脈衝光 590-1200 nm廣譜：表淺色素、紅斑、除毛、酒糟皮秒 vs 奈秒：同樣波長（如 755 / 1064 nm)，皮秒(picosecond)脈寬更短(10⁻¹² 秒），光機械效應大、熱破壞小，效果與安全均優於奈秒(10⁻⁹ 秒）；但機器較貴、自費價格也較高。S2k 指引兩者都建議，差別不大時皮秒略佔上風。
+308 nm準分子雷射 Excimer白斑、乾癬、皮膚淋巴瘤532 nmKTP / 倍頻 Nd:YAG表淺色素、紅斑、紅點（血管痣）585-595 nm脈衝染料雷射 PDL (V Beam)血管瘤、葡萄酒色斑、酒糟紅、紅疤694 nm紅寶石 Ruby深層色素、刺青（黑藍綠）、太田母斑755 nm亞歷山大 Alexandrite深層色素、除毛、皮秒(PicoSure)800-980 nm二極體 Diode除毛（較深膚色適用）1064 nmNd:YAG深層色素、深層血管、刺青、除毛、皮秒1450-1565 nm鉺玻璃 / 二極體飛梭非破壞性、痘疤、燒燙傷疤、皺紋1927 nm銩 Thulium飛梭非破壞性、表淺色素、肝斑、光老化2940 nm鉺雅鉻 Er:YAG磨皮、痣、汗管瘤、CO₂ 替代10600 nmCO₂ 雷射磨皮、飛梭、痣、菜花、鼻贅、雞眼IPL脈衝光 590-1200 nm廣譜：表淺色素、紅斑、除毛、酒糟皮秒 vs 奈秒：同樣波長（如 755 / 1064 nm)，皮秒(picosecond)脈寬更短(10⁻¹² 秒），光機械效應大、熱破壞小，效果與安全均優於奈秒(10⁻⁹ 秒）。S2k 指引兩者都建議，差別不大時皮秒略佔上風。
 色素病灶 — 斑、痣、母斑
 德國 S2k 將色素病灶分為「黑色素細胞數量正常 vs 增加」兩類，治療策略不同：
 表淺色素 — 雀斑(ephelides)、曬斑(lentigines)、咖啡牛奶斑
@@ -7466,7 +7301,7 @@ q-sw 1064 nm Nd:YAG
 
 IPL 脈衝光
 ↑
-大面積、輕微病灶經濟選擇
+大面積、輕微病灶的選擇之一
 
 真皮色素 — 太田母斑(Nevus of Ota)、顴骨母斑(ABNOM)
 雷射
@@ -7658,7 +7493,7 @@ IPL
 
 10600 nm CO₂ 飛梭
 ↑↑
-效果最佳但需 5-7 天恢復期、有 PIH 風險
+效果較顯著但需 5-7 天恢復期、有 PIH 風險
 
 2940 nm Er:YAG 飛梭
 ↑
@@ -7676,7 +7511,7 @@ IPL
 
 585-595 nm 染料雷射（新鮮、紅色蟹足腫）
 ↑
-退紅效果好，合併類固醇注射
+有助退紅，合併類固醇注射
 
 1064 nm Nd:YAG（較厚 / 較深膚色）
 ○
@@ -7695,7 +7530,7 @@ CO₂ 雷射（大病灶減積）
 不建議 — 可能反而擴大
 
 燒燙傷疤、外傷疤
-染料雷射 PDL 退紅 + 飛梭(CO₂ 或鉺玻璃）改善凹凸 + 雷射輔助藥物導入(LADD)把 triamcinolone 透過微孔傳遞到疤組織，是目前公認最好的組合療法。
+染料雷射 PDL 退紅 + 飛梭(CO₂ 或鉺玻璃）改善凹凸 + 雷射輔助藥物導入(LADD)把 triamcinolone 透過微孔傳遞到疤組織，是目前常用、有實證支持的組合療法。
 皺紋與光老化
 雷射
 強度
@@ -7703,7 +7538,7 @@ CO₂ 雷射（大病灶減積）
 
 10600 nm CO₂ 飛梭
 ↑↑
-效果最佳，需 5-7 天恢復期
+效果較顯著，需 5-7 天恢復期
 
 10600 nm CO₂ 傳統磨皮(non-fractional)
 ↑
@@ -7759,7 +7594,7 @@ I-IV 型
 ↑↑
 
 日光性角化(Actinic Keratosis)/ 大面積光老化
-S2k 建議飛梭 ablative 雷射 + 局部 5-aminolevulinic acid (ALA) 光動力治療(LADD-PDT)是目前最有效的「整片照護」方法。單純雷射效果不如組合療法。
+S2k 建議飛梭 ablative 雷射 + 局部 5-aminolevulinic acid (ALA) 光動力治療(LADD-PDT)作為「整片照護」方法。單純雷射效果不如組合療法。
 低危險基底細胞癌(BCC)
 S2k：雷射僅適用於無法手術或外用治療不可行的低危險型 BCC，且需詳細病史說明。絕對不可對未確診 / 高危險型 BCC 直接打雷射。
 發炎性皮膚疾病
@@ -7779,7 +7614,7 @@ S2k 67% 共識，可考慮（其他病灶用窄頻 UVB)
 
 飛梭 ablative(1927/2940/2970/10600 nm)± 雷射輔助藥物導入
 ↑
-合併外用類固醇或他克莫司效果最佳
+合併外用類固醇或他克莫司效果較好
 
 長脈衝 CO₂（嚴重融合 labia)
 ○
@@ -7841,7 +7676,7 @@ S2k 不建議用雷射單獨治療灰指甲(↓)；只有「合併外用 / 口�
 
 雷射絕對禁忌與重要警示(Paasch 2022 S2k)
 S2k 100% 共識：色素性黑色素細胞痣(melanocytic nevus)不建議用雷射處理 — 雷射只能氣化表層、深部黑色素細胞與惡性細胞仍在、可能掩蓋黑色素瘤之早期變化、延誤診斷。正確流程：先以皮膚鏡(dermoscopy)觀察、可疑者切片送病理排除惡性、確認良性後若仍想處理才考慮雷射或手術切除縫合
-多項適應症 IPL 不建議(Paasch 2022)：雀斑、咖啡牛奶斑、太田 / 顴骨母斑、刺青除色、白斑(308 nm 準分子）、菜花、色素性脂漏性角化症 — 應改用對應波長之 Q-switched 或皮秒雷射；IPL 為「廣譜」非「精準」，適合大面積輕度病灶經濟選擇
+多項適應症 IPL 不建議(Paasch 2022)：雀斑、咖啡牛奶斑、太田 / 顴骨母斑、刺青除色、白斑(308 nm 準分子）、菜花、色素性脂漏性角化症 — 應改用對應波長之 Q-switched 或皮秒雷射；IPL 為「廣譜」非「精準」，適合大面積輕度病灶
 近期(6 個月內）使用口服 A 酸(Isotretinoin)者：傳統建議停藥 6 個月後再做磨皮 / 飛梭（疤痕風險）；近年指引放寬至停藥後 1-3 個月(2017 ASDS 共識），但須個別評估、深層磨皮仍建議 6 個月
 Fitzpatrick V-VI 型膚色:1064 nm Nd:YAG 為較安全選擇；532 / 694 / 755 nm 在深膚色易引起 PIH 反黑；所有色素雷射均應從低能量試打 1 cm² 觀察 4 週
 近期日曬(2-4 週內）、進行中皮膚感染（疱疹、發炎、活動性痤瘡）、植入心律調節器或去顫器（高能 IPL / 雷射須避開金屬部位）、懷孕（尚無安全性資料）應延後或避免
@@ -7850,7 +7685,7 @@ cyclosporine 環孢素使用者不建議併用 UV 治療（包含 308 nm 準分�
 術後護理共通原則：嚴格防曬(SPF 50+ 含氧化鐵物理性） ≥ 4 週、避免主動結痂前游泳 / 三溫暖 / 化妝、有疱疹史者口服 valacyclovir 預防（磨皮術前 1 天起 5-7 天）
 常見問題(PTT / Dcard / 諮詢室常被問的）
 皮秒雷射跟奈秒(Q-switch)雷射差在哪？
-皮秒(picosecond)脈寬約 10⁻¹² 秒，奈秒(nanosecond)約 10⁻⁹ 秒，皮秒短了 1000 倍。短脈寬代表光機械效應（把色素打碎）大、熱破壞小，所以效果好、副作用少、恢復快。但皮秒不是「萬能」，某些深層色素奈秒仍有用，且皮秒貴 2-3 倍。常見品牌：PicoSure (755 nm)、PicoWay (532/785/1064 nm)、Discovery PICO (532/694/1064 nm)、Enlighten III (532/670/1064 nm)。
+皮秒(picosecond)脈寬約 10⁻¹² 秒，奈秒(nanosecond)約 10⁻⁹ 秒，皮秒短了 1000 倍。短脈寬代表光機械效應（把色素打碎）大、熱破壞小，所以色素清除效率較高、熱傷害較少、恢復較快。但皮秒不是「萬能」，某些深層色素奈秒仍有用，且皮秒的自費費用通常較高。常見品牌：PicoSure (755 nm)、PicoWay (532/785/1064 nm)、Discovery PICO (532/694/1064 nm)、Enlighten III (532/670/1064 nm)。
 雷射除斑後反黑怎麼辦？
 
 [... truncated; fetch canonical URL for full text ...]
@@ -7858,9 +7693,9 @@ cyclosporine 環孢素使用者不建議併用 UV 治療（包含 308 nm 準分�
 ---
 ## 嬰幼兒 / 兒童異位性皮膚炎完整照護指南
 URL: https://chendermatologist.com/blog/pediatric-eczema
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
-Reading time: PT12M
+Reading time: PT13M
 Tags: 異位性皮膚炎, Atopic dermatitis
 
 怎麼診斷？Hanifin Rajka 標準
@@ -7957,7 +7792,7 @@ Tacrolimus 0.1% 普特皮：核可 ≥ 16 歲
 Pimecrolimus 1% 醫立妥：核可 ≥ 3 個月（嬰幼兒可用）；每天 2 次
 優點
 不會皮膚萎縮：適合臉、眼周、生殖器等薄皮處長期使用
-主動式維持治療效果好
+可用於主動式維持治療（有實證支持）
 可從 3 個月嬰兒開始使用(Pimecrolimus)
 使用注意
 初期燒灼感：約 30% 患者前 1-3 天有燒灼或刺激感、通常 3-5 天適應
@@ -8026,7 +7861,7 @@ EASI-75 達成率：53% vs 11%(p < 0.0001)
 HSV 感染：似乎不增加
 長期安全性資料目前 5 年以上、未見惡性腫瘤增加
 健保條件
-台灣健保 2023 年後將 Dupilumab 適應症擴大至 ≥ 6 個月、但須符合：中重度異膚 + 標準治療（外用類固醇 + TCI)≥ 6 個月失敗 + EASI / IGA 達標。詳見皮膚科常用藥物健保規範。自費單針約 NT$ 12,000-22,000（依劑量）。
+台灣健保給付 Dupilumab 目前限 6 歲以上：6 歲以上未滿 12 歲兒童自 113/2/1 起依 §13.17.2 給付，未滿 6 歲的嬰幼兒目前沒有健保給付條文。6 歲以上未滿 12 歲須符合：病灶持續至少 6 個月、EASI ≧ 16 且 IGA ≧ 3；規律使用中效以上外用類固醇及外用鈣調磷酸酶抑制劑（TCI）達 12 週，並經 methotrexate、azathioprine、cyclosporin 其中至少一種全身性免疫抑制劑足量治療 3 個月仍無效；限皮膚科專科醫師或具兒童過敏免疫風濕專長之兒科專科醫師處方，並須經事前審查核准。詳見皮膚科常用藥物健保規範。12 歲以上的青少年則依 §13.17.1 申請，可選 dupilumab、upadacitinib、abrocitinib，以及 115/6/1 起新增給付的 lebrikizumab（限 12 歲以上且體重至少 40 公斤，第 16 週須達 EASI 50 才能續用）；這幾種藥不得併用。
 過敏進行曲(Atopic march)— 預防策略
 異膚兒童約 30-50% 後續發展食物過敏 → 氣喘 → 過敏性鼻炎。關鍵的「皮膚屏障假說」：皮膚屏障破損 → 環境過敏原 / 食物蛋白透皮致敏 → 全身過敏體質形成。
 已實證的預防策略
@@ -8065,27 +7900,20 @@ EAT trial (Perkin et al., NEJM 2016)
 嬰兒異膚一定要避開所有過敏原嗎？
 不是。除非有明確的「吃了某食物 30 分-2 小時內爆發」證據、否則不要盲目戒奶蛋海鮮。Werfel 2024 強烈反對「對所有異膚兒童做全面食物過敏原篩檢」。盲目戒口造成兒童營養不良風險遠高於過敏暴露的風險。
 嬰兒異膚要吃益生菌、深海魚油嗎？
-目前證據混合。益生菌：對於哺乳母親在懷孕末期 + 嬰兒出生後使用某些菌株(L. rhamnosus GG 等）可能輕微降低嬰兒異膚風險、但效應小，Werfel 2024 不強烈推薦。深海魚油 / Omega-3：沒有強證據預防或治療異膚。不建議當作主要治療。
-異膚孩子上幼稚園 / 上學要注意什麼？
-跟老師溝通：不傳染、不要被排擠、不要給特殊待遇但要給理解
-學校保濕乳液：書包準備一份小罐、洗手後 / 中午後補擦
-避免班上養動物 / 共用毛巾 / 在地板毯上玩耍時間過長
-異常爆發或感染（膿黃結痂）及時就醫、可能是金黃色葡萄球菌感染(eczema herpeticum 是急症）
-嬰兒異膚什麼時候該換 Dupilumab?
 
 [... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 病毒疣 6 大迷思
 URL: https://chendermatologist.com/blog/warts-myths
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Myths & Facts
 Reading time: PT7M
 Tags: 病毒疣, Warts
 
 迷思 1：病毒疣會自己好，不用治療
-「我聽說放著它兩年會自己消失。」免疫健全的兒童約 65% 會在 2 年內自然消退 (Sterling 2014, BJD)，成人比例低很多，且同時會擴散傳染。是否治療要看不適、外觀、傳染風險。「自然消退」要看年齡與免疫狀態：
-兒童：約 65% 在 2 年內自然消退（免疫系統還在學習）(Sterling 2014, BJD)
+「我聽說放著它兩年會自己消失。」免疫健全的兒童約一半在 1 年內、多數在 2 年內自然消退 (Bruggink 2013, Ann Fam Med)，成人比例低很多，且同時會擴散傳染。是否治療要看不適、外觀、傳染風險。「自然消退」要看年齡與免疫狀態：
+兒童：約一半在 1 年內、多數在 2 年內自然消退（免疫系統還在學習）(Bruggink 2013, Ann Fam Med)
 成人：自然消退率低很多，常拖數年甚至十幾年
 免疫低下（化療、HIV、移植後）：很難自然消退，易擴散且難治
 不治療的代價：同時會自體接種（autoinoculation） — 抓癢、刮鬍、剪指甲時會把病毒帶到旁邊皮膚，讓 1 顆變 5 顆變 20 顆；同時也會傳染給家人共用浴室、毛巾、剃刀。
@@ -8095,7 +7923,7 @@ Tags: 病毒疣, Warts
 大蒜：含 allicin 有刺激性，可能引發接觸性皮膚炎，部分案例引起發炎反應誘導免疫清除 — 但常見化學灼傷
 白醋（醋酸）：強酸刺激，類似自製水楊酸效果，但濃度不可控，易灼傷
 膠帶（duct tape occlusion）：唯一有少量臨床證據的家用法 — 持續貼 6 天再撕掉、磨掉表層，重複 8 週，有限效益，不能取代治療
-家用 OTC 推薦：含 水楊酸 17-40% 的雞眼貼布或液劑（如 Compound W、Duofilm)，按指示每天使用持續 8-12 週，對手腳厚皮病毒疣有約 60-70% 緩解率，比偏方安全且實證較強。
+家用 OTC 推薦：含 水楊酸 17-40% 的雞眼貼布或液劑（如 Compound W、Duofilm)，按指示每天使用持續 8-12 週，對手腳厚皮病毒疣清除率約 50–70%，比偏方安全且實證較強。
 迷思 3：冷凍打一次、雷射打一次就消
 「我去診所打了一次冷凍，為什麼一個月後還在？」病毒疣治療幾乎都需要 3-6 次以上，單次治癒率很低（約 30-50%）。BAD 2014 指引明確指出，水楊酸與液態氮冷凍是並列的第一線（1+/A 強建議），兩者整體清除率約 50-70%、可單用或合併 (Sterling 2014, BJD)。常見治療方式與療程：
 治療
@@ -8111,7 +7939,7 @@ Tags: 病毒疣, Warts
 水楊酸 17-40%（OTC，BAD 1+/A）
 慢慢溶解角質、削皮後每日塗抹
 每天
-12 週療程（清除率 ~50%）
+12 週療程（清除率約 50–70%）
 
 CO2 雷射 / 電燒
 汽化病灶
@@ -8150,7 +7978,7 @@ Bleomycin 病灶內注射（BAD 1+/B，頑固型）
 HPV 6, 11：低危型 — 菜花主因（涵蓋約 90% 生殖器疣）
 HPV 16, 18, 31, 33, 45, 52, 58：高危型 — 子宮頸癌、肛門癌、口咽癌主因
 沒涵蓋的：HPV 1, 2, 3, 4, 10 等手腳皮膚常見型 — 這些不是癌症型，但是日常困擾的源頭
-男生也建議打 — 防菜花、肛門癌、口咽癌。9-26 歲為主要建議年齡，健保部分縣市有男女學生補助。
+男生也建議打 — 防菜花、肛門癌、口咽癌。9-26 歲為主要建議年齡；HPV 疫苗不屬於健保給付，公費接種或補助對象請依當年度衛生主管機關公告。
 迷思 6：足底疣是雞眼，挫一挫就好
 「腳底凸一塊，自己挫平就好。」足底疣與雞眼很容易誤判 — 看起來像但治療策略完全不同。挫掉雞眼可改善，挫掉足底疣只會讓它擴散。
 足底疣 Plantar wart
@@ -8204,11 +8032,11 @@ Bleomycin 病灶內注射或 CO2 雷射
 
 常見問題（PTT / Dcard 上常被問的）
 Q病毒疣 PTT 推薦的藥膏有用嗎？
-AOTC 中有實證的：Compound W、Duofilm（水楊酸 17-40%）持續 8-12 週對手腳厚皮疣 60-70% 有效。處方藥Imiquimod 5%（樂得美）誘發免疫，用於扁平疣、菜花。網路推薦的香蕉皮、大蒜、白醋無實證且常造成灼傷。Q病毒疣多久會好？
-A兒童50% 在 1-2 年內自然消退，成人比例低。規律治療 4-6 次冷凍 + 居家水楊酸可解決 80%。頑固型需Bleomycin 注射、CO2 雷射、Imiquimod。重點是不能拖，自體接種會擴散。Q冷凍 / 雷射打一次多少錢？
-A健保：液態氮冷凍每次掛號費(NT$ 200-500)，不限治療次數。自費：CO2 雷射 NT$ 1,500-5,000/次、Bleomycin 注射 健保有給付（疣指徵下）、脈衝染料雷射 NT$ 3,000-8,000/次。多數人需要冷凍 4-6 次或以上。QHPV 疫苗對皮膚的疣有用嗎？
+AOTC 中有實證的：Compound W、Duofilm（水楊酸 17-40%）持續 8-12 週，對手腳厚皮疣清除率約 50–70%。處方藥Imiquimod 5%（樂得美）誘發免疫，用於扁平疣、菜花。網路推薦的香蕉皮、大蒜、白醋無實證且常造成灼傷。Q病毒疣多久會好？
+A兒童約一半在 1 年內、多數在 2 年內自然消退，成人比例低。規律治療 4-6 次冷凍 + 居家水楊酸，清除率約 50–70%。頑固型需Bleomycin 注射、CO2 雷射、Imiquimod。重點是不能拖，自體接種會擴散。Q冷凍 / 雷射健保有給付嗎？
+A健保：液態氮冷凍治療屬健保醫療服務給付項目（51017C），適應症包含病毒疣，兩次冷凍治療需間隔至少一週。Bleomycin 病灶內注射健保有給付。CO2 雷射、脈衝染料雷射在醫療服務給付項目中查無對應項目，通常需自費，費用與給付請依醫療院所當下說明。多數人需要冷凍 4-6 次或以上。QHPV 疫苗對皮膚的疣有用嗎？
 A九價 HPV 疫苗(Gardasil 9)涵蓋 HPV 6/11/16/18/31/33/45/52/58 — 能預防菜花(HPV 6/11)、子宮頸癌、肛門癌、口咽癌。對手腳一般病毒疣常見的 HPV 1-4 沒涵蓋。9-26 歲建議，男女皆然。Q足底疣跟雞眼怎麼分？健保有給付嗎？
-A足底疣：表面有黑點（血管末梢）、削皮會點狀出血、側壓比直壓痛、可多顆群集。雞眼：中央硬芯、削皮看到透明芯不出血、單顆、直壓痛。健保都有冷凍治療給付。結語
+A足底疣：表面有黑點（血管末梢）、削皮會點狀出血、側壓比直壓痛、可多顆群集。雞眼：中央硬芯、削皮看到透明芯不出血、單顆、直壓痛。足底疣屬病毒疣，在健保液態氮冷凍治療（51017C）適應症內；雞眼的處理方式與給付請依醫療院所當下說明。結語
 病毒疣治療的真正秘密不是「哪一招最強」，而是找對方法 + 規則持續、多管齊下。現有療法皆無法保證根治，水楊酸與冷凍兩種第一線療法的清除率約 50-70%、每 2-3 週冷凍配合居家水楊酸的組合通常能在 12 週療程內幫多數人逐步清除 (Sterling 2014, BJD)。撐過去比換來換去重要。
 延伸閱讀：會擴散的還有 香港腳 / 灰指甲，共用浴室拖鞋是高危；若是水珠狀、中央有凹陷，可能是「傳染性軟疣」(molluscum)而非病毒疣。
 
@@ -8222,13 +8050,14 @@ Lacey CJ, et al. 2012 European guideline for the management of anogenital warts 
 Park HS, et al. Cantharidin treatment for cutaneous warts: meta-analysis. JAMA Dermatol. 2021;157(11):1379-1386. 「來源」
 Markowitz LE, et al. CDC ACIP Recommendations for HPV Vaccination — 9-valent vaccine.MMWR. 2019;68(32):698-702. 「來源」
 UpToDate: Cutaneous warts: Treatment. Accessed 2026. 「來源」
+Bruggink SC, Eekhof JA, Egberts PF, et al. Natural course of cutaneous warts among primary schoolchildren: a prospective cohort study. Ann Fam Med. 2013;11(5):437-441. 「來源」
 
 ---
 ## 帶狀皰疹 6 大迷思
 URL: https://chendermatologist.com/blog/shingles-myths
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Myths & Facts
-Reading time: PT7M
+Reading time: PT8M
 Tags: 皮蛇, Shingles
 
 迷思 1：皮蛇繞一圈會死
@@ -8269,7 +8098,7 @@ Acyclovir 艾賽可洛偉
 Valacyclovir 維癒
 1 g × 3 次/日
 7 天
-較方便，自費約 $1,500-2,000
+較方便；健保限特定條件（如頭頸部或生殖器周圍發疹 3 日內、免疫功能不全），其餘需自費
 
 Famciclovir 抗皰
 500 mg × 3 次/日
@@ -8295,7 +8124,7 @@ Brivudine
 避免接觸：孕婦（無水痘抗體者）、新生兒、免疫低下者、未接種過水痘疫苗的小孩
 飛沫傳染少見（僅在播散性 / 黏膜病灶時），非主要途徑
 迷思 6：Shingrix 疫苗太貴不值得
-「兩劑要快一萬塊，我看大家都得也沒怎樣。」Shingrix 是第三代非活性重組疫苗，保護力 > 90% 持續至少 10 年，比舊的 Zostavax（約 50%）強很多。50 歲以上強烈建議。兩種疫苗對比：
+「疫苗要自費，我看大家都得也沒怎樣。」Shingrix 是第三代非活性重組疫苗，保護力 > 90% 持續至少 10 年，比舊的 Zostavax（約 50%）強很多。50 歲以上強烈建議。兩種疫苗對比：
 
 Shingrix（欣剋疹）
 Zostavax（伏冒帶狀皰疹）
@@ -8324,9 +8153,9 @@ Zostavax（伏冒帶狀皰疹）
 ~88%
 ~67%
 
-價格（台灣自費）
-單劑約 NT$ 7,000-9,000共 NT$ 14,000-18,000
-單劑約 NT$ 4,500-6,000
+給付方式
+自費，費用依醫療院所而定
+自費，費用依醫療院所而定
 
 副作用
 注射部位疼痛、發燒、肌肉痠痛常見較強但短暫
@@ -8360,11 +8189,11 @@ Gabapentin/Pregabalin/Amitriptyline + 外用 + 神經阻斷術 / TENS / 心理�
 
 常見問題（PTT / Dcard 上常被問的）
 Q帶狀皰疹 PTT 上常問的「斬蛇有用嗎」?
-A沒有任何醫療效果。「斬蛇、畫符、香灰、燒香」是民俗，不能取代抗病毒藥。錯過 72 小時黃金期會大幅增加皰疹後神經痛(PHN)風險。立刻看皮膚科 / 神經內科 / 急診開抗病毒藥。QShingrix 哪裡可以打？多少錢？
-A台灣已上市：各醫院家醫科 / 旅遊醫學科 / 部分皮膚科 / 旅遊診所自費接種。單劑 NT$ 7,000-9,000，共 2 劑（間隔 2-6 個月），總費用約 NT$ 14,000-18,000。50 歲以上強烈建議，免疫低下 18 歲以上也可打。Q帶狀皰疹會傳染嗎？
+A沒有任何醫療效果。「斬蛇、畫符、香灰、燒香」是民俗，不能取代抗病毒藥。錯過 72 小時黃金期會大幅增加皰疹後神經痛(PHN)風險。立刻看皮膚科 / 神經內科 / 急診開抗病毒藥。QShingrix 哪裡可以打？要自費嗎？
+A台灣已上市：各醫院家醫科 / 旅遊醫學科 / 部分皮膚科 / 旅遊診所自費接種。共 2 劑（間隔 2-6 個月），費用依醫療院所而定；是否有公費或地方補助，請洽當地衛生局。50 歲以上強烈建議，免疫低下 18 歲以上也可打。Q帶狀皰疹會傳染嗎？
 A傳的是水痘不是皮蛇。沒得過水痘 / 沒打疫苗的人接觸水泡液可能感染水痘（未來潛在發展皮蛇）。應避開：孕婦無水痘抗體者、新生兒、免疫低下、未種疫苗的小孩。結痂後不傳染。Q皰疹後神經痛(PHN)會痛多久？
 A多數 1-3 個月內緩解，但 10-30% 持續 6 個月以上，少數痛數年。年齡越大、急性期疼痛越強、皮疹越大，PHN 風險越高。治療：Gabapentin、Pregabalin、Amitriptyline、外用 Capsaicin / Lidocaine 貼布、嚴重者神經阻斷術。Q帶狀皰疹健保給付什麼？
-A健保：口服抗病毒藥(Acyclovir、Valacyclovir、Famciclovir，需符合條件 — 通常急性期 72 小時內、特定部位或免疫低下）、止痛、Gabapentin、Pregabalin、Amitriptyline 等神經痛藥。Shingrix 疫苗目前需自費。臺灣皮膚科醫學會 2022 帶狀疱疹疫苗接種建議
+A健保：口服抗病毒藥(Acyclovir 特定規格口服錠劑療程以 7 天為限；Valacyclovir、Famciclovir 需符合條件 — 例如發疹 3 日內且位於頭頸部或生殖器周圍（限 5 日內）、侵犯三叉神經第一分枝或薦椎 S2 皮節、免疫功能不全或癌症、器官移植病人）、止痛藥；Gabapentin、Pregabalin 用於帶狀疱疹後神經痛時，限其他止痛藥或 NSAIDs 控制不佳或有嚴重副作用者；Amitriptyline 等神經痛藥。Shingrix 疫苗不屬健保給付，多為自費接種（是否有公費或地方補助，請洽當地衛生局）。臺灣皮膚科醫學會 2022 帶狀疱疹疫苗接種建議
 TDA 在 2022 年發布《帶狀疱疹疫苗接種建議》，提供臺灣明確的接種策略。重點：
 台灣每年帶狀疱疹病例約 12 萬人，好發 50 歲以上及免疫低下族群
 50-79 歲：兩種疫苗皆核准，但優先建議非活性重組疫苗（Shingrix）。免疫抑制 / 缺陷者不建議活性疫苗
@@ -8388,7 +8217,7 @@ UpToDate: Treatment of herpes zoster in the immunocompetent host. Accessed 2026.
 ---
 ## 圓禿（鬼剃頭）完整衛教
 URL: https://chendermatologist.com/blog/alopecia-areata
-Updated: 2026-06-06
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT15M
 Tags: 圓禿, Alopecia areata
@@ -8554,9 +8383,9 @@ ALLEGRO 2b/3(n = 718)：24 週 SALT ≤ 20 達成率 31%(200/50 mg 組）、23%(
 上呼吸道感染、頭痛、痤瘡、CK 上升、HSV 復發
 頭痛、毛囊炎、痤瘡、腹瀉、URI
 
-價格（自費）
-每月約 NT$ 30,000-50,000
-每月約 NT$ 30,000-50,000
+健保給付
+圓禿未列入給付（§8.2.4.13 僅限 COVID-19）；自費
+給付規定查無相關條文；是否收載以健保署公告為準
 
 使用前必須篩檢：結核(IGRA / 胸部 X 光，3 個月內）、B / C 型肝炎、HIV、CBC（若 ALC<500、ANC<1000、Hb<8 不可使用或暫停）、肝腎功能、血脂。禁忌：活動性嚴重感染、孕婦、深部靜脈栓塞史或基因高風險、惡性腫瘤病史（個別評估）。
 ⚠ MHRA / FDA / EMA 安全警示（JAK inhibitor class warning，BAD 2025 R47 強調）基於 ORAL Surveillance（風濕性關節炎、tofacitinib vs TNFi）研究，FDA 已對所有口服 JAK 抑制劑加上「黑框警示（black box warning）」，英國 MHRA 與歐洲 EMA 也發出對等的安全建議。BAD 2025 living guideline 明確要求醫師在開立藥物前，應與病人充分討論下列風險訊號 （BAD 2025 R47, GPP）：
@@ -8580,7 +8409,6 @@ MACE（major adverse cardiovascular events，重大心血管事件—包括心�
 使用前的關鍵安全步驟：
 Azathioprine（AZA、硫唑嘌呤）：開始前必須檢測 TPMT（thiopurine methyltransferase，一種代謝酵素—檢測值低的人用 AZA 容易嚴重血球抑制）；中度活性者劑量減半，缺乏者禁用；劑量 1-3 mg/kg/day，前 8 週每 2 週 FBC + LFT、之後每 3 個月一次 (Meggitt 2011, BJD)。
 Methotrexate（MTX、滅殺除癌錠）：建議先給 5-7.5 mg test dose，再每週 7.5-25 mg；同時補充 folic acid ≥ 5 mg/週（避開 MTX 當天）；基線與每 1-3 個月查 FBC、LFT、U&E、Cr，注意肝纖維化（PIIINP / FibroScan / FIB-4）與罕見肺纖維化；懷孕為絕對禁忌，男性停藥 ≥ 3 個月、女性 ≥ 6 個月才可受孕；避免併用 NSAID、trimethoprim 與大量酒精 (Warren 2016, BJD)。
-Ciclosporin（環孢素）：2.5-5 mg/kg/day 分 2 次，建議短療程，最長 1-2 年，避免長期使用；初期每 2 週量血壓、每月驗 Cr / eGFR；藥物交互作用多（statins、macrolides、葡萄柚、抗黴菌藥、CCB），避免活性減毒疫苗 (Berth-Jones 2018, BJD)。
 
 [... truncated; fetch canonical URL for full text ...]
 
@@ -8689,7 +8517,7 @@ UpToDate: Mpox (Monkeypox) virus infection: Clinical manifestations and diagnosi
 ---
 ## 化膿性汗腺炎（HS）完整衛教
 URL: https://chendermatologist.com/blog/hidradenitis-suppurativa
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 化膿性汗腺炎, HS
@@ -8844,14 +8672,11 @@ Adalimumab（復邁 Humira）是 2015 年 FDA / TFDA 核准的第一個 HS 適�
 必要篩檢
 結核、B 肝、C 肝、HIV、CBC、肝功能
 
-價格
-自費每月約 NT$ 30,000-50,000
-
 健保
 目前健保未列入 HS 適應症（仿單為 ≥ 12 歲中重度 HS，但 NHI 給付清單並未涵蓋 HS 用於 Adalimumab）。HS 健保藥物已改為 Secukinumab（見下節）。Adalimumab 若用於 HS 須全自費。
 
 重點：Secukinumab（可善挺）— 目前 HS 唯一健保藥物
-自 2025/7/1 起，Secukinumab 是 HS 在台灣健保唯一給付的生物製劑（NHI ）。也是繼 Adalimumab 之後 FDA 第二款 HS 生物製劑（2023）。
+自 2025/7/1 起，Secukinumab 是 HS 在台灣健保唯一給付的生物製劑（§8.2.4.14）。也是繼 Adalimumab 之後 FDA 第二款 HS 生物製劑（2023）。
 項目
 內容
 
@@ -8865,7 +8690,7 @@ Adalimumab（復邁 Humira）是 2015 年 FDA / TFDA 核准的第一個 HS 適�
 以下三類至少使用過二類：① Tetracycline 500 mg BID／doxycycline 50–100 mg BID／minocycline 100 mg QD–BID；② Acitretin 0.5–0.9 mg/kg/day（育齡女性除外）；③ Clindamycin 300 mg BID + Rifampicin 300 mg BID 或 600 mg QD
 
 劑量
-每次 300 mg 皮下注射。誘導期：第 0、1、2、3、4 週每週一次；之後維持期每 4 週一次
+每次 300 mg 皮下注射。誘導期：第 0、1、2、3、4 週每週一次；之後維持期每 2 週一次（健保每次申請給付單次療程 30 支）
 
 必要篩檢
 結核（IGRA 或胸部 X 光，潛伏結核需治療 ≥ 4 週才能用藥）、B 肝、C 肝、HIV、CBC、肝腎功能
@@ -8874,7 +8699,7 @@ Adalimumab（復邁 Humira）是 2015 年 FDA / TFDA 核准的第一個 HS 適�
 懷孕／哺乳、活動性感染、未完整治療的結核、人工關節 + 嚴重敗血病史、惡性腫瘤或癌前病變、免疫不全
 
 自費
-若不符合健保條件，月費約 NT$ 35,000–45,000
+若不符合健保條件須自費，費用依醫療院所而定
 
 其他在 HS 有實證的生物製劑（目前皆需自費）：
 Adalimumab（復邁，anti-TNF-α）：2015 年 FDA 第一款 HS 生物製劑，仿單適應症與療效仍最完整，但 NHI 目前不給付 HS（見上節）
@@ -8916,23 +8741,19 @@ CO2 雷射消融
 心理支持:HS 對心理衝擊大，主動尋求心理治療或加入病友社群
 常見問題
 HS 健保有給付什麼？
-健保有給付：外用 Clindamycin、口服 Doxycycline / Lymecycline / Minocycline、口服 Acitretin、口服 Spironolactone（其他適應症）、複方口服避孕藥、切開引流手術。自 2025/7/1 起 Secukinumab（可善挺）依 NHI 有條件給付中重度 HS（需符合 PASS 條件）。Adalimumab 仿單有 HS 適應症但目前 NHI 未給付 HS。不給付:Adalimumab（HS 用途，仿單外仍可自費）、雷射除毛、廣泛切除手術重建。
+健保給付規定：口服 Doxycycline、Minocycline 列於健保第一線抗微生物製劑品名表（藥品給付規定附表一）；口服 Acitretin 依 §13.5 須檢具病患同意書與確定診斷病歷；外用 Clindamycin 健保有給付（依醫師處方）；口服 Lymecycline、口服 Spironolactone、複方口服避孕藥在藥品給付規定沒有額外限制條文，是否給付以醫師處方當下的健保收載品項為準。切開引流屬醫療服務給付項目（如 48007C 小膿瘍切開、51020C 切開排膿）。自 2025/7/1 起 Secukinumab（可善挺）依 NHI 有條件給付中重度 HS（需符合 PASS 條件）。Adalimumab 仿單有 HS 適應症但目前 NHI 未給付 HS。不給付:Adalimumab（HS 用途需全自費）、雷射除毛（不在醫療服務給付項目內，屬自費）。廣泛切除與重建手術的健保給付與否，請依醫療院所當下說明。
 HS 會不會自己好？要治多久？
 不會自然痊癒。慢性反覆發作，若不治療會逐漸惡化形成不可逆疤痕。即使治療達到改善，多數需要長期維持治療（數年到終身），類似乾癬或異膚的概念。
 HS 會傳染嗎？
 絕對不會。HS 是免疫與毛囊微環境失衡的自體發炎疾病，沒有病原體，不會經由皮膚接觸或共用物品傳染。
 HS 跟一般膿包（癤瘡）怎麼分？
-癤瘡是一次性細菌感染（通常金黃色葡萄球菌），抗生素治療 7-10 天會好。HS 是慢性反覆於相同部位（尤其腋下、鼠蹊、臀部），抗生素短期有效但停藥就復發，且常出現多個病灶 / 通道 / 黑頭粉刺（double-headed comedones,HS 特徵）。
-HS 可以開刀根治嗎？
-局部廣泛切除可解決該部位，但無法保證其他部位不再發。手術應視為「處理已存在不可逆破壞」，搭配生物製劑控制全身發炎才能長期穩定。
-HS 跟克隆氏症有關嗎？
 
 [... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 標靶藥物（TKI）皮膚副作用
 URL: https://chendermatologist.com/blog/targeted-therapy-skin
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 標靶藥物, Targeted therapy skin
@@ -9077,7 +8898,7 @@ TDA 2024 共識強調「主動預防」優於「被動處理」:
 標靶藥物的皮膚副作用會自己好嗎？停藥後多久消失？
 多數副作用停藥後 2-8 週內逐漸消失。痤瘡樣皮疹通常 2-4 週、甲溝炎 4-12 週、毛髮變化可能需數月。但不應為了「等它自己好」而中斷治療，主動處置可以讓你維持治療同時控制副作用。
 看皮膚科健保有給付嗎？
-有。標靶藥物皮膚副作用屬於癌症治療相關，皮膚科診察、檢查、外用藥（類固醇、抗生素藥膏）、口服藥（Doxycycline、抗組織胺、口服類固醇）健保都有給付。建議事先告知皮膚科醫師你正在使用哪一種標靶藥。
+一般而言有。標靶藥物皮膚副作用屬於癌症治療相關的疾病處置，皮膚科診察與依病情所需的檢查屬健保給付範圍；常用的外用藥（類固醇、抗生素藥膏）與口服藥（Doxycycline、抗組織胺、口服類固醇）在健保藥品給付規定中沒有額外限制條文，是否給付以醫師處方當下的健保收載品項為準。建議事先告知皮膚科醫師你正在使用哪一種標靶藥。
 我聽說 EGFR 痘痘可以擦類固醇，會不會更糟？
 EGFR 痤瘡樣皮疹本質是發炎反應（不是真正的痤瘡）類固醇藥膏可有效抑制發炎。短期使用（2-4 週）是 TDA 共識建議的方式，在皮膚科指示下不會「壞掉」。但要避免長期、大面積、過強類固醇。
 有沒有口服藥可以預防痤瘡樣皮疹？
@@ -9102,7 +8923,7 @@ UpToDate: Acneiform eruption secondary to epidermal growth factor receptor (EGFR
 ---
 ## 外用類固醇完整指南
 URL: https://chendermatologist.com/blog/topical-steroids-guide
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 外用類固醇, Topical steroids
@@ -9289,7 +9110,7 @@ Ruxolitinib 1.5%（Opzelura）
 JAK 抑制劑
 異膚、白斑 ≥ 12 歲
 很強，白斑首個專用藥
-自費高價
+自費（健保不給付）
 
 Roflumilast 0.3%（Zoryve）
 PDE-4 抑制劑
@@ -9334,11 +9155,11 @@ AhR 致效劑
 類固醇藥膏可以擦痘痘嗎？
 不建議常規使用。一般痘痘擦類固醇短期可消炎，但長期會誘發類固醇玫瑰斑、痤瘡樣皮疹、毛囊炎。例外是大顆囊腫型痘痘可由皮膚科醫師注射稀釋類固醇(intralesional triamcinolone),24 小時內顯著消腫。
 普特皮(Tacrolimus)和類固醇有什麼差？
-機轉不同：類固醇抑制核轉錄因子；Tacrolimus 抑制 T 細胞活化所需的 calcineurin。Tacrolimus不會造成皮膚萎縮、不會反彈、可長期使用、適合臉部與皺褶處。缺點：初次使用 5-10 天會有灼熱感、價格高（健保有給付異膚適應症）、避免日曬。
+機轉不同：類固醇抑制核轉錄因子；Tacrolimus 抑制 T 細胞活化所需的 calcineurin。Tacrolimus不會造成皮膚萎縮、不會反彈、可長期使用、適合臉部與皺褶處。缺點：初次使用 5-10 天會有灼熱感、價格高（健保限 2 歲以上、患部面積 > 30% 之中重度異位性皮膚炎第二線使用）、避免日曬。
 網路說 TCS withdrawal 很可怕，我該停類固醇嗎？
 不要因網路恐慌擅自停藥。TSW 是長期不當使用最強類固醇的後果，跟「依醫囑短期用適當強度」是兩回事。如果擔心，可與皮膚科醫師討論逐步降階到 TCI / Crisaborole 維持治療。
 結語
-類固醇藥膏是皮膚科最強、最廣、最安全的處方武器之一。安全使用三原則：
+類固醇藥膏是皮膚科強度選擇多、用途廣、安全性資料完整的處方武器之一。安全使用三原則：
 選對強度（部位 + 嚴重度）
 用對時機（急性期 1-2 次/天，改善後降階）
 合理時程（連續 ≤ 4 週，進入維持期改週末療法或 TCI）
@@ -9361,9 +9182,9 @@ Taiwan Dermatological Association. 異位性皮膚炎診療共識（2020 更新�
 ---
 ## 皮膚科生物製劑與小分子標靶藥物總覽
 URL: https://chendermatologist.com/blog/biologics-overview
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Treatment & Therapy
-Reading time: PT11M
+Reading time: PT12M
 Tags: 生物製劑, Biologics
 
 什麼是生物製劑？跟一般藥不同？
@@ -9399,7 +9220,7 @@ Dupilumab（杜避炎 Dupixent）
 皮下注射
 第 0 週 600 mg → 每 2 週 300 mg
 EASI-75 第 16 週約 51-69%(SOLO 1/2)；搔癢顯著改善 1-2 週
-健保有條件給付：≥ 12 歲、EASI ≥ 16 + BSA ≥ 30% + IGA 3–4、病灶 ≥ 6 個月、照光 + MTX/AZA/CsA 三種至少二種足量 ≥ 12 週失敗；16 週需達 EASI 50；6–12 歲適用 。自費單針約 NT$ 16,000-22,000
+健保有條件給付：≥ 12 歲、EASI ≥ 16 + BSA ≥ 30% + IGA 3–4、病灶 ≥ 6 個月、照光 + MTX/AZA/CsA 三種至少二種足量 ≥ 12 週失敗；16 週需達 EASI 50；6 歲以上未滿 12 歲另依兒童條件給付（外用藥與一種全身性治療無效、EASI ≧ 16 且 IGA ≧ 3）。
 
 Tralokinumab（Adbry / Adtralza）
 抗 IL-13
@@ -9407,15 +9228,15 @@ Tralokinumab（Adbry / Adtralza）
 皮下注射
 每 2 週 300 mg（維持期可改 4 週）
 EASI-75 第 16 週約 25-33%(ECZTRA-1/2)
-自費約 NT$ 18,000-24,000/月
+未列於健保異位性皮膚炎給付條文（§13.17），須自費
 
 Lebrikizumab（Ebglyss）
 抗 IL-13（中和 trap）
 ≥ 12 歲中重度異膚
 皮下注射
-第 0、2、4 週 500 mg → 每 4 週 250 mg
+第 0、2 週各 500 mg → 第 4 週起每 2 週 250 mg 至第 16 週 → 之後每 4 週 250 mg
 EASI-75 第 16 週約 51-59%(ADvocate-1/2)
-2024 上市，部分區域可申請
+健保自 115/6/1 起有條件給付（條件同 Dupilumab，另限 12 歲以上且體重 ≥ 40 公斤；16 週需達 EASI 50；使用 2 年後符合 EASI ≦ 16 者暫緩續用）；不得與 dupilumab、upadacitinib、abrocitinib 併用
 
 Upadacitinib（銳虎 Rinvoq）
 選擇性 JAK1 抑制劑
@@ -9423,7 +9244,7 @@ Upadacitinib（銳虎 Rinvoq）
 口服
 每天 15-30 mg
 EASI-75 第 16 週 60-80%(15-30 mg)(Measure Up 1/2)；起效快
-健保有條件給付（條件同 Dupilumab）。EASI 16–20 限每日 15 mg；≥ 18 歲且 EASI ≥ 20 才能用 30 mg。Upa 與 Abro 只能擇一，僅於無法耐受時可互換。自費月費約 NT$ 30,000–50,000
+健保有條件給付（條件同 Dupilumab）。EASI 16–20 限每日 15 mg；≥ 18 歲且 EASI ≥ 20 才能用 30 mg。Upa 與 Abro 只能擇一，僅於無法耐受時可互換。
 
 Abrocitinib（喜開憶 Cibinqo）
 選擇性 JAK1 抑制劑
@@ -9431,7 +9252,7 @@ Abrocitinib（喜開憶 Cibinqo）
 口服
 每天 100-200 mg
 EASI-75 第 12 週約 40-63%(JADE MONO-1/2)
-健保有條件給付（條件同 Dupilumab）。100 mg/day 或 200 mg/day 均可。Upa 與 Abro 只能擇一使用。自費月費約 NT$ 30,000–50,000
+健保有條件給付（條件同 Dupilumab）。100 mg/day 或 200 mg/day 均可。Upa 與 Abro 只能擇一使用。
 
 Baricitinib（愛滅炎 Olumiant）
 JAK1/2 抑制劑
@@ -9458,7 +9279,7 @@ VTE 高風險（深部靜脈血栓 / 肺栓塞史）禁用(class warning，源�
 給藥
 頻率
 預期療效
-自費（估）
+健保（乾癬）
 
 IL-17 抑制劑
 
@@ -9467,28 +9288,28 @@ Secukinumab（可善挺 Cosentyx）
 皮下
 第 0,1,2,3,4 週 → 每 4 週 300 mg
 PASI 90 第 16 週約 70-72%(ERASURE / FIXTURE)
-NT$ 35,000-45,000/月
+健保有條件給付（§8.2.4.6.1）
 
 Ixekizumab（達癬通 Taltz）
 抗 IL-17A
 皮下
 第 0 週 160 mg → 第 2-12 週每 2 週 80 mg → 每 4 週 80 mg
 PASI 90 第 12 週約 71%(UNCOVER);PASI 100 約 40%
-NT$ 35,000-45,000/月
+健保有條件給付（§8.2.4.6.1）
 
 Brodalumab（Siliq / Lumicef）
 抗 IL-17 受體 A
 皮下
 第 0,1,2 週 → 每 2 週 210 mg
 PASI 100 第 12 週約 37-44%(AMAGINE-2/3)
-NT$ 35,000-45,000/月
+健保有條件給付（§8.2.4.6.1）
 
 Bimekizumab（Bimzelx）
 抗 IL-17A + IL-17F 雙重
 皮下
 每 4 週（維持期可 8 週）320 mg
-PASI 100 第 16 週約 59-62%(BE READY / BE VIVID)；完全清除率最高
-NT$ 50,000+/月
+PASI 100 第 16 週約 59-62%(BE READY / BE VIVID)；試驗中完全清除比例較高
+健保有條件給付（§8.2.4.6.1）
 
 IL-23 抑制劑
 
@@ -9497,21 +9318,14 @@ Guselkumab（特諾雅 Tremfya）
 皮下
 第 0、4 週 → 每 8 週 100 mg
 PASI 90 第 24 週約 74-80%(VOYAGE-1/2)；長效
-NT$ 50,000-65,000/針（每 2 月）
+健保有條件給付（§8.2.4.6.1）
 
 Risankizumab（喜開麗 Skyrizi）
 抗 IL-23 p19
 皮下
 第 0、4 週 → 每 12 週 150 mg
 PASI 90 第 16 週約 75%(UltIMMa-1/2)；每 12 週 1 次
-NT$ 60,000-80,000/針（每 3 月）
-
-Tildrakizumab（Ilumya）
-抗 IL-23 p19
-皮下
-第 0、4 週 → 每 12 週 100 mg
-PASI 75 第 12 週約 64-74%(reSURFACE)
-類似
+健保有條件給付（§8.2.4.6.1）
 
 IL-12/23 抑制劑
 
@@ -9520,7 +9334,7 @@ Ustekinumab（喜達諾 Stelara）
 皮下
 第 0、4 週 → 每 12 週（體重決定劑量）
 PASI 75 第 12 週約 67%(PHOENIX-1)
-NT$ 50,000-65,000/針
+健保有條件給付（§8.2.4.6.1）
 
 TNF 抑制劑（較舊代）
 
@@ -9529,28 +9343,21 @@ Adalimumab（復邁 Humira）
 皮下
 第 0 週 80 mg → 每 2 週 40 mg
 PASI 75 第 16 週約 71%(REVEAL)；較新藥稍低
-NT$ 25,000-35,000/月（較便宜）
+健保有條件給付（§8.2.4.6.1）
 
 Etanercept（恩博 Enbrel）
 TNF 受體融合蛋白
 皮下
 每週 50 mg
 PASI 75 第 12 週約 47%(50 mg BIW)
-NT$ 25,000-35,000/月
-
-Infliximab（類克 Remicade）
-抗 TNF-α
-靜脈
-第 0、2、6 週 → 每 8 週（體重）
-PASI 75 第 10 週約 80%(EXPRESS)
-NT$ 30,000-40,000/次
+健保有條件給付（§8.2.4.6.1）
 
 Certolizumab（Cimzia）
 抗 TNF Fab' 片段
 皮下
 第 0、2、4 週 → 每 2 週
 PASI 75 第 16 週約 75-83%(CIMPASI-1/2)
-類似
+健保有條件給付（§8.2.4.6.1）
 
 口服小分子
 
@@ -9559,25 +9366,25 @@ PDE-4 抑制劑
 口服
 每天 30 mg BID
 PASI 75 第 16 週約 33%(ESTEEM-1/2)；較弱但口服方便
-NT$ 15,000-25,000/月
+健保有條件給付（§8.2.16）
 
 Deucravacitinib（Sotyktu）
 選擇性 TYK2 抑制劑
 口服
 每天 6 mg
 PASI 75 第 24 週約 69%；優於 Apremilast(POETYK PSO-1)
-NT$ 30,000-50,000/月
+健保有條件給付（§8.2.16）
 
-健保給付條件（乾癬）:PASI > 10 + DLQI > 10 + 至少 2 種傳統治療失敗。詳細看 乾癬 7 大迷思。
+健保給付條件（乾癬）:PASI ≧ 10（病灶持續 ≥ 6 個月）+ 足量照光治療 + 至少 2 種全身性治療（methotrexate、acitretin、cyclosporin、apremilast、deucravacitinib）使用 ≥ 3 個月無效，並需事前審查。詳細看 乾癬 7 大迷思。
 圓禿用藥
-健保備註：圓禿目前 NHI 未給付任何 JAK 抑制劑。Baricitinib 給付僅限 COVID-19、給付類風濕性關節炎；Ritlecitinib 亦未列入給付。下表所列為仿單適應症 + 自費價格。
+健保備註：圓禿目前 NHI 未給付任何 JAK 抑制劑。Baricitinib 給付僅限 COVID-19、給付類風濕性關節炎；Ritlecitinib 亦未列入給付。下表所列為仿單適應症。
 藥名
 機轉
 適應症
 給藥
 頻率
 預期療效
-自費
+健保
 
 Baricitinib（愛滅炎 Olumiant）
 JAK1/2 抑制劑
@@ -9585,7 +9392,7 @@ JAK1/2 抑制劑
 口服
 每天 4 mg
 SALT ≤ 20 第 36 週約 38-39%(BRAVE-AA1/2)
-NT$ 30,000-50,000/月
+圓禿未納入健保給付
 
 Ritlecitinib（麗扶柔 Litfulo）
 JAK3 / TEC 抑制劑
@@ -9593,7 +9400,7 @@ JAK3 / TEC 抑制劑
 口服
 每天 50 mg
 SALT ≤ 20 第 24 週約 23%、第 48 週約 40%(ALLEGRO)
-NT$ 30,000-50,000/月
+圓禿未納入健保給付
 
 詳細看 圓禿（鬼剃頭）完整衛教。
 慢性自發性蕁麻疹用藥
@@ -9609,7 +9416,7 @@ Omalizumab（樂無喘 Xolair）
 皮下
 每 4 週 150-300 mg
 UAS7 ≤ 6 第 12 週約 52-66%(ASTERIA-I/II)；完全控制 35-43%
-NHI 對 Omalizumab 的給付條文僅列「重度持續性氣喘」(12 歲以上或 6–12 歲)；CSU 適應症在 2025/4/23 公告版本中未列入給付，臨床上仍須以最新 NHIA 公告為準（部分院所亦以自費或專案申請使用）。自費約 NT$ 14,000-22,000/針
+NHI 對 Omalizumab 的給付條文僅列「重度持續性氣喘」(12 歲以上或 6–12 歲)；CSU 適應症在 115/9/22 公告版本中未列入給付，臨床上仍須以最新 NHIA 公告為準（部分院所亦以自費或專案申請使用）。
 
 Dupilumab（杜避炎 Dupixent）
 抗 IL-4Rα
@@ -9646,14 +9453,14 @@ Adalimumab（復邁 Humira）
 皮下
 第 0 週 160 mg → 第 2 週 80 mg → 之後每週40 mg
 HiSCR 第 12 週約 41-59%(PIONEER I/II)
-目前 NHI 未給付 HS（仿單仍有 HS 適應症，須自費）；自費月費 NT$ 30,000-50,000
+目前 NHI 未給付 HS（仿單仍有 HS 適應症，須自費）
 
 Secukinumab（可善挺 Cosentyx）
 抗 IL-17A
 皮下
 誘導 + 維持每 4 週
 HiSCR 第 16 週約 42-47%(SUNSHINE / SUNRISE)
-2023 FDA 核准 HS；NHI 自 2025/7/1 起健保有條件給付（Hurley 2–3、≥ 5 處發炎病灶、≥ 2 解剖區域、傳統治療 ≥ 3 個月未達 HiSCR 50）；不符合條件月費約 NT$ 35,000–45,000
+2023 FDA 核准 HS；NHI 自 2025/7/1 起健保有條件給付（Hurley 2–3、≥ 5 處發炎病灶、≥ 2 解剖區域、傳統治療 ≥ 3 個月未達 HiSCR 50）；不符合條件須自費
 
 Bimekizumab（Bimzelx）
 抗 IL-17A/F
@@ -9669,26 +9476,26 @@ HiSCR 第 16 週約 58%(BE HEARD I/II)
 劑型
 用法
 預期療效
-自費
+健保 / 自費
 
 Ruxolitinib 1.5%（Opzelura）
 JAK1/2 抑制劑
 外用乳霜
 每天 2 次，持續 ≥ 24 週
 F-VASI 75 第 24 週約 30%、第 52 週約 50%(TRuE-V1/V2)
-NT$ 4,000-6,000/條(60g)
+自費（健保不給付）；健保給付規定中的 ruxolitinib 為口服 Jakavi，不含外用乳霜
 
 詳細看 白斑（Vitiligo）完整衛教。
 健保 vs 自費
 2026 年台灣健保有條件給付的皮膚科生物製劑與小分子標靶藥（隨時更新）:
-乾癬：多項生物製劑與 Apremilast、Deucravacitinib（條件嚴格，需 PASI/DLQI/PASS）
+乾癬：多項生物製劑與 Apremilast、Deucravacitinib（條件嚴格，需先經照光與傳統全身性治療無效，並經事前審查）
 
 [... truncated; fetch canonical URL for full text ...]
 
 ---
 ## 美白成分完整解析
 URL: https://chendermatologist.com/blog/skin-whitening-agents
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Products & Drugs
 Reading time: PT8M
 Tags: 美白, Whitening agents
@@ -9743,7 +9550,7 @@ Fluocinolone 0.01%
 達到效果後改用非類固醇美白成分（如 Azelaic acid）維持
 嚴格防曬
 孕婦、哺乳禁用
-Studies show that 三合一比單獨使用 Hydroquinone 效果好(Taylor et al., Cutis 2003)。但「越濃越好」是錯的 — 自行配製超高濃度反而易反黑。
+研究顯示，三合一的改善比例高於單獨使用 Hydroquinone(Taylor et al., Cutis 2003)。但「越濃越好」是錯的 — 自行配製超高濃度反而易反黑。
 傳明酸（Tranexamic acid）— 外用 + 口服
 原本是抗纖溶止血藥（治月經量多、外科出血），近 10 年發現對肝斑有顯著效果，改變了肝斑治療版圖。
 劑型
@@ -9768,7 +9575,7 @@ Studies show that 三合一比單獨使用 Hydroquinone 效果好(Taylor et al.,
 懷孕、哺乳
 嚴重腎功能不全
 近期接受手術
-使用前需評估個人血栓風險。台灣自費約 NT$ 800-1,500/月。
+使用前需評估個人血栓風險。屬自費，費用依醫療院所而定。
 杜鵑花酸（Azelaic acid）
 項目
 內容
@@ -9792,9 +9599,9 @@ OTC 10%、處方 15-20%（Skinoren 雅若）
 可使用(Pregnancy Category B)
 
 台灣
-處方藥(Skinoren 15%/20%)，自費約 NT$ 600-900/條
+處方藥(Skinoren 15%/20%)；用於美白／肝斑時是否給付，請依醫師說明
 
-杜鵑花酸是孕婦 / 哺乳期幾乎唯一的美白選項，且可同時治痘 + 治玫瑰斑 + 美白，CP 值極高。系統性回顧顯示其療效與 Hydroquinone 4% 相當(Schulte BC et al., J Drugs Dermatol 2015)。
+杜鵑花酸是孕婦 / 哺乳期幾乎唯一的美白選項，且可同時治痘 + 治玫瑰斑 + 美白。系統性回顧顯示其療效與 Hydroquinone 4% 相當(Schulte BC et al., J Drugs Dermatol 2015)。
 維他命 C（Ascorbic acid）
 項目
 內容
@@ -9817,7 +9624,7 @@ L-ascorbic acid（左旋 C）10-20%是金標，但不穩定；衍生物如 MAP�
 選購重點
 避光不透明瓶身、配合維他命 E + 阿魏酸（SkinCeuticals CE Ferulic 為標竿）、pH < 3.5 才有效
 
-維他命 C 最強的不是「美白」，是「協同防曬抗氧化」。早上維他命 C + 防曬 = 最佳光防護組合。Studies show that 可以增強防曬光防護(Pinnell SR. Cutaneous photodamage, oxidative stress, and topical antioxidant protection. J Am Acad Dermatol 2003)。
+維他命 C 的主要作用不是「美白」，是「協同防曬抗氧化」。早上維他命 C + 防曬是常用的光防護組合。Studies show that 可以增強防曬光防護(Pinnell SR. Cutaneous photodamage, oxidative stress, and topical antioxidant protection. J Am Acad Dermatol 2003)。
 菸鹼醯胺（Niacinamide, Vitamin B3）
 項目
 內容
@@ -9840,7 +9647,7 @@ L-ascorbic acid（左旋 C）10-20%是金標，但不穩定；衍生物如 MAP�
 研究
 Hakozaki T et al. Br J Dermatol 2002:Niacinamide 5% vs 安慰劑，12 週後明顯改善色素
 
-菸鹼醯胺是性價比極高的萬用成分，溫和、有效、便宜、孕婦可用。建議每個人都可以加進保養程序。
+菸鹼醯胺是用途廣、耐受性佳的成分，溫和、有實證、孕婦可用。建議每個人都可以加進保養程序。
 A 酸 / A 醇（Retinoid）
 請參考完整 外用酸類完整衛教。重點：
 Tretinoin 0.025-0.1%：處方，加速角質代謝、抑制 tyrosinase、長期改善光老化
@@ -9986,7 +9793,7 @@ UpToDate: Melasma — Management. Accessed 2026.
 ---
 ## 防曬 8 大迷思
 URL: https://chendermatologist.com/blog/sunscreen-myths
-Updated: 2026-05-25
+Updated: 2026-10-15
 Section: Myths & Facts
 Reading time: PT6M
 Tags: 防曬, Sunscreen
@@ -10026,7 +9833,7 @@ UVA：造成曬黑、皺紋、肝斑、長期 DNA 損傷，能穿透一般玻璃
 「臉跟身體一支搞定省事又省錢。」原則上可以，但臉、身體、嘴唇、眼周、嬰幼兒最好分開。身體防曬：質地厚、量大、價格低，可大膽用。
 臉部防曬：質地清爽、不油膩、不致粉刺，常含 niacinamide / 抗氧化劑。
 嘴唇：選 SPF 護唇膏（無香料、無薄荷），嘴唇皮膚薄、紫外線易致老化與唇癌。
-眼周：刺激性低的物理防曬棒最好，避免化學防曬流入眼睛刺癢。
+眼周：建議選刺激性低的物理防曬棒，避免化學防曬流入眼睛刺癢。
 6 個月以下嬰兒：不建議使用防曬，以衣物 / 帽 / 撐傘為主；6 個月以上選嬰幼兒專用、純物理性、無香料防曬。
 結語 — 一句話記住
 每天擦、擦夠厚、規律補擦、SPF 30+ 廣譜防護。挑一支自己會持續擦的（質地舒服 + 預算 OK)，比追求最高 SPF 重要 100 倍。
@@ -10034,7 +9841,7 @@ UVA：造成曬黑、皺紋、肝斑、長期 DNA 損傷，能穿透一般玻璃
 
 常見問題（PTT / Dcard 上常被問的）
 Q防曬乳 PTT / Dcard 推薦的牌子如何挑？
-A網路討論度高的：安耐曬(Anessa)、理膚寶水(La Roche-Posay Anthelios)、怡麗絲爾、Heliocare 360、艾比安(Albion)、Neutrogena Ultra Sheer。挑選重點不是品牌：① 廣譜（SPF 30+ PA+++ 以上）② 含氧化鐵 iron oxide（防可見光，肝斑必備）③ 質地能規律補擦的。售價 NT$ 400-2000 都有實用品。Q防曬 SPF 50 跟 SPF 30 差很多嗎？
+A網路討論度高的：安耐曬(Anessa)、理膚寶水(La Roche-Posay Anthelios)、怡麗絲爾、Heliocare 360、艾比安(Albion)、Neutrogena Ultra Sheer。挑選重點不是品牌：① 廣譜（SPF 30+ PA+++ 以上）② 含氧化鐵 iron oxide（防可見光，肝斑必備）③ 質地能規律補擦的。不同價位都有實用的產品。Q防曬 SPF 50 跟 SPF 30 差很多嗎？
 ASPF 30 已擋掉 97% UVB,SPF 50 擋 98% — 邊際效益 1%。實際擦的厚度(2 mg/cm²)才是關鍵，多數人實際只擦 1/3 厚度，導致 SPF 50 變成「實質 SPF 17」。挑能規律擦、不油不悶、能補擦的 SPF 30+ 比追求 SPF 50+ 重要。Q物理性 vs 化學性防曬哪個好？
 A沒有絕對贏家。物理性(Zinc oxide、Titanium dioxide)穩定、敏感肌可用、孕婦較安心，但傳統質地較厚白。化學性(Octinoxate、Avobenzone、Octisalate、Tinosorb)質地較佳，但部分舊款成分(Oxybenzone、Octinoxate)有環境疑慮、極少數人接觸過敏。新款混合型(Tinosorb S/M、Mexoryl)質地與穩定性都好。Q防曬乳要不要卸妝？
 A純化學性防曬通常溫和洗面乳就能洗掉。物理性、含氧化鐵、防水抗汗款、有色防曬建議用潔顏油或卸妝乳輕柔卸除。指引：擦了之後皮膚摸起來「卡卡」、洗完還有殘留感，就需要卸妝。Q小孩、孕婦防曬怎麼挑？
@@ -10052,7 +9859,7 @@ UpToDate: Selection of sunscreen and sun-protective measures. 「來源」
 ---
 ## 肝斑 7 大迷思
 URL: https://chendermatologist.com/blog/melasma-myths
-Updated: 2026-05-25
+Updated: 2026-10-15
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 肝斑, Melasma
@@ -10123,7 +9930,7 @@ UVB
 
 有色物理 + 氧化鐵
 
-肝斑首選
+可阻擋可見光，適合肝斑
 
 BB / CC 霜
 視配方
@@ -10141,7 +9948,7 @@ BB / CC 霜
 迷思 7：懷孕的肝斑（妊娠斑）生完會自己消
 「醫生說我這個是妊娠斑，生完就會自己消。」部分會，部分不會。哺乳期結束後仍未消退就要積極治療。懷孕引起的肝斑(chloasma / 妊娠斑）約有 1/3 的人會在生產後 6-12 個月自然淡化；但 2/3 的人會殘留，且每次懷孕會更深更廣。
 哺乳期可用、孕期友善的選擇：
-杜鵑花酸 15-20%（FDA Cat B，孕哺期可）— 輕中度肝斑首選
+杜鵑花酸 15-20%（FDA Cat B，孕哺期可）— 孕哺期輕中度肝斑常用選擇之一
 外用菸鹼醯胺(Niacinamide)5-10% — 抗發炎、抑制 melanosome 轉移
 外用維他命 C(L-AA)10-20% — 抗氧化、淡化
 物理性 + 氧化鐵防曬 — 必須
@@ -10149,7 +9956,7 @@ BB / CC 霜
 肝斑治療階梯 — 4 個步驟（輕 → 重）
 溫和入門 · 居家保養每天：含氧化鐵 SPF30+ 防曬 + 杜鵑花酸 15% / 維他命 C 早 + 菸鹼醯胺 5%。預期 3 個月看到輕度改善。處方加碼 · 外用三合一三合一藥膏（氫醌 4% + tretinoin 0.05% + 弱效類固醇）限期 8-12 週，搭配防曬。完成後降為 maintenance（杜鵑花酸 / 傳明酸外用）。口服輔助 · 傳明酸口服 Tranexamic acid 250 mg 一天 2-3 次，療程 3-6 個月。禁忌：深部靜脈栓塞病史、口服避孕藥使用者、懷孕、抽煙嚴重者。需醫師評估。能量療程 · 雷射 / 脈衝光低能量釹雅鉻雷射、皮秒雷射或 IPL，每 2-4 週 1 次共 6-10 次。必須同時搭外用 + 防曬，否則打完反而反黑。屬於輔助而非主力。每日居家保養 SOP
 早 / 晚 兩階段早上溫和洗臉 → 維他命 C 10-20%（精華）→ 菸鹼醯胺 5%（乳液）→ 含氧化鐵 SPF 30+ PA+++ 防曬（務必擦夠厚）→ 出門前 15 分鐘擦完晚上溫和洗臉 → 三合一藥膏（限期）或杜鵑花酸 / 傳明酸外用（維持期） → 神經醯胺保濕乳 → 入睡每週 1-2 次溫和果酸/杏仁酸 5-10%（夜間）加速代謝。痘痘肌可改成水楊酸 1-2%。結語 — 一句話記住
-肝斑是慢性疾病，治療要靠「防曬 + 藥膏 + 必要時口服 + 雷射輔助」四管齊下，單靠任何一項都不夠。耐心 6-12 個月，絕大多數人都能看到顯著改善，但需要長期維持。
+肝斑是慢性疾病，治療要靠「防曬 + 藥膏 + 必要時口服 + 雷射輔助」四管齊下，單靠任何一項都不夠。耐心 6-12 個月，多數人可看到明顯淡化，但需要長期維持，個別效果因人而異。
 延伸閱讀：防曬怎麼挑看 防曬 8 大迷思；杜鵑花酸 / 傳明酸 / 維他命 C 的塗抹技巧看 外用酸類完整衛教；發炎引起的色素沉澱（痘印）看 痘痘 8 大迷思。
 
 常見問題（PTT / Dcard 上常被問的）
@@ -10158,7 +9965,7 @@ APTT/Dcard 高討論的：三合一藥膏(Tri-Luma)需處方、限期 8-12 週�
 A肝斑是慢性疾病無法根治，可控制不可斷根。完整治療 6-12 個月可顯著淡化（改善 50-70%），停藥反黑、停止防曬就回來。要把它當「血壓糖尿病」 — 終身管理。Q懷孕生完肝斑會自己消嗎？
 A部分產後肝斑會在 6-12 個月內自然淡化（若哺乳結束、停止口服避孕藥）。但已存在多年的肝斑、有家族史的、停經期再起的，通常不會自然消退。哺乳期可使用「物理性防曬+杜鵑花酸」溫和方案，生完哺乳結束再考慮三合一藥膏或雷射。Q男生會不會有肝斑？
 A會。男性肝斑約占 10-20%，亞洲（尤其印度、東南亞）男性比例更高。臨床表現相同，治療相同。男性肝斑常被誤認為曬斑而錯誤雷射造成反黑加重。Q肝斑健保有給付嗎？
-A健保不給付肝斑治療（屬於美容範疇）。三合一藥膏屬處方藥需自費（NT$ 600-1500/條）、傳明酸口服自費（月費 NT$ 800-1500）、雷射 toning 自費（單次 NT$ 4,000-12,000）。少數合併嚴重接觸性皮膚炎可能用健保藥處理發炎。參考資料
+A肝斑雷射 toning 以改善外觀為目的，屬自費項目，健保不給付。三合一藥膏（如 Tri-Luma）在健保藥品給付規定中沒有相關條文，是否為健保收載品項以處方當下為準；口服傳明酸用於肝斑屬仿單適應症以外的使用，而健保處方原則上須符合藥品許可證登載之適應症（藥品給付規定通則七），是否給付請依醫師說明。自費費用依醫療院所而定。少數合併嚴重接觸性皮膚炎可能用健保藥處理發炎。參考資料
 Sarkar R, et al. Melasma update. Indian J Dermatol. 2014;59(5):488. 「來源」
 Kang HY, et al. Tranexamic acid in melasma: systematic review. Br J Dermatol. 2017;177(4):1030-1041. 「來源」
 Bala HR, et al. Oral tranexamic acid for the treatment of melasma: a review.Dermatol Surg. 2018;44(6):814-825. 「來源」
@@ -10172,7 +9979,7 @@ UpToDate: Melasma: Management. Accessed 2026.
 ---
 ## 玫瑰痤瘡 6 大迷思
 URL: https://chendermatologist.com/blog/rosacea-myths
-Updated: 2026-08-01
+Updated: 2026-10-15
 Section: Myths & Facts
 Reading time: PT17M
 Tags: 酒糟肌, Rosacea
@@ -10275,8 +10082,8 @@ Brimonidine 0.33% gel（R11 ↑、德國 S2k ↑↑）、Oxymetazoline 1% cream�
 血管雷射 PDL / KTP / IPL × 6-10 次，可改善毛細血管擴張
 
 丘疹膿皰型（PPR）
-BAD 2021 R9（↑↑ 強推薦）將以下三者並列為外用第一線、彼此地位相同：Ivermectin 1% cream qd、Metronidazole 0.75% bid、Azelaic acid 15% gel bid；另可考慮 Minocycline 1.5% foam（R10 ↑，台灣未上市）(Hampton 2021, BJD)。健保替代：Permethrin 5% 每週 2-3 次（疥瘡適應症給付，殺蟎為主、抗發炎弱、效果不如 Ivermectin）。
-口服首選為亞抗生素劑量 Doxycycline 40 mg modified-release qd（R13 ↑↑）或 Doxycycline 100 mg qd；Schaller 2020 RCT：Ivermectin 1% + Doxycycline 40 mg/day對重度個案最有效（12 週）；頑固個案考慮間歇低劑量口服 Isotretinoin（R15 ↑）；對 doxycycline 不耐者可改 Azithromycin 或 Clarithromycin（TDA 2022）。
+BAD 2021 R9（↑↑ 強推薦）將以下三者並列為外用第一線、彼此地位相同：Ivermectin 1% cream qd、Metronidazole 0.75% bid、Azelaic acid 15% gel bid；另可考慮 Minocycline 1.5% foam（R10 ↑，台灣未上市）(Hampton 2021, BJD)。另一選項：Permethrin 5% 每週 2-3 次（殺蟎為主、抗發炎弱、效果不如 Ivermectin；健保 §13.15 只規定處方量與再處方間隔，未限定適應症）。
+口服首選為亞抗生素劑量 Doxycycline 40 mg modified-release qd（R13 ↑↑）或 Doxycycline 100 mg qd；Schaller 2020 RCT：Ivermectin 1% + Doxycycline 40 mg/day用於重度個案（12 週）；頑固個案考慮間歇低劑量口服 Isotretinoin（R15 ↑）；對 doxycycline 不耐者可改 Azithromycin 或 Clarithromycin（TDA 2022）。
 
 頑固性蟎蟲性玫瑰斑（demodicosis）
 外用 Ivermectin 1% qd 加強療程；或外用 Permethrin 5%
@@ -10295,7 +10102,7 @@ BAD 2021 R19-R23（↑↑）：避開誘發因子、溫熱敷眼瞼、眼瞼清�
 口服 Doxycycline 40 mg + R23（↑↑）轉介眼科；頑固型考慮 Cyclosporine 眼藥水
 
 主要藥物速查
-外用 Ivermectin 1%（舒立美 Soolantra）機轉：同時抗發炎（下調 IL-1β、TLR2）+ 抗 Demodex；以抗發炎為主。用法：每天 1 次睡前薄擦於整臉，持續 3-4 個月。效果：2 週開始見效；兩個第三期 RCT（n=1,371）發炎丘疹減少 75-76%（對照組 50%, p < 0.001）。副作用：輕度刺激、皮膚乾（初期）。健保：玫瑰斑適應症未給付。NHI 對 ivermectin（Stromectol 口服）的給付限「鏡檢呈陽性確診疥瘡」，未涵蓋玫瑰斑或 demodicosis；外用 1% 乳膏（Soolantra 舒立美）全自費，月費約 NT$ 1,800–2,500/30 g。
+外用 Ivermectin 1%（舒立美 Soolantra）機轉：同時抗發炎（下調 IL-1β、TLR2）+ 抗 Demodex；以抗發炎為主。用法：每天 1 次睡前薄擦於整臉，持續 3-4 個月。效果：2 週開始見效；兩個第三期 RCT（n=1,371）發炎丘疹減少 75-76%（對照組 50%, p < 0.001）。副作用：輕度刺激、皮膚乾（初期）。健保：玫瑰斑適應症未給付。NHI 對 ivermectin（Stromectol 口服）的給付限「鏡檢呈陽性確診疥瘡」，未涵蓋玫瑰斑或 demodicosis；外用 1% 乳膏（Soolantra 舒立美）為自費（健保不給付）。
 Schaller 2020 重度玫瑰斑組合療法：外用 Ivermectin 1% qd ＋ 口服亞抗生素劑量 Doxycycline 40 mg modified-release qd，持續 12 週，優於單獨使用任一藥物；特別適合中重度丘疹膿皰且合併毛細血管擴張或潮紅的個案。亞抗生素劑量 Doxycycline 純抗發炎，不易產生抗藥性。6 大民眾迷思澄清
 迷思 1：酒糟皮膚就是「喝酒喝太多」
 「酒糟肌就是常喝酒臉紅留下來的吧？」名字誤導。玫瑰痤瘡跟「喝酒」沒有因果關係，酒精只是常見的「誘發因素」之一；連臺灣皮膚科醫學會 2022 共識都把名稱正名為「玫瑰斑」。真正的成因如前一節所述為多重交互作用（神經血管異常 + 先天免疫過度 + 屏障失調 + 微生物失衡 + 遺傳）。從不喝酒的人也會得，酒只是誘因之一。
@@ -10312,9 +10119,9 @@ Schaller 2020 重度玫瑰斑組合療法：外用 Ivermectin 1% qd ＋ 口服�
 ---
 ## 落髮 / 雄性禿 7 大迷思
 URL: https://chendermatologist.com/blog/hairloss-myths
-Updated: 2026-06-06
+Updated: 2026-10-15
 Section: Myths & Facts
-Reading time: PT8M
+Reading time: PT9M
 Tags: 落髮, Hair loss
 
 迷思 1：每天掉一點頭髮就是要禿了
@@ -10364,7 +10171,7 @@ Tags: 落髮, Hair loss
 外用 5% Minoxidil建議每日 2 次以達最佳效果（男女相同）；泡沫(TMF)無 propylene glycol，適合對 PG 過敏者（部分頭皮癢病人改 TMF 即可緩解）
 blow-dry：外用 minoxidil 後若立即吹頭髮、會減少 ~50% 吸收 → 至少間隔 2-4 小時
 迷思 6：圓禿（鬼剃頭）是壓力造成的
-「我朋友說圓禿是因為最近壓力大，休息一陣子就好了。」圓禿是自體免疫疾病，壓力可能誘發，但不是根本原因。需要主動治療，且現在有非常有效的新藥。圓禿(Alopecia areata)的特徵：
+「我朋友說圓禿是因為最近壓力大，休息一陣子就好了。」圓禿是自體免疫疾病，壓力可能誘發，但不是根本原因。需要主動治療；重度患者現在也有新的口服標靶藥物（JAK 抑制劑）可與醫師討論。圓禿(Alopecia areata)的特徵：
 突然出現圓形 / 橢圓形的禿斑，邊界清楚
 頭皮看起來正常，不紅、不痛、不癢（這是它跟發炎性禿髮的差別）
 可能伴隨指甲點狀凹陷
@@ -10372,7 +10179,7 @@ blow-dry：外用 minoxidil 後若立即吹頭髮、會減少 ~50% 吸收 → �
 近年治療突破：JAK inhibitor 革命
 Baricitinib(Olumiant)：首個 FDA 核准治療嚴重圓禿的口服藥(2022)
 Ritlecitinib(Litfulo)：第二個 FDA 核准(2023),12 歲以上可用
-外用 Ruxolitinib cream：輕中度圓禿可考慮
+外用 Ruxolitinib cream：輕中度圓禿可考慮（台灣已上市、自費，健保不給付）
 傳統治療：局部類固醇注射、外用類固醇、外用免疫療法(DPCP)— 對輕度仍有效
 迷思 7：植髮一次就解決，跟原生一樣
 「我直接植髮，以後就不用煩惱了。」植髮的是原本髮量的「重新分布」，不會增加總量。沒同時用藥，後面照樣繼續禿。植髮重要觀念：
@@ -10380,7 +10187,7 @@ Ritlecitinib(Litfulo)：第二個 FDA 核准(2023),12 歲以上可用
 植髮不會阻止前面其他原生髮繼續細化、脫落 → 沒同時用 Minoxidil / Finasteride 維持，2-5 年內後面又禿
 FUE（毛囊單位摘取）：不留條狀疤，恢復快，目前主流
 FUT（條狀切除）：傳統方式，後腦會有條狀疤，但單次移植數較多
-費用：依毛囊數計算，通常台灣 NT$ 60-150 元/根毛囊；一般雄性禿移植 1500-3000 根 ≈ NT$ 15-30 萬
+費用：屬自費項目，健保不給付，費用依移植毛囊數與醫療院所而定；一般雄性禿移植約 1500-3000 根毛囊
 落髮治療階梯
 類型
 第一線
@@ -10415,16 +10222,16 @@ Minoxidil 5% 加速恢復
 Minoxidil 輔助
 
 結語 — 開始治療永遠不嫌早
-落髮治療的鐵律：越早開始越好。已經完全脫落的毛囊不可逆，但還在「細化中」的毛囊救得回來。看到自己頭頂有變化、家族有禿頭史，別等到「禿一半」才動 — 那時保住現有的都不容易。
+落髮治療的鐵律：越早開始越好。已經完全脫落的毛囊不可逆，但還在「細化中」的毛囊仍有機會改善。看到自己頭頂有變化、家族有禿頭史，別等到「禿一半」才動 — 那時保住現有的都不容易。
 延伸閱讀： 正在打 / 考慮打瘦瘦針（semaglutide、tirzepatide），擔心掉頭髮嗎？2026 兩篇 TriNetX 大型研究的雙向解答看 打瘦瘦針會掉頭髮嗎？ ；圓禿（鬼剃頭）完整治療看 圓禿完整衛教 ；頭皮毛囊發炎引起的痘痘看 痘痘 8 大迷思 ；對保養品（尤其酸類）的選擇看 外用酸類完整衛教。；另見 Spironolactone 在皮膚科的安全性
 
 常見問題（PTT / Dcard 上常被問的）
 Q落髮 PTT 推薦的洗髮精有用嗎？
-A網路高討論度：Nizoral(Ketoconazole 2%)、Revita、L'Oréal Anti-thinning。Nizoral 對合併脂漏性皮膚炎的雄性禿有輔助效果（每週 2-3 次替換），純洗髮精無法治雄性禿。真正有效的是外用 Minoxidil 5% 每天 1-2 次 + 口服 Finasteride 1 mg。Q雄性禿吃 Finasteride 副作用很可怕嗎？
+A網路高討論度：Nizoral(Ketoconazole 2%)、Revita、L'Oréal Anti-thinning。Nizoral 對合併脂漏性皮膚炎的雄性禿有輔助效果（每週 2-3 次替換），純洗髮精無法治雄性禿。實證較充分的是外用 Minoxidil 5% 每天 1-2 次 + 口服 Finasteride 1 mg。Q雄性禿吃 Finasteride 副作用很可怕嗎？
 A多數副作用很輕微。性慾下降、勃起功能影響約 1-2%，停藥可逆。「Finasteride 後症候群」(PFS)很罕見，多數案例為持續心理因素或共病。10 年以上長期數據顯示安全。「降低 PSA 干擾攝護腺癌篩檢」實際把測得 PSA 乘 2 即可校正。Q雄性禿多久看得到效果？
 AMinoxidil 開始 4-8 週可能初期掉髮加速（休止期髮被推出去），這是正常的。3-6 個月開始看到變化、6-12 個月達到最大效果。Finasteride 效果類似節奏。要堅持 6 個月才評估。Q植髮一次解決嗎？健保有嗎？
-A健保不給付植髮（屬美容）。FUE/FUT 自費 NT$ 100,000-300,000（依株數）。植髮只「移植」原有毛囊，沒治療雄性禿源頭，沒搭配 Finasteride 會繼續禿掉旁邊未植區。建議植髮前先吃 6 個月 Finasteride 穩定再評估。Q圓禿（鬼剃頭）會不會自己好？健保有給付什麼？
-A輕度(<25%)約 50% 在 1 年內自然恢復。重度或全頭(alopecia totalis)很難自然恢復。健保：局部類固醇注射（門診每 4-6 週一次）、外用類固醇、Anthralin。自費 / 健保有條件：JAK inhibitor 口服(Baricitinib、Ritlecitinib)— 重度圓禿新藥，效果好但需符合條件。參考資料
+A健保不給付植髮（屬美容）。FUE/FUT 屬自費，費用依移植株數與醫療院所而定。植髮只「移植」原有毛囊，沒治療雄性禿源頭，沒搭配 Finasteride 會繼續禿掉旁邊未植區。建議植髮前先吃 6 個月 Finasteride 穩定再評估。Q圓禿（鬼剃頭）會不會自己好？健保有給付什麼？
+A輕度(<25%)約 50% 在 1 年內自然恢復。重度或全頭(alopecia totalis)很難自然恢復。健保：局部類固醇注射屬醫療服務給付項目（51009C–51011C 皮膚病灶內部注射，適應症明列圓禿），門診約每 4-6 週一次；外用類固醇在健保藥品給付規定中沒有額外限制條文，是否給付以醫師處方當下的健保收載品項為準；Anthralin 是否有健保品項，請依醫療院所當下說明。自費：JAK inhibitor 口服(Baricitinib、Ritlecitinib)— 重度圓禿新藥，需由皮膚科醫師評估；健保藥品給付規定（115/9/22 版）未列圓禿的給付條件（baricitinib 僅列於類風濕性關節炎與 COVID-19）。參考資料
 Olsen EA, et al. Summation and recommendations for the safe and effective use of topical and oral minoxidil.J Am Acad Dermatol. 2025;93(2):457-465. 「來源」
 Rudnicka L, et al. European expert consensus statement on the systemic treatment of alopecia areata.J Eur Acad Dermatol Venereol. 2024;38(4):687-694. 「來源」
 Mysore V, Shashikumar BM. Guidelines on the use of finasteride in androgenetic alopecia. Indian J Dermatol Venereol Leprol. 2016;82(2):128-134. 「來源」
@@ -10436,7 +10243,7 @@ Taiwan Dermatological Association. 圓禿診斷及治療共識. 2024.
 ---
 ## 香港腳 / 灰指甲 7 大迷思
 URL: https://chendermatologist.com/blog/tinea-myths
-Updated: 2026-05-16
+Updated: 2026-10-15
 Section: Myths & Facts
 Reading time: PT9M
 Tags: 足癬, Tinea
@@ -10566,11 +10373,11 @@ Efinaconazole 油劑 / Amorolfine 油劑 48 週
 
 常見問題（PTT / Dcard 上常被問的）
 Q香港腳 PTT 推薦的藥膏哪個有效？
-A有實證的處方/OTC 抗黴菌藥膏:Lamisil(Terbinafine 1%)、Lotrimin(Clotrimazole 1%)、Loceryl(Amorolfine)、Mentax(Butenafine)。Terbinafine 是最強的，2-4 週可見效。網路推薦的「天然茶樹精油、白醋泡腳」效果有限且易刺激。重點：擦藥要連續 2-4 週，症狀消失後再多擦 1 週避免復發。Q灰指甲多久會好？
+A有實證的處方/OTC 抗黴菌藥膏:Lamisil(Terbinafine 1%)、Lotrimin(Clotrimazole 1%)、Loceryl(Amorolfine)、Mentax(Butenafine)。Terbinafine 是常用選擇之一，2-4 週可見效。網路推薦的「天然茶樹精油、白醋泡腳」效果有限且易刺激。重點：擦藥要連續 2-4 週，症狀消失後再多擦 1 週避免復發。Q灰指甲多久會好？
 A口服 Terbinafine 250 mg/天：足甲 6 週、趾甲 12 週療程，新指甲長出來看到變化要 6-9 個月（指甲生長慢）。外用藥（Efinaconazole、Tavaborole 油劑、Loceryl 指甲油）效果較弱，需要 48 週每天擦。中重度建議口服 + 外用合併。Q口服抗黴菌藥真的會傷肝嗎？
 A嚴重肝毒性 < 0.5%。多數人安全。建議治療前抽血基本(GOT/GPT、Cr)，療程中第 4-6 週追蹤一次。輕度肝指數上升常為暫時性。Itraconazole對心臟衰竭、抗凝血藥、降血壓藥較多交互作用，優先選 Terbinafine。Q寵物會傳黴菌給人嗎？
 A會。最常見是Microsporum canis（犬小芽胞菌）從貓狗（尤其幼貓）傳給小孩，造成體癬或頭癬。處理：寵物看獸醫治療 + 家裡環境清潔（吸塵、毛巾換洗）+ 自己抗黴菌藥膏。Q灰指甲健保給付什麼？
-A健保：口服 Terbinafine、Itraconazole 都有條件給付（需確診+真菌培養或 KOH 陽性）。外用 Amorolfine（羅每樂）健保也有，但效果較弱。自費：Efinaconazole、雷射（Nd:YAG 灰指甲雷射）。健保藥已涵蓋多數需求，自費主要是怕口服肝毒性的特殊族群。參考資料
+A健保：口服 Terbinafine、Itraconazole 都有條件給付（限甲癬，有顆數與療程上限：Terbinafine 手指甲 8 週、腳趾甲 16 週內用完；Itraconazole 手指甲 9 週、腳趾甲 17 週內用完；療程結束後手指甲 6 個月、腳趾甲 12 個月內不得再用同類口服藥）。外用 Amorolfine（羅每樂）：處方藥許可證品項健保限用於甲癬、每年限 1 瓶 5 mL，許可證為指示用藥者不給付（§13.12）；單獨外用的治癒率通常低於口服藥。灰指甲雷射（Nd:YAG）不在醫療服務給付項目內，屬自費；外用 Efinaconazole 在藥品給付規定中沒有條文，是否給付以處方當下健保收載品項為準。健保藥已涵蓋多數需求，自費主要是怕口服肝毒性的特殊族群。參考資料
 Ameen M, et al. British Association of Dermatologists' guidelines for the management of onychomycosis 2014.Br J Dermatol. 2014;171(5):937-958. 「來源」
 Crawford F, Hollis S. Topical treatments for fungal infections of the skin and nails of the foot. Cochrane Database Syst Rev. 2007;(3):CD001434. 「來源」
 Gupta AK, et al. Treatments for onychomycosis. Cochrane Database Syst Rev. 2017;7(7):CD012093. 「來源」
@@ -10583,9 +10390,9 @@ UpToDate: Onychomycosis: Management. Accessed 2026. 「來源」
 ---
 ## 異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思
 URL: https://chendermatologist.com/blog/atopic-dermatitis-overview
-Updated: 2026-09-06
+Updated: 2026-10-15
 Section: Treatment & Therapy
-Reading time: PT32M
+Reading time: PT33M
 Tags: 異位性皮膚炎, AD complete guide
 
 首頁 · 衛教文章 · 異位性皮膚炎完整指引
@@ -10730,7 +10537,7 @@ POEM
 DLQI + 癢 NRS
 生活影響 / 癢 0-10
 DLQI 0-30、癢 NRS 0-10
-DLQI > 10 為健保生物製劑門檻；癢 NRS 為主訴指標
+健保異位性皮膚炎生物製劑條件不含 DLQI（看 EASI、BSA、IGA）；癢 NRS 為主訴指標
 DLQI 不分疾病、異位性皮膚炎特異性差
 
 量表說明與計算器：EASI · SCORAD · DLQI · POEM

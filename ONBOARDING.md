@@ -60,16 +60,17 @@ Vercel 建置前後須驗證候選及即時作者意圖，定時草稿流程準�
 
 ### 5.1 來源檔
 
-- **完整**：衛福部中央健康保險署「全民健康保險藥品給付規定」114/4/23（2025-04-23）公告版本
-- **完整 docx**（6 MB）：`C:\Users\User\Downloads\完整給付規定1150423.docx`，**不放進 repo**
-- **皮膚科萃取**：`data/nhi/derm_2025-04-23.md`（170 KB，§6.2.6 + §8.2.4.x + §13.x）
+- **完整**：衛福部中央健康保險署「全民健康保險藥品給付規定」**115/9/22** 更新版（PDF 424 頁）；前一版 115/4/23
+- **完整 PDF**：`個人網頁/健保完整給付規定1150922.pdf`（repo 外，**不放進 repo**）；舊版 docx `完整給付規定1150423.docx`
+- **皮膚科萃取（現行）**：`data/nhi/derm_2026-09-22.md`（§6.2.6 + §8.1.3 + §8.2.4.x + §9.20 + §9.32.x + §9.56 + §9.69 + §9.134 + §9.139 + §13.x）
+- **前一版萃取**：`data/nhi/derm_2025-04-23.md`（檔頭寫 114/4/23，實為 115/4/23 版；保留供比對）
 - **memory 速查**：`~/.claude/projects/.../memory/dermnotes_nhi_reference.md`
 
 ### 5.2 6 個最常被寫錯的健保事實（一定要知道）
 
 1. **Dupilumab/Upa/Abro AD**：須 **MTX/AZA/CsA 二種**免疫抑制劑 ≥ 12 週失敗（不是「至少一種」）+ 照光每週 ≥ 2 次達 12 週
 2. **Upa 與 Abro 擇一**：兩者不能併用、不能換來換去，僅於無法耐受時可互換
-3. **AD vs 乾癬暫緩**：AD 生物製劑 1 年、乾癬生物製劑 **2 年**；AD JAK 從 114/6/1 起改為 2 年
+3. **AD vs 乾癬暫緩**：AD 的 **dupilumab 1 年**；abrocitinib、upadacitinib、**lebrikizumab 2 年**（§13.17.1，115/6/1 起）；乾癬生物製劑 **2 年**
 4. **HS 健保藥**：目前是 **Secukinumab §8.2.4.14**（2025/7/1 起），**不是 Adalimumab**（已不在 NHI HS 清單）
 5. **Baricitinib NHI 範圍**：僅 §8.2.4.13 COVID-19 + §8.2.4.2 RA，**圓禿全自費**
 6. **乾癬「PASI 10/10/10 三 10 標準」**：DLQI ≥ 10 是 BAD/AAD 臨床口訣、**非健保條文**。健保 §8.2.4.6.1 只要求 PASI ≥ 10
@@ -83,13 +84,16 @@ Vercel 建置前後須驗證候選及即時作者意圖，定時草稿流程準�
 | §8.2.4.11 | Guselkumab | 掌蹠膿皰症 |
 | §8.2.4.13 | Baricitinib | COVID-19 only |
 | §8.2.4.14 | Secukinumab | HS（114/7/1 起）|
-| §9.55 | Ruxolitinib 口服 | 骨髓纖維化（**不含**白斑、AD）|
+| §8.2.4.4 | 乾癬性關節炎生物製劑 | 115/8/1 起：已核准使用 apremilast 者，apremilast 可視同 DMARDs 第一線藥物 |
+| §9.55 | Ruxolitinib 口服 | 骨髓纖維化、急性移植物抗宿主疾病（**不含**白斑、AD）|
+| §9.56 | Brentuximab vedotin | 含 CD30+ 皮膚 T 細胞淋巴瘤等（見原文）|
+| §9.139 | Mogamulizumab | 蕈狀肉芽腫／Sézary 症候群（115/10/1 新增）|
 | §13.4 | Isotretinoin 口服 | 嚴重痤瘡 |
 | §13.10 | Tacrolimus 0.03/0.1% | 中重度 AD 第二線 |
 | §13.11 | Pimecrolimus 1% | 中重度 AD 第二線 |
 | §13.15 | Permethrin 5% | 疥瘡 |
 | §13.16 | Ivermectin 口服 | 鏡檢確診疥瘡（長照住民免鏡檢）|
-| §13.17.1 | Dupilumab/Upa/Abro | ≥ 12 歲中重度 AD |
+| §13.17.1 | Dupilumab/Upa/Abro/**Lebrikizumab** | ≥ 12 歲中重度 AD（lebrikizumab 115/6/1 起，體重 ≥ 40 kg）|
 | §13.17.2 | Dupilumab | 6–12 歲 AD（條件較寬）|
 
 ### 5.4 已校對 19 篇文章的紀錄

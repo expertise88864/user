@@ -111,7 +111,6 @@
     { "zh": "合併症受惠", "en": "Comorbidity benefit", "tag": "td" },
     { "zh": "同時改善異膚、氣喘、CRSwNP、嗜酸性食道炎(若有)", "en": "Concurrent improvement in atopic dermatitis, asthma, CRSwNP, and eosinophilic esophagitis (if present)", "tag": "td" },
     { "zh": "台灣健保(2026)", "en": "Taiwan NHI (2026)", "tag": "td" },
-    { "zh": "PN 適應症需自費(每針約 NT$ 16,000-20,000);AD 給付條件可申請", "en": "PN indication is out-of-pocket (approx NT$ 16,000–20,000 per dose); AD reimbursement may apply if criteria met", "tag": "td" },
     { "zh": "適應症(FDA 2024-08-13 核准)", "en": "Indication (FDA approved 2024-08-13)", "tag": "td" },
     { "zh": "商品名", "en": "Brand name", "tag": "td" },
     { "zh": "16 週療效(OLYMPIA 2)", "en": "16-week efficacy (OLYMPIA 2)", "tag": "td" },

@@ -48,6 +48,8 @@ SIMPLIFIED = {
     # Found 2026-10 in the board-exam source files (data/exam/questions.json).
     "红": "紅",
     "脱": "脫",
+    # Found 2026-10 in cutaneous-t-cell-lymphoma (副银屑癬).
+    "银": "銀",
 }
 
 SKIP_DIRS = {".git", "node_modules", "__pycache__", "pagefind"}

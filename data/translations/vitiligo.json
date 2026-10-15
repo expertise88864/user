@@ -170,8 +170,6 @@
     { "zh": "效果（TRuE-V1/V2 試驗）", "en": "Efficacy (TRuE-V1/V2 trials)", "tag": "td" },
     { "zh": "副作用", "en": "Side effects", "tag": "td" },
     { "zh": "用藥處輕度發紅、痤瘡、搔癢", "en": "Mild redness, acne, itching at application site", "tag": "td" },
-    { "zh": "價格", "en": "Cost", "tag": "td" },
-    { "zh": "台灣自費，約 NT$ 4,000-6,000/條(60g)", "en": "Self-pay in Taiwan, ~NT$ 4,000–6,000 per 60 g tube", "tag": "td" },
     { "zh": "健保", "en": "NHI", "tag": "td" },
     { "zh": "未給付", "en": "Not covered", "tag": "td" },
     { "zh": "禁忌", "en": "Contraindications", "tag": "td" },

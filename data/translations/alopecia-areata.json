@@ -108,7 +108,6 @@
     { "zh": "癌症風險", "en": "Cancer risk", "tag": "strong" },
     { "zh": "淋巴瘤、乳癌（特別是 50 歲以下女性）、腎癌、膀胱癌風險增加", "en": "Increased risk of lymphoma, breast cancer (especially women under 50), renal cancer, and bladder cancer", "tag": "strong" },
     { "zh": "約 50% 在 1 年內自然恢復", "en": "Approximately 50% spontaneously regrow within 1 year", "tag": "strong" },
-    { "zh": "有給付", "en": "Covered by NHI", "tag": "strong" },
     { "zh": "JAK 抑制劑(Baricitinib、Ritlecitinib)2026 年仍主要為自費", "en": "JAK inhibitors (baricitinib, ritlecitinib) remain primarily out-of-pocket as of 2026", "tag": "strong" },
     { "zh": "絕對不會傳染", "en": "Absolutely NOT contagious", "tag": "strong" },
     { "zh": "有家族傾向", "en": "There is a familial tendency", "tag": "strong" },
@@ -190,8 +189,6 @@
     { "zh": "結核、肝炎、血小板計數、淋巴球計數", "en": "TB, hepatitis, platelet count, lymphocyte count", "tag": "td" },
     { "zh": "副作用", "en": "Adverse effects", "tag": "td" },
     { "zh": "上呼吸道感染、頭痛、痤瘡、CK 上升、HSV 復發", "en": "Upper respiratory infections, headache, acne, elevated CK, HSV reactivation", "tag": "td" },
-    { "zh": "頭痛、毛囊炎、痤瘡、腹瀉、URI", "en": "Headache, folliculitis, acne, diarrhea, URI", "tag": "td" },
-    { "zh": "價格（自費）", "en": "Out-of-pocket cost", "tag": "td" },
-    { "zh": "每月約 NT$ 30,000-50,000", "en": "Approximately NT$ 30,000–50,000 per month", "tag": "td" }
+    { "zh": "頭痛、毛囊炎、痤瘡、腹瀉、URI", "en": "Headache, folliculitis, acne, diarrhea, URI", "tag": "td" }
   ]
 }
