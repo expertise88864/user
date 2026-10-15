@@ -626,6 +626,13 @@ class DeploymentWaitFailFastTests(unittest.TestCase):
                          [_build(1, "pending", PENDING), _build(2, "failure", FAILED)])
         self.assertEqual(d.preview_url(api, SHA), "https://exact.vercel.app")
 
+    def test_a_newer_successful_build_outweighs_an_older_failed_deployment(self):
+        # Review finding (2026-10-16): the rebuild's deployment record may still
+        # be unpublished when its success status is already visible.
+        self.assertKeepsWaiting(_VercelAPI([_deployment(7)], {7: [{"state": "failure"}]},
+                                           [_build(1, "pending", PENDING), _build(2, "failure", FAILED),
+                                            _build(3, "pending", PENDING), _build(4, "success", DONE)]))
+
     def test_still_pending_keeps_waiting(self):
         self.assertKeepsWaiting(_VercelAPI(commit_statuses=[_build(1, "pending", PENDING)]))
 
