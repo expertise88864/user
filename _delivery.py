@@ -409,9 +409,11 @@ def vercel_outcome_final(api: API, sha: str, matching: list) -> str:
     only appears when a build completes. Waiting cannot help only when every
     build Vercel started for this SHA has ended, no matching deployment is still
     running, and the latest build ended unsuccessfully (failed, errored, or
-    canceled by the Ignored Build Step). Missing or unreadable evidence,
-    anything still building, or a latest successful build of another
-    environment all keep the caller waiting exactly as before.
+    canceled by the Ignored Build Step). A failed deployment is final only
+    through its own build being the latest: when a later build succeeded, its
+    deployment record may still be on its way. Missing or unreadable evidence,
+    anything still building, or a latest successful build all keep the caller
+    waiting exactly as before.
     """
     try:
         builds = [
@@ -426,19 +428,14 @@ def vercel_outcome_final(api: API, sha: str, matching: list) -> str:
         ended = sum(status.get("state") in ("success", "failure", "error") for status in builds)
         if started == 0 or started > ended:
             return ""
-        failed_deployment = False
         for statuses in matching:
-            state = statuses[0].get("state") if statuses else None
-            if state not in DEPLOYMENT_TERMINAL:
+            if not statuses or statuses[0].get("state") not in DEPLOYMENT_TERMINAL:
                 return ""
-            failed_deployment = failed_deployment or state in ("failure", "error")
         latest = builds[-1]
         if latest.get("state") in ("failure", "error"):
             return f"the latest Vercel build of this SHA ended with {latest['state']} and nothing is still building"
         if "ignored build step" in str(latest.get("description") or "").lower():
             return "Vercel canceled the latest build of this SHA by its Ignored Build Step and nothing is still building"
-        if failed_deployment:
-            return "the exact-SHA deployment ended with a failure and nothing is still building"
         return ""
     except Exception:  # Unproven finality never ends a wait early.
         return ""
