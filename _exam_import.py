@@ -96,6 +96,9 @@ def para_text(p, unknown: list[str]) -> str:
         else ch
         for ch in text
     )
+    # Word runs can carry stray C0/C1 control characters (e.g. U+0081 in 104-45);
+    # they are invisible and forbidden in HTML.
+    text = re.sub(r"[\x00-\x08\x0b-\x1f\x7f-\x9f]", "", text)
     return re.sub(r"[ \t]+", " ", text).strip().translate(HANS_FIX)
 
 
