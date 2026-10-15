@@ -174,7 +174,7 @@ class BashWrapperTests(unittest.TestCase):
     def run_wrapper(self, *, resume=False, returned=SID, rc=0, actual_model="gpt-6.1-sol",
                     actual_effort="xhigh", actual_sandbox="read-only", count=1, legacy=False,
                     retry_after_failure=False, crlf=False, python3_only=False, from_subdir=False,
-                    reviewed_head=None, pr_range=None):
+                    reviewed_head=None, pr_range=None, prev_tip=None):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             subprocess.run(["git", "init", "-q", str(root)], check=True)
@@ -233,6 +233,9 @@ fi
                        CODEX_REVIEW_CLI="codex")
             env.pop("CODEX_REVIEW_TIP", None)
             env.pop("CODEX_REVIEW_BASE", None)
+            env.pop("CODEX_REVIEW_PREV_TIP", None)
+            if prev_tip is not None:
+                env["CODEX_REVIEW_PREV_TIP"] = head if prev_tip == "head" else prev_tip
             if pr_range is not None:
                 # tools/pr_review.py names the exact PR head and its merge base.
                 env["CODEX_REVIEW_TIP"] = head if pr_range == "head" else pr_range
@@ -357,6 +360,17 @@ fi
         self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
         self.assertIn(f"The pull request range is now {self.fixture_head}..{self.fixture_head};",
                       self.last_prompt)
+
+    def test_pr_resume_reviews_every_change_since_last_verdict(self):
+        result = self.run_wrapper(resume=True, reviewed_head="head", pr_range="head", prev_tip="head")
+        self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
+        self.assertIn(f"Review EVERY change in {self.fixture_head}..{self.fixture_head}", self.last_prompt)
+
+    def test_pr_resume_rejects_invalid_previous_head(self):
+        for prev_tip, pr_range in (("short", "head"), ("0" * 40, "head"), ("head", None)):
+            with self.subTest(prev_tip=prev_tip, pr_range=pr_range):
+                result = self.run_wrapper(resume=True, pr_range=pr_range, prev_tip=prev_tip)
+                self.assertEqual(result[:2], (64, False), result[-1])
 
     def test_pr_review_head_must_be_checked_out(self):
         for resume in (False, True):

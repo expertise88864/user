@@ -4,10 +4,7 @@ Offline; no GitHub or Codex calls. Run by the Delivery contract job."""
 import importlib.util
 import json
 from pathlib import Path
-import subprocess
-import tempfile
 import unittest
-from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parent
 _spec = importlib.util.spec_from_file_location("pr_review", ROOT / "tools" / "pr_review.py")
@@ -51,10 +48,34 @@ class QuotaClassificationTests(unittest.TestCase):
         self.assertFalse(pr.provider_quota_error(json.dumps({"type": "error", "message": "stream disconnected"})))
 
 
+class StaleRoundTests(unittest.TestCase):
+    def test_wrapper_refusing_early_cannot_reuse_previous_quota_log(self):
+        import subprocess
+        import tempfile
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as tmp:
+            state = Path(tmp) / ".codex-review"
+            state.mkdir()
+            (state / "last_raw.log").write_text(json.dumps({"type": "error", "message": "usage limit"}),
+                                                encoding="utf-8")
+            (state / "last_message.txt").write_text("", encoding="utf-8")
+            with patch.object(pr, "ROOT", Path(tmp)), patch.object(pr, "bash", return_value="bash"), \
+                 patch.object(pr, "wrapper", return_value="tools/codex_review.sh"), \
+                 patch.object(pr.subprocess, "run", return_value=subprocess.CompletedProcess([], 64)):
+                verdict, _, _ = pr.run_review("targeted", "b" * 40, SHA, None, None)
+            self.assertEqual(verdict, "ERROR")
+            self.assertFalse((state / "last_raw.log").exists())
+
+
 class RunReviewEvidenceTests(unittest.TestCase):
+    """Quota-pending only for a run the wrapper reports as untrusted (exit 4)
+    whose own, fresh output ends on a quota error."""
     QUOTA = json.dumps({"type": "error", "message": "You've hit your usage limit."})
 
     def run_attempt(self, rc, fresh_raw=None):
+        import subprocess
+        import tempfile
+        from unittest.mock import patch
         with tempfile.TemporaryDirectory() as directory:
             state = Path(directory) / ".codex-review"
             state.mkdir()
@@ -66,7 +87,10 @@ class RunReviewEvidenceTests(unittest.TestCase):
                 if fresh_raw is not None:
                     (state / "last_raw.log").write_text(fresh_raw, encoding="utf-8")
                 return subprocess.CompletedProcess(args, rc)
-            with patch.object(pr, "ROOT", Path(directory)), patch.object(pr, "bash", return_value="bash"),                  patch.object(pr, "wrapper", return_value="tools/codex_review.sh"),                  patch.object(pr.subprocess, "run", side_effect=wrapper_run):
+            with patch.object(pr, "ROOT", Path(directory)), \
+                 patch.object(pr, "bash", return_value="bash"), \
+                 patch.object(pr, "wrapper", return_value="tools/codex_review.sh"), \
+                 patch.object(pr.subprocess, "run", side_effect=wrapper_run):
                 return pr.run_review("targeted", "b" * 40, SHA, None, None)[0]
 
     def test_wrapper_stopping_early_never_reuses_stale_quota_log(self):
@@ -75,6 +99,7 @@ class RunReviewEvidenceTests(unittest.TestCase):
     def test_untrusted_run_without_fresh_quota_evidence_is_error(self):
         self.assertEqual(self.run_attempt(4), "ERROR")
         self.assertEqual(self.run_attempt(5, fresh_raw=self.QUOTA), "ERROR")
+        self.assertEqual(self.run_attempt(64, fresh_raw=self.QUOTA), "ERROR")
 
     def test_current_quota_failure_is_pending(self):
         self.assertEqual(self.run_attempt(4, fresh_raw=self.QUOTA), "QUOTA_PENDING")
@@ -102,6 +127,74 @@ class PendingAndBackfillTests(unittest.TestCase):
         ]
         self.assertEqual(pr.reviewed_base(FakeAPI(lambda path: statuses), SHA), "c" * 40)
         self.assertEqual(pr.reviewed_base(FakeAPI(lambda path: []), SHA), "")
+
+
+class TerminalQuotaTests(unittest.TestCase):
+    """PR #17 review round 1 (P1): only the terminal provider error decides quota-pending."""
+
+    def test_recovered_rate_limit_then_other_failure_is_not_quota(self):
+        for raw in ("\n".join([json.dumps({"type": "error", "message": "rate limit exceeded, retrying"}),
+                               json.dumps({"type": "turn.failed", "error": {"message": "401 Unauthorized"}})]),
+                    "ERROR: rate limit exceeded; retrying\nERROR: 401 Unauthorized"):
+            with self.subTest(raw=raw):
+                self.assertFalse(pr.provider_quota_error(raw))
+
+    def test_recovered_rate_limit_then_crash_or_silence_is_not_quota(self):
+        """PR #17 review round 2 (P1): quota-pending needs the run to END on a quota error."""
+        recovered = "ERROR: rate limit exceeded; retrying"
+        for tail in ("exec git diff --stat\nsucceeded in 120ms", "panic: failed to write final output",
+                     json.dumps({"type": "item.completed", "item": {"type": "agent_message", "text": "ok"}})):
+            with self.subTest(tail=tail):
+                self.assertFalse(pr.provider_quota_error(f"{recovered}\n{tail}\n[codex-review] ERROR: x"))
+
+    def test_terminal_quota_after_other_error_is_quota(self):
+        self.assertTrue(pr.provider_quota_error("ERROR: stream disconnected\nERROR: You've hit your usage limit."))
+
+
+class ResumeScopeTests(unittest.TestCase):
+    """PR #17 review round 1 (P2): a resume reviews every commit since the last verdict."""
+
+    def test_resume_base_requires_a_newer_descendant_head(self):
+        import subprocess
+        from unittest.mock import patch
+        prev, head = "b" * 40, SHA
+        for saved in ({}, {"head": "short"}, {"head": head}):
+            with self.subTest(saved=saved), self.assertRaises(pr.Blocked):
+                pr.resume_base(saved, head)
+        with patch.object(pr.subprocess, "run", return_value=subprocess.CompletedProcess([], 1)), \
+             self.assertRaises(pr.Blocked):
+            pr.resume_base({"head": prev}, head)
+        with patch.object(pr.subprocess, "run", return_value=subprocess.CompletedProcess([], 0)) as run:
+            self.assertEqual(pr.resume_base({"head": prev}, head), prev)
+        self.assertEqual(run.call_args.args[0][-2:], [prev, head])
+
+    def test_previous_head_reaches_the_wrapper_only_on_resume(self):
+        import os
+        import subprocess
+        import tempfile
+        from unittest.mock import patch
+        envs = []
+
+        def fake_run(args, **kwargs):
+            envs.append(kwargs["env"])
+            return subprocess.CompletedProcess(args, 64)
+        with tempfile.TemporaryDirectory() as tmp, \
+             patch.dict(os.environ, {"CODEX_REVIEW_PREV_TIP": "c" * 40}), \
+             patch.object(pr, "ROOT", Path(tmp)), patch.object(pr, "bash", return_value="bash"), \
+             patch.object(pr, "wrapper", return_value="tools/codex_review.sh"), \
+             patch.object(pr.subprocess, "run", side_effect=fake_run):
+            pr.run_review("targeted", "b" * 40, SHA, None, None, "d" * 40)
+            pr.run_review("targeted", "b" * 40, SHA, None, "0" * 8 + "-0000-0000-0000-" + "0" * 12, "d" * 40)
+        self.assertNotIn("CODEX_REVIEW_PREV_TIP", envs[0])
+        self.assertEqual(envs[1]["CODEX_REVIEW_PREV_TIP"], "d" * 40)
+
+    def test_wrapper_widens_the_resume_scope_to_every_new_commit(self):
+        text = (ROOT / "tools" / "codex_review.sh").read_text(encoding="utf-8")
+        assert 'PREV_TIP="${CODEX_REVIEW_PREV_TIP:-}"' in text
+        assert 'merge-base --is-ancestor "$PREV_TIP" "$TIP"' in text
+        assert "Review EVERY change in ${PREV_TIP}..${TIP}" in text
+        main_src = (ROOT / "tools" / "pr_review.py").read_text(encoding="utf-8")
+        assert '"head": head}' in main_src and "previous_head = resume_base(saved, head)" in main_src
 
 
 if __name__ == "__main__":
