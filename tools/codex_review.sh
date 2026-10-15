@@ -9,7 +9,9 @@
 #   diff / targeted / deep  相容模式名稱；皆固定 gpt-6.1-sol / xhigh / read-only
 #                           (使用者 2026-10-14 定案:任何 diff review 一律如此,不降級)。
 #                           完整交付差異，沒有檔案、finding 或輪數上限。
-#   resume                  修正後沿用同一個已驗證 session，完整重審至通過。
+#   resume                  修正後沿用同一個已驗證 session 續審至通過。上一輪可信審查
+#                           的 HEAD 若仍是目前 HEAD 的祖先，只審「該 HEAD..HEAD + 未提交
+#                           變更」並複核先前 finding(使用者 2026-10-15 定案);否則完整重審。
 #
 # 設計原則(勿改):
 #   * 絕不把完整 diff 放進 prompt 或 argv;Codex 在 repo 內自行跑 git。
@@ -56,6 +58,9 @@ USAGE_TSV="$STATE_DIR/usage.tsv"
 SESSION_FILE="$STATE_DIR/last_session_id"
 PASS_FILE="$STATE_DIR/last_pass"
 LAST_MSG="$STATE_DIR/last_message.txt"
+# HEAD commit of the last trusted pass of the current session; resume reviews only
+# what changed after it.
+REVIEWED_HEAD_FILE="$STATE_DIR/last_reviewed_head"
 RAW_LOG="$STATE_DIR/last_raw.log"
 
 [ -s "$USAGE_TSV" ] || printf 'timestamp\trepository\tmode\tmodel\teffort\tbase_ref\tsession_id\ttokens_used\tresult\tfindings\tpass\n' > "$USAGE_TSV"
@@ -240,7 +245,31 @@ if [ "$MODE" = "resume" ]; then
   NEXT_PASS=$((PREV_PASS + 1))
   build_flags "$RESUME_EFFORT" resume
 
-  read -r -d '' RESUME_PROMPT <<'RP' || true
+  # The earlier passes of this session already reviewed the whole delivery scope.
+  # When their HEAD is still an ancestor of the current HEAD, review only what
+  # changed since then (user decision 2026-10-15: full re-reads took 4-5 hours).
+  PREV_HEAD="$(tr -d '[:space:]' < "$REVIEWED_HEAD_FILE" 2>/dev/null || true)"
+  CUR_HEAD="$(git -C "$REPO_ROOT" rev-parse HEAD 2>/dev/null || true)"
+  if printf '%s' "$PREV_HEAD" | grep -Eq '^[0-9a-f]{40}$' &&
+     git -C "$REPO_ROOT" merge-base --is-ancestor "$PREV_HEAD" HEAD 2>/dev/null; then
+    read -r -d '' RESUME_PROMPT <<'RP' || true
+Follow-up review pass (INCREMENTAL). Earlier passes of this session reviewed the
+complete delivery scope up to commit {{PREV_HEAD}}. Review the COMPLETE delta
+since then: `git diff {{PREV_HEAD}} HEAD`, plus staged, unstaged and relevant
+untracked changes. Verify that every confirmed prior finding is fixed. Read each
+changed source file through END in bounded chunks and expand into directly
+related callers, contracts and tests the delta affects. For deterministic
+generated output (regenerated from tracked sources and verified by a --check
+step, e.g. exam/** from _gen_exam.py), review the generator and source
+data change in full and read a representative sample of the generated files.
+Remain strictly read-only: do not modify files, run tests, builds, linters,
+package managers, application code, probes, web search, browser, apps,
+connectors, or external MCP tools. End with exactly APPROVE or REQUEST_CHANGES.
+RP
+    RESUME_PROMPT="${RESUME_PROMPT//\{\{PREV_HEAD\}\}/$PREV_HEAD}"
+    echo "[codex-review] incremental scope: $PREV_HEAD..HEAD + uncommitted"
+  else
+    read -r -d '' RESUME_PROMPT <<'RP' || true
 Follow-up review pass. Re-read the COMPLETE current delivery scope: staged,
 unstaged, committed-but-unpushed, relevant untracked and generated files. Verify
 confirmed prior findings and read all changed OLD/NEW content through END in
@@ -249,6 +278,8 @@ Remain strictly read-only: do not modify files, run tests, builds, linters,
 package managers, application code, probes, web search, browser, apps,
 connectors, or external MCP tools. End with exactly APPROVE or REQUEST_CHANGES.
 RP
+    echo "[codex-review] full scope (no reviewed ancestor HEAD recorded)"
+  fi
 
   echo "[codex-review] resume session=$SID effort=$RESUME_EFFORT (pass $NEXT_PASS)"
   : > "$LAST_MSG"
@@ -265,6 +296,7 @@ RP
     exit 4
   fi
   echo "$NEXT_PASS" > "$PASS_FILE"
+  [ -z "$CUR_HEAD" ] || printf '%s\n' "$CUR_HEAD" > "$REVIEWED_HEAD_FILE"
   log_usage "resume" "$RESUME_EFFORT" "$RESUME_BASE" "$NEXT_PASS" >/dev/null
   echo; echo "[codex-review] result=$RESULT (pass $NEXT_PASS)"
   case "$RESULT" in
@@ -349,8 +381,11 @@ Prioritize:
 Review the COMPLETE delivery scope: staged, unstaged, committed-but-unpushed,
 relevant untracked files, and generated output. Read every changed file in full,
 including old/new generated bundles, using bounded chunks through END; continue
-when output is truncated. Do not sample, cap additional related files/findings,
-or omit generated output merely because it is repetitive. Expand into directly
+when output is truncated. Do not cap additional related files/findings. The one
+exception is deterministic generated output that the repository regenerates from
+tracked sources and verifies with a --check step (e.g. exam/** from
+_gen_exam.py): review its generator and source data in full and read a
+representative sample of the generated files. Expand into directly
 related callers, contracts, and tests as needed. This diff review is separate
 from the project's module-by-module audit and medical/user acceptance.
 
@@ -412,7 +447,8 @@ echo "[codex-review] mode=$MODE effort=$EFFORT base=$BASE model=$MODEL (pass 1, 
 # neither a stale pass=1 nor a stale session id from a prior run can leak into
 # this task's resume eligibility.
 echo 0 > "$PASS_FILE"
-rm -f "$SESSION_FILE"
+rm -f "$SESSION_FILE" "$REVIEWED_HEAD_FILE"
+FIRST_HEAD="$(git -C "$REPO_ROOT" rev-parse HEAD 2>/dev/null || true)"
 : > "$LAST_MSG"
 # CODE_REVIEW — read stdin from /dev/null. The prompt is passed as an argv
 # argument; without this, running non-interactively (background / no TTY) makes
@@ -438,6 +474,7 @@ fi
 if [ "$VERIFIED_SID" != "unavailable" ]; then
   printf '%s' "$VERIFIED_SID" > "$SESSION_FILE"
   echo 1 > "$PASS_FILE"
+  [ -z "$FIRST_HEAD" ] || printf '%s\n' "$FIRST_HEAD" > "$REVIEWED_HEAD_FILE"
 else
   echo 0 > "$PASS_FILE"
   echo "[codex-review] 警告:未擷取到本輪 session id;resume 不可用(如需第二輪請重跑第一輪)。" >&2

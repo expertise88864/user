@@ -173,7 +173,8 @@ BASH = shutil.which("bash") or ("C:/Program Files/Git/bin/bash.exe" if Path("C:/
 class BashWrapperTests(unittest.TestCase):
     def run_wrapper(self, *, resume=False, returned=SID, rc=0, actual_model="gpt-6.1-sol",
                     actual_effort="xhigh", actual_sandbox="read-only", count=1, legacy=False,
-                    retry_after_failure=False, crlf=False, python3_only=False, from_subdir=False):
+                    retry_after_failure=False, crlf=False, python3_only=False, from_subdir=False,
+                    reviewed_head=None):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             subprocess.run(["git", "init", "-q", str(root)], check=True)
@@ -187,6 +188,10 @@ class BashWrapperTests(unittest.TestCase):
             state.mkdir()
             (state / "last_pass").write_text(str(count))
             (state / "last_session_id").write_text(SID)
+            head = subprocess.run(["git", "-C", str(root), "rev-parse", "HEAD"], capture_output=True,
+                                  text=True, check=True).stdout.strip()
+            if reviewed_head is not None:
+                (state / "last_reviewed_head").write_text((head if reviewed_head == "head" else reviewed_head) + "\n")
             model, effort = ("gpt-6.1-sol", "high") if legacy else ("gpt-6.1-sol", "xhigh")
             (state / "usage.tsv").write_text("timestamp\trepository\tmode\tmodel\teffort\tbase_ref\tsession_id\ttokens_used\tresult\tfindings\tpass\n"
                 f"now\tfixture\tdeep\t{model}\t{effort}\tHEAD\t{SID}\t0\tREQUEST_CHANGES\t1\t{count}\n",
@@ -263,6 +268,10 @@ fi
                                      capture_output=True, text=True, encoding="utf-8", check=True).stdout.strip() + "'")
                 self.assertIn("--json", args)
                 self.assertIn("COMPLETE", args[-1])
+                self.last_prompt = args[-1]
+            reviewed = state / "last_reviewed_head"
+            self.last_reviewed = reviewed.read_text().strip() if reviewed.exists() else None
+            self.fixture_head = head
             sid_file = state / "last_session_id"
             return result.returncode, called, (sid_file.read_text() if sid_file.exists() else None), (state / "last_pass").read_text().strip(), result.stdout + result.stderr
 
@@ -305,6 +314,32 @@ fi
     def test_failed_cli_preserves_resume_state(self):
         result = self.run_wrapper(resume=True, rc=1)
         self.assertEqual(result[:4], (4, True, SID, "1"), result[-1])
+
+    def test_first_pass_records_reviewed_head(self):
+        result = self.run_wrapper()
+        self.assertEqual(result[:4], (0, True, SID, "1"), result[-1])
+        self.assertEqual(self.last_reviewed, self.fixture_head)
+
+    def test_resume_after_reviewed_ancestor_is_incremental(self):
+        result = self.run_wrapper(resume=True, reviewed_head="head")
+        self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
+        self.assertIn("INCREMENTAL", self.last_prompt)
+        self.assertIn(f"git diff {self.fixture_head} HEAD", self.last_prompt)
+        self.assertNotIn("{{PREV_HEAD}}", self.last_prompt)
+        self.assertEqual(self.last_reviewed, self.fixture_head)
+
+    def test_resume_without_valid_reviewed_ancestor_is_full(self):
+        for recorded in (None, "0" * 40, "not-a-commit"):
+            with self.subTest(recorded=recorded):
+                result = self.run_wrapper(resume=True, reviewed_head=recorded)
+                self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
+                self.assertNotIn("INCREMENTAL", self.last_prompt)
+                self.assertIn("do not sample", self.last_prompt)
+
+    def test_failed_resume_keeps_reviewed_head(self):
+        result = self.run_wrapper(resume=True, rc=1, reviewed_head="0" * 40)
+        self.assertEqual(result[:4], (4, True, SID, "1"), result[-1])
+        self.assertEqual(self.last_reviewed, "0" * 40)
 
     def test_legacy_profile_cannot_resume(self):
         result = self.run_wrapper(resume=True, legacy=True)

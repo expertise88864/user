@@ -15,6 +15,14 @@
 Codex review、遠端 CI 與正式交付流程（D-03 等）照常適用。源頭：data/exam/**；生成器 _gen_exam.py。
 重開：使用者撤回此授權。
 
+**D-19 Codex 續審只審上一輪之後的差異**(2026-10-15,使用者定案)
+`tools/codex_review.sh resume`:同一 session 上一輪可信審查的 HEAD(`.codex-review/last_reviewed_head`)
+若仍是目前 HEAD 的祖先，只審「該 HEAD..HEAD + 未提交變更」並複核先前 finding；否則照舊完整重審。
+可由追蹤中的源頭重新生成、且有 `--check` 步驟驗證的生成物（如 exam/** ← _gen_exam.py），
+首輪與續審都改審生成器與源頭資料，生成頁只抽查。模型／effort（gpt-6.1-sol / xhigh）與「APPROVE 才能 push」不變。
+為何：完整重讀 386 檔（含 228 個生成頁）讓每次續審要 4–5 小時，即使只修幾行。
+`tools/codex_review.ps1` 仍是完整重審（較嚴格），本 repo 一律用 .sh。重開：使用者要求恢復完整重審。
+
 **D-02 合規紅線:不掛醫院、不招攬**(2026-06)
 作者為住院醫師:schema 與內文不得有 worksFor/affiliation(曾誤掛中國醫藥大學,已全面移除,
 生成器已加防護 `obj.pop("affiliation")`)。全站不得出現掛號/預約/價格/診所名(醫療法 §9)。
