@@ -349,7 +349,8 @@ fi
                 result = self.run_wrapper(resume=True, reviewed_head=recorded)
                 self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
                 self.assertNotIn("INCREMENTAL", self.last_prompt)
-                self.assertIn("do not sample", self.last_prompt)
+                self.assertIn("Re-read the COMPLETE current delivery scope", self.last_prompt)
+                self.assertIn("representative sample of the generated files", self.last_prompt)
 
     def test_failed_resume_keeps_reviewed_head(self):
         result = self.run_wrapper(resume=True, rc=1, reviewed_head="0" * 40)

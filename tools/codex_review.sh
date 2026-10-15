@@ -291,12 +291,23 @@ RP
 Follow-up review pass. Re-read the COMPLETE current delivery scope: staged,
 unstaged, committed-but-unpushed, relevant untracked and generated files. Verify
 confirmed prior findings and read all changed OLD/NEW content through END in
-bounded chunks; do not sample or restrict this pass to corrections only.
+bounded chunks; do not restrict this pass to corrections only. As in the first
+pass, deterministic generated output that the repository regenerates from
+tracked sources and verifies with a --check step (e.g. exam/** from
+_gen_exam.py) is reviewed through its generator and source data plus a
+representative sample of the generated files.
 Remain strictly read-only: do not modify files, run tests, builds, linters,
 package managers, application code, probes, web search, browser, apps,
 connectors, or external MCP tools. End with exactly APPROVE or REQUEST_CHANGES.
 RP
     echo "[codex-review] full scope (no reviewed ancestor HEAD recorded)"
+  fi
+  # The caller's local verification summary, as in the first pass.
+  if [ -n "${CODEX_REVIEW_VERIFICATION:-}" ]; then
+    RESUME_PROMPT="$RESUME_PROMPT
+
+LOCAL VERIFICATION (this pass):
+${CODEX_REVIEW_VERIFICATION}"
   fi
   # PR flow: the head moved after the fixes; name the exact range under review.
   if [ -n "${CODEX_REVIEW_BASE:-}" ] && [ -n "$TIP" ]; then

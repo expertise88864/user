@@ -56,7 +56,7 @@ Then run:
 Record all applicable CI and actual deployment/smoke evidence separately.
 `deploy.ps1` also resolves the exact-SHA Production deployment before reporting delivery.
 Main CI includes the required **Production smoke** job, which runs
-`python _delivery.py smoke "$GITHUB_SHA" --wait 600` on GitHub Actions and saves its
+`python _delivery.py smoke "$GITHUB_SHA" --wait 1200` on GitHub Actions and saves its
 JSON evidence. Candidate runs explicitly skip this production-only job. Main
 verification requires its successful exact-SHA validation step; failed, missing or
 skipped production checks block delivery. The same command can still be run

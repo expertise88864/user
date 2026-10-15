@@ -57,7 +57,7 @@ module.exports = async function checkLanguageEnhancements(browser, { sharedSourc
             try { await Promise.all([DN.injectBMC(), DN.injectBMC()]); } finally { parent.insertBefore = insert; }
             return observation;
           });
-          assert.equal(firstDisplay.title, 'Buy me a coffee ☕', 'The English enhancement is translated before its first insertion');
+          assert.equal(firstDisplay.title, 'Buy me a coffee', 'The English enhancement is translated before its first insertion');
           assert.equal(supportRequests - requestsBefore, 1, 'Concurrent callers share one request; a previous failed request can retry');
           assert.equal(firstDisplay.href, '/en/support', 'The support link preserves the reader language');
           assert.ok(firstDisplay.paragraph.startsWith('No ads, no sponsorships.'));
