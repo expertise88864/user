@@ -544,5 +544,197 @@ class PullRequestDeliveryTests(unittest.TestCase):
         with self.assertRaises(d.Blocked): self.verify()
 
 
+class _VercelAPI:
+    """Offline GitHub API double for deployment waits (no network)."""
+
+    def __init__(self, deployments=(), deployment_statuses=None, commit_statuses=(),
+                 main=None, compare=None, broken=()):
+        self.deployments = list(deployments)
+        self.deployment_statuses = deployment_statuses or {}
+        self.commit_statuses = list(commit_statuses)
+        self.main = main or SHA
+        self.compare = compare
+        self.broken = set(broken)
+
+    def pages(self, path, key=None):
+        if path.startswith("/deployments?"):
+            return list(self.deployments)
+        if path.startswith("/deployments/"):
+            return list(self.deployment_statuses.get(int(path.split("/")[2]), []))
+        if path == f"/commits/{SHA}/statuses":
+            if "statuses" in self.broken:
+                raise OSError("statuses unavailable")
+            return list(reversed(self.commit_statuses))  # GitHub lists newest first
+        raise AssertionError(path)
+
+    def get(self, path):
+        if path == "/branches/main":
+            return {"commit": {"sha": self.main}}
+        if path.startswith("/compare/"):
+            if self.compare is None:
+                raise OSError("compare unavailable")
+            return self.compare
+        raise AssertionError(path)
+
+
+def _deployment(ident, environment="Preview", production=False):
+    return {"id": ident, "sha": SHA, "environment": environment,
+            "production_environment": production, "creator": {"login": "vercel[bot]"}}
+
+
+def _build(ident, state, description="", login="vercel[bot]", context="Vercel"):
+    return {"id": ident, "state": state, "context": context, "description": description,
+            "created_at": f"2026-10-15T14:{ident:02d}:00Z", "creator": {"login": login}}
+
+
+PENDING = "Vercel is deploying your app"
+DONE = "Deployment has completed"
+IGNORED = "Canceled by Ignored Build Step"
+FAILED = "Deployment has failed"
+
+
+class DeploymentWaitFailFastTests(unittest.TestCase):
+    def assertFinal(self, api, environment="preview"):
+        with self.assertRaises(d.Final) as caught:
+            d.deployment_url(api, SHA, environment)
+        self.assertIn("No successful Vercel", str(caught.exception))
+
+    def assertKeepsWaiting(self, api, environment="preview"):
+        with self.assertRaises(d.Blocked) as caught:
+            d.deployment_url(api, SHA, environment)
+        self.assertNotIsInstance(caught.exception, d.Final)
+
+    def test_failed_exact_sha_deployment_is_final(self):
+        self.assertFinal(_VercelAPI([_deployment(7)], {7: [{"state": "failure"}]},
+                                    [_build(1, "pending", PENDING), _build(2, "failure", FAILED)]))
+        self.assertFinal(_VercelAPI([_deployment(7)], {7: [{"state": "error"}]},
+                                    [_build(1, "pending", PENDING), _build(2, "error", FAILED)]))
+
+    def test_failed_build_status_without_deployment_is_final(self):
+        self.assertFinal(_VercelAPI(commit_statuses=[_build(1, "pending", PENDING),
+                                                     _build(2, "failure", FAILED)]))
+
+    def test_ignored_build_step_is_final_for_production(self):
+        api = _VercelAPI([_deployment(7)], {7: [{"state": "success", "environment_url": "https://exact.vercel.app"}]},
+                         [_build(1, "pending", PENDING), _build(2, "success", DONE),
+                          _build(3, "pending", PENDING), _build(4, "success", IGNORED)])
+        self.assertFinal(api, "production")
+        self.assertEqual(d.preview_url(api, SHA), "https://exact.vercel.app")
+
+    def test_a_successful_deployment_still_wins(self):
+        api = _VercelAPI([_deployment(7)], {7: [{"state": "success", "environment_url": "https://exact.vercel.app"}]},
+                         [_build(1, "pending", PENDING), _build(2, "failure", FAILED)])
+        self.assertEqual(d.preview_url(api, SHA), "https://exact.vercel.app")
+
+    def test_still_pending_keeps_waiting(self):
+        self.assertKeepsWaiting(_VercelAPI(commit_statuses=[_build(1, "pending", PENDING)]))
+
+    def test_a_rebuild_after_a_failure_keeps_waiting(self):
+        self.assertKeepsWaiting(_VercelAPI([_deployment(7)], {7: [{"state": "failure"}]},
+                                           [_build(1, "pending", PENDING), _build(2, "failure", FAILED),
+                                            _build(3, "pending", PENDING)]))
+
+    def test_overlapping_builds_keep_waiting_until_all_end(self):
+        self.assertKeepsWaiting(_VercelAPI(commit_statuses=[
+            _build(1, "pending", PENDING), _build(2, "pending", PENDING), _build(3, "failure", FAILED)]))
+
+    def test_production_not_reported_yet_keeps_waiting(self):
+        api = _VercelAPI([_deployment(7)], {7: [{"state": "success", "environment_url": "https://exact.vercel.app"}]},
+                         [_build(1, "pending", PENDING), _build(2, "success", DONE)])
+        self.assertKeepsWaiting(api, "production")
+
+    def test_a_running_matching_deployment_keeps_waiting(self):
+        for state in ("queued", "pending", "in_progress"):
+            with self.subTest(state=state):
+                self.assertKeepsWaiting(_VercelAPI(
+                    [_deployment(8), _deployment(7)], {7: [{"state": "failure"}], 8: [{"state": state}]},
+                    [_build(1, "pending", PENDING), _build(2, "failure", FAILED)]))
+
+    def test_missing_or_unreadable_evidence_keeps_waiting(self):
+        self.assertKeepsWaiting(_VercelAPI())
+        self.assertKeepsWaiting(_VercelAPI(commit_statuses=[_build(2, "failure", FAILED)]))
+        self.assertKeepsWaiting(_VercelAPI(commit_statuses=[_build(1, "pending", PENDING), _build(2, "failure", FAILED)],
+                                           broken={"statuses"}))
+        self.assertKeepsWaiting(_VercelAPI(commit_statuses=[_build(1, "pending", PENDING),
+                                                            {"id": 2, "state": "failure", "context": "Vercel"}]))
+
+    def test_statuses_from_others_are_ignored(self):
+        self.assertKeepsWaiting(_VercelAPI(commit_statuses=[
+            _build(1, "pending", PENDING), _build(2, "success", DONE),
+            _build(3, "failure", FAILED, login="someone"), _build(4, "failure", FAILED, context="ci/other")]))
+
+    def _run_main(self, outcomes, wait="600"):
+        calls, sleeps, clock = [], [], [0.0]
+
+        def deployment(api, sha, environment):
+            calls.append(environment)
+            outcome = outcomes[len(calls) - 1]
+            if isinstance(outcome, Exception):
+                raise outcome
+            return outcome
+
+        def monotonic():
+            clock[0] += 1
+            return clock[0]
+
+        with patch.object(d, "policy", return_value={"repository": "owner/repo"}), \
+             patch.object(d, "API"), patch.object(d, "deployment_url", side_effect=deployment), \
+             patch.object(d.time, "monotonic", side_effect=monotonic), \
+             patch.object(d.time, "sleep", side_effect=sleeps.append), \
+             patch.object(d.sys, "argv", ["_delivery.py", "preview", SHA, "--wait", wait]), \
+             patch("sys.stdout", new_callable=io.StringIO), patch("sys.stderr", new_callable=io.StringIO) as err:
+            code = d.main()
+        return code, len(calls), err.getvalue()
+
+    def test_wait_ends_early_only_after_two_consecutive_final_observations(self):
+        code, calls, err = self._run_main([d.Final("gone"), d.Final("gone")])
+        self.assertEqual((code, calls), (1, 2))
+        self.assertIn("Stopped waiting early", err)
+
+    def test_a_final_observation_that_recovers_still_passes(self):
+        self.assertEqual(self._run_main([d.Final("gone"), "https://exact.vercel.app"])[:2], (0, 2))
+        self.assertEqual(self._run_main([d.Final("gone"), d.Blocked("pending"), d.Final("gone"),
+                                         "https://exact.vercel.app"])[:2], (0, 4))
+
+    def test_ordinary_blocks_keep_waiting(self):
+        outcomes = [d.Blocked("No successful Vercel preview deployment bound to this SHA")] * 8
+        self.assertEqual(self._run_main(outcomes + ["https://exact.vercel.app"])[:2], (0, 9))
+
+    def test_no_wait_still_reports_once(self):
+        self.assertEqual(self._run_main([d.Final("gone")], wait="0")[:2], (1, 1))
+        self.assertEqual(self._run_main([d.Blocked("pending")], wait="0")[:2], (1, 1))
+
+
+class ProductionSmokeFailFastTests(unittest.TestCase):
+    CFG = {"preview_paths": []}
+    AHEAD = {"status": "ahead", "ahead_by": 2, "behind_by": 0}
+
+    def test_main_advanced_past_the_revision_is_final(self):
+        for deployments in ([], [_deployment(7, "Production")]):
+            with self.subTest(deployed=bool(deployments)):
+                api = _VercelAPI(deployments, {7: [{"state": "success", "environment_url": "https://prod.vercel.app"}]},
+                                 [_build(1, "pending", PENDING)], main="b" * 40, compare=self.AHEAD)
+                with self.assertRaisesRegex(d.Final, "advanced past"):
+                    d.production_smoke(api, SHA, self.CFG)
+
+    def test_main_behind_diverged_or_unknown_keeps_waiting(self):
+        for compare in ({"status": "behind", "ahead_by": 0, "behind_by": 1},
+                        {"status": "diverged", "ahead_by": 1, "behind_by": 1},
+                        {"status": "ahead", "ahead_by": 1, "behind_by": 1}, None):
+            for deployments in ([], [_deployment(7, "Production")]):
+                with self.subTest(compare=compare, deployed=bool(deployments)):
+                    api = _VercelAPI(deployments, {7: [{"state": "success", "environment_url": "https://prod.vercel.app"}]},
+                                     [_build(1, "pending", PENDING)], main="b" * 40, compare=compare)
+                    with self.assertRaises(d.Blocked) as caught:
+                        d.production_smoke(api, SHA, self.CFG)
+                    self.assertNotIsInstance(caught.exception, d.Final)
+
+    def test_unchanged_main_without_deployment_keeps_waiting(self):
+        api = _VercelAPI(commit_statuses=[_build(1, "pending", PENDING)], compare=self.AHEAD)
+        with self.assertRaises(d.Blocked) as caught:
+            d.production_smoke(api, SHA, self.CFG)
+        self.assertNotIsInstance(caught.exception, d.Final)
+
+
 if __name__ == "__main__":
     unittest.main()
