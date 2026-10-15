@@ -170,8 +170,12 @@ def run_review(mode: str, base: str, head: str, ctx: str | None,
     env = {**os.environ, "CODEX_REVIEW_TIP": head, "CODEX_REVIEW_BASE": base}
     args = [bash(), wrapper()]
     args += ["resume", resume_session] if resume_session else [mode, base] + ([ctx] if ctx else [])
-    rc = subprocess.run(args, cwd=ROOT, env=env, stdin=subprocess.DEVNULL).returncode
     state = ROOT / ".codex-review"
+    # Evidence must come from this invocation only: a wrapper that stops before
+    # running Codex (exit 64) must not inherit an earlier attempt's message or log.
+    for name in ("last_message.txt", "last_raw.log"):
+        (state / name).unlink(missing_ok=True)
+    rc = subprocess.run(args, cwd=ROOT, env=env, stdin=subprocess.DEVNULL).returncode
     message = (state / "last_message.txt").read_text(encoding="utf-8", errors="replace") \
         if (state / "last_message.txt").is_file() else ""
     raw = (state / "last_raw.log").read_text(encoding="utf-8", errors="replace") \
@@ -182,7 +186,8 @@ def run_review(mode: str, base: str, head: str, ctx: str | None,
         return "APPROVE", session, message
     if rc == 2:
         return "REQUEST_CHANGES", session, message
-    if not message.strip() and provider_quota_error(raw):
+    # Exit 4 is the wrapper's "Codex ran but the result is untrusted" code.
+    if rc == 4 and not message.strip() and provider_quota_error(raw):
         return "QUOTA_PENDING", session, raw[-2000:]
     return "ERROR", session, message or raw[-2000:]
 

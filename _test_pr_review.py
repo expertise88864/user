@@ -4,7 +4,10 @@ Offline; no GitHub or Codex calls. Run by the Delivery contract job."""
 import importlib.util
 import json
 from pathlib import Path
+import subprocess
+import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parent
 _spec = importlib.util.spec_from_file_location("pr_review", ROOT / "tools" / "pr_review.py")
@@ -46,6 +49,35 @@ class QuotaClassificationTests(unittest.TestCase):
 
     def test_other_provider_errors_are_not_quota(self):
         self.assertFalse(pr.provider_quota_error(json.dumps({"type": "error", "message": "stream disconnected"})))
+
+
+class RunReviewEvidenceTests(unittest.TestCase):
+    QUOTA = json.dumps({"type": "error", "message": "You've hit your usage limit."})
+
+    def run_attempt(self, rc, fresh_raw=None):
+        with tempfile.TemporaryDirectory() as directory:
+            state = Path(directory) / ".codex-review"
+            state.mkdir()
+            # Leftovers of an earlier attempt that really hit quota.
+            (state / "last_message.txt").write_text("", encoding="utf-8")
+            (state / "last_raw.log").write_text(self.QUOTA, encoding="utf-8")
+
+            def wrapper_run(*args, **kwargs):
+                if fresh_raw is not None:
+                    (state / "last_raw.log").write_text(fresh_raw, encoding="utf-8")
+                return subprocess.CompletedProcess(args, rc)
+            with patch.object(pr, "ROOT", Path(directory)), patch.object(pr, "bash", return_value="bash"),                  patch.object(pr, "wrapper", return_value="tools/codex_review.sh"),                  patch.object(pr.subprocess, "run", side_effect=wrapper_run):
+                return pr.run_review("targeted", "b" * 40, SHA, None, None)[0]
+
+    def test_wrapper_stopping_early_never_reuses_stale_quota_log(self):
+        self.assertEqual(self.run_attempt(64), "ERROR")
+
+    def test_untrusted_run_without_fresh_quota_evidence_is_error(self):
+        self.assertEqual(self.run_attempt(4), "ERROR")
+        self.assertEqual(self.run_attempt(5, fresh_raw=self.QUOTA), "ERROR")
+
+    def test_current_quota_failure_is_pending(self):
+        self.assertEqual(self.run_attempt(4, fresh_raw=self.QUOTA), "QUOTA_PENDING")
 
 
 class PendingAndBackfillTests(unittest.TestCase):
