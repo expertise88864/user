@@ -7,7 +7,7 @@ Discover the entire ordinary-file inventory before any caller starts writing.
 from pathlib import Path
 
 
-SOURCE_ROOTS = ((), ('blog',), ('admin',))
+SOURCE_ROOTS = ((), ('blog',), ('admin',), ('exam',))
 ENGLISH_ROOTS = (('en',), ('en', 'blog'))
 
 

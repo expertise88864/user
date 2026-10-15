@@ -119,9 +119,17 @@
         }
         var ok = grade(card, true);
         if (ok === null) {
+          // Finalize unanswered questions like answered ones: lock the options so a
+          // later pick cannot sit there while every hand-in keeps counting it blank.
           blank += 1;
           card.setAttribute('data-graded', 'blank');
           card.classList.add('ex-done');
+          card.querySelectorAll('input[type=radio]').forEach(function (input) { input.disabled = true; });
+          var result = card.querySelector('.ex-result');
+          if (result) {
+            result.setAttribute('aria-live', 'off');
+            result.textContent = '未作答，正確答案是 ' + (card.getAttribute('data-answer') || '').split('').join('、');
+          }
         } else if (ok) {
           right += 1;
         }
