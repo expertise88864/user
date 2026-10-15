@@ -22,6 +22,14 @@ class Blocked(RuntimeError):
     """Missing or unsuccessful evidence; do not publish."""
 
 
+class Final(Blocked):
+    """Blocked, and the awaited evidence can no longer appear by waiting.
+
+    Only raised on positive evidence that nothing is still building or can
+    still change the outcome; anything uncertain stays an ordinary Blocked.
+    """
+
+
 def git(*args: str) -> str:
     return subprocess.check_output(
         ["git", *args], cwd=ROOT, text=True, encoding="utf-8"
@@ -362,6 +370,7 @@ def needs_morning_preview(paths: list[str]) -> bool:
 def deployment_url(api: API, sha: str, environment: str = "preview") -> str:
     check_sha(sha)
     deployments = api.pages(f"/deployments?sha={sha}")
+    matching = []
     for deployment in sorted(deployments, key=lambda d: d["id"], reverse=True):
         if (deployment.get("sha") != sha
                 or str(deployment.get("environment", "")).lower() != environment
@@ -370,6 +379,7 @@ def deployment_url(api: API, sha: str, environment: str = "preview") -> str:
         if str(deployment.get("creator", {}).get("login", "")).lower() not in ("vercel[bot]", "vercel"):
             continue
         statuses = api.pages(f"/deployments/{deployment['id']}/statuses")
+        matching.append(statuses)
         if not statuses or statuses[0].get("state") != "success":
             continue
         url = statuses[0].get("environment_url", "")
@@ -379,16 +389,98 @@ def deployment_url(api: API, sha: str, environment: str = "preview") -> str:
                 and not parsed.username and not parsed.password and parsed.port is None
                 and parsed.path in ("", "/") and not parsed.query and not parsed.fragment):
             return url.rstrip("/")
-    raise Blocked(f"No successful Vercel {environment} deployment bound to this SHA")
+    message = f"No successful Vercel {environment} deployment bound to this SHA"
+    reason = vercel_outcome_final(api, sha, matching)
+    if reason:
+        raise Final(f"{message}; {reason}")
+    raise Blocked(message)
+
+
+VERCEL_CONTEXT = "Vercel"
+VERCEL_LOGINS = ("vercel[bot]", "vercel")
+DEPLOYMENT_TERMINAL = ("success", "failure", "error", "inactive")
+
+
+def vercel_outcome_final(api: API, sha: str, matching: list) -> str:
+    """Why no exact-SHA deployment can still succeed, or "" to keep waiting.
+
+    Vercel posts one `pending` commit status when it starts a build of this SHA
+    and one terminal status when that build ends; the GitHub deployment record
+    only appears when a build completes. Waiting cannot help only when every
+    build Vercel started for this SHA has ended, no matching deployment is still
+    running, and the latest build ended unsuccessfully (failed, errored, or
+    canceled by the Ignored Build Step). Missing or unreadable evidence,
+    anything still building, or a latest successful build of another
+    environment all keep the caller waiting exactly as before.
+    """
+    try:
+        builds = [
+            status for status in api.pages(f"/commits/{sha}/statuses")
+            if status.get("context") == VERCEL_CONTEXT
+            and str((status.get("creator") or {}).get("login", "")).lower() in VERCEL_LOGINS
+        ]
+        if not builds:
+            return ""
+        builds.sort(key=lambda status: (str(status["created_at"]), int(status["id"])))
+        started = sum(status.get("state") == "pending" for status in builds)
+        ended = sum(status.get("state") in ("success", "failure", "error") for status in builds)
+        if started == 0 or started > ended:
+            return ""
+        failed_deployment = False
+        for statuses in matching:
+            state = statuses[0].get("state") if statuses else None
+            if state not in DEPLOYMENT_TERMINAL:
+                return ""
+            failed_deployment = failed_deployment or state in ("failure", "error")
+        latest = builds[-1]
+        if latest.get("state") in ("failure", "error"):
+            return f"the latest Vercel build of this SHA ended with {latest['state']} and nothing is still building"
+        if "ignored build step" in str(latest.get("description") or "").lower():
+            return "Vercel canceled the latest build of this SHA by its Ignored Build Step and nothing is still building"
+        if failed_deployment:
+            return "the exact-SHA deployment ended with a failure and nothing is still building"
+        return ""
+    except Exception:  # Unproven finality never ends a wait early.
+        return ""
 
 
 def preview_url(api: API, sha: str) -> str:
     return deployment_url(api, sha, "preview")
 
 
+def main_advanced_past(api: API, sha: str) -> bool:
+    """True only when production main is a strict fast-forward descendant of `sha`.
+
+    Main only moves forward (fast-forward promotions; force pushes are refused),
+    so a smoke of `sha` can then never see main == sha again. Behind, diverged,
+    equal or unreadable all return False and keep the caller waiting.
+    """
+    try:
+        head = check_sha(api.get('/branches/main')['commit']['sha'])
+        if head == sha:
+            return False
+        comparison = api.get(f'/compare/{sha}...{head}')
+        return (comparison.get('status') == 'ahead' and comparison.get('behind_by') == 0
+                and isinstance(comparison.get('ahead_by'), int) and comparison['ahead_by'] > 0)
+    except Exception:  # Unproven finality never ends a wait early.
+        return False
+
+
+MAIN_ADVANCED = 'production main has advanced past the delivery revision, so this smoke can never pass'
+
+
 def production_smoke(api: API, sha: str, cfg: dict) -> dict:
-    deployment = deployment_url(api, sha, "production")
+    try:
+        deployment = deployment_url(api, sha, "production")
+    except Final:
+        raise
+    except Blocked as exc:
+        if main_advanced_past(api, sha):
+            raise Final(f"{exc}; {MAIN_ADVANCED}") from exc
+        raise
     if api.get('/branches/main')['commit']['sha'] != sha:
+        if main_advanced_past(api, sha):
+            raise Final(f'Production main no longer matches the delivery revision; {MAIN_ADVANCED}')
         raise Blocked('Production main no longer matches the delivery revision')
     origin = 'https://chendermatologist.com'
     checked = []
@@ -499,6 +591,7 @@ def main() -> int:
         api = API(cfg["repository"])
         deadline = time.monotonic() + min(max(args.wait, 0), 3600)
         previous = ""
+        final = ""
         while True:
             try:
                 if args.command == "smoke":
@@ -513,6 +606,13 @@ def main() -> int:
                 if message != previous:
                     print(message, file=sys.stderr)
                     previous = message
+                # A final outcome must be observed on two consecutive polls (30 s
+                # apart) before ending early, so a status GitHub has not yet
+                # published (e.g. a just-started build) cannot cut a wait short.
+                if isinstance(exc, Final) and message == final:
+                    print("Stopped waiting early: this outcome can no longer change.", file=sys.stderr)
+                    return 1
+                final = message if isinstance(exc, Final) else ""
                 if time.monotonic() >= deadline:
                     return 1
                 time.sleep(min(30, max(0, deadline - time.monotonic())))
