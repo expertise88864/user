@@ -29,6 +29,10 @@
 #   CODEX_REVIEW_CLI           明示要用的 Codex CLI;未設時由 codex_review_identity.py which
 #                              挑版本最高者(npm 0.155.1 不支援 gpt-6.1-sol,桌面版內附的可以)。
 #                              不論哪一支,實際模型/effort 一律由 session 紀錄驗證。
+#   CODEX_REVIEW_TIP / CODEX_REVIEW_BASE
+#                              tools/pr_review.py 設定:整個 PR 一次審查(使用者 2026-10-15 定案),
+#                              範圍為 merge-base(main, head)..head。TIP 必須是目前 checkout 的 HEAD。
+#   CODEX_REVIEW_PREV_TIP      PR 續審時上一次裁決的 head;續審涵蓋 PREV_TIP..TIP 的所有變更。
 set -uo pipefail
 
 MODEL="gpt-6.1-sol"
@@ -41,6 +45,19 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(git -C "$SCRIPT_DIR" rev-parse --show-toplevel 2>/dev/null)" \
   || die "必須在 git repository 內執行。"
 REPO_NAME="$(basename "$REPO_ROOT")"
+# PR flow (tools/pr_review.py): this wrapper reviews the checked-out HEAD, so the
+# named PR head must be exactly that commit; never review one head and label another.
+TIP=""
+if [ -n "${CODEX_REVIEW_TIP:-}" ]; then
+  TIP="$(git -C "$REPO_ROOT" rev-parse --verify --quiet "${CODEX_REVIEW_TIP}^{commit}" 2>/dev/null)" \
+    || die "CODEX_REVIEW_TIP 無法解析為 commit。"
+  [ "$TIP" = "$(git -C "$REPO_ROOT" rev-parse HEAD 2>/dev/null)" ] \
+    || die "CODEX_REVIEW_TIP 不是目前的 HEAD;請先 checkout 該 PR head。"
+fi
+if [ -n "${CODEX_REVIEW_BASE:-}" ]; then
+  printf '%s' "$CODEX_REVIEW_BASE" | grep -Eq '^[0-9a-f]{40}$' \
+    || die "CODEX_REVIEW_BASE 必須是完整 commit SHA。"
+fi
 if [ -x "$REPO_ROOT/.venv/Scripts/python.exe" ]; then
   PYTHON="$REPO_ROOT/.venv/Scripts/python.exe"
 elif [ -x "$REPO_ROOT/.venv/bin/python" ]; then
@@ -280,6 +297,24 @@ connectors, or external MCP tools. End with exactly APPROVE or REQUEST_CHANGES.
 RP
     echo "[codex-review] full scope (no reviewed ancestor HEAD recorded)"
   fi
+  # PR flow: the head moved after the fixes; name the exact range under review.
+  if [ -n "${CODEX_REVIEW_BASE:-}" ] && [ -n "$TIP" ]; then
+    RESUME_PROMPT="$RESUME_PROMPT
+
+The pull request range is now ${CODEX_REVIEW_BASE}..${TIP}; inspect the corrections with git diff/log inside that range."
+  fi
+  # 續審時上一次裁決所審的 head(pr_review.py 設定):續審必須涵蓋 PREV..TIP 的**所有**變更,
+  # 不只修正 —— 否則 APPROVE 後再推的其他 commit 會在「只看修正」的指示下被略過。
+  PREV_TIP="${CODEX_REVIEW_PREV_TIP:-}"
+  if [ -n "$PREV_TIP" ]; then
+    printf '%s' "$PREV_TIP" | grep -Eq '^[0-9a-f]{40}$' || die "CODEX_REVIEW_PREV_TIP 必須是完整 40 碼 SHA。"
+    [ -n "$TIP" ] && [ -n "${CODEX_REVIEW_BASE:-}" ] || die "CODEX_REVIEW_PREV_TIP 只用於 PR 續審(需同時有 CODEX_REVIEW_BASE 與 CODEX_REVIEW_TIP)。"
+    git -C "$REPO_ROOT" merge-base --is-ancestor "$PREV_TIP" "$TIP" 2>/dev/null || die "CODEX_REVIEW_PREV_TIP 不是 CODEX_REVIEW_TIP 的祖先;請重跑第一輪。"
+    # An APPROVE here covers the whole new head, so every new commit is in scope.
+    RESUME_PROMPT="$RESUME_PROMPT
+
+Scope override: your previous verdict covered ${PREV_TIP}. Review EVERY change in ${PREV_TIP}..${TIP} (git log/diff ${PREV_TIP}..${TIP}), not only corrections: any other commit pushed since then gets the same full review contract, severities and limits as the first pass. Also confirm the previous CONFIRMED findings are resolved."
+  fi
 
   echo "[codex-review] resume session=$SID effort=$RESUME_EFFORT (pass $NEXT_PASS)"
   : > "$LAST_MSG"
@@ -336,6 +371,9 @@ REVIEW MODE:
 
 REVIEW BASE:
 {{BASE}}
+
+REVIEW RANGE:
+{{RANGE}}
 
 TASK CONTEXT:
 {{TASK_CONTEXT}}
@@ -435,8 +473,13 @@ APPROVE
 REQUEST_CHANGES
 PROMPT
 
+if [ -n "$TIP" ]; then
+  RANGE="Committed range $(git -C "$REPO_ROOT" merge-base "$BASE" "$TIP")..$TIP (one whole pull request: merge-base of main .. exact PR head)."
+else
+  RANGE="Merge base of the review base .. HEAD, plus staged, unstaged and relevant untracked changes."
+fi
 # 以 sed 注入(多行內容用 r/d,避免特殊字元問題)
-sed -i -e "s|{{MODE}}|$MODE|" -e "s|{{BASE}}|$BASE|" \
+sed -i -e "s|{{MODE}}|$MODE|" -e "s|{{BASE}}|$BASE|" -e "s|{{RANGE}}|$RANGE|" \
        "$TMP/prompt.txt"
 sed -i -e "/{{TASK_CONTEXT}}/r $TMP/ctx.txt" -e "/{{TASK_CONTEXT}}/d" "$TMP/prompt.txt"
 sed -i -e "/{{VERIFICATION_RESULTS}}/r $TMP/ver.txt" -e "/{{VERIFICATION_RESULTS}}/d" "$TMP/prompt.txt"

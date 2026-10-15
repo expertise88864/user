@@ -7,7 +7,7 @@
 1. 讀取 `AGENTS.md`、`CLAUDE.md`、`REMOTE_CI_DELIVERY.md`、`DECISIONS.md` 與 `_delivery_policy.json`。較新的使用者定案優先於舊流程文字。
 2. `git fetch origin`，核對 main、工作區與遠端。保留使用者及 CMS 修改；整合前確認範圍與衝突，不自行 stash、丟棄或包入提交。
 3. 讀取 `.codex-review/patient-growth/` 的最新 checkpoint、handoff、覆蓋及交付證據。核對來源摘要，辨認歷史結果與當前版本。
-4. 從實際 commit trailers 核對 pending；只有後續 passed/high 記錄中的完整 `Reviewed-Commit` 能解析相應 SHA。
+4. 用 `python tools/pr_review.py --pending` 核對 PR review：只有 exact head 上本人建立的 `codex-review/gpt-6.1-sol` APPROVE status 才算通過，quota-pending 不是通過。2026-10-15 前的 `Claude-Opus-5-Review: pending` 舊 commit 才需依 trailer 補審，結果記在 PR comment 或 issue。
 5. 確認有無正在執行的生成、審查或交付。不要競態開第二個流程。
 
 ## 現行網站與來源
@@ -20,9 +20,9 @@
 
 ## 程式、內容與交付
 
-本機快速檢查與相關回歸後，完成指定獨立模型審查，再進 `codex/*` 候選、同 SHA 完整遠端 CI、同庫 PR／Preview／瀏覽器。正常快轉 main 後仍須同 SHA 正式 CI／部署／smoke。
+本機快速檢查與相關回歸後進 `codex/*` 候選、同 SHA 完整遠端 CI、同庫 PR／Preview／瀏覽器；每個 PR 以 `python tools/pr_review.py` 做一次整段審查（2026-10-15 定案，不逐 commit、不加 trailer、不做 audit commit）。正常快轉 main 後仍須同 SHA 正式 CI／部署／smoke。
 
-Claude 固定 `claude-opus-5-5`、high、唯讀並核對實際 modelUsage；Codex 依目前專案指定模型及 effort。補審覆蓋完整原始範圍及後續 task-owned 差異。來源改變需重建 packet；額度不足依既有 pending／排程規則處理。
+PR review 固定 `gpt-6.1-sol`／`xhigh`／唯讀，由 wrapper 驗證實際模型；修正後 push 再 `--resume`，直到 APPROVE。Claude `claude-opus-5-5`／high 只用於切換前遺留 pending 的補審。來源改變需重建 packet；額度不足記 quota-pending，額度恢復後以 `--pending` 補審。
 
 所有醫療文字及英文修改依醫師逐項核可。未核可草稿與確認缺陷保持可追蹤；schema 類型、作者資訊、robots、URL 與英文鏡像政策依 DECISIONS 執行。
 

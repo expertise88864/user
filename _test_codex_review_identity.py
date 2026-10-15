@@ -174,7 +174,7 @@ class BashWrapperTests(unittest.TestCase):
     def run_wrapper(self, *, resume=False, returned=SID, rc=0, actual_model="gpt-6.1-sol",
                     actual_effort="xhigh", actual_sandbox="read-only", count=1, legacy=False,
                     retry_after_failure=False, crlf=False, python3_only=False, from_subdir=False,
-                    reviewed_head=None):
+                    reviewed_head=None, pr_range=None, prev_tip=None):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             subprocess.run(["git", "init", "-q", str(root)], check=True)
@@ -231,6 +231,15 @@ fi
                        REVIEW_FIXTURE_RC=str(rc),
                        # The fixture `codex` on PATH, not the highest-version CLI on this machine.
                        CODEX_REVIEW_CLI="codex")
+            env.pop("CODEX_REVIEW_TIP", None)
+            env.pop("CODEX_REVIEW_BASE", None)
+            env.pop("CODEX_REVIEW_PREV_TIP", None)
+            if prev_tip is not None:
+                env["CODEX_REVIEW_PREV_TIP"] = head if prev_tip == "head" else prev_tip
+            if pr_range is not None:
+                # tools/pr_review.py names the exact PR head and its merge base.
+                env["CODEX_REVIEW_TIP"] = head if pr_range == "head" else pr_range
+                env["CODEX_REVIEW_BASE"] = head
             # Bash itself receives native PATH. Its fixture PATH changes only in this child.
             fixture_path = bin_dir.as_posix()
             if os.name == "nt":
@@ -340,6 +349,34 @@ fi
         result = self.run_wrapper(resume=True, rc=1, reviewed_head="0" * 40)
         self.assertEqual(result[:4], (4, True, SID, "1"), result[-1])
         self.assertEqual(self.last_reviewed, "0" * 40)
+
+    def test_pr_review_names_whole_pr_range(self):
+        result = self.run_wrapper(pr_range="head")
+        self.assertEqual(result[:4], (0, True, SID, "1"), result[-1])
+        self.assertIn(f"Committed range {self.fixture_head}..{self.fixture_head} (one whole pull request",
+                      self.last_prompt)
+        self.assertNotIn("{{RANGE}}", self.last_prompt)
+        result = self.run_wrapper(resume=True, reviewed_head="head", pr_range="head")
+        self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
+        self.assertIn(f"The pull request range is now {self.fixture_head}..{self.fixture_head};",
+                      self.last_prompt)
+
+    def test_pr_resume_reviews_every_change_since_last_verdict(self):
+        result = self.run_wrapper(resume=True, reviewed_head="head", pr_range="head", prev_tip="head")
+        self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
+        self.assertIn(f"Review EVERY change in {self.fixture_head}..{self.fixture_head}", self.last_prompt)
+
+    def test_pr_resume_rejects_invalid_previous_head(self):
+        for prev_tip, pr_range in (("short", "head"), ("0" * 40, "head"), ("head", None)):
+            with self.subTest(prev_tip=prev_tip, pr_range=pr_range):
+                result = self.run_wrapper(resume=True, pr_range=pr_range, prev_tip=prev_tip)
+                self.assertEqual(result[:2], (64, False), result[-1])
+
+    def test_pr_review_head_must_be_checked_out(self):
+        for resume in (False, True):
+            with self.subTest(resume=resume):
+                result = self.run_wrapper(resume=resume, pr_range="0" * 40)
+                self.assertEqual(result[:2], (64, False), result[-1])
 
     def test_legacy_profile_cannot_resume(self):
         result = self.run_wrapper(resume=True, legacy=True)
