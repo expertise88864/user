@@ -40,6 +40,12 @@ never exported and are discarded when the browser context closes.
 ## Promotion
 Fetch main again. It must be an ancestor of the exact successful candidate;
 otherwise integrate without overwriting CMS/user changes and revalidate.
+Integrate by rebasing the candidate onto main (or re-creating it from main), never
+by merging main into it: every promoted commit must have exactly one parent.
+`_cms_retirement.baseline` walks single parents back to the previous main revision
+with a delivery.yml run; a merge commit on main fails the Delivery contract job and
+gates off the Vercel production build (2026-10-15, 0fe013a3). If one ever lands,
+promote a single-parent commit on top of it through the normal candidate flow.
 With the clean candidate checked out:
     git push origin FULL_SHA:refs/heads/main
 The pre-push hook independently retrieves GitHub evidence (candidate CI, PR checks,
