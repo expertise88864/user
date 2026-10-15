@@ -174,7 +174,7 @@ class BashWrapperTests(unittest.TestCase):
     def run_wrapper(self, *, resume=False, returned=SID, rc=0, actual_model="gpt-6.1-sol",
                     actual_effort="xhigh", actual_sandbox="read-only", count=1, legacy=False,
                     retry_after_failure=False, crlf=False, python3_only=False, from_subdir=False,
-                    reviewed_head=None, pr_range=None, prev_tip=None):
+                    reviewed_head=None, pr_range=None, prev_tip=None, rebuttal=None):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             subprocess.run(["git", "init", "-q", str(root)], check=True)
@@ -234,6 +234,12 @@ fi
             env.pop("CODEX_REVIEW_TIP", None)
             env.pop("CODEX_REVIEW_BASE", None)
             env.pop("CODEX_REVIEW_PREV_TIP", None)
+            env.pop("CODEX_REVIEW_REBUTTAL_FILE", None)
+            if rebuttal is not None:
+                evidence = root / "rebuttal.txt"
+                if rebuttal != "missing":
+                    evidence.write_text(rebuttal, encoding="utf-8")
+                env["CODEX_REVIEW_REBUTTAL_FILE"] = evidence.as_posix()
             if prev_tip is not None:
                 env["CODEX_REVIEW_PREV_TIP"] = head if prev_tip == "head" else prev_tip
             if pr_range is not None:
@@ -370,6 +376,19 @@ fi
         for prev_tip, pr_range in (("short", "head"), ("0" * 40, "head"), ("head", None)):
             with self.subTest(prev_tip=prev_tip, pr_range=pr_range):
                 result = self.run_wrapper(resume=True, pr_range=pr_range, prev_tip=prev_tip)
+                self.assertEqual(result[:2], (64, False), result[-1])
+
+    def test_pr_resume_rebuttal_reaches_reviewer(self):
+        result = self.run_wrapper(resume=True, reviewed_head="head", pr_range="head",
+                                  rebuttal="F1 REJECTED: guarded by _delivery.py:340\n")
+        self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
+        self.assertIn("Never withdraw a finding on assertion alone", self.last_prompt)
+        self.assertIn("F1 REJECTED: guarded by _delivery.py:340", self.last_prompt)
+
+    def test_pr_resume_rebuttal_rejects_diff_or_missing_file(self):
+        for rebuttal in ("diff --git a/x b/x\n@@ -1 +1 @@\n", "missing"):
+            with self.subTest(rebuttal=rebuttal):
+                result = self.run_wrapper(resume=True, pr_range="head", rebuttal=rebuttal)
                 self.assertEqual(result[:2], (64, False), result[-1])
 
     def test_pr_review_head_must_be_checked_out(self):

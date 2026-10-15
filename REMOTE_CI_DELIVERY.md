@@ -21,7 +21,10 @@ change medical content, visual baselines, credentials, recipients or scoring.
    gpt-6.1-sol/xhigh read-only reviews merge-base(main, head)..head; the verdict goes to a
    PR comment and to the owner's `codex-review/gpt-6.1-sol` status on the exact head.
    Validate findings, fix only CONFIRMED ones, push, then python tools/pr_review.py --resume
-   until APPROVE. A new head needs a new verdict (and new CI/Preview evidence). Confirmed
+   until APPROVE. A new head needs a new verdict (and new CI/Preview evidence). A finding
+   REJECTED with evidence may be rebutted once per head: python tools/pr_review.py --resume
+   --rebuttal FILE (evidence, never a diff); the reviewer re-checks it and keeps or
+   withdraws it. Confirmed
    quota exhaustion records quota-pending (publishable, not approval); backfill via --pending.
 
 Protected Vercel previews require the project automation bypass credential stored

@@ -376,16 +376,20 @@ class DeliveryTests(unittest.TestCase):
                  [self._status(description="APPROVE")],
                  [self._status(ident=1), self._status("failure", f"REQUEST_CHANGES base={'b'*40}", ident=2)])
         for statuses in cases:
-            with self.subTest(statuses=statuses),                  patch.object(d.subprocess, "run", return_value=subprocess.CompletedProcess([], 0)),                  self.assertRaises(d.Blocked):
+            with self.subTest(statuses=statuses), \
+                 patch.object(d.subprocess, "run", return_value=subprocess.CompletedProcess([], 0)), \
+                 self.assertRaises(d.Blocked):
                 d.pr_review(self._review_api(*statuses), cfg, SHA, "c"*40)
 
     def test_pr_review_range_must_cover_promoted_commits(self):
-        with patch.object(d.subprocess, "run", return_value=subprocess.CompletedProcess([], 1)),              self.assertRaises(d.Blocked):
+        with patch.object(d.subprocess, "run", return_value=subprocess.CompletedProcess([], 1)), \
+             self.assertRaises(d.Blocked):
             d.pr_review(self._review_api(self._status()), {"repository": "owner/repo"}, SHA, "c"*40)
 
     def test_pr_review_quota_pending_publishes_but_is_reported(self):
         status = self._status("pending", f"quota-pending base={'b'*40}")
-        with patch.object(d.subprocess, "run", return_value=subprocess.CompletedProcess([], 0)),              patch.object(d.sys, "stderr", io.StringIO()) as err:
+        with patch.object(d.subprocess, "run", return_value=subprocess.CompletedProcess([], 0)), \
+             patch.object(d.sys, "stderr", io.StringIO()) as err:
             result = d.pr_review(self._review_api(status), {"repository": "owner/repo"}, SHA, "c"*40)
         self.assertEqual(result["pr_review"], "quota-pending")
         self.assertIn("not approved", err.getvalue())
@@ -411,7 +415,12 @@ class DeliveryTests(unittest.TestCase):
                 if args == ("show", f"{previous}:_delivery_policy.json"):
                     return json.dumps(production)
                 raise AssertionError(args)
-            with self.subTest(production=production, candidate=candidate),                  patch.object(d, "git", side_effect=fake_git), patch.object(d, "clean"),                  patch.object(d.subprocess, "run"), patch.object(d, "API"),                  patch.object(d, "verify", return_value=[]),                  patch.object(d, "pr_review", return_value={"pr_review": "APPROVE"}) as review,                  patch.object(d.sys, "stdout", io.StringIO()):
+            with self.subTest(production=production, candidate=candidate), \
+                 patch.object(d, "git", side_effect=fake_git), patch.object(d, "clean"), \
+                 patch.object(d.subprocess, "run"), patch.object(d, "API"), \
+                 patch.object(d, "verify", return_value=[]), \
+                 patch.object(d, "pr_review", return_value={"pr_review": "APPROVE"}) as review, \
+                 patch.object(d.sys, "stdout", io.StringIO()):
                 d.pre_push([f"HEAD {SHA} refs/heads/main {previous}"], "origin",
                            {"repository": "owner/repo", **candidate})
             self.assertEqual(review.called, expected)
@@ -426,7 +435,10 @@ class DeliveryTests(unittest.TestCase):
             if args == ("rev-parse", "FETCH_HEAD"):
                 return previous
             return "not json"
-        with patch.object(d, "git", side_effect=fake_git), patch.object(d, "clean"),              patch.object(d.subprocess, "run"), patch.object(d, "API"),              patch.object(d, "verify", return_value=[]), patch.object(d, "pr_review") as review,              self.assertRaises(d.Blocked):
+        with patch.object(d, "git", side_effect=fake_git), patch.object(d, "clean"), \
+             patch.object(d.subprocess, "run"), patch.object(d, "API"), \
+             patch.object(d, "verify", return_value=[]), patch.object(d, "pr_review") as review, \
+             self.assertRaises(d.Blocked):
             d.pre_push([f"HEAD {SHA} refs/heads/main {previous}"], "origin", {"repository": "owner/repo"})
         review.assert_not_called()
 
