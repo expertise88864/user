@@ -1,6 +1,7 @@
 {
   "repository": "expertise88864/user",
   "require_pr": true,
+  "pr_review": true,
   "allow_dispatch": false,
   "cms_author_intent": true,
   "site_settings_author_intent": true,

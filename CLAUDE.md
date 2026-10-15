@@ -1,5 +1,15 @@
 # CLAUDE.md — chendermatologist.com 操作手冊(給每一個 AI session)
 
+## 最新使用者定案：每個 PR review 一次（2026-10-15）
+
+本節優先於下方及舊文件中所有「逐 commit review」「push 前 review」「review trailer」「audit commit」規則；模型、CI、Preview、資料保護與醫療內容核可要求不變。
+- 不再逐 commit review，也不用 pre-commit／commit-msg hook 審查；commit 不需要 review trailer。
+- 分支推上 `codex/*` 後執行 `python tools/pr_review.py`：開（或找到）指向 main 的同庫 PR（本網站 `require_pr` 的 PR CI 與 Preview 也用同一個 PR），以 `gpt-6.1-sol`／`xhigh` 唯讀審查 `merge-base(main, head)..head` 整段 diff，結論與 findings 寫成 PR comment，並在 exact head SHA 設 `codex-review/gpt-6.1-sol` commit status。
+- findings 逐條驗證（CONFIRMED／REJECTED／UNCERTAIN），只修 CONFIRMED；修正後 push，再跑 `python tools/pr_review.py --resume`（同一 session）直到 APPROVE。head 一變，舊 APPROVE 即作廢。
+- 推 main 時 pre-push hook（`_delivery.py`）除候選 CI、PR 與作者意圖檢查外，還要求 exact head 有本人建立的 APPROVE status，且審查範圍涵蓋所有要進 main 的 commit。額度不足時 status 為 quota-pending：可照常發佈但不是通過；額度恢復後用 `python tools/pr_review.py --pending` 找出並補審，結果寫在同一 PR。
+- 不再產生 audit commit；「空 audit commit 也走候選流程」已刪除。純文件變更仍走候選分支、CI、Preview 與 PR review。
+- 切換前帶 `Claude-Opus-5-Review: pending` 的舊 commit 仍以 `claude-opus-5-5`／high 補審，結果記在 PR comment 或 issue，不再寫 audit commit。
+
 ## 最新使用者定案：遠端 CI 候選驗證與正式發佈（2026-09-06）
 本節取代下方／舊任務／舊排程中「每次候選 push 前完整本機 CI」及「直接推 main 再修」的規則；不變更醫療內容核可、獨立 Codex/Claude review 或資料保護要求。
 - 四個專案採本機快速檢查與相關回歸測試 → codex/* 候選分支 → 完整遠端 CI → 已驗證同一 SHA 才正常快轉進 main；候選 push 不要求先有完整本機 CI。
@@ -8,8 +18,8 @@
 - HsiaoEye 視覺基準只能由 Ubuntu 產生並人工確認，不自動接受差異；保留 CMS 新修改，衝突停止，不 force-push。CMS 存檔不等於正式發佈完成。
 - 晨報候選 CI 不得寄信、寫回正式 state 或觸發正式排程；變更產報/LLM/外部資料關鍵路徑時另做不寄信 dry-run。既有正式寄信排程不得因候選驗證中斷。
 - CI 失敗持續診斷並修正可確認缺陷，修正後重跑完整遠端驗證；取消、逾時、缺失、讀不到及應跑卻跳過皆不通過。禁止 skip-ci、降門檻或繞 hook 製造全綠。
-- Claude 固定 claude-opus-5 / high / read-only；quota pending 只延後模型審查，不豁免正式發佈的遠端 CI。保留精確 pending/passed/Reviewed-Commit trailers 及重置後補審。
-- main 發佈後還要驗證 exact-SHA 正式 CI／部署及適用 smoke checks，才可宣告交付；純文件與空 audit commit 也走候選流程。
+- 審查方式見上方 2026-10-15 定案（每個 PR 一次，gpt-6.1-sol／xhigh／read-only）；quota pending 只延後模型審查，不豁免正式發佈的遠端 CI。
+- main 發佈後還要驗證 exact-SHA 正式 CI／部署及適用 smoke checks，才可宣告交付；純文件變更也走候選流程。
 - 詳細入口、範圍與限制見 REMOTE_CI_DELIVERY.md。不得把本機快速檢查說成完整 CI，也不得把候選 CI 綠燈當作正式部署成功。
 
 > 讀者:之後接手的 AI 模型(Sonnet/Haiku 等級也要能照做)。規則具體、可執行;
@@ -30,13 +40,15 @@ zh-Hant 為源頭、`/en/` 鏡像為生成物。~53 篇文章 + ~130 支根目�
 
 ## 鐵律(違反 = 事故)
 1. **醫療內容(文章文字、TL;DR、FAQ、藥物劑量)一律先給使用者(醫師)審核才可上線。**
-   模型不得自行判斷臨床正確性。流程:草稿 → 使用者說「通過」→ 注入 → codex review → push。
+   模型不得自行判斷臨床正確性。流程:草稿 → 使用者說「通過」→ 注入 → 候選 push → PR review(`tools/pr_review.py`)→ 發佈。
 2. **合規紅線**:作者是住院醫師 —— schema/內文**不得**掛醫院隸屬(worksFor/affiliation)、
    不得出現掛號/預約/價格/診所名(醫療法 §9)。`hasCredential` 只放「醫師」執照、不放號碼。
-3. **push 前必過 Codex `gpt-6.1-sol`/`xhigh` review**(全域規則 2026-10-14,見 ~/.claude/CLAUDE.md)。流程:
-   只走 repo wrapper `tools/codex_review.sh` / `tools/codex_review.ps1`(唯讀、不貼 diff;MCP 與直接 `codex exec` 都不用)
-   → 逐條驗證 finding、只修 CONFIRMED → resume 同一 session 直到 APPROVE 才 push。
-   codex 不可用且使用者未明示跳過 → **不 push**。本專案 codex 已實際攔下多次真問題。
+3. **每個 PR 必過一次 Codex `gpt-6.1-sol`/`xhigh` review**(使用者 2026-10-15 定案,取代逐 commit／每次 push 前審查)。流程:
+   `codex/*` 候選推上後跑 `python tools/pr_review.py`(開／找 PR,經 repo wrapper `tools/codex_review.sh` 唯讀審查
+   `merge-base(main, head)..head`;不貼 diff,MCP 與直接 `codex exec` 都不用)
+   → 逐條驗證 finding、只修 CONFIRMED → push 後 `python tools/pr_review.py --resume` 直到 APPROVE 才推 main
+   (pre-push hook 檢查 exact head 的 `codex-review/gpt-6.1-sol` status)。額度不足記 quota-pending:可發佈但不是通過,
+   之後 `--pending` 補審;codex 因其他原因不可用且使用者未明示跳過 → **不推 main**。本專案 codex 已實際攔下多次真問題。
 4. **生成物不手改**。哪些是生成物、改了源頭要跑什麼:見 PIPELINE.md。
    通則:`en/**`、`sitemap.xml`、feeds、`llms-full.txt`、`ai/*.json`、`.well-known/ai.txt`、
    `robots.txt`、`*.min.js`、pagefind/、`exam/**`（除 `exam/exam.js`；由 `_gen_exam.py` 從 `data/exam/` 產生）
