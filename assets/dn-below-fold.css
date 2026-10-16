@@ -191,7 +191,9 @@ article h2[id]{scroll-margin-top:84px}
 @media (min-width: 768px) {
   #articles #dn-article-list { display: grid; grid-template-columns: 1.3fr 1fr; gap: 14px; }
   #articles #dn-article-list > .article-list-item { min-height: 0; }
-  #articles #dn-article-list > .article-list-item:hover { transform: translateY(-3px); }
+  /* lift with `top`: blog-shared.js pins .article-list-item.visible to transform:translateY(0) !important */
+  #articles #dn-article-list > .article-list-item { position: relative; top: 0; }
+  #articles #dn-article-list > .article-list-item:hover { top: -3px; }
   #articles #dn-article-list > .article-list-item:first-of-type { grid-row: span 2; flex-direction: column; justify-content: flex-end; padding: 26px 26px 22px; }
   #articles #dn-article-list > .article-list-item:first-of-type::before { width: 48px; height: 5px; margin: 0 0 auto; align-self: flex-start; }
   #articles #dn-article-list > .article-list-item:first-of-type .al-body h2 { font-size: 23px; line-height: 1.38; -webkit-line-clamp: 4; margin-top: 18px; }
