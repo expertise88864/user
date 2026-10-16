@@ -10,6 +10,7 @@ import html
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from _html_scan import iter_tags, tag_name, attributes, blank_script_style, mask_inert_regions
 from _site_html import site_html_files
+from _regen_fixed_points import FixedPoints
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -108,9 +109,13 @@ def html_files() -> list[str]:
     return [str(path) for path in site_html_files(ROOT)]
 
 
-def normalize_file(path: str) -> bool:
+def normalize_file(path: str, fixed_points: FixedPoints | None = None) -> bool:
     with open(path, 'r', encoding='utf-8') as fp:
         src = fp.read()
+    # Text this build already proved unchanged by this function: skip it.
+    # See _regen_fixed_points.py; output bytes are identical either way.
+    if fixed_points is not None and fixed_points.unchanged_since_proven(path, src):
+        return False
     next_src = PRELOAD_TW_MINI_RE.sub(
         lambda m: f'<link rel="stylesheet" href="{m.group(1)}">',
         src,
@@ -162,9 +167,13 @@ def normalize_file(path: str) -> bool:
 
     next_src = FONT_PRECONNECT_RE.sub(keep_first_font_preconnect, next_src)
     if next_src == src:
+        if fixed_points is not None:
+            fixed_points.record_unchanged(path, src)
         return False
     with open(path, 'w', encoding='utf-8') as fp:
         fp.write(next_src)
+    if fixed_points is not None:
+        fixed_points.forget(path)
     return True
 
 
@@ -214,7 +223,9 @@ def main() -> None:
             with open(css_path, 'w', encoding='utf-8') as fp:
                 fp.write(next_css)
             print('Normalized mini stylesheet text-color utilities')
-    changed = sum(1 for path in paths if normalize_file(path))
+    fixed_points = FixedPoints('_normalize_css_links', ROOT)
+    changed = sum(1 for path in paths if normalize_file(path, fixed_points))
+    fixed_points.save()
     print(f'Normalized CSS links in {changed} files')
     js_changed = normalize_js_loaders()
     if js_changed:

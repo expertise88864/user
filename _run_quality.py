@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 import argparse
+import contextlib
 import os
 import subprocess
 import sys
-from collections.abc import Sequence
+import tempfile
+from collections.abc import Iterator, Sequence
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 
@@ -259,6 +262,7 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_test_patient_release_preparation.py"],
     [PY, "_test_patient_request_discovery.py"],
     [PY, "_test_generation_clock.py"],
+    [PY, "_test_quality_runner.py"],
     [PY, "_test_cms_retirement.py"],
     [PY, "_test_patient_review_retirement.py"],
     ["node", "--test", "_test_cms_delivery.cjs", "_test_vercel_gate.cjs"],
@@ -343,6 +347,29 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_test_related_articles.py"],
 ]
 
+# Check scheduling (2026-10-16). CHECK_STEPS keeps every check, its arguments
+# and its order; only the wall-clock schedule changes. `check` and `build` run
+# them in a bounded pool (min(4, CPUs); DN_QUALITY_JOBS=1 restores the serial
+# runner). Each check's stdout+stderr is buffered and printed in list order
+# under its usual "+ command" line. The first failing check in LIST order
+# fails the build with the same "[FAIL] <command> exited with <code>" line and
+# exit code as before; checks after it are not started (queued ones are
+# cancelled, running ones are awaited) and their output is not printed.
+#
+# Classification: every CHECK_STEPS entry is currently PARALLEL (read-only).
+# Each one was run alone and every checkout file and this worktree's git
+# metadata (size + mtime) compared before/after: none writes. Tests write only
+# inside their own tempfile directories or fixture clones, child servers bind
+# port 0, and every generator here runs in its --check mode, which compares
+# without writing (_gen_site_settings, _gen_exam, _build_editor, _gen_asset_
+# release, _gen_og_cards, _sync_hub_catalog). No check consumes another
+# check's output; generators stay serial in REGEN/BUILD_GENERATED_STEPS.
+# A future check that writes to the checkout, depends on an earlier check's
+# effects or must not share the machine belongs in SERIAL_CHECK_STEPS: it then
+# runs alone at its list position, after every earlier check has finished and
+# before any later check starts, with live output.
+SERIAL_CHECK_STEPS: list[list[str]] = []
+
 POST_BUILD_STEPS: list[list[str]] = [
     # _minify.py moved to BUILD_GENERATED_STEPS (see TD-28 note there).
     [NPM, "run", "check-js"],
@@ -354,11 +381,91 @@ def label(command: Sequence[str]) -> str:
     return " ".join(command)
 
 
-def run_steps(name: str, steps: Sequence[Sequence[str]]) -> None:
+def check_jobs() -> int:
+    """Concurrent check processes: min(4, CPUs); DN_QUALITY_JOBS=1 forces serial."""
+    raw = os.environ.get("DN_QUALITY_JOBS", "").strip()
+    if not raw:
+        return max(1, min(4, os.cpu_count() or 1))
+    if not raw.isdigit() or int(raw) < 1:
+        raise ValueError("DN_QUALITY_JOBS must be a positive integer")
+    return int(raw)
+
+
+def _run_captured(command: Sequence[str]) -> tuple[int, bytes]:
+    # Output goes to a pipe instead of the console, so pin Python children to
+    # UTF-8 (a Windows locale codec cannot encode every CJK message). Linux
+    # builds already use UTF-8; nothing else about the environment changes.
+    env = dict(os.environ)
+    env.setdefault("PYTHONIOENCODING", "utf-8")
+    result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, env=env)
+    return result.returncode, result.stdout
+
+
+def _emit(output: bytes) -> None:
+    text = output.decode("utf-8", errors="replace")
+    encoding = sys.stdout.encoding or "utf-8"
+    sys.stdout.write(text.encode(encoding, errors="replace").decode(encoding, errors="replace"))
+    sys.stdout.flush()
+
+
+def _run_concurrently(steps: Sequence[Sequence[str]], jobs: int) -> None:
+    serial = [list(command) for command in SERIAL_CHECK_STEPS]
+    pool = ThreadPoolExecutor(max_workers=jobs)
+    try:
+        index = 0
+        while index < len(steps):
+            if list(steps[index]) in serial:
+                # Barrier: every earlier check has finished; none later started.
+                print(f"+ {label(steps[index])}", flush=True)
+                subprocess.run(steps[index], check=True)
+                index += 1
+                continue
+            stop = index
+            while stop < len(steps) and list(steps[stop]) not in serial:
+                stop += 1
+            batch = list(steps[index:stop])
+            futures = [pool.submit(_run_captured, command) for command in batch]
+            for position, (command, future) in enumerate(zip(batch, futures)):
+                code, output = future.result()
+                print(f"+ {label(command)}", flush=True)
+                _emit(output)
+                if code != 0:
+                    for pending in futures[position + 1:]:
+                        pending.cancel()
+                    raise subprocess.CalledProcessError(code, command)
+            index = stop
+    finally:
+        # Never leave a running check behind; queued ones were cancelled above.
+        pool.shutdown(wait=True, cancel_futures=True)
+
+
+def run_steps(name: str, steps: Sequence[Sequence[str]], *, parallel: bool = False) -> None:
     print(f"\n== {name} ==", flush=True)
+    jobs = check_jobs() if parallel else 1
+    if jobs > 1:
+        print(f"(read-only checks run {jobs} at a time; output is shown in list order)", flush=True)
+        _run_concurrently(steps, jobs)
+        return
     for command in steps:
         print(f"+ {label(command)}", flush=True)
         subprocess.run(command, check=True)
+
+
+@contextlib.contextmanager
+def fixed_point_scope() -> Iterator[None]:
+    """Let the twice-run normalizers skip text this regeneration proved unchanged."""
+    from _regen_fixed_points import ENV
+
+    previous = os.environ.get(ENV)
+    with tempfile.TemporaryDirectory(prefix="dn-regen-") as directory:
+        os.environ[ENV] = directory
+        try:
+            yield
+        finally:
+            if previous is None:
+                os.environ.pop(ENV, None)
+            else:
+                os.environ[ENV] = previous
 
 
 def regeneration_steps(content_date: str | None = None) -> list[list[str]]:
@@ -397,13 +504,15 @@ def main(argv: Sequence[str] | None = None) -> int:
             args.content_date = approved_date
     try:
         if mode == "regen":
-            run_steps("Regenerate generated site files", regeneration_steps(args.content_date))
+            with fixed_point_scope():
+                run_steps("Regenerate generated site files", regeneration_steps(args.content_date))
         elif mode == "check":
-            run_steps("Run quality checks", CHECK_STEPS)
+            run_steps("Run quality checks", CHECK_STEPS, parallel=True)
         elif mode == "build":
-            run_steps("Regenerate generated site files", regeneration_steps(args.content_date))
+            with fixed_point_scope():
+                run_steps("Regenerate generated site files", regeneration_steps(args.content_date))
             run_steps("Generate build artifacts", BUILD_GENERATED_STEPS)
-            run_steps("Run quality checks", CHECK_STEPS)
+            run_steps("Run quality checks", CHECK_STEPS, parallel=True)
             run_steps("Finalize and smoke-test build", POST_BUILD_STEPS)
     except subprocess.CalledProcessError as exc:
         print(f"\n[FAIL] {label(exc.cmd)} exited with {exc.returncode}")

@@ -5,6 +5,7 @@ from html import escape, unescape
 from pathlib import Path
 from _html_scan import iter_tags, tag_name, attributes, attribute_spans, blank_script_style, mask_inert_regions
 from _site_html import site_html_files
+from _regen_fixed_points import FixedPoints
 
 # CODE_REVIEW TD-53 — no forced newline on write. This repo runs
 # core.autocrlf=true with no .gitattributes, so every other worktree file is
@@ -139,12 +140,21 @@ def normalize_content_headings(html: str) -> str:
 
 def main() -> None:
     changed = 0
+    # Skip text this build already proved unchanged by these pure functions;
+    # see _regen_fixed_points.py. Output bytes are identical either way.
+    fixed_points = FixedPoints("_normalize_heading_structure", ROOT)
     for path in iter_html_files():
         before = path.read_text(encoding="utf-8")
+        if fixed_points.unchanged_since_proven(path, before):
+            continue
         after = normalize_content_headings(normalize_footer_headings(before))
         if after != before:
             path.write_text(after, encoding="utf-8")
+            fixed_points.forget(path)
             changed += 1
+        else:
+            fixed_points.record_unchanged(path, before)
+    fixed_points.save()
     print(f"Normalized footer heading structure in {changed} HTML files.")
 
 
