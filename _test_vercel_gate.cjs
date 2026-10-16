@@ -331,5 +331,35 @@ for (const overrides of [
 
 test('Vercel validates before and after generating production artifacts', () => {
   const config = require('./vercel.json');
-  assert.equal(config.buildCommand, 'node _vercel_gate.cjs --build && npm run build && node _vercel_gate.cjs --build --post-build');
+  assert.equal(config.buildCommand, 'node _vercel_gate.cjs --build && npm run build && node _vercel_gate.cjs --build --post-build' +
+    ' && python _site_publish.py --stage dist');
+  assert.equal(config.outputDirectory, 'dist', 'Serve only the staged public site, never the repository root');
+});
+test('preview serves every public file and no repository file', async () => {
+  const { checkDeployedFiles } = require('./_delivery_preview.cjs');
+  const base = new URL('https://candidate-team.vercel.app');
+  const manifest = { published: ['index.html', 'blog/a b.html'], private: ['_delivery.py', 'AGENTS.md', 'api/og.js'] };
+  const served = new Set(['/index.html', '/blog/a%20b.html', '/pagefind/pagefind.js']);
+  const requested = [];
+  let og = 'image/svg+xml; charset=utf-8';
+  const context = extra => ({ request: {
+    head: async url => {
+      const path = new URL(url).pathname; requested.push(path);
+      return { status: () => served.has(path) || extra.includes(path) ? 200 : 404 };
+    },
+    get: async (url, options) => {
+      assert.equal(url, base.origin + '/api/og?title=DermNotes'); assert.deepEqual(options, { maxRedirects: 0 });
+      return { status: () => 200, headers: () => ({ 'content-type': og }) };
+    },
+  } });
+  assert.deepEqual(await checkDeployedFiles(context([]), base, manifest), { published: 3, private: 2 });
+  assert.ok(!requested.includes('/api/og.js'), 'Functions are not probed as static files');
+  assert.ok(requested.includes('/__pycache__/_run_quality.cpython-312.pyc'), 'Build bytecode must be probed');
+  og = 'text/html';
+  await assert.rejects(checkDeployedFiles(context([]), base, manifest), /differs/);
+  og = 'image/svg+xml; charset=utf-8';
+  await assert.rejects(checkDeployedFiles(context(['/_delivery.py']), base, manifest), /differs/);
+  served.delete('/pagefind/pagefind.js');
+  await assert.rejects(checkDeployedFiles(context([]), base, manifest), /differs/);
+  await assert.rejects(checkDeployedFiles(context([]), base, { published: [], private: [] }), /Incomplete/);
 });
