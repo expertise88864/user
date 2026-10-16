@@ -1,6 +1,6 @@
 {
   "assets": {
-    "assets/dn-below-fold.css": "69a0d7482c4d890fb8886d064f14828c106b79de4c77466e0d71a5f078aa7173",
+    "assets/dn-below-fold.css": "11acf7bcc95d3e8a3a9224c7d20ec4e4c064d61406fec7d3bbb09bc820a8ba26",
     "assets/dn-print.css": "f0c197abde8857c9474c07b7417c5344d4f799d4366a48f6eea522536f64c963",
     "assets/inline/analytics-loader.js": "498834b0097e16dabcabd31cc4c6d3f4881cb85e9a8de477f3ef0ebf7c99d33e",
     "assets/inline/dn-init.js": "85a2bde719cab2b1a3affafc226c8a322e8e780363799e1e6040516f35280941",
@@ -11,19 +11,19 @@
     "assets/tw-mini.css": "326d9b9f821b986877d4382ce1292393eee2dd4512c2870e2df0ecccacf189ef",
     "assets/web-vitals.iife.js": "77b2dfc9e065286d780c87f72b5cad08761346ff564ddd3f79102f4d4027e9a6",
     "blog/blog-article-footer.min.js": "97e8b5c9f3c26f31d6e6c64db71d1ba16a5f85ce0976a95cf9482eb61d270349",
-    "blog/blog-article-reading.min.js": "ac48fbf474a0fc6562e4a0e33c80ffef250a1171f24a5bb57bf17949b4aa8a93",
+    "blog/blog-article-reading.min.js": "8b9c84acbf881c2165a5d0f461efebddb4342d84530f7314f65db2c8be279078",
     "blog/blog-article-visuals.min.js": "02a1eb571209448e281b717ac153cd2fe885462cf660de3352b469aa43cb2340",
     "blog/blog-calculators.min.js": "97e6776da3c90453f31678a8265c0429d39d8627a163276182037cb77ca7098a",
     "blog/blog-diagrams.min.js": "e90160bbc4f239ff3eff7aaf1aa2b1b4c304fc7b2cd38cd58db4c156419fc43e",
     "blog/blog-hub.min.js": "926753982ab814d5aaea9352a028efef4e1d5a722a6159bea685e78ad84784b3",
-    "blog/blog-shared.min.js": "7c189d315fafc3ccf902d60e2c96f79e575d9c3aa25e1d5826035b3653d74536",
+    "blog/blog-shared.min.js": "8102adb3e72e091a73e09a4d91abaa6c35dbb8bbc724206cd0b50d3c241f3cd7",
     "blog/blog-support.min.js": "cb552e0f4ebb44dfc97f933d29890370c909a26e0423b44de8ef777cef2b62f2"
   },
   "caches": {
-    "CACHE": "cd-v226",
-    "RUNTIME": "cd-runtime-v224"
+    "CACHE": "cd-v227",
+    "RUNTIME": "cd-runtime-v225"
   },
   "hash_format": "sha256-utf8-lf",
-  "version": "202610170100",
-  "worker_sha256": "7dae63d098f7a48b0b3a9d6aae2de25aef641c8aa43c4f64f219d9b55594d804"
+  "version": "202610170130",
+  "worker_sha256": "4cfbeed8e094f12862b1cc8676431ccd0ca874d54b6b9226b11c5b6c79691823"
 }
