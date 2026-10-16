@@ -428,18 +428,45 @@
   }
 
   // Hub: per-chapter progress from this browser's storage (static cells show —).
-  function initProgress(tables) {
-    var map = progressMap();
+  // Without working storage nothing could be saved, so the placeholders stay
+  // and the controls stay disabled rather than accepting edits that vanish.
+  function storageWorks() {
+    try {
+      var probe = '__dnExamProbe';
+      localStorage.setItem(probe, '1');
+      localStorage.removeItem(probe);
+      return true;
+    } catch (e) { return false; }
+  }
+  function saveRead(value) {
+    try { localStorage.setItem(READ_KEY, JSON.stringify(value)); return true; } catch (e) { return false; }
+  }
+  function readMap() {
     var read = load(READ_KEY, {});
-    if (!read || typeof read !== 'object' || Array.isArray(read)) read = {};
-    var answered = 0, right = 0, readCount = 0;
+    return read && typeof read === 'object' && !Array.isArray(read) ? read : {};
+  }
+  function day(ms) {
+    var d = new Date(ms);
+    return d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate();
+  }
+  function progressSummary() {
+    var el2 = document.getElementById('ex-progress-summary');
+    if (!el2) return;
+    var map = progressMap();
+    var answered = 0, right = 0;
     Object.keys(map).forEach(function (id) {
       if (Array.isArray(map[id])) { answered += 1; if (map[id][0]) right += 1; }
     });
-    function day(ms) {
-      var d = new Date(ms);
-      return d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate();
-    }
+    var total = document.querySelector('[data-exam-total]');
+    var totalCount = total ? Number(total.getAttribute('data-exam-total')) : 0;
+    el2.textContent = '已作答 ' + answered + (totalCount ? ' / ' + totalCount : '') + ' 題' +
+      (answered ? '，正確率 ' + Math.round(100 * right / answered) + '%' : '') +
+      '，課本已讀完 ' + Object.keys(readMap()).length + ' 章';
+  }
+  // Fill every row from storage; safe to repeat (back-forward cache restores).
+  function refreshProgress() {
+    var map = progressMap();
+    var read = readMap();
     document.querySelectorAll('.ex-progress tbody tr').forEach(function (row) {
       var ids = (row.getAttribute('data-qids') || '').split(',').filter(Boolean);
       var done = 0, ok = 0, last = 0;
@@ -459,55 +486,65 @@
       accCell.classList.toggle('ex-pg-low', acc !== null && acc < 60);
       row.querySelector('.ex-pg-date').textContent = last ? day(last) : '—';
       var box = row.querySelector('.ex-pg-read');
-      var ch = row.getAttribute('data-ch');
       box.disabled = false;
-      box.checked = Object.prototype.hasOwnProperty.call(read, ch);
-      if (box.checked) readCount += 1;
+      box.checked = Object.prototype.hasOwnProperty.call(read, row.getAttribute('data-ch'));
+    });
+    progressSummary();
+    var sort = document.querySelector('.ex-progress-sort');
+    if (sort && sort.value !== 'order') sortProgress(sort.value);
+  }
+  function sortProgress(mode) {
+    document.querySelectorAll('.ex-progress').forEach(function (table) {
+      var tbody = table.querySelector('tbody');
+      var rows = Array.prototype.slice.call(tbody.rows);
+      rows.sort(function (a, b) {
+        var oa = Number(a.getAttribute('data-order')), ob = Number(b.getAttribute('data-order'));
+        if (mode === 'todo') {
+          var da = Number(a.getAttribute('data-done')), db = Number(b.getAttribute('data-done'));
+          return (da === 0) === (db === 0) ? oa - ob : (da === 0 ? -1 : 1);
+        }
+        if (mode === 'low') {
+          var aa = a.getAttribute('data-acc'), ab = b.getAttribute('data-acc');
+          if (aa === '' && ab === '') return oa - ob;
+          if (aa === '') return 1;
+          if (ab === '') return -1;
+          return Number(aa) - Number(ab) || oa - ob;
+        }
+        return oa - ob;
+      });
+      rows.forEach(function (row) { tbody.appendChild(row); });
+    });
+  }
+  function initProgress() {
+    var summaryEl = document.getElementById('ex-progress-summary');
+    if (!storageWorks()) {
+      if (summaryEl) summaryEl.textContent = '這個瀏覽器無法儲存資料（例如無痕模式或停用網站資料），讀書進度無法記錄。';
+      return;
+    }
+    document.querySelectorAll('.ex-pg-read').forEach(function (box) {
       box.addEventListener('change', function () {
-        var current = load(READ_KEY, {});
-        if (!current || typeof current !== 'object' || Array.isArray(current)) current = {};
+        var ch = box.getAttribute('data-ch');
+        var current = readMap();
         if (box.checked) current[ch] = Date.now(); else delete current[ch];
-        store(READ_KEY, current);
-        summary();
+        if (!saveRead(current)) {
+          box.checked = !box.checked;  // the change could not be kept
+          if (summaryEl) summaryEl.textContent = '無法儲存「課本已讀完」，請確認瀏覽器允許網站資料。';
+          return;
+        }
+        progressSummary();
       });
     });
-    var total = document.querySelector('[data-exam-total]');
-    var totalCount = total ? Number(total.getAttribute('data-exam-total')) : 0;
-    function summary() {
-      var el2 = document.getElementById('ex-progress-summary');
-      if (!el2) return;
-      var current = load(READ_KEY, {});
-      var n = current && typeof current === 'object' ? Object.keys(current).length : 0;
-      el2.textContent = '已作答 ' + answered + (totalCount ? ' / ' + totalCount : '') + ' 題' +
-        (answered ? '，正確率 ' + Math.round(100 * right / answered) + '%' : '') + '，課本已讀完 ' + n + ' 章';
-    }
-    summary();
     var sort = document.querySelector('.ex-progress-sort');
     if (sort) {
       sort.disabled = false;
-      sort.addEventListener('change', function () {
-        tables.forEach(function (table) {
-          var tbody = table.querySelector('tbody');
-          var rows = Array.prototype.slice.call(tbody.rows);
-          rows.sort(function (a, b) {
-            var oa = Number(a.getAttribute('data-order')), ob = Number(b.getAttribute('data-order'));
-            if (sort.value === 'todo') {
-              var da = Number(a.getAttribute('data-done')), db = Number(b.getAttribute('data-done'));
-              return (da === 0) === (db === 0) ? oa - ob : (da === 0 ? -1 : 1);
-            }
-            if (sort.value === 'low') {
-              var aa = a.getAttribute('data-acc'), ab = b.getAttribute('data-acc');
-              if (aa === '' && ab === '') return oa - ob;
-              if (aa === '') return 1;
-              if (ab === '') return -1;
-              return Number(aa) - Number(ab) || oa - ob;
-            }
-            return oa - ob;
-          });
-          rows.forEach(function (row) { tbody.appendChild(row); });
-        });
-      });
+      sort.addEventListener('change', function () { sortProgress(sort.value); });
     }
+    refreshProgress();
+    // A page restored from the back-forward cache skips DOMContentLoaded;
+    // answers given on other pages since then must still show up here.
+    window.addEventListener('pageshow', function (event) {
+      if (event.persisted) refreshProgress();
+    });
   }
 
   function init() {
@@ -522,8 +559,7 @@
     if (form && barApi) initPractice(form, barApi);
     var list = document.getElementById('ex-review-list');
     if (list) renderReview(list);
-    var tables = Array.prototype.slice.call(document.querySelectorAll('.ex-progress'));
-    if (tables.length) initProgress(tables);
+    if (document.querySelector('.ex-progress')) initProgress();
     document.querySelectorAll('.ex-anki').forEach(function (btn) {
       btn.addEventListener('click', function () {
         examData().then(function (data) {

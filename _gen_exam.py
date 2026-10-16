@@ -527,7 +527,7 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
         parts[ch["part"]].append(n)
     part_html = []
     for part, nums in parts.items():
-        rows = []
+        prog_rows = []
         for idx, n in enumerate(nums):
             qs = by_chapter.get(n, [])
             title = esc(chapters[n]["title"])
@@ -535,7 +535,7 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
             badge = ' <span class="ex-badge">有重點</span>' if n in data["notes"] else ""
             # Progress cells start as "—" and are filled from this browser's
             # localStorage by exam.js; data-qids lists the chapter's questions.
-            rows.append(
+            prog_rows.append(
                 f'<tr data-ch="{n}" data-order="{idx}" data-qids="{",".join(q["id"] for q in qs)}"'
                 f'{" class=\"ex-none\"" if not qs else ""}>'
                 f'<th scope="row">{name}{badge}</th><td class="ex-num">{len(qs)}</td>'
@@ -549,7 +549,7 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
             '<div class="ex-table-wrap"><table class="ex-progress"><thead><tr><th scope="col">章節</th>'
             '<th scope="col">題數</th><th scope="col">已做</th><th scope="col">正確率</th>'
             '<th scope="col">最後作答</th><th scope="col">課本已讀完</th></tr></thead>'
-            f'<tbody>{"".join(rows)}</tbody></table></div></details>'
+            f'<tbody>{"".join(prog_rows)}</tbody></table></div></details>'
         )
     years = "".join(f'<li><a href="/exam/year-{y}">{y} 年</a></li>' for y in sorted(by_year))
     books = "".join(
