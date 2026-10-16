@@ -78,8 +78,10 @@ def load() -> dict:
     # mistake them for standalone pages.
     for path in sorted((DATA / "notes").glob("fitz-*.frag")):
         notes[int(path.stem.split("-")[1])] = path.read_text(encoding="utf-8")
+    links_path = DATA / "links.json"
+    links = {int(k): v for k, v in json.loads(links_path.read_text(encoding="utf-8")).items()} if links_path.exists() else {}
     return {"questions": questions, "tags": tags, "explanations": explanations,
-            "chapters": chapters, "notes": notes}
+            "chapters": chapters, "notes": notes, "links": links}
 
 
 # ---------------------------------------------------------------- page shell
@@ -186,7 +188,8 @@ def page(shell, *, path, title, description, og_title, crumbs, jsonld_type, body
 NOTICE = (
     '<div class="ex-notice">題目取自'
     f'<a href="{SOURCE_URL}" target="_blank" rel="noopener noreferrer">{SOURCE_LABEL}歷屆試題</a>'
-    "，答案為學會公告的標準答案；重點與詳解依 Fitzpatrick's Dermatology 9th edition 自行整理</div>"
+    "，答案為學會公告的標準答案；重點與詳解依據 Fitzpatrick's Dermatology, 9th Edition 與 "
+    "McKee's Pathology of the Skin, 5th Edition（第 6 版到手後更新頁碼）整理</div>"
 )
 
 MODE_BAR = (
@@ -207,9 +210,16 @@ def chapter_title(ch: dict) -> str:
 CHAPTER_PAGES: set[int] = set()  # chapters that get an exam/fitz-<n>.html page; set by build()
 
 
+def ref_label(ref) -> str:
+    chap, pages = ref
+    return f"McKee 5e p.{pages}" if chap == "M" else f"Fitzpatrick 9e ch.{chap} p.{pages}"
+
+
 def ref_html(ref, current_chapter: int | None, chapters: dict) -> str:
     chap, pages = ref
-    label = f"Fitzpatrick 9e ch.{chap} p.{pages}"
+    label = ref_label(ref)
+    if chap == "M":
+        return f'<span class="ex-ref ex-ref-mckee">{esc(label)}</span>'
     if chap == current_chapter or chap not in CHAPTER_PAGES:
         return f'<span class="ex-ref">{esc(label)}</span>'
     return f'<a class="ex-ref" href="/exam/fitz-{chap}">{esc(label)}</a>'
@@ -253,8 +263,9 @@ def question_html(q: dict, data: dict, *, current_chapter: int | None = None, sh
             f'<span class="ex-item-refs">{"；".join(ref_html(r, current_chapter, chapters) for r in it["refs"])}</span></li>'
             for it in expl["items"]
         )
-        flags = "".join(f'<p class="ex-warn">⚠ {rich(f)}</p>' for f in expl.get("flags", []))
-        expl_html = f'<p class="ex-summary">{rich(expl["summary"])}</p><ul class="ex-items">{items}</ul>{flags}'
+        flags = "".join(f'<p class="ex-flag-note"><span class="ex-flag-tag">附註</span>{rich(f)}</p>' for f in expl.get("flags", []))
+        expl_html = (f'<p class="ex-summary">{rich(expl["summary"])}</p><ul class="ex-items">{items}</ul>'
+                     f'{flags}{dispute_html(expl.get("dispute"))}')
     else:
         homes = [f'<a href="/exam/fitz-{c}">Ch.{c}</a>' for c in tag["fitz"]]
         where = f'（相關章節：{"、".join(homes)}）' if homes else ""
@@ -274,6 +285,57 @@ def question_html(q: dict, data: dict, *, current_chapter: int | None = None, sh
         f'<div class="ex-reveal">{answer_html}<div class="ex-expl">{expl_html}</div></div>'
         "</article>"
     )
+
+
+DISPUTE_KINDS = {
+    "old": "舊版觀念", "missing": "課本未提及", "conflict": "說法矛盾",
+    "ambiguous": "選項模稜兩可", "typo": "題目誤植", "figure": "缺圖或缺表",
+}
+
+
+def labelled(text: str) -> str:
+    """'考試答案：…' -> bold label + text (the label is part of the data)."""
+    head, sep, body = text.partition("：")
+    if sep and len(head) <= 6:
+        return f"<strong>{esc(head)}</strong>：{rich(body)}"
+    return rich(text)
+
+
+def source_html(src: dict) -> str:
+    year = f"（{src['year']}）" if src.get("year") else ""
+    pmid = f" PMID {esc(str(src['pmid']))}" if src.get("pmid") else ""
+    return (f'<li><a href="{esc(src["url"])}" target="_blank" rel="noopener noreferrer">{rich(src["title"])}</a>'
+            f'{esc(year)}{pmid}</li>')
+
+
+def dispute_html(dispute: dict | None) -> str:
+    if not dispute:
+        return ""
+    kind = DISPUTE_KINDS.get(dispute.get("kind"), "疑義")
+    parts = [f'<p class="ex-dispute-h">⚠ 疑義題 · {esc(kind)}</p>', f'<p>{labelled(dispute["exam"])}</p>']
+    if dispute.get("current"):
+        parts.append(f'<p>{labelled(dispute["current"])}</p>')
+    if dispute.get("sources"):
+        parts.append('<ul class="ex-sources">' + "".join(source_html(s) for s in dispute["sources"]) + "</ul>")
+    return f'<div class="ex-dispute">{"".join(parts)}</div>'
+
+
+def links_html(links: dict | None) -> str:
+    """Chapter image/reference links (DermNet, PathologyOutlines), verified by hand."""
+    if not links:
+        return ""
+    groups = []
+    for key, name in (("dermnet", "DermNet（臨床照片與疾病介紹）"), ("pathologyoutlines", "PathologyOutlines（病理圖片）")):
+        items = links.get(key) or []
+        if items:
+            lis = "".join(f'<li><a href="{esc(i["url"])}" target="_blank" rel="noopener noreferrer">{esc(i["label"])}</a></li>'
+                          for i in items)
+            groups.append(f'<div class="ex-links-group"><p class="ex-links-name">{esc(name)}</p><ul>{lis}</ul></div>')
+    if not groups:
+        return ""
+    return ('<section class="ex-links" aria-labelledby="links-h"><h2 id="links-h" class="ex-h2 ex-h2-sm">圖片與延伸閱讀</h2>'
+            '<p class="ex-meta">課本圖片有版權，請到以下網站看臨床與病理照片（外部網站，另開新分頁）。</p>'
+            f'{"".join(groups)}</section>')
 
 
 def expand_hits(fragment: str, chapter: int, on_page: set[str]) -> str:
@@ -342,7 +404,8 @@ def chapter_page(shell, data, chapter: dict, qs: list[dict]) -> str:
         f'<h1 class="ex-h1">Ch.{n} {esc(chapter["title"])}</h1>'
         f'<p class="ex-meta">原書 p.{chapter["pageStart"]}–{chapter["pageEnd"]} · 歷屆共 {len(qs)} 題'
         f'（已有詳解 {explained} 題）</p>'
-        f'<p class="ex-meta">{esc(year_text)}</p>{NOTICE}{toc_html(note, len(qs), mobile=True)}{notes_html}'
+        f'<p class="ex-meta">{esc(year_text)}</p>{NOTICE}{links_html(data["links"].get(n))}'
+        f'{toc_html(note, len(qs), mobile=True)}{notes_html}'
         f'<section aria-labelledby="qs-h"><h2 id="qs-h" class="ex-h2">歷屆考題</h2>{MODE_BAR}'
         + "".join(question_html(q, data, current_chapter=n) for q in qs)
         + "</section>"
@@ -464,18 +527,29 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
         parts[ch["part"]].append(n)
     part_html = []
     for part, nums in parts.items():
-        items = "".join(
-            f'<li><a href="/exam/fitz-{n}">Ch.{n} {esc(chapters[n]["title"])}</a>'
-            f' <span class="ex-count">{len(by_chapter[n])} 題</span>'
-            f'{" <span class=\"ex-badge\">有重點</span>" if n in data["notes"] else ""}</li>'
-            if n in by_chapter else
-            f'<li class="ex-none">Ch.{n} {esc(chapters[n]["title"])} <span class="ex-count">0 題</span></li>'
-            for n in nums
-        )
+        rows = []
+        for idx, n in enumerate(nums):
+            qs = by_chapter.get(n, [])
+            title = esc(chapters[n]["title"])
+            name = (f'<a href="/exam/fitz-{n}">Ch.{n} {title}</a>' if qs else f'Ch.{n} {title}')
+            badge = ' <span class="ex-badge">有重點</span>' if n in data["notes"] else ""
+            # Progress cells start as "—" and are filled from this browser's
+            # localStorage by exam.js; data-qids lists the chapter's questions.
+            rows.append(
+                f'<tr data-ch="{n}" data-order="{idx}" data-qids="{",".join(q["id"] for q in qs)}"'
+                f'{" class=\"ex-none\"" if not qs else ""}>'
+                f'<th scope="row">{name}{badge}</th><td class="ex-num">{len(qs)}</td>'
+                '<td class="ex-num ex-pg-done">—</td><td class="ex-num ex-pg-acc">—</td><td class="ex-pg-date">—</td>'
+                f'<td class="ex-pg-readcell"><input type="checkbox" class="ex-pg-read" data-ch="{n}" '
+                f'aria-label="Ch.{n} 課本已讀完" disabled></td></tr>'
+            )
         count = sum(len(by_chapter.get(n, [])) for n in nums)
         part_html.append(
             f'<details class="ex-part"><summary>{esc((part or "").title())} <span class="ex-count">{count} 題次</span></summary>'
-            f'<ul class="ex-chapter-list">{items}</ul></details>'
+            '<div class="ex-table-wrap"><table class="ex-progress"><thead><tr><th scope="col">章節</th>'
+            '<th scope="col">題數</th><th scope="col">已做</th><th scope="col">正確率</th>'
+            '<th scope="col">最後作答</th><th scope="col">課本已讀完</th></tr></thead>'
+            f'<tbody>{"".join(rows)}</tbody></table></div></details>'
         )
     years = "".join(f'<li><a href="/exam/year-{y}">{y} 年</a></li>' for y in sorted(by_year))
     books = "".join(
@@ -496,7 +570,13 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
         '<p class="ex-meta"><a class="ex-cta" href="/exam/practice">自選年份／隨機出題</a></p>'
         '<p class="ex-meta">或依年度照原卷順序作答，可計時並交卷計分：</p>'
         f'<ul class="ex-years">{years}</ul>'
-        '<h2 class="ex-h2">依章節瀏覽</h2>' + "".join(part_html)
+        '<h2 class="ex-h2">依章節瀏覽與讀書進度</h2>'
+        '<p class="ex-meta">已做題數、正確率（以每題最近一次作答計算）與「課本已讀完」只存在這台裝置的瀏覽器，'
+        '不同電腦或手機不會同步。正確率低於 60% 以紅字標示。</p>'
+        f'<div class="ex-toolbar ex-progress-bar" data-exam-total="{total}"><span id="ex-progress-summary" class="ex-meta" aria-live="polite"></span>'
+        '<label class="ex-check">排序 <select class="ex-select ex-progress-sort" aria-label="章節排序" disabled>'
+        '<option value="order">章節順序</option><option value="todo">尚未作答優先</option>'
+        '<option value="low">正確率低優先</option></select></label></div>' + "".join(part_html)
         + '<h2 class="ex-h2">其他參考書與工具</h2>'
         f'<ul class="ex-chapter-list">{books}<li><a href="/exam/review">錯題本與 Anki 匯出</a></li></ul>'
     )
@@ -523,9 +603,11 @@ def client_data(data) -> dict:
         if expl:
             row["expl"] = {"summary": expl["summary"], "items": [
                 {"key": it["key"], "label": it["label"], "ok": it["ok"], "text": it["text"],
-                 "refs": [f"ch.{c} p.{p}" for c, p in it["refs"]]} for it in expl["items"]]}
+                 "refs": [ref_label([c, p]) for c, p in it["refs"]]} for it in expl["items"]]}
             if expl.get("flags"):
                 row["expl"]["flags"] = expl["flags"]
+            if expl.get("dispute"):
+                row["expl"]["dispute"] = expl["dispute"]
         out.append(row)
     return {"questions": out}
 
@@ -640,6 +722,23 @@ EXAM_STYLE = """<style data-exam-style>
 .ex-item-text{grid-column:3}
 .ex-item-refs{grid-column:3;font-size:11.5px}
 .ex-warn{font-size:12.5px;color:#854d0e;background:#fffbeb;border-radius:8px;padding:6px 10px;margin:8px 0 0}
+.ex-flag-note{font-size:12.5px;color:#475569;background:#f8fafc;border-radius:8px;padding:6px 10px;margin:8px 0 0}
+.ex-flag-tag{display:inline-block;font-size:11px;font-weight:700;color:#0c5159;margin-right:6px}
+.ex-dispute{border:1px solid #f0c27b;border-left:4px solid #d97706;background:#fffbeb;border-radius:8px;padding:8px 12px;margin:10px 0 0;font-size:13.5px;line-height:1.75}
+.ex-dispute p{margin:4px 0}.ex-dispute-h{font-weight:700;color:#92400e}
+.ex-sources{margin:4px 0 0;padding-left:20px;font-size:12.5px}.ex-sources a{color:#0c5159}
+.ex-ref-mckee{background:#f3e8ff;color:#5b21b6}
+.ex-links{border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin:14px 0;background:#fff}
+.ex-links ul{margin:4px 0 8px;padding-left:20px;font-size:14px;line-height:1.8}.ex-links a{color:var(--teal-deep)}.ex-links-name{font-weight:700;font-size:13.5px;margin:8px 0 0}
+.ex-progress-bar{flex-wrap:wrap;gap:10px;align-items:center}
+.ex-table-wrap{overflow-x:auto}
+.ex-progress{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0;background:#fff;min-width:560px}
+.ex-progress th,.ex-progress td{border:1px solid var(--border);padding:6px 8px;text-align:left;vertical-align:middle}
+.ex-progress thead th{background:#f1ece4;font-size:12.5px;white-space:nowrap}
+.ex-progress tbody th{font-weight:500}.ex-progress tbody th a{color:var(--teal-deep)}
+.ex-progress .ex-num,.ex-pg-date,.ex-pg-readcell{white-space:nowrap;text-align:center}
+.ex-progress tr.ex-none th{color:var(--muted)}
+.ex-pg-low{color:#b91c1c;font-weight:700}
 .ex-pending{font-size:13px;color:var(--muted)}
 body.ex-quiz .ex-actions{display:flex}
 body.ex-quiz .ex-q:not(.ex-done) .ex-reveal{display:none}
@@ -656,6 +755,14 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 :root[data-theme="dark"] .ex-notice{background:#3a2818;color:#fed7aa;border-color:#9a3412}
 :root[data-theme="dark"] .ex-notice a{color:#fed7aa}
 :root[data-theme="dark"] .ex-hit,:root[data-theme="dark"] .ex-flag,:root[data-theme="dark"] .ex-warn{background:#332a14;color:#fde68a}
+:root[data-theme="dark"] .ex-dispute{background:#332a14;border-color:#92400e;color:#fde68a}
+:root[data-theme="dark"] .ex-dispute-h{color:#fcd34d}:root[data-theme="dark"] .ex-sources a{color:#fde68a}
+:root[data-theme="dark"] .ex-flag-note{background:#24211c;color:#d6d3cd}:root[data-theme="dark"] .ex-flag-tag{color:#a4d4c4}
+:root[data-theme="dark"] .ex-ref-mckee{background:#2e1065;color:#ddd6fe}
+:root[data-theme="dark"] .ex-links,:root[data-theme="dark"] .ex-progress{background:#24211c;border-color:#3a352c}
+:root[data-theme="dark"] .ex-progress th,:root[data-theme="dark"] .ex-progress td{border-color:#3a352c}
+:root[data-theme="dark"] .ex-progress thead th{background:#3a352c;color:#f5efe6}
+:root[data-theme="dark"] .ex-pg-low{color:#fca5a5}
 :root[data-theme="dark"] .ex-hit a{color:#fde68a}
 :root[data-theme="dark"] .ex-badge,:root[data-theme="dark"] .ex-ok .ex-item-label{background:#14532d;color:#dcfce7}
 :root[data-theme="dark"] .ex-no .ex-item-label{background:#7f1d1d;color:#fee2e2}

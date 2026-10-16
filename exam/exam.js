@@ -6,6 +6,10 @@
   'use strict';
   var MODE_KEY = 'dnExamMode';
   var WRONG_KEY = 'dnExamWrong';
+  // Latest attempt per question: { id: [1 right / 0 wrong, epoch ms] }.
+  var PROGRESS_KEY = 'dnExamProgress';
+  // Chapters whose textbook chapter has been read: { chapter: epoch ms }.
+  var READ_KEY = 'dnExamRead';
   var body = document.body;
 
   function store(key, value) {
@@ -25,6 +29,17 @@
     var list = wrongSet().filter(function (x) { return x !== id; });
     if (isWrong) list.push(id);
     store(WRONG_KEY, list);
+  }
+
+  function progressMap() {
+    var map = load(PROGRESS_KEY, {});
+    return map && typeof map === 'object' && !Array.isArray(map) ? map : {};
+  }
+  function recordProgress(id, ok) {
+    if (!id) return;
+    var map = progressMap();
+    map[id] = [ok ? 1 : 0, Date.now()];
+    store(PROGRESS_KEY, map);
   }
 
   function setMode(mode) {
@@ -67,6 +82,7 @@
         : ok ? '答對了' : '答錯了，正確答案是 ' + answer.split('').join('、');
     }
     markWrong(card.getAttribute('data-qid'), !ok);
+    recordProgress(card.getAttribute('data-qid'), ok);
     return ok;
   }
 
@@ -238,19 +254,61 @@
         li.appendChild(el('span', 'ex-item-key', it.key));
         li.appendChild(el('span', 'ex-item-label', it.label));
         li.appendChild(richText('span', 'ex-item-text', it.text));
-        li.appendChild(el('span', 'ex-item-refs', 'Fitzpatrick 9e ' + it.refs.join('；')));
+        li.appendChild(el('span', 'ex-item-refs', it.refs.join('；')));
         items.appendChild(li);
       });
       reveal.appendChild(items);
       (q.expl.flags || []).forEach(function (flag) {
-        reveal.appendChild(richText('p', 'ex-warn', '⚠ ' + flag));
+        var note = richText('p', 'ex-flag-note', flag);
+        note.insertBefore(el('span', 'ex-flag-tag', '附註'), note.firstChild);
+        reveal.appendChild(note);
       });
+      if (q.expl.dispute) reveal.appendChild(disputeBlock(q.expl.dispute));
     } else {
       reveal.appendChild(el('p', 'ex-pending', '詳解尚未整理。'));
     }
     card.appendChild(reveal);
     wireQuestion(card);
     return card;
+  }
+
+  var DISPUTE_KINDS = {
+    old: '舊版觀念', missing: '課本未提及', conflict: '說法矛盾',
+    ambiguous: '選項模稜兩可', typo: '題目誤植', figure: '缺圖或缺表'
+  };
+  // '考試答案：…' keeps its label bold, as on the static pages.
+  function labelled(text) {
+    var p = el('p');
+    var i = String(text).indexOf('：');
+    if (i > 0 && i <= 6) {
+      p.appendChild(el('strong', null, text.slice(0, i)));
+      p.appendChild(document.createTextNode('：'));
+      p.appendChild(richText('span', null, text.slice(i + 1)));
+    } else {
+      p.appendChild(richText('span', null, text));
+    }
+    return p;
+  }
+  function disputeBlock(d) {
+    var box = el('div', 'ex-dispute');
+    box.appendChild(el('p', 'ex-dispute-h', '⚠ 疑義題 · ' + (DISPUTE_KINDS[d.kind] || '疑義')));
+    box.appendChild(labelled(d.exam));
+    if (d.current) box.appendChild(labelled(d.current));
+    if (d.sources && d.sources.length) {
+      var ul = el('ul', 'ex-sources');
+      d.sources.forEach(function (src) {
+        var li = el('li');
+        var a = richText('a', null, src.title);
+        a.href = src.url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        li.appendChild(a);
+        li.appendChild(document.createTextNode((src.year ? '（' + src.year + '）' : '') + (src.pmid ? ' PMID ' + src.pmid : '')));
+        ul.appendChild(li);
+      });
+      box.appendChild(ul);
+    }
+    return box;
   }
 
   var dataPromise = null;
@@ -301,7 +359,15 @@
         q.expl.items.forEach(function (it) {
           back += '<br>' + htmlText(it.key + ' ' + it.label + '：' + it.text + '（' + it.refs.join('；') + '）');
         });
-        (q.expl.flags || []).forEach(function (flag) { back += '<br>' + htmlText('⚠ ' + flag); });
+        (q.expl.flags || []).forEach(function (flag) { back += '<br>' + htmlText('附註：' + flag); });
+        var d = q.expl.dispute;
+        if (d) {
+          back += '<br>' + htmlText('⚠ 疑義題（' + (DISPUTE_KINDS[d.kind] || '疑義') + '）' + d.exam);
+          if (d.current) back += '<br>' + htmlText(d.current);
+          (d.sources || []).forEach(function (src) {
+            back += '<br>' + htmlText(src.title + (src.year ? '（' + src.year + '）' : '') + ' ' + src.url);
+          });
+        }
       }
       return csvCell(front) + ',' + csvCell(back);
     }).join('\n');
@@ -361,6 +427,89 @@
     });
   }
 
+  // Hub: per-chapter progress from this browser's storage (static cells show —).
+  function initProgress(tables) {
+    var map = progressMap();
+    var read = load(READ_KEY, {});
+    if (!read || typeof read !== 'object' || Array.isArray(read)) read = {};
+    var answered = 0, right = 0, readCount = 0;
+    Object.keys(map).forEach(function (id) {
+      if (Array.isArray(map[id])) { answered += 1; if (map[id][0]) right += 1; }
+    });
+    function day(ms) {
+      var d = new Date(ms);
+      return d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate();
+    }
+    document.querySelectorAll('.ex-progress tbody tr').forEach(function (row) {
+      var ids = (row.getAttribute('data-qids') || '').split(',').filter(Boolean);
+      var done = 0, ok = 0, last = 0;
+      ids.forEach(function (id) {
+        var rec = map[id];
+        if (!Array.isArray(rec)) return;
+        done += 1;
+        if (rec[0]) ok += 1;
+        if (rec[1] > last) last = rec[1];
+      });
+      var acc = done ? Math.round(100 * ok / done) : null;
+      row.setAttribute('data-done', String(done));
+      row.setAttribute('data-acc', acc === null ? '' : String(acc));
+      row.querySelector('.ex-pg-done').textContent = ids.length ? done + ' / ' + ids.length : '—';
+      var accCell = row.querySelector('.ex-pg-acc');
+      accCell.textContent = acc === null ? '—' : acc + '%';
+      accCell.classList.toggle('ex-pg-low', acc !== null && acc < 60);
+      row.querySelector('.ex-pg-date').textContent = last ? day(last) : '—';
+      var box = row.querySelector('.ex-pg-read');
+      var ch = row.getAttribute('data-ch');
+      box.disabled = false;
+      box.checked = Object.prototype.hasOwnProperty.call(read, ch);
+      if (box.checked) readCount += 1;
+      box.addEventListener('change', function () {
+        var current = load(READ_KEY, {});
+        if (!current || typeof current !== 'object' || Array.isArray(current)) current = {};
+        if (box.checked) current[ch] = Date.now(); else delete current[ch];
+        store(READ_KEY, current);
+        summary();
+      });
+    });
+    var total = document.querySelector('[data-exam-total]');
+    var totalCount = total ? Number(total.getAttribute('data-exam-total')) : 0;
+    function summary() {
+      var el2 = document.getElementById('ex-progress-summary');
+      if (!el2) return;
+      var current = load(READ_KEY, {});
+      var n = current && typeof current === 'object' ? Object.keys(current).length : 0;
+      el2.textContent = '已作答 ' + answered + (totalCount ? ' / ' + totalCount : '') + ' 題' +
+        (answered ? '，正確率 ' + Math.round(100 * right / answered) + '%' : '') + '，課本已讀完 ' + n + ' 章';
+    }
+    summary();
+    var sort = document.querySelector('.ex-progress-sort');
+    if (sort) {
+      sort.disabled = false;
+      sort.addEventListener('change', function () {
+        tables.forEach(function (table) {
+          var tbody = table.querySelector('tbody');
+          var rows = Array.prototype.slice.call(tbody.rows);
+          rows.sort(function (a, b) {
+            var oa = Number(a.getAttribute('data-order')), ob = Number(b.getAttribute('data-order'));
+            if (sort.value === 'todo') {
+              var da = Number(a.getAttribute('data-done')), db = Number(b.getAttribute('data-done'));
+              return (da === 0) === (db === 0) ? oa - ob : (da === 0 ? -1 : 1);
+            }
+            if (sort.value === 'low') {
+              var aa = a.getAttribute('data-acc'), ab = b.getAttribute('data-acc');
+              if (aa === '' && ab === '') return oa - ob;
+              if (aa === '') return 1;
+              if (ab === '') return -1;
+              return Number(aa) - Number(ab) || oa - ob;
+            }
+            return oa - ob;
+          });
+          rows.forEach(function (row) { tbody.appendChild(row); });
+        });
+      });
+    }
+  }
+
   function init() {
     document.querySelectorAll('.ex-mode').forEach(function (btn) {
       btn.addEventListener('click', function () { setMode(btn.getAttribute('data-mode')); });
@@ -373,6 +522,8 @@
     if (form && barApi) initPractice(form, barApi);
     var list = document.getElementById('ex-review-list');
     if (list) renderReview(list);
+    var tables = Array.prototype.slice.call(document.querySelectorAll('.ex-progress'));
+    if (tables.length) initProgress(tables);
     document.querySelectorAll('.ex-anki').forEach(function (btn) {
       btn.addEventListener('click', function () {
         examData().then(function (data) {

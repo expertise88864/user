@@ -1,0 +1,13 @@
+{
+ "44": {
+  "verified": "2026-10-15",
+  "dermnet": [
+   {"label": "Stevens-Johnson syndrome / toxic epidermal necrolysis (SJS/TEN)", "url": "https://dermnetnz.org/topics/stevens-johnson-syndrome-toxic-epidermal-necrolysis"},
+   {"label": "SJS-TEN images", "url": "https://dermnetnz.org/topics/sjs-ten-images"},
+   {"label": "Toxic epidermal necrolysis pathology", "url": "https://dermnetnz.org/topics/toxic-epidermal-necrolysis-pathology"}
+  ],
+  "pathologyoutlines": [
+   {"label": "Stevens-Johnson syndrome", "url": "https://www.pathologyoutlines.com/topic/skinnontumorstevensjohnsonsyndrome.html"}
+  ]
+ }
+}
