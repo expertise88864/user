@@ -64,5 +64,380 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorurticaria.html"
    }
   ]
+ },
+ "28": {
+  "verified": "2026-10-16",
+  "dermnet": [
+   {
+    "label": "Psoriasis",
+    "url": "https://dermnetnz.org/topics/psoriasis"
+   },
+   {
+    "label": "Guttate psoriasis",
+    "url": "https://dermnetnz.org/topics/guttate-psoriasis"
+   },
+   {
+    "label": "Erythrodermic psoriasis",
+    "url": "https://dermnetnz.org/topics/erythrodermic-psoriasis"
+   },
+   {
+    "label": "Generalised pustular psoriasis",
+    "url": "https://dermnetnz.org/topics/generalised-pustular-psoriasis"
+   },
+   {
+    "label": "Palmoplantar pustulosis",
+    "url": "https://dermnetnz.org/topics/palmoplantar-pustulosis"
+   },
+   {
+    "label": "Nail psoriasis",
+    "url": "https://dermnetnz.org/topics/nail-psoriasis"
+   },
+   {
+    "label": "Psoriatic arthritis",
+    "url": "https://dermnetnz.org/topics/psoriatic-arthritis"
+   },
+   {
+    "label": "Flexural (inverse) psoriasis",
+    "url": "https://dermnetnz.org/topics/flexural-psoriasis"
+   },
+   {
+    "label": "Scalp psoriasis",
+    "url": "https://dermnetnz.org/topics/scalp-psoriasis"
+   },
+   {
+    "label": "Sebopsoriasis",
+    "url": "https://dermnetnz.org/topics/sebopsoriasis"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Psoriasis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpsoriasis.html"
+   },
+   {
+    "label": "Pityriasis rubra pilaris",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpityriasisrubra.html"
+   },
+   {
+    "label": "Seborrheic dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorseborrheicdermatitis.html"
+   },
+   {
+    "label": "Subcorneal pustular dermatosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorsubcornealpustulardermatosis.html"
+   },
+   {
+    "label": "Acute generalized exanthematous pustulosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoragep.html"
+   },
+   {
+    "label": "Inflammatory linear verrucous epidermal nevus (ILVEN)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorinflamlinearverrucous.html"
+   }
+  ]
+ },
+ "91": {
+  "verified": "2026-10-16",
+  "dermnet": [
+   {
+    "label": "Nail psoriasis",
+    "url": "https://dermnetnz.org/topics/nail-psoriasis"
+   },
+   {
+    "label": "Fungal nail infections (onychomycosis)",
+    "url": "https://dermnetnz.org/topics/fungal-nail-infections"
+   },
+   {
+    "label": "Leukonychia (white nail)",
+    "url": "https://dermnetnz.org/topics/white-nail"
+   },
+   {
+    "label": "Melanonychia",
+    "url": "https://dermnetnz.org/topics/melanonychia"
+   },
+   {
+    "label": "Onycholysis",
+    "url": "https://dermnetnz.org/topics/onycholysis"
+   },
+   {
+    "label": "Subungual haemorrhage",
+    "url": "https://dermnetnz.org/topics/subungual-haemorrhage"
+   },
+   {
+    "label": "Trachyonychia",
+    "url": "https://dermnetnz.org/topics/trachyonychia"
+   },
+   {
+    "label": "Yellow nail syndrome",
+    "url": "https://dermnetnz.org/topics/yellow-nail-syndrome"
+   },
+   {
+    "label": "Digital clubbing",
+    "url": "https://dermnetnz.org/topics/hypertrophic-osteoarthropathy-and-digital-clubbing"
+   },
+   {
+    "label": "Ingrown toenail",
+    "url": "https://dermnetnz.org/topics/ingrown-toenail"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Normal nail histology",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticnailhistology.html"
+   },
+   {
+    "label": "Onychomycosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorfungionychomycosis.html"
+   },
+   {
+    "label": "Lichen planus",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorlichenplanus.html"
+   },
+   {
+    "label": "Darier disease",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumordariersdisease.html"
+   },
+   {
+    "label": "Subungual melanoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticsubungualmelanoma.html"
+   },
+   {
+    "label": "Onychopapilloma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticonychopapilloma.html"
+   },
+   {
+    "label": "Subungual exostosis",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticsubungualexostosis.html"
+   }
+  ]
+ },
+ "103": {
+  "verified": "2026-10-16",
+  "dermnet": [
+   {
+    "label": "Erythema toxicum neonatorum",
+    "url": "https://dermnetnz.org/topics/toxic-erythema-of-the-newborn"
+   },
+   {
+    "label": "Transient neonatal pustular melanosis",
+    "url": "https://dermnetnz.org/topics/transient-neonatal-pustular-melanosis"
+   },
+   {
+    "label": "Milia",
+    "url": "https://dermnetnz.org/topics/milium"
+   },
+   {
+    "label": "Miliaria",
+    "url": "https://dermnetnz.org/topics/miliaria"
+   },
+   {
+    "label": "Neonatal cephalic pustulosis",
+    "url": "https://dermnetnz.org/topics/neonatal-cephalic-pustulosis"
+   },
+   {
+    "label": "Cutis marmorata telangiectatica congenita",
+    "url": "https://dermnetnz.org/topics/cutis-marmorata-telangiectatica-congenita"
+   },
+   {
+    "label": "Aplasia cutis congenita",
+    "url": "https://dermnetnz.org/topics/aplasia-cutis"
+   },
+   {
+    "label": "Incontinentia pigmenti",
+    "url": "https://dermnetnz.org/topics/incontinentia-pigmenti"
+   },
+   {
+    "label": "Subcutaneous fat necrosis of the newborn",
+    "url": "https://dermnetnz.org/topics/subcutaneous-fat-necrosis-of-the-newborn"
+   },
+   {
+    "label": "Napkin (diaper) dermatitis",
+    "url": "https://dermnetnz.org/topics/napkin-dermatitis"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Erythema toxicum neonatorum",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorerythematoxicumneonatorum.html"
+   },
+   {
+    "label": "Miliaria",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumormiliaria.html"
+   },
+   {
+    "label": "Dermal melanocytosis (Mongolian spot)",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticdermalmelanocytosis.html"
+   },
+   {
+    "label": "Subcutaneous fat necrosis of newborn",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorsubcutaneousfatnecrosisofnewborn.html"
+   },
+   {
+    "label": "Candida",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorfungicandida.html"
+   },
+   {
+    "label": "Ichthyosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorichthyosis.html"
+   }
+  ]
+ },
+ "137": {
+  "verified": "2026-10-16",
+  "dermnet": [
+   {
+    "label": "Diabetic skin disease (overview)",
+    "url": "https://dermnetnz.org/topics/skin-problems-associated-with-diabetes-mellitus"
+   },
+   {
+    "label": "Acanthosis nigricans",
+    "url": "https://dermnetnz.org/topics/acanthosis-nigricans"
+   },
+   {
+    "label": "Necrobiosis lipoidica",
+    "url": "https://dermnetnz.org/topics/necrobiosis-lipoidica"
+   },
+   {
+    "label": "Scleredema",
+    "url": "https://dermnetnz.org/topics/scleroedema"
+   },
+   {
+    "label": "Xanthoma (incl. eruptive)",
+    "url": "https://dermnetnz.org/topics/xanthoma"
+   },
+   {
+    "label": "Granuloma annulare",
+    "url": "https://dermnetnz.org/topics/granuloma-annulare"
+   },
+   {
+    "label": "Reactive perforating collagenosis",
+    "url": "https://dermnetnz.org/topics/reactive-perforating-collagenosis"
+   },
+   {
+    "label": "Diabetic foot ulcer",
+    "url": "https://dermnetnz.org/topics/diabetic-foot-ulcer"
+   },
+   {
+    "label": "Pretibial myxoedema",
+    "url": "https://dermnetnz.org/topics/pretibial-myxoedema"
+   },
+   {
+    "label": "Calciphylaxis",
+    "url": "https://dermnetnz.org/topics/calciphylaxis"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Acanthosis nigricans",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoracanthosisnigricans.html"
+   },
+   {
+    "label": "Necrobiosis lipoidica",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumornecrobiosislipoidica.html"
+   },
+   {
+    "label": "Scleredema",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorscleredema.html"
+   },
+   {
+    "label": "Xanthoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticxanthoma.html"
+   },
+   {
+    "label": "Perforating dermatoses",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorelastosisperforans.html"
+   },
+   {
+    "label": "Pretibial myxedema",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumormyxedema.html"
+   },
+   {
+    "label": "Calciphylaxis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorcalciphylaxis.html"
+   },
+   {
+    "label": "Calcinosis cutis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorcalcinosiscutis.html"
+   }
+  ]
+ },
+ "77": {
+  "verified": "2026-10-16",
+  "dermnet": [
+   {
+    "label": "Melasma",
+    "url": "https://dermnetnz.org/topics/melasma"
+   },
+   {
+    "label": "Naevus of Ota / Ito / Hori",
+    "url": "https://dermnetnz.org/topics/naevus-of-ota-ito-hori"
+   },
+   {
+    "label": "Café-au-lait macule",
+    "url": "https://dermnetnz.org/topics/cafe-au-lait-macule"
+   },
+   {
+    "label": "Becker naevus",
+    "url": "https://dermnetnz.org/topics/becker-naevus"
+   },
+   {
+    "label": "Postinflammatory hyperpigmentation",
+    "url": "https://dermnetnz.org/topics/postinflammatory-hyperpigmentation"
+   },
+   {
+    "label": "Drug-induced pigmentation",
+    "url": "https://dermnetnz.org/topics/drug-induced-pigmentation"
+   },
+   {
+    "label": "Erythema ab igne",
+    "url": "https://dermnetnz.org/topics/erythema-ab-igne"
+   },
+   {
+    "label": "Erythema dyschromicum perstans",
+    "url": "https://dermnetnz.org/topics/erythema-dyschromicum-perstans"
+   },
+   {
+    "label": "Dowling-Degos disease",
+    "url": "https://dermnetnz.org/topics/dowling-degos-disease"
+   },
+   {
+    "label": "Acquired dermal macular hyperpigmentation (incl. Riehl melanosis)",
+    "url": "https://dermnetnz.org/topics/acquired-dermal-macular-hyperpigmentation"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Melasma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticmelasma.html"
+   },
+   {
+    "label": "Linear and whorled nevoid hypermelanosis",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticlinearandwhorled.html"
+   },
+   {
+    "label": "Dermal melanocytosis",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticdermalmelanocytosis.html"
+   },
+   {
+    "label": "Café au lait spot",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticcafeaulait.html"
+   },
+   {
+    "label": "Becker nevus",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticbeckersnevus.html"
+   },
+   {
+    "label": "Ochronosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorochronosis.html"
+   },
+   {
+    "label": "Erythema dyschromicum perstans",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorerythemadyschromicumperstans.html"
+   },
+   {
+    "label": "Prurigo pigmentosa",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorprurigopigmentosa.html"
+   }
+  ]
  }
 }
