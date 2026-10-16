@@ -1069,5 +1069,593 @@
     "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticmelasma.html"
    }
   ]
+ },
+ "116": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Melanoma",
+    "url": "https://dermnetnz.org/topics/melanoma"
+   },
+   {
+    "label": "Superficial spreading melanoma",
+    "url": "https://dermnetnz.org/topics/superficial-spreading-melanoma"
+   },
+   {
+    "label": "Nodular melanoma",
+    "url": "https://dermnetnz.org/topics/nodular-melanoma"
+   },
+   {
+    "label": "Lentigo maligna / lentigo maligna melanoma",
+    "url": "https://dermnetnz.org/topics/lentigo-maligna-and-lentigo-maligna-melanoma"
+   },
+   {
+    "label": "Acral lentiginous melanoma",
+    "url": "https://dermnetnz.org/topics/acral-lentiginous-melanoma"
+   },
+   {
+    "label": "Melanoma of the nail unit",
+    "url": "https://dermnetnz.org/topics/melanoma-of-the-nail-unit"
+   },
+   {
+    "label": "Desmoplastic melanoma",
+    "url": "https://dermnetnz.org/topics/desmoplastic-melanoma"
+   },
+   {
+    "label": "Mucosal melanoma",
+    "url": "https://dermnetnz.org/topics/mucosal-melanoma"
+   },
+   {
+    "label": "Congenital melanocytic naevus",
+    "url": "https://dermnetnz.org/topics/congenital-melanocytic-naevi"
+   },
+   {
+    "label": "Sentinel lymph node biopsy",
+    "url": "https://dermnetnz.org/topics/sentinel-lymph-node-biopsy"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Invasive melanoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticmelanoma.html"
+   },
+   {
+    "label": "Superficial spreading melanoma (low CSD)",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticsuperficialspreadingmelanomalowCSD.html"
+   },
+   {
+    "label": "Nodular melanoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticnodularmelanoma.html"
+   },
+   {
+    "label": "Lentigo maligna melanoma (high CSD)",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticlentigomaligna.html"
+   },
+   {
+    "label": "Acral melanoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticacrallentiginous.html"
+   },
+   {
+    "label": "Subungual melanoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticsubungualmelanoma.html"
+   },
+   {
+    "label": "Desmoplastic melanoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticdesmoplasticmelanoma.html"
+   },
+   {
+    "label": "Mucosal melanoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticmucosalmelanoma.html"
+   }
+  ]
+ },
+ "160": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Tinea (dermatophyte infection)",
+    "url": "https://dermnetnz.org/topics/tinea"
+   },
+   {
+    "label": "Onychomycosis",
+    "url": "https://dermnetnz.org/topics/fungal-nail-infections"
+   },
+   {
+    "label": "Piedra",
+    "url": "https://dermnetnz.org/topics/piedra"
+   },
+   {
+    "label": "Tinea barbae",
+    "url": "https://dermnetnz.org/topics/tinea-barbae"
+   },
+   {
+    "label": "Tinea capitis",
+    "url": "https://dermnetnz.org/topics/tinea-capitis"
+   },
+   {
+    "label": "Tinea corporis",
+    "url": "https://dermnetnz.org/topics/tinea-corporis"
+   },
+   {
+    "label": "Tinea cruris",
+    "url": "https://dermnetnz.org/topics/tinea-cruris"
+   },
+   {
+    "label": "Favus",
+    "url": "https://dermnetnz.org/topics/favus"
+   },
+   {
+    "label": "Tinea nigra",
+    "url": "https://dermnetnz.org/topics/tinea-nigra"
+   },
+   {
+    "label": "Tinea pedis",
+    "url": "https://dermnetnz.org/topics/tinea-pedis"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Dermatophytes / tinea",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorfungisuperficialinfections.html"
+   },
+   {
+    "label": "Onychomycosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorfungionychomycosis.html"
+   },
+   {
+    "label": "Candida",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorfungicandida.html"
+   }
+  ]
+ },
+ "190": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Methotrexate",
+    "url": "https://dermnetnz.org/topics/methotrexate"
+   },
+   {
+    "label": "Hydroxyurea",
+    "url": "https://dermnetnz.org/topics/hydroxyurea"
+   },
+   {
+    "label": "Mycophenolate mofetil",
+    "url": "https://dermnetnz.org/topics/mycophenolate-mofetil"
+   },
+   {
+    "label": "Cyclophosphamide",
+    "url": "https://dermnetnz.org/topics/cyclophosphamide"
+   },
+   {
+    "label": "Ciclosporin",
+    "url": "https://dermnetnz.org/topics/ciclosporin"
+   },
+   {
+    "label": "Thalidomide",
+    "url": "https://dermnetnz.org/topics/thalidomide"
+   },
+   {
+    "label": "Anagen effluvium",
+    "url": "https://dermnetnz.org/topics/anagen-effluvium"
+   },
+   {
+    "label": "Hand-foot syndrome (toxic acral erythema)",
+    "url": "https://dermnetnz.org/topics/hand-foot-syndrome"
+   },
+   {
+    "label": "Flagellate erythema (bleomycin)",
+    "url": "https://dermnetnz.org/topics/flagellate-erythema"
+   },
+   {
+    "label": "Radiation dermatitis",
+    "url": "https://dermnetnz.org/topics/radiation-dermatitis"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Neutrophilic eccrine hidradenitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorneh.html"
+   },
+   {
+    "label": "Interface dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorinterfacedermatitis.html"
+   },
+   {
+    "label": "Chronic radiation dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorradiationassociated.html"
+   }
+  ]
+ },
+ "168": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Oral hairy leukoplakia",
+    "url": "https://dermnetnz.org/topics/oral-hairy-leukoplakia"
+   },
+   {
+    "label": "Bacillary angiomatosis",
+    "url": "https://dermnetnz.org/topics/bacillary-angiomatosis"
+   },
+   {
+    "label": "Kaposi sarcoma",
+    "url": "https://dermnetnz.org/topics/kaposi-sarcoma"
+   },
+   {
+    "label": "Eosinophilic folliculitis",
+    "url": "https://dermnetnz.org/topics/eosinophilic-pustular-folliculitis"
+   },
+   {
+    "label": "Molluscum contagiosum",
+    "url": "https://dermnetnz.org/topics/molluscum-contagiosum"
+   },
+   {
+    "label": "Crusted scabies",
+    "url": "https://dermnetnz.org/topics/crusted-scabies"
+   },
+   {
+    "label": "Immune reconstitution inflammatory syndrome",
+    "url": "https://dermnetnz.org/topics/immune-reconstitution-inflammatory-syndrome"
+   },
+   {
+    "label": "Lipodystrophy",
+    "url": "https://dermnetnz.org/topics/lipodystrophy"
+   },
+   {
+    "label": "Cryptococcosis",
+    "url": "https://dermnetnz.org/topics/cryptococcosis"
+   },
+   {
+    "label": "Talaromycosis (penicilliosis)",
+    "url": "https://dermnetnz.org/topics/talaromycosis"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Kaposi sarcoma",
+    "url": "https://www.pathologyoutlines.com/topic/softtissuekaposi.html"
+   },
+   {
+    "label": "Bacillary angiomatosis",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticbacillaryangiomatosis.html"
+   },
+   {
+    "label": "Eosinophilic pustular folliculitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoreosinophilicpustularfolliculitis.html"
+   },
+   {
+    "label": "Molluscum contagiosum",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumormolluscum.html"
+   },
+   {
+    "label": "Cryptococcus",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorcryptococcus.html"
+   },
+   {
+    "label": "Scabies",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorscabies.html"
+   },
+   {
+    "label": "Syphilis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorsyphilis.html"
+   },
+   {
+    "label": "Epstein-Barr virus (oral hairy leukoplakia)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorebv.html"
+   }
+  ]
+ },
+ "193": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Biologic treatments",
+    "url": "https://dermnetnz.org/topics/biologics"
+   },
+   {
+    "label": "TNF inhibitors",
+    "url": "https://dermnetnz.org/topics/tumour-necrosis-factor-inhibitors"
+   },
+   {
+    "label": "Paradoxical psoriasis",
+    "url": "https://dermnetnz.org/topics/paradoxical-psoriasis"
+   },
+   {
+    "label": "Secukinumab",
+    "url": "https://dermnetnz.org/topics/secukinumab"
+   },
+   {
+    "label": "Ixekizumab",
+    "url": "https://dermnetnz.org/topics/ixekizumab"
+   },
+   {
+    "label": "Brodalumab",
+    "url": "https://dermnetnz.org/topics/brodalumab"
+   },
+   {
+    "label": "Ustekinumab",
+    "url": "https://dermnetnz.org/topics/ustekinumab-for-psoriasis"
+   },
+   {
+    "label": "Guselkumab",
+    "url": "https://dermnetnz.org/topics/guselkumab"
+   },
+   {
+    "label": "Anakinra",
+    "url": "https://dermnetnz.org/topics/anakinra"
+   },
+   {
+    "label": "Rituximab",
+    "url": "https://dermnetnz.org/topics/rituximab"
+   },
+   {
+    "label": "Dupilumab",
+    "url": "https://dermnetnz.org/topics/dupilumab"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Psoriasis (paradoxical, anti-TNF)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpsoriasis.html"
+   },
+   {
+    "label": "Lichenoid drug reaction",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumordrugreaction.html"
+   },
+   {
+    "label": "Sarcoidosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorsarcoidosis.html"
+   },
+   {
+    "label": "Small vessel cutaneous vasculitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorsmallvesselvasculitis.html"
+   },
+   {
+    "label": "Alopecia areata",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoralopeciaareata.html"
+   }
+  ]
+ },
+ "208": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Lasers in dermatology",
+    "url": "https://dermnetnz.org/topics/lasers-in-dermatology"
+   },
+   {
+    "label": "Intense pulsed light (IPL)",
+    "url": "https://dermnetnz.org/topics/intense-pulsed-light-therapy"
+   },
+   {
+    "label": "Fractional laser treatment",
+    "url": "https://dermnetnz.org/topics/fractional-laser-treatment"
+   },
+   {
+    "label": "Carbon dioxide (CO2) laser",
+    "url": "https://dermnetnz.org/topics/carbon-dioxide-laser-treatment"
+   },
+   {
+    "label": "Er:YAG laser",
+    "url": "https://dermnetnz.org/topics/eryag-laser-treatment"
+   },
+   {
+    "label": "Pulsed dye laser",
+    "url": "https://dermnetnz.org/topics/pulsed-dye-laser-treatment"
+   },
+   {
+    "label": "KTP laser",
+    "url": "https://dermnetnz.org/topics/ktp-laser-treatment"
+   },
+   {
+    "label": "Ruby laser",
+    "url": "https://dermnetnz.org/topics/ruby-laser-treatment"
+   },
+   {
+    "label": "Alexandrite laser",
+    "url": "https://dermnetnz.org/topics/alexandrite-laser-treatment"
+   },
+   {
+    "label": "Nd:YAG laser",
+    "url": "https://dermnetnz.org/topics/ndyag-laser-treatment"
+   },
+   {
+    "label": "Laser therapy in skin of colour",
+    "url": "https://dermnetnz.org/topics/laser-therapy-in-skin-of-colour"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Tattoo",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumortattoo.html"
+   },
+   {
+    "label": "Dermal melanocytosis (nevus of Ota)",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticdermalmelanocytosis.html"
+   },
+   {
+    "label": "Cutaneous lymphoid hyperplasia (pseudolymphoma)",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticlymphoidhyperplasia.html"
+   }
+  ]
+ },
+ "210": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Port-wine stain (capillary vascular malformation)",
+    "url": "https://dermnetnz.org/topics/capillary-vascular-malformation"
+   },
+   {
+    "label": "Infantile haemangioma: treatment",
+    "url": "https://dermnetnz.org/topics/infantile-haemangioma-complications-and-treatment"
+   },
+   {
+    "label": "Telangiectasia",
+    "url": "https://dermnetnz.org/topics/telangiectasia"
+   },
+   {
+    "label": "Venous lake",
+    "url": "https://dermnetnz.org/topics/venous-lake"
+   },
+   {
+    "label": "Solar lentigo",
+    "url": "https://dermnetnz.org/topics/solar-lentigo"
+   },
+   {
+    "label": "Seborrhoeic keratosis",
+    "url": "https://dermnetnz.org/topics/seborrhoeic-keratosis"
+   },
+   {
+    "label": "Café-au-lait macule",
+    "url": "https://dermnetnz.org/topics/cafe-au-lait-macule"
+   },
+   {
+    "label": "Becker naevus",
+    "url": "https://dermnetnz.org/topics/becker-naevus"
+   },
+   {
+    "label": "Naevus of Ota / Ito",
+    "url": "https://dermnetnz.org/topics/naevus-of-ota-ito-hori"
+   },
+   {
+    "label": "Melasma",
+    "url": "https://dermnetnz.org/topics/melasma"
+   },
+   {
+    "label": "Hair removal techniques",
+    "url": "https://dermnetnz.org/topics/hair-removal-techniques"
+   },
+   {
+    "label": "Picosecond laser (tattoo removal)",
+    "url": "https://dermnetnz.org/topics/picosecond-laser"
+   },
+   {
+    "label": "Tattoo-associated skin reactions",
+    "url": "https://dermnetnz.org/topics/tattoo-associated-skin-reactions"
+   },
+   {
+    "label": "Chrysiasis",
+    "url": "https://dermnetnz.org/topics/chrysiasis"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Hemangioma & variants (infantile hemangioma)",
+    "url": "https://www.pathologyoutlines.com/topic/softtissuehemangioma.html"
+   },
+   {
+    "label": "Venous lake",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticvenouslake.html"
+   },
+   {
+    "label": "Lentigo",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticsolarlentigo.html"
+   },
+   {
+    "label": "Seborrheic keratosis",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticSK.html"
+   },
+   {
+    "label": "Café au lait spot",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticcafeaulait.html"
+   },
+   {
+    "label": "Dermal melanocytosis (nevus of Ota / Ito)",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticdermalmelanocytosis.html"
+   },
+   {
+    "label": "Melasma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticmelasma.html"
+   },
+   {
+    "label": "Recurrent nevus",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticrecurrentnevus.html"
+   },
+   {
+    "label": "Tattoo",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumortattoo.html"
+   },
+   {
+    "label": "Cutaneous lymphoid hyperplasia (tattoo pseudolymphoma)",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticlymphoidhyperplasia.html"
+   }
+  ]
+ },
+ "41": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Chronic spontaneous urticaria",
+    "url": "https://dermnetnz.org/topics/chronic-spontaneous-urticaria"
+   },
+   {
+    "label": "Dermographism",
+    "url": "https://dermnetnz.org/topics/dermographism"
+   },
+   {
+    "label": "Cold urticaria",
+    "url": "https://dermnetnz.org/topics/cold-urticaria"
+   },
+   {
+    "label": "Delayed pressure urticaria",
+    "url": "https://dermnetnz.org/topics/pressure-urticaria"
+   },
+   {
+    "label": "Cholinergic urticaria",
+    "url": "https://dermnetnz.org/topics/cholinergic-urticaria"
+   },
+   {
+    "label": "Contact urticaria",
+    "url": "https://dermnetnz.org/topics/contact-urticaria"
+   },
+   {
+    "label": "Hereditary angioedema",
+    "url": "https://dermnetnz.org/topics/hereditary-angioedema"
+   },
+   {
+    "label": "ACE inhibitor-induced angioedema",
+    "url": "https://dermnetnz.org/topics/ace-inhibitor-induced-angioedema"
+   },
+   {
+    "label": "Urticarial vasculitis",
+    "url": "https://dermnetnz.org/topics/urticarial-vasculitis"
+   },
+   {
+    "label": "Schnitzler syndrome",
+    "url": "https://dermnetnz.org/topics/schnitzler-syndrome"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Urticaria",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorurticaria.html"
+   },
+   {
+    "label": "Small vessel vasculitis (urticarial vasculitis)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorsmallvesselvasculitis.html"
+   },
+   {
+    "label": "Cutaneous mastocytosis",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticmastcell.html"
+   },
+   {
+    "label": "Wells syndrome (eosinophilic cellulitis)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorwellssyndrome.html"
+   },
+   {
+    "label": "Sweet syndrome",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorsweetssyndrome.html"
+   },
+   {
+    "label": "Arthropod bites",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorarthropod.html"
+   },
+   {
+    "label": "Erythema multiforme",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorerythemamultiforme.html"
+   }
+  ]
  }
 }
