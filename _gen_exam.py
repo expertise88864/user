@@ -338,6 +338,11 @@ def links_html(links: dict | None) -> str:
             f'{"".join(groups)}</section>')
 
 
+def wrap_tables(fragment: str) -> str:
+    """Note tables scroll inside their own box so a wide table never widens the page."""
+    return re.sub(r'(<table\b[^>]*>.*?</table>)', r'<div class="ex-table-wrap">\1</div>', fragment, flags=re.S)
+
+
 def expand_hits(fragment: str, chapter: int, on_page: set[str]) -> str:
     def repl(m: re.Match) -> str:
         ids = [i.strip() for i in m.group(1).split(",") if i.strip()]
@@ -395,7 +400,7 @@ def chapter_page(shell, data, chapter: dict, qs: list[dict]) -> str:
     explained = sum(1 for q in qs if q["id"] in data["explanations"])
     if note:
         notes_html = (f'<section class="ex-notes" aria-labelledby="notes-h"><h2 id="notes-h" class="ex-h2">重點整理</h2>'
-                      f'{NOTES_TOOLS}{expand_marks(expand_hits(note, n, on_page), on_page)}</section>')
+                      f'{NOTES_TOOLS}{wrap_tables(expand_marks(expand_hits(note, n, on_page), on_page))}</section>')
     else:
         notes_html = '<section class="ex-notes"><h2 class="ex-h2">重點整理</h2><p class="ex-pending">這一章的重點尚未整理。</p></section>'
     year_text = "、".join(f"{y} 年 {c} 題" for y, c in sorted(years.items()))
