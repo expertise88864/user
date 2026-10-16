@@ -610,9 +610,31 @@ class DeploymentWaitFailFastTests(unittest.TestCase):
         self.assertFinal(_VercelAPI([_deployment(7)], {7: [{"state": "error"}]},
                                     [_build(1, "pending", PENDING), _build(2, "error", FAILED)]))
 
-    def test_failed_build_status_without_deployment_is_final(self):
+    def test_failure_not_bound_to_the_environment_keeps_waiting(self):
+        # Commit statuses carry no environment: without a failed deployment of
+        # the requested environment, a failure proves nothing about it.
+        self.assertKeepsWaiting(_VercelAPI(commit_statuses=[_build(1, "pending", PENDING),
+                                                            _build(2, "failure", FAILED)]))
+        # Review finding (PR #72): Preview succeeded, a Preview rebuild failed,
+        # and the Production build has not reported yet.
+        api = _VercelAPI([_deployment(8), _deployment(7)],
+                         {7: [{"state": "success", "environment_url": "https://exact.vercel.app"}], 8: [{"state": "failure"}]},
+                         [_build(1, "pending", PENDING), _build(2, "success", DONE),
+                          _build(3, "pending", PENDING), _build(4, "failure", FAILED)])
+        self.assertKeepsWaiting(api, "production")
+        self.assertEqual(d.preview_url(api, SHA), "https://exact.vercel.app")
+
+    def test_ignored_build_step_only_ends_a_production_wait(self):
+        self.assertKeepsWaiting(_VercelAPI(commit_statuses=[_build(1, "pending", PENDING),
+                                                            _build(2, "success", IGNORED)]))
         self.assertFinal(_VercelAPI(commit_statuses=[_build(1, "pending", PENDING),
-                                                     _build(2, "failure", FAILED)]))
+                                                     _build(2, "success", IGNORED)]), "production")
+
+    def test_only_the_newest_deployment_of_the_environment_counts(self):
+        self.assertKeepsWaiting(_VercelAPI([_deployment(8), _deployment(7)],
+                                           {7: [{"state": "failure"}], 8: [{"state": "inactive"}]},
+                                           [_build(1, "pending", PENDING), _build(2, "failure", FAILED),
+                                            _build(3, "pending", PENDING), _build(4, "failure", FAILED)]))
 
     def test_ignored_build_step_is_final_for_production(self):
         api = _VercelAPI([_deployment(7)], {7: [{"state": "success", "environment_url": "https://exact.vercel.app"}]},
@@ -639,8 +661,9 @@ class DeploymentWaitFailFastTests(unittest.TestCase):
         self.assertKeepsWaiting(_VercelAPI(commit_statuses=[
             _build(1, "pending", PENDING), _build(2, "pending", PENDING),
             _build(3, "success", DONE), _build(4, "failure", FAILED)]))
-        # Once B's record is published (here: another environment), A's failure is final.
-        self.assertFinal(_VercelAPI([_deployment(7, "Production")], {7: [{"state": "success", "environment_url": "https://p.vercel.app"}]},
+        # Once B's record is published, A's failed Preview deployment is final.
+        self.assertFinal(_VercelAPI([_deployment(8), _deployment(7, "Production")],
+                                    {7: [{"state": "success", "environment_url": "https://p.vercel.app"}], 8: [{"state": "failure"}]},
                                     [_build(1, "pending", PENDING), _build(2, "pending", PENDING),
                                      _build(3, "success", DONE), _build(4, "failure", FAILED)]))
 
