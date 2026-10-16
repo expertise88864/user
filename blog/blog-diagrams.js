@@ -821,7 +821,7 @@
         '<g transform="translate(60 250)">' +
         '<text x="0" y="-8" font-family="Noto Sans TC" font-size="13" font-weight="700" fill="#0c5159">第一代 vs 第二代 JAK 抑制劑的選擇性</text>' +
         '<rect x="0" y="0" width="600" height="55" rx="6" fill="#fff" stroke="var(--border)" stroke-width="1"/>' +
-        '<text x="10" y="20" font-family="Inter" font-size="13" fill="#5e574e"><tspan font-weight="700">第一代 (Tofacitinib)</tspan> — 廣譜 JAK1/2/3，副作用較多（感染 / 帶狀皰疹）</text>' +
+        '<text x="10" y="20" font-family="Inter" font-size="13" fill="#5e574e"><tspan font-weight="700">第一代 (Tofacitinib)</tspan> — 廣譜 JAK1/2/3，副作用較多（感染 / 帶狀疱疹）</text>' +
         '<text x="10" y="36" font-family="Inter" font-size="13" fill="#5e574e"><tspan font-weight="700">第二代 (Upadacitinib)</tspan> — JAK1 選擇性高，異膚 / 圓禿適應症</text>' +
         '<text x="10" y="48" font-family="Inter" font-size="13" fill="#5e574e"><tspan font-weight="700">Deucravacitinib</tspan> — 結合 JH2 (allosteric)，只抑 TYK2，乾癬專用，副作用最少</text>' +
         '</g>' +
@@ -1074,9 +1074,9 @@
     // Dermatome map for shingles
     'dermatome-map': function () {
       return '<figure class="dn-med-fig"><svg viewBox="-16 -16 850 392" xmlns="http://www.w3.org/2000/svg" aria-labelledby="derm-title">' +
-        '<title id="derm-title">皮節分布（神經皮節）— 帶狀皰疹定位</title>' +
+        '<title id="derm-title">皮節分布（神經皮節）— 帶狀疱疹定位</title>' +
         '<rect x="-16" y="-16" width="850" height="392" fill="#faf7f2" rx="10"/>' +
-        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">皮節分布 Dermatomes — 帶狀皰疹常見位置</text>' +
+        '<text x="360" y="30" text-anchor="middle" font-family="Noto Serif TC,Georgia,serif" font-size="17" font-weight="700" fill="#0c5159">皮節分布 Dermatomes — 帶狀疱疹常見位置</text>' +
         // Body outline (front)
         '<g transform="translate(120 60)">' +
         '<text x="100" y="-5" text-anchor="middle" font-family="Inter" font-size="13" font-weight="700" fill="#0c5159">前面</text>' +
@@ -1138,7 +1138,7 @@
         '</g>' +
         '</g>' +
         '<text x="360" y="345" text-anchor="middle" font-family="Inter" font-size="13" fill="#8b8378">Source: Keegan & Garrett 1948 · CDC Shingles 2024 · Dworkin Clin Infect Dis 2007</text>' +
-        '</svg><figcaption>圖. 帶狀皰疹依神經皮節單側分布；V1（額/眼）是急診轉介眼科的緊急狀況</figcaption></figure>';
+        '</svg><figcaption>圖. 帶狀疱疹依神經皮節單側分布；V1（額/眼）是急診轉介眼科的緊急狀況</figcaption></figure>';
     }
   };
 

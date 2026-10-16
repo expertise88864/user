@@ -237,7 +237,7 @@ def run_smoke(base_url: str) -> list[str]:
         (f"/blog/blog-diagrams.min.js?v={version}", "diagrams", ["DN.medDiagrams", "DN.MED_DIAGRAM_MAP"]),
         (f"/blog/blog-calculators.min.js?v={version}", "calculators", ["DN.injectSCORAD", "DN.injectGAGS"]),
         (f"/blog/blog-article-visuals.min.js?v={version}", "article-visuals", ["DN.injectArticleHero", "DN.enhanceArticleImages"]),
-        (f"/blog/blog-article-footer.min.js?v={version}", "article-footer", ["DN.addRelatedArticles", "DN.addShareToolbar"]),
+        (f"/blog/blog-article-footer.min.js?v={version}", "article-footer", ["DN.addRelatedArticles", "DN.addAuthorBio"]),
     ]
     for path, label, needles in js_checks:
         body, content_type = fetch(base_url, path)

@@ -85,7 +85,7 @@ TRANSLATIONS: dict[str, str] = {
         "7 Athlete's Foot / Nail Fungus Myths — terbinafine vs itraconazole",
     "病毒疣 6 大迷思 — 香蕉皮、雷射打一次就好？HPV 疫苗？":
         "6 Wart Myths — banana peel, one-laser cure, HPV vaccine?",
-    "帶狀皰疹（皮蛇）6 大迷思 — 72 小時黃金期、Shingrix":
+    "帶狀疱疹（皮蛇）6 大迷思 — 72 小時黃金期、Shingrix":
         "6 Shingles Myths — 72-hour window, Shingrix",
     "蜂窩性組織炎完整衛教 — 規劃中":
         "Cellulitis complete patient guide (coming)",
@@ -131,11 +131,11 @@ TRANSLATIONS: dict[str, str] = {
         "Infant & pediatric atopic dermatitis — complete care guide",
     "標靶藥物（TKI）皮膚副作用完整衛教 — TLCS + TDA 共識":
         "Targeted-therapy (TKI) cutaneous side effects — TLCS + TDA consensus",
-    "猴痘（Mpox）皮膚照護完整指南 — TDA 官方建議":
-        "Monkeypox (Mpox) skin care — full guide per TDA recommendations",
+    "M 痘（猴痘）皮膚照護完整指南 — TDA 官方建議":
+        "Mpox (monkeypox) skin care — full guide per TDA recommendations",
     "化膿性汗腺炎（HS）完整衛教 — TDA 共識":
         "Hidradenitis suppurativa (HS) — patient guide per TDA consensus",
-    "帶狀皰疹（皮蛇）6 大迷思 — 繞一圈會死？疫苗值得嗎？神經痛多久？":
+    "帶狀疱疹（皮蛇）6 大迷思 — 繞一圈會死？疫苗值得嗎？神經痛多久？":
         "6 Shingles Myths — does it kill if it circles? is the vaccine worth it? how long does neuralgia last?",
     "病毒疣 6 大迷思 — 香蕉皮、雷射打一次就好？HPV 疫苗值得？":
         "6 Wart Myths — banana peel, one-laser cure? Is the HPV vaccine worth it?",
@@ -186,7 +186,7 @@ TRANSLATIONS: dict[str, str] = {
     "猴痘 Mpox": "Monkeypox / Mpox",
     "化膿性汗腺炎 HS": "Hidradenitis suppurativa (HS)",
     "迷思澄清": "Myth busting",
-    "帶狀皰疹 / 皮蛇": "Shingles / Herpes zoster",
+    "帶狀疱疹 / 皮蛇": "Shingles / Herpes zoster",
     "病毒疣 / HPV": "Warts / HPV",
     "完整衛教": "Full patient guide",
     "乾癬": "Psoriasis",
@@ -204,7 +204,7 @@ TRANSLATIONS: dict[str, str] = {
     "衛教 · 白斑": "Patient guide · Vitiligo",
     "衛教 · 兒童異膚": "Patient guide · Pediatric eczema",
     "衛教 · 標靶副作用": "Patient guide · Targeted-therapy SE",
-    "衛教 · 帶狀皰疹": "Patient guide · Shingles",
+    "衛教 · 帶狀疱疹": "Patient guide · Shingles",
     "衛教 · 病毒疣": "Patient guide · Warts",
     "衛教 · 乾癬": "Patient guide · Psoriasis",
     "衛教 · 蕁麻疹": "Patient guide · Urticaria",
@@ -412,7 +412,7 @@ TRANSLATIONS: dict[str, str] = {
     "衛教 · 產品 / 處方介紹": "Patient guide · Product / Prescription",
     "衛教 · 兒童皮膚": "Patient guide · Pediatric skin",
     "衛教 · 處方用藥": "Patient guide · Prescription drugs",
-    "帶狀皰疹（皮蛇）6 大迷思": "6 Shingles (Herpes Zoster) Myths",
+    "帶狀疱疹（皮蛇）6 大迷思": "6 Shingles (Herpes Zoster) Myths",
     "肝斑 7 大迷思": "7 Melasma Myths",
     "美白成分完整解析": "Brightening ingredients — full breakdown",
     "嬰幼兒 / 兒童異位性皮膚炎完整照護指南":
@@ -420,7 +420,7 @@ TRANSLATIONS: dict[str, str] = {
     "標靶藥物（TKI）皮膚副作用完整衛教":
         "Targeted-therapy (TKI) cutaneous side effects — complete patient guide",
     "病毒疣 6 大迷思": "6 Wart Myths",
-    "猴痘（Mpox）皮膚照護": "Monkeypox (Mpox) skin care",
+    "M 痘（猴痘）皮膚照護": "Mpox (monkeypox) skin care",
     "乾癬 7 大迷思": "7 Psoriasis Myths",
     "病毒疣 · 2026-05-04": "Warts · 2026-05-04",
     "猴痘 · 2026-05-04": "Monkeypox · 2026-05-04",
@@ -535,11 +535,11 @@ TRANSLATIONS: dict[str, str] = {
         "Topical steroids are prescription medications (some indications are OTC exceptions). Do not self-purchase potent topical steroids for long-term use. Follow physician prescription.",
     "化膿性汗腺炎（HS）完整衛教":
         "Hidradenitis suppurativa (HS) — complete patient guide",
-    "猴痘（Mpox）皮膚照護完整指南":
-        "Monkeypox (Mpox) skin-care complete guide",
+    "M 痘（猴痘）皮膚照護完整指南":
+        "Mpox (monkeypox) skin-care complete guide",
     "皮膚 T 細胞淋巴瘤(CTCL / MF)":
         "Cutaneous T-cell lymphoma (CTCL / MF)",
-    "帶狀皰疹 6 大迷思": "6 Shingles Myths",
+    "帶狀疱疹 6 大迷思": "6 Shingles Myths",
     "皮蛇 · 2026-05-04": "Shingles · 2026-05-04",
     "Key Facts（TDA 共識）": "Key Facts (TDA consensus)",
     # Final batch — short isolated strongs

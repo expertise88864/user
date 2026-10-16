@@ -107,7 +107,7 @@
     },
     "mpox-care": {
       "tag": "猴痘 Mpox",
-      "title": "猴痘（Mpox）皮膚照護完整指南 — TDA 官方建議",
+      "title": "M 痘（猴痘）皮膚照護完整指南 — TDA 官方建議",
       "title_en": "Mpox skin care complete guide — TDA official recommendations"
     },
     "vitiligo": {
@@ -127,8 +127,8 @@
       "title_en": "Complete Acne Scar Treatment Guide — 4 atrophic, erythema, pigment, hypertrophic"
     },
     "shingles-myths": {
-      "tag": "帶狀皰疹 / 皮蛇",
-      "title": "帶狀皰疹（皮蛇）6 大迷思 — 繞一圈會死？疫苗值得嗎？",
+      "tag": "帶狀疱疹 / 皮蛇",
+      "title": "帶狀疱疹（皮蛇）6 大迷思 — 繞一圈會死？疫苗值得嗎？",
       "title_en": "Shingles 6 myths — will it kill if it wraps around? Is the vaccine worth it?"
     },
     "warts-myths": {
@@ -279,8 +279,8 @@
     "mpox-care": {
       "tag": "猴痘 Mpox",
       "tag_en": "Monkeypox / Mpox",
-      "title": "猴痘（Mpox）皮膚照護完整指南 — TDA 官方建議",
-      "title_en": "Monkeypox (Mpox) skin care — full guide per TDA recommendations"
+      "title": "M 痘（猴痘）皮膚照護完整指南 — TDA 官方建議",
+      "title_en": "Mpox (monkeypox) skin care — full guide per TDA recommendations"
     },
     "hidradenitis-suppurativa": {
       "tag": "化膿性汗腺炎 HS",
@@ -289,9 +289,9 @@
       "title_en": "Hidradenitis suppurativa (HS) — patient guide per TDA consensus"
     },
     "shingles-myths": {
-      "tag": "帶狀皰疹 / 皮蛇",
+      "tag": "帶狀疱疹 / 皮蛇",
       "tag_en": "Shingles / Herpes zoster",
-      "title": "帶狀皰疹（皮蛇）6 大迷思 — 繞一圈會死？疫苗值得嗎？神經痛多久？",
+      "title": "帶狀疱疹（皮蛇）6 大迷思 — 繞一圈會死？疫苗值得嗎？神經痛多久？",
       "title_en": "6 Shingles Myths — does it kill if it circles? is the vaccine worth it? how long does neuralgia last?"
     },
     "warts-myths": {

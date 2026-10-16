@@ -135,7 +135,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202610170140';
+          s.src = '/blog/blog-diagrams.min.js?v=202610170200';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -289,7 +289,7 @@
         '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
         '<span data-zh="最後審閱 ' + reviewedDate + '" data-en="Last reviewed · ' + reviewedDate + '">最後審閱 ' + reviewedDate + '</span>' +
       '</span>' +
-      '<a href="/about" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:9999px;background:#fff;border:1px solid var(--border);color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="陳翊嘉醫師 →" data-en="Dr. Chen Yi-Jia →">陳翊嘉醫師 →</a>' +
+      '<a href="/about" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:9999px;background:var(--surface,#fff);border:1px solid var(--border);color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="陳翊嘉醫師 →" data-en="Dr. Chen Yi-Jia →">陳翊嘉醫師 →</a>' +
       '<span data-dn-wordcount style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#fef3c7;border:1px solid #fcd34d;color:#854d0e;font-weight:600">' +
         '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>' +
         '<span data-zh="' + totalLabel + '" data-en="' + countLabelEn + '">' + totalLabel + '</span>' +
@@ -693,18 +693,18 @@
     }
 
     // 2026-05-08 — Auto-hide floating TOC when user scrolls into article-end zone
-    // (author bio / disclaimer / mag-footer). Without this the TOC stays visible
+    // (author bio / mag-footer). Without this the TOC stays visible
     // and overlaps the dark site footer's brand text. Use IntersectionObserver
-    // on the article's last sibling (related/author/disclaimer/footer) so we
+    // on the article's last sibling (related/author/footer) so we
     // restore correctly when scrolling back up.
     aside.style.transition = 'opacity .25s, visibility .25s';
     aside.style.willChange = 'opacity';
-    var hideAnchor = document.querySelector('#dn-author-bio, #dn-legal-disclaimer, footer.mag-footer, footer');
+    var hideAnchor = document.querySelector('#dn-author-bio, footer.mag-footer, footer');
     if (!hideAnchor && hasIO) {
-      // The bio/disclaimer haven't been injected yet at this moment; defer the
+      // The author bio hasn't been injected yet at this moment; defer the
       // observer wiring. Observe the document body for additions, then attach.
       var attachObs = new MutationObserver(function () {
-        var el = document.querySelector('#dn-author-bio, #dn-legal-disclaimer, footer.mag-footer, footer');
+        var el = document.querySelector('#dn-author-bio, footer.mag-footer, footer');
         if (el) {
           attachObs.disconnect();
           attachHide(el);
@@ -745,7 +745,7 @@
           return rect.bottom > height * 0.3 && rect.top < height * 0.5;
         });
         if (visible) setActive(visible.id);
-        const footer = document.querySelector('#dn-author-bio, #dn-legal-disclaimer, footer.mag-footer, footer');
+        const footer = document.querySelector('#dn-author-bio, footer.mag-footer, footer');
         const rect = footer && footer.getBoundingClientRect();
         const hidden = rect && rect.bottom > 0 && rect.top < height * 0.6;
         aside.style.opacity = hidden ? '0' : '';

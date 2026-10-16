@@ -1,23 +1,23 @@
 {
   "acne-myths": {
     "date": "2026-10-16",
-    "hash": "46163bf91b24a29620169f8cb41711dd926c989ffe74c9c0b476a13ee83493e4"
+    "hash": "703052fa76fea3a56a15f2ec7a651f0136b841a70b059a24595ef49fa4c88c86"
   },
   "acne-scar-treatment": {
     "date": "2026-10-16",
-    "hash": "44a0ca0264a9905777bae756be5b0da70c256711bfd84451b0f3c33659da3bef"
+    "hash": "fd42cec73a05390011ea54b9f8de7804f2ab68db793c41652f6944dbb65f5ac6"
   },
   "actinic-keratosis-scc": {
     "date": "2026-10-16",
-    "hash": "691e2f54d6f54bf9e5d6bfb2460bffe17932d890001ed8537d54f10282e14065"
+    "hash": "cc0f1c71572e8d639a759123234000af0aa8149ff65db092b4158e1ab7113ce5"
   },
   "ai-dermatology-roles": {
     "date": "2026-10-16",
-    "hash": "e3b9e65af49c47e7d71104c037d48f12fa5ace8a30fce3ad712cc72edb1653e3"
+    "hash": "51afa86bce228f00e0a1c2817e9257e49c19705d4b7bd219f45e9e84b59f6ba2"
   },
   "alopecia-areata": {
     "date": "2026-10-16",
-    "hash": "58485ed7fb1a49af8312d0c83f88eb42ee2319a954d8598722b4c0ca852c400a"
+    "hash": "9e2623fe0bb3a19decb3130995e120147d8c074147f08585cfb2d7167b50e171"
   },
   "atopic-dermatitis-overview": {
     "date": "2026-10-15",
@@ -25,198 +25,198 @@
   },
   "atopic-dermatitis-special-populations": {
     "date": "2026-10-16",
-    "hash": "8dbc4ad999f85452a02a07d40f6d7bfaedd2ed89d829b6daa9240e496a7f0741"
+    "hash": "21bbdd5e4678a08e28d78be3ed8c2b3a3256abaf1bd3982ce9b7efe8e150506b"
   },
   "atopic-dermatitis-systemic": {
-    "date": "2026-10-15",
-    "hash": "89ac0646412d80b983c71a1bde2c4b618c33548b0313a9cef38ea3c51f83b186"
+    "date": "2026-10-16",
+    "hash": "89203234ca7c6a71d93ac368aa6248af8fdc7e2c8befcafd2fad8e91ce14d8f9"
   },
   "atopic-dermatitis-topical": {
-    "date": "2026-10-15",
-    "hash": "3d4db7c11e6dcd05f8f9164163cc1912b7ecb337eb9f8ca31b1b07fb93599357"
+    "date": "2026-10-16",
+    "hash": "dc5025ef2c5dc0e22a087446ce9eb9a535abb8b1b04c1370eb3801f05e4866af"
   },
   "bimekizumab-hidradenitis-suppurativa": {
-    "date": "2026-10-15",
-    "hash": "1dcca47a10a634ccca0c72bb7e096c8f9a8c5ea58ce4c41206743bd36ddfc5ab"
+    "date": "2026-10-16",
+    "hash": "0a3ed9fd7401fb3829521463badbfb3973d113ffd0df6449296afed747279162"
   },
   "biologics-overview": {
     "date": "2026-10-16",
-    "hash": "3ceecdff32385b436b3ebcdca5ff7bfe2c0617649408abe0609afaaa0f29461e"
+    "hash": "9330bf58e61a35a8a6c164e8a2427928ef02d22230dcaa1c89d9b7883c7f9110"
   },
   "contact-dermatitis": {
     "date": "2026-10-16",
-    "hash": "0cfe9412534e4a613a055e1e3ec4854f1421296348c7314cd7ab28c5c948893a"
+    "hash": "45b02ee8469de0d7f8106aadd798e57542e9c2807f7e5d2d839c470308ea30ef"
   },
   "cutaneous-t-cell-lymphoma": {
     "date": "2026-10-16",
-    "hash": "768cce4c7570bec0a6c7fda72b063c5029989c7e472fce7d1289172cee2cb494"
+    "hash": "2790287a8fe3c2de4ca8a59e3090fd16797530c59bba76328284028f1dd70f85"
   },
   "dermatologic-oral-examination": {
-    "date": "2026-10-16",
-    "hash": "46de3f06e7a26dabd12b5b9aa50da002475068976e67d6e884ae6e4bd104e93d"
+    "date": "2026-10-17",
+    "hash": "4173ab5aabc0fded3389c436519ec99069ee6ca990d455dbebe5cd3392fa5d3c"
   },
   "dermatology-faq": {
     "date": "2026-10-16",
-    "hash": "f7df1360e6f024c54568fee500a719f4a0c9d667dae989accfd595766aca90df"
+    "hash": "4eb84b110c8f859863e1bcd410a2761eb36aba442b8ac8fa07ae5d0f90ec28e9"
   },
   "dupilumab-long-term-maintenance": {
-    "date": "2026-10-16",
-    "hash": "bd33983ffd349a33f28722f5dcd4a67d7fc21dc7f0e37de16c33623dcaf10040"
+    "date": "2026-10-17",
+    "hash": "70317e5effeb6150a4bdf8fe2d23c2301c5b48c78b6f8ceff8bbea50106cbac9"
   },
   "epidermoid-cyst": {
     "date": "2026-10-16",
-    "hash": "a99960b787985a7a24a40bc84fdf8bb3bd944b33e526762a35576747cabbebea"
+    "hash": "89ca4068eced9137379b657fd00b1d38ce445364f4ba3778ca85d351fb5d9c9b"
   },
   "hairloss-myths": {
     "date": "2026-10-16",
-    "hash": "bee276d9d7f6f7de5541b98127adcf9f37ae0d0b990b5ede7c756d46690f78bf"
+    "hash": "30cd624384bc28fe854242d8ab9eaf3ef1321b838baea413767a0f9e5c729927"
   },
   "hidradenitis-suppurativa": {
     "date": "2026-10-16",
-    "hash": "1ca39d76f20064c3b71b2c672fda936ac3f750074bc2d47dd5c91c33460f7740"
+    "hash": "06b6777c4024b973676d99c985ea95fb31edb59ab5f39a09c44cf69c8fbdc71c"
   },
   "isotretinoin-clinical": {
     "date": "2026-10-16",
-    "hash": "2632a1f66efd24489a9b08a305bd89f742f615a86bc61052d5fbe3e3a0a8dc58"
+    "hash": "5c64ec707e44194070c7f5c96b9bb230c0b0e46c9891a21e4f7f98867fe5af61"
   },
   "isotretinoin-patient": {
     "date": "2026-10-16",
-    "hash": "9b9cd8c714171fd19c6dc92b0c9fb39cdf0fb01987150f477369ef09777edb5e"
+    "hash": "637108acbc7558e698a2768ffd9eabea71a74f793c374834ae536501f50f5e39"
   },
   "jaki-switching-alopecia-areata": {
-    "date": "2026-05-29",
-    "hash": "689b148d0fd6d96d86e7179ba11802deee9729cb4b385d6d954697e0e26cd02a"
+    "date": "2026-10-16",
+    "hash": "7e9015903f1373319430016a2014a60ebb44bdd0445e0cdab9fe833139c24b7e"
   },
   "laser-dermatology": {
     "date": "2026-10-16",
-    "hash": "b146915cb5cc2cdf6167fbd5548440990eda77788c0034a942d0b875bf162d35"
+    "hash": "370abfac3dfe167cb5e3b71f565ddff6f1526681a42e0abff8d3148b8639a91b"
   },
   "melasma-myths": {
     "date": "2026-10-16",
-    "hash": "0e5b4c14cc19ff03015596facbaa87c54f4f7623adbc5333086dfd82b1663dbc"
+    "hash": "5732dcbd46e4bc3eec0138b99b0b65b4820b7e6d8fa8ab176cb3d5615453b95a"
   },
   "mpox-care": {
     "date": "2026-10-16",
-    "hash": "c1a5dcc3975cb79f78a062e9d9dd918b02fa2d7a6b209ea1db6a8c7e1960af8b"
+    "hash": "ab9b2d5e6c39dd78a1216468c0db18e1239a128d0e3dd6d4269926fb6f7e7ffd"
   },
   "nail-psoriasis-topical-intralesional": {
-    "date": "2026-10-15",
-    "hash": "6d897102c939fd8180aba0cac5a8afdae064ac64549e9c8e5ec09cb9aeb400d8"
+    "date": "2026-10-16",
+    "hash": "dc4bd645ebe3f031de03f473c437521480d436d4461435ea7ae3f85a3ea79abb"
   },
   "nhi-derm-drugs": {
     "date": "2026-10-16",
-    "hash": "8e0ce0936e3cdd0f191d474e74e2b3480bf122f4ae57b0213fe524559cd2cb6d"
+    "hash": "8de17d87394e7c26282931d86c202fafdfcb5dd1379890ae2a771934df2a2c41"
   },
   "pediatric-eczema": {
     "date": "2026-10-16",
-    "hash": "af2af776ab480278906a82a2c039cb90c48700f2a42aa42ff7f3bacd325be159"
+    "hash": "746076f11a5935a0cfc704739afdc7da36811282ae4d549f9f85a5a235249852"
   },
   "perioral-dermatitis-guide": {
     "date": "2026-10-16",
-    "hash": "20fb053c269bb612be4fc5a1059718878a357ae310aee8289187ed11a8014bf4"
+    "hash": "016dae9b92bb7e0c372aa0a7e64ee93a41c6b8052ae961366b1cfd354b988307"
   },
   "photodynamic-therapy-overview": {
-    "date": "2026-10-15",
-    "hash": "d82ef169811dd30e78165c2b6f544b012d13dc886780c14ed667d2c4ceec925b"
+    "date": "2026-10-17",
+    "hash": "05aaaf830fb0d47607cb1e614fb7ec16ff19792040327679d73991f86e3f238a"
   },
   "prurigo-nodularis": {
     "date": "2026-10-16",
-    "hash": "3f65103be1f0d4bf958f5bd5b5c071fc9f73fd5664caa4d69e3fb27146576ccb"
+    "hash": "fa975e956cc362ad70c5f93e2d99b50fc4c29ffd47df378d3ee1501ee630538d"
   },
   "psoriasis-biologic-monitoring": {
     "date": "2026-10-16",
-    "hash": "00c4e36e8d32d998e485583e0ae1a12dfb00ad4e0e25fa7887288daa38d225af"
+    "hash": "3466b8ef5e788fea7f8c937d2c21cad26c5feade7c2c2ff3810991d3c08c96b6"
   },
   "psoriasis-myths": {
     "date": "2026-10-16",
-    "hash": "212a047d1db4d33b86655b8302edd86e807e81ff1bb1b9cefa863327566b0529"
+    "hash": "47183513d2a98b25b97b1b876e7dcb9a3d4ca6d4b299e161227fbc53e20086a4"
   },
   "psoriasis-overview": {
-    "date": "2026-10-15",
-    "hash": "1c9990e6d3233a9137e4cdb96101535d0680ef197533d7581624971130fe26b9"
+    "date": "2026-10-16",
+    "hash": "e6f009687c3990d805ca9d783d87168b529169dadeff7c3a20fd81da359c7dea"
   },
   "psoriasis-special-populations": {
-    "date": "2026-10-15",
-    "hash": "8eadd2fe46b62cda5b6e55a1c86878ec2ea739ae1f376bca188b9216d5e16204"
+    "date": "2026-10-16",
+    "hash": "43a4ac7d8e83ac67c3f4feb50df14d10107365b00712939cebfc43cbe2916d22"
   },
   "psoriasis-systemic": {
     "date": "2026-10-16",
-    "hash": "ebc13cf171b35e55c404cafd78b6e0c89957084920be29887314bfa6bd216e59"
+    "hash": "b4c7bb1d729f0853cb609443ca6d0f762e923544733847c1f2e3e7490bd20664"
   },
   "psoriasis-topical": {
-    "date": "2026-10-15",
-    "hash": "c355249f4da9f7c9c1b07d2a0b952f3ae783d9a1c6f6c0df8641d5b4a42702e3"
+    "date": "2026-10-16",
+    "hash": "cbc9f6279d7a28b2f5ef50af3dcfcafbe63f4bf895b8e72dadcef148da94725b"
   },
   "rosacea-myths": {
     "date": "2026-10-16",
-    "hash": "b9db0ba68386b96a09de2fc03cc24249c3d408b162b988c0b247ff584dfb99aa"
+    "hash": "dfb056e43c0ad2b5bbbf3c1947156e8aefbffa144b4ccb81c13c2dc7650a4c9b"
   },
   "semaglutide-hair-loss": {
-    "date": "2026-05-25",
-    "hash": "d903b3962fcc20d3e48ed2bdc6a04b2a259049e51c514348f30ad138977eab6f"
+    "date": "2026-10-16",
+    "hash": "2e3d75fd6aea0d54e4b6bd83634597336e5b8c2f8b26efee6772290ee4f0b062"
   },
   "severe-scabies-treatment": {
     "date": "2026-10-16",
-    "hash": "bbdb4d9a4828ac863b7398dd4f00b8134b6067f5b9a668c0784c07252417d935"
+    "hash": "6f06710e84b847bdf6472c7b0e49c6c85c0825ca46331f7e7fe6d7f0f60627ad"
   },
   "shingles-myths": {
     "date": "2026-10-16",
-    "hash": "70af68f48079b5a66ac90ebba81b10c7a347a46b49f2b029a4aa26afb01bf574"
+    "hash": "6877a269fddca2f8b877eb718982ea2ba00f78ae18c26c34c7690d81508f66a1"
   },
   "skin-biopsy-excision": {
     "date": "2026-10-16",
-    "hash": "831754c0be26566d65890e3853c0e3ad2b75fb4716c22c53e0708dadc3e70b6e"
+    "hash": "3d90b776fbc985f5f4c60f0fd7e789e17cb30e752ec869b4d27647f08f5b402d"
   },
   "skin-whitening-agents": {
     "date": "2026-10-16",
-    "hash": "c3b02a752a5d4ae42a89785510c2e29829a6d54257a189019898046f8dc8e33d"
+    "hash": "201bc6754c85179f1119bc6e92688f5b1aa70b551b3e5d51d56b045e503a1cdc"
   },
   "spironolactone-dermatology-safety": {
     "date": "2026-10-16",
-    "hash": "d216a6a8bb2c74ce3cf648592f39f38d6331919e8ad7c39883bd7fe40038f5ca"
+    "hash": "c8e980484fbbe8ad8a5015cd0116346ee4c57aeb11b5f9b1dad15820cc9e8c19"
   },
   "sunscreen-myths": {
     "date": "2026-10-16",
-    "hash": "2288bae0e122646be24305092e629e6b4499f48a6db2039ae1e51bedba0735aa"
+    "hash": "1cafee5df45b9e48b40dc5bbb31349e7e45fad3c2755c605a4195dad6e9bc36b"
   },
   "targeted-therapy-skin": {
     "date": "2026-10-16",
-    "hash": "a4af4f166616f1b0061ed85e0f0745a6d38b1b2d5a9c296951c239e9712564e0"
+    "hash": "c88c633072de9bf7e8d2124dcec07395d8d7282611ffa0d06c3ef318fdbc0dcb"
   },
   "tinea-myths": {
     "date": "2026-10-16",
-    "hash": "8019d8ba53a34734d7370e3d0d11dff784eb0b929a60bdc95343509e1c625b4a"
+    "hash": "6bba790438fda9db8f9672420f455db927a2d19266230bbb384b1755e1209ba2"
   },
   "toenail-mechanical-disorders": {
-    "date": "2026-10-15",
-    "hash": "f60c222462b549acb663ef6e456fd8bbf4187d8a14393374a24d806790f6bc98"
+    "date": "2026-10-16",
+    "hash": "30b55dd38b013694226f6c6b6d0f55df8503e19b36025f3e761c7361d6a7f231"
   },
   "topical-acids-clinical": {
     "date": "2026-10-16",
-    "hash": "9ed90ce845795c035786ee89ad8086ccfda91ee0574b3fa0dd3ad40298a9a04e"
+    "hash": "32ef98e4df5aa7445d5e2180da8e65693a6cf6b4e1deda5dcaf39a505c43125f"
   },
   "topical-acids-patient": {
     "date": "2026-10-16",
-    "hash": "e8ea5bae8b150a9963084af4648aaade1dace9fc3709572ce4b57518bb3e254e"
+    "hash": "351734d0ffdc08db75880b04dbc378508f9b19bd3bb1afe9fb33e815ef765595"
   },
   "topical-steroids-guide": {
     "date": "2026-10-16",
-    "hash": "c3cd42b27ca9a48259a0ef2a43a27917e8c7f1068f143c5ddc3b3f7bb1befd9b"
+    "hash": "0a6a44793d77b172e49f60c554416da868285c264d2d5964b3f07d5d523e2a37"
   },
   "urticaria-myths": {
     "date": "2026-10-16",
-    "hash": "202280136f808ec20942baee77a4176494a9fb4bd18db890fe03823a4ac7e77c"
+    "hash": "95a10d50b03152981e9d5db3999f9ac9c548aef0dffdf0d4a646505c36d4710a"
   },
   "vitiligo": {
     "date": "2026-10-16",
-    "hash": "4a519adbefa7fae0aa38045141f7ba26ca60e5a13a4a132dcd4c8c951a980826"
+    "hash": "506ebdf269767900967b7132cd90e3a297f4951eb94fd04aa88fe413b0919966"
   },
   "vitiligo-maintenance-clinical": {
-    "date": "2026-05-25",
-    "hash": "78aa292b278918a09abef57796a04c29325588915eeb110eb39dd7dcc1fbceca"
+    "date": "2026-10-16",
+    "hash": "3d68243a07200fa3419dd38177331c67ad8da8c997469a1ab26d7343f2e9ab4a"
   },
   "warts-myths": {
     "date": "2026-10-16",
-    "hash": "1bbd6849a8235f50326b9d0c94a4895a38fdbbd625462d372109fd879dacfa55"
+    "hash": "2cada8a3c9dbe5b48b3d736463f7fb11065cbaa1a99ffc63a1ce443ca5f342b8"
   }
 }

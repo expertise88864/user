@@ -1,4 +1,10 @@
-"""Render article navigation before paint; keep optional metadata in a disclosure."""
+"""Render article navigation before paint; show cover/reading metadata openly.
+
+The outline ("本篇大綱") stays a collapsible <details>. The cover and reading
+information block is a plain, always-visible container (author request
+2026-10-16): runtime fills #dn-secondary-meta with the hero figure and the
+reading bar, so it must never be hidden behind a disclosure.
+"""
 from __future__ import annotations
 
 import html
@@ -143,8 +149,8 @@ def normalize(src: str, english: bool = False) -> str:
     if not any(attributes(tag).get('id') == 'dn-secondary-meta' for _, tag in tags):
         title = 'Cover and reading information' if english else '封面與閱讀資訊'
         meta = ('<!-- dn-reading-shell:meta --><section class="max-w-3xl mx-auto px-5 sm:px-8">'
-                '<details id="dn-secondary-meta" class="dn-article-details"><summary>'
-                + title + '</summary></details></section><!-- /dn-reading-shell -->')
+                '<div id="dn-secondary-meta" class="dn-article-details dn-article-meta">'
+                '<div class="dn-article-meta-title">' + title + '</div></div></section><!-- /dn-reading-shell -->')
         edits.append((start, start, meta))
     for position, stop, block in sorted(edits, reverse=True):
         src = src[:position] + block + src[stop:]

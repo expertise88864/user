@@ -1,12 +1,14 @@
 """Regression tests for raw-HTML article discovery and draft boundaries."""
 import tempfile
 import json
+import re
 import os
 from pathlib import Path
 import unittest
 from unittest.mock import patch
 
-from _sync_hub_catalog import CardList, load_catalog, load_overrides, public_catalog, render_card, sync_card, sync_source
+from _sync_hub_catalog import (CardList, category_chips_by_slug, load_catalog, load_overrides, public_catalog,
+                               render_card, sync_card, sync_source)
 
 
 class HubCatalogTests(unittest.TestCase):
@@ -44,7 +46,7 @@ class HubCatalogTests(unittest.TestCase):
                 if tag == 'h2' or attributes.get('class') == 'chip tag':
                     self.fields.append(attributes)
         for language in ('zh', 'en'):
-            original = render_card(item).replace('</h2>', '</h2><span class="chip tag">Fixture tag</span>')
+            original = render_card(item)
             card = sync_card(original, item, {}, language)
             parsed = Fields(card)
             self.assertEqual(parsed.images, 0)
@@ -211,7 +213,8 @@ class HubCatalogTests(unittest.TestCase):
     def test_metadata_drift_repairs_category_language_and_topic_preserving_artwork(self):
         item = {**self.first, 'tag': '處置 / 手術', 'tag_en': 'Biopsy'}
         card = render_card(item).replace('data-cat="rx"', 'data-cat="myth"')
-        card = card.replace('<h2', '<svg id="artwork"><path d="M0 1"/></svg><span class="chip tag" data-en="Psoriasis">乾癬</span><h2')
+        card = re.sub(r'<span class="chip tag"[^>]*>[^<]*</span>', '<span class="chip tag" data-en="Psoriasis">乾癬</span>', card)
+        card = card.replace('<h2', '<svg id="artwork"><path d="M0 1"/></svg><h2')
         card = card.replace('>原有文章</h2>', '>English residue</h2>')
         source = '<div id="list">' + card + '</div>'
         result = sync_source(source, 'list', [item])
@@ -231,6 +234,44 @@ class HubCatalogTests(unittest.TestCase):
         self.assertIn('>醫師選擇的標題</h2>', result)
         self.assertIn('>另一個入口</h2>', result)
         self.assertEqual(sync_source(result, 'list', [self.first, self.second], overrides), result)
+
+    def test_every_card_gets_category_and_topic_chips(self):
+        item = dict(self.first, cat='research', tag='生物製劑安全', tag_en='Biologic safety')
+        rendered = render_card(item)
+        self.assertIn('<span class="chip cat-rx" data-zh="最新研究" data-en="Latest Research">最新研究</span>'
+                      '<span class="chip tag" data-zh="生物製劑安全" data-en="Biologic safety" data-dn-text-only="">'
+                      '生物製劑安全</span><time', rendered)
+        # A legacy minimal card (date only) gains both chips, chips first.
+        minimal = re.sub(r'<span class="chip[^"]*"[^>]*>[^<]*</span>', '', rendered)
+        self.assertNotIn('class="chip', minimal)
+        source = '<div id="list">' + minimal + '</div>'
+        result = sync_source(source, 'list', [item])
+        self.assertIn(rendered, result)
+        self.assertEqual(sync_source(result, 'list', [item]), result)
+        for cat, label in (('myth', '迷思澄清'), ('rx', '處方用藥'), ('product', '產品介紹')):
+            self.assertIn(f'>{label}</span>', render_card(dict(item, cat=cat)))
+        english = sync_card(minimal, item, {}, 'en')
+        self.assertIn('data-en="Latest Research">Latest Research</span>', english)
+        self.assertIn('data-dn-text-only="">Biologic safety</span>', english)
+
+    def test_editorial_category_is_kept_and_reused_by_the_other_hub(self):
+        item = dict(self.first, tag='乾癬', tag_en='Psoriasis')
+        editorial = render_card(item).replace(
+            '<span class="chip cat-rx" data-zh="處方用藥" data-en="Prescription">處方用藥</span>',
+            '<span class="chip cat-rx" data-zh="完整衛教" data-en="Complete guide">完整衛教</span>')
+        bare = re.sub(r'<span class="chip[^"]*"[^>]*>[^<]*</span>', '', editorial)
+        home = '<div id="home">' + editorial + '</div>'
+        index = '<div id="list">' + bare + '</div>'
+        shared = category_chips_by_slug([(home, 'home'), (index, 'list')])
+        self.assertEqual(shared['first'], ('cat-rx', '完整衛教', 'Complete guide'))
+        self.assertIn(editorial, sync_source(home, 'home', [item], shared_chips=shared))
+        result = sync_source(index, 'list', [item], shared_chips=shared)
+        self.assertIn('>完整衛教</span><span class="chip tag"', result)
+        self.assertEqual(sync_source(result, 'list', [item], shared_chips=shared), result)
+        # Existing category chip without a topic: the topic goes right after it.
+        only_category = re.sub(r'<span class="chip tag"[^>]*>[^<]*</span>', '', editorial)
+        self.assertIn('>完整衛教</span><span class="chip tag" data-zh="乾癬"',
+                      sync_card(only_category, item, {}))
 
     def test_override_contract_rejects_unknown_slugs_and_category_changes(self):
         import json

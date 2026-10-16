@@ -167,7 +167,7 @@ TLDR = {
         "en": "Mild-to-moderate psoriasis is managed topically, and topicals stay useful alongside phototherapy or a biologic for stubborn residual plaques. Topical steroids are the backbone, often combined or alternated with vitamin D analogues, while the face, folds, scalp and nails need their own vehicle and potency.",
     },
     "shingles-myths": {
-        "zh": "帶狀皰疹是體內潛伏的水痘病毒再活化,得過水痘的人終生都可能發作,年輕人也會。繞一圈會死並不是事實,但錯過發疹後 72 小時的抗病毒黃金期,神經痛風險明顯上升;民俗療法沒有醫療效果,疫苗可降低發作與神經痛。",
+        "zh": "帶狀疱疹是體內潛伏的水痘病毒再活化,得過水痘的人終生都可能發作,年輕人也會。繞一圈會死並不是事實,但錯過發疹後 72 小時的抗病毒黃金期,神經痛風險明顯上升;民俗療法沒有醫療效果,疫苗可降低發作與神經痛。",
         "en": "Shingles is reactivation of latent varicella virus, so anyone who has had chickenpox can develop it, young adults included. The belief that a rash encircling the body is fatal is untrue, but missing the 72-hour antiviral window clearly raises the risk of nerve pain; folk remedies do nothing, and vaccination lowers both episodes and neuralgia.",
     },
     "skin-biopsy-excision": {

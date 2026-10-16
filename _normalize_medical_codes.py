@@ -256,7 +256,7 @@ SLUG_CONDITIONS: dict[str, list[dict]] = {
                           icd10="B07.9", snomed="240542004"),
     ],
     "shingles-myths": [
-        medical_condition("Herpes zoster", "帶狀皰疹",
+        medical_condition("Herpes zoster", "帶狀疱疹",
                           icd10="B02.9", snomed="4740000",
                           mesh="D006562"),
     ],

@@ -556,7 +556,6 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
             '<th scope="col">最後作答</th><th scope="col">課本已讀完</th></tr></thead>'
             f'<tbody>{"".join(prog_rows)}</tbody></table></div></details>'
         )
-    years = "".join(f'<li><a href="/exam/year-{y}">{y} 年</a></li>' for y in sorted(by_year))
     books = "".join(
         f'<li><a href="/exam/{b}">{esc(OTHER_BOOKS[b][1])}題（{esc(OTHER_BOOKS[b][0])}）</a> <span class="ex-count">{len(qs)} 題</span></li>'
         for b, qs in sorted(by_book.items())
@@ -573,8 +572,6 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
         f"<tbody>{rows}</tbody></table>"
         '<h2 class="ex-h2">考古卷</h2>'
         '<p class="ex-meta"><a class="ex-cta" href="/exam/practice">自選年份／隨機出題</a></p>'
-        '<p class="ex-meta">或依年度照原卷順序作答，可計時並交卷計分：</p>'
-        f'<ul class="ex-years">{years}</ul>'
         '<h2 class="ex-h2">依章節瀏覽與讀書進度</h2>'
         '<p class="ex-meta">已做題數、正確率（以每題最近一次作答計算）與「課本已讀完」只存在這台裝置的瀏覽器，'
         '不同電腦或手機不會同步。正確率低於 60% 以紅字標示。</p>'
@@ -691,10 +688,8 @@ EXAM_STYLE = """<style data-exam-style>
 .ex-part{border:1px solid var(--border);border-radius:12px;background:#fff;margin:8px 0;padding:8px 14px}
 .ex-part summary{cursor:pointer;font-weight:700;font-size:14px}
 .ex-chapter-list{list-style:none;padding:0;margin:8px 0;font-size:14px;line-height:1.9}
-.ex-chapter-list a,.ex-years a{color:var(--teal-deep)}
+.ex-chapter-list a{color:var(--teal-deep)}
 .ex-none{color:var(--muted)}
-.ex-years{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0}
-.ex-years a{display:inline-block;border:1px solid var(--border);border-radius:9999px;padding:4px 14px;background:#fff;text-decoration:none;font-weight:600}
 .ex-toolbar,.ex-exam-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0}
 .ex-exam-bar[hidden]{display:none}
 .ex-toolbar button,.ex-exam-bar button,.ex-actions button{border:1px solid #4d6358;border-radius:9999px;padding:6px 14px;font-size:13px;font-weight:600;background:#fff;color:#4d6358;cursor:pointer}
@@ -755,7 +750,7 @@ body.ex-quiz .ex-q:not(.ex-done) .ex-reveal{display:none}
 .ex-q.ex-done .ex-opt.ex-picked:not([data-correct]){border-color:#dc2626;background:#fef2f2}
 body:not(.ex-quiz) .ex-opt[data-correct]{border-color:#16a34a;background:#f0fdf4}
 body:not(.ex-quiz) .ex-opt input{display:none}
-:root[data-theme="dark"] .ex-q,:root[data-theme="dark"] .ex-part,:root[data-theme="dark"] .ex-table,:root[data-theme="dark"] .ex-rank,:root[data-theme="dark"] .ex-years a{background:#24211c;border-color:#3a352c}
+:root[data-theme="dark"] .ex-q,:root[data-theme="dark"] .ex-part,:root[data-theme="dark"] .ex-table,:root[data-theme="dark"] .ex-rank{background:#24211c;border-color:#3a352c}
 :root[data-theme="dark"] .ex-table th,:root[data-theme="dark"] .ex-rank th{background:#3a352c;color:#f5efe6}
 :root[data-theme="dark"] .ex-table td,:root[data-theme="dark"] .ex-rank td,:root[data-theme="dark"] .ex-opt,:root[data-theme="dark"] .ex-items li{border-color:#3a352c}
 :root[data-theme="dark"] .ex-ref,:root[data-theme="dark"] .ex-chip{background:#3a352c;color:#cfe0d6}
@@ -775,7 +770,7 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 :root[data-theme="dark"] .ex-hit a{color:#fde68a}
 :root[data-theme="dark"] .ex-badge,:root[data-theme="dark"] .ex-ok .ex-item-label{background:#14532d;color:#dcfce7}
 :root[data-theme="dark"] .ex-no .ex-item-label{background:#7f1d1d;color:#fee2e2}
-:root[data-theme="dark"] .ex-kicker,:root[data-theme="dark"] .ex-score,:root[data-theme="dark"] .ex-main .crumbs a,:root[data-theme="dark"] .ex-q-no a,:root[data-theme="dark"] .ex-chapter-list a,:root[data-theme="dark"] .ex-years a{color:#a4b5a8}
+:root[data-theme="dark"] .ex-kicker,:root[data-theme="dark"] .ex-score,:root[data-theme="dark"] .ex-main .crumbs a,:root[data-theme="dark"] .ex-q-no a,:root[data-theme="dark"] .ex-chapter-list a{color:#a4b5a8}
 :root[data-theme="dark"] .ex-toolbar button,:root[data-theme="dark"] .ex-exam-bar button,:root[data-theme="dark"] .ex-actions button{background:transparent;color:#a4b5a8;border-color:#a4b5a8}
 :root[data-theme="dark"] .ex-mode[aria-pressed="true"]{background:#a4b5a8;color:#16140f}
 :root[data-theme="dark"] .ex-bar{background:#a4b5a8}

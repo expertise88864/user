@@ -232,7 +232,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202610170140';
+        s.src = '/blog/blog-article-visuals.min.js?v=202610170200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -930,13 +930,13 @@
     { slug:'psoriasis-topical',   title:'乾癬外用藥治療 — 類固醇、維生素 D、特殊部位', title_en:'Topical therapy for psoriasis', cat:'rx', tag:'乾癬', date:'2026-05-09', emoji:'', tag_en:'Psoriasis topical' },
     { slug:'psoriasis-systemic',  title:'乾癬全身性治療 — 光療、口服、生物製劑', title_en:'Systemic therapy for psoriasis', cat:'rx', tag:'乾癬', date:'2026-05-09', emoji:'', tag_en:'Psoriasis systemic' },
     { slug:'psoriasis-special-populations', title:'乾癬合併症與特殊族群 — PsA、心血管、懷孕、兒童、指甲、紅皮症', title_en:'Psoriasis comorbidities & special populations', cat:'rx', tag:'乾癬', date:'2026-05-09', emoji:'', tag_en:'Psoriasis special populations' },
-    { slug:'shingles-myths',      title:'帶狀皰疹 6 大迷思', title_en:'6 Shingles (Herpes Zoster) Myths', cat:'myth', tag:'皮蛇', date:'2026-05-04', emoji:'', tag_en:'Shingles' },
+    { slug:'shingles-myths',      title:'帶狀疱疹 6 大迷思', title_en:'6 Shingles (Herpes Zoster) Myths', cat:'myth', tag:'皮蛇', date:'2026-05-04', emoji:'', tag_en:'Shingles' },
     { slug:'topical-acids-patient', title:'A酸、A醇、杜鵑花酸怎麼選？五大酸類差別與搭配', title_en:'Retinoids, Retinol and Azelaic Acid: Differences and Combinations', cat:'product', tag:'酸類', date:'2026-05-07', emoji:'', tag_en:'Topical acids' },
     { slug:'isotretinoin-patient',  title:'口服 A 酸完整衛教', title_en:'Oral Isotretinoin', cat:'rx', tag:'口服 A 酸', date:'2026-05-07', emoji:'', tag_en:'Isotretinoin' },
     { slug:'acne-scar-treatment',   title:'痘疤完整治療指引', title_en:'Acne scar treatment', cat:'rx', tag:'痘疤', date:'2026-05-07', emoji:'', tag_en:'Acne scars' },
     { slug:'alopecia-areata',     title:'圓禿（鬼剃頭）完整衛教', title_en:'Alopecia areata', cat:'rx', tag:'圓禿', date:'2026-05-04', emoji:'', tag_en:'Alopecia areata' },
     { slug:'vitiligo', title:'白斑（Vitiligo）完整衛教', title_en:'Vitiligo', cat:'rx', tag:'白斑', date:'2026-05-07', emoji:'', tag_en:'Vitiligo' },
-    { slug:'mpox-care', title:'猴痘（Mpox）皮膚照護', title_en:'Monkeypox (Mpox) skin-care complete guide', cat:'rx', tag:'猴痘', date:'2026-05-04', emoji:'', tag_en:'Mpox' },
+    { slug:'mpox-care', title:'M 痘（猴痘）皮膚照護', title_en:'Mpox (monkeypox) skin-care complete guide', cat:'rx', tag:'猴痘', date:'2026-05-04', emoji:'', tag_en:'Mpox' },
     { slug:'hidradenitis-suppurativa', title:'化膿性汗腺炎（HS）完整衛教', title_en:'Hidradenitis suppurativa (HS)', cat:'rx', tag:'化膿性汗腺炎', date:'2026-05-04', emoji:'', tag_en:'HS' },
     { slug:'targeted-therapy-skin', title:'標靶藥物（TKI）皮膚副作用', title_en:'Targeted-therapy (TKI) cutaneous side effects', cat:'rx', tag:'標靶藥物', date:'2026-05-04', emoji:'', tag_en:'Targeted therapy skin' },
     { slug:'topical-steroids-guide', title:'外用類固醇完整指南', title_en:'Topical steroids: complete guide', cat:'rx', tag:'外用類固醇', date:'2026-05-04', emoji:'', tag_en:'Topical steroids' },
@@ -1134,7 +1134,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202610170140';
+        s.src = '/blog/blog-article-reading.min.js?v=202610170200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1165,12 +1165,12 @@
 
   // Article footer helpers live in blog-article-footer(.min).js and load on demand.
   DN.ensureArticleFooterBundle = function () {
-    if (DN.addRelatedArticles && DN.addShareToolbar && DN.addAuthorBio && DN.addLegalDisclaimer) return Promise.resolve();
+    if (DN.addRelatedArticles && DN.addAuthorBio) return Promise.resolve();
     if (!DN._articleFooterBundleLoading) {
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202610170140';
+        s.src = '/blog/blog-article-footer.min.js?v=202610170200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1200,7 +1200,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202610170140';
+        s.src = '/blog/blog-calculators.min.js?v=202610170200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1405,7 +1405,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202610170140';
+        s.src = '/blog/blog-hub.min.js?v=202610170200';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1437,7 +1437,7 @@
     if (!DN._supportBundleLoading) {
       DN._supportBundleLoading = new Promise(function (resolve, reject) {
         var script = document.createElement('script');
-        script.src = '/blog/blog-support.min.js?v=202610170140';
+        script.src = '/blog/blog-support.min.js?v=202610170200';
         script.onload = function () {
           if (typeof DN.injectSupportUI === 'function') resolve();
           else reject(new Error('Support bundle unavailable'));
@@ -1859,29 +1859,24 @@
       // (DN.CALC_ORDER + DN.autoInjectCalculators) — keeps the per-slug data
       // table out of the shared first-paint runtime.
 
-      // Article-footer order (top → bottom, per user spec 2026-05-08):
+      // Article-footer order (top → bottom, per user spec 2026-05-08;
+      // share toolbar, feedback link and legal disclaimer removed 2026-10-16):
       //   ↓ Official sources / authoritative guidelines (in article body)
       //   ↓ References (in article body)
       //   1. 計算器(single, injected last so it sits CLOSEST to article)
       //   2. 你可能會想看(RelatedArticles)
-      //   3. 分享給朋友(ShareToolbar)
-      //   4. 發現錯誤、過時資訊、引用爭議(FeedbackLink)
-      //   5. 關於作者(AuthorBio)
-      //   6. 重要聲明(LegalDisclaimer)
-      //   7. 贊助本站(injectBMCFooter — runs at site-footer level)
-      //   8. 頁面底部(static <footer>)
+      //   3. 關於作者(AuthorBio)
+      //   4. 贊助本站(injectBMCFooter — runs at site-footer level)
+      //   5. 頁面底部(static <footer>)
       // All inject via article.parentNode.insertBefore(box, article.nextSibling)
       // — which means each call pushes earlier-injected boxes further down. To
       // achieve the desired top-to-bottom order, we call in REVERSE order
-      // (Disclaimer first → Calculator last).
+      // (AuthorBio first → Calculator last).
       // 2026-05-08 — DN.injectNextReads (繼續閱讀) removed per user; the single
       // RelatedArticles block already covers "what to read next".
       idle(function () {
         DN.ensureArticleFooterBundle().then(function () {
-          DN.addLegalDisclaimer();
           DN.addAuthorBio();
-          DN.addFeedbackLink();
-          DN.addShareToolbar();
           DN.addRelatedArticles();
           try { DN.applyTextOnly(curLang); } catch (e) {}
         }).catch(function () {});

@@ -18,6 +18,70 @@ import subprocess
 ROOT = Path(__file__).resolve().parent
 HUBS = {"index.html": "dn-article-list", "blog/index.html": "articleList"}
 OVERRIDE_FIELDS = {"title", "title_en", "tag", "tag_en"}
+# Every card shows a category chip and a topic chip. Editorial category
+# labels already on a card are preserved; a card without one reuses the same
+# article's label from the other hub, else this default for its catalog cat
+# (names match the existing hand-authored cards).
+CATEGORY_CHIPS = {
+    "myth": ("cat-myth", "迷思澄清", "Myth-busting"),
+    "rx": ("cat-rx", "處方用藥", "Prescription"),
+    "product": ("cat-product", "產品介紹", "Products"),
+    "research": ("cat-rx", "最新研究", "Latest Research"),
+    "note": ("cat-rx", "學習筆記", "Study notes"),
+}
+CATEGORY_CHIP_RE = re.compile(r'<span\b[^>]*\bclass="chip (cat-[a-z]+)"[^>]*>([\s\S]*?)</span>', re.I)
+TOPIC_CHIP_RE = re.compile(r'<span\b[^>]*class="chip tag"[^>]*>[\s\S]*?</span>', re.I)
+META_OPEN_RE = re.compile(r'<div\b[^>]*\bclass="al-meta"[^>]*>', re.I)
+
+
+def attribute(tag: str, name: str) -> str | None:
+    match = re.search(rf'''\s{re.escape(name)}\s*=\s*"([^"]*)"''', tag, flags=re.I)
+    return html.unescape(match[1]) if match else None
+
+
+def card_category_chip(card: str) -> tuple[str, str, str] | None:
+    """Return (class, zh, en) of a card's existing category chip."""
+    match = CATEGORY_CHIP_RE.search(card)
+    if not match:
+        return None
+    opening = match[0][:match[0].index(">") + 1]
+    zh = attribute(opening, "data-zh") or html.unescape(re.sub(r"<[^>]+>", "", match[2])).strip()
+    en = attribute(opening, "data-en") or zh
+    return match[1], zh, en
+
+
+def category_chip(item: dict, language: str = "zh", shared: tuple[str, str, str] | None = None) -> str:
+    css, zh, en = shared or CATEGORY_CHIPS.get(item.get("cat") or "note", CATEGORY_CHIPS["note"])
+    display = en if language == "en" else zh
+    return (f'<span class="chip {html.escape(css, quote=True)}" data-zh="{html.escape(zh, quote=True)}" '
+            f'data-en="{html.escape(en, quote=True)}">{html.escape(display)}</span>')
+
+
+def topic_chip(metadata: dict, language: str = "zh") -> str:
+    tag = metadata.get("tag") or ""
+    tag_en = metadata.get("tag_en") or tag
+    display = tag_en if language == "en" else tag
+    return (f'<span class="chip tag" data-zh="{html.escape(tag, quote=True)}" '
+            f'data-en="{html.escape(tag_en, quote=True)}" data-dn-text-only="">{html.escape(display)}</span>')
+
+
+def ensure_chips(card: str, metadata: dict, language: str = "zh",
+                 shared: tuple[str, str, str] | None = None) -> str:
+    """Add a missing category/topic chip at the start of the card's meta row."""
+    meta = META_OPEN_RE.search(card)
+    if not meta:
+        return card
+    insert = ""
+    if not CATEGORY_CHIP_RE.search(card):
+        insert += category_chip(metadata, language, shared)
+    if metadata.get("tag") and not TOPIC_CHIP_RE.search(card):
+        insert += topic_chip(metadata, language)
+    if not insert:
+        return card
+    # Keep an existing category chip first: a new topic chip goes after it.
+    existing = CATEGORY_CHIP_RE.search(card, meta.end())
+    at = existing.end() if existing and not insert.startswith('<span class="chip cat-') else meta.end()
+    return card[:at] + insert + card[at:]
 
 
 def load_overrides(catalog: list[dict], root: Path = ROOT) -> dict:
@@ -43,11 +107,14 @@ def set_attribute(tag: str, name: str, value: str) -> str:
     return tag[:-1] + f' {name}="{value}">'
 
 
-def sync_card(card: str, item: dict, overrides: dict, language: str = "zh") -> str:
+def sync_card(card: str, item: dict, overrides: dict, language: str = "zh",
+              shared: tuple[str, str, str] | None = None) -> str:
     metadata = {**item, **overrides}
     opening = re.match(r"<a\b[^>]*>", card, flags=re.I)
     if not opening:
         raise ValueError(f"Missing card anchor: {item['slug']}")
+    card = ensure_chips(card, metadata, language, shared)
+    opening = re.match(r"<a\b[^>]*>", card, flags=re.I)
     tag = set_attribute(opening[0], "data-cat", item.get("cat") or "note")
     tag = set_attribute(tag, "data-tag-en", metadata.get("tag_en") or "")
     card = tag + card[opening.end():]
@@ -220,14 +287,15 @@ def public_catalog(catalog: list[dict], root: Path) -> list[dict]:
     return published
 
 
-def render_card(item: dict) -> str:
+def render_card(item: dict, shared: tuple[str, str, str] | None = None) -> str:
     slug, title, english = (html.escape(item[key], quote=True) for key in ("slug", "title", "title_en"))
     category = html.escape(item.get("cat") or "note", quote=True)
     tag_en = html.escape(item.get("tag_en") or "", quote=True)
     date = html.escape(item.get("date") or "", quote=True)
+    chips = category_chip(item, "zh", shared) + (topic_chip(item) if item.get("tag") else "")
     return (
         f'<a href="/blog/{slug}" class="article-list-item" data-cat="{category}" data-tag-en="{tag_en}">'
-        f'<div class="al-body"><div class="al-meta"><time datetime="{date}">{date}</time></div>'
+        f'<div class="al-body"><div class="al-meta">{chips}<time datetime="{date}">{date}</time></div>'
         f'<h2 data-zh="{title}" data-en="{english}" data-dn-text-only="">{title}</h2></div>'
         '<div class="al-arrow" aria-hidden="true">→</div></a>'
     )
@@ -305,8 +373,21 @@ def sync_homepage_limit(source: str) -> str:
     return source[:offset] + rule + source[offset:]
 
 
+def category_chips_by_slug(sources: list[tuple[str, str]]) -> dict:
+    """Existing category chips per slug, first hub wins (for cross-hub reuse)."""
+    chips = {}
+    for source, element_id in sources:
+        parsed = CardList(source, element_id)
+        for slug, start, end in parsed.cards:
+            chip = card_category_chip(source[start:end])
+            if chip and slug not in chips:
+                chips[slug] = chip
+    return chips
+
+
 def sync_source(source: str, element_id: str, articles: list[dict], overrides: dict | None = None,
-                *, order: list[str] | None = None) -> str:
+                *, order: list[str] | None = None, shared_chips: dict | None = None) -> str:
+    shared_chips = shared_chips or {}
     parsed = CardList(source, element_id)
     existing = set()
     wanted = {item["slug"] for item in articles}
@@ -328,9 +409,10 @@ def sync_source(source: str, element_id: str, articles: list[dict], overrides: d
     replacements = [(start, end, "") for start, end in removals]
     for slug, start, end in parsed.cards:
         if (start, end) not in removals:
-            card = sync_card(source[start:end], catalog[slug], overrides.get(slug, {}))
+            card = sync_card(source[start:end], catalog[slug], overrides.get(slug, {}),
+                             shared=shared_chips.get(slug))
             replacements.append((start, end, card))
-    additions = "".join(render_card({**item, **overrides.get(item["slug"], {})})
+    additions = "".join(render_card({**item, **overrides.get(item["slug"], {})}, shared_chips.get(item["slug"]))
                         for item in articles if item["slug"] not in existing)
     updated = source[:parsed.end] + additions + source[parsed.end:]
     for start, end, card in sorted(replacements, reverse=True):
@@ -375,11 +457,16 @@ def main() -> int:
     settings, _ = load_settings(ROOT)
     expected = {item["slug"] for item in articles}
     pending = []
+    sources = {}
+    for relative in HUBS:
+        with (ROOT / relative).open(encoding="utf-8", newline="") as stream:
+            sources[relative] = stream.read()
+    shared_chips = category_chips_by_slug([(sources[relative], element_id) for relative, element_id in HUBS.items()])
     for relative, element_id in HUBS.items():
         path = ROOT / relative
-        with path.open(encoding="utf-8", newline="") as stream:
-            source = stream.read()
-        updated = sync_source(source, element_id, articles, overrides.get(relative), order=settings['order'])
+        source = sources[relative]
+        updated = sync_source(source, element_id, articles, overrides.get(relative), order=settings['order'],
+                              shared_chips=shared_chips)
         pending.append((path, updated, source != updated))
         if args.check:
             if source != updated:
