@@ -201,6 +201,17 @@ zh 文章 HTML 同時是「源頭」也是「被管線就地改寫的對象」:�
   重跑會 crash — 它們是歷史工具,不在 REGEN_STEPS 裡,**不要跑也不必修**(除非要用)。
 - `_check_balance.py`/`_check_min_balance.py` 已改為相對路徑(2026-06 修復),可正常跑。
 - regen 全量約需數分鐘;只想驗單項時先跑對應 `_check_*.py`,但 push 前仍要完整 gate。
+- **品質檢查並行（2026-10-16）**：`check`／`build` 的 CHECK_STEPS 以 min(4, CPU) 個行程並行
+  （`DN_QUALITY_JOBS=1` 回到逐一執行）；每步輸出先緩衝，再依清單順序列印。清單順序中第一個
+  失敗的步驟決定 `[FAIL] <命令> exited with <碼>` 與 exit code，之後的步驟不再啟動。
+  目前每一步都經逐步實測為唯讀（前後比對 checkout 與 git metadata），分類寫在
+  `_run_quality.py` 的 `SERIAL_CHECK_STEPS` 註解；新增會寫檔、依賴其他 check 結果或不能
+  與其他行程共用機器的步驟，必須列入 `SERIAL_CHECK_STEPS`（在原位置單獨執行）。
+  REGEN／BUILD_GENERATED／POST_BUILD 仍逐一依原順序執行。
+- **兩次正規化不重做（2026-10-16）**：`_normalize_css_links`／`_normalize_heading_structure`
+  在 REGEN 跑兩次；`_run_quality.py` 的 regen 期間，第二次只跳過「第一次讀到且未改動、
+  其後文字也沒變」的檔案（純函式的已證不動點；第一次改寫過的檔案照常重跑），輸出位元組不變。
+  單獨執行這兩支腳本仍處理全部檔案。見 `_regen_fixed_points.py`。
 - **網域遷移入口**：`set-domain.ps1`／`set-domain.bat` 已停止舊式全庫字串置換，
   執行時不改檔並回傳失敗。舊工具會改寫使用者規則、生成物及歷史審查證據；
   如需遷移網域，先準備個別來源設定的候選改動與重新生成結果，再走完整
