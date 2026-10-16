@@ -345,14 +345,27 @@ test('preview serves every public file and no repository file', async () => {
   const context = extra => ({ request: {
     head: async url => {
       const path = new URL(url).pathname; requested.push(path);
-      return { status: () => served.has(path) || extra.includes(path) ? 200 : 404 };
+      const challenge = gate.get(path);
+      if (challenge !== undefined) return { status: () => 401, headers: () => ({ 'www-authenticate': challenge }) };
+      return { status: () => served.has(path) || extra.includes(path) ? 200 : 404, headers: () => ({}) };
     },
     get: async (url, options) => {
       assert.equal(url, base.origin + '/api/og?title=DermNotes'); assert.deepEqual(options, { maxRedirects: 0 });
       return { status: () => 200, headers: () => ({ 'content-type': og }) };
     },
   } });
-  assert.deepEqual(await checkDeployedFiles(context([]), base, manifest), { published: 3, private: 2 });
+  const gate = new Map();
+  assert.deepEqual(await checkDeployedFiles(context([]), base, manifest), { published: 3, private: 2, adminBasicAuth: 0 });
+  // The optional admin Basic Auth gate (middleware.js) answers 401 for the admin shell only.
+  const admin = { published: [...manifest.published, 'admin.html', 'admin/word-editor.js'], private: manifest.private };
+  const realm = 'Basic realm="ChenDermatologist Admin", charset="UTF-8"';
+  gate.set('/admin.html', realm); gate.set('/admin/word-editor.js', realm);
+  assert.deepEqual(await checkDeployedFiles(context([]), base, admin), { published: 5, private: 2, adminBasicAuth: 2 });
+  gate.set('/admin/word-editor.js', 'Basic realm="Elsewhere"');
+  await assert.rejects(checkDeployedFiles(context([]), base, admin), /differs/);
+  gate.clear(); gate.set('/index.html', realm);
+  await assert.rejects(checkDeployedFiles(context([]), base, manifest), /differs/);
+  gate.clear();
   assert.ok(!requested.includes('/api/og.js'), 'Functions are not probed as static files');
   assert.ok(requested.includes('/__pycache__/_run_quality.cpython-312.pyc'), 'Build bytecode must be probed');
   og = 'text/html';
