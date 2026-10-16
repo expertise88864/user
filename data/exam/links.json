@@ -2,12 +2,67 @@
  "44": {
   "verified": "2026-10-15",
   "dermnet": [
-   {"label": "Stevens-Johnson syndrome / toxic epidermal necrolysis (SJS/TEN)", "url": "https://dermnetnz.org/topics/stevens-johnson-syndrome-toxic-epidermal-necrolysis"},
-   {"label": "SJS-TEN images", "url": "https://dermnetnz.org/topics/sjs-ten-images"},
-   {"label": "Toxic epidermal necrolysis pathology", "url": "https://dermnetnz.org/topics/toxic-epidermal-necrolysis-pathology"}
+   {
+    "label": "Stevens-Johnson syndrome / toxic epidermal necrolysis (SJS/TEN)",
+    "url": "https://dermnetnz.org/topics/stevens-johnson-syndrome-toxic-epidermal-necrolysis"
+   },
+   {
+    "label": "SJS-TEN images",
+    "url": "https://dermnetnz.org/topics/sjs-ten-images"
+   },
+   {
+    "label": "Toxic epidermal necrolysis pathology",
+    "url": "https://dermnetnz.org/topics/toxic-epidermal-necrolysis-pathology"
+   }
   ],
   "pathologyoutlines": [
-   {"label": "Stevens-Johnson syndrome", "url": "https://www.pathologyoutlines.com/topic/skinnontumorstevensjohnsonsyndrome.html"}
+   {
+    "label": "Stevens-Johnson syndrome",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorstevensjohnsonsyndrome.html"
+   }
+  ]
+ },
+ "45": {
+  "verified": "2026-10-16",
+  "dermnet": [
+   {
+    "label": "Drug eruptions (overview)",
+    "url": "https://dermnetnz.org/topics/drug-eruptions"
+   },
+   {
+    "label": "Fixed drug eruption",
+    "url": "https://dermnetnz.org/topics/fixed-drug-eruption"
+   },
+   {
+    "label": "Drug hypersensitivity syndrome (DRESS)",
+    "url": "https://dermnetnz.org/topics/drug-hypersensitivity-syndrome"
+   },
+   {
+    "label": "Acute generalised exanthematous pustulosis (AGEP)",
+    "url": "https://dermnetnz.org/topics/acute-generalised-exanthematous-pustulosis"
+   },
+   {
+    "label": "Drug-induced urticaria",
+    "url": "https://dermnetnz.org/topics/drug-induced-urticaria"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Acute generalized exanthematous pustulosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoragep.html"
+   },
+   {
+    "label": "Interface dermatitis (incl. fixed drug eruption)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorinterfacedermatitis.html"
+   },
+   {
+    "label": "Lichenoid drug reaction",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumordrugreaction.html"
+   },
+   {
+    "label": "Urticaria (hives)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorurticaria.html"
+   }
   ]
  }
 }
