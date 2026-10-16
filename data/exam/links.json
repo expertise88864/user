@@ -742,5 +742,332 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorradiationassociated.html"
    }
   ]
+ },
+ "17": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Sunburn",
+    "url": "https://dermnetnz.org/topics/sunburn"
+   },
+   {
+    "label": "Fitzpatrick skin phototype",
+    "url": "https://dermnetnz.org/topics/skin-phototype"
+   },
+   {
+    "label": "Vitamin D",
+    "url": "https://dermnetnz.org/topics/vitamin-d"
+   },
+   {
+    "label": "Polymorphic light eruption",
+    "url": "https://dermnetnz.org/topics/polymorphic-light-eruption"
+   },
+   {
+    "label": "Phototherapy",
+    "url": "https://dermnetnz.org/topics/phototherapy"
+   },
+   {
+    "label": "Photodynamic therapy",
+    "url": "https://dermnetnz.org/topics/photodynamic-therapy"
+   },
+   {
+    "label": "Xeroderma pigmentosum",
+    "url": "https://dermnetnz.org/topics/xeroderma-pigmentosum"
+   },
+   {
+    "label": "Solar elastosis",
+    "url": "https://dermnetnz.org/topics/solar-elastosis"
+   },
+   {
+    "label": "Skin ageing (photoageing)",
+    "url": "https://dermnetnz.org/topics/ageing-skin"
+   },
+   {
+    "label": "Sun protection",
+    "url": "https://dermnetnz.org/topics/sun-protection"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Polymorphous light eruption",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpolymorphouslighteruption.html"
+   },
+   {
+    "label": "Porphyria cutanea tarda",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorporphyriacutaneatarda.html"
+   },
+   {
+    "label": "Other porphyrias (incl. EPP)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorporphyria.html"
+   },
+   {
+    "label": "Actinic keratosis",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticactinickeratosis.html"
+   },
+   {
+    "label": "Squamous cell carcinoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticscc.html"
+   },
+   {
+    "label": "Basal cell carcinoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticbcc.html"
+   }
+  ]
+ },
+ "24": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Allergic contact dermatitis",
+    "url": "https://dermnetnz.org/topics/allergic-contact-dermatitis"
+   },
+   {
+    "label": "Patch tests",
+    "url": "https://dermnetnz.org/topics/patch-tests"
+   },
+   {
+    "label": "Nickel allergy",
+    "url": "https://dermnetnz.org/topics/nickel-allergy"
+   },
+   {
+    "label": "Formaldehyde allergy",
+    "url": "https://dermnetnz.org/topics/formaldehyde-allergy"
+   },
+   {
+    "label": "Methylisothiazolinone allergy",
+    "url": "https://dermnetnz.org/topics/methylisothiazolinone-allergy"
+   },
+   {
+    "label": "Fragrance mix allergy",
+    "url": "https://dermnetnz.org/topics/fragrance-mix-allergy"
+   },
+   {
+    "label": "Paraphenylenediamine (hair dye) allergy",
+    "url": "https://dermnetnz.org/topics/allergy-to-paraphenylenediamine"
+   },
+   {
+    "label": "Rubber accelerator allergy",
+    "url": "https://dermnetnz.org/topics/allergy-to-rubber-accelerators"
+   },
+   {
+    "label": "Eyelid contact dermatitis",
+    "url": "https://dermnetnz.org/topics/eyelid-contact-dermatitis"
+   },
+   {
+    "label": "Systemic contact dermatitis",
+    "url": "https://dermnetnz.org/topics/systemic-contact-dermatitis"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Allergic contact dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorallergiccontact.html"
+   },
+   {
+    "label": "Atopic dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoracuteeczematousdermatitis.html"
+   },
+   {
+    "label": "Seborrheic dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorseborrheicdermatitis.html"
+   },
+   {
+    "label": "Stasis dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorstasisdermatitis.html"
+   },
+   {
+    "label": "Psoriasis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpsoriasis.html"
+   }
+  ]
+ },
+ "52": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Pemphigus",
+    "url": "https://dermnetnz.org/topics/pemphigus"
+   },
+   {
+    "label": "Pemphigus vulgaris",
+    "url": "https://dermnetnz.org/topics/pemphigus-vulgaris"
+   },
+   {
+    "label": "Pemphigus foliaceus",
+    "url": "https://dermnetnz.org/topics/pemphigus-foliaceus"
+   },
+   {
+    "label": "Fogo selvagem (endemic PF)",
+    "url": "https://dermnetnz.org/topics/fogo-selvagem"
+   },
+   {
+    "label": "Paraneoplastic pemphigus",
+    "url": "https://dermnetnz.org/topics/paraneoplastic-pemphigus"
+   },
+   {
+    "label": "IgA pemphigus",
+    "url": "https://dermnetnz.org/topics/iga-pemphigus"
+   },
+   {
+    "label": "Drug-induced pemphigus",
+    "url": "https://dermnetnz.org/topics/drug-induced-pemphigus"
+   },
+   {
+    "label": "Rituximab",
+    "url": "https://dermnetnz.org/topics/rituximab"
+   },
+   {
+    "label": "Bullous pemphigoid",
+    "url": "https://dermnetnz.org/topics/bullous-pemphigoid"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Pemphigus",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpemphigus.html"
+   },
+   {
+    "label": "Pemphigus vulgaris",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpemphigusvulgaris.html"
+   },
+   {
+    "label": "Hailey-Hailey disease",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorhaileyhailey.html"
+   },
+   {
+    "label": "Darier disease",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumordariersdisease.html"
+   },
+   {
+    "label": "Grover disease (transient acantholytic dermatosis)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorGrover.html"
+   },
+   {
+    "label": "Bullous pemphigoid",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorbullouspemphigoid.html"
+   },
+   {
+    "label": "Subcorneal pustular dermatosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorsubcornealpustulardermatosis.html"
+   }
+  ]
+ },
+ "97": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Drug-induced photosensitivity",
+    "url": "https://dermnetnz.org/topics/drug-induced-photosensitivity"
+   },
+   {
+    "label": "Photosensitivity",
+    "url": "https://dermnetnz.org/topics/photosensitivity"
+   },
+   {
+    "label": "Photocontact dermatitis",
+    "url": "https://dermnetnz.org/topics/photocontact-dermatitis"
+   },
+   {
+    "label": "Pseudoporphyria",
+    "url": "https://dermnetnz.org/topics/pseudoporphyria"
+   },
+   {
+    "label": "Phytophotodermatitis",
+    "url": "https://dermnetnz.org/topics/phytophotodermatitis"
+   },
+   {
+    "label": "Drug-induced pigmentation",
+    "url": "https://dermnetnz.org/topics/drug-induced-pigmentation"
+   },
+   {
+    "label": "Chronic actinic dermatitis",
+    "url": "https://dermnetnz.org/topics/chronic-actinic-dermatitis"
+   },
+   {
+    "label": "Polymorphic light eruption",
+    "url": "https://dermnetnz.org/topics/polymorphic-light-eruption"
+   },
+   {
+    "label": "Solar urticaria",
+    "url": "https://dermnetnz.org/topics/solar-urticaria"
+   },
+   {
+    "label": "Airborne contact dermatitis",
+    "url": "https://dermnetnz.org/topics/airborne-contact-dermatitis"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Polymorphous light eruption",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpolymorphouslighteruption.html"
+   },
+   {
+    "label": "Porphyria cutanea tarda",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorporphyriacutaneatarda.html"
+   },
+   {
+    "label": "Allergic contact dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorallergiccontact.html"
+   },
+   {
+    "label": "Lichenoid drug reaction",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumordrugreaction.html"
+   }
+  ]
+ },
+ "105": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Skin changes in pregnancy",
+    "url": "https://dermnetnz.org/topics/skin-changes-in-pregnancy"
+   },
+   {
+    "label": "Pemphigoid gestationis",
+    "url": "https://dermnetnz.org/topics/pemphigoid-gestationis"
+   },
+   {
+    "label": "Polymorphic eruption of pregnancy (PUPPP)",
+    "url": "https://dermnetnz.org/topics/polymorphic-eruption-of-pregnancy"
+   },
+   {
+    "label": "Prurigo of pregnancy (atopic eruption of pregnancy)",
+    "url": "https://dermnetnz.org/topics/prurigo-of-pregnancy"
+   },
+   {
+    "label": "Generalised pustular psoriasis (impetigo herpetiformis)",
+    "url": "https://dermnetnz.org/topics/generalised-pustular-psoriasis"
+   },
+   {
+    "label": "Melasma",
+    "url": "https://dermnetnz.org/topics/melasma"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Pemphigoid gestationis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpemphigoidgestationis.html"
+   },
+   {
+    "label": "Bullous pemphigoid",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorbullouspemphigoid.html"
+   },
+   {
+    "label": "Psoriasis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpsoriasis.html"
+   },
+   {
+    "label": "Urticaria",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorurticaria.html"
+   },
+   {
+    "label": "Atopic dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoracuteeczematousdermatitis.html"
+   },
+   {
+    "label": "Melasma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticmelasma.html"
+   }
+  ]
  }
 }
