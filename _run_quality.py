@@ -306,6 +306,9 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_check_html_balance.py"],
     [PY, "_check_article_runtime.py"],
     [PY, "_check_deployment.py"],
+    # Production serves only the staged public site (dist/), never the repository.
+    [PY, "-m", "unittest", "_test_site_publish"],
+    [PY, "_check_deploy_exposure.py"],
     [PY, "_check_api_security.py"],
     [PY, "_check_frontend_security.py"],
     # CODE_REVIEW TD-31 — broad-scan companion to the two above. They are
