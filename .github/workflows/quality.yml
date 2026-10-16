@@ -278,6 +278,18 @@ jobs:
         run: node _serve.mjs --host 127.0.0.1 --port 8080 &
       - name: Wait for server
         run: sleep 3
+      # One discarded Lighthouse load of the homepage so the first measured URL
+      # does not absorb the runner's cold start (first Chrome launch, font and
+      # disk caches). Same Lighthouse/Chrome as LHCI; the report stays in
+      # RUNNER_TEMP, outside .lighthouseci/, so it is never asserted, uploaded
+      # or kept as an artifact. Thresholds and runs in .lighthouserc.json are unchanged.
+      - name: Warm up Chrome (not asserted)
+        working-directory: ${{ runner.temp }}
+        run: |
+          LH_CLI="$(node -e "const p=require('path');console.log(p.join(require.resolve('lighthouse',{paths:[process.argv[1]]}),'../../cli/index.js'))" "$(npm root -g)/@lhci/cli")"
+          node "$LH_CLI" http://localhost:8080/ --quiet --chrome-flags=--headless=new \
+            --output=json --output-path="$RUNNER_TEMP/lighthouse-warmup.json"
+          node -e "const r=require(process.argv[1]);console.log('warm-up only, not asserted: benchmarkIndex='+r.environment.benchmarkIndex+' performance='+r.categories.performance.score)" "$RUNNER_TEMP/lighthouse-warmup.json"
       - name: Run Lighthouse CI
         run: |
           lhci autorun --config=.lighthouserc.json
