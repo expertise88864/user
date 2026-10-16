@@ -390,7 +390,7 @@ def deployment_url(api: API, sha: str, environment: str = "preview") -> str:
                 and parsed.path in ("", "/") and not parsed.query and not parsed.fragment):
             return url.rstrip("/")
     message = f"No successful Vercel {environment} deployment bound to this SHA"
-    reason = vercel_outcome_final(api, sha, matching, deployments)
+    reason = vercel_outcome_final(api, sha, environment, matching, deployments)
     if reason:
         raise Final(f"{message}; {reason}")
     raise Blocked(message)
@@ -401,22 +401,25 @@ VERCEL_LOGINS = ("vercel[bot]", "vercel")
 DEPLOYMENT_TERMINAL = ("success", "failure", "error", "inactive")
 
 
-def vercel_outcome_final(api: API, sha: str, matching: list, deployments: list) -> str:
-    """Why no exact-SHA deployment can still succeed, or "" to keep waiting.
+def vercel_outcome_final(api: API, sha: str, environment: str, matching: list, deployments: list) -> str:
+    """Why no exact-SHA `environment` deployment can still succeed, or "" to keep waiting.
 
     Vercel posts one `pending` commit status when it starts a build of this SHA
     and one terminal status when that build ends; the GitHub deployment record
-    only appears when a build completes. Waiting cannot help only when every
-    build Vercel started for this SHA has ended, no matching deployment is still
-    running, and the latest build ended unsuccessfully (failed, errored, or
-    canceled by the Ignored Build Step). A failed deployment is final only
-    through its own build being the latest: when a later build succeeded, its
-    deployment record may still be on its way. Builds may also overlap and end
-    out of order, so every successful build (any environment) must already be
-    matched by a published successful Vercel deployment of this SHA; otherwise
-    a success may still be publishing and the wait goes on. Missing or unreadable evidence,
-    anything still building, or a latest successful build all keep the caller
-    waiting exactly as before.
+    only appears when a build completes. Commit statuses are not bound to an
+    environment, so they only prove that nothing is still building; the failure
+    itself must be bound to the requested environment:
+      * the newest matching deployment of that environment ended in failure or
+        error (its own attempt, not another environment's), or
+      * for production only, the latest build was canceled by the Ignored Build
+        Step: this repository's gate never cancels Preview builds, and a
+        production build of a SHA is only started by promoting that SHA.
+    Every build must have ended, no matching deployment may still be running,
+    and every successful build (any environment, possibly ending out of order)
+    must already be matched by a published successful deployment; otherwise a
+    success may still be publishing. Missing or unreadable evidence, anything
+    still building, and every other combination keep the caller waiting exactly
+    as before.
     """
     try:
         builds = [
@@ -446,11 +449,13 @@ def vercel_outcome_final(api: API, sha: str, matching: list, deployments: list) 
             published += any(status.get("state") == "success" for status in history)
         if succeeded > published:
             return ""
+        if matching and matching[0][0].get("state") in ("failure", "error"):
+            return (f"the newest exact-SHA {environment} deployment ended with "
+                    f"{matching[0][0]['state']} and nothing is still building")
         latest = builds[-1]
-        if latest.get("state") in ("failure", "error"):
-            return f"the latest Vercel build of this SHA ended with {latest['state']} and nothing is still building"
-        if "ignored build step" in str(latest.get("description") or "").lower():
-            return "Vercel canceled the latest build of this SHA by its Ignored Build Step and nothing is still building"
+        if (environment == "production" and latest.get("state") == "success"
+                and "ignored build step" in str(latest.get("description") or "").lower()):
+            return "Vercel canceled the production build of this SHA by its Ignored Build Step and nothing is still building"
         return ""
     except Exception:  # Unproven finality never ends a wait early.
         return ""
