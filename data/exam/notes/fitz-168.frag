@@ -423,7 +423,7 @@
 <thead><tr><th scope="col">Condition（疾病）</th><th scope="col">Key points（重點）</th></tr></thead>
 <tbody>
 <tr><td>HIV-associated PRP（PRP type VI）</td><td>與 acne conglobata、hidradenitis suppurativa、lichen spinulosus 相關（HIV-associated follicular syndrome）；男性為主，可為 HIV 的 sentinel；伸側對稱癢性毛囊丘疹，常成 erythroderma；ART 後可改善；病理：psoriasiform hyperplasia、垂直與水平交替 parakeratosis、follicular plugging。<span class="ex-ref ex-ref-mckee">McKee p.979</span></td></tr>
-<tr><td>Xerosis</td><td>任何時期都可出現，與低 CD4 及 <strong>indinavir</strong> 相關；可成 eczema craquelé；表皮脂質減少、CGRP 與 substance P 下降。<span class="ex-ref ex-ref-mckee">McKee p.979–980</span></td></tr>
+<tr><td>Xerosis</td><td>任何時期都可出現，與低 CD4 及 <strong>indinavir</strong> 相關；可成 eczema craquelé (asteatotic eczema)；表皮脂質減少、CGRP 與 substance P 下降。<span class="ex-ref ex-ref-mckee">McKee p.979–980</span></td></tr>
 <tr><td>Photodistributed eruptions</td><td>HIV 專科門診 &gt;5% 有光敏感；lichenoid photoeruption 隨 CD4 下降增加、可由藥物（NSAIDs、TMP-SMX）誘發，下唇可受侵犯但口腔通常不受侵犯；chronic actinic dermatitis 與晚期 HIV 相關（UVB 290–320 nm 敏感）。<span class="ex-ref ex-ref-mckee">McKee p.980–981；p.987</span></td></tr>
 <tr><td>HIV-associated granuloma annulare</td><td>Generalized 型最常見，也有 oral、perforating、photodistributed；多為 MSM 男性；病理同一般 GA。<span class="ex-ref ex-ref-mckee">McKee p.981–982</span></td></tr>
 <tr><td>Porphyria cutanea tarda</td><td>可能與 HCV 共同感染有關（治療 HCV 後 PCT 消退）；年輕人 PCT 應查 HIV 與 HCV。<span class="ex-ref ex-ref-mckee">McKee p.982</span></td></tr>
