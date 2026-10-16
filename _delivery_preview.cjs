@@ -130,6 +130,7 @@ async function checkHomeNavigation(page, base, route) {
 }
 // The deployment serves the staged public site (dist/), never the repository:
 // every tracked site file must answer 200 and every internal file 404.
+const ADMIN_SHELL = /^admin(?:\.html$|\/)/;  // middleware.js matcher: /admin.html, /admin/*
 async function checkDeployedFiles(context, base, manifest, concurrency = 16) {
   const encode = name => '/' + name.split('/').map(encodeURIComponent).join('/');
   // api/ is deployed as functions from the project root, never as static source files.
@@ -139,14 +140,20 @@ async function checkDeployedFiles(context, base, manifest, concurrency = 16) {
     ...internal.map(name => [name, 404]), ['__pycache__/_run_quality.cpython-312.pyc', 404]];
   assert.ok(manifest.published.includes('index.html') && internal.includes('_delivery.py'), 'Incomplete file manifest');
   const failures = [];
-  let next = 0;
+  let next = 0, gated = 0;
   async function worker() {
     while (next < jobs.length) {
       const [name, expected] = jobs[next++];
-      let status;
-      try {
-        status = (await context.request.head(base.origin + encode(name), { maxRedirects: 5 })).status();
-      } catch (_) { status = 'request failed'; }
+      let response;
+      try { response = await context.request.head(base.origin + encode(name), { maxRedirects: 5 }); } catch (_) {}
+      const status = response ? response.status() : 'request failed';
+      // middleware.js may put the admin shell behind Basic Auth (ADMIN_BASIC_USER/PASS).
+      // Its challenge proves the gate, not the file, which the static audit already stages.
+      if (expected === 200 && status === 401 && ADMIN_SHELL.test(name) &&
+          (response.headers()['www-authenticate'] || '').startsWith('Basic realm="ChenDermatologist Admin"')) {
+        gated++;
+        continue;
+      }
       if (status !== expected) failures.push(name + ': HTTP ' + status + ', expected ' + expected);
     }
   }
@@ -158,7 +165,7 @@ async function checkDeployedFiles(context, base, manifest, concurrency = 16) {
     failures.push('api/og: serverless function did not answer');
   }
   assert.deepEqual(failures.sort().slice(0, 40), [], 'Deployed file set differs from the public site selection');
-  return { published: manifest.published.length + 1, private: internal.length };
+  return { published: manifest.published.length + 1, private: internal.length, adminBasicAuth: gated };
 }
 module.exports = { previewHeaders, checkHubStatus, authenticatePreview, checkStaticHome, checkDeployedFiles };
 
@@ -178,7 +185,8 @@ if (require.main === module) (async () => {
       await authenticatePreview(filesContext, base, process.env.VERCEL_AUTOMATION_BYPASS_SECRET);
       const counts = await checkDeployedFiles(filesContext, base, manifest);
       fs.writeFileSync('delivery-preview/deployed-files.json', JSON.stringify(counts) + '\n');
-      console.log('Deployed files: ' + counts.published + ' public files served, ' + counts.private + ' internal files absent');
+      console.log('Deployed files: ' + counts.published + ' public files served, ' + counts.private +
+        ' internal files absent, ' + counts.adminBasicAuth + ' admin files behind Basic Auth');
     } finally { await filesContext.close(); }
     await require('./_test_analytics_origin_browser.cjs')(browser);
     await require('./_test_nav_search_browser.cjs')(browser);
