@@ -633,6 +633,17 @@ class DeploymentWaitFailFastTests(unittest.TestCase):
                                            [_build(1, "pending", PENDING), _build(2, "failure", FAILED),
                                             _build(3, "pending", PENDING), _build(4, "success", DONE)]))
 
+    def test_out_of_order_overlapping_builds_wait_for_the_successful_record(self):
+        # Review finding (2026-10-16): pending A, pending B, success B, failure A
+        # while B's successful deployment record is not yet published.
+        self.assertKeepsWaiting(_VercelAPI(commit_statuses=[
+            _build(1, "pending", PENDING), _build(2, "pending", PENDING),
+            _build(3, "success", DONE), _build(4, "failure", FAILED)]))
+        # Once B's record is published (here: another environment), A's failure is final.
+        self.assertFinal(_VercelAPI([_deployment(7, "Production")], {7: [{"state": "success", "environment_url": "https://p.vercel.app"}]},
+                                    [_build(1, "pending", PENDING), _build(2, "pending", PENDING),
+                                     _build(3, "success", DONE), _build(4, "failure", FAILED)]))
+
     def test_still_pending_keeps_waiting(self):
         self.assertKeepsWaiting(_VercelAPI(commit_statuses=[_build(1, "pending", PENDING)]))
 
