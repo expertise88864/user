@@ -462,6 +462,7 @@ def practice_page(shell, by_year) -> str:
         f'<label class="ex-check"><input type="checkbox" name="ex-year" value="{y}" checked aria-label="{y} 年"> {y} 年</label>'
         for y in sorted(by_year)
     )
+    year_links = "".join(f'<li><a href="/exam/year-{y}">{y} 年</a></li>' for y in sorted(by_year))
     body = (
         '<p class="ex-kicker">考古卷</p><h1 class="ex-h1">自選年份／隨機出題</h1>'
         f"{NOTICE}"
@@ -483,8 +484,9 @@ def practice_page(shell, by_year) -> str:
         '<button type="button" class="ex-finish">交卷並計分</button>'
         '<span class="ex-score" aria-live="polite"></span></div>'
         '<div id="ex-practice-list" class="ex-review-list">'
-        '<p class="ex-pending">選好年份、題數與順序後按「產生試卷」。這個功能需要啟用 JavaScript；'
-        '也可以直接到首頁選擇單一年度的考古卷。</p></div>'
+        '<p class="ex-pending">選好年份、題數與順序後按「產生試卷」。</p></div>'
+        '<noscript><p class="ex-meta">這個功能需要啟用 JavaScript。未啟用時，可以直接開啟單一年度的考古卷：</p>'
+        f'<ul class="ex-year-links">{year_links}</ul></noscript>'
     )
     title = "皮膚科專科醫師考試考古卷：自選年份與隨機出題"
     desc = "從 101–115 年皮膚科專科醫師甄審筆試選擇題中自選年份、題數，隨機或依序出題，計時作答並交卷計分。"
@@ -689,6 +691,8 @@ EXAM_STYLE = """<style data-exam-style>
 .ex-part summary{cursor:pointer;font-weight:700;font-size:14px}
 .ex-chapter-list{list-style:none;padding:0;margin:8px 0;font-size:14px;line-height:1.9}
 .ex-chapter-list a{color:var(--teal-deep)}
+.ex-year-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0}
+.ex-year-links a{display:inline-block;border:1px solid var(--border);border-radius:9999px;padding:4px 14px;text-decoration:none;font-weight:600;color:var(--teal-deep)}
 .ex-none{color:var(--muted)}
 .ex-toolbar,.ex-exam-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0}
 .ex-exam-bar[hidden]{display:none}
