@@ -56,6 +56,16 @@ class SelectionTests(unittest.TestCase):
             # The staged output is never re-staged into itself.
             self.assertEqual(publish.published_files(root), expected)
 
+    def test_probe_manifest_covers_the_checkout_without_git(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            for name in ('index.html', 'blog/a.html', '_delivery.py', 'tools/x.sh', '.github/w.yml',
+                         '.git/HEAD', 'dist/index.html', 'delivery-preview/1.png', '__pycache__/a.pyc'):
+                write(root, name)
+            # A plain directory, not a repository: the Preview container cannot run git here.
+            self.assertEqual(publish.checkout_manifest(root), {'published': ['blog/a.html', 'index.html'],
+                                        'private': ['.github/w.yml', '_delivery.py', 'tools/x.sh']})
+
     def test_stage_refuses_outside_a_vercel_build_and_any_other_directory(self):
         with patch.dict(os.environ, {'VERCEL_ENV': ''}), contextlib.redirect_stderr(io.StringIO()):
             self.assertEqual(publish.main(['--stage', 'dist']), 1)

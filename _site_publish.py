@@ -25,7 +25,6 @@ import json
 import os
 import re
 import shutil
-import subprocess
 import sys
 from pathlib import Path, PurePosixPath
 
@@ -50,6 +49,9 @@ VERIFICATION_FILE = re.compile(r'[A-Za-z0-9-]{8,128}\.txt')
 PRIVATE_SUFFIXES = frozenset({'.py', '.pyc', '.md', '.cjs', '.mjs', '.ts', '.ps1', '.bat', '.sh',
                               '.yml', '.yaml', '.ini', '.log', '.frag', '.pem', '.key'})
 PRIVATE_PARTS = frozenset({'__pycache__', 'node_modules'})
+# Never part of the site or the repository: VCS data, build output, local review/CI evidence.
+LOCAL_ARTIFACT_DIRS = frozenset({'.git', OUTPUT, '.vercel', '.codex-review', '.claude-review', '.lighthouseci',
+                                 'delivery-preview'})
 CREDENTIAL_NAME = re.compile(r'(?:service-account|credentials|firebase-adminsdk|gcloud-key|positive-guild-).*\.json',
                              re.IGNORECASE)
 
@@ -131,22 +133,33 @@ def stage(root: Path, output: Path) -> list[str]:
     return files
 
 
-def tracked_manifest(root: Path = ROOT) -> dict[str, list[str]]:
-    """Tracked files split into served and never-served paths (for live probes)."""
-    out = subprocess.run(['git', 'ls-files', '-z'], cwd=root, check=True, capture_output=True).stdout
-    tracked = sorted(name for name in out.decode('utf-8').split('\0') if name)
-    return {'published': [name for name in tracked if is_published(name, root)],
-            'private': [name for name in tracked if not is_published(name, root)]}
+def checkout_manifest(root: Path = ROOT) -> dict[str, list[str]]:
+    """Checkout files split into served and never-served paths (for live probes).
+
+    Walks the filesystem instead of asking git: the Preview job runs in a
+    container where git rejects the runner-owned checkout. In that fresh
+    checkout the files are exactly the tracked files.
+    """
+    root = Path(root).resolve()
+    names = []
+    for directory, dirnames, filenames in os.walk(root):
+        here = Path(directory)
+        dirnames[:] = sorted(name for name in dirnames if name not in PRIVATE_PARTS
+                             and not (here == root and name in LOCAL_ARTIFACT_DIRS))
+        names += [(here / name).relative_to(root).as_posix() for name in filenames]
+    names.sort()
+    return {'published': [name for name in names if is_published(name, root)],
+            'private': [name for name in names if not is_published(name, root)]}
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     action = parser.add_mutually_exclusive_group(required=True)
     action.add_argument('--stage', metavar='DIR', help=f'stage the site into DIR (only {OUTPUT!r}, Vercel builds only)')
-    action.add_argument('--manifest', action='store_true', help='print tracked served/private paths as JSON')
+    action.add_argument('--manifest', action='store_true', help='print checkout served/private paths as JSON')
     args = parser.parse_args(argv)
     if args.manifest:
-        print(json.dumps(tracked_manifest()))
+        print(json.dumps(checkout_manifest()))
         return 0
     if args.stage != OUTPUT:
         parser.error(f'the deployment output directory is {OUTPUT!r}')
