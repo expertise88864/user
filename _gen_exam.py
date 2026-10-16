@@ -634,6 +634,10 @@ def build() -> dict[str, str]:
             if book not in OTHER_BOOKS:
                 raise SystemExit(f"{q['id']}: unknown book {book}")
             by_book[book].append(q)
+    # Chapter and book pages list the newest exam first (user request
+    # 2026-10-16); within a year the original question order is kept.
+    for group in (*by_chapter.values(), *by_book.values()):
+        group.sort(key=lambda q: (-q["year"], q["number"]))
     for qid in data["explanations"]:
         if not data["tags"][qid]["fitz"]:
             raise SystemExit(f"{qid} has an explanation but no Fitzpatrick chapter")
