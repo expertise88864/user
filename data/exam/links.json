@@ -439,5 +439,308 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorprurigopigmentosa.html"
    }
   ]
+ },
+ "22": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Atopic dermatitis",
+    "url": "https://dermnetnz.org/topics/atopic-dermatitis"
+   },
+   {
+    "label": "Eczema herpeticum",
+    "url": "https://dermnetnz.org/topics/eczema-herpeticum"
+   },
+   {
+    "label": "Ichthyosis vulgaris",
+    "url": "https://dermnetnz.org/topics/ichthyosis-vulgaris"
+   },
+   {
+    "label": "Hand dermatitis",
+    "url": "https://dermnetnz.org/topics/hand-dermatitis"
+   },
+   {
+    "label": "Emollients and moisturisers",
+    "url": "https://dermnetnz.org/topics/emollients-and-moisturisers"
+   },
+   {
+    "label": "Topical corticosteroids",
+    "url": "https://dermnetnz.org/topics/topical-steroid"
+   },
+   {
+    "label": "Topical calcineurin inhibitors",
+    "url": "https://dermnetnz.org/topics/calcineurin-inhibitors"
+   },
+   {
+    "label": "Crisaborole",
+    "url": "https://dermnetnz.org/topics/crisaborole"
+   },
+   {
+    "label": "Dupilumab",
+    "url": "https://dermnetnz.org/topics/dupilumab"
+   },
+   {
+    "label": "UVB phototherapy",
+    "url": "https://dermnetnz.org/topics/uvb-phototherapy"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Atopic dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoracuteeczematousdermatitis.html"
+   },
+   {
+    "label": "Allergic contact dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorallergiccontact.html"
+   },
+   {
+    "label": "Seborrheic dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorseborrheicdermatitis.html"
+   },
+   {
+    "label": "Lichen simplex chronicus",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorlichensimplexchronicus.html"
+   },
+   {
+    "label": "Herpes simplex / zoster (eczema herpeticum)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorherpeszoster.html"
+   },
+   {
+    "label": "Ichthyosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorichthyosis.html"
+   }
+  ]
+ },
+ "202": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Skin surgery",
+    "url": "https://dermnetnz.org/topics/skin-surgery"
+   },
+   {
+    "label": "Local anaesthesia",
+    "url": "https://dermnetnz.org/topics/local-anaesthesia"
+   },
+   {
+    "label": "Electrosurgery",
+    "url": "https://dermnetnz.org/topics/electrosurgery"
+   },
+   {
+    "label": "Antiseptics",
+    "url": "https://dermnetnz.org/topics/antiseptic"
+   },
+   {
+    "label": "Wound closure techniques",
+    "url": "https://dermnetnz.org/topics/wound-closure"
+   },
+   {
+    "label": "Wound care",
+    "url": "https://dermnetnz.org/topics/wound-care"
+   },
+   {
+    "label": "Hypertrophic scars and keloids",
+    "url": "https://dermnetnz.org/topics/keloid-and-hypertrophic-scar"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Keloid",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocytickeloid.html"
+   },
+   {
+    "label": "Allergic contact dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorallergiccontact.html"
+   },
+   {
+    "label": "Foreign body reaction (spitting suture)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorforeignbodyreaction.html"
+   }
+  ]
+ },
+ "47": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Ichthyosis (overview)",
+    "url": "https://dermnetnz.org/topics/ichthyosis"
+   },
+   {
+    "label": "Ichthyosis vulgaris",
+    "url": "https://dermnetnz.org/topics/ichthyosis-vulgaris"
+   },
+   {
+    "label": "Collodion baby",
+    "url": "https://dermnetnz.org/topics/collodion-baby"
+   },
+   {
+    "label": "Harlequin ichthyosis",
+    "url": "https://dermnetnz.org/topics/harlequin-ichthyosis"
+   },
+   {
+    "label": "Netherton syndrome",
+    "url": "https://dermnetnz.org/topics/netherton-syndrome"
+   },
+   {
+    "label": "Epidermolytic ichthyosis",
+    "url": "https://dermnetnz.org/topics/epidermolytic-ichthyosis"
+   },
+   {
+    "label": "Erythrokeratoderma (EKVP)",
+    "url": "https://dermnetnz.org/topics/erythrokeratoderma"
+   },
+   {
+    "label": "Trichothiodystrophy",
+    "url": "https://dermnetnz.org/topics/trichothiodystrophy"
+   },
+   {
+    "label": "Pityriasis rotunda",
+    "url": "https://dermnetnz.org/topics/pityriasis-rotunda"
+   },
+   {
+    "label": "Confluent and reticulated papillomatosis",
+    "url": "https://dermnetnz.org/topics/confluent-and-reticulated-papillomatosis"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Ichthyosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorichthyosis.html"
+   },
+   {
+    "label": "Epidermolytic hyperkeratosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorepidermolytichyperkeratosis.html"
+   },
+   {
+    "label": "Confluent and reticulated papillomatosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorconfluentreticulatedpapillomatosis.html"
+   }
+  ]
+ },
+ "78": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Acne vulgaris",
+    "url": "https://dermnetnz.org/topics/acne-vulgaris"
+   },
+   {
+    "label": "Acne scarring",
+    "url": "https://dermnetnz.org/topics/acne-scarring"
+   },
+   {
+    "label": "Topical retinoids",
+    "url": "https://dermnetnz.org/topics/topical-retinoids"
+   },
+   {
+    "label": "Benzoyl peroxide",
+    "url": "https://dermnetnz.org/topics/benzoyl-peroxide"
+   },
+   {
+    "label": "Tetracyclines",
+    "url": "https://dermnetnz.org/topics/tetracycline"
+   },
+   {
+    "label": "Isotretinoin",
+    "url": "https://dermnetnz.org/topics/isotretinoin"
+   },
+   {
+    "label": "Polycystic ovary syndrome",
+    "url": "https://dermnetnz.org/topics/polycystic-ovary-syndrome"
+   },
+   {
+    "label": "Acne in pregnancy",
+    "url": "https://dermnetnz.org/topics/acne-in-pregnancy"
+   },
+   {
+    "label": "Acne in children",
+    "url": "https://dermnetnz.org/topics/acne-in-children"
+   },
+   {
+    "label": "Acne fulminans",
+    "url": "https://dermnetnz.org/topics/acne-fulminans"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Acne vulgaris",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoracne.html"
+   },
+   {
+    "label": "Rosacea",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoracnerosacea.html"
+   },
+   {
+    "label": "Folliculitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorfolliculitis.html"
+   }
+  ]
+ },
+ "112": {
+  "verified": "2026-10-17",
+  "dermnet": [
+   {
+    "label": "Cutaneous squamous cell carcinoma",
+    "url": "https://dermnetnz.org/topics/cutaneous-squamous-cell-carcinoma"
+   },
+   {
+    "label": "Squamous cell carcinoma pathology",
+    "url": "https://dermnetnz.org/topics/squamous-cell-carcinoma-pathology"
+   },
+   {
+    "label": "Keratoacanthoma",
+    "url": "https://dermnetnz.org/topics/keratoacanthoma"
+   },
+   {
+    "label": "Actinic keratosis",
+    "url": "https://dermnetnz.org/topics/actinic-keratosis"
+   },
+   {
+    "label": "Intraepidermal SCC (Bowen disease)",
+    "url": "https://dermnetnz.org/topics/intraepidermal-squamous-cell-carcinoma"
+   },
+   {
+    "label": "Marjolin ulcer",
+    "url": "https://dermnetnz.org/topics/marjolin-ulcer"
+   },
+   {
+    "label": "Skin cancer in transplant recipients",
+    "url": "https://dermnetnz.org/topics/skin-cancer-in-transplant-recipients"
+   },
+   {
+    "label": "Mohs micrographic surgery",
+    "url": "https://dermnetnz.org/topics/mohs-micrographic-surgery"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Actinic keratosis",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticactinickeratosis.html"
+   },
+   {
+    "label": "SCC in situ / Bowen disease",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticcisgeneral.html"
+   },
+   {
+    "label": "Squamous cell carcinoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticscc.html"
+   },
+   {
+    "label": "Keratoacanthoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocytickeratoacanthoma.html"
+   },
+   {
+    "label": "Verrucous carcinoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticverrucousscc.html"
+   },
+   {
+    "label": "Arsenical keratosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorarsenic.html"
+   },
+   {
+    "label": "Chronic radiation dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorradiationassociated.html"
+   }
+  ]
  }
 }
