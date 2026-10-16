@@ -75,6 +75,16 @@ GOOGLE_FONTS_CSS_RE = re.compile(
 # and the browser opens a second one anyway.
 GSTATIC_PRECONNECT_RE = re.compile(
     r'<link\s+rel="preconnect"\s+href="https://fonts\.gstatic\.com"([^>]*)>', re.I)
+# 2026-10-16 — the homepage's sticky header ran `gradientShift 8s infinite`:
+# a visual no-op (vertical gradient, horizontal shift) that repainted the
+# backdrop-blurred header every frame for the page's whole lifetime and was
+# the largest homepage-only main-thread cost in Lighthouse traces. Inline
+# homepage CSS styles the always-visible header and hero, so it must not
+# declare never-ending animations.
+HOMEPAGES = ("index.html", "en/index.html")
+INLINE_STYLE_RE = re.compile(r'<style\b[^>]*>(.*?)</style>', re.I | re.S)
+INFINITE_ANIMATION_RE = re.compile(
+    r'animation(?:-iteration-count)?\s*:[^;{}]*\binfinite\b', re.I)
 
 
 # Anti-vacuity floor. Measured 2026-08-01: the tree serves 134 HTML files
@@ -127,6 +137,17 @@ def main() -> int:
         ):
             if f"'/blog/{bundle}.min.js'" in sw_src or f'"/blog/{bundle}.min.js"' in sw_src:
                 errors.append(f"sw.js: {bundle}.min.js should be runtime-cached on demand, not precached during install")
+
+    for rel in HOMEPAGES:
+        page = ROOT / rel
+        if not page.exists():
+            errors.append(f"{rel}: homepage missing, so the infinite-animation guard cannot run")
+            continue
+        for css in INLINE_STYLE_RE.findall(page.read_text(encoding="utf-8")):
+            for match in INFINITE_ANIMATION_RE.findall(css):
+                errors.append(
+                    f"{rel}: inline homepage CSS declares a never-ending animation "
+                    f"({match.strip()[:60]}); it repaints the first viewport every frame")
 
     html_files = iter_html_files()
     for path in html_files:
