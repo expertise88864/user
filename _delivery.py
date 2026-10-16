@@ -390,7 +390,7 @@ def deployment_url(api: API, sha: str, environment: str = "preview") -> str:
                 and parsed.path in ("", "/") and not parsed.query and not parsed.fragment):
             return url.rstrip("/")
     message = f"No successful Vercel {environment} deployment bound to this SHA"
-    reason = vercel_outcome_final(api, sha, matching)
+    reason = vercel_outcome_final(api, sha, matching, deployments)
     if reason:
         raise Final(f"{message}; {reason}")
     raise Blocked(message)
@@ -401,7 +401,7 @@ VERCEL_LOGINS = ("vercel[bot]", "vercel")
 DEPLOYMENT_TERMINAL = ("success", "failure", "error", "inactive")
 
 
-def vercel_outcome_final(api: API, sha: str, matching: list) -> str:
+def vercel_outcome_final(api: API, sha: str, matching: list, deployments: list) -> str:
     """Why no exact-SHA deployment can still succeed, or "" to keep waiting.
 
     Vercel posts one `pending` commit status when it starts a build of this SHA
@@ -411,7 +411,10 @@ def vercel_outcome_final(api: API, sha: str, matching: list) -> str:
     running, and the latest build ended unsuccessfully (failed, errored, or
     canceled by the Ignored Build Step). A failed deployment is final only
     through its own build being the latest: when a later build succeeded, its
-    deployment record may still be on its way. Missing or unreadable evidence,
+    deployment record may still be on its way. Builds may also overlap and end
+    out of order, so every successful build (any environment) must already be
+    matched by a published successful Vercel deployment of this SHA; otherwise
+    a success may still be publishing and the wait goes on. Missing or unreadable evidence,
     anything still building, or a latest successful build all keep the caller
     waiting exactly as before.
     """
@@ -431,6 +434,18 @@ def vercel_outcome_final(api: API, sha: str, matching: list) -> str:
         for statuses in matching:
             if not statuses or statuses[0].get("state") not in DEPLOYMENT_TERMINAL:
                 return ""
+        succeeded = sum(status.get("state") == "success"
+                        and "ignored build step" not in str(status.get("description") or "").lower()
+                        for status in builds)
+        published = 0
+        for deployment in deployments:
+            if (deployment.get("sha") != sha
+                    or str((deployment.get("creator") or {}).get("login", "")).lower() not in VERCEL_LOGINS):
+                continue
+            history = api.pages(f"/deployments/{deployment['id']}/statuses")
+            published += any(status.get("state") == "success" for status in history)
+        if succeeded > published:
+            return ""
         latest = builds[-1]
         if latest.get("state") in ("failure", "error"):
             return f"the latest Vercel build of this SHA ended with {latest['state']} and nothing is still building"
