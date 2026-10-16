@@ -28,7 +28,8 @@ gcloud-key*.json
 # Pagefind binary cache
 _bin/
 
-# Node — currently unused but reserved
+# Node — currently unused but reserved. dist/ is the staged public site that
+# Vercel serves (_site_publish.py); it must never be committed.
 node_modules/
 .pnp/
 .pnp.js
