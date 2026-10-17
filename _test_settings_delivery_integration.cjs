@@ -7,7 +7,7 @@ const {verify}=require('./_site_settings_delivery.cjs');
 const source=fs.readFileSync('_test_site_settings.cjs','utf8').split('function noWrites(h)')[0];
 assert.ok(source.includes('function fixture(')&&source.endsWith('\n'));
 const context={require,Buffer,URL,Request,Response,TextEncoder,TextDecoder,Uint8Array,AbortController,setTimeout,clearTimeout,atob};
-vm.runInNewContext(source+'\nthis.makeFixture=fixture;',context);
+vm.runInNewContext(source+'\nthis.makeFixture=fixture;this.legacyUpgrade=legacyUpgrade;',context);
 const hash=value=>crypto.createHash('sha1').update(value).digest('hex');
 function graph(h){
  return {commits:Object.fromEntries([...h.commits].map(([sha,c])=>[sha,{sha,tree:c.tree,parents:c.parents.map(sha=>({sha}))}])),
@@ -23,17 +23,32 @@ h.blobs={sha:base64.b64decode(raw) for sha,raw in data['blobs'].items()}
 files,proof=plan(h,h.refs['main'],h.refs['cms-settings/site'])
 print(json.dumps({'files':{path:base64.b64encode(raw).decode() for path,raw in files.items()},'proof':proof}))
 `;
-for (const cycle of [false,true,'catalog']) test(cycle === 'catalog' ? 'explicit catalogue reconciliation prepares strict approved current source through Python/Node gates' : cycle ? 'new admin editing cycle retains current main ancestry and prepares fresh approved source through Python/Node gates' :
+for (const cycle of [false,true,'catalog','legacy']) test(cycle === 'legacy' ? 'upgrade: a pre-retirement 熱門推薦 cloud draft reconciled onto migrated main passes Python/Node gates' :
+ cycle === 'catalog' ? 'explicit catalogue reconciliation prepares strict approved current source through Python/Node gates' : cycle ? 'new admin editing cycle retains current main ancestry and prepares fresh approved source through Python/Node gates' :
  'actual admin-created manifest and intent prepare exact source-only candidate and pass production gate',async()=>{
  const h=context.makeFixture(),original=h.refs.get('main');
  const installed=new Map(h.trees.get(h.commits.get(original).tree.sha));
  installed.set('.site-settings-delivery.json',h.store(JSON.stringify({version:1,request:null},null,2)+'\n'));
  const installedTree=hash(JSON.stringify([...installed]));let main=hash('trusted-installed-proof:'+installedTree);
  h.trees.set(installedTree,installed);h.commits.set(main,{tree:{sha:installedTree},parents:[original]});h.refs.set('main',main);
- let loaded=await h.read();
+ let loaded;
+ if(cycle === 'legacy') {
+  // The cloud draft and main were saved in the pre-retirement format; main
+  // then receives its own source migration before the author returns.
+  const upgrade=context.legacyUpgrade(h);main=upgrade.migrated;loaded=await h.read();
+  assert.equal(loaded.legacyDraft,true);assert.equal(loaded.conflict,true);assert.equal(loaded.settings.font.bodySize,'17px');
+  const response=await h.request({action:'reconcile-catalog',expectedHead:upgrade.head,blobSha:loaded.blobSha,expectedMain:main,
+   expectedMainBlob:loaded.mainBlobSha,expectedCatalog:loaded.mainCatalogSha,settings:loaded.settings,confirmed:true});
+  assert.equal(response.status,200,await response.clone().text());loaded=await response.json();
+  assert.deepEqual(Array.from(h.commits.get(loaded.head).parents),[upgrade.head,main]);
+  const request=await h.request({action:'request-publication',expectedHead:loaded.head,blobSha:loaded.blobSha,
+   baseSha:loaded.baseSha,catalogSha:loaded.catalogSha,settingsApproved:true});assert.equal(request.status,200);
+ } else {
+ loaded=await h.read();
  const saved=await h.request(h.input(loaded));assert.equal(saved.status,200);loaded=await h.read();
  const requested=await h.request({action:'request-publication',expectedHead:loaded.head,blobSha:loaded.blobSha,
   baseSha:loaded.baseSha,catalogSha:loaded.catalogSha,settingsApproved:true});assert.equal(requested.status,200);
+ }
  if(cycle === 'catalog') {
   const oldHead=h.refs.get('cms-settings/site');
   h.changeMain('_site_settings.json',{...loaded.sourceSettings,order:['gamma','alpha','beta']});
@@ -47,7 +62,7 @@ for (const cycle of [false,true,'catalog']) test(cycle === 'catalog' ? 'explicit
   assert.deepEqual(Array.from(h.commits.get(loaded.head).parents),[oldHead,main]);
   const request=await h.request({action:'request-publication',expectedHead:loaded.head,blobSha:loaded.blobSha,
    baseSha:loaded.baseSha,catalogSha:loaded.catalogSha,settingsApproved:true});assert.equal(request.status,200);
- } else if(cycle){
+ } else if(cycle === true){
   const oldHead=h.refs.get('cms-settings/site'),oldCommit=h.commits.get(oldHead),beforeMain=main;
   const publishedFiles=new Map(h.trees.get(h.commits.get(main).tree.sha));
   publishedFiles.set('_site_settings.json',h.trees.get(oldCommit.tree.sha).get('_site_settings.json'));

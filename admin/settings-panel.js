@@ -130,7 +130,7 @@
       const proof = state.authorised ? state.publication : null;
       nextVersion.disabled = observe.disabled || !state.loaded?.head || proof?.state !== 'live' || !proof.ciVerified || !proof.deploymentVerified;
       reconcile.disabled = !state.loaded?.conflict || !state.authorised || state.busy || state.dirty || !!state.remote || state.uncertain || state.needsRefresh ||
-        !(state.loaded.sourceRequiresReview || state.loaded.catalogSha !== state.loaded.mainCatalogSha);
+        !(state.loaded.sourceRequiresReview || state.loaded.legacyDraft === true || state.loaded.catalogSha !== state.loaded.mainCatalogSha);
       const publicationMessages = {
         ci_missing: '尚未取得這個版本的完整網站檢查。', ci_running: '網站檢查仍在進行，尚未確認上線。',
         ci_failed: '網站檢查未全部通過，尚未確認上線。', deployment_missing: '網站檢查已通過，尚未取得正式部署。',
@@ -231,6 +231,7 @@
       if (reconcile.disabled) return;
       const state = model.snapshot(), node = openDialog('比較並整合文章目錄', reconcile); if (!node) return;
       node.append(element('p','請選擇要保留的設定來源，再核對清單。這個動作只存雲端草稿，不會發布；舊版資料與發布申請保留在歷史中。'));
+      if (state.loaded.legacyDraft) node.append(element('p','這份雲端草稿是舊版格式，含已停用的首頁推薦欄位；整合後只保留字型與首頁排序，舊版仍留在歷史中。',{id:'axSettingsLegacyDraftNote'}));
       const controls = element('section',null), changes = element('section',null), proposed = element('section',null);
       let selected;
       const label = element('label',null), approved = element('input',null,{type:'checkbox',id:'axSettingsCatalogApproval'});

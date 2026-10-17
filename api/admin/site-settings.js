@@ -1,7 +1,7 @@
 // Cookie-authenticated site-setting drafts only. No main ref, KV publication,
 // repository selector, custom CSS, media upload or production deployment write.
 import { getSession } from './_session.js';
-import { contract, SHA, SettingsError, fail, exact, revision, parseJson, catalogOf, settingsOf, settingsRecord } from './_site-settings.js';
+import { contract, SHA, SettingsError, fail, exact, revision, parseJson, catalogOf, settingsOf, settingsRecord, storedDraftOf } from './_site-settings.js';
 import { settingsGit } from './_settings-git.js';
 import { observePublication } from './_article-publication.js';
 import publicationPolicy from '../../_delivery_policy.json';
@@ -23,7 +23,7 @@ async function state(git) {
   try { settingsOf(sourceSettings, articles); } catch (_) { sourceRequiresReview = true; }
   const head = await git.ref(contract.branch);
   let settings = sourceSettings, blobSha = published.sha, baseSha = published.sha, baseCatalogSha = catalogBlob.sha, conflict = false;
-  let manifestRecord = null, request = null;
+  let manifestRecord = null, request = null, legacyDraft = false;
   if (head) {
     const [draft, manifest] = await Promise.all([git.file(contract.source, head), git.file(contract.manifest, head, true)]);
     if (!manifest) fail(409, 'settings_legacy_requires_review');
@@ -32,19 +32,26 @@ async function state(git) {
     if (record.version !== 1 || record.source !== contract.source || record.status !== 'draft' ||
         !['baseMain', 'baseSha', 'catalogSha', 'blobSha'].every(field => SHA.test(record[field] || '')) || record.blobSha !== draft.sha) fail(409, 'invalid_settings_manifest');
     manifestRecord = record;
-    settings = parseJson(draft.content, 409, 'invalid_settings_manifest');
+    const storedDraft = parseJson(draft.content, 409, 'invalid_settings_manifest');
     // A changed catalogue/config requires explicit integration. It must not
     // silently drop newly published articles or overwrite another author's work.
     baseSha = record.baseSha; baseCatalogSha = record.catalogSha; blobSha = draft.sha;
     conflict = baseSha !== published.sha || baseCatalogSha !== catalogBlob.sha;
-    if (!conflict) settings = settingsOf(settings, articles);
     const [baseSource, baseCatalog] = record.baseMain === main ? [published, catalogBlob] :
       await Promise.all([git.file(contract.source, record.baseMain), git.file(contract.catalog, record.baseMain)]);
     if (baseSource.sha !== baseSha || baseCatalog.sha !== baseCatalogSha) fail(409, 'invalid_settings_manifest');
-    // A conflicting draft is still validated against the catalogue that its
-    // author used. Conflict must never turn malformed stored data into input.
-    try { settings = settingsOf(settings, catalogOf(parseJson(baseCatalog.content))); }
+    // A draft is validated against the catalogue that its author used.
+    // Conflict must never turn malformed stored data into input. Unchanged
+    // baselines share that catalogue blob with current main.
+    let stored;
+    try { stored = storedDraftOf(storedDraft, catalogOf(parseJson(baseCatalog.content))); }
     catch (_) { fail(409, 'invalid_settings_manifest'); }
+    settings = stored.settings;
+    // A draft saved before homepage recommendations were retired keeps its font/order and history,
+    // but its baseline predates the source migration: it is only shown for an
+    // explicit reconcile onto current main, never saved or requested as is.
+    legacyDraft = stored.retired;
+    if (legacyDraft) conflict = true;
     // A settings branch must stay a data-only descendant of its recorded
     // baseline. A clean request child cannot legitimise earlier code edits.
     const allowed = new Set([contract.source, contract.manifest, contract.request]);
@@ -75,7 +82,7 @@ async function state(git) {
   if (!head) conflict = sourceRequiresReview;
   if (await git.ref('main') !== main || await git.ref(contract.branch) !== head) fail(409, 'settings_changed');
   return { main, head, baseSha, catalogSha: baseCatalogSha, mainBlobSha: published.sha, mainCatalogSha: catalogBlob.sha,
-    blobSha, settings, sourceSettings, sourceRequiresReview, articles, conflict, manifestRecord, request,
+    blobSha, settings, sourceSettings, sourceRequiresReview, legacyDraft, articles, conflict, manifestRecord, request,
     status: conflict ? 'conflict' : request ? 'requested' : head ? 'cloud_draft' : 'source_base',
     published: false, deploymentVerified: false };
 }
@@ -117,7 +124,7 @@ async function reconcileCatalog(git, input) {
   const loaded = await state(git);
   if (loaded.head !== input.expectedHead || loaded.blobSha !== input.blobSha || loaded.main !== input.expectedMain ||
       loaded.mainBlobSha !== input.expectedMainBlob || loaded.mainCatalogSha !== input.expectedCatalog ||
-      !loaded.conflict || !(loaded.sourceRequiresReview || loaded.catalogSha !== loaded.mainCatalogSha)) fail(409, 'settings_conflict');
+      !loaded.conflict || !(loaded.sourceRequiresReview || loaded.legacyDraft || loaded.catalogSha !== loaded.mainCatalogSha)) fail(409, 'settings_conflict');
   const settings = settingsOf(input.settings, loaded.articles);
   const receipt = await git.file('.site-settings-delivery.json', loaded.main, true);
   if (!receipt) fail(409, 'settings_receipt_not_retired');

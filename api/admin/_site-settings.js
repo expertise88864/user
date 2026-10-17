@@ -71,3 +71,18 @@ export function settingsOf(value, articles) {
   if (result.order.length && result.order.length !== articles.length) fail(400, 'invalid_settings_selection');
   return result;
 }
+
+// Cloud drafts saved before 熱門推薦 was retired still carry exactly these two
+// fields. Only reading such an already stored draft may drop them (font and
+// order are kept); every new author input above stays strict.
+const RETIRED_DRAFT_FIELDS = ['picks', 'legacyPicks'];
+export function storedDraftOf(value, articles) {
+  const retired = !!value && typeof value === 'object' && !Array.isArray(value) &&
+    RETIRED_DRAFT_FIELDS.some(key => Object.hasOwn(value, key));
+  if (!retired) return { settings: settingsOf(value, articles), retired: false };
+  exact(value, ['version', 'font', 'order', ...RETIRED_DRAFT_FIELDS]);
+  const [list, flag] = RETIRED_DRAFT_FIELDS.map(key => value[key]);
+  if (typeof flag !== 'boolean' || !Array.isArray(list) || !list.length || list.length > 12 || new Set(list).size !== list.length ||
+      list.some(slug => typeof slug !== 'string' || slug.length > 100 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))) fail(400, 'invalid_settings');
+  return { settings: settingsOf({ version: value.version, font: value.font, order: value.order }, articles), retired: true };
+}

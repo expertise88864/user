@@ -96,7 +96,9 @@ def main() -> int:
     forbid(errors, "api/admin/_session.js", "permissions.push", "login repository access must be proven by a read, not permissions metadata")
     # Homepage recommendations (熱門推薦) were retired 2026-10-17 by user
     # decision: no public KV read, no settings field and no admin save kind.
-    forbid(errors, "api/admin/_site-settings.js", "picks", "Retired homepage recommendations must not return to the settings grammar")
+    forbid(errors, "api/admin/_site-settings.js", "contract.maxPicks", "Retired homepage recommendations must not return to the settings grammar")
+    forbid(errors, "api/admin/_site-settings.js", "legacyPicks: value.legacyPicks", "Retired homepage recommendations must not be returned as a settings field")
+    require(errors, "api/admin/_site-settings.js", "if (!retired) return { settings: settingsOf(value, articles), retired: false };", "Only stored drafts may drop the retired fields; author input stays strict")
     forbid(errors, "api/admin/site-settings.js", "picks", "Retired homepage recommendations must not return as a settings save kind")
     forbid(errors, "_site_settings_contract.json", "maxPicks", "Retired homepage recommendations must not keep a settings limit")
 

@@ -44,6 +44,9 @@
           value.articles.some(item => !item || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(item.slug) ||
             ['title', 'title_en'].some(key => typeof item[key] !== 'string' || !item[key].trim() || item[key].length > 500))) throw error('invalid_settings_response');
       if (value.sourceRequiresReview !== undefined && typeof value.sourceRequiresReview !== 'boolean') throw error('invalid_settings_response');
+      // A pre-retirement cloud draft is returned already reduced to font/order
+      // and is only valid as a conflict awaiting explicit reconciliation.
+      if (value.legacyDraft !== undefined && (typeof value.legacyDraft !== 'boolean' || (value.legacyDraft && !value.conflict))) throw error('invalid_settings_response');
       validSettings(value.sourceSettings, value.articles, value.sourceRequiresReview === true);
       validSettings(value.settings, value.articles, value.conflict);
       const expected = value.conflict ? 'conflict' : value.request ? 'requested' : value.head ? 'cloud_draft' : 'source_base';
@@ -238,7 +241,7 @@
       } finally { busy = false; emit(); }
     }
     function catalogPlan(base = 'draft') {
-      if (!loaded?.conflict || !['draft','source'].includes(base) || !(loaded.sourceRequiresReview || loaded.catalogSha !== loaded.mainCatalogSha)) throw error('settings_not_ready');
+      if (!loaded?.conflict || !['draft','source'].includes(base) || !(loaded.sourceRequiresReview || loaded.legacyDraft === true || loaded.catalogSha !== loaded.mainCatalogSha)) throw error('settings_not_ready');
       const original = validSettings(base === 'source' ? loaded.sourceSettings : loaded.settings, loaded.articles, true);
       const current = loaded.articles.map(item => item.slug), visible = new Set(current), settings = clone(original);
       const removed = original.order.filter(slug => !visible.has(slug));
