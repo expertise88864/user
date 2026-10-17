@@ -342,6 +342,10 @@ CHECK_STEPS: list[list[str]] = [
     # a rich result. Measure actual impressions, clicks, and reading behavior.
     [PY, "_check_bilingual_attrs.py"],
     [PY, "_check_hant_only.py"],
+    # 2026-10-17 — the retired _fix_proseen_cjk.py once str.replace'd visible
+    # Chinese into English on 53 zh articles; English belongs in data-en only.
+    [PY, "_test_zh_english_prose.py"],
+    [PY, "_check_zh_english_prose.py"],
     [PY, "_check_seo_signals.py"],
     # 2026-05-19 — Tier 2D guard: every blog article's H1 + lead
     # paragraph must render from raw HTML (not be JS-injected).
