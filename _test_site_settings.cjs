@@ -115,6 +115,23 @@ function fixture(observationPolicy = publicationPolicy) {
   h.read = async () => { const response = await h.request(); assert.equal(response.status, 200); return response.json(); };
   return h;
 }
+// Upgrade fixture: main and a cloud draft as saved before 熱門推薦 was retired,
+// then main's own source migration (exactly the two retired fields dropped).
+const legacyDraftSettings = () => ({version: 1, legacyPicks: false, font: {bodyFont: '', headFont: '', bodySize: '17px'},
+  order: ['gamma', 'alpha', 'beta'], picks: ['beta']});
+function legacyUpgrade(h, draft = legacyDraftSettings()) {
+  const legacyMain = h.changeMain(contract.source, {...defaults(), legacyPicks: true, picks: ['alpha']}, true);
+  const tree = new Map(h.trees.get(h.commits.get(legacyMain).tree.sha));
+  const source = h.store(JSON.stringify(draft, null, 2) + '\n');
+  tree.set(contract.source, source);
+  tree.set(contract.manifest, h.store(JSON.stringify({version: 1, source: contract.source, baseMain: legacyMain,
+    baseSha: h.trees.get(h.commits.get(legacyMain).tree.sha).get(contract.source),
+    catalogSha: h.trees.get(h.commits.get(legacyMain).tree.sha).get(contract.catalog), blobSha: source, status: 'draft'}) + '\n'));
+  const treeSha = hash(JSON.stringify([...tree])), head = hash('legacy-draft:' + treeSha);
+  h.trees.set(treeSha, tree); h.commits.set(head, {tree: {sha: treeSha}, parents: [legacyMain]}); h.refs.set(contract.branch, head);
+  const migrated = h.changeMain(contract.source, defaults(), true);
+  return {legacyMain, head, migrated};
+}
 function noWrites(h) { assert.equal(h.calls.filter(call => call.method !== 'GET').length, 0); }
 async function catalogConflict(withDraft = true) {
   const h=fixture();h.changeMain('.site-settings-delivery.json',{version:1,request:null},true);
@@ -128,6 +145,38 @@ async function catalogConflict(withDraft = true) {
     settings:{...loaded.settings,order:['gamma','beta','delta']}};
   return {h,loaded,input};
 }
+test('upgrade: a cloud draft saved before 熱門推薦 was retired loads font/order and reconciles onto migrated main with history kept',async()=>{
+  const h=fixture();h.changeMain('.site-settings-delivery.json',{version:1,request:null},true);
+  const {head,migrated}=legacyUpgrade(h);const loaded=await h.read();noWrites(h);
+  assert.equal(loaded.head,head);assert.equal(loaded.legacyDraft,true);assert.equal(loaded.conflict,true);assert.equal(loaded.status,'conflict');
+  assert.equal(loaded.sourceRequiresReview,false);assert.equal(loaded.main,migrated);
+  assert.deepEqual(loaded.settings,{version:1,font:{bodyFont:'',headFont:'',bodySize:'17px'},order:['gamma','alpha','beta']});
+  // The stored legacy draft is never edited, saved or requested as is.
+  for(const input of [h.input(loaded),{action:'request-publication',expectedHead:loaded.head,blobSha:loaded.blobSha,baseSha:loaded.baseSha,catalogSha:loaded.catalogSha,settingsApproved:true}]){
+    const response=await h.request(input);assert.equal(response.status,409);}
+  noWrites(h);
+  // Author input stays strict: the retired fields cannot ride along.
+  const base={action:'reconcile-catalog',expectedHead:loaded.head,blobSha:loaded.blobSha,expectedMain:loaded.main,
+    expectedMainBlob:loaded.mainBlobSha,expectedCatalog:loaded.mainCatalogSha,confirmed:true};
+  assert.equal((await h.request({...base,settings:{...loaded.settings,legacyPicks:false,picks:['beta']}})).status,400);noWrites(h);
+  const response=await h.request({...base,settings:loaded.settings}),after=await response.json();
+  assert.equal(response.status,200,JSON.stringify(after));assert.equal(after.conflict,false);assert.equal(after.legacyDraft,false);
+  assert.deepEqual(after.settings,loaded.settings);assert.equal(after.baseSha,loaded.mainBlobSha);assert.equal(after.manifestRecord.baseMain,migrated);
+  assert.deepEqual(Array.from(h.commits.get(after.head).parents),[head,migrated],'old legacy draft stays reachable in history');
+  assert.doesNotMatch(h.blobs.get(h.trees.get(h.commits.get(after.head).tree.sha).get(contract.source)).toString(),/picks/i);
+  assert.equal(h.refs.get('main'),migrated);
+  const request=await h.request({action:'request-publication',expectedHead:after.head,blobSha:after.blobSha,baseSha:after.baseSha,catalogSha:after.catalogSha,settingsApproved:true});
+  assert.equal(request.status,200);
+});
+test('upgrade: only the exact retired pair is dropped from a stored draft; anything else fails closed',async()=>{
+  for(const change of [{picks:[]},{picks:['../private']},{picks:['beta','beta']},{legacyPicks:'false'},{extra:true},
+    {legacyPicks:undefined},{order:['gamma','alpha']},{font:{bodyFont:'',headFont:'',bodySize:'url(https://unsafe.test)'}}]){
+    const h=fixture();const draft={...legacyDraftSettings(),...change};
+    for(const key of Object.keys(draft))if(draft[key]===undefined)delete draft[key];
+    legacyUpgrade(h,draft);const response=await h.request();
+    assert.equal(response.status,409,JSON.stringify(change));assert.equal((await response.json()).error,'invalid_settings_manifest');noWrites(h);
+  }
+});
 for(const withDraft of [false,true]) test('catalogue reconciliation preserves old history and current main with existing draft='+withDraft,async()=>{
   const {h,loaded,input}=await catalogConflict(withDraft),old=loaded.head&&h.commits.get(loaded.head);
   assert.equal(loaded.conflict,true);assert.equal(loaded.sourceRequiresReview,true);

@@ -104,6 +104,32 @@ test('catalogue comparison is read-only, names removed/additional articles and r
  await assert.rejects(h.model.reconcileCatalog(plan.settings,false,before.editRevision),/confirmation/);
  assert.equal(h.calls.length,calls);
 });
+// Upgrade: the API returns a pre-熱門推薦-retirement cloud draft already reduced
+// to font/order, flagged legacyDraft, as a conflict to reconcile explicitly.
+function legacyBase(){const value=base();value.head=sha('d');value.blobSha=sha('e');value.conflict=true;value.status='conflict';
+ value.legacyDraft=true;value.settings={...settings(),font:{...settings().font,bodySize:'17px'},order:NEW_ORDER};
+ value.manifestRecord={baseMain:sha('9')};return value;}
+test('upgrade: a legacy cloud draft keeps font/order and recovers only through explicit reconciliation',async()=>{
+ const h=fixture(),before=legacyBase();await load(h,before);const state=h.model.snapshot();
+ assert.equal(state.working,null);assert.equal(state.status,'settings_conflict');assert.equal(state.loaded.legacyDraft,true);
+ assert.throws(()=>h.model.set('order',ALT_ORDER),/settings_not_ready/);assert.throws(()=>h.model.saveCloud('font'),/settings_not_ready/);
+ const plan=h.model.catalogPlan();assert.deepEqual(clone(plan.removed),[]);assert.deepEqual(clone(plan.added),[]);
+ assert.deepEqual(clone(plan.settings),before.settings);assert.deepEqual(clone(h.model.catalogPlan('source').settings),settings());
+ const calls=h.calls.length;
+ await assert.rejects(h.model.reconcileCatalog({...plan.settings,legacyPicks:false,picks:['beta']},true,state.editRevision),/invalid_settings/);
+ assert.equal(h.calls.length,calls);
+ const pending=h.model.reconcileCatalog(clone(plan.settings),true,state.editRevision),input=JSON.parse(h.calls.at(-1).options.body);
+ assert.equal(input.action,'reconcile-catalog');assert.equal(input.expectedHead,before.head);assert.deepEqual(input.settings,before.settings);
+ h.calls.at(-1).resolve(Response.json({...catalogResult(before,plan.settings),legacyDraft:false}));await pending;
+ const after=h.model.snapshot();assert.deepEqual(after.working,before.settings);assert.equal(after.dirty,false);
+ assert.equal(after.loaded.conflict,false);assert.equal(after.status,'catalog_reconciled');
+});
+test('a legacy-draft flag is only accepted on a conflict response',async()=>{
+ for(const change of [{conflict:false,status:'cloud_draft'},{legacyDraft:'true'}]){
+  const h=fixture(),pending=assert.rejects(h.model.load(),/request_failed/);
+  h.calls.at(-1).resolve(Response.json({...legacyBase(),...change}));await pending;assert.equal(h.model.snapshot().loaded,null);
+ }
+});
 test('explicit catalogue confirmation pins main/draft/blob/catalogue and creates a draft without deleting recovery',async()=>{
  const h=fixture(),before=catalogBase();await load(h,before);h.values.set('cd_site_settings_local_v2','retained original');
  const selected=clone(h.model.catalogPlan().settings);const pending=h.model.reconcileCatalog(selected,true,h.model.snapshot().editRevision);

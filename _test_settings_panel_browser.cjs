@@ -22,6 +22,12 @@ async function fixture(browser, width, scenario) {
     h.latest.head = hash('saved draft'); h.latest.blobSha = hash('draft source'); h.latest.settings.font.bodySize='18px';
     h.latest.conflict=scenario==='new-cycle-conflict'; h.latest.status=h.latest.conflict?'conflict':'cloud_draft';
   }
+  if(scenario==='legacy-draft') {
+    // A cloud draft saved before 熱門推薦 was retired, as the API returns it.
+    h.latest.head=hash('legacy draft');h.latest.blobSha=hash('legacy source');h.latest.conflict=true;h.latest.status='conflict';
+    h.latest.legacyDraft=true;h.latest.settings.font.bodySize='17px';h.latest.settings.order=['gamma','alpha','beta'];
+    h.latest.manifestRecord={baseMain:hash('legacy main')};
+  }
   if(scenario.startsWith('catalog')) {
     h.latest.head=hash('old catalogue draft');h.latest.catalogSha=hash('old catalogue');h.latest.mainCatalogSha=hash('new catalogue');
     h.latest.settings.order=['gamma','alpha','beta'];h.latest.sourceRequiresReview=true;
@@ -49,7 +55,7 @@ async function fixture(browser, width, scenario) {
       h.latest.catalogSha=h.latest.mainCatalogSha;h.latest.status='cloud_draft';h.latest.conflict=false;h.latest.request=null;
       h.latest.manifestRecord={baseMain:h.latest.main};
     } else if(reconciling) {
-      h.latest.settings=clone(input.settings);h.latest.blobSha=hash(JSON.stringify(input.settings));h.latest.baseSha=h.latest.mainBlobSha;
+      h.latest.settings=clone(input.settings);h.latest.blobSha=hash(JSON.stringify(input.settings));h.latest.baseSha=h.latest.mainBlobSha;h.latest.legacyDraft=false;
       h.latest.catalogSha=h.latest.mainCatalogSha;h.latest.status='cloud_draft';h.latest.conflict=false;h.latest.request=null;
       h.latest.manifestRecord={baseMain:h.latest.main};
     } else if (input.kind) {
@@ -114,7 +120,7 @@ async function fixture(browser, width, scenario) {
   await page.locator('.ax-tabs button[data-tab="font"]').click();
   assert.equal(await page.locator('#axBodySize').isDisabled(), true, 'no implicit legacy restore or unverified cloud baseline');
   await page.locator('#axSettingsLoad').click();
-  if(scenario==='new-cycle-conflict'||scenario.startsWith('catalog')) await page.waitForFunction(()=>!document.getElementById('axSettingsLoad').disabled&&document.getElementById('axSettingsStatus').textContent.includes('來源'));
+  if(scenario==='new-cycle-conflict'||scenario==='legacy-draft'||scenario.startsWith('catalog')) await page.waitForFunction(()=>!document.getElementById('axSettingsLoad').disabled&&document.getElementById('axSettingsStatus').textContent.includes('來源'));
   else await page.waitForFunction(() => !document.getElementById('axBodySize').disabled);
   h.originalArticle = await page.frameLocator('iframe.editor').locator('article').evaluate(node => node.outerHTML);
   return h;
@@ -126,7 +132,7 @@ module.exports = async function checkSettingsPanel(browser, options = {}) {
   let cases = 0;
   const scenarios = options.scenarios || ['keyboard', 'save-typing', 'compare', 'uncertain', 'request', 'recovery-auth', 'retired-picks',
     'observation','observation-typing','observation-auth','new-cycle','new-cycle-typing','new-cycle-blocked','new-cycle-conflict',
-    'catalog','catalog-source','catalog-blocked'];
+    'catalog','catalog-source','catalog-blocked','legacy-draft'];
   for (const width of options.widths || [390, 800, 1440]) for (const scenario of scenarios) {
     const h = await fixture(browser, width, scenario), page = h.page;
     try {
@@ -150,6 +156,20 @@ module.exports = async function checkSettingsPanel(browser, options = {}) {
         else{assert.equal(h.latest.conflict,false);assert.deepEqual(Object.keys(h.latest.settings).sort(),['font','order','version']);
           assert.deepEqual(h.latest.settings.order,scenario==='catalog-source'?[]:['gamma','beta','delta']);
           assert.equal(await page.locator('#axFontApply').isDisabled(),false);assert.equal(await page.locator('#axSettingsRequest').isDisabled(),false);}
+      }
+      if(scenario==='legacy-draft') {
+        assert.equal(await page.locator('#axFontApply').isDisabled(),true,'a legacy draft is never saved as is');
+        assert.equal(await page.locator('#axSettingsRequest').isDisabled(),true);
+        assert.equal(await page.locator('#axSettingsReconcile').isDisabled(),false);
+        await page.locator('#axSettingsReconcile').click();
+        assert.equal(await page.locator('#axSettingsLegacyDraftNote').count(),1);
+        assert.equal(await page.locator('[data-catalog-pick]').count(),0);
+        await page.locator('#axSettingsCatalogApproval').check();
+        await page.locator('#axSettingsSubmitCatalog').click();await page.locator('dialog').waitFor({state:'detached'});await waitCloud(h);
+        const posts=h.calls.filter(c=>c.method==='POST');assert.equal(posts.length,1);assert.equal(posts[0].input.action,'reconcile-catalog');
+        assert.equal(h.latest.conflict,false);
+        assert.deepEqual(h.latest.settings,{version:1,font:{bodyFont:'',headFont:'',bodySize:'17px'},order:['gamma','alpha','beta']});
+        assert.equal(await page.locator('#axBodySize').inputValue(),'17px');assert.equal(await page.locator('#axSettingsRequest').isDisabled(),false);
       }
       if(scenario.startsWith('new-cycle')) {
         const oldHead=h.latest.head;

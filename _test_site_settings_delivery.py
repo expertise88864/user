@@ -172,6 +172,23 @@ class SettingsDeliveryTests(unittest.TestCase):
         h,_=self.legacy_main();h.approval()
         with self.assertRaises(ValueError):s.plan(h,h.main,h.request)
 
+    def test_upgrade_pre_retirement_cloud_draft_is_delivered_only_after_reconciling_onto_migrated_main(self):
+        h,legacy=self.legacy_main()
+        draft={**legacy,'font':{**legacy['font'],'bodySize':'17px'},'order':list(reversed(SLUGS)),'legacyPicks':False,'picks':SLUGS[1:2]}
+        legacy_request=h.approval(updates=draft)
+        with self.assertRaises(ValueError):s.plan(h,h.main,legacy_request)
+        migrated={'version':1,'font':legacy['font'],'order':legacy['order']}
+        candidate=h.candidate({s.SOURCE:s.encoded(migrated)});self.assertFalse(s.verify(candidate,h)['activeRequest'])
+        h.main=candidate;h.refs['main']=candidate
+        h.runs[candidate]=[{'path':'.github/workflows/delivery.yml','head_sha':candidate,'event':'push','head_branch':'main','head_repository':{'full_name':s.REPO}}]
+        # Still the pre-retirement draft: its baseline predates the migration.
+        with self.assertRaises(ValueError):s.plan(h,h.main,legacy_request)
+        # The admin reconcile keeps font/order and rebases onto migrated main.
+        h.settings=migrated;h.approval(updates={'font':draft['font'],'order':draft['order']})
+        files,_=s.plan(h,h.main,h.request);self.assertNotIn(b'picks',files[s.SOURCE])
+        self.assertEqual(json.loads(files[s.SOURCE]),{'version':1,'font':draft['font'],'order':draft['order']})
+        self.assertTrue(s.verify(h.candidate(files),h)['authorIntentVerified'])
+
     def test_manifest_approval_parent_schema_blob_and_tree_tampering(self):
         def wrong_blob(path,result):
             if path.startswith('/contents/') and s.SOURCE in path:result['sha']='a'*40
