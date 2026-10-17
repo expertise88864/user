@@ -175,7 +175,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。②④可由課本支持（diabetic dermopathy 與 nephropathy 相關、renal pruritus 很常見；Hodgkin lymphoma 有 B symptoms 與 paraneoplastic pruritus）。但要判斷①③錯誤，兩本課本都沒有直接寫到：Fitzpatrick 9e 沒有描述 polycythemia vera 搔癢遇水加劇（aquagenic），也沒有說明肝病惡化時 cholestatic pruritus 可能減輕，只提到搔癢與 bilirubin 相關性差；McKee 也沒有相關敘述。依一般臨床知識，PV 搔癢是碰水誘發，cholestatic pruritus 在疾病進展後盛行率會下降，所以①③錯誤、答案 B。查證後現行文獻觀念未變。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。②④可由課本支持（diabetic dermopathy 與 nephropathy 相關、renal pruritus 很常見；Hodgkin lymphoma 有 B symptoms 與 paraneoplastic pruritus）。但要判斷①③錯誤，兩本課本都沒有直接寫到：Fitzpatrick 9e 沒有描述 polycythemia vera 搔癢遇水加劇（aquagenic），也沒有說明肝病惡化時 cholestatic pruritus 可能減輕，只提到搔癢與 bilirubin 相關性差；McKee 也沒有相關敘述。依一般臨床知識，PV 搔癢是碰水誘發，cholestatic pruritus 在疾病進展後盛行率會下降，所以①③錯誤、答案 B。查證後現行文獻觀念未變：德國 441 例 PV 病人問卷研究中，約 68%（301 例）有 aquagenic pruritus。"
   }
  },
  "101-04": {
@@ -880,7 +880,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在④：Fitzpatrick 9e 與 McKee 5e 都沒有比較 cyclosporine 對 PsA 皮膚與關節的改善速度，PsA 章節的用藥表也沒有列 cyclosporine；依臨床常識 cyclosporine 對皮膚反應快、關節效果較有限，故④錯誤。查詢現行文獻，cyclosporine 在 PsA 的證據仍以小型試驗為主，沒有顯示關節改善快於皮膚，觀念未變。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在④：Fitzpatrick 9e 與 McKee 5e 都沒有比較 cyclosporine 對 PsA 皮膚與關節的改善速度，PsA 章節的用藥表也沒有列 cyclosporine；依臨床常識 cyclosporine 對皮膚反應快、關節效果較有限，故④錯誤。查詢現行文獻，cyclosporine 在 PsA 的證據仍以小型試驗為主，沒有顯示關節改善快於皮膚，觀念未變；GRAPPA 2021 PsA 治療建議對周邊關節炎強烈建議 csDMARDs 時特別排除 cyclosporine，皮膚乾癬則仍把 cyclosporine 列為強烈建議的口服藥，與④錯誤一致。"
   }
  },
  "101-15": {
@@ -1817,7 +1817,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 C。疑義在於④：Fitzpatrick 9e 與 McKee 5e 都沒有寫 imiquimod 治療外生殖器疣的療程長度，只說明它是免疫調節劑、自行塗抹清除率 50%–70%；①②③有課本支持，④依 imiquimod 需數週才見效的特性判為錯誤，維持 C。現行文獻觀念未變（CDC 2021 STI 指引：5% cream 每週 3 次、最長 16 週）。"
+   "exam": "考試答案：依課本出題本意維持原答案 C。疑義在於④：Fitzpatrick 9e 與 McKee 5e 都沒有寫 imiquimod 治療外生殖器疣的療程長度，只說明它是免疫調節劑、自行塗抹清除率 50%–70%；①②③有課本支持（①中「免疫功能低下者避免使用」屬 pimecrolimus／tacrolimus 仿單警語，課本未明列），④依 imiquimod 需數週才見效的特性判為錯誤，維持 C。現行文獻觀念未變（CDC 2021 STI 指引：5% cream 每週 3 次、最長 16 週）。"
   }
  },
  "101-29": {
@@ -2474,8 +2474,12 @@
    }
   ],
   "flags": [
-   "Fitzpatrick 9e 未提及 DPU 的系統症狀與 IgE 角色（系統症狀為舊版敘述）；IgE 部分依 McKee p.700。"
-  ]
+   "Fitzpatrick 9e 未提及 DPU 的系統症狀（發燒、寒顫、關節痛等為舊版敘述）；IgE 角色兩本課本說法不一，見疑義說明。"
+  ],
+  "dispute": {
+   "kind": "conflict",
+   "exam": "考試答案：依課本出題本意維持原答案 A。疑義在 A 的後半句「致病機轉可能和 IgE 有關」，兩本課本說法不一：McKee 5e p.700 寫 physical urticarias（heat、cold、pressure 等）被認為是對 mast cell 的直接作用，支持 A 為錯誤；但 Fitzpatrick 9e p.692 提到部分 physical urticaria 的研究提示異常 IgE 受物理刺激改變構形而活化 mast cell，p.693 也寫 specific IgE 可能連結誘發刺激與 mast cell，p.702 並寫 omalizumab 對 DPU 也有效（off-label）。A 的前半句（偶合併發燒、寒顫、關節痛、肌痛、白血球上升）是舊版敘述，9e 未提及。其餘三項依課本可判為正確，A 仍是唯一可選的錯誤選項，故維持 A。查詢現行文獻（2024 年 chronic inducible urticaria 綜述），omalizumab off-label 用於各型 CIndU 整體效果良好，但 DPU 的確切機轉仍未定論。"
+  }
  },
  "101-39": {
   "summary": "四者中以 RCT 證據等級最高，答案 B。",
@@ -3329,7 +3333,7 @@
    }
   ],
   "flags": [
-   "D 烏腳病 blackfoot disease 兩本課本皆未提及，依一般醫學知識判定；本題答案 B 有課本明確支持。"
+   "D 烏腳病 blackfoot disease 兩本課本皆未提及；台灣文獻回顧（Kaohsiung J Med Sci 2011）明載烏腳病是慢性砷暴露所致、為台灣砷流行區特有的疾病，支持 D 錯誤。本題答案 B 有課本明確支持。"
   ]
  },
  "102-01": {
@@ -4348,7 +4352,7 @@
     "key": "D",
     "label": "錯誤（本題答案）",
     "ok": false,
-    "text": "標準 patch test（48 小時閉鎖、72–96 小時判讀）是偵測第 IV 型遲發性過敏的 ACD 診斷工具；contact urticaria 要用 open test、prick test 或特異性 IgE 檢測，在 15–60 分鐘內判讀。",
+    "text": "標準 patch test（48 小時閉鎖、72 或 96 小時判讀）是偵測第 IV 型遲發性過敏的 ACD 診斷工具；contact urticaria 要用 open test、prick test 或特異性 IgE 檢測，在 15–60 分鐘內判讀。",
     "refs": [
      [
       27,
@@ -4357,6 +4361,10 @@
      [
       41,
       "698"
+     ],
+     [
+      24,
+      "406"
      ]
     ]
    }
@@ -7512,7 +7520,7 @@
     "key": "③",
     "label": "正確",
     "ok": true,
-    "text": "依 OCEBM（2009 版）分級，療效問題的 level 1a 是「具同質性的 RCT 系統性回顧」。Fitzpatrick 9e 只提到 OCEBM 量表可分別評估診斷、預後與傷害，沒有列出 1a 的定義。",
+    "text": "依舊版 OCEBM 分級，療效問題的 level 1a 是「具同質性的 RCT 系統性回顧」。Fitzpatrick 9e 只提到 OCEBM 量表可分別評估診斷、預後與傷害，沒有列出 1a 的定義。",
     "refs": [
      [
       3,
@@ -7524,7 +7532,7 @@
     "key": "④",
     "label": "正確",
     "ok": true,
-    "text": "OCEBM 2009 版中「未經明確評讀的專家意見」在療效與診斷各類都是最低的 level 5；Fitzpatrick 9e 書中的證據分級表（如 ch157）也把 expert opinion 列為最低。",
+    "text": "舊版 OCEBM 分級中「未經明確評讀的專家意見」在療效與診斷各類都是最低的 level 5；Fitzpatrick 9e 書中的證據分級表（如 ch157）也把 expert opinion 列為最低。",
     "refs": [
      [
       3,
@@ -8906,7 +8914,16 @@
   ],
   "dispute": {
    "kind": "conflict",
-   "exam": "考試答案：依課本出題本意維持原答案 B，因為 Fitzpatrick p.3771 明列 spindle cell features 為 SCC 高危險特徵，B 說「預後較佳」確定是錯誤敘述。疑義在於 A：兩本課本都沒有寫「<2 cm 轉移率約 1%」，McKee p.1205 引用的數據是 <2 cm 腫瘤轉移率 7.6%，若照 McKee，A 也算錯誤。此外 McKee p.1208 提到較常見的 actinic spindle cell SCC 預後良好、很少轉移，只有放射線或外傷相關者屬高惡性度，所以 B 也不是在所有情況下都錯。查詢現行文獻沒有找到會改變本題答案的指引更新。"
+   "exam": "考試答案：依課本出題本意維持原答案 B，因為 Fitzpatrick p.3771 明列 spindle cell features 為 SCC 高危險特徵，B 說「預後較佳」確定是錯誤敘述。疑義在於 A：兩本課本都沒有寫「<2 cm 轉移率約 1%」，McKee p.1205 引用的數據是 <2 cm 腫瘤轉移率 7.6%，若照 McKee，A 也算錯誤。此外 McKee p.1208 提到較常見的 actinic spindle cell SCC 預後良好、很少轉移，只有放射線或外傷相關者屬高惡性度，所以 B 也不是在所有情況下都錯。查詢現行文獻沒有找到會改變本題答案的指引更新。",
+   "current": "現行觀念：2025 年系統性回顧與統合分析（30 篇研究）顯示，AJCC 8th T1（≤2 cm、無高危險特徵）的 nodal metastasis 約 1.5%，BWH T1 約 0.7%，與 A 的「約 1%」相近；McKee 引用的 7.6% 為較早期系列的數據，A 依現行證據可視為正確。",
+   "sources": [
+    {
+     "pmid": "39889854",
+     "title": "Prevalence of poor outcomes in cutaneous squamous cell carcinoma by AJCC and BWH tumor stages: A systematic review and meta-analysis.",
+     "year": 2025,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/39889854/"
+    }
+   ]
   }
  },
  "103-35": {
@@ -9830,7 +9847,7 @@
     "key": "③",
     "label": "正確",
     "ok": true,
-    "text": "配方第三個成分是 mild topical corticosteroid；fluocinolone acetonide 0.01% 是常見的 triple-combination（改良式 Kligman）配方所用的類固醇，9e 只寫 topical corticosteroid 未指明藥名。",
+    "text": "配方第三個成分是 mild topical corticosteroid；9e 只寫 topical corticosteroid，未指明藥名與濃度，題目的 fluocinolone acetonide 屬於 topical corticosteroid（見疑義）。",
     "refs": [
      [
       77,
@@ -9861,7 +9878,7 @@
   ],
   "dispute": {
    "kind": "conflict",
-   "exam": "考試答案：依課本出題本意維持原答案 A。疑義在於 Fitzpatrick 9e 定義的 Kligman's formula 是 5% hydroquinone + 0.1% tretinoin + mild topical corticosteroid（原始配方為 dexamethasone），而 4% hydroquinone + 0.05% tretinoin + corticosteroid（fluocinolone acetonide 0.01%）是 9e 另稱的 triple-combination therapy；題目把兩者混為一談，①的 4% 嚴格說屬於後者。但②的 tretinoin 0.5% 與④的 kojic acid 都明顯不是配方成分，出題本意是「hydroquinone + 類固醇」，故仍選 A。"
+   "exam": "考試答案：依課本出題本意維持原答案 A。疑義在於 Fitzpatrick 9e 定義的 Kligman's formula 是 5% hydroquinone + 0.1% tretinoin + mild topical corticosteroid，而 4% hydroquinone + 0.05% tretinoin + topical corticosteroid 是 9e 另稱的 triple-combination therapy；題目把兩者混為一談，①的 4% 嚴格說屬於後者。但②的 tretinoin 0.5% 與④的 kojic acid 都明顯不是配方成分，出題本意是「hydroquinone + 類固醇」，故仍選 A。"
   }
  },
  "103-49": {
@@ -11150,7 +11167,7 @@
    }
   ],
   "flags": [
-   "D 敘述中「代謝產物經糞便與尿液排出」Fitzpatrick 9e／McKee 5e 未提及；本題答案 C 有課本直接支持。"
+   "D 敘述中「代謝產物經糞便與尿液排出」Fitzpatrick 9e／McKee 5e 未提及；依美國仿單（Sporanox），口服液服用後一週內約 35% 以非活性代謝物經尿液、54% 經糞便排出，D 正確。本題答案 C 有課本直接支持。"
   ]
  },
  "104-19": {
@@ -11595,7 +11612,7 @@
    }
   ],
   "flags": [
-   "A 選項的「三個月」與 Fitzpatrick 9e（高劑量 >2 週後至少 1 個月不可接種活性疫苗）不同，依官方答案視為正確。"
+   "A 選項的「三個月」與 Fitzpatrick 9e（高劑量 >2 週後至少 1 個月不可接種活性疫苗）不同；現行 CDC／ACIP 建議同樣是停藥後至少 1 個月，3 個月是部分回顧文獻（如 Liu 2013）較保守的建議。依官方答案視為正確，不影響答案 D。"
   ]
  },
  "104-26": {
@@ -12483,6 +12500,9 @@
      ]
     ]
    }
+  ],
+  "flags": [
+   "③「最主要的傷害是肝毒性」：Fitzpatrick 9e 把 myelosuppression 列為最重要的急性副作用（p.3467），肝纖維化則是長期使用的主要顧慮（p.3468）；依官方答案解讀為長期累積風險。"
   ]
  },
  "104-39": {
@@ -13166,7 +13186,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 E。疑義在③：Fitzpatrick 9e 只寫雷射去刺青通常需要多次治療，並介紹同日多次照射的 R20 方法；Fitzpatrick 9e 與 McKee 5e 都沒有提到兩次治療之間的建議間隔，所以無法用課本判定「3–4 週」是錯的。出題本意應是常見的 6–8 週以上間隔。查得的文獻多為病例系列與臨床經驗（間隔 6–8 週或更長），沒有指引層級的更新，現行觀念未變。"
+   "exam": "考試答案：依課本出題本意維持原答案 E。疑義在③：Fitzpatrick 9e 只寫雷射去刺青通常需要多次治療，並介紹同日多次照射的 R20 方法；Fitzpatrick 9e 與 McKee 5e 都沒有提到兩次治療之間的建議間隔，所以無法用課本判定「3–4 週」是錯的。出題本意應是常見的 6–8 週以上間隔。查得的文獻多為病例系列與臨床經驗，沒有指引層級的建議；米蘭 352 例 QS 雷射前瞻世代研究的療程間隔均在 6 週以上，且間隔 ≤8 週與較差的清除效果相關，未支持 3–4 週的間隔，現行觀念未變。"
   }
  },
  "104-49": {
@@ -14048,13 +14068,19 @@
   "dispute": {
    "kind": "missing",
    "exam": "考試答案：依課本出題本意維持原答案 C。疑義在②：McKee 5e 只寫刺青色素位於細胞外與 macrophage 內（汞顆粒並沿表淺血管分布），Fitzpatrick 9e 只寫墨水在溶酶體內；兩本都沒有提到 fibroblast 與血管旁 mast cell 含有色素。依出題本意（色素分布於真皮多種細胞）仍判②正確。",
-   "current": "現行觀念：2018 年小鼠研究顯示，長期保留刺青色素的細胞全部是真皮 macrophage，色素經「捕捉—釋放—再捕捉」循環留在原處，刺青能持久是靠 macrophage 不斷更新，而不是單一細胞長壽。此為動物研究，但它把重點放在 macrophage，而不是 fibroblast 或 mast cell。",
+   "current": "現行觀念：2018 年小鼠研究顯示，長期保留刺青色素的主要是真皮 macrophage，色素經「捕捉—釋放—再捕捉」循環留在原處；但 2023 年人體 in vivo 雙光子螢光壽命影像研究發現，新舊刺青的 carbon black 色素都位於細胞內，真皮中可見於 macrophage、mast cell 與 fibroblast，支持②的敘述。",
    "sources": [
     {
      "pmid": "29511065",
      "title": "Unveiling skin macrophage dynamics explains both tattoo persistence and strenuous removal.",
      "year": 2018,
      "url": "https://pubmed.ncbi.nlm.nih.gov/29511065/"
+    },
+    {
+     "pmid": "36787702",
+     "title": "Tattoo Pigments Are Localized Intracellularly in the Epidermis and Dermis of Fresh and Old Tattoos: In vivo Study Using Two-Photon Excited Fluorescence Lifetime Imaging.",
+     "year": 2023,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36787702/"
     }
    ]
   }
@@ -14259,7 +14285,16 @@
   ],
   "dispute": {
    "kind": "conflict",
-   "exam": "考試答案：依課本出題本意維持原答案 A。疑義在於③：Fitzpatrick 9e 與 McKee 5e 都沒有給出自發復色比例，Fitzpatrick 只說有毛部位可自發、治療後或日曬後復色（反而暗示曝光部位較易復色），McKee 只說自發復色呈斑片狀、集中於毛囊周圍；傳統說法是自發復色約 10%–20%（確實不到 50%），且多見於年輕人與 sun-exposed areas，與題目「非陽光曝曬的患部比例較高」相反，疑為題目誤植。②（PUVA 較好）與④（marginal 最常見）明確錯誤，含③的組合中只有 A 合理，故維持 A。現行文獻觀念未變（自發復色約五分之一病人，多為部分復色）。"
+   "exam": "考試答案：依課本出題本意維持原答案 A。疑義在於③：Fitzpatrick 9e 與 McKee 5e 都沒有給出自發復色比例，Fitzpatrick 只說有毛部位可自發、治療後或日曬後復色（反而暗示曝光部位較易復色），McKee 只說自發復色呈斑片狀、集中於毛囊周圍；傳統說法是自發復色約 10%–20%（確實不到 50%），且多見於年輕人與 sun-exposed areas，與題目「非陽光曝曬的患部比例較高」相反，疑為題目誤植。②（PUVA 較好）與④（marginal 最常見）明確錯誤，含③的組合中只有 A 合理，故維持 A。",
+   "current": "現行觀念：2020 年 167 例橫斷研究顯示，自發復色見於 21.5% 病人（完全復色僅 3.6%），曝光部位較非曝光部位常見，且與年齡、性別、發病年齡無關；支持③前半「不到 50%」，但不支持「年輕人與非曝光部位比例較高」。",
+   "sources": [
+    {
+     "pmid": "31793491",
+     "title": "A cross-sectional study of spontaneous repigmentation in vitiligo.",
+     "year": 2020,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31793491/"
+    }
+   ]
   }
  },
  "105-15": {
@@ -18412,7 +18447,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於②（體股癬 2 週、足癬 4 週）與④（症狀消失後至少再塗 1 週）這兩個療程通則，Fitzpatrick 9e 與 McKee 5e 都沒有寫到；9e 只寫外用藥多數每天兩次 2–4 週。①（只塗病灶）與③（nystatin 對 [i]Malassezia[/i] 無效）可由課本判為錯誤，剩下②④正確，故維持 B。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於②（體股癬 2 週、足癬 4 週）與④（症狀消失後至少再塗 1 週）這兩個療程通則，Fitzpatrick 9e 與 McKee 5e 都沒有寫到；9e 只寫外用藥多數每天兩次 2–4 週。①（只塗病灶）與③（nystatin 對 [i]Malassezia[/i] 無效）可由課本判為錯誤，剩下②④正確，故維持 B。查詢文獻（Am Fam Physician 2002 回顧）：體癬、股癬通常治療 2 週，足癬以 azole 治療 4 週，臨床痊癒後應再擦至少 1 週，與②④一致。"
   }
  },
  "106-26": {
@@ -18966,7 +19001,8 @@
    }
   ],
   "flags": [
-   "選項 B「Dexosimethasone」應為 desoximethasone（desoximetasone）之拼寫誤植，不影響作答。"
+   "選項 B「Dexosimethasone」應為 desoximethasone（desoximetasone）之拼寫誤植，不影響作答。",
+   "C 選項的 hydrocortisone acetate 未列於 Fitzpatrick Table 24-6（class A 只列 hydrocortisone valerate 等），依 Coopman 分類屬 class A。另依 Baeck 2011 的三組分類，clobetasol（D1）與 desoximethasone（C）同屬致敏性與交叉反應風險最低的 group 3；本題依 Fitzpatrick 明文「無 patch test 證據時 desoximethasone ointment 最安全」選 B。"
   ]
  },
  "106-34": {
@@ -19635,7 +19671,7 @@
    }
   ],
   "flags": [
-   "D 選項的「至少 3 個月」與 Fitzpatrick 9e（至少 1 個月）不同，依官方答案視為正確；不影響答案 C。"
+   "D 選項的「至少 3 個月」與 Fitzpatrick 9e（至少 1 個月）不同；現行 CDC／ACIP 建議同樣是停藥後至少 1 個月，3 個月是部分回顧文獻（如 Liu 2013）較保守的建議。依官方答案視為正確，不影響答案 C。"
   ]
  },
  "106-45": {
@@ -20095,7 +20131,7 @@
     "key": "A",
     "label": "課本未提及",
     "ok": false,
-    "text": "Fitzpatrick 與 McKee 都沒有介紹 UV index 的分級。WHO 的 Global Solar UV Index 為開放式量表（11+），分為 low（0–2）、moderate（3–5）、high（6–7）、very high（8–10）、extreme（≥11）。題目「共分十五級、十級以上危險」只是約略說法；它對應的課本概念是「UV 越強風險越高」。",
+    "text": "Fitzpatrick 與 McKee 都沒有介紹 UV index 的分級，題目「共分十五級、十級以上危險」無法由課本核對（WHO 現行分級見疑義說明）；它對應的課本概念是「UV 越強風險越高」。",
     "refs": [
      [
       197,
@@ -21088,7 +21124,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 A。疑義在④：Fitzpatrick 9e 與 McKee 5e 都沒有比較 cyclosporine 對 PsA 皮膚與關節的反應速度；依臨床常識皮膚反應較快，故④錯誤。查詢現行文獻，cyclosporine 在 PsA 的資料仍有限，未顯示關節改善較快，觀念未變。"
+   "exam": "考試答案：依課本出題本意維持原答案 A。疑義在④：Fitzpatrick 9e 與 McKee 5e 都沒有比較 cyclosporine 對 PsA 皮膚與關節的反應速度；依臨床常識皮膚反應較快，故④錯誤。查詢現行文獻，cyclosporine 在 PsA 的資料仍有限，未顯示關節改善較快，觀念未變；GRAPPA 2021 PsA 治療建議對周邊關節炎強烈建議 csDMARDs 時特別排除 cyclosporine，皮膚乾癬則仍把 cyclosporine 列為強烈建議的口服藥，與④錯誤一致。"
   }
  },
  "107-18": {
@@ -22060,7 +22096,7 @@
     "key": "D",
     "label": "本題答案：不是 whorled",
     "ok": true,
-    "text": "Dowling-Degos disease（reticular pigmented anomaly of the flexures）為 KRT5 突變的體染色體顯性疾病，30–40 歲起於鼠蹊、腋下等皺褶處出現對稱小棕灰斑，呈網狀（reticulate）色素沉著，合併 comedo-like papules 與口周凹疤，不是 Blaschko 漩渦型。",
+    "text": "Dowling-Degos disease（reticular pigmented anomaly of the flexures）為 KRT5 突變的體染色體顯性疾病，多於第三或第四個十年（third or fourth decade）起於鼠蹊、腋下等皺褶處出現對稱小棕灰斑，呈網狀（reticulate）色素沉著，合併 comedo-like papules 與口周凹疤，不是 Blaschko 漩渦型。",
     "refs": [
      [
       77,
@@ -22677,7 +22713,7 @@
    }
   ],
   "flags": [
-   "②的「一半以上在 10 歲以前」，兩本書都沒有直接寫這個比例；Fitzpatrick Ch116 引用的大型回顧中位年齡為 12.6 歲。這裡依 McKee「通常在青春期前」與 Fitzpatrick Ch115「出生後頭幾年就可能發生」判定為正確。"
+   "②的「一半以上在 10 歲以前」，兩本書都沒有直接寫這個比例；Fitzpatrick Ch116 引用的大型回顧中位年齡為 12.6 歲。這裡依 McKee「通常在青春期前」與 Fitzpatrick Ch115「出生後頭幾年就可能發生」判定為正確。Krengel 2006 系統性回顧（6571 例 CMN）中 melanoma 診斷年齡中位數為 7 歲（平均 15.5 歲），亦支持②。"
   ],
   "dispute": {
    "kind": "missing",
@@ -23243,7 +23279,7 @@
   ],
   "dispute": {
    "kind": "conflict",
-   "exam": "考試答案：依課本出題本意維持原答案 E。疑義在於③「目前公認合理的下限是 30 ng/mL」：Fitzpatrick 9e ch17 寫明足夠濃度仍有爭議，ch123 表格則以 ≥20 ng/mL 為足夠，課本無法支持 30 ng/mL 為公認下限。出題者應是依舊版 Endocrine Society（2011）的 30 ng/mL 定義，故依官方答案視為正確。",
+   "exam": "考試答案：依課本出題本意維持原答案 E。疑義在於③「目前公認合理的下限是 30 ng/mL」：Fitzpatrick 9e ch17 寫明足夠濃度仍有爭議，ch123 表格則以 ≥20 ng/mL 為足夠，課本無法支持 30 ng/mL 為公認下限。出題者應是依舊版 Endocrine Society（2011）的 30 ng/mL 定義；但同年 IOM 報告以 20 ng/mL 為足夠，出題當時即無共識，故依官方答案視為正確。",
    "current": "現行觀念：2024 年 Endocrine Society 臨床指引不再建議一般人常規檢測 25(OH)D，也不再背書 30 ng/mL 的目標值或 sufficiency／insufficiency／deficiency 的切點，改為特定族群經驗性補充。",
    "sources": [
     {
@@ -25931,7 +25967,7 @@
    }
   ],
   "flags": [
-   "Fitzpatrick 9e 前後不一致：ch188（p.3448、Table 188-2）把 griseofulvin 列為 category C，ch160（Table 160-10）列為 category X；本題依 category X 判④錯誤。男性停藥後等待期（傳統建議 6 個月）兩本課本皆未提及。"
+   "Fitzpatrick 9e 前後不一致：ch188（p.3448、Table 188-2）把 griseofulvin 列為 category C，ch160（Table 160-10）列為 category X；本題依 category X 判④錯誤。男性停藥後等待期兩本課本皆未提及；美國仿單寫男性應在療程結束後至少 6 個月再讓伴侶受孕。"
   ]
  },
  "108-39": {
@@ -26069,7 +26105,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 E。Fitzpatrick 9e 與 McKee 5e 都沒有提到「pencil-in-cup」deformity（④），也沒有直接寫「PsA 常在乾癬出現多年後才發生」（②後半），只寫到 PsA 與 ReA 的骨侵蝕／新骨生成，以及乾癬病人為 PsA 高風險族群。查詢現行文獻：pencil-in-cup 仍以 PsA 為典型，ReA 亦列於可出現此變化的鑑別診斷中（較少見）；大型乾癬登錄資料顯示多數病人皮膚乾癬先於關節炎約十年左右出現，觀念未變。"
+   "exam": "考試答案：依課本出題本意維持原答案 E。Fitzpatrick 9e 與 McKee 5e 都沒有提到「pencil-in-cup」deformity（④），也沒有直接寫「PsA 常在乾癬出現多年後才發生」（②後半），只寫到 PsA 與 ReA 的骨侵蝕／新骨生成，以及乾癬病人為 PsA 高風險族群。查詢現行文獻：pencil-in-cup 仍以 PsA 為典型，PubMed 查無以此變化描述 ReA 的可靠文獻，④對 ReA 的部分缺乏依據；多數 PsA 病人皮膚病灶先出現，平均早於關節炎約 7–8 年，支持②後半。"
   }
  },
  "108-41": {
@@ -26286,7 +26322,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於①③的部分細節：①的好發部位（sun-exposed、皺褶、periorificial）與外傷、壓力兩本課本都有，但懷孕、口服避孕藥、曬傷作為惡化因子 Fitzpatrick 9e 與 McKee 5e 都沒有寫；③的清單中 psoriasis 見於 McKee、lupus 見於 Fitzpatrick，rheumatoid arthritis 則兩本都未列。②（leukotrichia 反應較佳）與④（華人發生率較高）明確錯誤，故仍選 B。現行文獻觀念未變：壓力、曬傷、外傷、懷孕仍被列為可能的誘發因子。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於①③的部分細節：①的好發部位（sun-exposed、皺褶、periorificial）與外傷、壓力兩本課本都有，但懷孕、口服避孕藥、曬傷作為惡化因子 Fitzpatrick 9e 與 McKee 5e 都沒有寫；③的清單中 psoriasis 見於 McKee、lupus 見於 Fitzpatrick，rheumatoid arthritis 則兩本都未列。②（leukotrichia 反應較佳）與④（華人發生率較高）明確錯誤，故仍選 B。查詢文獻：2023 年統合分析顯示 vitiligo 病人合併 rheumatoid arthritis 的風險上升（OR 1.82），支持③；2026 年系統性回顧指出壓力、外傷、曬傷等誘發因子雖常被提及，但多為低層級證據，觀念未變。"
   }
  },
  "108-44": {
@@ -27473,7 +27509,7 @@
     "key": "②",
     "label": "正確",
     "ok": true,
-    "text": "PCT 是唯一可以在受影響酵素沒有突變下發生的 porphyria；約 80% 為散發型（type 1），沒有 UROD 突變，只有約 20% 帶有異型合子 UROD 突變。（題目把 UROD 寫成 uroporphyrinogen deaminase，正確全名是 decarboxylase。）",
+    "text": "PCT 是唯一可以在受影響酵素沒有突變下發生的 porphyria；大多數為散發型（type 1），沒有 UROD 突變，只有約 20% 帶有異型合子 UROD 突變。（題目把 UROD 寫成 uroporphyrinogen deaminase，正確全名是 decarboxylase。）",
     "refs": [
      [
       124,
@@ -30362,7 +30398,7 @@
    }
   ],
   "flags": [
-   "③ 依官方答案判為正確；Fitzpatrick 9e 未直接說「可繼續服用」，僅提及對既有不孕問題者可能影響精子生成。"
+   "③ 依官方答案判為正確；Fitzpatrick 9e 未直接說「可繼續服用」，僅提及對既有不孕問題者可能影響精子生成。男性不孕門診研究顯示 finasteride 可使部分男性精蟲數下降、停藥後多明顯回升，作者建議精蟲過少的 subfertile 男性停藥、想生育者謹慎使用，與課本觀點相符。"
   ]
  },
  "110-09": {
@@ -33897,7 +33933,7 @@
     "key": "③",
     "label": "錯誤",
     "ok": false,
-    "text": "1 FTU 約 500 mg，可塗約 2% BSA。35% BSA 每次約需 17.5 FTU（約 8.75 g），一天兩次約 17.5 g，一週約 122 g，超過 calcipotriene 建議的上限 100 g/week，有高血鈣風險，不能說是安全的。",
+    "text": "1 FTU 約 500 mg，可塗約 2% BSA。依此估算，35% BSA 一天兩次塗抹，一週用量會超過 calcipotriene 建議的上限 100 g/week（課本另指出一般成人全身一天兩次塗一週約需 400 g），有高血鈣風險，不能說是安全的。",
     "refs": [
      [
       183,
@@ -35475,7 +35511,7 @@
    }
   ],
   "flags": [
-   "②的「避免之後產生 metastasis」只能解讀成淋巴結區域（regional）復發的控制；課本明言 adjuvant radiotherapy 對 relapse-free survival 與 overall survival 沒有效果。"
+   "②的「避免之後產生 metastasis」只能解讀成淋巴結區域（regional）復發的控制；課本明言 adjuvant radiotherapy 對 relapse-free survival 與 overall survival 沒有效果；ANZMTG 01.02/TROG 02.01 隨機試驗 6 年追蹤：淋巴結區域復發 21% 對 36%，RFS 與 OS 無差異。"
   ]
  },
  "111-38": {
@@ -43547,11 +43583,15 @@
     "key": "D",
     "label": "錯誤",
     "ok": false,
-    "text": "Contact urticaria 的診斷流程是 open test、短時間 patch test（貼 15–20 分鐘後移除，依 open test 的時間點判讀）與 skin prick test；不是一般 48 小時判讀的 regular patch test。",
+    "text": "Contact urticaria 的診斷流程是 open test、短時間 patch test（貼 15–20 分鐘後移除，依 open test 的時間點判讀）與 skin prick test；不是一般閉鎖 48 小時後移除、72 或 96 小時判讀的 regular patch test。",
     "refs": [
      [
       27,
       "451"
+     ],
+     [
+      24,
+      "406"
      ]
     ]
    }
