@@ -228,6 +228,9 @@ BUILD_GENERATED_STEPS: list[list[str]] = [
 CHECK_STEPS: list[list[str]] = [
     [PY, "_gen_site_settings.py", "--check"],
     [PY, "_gen_exam.py", "--check"],
+    # exam.js progress: per-chapter statistics vs. site-wide records, on the
+    # real generated pages (parse5 DOM + in-memory localStorage).
+    ["node", "--test", "_test_exam_progress.mjs"],
     [PY, "_test_site_settings_data.py"],
     [PY, "-m", "unittest", "_test_site_settings_render"],
     [PY, "-m", "unittest", "_test_site_settings_delivery"],
