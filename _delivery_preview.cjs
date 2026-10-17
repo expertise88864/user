@@ -77,8 +77,11 @@ async function checkStaticHome(browser, base, secret, width) {
       const target = route === '/en' ? '/en/blog' : '/blog';
       const link = page.locator('#articles a[href="' + target + '"]').first();
       await Promise.all([page.waitForURL(base.origin + target),link.click()]);
-      assert.equal(await page.locator('.article-list-item:visible').count(), total,
+      // The pinned board-exam card (zh only) sits outside the article list.
+      assert.equal(await page.locator('.article-list-item:not([data-dn-pinned]):visible').count(), total,
         'Native All articles navigation must expose every article without JavaScript');
+      assert.equal(await page.locator('a[data-dn-pinned][href="/exam"]:visible').count(), route === '/en' ? 0 : 1,
+        'The board-exam card is pinned on the Chinese article index only');
       await page.close();
     }
   } finally { await context.close(); }

@@ -269,6 +269,19 @@ def _translate_svg_text(svg_block: str) -> str:
     return svg_block
 
 
+# zh-only links (e.g. the pinned card pointing at the zh-only /exam section) are
+# dropped from the mirror instead of translated. Anchors only: <a> cannot nest,
+# so the first </a> closes the element; any other tag carrying the marker fails.
+ZH_ONLY_ANCHOR_RE = re.compile(r'<a\s[^>]*?\bdata-dn-zh-only(?:="")?[\s>][\s\S]*?</a>', re.I)
+
+
+def strip_zh_only(src: str) -> str:
+    out = ZH_ONLY_ANCHOR_RE.sub('', src)
+    if 'data-dn-zh-only' in out:
+        raise ValueError('data-dn-zh-only is supported only on <a> elements')
+    return out
+
+
 def apply_data_en(src: str) -> str:
     protected: list[str] = []
 
@@ -1043,7 +1056,7 @@ def add_chinese_fragment_aliases(english: str, fragments: dict[str, str]) -> str
 
 
 def transform(src: str, zh_canonical_path: str, en_canonical_path: str, source_rel: str | None = None) -> str:
-    s = apply_data_en(src)
+    s = apply_data_en(strip_zh_only(src))
     s = translate_aria_labels(s)
     s = translate_hub_jsonld(s)
     s = prefer_static_english_blocks(s)

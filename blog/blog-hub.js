@@ -543,7 +543,10 @@
     var initialLimit = parseInt(hub.dataset.showCount || '6', 10);
     var showingAll = (mode === 'full');
     var showMoreBtn = null;
-    var allCards = Array.prototype.slice.call(document.querySelectorAll('.article-list-item'));
+    // A pinned card (data-dn-pinned, e.g. the board-exam entry) sits outside the
+    // article list: it is never filtered, searched, ranked or counted.
+    var HUB_CARD_SELECTOR = '.article-list-item:not([data-dn-pinned])';
+    var allCards = Array.prototype.slice.call(document.querySelectorAll(HUB_CARD_SELECTOR));
     var searchTimer = null;
     var lastTrackedQuery = '';
 
@@ -556,7 +559,7 @@
       if (!list || rest.parentNode !== list) return;
       list.insertBefore(rest.content, rest);
       rest.remove();
-      allCards = Array.prototype.slice.call(document.querySelectorAll('.article-list-item'));
+      allCards = Array.prototype.slice.call(document.querySelectorAll(HUB_CARD_SELECTOR));
       try { DN.markNewArticles(); } catch (e) { /* ignore */ }
     }
 
@@ -706,7 +709,7 @@
     //       (newest 5 were written after this listing was last hand-edited)
     if (mode === 'full') {
       try { sortAndCompleteFullList(); } catch (e) { /* ignore */ }
-      allCards = Array.prototype.slice.call(document.querySelectorAll('.article-list-item'));
+      allCards = Array.prototype.slice.call(document.querySelectorAll(HUB_CARD_SELECTOR));
     }
 
     applyFilter('__all__');

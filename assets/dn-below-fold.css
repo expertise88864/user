@@ -199,6 +199,19 @@ article h2[id]{scroll-margin-top:84px}
   #articles #dn-article-list > .dn-show-more, #articles #dn-article-list > :not(.article-list-item) { grid-column: 1 / -1; }
 }
 
+/* Dark article cards everywhere (the /blog index had white cards with light text). */
+:root[data-theme="dark"] .article-list-item { background: var(--surface); border-color: var(--border); }
+
+/* Pinned board-exam card above the homepage and /blog article lists (zh only).
+   It reuses .article-list-item but sits outside the list, so the hub never
+   filters, ranks or counts it (data-dn-pinned). */
+.dn-pinned-card { margin-bottom: 14px; }
+.dn-pinned-card + .article-list { margin-top: 0; }
+.article-list-item.dn-pinned-card::before { background: linear-gradient(180deg, #7a9285, #0c5159); }
+.al-meta .chip.dn-pin-chip { background: #0c5159; color: #fff; border: 1px solid #0c5159; }
+:root[data-theme="dark"] .al-meta .chip.dn-pin-chip { background: #a4b5a8; color: #16140f; border-color: #a4b5a8; }
+:root[data-theme="dark"] .article-list-item.dn-pinned-card::before { background: linear-gradient(180deg, #cfe0d5, #7a9285); }
+
 /* FAQ: two columns on wide screens */
 @media (min-width: 1024px) {
   .py-10 > .max-w-3xl:has(> .home-faq) { max-width: 64rem; }

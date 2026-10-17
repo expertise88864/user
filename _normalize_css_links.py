@@ -14,7 +14,7 @@ from _regen_fixed_points import FixedPoints
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-ASSET_VERSION = "202610170200"
+ASSET_VERSION = "202610172100"
 
 
 def normalize_text_color_utilities(src: str) -> str:
