@@ -1,4 +1,4 @@
-/* ChenDermatologist blog hub helpers: homepage/topic filtering + recent/popular spotlight. */
+/* ChenDermatologist blog hub helpers: homepage/topic filtering. */
 (function () {
   'use strict';
   var DN = window.DN = window.DN || {};
@@ -11,51 +11,6 @@
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
   }
-
-  // Reading progress widget — injects into target element with id="dn-read-progress"
-  DN.injectReadProgress = function () {
-    var host = document.getElementById('dn-read-progress');
-    if (!host) return;
-
-    function render() {
-      var read = DN.getReadCount();
-      var total = DN.totalArticles || 1;
-      var pct = Math.round((read / total) * 100);
-
-      var readZh = '已讀 ' + read + ' 篇 (' + pct + '%)';
-      var readEn = read + ' read (' + pct + '%)';
-      host.innerHTML =
-        '<div style="background:#fff;border:1px solid var(--border, #dcd5c8);border-radius:14px;padding:18px 22px;box-shadow:0 1px 2px rgba(15,23,42,.04)">' +
-          '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px">' +
-            '<div>' +
-              '<div data-zh="閱讀進度" data-en="Reading progress" style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#4d6358;font-weight:700;margin-bottom:2px">閱讀進度</div>' +
-              '<div data-zh="' + readZh + '" data-en="' + readEn + '" style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:18px;font-weight:700;color:#0f172a">' + readZh + '</div>' +
-            '</div>' +
-            (read > 0
-              ? '<button id="dn-read-reset" type="button" data-zh="重設進度" data-en="Reset" style="background:#fff;border:1px solid var(--border, #dcd5c8);color:#5e574e;padding:5px 10px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer">重設進度</button>'
-              : '<span data-zh="逐篇閱讀後自動記錄" data-en="Auto-tracked as you read" style="font-size:12px;color:var(--muted,#71695e);font-style:italic">逐篇閱讀後自動記錄</span>') +
-          '</div>' +
-          '<div style="height:8px;background:#f1ece4;border-radius:9999px;overflow:hidden">' +
-            '<div style="height:100%;width:' + pct + '%;background:linear-gradient(90deg,#a4b5a8,#0c5159);transition:width .35s ease;"></div>' +
-          '</div>' +
-        '</div>';
-
-      var resetBtn = document.getElementById('dn-read-reset');
-      if (resetBtn) resetBtn.addEventListener('click', function () {
-        var msg = (DN.detectLang && DN.detectLang() === 'en')
-          ? 'Reset reading progress? This only clears local records on this device.'
-          : '要重設閱讀進度嗎？ 本動作只會清除本裝置的紀錄，不會影響網站。';
-        if (confirm(msg)) {
-          DN.resetRead();
-        }
-      });
-    }
-    render();
-    window.addEventListener('dn-read-updated', render);
-    window.addEventListener('storage', function (e) {
-      if (e.key === DN.READ_KEY) render();
-    });
-  };
 
   // Keep query preparation and scoring independent of the DOM. All matching
   // uses the catalog plus its generated descriptions, not a second keyword list.
@@ -110,137 +65,6 @@
       heading.appendChild(tag);
     });
   };
-
-  DN.injectSpotlight = function () {
-    var recentEl = document.getElementById('dn-recent-list');
-    var popularEl = document.getElementById('dn-popular-list');
-    if (!recentEl && !popularEl) return;
-    // Filter out unpublished articles so they don't appear in the homepage
-    // "recent" / "popular" spotlights.
-    var articles = (DN.ARTICLES || []).filter(function (a) { return !a.unpublished; });
-    if (!document.getElementById('dn-spotlight-card-css')) {
-      var spotlightStyle = document.createElement('style');
-      spotlightStyle.id = 'dn-spotlight-card-css';
-      spotlightStyle.textContent =
-        '.dn-spotlight-card:hover,.dn-spotlight-card:focus-visible{' +
-        'border-color:rgba(122,146,133,.5)!important;' +
-        'transform:translateY(-2px)!important;' +
-        'box-shadow:0 8px 18px -10px rgba(77,99,88,.25)!important;' +
-        'outline:none}';
-      document.head.appendChild(spotlightStyle);
-    }
-
-    // SVG icon library — keyed by article tag (Chinese match) or fallback
-    // 32x32 illustrative line-art icons in teal palette
-    var TAG_SVG = {
-      '痘痘':       '<circle cx="16" cy="16" r="11" fill="#fff" stroke="#4d6358" stroke-width="1.6"/><circle cx="13" cy="14" r="2.5" fill="#a4b5a8"/><circle cx="20" cy="18" r="1.8" fill="#7a9285"/><circle cx="17" cy="20" r="1.2" fill="#4d6358"/>',
-      '防曬':       '<circle cx="16" cy="16" r="6" fill="#a4b5a8" stroke="#4d6358" stroke-width="1.5"/><line x1="16" y1="2" x2="16" y2="6" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="26" x2="16" y2="30" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/><line x1="2" y1="16" x2="6" y2="16" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/><line x1="26" y1="16" x2="30" y2="16" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="6" x2="9" y2="9" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/><line x1="23" y1="23" x2="26" y2="26" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="26" x2="9" y2="23" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/><line x1="23" y1="9" x2="26" y2="6" stroke="#4d6358" stroke-width="2" stroke-linecap="round"/>',
-      '異膚':       '<path d="M5 22 Q9 13 16 13 Q23 13 27 22 Z" fill="#fde68a" stroke="#4d6358" stroke-width="1.5" stroke-linejoin="round"/><circle cx="11" cy="20" r="1.4" fill="#dc2626"/><circle cx="18" cy="19" r="1.2" fill="#dc2626"/><circle cx="22" cy="21" r="1" fill="#dc2626"/>',
-      '兒童異膚':   '<circle cx="16" cy="13" r="6" fill="#cffafe" stroke="#4d6358" stroke-width="1.5"/><circle cx="14" cy="12" r="0.8" fill="#0f172a"/><circle cx="18" cy="12" r="0.8" fill="#0f172a"/><path d="M14 15 Q16 17 18 15" fill="none" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/><path d="M10 26 Q16 21 22 26" fill="none" stroke="#4d6358" stroke-width="1.5" stroke-linecap="round"/>',
-      '肝斑 / 美白':'<circle cx="16" cy="16" r="11" fill="#fff" stroke="#4d6358" stroke-width="1.5"/><path d="M10 14 Q12 12 14 13 Q12 16 10 14 Z" fill="#9a3412"/><path d="M19 17 Q22 15 23 18 Q21 20 19 17 Z" fill="#7c2d12"/><circle cx="16" cy="20" r="1.5" fill="#9a3412"/>',
-      '玫瑰斑':     '<circle cx="16" cy="16" r="11" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><circle cx="12" cy="14" r="0.8" fill="#dc2626"/><circle cx="20" cy="14" r="0.8" fill="#dc2626"/><circle cx="16" cy="18" r="0.6" fill="#dc2626"/><line x1="10" y1="10" x2="14" y2="12" stroke="#dc2626" stroke-width="1" stroke-linecap="round"/><line x1="22" y1="10" x2="18" y2="12" stroke="#dc2626" stroke-width="1" stroke-linecap="round"/>',
-      '落髮':       '<path d="M8 22 Q8 8 16 8 Q24 8 24 22" fill="none" stroke="#4d6358" stroke-width="1.5" stroke-linecap="round"/><line x1="11" y1="9" x2="10" y2="13" stroke="#4d6358" stroke-width="1" stroke-linecap="round"/><line x1="13" y1="8" x2="13" y2="13" stroke="#4d6358" stroke-width="1" stroke-linecap="round"/><line x1="16" y1="8" x2="16" y2="14" stroke="#4d6358" stroke-width="1" stroke-linecap="round"/><line x1="19" y1="8" x2="19" y2="13" stroke="#4d6358" stroke-width="1" stroke-linecap="round"/><line x1="21" y1="9" x2="22" y2="13" stroke="#4d6358" stroke-width="1" stroke-linecap="round"/>',
-      '圓禿':       '<circle cx="16" cy="16" r="11" fill="#fff" stroke="#4d6358" stroke-width="1.5"/><circle cx="16" cy="16" r="5" fill="#fde68a" stroke="#9a3412" stroke-width="1"/><line x1="9" y1="9" x2="11" y2="12" stroke="#4d6358" stroke-width="1"/><line x1="23" y1="9" x2="21" y2="12" stroke="#4d6358" stroke-width="1"/>',
-      '蕁麻疹':     '<circle cx="11" cy="12" r="3" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/><circle cx="20" cy="14" r="3.5" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/><circle cx="14" cy="20" r="2.5" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/><circle cx="22" cy="22" r="2" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>',
-      '乾癬':       '<rect x="6" y="6" width="20" height="20" rx="2" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><line x1="9" y1="10" x2="22" y2="10" stroke="#fef3c7" stroke-width="1.5"/><line x1="10" y1="14" x2="20" y2="14" stroke="#fef3c7" stroke-width="1.5"/><line x1="9" y1="18" x2="23" y2="18" stroke="#fef3c7" stroke-width="1.5"/><line x1="11" y1="22" x2="21" y2="22" stroke="#fef3c7" stroke-width="1.5"/>',
-      '香港腳 / 灰指甲':'<path d="M8 24 Q6 18 9 14 Q12 10 17 11 Q21 12 22 16 Q23 22 19 25 Z" fill="#ebe4d8" stroke="#4d6358" stroke-width="1.5"/><circle cx="13" cy="14" r="1" fill="#16a34a"/><circle cx="17" cy="16" r="0.8" fill="#16a34a"/><circle cx="14" cy="20" r="0.6" fill="#16a34a"/>',
-      '病毒疣 / HPV':'<circle cx="16" cy="16" r="11" fill="#fff" stroke="#4d6358" stroke-width="1.5"/><circle cx="13" cy="14" r="1.5" fill="#7a9285"/><circle cx="19" cy="13" r="1.2" fill="#7a9285"/><circle cx="17" cy="18" r="1.8" fill="#a4b5a8"/><circle cx="14" cy="20" r="1" fill="#7a9285"/><circle cx="20" cy="20" r="1.2" fill="#7a9285"/>',
-      '帶狀疱疹 / 皮蛇':'<path d="M5 16 Q10 8 16 16 Q22 24 27 16" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round"/><circle cx="10" cy="14" r="1.2" fill="#fee2e2" stroke="#dc2626"/><circle cx="16" cy="18" r="1.2" fill="#fee2e2" stroke="#dc2626"/><circle cx="22" cy="14" r="1.2" fill="#fee2e2" stroke="#dc2626"/>',
-      '白斑':       '<circle cx="16" cy="16" r="11" fill="#a4b5a8" stroke="#4d6358" stroke-width="1.5"/><circle cx="13" cy="13" r="3" fill="#fff"/><circle cx="20" cy="18" r="2.5" fill="#fff"/><circle cx="14" cy="20" r="1.5" fill="#fff"/>',
-      '化膿性汗腺炎':'<circle cx="11" cy="14" r="2.5" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><circle cx="21" cy="14" r="2.5" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><circle cx="16" cy="20" r="2" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/><line x1="11" y1="14" x2="21" y2="14" stroke="#9a3412" stroke-width="1" stroke-dasharray="2 2"/><line x1="11" y1="14" x2="16" y2="20" stroke="#9a3412" stroke-width="1" stroke-dasharray="2 2"/><line x1="21" y1="14" x2="16" y2="20" stroke="#9a3412" stroke-width="1" stroke-dasharray="2 2"/>',
-      '猴痘 Mpox':  '<circle cx="11" cy="11" r="2.2" fill="#fef3c7" stroke="#9a3412" stroke-width="1.2"/><circle cx="21" cy="11" r="2.2" fill="#fef3c7" stroke="#9a3412" stroke-width="1.2"/><circle cx="16" cy="16" r="2.5" fill="#fef3c7" stroke="#9a3412" stroke-width="1.2"/><circle cx="11" cy="22" r="2" fill="#fef3c7" stroke="#9a3412" stroke-width="1.2"/><circle cx="21" cy="22" r="2" fill="#fef3c7" stroke="#9a3412" stroke-width="1.2"/>',
-      '生物製劑':   '<rect x="9" y="6" width="14" height="20" rx="3" fill="#cffafe" stroke="#0c5159" stroke-width="1.5"/><rect x="11" y="9" width="10" height="3" fill="#0c5159"/><circle cx="16" cy="18" r="2" fill="#0c5159"/><rect x="14" y="22" width="4" height="3" rx="0.5" fill="#0c5159"/>',
-      '酸類 / A 酸':'<path d="M11 5 L11 18 Q11 24 16 24 Q21 24 21 18 L21 5 Z" fill="#cffafe" stroke="#0c5159" stroke-width="1.5"/><path d="M11 5 L21 5" stroke="#0c5159" stroke-width="1.5"/><line x1="13" y1="14" x2="19" y2="14" stroke="#0c5159" stroke-width="1"/><circle cx="14" cy="19" r="0.8" fill="#0c5159"/><circle cx="18" cy="20" r="0.8" fill="#0c5159"/>',
-      '常見問題 FAQ':'<circle cx="16" cy="16" r="11" fill="#fff" stroke="#4d6358" stroke-width="1.5"/><path d="M13 13 Q13 10 16 10 Q19 10 19 13 Q19 15 16 16 L16 18" fill="none" stroke="#4d6358" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="22" r="1.2" fill="#4d6358"/>',
-      '粉瘤 / 表皮囊腫':'<ellipse cx="16" cy="17" rx="9" ry="7" fill="#ebe4d8" stroke="#4d6358" stroke-width="1.5"/><circle cx="16" cy="13" r="1.5" fill="#9a3412"/><line x1="16" y1="11" x2="16" y2="13" stroke="#4d6358" stroke-width="1"/>',
-      '雷射 / 光電':'<rect x="6" y="14" width="14" height="4" rx="1" fill="#a4b5a8" stroke="#4d6358" stroke-width="1.2"/><line x1="20" y1="16" x2="28" y2="16" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/><circle cx="28" cy="16" r="1.5" fill="#dc2626"/>',
-      '健保 / 自費':'<rect x="6" y="9" width="20" height="14" rx="2" fill="#cffafe" stroke="#0c5159" stroke-width="1.5"/><line x1="6" y1="13" x2="26" y2="13" stroke="#0c5159" stroke-width="1.2"/><line x1="9" y1="18" x2="15" y2="18" stroke="#0c5159" stroke-width="1.2"/><circle cx="22" cy="19" r="1.5" fill="#0c5159"/>',
-      '標靶藥物副作用':'<circle cx="16" cy="16" r="11" fill="#fee2e2" stroke="#9a3412" stroke-width="1.5"/><line x1="10" y1="10" x2="22" y2="22" stroke="#9a3412" stroke-width="2" stroke-linecap="round"/><line x1="22" y1="10" x2="10" y2="22" stroke="#9a3412" stroke-width="2" stroke-linecap="round"/>',
-      '類固醇藥膏': '<rect x="11" y="5" width="10" height="22" rx="2" fill="#cffafe" stroke="#0c5159" stroke-width="1.5"/><rect x="13" y="3" width="6" height="3" fill="#0c5159"/><line x1="13" y1="11" x2="19" y2="11" stroke="#0c5159" stroke-width="0.8"/><line x1="13" y1="14" x2="19" y2="14" stroke="#0c5159" stroke-width="0.8"/><line x1="13" y1="17" x2="19" y2="17" stroke="#0c5159" stroke-width="0.8"/>',
-      '皮膚鏡 AI':   '<rect x="5" y="7" width="22" height="18" rx="5" fill="#eef2ff" stroke="#4d6358" stroke-width="1.5"/><circle cx="11" cy="15" r="2" fill="#a4b5a8"/><circle cx="17" cy="12" r="1.5" fill="#7a9285"/><circle cx="21" cy="18" r="2.4" fill="#4d6358"/><path d="M9 22 C13 18 18 21 24 14" stroke="#0e7c86" stroke-width="1.4" fill="none" stroke-linecap="round"/>'
-    };
-    // Aliases for tag variants in DN.ARTICLES that don't exactly match TAG_SVG keys
-    var TAG_ALIAS = {
-      '異位性皮膚炎':   '異膚',
-      '健保規範':     '健保 / 自費',
-      '口服 A 酸':    '酸類 / A 酸',
-      '酸類':         '酸類 / A 酸',
-      '外用類固醇':   '類固醇藥膏',
-      '常見問題':     '常見問題 FAQ',
-      '標靶藥物':     '標靶藥物副作用',
-      '猴痘':         '猴痘 Mpox',
-      '病毒疣':       '病毒疣 / HPV',
-      '皮蛇':         '帶狀疱疹 / 皮蛇',
-      '粉瘤':         '粉瘤 / 表皮囊腫',
-      '足癬':         '香港腳 / 灰指甲',
-      '酒糟肌':       '玫瑰斑',
-      '肝斑':         '肝斑 / 美白',
-      '美白':         '肝斑 / 美白',
-      '痘疤':         '痘痘',
-      '結節性癢疹':   '異膚',
-      '皮膚淋巴瘤':   '生物製劑',
-      'AI 與皮膚科':  '皮膚鏡 AI'
-    };
-    function svgFor(tag) {
-      var resolvedTag = TAG_ALIAS[tag] || tag;
-      var content = TAG_SVG[resolvedTag] || TAG_SVG['常見問題 FAQ'];
-      return '<svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" style="flex-shrink:0">' + content + '</svg>';
-    }
-
-
-    function safeSlug(value) {
-      var slug = String(value || '');
-      return /^[a-z0-9-]+$/.test(slug) ? slug : '';
-    }
-
-    function rowHTML(a, badge) {
-      var slug = safeSlug(a.slug);
-      if (!slug) return '';
-      var tagZh = escapeHtml(a.tag || '');
-      var tagEn = escapeHtml(a.tag_en || a.tag || '');
-      var dateLabel = escapeHtml(a.date || '');
-      var titleZh = escapeHtml(a.title || a.slug);
-      var titleEn = escapeHtml(a.title_en || a.title || a.slug);
-      var num = escapeHtml(DN.getArticleNumber(slug));
-      var iconSvg = svgFor(a.tag);
-      return '<a class="dn-spotlight-card" href="/blog/' + slug + '" ' +
-        'style="display:flex;flex-direction:column;gap:5px;padding:14px 16px;background:#fff;' +
-        'border:1px solid var(--border, #dcd5c8);border-radius:12px;text-decoration:none;color:inherit;' +
-        'transition:all .15s;box-shadow:0 1px 2px rgba(15,23,42,.04)">' +
-        '<div style="display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#4d6358">' +
-          (badge ? '<span style="padding:2px 8px;border-radius:9999px;background:' + badge.bg + ';color:' + badge.fg + ';letter-spacing:.08em;font-size:10px">' + badge.label + '</span>' : '') +
-          (num ? '<span style="font-family:Inter,sans-serif;letter-spacing:.06em;color:#4d6358;font-weight:800">№' + num + '</span><span style="opacity:.5">·</span>' : '') +
-          '<span data-dn-text-only data-zh="' + tagZh + '" data-en="' + tagEn + '">' + tagZh + '</span>' +
-          '<span style="opacity:.5">·</span>' +
-          '<time style="font-weight:500;font-family:Inter,sans-serif;letter-spacing:0">' + dateLabel + '</time>' +
-        '</div>' +
-        '<div style="display:flex;align-items:center;gap:10px">' +
-          iconSvg +
-          '<div data-dn-text-only data-zh="' + titleZh + '" data-en="' + titleEn + '" style="font-family:\'Noto Serif TC\',Georgia,serif;font-size:15px;font-weight:700;line-height:1.5;color:#0f172a;flex:1">' + titleZh + '</div>' +
-        '</div>' +
-      '</a>';
-    }
-
-    // Recent: top 2 by date desc (string compare works for YYYY-MM-DD)
-    if (recentEl) {
-      var sorted = articles.slice().sort(function (a, b) { return DN.compareDates(b.date, a.date); });
-      var topRecent = sorted.slice(0, 2);
-      recentEl.innerHTML = topRecent.map(function (a, i) {
-        return '<li>' + rowHTML(a, i === 0 ? { label: 'NEW', bg: '#fee2e2', fg: '#991b1b' } : null) + '</li>';
-      }).join('');
-    }
-    // Popular: top 2 from curated DN.POPULAR_PICKS (KV-overridable)
-    if (popularEl) {
-      var picks = DN.POPULAR_PICKS.map(function (slug) {
-        return articles.find(function (a) { return a.slug === slug; });
-      }).filter(Boolean).slice(0, 2);
-      popularEl.innerHTML = picks.map(function (a, i) {
-        return '<li>' + rowHTML(a, { label: '#' + (i + 1), bg: '#dcfce7', fg: '#14532d' }) + '</li>';
-      }).join('');
-    }
-    try { DN.markNewArticles(); } catch (e) { /* ignore */ }
-  };
-
 
   // Bilingual labels for tag chips. Maps ZH tag → EN tag. Keep in sync with
   // tag keys in DN.TAG_CATEGORIES below.
@@ -388,7 +212,7 @@
   DN.bindArticleHub = function () {
     var hub = document.getElementById('dn-hub');
     if (!hub) return;
-    // Exclude unpublished articles from hub spotlight + topic filters.
+    // Exclude unpublished articles from hub topic filters.
     var articles = (DN.ARTICLES || []).filter(function (a) { return !a.unpublished; });
     var mode = hub.dataset.hubMode || 'full';
 

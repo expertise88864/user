@@ -12,12 +12,11 @@
    paint. Vercel Speed Insights flagged CLS=0.2 (Needs Improvement) on
    2026-05-17. Root cause: #dn-hub static fallback was ~150px, bindArticleHub
    replaced it with search-box + 29 tag chips (~460px desktop / ~620px
-   mobile) → everything below shifted down. Same for spotlight lists.
+   mobile) → everything below shifted down.
    Reserving min-height in CSS means the JS swap fills existing reserved
    space without any layout shift. */
 #dn-hub{min-height:460px;box-sizing:border-box}
 @media(max-width:639px){#dn-hub{min-height:620px}}
-#dn-popular-list,#dn-recent-list{min-height:180px;box-sizing:border-box}
 /* Custom palette — sourced from index.html tailwind.config */
 :root{--mint-50:#f5fbfa;--mint-100:#eaf6f3;--mint-200:#d1ebe5;--mint-300:#a7d8ce;--teal-50:#ecfeff;--teal-100:#cffafe;--teal-200:#a5f3fc;--teal-300:#67e8f9;--teal-400:#22d3ee;--teal-500:#14b8a6;--teal-600:#0e7c86;--teal-700:#0c5159;--teal-800:#083a40;--ink-950:#020617;--ink-900:#0f172a;--ink-800:#1e293b;--ink-700:#334155;--ink-500:#64748b;--ink-400:#94a3b8;--ink-300:#cbd5e1;}
 /* ─── Tailwind Preflight (essential resets) ─── */
@@ -76,7 +75,7 @@ code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,
    ───────────────────────────────────────────────────────────────── */
 main > section:not(:first-of-type),
 .dn-med-fig,
-#articles, #dn-spotlight, .home-faq,
+#articles, .home-faq,
 footer.mag-footer {
   content-visibility: auto;
   contain-intrinsic-size: auto 600px;
@@ -342,14 +341,6 @@ footer.mag-footer {
 .z-40{z-index:40}
 @media (min-width:640px){.sm\:h-44{height:11rem}.sm\:text-left{text-align:left}.sm\:pt-16{padding-top:4rem}.sm\:text-\[17px\]{font-size:17px}.sm\:w-44{width:11rem}.sm\:text-\[32px\]{font-size:32px}.sm\:px-8{padding-left:2rem;padding-right:2rem}.sm\:flex-row{flex-direction:row}.sm\:p-8{padding:2rem}.sm\:text-\[42px\]{font-size:42px}.sm\:items-start{align-items:flex-start}.sm\:text-\[11\.5px\]{font-size:11.5px}.sm\:inline-flex{display:inline-flex}.sm\:justify-start{justify-content:flex-start}.sm\:h-24{height:6rem}.sm\:text-\[44px\]{font-size:44px}.sm\:p-10{padding:2.5rem}.sm\:text-\[18px\]{font-size:18px}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:text-\[16px\]{font-size:16px}.sm\:gap-10{gap:2.5rem}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:text-\[88px\]{font-size:88px}.sm\:pt-14{padding-top:3.5rem}.sm\:gap-3{gap:0.75rem}.sm\:text-\[24px\]{font-size:24px}}
 @media (min-width:768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
-/* ─── Skeleton loaders for spotlight (recent / popular) ─── */
-@keyframes dn-skel-pulse{0%,100%{background-color:#ebe4d8;opacity:.6}50%{background-color:#dcd5c8;opacity:.9}}
-.dn-skel{padding:14px 16px;background:#fff;border:1px solid var(--border,#dcd5c8);border-radius:12px;display:flex;flex-direction:column;gap:8px;list-style:none}
-.dn-skel-meta{height:11px;width:55%;border-radius:4px;background:#ebe4d8;animation:dn-skel-pulse 1.4s ease-in-out infinite}
-.dn-skel-row{display:flex;align-items:center;gap:10px}
-.dn-skel-icon{width:32px;height:32px;border-radius:8px;flex-shrink:0;background:#ebe4d8;animation:dn-skel-pulse 1.4s ease-in-out infinite}
-.dn-skel-title{flex:1;height:15px;border-radius:4px;background:#ebe4d8;animation:dn-skel-pulse 1.4s ease-in-out infinite}
-@media (prefers-reduced-motion:reduce){.dn-skel-meta,.dn-skel-icon,.dn-skel-title{animation:none}}
 
 /* Responsive sm: utilities (≥640px) — added 2026-05-07 to fix /about layout
  * (these were missing from JIT extract). Covers everything the About page

@@ -60,4 +60,12 @@ for(const field of ['settingsApproved','requestHead','sourceSha256','source'])te
  const proof=structuredClone(template.proof);proof[field]=field==='settingsApproved'?1:field==='requestHead'?'0'.repeat(40):field==='sourceSha256'?'A'.repeat(64):'../outside';
  assert.throws(()=>receipt(Buffer.from(JSON.stringify({version:1,request:proof},null,2)+'\n')));
 });
+test('retired 熱門推薦 fields: exact canonical removal passes without a request, in candidate and formal main',async()=>{
+ const run=spawnSync('python',['_test_site_settings_delivery.py','--fixture-retired-picks'],{encoding:'utf8'});
+ assert.equal(run.status,0,run.stderr);const data=JSON.parse(run.stdout);
+ let h=fixture(data);const result=await verify(data.candidates.migrated,h.api);
+ assert.equal(result.activeRequest,false);assert.equal(result.published,false);
+ h=fixture(data);h.data.refs.main=data.candidates.migrated;assert.equal((await verify(data.candidates.migrated,h.api)).authorIntentVerified,true);
+ for(const name of ['changed-font','kept-legacy','compact'])await assert.rejects(verify(data.candidates[name],fixture(data).api),/without author intent/,name);
+});
 test('duplicate proof properties never pass last-key-wins parsing',()=>assert.throws(()=>receipt(Buffer.from('{"version":1,"version":1,"request":null}\n'))));

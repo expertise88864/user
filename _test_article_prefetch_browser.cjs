@@ -32,12 +32,14 @@ module.exports = async function checkArticlePrefetch(browser) {
       return document.querySelectorAll('link[rel="prefetch"][as="document"]').length;
     });
     assert.equal(initial,0,'Loading the public homepage must not manually prefetch navigation documents');
-    assert.equal(await page.evaluate(() => typeof DN.injectReadProgress),'undefined',
-      'The shared runtime must not carry the hub-only reading progress renderer');
-    assert.equal(await page.locator('#dn-read-progress').textContent(),'',
-      'Reading progress must wait for the actual lazy hub bundle');
+    assert.equal(await page.evaluate(() => typeof DN.bindArticleHub),'undefined',
+      'The shared runtime must not carry the lazy hub renderer');
     releaseHub();
-    await page.waitForFunction(() => !!document.querySelector('#dn-read-progress [data-zh]'));
+    await page.waitForFunction(() => typeof DN.bindArticleHub === 'function');
+    // 2026-10-17: the homepage 熱門推薦 spotlight and 閱讀進度 widget were retired.
+    assert.deepEqual(await page.evaluate(() => ({spotlight:typeof DN.injectSpotlight,progress:typeof DN.injectReadProgress,
+      hosts:document.querySelectorAll('#dn-spotlight,#dn-popular-list,#dn-recent-list,#dn-read-progress').length})),
+      {spotlight:'undefined',progress:'undefined',hosts:0},'The retired homepage spotlight and reading progress must stay removed');
     // Exercise the fallback independently of each engine's feature availability.
     // Removing only the optional rules tag avoids substituting runtime bytes.
     await page.evaluate(() => {
@@ -58,20 +60,6 @@ module.exports = async function checkArticlePrefetch(browser) {
     });
     assert.equal(await page.locator('link[rel="prefetch"][as="document"]').count(),1,'Pointer, keyboard and touch hints must deduplicate');
     assert.equal(new URL(page.url()).pathname,'/','Hints must not navigate or intercept reader clicks');
-    // Exercise actual progress clicks after counting hints: native pointer
-    // movement over real article cards is itself a legitimate prefetch intent.
-    await page.evaluate(() => {
-      const draft=DN.ARTICLES.find(article => article.unpublished);
-      localStorage.setItem(DN.READ_KEY,JSON.stringify(['acne-myths','acne-myths',draft.slug,'unknown']));
-      window.dispatchEvent(new CustomEvent('dn-read-updated'));
-    });
-    assert.match(await page.locator('#dn-read-progress').textContent(),/已讀 1 篇 \(2%\)/);
-    assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem(DN.READ_KEY)).length),4,
-      'Filtering public progress must preserve historical reading records');
-    page.once('dialog',dialog => dialog.accept());
-    await page.locator('#dn-read-reset').click();
-    assert.match(await page.locator('#dn-read-progress').textContent(),/已讀 0 篇 \(0%\)/);
-    assert.equal(await page.evaluate(() => localStorage.getItem(DN.READ_KEY)),null);
     await page.goto(origin+'/en/blog/index.html');
     await page.waitForFunction(() => !!window.DN?.bindArticleHub && !!DN.ARTICLES_DESC?.['psoriasis-systemic']);
     const fallback = await page.evaluate(() => {
@@ -102,11 +90,6 @@ module.exports = async function checkArticlePrefetch(browser) {
       DN.applyTextOnly('zh');result.zhTitle=card.querySelector('h2').textContent;
       card.querySelector('h2').textContent='Custom author wording';
       DN.applyTextOnly('en');result.customTitle=card.querySelector('h2').textContent;
-      const popular=document.createElement('ul');popular.id='dn-popular-list';document.body.appendChild(popular);
-      DN.POPULAR_PICKS=[article.slug];DN.injectSpotlight();DN.applyTextOnly('en');
-      const fields=Array.from(popular.querySelectorAll('[data-dn-text-only]'));
-      result.spotlightText=fields.map(node => node.textContent);
-      result.spotlightImages=popular.querySelectorAll('img').length;
       return result;
     });
     for (const field of ['title','description','tag']) assert.equal(safeText[field],safeText.payload,
@@ -114,8 +97,6 @@ module.exports = async function checkArticlePrefetch(browser) {
     assert.equal(safeText.images,0);assert.equal(safeText.injected,false);
     assert.equal(safeText.zhTitle,'Fixture title');
     assert.equal(safeText.customTitle,'Custom author wording','Translation must preserve custom visible wording');
-    assert.deepEqual(safeText.spotlightText,[safeText.payload,safeText.payload]);
-    assert.equal(safeText.spotlightImages,0,'Spotlight catalogue fields must also remain plain text');
     const staticPage=await context.newPage();
     await staticPage.route('**/*',route => route.abort());
     for (const card of staticFixture.cards) {
@@ -167,6 +148,6 @@ module.exports = async function checkArticlePrefetch(browser) {
       assert.equal(result.title,relatedFixture.scriptPayload,'JSON escaping must preserve exact metadata values');
     }
     await staticPage.close();
-    return {startupHints:0,intentHints:1,compiledRuntime:true,lazyReadingProgress:true,missingCardFallback:true,plainCatalogueTranslation:true,staticPlainCatalogueTranslation:true,relatedPlainTranslation:true,serverRenderedPlainTranslation:true};
+    return {startupHints:0,intentHints:1,compiledRuntime:true,retiredHomeSpotlight:true,missingCardFallback:true,plainCatalogueTranslation:true,staticPlainCatalogueTranslation:true,relatedPlainTranslation:true,serverRenderedPlainTranslation:true};
   } finally {await context.close();}
 };

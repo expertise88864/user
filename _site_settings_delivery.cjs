@@ -8,7 +8,7 @@ const contract=require('./_site_settings_contract.json');
 const FILE='.site-settings-delivery.json',REPO='expertise88864/user',SOURCE='_site_settings.json',CATALOG='assets/settings-catalog.json';
 const BRANCH='cms-settings/site',MANIFEST='.cms-settings/site.json',REQUEST='.cms-settings-requests/site.json';
 const FIELDS=['version','repository','source','requestHead','requestBlobSha','draftHead','manifestBlobSha','baseMain','baseSha','catalogSha','settingsBlobSha','preparedAgainst','sourceSha256','settingsApproved'];
-const DEFAULT={version:1,legacyPicks:true,font:{bodyFont:'',headFont:'',bodySize:''},order:[],picks:['acne-myths','sunscreen-myths','atopic-dermatitis-overview','topical-steroids-guide','hairloss-myths']};
+const DEFAULT={version:1,font:{bodyFont:'',headFont:'',bodySize:''},order:[]};
 const encoded=value=>Buffer.from(JSON.stringify(value,null,2)+'\n');
 function decode(raw,compact=false){const value=JSON.parse(raw.toString('utf8'));assert.ok(Buffer.from(JSON.stringify(value,null,compact?undefined:2)+'\n').equals(raw),'Settings JSON is not canonical');return value;}
 function baselineData(raw){
@@ -39,12 +39,22 @@ function catalog(value){
   for(const key of ['title','title_en'])assert.ok(typeof item[key]==='string'&&item[key].trim()&&item[key].length<=500&&!/[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:^|[^\uD800-\uDBFF])[\uDC00-\uDFFF]/.test(item[key]),'Invalid settings title');seen.add(item.slug);
  }return value.articles;
 }
+const slugList=(values,max,known=null)=>Array.isArray(values)&&values.length<=max&&new Set(values).size===values.length&&values.every(v=>typeof v==='string'&&v.length<=100&&/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(v)&&(!known||known.has(v)));
 function settings(value,articles,stored=false){
- assert.ok(exactKeys(value,['version','legacyPicks','font','order','picks'])&&value.version===1&&typeof value.legacyPicks==='boolean'&&exactKeys(value.font,Object.keys(contract.fonts)),'Invalid settings config');
+ assert.ok(exactKeys(value,['version','font','order'])&&value.version===1&&exactKeys(value.font,Object.keys(contract.fonts)),'Invalid settings config');
  for(const [key,choices]of Object.entries(contract.fonts))assert.ok(typeof value.font[key]==='string'&&choices.includes(value.font[key]),'Invalid settings font');
- const known=new Set(articles.map(a=>a.slug));for(const [key,max]of [['order',contract.maxArticles],['picks',contract.maxPicks]]){
-  const values=value[key];assert.ok(Array.isArray(values)&&values.length<=max&&new Set(values).size===values.length&&values.every(v=>typeof v==='string'&&v.length<=100&&/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(v)&&(stored||known.has(v))),'Invalid settings selection');
- }assert.ok(value.picks.length>0&&(stored||!value.order.length||value.order.length===articles.length),'Incomplete settings selection');return value;
+ assert.ok(slugList(value.order,contract.maxArticles,stored?null:new Set(articles.map(a=>a.slug))),'Invalid settings selection');
+ assert.ok(stored||!value.order.length||value.order.length===articles.length,'Incomplete settings selection');return value;
+}
+// Homepage recommendations (熱門推薦) were retired 2026-10-17. Mirrors Python:
+// only the exact two legacy fields may be dropped without a settings request.
+function retiredPicksMigration(oldRaw,newRaw){
+ try{
+  const old=baselineData(oldRaw);
+  if(!exactKeys(old,['version','font','order','picks','legacyPicks'])||typeof old.legacyPicks!=='boolean'||!old.picks.length||!slugList(old.picks,12))return false;
+  const next=settings({version:old.version,font:old.font,order:old.order},[],true);
+  return newRaw.equals(encoded({version:1,font:{...next.font},order:[...next.order]}));
+ }catch(_){return false;}
 }
 async function ancestor(api,base,head){if(base===head)return;const compare=await api('/compare/'+base+'...'+head);assert.ok(['ahead','identical'].includes(compare?.status)&&compare.merge_base_commit?.sha===base,'Settings ancestry invalid');}
 async function optional(api,path,head,limit,trees){return(await tree(api,head,trees)).has(path)?blob(api,path,head,limit,trees):null;}
@@ -64,8 +74,7 @@ async function payload(api,head,prepared,trees){
  await ancestor(api,m.baseMain,prepared);await ancestor(api,m.baseMain,r.draftHead);
  const baseSource=await blob(api,SOURCE,m.baseMain,32000,trees),baseCatalog=await blob(api,CATALOG,m.baseMain,200000,trees);
  assert.ok(baseSource.sha===m.baseSha&&baseCatalog.sha===m.catalogSha,'Settings baseline blobs changed');
- const articles=catalog(baselineData(baseCatalog.raw)),before=settings(baselineData(baseSource.raw),articles,true),after=settings(decode(source.raw),articles);
- assert.ok(before.legacyPicks!==false||after.legacyPicks!==true,'Settings cannot reactivate legacy reads');
+ const articles=catalog(baselineData(baseCatalog.raw));settings(baselineData(baseSource.raw),articles,true);settings(decode(source.raw),articles);
  const excluded=new Set([SOURCE,MANIFEST,REQUEST]);assert.deepEqual(payloadRows(await tree(api,m.baseMain,trees),excluded),payloadRows(await tree(api,head,trees),excluded),'Collateral settings branch changes');
  return{source,proof:{version:1,repository:REPO,source:SOURCE,requestHead:head,requestBlobSha:requestBlob.sha,draftHead:r.draftHead,manifestBlobSha:manifestBlob.sha,
   baseMain:m.baseMain,baseSha:m.baseSha,catalogSha:m.catalogSha,settingsBlobSha:source.sha,preparedAgainst:prepared,sourceSha256:createHash('sha256').update(source.raw).digest('hex'),settingsApproved:true}};
@@ -77,7 +86,7 @@ async function verify(candidate,api){
  await require('./_site_settings_retirement.cjs').verifyTransition(candidate,api,e,trees);
  if(e===null){
   if(oldSource===null){assert.equal(oldProof,null,'Invalid settings bootstrap');const articles=catalog(baselineData((await blob(api,CATALOG,candidate,200000,trees)).raw));assert.deepEqual(settings(decode(source.raw),articles),DEFAULT,'Bootstrap must keep original settings');assert.ok(source.raw.equals(encoded(DEFAULT)),'Bootstrap settings bytes differ');}
-  else assert.ok(oldProof!==null&&oldSource.sha===source.sha,'Settings changed without author intent');
+  else assert.ok(oldProof!==null&&(oldSource.sha===source.sha||retiredPicksMigration(oldSource.raw,source.raw)),'Settings changed without author intent');
  }else{
   await live(api,e.requestHead);await ancestor(api,e.preparedAgainst,candidate);const approved=await payload(api,e.requestHead,e.preparedAgainst,trees);
   assert.deepEqual(e,approved.proof,'Settings approval proof differs');assert.ok(source.sha===e.settingsBlobSha&&source.raw.equals(approved.source.raw),'Settings payload differs from approval');

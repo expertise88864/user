@@ -11,12 +11,14 @@ import _site_settings_delivery as s
 def sha(value): return hashlib.sha1(value.encode()).hexdigest()
 def blob(raw): return hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
 def compact(value): return (json.dumps(value,ensure_ascii=False,separators=(',',':'))+'\n').encode()
+SLUGS=['acne-myths','sunscreen-myths','atopic-dermatitis-overview','topical-steroids-guide','hairloss-myths']
+LEGACY_FIELDS={'legacyPicks':True,'picks':SLUGS[:2]}
 
 
 class Fixture:
     def __init__(self, bootstrap=False, noncanonical=False):
         self.calls=[]; self.commits={}; self.trees={}; self.blobs={}; self.refs={}; self.runs={}; self.tamper=None
-        self.articles=[{'slug':slug,'title':slug,'title_en':slug} for slug in s.DEFAULT['picks']]
+        self.articles=[{'slug':slug,'title':slug,'title_en':slug} for slug in SLUGS]
         self.settings=copy.deepcopy(s.DEFAULT)
         files={s.CATALOG:s.encoded({'version':1,'articles':self.articles}),'app.js':b'/* trusted application */'}
         if not bootstrap: files.update({s.SOURCE:s.encoded(self.settings),s.FILE:s.encoded({'version':1,'request':None})})
@@ -100,7 +102,7 @@ class SettingsDeliveryTests(unittest.TestCase):
         h=Fixture(bootstrap=True)
         good={s.SOURCE:s.encoded(s.DEFAULT),s.FILE:s.encoded({'version':1,'request':None})}
         self.assertFalse(s.verify(h.candidate(good),h)['activeRequest'])
-        for update in [{'version':True},{'legacyPicks':False},{'font':{**s.DEFAULT['font'],'bodySize':'18px'}},{'order':[h.articles[0]['slug']]}, {'picks':[h.articles[1]['slug']]}]:
+        for update in [{'version':True},LEGACY_FIELDS,{'picks':[h.articles[1]['slug']]},{'font':{**s.DEFAULT['font'],'bodySize':'18px'}},{'order':[h.articles[0]['slug']]}]:
             with self.subTest(update=update),self.assertRaises(ValueError):
                 s.verify(h.candidate({**good,s.SOURCE:s.encoded({**s.DEFAULT,**update})}),h)
 
@@ -129,11 +131,63 @@ class SettingsDeliveryTests(unittest.TestCase):
                 h=Fixture();h.approval(collateral=collateral)
                 with self.assertRaises(ValueError):s.plan(h,h.main,h.request)
 
-    def test_source_ownership_cannot_reactivate_legacy_reads(self):
-        h=Fixture();h.settings['legacyPicks']=False
-        h.main=h.commit({**h.files(h.main),s.SOURCE:s.encoded(h.settings)},[h.main],label='source owned');h.refs['main']=h.main
-        h.approval(updates={'legacyPicks':True})
+    @staticmethod
+    def legacy_main(settings=None):
+        """Main as published before homepage recommendations were retired."""
+        h=Fixture();legacy={**(settings or h.settings),**LEGACY_FIELDS}
+        h.main=h.commit({**h.files(h.main),s.SOURCE:s.encoded(legacy)},[h.main],label='legacy main');h.refs['main']=h.main
+        h.runs[h.main]=[{'path':'.github/workflows/delivery.yml','head_sha':h.main,'event':'push','head_branch':'main','head_repository':{'full_name':s.REPO}}]
+        return h,legacy
+
+    def test_retired_picks_migration_drops_only_the_two_legacy_fields_without_a_request(self):
+        custom={**copy.deepcopy(s.DEFAULT),'font':{**s.DEFAULT['font'],'bodySize':'17px'},'order':list(reversed(SLUGS))}
+        for settings in [None,custom]:
+            with self.subTest(settings=settings):
+                h,legacy=self.legacy_main(settings)
+                migrated={'version':1,'font':legacy['font'],'order':legacy['order']}
+                candidate=h.candidate({s.SOURCE:s.encoded(migrated)})
+                result=s.verify(candidate,h);self.assertFalse(result['activeRequest']);self.assertFalse(result['published'])
+                # The same exact SHA still verifies after fast-forwarding main.
+                h.refs['main']=candidate;self.assertTrue(s.verify(candidate,h)['authorIntentVerified'])
+
+    def test_retired_picks_migration_cannot_carry_any_other_settings_change(self):
+        h,legacy=self.legacy_main();migrated={'version':1,'font':legacy['font'],'order':legacy['order']}
+        for raw in [s.encoded({**migrated,'font':{**migrated['font'],'bodySize':'18px'}}),
+                    s.encoded({**migrated,'order':SLUGS}),
+                    s.encoded({**migrated,'legacyPicks':True}),
+                    s.encoded({**migrated,'picks':SLUGS[:1]}),
+                    compact(migrated),json.dumps(migrated,indent=4).encode()+b'\n']:
+            with self.subTest(raw=raw[:60]),self.assertRaises(ValueError):s.verify(h.candidate({s.SOURCE:raw}),h)
+        for broken in [{'legacyPicks':1},{'picks':[]},{'picks':['../private']},{'picks':SLUGS[:1]*2}]:
+            with self.subTest(broken=broken):
+                h,legacy=self.legacy_main();h.main=h.commit({**h.files(h.main),s.SOURCE:s.encoded({**legacy,**broken})},[h.main],label='broken legacy')
+                h.refs['main']=h.main
+                with self.assertRaises(ValueError):s.verify(h.candidate({s.SOURCE:s.encoded(migrated)}),h)
+
+    def test_retired_picks_migration_is_not_an_exemption_for_missing_proof_or_legacy_requests(self):
+        h,legacy=self.legacy_main();migrated={'version':1,'font':legacy['font'],'order':legacy['order']}
+        files=h.files(h.main);del files[s.FILE];h.main=h.commit(files,[h.main],label='no proof');h.refs['main']=h.main
+        with self.assertRaises(ValueError):s.verify(h.candidate({s.SOURCE:s.encoded(migrated),s.FILE:s.encoded({'version':1,'request':None})}),h)
+        # A request whose baseline still carries the retired fields fails closed.
+        h,_=self.legacy_main();h.approval()
         with self.assertRaises(ValueError):s.plan(h,h.main,h.request)
+
+    def test_upgrade_pre_retirement_cloud_draft_is_delivered_only_after_reconciling_onto_migrated_main(self):
+        h,legacy=self.legacy_main()
+        draft={**legacy,'font':{**legacy['font'],'bodySize':'17px'},'order':list(reversed(SLUGS)),'legacyPicks':False,'picks':SLUGS[1:2]}
+        legacy_request=h.approval(updates=draft)
+        with self.assertRaises(ValueError):s.plan(h,h.main,legacy_request)
+        migrated={'version':1,'font':legacy['font'],'order':legacy['order']}
+        candidate=h.candidate({s.SOURCE:s.encoded(migrated)});self.assertFalse(s.verify(candidate,h)['activeRequest'])
+        h.main=candidate;h.refs['main']=candidate
+        h.runs[candidate]=[{'path':'.github/workflows/delivery.yml','head_sha':candidate,'event':'push','head_branch':'main','head_repository':{'full_name':s.REPO}}]
+        # Still the pre-retirement draft: its baseline predates the migration.
+        with self.assertRaises(ValueError):s.plan(h,h.main,legacy_request)
+        # The admin reconcile keeps font/order and rebases onto migrated main.
+        h.settings=migrated;h.approval(updates={'font':draft['font'],'order':draft['order']})
+        files,_=s.plan(h,h.main,h.request);self.assertNotIn(b'picks',files[s.SOURCE])
+        self.assertEqual(json.loads(files[s.SOURCE]),{'version':1,'font':draft['font'],'order':draft['order']})
+        self.assertTrue(s.verify(h.candidate(files),h)['authorIntentVerified'])
 
     def test_manifest_approval_parent_schema_blob_and_tree_tampering(self):
         def wrong_blob(path,result):
@@ -186,4 +240,11 @@ if __name__=='__main__':
         h=Fixture(noncanonical=sys.argv[1:] == ['--fixture-noncanonical']);h.approval();files,proof=s.plan(h,h.main,h.request);candidate=h.candidate(files)
         print(json.dumps({'commits':h.commits,'trees':h.trees,'blobs':{bid:base64.b64encode(raw).decode() for bid,raw in h.blobs.items()},
                           'refs':h.refs,'runs':h.runs,'candidate':candidate,'proof':proof}))
+    elif sys.argv[1:]==['--fixture-retired-picks']:
+        h,legacy=SettingsDeliveryTests.legacy_main();migrated={'version':1,'font':legacy['font'],'order':legacy['order']}
+        candidates={name:h.candidate({s.SOURCE:raw}) for name,raw in [('migrated',s.encoded(migrated)),
+            ('changed-font',s.encoded({**migrated,'font':{**migrated['font'],'bodySize':'18px'}})),
+            ('kept-legacy',s.encoded({**migrated,'legacyPicks':True})),('compact',compact(migrated))]}
+        print(json.dumps({'commits':h.commits,'trees':h.trees,'blobs':{bid:base64.b64encode(raw).decode() for bid,raw in h.blobs.items()},
+                          'refs':h.refs,'runs':h.runs,'candidates':candidates}))
     else:unittest.main()

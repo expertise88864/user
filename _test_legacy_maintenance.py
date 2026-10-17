@@ -63,8 +63,7 @@ class SupportSecurityScopeTests(unittest.TestCase):
         with redirect_stdout(io.StringIO()):
             self.assertEqual(audit.main(), 0)
         mutations = [
-            (support.replace('dn-bmc-header-css', 'missing-header-css'), 'hover/focus'),
-            (support.replace("a.className = 'dn-bmc-header-link';", ''), 'use a class'),
+            (support + "\na.id = 'dn-bmc-header';", 'Header support pill was retired'),
             (support + '\na.onmouseover = unsafeHandler;', 'mouseover handlers'),
             (support + '\na.onmouseout = unsafeHandler;', 'mouseout handlers'),
         ]

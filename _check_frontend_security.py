@@ -37,19 +37,20 @@ def main() -> int:
     forbid(errors, "blog/pagefind-search.js", 'href="${d.url}"', "Pagefind result hrefs should not interpolate raw URLs")
     forbid(errors, "blog/pagefind-search.js", "${d.excerpt || ''}", "Pagefind excerpts should not be inserted unsanitized")
 
-    require(errors, "blog/blog-hub.js", "dn-spotlight-card-css", "Spotlight card hover/focus styles should live in CSS")
-    require(errors, "blog/blog-hub.js", 'class="dn-spotlight-card"', "Spotlight cards should use a class for interaction styling")
-    require(errors, "blog/blog-hub.js", "function escapeHtml(value)", "Spotlight card text should be escaped before template insertion")
-    require(errors, "blog/blog-hub.js", "function safeSlug(value)", "Spotlight card links should validate article slugs before template insertion")
-    require(errors, "blog/blog-hub.js", "var slug = safeSlug(a.slug);", "Spotlight cards should derive hrefs from validated slugs")
-    require(errors, "blog/blog-hub.js", "var titleZh = escapeHtml(a.title || a.slug);", "Spotlight card titles should be escaped")
-    require(errors, "blog/blog-hub.js", "var tagEn = escapeHtml(a.tag_en || a.tag || '');", "Spotlight card tags should be escaped")
-    forbid(errors, "blog/blog-hub.js", "onmouseover=", "Spotlight cards should not inject inline event attributes")
-    forbid(errors, "blog/blog-hub.js", "onmouseout=", "Spotlight cards should not inject inline event attributes")
-    forbid(errors, "blog/blog-hub.js", 'href="/blog/\' + a.slug', "Spotlight card hrefs should not interpolate raw slugs")
+    # The homepage spotlight (熱門推薦 / 閱讀進度) was retired 2026-10-17 by user
+    # decision. Its escaping/class checks went with it; reintroducing the
+    # renderer must restore equivalent checks, so its entry point is forbidden.
+    forbid(errors, "blog/blog-hub.js", "DN.injectSpotlight", "Retired homepage spotlight must not return without its escaping and class-styling checks")
+    forbid(errors, "blog/blog-hub.js", "DN.injectReadProgress", "Retired homepage reading-progress widget must not return without review")
+    require(errors, "blog/blog-hub.js", "function escapeHtml(value)", "Hub card text should be escaped before template insertion")
+    require(errors, "blog/blog-hub.js", "var tagEn = escapeHtml(a.tag_en || a.tag || '');", "Hub card tags should be escaped")
+    forbid(errors, "blog/blog-hub.js", "onmouseover=", "Hub cards should not inject inline event attributes")
+    forbid(errors, "blog/blog-hub.js", "onmouseout=", "Hub cards should not inject inline event attributes")
+    forbid(errors, "blog/blog-hub.js", 'href="/blog/\' + a.slug', "Hub card hrefs should not interpolate raw slugs")
 
-    require(errors, "blog/blog-support.js", "dn-bmc-header-css", "Header support link hover/focus styles should live in CSS")
-    require(errors, "blog/blog-support.js", "a.className = 'dn-bmc-header-link';", "Header support link should use a class for interaction styling")
+    # Header support pill / coffee icon retired 2026-10-17 (user decision);
+    # the footer support card is the only runtime support entry point.
+    forbid(errors, "blog/blog-support.js", "dn-bmc-header", "Header support pill was retired; support belongs in the footer card only")
     require(errors, "blog/blog-shared.js", "function escapeHtml(value)", "Command palette result text should be escaped before template insertion")
     require(errors, "blog/blog-shared.js", "function safeSiteUrl(value)", "Command palette result URLs should be restricted to same-site paths")
     require(errors, "blog/blog-shared.js", "url.includes('\\\\')", "Command palette URLs should reject browser-normalized backslash authorities")
@@ -81,6 +82,13 @@ def main() -> int:
     forbid(errors, "admin/settings-panel.js", ".innerHTML", "Admin settings should never insert external catalogue data as HTML")
     forbid(errors, "admin/settings-drafts.js", "Authorization", "Settings requests must never send the browser PAT")
     forbid(errors, "admin/admin-extras.js", "'/api/admin/popular-picks'", "Legacy KV writes must not remain in settings controls")
+    # Homepage recommendations (熱門推薦) were retired 2026-10-17: no admin tab,
+    # no settings kind and no public runtime read of the removed endpoint.
+    forbid(errors, "admin/admin-extras.js", 'data-tab="picks"', "Retired homepage recommendations must not return as an admin tab")
+    forbid(errors, "admin/settings-panel.js", "picks", "Retired homepage recommendations must not return to the settings UI")
+    forbid(errors, "admin/settings-drafts.js", "picks", "Retired homepage recommendations must not return to the settings draft model")
+    forbid(errors, "blog/blog-shared.js", "/api/admin/popular-picks", "Public pages must not request the retired recommendations endpoint")
+    forbid(errors, "blog/blog-shared.js", "POPULAR_PICKS", "Offline precache must not depend on the retired recommendations list")
     require(errors, "admin/session-auth.js", "!Number.isFinite(expiry) || expiry <= Date.now()", "Admin PAT expiry should fail closed")
     require(errors, "admin/session-auth.js", "setPat(token, true)", "Admin reload should restore the cookie session without extending PAT expiry")
     require(errors, "admin.html", "auth.restoreSession()", "Admin UI should restore its cookie through the shared controller")

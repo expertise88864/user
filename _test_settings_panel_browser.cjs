@@ -7,7 +7,7 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 const hash = value => crypto.createHash('sha1').update(value).digest('hex');
 const clone = value => JSON.parse(JSON.stringify(value));
-const settings = () => ({version: 1, legacyPicks: true, font: {bodyFont: '', headFont: '', bodySize: ''}, order: [], picks: ['alpha']});
+const settings = () => ({version: 1, font: {bodyFont: '', headFont: '', bodySize: ''}, order: []});
 const titles = ['第一篇文章', '第二篇 <img src="https://private.invalid/fixture">文章', '第三篇文章'];
 const initial = () => ({main: hash('main'), head: null, blobSha: hash('source'), baseSha: hash('source'), catalogSha: hash('catalog'),
   mainBlobSha: hash('source'), mainCatalogSha: hash('catalog'), sourceSettings: settings(), settings: settings(),
@@ -22,9 +22,15 @@ async function fixture(browser, width, scenario) {
     h.latest.head = hash('saved draft'); h.latest.blobSha = hash('draft source'); h.latest.settings.font.bodySize='18px';
     h.latest.conflict=scenario==='new-cycle-conflict'; h.latest.status=h.latest.conflict?'conflict':'cloud_draft';
   }
+  if(scenario==='legacy-draft') {
+    // A cloud draft saved before 熱門推薦 was retired, as the API returns it.
+    h.latest.head=hash('legacy draft');h.latest.blobSha=hash('legacy source');h.latest.conflict=true;h.latest.status='conflict';
+    h.latest.legacyDraft=true;h.latest.settings.font.bodySize='17px';h.latest.settings.order=['gamma','alpha','beta'];
+    h.latest.manifestRecord={baseMain:hash('legacy main')};
+  }
   if(scenario.startsWith('catalog')) {
     h.latest.head=hash('old catalogue draft');h.latest.catalogSha=hash('old catalogue');h.latest.mainCatalogSha=hash('new catalogue');
-    h.latest.settings.order=['gamma','alpha','beta'];h.latest.sourceSettings.legacyPicks=false;h.latest.sourceRequiresReview=true;
+    h.latest.settings.order=['gamma','alpha','beta'];h.latest.sourceRequiresReview=true;
     h.latest.conflict=true;h.latest.status='conflict';
     h.latest.articles=h.latest.articles.filter(a=>a.slug!=='alpha').concat({slug:'delta',title:'新增文章',title_en:'New article'});
   }
@@ -49,12 +55,11 @@ async function fixture(browser, width, scenario) {
       h.latest.catalogSha=h.latest.mainCatalogSha;h.latest.status='cloud_draft';h.latest.conflict=false;h.latest.request=null;
       h.latest.manifestRecord={baseMain:h.latest.main};
     } else if(reconciling) {
-      h.latest.settings=clone(input.settings);h.latest.blobSha=hash(JSON.stringify(input.settings));h.latest.baseSha=h.latest.mainBlobSha;
+      h.latest.settings=clone(input.settings);h.latest.blobSha=hash(JSON.stringify(input.settings));h.latest.baseSha=h.latest.mainBlobSha;h.latest.legacyDraft=false;
       h.latest.catalogSha=h.latest.mainCatalogSha;h.latest.status='cloud_draft';h.latest.conflict=false;h.latest.request=null;
       h.latest.manifestRecord={baseMain:h.latest.main};
     } else if (input.kind) {
       h.latest.settings[input.kind] = clone(input.values); h.latest.blobSha = hash(JSON.stringify(h.latest.settings));
-      if (input.kind === 'picks') { h.latest.settings.legacyPicks = false; h.latest.blobSha = hash(JSON.stringify(h.latest.settings)); }
       h.latest.status = 'cloud_draft'; h.latest.request = null;
     } else if (input.action === 'request-publication') {
       assert.equal(input.settingsApproved, true); assert.equal(input.blobSha, before.blobSha);
@@ -115,7 +120,7 @@ async function fixture(browser, width, scenario) {
   await page.locator('.ax-tabs button[data-tab="font"]').click();
   assert.equal(await page.locator('#axBodySize').isDisabled(), true, 'no implicit legacy restore or unverified cloud baseline');
   await page.locator('#axSettingsLoad').click();
-  if(scenario==='new-cycle-conflict'||scenario.startsWith('catalog')) await page.waitForFunction(()=>!document.getElementById('axSettingsLoad').disabled&&document.getElementById('axSettingsStatus').textContent.includes('來源'));
+  if(scenario==='new-cycle-conflict'||scenario==='legacy-draft'||scenario.startsWith('catalog')) await page.waitForFunction(()=>!document.getElementById('axSettingsLoad').disabled&&document.getElementById('axSettingsStatus').textContent.includes('來源'));
   else await page.waitForFunction(() => !document.getElementById('axBodySize').disabled);
   h.originalArticle = await page.frameLocator('iframe.editor').locator('article').evaluate(node => node.outerHTML);
   return h;
@@ -125,9 +130,9 @@ async function waitCloud(h) {
 }
 module.exports = async function checkSettingsPanel(browser, options = {}) {
   let cases = 0;
-  const scenarios = options.scenarios || ['keyboard', 'save-typing', 'compare', 'uncertain', 'request', 'recovery-auth', 'migration',
+  const scenarios = options.scenarios || ['keyboard', 'save-typing', 'compare', 'uncertain', 'request', 'recovery-auth', 'retired-picks',
     'observation','observation-typing','observation-auth','new-cycle','new-cycle-typing','new-cycle-blocked','new-cycle-conflict',
-    'catalog','catalog-source','catalog-blocked'];
+    'catalog','catalog-source','catalog-blocked','legacy-draft'];
   for (const width of options.widths || [390, 800, 1440]) for (const scenario of scenarios) {
     const h = await fixture(browser, width, scenario), page = h.page;
     try {
@@ -141,16 +146,30 @@ module.exports = async function checkSettingsPanel(browser, options = {}) {
         assert.equal(h.calls.filter(c=>c.method==='POST').length,0);assert.deepEqual(h.latest,before);
         await page.locator('#axSettingsReconcile').click();
         if(scenario==='catalog-source')await page.locator('input[name="axSettingsCatalogBase"][value="source"]').check();
-        await page.locator('#axSettingsCatalogApproval').check();assert.equal(await page.locator('#axSettingsSubmitCatalog').isDisabled(),true,'no invented replacement recommendation');
-        await page.locator('[data-catalog-pick="beta"]').check();assert.equal(await page.locator('#axSettingsCatalogApproval').isChecked(),false);
-        await page.locator('#axSettingsCatalogApproval').check();
+        assert.equal(await page.locator('[data-catalog-pick]').count(),0,'retired 熱門推薦 is not part of catalogue integration');
+        assert.doesNotMatch(await page.locator('dialog').textContent(),/熱門推薦|推薦清單/);
+        await page.locator('#axSettingsCatalogApproval').check();assert.equal(await page.locator('#axSettingsSubmitCatalog').isDisabled(),false);
         assert.ok(await page.locator('dialog').evaluate(n=>n.getBoundingClientRect().width<=innerWidth-16));
         if(scenario==='catalog-blocked')h.mode='retirement-pending';
         await page.locator('#axSettingsSubmitCatalog').click();await page.locator('dialog').waitFor({state:'detached'});await waitCloud(h);
         if(scenario==='catalog-blocked'){assert.deepEqual(h.latest,before);assert.match(await page.locator('#axSettingsStatus').textContent(),/尚未完成封存/);}
-        else{assert.equal(h.latest.conflict,false);assert.deepEqual(h.latest.settings.picks,['beta']);assert.equal(h.latest.settings.legacyPicks,false);
+        else{assert.equal(h.latest.conflict,false);assert.deepEqual(Object.keys(h.latest.settings).sort(),['font','order','version']);
           assert.deepEqual(h.latest.settings.order,scenario==='catalog-source'?[]:['gamma','beta','delta']);
           assert.equal(await page.locator('#axFontApply').isDisabled(),false);assert.equal(await page.locator('#axSettingsRequest').isDisabled(),false);}
+      }
+      if(scenario==='legacy-draft') {
+        assert.equal(await page.locator('#axFontApply').isDisabled(),true,'a legacy draft is never saved as is');
+        assert.equal(await page.locator('#axSettingsRequest').isDisabled(),true);
+        assert.equal(await page.locator('#axSettingsReconcile').isDisabled(),false);
+        await page.locator('#axSettingsReconcile').click();
+        assert.equal(await page.locator('#axSettingsLegacyDraftNote').count(),1);
+        assert.equal(await page.locator('[data-catalog-pick]').count(),0);
+        await page.locator('#axSettingsCatalogApproval').check();
+        await page.locator('#axSettingsSubmitCatalog').click();await page.locator('dialog').waitFor({state:'detached'});await waitCloud(h);
+        const posts=h.calls.filter(c=>c.method==='POST');assert.equal(posts.length,1);assert.equal(posts[0].input.action,'reconcile-catalog');
+        assert.equal(h.latest.conflict,false);
+        assert.deepEqual(h.latest.settings,{version:1,font:{bodyFont:'',headFont:'',bodySize:'17px'},order:['gamma','alpha','beta']});
+        assert.equal(await page.locator('#axBodySize').inputValue(),'17px');assert.equal(await page.locator('#axSettingsRequest').isDisabled(),false);
       }
       if(scenario.startsWith('new-cycle')) {
         const oldHead=h.latest.head;
@@ -230,9 +249,9 @@ module.exports = async function checkSettingsPanel(browser, options = {}) {
         assert.ok(h.pending); await page.locator('#axBodySize').selectOption('18px'); h.mode = ''; h.pending(); await waitCloud(h);
         assert.equal(h.latest.settings.font.bodySize, '17px'); assert.equal(await page.locator('#axBodySize').inputValue(), '18px');
         assert.match(await page.locator('#axSettingsStatus').textContent(), /後續修改/);
-        await page.locator('.ax-tabs button[data-tab="picks"]').click(); await page.locator('#axPicksAdd').selectOption('beta'); await page.locator('#axPicksAddBtn').click();
-        await page.locator('#axPicksSave').click(); await waitCloud(h);
-        assert.deepEqual(h.latest.settings.picks, ['alpha', 'beta']); assert.equal(h.latest.settings.font.bodySize, '17px');
+        await page.locator('.ax-tabs button[data-tab="reorder"]').click(); await page.locator('#axReorderList [data-slug="alpha"] [data-move="1"]').click();
+        await page.locator('#axReorderSave').click(); await waitCloud(h);
+        assert.deepEqual(h.latest.settings.order, ['beta', 'alpha', 'gamma']); assert.equal(h.latest.settings.font.bodySize, '17px');
         await page.locator('.ax-tabs button[data-tab="font"]').click(); assert.equal(await page.locator('#axBodySize').inputValue(), '18px');
         assert.equal(await page.locator('#axSettingsRequest').isDisabled(), true, 'all unsaved kinds must be saved before author approval');
       }
@@ -257,7 +276,8 @@ module.exports = async function checkSettingsPanel(browser, options = {}) {
       }
       if (scenario === 'request') {
         await page.locator('#axSettingsRequest').click(); assert.equal(await page.locator('#axSettingsSubmitRequest').isDisabled(), true);
-        assert.match(await page.locator('dialog').textContent(), /沿用原先熱門推薦；這次未變更/);
+        assert.match(await page.locator('dialog').textContent(), /依文章日期排序（預設）/);
+        assert.doesNotMatch(await page.locator('dialog').textContent(), /熱門推薦|推薦文章/);
         await page.locator('#axSettingsApproval').check(); await page.locator('#axSettingsApproval').focus(); await page.keyboard.press('Shift+Tab');
         assert.equal(await page.evaluate(() => document.activeElement.id), 'axSettingsSubmitRequest'); await page.keyboard.press('Tab');
         assert.equal(await page.evaluate(() => document.activeElement.id), 'axSettingsApproval'); await page.keyboard.press('Escape');
@@ -272,15 +292,18 @@ module.exports = async function checkSettingsPanel(browser, options = {}) {
         assert.equal(h.latest.status, 'requested'); assert.match(await page.locator('#axSettingsStatus').textContent(), /尚未確認正式上線/);
         await page.locator('#axSettingsCancel').click(); await waitCloud(h); assert.equal(h.latest.request, null);
       }
-      if (scenario === 'migration') {
-        await page.locator('.ax-tabs button[data-tab="picks"]').click();
-        assert.match(await page.locator('#axPicksStats').textContent(), /新名單的起始選擇/);
-        await page.locator('#axPicksSave').click(); await waitCloud(h);
-        assert.equal(h.latest.settings.legacyPicks, false); assert.deepEqual(h.latest.settings.picks, ['alpha']);
-        assert.equal(await page.locator('#axSettingsRequest').isDisabled(), false, 'no artificial edit needed after saving the initial picks');
+      if (scenario === 'retired-picks') {
+        // 熱門推薦 was retired 2026-10-17: no tab, controls or wording remain.
+        assert.equal(await page.locator('.ax-tabs button[data-tab="picks"], .ax-tab[data-tab="picks"]').count(), 0);
+        assert.equal(await page.locator('#axPicksList, #axPicksAdd, #axPicksAddBtn, #axPicksSave, #axPicksLoad, #axPicksStats').count(), 0);
+        assert.doesNotMatch(await page.locator('#axPanel').textContent(), /熱門|推薦/);
+        await page.locator('.ax-tabs button[data-tab="reorder"]').click();
+        assert.equal(await page.locator('.ax-settings-status').isHidden(), false, 'settings controls stay available on the remaining tabs');
+        await page.locator('#axReorderList [data-slug="gamma"] [data-move="-1"]').click(); await page.locator('#axReorderSave').click(); await waitCloud(h);
+        assert.deepEqual(Object.keys(h.latest.settings).sort(), ['font', 'order', 'version']);
+        assert.deepEqual(h.latest.settings.order, ['alpha', 'gamma', 'beta']);
         await page.locator('#axSettingsRequest').click();
-        assert.ok(!(await page.locator('dialog').textContent()).includes('這次未變更'));
-        assert.ok((await page.locator('dialog li').allTextContents()).includes(titles[0]));
+        assert.doesNotMatch(await page.locator('dialog').textContent(), /熱門推薦|推薦文章/);
         await page.locator('#axSettingsApproval').check(); await page.locator('#axSettingsSubmitRequest').click(); await waitCloud(h);
         assert.equal(h.latest.status, 'requested'); assert.equal(h.latest.published, false);
       }
