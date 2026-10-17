@@ -10381,17 +10381,15 @@ UpToDate: Onychomycosis: Management. Accessed 2026. 「來源」
 ---
 ## 異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思
 URL: https://chendermatologist.com/blog/atopic-dermatitis-overview
-Updated: 2026-10-15
+Updated: 2026-10-17
 Section: Treatment & Therapy
-Reading time: PT33M
+Reading time: PT32M
 Tags: 異位性皮膚炎, AD complete guide
 
 首頁 · 衛教文章 · 異位性皮膚炎完整指引
 異膚 · 完整指引
 異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思
 
-陳翊嘉醫師 · 整合 Hanifin & Rajka 1980 + UK Working Party + Sidbury 2023 JAAD + Davis 2024/2025 JAAD · 更新 2026-05-14
-提醒 · 本文整合 Hanifin & Rajka / UK Working Party / Sidbury 2023 / Davis 2024-2025 等國際指引概論，僅供衛教與住院醫師參考。異位性皮膚炎的個別治療（外用藥強度、生物製劑或 JAK 抑制劑選擇、光療強度）需由皮膚科醫師依年齡、嚴重度、共病、台灣健保條件評估。請勿依本文自行調整類固醇用量或停藥；嚴重併發症（蜂窩性組織炎、皰疹性濕疹）請立即就醫。本站不從事醫療廣告、亦不收受任何業配或贊助。
 一句話結論:異位性皮膚炎是「皮膚屏障 + Th2 免疫 + 微生物失衡」三角缺陷的慢性發炎疾病。診斷靠臨床(Hanifin & Rajka 或 UK Working Party 標準)，嚴重度用 EASI / SCORAD / IGA / POEM / DLQI 評估。治療三層次：每天保濕為基礎、急性期外用類固醇 / TCI / PDE-4 / JAK，中重度搭配 4 個生物製劑(Dupilumab/Tralokinumab/Lebrikizumab/Nemolizumab)、3 個口服 JAK 或光療。
 一、流行病學與自然病程
 
@@ -10625,5 +10623,24 @@ Mometasone 0.1%, Betamethasone valerate 0.1%
 連續 ≤ 4 週，後改 proactive
 
 4-5 中
+Triamcinolone 0.1%, Fluocinolone 0.025%
+多數中度病灶
+長期使用前評估
+
+6-7 弱
+Desonide 0.05%, Hydrocortisone 1%
+臉、皺褶、嬰幼兒
+多數情境第一線
+
+用量(FTU):1 FTU(食指尖到第一指節)≈ 0.5 g，約塗 2 個成人手掌面積。主動式維持(proactive)：緩解後在易復發部位每週 2 次塗 TCS 或 TCI，可降復發 30-60%(Wollenberg 2008、Sidbury 2023 強建議，證據等級 A)。
+
+類固醇省略劑(steroid-sparing,非類固醇外用藥)三選一：皆為非類固醇,主要差別在適用年齡、部位、與作用機轉。
+
+藥
+機轉
+年齡
+局部副作用
+FDA / 上市年
+
 
 [... truncated; fetch canonical URL for full text ...]
