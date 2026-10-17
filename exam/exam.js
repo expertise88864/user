@@ -1129,9 +1129,10 @@
         if (event.isComposing) return;  // finishing a 注音／倉頡 composition
         event.preventDefault();
         clearTimeout(timer);
-        // Results still listed for an earlier query: search what is typed now
-        // instead of opening one of them.
-        if ((!options.length || shownQuery !== input.value) && normTerm(input.value)) { run(); return; }
+        // Results still listed for an earlier query (or a cleared box): search
+        // what is typed now instead of opening one of them; an empty box only
+        // clears the list.
+        if (!options.length || shownQuery !== input.value || !normTerm(input.value)) { run(); return; }
         var target = options[active >= 0 ? active : 0];
         if (target) window.location.href = target.href;
       } else if (event.key === 'Escape') {
