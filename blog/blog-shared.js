@@ -232,7 +232,7 @@
     if (!DN._articleVisualBundleLoading) {
       DN._articleVisualBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-visuals.min.js?v=202610172200';
+        s.src = '/blog/blog-article-visuals.min.js?v=202610172300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -869,8 +869,6 @@
         '<a href="/blog/" class="block px-3 py-2.5 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="衛教文章" data-en="Articles">衛教文章</a>' +
         '<a href="/exam" class="block px-3 py-2 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="皮膚科專科考試" data-en="Board Exam">皮膚科專科考試</a>' +
         '<a href="/about" class="block px-3 py-2 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="關於我" data-en="About">關於我</a>' +
-        '<a href="/tools" class="block px-3 py-2 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="量表計算器" data-en="Calculators">量表計算器</a>' +
-        '<a href="/glossary" class="block px-3 py-2 rounded-lg hover:bg-[var(--mint-soft)] text-[14px] font-semibold text-teal-700" data-zh="詞彙字典" data-en="Glossary">詞彙字典</a>' +
       '</nav>';
     header.appendChild(drawer);
 
@@ -1021,9 +1019,6 @@
         // Article cards on homepage / blog index
         css += 'a.article-list-item[href="/blog/' + s + '"]{display:none!important}\n';
         css += 'a.article-list-item[href="/blog/' + s + '.html"]{display:none!important}\n';
-        // Hub spotlight cards
-        css += 'a.dn-spotlight-card[href="/blog/' + s + '"]{display:none!important}\n';
-        css += 'li:has(> a.dn-spotlight-card[href="/blog/' + s + '"]){display:none!important}\n';
         // Topic chips on homepage (chip strip) — direct child of flex
         // container, not inside prose. Hide any link to the unpublished slug
         // EXCEPT inside header/main-prose (so admin-internal links stay).
@@ -1134,7 +1129,7 @@
       // CODE_REVIEW — reset promise cache on failure (see ensureArticleVisualBundle).
       DN._articleReadingBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-reading.min.js?v=202610172200';
+        s.src = '/blog/blog-article-reading.min.js?v=202610172300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1170,7 +1165,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._articleFooterBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-article-footer.min.js?v=202610172200';
+        s.src = '/blog/blog-article-footer.min.js?v=202610172300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1200,7 +1195,7 @@
       // CODE_REVIEW — reset promise cache on failure.
       DN._calculatorBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-calculators.min.js?v=202610172200';
+        s.src = '/blog/blog-calculators.min.js?v=202610172300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1299,9 +1294,9 @@
     DN._forceInject = false;
   };
 
-  // Homepage spotlight — "最近更新" + "熱門推薦" dual columns
-  // (Taiwan KOL pattern; benchmarked against 黃瑽寧 / 邱品齊 / 蔡逸群 sites)
-  // Auto-populates from DN.ARTICLES catalog; runs on homepage only.
+  // Popular picks — curated evergreen list that seeds the idle SW precache
+  // (DN.precacheArticles below). The homepage 熱門推薦 / 閱讀進度 spotlight
+  // that used to render it was retired 2026-10-17 (user decision).
   // -----------------------------------------------------------------------
   // ─────────────────────────────────────────────────────────────────
   // 熱門推薦 — 手動精選的 evergreen 高搜尋量主題(基於 Google 搜尋量 +
@@ -1383,16 +1378,6 @@
         if (popularPicksPageInactive) return;
         if (data && Array.isArray(data.picks) && data.picks.length) {
           DN.POPULAR_PICKS = data.picks;
-          // Re-render spotlight if already on a page that has it.
-          if (document.getElementById('dn-popular-list')) {
-            if (typeof DN.injectSpotlight === 'function') {
-              try { DN.injectSpotlight(); } catch (e) {}
-            } else if (typeof DN.ensureHubBundle === 'function') {
-              DN.ensureHubBundle().then(function () {
-                if (typeof DN.injectSpotlight === 'function') DN.injectSpotlight();
-              }).catch(function () {});
-            }
-          }
         }
       })
       .catch(function () { /* keep fallback */ });
@@ -1400,12 +1385,12 @@
 
   // Homepage / article-hub helpers live in blog-hub(.min).js and load on demand.
   DN.ensureHubBundle = function () {
-    if (DN.injectSpotlight && DN.bindArticleHub) return Promise.resolve();
+    if (DN.bindArticleHub) return Promise.resolve();
     if (!DN._hubBundleLoading) {
       // CODE_REVIEW — reset promise cache on failure.
       DN._hubBundleLoading = new Promise(function (resolve, reject) {
         var s = document.createElement('script');
-        s.src = '/blog/blog-hub.min.js?v=202610172200';
+        s.src = '/blog/blog-hub.min.js?v=202610172300';
         s.defer = true;
         s.onload = resolve;
         s.onerror = reject;
@@ -1437,7 +1422,7 @@
     if (!DN._supportBundleLoading) {
       DN._supportBundleLoading = new Promise(function (resolve, reject) {
         var script = document.createElement('script');
-        script.src = '/blog/blog-support.min.js?v=202610172200';
+        script.src = '/blog/blog-support.min.js?v=202610172300';
         script.onload = function () {
           if (typeof DN.injectSupportUI === 'function') resolve();
           else reject(new Error('Support bundle unavailable'));
@@ -1913,12 +1898,10 @@
     DN.lazyLoadAudit();
     DN.bindWebVitals();
     DN.bindGAEvents();
-    if (document.getElementById('dn-hub') || document.getElementById('dn-recent-list') || document.getElementById('dn-popular-list') || document.getElementById('dn-read-progress')) {
+    if (document.getElementById('dn-hub')) {
       idle(function () {
         DN.ensureHubBundle().then(function () {
           if (typeof DN.bindArticleHub === 'function') DN.bindArticleHub();
-          if (typeof DN.injectSpotlight === 'function') DN.injectSpotlight();
-          if (typeof DN.injectReadProgress === 'function') DN.injectReadProgress();
           try { DN.applyTextOnly(curLang); } catch (e) {}
         }).catch(function () {});
       }, { timeout: 800 });

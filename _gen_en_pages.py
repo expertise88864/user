@@ -403,8 +403,6 @@ EN_PRIVACY_ARTICLE = '''<main id="main-content">
 <p>This policy may be updated when services, laws or technical settings change. Material changes will be reflected on this page.</p>
 <h2>7. Contact</h2>
 <p>For privacy questions, use the footer email link. The <a href="/en/about">About page</a> explains the site's educational purpose.</p>
-<h2>8. Medical Disclaimer</h2>
-<p>All content is for general medical education only and does not replace an in-person consultation, examination, diagnosis, or prescription. Decisions about medications or treatment should be made with your treating physician.</p>
 </div></article></main>'''
 
 

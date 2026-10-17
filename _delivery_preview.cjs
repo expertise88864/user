@@ -236,6 +236,12 @@ if (require.main === module) (async () => {
           assert.ok(await page.locator('main').count() > 0, 'Main content missing');
           const nav = page.locator('nav.dn-nav');
           if (await nav.count()) {
+            // 2026-10-17: calculators, glossary and the support (coffee) icon
+            // left the header; the pages themselves stay reachable elsewhere.
+            assert.equal(await page.locator('#dn-nav-support, #dn-bmc-header').count(), 0,
+              'Header must not carry a support icon');
+            assert.equal(await nav.locator('a[href$="/tools"], a[href$="/glossary"]').count(), 0,
+              'Header must not link calculators or glossary');
             const burger = page.locator('#dn-nav-burger');
             const search = page.locator('#dn-nav-search');
             if (width <= 899) {
@@ -245,7 +251,7 @@ if (require.main === module) (async () => {
               assert.ok(await nav.isVisible(), 'Mobile/tablet menu did not open');
               assert.ok(await search.evaluate(el => el.getBoundingClientRect().width > 100
                 && getComputedStyle(el, '::after').display !== 'none'), 'Menu labels must have room');
-              for (const id of ['dn-nav-search', 'dn-nav-support', 'dn-nav-theme']) {
+              for (const id of ['dn-nav-search', 'dn-nav-theme']) {
                 assert.ok(await page.locator('#' + id).evaluate(el =>
                   getComputedStyle(el, '::after').content === JSON.stringify(el.getAttribute('aria-label'))),
                   'Visible menu label must match the current page language: ' + id);
