@@ -529,7 +529,7 @@ SEARCH_VERSION = [""]  # content hash of search-index.json, set by build()
 SEARCH_BOX = (
     '<div class="ex-search" data-exam-search="{index}" hidden>'
     '<label class="ex-search-label" for="ex-search-input">搜尋疾病或主題（全名、縮寫或中文）</label>'
-    '<input id="ex-search-input" class="ex-search-input" type="search" role="combobox" '
+    '<input id="ex-search-input" class="ex-search-input" type="text" role="combobox" '
     'aria-autocomplete="list" aria-expanded="false" aria-controls="ex-search-results" '
     'aria-describedby="ex-search-hint" autocomplete="off" autocapitalize="off" spellcheck="false" '
     'enterkeyhint="search" placeholder="例如 HES、pemphigus、梅毒">'

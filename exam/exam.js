@@ -22,7 +22,7 @@
   var body = document.body;
 
   function store(key, value) {
-    try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* storage disabled */ }
+    try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch (e) { return false; /* storage disabled */ }
   }
   function load(key, fallback) {
     try {
@@ -68,38 +68,94 @@
   // ---------------------------------------------------------- timed papers
   // The paper being worked on in this page (year paper after 開始計時作答, or
   // the generated practice paper), mirrored to storage so a reload resumes it.
+  // Each attempt has an id and a revision (rev, raised on every save), so a
+  // page open in two tabs never writes a stale copy over a paper the other
+  // tab handed in, replaced or saved newer answers to.
   var paper = null;
   var paperKey = null;
+  // False when the paper could not be written when it began (storage off or
+  // full): it then lives in this page only and is not compared with storage.
+  var paperSynced = true;
+  var paperBar = null;  // { start, stop } of the page's timer bar
   function paperMap() {
     var map = load(PAPER_KEY, {});
     return isMap(map) ? map : {};
   }
-  function loadPaper(key) {
-    var p = paperMap()[key];
+  function normPaper(p) {
     if (!isMap(p) || typeof p.start !== 'number') return null;
     if (!isMap(p.sel)) p.sel = {};
     if (!isMap(p.done)) p.done = {};
+    // Saved before attempts had ids: every tab derives the same one.
+    if (typeof p.id !== 'string') p.id = 'start-' + p.start;
+    if (typeof p.rev !== 'number') p.rev = 0;
     return p;
   }
-  function savePaper() {
-    if (!paperKey) return;
+  function loadPaper(key) {
+    return normPaper(paperMap()[key]);
+  }
+  // Save the paper; edit(p) applies this page's change to the latest saved
+  // copy, which replaces this page's copy when another tab saved after it.
+  function savePaper(edit) {
+    if (!paperKey || !paper) return;
+    if (!paperSynced) { if (edit) edit(paper); return; }
     var map = paperMap();
-    if (paper) {
-      paper.seen = Date.now();
-      map[paperKey] = paper;
-    } else {
-      delete map[paperKey];
-    }
+    var cur = normPaper(map[paperKey]);
+    if (!cur || cur.id !== paper.id) { lostPaper(); return; }
+    var newer = cur.rev > paper.rev;
+    var next = newer ? cur : paper;
+    if (edit) edit(next);
+    next.rev = Math.max(cur.rev, paper.rev) + 1;
+    next.seen = Date.now();
+    map[paperKey] = next;
     store(PAPER_KEY, map);
+    if (newer) adoptPaper(next);
+    else paper = next;
   }
   function beginPaper(key, data) {
+    data.id = Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
+    data.rev = 1;
+    data.seen = Date.now();
     paperKey = key;
     paper = data;
-    savePaper();
+    var map = paperMap();
+    map[key] = data;
+    paperSynced = store(PAPER_KEY, map);
   }
+  // Hand-in: remove this attempt only, never a newer one begun in another tab.
   function endPaper() {
+    var id = paper && paper.id;
     paper = null;
-    savePaper();
+    if (!paperKey || !paperSynced) return;
+    var map = paperMap();
+    var cur = normPaper(map[paperKey]);
+    if (!cur || cur.id !== id) return;
+    delete map[paperKey];
+    store(PAPER_KEY, map);
+  }
+  // Another tab handed this paper in or began a new one: stop timing and
+  // saving here, so the old copy cannot bring the record back.
+  function lostPaper() {
+    paper = null;
+    if (paperBar) paperBar.stop('這份試卷已在其他分頁交卷或重新開始，本頁不再計時或保存；請重新整理頁面。');
+  }
+  // Take over the copy another tab saved: its answers and its start time.
+  function adoptPaper(next) {
+    var old = paper;
+    paper = next;
+    if (JSON.stringify([old.sel, old.done]) !== JSON.stringify([next.sel, next.done])) {
+      var cards = pageCards();
+      cards.forEach(resetQuestion);
+      restoreFromPaper(cards);
+      if (answerBar) setOnlyTodo(answerBar.only.getAttribute('aria-pressed') === 'true');
+      updateAnswerBar();
+    }
+    if (old.start !== next.start && paperBar) paperBar.start(next.start);
+  }
+  function syncPaperFromStorage(event) {
+    if (!paper || !paperSynced || (event.key !== PAPER_KEY && event.key !== null)) return;
+    var cur = loadPaper(paperKey);
+    if (!cur || cur.id !== paper.id) lostPaper();
+    else if (cur.rev > paper.rev) adoptPaper(cur);
   }
 
   function setMode(mode) {
@@ -227,17 +283,18 @@
       if (grade(card, false) === null) return;
       if (paper) {
         var picked = card.querySelector('input[type=radio]:checked');
-        paper.done[id] = picked ? picked.value : '';
-        savePaper();
+        var key = picked ? picked.value : '';
+        savePaper(function (p) { p.done[id] = key; });
       }
       updateAnswerBar();
     });
     if (reset) reset.addEventListener('click', function () {
       resetQuestion(card);
       if (paper) {
-        delete paper.done[id];
-        delete paper.sel[id];
-        savePaper();
+        savePaper(function (p) {
+          delete p.done[id];
+          delete p.sel[id];
+        });
       }
       updateAnswerBar();
     });
@@ -246,8 +303,7 @@
         var result = card.querySelector('.ex-result');
         if (result) result.textContent = '';
         if (paper) {
-          paper.sel[id] = input.value;
-          savePaper();
+          savePaper(function (p) { p.sel[id] = input.value; });
         }
       });
     });
@@ -324,9 +380,10 @@
         });
         store(PROGRESS_KEY, map);
         if (paper) {
-          paper.done = {};
-          paper.sel = {};
-          savePaper();
+          savePaper(function (p) {
+            p.done = {};
+            p.sel = {};
+          });
         }
         setOnlyTodo(false);
         updateAnswerBar();
@@ -364,8 +421,37 @@
       tick();
       return startedAt;
     }
+    function stop(message) {
+      if (timer) { clearInterval(timer); timer = null; }
+      scoreEl.textContent = message || '';
+    }
     document.addEventListener('visibilitychange', function () {
       if (document.visibilityState === 'hidden' && paper) savePaper();
+    });
+    // A page kept in the back-forward cache comes back without init, so the
+    // time spent on other pages is taken off here instead: pause on leaving,
+    // and on return continue from the latest saved copy of the paper.
+    var leftAt = 0;
+    window.addEventListener('pagehide', function () {
+      if (!paper || !timer) return;
+      savePaper();
+      if (timer) { clearInterval(timer); timer = null; }
+      leftAt = Date.now();
+    });
+    window.addEventListener('pageshow', function (event) {
+      if (!event.persisted || !leftAt) return;
+      var from = leftAt;
+      leftAt = 0;
+      if (!paper) return;
+      if (paperSynced) {
+        var cur = loadPaper(paperKey);
+        if (!cur || cur.id !== paper.id) { lostPaper(); return; }
+        if (typeof cur.seen === 'number') from = cur.seen;
+        if (cur.rev > paper.rev) adoptPaper(cur);
+      }
+      var away = Math.max(0, Date.now() - from);
+      savePaper(function (p) { p.start += away; });
+      if (paper) start(paper.start);
     });
     var startBtn = bar.querySelector('.ex-start');
     if (startBtn) startBtn.addEventListener('click', function () {
@@ -408,7 +494,8 @@
       scoreEl.textContent = '得分 ' + right + ' / ' + cards.length + (blank ? '（未作答 ' + blank + ' 題）' : '');
       updateAnswerBar();
     });
-    return { start: start };
+    paperBar = { start: start, stop: stop };
+    return paperBar;
   }
 
   // ---------------------------------------------------------- review page
@@ -700,19 +787,21 @@
     note.textContent = '載入上次未交卷的試卷…';
     examData().then(function (data) {
       if (paper) return;  // a new paper was generated meanwhile
+      // Another tab may have handed it in or saved to it while the data loaded.
+      saved = loadPaper('practice');
+      if (!saved || !Array.isArray(saved.ids) || !saved.ids.length) { note.textContent = ''; return; }
       var byId = {};
       data.questions.forEach(function (q) { byId[q.id] = q; });
       var pool = saved.ids.map(function (id) { return byId[id]; }).filter(Boolean);
-      if (!pool.length) { paperKey = 'practice'; endPaper(); note.textContent = ''; return; }
       paperKey = 'practice';
       paper = saved;
+      if (!pool.length) { endPaper(); note.textContent = ''; return; }
       show(pool);
       restoreFromPaper(pageCards());
       // The timer continues from where the page was left, not from the wall clock.
       var away = typeof saved.seen === 'number' ? Math.max(0, Date.now() - saved.seen) : 0;
-      paper.start = saved.start + away;
-      savePaper();
-      barApi.start(paper.start);
+      savePaper(function (p) { p.start += away; });
+      if (paper) barApi.start(paper.start);
       updateAnswerBar();
       note.textContent = '已接續上次未交卷的試卷（共 ' + pool.length + ' 題）。按「產生試卷並開始計時」會改出一份新的試卷。';
     }).catch(function () {
@@ -928,6 +1017,9 @@
     var timer = null;
     var options = [];
     var active = -1;
+    // Query the listed options were found for; typing makes them stale until
+    // the debounced search runs again.
+    var shownQuery = null;
     box.hidden = false;
 
     function loadIndex() {
@@ -1013,7 +1105,9 @@
       if (!normTerm(query)) { render(null); return; }
       if (!index) status.textContent = '搜尋索引載入中…';
       loadIndex().then(function () {
-        if (input.value === query) render(searchIndex(index, query));
+        if (input.value !== query) return;
+        render(searchIndex(index, query));
+        shownQuery = query;
       }).catch(function () {
         close();
         status.textContent = '搜尋索引載入失敗，請重新整理頁面。';
@@ -1035,7 +1129,9 @@
         if (event.isComposing) return;  // finishing a 注音／倉頡 composition
         event.preventDefault();
         clearTimeout(timer);
-        if (!options.length && normTerm(input.value)) { run(); return; }
+        // Results still listed for an earlier query: search what is typed now
+        // instead of opening one of them.
+        if ((!options.length || shownQuery !== input.value) && normTerm(input.value)) { run(); return; }
         var target = options[active >= 0 ? active : 0];
         if (target) window.location.href = target.href;
       } else if (event.key === 'Escape') {
@@ -1226,6 +1322,7 @@
     document.querySelectorAll('.ex-q').forEach(wireQuestion);
     var bar = document.querySelector('[data-exam-bar]');
     var barApi = bar ? wireExamBar(bar) : null;
+    window.addEventListener('storage', syncPaperFromStorage);
     var kind = pageKind();
     var CLEAR_SCOPE = { chapter: '本章', year: '本卷', book: '本頁' };
     var modeBar = document.querySelector('.ex-mode');
@@ -1239,9 +1336,8 @@
         paper = resumed;
         restoreFromPaper(cards);
         var away = typeof resumed.seen === 'number' ? Math.max(0, Date.now() - resumed.seen) : 0;
-        paper.start = resumed.start + away;
-        savePaper();
-        barApi.start(paper.start);
+        savePaper(function (p) { p.start += away; });
+        if (paper) barApi.start(paper.start);
       } else {
         restoreFromProgress(cards);
       }
