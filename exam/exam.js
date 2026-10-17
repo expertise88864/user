@@ -10,6 +10,13 @@
   // The picked key ('' = handed in blank on a free-credit question) restores
   // the answer when the page is opened again; older records have no third item.
   var PROGRESS_KEY = 'dnExamProgress';
+  // The same records kept per chapter page, for answers given on that page
+  // only: { 'fitz-53': { id: [ok, epoch ms, key] } }. The hub's chapter table
+  // and a chapter page's restored answers read these, so answering a question
+  // shared by several chapters (or on a year paper) leaves the other chapters
+  // untouched. Answers from before this key existed have no page and are not
+  // assigned to any chapter.
+  var CHAPTER_PROGRESS_KEY = 'dnExamChapterProgress';
   // Chapters whose textbook chapter has been read: { chapter: epoch ms }.
   var READ_KEY = 'dnExamRead';
   // Last reading place per chapter page: { 'fitz-53': { id, dy, t } } — id of the
@@ -58,11 +65,43 @@
     var map = load(PROGRESS_KEY, {});
     return isMap(map) ? map : {};
   }
+  function own(map, key) {
+    return Object.prototype.hasOwnProperty.call(map, key);
+  }
+  // Storage key of this chapter page ('fitz-53'), or '' on any other page.
+  function chapterSlug() {
+    if (pageKind() !== 'chapter') return '';
+    var slug = pageSlug();
+    return /^fitz-\d+$/.test(slug) ? slug : '';
+  }
+  function chapterProgressAll() {
+    var all = load(CHAPTER_PROGRESS_KEY, {});
+    return isMap(all) ? all : {};
+  }
+  function chapterProgress(slug) {
+    var all = chapterProgressAll();
+    return own(all, slug) && isMap(all[slug]) ? all[slug] : {};
+  }
+  // Replace one chapter's records (null removes them), keeping the others.
+  function saveChapterProgress(slug, map) {
+    var all = chapterProgressAll();
+    if (map) all[slug] = map; else delete all[slug];
+    return store(CHAPTER_PROGRESS_KEY, all);
+  }
   function recordProgress(id, ok, key) {
     if (!id) return;
+    var rec = [ok ? 1 : 0, Date.now(), key || ''];
     var map = progressMap();
-    map[id] = [ok ? 1 : 0, Date.now(), key || ''];
+    map[id] = rec;
     store(PROGRESS_KEY, map);
+    // A chapter page also keeps its own copy (same time stamp, so clearing the
+    // chapter can tell whether the overall record is still this answer).
+    var slug = chapterSlug();
+    if (slug) {
+      var mine = chapterProgress(slug);
+      mine[id] = rec.slice();
+      saveChapterProgress(slug, mine);
+    }
   }
 
   // ---------------------------------------------------------- timed papers
@@ -242,25 +281,49 @@
     return ok;
   }
 
-  // Static question pages reopen with each question's latest answer.
+  // Verdict of a stored [ok, time, key] record under the current official
+  // answer (the same rule restoreCard shows).
+  function recordVerdict(card, rec) {
+    if (card.hasAttribute('data-free')) return true;
+    var input = radioFor(card, rec[2]);
+    return input ? (card.getAttribute('data-answer') || '').indexOf(rec[2]) !== -1 : !!rec[0];
+  }
   // A record whose verdict no longer matches the official answer (the key was
-  // corrected since) is fixed in place, so the hub statistics and the wrong
-  // notebook agree with what the page shows.
-  function restoreFromProgress(cards) {
-    var map = progressMap();
+  // corrected since) is fixed in place, so the hub statistics agree with what
+  // the page shows. syncWrong: the wrong notebook follows the corrected
+  // overall record, as it always has. Returns whether map changed.
+  function correctRecords(cards, map, syncWrong) {
     var changed = false;
     cards.forEach(function (card) {
       var id = card.getAttribute('data-qid');
-      var rec = Object.prototype.hasOwnProperty.call(map, id) ? map[id] : null;
+      var rec = own(map, id) ? map[id] : null;
       if (!Array.isArray(rec)) return;
-      var ok = restoreCard(card, rec[2], rec);
-      if (ok !== null && (ok ? 1 : 0) !== (rec[0] ? 1 : 0)) {
+      var ok = recordVerdict(card, rec);
+      if ((ok ? 1 : 0) !== (rec[0] ? 1 : 0)) {
         rec[0] = ok ? 1 : 0;
-        markWrong(id, !ok);
+        if (syncWrong) markWrong(id, !ok);
         changed = true;
       }
     });
-    if (changed) store(PROGRESS_KEY, map);
+    return changed;
+  }
+  // Static question pages reopen with each question's latest answer: a
+  // chapter page with the answers given on that chapter page, any other page
+  // with the latest answer given anywhere.
+  function restoreFromProgress(cards) {
+    var overall = progressMap();
+    if (correctRecords(cards, overall, true)) store(PROGRESS_KEY, overall);
+    var slug = chapterSlug();
+    var map = overall;
+    if (slug) {
+      map = chapterProgress(slug);
+      if (correctRecords(cards, map, false)) saveChapterProgress(slug, map);
+    }
+    cards.forEach(function (card) {
+      var id = card.getAttribute('data-qid');
+      var rec = own(map, id) ? map[id] : null;
+      if (Array.isArray(rec)) restoreCard(card, rec[2], rec);
+    });
   }
 
   // A resumed paper: answers submitted during it come back graded, picks not
@@ -336,6 +399,24 @@
     // so a result and its explanation never vanish on submit.
     pageCards().forEach(function (card) { card.classList.toggle('ex-hide', on && isAnswered(card)); });
   }
+  // 清除本章作答: drop this chapter's records, and an overall record only
+  // while it is still the answer given here (same time and pick) — one given
+  // later on another page stays.
+  function clearChapter(slug) {
+    var mine = chapterProgress(slug);
+    var overall = progressMap();
+    var changed = false;
+    Object.keys(mine).forEach(function (id) {
+      var rec = mine[id];
+      var cur = own(overall, id) ? overall[id] : null;
+      if (Array.isArray(rec) && Array.isArray(cur) && cur[1] === rec[1] && cur[2] === rec[2]) {
+        delete overall[id];
+        changed = true;
+      }
+    });
+    if (changed) store(PROGRESS_KEY, overall);
+    saveChapterProgress(slug, null);
+  }
   function buildAnswerBar(clearLabel, scopeLabel) {
     var bar = el('div', 'ex-answer-bar');
     bar.setAttribute('role', 'group');
@@ -371,14 +452,25 @@
         var cards = pageCards();
         var done = cards.filter(isAnswered).length;
         if (!done) return;
-        if (!window.confirm('清除' + scopeLabel + '已作答的 ' + done + ' 題紀錄並重新作答？\n' +
-          '專科考試首頁的「已做」與正確率會一併重算；錯題本保留，重新答對時才移出。')) return;
-        var map = progressMap();
-        cards.forEach(function (card) {
-          delete map[card.getAttribute('data-qid')];
-          resetQuestion(card);
-        });
-        store(PROGRESS_KEY, map);
+        var slug = chapterSlug();
+        if (slug) {
+          if (!window.confirm('清除本章已作答的 ' + done + ' 題紀錄並重新作答？\n' +
+            '本章在專科考試首頁的「已做」、正確率與最後作答日期會歸零。這些題目若最近一次是在本章作答，' +
+            '也會從首頁全站「已作答／正確率」移除；之後在其他章節或考卷的作答保留。\n' +
+            '其他章節的統計不受影響；錯題本保留，重新答對時才移出。')) return;
+          clearChapter(slug);
+          cards.forEach(resetQuestion);
+        } else {
+          if (!window.confirm('清除' + scopeLabel + '已作答的 ' + done + ' 題紀錄並重新作答？\n' +
+            '專科考試首頁全站的「已作答／正確率」會一併重算（各章節的統計只計算在章節頁作答的題目，不受影響）；' +
+            '錯題本保留，重新答對時才移出。')) return;
+          var map = progressMap();
+          cards.forEach(function (card) {
+            delete map[card.getAttribute('data-qid')];
+            resetQuestion(card);
+          });
+          store(PROGRESS_KEY, map);
+        }
         if (paper) {
           savePaper(function (p) {
             p.done = {};
@@ -846,18 +938,22 @@
       '，課本已讀完 ' + Object.keys(readMap()).length + ' 章';
   }
   // Fill every row from storage; safe to repeat (back-forward cache restores).
+  // A row counts only the answers given on that chapter's own page.
   function refreshProgress() {
-    var map = progressMap();
+    var all = chapterProgressAll();
     var read = readMap();
     document.querySelectorAll('.ex-progress tbody tr').forEach(function (row) {
       var ids = (row.getAttribute('data-qids') || '').split(',').filter(Boolean);
+      var ch = row.getAttribute('data-ch') || '';
+      var slug = 'fitz-' + ch;
+      var map = /^\d+$/.test(ch) && own(all, slug) && isMap(all[slug]) ? all[slug] : {};
       var done = 0, ok = 0, last = 0;
       ids.forEach(function (id) {
-        var rec = map[id];
+        var rec = own(map, id) ? map[id] : null;
         if (!Array.isArray(rec)) return;
         done += 1;
         if (rec[0]) ok += 1;
-        if (rec[1] > last) last = rec[1];
+        if (typeof rec[1] === 'number' && rec[1] > last) last = rec[1];
       });
       var acc = done ? Math.round(100 * ok / done) : null;
       row.setAttribute('data-done', String(done));

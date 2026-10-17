@@ -567,7 +567,8 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
             name = (f'<a href="/exam/fitz-{n}">Ch.{n} {title}</a>' if qs else f'Ch.{n} {title}')
             badge = ' <span class="ex-badge">有重點</span>' if n in data["notes"] else ""
             # Progress cells start as "—" and are filled from this browser's
-            # localStorage by exam.js; data-qids lists the chapter's questions.
+            # localStorage by exam.js; data-qids lists the chapter's questions,
+            # counted from the answers given on /exam/fitz-<data-ch> only.
             prog_rows.append(
                 f'<tr data-ch="{n}" data-order="{idx}" data-qids="{",".join(q["id"] for q in qs)}"'
                 f'{" class=\"ex-none\"" if not qs else ""}>'
@@ -600,6 +601,7 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
         '<h2 class="ex-h2">依章節瀏覽與讀書進度</h2>'
         '<p class="ex-meta">已做題數、正確率（以每題最近一次作答計算）與「課本已讀完」只存在這台裝置的瀏覽器，'
         '不同電腦或手機不會同步。正確率低於 60% 以紅字標示。</p>'
+        '<p class="ex-meta">章節統計只計算在該章頁面作答的題目。</p>'
         f'<div class="ex-toolbar ex-progress-bar" data-exam-total="{total}"><span id="ex-progress-summary" class="ex-meta" aria-live="polite"></span>'
         '<label class="ex-check">排序 <select class="ex-select ex-progress-sort" aria-label="章節排序" disabled>'
         '<option value="order">章節順序</option><option value="todo">尚未作答優先</option>'
