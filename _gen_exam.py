@@ -6,10 +6,12 @@ Sources (hand-maintained):
   data/exam/explanations.json  per-question explanations with Fitzpatrick page refs
   data/exam/notes/fitz-<n>.frag  chapter study notes (trusted HTML fragments)
   data/exam/fitz_chapters.json chapter titles and printed page ranges
+  data/exam/links.json         chapter DermNet / PathologyOutlines links
+  data/exam/search_aliases.json  chapter -> standard abbreviations for the hub search
 
 Outputs (generated, never hand-edit):
   exam/index.html, exam/fitz-<n>.html, exam/year-<y>.html, exam/mckee.html,
-  exam/kantor.html, exam/review.html, exam/exam-data.json
+  exam/kantor.html, exam/review.html, exam/exam-data.json, exam/search-index.json
 
 Pages reuse the normalized notes.html shell (head, header, footer), and the
 output is already in its final normalized form. REGEN_STEPS runs it twice:
@@ -34,7 +36,7 @@ DOMAIN = "https://chendermatologist.com"
 TEMPLATE = ROOT / "notes.html"
 SOURCE_LABEL = "臺灣皮膚科醫學會專科醫師甄審筆試"
 SOURCE_URL = "https://www.derma.org.tw/specialist/download.php?id=9"
-HUB_TITLE = "皮膚科專科醫師考試重點及歷屆考古題"
+HUB_TITLE = "皮膚科專科醫師考試重點及考題"
 REFERENCE_BOOKS = [
     "McKee's Pathology of the Skin, 6th Edition (2026/7/21)",
     "Fitzpatrick's Dermatology in General Medicine, 9th Edition (2019/3/19)",
@@ -80,8 +82,14 @@ def load() -> dict:
         notes[int(path.stem.split("-")[1])] = path.read_text(encoding="utf-8")
     links_path = DATA / "links.json"
     links = {int(k): v for k, v in json.loads(links_path.read_text(encoding="utf-8")).items()} if links_path.exists() else {}
+    aliases_path = DATA / "search_aliases.json"
+    aliases = ({int(k): v for k, v in json.loads(aliases_path.read_text(encoding="utf-8")).items()}
+               if aliases_path.exists() else {})
+    bad = [k for k in aliases if k not in chapters]
+    if bad:
+        raise SystemExit(f"search_aliases.json has unknown chapters {bad}")
     return {"questions": questions, "tags": tags, "explanations": explanations,
-            "chapters": chapters, "notes": notes, "links": links}
+            "chapters": chapters, "notes": notes, "links": links, "aliases": aliases}
 
 
 # ---------------------------------------------------------------- page shell
@@ -187,9 +195,9 @@ def page(shell, *, path, title, description, og_title, crumbs, jsonld_type, body
 
 NOTICE = (
     '<div class="ex-notice">題目取自'
-    f'<a href="{SOURCE_URL}" target="_blank" rel="noopener noreferrer">{SOURCE_LABEL}歷屆試題</a>'
+    f'<a href="{SOURCE_URL}" target="_blank" rel="noopener noreferrer">{SOURCE_LABEL}試題</a>'
     "，答案為學會公告的標準答案；重點與詳解依據 Fitzpatrick's Dermatology, 9th Edition 與 "
-    "McKee's Pathology of the Skin, 5th Edition（第 6 版到手後更新頁碼）整理</div>"
+    "McKee's Pathology of the Skin, 5th Edition 整理</div>"
 )
 
 MODE_BAR = (
@@ -351,7 +359,7 @@ def expand_hits(fragment: str, chapter: int, on_page: set[str]) -> str:
             year = qid.split("-")[0]
             href = f"#q-{qid}" if qid in on_page else f"/exam/year-{year}#q-{qid}"
             links.append(f'<a href="{href}">{esc(qid)}</a>')
-        return f'<span class="ex-hit">歷屆考過 {len(ids)} 題：{"、".join(links)}</span>'
+        return f'<span class="ex-hit">考過 {len(ids)} 題：{"、".join(links)}</span>'
     out = re.sub(r"\{\{hit:([0-9,\- ]+)\}\}", repl, fragment)
     if "{{" in out:
         raise SystemExit(f"fitz-{chapter} notes: unexpanded placeholder")
@@ -375,7 +383,7 @@ def expand_marks(fragment: str, on_page: set[str]) -> str:
 
 def toc_html(note: str | None, qs_count: int, *, mobile: bool = False) -> str:
     items = [f'<li><a href="#{sid}">{title}</a></li>' for sid, title in SECTION.findall(note or "")]
-    items.append(f'<li class="ex-toc-qs"><a href="#qs-h">歷屆考題（{qs_count} 題）</a></li>')
+    items.append(f'<li class="ex-toc-qs"><a href="#qs-h">考題（{qs_count} 題）</a></li>')
     cls, state, label = (("ex-toc ex-toc-mobile", "", "本章目錄（展開式）") if mobile
                          else ("ex-toc ex-toc-side", " open", "本章目錄"))
     return (f'<details class="{cls}"{state}><summary>本章目錄</summary>'
@@ -384,7 +392,7 @@ def toc_html(note: str | None, qs_count: int, *, mobile: bool = False) -> str:
 
 NOTES_TOOLS = (
     '<div class="ex-notes-tools">'
-    '<span class="ex-legend"><mark class="ex-key">螢光</mark>＝歷屆考過（後附題號）'
+    '<span class="ex-legend"><mark class="ex-key">螢光</mark>＝考過（後附題號）'
     '<span class="ex-legend-trap">紅框</span>＝易錯陷阱'
     '<strong class="ex-n">粗體數字</strong>＝門檻值</span></div>'
 )
@@ -407,17 +415,17 @@ def chapter_page(shell, data, chapter: dict, qs: list[dict]) -> str:
     body = (
         f'<p class="ex-kicker">Fitzpatrick 9e · {esc(chapter["part"].title() if chapter["part"] else "")}</p>'
         f'<h1 class="ex-h1">Ch.{n} {esc(chapter["title"])}</h1>'
-        f'<p class="ex-meta">原書 p.{chapter["pageStart"]}–{chapter["pageEnd"]} · 歷屆共 {len(qs)} 題'
+        f'<p class="ex-meta">原書 p.{chapter["pageStart"]}–{chapter["pageEnd"]} · 考題共 {len(qs)} 題'
         f'（已有詳解 {explained} 題）</p>'
         f'<p class="ex-meta">{esc(year_text)}</p>{NOTICE}{links_html(data["links"].get(n))}'
         f'{toc_html(note, len(qs), mobile=True)}{notes_html}'
-        f'<section aria-labelledby="qs-h"><h2 id="qs-h" class="ex-h2">歷屆考題</h2>{MODE_BAR}'
+        f'<section aria-labelledby="qs-h"><h2 id="qs-h" class="ex-h2">考題</h2>{MODE_BAR}'
         + "".join(question_html(q, data, current_chapter=n) for q in qs)
         + "</section>"
     )
-    title = f"Fitzpatrick Ch.{n} {chapter['title']} 重點與歷屆考題"
+    title = f"Fitzpatrick Ch.{n} {chapter['title']} 重點與考題"
     desc = (f"皮膚科專科醫師考試讀書筆記：Fitzpatrick's Dermatology 9e 第 {n} 章 {chapter['title']}"
-            f"，整理 101–115 年歷屆考題 {len(qs)} 題" + ("與重點整理" if note else "") + "。")
+            f"，整理 101–115 年考題 {len(qs)} 題" + ("與重點整理" if note else "") + "。")
     return page(shell, path=f"/exam/fitz-{n}", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
                 description=desc, og_title=title, crumbs=[(f"Ch.{n}", f"/exam/fitz-{n}")],
                 jsonld_type="WebPage", body=body, page_kind="chapter", toc=toc_html(note, len(qs)))
@@ -446,7 +454,7 @@ def book_page(shell, data, book: str, qs: list[dict]) -> str:
     name, short = OTHER_BOOKS[book]
     body = (
         f'<p class="ex-kicker">其他參考書</p><h1 class="ex-h1">{esc(short)}題 · {esc(name)}</h1>'
-        f'<p class="ex-meta">主要考 {esc(name)} 內容的歷屆題，共 {len(qs)} 題。'
+        f'<p class="ex-meta">主要考 {esc(name)} 內容的考題，共 {len(qs)} 題。'
         "這些題目的詳解需要該書內容，目前只列出官方答案；若 Fitzpatrick 也有涵蓋，題目旁會標出章節。</p>"
         f"{NOTICE}{MODE_BAR}" + "".join(question_html(q, data) for q in qs)
     )
@@ -509,25 +517,43 @@ def review_page(shell) -> str:
         '<div id="ex-review-list" class="ex-review-list"><p class="ex-pending">目前沒有錯題，或瀏覽器停用了 JavaScript。</p></div>'
     )
     title = "皮膚科專科考試錯題本"
-    desc = "皮膚科專科醫師考試讀書筆記的錯題本：集中重練作答模式答錯的歷屆題，並可匯出 Anki 卡片。"
+    desc = "皮膚科專科醫師考試讀書筆記的錯題本：集中重練作答模式答錯的考題，並可匯出 Anki 卡片。"
     return page(shell, path="/exam/review", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
                 description=desc, og_title=title, crumbs=[("錯題本", "/exam/review")],
                 jsonld_type="WebPage", body=body, page_kind="review")
+
+
+SEARCH_VERSION = [""]  # content hash of search-index.json, set by build()
+
+# Hidden until exam.js loads the index, so a page without JS shows no dead box.
+SEARCH_BOX = (
+    '<div class="ex-search" data-exam-search="{index}" hidden>'
+    '<label class="ex-search-label" for="ex-search-input">搜尋疾病或主題（全名、縮寫或中文）</label>'
+    '<input id="ex-search-input" class="ex-search-input" type="search" role="combobox" '
+    'aria-autocomplete="list" aria-expanded="false" aria-controls="ex-search-results" '
+    'aria-describedby="ex-search-hint" autocomplete="off" autocapitalize="off" spellcheck="false" '
+    'enterkeyhint="search" placeholder="例如 HES、pemphigus、梅毒">'
+    '<p id="ex-search-hint" class="ex-search-hint">結果依章節分組，點選後直接跳到該章的段落；可用上下鍵選擇、Enter 開啟。</p>'
+    '<p id="ex-search-status" class="ex-search-status" role="status" aria-live="polite"></p>'
+    '<div id="ex-search-results" class="ex-search-results" role="listbox" aria-label="搜尋結果" hidden></div>'
+    "</div>"
+)
 
 
 def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
     chapters = data["chapters"]
     total = len(data["questions"])
     explained = len(data["explanations"])
+    # Every chapter with questions is listed; exam.js shows data-rank-page rows
+    # at a time behind a 「載入更多」 button, and without JS the whole table shows.
     ranked = sorted(by_chapter.items(), key=lambda kv: (-len(kv[1]), kv[0]))
-    top = ranked[:25]
-    peak = len(top[0][1]) if top else 1
+    peak = len(ranked[0][1]) if ranked else 1
     rows = "".join(
         f'<tr><td><a href="/exam/fitz-{n}">Ch.{n} {esc(chapters[n]["title"])}</a>'
         f'{" <span class=\"ex-badge\">有重點</span>" if n in data["notes"] else ""}</td>'
         f'<td class="ex-num">{len(qs)}</td>'
         f'<td class="ex-bar-cell"><span class="ex-bar" style="width:{round(100 * len(qs) / peak)}%"></span></td></tr>'
-        for n, qs in top
+        for n, qs in ranked
     )
     parts = defaultdict(list)
     for n, ch in sorted(chapters.items()):
@@ -565,13 +591,10 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
     refs = "".join(f"<li>{esc(book)}</li>" for book in REFERENCE_BOOKS)
     body = (
         f'<h1 class="ex-h1">{HUB_TITLE}</h1>'
-        '<p class="ex-lead">目前整理 101–115 年歷屆選擇題以及各章節重點整理（陸續更新中）</p>'
+        '<p class="ex-lead">目前整理 101–115 年考題以及各章節重點整理（陸續更新中）</p>'
+        f'{SEARCH_BOX.format(index=f"/exam/search-index.json?v={SEARCH_VERSION[0]}")}'
         '<h2 class="ex-h2 ex-h2-sm">目前甄審筆試出題參考範圍</h2>'
         f'<ol class="ex-refs">{refs}</ol>{NOTICE}'
-        '<h2 class="ex-h2">出題頻率：最常考的 25 章</h2>'
-        '<p class="ex-meta">一題可能計入多章，所以加總會超過題數。</p>'
-        '<table class="ex-rank"><thead><tr><th scope="col">章節</th><th scope="col">題數</th><th scope="col"><span class="ex-sr">比例</span></th></tr></thead>'
-        f"<tbody>{rows}</tbody></table>"
         '<h2 class="ex-h2">考古卷</h2>'
         '<p class="ex-meta"><a class="ex-cta" href="/exam/practice">自選年份／隨機出題</a></p>'
         '<h2 class="ex-h2">依章節瀏覽與讀書進度</h2>'
@@ -581,15 +604,228 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
         '<label class="ex-check">排序 <select class="ex-select ex-progress-sort" aria-label="章節排序" disabled>'
         '<option value="order">章節順序</option><option value="todo">尚未作答優先</option>'
         '<option value="low">正確率低優先</option></select></label></div>' + "".join(part_html)
+        + '<h2 class="ex-h2" id="rank-h">出題頻率：最常考的章節</h2>'
+        f'<p class="ex-meta">有考題的 {len(ranked)} 章依題數排序。一題可能計入多章，所以加總會超過題數。</p>'
+        '<table class="ex-rank" id="ex-rank" aria-labelledby="rank-h" data-rank-page="25"><thead><tr><th scope="col">章節</th>'
+        '<th scope="col">題數</th><th scope="col"><span class="ex-sr">比例</span></th></tr></thead>'
+        f"<tbody>{rows}</tbody></table>"
+        '<div class="ex-more-wrap" hidden><button type="button" class="ex-more" aria-controls="ex-rank">載入更多</button></div>'
         + '<h2 class="ex-h2">其他參考書與工具</h2>'
         f'<ul class="ex-chapter-list">{books}<li><a href="/exam/review">錯題本與 Anki 匯出</a></li></ul>'
     )
     title = HUB_TITLE
-    desc = (f"皮膚科專科醫師甄審筆試 101–115 年歷屆選擇題 {total} 題，依 Fitzpatrick 9e 章節整理重點，"
+    desc = (f"皮膚科專科醫師甄審筆試 101–115 年考題 {total} 題，依 Fitzpatrick 9e 章節整理重點，"
             "附出題頻率統計、自選年份或隨機出題的考古卷、錯題本與 Anki 匯出。")
     return page(shell, path="/exam", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
                 description=desc, og_title=HUB_TITLE, crumbs=[],
                 jsonld_type="CollectionPage", body=body, page_kind="hub")
+
+
+# ---------------------------------------------------------------- search index
+# The hub's disease search (exam.js) reads exam/search-index.json. Every note
+# section contributes the names a reader would type: its h2/h3 headings, the
+# first cell of each table row, <strong> terms (not the ex-n threshold numbers
+# or the 易錯 label) and <em> organism names. "Full name（ABBR）",
+# "ABBR（full name）" and "English（中文）" are split so the full name, the
+# abbreviation and the Chinese name all find the same section.
+
+TAG = re.compile(r"<[^>]+>")
+CJK = re.compile(r"[\u3400-\u9fff]")
+LATIN = re.compile(r"[A-Za-z]")
+SECTION_BLOCK = re.compile(r'<section class="ex-note" id="([a-z0-9-]+)">(.*?)</section>', re.S)
+PAREN = re.compile(r"[（(]([^（）()]*)[）)]")
+NAME_SOURCES = (
+    re.compile(r"<h[23][^>]*>(.*?)</h[23]>", re.S),
+    re.compile(r"<tbody>.*?</tbody>", re.S),  # expanded to first cells below
+    re.compile(r"<strong>(.*?)</strong>", re.S),  # bare <strong> only: class="ex-n" are numbers
+    re.compile(r"<em>(.*?)</em>", re.S),
+)
+FIRST_CELL = re.compile(r"<tr>\s*<t[dh][^>]*>(.*?)</t[dh]>", re.S)
+SKIP_NAMES = {"易錯", "mckee 補充"}
+
+
+def plain(fragment: str) -> str:
+    return re.sub(r"\s+", " ", html.unescape(TAG.sub("", fragment))).strip()
+
+
+def is_abbr(text: str) -> bool:
+    """SJS, HES, IgA, MBP-1, CD35 — short tokens that are mostly capitals."""
+    if not re.fullmatch(r"[A-Za-z][A-Za-z0-9\-]{1,9}", text):
+        return False
+    letters = [c for c in text if c.isalpha()]
+    caps = sum(c.isupper() for c in letters)
+    return caps >= 2 and caps * 2 >= len(letters)
+
+
+def long_form(abbr: str, before: str) -> str | None:
+    """Schwartz-Hearst: the shortest run of words before '（ABBR）' whose letters spell ABBR."""
+    words = re.findall(r"[A-Za-z0-9][A-Za-z0-9'\-]*", re.split(r"[^A-Za-z0-9'\- ]", before)[-1])
+    letters = [c.lower() for c in abbr if c.isalnum()]
+    if not words or not letters:
+        return None
+    words = words[-min(len(letters) + 5, len(letters) * 2):]
+    text = " ".join(words)
+    si, li = len(text) - 1, len(letters) - 1
+    while li >= 0:
+        ch = letters[li]
+        while si >= 0 and (text[si].lower() != ch or (li == 0 and si > 0 and text[si - 1].isalnum())):
+            si -= 1
+        if si < 0:
+            return None
+        si -= 1
+        li -= 1
+    found = text[text.rfind(" ", 0, si + 1) + 1:]
+    if found.lower() == abbr.lower() or len(found) <= len(abbr):
+        return None
+    return found
+
+
+def split_name(raw: str) -> tuple[list[str], list[str], list[tuple[str, str]]]:
+    """'7. Hypereosinophilic Syndromes（嗜酸性球增多症候群，HES）' ->
+    names [Hypereosinophilic Syndromes, 嗜酸性球增多症候群], abbrs [HES],
+    pairs [(full, HES), (full, 嗜酸性球增多症候群)] (a full English name with its
+    abbreviation or its Chinese name)."""
+    text = re.sub(r"^\s*\d+[.)、]\s*", "", raw).strip(" ：:;；，,。")
+    base = PAREN.sub(" ", text)
+    base = re.sub(r"\s+", " ", base).strip(" ：:;；，,")
+    parts = [base] + [p for group in PAREN.findall(text) for p in re.split(r"[，,、；;/]", group)]
+    names, abbrs, pairs = [], [], []
+    for part in parts:
+        part = part.strip()
+        if (len(part) < 2 or len(part) > 80 or part.lower() in SKIP_NAMES
+                or re.fullmatch(r"(?:p\.|Table|Fig).*|[\d\s.,\-–+%≥≤<>=/]+", part)):
+            continue
+        if is_abbr(part):
+            abbrs.append(part)
+        elif LATIN.search(part) or CJK.search(part):
+            names.append(part)
+    if base and not is_abbr(base) and LATIN.search(base):
+        pairs.extend((base, a) for a in abbrs if long_form(a, base))
+        pairs.extend((base, n) for n in names[1:] if CJK.search(n) and not LATIN.search(n))
+    return names, abbrs, pairs
+
+
+def prose_pairs(text: str) -> list[tuple[str, str]]:
+    """'Bowenoid papulosis（BP）' anywhere in a section -> (Bowenoid papulosis, BP)."""
+    pairs = []
+    for m in PAREN.finditer(text):
+        inner = re.split(r"[，,]", m.group(1))[-1].strip()
+        if is_abbr(inner):
+            full = long_form(inner, text[max(0, m.start() - 120):m.start()])
+            if full:
+                pairs.append((full, inner))
+    return pairs
+
+
+def name_key(text: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"[\-‐–—_/]", " ", text.lower())).strip()
+
+
+def gloss_key(text: str) -> str:
+    """name_key without plural -s, so 'Hypereosinophilic Syndromes' and '... syndrome' meet."""
+    return re.sub(r"(?<=[a-z]{3})s\b", "", name_key(text))
+
+
+class Terms:
+    """Names and abbreviations of one index entry, de-duplicated in first-seen order."""
+
+    def __init__(self) -> None:
+        self.names: list[str] = []
+        self.abbrs: list[str] = []
+        self.seen: set[str] = set()
+
+    def add(self, names=(), abbrs=()) -> None:
+        for target, items in ((self.names, names), (self.abbrs, abbrs)):
+            for item in items:
+                key = name_key(item)
+                if key and key not in self.seen:
+                    self.seen.add(key)
+                    target.append(item)
+
+
+def search_index(data, by_chapter) -> dict:
+    """Entries are [chapter, section id ("" = chapter page), section title, names,
+    abbreviations, n primary names, n primary abbreviations]; primary terms come
+    from the section's own h2 (or the chapter title and its listed aliases) and
+    rank above terms that merely occur inside the section."""
+    chapters = data["chapters"]
+    glossary: dict[str, set[str]] = defaultdict(set)  # gloss_key(full name) -> abbreviations
+    chinese: dict[str, list[str]] = defaultdict(list)  # gloss_key(English name) -> Chinese names
+    sections = []
+    for n in sorted(data["notes"]):
+        if n not in by_chapter:
+            continue  # no chapter page to link to
+        for sid, body in SECTION_BLOCK.findall(data["notes"][n]):
+            heading = plain(re.search(r"<h2>(.*?)</h2>", body, re.S).group(1))
+            terms = Terms()
+            names, abbrs, pairs = split_name(heading)
+            terms.add(names, abbrs)
+            primary = (len(terms.names), len(terms.abbrs))
+            raw_names = []
+            for pattern in NAME_SOURCES:
+                for m in pattern.finditer(body):
+                    if m.group(0).startswith("<tbody>"):
+                        raw_names.extend(plain(c) for c in FIRST_CELL.findall(m.group(0)))
+                    elif not m.group(0).startswith("<h2"):
+                        raw_names.append(plain(m.group(1)))
+            for raw in raw_names:
+                got_names, got_abbrs, got_pairs = split_name(raw)
+                terms.add(got_names, got_abbrs)
+                pairs += got_pairs
+            for full, other in pairs + prose_pairs(plain(body)):
+                if CJK.search(other):
+                    if other not in chinese[gloss_key(full)]:
+                        chinese[gloss_key(full)].append(other)
+                    continue
+                glossary[gloss_key(full)].add(other)
+                terms.add([full], [other])
+            sections.append((n, sid, re.sub(r"^\s*\d+[.)、]\s*", "", heading), terms, primary))
+    fulls = sorted((f for f in glossary if len(f) >= 6), key=lambda f: (-len(f), f))
+    known = (re.compile(r"(?<![a-z0-9])(?:" + "|".join(map(re.escape, fulls)) + r")(?![a-z0-9])")
+             if fulls else None)
+
+    def glossary_abbrs(texts) -> list[str]:
+        """An abbreviation defined anywhere also finds names that only spell it out."""
+        found = []
+        for text in texts:
+            for m in (known.finditer(gloss_key(text)) if known else ()):
+                found.extend(sorted(glossary[m.group(0)]))
+        return found
+
+    def chinese_names(texts) -> list[str]:
+        """Chinese names the notes give for exactly this English name: 'Syphilis（梅毒）'."""
+        return [zh for text in texts for zh in chinese.get(gloss_key(text), [])]
+
+    entries = []
+    for n in sorted(by_chapter):
+        title = chapters[n]["title"]
+        terms = Terms()
+        names, abbrs, _ = split_name(title)
+        terms.add([title] + names, abbrs + data["aliases"].get(n, []))
+        terms.add(chinese_names([title] + names), glossary_abbrs([title]))
+        primary = (len(terms.names), len(terms.abbrs))
+        for group in ("dermnet", "pathologyoutlines"):
+            for item in (data["links"].get(n) or {}).get(group, []):
+                label = re.sub(r"\s+(?:images|\(overview\))$", "", item["label"], flags=re.I)
+                got_names, got_abbrs, _ = split_name(label)
+                terms.add(got_names, got_abbrs)
+        terms.add(chinese_names(terms.names[primary[0]:]), glossary_abbrs(terms.names[primary[0]:]))
+        entries.append([n, "", "", terms.names, terms.abbrs, *primary])
+    for n, sid, heading, terms, primary in sections:
+        head_abbrs = glossary_abbrs(terms.names[:primary[0]])
+        terms.add(abbrs=head_abbrs)
+        if len(terms.abbrs) > primary[1] and head_abbrs:
+            # glossary abbreviations of the heading itself are primary too
+            moved = [a for a in terms.abbrs[primary[1]:] if a in head_abbrs]
+            terms.abbrs = terms.abbrs[:primary[1]] + moved + [a for a in terms.abbrs[primary[1]:] if a not in moved]
+            primary = (primary[0], primary[1] + len(moved))
+        terms.add(abbrs=glossary_abbrs(terms.names[primary[0]:]))
+        entries.append([n, sid, heading, terms.names, terms.abbrs, *primary])
+    return {
+        "chapters": {str(n): chapters[n]["title"] for n in sorted(by_chapter)},
+        "notes": sorted(n for n in data["notes"] if n in by_chapter),
+        "entries": entries,
+    }
 
 
 def client_data(data) -> dict:
@@ -644,6 +880,8 @@ def build() -> dict[str, str]:
     CHAPTER_PAGES.update(by_chapter)
     client = json.dumps(client_data(data), ensure_ascii=False, separators=(",", ":")) + "\n"
     DATA_VERSION[0] = hashlib.sha256(client.encode("utf-8")).hexdigest()[:10]
+    index = json.dumps(search_index(data, by_chapter), ensure_ascii=False, separators=(",", ":")) + "\n"
+    SEARCH_VERSION[0] = hashlib.sha256(index.encode("utf-8")).hexdigest()[:10]
     files: dict[str, str] = {}
     files["index.html"] = hub_page(shell, data, by_chapter, by_year, by_book)
     for n, qs in sorted(by_chapter.items()):
@@ -655,6 +893,7 @@ def build() -> dict[str, str]:
     files["practice.html"] = practice_page(shell, by_year)
     files["review.html"] = review_page(shell)
     files["exam-data.json"] = client
+    files["search-index.json"] = index
     return files
 
 
@@ -817,6 +1056,39 @@ mark.ex-key{background:linear-gradient(transparent 42%,#fde9a8 42%);color:inheri
 :root[data-theme="dark"] .ex-trap,:root[data-theme="dark"] .ex-legend-trap{background:rgba(127,29,29,.3);border-left-color:#b45454;color:inherit}
 :root[data-theme="dark"] .ex-trap>strong:first-child{background:#c24141;color:#fff}
 :root[data-theme="dark"] .ex-n{color:#a4b5a8}
+.ex-note{scroll-margin-top:80px}
+.ex-note:target{animation:ex-flash 2.6s ease-out 1}
+@keyframes ex-flash{0%,35%{background:#fef3c7;box-shadow:0 0 0 8px #fef3c7}100%{background:transparent;box-shadow:0 0 0 8px transparent}}
+:root[data-theme="dark"] .ex-note:target{animation-name:ex-flash-dark}
+@keyframes ex-flash-dark{0%,35%{background:#332a14;box-shadow:0 0 0 8px #332a14}100%{background:transparent;box-shadow:0 0 0 8px transparent}}
+@media (prefers-reduced-motion:reduce){.ex-note:target{animation:none}}
+.ex-search{margin:20px 0 6px}
+.ex-search[hidden],.ex-search-results[hidden],.ex-more-wrap[hidden],.ex-rank tr[hidden]{display:none}
+.ex-search-label{display:block;font-weight:700;font-size:14.5px;margin:0 0 6px}
+.ex-search-input{display:block;width:100%;box-sizing:border-box;border:1.5px solid #4d6358;border-radius:12px;padding:10px 14px;font-size:16px;line-height:1.4;background:#fff;color:inherit}
+.ex-search-input:focus{outline:2px solid #0c5159;outline-offset:2px}
+.ex-search-hint{font-size:12px;color:var(--muted);margin:6px 0 0;line-height:1.7}
+.ex-search-status{font-size:13px;color:var(--ink-2);margin:4px 0 0}
+.ex-search-status:empty{display:none}
+.ex-search-results{border:1px solid var(--border);border-radius:12px;background:#fff;margin-top:8px;max-height:min(62vh,560px);overflow:auto;overscroll-behavior:contain}
+.ex-s-group+.ex-s-group{border-top:1px solid var(--line)}
+.ex-s-ch{font-size:12.5px;font-weight:700;color:#0c5159;padding:8px 14px 2px;margin:0}
+.ex-s-opt{display:block;position:relative;padding:6px 14px 7px;text-decoration:none;color:inherit;font-size:14px;line-height:1.6}
+.ex-s-opt:hover,.ex-s-opt[aria-selected="true"]{background:#f1ece4}
+.ex-s-opt[aria-selected="true"]{box-shadow:inset 3px 0 0 #4d6358}
+.ex-s-sec{font-weight:600;color:var(--teal-deep)}
+.ex-s-hit{display:block;font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.ex-s-more{font-size:12px;color:var(--muted);padding:0 14px 8px;margin:0}
+.ex-more-wrap{display:flex;justify-content:flex-end;margin:-4px 0 12px}
+.ex-more{border:1px solid #4d6358;border-radius:9999px;padding:6px 16px;font-size:13px;font-weight:600;background:#fff;color:#4d6358;cursor:pointer}
+:root[data-theme="dark"] .ex-search-input{background:#24211c;border-color:#a4b5a8}
+:root[data-theme="dark"] .ex-search-input:focus{outline-color:#a4b5a8}
+:root[data-theme="dark"] .ex-search-results{background:#24211c;border-color:#3a352c}
+:root[data-theme="dark"] .ex-s-group+.ex-s-group{border-color:#3a352c}
+:root[data-theme="dark"] .ex-s-ch,:root[data-theme="dark"] .ex-s-sec{color:#a4b5a8}
+:root[data-theme="dark"] .ex-s-opt:hover,:root[data-theme="dark"] .ex-s-opt[aria-selected="true"]{background:#3a352c}
+:root[data-theme="dark"] .ex-s-opt[aria-selected="true"]{box-shadow:inset 3px 0 0 #a4b5a8}
+:root[data-theme="dark"] .ex-more{background:transparent;color:#a4b5a8;border-color:#a4b5a8}
 </style>
 """
 

@@ -547,7 +547,263 @@
     });
   }
 
+  // ---------------------------------------------------------- hub search
+  // exam/search-index.json (built by _gen_exam.py): chapters {n: title},
+  // notes [chapters with notes], entries [chapter, section id ('' = chapter
+  // page), section title, names, abbreviations, n primary names, n primary
+  // abbreviations]. Primary terms (the section's own heading, the chapter
+  // title) rank above terms that only occur inside the section.
+  var SEARCH_GROUPS = 12;
+  var SEARCH_PER_GROUP = 6;
+
+  function normTerm(text) {
+    var s = String(text);
+    if (s.normalize) s = s.normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
+    return s.toLowerCase().replace(/[\-\u2010-\u2015_\/\u00b7]/g, ' ').replace(/[\u2019']/g, '')
+      .replace(/\s+/g, ' ').trim();
+  }
+  var HAS_CJK = /[\u3400-\u9fff]/;
+
+  function prepareIndex(raw) {
+    var notes = {};
+    (raw.notes || []).forEach(function (n) { notes[n] = true; });
+    var entries = raw.entries.map(function (e, i) {
+      var terms = [];
+      e[3].forEach(function (t, j) { terms.push({ text: t, key: normTerm(t), abbr: false, primary: j < e[5] }); });
+      e[4].forEach(function (t, j) { terms.push({ text: t, key: normTerm(t), abbr: true, primary: j < e[6] }); });
+      return { ch: e[0], sid: e[1], title: e[2], terms: terms, order: i };
+    });
+    return { chapters: raw.chapters, notes: notes, entries: entries };
+  }
+
+  // 0 exact abbreviation, 1 exact name, 2 prefix, 3 word start, 4 substring; -1 none.
+  function matchTier(term, q, shortAscii, cjk) {
+    var k = term.key;
+    if (k === q) return term.abbr ? 0 : 1;
+    var at = k.indexOf(q);
+    if (at === 0) return 2;
+    if (at < 0) return -1;
+    if (k.indexOf(' ' + q) >= 0 || cjk) return 3;
+    return term.abbr || shortAscii ? -1 : 4;
+  }
+
+  function searchIndex(index, query) {
+    var q = normTerm(query);
+    if (!q) return null;
+    var cjk = HAS_CJK.test(q);
+    // Short Latin queries (HES, BP) look like abbreviations: no mid-word hits.
+    var shortAscii = !cjk && q.length <= 3;
+    var hits = [];
+    index.entries.forEach(function (entry) {
+      var best = Infinity;
+      var matched = [];
+      entry.terms.forEach(function (term) {
+        var tier = matchTier(term, q, shortAscii, cjk);
+        if (tier < 0) return;
+        var score = tier * 2 + (term.primary ? 0 : 1);
+        matched.push({ text: term.text, score: score });
+        if (score < best) best = score;
+      });
+      if (!matched.length) return;
+      matched.sort(function (a, b) { return a.score - b.score; });
+      hits.push({ entry: entry, score: best, matched: matched });
+    });
+    hits.sort(function (a, b) {
+      return a.score - b.score || (a.entry.sid ? 1 : 0) - (b.entry.sid ? 1 : 0) ||
+        a.entry.ch - b.entry.ch || a.entry.order - b.entry.order;
+    });
+    var groups = [];
+    var byChapter = {};
+    hits.forEach(function (hit) {
+      var g = byChapter[hit.entry.ch];
+      if (!g) {
+        g = byChapter[hit.entry.ch] = { ch: hit.entry.ch, hits: [] };
+        groups.push(g);
+      }
+      g.hits.push(hit);
+    });
+    return { query: query.trim(), total: hits.length, groups: groups };
+  }
+
+  function initSearch(box) {
+    var input = box.querySelector('.ex-search-input');
+    var list = box.querySelector('.ex-search-results');
+    var status = box.querySelector('.ex-search-status');
+    var url = box.getAttribute('data-exam-search');
+    var index = null;
+    var loading = null;
+    var timer = null;
+    var options = [];
+    var active = -1;
+    box.hidden = false;
+
+    function loadIndex() {
+      if (!loading) {
+        loading = fetch(url, { credentials: 'same-origin' })
+          .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+          .then(function (raw) { index = prepareIndex(raw); return index; });
+        loading.catch(function () { loading = null; });
+      }
+      return loading;
+    }
+    function setActive(i) {
+      if (active >= 0 && options[active]) options[active].setAttribute('aria-selected', 'false');
+      active = i;
+      if (i >= 0 && options[i]) {
+        options[i].setAttribute('aria-selected', 'true');
+        input.setAttribute('aria-activedescendant', options[i].id);
+        options[i].scrollIntoView({ block: 'nearest' });
+      } else {
+        input.removeAttribute('aria-activedescendant');
+      }
+    }
+    function close() {
+      setActive(-1);
+      options = [];
+      while (list.firstChild) list.removeChild(list.firstChild);
+      list.hidden = true;
+      input.setAttribute('aria-expanded', 'false');
+    }
+    function render(result) {
+      close();
+      if (!result) { status.textContent = ''; return; }
+      if (!result.total) {
+        status.textContent = '找不到「' + result.query + '」。可以試試英文全名、縮寫或中文名稱。';
+        return;
+      }
+      var shownGroups = result.groups.slice(0, SEARCH_GROUPS);
+      shownGroups.forEach(function (g, gi) {
+        var title = index.chapters[g.ch] || '';
+        var chLabel = 'Ch.' + g.ch + ' ' + title;
+        var group = el('div', 'ex-s-group');
+        group.setAttribute('role', 'group');
+        var head = el('p', 'ex-s-ch', chLabel);
+        head.id = 'ex-s-g' + gi;
+        head.setAttribute('aria-hidden', 'true');
+        group.setAttribute('aria-labelledby', head.id);
+        group.appendChild(head);
+        g.hits.slice(0, SEARCH_PER_GROUP).forEach(function (hit) {
+          var e = hit.entry;
+          var opt = el('a', 'ex-s-opt');
+          opt.id = 'ex-s-o' + options.length;
+          opt.setAttribute('role', 'option');
+          opt.setAttribute('aria-selected', 'false');
+          opt.tabIndex = -1;
+          opt.href = '/exam/fitz-' + e.ch + (e.sid ? '#' + e.sid : '');
+          opt.appendChild(el('span', 'ex-sr', chLabel + ' '));
+          opt.appendChild(el('span', 'ex-s-sec', e.sid ? '› ' + e.title
+            : (index.notes[e.ch] ? '章節頁（重點整理與考題）' : '章節頁（尚無重點整理，可看考題）')));
+          var names = [];
+          hit.matched.forEach(function (m) {
+            if (names.length < 3 && m.score === hit.matched[0].score && names.indexOf(m.text) < 0) names.push(m.text);
+          });
+          opt.appendChild(el('span', 'ex-s-hit', '命中：' + names.join('、')));
+          opt.addEventListener('mousemove', function () {
+            var i = options.indexOf(opt);
+            if (i !== active) setActive(i);
+          });
+          group.appendChild(opt);
+          options.push(opt);
+        });
+        if (g.hits.length > SEARCH_PER_GROUP) {
+          group.appendChild(el('p', 'ex-s-more', '本章另有 ' + (g.hits.length - SEARCH_PER_GROUP) + ' 個段落也提到，請輸入更完整的名稱。'));
+        }
+        list.appendChild(group);
+      });
+      list.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+      status.textContent = '找到 ' + result.total + ' 筆，分布在 ' + result.groups.length + ' 章' +
+        (result.groups.length > SEARCH_GROUPS ? '（先列出最相關的 ' + SEARCH_GROUPS + ' 章）' : '') + '。';
+    }
+    function run() {
+      var query = input.value;
+      if (!normTerm(query)) { render(null); return; }
+      if (!index) status.textContent = '搜尋索引載入中…';
+      loadIndex().then(function () {
+        if (input.value === query) render(searchIndex(index, query));
+      }).catch(function () {
+        close();
+        status.textContent = '搜尋索引載入失敗，請重新整理頁面。';
+      });
+    }
+    input.addEventListener('focus', function () { loadIndex().catch(function () {}); });
+    input.addEventListener('input', function () {
+      clearTimeout(timer);
+      timer = setTimeout(run, 150);
+    });
+    input.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        if (!options.length) return;
+        event.preventDefault();
+        var step = event.key === 'ArrowDown' ? 1 : -1;
+        setActive(active < 0 ? (step > 0 ? 0 : options.length - 1)
+          : (active + step + options.length) % options.length);
+      } else if (event.key === 'Enter') {
+        if (event.isComposing) return;  // finishing a 注音／倉頡 composition
+        event.preventDefault();
+        clearTimeout(timer);
+        if (!options.length && normTerm(input.value)) { run(); return; }
+        var target = options[active >= 0 ? active : 0];
+        if (target) window.location.href = target.href;
+      } else if (event.key === 'Escape') {
+        if (!list.hidden) { event.preventDefault(); close(); }
+        else if (input.value) { event.preventDefault(); input.value = ''; render(null); }
+      }
+    });
+  }
+
+  // Hub frequency table: every chapter is in the HTML; show RANK_PAGE rows at
+  // a time behind 「載入更多」 (without JS the whole table stays visible).
+  function initRank(table) {
+    var page = Number(table.getAttribute('data-rank-page')) || 25;
+    var rows = table.tBodies[0] ? table.tBodies[0].rows : [];
+    var wrap = document.querySelector('.ex-more-wrap');
+    var btn = wrap && wrap.querySelector('.ex-more');
+    if (!btn || rows.length <= page) return;
+    var shown = page;
+    for (var i = page; i < rows.length; i++) rows[i].hidden = true;
+    function label() {
+      btn.textContent = '載入更多（' + (shown + 1) + '–' + Math.min(shown + page, rows.length) + '）';
+    }
+    label();
+    wrap.hidden = false;
+    btn.addEventListener('click', function () {
+      var first = rows[shown];
+      var end = Math.min(shown + page, rows.length);
+      for (var j = shown; j < end; j++) rows[j].hidden = false;
+      shown = end;
+      if (shown >= rows.length) {
+        wrap.hidden = true;  // focus would be lost with the button; move it to the new rows
+        var link = first.querySelector('a');
+        if (link) link.focus();
+      } else {
+        label();
+      }
+    });
+  }
+
+  // Chapter pages: a link to #section must show it even if it sits in a
+  // closed <details>; the :target highlight itself is plain CSS.
+  function revealTarget() {
+    var id = window.location.hash.slice(1);
+    if (!id) return;
+    try { id = decodeURIComponent(id); } catch (e) { return; }
+    var target = document.getElementById(id);
+    if (!target) return;
+    var opened = false;
+    for (var d = target.closest('details'); d; d = d.parentElement && d.parentElement.closest('details')) {
+      if (!d.open) { d.open = true; opened = true; }
+    }
+    if (opened) target.scrollIntoView();
+  }
+
   function init() {
+    var search = document.querySelector('[data-exam-search]');
+    if (search && window.fetch) initSearch(search);
+    var rank = document.getElementById('ex-rank');
+    if (rank) initRank(rank);
+    revealTarget();
+    window.addEventListener('hashchange', revealTarget);
     document.querySelectorAll('.ex-mode').forEach(function (btn) {
       btn.addEventListener('click', function () { setMode(btn.getAttribute('data-mode')); });
     });
