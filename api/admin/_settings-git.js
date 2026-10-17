@@ -1,5 +1,6 @@
 // Fixed-repository immutable Git reads and bounded requests for site settings.
 import { contract, SHA, fail } from './_site-settings.js';
+import { githubRequest, GitHubRequestError, logGitHubFailure } from './_github-fetch.js';
 const encoder = new TextEncoder();
 export function settingsGit(pat) {
   const trees = new Map();
@@ -7,40 +8,20 @@ export function settingsGit(pat) {
   const deadline = Date.now() + 22_000;
   async function api(method, path, body, optional = false) {
     if (typeof path !== 'string' || path.startsWith('/') || path.includes('://') || path.includes('..')) fail(502, 'invalid_settings_repository');
-    const controller = new AbortController();
     const left = deadline - Date.now();
-    if (left <= 0) fail(502, 'settings_repository_unavailable');
-    const timer = setTimeout(() => controller.abort(), Math.min(left, 12_000));
+    if (left <= 0) {
+      logGitHubFailure('site-settings', path, { status: null, code: 'github_timeout', error: null }, pat);
+      fail(502, 'github_timeout');
+    }
     try {
-      const response = await fetch('https://api.github.com/repos/' + contract.repository + '/' + path, {
-        method, cache: 'no-store', redirect: 'error', signal: controller.signal,
-        headers: { Authorization: 'Bearer ' + pat, Accept: path.startsWith('contents/') ? 'application/vnd.github.object+json' : 'application/vnd.github+json',
-          'Content-Type': 'application/json', 'User-Agent': 'ChenDermatologist-Settings/1.0', 'Cache-Control': 'no-cache', 'X-GitHub-Api-Version': '2022-11-28' },
-        ...(body === undefined ? {} : { body: JSON.stringify(body) }),
-      });
-      if (optional && response.status === 404) return null;
-      if ([409, 422].includes(response.status)) fail(409, 'settings_conflict');
-      if (response.status === 401) fail(401, 'login_required');
-      if (!response.ok || !response.body) fail(502, 'settings_repository_unavailable');
-      const reader = response.body.getReader(), chunks = [];
-      let total = 0;
-      try {
-        for (;;) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          total += value.byteLength;
-          if (total > 3_000_000) fail(502, 'settings_repository_unavailable');
-          chunks.push(value);
-        }
-      } finally { await reader.cancel(); }
-      const bytes = new Uint8Array(total);
-      let offset = 0;
-      for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
-      return JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
+      return await githubRequest({ endpoint: 'site-settings', url: 'https://api.github.com/repos/' + contract.repository + '/' + path, path,
+        method, pat, body: body === undefined ? undefined : JSON.stringify(body), timeoutMs: Math.min(left, 12_000), maxBytes: 3_000_000,
+        optional, accept: path.startsWith('contents/') ? 'application/vnd.github.object+json' : 'application/vnd.github+json',
+        userAgent: 'ChenDermatologist-Settings/1.0' });
     } catch (error) {
-      if (error && typeof error.code === 'string' && Number.isInteger(error.status)) throw error;
-      fail(502, 'settings_repository_unavailable');
-    } finally { clearTimeout(timer); }
+      if (error instanceof GitHubRequestError) fail(error.conflict ? 409 : 502, error.conflict ? 'settings_conflict' : error.code);
+      fail(502, 'github_fetch_failed');
+    }
   }
   async function ref(branch) {
     const data = await api('GET', 'git/ref/heads/' + encodeURIComponent(branch), undefined, true);

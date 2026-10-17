@@ -11,7 +11,7 @@ module.exports = async function checkEditorDraftBridge(browser) {
   const writes = [], externalWrites = []; let release, remoteHead = null, acceptedHtml = html;
   let conflict = false, pauseNextLoad = false, loadRelease, newDraft = null; const media = new Map();
   let publication = null, pauseNextRequest = false, requestRelease, requestSerial = 0, requestLocked = false;
-  let failRepositoryList = false, listLegacy = false, includeNewDraftInList = true;
+  let failRepositoryList = false, listLegacy = false, includeNewDraftInList = true, failArticleLoad = false;
   try {
     const page = await context.newPage();
     await page.addInitScript(() => {
@@ -36,6 +36,7 @@ module.exports = async function checkEditorDraftBridge(browser) {
       if (url.pathname === '/api/admin/login') return route.fulfill({ status: 200, json: { ok: true, login: 'expertise88864' } });
       if (url.pathname === '/api/admin/article-draft') {
         if (request.method() === 'GET') {
+          if (failArticleLoad && url.searchParams.get('file') === 'blog/example.html') return route.fulfill({ status: 502, json: { ok: false, error: 'github_token_invalid' } });
           if (url.searchParams.get('mode') === 'list') return route.fulfill({ status: 200, json: { drafts: [
             ...(remoteHead ? [{ file: 'blog/example.html', head: remoteHead, legacy: false }] : []),
             ...(newDraft && includeNewDraftInList ? [{ file: 'blog/new-fixture.html', head: NEW_HEAD, legacy: listLegacy }] : []),
@@ -87,7 +88,19 @@ module.exports = async function checkEditorDraftBridge(browser) {
     });
     await page.goto('https://editor-draft.test/admin.html');
     await page.waitForFunction(() => !!window.DNEditorDraftBridge);
+    // A failed article load is shown prominently in the editing area, not only in the status bar.
+    failArticleLoad = true;
+    assert.equal(await page.evaluate(() => loadFile('blog/example.html')), false);
+    failArticleLoad = false;
+    const loadError = page.locator('#draftLoadError');
+    await loadError.waitFor({ state: 'visible' });
+    assert.equal(await loadError.getAttribute('role'), 'alert');
+    assert.match(await loadError.textContent(), /GitHub token 無效或已過期，請清除登入後重新登入/);
+    assert.match(await loadError.textContent(), /blog\/example\.html/);
+    await page.locator('#draftLoadErrorClose').click();
+    await loadError.waitFor({ state: 'hidden' });
     assert.equal(await page.evaluate(() => loadFile('blog/example.html')), true);
+    assert.equal(await loadError.isVisible(), false, 'a successful load clears the error notice');
     const editor = page.frameLocator('iframe.editor').locator('[data-cd-editable="1"]');
     await editor.waitFor(); await editor.click(); await editor.press('End'); await editor.pressSequentially(' edited');
     const gif = Buffer.from('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7', 'base64');

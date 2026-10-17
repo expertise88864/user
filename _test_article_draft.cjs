@@ -8,8 +8,9 @@ let parse, patientReview;
 test.before(async () => { ({ parse } = await import('parse5')); patientReview = await import('./api/admin/_patient-review-contract.js'); });
 const FILE = 'blog/example.html';
 const HTML = '<html lang="zh-Hant"><head><title>Fixture</title></head><body><main>本機測試</main></body></html>';
-const source = fs.readFileSync('api/admin/article-draft.js', 'utf8')
-  .replace(/import[^;]+;/g, '').replace('export const config', 'const config')
+const transport = fs.readFileSync('api/admin/_github-fetch.js', 'utf8').replace(/\bexport (class|const|function|async function)/g, '$1');
+const source = (transport + '\n' + fs.readFileSync('api/admin/article-draft.js', 'utf8')
+  .replace(/import[^;]+;/g, '')).replace('export const config', 'const config')
   .replace('export default async function handler', 'async function handler');
 const sha = value => crypto.createHash('sha1').update(value).digest('hex');
 const blobSha = bytes => sha(Buffer.concat([Buffer.from('blob ' + bytes.length + '\0'), bytes]));
@@ -21,15 +22,20 @@ function fixture() {
   const store = value => { const bytes = Buffer.isBuffer(value) ? value : Buffer.from(value); const id = blobSha(bytes); blobs.set(id, bytes); return id; };
   const mainBlob = store(HTML), mainTree = sha('main-tree'), main = sha('main');
   trees.set(mainTree, new Map([[FILE, mainBlob]])); commits.set(main, { tree: { sha: mainTree }, parents: [] }); refs.set('main', main);
-  const h = { calls, blobs, trees, commits, refs, store, mainBlob, main, session: true, race: false, corrupt: false, corruptRecord: false, corruptRequest: false, outcomeUnknown: false, failBlob: false, failWrite: null };
+  const logs = [];
+  const h = { logs, calls, blobs, trees, commits, refs, store, mainBlob, main, session: true, race: false, corrupt: false, corruptRecord: false, corruptRequest: false, outcomeUnknown: false, failBlob: false, failWrite: null };
   async function fetch(url, options) {
     assert.equal(new URL(url).origin, 'https://api.github.com');
-    assert.equal(options.redirect, 'error');
+    // Edge-safe transport: no `cache` option, manual (refused) redirects.
+    assert.equal(options.redirect, 'manual');
+    assert.ok(!('cache' in options), 'Vercel Edge fetch must not receive a cache option');
+    assert.equal(options.headers['Cache-Control'], 'no-cache');
     assert.equal(options.headers.Authorization, 'Bearer fixture-secret');
     const u = new URL(url), path = decodeURIComponent(u.pathname.replace('/repos/expertise88864/user/', ''));
     if (path.startsWith('contents/')) assert.equal(options.headers.Accept, 'application/vnd.github.object+json', 'large Contents files require the supported object media type');
     const body = options.body && JSON.parse(options.body);
     calls.push({ method: options.method, path, body });
+    if (h.override) { const overridden = await h.override(path, options.method); if (overridden) return overridden; }
     if (h.beforeRequest) await h.beforeRequest(path, options.method, body);
     if (options.method === 'GET' && path === h.failRead) return Response.json({}, { status: 503 });
     if (options.method !== 'GET' && path === h.failWrite) return Response.json({ message: 'private upstream detail' }, { status: 503 });
@@ -104,7 +110,7 @@ function fixture() {
     if (h.tamper) result = h.tamper(path, result);
     return Response.json(result);
   }
-  const context = { URL, Request, Response, TextEncoder, TextDecoder, Uint8Array, AbortController,
+  const context = { console: { error: (...args) => logs.push(args.join(' ')) }, URL, Request, Response, TextEncoder, TextDecoder, Uint8Array, AbortController,
     setTimeout, clearTimeout, atob, btoa, crypto: crypto.webcrypto, fetch, parse,
     observePublication: publicationContext.observePublication, publicationPolicy, patientReview,
     getSession: async () => h.session ? { pat: 'fixture-secret', login: 'expertise88864' } : null };
@@ -717,7 +723,8 @@ test('media and HTML enter one immutable draft commit, with digest/type validati
 test('unknown network outcome does not retry a write or expose provider details', async () => {
   const h = fixture(); h.outcomeUnknown = true;
   const response = await h.request(h.input());
-  assert.equal(response.status, 502); assert.equal((await response.json()).error, 'repository_unavailable');
+  assert.equal(response.status, 502); assert.equal((await response.json()).error, 'github_fetch_failed');
+  assert.ok(h.logs.length && h.logs.every(line => !line.includes('fixture-secret')), 'transport logs redact the credential');
   assert.equal(h.calls.filter(c => c.path === 'git/refs').length, 1);
   assert.ok(h.refs.has('drafts/example'), 'the write may already be accepted');
   const before = h.calls.length;
@@ -962,7 +969,7 @@ test('unavailable final approval evidence neither invalidates nor replaces the s
     const before = h.calls.length, refs = new Map(h.refs), objects = h.commits.size;
     const response = await h.request(input);
     assert.equal(response.status, 502);
-    assert.equal((await response.json()).error, 'repository_unavailable');
+    assert.equal((await response.json()).error, 'github_upstream_error');
     assert.ok(h.calls.slice(before).every(call => call.method === 'GET'));
     assert.deepEqual(h.refs, refs); assert.equal(h.commits.size, objects);
   }
@@ -1033,4 +1040,57 @@ test('existing draft adopts an image added in a later immutable main without los
  const loaded=await (await h.request()).json();assert.deepEqual(loaded.assets,[{path,sha:id,size:gif.length}]);
  assert.deepEqual(loaded.media,[{path,base64:gif.toString('base64')}]);assert.equal(loaded.content,content);
  assert.equal(h.refs.get('main'),nextMain,'saving never changes main');
+});
+
+// --- Edge-safe GitHub transport classification ---
+// Every GitHub failure keeps a distinct code (never one shared
+// repository_unavailable) and the log never carries the credential.
+const fakeRedirect = () => ({ type: 'opaqueredirect', status: 0, ok: false, headers: new Headers(), body: null });
+for (const [label, respond, code] of [
+  ['401', () => Response.json({ message: 'Bad credentials fixture-secret' }, { status: 401 }), 'github_token_invalid'],
+  ['403 rate limit', () => Response.json({}, { status: 403, headers: { 'x-ratelimit-remaining': '0' } }), 'github_rate_limited'],
+  ['429 secondary rate limit', () => Response.json({}, { status: 429 }), 'github_rate_limited'],
+  ['403 forbidden', () => Response.json({}, { status: 403, headers: { 'x-ratelimit-remaining': '4999' } }), 'github_forbidden'],
+  ['404 required path', () => Response.json({}, { status: 404 }), 'github_not_found'],
+  ['301 redirect', () => new Response(null, { status: 301, headers: { Location: 'https://elsewhere.invalid/' } }), 'github_redirect'],
+  ['302 redirect', () => new Response(null, { status: 302, headers: { Location: 'https://elsewhere.invalid/' } }), 'github_redirect'],
+  ['opaque redirect', fakeRedirect, 'github_redirect'],
+  ['500', () => Response.json({}, { status: 500 }), 'github_upstream_error'],
+  ['503', () => Response.json({}, { status: 503 }), 'github_upstream_error'],
+  ['400', () => Response.json({}, { status: 400 }), 'github_unexpected_status'],
+  ['AbortError', () => { throw new DOMException('This operation was aborted', 'AbortError'); }, 'github_timeout'],
+  ['TypeError', () => { throw new TypeError('fetch failed: Bearer fixture-secret ghp_' + 'A'.repeat(36)); }, 'github_fetch_failed'],
+  ['invalid JSON', () => new Response('{', { status: 200 }), 'github_response_invalid'],
+]) {
+  test('GitHub ' + label + ' is reported as ' + code + ' and logged without the credential', async () => {
+    const h = fixture();
+    h.override = path => path === 'git/matching-refs/heads/drafts/' ? respond() : undefined;
+    const response = await h.request(null, { query: '&mode=list' });
+    assert.equal(response.status, 502);
+    const body = await response.json();
+    assert.equal(body.error, code);
+    assert.notEqual(body.error, 'repository_unavailable');
+    assert.ok(!JSON.stringify(body).includes('fixture-secret'));
+    assert.equal(h.logs.length, 1, 'one structured log line per failed GitHub request');
+    const entry = JSON.parse(h.logs[0].replace('[admin-github] ', ''));
+    assert.equal(entry.endpoint, 'article-draft');
+    assert.equal(entry.path, 'git/matching-refs/heads/drafts/');
+    assert.equal(entry.code, code);
+    for (const line of h.logs) {
+      assert.ok(!line.includes('fixture-secret'), 'PAT never logged');
+      assert.ok(!/Bearer\s+\S/.test(line) && !/ghp_A/.test(line), 'Authorization values never logged');
+    }
+    if (label === 'TypeError') { assert.equal(entry.errorName, 'TypeError'); assert.match(entry.errorMessage, /fetch failed/); }
+    if (label === 'AbortError') assert.equal(entry.errorName, 'AbortError');
+    if (/^\d/.test(label)) assert.equal(entry.status, Number(label.slice(0, 3)));
+  });
+}
+test('optional 404 stays a missing file and conflicts stay draft_conflict without transport logs', async () => {
+  const h = fixture();
+  const loaded = await (await h.request()).json();
+  assert.equal(loaded.head, null, 'a missing draft ref (optional 404) is not an error');
+  assert.equal(h.logs.length, 0);
+  h.race = true;
+  assert.equal((await h.request(h.input())).status, 409);
+  assert.equal(h.logs.length, 0);
 });

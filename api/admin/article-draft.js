@@ -5,6 +5,7 @@ import { parse } from 'parse5';
 import { observePublication } from './_article-publication.js';
 import publicationPolicy from '../../_delivery_policy.json';
 import * as patientReview from './_patient-review-contract.js';
+import { githubRequest, GitHubRequestError } from './_github-fetch.js';
 
 export const config = { runtime: 'edge' };
 
@@ -59,40 +60,15 @@ function encode(value) {
 }
 function github(pat) {
   return async (method, path, body, missing = false) => {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 12_000);
     try {
-      const response = await fetch('https://api.github.com/repos/' + REPO + '/' + path, {
-        method, redirect: 'error', cache: 'no-store', signal: controller.signal,
-        headers: { Authorization: 'Bearer ' + pat,
-          Accept: path.startsWith('contents/') ? 'application/vnd.github.object+json' : 'application/vnd.github+json',
-          'Content-Type': 'application/json', 'User-Agent': 'ChenDermatologist-Drafts/1.0', 'Cache-Control': 'no-cache',
-          'X-GitHub-Api-Version': '2022-11-28' },
-        ...(body ? { body: JSON.stringify(body) } : {}),
-      });
-      if (missing && response.status === 404) return null;
-      if (response.status === 409 || response.status === 422) fail(409, 'draft_conflict');
-      if (!response.ok) fail(502, 'repository_unavailable');
-      if (!response.body) fail(502, 'repository_unavailable');
-      const reader = response.body.getReader(), chunks = [];
-      let length = 0;
-      try {
-        for (;;) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          length += value.byteLength;
-          if (length > MAX_API_RESPONSE) fail(502, 'repository_unavailable');
-          chunks.push(value);
-        }
-      } finally { await reader.cancel(); }
-      const bytes = new Uint8Array(length);
-      let offset = 0;
-      for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
-      return JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
+      return await githubRequest({ endpoint: 'article-draft', url: 'https://api.github.com/repos/' + REPO + '/' + path, path,
+        method, pat, body: body ? JSON.stringify(body) : undefined, timeoutMs: 12_000, maxBytes: MAX_API_RESPONSE, optional: missing,
+        accept: path.startsWith('contents/') ? 'application/vnd.github.object+json' : 'application/vnd.github+json',
+        userAgent: 'ChenDermatologist-Drafts/1.0' });
     } catch (error) {
-      if (error instanceof DraftError) throw error;
-      fail(502, 'repository_unavailable');
-    } finally { clearTimeout(timeout); }
+      if (error instanceof GitHubRequestError) fail(error.conflict ? 409 : 502, error.conflict ? 'draft_conflict' : error.code);
+      fail(502, 'github_fetch_failed');
+    }
   };
 }
 function repositoryRefSha(data, branch) {

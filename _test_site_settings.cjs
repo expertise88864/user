@@ -9,9 +9,9 @@ const publicationPolicy = JSON.parse(fs.readFileSync('_delivery_policy.json', 'u
 const publicationContext = {URL, Date};
 vm.runInNewContext(fs.readFileSync('api/admin/_article-publication.js','utf8').replace('export async function','async function')+
   '\nthis.observePublication=observePublication;',publicationContext);
-const source = ['_site-settings.js', '_settings-git.js', 'site-settings.js'].map(file =>
+const source = ['_github-fetch.js', '_site-settings.js', '_settings-git.js', 'site-settings.js'].map(file =>
   fs.readFileSync('api/admin/' + file, 'utf8').replace(/^import[^\n]+;\s*$/gm, '')
-    .replace(/^export \{[^\n]+\};\s*$/gm, '').replace(/\bexport (class|const|function)/g, '$1')
+    .replace(/^export \{[^\n]+\};\s*$/gm, '').replace(/\bexport (class|const|function|async function)/g, '$1')
     .replace('export default async function handler', 'async function handler')).join('\n');
 const hash = value => crypto.createHash('sha1').update(value).digest('hex');
 const gitBlob = bytes => hash(Buffer.concat([Buffer.from('blob ' + bytes.length + '\0'), bytes]));
@@ -24,7 +24,8 @@ function fixture(observationPolicy = publicationPolicy) {
   const initial = new Map([[contract.source, store(JSON.stringify(defaults()))], [contract.catalog, store(JSON.stringify({version: 1, articles}))]]);
   const tree = treeId(initial), main = hash('main');
   trees.set(tree, initial); commits.set(main, {tree: {sha: tree}, parents: []}); refs.set('main', main);
-  const h = {blobs, trees, commits, refs, calls, store, main, session: true, timeouts: []};
+  const logs = [];
+  const h = {logs, blobs, trees, commits, refs, calls, store, main, session: true, timeouts: []};
   h.changeMain = (path, value, canonical = false) => {
     const nextTree = new Map(trees.get(commits.get(refs.get('main')).tree.sha));
     nextTree.set(path, store(JSON.stringify(value,null,canonical?2:undefined)+(canonical?'\n':'')));
@@ -35,12 +36,15 @@ function fixture(observationPolicy = publicationPolicy) {
     const u = new URL(url);
     assert.equal(u.origin, 'https://api.github.com');
     assert.ok(u.pathname.startsWith('/repos/expertise88864/user/'));
-    assert.equal(options.redirect, 'error');
-    assert.equal(options.cache, 'no-store');
+    // Vercel Edge-safe transport: no `cache` option; redirects are manual and refused.
+    assert.equal(options.redirect, 'manual');
+    assert.ok(!('cache' in options), 'Edge fetch must not receive a cache option');
+    assert.equal(options.headers['Cache-Control'], 'no-cache');
     assert.equal(options.headers.Authorization, 'Bearer fixture-only');
     const path = decodeURIComponent(u.pathname.slice('/repos/expertise88864/user/'.length));
     const body = options.body && JSON.parse(options.body), call = {path, method: options.method, body};
     calls.push(call);
+    if (h.override) { const overridden = await h.override(call); if (overridden) return overridden; }
     if (h.stall) return new Promise((resolve, reject) => options.signal.addEventListener('abort', () => reject(Error('fixture timeout')), {once: true}));
     if (h.before) await h.before(call);
     if (h.fail === path) throw Error('private credential / fixture-only');
@@ -95,7 +99,7 @@ function fixture(observationPolicy = publicationPolicy) {
     if (h.raw) { const raw = h.raw(call, result); if (raw) return raw; }
     return Response.json(result);
   }
-  const context = {contract, URL, Request, Response, TextEncoder, TextDecoder, Uint8Array, AbortController,
+  const context = {console: {error: (...args) => logs.push(args.join(' '))}, contract, URL, Request, Response, TextEncoder, TextDecoder, Uint8Array, AbortController,
     setTimeout: (callback, milliseconds) => { h.timeouts.push(milliseconds); return setTimeout(callback, h.fastTimers ? 10 : milliseconds); },
     clearTimeout, atob, crypto: crypto.webcrypto, fetch,
     getSession: async () => h.session ? {pat: 'fixture-only', login: h.login || 'expertise88864'} : null,
@@ -425,7 +429,9 @@ test('a stalled upstream is aborted with the configured finite request deadline'
   const h = fixture(); h.stall = true; h.fastTimers = true;
   const response = await h.request(); assert.equal(response.status, 502); noWrites(h);
   assert.ok(h.timeouts.length > 0); assert.ok(h.timeouts.every(milliseconds => milliseconds > 0 && milliseconds <= 12_000));
-  assert.equal((await response.json()).error, 'settings_repository_unavailable');
+  assert.equal((await response.json()).error, 'github_timeout');
+  assert.ok(h.logs.some(line => line.includes('"code":"github_timeout"')));
+  assert.ok(h.logs.every(line => !line.includes('fixture-only')));
 });
 for (const action of ['read', 'save', 'request']) test('pre-existing collateral on the draft is rejected before ' + action, async () => {
   const h = fixture(); await h.request(h.input(await h.read())); const loaded = await h.read();
@@ -527,4 +533,26 @@ test('failed post-write verification never reports a verified save', async () =>
   h.tamper = (call, value) => { if (written && call.path.startsWith('contents/')) value.sha = hash('wrong blob'); return value; };
   const response = await h.request(h.input(loaded)); assert.equal(response.status, 502);
   assert.equal((await response.json()).error, 'settings_save_not_verified'); assert.equal(h.refs.get('main'), h.main);
+});
+
+// --- Edge-safe GitHub transport classification (site settings) ---
+for (const [label, respond, code] of [
+  ['401', () => Response.json({message: 'Bad credentials'}, {status: 401}), 'github_token_invalid'],
+  ['403 rate limit', () => Response.json({}, {status: 403, headers: {'x-ratelimit-remaining': '0'}}), 'github_rate_limited'],
+  ['403 forbidden', () => Response.json({}, {status: 403}), 'github_forbidden'],
+  ['404 required path', () => Response.json({}, {status: 404}), 'github_not_found'],
+  ['302 redirect', () => new Response(null, {status: 302, headers: {Location: 'https://elsewhere.invalid/'}}), 'github_redirect'],
+  ['502', () => Response.json({}, {status: 502}), 'github_upstream_error'],
+  ['AbortError', () => { throw new DOMException('aborted', 'AbortError'); }, 'github_timeout'],
+  ['TypeError', () => { throw new TypeError('fetch failed fixture-only'); }, 'github_fetch_failed'],
+]) test('settings GitHub ' + label + ' is reported as ' + code + ' without logging the credential', async () => {
+  const h = fixture();
+  h.override = ({path}) => path.startsWith('git/commits/') ? respond() : undefined;
+  const response = await h.request(); assert.equal(response.status, 502); noWrites(h);
+  const body = await response.json();
+  assert.equal(body.error, code); assert.notEqual(body.error, 'settings_repository_unavailable');
+  assert.ok(h.logs.length >= 1);
+  const entry = JSON.parse(h.logs[0].replace('[admin-github] ', ''));
+  assert.equal(entry.endpoint, 'site-settings'); assert.equal(entry.code, code); assert.match(entry.path, /^git\/commits\/[a-f0-9]{40}$/);
+  assert.ok(h.logs.every(line => !line.includes('fixture-only') && !/Bearer\s+\S/.test(line)), 'PAT never logged');
 });

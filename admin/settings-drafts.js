@@ -10,6 +10,8 @@
     Object.fromEntries(Object.keys(value).sort().map(key => [key, canonical(value[key])])) : value;
   const equal = (a, b) => JSON.stringify(canonical(a)) === JSON.stringify(canonical(b));
   const error = code => Object.assign(new Error(code), {code});
+  const GITHUB_CODES = ['github_token_invalid', 'github_rate_limited', 'github_forbidden', 'github_not_found', 'github_redirect',
+    'github_upstream_error', 'github_timeout', 'github_fetch_failed', 'github_unexpected_status', 'github_response_invalid'];
 
   function create({auth, fonts, storage, fetch: request, changed = () => {}}) {
     const choices = clone(fonts);
@@ -70,7 +72,9 @@
         try { value = JSON.parse(new TextDecoder('utf-8', {fatal: true}).decode(bytes)); } catch (_) { throw error('invalid_settings_response'); }
         if (!response.ok) {
           const knownGate = response.status === 409 && ['settings_receipt_not_retired','settings_publication_not_verified'].includes(value.error);
-          throw Object.assign(error(knownGate ? value.error : response.status === 409 ? 'settings_conflict' : response.status === 401 ? 'login_required' : 'settings_request_failed'), {status: response.status});
+          // Server GitHub transport reasons are fixed codes; anything else stays generic.
+          const githubReason = response.status !== 409 && GITHUB_CODES.includes(value && value.error);
+          throw Object.assign(error(knownGate || githubReason ? value.error : response.status === 409 ? 'settings_conflict' : response.status === 401 ? 'login_required' : 'settings_request_failed'), {status: response.status});
         }
         return validResponse(value);
       } finally { clearTimeout(timer); }
@@ -138,7 +142,8 @@
         if (caught.code === 'settings_conflict') needsRefresh = true;
         if (input && (!caught.status || caught.status >= 500) && caught.code !== 'login_changed') uncertain = true;
         emit(caught.code === 'login_changed' ? 'login_changed' : caught.code === 'settings_conflict' ? 'settings_conflict' :
-          uncertain ? 'write_unconfirmed' : caught.code === 'login_required' ? 'login_required' : 'request_failed');
+          uncertain ? 'write_unconfirmed' : caught.code === 'login_required' ? 'login_required' :
+            GITHUB_CODES.includes(caught.code) ? caught.code : 'request_failed');
         // Keep working/recovery data and sanitise all provider details.
         throw error(status);
       } finally { busy = false; emit(); }

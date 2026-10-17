@@ -5,14 +5,15 @@ const contract = JSON.parse(fs.readFileSync('_site_settings_contract.json', 'utf
 const catalog = {version: 1, articles: ['alpha', 'beta', 'gamma'].map(slug => ({slug, title: slug, title_en: slug}))};
 const source = fs.readFileSync('api/admin/_site-settings.js', 'utf8') + '\n' + fs.readFileSync('api/admin/popular-picks.js', 'utf8');
 function fixture({legacy = true, env = true, payload = {result: JSON.stringify(['beta', 'alpha'])}, status = 200, raw, fault = false} = {}) {
-  const calls = [], context = {contract, settingsSource: {version: 1, legacyPicks: legacy, font: {bodyFont: '', headFont: '', bodySize: ''}, order: [], picks: ['alpha']},
+  const calls = [], logs = [], context = {contract, console: {error: (...args) => logs.push(args.join(' '))}, settingsSource: {version: 1, legacyPicks: legacy, font: {bodyFont: '', headFont: '', bodySize: ''}, order: [], picks: ['alpha']},
     settingsCatalog: JSON.parse(JSON.stringify(catalog)), URL, Response, TextDecoder, Uint8Array, AbortController, setTimeout, clearTimeout,
     process: {env: env ? {KV_REST_API_URL: 'https://kv.fixture.test', KV_REST_API_TOKEN: 'fixture-only'} : {}},
     fetch: async (url, options) => { calls.push({url, options}); if (fault) throw Error('private provider details fixture-only');
+      if (status >= 300 && status < 400) return new Response(null, {status, headers: {Location: 'https://elsewhere.invalid/'}});
       return raw ? new Response(raw, {status}) : Response.json(payload, {status}); }};
   vm.runInNewContext(source.replace(/^import[^\n]+;\s*$/gm, '').replace(/^export \{[^\n]+\};\s*$/gm, '')
     .replace(/\bexport (class|const|function)/g, '$1').replace('export default async function handler', 'async function handler') + '\nthis.handler=handler;', context);
-  return {context, calls, request: method => context.handler({method})};
+  return {context, calls, logs, request: method => context.handler({method})};
 }
 for (const method of ['POST', 'PUT', 'PATCH', 'DELETE', 'HEAD']) test('retired direct write endpoint rejects ' + method + ' before any KV access', async () => {
   const h = fixture(); const result = await h.request(method); assert.equal(result.status, 405);
@@ -23,7 +24,9 @@ test('bootstrap preserves existing custom legacy selection, with GET-only bounde
   assert.deepEqual(body.picks, ['beta', 'alpha']); assert.equal(body.fallback, false); assert.equal(body.legacyStatus, 'verified');
   assert.equal(body.source, 'legacy'); assert.equal(h.calls.length, 1); const {url, options} = h.calls[0];
   assert.equal(url, 'https://kv.fixture.test/get/dn%3Apopular-picks'); assert.equal(options.method, 'GET');
-  assert.equal(options.redirect, 'error'); assert.equal(options.cache, 'no-store'); assert.equal(options.headers.Authorization, 'Bearer fixture-only');
+  // Vercel Edge rejects/ignores `cache`; redirects are manual and refused.
+  assert.equal(options.redirect, 'manual'); assert.ok(!('cache' in options)); assert.equal(options.headers['Cache-Control'], 'no-cache');
+  assert.equal(options.headers.Authorization, 'Bearer fixture-only');
   assert.ok(options.signal); assert.equal(result.headers.get('access-control-allow-origin'), '*');
   assert.ok(result.headers.get('cache-control').startsWith('public,'));
 });
@@ -31,11 +34,14 @@ test('explicit source-owned picks never access KV, even if legacy custom selecti
   const h = fixture({legacy: false, fault: true}), result = await h.request('GET'), body = await result.json();
   assert.deepEqual(body.picks, ['alpha']); assert.equal(body.fallback, false); assert.equal(body.source, 'site-settings'); assert.equal(h.calls.length, 0);
 });
-for (const options of [{env: false}, {status: 503}, {fault: true}, {raw: 'not-json'}, {raw: new Uint8Array([255])}, {raw: ' '.repeat(128001)}]) {
+for (const options of [{env: false}, {status: 503}, {status: 302}, {status: 307}, {fault: true}, {raw: 'not-json'}, {raw: new Uint8Array([255])}, {raw: ' '.repeat(128001)}]) {
   test('unavailable/malformed legacy read is reported as unverified fallback, never empty: ' + JSON.stringify(options).slice(0, 60), async () => {
     const h = fixture(options), result = await h.request('GET'), body = await result.json();
     assert.deepEqual(body.picks, ['alpha']); assert.equal(body.fallback, true); assert.equal(body.source, 'legacy-fallback');
     assert.equal(body.legacyStatus, 'unavailable'); assert.ok(!JSON.stringify(body).includes('fixture-only'));
+    assert.ok(h.logs.every(line => !line.includes('fixture-only') && !line.includes('kv.fixture.test')), 'logs never carry the KV token or URL');
+    if (options.status >= 300 && options.status < 400) assert.match(h.logs.join(' '), /"code":"kv_redirect"/);
+    if (options.fault) assert.match(h.logs.join(' '), /"code":"kv_fetch_failed"/);
   });
 }
 test('only a successfully parsed null KV result is confirmed empty', async () => {

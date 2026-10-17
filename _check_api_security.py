@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
@@ -19,6 +20,23 @@ def require(errors: list[str], rel: str, needle: str, message: str) -> None:
 def forbid(errors: list[str], rel: str, needle: str, message: str) -> None:
     if needle in read(rel):
         errors.append(f"{rel}: {message}")
+
+
+def forbid_pattern(errors: list[str], rel: str, pattern: str, message: str) -> None:
+    if re.search(pattern, read(rel)):
+        errors.append(f"{rel}: {message}")
+
+
+def require_no_redirect_follow(errors: list[str], rel: str) -> None:
+    """Accept `redirect: 'error'`, or `redirect: 'manual'` with a 3xx refusal."""
+    text = read(rel)
+    if "redirect: 'error'" in text:
+        return
+    if ("redirect: 'manual'" in text and "'opaqueredirect'" in text
+            and re.search(r"status\s*>=\s*300\s*&&\s*\w*\.?status\s*<\s*400", text)):
+        return
+    errors.append(f"{rel}: provider redirects must not forward credentials "
+                  "(use redirect: 'error', or redirect: 'manual' with an explicit 3xx/opaqueredirect refusal)")
 
 
 def require_absent(errors: list[str], rel: str, message: str) -> None:
@@ -62,7 +80,27 @@ def main() -> int:
     require(errors, "api/admin/popular-picks.js", "{ Allow: 'GET' }", "popular-picks 405 response must declare its read-only contract")
     require(errors, "api/admin/popular-picks.js", "new Set(picks).size !== picks.length", "legacy recommendations must reject duplicate slugs")
     require(errors, "api/admin/popular-picks.js", "!publicSlugs.has(slug)", "public recommendations must not expose unpublished slugs")
-    require(errors, "api/admin/popular-picks.js", "redirect: 'error'", "provider redirects must not forward credentials")
+    # Provider redirects must never forward credentials. `redirect: 'error'` is
+    # equivalent, but server-side admin fetches now use `redirect: 'manual'`
+    # plus an explicit 3xx/opaqueredirect refusal: the Vercel Edge runtime
+    # turned the former into an unclassifiable fast failure in production, and
+    # manual mode still never follows a Location header. Either form passes;
+    # manual mode only passes together with its refusal check.
+    require_no_redirect_follow(errors, "api/admin/popular-picks.js")
+    require_no_redirect_follow(errors, "api/admin/_github-fetch.js")
+    for rel in ("api/admin/_github-fetch.js", "api/admin/popular-picks.js", "api/admin/_session.js",
+                "api/admin/article-draft.js", "api/admin/_settings-git.js"):
+        # Edge fetch does not support the `cache` request option; freshness
+        # is requested with the Cache-Control request header instead.
+        forbid_pattern(errors, rel, r"\bcache\s*:\s*'", "server-side fetch must not pass a `cache` option on the Edge runtime")
+    require(errors, "api/admin/_github-fetch.js", "'Cache-Control': 'no-cache'", "GitHub requests must ask for fresh data via the request header")
+    require(errors, "api/admin/_github-fetch.js", "if (length > maxBytes)", "GitHub responses must remain size-capped")
+    require(errors, "api/admin/_github-fetch.js", "setTimeout(() => controller.abort(), timeoutMs)", "GitHub requests must keep a deadline")
+    forbid_pattern(errors, "api/admin/_github-fetch.js", r"console\.\w+\([^)]*\b(?:pat|Authorization|headers)\b", "GitHub transport logs must never include the PAT or headers")
+    require(errors, "api/admin/article-draft.js", "'https://api.github.com/repos/' + REPO + '/' + path", "article drafts must keep the fixed repository")
+    require(errors, "api/admin/_settings-git.js", "'https://api.github.com/repos/' + contract.repository + '/' + path", "settings must keep the fixed repository")
+    require(errors, "api/admin/_session.js", "await validateRepositoryAccess(pat);", "login must verify repository access before minting a session")
+    forbid(errors, "api/admin/_session.js", "permissions.push", "login repository access must be proven by a read, not permissions metadata")
     forbid(errors, "api/admin/popular-picks.js", "req.headers.get('authorization')", "admin popular-picks should not accept PAT headers")
     forbid(errors, "api/admin/popular-picks.js", "const REPO =", "admin popular-picks should not keep unused REPO constants")
     forbid(errors, "api/admin/popular-picks.js", "error: e.message", "admin popular-picks should not expose raw KV error messages")

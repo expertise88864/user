@@ -10,9 +10,13 @@
 // endpoints using this helper should rely on the cookie and avoid resending it.
 //
 // Note: needs env vars KV_REST_API_URL + KV_REST_API_TOKEN configured.
-// Falls back to ADMIN_REPO env var; defaults to "expertise88864/user".
+// Before a session is minted, the same PAT must read the fixed admin
+// repository through the Edge-safe transport the admin APIs use, so a token
+// without repository access fails at login with a specific reason.
+import { githubRequest, GitHubRequestError, githubStatusCode } from './_github-fetch.js';
 
 const COOKIE_NAME = 'dn_admin_session';
+const ADMIN_REPOSITORY = 'expertise88864/user';
 const SESSION_TTL_SECONDS = 86400; // 24 h — match the sessionStorage PAT TTL
 const KV_KEY_PREFIX = 'admin:session:';
 const REPO_OWNER_ALLOWLIST = new Set(['expertise88864']);
@@ -147,6 +151,12 @@ async function getSession(req) {
   return { token, pat: data.pat, login: data.login };
 }
 
+function loginError(message, code) {
+  const error = new Error(message);
+  error.code = code;
+  return error;
+}
+
 async function validateGitHubIdentity(auth) {
   let response;
   try {
@@ -158,21 +168,39 @@ async function validateGitHubIdentity(auth) {
       },
     });
   } catch (_) {
-    throw new Error('GitHub validation failed');
+    throw loginError('GitHub validation failed', 'github_fetch_failed');
   }
-  if (!response.ok) throw new Error('GitHub rejected token');
+  if (!response.ok) throw loginError('GitHub rejected token', githubStatusCode(response));
 
   let user;
   try {
     user = await response.json();
   } catch (_) {
-    throw new Error('GitHub validation failed');
+    throw loginError('GitHub validation failed', 'github_response_invalid');
   }
   const login = user && user.login;
   if (!login || !REPO_OWNER_ALLOWLIST.has(login)) {
     throw new Error('User not allowlisted');
   }
   return login;
+}
+
+// Read the fixed repository with the PAT itself (the permissions metadata in
+// the response is not interpreted): a session is only useful when this read
+// succeeds.
+async function validateRepositoryAccess(pat) {
+  let data;
+  try {
+    data = await githubRequest({ endpoint: 'login', url: 'https://api.github.com/repos/' + ADMIN_REPOSITORY,
+      path: 'repos/' + ADMIN_REPOSITORY, method: 'GET', pat, accept: 'application/vnd.github+json',
+      userAgent: 'ChenDermatologist-Admin/1.0', timeoutMs: 10_000, maxBytes: 1_000_000 });
+  } catch (error) {
+    const code = error instanceof GitHubRequestError && !error.conflict ? error.code : 'github_unexpected_status';
+    throw loginError('GitHub repository access failed', code);
+  }
+  if (!data || typeof data.full_name !== 'string' || data.full_name.toLowerCase() !== ADMIN_REPOSITORY) {
+    throw loginError('GitHub repository access failed', 'github_response_invalid');
+  }
 }
 
 function createSessionToken() {
@@ -194,6 +222,7 @@ function createSessionToken() {
 async function createSession(pat) {
   if (!pat || typeof pat !== 'string') throw new Error('Missing PAT');
   const userLogin = await validateGitHubIdentity(`token ${pat}`);
+  await validateRepositoryAccess(pat);
   // Mint an unguessable session token. UUID gives 122 random bits; the
   // getRandomValues fallback gives 256 bits.
   const token = createSessionToken();

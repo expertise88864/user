@@ -15,6 +15,14 @@ function jsonResp(status, obj, extraHeaders) {
   }});
 }
 
+// Only fixed fields; never the KV URL, token or request headers.
+function logFailure(status, code, error) {
+  try {
+    console.error('[popular-picks] ' + JSON.stringify({endpoint: 'popular-picks', path: 'get/' + KV_KEY,
+      status: Number.isInteger(status) ? status : null, code, errorName: error ? String(error.name).slice(0, 80) : null}));
+  } catch (_) { /* Logging never changes the public fallback. */ }
+}
+
 async function legacyPicks(articles) {
   const endpoint = process.env.KV_REST_API_URL, token = process.env.KV_REST_API_TOKEN;
   if (!endpoint || !token) return {status: 'unavailable'};
@@ -26,11 +34,18 @@ async function legacyPicks(articles) {
   } catch (_) { return {status: 'unavailable'}; }
   const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 5000);
   try {
+    // Edge-safe options: no `cache` field (Cache-Control header instead) and
+    // manual redirects that are refused below, so the KV token is never
+    // forwarded to another location.
     const response = await fetch(`${origin.origin}/get/${encodeURIComponent(KV_KEY)}`, {
-      method: 'GET', redirect: 'error', cache: 'no-store', signal: controller.signal,
-      headers: {Authorization: `Bearer ${token}`},
+      method: 'GET', redirect: 'manual', signal: controller.signal,
+      headers: {Authorization: `Bearer ${token}`, 'Cache-Control': 'no-cache'},
     });
-    if (!response.ok) return {status: 'unavailable'};
+    if (response.type === 'opaqueredirect' || (response.status >= 300 && response.status < 400)) {
+      logFailure(response.status, 'kv_redirect');
+      return {status: 'unavailable'};
+    }
+    if (!response.ok) { logFailure(response.status, 'kv_status'); return {status: 'unavailable'}; }
     const reader = response.body?.getReader(); if (!reader) return {status: 'unavailable'};
     const chunks = []; let length = 0;
     try {
@@ -51,7 +66,10 @@ async function legacyPicks(articles) {
     if (!Array.isArray(picks) || !picks.length || picks.length > 12 || new Set(picks).size !== picks.length ||
         picks.some(slug => typeof slug !== 'string' || !publicSlugs.has(slug))) return {status: 'invalid'};
     return {status: 'verified', picks};
-  } catch (_) { return {status: 'unavailable'}; }
+  } catch (error) {
+    logFailure(null, controller.signal.aborted || error?.name === 'AbortError' ? 'kv_timeout' : 'kv_fetch_failed', error);
+    return {status: 'unavailable'};
+  }
   finally { clearTimeout(timer); }
 }
 

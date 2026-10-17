@@ -1,7 +1,9 @@
 // /api/admin/login — exchange a GitHub PAT for an HttpOnly session cookie.
 //
 // Browser POSTs { pat: "ghp_..." } once. Server validates the PAT with
-// GitHub /user, confirms the user is in REPO_OWNER_ALLOWLIST, stores the
+// GitHub /user, confirms the user is in REPO_OWNER_ALLOWLIST, confirms the
+// same PAT can read the fixed admin repository (failures return a specific
+// non-secret `code`, e.g. github_token_invalid), stores the
 // PAT in Vercel KV keyed by a random session token, and returns Set-Cookie
 // with the session token (HttpOnly Secure SameSite=Strict, 24h TTL).
 //
@@ -20,6 +22,7 @@
 // Cookie-authenticated endpoints should not resend the tab-scoped PAT.
 
 import { createSession, jsonResp } from './_session.js';
+import { GITHUB_ERROR_CODES } from './_github-fetch.js';
 
 export const config = { runtime: 'edge' };
 
@@ -106,7 +109,15 @@ export default async function handler(req) {
   } catch (e) {
     const msg = String(e && e.message || e);
     if (msg.includes('not allowlisted')) {
-      return jsonResp(403, { error: 'User not allowlisted' });
+      return jsonResp(403, { error: 'User not allowlisted', code: 'user_not_allowlisted' });
+    }
+    // Specific, non-secret reason codes (never provider bodies or the PAT).
+    const code = e && typeof e.code === 'string' && GITHUB_ERROR_CODES.includes(e.code) ? e.code : null;
+    if (code) {
+      const status = code === 'github_token_invalid' ? 401
+        : ['github_forbidden', 'github_not_found'].includes(code) ? 403
+          : code === 'github_rate_limited' ? 429 : 502;
+      return jsonResp(status, { error: msg.includes('repository') ? 'GitHub repository access failed' : 'GitHub token validation failed', code });
     }
     if (msg.includes('GitHub')) {
       return jsonResp(401, { error: msg });

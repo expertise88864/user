@@ -211,7 +211,45 @@
     const loaded = drafts.localState(CURRENT_FILE);
     if (loaded && !DIRTY && !SAVE_PENDING) drafts.bindView(CURRENT_FILE, getCurrentEditorContent(), loaded.head);
   };
+  // A failed article load is shown in the editing area itself, not only in the
+  // small status bar. Any open article stays mounted underneath the notice.
+  let loadErrorPanel = null, loadErrorTitle = null, loadErrorText = null, loadErrorRetry = null;
+  function hideLoadError() { if (loadErrorPanel) loadErrorPanel.hidden = true; }
+  function showLoadError(path, message) {
+    const wrap = document.getElementById('frameWrap');
+    if (!wrap) return;
+    if (!loadErrorPanel) {
+      loadErrorPanel = document.createElement('div');
+      loadErrorPanel.id = 'draftLoadError';
+      loadErrorPanel.setAttribute('role', 'alert');
+      loadErrorPanel.style.cssText = 'position:absolute;top:24px;left:50%;transform:translateX(-50%);z-index:30;width:min(600px,calc(100% - 32px));' +
+        'background:#fef2f2;border:2px solid #ef4444;border-radius:12px;padding:18px 20px;box-shadow:0 16px 36px -14px rgba(127,29,29,.5);' +
+        'color:#7f1d1d;font-size:15px;line-height:1.65';
+      loadErrorTitle = document.createElement('strong');
+      loadErrorTitle.style.cssText = 'display:block;font-size:18px;margin-bottom:8px';
+      loadErrorText = document.createElement('p');
+      loadErrorText.style.cssText = 'margin:0 0 14px';
+      const actions = document.createElement('div');
+      actions.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap';
+      loadErrorRetry = document.createElement('button');
+      const close = document.createElement('button');
+      loadErrorRetry.type = 'button'; close.type = 'button';
+      loadErrorRetry.id = 'draftLoadErrorRetry'; close.id = 'draftLoadErrorClose';
+      loadErrorRetry.textContent = '重試讀取'; close.textContent = '關閉提示';
+      loadErrorRetry.style.cssText = 'min-height:44px;padding:8px 16px;border:none;border-radius:8px;background:#b91c1c;color:#fff;font-weight:700;cursor:pointer';
+      close.style.cssText = 'min-height:44px;padding:8px 14px;border:1px solid #b91c1c;border-radius:8px;background:#fff;color:#7f1d1d;cursor:pointer';
+      close.addEventListener('click', hideLoadError);
+      actions.append(loadErrorRetry, close);
+      loadErrorPanel.append(loadErrorTitle, loadErrorText, actions);
+    }
+    if (!loadErrorPanel.isConnected) wrap.appendChild(loadErrorPanel);
+    loadErrorTitle.textContent = '無法讀取文章：' + path;
+    loadErrorText.textContent = message + (CURRENT_FILE && CURRENT_FILE !== path ? '（目前開啟的「' + CURRENT_FILE + '」與既有編輯仍保留）' : '（既有編輯與本機暫存仍保留）');
+    loadErrorRetry.onclick = () => { hideLoadError(); loadFile(path); };
+    loadErrorPanel.hidden = false;
+  }
   loadFile = async function (path) {
+    hideLoadError();
     if (!drafts.isArticle(path)) { status = null; renderRequestState(null); resetPublication(); return originalLoad(path); }
     if (SAVE_PENDING) { setStatus('存檔或圖片處理中，請稍候再切換文章。'); return false; }
     if (DIRTY && !confirm('目前有未儲存的改動，要捨棄嗎？本機暫存仍會保留。')) return false;
@@ -236,7 +274,10 @@
       displayState(data); checkAutosaveOnLoad(path); scheduleWordCount();
       return true;
     } catch (failure) {
-      if (loadId === EDITOR_LOAD_ID) setStatus('讀取未完成，既有編輯仍保留：' + drafts.message(failure), true);
+      if (loadId === EDITOR_LOAD_ID) {
+        setStatus('讀取未完成，既有編輯仍保留：' + drafts.message(failure), true);
+        showLoadError(path, drafts.message(failure));
+      }
       return false;
     } finally { if (loadId === EDITOR_LOAD_ID) EDITOR_LOADING = false; }
   };

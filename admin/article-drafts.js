@@ -37,6 +37,18 @@
     generated_review_changed: '草稿或生成預覽已更新，請重讀並重新確認；尚未核可新版本。',
     generated_review_unavailable: '生成預覽暫時無法核對，請稍後重試；編輯與草稿保留。',
     invalid_generated_review: '生成內容與原稿版本尚未完整核對，暫時不能核可；草稿保留。',
+    // Server-side GitHub transport failures (api/admin/_github-fetch.js).
+    repository_unavailable: '暫時無法讀取 GitHub 文章庫，請稍後重試；既有編輯保留。',
+    github_token_invalid: 'GitHub token 無效或已過期，請清除登入後重新登入；既有編輯保留。',
+    github_rate_limited: 'GitHub API 使用量已達上限，請稍後再試；既有編輯保留。',
+    github_forbidden: 'GitHub 拒絕存取文章庫：這把 token 可能沒有 expertise88864/user 的權限，請清除登入後改用有權限的 PAT。',
+    github_not_found: 'GitHub 找不到需要的文章庫資料（或 token 未授權此 repository），請確認後重試；既有編輯保留。',
+    github_redirect: 'GitHub 回應了轉址，基於安全未跟隨；請聯絡維護者確認 repository 設定。',
+    github_upstream_error: 'GitHub 服務暫時異常（5xx），請稍後重試；既有編輯保留。',
+    github_timeout: '連線 GitHub 逾時，請稍後重試；既有編輯保留。',
+    github_fetch_failed: '伺服器無法連線到 GitHub，請稍後重試；若持續發生請檢查部署設定。既有編輯保留。',
+    github_unexpected_status: 'GitHub 回應了未預期的狀態，請稍後重試；既有編輯保留。',
+    github_response_invalid: 'GitHub 回應內容無法核對，請稍後重試；既有編輯保留。',
   };
   class DraftClientError extends Error {
     constructor(code) { super(labels[code] || '草稿作業未完成；編輯與暫存仍保留。'); this.code = code; }

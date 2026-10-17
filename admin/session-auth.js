@@ -5,6 +5,26 @@
   const PAT_KEY = 'cd_gh_pat';
   const EXP_KEY = 'cd_gh_pat_exp';
   const PENDING_KEY = 'cd_admin_logout_pending';
+  // Reasons returned by /api/admin/login (codes only; never provider text).
+  const LOGIN_MESSAGES = {
+    github_token_invalid: 'GitHub token 無效或已過期，請清除登入後重新登入（重新產生 PAT）。',
+    github_forbidden: '這把 GitHub token 沒有讀取 expertise88864/user 的權限，請確認 PAT 已授權此 repository（Contents 讀寫）。',
+    github_not_found: '這把 GitHub token 看不到 expertise88864/user：可能未授權此 repository，請重新產生並勾選該 repository。',
+    github_rate_limited: 'GitHub API 使用量已達上限，請稍後再登入。',
+    github_redirect: 'GitHub 回應了轉址（repository 可能已改名或移動），基於安全未跟隨，請聯絡維護者。',
+    github_upstream_error: 'GitHub 服務暫時異常，請稍後再登入。',
+    github_timeout: '連線 GitHub 逾時，請稍後再登入。',
+    github_fetch_failed: '伺服器無法連線到 GitHub，請稍後再試；若持續發生請檢查部署設定。',
+    github_unexpected_status: 'GitHub 回應了未預期的狀態，請稍後再登入。',
+    github_response_invalid: 'GitHub 回應內容無法核對，請稍後再登入。',
+    user_not_allowlisted: '這個 GitHub 帳號沒有後台權限。',
+    login_rate_limited: '登入嘗試次數過多，請 15 分鐘後再試。',
+    login_failed: 'GitHub 登入失敗，請確認 PAT、KV 設定與網路連線。',
+  };
+  function loginMessage(error) {
+    const code = error && error.code;
+    return Object.prototype.hasOwnProperty.call(LOGIN_MESSAGES, code) ? LOGIN_MESSAGES[code] : LOGIN_MESSAGES.login_failed;
+  }
   let pending = false;
   let generation = 0;
   let queue = Promise.resolve();
@@ -74,7 +94,14 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ pat: token }),
       });
-      if (!response.ok || (await response.json()).ok !== true) throw new Error('Admin login failed');
+      let data = null;
+      try { data = await response.json(); } catch (_) { data = null; }
+      if (!response.ok || !data || data.ok !== true) {
+        const failure = new Error('Admin login failed');
+        failure.code = data && typeof data.code === 'string' && Object.prototype.hasOwnProperty.call(LOGIN_MESSAGES, data.code)
+          ? data.code : response.status === 429 ? 'login_rate_limited' : 'login_failed';
+        throw failure;
+      }
       if (started !== generation) throw new Error('Login cancelled');
       try {
         sessionStorage.setItem(PAT_KEY, token);
@@ -94,5 +121,5 @@
     return token ? setPat(token, true) : Promise.resolve();
   }
   try { localStorage.removeItem(PAT_KEY); } catch (_) {}
-  window.cdAdminAuth = { getPat, setPat, clearPat, restoreSession, isLogoutPending: () => pending, getRevision: () => generation };
+  window.cdAdminAuth = { getPat, setPat, clearPat, restoreSession, loginMessage, isLogoutPending: () => pending, getRevision: () => generation };
 })();

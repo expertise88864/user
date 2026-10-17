@@ -154,6 +154,17 @@ retryLogout.type = 'button';
 retryLogout.textContent = '重試登出';
 retryLogout.hidden = true;
 loginButton.parentNode.parentNode.appendChild(retryLogout);
+// Login failure reason (from the server's non-secret code), shown in the modal.
+const loginError = document.createElement('p');
+loginError.setAttribute('role', 'alert');
+loginError.id = 'patLoginError';
+loginError.style.cssText = 'color:#7f1d1d;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;padding:8px 12px;font-weight:600';
+loginError.hidden = true;
+loginButton.parentNode.parentNode.appendChild(loginError);
+function showLoginError(e){
+  loginError.textContent = auth && typeof auth.loginMessage === 'function' ? auth.loginMessage(e) : 'GitHub 登入失敗，請確認 PAT、KV 設定與網路連線。';
+  loginError.hidden = false;
+}
 let authBusy = false;
 function loadPat(){
   PAT = auth ? auth.getPat() : '';
@@ -176,11 +187,12 @@ loginButton.addEventListener('click', async ()=>{
   authBusy = true;
   loginButton.disabled = true;
   elPatInput.disabled = true;
+  loginError.hidden = true;
   try {
     await auth.setPat(value);
     elPatInput.value = '';
   } catch(e) {
-    if(!auth.isLogoutPending()) alert('GitHub 登入失敗，請確認 PAT、KV 設定與網路連線。');
+    if(!auth.isLogoutPending()) showLoginError(e);
   } finally {
     authBusy = false;
     loadPat();
@@ -2230,7 +2242,10 @@ async function saveWithModal(){
 save = saveWithModal;
 
 // init
-if(auth) auth.restoreSession().catch(()=>{});
+if(auth) auth.restoreSession().catch(e=>{
+  // A reload re-validates the stored PAT; surface why the server session was not restored.
+  if(e && e.code && !auth.isLogoutPending()){ showLoginError(e); setStatus('後台登入未恢復：' + auth.loginMessage(e), true); }
+});
 loadPat();</script>
 <script src="/admin/settings-drafts.js" defer></script>
 <script src="/admin/settings-panel.js" defer></script>
