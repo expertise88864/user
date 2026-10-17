@@ -56,6 +56,14 @@ from _normalize_reading_shell import BLOCK as READING_SHELL_BLOCK  # noqa: E402
 # the decision is auditable in review rather than re-derived on every machine.
 CONTENT_DATES = ROOT / "_content_dates.json"
 TAG_RE = re.compile(r"<[^>]+>")
+# The header pill _normalize_article_dates.py writes from THIS ledger's date
+# (and the review ledger's). It is derived output, not authored text: on the
+# legacy single-<article> pages it falls inside the hashed region, and hashing
+# it would let a date move the hash that moves the date. Removing it leaves
+# exactly the text those pages hashed before the pill existed.
+ARTICLE_DATES_PILL = re.compile(
+    r'<span\b[^>]*\bdata-dn-article-dates=""[^>]*>'
+    r'(?:<span\b[^>]*>[^<]*</span>|[^<])*</span>', re.I)
 
 # Below this, extraction is broken rather than the article being short: a
 # silently empty prose block would hash identically for every page and freeze
@@ -80,7 +88,8 @@ def article_prose(src: str) -> str:
     """
     # An outline repeats authored headings for navigation. It must not look
     # like a physician changed the body of a legacy article.prose page.
-    dom = blank_script_style(mask_inert_regions(READING_SHELL_BLOCK.sub('', src)))
+    src = ARTICLE_DATES_PILL.sub('', READING_SHELL_BLOCK.sub('', src))
+    dom = blank_script_style(mask_inert_regions(src))
     heading = re.search(r"<h1\b[\s\S]*?</h1>", dom, re.I)
     # CODE_REVIEW TD-01 — the TL;DR sits between </h1> and the prose container,
     # so it was outside the hash and adding one to 29 articles did not register

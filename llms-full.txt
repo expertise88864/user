@@ -1036,7 +1036,7 @@ Section: Research Summary
 Reading time: PT24M
 Tags: 光動力治療, Photodynamic therapy
 
-最新研究 · 光動力治療
+最新研究 · 光動力治療 內容更新 2026-10-17 · 醫師審閱 2026-05-23
 
 光動力治療（PDT）皮膚科完整指南從 AK、BCC 到痘痘的 2026 JAAD 雙篇 Review 整合
 
@@ -10387,7 +10387,7 @@ Reading time: PT32M
 Tags: 異位性皮膚炎, AD complete guide
 
 首頁 · 衛教文章 · 異位性皮膚炎完整指引
-異膚 · 完整指引
+異膚 · 完整指引 內容更新 2026-10-17 · 醫師審閱 2026-05-03
 異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思
 
 一句話結論:異位性皮膚炎是「皮膚屏障 + Th2 免疫 + 微生物失衡」三角缺陷的慢性發炎疾病。診斷靠臨床(Hanifin & Rajka 或 UK Working Party 標準)，嚴重度用 EASI / SCORAD / IGA / POEM / DLQI 評估。治療三層次：每天保濕為基礎、急性期外用類固醇 / TCI / PDE-4 / JAK，中重度搭配 4 個生物製劑(Dupilumab/Tralokinumab/Lebrikizumab/Nemolizumab)、3 個口服 JAK 或光療。
@@ -10633,14 +10633,6 @@ Desonide 0.05%, Hydrocortisone 1%
 多數情境第一線
 
 用量(FTU):1 FTU(食指尖到第一指節)≈ 0.5 g，約塗 2 個成人手掌面積。主動式維持(proactive)：緩解後在易復發部位每週 2 次塗 TCS 或 TCI，可降復發 30-60%(Wollenberg 2008、Sidbury 2023 強建議，證據等級 A)。
-
-類固醇省略劑(steroid-sparing,非類固醇外用藥)三選一：皆為非類固醇,主要差別在適用年齡、部位、與作用機轉。
-
-藥
-機轉
-年齡
-局部副作用
-FDA / 上市年
 
 
 [... truncated; fetch canonical URL for full text ...]
