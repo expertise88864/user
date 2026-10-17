@@ -51,21 +51,18 @@ def main() -> int:
         "api/admin/upload.js",
         "api/admin/summarize.js",
         "api/admin/regen-en.js",
+        "api/admin/popular-picks.js",
     ]
     for rel in retired_endpoints:
         require_absent(errors, rel, "retired or unwired endpoint should remain removed")
 
-    require(errors, "api/admin/popular-picks.js", "if (req.method !== 'GET')", "retired popular-picks writes must fail before any provider access")
-    forbid(errors, "api/admin/popular-picks.js", "kvSet", "popular-picks must never bypass version-bound settings delivery")
-    forbid(errors, "api/admin/popular-picks.js", "/set/", "popular-picks must not retain a direct KV write transport")
-    require(errors, "api/admin/popular-picks.js", "'Cache-Control': 'no-store'", "admin popular-picks write and error responses should not be cached by default")
-    require(errors, "api/admin/popular-picks.js", "{ Allow: 'GET' }", "popular-picks 405 response must declare its read-only contract")
-    require(errors, "api/admin/popular-picks.js", "new Set(picks).size !== picks.length", "legacy recommendations must reject duplicate slugs")
-    require(errors, "api/admin/popular-picks.js", "!publicSlugs.has(slug)", "public recommendations must not expose unpublished slugs")
-    require(errors, "api/admin/popular-picks.js", "redirect: 'error'", "provider redirects must not forward credentials")
-    forbid(errors, "api/admin/popular-picks.js", "req.headers.get('authorization')", "admin popular-picks should not accept PAT headers")
-    forbid(errors, "api/admin/popular-picks.js", "const REPO =", "admin popular-picks should not keep unused REPO constants")
-    forbid(errors, "api/admin/popular-picks.js", "error: e.message", "admin popular-picks should not expose raw KV error messages")
+    # Homepage recommendations (熱門推薦) were retired 2026-10-17 by user
+    # decision: no public KV read, no settings field and no admin save kind.
+    forbid(errors, "api/admin/_site-settings.js", "contract.maxPicks", "Retired homepage recommendations must not return to the settings grammar")
+    forbid(errors, "api/admin/_site-settings.js", "legacyPicks: value.legacyPicks", "Retired homepage recommendations must not be returned as a settings field")
+    require(errors, "api/admin/_site-settings.js", "if (!retired) return { settings: settingsOf(value, articles), retired: false };", "Only stored drafts may drop the retired fields; author input stays strict")
+    forbid(errors, "api/admin/site-settings.js", "picks", "Retired homepage recommendations must not return as a settings save kind")
+    forbid(errors, "_site_settings_contract.json", "maxPicks", "Retired homepage recommendations must not keep a settings limit")
 
     if errors:
         print("[FAIL] API security audit found issues:")

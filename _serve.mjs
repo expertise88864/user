@@ -101,8 +101,8 @@ function publicFilePath(absolute, isFile = false, root = ROOT) {
   const fromRoot = path.relative(root, absolute);
   if (fromRoot === '..' || fromRoot.startsWith('..' + path.sep) || path.isAbsolute(fromRoot)) return false;
   const parts = fromRoot.split(/[/\\]+/).filter(Boolean);
-  // Only known site roots are public. The popular-picks fixture is handled
-  // before resolution; API source, project docs/config and tooling stay private.
+  // Only known site roots are public. API source, project docs/config and
+  // tooling stay private.
   if (parts.some(part => /\.(?:pem|key|pyc)$/i.test(part) ||
     /(?:service-account|credentials|firebase-adminsdk|gcloud-key|positive-guild-).*\.json$/i.test(part))) return false;
   if (parts.some((part, index) => part.startsWith('_') ||
@@ -149,11 +149,6 @@ const server = makeServer(async (req, res) => {
     const url = new URL(req.url || '/', `http://${req.headers.host || `${host}:${port}`}`);
     if (req.method !== 'GET' && req.method !== 'HEAD') {
       send(res, 405, 'Method Not Allowed');
-      return;
-    }
-
-    if (url.pathname === '/api/admin/popular-picks') {
-      send(res, 200, JSON.stringify({ picks: [] }), 'application/json; charset=utf-8');
       return;
     }
 

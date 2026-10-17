@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v231';
-const RUNTIME = 'cd-runtime-v229';
+const CACHE = 'cd-v232';
+const RUNTIME = 'cd-runtime-v230';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
 // Popular articles getting evicted after ~5 navigations caused repeat-
@@ -277,7 +277,7 @@ self.addEventListener('fetch', (e) => {
 // Allow page to trigger immediate update via postMessage({type:'SKIP_WAITING'})
 self.addEventListener('message', (e) => {
   if (e.data && e.data.type === 'SKIP_WAITING') self.skipWaiting();
-  // I11 — Precache list of articles the page tells us about (popular picks).
+  // I11 — Precache list of articles the page tells us about (latest published).
   // Page does: navigator.serviceWorker.controller.postMessage({type:'PRECACHE',urls:[...]})
   // SW fetches them when network is idle so they're available offline.
   if (e.data && e.data.type === 'PRECACHE' && Array.isArray(e.data.urls)) {

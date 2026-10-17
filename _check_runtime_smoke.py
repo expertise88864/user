@@ -232,7 +232,7 @@ def run_smoke(base_url: str) -> list[str]:
     js_checks = [
         (shared, "shared", ["ensureArticleReadingBundle", "ensureHubBundle", "ensureCalculatorBundle"]),
         (f"/blog/blog-support.min.js?v={version}", "support", ["DN.injectBMCFooter", "DN.injectSupportUI"]),
-        (f"/blog/blog-hub.min.js?v={version}", "hub", ["DN.bindArticleHub", "DN.injectSpotlight"]),
+        (f"/blog/blog-hub.min.js?v={version}", "hub", ["DN.bindArticleHub", "DN.markNewArticles"]),
         (f"/blog/blog-article-reading.min.js?v={version}", "article-reading", ["DN.addReadingMeta", "DN.injectMedDiagrams"]),
         (f"/blog/blog-diagrams.min.js?v={version}", "diagrams", ["DN.medDiagrams", "DN.MED_DIAGRAM_MAP"]),
         (f"/blog/blog-calculators.min.js?v={version}", "calculators", ["DN.injectSCORAD", "DN.injectGAGS"]),

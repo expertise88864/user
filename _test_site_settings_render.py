@@ -44,7 +44,7 @@ class SettingsRenderTests(unittest.TestCase):
             rows=[{'slug':'alpha','title':'文章','title_en':'Article'}]
             (root/'blog/blog-shared.js').write_text('DN.ARTICLES='+json.dumps(rows)+';',encoding='utf8')
             (root/'blog/alpha.html').write_text('<html><head></head><body>Article</body></html>',encoding='utf8')
-            source={'version':1,'legacyPicks':False,'font':FONT,'order':[],'picks':['alpha']}
+            source={'version':1,'font':FONT,'order':[]}
             raw=(json.dumps(source,indent=2)+'\n').encode()
             (root/CONTRACT['source']).write_bytes(raw)
             css=root/'assets/dn-below-fold.css';css.write_bytes(b'/* maintained */\nbody{color:#222}\n')

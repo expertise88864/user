@@ -58,36 +58,54 @@ def catalog_of(value):
     return [dict(row) for row in rows]
 
 
+SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+# Homepage recommendations (熱門推薦) were retired 2026-10-17 by user decision.
+# These fields exist only in sources written before that date.
+RETIRED_FIELDS = ("picks", "legacyPicks")
+RETIRED_MAX_PICKS = 12
+
+
+def slug_list(values, limit):
+    if not isinstance(values, list) or len(values) > limit or any(
+            not isinstance(slug, str) or len(slug) > 100 or not SLUG.fullmatch(slug) for slug in values):
+        raise ValueError("Invalid settings article selection")
+    if len(values) != len(set(values)):
+        raise ValueError("Duplicate settings article selection")
+    return list(values)
+
+
 def settings_record(value):
     """Validate stored source without assuming its original catalogue is current.
 
     Delivery still binds approved source to its immutable original catalogue.
     Projection never approves a new author selection or rewrites that source.
     """
-    exact(value, ("version", "font", "order", "picks", "legacyPicks"))
-    if type(value["version"]) not in (int, float) or value["version"] != 1 or type(value["legacyPicks"]) is not bool:
+    exact(value, ("version", "font", "order"))
+    if type(value["version"]) not in (int, float) or value["version"] != 1:
         raise ValueError("Invalid settings version")
     exact(value["font"], CONTRACT["fonts"])
     if any(not isinstance(value["font"][key], str) or value["font"][key] not in choices for key, choices in CONTRACT["fonts"].items()):
         raise ValueError("Invalid settings font")
-    for key, limit in (("order", CONTRACT["maxArticles"]), ("picks", CONTRACT["maxPicks"])):
-        values = value[key]
-        if not isinstance(values, list) or len(values) > limit or any(
-                not isinstance(slug, str) or len(slug) > 100 or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug)
-                for slug in values):
-            raise ValueError("Invalid settings article selection")
-        if len(values) != len(set(values)):
-            raise ValueError("Duplicate settings article selection")
-    if not value["picks"]:
-        raise ValueError("Incomplete settings article selection")
-    return {"version": 1, "legacyPicks": value["legacyPicks"], "font": dict(value["font"]), "order": list(value["order"]), "picks": list(value["picks"])}
+    return {"version": 1, "font": dict(value["font"]), "order": slug_list(value["order"], CONTRACT["maxArticles"])}
+
+
+def without_retired_picks(value):
+    """Map an exact pre-retirement source to the current grammar.
+
+    Only the removed recommendation fields are dropped; font and order stay
+    untouched, so this cannot create or change an author selection.
+    """
+    exact(value, ("version", "font", "order") + RETIRED_FIELDS)
+    if type(value["legacyPicks"]) is not bool or not slug_list(value["picks"], RETIRED_MAX_PICKS):
+        raise ValueError("Invalid retired settings fields")
+    return settings_record({key: value[key] for key in ("version", "font", "order")})
 
 
 def settings_of(value, articles):
     """New author input must select only the current public catalogue."""
     result = settings_record(value)
     slugs = {item["slug"] for item in articles}
-    if any(slug not in slugs for key in ("order", "picks") for slug in result[key]):
+    if any(slug not in slugs for slug in result["order"]):
         raise ValueError("Invalid settings article selection")
     if result["order"] and len(result["order"]) != len(articles):
         raise ValueError("Incomplete settings article selection")
@@ -95,11 +113,7 @@ def settings_of(value, articles):
 
 
 def public_settings_of(value, articles):
-    """Keep visible approved priorities; append new articles in default order.
-
-    Withdrawn picks disappear. An empty projected recommendation list does not
-    invent replacement recommendations that the author never selected.
-    """
+    """Keep visible approved priorities; append new articles in default order."""
     result = settings_record(value)
     current = [item["slug"] for item in articles]
     visible = set(current)
@@ -107,7 +121,6 @@ def public_settings_of(value, articles):
         retained = [slug for slug in result["order"] if slug in visible]
         retained_set = set(retained)
         result["order"] = retained + [slug for slug in current if slug not in retained_set]
-    result["picks"] = [slug for slug in result["picks"] if slug in visible]
     return result
 
 

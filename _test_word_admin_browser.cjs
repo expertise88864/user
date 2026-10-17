@@ -12,7 +12,7 @@ module.exports = async function checkWordAdmin(browser, options = {}) {
     const writes=[], externalWrites=[];
     const settingsWrites=[];
     const clone=value=>JSON.parse(JSON.stringify(value));
-    const settingsDefaults={version:1,legacyPicks:true,font:{bodyFont:'',headFont:'',bodySize:''},order:[],picks:['first']};
+    const settingsDefaults={version:1,font:{bodyFont:'',headFont:'',bodySize:''},order:[]};
     let settings={main:BASE,head:null,blobSha:BLOB,baseSha:BLOB,catalogSha:'9'.repeat(40),
       mainBlobSha:BLOB,mainCatalogSha:'9'.repeat(40),sourceSettings:clone(settingsDefaults),settings:clone(settingsDefaults),
       articles:[{slug:'first',title:'第一篇',title_en:'First article'},{slug:'second',title:'第二篇',title_en:'Second article'}],

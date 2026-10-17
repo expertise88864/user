@@ -112,7 +112,7 @@ function buildSetCookie(token, opts) {
   const ttl = (opts && opts.ttlSeconds) ?? SESSION_TTL_SECONDS;
   const maxAge = opts && opts.clear ? 0 : ttl;
   const value = opts && opts.clear ? '' : encodeURIComponent(token);
-  // Path=/api/admin — cookie only sent to admin endpoints (not e.g. /api/popular-picks public read)
+  // Path=/api/admin — cookie only sent to admin endpoints (not public routes such as /api/og)
   // SameSite=Strict — no cross-site requests
   // HttpOnly — JS can't read
   // Secure — HTTPS only
