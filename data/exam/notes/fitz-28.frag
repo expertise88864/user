@@ -27,7 +27,7 @@
 <li>典型病灶：境界清楚、隆起的紅色斑塊，表面白色鱗屑；鱗屑下為 glossy homogeneous erythema。<span class="ex-ref">p.458</span></li>
 <li><strong>Auspitz sign</strong>：刮除鱗屑後擴張微血管受傷而出現點狀出血；McKee 認為此徵象具診斷性。<span class="ex-ref">p.458</span> <span class="ex-ref ex-ref-mckee">McKee p.223</span></li>
 <li>對稱性分布是診斷的重要線索，但也可單側。<span class="ex-ref">p.458</span></li>
-<li>約 <strong class="ex-n">90%</strong> 病人是 psoriasis vulgaris（McKee <strong class="ex-n">85–90%</strong>）；好發 extensor（elbows、knees）、scalp、lower lumbosacral、buttocks、genitalia，也見 umbilicus 與 intergluteal cleft。<span class="ex-ref">p.459</span></li>
+<li>約 <strong class="ex-n">90%</strong> 病人是 psoriasis vulgaris（McKee <strong class="ex-n">85–90%</strong>）；好發 extensor（elbows、knees）、scalp、lower lumbosacral、buttocks、genitalia，也見 umbilicus 與 intergluteal cleft。<span class="ex-ref">p.459</span> <span class="ex-ref ex-ref-mckee">McKee p.223</span></li>
 <li>形態變異：psoriasis gyrata（融合成迴狀）、annular psoriasis（中央消退，表示病灶正在消退、預後好）、rupioid（cone／limpet 狀）、ostraceous（牡蠣殼狀凹陷角化）、elephantine（下肢大片厚鱗屑斑塊）。<span class="ex-ref">p.459</span></li>
 <li><strong>Woronoff ring</strong>：病灶周圍 hypopigmented ring，多與治療（UV、topical corticosteroids）相關，可能因 prostaglandin synthesis 受抑制。<span class="ex-ref">p.459</span></li>
 </ul>
@@ -55,6 +55,12 @@
 <li>兩種型態：(1) chronic plaque 逐漸惡化，對治療仍有反應；(2) 突然出現或由不耐受的外用治療（UVB、anthralin）誘發，等同 <strong>generalized Koebner reaction</strong>。GPP 也可轉為 erythroderma。<span class="ex-ref">p.461</span></li>
 <li>McKee：誘因包括 <em>Staphylococcus aureus</em> 感染、突然停用 steroid 或 methotrexate、sunburn；可有 fever、chills、myalgia、hypoalbuminemia、anemia、dehydration，high-output cardiac failure 是重要併發症；可有 ectropion、頭皮侵犯後掉髮。<span class="ex-ref ex-ref-mckee">McKee p.224–225</span></li>
 </ul>
+<h3>Erythroderma（其他章節補充）</h3>
+<ul>
+<li>McKee：erythroderma 有時被不正確地稱為 exfoliative dermatitis，只用於全身皮膚發炎、紅斑、脫屑；不論病因臨床表現都相當一致；<mark data-q="101-27">Table 6.3 病因：dermatitis、lymphoma（mycosis fungoides、T-cell leukemia、Hodgkin lymphoma）、drugs（gold、penicillin 等）、psoriasis、PRP、ichthyosiform erythroderma、papuloerythroderma of Ofuji、scabies、lichen planus</mark>；Sézary syndrome 與 mycosis fungoides 搔癢特別嚴重；常有 dermatopathic lymphadenopathy；長期（尤其老人）可併 cardiac failure、peripheral circulatory collapse、hypothermia、infection。<span class="ex-ref ex-ref-mckee">McKee p.216–217</span></li>
+<li><mark data-q="101-27">Beau lines：指甲形成暫時減緩或停止 → 與 lunula 邊緣平行的橫溝；各指平均分布提示全身性原因；generalized 原因包括 acute severe diseases、high fever、some drugs（retinoids）、zinc deficiency、autoimmune bullous diseases</mark>（Table 91-2）。<span class="ex-ref">p.1574–1575</span></li>
+<li><mark data-q="101-27">Eruptive seborrheic keratoses 除了 Leser-Trélat sign（內臟惡性腫瘤），也有報告見於 erythroderma 與 HIV infection</mark>。<span class="ex-ref">p.1799</span></li>
+</ul>
 </section>
 
 <section class="ex-note" id="pustular">
@@ -72,22 +78,22 @@
 </tbody>
 </table>
 <p class="ex-cite">p.461–463</p>
-<aside class="ex-trap"><strong>易錯</strong>Impetigo herpetiformis 通常「沒有」個人或家族乾癬史；伴隨的是低血鈣（不是高血鈣、也不是低血鉀）；好發第三孕期（不是懷孕初期）；下次懷孕常復發且更早、更嚴重（不是「很少復發」）。Exanthematic 型則是「不易復發」。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Impetigo herpetiformis 通常沒有個人或家族乾癬史；常合併 hypocalcemia；通常在第三孕期初期發生並持續到分娩；之後的懷孕發作更早（p.462）。ch105 寫之後懷孕復發常見，且更嚴重、更早發（p.1772）。Exanthematic pustular psoriasis 則不易復發（p.462）。</aside>
 <h3>McKee 補充</h3>
 <ul>
 <li><mark data-q="101-18">GPP 全身表現：weight loss、weakness、hypocalcemia，<strong>white cell count 上升與 ESR 升高</strong></mark>；可在 streptococcal 或 viral infection 後發生；停用 systemic steroid 是已知誘因；其他危險因子：drugs、pregnancy、hypocalcemia、sunlight 或 phototherapy。<span class="ex-ref ex-ref-mckee">McKee p.224</span></li>
 <li><mark data-q="107-07">Impetigo herpetiformis 最可能就是 pustular psoriasis of pregnancy</mark>，少數作者視為獨立疾病。<span class="ex-ref ex-ref-mckee">McKee p.224</span></li>
-<li>Palmoplantar pustular psoriasis of Barber：McKee 寫女性比例 <strong class="ex-n">9 : 1</strong>（Fitzpatrick 約 78%）、第四到第五個十年、與抽菸相關；約 <strong class="ex-n">25%</strong> 合併 chronic plaque psoriasis。<span class="ex-ref ex-ref-mckee">McKee p.225</span></li>
+<li>Palmoplantar pustular psoriasis of Barber：McKee 寫女性比例 <strong class="ex-n">9 : 1</strong>（Fitzpatrick 約 78%，<span class="ex-ref">p.463</span>）、第四到第五個十年、與抽菸相關；約 <strong class="ex-n">25%</strong> 合併 chronic plaque psoriasis。<span class="ex-ref ex-ref-mckee">McKee p.225</span></li>
 <li>Localized（mixed）pustular psoriasis：在既有斑塊上出現膿疱，多在急性 flare 或治療後，可能是全身化的前兆。<span class="ex-ref ex-ref-mckee">McKee p.225</span></li>
 </ul>
 <h3>Pustular psoriasis of pregnancy（ch105 補充）</h3>
 <ul>
 <li>一般視為懷孕荷爾蒙變化誘發的 pustular psoriasis 變異型；通常第三孕期（最早可在第一孕期）；病灶由 flexures 開始、離心擴散，紅斑邊緣佈滿 subcorneal pustules；臉、掌蹠常不受侵犯。<span class="ex-ref">p.1771</span></li>
-<li>母體危險：profound hypocalcemia（嚴重時 tetany、delirium、convulsions）與 bacterial sepsis。<mark data-q="104-19,106-42,113-03">最令人擔心的是 <strong>placental insufficiency → stillbirth 或 neonatal death</strong>；Table 105-2 將其列為 dermatoses associated with fetal risk</mark>。<span class="ex-ref">p.1768、p.1771</span></li>
+<li>母體危險：profound hypocalcemia（嚴重時 tetany、delirium、convulsions）與 bacterial sepsis。<mark data-q="104-19,106-42,113-03">最令人擔心的是 <strong>placental insufficiency → stillbirth 或 neonatal death</strong>；Table 105-2 的 fetal risk 欄也列 placental insufficiency，ch105 將其歸在 dermatoses associated with fetal risk in pregnancy 一節</mark>。<span class="ex-ref">p.1765、p.1768、p.1771</span></li>
 <li>與 GPP 不同點：沒有陽性家族史、分娩時症狀突然緩解、只在之後懷孕復發；通常沒有感染、藥物、停用類固醇等誘因。<span class="ex-ref">p.1772</span></li>
 <li><mark data-q="101-18">Lab：最常見 leukocytosis、neutrophilia、ESR 上升、hypoferric anemia、hypoalbuminemia</mark>；較少見 calcium、phosphate、vitamin D 下降。<span class="ex-ref">p.1772</span></li>
 <li><mark data-q="101-18,102-47">Cardinal feature：<strong>產後症狀迅速緩解</strong>；之後懷孕復發常見，且更嚴重、更早發</mark>。<span class="ex-ref">p.1772</span></li>
-<li>Treatment：<mark data-q="101-18,102-47">systemic corticosteroids 是「過去」的主流</mark>，現在 <strong>cyclosporine</strong>（5–10 mg/kg/day）與 <strong>infliximab</strong> 被視為一線；外用治療單獨使用很少有效。<mark data-q="107-07">分娩後且不哺乳時，才可加入 oral PUVA、oral retinoids、methotrexate</mark>。<span class="ex-ref">p.1772–1773</span></li>
+<li>Treatment：<mark data-q="101-18,102-47">systemic corticosteroids 是「過去」的主流</mark>，現在 <strong>cyclosporine</strong>（5–10 mg/kg/day）與 <strong>infliximab</strong> 被視為一線；外用治療單獨使用很少有效。<mark data-q="107-07">終止妊娠後，或分娩後不哺乳的母親，治療選擇可擴充到 oral PUVA、oral retinoids、methotrexate</mark>。<span class="ex-ref">p.1772–1773</span></li>
 </ul>
 </section>
 
@@ -101,7 +107,7 @@
 <li><mark data-q="114-05">Matrix 變化造成 onychodystrophy：leukonychia、crumbling nail、red spots in lunula；<strong>onychodystrophy 與 PsA 的關聯比其他指甲變化更強</strong></mark>。<span class="ex-ref">p.464</span></li>
 <li><mark data-q="102-11,109-09,110-01">Oil spots 與 salmon patches：甲板下半透明黃紅色變色，常延伸到 hyponychium；成因是 <strong>nail bed</strong> 的 psoriasiform hyperplasia、parakeratosis、微血管變化與嗜中性球滯留</mark>。<span class="ex-ref">p.464</span></li>
 <li><mark data-q="109-09,110-01,113-19,114-05">Pitting 也見於 alopecia areata 等疾病；<strong>oil spotting 被認為幾乎是乾癬特有</strong></mark>。<span class="ex-ref">p.464</span></li>
-<li><mark data-q="113-19">Splinter hemorrhages：乾癬甲床 thin suprapapillary plate 下的微血管出血</mark>（與皮膚 Auspitz sign 同理）。<span class="ex-ref">p.464</span></li>
+<li><mark data-q="113-19">Splinter hemorrhages：乾癬甲床 thin suprapapillary plate 下的微血管出血</mark>。<span class="ex-ref">p.464</span></li>
 <li><mark data-q="108-03">Subungual hyperkeratosis（甲床角化過度），常伴隨 onycholysis（多在遠端）</mark>；anonychia 為甲板完全喪失。<span class="ex-ref">p.464</span></li>
 <li>PPP 很少有指甲變化，但其他 pustular psoriasis 可見 anonychia。<span class="ex-ref">p.464</span></li>
 </ul>
@@ -118,13 +124,13 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 28-1，p.464。</p>
-<aside class="ex-trap"><strong>易錯</strong>Oil spot／salmon patch 是 nail bed 變化，不是 matrix（110-01、114-05 都拿這點設陷阱）；最具特異性的是 oil spot，不是 leukonychia；形成甲板背側的是 proximal matrix，不是 distal matrix。Terry's nails 不是乾癬指甲表現。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Oil spot／salmon patch 是 nail bed 的變化（Table 28-1）；oil spotting 被認為幾乎是乾癬特有，pitting 也見於 alopecia areata 等疾病；proximal nail matrix 形成甲板 dorsal（superficial）部分（p.464）。</aside>
 <h3>McKee 補充（ch23 nail）</h3>
 <ul>
 <li>指甲侵犯 <strong class="ex-n">10–50%</strong>，終生 <strong class="ex-n">80–90%</strong> 會有指甲病變；手指多於腳趾。<span class="ex-ref ex-ref-mckee">McKee p.1135</span></li>
 <li><mark data-q="114-05">Matrix 受侵犯 → pitting、leukonychia、甲板增厚或變薄、onychorrhexis、crumbling；nail bed 受侵犯 → oil drop／salmon patch、splinter hemorrhages、subungual hyperkeratosis、onycholysis</mark>。最常見症狀為 pitting、onycholysis、discoloration、subungual hyperkeratosis。<span class="ex-ref ex-ref-mckee">McKee p.1135</span></li>
 <li><mark data-q="109-09">Proximal matrix 形成甲板 dorsal aspect，distal matrix 形成 ventral aspect</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1130</span></li>
-<li>病理：常有 spongiosis；hyponychium 失去 granular layer，matrix 與 nail bed 反而出現 granular layer（matrix hypergranulosis 相當於表皮 parakeratosis）；甲板或甲下角質中 parakeratosis mounds 伴嗜中性球與 serum-like material 是好線索；只有 <strong class="ex-n">54%</strong> 能確診；longitudinal biopsy 最佳。一定要做 <strong>PAS</strong> 排除 onychomycosis（<strong class="ex-n">13–27%</strong> 有黴菌重複感染或定殖）。<span class="ex-ref ex-ref-mckee">McKee p.1135</span></li>
+<li>病理：常有 spongiosis；hyponychium 失去 granular layer，matrix 與 nail bed 反而出現 granular layer（matrix hypergranulosis 相當於表皮 parakeratosis）；甲板或甲下角質中 parakeratosis mounds 伴嗜中性球與 serum-like material 是好線索；只有 <strong class="ex-n">54%</strong> 能確診；longitudinal biopsy 結果較佳。一定要做 <strong>PAS</strong> 排除 onychomycosis（<strong class="ex-n">13–27%</strong> 有黴菌重複感染或定殖）。<span class="ex-ref ex-ref-mckee">McKee p.1135</span></li>
 </ul>
 </section>
 
@@ -133,11 +139,17 @@
 <ul>
 <li><strong>Geographic tongue</strong>（benign migratory glossitis）：filiform papillae 局部消失、地圖狀遊走紅斑；組織上有乾癬特徵，乾癬病人盛行率較高，但一般人也常見，關係尚待釐清。<span class="ex-ref">p.464–465</span></li>
 <li>Hair：臨床掉髮不常見，但 scarring 與 non-scarring 都有報告；非頭皮斑塊可見毛髮明顯減少，可能與明顯的 <strong>sebaceous gland atrophy</strong> 有關。<span class="ex-ref">p.464</span></li>
-<li><mark data-q="101-14">Psoriatic arthritis：最常見的皮膚外表現，可達 <strong class="ex-n">40%</strong>（At-a-glance 寫 <strong class="ex-n">10–25%</strong>）</mark>，遺傳成分強（詳見 ch65）。<span class="ex-ref">p.457、p.465</span></li>
+<li><mark data-q="101-14">Psoriatic arthritis：常見的皮膚外表現，可達 <strong class="ex-n">40%</strong>（At-a-glance 寫 <strong class="ex-n">10–25%</strong>）</mark>，遺傳成分強（詳見 ch65）。<span class="ex-ref">p.457、p.465</span></li>
 <li><mark data-q="110-01,111-12">Cardiovascular：嚴重且長期的病人心血管事件與死亡增加；<strong>MI 風險在年輕、重度乾癬病人特別升高</strong></mark>；FDG-PET/CT 的血管發炎程度與皮膚侵犯範圍直接相關。<span class="ex-ref">p.465</span></li>
 <li><mark data-q="111-12">德國 130 萬人研究：<strong>metabolic syndrome 為 2.9 倍</strong></mark>；hypertension <strong class="ex-n">35.6% vs 20.6%</strong>、hyperlipidemia <strong class="ex-n">29.9% vs 17.1%</strong>。<span class="ex-ref">p.465</span></li>
 <li>其他風險上升：RA、Crohn's disease、ulcerative colitis、Hodgkin's lymphoma、CTCL。<span class="ex-ref">p.465</span></li>
 <li>Psychosocial：自尊低落、社交排斥、性問題等；suicidal ideation 與 depression 高於其他疾病與一般人；身心功能下降程度與 cancer、heart disease 等相當；重度病人 <strong class="ex-n">79%</strong> 自覺生活受負面影響。<span class="ex-ref">p.465–466</span></li>
+</ul>
+<h3>Psoriatic arthritis（ch65 補充）</h3>
+<ul>
+<li><mark data-q="101-14">Dactylitis：手指或腳趾的 <strong>full-thickness</strong> 發炎，侵犯指趾的 joints、entheses 與皮下組織；PsA 中盛行率 <strong class="ex-n">20–59%</strong>，是疾病嚴重度指標，與放射學破壞相關</mark>。<span class="ex-ref">p.1128</span></li>
+<li><mark data-q="101-14">ch65 的 ReA 段落描述 dactylitis 是 enthesitis 侵犯指趾，造成整根指趾瀰漫腫脹（sausage digit）；nail–entheseal complex 被認為是 nail psoriasis 的 mediator（指甲超音波證據）</mark>。<span class="ex-ref">p.1129、p.1140</span></li>
+<li><mark data-q="101-14">Eye：約 <strong class="ex-n">1/3</strong> PsA 病人有眼睛侵犯；可有 conjunctivitis、uveitis、episcleritis、scleritis、keratoconjunctivitis sicca、keratitis；uveitis 盛行率 <strong class="ex-n">7–25%</strong>（AS 約 <strong class="ex-n">40%</strong>），PsA 的 uveitis 風險高於單純 psoriasis</mark>。<span class="ex-ref">p.1129–1130</span></li>
 </ul>
 <h3>McKee 補充</h3>
 <ul>
@@ -155,7 +167,7 @@
 </tbody>
 </table>
 <p class="ex-cite"><span class="ex-ref ex-ref-mckee">McKee p.226</span></p>
-<aside class="ex-trap"><strong>易錯</strong>年輕、BMI 未達 30 都不能排除心血管或代謝風險；課本反而強調年輕重度病人 MI 風險特別高。</aside>
+<aside class="ex-trap"><strong>易錯</strong>MI 風險特別升高的是年輕的重度乾癬病人；心血管事件與死亡增加尤其見於嚴重且病程長的病人（p.465）。</aside>
 </section>
 
 <section class="ex-note" id="pathogenesis">
@@ -219,7 +231,7 @@
 </tbody>
 </table>
 <p class="ex-cite">p.478–479；Table 28-2 p.472–476。Table 28-2 另註：HLA-B amino acid 45 可區分 PsC 與 PsA。</p>
-<aside class="ex-trap"><strong>易錯</strong>乾癬的易感基因列表沒有 FLG；乾癬病理的 granular layer 消失是角化異常的表現，不是 filaggrin 突變造成（FLG null mutation 相關的是 ichthyosis vulgaris 與 atopic dermatitis）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Keratinocyte 相關最確立的關聯是 LCE3B/LCE3C indel，與 cutaneous psoriasis 相關、與 PsA 無關（p.479）；CARD14 是 PSORS2 locus 的致病基因（p.478）。</aside>
 <h3>McKee 補充</h3>
 <ul>
 <li>Linkage 找到至少 <strong class="ex-n">9</strong> 個 loci（PSORS1–9）；<strong>PSORS1</strong>（6p，MHC 內）最強，佔家族性乾癬 <strong class="ex-n">35–50%</strong>，易感等位基因為 HLA-Cw6。<span class="ex-ref ex-ref-mckee">McKee p.228</span></li>
@@ -302,14 +314,14 @@
 <p class="ex-cite">Table 28-3，p.481。支持乾癬的臨床特徵：symmetry、extensor distribution、Auspitz sign、sharply demarcated、silvery scale（Fig. 28-16，p.480）。</p>
 <h3>McKee 病理鑑別</h3>
 <ul>
-<li><mark data-q="113-33"><strong>Pityriasis rubra pilaris</strong>：parakeratosis 與 hyperkeratosis 在垂直與水平方向交替（spotty／checkerboard）；角質層 neutrophil 浸潤不是 PRP 的特徵，除非有續發感染</mark>。<span class="ex-ref ex-ref-mckee">McKee p.232</span></li>
+<li><mark data-q="113-33"><strong>Pityriasis rubra pilaris</strong>：parakeratosis 與 hyperkeratosis 在垂直與水平方向交替（spotty parakeratosis）；角質層 neutrophil 浸潤不是 PRP 的特徵，除非有續發感染</mark>。<span class="ex-ref ex-ref-mckee">McKee p.232</span></li>
 <li><strong>Lichen simplex chronicus</strong>：真皮乳頭因反覆搔抓而纖維化，suprapapillary plate 不變薄；hyperkeratosis、hypergranulosis 明顯，parakeratosis 很少。<span class="ex-ref ex-ref-mckee">McKee p.232–233</span></li>
 <li><strong>Papulosquamous drug eruptions</strong>（lithium、propranolol）：浸潤中通常有中到大量 eosinophils。<span class="ex-ref ex-ref-mckee">McKee p.233</span></li>
 <li><strong>Seborrheic dermatitis</strong>：spongiosis 更明顯（乾癬只在早期病灶出現且不明顯）；無法區分時稱 sebo-psoriasis。<span class="ex-ref ex-ref-mckee">McKee p.233</span></li>
 <li><strong>Pustular 鑑別</strong>：subcorneal pustular dermatosis 沒有 spongiform change；Gram、PAS 染色與培養排除感染；superficial pemphigus 有 acantholysis、通常沒有 psoriasiform hyperplasia；IgA pemphigus 的 acantholytic cells 易漏看，必要時做 immunofluorescence。<span class="ex-ref ex-ref-mckee">McKee p.233</span></li>
 <li>Reactive arthritis 皮膚病灶：psoriasiform hyperplasia、spongiform pustules 與 macropustules，與 pustular psoriasis 無法區分。<span class="ex-ref ex-ref-mckee">McKee p.233</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Munro microabscess 是乾癬的特徵，PRP 沒有（113-33）。PRP 是 checkerboard 交替的 ortho／parakeratosis。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Munro microabscess 是乾癬 active lesion 的診斷特徵（McKee p.229）；角質層 neutrophil 浸潤不是 PRP 的特徵，除非有續發感染，PRP 為垂直與水平方向交替的 parakeratosis 與 hyperkeratosis（McKee p.232）。</aside>
 </section>
 
 <section class="ex-note" id="course">
@@ -327,19 +339,25 @@
 <section class="ex-note" id="tx-general">
 <h2>13. Treatment Principles &amp; Topical Therapy（治療原則與外用藥）</h2>
 <h3>Algorithm（Fig. 28-16）</h3>
+<p>Chronic plaque psoriasis 依範圍分 Severe（<strong class="ex-n">&gt;30% BSA</strong>）、Moderate（<strong class="ex-n">&gt;10% BSA</strong>）、Mild（<strong class="ex-n">&lt;10% BSA</strong>）；圖中連到各治療類別的實線表示一線、虛線表示二線，各治療框內再分 first line／second line。<span class="ex-ref">p.480</span></p>
 <table class="ex-table">
-<thead><tr><th scope="col">Category</th><th scope="col">First line</th><th scope="col">Second line</th></tr></thead>
+<thead><tr><th scope="col">Treatment regimen</th><th scope="col">First line（框內）</th><th scope="col">Second line（框內）</th><th scope="col">連到的嚴重度</th></tr></thead>
 <tbody>
-<tr><td>Mild（<strong class="ex-n">&lt;10% BSA</strong>）— Topical</td><td>Emollients、glucocorticoids、vitamin D3 analogs</td><td>Salicylic acid、dithranol、tazarotene、tar</td></tr>
-<tr><td><mark data-q="110-05">Moderate（<strong class="ex-n">&gt;10% BSA</strong>）— Phototherapy</mark></td><td><mark data-q="110-05">NB-UVB、BB-UVB</mark></td><td>PUVA、excimer、climatotherapy</td></tr>
-<tr><td>Moderate — Systemic</td><td>Methotrexate、acitretin、apremilast、biologicals（etanercept、adalimumab、infliximab、ustekinumab、secukinumab、ixekizumab）</td><td>FAE、cyclosporine A、hydroxyurea、6-thioguanine、mycophenolate、sulfasalazine</td></tr>
-<tr><td>Moderate — Day treatment center</td><td>Modified Goeckerman</td><td>—</td></tr>
-<tr><td><mark data-q="110-05">Severe（<strong class="ex-n">&gt;30% BSA</strong>）／erythrodermic、pustular</mark></td><td>Acitretin、cyclosporine A、<mark data-q="110-05">PUVA、NB-UVB</mark>、methotrexate、anti-TNF、anti-IL-17A、anti-p40</td><td>Systemic steroids 只在少數 pustular 個案（*）</td></tr>
-<tr><td>Guttate</td><td>不治療、NB-UVB、topical（vitamin D3 analog、topical steroids）</td><td>—</td></tr>
+<tr><td>Topical Tx</td><td>Emollients、glucocorticoids、vitamin D3 analogs</td><td>Salicylic acid、dithranol、tazarotene、tar</td><td>實線：mild、moderate、severe</td></tr>
+<tr><td><mark data-q="110-05">Phototherapy</mark></td><td><mark data-q="110-05">NB-UVB、BB-UVB</mark></td><td>PUVA、excimer、climatotherapy</td><td><mark data-q="110-05">實線：moderate（&gt;10% BSA）、severe（&gt;30% BSA）</mark>；虛線：mild</td></tr>
+<tr><td>Systemic Tx</td><td>Methotrexate、acitretin、apremilast、biologicals（etanercept、adalimumab、infliximab、ustekinumab、secukinumab、ixekizumab）</td><td>FAE、cyclosporine A、other agents（hydroxyurea、6-thioguanine、Cellcept、sulfasalazine）</td><td>實線：severe；虛線：moderate</td></tr>
+<tr><td>Day treatment center</td><td>Modified Goeckerman</td><td>—</td><td>實線：moderate、severe</td></tr>
+</tbody>
+</table>
+<table class="ex-table">
+<thead><tr><th scope="col">Form（獨立分支）</th><th scope="col">Fig. 28-16 列出的治療</th></tr></thead>
+<tbody>
+<tr><td>Erythrodermic／pustular</td><td>Acitretin、cyclosporine A、<mark data-q="110-05">PUVA、NB-UVB</mark>、methotrexate、anti-TNF agents、anti-IL17A agents、anti-p40（ustekinumab）、systemic steroids（*，只在少數 pustular 個案）</td></tr>
+<tr><td>Guttate</td><td>No treatment、NB-UVB、topical treatment（vitamin D3 analog、topical steroids）</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Fig. 28-16，p.480。疼痛的掌蹠侵犯或 PsA 即使 BSA 小也可能需要較強治療；CsA 因副作用不作為一線長期系統治療，但短期可誘導緩解。</p>
-<aside class="ex-trap"><strong>易錯</strong>光療不限於 BSA &lt;20%：algorithm 中 moderate（&gt;10%）以 NB-UVB、BB-UVB 為一線，severe（&gt;30%）也列 NB-UVB 與 PUVA（110-05）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fig. 28-16 中 phototherapy 框的 first line 為 NB-UVB、BB-UVB，second line 為 PUVA、excimer、climatotherapy；phototherapy 以實線連到 moderate（&gt;10% BSA）與 severe（&gt;30% BSA），以虛線連到 mild；erythrodermic／pustular 分支也列 PUVA、NB-UVB（p.480）。</aside>
 <ul>
 <li>Erythrodermic 與 GPP 最常用的藥物是 <strong>acitretin</strong>；guttate、erythrodermic、pustular 常演變為 chronic plaque。<span class="ex-ref">p.480</span></li>
 <li>適合<strong>持續使用</strong>：calcipotriol、MTX、acitretin（維持療效、累積毒性低）；不適合長期連續使用：topical corticosteroids、dithranol、tar、photo(chemo)therapy、cyclosporin → 用 combination 或 rotational。<span class="ex-ref">p.488</span></li>
@@ -350,6 +368,7 @@
 <ul>
 <li>多數乾癬以外用治療；外用藥 noncompliance 約 <strong class="ex-n">40%</strong>；ointment 通常比 cream 有效。<span class="ex-ref">p.488</span></li>
 <li><mark data-q="111-12">成人全身塗抹、每天兩次、一週約需 <strong class="ex-n">400 g</strong> 外用藥</mark>。<span class="ex-ref">p.488</span></li>
+<li><mark data-q="111-12">Fingertip unit（FTU）：<strong class="ex-n">1 FTU</strong> 約 <strong class="ex-n">500 mg</strong> 外用藥，可塗約 <strong class="ex-n">2% BSA</strong></mark>（ch183）。<span class="ex-ref">p.3371</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Agent</th><th scope="col">Mechanism／dosing（機轉／用法）</th><th scope="col">Safety／notes（安全性）</th><th scope="col">Pregnancy</th></tr></thead>
@@ -392,7 +411,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 28-5，p.483。PUVA 次數上限：Fitzpatrick 建議 &lt;200 次或 &lt;2000 J/cm²；McKee 指 SCC 風險最高者為 &gt;200 次及／或 &gt;1000 J/cm²（McKee p.232）。</p>
-<aside class="ex-trap"><strong>易錯</strong>UVB 紅斑高峰在 24 小時內，可連續照、每次加量；高峰延遲的是 PUVA：ch198 寫 PUVA 紅斑高峰至少在治療後 48 小時（p.3644），ch199 寫 24–36 小時才出現、72–96 小時達高峰（p.3667），所以不能每天照（109-48）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>UVB 紅斑高峰在照射後 24 小時內出現，所以每次治療都可加量（p.490）。PUVA 紅斑：ch198 寫高峰通常至少在治療後 48 小時（p.3644）；ch199 寫 24–36 小時前不會出現、72–96 小時或更晚才達高峰，每天照 PUVA 可能造成延遲的嚴重累積 phototoxicity（p.3667）。</aside>
 </section>
 
 <section class="ex-note" id="systemic">
@@ -409,21 +428,21 @@
 <tr><td>Mycophenolate mofetil</td><td>Noncompetitive IMPDH inhibitor，阻斷 de novo purine synthesis</td><td>500–750 mg bid → 1.0–1.5 g bid</td><td>GI、myelosuppression、感染、lymphoma；只算中度有效</td><td>C</td></tr>
 <tr><td>Sulfasalazine</td><td>抑制 5-lipoxygenase</td><td>500 mg tid → 1 g tid → 1 g qid</td><td>約 1/3 頭痛、噁心嘔吐；G6PD 缺乏 hemolytic anemia</td><td>B</td></tr>
 <tr><td>Apremilast</td><td>PDE4 inhibitor → cAMP 上升、CREB 活化、抑制 NF-κB</td><td>10 mg 起 1 週內調到 <strong class="ex-n">30 mg bid</strong></td><td>Depression 惡化、腹瀉、噁心、體重減輕 5–10%；<strong>不需抽血監測</strong>；PASI-75 <strong class="ex-n">28.8%</strong>（week 16）</td><td>C</td></tr>
-<tr><td>Tofacitinib</td><td>JAK1、JAK3（JAK2 較弱）</td><td>5 mg 或 10 mg bid（當時只核准 RA）</td><td>骨髓抑制、感染、herpes zoster；需篩 TB</td><td>C</td></tr>
+<tr><td>Tofacitinib</td><td>JAK1、JAK3（JAK2 較弱）</td><td>5 mg bid；10 mg bid 仍在臨床試驗評估（當時只核准 RA，p.492）</td><td>骨髓抑制、感染（尤其 URI、nasopharyngitis）、腹瀉；p.492：起始前篩 TB，RA 病人有 herpes zoster 增加的報告</td><td>C</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 28-6，p.484–486。</p>
 <h3>Methotrexate</h3>
 <ul>
 <li>對 chronic plaque 很有效，也用於 erythroderma 與 pustular psoriasis 的長期治療。<span class="ex-ref">p.491</span></li>
-<li><mark data-q="101-14">低劑量（<strong class="ex-n">0.1–0.3 mg/kg/wk</strong>）抑制淋巴球而非 keratinocyte 增生；主要抗發炎機轉是抑制 <strong>AICAR transformylase</strong> → 細胞外 adenosine 堆積，而非 DHFR／antifolate</mark>；因此合併 folic acid <strong class="ex-n">1–5 mg/day</strong> 可減少噁心與 megaloblastic anemia 而不降低療效。<span class="ex-ref">p.491</span></li>
+<li><mark data-q="101-14">低劑量（<strong class="ex-n">0.1–0.3 mg/kg/wk</strong>）抑制淋巴球而非 keratinocyte 增生；主要抗發炎機轉是抑制 <strong>AICAR transformylase</strong> → 細胞外 adenosine 堆積</mark>；符合 DHFR-independent 機轉，合併 folic acid <strong class="ex-n">1–5 mg/day</strong> 可減少噁心與 megaloblastic anemia 而不降低療效。<span class="ex-ref">p.491</span></li>
 <li>半衰期長 → 每週給藥；起效慢（<strong class="ex-n">4–8 週</strong>）；經腎排除，腎功能不全不可給。<span class="ex-ref">p.491</span></li>
 <li>Liver biopsy：低風險者累積 <strong class="ex-n">3.5–4.0 g</strong> 才做；有危險因子者 baseline（或治療 2–6 個月）後每累積 <strong class="ex-n">1.0–1.5 g</strong>。危險因子：飲酒、持續肝指數異常、肝病史或家族史、肝毒性藥物、DM、hyperlipidemia、obesity；可用 type III procollagen peptide 篩檢。<span class="ex-ref">p.491</span></li>
 <li>Pancytopenia 多發生於 folate deficiency；<strong>leucovorin（folinic acid）</strong>是血液毒性唯一解毒劑，疑過量立即給 <strong class="ex-n">20 mg</strong>，之後每 <strong class="ex-n">6 小時</strong>。NSAIDs、sulfonamides 增加毒性。<span class="ex-ref">p.491–492</span></li>
 </ul>
 <h3>Acitretin</h3>
 <ul>
-<li>Second-generation retinoid；單一療法最有效的是 <strong>generalized pustular 與 erythrodermic psoriasis</strong>；最佳起始 <strong class="ex-n">25 mg/day</strong>，維持 <strong class="ex-n">20–50 mg/day</strong>；≥50 mg/day 較多掉髮、paronychia；停藥 2 個月內多數復發；肝功能異常、hyperlipidemia、DISH 時停藥。<span class="ex-ref">p.492</span></li>
+<li>Second-generation retinoid；單一療法最有效的是 <strong>generalized pustular 與 erythrodermic psoriasis</strong>；報告的 optimal 起始劑量 <strong class="ex-n">25 mg/day</strong>，維持 <strong class="ex-n">20–50 mg/day</strong>；≥50 mg/day 較多掉髮、paronychia；停藥 2 個月內多數復發；肝功能異常、hyperlipidemia、DISH 時停藥。<span class="ex-ref">p.492</span></li>
 </ul>
 <h3>Cyclosporin A</h3>
 <ul>
@@ -438,14 +457,14 @@
 <li>Hydroxyurea：近 <strong class="ex-n">50%</strong> 有明顯改善者出現骨髓毒性；leg ulcers 最麻煩。<span class="ex-ref">p.493</span></li>
 <li>Tofacitinib：JAK family 有 JAK1、JAK2、JAK3、<mark data-q="115-35">TYK2</mark> 四種。<span class="ex-ref">p.492</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>MTX 抗發炎主要不是 antifolate action（101-14）；cyclosporine 雖然腎毒性大，但懷孕分級 C 且不致畸，懷孕時可考慮（110-05、105-39）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>MTX 目前認為主要的抗發炎機轉是抑制 AICAR transformylase → 細胞外 adenosine 堆積；合併 folic acid 不降低療效，符合 DHFR-independent 機轉（p.491）。Cyclosporin A 為 pregnancy category C 且 nonteratogenic，懷孕時可考慮（Table 28-8，p.488）。</aside>
 </section>
 
 <section class="ex-note" id="biologics">
 <h2>16. Biologic Treatments（生物製劑）</h2>
 <ul>
 <li>作者認為生物製劑應保留給 MTX 無效或禁用的中重度病人；人化或全人抗體較佳（減少抗體產生）。<span class="ex-ref">p.493</span></li>
-<li>TNF-α 為 homotrimer，有 transmembrane 與 soluble 兩型；美國有 <strong class="ex-n">5</strong> 種 anti-TNF：infliximab（chimeric）、etanercept（TNF receptor–Fc fusion）、adalimumab 與 golimumab（fully human IgG1）、certolizumab pegol（PEG 化 Fab′）；golimumab、certolizumab 當時只核准 PsA。<span class="ex-ref">p.493–494</span></li>
+<li>TNF-α 為 homotrimer，有 transmembrane 與 soluble 兩型；<mark data-q="104-08">美國有 <strong class="ex-n">5</strong> 種 anti-TNF：infliximab（chimeric）、etanercept（TNF receptor–Fc fusion）、adalimumab 與 golimumab（fully human IgG1）、certolizumab pegol（PEG 化 Fab′）</mark>；golimumab、certolizumab 當時只核准 PsA。<span class="ex-ref">p.493–494</span></li>
 <li><mark data-q="114-04">Infliximab 與 adalimumab 結合 <strong>soluble 與 membrane-bound TNF</strong>，etanercept 主要結合 <strong>soluble TNF</strong></mark>；infliximab、adalimumab 療效略優於 etanercept。<span class="ex-ref">p.494</span></li>
 <li><mark data-q="107-36,114-04"><strong>Ustekinumab</strong> 結合 IL-12 與 IL-23 共用的 <strong>p40</strong> subunit：阻斷 IL-12（Th1 分化關鍵），但對 IL-23 的抑制（Th17、Th22 慢性發炎）可能更重要</mark>；略優於 etanercept。<span class="ex-ref">p.494</span></li>
 <li><mark data-q="107-36,115-35">專一針對 IL-23 <strong>p19</strong> subunit 的藥物（Fig. 28-12 列 guselkumab、risankizumab、tildrakizumab）當時仍在開發中，看起來非常有效</mark>。<span class="ex-ref">p.469、p.494</span></li>
@@ -465,8 +484,8 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 28-7，p.487：所有藥物 baseline 都要 PPD／QuantiFERON-TB Gold；<mark data-q="104-08">表中 6 種生物製劑 pregnancy category 都是 <strong>B</strong></mark>。</p>
-<aside class="ex-trap"><strong>易錯</strong>Ustekinumab 不是 anti-TNF，標的是 p40（不是 p19）；brodalumab 標的是 IL-17 receptor A，不是 IL-17A/F 配體。合併 IBD 的病人不宜優先用 IL-17 抑制劑（110-05）。Secukinumab 課本沒有依體重加到 450 mg 的用法（111-12）。</aside>
-<aside class="ex-trap"><strong>易錯</strong>115-35 考的是台灣 TFDA 核准適應症（risankizumab–GPP、upadacitinib、deucravacitinib、guselkumab–PPP），Fitzpatrick 9e 沒有收錄；本章只寫 p19 抑制劑仍在開發、tofacitinib 只核准 RA。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Ustekinumab 結合 IL-12 與 IL-23 共用的 p40 subunit；專一針對 p19 的藥物當時仍在開發中；brodalumab 是針對 IL-17 receptor α chain 的全人抗體（p.494）。Table 28-7 中 secukinumab、ixekizumab 的安全性都列 exacerbation of IBD；secukinumab 劑量為 150–300 mg，week 0–4 每週，之後每 4 週（p.487）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>本章寫 tofacitinib 當時只核准 RA（p.492）；IL-23 p19 抑制劑當時仍在開發中（p.494）。</aside>
 </section>
 
 <section class="ex-note" id="special">
@@ -499,5 +518,5 @@
 </tbody>
 </table>
 <p class="ex-cite">Tables 28-4、28-6、28-7、28-8，p.482–488。</p>
-<aside class="ex-trap"><strong>易錯</strong>Cyclosporine 不屬於致畸胎藥（110-05 ③ 把它和 acitretin、MTX 並列是錯的）；外用藥中 tazarotene 是 category X。Impetigo herpetiformis 不可用 oral retinoids，分娩後且不哺乳才可考慮（107-07）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Cyclosporin A 為 category C 且 nonteratogenic；MTX 為 fetotoxic 與 abortifacient、retinoids 是強力 teratotoxins，懷孕絕對禁忌（Table 28-8，p.488）。外用藥中 tazarotene 為 category X（Table 28-4）。Pustular psoriasis of pregnancy：終止妊娠後，或分娩後不哺乳的母親，治療選擇可擴充到 oral PUVA、oral retinoids、methotrexate（p.1773）。</aside>
 </section>

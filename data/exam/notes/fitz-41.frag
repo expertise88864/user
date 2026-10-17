@@ -36,11 +36,11 @@
 <h2>2. Epidemiology（流行病學）</h2>
 <ul>
 <li>Lifetime prevalence 約 <strong class="ex-n">8–10%</strong>（歐洲）；point prevalence 瑞典約 <strong class="ex-n">0.1%</strong>、西班牙 <strong class="ex-n">0.6%</strong>；CSU 德國 1-year prevalence <strong class="ex-n">0.8%</strong>。<span class="ex-ref">p.685</span>McKee 寫 lifetime incidence 接近 <strong class="ex-n">1/5</strong>。<span class="ex-ref ex-ref-mckee">McKee p.697</span></li>
-<li>Nonacute（chronic）urticaria 中：<mark data-q="101-38"><strong>CSU 66–93%</strong>（最常見）</mark>、physical urticaria <strong class="ex-n">4–33%</strong>、cholinergic urticaria <strong class="ex-n">1–7%</strong>。<span class="ex-ref">p.685</span></li>
+<li>Nonacute（chronic）urticaria 中：<mark data-q="101-38"><strong>CSU 66–93%</strong></mark>、physical urticaria <strong class="ex-n">4–33%</strong>、cholinergic urticaria <strong class="ex-n">1–7%</strong>。<span class="ex-ref">p.685</span></li>
 <li><mark data-q="101-38">多達 <strong class="ex-n">一半</strong> CSU 病人同時有其他類型 urticaria</mark>。<span class="ex-ref">p.685</span></li>
 <li>CSU 表現：wheals + angioedema <strong class="ex-n">33–67%</strong>、只有 wheals <strong class="ex-n">29–65%</strong>、只有 angioedema <strong class="ex-n">1–13%</strong>。<span class="ex-ref">p.685</span></li>
 <li>Sex：女性約為男性 <strong class="ex-n">2 倍</strong>（CSU 與多數類型皆然）；CSU 女性 ASST 陽性率較高。<span class="ex-ref">p.685</span></li>
-<li>Age：CSU 高峰 <strong class="ex-n">20–40 歲</strong>；美國門診所有類型呈 bimodal（<strong class="ex-n">0–9 歲</strong> 與 <strong class="ex-n">30–40 歲</strong>），第一高峰反映兒童的 acute spontaneous、allergic、cholinergic urticaria。<span class="ex-ref">p.685</span></li>
+<li>Age：CSU 高峰 <strong class="ex-n">20–40 歲</strong>；美國門診所有類型呈 bimodal（<strong class="ex-n">出生至 9 歲</strong> 與 <strong class="ex-n">30–40 歲</strong>），第一高峰反映兒童的 acute spontaneous、allergic、cholinergic urticaria。<span class="ex-ref">p.685</span></li>
 <li>種族差異未知；社經、教育、居住地的關聯不一致。<span class="ex-ref">p.685</span></li>
 </ul>
 </section>
@@ -59,14 +59,15 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Wheal type（Table 41-2）</th><th scope="col">典型對應的 subtype</th></tr></thead>
 <tbody>
-<tr><td>Polymorphic（spontaneous type）、annular／purpuric</td><td>Spontaneous urticaria；type I allergy 與多數 drug-induced urticaria</td></tr>
-<tr><td>Small（<strong class="ex-n">&lt;5 mm</strong>）and disseminated</td><td>Cholinergic、aquagenic、adrenergic urticaria</td></tr>
-<tr><td>Linear</td><td>Symptomatic dermographism</td></tr>
-<tr><td>Localized provoked area</td><td>Cold、solar、heat、deep pressure urticaria</td></tr>
-<tr><td>Mucosal</td><td>Angioedema</td></tr>
+<tr><td>Polymorphic（spontaneous urticaria type）</td><td>Spontaneous urticaria（+++）；type I allergy–mediated 與多數 drug-induced urticaria（++）</td></tr>
+<tr><td>Annular、purpuric lesion</td><td>Spontaneous urticaria（++）</td></tr>
+<tr><td>Small（<strong class="ex-n">&lt;5 mm</strong>）and disseminated（cholinergic type）</td><td>Cholinergic、aquagenic、adrenergic urticaria（+++）；spontaneous urticaria（+）</td></tr>
+<tr><td>Linear</td><td>Symptomatic dermographism（+++）</td></tr>
+<tr><td>Localized provoked area</td><td>Cold、solar、heat、deep pressure urticaria（+++）；symptomatic dermographism、type I allergy–mediated（++）；cholinergic／aquagenic／adrenergic（none to ++）</td></tr>
+<tr><td>Mucosal</td><td>Angioedema（+++）；spontaneous、type I allergy–mediated（none to ++）</td></tr>
 </tbody>
 </table>
-<p class="ex-cite">Table 41-2，p.689（簡化為各型主要特徵）。</p>
+<p class="ex-cite">Table 41-2，p.689（依原表 +++／++／+ 程度整理；cold／solar／heat／deep pressure 與 dermographism 的 mucosal type 為 none to ±，cholinergic 群為 none to +）。</p>
 <h3>Noncutaneous findings（皮膚外）</h3>
 <ul>
 <li>發作時常有胃腸不適；腸胃道感染可誘發 urticaria。Pharyngeal edema 可見於 angioedema，尤其 bradykinin-induced。<span class="ex-ref">p.685</span></li>
@@ -111,7 +112,7 @@
 <li>罕見；特定波長光照後數分鐘內出現，通常數小時消退，可合併 headache、syncope、dizziness、wheezing、nausea。<span class="ex-ref">p.690</span></li>
 <li>疹子形狀與照光區一致；沒有 cholinergic 型的小 wheal；臉與手因慢性日曬 hardening 反而病灶較少。<span class="ex-ref">p.690</span></li>
 <li>少數由 porphyria 引起，歸為 <strong>type VI solar urticaria</strong>。<span class="ex-ref">p.693</span></li>
-<li>McKee：<strong>fixed solar urticaria</strong> 為同部位反覆發作的罕見型；<strong class="ex-n">77%</strong> 病人以照射過誘發波長的 autologous serum 挑戰會出現 urticaria；部分重症可用 plasma exchange 治療。<span class="ex-ref ex-ref-mckee">McKee p.698、p.700–701</span></li>
+<li>McKee：<strong>fixed solar urticaria</strong> 為同部位反覆發作的罕見型；<strong class="ex-n">77%</strong> 病人以照射過誘發波長的 autologous serum 挑戰會出現 urticaria；部分重症可用 plasma exchange 治療。<span class="ex-ref ex-ref-mckee">McKee p.698、700–701</span></li>
 </ul>
 <h3>Delayed pressure urticaria（DPU）</h3>
 <ul>
@@ -139,7 +140,7 @@
 <li>另一群病人為 sweat production 部分受損（如 acquired idiopathic generalized anhidrosis，代償性 acetylcholine 過度釋放），多以疼痛為主、冬天明顯。<span class="ex-ref">p.690，p.693</span></li>
 <li>McKee：為最常見亞型之一，推測由神經釋放 cholinergic substances；注射 anticholinergic 可阻斷 wheal，局部麻醉的神經支配區不出 wheal；有家族病例。<span class="ex-ref ex-ref-mckee">McKee p.699</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Cholinergic urticaria 的 wheal 是 1–4 mm 點狀，不是數公分大 wheal。對汗液抗原（MGL_1304）致敏的約 2/3 是 cholinergic urticaria 病人，不是 CSU 病人。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Cholinergic urticaria 的病灶為點狀 1–4 mm wheals 或紅點（p.690）。約 2/3 的 cholinergic urticaria 病人對人類汗液中的抗原致敏，主要抗原為 <em>M. globosa</em> 產生的 MGL_1304（p.691–692）。</aside>
 <h3>Contact urticaria</h3>
 <ul>
 <li>屬 inducible urticaria：接觸特定物質後立即出現 wheal 與 flare；可為 <strong>immunologic（IgE-mediated）</strong> 或 <strong>nonimmunologic</strong>。<span class="ex-ref">p.690</span></li>
@@ -152,7 +153,7 @@
 <section class="ex-note" id="pathogenesis">
 <h2>5. Etiology &amp; Pathogenesis（病因與致病機轉）</h2>
 <ul>
-<li>共同特徵：快速短暫的 vasodilation 與血漿滲出，加上 itch sensory nerve 活化；主要來自皮膚 <strong>mast cell degranulation</strong> 釋放 histamine 與 prostaglandins、leukotrienes 等介質。證據：病灶 mast cell 去顆粒、局部 histamine 上升、antihistamine 對 <strong class="ex-n">&gt;一半</strong> CSU 有效。<span class="ex-ref">p.691</span></li>
+<li>共同特徵：<mark data-q="106-29">皮膚或黏膜組織快速短暫的 vasodilation 與血漿滲出，加上 itch sensory nerve 活化</mark>；主要來自皮膚 <strong>mast cell degranulation</strong> 釋放 histamine 與 prostaglandins、leukotrienes 等介質。證據：病灶 mast cell 去顆粒、局部 histamine 上升、antihistamine 對 <strong class="ex-n">&gt;一半</strong> CSU 有效。<span class="ex-ref">p.691</span></li>
 </ul>
 <h3>Type I hypersensitivity</h3>
 <ul>
@@ -165,16 +166,16 @@
 <li>最早懷疑自體免疫是因 anti-thyroid（antimicrosomal／peroxidase、antithyroglobulin）IgG 增加。<span class="ex-ref">p.692</span></li>
 <li><mark data-q="110-10,115-13"><strong class="ex-n">1/3 到一半</strong> CSU 病人有對 <strong>IgE</strong> 或 <strong>FcεRI</strong> 的 functional IgG autoantibodies，可使 mast cells 與 basophils 釋放 histamine</mark>；anti-IgE 交聯 IgE–FcεRI，anti-FcεRI 直接交聯受體（可與 IgE 競爭）；anti-FcεRI 的 histamine-releasing 活性部分依賴 <strong>classical complement</strong>（C5a）。<span class="ex-ref">p.692</span></li>
 <li>篩檢用 <strong>ASST</strong>；確認用病人血清加健康人 basophil 的 <strong>histamine release test</strong>。<span class="ex-ref">p.692</span></li>
-<li><mark data-q="110-10">ASST 陽性的 CSU 較頑固、症狀較重</mark>；<mark data-q="109-24,110-10">ASST 陽性者對 omalizumab 的反應時間較長（較慢）</mark>。<span class="ex-ref">p.692</span></li>
+<li><mark data-q="110-10">ASST 陽性的 CSU 可能較頑固、症狀較重</mark>；<mark data-q="109-24,110-10">ASST 陽性者對 omalizumab 的反應時間較長（較慢）</mark>。<span class="ex-ref">p.692</span></li>
 <li>新分類：IgE 辨識組織自體抗原 = <strong>type I autoimmunity</strong>；IgG 辨識 IgE／FcεRI = <strong>type II autoimmunity</strong>。<span class="ex-ref">p.692</span></li>
 <li>Solar urticaria：照光後皮膚抗原顯露並活化 complement；cold urticaria 切片冷卻回溫後釋放 histamine，暗示皮膚有致病分子，但尚未鑑定。<span class="ex-ref">p.692</span></li>
-<li><mark data-q="110-10">CSU 可測到 thyroglobulin、TPO 的 IgG 或 IgE 自體抗體，但多數與 thyroid function 異常無關</mark>；甲狀腺功能正常者用 thyroxine 治療的效果有爭議。<span class="ex-ref">p.692</span></li>
+<li><mark data-q="110-10,109-24">CSU 可測到 thyroglobulin、TPO 的 IgG 或 IgE 自體抗體，但多數與 thyroid function 異常無關</mark>；甲狀腺功能正常者用 thyroxine 治療的效果有爭議。<span class="ex-ref">p.692</span></li>
 <li>Omalizumab 對 spontaneous 與 physical urticaria 皆快速有效，提示與 IgE 結合的 endogenous antigens 參與多種 urticaria。<span class="ex-ref">p.692</span></li>
 <li>Hypocomplementemic urticarial vasculitis syndrome：有 <strong>anti-C1q IgG autoantibody</strong>。<span class="ex-ref">p.692</span></li>
 <li>Genetics：白人中 <strong>HLA-DR4</strong> 與有 functional anti-IgE／FcεRI 抗體的 CSU 強烈相關。<span class="ex-ref">p.695</span></li>
-<li>McKee：anti-FcεRI 或 anti-IgE autoantibodies 見於約 <strong class="ex-n">30%</strong> chronic urticaria（autoimmune urticaria，type II hypersensitivity）；physical urticaria、connective tissue disease、autoimmune bullous disease 也可有 anti-FcεRI，但為 <strong>nonfunctional</strong>（不釋放 histamine）。Serum sickness 相關 urticaria 為 type III。<span class="ex-ref ex-ref-mckee">McKee p.700</span></li>
+<li>McKee：anti-FcεRI 或 anti-IgE autoantibodies 見於約 <strong class="ex-n">30%</strong> chronic urticaria（autoimmune urticaria，type II hypersensitivity）；physical urticaria 或 connective tissue disease、autoimmune bullous disease 病人也可有 anti-FcεRI；後一群病人的抗體為 <strong>nonfunctional</strong>（不釋放 histamine），chronic urticaria 則為 functional。Serum sickness 相關 urticaria 為 type III。<span class="ex-ref ex-ref-mckee">McKee p.700</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫 1/3 到一半，McKee 寫約 30%。ASST 陽性代表較頑固、較重、對 omalizumab 反應較慢，不是「較好治」。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫 1/3 到一半，McKee 寫約 30%。ASST 陽性的 CSU 可能較頑固、症狀較重，對 omalizumab 產生反應的時間較長（p.692、p.701）。</aside>
 <h3>Pseudoallergy（假性過敏）</h3>
 <ul>
 <li>對 dietary pseudoallergens（salicylates、biogenous amines、food additives）與持續使用口服或外用 <mark data-q="106-07">NSAIDs 的 nonallergic hypersensitivity</mark>，可為 CSU 的病因或加重因子；需嚴格排除後再 provocation 才能診斷。<span class="ex-ref">p.692</span></li>
@@ -216,19 +217,19 @@
 <ul>
 <li><mark data-q="106-07,113-45">Aspirin 與其他抑制 <strong>COX-1</strong> 的 NSAIDs 可誘發或加重 wheals 與 angioedema</mark>，也可引起 aspirin asthma（皮膚與呼吸症狀似乎各自獨立）。<span class="ex-ref">p.694–695</span></li>
 <li>FDEIA 可因 aspirin／NSAIDs 與致病食物併用而誘發，甚至不需運動。<span class="ex-ref">p.695</span></li>
-<li><mark data-q="113-45"><strong>COX-2–selective NSAIDs</strong> 通常比 aspirin 或強效 COX-1 inhibitors 安全</mark>；但個別病人的敏感度不一定與 COX-1 抑制力相關。<span class="ex-ref">p.695</span></li>
-<li>McKee：drug-induced urticaria 見於 <strong class="ex-n">0.16%</strong> 內科住院病人、皮膚科門診 chronic urticaria／angioedema 的 <strong class="ex-n">9%</strong>；最常見為 sulfonamides、penicillins、NSAIDs；<mark data-q="106-07">多數為 IgE-mediated，但部分為直接活化 mast cell 或經 arachidonic acid 代謝（aspirin）路徑</mark>。<span class="ex-ref ex-ref-mckee">McKee p.700</span></li>
+<li><mark data-q="113-45"><strong>COX-2–selective NSAIDs</strong> 傾向比 aspirin 或其他相對強效的 COX-1 inhibitors 安全</mark>；但個別病人的敏感度不一定與 COX-1 抑制力相關。<span class="ex-ref">p.695</span></li>
+<li>McKee：drug-induced urticaria 見於 <strong class="ex-n">0.16%</strong> 內科住院病人、皮膚科門診 chronic urticaria／angioedema 的 <strong class="ex-n">9%</strong>；最常見為 sulfonamides、penicillins、NSAIDs；<mark data-q="106-07">許多為 IgE-mediated，但部分為直接活化 mast cell 或經其他路徑加強反應（如 aspirin 等調控 arachidonic acid 代謝）</mark>。<span class="ex-ref ex-ref-mckee">McKee p.700</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>NSAID 引起的 urticaria／angioedema 主要是 COX-1 抑制的 pseudoallergy（non-IgE），不是 IgE-mediated。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 把持續使用口服或外用 NSAIDs 列為 nonallergic hypersensitivity（pseudoallergy）的一種（p.692），抑制 COX-1 的 aspirin 與其他 NSAIDs 可誘發或加重 wheals 與 angioedema（p.694）；McKee 寫 aspirin 等藥物可經 arachidonic acid 代謝路徑誘發或加重 urticaria。</aside>
 <h3>Other triggers</h3>
 <ul>
 <li><strong>Serum sickness</strong>：給予 heterologous serum 或藥物後數天到數週，urticaria 合併 fever、lymphadenopathy、myalgia、arthralgia、arthritis；通常自限，持續 <strong class="ex-n">4–5 days</strong>。<span class="ex-ref">p.695</span></li>
 <li><strong>Blood products</strong>：多為 immune complex 與 complement activation；aggregated IgG 也可能。<span class="ex-ref">p.695</span></li>
 <li><strong>Iodinated contrast media</strong>：過敏反應 <strong class="ex-n">0.05–0.1%</strong>；nonionic dimeric ICM 減少 1 小時內 immediate reactions，但 nonimmediate reactions 增加；多數為 non-IgE 機轉，少數經 skin test／BAT 證實為 IgE。<span class="ex-ref">p.695</span></li>
-<li><strong>直接活化 mast cell／basophil</strong>：opiates、polymyxin B、curare、D-tubocurarine、vancomycin（尤其高劑量）。<span class="ex-ref">p.695</span></li>
+<li><mark data-q="103-25,105-07"><strong>直接活化 mast cell／basophil</strong>：opiates</mark>、polymyxin B、curare、D-tubocurarine、vancomycin 使 mast cell 或 basophil 釋放 histamine（尤其高劑量時），給藥當下可引起 urticaria 或其他皮疹。<span class="ex-ref">p.695</span></li>
 <li><mark data-q="113-45"><strong>ACE inhibitors</strong> 本身<strong>不</strong>使 mast cell 釋放或產生介質，而是抑制 bradykinin 分解</mark>；與多數藥物不同，可在多次給藥、數天或更久之後才引起或加重 angioedema，屬 angioedema 的 underlying cause 而非直接刺激。<span class="ex-ref">p.695</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>ACE inhibitor 不會「促進 mast cell 釋放介質」；它造成的是 bradykinin-mediated angioedema（不伴 wheal），且可在長期使用後才發作。</aside>
+<aside class="ex-trap"><strong>易錯</strong>ACE inhibitor 本身不使 mast cell 釋放或產生介質，而是抑制 bradykinin 分解，可在多次給藥、數天或更久之後才引起或加重 angioedema（p.695）。Bradykinin-mediated angioedema 不伴表淺 wheal（p.696）。</aside>
 <h3>Risk factors（危險因子）</h3>
 <ul>
 <li>任何年齡皆可；無種族差異；CSU 女：男 = <strong class="ex-n">2:1</strong>。感染、thyroid 與 collagen disease 雖相關，但盛行率低，一般不視為 risk factors。<span class="ex-ref">p.695</span></li>
@@ -246,6 +247,13 @@
 <li>Inducible urticaria 的 wheal 通常不超過 <strong class="ex-n">4 hours</strong>（DPU 除外）；delayed dermographism、delayed cold urticaria 雖延遲出現，但持續不久。<span class="ex-ref">p.695</span></li>
 <li>個別 wheal 持續 <strong class="ex-n">≥24 hours</strong>（尤其合併 purpura）要排除 <strong>urticarial vasculitis</strong>。<span class="ex-ref">p.696</span></li>
 <li>Mast cell–mediated angioedema 通常不侵犯 larynx；<mark data-q="114-08"><strong>bradykinin-mediated angioedema 不伴表淺 wheal</strong></mark>。<span class="ex-ref">p.696</span></li>
+<li>沒有臨床上的亞型診斷前，不建議做大範圍篩檢。<span class="ex-ref">p.701</span></li>
+</ul>
+<h3>Diagnostic algorithm（EAACI，Fig. 41-5）</h3>
+<ul>
+<li><strong>Wheals</strong>：先問 recurrent unexplained fever、joint／bone pain、malaise → 是則考慮 autoinflammatory disease（acquired／hereditary AID，<strong>IL-1</strong>）；否則看 average wheal duration <strong class="ex-n">&gt;24 hr</strong> → 是則切片找 vasculitis（有 → <strong>urticarial vasculitis</strong>）。<span class="ex-ref">p.696</span></li>
+<li>其餘問 symptoms 是否 inducible → provocation test 陽性 = <strong>chronic inducible urticaria</strong>，否則 <strong>CSU</strong>（histamine 與其他 mast cell mediators）。<span class="ex-ref">p.696</span></li>
+<li><strong>Angioedema</strong>：先問 ACE inhibitor treatment → 停藥後緩解 = ACE-Inh induced AE；否則考慮 HAE 或 AAE（HAE I–III、AAE，<strong>bradykinin</strong>）；都不是則回到 inducible 與否的判斷。<span class="ex-ref">p.696</span></li>
 </ul>
 <h3>Laboratory testing（檢驗）</h3>
 <ul>
@@ -254,6 +262,7 @@
 <li>系統性回顧：找到的診斷比例 <strong class="ex-n">1–84%</strong>，與檢驗項目數量無關 → 不建議常規大範圍檢查。<span class="ex-ref">p.697</span></li>
 <li>區分 CSU 與對照的潛在 biomarkers：D-dimer、CRP、MMP-9、MPV、FVIIa、PF1+2、TNF、DHEA-S、vitamin D。<span class="ex-ref">p.696</span></li>
 <li><mark data-q="109-24">反映 CSU <strong>嚴重度</strong> 的 biomarkers：FDP、D-dimer、F1+2、CRP、IL-6、MPV</mark>（thyroid autoantibodies 不在其中）。<span class="ex-ref">p.696</span></li>
+<li>Inducible urticaria（Table 41-1）：routine 為各型 provocation（多數合併 threshold test）；extended：cold urticaria → differential blood count、ESR 或 CRP，排除其他疾病（尤其 infections）；symptomatic dermographism → differential blood count、ESR 或 CRP；solar urticaria → 排除其他 light-induced dermatoses；其餘亞型 none。<span class="ex-ref">p.688</span></li>
 <li>Autoantibody 確認：histamine release assay（病人血清 + 健康捐贈者 basophils）最可靠但繁瑣；ELISA 方便但不特異；<strong>ASST</strong> 敏感、簡單，作為篩檢：前臂內側皮內注射 <strong class="ex-n">0.05 mL</strong> autologous serum，normal saline 為陰性對照、<strong class="ex-n">10 µg/mL</strong> histamine 為陽性對照。<span class="ex-ref">p.697</span></li>
 </ul>
 <h3>Provocation tests（誘發試驗）</h3>
@@ -261,7 +270,7 @@
 <thead><tr><th scope="col">Subtype</th><th scope="col">Method &amp; threshold（方法與判讀）</th></tr></thead>
 <tbody>
 <tr><td>Symptomatic dermographism</td><td>前臂最適合；在 <strong class="ex-n">≤36 g/mm²</strong> 出現 wheal 且會癢為陽性；<strong class="ex-n">≥60 g/mm²</strong> 才有 wheal 且不癢 = simple dermographism（臨床意義低）。除 DPU 外，inducible urticaria 皆於測試後 <strong class="ex-n">5–10 min</strong> 判讀</td></tr>
-<tr><td>Cold contact urticaria</td><td>包裹的冰塊或冷水 <strong class="ex-n">5 min</strong>；TempTest 測溫度閾值。Systemic cold urticaria 此測試陰性（需與 autoinflammatory 的 familial cold urticaria 區分）</td></tr>
+<tr><td>Cold contact urticaria</td><td>包裹的冰塊或冷水 <strong class="ex-n">5 min</strong>；TempTest 測溫度閾值。Systemic cold urticaria 此測試不起 wheal；因可能是 autoinflammatory disease（familial cold urticaria）的表現，需與 cold contact urticaria 區分</td></tr>
 <tr><td>Heat urticaria</td><td>前臂內側 <strong class="ex-n">45°C</strong> 熱金屬、熱水或熱水玻璃筒；需與 cholinergic、solar、aquagenic 區分</td></tr>
 <tr><td>Solar urticaria</td><td>臀部（或衣物遮蓋的軀幹）；sunlight 或 slide projector 距 <strong class="ex-n">10 cm</strong>，或 monochromator（UVA、UVB、visible）；需與 PMLE 區分</td></tr>
 <tr><td>Delayed pressure urticaria</td><td><strong class="ex-n">7-kg</strong> 重物掛在 <strong class="ex-n">3-cm</strong> 肩帶 <strong class="ex-n">15 min</strong>；latent period 典型 <strong class="ex-n">2–4 h</strong>。<mark data-q="101-38">切片為以 <strong>eosinophils</strong> 為主的發炎浸潤，<strong>無 vasculitis</strong></mark></td></tr>
@@ -272,7 +281,7 @@
 </tbody>
 </table>
 <p class="ex-cite">p.697–698；Table 41-1，p.688。所有試驗都用不同強度刺激以找出 threshold。</p>
-<aside class="ex-trap"><strong>易錯</strong>Contact urticaria 用 open test、短時間 occlusive application 與 prick test 在數十分鐘內判讀，不是 48 小時的 regular patch test。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Contact urticaria：可疑物質塗在前臂內側或上背 15–20 分鐘；陰性再做 occlusive application，接著 prick test。除 DPU 外，inducible urticaria 於測試後 5–10 分鐘判讀（p.697–698）。</aside>
 <h3>Exercise-induced urticaria &amp; anaphylaxis</h3>
 <ul>
 <li>EIA：與進食無關；<strong>FDEIA</strong>：吃特定食物後運動才發作。Food-specific IgE 有幫助但不足以診斷；成人 <strong>anti-ω5-gliadin IgE</strong> 是 wheat FDEIA 敏感度與特異度都極佳的標記；運動誘發試驗（Bruce protocol）sensitivity 最高約 <strong class="ex-n">70%</strong>。<span class="ex-ref">p.699</span></li>
@@ -306,13 +315,13 @@
 <ul>
 <li>發作時 D-dimer、FDP、PF1+2 可上升；最多 <strong class="ex-n">50%</strong> 病人發作前有 prodrome（如 <strong>erythema marginatum</strong>）。<span class="ex-ref">p.698</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Type II HAE 的 C1-INH「濃度正常或不低、活性低」；濃度與活性都低的是 type I。</aside>
+<aside class="ex-trap"><strong>易錯</strong>C1-INH activity 與 C4 在 type I、type II HAE 都下降；C1-INH protein 濃度只有 type I 低（p.698）。</aside>
 <h3>Acquired angioedema（AAE）</h3>
 <ul>
 <li>Myeloproliferative diseases 過度消耗 C1-INH，或有 anti-C1-INH autoantibodies（如 SLE）。<span class="ex-ref">p.694，p.698–699</span></li>
 <li><mark data-q="114-08">過度消耗 C1-INH 時，<strong>C1q</strong> 會和 C1-INH、C4 一起下降</mark>。<span class="ex-ref">p.699</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>C1q 下降是 acquired（消耗型）的線索；HAE 的 C1q 不在課本列出的下降項目中。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Acquired angioedema 由 C1-INH 過度消耗造成時，C1q 與 C1-INH、C4 一起下降（p.699）。</aside>
 <h3>ACE inhibitor–induced angioedema</h3>
 <ul>
 <li>ACE（dipeptidylcarboxypeptidase）把 angiotensin I 轉為 angiotensin II，並分解 bradykinin；ACE inhibitor 抑制 bradykinin 分解 → bradykinin-mediated angioedema。<span class="ex-ref">p.699</span></li>
@@ -360,7 +369,7 @@
 <li>McKee（ch16）：Schnitzler syndrome 一系列病人 <strong class="ex-n">90%</strong> IgM、<strong class="ex-n">5%</strong> IgA、<strong class="ex-n">5%</strong> IgG gammopathy，切片為 neutrophilic 或混合浸潤，但<strong>都沒有 vasculitis</strong>；hepatosplenomegaly、ESR 與 WBC 上升、fever、joint pain 常見，部分有 lymphoproliferative disorder。<span class="ex-ref ex-ref-mckee">McKee p.724</span></li>
 <li>McKee：<strong>Strasbourg criteria</strong> 不要求 vasculitis。Obligate：chronic urticarial rash + monoclonal IgM 或 IgG gammopathy；Minor：recurrent fever、abnormal bone remodeling、neutrophilic dermal infiltrate、leukocytosis 和/或 CRP 上升。IgM 者需 2 項 obligate + <strong class="ex-n">2</strong> 項 minor；IgG 者需 2 項 obligate + <strong class="ex-n">3</strong> 項 minor；sensitivity <strong class="ex-n">&gt;80%</strong>、specificity <strong class="ex-n">&gt;90%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.724</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Schnitzler syndrome 的典型 paraprotein 是 IgM（Fitzpatrick 寫「或可能 IgG」，McKee 系列 IgG 僅 5%）。CAPS 的疹子通常不癢，機轉是 <em>NLRP3</em> gain-of-function 造成 IL-1β 過量。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Schnitzler syndrome：Fitzpatrick 寫 monoclonal IgM 或可能 IgG gammopathy（p.699）；McKee 一系列病人 90% IgM、5% IgA、5% IgG。CAPS 的疹子通常不癢，<em>NLRP3</em>（<em>CIAS1</em>）gain-of-function 造成 IL-1β 過量（p.699）。</aside>
 </section>
 
 <section class="ex-note" id="histo">
@@ -378,9 +387,9 @@
 <li>病理<strong>非特異</strong>：真皮水腫輕重不一，以 reticular collagen fibers 分離來確認；稀疏的 perivascular 與 interstitial 混合浸潤（lymphocytes、neutrophils、eosinophils）。<span class="ex-ref ex-ref-mckee">McKee p.701</span></li>
 <li><strong>Intravascular neutrophils</strong> 增加是常見線索（非必然）；mast cells 除 chronic urticaria 外似乎不增加；chronic urticaria 的發炎細胞通常比 acute 多。<span class="ex-ref ex-ref-mckee">McKee p.701</span></li>
 <li>DDx：arthropod bite、drug eruption 可有相似變化，需臨床對照；確診有時要做特定抗原反應測試。<span class="ex-ref ex-ref-mckee">McKee p.701–702</span></li>
-<li>Pathogenesis：mast cell degranulation（部分 basophil）為多數 urticaria 的共同路徑；<mark data-q="101-38,114-15">irritant contact urticaria 與 physical urticarias（heat、cold、pressure、vibration、water）被認為是物質或物理刺激<strong>直接作用於 mast cell</strong>（非 IgE）</mark>；solar urticaria 可能為對光誘發抗原的 type I 反應。<span class="ex-ref ex-ref-mckee">McKee p.700</span></li>
+<li>Pathogenesis：mast cell degranulation（部分 basophil）為多數 urticaria 的共同路徑；<mark data-q="101-38,114-15">irritant contact urticaria 與 physical urticarias（heat、cold、pressure、vibration、water）被認為是物質或物理刺激<strong>直接作用於 mast cell</strong>（irritant contact urticaria 為 nonimmunologic）</mark>；solar urticaria 可能為對光誘發抗原的 type I 反應。<span class="ex-ref ex-ref-mckee">McKee p.700</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>McKee 認為 physical urticaria（含 DPU）是直接作用於 mast cell，並非 IgE 介導；DPU 切片是 eosinophil 浸潤、無 vasculitis。</aside>
+<aside class="ex-trap"><strong>易錯</strong>McKee：physical urticarias（heat、cold、pressure、vibration、water）被認為是對 mast cell 的直接作用。Fitzpatrick：DPU 切片為以 eosinophils 為主的發炎浸潤，無 vasculitis（p.698）。</aside>
 <h3>Neutrophilic urticarial dermatosis（McKee）</h3>
 <ul>
 <li>見於 Schnitzler syndrome、Still disease、CAPS、SLE、RA、Sjögren 等自體免疫疾病，以及 IgA monoclonal gammopathy、IgA myeloma；淡紅斑丘疹或斑塊，<strong class="ex-n">24–72 h</strong> 內消退。<span class="ex-ref ex-ref-mckee">McKee p.702</span></li>
@@ -402,15 +411,15 @@
 </ul>
 <h3>McKee（ch15、ch16）</h3>
 <ul>
-<li>臨床 chronic urticaria + 組織學 leukocytoclastic（或 lymphocytic）venulitis；部分為 <strong>type III hypersensitivity</strong>（immune complex），多數找不到原因。<span class="ex-ref ex-ref-mckee">McKee p.700，p.724</span></li>
-<li>女：男 <strong class="ex-n">2:1</strong>，多為 <strong>third to fifth decades</strong>；病灶持續 <strong class="ex-n">24–72 h</strong>，伴 pruritus、灼熱或疼痛，常有 <strong>nonblanchable purpura</strong>；發作頻率每天到每月；消退可留色素沉著。<span class="ex-ref ex-ref-mckee">McKee p.700，p.723</span></li>
-<li>全身：angioedema、關節痛僵硬腫脹（手、肘、足、踝、膝；frank arthritis 極罕見）、腸胃症狀、proteinuria／hematuria，罕見 proliferative、crescentic、mesangial GN 或 membranous nephropathy；ESR 常上升。<span class="ex-ref ex-ref-mckee">McKee p.700，p.723</span></li>
+<li>臨床 chronic urticaria + 組織學 leukocytoclastic（或 lymphocytic）venulitis；部分為 <strong>type III hypersensitivity</strong>（immune complex），多數找不到原因。<span class="ex-ref ex-ref-mckee">McKee p.700、724</span></li>
+<li>女：男 <strong class="ex-n">2:1</strong>，多為 <strong>third to fifth decades</strong>；病灶持續 <strong class="ex-n">24–72 h</strong>，伴 pruritus、灼熱或疼痛，常有 <strong>nonblanchable purpura</strong>；發作頻率每天到每月；消退可留色素沉著。<span class="ex-ref ex-ref-mckee">McKee p.700、723</span></li>
+<li>全身：angioedema、關節痛僵硬腫脹（手、肘、足、踝、膝；frank arthritis 極罕見）、腸胃症狀、proteinuria／hematuria，罕見 proliferative、crescentic、mesangial GN 或 membranous nephropathy；ESR 常上升。<span class="ex-ref ex-ref-mckee">McKee p.700、723</span></li>
 <li><strong>Hypocomplementemia</strong>（C1q、C4、C2 等早期 classical pathway 成分下降）與全身侵犯、anti-endothelial cell autoantibodies 相關，病情較重；侵犯頻率依序為 musculoskeletal &gt; ocular &gt; pulmonary &gt; GI。<span class="ex-ref ex-ref-mckee">McKee p.723</span></li>
 <li>眼部（uveitis、scleritis、conjunctivitis、episcleritis）很常見，<strong class="ex-n">&gt;50%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.724</span></li>
-<li>相關疾病（尤其 hypocomplementemic）：SLE、hepatitis B/C、Sjögren、cryoglobulinemia、serum sickness、MCTD、IBD、PAN、GPA、myeloma、polycythemia rubra vera、藥物（含 cocaine、diltiazem）、日光等；部分作者認為 HUV 是 SLE 的子集；<em>DNASE1L3</em> 突變見於 autosomal recessive HUV 家族。診斷 urticarial vasculitis 一定要評估潛在疾病；預後通常良好。<span class="ex-ref ex-ref-mckee">McKee p.700，p.724</span></li>
-<li>病理：侵犯 <strong>superficial vascular plexus</strong> 的 leukocytoclastic pattern，常很<strong>輕微易漏看</strong>（局部 fibrinoid change、少量 neutrophils、稀疏 karyorrhexis）；endothelial necrosis 不常見；從輕微血管傷害的 urticaria 到明顯 necrotizing vasculitis 呈連續譜；少數以 lymphocytic vasculitis 表現。病理師的角色是確認 vasculitis 存在，與其他 LCV 的區分靠臨床。<span class="ex-ref ex-ref-mckee">McKee p.701，p.724</span></li>
+<li>相關疾病（尤其 hypocomplementemic）：SLE、hepatitis B/C、Sjögren、cryoglobulinemia、serum sickness、MCTD、IBD、PAN、GPA、myeloma、polycythemia rubra vera、藥物（含 cocaine、diltiazem）、日光等；部分作者認為 HUV 是 SLE 的子集；<em>DNASE1L3</em> 突變見於 autosomal recessive HUV 家族。診斷 urticarial vasculitis 一定要評估潛在疾病；預後通常良好。<span class="ex-ref ex-ref-mckee">McKee p.700、724</span></li>
+<li>病理：侵犯 <strong>superficial vascular plexus</strong> 的 leukocytoclastic pattern，常很<strong>輕微易漏看</strong>（局部 fibrinoid change、少量 neutrophils、稀疏 karyorrhexis）；endothelial necrosis 不常見；從輕微血管傷害的 urticaria 到明顯 necrotizing vasculitis 呈連續譜；少數以 lymphocytic vasculitis 表現。病理師的角色是確認 vasculitis 存在，與其他 LCV 的區分靠臨床。<span class="ex-ref ex-ref-mckee">McKee p.701、724</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Urticarial vasculitis 的病灶持續超過 24 小時、留色素、常有灼熱或疼痛，對 antihistamine 反應差；hypocomplementemic 型較嚴重，要找 SLE 等潛在疾病。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Urticarial vasculitis：病灶持續超過 24 小時、消退後留色素（p.690）；多數對 antihistamine 無效（p.702）。McKee：可伴 pruritus、灼熱或疼痛；hypocomplementemia 者疾病較嚴重；診斷 urticarial vasculitis 後應評估潛在疾病。</aside>
 </section>
 
 <section class="ex-note" id="evaluation">
@@ -472,7 +481,7 @@
 </ul>
 <h3>American consensus（AAAAI／ACAAI，Fig. 41-7B）</h3>
 <ul>
-<li>Step 1：sgAH monotherapy；避免誘發因子（如 NSAIDs）與相關物理因子。</li>
+<li>Step 1：sgAH monotherapy；<mark data-q="113-45">避免誘發因子（如 NSAIDs）</mark>與相關物理因子。</li>
 <li>Step 2：sgAH 加量、加另一種 sgAH、加 H2 antagonist、加 leukotriene receptor antagonist、睡前加 first-generation antihistamine（擇一或多項）。</li>
 <li>Step 3：potent antihistamine（hydroxyzine 或 doxepin）視耐受加量。</li>
 <li>Step 4：加 omalizumab 或 cyclosporine，或其他 antiinflammatory agents、immunosuppressants、biologics。<span class="ex-ref">p.703</span></li>
@@ -491,13 +500,13 @@
 <h3>HAE（bradykinin-mediated angioedema）</h3>
 <ul>
 <li><mark data-q="114-08">急性發作：<strong>icatibant</strong>（B2 receptor antagonist）、<strong>ecallantide</strong>、purified 或 recombinant <strong>C1-INH</strong></mark>。<span class="ex-ref">p.702</span></li>
-<li>Prophylaxis：purified／recombinant C1-INH、<strong>lanadelumab</strong>、BCX7353（使用中或開發中）。治療目標分 on-demand、short-term prophylaxis、long-term prophylaxis。<span class="ex-ref">p.702</span></li>
+<li>Prophylaxis：purified／recombinant C1-INH、<strong>lanadelumab</strong>、BCX7653（使用中或開發中）；治療目標分 on-demand、short-term prophylaxis、long-term prophylaxis。<span class="ex-ref">p.702</span>Fig. 41-4 的 kallikrein 抑制劑則寫作 BCX7353（課本兩處寫法不同）。<span class="ex-ref">p.694</span></li>
 <li>Icatibant 對 ACE inhibitor–induced angioedema 急性發作有少數研究支持，但有一研究結果相反。<span class="ex-ref">p.702–703</span></li>
 </ul>
 <h3>Special populations（特殊族群）</h3>
 <ul>
 <li>兒童：原則與成人相同，劑量依仿單。<span class="ex-ref">p.703</span></li>
-<li>懷孕與哺乳：盡量避免全身治療（尤其 first trimester），antihistamines 會通過胎盤；但 EAACI 演算法藥物無可靠致畸證據，原則相同。Chlorphenamine 因使用歷史長常被選用；<mark data-q="113-45">指引支持在利大於弊時使用 <strong>cetirizine</strong> 與 <strong>loratadine</strong>，最好在 <strong>first trimester 之後</strong></mark>。<span class="ex-ref">p.703</span></li>
+<li>懷孕與哺乳：盡量避免全身治療（尤其 first trimester），antihistamines 會通過胎盤；但 EAACI 演算法藥物無可靠致畸證據，原則相同。Chlorphenamine 因使用歷史長常被選用；<mark data-q="113-45">指引支持在利大於弊時使用 <strong>cetirizine</strong> 與 <strong>loratadine</strong>，宜在 <strong>first trimester 之後</strong></mark>。<span class="ex-ref">p.703</span></li>
 </ul>
 </section>
 

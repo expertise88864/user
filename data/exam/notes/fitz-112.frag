@@ -22,7 +22,7 @@
 <li>KA：快速生長後緩慢 spontaneous regression，在經典皮膚癌化序列中的定位仍有爭議。<span class="ex-ref">p.1902</span></li>
 <li>McKee：<mark data-q="111-38,113-50">大多數 SCC 由 AK 發生，常同時可見 AK</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1198</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>「單顆 AK 很少進展」與「多數 SCC 來自 AK」兩者同時成立；多發 AK 的終生累積風險是 6–10%，不是 30%。進展風險和 AK 數目有關。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick：每顆 AK 每年進展為 invasive disease 的估計為 0.025–20%，多發 AK 病人的 cumulative lifetime risk 約 6–10%，累積風險取決於病灶數目與存在時間。McKee：大多數 SCC 由 AK 發生。</aside>
 </section>
 
 <section class="ex-note" id="risk">
@@ -51,7 +51,7 @@
 <li>Skin phototype I–II、<strong>MC1R</strong> 變異、TYR 等 pigmentation gene SNP 與 SCC 風險相關。<span class="ex-ref">p.1903</span></li>
 <li>Oculocutaneous albinism：最常見的遺傳性色素疾病；sub-Saharan Africa 的 black albinos SCC 風險約 <strong class="ex-n">1000 倍</strong>。<span class="ex-ref">p.1903</span></li>
 <li><strong>RDEB</strong>（<em>COL7A1</em>，collagen VII）：最嚴重型 SCC cumulative risk 到 <strong class="ex-n">55 歲 &gt;90%</strong>，<strong class="ex-n">80%</strong> 在第一個 SCC 後 <strong class="ex-n">5 年</strong>內死於轉移；SCC 多發生在慢性不癒合潰瘍，UV 暴露少，真皮 microenvironment stiffening 加速進展。<span class="ex-ref">p.1903，p.1906</span></li>
-<li><strong>XP</strong>：<strong class="ex-n">20 歲</strong>前診斷者 NMSC 增加 <strong class="ex-n">&gt;10,000 倍</strong>（40 年追蹤），尤其 UV 暴露部位。<span class="ex-ref">p.1904</span>McKee 則寫 XP 皮膚癌風險 <strong class="ex-n">1,000 倍</strong>。<span class="ex-ref ex-ref-mckee">McKee p.1201</span></li>
+<li><strong>XP</strong>：XP 病人 <strong class="ex-n">20 歲</strong>前 NMSC 增加 <strong class="ex-n">&gt;10,000 倍</strong>（40 年追蹤），尤其 UV 暴露部位。<span class="ex-ref">p.1904</span>McKee 則寫 XP 皮膚癌風險 <strong class="ex-n">1,000 倍</strong>。<span class="ex-ref ex-ref-mckee">McKee p.1201</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Disease/syndrome</th><th scope="col">Gene(s)</th><th scope="col">Main function（功能）</th></tr></thead>
@@ -73,8 +73,8 @@
 <h3>Physical &amp; chemical carcinogens（物理與化學致癌物）</h3>
 <ul>
 <li><mark data-q="101-50">Arsenic：來源包括藥物、受污染的酒、<strong>unprocessed well water</strong></mark>；cutting oils；chimney sweeps 的 scrotal SCC（煤灰、coal tar 的 polycyclic aromatic hydrocarbons）。<span class="ex-ref">p.1904</span></li>
-<li>Ionizing irradiation（過去用於 acne、hemangioma 等）：<mark data-q="103-08">chronic radiation dermatitis 發生 SCC 的 latency 通常很長（約 <strong class="ex-n">30 年</strong>）</mark>，風險與 cumulative dose 成正比。<span class="ex-ref">p.1904</span></li>
-<li>McKee（arsenical keratoses）：<mark data-q="101-50">手掌腳掌的 <strong>multiple</strong> horny lesions；可合併 generalized 或 raindrop pigmentation、其他部位的 Bowen disease、multiple BCC，以及 internal malignancy 風險增加</mark>；病理從 hyperkeratosis、acanthosis 到 dysplasia／SCC in situ，可見明顯 epithelial vacuolation。<span class="ex-ref ex-ref-mckee">McKee p.1198</span></li>
+<li>Ionizing irradiation（過去用於 acne、hemangioma 等）：<mark data-q="103-08,102-44">chronic radiation dermatitis 發生 SCC 的 latency 通常很長（約 <strong class="ex-n">30 年</strong>）</mark>，風險與 cumulative dose 成正比。<span class="ex-ref">p.1904</span></li>
+<li>McKee（arsenical keratoses）：<mark data-q="101-50">四肢（尤其手掌腳掌）的 <strong>multiple</strong> horny lesions；可合併 generalized 或 raindrop pigmentation、其他部位的 Bowen disease、multiple BCC，以及 internal malignancy 風險增加</mark>；病理從 hyperkeratosis、acanthosis 到 dysplasia／SCC in situ，可見明顯 epithelial vacuolation。<span class="ex-ref ex-ref-mckee">McKee p.1198</span></li>
 <li>McKee：現今 scrotal cancer 多與過去 arsenic 或 coal tar 治療 psoriasis、HPV 有關；Pott cancer 指 chimney soot 造成者。<span class="ex-ref ex-ref-mckee">McKee p.1203</span></li>
 </ul>
 <h3>Immunosuppression（免疫抑制）</h3>
@@ -102,7 +102,7 @@
 <li><mark data-q="110-11"><strong>Epidermodysplasia verruciformis</strong>：autosomal recessive，主要感染 beta-genus <strong>HPV-5 與 HPV-8</strong></mark>，日曬部位易發生 SCC。<span class="ex-ref">p.1906</span></li>
 <li>Alpha-genus HPV 與 cervical、anogenital SCC 明確相關；cutaneous SCC 則因多重感染太常見，尚無確定的特定型別。Beta-HPV <strong>不會 integrate</strong> 進宿主 DNA，以 E6／E7 干擾 p53、DNA repair 與 apoptosis（E6 降解 Bak、活化 telomerase）間接致癌。<span class="ex-ref">p.1906</span></li>
 <li>KA 被提出可能介於 viral acanthoma 與 SCC 之間；MCPyV 與 BRAF inhibitor 治療中發生的 SCC 有關聯報告。<span class="ex-ref">p.1906</span></li>
-<li>McKee：Table 24.1 列 anogenital 與 periungual SCC 為 HPV 16/18、EV 為 HPV 5；<strong>periungual SCC</strong> 常被誤診為 chronic verruca 或 paronychia，復發率高（一系列 <strong class="ex-n">30%</strong>），轉移非常少；EV 病人最多 <strong class="ex-n">30%</strong> 發生 SCC，以臉部為主、多在 30–40 歲出現。<span class="ex-ref ex-ref-mckee">McKee p.1199，p.1202–1203</span></li>
+<li>McKee：Table 24.1 列 anogenital 與 periungual SCC 為 HPV 16/18、EV 為 HPV 5；<strong>periungual SCC</strong> 常被誤診為 chronic verruca 或 paronychia，復發率高（一系列 <strong class="ex-n">30%</strong>），轉移非常少；EV 病人最多 <strong class="ex-n">30%</strong> 發生 SCC，以臉部為主、多在第三、四個十年（20–39 歲）出現。<span class="ex-ref ex-ref-mckee">McKee p.1199，p.1202–1203</span></li>
 </ul>
 <h3>Chronic inflammation &amp; chronic injury（慢性發炎與慢性傷害）</h3>
 <ul>
@@ -142,7 +142,7 @@
 <li>臨床：緩慢生長的 ulcerated plaque 或 exophytic cauliflower-like tumor，比其他 invasive SCC 少見。<span class="ex-ref">p.1908</span></li>
 <li>典型部位：oral cavity（<strong>oral florid papillomatosis</strong>）、genitoanal（<strong>giant condyloma acuminatum Buschke-Löwenstein</strong>）、<mark data-q="101-20">plantar skin（稱 <strong>epithelioma cuniculatum</strong>）</mark>、amputation stumps。<span class="ex-ref">p.1908</span></li>
 <li>McKee：<mark data-q="101-20">cutaneous verrucous carcinoma 最常見於 <strong>sole of the foot</strong></mark>，有 keratin-filled sinuses（像兔子洞，故名 cuniculatum），可造成骨破壞；多見於中年男性。<mark data-q="101-20">重點是 <strong>recurrences are common, but metastases are rare</strong>；anal／perianal 病灶復發率約 <strong class="ex-n">70%</strong></mark>，死亡率（局部侵犯）<strong class="ex-n">20–30%</strong>；皮膚病灶轉移只有少數報告。<span class="ex-ref ex-ref-mckee">McKee p.1215–1216</span></li>
-<li>McKee（HPV）：<mark data-q="101-20">anogenital 病灶常像由 condyloma acuminatum 演變而來、可見 koilocytosis，以 <strong>HPV 6、11</strong> 最常見；足底病灶常發生於既有 viral wart，in situ hybridization 可測到 <strong>HPV 1、2、11、16、18</strong></mark>；penile 病灶與 chronic phimosis、包皮未割有關；Buschke-Löwenstein 是 verrucous carcinoma 或 giant condyloma 仍有爭議（多數作者歸為前者）。<span class="ex-ref ex-ref-mckee">McKee p.1215–1216</span></li>
+<li>McKee（HPV）：<mark data-q="101-20">anogenital 病灶常像由 condyloma acuminatum 演變而來、可見 koilocytosis，以 <strong>HPV 6、11</strong> 最常見；cutaneous（尤其足底）病灶常發生於既有 viral wart，in situ hybridization 可測到 <strong>HPV 1、2、11、16、18</strong></mark>；penile 病灶與 chronic phimosis、包皮未割有關；Buschke-Löwenstein 是 verrucous carcinoma 或 giant condyloma 仍有爭議（多數作者歸為前者）。<span class="ex-ref ex-ref-mckee">McKee p.1215–1216</span></li>
 </ul>
 <h3>Keratoacanthoma（角化棘皮瘤）臨床</h3>
 <ul>
@@ -183,7 +183,7 @@
 <li><mark data-q="101-45,102-48">常伴以 <strong>T lymphocytes</strong> 為主的 heavy chronic inflammatory infiltrate（可能代表局部抗腫瘤免疫反應），但在範圍廣、<strong>深部侵犯</strong>的腫瘤中浸潤通常少得多</mark>；鄰近真皮常有 solar elastosis。<span class="ex-ref ex-ref-mckee">McKee p.1205</span></li>
 <li>報告應記錄 maximum diameter 與 depth（從 granular cell layer 量起）。<span class="ex-ref ex-ref-mckee">McKee p.1205</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>缺乏發炎浸潤反而與深部、廣泛侵犯的腫瘤相關；「大量發炎細胞浸潤」不是 high-risk 特徵。</aside>
+<aside class="ex-trap"><strong>易錯</strong>McKee：SCC 常伴以 T lymphocytes 為主的 heavy chronic inflammatory infiltrate（可能代表局部抗腫瘤免疫反應），但在範圍較廣、深部侵犯的腫瘤中，浸潤通常少得多。</aside>
 </section>
 
 <section class="ex-note" id="variants">
@@ -200,7 +200,7 @@
 <tr><td>Adenosquamous／mucoepidermoid carcinoma</td><td>—（NCCN 列為 high-risk subtype）</td><td>真正腺體分化，mucin（mucicarmine、Alcian blue）與 CEA 陽性；具侵襲性；以 mucin 與 acantholytic、pseudovascular SCC 區分。<span class="ex-ref ex-ref-mckee">McKee p.1213–1214</span></td></tr>
 </tbody>
 </table>
-<aside class="ex-trap"><strong>易錯</strong>Verrucous carcinoma 是 well-differentiated、轉移少但 <strong>常復發</strong>（不是很少復發）。Spindle cell SCC 有兩型：actinic 型預後好，放射線或外傷後的屬 high grade；Fitzpatrick 的 Mohs 適用標準（ch204 p.3771）把 spindle cell features 列為高危險特徵。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Verrucous carcinoma：Fitzpatrick 寫 well-differentiated、low metastatic potential；McKee 寫 <strong>recurrences are common, but metastases are rare</strong>。Spindle cell SCC（McKee）有兩型：actinic 型預後好，ionizing radiation 或 trauma 後發生者為 high grade；Fitzpatrick 的 Mohs 適用標準（ch204 p.3771）把 spindle cell features 列為高危險特徵。</aside>
 </section>
 
 <section class="ex-note" id="ka">
@@ -214,7 +214,7 @@
 <h3>Clinical（McKee）</h3>
 <ul>
 <li>又稱 molluscum sebaceum；被認為源自 <strong>follicular infundibulum</strong>；是 benign、pseudomalignancy 或 SCC variant 仍有爭議。<span class="ex-ref ex-ref-mckee">McKee p.1218</span></li>
-<li>Solitary KA 最常見；以白人為主，亞洲人與 Afro-Caribbeans 少見；多在日曬皮膚（face、forearms、wrists、手背）；男:女 <strong class="ex-n">2–3:1</strong>，多為 60–70 多歲；typical SCC 至少比 KA 多 <strong class="ex-n">3 倍</strong>；女性小腿、男性手背常見。<span class="ex-ref ex-ref-mckee">McKee p.1218</span></li>
+<li>Solitary KA 最常見；以白人為主，亞洲人與 Afro-Caribbeans 少見；多在日曬皮膚（face、forearms、wrists、手背）；男:女 <strong class="ex-n">2–3:1</strong>，多在第六、七個十年（50–69 歲）；typical SCC 至少比 KA 多 <strong class="ex-n">3 倍</strong>；女性小腿、男性手背常見。<span class="ex-ref ex-ref-mckee">McKee p.1218</span></li>
 <li>數週內長成 <strong class="ex-n">1–2 cm</strong> 的 umbilicated nodule，中央 keratin-filled crater；消退後留下凹陷、色素減退的疤；典型壽命 <strong class="ex-n">4–6 個月</strong>；手術後復發可達 <strong class="ex-n">8%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.1218</span></li>
 </ul>
 <table class="ex-table">
@@ -230,7 +230,7 @@
 <tr><td>Muir-Torre syndrome、nevus sebaceous</td><td>KA 可為 Muir-Torre 表現之一；也可發生於 nevus sebaceous</td></tr>
 </tbody>
 </table>
-<p class="ex-cite">McKee p.1218–1220。Eruptive KA 另與 pembrolizumab、imiquimod、sorafenib、laser resurfacing 等相關，但與 Grzybowski 型無關；solitary KA 不增加 internal malignancy。</p>
+<p class="ex-cite">McKee p.1218–1221。Eruptive KA 另與 pembrolizumab、imiquimod、sorafenib、laser resurfacing 等相關，但與 Grzybowski 型無關；solitary KA 不增加 internal malignancy。</p>
 <h3>Pathogenesis（McKee）</h3>
 <ul>
 <li>動物以 coal tar 塗抹可誘發；人類見於長期接觸 pitch 與 tar。KA 為 <strong>clonal</strong>，有 trisomy 7 等染色體異常、<em>HRAS／NRAS</em> 突變；多數為 UVB 相關，XP 與慢性免疫抑制（尤其腎移植）incidence 增加。<span class="ex-ref ex-ref-mckee">McKee p.1220</span></li>
@@ -245,7 +245,7 @@
 <li>Regression：keratin horn 消失、上皮變平，留下 fibrosis、慢性發炎；浸潤可呈 lichenoid，以 cytotoxic T cells 為主；常見對 keratin 的 foreign body giant cell reaction；apoptosis 可能重要。Keratin／filaggrin 表現指向 <strong>outer root sheath</strong> 分化。<span class="ex-ref ex-ref-mckee">McKee p.1221</span></li>
 <li>DDx 與 SCC：有時臨床與病理都無法區分；bcl-xL、TP53、COX-2、telomerase、P2X7 等表現有差異，但都只是相對參考。<strong>有疑慮時比照 SCC 完整切除</strong>。<span class="ex-ref ex-ref-mckee">McKee p.1221–1222</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>KA 診斷必須看整個病灶的 silhouette 並搭配臨床史；shave 或碎片檢體不能診斷 KA。Subungual KA 源自 nail matrix 而非 follicular infundibulum，且沒有 regression 的報告。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick：KA 最終診斷需要整個病灶，主要靠 scanning magnification 下的 silhouette。McKee：KA 的診斷完全依賴足夠的臨床病史，沒有病史或只有組織碎片時不宜診斷；subungual KA 源自 nail matrix 而非 follicular infundibulum，未見 regression 的記載。</aside>
 </section>
 
 <section class="ex-note" id="staging">
@@ -263,14 +263,14 @@
 <tr><td>T4</td><td>侵犯 skeleton（axial、appendicular）或 skull base 的 perineural invasion</td><td>T4a gross cortical bone／marrow；T4b skull base 或 foramen</td></tr>
 </tbody>
 </table>
-<p class="ex-cite">Table 112-4，p.1912；McKee Table 24.2，p.1206–1207。</p>
+<p class="ex-cite">Table 112-4，p.1912；McKee Table 24.2，p.1207。</p>
 <ul>
 <li><mark data-q="103-34,113-49">AJCC 7th high-risk features：thickness <strong class="ex-n">&gt;2 mm</strong>、Clark level <strong class="ex-n">&gt;IV</strong>、perineural invasion、primary site 為 <strong>lip 或 ear</strong>、poorly 或 undifferentiated</mark>。<span class="ex-ref">p.1911–1912</span></li>
-<li>Fitzpatrick 內文 T3 寫「invade muscle, bone, or cartilage of maxilla, mandible or orbit」、T4 寫「skull base or axial skeleton」，與表格略有出入，以 Table 112-4 為準。<span class="ex-ref">p.1911–1912</span></li>
+<li>Fitzpatrick 內文 T3 寫「invade muscle, bone, or cartilage of maxilla, mandible or orbit」、T4 寫「skull base or axial skeleton」，與 Table 112-4 略有出入。<span class="ex-ref">p.1911–1912</span></li>
 <li>AJCC 8th deep invasion：超過 subcutaneous fat 或 <strong class="ex-n">&gt;6 mm</strong>（從鄰近正常表皮 granular layer 量到腫瘤底部）；T3 的 perineural invasion 指真皮以下或 <strong class="ex-n">≥0.1 mm</strong> 神經的鞘內腫瘤細胞，或臨床／影像侵犯具名神經。<span class="ex-ref ex-ref-mckee">McKee p.1206–1207</span></li>
 <li>N1：單一同側 <strong class="ex-n">≤3 cm</strong>；N2a：單一同側 <strong class="ex-n">&gt;3 cm 且 ≤6 cm</strong>；N2b：多個同側 <strong class="ex-n">≤6 cm</strong>；N2c：雙側或對側 <strong class="ex-n">≤6 cm</strong>；N3：<strong class="ex-n">&gt;6 cm</strong>。M0／M1。<span class="ex-ref">p.1912</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>T1／T2 的直徑切點是 2 cm，≤2 cm 不會因為大小被分到 T2（除非有 ≥2 個 high-risk features）。8th 版另加 4 cm 切點。</aside>
+<aside class="ex-trap"><strong>易錯</strong>AJCC 7th：T1 為 ≤2 cm 且 high-risk features &lt;2 個；T2 為 &gt;2 cm，或任何大小但 high-risk features ≥2 個。AJCC 8th（McKee）的直徑切點為 2 cm 與 4 cm，perineural invasion 或 deep invasion 可升期。</aside>
 </section>
 
 <section class="ex-note" id="ddx">
@@ -351,12 +351,12 @@
 <tr><td>Rapidly growing tumor</td><td>（−）</td><td>（+）</td></tr>
 <tr><td>Neurologic symptoms</td><td>（−）</td><td>（+）</td></tr>
 <tr><td>Degree of differentiation</td><td><mark data-q="101-45,109-25">Well or moderately differentiated</mark></td><td><mark data-q="112-05">Poorly differentiated</mark></td></tr>
-<tr><td>Subtype</td><td>—</td><td>Acantholytic（adenoid）、adenosquamous（mucin）、<mark data-q="114-45">desmoplastic</mark>、metaplastic（carcinosarcomatous）</td></tr>
+<tr><td>Subtype</td><td>（−）</td><td>（+）：Acantholytic（adenoid）、adenosquamous（mucin）、<mark data-q="114-45">desmoplastic</mark>、metaplastic（carcinosarcomatous）</td></tr>
 <tr><td>Depth（thickness or level）</td><td><mark data-q="109-25,112-05"><strong class="ex-n">≤6 mm</strong> 且未超過 subcutaneous fat</mark></td><td><strong class="ex-n">&gt;6 mm</strong> 或超過 subcutaneous fat</td></tr>
 <tr><td>Perineural、lymphatic 或 vascular involvement</td><td>（−）</td><td>（+）</td></tr>
 </tbody>
 </table>
-<p class="ex-cite">Table 112-5，p.1914。Location／size 須包含周邊紅暈；depth 由鄰近正常表皮 granular layer 量到腫瘤底部（與 AJCC 8th 一致）。</p>
+<p class="ex-cite">Table 112-5，p.1914。Location／size 須包含周邊紅暈；Area M &lt;10 mm 註：location independent of size may constitute high risk；depth 由鄰近正常表皮 granular layer 量到腫瘤底部（與 AJCC 8th 一致）。</p>
 <table class="ex-table">
 <thead><tr><th scope="col">Area</th><th scope="col">部位</th></tr></thead>
 <tbody>
@@ -366,17 +366,17 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 112-5 footnote，p.1914。</p>
-<aside class="ex-trap"><strong>易錯</strong>手背、腳背、耳、temple 屬 Area H，<strong>不論大小</strong>都是 high risk；forehead、scalp、cheek 屬 Area M（≥10 mm 才 high risk）；背、手臂屬 Area L（≥20 mm 才 high risk）。Moderately differentiated 與深度 ≤6 mm 仍是 low risk；poorly differentiated 才是 high risk。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Area H（含 ear、temple、genitalia、hands、feet）因位置屬 high risk，<strong>independent of size</strong>。Area M（cheeks、forehead、scalp、neck、pretibia）≥10 mm 列 high risk，&lt;10 mm 列 low risk 但註明 location independent of size may constitute high risk。Area L（trunk、extremities）≥20 mm 列 high risk。Well or moderately differentiated 列 low risk，poorly differentiated 列 high risk；depth ≤6 mm 且未超過 subcutaneous fat 列 low risk。</aside>
 <h3>McKee 的預後數據</h3>
 <ul>
 <li><mark data-q="103-34">Meta-analysis：整體 recurrence <strong class="ex-n">3.7–10%</strong>（依治療方式）；lip 與 ear 復發率分別 <strong class="ex-n">10.5%</strong>、<strong class="ex-n">18.7%</strong>；整體 5 年轉移率 <strong class="ex-n">5.2%</strong>，ear 與 lip 分別 <strong class="ex-n">11%</strong>、<strong class="ex-n">13.7%</strong></mark>。其他危險因子：<strong class="ex-n">&gt;2 cm</strong> 或 <strong class="ex-n">0.4 cm</strong> 厚、neurotropism、immunosuppression、recurrent lesions。<span class="ex-ref ex-ref-mckee">McKee p.1200</span></li>
 <li><mark data-q="102-48,106-34">由 <strong>burns、radiation、scarring 或慢性潰瘍</strong>發生的 SCC 是 high-risk tumors，轉移率 <strong class="ex-n">18–40%</strong></mark>。<span class="ex-ref ex-ref-mckee">McKee p.1200</span></li>
-<li><mark data-q="101-45,102-48">直徑 <strong class="ex-n">&gt;2 cm</strong> 的腫瘤復發率為 2 倍、轉移率為 3 倍（<strong class="ex-n">15.7% vs 5.8%</strong>；<strong class="ex-n">23.4% vs 7.6%</strong>）</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1205</span></li>
+<li><mark data-q="101-45,102-48,103-34">直徑 <strong class="ex-n">&gt;2 cm</strong> 的腫瘤復發率為 2 倍、轉移率為 3 倍（<strong class="ex-n">15.7% vs 5.8%</strong>；<strong class="ex-n">23.4% vs 7.6%</strong>）</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1205</span></li>
 <li>Thickness：<strong class="ex-n">&lt;2.0 mm</strong> 兩大研究均無轉移；<strong class="ex-n">2.1–6 mm</strong> 轉移 <strong class="ex-n">4%</strong>；<strong class="ex-n">&gt;6 mm</strong> 為 <strong class="ex-n">16%</strong>；侵犯超過 reticular dermis 後復發與轉移顯著增加。<span class="ex-ref ex-ref-mckee">McKee p.1205–1206</span></li>
 <li><mark data-q="112-05">Poorly differentiated 腫瘤較常復發與轉移</mark>；<mark data-q="114-45">stromal desmoplasia 是轉移危險因子</mark>；neurotropism 復發與轉移率高，頭頸（尤其 mid face 與 lip）常見，一大系列中 <strong class="ex-n">14%</strong> 有 perineural 侵犯，尤其 spindle cell 與 acantholytic 變異型。<span class="ex-ref ex-ref-mckee">McKee p.1206</span></li>
 <li>Recurrent tumors 轉移率 <strong class="ex-n">25–45%</strong>（依部位）。<span class="ex-ref ex-ref-mckee">McKee p.1206</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>疤痕、燒傷、放射線部位發生的 SCC 比一般日曬部位 SCC 更容易轉移；chronic radiation dermatitis 的 SCC latency 約 30 年。兩本書都沒有「&lt;2 cm 轉移率約 1%」的數字（McKee 為 7.6%）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>McKee：由 burns、radiation、scarring 或慢性潰瘍發生的 SCC 是 high-risk tumors，轉移率 18–40%；直徑 &lt;2 cm 腫瘤的轉移率為 7.6%（&gt;2 cm 為 23.4%）。Fitzpatrick：chronic radiation dermatitis 的 SCC latency 通常很長（約 30 年）。</aside>
 </section>
 
 <section class="ex-note" id="prevention">
@@ -398,5 +398,5 @@
 <li><mark data-q="113-49"><strong>Systemic retinoids</strong> 對次發 SCC 有 <strong>transient</strong> 預防效果</mark>（immunocompetent 與 immunosuppressed 皆然）；XP 病人 <strong class="ex-n">5</strong> 人以 high-dose oral isotretinoin 治療 <strong class="ex-n">2 年</strong>，新皮膚癌減少 <strong class="ex-n">63%</strong>（人類首次有效 chemoprevention）；未來可能用於 BRAF inhibitor 病人；副作用與 <strong>teratogenesis</strong> 需考量。<span class="ex-ref">p.1915–1916</span></li>
 <li>OTR 有危及生命的 SCC 或多發快速腫瘤時：減少免疫抑制劑劑量，及／或由 calcineurin inhibitors 或 antimetabolites 改為 <strong>mTOR inhibitors</strong>。<span class="ex-ref">p.1916</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Retinoid 對次發 SCC 的預防效果是 transient（暫時性）；niacinamide 劑量是 500 mg 每天兩次，降低的是新發 NMSC 的發生率（23%）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Systemic retinoids 對次發 SCC 有 transient（暫時性）預防效果；niacinamide 500 mg twice daily，12 個月新發 NMSC 減少 23%（SCC 與 BCC 相近）。</aside>
 </section>

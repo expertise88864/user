@@ -21,7 +21,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 97-1，p.1658。</p>
-<aside class="ex-trap"><strong>易錯</strong>藥量：phototoxicity 需要「大量」、photoallergy 只需「少量」，考題常對調。Phototoxicity 不需要 photopatch test（topical 靠臨床、systemic 靠臨床加 phototests）。外源性光敏感的作用光譜是 UVA，不是 UVB。</aside>
+<aside class="ex-trap"><strong>易錯</strong>所需藥量：phototoxicity 為 Large，photoallergy 為 Small。診斷：phototoxicity 的 topical agent 為 Clinical、systemic agent 為 Clinical + phototests；photopatch tests 列在 photoallergy 欄（Table 97-1）。外源性光敏感通常由吸收 UVA 的藥物引起（p.1657）。</aside>
 </section>
 
 <section class="ex-note" id="epi">
@@ -46,7 +46,7 @@
 <li><mark data-q="112-27">例外：<strong>psoralen</strong>-induced phototoxicity 在 <strong class="ex-n">24 hours</strong> 後才出現、<strong class="ex-n">48–72 hours</strong> 達高峰，這是 PUVA 治療間隔 48–72 小時的理由</mark>。<span class="ex-ref">p.1657–1658</span></li>
 <li>消退後留下程度不一的 hyperpigmentation，可持續數月；低劑量時可只有 gradual tanning，沒有先前的 sunburn-like reaction。<span class="ex-ref">p.1658</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>一般 phototoxicity 是 minutes to hours 內發生，psoralen 是例外（延遲到 24 小時後、48–72 小時高峰）；photoallergy 才是 24–48 小時。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Phototoxicity 在暴露後 minutes to hours 發生，psoralen 是例外（24 小時後才出現、48–72 小時高峰）；photoallergy 為暴露後 24–48 小時。</aside>
 <h3>Other phototoxic manifestations（其他表現）</h3>
 <table class="ex-table">
 <thead><tr><th scope="col">Manifestation</th><th scope="col">Key points（重點）</th><th scope="col">Agents（藥物）</th></tr></thead>
@@ -82,9 +82,9 @@
 <ul>
 <li>Acute phototoxic reaction 像嚴重 sunburn：erythema、edema、blistering，之後 desquamation 與 postinflammatory hyperpigmentation；通常只侵犯曝光處，曝光後 minutes to hours 出現；也與 onycholysis 有關。<span class="ex-ref ex-ref-mckee">McKee p.638–639</span></li>
 <li>Chronic phototoxicity：poikilodermatous features（hyper-／hypopigmentation、epidermal atrophy、telangiectasia）；是 porphyrias 與 XP、Rothmund-Thomson、Bloom syndrome 的重要特徵；藥物少見，但長期 PUVA 可見，且 AK、BCC、SCC、（較少）melanoma 增加。<span class="ex-ref ex-ref-mckee">McKee p.639</span></li>
-<li>Amiodarone 引起 phototoxic／photosensitivity reaction 可達 <strong class="ex-n">50%</strong>；長期高劑量可有曝光處（前額、手背）golden-brown 到 slate-gray 或 blue／violaceous 色素，sclera 與 cornea 也可受累。<span class="ex-ref ex-ref-mckee">McKee p.646</span></li>
+<li>Amiodarone 引起 phototoxic／photosensitivity reaction 可達 <strong class="ex-n">50%</strong>；長期高劑量可有曝光處（臉、手背；前額為特徵部位）golden-brown 到 slate-gray 或 blue／violaceous 色素，sclera 與 cornea 也可受累。<span class="ex-ref ex-ref-mckee">McKee p.646</span></li>
 <li><mark data-q="110-12">Minocycline pigmentation 三型：Type I 疤痕／發炎處 blue-black；Type II（最常見）shins、ankles、arms；Type III 全身 muddy-brown，曝光處加重</mark>。<span class="ex-ref ex-ref-mckee">McKee p.645</span></li>
-<li>Chlorpromazine 長期高劑量：曝光處（臉、手背、頸）golden brown 或 slate-gray／purple，cornea 與 lens 也可受累；imipramine、desipramine：photodistributed golden brown 到 blue-gray。<span class="ex-ref ex-ref-mckee">McKee p.646</span></li>
+<li>Chlorpromazine 長期高劑量：曝光處（臉、手背、頸）golden brown 或 slate-gray／purple，cornea 與 lens 也可受累；imipramine 長期使用：photodistributed golden brown 到 blue-gray 或 slate-gray；desipramine：photodistributed blue-gray。<span class="ex-ref ex-ref-mckee">McKee p.646</span></li>
 <li>Pseudoporphyria（McKee）：<mark data-q="103-14">small tense blisters 主要在手背與手指，偶見臉、上胸、腿；milia、skin fragility、scarring 常見</mark>；PCT 的 hypertrichosis、hyperpigmentation、sclerodermoid change、dystrophic calcification 不是 pseudoporphyria 的特徵；肝功能一般正常。<span class="ex-ref ex-ref-mckee">McKee p.599</span></li>
 <li>Pseudoporphyria 病因：<mark data-q="106-07,111-40">drugs（最常見為 furosemide 等 diuretics 與 NSAIDs，尤其 naproxen；近年 imatinib、sunitinib、voriconazole、diclofenac）</mark>、hemodialysis（最多 <strong class="ex-n">6%</strong> 血液透析病人）、慢性腎衰竭、過量 UVA／sunbeds。McKee 稱其為 <strong>UVA-related phototoxic dermatosis</strong>。<span class="ex-ref ex-ref-mckee">McKee p.599, p.653</span></li>
 </ul>
@@ -100,7 +100,7 @@
 <tr><td>Furocoumarins</td><td>植物（尤其 Compositae species），包括 lime、lemon、celery、fig、parsley、parsnip；topical photochemotherapy</td></tr>
 <tr><td>Rose bengal</td><td>眼科檢查</td></tr>
 <tr><td>Tar</td><td>外用治療；roofing materials</td></tr>
-<tr><td>Fluorouracil、retinoids（photosensitizing）</td><td>因 skin irritancy 造成 exaggerated UV response（不是真正 phototoxic）</td></tr>
+<tr><td>Fluorouracil、retinoids（photosensitizing）</td><td>因 skin irritancy 造成 exaggerated UV response（表中列為 photosensitizing agents，與 phototoxic agents 分列）</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 97-2，p.1658。</p>
@@ -119,7 +119,7 @@
 <thead><tr><th scope="col">Class（類別）</th><th scope="col">Agents（c = commonly reported；b = 也是 systemic photoallergen）</th></tr></thead>
 <tbody>
 <tr><td>Antiandrogen／antifibrotic</td><td>Bicalutamide、flutamide；pirfenidone</td></tr>
-<tr><td>Antifungal</td><td>Griseofulvin（b）、<mark data-q="108-38">voriconazole（c）</mark></td></tr>
+<tr><td>Antifungal</td><td><mark data-q="102-38">Griseofulvin（b）</mark>、<mark data-q="108-38">voriconazole（c）</mark></td></tr>
 <tr><td>Antimalarial</td><td>Chloroquine、quinine（b）</td></tr>
 <tr><td>Antimicrobials</td><td>Sulfonamides；tetracyclines：demeclocycline（c）、doxycycline（c）、minocycline、tetracycline；trimethoprim（c）；quinolones：ciprofloxacin、enoxacin（b）、gemifloxacin、lomefloxacin（b,c）、moxifloxacin、nalidixic acid（b,c）、norfloxacin、ofloxacin、sparfloxacin（c，已下市）</td></tr>
 <tr><td>Cardiac</td><td>Amiodarone（c）、quinidine（b）</td></tr>
@@ -136,13 +136,13 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 97-3，p.1659（表格排版中 dapsone 的類別不明確，此處歸入 Other）。</p>
-<aside class="ex-trap"><strong>易錯</strong>NSAIDs 是重要的 systemic phototoxic agents（naproxen、piroxicam、nabumetone 標為 commonly reported），ketoprofen 與 piroxicam 同時也是 systemic photoallergen。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Table 97-3 的 NSAIDs 中，naproxen、piroxicam、nabumetone 標為 commonly reported；ketoprofen 與 piroxicam 標為 also reported as a systemic photoallergen。</aside>
 <h3>McKee 補充</h3>
 <ul>
 <li>Acute phototoxic reaction 藥物：thiazide diuretics、sulfonamides、tetracyclines、NSAIDs（naproxen、diclofenac、ketoprofen）、phenothiazines（尤其 chlorpromazine）、amiodarone、tars、psoralens、antidepressants、chemotherapeutics、calcium channel blockers、atorvastatin；也見於 St. John’s wort 與 photodynamic therapy。<span class="ex-ref ex-ref-mckee">McKee p.639</span></li>
 <li>Porphyrins 是強效 phototoxic sensitizer，傷害主要在真皮（含血管），表皮相對不受影響。</li>
 <li>特別重要的光敏感藥物：NSAIDs、phenothiazines、amiodarone、antibiotics、griseofulvin 等 antifungals。<span class="ex-ref ex-ref-mckee">McKee p.640</span></li>
-<li><strong>Phytophotodermatitis</strong>：接觸含 furanocoumarins 植物的 phototoxic reaction；erythema 後 postinflammatory hyperpigmentation，偶有水疱；相關植物科為 Umbelliferae、Rutaceae、Moraceae；四肢線狀病灶具特徵性，常在園藝後出現。<span class="ex-ref ex-ref-mckee">McKee p.639</span></li>
+<li><strong>Phytophotodermatitis</strong>：接觸含 furanocoumarins 植物的 phototoxic reaction；erythema 後 postinflammatory hyperpigmentation，罕見水疱；相關植物科為 Umbelliferae、Rutaceae、Moraceae；四肢線狀病灶具特徵性，常在園藝後出現。<span class="ex-ref ex-ref-mckee">McKee p.639</span></li>
 </ul>
 </section>
 
@@ -203,20 +203,20 @@
 <tbody>
 <tr><td>Antifungal</td><td><mark data-q="102-38">Griseofulvin</mark></td></tr>
 <tr><td>Antimalarial</td><td>Quinine</td></tr>
-<tr><td>Quinolone</td><td>Enoxacin</td></tr>
+<tr><td>Antimicrobials（quinolone）</td><td>Enoxacin</td></tr>
 <tr><td>Cardiac</td><td>Quinidine</td></tr>
 <tr><td>NSAIDs</td><td><mark data-q="102-38">Ketoprofen</mark>、piroxicam</td></tr>
 <tr><td>Vitamin</td><td>Pyridoxine hydrochloride（vitamin B6）</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 97-5，p.1660；systemic photoallergy 的文獻與研究較少。內文寫除 pyridoxine 外都同時是 phototoxic agents，但 Table 97-3 的 Other 欄也列有 pyridoxine，p.1663。</p>
-<aside class="ex-trap"><strong>易錯</strong>Griseofulvin、ketoprofen 同時是 phototoxic 與 photoallergic agent；sunscreen 的 UV filters 本身就是最常見的 topical photoallergen 之一。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Griseofulvin、ketoprofen 同時列於 Table 97-3（systemic phototoxic）與 Table 97-5（systemic photoallergen）；UV filters 是 US、Canada、Europe、UK 常見的 topical photoallergen（p.1663）。</aside>
 <h3>McKee 補充</h3>
 <ul>
 <li>Photoallergic drug reactions 臨床多樣：eczematous、lichenoid dermatitis，也可有 EM、telangiectasia、hyperpigmentation、pseudoporphyria；通常曝光後 <strong class="ex-n">≥24 hours</strong> 出現；與 phototoxic 不同，未曝光處也可受侵犯。<span class="ex-ref ex-ref-mckee">McKee p.639</span></li>
 <li>罕見 persistent light reaction（移除光敏物質後皮膚炎仍持續），通常發生在 photoallergic contact dermatitis。</li>
 <li>多數 photoallergy 由外用藥物與化學品引起（contact photoallergy）：antihistamines、local anesthetics、chlorpromazine、hydrocortisone、含 PABA 的 sunscreens、soaps 與 fragrances 中的 halogenated phenolic compounds（6-methylcoumarin、musk ambrette）。</li>
-<li>Systemic：sulfonamides、griseofulvin、phenothiazines、tetracyclines、NSAIDs、chloroquine、thiazides、ACE inhibitors、antidepressants、cholesterol-lowering drugs、amiodarone、部分化療藥（McKee 名單比 Fitzpatrick Table 97-5 廣）。McKee：診斷最好以 photopatch test 確認。<span class="ex-ref ex-ref-mckee">McKee p.639</span></li>
+<li>Systemic：sulfonamides、griseofulvin、phenothiazines、tetracyclines、NSAIDs、chloroquine、thiazides、ACE inhibitors、antidepressants、cholesterol-lowering drugs、amiodarone、部分化療藥（McKee 名單比 Fitzpatrick Table 97-5 廣）。McKee：診斷以 photopatch test 確認（best confirmed by a photopatch test）。<span class="ex-ref ex-ref-mckee">McKee p.639</span></li>
 </ul>
 </section>
 
@@ -255,7 +255,7 @@
 <tr><td>Acute phototoxic reaction</td><td><mark data-q="111-07">明顯 apoptotic keratinocytes（<strong>sunburn cells</strong>），重者整層表皮</mark>；不等量 neutrophil exocytosis、dermal edema、perivascular lymphohistiocytic infiltrate 伴少量 neutrophils 與 eosinophils；嚴重者 dermal edema 造成 subepidermal vesiculation，blister cavity 無細胞、dermal papillae 保留（festooning）</td></tr>
 <tr><td>Chronic phototoxic lesions</td><td>Hyperkeratosis、hypergranulosis、acanthosis 與 atrophy 不一、melanin 增加、melanocyte hyperplasia、pigmentary incontinence；elastosis、telangiectasia；重者可見 stellate atypical myofibroblasts；epidermal disorganization 與 dyskeratosis</td></tr>
 <tr><td>Photoallergic reaction</td><td><mark data-q="111-07">Spongiosis（常有 vesiculation、lymphocyte 與 eosinophil exocytosis）、papillary dermal edema、上真皮 lymphohistiocytic infiltrate 伴不等量 eosinophils</mark></td></tr>
-<tr><td>Pseudoporphyria</td><td>與 PCT 相同：cell-poor 到 cell-free subepidermal blister、festooning、淺層血管壁增厚（PAS+，部分為 type IV collagen）；<strong>DIF</strong>：IgG、IgM（有時 IgA）與 C3 呈 donut 狀沉積於淺層血管周圍，BMZ 細顆粒狀沉積；<strong>IIF 一律陰性</strong>；EM 裂隙位置不一（lamina lucida 內或 lamina densa 下方），DEJ 與血管周圍 basement membrane reduplication</td></tr>
+<tr><td>Pseudoporphyria</td><td>與 PCT 相同：cell-poor 到 cell-free subepidermal blister、festooning、淺層血管壁增厚（PAS stain 可凸顯）；<strong>DIF</strong>：IgG、IgM（有時 IgA）與 C3 呈 donut 狀沉積於淺層血管周圍，BMZ 細顆粒狀沉積；<strong>IIF 一律陰性</strong>；EM 裂隙位置不一（lamina lucida 內或 lamina densa 下方），DEJ 與血管周圍 basement membrane reduplication</td></tr>
 <tr><td>Minocycline pigmentation</td><td>Type I、II：golden brown 到 brown-black 顆粒在血管與汗腺周圍 macrophages 內；Type II Masson-Fontana 與 Perls 皆陽性，Type I 只有 Perls 陽性；PAS 陰性。Type III：basal cell melanin 增加，Perls 陰性</td></tr>
 <tr><td>Amiodarone pigmentation</td><td>Perivascular macrophages 內 PAS 陽性、yellow-brown lipofuscin-like granules；表皮 melanin 不增加；EM 見 lysosome 內顆粒與 lamellar myelin bodies</td></tr>
 <tr><td>Chlorpromazine pigmentation</td><td>淺層血管周圍 macrophage 內 golden brown granules；Masson-Fontana 陽性、Perls 陰性；melanin 增加也參與</td></tr>
@@ -263,7 +263,7 @@
 </tbody>
 </table>
 <p class="ex-cite">McKee p.640（phototoxic／photoallergic）；p.599–600（pseudoporphyria）；p.647–648（drug-induced pigmentation）。</p>
-<aside class="ex-trap"><strong>易錯</strong>Pseudoporphyria 的裂隙：Fitzpatrick 寫 lamina lucida；McKee 寫位置不一（lamina lucida 內或 lamina densa 下方）。兩本都說病理與 PCT 相同，靠正常 porphyrin profile 區分。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Pseudoporphyria 的裂隙：Fitzpatrick 寫 lamina lucida；McKee 寫位置不一（lamina lucida 內或 lamina densa 下方）。兩本都寫病理與 PCT 相同；與 PCT 不同的是 porphyrin profile 正常或在正常上限（Fitzpatrick p.1658），McKee 寫無 serum、urine、stool porphyrin 異常（McKee p.599）。</aside>
 </section>
 
 <section class="ex-note" id="evaluation">
@@ -311,7 +311,7 @@
 </tbody>
 </table>
 <p class="ex-cite">p.1664；其他 photodermatoses 靠特徵性病程、型態及沒有 photosensitizer 暴露來區分。</p>
-<aside class="ex-trap"><strong>易錯</strong>Phototoxicity／photoallergy 會 sparing nasolabial folds、postauricular、submental；airborne contact dermatitis 反而侵犯這些較少日照的部位。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Acute phototoxicity 不侵犯 nasolabial folds、postauricular、submental areas（p.1657）；airborne allergic contact dermatitis 侵犯 nasolabial folds、eyelids 等少直接日照的皺摺，以及 postauricular、下巴下方（p.1664）。</aside>
 </section>
 
 <section class="ex-note" id="management">
@@ -329,5 +329,5 @@
 <ul>
 <li><mark data-q="111-07">處置與 phototoxicity 相同：找出並避免 photoallergen、防曬、症狀治療</mark>。<span class="ex-ref">p.1663</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>需要 NSAID 的 pseudoporphyria 病人要換不同類別，或改用光敏性較低的 indomethacin、sulindac；pseudoporphyria 致病名單中有多種 propionic acid 衍生物（naproxen、ketoprofen、oxaprozin、tiaprofenic acid）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>需要 NSAID 的 pseudoporphyria 病人要換不同類別，或改用光敏性較低的 indomethacin、sulindac（p.1663）。</aside>
 </section>

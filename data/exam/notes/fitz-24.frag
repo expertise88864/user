@@ -8,7 +8,7 @@
 <li><mark data-q="107-48">Patch testing 是找出致病過敏原的 diagnostic test of choice</mark>，適用於懷疑 ACD 的持續或復發性皮膚炎；<strong>allergen avoidance 是治療主軸</strong>。<span class="ex-ref">p.395</span></li>
 <li>McKee：ACD 是對環境過敏原的 idiosyncratic cell-mediated reaction，過敏原濃度可以很低；<mark data-q="114-15">ICD 遠比 ACD 常見</mark>，是物理或化學物直接傷害皮膚所致。<span class="ex-ref ex-ref-mckee">McKee p.205–206</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>ACD 是 type IV（延遲型），不是 type I；type I（IgE）對應的是 latex 的 immediate-type hypersensitivity 與 contact urticaria。</aside>
+<aside class="ex-trap"><strong>易錯</strong>ACD 是 cell-mediated（type IV）、delayed type hypersensitivity。<span class="ex-ref">p.395</span> Latex 是 latex protein-specific IgE 介導的 immediate-type hypersensitivity 常見原因，latex 本身很少造成 ACD；rubber ACD 的主因是 accelerator 與 vulcanizing chemicals。<span class="ex-ref">p.405</span></aside>
 </section>
 
 <section class="ex-note" id="epi">
@@ -37,7 +37,7 @@
 <li>LCs 傳統上被視為主要 APC，但致敏期 LC depletion 並不能完全阻斷反應；<strong>CD1a+/CD141+ dermal dendritic cells</strong> 可能才是主要的致敏細胞，LC 在某些情況仍有角色。<span class="ex-ref">p.397</span></li>
 <li>致敏可刺激 Th 與 Tc；最重要的是 <strong>Th1/Tc1（IFN-γ producing）</strong>，Th2 與 Th17/Tc17 也可能參與。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Hapten 是「親脂性」（lipophilic）不是親水性；naïve T cell 分化成 memory T cell，不是 mast cell；致敏期 10–15 天且無症狀，不是 2–3 天、也沒有嚴重發炎。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Hapten 典型為 small、<strong>lipophilic</strong>、low molecular weight（<strong class="ex-n">&lt;500 daltons</strong>）；naïve T cells 分化為 <strong>memory（effector）T cells</strong>；致敏期一般 <strong class="ex-n">10–15 days</strong>，often asymptomatic（常無症狀）。<span class="ex-ref">p.397</span></aside>
 <h3>Elicitation phase（誘發期）</h3>
 <ul>
 <li>Hapten 先經 cellular stress 及 toll-like receptors、NOD-like receptors 造成低度非特異發炎 → neutrophil recruitment → effector T-cell recruitment。<span class="ex-ref">p.397</span></li>
@@ -98,12 +98,13 @@
 <li>Supportive studies：CBC 可見 eosinophilia 或正常；組織上 <strong>eosinophilic spongiosis</strong> 與 <strong>multinucleate dermal dendritic fibrohistiocytic cells</strong>，合併 acanthosis、lymphocytic infiltrate、dermal eosinophils、hyperkeratosis 時特別提示 ACD。<span class="ex-ref">p.398</span></li>
 </ul>
 <h3>Topographic approach（Figure 24-1）</h3>
+<p>Diagnostic algorithm：不靠 patch test、只憑病史與分布<strong>很少</strong>能找出致病過敏原，多數情況需建立引導 patch test 的臨床方法；作者認為最有用的兩種是 <strong>topographic approach</strong>（依皮膚炎分布）與 <strong>allergen-specific approach</strong>（依各過敏原的特性）。<span class="ex-ref">p.398</span></p>
 <p>皮膚炎分布常是診斷 ACD <strong>最重要的單一線索</strong>，最嚴重處通常是與過敏原接觸最多處；但仍需 patch test 確認，分布主要用來決定要不要測、測哪些系列。<span class="ex-ref">p.398</span></p>
 <table class="ex-table">
 <thead><tr><th scope="col">Site（部位）</th><th scope="col">Allergens to consider（考慮的過敏原）</th></tr></thead>
 <tbody>
 <tr><td>Periumbilical／infraumbilical</td><td>牛仔褲金屬扣、皮帶扣（nickel）</td></tr>
-<tr><td>Hairline、behind the ears</td><td>Hair products（hair dyes、shampoo、conditioners、styling products）；<strong>PPD</strong> 是 hair dye 最常見的相關過敏原、強效致敏原（Fig. 24-2）</td></tr>
+<tr><td>Hairline、behind the ears</td><td>Hair products（hair dyes、shampoo、conditioners、styling products）；<mark data-q="108-35"><strong>PPD</strong> 是 hair dye 最常見的相關過敏原、強效致敏原（Fig. 24-2）</mark></td></tr>
 <tr><td>Face</td><td>女性較多；fragrances、PPD、preservatives、lanolin alcohols；化妝海綿（rubber）、含 nickel 的睫毛夾、鑷子、髮夾；<strong>preauricular dermatitis</strong> 是 nickel 過敏者用手機的典型表現</td></tr>
 <tr><td>Scalp</td><td>頭皮用品反而好發於非頭皮部位（臉、眼瞼、耳、頸、手），頭皮因屏障較強而相對不受影響；但 <mark data-q="108-35,115-12">對 <strong>PPD</strong>（hair dye）或 <strong>glyceryl monothioglycolate（GMT，permanent wave solutions）</strong>極敏感者可有明顯頭皮 edema 與 crusting</mark></td></tr>
 <tr><td>Eyelids</td><td>見下方</td></tr>
@@ -123,7 +124,7 @@
 <h3>Eyelids（眼瞼）</h3>
 <ul>
 <li>眼瞼是最敏感的部位之一（皮膚薄、化學物易堆積在皺褶）；<mark data-q="106-50">頭皮、臉、手上少量過敏原轉移就足以引起眼瞼濕疹，而原接觸處正常</mark>。<span class="ex-ref">p.400</span></li>
-<li><mark data-q="106-50">Volatile agents 可最先且只侵犯眼瞼 → <strong>airborne eyelid contact dermatitis</strong></mark>。</li>
+<li><mark data-q="106-50,101-17">Volatile agents 可最先且只侵犯眼瞼 → <strong>airborne eyelid contact dermatitis</strong></mark>。</li>
 <li><mark data-q="106-50">化妝品：mascara、eyeliner、eye shadow、假睫毛黏膠；睫毛夾的 nickel 與 rubber</mark>。</li>
 <li><mark data-q="106-50">明顯眼瞼水腫常是 <strong>hair-dye dermatitis</strong> 的特徵</mark>。</li>
 <li><mark data-q="106-50">眼瞼是 <strong>ectopic contact dermatitis</strong> 的典型部位：nail lacquer 中的 tosylamide formaldehyde resin 與 epoxy resin</mark>。</li>
@@ -153,7 +154,7 @@
 <li>McKee：已致敏者食入或吸入過敏原（如 nickel、chromium、cobalt）可出現類似 hand eczema 的表現；少數為 erythema multiforme-like、vasculitis 或 urticarial；推測為 hapten 經血行到皮膚；可有或沒有先前致敏，許多藥物被報告。<span class="ex-ref ex-ref-mckee">McKee p.206</span>組織上可見 leukocytoclastic vasculitis 或 EM 的特徵。<span class="ex-ref ex-ref-mckee">McKee p.208</span></li>
 <li>McKee：<mark data-q="108-35">mercury exanthem 發生於<strong>先前已致敏</strong>者接觸金屬汞（如打破溫度計）</mark>，以屈側為主的鮮紅斑（Baboon syndrome），大腿前內上側 inverted V-shaped erythema 具特徵性，常有 sterile pustules，可有 purpura，常見 fever 與 leukocytosis，以脫屑消退。<span class="ex-ref ex-ref-mckee">McKee p.664</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Baboon syndrome 是已致敏者經「全身性途徑」再暴露，不是局部皮膚再次接觸過敏原。</aside>
+<aside class="ex-trap"><strong>易錯</strong>SCD 依定義<strong>沒有</strong>局部皮膚接觸過敏原，誘發途徑為 subcutaneous、IV、IM、inhalation、oral。Baboon syndrome 最初用來描述對 systemic contact allergen 的反應；後來擴大包含<strong>沒有先前皮膚致敏</strong>的藥物引起臀部與大腿內上側紅斑。<span class="ex-ref">p.402</span></aside>
 <table class="ex-table">
 <thead><tr><th scope="col">Diagnostic criteria for SDRIFE（Table 24-2）</th></tr></thead>
 <tbody>
@@ -184,7 +185,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 24-4，p.403。</p>
-<aside class="ex-trap"><strong>易錯</strong>配對常被對調：thiuram ↔ disulfiram、thimerosal ↔ piroxicam、ethylenediamine ↔ aminophylline 與 piperazine 類抗組織胺（levocetirizine 配 ethylenediamine，不是 thimerosal）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Table 24-4 配對：ethylenediamine dihydrochloride → aminophylline 與 piperazine antihistamines（hydroxyzine、cetirizine、levocetirizine、meclizine）；thiuram → disulfiram；thimerosal → piroxicam。<span class="ex-ref">p.403</span></aside>
 <ul>
 <li>Dietary <strong>nickel</strong> 與 <strong>balsam of Peru</strong> 與 dyshidrosiform hand eczema 相關。<span class="ex-ref">p.402</span></li>
 <li>Balsam of Peru 成分（cinnamic acid、cinnamyl cinnamate、benzyl benzoate、benzoic acid、benzyl alcohol、coniferyl alcohol 酯化聚合物）有許多天然交叉反應物：tomatoes、citrus peel、chocolate、ice cream、wine、beer、深色汽水、cinnamon、cloves、curry、vanilla。</li>
@@ -210,7 +211,7 @@
 <h3>Preservatives（防腐劑）</h3>
 <ul>
 <li><mark data-q="109-46">Preservative allergens 分為 formaldehyde（及其 releasers）與 non-formaldehyde-releasing preservatives</mark>。<span class="ex-ref">p.404</span></li>
-<li>Formaldehyde 為強效致敏原，現在很少用於個人保養品，改用其他防腐劑。</li>
+<li><mark data-q="101-17">Formaldehyde 是具 preservative 與 disinfectant 特性的無色氣體（colorless gas）</mark>；因致敏力強，現在很少用於個人保養品，改用其他防腐劑。<span class="ex-ref">p.404</span></li>
 <li><strong>Formaldehyde releasers</strong>：bronopol（2-bromo-2-nitropropane-1,3-diol）、diazolidinyl urea（Germall II）、DMDM hydantoin（Glydant）、imidazolidinyl urea（Germall I）、<strong>quaternium-15</strong>、tris-nitromethane；其中 <strong>quaternium-15 是最常見的 cosmetic allergen</strong>。<span class="ex-ref">p.404</span></li>
 <li><mark data-q="101-23">Formaldehyde-containing resins 相關的 ACD：(1) glues——<strong>toluene sulfonamide formaldehyde resin（tosylamide，人工指甲）</strong>與 <strong>p-tert-butylphenol formaldehyde resin（鞋子與衣物）</strong>；(2) 免燙／permanent-press 布料</mark>。<span class="ex-ref">p.404</span></li>
 <li><strong>Nonreleasers</strong>：methyldibromoglutaronitrile/phenoxyethanol（MDGN/PE，<strong>Euxyl K400</strong>）與 methylchloroisothiazolinone/methylisothiazolinone（MCI/MI，<strong>Kathon CG</strong>）；因致敏性高，兩者已被歐洲禁用於 cosmetics。<span class="ex-ref">p.404</span></li>
@@ -273,7 +274,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 24-6，p.406。</p>
-<aside class="ex-trap"><strong>易錯</strong>懷疑類固醇過敏又無法 patch test 時選 desoximethasone（class C）；clobetasol（D1）、triamcinolone（B）、hydrocortisone 類（A）都不是首選。</aside>
+<aside class="ex-trap"><strong>易錯</strong>沒有 patch test 證據時，<strong>desoximethasone ointment</strong> 是從過敏角度最安全的外用類固醇；least-allergenic steroids 屬 <strong>class C</strong>（以 desoximethasone 為代表）。<span class="ex-ref">p.405</span> Table 24-6：clobetasol 屬 D1、triamcinolone 屬 B、hydrocortisone-17-butyrate 屬 D2。<span class="ex-ref">p.406</span></aside>
 </section>
 
 <section class="ex-note" id="patch-test">
@@ -292,7 +293,7 @@
 <li><strong>Repeat open application test（ROAT／use test）</strong>：塗在 cubital fossa，每天 <strong class="ex-n">2</strong> 次、持續 <strong class="ex-n">1–3 週</strong>，模擬實際使用，適合 leave-on 產品。</li>
 <li><strong>Semiopen test</strong>：用於有刺激性的液體產品，塗 <strong class="ex-n">1 cm²</strong>、待乾、多餘以棉棒移除，再以低過敏膠帶覆蓋，依標準時間判讀。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>懷疑 PPD 或 neomycin 過敏時不能只看第二天：抗生素可延遲到 7–10 天才出現，PPD 還可能在 10–21 天出現主動致敏的新反應。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Metals、antibiotics、corticosteroids 可產生延遲反應，某些情況判讀延長到 <strong class="ex-n">7–10 天</strong>。<span class="ex-ref">p.406</span> Gold 若只在 <strong class="ex-n">&lt;96 小時</strong>判讀可能被誤判為陰性。<span class="ex-ref">p.404</span> Active sensitization 最常見於 PPD 等強致敏原：48 與 96 小時判讀陰性，測試後 <strong class="ex-n">10–21 天</strong>出現 new reaction，有時難與 gold、topical steroids 的延遲反應區分。<span class="ex-ref">p.408</span></aside>
 <h3>Grading（ICDRG／Wilkinson 分級）</h3>
 <table class="ex-table">
 <thead><tr><th scope="col">Grade</th><th scope="col">Description（描述）</th></tr></thead>
@@ -314,7 +315,7 @@
 <li><mark data-q="114-15">反應夠強時：irritant 反應早出現、很快消退 → <strong>decrescendo</strong>；allergic 反應會擴散、消退較慢、較明顯 eczematous → <strong>crescendo</strong></mark>。<span class="ex-ref">p.407</span></li>
 <li>深膚色（Fitzpatrick V–VI）紅斑不明顯，要靠觸診 edema 與 papules/vesicles；可用螢光筆標記，再以 Wood light 在暗室找位置。<span class="ex-ref">p.407</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Irritant 是 decrescendo、allergic 是 crescendo，題目常寫反；cobalt 的 pseudopurpuric／punctate purpura 是 irritant，不是陽性。</aside>
+<aside class="ex-trap"><strong>易錯</strong>反應夠強時，irritant 呈 <strong>decrescendo</strong>、allergic 呈 <strong>crescendo</strong>。<span class="ex-ref">p.407</span> Cobalt 的 pseudopurpuric 外觀不是 positive patch test reaction，而是 cobalt 沉積於 eccrine glands 的 irritant effect <span class="ex-ref">p.403</span>；punctate purpura of cobalt 一律判為 irritant reaction。<span class="ex-ref">p.407</span></aside>
 <h3>Clinical relevance（臨床相關性）</h3>
 <ul>
 <li>Patch test 陽性只代表已致敏，<strong>不等於 ACD 診斷</strong>。<span class="ex-ref">p.407</span></li>
@@ -404,5 +405,5 @@
 <li>Localized acute flare（意外接觸）：<strong>topical corticosteroids</strong> 為第一線，通常需 <strong class="ex-n">2–3 週</strong>以避免 rebound。<span class="ex-ref">p.409</span></li>
 <li>Severe 或 widespread：口服 prednisone <strong class="ex-n">1 mg/kg/day × 1 週</strong>，之後每週減量，總療程 <strong class="ex-n">3–4 週</strong>。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>療程不能太短：外用類固醇要用 2–3 週避免 rebound；口服 prednisone 需約 3 週 taper（總共 3–4 週）。治本仍是避開過敏原。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Localized acute flare：topical corticosteroids 通常需 <strong class="ex-n">2–3 週</strong>以避免 rebound；severe 或 widespread：口服 prednisone 通常需 3-week taper（<strong class="ex-n">1 mg/kg/day × 1 週</strong>後每週減量，總共 <strong class="ex-n">3–4 週</strong>）。<span class="ex-ref">p.409</span> Allergen avoidance 是 ACD 治療主軸。<span class="ex-ref">p.395</span></aside>
 </section>

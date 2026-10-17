@@ -13,7 +13,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 105-2，p.1768。AEP 是 Ambros-Rudolph 等人提出的新分類，把 prurigo of pregnancy、pruritic folliculitis of pregnancy 與 eczema in pregnancy 合併為單一疾病。</p>
-<aside class="ex-trap"><strong>易錯</strong>有胎兒風險的只有三個：<strong>PG、ICP、pustular psoriasis of pregnancy</strong>。PEP（PUPPP）與 AEP 的 fetal risk 都是 None，即使 AEP 很嚴重，母體與胎兒預後仍極佳。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Table 105-2 中 fetal risk 有列出風險的是 <strong>PG、ICP、pustular psoriasis of pregnancy</strong>；PEP（PUPPP）與 AEP（E-type、P-type）的 fetal risk 都是 None。<span class="ex-ref">p.1768</span>AEP 即使嚴重個案，母體與胎兒預後皆極佳。<span class="ex-ref">p.1777</span></aside>
 <h3>Synonyms（同義詞，Table 105-2）</h3>
 <ul>
 <li>PG：herpes gestationis。<span class="ex-ref">p.1768</span></li>
@@ -22,7 +22,7 @@
 <li><mark data-q="102-08">PEP：舊稱 pruritic urticarial papules and plaques of pregnancy（PUPPP）</mark>；另稱 Bourne toxemic rash of pregnancy、Nurse's late onset prurigo of pregnancy、toxemic（toxic）erythema of pregnancy。<span class="ex-ref">p.1768、p.1773</span></li>
 <li>AEP：eczema in pregnancy、prurigo of pregnancy、Besnier prurigo gestationis、Nurse's early onset prurigo of pregnancy、papular dermatitis of Spangler。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Nurse 有兩個：<strong>late</strong> onset prurigo = PEP；<strong>early</strong> onset prurigo = AEP。「Prurigo gravidarum」在 Fitzpatrick 是 ICP 的同義詞（沒有黃疸的輕症 ICP），但 McKee 把 prurigo gravidarum 當成 pregnancy prurigo（屬 AEP）的同義詞，兩本用法不同。<span class="ex-ref">p.1770</span><span class="ex-ref ex-ref-mckee">McKee p.302</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>Nurse's <strong>late</strong> onset prurigo of pregnancy 是 PEP 的同義詞；Nurse's <strong>early</strong> onset prurigo of pregnancy 是 AEP 的同義詞。<span class="ex-ref">p.1768</span>Fitzpatrick：prurigo gravidarum 是 ICP 的同義詞（沒有黃疸、只有瘙癢的輕症 ICP 以前稱為 prurigo gravidarum）<span class="ex-ref">p.1770</span>；McKee：prurigo gravidarum 是 pregnancy prurigo 的同義詞，pregnancy prurigo 已歸入 atopic eruption of pregnancy。<span class="ex-ref ex-ref-mckee">McKee p.302</span></aside>
 </section>
 
 <section class="ex-note" id="physiologic">
@@ -57,7 +57,7 @@
 <h3>Definition &amp; Epidemiology（定義與流行病學）</h3>
 <ul>
 <li>Immunologically mediated、極癢的 vesiculobullous eruption，發生於懷孕中後期與產後立即期；典型在 <strong>second or third trimester</strong> 開始，突然出現極癢的 urticarial lesions。<span class="ex-ref">p.1766–1767</span></li>
-<li>Incidence：Fitzpatrick <strong class="ex-n">1/1,700–1/50,000</strong> pregnancies；McKee 列 <strong class="ex-n">1:3,000–1:50,000</strong>，有免疫螢光確認的系列支持後者。<span class="ex-ref">p.1767</span><span class="ex-ref ex-ref-mckee">McKee p.145</span></li>
+<li>Incidence：Fitzpatrick <strong class="ex-n">1/1,700–1/50,000</strong> pregnancies；McKee 列 <strong class="ex-n">1:3,000–1:50,000</strong>，並指有免疫螢光確認的研究支持 <strong class="ex-n">1:50,000</strong> 最準確。<span class="ex-ref">p.1767</span><span class="ex-ref ex-ref-mckee">McKee p.145</span></li>
 <li>McKee 補充：可在第一胎或之後任一胎發生（一系列中 <strong class="ex-n">30%</strong> 為初產婦）；罕見於產後才首發；也可見於 hydatidiform mole 與 gestational choriocarcinoma，但不見於非妊娠性 choriocarcinoma；以白人女性為主，黑人極少；最常在第 6–7 個月發生。<span class="ex-ref ex-ref-mckee">McKee p.145</span></li>
 </ul>
 <h3>Clinical features（臨床表現）</h3>
@@ -68,7 +68,7 @@
 <li>McKee 補充：瘙癢可早於皮疹數天到數週；polymorphous（urticarial papules／plaques，部分 polycyclic），之後在擴散的紅斑周邊出現水疱；<mark data-q="101-46">水疱 <strong>tense、dome-shaped</strong>、內含清澈液體</mark>，偶為出血性，癒合不留疤。<span class="ex-ref ex-ref-mckee">McKee p.145–146</span></li>
 <li>McKee：<strong>umbilicus 常是最早侵犯處</strong>，再擴散到軀幹與四肢；臉與黏膜明顯少見，最後可侵犯 palms、soles；偶見 target lesions 類似 EM。<span class="ex-ref ex-ref-mckee">McKee p.146</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick Table 105-2 寫 PG「spares face、mucous membranes、palms、soles」，但 Fig. 105-4 的圖說有臉、頸的 tense bullae；McKee 說臉與黏膜「distinctly uncommon」、掌蹠最後可出現。重點是：<strong>臍周侵犯 = PG；臍周不侵犯 = PEP</strong>。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick Table 105-2 寫 PG「spares face、mucous membranes、palms、soles」<span class="ex-ref">p.1768</span>，但 Fig. 105-4 的圖說有臉、頸、胸的 urticarial plaques 與 tense bullae<span class="ex-ref">p.1769</span>；McKee 說臉與黏膜「distinctly uncommon」、掌蹠最後可出現。<span class="ex-ref ex-ref-mckee">McKee p.146</span>Fitzpatrick：與 PEP 不同，<strong>PG 會侵犯 periumbilical skin</strong><span class="ex-ref">p.1767</span>；PEP 典型有 <strong>periumbilical sparing</strong>。<span class="ex-ref">p.1774</span></aside>
 <h3>Etiology &amp; Pathogenesis（病因與致病機轉）</h3>
 <ul>
 <li>DIF：<mark data-q="101-46">dermal–epidermal junction 有 <strong>linear C3</strong>，可合併或不合併 IgG</mark>。<span class="ex-ref">p.1767</span></li>
@@ -92,10 +92,10 @@
 <li>母體預後很好，多數在產後數月內緩解，但完全緩解可能需數週、數月甚至數年。<span class="ex-ref">p.1767</span></li>
 <li><mark data-q="108-28"><strong class="ex-n">75%</strong> 產後 flare，需要治療</mark>；產後使用 oral contraceptives 與月經週期時可惡化。<span class="ex-ref">p.1767</span></li>
 <li>新生兒可出現短暫水疱（抗 BMZ 抗體經胎盤被動轉移），通常不需治療；<strong>母親若長期高劑量 prednisolone，嬰兒要評估 adrenal insufficiency</strong>。<span class="ex-ref">p.1767</span></li>
-<li>McKee 補充：產後惡化（最多 <strong class="ex-n">75%</strong>）常發生在 progesterone 下降的產褥期；之後懷孕通常會再發，且更早、更嚴重，但可能跳過某些胎次（與換伴侶或 HLA-D 相容性有關）；OC 誘發惡化 <strong class="ex-n">20–50%</strong>；多數約產後 <strong class="ex-n">6 months</strong> 緩解，少數拖到 12 年；哺乳者水疱期較短（5 vs. 24 週）。<span class="ex-ref ex-ref-mckee">McKee p.145</span></li>
+<li>McKee 補充：產後惡化（最多 <strong class="ex-n">75%</strong>）常發生在 progesterone 下降的產褥期；之後懷孕通常會再發，且更早、更嚴重，但可能跳過某些胎次（可能與換伴侶或 HLA-D locus 相容性有關）；OC 誘發惡化 <strong class="ex-n">20–50%</strong>；多數約產後 <strong class="ex-n">6 months</strong> 緩解，少數拖到 12 年；哺乳者水疱期較短（5 vs. 24 週）。<span class="ex-ref ex-ref-mckee">McKee p.145</span></li>
 <li>McKee：不合併 pre-eclampsia、<strong>沒有母體死亡</strong>；第一、二孕期發病與出現水疱者胎兒併發症（早產、低體重）較高，但整體 morbidity 仍低；約 <strong class="ex-n">5%</strong> 新生兒出現輕微短暫水疱。<span class="ex-ref ex-ref-mckee">McKee p.146–147</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>PG 不是「分娩時就明顯改善」，而是約 <strong>75% 產後 flare</strong>。PG 胎兒風險是 SGA／早產，不是死產或胎盤功能不全（後者是 pustular psoriasis of pregnancy）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick：<strong class="ex-n">75%</strong> 的 PG 婦女<strong>產後 flare</strong>，需要治療。<span class="ex-ref">p.1767</span>Table 105-2 中 PG 的 fetal risk 為 small-for-gestational age births、preterm delivery、neonatal PG；placental insufficiency → stillbirth 或 neonatal death 列在 pustular psoriasis of pregnancy。<span class="ex-ref">p.1768</span></aside>
 <h3>Management（治療）</h3>
 <ul>
 <li>起始：topical steroids ＋ systemic antihistamine；<strong>first-generation antihistamines 優於 second-generation</strong>。<span class="ex-ref">p.1767</span></li>
@@ -125,7 +125,7 @@
 </tbody>
 </table>
 <p class="ex-cite">McKee p.147–148。</p>
-<aside class="ex-trap"><strong>易錯</strong>PG 水疱內是大量 <strong>eosinophils</strong>，不是 neutrophils。DIF 的 C3 是 100%，IgG 只有 30–50%；HG factor 是「低效價」補體固定抗體，不是效價比 BP 高。</aside>
+<aside class="ex-trap"><strong>易錯</strong>McKee：PG 的 established blister 為 subepidermal，腔內常有大量 <strong>eosinophils</strong>。DIF：linear C3 見於<strong>所有病人</strong>，另有 IgG 約 <strong class="ex-n">30–50%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.147</span>所謂 HG factor 只是 <strong>low titer</strong> 的 complement-fixing anti-BMZ IgG。<span class="ex-ref ex-ref-mckee">McKee p.148</span></aside>
 </section>
 
 <section class="ex-note" id="icp">
@@ -190,7 +190,7 @@
 <li><mark data-q="103-33">與 <strong>dexamethasone</strong> 或 <strong>cholestyramine</strong> 的 head-to-head RCT 都顯示 UDCA 較優</mark>。<span class="ex-ref">p.1771</span></li>
 <li>提早生產證據不一：systematic review 不支持 &lt;39 週的 active management；retrospective study 顯示 <strong class="ex-n">36 weeks</strong> 生產可降低 perinatal mortality；<strong>多數作者建議提早 induction，常在 38 weeks 或更早</strong>。<span class="ex-ref">p.1771</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>ICP 首選是 UDCA，不是 cholestyramine 或 dexamethasone。ICP 診斷靠 serum bile acids，不靠皮膚切片；肝指數中 ALT 最敏感，GGT 通常正常或僅輕微上升。</aside>
+<aside class="ex-trap"><strong>易錯</strong>UDCA 是 ICP 的 <strong>treatment of choice</strong>；與 dexamethasone、cholestyramine 的 head-to-head RCT 都顯示 UDCA 療效較佳。<span class="ex-ref">p.1771</span>Serum bile acids 上升是 ICP 的 single most sensitive indicator；皮膚切片對 ICP 診斷沒有幫助。肝功能檢查中 alanine transaminase particularly sensitive，GGT 典型正常或輕微上升。<span class="ex-ref">p.1770</span></aside>
 </section>
 
 <section class="ex-note" id="pustular-psoriasis-of-pregnancy">
@@ -210,7 +210,7 @@
 <li><mark data-q="106-42,111-02,112-25">母體危及生命的併發症不常見，但可來自 <strong>profound hypocalcemia</strong> 與 bacterial sepsis；嚴重低血鈣時罕見 tetany、delirium、convulsions</mark>。<span class="ex-ref">p.1771</span></li>
 <li><mark data-q="104-19,106-42,108-05,113-03">最令人擔心的是 <strong>placental insufficiency</strong> → stillbirth 或 neonatal death</mark>，因此常考慮提早引產。<span class="ex-ref">p.1771–1772</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>母體危險是<strong>低血鈣</strong>（hypocalcemia），不是高血鈣，也不是低血鉀。</aside>
+<aside class="ex-trap"><strong>易錯</strong>母體危及生命的併發症來自 <strong>profound hypocalcemia</strong>（低血鈣）與 bacterial sepsis；嚴重低血鈣時罕見 tetany、delirium、convulsions。<span class="ex-ref">p.1771</span></aside>
 <h3>Etiology &amp; Pathogenesis（與 GPP 的差異）</h3>
 <ul>
 <li><mark data-q="106-42,111-02">與 generalized pustular psoriasis 不同之處：<strong>沒有陽性家族史</strong></mark>、分娩後症狀突然緩解、只在之後懷孕時復發。<span class="ex-ref">p.1772</span></li>
@@ -252,17 +252,17 @@
 <li>支持性與藥物治療無效時可考慮 induction of labor。<span class="ex-ref">p.1772–1773</span></li>
 <li><mark data-q="101-49,107-07">終止妊娠後或產後<strong>且不哺乳</strong>時，治療才可擴及 <strong>oral PUVA、oral retinoids、methotrexate</strong></mark>。<span class="ex-ref">p.1773</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Oral retinoids、methotrexate、PUVA 懷孕期間不可用（只能在產後且不哺乳時）。考古題「懷孕給大量 systemic steroids 是治療主流」依舊版觀念算對，但 9e 已改寫為 historically；現在 first-line 是 cyclosporine 與 infliximab。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Oral PUVA、oral retinoids、methotrexate 是在<strong>終止妊娠後，或產後且不哺乳</strong>時才可納入的治療。<span class="ex-ref">p.1773</span>Fitzpatrick 9e：systemic corticosteroids <strong>historically</strong> the mainstay of therapy；現在 cyclosporine 與 infliximab 被視為 first-line therapy。<span class="ex-ref">p.1772</span></aside>
 </section>
 
 <section class="ex-note" id="pep">
 <h2>7. Polymorphic Eruption of Pregnancy / PUPPP（妊娠多形疹）</h2>
 <h3>Definition &amp; Epidemiology（定義與流行病學）</h3>
 <ul>
-<li><mark data-q="102-08">常見、良性、極癢，<strong>幾乎只發生於 primigravidas（初產婦）</strong>，在 third trimester 與產後立即期</mark>。<span class="ex-ref">p.1773</span></li>
+<li><mark data-q="102-08,114-44">常見、良性、極癢，<strong>幾乎只發生於 primigravidas（初產婦）</strong>，在 third trimester 與產後立即期</mark>。<span class="ex-ref">p.1773</span></li>
 <li>Incidence：Fitzpatrick <strong class="ex-n">1/300–1/130</strong> pregnancies；McKee 估計 <strong class="ex-n">0.5%</strong>，一大系列中 <strong class="ex-n">76%</strong> 為初產婦。<span class="ex-ref">p.1773</span><span class="ex-ref ex-ref-mckee">McKee p.300–301</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>「好發於初產婦」是 PEP 的特徵，不是 pustular psoriasis of pregnancy（後者是之後懷孕復發更早更重）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>PEP 幾乎只發生於 <strong>primigravidas</strong><span class="ex-ref">p.1773</span>；pustular psoriasis of pregnancy 則是之後懷孕復發很常見，且典型上更嚴重、更早發生。<span class="ex-ref">p.1772</span></aside>
 <h3>Clinical features（臨床表現）</h3>
 <ul>
 <li><mark data-q="102-08">典型在最後一孕期，<strong>mean onset 35 weeks</strong></mark>；也有較早發生與產後立即期的個案。McKee 寫平均第 <strong class="ex-n">36</strong> 週。<span class="ex-ref">p.1773</span><span class="ex-ref ex-ref-mckee">McKee p.300</span></li>
@@ -271,7 +271,7 @@
 <li>瘙癢與皮疹範圍平行；嚴重可影響睡眠，但沒有其他全身症狀。</li>
 <li>McKee 補充：約 <strong class="ex-n">50%</strong> 起始於 striae；遠端肢體少受侵犯；<strong>臉部不受侵犯</strong>是有用的線索；男嬰：女嬰 <strong class="ex-n">2:1</strong>。<span class="ex-ref ex-ref-mckee">McKee p.301</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>PEP 是由腹部 striae 開始再往外擴散，不是先從四肢；而且<strong>不侵犯肚臍周圍</strong>（PG 則會侵犯）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>PEP 由<strong>腹部</strong>開始，典型在 striae gravidarum 內，並有 <strong>periumbilical sparing</strong>；之後快速擴散到 thighs、buttocks、breasts、arms。<span class="ex-ref">p.1774</span>PG 則侵犯 periumbilical skin。<span class="ex-ref">p.1767</span></aside>
 <h3>Etiology &amp; Risk factors（病因與危險因子）</h3>
 <ul>
 <li>致病機轉不明；推測腹部皮膚過度撐張改變 collagen／elastic tissue，引發對原本非抗原性刺激的免疫反應；病灶 progesterone receptor immunoreactivity 增加。<span class="ex-ref">p.1774</span></li>
@@ -336,7 +336,7 @@
 <li>鑑別：其他懷孕特有皮膚病（尤其 ICP、PEP）、microbial folliculitis、allergic contact dermatitis。<span class="ex-ref">p.1775</span></li>
 <li>McKee（pregnancy prurigo）：<strong class="ex-n">1/300</strong> pregnancies；<strong class="ex-n">0.5–1.0 cm</strong> 瘙癢紅色 papules 與 nodules，好發四肢伸側與腹部，可有 excoriation；不起水疱；病理為 mild spongiosis、lymphocytic exocytosis、superficial perivascular lymphohistiocytic infiltrate 偶見 eosinophils，常有搔抓變化；<strong>免疫螢光陰性</strong>；病人常有 atopy 史，IgE 可上升。<span class="ex-ref ex-ref-mckee">McKee p.302</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 說 AEP（含 P-type）發生在 <strong>third trimester 之前</strong>；但 McKee 寫 pregnancy prurigo「usually third trimester，但可在任何階段」。考 Fitzpatrick 觀念時以「before the third trimester、最早發生」為準。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick：AEP（E-type 與 P-type）usual onset 為 <strong>before third trimester</strong>，且比其他懷孕皮膚病更早發生。<span class="ex-ref">p.1768、p.1775</span>McKee：pregnancy prurigo 通常在 third trimester 出現，但可見於懷孕任何階段。<span class="ex-ref ex-ref-mckee">McKee p.302</span></aside>
 <h3>Clinical course &amp; Management（病程與治療）</h3>
 <ul>
 <li>治療反應快，但<strong>之後懷孕復發常見</strong>（符合 atopic diathesis）。<span class="ex-ref">p.1777</span></li>
@@ -359,5 +359,5 @@
 </tbody>
 </table>
 <p class="ex-cite">整理自 p.1767–1777 及 McKee p.145–148、p.300–302。</p>
-<aside class="ex-trap"><strong>易錯</strong>懷孕期 scabies 只出現在 ICP 的瘙癢鑑別與 PEP 的「always rule out」，本章沒有討論孕婦或嬰兒的 scabies 用藥選擇。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Scabies 列於孕婦全身瘙癢的鑑別（ICP 段）<span class="ex-ref">p.1771</span>，也是 PEP 鑑別診斷中的 always rule out（Table 105-4）。<span class="ex-ref">p.1775</span></aside>
 </section>

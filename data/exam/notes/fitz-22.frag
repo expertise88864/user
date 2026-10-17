@@ -26,7 +26,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 22-1，p.366。McKee 另列 ichthyosis（<strong class="ex-n">50%</strong>）、nipple eczema、bilateral anterior cataracts、sweat-associated itching、wool intolerance、perifollicular accentuation、food intolerance；Dennie-Morgan folds 據稱具特徵性，尤其是雙條時。<span class="ex-ref ex-ref-mckee">McKee p.202</span></p>
-<aside class="ex-trap"><strong>易錯</strong>White dermatographism、Dennie-Morgan folds、keratoconus、ichthyosis vulgaris 都在 Table 22-1 的 other common findings，不是 major features；major features 是 pruritus、年齡相關的分布型態、慢性反覆病程、個人或家族異位史。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Table 22-1 把 white dermatographism、Dennie-Morgan folds、keratoconus、ichthyosis vulgaris 列在 other common findings；major features 為 pruritus、嬰幼兒臉部或伸側皮疹、較大兒童屈側苔癬化、慢性或慢性反覆病程、個人或家族異位史。</aside>
 </section>
 
 <section class="ex-note" id="epi">
@@ -56,13 +56,13 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Age（年齡）</th><th scope="col">Pattern（型態）</th></tr></thead>
 <tbody>
-<tr><td>Infancy（嬰兒）</td><td><mark data-q="106-49,110-27">較急性，主要在 <strong>face、scalp、extensor surfaces of extremities</strong>；<strong>diaper area usually spared</strong>（尿布區通常不受影響）</mark></td></tr>
+<tr><td>Infancy（嬰兒）</td><td><mark data-q="106-49,110-27,106-43">較急性，主要在 <strong>face、scalp、extensor surfaces of extremities</strong>；<strong>diaper area usually spared</strong>（尿布區通常不受影響）</mark></td></tr>
 <tr><td>Older children／long-standing disease</td><td><mark data-q="106-49">Chronic form：lichenification，集中於四肢 <strong>flexural folds</strong></mark></td></tr>
 <tr><td>Adults（成人）</td><td>皮膚易癢、遇外來刺激物易發炎；<strong>chronic hand eczema</strong> 可能是許多成人 AD 的主要表現</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.364。McKee 寫嬰兒期病灶在 head、face、neck、<strong>napkin area</strong> 與四肢伸側，兒童期轉為屈側；可有 chronic atopic cheilitis；<strong>vesiculation uncommon</strong>。<span class="ex-ref ex-ref-mckee">McKee p.201</span></p>
-<aside class="ex-trap"><strong>易錯</strong>嬰兒是臉、頭皮、伸側；大孩童與成人是屈側苔癬化，考題常故意顛倒。尿布區：Fitzpatrick 寫 usually spared（考題以此為準），McKee 則把 napkin area 列為嬰兒期好發處，兩本說法不同。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick：嬰兒期主要在 face、scalp、extensor surfaces of extremities，diaper area usually spared；較大兒童與病程長者為四肢 flexural folds 的 lichenification。McKee 則把 napkin area 列為嬰兒期好發處，兩本說法不同。</aside>
 <h3>Filaggrin deficiency phenotype（filaggrin 缺乏的表徵）</h3>
 <ul>
 <li><mark data-q="114-06,115-27,105-38">至少 <strong class="ex-n">1/3</strong> 病人有 filaggrin deficiency 的臨床特徵：<strong>ichthyosis vulgaris、keratosis pilaris、hyperlinear palms</strong></mark>；這些表徵與 filaggrin 基因缺陷相關，可辨識出病程較嚴重、較多 allergic comorbidities 的病人。<span class="ex-ref">p.364</span></li>
@@ -74,7 +74,7 @@
 <h2>4. Noncutaneous Findings（共病與心理社會影響）</h2>
 <h3>Atopic comorbidities（異位性共病）</h3>
 <ul>
-<li>常有 <strong>Th2 immune activation</strong> 的表現：total 與 specific serum IgE 升高、eosinophilia、易有 allergic comorbidities。<span class="ex-ref">p.365</span></li>
+<li><mark data-q="111-24">常有 <strong>Th2 immune activation</strong> 的表現：total 與 specific serum IgE 升高、eosinophilia、易有 allergic comorbidities</mark>。<span class="ex-ref">p.365</span></li>
 <li><mark data-q="110-27">大型族群研究：AD 病人 <strong>food allergy、asthma、allergic rhinitis</strong> 盛行率較高；<strong>皮膚嚴重度與共病的風險及嚴重度相關</strong></mark>。<span class="ex-ref">p.365–366</span></li>
 <li>AD 常是第一個出現的異位性疾病，但各病可依任何順序、任何組合出現；allergic sensitization 可發生在 AD 之前或之後，最多達 <strong class="ex-n">80%</strong> 病人會致敏。<span class="ex-ref">p.366</span></li>
 <li>目前<strong>沒有</strong>研究證實只治療皮膚能改善 allergic comorbidities，或預防 AD 能阻止「atopic march」。</li>
@@ -90,7 +90,7 @@
 <h2>5. Complications（併發症）</h2>
 <h3>Bacterial infection（細菌感染）</h3>
 <ul>
-<li><mark data-q="109-41,106-30">Superficial <em>Staphylococcus aureus</em> infection 是 AD 中<strong>目前為止最常見的感染</strong>（by far the most common）</mark>。<span class="ex-ref">p.366</span></li>
+<li><mark data-q="109-41,106-30">Superficial <em>Staphylococcus aureus</em> infection 是 AD 中<strong>遠比其他感染常見、最常見的感染</strong>（by far the most common）</mark>。<span class="ex-ref">p.366</span></li>
 <li><mark data-q="109-41,115-27"><em>S. aureus</em> 在 <strong class="ex-n">&gt;70%</strong> 病人的病灶定殖，AD 越嚴重定殖率越高</mark>。<span class="ex-ref">p.366</span></li>
 <li>MRSA 盛行率研究結果不一，似乎<strong>不高於</strong>背景定殖率；但 MRSA 已成為 AD 病人越來越重要的病原。<span class="ex-ref">p.366–367</span></li>
 <li>真正感染率資料少：日本研究顯示 AD 兒童 impetigo 約增加 <strong class="ex-n">2 倍</strong>；嚴重感染有 endocarditis、osteomyelitis、septicemia 的報告。<span class="ex-ref">p.367</span></li>
@@ -102,7 +102,7 @@
 <li><mark data-q="106-08,115-27"><strong>Antimicrobial peptide expression is blunted</strong>（抗菌胜肽表現被抑制），一般認為是 <strong>type 2 cytokines</strong> 的抑制作用</mark>。</li>
 <li>Type 2 cytokines 也會增強 <em>S. aureus</em> toxins 對 keratinocytes 的殺傷；阻斷 type 2 cytokines 似乎能減少 AD 的皮膚感染。</li>
 <li><em>S. aureus</em> toxins 活化 antigen presenting cells、增加 T cell 的 CLA 表現；AD flare 對應 microbiome 中 <em>S. aureus</em> 比例上升。</li>
-<li><mark data-q="108-50">對<strong>沒有臨床感染</strong>的皮膚給抗生素，<strong>不能</strong>降低 AD 嚴重度</mark>；dilute sodium hypochlorite（bleach baths）似乎改善嚴重度，但可能是抗發炎與 barrier 作用而非抗菌。</li>
+<li><mark data-q="108-50">對<strong>沒有臨床感染</strong>的皮膚給抗生素，<strong>未發現</strong>能降低 AD 嚴重度</mark>；dilute sodium hypochlorite（bleach baths）似乎改善嚴重度，但不確定是否是透過抗發炎與 barrier 作用而非抗菌作用。</li>
 <li>Topical steroids 單獨使用即可降低 <em>S. aureus</em> 數量（顯示發炎影響易感性）。</li>
 </ul>
 <ul>
@@ -118,7 +118,7 @@
 <li><strong>Eczema vaccinatum</strong>：AD 病人接種 smallpox vaccine（甚至接觸接種者）可出現類似 EH 的廣泛皮疹 → 除非有明確天花風險，AD 病人<strong>禁止接種</strong>；家人是否接種也要考量。<span class="ex-ref">p.367</span></li>
 <li><mark data-q="113-31"><strong>Eczema coxsackium</strong>：對 coxsackie virus 的過度反應，兒童出現類似 hand, foot, and mouth disease 的手足水疱或丘疹，但較嚴重、出血性，並侵犯原有濕疹處；<strong>雖然有時表現劇烈，皮疹會消退且沒有後遺症</strong></mark>。<span class="ex-ref">p.367</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>會致命的是 eczema herpeticum；eczema coxsackium 看起來嚇人，但會消退、no negative sequelae。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Eczema herpeticum 是最嚴重的病毒併發症，部分個案致命；eczema coxsackium 雖然有時表現劇烈，皮疹會消退且 no negative sequelae。</aside>
 <h3>Fungal infection（黴菌）</h3>
 <ul>
 <li>表淺黴菌感染是否在 atopy 較常見仍不清楚。<em>Malassezia sympodialis</em>（<em>Pityrosporum ovale/orbiculare</em>）為 lipophilic yeast，常在 seborrheic areas。<span class="ex-ref">p.367</span></li>
@@ -149,7 +149,7 @@
 <li>Soap 與 detergents 提高皮膚 pH → endogenous proteases 活性增加 → barrier 進一步破壞；搔抓、house dust mite 與 <em>S. aureus</em> 的 exogenous proteases 也會傷害 barrier，atopic skin 又缺乏某些 endogenous protease inhibitors。</li>
 <li><mark data-q="106-30">屏障缺陷使 allergen 吸收與微生物定殖增加</mark>；<strong>epicutaneous sensitization</strong> 引起較強的過敏反應，因此皮膚可能是致敏位置，使兒童易發展出 food allergy 與 respiratory allergy。</li>
 </ul>
-<p>McKee：filaggrin 與 involucrin、loricrin 同為 cornified envelope 的主要成分；屏障破壞在疾病<strong>起始與早期</strong>特別重要。<mark data-q="111-24,115-27">AD 角質層 <strong>kallikrein-related peptidases</strong> 表現增加</mark>（一研究發現 KLF7 3′UTR 的 4-bp insertion）；<strong>SPINK5</strong>（編碼 LEKTI，抑制 KLK5、KLK7）也有連鎖，但比 profilaggrin 弱；tight junction protein <strong>claudin-1</strong> 表現減少。<span class="ex-ref ex-ref-mckee">McKee p.202–203</span></p>
+<p>McKee：filaggrin 與 involucrin、loricrin 同為 cornified envelope 的主要成分；屏障破壞在疾病<strong>起始與早期</strong>特別重要。<mark data-q="111-24,115-27">AD 角質層 <strong>kallikrein-related peptidases</strong> 表現增加</mark>（一研究發現 KLF7 3′UTR 的 4-bp insertion，但後續研究未證實）；<strong>SPINK5</strong>（編碼 LEKTI，抑制 KLK5、KLK7）也有連鎖，但比 profilaggrin 弱；tight junction protein <strong>claudin-1</strong> 表現減少。<span class="ex-ref ex-ref-mckee">McKee p.202–203</span></p>
 <h3>Genetics（遺傳）</h3>
 <ul>
 <li><mark data-q="115-27">已有 <strong class="ex-n">&gt;80</strong> 個基因與 AD 相關；其中最一致被重複驗證的是 epidermal barrier protein <strong>filaggrin 的 loss-of-function mutations</strong></mark>，在歐洲白人與亞洲人是主要易感因子。<span class="ex-ref">p.368</span></li>
@@ -163,7 +163,7 @@
 <li>ADEH+（易發 eczema herpeticum）：FLG mutations 合併特殊 PBMC transcriptome；未刺激時與 ADEH− 相似，但 HSV 刺激後 antiviral cytokines（<strong>type I 與 type III IFNs</strong>）明顯下調 → innate immunity 缺陷。<span class="ex-ref">p.369</span></li>
 <li><strong>Chromosome 5q31-33</strong>：IL-3、IL-4、IL-5、IL-13、GM-CSF 基因群集（與 IgE、eosinophilia、allergic inflammation 相關）。<strong>IL-4 receptor α subunit、IL-4、IL-13 的 gain-of-function mutations</strong> 與 AD 顯著相關，為阻斷 IL-4 receptor 路徑的生物製劑提供依據；<strong>TSLP</strong> polymorphisms 也與 AD 相關。<span class="ex-ref">p.369</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>FLG 是 <strong>loss-of-function</strong>；gain-of-function 的是 IL-4Rα、IL-4、IL-13。McKee 也明寫 FLG loss-of-function 是發病的最高風險因子。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Filaggrin 相關的是 <strong>loss-of-function</strong> mutations；IL-4 receptor α subunit、IL-4、IL-13 則是 <strong>gain-of-function</strong> mutations 與 AD 顯著相關。McKee 寫 FLG loss-of-function mutations 是發病的最高風險因子。</aside>
 <h3>Filaggrin &amp; cornified envelope（基礎補充：ch14 與 McKee）</h3>
 <ul>
 <li><mark data-q="111-47,106-10">Filaggrin 是 <strong>stratum corneum 的主要蛋白（major protein）</strong></mark>；FLG 突變使人易患 atopic eczema、allergic rhinitis、food allergies 與合併濕疹的 asthma。Filaggrin 只表現於 cornified stratified epithelia（皮膚有，食道、呼吸道沒有）。<span class="ex-ref">p.216（ch14）</span></li>
@@ -174,7 +174,7 @@
 <li><mark data-q="106-10">Cornified envelope：involucrin–envoplakin–periplakin 支架由 transglutaminase 1 交聯；後期 <strong>loricrin</strong> 交聯到支架內側，最終成為 <strong>cornified envelope 的主要成分</strong>；lamellar bodies 帶來的 <strong>acylceramides</strong>（omega-hydroxylated ultra-long-chain fatty acids）由 transglutaminase 1 共價結合到支架外側，形成 <strong>corneocyte lipid envelope</strong></mark>。<span class="ex-ref">p.211（ch14）</span> <span class="ex-ref ex-ref-mckee">McKee p.8–9</span></li>
 <li>角質層主要脂質為 cholesterol、free fatty acids、ceramides；ceramides 佔角質層脂質重量 <strong class="ex-n">30–40%</strong>。<span class="ex-ref">p.212–213（ch14）</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Filaggrin 分解成 NMF 發生在 <strong>stratum corneum</strong>，不是 stratum granulosum（granulosum 是 profilaggrin 形成 keratohyalin granules 的地方）。Cornified envelope 的 major component 是 <strong>loricrin</strong>，不是 involucrin。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Profilaggrin 在 <strong>stratum granulosum</strong> 表現並形成 keratohyalin granules；filaggrin 則是隨角質細胞在 <strong>stratum corneum</strong> 中上移時被分解為 NMF。Loricrin 最終成為 cornified cell envelope 的 <strong>major component</strong>。</aside>
 </section>
 
 <section class="ex-note" id="immunopathology">
@@ -188,11 +188,11 @@
 <tr><td>Chronic lichenified（&gt;3 days）</td><td>Hyperplastic epidermis、rete ridges 延長、prominent hyperkeratosis、minimal spongiosis；真皮單核細胞浸潤以 <strong>macrophages</strong> 為主</td><td><mark data-q="104-28"><strong>IgE-bearing</strong> LCs 增加</mark>；mast cells 增加但 <strong>fully granulated</strong>；<mark data-q="104-28,108-50"><strong>neutrophils absent</strong>（即使 <em>S. aureus</em> 定殖或感染增加）</mark>；<mark data-q="104-28"><strong>eosinophils 增加</strong></mark></td></tr>
 </tbody>
 </table>
-<p class="ex-cite">p.369；Table 22-2，p.372。</p>
+<p class="ex-cite">p.369；Table 22-2，p.372（Table 22-2 欄名寫 acute &lt;3 days、chronic &gt;3 days；p.369 內文寫 acute 為發生後 3 or fewer days）。</p>
 <ul>
 <li><mark data-q="104-28">Eosinophils 分泌 cytokines 與 mediators 增強過敏發炎，並以 <strong>reactive oxygen intermediates</strong> 與 <strong>toxic granule proteins</strong> 造成組織傷害</mark>。<span class="ex-ref">p.369</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Neutrophils 在 AD 病灶中是 absent，<em>S. aureus</em> 定殖時也一樣；慢性病灶增加的是 <strong>IgE</strong>-bearing（不是 IgA）Langerhans cells。急性期 eosinophils 很少，慢性期才增加。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Neutrophils 在 AD 病灶中 absent，即使 <em>S. aureus</em> 定殖或感染增加時也是如此；慢性病灶 <strong>IgE</strong>-bearing LCs 增加。Eosinophils 在急性病灶 rare，在慢性病灶增加。</aside>
 </section>
 
 <section class="ex-note" id="cytokines">
@@ -203,19 +203,19 @@
 <li><mark data-q="105-06,111-24,114-06,106-30,108-50">Nonlesional AD 與 acute AD 主要表現 <strong>IL-4、IL-5、IL-13、IL-25、IL-31、IL-33</strong></mark>；這些 type 2 cytokines 存在於 AD 所有階段，可由 ILC2、mast cells、basophils 等多種細胞分泌 → 冗餘性高，所以 <strong>targeting cytokine 比 targeting cell 更有效</strong>。<span class="ex-ref">p.370</span></li>
 <li><mark data-q="105-06">動物模型中 type 2 cytokines 可重現 IgE 上升、eosinophilia、skin barrier dysfunction、allergic skin inflammation 與 itching</mark>。</li>
 <li>IL-22–IL-17 路徑（與 IL-4、IL-13 一起）可抑制 keratinocyte terminal differentiation（含 filaggrin 表現）；dendritic cell 的 IL-23 增強 IL-22–IL-17 分化，而 IL-4、IL-13 又能增加 DC 的 IL-23；阻斷 IL-4/IL-13 改善 AD 時，IL-23 與 IL-17 也下降。<span class="ex-ref">p.370</span></li>
-<li><mark data-q="111-24">Acute 轉為 chronic 時 <strong>Th1 cytokines（如 IFN-γ）增加</strong>，加重發炎</mark>；IL-4、IL-13 預處理會減弱對 interferons 與 IL-17 的反應，早期暴露有長期影響。</li>
+<li><mark data-q="111-24,106-30">Acute 轉為 chronic 時 <strong>Th1 cytokines（如 IFN-γ）增加</strong>，加重發炎</mark>；IL-4、IL-13 預處理會減弱對 interferons 與 IL-17 的反應，早期暴露有長期影響。</li>
 <li>Birth cohort：在 AD 發病前的高風險嬰兒已可測到 TSLP → <strong>TSLP–Th2–ILC2 路徑</strong>在 AD 起始扮演關鍵角色。</li>
 <li><mark data-q="105-06,106-30,108-50">Chronic AD 時 <strong>IL-5 增加</strong>，參與 <strong>eosinophil development and survival</strong></mark>。<span class="ex-ref">p.370</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>IL-4、IL-13 是 Th2（type 2），不是 Th1；慢性期增加並促進 eosinophil 存活的是 <strong>IL-5</strong>（不是 IL-4，也不是 IL-8）；慢性期加重發炎的 Th1 cytokine 是 IFN-γ。</aside>
+<aside class="ex-trap"><strong>易錯</strong>IL-4、IL-13 屬 type 2 cytokines；chronic AD 時 <strong>IL-5</strong> 增加，參與 eosinophil development and survival；acute 轉為 chronic 時增加的 Th1 cytokines 以 IFN-γ 為例，會加重 AD 皮膚發炎。</aside>
 <h3>Chemokines（趨化激素）</h3>
 <ul>
 <li><mark data-q="104-40">Skin-specific chemokine <strong>CTACK（CCL27）</strong> 在 AD 高度上升，優先吸引 <strong>CLA+ CCR10+</strong> T cells 進入皮膚</mark>。<span class="ex-ref">p.370</span></li>
-<li><mark data-q="104-40">Skin-homing CLA+ T cells 上的 <strong>CCR4</strong> 可結合皮膚小靜脈內皮的 <strong>CCL17</strong>；CCR4+ Th2 cells 被 <strong>MDC（macrophage-derived chemokine）</strong> 與 <strong>TARC（thymus and activation-regulated chemokine）</strong> 選擇性招募，兩者在 AD 都上升</mark>；AD 嚴重度與 TARC 濃度相關。</li>
+<li><mark data-q="104-40">Skin-homing CLA+ T cells 上的 <strong>CCR4</strong> 可結合皮膚小靜脈內皮的 <strong>CCL17</strong>；CCR4+ Th2 cells 被 <strong>MDC（macrophage-derived chemokine）</strong> 與 <strong>TARC（原文寫 thymus and activation-regulated cytokine）</strong> 選擇性招募，兩者在 AD 都上升</mark>；AD 嚴重度與 TARC 濃度相關。</li>
 <li>Fractalkine、IP-10（IFN-γ–inducible protein 10）、MIG（monokine induced by IFN-γ）在 keratinocytes 強烈上調，使 Th1 cells 往表皮移動，尤其在 chronic AD。</li>
 <li>MCP-4、eotaxin、RANTES 增加 → macrophages、eosinophils、T cells 浸潤於急性與慢性病灶。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>AD 的 skin-homing 受體是 <strong>CCR4</strong>（配 CCL17／TARC、MDC）與 <strong>CCR10</strong>（配 CCL27／CTACK）；CCR7、CXCR4 不是本章列出的皮膚歸巢受體。</aside>
+<aside class="ex-trap"><strong>易錯</strong>CTACK（CCL27）優先吸引 skin-homing <strong>CLA+ CCR10+</strong> T cells；skin-homing CLA+ T cells 上的 <strong>CCR4</strong> 可結合皮膚小靜脈內皮的 CCL17，CCR4+ Th2 cells 由 MDC 與 TARC 選擇性招募。</aside>
 <h3>Immune effects on epidermal differentiation complex（免疫對表皮分化的影響）</h3>
 <ul>
 <li>乾燥皮膚與 TEWL 增加反映 barrier dysfunction 與 NMF 流失；但只有少數病人有 FLG null mutations，多數 AD 是 <strong>immune-mediated</strong> 的表皮終端分化下降 → 結構蛋白、filaggrin 分解產物、表皮脂質與 <mark data-q="106-08">antimicrobial peptides 生成減少</mark>。<span class="ex-ref">p.370</span></li>
@@ -239,7 +239,7 @@
 <li>表現為 cutaneous hyperreactivity：接觸過敏原、濕度變化、大量出汗、低濃度刺激物後就搔抓。<span class="ex-ref">p.370</span></li>
 <li><mark data-q="106-29">搔抓的機械性傷害誘發 proinflammatory cytokine 與 chemokine 釋放 → <strong>vicious scratch–itch cycle</strong>，使 AD 皮疹持續</mark>。<span class="ex-ref">p.370</span></li>
 <li><mark data-q="110-27">Mast cell 釋放 histamine <strong>不是</strong> AD 癢的唯一原因：<strong>H1 antihistamines 似乎無法控制 AD 的癢</strong></mark>；H4 receptor 研究顯示 histamine 可能有部分作用。<span class="ex-ref">p.370–371</span></li>
-<li>TCs 與 calcineurin inhibitors 能有效減癢 → 發炎細胞很重要。<span class="ex-ref">p.371</span></li>
+<li><mark data-q="108-02">TCs 與 calcineurin inhibitors 能有效減癢 → 發炎細胞很重要</mark>。<span class="ex-ref">p.371</span></li>
 <li>相關分子：<mark data-q="105-06,108-50">T cell–derived cytokines 如 <strong>IL-31</strong></mark>、stress-induced neuropeptides、作用於 protease-activated receptors 的 proteases、eicosanoids、eosinophil-derived proteins。<span class="ex-ref">p.371</span></li>
 </ul>
 <h3>其他章補充：IL-31 與 itch–scratch cycle</h3>
@@ -321,7 +321,7 @@
 <li>HIV infection 與 scabies 等 infestation 也可有 eczematous dermatitis；inverse（flexural）或 erythrodermic psoriasis 有時不易區分。</li>
 <li>Zinc deficiency：飲食缺乏、腹瀉流失、慢性腎肝病，或遺傳性 zinc carrier <strong>ZIP4</strong> 缺陷；皮疹分布 <strong>perioral、acral、perineal</strong>。<span class="ex-ref">p.373</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>STAT3-HIES 雖然 IgE 很高，病人通常不是 atopic；合併 food allergy 的是 DOCK8 deficiency。Wiskott-Aldrich 的線索是血小板小又少。</aside>
+<aside class="ex-trap"><strong>易錯</strong>STAT3 突變的 HIE syndrome 雖然 serum IgE 升高，病人通常不是 atopic；DOCK8 deficiency 的另一特點是許多病人合併 food allergies。Wiskott-Aldrich syndrome 周邊血抹片可見 small platelets，並有 thrombocytopenia。</aside>
 </section>
 
 <section class="ex-note" id="course">
@@ -383,9 +383,9 @@
 <li>Nonsedating antihistamines 效果不一，可用於合併 urticaria 或 allergic rhinitis 者。</li>
 <li><mark data-q="110-27">夜間較癢，睡前用 <strong>sedating antihistamines</strong>（hydroxyzine、diphenhydramine）主要靠 <strong>soporific（安眠）</strong>作用</mark>。</li>
 <li><strong>Doxepin</strong>：tricyclic antidepressant + H1 與 H2 blockade；成人 <strong class="ex-n">10–75 mg</strong> 睡前，或最多 <strong class="ex-n">75 mg BID</strong>；夜間仍嚴重可短期用 sedative 或 melatonin。</li>
-<li><mark data-q="107-44"><strong>Topical antihistamines 一般不建議</strong>，因可能造成 cutaneous sensitization</mark>；但短期（<strong class="ex-n">1 week</strong>）<strong class="ex-n">5%</strong> doxepin cream 可減癢而不致敏；大範圍塗抹會嗜睡，也有 allergic contact dermatitis 報告。<span class="ex-ref">p.376</span></li>
+<li><mark data-q="107-44,108-02"><strong>Topical antihistamines 一般不建議</strong>，因可能造成 cutaneous sensitization</mark>；但短期（<strong class="ex-n">1 week</strong>）<strong class="ex-n">5%</strong> doxepin cream 可減癢而不致敏；<mark data-q="108-02">大範圍塗抹會嗜睡，也有 allergic contact dermatitis 報告</mark>。<span class="ex-ref">p.376</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>外用抗組織胺不是第一線（會致敏）；口服抗組織胺對 AD 的癢證據不足，鎮靜型主要用於幫助睡眠。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Topical antihistamines 一般不建議（可能造成 cutaneous sensitization）；histamine 不是 AD 癢的主要介質，缺乏令人信服的證據顯示抗組織胺改善 AD 的癢；sedating antihistamines 睡前使用主要靠 soporific 作用。</aside>
 </section>
 
 <section class="ex-note" id="tx-topical">
@@ -397,7 +397,7 @@
 <li>每天使用有效 emollient 可減少 topical glucocorticoids 與 NSAIDs 需求。部分 lotion／cream 含防腐劑、增溶劑、香料而刺激；高含水 lotion 因蒸發反而使皮膚乾燥。<span class="ex-ref">p.376</span></li>
 <li>偏好較厚、bland、高脂質 emollients，但可能干擾 eccrine sweat duct、誘發 folliculitis 或癢 → 改用較不 occlusive 的產品。<span class="ex-ref">p.376–377</span></li>
 <li><strong>Plain petrolatum</strong>：嵌入角質層，似乎上調 skin barrier 與 antimicrobial peptide 基因表現；含 ceramides 等添加物的益處不明；一研究 urea-containing moisturizer 優於標準 emollient。<span class="ex-ref">p.377</span></li>
-<li>Baths 或 wet dressings 促進 topical glucocorticoids 穿透；最佳洗澡方式不明（濕皮膚與乾皮膚塗 TCs 結果無差異），頑固病例常用「<strong>soak and smear</strong>」。</li>
+<li>Baths 或 wet dressings 促進 topical glucocorticoids 穿透；理想的洗澡方式不明（optimal bathing regimen not known）（濕皮膚與乾皮膚塗 TCs 結果無差異），頑固病例常用「<strong>soak and smear</strong>」。</li>
 <li><strong>Wet wraps</strong>：用於嚴重或慢性、治療無效的區域；過度使用 → maceration 與 secondary infection；之後若沒擦 emollient 會使皮膚乾裂 → 限於控制不佳者並由醫師密切監測。</li>
 </ul>
 <h3>Topical corticosteroids（TCs）</h3>
@@ -405,11 +405,11 @@
 <li>依 AD guideline，<mark data-q="107-44"><strong>TCs 是抗發炎治療的基石（cornerstone）</strong></mark>。<span class="ex-ref">p.377</span></li>
 <li>Potent fluorinated glucocorticoids 避免用在 face、genitalia、intertriginous areas，這些部位用 low-potency 且長期只間歇使用；TCs 擦病灶，未受侵犯處擦 emollients。</li>
 <li>治療失敗常與用量不足有關：<mark data-q="107-44">成人全身塗一次約需 <strong class="ex-n">30 g</strong> cream 或 ointment</mark>；全身每天兩次、連續 2 週約需 <strong class="ex-n">840 g（2 lb）</strong>。</li>
-<li>依 vasoconstrictor assay 分 <strong class="ex-n">7</strong> 級；ultrahigh-potency 每天一到兩次只能用很短期間（通常 <strong class="ex-n">2 weeks</strong>），用在 lichenified 區，不用於臉或皺摺；midpotency 可較長期用於軀幹與四肢。</li>
+<li>依 vasoconstrictor assay 分 <strong class="ex-n">7</strong> 級（seven classes）；ultrahigh-potency 每天一到兩次只能用很短期間（通常 <strong class="ex-n">2 weeks</strong>），用在 lichenified 區，不用於臉或皺摺；midpotency 可較長期用於軀幹與四肢的慢性 AD。<span class="ex-ref">p.377</span></li>
 <li>影響效價與副作用：分子結構、vehicle、用量、時間、occlusion，以及年齡、BSA 與體重、發炎、部位、個體代謝；<strong>ointment 比 cream 更 occlusive，系統吸收較多</strong>。</li>
 <li>Local side effects：striae、atrophy、perioral dermatitis、acne rosacea；長期每天使用（尤其臉部）→ <strong>steroid withdrawal syndrome</strong>（停藥時嚴重紅、腫、灼熱）。Systemic：HPA axis suppression，嬰幼兒風險最高。</li>
 <li>FDA 核准用於較小兒童：desonide hydrogel 與 nonethanolic foam、fluocinolone acetonide oil、fluticasone 0.05% cream；<mark data-q="107-44"><strong>mometasone cream 與 ointment 核准用於 ≥2 歲</strong></mark>。<span class="ex-ref">p.377</span></li>
-<li><mark data-q="114-06"><strong>Proactive therapy</strong>：每天一次控制後，以<strong>每週兩次 fluticasone</strong> 擦在先前侵犯、易復發的區域維持長期控制</mark>；目的是控制 normal-appearing skin 的殘餘疾病（免疫失調、<em>S. aureus</em> 定殖），不只是把藥擦在正常皮膚。<span class="ex-ref">p.377</span></li>
+<li><mark data-q="114-06"><strong>Proactive therapy</strong>：每天一次控制後，以<strong>每週兩次 fluticasone</strong> 擦在先前侵犯、易復發的區域，可在部分病人（a subset of patients）維持長期控制</mark>；目的是控制 normal-appearing skin 的殘餘疾病（免疫失調、<em>S. aureus</em> 定殖），不只是把藥擦在正常皮膚。<span class="ex-ref">p.377</span></li>
 </ul>
 <h3>Topical calcineurin inhibitors（TCIs）</h3>
 <table class="ex-table">
@@ -449,7 +449,7 @@
 <h2>17. Management III：Systemic Therapy（全身治療）</h2>
 <ul>
 <li>開始全身治療要考慮整體嚴重度、外用反應、過去順從性、生活品質影響、共病與病人偏好；之前要先排除 CTCL、allergic contact dermatitis、scabies、immunodeficiency（可能需 biopsy 或檢驗）。<span class="ex-ref">p.378–379</span></li>
-<li>目前沒有指引或比較性資料能決定最佳第一線全身治療，也沒有明確流程。<span class="ex-ref">p.379</span></li>
+<li>目前沒有指引或比較性資料能決定 optimal first-line 全身治療，也沒有明確流程。<span class="ex-ref">p.379</span></li>
 </ul>
 <h3>Dupilumab</h3>
 <ul>
@@ -460,7 +460,7 @@
 <li>不良反應少：不抑制正常免疫反應；<strong>皮膚感染反而減少</strong>；T cell–dependent 與 T cell–independent 疫苗反應不受影響。</li>
 <li><mark data-q="110-27">最常見藥物相關不良反應：<strong>injection site reactions</strong> 與 <strong>conjunctivitis</strong>；conjunctivitis 原因不明、<strong>看起來不是感染性的</strong>，通常輕到中度，用 topical lubricants 或抗發炎治療可改善，也可能自行緩解</mark>。<span class="ex-ref">p.379</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Dupilumab 打的是 IL-4Rα（同時擋 IL-4 與 IL-13），不是單純抗 IL-4；結膜炎是最常見副作用之一，但不是感染性的。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Dupilumab 針對 IL-4 receptor α subunit；IL-4 與 IL-13 receptors 共用此 subunit，因此同時阻斷兩者訊號。Conjunctivitis 是最常見的藥物相關不良反應之一，原因不明，看起來不是感染性的。</aside>
 <h3>Conventional systemic agents（傳統全身藥物）</h3>
 <table class="ex-table">
 <thead><tr><th scope="col">Drug</th><th scope="col">Mechanism／dose（機轉與劑量）</th><th scope="col">Key points（重點）</th></tr></thead>
@@ -468,12 +468,12 @@
 <tr><td>Systemic glucocorticoids</td><td>Oral prednisone 等</td><td>慢性 AD <strong>很少有適應症</strong>但常被使用；停藥後常 <strong>severe rebound flare</strong>；急性惡化可短期使用，需 taper 並同時加強皮膚照護</td></tr>
 <tr><td>Cyclosporine</td><td><mark data-q="106-29">結合 <strong>cyclophilin</strong>，此複合物抑制 <strong>calcineurin</strong>（cytokine gene transcription 所需），主要作用於 T cells、抑制 cytokine transcription</mark>；<strong class="ex-n">5 mg/kg</strong>（短期與長期 1 年）；或成人固定劑量 <strong class="ex-n">150 mg</strong>（low）／<strong class="ex-n">300 mg</strong>（high）microemulsion</td><td>兒童與成人嚴重頑固 AD 短期治療有效；停藥可能快速復發；副作用：creatinine 上升／腎功能受損、hypertension、drug interactions</td></tr>
 <tr><td>Methotrexate</td><td>Antimetabolite，抑制 cytokine 合成與趨化</td><td>成人嚴重度約下降 <strong class="ex-n">42%</strong>，與 azathioprine 相近；兒童類似；副作用：血液異常、肝毒性（長期隱性肝毒性風險未知）</td></tr>
-<tr><td>Mycophenolate mofetil</td><td>Purine biosynthesis inhibitor；<strong class="ex-n">2 g/day</strong></td><td>Open-label 研究可清除頑固 AD；10 人研究 SCORAD 平均下降 <strong class="ex-n">68%</strong>；cyclosporine 誘導後的 flare 預防；herpes retinitis、血液毒性、PML、孕期流產與畸形</td></tr>
+<tr><td>Mycophenolate mofetil</td><td>Purine biosynthesis inhibitor；<strong class="ex-n">2 g/day</strong></td><td>Open-label 研究可清除頑固 AD；10 人研究 SCORAD 平均下降 <strong class="ex-n">68%</strong>；cyclosporine 誘導後的 flare 預防；herpes retinitis（1 例）、血液毒性、progressive multifocal encephalopathy（原文寫法）、孕期流產與畸形</td></tr>
 <tr><td>Azathioprine</td><td>Purine analog</td><td>成人與兒童對照試驗療效 modest；<strong>myelosuppression</strong>；<strong>TPMT</strong> 濃度可預測風險</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.379–380</p>
-<p>其他章補充：tacrolimus／pimecrolimus 與 <strong>FKBP</strong> 結合後同樣抑制 calcineurin–NFAT 路徑。<mark data-q="106-29">Cyclosporine 與 TCIs 的共同機轉是抑制 <strong>calcineurin</strong>，不是專一抑制 IL-4</mark>。<span class="ex-ref">p.3520（ch192）</span></p>
+<p>其他章補充：tacrolimus／pimecrolimus 與 <strong>FKBP</strong> 結合後同樣抑制 calcineurin–NFAT 路徑。<mark data-q="106-29">Cyclosporine 與 TCIs 的共同機轉是抑制 <strong>calcineurin</strong></mark>。<span class="ex-ref">p.3520（ch192）</span></p>
 <h3>Other therapies（其他治療）</h3>
 <table class="ex-table">
 <thead><tr><th scope="col">Therapy</th><th scope="col">Fitzpatrick 9e 重點</th></tr></thead>
@@ -488,7 +488,7 @@
 </tbody>
 </table>
 <p class="ex-cite">p.380–381</p>
-<aside class="ex-trap"><strong>易錯</strong>Omalizumab 沒有核准用於 AD（RCT 無效）。AD 的 antimicrobial peptides（如 LL-37）是<strong>被 type 2 cytokines 抑制</strong>，vitamin D 才是增加 cathelicidin 的因子。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Omalizumab 核准用於 allergic asthma 與 chronic urticaria；RCT 對 AD 沒有臨床效果。AD 病人的 antimicrobial peptide 表現被抑制，一般認為是 <strong>type 2 cytokines</strong> 的抑制作用；口服 vitamin D3 後 AD 病灶的 <strong>cathelicidin</strong> 表現顯著增加。</aside>
 <p>其他章補充：<mark data-q="106-08">Cathelicidin（LL-37）由 keratinocytes 產生，也存在於 mast cell granules 與 neutrophil granules</mark>；McKee：<mark data-q="106-08">keratinocyte 產生的 defensins 與 cathelicidins 對 bacteria、viruses、fungi 都有作用，LL-37 屬於 inducible antimicrobial peptides</mark>。<span class="ex-ref">p.154–155、p.157（ch11）</span> <span class="ex-ref ex-ref-mckee">McKee p.1、p.11</span></p>
 </section>
 

@@ -30,7 +30,7 @@
 </tbody>
 </table>
 <p class="ex-cite">整理自 p.3533–3547 內文與 Table 193-1，p.3548–3551。</p>
-<aside class="ex-trap"><strong>易錯</strong>Etanercept 是 fusion protein，不是 monoclonal antibody。Ustekinumab 打 p40（同時阻斷 IL-12 與 IL-23），打 p19 的是 guselkumab、tildrakizumab、risankizumab。Brodalumab 打的是 receptor（IL-17RA），不是 IL-17A 本身。Dupilumab 打的是 receptor 的 IL-4Rα subunit，不是 IL-4 ligand。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Etanercept 是 fusion protein（IgG1 Fc + soluble TNF receptor 2〔p75〕extracellular domain）。<span class="ex-ref">p.3537</span> Ustekinumab 針對 IL-12p40（IL-12 與 IL-23 共用 subunit）。<span class="ex-ref">p.3536</span> Guselkumab、tildrakizumab、risankizumab 針對 IL-23p19。<span class="ex-ref">p.3537</span> Brodalumab 針對 IL-17 receptor A chain（IL-17RA）。<span class="ex-ref">p.3535</span> Dupilumab 針對 IL-4 與 IL-13 receptors 共用的 IL-4Rα subunit。<span class="ex-ref">p.3545</span></aside>
 </section>
 
 <section class="ex-note" id="il1-family">
@@ -62,7 +62,7 @@
 </tbody>
 </table>
 <p class="ex-cite">p.3533；Table 193-1，p.3548。</p>
-<aside class="ex-trap"><strong>易錯</strong>Anakinra 與 etanercept 併用會增加 serious infections，因此建議 anakinra 不要與任何 TNF inhibitor 併用（p.3538）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Anakinra 與 etanercept 併用會增加 serious infections，因此建議 anakinra 不要與任何 TNF inhibitor 併用。<span class="ex-ref">p.3538</span></aside>
 <h3>IL-18、IL-33、IL-36、IL-37/38</h3>
 <ul>
 <li><strong>IL-18</strong>：與 IL-1β 一樣需切割活化（caspase-1、mast cell chymase 或 granzyme B）；receptor IL-18Rα–IL-18Rβ → p38 MAPK 與 AP-1，<strong>不活化 NF-κB</strong>；活性主要受 soluble IL-18 binding protein（IL-18BP）調控；與 IL-12 合作誘導 Th1。<mark data-q="111-24">Acute atopic dermatitis</mark> 與 psoriasis 中 IL-18 表現增加；cutaneous LE 的 keratinocyte 對 IL-18 反應增強。Adult-onset Still disease 血清 free IL-18 上升 → <strong>tadekinig alfa</strong>（recombinant IL-18BP）2017 年獲 FDA orphan drug 與 breakthrough therapy 資格。<span class="ex-ref">p.3533</span></li>
@@ -95,9 +95,9 @@
 <p class="ex-cite">p.3534–3535；Table 193-1，p.3548。</p>
 <ul>
 <li>Brodalumab 的 FDA 適應症：成人 moderate-to-severe plaque psoriasis，為 systemic therapy 或 phototherapy 候選人，且對其他 systemic therapies 無反應或失去反應。<span class="ex-ref">p.3535</span></li>
-<li>Ch28（p.487，Table 28-7）secukinumab 寫 <strong class="ex-n">150–300 mg</strong> at weeks 0、1、2、3、4（loading）後 every 4 weeks；兩章都沒有依體重加到 450 mg 的建議。Ixekizumab 在 ch28 寫得較清楚：week 0 給 <strong class="ex-n">160 mg</strong>，weeks 2–12 每 2 週 80 mg，之後 80 mg every 4 weeks。</li>
+<li>Ch28（p.487，Table 28-7）secukinumab 寫 <strong class="ex-n">150–300 mg</strong> at weeks 0、1、2、3、4（loading）後 every 4 weeks。Ixekizumab 在 ch28 寫得較清楚：week 0 給 <strong class="ex-n">160 mg</strong>，weeks 2–12 每 2 週 80 mg，之後 80 mg every 4 weeks。<span class="ex-ref">p.487</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong><mark data-q="110-05">合併 inflammatory bowel disease 的乾癬病人不宜優先選 IL-17 抑制劑</mark>（secukinumab、ixekizumab 列 IBD；brodalumab 列 Crohn disease）。Brodalumab 另一個特殊警示是 suicidal ideation。</aside>
+<aside class="ex-trap"><strong>易錯</strong><mark data-q="110-05">Table 193-1 副作用欄：secukinumab、ixekizumab 列 inflammatory bowel disease；brodalumab 列 Crohn disease</mark>。Brodalumab 另列 suicidal ideation。<span class="ex-ref">p.3548</span></aside>
 </section>
 
 <section class="ex-note" id="il22">
@@ -131,7 +131,7 @@
 <li>Phase III：PASI75 at week 12，45 mg <strong class="ex-n">&gt;66%</strong>、90 mg <strong class="ex-n">&gt;75%</strong>。<span class="ex-ref">p.3536</span></li>
 <li><mark data-q="114-04">後續研究發現 <strong>IL-23（而非 IL-12）才是 psoriasis 更重要的驅動者</strong></mark> → 轉向專門阻斷 IL-23/IL-17 axis。<span class="ex-ref">p.3536</span></li>
 <li>HS：case reports 與小型非對照研究，但 <mark data-q="106-01">TNF antagonists 療效較好</mark>；severe AD：病例報告有效，但 RCT 不支持。<span class="ex-ref">p.3536</span></li>
-<li>Dose（Table 193-1 原文）：<mark data-q="104-08,110-05">45–90 mg SC，4 weeks 後再一次，之後 every 12 weeks</mark>。Ch28（p.487）明列 <mark data-q="110-05">weight-based：<strong class="ex-n">&lt;100 kg 45 mg</strong>、<strong class="ex-n">&gt;100 kg 90 mg</strong>，weeks 0、4 後 every 12 weeks</mark>。</li>
+<li>Dose（Table 193-1 原文）：<mark data-q="104-08,110-05">45–90 mg SC，4 weeks 後再一次，之後 45 mg SC every 12 weeks</mark>。<span class="ex-ref">p.3548</span> Ch28（p.487）明列 <mark data-q="110-05">weight-based：<strong class="ex-n">&lt;100 kg 45 mg</strong>、<strong class="ex-n">&gt;100 kg 90 mg</strong>，weeks 0、4 後 every 12 weeks</mark>。<span class="ex-ref">p.487</span></li>
 <li>SE：serious infections、TB、malignancies、hypersensitivity reactions、<strong>reversible posterior leukoencephalopathy syndrome（RPLS）</strong>。<span class="ex-ref">p.3548</span></li>
 </ul>
 <h3>Anti–IL-23p19</h3>
@@ -144,7 +144,7 @@
 </tbody>
 </table>
 <p class="ex-cite">p.3537；Table 193-1，p.3549。Guselkumab SE：infection、TB、URTI、headache、injection-site reactions。</p>
-<aside class="ex-trap"><strong>易錯</strong><mark data-q="115-35">課本寫作時 risankizumab 用於 GPP、guselkumab 用於 PPP 都還只是 Phase III 試驗</mark>；台灣 TFDA 實際核准的適應症要另外查證，考題以出題時的仿單為準。</aside>
+<aside class="ex-trap"><strong>易錯</strong><mark data-q="115-35">課本寫作時 risankizumab 用於 GPP 或 erythrodermic psoriasis、guselkumab 用於 palmoplantar pustulosis 都還在 Phase III 試驗</mark>。<span class="ex-ref">p.3537</span></aside>
 </section>
 
 <section class="ex-note" id="tnf">
@@ -154,13 +154,14 @@
 <li>Homotrimeric cytokine；多種細胞表現（activated T cells、neutrophils、mast cells、NK cells、APCs、adipocytes、fibroblasts、keratinocytes）。<span class="ex-ref">p.3537</span></li>
 <li>結合 <strong>p55 與 p75 receptors</strong>（主要在 keratinocytes、neutrophils、endothelial cells、fibroblasts）；與 IL-17A 強烈加乘。<span class="ex-ref">p.3537</span></li>
 <li>Psoriasis 中：招募免疫細胞、<strong>抑制 keratinocyte apoptosis</strong>、促進 keratinocyte proliferation；也是 PsA、RA、IBD 的核心 cytokine。<span class="ex-ref">p.3537</span></li>
+<li><mark data-q="104-08">Psoriasis 中針對 TNF-α 的 etanercept、adalimumab、infliximab 證實有效</mark>；三者都抑制 TNF-α，但結構不同，pharmacodynamic 與 pharmacokinetic 特性各異。<span class="ex-ref">p.3537</span></li>
 <li>並非所有病人都有反應（可能與 genetic background 異質性有關）；長期可能失效，即使是 fully humanized antibodies → 推測產生 <strong>anti-idiotype antibodies</strong>。<span class="ex-ref">p.3537</span></li>
 <li>無皮膚科適應症的 TNF inhibitors：golimumab（RA、PsA、AS）、certolizumab pegol（Crohn disease、RA）。<span class="ex-ref">p.3537</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Drug</th><th scope="col">Structure</th><th scope="col">FDA indications（適應症）</th><th scope="col">Psoriasis dose（劑量）</th></tr></thead>
 <tbody>
-<tr><td>Etanercept</td><td><mark data-q="103-11">Fusion protein：IgG1 Fc + soluble TNFR2（p75）extracellular domain</mark></td><td>RA、polyarticular JIA、PsA、AS、<mark data-q="103-11,104-08">plaque psoriasis</mark></td><td><strong class="ex-n">50 mg twice weekly × 3 months</strong> → 50 mg once weekly</td></tr>
+<tr><td>Etanercept</td><td><mark data-q="103-11">Fusion protein：IgG1 Fc + soluble TNFR2（p75）extracellular domain</mark></td><td>RA、polyarticular JIA、<mark data-q="103-11">PsA</mark>、AS、<mark data-q="103-11,104-08">plaque psoriasis</mark></td><td><strong class="ex-n">50 mg twice weekly × 3 months</strong> → 50 mg once weekly</td></tr>
 <tr><td>Adalimumab</td><td>Recombinant humanized mAb，<strong>human variable domain</strong></td><td><mark data-q="104-08">Plaque psoriasis</mark>、Crohn disease、UC、uveitis、<mark data-q="102-32,103-11,107-30"><strong>hidradenitis suppurativa</strong>（已獲 FDA 核准）</mark></td><td><strong class="ex-n">80 mg</strong> initial → <strong class="ex-n">40 mg every 2 weeks</strong>（從第 1 週開始）</td></tr>
 <tr><td>Infliximab</td><td><strong>Chimeric</strong> mAb，<strong>mouse variable domain</strong></td><td><mark data-q="104-08">Plaque psoriasis</mark>、PsA、Crohn disease、UC、AS、RA</td><td><strong class="ex-n">5 mg/kg IV</strong> at weeks 0、2、6，之後 <strong>every 8 weeks</strong></td></tr>
 </tbody>
@@ -168,10 +169,10 @@
 <p class="ex-cite">p.3537–3538；Table 193-1，p.3549。</p>
 <ul>
 <li>Infliximab：三種 TNF 藥中最常用於 <strong>pustular psoriasis</strong>，雖缺乏充分臨床試驗，已成為 <strong>severe acute GPP</strong> 的建議選項之一；作用快，第一次輸注後最快 <strong class="ex-n">2 days</strong> 全身發炎與膿疱開始消退。因含 mouse variable domain，<strong>anti-drug antibodies 風險最高</strong>。<span class="ex-ref">p.3538</span></li>
-<li>Ch28（p.494）補充：<mark data-q="114-04">infliximab 與 adalimumab 同時結合 soluble 與 membrane-bound TNF，etanercept 主要結合 soluble TNF</mark>。</li>
+<li>Ch28（p.494）補充：<mark data-q="114-04">infliximab 與 adalimumab 同時結合 soluble 與 membrane-bound TNF，etanercept 主要結合 soluble TNF</mark>。<span class="ex-ref">p.494</span></li>
 <li><mark data-q="102-32,106-01">本章 HS 相關 biologics：adalimumab（FDA 核准）、anakinra（小型研究，IL-1β 上升為理論基礎）、ustekinumab（病例報告，效果不如 TNF antagonists）、secukinumab（試驗中）</mark>。<span class="ex-ref">p.3533–3538</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Adalimumab 的結構：ch193 寫「recombinant humanized mAb with a human variable domain」，ch28（p.493）寫 fully human IgG1 mAb，兩章用語不同。Infliximab 才是 chimeric（mouse variable domain）。Anti-TNF 可治 psoriasis 與 HS，但本身也會誘發 paradoxical psoriasis。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Adalimumab 的結構：ch193 寫「recombinant humanized mAb with a human variable domain」<span class="ex-ref">p.3537</span>，ch28 寫 fully human recombinant IgG1 mAb<span class="ex-ref">p.493</span>，兩章用語不同。Infliximab 為 chimeric mAb（mouse variable domain）。<span class="ex-ref">p.3538</span> TNF antagonists 用於治療 psoriasis，但也有 new-onset 或惡化 cutaneous psoriasis 的 paradoxical 反應報告。<span class="ex-ref">p.3538</span></aside>
 <h3>Paradoxical reactions（矛盾反應）</h3>
 <ul>
 <li>New-onset 或惡化的 cutaneous psoriasis、<strong>lupus-like syndrome</strong>、cutaneous vasculitis、<strong>sarcoidosis</strong>；機轉與 <strong>IFN-α 產生增加</strong>及皮膚 cytokine 平衡失調有關。<span class="ex-ref">p.3538</span></li>
@@ -192,7 +193,7 @@
 </ul>
 <h3>Pregnancy（懷孕，跨章補充）</h3>
 <ul>
-<li><mark data-q="101-49">Ch28 Table 28-8（p.488）：數種 biologic agents 為 <strong>Pregnancy Category B</strong>，可在懷孕時使用；cyclosporin A 為 Category C 且不致畸胎；<strong>methotrexate</strong>（fetotoxic、abortifacient）與 oral retinoids 懷孕 <strong>absolutely contraindicated</strong></mark>。</li>
+<li><mark data-q="101-49">Ch28 Table 28-8（p.488）：數種 biologic agents 為 <strong>Pregnancy Category B</strong>，可在懷孕時使用；cyclosporin A 為 Category C 且不致畸胎；<strong>methotrexate</strong>（fetotoxic、abortifacient）與 oral retinoids 懷孕 <strong>absolutely contraindicated</strong></mark>。<span class="ex-ref">p.488</span></li>
 <li>本章：rituximab 為 <strong>Pregnancy Category C</strong>，哺乳安全性不明。<span class="ex-ref">p.3545</span></li>
 </ul>
 </section>
@@ -226,7 +227,7 @@
 <ul>
 <li>EGFR = ErbB1 = HER1；ligand binding → homodimer 或與 ErbB2/3/4 heterodimer → tyrosine kinase 活化 → Ras/Raf/MEK/ERK、PLCγ/PKC、PI3K/AKT、STAT、NF-κB。<span class="ex-ref">p.3540</span></li>
 <li><strong class="ex-n">7</strong> 個 EGFR ligands：amphiregulin、betacellulin、HB-EGF、TGF-α、epiregulin、epigen、EGF。<span class="ex-ref">p.3540</span></li>
-<li>EGFR 對 epidermal 與 hair follicle homeostasis、傷口 reepithelialization、keratinocyte stem cell 增生必要；與 NMSC、psoriasis、AD、ACD 相關。EGFR 或 TGF-α 表現減少 → 分化異常、hair shaft abnormalities、wavy hair、curly whiskers、outer root sheath 缺陷、傷口癒合受損。<span class="ex-ref">p.3540–3541</span></li>
+<li>EGFR 對 epidermal 與 hair follicle homeostasis、傷口 reepithelialization、keratinocyte stem cell 增生必要；與 NMSC、psoriasis、AD、ACD 相關。EGFR 或 TGF-α 表現減少 → epidermal 與 hair follicle 分化異常、hair 發育延遲、多種 hair shaft abnormalities；TGF-α 表現減少 → 傷口癒合受損、wavy hair、curly whiskers、outer root sheath 缺陷。<span class="ex-ref">p.3540–3541</span></li>
 <li>EGFR 過度表現：lung SCC（<strong class="ex-n">80%</strong>）、anal cancers；aberrant EGFR signaling 也與 psoriasis、eczema、atherosclerosis 相關。<span class="ex-ref">p.3541</span></li>
 <li>Recombinant human EGF（<strong>Heberprot-P</strong>）用於 <strong>diabetic foot ulcers</strong>（傷口內注射或外用）。<span class="ex-ref">p.3541</span></li>
 </ul>
@@ -250,7 +251,7 @@
 <li>傷口癒合：FGF1、FGF2 促進血管新生與 granulation tissue；FGF7、FGF10（KGF-2）促進上皮修復；FGF2 可促進 burns、ulcers 修復。<span class="ex-ref">p.3542</span></li>
 <li>Hair cycle：FGF5 抑制 hair elongation；FGF5 失去功能 → <strong>anagen 延長</strong>、頭髮極長（人類亦然）；外用阻斷 FGF5 的 herbal extract 可減少掉髮。<span class="ex-ref">p.3542</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>課本該段開頭寫「FGF4 plays a particularly unique role in the hair cycle」，但後文描述的長毛表型與 anagen 延長都是 <strong>FGF5</strong>；考題若問抑制毛髮生長的 FGF，答 FGF5。</aside>
+<aside class="ex-trap"><strong>易錯</strong>課本該段開頭寫「FGF4 plays a particularly unique role in the hair cycle」（小鼠 homolog 被 disrupt 後毛髮異常長，提示其抑制 hair elongation）；接著寫 <strong>FGF5</strong> 表現被 disrupt 會延長 anagen、多物種（包括人類）頭髮極長，外用阻斷 FGF5 可減少掉髮。<span class="ex-ref">p.3542</span></aside>
 <h3>IGF/insulin</h3>
 <ul>
 <li>IGF-1 → IGF-1R；insulin → IR；IGF-2 → IGF-1R 與 IR（IR-A，short isoform）。<span class="ex-ref">p.3542</span></li>
@@ -303,9 +304,9 @@
 <h3>Initiating therapy &amp; monitoring（給藥與監測）</h3>
 <ul>
 <li>皮膚科 off-label 沒有既定劑量；常用 <strong class="ex-n">375 mg/m²</strong> BSA <strong>weekly</strong>。<span class="ex-ref">p.3544</span></li>
-<li>Premedication：<strong>acetaminophen + antihistamines</strong>，減少 infusion reactions。</li>
-<li>治療中每 <strong class="ex-n">2–3 months</strong> 監測 blood cell counts 與 serum antibody levels；CD20+ B cells 快速耗竭，持續 <strong class="ex-n">2–6 months</strong> 才恢復。</li>
-<li><strong>Live vaccines</strong> 治療前與治療中都不可施打。</li>
+<li>Premedication：<strong>acetaminophen + antihistamines</strong>，減少 infusion reactions。<span class="ex-ref">p.3544</span></li>
+<li>治療中每 <strong class="ex-n">2–3 months</strong> 監測 blood cell counts 與 serum antibody levels；CD20+ B cells 快速耗竭，持續 <strong class="ex-n">2–6 months</strong> 才恢復。<span class="ex-ref">p.3544</span></li>
+<li><strong>Live vaccines</strong> 治療前與治療中都不可施打。<span class="ex-ref">p.3544</span></li>
 <li><strong>Pregnancy category C</strong>，哺乳安全性不明。<span class="ex-ref">p.3545</span></li>
 </ul>
 <h3>Risks &amp; complications（風險）</h3>
@@ -330,7 +331,7 @@
 <li>最大型試驗（<strong class="ex-n">380</strong> 人）：最高劑量 <strong class="ex-n">300 mg</strong> weekly 或 every 2 weeks，EASI 至少下降 <strong class="ex-n">68%</strong> vs placebo <strong class="ex-n">17%</strong>；<strong>itch 很快改善</strong>，最大改善在 <strong class="ex-n">4 weeks</strong> 內。<span class="ex-ref">p.3546</span></li>
 <li>Safety：不良事件頻率與 placebo 相同；感染相似且少，<strong>唯一增加的是 herpes virus infection</strong>；安全性至少不比 cyclosporine 差。<span class="ex-ref">p.3546</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Dupilumab 不是只抑制 IL-4，而是打 IL-4Rα、同時阻斷 IL-4 與 IL-13。本章副作用只寫 herpes virus infection；<mark data-q="110-27">ch22（p.379）寫 injection-site reactions 與 conjunctivitis 是最常見的藥物相關副作用，conjunctivitis 原因不明、看起來不是感染性</mark>。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Dupilumab 針對 IL-4Rα，預期同時阻斷 IL-4 與 IL-13 的結合與訊號。<span class="ex-ref">p.3545</span> 本章試驗中感染性不良事件除 herpes virus infection 增加外與 placebo 相近，Table 193-1 副作用欄只列 herpes virus infection 風險增加<span class="ex-ref">p.3546、p.3551</span>；<mark data-q="110-27">ch22（p.379）寫 injection-site reactions 與 conjunctivitis 是最常見的藥物相關副作用，conjunctivitis 原因不明、看起來不是感染性</mark>。<span class="ex-ref">p.379</span></aside>
 <h3>Tocilizumab（anti–IL-6R）</h3>
 <ul>
 <li>IL-6：<strong class="ex-n">21 kDa</strong> 單鏈 cytokine，可促發炎也可抗發炎；由 T cells、macrophages 產生，動員骨髓 neutrophils；IL-6 <strong>autoantibodies</strong> 的人會反覆 staphylococcal cellulitis 與 skin abscesses。<span class="ex-ref">p.3546</span></li>

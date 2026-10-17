@@ -7,7 +7,8 @@
 <tr><td>EM majus</td><td><strong class="ex-n">&lt;10%</strong></td><td>Typical targets; raised atypical targets</td><td>Mainly limbs（四肢為主）</td></tr>
 <tr><td>SJS</td><td><strong class="ex-n">&lt;10%</strong></td><td>Flat atypical targets; macules</td><td>Widespread（廣泛）</td></tr>
 <tr><td>SJS–TEN overlap</td><td><strong class="ex-n">10–30%</strong></td><td>Flat atypical targets; macules</td><td>Widespread</td></tr>
-<tr><td>TEN</td><td><strong class="ex-n">&gt;30%</strong></td><td>Macules, or large erythema without spots</td><td>Widespread</td></tr>
+<tr><td>TEN with maculae</td><td><strong class="ex-n">&gt;30%</strong></td><td>Flat atypical targets; macules</td><td>Widespread</td></tr>
+<tr><td>TEN on large erythema（without spots）</td><td><strong class="ex-n">&gt;10%</strong></td><td>No targets, no macules</td><td>Widespread</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 44-1，p.734；面積以「已剝離或可剝離（Nikolsky 陽性）」計算，p.736。</p>
@@ -30,7 +31,7 @@
 </tbody>
 </table>
 <p class="ex-cite">McKee p.261–262（Bastuji-Garin consensus）。</p>
-<aside class="ex-trap"><strong>易錯</strong>McKee p.262 的 SJS 定義印成「&gt;10% detachment」，與同書 p.265（less than 10%）及 Fitzpatrick Table 44-1（&lt;10%）矛盾，以 <strong class="ex-n">&lt;10%</strong> 為準。TEN 門檻：Fitzpatrick 寫 &gt;30%，McKee 寫 30% or more。</aside>
+<aside class="ex-trap"><strong>易錯</strong>McKee p.262 的 SJS 定義印成「&gt;10% detachment」；同書 p.265 寫 less than 10%，Fitzpatrick Table 44-1 寫 <strong class="ex-n">&lt;10%</strong>。TEN 門檻：Fitzpatrick 寫 &gt;30%（TEN on large erythema without spots 為 &gt;10%），McKee 寫 30% or more。</aside>
 </section>
 
 <section class="ex-note" id="epi">
@@ -45,12 +46,12 @@
 <li>McKee mortality：SJS 約 <strong class="ex-n">5%</strong>，TEN 最高約 <strong class="ex-n">40%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 <li>McKee：SJS/TEN 是 HIV 感染的重要併發症，AIDS 病人每年可達 <strong class="ex-n">1/1000</strong>，部分與常用 sulfonamides 有關；SLE 病人風險也特別高。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>兩本死亡率不同：Fitzpatrick SJS 約 10%、TEN 接近 50%（p.733）；McKee SJS 約 5%、TEN 最高 40%（McKee p.267）。Incidence 數字也不同，作答依題目出處。</aside>
+<aside class="ex-trap"><strong>易錯</strong>兩本死亡率不同：Fitzpatrick SJS 約 10%、TEN 接近 50%（p.733）；McKee SJS 約 5%、TEN 最高 40%（McKee p.267）。Incidence 數字也不同。</aside>
 </section>
 
 <section class="ex-note" id="etiology">
 <h2>3. Etiology（病因）</h2>
-<p><mark data-q="109-42">藥物是最重要的病因</mark>；超過 100 種藥物曾被報告，但不到十來種 high-risk drugs 就佔歐洲約一半病例。<span class="ex-ref">p.733</span></p>
+<p><mark data-q="109-42">藥物是最重要的病因</mark>；超過 100 種藥物曾被報告，但不到一打（fewer than a dozen）high-risk drugs 就佔歐洲約一半病例。<span class="ex-ref">p.733</span></p>
 <table class="ex-table">
 <thead><tr><th scope="col">Risk（風險）</th><th scope="col">Drugs（藥物）</th></tr></thead>
 <tbody>
@@ -59,13 +60,13 @@
 <tr><td>No increased risk</td><td>β-blockers、ACE inhibitors、calcium channel blockers、<mark data-q="105-23">thiazide diuretics 與 sulfonylureas（雖含 sulfonamide 結構）</mark>、insulin、propionic acid NSAIDs（e.g. ibuprofen）</td></tr>
 </tbody>
 </table>
-<p class="ex-cite">Table 44-3，p.734。Valproic acid 與其他抗癲癇藥不同，似乎沒有增加風險。</p>
-<aside class="ex-trap"><strong>易錯</strong>NSAID 要分類型：oxicam = high、diclofenac = moderate、ibuprofen = no increased risk；aspirin 不在 high-risk 名單。Sulfonylurea 雖有 sulfonamide 結構，也不是 high risk。</aside>
+<p class="ex-cite">Table 44-3，p.734。Valproic acid 與其他抗癲癇藥不同，似乎沒有增加風險。<mark data-q="105-23,106-27">Table 44-3 的 NSAIDs 只列 oxicam（high）、acetic acid（moderate）、propionic acid（no increased risk）三類，aspirin 未列入</mark>。</p>
+<aside class="ex-trap"><strong>易錯</strong>NSAID 依類型風險不同：oxicam = high、acetic acid（diclofenac）= moderate、propionic acid（ibuprofen）= no increased risk。Thiazide diuretics 與 sulfonylurea antidiabetics 雖有 sulfonamide 結構，列在 no increased risk。</aside>
 <ul>
-<li><mark data-q="109-42">Timing：開始用藥後 <strong class="ex-n">4–28 days</strong> 發病最具提示性</mark>；風險只在用藥頭 <strong class="ex-n">8 weeks</strong>。<span class="ex-ref">p.733–734</span></li>
+<li><mark data-q="109-42">Timing：開始用藥後 <strong class="ex-n">4–28 days</strong> 發病最具提示性；風險似乎只限於用藥頭 <strong class="ex-n">8 weeks</strong></mark>。<span class="ex-ref">p.733–734</span></li>
 <li>Lamotrigine、nevirapine 緩慢加量（slow dose escalation）可降低 mild rash，但沒有證據能降低 EN 風險。<span class="ex-ref">p.734</span></li>
 <li>Oxcarbazepine 與 carbamazepine 有明顯 cross-reactivity。<span class="ex-ref">p.734</span></li>
-<li>約 <strong class="ex-n">1/3</strong> 病例找不到明確藥物病因（idiopathic）。<span class="ex-ref">p.735</span></li>
+<li>約 <strong class="ex-n">1/3</strong> 病例找不到明確藥物病因（idiopathic）。<span class="ex-ref">p.735</span>At-a-glance 寫法：<strong class="ex-n">&gt;20%</strong> 病例仍為 idiopathic 或可能由感染引起。<span class="ex-ref">p.733</span></li>
 <li><mark data-q="109-42">Infection 的角色遠小於 EM，但 <em>Mycoplasma pneumoniae</em>、viral infection 與 immunization 相關病例都有報告，尤其在兒童</mark>。<span class="ex-ref">p.735</span></li>
 <li>其他：bone marrow transplantation 後（部分是極端的 acute GVHD，臨床與病理常無法區分）；<mark data-q="110-30">LE 病人風險增加，erosive LE 是 EN 的鑑別診斷</mark>；radiotherapy 合併抗癲癇藥時病灶集中在照射部位。<span class="ex-ref">p.735</span></li>
 <li>McKee：SJS/TEN 與藥物的關聯遠比 EM 強，致病藥物譜與 EM 相似；較新藥物中 nevirapine、lamotrigine 關聯強，sertraline、pantoprazole、tramadol 較弱但顯著；近期一項研究中 allopurinol 是最常見誘因（10 年間佔 <strong class="ex-n">20%</strong>）。<span class="ex-ref ex-ref-mckee">McKee p.645</span></li>
@@ -73,7 +74,7 @@
 <li>McKee：<mark data-q="109-42">兒童 SJS 有時與 <em>Mycoplasma pneumoniae</em> 感染有關</mark>；成人在感染後（hepatitis A、<em>M. pneumoniae</em>）發生 TEN 屬例外。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 <li>McKee：TEN 也可發生在 acute GVHD；部分確實是藥物反應，部分是 acute GVHD 本身的嚴重表現，預後極差。<span class="ex-ref ex-ref-mckee">McKee p.267</span><span class="ex-ref ex-ref-mckee">McKee p.274</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>不是「用藥前三天風險最高」。前驅期才開始吃的退燒止痛藥、感冒藥常被誤判為元凶（protopathic bias），見下方 Clinical findings。</aside>
+<aside class="ex-trap"><strong>易錯</strong><mark data-q="109-42">致病藥物典型是過去沒用過、在發病前 4 weeks 到 4 days 開始首次連續使用。前驅期才開始吃的 antipyretics、analgesics、「cough and cold medicines」常被誤判為元凶（protopathic bias）</mark>。<span class="ex-ref">p.736</span></aside>
 </section>
 
 <section class="ex-note" id="pathogenesis">
@@ -85,7 +86,7 @@
 <li><mark data-q="111-42"><strong>IL-15</strong> 與 EN 的 severity 及 mortality 相關</mark>。</li>
 <li>CD4+CD25+ regulatory T cells 在小鼠模型中可能保護表皮免受嚴重破壞；<mark data-q="104-34">comorbidities（cancer、HIV、collagen vascular disease）、comedications（e.g. corticosteroids）與 genetic background 可能改變免疫調節</mark>。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>關鍵分子是 granulysin，不是 granzyme B 或 Fas-L。IVIG 的理論基礎（anti-Fas）因此站不住腳。</aside>
+<aside class="ex-trap"><strong>易錯</strong>水疱液中 granulysin 濃度遠高於 perforin、granzyme B、Fas-L；在此濃度下只有 granulysin（其次 perforin）能殺 keratinocyte，Fas-L 不行（p.735）。IVIG 的提出是基於 anti-Fas 活性，但 Fas-L–Fas pathway 不參與或只些微參與 EN 機轉（p.744）。</aside>
 <table class="ex-table">
 <thead><tr><th scope="col">HLA allele</th><th scope="col">Drug（藥物）</th><th scope="col">Population（族群重點）</th></tr></thead>
 <tbody>
@@ -94,7 +95,7 @@
 </tbody>
 </table>
 <p class="ex-cite">p.735；ch45 p.760 另列 HLA-B*1502 與 phenytoin 引起的 SJS（漢人）、HLA-B*5701 與 abacavir hypersensitivity。</p>
-<aside class="ex-trap"><strong>易錯</strong>B*1502 配 carbamazepine、B*5801 配 allopurinol，考題常故意對調。</aside>
+<aside class="ex-trap"><strong>易錯</strong>HLA-B*1502 對應 carbamazepine，HLA-B*5801 對應 allopurinol（p.735）。</aside>
 <h3>McKee 5e 補充：免疫機轉與遺傳</h3>
 <ul>
 <li><mark data-q="106-27">水疱中的發炎細胞為 cytotoxic T lymphocytes 與 natural killer cells</mark>；<mark data-q="106-27,111-42">主要的 cytotoxic protein 是 granulysin，注射到小鼠皮膚可產生類似 TEN/SJS 的水疱</mark>。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
@@ -113,7 +114,7 @@
 <tr><td>T cell 辨識的藥物形式</td><td>通常是藥物的 native form，而非 reactive metabolite<span class="ex-ref">p.735</span></td><td>推測 drug metabolites 作為 hapten；sulfonamide 病例多為 slow acetylator<span class="ex-ref ex-ref-mckee">McKee p.267</span></td></tr>
 </tbody>
 </table>
-<aside class="ex-trap"><strong>易錯</strong>Granulysin 是主角，兩本一致。Fas-L 的角色兩本不同：Fitzpatrick 明言 Fas-L 不能殺 keratinocyte（因此 IVIG 理論站不住腳），McKee 仍寫 Fas-L apoptosis 很重要。考題 111-42 的出處是 Fitzpatrick p.735。</aside>
+<aside class="ex-trap"><strong>易錯</strong>兩本都以 granulysin 為主要 cytotoxic mediator。Fas-L 的角色兩本不同：Fitzpatrick 寫 Fas-L 不能殺 keratinocyte（p.735），McKee 寫 Fas ligand-mediated apoptosis 對最後形成 necrolysis 很重要（McKee p.267–269）。</aside>
 </section>
 
 <section class="ex-note" id="clinical">
@@ -134,18 +135,18 @@
 <ul>
 <li><mark data-q="103-14">約 <strong class="ex-n">90%</strong> 有黏膜侵犯，而且幾乎都至少兩處</mark>；可早於或晚於皮疹。<span class="ex-ref">p.736</span></li>
 <li>Oral cavity 與 vermilion border 幾乎必定受侵犯：hemorrhagic erosions、grayish white pseudomembranes、唇部 hemorrhagic crusts。<span class="ex-ref">p.737</span></li>
-<li>約 <strong class="ex-n">80%</strong> 有 conjunctival lesions；嚴重者有 corneal ulceration、anterior uveitis、synechiae、睫毛脫落。</li>
+<li>約 <strong class="ex-n">80%</strong> 有 conjunctival lesions；嚴重者有 corneal ulceration、anterior uveitis、purulent conjunctivitis；eyelid 與 conjunctiva 間 synechiae 常見，可有睫毛脫落。</li>
 <li>Genital erosions 常見，女性常被忽略，可造成沾黏。</li>
 <li>McKee：<mark data-q="103-14">黏膜在所有病人都受侵犯</mark>，有時是首發表現；受侵犯頻率依序為 oropharynx &gt; eyes &gt; genitalia &gt; anus。眼部可有 conjunctivitis、synechiae、sicca syndrome、trichiasis、keratitis。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 </ul>
 <h3>Systemic involvement（全身侵犯）</h3>
 <ul>
 <li><mark data-q="107-09">Early pulmonary complications 約 <strong class="ex-n">25%</strong></mark>（呼吸變快、咳嗽）；bronchial involvement 與皮膚面積、致病藥物都無關；入院時 chest X-ray 常正常，但可快速進展到 ARDS，預後差。Fiberoptic bronchoscopy 可區分支氣管上皮剝離與 infectious pneumonitis。<span class="ex-ref">p.738</span></li>
-<li>GI tract involvement 較少見（diarrhea、malabsorption、melena、colonic perforation）。</li>
+<li><mark data-q="107-09">GI tract involvement 較少見</mark>（diarrhea、malabsorption、melena、colonic perforation）。</li>
 <li>Kidney：proteinuria、hematuria、azotemia 不少見；proximal tubule necrosis 機轉與表皮相同；glomerulonephritis 罕見。</li>
 <li>McKee：<mark data-q="107-09">tracheobronchial involvement 相當常見</mark>，ARDS 是重要的致命併發症；GI lesions、esophageal stricture、hepatitis、pancreatitis 偶見。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>肺部侵犯並不少見（約 25%），反而腸胃道較少見。</aside>
+<aside class="ex-trap"><strong>易錯</strong><mark data-q="107-09">Early pulmonary complications 約 25%；GI tract involvement 較少見</mark>（p.738）。</aside>
 <aside class="ex-trap"><strong>易錯</strong>黏膜侵犯比例兩本寫法不同：Fitzpatrick 約 90%（且幾乎都 ≥2 處，p.736），McKee 寫「all patients」（McKee p.267）。</aside>
 </section>
 
@@ -156,12 +157,12 @@
 <thead><tr><th scope="col">SCORTEN prognostic factor（預後因子，各 1 分）</th></tr></thead>
 <tbody>
 <tr><td><mark data-q="102-42,105-21,107-09">Age &gt; 40 years（年齡 &gt;40 歲）</mark></td></tr>
-<tr><td><mark data-q="105-21,107-09">Heart rate &gt; 120 beats/min（心跳 &gt;120 次/分）</mark></td></tr>
-<tr><td><mark data-q="107-09">Cancer or hematologic malignancy（癌症或血液惡性腫瘤）</mark></td></tr>
-<tr><td><mark data-q="107-09">Body surface area involved &gt; 10%（侵犯體表面積 &gt;10%）</mark></td></tr>
-<tr><td><mark data-q="105-21,107-09">Serum urea &gt; 10 mM（血清尿素）</mark></td></tr>
+<tr><td><mark data-q="102-42,105-21,107-09">Heart rate &gt; 120 beats/min（心跳 &gt;120 次/分）</mark></td></tr>
+<tr><td><mark data-q="102-42,107-09">Cancer or hematologic malignancy（癌症或血液惡性腫瘤）</mark></td></tr>
+<tr><td><mark data-q="102-42,107-09">Body surface area involved &gt; 10%（侵犯體表面積 &gt;10%）</mark></td></tr>
+<tr><td><mark data-q="102-42,105-21,107-09">Serum urea &gt; 10 mM（血清尿素）</mark></td></tr>
 <tr><td><mark data-q="102-42,107-09">Serum bicarbonate &lt; 20 mM（血清碳酸氫根）</mark></td></tr>
-<tr><td><mark data-q="105-21,107-09">Serum glucose &gt; 14 mM（血糖）</mark></td></tr>
+<tr><td><mark data-q="102-42,105-21,107-09">Serum glucose &gt; 14 mM（血糖）</mark></td></tr>
 </tbody>
 </table>
 <table class="ex-table">
@@ -171,20 +172,20 @@
 <tr><td>2</td><td><strong class="ex-n">12.1%</strong></td></tr>
 <tr><td>3</td><td><strong class="ex-n">35.8%</strong></td></tr>
 <tr><td>4</td><td><strong class="ex-n">58.3%</strong></td></tr>
-<tr><td>≥5</td><td><strong class="ex-n">90%</strong></td></tr>
+<tr><td>5</td><td><strong class="ex-n">90%</strong></td></tr>
 </tbody>
 </table>
-<p class="ex-cite">Table 44-2，p.734。課本表格把 bicarbonate 印成「&gt;20 mM」，但 p.738 內文寫「&lt;20 mM 表示預後差」，以 &lt;20 mM 為準。</p>
+<p class="ex-cite">Table 44-2，p.734（表格最後一列印為「5」）。課本表格把 bicarbonate 印成「&gt;20 mM」，但 p.738 內文寫「&lt;20 mM 表示預後差」，以 &lt;20 mM 為準。</p>
 <ul>
 <li><mark data-q="107-09">Bicarbonate <strong class="ex-n">&lt;20 mM</strong>：多半是 bronchial involvement 造成的 <strong>respiratory alkalosis</strong></mark>，較少是 metabolic acidosis。<span class="ex-ref">p.738</span></li>
 <li>經皮液體流失 → electrolyte imbalance、hypoalbuminemia、hypoproteinemia、prerenal azotemia；BUN 上升是 severity marker。</li>
-<li>Hypercatabolic state 抑制 insulin 分泌或造成 insulin resistance → hyperglycemia，<strong class="ex-n">&gt;14 mM</strong> 可為 severity marker。</li>
+<li><mark data-q="105-21">Hypercatabolic state 抑制 insulin 分泌或造成 insulin resistance → hyperglycemia，<strong class="ex-n">&gt;14 mM</strong> 可為 severity marker</mark>。</li>
 <li>Anemia 常見，可有 mild leukocytosis 與 thrombocytopenia；neutropenia 被認為預後不佳，但太少見而不影響 SCORTEN。</li>
 <li>Transient peripheral CD4+ lymphopenia 幾乎都會出現。</li>
 <li><mark data-q="101-47">Hepatic enzymes 與 amylase 輕度上升常見，但不影響預後；amylase 最可能來自 salivary gland</mark>。</li>
 <li>McKee：anemia 與 <strong>leukopenia</strong> 為典型表現。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Albumin 不是 SCORTEN 項目（低白蛋白很常見，但不計分）。肝指數、amylase 上升不影響預後，amylase 也不是來自胰臟。</aside>
+<aside class="ex-trap"><strong>易錯</strong><mark data-q="105-21">SCORTEN 七項（Table 44-2）中沒有 albumin；hypoalbuminemia 是經皮液體流失的結果（p.738）</mark>。Hepatic enzymes 與 amylase 輕度上升常見但不影響預後；amylase 最可能來自 salivary gland（p.738）。</aside>
 <aside class="ex-trap"><strong>易錯</strong>白血球兩本寫法不同：Fitzpatrick 寫可有 mild leukocytosis，neutropenia 少見（p.738）；McKee 寫 anemia 與 leukopenia 典型可見（McKee p.267）。</aside>
 </section>
 
@@ -231,7 +232,7 @@
 <tbody>
 <tr><td>EM majus</td><td>Typical targets 或 raised atypical targets，主要在四肢；多與 HSV、<em>M. pneumoniae</em> 相關（ch43）。</td></tr>
 <tr><td>Varicella</td><td>兒童早期 EN 常被誤診為水痘；快速進展與嚴重黏膜侵犯要想到 EN。</td></tr>
-<tr><td><mark data-q="109-13">Generalized bullous FDE</mark></td><td>連病理都像 EN，但 <mark data-q="109-13">預後好得多（黏膜輕微、沒有內臟併發症）</mark>；線索是過去發作史、服藥後很快發作、very large well-demarcated blisters。</td></tr>
+<tr><td><mark data-q="109-13">Generalized bullous FDE</mark></td><td>連病理都像 EN，但 <mark data-q="109-13">預後好得多（可能因為黏膜侵犯輕微、沒有內臟併發症）</mark>；線索是過去發作史、服藥後很快發作、very large well-demarcated blisters。</td></tr>
 <tr><td>SSSS</td><td>沒有黏膜侵犯；嬰兒，或敗血症的成人。</td></tr>
 <tr><td>AGEP、phototoxicity、pressure blisters</td><td>成人；沒有黏膜侵犯或只有一處。</td></tr>
 <tr><td>Purpura fulminans</td><td>兒童與年輕人；沒有黏膜侵犯或只有一處。</td></tr>
@@ -307,11 +308,12 @@
 <h3>Withdrawal of the culprit drug（停藥）</h3>
 <ul>
 <li>及早停用致病藥物，對 short elimination half-life 的藥物能提高存活率。<span class="ex-ref">p.743</span></li>
-<li>重要且不被懷疑的藥物最好繼續使用；有疑慮時，停掉過去 <strong class="ex-n">8 weeks</strong> 內開始的所有非維生必要藥物。</li>
+<li>重要且不被懷疑的藥物宜繼續使用（preferable to continue）；有疑慮時，停掉過去 <strong class="ex-n">8 weeks</strong> 內開始的所有非維生必要藥物。</li>
 </ul>
 <h3>Supportive care（支持性治療，Table 44-6）</h3>
 <ul>
 <li>只有侵犯範圍有限、<strong class="ex-n">SCORTEN 0–1</strong>、沒有快速進展的病人可留在一般病房；其餘轉 ICU 或 burn center。<span class="ex-ref">p.743</span></li>
+<li>Referral decision tree（Fig. 44-1）：Involved BSA <strong class="ex-n">≥10%</strong> → transfer to specialized center；BSA <strong class="ex-n">&lt;10%</strong> 但有 severity marker（serum bicarbonate <strong class="ex-n">&lt;20 mM</strong>、urea <strong class="ex-n">&gt;10 mM</strong>、glucose <strong class="ex-n">&gt;14 mM</strong>、respiratory rate <strong class="ex-n">&gt;20</strong>、pO2 <strong class="ex-n">&lt;80 mm Hg</strong> 或 rapid progression）→ 也轉送；slow progression 且無 severity marker、病情穩定 → usual medical wards；兩者都要 systemic follow-up（sequelae 風險高）。<span class="ex-ref">p.736</span></li>
 <li>Fluid replacement：盡早開始、每天調整；量通常比同面積 burns 少（沒有 interstitial edema）；優先 peripheral line。</li>
 <li>Environmental temperature 提高到 <strong class="ex-n">28–30°C</strong>；air-fluidized bed 增加舒適。</li>
 <li>Early nutritional support 以 nasogastric tube 給予，減少 bacterial translocation。</li>
@@ -327,13 +329,13 @@
 <tbody>
 <tr><td>Systemic corticosteroids</td><td><mark data-q="102-42">仍有爭議，不能當 mainstay treatment</mark>；2–3 週療程與 mortality、sepsis 上升相關；medium dose、短期（數天）可能有益</td></tr>
 <tr><td>IVIG</td><td>原理是阻斷 Fas，但 Fas-L 路徑幾乎不參與；大型 cohort 與 systematic review 都無益 → <strong>should not be used</strong></td></tr>
-<tr><td>Cyclosporine A</td><td>早期使用可能阻止剝離進展並提高存活；目前劑量 <strong class="ex-n">3 mg/kg/day × 10 days</strong>（腎衰竭時調整）</td></tr>
-<tr><td>Anti-TNF</td><td>Etanercept 與類固醇比較時結果較好，TNF-α 與 granulysin 下降；但 <mark data-q="111-42">thalidomide 的 RCT 因 mortality 上升而中止</mark> → extreme caution</td></tr>
+<tr><td>Cyclosporine A</td><td><mark data-q="111-42">早期使用可能阻止剝離進展並提高存活</mark>；目前劑量 <strong class="ex-n">3 mg/kg × 10 days</strong>（腎衰竭時調整）</td></tr>
+<tr><td>Anti-TNF</td><td><mark data-q="111-42">Etanercept 與類固醇比較時結果較好，TNF-α 與 granulysin 下降；但 thalidomide 的 RCT 因 mortality 上升而中止 → extreme caution</mark></td></tr>
 <tr><td>Plasmapheresis、hemodialysis</td><td>缺乏證據且有導管風險 → not recommended</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.743–744</p>
-<aside class="ex-trap"><strong>易錯</strong>Thalidomide 不是有效的 steroid-sparing 藥物，反而增加死亡率；IVIG 不建議使用。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Thalidomide（anti-TNF agent）的 RCT 因 mortality 顯著上升而中止；IVIG should not be used（p.744）。</aside>
 <ul>
 <li>Treatment of sequelae：眼部有 gas-permeable scleral lenses、autologous limbal 或 oral mucosa stem cell grafting；色素變化可用 photoprotection 與 laser，但缺乏研究。<span class="ex-ref">p.744</span></li>
 </ul>
@@ -345,10 +347,10 @@
 <ul>
 <li>只在有簡單且強烈遺傳標記的族群可行，例如 Southeast Asian ancestry 與 HLA-B*1502／carbamazepine。<span class="ex-ref">p.744–745</span></li>
 <li><mark data-q="106-27,115-41">US FDA 建議 <strong>Han Chinese and Thai origin</strong> 的病人在開 carbamazepine 前檢測 HLA-B*1502</mark>。<span class="ex-ref">p.745</span></li>
-<li>台灣實施篩檢後 carbamazepine 引起的 EN 大幅減少；香港則因醫師改開其他也可能致病的抗癲癇藥，整體 EN 並未減少。</li>
+<li>台灣實施篩檢後 carbamazepine 引起的 EN 大幅減少；香港雖預防了 carbamazepine 引起的 EN，但抗癲癇藥引起的整體 EN 並未減少，可能因醫師改開不需基因檢測、但也可能致病的藥物。</li>
 <li>Phenytoin 也可能與 HLA-B*1502 相關，替代藥物仍需謹慎。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>FDA 建議的對象是 Han Chinese 與 Thai，不是「所有亞裔」；課本中 HLA-B*1502 相關的是 SJS/TEN，沒有列 DRESS。</aside>
+<aside class="ex-trap"><strong>易錯</strong>US FDA 建議檢測的對象是 Han Chinese and Thai origin 的病人（p.745）。</aside>
 <h3>Secondary prevention（次級預防）</h3>
 <ul>
 <li>最重要的是評估 drug causality（ALDEN）；仔細詢問發病前數週的用藥，約 <strong class="ex-n">67%</strong> 能找出 probable culprit。<span class="ex-ref">p.745</span></li>

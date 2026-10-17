@@ -4,7 +4,7 @@
 <h3>Normal histology（McKee 補充）</h3>
 <ul>
 <li>Fingernails 每月長約 <strong class="ex-n">3 mm</strong>、toenails 約 <strong class="ex-n">1 mm</strong>；fingernail 生長速度約為 toenail 的 <strong class="ex-n">3 倍</strong>（Fitzpatrick p.1593）。<span class="ex-ref ex-ref-mckee">McKee p.1129</span></li>
-<li>至少 <strong class="ex-n">80%</strong> 甲板由 matrix 產生，主要來自 proximal matrix → 這是 proximal matrix 手術容易留疤、distal matrix／nail bed 手術較少變形的原因。<span class="ex-ref ex-ref-mckee">McKee p.1129</span></li>
+<li>至少 <strong class="ex-n">80%</strong> 甲板由 matrix 產生，主要來自 proximal matrix → 這可能解釋 proximal matrix 手術容易留疤、distal matrix／nail bed 手術較少變形的原因。<span class="ex-ref ex-ref-mckee">McKee p.1129</span></li>
 <li>Matrix 與 nail bed 正常<strong>沒有 stratum granulosum</strong>；matrix 分 basaloid、prekeratogenous、keratogenous 三層，keratogenous zone 為無 keratohyaline granules 的嗜伊紅 onychogenous band。<span class="ex-ref ex-ref-mckee">McKee p.1130</span></li>
 <li><mark data-q="109-09">Proximal matrix 形成甲板 <strong>dorsal</strong>（表層）部分，distal matrix 形成 <strong>ventral</strong> 部分</mark>；nail matrix 是唯一合成 hard keratin 的地方。<span class="ex-ref ex-ref-mckee">McKee p.1130</span></li>
 <li>Stratum granulosum 到 hyponychium 才重新出現；nail isthmus 是 nail bed 與 hyponychium 之間的過渡區，可防止 onycholysis。<span class="ex-ref ex-ref-mckee">McKee p.1131</span></li>
@@ -45,7 +45,7 @@
 <ul>
 <li><strong>多條紅帶</strong> → 常為發炎（如 lichen planus）；<strong>單一紅帶</strong> → 可能是 onychopapilloma 或 Bowen disease，<strong>需要切片</strong>。<span class="ex-ref">p.1568</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Darier 是「紅白交錯的縱紋（末端 V-shaped nick）」；Hailey-Hailey 是「多條細白縱線」。兩者常被對調考。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick：many longitudinal white bands 是 <strong>Hailey-Hailey disease</strong> 的特徵；alternating narrow white and red bands 見於 <strong>Darier disease</strong>（p.1568）。Table 91-1 的 multiple narrow white longitudinal lines 同時列 Hailey-Hailey 與 Darier（p.1569）。McKee：Darier 為紅白縱紋合併遠端楔形甲下角化（p.1138）。</aside>
 <h3>Chloronychia（green nail）</h3>
 <ul>
 <li><mark data-q="102-11,103-40">幾乎全部由 <em>P. aeruginosa</em> colonization 造成</mark>；常侵犯甲的一側，合併 proximal nailfold 局部腫脹與剝離、cuticle 消失、lateral onycholysis；也見於 distal onycholysis 與甲下腫瘤上方。<span class="ex-ref">p.1568</span></li>
@@ -72,13 +72,13 @@
 <li>與 melanonychia 最可靠的鑑別點：血腫往外長時<strong>永遠不會到達甲板游離緣</strong>，也不形成規則縱帶；dermatoscopy 為圓形紅到深褐色 globules。</li>
 <li><mark data-q="112-12">急性血腫可在甲板鑽小孔引流</mark>；<mark data-q="106-12,114-38">佔甲面積 <strong class="ex-n">&gt;50%</strong> 的血腫常合併末節指骨骨折</mark>。<span class="ex-ref">p.1571</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Ch91 寫 &gt;50% 常合併骨折；但考題依 Ch205（nail surgery）：&gt;<strong class="ex-n">25%</strong> 可見甲面積就代表明顯甲床傷害，<strong>必須照 X 光</strong>；&lt;25% 則以尖刀或燒熱迴紋針在中央開孔引流（p.3785）。作答以 25% 為準。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Ch91：佔甲面積 &gt;50% 的血腫常合併末節指骨骨折（p.1571）。Ch205（nail surgery）：&gt;<strong class="ex-n">25%</strong> 可見甲面積代表明顯甲床傷害，<strong>必須照 X 光</strong>（可能骨折）；&lt;25% 以尖刀或燒熱迴紋針在暗斑中央開孔引流（p.3785）。</aside>
 <h3>Splinter hemorrhages（裂片狀出血）</h3>
 <ul>
 <li>Distal nail bed 內窄長的紅到黑色縱線，為縱行微血管血栓或破裂、血液包在 subungual keratin 中。<span class="ex-ref">p.1571</span></li>
 <li>原因：trauma、psoriasis、scleroderma、SLE、RA、antiphospholipid syndrome、hematologic malignancies。<span class="ex-ref">p.1572</span></li>
 <li>Bacterial endocarditis（subsepsis lenta）：splinter <strong class="ex-n">39%</strong>，可合併 Osler nodes（<strong class="ex-n">6.7%</strong>）、Janeway lesions（<strong class="ex-n">2.2%</strong>）、Roth spots（<strong class="ex-n">3%</strong>）。<span class="ex-ref">p.1572</span></li>
-<li>Oblique splinter hemorrhages 可能是 trichinosis 的徵象。過去視為 endocarditis 指標，但其他關聯非常多。<span class="ex-ref">p.1596</span></li>
+<li>Oblique splinter hemorrhages 可能是 trichinosis 的徵象。<span class="ex-ref">p.1572</span> 過去視為 endocarditis 指標，但其他關聯非常多。<span class="ex-ref">p.1596</span></li>
 </ul>
 <h3>Onycholysis（甲剝離）</h3>
 <ul>
@@ -104,11 +104,12 @@
 <ul>
 <li>Beau lines：甲形成暫時減慢 → 與 lunula 邊緣平行的橫溝；<strong>onychomadesis</strong>：較長時間停止 → 近端裂開、proximal onycholysis，可能脫甲。<span class="ex-ref">p.1574</span></li>
 <li>長得越快越明顯 → fingernails 遠多於 toenails；重複的 Beau lines 提示重複傷害（如 chemotherapy cycles）。</li>
+<li><mark data-q="101-27">所有甲平均分布的 Beau lines 提示全身性原因</mark>；單側見於該肢體手術後，單一指（趾）見於該處手術後。<mark data-q="101-27">原因極多，從 high fever 到其他嚴重疾病</mark>。<span class="ex-ref">p.1574</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Distribution（分布）</th><th scope="col">Causes of Beau lines &amp; onychomadesis</th></tr></thead>
 <tbody>
-<tr><td>Generalized</td><td>Acute severe diseases、high fever、某些藥物（retinoids）、zinc deficiency、autoimmune bullous diseases、menstruation（常重複）</td></tr>
+<tr><td>Generalized</td><td><mark data-q="101-27">Acute severe diseases、high fever、某些藥物（retinoids）</mark>、zinc deficiency、autoimmune bullous diseases、menstruation（常重複）</td></tr>
 <tr><td>One extremity</td><td>Carpal tunnel syndrome（手）、extremity tourniquet 手術、reflex sympathetic dystrophy</td></tr>
 <tr><td>One or several digits</td><td>Nail surgery、<mark data-q="103-40,104-39"><strong>hand-foot-and-mouth disease</strong></mark>、trauma</td></tr>
 </tbody>
@@ -118,7 +119,7 @@
 <li><mark data-q="103-40,104-39">HFMD（coxsackievirus）後數週（約 <strong class="ex-n">6 weeks</strong>）出現局部 Beau lines 與單一或數個甲的 onychomadesis</mark>，可能是 matrix 直接受侵犯。<span class="ex-ref">p.1574、p.1591</span></li>
 <li>Varicella 後數週兒童也可見 onychomadesis。<span class="ex-ref">p.1590</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>HFMD 的甲變化是 Beau lines／onychomadesis，<strong>不是</strong> longitudinal melanonychia。</aside>
+<aside class="ex-trap"><strong>易錯</strong>HFMD：數週後可見局部 Beau lines 與 onychomadesis（p.1574）；約 6 weeks 後部分病人出現單一甲 onychomadesis（p.1591）。</aside>
 <h3>Pitting &amp; trachyonychia</h3>
 <ul>
 <li>Pits：<strong>apical matrix</strong> 小灶異常角化 → parakeratosis 小丘脫落成凹點；未脫落時呈 ivory-colored spots。<span class="ex-ref">p.1574</span></li>
@@ -152,7 +153,7 @@
 <h3>Epidemiology &amp; pathogenesis</h3>
 <ul>
 <li>Psoriasis 是<strong>甲侵犯最常見的皮膚病</strong>：就診時約 <strong class="ex-n">50%</strong> 有甲變化，終生可達 <strong class="ex-n">90%</strong>；<mark data-q="113-19">psoriatic arthritis 病人比例更高</mark>。<span class="ex-ref">p.1578</span></li>
-<li>不同出處數字：Ch28 寫甲變化 up to <strong class="ex-n">40%</strong>，且<mark data-q="109-09">沒有其他皮膚病灶時很少見</mark>，隨年齡、病程、範圍與 PsA 增加（p.464）；McKee 寫 <strong class="ex-n">10–50%</strong>，終生 <strong class="ex-n">80–90%</strong>，fingernails 多於 toenails。<span class="ex-ref ex-ref-mckee">McKee p.1135</span></li>
+<li>不同出處數字：Ch28 寫甲變化 up to <strong class="ex-n">40%</strong>，且<mark data-q="109-09">沒有其他皮膚病灶時很少見</mark>，隨年齡、病程、範圍與 PsA 增加 <span class="ex-ref">Ch28 p.464</span>；McKee 寫 <strong class="ex-n">10–50%</strong>，終生 <strong class="ex-n">80–90%</strong>，fingernails 多於 toenails。<span class="ex-ref ex-ref-mckee">McKee p.1135</span></li>
 <li>無性別、種族偏好；與皮膚不同，<strong>HLA-C*0602 與甲／關節侵犯無關</strong>；甲乾癬常合併 <strong>enthesitis</strong>，被視為 nail–joint apparatus 的組織壓力與 microtrauma 引發的 aberrant innate immune response，而非自體免疫。<span class="ex-ref">p.1578</span></li>
 </ul>
 <h3>Clinical features by site（依部位）</h3>
@@ -169,12 +170,12 @@
 </table>
 <p class="ex-cite">p.1579–1580；Ch28 Table 28-1 p.464；McKee p.1135。</p>
 <ul>
-<li><mark data-q="113-19">Splinter hemorrhages 長數 mm、寬不到 1 mm，<strong>類似皮膚的 Auspitz phenomenon</strong>：nail bed 擴張微血管受損，血液在縱行小血管內凝固</mark>。<span class="ex-ref">p.1579</span></li>
+<li><mark data-q="113-19">Splinter hemorrhages 長數 mm、寬僅約 1 mm（barely 1 mm），<strong>類似皮膚的 Auspitz phenomenon</strong>：nail bed 擴張微血管受損，血液在縱行小血管內凝固</mark>。<span class="ex-ref">p.1579</span></li>
 <li><mark data-q="109-09,110-01,113-19,114-05">Pitting 也見於 alopecia areata 等疾病；<strong>oil spotting 被認為幾乎是乾癬特有（nearly specific）</strong></mark>；<mark data-q="114-05">onychodystrophy（leukonychia、crumbling、red lunula）與 PsA 的相關性比其他甲變化強</mark>。<span class="ex-ref">Ch28 p.464</span></li>
 <li>McKee：matrix 侵犯 → pitting、leukonychia、甲板增厚或變薄、onychorrhexis、crumbling；<mark data-q="114-05,110-01">nail bed 侵犯 → oil drop／salmon patch、splinter hemorrhages、subungual hyperkeratosis、onycholysis</mark>；最常見症狀為 pitting、onycholysis、discoloration、subungual hyperkeratosis。<span class="ex-ref ex-ref-mckee">McKee p.1135</span></li>
 <li><mark data-q="113-19">PsA 的甲侵犯常較嚴重：psoriatic paronychia、完全甲破壞、DIP 關節腫脹</mark>；<strong>psoriatic pachydermoperiostosis</strong> 與 PsA 相關但通常無明顯甲變化，主要是大拇趾明顯增厚、疼痛。<span class="ex-ref">p.1580</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Oil drop／salmon patch 歸在 <strong>nail bed</strong>（Ch28 Table 28-1、McKee），不是 matrix 造成；但 Ch91 原文寫 salmon spots 代表「distal matrix 與 nail bed」的乾癬斑塊。考題（110-01、114-05）以 nail bed 為準；最具特異性的是 oil spot，不是 leukonychia 或 pitting。Terry nails 屬肝病，不是乾癬甲。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Oil drop／salmon patch：Ch28 Table 28-1 列在 <strong>nail bed</strong>（p.464），McKee 也列為 nail bed 侵犯（p.1135）；Ch91 寫 salmon spots 代表 distal matrix 與 nail bed 的乾癬斑塊（p.1579–1580）。Ch28：pitting 也見於 alopecia areata 等疾病，oil spotting 被認為幾乎是乾癬特有（p.464）。Terry nails 見於 severe liver disease（p.1597）。</aside>
 <h3>Pustular psoriasis &amp; Reiter disease</h3>
 <ul>
 <li>三型 pustular psoriasis 都會侵犯甲。<span class="ex-ref">p.1580</span></li>
@@ -197,9 +198,10 @@
 <tr><td>Frequency</td><td>甲侵犯最常見的皮膚病</td><td>佔所有甲病 <strong class="ex-n">30–40%</strong></td></tr>
 <tr><td>Course</td><td>Chronic, often recurrent</td><td>Chronic, often progressive</td></tr>
 <tr><td>Pits</td><td>Very common, regular</td><td>Rare, irregular</td></tr>
+<tr><td>Onycholysis</td><td>Common</td><td>Common</td></tr>
 <tr><td>Discoloration</td><td>None to yellow</td><td>Yellow to brown</td></tr>
-<tr><td>Spores &amp; hyphae</td><td>Rarely</td><td>Very frequent</td></tr>
-<tr><td>Transverse furrows</td><td>Very common</td><td>Rare</td></tr>
+<tr><td>Spores &amp; hyphae</td><td>Rarely spores</td><td>Very frequent</td></tr>
+<tr><td>Transverse furrows</td><td>Rare</td><td>Rare</td></tr>
 <tr><td>Skin lesions elsewhere</td><td>Very common</td><td>Often tinea</td></tr>
 <tr><td>Trauma</td><td>可誘發 Köbner phenomenon</td><td>重要誘發因子</td></tr>
 <tr><td>Heredity</td><td>強遺傳成分（尤其 juvenile onset）</td><td>Autosomal dominant 易感性</td></tr>
@@ -213,7 +215,7 @@
 <h3>Histopathology（McKee 補充）</h3>
 <ul>
 <li>常與皮膚乾癬相似，但有 spongiosis；hyponychium 失去顆粒層，反而 matrix／nail bed 可長出顆粒層（matrix hypergranulosis 相當於表皮的 parakeratosis）。<span class="ex-ref ex-ref-mckee">McKee p.1135</span></li>
-<li>甲板或甲下角質中含嗜中性球的 parakeratosis mounds 與 serum-like 物質是好線索；確定診斷率僅 <strong class="ex-n">54%</strong>，longitudinal biopsy 結果最好。</li>
+<li>甲板或甲下角質中含嗜中性球的 parakeratosis mounds 與 serum-like 物質是好線索；確定診斷率僅 <strong class="ex-n">54%</strong>，longitudinal biopsy 結果較佳（原文 best results）。</li>
 <li><strong>一定要做 PAS 排除 onychomycosis</strong>：乾癬甲有 <strong class="ex-n">13–27%</strong> 合併黴菌 superinfection 或 colonization。<span class="ex-ref ex-ref-mckee">McKee p.1135</span></li>
 </ul>
 <h3>Course &amp; treatment</h3>
@@ -221,7 +223,7 @@
 <li>時好時壞，trauma 可能是惡化的重要因素。<span class="ex-ref">p.1581</span></li>
 <li>對幾乎所有外用藥都很頑固（藥物難穿透甲板／proximal nailfold）；<strong>pits 最難治</strong>。仍值得試 <strong class="ex-n">3 個月</strong> vitamin D3 derivative + potent corticosteroid。</li>
 <li>Proximal nailfold 注射 triamcinolone acetonide crystal suspension <strong class="ex-n">10 mg/mL</strong>、每 <strong class="ex-n">6 weeks</strong>：常有效但痛；methotrexate 可能減慢甲生長、療效慢顯。</li>
-<li>最佳效果是 systemic antipsoriatic therapies（含 biologics）；能清皮膚的全身治療通常也對甲有效。</li>
+<li>原文寫 best treatment results 來自 systemic antipsoriatic therapies（含 biologics）；能清皮膚的全身治療通常也對甲有效。</li>
 </ul>
 </section>
 
@@ -265,7 +267,7 @@
 <li>甲病灶可比落髮持續更久，但 AA 緩解後<strong>不會留下永久甲營養不良</strong>。</li>
 <li>McKee：AA 甲變化包括 pitting、spotted lunula、red lunula、trachyonychia。<span class="ex-ref ex-ref-mckee">McKee p.1137</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>AA 的 pits「淺、小、界線不清」，乾癬的 pits「深、規則」。課本未使用 geometric pitting 一詞，但考題（103-40）視 AA 的規則排列淺凹點為正確。</aside>
+<aside class="ex-trap"><strong>易錯</strong>乾癬的 pits 深且大小規則；alopecia areata 與 atopic dermatitis 的 pits 較淺、界線較不清楚（p.1574）。乾癬的 pits 較深也稍大（p.1584）。</aside>
 </section>
 
 <section class="ex-note" id="lichen-planus">
@@ -365,7 +367,7 @@
 <ul>
 <li><mark data-q="101-10">依致病菌（dermatophytes、yeasts、nondermatophyte molds）、病程，以及<strong>最重要的：黴菌侵入途徑</strong>分類</mark>。<span class="ex-ref">p.1593</span></li>
 <li>Toenails 比 fingernails 多 <strong class="ex-n">7–10 倍</strong>（fingernail 長得快 3 倍）。</li>
-<li>佔所有甲病 <strong class="ex-n">40–50%</strong>（p.1593）或 <strong class="ex-n">40–60%</strong>（p.1595）；McKee 為 <strong class="ex-n">18–50%</strong>，一般人口 <strong class="ex-n">2–3%</strong>、老年人可達 <strong class="ex-n">15%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.1132</span></li>
+<li>佔所有甲病 <strong class="ex-n">40–50%</strong> <span class="ex-ref">p.1593</span> 或 <strong class="ex-n">40–60%</strong> <span class="ex-ref">p.1595</span>（Table 91-5 則寫 up to 30–40%，p.1581）；McKee 為 <strong class="ex-n">18–50%</strong>，一般人口 <strong class="ex-n">2–3%</strong>、老年人可達 <strong class="ex-n">15%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.1132</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Type（依侵入途徑）</th><th scope="col">Route &amp; clinical（侵入與表現）</th><th scope="col">Main organisms（主要菌種）</th></tr></thead>
@@ -386,9 +388,9 @@
 <ul>
 <li>最常見為 dermatophytes：<em>T. rubrum</em>、<em>T. mentagrophytes</em> var. <em>interdigitale</em>，少見 <em>E. floccosum</em>、<em>T. violaceum</em>、<em>T. soudanense</em>。溫暖氣候 <em>C. albicans</em>（有 keratin 分解酵素）可造成臨床上相同的感染；其他酵母菌角色常不明；molds 原多在熱帶，現為中歐新興病原。<span class="ex-ref">p.1594</span></li>
 <li>McKee：dermatophytes 在中歐佔可達 <strong class="ex-n">80%</strong>，<em>T. rubrum</em> 佔 <strong class="ex-n">60–70%</strong>；<mark data-q="112-14">yeasts 約 <strong class="ex-n">5–17%</strong>，其中 7/10 的致病菌在 <strong>fingernails 是 <em>C. albicans</em></strong>、toenails 是 <em>C. parapsilosis</em></mark>；pathogenic molds &lt;<strong class="ex-n">5%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.1132</span></li>
-<li><mark data-q="112-14">Ch161：<em>Candida</em> onychomycosis <strong>fingernails 多於 toenails</strong>，常合併按壓或移動甲板時<strong>疼痛</strong>，較常侵犯慣用手（皆與 dermatophyte 相反）；<em>Candida</em> 與 chronic paronychia 相關，可直接侵入甲板（distal subungual、total dystrophic）</mark>。<span class="ex-ref">Ch161 p.2954</span></li>
+<li><mark data-q="112-14">Ch161：<em>Candida</em> onychomycosis <strong>fingernails 多於 toenails</strong>，常合併按壓或移動甲板時<strong>疼痛</strong>（這兩點與 dermatophytes 相反），且較常侵犯慣用手；<em>Candida</em> 與 chronic paronychia 相關，可直接侵入甲板（distal subungual、total dystrophic）</mark>。<span class="ex-ref">Ch161 p.2954</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>念珠菌甲癬是「手指 &gt; 腳趾、會痛、慣用手」，皮癬菌甲癬則是腳趾為主。Primary total dystrophic onychomycosis 指向 CMC。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Ch161：<em>Candida</em> onychomycosis 較常見於 fingernails、常有按壓或移動甲板時疼痛（這兩點與 dermatophytes 相反），較常侵犯慣用手（p.2954）。Ch91：primary total dystrophic onychomycosis 是 chronic mucocutaneous candidiasis 的特徵（p.1594）。</aside>
 <h3>Diagnosis</h3>
 <ul>
 <li>臨床診斷應以 direct microscopy（<strong class="ex-n">10–20%</strong> KOH）、culture、histopathology 確認；false-negative 很高（尤其 culture，<strong class="ex-n">30–60%</strong>），histopathology 敏感度約為兩倍。<span class="ex-ref">p.1595</span></li>
@@ -412,7 +414,7 @@
 <li>預後（甲破壞）&gt;<strong class="ex-n">90%</strong> 良好；但治療仍具挑戰。須同時治療皮膚黴菌、鞋襪消毒、每日換鞋、襪子 <strong class="ex-n">60°C</strong> 洗。<span class="ex-ref">p.1595</span></li>
 <li>清除病甲：nail clipper + <strong class="ex-n">40%</strong> urea paste 封包 <strong class="ex-n">3–5 days</strong>，重複 2–3 次；<strong>surgical avulsion 應放棄</strong>（醫源性重創，更易感染）。</li>
 <li><strong>&lt;50% 甲侵犯或 matrix 未受侵犯</strong>：外用 8% ciclopirox lacquer、10% efinaconazole、5% tavaborole、5% amorolfine 數月（臨床清除後再延長數月）；<mark data-q="101-10">新外用藥 complete cure 仍 &lt;<strong class="ex-n">20%</strong></mark>。</li>
-<li><strong>&gt;50% 或任何一處侵犯到 matrix</strong> → systemic：<mark data-q="101-10">dermatophytes 對 <strong>terbinafine 250 mg/day</strong> 反應最好；yeasts 與部分 nondermatophyte molds 用 <strong>itraconazole 400 mg/day × 1 week every 4 weeks</strong>（pulse 至少與 200 mg/day 連續一樣有效）</mark>；fluconazole 150 mg/week 對 &gt;70 kg 者劑量太低。<span class="ex-ref">p.1595–1596</span></li>
+<li><strong>&gt;50% 或任何一處侵犯到 matrix</strong> → systemic：<mark data-q="101-10">dermatophytes 用 <strong>terbinafine 250 mg/day</strong>（原文 respond best）；yeasts 與部分 nondermatophyte molds 用 <strong>itraconazole 400 mg/day × 1 week every 4 weeks</strong>（pulse 至少與 200 mg/day 連續一樣有效）</mark>；fluconazole 150 mg/week 對 &gt;70 kg 者劑量太低。<span class="ex-ref">p.1595–1596</span></li>
 <li><mark data-q="101-10">外用 + 口服可使失敗率降 <strong class="ex-n">50%</strong>，但合併治療治癒率也不超過 <strong class="ex-n">70–75%</strong>；<strong>復發非常常見</strong>（持續的危險因子、遺傳易感性、家中及公共運動設施再感染）</mark>。<span class="ex-ref">p.1596</span></li>
 <li>Laser（FDA：暫時增加 clear nail）mycologic cure <strong class="ex-n">11%</strong>；PDT 仍屬實驗。</li>
 </ul>
@@ -428,7 +430,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 91-7，p.1596。內文寫 efinaconazole 10%、tavaborole 5%，表格寫 5% 與 8%，課本前後不一致。</p>
-<aside class="ex-trap"><strong>易錯</strong>口服抗黴菌藥治療成功後「復發率極低」是錯的；mold 引起的甲癬對口服藥反應較差（terbinafine 對 dermatophyte 最好，mold／yeast 改 itraconazole）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Recurrences are very frequent：原因為持續的危險因子（含遺傳易感性）及家中與公共運動設施再感染（p.1596）。Dermatophytes 用 terbinafine 250 mg daily（原文 respond best）；yeasts 與部分 nondermatophyte molds 以 itraconazole pulse 治療較好（p.1595–1596）。</aside>
 </section>
 
 <section class="ex-note" id="systemic-disease">
@@ -444,17 +446,17 @@
 <thead><tr><th scope="col">Category</th><th scope="col">Causes of digit clubbing</th></tr></thead>
 <tbody>
 <tr><td>Cardiovascular</td><td><mark data-q="101-34,114-17">Cor pulmonale、cardiac insufficiency、open foramen ovale、Eisenmenger complex、<strong>aortic aneurysm</strong></mark></td></tr>
-<tr><td>Bronchopulmonary</td><td><mark data-q="101-34,114-17">Chronic obstructive and suppurative pulmonary diseases、<strong>intrathoracic tumors</strong>、hypertrophic pulmonary osteoarthropathy</mark></td></tr>
+<tr><td>Bronchopulmonary</td><td><mark data-q="101-34,114-17,106-17">Chronic obstructive and suppurative pulmonary diseases、<strong>intrathoracic tumors</strong>、hypertrophic pulmonary osteoarthropathy</mark></td></tr>
 <tr><td>Gastrointestinal</td><td><mark data-q="114-17">Hepatic disorders</mark>、inflammatory bowel diseases、polyposis intestini、GI neoplasms、bacillary and amebic dysentery</td></tr>
-<tr><td>Blood dyscrasias</td><td><mark data-q="101-34"><strong>Chronic methemoglobinemia</strong>（e.g. heavy smokers）</mark></td></tr>
+<tr><td>Blood dyscrasias</td><td><mark data-q="101-34,106-17"><strong>Chronic methemoglobinemia</strong>（e.g. heavy smokers）</mark></td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 91-8，p.1597；Fig. 91-58 為 trisomy 21 合併 Eisenmenger complex。Ch133 p.2428 另列 lung cancer、interstitial pulmonary fibrosis、TB、congestive heart failure、cyanotic congenital heart disease；胸腔外（IBD、cirrhosis）較少。</p>
 <h3>Yellow nail syndrome</h3>
 <ul>
-<li><mark data-q="114-17">三徵：<strong>黃、厚、生長極慢的甲</strong>（常 onycholysis、自發脫甲、cuticle 完全消失）＋ <strong>chronic sinus-bronchopulmonary infection</strong> ＋ <strong>distal extremity edema</strong>（lymphedema）</mark>；也有慢性腸胃病與內臟癌的報告。<span class="ex-ref">p.1596</span></li>
+<li><mark data-q="114-17">三徵：<strong>黃、厚、生長極慢的甲</strong>（常 onycholysis、自發脫甲、cuticle 完全消失）＋ <strong>chronic sinus-bronchopulmonary infection</strong> ＋ <strong>distal extremity edema</strong></mark>；也有慢性腸胃病與內臟癌的報告。<span class="ex-ref">p.1596</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Yellow nail syndrome 合併的是 lymphedema 與呼吸道疾病（pleural effusion、bronchiectasis、sinusitis），不是肝功能異常或膽道阻塞。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Yellow nail syndrome 三徵：黃、厚、生長極慢的甲；chronic sinus-bronchopulmonary infection；edema of the distal extremities（p.1596；Table 91-1 寫 chronic bronchopulmonary infection，p.1569）。</aside>
 <h3>Hepatic, renal &amp; others</h3>
 <table class="ex-table">
 <thead><tr><th scope="col">Sign（甲徵象）</th><th scope="col">Appearance（外觀）</th><th scope="col">Association（相關疾病）</th></tr></thead>
@@ -490,7 +492,7 @@
 <tr><td>Bleomycin</td><td><strong>Permanent nail loss</strong>（治療甲周疣後）、digital ischemia</td></tr>
 <tr><td>Reverse transcriptase inhibitors</td><td>Granulation tissue</td></tr>
 <tr><td>Acyclovir</td><td>Longitudinal melanonychia</td></tr>
-<tr><td>β-blockers（表中印為 a-Blockers）</td><td>Digital ischemia、lichenoid-psoriasiform changes</td></tr>
+<tr><td>β-blockers</td><td>Digital ischemia、lichenoid-psoriasiform changes</td></tr>
 <tr><td>Retinoids &amp; high-dose vitamin A</td><td>Brittle nails、paronychia、granulation tissue</td></tr>
 <tr><td>PUVA</td><td>Melanonychia（多甲縱向褐紋）、photoonycholysis</td></tr>
 </tbody>
@@ -512,7 +514,7 @@
 </tbody>
 </table>
 <p class="ex-cite">p.1599–1601。</p>
-<aside class="ex-trap"><strong>易錯</strong>Nail-patella syndrome 與鈣離子運輸無關；與 keratinocyte 鈣幫浦有關的是 Darier（ATP2A2/SERCA2）與 Hailey-Hailey（ATP2C1/SPCA1）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Nail-patella syndrome 為 homeobox gene LMX1B（課本印為 LMXB1）突變，此基因為器官發生時 anterior–posterior 定向所需；甲發育不良以拇指最明顯、lunula 呈三角形（p.1601）。</aside>
 <h3>Congenital malalignment of the big toenail</h3>
 <ul>
 <li>相當常見；可出生即異常或之後出現，同卵雙胞胎可有相同單側侵犯。甲呈三角形、增厚、牡蠣殼樣、變色、onycholytic，有 false distal nailfold 與縮短的甲床。<span class="ex-ref">p.1602</span></li>
@@ -567,7 +569,7 @@
 <ul>
 <li>LM 一詞不限色素種類（細菌、黴菌、血、外來物都可）；評估看顏色本身（非深淺）、內部結構、在甲中的延伸、是否合併 dystrophy 或 onycholysis、時間變化，以及年齡、性別、膚色、職業。<span class="ex-ref">p.1605–1606</span></li>
 <li>四種造成真正 LM 的病灶：<strong>functional melanonychia</strong>（melanocyte activation；深膚色者與許多兒童的常態，原因含摩擦、咬甲、懷孕、化療與藥物）、<strong>matrix lentigo</strong>（數目增加）、<strong>matrix nevus</strong>（巢狀聚集；多見於兒童、多為 junctional）、<strong>matrix melanoma</strong>。<span class="ex-ref">p.1606</span></li>
-<li>臨床無法安全區分；顏色與條紋規則、寬度對稱、無甲營養不良者多為良性。兒童甲周色素可能是 congenital nevus；兒童 LM 多視為良性、可隨年齡變淡（skin type IV–VI 兒童偶爾變深）；但淺膚色兒童單一快速變寬的 LM 最好切除。</li>
+<li>臨床無法安全區分；顏色與條紋規則、寬度對稱、無甲營養不良者多為良性。兒童甲周色素可能是 congenital nevus；兒童 LM 多視為良性、可隨年齡變淡（skin type IV–VI 兒童偶爾變深）；但淺膚色兒童單一快速變寬的 LM 宜切除（best excised）。</li>
 <li>建議以 <mark data-q="112-12"><strong>tangential excision</strong>（可避免術後甲營養不良）</mark>切除成人所有後天 matrix melanocyte 增生。<span class="ex-ref">p.1606</span></li>
 </ul>
 <table class="ex-table">
@@ -606,14 +608,14 @@
 <li>Treatment：in situ 與早期侵襲 → wide local excision 保留指頭（functional surgery）；晚期 → distal amputation；Hutchinson sign 對 imiquimod 有反應。<span class="ex-ref">p.1608</span></li>
 <li>有個人或家族 melanoma 史者較多；<strong>與紫外線無關</strong>；病理常合併多發 subungual onycholemmal cysts，勿誤為 SCC。<span class="ex-ref">p.1608</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>LM 要切片的警訊：Hutchinson sign、帶內不規則深色線、界線模糊、近端比遠端寬、寬 &gt;3 mm、成人單一指。Hutchinson sign 不是良性徵象；McKee 稱兒童 nevus 可有 benign pseudo-Hutchinson sign。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick：成人單一指 melanonychia 需要切片（p.1570）；Table 91-10 的 melanoma 型態為不規則色帶、不對稱且間距不均、長短不一的線條、色帶近端變寬（p.1606）；ABCDEF 的 B 為寬 &gt;3 mm、邊界不規則或模糊，E 為 Hutchinson sign（p.1608）。McKee：matrix nevus 約三分之一有甲周色素（benign pseudo-Hutchinson sign）（p.1140）。</aside>
 <h3>Histopathology &amp; IHC（McKee 補充）</h3>
 <ul>
 <li>Matrix melanocytes 約 <strong class="ex-n">200/mm²</strong>（表皮約 1150/mm²）；proximal matrix 多為 dormant，distal matrix 一半 active；suprabasal melanocytes 在 matrix 屬生理性。正常密度 <strong class="ex-n">4–9</strong>（平均 7.7）個／1 mm 交界。<span class="ex-ref ex-ref-mckee">McKee p.1139</span></li>
 <li><strong>甲上皮 melanocytes 常不表現 S100</strong> → 用 HMB-45、Mart-1（Melan-A），不可單用 S100。<span class="ex-ref ex-ref-mckee">McKee p.1139</span></li>
 <li>色素多在 ventral nail plate（來自 distal matrix）；Fontana-Masson 染黑；hematoma 的 Perls 反應在甲板永遠陰性。<span class="ex-ref ex-ref-mckee">McKee p.1139–1140</span></li>
 <li>單一指 LM：成人 <strong class="ex-n">73%</strong> 為 melanocytic activation；兒童 <strong class="ex-n">75%</strong> 為良性 melanocytic hyperplasia（主要 nevi）。Lentigo 佔成人 9%、兒童 30%；nevus 佔成人 12%、兒童近 50%。<span class="ex-ref ex-ref-mckee">McKee p.1140</span></li>
-<li>Lentigo：<strong class="ex-n">10–31</strong> 個 melanocytes/mm，個別排列無融合；nevus：至少一個 nest，多為 junctional；in situ melanoma：平均 <strong class="ex-n">58.9</strong>/mm（39–136） vs 良性增生 15.3/mm，single cells 多於 nests、核異型、pagetoid spread。<span class="ex-ref ex-ref-mckee">McKee p.1141、p.1143</span></li>
+<li>Lentigo：<strong class="ex-n">10–31</strong> 個 melanocytes/mm，個別排列無融合；nevus：至少一個 nest，多為 junctional。<span class="ex-ref ex-ref-mckee">McKee p.1140–1141</span> In situ melanoma：平均 <strong class="ex-n">58.9</strong>/mm（39–136） vs 良性增生 15.3/mm（5–31），single cells 多於 nests、核異型、pagetoid spread。<span class="ex-ref ex-ref-mckee">McKee p.1143</span></li>
 <li>侵襲常先發生在 nail bed 真皮；ALM 最常見（67%），其次 nodular（25%）、desmoplastic（7%）；Breslow ≤2.5 mm vs &gt;2.5 mm 5 年存活 <strong class="ex-n">88%</strong> vs <strong class="ex-n">40%</strong>；SLNB 陽性 17–24%。<span class="ex-ref ex-ref-mckee">McKee p.1143–1144</span></li>
 <li>IHC：in situ 以 <strong>HMB-45 最敏感</strong>（優於 Mart-1，S100 最差）；invasive／desmoplastic 則 S100 最敏感；MITF、SOX10 核染可更精確計數。Genetics：BRAF 僅 15%、KIT 15–40%、NRAS 約 15%，基因放大常見。<span class="ex-ref ex-ref-mckee">McKee p.1144–1145</span></li>
 <li>Hutchinson sign 處切片可能只見輕度異型增生而給出假性安心，不宜只切甲周皮膚。<span class="ex-ref ex-ref-mckee">McKee p.1143</span></li>
@@ -622,16 +624,16 @@
 
 <section class="ex-note" id="nail-surgery">
 <h2>18. Nail Surgery Essentials（甲手術重點，Ch205 交叉參照）</h2>
-<p>本章治療段落多次指向 Ch205；歷屆題常考以下數字。</p>
+<p>本章嵌甲手術指向 Ch205（p.1576）；以下為 Ch205 相關內容。</p>
 <ul>
 <li><mark data-q="106-12,114-38,115-10">Anesthesia：proximal digital block 較不痛但需 <strong class="ex-n">5–10 分鐘</strong>生效；distal digital block（wing block）較痛但幾乎立即生效；<strong>median distal block</strong> 簡單快速，適用甲單位近端一半的多數手術，但<strong>不適用 matricectomy 或 complete nail avulsion</strong></mark>。<span class="ex-ref">Ch205 p.3776</span></li>
 <li><mark data-q="112-12">指頭局麻加 <strong>epinephrine 已不再是禁忌</strong>，可收縮血管減少出血</mark>（循環不良者仍需小心）。<span class="ex-ref">Ch205 p.3776–3777</span></li>
-<li><mark data-q="106-12,114-38">Penrose drain tourniquet 最好不超過 <strong class="ex-n">15–20 分鐘</strong>，長手術可暫鬆；絕不可忘記拆除（曾致指端壞死）</mark>。<span class="ex-ref">Ch205 p.3777</span></li>
+<li><mark data-q="106-12,114-38">Penrose drain tourniquet 宜不超過 <strong class="ex-n">15–20 分鐘</strong>，長手術可暫鬆；絕不可忘記拆除（曾致指端壞死）</mark>。<span class="ex-ref">Ch205 p.3777</span></li>
 <li><mark data-q="106-12,112-12,114-38">Distal matrix punch biopsy：<strong class="ex-n">3 mm</strong> 是不造成嚴重 dystrophy 的上限；即使 3 mm，在 matrix 最近端仍可能變形</mark>（McKee：distal matrix biopsy 的術後營養不良風險遠低於 proximal matrix）。<span class="ex-ref">Ch205 p.3781</span> <span class="ex-ref ex-ref-mckee">McKee p.1139</span></li>
 <li><mark data-q="112-12">寬型 LM 以 <strong>tangential matrix biopsy／shave excision</strong> 為佳</mark>。<span class="ex-ref">Ch205 p.3774、p.3781</span></li>
 <li><mark data-q="106-12,112-12,114-38">Subungual hematoma：&lt;<strong class="ex-n">25%</strong> 可見甲面積 → 尖刀或燒熱迴紋針在暗斑中央開孔引流止痛；&gt;<strong class="ex-n">25%</strong> → 明顯甲床傷害，<strong>必須照 X 光</strong>（可能骨折），移除甲板清除血腫</mark>。<span class="ex-ref">Ch205 p.3785–3786</span></li>
 <li><mark data-q="115-10">Lateral matrix horn 以 <strong class="ex-n">88%</strong> phenol 燒灼：<strong>血液會使 phenol 失活</strong>，需止血帶與無血手術野；術後滲液 <strong class="ex-n">2–6 weeks</strong></mark>。<span class="ex-ref">Ch205 p.3788–3789</span></li>
-<li><mark data-q="115-10">輕度 pincer nail 用不鏽鋼 nail brace 約 <strong class="ex-n">6 個月</strong>逐步矯正，但骨病因未處理常復發，根治為 lateral horn phenol cautery；<strong>congenital lateral hypertrophic lips</strong> 會在 <strong class="ex-n">12 個月</strong>內自行消退</mark>。<span class="ex-ref">Ch205 p.3789</span></li>
+<li><mark data-q="115-10">輕度 pincer nail 用不鏽鋼 nail brace 約 <strong class="ex-n">6 個月</strong>逐步矯正，但骨病因未處理常復發；原文稱 lateral matrix horn 的 phenol cautery 為 definitive cure；<strong>congenital lateral hypertrophic lips</strong> 會在 <strong class="ex-n">12 個月</strong>內自行消退</mark>。<span class="ex-ref">Ch205 p.3789</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>急性甲下血腫不是「冰敷、切勿引流」，部分血腫正是要引流止痛。Phenol 不能在滲血環境使用。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Ch91：急性甲下血腫可在甲板鑽小孔引流（p.1571）；Ch205：&lt;25% 的部分血腫應開孔引流，可緩解疼痛（p.3785）。Phenol 燒灼需無血手術野，因血液會使 phenol 失活（p.3788）。</aside>
 </section>

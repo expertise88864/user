@@ -33,7 +33,7 @@
 </ul>
 <h3>Incontinentia pigmenti（IP，Bloch-Sulzberger syndrome）</h3>
 <ul>
-<li><mark data-q="106-46"><strong>X-linked dominant</strong>；多數男性胚胎致死，病人幾乎都是女性</mark>（McKee：女：男 <strong class="ex-n">&gt;37:1</strong>，存活男性多合併 Klinefelter syndrome 或 somatic mosaicism）。<span class="ex-ref">p.1351–1352</span> <span class="ex-ref ex-ref-mckee">McKee p.706</span></li>
+<li><mark data-q="106-46"><strong>X-linked dominant</strong>；多數男性胚胎致死，主要見於女性</mark>（McKee：女：男 <strong class="ex-n">&gt;37:1</strong>，存活男性多合併 Klinefelter syndrome 或 somatic mosaicism）。<span class="ex-ref">p.1351–1352</span> <span class="ex-ref ex-ref-mckee">McKee p.706</span></li>
 <li><mark data-q="106-46">致病基因 <strong>IKBKG</strong>（舊稱 <strong>NEMO</strong>，NF-κB essential modulator），位於 <strong>Xq28</strong>；其產物是 IκB kinase complex 的調節次單元，活化 NF-κB 以保護細胞免於 TNF-α 誘發的 apoptosis</mark>。<span class="ex-ref">p.1352</span></li>
 <li>女性因 lyonization 形成 mosaic，帶突變 IKBKG 的表皮細胞沿 Blaschko lines 出現病灶：stage 1 的 IKBKG 缺陷細胞因無法活化 NF-κB 而凋亡、被正常細胞取代；stage 2 為正常細胞代償性增生；stage 3 為表皮 melanin 失禁進入真皮被巨噬細胞吞噬。</li>
 </ul>
@@ -47,7 +47,7 @@
 </tbody>
 </table>
 <p class="ex-cite">p.1351–1352；<span class="ex-ref ex-ref-mckee">McKee p.706–707</span>。各期可重疊或不完全出現。</p>
-<aside class="ex-trap"><strong>易錯</strong>IP 是 X-linked <strong>dominant</strong>（不是 recessive）；分期順序是 vesicular → verrucous → hyperpigmented → hypopigmented/atrophic，色素沉著不是第一期。</aside>
+<aside class="ex-trap"><strong>易錯</strong>IP 是 X-linked <strong>dominant</strong>；四期從出生開始，依序為 vesicular → verrucous → hyperpigmented → hypopigmented，各期可重疊。<span class="ex-ref">p.1351–1352</span></aside>
 <ul>
 <li>皮膚外表現常見：ocular <strong class="ex-n">30–70%</strong>、CNS <strong class="ex-n">40%</strong>，另有牙齒與骨骼異常。<span class="ex-ref">p.1352</span></li>
 <li>病理（Fitzpatrick）：<mark data-q="106-46">色素區可見大量 <strong>melanin-laden melanophages</strong></mark>、基底層與真皮大量 melanin、基底層空泡變性；melanocyte 數目正常或減少。<span class="ex-ref">p.1352</span></li>
@@ -64,7 +64,7 @@
 <tr><td>Dyskeratosis congenita（Zinsser-Cole-Engman）</td><td>Telomerase complex：X-linked <strong>DKC1</strong>（Xq28，dyskerin）；AD 多為 <strong>TERC</strong>（TERT 較少）；AR：NOP10、NHP2、TINF2</td><td>三聯：頸胸 reticulate pigmentation、nail atrophy、leukoplakia；bone marrow failure <strong class="ex-n">&gt;80%</strong>；第 2–3 個十年發生 malignancy</td><td>非特異：表皮萎縮、上真皮大量 melanophages</td></tr>
 <tr><td>Naegeli-Franceschetti-Jadassohn</td><td>AD，<strong>KRT14</strong>（17q11.2-q21）</td><td>頸、腋下網狀色素；palmoplantar keratoderma、<strong>無 dermatoglyphs</strong>、指甲與牙齒異常、少汗致 heat intolerance</td><td>上真皮 melanophages；eccrine glands 正常</td></tr>
 <tr><td>Dermatopathia pigmentosa reticularis</td><td>AD，與 NFJ allelic（KRT14）</td><td>軀幹網狀色素；與 NFJ 區分：色素<strong>終生持續</strong>、partial（noncicatricial）alopecia、<strong>無牙齒異常</strong>；指甲、眼睛異常、少汗</td><td>明顯 pigmentary incontinence、基底層液化變性、真皮膠原 hyalinization</td></tr>
-<tr><td><mark data-q="107-31,111-14">Dowling-Degos disease（reticular pigmented anomaly of the flexures）</mark></td><td>AD，<strong>KRT5</strong>（12q13.13，haploinsufficiency）</td><td><mark data-q="107-31,111-14">第 3–4 個十年起於鼠蹊、腋下的對稱小棕灰斑，擴及臀溝、乳房下、頸、軀幹；呈網狀</mark>；頸腋 comedo-like follicular papules、口周 pitted acneiform scars</td><td>表皮與毛囊漏斗部伸出 <strong>filiform rete</strong>，尖端色素加深，melanocyte <strong>不增加</strong>；需與 acanthosis nigricans 區分</td></tr>
+<tr><td><mark data-q="107-31,111-14">Dowling-Degos disease（reticular pigmented anomaly of the flexures）</mark></td><td>AD，<strong>KRT5</strong>（12q13.13，haploinsufficiency）</td><td><mark data-q="107-31,111-14">第 3–4 個十年起於鼠蹊、腋下的對稱小棕灰斑，擴及臀溝、乳房下、頸、軀幹；呈網狀</mark>；頸腋 comedo-like follicular papules、口周 pitted acneiform scars；進展緩慢、多在成年早期可見、無性別差異</td><td>表皮與毛囊漏斗部伸出 <strong>filiform rete</strong>，尖端色素加深，melanocyte <strong>不增加</strong>；需與 acanthosis nigricans 區分</td></tr>
 <tr><td>Galli-Galli disease</td><td>AD；部分有 KRT5 突變</td><td>臨床同 Dowling-Degos</td><td>DDD 加上 <strong>suprabasal acantholysis</strong>（acantholytic variant）</td></tr>
 <tr><td>Kitamura reticular acropigmentation</td><td>AD，<strong>ADAM10</strong>（15q21.3）</td><td>第一個十年起於<strong>手背</strong>的角狀、邊界清楚、略凹陷的網狀雀斑樣斑，再擴散；可有 palmar pits；多為日本；不像 Dohi 有色素減退</td><td>melanocyte 數目與活性增加、表皮萎縮</td></tr>
 <tr><td>Haber syndrome</td><td>—</td><td>軀幹與腋下網狀色素、軀幹 verruciform papules、光敏感 rosacea-like 臉部紅斑與微血管擴張；多在兒童期</td><td>—</td></tr>
@@ -72,11 +72,11 @@
 </table>
 <p class="ex-cite">p.1353–1355。</p>
 <ul>
-<li>DKC 的 DDx：<strong>Fanconi syndrome</strong>（矮小、拇指發育不全、腕骨減少；色素較早出現）。AD 型預後最好（保留部分 telomerase 活性）。<span class="ex-ref">p.1353</span></li>
+<li>DKC 的 DDx：<strong>Fanconi syndrome</strong>（矮小、拇指發育不全、腕骨減少；色素較早出現）。AD 型預後較其他型佳（可能因保留部分 telomerase 活性）。<span class="ex-ref">p.1353</span></li>
 <li>McKee 補充 Dowling-Degos：致病基因還有 <strong>POFUT1</strong>、<strong>POGLUT1</strong>（較廣泛、非皺褶處），合併 hidradenitis suppurativa 的變型與 <strong>PSENEN</strong> 有關；病理類似 <strong>adenoid seborrheic keratosis</strong>，但細絲狀上皮索與毛囊漏斗部關係密切。<span class="ex-ref ex-ref-mckee">McKee p.1004</span></li>
 <li>McKee 補充 Kitamura：rete ridges 輕度延長、尖端色素、<strong>沒有 pigment incontinence</strong>、不侵犯毛囊（DDD 則較明顯並侵犯毛囊），可見 giant melanosomes。<span class="ex-ref ex-ref-mckee">McKee p.1005–1006</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Dowling-Degos 是皺褶處「網狀」色素沉著，不是沿 Blaschko lines 的 whorled pattern；KRT5 → DDD，KRT14 → NFJ/DPR，ADAM10 → Kitamura。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Dowling-Degos disease 又稱 reticular pigmented anomaly of the flexures（皺褶處網狀色素沉著）；KRT5 → DDD，KRT14 → NFJ/DPR，ADAM10 → Kitamura。<span class="ex-ref">p.1353–1355</span></aside>
 </section>
 
 <section class="ex-note" id="dermal-melanocytosis">
@@ -97,12 +97,12 @@
 <ul>
 <li>Ota 1939 首次描述；Asian 盛行率約 <strong class="ex-n">0.6%</strong>；多在出生時發現、女性為主，也可在幼兒期或青春期才出現。<span class="ex-ref">p.1355</span></li>
 <li><mark data-q="104-20">單側 blue-black 或 gray-brown，分布於 <strong>trigeminal nerve 第一、二分支（V1、V2）</strong>區；約 <strong class="ex-n">60%</strong> 有 scleral pigmentation</mark>；也可侵犯 conjunctiva、tympanic membrane（oculodermal melanocytosis）。分型：mild（Type 1）、moderate（Type 2）、intensive（Type 3）、bilateral（Type 4）。</li>
-<li>罕見發生 melanoma，<strong>白人較常惡變</strong>；部位包括 choroid、brain、orbit、iris、ciliary body、optic nerve；也與同側 glaucoma、intracranial melanocytosis 相關。持續存在，通常不會自行消退。</li>
+<li>罕見發生 melanoma，<strong>白人較常惡變</strong>；部位包括 choroid、brain、orbit、iris、ciliary body、optic nerve；也與同側 glaucoma、intracranial melanocytosis 相關。持續存在，通常不會自行消退。<span class="ex-ref">p.1355–1356</span></li>
 <li>雙側病例要與 <strong>Hori nevus</strong> 區分（後天、無黏膜侵犯、色較淡）；合併血管畸形為 phakomatosis pigmentovascularis。<span class="ex-ref">p.1356</span></li>
 <li>治療：外用藥無效；cryotherapy、surgery 因疤痕應避免；<mark data-q="101-29,103-26">首選 <strong>QS lasers</strong>：QS ruby、QS alexandrite、QS Nd:YAG</mark>；picosecond laser 也有效。<span class="ex-ref">p.1356</span></li>
 <li>McKee：雙側 <strong class="ex-n">5%</strong>；sclera 與 conjunctiva 約 <strong class="ex-n">60%</strong>；超過一半出生即有，其餘多在青春期出現；病理為 upper and mid-dermis 的色素性 spindle/dendritic melanocytes，平行皮面、可環繞附屬器；部分有 <strong>GNAQ／GNA11</strong> 突變；惡變主要見於白人。<span class="ex-ref ex-ref-mckee">McKee p.1293–1294</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫 Ota 的 melanocytes 散布「整個真皮」，McKee 寫在 upper and mid-dermis；Mongolian spot 則在 lower（McKee：deep reticular）dermis。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫 Ota 的 melanocytes 散布「整個真皮」，McKee 寫在 upper and mid-dermis；Mongolian spot 則在 lower（McKee：deep reticular）dermis。<span class="ex-ref">p.1355、p.1357</span> <span class="ex-ref ex-ref-mckee">McKee p.1293–1294</span></aside>
 <h3>Nevus of Ito（nevus fuscoceruleus acromiodeltoideus）</h3>
 <ul>
 <li>Ito 1954；視為 nevus of Ota 的變異型，臨床、族群、病理都相似，可與 Ota 同時存在；分布於肩峰鎖骨與三角肌區。<span class="ex-ref">p.1356</span></li>
@@ -116,19 +116,19 @@
 <li>病理：lower dermis 的 spindle-shaped melanocytes，胎兒期未能遷移到 DEJ。多在兒童期自行消退；sacral 型雷射效果較好。<span class="ex-ref">p.1357–1358</span></li>
 <li>McKee：最常見於日本、華人與有色人種；合併的 storage disease 以 Hurler、GM1 gangliosidosis type I、mucolipidosis type II 最常見，這類病灶通常不消退；與血管胎記並存稱 phakomatosis pigmentovascularis；多在青春期前消失，持續到成人多為 extrasacral；病理為 deep reticular dermis 稀疏的 dendritic melanocytes。<span class="ex-ref ex-ref-mckee">McKee p.1292–1293</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Mongolian spot 典型在腰薦部／臀部，不是腹部；合併代謝病的是「廣泛的」Mongolian spots，不是 Hori nevus。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Mongolian spots 最常見於薦骨區（Table 77-1：lower back and sacrum）；合併 inborn errors of metabolism 的是侵犯軀幹與四肢大面積的 extensive Mongolian spots；Table 77-1 中 nevus of Hori 為 no associated features of medical concern。<span class="ex-ref">p.1357</span></aside>
 <h3>Nevus of Hori（ABNOM，acquired bilateral nevus of Ota-like macules）</h3>
 <ul>
 <li>1984 首次描述；約 <strong class="ex-n">1%</strong> Asian（尤其華人、日本人）；女性較多；<strong>第 3–5 個十年</strong>出現。<span class="ex-ref">p.1374</span></li>
 <li>針頭大到數 mm 的 blue-brown 至 slate-gray 斑，好發 malar，太陽穴、鼻也不少見；<strong>雙側</strong>、<strong>沒有眼睛與黏膜侵犯</strong>（與 Ota 不同）。<span class="ex-ref">p.1375</span></li>
 <li>機轉三假說中以「reactivation of latent dermal melanocytes」最可能，UV 與性荷爾蒙為活化因子。常與 melasma、雀斑、solar lentigines 並存，此時需切片；病理 upper and mid dermis melanocytosis；逐漸進展。</li>
-<li>治療：<mark data-q="103-26">QS lasers 最常用（文獻含 QS ruby、QS 532-nm、ablative CO2、fractional nonablative 2940-nm Er:YAG）</mark>；picosecond 有效；需多次、間隔數月，未必完全清除。At-a-glance：best treated with <strong>QS Nd:YAG</strong>。<span class="ex-ref">p.1374–1375</span></li>
+<li>治療：<mark data-q="103-26">曾用 ablative CO2、QS 532-nm、QS ruby、fractional nonablative 2940-nm Er:YAG 單用或合併，但以 QS lasers 最常用</mark>；picosecond 有效；需多次、間隔數月，未必完全清除。At-a-glance：best treated with <strong>QS Nd:YAG</strong>。<span class="ex-ref">p.1374–1375</span></li>
 <li>McKee：一等親陽性家族史 <strong class="ex-n">42%</strong>；誘因為日曬、懷孕、荷爾蒙藥物、壓力、外傷；病理為 upper dermis 的 bipolar dendritic melanocytes。<span class="ex-ref ex-ref-mckee">McKee p.1294–1295</span></li>
 </ul>
 <h3>Dermal melanocyte hamartoma</h3>
 <ul>
 <li>Burkhart 1981；先天、gray-blue、<strong>dermatomal pattern</strong>。<span class="ex-ref">p.1358</span></li>
-<li><mark data-q="104-20">McKee：除 dermatomal 分布外，與 Ota／Ito 無法區分（病變在真皮，未提及侵犯脂肪層）</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1295</span></li>
+<li><mark data-q="104-20">McKee：先天性 dermal melanocytosis，呈 dermatomal 分布，其餘與 Ota／Ito 無法區分</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1295</span></li>
 </ul>
 </section>
 
@@ -158,7 +158,7 @@
 <h3>Isolated CALMs（單一咖啡牛奶斑）</h3>
 <ul>
 <li>大小 <strong class="ex-n">0.5 cm</strong> 到 <strong class="ex-n">&gt;20 cm</strong>；常在出生時或出生後數月出現；<mark data-q="102-46">新生兒有 isolated CALMs 的比例 <strong class="ex-n">0.3–18%</strong></mark>。<span class="ex-ref">p.1360</span></li>
-<li><mark data-q="102-46">一般人口最多 <strong class="ex-n">1/3</strong> 有 CALMs（常見，不罕見）</mark>；深膚色較多，男女相同；好發軀幹、臀部、下肢；持續終生。<span class="ex-ref">p.1376</span></li>
+<li><mark data-q="102-46">一般人口最多 <strong class="ex-n">1/3</strong> 有 CALMs</mark>；深膚色較多，男女相同；好發軀幹、臀部、下肢；持續終生。<span class="ex-ref">p.1376</span></li>
 <li>出現 <strong class="ex-n">≥6</strong> 個 CALMs 應評估潛在 genodermatoses。<span class="ex-ref">p.1376</span></li>
 <li>病理：melanocyte 數目正常或減少（有時肥大）、基底層 melanin 增加（epidermal melanotic hypermelanosis）。DDx：nevus spilus、早期 Becker nevus、congenital nevus。QS lasers 可治療但常復發。<span class="ex-ref">p.1376–1377</span></li>
 </ul>
@@ -178,7 +178,7 @@
 <ul>
 <li>McKee McCune-Albright：<strong>GNAS</strong> 非遺傳性 postzygotic activating mutation；三項主要特徵中有兩項即可診斷；CALMs 不對稱，多在 2 歲前出現；giant melanosomes 比 NF1 的 CALMs 少；真皮或皮下可見 plaquelike osteomas。<span class="ex-ref ex-ref-mckee">McKee p.1003–1004</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>單一 CALM 非常常見，不是罕見胎記；多發（≥6）才需要找 NF1 等症候群。</aside>
+<aside class="ex-trap"><strong>易錯</strong>一般人口最多 1/3 有 CALMs；出現 ≥6 個 CALMs 時應評估潛在 genodermatoses。<span class="ex-ref">p.1376</span></aside>
 </section>
 
 <section class="ex-note" id="endocrine-metabolic">
@@ -196,7 +196,7 @@
 </ul>
 <h3>Nutritional（營養）</h3>
 <ul>
-<li>Kwashiorkor：蛋白質嚴重缺乏、熱量足夠；<strong class="ex-n">6 months–5 years</strong>；臉先色素減退，受壓摩擦處 hyperkeratosis＋色素沉著 → <strong>"flaky paint"</strong>；頭髮色素減退帶狀 <strong>flag sign</strong>。<span class="ex-ref">p.1363</span></li>
+<li>Kwashiorkor：蛋白質嚴重缺乏、熱量足夠；開發中國家 <strong class="ex-n">6 months–5 years</strong> 兒童的重要死因；臉先色素減退，受壓摩擦處 hyperkeratosis＋色素沉著 → <strong>"flaky paint"</strong>；頭髮色素減退帶狀 <strong>flag sign</strong>。<span class="ex-ref">p.1363</span></li>
 <li><mark data-q="105-41"><strong>Vitamin B12 deficiency</strong>：atrophic gastritis（<em>Helicobacter pylori</em> 或 autoimmune 致 intrinsic factor 缺乏，pernicious anemia）→ megaloblastic anemia；皮膚<strong>全身性色素沉著</strong>，頭髮色素減退或早白；病理基底層 melanin 增加，屬 melanin 合成增加而非運送缺陷；補充 B12 可逆轉</mark>。Pernicious anemia 與 vitiligo 相關。<span class="ex-ref">p.1363</span></li>
 <li>Folic acid deficiency（合併 megaloblastic anemia）也可造成色素沉著。</li>
 <li>Pellagra（niacin，vitamin B3）：原因有酗酒、isoniazid、anticonvulsants、IBD、celiac、carcinoid；dermatitis、dementia、diarrhea；曝光處紅腫後成 dusky brown-red，之後角化脫屑。<span class="ex-ref">p.1363–1364</span></li>
@@ -266,7 +266,7 @@
 </tbody>
 </table>
 <p class="ex-cite">p.1365；<span class="ex-ref ex-ref-mckee">McKee p.645–648</span>。<mark data-q="110-12">Minocycline 也可造成指甲、sclera、口腔黏膜、甲狀腺、骨骼、牙齒色素</mark>（McKee：口腔黏膜病灶少見，口腔下方骨骼最常受侵犯）。</p>
-<aside class="ex-trap"><strong>易錯</strong>Tetracycline 類（minocycline）色素不是只在黏膜：type 3 正是曝光處加重；amiodarone 典型在曝光處。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Minocycline type 3 為 diffuse muddy brown、photoexacerbated；amiodarone 的 blue-gray 色素在 photoexposed areas。<span class="ex-ref">p.1365</span></aside>
 <h3>Histology（McKee 病理重點）</h3>
 <table class="ex-table">
 <thead><tr><th scope="col">Agent</th><th scope="col">Pigment &amp; stains（色素與染色）</th></tr></thead>
@@ -279,13 +279,13 @@
 <tr><td>Silver（argyria）</td><td>先在牙齦出現 slate-blue 線；&lt;1 µm 黑褐顆粒沿血管與附屬器（汗腺）基底膜、靠近彈性纖維；無 orange-red birefringence；表皮 melanin 也增加</td></tr>
 </tbody>
 </table>
-<p class="ex-cite"><span class="ex-ref ex-ref-mckee">McKee p.646–648、p.662–663</span>。</p>
+<p class="ex-cite"><span class="ex-ref ex-ref-mckee">McKee p.646–648、p.662–664</span>。</p>
 <h3>Management（治療）</h3>
 <ul>
 <li>停用致病藥物最重要，但色素常持續，有時達數十年；melanin 相關者需防曬。<span class="ex-ref">p.1367</span></li>
 <li><mark data-q="104-48"><strong>QS ruby、QS alexandrite、QS Nd:YAG</strong> 在部分病例（如 amiodarone、minocycline 色素）效果良好，但常需間隔數月的多次治療；picosecond lasers 在白皮膚療程更少、更短即可（近）完全清除</mark>。<span class="ex-ref">p.1367</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>藥物引起的色素沉著不是「QS laser 反應不佳」；課本寫 QS lasers 有不錯結果，只是需要多次治療。</aside>
+<aside class="ex-trap"><strong>易錯</strong>QS ruby、alexandrite、Nd:YAG lasers 在部分藥物色素（如 amiodarone、minocycline）有 favorable results，但常需間隔數月的多次治療。<span class="ex-ref">p.1367</span></aside>
 </section>
 
 <section class="ex-note" id="ochronosis">
@@ -298,7 +298,7 @@
 <ul>
 <li>多報告於非洲、印度、泰國、中國、新加坡的深膚色族群。<span class="ex-ref">p.1368</span></li>
 <li><mark data-q="101-40">無症狀的 <strong>blue-black、gray-black</strong> 色素斑</mark>：臉（malar、太陽穴、下頰）、後外側頸、背、四肢伸側；晚期有 hyperpigmented colloid milium（<strong>"caviar-like"</strong> lesions）、丘疹結節與疤痕；無全身侵犯。</li>
-<li><mark data-q="101-40">最常見原因是 <strong>hydroquinone</strong>（通常濃度 <strong class="ex-n">&gt;4%</strong>）</mark>，另有外用 phenol、resorcinol 與口服 quinine（antimalarial）；藥物代謝形成類似 homogentisic acid polymer 的物質。</li>
+<li><mark data-q="101-40">最常被報告的是 <strong>hydroquinone</strong>（通常濃度 <strong class="ex-n">&gt;4%</strong>）</mark>，另有外用 phenol、resorcinol 與口服 quinine（antimalarial）；藥物代謝形成類似 homogentisic acid polymer 的物質。</li>
 <li>加重因子：未防護的 UV、長期大面積塗抹、合併 resorcinol、phenol、mercury。</li>
 <li>早期臨床上可與 <strong>melasma</strong> 無法區分（尤其亞洲人）；dermoscopy：瀰漫棕色背景上 dark-brown globules；<strong>skin biopsy 為 gold standard</strong>。</li>
 <li>不停藥會持續進展；治療很少有效：停藥、廣效防曬、topical retinoids、α-hydroxy acids、corticosteroids、peels、QS lasers 皆有報告，但無公認有效者。<span class="ex-ref">p.1368</span></li>
@@ -310,7 +310,7 @@
 <li>McKee 病理：superficial dermis 的 yellow-brown、邊界清楚、不規則且斷裂的 ochronotic fibers；色素 autofluorescent、methylene blue 染成黑色，<strong>van Gieson、Perls、Masson-Fontana 皆不染</strong>；早期膠原嗜鹼性腫脹；慢性期可似 colloid milium、foreign body granuloma。Hydroquinone 型另見上真皮 melanophages。</li>
 <li>McKee exogenous：使用約 <strong class="ex-n">6 months</strong> 後發病；南非皮膚美白劑使用者盛行率近 <strong class="ex-n">70%</strong>；antimalarials 造成膝、臉、上顎、甲下 slate-gray，含 melanin 與 hemosiderin。<span class="ex-ref ex-ref-mckee">McKee p.604–605</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>會造成 gray-black／blue-black 皮膚的四大類要記：amiodarone（曝光處）、gold（chrysiasis）、長期高濃度 hydroquinone（exogenous ochronosis，深膚色）、alkaptonuria（endogenous ochronosis）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Amiodarone：photoexposed areas 的 blue-gray 色素（p.1365）；gold（chrysiasis）：曝光處臉部 mauve/blue 至 slate-gray（McKee p.662）；exogenous ochronosis（多為 hydroquinone）：blue-black、gray-black 色素斑（p.1368）；alkaptonuria：組織 blue-black 變色（McKee p.603）。<span class="ex-ref">p.1365、p.1368</span> <span class="ex-ref ex-ref-mckee">McKee p.603、p.662</span></aside>
 </section>
 
 <section class="ex-note" id="systemic-infection">
@@ -357,19 +357,20 @@
 <h2>13. Acquired Patterned &amp; Circumscribed Hypermelanosis（後天圖樣與局限型）</h2>
 <h3>Patterned（圖樣型）</h3>
 <ul>
+<li>At-a-glance：<mark data-q="111-14">phytophotodermatitis、<strong>bleomycin 引起的 flagellate pigmentation</strong>、flagellate mushroom dermatitis 都屬 patterned hyperpigmentation</mark>。<span class="ex-ref">p.1372</span></li>
 <li>Phytophotodermatitis：接觸含 psoralens 植物後照 UV，留下圖樣色素。<span class="ex-ref">p.1372</span></li>
 <li>Flagellate mushroom dermatitis：生食或未煮熟 shiitake（<em>Lentinula edodes</em>）後 <strong class="ex-n">12 hours–5 days</strong> 出現，線狀成群、劇癢紅色丘疹，類似 bleomycin flagellate dermatitis；推測為 thermolabile polysaccharide 毒性反應。<span class="ex-ref">p.1372</span></li>
 </ul>
 <h3>Prurigo pigmentosa</h3>
 <ul>
-<li>日本 Nagashima 於 1971 首次描述（McKee 寫 1978）。<mark data-q="113-11">最常見於 <strong>20 多歲年輕女性</strong>，女：男 <strong class="ex-n">4–6:1</strong></mark>。<span class="ex-ref">p.1374</span></li>
+<li>日本 Nagashima 於 1971 首次描述（McKee 寫 1978，<span class="ex-ref ex-ref-mckee">McKee p.712</span>）。<mark data-q="113-11">最常見於 <strong>20 多歲年輕女性</strong>，女：男 <strong class="ex-n">4–6:1</strong></mark>。<span class="ex-ref">p.1374</span></li>
 <li><mark data-q="113-11,114-26">劇癢、對稱的 urticarial erythematous papules、papulovesicles、vesicles，位於上背、胸、頸、腰薦部；約 <strong class="ex-n">1 week</strong> 自行癒合，留下不癢的 <strong>reticulated hyperpigmentation</strong></mark>；無系統性關聯；病程起伏、反覆。</li>
 <li>病理：早期淺層 <strong>neutrophilic</strong> perivascular 與 interstitial 浸潤；後期 lichenoid、以淋巴球為主；可見 spongiosis、necrotic keratinocytes、eosinophils、水疱。</li>
 <li>DDx：<mark data-q="113-11"><strong>Confluent reticulated papillomatosis（沒有前驅紅色丘疹）</strong></mark>、pigmented contact dermatitis（對 topical steroids 有反應）、Dowling-Degos disease（特徵病理）。</li>
 <li>治療：<mark data-q="113-11,114-26">疹子與搔癢對 <strong>minocycline</strong> 或 <strong>doxycycline 100–200 mg/day</strong>、<strong>dapsone 25–100 mg/day</strong> 反應良好</mark>；色素會自行消退。<span class="ex-ref">p.1374</span></li>
 <li>McKee：與 diabetes、<strong>ketosis</strong>、anorexia nervosa、對 chromium/nickel 的 allergic contact dermatitis 相關；春夏較常見；後期可見 acanthosis、hyperkeratosis、pigment incontinence；有人認為是 CRP 的發炎變型。<span class="ex-ref ex-ref-mckee">McKee p.712–713</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Prurigo pigmentosa 對 dapsone 反應「良好」，不是不佳；最終留下的是網狀色素沉著。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Prurigo pigmentosa 的疹子與搔癢對 minocycline、doxycycline 或 dapsone respond well；丘疹水疱約 1 週癒合，留下不癢的 reticular hyperpigmentation。<span class="ex-ref">p.1374</span></aside>
 <h3>Nevus of Becker（Becker hamartoma／Becker melanosis）</h3>
 <ul>
 <li>1949 首次描述；後天的 hyperpigmented epidermal nevus；<strong>androgen-dependent</strong>，約 <strong class="ex-n">0.5%</strong> 人口，青春期變明顯；傳統說男性較多，但新研究兒童男女相同。<span class="ex-ref">p.1375</span></li>
@@ -377,7 +378,7 @@
 <li>Paradominant inheritance（幾乎都是散發）；Becker nevus 衍生的 fibroblasts 曾發現 chromosomal mosaicism。</li>
 <li>病理：acanthosis、不同程度 hyperkeratosis、rete ridges 延長；<strong>melanocyte 數目正常</strong>、基底層 melanin 增加；<mark data-q="110-17">真皮 <strong>arrector pili muscles 數目增加</strong>，因此與 <strong>smooth muscle hamartoma</strong> 難以區分</mark>。<span class="ex-ref">p.1376</span></li>
 <li>DDx：congenital hairy nevus、nevus of Ito、CALMs。懷孕與夏天變深，持續終生。治療困難：小病灶可切除；laser hair removal 可讓病灶看起來較淡；long-pulsed 與 picosecond alexandrite、QS Nd:YAG 有報告但證據不足。</li>
-<li>McKee：多在第二個十年出現；表皮 androgen receptor 表現增加；<strong>melanocytes 常看似增加</strong>但無增生活性（與 Fitzpatrick「數目正常」說法不同）；<mark data-q="110-17">部分病灶網狀真皮有大量 hamartomatous、不規則增大的 smooth muscle fibers</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1238–1240</span></li>
+<li>McKee：多在第二個十年出現；表皮 androgen receptor 表現增加；<strong>melanocytes 常看似增加</strong>但無增生活性（與 Fitzpatrick「數目正常」說法不同）；<mark data-q="110-17">偶有病灶網狀真皮有大量 hamartomatous、不規則增大的 smooth muscle fibers</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1238–1240</span></li>
 </ul>
 <h3>Ephelides（freckles）</h3>
 <ul>
@@ -435,7 +436,7 @@
 <li>Superficial chemical peels 可作輔助（注意 PIH）；雷射可能反而加重色素；IPL、Er:YAG、1550-nm 與 1927-nm fractional 都有報告，最常用 <strong>low-fluence QS Nd:YAG（laser toning）</strong>。</li>
 <li><strong>Tranexamic acid</strong>：外用、皮內注射、口服；低劑量口服 <strong class="ex-n">500–700 mg/day</strong> 數月，用於難治病例安全有效。<span class="ex-ref">p.1381</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 9e 的 Kligman's formula 是 5% HQ + 0.1% tretinoin + 溫和類固醇；4% HQ + 0.05% tretinoin + 類固醇是 triple-combination therapy。Tretinoin 沒有 0.5%；kojic acid 不在配方內。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 9e 的 Kligman's formula 是 5% HQ + 0.1% tretinoin + 溫和類固醇；4% HQ + 0.05% tretinoin + 類固醇是 triple-combination therapy。<span class="ex-ref">p.1381</span></aside>
 <ul>
 <li>McKee melasma 病理：epidermal 型（各層 keratinocyte melanin 增加）與 mixed 型（另有淺真皮 melanin）；真皮 solar elastosis、mast cells、血管增加；可見突入真皮的 <strong>pendulous melanocytes</strong>；男性 melasma 有 LH 高、testosterone 低。<span class="ex-ref ex-ref-mckee">McKee p.1002</span></li>
 <li>McKee 把 acquired brachial cutaneous dyschromatosis 視為與 poikiloderma of Civatte 相關（停經後女性前臂背側灰棕斑，可能與 antihypertensives 有關），與 Fitzpatrick 歸在 melasma 的寫法不同。<span class="ex-ref ex-ref-mckee">McKee p.1013</span></li>
@@ -468,7 +469,7 @@
 </tbody>
 </table>
 <p class="ex-cite">p.1384–1386。EDP 由 Ramirez 1957 描述（los cenicientos，ashen ones）；三者在文獻常被混用，但屬不同疾病。</p>
-<aside class="ex-trap"><strong>易錯</strong>EDP = 邊界清楚 blue-gray、<strong>photoprotected</strong>；LPP = 邊界不清 brown/gray-brown、<strong>photoexposed</strong>（加上腋下 inversus）。考題常把兩者對調。</aside>
+<aside class="ex-trap"><strong>易錯</strong>EDP = 邊界清楚 blue-gray、<strong>photoprotected</strong>；LPP = 邊界不清 brown/gray-brown、<strong>photoexposed</strong>（也可在腋下，LPP-inversus）。<span class="ex-ref">p.1384–1385</span></aside>
 <ul>
 <li>McKee EDP：拉丁美洲（尤其墨西哥）與亞洲；病理圖示 hyperkeratosis、明顯 pigmentary incontinence、hydropic degeneration、cytoid body；DEJ 可見 fibrinogen 沉積；與 lichen planus 關係未定（部分報告可能其實是 LPP）。<span class="ex-ref ex-ref-mckee">McKee p.258–260</span></li>
 <li>McKee LPP：熱帶深膚色者，臉頸與皺褶；病理表皮變薄、基底層空泡化、pigmentary incontinence、淺真皮 lichenoid 淋巴組織球浸潤。<span class="ex-ref ex-ref-mckee">McKee p.244、p.249</span></li>

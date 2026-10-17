@@ -46,7 +46,7 @@
 <li><mark data-q="103-31">High insulin 刺激 ovarian androgens 與 ovarian hypertrophy with cystic changes；PCOS 的 AN 對 antiandrogen 反應不穩定</mark>，表示 hyperinsulinemia 比 hyperandrogenism 重要。<span class="ex-ref">p.2495</span></li>
 <li>Drugs：systemic glucocorticoids、nicotinic acid、estrogens（如 diethylstilbestrol）；McKee 另列 oral contraceptives。<span class="ex-ref">p.2496</span><span class="ex-ref ex-ref-mckee">McKee p.627</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Malignancy 相關 AN 的生長因子：Fitzpatrick 寫 tumor 釋出 <strong>TGF-β</strong> 經 EGFR 刺激 keratinocyte（p.2495）；McKee 寫 tumor 分泌 <strong>TGF-α</strong>（McKee p.628）。兩種寫法都要認得。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Malignancy 相關 AN 的生長因子：Fitzpatrick 寫證據顯示 tumor 釋出 <strong>TGF-β</strong>，可能經 EGFR 刺激 keratinocyte 增生（p.2495）；McKee 寫部分 malignant tumors 大量分泌 <strong>TGF-α</strong>，刺激 keratinocyte 增生（McKee p.628）。</aside>
 <h3>Histopathology（病理）</h3>
 <ul>
 <li>Papillomatosis 與 hyperkeratosis，<strong>acanthosis 很少</strong>；basal layer hyperpigmentation 不一定，咖啡色主要來自 hyperkeratosis。<span class="ex-ref">p.2495</span></li>
@@ -86,7 +86,7 @@
 <li><mark data-q="104-05,115-49">與 LJM、scleroderma-like syndrome 不同，scleredema 的存在與 retinopathy、nephropathy、neuropathy 或主要血管疾病<strong>不相關</strong></mark>（但缺乏大型前瞻研究）。</li>
 <li>多數病人最後需要 insulin、難治、有多種糖尿病併發症。治療通常無效：radiotherapy、low-dose MTX、bath PUVA、extracorporeal photopheresis、factor XIII、PGE1 個案報告；減重與 physical therapy。<span class="ex-ref">p.2497</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Diabetic scleredema 好發「成人、肥胖、Type 2、上背頸」，不是兒童；和微血管併發症<strong>無關</strong>。和 retinopathy 相關的是 LJM 與 scleroderma-like syndrome。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Scleredema diabeticorum 位於 upper back 與 neck，是長期糖尿病合併 obesity 的疾病，多為 Type 2，兒童沒有報告過；與 LJM、scleroderma-like syndrome 不同，scleredema 的存在與 retinopathy、nephropathy、neuropathy 或主要血管疾病<strong>不相關</strong>（p.2497）。</aside>
 <h3>McKee 補充：Scleredema（Buschke）</h3>
 <table class="ex-table">
 <thead><tr><th scope="col">Subtype（亞型）</th><th scope="col">Features（特點）</th></tr></thead>
@@ -114,7 +114,7 @@
 </ul>
 <h3>McKee 補充</h3>
 <ul>
-<li>Yellowish papules with a <strong>red halo</strong>，好發 buttocks、shoulders、四肢伸側；常 pruritic，有時 tender；<mark data-q="111-36">少數有 Koebner phenomenon</mark>；最常見原因是 secondary hyperlipoproteinemia（diabetes、alcohol、drugs 如 estrogens、corticosteroids、retinoids）。<span class="ex-ref ex-ref-mckee">McKee p.562</span></li>
+<li>Yellowish papules with a <strong>red halo</strong>，好發 buttocks、shoulders、四肢伸側；常 pruritic，有時 tender；<mark data-q="111-36">罕見 Koebner phenomenon</mark>；最常見原因是 secondary hyperlipoproteinemia（diabetes、alcohol、drugs 如 estrogens、corticosteroids、retinoids）。<span class="ex-ref ex-ref-mckee">McKee p.562</span></li>
 <li>Histology：superficial reticular dermis；早期 foam cells 可能很少，混有 lymphocytes 與 neutrophils；成熟病灶以 foamy xanthoma cells 為主；可有 extracellular lipid（其他 xanthoma 少見）；oil red O、Sudan 陽性；xanthoma cells 表現 CD68。<span class="ex-ref ex-ref-mckee">McKee p.559, 562</span></li>
 <li>DDx：<strong>granuloma annulare</strong>（都有 interstitial histiocytes 與 mucin），但 eruptive xanthoma 沒有 necrobiosis 與 palisading，perivascular infiltrate 是 histiocytes 而非 lymphocytes；有 urate-like crystals 的病例曾被誤診為 gout。<span class="ex-ref ex-ref-mckee">McKee p.562–563</span></li>
 <li><mark data-q="114-16">Myxedema（hypothyroidism）病人 hyperlipidemia 風險增加，可出現 eruptive 與 tuberous xanthomata</mark>。<span class="ex-ref ex-ref-mckee">McKee p.614</span></li>
@@ -138,7 +138,7 @@
 <h3>Diabetic ulcers（糖尿病潰瘍）</h3>
 <ul>
 <li>Foot ulcers 發生於 <strong class="ex-n">15–25%</strong> 糖尿病人；下肢截肢風險為一般人 <strong class="ex-n">10–30 倍</strong>；下肢潰瘍佔糖尿病住院的 <strong class="ex-n">25%</strong>，是 <strong class="ex-n">84%</strong> 截肢的直接原因；足潰瘍者 <strong class="ex-n">14–24%</strong> 最後截肢。<span class="ex-ref">p.2498</span></li>
-<li><mark data-q="108-11">Callus formation 先於骨突處組織壞死破皮（大拇趾、足底、第一／二 MTP 關節）；潰瘍周圍有一圈 callus，可深及關節與骨頭</mark>；併發 soft-tissue infection 與 osteomyelitis。</li>
+<li><mark data-q="108-11">Callus formation 先於骨突處組織壞死破皮（通常在 great toe 與足底、first and/or second metacarpophalangeal joints 上方，原文用語）；潰瘍周圍有一圈 callus，可深及關節與骨頭</mark>；併發 soft-tissue infection 與 osteomyelitis。</li>
 <li>主要機轉：peripheral neuropathy、pressure、trauma；neuropathy 是主要預測因子；Charcot arthropathy 造成足底壓力；314 位潰瘍病人中最常見原因是不合腳的鞋襪。</li>
 <li><mark data-q="108-11">Callus 代表過度摩擦，常先於足潰瘍出現</mark>；穿跑步鞋可減少 callus。</li>
 <li>Risk factors：過去足潰瘍、曾截肢、糖尿病 <strong class="ex-n">&gt;10 years</strong>、視力差（poorer than 20/40）、onychomycosis、血糖控制差、monofilament insensitivity。<span class="ex-ref">p.2498–2499</span></li>
@@ -158,7 +158,7 @@
 <tbody>
 <tr><td>每天檢查雙足，包括趾縫；洗後仔細擦乾，特別是趾縫</td></tr>
 <tr><td>水溫要 <strong class="ex-n">&lt;37°C</strong>，先用手而不是腳試溫</td></tr>
-<tr><td>不要赤腳走路、不要不穿襪子穿鞋；每天檢查鞋內有無異物；襪子每天換，最好無縫線</td></tr>
+<tr><td>不要赤腳走路、不要不穿襪子穿鞋；每天檢查鞋內有無異物；襪子每天換，縫線朝外穿或（preferably）無縫線</td></tr>
 <tr><td>Emollients 用於乾燥皮膚，但<strong>不擦趾縫</strong>；指甲平剪</td></tr>
 <tr><td>視力不良者不要自己處理足部（如剪指甲）</td></tr>
 <tr><td><mark data-q="103-18">Corns 與 calluses 不應由病人自己割除，應由醫療人員處理</mark></td></tr>
@@ -166,6 +166,12 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 137-3，p.2500。</p>
+<ul>
+<li>McKee：<mark data-q="103-18"><strong>Clavus（corn）</strong>極常見、疼痛，好發於腳趾背側或外側，常因鞋子不合腳；組織為深的 keratin-filled depression，其下表皮常萎縮，granular layer 常消失並有 parakeratosis</mark>；<mark data-q="103-18">沒有 koilocytes 與不規則 keratohyalin granules，可與 plantar wart 區分</mark>。<span class="ex-ref ex-ref-mckee">McKee p.107</span></li>
+<li>McKee：<mark data-q="103-18"><strong>Callus</strong> 不痛，多在 ball of foot 或 heel，來自 pressure 或足部變形；手掌病灶來自 chronic rubbing（如 mousing callus）</mark>；組織與 clavus 相似，為 keratin-filled epidermal dell 伴 hypergranulosis。<span class="ex-ref ex-ref-mckee">McKee p.107</span></li>
+<li>Ch48：<mark data-q="103-18">punctate palmoplantar keratosis 的鑑別診斷包括 verruca vulgaris、<strong>corns over pressure points</strong>、<strong>porokeratosis punctata palmaris et plantaris</strong></mark>、keratosis punctata of the palmar creases 等。<span class="ex-ref">Ch48 p.820</span></li>
+<li>Ch196：<mark data-q="103-18">salicylic acid <strong class="ex-n">3–6%</strong> 軟化角質使鱗屑脫落；濃度 <strong class="ex-n">&gt;6%</strong> 具組織破壞性</mark>；Table 196-4 列 calluses、corns、warts 的 FDA 核准濃度為 plaster <strong class="ex-n">12–40%</strong>。<span class="ex-ref">Ch196 p.3619</span></li>
+</ul>
 </section>
 
 <section class="ex-note" id="necrobiosis-lipoidica">
@@ -189,7 +195,7 @@
 <li>反過來，糖尿病人中 NL prevalence 只有 <strong class="ex-n">0.3–3%</strong>；NL 仍是糖尿病的有效 marker。</li>
 <li><mark data-q="110-31,111-19">高血糖程度與糖尿病控制好壞，看起來與 NL 的出現<strong>不相關</strong></mark>。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>NL 與「血糖控制」無關；但 LJM、足潰瘍與血糖控制相關。不要混淆。</aside>
+<aside class="ex-trap"><strong>易錯</strong>NL：高血糖程度與糖尿病控制好壞，看起來與 NL 的出現<strong>不相關</strong>（p.2501）；McKee 也寫皮膚病程看起來與 hyperglycemia 無關，治療糖尿病不影響皮膚病灶結果（McKee p.321）。</aside>
 <h3>McKee 補充</h3>
 <ul>
 <li>Diabetes 與皮膚病灶的時序：先診斷糖尿病最多 <strong class="ex-n">62%</strong>、同時出現最多 <strong class="ex-n">24%</strong>、NL 先出現最多 <strong class="ex-n">14%</strong>；治療糖尿病不影響皮膚病程；胰臟移植後可改善或消失。<span class="ex-ref ex-ref-mckee">McKee p.321</span></li>
@@ -234,7 +240,7 @@
 <ul>
 <li>與糖尿病的關聯比 NL 弱；多數 GA 病人健康、沒有全身疾病。<span class="ex-ref">p.2501</span></li>
 <li><mark data-q="112-28">Dabski 與 Winkelmann：localized GA 中 <strong class="ex-n">9.7%</strong>、generalized GA 中 <strong class="ex-n">21%</strong> 有糖尿病</mark>；case-control 研究 GA <strong class="ex-n">18%</strong> vs 對照 <strong class="ex-n">8%</strong>。</li>
-<li><mark data-q="110-31,112-28">糖尿病較常見於 adult-onset GA，以及 <strong>generalized 或 perforating GA</strong>，這些病人病程較慢性、易復發</mark>。</li>
+<li><mark data-q="110-31,112-28">有印象認為糖尿病較常見於 adult-onset GA，以及 <strong>generalized 或 perforating GA</strong>，這些病人病程較慢性、易復發</mark>。</li>
 </ul>
 <h3>Diabetic dermopathy（shin spots，糖尿病皮膚病變）</h3>
 <ul>
@@ -278,7 +284,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 137-4，p.2502。</p>
-<aside class="ex-trap"><strong>易錯</strong>Bullosis diabeticorum 不需要口服類固醇、不會大面積擴散、和外傷或感染無關；可偶發於上肢遠端。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Bullosis diabeticorum 病程良性，不侵犯大面積體表；唯一嚴重併發症是 secondary infection，其餘為 supportive therapy；病人沒有先前外傷或感染病史；偶爾侵犯 distal upper extremities（p.2502）。</aside>
 <h3>McKee 補充</h3>
 <ul>
 <li>約 <strong class="ex-n">0.16%</strong> 糖尿病人；男:女 <strong class="ex-n">2:1</strong>；可輕微疼痛或灼熱；水疱數 mm 到數 cm，可迅速變成 hemorrhagic；常復發、數週癒合不留疤；少數有潰瘍、感染，甚至 osteomyelitis。<span class="ex-ref ex-ref-mckee">McKee p.632</span></li>
@@ -349,7 +355,7 @@
 <li>全球 goiter 約 <strong class="ex-n">7 億</strong>人，多因 iodine deficiency；美國 hyperthyroidism 約 <strong class="ex-n">1%</strong>（老年女性高 4–5 倍）；篩檢發現 hypothyroidism <strong class="ex-n">4.6%</strong>，其中 <strong class="ex-n">&gt;90%</strong> 無症狀。<span class="ex-ref">p.2504</span></li>
 <li><strong>Graves disease</strong> 佔 hyperthyroidism <strong class="ex-n">60–80%</strong>；三聯：autoimmune thyroid disease、eye disease、thyroid dermopathy；其次是 toxic multinodular goiter（低碘地區、<strong class="ex-n">&gt;50 歲</strong>）。</li>
 <li>Congenital hypothyroidism 是最常見可治療的智能障礙原因（最多 <strong class="ex-n">1/3000</strong> 新生兒）；Graves 孕婦約 <strong class="ex-n">1%</strong> 的新生兒有甲亢（母體抗體）。<span class="ex-ref">p.2504–2505</span></li>
-<li>最佳篩檢：<strong>TSH</strong>（hypothyroidism 升高、hyperthyroidism 下降或測不到）；hypothyroidism 最常見原因：Hashimoto thyroiditis 與甲亢治療後的 thyroid ablation。<span class="ex-ref">p.2504</span></li>
+<li>篩檢首選：<strong>TSH</strong>（hypothyroidism 升高、hyperthyroidism 下降或測不到）；hypothyroidism 最常見原因：Hashimoto thyroiditis 與甲亢治療後的 thyroid ablation。<span class="ex-ref">p.2504</span></li>
 </ul>
 <h3>Cutaneous manifestations of hyperthyroidism（甲亢的皮膚表現）</h3>
 <ul>
@@ -362,7 +368,7 @@
 <li>心輸出量增加、周邊阻力下降 → facial flushing、palmar erythema；generalized hyperhidrosis、high-output cardiac failure。</li>
 <li>Chronic urticaria 病人甲狀腺疾病比例高；levothyroxine 可能改善部分 Hashimoto 病人的 urticaria，但證據不足。Graves 另報告合併 DH、Sweet syndrome、pemphigoid gestationis、vitiligo、PV、anetoderma、mid-dermal elastolysis。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>甲亢的 Addison-like 色素沉著機轉是 ACTH「增加」（cortisol 代謝加速），不是 ACTH 被抑制。</aside>
+<aside class="ex-trap"><strong>易錯</strong>甲亢的 Addison-like 色素沉著，推測是 cortisol 代謝加速 → corticotropin（ACTH）<strong>增加</strong>所致（p.2506）。</aside>
 <h3>Thyroid dermopathy（pretibial myxedema）</h3>
 <ul>
 <li><mark data-q="114-16,115-44">改稱 thyroid dermopathy 是因為病灶可發生在<strong>身體任何部位</strong>，不限 pretibial，而且名稱不暗示 myxedema 是原因</mark>。<span class="ex-ref">p.2505</span></li>
@@ -426,10 +432,20 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 137-11，p.2508；Table 137-10 另列 TBG 增加（pregnancy、hepatitis、cirrhosis、AIP）與減少（nephrotic syndrome、acromegaly、Cushing syndrome 等）的疾病。</p>
+<table class="ex-table">
+<thead><tr><th scope="col">Hyperthyroidism（甲亢）</th><th scope="col">Hypothyroidism（甲低）</th></tr></thead>
+<tbody>
+<tr><td>Symptoms：weight loss、heat intolerance／sweating、palpitations、agitation、multiple daily loose stools、<strong>pruritus</strong>、weakness、oligomenorrhea</td><td>Symptoms：weight gain、fatigue、cold intolerance、constipation、dry skin、muscle weakness、<strong>carpal tunnel syndrome</strong>、hoarseness、decreased body temperature、facial swelling、menorrhagia</td></tr>
+<tr><td>Findings：goiter、tachycardia、atrial fibrillation、high-output cardiac failure、fine tremor、<strong>hot sweaty extremities</strong>、ophthalmopathy、agitation／confusion、muscle weakness／wasting、「thyroid storm」（fever、confusion、dehydration，未治療會死亡）</td><td>Findings：goiter、<strong>cold, doughy skin</strong>、bradycardia、facial and finger swelling、slowed relaxation of deep tendon reflexes、<strong>hair loss／lateral eyebrow loss</strong>、pericardial effusion、積極補充甲狀腺素時 MI 或 CHF、未治療 coma 與死亡</td></tr>
+</tbody>
+</table>
+<p class="ex-cite">Table 137-8，p.2506。</p>
 <h3>Diagnosis &amp; management（診斷與治療）</h3>
 <ul>
 <li>先測 serum TSH，異常再測 free T4；另可測 total T3、antithyroid antibodies（甲低可測 anti-TPO 與 lipid panel）。<span class="ex-ref">p.2507–2508</span></li>
-<li>甲亢：propranolol（症狀）、PTU（抑制 T4→T3）、methimazole（抑制合成）、radioiodine ablation、手術；甲低：oral thyroxine <strong class="ex-n">75–150 µg/day</strong>。<span class="ex-ref">p.2505, 2507</span></li>
+<li>甲亢另可測 thyrotropin receptor antibodies、radioactive iodine uptake 與 imaging；thyrotoxicosis 的嚴重徵象包括 atrial fibrillation 與 fever。<span class="ex-ref">Table 137-7，p.2505；p.2504</span></li>
+<li>甲亢：propranolol（症狀）、PTU（抑制 T4→T3）、methimazole（抑制合成）、radioiodine ablation、手術；甲低：oral thyroxine <strong class="ex-n">75–150 µg/day</strong>，並注意 heart、lung、adrenal disease 的追蹤。<span class="ex-ref">Table 137-7，p.2505；Table 137-9，p.2507</span></li>
+<li>Table 137-9 另列甲低相關：congenital hypothyroidism 的 cretinism、「myxedema coma」。<span class="ex-ref">p.2507</span></li>
 <li>皮膚表現主要靠恢復甲狀腺功能；但 <strong>thyroid dermopathy 與 acropachy 在甲狀腺治療後仍可持續</strong>。<span class="ex-ref">p.2509</span></li>
 <li>Thyroid dermopathy：topical glucocorticoids + compression 使用多年有部分成效；其他 systemic／intralesional steroids、octreotide、IVIG、plasmapheresis、pentoxifylline、complete decongestive physiotherapy；<strong>不建議手術切除</strong>（復發率高）。</li>
 <li>Thyroid acropachy 沒有特定治療，症狀通常比 dermopathy 少；吸菸是 Graves 嚴重表現的危險因子，應強烈勸戒。</li>
@@ -450,6 +466,8 @@
 <li>皮膚表現少見但可很明顯；<strong>cutaneous (metastatic) calcinosis</strong> 部分來自 calcium 與 phosphate 同時上升：對稱分布、常在大關節上，或呈線狀排列的膚色堅硬 papules／plaques，可癢、可壓迫周圍組織。<span class="ex-ref">p.2509</span></li>
 <li>Chronic urticaria 也與 hyperparathyroidism 相關。</li>
 <li>Hyperparathyroidism + angiofibromas、collagenomas、café-au-lait macules、lipomas → 要檢查 <strong>MEN1</strong>（MEN1 gene；anterior pituitary、pancreas、parathyroid tumors）。</li>
+<li>疑似 hyperparathyroidism：初始檢查首選 <strong>serum calcium 與 serum PTH</strong>；懷疑 malignancy 時測 <strong>PTHrP</strong>；相關病史包括 renal disease 與 head／neck irradiation。<span class="ex-ref">Table 137-13，p.2510</span></li>
+<li>Hypercalcemia 鑑別：PTH 增加（solitary adenoma、MEN1 multiple adenomas、tertiary hyperparathyroidism）；PTHrP 增加（SCC、renal、bladder、breast cancer、HTLV-1、lymphoma）；1,25-OH vitamin D 增加（sarcoidosis、過量攝取）；bone resorption 增加（myeloma、lymphoma、breast cancer）；renal failure；milk-alkali syndrome。<span class="ex-ref">Table 137-14，p.2510</span></li>
 </ul>
 <h3>Calciphylaxis（calcific uremic arteriolopathy）</h3>
 <ul>
@@ -471,7 +489,7 @@
 <li><mark data-q="115-44">Histology：small- to medium-sized arteries 與 arterioles 鈣化</mark>，管腔可有鈣化碎屑、thrombosis、intimal fibroblastic proliferation；皮下脂肪出血、fat necrosis 伴 lobular lymphohistiocytic infiltrate；interstitial calcification 少見。<span class="ex-ref ex-ref-mckee">McKee p.371</span></li>
 <li>McKee ch13 另提到 osteopontin 可能參與，與血管平滑肌 osteogenic differentiation 有關。<span class="ex-ref ex-ref-mckee">McKee p.610</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Calciphylaxis 死亡率：Fitzpatrick 寫 up to 80%（p.2510），McKee 寫 up to 60%（McKee p.370）。好發部位：Fitzpatrick 寫 thighs、buttocks、breasts；McKee 寫下肢最常見。與慢性肝炎無關。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Calciphylaxis 死亡率：Fitzpatrick 寫 up to 80%（p.2510），McKee 寫 up to 60%（McKee p.370）。好發部位：Fitzpatrick 寫 thighs、buttocks、breasts；McKee 寫下肢最常見（McKee p.370）。</aside>
 <h3>McKee 補充：Calcinosis cutis 分類</h3>
 <table class="ex-table">
 <thead><tr><th scope="col">Type（類型）</th><th scope="col">Examples（例子）</th></tr></thead>
@@ -497,7 +515,8 @@
 <li>Primary hyperparathyroidism：<strong class="ex-n">80%</strong> 為 parathyroid hyperplasia、carcinoma 或 adenoma；secondary 最常因腎病（高磷、持續低鈣）；tertiary：長期 secondary 後自主分泌，高鈣下仍持續分泌 PTH。<span class="ex-ref">p.2511–2512</span></li>
 <li>Primary hypoparathyroidism 最常是甲狀腺手術時移除副甲狀腺（iatrogenic）。<span class="ex-ref">p.2512</span></li>
 <li>Keratinocytes 製造 <strong>PTHrP</strong>（與 PTH 用同一受體），參與 keratinocyte 分化與毛髮週期；SCC 等惡性腫瘤可分泌 PTHrP → malignancy-related hypercalcemia。<span class="ex-ref">p.2511</span></li>
-<li>Management：hyperparathyroidism 主要為部分或全部 parathyroidectomy；hypoparathyroidism 用 calcitriol <strong class="ex-n">0.2–1 µg/day</strong>、elemental calcium <strong class="ex-n">2–3 g/day</strong>、必要時補鎂。<span class="ex-ref">p.2511–2512</span></li>
+<li>Management：hyperparathyroidism 主要為部分或全部 parathyroidectomy；hypoparathyroidism 用 calcitriol <strong class="ex-n">0.2–1 µg/day</strong>、elemental calcium <strong class="ex-n">2–3 g/day</strong>、必要時補鎂。<span class="ex-ref">p.2512；Table 137-15，p.2511</span></li>
+<li>疑似 hypoparathyroidism 的檢查：serum calcium、phosphorous、intact PTH；serum magnesium 排除 hypomagnesemia；ECG 排除 QT 延長。<span class="ex-ref">Table 137-15，p.2511</span></li>
 </ul>
 </section>
 
@@ -511,7 +530,8 @@
 <li>Central obesity + 四肢變細、moon facies（紅、telangiectasia）、buffalo hump、supraclavicular fat；男性可有 gynecomastia。<span class="ex-ref">p.2513</span></li>
 <li>Hyperpigmentation 少見，見於大量 ACTH（pituitary，或更常見 ectopic）；可有 acanthosis nigricans（insulin resistance）；dermatophyte 與 candidal 皮膚、指甲感染增加。</li>
 <li>Endogenous 發生率約 <strong class="ex-n">10/百萬/年</strong>，女性較多；<strong>Cushing disease</strong> = pituitary microadenoma 分泌 ACTH；ectopic ACTH 最常見於 pulmonary carcinoid 或 small cell lung carcinoma；ACTH-independent：adrenal adenoma 或 hyperplasia；也見於 McCune-Albright syndrome 與 Carney complex（primary pigmented nodular adrenocortical disease）。</li>
-<li>Diagnosis：24-hour urine free cortisol（至少 2 次）、late-night salivary cortisol（2 次）或 low-dose dexamethasone suppression test；high-dose test 協助定位。Pseudo-Cushing：obesity、major depression、chronic alcohol abuse。</li>
+<li>Diagnosis：24-hour urine free cortisol（至少 2 次）、late-night salivary cortisol（2 次）或 low-dose dexamethasone suppression test；high-dose test 協助定位。Pseudo-Cushing：obesity、major depression、chronic alcohol abuse。<span class="ex-ref">p.2513</span></li>
+<li>Table 137-16 摘要：皮膚表現為 central adiposity（moon facies、buffalo hump）伴四肢變細、skin thinning 與 easy bruisability、violaceous striae、acanthosis nigricans、dermatophyte／candidal 感染增加、hyperpigmentation（rare）；相關：diabetes、hypertension、osteoporosis、irregular menses；治療：手術切除 pituitary 或 adrenal tumor、adrenal enzyme inhibitors、radiation。<span class="ex-ref">Table 137-16，p.2512</span></li>
 <li>Management：手術切除 ACTH 來源（neurosurgical resection 為 first-line）；頑固者 radiation 或 ketoconazole、mitotane。過去 bilateral adrenalectomy 常造成 <strong>Nelson syndrome</strong>（pituitary adenoma 增大、ACTH 不受抑制 → hyperpigmentation）。</li>
 </ul>
 <h3>Addison disease</h3>
@@ -520,13 +540,13 @@
 <li><mark data-q="114-26">最典型為皮膚與黏膜 hyperpigmentation，於 <strong>sun-exposed areas、flexural folds、skin creases（含 palmar creases）</strong>加重，也可出現在 <strong>scars</strong></mark>；只出現在長期 adrenal insufficiency，急性 adrenal crisis 不會有（除非原本就慢性）。<span class="ex-ref">p.2514</span></li>
 <li><mark data-q="104-39">Nails 可出現 <strong>longitudinal pigmented bands</strong></mark>。</li>
 <li><mark data-q="114-26">機轉：cortisol 低 → 失去對 hypothalamus 與 pituitary 的負回饋 → POMC、ACTH、MSH 不受控制 → melanogenesis 增加</mark>。</li>
-<li>Vitiligo 見於 <strong class="ex-n">10–20%</strong>；女性 axillary 與 pubic hair 稀少（失去 adrenal androgens，男性有睪丸所以不會）；auricular cartilage calcification（<strong>「petrified ears」</strong>）。</li>
+<li>Vitiligo 見於 <strong class="ex-n">10–20%</strong>；女性 axillary 與 pubic hair 稀少（失去 adrenal androgens，男性有睪丸所以不會）；auricular cartilage calcification（<strong>「petrified ears」</strong>）；Table 137-17 列為 calcification of auricular cartilage <strong>in men</strong>。<span class="ex-ref">p.2514；Table 137-17，p.2513</span></li>
 <li>Extracutaneous：weakness、anorexia、weight loss、abdominal pain、postural hypotension、hyponatremia、hyperkalemia。</li>
 <li>Etiology：過去最常見 tuberculosis，現在最常見 <strong>autoimmune</strong>（autoimmune polyglandular syndromes 1 與 2），可測到 21-hydroxylase、17-hydroxylase 抗體；其次為感染；AIDS 病人常見 CMV 與 <em>Mycobacterium avium-intracellulare</em>；fungal（histoplasmosis、blastomycosis 等）；<strong>Waterhouse-Friderichsen syndrome</strong>（雙側腎上腺出血，典型為 meningococcal infection）。<span class="ex-ref">p.2514</span></li>
 <li>Diagnosis：急性 crisis 先抽 cortisol 並立即給 IV hydrocortisone；慢性以 <strong>cosyntropin stimulation test</strong>（IV synthetic ACTH，<strong class="ex-n">30 與 60 分鐘</strong>測 cortisol）確診。</li>
 <li>終身補充 glucocorticoids 與 mineralocorticoids；皮膚表現逐漸改善，但 <strong>auricular calcification 不會改善</strong>。<span class="ex-ref">p.2514–2515</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Addison 的色素沉著是 ACTH／MSH「增加」；Cushing 一般不會色素沉著，除非是大量 ACTH（多為 ectopic）。耳軟骨鈣化治療後不會恢復。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Addison：cortisol 低 → POMC、ACTH、MSH 不受控制 → melanogenesis 增加（p.2514）。Cushing syndrome 的 hyperpigmentation 少見，發生於 ACTH 大量增加時（來自 pituitary，或更常見 ectopic）（p.2513）。Addison 治療後皮膚表現逐漸改善，auricular calcification 除外（p.2515）。</aside>
 </section>
 
 <section class="ex-note" id="estrogen">
@@ -537,7 +557,7 @@
 <li>產後或停用避孕藥後可 telogen effluvium；懷孕與合成雌激素：telangiectasias、palmar erythema、spider angiomas、色素變化。<span class="ex-ref">p.2515</span></li>
 <li>懷孕時 nevi 與 melanoma 可變黑；nipples、linea nigra、genitalia 色素加深。</li>
 <li><strong>Melasma</strong>（mask of pregnancy）：forehead、cheeks、nose、upper lip、chin、neck 不規則色素斑；與懷孕、口服避孕藥相關，產後可改善但可持續或下一胎復發，停避孕藥後也可能持續；男性 melasma 罕見，病因被認為是日曬或家族易感性。</li>
-<li>Autoimmune progesterone dermatitis 與 estrogen dermatitis：週期性經前發作的 polymorphous eruption（pruritus、eczema、urticaria）；皮內分別注射 estrogen 與 progesterone，papule 持續 <strong class="ex-n">&gt;24 hours</strong> 或出現立即 urticarial wheal 為陽性。<span class="ex-ref">p.2515–2516</span></li>
+<li>Autoimmune progesterone dermatitis 與 estrogen dermatitis：週期性經前發作的 polymorphous eruption（pruritus、eczema、urticaria）；前臂皮膚分別 subcutaneous 注射 estrogen 與 progesterone，papule 持續 <strong class="ex-n">&gt;24 hours</strong> 或出現立即 urticarial wheal 為陽性。<span class="ex-ref">p.2515–2516</span></li>
 <li>口服避孕藥與 erythema nodosum 相關；懷孕與高 estrogen 與 hyperkeratosis of the nipples 相關。<span class="ex-ref">p.2516</span></li>
 <li>Estrogen deficiency：hot flashes、生殖器上皮萎縮、乳房變小；danazol、leuprolide、clomiphene citrate 可引起 pharmacologic menopause 與 flushing；停經後皮膚 <strong>wrinkling、xerosis、atrophy</strong>，傷口癒合變差。</li>
 <li>Estradiol 最強（卵巢主要分泌）；estrone 主要在周邊組織合成；懷孕主要為 placenta 的 estriol；progesterone 可與 androgen receptor 交叉結合。</li>
@@ -592,12 +612,13 @@
 <li>Histology：papillary 與 superficial reticular dermis 大量 glycosaminoglycans；coarse collagen bundles、elastin 正常、fibroblasts 增加。</li>
 <li>美國每年約 <strong class="ex-n">11/百萬</strong>；Carney complex 約 <strong class="ex-n">10–12%</strong>、McCune-Albright syndrome 約 <strong class="ex-n">20%</strong> 有 acromegaly；罕見來自 hypothalamic 或 ectopic（small cell lung cancer、carcinoid）。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Gigantism／acromegaly 的皮膚表現是增厚、多汗、cutis verticis gyrata、AN，<strong>不會造成水疱</strong>；病理出現水疱時要考慮的是 diabetes（bullosis diabeticorum）、hemodialysis、Castleman disease（PNP）等。</aside>
+<aside class="ex-trap"><strong>易錯</strong>GH 過多：兒童（生長板未閉合）為 gigantism，成人（生長板閉合後）為 acromegaly（p.2518–2519）。Acromegaly 皮膚表現包括皮膚增厚近 doughy、cutis verticis gyrata、hyperhidrosis 與 malodor、acanthosis nigricans 與多發 acrochordons（p.2519）。</aside>
 <h3>Diagnosis &amp; management（診斷與治療）</h3>
 <ul>
 <li>Serum GH 因脈衝分泌不可靠；<strong>serum IGF1</strong> 24 小時穩定，可作 surrogate，acromegaly 升高。<span class="ex-ref">p.2519</span></li>
 <li>OGTT：口服 <strong class="ex-n">75 g</strong> glucose 後 <strong class="ex-n">1–2 hours</strong>，GH 無法抑制到 <strong class="ex-n">&lt;1 ng/mL</strong> 即可診斷。</li>
-<li>Treatment：transsphenoidal resection；殘存病灶用 somatostatin analogs（octreotide）或 GH receptor antagonists；頑固者 radiation。</li>
+<li>Treatment：transsphenoidal resection；殘存病灶用 somatostatin analogs（octreotide）或 GH receptor antagonists；頑固者 radiation。<span class="ex-ref">p.2519；Table 137-19，p.2519</span></li>
+<li>Table 137-19 皮膚表現摘要：手足增大且 doughy、ring／glove／shoe／hat size 增加、prognathism（牙齒分開）、frontal bossing、macroglossia、cutis verticis gyrata、acanthosis nigricans、hirsutism、hyperhidrosis、thick brittle nails；診斷：IGF1 升高、OGTT 無法抑制 GH。<span class="ex-ref">Table 137-19，p.2519</span></li>
 </ul>
 <h3>GH deficiency &amp; panhypopituitarism</h3>
 <ul>
