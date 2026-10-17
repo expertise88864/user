@@ -1,6 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Wrap dangling ZH text segments after bilingual <strong> tags inside
+"""RETIRED 2026-10-17 — do not run; it exits immediately.
+
+This one-shot 2026-05 translator did a whole-file str.replace(Chinese, English)
+on the zh SOURCE pages (blog/*.html), not only on data-en values. It replaced
+text the Chinese page actually displays — 233 places in 53 articles, plus seven
+data-zh attributes — and that mixed English into the Chinese site until the
+2026-10-17 restore (branch codex/zh-text-restore). English for the /en mirror
+belongs in data-en attributes (see _gen_en_pages.py); never rewrite zh text.
+The dictionaries below are kept only as a record of what it changed.
+
+Original description:
+Wrap dangling ZH text segments after bilingual <strong> tags inside
 proseEn blocks. The DataEnRenderer in _gen_en_pages.py handles the
 <strong data-en="..."> replacement, but plain text nodes between tags
 remain ZH. This script finds every such span and wraps it in
@@ -14,6 +25,10 @@ from __future__ import annotations
 import re
 import sys
 from pathlib import Path
+
+if __name__ == '__main__':
+    sys.exit('_fix_proseen_cjk.py is RETIRED (2026-10-17): it rewrote visible Chinese text '
+             'into English on the zh pages. Put English in data-en attributes instead.')
 
 ROOT = Path(__file__).resolve().parent
 
@@ -864,6 +879,7 @@ def apply_to_file(path: Path, rel: str) -> int:
 
 
 def main() -> int:
+    raise SystemExit('_fix_proseen_cjk.py is RETIRED (2026-10-17); see the module docstring.')
     # Apply TRANSLATIONS to every blog article (cross-file segments like
     # footer copyright, kicker chips, byline tokens). Apply PER_FILE
     # substitutions only to their listed file.
