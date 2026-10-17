@@ -1089,6 +1089,25 @@ mark.ex-key{background:linear-gradient(transparent 42%,#fde9a8 42%);color:inheri
 :root[data-theme="dark"] .ex-s-opt:hover,:root[data-theme="dark"] .ex-s-opt[aria-selected="true"]{background:#3a352c}
 :root[data-theme="dark"] .ex-s-opt[aria-selected="true"]{box-shadow:inset 3px 0 0 #a4b5a8}
 :root[data-theme="dark"] .ex-more{background:transparent;color:#a4b5a8;border-color:#a4b5a8}
+.ex-q{scroll-margin-top:80px}
+.ex-answer-bar{display:none;flex-wrap:wrap;align-items:center;gap:8px;margin:2px 0 14px;padding:8px 12px;border:1px dashed var(--border);border-radius:12px;font-size:13px}
+body.ex-quiz .ex-answer-bar:not([hidden]){display:flex}
+.ex-answer-count{font-weight:700;color:#0c5159;margin-right:4px}
+.ex-answer-bar button{border:1px solid #4d6358;border-radius:9999px;padding:4px 12px;font-size:12.5px;font-weight:600;background:#fff;color:#4d6358;cursor:pointer}
+.ex-answer-bar button[aria-pressed="true"]{background:#4d6358;color:#fff}
+.ex-answer-bar button:disabled{opacity:.45;cursor:default}
+body.ex-quiz .ex-q.ex-hide{display:none}
+.ex-resume{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:40;display:flex;flex-wrap:wrap;align-items:center;gap:2px 8px;width:max-content;max-width:calc(100% - 32px);box-sizing:border-box;background:#2f3b35;color:#fff;border-radius:12px;padding:8px 8px 8px 14px;font-size:13px;line-height:1.5;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.ex-resume button{border:0;background:transparent;color:#fde9a8;font:inherit;font-weight:700;cursor:pointer;padding:4px 6px;text-decoration:underline;text-underline-offset:2px}
+.ex-resume .ex-resume-close{text-decoration:none;font-size:18px;line-height:1;color:#fff}
+@media (max-width:767px){.ex-resume{left:16px;right:72px;transform:none;width:auto;max-width:none}body.dn-has-sticky-cta .ex-resume{bottom:70px}}
+:root[data-theme="dark"] .ex-answer-count{color:#a4b5a8}
+:root[data-theme="dark"] .ex-answer-bar{border-color:#3a352c}
+:root[data-theme="dark"] .ex-answer-bar button{background:transparent;color:#a4b5a8;border-color:#a4b5a8}
+:root[data-theme="dark"] .ex-answer-bar button[aria-pressed="true"]{background:#a4b5a8;color:#16140f}
+:root[data-theme="dark"] .ex-resume{background:#e8e2d6;color:#16140f}
+:root[data-theme="dark"] .ex-resume button{color:#0c5159}
+:root[data-theme="dark"] .ex-resume .ex-resume-close{color:#16140f}
 </style>
 """
 
