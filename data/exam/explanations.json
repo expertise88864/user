@@ -8915,7 +8915,7 @@
   "dispute": {
    "kind": "conflict",
    "exam": "考試答案：依課本出題本意維持原答案 B，因為 Fitzpatrick p.3771 明列 spindle cell features 為 SCC 高危險特徵，B 說「預後較佳」確定是錯誤敘述。疑義在於 A：兩本課本都沒有寫「<2 cm 轉移率約 1%」，McKee p.1205 引用的數據是 <2 cm 腫瘤轉移率 7.6%，若照 McKee，A 也算錯誤。此外 McKee p.1208 提到較常見的 actinic spindle cell SCC 預後良好、很少轉移，只有放射線或外傷相關者屬高惡性度，所以 B 也不是在所有情況下都錯。查詢現行文獻沒有找到會改變本題答案的指引更新。",
-   "current": "現行觀念：2025 年系統性回顧與統合分析（30 篇研究）顯示，AJCC 8th T1（≤2 cm、無高危險特徵）的 nodal metastasis 約 1.5%，BWH T1 約 0.7%，與 A 的「約 1%」相近；McKee 引用的 7.6% 為較早期系列的數據，A 依現行證據可視為正確。",
+   "current": "現行觀念：2025 年系統性回顧與統合分析（30 篇研究）顯示，AJCC 8th T1 腫瘤（≤2 cm，且沒有 deep invasion、perineural invasion、minor bone erosion 等升為 T3 的條件）的 nodal metastasis 約 1.5%，BWH T1 約 0.7%。這些是特定分期族群的數據：<2 cm 但有 deep 或 perineural invasion 的腫瘤屬 T3，不在其中，所以不能據此證明 A「直徑小於 2 公分轉移率約 1%」普遍成立；本題仍依官方答案 B。",
    "sources": [
     {
      "pmid": "39889854",
