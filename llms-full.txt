@@ -1,6 +1,6 @@
 # ChenDermatologist · 陳翊嘉醫師 · 皮膚科衛教筆記
 
-Last updated 2026-10-17 · 52 articles · by Dr. Chen Yi-Jia (R3 Dermatology Resident, Taiwan)
+Last updated 2026-10-18 · 52 articles · by Dr. Chen Yi-Jia (R3 Dermatology Resident, Taiwan)
 
 Bilingual zh-Hant / en. ZH source is authoritative; EN mirror is machine-translated and provided for accessibility only.
 
@@ -768,7 +768,7 @@ Mahajan 等人（Brigham & Women's Hospital, Harvard）2026 年 6 月發表的�
 ---
 ## 白斑停藥後會復發嗎？維持治療與復發風險評估
 URL: https://chendermatologist.com/blog/vitiligo-maintenance-clinical
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Research Summary
 Reading time: PT20M
 Tags: 白斑復發, Vitiligo relapse
@@ -1031,7 +1031,7 @@ Hill 配對族群 1,171 對的特徵：
 ---
 ## 光動力治療（PDT）皮膚科完整指南 — 從 AK、BCC 到痘痘的 2026 JAAD 雙篇 Review 整合
 URL: https://chendermatologist.com/blog/photodynamic-therapy-overview
-Updated: 2026-10-17
+Updated: 2026-10-18
 Section: Research Summary
 Reading time: PT24M
 Tags: 光動力治療, Photodynamic therapy
@@ -1295,7 +1295,7 @@ Type I 反應（次要）：PS 直接與受質分子反應、產生超氧自由�
 ---
 ## 打乾癬生物製劑要不要每年抽血？2026 JAAD 證據評級重新看這件事
 URL: https://chendermatologist.com/blog/psoriasis-biologic-monitoring
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Research Summary
 Reading time: PT20M
 Tags: 生物製劑安全, Biologic safety
@@ -2112,7 +2112,7 @@ Zaias 等人提出 AGNUS 假說：兩腳長度或結構不對稱會破壞正常�
 ---
 ## 嘴破、白斑、牙齦剝離 — 什麼時候該找皮膚科？口腔黏膜檢查與切片完整指南
 URL: https://chendermatologist.com/blog/dermatologic-oral-examination
-Updated: 2026-10-17
+Updated: 2026-10-18
 Section: Treatment & Therapy
 Reading time: PT24M
 Tags: 口腔黏膜, Oral mucosa
@@ -2243,7 +2243,7 @@ Wang YP et al. 2018; Lin HP et al. 201915,16
 
 皮膚科會怎麼檢查口腔？
 
-皮膚科口腔檢查不需要特別的設備——一個壓舌板、紗布、頭燈或診間照明就夠了。整個流程約 3–5 分鐘，分為「外觀檢查（extraoral）" AND "口內檢查（intraoral）」。
+皮膚科口腔檢查不需要特別的設備——一個壓舌板、紗布、頭燈或診間照明就夠了。整個流程約 3–5 分鐘，分為「外觀檢查（extraoral）」與「口內檢查（intraoral）」。
 
 外觀檢查：正面看臉部、嘴唇、人中、唇紅交界、嘴角；側面看下頷、腮腺、頸部淋巴結是否對稱、有無腫塊。
 
@@ -4930,7 +4930,7 @@ AAD JAAD cutaneous SCC management
 ---
 ## 痘痘 8 大迷思
 URL: https://chendermatologist.com/blog/acne-myths
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 痘痘, Acne
@@ -5000,12 +5000,12 @@ Zaenglein AL, et al. Guidelines of care for the management of acne vulgaris. J A
 Reynolds RC, et al. Effect of the glycemic index of carbohydrates on Acne vulgaris. Nutrients. 2010;2(10):1060-1072. 「來源」
 UpToDate: Acne vulgaris: Overview of management. Accessed 2026. 「來源」
 衛福部食藥署 — Adapalene/Tretinoin 仿單 「來源」
-Taiwan Dermatological Association. 痤瘡臨床治療共識. 2024.
+臺灣皮膚科醫學會。 痤瘡臨床治療共識. 2024.
 
 ---
 ## 蕁麻疹 6 大迷思
 URL: https://chendermatologist.com/blog/urticaria-myths
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Myths & Facts
 Reading time: PT14M
 Tags: 蕁麻疹, Urticaria
@@ -5129,7 +5129,7 @@ CSU 的共病評估 JAMA 2024
 ---
 ## 乾癬 7 大迷思
 URL: https://chendermatologist.com/blog/psoriasis-myths
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Myths & Facts
 Reading time: PT13M
 Tags: 乾癬, Psoriasis
@@ -5703,7 +5703,7 @@ A 酸要怎麼吃？空腹還是飯後？
 ---
 ## 痘疤完整治療指引
 URL: https://chendermatologist.com/blog/acne-scar-treatment
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Treatment & Therapy
 Reading time: PT8M
 Tags: 痘疤, Acne scars
@@ -5855,7 +5855,7 @@ UpToDate: Treatment of acne scars. Accessed 2026. 「來源」
 ---
 ## 白斑（Vitiligo）完整衛教
 URL: https://chendermatologist.com/blog/vitiligo
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Treatment & Therapy
 Reading time: PT11M
 Tags: 白斑, Vitiligo
@@ -6105,7 +6105,7 @@ TDA 2024 共識聲明 16：狀態穩定的白斑病灶可使用手術方式治�
 ---
 ## 皮膚科常用藥物健保規範完整整理
 URL: https://chendermatologist.com/blog/nhi-derm-drugs
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Treatment & Therapy
 Reading time: PT15M
 Tags: 健保規範, NHI rules
@@ -6460,7 +6460,7 @@ Omalizumab 給付條文（§6.2.6）僅列「重度持續性氣喘」（12 歲�
 ---
 ## 結節性癢疹是什麼？Prurigo nodularis 中文、症狀與治療
 URL: https://chendermatologist.com/blog/prurigo-nodularis
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 結節性癢疹, Prurigo Nodularis
@@ -6630,7 +6630,7 @@ KIT 抑制劑（Barzolvolimab）：耗竭肥大細胞、尤其慢性蕁麻疹合
 Meggitt SJ, Anstey AV, Mohd Mustapa MF, Reynolds NJ, Wakelin S. British Association of Dermatologists' guidelines for the safe and effective prescribing of azathioprine 2011. Br J Dermatol. 2011;165(4):711-734. 「來源」
 Warren RB, Weatherhead SC, Smith CH, et al. British Association of Dermatologists' guidelines for the safe and effective prescribing of methotrexate for skin disease 2016. Br J Dermatol. 2016;175(1):23-44. 「來源」
 Berth-Jones J, Exton LS, Ladoyanni E, et al. British Association of Dermatologists guidelines for the safe and effective prescribing of oral ciclosporin in dermatology 2018. Br J Dermatol. 2019;180(6):1312-1338. 「來源」
-Taiwan Dermatological Association. 結節性癢疹診斷與管理共識(TDA Consensus for Diagnosis and Management of Prurigo Nodularis). 2024 年 9 月。
+臺灣皮膚科醫學會。 結節性癢疹診斷與管理共識(TDA Consensus for Diagnosis and Management of Prurigo Nodularis). 2024 年 9 月。
 Pereira MP, et al. EADV recommendations for the diagnosis and treatment of chronic prurigo.J Eur Acad Dermatol Venereol. 2018;32(7):1059-1065. 「來源」
 Yosipovitch G, et al. Efficacy and safety of dupilumab in adults with prurigo nodularis (LIBERTY-PN PRIME / PRIME 2).Nat Med. 2023;29(5):1180-1190. 「來源」
 Kwatra SG, et al. Phase 3 trial of nemolizumab in patients with prurigo nodularis (OLYMPIA 2).N Engl J Med. 2023;389(17):1579-1589. 「來源」
@@ -7263,7 +7263,7 @@ UpToDate: Cutaneous cysts overview — Epidermoid, pilar, and other cysts. Acces
 ---
 ## 皮膚科雷射完整對照
 URL: https://chendermatologist.com/blog/laser-dermatology
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Treatment & Therapy
 Reading time: PT12M
 Tags: 雷射 / 光電, Laser dermatology
@@ -7272,7 +7272,7 @@ Tags: 雷射 / 光電, Laser dermatology
 雷射的核心物理原理是「選擇性光熱解（selective photothermolysis）」：不同波長的光被不同顯色團（chromophore）吸收，把光能轉成熱能精準破壞目標，周邊組織不受傷：
 黑色素（melanin）：吸收 532-1064 nm 範圍，波長越短吸收越強（但穿透越淺）
 血紅素（hemoglobin / oxyhemoglobin）：強吸收於 418、542、577 nm 三個峰；臨床用 PDL(585-595 nm)、KTP(532 nm)、Nd:YAG(1064 nm)
-水（water）：強吸收於 1450、1927、2940、10600 nm；這是「磨皮" AND "飛梭」雷射的原理
+水（water）：強吸收於 1450、1927、2940、10600 nm；這是「磨皮」與「飛梭」雷射的原理
 外來色素（刺青墨水）：依顏色不同對波長有特異吸收 — 黑藍綠用 1064/755/694，紅黃用 532
 所以醫師選雷射時會問：「目標是色素？血管？水？」「位置在表皮還是真皮？」「Fitzpatrick 膚色幾型？」「有沒有發炎中？」
 12 種臨床常用波長
@@ -7582,7 +7582,7 @@ I-IV 型
 ↓
 穿透不足，效果不如新世代
 
-典型療程 6-8 次，間隔 4-8 週（視部位）。S2k 提醒：「家用 IPL 機器" AND "醫療等級雷射」效果差異很大，不要互相比較。
+典型療程 6-8 次，間隔 4-8 週（視部位）。S2k 提醒：「家用 IPL 機器」與「醫療等級雷射」效果差異很大，不要互相比較。
 良性增生與癌前病變
 老人斑（脂漏性角化症 SK）、汗管瘤、皮脂腺增生、黃色瘤
 雷射
@@ -8214,7 +8214,7 @@ UpToDate: Treatment of herpes zoster in the immunocompetent host. Accessed 2026.
 ---
 ## 圓禿（鬼剃頭）完整衛教
 URL: https://chendermatologist.com/blog/alopecia-areata
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Treatment & Therapy
 Reading time: PT15M
 Tags: 圓禿, Alopecia areata
@@ -8412,7 +8412,7 @@ Methotrexate（MTX，商品名如滅殺除癌錠）：建議先給 5-7.5 mg 試�
 ---
 ## M 痘（猴痘）皮膚照護
 URL: https://chendermatologist.com/blog/mpox-care
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Treatment & Therapy
 Reading time: PT5M
 Tags: 猴痘, Mpox
@@ -8505,7 +8505,7 @@ M 痘（mpox，舊稱猴痘）是一種會自行痊癒的病毒感染，皮膚�
 臺灣皮膚科醫學會官方資源
 本文照護建議由臺灣皮膚科醫學會吳介山醫師、魏楷哲醫師、宋玟儀醫師協助制定。完整官方指引：
 → 臺灣皮膚科醫學會診療指引總覽→ 衛福部疾管署 M 痘專區參考資料
-Taiwan Dermatological Association. 猴痘皮膚照護建議指引. 制訂醫師：吳介山、魏楷哲、宋玟儀。
+臺灣皮膚科醫學會。 猴痘皮膚照護建議指引. 制訂醫師：吳介山、魏楷哲、宋玟儀。
 衛生福利部疾病管制署。 猴痘專區。 「來源」
 WHO. Mpox (formerly monkeypox) factsheet. 「來源」
 CDC USA. Mpox: Clinical Recognition. 「來源」
@@ -8514,7 +8514,7 @@ UpToDate: Mpox (Monkeypox) virus infection: Clinical manifestations and diagnosi
 ---
 ## 化膿性汗腺炎（HS）完整衛教
 URL: https://chendermatologist.com/blog/hidradenitis-suppurativa
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Treatment & Therapy
 Reading time: PT12M
 Tags: 化膿性汗腺炎, HS
@@ -8746,7 +8746,7 @@ HS 會不會自己好？要治多久？
 ---
 ## 標靶藥物（TKI）皮膚副作用
 URL: https://chendermatologist.com/blog/targeted-therapy-skin
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Treatment & Therapy
 Reading time: PT7M
 Tags: 標靶藥物, Targeted therapy skin
@@ -8907,7 +8907,7 @@ EGFR 痤瘡樣皮疹本質是發炎反應（不是真正的痤瘡），類固醇
 延伸閱讀：痤瘡樣皮疹 vs 一般痘痘的差別，看 痘痘 8 大迷思；乾皮症處置原則類似 異位性皮膚炎 6 大迷思 中的保濕策略。
 
 參考資料
-臺灣肺癌學會 + Taiwan Dermatological Association. TKI 標靶藥物相關皮膚毒性的預防與管理共識. 2024.
+臺灣肺癌學會 + 臺灣皮膚科醫學會。 TKI 標靶藥物相關皮膚毒性的預防與管理共識. 2024.
 Lacouture ME, et al. Clinical practice guidelines for the prevention and treatment of EGFR inhibitor-associated dermatologic toxicities. Support Care Cancer. 2011;19(8):1079-1095. 「來源」
 Lacouture ME, et al. Skin toxicity evaluation protocol with panitumumab (STEPP). J Clin Oncol. 2010;28(8):1351-1357. 「來源」
 Hofheinz RD, et al. Recommendations for the prophylactic management of skin reactions induced by EGFR inhibitors. Oncologist. 2016;21(12):1483-1491. 「來源」
@@ -8916,7 +8916,7 @@ UpToDate: Acneiform eruption secondary to epidermal growth factor receptor (EGFR
 ---
 ## 外用類固醇完整指南
 URL: https://chendermatologist.com/blog/topical-steroids-guide
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Treatment & Therapy
 Reading time: PT9M
 Tags: 外用類固醇, Topical steroids
@@ -9176,7 +9176,7 @@ UpToDate: General principles of dermatologic therapy and topical corticosteroid 
 ---
 ## 皮膚科生物製劑與小分子標靶藥物總覽
 URL: https://chendermatologist.com/blog/biologics-overview
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Treatment & Therapy
 Reading time: PT12M
 Tags: 生物製劑, Biologics
@@ -9487,7 +9487,7 @@ F-VASI 75 第 24 週約 30%、第 52 週約 50%(TRuE-V1/V2)
 ---
 ## 美白成分完整解析
 URL: https://chendermatologist.com/blog/skin-whitening-agents
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Products & Drugs
 Reading time: PT8M
 Tags: 美白, Whitening agents
@@ -9851,7 +9851,7 @@ UpToDate: Selection of sunscreen and sun-protective measures. 「來源」
 ---
 ## 肝斑 7 大迷思
 URL: https://chendermatologist.com/blog/melasma-myths
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Myths & Facts
 Reading time: PT8M
 Tags: 肝斑, Melasma
@@ -9971,7 +9971,7 @@ UpToDate: Melasma: Management. Accessed 2026.
 ---
 ## 玫瑰痤瘡 6 大迷思
 URL: https://chendermatologist.com/blog/rosacea-myths
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Myths & Facts
 Reading time: PT18M
 Tags: 酒糟肌, Rosacea
@@ -10110,13 +10110,13 @@ Schaller 2020 重度玫瑰斑組合療法：外用 Ivermectin 1% qd ＋ 口服�
 ---
 ## 落髮 / 雄性禿 7 大迷思
 URL: https://chendermatologist.com/blog/hairloss-myths
-Updated: 2026-10-16
+Updated: 2026-10-18
 Section: Myths & Facts
 Reading time: PT9M
 Tags: 落髮, Hair loss
 
 迷思 1：每天掉一點頭髮就是要禿了
-「我每天梳頭都會掉，枕頭上一堆，完蛋了！」每天掉 50-100 根是正常的（成年人有 ~10 萬根頭髮）。要看的不是「總量」，是「新長出來的" AND "頭頂髮量變化」。怎麼自我判斷：
+「我每天梳頭都會掉，枕頭上一堆，完蛋了！」每天掉 50-100 根是正常的（成年人有 ~10 萬根頭髮）。要看的不是「總量」，是「新長出來的」與「頭頂髮量變化」。怎麼自我判斷：
 洗頭時掉幾根？：超過 100-150 根/次 連續 1-2 個月 → 該看醫師
 分線變寬？：從前到後拍照，2-3 個月比較，看頂部分線是否變寬
 髮際線後退？：M 型角度比以前明顯
@@ -10229,7 +10229,7 @@ Mysore V, Shashikumar BM. Guidelines on the use of finasteride in androgenetic a
 Olsen EA, et al. Topical minoxidil in male pattern baldness. J Am Acad Dermatol. 1990;22(4):643-646. 「來源」
 King B, et al. Two phase 3 trials of baricitinib for alopecia areata. N Engl J Med. 2022;386(18):1687-1699. 「來源」
 UpToDate: Treatment of androgenetic alopecia in men. Accessed 2026. 「來源」
-Taiwan Dermatological Association. 圓禿診斷及治療共識. 2024.
+臺灣皮膚科醫學會。 圓禿診斷及治療共識. 2024.
 
 ---
 ## 香港腳 / 灰指甲 7 大迷思
@@ -10381,9 +10381,9 @@ UpToDate: Onychomycosis: Management. Accessed 2026. 「來源」
 ---
 ## 異位性皮膚炎完整指引 — 治療、共病評估、6 大迷思
 URL: https://chendermatologist.com/blog/atopic-dermatitis-overview
-Updated: 2026-10-17
+Updated: 2026-10-18
 Section: Treatment & Therapy
-Reading time: PT32M
+Reading time: PT33M
 Tags: 異位性皮膚炎, AD complete guide
 
 首頁 · 衛教文章 · 異位性皮膚炎完整指引
