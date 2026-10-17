@@ -142,7 +142,6 @@
   <button type="button" data-tab="font">字型</button>
   <button type="button" data-tab="version">歷史</button>
   <button type="button" data-tab="reorder">排序</button>
-  <button type="button" data-tab="picks">熱門</button>
 </div>
 <div class="ax-body">
   <div class="ax-tab active" data-tab="seo">
@@ -216,17 +215,6 @@
     <ol class="ax-reorder-list" id="axReorderList"></ol>
     <button type="button" class="ax-btn primary" id="axReorderSave" disabled style="margin-top:8px">存排序到雲端草稿</button>
     <button type="button" class="ax-btn" id="axOrderDefault" disabled>恢復依日期排序</button><button type="button" class="ax-btn" id="axSettingsLegacyOrder" disabled>套用舊本機排序草稿</button>
-  </div>
-  <div class="ax-tab" data-tab="picks">
-    <div style="font-size:12px;color:#5e574e">選擇首頁「熱門推薦」1–12 篇公開文章；存雲端後再確認發布。</div>
-    <button type="button" class="ax-btn primary" id="axPicksLoad" style="margin-top:8px">載入雲端設定</button>
-    <ol class="ax-reorder-list" id="axPicksList" style="margin-top:8px"></ol>
-    <div style="display:flex;gap:6px;margin-top:8px">
-      <label for="axPicksAdd">新增推薦</label><select id="axPicksAdd" disabled style="flex:1;min-width:0;padding:5px 8px;font-size:12px;border:1px solid #dcd5c8;border-radius:6px"><option value="">請先載入設定</option></select>
-      <button type="button" class="ax-btn" id="axPicksAddBtn" disabled>加入</button>
-    </div>
-    <button type="button" class="ax-btn primary" id="axPicksSave" disabled style="margin-top:8px">存推薦到雲端草稿</button>
-    <div id="axPicksStats" style="font-size:11px;color:#8b8378;margin-top:8px"></div>
   </div>
 </div>`;
     document.body.appendChild(panel);

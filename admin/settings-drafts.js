@@ -26,16 +26,14 @@
     function identity() { return {pat: auth.getPat(), revision: auth.getRevision()}; }
     function current(identity) { return !!identity.pat && auth.getPat() === identity.pat && auth.getRevision() === identity.revision; }
     function validSettings(value, articles, stored = false) {
-      if (!value || value.version !== 1 || typeof value.legacyPicks !== 'boolean' || Object.keys(value).sort().join(',') !== 'font,legacyPicks,order,picks,version' ||
+      if (!value || value.version !== 1 || Object.keys(value).sort().join(',') !== 'font,order,version' ||
           !value.font || Object.keys(value.font).sort().join(',') !== Object.keys(choices).sort().join(',')) throw error('invalid_settings');
       for (const [key, values] of Object.entries(choices)) if (!values.includes(value.font[key])) throw error('invalid_settings');
       const slugs = new Set(articles.map(article => article.slug));
-      for (const [key, max] of [['order', 200], ['picks', 12]]) {
-        const values = value[key];
-        if (!Array.isArray(values) || values.length > max || new Set(values).size !== values.length || values.some(slug =>
-          typeof slug !== 'string' || slug.length > 100 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) || (!stored && !slugs.has(slug)))) throw error('invalid_settings');
-      }
-      if (!value.picks.length || (!stored && value.order.length && value.order.length !== articles.length)) throw error('invalid_settings');
+      const values = value.order;
+      if (!Array.isArray(values) || values.length > 200 || new Set(values).size !== values.length || values.some(slug =>
+        typeof slug !== 'string' || slug.length > 100 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) || (!stored && !slugs.has(slug)))) throw error('invalid_settings');
+      if (!stored && values.length && values.length !== articles.length) throw error('invalid_settings');
       return clone(value);
     }
     function validResponse(value) {
@@ -80,8 +78,8 @@
       } finally { clearTimeout(timer); }
     }
     function set(kind, values) {
-      if (!loaded || loaded.conflict || !['font', 'order', 'picks'].includes(kind)) throw error('settings_not_ready');
-      working = validSettings({...working, [kind]: clone(values), ...(kind === 'picks' ? {legacyPicks: false} : {})}, loaded.articles);
+      if (!loaded || loaded.conflict || !['font', 'order'].includes(kind)) throw error('settings_not_ready');
+      working = validSettings({...working, [kind]: clone(values)}, loaded.articles);
       publicationObservation = null; editRevision++; emit('local_changes'); return snapshot();
     }
     function saveLocal() {
@@ -114,8 +112,7 @@
       if (busy) throw error('settings_busy');
       const started = identity(); if (!started.pat) throw error('login_required');
       const revision = editRevision, before = clone(loaded);
-      const submitted = input?.kind ? {...before.settings, [input.kind]: clone(working[input.kind]),
-        ...(input.kind === 'picks' ? {legacyPicks: false} : {})} : clone(working);
+      const submitted = input?.kind ? {...before.settings, [input.kind]: clone(working[input.kind])} : clone(working);
       publicationObservation = null; busy = true; emit(input ? 'saving_cloud' : 'loading_cloud');
       try {
         const result = await http(input);
@@ -128,7 +125,7 @@
           if ((intent && (result.request?.draftHead !== before.head || result.request?.requestHead !== result.head || result.request?.blobSha !== before.blobSha)) ||
               (!intent && result.request !== null) || ((intent || cancel) && result.blobSha !== before.blobSha)) throw error('settings_write_not_verified');
           loaded = result; loadedIdentity = started; remote = null; remoteIdentity = null; uncertain = false; needsRefresh = false;
-          // Keep typing and unsaved values of the other two kinds. The exact
+          // Keep typing and unsaved values of the other kind. The exact
           // saved snapshot advances the cloud base, never replaces local edits.
           emit(editRevision !== revision || !equal(working, result.settings) ? 'cloud_saved_newer_local_changes' : intent ? 'requested' : 'cloud_saved');
         } else if (uncertain || needsRefresh || editRevision !== revision || (!!working && (!before || !equal(working, before.settings)))) {
@@ -153,12 +150,9 @@
       if (!current(loadedIdentity)) throw error('login_changed');
     }
     function saveCloud(kind) {
-      writable(); if (!['font', 'order', 'picks'].includes(kind)) throw error('invalid_settings_kind');
-      // Other unsaved kinds must remain local after this partial save.
+      writable(); if (!['font', 'order'].includes(kind)) throw error('invalid_settings_kind');
+      // The other unsaved kind must remain local after this partial save.
       const values = clone(working[kind]);
-      // Clicking save on the initial list is itself an explicit choice. Keep
-      // that migration in the local snapshot even if transport is uncertain.
-      if (kind === 'picks' && working.legacyPicks) set(kind, values);
       const pending = operation({expectedHead: loaded.head, baseSha: loaded.baseSha, catalogSha: loaded.catalogSha, kind, values});
       return pending;
     }
@@ -223,8 +217,7 @@
         // Adoption was explicit; only typing after submission overrides the
         // newly selected baseline. Preserve each changed kind independently.
         if (editRevision !== revision && working) {
-          for (const kind of ['font','order','picks']) if (!equal(working[kind], before.settings[kind])) nextWorking[kind] = clone(working[kind]);
-          if (working.legacyPicks !== before.settings.legacyPicks) nextWorking.legacyPicks = working.legacyPicks;
+          for (const kind of ['font','order']) if (!equal(working[kind], before.settings[kind])) nextWorking[kind] = clone(working[kind]);
         }
         try { validSettings(nextWorking, result.articles); }
         catch (_) {
@@ -248,11 +241,9 @@
       if (!loaded?.conflict || !['draft','source'].includes(base) || !(loaded.sourceRequiresReview || loaded.catalogSha !== loaded.mainCatalogSha)) throw error('settings_not_ready');
       const original = validSettings(base === 'source' ? loaded.sourceSettings : loaded.settings, loaded.articles, true);
       const current = loaded.articles.map(item => item.slug), visible = new Set(current), settings = clone(original);
-      const removed = [...new Set(original.order.concat(original.picks))].filter(slug => !visible.has(slug));
+      const removed = original.order.filter(slug => !visible.has(slug));
       const added = original.order.length ? current.filter(slug => !original.order.includes(slug)) : [];
       if (settings.order.length) settings.order = settings.order.filter(slug => visible.has(slug)).concat(added);
-      settings.picks = settings.picks.filter(slug => visible.has(slug));
-      if (!loaded.settings.legacyPicks || !loaded.sourceSettings.legacyPicks || removed.some(slug => original.picks.includes(slug))) settings.legacyPicks = false;
       return clone({settings, original, removed, added});
     }
     async function reconcileCatalog(settings, confirmed, expectedRevision) {
@@ -261,7 +252,6 @@
       if (confirmed !== true) throw error('settings_confirmation_required');
       if (!current(loadedIdentity)) throw error('login_changed');
       const selected = validSettings(settings,loaded.articles), before = loaded, started = identity();
-      if ((!before.settings.legacyPicks || !before.sourceSettings.legacyPicks) && selected.legacyPicks) throw error('invalid_settings');
       const input = {action:'reconcile-catalog',expectedHead:before.head,blobSha:before.blobSha,expectedMain:before.main,
         expectedMainBlob:before.mainBlobSha,expectedCatalog:before.mainCatalogSha,settings:selected,confirmed:true};
       publicationObservation = null; busy = true; emit('reconciling_catalog');

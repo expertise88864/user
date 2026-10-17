@@ -36,10 +36,10 @@ for (const cycle of [false,true,'catalog']) test(cycle === 'catalog' ? 'explicit
   baseSha:loaded.baseSha,catalogSha:loaded.catalogSha,settingsApproved:true});assert.equal(requested.status,200);
  if(cycle === 'catalog') {
   const oldHead=h.refs.get('cms-settings/site');
-  h.changeMain('_site_settings.json',{...loaded.sourceSettings,legacyPicks:false,order:['gamma','alpha','beta']});
+  h.changeMain('_site_settings.json',{...loaded.sourceSettings,order:['gamma','alpha','beta']});
   h.changeMain('assets/settings-catalog.json',{version:1,articles:['beta','gamma','delta'].map(slug=>({slug,title:'Article '+slug,title_en:'Article '+slug}))});
   main=h.refs.get('main');loaded=await h.read();assert.equal(loaded.sourceRequiresReview,true);assert.equal(loaded.conflict,true);
-  const selected={...loaded.settings,legacyPicks:false,order:['gamma','beta','delta'],picks:['beta']};
+  const selected={...loaded.settings,order:['gamma','beta','delta']};
   const response=await h.request({action:'reconcile-catalog',expectedHead:oldHead,blobSha:loaded.blobSha,expectedMain:main,
    expectedMainBlob:loaded.mainBlobSha,expectedCatalog:loaded.mainCatalogSha,settings:selected,confirmed:true});
   assert.equal(response.status,200,await response.clone().text());loaded=await response.json();

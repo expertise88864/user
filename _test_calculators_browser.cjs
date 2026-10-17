@@ -75,7 +75,7 @@ async function checkCalculators(browser) {
     const page = await context.newPage();
     const shared = fs.readFileSync('blog/blog-shared.js', 'utf8');
     const start = shared.indexOf('  DN.injectCalculatorByName = function');
-    const end = shared.indexOf('  // Popular picks — curated evergreen list', start);
+    const end = shared.indexOf('  DN.isLocalStaticHost = function', start);
     assert.ok(start >= 0 && end > start, 'actual production dispatcher is present');
     await mount(page, source, ['DLQI', 'atopic-dermatitis-overview', 'dn-dlqi']);
     await page.locator('#dn-dlqi').evaluate(node => node.parentElement.remove());

@@ -16,7 +16,8 @@ const source = ['_github-fetch.js', '_site-settings.js', '_settings-git.js', 'si
 const hash = value => crypto.createHash('sha1').update(value).digest('hex');
 const gitBlob = bytes => hash(Buffer.concat([Buffer.from('blob ' + bytes.length + '\0'), bytes]));
 const articles = ['alpha', 'beta', 'gamma'].map(slug => ({slug, title: '文章 ' + slug, title_en: 'Article ' + slug}));
-const defaults = () => ({version: 1, legacyPicks: true, font: {bodyFont: '', headFont: '', bodySize: ''}, order: [], picks: ['alpha']});
+const defaults = () => ({version: 1, font: {bodyFont: '', headFont: '', bodySize: ''}, order: []});
+const reordered = ['beta', 'alpha', 'gamma'];
 function fixture(observationPolicy = publicationPolicy) {
   const blobs = new Map(), trees = new Map(), commits = new Map(), refs = new Map(), calls = [];
   const store = text => { const bytes = Buffer.isBuffer(text) ? text : Buffer.from(text); const sha = gitBlob(bytes); blobs.set(sha, bytes); return sha; };
@@ -123,12 +124,12 @@ async function catalogConflict(withDraft = true) {
   const h=fixture();h.changeMain('.site-settings-delivery.json',{version:1,request:null},true);
   if(withDraft) {let v=await h.read();await h.request(h.input(v));v=await h.read();
     await h.request({action:'request-publication',expectedHead:v.head,blobSha:v.blobSha,baseSha:v.baseSha,catalogSha:v.catalogSha,settingsApproved:true});}
-  h.changeMain('_site_settings.json',{...defaults(),legacyPicks:false,order:['gamma','alpha','beta']});
+  h.changeMain('_site_settings.json',{...defaults(),order:['gamma','alpha','beta']});
   h.changeMain(contract.catalog,{version:1,articles:['beta','gamma','delta'].map(slug=>({slug,title:'Article '+slug,title_en:'Article '+slug}))});
   const loaded=await h.read();h.calls.length=0;
   const input={action:'reconcile-catalog',expectedHead:loaded.head,blobSha:loaded.blobSha,expectedMain:loaded.main,
     expectedMainBlob:loaded.mainBlobSha,expectedCatalog:loaded.mainCatalogSha,confirmed:true,
-    settings:{...loaded.settings,legacyPicks:false,order:['gamma','beta','delta'],picks:['beta']}};
+    settings:{...loaded.settings,order:['gamma','beta','delta']}};
   return {h,loaded,input};
 }
 for(const withDraft of [false,true]) test('catalogue reconciliation preserves old history and current main with existing draft='+withDraft,async()=>{
@@ -143,11 +144,12 @@ for(const withDraft of [false,true]) test('catalogue reconciliation preserves ol
   const request=await h.request({action:'request-publication',expectedHead:after.head,blobSha:after.blobSha,baseSha:after.baseSha,catalogSha:after.catalogSha,settingsApproved:true});
   assert.equal(request.status,200);
 });
-test('reconciliation rejects stale versions, empty/private/duplicate picks, incomplete order and legacy reactivation before writes',async()=>{
+test('reconciliation rejects stale versions, private/duplicate/incomplete order and retired 熱門推薦 fields before writes',async()=>{
+  const order=['gamma','beta','delta'];
   for(const change of [{confirmed:'true'},{confirmed:false},{expectedMain:hash('wrong')},{expectedHead:hash('wrong')},
-    {expectedCatalog:hash('wrong')},{extra:true},{settings:{...defaults(),legacyPicks:true,picks:['beta']}},
-    ...[[],['private'],['beta','beta']].map(picks=>({settings:{...defaults(),legacyPicks:false,picks}})),
-    {settings:{...defaults(),legacyPicks:false,picks:['beta'],order:['beta']}}]){
+    {expectedCatalog:hash('wrong')},{extra:true},{settings:{...defaults(),order,picks:['beta']}},
+    {settings:{...defaults(),order,legacyPicks:false}},{settings:{...defaults(),order,legacyPicks:true,picks:['beta']}},
+    ...[['beta'],['gamma','beta','private'],['beta','beta','gamma']].map(order=>({settings:{...defaults(),order}}))]){
     const {h,input}=await catalogConflict();const response=await h.request({...input,...change});
     assert.ok([400,409].includes(response.status),JSON.stringify(change));noWrites(h);
   }
@@ -322,31 +324,35 @@ test('publication policy missing the literal settings intent gate or unreadable 
   assert.equal(response.status,200); assert.equal(JSON.parse(text).publication.state,'unverified');
   assert.ok(!text.includes('fixture-only')); noWrites(h);
 });
-test('font/order drafts preserve legacy recommendations; saving picks explicitly opts into source ownership', async () => {
+test('retired 熱門推薦: drafts carry only font/order and the old save kind or fields cannot write', async () => {
   const h = fixture(), initial = await h.read();
-  assert.equal(initial.settings.legacyPicks, true);
+  assert.deepEqual(Object.keys(initial.settings).sort(), ['font', 'order', 'version']);
   await h.request(h.input(initial)); let loaded = await h.read();
-  assert.equal(loaded.settings.legacyPicks, true);
-  await h.request(h.input(loaded, {kind: 'order', values: ['gamma', 'beta', 'alpha']})); loaded = await h.read();
-  assert.equal(loaded.settings.legacyPicks, true);
-  const response = await h.request(h.input(loaded, {kind: 'picks', values: ['alpha']}));
-  assert.equal(response.status, 200); loaded = await response.json();
-  assert.equal(loaded.settings.legacyPicks, false);
-  assert.deepEqual(loaded.settings.picks, ['alpha']);
-  await h.request(h.input(loaded)); loaded = await h.read();
-  assert.equal(loaded.settings.legacyPicks, false);
-  assert.equal(h.refs.get('main'), h.main, 'migration is a draft, never a live KV/main write');
+  assert.deepEqual(Object.keys(loaded.settings).sort(), ['font', 'order', 'version']);
+  const draft = h.blobs.get(h.trees.get(h.commits.get(loaded.head).tree.sha).get(contract.source)).toString();
+  assert.doesNotMatch(draft, /picks/i, 'saved drafts never reintroduce the retired fields');
+  for (const extra of [{kind: 'picks', values: ['alpha']}, {kind: 'legacyPicks', values: false}]) {
+    const start = h.calls.length, response = await h.request(h.input(loaded, extra));
+    assert.equal(response.status, 400); assert.equal((await response.json()).error, 'invalid_settings_kind');
+    assert.ok(h.calls.slice(start).every(call => call.method === 'GET'));
+  }
+  assert.equal(h.refs.get('main'), h.main);
+});
+test('a main source still carrying the retired 熱門推薦 fields fails closed until the migration ships', async () => {
+  const h = fixture(); h.changeMain(contract.source, {...defaults(), legacyPicks: true, picks: ['alpha']});
+  const response = await h.request(); assert.equal(response.status, 409);
+  assert.equal((await response.json()).error, 'settings_base_requires_review'); noWrites(h);
 });
 test('a font draft preserves other settings and never claims publication; second edit is a single fast-forward', async () => {
   const h = fixture(), initial = await h.read();
   assert.equal(initial.head, null); assert.equal(initial.published, false); assert.equal(initial.deploymentVerified, false); noWrites(h);
   const firstResponse = await h.request(h.input(initial)), first = await firstResponse.json();
   assert.equal(firstResponse.status, 200); assert.equal(first.verified, true); assert.equal(first.published, false);
-  assert.deepEqual(first.settings.picks, ['alpha']); assert.equal(first.settings.font.bodySize, '18px');
+  assert.deepEqual(first.settings.order, []); assert.equal(first.settings.font.bodySize, '18px');
   const loaded = await h.read(); assert.equal(loaded.conflict, false); assert.equal(loaded.head, first.head);
-  const secondResponse = await h.request(h.input(loaded, {kind: 'picks', values: ['beta', 'alpha']})), second = await secondResponse.json();
+  const secondResponse = await h.request(h.input(loaded, {kind: 'order', values: reordered})), second = await secondResponse.json();
   assert.equal(secondResponse.status, 200); assert.equal(second.settings.font.bodySize, '18px');
-  assert.deepEqual(second.settings.picks, ['beta', 'alpha']); assert.equal(h.commits.get(second.head).parents[0], first.head);
+  assert.deepEqual(second.settings.order, reordered); assert.equal(h.commits.get(second.head).parents[0], first.head);
   assert.equal(h.refs.get('main'), h.main);
 });
 test('saving content atomically retires only the previous request and preserves its historic copy', async () => {
@@ -385,7 +391,7 @@ for (const extra of [{settingsApproved: false}, {settingsApproved: 'true'}, {act
 }
 test('stale publication approval cannot attach to another version; duplicate request cannot replace an intent', async () => {
   const h = fixture(); await h.request(h.input(await h.read())); const first = await h.read();
-  await h.request(h.input(first, {kind: 'picks', values: ['beta']})); const next = await h.read();
+  await h.request(h.input(first, {kind: 'order', values: reordered})); const next = await h.read();
   const start = h.calls.length; assert.equal((await h.request(intent(first))).status, 409);
   assert.ok(h.calls.slice(start).every(call => call.method === 'GET'));
   assert.equal((await h.request(intent(next))).status, 200); const requested = await h.read();
@@ -421,7 +427,7 @@ test('oversized and invalid UTF-8 upstream JSON are rejected without exposing de
 });
 test('bad main after the ref write leaves an unverified outcome, never a production acknowledgement', async () => {
   const h = fixture(), loaded = await h.read();
-  h.after = ({path}) => { if (path === 'git/refs') h.changeMain(contract.source, {...defaults(), picks: ['beta']}); };
+  h.after = ({path}) => { if (path === 'git/refs') h.changeMain(contract.source, {...defaults(), order: reordered}); };
   const response = await h.request(h.input(loaded)); assert.equal(response.status, 502);
   assert.equal((await response.json()).error, 'settings_save_not_verified'); assert.ok(h.refs.get(contract.branch));
 });
@@ -444,7 +450,7 @@ for (const action of ['read', 'save', 'request']) test('pre-existing collateral 
 test('unrelated main advancement preserves the original draft base rather than inventing a mixed tree', async () => {
   const h = fixture(); await h.request(h.input(await h.read())); const first = await h.read();
   h.changeMain('assets/main-update.js', {value: 'new main source'}); const loaded = await h.read();
-  assert.equal(loaded.conflict, false); const response = await h.request(h.input(loaded, {kind: 'picks', values: ['beta']}));
+  assert.equal(loaded.conflict, false); const response = await h.request(h.input(loaded, {kind: 'order', values: reordered}));
   assert.equal(response.status, 200); const next = await h.read();
   assert.equal(next.manifestRecord.baseMain, first.manifestRecord.baseMain);
   assert.equal(next.conflict, false); assert.equal(next.settings.font.bodySize, '18px');
@@ -455,7 +461,7 @@ for (const extra of [
   {repository: 'other/repo'}, {kind: 'css'}, {expectedHead: '0'.repeat(40)}, {baseSha: 'invalid'},
   {values: {...defaults().font, bodyFont: 'url(https://unsafe.test)'}},
   {kind: 'order', values: ['alpha']}, {kind: 'order', values: ['alpha', 'beta', 'private']},
-  {kind: 'picks', values: ['alpha', 'alpha']}, {kind: 'picks', values: []}, {kind: 'picks', values: ['private']},
+  {kind: 'order', values: ['alpha', 'alpha', 'beta']}, {kind: 'picks', values: ['alpha']},
 ]) test('invalid or caller-selected setting input cannot write: ' + JSON.stringify(extra), async () => {
   const h = fixture(), loaded = await h.read();
   const response = await h.request(h.input(loaded, extra)); assert.equal(response.status, 400); noWrites(h);
@@ -468,7 +474,7 @@ test('stale tab cannot overwrite a newer draft', async () => {
 for (const path of [contract.source, contract.catalog]) test('changed main ' + path + ' requires explicit integration without discarding old draft', async () => {
   const h = fixture(), loaded = await h.read(); await h.request(h.input(loaded));
   const oldHead = h.refs.get(contract.branch);
-  h.changeMain(path, path === contract.source ? {...defaults(), picks: ['beta']} : {version: 1, articles: [...articles, {slug: 'delta', title: '新文章', title_en: 'New article'}]});
+  h.changeMain(path, path === contract.source ? {...defaults(), order: reordered} : {version: 1, articles: [...articles, {slug: 'delta', title: '新文章', title_en: 'New article'}]});
   const current = await h.read(); assert.equal(current.conflict, true); assert.equal(current.head, oldHead);
   const start = h.calls.length; assert.equal((await h.request(h.input(current))).status, 409);
   assert.ok(h.calls.slice(start).every(call => call.method === 'GET')); assert.equal(h.refs.get(contract.branch), oldHead);
@@ -480,12 +486,12 @@ test('non-fast-forward race is rejected without force or touching main', async (
 });
 test('main moves during a read: no mixed snapshot', async () => {
   const h = fixture(); let moved = false;
-  h.after = ({path}) => { if (!moved && path.startsWith('contents/')) { moved = true; h.changeMain(contract.source, {...defaults(), picks: ['beta']}); } };
+  h.after = ({path}) => { if (!moved && path.startsWith('contents/')) { moved = true; h.changeMain(contract.source, {...defaults(), order: reordered}); } };
   assert.equal((await h.request()).status, 409); noWrites(h);
 });
 test('main moves before CAS: no draft ref change', async () => {
   const h = fixture(), loaded = await h.read();
-  h.after = ({path}) => { if (path === 'git/commits') h.changeMain(contract.source, {...defaults(), picks: ['beta']}); };
+  h.after = ({path}) => { if (path === 'git/commits') h.changeMain(contract.source, {...defaults(), order: reordered}); };
   assert.equal((await h.request(h.input(loaded))).status, 409); assert.equal(h.refs.get(contract.branch), undefined);
 });
 test('unknown write result is not acknowledged and can be resolved by read, not automatic retry', async () => {

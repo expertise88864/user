@@ -236,7 +236,7 @@ async function checkPublishedTopicEntry(browser) {
       await context.route('**/*', route => {
         const url = new URL(route.request().url());
         if (url.origin !== origin || route.request().method() !== 'GET') return route.abort();
-        if (url.pathname === '/api/admin/popular-picks') return route.fulfill({contentType:'application/json',body:JSON.stringify({picks:[],fallback:true})});
+        assert.notEqual(url.pathname, '/api/admin/popular-picks', 'public pages must not request the retired 熱門推薦 endpoint');
         const root = process.cwd();
         let file = path.resolve(root, '.' + url.pathname);
         if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file,'index.html');

@@ -66,7 +66,7 @@ function fake(bad = '') {
   const settingsFiles={
     '_site_settings.json':Buffer.from(JSON.stringify(settingsDefault,null,2)+'\n'),
     '.site-settings-delivery.json':Buffer.from(JSON.stringify({version:1,request:null},null,2)+'\n'),
-    'assets/settings-catalog.json':Buffer.from(JSON.stringify({version:1,articles:settingsDefault.picks.map(slug=>({slug,title:slug,title_en:slug}))},null,2)+'\n'),
+    'assets/settings-catalog.json':Buffer.from(JSON.stringify({version:1,articles:['acne-myths','sunscreen-myths'].map(slug=>({slug,title:slug,title_en:slug}))},null,2)+'\n'),
   };
   const settingsBlob=bytes=>createHash('sha1').update(Buffer.concat([Buffer.from('blob '+bytes.length+'\0'),bytes])).digest('hex');
   return async (url) => {

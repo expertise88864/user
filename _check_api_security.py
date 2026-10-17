@@ -69,26 +69,19 @@ def main() -> int:
         "api/admin/upload.js",
         "api/admin/summarize.js",
         "api/admin/regen-en.js",
+        "api/admin/popular-picks.js",
     ]
     for rel in retired_endpoints:
         require_absent(errors, rel, "retired or unwired endpoint should remain removed")
 
-    require(errors, "api/admin/popular-picks.js", "if (req.method !== 'GET')", "retired popular-picks writes must fail before any provider access")
-    forbid(errors, "api/admin/popular-picks.js", "kvSet", "popular-picks must never bypass version-bound settings delivery")
-    forbid(errors, "api/admin/popular-picks.js", "/set/", "popular-picks must not retain a direct KV write transport")
-    require(errors, "api/admin/popular-picks.js", "'Cache-Control': 'no-store'", "admin popular-picks write and error responses should not be cached by default")
-    require(errors, "api/admin/popular-picks.js", "{ Allow: 'GET' }", "popular-picks 405 response must declare its read-only contract")
-    require(errors, "api/admin/popular-picks.js", "new Set(picks).size !== picks.length", "legacy recommendations must reject duplicate slugs")
-    require(errors, "api/admin/popular-picks.js", "!publicSlugs.has(slug)", "public recommendations must not expose unpublished slugs")
     # Provider redirects must never forward credentials. `redirect: 'error'` is
     # equivalent, but server-side admin fetches now use `redirect: 'manual'`
     # plus an explicit 3xx/opaqueredirect refusal: the Vercel Edge runtime
     # turned the former into an unclassifiable fast failure in production, and
     # manual mode still never follows a Location header. Either form passes;
     # manual mode only passes together with its refusal check.
-    require_no_redirect_follow(errors, "api/admin/popular-picks.js")
     require_no_redirect_follow(errors, "api/admin/_github-fetch.js")
-    for rel in ("api/admin/_github-fetch.js", "api/admin/popular-picks.js", "api/admin/_session.js",
+    for rel in ("api/admin/_github-fetch.js", "api/admin/_session.js",
                 "api/admin/article-draft.js", "api/admin/_settings-git.js"):
         # Edge fetch does not support the `cache` request option; freshness
         # is requested with the Cache-Control request header instead.
@@ -101,9 +94,11 @@ def main() -> int:
     require(errors, "api/admin/_settings-git.js", "'https://api.github.com/repos/' + contract.repository + '/' + path", "settings must keep the fixed repository")
     require(errors, "api/admin/_session.js", "await validateRepositoryAccess(pat);", "login must verify repository access before minting a session")
     forbid(errors, "api/admin/_session.js", "permissions.push", "login repository access must be proven by a read, not permissions metadata")
-    forbid(errors, "api/admin/popular-picks.js", "req.headers.get('authorization')", "admin popular-picks should not accept PAT headers")
-    forbid(errors, "api/admin/popular-picks.js", "const REPO =", "admin popular-picks should not keep unused REPO constants")
-    forbid(errors, "api/admin/popular-picks.js", "error: e.message", "admin popular-picks should not expose raw KV error messages")
+    # Homepage recommendations (熱門推薦) were retired 2026-10-17 by user
+    # decision: no public KV read, no settings field and no admin save kind.
+    forbid(errors, "api/admin/_site-settings.js", "picks", "Retired homepage recommendations must not return to the settings grammar")
+    forbid(errors, "api/admin/site-settings.js", "picks", "Retired homepage recommendations must not return as a settings save kind")
+    forbid(errors, "_site_settings_contract.json", "maxPicks", "Retired homepage recommendations must not keep a settings limit")
 
     if errors:
         print("[FAIL] API security audit found issues:")

@@ -10,7 +10,7 @@ import json
 
 from _cms_delivery import ImmutableBlobs, ancestor, github_file, parse, revision
 from _cms_retirement import baseline, main_sha
-from _site_settings_data import catalog_of, exact, parse_json, settings_of, settings_record
+from _site_settings_data import catalog_of, exact, parse_json, settings_of, settings_record, without_retired_picks
 
 FILE = '.site-settings-delivery.json'
 REPO = 'expertise88864/user'
@@ -18,12 +18,24 @@ SOURCE, CATALOG = '_site_settings.json', 'assets/settings-catalog.json'
 BRANCH, MANIFEST, REQUEST = 'cms-settings/site', '.cms-settings/site.json', '.cms-settings-requests/site.json'
 FIELDS = {'version', 'repository', 'source', 'requestHead', 'requestBlobSha', 'draftHead', 'manifestBlobSha',
           'baseMain', 'baseSha', 'catalogSha', 'settingsBlobSha', 'preparedAgainst', 'sourceSha256', 'settingsApproved'}
-DEFAULT = {'version': 1, 'legacyPicks': True, 'font': {'bodyFont': '', 'headFont': '', 'bodySize': ''}, 'order': [],
-           'picks': ['acne-myths', 'sunscreen-myths', 'atopic-dermatitis-overview', 'topical-steroids-guide', 'hairloss-myths']}
+DEFAULT = {'version': 1, 'font': {'bodyFont': '', 'headFont': '', 'bodySize': ''}, 'order': []}
 
 
 def encoded(value):
     return (json.dumps(value, ensure_ascii=False, indent=2) + '\n').encode('utf8')
+
+
+def retired_picks_migration(old_raw, new_raw):
+    """The single engineering change allowed without a settings request.
+
+    Homepage recommendations were retired on 2026-10-17. A candidate may drop
+    exactly those two legacy fields from the published source; font and order
+    must be preserved and the result must be the canonical current encoding.
+    """
+    try:
+        return new_raw == encoded(without_retired_picks(parse_json(old_raw)))
+    except ValueError:
+        return False
 
 
 def receipt(raw):
@@ -101,10 +113,8 @@ def payload(api, head, *, prepared_against):
     articles = catalog_of(parse_json(catalog_raw, 200_000))
     # The existing source may outlive its original catalogue. Validate its
     # stored grammar; the newly approved source must match this catalogue.
-    before = settings_record(parse_json(base_raw))
-    settings = settings_of(parse(source_raw, canonical=True, limit=32_000), articles)
-    if before['legacyPicks'] is False and settings['legacyPicks'] is True:
-        raise ValueError('Source-owned recommendations cannot reactivate legacy KV')
+    settings_record(parse_json(base_raw))
+    settings_of(parse(source_raw, canonical=True, limit=32_000), articles)
     allowed = {SOURCE, MANIFEST, REQUEST}
     def collateral(tree):
         return sorted((p, e.get('type'), e.get('mode'), e.get('sha')) for p, e in tree.items() if p not in allowed and e.get('type') != 'tree')
@@ -155,7 +165,7 @@ def verify(candidate, api):
             articles = catalog_of(parse_json(github_file(api, CATALOG, candidate, 200_000)[1], 200_000))
             if old_proof is not None or settings_of(parse_json(config_raw), articles) != DEFAULT or config_raw != encoded(DEFAULT):
                 raise ValueError('Only exact default bootstrap settings may be installed without author intent')
-        elif old_proof is None or old_config[0] != config_sha:
+        elif old_proof is None or (old_config[0] != config_sha and not retired_picks_migration(old_config[1], config_raw)):
             raise ValueError('Site settings changed without an approved request')
     else:
         live(api, entry['requestHead'])

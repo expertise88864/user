@@ -122,7 +122,8 @@ test(`local preview serves public routes while private files and aliases stay un
       ...[...publicFiles].filter(([name])=>!['index.html','tools.html','blog/index.html'].includes(name)).map(([name,body])=>['/'+name,body])]){
       const response=await get(route);assert.equal(response.status,200,route);assert.equal(response.body,body,route);
     }
-    const picks=await get('/api/admin/popular-picks');assert.equal(picks.status,200);assert.deepEqual(JSON.parse(picks.body),{picks:[]});
+    // The retired 熱門推薦 endpoint has no local fixture any more (2026-10-17).
+    const picks=await get('/api/admin/popular-picks');assert.equal(picks.status,404);assert.doesNotMatch(picks.body,/picks/);
   } finally {
     if(child?.pid&&child.exitCode===null&&child.signalCode===null){const exited=new Promise(resolve=>child.once('exit',resolve));child.kill();await exited;}
     for(const link of links){assert.ok([realpathSync(site),realpathSync(path.join(site,'assets'))].includes(realpathSync(path.dirname(link))));unlinkSync(link);}
