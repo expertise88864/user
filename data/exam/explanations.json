@@ -8915,7 +8915,7 @@
   "dispute": {
    "kind": "conflict",
    "exam": "考試答案：依課本出題本意維持原答案 B，因為 Fitzpatrick p.3771 明列 spindle cell features 為 SCC 高危險特徵，B 說「預後較佳」確定是錯誤敘述。疑義在於 A：兩本課本都沒有寫「<2 cm 轉移率約 1%」，McKee p.1205 引用的數據是 <2 cm 腫瘤轉移率 7.6%，若照 McKee，A 也算錯誤。此外 McKee p.1208 提到較常見的 actinic spindle cell SCC 預後良好、很少轉移，只有放射線或外傷相關者屬高惡性度，所以 B 也不是在所有情況下都錯。查詢現行文獻沒有找到會改變本題答案的指引更新。",
-   "current": "現行觀念：2025 年系統性回顧與統合分析（30 篇研究）顯示，AJCC 8th T1 腫瘤（≤2 cm，且沒有 deep invasion、perineural invasion、minor bone erosion 等升為 T3 的條件）的 nodal metastasis 約 1.5%，BWH T1 約 0.7%。這些是特定分期族群的數據：<2 cm 但有 deep 或 perineural invasion 的腫瘤屬 T3，不在其中，所以不能據此證明 A「直徑小於 2 公分轉移率約 1%」普遍成立；本題仍依官方答案 B。",
+   "current": "現行觀念：2025 年系統性回顧與統合分析（30 篇研究）顯示，AJCC 8th T1 腫瘤（≤2 cm，且沒有符合 AJCC 8th T3 條件的 deep invasion（超過皮下脂肪或 >6 mm）或 perineural invasion（真皮以下或 ≥0.1 mm 神經的鞘內腫瘤細胞，或臨床／影像侵犯具名神經）、minor bone erosion 等升為 T3 的條件）的 nodal metastasis 約 1.5%，BWH T1 約 0.7%。這些是特定分期族群的數據：<2 cm 但具有上述 T3 條件的腫瘤不在其中，所以不能據此證明 A「直徑小於 2 公分轉移率約 1%」普遍成立；本題仍依官方答案 B。",
    "sources": [
     {
      "pmid": "39889854",
@@ -35435,7 +35435,7 @@
   ]
  },
  "111-37": {
-  "summary": "①②③正確，答案 C。",
+  "summary": "①②③正確，答案 C；②的「避免轉移」說法有疑義。",
   "items": [
    {
     "key": "①",
@@ -35510,9 +35510,19 @@
     ]
    }
   ],
-  "flags": [
-   "②的「避免之後產生 metastasis」只能解讀成淋巴結區域（regional）復發的控制；課本明言 adjuvant radiotherapy 對 relapse-free survival 與 overall survival 沒有效果；ANZMTG 01.02/TROG 02.01 隨機試驗 6 年追蹤：淋巴結區域復發 21% 對 36%，RFS 與 OS 無差異。"
-  ]
+  "dispute": {
+   "kind": "ambiguous",
+   "exam": "考試答案：依課本出題本意維持原答案 C。疑義在②「adjuvant radiotherapy 有助於避免之後產生 metastasis」：Fitzpatrick 9e 寫 Stage III 病人 CLND 後的 adjuvant radiotherapy 可改善淋巴結區域（nodal basin）的控制，但對 relapse-free survival 與 overall survival 沒有效果。若把「metastasis」解讀為遠端轉移，②與課本不符；只有解讀成淋巴結區域復發時，②才成立。出題本意應是後者，故維持 C。",
+   "current": "現行觀念：ANZMTG 01.02/TROG 02.01 隨機試驗 6 年追蹤顯示，淋巴結切除後的 adjuvant 放療使淋巴結區域復發從 36% 降到 21%，但 relapse-free survival 與 overall survival 沒有差異；也就是放療只減少區域復發，不能避免遠端轉移或延長存活。",
+   "sources": [
+    {
+     "pmid": "26206146",
+     "title": "Adjuvant lymph-node field radiotherapy versus observation only in patients with melanoma at high risk of further lymph-node field relapse after lymphadenectomy (ANZMTG 01.02/TROG 02.01): 6-year follow-up of a phase 3, randomised controlled trial.",
+     "year": 2015,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26206146/"
+    }
+   ]
+  }
  },
  "111-38": {
   "summary": "C 錯誤，答案 C。",
