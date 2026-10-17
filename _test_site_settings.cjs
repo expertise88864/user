@@ -539,6 +539,7 @@ test('failed post-write verification never reports a verified save', async () =>
 for (const [label, respond, code] of [
   ['401', () => Response.json({message: 'Bad credentials'}, {status: 401}), 'github_token_invalid'],
   ['403 rate limit', () => Response.json({}, {status: 403, headers: {'x-ratelimit-remaining': '0'}}), 'github_rate_limited'],
+  ['403 secondary rate limit', () => Response.json({}, {status: 403, headers: {'x-ratelimit-remaining': '4999', 'retry-after': '60'}}), 'github_rate_limited'],
   ['403 forbidden', () => Response.json({}, {status: 403}), 'github_forbidden'],
   ['404 required path', () => Response.json({}, {status: 404}), 'github_not_found'],
   ['302 redirect', () => new Response(null, {status: 302, headers: {Location: 'https://elsewhere.invalid/'}}), 'github_redirect'],

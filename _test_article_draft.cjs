@@ -1049,6 +1049,7 @@ const fakeRedirect = () => ({ type: 'opaqueredirect', status: 0, ok: false, head
 for (const [label, respond, code] of [
   ['401', () => Response.json({ message: 'Bad credentials fixture-secret' }, { status: 401 }), 'github_token_invalid'],
   ['403 rate limit', () => Response.json({}, { status: 403, headers: { 'x-ratelimit-remaining': '0' } }), 'github_rate_limited'],
+  ['403 secondary rate limit', () => Response.json({}, { status: 403, headers: { 'x-ratelimit-remaining': '4999', 'retry-after': '60' } }), 'github_rate_limited'],
   ['429 secondary rate limit', () => Response.json({}, { status: 429 }), 'github_rate_limited'],
   ['403 forbidden', () => Response.json({}, { status: 403, headers: { 'x-ratelimit-remaining': '4999' } }), 'github_forbidden'],
   ['404 required path', () => Response.json({}, { status: 404 }), 'github_not_found'],

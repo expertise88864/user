@@ -190,6 +190,7 @@ for (const [label, respond, status, code] of [
   ['401', () => Response.json({}, {status:401}), 401, 'github_token_invalid'],
   ['403', () => Response.json({}, {status:403}), 403, 'github_forbidden'],
   ['403 rate limit', () => Response.json({}, {status:403, headers:{'x-ratelimit-remaining':'0'}}), 429, 'github_rate_limited'],
+  ['403 secondary rate limit', () => Response.json({}, {status:403, headers:{'x-ratelimit-remaining':'4999','retry-after':'60'}}), 429, 'github_rate_limited'],
   ['404', () => Response.json({}, {status:404}), 403, 'github_not_found'],
   ['301', () => new Response(null, {status:301, headers:{Location:'https://elsewhere.invalid/'}}), 502, 'github_redirect'],
   ['503', () => Response.json({}, {status:503}), 502, 'github_upstream_error'],

@@ -32,7 +32,11 @@ export function githubStatusCode(response) {
   const status = response.status;
   if (response.type === 'opaqueredirect' || (status >= 300 && status < 400)) return 'github_redirect';
   if (status === 401) return 'github_token_invalid';
-  if (status === 403) return response.headers.get('x-ratelimit-remaining') === '0' ? 'github_rate_limited' : 'github_forbidden';
+  // Primary limits report remaining 0; secondary limits may answer 403 with
+  // Retry-After while quota remains, so either header means "wait", not a
+  // permission problem.
+  if (status === 403) return response.headers.get('x-ratelimit-remaining') === '0' || response.headers.has('retry-after')
+    ? 'github_rate_limited' : 'github_forbidden';
   if (status === 429) return 'github_rate_limited';
   if (status === 404) return 'github_not_found';
   if (status >= 500) return 'github_upstream_error';
