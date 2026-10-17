@@ -1,7 +1,6 @@
 /* Optional support UI; loaded only by the deferred shared enhancement. */
 (function () {
   const DN = window.DN;
-  const NAV_SEARCH_SELECTOR = 'button#dn-nav-search,button[aria-label="搜尋"],button[aria-label="Search"]';
   // Pre-set Ko-fi + 街口支付 URLs (replace BMC entirely — Ko-fi is 0% commission)
   DN.KOFI_URL = 'https://ko-fi.com/expertise88864';
   DN.JKO_URL = 'https://service.jkopay.com/r/transfer?j=Transfer:901070305';
@@ -85,56 +84,10 @@
     }
   };
 
+  // 2026-10-17 — header support pill retired (user decision): the homepage /
+  // footer support note is the only entry point, so only the footer card is injected.
   DN.injectSupportUI = function () {
     DN.injectBMCFooter();
-    if (!DN.SUPPORT_URL) return;
-    // R25: skip header pill — static #dn-nav-support icon already covers this slot
-    if (document.getElementById('dn-nav-support')) return;
-    if (document.getElementById('dn-bmc-header')) return;
-    var headerInner = document.querySelector('header.sticky .h-16 > div:last-child');
-    if (!headerInner) return;
-    if (!document.getElementById('dn-bmc-header-css')) {
-      var supportStyle = document.createElement('style');
-      supportStyle.id = 'dn-bmc-header-css';
-      supportStyle.textContent =
-        '.dn-bmc-header-link:hover,.dn-bmc-header-link:focus-visible{' +
-        'background:#eaf6f3!important;color:#0e7c86!important;outline:none}';
-      document.head.appendChild(supportStyle);
-    }
-    var a = document.createElement('a');
-    a.id = 'dn-bmc-header';
-    a.className = 'dn-bmc-header-link';
-    a.href = supportPageUrl();
-    // Same-tab navigation: /support is an internal page now.
-    a.setAttribute('aria-label', '支持作者');
-    a.setAttribute('data-zh-aria-label', '支持作者');
-    a.setAttribute('data-en-aria-label', 'Support the author');
-    // Low-key teal pill matching the existing header nav links — no yellow background
-    a.style.cssText =
-      'display:inline-flex;align-items:center;gap:5px;padding:6px 12px;border-radius:9999px;' +
-      'background:transparent;color:#0c5159;text-decoration:none;' +
-      'font-size:12px;font-weight:600;border:1px solid #a7d8ce;' +
-      'transition:background .15s,color .15s';
-    a.appendChild(coffeeIcon(13, true));
-    textBlock('span', '', '支持作者', 'Buy me a coffee', a).className = 'hidden sm:inline';
-    DN.applyTextOnly(DN.detectLang(), a);
-    // Insert immediately AFTER the search button (i.e. between search and language toggle)
-    var searchBtn = headerInner.querySelector(NAV_SEARCH_SELECTOR);
-    if (searchBtn && searchBtn.parentNode === headerInner) {
-      searchBtn.insertAdjacentElement('afterend', a);
-    } else {
-      // Fallback: place before the language selector
-      var langSel = headerInner.querySelector('#langToggle');
-      if (langSel) headerInner.insertBefore(a, langSel);
-      else headerInner.appendChild(a);
-    }
-
-    // GA4 tracking
-    if (typeof gtag === 'function') {
-      a.addEventListener('click', function () {
-        try { gtag('event', 'bmc_click', { source: 'header', page_path: location.pathname }); } catch (e) {}
-      });
-    }
   };
 
 })();

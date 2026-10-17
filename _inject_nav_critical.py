@@ -53,7 +53,6 @@ NAV_CSS = (
     "font-size:15px;line-height:1;padding:0}"
     ".dn-nav-icon:hover{background:var(--mint-soft,#eaf6f3)}"
     ".dn-nav-icon::after{display:none}"
-    '.dn-nav-icon[id="dn-nav-support"]{color:#0c5159}'
     ".dn-nav .lang-select{margin:0 0 0 6px;padding:6px 22px 6px 10px;min-height:32px;font-size:11.5px}"
     ".dn-nav-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;"
     "border-radius:9999px;color:var(--teal-deep,#4d6358);background:transparent;border:0;cursor:pointer;"
