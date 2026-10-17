@@ -20,10 +20,10 @@
     "blog/blog-support.min.js": "5a26abeb2cdf067d8a8e16978eb2f74dfee11966608d316602478dae4669a1e8"
   },
   "caches": {
-    "CACHE": "cd-v231",
-    "RUNTIME": "cd-runtime-v229"
+    "CACHE": "cd-v232",
+    "RUNTIME": "cd-runtime-v230"
   },
   "hash_format": "sha256-utf8-lf",
   "version": "202610172300",
-  "worker_sha256": "a72f84278087bd9637db16d17853ed4a315117a9f8eb6c436dbb32addf20e863"
+  "worker_sha256": "32a5acd36b83f64ef81999b69bfc4d16846220c7f04deeb4560f4f13d5e87215"
 }
