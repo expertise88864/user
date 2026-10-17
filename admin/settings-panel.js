@@ -48,10 +48,10 @@
     panel.dataset.settingsMounted = '1';
     const find = id => panel.querySelector('#' + id);
     const fonts = Object.fromEntries(fields.map(([key, id]) => [key, [...find(id).options].map(option => option.value)]));
-    let model, lastOrder = '', lastPicks = '', dialog = null;
+    let model, lastOrder = '', dialog = null;
     const box = element('section', null, {class: 'ax-settings-status', 'aria-label': '網站設定草稿'});
     const status = element('p', messages.not_loaded, {id: 'axSettingsStatus', role: 'status', 'aria-live': 'polite'});
-    const hint = element('p', '字型、首頁排序與熱門推薦共用一份設定草稿。存雲端後，再確認並申請發布。');
+    const hint = element('p', '字型與首頁排序共用一份設定草稿。存雲端後，再確認並申請發布。');
     const local = button('axSettingsLocalSave', '存本機草稿', () => perform(() => model.saveLocal()));
     const restore = button('axSettingsRecover', '還原本機草稿', () => confirmRecovery());
     const download = button('axSettingsExport', '下載草稿備份', () => exportDraft());
@@ -76,18 +76,18 @@
       catch (error) { toast(messages[error.code] || '目前無法套用這項操作；畫面草稿保留。'); return null; }
     }
     function currentOrder(state) { return state.working?.order.length ? state.working.order : state.loaded?.articles.map(item => item.slug) || []; }
-    function move(kind, slug, delta) {
-      const state = model.snapshot(), order = kind === 'order' ? currentOrder(state).slice() : state.working.picks.slice();
+    function move(slug, delta) {
+      const state = model.snapshot(), order = currentOrder(state).slice();
       const index = order.indexOf(slug), next = index + delta;
       if (index < 0 || next < 0 || next >= order.length) return;
       [order[index], order[next]] = [order[next], order[index]];
-      perform(() => model.set(kind, order));
-      const row = find(kind === 'order' ? 'axReorderList' : 'axPicksList').querySelector('[data-slug="' + slug + '"]');
+      perform(() => model.set('order', order));
+      const row = find('axReorderList').querySelector('[data-slug="' + slug + '"]');
       const requested = row?.querySelector('[data-move="' + delta + '"]');
       (requested && !requested.disabled ? requested : row?.querySelector('button:not(:disabled)'))?.focus();
     }
-    function renderList(kind, values, articles) {
-      const list = find(kind === 'order' ? 'axReorderList' : 'axPicksList'); list.replaceChildren();
+    function renderList(values, articles) {
+      const list = find('axReorderList'); list.replaceChildren();
       const titles = new Map(articles.map(item => [item.slug, item]));
       values.forEach((slug, index) => {
         const article = titles.get(slug), row = element('li', null, {class: 'ax-setting-row', 'data-slug': slug});
@@ -95,32 +95,23 @@
         title.textContent = article.title;
         row.append(title);
         for (const [delta, label] of [[-1, '上移'], [1, '下移']]) {
-          const control = button('', label, () => move(kind, slug, delta)); control.removeAttribute('id');
+          const control = button('', label, () => move(slug, delta)); control.removeAttribute('id');
           control.dataset.move = String(delta); control.setAttribute('aria-label', article.title + '：' + label);
           control.disabled = delta < 0 ? index === 0 : index === values.length - 1; row.append(control);
-        }
-        if (kind === 'picks') {
-          const remove = button('', '移除', () => {
-            const state = model.snapshot(); if (state.working.picks.length <= 1) return toast('熱門推薦至少保留一篇。');
-            perform(() => model.set('picks', state.working.picks.filter(value => value !== slug)));
-            const next = find('axPicksList').children[Math.min(index, state.working.picks.length - 2)];
-            (next?.querySelector('button:not(:disabled)') || find('axPicksAdd'))?.focus();
-          });
-          remove.removeAttribute('id'); remove.setAttribute('aria-label', article.title + '：移除'); remove.disabled = values.length <= 1; row.append(remove);
         }
         list.append(row);
       });
     }
     function paint(state) {
       const tab = panel.querySelector('.ax-tab.active')?.dataset.tab;
-      box.hidden = !['font', 'reorder', 'picks'].includes(tab);
+      box.hidden = !['font', 'reorder'].includes(tab);
       status.textContent = state.loaded && !state.authorised ? messages.login_changed : state.uncertain ? messages.write_unconfirmed :
         state.remote ? messages.compare_required : state.needsRefresh ? messages.settings_conflict : messages[state.status] || messages.request_failed;
       const editing = !!state.working;
       const cloud = editing && state.authorised && !state.busy && !state.remote && !state.uncertain && !state.needsRefresh && !state.loaded.conflict;
       for (const [key, id] of fields) { find(id).disabled = !editing; if (editing) find(id).value = state.working.font[key]; }
-      for (const id of ['axFontApply', 'axReorderSave', 'axPicksSave']) { find(id).disabled = !cloud; find(id).style.display = 'inline-flex'; }
-      for (const id of ['axSettingsLoad', 'axReorderLoad', 'axPicksLoad']) find(id).disabled = state.busy;
+      for (const id of ['axFontApply', 'axReorderSave']) { find(id).disabled = !cloud; find(id).style.display = 'inline-flex'; }
+      for (const id of ['axSettingsLoad', 'axReorderLoad']) find(id).disabled = state.busy;
       local.disabled = !editing; restore.disabled = !editing || state.busy; download.disabled = !state.loaded;
       compare.disabled = !state.remote || state.busy;
       request.disabled = !cloud || state.dirty || !state.loaded.head || !!state.loaded.request;
@@ -145,22 +136,9 @@
       find('axSettingsLegacyFont').disabled = !editing || state.busy;
       find('axSettingsLegacyOrder').disabled = !editing || state.busy;
       find('axOrderDefault').disabled = !editing;
-      find('axPicksAdd').disabled = !editing || state.working.picks.length >= 12;
-      find('axPicksAddBtn').disabled = !editing || state.working.picks.length >= 12;
       if (!editing) return;
       const order = currentOrder(state), orderKey = JSON.stringify([order, state.loaded.articles]);
-      const picksKey = JSON.stringify([state.working.picks, state.loaded.articles]);
-      if (orderKey !== lastOrder) { renderList('order', order, state.loaded.articles); lastOrder = orderKey; }
-      if (picksKey !== lastPicks) {
-        renderList('picks', state.working.picks, state.loaded.articles); lastPicks = picksKey;
-        const select = find('axPicksAdd'), selected = select.value; select.replaceChildren();
-        select.append(element('option', '選擇要推薦的文章', {value: ''}));
-        for (const article of state.loaded.articles) if (!state.working.picks.includes(article.slug)) select.append(element('option', article.title, {value: article.slug}));
-        if ([...select.options].some(option => option.value === selected)) select.value = selected;
-      }
-      find('axPicksStats').textContent = state.working.legacyPicks ?
-        '目前沿用原先網站的熱門推薦。下列是新名單的起始選擇，儲存並申請發布後才會取代原名單。' :
-        '畫面選擇 ' + state.working.picks.length + ' 篇；存雲端後仍需申請發布。';
+      if (orderKey !== lastOrder) { renderList(order, state.loaded.articles); lastOrder = orderKey; }
     }
     function openDialog(title, trigger) {
       if (dialog) return null;
@@ -180,18 +158,15 @@
     }
     function summary(node, label, settings, articles) {
       const section = element('section', null); section.append(element('h3', label));
-      if (!settings || !Array.isArray(settings.order) || !Array.isArray(settings.picks) || !settings.font) { section.append(element('p', '這個版本需另外整合，尚未套用。')); node.append(section); return; }
+      if (!settings || !Array.isArray(settings.order) || !settings.font) { section.append(element('p', '這個版本需另外整合，尚未套用。')); node.append(section); return; }
       for (const [key, id] of fields) {
         const option = [...find(id).options].find(item => item.value === settings.font[key]);
         section.append(element('p', find(id).labels[0]?.textContent + '：' + (option?.textContent || '無法套用')));
       }
       const titles = new Map(articles.map(item => [item.slug, item.title]));
-      for (const [key, heading] of [['order', '首頁排序'], ['picks', '熱門推薦']]) {
-        section.append(element('h4', heading));
-        if (key === 'picks' && settings.legacyPicks) section.append(element('p', '沿用原先熱門推薦；這次未變更。'));
-        else if (key === 'order' && !settings.order.length) section.append(element('p', '依文章日期排序（預設）'));
-        else { const list = element('ol', null); settings[key].forEach(slug => list.append(element('li', titles.get(slug) || '已不在公開目錄的文章'))); section.append(list); }
-      }
+      section.append(element('h4', '首頁排序'));
+      if (!settings.order.length) section.append(element('p', '依文章日期排序（預設）'));
+      else { const list = element('ol', null); settings.order.forEach(slug => list.append(element('li', titles.get(slug) || '已不在公開目錄的文章'))); section.append(list); }
       node.append(section);
     }
     function showCompare() {
@@ -213,7 +188,7 @@
       const node = openDialog('確認這組網站設定', request); if (!node) return;
       summary(node, '將申請發布的雲端草稿', state.loaded.settings, state.loaded.articles);
       const label = element('label', null), approved = element('input', null, {type: 'checkbox', id: 'axSettingsApproval'});
-      label.append(approved, document.createTextNode(' 我已確認字型、首頁排序與推薦文章；檢查及預覽通過後才發布。')); node.append(label);
+      label.append(approved, document.createTextNode(' 我已確認字型與首頁排序；檢查及預覽通過後才發布。')); node.append(label);
       const footer = element('footer', null), submit = button('axSettingsSubmitRequest', '提交發布申請', async () => {
         const now = model.snapshot();
         if (!approved.checked || now.editRevision !== state.editRevision || now.loaded?.head !== state.loaded.head ||
@@ -246,10 +221,10 @@
       if (reconcile.disabled) return;
       const state = model.snapshot(), node = openDialog('比較並整合文章目錄', reconcile); if (!node) return;
       node.append(element('p','請選擇要保留的設定來源，再核對清單。這個動作只存雲端草稿，不會發布；舊版資料與發布申請保留在歷史中。'));
-      const controls = element('section',null), changes = element('section',null), picks = element('section',null), proposed = element('section',null);
+      const controls = element('section',null), changes = element('section',null), proposed = element('section',null);
       let selected;
       const label = element('label',null), approved = element('input',null,{type:'checkbox',id:'axSettingsCatalogApproval'});
-      label.append(approved,document.createTextNode(' 我已比較並確認新的排序與推薦清單；原版本與本機備份保留。'));
+      label.append(approved,document.createTextNode(' 我已比較並確認新的排序；原版本與本機備份保留。'));
       const footer = element('footer',null), submit = button('axSettingsSubmitCatalog','確認整合為草稿',async()=>{
         const now = model.snapshot();
         if (!approved.checked || now.editRevision !== state.editRevision || now.loaded?.head !== state.loaded.head || now.loaded?.main !== state.loaded.main || now.busy)
@@ -259,23 +234,13 @@
       });
       function preview() {
         proposed.replaceChildren(); summary(proposed,'確認後的設定草稿',selected,state.loaded.articles);
-        submit.disabled = !approved.checked || selected.picks.length < 1 || selected.picks.length > 12;
+        submit.disabled = !approved.checked;
       }
       function choose(base) {
         const plan = model.catalogPlan(base); selected = plan.settings; approved.checked = false;
         changes.replaceChildren(); summary(changes,'原始設定（尚未變更）',plan.original,state.loaded.articles);
         changes.append(element('p','已移出目錄：'+(plan.removed.join('、') || '無')),
           element('p','新增至自訂排序末尾：'+(plan.added.map(slug=>state.loaded.articles.find(item=>item.slug===slug).title).join('、') || '無；預設排序依文章日期')));
-        picks.replaceChildren(); picks.append(element('h3','核對熱門推薦（選擇 1 至 12 篇）'));
-        for (const article of state.loaded.articles) {
-          const row = element('label',null), input = element('input',null,{type:'checkbox','data-catalog-pick':article.slug});
-          input.checked = selected.picks.includes(article.slug); row.style.display = 'block';
-          row.append(input,document.createTextNode(' '+article.title)); picks.append(row);
-          input.addEventListener('change',()=>{
-            selected.picks = input.checked ? selected.picks.concat(article.slug) : selected.picks.filter(slug=>slug!==article.slug);
-            selected.legacyPicks = false; approved.checked = false; preview();
-          });
-        }
         preview();
       }
       for (const [base,text] of [['draft','保留原雲端草稿設定'],['source','採用目前網站來源設定']]) {
@@ -285,7 +250,7 @@
       }
       approved.addEventListener('change',preview);
       footer.append(button('axSettingsCatalogClose','保留舊版，稍後處理',()=>node.close()),submit);
-      node.append(controls,changes,picks,proposed,label,footer); choose('draft'); node.showModal();
+      node.append(controls,changes,proposed,label,footer); choose('draft'); node.showModal();
     }
     function confirmRecovery() {
       const state = model.snapshot();
@@ -313,13 +278,8 @@
     find('axFontApply').addEventListener('click', () => perform(() => model.saveCloud('font')));
     find('axFontPreview').addEventListener('click', previewFont);
     find('axReorderSave').addEventListener('click', () => perform(() => model.saveCloud('order')));
-    find('axPicksSave').addEventListener('click', () => perform(() => model.saveCloud('picks')));
-    for (const id of ['axReorderLoad', 'axPicksLoad']) find(id).addEventListener('click', () => perform(() => model.load()));
+    find('axReorderLoad').addEventListener('click', () => perform(() => model.load()));
     for (const [, id] of fields) find(id).addEventListener('change', () => perform(() => model.set('font', Object.fromEntries(fields.map(([key, control]) => [key, find(control).value])))));
-    find('axPicksAddBtn').addEventListener('click', () => {
-      const selected = find('axPicksAdd').value, state = model.snapshot(); if (!selected || !state.working) return;
-      perform(() => model.set('picks', [...state.working.picks, selected]));
-    });
     find('axSettingsLegacyFont').addEventListener('click', () => importLegacy('font'));
     find('axSettingsLegacyOrder').addEventListener('click', () => importLegacy('order'));
     find('axOrderDefault').addEventListener('click', () => perform(() => model.set('order', [])));

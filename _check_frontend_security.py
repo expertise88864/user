@@ -82,6 +82,13 @@ def main() -> int:
     forbid(errors, "admin/settings-panel.js", ".innerHTML", "Admin settings should never insert external catalogue data as HTML")
     forbid(errors, "admin/settings-drafts.js", "Authorization", "Settings requests must never send the browser PAT")
     forbid(errors, "admin/admin-extras.js", "'/api/admin/popular-picks'", "Legacy KV writes must not remain in settings controls")
+    # Homepage recommendations (熱門推薦) were retired 2026-10-17: no admin tab,
+    # no settings kind and no public runtime read of the removed endpoint.
+    forbid(errors, "admin/admin-extras.js", 'data-tab="picks"', "Retired homepage recommendations must not return as an admin tab")
+    forbid(errors, "admin/settings-panel.js", "picks", "Retired homepage recommendations must not return to the settings UI")
+    forbid(errors, "admin/settings-drafts.js", "picks", "Retired homepage recommendations must not return to the settings draft model")
+    forbid(errors, "blog/blog-shared.js", "/api/admin/popular-picks", "Public pages must not request the retired recommendations endpoint")
+    forbid(errors, "blog/blog-shared.js", "POPULAR_PICKS", "Offline precache must not depend on the retired recommendations list")
     require(errors, "admin/session-auth.js", "!Number.isFinite(expiry) || expiry <= Date.now()", "Admin PAT expiry should fail closed")
     require(errors, "admin/session-auth.js", "setPat(token, true)", "Admin reload should restore the cookie session without extending PAT expiry")
     require(errors, "admin.html", "auth.restoreSession()", "Admin UI should restore its cookie through the shared controller")

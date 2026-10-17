@@ -959,7 +959,7 @@
   // -----------------------------------------------------------------------
   // Publish state — admin can mark an article {unpublished:true} in the
   // catalog above to hide it from the live site (listings, sitemap, feeds,
-  // related-articles, popular picks) without deleting. Admin can still
+  // related-articles, offline precache) without deleting. Admin can still
   // open and edit it normally. Direct URL still resolves but the article
   // gets a banner injected on initBlog().
   // -----------------------------------------------------------------------
@@ -1294,24 +1294,6 @@
     DN._forceInject = false;
   };
 
-  // Popular picks — curated evergreen list that seeds the idle SW precache
-  // (DN.precacheArticles below). The homepage 熱門推薦 / 閱讀進度 spotlight
-  // that used to render it was retired 2026-10-17 (user decision).
-  // -----------------------------------------------------------------------
-  // ─────────────────────────────────────────────────────────────────
-  // 熱門推薦 — 手動精選的 evergreen 高搜尋量主題(基於 Google 搜尋量 +
-  // 台灣皮膚科 PTT/Dcard 詢問頻度,並非 newest)。每季度根據 GA4 數據
-  // 重新評估排序。寫入新文章不會改變這個 list — 必須手動更新。
-  // 每季度依 GA4 報表人工調整，避免新增一個只為排序而存在的公開 API。
-  // ─────────────────────────────────────────────────────────────────
-  DN.POPULAR_PICKS = [
-    'acne-myths',          // 痘痘 — 最高搜尋量
-    'sunscreen-myths',     // 防曬 — 公眾衛教高需求
-    'atopic-dermatitis-overview',        // 異膚 — 兒童 + 成人共通
-    'topical-steroids-guide', // 類固醇恐懼症 — 高度誤解
-    'hairloss-myths'       // 落髮 — 男性女性共通
-  ];
-
   DN.isLocalStaticHost = function () {
     return /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
   };
@@ -1320,8 +1302,9 @@
     return (DN.detectLang() === 'en' ? '/en/blog/' : '/blog/') + slug + (DN.isLocalStaticHost() ? '.html' : '');
   };
 
-  // I11 — Tell the SW to precache N popular + recent articles when idle.
-  // Lets future navigation be instant + works offline.
+  // I11 — Tell the SW to precache the N most recent published articles when
+  // idle. Lets future navigation be instant + works offline. (The curated
+  // 熱門推薦 list that used to lead this list was retired 2026-10-17.)
   DN.precacheArticles = function (n) {
     if (!('serviceWorker' in navigator) || !navigator.serviceWorker.controller) return;
     var connection = navigator.connection;
@@ -1329,14 +1312,8 @@
         (connection.saveData || /^(slow-)?2g$/.test(connection.effectiveType)))) return;
     var limit = Number.isInteger(n) && n > 0 ? Math.min(n, 20) : 10;
     var published = DN.publishedArticles();
-    var publicSlugs = new Set(published.map(function (article) { return article.slug; }));
     var urls = [];
     var seen = {};
-    // Popular picks first
-    (DN.POPULAR_PICKS || []).forEach(function (s) {
-      if (publicSlugs.has(s) && !seen[s] && urls.length < limit) { seen[s] = 1; urls.push(DN.articleUrlForRuntime(s)); }
-    });
-    // Then recent by date
     published.slice()
       .sort(function (a, b) { return DN.compareDates(b.date, a.date); })
       .forEach(function (a) {
@@ -1348,39 +1325,6 @@
     try {
       navigator.serviceWorker.controller.postMessage({ type: 'PRECACHE', urls: urls });
     } catch (e) {}
-  };
-
-  // G2 — Refresh DN.POPULAR_PICKS from /api/admin/popular-picks (KV-backed).
-  // Allows admin to change the curated list without a redeploy.
-  // Falls back silently to the hard-coded list above if KV is empty or fetch fails.
-  // A deferred refresh can run while a native navigation discards its
-  // document. Skip that work, and permit it again after a pageshow/BFCache
-  // return. Keep the curated fallback and never mutate an inactive page.
-  var popularPicksPageInactive = false;
-  if (typeof window.addEventListener === 'function') {
-    window.addEventListener('pagehide', function () { popularPicksPageInactive = true; });
-    window.addEventListener('pageshow', function () { popularPicksPageInactive = false; });
-  }
-  DN.refreshPopularPicks = function () {
-    if (popularPicksPageInactive) return Promise.resolve();
-    if (!('fetch' in window)) return Promise.resolve();
-    if (DN.isLocalStaticHost()) return Promise.resolve();
-    // CODE_REVIEW 2026-05-31 - dropped { cache: 'no-cache' }. Runs on every
-    // page load (idle in DOMContentLoaded); no-cache bypassed Vercel's CDN and
-    // hit the edge fn + Upstash KV per page view. Endpoint already sets
-    // s-maxage=60, stale-while-revalidate=300, so a plain fetch lets the CDN
-    // serve it ~60s across visitors. Admin writes are a POST (not CDN-cached).
-    var request;
-    try { request = fetch('/api/admin/popular-picks'); }
-    catch (_) { return Promise.resolve(); }
-    return request.then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (data) {
-        if (popularPicksPageInactive) return;
-        if (data && Array.isArray(data.picks) && data.picks.length) {
-          DN.POPULAR_PICKS = data.picks;
-        }
-      })
-      .catch(function () { /* keep fallback */ });
   };
 
   // Homepage / article-hub helpers live in blog-hub(.min).js and load on demand.
@@ -1784,7 +1728,6 @@
     // 2026-05-07 — bottom-right floating push-bell ("提醒") removed per user.
     // Push subscription is still wired (sw.js handler stays); users who want
     // it can opt in from a future settings page.
-    idle(function () { DN.refreshPopularPicks && DN.refreshPopularPicks(); }, { timeout: 3000 });
     idle(function () { DN.precacheArticles && DN.precacheArticles(8); }, { timeout: 6000 });
 
     // Article-only enhancements (auto-detect via .prose presence).

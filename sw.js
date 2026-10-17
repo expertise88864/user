@@ -277,7 +277,7 @@ self.addEventListener('fetch', (e) => {
 // Allow page to trigger immediate update via postMessage({type:'SKIP_WAITING'})
 self.addEventListener('message', (e) => {
   if (e.data && e.data.type === 'SKIP_WAITING') self.skipWaiting();
-  // I11 — Precache list of articles the page tells us about (popular picks).
+  // I11 — Precache list of articles the page tells us about (latest published).
   // Page does: navigator.serviceWorker.controller.postMessage({type:'PRECACHE',urls:[...]})
   // SW fetches them when network is idle so they're available offline.
   if (e.data && e.data.type === 'PRECACHE' && Array.isArray(e.data.urls)) {

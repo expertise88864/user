@@ -50,37 +50,24 @@ export function catalogOf(value) {
   });
 }
 export function settingsRecord(value) {
-  exact(value, ['version', 'font', 'order', 'picks', 'legacyPicks']);
-  if (value.version !== 1 || typeof value.legacyPicks !== 'boolean') fail(400, 'invalid_settings');
+  // Homepage recommendations (熱門推薦) were retired 2026-10-17.
+  exact(value, ['version', 'font', 'order']);
+  if (value.version !== 1) fail(400, 'invalid_settings');
   exact(value.font, Object.keys(contract.fonts));
   for (const [field, options] of Object.entries(contract.fonts)) {
     if (typeof value.font[field] !== 'string' || !options.includes(value.font[field])) fail(400, 'invalid_settings_font');
   }
-  for (const field of ['order', 'picks']) {
-    const list = value[field], max = field === 'order' ? contract.maxArticles : contract.maxPicks;
-    if (!Array.isArray(list) || list.length > max || new Set(list).size !== list.length ||
-        list.some(slug => typeof slug !== 'string' || slug.length > 100 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))) fail(400, 'invalid_settings_' + field);
-  }
-  if (!value.picks.length) fail(400, 'invalid_settings_selection');
-  return { version: 1, legacyPicks: value.legacyPicks, font: { ...value.font }, order: [...value.order], picks: [...value.picks] };
+  const list = value.order;
+  if (!Array.isArray(list) || list.length > contract.maxArticles || new Set(list).size !== list.length ||
+      list.some(slug => typeof slug !== 'string' || slug.length > 100 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))) fail(400, 'invalid_settings_order');
+  return { version: 1, font: { ...value.font }, order: [...value.order] };
 }
 
-// New author input remains strict. Only projection of already stored data can
-// outlive its original catalogue; it cannot authorise a new private selection.
+// New author input remains strict. Stored data may outlive its original
+// catalogue (see conflict handling); it cannot authorise a new private selection.
 export function settingsOf(value, articles) {
   const result = settingsRecord(value), slugs = new Set(articles.map(item => item.slug));
-  for (const field of ['order', 'picks']) {
-    if (result[field].some(slug => !slugs.has(slug))) fail(400, 'invalid_settings_' + field);
-  }
+  if (result.order.some(slug => !slugs.has(slug))) fail(400, 'invalid_settings_order');
   if (result.order.length && result.order.length !== articles.length) fail(400, 'invalid_settings_selection');
-  return result;
-}
-export function projectSettings(value, articles) {
-  const result = settingsRecord(value), current = articles.map(item => item.slug), visible = new Set(current);
-  if (result.order.length) {
-    const retained = result.order.filter(slug => visible.has(slug)), selected = new Set(retained);
-    result.order = retained.concat(current.filter(slug => !selected.has(slug)));
-  }
-  result.picks = result.picks.filter(slug => visible.has(slug));
   return result;
 }

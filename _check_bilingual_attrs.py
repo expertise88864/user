@@ -134,9 +134,13 @@ def article_catalog() -> list[tuple[str, str]]:
     start = src.find("DN.ARTICLES = [")
     if start < 0:
         return []
-    end = src.find("\n  ];", start)
-    if end < 0:
+    # The catalogue closes inline (`... },  ];`). Matching only a line-leading
+    # `  ];` used to overshoot to the next array literal (the retired
+    # POPULAR_PICKS list), so bind to the first object-then-array close.
+    close = re.compile(r"\},?\s*\];").search(src, start)
+    if not close:
         return []
+    end = close.end()
     out = []
     for match in CATALOG_ENTRY.finditer(src[start:end]):
         slug = CATALOG_SLUG.search(match.group(0))

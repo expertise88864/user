@@ -98,7 +98,7 @@ test('article prefetch rechecks connection preferences after initialization', ()
   assert.equal(f.appended.length, 1);
 });
 
-test('offline precache excludes unpublished picks and recent drafts and respects the requested bound', () => {
+test('offline precache sends the newest published articles, never drafts, within the requested bound', () => {
   const messages = [], window = {DN:{}};
   vm.runInNewContext(readFileSync(new URL('./blog/blog-shared.js', import.meta.url),'utf8'), {
     window, navigator:{serviceWorker:{controller:{postMessage: message => messages.push(message)}}},
@@ -106,13 +106,15 @@ test('offline precache excludes unpublished picks and recent drafts and respects
   });
   const dn=window.DN, draft=dn.ARTICLES.find(a=>a.unpublished);assert.ok(draft);
   draft.date='2099-01-01';
-  dn.POPULAR_PICKS=[draft.slug,...dn.publishedArticles().slice(0,12).map(a=>a.slug)];
+  // The retired 熱門推薦 list no longer exists or influences precache order.
+  assert.equal(dn.POPULAR_PICKS,undefined);assert.equal(dn.refreshPopularPicks,undefined);
   dn.precacheArticles(8);
   assert.equal(messages.length,1);assert.equal(messages[0].urls.length,8);
   assert.equal(new Set(messages[0].urls).size,8);
   assert.ok(messages[0].urls.every(url=>url.endsWith('.html')&&!url.includes(draft.slug)));
-  dn.POPULAR_PICKS=[];dn.precacheArticles(8);
-  assert.equal(messages[1].urls.length,8);assert.ok(messages[1].urls.every(url=>!url.includes(draft.slug)));
+  const newest=dn.publishedArticles().slice().sort((a,b)=>dn.compareDates(b.date,a.date)).slice(0,8).map(a=>'/blog/'+a.slug+'.html');
+  assert.deepEqual(messages[0].urls,newest);
+  dn.precacheArticles(50);assert.equal(messages[1].urls.length,Math.min(20,dn.publishedArticles().length));
 });
 
 test('public reading count excludes stale, duplicate and unpublished history without erasing it', () => {
@@ -148,7 +150,9 @@ test('idle article cache destinations follow URL language on hosted and static o
    window.DN.precacheArticles(2);assert.equal(messages.length,1);
    const prefix=pathname==='/en'||pathname.startsWith('/en/')?'/en/blog/':'/blog/';
    const suffix=hostname==='chendermatologist.com'?'':'.html';
-   assert.deepEqual(Array.from(messages[0].urls),['acne-myths','sunscreen-myths'].map(slug=>prefix+slug+suffix));
+   const newest=window.DN.publishedArticles().slice().sort((a,b)=>window.DN.compareDates(b.date,a.date)).slice(0,2).map(a=>a.slug);
+   assert.equal(newest.length,2);
+   assert.deepEqual(Array.from(messages[0].urls),Array.from(newest,slug=>prefix+slug+suffix));
   }
  }
 });

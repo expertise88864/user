@@ -119,7 +119,6 @@ async function reconcileCatalog(git, input) {
       loaded.mainBlobSha !== input.expectedMainBlob || loaded.mainCatalogSha !== input.expectedCatalog ||
       !loaded.conflict || !(loaded.sourceRequiresReview || loaded.catalogSha !== loaded.mainCatalogSha)) fail(409, 'settings_conflict');
   const settings = settingsOf(input.settings, loaded.articles);
-  if ((!loaded.settings.legacyPicks || !loaded.sourceSettings.legacyPicks) && settings.legacyPicks) fail(400, 'invalid_settings_selection');
   const receipt = await git.file('.site-settings-delivery.json', loaded.main, true);
   if (!receipt) fail(409, 'settings_receipt_not_retired');
   const proof = parseJson(receipt.content, 409, 'settings_receipt_not_retired');
@@ -205,13 +204,10 @@ async function newVersion(git, input) {
 async function save(git, input) {
   exact(input, ['expectedHead', 'baseSha', 'catalogSha', 'kind', 'values']);
   revision(input.expectedHead, true); revision(input.baseSha); revision(input.catalogSha);
-  if (!['font', 'order', 'picks'].includes(input.kind)) fail(400, 'invalid_settings_kind');
+  if (!['font', 'order'].includes(input.kind)) fail(400, 'invalid_settings_kind');
   const loaded = await state(git);
   if (loaded.conflict || input.expectedHead !== loaded.head || input.baseSha !== loaded.baseSha || input.catalogSha !== loaded.catalogSha) fail(409, 'settings_conflict');
-  // Choosing recommendations is an explicit migration. Other settings retain
-  // the legacy read source until the author saves picks and requests delivery.
-  const settings = settingsOf({ ...loaded.settings, [input.kind]: input.values,
-    ...(input.kind === 'picks' ? {legacyPicks: false} : {}) }, loaded.articles);
+  const settings = settingsOf({ ...loaded.settings, [input.kind]: input.values }, loaded.articles);
   const content = JSON.stringify(settings, null, 2) + '\n';
   if (encoder.encode(content).length > 32_000) fail(413, 'settings_too_large');
   const parent = loaded.head || loaded.main;
