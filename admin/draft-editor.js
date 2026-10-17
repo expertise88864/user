@@ -211,8 +211,9 @@
     const loaded = drafts.localState(CURRENT_FILE);
     if (loaded && !DIRTY && !SAVE_PENDING) drafts.bindView(CURRENT_FILE, getCurrentEditorContent(), loaded.head);
   };
-  // A failed article load is shown in the editing area itself, not only in the
-  // small status bar. Any open article stays mounted underneath the notice.
+  // A failed article load is shown as a banner above the editing area (like
+  // the behind/draft banners), not only in the small status bar. It never
+  // covers the open article, which stays editable below it.
   let loadErrorPanel = null, loadErrorTitle = null, loadErrorText = null, loadErrorRetry = null;
   function hideLoadError() { if (loadErrorPanel) loadErrorPanel.hidden = true; }
   function showLoadError(path, message) {
@@ -222,8 +223,7 @@
       loadErrorPanel = document.createElement('div');
       loadErrorPanel.id = 'draftLoadError';
       loadErrorPanel.setAttribute('role', 'alert');
-      loadErrorPanel.style.cssText = 'position:absolute;top:24px;left:50%;transform:translateX(-50%);z-index:30;width:min(600px,calc(100% - 32px));' +
-        'background:#fef2f2;border:2px solid #ef4444;border-radius:12px;padding:18px 20px;box-shadow:0 16px 36px -14px rgba(127,29,29,.5);' +
+      loadErrorPanel.style.cssText = 'padding:12px 16px;background:#fef2f2;border-bottom:2px solid #ef4444;' +
         'color:#7f1d1d;font-size:15px;line-height:1.65';
       loadErrorTitle = document.createElement('strong');
       loadErrorTitle.style.cssText = 'display:block;font-size:18px;margin-bottom:8px';
@@ -242,7 +242,7 @@
       actions.append(loadErrorRetry, close);
       loadErrorPanel.append(loadErrorTitle, loadErrorText, actions);
     }
-    if (!loadErrorPanel.isConnected) wrap.appendChild(loadErrorPanel);
+    if (!loadErrorPanel.isConnected) wrap.parentNode.insertBefore(loadErrorPanel, wrap);
     loadErrorTitle.textContent = '無法讀取文章：' + path;
     loadErrorText.textContent = message + (CURRENT_FILE && CURRENT_FILE !== path ? '（目前開啟的「' + CURRENT_FILE + '」與既有編輯仍保留）' : '（既有編輯與本機暫存仍保留）');
     loadErrorRetry.onclick = () => { hideLoadError(); loadFile(path); };

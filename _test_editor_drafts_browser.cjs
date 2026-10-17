@@ -95,6 +95,7 @@ module.exports = async function checkEditorDraftBridge(browser) {
     const loadError = page.locator('#draftLoadError');
     await loadError.waitFor({ state: 'visible' });
     assert.equal(await loadError.getAttribute('role'), 'alert');
+    assert.equal(await page.evaluate(() => !document.getElementById('frameWrap').contains(document.getElementById('draftLoadError'))), true, 'the notice sits above the editor and never covers it');
     assert.match(await loadError.textContent(), /GitHub token 無效或已過期，請清除登入後重新登入/);
     assert.match(await loadError.textContent(), /blog\/example\.html/);
     await page.locator('#draftLoadErrorClose').click();
