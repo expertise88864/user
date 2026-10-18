@@ -135,7 +135,7 @@
       if (!DN._diagramBundleLoading) {
         DN._diagramBundleLoading = new Promise(function (resolve, reject) {
           var s = document.createElement('script');
-          s.src = '/blog/blog-diagrams.min.js?v=202610181000';
+          s.src = '/blog/blog-diagrams.min.js?v=202610181100';
           s.defer = true;
           s.onload = resolve;
           s.onerror = reject;
@@ -252,8 +252,11 @@
     const minutes = Math.max(2, Math.round(cjkChars / 350 + otherWords / 200));
 
     const slug = DN.currentSlug();
-    const meta = (DN.ARTICLES || []).find(function (a) { return a.slug === slug; });
-    const reviewedDate = meta ? meta.date : '2026-05-04';
+    // No date chip here (owner's decision 2026-10-17). The build writes
+    // "內容更新 … · 醫師審閱 …" into the article header from the content and
+    // review ledgers (_normalize_article_dates.py). This bar used to add
+    // "最後審閱 <catalog date>", but the catalog date is the publication date,
+    // not the physician's recorded review, and contradicted the header.
 
     // Find a good insertion point — right after first <h1> sibling chain
     const h1 = document.querySelector('article h1, section h1');
@@ -284,10 +287,6 @@
       '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#f1ece4;border:1px solid #a5f3fc;color:#4d6358;font-weight:600">' +
         '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>' +
         '<span data-zh="閱讀約 ' + minutes + ' 分鐘" data-en="' + minutes + ' min read">閱讀約 ' + minutes + ' 分鐘</span>' +
-      '</span>' +
-      '<span style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#dcfce7;border:1px solid #86efac;color:#14532d;font-weight:600">' +
-        '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
-        '<span data-zh="最後審閱 ' + reviewedDate + '" data-en="Last reviewed · ' + reviewedDate + '">最後審閱 ' + reviewedDate + '</span>' +
       '</span>' +
       '<a href="/about" style="display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:9999px;background:var(--surface,#fff);border:1px solid var(--border);color:var(--teal-deep);text-decoration:none;font-weight:600" data-zh="陳翊嘉醫師 →" data-en="Dr. Chen Yi-Jia →">陳翊嘉醫師 →</a>' +
       '<span data-dn-wordcount style="display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;background:#fef3c7;border:1px solid #fcd34d;color:#854d0e;font-weight:600">' +

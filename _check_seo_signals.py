@@ -1213,6 +1213,172 @@ def check_article_fields_current() -> None:
         print(f"[OK] article JSON-LD fields match their page ({checked} primary nodes)")
 
 
+CONTENT_DATES_FILE = ROOT / "_content_dates.json"
+_ISO = r"(\d{4}-\d{2}-\d{2})"
+VISIBLE_DATES = {
+    "zh": re.compile(rf"^內容更新 {_ISO} · 醫師審閱 {_ISO}$"),
+    "en": re.compile(rf"^Content updated {_ISO} · Physician reviewed {_ISO}$"),
+}
+DATES_PILL_RE = re.compile(
+    r'<span\b[^>]*\bdata-dn-article-dates=""[^>]*>'
+    r'(?P<body>(?:<span\b[^>]*>[^<]*</span>|[^<])*)</span>')
+# Each half of the pill is its own translated, non-breaking span.
+PILL_HALF_RE = re.compile(r'<span\b(?P<attrs>[^>]*)>(?P<text>[^<]*)</span>')
+# The retired single-date header text ("更新 2026-05-05", "更新日期 · …",
+# "Updated · …") must not survive anywhere in the header next to the pill.
+RETIRED_DATE_RE = re.compile(r"(?:更新(?:日期)?|Updated)\s*(?:·\s*)?\d{4}-\d{2}-\d{2}", re.I)
+
+
+def _content_dates() -> dict[str, str]:
+    import json
+    try:
+        data = json.loads(CONTENT_DATES_FILE.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        return {}
+    if not isinstance(data, dict):
+        return {}
+    return {slug: entry["date"] for slug, entry in data.items()
+            if isinstance(entry, dict) and isinstance(entry.get("date"), str)}
+
+
+def _primary_article_node(src: str) -> dict | None:
+    import json
+    cm = re.search(r'<link\s+rel="canonical"\s+href="([^"]*)"', src, re.I)
+    if not cm:
+        return None
+    for m in re.finditer(r'<script type="application/ld\+json">([\s\S]*?)</script>', src):
+        try:
+            doc = json.loads(m.group(1))
+        except ValueError:
+            continue
+        if not isinstance(doc, dict):
+            continue
+        for node in (doc.get("@graph") or [doc]):
+            if (isinstance(node, dict)
+                    and node.get("@type") in ("MedicalWebPage", "MedicalScholarlyArticle")
+                    and node.get("mainEntityOfPage") == cm.group(1)):
+                return node
+    return None
+
+
+def check_visible_article_dates() -> None:
+    """The header dates a reader sees must be the dates the page declares.
+
+    Owner's decision 2026-10-17: every article header shows
+    "內容更新 <dateModified> · 醫師審閱 <lastReviewed>" (English mirror:
+    "Content updated … · Physician reviewed …"). The single hand-typed
+    "更新 YYYY-MM-DD" it replaces was maintained by nobody: nhi-derm-drugs
+    still said 2026-05-05 after its 2026-10 NHI rewrite, and readers took that
+    to mean the NHI rules were never updated.
+
+    Each visible date is compared with BOTH its JSON-LD field and its ledger,
+    so neither a stale page nor a page normalized from the wrong ledger passes:
+      content date == dateModified == _content_dates.json
+      review date  == lastReviewed == _review_dates.json (TD-74: declared by
+                      the physician, never derived)
+    """
+    content_ledger = _content_dates()
+    bad = 0
+    checked = 0
+    for zh_fp in sorted((ROOT / "blog").glob("*.html")):
+        if zh_fp.name in {"index.html", "topics.html"}:
+            continue
+        for lang, fp in (("zh", zh_fp), ("en", ROOT / "en" / "blog" / zh_fp.name)):
+            if not fp.exists():
+                continue  # mirror coverage is _check_en_internal_links' job
+            rel = fp.relative_to(ROOT).as_posix()
+            src = fp.read_text(encoding="utf-8", errors="replace")
+            h1 = re.search(r"<h1\b", src)
+            pills = list(DATES_PILL_RE.finditer(src))
+            if not h1 or len(pills) != 1:
+                err(rel, f"expected exactly one header dates pill before <h1>, "
+                         f"found {len(pills)}")
+                bad += 1
+                continue
+            pill = pills[0]
+            eyebrow_start = src.rfind("<div", 0, pill.start())
+            if pill.end() > h1.start() or src.find("</div>", pill.end()) > h1.start() \
+                    or re.search(r"<div\b", src[pill.end():h1.start()]):
+                err(rel, "header dates pill is not in the label directly above <h1>")
+                bad += 1
+                continue
+            eyebrow = src[eyebrow_start:h1.start()]
+            if re.match(r'<div\b[^>]*\bdata-en="', eyebrow):
+                err(rel, "header label carries data-en on the <div>; data-en "
+                         "rendering would replace the dates pill")
+                bad += 1
+            leftover = RETIRED_DATE_RE.search(eyebrow.replace(pill.group(0), ""))
+            if leftover:
+                err(rel, f"retired single-date header text {leftover.group(0)!r} "
+                         f"is still shown next to the dates pill")
+                bad += 1
+            if re.match(r'<span\b[^>]*\bdata-(?:zh|en)="', pill.group(0)):
+                err(rel, "header dates pill carries its own data-zh/data-en; "
+                         "translation belongs on its two non-breaking halves")
+                bad += 1
+            body = pill.group("body")
+            visible = re.sub(r"<[^>]+>", "", body)
+            halves = list(PILL_HALF_RE.finditer(body))
+
+            def joined(attr: str) -> str | None:
+                values = [re.search(rf'\s{attr}="([^"]*)"', h.group("attrs")) for h in halves]
+                if len(values) != 2 or not all(values):
+                    return None
+                return " · ".join(v.group(1) for v in values)
+
+            zh_attr, en_attr = joined("data-zh"), joined("data-en")
+            parsed = {
+                "visible": VISIBLE_DATES[lang].match(visible),
+                "data-zh": VISIBLE_DATES["zh"].match(zh_attr) if zh_attr else None,
+                "data-en": VISIBLE_DATES["en"].match(en_attr) if en_attr else None,
+            }
+            missing = [name for name, m in parsed.items() if m is None]
+            if missing:
+                err(rel, f"header dates pill {visible!r} is not the "
+                         f"two-date wording ({', '.join(missing)})")
+                bad += 1
+                continue
+            pairs = {name: m.groups() for name, m in parsed.items()}
+            if len(set(pairs.values())) != 1:
+                err(rel, f"header dates disagree between visible text and "
+                         f"data-zh/data-en: {pairs}")
+                bad += 1
+                continue
+            content, reviewed = pairs["visible"]
+            node = _primary_article_node(src)
+            if node is None:
+                err(rel, "no primary article JSON-LD node to compare header dates with")
+                bad += 1
+                continue
+            checked += 1
+            modified = str(node.get("dateModified") or "")[:10]
+            last_reviewed = str(node.get("lastReviewed") or "")[:10]
+            if content != modified:
+                err(rel, f"header shows content update {content} but "
+                         f"dateModified is {modified!r}")
+                bad += 1
+            if reviewed != last_reviewed:
+                err(rel, f"header shows physician review {reviewed} but "
+                         f"lastReviewed is {last_reviewed!r}")
+                bad += 1
+            ledger_content = content_ledger.get(zh_fp.stem)
+            if ledger_content is not None and content != ledger_content:
+                err(rel, f"header content update {content} differs from "
+                         f"{CONTENT_DATES_FILE.name} ({ledger_content})")
+                bad += 1
+            declared = REVIEW_DATES.get(zh_fp.stem)
+            if reviewed != declared:
+                err(rel, f"header physician review {reviewed} differs from "
+                         f"{REVIEW_DATES_FILE.name} ({declared!r})")
+                bad += 1
+    if checked < MIN_ARTICLE_NODES * 2:
+        err("article-dates", f"only {checked} header dates pill(s) verified "
+                             f"(expected >= {MIN_ARTICLE_NODES * 2}: every article "
+                             f"and its English mirror)")
+    elif bad == 0:
+        print(f"[OK] header dates match dateModified + lastReviewed on {checked} pages")
+
+
 def main() -> int:
     print("=== SEO signals audit ===")
     check_robots_serp_directives()
@@ -1238,6 +1404,7 @@ def main() -> int:
     check_article_jsonld_image()
     check_lastmod_matches_datemodified()
     check_article_fields_current()
+    check_visible_article_dates()
 
     if warnings:
         print(f"\n[!] Warnings ({len(warnings)}):")

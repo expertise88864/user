@@ -47,6 +47,10 @@ REGEN_STEPS: list[list[str]] = [
     # LLM corpora, and search artifacts. Running this after llms-full used
     # to leave aggregate freshness metadata one build behind.
     [PY, "_normalize_date_modified.py"],
+    # Header "內容更新 <dateModified> · 醫師審閱 <lastReviewed>" from the content
+    # and review ledgers (owner's decision 2026-10-17). After the content
+    # ledger is resolved, before _gen_en_pages so the mirror gets data-en.
+    [PY, "_normalize_article_dates.py"],
     # Refresh 404.html "popular articles" with 6 newest from DN.ARTICLES
     # so the list doesn't drift as new content lands.
     [PY, "_inject_404.py"],
@@ -293,6 +297,7 @@ CHECK_STEPS: list[list[str]] = [
     [PY, "_test_legacy_maintenance.py"],
     [PY, "_test_dashboard.py"],
     [PY, "_test_reading_metrics.py"],
+    [PY, "-m", "unittest", "_test_article_dates"],
     [PY, "_check_meta.py", "--fast"],
     [PY, "_check_metadata_uniqueness.py"],
     [PY, "_check_robots.py"],
