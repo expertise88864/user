@@ -9,6 +9,77 @@
       '<rect width="400" height="300" fill="url(#mag-dots)" opacity="0.35"/>' +
       '</svg>';
   }
+  // Hero variant of a magazine cover: the same 400x300 artwork centred and scaled
+  // to the 720x240 hero band. Article pages do not carry the homepage <defs>, so
+  // the hero ships its own copy of the hand-drawn displacement filter.
+  function magHero(bg, body) {
+    return '<svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+      '<defs><filter id="dn-hero-rough" x="-5%" y="-5%" width="110%" height="110%">' +
+      '<feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="1"/>' +
+      '<feDisplacementMap in="SourceGraphic" in2="SourceGraphic" scale="1.6"/></filter></defs>' +
+      '<rect width="720" height="240" fill="' + bg + '"/>' +
+      '<g transform="translate(200 0) scale(0.8)">' + body.split('mag-rough').join('dn-hero-rough') + '</g>' +
+      '</svg>';
+  }
+
+  // Dupilumab long-term maintenance — prefilled pen beside a calendar with spaced dose marks
+  var DUPI_COVER_BG = '#cffafe';
+  var DUPI_COVER_BODY =
+    '<g filter="url(#mag-rough)">' +
+    '<g transform="translate(30 207) rotate(-22)">' +
+    '<rect x="0" y="-18" width="128" height="36" rx="8" fill="#fff" stroke="#0c5159" stroke-width="2.5"/>' +
+    '<rect x="38" y="-9" width="50" height="18" rx="3" fill="#a5f3fc" stroke="#0c5159" stroke-width="1.8"/>' +
+    '<rect x="-24" y="-13" width="24" height="26" rx="5" fill="#0c5159"/>' +
+    '<rect x="128" y="-11" width="24" height="22" rx="3" fill="#a4b5a8" stroke="#0c5159" stroke-width="2"/>' +
+    '<line x1="152" y1="0" x2="168" y2="0" stroke="#0c5159" stroke-width="2.5" stroke-linecap="round"/>' +
+    '</g>' +
+    '<rect x="196" y="62" width="164" height="150" rx="8" fill="#fff" stroke="#0c5159" stroke-width="2.5"/>' +
+    '<path d="M196 94 L196 70 Q196 62 204 62 L352 62 Q360 62 360 70 L360 94 Z" fill="#0c5159"/>' +
+    '<line x1="232" y1="52" x2="232" y2="72" stroke="#2a2620" stroke-width="3.5" stroke-linecap="round"/>' +
+    '<line x1="324" y1="52" x2="324" y2="72" stroke="#2a2620" stroke-width="3.5" stroke-linecap="round"/>' +
+    '<g fill="none" stroke="#a4b5a8" stroke-width="2">' +
+    '<circle cx="224" cy="120" r="7"/><circle cx="260" cy="120" r="7"/><circle cx="296" cy="120" r="7"/><circle cx="332" cy="120" r="7"/>' +
+    '<circle cx="224" cy="154" r="7"/><circle cx="260" cy="154" r="7"/><circle cx="296" cy="154" r="7"/><circle cx="332" cy="154" r="7"/>' +
+    '<circle cx="224" cy="188" r="7"/><circle cx="260" cy="188" r="7"/><circle cx="296" cy="188" r="7"/><circle cx="332" cy="188" r="7"/>' +
+    '</g>' +
+    '<g fill="#0c5159">' +
+    '<circle cx="224" cy="120" r="7"/><circle cx="296" cy="120" r="7"/>' +
+    '<circle cx="224" cy="154" r="7"/><circle cx="296" cy="154" r="7"/>' +
+    '<circle cx="224" cy="188" r="7"/><circle cx="296" cy="188" r="7"/>' +
+    '</g>' +
+    '<line x1="50" y1="262" x2="350" y2="262" stroke="#0c5159" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 9"/>' +
+    '<g fill="#fff" stroke="#0c5159" stroke-width="2.5">' +
+    '<circle cx="60" cy="262" r="7"/><circle cx="140" cy="262" r="7"/><circle cx="220" cy="262" r="7"/><circle cx="300" cy="262" r="7"/>' +
+    '</g>' +
+    '</g>';
+
+  // Photodynamic therapy — red-light panel over a skin area, with a photosensitizer cream tube
+  var PDT_COVER_BG = '#fee2e2';
+  var PDT_COVER_BODY =
+    '<g filter="url(#mag-rough)">' +
+    '<path d="M190 34 L190 22 L340 22" fill="none" stroke="#2a2620" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>' +
+    '<rect x="172" y="34" width="36" height="14" rx="3" fill="#7a9285" stroke="#2a2620" stroke-width="2"/>' +
+    '<rect x="70" y="48" width="220" height="62" rx="9" fill="#ebe4d8" stroke="#2a2620" stroke-width="2.4"/>' +
+    '<g fill="#dc2626">' +
+    '<circle cx="96" cy="68" r="6"/><circle cx="125" cy="68" r="6"/><circle cx="154" cy="68" r="6"/><circle cx="183" cy="68" r="6"/>' +
+    '<circle cx="212" cy="68" r="6"/><circle cx="241" cy="68" r="6"/><circle cx="268" cy="68" r="6"/>' +
+    '<circle cx="96" cy="92" r="6"/><circle cx="125" cy="92" r="6"/><circle cx="154" cy="92" r="6"/><circle cx="183" cy="92" r="6"/>' +
+    '<circle cx="212" cy="92" r="6"/><circle cx="241" cy="92" r="6"/><circle cx="268" cy="92" r="6"/>' +
+    '</g>' +
+    '<path d="M76 114 L284 114 L318 186 L42 186 Z" fill="#dc2626" opacity="0.13"/>' +
+    '<g stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 7" opacity="0.65">' +
+    '<line x1="100" y1="116" x2="82" y2="182"/><line x1="180" y1="116" x2="180" y2="182"/><line x1="260" y1="116" x2="278" y2="182"/>' +
+    '</g>' +
+    '<path d="M28 192 Q100 176 180 186 Q260 196 330 180 L340 262 L28 262 Z" fill="#fde68a" stroke="#2a2620" stroke-width="2.3" stroke-linejoin="round"/>' +
+    '<ellipse cx="176" cy="206" rx="86" ry="14" fill="#fee2e2" stroke="#dc2626" stroke-width="2" stroke-dasharray="5 4" opacity="0.9"/>' +
+    '<g transform="translate(306 232) rotate(-26)">' +
+    '<rect x="-48" y="-14" width="84" height="28" rx="5" fill="#fff" stroke="#0c5159" stroke-width="2.5"/>' +
+    '<rect x="-60" y="-12" width="12" height="24" fill="#a4b5a8" stroke="#0c5159" stroke-width="2"/>' +
+    '<rect x="36" y="-9" width="22" height="18" rx="3" fill="#0c5159"/>' +
+    '</g>' +
+    '<path transform="translate(-36 2)" d="M236 240 Q248 222 262 232 Q274 244 256 250 Q242 252 236 240 Z" fill="#fff" stroke="#0c5159" stroke-width="2"/>' +
+    '</g>';
+
   DN.MAG_COVERS = {
     // Acne — face profile + comedones
     '痘痘': magCover('#dcd9d1',
@@ -390,7 +461,11 @@
       '<circle cx="170" cy="200" r="9"/><circle cx="260" cy="220" r="8"/></g>' +
       '<text x="40" y="285" font-family="Inter,sans-serif" font-size="13" letter-spacing="3" fill="#7c2d12">CTCL/MF · 皮膚淋巴瘤</text>' +
       '</g>'
-    )
+    ),
+    // Dupilumab long-term maintenance — pen + dosing calendar (no text)
+    'dupilumab': magCover(DUPI_COVER_BG, DUPI_COVER_BODY),
+    // Photodynamic therapy — red-light panel + photosensitizer tube (no text)
+    '光動力治療': magCover(PDT_COVER_BG, PDT_COVER_BODY)
   };
 
   // Tag aliases — map DN.ARTICLES tags to MAG_COVERS keys
@@ -568,6 +643,10 @@
         '<line x1="0" y1="100" x2="320" y2="100" stroke="#a4b5a8" stroke-width="2"/>' +
         '<text x="0" y="140" font-family="Noto Sans TC,sans-serif" font-size="13" fill="#5e574e">VZV 再活化 · 神經皮節分布</text>' +
         '</g></svg>',
+      // Dupilumab long-term maintenance (tag 'dupilumab')
+      'dupilumab': magHero(DUPI_COVER_BG, DUPI_COVER_BODY),
+      // Photodynamic therapy (tag '光動力治療')
+      '光動力治療': magHero(PDT_COVER_BG, PDT_COVER_BODY),
       // Generic / FAQ default
       '常見問題 FAQ': '<svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
         '<rect width="720" height="240" fill="#faf7f2"/>' +
