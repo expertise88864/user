@@ -105,7 +105,7 @@ function fake(bad = '') {
     const isPR = runId >= 201;
     const id = runId - (isPR ? 200 : 100);
     return { ok: true, json: async () => ({ jobs: bad === 'missing' ? [] : cfg.workflows[id - 1].jobs.map(name => ({
-      name, status: 'completed', conclusion: bad === 'skip' || (isPR && ['Preview browser','Production smoke'].includes(name)) ? 'skipped' : 'success',
+      name, status: 'completed', conclusion: bad === 'skip' || (isPR && ['Browser fixtures','Preview browser','Production smoke'].includes(name)) ? 'skipped' : 'success',
       steps: bad === 'steps' ? [] : [
         ...cfg.workflows[id - 1].steps[name].required,
         ...(cfg.workflows[id - 1].steps[name].candidate_required || [])
@@ -196,7 +196,7 @@ test('PR identity moving during verification cannot authorize production', async
 test('PR job skips and Vale filters mirror the existing workflow event contract', () => {
   const fs = require('node:fs');
   const delivery = cfg.workflows.find(entry => entry.path.endsWith('/delivery.yml'));
-  assert.deepEqual(delivery.pull_request.skips, ['Preview browser','Production smoke']);
+  assert.deepEqual(delivery.pull_request.skips, ['Browser fixtures','Preview browser','Production smoke']);
   const vale = cfg.workflows.find(entry => entry.path.endsWith('/vale.yml'));
   const source = fs.readFileSync(vale.path, 'utf8');
   const section = source.split('  pull_request:')[1].split('  workflow_dispatch:')[0];
@@ -335,44 +335,168 @@ test('Vercel validates before and after generating production artifacts', () => 
     ' && python _site_publish.py --stage dist');
   assert.equal(config.outputDirectory, 'dist', 'Serve only the staged public site, never the repository root');
 });
-test('preview serves every public file and no repository file', async () => {
-  const { checkDeployedFiles } = require('./_delivery_preview.cjs');
-  const base = new URL('https://candidate-team.vercel.app');
-  const manifest = { published: ['index.html', 'blog/a b.html'], private: ['_delivery.py', 'AGENTS.md', 'api/og.js'] };
-  const served = new Set(['/index.html', '/blog/a%20b.html', '/pagefind/pagefind.js']);
-  const requested = [];
-  let og = 'image/svg+xml; charset=utf-8';
-  const context = extra => ({ request: {
+// Deployed file census: the Vercel API output tree of the exact-SHA deployment
+// must equal the public selection; the CDN answers only a small sample.
+const filesSha = 'b'.repeat(40);
+const filesToken = 'fixture-files-token';
+const filesBase = new URL('https://chendermatologist-abc123xyz-expertise88864s-projects.vercel.app');
+const filesManifest = { published: ['index.html', 'blog/a b.html', 'assets/a b.css', 'admin.html'],
+  private: ['_delivery.py', 'AGENTS.md', '.github/workflows/delivery.yml', 'api/og.js'] };
+function vercelTree(files = ['index.html', 'blog/a b.html', 'assets/a b.css', 'admin.html', 'pagefind/pagefind.js'], root = 'out') {
+  const tree = [];
+  for (const file of files) {
+    let level = tree;
+    const parts = file.split('/');
+    parts.forEach((part, index) => {
+      if (index === parts.length - 1) { level.push({ name: part, type: 'file', mode: 33188 }); return; }
+      let dir = level.find(node => node.name === part && node.type === 'directory');
+      if (!dir) { dir = { name: part, type: 'directory', mode: 16877, children: [] }; level.push(dir); }
+      level = dir.children;
+    });
+  }
+  tree.push({ name: 'api', type: 'directory', mode: 16877, children: [{ name: 'og', type: 'lambda', mode: 33188 }] });
+  return root ? [{ name: root, type: 'directory', mode: 16877, children: tree }] : tree;
+}
+function vercelRequest({ deployment = {}, tree = vercelTree(), status = {}, calls = [] } = {}) {
+  return async (url, options) => {
+    calls.push({ url, options });
+    const path = new URL(url).pathname;
+    if (path.startsWith('/v13/deployments/')) {
+      if (status.deployment) return new Response('upstream says ' + filesToken, { status: status.deployment });
+      return Response.json({ id: 'dpl_Fixture123', url: filesBase.hostname, name: 'chendermatologist',
+        readyState: 'READY', target: null, meta: { githubCommitSha: filesSha }, ...deployment });
+    }
+    if (path === '/v6/deployments/dpl_Fixture123/files') {
+      if (status.files) return new Response('upstream says ' + filesToken, { status: status.files });
+      return Response.json(tree);
+    }
+    throw Error('Unexpected Vercel API request');
+  };
+}
+function cdnContext({ served = new Set(), gate = new Map(), og = 'image/svg+xml; charset=utf-8', requested = [] } = {}) {
+  return { request: {
     head: async url => {
       const path = new URL(url).pathname; requested.push(path);
-      const challenge = gate.get(path);
-      if (challenge !== undefined) return { status: () => 401, headers: () => ({ 'www-authenticate': challenge }) };
-      return { status: () => served.has(path) || extra.includes(path) ? 200 : 404, headers: () => ({}) };
+      if (gate.has(path)) return { status: () => 401, headers: () => ({ 'www-authenticate': gate.get(path) }) };
+      return { status: () => served.has(path) ? 200 : 404, headers: () => ({}) };
     },
     get: async (url, options) => {
-      assert.equal(url, base.origin + '/api/og?title=DermNotes'); assert.deepEqual(options, { maxRedirects: 0 });
+      assert.equal(url, filesBase.origin + '/api/og?title=DermNotes'); assert.deepEqual(options, { maxRedirects: 0 });
       return { status: () => 200, headers: () => ({ 'content-type': og }) };
     },
-  } });
-  const gate = new Map();
-  assert.deepEqual(await checkDeployedFiles(context([]), base, manifest), { published: 3, private: 2, adminBasicAuth: 0 });
-  // The optional admin Basic Auth gate (middleware.js) answers 401 for the admin shell only.
-  const admin = { published: [...manifest.published, 'admin.html', 'admin/word-editor.js'], private: manifest.private };
-  const realm = 'Basic realm="ChenDermatologist Admin", charset="UTF-8"';
-  gate.set('/admin.html', realm); gate.set('/admin/word-editor.js', realm);
-  assert.deepEqual(await checkDeployedFiles(context([]), base, admin), { published: 5, private: 2, adminBasicAuth: 2 });
-  gate.set('/admin/word-editor.js', 'Basic realm="Elsewhere"');
-  await assert.rejects(checkDeployedFiles(context([]), base, admin), /differs/);
-  gate.clear(); gate.set('/index.html', realm);
-  await assert.rejects(checkDeployedFiles(context([]), base, manifest), /differs/);
-  gate.clear();
+  } };
+}
+const allServed = () => new Set(['/index.html', '/blog/a%20b.html', '/assets/a%20b.css', '/admin.html', '/pagefind/pagefind.js']);
+test('deployed files come from the exact-SHA Vercel output tree and a small CDN sample', async () => {
+  const { checkDeployedFiles } = require('./_delivery_preview.cjs');
+  const calls = [], requested = [];
+  const counts = await checkDeployedFiles(cdnContext({ served: allServed(), requested }), filesBase, filesManifest,
+    { sha: filesSha, token: filesToken, request: vercelRequest({ calls }) });
+  assert.deepEqual(counts, { deployment: 'dpl_Fixture123', published: 4, generated: 1, private: 3, functions: 1,
+    adminBasicAuth: 0, cdnRequests: requested.length + 1, apiRequests: 2 });
+  // Both API calls carry the token only in the Authorization header, never in a URL.
+  assert.deepEqual(calls.map(call => call.url), [
+    'https://api.vercel.com/v13/deployments/' + filesBase.hostname + '?slug=expertise88864s-projects',
+    'https://api.vercel.com/v6/deployments/dpl_Fixture123/files?slug=expertise88864s-projects']);
+  for (const { url, options } of calls) {
+    assert.ok(!url.includes(filesToken));
+    assert.equal(options.headers.Authorization, 'Bearer ' + filesToken);
+    assert.equal(options.redirect, 'error');
+    assert.equal(options.cache, 'no-store');
+  }
+  // Sample: first and last file of each type, the generated bundle and internal paths.
+  assert.ok(requested.length < 40, 'The CDN only answers a sample');
+  for (const path of ['/pagefind/pagefind.js', '/_delivery.py', '/AGENTS.md', '/.github/workflows/delivery.yml',
+    '/__pycache__/_run_quality.cpython-312.pyc', '/index.html', '/admin.html', '/assets/a%20b.css']) assert.ok(requested.includes(path), path);
   assert.ok(!requested.includes('/api/og.js'), 'Functions are not probed as static files');
-  assert.ok(requested.includes('/__pycache__/_run_quality.cpython-312.pyc'), 'Build bytecode must be probed');
-  og = 'text/html';
-  await assert.rejects(checkDeployedFiles(context([]), base, manifest), /differs/);
-  og = 'image/svg+xml; charset=utf-8';
-  await assert.rejects(checkDeployedFiles(context(['/_delivery.py']), base, manifest), /differs/);
-  served.delete('/pagefind/pagefind.js');
-  await assert.rejects(checkDeployedFiles(context([]), base, manifest), /differs/);
-  await assert.rejects(checkDeployedFiles(context([]), base, { published: [], private: [] }), /Incomplete/);
+  // A tree without an out/ root is read as the output itself.
+  assert.equal((await checkDeployedFiles(cdnContext({ served: allServed() }), filesBase, filesManifest,
+    { sha: filesSha, token: filesToken, request: vercelRequest({ tree: vercelTree(undefined, '') }) })).published, 4);
+});
+test('a missing public file or an extra internal or unexpected file fails the census', async () => {
+  const { checkDeployedFiles } = require('./_delivery_preview.cjs');
+  const files = ['index.html', 'blog/a b.html', 'assets/a b.css', 'admin.html', 'pagefind/pagefind.js'];
+  for (const [label, tree, pattern] of [
+    ['missing public', files.filter(name => name !== 'blog/a b.html'), /blog\/a b\.html: public file missing/],
+    ['missing generated', files.filter(name => name !== 'pagefind/pagefind.js'), /pagefind\/pagefind\.js: public file missing/],
+    ['internal', [...files, '_delivery.py'], /_delivery\.py: internal file deployed/],
+    ['internal dotfile', [...files, '.github/workflows/delivery.yml'], /internal file deployed/],
+    ['bytecode', [...files, '__pycache__/_run_quality.cpython-312.pyc'], /unexpected file deployed/],
+    ['unexpected', [...files, 'notes/secret.html'], /unexpected file deployed/],
+    ['function source', [...files, 'api/og.js'], /unexpected file deployed/],
+  ]) {
+    const requested = [];
+    await assert.rejects(checkDeployedFiles(cdnContext({ served: allServed(), requested }), filesBase, filesManifest,
+      { sha: filesSha, token: filesToken, request: vercelRequest({ tree: vercelTree(tree) }) }),
+    error => pattern.test(error.message) && /Vercel tree top level: directory:out/.test(error.message), label);
+    assert.deepEqual(requested, [], 'A failed census never falls back to probing the CDN: ' + label);
+  }
+  await assert.rejects(checkDeployedFiles(cdnContext(), filesBase, { published: [], private: [] },
+    { sha: filesSha, token: filesToken, request: vercelRequest() }), /Incomplete/);
+});
+test('a missing token, API failure or unbound deployment fails closed without leaking the token', async () => {
+  const { checkDeployedFiles } = require('./_delivery_preview.cjs');
+  for (const token of [undefined, '', 'short', 'has space in it']) {
+    const calls = [];
+    await assert.rejects(checkDeployedFiles(cdnContext({ served: allServed() }), filesBase, filesManifest,
+      { sha: filesSha, token, request: vercelRequest({ calls }) }), /VERCEL_FILES_TOKEN is missing or malformed/);
+    assert.deepEqual(calls, [], 'No request without a token');
+  }
+  const failures = [
+    [{ status: { deployment: 401 } }, /deployment request failed: HTTP 401/],
+    [{ status: { deployment: 404 } }, /deployment request failed: HTTP 404/],
+    [{ status: { files: 403 } }, /deployment files request failed: HTTP 403/],
+    [{ status: { files: 500 } }, /deployment files request failed: HTTP 500/],
+    [{ deployment: { meta: { githubCommitSha: 'c'.repeat(40) } } }, /exact commit/],
+    [{ deployment: { meta: {} } }, /exact commit/],
+    [{ deployment: { target: 'production' } }, /production/],
+    [{ deployment: { url: 'other-abc-expertise88864s-projects.vercel.app' } }, /different deployment/],
+    [{ deployment: { readyState: 'BUILDING' } }, /not ready/],
+    [{ deployment: { name: 'another-project' } }, /another project/],
+    [{ deployment: { id: '../../v2/user' } }, /id is malformed/],
+    [{ tree: [] }, /empty or malformed/],
+    [{ tree: { files: [] } }, /empty or malformed/],
+    [{ tree: [{ name: 'out', type: 'directory', mode: 16877 }] }, /omitted a directory listing/],
+    [{ tree: [{ name: 'out', type: 'directory', mode: 16877, children: [{ name: 'x', type: 'symlink', mode: 41471 }] }] }, /Unexpected Vercel file tree entry/],
+    [{ tree: [{ name: '..', type: 'file', mode: 33188 }] }, /invalid entry name/],
+  ];
+  for (const [options, pattern] of failures) {
+    await assert.rejects(checkDeployedFiles(cdnContext({ served: allServed() }), filesBase, filesManifest,
+      { sha: filesSha, token: filesToken, request: vercelRequest(options) }),
+    error => pattern.test(error.message) && !error.message.includes(filesToken), JSON.stringify(options));
+  }
+  await assert.rejects(checkDeployedFiles(cdnContext({ served: allServed() }), filesBase, filesManifest,
+    { sha: filesSha, token: filesToken, request: async () => { throw Error('socket ' + filesToken); } }),
+  error => /deployment request failed \(network\)/.test(error.message) && !error.message.includes(filesToken));
+  await assert.rejects(checkDeployedFiles(cdnContext({ served: allServed() }), filesBase, filesManifest,
+    { sha: 'short', token: filesToken, request: vercelRequest() }), /full commit SHA/);
+});
+test('the CDN sample must really answer: status, Basic Auth gate and og function', async () => {
+  const { checkDeployedFiles } = require('./_delivery_preview.cjs');
+  const run = context => checkDeployedFiles(context, filesBase, filesManifest,
+    { sha: filesSha, token: filesToken, request: vercelRequest() });
+  // The optional admin Basic Auth gate (middleware.js) answers 401 for the admin shell only.
+  const realm = 'Basic realm="ChenDermatologist Admin", charset="UTF-8"';
+  const served = allServed(); served.delete('/admin.html');
+  assert.equal((await run(cdnContext({ served, gate: new Map([['/admin.html', realm]]) }))).adminBasicAuth, 1);
+  await assert.rejects(run(cdnContext({ served, gate: new Map([['/admin.html', 'Basic realm="Elsewhere"']]) })), /differs/);
+  await assert.rejects(run(cdnContext({ served: allServed(), gate: new Map([['/index.html', realm]]) })), /differs/);
+  const missing = allServed(); missing.delete('/assets/a%20b.css');
+  await assert.rejects(run(cdnContext({ served: missing })), /assets\/a b\.css: HTTP 404, expected 200/);
+  const exposed = allServed(); exposed.add('/_delivery.py');
+  await assert.rejects(run(cdnContext({ served: exposed })), /_delivery\.py: HTTP 200, expected 404/);
+  await assert.rejects(run(cdnContext({ served: allServed(), og: 'text/html' })), /api\/og/);
+});
+test('the CDN sample stays small for the real manifest', () => {
+  const { cdnSample } = require('./_delivery_preview.cjs');
+  const manifest = JSON.parse(require('node:child_process').execFileSync('python', ['_site_publish.py', '--manifest'],
+    { encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 }));
+  const jobs = cdnSample(manifest);
+  assert.ok(jobs.length >= 10 && jobs.length <= 40, 'sample size ' + jobs.length);
+  assert.equal(new Set(jobs.map(job => job[0])).size, jobs.length);
+  const type = name => (name.match(/\.[A-Za-z0-9]+$/) || ['(none)'])[0].toLowerCase();
+  for (const kind of new Set(manifest.published.map(type))) {
+    assert.ok(jobs.some(([name, expected]) => expected === 200 && type(name) === kind), kind);
+  }
+  assert.ok(jobs.filter(job => job[1] === 404).length >= 3);
 });

@@ -1,5 +1,6 @@
 """Offline regression tests for publication evidence. No real push/network."""
 import unittest
+import re
 import io
 import json
 import subprocess
@@ -776,6 +777,128 @@ class ProductionSmokeFailFastTests(unittest.TestCase):
             d.production_smoke(api, SHA, self.CFG)
         self.assertNotIsInstance(caught.exception, d.Final)
 
+
+
+def _workflow_jobs(path: str) -> dict:
+    """Job id -> its YAML block text (stdlib only: the contract job installs no YAML parser)."""
+    lines = (d.ROOT / path).read_text(encoding="utf-8").splitlines()
+    start = lines.index("jobs:") + 1
+    jobs, current = {}, None
+    for line in lines[start:]:
+        if line.startswith("  ") and not line.startswith("   ") and line.strip().endswith(":"):
+            current = line.strip()[:-1]
+            jobs[current] = []
+        elif current:
+            jobs[current].append(line)
+    return {job: "\n".join(body) for job, body in jobs.items()}
+
+
+class DeliveryWorkflowSplitTests(unittest.TestCase):
+    """Browser fixtures run without Preview; the Preview job keeps only deployment checks."""
+
+    def setUp(self):
+        self.entry = next(w for w in d.policy()["workflows"] if w["path"] == ".github/workflows/delivery.yml")
+        self.jobs = _workflow_jobs(".github/workflows/delivery.yml")
+
+    def _job(self, name):
+        found = [body for body in self.jobs.values() if f"\n    name: {name}\n" in "\n" + body + "\n"]
+        self.assertEqual(len(found), 1, name)
+        return found[0]
+
+    def _jobs(self, phase, **override):
+        return [{"name": name, "status": "completed",
+                 "conclusion": override.get(name, "skipped" if name in self.entry.get(phase + "_skips", []) else "success"),
+                 "steps": [{"name": step, "status": "completed", "conclusion": "success"}
+                           for step in self.entry["steps"][name]["required"]]}
+                for name in self.entry["jobs"]]
+
+    def test_browser_fixtures_is_a_required_candidate_job_with_required_steps(self):
+        self.assertIn("Browser fixtures", self.entry["jobs"])
+        self.assertEqual(self.entry["steps"]["Browser fixtures"]["required"],
+                         ["Install browser", "Run browser fixture tests"])
+        self.assertNotIn("Browser fixtures", self.entry["candidate_skips"])
+        # Same applicability as the Preview job it was split from.
+        self.assertIn("Browser fixtures", self.entry["main_skips"])
+        self.assertIn("Browser fixtures", self.entry["pull_request"]["skips"])
+        d.assess_jobs(self._jobs("candidate"), self.entry["jobs"], self.entry["candidate_skips"],
+                      self.entry["steps"], "candidate")
+        for outcome in ("skipped", "failure", "cancelled", "timed_out", None):
+            with self.subTest(outcome=outcome), self.assertRaises(d.Blocked):
+                d.assess_jobs(self._jobs("candidate", **{"Browser fixtures": outcome}), self.entry["jobs"],
+                              self.entry["candidate_skips"], self.entry["steps"], "candidate")
+        missing = [j for j in self._jobs("candidate") if j["name"] != "Browser fixtures"]
+        with self.assertRaises(d.Blocked):
+            d.assess_jobs(missing, self.entry["jobs"], self.entry["candidate_skips"], self.entry["steps"], "candidate")
+        jobs = self._jobs("candidate")
+        fixtures = next(j for j in jobs if j["name"] == "Browser fixtures")
+        fixtures["steps"] = [s for s in fixtures["steps"] if s["name"] != "Run browser fixture tests"]
+        with self.assertRaises(d.Blocked):
+            d.assess_jobs(jobs, self.entry["jobs"], self.entry["candidate_skips"], self.entry["steps"], "candidate")
+
+    def test_exact_sha_verify_requires_the_fixture_job(self):
+        cfg = {**d.policy(), "repository": "owner/repo", "require_pr": False, "cms_author_intent": False,
+               "site_settings_author_intent": False, "workflows": [self.entry]}
+        run = {"id": 7, "run_attempt": 1, "path": self.entry["path"], "event": "push", "head_branch": "codex/x",
+               "head_sha": SHA, "status": "completed", "conclusion": "success", "html_url": "u"}
+        for override, passes in (({}, True), ({"Browser fixtures": "failure"}, False),
+                                 ({"Browser fixtures": "skipped"}, False), ({"Browser fixtures": "cancelled"}, False)):
+            jobs = [{**j, "id": i} for i, j in enumerate(self._jobs("candidate", **override))]
+
+            class Api:
+                def pages(self, path, key=None, jobs=jobs):
+                    return [run] if path.startswith("/actions/runs?") else jobs
+
+            with self.subTest(override=override):
+                if passes:
+                    self.assertEqual(len(d.verify(SHA, "candidate", cfg, Api())), 1)
+                else:
+                    with self.assertRaises(d.Blocked):
+                        d.verify(SHA, "candidate", cfg, Api())
+
+    def test_workflow_steps_match_the_policy(self):
+        for name in self.entry["jobs"]:
+            body = self._job(name)
+            for step in self.entry["steps"][name]["required"]:
+                self.assertEqual(body.count(f"- name: {step}\n"), 1, (name, step))
+
+    def test_fixture_job_needs_no_preview_or_credentials(self):
+        body = self._job("Browser fixtures")
+        self.assertIn("run: node _browser_fixtures.cjs", body)
+        self.assertIn("startsWith(github.ref, 'refs/heads/codex/')", body)
+        for forbidden in ("secrets.", "PW_BASE_URL", "_delivery.py preview", "deployments:", "continue-on-error"):
+            self.assertNotIn(forbidden, body)
+        preview = (d.ROOT / "_delivery_preview.cjs").read_text(encoding="utf-8")
+        fixtures = (d.ROOT / "_browser_fixtures.cjs").read_text(encoding="utf-8")
+        # _test_language_enhancement_browser.cjs is run by the English-locale suite.
+        browser_tests = sorted(p.name for p in d.ROOT.glob("_test_*_browser.cjs")
+                               if p.name != "_test_language_enhancement_browser.cjs")
+        listed = re.findall(r"'(_test_[a-z_]+_browser\.cjs)'", fixtures.split("const FIXTURES = [")[1].split("];")[0])
+        self.assertEqual(sorted(listed), browser_tests, "every fixture suite runs exactly once")
+        self.assertEqual(len(set(listed)), len(listed))
+        self.assertNotIn("_test_", preview.split("if (require.main === module)")[1],
+                         "fixture suites no longer spend Preview time")
+
+    def test_preview_concurrency_cancels_superseded_candidates_only(self):
+        preview = self._job("Preview browser")
+        self.assertIn("    concurrency:\n      group: delivery-preview-${{ github.ref }}\n"
+                      "      cancel-in-progress: ${{ startsWith(github.ref, 'refs/heads/codex/') }}\n", preview + "\n")
+        self.assertIn("startsWith(github.ref, 'refs/heads/codex/')", preview.split("concurrency:")[0])
+        self.assertIn("VERCEL_FILES_TOKEN: ${{ secrets.VERCEL_FILES_TOKEN }}", preview)
+        # No other job and not the workflow itself may cancel: main runs are never superseded.
+        source = (d.ROOT / ".github/workflows/delivery.yml").read_text(encoding="utf-8")
+        self.assertEqual(source.count("cancel-in-progress"), 1)
+        self.assertEqual(source.count("concurrency:"), 1)
+        for name in ("Delivery contract", "Browser fixtures", "Production smoke"):
+            self.assertNotIn("concurrency", self._job(name))
+
+    def test_cancelled_superseded_preview_is_never_evidence(self):
+        jobs = self._jobs("candidate", **{"Preview browser": "cancelled"})
+        with self.assertRaises(d.Blocked):
+            d.assess_jobs(jobs, self.entry["jobs"], self.entry["candidate_skips"], self.entry["steps"], "candidate")
+        run = {"id": 1, "path": self.entry["path"], "event": "push", "head_branch": "codex/x", "head_sha": SHA,
+               "status": "completed", "conclusion": "cancelled"}
+        with self.assertRaises(d.Blocked):
+            d.select_run([run], self.entry["path"], SHA, "candidate")
 
 if __name__ == "__main__":
     unittest.main()

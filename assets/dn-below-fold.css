@@ -149,6 +149,10 @@ article h2[id]{scroll-margin-top:84px}
 #dn-hub .dn-tag-card-title::before { content: ""; width: 4px; height: 16px; flex-shrink: 0; border-radius: 9999px; background: linear-gradient(180deg, #a4b5a8, #4d6358); }
 @media (hover: hover) {
   #dn-hub .dn-tag-card:hover { transform: translateY(-3px); box-shadow: 0 14px 26px -16px rgba(42, 38, 32, .35); }
+  /* A lifted card keeps its original hover area: this strip fills the gap the
+     lift opens below it, so a pointer resting near the bottom edge stays inside
+     instead of re-triggering the lift (the card used to shake). */
+  #dn-hub .dn-tag-card:hover::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 5px; }
 }
 
 /* Homepage dark mode: dark panels instead of white boxes */
@@ -186,7 +190,8 @@ article h2[id]{scroll-margin-top:84px}
   #articles #dn-article-list > .article-list-item { min-height: 0; }
   /* lift with `top`: blog-shared.js pins .article-list-item.visible to transform:translateY(0) !important */
   #articles #dn-article-list > .article-list-item { position: relative; top: 0; }
-  #articles #dn-article-list > .article-list-item:hover { top: -3px; }
+  #articles #dn-article-list > .article-list-item:hover { top: -3px; transform: none; }
+  #articles #dn-article-list > .article-list-item:hover::after { top: 100%; bottom: auto; left: 0; right: 0; width: auto; height: 5px; }
   #articles #dn-article-list > .article-list-item:first-of-type { grid-row: span 2; flex-direction: column; justify-content: flex-end; padding: 26px 26px 22px; }
   #articles #dn-article-list > .article-list-item:first-of-type::before { width: 48px; height: 5px; margin: 0 0 auto; align-self: flex-start; }
   #articles #dn-article-list > .article-list-item:first-of-type .al-body h2 { font-size: 23px; line-height: 1.38; -webkit-line-clamp: 4; margin-top: 18px; }

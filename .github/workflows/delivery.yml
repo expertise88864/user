@@ -37,9 +37,45 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SETTINGS_CANDIDATE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: python _site_settings_delivery.py "$SETTINGS_CANDIDATE_SHA"
+  fixtures:
+    # Isolated browser fixtures: every page is served by context.route on a
+    # fixture origin, so this job needs no Preview URL and sends nothing to Vercel.
+    name: Browser fixtures
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && startsWith(github.ref, 'refs/heads/codex/')
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.60.0-noble@sha256:9bd26ad900bb5e0f4dee75839e957a89ae89c2b7ab1e76050e559790e946b948
+      options: --shm-size=1g
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Install browser
+        run: |
+          npm install --global playwright@1.60.0
+          echo "NODE_PATH=$(npm root --global)" >> "$GITHUB_ENV"
+          playwright install chromium
+      - name: Run browser fixture tests
+        run: node _browser_fixtures.cjs
+
   preview:
     name: Preview browser
     if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && startsWith(github.ref, 'refs/heads/codex/')
+    # A newer push to the same candidate branch supersedes this check: the old
+    # run ends cancelled (never evidence) instead of spending Preview requests.
+    # Only codex/* candidates cancel; main never cancels a run.
+    concurrency:
+      group: delivery-preview-${{ github.ref }}
+      cancel-in-progress: ${{ startsWith(github.ref, 'refs/heads/codex/') }}
     runs-on: ubuntu-latest
     # Match the npm version below. The image supplies browser OS dependencies
     # without refreshing unrelated package repositories on the hosted runner.
@@ -74,6 +110,8 @@ jobs:
       - name: Verify preview pages in desktop and mobile browsers
         env:
           VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+          # Project-scoped, read-only use: the exact-SHA deployment's file tree.
+          VERCEL_FILES_TOKEN: ${{ secrets.VERCEL_FILES_TOKEN }}
         run: node _delivery_preview.cjs
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()

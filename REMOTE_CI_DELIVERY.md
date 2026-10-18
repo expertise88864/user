@@ -37,6 +37,21 @@ Subsequent browser and service-worker requests use this isolated native session,
 without a global credential header or request interception. Session cookies are
 never exported and are discarded when the browser context closes.
 
+The Preview browser job verifies the deployed file set through the Vercel API
+(2026-10-18): the encrypted Actions secret VERCEL_FILES_TOKEN (project-scoped)
+reads the exact-SHA deployment (same URL as the GitHub deployment, same project,
+meta.githubCommitSha = the candidate, READY, not production) and its output file
+tree. Every public file must be present, no internal file may appear, and nothing
+else may be deployed except the generated pagefind/ bundle. A missing token or an
+unavailable/malformed API answer fails the job; there is no fallback to skipping.
+The token is sent only in the Authorization header and never logged. The CDN then
+answers a small sample (first/last file of each type, internal 404 probes, /api/og).
+The isolated browser fixtures (_browser_fixtures.cjs: pages served by context.route
+on fixture origins) need no Preview and run in the separate required
+**Browser fixtures** job. A newer push to the same codex/* branch cancels the older
+Preview browser job (concurrency group delivery-preview-<ref>); a cancelled run is
+never evidence, and main is never cancelled.
+
 ## Promotion
 Fetch main again. It must be an ancestor of the exact successful candidate;
 otherwise integrate without overwriting CMS/user changes and revalidate.

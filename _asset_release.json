@@ -1,6 +1,6 @@
 {
   "assets": {
-    "assets/dn-below-fold.css": "1805fa34dddc8669f922eadd61eb0761cdd00c4710e45936d2bc77688b7253da",
+    "assets/dn-below-fold.css": "4446cdc9a3f4e015f7e340a8fd7cf0dc256b08319597b289ce8d6149491fb49f",
     "assets/dn-print.css": "f0c197abde8857c9474c07b7417c5344d4f799d4366a48f6eea522536f64c963",
     "assets/inline/analytics-loader.js": "498834b0097e16dabcabd31cc4c6d3f4881cb85e9a8de477f3ef0ebf7c99d33e",
     "assets/inline/dn-init.js": "85a2bde719cab2b1a3affafc226c8a322e8e780363799e1e6040516f35280941",
@@ -11,19 +11,19 @@
     "assets/tw-mini.css": "f5e913a3f65046c041652dd56a76b5cc1e285e8d81c282e6027b204155f745b1",
     "assets/web-vitals.iife.js": "77b2dfc9e065286d780c87f72b5cad08761346ff564ddd3f79102f4d4027e9a6",
     "blog/blog-article-footer.min.js": "bba8ab776c1cd1a766ccf32cc39012e2b9edee16a9f888e2178804536f572821",
-    "blog/blog-article-reading.min.js": "5552837d807f08d72060bdadcd6d6cb2957e0261960ad5f2189df3af8bcb7031",
+    "blog/blog-article-reading.min.js": "bb4f87ee5f8027765da5cf32666e830a2509550318cd70920d4287f47240bbf1",
     "blog/blog-article-visuals.min.js": "4026d3420e9755b54a6858f467867908afa30b82c0e2728c6fb8aeb9046f0473",
     "blog/blog-calculators.min.js": "97e6776da3c90453f31678a8265c0429d39d8627a163276182037cb77ca7098a",
     "blog/blog-diagrams.min.js": "986ab691d58f95edc500d75b5a96c14ea42477c3f46bc71280822a328737db6d",
     "blog/blog-hub.min.js": "65370d871b65c73b1edebcce4c42deaf3f67464483b8dbce6c2e6aa7061e027e",
-    "blog/blog-shared.min.js": "2df20c99ecd2126fc24ee2fc61d2bd8584e72b7571222ec0186af2afadf20256",
+    "blog/blog-shared.min.js": "d7a4a1b8de47b10bccb13fdd99616bfb61c3e4a759d313f322d5968eff240b0f",
     "blog/blog-support.min.js": "5a26abeb2cdf067d8a8e16978eb2f74dfee11966608d316602478dae4669a1e8"
   },
   "caches": {
-    "CACHE": "cd-v233",
-    "RUNTIME": "cd-runtime-v231"
+    "CACHE": "cd-v236",
+    "RUNTIME": "cd-runtime-v234"
   },
   "hash_format": "sha256-utf8-lf",
-  "version": "202610180300",
-  "worker_sha256": "6f679fe24cda2c56d15086c94df32dffeafa8652978078472e93d536be8f75c1"
+  "version": "202610180600",
+  "worker_sha256": "50fdb95f7138312710116092a78ce483708e1d2f4286f061ca34b8b9a6ab2a6e"
 }

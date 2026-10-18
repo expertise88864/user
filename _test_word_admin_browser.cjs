@@ -132,6 +132,10 @@ module.exports = async function checkWordAdmin(browser, options = {}) {
       assert.equal(await page.evaluate(()=>loadFile('blog/example.html')),false);
       assert.equal(await page.evaluate(()=>getCurrentEditorContent()),frozen,'failed article load keeps the surviving Word editor recoverable');
       const saving=page.evaluate(()=>DNEditorDraftBridge.save());
+      // Still awaited below. Until then, a failure in the steps in between closes the
+      // context and rejects this pending save; without a handler that rejection crashed
+      // Node first and hid the real failure behind "Target page ... has been closed".
+      saving.catch(()=>{});
       await page.waitForFunction(()=>SAVE_PENDING);
       await editor.locator('#intro').click();await editor.press('End');await editor.pressSequentially(' 存檔中繼續編輯');
       releaseSave();await saving;
