@@ -81,6 +81,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/exam"/>
   </url>
   <url>
+    <loc>https://chendermatologist.com/exam/concepts</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://chendermatologist.com/exam/concepts"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://chendermatologist.com/exam/concepts"/>
+  </url>
+  <url>
     <loc>https://chendermatologist.com/exam/fitz-1</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>

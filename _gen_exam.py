@@ -508,9 +508,9 @@ def toc_html(note: str | None, qs_count: int, *, mobile: bool = False, concepts:
 # chapter's own concepts; /exam/concepts lists all of them. Everything is static
 # HTML in collapsed <details>; exam.js only adds search, filter and paging.
 
-# Sample rollout (2026-10-18): only these chapter pages get a 「本章考點」 block
-# until the doctor approves the layout; the overview page always lists every concept.
-CONCEPT_CHAPTERS = {52}
+# Doctor approved the layout 2026-10-18: every chapter page that has study notes
+# (data/exam/notes/fitz-<n>.frag) gets a 「本章考點」 block. Chapters without notes
+# show none yet; their concepts are still listed on the overview page.
 CONCEPT_PAGE_SIZE = 50
 FLAG_LABELS = {"official_conflict": "官方答案有疑義"}
 
@@ -576,7 +576,7 @@ def concept_rule(data: dict) -> str:
 
 def chapter_concepts_html(data: dict, n: int, on_page: set[str]) -> tuple[str, int]:
     """「本章考點」 block of a chapter page and its concept count (0 = no block)."""
-    if n not in CONCEPT_CHAPTERS:
+    if n not in data["notes"]:
         return "", 0
     own = [c for c in data["concepts"] if c["ch"] == n]
     if not own:
