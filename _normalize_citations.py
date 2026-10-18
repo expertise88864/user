@@ -71,10 +71,13 @@ def parse_citation(li_html: str) -> dict | None:
 
     Returns None for category headers (list-style:none rows)."""
     text = strip_tags(li_html)
-    if not text or len(text) < 20:
+    if not text or len(text) < 10:
         return None
-    # Category header — short bold label, drop
-    if text.endswith(':') or len(text) < 30:
+    # Category header rows are recognised structurally (list-style:none in
+    # extract_citations) or by a trailing colon. Not by length: a restored
+    # Chinese reference such as 「臺灣皮膚科醫學會。白斑臨床治療共識. 2024.」
+    # is a complete citation in about 20 characters.
+    if text.endswith((':', '：')):
         return None
 
     citation: dict = {

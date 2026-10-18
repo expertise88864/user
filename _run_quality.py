@@ -358,6 +358,7 @@ CHECK_STEPS: list[list[str]] = [
     # the visible-text en-leak scan never looked at <head>.
     [PY, "_test_en_jsonld_cjk.py"],
     [PY, "_check_en_jsonld_cjk.py"],
+    [PY, "_test_citation_membership.py"],
     [PY, "_check_seo_signals.py"],
     # 2026-05-19 — Tier 2D guard: every blog article's H1 + lead
     # paragraph must render from raw HTML (not be JS-injected).
