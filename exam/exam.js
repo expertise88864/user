@@ -47,7 +47,7 @@
     store(WRONG_KEY, list);
   }
 
-  // 'chapter' | 'year' | 'book' | 'practice' | 'review' | 'hub' (set by _gen_exam.py).
+  // 'chapter' | 'year' | 'book' | 'practice' | 'review' | 'hub' | 'concepts' (set by _gen_exam.py).
   function pageKind() {
     var main = document.querySelector('[data-exam-page]');
     return main ? main.getAttribute('data-exam-page') : '';
@@ -1301,6 +1301,131 @@
     });
   }
 
+  // ---------------------------------------------------------- concept overview
+  // /exam/concepts: every concept is a static <li> (sorted by question count).
+  // This adds the search box, the chapter filter, the sort switch and
+  // 「載入更多」 paging; without JS the whole list stays visible. Filters are
+  // mirrored in the address (?kw=…&ch=…; not ?q=, which opens the site-wide search) so a filtered view can be linked.
+  function initConcepts(list) {
+    var tools = document.querySelector('[data-cx-tools]');
+    var wrap = document.querySelector('.cx-more-wrap');
+    var more = wrap && wrap.querySelector('.ex-more');
+    var empty = document.querySelector('.cx-empty');
+    if (!tools || !more) return;
+    var input = tools.querySelector('.cx-q');
+    var chapter = tools.querySelector('.cx-ch-select');
+    var sort = tools.querySelector('.cx-sort');
+    var status = tools.querySelector('.cx-status');
+    var page = Number(list.getAttribute('data-cx-page')) || 50;
+    var byCount = Array.prototype.slice.call(list.children);
+    var byChapter = byCount.map(function (li, i) {
+      return { li: li, ch: Number((li.getAttribute('data-ch') || '').split(' ')[0]) || 0, i: i };
+    }).sort(function (a, b) { return a.ch - b.ch || a.i - b.i; }).map(function (x) { return x.li; });
+    var text = null;  // lower-cased name / whole-item text, built on the first search
+    var matches = byCount;
+    var shown = 0;
+    function norm(s) { return String(s).toLowerCase().replace(/\s+/g, ' '); }
+    function texts(li) {
+      if (!text) {
+        text = new Map();
+        byCount.forEach(function (item) {
+          var name = item.querySelector('.cx-name');
+          text.set(item, { name: norm(name ? name.textContent : ''), all: norm(item.textContent) });
+        });
+      }
+      return text.get(li);
+    }
+    function showMore(count) {
+      var end = Math.min(shown + count, matches.length);
+      for (var i = shown; i < end; i++) matches[i].hidden = false;
+      shown = end;
+      wrap.hidden = shown >= matches.length;
+      if (!wrap.hidden) {
+        more.textContent = '載入更多（' + (shown + 1) + '–' + Math.min(shown + page, matches.length) +
+          '，共 ' + matches.length + ' 個）';
+      }
+    }
+    function apply() {
+      var q = norm(input.value.trim());
+      var ch = chapter.value;
+      var named = [];
+      var other = [];
+      (sort.value === 'ch' ? byChapter : byCount).forEach(function (li) {
+        if (ch && (' ' + li.getAttribute('data-ch') + ' ').indexOf(' ' + ch + ' ') < 0) return;
+        if (!q) { other.push(li); return; }
+        var t = texts(li);
+        // Concepts whose own name matches come first, then those matched in a 考法 sentence.
+        if (t.name.indexOf(q) >= 0) named.push(li);
+        else if (t.all.indexOf(q) >= 0) other.push(li);
+      });
+      matches = named.concat(other);
+      var frag = document.createDocumentFragment();
+      var inList = new Set(matches);
+      matches.forEach(function (li) { li.hidden = true; frag.appendChild(li); });
+      byCount.forEach(function (li) {
+        if (!inList.has(li)) { li.hidden = true; frag.appendChild(li); }
+      });
+      list.appendChild(frag);
+      shown = 0;
+      showMore(page);
+      empty.hidden = matches.length > 0;
+      var msg = '';
+      if (q || ch) {
+        msg = '找到 ' + matches.length + ' 個考點';
+        if (q && named.length && other.length) msg += '（名稱符合的 ' + named.length + ' 個排在前面）';
+      } else {
+        msg = '共 ' + matches.length + ' 個考點，依' + (sort.value === 'ch' ? '章節順序' : '考過的題數') + '排列';
+      }
+      status.textContent = msg;
+      try {
+        var params = new URLSearchParams();
+        if (input.value.trim()) params.set('kw', input.value.trim());
+        if (ch) params.set('ch', ch);
+        if (sort.value === 'ch') params.set('sort', 'ch');
+        var qs = params.toString();
+        history.replaceState(history.state, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash);
+      } catch (e) { /* replaceState unavailable: the filter still works */ }
+    }
+    var params = new URLSearchParams(window.location.search);
+    input.value = params.get('kw') || '';
+    if (params.get('ch') && chapter.querySelector('option[value="' + Number(params.get('ch')) + '"]')) {
+      chapter.value = String(Number(params.get('ch')));
+    }
+    if (params.get('sort') === 'ch') sort.value = 'ch';
+    var timer = 0;
+    input.addEventListener('input', function () {
+      clearTimeout(timer);
+      timer = setTimeout(apply, 150);
+    });
+    input.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') { clearTimeout(timer); apply(); }
+    });
+    chapter.addEventListener('change', apply);
+    sort.addEventListener('change', apply);
+    more.addEventListener('click', function () {
+      var first = matches[shown];
+      showMore(page);
+      if (wrap.hidden && first) {
+        var summary = first.querySelector('summary');  // the button is gone: keep focus in the list
+        if (summary) summary.focus();
+      }
+    });
+    // A link to #c-<concept> must show (and open) that concept even if it is on a later page.
+    function revealConcept() {
+      var id = window.location.hash.slice(1);
+      var target = id && /^c-[A-Za-z0-9-]+$/.test(id) ? document.getElementById(id) : null;
+      if (!target || target.parentNode !== list) return;
+      target.hidden = false;
+      var details = target.querySelector('details');
+      if (details) details.open = true;
+      target.scrollIntoView();
+    }
+    tools.hidden = false;
+    apply();
+    revealConcept();
+    window.addEventListener('hashchange', revealConcept);
+  }
+
   // Chapter pages: a link to #section must show it even if it sits in a
   // closed <details>; the :target highlight itself is plain CSS.
   function openDetails(target) {
@@ -1443,6 +1568,8 @@
     if (search && window.fetch) initSearch(search);
     var rank = document.getElementById('ex-rank');
     if (rank) initRank(rank);
+    var conceptList = document.getElementById('cx-all');
+    if (conceptList) initConcepts(conceptList);
     revealTarget();
     window.addEventListener('hashchange', revealTarget);
     document.querySelectorAll('.ex-mode').forEach(function (btn) {

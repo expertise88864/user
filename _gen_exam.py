@@ -10,10 +10,12 @@ Sources (hand-maintained):
   data/exam/search_aliases.json  chapter -> standard abbreviations for the hub search
   data/exam/timemachine.json   physician-approved 「考試當年 vs 現行觀念」 notes per question
                                (text is verbatim; validated by validate_timemachine)
+  data/exam/concepts/concepts.json  考點 (exam concepts), built by _import_exam_concepts.py
 
 Outputs (generated, never hand-edit):
   exam/index.html, exam/fitz-<n>.html, exam/year-<y>.html, exam/mckee.html,
-  exam/kantor.html, exam/review.html, exam/exam-data.json, exam/search-index.json
+  exam/kantor.html, exam/review.html, exam/concepts.html, exam/exam-data.json,
+  exam/search-index.json
 
 Pages reuse the normalized notes.html shell (head, header, footer), and the
 output is already in its final normalized form. REGEN_STEPS runs it twice:
@@ -95,9 +97,19 @@ def load() -> dict:
     errors = validate_timemachine(timemachine, {q["id"] for q in questions})
     if errors:
         raise SystemExit("timemachine.json is invalid:\n  " + "\n  ".join(errors))
+    concepts_path = DATA / "concepts" / "concepts.json"
+    concept_data = (json.loads(concepts_path.read_text(encoding="utf-8")) if concepts_path.exists()
+                    else {"_meta": {"rule": ""}, "concepts": []})
+    qids = {q["id"] for q in questions}
+    for c in concept_data["concepts"]:
+        unknown_q = [h["q"] for h in c["how"] if h["q"] not in qids]
+        if unknown_q or any(ch not in chapters for ch in c["chs"]):
+            raise SystemExit(f"concepts.json {c['id']}: unknown question/chapter {unknown_q or c['chs']}")
     return {"questions": questions, "tags": tags, "explanations": explanations,
             "chapters": chapters, "notes": notes, "links": links, "aliases": aliases,
-            "timemachine": timemachine}
+            "timemachine": timemachine,
+            "concepts": concept_data["concepts"], "concept_rule": concept_data["_meta"]["rule"],
+            "qmap": {q["id"]: q for q in questions}}
 
 
 # ---------------------------------------------------------------- time machine
@@ -478,13 +490,159 @@ def expand_marks(fragment: str, on_page: set[str]) -> str:
     return MARK.sub(repl, fragment)
 
 
-def toc_html(note: str | None, qs_count: int, *, mobile: bool = False) -> str:
-    items = [f'<li><a href="#{sid}">{title}</a></li>' for sid, title in SECTION.findall(note or "")]
+def toc_html(note: str | None, qs_count: int, *, mobile: bool = False, concepts: int = 0) -> str:
+    items = [f'<li class="ex-toc-cx"><a href="#concepts-h">本章考點（{concepts}）</a></li>'] if concepts else []
+    items += [f'<li><a href="#{sid}">{title}</a></li>' for sid, title in SECTION.findall(note or "")]
     items.append(f'<li class="ex-toc-qs"><a href="#qs-h">考題（{qs_count} 題）</a></li>')
     cls, state, label = (("ex-toc ex-toc-mobile", "", "本章目錄（展開式）") if mobile
                          else ("ex-toc ex-toc-side", " open", "本章目錄"))
     return (f'<details class="{cls}"{state}><summary>本章目錄</summary>'
             f'<nav aria-label="{label}"><ol>{"".join(items)}</ol></nav></details>')
+
+
+# ---------------------------------------------------------------- concepts (考點)
+# data/exam/concepts/concepts.json lists every concept with one 考法 sentence per
+# question that tested it and the misconceptions its wrong options relied on
+# (counts already filtered by _import_exam_concepts.py). Chapter pages show the
+# chapter's own concepts; /exam/concepts lists all of them. Everything is static
+# HTML in collapsed <details>; exam.js only adds search, filter and paging.
+
+# Sample rollout (2026-10-18): only these chapter pages get a 「本章考點」 block
+# until the doctor approves the layout; the overview page always lists every concept.
+CONCEPT_CHAPTERS = {52}
+CONCEPT_PAGE_SIZE = 50
+FLAG_LABELS = {"official_conflict": "官方答案有疑義"}
+
+
+def concept_name(c: dict) -> str:
+    """「中文（English）」: the English name follows in a quieter style."""
+    en = f"<small>（{esc(c['en'])}）</small>" if c["en"] else ""
+    return f'<span class="cx-name">{esc(c["zh"])}{en}</span>'
+
+
+def qid_href(qid: str, on_page: set[str]) -> str:
+    return f"#q-{qid}" if qid in on_page else f"/exam/year-{qid.split('-')[0]}#q-{qid}"
+
+
+def concept_item(c: dict, data: dict, *, on_page: set[str], current_chapter: int | None,
+                 overview: bool) -> str:
+    """One concept as a collapsed <details>. The overview repeats this 2,000+ times,
+    so the markup is terse: inside .cx-meta / .cx-how / .cx-traps, <b> <i> <em>
+    are styled chips (see EXAM_STYLE), not emphasis."""
+    qs = data["qmap"]
+    n_traps = sum(t["n"] for t in c["traps"])
+    meta = f'<b>{len(c["how"])} 題</b>'
+    if overview:
+        meta += f'<i>Ch.{c["ch"]}</i>'
+    if n_traps:
+        meta += f"<em>陷阱 {n_traps} 次</em>"
+    meta += f'<span>{"・".join(str(y) for y in c["years"])} 年</span>'
+    how = []
+    for h in sorted(c["how"], key=lambda h: h["q"]):
+        q = qs[h["q"]]
+        tag = "<em>誘答</em>" if h.get("trap") else ""
+        flags = "".join(f'<em class="cx-flag">{esc(FLAG_LABELS.get(f, f))}</em>' for f in h.get("flags", []))
+        how.append(f'<li><a href="{qid_href(h["q"], on_page)}">{q["year"]} 年第 {q["number"]} 題</a>'
+                   f'<b>{esc("".join(h["k"]))}</b>{tag}{flags}<span>{esc(h["t"])}</span></li>')
+    parts = f'<ul class="cx-how" aria-label="考法">{"".join(how)}</ul>'
+    if c["traps"]:
+        traps = "".join(
+            f'<li>{esc(t["desc"])}<b>{t["n"]} 次{"（%d 題）" % t["nq"] if t["nq"] != t["n"] else ""}</b></li>'
+            for t in c["traps"])
+        parts += f'<p class="cx-h">常被當成陷阱的錯誤觀念</p><ul class="cx-traps">{traps}</ul>'
+    chips = []
+    for ch in c["chs"]:
+        # The overview names only the concept's own chapter in full (the filter lists every title).
+        label = esc(f"Ch.{ch} {data['chapters'][ch]['title']}" if ch == c["ch"] or not overview else f"Ch.{ch}")
+        if ch == c["ch"]:
+            label = f"<strong>{label}</strong>"
+        if ch == current_chapter or ch not in CHAPTER_PAGES:
+            chips.append(label)
+        else:
+            chips.append(f'<a href="/exam/fitz-{ch}">{label}</a>')
+    parts += f'<p class="cx-chs">牽涉章節：{"、".join(chips)}</p>'
+    # data-ch: every chapter involved, the concept's own chapter first.
+    chs = [c["ch"]] + [ch for ch in c["chs"] if ch != c["ch"]]
+    attrs = f' data-ch="{" ".join(map(str, chs))}"' if overview else ""
+    return (f'<li id="c-{c["id"]}"{attrs}><details><summary>{concept_name(c)}'
+            f'<span class="cx-meta">{meta}</span></summary><div>{parts}</div></details></li>')
+
+
+def concept_rule(data: dict) -> str:
+    return f'<p class="cx-rule"><strong>統計方式</strong>：{esc(data["concept_rule"])}</p>'
+
+
+def chapter_concepts_html(data: dict, n: int, on_page: set[str]) -> tuple[str, int]:
+    """「本章考點」 block of a chapter page and its concept count (0 = no block)."""
+    if n not in CONCEPT_CHAPTERS:
+        return "", 0
+    own = [c for c in data["concepts"] if c["ch"] == n]
+    if not own:
+        return "", 0
+    items = "".join(concept_item(c, data, on_page=on_page, current_chapter=n, overview=False) for c in own)
+    # Concepts of other chapters that this page's own questions tested.
+    also = []
+    for c in data["concepts"]:
+        if c["ch"] != n:
+            here = sum(1 for h in c["how"] if h["q"] in on_page)
+            if here:
+                also.append((c, here))
+    also_html = ""
+    if also:
+        lis = "".join(
+            f'<li><a href="/exam/concepts#c-{c["id"]}">{concept_name(c)}</a>'
+            f'<span class="cx-meta"><i>Ch.{c["ch"]}</i><span>本章 {here} 題</span></span></li>'
+            for c, here in sorted(also, key=lambda x: (-x[1], x[0]["ch"], x[0]["id"])))
+        also_html = (f'<details class="cx-also"><summary>本章考題也考到的其他章考點（{len(also)}）</summary>'
+                     f'<ul>{lis}</ul></details>')
+    total_q = len({h["q"] for c in own for h in c["how"]})
+    html_out = (
+        '<section class="cx-block" aria-labelledby="concepts-h">'
+        f'<h2 id="concepts-h" class="ex-h2">本章考點</h2>'
+        f'<p class="ex-meta">本章 {len(own)} 個考點，出現在 {total_q} 題，依考過的題數排序。'
+        '點開考點可看到每一次的考法；題號可直接跳到該題。'
+        f'<a href="/exam/concepts?ch={n}">所有章節的考點請見考點總覽</a>。</p>'
+        f'{concept_rule(data)}<ol class="cx-list">{items}</ol>{also_html}</section>'
+    )
+    return html_out, len(own)
+
+
+def concepts_page(shell, data, by_chapter) -> str:
+    concepts = data["concepts"]
+    items = "".join(concept_item(c, data, on_page=set(), current_chapter=None, overview=True) for c in concepts)
+    per_chapter = Counter(ch for c in concepts for ch in c["chs"])
+    options = "".join(
+        f'<option value="{ch}">Ch.{ch} {esc(data["chapters"][ch]["title"])}（{per_chapter[ch]}）</option>'
+        for ch in sorted(per_chapter))
+    n_q = len({h["q"] for c in concepts for h in c["how"]})
+    multi = sum(1 for c in concepts if len(c["how"]) >= 2)
+    body = (
+        '<p class="ex-kicker">考點</p><h1 class="ex-h1">考點總覽</h1>'
+        f'<p class="ex-lead">把 101–115 年 {n_q} 題拆成 {len(concepts)} 個考點，其中 {multi} 個考過兩題以上。'
+        '預設依考過的題數排序，考得多的排前面；點開考點可看到每一次的考法、牽涉的章節，'
+        '以及常被拿來當陷阱的錯誤觀念。</p>'
+        f'{NOTICE}{concept_rule(data)}'
+        '<div class="cx-tools" data-cx-tools hidden>'
+        '<label class="ex-search-label" for="cx-q">搜尋考點（中文、英文或考法）</label>'
+        '<input id="cx-q" class="ex-search-input cx-q" type="search" autocomplete="off" autocapitalize="off" '
+        'spellcheck="false" enterkeyhint="search" placeholder="例如 pemphigus、Dsg1、光敏感" aria-controls="cx-all">'
+        '<div class="cx-filters">'
+        '<label class="ex-check">章節 <select class="ex-select cx-ch-select" aria-label="依章節篩選" aria-controls="cx-all">'
+        f'<option value="">全部章節</option>{options}</select></label>'
+        '<label class="ex-check">排序 <select class="ex-select cx-sort" aria-label="排序方式" aria-controls="cx-all">'
+        '<option value="n">考過的題數</option><option value="ch">章節順序</option></select></label></div>'
+        '<p class="cx-status" role="status" aria-live="polite"></p></div>'
+        f'<ol class="cx-list" id="cx-all" data-cx-page="{CONCEPT_PAGE_SIZE}">{items}</ol>'
+        '<p class="ex-pending cx-empty" hidden>沒有符合的考點，請換個關鍵字或章節。</p>'
+        '<div class="ex-more-wrap cx-more-wrap" hidden>'
+        '<button type="button" class="ex-more" aria-controls="cx-all">載入更多</button></div>'
+    )
+    title = "皮膚科專科醫師考試考點總覽"
+    desc = (f"皮膚科專科醫師甄審筆試 101–115 年考題拆解的 {len(concepts)} 個考點，依出題次數排序，"
+            "列出每次的考法、牽涉的 Fitzpatrick 章節與常見陷阱選項。")
+    return page(shell, path="/exam/concepts", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
+                description=desc, og_title=title, crumbs=[("考點總覽", "/exam/concepts")],
+                jsonld_type="CollectionPage", body=body, page_kind="concepts")
 
 
 NOTES_TOOLS = (
@@ -509,13 +667,14 @@ def chapter_page(shell, data, chapter: dict, qs: list[dict]) -> str:
     else:
         notes_html = '<section class="ex-notes"><h2 class="ex-h2">重點整理</h2><p class="ex-pending">這一章的重點尚未整理。</p></section>'
     year_text = "、".join(f"{y} 年 {c} 題" for y, c in sorted(years.items()))
+    concepts_html, n_concepts = chapter_concepts_html(data, n, on_page)
     body = (
         f'<p class="ex-kicker">Fitzpatrick 9e · {esc(chapter["part"].title() if chapter["part"] else "")}</p>'
         f'<h1 class="ex-h1">Ch.{n} {esc(chapter["title"])}</h1>'
         f'<p class="ex-meta">原書 p.{chapter["pageStart"]}–{chapter["pageEnd"]} · 考題共 {len(qs)} 題'
         f'（已有詳解 {explained} 題）</p>'
         f'<p class="ex-meta">{esc(year_text)}</p>{NOTICE}{links_html(data["links"].get(n))}'
-        f'{toc_html(note, len(qs), mobile=True)}{notes_html}'
+        f'{toc_html(note, len(qs), mobile=True, concepts=n_concepts)}{concepts_html}{notes_html}'
         f'<section aria-labelledby="qs-h"><h2 id="qs-h" class="ex-h2">考題</h2>{MODE_BAR}'
         + "".join(question_html(q, data, current_chapter=n) for q in qs)
         + "</section>"
@@ -525,7 +684,8 @@ def chapter_page(shell, data, chapter: dict, qs: list[dict]) -> str:
             f"，整理 101–115 年考題 {len(qs)} 題" + ("與重點整理" if note else "") + "。")
     return page(shell, path=f"/exam/fitz-{n}", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
                 description=desc, og_title=title, crumbs=[(f"Ch.{n}", f"/exam/fitz-{n}")],
-                jsonld_type="WebPage", body=body, page_kind="chapter", toc=toc_html(note, len(qs)))
+                jsonld_type="WebPage", body=body, page_kind="chapter",
+                toc=toc_html(note, len(qs), concepts=n_concepts))
 
 
 def year_page(shell, data, year: int, qs: list[dict]) -> str:
@@ -695,6 +855,11 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
         f'<ol class="ex-refs">{refs}</ol>{NOTICE}'
         '<h2 class="ex-h2">考古卷</h2>'
         '<p class="ex-meta"><a class="ex-cta" href="/exam/practice">自選年份／隨機出題</a></p>'
+        + (('<h2 class="ex-h2">考點總覽</h2>'
+            f'<p class="ex-meta">把歷年考題拆成 {len(data["concepts"])} 個考點，依考過的題數排序，'
+            '列出每次的考法、牽涉的章節與常見陷阱；可搜尋、依章節篩選。</p>'
+            '<p class="ex-meta"><a class="ex-cta" href="/exam/concepts">看考點總覽</a></p>')
+           if data["concepts"] else "") +
         '<h2 class="ex-h2">依章節瀏覽與讀書進度</h2>'
         '<p class="ex-meta">已做題數、正確率（以每題最近一次作答計算）與「課本已讀完」只存在這台裝置的瀏覽器，'
         '不同電腦或手機不會同步。正確率低於 60% 以紅字標示。</p>'
@@ -994,6 +1159,8 @@ def build() -> dict[str, str]:
         files[f"{b}.html"] = book_page(shell, data, b, qs)
     files["practice.html"] = practice_page(shell, by_year)
     files["review.html"] = review_page(shell)
+    if data["concepts"]:
+        files["concepts.html"] = concepts_page(shell, data, by_chapter)
     files["exam-data.json"] = client
     files["search-index.json"] = index
     return files
@@ -1085,6 +1252,8 @@ EXAM_STYLE = """<style data-exam-style>
 .ex-tm-same{background:#dcfce7;color:#14532d}.ex-tm-diff{background:#fee2e2;color:#7f1d1d}
 .ex-tm-src-h{font-weight:700;font-size:12.5px;color:#1e3a8a}.ex-tm .ex-sources a{color:#1d4ed8}
 @media (max-width:560px){.ex-tm-rows{grid-template-columns:minmax(0,1fr);gap:0}.ex-tm-rows dd{margin-bottom:6px}}
+/* a long McKee reference inside the notes must wrap, or it widens the page on phones */
+.ex-note .ex-ref{white-space:normal;overflow-wrap:anywhere}
 .ex-links{border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin:14px 0;background:#fff}
 .ex-links ul{margin:4px 0 8px;padding-left:20px;font-size:14px;line-height:1.8}.ex-links a{color:var(--teal-deep);text-decoration:underline;text-underline-offset:2px}.ex-links-name{font-weight:700;font-size:13.5px;margin:8px 0 0}
 .ex-progress-bar{flex-wrap:wrap;gap:10px;align-items:center}
@@ -1222,6 +1391,63 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 :root[data-theme="dark"] .ex-resume{background:#e8e2d6;color:#16140f}
 :root[data-theme="dark"] .ex-resume button{color:#0c5159}
 :root[data-theme="dark"] .ex-resume .ex-resume-close{color:#16140f}
+.cx-rule{font-size:12.5px;line-height:1.75;color:var(--ink-2);background:#f6f3ee;border-radius:8px;padding:6px 10px;margin:8px 0 12px}
+.cx-list{list-style:none;padding:0;margin:10px 0}
+.cx-list>li{content-visibility:auto;contain-intrinsic-size:auto 56px;scroll-margin-top:80px}
+.cx-list>li[hidden],.cx-tools[hidden],.cx-empty[hidden]{display:none}
+.cx-list details{border:1px solid var(--border);border-radius:12px;background:#fff;margin:8px 0}
+.cx-list summary{cursor:pointer;list-style:none;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:10px 14px 10px 32px;position:relative}
+.cx-list summary::-webkit-details-marker{display:none}
+.cx-list summary::before{content:"";position:absolute;left:14px;top:17px;border:5px solid transparent;border-left:7px solid #4d6358;border-right:0;transition:transform .15s}
+.cx-list details[open]>summary::before{transform:rotate(90deg)}
+.cx-list details[open]>summary{border-bottom:1px dashed var(--border)}
+.cx-list details>div{padding:2px 14px 12px}
+.cx-name{flex:1 1 18em;min-width:0;font-weight:700;font-size:14.5px;line-height:1.65;overflow-wrap:anywhere}
+.cx-name small{font-weight:500;font-size:13px;color:var(--ink-2)}
+.cx-meta{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px 6px;font-size:12px;color:var(--muted)}
+.cx-meta b,.cx-meta i,.cx-meta em{font-style:normal;font-weight:700;border-radius:9999px;padding:1px 8px;white-space:nowrap}
+.cx-meta b{background:#e3efe9;color:#0c5159}
+.cx-meta i{background:#f1ece4;color:#4d6358}
+.cx-meta em{background:#fee2e2;color:#7f1d1d}
+.cx-meta span{white-space:nowrap}
+.cx-h{font-size:12.5px;font-weight:700;color:#0c5159;margin:10px 0 4px}
+.cx-how,.cx-traps{list-style:none;padding:0;margin:0}
+.cx-how li{font-size:13.5px;line-height:1.75;padding:6px 0;border-bottom:1px solid var(--line)}
+.cx-how a{font-weight:700;color:var(--teal-deep);margin-right:6px;white-space:nowrap}
+.cx-how b{display:inline-block;font-size:11.5px;border:1px solid var(--border);border-radius:6px;padding:0 6px;margin-right:6px;line-height:1.6}
+.cx-how em{display:inline-block;font-style:normal;font-size:11px;font-weight:700;border-radius:6px;padding:0 6px;margin-right:6px;line-height:1.7;background:#fee2e2;color:#7f1d1d}
+.cx-how em.cx-flag{background:#fef3c7;color:#854d0e}
+.cx-how span{display:block;overflow-wrap:anywhere}
+.cx-traps li{border-left:3px solid #f87171;background:#fef5f5;border-radius:6px;padding:5px 10px;margin:5px 0;font-size:13.5px;line-height:1.75;overflow-wrap:anywhere}
+.cx-traps b{color:#b91c1c;white-space:nowrap;margin-left:8px}
+.cx-chs{font-size:12.5px;color:var(--ink-2);margin:10px 0 0;line-height:1.8}
+.cx-chs a{color:var(--teal-deep)}
+.cx-also{border:1px solid var(--border);border-radius:12px;background:#fff;padding:8px 14px;margin:10px 0}
+.cx-also summary{cursor:pointer;font-weight:700;font-size:14px}
+.cx-also ul{list-style:none;padding:0;margin:6px 0 0}
+.cx-also li{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;padding:5px 0;border-top:1px solid var(--line);font-size:13.5px}
+.cx-also a{flex:1 1 16em;min-width:0;color:var(--teal-deep);text-decoration:none}
+.cx-also .cx-name{font-size:13.5px}
+.cx-tools{margin:16px 0 8px}
+.cx-filters{display:flex;flex-wrap:wrap;gap:6px 4px;margin:10px 0 0}
+.cx-filters .ex-select{max-width:min(100%,22rem)}
+.cx-filters .ex-check{flex-wrap:wrap;max-width:100%}
+.cx-status{font-size:13px;color:var(--ink-2);margin:8px 0 0}
+.cx-status:empty{display:none}
+.ex-toc-cx{font-weight:700;border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:6px}
+:root[data-theme="dark"] .cx-rule{background:#24211c;color:#d6d3cd}
+:root[data-theme="dark"] .cx-list details,:root[data-theme="dark"] .cx-also{background:#24211c;border-color:#3a352c}
+:root[data-theme="dark"] .cx-list details[open]>summary,:root[data-theme="dark"] .cx-how li,:root[data-theme="dark"] .cx-also li,:root[data-theme="dark"] .cx-how b{border-color:#3a352c}
+:root[data-theme="dark"] .cx-list summary::before{border-left-color:#a4b5a8}
+:root[data-theme="dark"] .cx-name small,:root[data-theme="dark"] .cx-chs{color:#c9c3b8}
+:root[data-theme="dark"] .cx-meta b{background:#1f3a33;color:#bfe3d6}
+:root[data-theme="dark"] .cx-meta i{background:#3a352c;color:#cfe0d6}
+:root[data-theme="dark"] .cx-meta em,:root[data-theme="dark"] .cx-how em{background:#7f1d1d;color:#fee2e2}
+:root[data-theme="dark"] .cx-how em.cx-flag{background:#332a14;color:#fde68a}
+:root[data-theme="dark"] .cx-h{color:#a4d4c4}
+:root[data-theme="dark"] .cx-how a,:root[data-theme="dark"] .cx-chs a,:root[data-theme="dark"] .cx-also a{color:#a4b5a8}
+:root[data-theme="dark"] .cx-traps li{background:rgba(127,29,29,.3);border-left-color:#b45454}
+:root[data-theme="dark"] .cx-traps b{color:#fca5a5}
 </style>
 """
 
