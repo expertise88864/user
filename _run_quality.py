@@ -182,6 +182,14 @@ REGEN_STEPS: list[list[str]] = [
     # nav landmarks - breadcrumb + related-articles - and each needs a unique
     # accessible name). Idempotent, additive. Runs after EN gen.
     [PY, "_normalize_breadcrumb_aria.py"],
+    # 2026-10-18 - make every /en JSON-LD block English (citation/isBasedOn
+    # names via the zh reference list's data-en, related-article titles,
+    # author/keywords/glossary @id) and rebuild /en isBasedOn from the final zh
+    # citation graph so ONE regeneration settles it (isBasedOn used to need two
+    # runs because _normalize_is_based_on.py runs after _gen_en_pages.py).
+    # Must stay after every step that writes /en JSON-LD and before
+    # _gen_ai_faq.py, which aggregates the /en FAQPage blocks.
+    [PY, "_localize_en_jsonld.py"],
     # 2026-06-23 - aggregate every article's data-faq-auto FAQPage Q&A into a
     # single static /ai/faq.json for AI answer engines + RAG. Runs LAST so all
     # FAQPage blocks (zh + EN mirror) already exist. Deterministic (date from
@@ -346,6 +354,10 @@ CHECK_STEPS: list[list[str]] = [
     # Chinese into English on 53 zh articles; English belongs in data-en only.
     [PY, "_test_zh_english_prose.py"],
     [PY, "_check_zh_english_prose.py"],
+    # 2026-10-18 — /en structured data must be English (alternateName exempt);
+    # the visible-text en-leak scan never looked at <head>.
+    [PY, "_test_en_jsonld_cjk.py"],
+    [PY, "_check_en_jsonld_cjk.py"],
     [PY, "_check_seo_signals.py"],
     # 2026-05-19 — Tier 2D guard: every blog article's H1 + lead
     # paragraph must render from raw HTML (not be JS-injected).
