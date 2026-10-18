@@ -702,6 +702,8 @@
     } else {
       reveal.appendChild(el('p', 'ex-pending', '詳解尚未整理。'));
     }
+    // Last in the reveal, so quiz mode hides it with the answer (as on the static pages).
+    if (q.tm) reveal.appendChild(timeMachineBlock(q.tm));
     card.appendChild(reveal);
     wireQuestion(card);
     return card;
@@ -724,25 +726,46 @@
     }
     return p;
   }
+  function sourceList(sources) {
+    var ul = el('ul', 'ex-sources');
+    sources.forEach(function (src) {
+      var li = el('li');
+      var a = richText('a', null, src.title);
+      a.href = src.url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      li.appendChild(a);
+      li.appendChild(document.createTextNode((src.year ? '（' + src.year + '）' : '') + (src.pmid ? ' PMID ' + src.pmid : '')));
+      ul.appendChild(li);
+    });
+    return ul;
+  }
   function disputeBlock(d) {
     var box = el('div', 'ex-dispute');
     box.appendChild(el('p', 'ex-dispute-h', '⚠ 疑義題 · ' + (DISPUTE_KINDS[d.kind] || '疑義')));
     box.appendChild(labelled(d.exam));
     if (d.current) box.appendChild(labelled(d.current));
-    if (d.sources && d.sources.length) {
-      var ul = el('ul', 'ex-sources');
-      d.sources.forEach(function (src) {
-        var li = el('li');
-        var a = richText('a', null, src.title);
-        a.href = src.url;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        li.appendChild(a);
-        li.appendChild(document.createTextNode((src.year ? '（' + src.year + '）' : '') + (src.pmid ? ' PMID ' + src.pmid : '')));
-        ul.appendChild(li);
-      });
-      box.appendChild(ul);
-    }
+    if (d.sources && d.sources.length) box.appendChild(sourceList(d.sources));
+    return box;
+  }
+  // 「考試當年 vs 現行觀念」, same markup as _gen_exam.timemachine_html.
+  var TM_DIFF = '依現行觀念答案會不同';
+  function timeMachineBlock(tm) {
+    var box = el('div', 'ex-tm');
+    box.appendChild(el('p', 'ex-tm-h', '考試當年 vs 現行觀念'));
+    var dl = el('dl', 'ex-tm-rows');
+    [['考試當年', tm.then], ['現行觀念', tm.now], ['何時改變', tm.changed]].forEach(function (row) {
+      dl.appendChild(el('dt', null, row[0]));
+      dl.appendChild(richText('dd', null, row[1]));
+    });
+    dl.appendChild(el('dt', null, '對答案的影響'));
+    var impact = richText('dd', null, tm.answer_impact.note);
+    impact.insertBefore(el('span', 'ex-tm-level ' + (tm.answer_impact.level === TM_DIFF ? 'ex-tm-diff' : 'ex-tm-same'),
+      tm.answer_impact.level), impact.firstChild);
+    dl.appendChild(impact);
+    box.appendChild(dl);
+    box.appendChild(el('p', 'ex-tm-src-h', '參考文獻'));
+    box.appendChild(sourceList(tm.sources || []));
     return box;
   }
 
@@ -803,6 +826,16 @@
             back += '<br>' + htmlText(src.title + (src.year ? '（' + src.year + '）' : '') + ' ' + src.url);
           });
         }
+      }
+      var tm = q.tm;
+      if (tm) {
+        back += '<br>' + htmlText('考試當年 vs 現行觀念');
+        back += '<br>' + htmlText('考試當年：' + tm.then) + '<br>' + htmlText('現行觀念：' + tm.now)
+          + '<br>' + htmlText('何時改變：' + tm.changed)
+          + '<br>' + htmlText('對答案的影響（' + tm.answer_impact.level + '）：' + tm.answer_impact.note);
+        (tm.sources || []).forEach(function (src) {
+          back += '<br>' + htmlText(src.title + (src.year ? '（' + src.year + '）' : '') + ' ' + src.url);
+        });
       }
       return csvCell(front) + ',' + csvCell(back);
     }).join('\n');

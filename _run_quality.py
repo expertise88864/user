@@ -231,6 +231,9 @@ CHECK_STEPS: list[list[str]] = [
     # exam.js progress: per-chapter statistics vs. site-wide records, on the
     # real generated pages (parse5 DOM + in-memory localStorage).
     ["node", "--test", "_test_exam_progress.mjs"],
+    # 「考試當年 vs 現行觀念」 data rules (qid, sources with urls, impact level,
+    # no simplified characters) and placement inside the answer reveal.
+    [PY, "-m", "unittest", "_test_exam_timemachine"],
     [PY, "_test_site_settings_data.py"],
     [PY, "-m", "unittest", "_test_site_settings_render"],
     [PY, "-m", "unittest", "_test_site_settings_delivery"],

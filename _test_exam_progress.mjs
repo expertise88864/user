@@ -202,7 +202,7 @@ class FakeStorage {
 }
 
 // Open a page: a fresh window + document over the shared storage, exam.js run.
-function open(storage, path, { confirm = () => true } = {}) {
+function open(storage, path, { confirm = () => true, fetch } = {}) {
   const file = path === '/exam' ? 'exam/index.html' : path.slice(1) + '.html';
   const document = buildDocument(pageTree(file));
   const confirms = [];
@@ -214,7 +214,7 @@ function open(storage, path, { confirm = () => true } = {}) {
     confirm: message => { confirms.push(message); return confirm(message); },
     scrollTo() {}, requestAnimationFrame() { return 0; },
     setTimeout() { return 0; }, clearTimeout() {}, setInterval() { return 0; }, clearInterval() {},
-    Date, JSON, Math, Object, Array, String, Number, RegExp, Error,
+    Date, JSON, Math, Object, Array, String, Number, RegExp, Error, fetch,
   };
   window.window = window;
   vm.runInNewContext(SOURCE, window, { filename: 'exam/exam.js' });
@@ -430,4 +430,35 @@ test('old overall records are not assigned to any chapter', () => {
   assert.equal(graded(open(storage, '/exam/fitz-1'), SHARED), null);
   assert.equal(graded(open(storage, '/exam/year-108'), SHARED), 'right');
   assert.deepEqual(JSON.parse(storage.getItem('dnExamProgress'))[SHARED], [1, t, SHARED_KEY], 'kept as is');
+});
+
+// 「考試當年 vs 現行觀念」 on the client-rendered wrong notebook: the same block as
+// the static pages, last inside .ex-reveal (hidden with the answer in quiz mode).
+test('the wrong notebook renders the time machine box inside the reveal', async () => {
+  const data = JSON.parse(fs.readFileSync('exam/exam-data.json', 'utf8'));
+  const fetch = () => Promise.resolve({ ok: true, json: () => Promise.resolve(data) });
+  const storage = new FakeStorage({ dnExamWrong: JSON.stringify(['101-04', '108-44']) });
+  const page = open(storage, '/exam/review', { fetch });
+  await new Promise(resolve => setImmediate(resolve));
+  const card = page.document.getElementById('q-101-04');
+  assert.ok(card, 'the wrong question is rendered');
+  const boxes = card.querySelectorAll('.ex-reveal .ex-tm');
+  assert.equal(boxes.length, 1);
+  const box = boxes[0];
+  assert.equal(box.parentNode.className, 'ex-reveal');
+  assert.equal(box.parentNode.childNodes[box.parentNode.childNodes.length - 1], box, 'last in the reveal');
+  assert.deepEqual(box.querySelectorAll('dt').map(dt => dt.textContent), ['考試當年', '現行觀念', '何時改變', '對答案的影響']);
+  const tm = data.questions.find(q => q.id === '101-04').tm;
+  const dd = box.querySelectorAll('dd').map(n => n.textContent);
+  assert.deepEqual(dd.slice(0, 3), [tm.then, tm.now, tm.changed]);
+  assert.equal(dd[3], tm.answer_impact.level + tm.answer_impact.note);
+  assert.ok(box.querySelector('.ex-tm-level.ex-tm-diff'));
+  const links = box.querySelectorAll('.ex-sources a');
+  assert.equal(links.length, tm.sources.length);
+  for (const a of links) {
+    assert.equal(a.target, '_blank');
+    assert.equal(a.rel, 'noopener noreferrer');
+  }
+  // A question without an entry has no box.
+  assert.equal(page.document.getElementById('q-108-44').querySelectorAll('.ex-tm').length, 0);
 });

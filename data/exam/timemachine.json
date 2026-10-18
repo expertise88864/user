@@ -1,0 +1,249 @@
+{
+ "101-04": {
+  "then": "101 年（2012）考題把「發病小於 2 歲」視為蘭格罕細胞組織球增生症（Langerhans cell histiocytosis, LCH）的不良預後因子（④），官方答案 B（②④）。這是舊的風險分組：國際組織球學會（Histiocyte Society）LCH-II 試驗（1996–2001）仍以「小於 2 歲」或危險器官（risk organ）侵犯定義高危險組。",
+  "now": "國際組織球學會說明 LCH-II 的多變項分析中，診斷時小於 2 歲沒有預後意義，高危險組只需依危險器官侵犯定義；LCH-II 中小於 2 歲但無危險器官侵犯者全數存活。LCH-III 起只依危險器官侵犯分組。2013 年指引列出的危險器官為造血系統、脾、肝，有危險器官侵犯者才有死亡風險，治療反應差者預後特別差。",
+  "changed": "2001 年 4 月 LCH-III 試驗開始收案起（依 LCH-II 結果修訂風險分組）。",
+  "answer_impact": {
+   "level": "依現行觀念答案會不同",
+   "note": "依現行風險分組④不再是不良預後因子，B 不再正確。2013 年指引以危險器官侵犯與治療反應判斷預後，①（肉芽腫反應）與③（尿崩症）都不在其中；不論②是否成立，五個選項都沒有正確組合，本題將沒有正確選項。"
+  },
+  "sources": [
+   {
+    "title": "Histiocyte Society – LCH-II (1996-2001)（Wayback Machine 2025-03-15 存檔，原頁已 404）",
+    "year": 2025,
+    "url": "http://web.archive.org/web/20250315101944/https://histiocytesociety.org/LCH-II"
+   },
+   {
+    "title": "Improved outcome in multisystem Langerhans cell histiocytosis is associated with therapy intensification.",
+    "year": 2008,
+    "pmid": "18089850",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18089850/"
+   },
+   {
+    "title": "ClinicalTrials.gov NCT00276757: Treatment Protocol of the Third International Study For Langerhans Cell Histiocytosis (LCH-III)",
+    "year": 2001,
+    "url": "https://clinicaltrials.gov/study/NCT00276757"
+   },
+   {
+    "title": "Langerhans cell histiocytosis (LCH): guidelines for diagnosis, clinical work-up, and treatment for patients till the age of 18 years.",
+    "year": 2013,
+    "pmid": "23109216",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23109216/"
+   }
+  ]
+ },
+ "104-25": {
+  "then": "104 年（2015）考題 A 選項（依官方答案視為正確）：高劑量口服類固醇超過兩週者，三個月內不建議接種活性疫苗，與 1993／1994 年 ACIP 版本的「至少 3 個月」相同。",
+  "now": "現行美國疾病管制與預防中心（CDC）／預防接種諮詢委員會（Advisory Committee on Immunization Practices, ACIP）建議：高劑量全身性類固醇使用 14 天以上者，停藥後至少 1 個月再接種活性病毒疫苗（live virus vaccine）。部分回顧文獻（Liu 2013）仍寫至少 3 個月。",
+  "changed": "2002 年 ACIP／AAFP 一般建議起，由停藥後 3 個月改為 1 個月。",
+  "answer_impact": {
+   "level": "不影響",
+   "note": "A 的三個月只是比現行建議保守；本題問錯誤敘述，官方答案 D（triamcinolone 半衰期短）不受影響。"
+  },
+  "sources": [
+   {
+    "title": "Recommendations of the Advisory Committee on Immunization Practices (ACIP): Use of Vaccines and Immune Globulins in Persons with Altered Immunocompetence. MMWR 1993;42(No. RR-4)",
+    "year": 1993,
+    "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/00023141.htm"
+   },
+   {
+    "title": "General Recommendations on Immunization: Recommendations of the ACIP. MMWR 1994;43(No. RR-1)",
+    "year": 1994,
+    "url": "https://www.cdc.gov/mmwr/PDF/rr/rr4301.pdf"
+   },
+   {
+    "title": "General Recommendations on Immunization: Recommendations of the ACIP and the American Academy of Family Physicians (AAFP). MMWR 2002;51(No. RR-2)",
+    "year": 2002,
+    "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/rr5102a1.htm"
+   },
+   {
+    "title": "General Recommendations on Immunization. MMWR 2011;60(No. RR-2)",
+    "year": 2011,
+    "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/rr6002a1.htm"
+   },
+   {
+    "title": "CDC. General Best Practice Guidelines for Immunization: Altered Immunocompetence",
+    "year": 2026,
+    "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/altered-immunocompetence.html"
+   },
+   {
+    "title": "A practical guide to the monitoring and management of the complications of systemic corticosteroid therapy.",
+    "year": 2013,
+    "pmid": "23947590",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23947590/"
+   }
+  ]
+ },
+ "104-42": {
+  "then": "104 年（2015）考題③（依官方答案視為正確）：被 HIV 病人血液針扎後，須接受「至少兩種」抗反轉錄病毒藥物（antiretroviral drug）作為暴露後預防（postexposure prophylaxis, PEP）。美國公共衛生署（US Public Health Service, USPHS）2013 年版已不再依暴露嚴重度決定藥物數目（先前低風險暴露可用兩種），改為所有職業性 HIV 暴露一律使用 3 種（或以上）藥物、持續 4 週。",
+  "now": "USPHS 2025 年更新版：PEP 仍服用 28 天；首選處方為整合酶抑制劑（integrase strand transfer inhibitor）加兩種核苷類反轉錄酶抑制劑（nucleoside reverse transcriptase inhibitor）的三藥處方，並指出雙藥處方用於 PEP 沒有有效性資料。新增：來源病人血中病毒量測不到（undetectable viral load）時，可經共同決策（shared clinical decision-making）決定不開始 PEP 或提早停藥。",
+  "changed": "2013 年 USPHS 更新版起一律 3 種以上；2025 年 9 月 USPHS 更新版改訂首選處方，並加入病毒量測不到來源的共同決策。",
+  "answer_impact": {
+   "level": "不影響",
+   "note": "現行仍是三藥處方，符合「至少兩種」；題幹未提來源病人病毒量，一般情況仍建議 PEP，③成立，答案 E 不變。"
+  },
+  "sources": [
+   {
+    "title": "Updated US Public Health Service guidelines for the management of occupational exposures to human immunodeficiency virus and recommendations for postexposure prophylaxis.",
+    "year": 2013,
+    "pmid": "23917901",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23917901/"
+   },
+   {
+    "title": "2025 US Public Health Service Guidelines for the Management of Occupational Exposures to Human Immunodeficiency Virus and Recommendations for Post-exposure Prophylaxis in Healthcare Settings.",
+    "year": 2025,
+    "pmid": "41569270",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41569270/"
+   }
+  ]
+ },
+ "106-23": {
+  "then": "106 年（2017）考題 B 選項（依官方答案視為正確）沿用壓瘡（pressure ulcer）4 級分法，C 選項則以「紗布優於 hydrocolloid」為錯誤敘述。",
+  "now": "美國壓瘡諮詢委員會（National Pressure Ulcer Advisory Panel, NPUAP）2016 年修訂：改稱壓力性損傷（pressure injury），分期由羅馬數字改為阿拉伯數字，並把 Deep Tissue Pressure Injury 名稱中的 suspected 刪除。2017 年 Cochrane 網絡統合分析（network meta-analysis）的證據確定性低或極低，無法判定哪種敷料或外用劑最能促進壓瘡癒合，多數治療是否優於生理食鹽水紗布也不明確；其中親水性膠體（hydrocolloid）敷料與生理食鹽水紗布比較屬極低確定性證據，無法判定癒合率是否有差異。",
+  "changed": "2016 年 NPUAP 修訂分期起；敷料證據見 2017 年 Cochrane 回顧。",
+  "answer_impact": {
+   "level": "不影響",
+   "note": "沒有系統性研究顯示紗布較有幫助，C 在新舊觀念下都錯，答案 C 不變；B 只是分期名稱與數字寫法改變。"
+  },
+  "sources": [
+   {
+    "title": "Revised National Pressure Ulcer Advisory Panel Pressure Injury Staging System: Revised Pressure Injury Staging System.",
+    "year": 2016,
+    "pmid": "27749790",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27749790/"
+   },
+   {
+    "title": "Dressings and topical agents for treating pressure ulcers.",
+    "year": 2017,
+    "pmid": "28639707",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28639707/"
+   }
+  ]
+ },
+ "106-24": {
+  "then": "106 年（2017）考題依舊版 Fitzpatrick 實證章節與 OCEBM 2009 分級：未經明確評讀的專家意見是最低的 level 5，所以④「專家意見為 Level 1」是錯的。",
+  "now": "牛津實證醫學中心（Oxford Centre for Evidence-Based Medicine, OCEBM）2011 版把 1a／1b／1c 簡化為單一 level 1；療效 level 1 為隨機試驗或 n-of-1 試驗的系統性回顧（systematic review），level 5 改為機轉推論（mechanism-based reasoning），表中已沒有專家意見（expert opinion）這個等級。",
+  "changed": "2011 年 OCEBM Levels of Evidence 改版起。",
+  "answer_impact": {
+   "level": "不影響",
+   "note": "專家意見在新舊版本都不可能是 Level 1，④仍錯，答案 D 不變。"
+  },
+  "sources": [
+   {
+    "title": "Oxford Centre for Evidence-Based Medicine: Levels of Evidence (March 2009)",
+    "year": 2009,
+    "url": "https://www.cebm.ox.ac.uk/resources/levels-of-evidence/oxford-centre-for-evidence-based-medicine-levels-of-evidence-march-2009"
+   },
+   {
+    "title": "OCEBM Levels of Evidence Working Group. The Oxford 2011 Levels of Evidence（表格 PDF，經 Wayback 取得）",
+    "year": 2011,
+    "url": "https://www.cebm.ox.ac.uk/resources/levels-of-evidence/ocebm-levels-of-evidence"
+   },
+   {
+    "title": "Howick J, et al. Explanation of the 2011 Oxford Centre for Evidence-Based Medicine (OCEBM) Levels of Evidence (Background Document)",
+    "year": 2011,
+    "url": "https://www.cebm.ox.ac.uk/files/levels-of-evidence/cebm-levels-of-evidence-background-document-2-1.pdf"
+   }
+  ]
+ },
+ "106-44": {
+  "then": "106 年（2017）考題 D 選項（依官方答案視為正確）：高劑量類固醇使用超過 2 週後，至少 3 個月內不適合接種活性疫苗，與 1993／1994 年 ACIP 版本相同。",
+  "now": "現行美國疾病管制與預防中心（CDC）／預防接種諮詢委員會（Advisory Committee on Immunization Practices, ACIP）建議：高劑量全身性類固醇使用 14 天以上者，停藥後至少 1 個月再接種活性病毒疫苗（live virus vaccine）。部分回顧文獻（Liu 2013）仍沿用 3 個月。",
+  "changed": "2002 年 ACIP／AAFP 一般建議起，由停藥後 3 個月改為 1 個月。",
+  "answer_impact": {
+   "level": "不影響",
+   "note": "D 的三個月只是比現行建議保守；本題問錯誤敘述，官方答案 C（低劑量即可抑制抗體產生）不受影響。"
+  },
+  "sources": [
+   {
+    "title": "Recommendations of the ACIP: Use of Vaccines and Immune Globulins in Persons with Altered Immunocompetence. MMWR 1993;42(No. RR-4)",
+    "year": 1993,
+    "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/00023141.htm"
+   },
+   {
+    "title": "General Recommendations on Immunization: Recommendations of the ACIP and AAFP. MMWR 2002;51(No. RR-2)",
+    "year": 2002,
+    "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/rr5102a1.htm"
+   },
+   {
+    "title": "CDC. General Best Practice Guidelines for Immunization: Altered Immunocompetence",
+    "year": 2026,
+    "url": "https://www.cdc.gov/vaccines/hcp/imz-best-practices/altered-immunocompetence.html"
+   },
+   {
+    "title": "A practical guide to the monitoring and management of the complications of systemic corticosteroid therapy.",
+    "year": 2013,
+    "pmid": "23947590",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23947590/"
+   }
+  ]
+ },
+ "107-49": {
+  "then": "107 年（2018）考題③（依官方答案視為正確）：血中 calcidiol（25-hydroxyvitamin D）「目前公認合理的下限是 30 ng/mL」，即內分泌學會（Endocrine Society）先前背書的目標值。",
+  "now": "2024 年內分泌學會臨床指引：不再背書 25(OH)D 30 ng/mL（75 nmol/L）的目標值，也不再以特定 25(OH)D 濃度定義維生素 D 足夠、不足與缺乏；認為沒有明確證據界定預防疾病所需的最佳目標濃度，建議一般族群不常規檢測 25(OH)D，並對 1–18 歲、75 歲以上、懷孕及高風險糖尿病前期者建議經驗性補充（empiric supplementation）。",
+  "changed": "2024 年 6 月 Endocrine Society 維生素 D 預防疾病指引起。",
+  "answer_impact": {
+   "level": "依現行觀念答案會不同",
+   "note": "依 2024 指引③「公認下限 30 ng/mL」不成立，E 不再正確；①②④依詳解仍成立，但選項中沒有①②④的組合，本題將沒有正確選項。"
+  },
+  "sources": [
+   {
+    "title": "Vitamin D for the Prevention of Disease: An Endocrine Society Clinical Practice Guideline.",
+    "year": 2024,
+    "pmid": "38828931",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38828931/"
+   }
+  ]
+ },
+ "109-15": {
+  "then": "109 年（2020）考題問漢生病（Hansen disease）的建議治療藥物，官方答案 C（dapsone、clofazimine、rifampicin）。考題依據的 Fitzpatrick 9e（ch159）所載是舊的世界衛生組織（WHO）多重藥物治療（multidrug therapy, MDT）：clofazimine 只用於多菌型（multibacillary, MB），少菌型（paucibacillary, PB）用 dapsone 加 rifampicin 6 個月。",
+  "now": "WHO 2018 年指引：所有漢生病人都可使用 rifampicin、dapsone、clofazimine 三藥，PB 治療 6 個月、MB 治療 12 個月（條件式建議，證據品質低）；指引說明改用三藥是因為有證據顯示三藥 6 個月的臨床結果優於兩藥 6 個月，且可減少 MB 被誤分為 PB 的影響。Rifampicin 抗藥者改用 clarithromycin、minocycline 或 quinolone 等二線藥物中至少兩種，加 clofazimine。",
+  "changed": "2018 年 10 月 WHO 漢生病診斷、治療與預防指引起（早於本題出題）。",
+  "answer_impact": {
+   "level": "不影響",
+   "note": "改變的是 PB 是否加用 clofazimine 與療程，①②③在新舊方案都是建議藥物；doxycycline 不在 WHO 一線或二線藥物中，④仍不成立，答案 C 不變。"
+  },
+  "sources": [
+   {
+    "title": "WHO. Guidelines for the diagnosis, treatment and prevention of leprosy (2018). ISBN 978-92-9022-638-3",
+    "year": 2018,
+    "url": "https://www.who.int/publications/i/item/9789290226383"
+   }
+  ]
+ },
+ "112-11": {
+  "then": "112 年（2023）考題 D 選項依 Fitzpatrick 9e ch19：UVA 造成類氧化突變（oxidation-like mutation）與 T→G 改變，稱為 UVA 指紋突變（UVA fingerprint）。",
+  "now": "Brash 2015 統合分析指出 UVC、UVB、UVA 與模擬日光造成的突變大致相似，T→G 只在倉鼠細胞明顯，以 T→G 判定為 UVA 來源缺乏可靠依據。活體小鼠皮膚的 UVA1 誘發突變以雙嘧啶（dipyrimidine）位置的 C→T 為主，來自環丁烷嘧啶二聚體（cyclobutane pyrimidine dimer, CPD）而非氧化傷害（Ikehata 2008）。",
+  "changed": "2008 年 Ikehata 活體小鼠研究出現反證，2015 年 Brash 統合分析定調。",
+  "answer_impact": {
+   "level": "依現行觀念答案會不同",
+   "note": "依現行觀念 D 不成立；A–C 依詳解也都錯誤，本題將沒有正確選項。"
+  },
+  "sources": [
+   {
+    "title": "A role for ultraviolet A in solar mutagenesis.",
+    "year": 1995,
+    "pmid": "7892270",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/7892270/"
+   },
+   {
+    "title": "The basal layer in human squamous tumors harbors more UVA than UVB fingerprint mutations: a role for UVA in human skin carcinogenesis.",
+    "year": 2004,
+    "pmid": "15041750",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15041750/"
+   },
+   {
+    "title": "UVA1 genotoxicity is mediated not by oxidative damage but by cyclobutane pyrimidine dimers in normal mouse skin.",
+    "year": 2008,
+    "pmid": "18356809",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/18356809/"
+   },
+   {
+    "title": "UV signature mutations.",
+    "year": 2015,
+    "pmid": "25354245",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4294947/"
+   }
+  ]
+ }
+}

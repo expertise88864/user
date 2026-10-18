@@ -8,6 +8,8 @@ Sources (hand-maintained):
   data/exam/fitz_chapters.json chapter titles and printed page ranges
   data/exam/links.json         chapter DermNet / PathologyOutlines links
   data/exam/search_aliases.json  chapter -> standard abbreviations for the hub search
+  data/exam/timemachine.json   physician-approved 「考試當年 vs 現行觀念」 notes per question
+                               (text is verbatim; validated by validate_timemachine)
 
 Outputs (generated, never hand-edit):
   exam/index.html, exam/fitz-<n>.html, exam/year-<y>.html, exam/mckee.html,
@@ -88,8 +90,86 @@ def load() -> dict:
     bad = [k for k in aliases if k not in chapters]
     if bad:
         raise SystemExit(f"search_aliases.json has unknown chapters {bad}")
+    tm_path = DATA / "timemachine.json"
+    timemachine = json.loads(tm_path.read_text(encoding="utf-8")) if tm_path.exists() else {}
+    errors = validate_timemachine(timemachine, {q["id"] for q in questions})
+    if errors:
+        raise SystemExit("timemachine.json is invalid:\n  " + "\n  ".join(errors))
     return {"questions": questions, "tags": tags, "explanations": explanations,
-            "chapters": chapters, "notes": notes, "links": links, "aliases": aliases}
+            "chapters": chapters, "notes": notes, "links": links, "aliases": aliases,
+            "timemachine": timemachine}
+
+
+# ---------------------------------------------------------------- time machine
+# 「考試當年 vs 現行觀念」: what the exam assumed in its year, what changed since,
+# and whether the official answer still holds. The text is approved by the
+# physician (D-01) and rendered verbatim; only escaping and layout are ours.
+
+TM_LEVELS = ("不影響", "依現行觀念答案會不同")
+TM_TEXT_FIELDS = ("then", "now", "changed")
+# Simplified-only characters (each has a distinct Traditional form the site
+# uses). Narrow on purpose: characters valid in both scripts (台、后、里、干…)
+# are not listed, so a hit is always a real mistake.
+HANS_ONLY = frozenset(
+    "这们来时为说对会发过还进见现实问题经应样学没开关长门东车书产业从众优伤价儿写军农剂剧办动劳区医华单卖"
+    "卫历压县参双变号吗听员围图国圆场坏块声处备复头夺奋妇宁宝将尔层岁岛带帮广庆张录怀态总恶惊战扩扫报护"
+    "拥择换损据数断无旧显术机杀杂权条极构标检残气汉汤沟济测浓湿满灭灯炉点热爱状犹独环疗痒皱盐监盖盘确礼"
+    "种积称稳穷简类粮纠红约级纪纤纸线练组细织终结给络统绝续维综绿缓编缩网罗职联肠肤肾肿胀胆胶脑脏脓脱节"
+    "药获虽补观规视览觉触计认讨让训议记讲许论设证评识诊词试诚话该详语误请读谁调谈质贫购费资赖赶践转轻较"
+    "辅边运远连选适遗释针钙钠钾铁银链销锌镜闭间阳阴际陆随隐难页项须预领频颈颜风饮马验鱼鸟齿龄疮疡癣疯痉"
+    "挛螨体"
+)
+
+
+def _strings(value):
+    if isinstance(value, str):
+        yield value
+    elif isinstance(value, dict):
+        for item in value.values():
+            yield from _strings(item)
+    elif isinstance(value, list):
+        for item in value:
+            yield from _strings(item)
+
+
+def validate_timemachine(tm, qids: set[str]) -> list[str]:
+    """Every entry: a known question, the three text fields, an allowed impact
+    level with a note, at least one source and a http(s) url on every source,
+    and no simplified-only characters anywhere."""
+    if not isinstance(tm, dict):
+        return ["top level must be an object keyed by question id"]
+    errors = []
+    for qid, entry in tm.items():
+        if qid not in qids:
+            errors.append(f"{qid}: unknown question id")
+        if not isinstance(entry, dict):
+            errors.append(f"{qid}: entry must be an object")
+            continue
+        for field in TM_TEXT_FIELDS:
+            if not isinstance(entry.get(field), str) or not entry[field].strip():
+                errors.append(f"{qid}: missing text '{field}'")
+        impact = entry.get("answer_impact")
+        if not isinstance(impact, dict):
+            errors.append(f"{qid}: missing answer_impact")
+        else:
+            if impact.get("level") not in TM_LEVELS:
+                errors.append(f"{qid}: answer_impact.level must be one of {list(TM_LEVELS)}, got {impact.get('level')!r}")
+            if not isinstance(impact.get("note"), str) or not impact["note"].strip():
+                errors.append(f"{qid}: missing answer_impact.note")
+        sources = entry.get("sources")
+        if not isinstance(sources, list) or not sources:
+            errors.append(f"{qid}: needs at least one source")
+        else:
+            for i, src in enumerate(sources):
+                if not isinstance(src, dict) or not isinstance(src.get("title"), str) or not src["title"].strip():
+                    errors.append(f"{qid}: source {i + 1} has no title")
+                url = src.get("url") if isinstance(src, dict) else None
+                if not isinstance(url, str) or not re.fullmatch(r"https?://\S+", url):
+                    errors.append(f"{qid}: source {i + 1} has no url")
+        hans = sorted({c for text in _strings(entry) for c in text if c in HANS_ONLY})
+        if hans:
+            errors.append(f"{qid}: simplified characters {''.join(hans)}")
+    return errors
 
 
 # ---------------------------------------------------------------- page shell
@@ -278,6 +358,7 @@ def question_html(q: dict, data: dict, *, current_chapter: int | None = None, sh
         homes = [f'<a href="/exam/fitz-{c}">Ch.{c}</a>' for c in tag["fitz"]]
         where = f'（相關章節：{"、".join(homes)}）' if homes else ""
         expl_html = f'<p class="ex-pending">詳解尚未整理{where}。</p>'
+    expl_html += timemachine_html(data["timemachine"].get(qid))
     return (
         f'<article class="ex-q" id="q-{qid}" data-qid="{qid}" data-answer="{"".join(sorted(answer))}"'
         f'{" data-free" if q.get("free") else ""}>'
@@ -326,6 +407,22 @@ def dispute_html(dispute: dict | None) -> str:
     if dispute.get("sources"):
         parts.append('<ul class="ex-sources">' + "".join(source_html(s) for s in dispute["sources"]) + "</ul>")
     return f'<div class="ex-dispute">{"".join(parts)}</div>'
+
+
+def timemachine_html(tm: dict | None) -> str:
+    """The 「考試當年 vs 現行觀念」 box, last inside .ex-expl so quiz mode hides it
+    together with the answer until the question is graded."""
+    if not tm:
+        return ""
+    impact = tm["answer_impact"]
+    level_cls = "ex-tm-diff" if impact["level"] == TM_LEVELS[1] else "ex-tm-same"
+    rows = "".join(f"<dt>{label}</dt><dd>{rich(tm[key])}</dd>"
+                   for label, key in (("考試當年", "then"), ("現行觀念", "now"), ("何時改變", "changed")))
+    rows += (f'<dt>對答案的影響</dt><dd><span class="ex-tm-level {level_cls}">{esc(impact["level"])}</span>'
+             f'{rich(impact["note"])}</dd>')
+    return ('<div class="ex-tm"><p class="ex-tm-h">考試當年 vs 現行觀念</p>'
+            f'<dl class="ex-tm-rows">{rows}</dl><p class="ex-tm-src-h">參考文獻</p>'
+            f'<ul class="ex-sources">{"".join(source_html(s) for s in tm["sources"])}</ul></div>')
 
 
 def links_html(links: dict | None) -> str:
@@ -850,6 +947,9 @@ def client_data(data) -> dict:
                 row["expl"]["flags"] = expl["flags"]
             if expl.get("dispute"):
                 row["expl"]["dispute"] = expl["dispute"]
+        tm = data["timemachine"].get(q["id"])
+        if tm:
+            row["tm"] = tm
         out.append(row)
     return {"questions": out}
 
@@ -977,6 +1077,14 @@ EXAM_STYLE = """<style data-exam-style>
 .ex-dispute p{margin:4px 0}.ex-dispute-h{font-weight:700;color:#92400e}
 .ex-sources{margin:4px 0 0;padding-left:20px;font-size:12.5px}.ex-sources a{color:#0c5159}
 .ex-ref-mckee{background:#f3e8ff;color:#5b21b6}
+.ex-tm{border:1px solid #bfdbfe;border-left:4px solid #2563eb;background:#eff6ff;border-radius:8px;padding:8px 12px;margin:10px 0 0;font-size:13.5px;line-height:1.75;color:#1e293b;overflow-wrap:anywhere}
+.ex-tm p{margin:4px 0}.ex-tm-h{font-weight:700;color:#1e40af}
+.ex-tm-rows{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 12px;margin:4px 0}
+.ex-tm-rows dt{font-weight:700;color:#1e3a8a;white-space:nowrap}.ex-tm-rows dd{margin:0}
+.ex-tm-level{display:inline-block;font-size:12px;font-weight:700;border-radius:6px;padding:0 7px;margin-right:6px}
+.ex-tm-same{background:#dcfce7;color:#14532d}.ex-tm-diff{background:#fee2e2;color:#7f1d1d}
+.ex-tm-src-h{font-weight:700;font-size:12.5px;color:#1e3a8a}.ex-tm .ex-sources a{color:#1d4ed8}
+@media (max-width:560px){.ex-tm-rows{grid-template-columns:minmax(0,1fr);gap:0}.ex-tm-rows dd{margin-bottom:6px}}
 .ex-links{border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin:14px 0;background:#fff}
 .ex-links ul{margin:4px 0 8px;padding-left:20px;font-size:14px;line-height:1.8}.ex-links a{color:var(--teal-deep);text-decoration:underline;text-underline-offset:2px}.ex-links-name{font-weight:700;font-size:13.5px;margin:8px 0 0}
 .ex-progress-bar{flex-wrap:wrap;gap:10px;align-items:center}
@@ -1008,6 +1116,10 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 :root[data-theme="dark"] .ex-dispute-h{color:#fcd34d}:root[data-theme="dark"] .ex-sources a{color:#fde68a}
 :root[data-theme="dark"] .ex-flag-note{background:#24211c;color:#d6d3cd}:root[data-theme="dark"] .ex-flag-tag{color:#a4d4c4}
 :root[data-theme="dark"] .ex-ref-mckee{background:#2e1065;color:#ddd6fe}
+:root[data-theme="dark"] .ex-tm{background:#172036;border-color:#1e3a8a;border-left-color:#60a5fa;color:#dbeafe}
+:root[data-theme="dark"] .ex-tm-h,:root[data-theme="dark"] .ex-tm-rows dt,:root[data-theme="dark"] .ex-tm-src-h{color:#93c5fd}
+:root[data-theme="dark"] .ex-tm .ex-sources a{color:#bfdbfe}
+:root[data-theme="dark"] .ex-tm-same{background:#14532d;color:#dcfce7}:root[data-theme="dark"] .ex-tm-diff{background:#7f1d1d;color:#fee2e2}
 :root[data-theme="dark"] .ex-links,:root[data-theme="dark"] .ex-progress{background:#24211c;border-color:#3a352c}
 :root[data-theme="dark"] .ex-progress th,:root[data-theme="dark"] .ex-progress td{border-color:#3a352c}
 :root[data-theme="dark"] .ex-progress thead th{background:#3a352c;color:#f5efe6}
