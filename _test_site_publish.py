@@ -55,6 +55,16 @@ class SelectionTests(unittest.TestCase):
             self.assertEqual(copied, expected)
             # The staged output is never re-staged into itself.
             self.assertEqual(publish.published_files(root), expected)
+            # The build-log census covers exactly the staged non-generated files.
+            import hashlib
+            tracked = '\n'.join(name for name in expected if not name.startswith('pagefind/'))
+            self.assertEqual(publish.census(root / 'dist'),
+                             '[site-census] files=5 sha256=' + hashlib.sha256(tracked.encode()).hexdigest() +
+                             ' generated=1 search=1')
+            write(root, 'dist/_delivery.py')
+            self.assertIn('[site-census] files=6 ', publish.census(root / 'dist'))
+            (root / 'dist/pagefind/pagefind.js').unlink()
+            self.assertTrue(publish.census(root / 'dist').endswith(' generated=0 search=0'))
 
     def test_probe_manifest_covers_the_checkout_without_git(self):
         with tempfile.TemporaryDirectory() as temp:

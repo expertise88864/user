@@ -1,6 +1,7 @@
 /* Read-only preview acceptance; never submits forms or changes visual baselines. */
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
+const { createHash } = require('node:crypto');
 // Never attach the preview credential to analytics, images, or redirect hosts.
 function previewHeaders(url, origin, secret) {
   return secret && new URL(url).origin === origin
@@ -132,17 +133,15 @@ async function checkHomeNavigation(page, base, route) {
   await page.locator('.article-list-item').first().waitFor();
 }
 // The deployment serves the staged public site (dist/), never the repository.
-// The authoritative file census comes from the Vercel API: the exact-SHA
-// deployment's own output tree must equal the public selection (every public
-// file present, no internal file, nothing else but the generated search bundle).
-// The CDN then only answers a small sample, so the check costs a few dozen
-// requests instead of one HEAD per checkout file.
+// The authoritative file census comes through the Vercel API from the exact-SHA
+// deployment's own build (see readCensus); the CDN then only answers a small
+// sample, so the check costs a few dozen requests instead of one HEAD per
+// checkout file.
 const ADMIN_SHELL = /^admin(?:\.html$|\/)/;  // middleware.js matcher: /admin.html, /admin/*
 const VERCEL_API = 'https://api.vercel.com';
 const VERCEL_PROJECT = 'chendermatologist';
 const VERCEL_TEAM_SLUG = 'expertise88864s-projects';
 const GENERATED = /^pagefind\//;  // built by `npm run build`, absent from the checkout manifest
-const MAX_TREE_ENTRIES = 50000;
 
 // The token is only ever placed in the Authorization header. Errors carry fixed
 // labels and the HTTP status, never the request, the response body or the token.
@@ -187,69 +186,56 @@ async function vercelDeployment(base, sha, token, request = fetch) {
   return data.id;
 }
 
-function flattenTree(nodes, prefix, out, depth) {
-  assert.ok(Array.isArray(nodes) && depth < 40, 'Vercel file tree is malformed');
-  for (const node of nodes) {
-    const name = node && node.name;
-    assert.ok(typeof name === 'string' && name && name !== '.' && name !== '..' && !/[/\\\0]/.test(name),
-      'Vercel file tree has an invalid entry name');
-    const full = prefix + name;
-    if (node.type === 'directory') {
-      assert.ok(Array.isArray(node.children), 'Vercel file tree omitted a directory listing: ' + full);
-      flattenTree(node.children, full + '/', out, depth + 1);
-    } else if (node.type === 'file') {
-      out.files.push(full);
-    } else if (node.type === 'lambda' || node.type === 'middleware') {
-      out.functions.push(full);
-    } else {
-      throw new Error('Unexpected Vercel file tree entry (' + String(node.type).slice(0, 20) + '): ' + full);
-    }
-    assert.ok(out.files.length + out.functions.length <= MAX_TREE_ENTRIES, 'Vercel file tree exceeds its bound');
-  }
-  return out;
-}
+// The output census: the deployment's own build stages dist/ (the only static
+// output Vercel serves) and prints one `[site-census]` line describing exactly
+// what dist/ holds (_site_publish.py census()). The Vercel API offers no output
+// file listing for Git deployments (List Deployment Files answers 404 "File tree
+// not found"), so the line is read back from this exact deployment's build
+// events and must match the checkout's public selection: same number of files
+// and the same sha256 over the sorted list, so any missing, extra or internal
+// file fails; the generated search bundle must be present.
+const CENSUS = /\[site-census\] files=(\d+) sha256=([0-9a-f]{64}) generated=(\d+) search=([01])\b/g;
 
-// Build output: Git deployments list it under `out/`; a tree without one is
-// taken as the output itself (a source tree then fails the comparison).
-function outputEntries(tree) {
-  assert.ok(Array.isArray(tree) && tree.length > 0, 'Vercel file tree is empty or malformed');
-  const out = tree.filter(node => node && node.type === 'directory' && node.name === 'out');
-  assert.ok(out.length <= 1, 'Vercel file tree has several output roots');
-  assert.ok(!out.length || Array.isArray(out[0].children), 'Vercel file tree omitted a directory listing: out');
-  return flattenTree(out.length ? out[0].children : tree, '', { files: [], functions: [] }, 0);
-}
-
-function shape(tree) {
-  // Structure only (types and names of the top level) for diagnosing API changes.
-  return (Array.isArray(tree) ? tree : []).slice(0, 12)
-    .map(node => String(node && node.type) + ':' + String(node && node.name)).join(', ');
-}
-
-function compareDeployedFiles(manifest, entries) {
+function expectedCensus(manifest) {
   // api/ is deployed as functions from the project root, never as static source files.
   const internal = manifest.private.filter(name => !name.startsWith('api/'));
   assert.ok(manifest.published.includes('index.html') && internal.includes('_delivery.py'), 'Incomplete file manifest');
-  const deployed = new Set(entries.files);
-  assert.equal(deployed.size, entries.files.length, 'Vercel file tree lists a file twice');
-  const published = new Set(manifest.published), hidden = new Set(internal);
+  const tracked = manifest.published.filter(name => !GENERATED.test(name)).sort((a, b) => a < b ? -1 : a > b ? 1 : 0);
+  return { files: tracked.length, sha256: createHash('sha256').update(tracked.join('\n'), 'utf8').digest('hex'),
+    private: internal.length };
+}
+
+function readCensus(events) {
+  assert.ok(Array.isArray(events), 'Vercel API build events response is malformed');
+  const found = [];
+  for (const event of events) {
+    const text = event && ((event.payload && event.payload.text) || event.text);
+    if (typeof text !== 'string') continue;
+    for (const match of text.matchAll(CENSUS)) found.push(match);
+  }
+  // A second line (for example forged into a runtime log) is never resolved in its favour.
+  assert.equal(found.length, 1, 'The deployment build must report exactly one output census (found ' + found.length + ')');
+  const [, files, sha256, generated, search] = found[0];
+  return { files: Number(files), sha256, generated: Number(generated), search: search === '1' };
+}
+
+function compareCensus(manifest, census) {
+  const expected = expectedCensus(manifest);
   const failures = [];
-  for (const name of [...manifest.published, 'pagefind/pagefind.js']) {
-    if (!deployed.has(name)) failures.push(name + ': public file missing from the deployment');
+  if (census.files !== expected.files) {
+    failures.push('deployment holds ' + census.files + ' public files, checkout selects ' + expected.files);
   }
-  for (const name of entries.files) {
-    if (hidden.has(name)) failures.push(name + ': internal file deployed');
-    else if (!published.has(name) && !GENERATED.test(name)) failures.push(name + ': unexpected file deployed');
-  }
-  assert.deepEqual(failures.sort().slice(0, 40), [], 'Deployed file set differs from the public site selection');
-  return { published: manifest.published.length, generated: entries.files.filter(name => GENERATED.test(name)).length,
-    private: internal.length, functions: entries.functions.length };
+  if (census.sha256 !== expected.sha256) failures.push('deployed file list differs from the public selection');
+  if (!census.search || census.generated < 1) failures.push('generated search bundle missing from the deployment');
+  assert.deepEqual(failures, [], 'Deployed file set differs from the public site selection');
+  return { published: expected.files, generated: census.generated, private: expected.private };
 }
 
 // A few files of every type (first and last by name), the generated search bundle
 // and representative internal paths: proves the CDN really answers as the census says.
 function cdnSample(manifest) {
   const byType = new Map();
-  for (const name of [...manifest.published].sort()) {
+  for (const name of [...manifest.published].filter(name => !GENERATED.test(name)).sort()) {
     const type = (name.match(/\.[A-Za-z0-9]+$/) || ['(none)'])[0].toLowerCase();
     if (!byType.has(type)) byType.set(type, []);
     byType.get(type).push(name);
@@ -268,11 +254,9 @@ function cdnSample(manifest) {
 
 async function checkDeployedFiles(context, base, manifest, { sha, token, request = fetch } = {}) {
   const id = await vercelDeployment(base, sha, token, request);
-  const tree = await vercelApi('/v6/deployments/' + encodeURIComponent(id) + '/files?slug=' + VERCEL_TEAM_SLUG,
-    'deployment files', token, request);
-  let counts;
-  try { counts = compareDeployedFiles(manifest, outputEntries(tree)); }
-  catch (error) { error.message += ' [Vercel tree top level: ' + shape(tree) + ']'; throw error; }
+  const events = await vercelApi('/v3/deployments/' + encodeURIComponent(id) +
+    '/events?builds=1&limit=-1&direction=forward&slug=' + VERCEL_TEAM_SLUG, 'deployment build events', token, request);
+  const counts = compareCensus(manifest, readCensus(events));
   const encode = name => '/' + name.split('/').map(encodeURIComponent).join('/');
   const jobs = cdnSample(manifest), failures = [];
   let next = 0, gated = 0;
@@ -316,7 +300,7 @@ function countPreviewRequests(context, base, counter) {
 }
 
 module.exports = { previewHeaders, checkHubStatus, authenticatePreview, checkStaticHome, checkDeployedFiles,
-  vercelDeployment, outputEntries, compareDeployedFiles, cdnSample };
+  vercelDeployment, readCensus, compareCensus, expectedCensus, cdnSample };
 
 if (require.main === module) (async () => {
   const { chromium } = require('playwright');
@@ -347,10 +331,10 @@ if (require.main === module) (async () => {
       files = await checkDeployedFiles(filesContext, base, manifest,
         { sha: process.env.GITHUB_SHA, token: process.env.VERCEL_FILES_TOKEN });
       fs.writeFileSync('delivery-preview/deployed-files.json', JSON.stringify(files) + '\n');
-      console.log('Deployed files (Vercel API census of ' + files.deployment + '): ' + files.published + ' public + ' +
-        files.generated + ' generated files present, ' + files.private + ' internal files absent, ' +
-        files.functions + ' functions; CDN sample ' + files.cdnRequests + ' requests, ' +
-        files.adminBasicAuth + ' admin files behind Basic Auth');
+      console.log('Deployed files (Vercel API build census of ' + files.deployment + '): exactly the ' + files.published +
+        ' public files + ' + files.generated + ' generated search files, none of the ' + files.private +
+        ' internal files; CDN sample ' + files.cdnRequests + ' requests, ' + files.adminBasicAuth +
+        ' admin files behind Basic Auth');
     } finally { await filesContext.close(); }
     for (const width of [390, 800, 1440]) {
       // Every width starts from fresh contexts: no cookies, caches or service worker carry over.

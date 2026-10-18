@@ -335,29 +335,26 @@ test('Vercel validates before and after generating production artifacts', () => 
     ' && python _site_publish.py --stage dist');
   assert.equal(config.outputDirectory, 'dist', 'Serve only the staged public site, never the repository root');
 });
-// Deployed file census: the Vercel API output tree of the exact-SHA deployment
-// must equal the public selection; the CDN answers only a small sample.
+// Deployed file census: the exact-SHA deployment's own build reports what dist/
+// holds (read back through the Vercel API); the CDN answers only a small sample.
 const filesSha = 'b'.repeat(40);
 const filesToken = 'fixture-files-token';
 const filesBase = new URL('https://chendermatologist-abc123xyz-expertise88864s-projects.vercel.app');
 const filesManifest = { published: ['index.html', 'blog/a b.html', 'assets/a b.css', 'admin.html'],
   private: ['_delivery.py', 'AGENTS.md', '.github/workflows/delivery.yml', 'api/og.js'] };
-function vercelTree(files = ['index.html', 'blog/a b.html', 'assets/a b.css', 'admin.html', 'pagefind/pagefind.js'], root = 'out') {
-  const tree = [];
-  for (const file of files) {
-    let level = tree;
-    const parts = file.split('/');
-    parts.forEach((part, index) => {
-      if (index === parts.length - 1) { level.push({ name: part, type: 'file', mode: 33188 }); return; }
-      let dir = level.find(node => node.name === part && node.type === 'directory');
-      if (!dir) { dir = { name: part, type: 'directory', mode: 16877, children: [] }; level.push(dir); }
-      level = dir.children;
-    });
-  }
-  tree.push({ name: 'api', type: 'directory', mode: 16877, children: [{ name: 'og', type: 'lambda', mode: 33188 }] });
-  return root ? [{ name: root, type: 'directory', mode: 16877, children: tree }] : tree;
+// Exactly what _site_publish.py census() prints for a dist/ holding `files`.
+function censusLine(files = [...filesManifest.published, 'pagefind/pagefind.js', 'pagefind/fragment/a.pf_fragment']) {
+  const tracked = files.filter(name => !name.startsWith('pagefind/')).sort();
+  const digest = createHash('sha256').update(tracked.join('\n'), 'utf8').digest('hex');
+  return '[site-census] files=' + tracked.length + ' sha256=' + digest + ' generated=' + (files.length - tracked.length) +
+    ' search=' + (files.includes('pagefind/pagefind.js') ? 1 : 0);
 }
-function vercelRequest({ deployment = {}, tree = vercelTree(), status = {}, calls = [] } = {}) {
+function buildEvents(lines = [censusLine()]) {
+  return [{ type: 'command', created: 1, payload: { text: 'Running "npm run build"', date: 1, id: 'e0', serial: '0', deploymentId: 'dpl_Fixture123' } },
+    ...lines.map((text, index) => ({ type: 'stdout', created: 2 + index,
+      payload: { text, date: 2 + index, id: 'e' + (index + 1), serial: String(index + 1), deploymentId: 'dpl_Fixture123' } }))];
+}
+function vercelRequest({ deployment = {}, events = buildEvents(), status = {}, calls = [] } = {}) {
   return async (url, options) => {
     calls.push({ url, options });
     const path = new URL(url).pathname;
@@ -366,9 +363,9 @@ function vercelRequest({ deployment = {}, tree = vercelTree(), status = {}, call
       return Response.json({ id: 'dpl_Fixture123', url: filesBase.hostname, name: 'chendermatologist',
         readyState: 'READY', target: null, meta: { githubCommitSha: filesSha }, ...deployment });
     }
-    if (path === '/v6/deployments/dpl_Fixture123/files') {
-      if (status.files) return new Response('upstream says ' + filesToken, { status: status.files });
-      return Response.json(tree);
+    if (path === '/v3/deployments/dpl_Fixture123/events') {
+      if (status.events) return new Response('upstream says ' + filesToken, { status: status.events });
+      return typeof events === 'string' ? new Response(events) : Response.json(events);
     }
     throw Error('Unexpected Vercel API request');
   };
@@ -387,17 +384,17 @@ function cdnContext({ served = new Set(), gate = new Map(), og = 'image/svg+xml;
   } };
 }
 const allServed = () => new Set(['/index.html', '/blog/a%20b.html', '/assets/a%20b.css', '/admin.html', '/pagefind/pagefind.js']);
-test('deployed files come from the exact-SHA Vercel output tree and a small CDN sample', async () => {
+test('deployed files come from the exact-SHA deployment build census and a small CDN sample', async () => {
   const { checkDeployedFiles } = require('./_delivery_preview.cjs');
   const calls = [], requested = [];
   const counts = await checkDeployedFiles(cdnContext({ served: allServed(), requested }), filesBase, filesManifest,
     { sha: filesSha, token: filesToken, request: vercelRequest({ calls }) });
-  assert.deepEqual(counts, { deployment: 'dpl_Fixture123', published: 4, generated: 1, private: 3, functions: 1,
+  assert.deepEqual(counts, { deployment: 'dpl_Fixture123', published: 4, generated: 2, private: 3,
     adminBasicAuth: 0, cdnRequests: requested.length + 1, apiRequests: 2 });
   // Both API calls carry the token only in the Authorization header, never in a URL.
   assert.deepEqual(calls.map(call => call.url), [
     'https://api.vercel.com/v13/deployments/' + filesBase.hostname + '?slug=expertise88864s-projects',
-    'https://api.vercel.com/v6/deployments/dpl_Fixture123/files?slug=expertise88864s-projects']);
+    'https://api.vercel.com/v3/deployments/dpl_Fixture123/events?builds=1&limit=-1&direction=forward&slug=expertise88864s-projects']);
   for (const { url, options } of calls) {
     assert.ok(!url.includes(filesToken));
     assert.equal(options.headers.Authorization, 'Bearer ' + filesToken);
@@ -409,27 +406,37 @@ test('deployed files come from the exact-SHA Vercel output tree and a small CDN 
   for (const path of ['/pagefind/pagefind.js', '/_delivery.py', '/AGENTS.md', '/.github/workflows/delivery.yml',
     '/__pycache__/_run_quality.cpython-312.pyc', '/index.html', '/admin.html', '/assets/a%20b.css']) assert.ok(requested.includes(path), path);
   assert.ok(!requested.includes('/api/og.js'), 'Functions are not probed as static files');
-  // A tree without an out/ root is read as the output itself.
+  // Event text may also sit at the top level of an event.
+  const flat = [{ type: 'stdout', created: 1, date: 1, id: 'x', serial: '1', deploymentId: 'dpl_Fixture123', info: { name: 'b', type: 'build' }, text: censusLine() }];
   assert.equal((await checkDeployedFiles(cdnContext({ served: allServed() }), filesBase, filesManifest,
-    { sha: filesSha, token: filesToken, request: vercelRequest({ tree: vercelTree(undefined, '') }) })).published, 4);
+    { sha: filesSha, token: filesToken, request: vercelRequest({ events: flat }) })).published, 4);
 });
 test('a missing public file or an extra internal or unexpected file fails the census', async () => {
   const { checkDeployedFiles } = require('./_delivery_preview.cjs');
-  const files = ['index.html', 'blog/a b.html', 'assets/a b.css', 'admin.html', 'pagefind/pagefind.js'];
-  for (const [label, tree, pattern] of [
-    ['missing public', files.filter(name => name !== 'blog/a b.html'), /blog\/a b\.html: public file missing/],
-    ['missing generated', files.filter(name => name !== 'pagefind/pagefind.js'), /pagefind\/pagefind\.js: public file missing/],
-    ['internal', [...files, '_delivery.py'], /_delivery\.py: internal file deployed/],
-    ['internal dotfile', [...files, '.github/workflows/delivery.yml'], /internal file deployed/],
-    ['bytecode', [...files, '__pycache__/_run_quality.cpython-312.pyc'], /unexpected file deployed/],
-    ['unexpected', [...files, 'notes/secret.html'], /unexpected file deployed/],
-    ['function source', [...files, 'api/og.js'], /unexpected file deployed/],
+  const files = [...filesManifest.published, 'pagefind/pagefind.js'];
+  for (const [label, deployed, pattern] of [
+    ['missing public', files.filter(name => name !== 'blog/a b.html'), /holds 3 public files, checkout selects 4/],
+    ['renamed public', [...files.filter(name => name !== 'blog/a b.html'), 'blog/a-b.html'], /deployed file list differs/],
+    ['missing generated', files.filter(name => name !== 'pagefind/pagefind.js'), /search bundle missing/],
+    ['internal', [...files, '_delivery.py'], /holds 5 public files/],
+    ['internal dotfile', [...files, '.github/workflows/delivery.yml'], /holds 5 public files/],
+    ['bytecode', [...files, '__pycache__/_run_quality.cpython-312.pyc'], /holds 5 public files/],
+    ['function source', [...files, 'api/og.js'], /holds 5 public files/],
   ]) {
     const requested = [];
     await assert.rejects(checkDeployedFiles(cdnContext({ served: allServed(), requested }), filesBase, filesManifest,
-      { sha: filesSha, token: filesToken, request: vercelRequest({ tree: vercelTree(tree) }) }),
-    error => pattern.test(error.message) && /Vercel tree top level: directory:out/.test(error.message), label);
+      { sha: filesSha, token: filesToken, request: vercelRequest({ events: buildEvents([censusLine(deployed)]) }) }),
+    error => pattern.test(error.message) && /differs from the public site selection/.test(error.message), label);
     assert.deepEqual(requested, [], 'A failed census never falls back to probing the CDN: ' + label);
+  }
+  for (const [label, lines, pattern] of [
+    ['no census', ['[OK] Staged 4 public files into dist/'], /exactly one output census \(found 0\)/],
+    ['two censuses', [censusLine(), censusLine()], /exactly one output census \(found 2\)/],
+    ['forged second census', [censusLine(), censusLine([...files, '_delivery.py'])], /found 2/],
+    ['truncated census', ['[site-census] files=4 sha256=abc generated=1 search=1'], /found 0/],
+  ]) {
+    await assert.rejects(checkDeployedFiles(cdnContext({ served: allServed() }), filesBase, filesManifest,
+      { sha: filesSha, token: filesToken, request: vercelRequest({ events: buildEvents(lines) }) }), pattern, label);
   }
   await assert.rejects(checkDeployedFiles(cdnContext(), filesBase, { published: [], private: [] },
     { sha: filesSha, token: filesToken, request: vercelRequest() }), /Incomplete/);
@@ -445,8 +452,11 @@ test('a missing token, API failure or unbound deployment fails closed without le
   const failures = [
     [{ status: { deployment: 401 } }, /deployment request failed: HTTP 401/],
     [{ status: { deployment: 404 } }, /deployment request failed: HTTP 404/],
-    [{ status: { files: 403 } }, /deployment files request failed: HTTP 403/],
-    [{ status: { files: 500 } }, /deployment files request failed: HTTP 500/],
+    [{ status: { events: 403 } }, /deployment build events request failed: HTTP 403/],
+    [{ status: { events: 500 } }, /deployment build events request failed: HTTP 500/],
+    [{ events: 'not json ' + filesToken }, /build events response is not JSON/],
+    [{ events: { events: [] } }, /build events response is malformed/],
+    [{ events: [] }, /found 0/],
     [{ deployment: { meta: { githubCommitSha: 'c'.repeat(40) } } }, /exact commit/],
     [{ deployment: { meta: {} } }, /exact commit/],
     [{ deployment: { target: 'production' } }, /production/],
@@ -454,11 +464,6 @@ test('a missing token, API failure or unbound deployment fails closed without le
     [{ deployment: { readyState: 'BUILDING' } }, /not ready/],
     [{ deployment: { name: 'another-project' } }, /another project/],
     [{ deployment: { id: '../../v2/user' } }, /id is malformed/],
-    [{ tree: [] }, /empty or malformed/],
-    [{ tree: { files: [] } }, /empty or malformed/],
-    [{ tree: [{ name: 'out', type: 'directory', mode: 16877 }] }, /omitted a directory listing/],
-    [{ tree: [{ name: 'out', type: 'directory', mode: 16877, children: [{ name: 'x', type: 'symlink', mode: 41471 }] }] }, /Unexpected Vercel file tree entry/],
-    [{ tree: [{ name: '..', type: 'file', mode: 33188 }] }, /invalid entry name/],
   ];
   for (const [options, pattern] of failures) {
     await assert.rejects(checkDeployedFiles(cdnContext({ served: allServed() }), filesBase, filesManifest,
@@ -487,6 +492,22 @@ test('the CDN sample must really answer: status, Basic Auth gate and og function
   await assert.rejects(run(cdnContext({ served: exposed })), /_delivery\.py: HTTP 200, expected 404/);
   await assert.rejects(run(cdnContext({ served: allServed(), og: 'text/html' })), /api\/og/);
 });
+test('the census line the build prints is the one the Preview check expects', () => {
+  const { expectedCensus, readCensus } = require('./_delivery_preview.cjs');
+  const fs = require('node:fs'), os = require('node:os'), path = require('node:path');
+  const dist = fs.mkdtempSync(path.join(os.tmpdir(), 'census-'));
+  try {
+    for (const name of [...filesManifest.published, 'pagefind/pagefind.js', 'pagefind/fragment/a.pf_fragment']) {
+      fs.mkdirSync(path.dirname(path.join(dist, name)), { recursive: true });
+      fs.writeFileSync(path.join(dist, name), 'x');
+    }
+    const line = require('node:child_process').execFileSync('python', ['-c',
+      'import sys, _site_publish as p; print(p.census(sys.argv[1]))', dist], { encoding: 'utf8' }).trim();
+    const census = readCensus(buildEvents([line]));
+    const expected = expectedCensus(filesManifest);
+    assert.deepEqual([census.files, census.sha256, census.generated, census.search], [expected.files, expected.sha256, 2, true]);
+  } finally { fs.rmSync(dist, { recursive: true, force: true }); }
+});
 test('the CDN sample stays small for the real manifest', () => {
   const { cdnSample } = require('./_delivery_preview.cjs');
   const manifest = JSON.parse(require('node:child_process').execFileSync('python', ['_site_publish.py', '--manifest'],
@@ -495,7 +516,7 @@ test('the CDN sample stays small for the real manifest', () => {
   assert.ok(jobs.length >= 10 && jobs.length <= 40, 'sample size ' + jobs.length);
   assert.equal(new Set(jobs.map(job => job[0])).size, jobs.length);
   const type = name => (name.match(/\.[A-Za-z0-9]+$/) || ['(none)'])[0].toLowerCase();
-  for (const kind of new Set(manifest.published.map(type))) {
+  for (const kind of new Set(manifest.published.filter(name => !name.startsWith('pagefind/')).map(type))) {
     assert.ok(jobs.some(([name, expected]) => expected === 200 && type(name) === kind), kind);
   }
   assert.ok(jobs.filter(job => job[1] === 404).length >= 3);

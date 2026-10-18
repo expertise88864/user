@@ -21,6 +21,7 @@ instead of silently disappearing from production.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -133,6 +134,26 @@ def stage(root: Path, output: Path) -> list[str]:
     return files
 
 
+GENERATED_DIR = 'pagefind'  # built by `npm run build`, never part of the checkout
+
+
+def census(output: Path) -> str:
+    """One build-log line describing exactly what the output directory holds.
+
+    The Preview check reads it back through the Vercel deployment events API
+    for the exact-SHA deployment (the API lists no output files for Git
+    deployments) and compares it with the checkout's public selection: the
+    sha256 covers the sorted list of every non-generated file, so a missing,
+    extra or internal file changes it.
+    """
+    output = Path(output)
+    names = sorted(path.relative_to(output).as_posix() for path in output.rglob('*') if path.is_file())
+    tracked = [name for name in names if not name.startswith(GENERATED_DIR + '/')]
+    digest = hashlib.sha256('\n'.join(tracked).encode('utf-8')).hexdigest()
+    search = int(f'{GENERATED_DIR}/pagefind.js' in names)
+    return f'[site-census] files={len(tracked)} sha256={digest} generated={len(names) - len(tracked)} search={search}'
+
+
 def checkout_manifest(root: Path = ROOT) -> dict[str, list[str]]:
     """Checkout files split into served and never-served paths (for live probes).
 
@@ -170,6 +191,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     files = stage(ROOT, ROOT / OUTPUT)
     print(f'[OK] Staged {len(files)} public files into {OUTPUT}/')
+    print(census(ROOT / OUTPUT))
     return 0
 
 
