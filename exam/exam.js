@@ -1278,11 +1278,12 @@
     var rows = table.tBodies[0] ? table.tBodies[0].rows : [];
     var wrap = document.querySelector('.ex-more-wrap');
     var btn = wrap && wrap.querySelector('.ex-more');
+    var count = wrap && wrap.querySelector('.ex-more-count');
     if (!btn || rows.length <= page) return;
     var shown = page;
     for (var i = page; i < rows.length; i++) rows[i].hidden = true;
     function label() {
-      btn.textContent = '載入更多（' + (shown + 1) + '–' + Math.min(shown + page, rows.length) + '）';
+      if (count) count.textContent = '已顯示 ' + shown + '／' + rows.length + ' 章';
     }
     label();
     wrap.hidden = false;

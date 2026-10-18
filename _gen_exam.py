@@ -852,16 +852,20 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
     body = (
         f'<h1 class="ex-h1">{HUB_TITLE}</h1>'
         '<p class="ex-lead">目前整理 101–115 年考題以及各章節重點整理（陸續更新中）</p>'
-        f'{SEARCH_BOX.format(index=f"/exam/search-index.json?v={SEARCH_VERSION[0]}")}'
         '<h2 class="ex-h2 ex-h2-sm">目前甄審筆試出題參考範圍</h2>'
         f'<ol class="ex-refs">{refs}</ol>{NOTICE}'
-        '<h2 class="ex-h2">考古卷</h2>'
-        '<p class="ex-meta"><a class="ex-cta" href="/exam/practice">自選年份／隨機出題</a></p>'
-        + (('<h2 class="ex-h2">考點總覽</h2>'
+        # 考古卷 and 考點總覽 sit side by side (stacked on phones).
+        '<div class="ex-hub-cards">'
+        '<section class="ex-hub-card" aria-labelledby="hub-practice-h"><h2 class="ex-h2" id="hub-practice-h">考古卷</h2>'
+        '<p class="ex-meta">選擇年份成卷，或從歷年考題隨機出題。</p>'
+        '<p class="ex-meta"><a class="ex-cta" href="/exam/practice">自選年份／隨機出題</a></p></section>'
+        + (('<section class="ex-hub-card" aria-labelledby="hub-concepts-h"><h2 class="ex-h2" id="hub-concepts-h">考點總覽</h2>'
             f'<p class="ex-meta">把歷年考題拆成 {len(data["concepts"])} 個考點，依考過的題數排序，'
             '列出每次的考法、牽涉的章節與常見陷阱；可搜尋、依章節篩選。</p>'
-            '<p class="ex-meta"><a class="ex-cta" href="/exam/concepts">看考點總覽</a></p>')
+            '<p class="ex-meta"><a class="ex-cta" href="/exam/concepts">看考點總覽</a></p></section>')
            if data["concepts"] else "") +
+        '</div>'
+        f'{SEARCH_BOX.format(index=f"/exam/search-index.json?v={SEARCH_VERSION[0]}")}'
         '<h2 class="ex-h2">依章節瀏覽與讀書進度</h2>'
         '<p class="ex-meta">已做題數、正確率（以每題最近一次作答計算）與「課本已讀完」只存在這台裝置的瀏覽器，'
         '不同電腦或手機不會同步。正確率低於 60% 以紅字標示。</p>'
@@ -875,7 +879,8 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
         '<table class="ex-rank" id="ex-rank" aria-labelledby="rank-h" data-rank-page="25"><thead><tr><th scope="col">章節</th>'
         '<th scope="col">題數</th><th scope="col"><span class="ex-sr">比例</span></th></tr></thead>'
         f"<tbody>{rows}</tbody></table>"
-        '<div class="ex-more-wrap" hidden><button type="button" class="ex-more" aria-controls="ex-rank">載入更多</button></div>'
+        '<div class="ex-more-wrap" hidden><span class="ex-more-count" aria-live="polite"></span>'
+        '<button type="button" class="ex-more" aria-controls="ex-rank">載入更多</button></div>'
         + '<h2 class="ex-h2">其他參考書與工具</h2>'
         f'<ul class="ex-chapter-list">{books}<li><a href="/exam/review">錯題本與 Anki 匯出</a></li></ul>'
     )
@@ -1364,8 +1369,13 @@ mark.ex-key{background:linear-gradient(transparent 42%,#fde9a8 42%);color:inheri
 .ex-s-sec{font-weight:600;color:var(--teal-deep)}
 .ex-s-hit{display:block;font-size:12px;color:var(--muted);overflow-wrap:anywhere}
 .ex-s-more{font-size:12px;color:var(--muted);padding:0 14px 8px;margin:0}
-.ex-more-wrap{display:flex;justify-content:flex-end;margin:-4px 0 12px}
-.ex-more{border:1px solid #4d6358;border-radius:9999px;padding:6px 16px;font-size:13px;font-weight:600;background:#fff;color:#4d6358;cursor:pointer}
+.ex-more-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;margin:8px 0 16px}
+.ex-more-count{font-size:12.5px;color:var(--muted)}
+.ex-more{flex:none;white-space:nowrap;border:1px solid #4d6358;border-radius:9999px;padding:6px 20px;font-size:13px;font-weight:600;background:#fff;color:#4d6358;cursor:pointer}
+.ex-hub-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:22px 0 6px}
+.ex-hub-card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;padding:4px 18px 14px;background:rgba(77,99,88,.05)}
+.ex-hub-card .ex-h2{margin-top:12px}
+.ex-hub-card .ex-meta:last-child{margin-top:auto;padding-top:6px}
 :root[data-theme="dark"] .ex-search-input{background:#24211c;border-color:#a4b5a8}
 :root[data-theme="dark"] .ex-search-input:focus{outline-color:#a4b5a8}
 :root[data-theme="dark"] .ex-search-results{background:#24211c;border-color:#3a352c}
