@@ -491,8 +491,9 @@ def expand_marks(fragment: str, on_page: set[str]) -> str:
 
 
 def toc_html(note: str | None, qs_count: int, *, mobile: bool = False, concepts: int = 0) -> str:
-    items = [f'<li class="ex-toc-cx"><a href="#concepts-h">本章考點（{concepts}）</a></li>'] if concepts else []
-    items += [f'<li><a href="#{sid}">{title}</a></li>' for sid, title in SECTION.findall(note or "")]
+    items = [f'<li><a href="#{sid}">{title}</a></li>' for sid, title in SECTION.findall(note or "")]
+    if concepts:  # the 本章考點 block sits between the notes and the questions
+        items.append(f'<li class="ex-toc-cx"><a href="#concepts-h">本章考點（{concepts}）</a></li>')
     items.append(f'<li class="ex-toc-qs"><a href="#qs-h">考題（{qs_count} 題）</a></li>')
     cls, state, label = (("ex-toc ex-toc-mobile", "", "本章目錄（展開式）") if mobile
                          else ("ex-toc ex-toc-side", " open", "本章目錄"))
@@ -515,8 +516,9 @@ FLAG_LABELS = {"official_conflict": "官方答案有疑義"}
 
 
 def concept_name(c: dict) -> str:
-    """「中文（English）」: the English name follows in a quieter style."""
-    en = f"<small>（{esc(c['en'])}）</small>" if c["en"] else ""
+    """Chinese name on its own line, the English name below it in small muted type
+    (doctor decision 2026-10-18: no back-to-back brackets such as 「（Dsg1）（PF autoantigen）」)."""
+    en = f"<small>{esc(c['en'])}</small>" if c["en"] else ""
     return f'<span class="cx-name">{esc(c["zh"])}{en}</span>'
 
 
@@ -674,7 +676,7 @@ def chapter_page(shell, data, chapter: dict, qs: list[dict]) -> str:
         f'<p class="ex-meta">原書 p.{chapter["pageStart"]}–{chapter["pageEnd"]} · 考題共 {len(qs)} 題'
         f'（已有詳解 {explained} 題）</p>'
         f'<p class="ex-meta">{esc(year_text)}</p>{NOTICE}{links_html(data["links"].get(n))}'
-        f'{toc_html(note, len(qs), mobile=True, concepts=n_concepts)}{concepts_html}{notes_html}'
+        f'{toc_html(note, len(qs), mobile=True, concepts=n_concepts)}{notes_html}{concepts_html}'
         f'<section aria-labelledby="qs-h"><h2 id="qs-h" class="ex-h2">考題</h2>{MODE_BAR}'
         + "".join(question_html(q, data, current_chapter=n) for q in qs)
         + "</section>"
@@ -1403,7 +1405,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 .cx-list details[open]>summary{border-bottom:1px dashed var(--border)}
 .cx-list details>div{padding:2px 14px 12px}
 .cx-name{flex:1 1 18em;min-width:0;font-weight:700;font-size:14.5px;line-height:1.65;overflow-wrap:anywhere}
-.cx-name small{font-weight:500;font-size:13px;color:var(--ink-2)}
+.cx-name small{display:block;font-weight:500;font-size:12.5px;line-height:1.5;color:var(--muted);margin-top:1px}
 .cx-meta{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px 6px;font-size:12px;color:var(--muted)}
 .cx-meta b,.cx-meta i,.cx-meta em{font-style:normal;font-weight:700;border-radius:9999px;padding:1px 8px;white-space:nowrap}
 .cx-meta b{background:#e3efe9;color:#0c5159}
@@ -1434,12 +1436,14 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 .cx-filters .ex-check{flex-wrap:wrap;max-width:100%}
 .cx-status{font-size:13px;color:var(--ink-2);margin:8px 0 0}
 .cx-status:empty{display:none}
-.ex-toc-cx{font-weight:700;border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:6px}
+.ex-toc-cx{font-weight:700;margin-top:6px;border-top:1px solid var(--line);padding-top:6px}
+.ex-toc-cx+.ex-toc-qs{margin-top:0;border-top:0;padding-top:0}
 :root[data-theme="dark"] .cx-rule{background:#24211c;color:#d6d3cd}
 :root[data-theme="dark"] .cx-list details,:root[data-theme="dark"] .cx-also{background:#24211c;border-color:#3a352c}
 :root[data-theme="dark"] .cx-list details[open]>summary,:root[data-theme="dark"] .cx-how li,:root[data-theme="dark"] .cx-also li,:root[data-theme="dark"] .cx-how b{border-color:#3a352c}
 :root[data-theme="dark"] .cx-list summary::before{border-left-color:#a4b5a8}
-:root[data-theme="dark"] .cx-name small,:root[data-theme="dark"] .cx-chs{color:#c9c3b8}
+:root[data-theme="dark"] .cx-chs{color:#c9c3b8}
+:root[data-theme="dark"] .cx-name small{color:#a8a094}
 :root[data-theme="dark"] .cx-meta b{background:#1f3a33;color:#bfe3d6}
 :root[data-theme="dark"] .cx-meta i{background:#3a352c;color:#cfe0d6}
 :root[data-theme="dark"] .cx-meta em,:root[data-theme="dark"] .cx-how em{background:#7f1d1d;color:#fee2e2}

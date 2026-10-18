@@ -43,6 +43,26 @@ RULE = ("題數＝考過這個考點的不重複題數；陷阱次數＝以該�
         "不計否定題或「以上皆是」題中本身正確的選項、標記排除統計的選項，以及課本證據不足的選項。")
 
 
+# Wording fixes for text shown on the site (concept names, 考法 sentences, trap
+# descriptions), applied on every import so a re-run never brings the old wording
+# back. Longest phrases first. Doctor decision 2026-10-18: these phrasings tripped
+# the YMYL claim audit (_check_ymyl_claims.py) although they make no cure claim.
+TEXT_FIXES = [
+    ("完全治癒率低、復發常見", "治癒率低、復發常見"),
+    ("完全治癒率低且復發非常常見", "治癒率低、復發常見"),
+    ("完全治癒率低", "治癒率低、復發常見"),
+    ("神經精神藥物", "神經科／精神科藥物"),
+]
+
+
+def fix_text(text: str, used: Counter) -> str:
+    for old, new in TEXT_FIXES:
+        if old in text:
+            used[old] += text.count(old)
+            text = text.replace(old, new)
+    return text
+
+
 def jload(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -77,6 +97,7 @@ def build(src: Path) -> tuple[str, dict]:
     chapters = {c["chapter"] for c in jload(DATA / "fitz_chapters.json")}
 
     errors: list[str] = []
+    used: Counter = Counter()  # TEXT_FIXES entries that matched
     # concept -> question -> option keys, and the trap tallies
     trap_items: dict[str, Counter] = defaultdict(Counter)
     trap_qs: dict[str, dict[str, set]] = defaultdict(lambda: defaultdict(set))
@@ -129,7 +150,7 @@ def build(src: Path) -> tuple[str, dict]:
             items = [qconcepts[qid]["items"][k] for k in h["keys"]]
             # An option is shown as 誘答 when it is a wrong option, whatever the counting rule says.
             trap = any(it["role"] == "distractor" and not it.get("inverted_true_fact") for it in items)
-            row = {"q": qid, "k": h["keys"], "t": text}
+            row = {"q": qid, "k": h["keys"], "t": fix_text(text, used)}
             if trap:
                 row["trap"] = 1
             if fl := flags(qid, h["keys"]):
@@ -137,10 +158,10 @@ def build(src: Path) -> tuple[str, dict]:
             how.append(row)
         if len(how) != c["n_questions"]:
             errors.append(f"{cid}: n_questions {c['n_questions']} but {len(how)} 考法")
-        traps = [{"desc": misconceptions[m], "n": trap_items[cid][m], "nq": len(trap_qs[cid][m])}
+        traps = [{"desc": fix_text(misconceptions[m], used), "n": trap_items[cid][m], "nq": len(trap_qs[cid][m])}
                  for m in sorted(trap_items[cid], key=lambda m: (-len(trap_qs[cid][m]), -trap_items[cid][m], m))]
         out.append({
-            "id": cid, "zh": c["name_zh"].strip(), "en": c["name_en"].strip(), "ch": c["chapter"],
+            "id": cid, "zh": fix_text(c["name_zh"].strip(), used), "en": c["name_en"].strip(), "ch": c["chapter"],
             "chs": sorted(set(c["chapters_involved"]) | {c["chapter"]}),
             "years": sorted({questions[h["q"]]["year"] for h in how}),
             "how": how, "traps": traps,
@@ -161,6 +182,7 @@ def build(src: Path) -> tuple[str, dict]:
         "generated_by": "_import_exam_concepts.py",
         "source": {name: digest(src / name) for name in ("concepts.json", "qconcepts.json", "stats.json")},
         "rule": RULE,
+        "text_fixes": {old: used[old] for old, _ in TEXT_FIXES if used[old]},
         "counts": {
             "concepts": len(out),
             "how": sum(len(c["how"]) for c in out),
