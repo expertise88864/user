@@ -18570,7 +18570,7 @@
     "key": "④",
     "label": "錯誤",
     "ok": false,
-    "text": "美國 FDA 建議檢測的對象是漢人（Han Chinese）與泰國（Thai）血統的病人，不是所有亞裔；而且課本中 HLA-B*1502 是與 carbamazepine 引起的 SJS/TEN 相關，沒有列 DRESS。",
+    "text": "美國現行仿單建議用藥前檢測 HLA-B*1502 的對象是具遺傳高風險族群血統者（patients with ancestry in genetically at-risk populations）；此等位基因幾乎只見於亞洲廣大地區血統者，但各族群盛行率差異很大（Tegretol 仿單，DailyMed 2026）；而且課本中 HLA-B*1502 是與 carbamazepine 引起的 SJS/TEN 相關，沒有列 DRESS。",
     "refs": [
      [
       44,
@@ -27696,7 +27696,7 @@
     "key": "②",
     "label": "建議藥物",
     "ok": true,
-    "text": "Clofazimine 每月 300 mg 加每日 50 mg，只用於多菌型病人；副作用為色素沉著與皮膚乾燥。",
+    "text": "Clofazimine 每月 300 mg 加每日 50 mg；WHO 2018 指引起，少菌型（paucibacillary, PB）與多菌型（multibacillary, MB）病人都使用（課本所載只用於多菌型是 2018 年以前的方案；WHO 2018 漢生病指引）；副作用為色素沉著與皮膚乾燥。",
     "refs": [
      [
       159,
@@ -27708,7 +27708,7 @@
     "key": "③",
     "label": "建議藥物",
     "ok": true,
-    "text": "Rifampicin 是高度殺菌藥物，每月一次在監督下服用（成人 600 mg）；多菌型用 dapsone + clofazimine + rifampicin，少菌型用 dapsone + rifampicin 6 個月。",
+    "text": "Rifampicin 是高度殺菌藥物，每月一次在監督下服用（成人 600 mg）；WHO 2018 指引建議所有病人都用 rifampicin + dapsone + clofazimine 三藥，少菌型治療 6 個月、多菌型 12 個月（課本所載少菌型 dapsone + rifampicin 6 個月為 2018 年以前的方案；WHO 2018 漢生病指引）。",
     "refs": [
      [
       159,
@@ -48380,7 +48380,7 @@
     "key": "②",
     "label": "正確",
     "ok": true,
-    "text": "哺乳婦女可以用 permethrin 5% cream（pregnancy category B），兩次塗抹各限 2 小時；ivermectin 則不建議用於哺乳婦女。全家接觸者應同時治療。",
+    "text": "哺乳婦女可以用 permethrin 5% cream（pregnancy category B），兩次塗抹各限 2 小時；ivermectin 依 CDC 2021 STI 指引可能可與哺乳並用（likely compatible with breastfeeding），但因孕婦與哺乳婦女的使用資料有限，仍以 permethrin 為首選（CDC 2021 STI 指引）。全家接觸者應同時治療。",
     "refs": [
      [
       178,
@@ -48441,7 +48441,7 @@
     "key": "B",
     "label": "錯誤（本題答案）",
     "ok": false,
-    "text": "美國 FDA 建議檢測的是漢人與泰國血統的病人，不是所有亞裔；且課本中 HLA-B*1502 是與 carbamazepine 引起的 SJS/TEN 相關，沒有列 DRESS。",
+    "text": "美國現行仿單建議用藥前檢測 HLA-B*1502 的對象是具遺傳高風險族群血統者（patients with ancestry in genetically at-risk populations）；此等位基因幾乎只見於亞洲廣大地區血統者，但各族群盛行率差異很大（Tegretol 仿單，DailyMed 2026）；且課本中 HLA-B*1502 是與 carbamazepine 引起的 SJS/TEN 相關，沒有列 DRESS。",
     "refs": [
      [
       44,
