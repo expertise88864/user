@@ -123,6 +123,20 @@ def main() -> int:
     require(errors, "admin.html", "d.querySelectorAll('script').forEach(s => s.remove());", "Admin preview should remove all repository-provided scripts")
     require(errors, "admin.html", "await auth.setPat(value);", "Admin login should mint the HttpOnly server session")
     require(errors, "admin.html", "PAT = auth ? auth.getPat() : '';", "Admin shell should use the shared expiring credential reader")
+    # Exam editor (2026-10-19): text-only rendering, cookie session only, and a
+    # script-less preview iframe that gets no sandbox permissions.
+    editor = "admin/exam-editor.js"
+    forbid(errors, editor, "innerHTML", "The exam editor must build its DOM with text nodes only")
+    forbid(errors, editor, "insertAdjacentHTML", "The exam editor must build its DOM with text nodes only")
+    forbid(errors, editor, "Authorization", "The exam editor must never send the browser PAT")
+    forbid(errors, editor, "allow-", "The exam preview iframe must get no sandbox permissions")
+    forbid(errors, editor, "document.write", "The exam editor must not write documents")
+    require(errors, editor, "credentials: 'same-origin'", "Exam drafts should rely on the existing HttpOnly session")
+    require(errors, editor, "preview.setAttribute('sandbox', '');", "The exam preview must be a fully sandboxed iframe")
+    require(errors, editor, "href=\"/admin/exam-preview.css\"", "The exam preview should load only the generated exam stylesheet")
+    require(errors, editor, "'/api/admin/exam-draft'", "The exam editor should use the purpose-specific draft endpoint")
+    require(errors, "admin.html", '<div id="examList" class="exam-list" hidden></div>', "The exam sidebar needs its own container outside #fileList")
+    require(errors, "admin.html", '<script src="/admin/exam-editor.js" defer></script>', "The exam editor script must be loaded by the admin shell")
     require(errors, "admin/settings-drafts.js", "credentials: 'same-origin'", "Settings writes should rely on the existing HttpOnly session")
     require(errors, "admin/settings-drafts.js", "body: JSON.stringify(input)", "Settings writes should use bounded, structured data")
     forbid(errors, "admin/admin-extras.js", "headers: { 'Content-Type': 'application/json', Authorization: 'token ' + getPat() }", "Admin should not resend PATs to cookie-authenticated same-origin APIs")

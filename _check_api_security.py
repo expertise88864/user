@@ -82,7 +82,8 @@ def main() -> int:
     # manual mode only passes together with its refusal check.
     require_no_redirect_follow(errors, "api/admin/_github-fetch.js")
     for rel in ("api/admin/_github-fetch.js", "api/admin/_session.js",
-                "api/admin/article-draft.js", "api/admin/_settings-git.js"):
+                "api/admin/article-draft.js", "api/admin/_settings-git.js", "api/admin/exam-draft.js",
+                "api/admin/_exam-content.js"):
         # Edge fetch does not support the `cache` request option; freshness
         # is requested with the Cache-Control request header instead.
         forbid_pattern(errors, rel, r"\bcache\s*:\s*'", "server-side fetch must not pass a `cache` option on the Edge runtime")
@@ -92,8 +93,28 @@ def main() -> int:
     forbid_pattern(errors, "api/admin/_github-fetch.js", r"console\.\w+\([^)]*\b(?:pat|Authorization|headers)\b", "GitHub transport logs must never include the PAT or headers")
     require(errors, "api/admin/article-draft.js", "'https://api.github.com/repos/' + REPO + '/' + path", "article drafts must keep the fixed repository")
     require(errors, "api/admin/_settings-git.js", "'https://api.github.com/repos/' + contract.repository + '/' + path", "settings must keep the fixed repository")
-    require(errors, "api/admin/_session.js", "await validateRepositoryAccess(pat);", "login must verify repository access before minting a session")
-    forbid(errors, "api/admin/_session.js", "permissions.push", "login repository access must be proven by a read, not permissions metadata")
+    # Exam CMS drafts (2026-10-19): owner cookie session + same-origin only, one
+    # fixed draft branch, compare-and-swap ref updates, and a pure content module
+    # (strict note grammar, explanation schema, byte-exact serializer).
+    exam, content = "api/admin/exam-draft.js", "api/admin/_exam-content.js"
+    require(errors, exam, "'https://api.github.com/repos/' + REPO + '/' + path", "exam drafts must keep the fixed repository")
+    require(errors, exam, "const BRANCH = 'cms-exam/drafts';", "exam drafts must write one fixed draft branch")
+    require(errors, exam, "const OWNER = 'expertise88864';", "exam drafts must stay owner-only")
+    require(errors, exam, "session.login !== OWNER", "exam drafts must reject any other signed-in login")
+    require(errors, exam, "req.headers.get('sec-fetch-site') !== 'same-origin'", "exam draft writes must require Sec-Fetch-Site: same-origin")
+    require(errors, exam, "fail(403, 'same_origin_required')", "exam draft writes must require a same-origin request")
+    require(errors, exam, "'Cache-Control': 'private, no-store'", "exam draft responses must not be cached")
+    require(errors, exam, "{ sha: next, force: false }", "exam draft ref updates must be non-force compare-and-swap")
+    require(errors, exam, "if (size > MAX_BODY)", "exam draft request bodies must stay size-capped")
+    require(errors, content, "import { parse, parseFragment } from 'parse5';", "exam notes must be checked with the HTML parser allowlist")
+    require(errors, content, "reject('format_mismatch'", "explanations must fail closed when the stored file is not reproduced exactly")
+    require(errors, content, "serializeExplanations(data) !== storedText", "explanation writes must verify the stored bytes round-trip first")
+    for rel in (exam, content):
+        forbid(errors, rel, "force: true", "exam drafts must never force-update a ref")
+        forbid(errors, rel, "heads/main", "exam drafts must never write main")
+        forbid(errors, rel, "'DELETE'", "exam drafts cannot delete refs or files")
+        forbid_pattern(errors, rel, r"console\.\w+\(", "exam drafts must not log")
+    forbid_pattern(errors, content, r"\bfetch\s*\(|\bgetSession\b|\bpat\b", "the exam content rules must stay pure (no network, session or credential)")
     # Homepage recommendations (熱門推薦) were retired 2026-10-17 by user
     # decision: no public KV read, no settings field and no admin save kind.
     forbid(errors, "api/admin/_site-settings.js", "contract.maxPicks", "Retired homepage recommendations must not return to the settings grammar")

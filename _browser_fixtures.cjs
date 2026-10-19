@@ -13,6 +13,7 @@ const FIXTURES = [
   '_test_settings_public_browser.cjs',
   '_test_admin_editing_browser.cjs',
   '_test_file_groups_browser.cjs',
+  '_test_exam_editor_browser.cjs',
   '_test_settings_panel_browser.cjs',
   '_test_dictionary_undo_browser.cjs',
   '_test_font_loader_browser.cjs',

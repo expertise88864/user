@@ -246,6 +246,11 @@ CHECK_STEPS: list[list[str]] = [
     # 「考試當年 vs 現行觀念」 data rules (qid, sources with urls, impact level,
     # no simplified characters) and placement inside the answer reveal.
     [PY, "-m", "unittest", "_test_exam_timemachine"],
+    # Admin exam editing (2026-10-19): the maintainer helper that integrates the
+    # cms-exam/drafts branch, and json.dumps format identity of explanations.json.
+    # The endpoint and its sanitizer are covered by _test_exam_draft.cjs below,
+    # the editor UI by _test_exam_editor_browser.cjs (browser fixtures).
+    [PY, "-m", "unittest", "_test_pull_exam_drafts"],
     [PY, "_test_site_settings_data.py"],
     [PY, "-m", "unittest", "_test_site_settings_render"],
     [PY, "-m", "unittest", "_test_site_settings_delivery"],
@@ -286,7 +291,7 @@ CHECK_STEPS: list[list[str]] = [
     ["node", "--test", "_test_cms_delivery.cjs", "_test_vercel_gate.cjs"],
     [PY, "_test_scheduled_candidate.py"],
     [PY, "-m", "unittest", "_test_indexnow_delivery"],
-    ["node", "--test", "_test_serve.mjs", "_test_runtime_edges.mjs", "_test_reset_cache.mjs", "_test_article_prefetch.mjs", "_test_admin_skeleton.mjs", "_test_admin_sessions.cjs", "_test_admin_persistence.cjs", "_test_article_draft.cjs", "_test_article_draft_client.cjs", "_test_navigation.cjs", "_test_search_integrity.cjs", "_test_analytics.cjs", "_test_font_loader.cjs"],
+    ["node", "--test", "_test_serve.mjs", "_test_runtime_edges.mjs", "_test_reset_cache.mjs", "_test_article_prefetch.mjs", "_test_admin_skeleton.mjs", "_test_admin_sessions.cjs", "_test_admin_persistence.cjs", "_test_article_draft.cjs", "_test_article_draft_client.cjs", "_test_exam_draft.cjs", "_test_navigation.cjs", "_test_search_integrity.cjs", "_test_analytics.cjs", "_test_font_loader.cjs"],
     [PY, "_test_navigation_generation.py"],
     [PY, "_test_search_scope.py"],
     [PY, "_test_search_index_visibility.py"],

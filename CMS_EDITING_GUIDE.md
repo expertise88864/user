@@ -16,6 +16,33 @@
 建立新版期間若繼續編輯，畫面保留新輸入並提示重讀比對，不會自動切換到新雲端內容。
 若回應遺失或重讀核對未完成，雲端可能已接受操作；先重讀比對，不會自動重送。
 
+## 考試重點與題目詳解（後台 /admin，雲端草稿）
+
+站主（GitHub 帳號 `expertise88864`，唯一管理員）可在 /admin 左側清單的「考試重點」「題目詳解」直接修改考試區來源。
+這裡的存檔**只進雲端草稿分支 `cms-exam/drafts`，不會進 main，也不會上線**；伺服器收到的寫入請求必須同源（`Origin` 與 `Sec-Fetch-Site: same-origin`），且只用非 force 的方式更新這一條分支。
+
+1. 考試重點：點 `Ch.N` 開啟全螢幕編輯視窗。左邊是該章 `data/exam/notes/fitz-N.frag` 的原始碼，右邊是套用考試區樣式的即時預覽
+   （預覽是沒有任何權限、不執行腳本的隔離框）。按「存成雲端草稿」時，伺服器用嚴格白名單檢查，不合格就整份拒絕並說明原因（含行號），不會偷偷刪改：
+   - 最外層只能是 `<section class="ex-note" id="…">`（class 在前、id 在後、只有這兩個屬性），每段以 `<h2>` 開頭；id 為小寫英數與連字號且不重複；
+   - 標籤只限 section、h2、h3、p、ul、ol、li、strong、em、span、mark、table、thead、tbody、tr、th、td、aside、br；每個元素都要明確寫出結束標籤
+     （含 `<tbody>`，不可依賴瀏覽器自動補上），不可有多餘的結束標籤、不可巢狀表格；
+   - 開始標籤必須寫成 `<tag 屬性="值">`（雙引號）；屬性只限 `class`（固定值：section 為 `ex-note`、aside 為 `ex-trap`、table 為 `ex-table`、
+     span 為 `ex-ref` 或 `ex-ref ex-ref-mckee`，p 可選 `ex-cite`、strong 可選 `ex-n`）、section 的 `id`、mark 的 `data-q`（`YYY-NN`，多題以逗號分隔）、th 的 `scope`（col 或 row）；
+   - 不可有註解、`{{`、style、事件屬性、href、src；上限 400 KB；換行一律存成 LF。
+2. 題目詳解：點「編輯題目詳解…」，輸入題號（`YYY-NN`）載入，用表單修改摘要、各選項的標籤／對錯／說明／參考頁碼、附註（每行一則）與疑義（JSON）。
+   只能修改既有題目，選項的數量與代號固定、不可增減。摘要、標籤、說明等每個欄位都**不可換行**；文字中可用 `[i]菌名[/i]` 表示斜體（學名）。
+   參考頁碼格式為「章節:頁碼」，章節是 1–300 或 `M`（McKee），頁碼是數字或 `266-267`。疑義的來源網址必須是完整的 https 網址，PMID 為數字字串。
+   伺服器逐欄檢查（未知欄位、超長、非 https 來源網址等會被拒絕），並保證寫回的 `explanations.json` 與 `json.dumps(indent=1, ensure_ascii=False)`
+   逐位元組相同、只有該題變動；雲端現有檔案若不是這個精確格式就直接停止（`format_mismatch`），不寫入。
+   每次存檔都是「目前 main ＋ 所有已存草稿的題目」再換上這一題，所以先後存不同題不會互相覆蓋，也不會把 main 之後的新修改改回去。
+3. 版本衝突（409 `conflict`）時畫面上的文字會保留，並備份在這個瀏覽器；按「重新載入」取得最新版後，可用「還原本機備份」取回自己的文字再存。
+4. 存檔後只表示草稿已進 `cms-exam/drafts`。**上線仍是手動的維護流程**：
+   1. 在乾淨的 `codex/*` 候選分支執行 `python _pull_exam_drafts.py`。它會 fetch 草稿分支、讀 `.cms-exam/drafts.json`，只把清單內的
+      `data/exam/notes/fitz-N.frag` 整份取回；`explanations.json` 則只把清單內題號的詳解套到**目前**檔案（main 在草稿建立後的其他修改會保留）。
+      目標檔有未提交修改、同一章或同一題在 main 也被改過（衝突）、或格式不符時一律停止且不寫入任何檔案。
+   2. 執行 `python _gen_exam.py`，檢查 `git diff`，commit、push 候選分支，跑完整 CI 與 `python tools/pr_review.py`，通過後才進 main。
+   3. 整合上線後刪除草稿分支：`git push origin --delete cms-exam/drafts`（之後的新編輯會從新的 main 重建分支）。
+
 ## 發布申請紀錄退役（尚未發布）
 
 文章正式發布後，原申請仍保留，不會因保存新版而被刪掉。交付端先核對該完整 SHA 的正式
