@@ -98,6 +98,45 @@ class PullTests(unittest.TestCase):
         self.addCleanup(directory.cleanup)
         return Scenario(Path(directory.name), **kwargs)
 
+    def cleanup_line(self, output: str) -> list[str]:
+        lines = [line.strip() for line in output.splitlines() if line.strip().startswith("git push")]
+        self.assertEqual(len(lines), 1, output)
+        return lines[0].split()
+
+    def remote_head(self, s: Scenario) -> str:
+        listing = run(s.work, "ls-remote", "--heads", "origin", BRANCH).strip()
+        return listing.split()[0] if listing else ""
+
+    def test_cleanup_deletes_the_branch_only_while_it_is_still_the_imported_head(self):
+        s = self.scenario()
+        s.draft(notes={17: NOTE_17.replace("old", "new")})
+        code, output = s.pull()
+        self.assertEqual(code, 0, output)
+        imported = self.remote_head(s)
+        self.assertEqual(len(imported), 40)
+        self.assertIn(imported, output, "the imported branch head is printed")
+        command = self.cleanup_line(output)
+        self.assertEqual(command, ["git", "push", f"--force-with-lease=refs/heads/{BRANCH}:{imported}", "origin", "--delete", BRANCH])
+        self.assertEqual(pull.cleanup_command("origin", imported), " ".join(command))
+        # A newer draft is saved after the import: the printed delete is refused and the branch stays.
+        cloud = s.tmp / "cloud"
+        write(cloud / pull.note_path(24), NOTE_24.replace("old", "newer draft"))
+        run(cloud, "add", "-A"); run(cloud, "commit", "-m", "draft 2"); run(cloud, "push", "origin", BRANCH)
+        newer = self.remote_head(s)
+        self.assertNotEqual(newer, imported)
+        refused = subprocess.run(command, cwd=s.work, capture_output=True, text=True, encoding="utf-8")
+        self.assertNotEqual(refused.returncode, 0, "the lease must make the delete fail")
+        self.assertEqual(self.remote_head(s), newer, "the newer draft is still on the remote")
+
+    def test_cleanup_command_succeeds_when_nothing_was_saved_after_the_import(self):
+        s = self.scenario()
+        s.draft(notes={17: NOTE_17.replace("old", "new")})
+        code, output = s.pull()
+        self.assertEqual(code, 0, output)
+        done = subprocess.run(self.cleanup_line(output), cwd=s.work, capture_output=True, text=True, encoding="utf-8")
+        self.assertEqual(done.returncode, 0, done.stderr)
+        self.assertEqual(self.remote_head(s), "")
+
     def test_no_draft_branch_is_not_an_error(self):
         s = self.scenario()
         code, output = s.pull()

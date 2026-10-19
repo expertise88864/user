@@ -12,7 +12,9 @@ and copies only the source files it lists into the working tree:
 
 Nothing is committed, pushed or deleted. Next steps are printed at the end:
 python _gen_exam.py, review the diff, then the normal codex/* candidate flow
-(CI, PR review). Run it from a clean checkout of the candidate branch.
+(CI, PR review). It also prints the exact branch head that was imported and a
+cleanup command that deletes the draft branch only while the remote is still at
+that head (--force-with-lease), so a draft saved after the import is never lost. Run it from a clean checkout of the candidate branch.
 
 Fail-closed rules (nothing is written unless every listed item can be applied):
   * a target path with uncommitted changes in the working tree is refused;
@@ -96,6 +98,11 @@ def parse_exact(raw: bytes, label: str) -> dict:
     return data
 
 
+def cleanup_command(remote: str, imported: str) -> str:
+    """Delete the draft branch only if the remote is still at the imported head."""
+    return f"git push --force-with-lease=refs/heads/{BRANCH}:{imported} {remote} --delete {BRANCH}"
+
+
 def pull(repo: Path, remote: str = "origin", dry_run: bool = False, out=print) -> int:
     repo = Path(repo)
     try:
@@ -112,6 +119,7 @@ def _pull(repo: Path, remote: str, dry_run: bool, out) -> int:
         return 0
     ref = f"refs/remotes/{remote}/{BRANCH}"
     git(repo, "fetch", remote, f"+refs/heads/{BRANCH}:{ref}")
+    imported = git(repo, "rev-parse", ref).stdout.decode("utf-8").strip()
     record = read_manifest(repo, ref)
     if not record["notes"] and not record["explanations"]:
         out("草稿分支的清單是空的，沒有可整合的項目。")
@@ -187,7 +195,9 @@ def _pull(repo: Path, remote: str, dry_run: bool, out) -> int:
     out(f"已更新 {len(writes)} 個檔案（未 commit）。")
     out("下一步：python _gen_exam.py 重新生成 exam/**；檢查 git diff；"
         "在 codex/* 候選分支 commit、push，走 CI 與 PR review。")
-    out(f"整合發佈後，維護者再刪除雲端草稿分支：git push {remote} --delete {BRANCH}")
+    out(f"本次匯入的草稿分支 head：{imported}")
+    out(f"整合發佈後，維護者用下面的條件式刪除雲端草稿分支（只有分支仍停在上面這個 head 才會刪；"
+        f"若之後又有人存了新草稿就會被拒絕、分支保留）：\n  {cleanup_command(remote, imported)}")
     return 0
 
 

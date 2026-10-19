@@ -34,6 +34,14 @@ module.exports = async function checkExamEditor(browser) {
   const cspFor = source => vercel.headers.find(entry => entry.source === source).headers.find(header => header.key === 'Content-Security-Policy').value;
   const csp = { page: cspFor('/admin.html'), asset: cspFor('/admin/(.*)') };
   const violations = [];
+  const holds = [];
+  const hold = test => {
+    const entry = { test }; let release, arrive;
+    entry.gate = new Promise(resolve => { release = resolve; });
+    entry.arrived = new Promise(resolve => { arrive = resolve; });
+    entry.arrive = arrive; holds.push(entry);
+    return { release, arrived: entry.arrived };
+  };
   let nextFailure = null, nextBlob = 0, listFails = false;
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, serviceWorkers: 'block' });
   try {
@@ -57,6 +65,9 @@ module.exports = async function checkExamEditor(browser) {
       if (url.pathname === '/api/admin/login') return route.fulfill({ status: 200, json: { ok: true, login: 'expertise88864' } });
       if (url.pathname === '/api/admin/article-draft') return route.fulfill({ status: 200, json: { drafts: [], nextOffset: null, unsupportedRefs: 0 } });
       if (url.pathname === '/api/admin/exam-draft') {
+        // A held request signals when it arrived and answers only when released.
+        const held = holds.findIndex(entry => entry.test(url, request));
+        if (held >= 0) { const [entry] = holds.splice(held, 1); entry.arrive(); await entry.gate; }
         assert.equal(request.headers().authorization, undefined, 'the browser PAT is never sent to the cookie-authenticated API');
         if (request.method() === 'GET') {
           gets.push(url.search);
@@ -309,6 +320,112 @@ module.exports = async function checkExamEditor(browser) {
     await page.locator('#examList [data-exam-expl="101-02"]').click();
     await poll(async () => (await page.locator('#examExplForm textarea').count()) > 0 && (await page.locator('#examExplId').inputValue()) === '101-02', 'sidebar draft row opens that id');
     await page.locator('#examClose').click();
+
+    // --- a response from a closed or replaced editor session never touches the current one
+    const dirtyAsks = () => dialogs.filter(message => message.includes('尚未存成雲端草稿')).length;
+    const stayOpenIfDirty = async () => {
+      confirmAnswer = false; const asked = dirtyAsks();
+      await page.locator('#examClose').click();
+      assert.equal(dirtyAsks(), asked + 1, 'the form is still dirty');
+      assert.equal(await page.locator('#examOverlay').isVisible(), true);
+      confirmAnswer = true;
+    };
+    const closeAndWait = async () => { await page.locator('#examClose').click(); await poll(async () => !(await page.locator('#examOverlay').isVisible()), 'closed'); };
+    {
+      // note load: A is held, the dialog is closed and reopened (B loads), B is edited, then A answers
+      const mine = '<section class="ex-note" id="mine"><h2>Mine</h2></section>';
+      const a = hold(url => url.searchParams.get('kind') === 'note' && url.searchParams.get('ch') === '40');
+      await page.locator('#examList [data-exam-note="40"]').click();
+      await a.arrived;
+      await closeAndWait();
+      await page.locator('#examList [data-exam-note="40"]').click();
+      await page.waitForFunction(() => document.getElementById('examNoteSource').value.includes('Gamma'));
+      await page.locator('#examNoteSource').fill(mine);
+      a.release();
+      await page.waitForTimeout(400);
+      assert.equal(await page.locator('#examNoteSource').inputValue(), mine, 'a late note load does not overwrite the edited form');
+      await stayOpenIfDirty();
+      await closeAndWait();
+      // explanation load, same shape
+      const b = hold(url => url.searchParams.get('kind') === 'expl' && url.searchParams.get('id') === '101-02');
+      await page.locator('#examExplOpen').click();
+      await page.locator('#examExplId').fill('101-02');
+      await page.locator('#examExplLoad').click();
+      await b.arrived;
+      await closeAndWait();
+      await page.locator('#examExplOpen').click();
+      await page.locator('#examExplId').fill('101-02');
+      await page.locator('#examExplLoad').click();
+      await page.waitForSelector('#examExplForm textarea');
+      await page.locator('#examExplForm textarea').first().fill('第二個工作階段的修改');
+      b.release();
+      await page.waitForTimeout(400);
+      assert.equal(await page.locator('#examExplForm textarea').first().inputValue(), '第二個工作階段的修改', 'a late explanation load does not overwrite the edited form');
+      await stayOpenIfDirty();
+      await closeAndWait();
+      // note save: A's POST is held, the dialog is closed (confirmed) and reopened, B is edited, then A's save answers
+      const c = hold((url, request) => request.method() === 'POST');
+      await page.locator('#examList [data-exam-note="17"]').click();
+      await page.waitForFunction(() => document.getElementById('examNoteSource').value.includes('Alpha'));
+      await page.locator('#examNoteSource').fill('<section class="ex-note" id="first"><h2>First</h2></section>');
+      const postsBefore = posts.length;
+      await page.locator('#examSave').click();
+      await c.arrived;
+      await closeAndWait();
+      await page.locator('#examList [data-exam-note="17"]').click();
+      await page.waitForFunction(() => document.getElementById('examNoteSource').value.length > 0 && !document.getElementById('examNoteSource').disabled);
+      await page.locator('#examNoteSource').fill(mine);
+      c.release();
+      await poll(() => posts.length === postsBefore + 1, 'the held save reached the server');
+      await page.waitForTimeout(400);
+      assert.equal(await page.locator('#examNoteSource').inputValue(), mine, 'a late save response does not overwrite the new form');
+      assert.notEqual(await status(), SAVED, 'and does not report the new text as saved');
+      await stayOpenIfDirty();
+      await closeAndWait();
+    }
+
+    // --- Ctrl/Cmd+S belongs to the open exam dialog, not the article save behind it
+    {
+      await page.evaluate(() => { window.__articleSaves = 0; window.save = () => { window.__articleSaves += 1; }; });
+      await page.locator('#examList [data-exam-note="17"]').click();
+      await page.waitForFunction(() => document.getElementById('examNoteSource').value.length > 0 && !document.getElementById('examNoteSource').disabled);
+      await page.locator('#examNoteSource').fill('<section class="ex-note" id="keys"><h2>Keys</h2></section>');
+      const before = posts.length;
+      await page.locator('#examNoteSource').press('Control+s');
+      await poll(() => posts.length === before + 1, 'Ctrl+S posts the note');
+      assert.equal(posts.at(-1).kind, 'note');
+      await poll(async () => (await status()) === SAVED, 'saved by the shortcut');
+      assert.equal(await page.evaluate(() => window.__articleSaves), 0, 'the article save was not triggered');
+      // while a save is running the shortcut does nothing more
+      const slow = hold((url, request) => request.method() === 'POST');
+      await page.locator('#examNoteSource').fill('<section class="ex-note" id="keys"><h2>Keys 2</h2></section>');
+      const count = posts.length;
+      await page.locator('#examNoteSource').press('Meta+s');
+      await slow.arrived;
+      await page.locator('#examNoteSource').press('Control+s');
+      await page.locator('#examNoteSource').press('Control+s');
+      slow.release();
+      await poll(() => posts.length === count + 1, 'one save');
+      await page.waitForTimeout(300);
+      assert.equal(posts.length, count + 1, 'no second request while busy');
+      assert.equal(await page.evaluate(() => window.__articleSaves), 0);
+      await closeAndWait();
+      // the explanation form too
+      await page.locator('#examExplOpen').click();
+      await page.locator('#examExplId').fill('101-02');
+      await page.locator('#examExplLoad').click();
+      await page.waitForSelector('#examExplForm textarea');
+      await page.locator('#examExplForm textarea').first().fill('快捷鍵存檔');
+      const explBefore = posts.length;
+      await page.locator('#examExplForm textarea').first().press('Control+s');
+      await poll(() => posts.length === explBefore + 1, 'Ctrl+S posts the explanation');
+      assert.equal(posts.at(-1).kind, 'expl'); assert.equal(posts.at(-1).entry.summary, '快捷鍵存檔');
+      assert.equal(await page.evaluate(() => window.__articleSaves), 0);
+      await closeAndWait();
+      // with the dialog closed the shell's own shortcut works again (proves the spy sees it)
+      await page.locator('body').press('Control+s');
+      assert.equal(await page.evaluate(() => window.__articleSaves), 1);
+    }
 
     // --- logging out hides the section; a failed list read is reported and can be retried
     const login = () => page.evaluate(() => { sessionStorage.setItem('cd_gh_pat', 'fixture-only-not-a-real-token'); sessionStorage.setItem('cd_gh_pat_exp', String(Date.now() + 600000)); window.dispatchEvent(new Event('cd-admin-auth-changed')); });

@@ -41,7 +41,11 @@
       `data/exam/notes/fitz-N.frag` 整份取回；`explanations.json` 則只把清單內題號的詳解套到**目前**檔案（main 在草稿建立後的其他修改會保留）。
       目標檔有未提交修改、同一章或同一題在 main 也被改過（衝突）、或格式不符時一律停止且不寫入任何檔案。
    2. 執行 `python _gen_exam.py`，檢查 `git diff`，commit、push 候選分支，跑完整 CI 與 `python tools/pr_review.py`，通過後才進 main。
-   3. 整合上線後刪除草稿分支：`git push origin --delete cms-exam/drafts`（之後的新編輯會從新的 main 重建分支）。
+   3. 整合上線後刪除草稿分支，**只能用 `_pull_exam_drafts.py` 結尾印出的條件式指令**：
+      `git push --force-with-lease=refs/heads/cms-exam/drafts:<匯入時的分支 head> origin --delete cms-exam/drafts`。
+      原因：從匯入到刪除之間，站主可能又存了新的草稿；直接 `git push origin --delete` 會把那份新草稿一併刪掉。
+      帶 lease 的刪除只在遠端分支仍停在匯入的那個 head 時才會成功，否則被拒絕、分支保留，這時要重新執行 `_pull_exam_drafts.py` 匯入新的內容。
+      刪除後，之後的新編輯會從新的 main 重建分支。
 
 ## 發布申請紀錄退役（尚未發布）
 

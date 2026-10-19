@@ -46,9 +46,10 @@ export function validateNote(content) {
   if (encoder.encode(source).length > MAX_NOTE_BYTES) reject('too_large', '內容超過 400 KB');
   if (/[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]/.test(source)) reject('invalid_note', '含有控制字元');
   if (source.includes('{{')) reject('invalid_note', '不可使用 {{ … }} 標記');
+  if (/<[!?]/.test(source)) reject('invalid_note', '不可使用 HTML 註解、<!DOCTYPE> 或 <? … > 宣告');
   const fragment = parseFragment(divContext(), source, { sourceCodeLocationInfo: true });
   const ids = new Set();
-  let endTags = 0;
+  let endTags = 0, startTags = 0;
   function where(node) {
     const at = node.sourceCodeLocation && node.sourceCodeLocation.startLine;
     return at ? `（第 ${at} 行）` : '';
@@ -86,7 +87,14 @@ export function validateNote(content) {
     const location = node.sourceCodeLocation;
     if (!location || !location.startTag) reject('invalid_note', `<${tag}> 缺少開始標籤（標籤順序錯亂）` + where(parent));
     if (!VOID.has(tag) && !location.endTag) reject('invalid_note', `<${tag}> 沒有對應的結束標籤` + where(node));
-    if (!VOID.has(tag)) endTags++;
+    if (!VOID.has(tag)) {
+      endTags++;
+      // _gen_exam.py matches literal closing tags (e.g. "</h2>"), so the
+      // spelling must be canonical too, not just parse-equivalent.
+      const closing = source.slice(location.endTag.startOffset, location.endTag.endOffset);
+      if (closing !== '</' + tag + '>') reject('invalid_note', `結束標籤需寫成 </${tag}>，實際為 ${closing.slice(0, 40)}` + where(node));
+    }
+    startTags++;
     // Canonical start tag: what the generator's regexes and wrappers expect.
     const raw = source.slice(location.startTag.startOffset, location.startTag.endOffset);
     const canonical = '<' + tag + node.attrs.map(a => ` ${a.name}="${a.value}"`).join('') + '>';
@@ -132,6 +140,10 @@ export function validateNote(content) {
   // around the fragment on the real page. Text never holds a raw "</x".
   const declared = (source.match(/<\/[A-Za-z]/g) || []).length;
   if (declared !== endTags) reject('invalid_note', '有多餘或錯置的結束標籤');
+  // Likewise a start tag the fragment parser discards (<html>, <body>, <head>
+  // in this context) leaves no node but would reach the generated page.
+  const opened = (source.match(/<[A-Za-z]/g) || []).length;
+  if (opened !== startTags) reject('invalid_note', '有被忽略的開始標籤（例如 <html>、<body>、<head>）');
   return source;
 }
 

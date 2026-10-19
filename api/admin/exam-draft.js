@@ -211,6 +211,9 @@ async function save(api, input) {
     path = EXPLANATIONS;
     record = { ...previous, explanations: [...new Set([...previous.explanations, input.id])].sort() };
   }
+  // The rebuilt file must stay readable by this endpoint; refuse before any
+  // Git object or ref is written.
+  if (encoder.encode(text).length > (input.kind === 'note' ? MAX_NOTE_FILE : MAX_EXPLANATIONS_FILE)) fail(413, 'too_large');
   record = { version: 1, baseMain: previous.baseMain, updated: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z'),
     notes: record.notes, explanations: record.explanations };
   const parentSha = loaded.head || loaded.main;

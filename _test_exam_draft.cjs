@@ -319,6 +319,24 @@ test('note sanitizer: accepts the allowed grammar, rejects everything else with 
   await check(wrap('<p>a</b> b</p>'), /結束標籤/);
   await check(wrap('<p>a</br></p>'), /缺少開始標籤|結束標籤|<br>|錯亂|位置|移到/);
   await check(wrap('<p>a\u0001b</p>'), /控制字元/);
+  // Closing tags must be literally </tag>: the generator's regexes and wrappers match that spelling only.
+  await check('<section class="ex-note" id="s">\n<h2>T</H2>\n<p>x</p>\n</section>\n', /./);
+  await check('<section class="ex-note" id="s">\n<h2>T</h2 >\n<p>x</p>\n</section>\n', /./);
+  await check(wrap('<p>x</P>'), /./);
+  await check(wrap('<p>x</p >'), /./);
+  await check('<section class="ex-note" id="s">\n<h2>T</h2>\n<p>x</p>\n</SECTION>\n', /./);
+  // Tags the parser silently discards must not hide in the stored source.
+  await check('<body style="display:none">\n' + GOOD, /./);
+  await check('<body>' + GOOD, /./);
+  await check(GOOD + '<html lang="x">', /./);
+  await check('<html>' + GOOD + '</html>', /./);
+  await check('<!doctype html>\n' + GOOD, /./);
+  await check('<!DOCTYPE html>' + GOOD, /./);
+  await check('<?xml version="1.0"?>' + GOOD, /./);
+  await check(wrap('<p>a<head>x</p>'), /./);
+  await check(wrap('<p><head>x</head></p>'), /./);
+  await check(wrap('<p>a<html lang="x">b</p>'), /./);
+  await check(wrap('<p>a<body>b</p>'), /./);
   await check('<section class="ex-note" id="a">\n<h2>T</h2>\n<p>' + 'x'.repeat(410_000) + '</p>\n</section>', /400 KB/, 413, 'too_large');
   assert.equal((await h.post(noteBody({ content: 5, baseBlobSha: (await h.get('?kind=note&ch=' + NOTE_CH)).body.blobSha }))).body.error, 'invalid_note');
   assert.equal(h.writes().length, writes, 'nothing was written by any rejected note');
@@ -337,7 +355,9 @@ test('note sanitizer: accepts every committed fragment unchanged and rejects eac
   for (const [ch, text] of Object.entries(NOTES)) {
     assert.equal(api.validateNote(text), text, 'fitz-' + ch);
     assert.equal(api.validateNote(text.replace(/\n/g, '\r\n')), text, 'CRLF input is normalized, fitz-' + ch);
-    for (const broken of [text.replace(/<\/section>\s*$/, '<script>1</script></section>'), text.replace('<h2>', '<h2 onclick="1">'), text.replace(/<\/section>\s*$/, '</section></section>')]) {
+    for (const broken of [text.replace(/<\/section>\s*$/, '<script>1</script></section>'), text.replace('<h2>', '<h2 onclick="1">'), text.replace(/<\/section>\s*$/, '</section></section>'),
+      text.replace('</h2>', '</H2>'), text.replace('</h2>', '</h2 >'), text.replace('</section>', '</SECTION>'),
+      '<body style="display:none">' + text, text + '<html lang="x">', '<!doctype html>' + text, text.replace('<p', '<p><head>x</head><p')]) {
       assert.throws(() => api.validateNote(broken), error => error.code === 'invalid_note', 'fitz-' + ch);
     }
   }
@@ -490,6 +510,31 @@ test('explanation schema: unknown keys, bad values and unknown ids are rejected 
   assert.equal((await clear.post({ kind: 'expl', id: ID_A, entry: cleared, baseBlobSha: EXPL_TOKEN })).status, 200);
   const stored = JSON.parse(clear.fileAt(clear.head(), EXPL))[ID_A];
   assert.equal('dispute' in stored, false); assert.equal('flags' in stored, false);
+});
+
+test('a rebuilt explanations file over the size cap is refused before any Git write', async () => {
+  // Stored file just under the 3,000,000-byte read cap (one entry padded), so an edit that grows an entry pushes it over.
+  const padded = pad => { const data = JSON.parse(EXPL_TEXT); data[ID_C].summary = 'x'.repeat(pad); return JSON.stringify(data, null, 1); };
+  const base = Buffer.byteLength(padded(0));
+  const stored = padded(2_999_900 - base);
+  assert.equal(Buffer.byteLength(stored), 2_999_900);
+  const grow = id => { const entry = editedEntry(id); entry.summary = 'y'.repeat(2000); entry.items[0].text = 'z'.repeat(4000); return entry; };
+  const h = fixture();
+  h.trees.get(h.commits.get(h.main).tree.sha).set(EXPL, h.store(stored));
+  const token = sha(stored);
+  const read = await h.get('?kind=expl&id=' + ID_A);
+  assert.equal(read.status, 200, 'a file just under the cap is still readable'); assert.equal(read.body.blobSha, token);
+  const refused = await h.post({ kind: 'expl', id: ID_A, entry: grow(ID_A), baseBlobSha: token });
+  assert.equal(refused.status, 413, JSON.stringify(refused.body)); assert.equal(refused.body.error, 'too_large');
+  assert.deepEqual(h.writes(), [], 'no blob, tree, commit or ref call was made');
+  assert.equal(h.head(), undefined);
+  // The same file with an edit that keeps it under the cap is saved normally.
+  const small = editedEntry(ID_A, 'x');
+  const smallSize = Buffer.byteLength(JSON.stringify({ ...JSON.parse(stored), [ID_A]: small }, null, 1));
+  assert.ok(smallSize <= 3_000_000, 'fixture: the small edit stays under the cap (' + smallSize + ')');
+  const accepted = await h.post({ kind: 'expl', id: ID_A, entry: small, baseBlobSha: token });
+  assert.equal(accepted.status, 200, JSON.stringify(accepted.body));
+  assert.ok(h.writes().length > 0);
 });
 
 test('explanation save fails closed when the stored file is not in the exact json.dumps format', async () => {

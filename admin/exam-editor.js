@@ -138,6 +138,10 @@
 
   // ------------------------------------------------------------ overlay
   let overlay = null, mode = null, returnFocus = null, returnSelector = '', busy = false;
+  // Editor session token: bumped on every open, close and load. A response that
+  // arrives after the dialog was closed, reopened or reloaded belongs to an old
+  // session and must not touch the current form (or mark it clean).
+  let epoch = 0;
   const note = { ch: null, base: '', blobSha: null, source: '', loaded: false };
   const expl = { id: null, blobSha: null, snapshot: '', source: '', fields: null, entry: null, loaded: false };
 
@@ -213,14 +217,16 @@
     overlay.restore.hidden = true;
     overlay.root.hidden = false;
     for (const node of [document.querySelector('header.top'), document.getElementById('main-content')]) if (node) node.inert = true;
-    document.addEventListener('keydown', onEscape, true);
+    document.addEventListener('keydown', onKey, true);
+    epoch++;
     setStatus('');
     setBusy(false);
   }
   function closeOverlay() {
     overlay.root.hidden = true;
     for (const node of [document.querySelector('header.top'), document.getElementById('main-content')]) if (node) node.inert = false;
-    document.removeEventListener('keydown', onEscape, true);
+    document.removeEventListener('keydown', onKey, true);
+    epoch++; busy = false;
     note.loaded = false; expl.loaded = false;
     overlay.preview.srcdoc = '';
     const target = returnFocus && document.contains(returnFocus) ? returnFocus : returnSelector ? host.querySelector(returnSelector) : null;
@@ -232,10 +238,15 @@
     closeOverlay();
     return true;
   }
-  function onEscape(event) {
-    if (event.key !== 'Escape' || !overlay || overlay.root.hidden) return;
-    event.preventDefault(); event.stopPropagation();
-    requestClose();
+  function onKey(event) {
+    if (!overlay || overlay.root.hidden) return;
+    if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); requestClose(); return; }
+    // The admin shell binds Ctrl/Cmd+S to the article save; while this dialog
+    // is open the shortcut belongs to the dialog (a no-op while a save runs).
+    if ((event.ctrlKey || event.metaKey) && typeof event.key === 'string' && event.key.toLowerCase() === 's') {
+      event.preventDefault(); event.stopImmediatePropagation();
+      if (!busy) (mode === 'note' ? saveNote() : saveExplanation());
+    }
   }
   function trapTab(event) {
     if (event.key !== 'Tab') return;
@@ -253,22 +264,30 @@
     openOverlay('note', '考試重點 · Ch.' + ch, trigger);
     note.ch = ch; note.loaded = false;
     overlay.source.value = ''; overlay.source.disabled = true; renderPreview();
-    await fetchNote();
+    const outcome = await fetchNote();
+    if (outcome === 'stale') return;
     if (note.loaded) overlay.source.focus(); else overlay.dialog.focus();
   }
+  // Resolves 'applied', 'failed' or 'stale' (the session changed while waiting).
   async function fetchNote() {
-    const ch = note.ch;
+    const ch = note.ch, mine = ++epoch;
     setBusy(true); setStatus('載入中…');
     try {
       const data = await api('?kind=note&ch=' + encodeURIComponent(ch));
-      if (!overlay || overlay.root.hidden || mode !== 'note' || note.ch !== ch) return;
+      if (mine !== epoch) return 'stale';
       note.base = data.content; note.blobSha = data.blobSha; note.source = data.source; note.loaded = true;
       overlay.source.disabled = false; overlay.source.value = data.content; renderPreview();
       const backup = stashed('note', ch);
       overlay.restore.hidden = !(typeof backup === 'string' && backup !== data.content);
       setStatus('已載入（來源：' + (data.source === 'draft' ? '雲端草稿' : '正式版 main') + '）。' + (overlay.restore.hidden ? '' : '偵測到先前未存成功的本機備份，可按「還原本機備份」。'));
-    } catch (error) { setStatus(describe(error), 'err'); }
+      setBusy(false);
+      return 'applied';
+    } catch (error) {
+      if (mine !== epoch) return 'stale';
+      setStatus(describe(error), 'err');
+    }
     setBusy(false);
+    return 'failed';
   }
   async function reloadNote() {
     if (dirty() && !window.confirm('重新載入會捨棄目前輸入框的修改（已備份在這個瀏覽器，可按「還原本機備份」取回）。確定嗎？')) return;
@@ -284,16 +303,18 @@
   async function saveNote() {
     if (busy || !note.loaded) return;
     if (!stillSignedIn()) { setStatus(MESSAGES.login_required, 'err'); return; }
-    const content = overlay.source.value, ch = note.ch;
+    const content = overlay.source.value, ch = note.ch, mine = epoch;
     setBusy(true); setStatus('正在存入雲端草稿並核對…');
     try {
       const result = await post({ kind: 'note', ch, content, baseBlobSha: note.blobSha });
+      if (mine !== epoch) { unstash('note', ch); updateDraft(result.draft); return; }
       note.blobSha = result.blobSha; note.base = content; note.source = 'draft';
       unstash('note', ch); overlay.restore.hidden = true;
       updateDraft(result.draft);
       setStatus(SAVED, 'ok');
     } catch (error) {
       stash('note', ch, content);
+      if (mine !== epoch) return;
       setStatus(describe(error), 'err');
     }
     setBusy(false);
@@ -379,11 +400,12 @@
     if (!QID.test(id)) { setStatus(MESSAGES.invalid_id, 'err'); return; }
     if (confirmDiscard && dirty() && !window.confirm('載入其他題目會捨棄目前的修改（已備份在這個瀏覽器）。確定嗎？')) return;
     if (dirty()) stash('expl', expl.id, rawOf(expl.fields));
+    const mine = ++epoch;
     setBusy(true); setStatus('載入中…');
     expl.loaded = false;
     try {
       const data = await api('?kind=expl&id=' + encodeURIComponent(id));
-      if (!overlay || overlay.root.hidden || mode !== 'expl') return;
+      if (mine !== epoch) return;
       expl.id = id; expl.blobSha = data.blobSha; expl.source = data.source; expl.entry = data.entry;
       expl.fields = buildExplForm(data.entry); expl.snapshot = rawState(); expl.loaded = true;
       overlay.explId.value = id;
@@ -391,6 +413,7 @@
       overlay.restore.hidden = !(backup && typeof backup === 'object' && JSON.stringify(backup) !== expl.snapshot);
       setStatus('已載入 ' + id + '（來源：' + (data.source === 'draft' ? '雲端草稿' : '正式版 main') + '）。' + (overlay.restore.hidden ? '' : '偵測到先前未存成功的本機備份，可按「還原本機備份」。'));
     } catch (error) {
+      if (mine !== epoch) return;
       overlay.form.replaceChildren(); expl.fields = null; overlay.restore.hidden = true;
       setStatus(describe(error), 'err');
     }
@@ -419,16 +442,18 @@
     if (!stillSignedIn()) { setStatus(MESSAGES.login_required, 'err'); return; }
     let entry;
     try { entry = entryFromForm(); } catch (error) { setStatus(error.message, 'err'); return; }
-    const id = expl.id, snapshot = rawState();
+    const id = expl.id, snapshot = rawState(), raw = rawOf(expl.fields), mine = epoch;
     setBusy(true); setStatus('正在存入雲端草稿並核對…');
     try {
       const result = await post({ kind: 'expl', id, entry, baseBlobSha: expl.blobSha });
+      if (mine !== epoch) { unstash('expl', id); updateDraft(result.draft); return; }
       expl.blobSha = result.blobSha; expl.source = 'draft'; expl.snapshot = snapshot;
       unstash('expl', id); overlay.restore.hidden = true;
       updateDraft(result.draft);
       setStatus(SAVED, 'ok');
     } catch (error) {
-      stash('expl', id, rawOf(expl.fields));
+      stash('expl', id, raw);
+      if (mine !== epoch) return;
       setStatus(describe(error), 'err');
     }
     setBusy(false);
