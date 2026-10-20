@@ -4136,5 +4136,56 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorinterfacedermatitis.html"
    }
   ]
+ },
+ "111": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Basal cell carcinoma",
+    "url": "https://dermnetnz.org/topics/basal-cell-carcinoma"
+   },
+   {
+    "label": "Basosquamous carcinoma",
+    "url": "https://dermnetnz.org/topics/basosquamous-carcinoma"
+   },
+   {
+    "label": "Basal cell naevus syndrome (Gorlin syndrome)",
+    "url": "https://dermnetnz.org/topics/basal-cell-naevus-syndrome"
+   },
+   {
+    "label": "Mohs micrographic surgery",
+    "url": "https://dermnetnz.org/topics/mohs-micrographic-surgery"
+   },
+   {
+    "label": "Photodynamic therapy",
+    "url": "https://dermnetnz.org/topics/photodynamic-therapy"
+   },
+   {
+    "label": "Xeroderma pigmentosum",
+    "url": "https://dermnetnz.org/topics/xeroderma-pigmentosum"
+   },
+   {
+    "label": "Basal cell carcinoma pathology",
+    "url": "https://dermnetnz.org/topics/basal-cell-carcinoma-pathology"
+   },
+   {
+    "label": "Bazex-Dupre-Christol syndrome",
+    "url": "https://dermnetnz.org/topics/bazex-dupre-christol-syndrome"
+   },
+   {
+    "label": "Chronic arsenic poisoning",
+    "url": "https://dermnetnz.org/topics/chronic-arsenic-poisoning"
+   },
+   {
+    "label": "Vismodegib",
+    "url": "https://dermnetnz.org/topics/vismodegib"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Basal cell carcinoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticbcc.html"
+   }
+  ]
  }
 }
