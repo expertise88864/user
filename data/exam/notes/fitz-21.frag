@@ -42,7 +42,7 @@
 <li>Nav1.8（SNS/PN3）與 Nav1.9（SNS/SNS2）sodium channels 表現在 peptidergic neurons，與特定 pain subtypes 密切相關。<span class="ex-ref">p.353</span></li>
 <li><strong>TRPV1</strong> 表現在 C 與 Aδ fibers；TRPV1 屬於 thermosensors，表現在 keratinocytes 與 sensory nerves。<mark data-q="112-35">TRPV1 活化可介導 heat、pain 與 pruritus</mark>。<span class="ex-ref">p.353</span></li>
 <li>Thermosensors 感知溫度範圍：cold 為 TRPA1、TRPM8；warmth 與 heat 為 TRPV1–TRPV4。<span class="ex-ref">p.353</span></li>
-<li>CNS 可依不同神經元傳來的訊號分辨其性質與位置。</li>
+<li>CNS 可依不同神經元傳來的訊號分辨其性質與位置。<span class="ex-ref">p.353</span></li>
 <li>Peripheral 與 CNS 的交互作用被認為參與 thermoregulation，以及 psoriasis、atopic dermatitis、acne、wound healing、hair loss／regrowth 等疾病的病理生理。<span class="ex-ref">p.353</span></li>
 </ul>
 </section>
@@ -86,7 +86,7 @@
 <ul>
 <li>相對於感覺神經，autonomic nerves 只佔皮膚神經纖維的較小部分。<mark data-q="103-01">人類皮膚的自主神經<strong>很少來自 parasympathetic</strong>，幾乎全由 <strong>sympathetic neurons</strong> 組成</mark>。<span class="ex-ref">p.354</span></li>
 <li>支配 arteriovenous anastomoses、blood vessels、apocrine glands、lymphatic vessels、arrector pili muscles、eccrine glands、hair follicles，且<mark data-q="103-01"><strong>嚴格分布在 dermis</strong></mark>。<span class="ex-ref">p.354</span></li>
-<li><mark data-q="103-01">主要透過釋放 classic neurotransmitters（acetylcholine、noradrenaline）作用；VIP、NPY、atrial natriuretic peptide 等 neuropeptides 只是 to a lesser extent</mark>。</li>
+<li><mark data-q="103-01">主要透過釋放 classic neurotransmitters（acetylcholine、noradrenaline）作用；VIP、NPY、atrial natriuretic peptide 等 neuropeptides 只是 to a lesser extent</mark>。<span class="ex-ref">p.354</span></li>
 <li>影響 sweat glands 功能，調節 body temperature、water modulation 與 electrolyte balance。<span class="ex-ref">p.354</span></li>
 </ul>
 <h3>Vascular regulation（血管調節）</h3>
@@ -111,7 +111,7 @@
 <li><mark data-q="102-04,103-01">Acetylcholine 是 cholinergic sudomotor nerves 釋放的 primary neurotransmitter，作用於 eccrine gland 上的 muscarinic receptors；與其共存的 VIP 被推測可能調控汗腺血流</mark>；外源性給予 α- 或 β-adrenergic agonists 也可誘發出汗。<span class="ex-ref ex-ref-mckee">McKee p.21</span></li>
 <li>McKee 另寫人類皮膚神經網絡含 cholinergic 與 adrenergic nerves、myelinated 與 unmyelinated sensory fibers；這些神經元的 cell bodies 都在 dorsal root ganglion。<span class="ex-ref ex-ref-mckee">McKee p.14</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>皮膚自主神經幾乎全是 sympathetic（p.354），但汗腺的交感神經在 McKee p.21 寫為似乎具 cholinergic 性質；本章 p.354 寫 autonomic nerves 以 acetylcholine 與 noradrenaline 為主，VIP、NPY、ANP 只佔次要。Parasympathetic 的血管擴張則靠 acetylcholine 與 VIP（p.354–355）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>皮膚自主神經幾乎全是 sympathetic（p.354），但汗腺的交感神經在 McKee p.21 寫為似乎具 cholinergic 性質；本章 p.354 寫 autonomic nerves 以 acetylcholine 與 noradrenaline 為主，VIP、NPY、ANP 只佔次要。Parasympathetic 的血管擴張（venous sinusoids）由 acetylcholine 與 VIP（或 peptide histidine methionine）的釋放輔助（p.354–355）。</aside>
 </section>
 
 <section class="ex-note" id="spinal-cord">
