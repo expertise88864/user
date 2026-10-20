@@ -70,7 +70,7 @@
 </ul>
 <h3>Skin involvement（皮膚侵犯）</h3>
 <ul>
-<li>通常先出現在手指與手：<strong>nonpitting edema</strong>（puffy fingers）→ induration 與 skin thickening（<strong>sclerodactyly</strong>）；視部位可有 dermatogenous contractures 與呼吸動度受限。<span class="ex-ref">p.1090</span></li>
+<li><mark data-q="106-45">通常先出現在手指與手：<strong>nonpitting edema</strong>（puffy fingers）→ induration 與 skin thickening（<strong>sclerodactyly</strong>）</mark>；視部位可有 dermatogenous contractures 與呼吸動度受限。<span class="ex-ref">p.1090</span></li>
 <li>Facial features：telangiectasias、beak-shaped nose、microstomia、radial furrowing around the mouth、mask-like 面容、frenulum sclerosis。<span class="ex-ref">p.1090</span></li>
 <li>其他：hypo-／hyperpigmented（<strong>salt-and-pepper</strong>）皮膚；毛囊與汗腺消失（hypohidrosis／anhydrosis）。<span class="ex-ref">p.1090</span></li>
 <li><span class="ex-ref ex-ref-mckee">McKee p.797–798</span>（limited）：早期 edematous、sclerotic、晚期 atrophic 三階段；水腫為 nonpitting、雙側對稱，手指呈 <strong>sausage-like</strong>；fingertips 變尖（tapered）、pulp atrophy、末節指骨吸收，皮膚光亮、平滑、蠟樣；常有 flexion contractures；晚期面容僵硬、鼻尖如鳥喙、薄唇、口周放射狀皺褶、張口受限。</li>
