@@ -3469,5 +3469,56 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorscleromyxedema.html"
    }
   ]
+ },
+ "50": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Darier disease",
+    "url": "https://dermnetnz.org/topics/darier-disease"
+   },
+   {
+    "label": "Hailey-Hailey disease",
+    "url": "https://dermnetnz.org/topics/benign-familial-pemphigus"
+   },
+   {
+    "label": "Grover disease",
+    "url": "https://dermnetnz.org/topics/transient-acantholytic-dermatosis"
+   },
+   {
+    "label": "Acrokeratosis verruciformis of Hopf",
+    "url": "https://dermnetnz.org/topics/acrokeratosis-verruciformis-of-hopf"
+   },
+   {
+    "label": "Dowling-Degos disease",
+    "url": "https://dermnetnz.org/topics/dowling-degos-disease"
+   },
+   {
+    "label": "Eczema herpeticum",
+    "url": "https://dermnetnz.org/topics/eczema-herpeticum"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Darier disease",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumordariersdisease.html"
+   },
+   {
+    "label": "Hailey-Hailey disease",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorhaileyhailey.html"
+   },
+   {
+    "label": "Transient acantholytic dermatosis (Grover disease)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorGrover.html"
+   },
+   {
+    "label": "Warty dyskeratoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticwartydyskeratoma.html"
+   },
+   {
+    "label": "Acantholytic reaction patterns (general)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorblisteringgeneral.html"
+   }
+  ]
  }
 }
