@@ -3323,5 +3323,100 @@
     "url": "https://www.pathologyoutlines.com/topic/softtissuenecrotizingfasciitis.html"
    }
   ]
+ },
+ "15": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Pemphigus vulgaris",
+    "url": "https://dermnetnz.org/topics/pemphigus-vulgaris"
+   },
+   {
+    "label": "Pemphigus foliaceus",
+    "url": "https://dermnetnz.org/topics/pemphigus-foliaceus"
+   },
+   {
+    "label": "Paraneoplastic pemphigus",
+    "url": "https://dermnetnz.org/topics/paraneoplastic-pemphigus"
+   },
+   {
+    "label": "Impetigo (bullous impetigo)",
+    "url": "https://dermnetnz.org/topics/impetigo"
+   },
+   {
+    "label": "Staphylococcal scalded skin syndrome",
+    "url": "https://dermnetnz.org/topics/staphylococcal-scalded-skin-syndrome"
+   },
+   {
+    "label": "Epidermolysis bullosa",
+    "url": "https://dermnetnz.org/topics/epidermolysis-bullosa"
+   },
+   {
+    "label": "Epidermolysis bullosa simplex",
+    "url": "https://dermnetnz.org/topics/epidermolysis-bullosa-simplex"
+   },
+   {
+    "label": "Junctional epidermolysis bullosa",
+    "url": "https://dermnetnz.org/topics/junctional-epidermolysis-bullosa"
+   },
+   {
+    "label": "Dystrophic epidermolysis bullosa",
+    "url": "https://dermnetnz.org/topics/dystrophic-epidermolysis-bullosa"
+   },
+   {
+    "label": "Epidermolysis bullosa acquisita",
+    "url": "https://dermnetnz.org/topics/epidermolysis-bullosa-acquisita"
+   },
+   {
+    "label": "Kindler syndrome",
+    "url": "https://dermnetnz.org/topics/kindler-syndrome"
+   },
+   {
+    "label": "Netherton syndrome",
+    "url": "https://dermnetnz.org/topics/netherton-syndrome"
+   },
+   {
+    "label": "Hailey-Hailey disease",
+    "url": "https://dermnetnz.org/topics/benign-familial-pemphigus"
+   },
+   {
+    "label": "Darier disease",
+    "url": "https://dermnetnz.org/topics/darier-disease"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Pemphigus",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpemphigus.html"
+   },
+   {
+    "label": "Pemphigus vulgaris",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpemphigusvulgaris.html"
+   },
+   {
+    "label": "Epidermolysis bullosa",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorepidermolysisbullosa.html"
+   },
+   {
+    "label": "Epidermolysis bullosa acquisita",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoreba.html"
+   },
+   {
+    "label": "Bullous pemphigoid",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorbullouspemphigoid.html"
+   },
+   {
+    "label": "Bullous lupus erythematosus",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorbullouslupus.html"
+   },
+   {
+    "label": "Hailey-Hailey disease",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorhaileyhailey.html"
+   },
+   {
+    "label": "Darier disease",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumordariersdisease.html"
+   }
+  ]
  }
 }
