@@ -4026,5 +4026,80 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorGVHD.html"
    }
   ]
+ },
+ "133": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Kaposi sarcoma",
+    "url": "https://dermnetnz.org/topics/kaposi-sarcoma"
+   },
+   {
+    "label": "Sarcoidosis",
+    "url": "https://dermnetnz.org/topics/sarcoidosis"
+   },
+   {
+    "label": "Yellow nail syndrome",
+    "url": "https://dermnetnz.org/topics/yellow-nail-syndrome"
+   },
+   {
+    "label": "Dermatitis herpetiformis",
+    "url": "https://dermnetnz.org/topics/dermatitis-herpetiformis"
+   },
+   {
+    "label": "Pyoderma gangrenosum",
+    "url": "https://dermnetnz.org/topics/pyoderma-gangrenosum"
+   },
+   {
+    "label": "Calciphylaxis",
+    "url": "https://dermnetnz.org/topics/calciphylaxis"
+   },
+   {
+    "label": "Pseudoporphyria",
+    "url": "https://dermnetnz.org/topics/pseudoporphyria"
+   },
+   {
+    "label": "Porphyria cutanea tarda",
+    "url": "https://dermnetnz.org/topics/porphyria-cutanea-tarda"
+   },
+   {
+    "label": "Peutz-Jeghers syndrome",
+    "url": "https://dermnetnz.org/topics/peutz-jeghers-syndrome"
+   },
+   {
+    "label": "Papular acrodermatitis of childhood (Gianotti-Crosti)",
+    "url": "https://dermnetnz.org/topics/papular-acrodermatitis-of-childhood"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Kaposi sarcoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocytickaposi.html"
+   },
+   {
+    "label": "Sarcoidosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorsarcoidosis.html"
+   },
+   {
+    "label": "Calciphylaxis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorcalciphylaxis.html"
+   },
+   {
+    "label": "Porphyria cutanea tarda",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorporphyriacutaneatarda.html"
+   },
+   {
+    "label": "Perforating dermatoses",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorelastosisperforans.html"
+   },
+   {
+    "label": "Dermatitis herpetiformis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumordermatitisherpetiformis.html"
+   },
+   {
+    "label": "Pyoderma gangrenosum",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpyodermagangrenosum.html"
+   }
+  ]
  }
 }
