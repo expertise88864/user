@@ -3520,5 +3520,96 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorblisteringgeneral.html"
    }
   ]
+ },
+ "162": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Sporotrichosis",
+    "url": "https://dermnetnz.org/topics/sporotrichosis"
+   },
+   {
+    "label": "Mycetoma",
+    "url": "https://dermnetnz.org/topics/mycetoma"
+   },
+   {
+    "label": "Chromoblastomycosis",
+    "url": "https://dermnetnz.org/topics/chromoblastomycosis"
+   },
+   {
+    "label": "Phaeohyphomycosis pathology",
+    "url": "https://dermnetnz.org/topics/phaeohyphomycosis-pathology"
+   },
+   {
+    "label": "Lobomycosis",
+    "url": "https://dermnetnz.org/topics/lobomycosis"
+   },
+   {
+    "label": "Histoplasmosis",
+    "url": "https://dermnetnz.org/topics/histoplasmosis"
+   },
+   {
+    "label": "Blastomycosis",
+    "url": "https://dermnetnz.org/topics/blastomycosis"
+   },
+   {
+    "label": "Coccidioidomycosis",
+    "url": "https://dermnetnz.org/topics/coccidioidomycosis"
+   },
+   {
+    "label": "Paracoccidioidomycosis pathology",
+    "url": "https://dermnetnz.org/topics/paracoccidioidomycosis-pathology"
+   },
+   {
+    "label": "Talaromycosis",
+    "url": "https://dermnetnz.org/topics/talaromycosis"
+   },
+   {
+    "label": "Cryptococcosis",
+    "url": "https://dermnetnz.org/topics/cryptococcosis"
+   },
+   {
+    "label": "Zygomycosis (mucormycosis)",
+    "url": "https://dermnetnz.org/topics/zygomycosis"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Chromoblastomycosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorfungiChromoblastomycosis.html"
+   },
+   {
+    "label": "Mycetoma",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumormycetoma.html"
+   },
+   {
+    "label": "Histoplasmosis (Histoplasma capsulatum)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorfungiHistoplasma.html"
+   },
+   {
+    "label": "North American blastomycosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorfungiblastomycosis.html"
+   },
+   {
+    "label": "Coccidioidomycosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorcoccidioidomycosis.html"
+   },
+   {
+    "label": "Cryptococcosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorcryptococcus.html"
+   },
+   {
+    "label": "Zygomycosis (mucormycosis)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorfungizygomycosis.html"
+   },
+   {
+    "label": "Hyalohyphomycosis (aspergillosis, fusariosis)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorhyalohyphomycosis.html"
+   },
+   {
+    "label": "Rhinosporidiosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorrhinosporidiosis.html"
+   }
+  ]
  }
 }
