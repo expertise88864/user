@@ -3745,5 +3745,76 @@
     "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticsebaceouscarcinoma.html"
    }
   ]
+ },
+ "11": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Psoriasis",
+    "url": "https://dermnetnz.org/topics/psoriasis"
+   },
+   {
+    "label": "Generalised pustular psoriasis",
+    "url": "https://dermnetnz.org/topics/generalised-pustular-psoriasis"
+   },
+   {
+    "label": "Atopic dermatitis",
+    "url": "https://dermnetnz.org/topics/atopic-dermatitis"
+   },
+   {
+    "label": "Fixed drug eruption",
+    "url": "https://dermnetnz.org/topics/fixed-drug-eruption"
+   },
+   {
+    "label": "Mycosis fungoides",
+    "url": "https://dermnetnz.org/topics/mycosis-fungoides"
+   },
+   {
+    "label": "Sezary syndrome",
+    "url": "https://dermnetnz.org/topics/sezary-syndrome"
+   },
+   {
+    "label": "Pyoderma gangrenosum",
+    "url": "https://dermnetnz.org/topics/pyoderma-gangrenosum"
+   },
+   {
+    "label": "Allergic contact dermatitis",
+    "url": "https://dermnetnz.org/topics/allergic-contact-dermatitis"
+   },
+   {
+    "label": "Urticaria (overview)",
+    "url": "https://dermnetnz.org/topics/urticaria-an-overview"
+   },
+   {
+    "label": "Leprosy",
+    "url": "https://dermnetnz.org/topics/leprosy"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Psoriasis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpsoriasis.html"
+   },
+   {
+    "label": "Allergic contact dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorallergiccontact.html"
+   },
+   {
+    "label": "Urticaria",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorurticaria.html"
+   },
+   {
+    "label": "Mycosis fungoides",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticmycosisfungoides.html"
+   },
+   {
+    "label": "Sezary syndrome",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticsezary.html"
+   },
+   {
+    "label": "Leprosy",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorleprosy.html"
+   }
+  ]
  }
 }
