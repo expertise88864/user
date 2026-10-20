@@ -3875,5 +3875,48 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumordermatitisherpetiformis.html"
    }
   ]
+ },
+ "14": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Ichthyosis vulgaris",
+    "url": "https://dermnetnz.org/topics/ichthyosis-vulgaris"
+   },
+   {
+    "label": "Netherton syndrome",
+    "url": "https://dermnetnz.org/topics/netherton-syndrome"
+   },
+   {
+    "label": "Harlequin ichthyosis",
+    "url": "https://dermnetnz.org/topics/harlequin-ichthyosis"
+   },
+   {
+    "label": "Ichthyosis",
+    "url": "https://dermnetnz.org/topics/ichthyosis"
+   },
+   {
+    "label": "Epidermolytic ichthyosis",
+    "url": "https://dermnetnz.org/topics/epidermolytic-ichthyosis"
+   },
+   {
+    "label": "Atopic dermatitis",
+    "url": "https://dermnetnz.org/topics/atopic-dermatitis"
+   },
+   {
+    "label": "Dry skin (xerosis)",
+    "url": "https://dermnetnz.org/topics/dry-skin"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Ichthyosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorichthyosis.html"
+   },
+   {
+    "label": "Atopic dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoracuteeczematousdermatitis.html"
+   }
+  ]
  }
 }
