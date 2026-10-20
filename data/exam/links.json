@@ -4187,5 +4187,52 @@
     "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticbcc.html"
    }
   ]
+ },
+ "48": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Palmoplantar keratoderma",
+    "url": "https://dermnetnz.org/topics/palmoplantar-keratoderma"
+   },
+   {
+    "label": "Diffuse hereditary palmoplantar keratodermas",
+    "url": "https://dermnetnz.org/topics/diffuse-hereditary-palmoplantar-keratodermas"
+   },
+   {
+    "label": "Hereditary focal palmoplantar keratoderma",
+    "url": "https://dermnetnz.org/topics/hereditary-focal-palmoplantar-keratoderma"
+   },
+   {
+    "label": "Punctate-type palmoplantar keratoderma",
+    "url": "https://dermnetnz.org/topics/punctate-type-palmoplantar-keratoderma"
+   },
+   {
+    "label": "Pachyonychia congenita",
+    "url": "https://dermnetnz.org/topics/pachyonychia-congenita"
+   },
+   {
+    "label": "Acrokeratoelastoidosis",
+    "url": "https://dermnetnz.org/topics/acrokeratoelastoidosis"
+   },
+   {
+    "label": "Marginal keratoderma",
+    "url": "https://dermnetnz.org/topics/marginal-keratoderma"
+   },
+   {
+    "label": "Naxos disease",
+    "url": "https://dermnetnz.org/topics/naxos-disease"
+   },
+   {
+    "label": "Ectodermal dysplasia",
+    "url": "https://dermnetnz.org/topics/ectodermal-dysplasia"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Epidermolytic hyperkeratosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorepidermolytichyperkeratosis.html"
+   }
+  ]
  }
 }
