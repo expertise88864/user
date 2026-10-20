@@ -406,7 +406,7 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Syndrome</th><th scope="col">Gene</th><th scope="col">Cutaneous findings（皮膚表現）</th><th scope="col">Major associated malignancy（主要腫瘤）</th></tr></thead>
 <tbody>
-<tr><td>Birt-Hogg-Dubé（AD）</td><td><em>FLCN</em></td><td>Fibrofolliculomas、trichodiscomas、acrochordons</td><td>Renal carcinoma（other：lung cysts、recurrent spontaneous pneumothoraces）</td></tr>
+<tr><td>Birt-Hogg-Dubé (AD)</td><td><em>FLCN</em></td><td>Fibrofolliculomas、trichodiscomas、acrochordons</td><td>Renal carcinoma（other：lung cysts、recurrent spontaneous pneumothoraces）</td></tr>
 <tr><td>Carney complex（AD）</td><td><em>PRKAR1A</em></td><td>Mucocutaneous myxomas、nevi、lentigines、blue nevi</td><td>Myxomas（cardiac、skin）、Sertoli cell testicular cancer</td></tr>
 <tr><td>Cowden disease（AD）</td><td><em>PTEN</em></td><td>Trichilemmomas、acral papules 與 keratoses、oral papillomas、sclerotic fibromas</td><td>Breast、thyroid、endometrial cancer、hamartomatous intestinal polyps</td></tr>
 <tr><td>Gardner disease（AD）</td><td><em>APC</em></td><td>Epidermoid cysts、fibromas、pilomatricomas</td><td>Intestinal polyposis 與 colorectal adenocarcinoma（near 100%）</td></tr>
