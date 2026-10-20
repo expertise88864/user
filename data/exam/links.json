@@ -4538,5 +4538,60 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorallergiccontact.html"
    }
   ]
+ },
+ "156": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Anthrax",
+    "url": "https://dermnetnz.org/topics/anthrax"
+   },
+   {
+    "label": "Tularemia",
+    "url": "https://dermnetnz.org/topics/tularaemia"
+   },
+   {
+    "label": "Plague",
+    "url": "https://dermnetnz.org/topics/plague"
+   },
+   {
+    "label": "Brucellosis",
+    "url": "https://dermnetnz.org/topics/brucellosis"
+   },
+   {
+    "label": "Glanders",
+    "url": "https://dermnetnz.org/topics/glanders"
+   },
+   {
+    "label": "Listeriosis",
+    "url": "https://dermnetnz.org/topics/listeriosis"
+   },
+   {
+    "label": "Vibrio vulnificus",
+    "url": "https://dermnetnz.org/topics/vibrio-vulnificus"
+   },
+   {
+    "label": "Melioidosis (and glanders)",
+    "url": "https://dermnetnz.org/topics/melioidosis"
+   },
+   {
+    "label": "Erysipeloid",
+    "url": "https://dermnetnz.org/topics/erysipeloid"
+   },
+   {
+    "label": "Leptospirosis",
+    "url": "https://dermnetnz.org/topics/leptospirosis"
+   },
+   {
+    "label": "Cutaneous diphtheria",
+    "url": "https://dermnetnz.org/topics/cutaneous-diphtheria"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Anthrax",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoranthrax.html"
+   }
+  ]
  }
 }
