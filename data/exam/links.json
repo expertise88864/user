@@ -3185,5 +3185,72 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorurticaria.html"
    }
   ]
+ },
+ "117": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Langerhans cell histiocytosis",
+    "url": "https://dermnetnz.org/topics/langerhans-cell-histiocytosis"
+   },
+   {
+    "label": "Histiocytosis",
+    "url": "https://dermnetnz.org/topics/histiocytosis"
+   },
+   {
+    "label": "Non-Langerhans cell histiocytosis",
+    "url": "https://dermnetnz.org/topics/non-langerhans-cell-histiocytosis"
+   },
+   {
+    "label": "Juvenile xanthogranuloma",
+    "url": "https://dermnetnz.org/topics/juvenile-xanthogranuloma"
+   },
+   {
+    "label": "Multicentric reticulohistiocytosis",
+    "url": "https://dermnetnz.org/topics/multicentric-reticulohistiocytosis"
+   },
+   {
+    "label": "Rosai-Dorfman disease (pathology)",
+    "url": "https://dermnetnz.org/topics/rosai-dorfman-disease-pathology"
+   },
+   {
+    "label": "Necrobiotic xanthogranuloma (pathology)",
+    "url": "https://dermnetnz.org/topics/necrobiotic-xanthogranuloma-pathology"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Langerhans cell histiocytosis",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticLCH.html"
+   },
+   {
+    "label": "Indeterminate dendritic cell tumor",
+    "url": "https://www.pathologyoutlines.com/topic/lymphnodesindeterminatecelltumors.html"
+   },
+   {
+    "label": "Juvenile xanthogranuloma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticjuvenilexantho.html"
+   },
+   {
+    "label": "Multicentric reticulohistiocytosis",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormultireticulo.html"
+   },
+   {
+    "label": "Necrobiotic xanthogranuloma",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumornecrobioticxanthogranuloma.html"
+   },
+   {
+    "label": "Erdheim-Chester disease",
+    "url": "https://www.pathologyoutlines.com/topic/lymphnodeserdheimchester.html"
+   },
+   {
+    "label": "Rosai-Dorfman disease",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticsinushistiocytosiswithmassivelymph.html"
+   },
+   {
+    "label": "Hemophagocytic lymphohistiocytosis",
+    "url": "https://www.pathologyoutlines.com/topic/lymphnodeshemophagocyticlymphohistiocytosis.html"
+   }
+  ]
  }
 }
