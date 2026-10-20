@@ -3130,5 +3130,60 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorforeignbodyreaction.html"
    }
   ]
+ },
+ "21": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Pruritus",
+    "url": "https://dermnetnz.org/topics/pruritus"
+   },
+   {
+    "label": "Atopic dermatitis",
+    "url": "https://dermnetnz.org/topics/atopic-dermatitis"
+   },
+   {
+    "label": "Nodular prurigo",
+    "url": "https://dermnetnz.org/topics/nodular-prurigo"
+   },
+   {
+    "label": "Notalgia paraesthetica",
+    "url": "https://dermnetnz.org/topics/notalgia-paraesthetica"
+   },
+   {
+    "label": "Aquagenic pruritus",
+    "url": "https://dermnetnz.org/topics/aquagenic-pruritus"
+   },
+   {
+    "label": "Lichen simplex chronicus",
+    "url": "https://dermnetnz.org/topics/lichen-simplex"
+   },
+   {
+    "label": "Uraemic pruritus",
+    "url": "https://dermnetnz.org/topics/uraemic-pruritus"
+   },
+   {
+    "label": "Cholestatic pruritus",
+    "url": "https://dermnetnz.org/topics/cholestatic-pruritus"
+   },
+   {
+    "label": "Chronic urticaria",
+    "url": "https://dermnetnz.org/topics/chronic-urticaria"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Atopic dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoracuteeczematousdermatitis.html"
+   },
+   {
+    "label": "Lichen simplex chronicus / prurigo nodularis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorlichensimplexchronicus.html"
+   },
+   {
+    "label": "Urticaria",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorurticaria.html"
+   }
+  ]
  }
 }
