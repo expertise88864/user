@@ -3967,5 +3967,64 @@
    }
   ],
   "pathologyoutlines": []
+ },
+ "32": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Lichen planus",
+    "url": "https://dermnetnz.org/topics/lichen-planus"
+   },
+   {
+    "label": "Oral lichen planus",
+    "url": "https://dermnetnz.org/topics/oral-lichen-planus"
+   },
+   {
+    "label": "Lichen planopilaris",
+    "url": "https://dermnetnz.org/topics/lichen-planopilaris"
+   },
+   {
+    "label": "Frontal fibrosing alopecia",
+    "url": "https://dermnetnz.org/topics/frontal-fibrosing-alopecia"
+   },
+   {
+    "label": "Lichenoid drug eruption",
+    "url": "https://dermnetnz.org/topics/lichenoid-drug-eruption"
+   },
+   {
+    "label": "Keratosis lichenoides chronica",
+    "url": "https://dermnetnz.org/topics/keratosis-lichenoides-chronica"
+   },
+   {
+    "label": "Lichenoid keratosis",
+    "url": "https://dermnetnz.org/topics/lichenoid-keratosis"
+   },
+   {
+    "label": "Erythema dyschromicum perstans (ashy dermatosis)",
+    "url": "https://dermnetnz.org/topics/erythema-dyschromicum-perstans"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Lichen planus",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorlichenplanus.html"
+   },
+   {
+    "label": "Lichenoid drug reaction",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumordrugreaction.html"
+   },
+   {
+    "label": "Lichen planopilaris",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorlichenplanopilaris.html"
+   },
+   {
+    "label": "Benign lichenoid keratosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorbenignlichenoidkeratosis.html"
+   },
+   {
+    "label": "Graft versus host disease",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorGVHD.html"
+   }
+  ]
  }
 }
