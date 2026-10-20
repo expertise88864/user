@@ -4234,5 +4234,88 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorepidermolytichyperkeratosis.html"
    }
   ]
+ },
+ "119": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Mycosis fungoides",
+    "url": "https://dermnetnz.org/topics/mycosis-fungoides"
+   },
+   {
+    "label": "Sezary syndrome",
+    "url": "https://dermnetnz.org/topics/sezary-syndrome"
+   },
+   {
+    "label": "Lymphomatoid papulosis",
+    "url": "https://dermnetnz.org/topics/lymphomatoid-papulosis"
+   },
+   {
+    "label": "Primary cutaneous anaplastic large cell lymphoma",
+    "url": "https://dermnetnz.org/topics/primary-cutaneous-anaplastic-large-cell-lymphoma"
+   },
+   {
+    "label": "Primary cutaneous follicle centre lymphoma",
+    "url": "https://dermnetnz.org/topics/primary-cutaneous-follicle-centre-lymphoma"
+   },
+   {
+    "label": "Cutaneous T-cell lymphoma",
+    "url": "https://dermnetnz.org/topics/cutaneous-t-cell-lymphoma"
+   },
+   {
+    "label": "Cutaneous B-cell lymphoma",
+    "url": "https://dermnetnz.org/topics/cutaneous-b-cell-lymphoma"
+   },
+   {
+    "label": "Primary cutaneous CD30+ lymphoproliferative disorders",
+    "url": "https://dermnetnz.org/topics/primary-cutaneous-cd30-positive-lymphoproliferative-disorders"
+   },
+   {
+    "label": "Cutaneous marginal zone lymphoma",
+    "url": "https://dermnetnz.org/topics/cutaneous-marginal-zone-lymphoma"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Mycosis fungoides",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticmycosisfungoides.html"
+   },
+   {
+    "label": "Mycosis fungoides special variants",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticMFspecialvariants.html"
+   },
+   {
+    "label": "Sezary syndrome",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticsezary.html"
+   },
+   {
+    "label": "Lymphomatoid papulosis",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticlymphomatoidpapulosis.html"
+   },
+   {
+    "label": "Primary cutaneous anaplastic large cell lymphoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticanaplasticlargecell.html"
+   },
+   {
+    "label": "Subcutaneous panniculitis-like T-cell lymphoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticsubcutaneouspan.html"
+   },
+   {
+    "label": "Primary cutaneous follicle center lymphoma",
+    "url": "https://www.pathologyoutlines.com/topic/lymphomafollicularcutaneous.html"
+   },
+   {
+    "label": "Primary cutaneous marginal zone lymphoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticMALT.html"
+   },
+   {
+    "label": "Primary cutaneous DLBCL, leg type",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticdiffuselargeBcellleg.html"
+   },
+   {
+    "label": "Blastic plasmacytoid dendritic cell neoplasm",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticBPDCN.html"
+   }
+  ]
  }
 }
