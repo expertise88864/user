@@ -3611,5 +3611,60 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorrhinosporidiosis.html"
    }
   ]
+ },
+ "37": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Pyoderma gangrenosum",
+    "url": "https://dermnetnz.org/topics/pyoderma-gangrenosum"
+   },
+   {
+    "label": "Acute febrile neutrophilic dermatosis (Sweet syndrome)",
+    "url": "https://dermnetnz.org/topics/acute-febrile-neutrophilic-dermatosis"
+   },
+   {
+    "label": "Behcet disease",
+    "url": "https://dermnetnz.org/topics/behcet-disease"
+   },
+   {
+    "label": "Pathergy",
+    "url": "https://dermnetnz.org/topics/pathergy"
+   },
+   {
+    "label": "Hidradenitis suppurativa",
+    "url": "https://dermnetnz.org/topics/hidradenitis-suppurativa"
+   },
+   {
+    "label": "Neutrophilic dermatoses",
+    "url": "https://dermnetnz.org/topics/neutrophilic-dermatoses"
+   },
+   {
+    "label": "PAPA syndrome",
+    "url": "https://dermnetnz.org/topics/papa-syndrome"
+   },
+   {
+    "label": "Cutaneous manifestations of inflammatory bowel disease",
+    "url": "https://dermnetnz.org/topics/cutaneous-manifestations-of-inflammatory-bowel-disease"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Pyoderma gangrenosum",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpyodermagangrenosum.html"
+   },
+   {
+    "label": "Sweet syndrome",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorsweetssyndrome.html"
+   },
+   {
+    "label": "Behcet disease",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorbehcetdisease.html"
+   },
+   {
+    "label": "Neutrophilic dermatosis with gastrointestinal disease",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorneutrophilicderm.html"
+   }
+  ]
  }
 }
