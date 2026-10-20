@@ -4317,5 +4317,92 @@
     "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticBPDCN.html"
    }
   ]
+ },
+ "134": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Acanthosis nigricans",
+    "url": "https://dermnetnz.org/topics/acanthosis-nigricans"
+   },
+   {
+    "label": "Tripe palms",
+    "url": "https://dermnetnz.org/topics/tripe-palms"
+   },
+   {
+    "label": "Sign of Leser-Trélat",
+    "url": "https://dermnetnz.org/topics/sign-of-leser-trelat"
+   },
+   {
+    "label": "Acrokeratosis neoplastica (Bazex syndrome)",
+    "url": "https://dermnetnz.org/topics/acrokeratosis-neoplastica"
+   },
+   {
+    "label": "Erythema gyratum repens",
+    "url": "https://dermnetnz.org/topics/erythema-gyratum-repens"
+   },
+   {
+    "label": "Necrolytic migratory erythema",
+    "url": "https://dermnetnz.org/topics/necrolytic-migratory-erythema"
+   },
+   {
+    "label": "Acquired hypertrichosis lanuginosa",
+    "url": "https://dermnetnz.org/topics/acquired-hypertrichosis-lanuginosa"
+   },
+   {
+    "label": "Pityriasis rotunda",
+    "url": "https://dermnetnz.org/topics/pityriasis-rotunda"
+   },
+   {
+    "label": "Trousseau syndrome",
+    "url": "https://dermnetnz.org/topics/trousseau-syndrome"
+   },
+   {
+    "label": "Cutaneous metastasis",
+    "url": "https://dermnetnz.org/topics/skin-metastasis"
+   },
+   {
+    "label": "Leukaemia cutis",
+    "url": "https://dermnetnz.org/topics/leukaemia-cutis"
+   },
+   {
+    "label": "Extramammary Paget disease",
+    "url": "https://dermnetnz.org/topics/extramammary-paget-disease"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Acanthosis nigricans",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoracanthosisnigricans.html"
+   },
+   {
+    "label": "Seborrheic keratosis (sign of Leser-Trelat)",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticSK.html"
+   },
+   {
+    "label": "Cutaneous metastatic carcinoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticmetastaticcarcinoma.html"
+   },
+   {
+    "label": "Leukemia cutis",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticleukemias.html"
+   },
+   {
+    "label": "Scleromyxedema",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorscleromyxedema.html"
+   },
+   {
+    "label": "Necrobiotic xanthogranuloma",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumornecrobioticxanthogranuloma.html"
+   },
+   {
+    "label": "Paget disease (mammary)",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticmammaryPaget.html"
+   },
+   {
+    "label": "Extramammary Paget disease",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticpagets.html"
+   }
+  ]
  }
 }
