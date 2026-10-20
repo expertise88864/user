@@ -4404,5 +4404,76 @@
     "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticpagets.html"
    }
   ]
+ },
+ "154": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Meningococcal disease",
+    "url": "https://dermnetnz.org/topics/meningococcal-disease"
+   },
+   {
+    "label": "Purpura fulminans",
+    "url": "https://dermnetnz.org/topics/purpura-fulminans"
+   },
+   {
+    "label": "Pseudomonas skin infections",
+    "url": "https://dermnetnz.org/topics/pseudomonas-skin-infections"
+   },
+   {
+    "label": "Spa pool folliculitis",
+    "url": "https://dermnetnz.org/topics/spa-pool-folliculitis"
+   },
+   {
+    "label": "Gram-negative folliculitis",
+    "url": "https://dermnetnz.org/topics/gram-negative-folliculitis"
+   },
+   {
+    "label": "Otitis externa",
+    "url": "https://dermnetnz.org/topics/otitis-externa"
+   },
+   {
+    "label": "Ecthyma gangrenosum",
+    "url": "https://dermnetnz.org/topics/ecthyma-gangrenosum"
+   },
+   {
+    "label": "Cat scratch disease",
+    "url": "https://dermnetnz.org/topics/catscratch-disease"
+   },
+   {
+    "label": "Bacillary angiomatosis",
+    "url": "https://dermnetnz.org/topics/bacillary-angiomatosis"
+   },
+   {
+    "label": "Carrion disease",
+    "url": "https://dermnetnz.org/topics/carrion-disease"
+   },
+   {
+    "label": "Typhoid fever",
+    "url": "https://dermnetnz.org/topics/typhoid-fever"
+   },
+   {
+    "label": "Rhinoscleroma",
+    "url": "https://dermnetnz.org/topics/rhinoscleroma"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Bacillary angiomatosis",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticbacillaryangiomatosis.html"
+   },
+   {
+    "label": "Ecthyma gangrenosum",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorecthymagangrenosum.html"
+   },
+   {
+    "label": "Rhinoscleroma",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorrhinoscleroma.html"
+   },
+   {
+    "label": "Cat scratch disease (lymph node)",
+    "url": "https://www.pathologyoutlines.com/topic/lymphnodescatscratch.html"
+   }
+  ]
  }
 }
