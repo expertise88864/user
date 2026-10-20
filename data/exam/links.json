@@ -3918,5 +3918,40 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumoracuteeczematousdermatitis.html"
    }
   ]
+ },
+ "59": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Dermatitis herpetiformis",
+    "url": "https://dermnetnz.org/topics/dermatitis-herpetiformis"
+   },
+   {
+    "label": "Dermatitis herpetiformis pathology",
+    "url": "https://dermnetnz.org/topics/dermatitis-herpetiformis-pathology"
+   },
+   {
+    "label": "Linear IgA bullous disease",
+    "url": "https://dermnetnz.org/topics/linear-iga-bullous-disease"
+   },
+   {
+    "label": "Dapsone",
+    "url": "https://dermnetnz.org/topics/dapsone"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Dermatitis herpetiformis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumordermatitisherpetiformis.html"
+   },
+   {
+    "label": "Celiac disease (small bowel)",
+    "url": "https://www.pathologyoutlines.com/topic/smallbowelceliacsprue.html"
+   },
+   {
+    "label": "Linear IgA bullous dermatosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorlineariga.html"
+   }
+  ]
  }
 }
