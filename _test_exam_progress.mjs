@@ -90,6 +90,7 @@ class Element extends Node {
     this.attributes = new Map();
     this.listeners = {};
     this._checked = undefined;
+    this.style = {};
     const self = this;
     this.classList = {
       contains: c => self.className.split(/\s+/).includes(c),
@@ -110,6 +111,8 @@ class Element extends Node {
   set id(v) { this.setAttribute('id', v); }
   get className() { return this.getAttribute('class') || ''; }
   set className(v) { this.setAttribute('class', v); }
+  get href() { return this.getAttribute('href') || ''; }
+  set href(v) { this.setAttribute('href', v); }
   get type() { return this.getAttribute('type') || ''; }
   set type(v) { this.setAttribute('type', v); }
   get value() {
@@ -461,4 +464,52 @@ test('the wrong notebook renders the time machine box inside the reveal', async 
   }
   // A question without an entry has no box.
   assert.equal(page.document.getElementById('q-108-44').querySelectorAll('.ex-tm').length, 0);
+});
+
+// Reading progress on the hub (the real browser behaviour, dwell time and the
+// chapter page are covered by _test_exam_reading_browser.cjs).
+test('the hub shows reading rounds, a summary and the continue-reading card from storage', () => {
+  const html = fs.readFileSync('exam/index.html', 'utf8');
+  const noted = [...html.matchAll(/<tr data-ch="(\d+)" [^>]*data-notes="1"/g)].map(m => m[1]);
+  assert.ok(noted.length >= 3);
+  const [a, b, c] = noted;
+  const now = Date.now();
+  const storage = new FakeStorage({
+    dnExamReading: JSON.stringify({
+      ['fitz-' + a]: { r: 2, seen: {}, pct: 10, t: 1, done: [1, 2] },
+      ['fitz-' + b]: { r: 1, seen: {}, pct: 55, t: 1, done: [1] },
+      ['fitz-' + c]: { r: -1, seen: {}, pct: 5, t: 1, done: [] },  // malformed: dropped
+    }),
+    dnExamPos: JSON.stringify({
+      ['fitz-' + b]: { id: 'x', dy: 0, t: now - 7200000, h: '段落標題' },
+      ['fitz-' + a]: { id: 'x', dy: 0, t: now - 86400000 * 2 },
+      'fitz-99999': { id: 'x', dy: 0, t: now },
+    }),
+  });
+  const hub = open(storage, '/exam');
+  const row = ch => hub.document.querySelector('.ex-progress tbody tr[data-ch="' + ch + '"]');
+  assert.match(row(a).querySelector('.ex-pg-reading').textContent, /^✓210%$/);
+  assert.match(row(b).querySelector('.ex-pg-reading').textContent, /^✓155%$/);
+  assert.equal(row(c).querySelector('.ex-pg-reading').textContent, '0%');
+  assert.equal(row(b).querySelector('.ex-rd-badge').getAttribute('aria-label'), '讀完 1 次');
+  assert.equal(row(b).querySelector('.ex-rd-fill').style.width, '55%');
+  const plain = hub.document.querySelectorAll('.ex-progress tbody tr').find(r => !r.hasAttribute('data-notes')).querySelector('.ex-pg-reading');
+  assert.equal(plain.textContent, '—');
+  assert.match(hub.document.getElementById('ex-progress-summary').textContent,
+    new RegExp('，重點已讀完 2／' + noted.length + ' 章（其中 1 章 2 次以上）$'));
+
+  const card = hub.document.querySelector('.ex-continue');
+  assert.equal(card.hidden, false);
+  assert.match(card.querySelector('.ex-continue-main').textContent, new RegExp('^Ch\.' + b + ' .+ 〈段落標題〉$'));
+  assert.equal(card.querySelector('.ex-continue-sub').textContent, '2 小時前 · 本章重點已讀 55%');
+  assert.equal(card.querySelector('a.ex-cta').getAttribute('href'), '/exam/fitz-' + b);
+  assert.deepEqual(card.querySelectorAll('.ex-continue-more a').map(x => x.getAttribute('href')), ['/exam/fitz-' + a]);
+
+  // nothing stored: the card stays hidden
+  const empty = open(new FakeStorage(), '/exam');
+  assert.equal(empty.document.querySelector('.ex-continue').hidden, true);
+  // storage that throws: still hidden, placeholders kept
+  const broken = new FakeStorage();
+  broken.broken = true;
+  assert.equal(open(broken, '/exam').document.querySelector('.ex-continue').hidden, true);
 });

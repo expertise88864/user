@@ -19,10 +19,16 @@
   var CHAPTER_PROGRESS_KEY = 'dnExamChapterProgress';
   // Chapters whose textbook chapter has been read: { chapter: epoch ms }.
   var READ_KEY = 'dnExamRead';
-  // Last reading place per chapter page: { 'fitz-53': { id, dy, t } } — id of the
-  // note section, #qs-h or question card at the top of the window, dy = how
-  // many px of it had been scrolled past.
+  // Last reading place per chapter page: { 'fitz-53': { id, dy, t, h } } — id of
+  // the note section, #qs-h or question card at the top of the window, dy = how
+  // many px of it had been scrolled past, h = its title (shown on the hub's
+  // 「繼續閱讀」 card; records from before h existed lack it).
   var POS_KEY = 'dnExamPos';
+  // Reading coverage of a chapter's study notes, per chapter page:
+  // { 'fitz-52': { r: rounds completed, seen: { sectionId: 1 } read in the current
+  // round, pct: weighted coverage 0-100 of the current round, t: epoch ms of the
+  // last change, done: [epoch ms of each completed round, newest 20] } }.
+  var READING_KEY = 'dnExamReading';
   // Timed papers not yet handed in: { 'year-105' | 'practice': { start, seen,
   // ids (practice only), sel: { id: key picked, not submitted }, done: { id: key submitted } } }.
   var PAPER_KEY = 'dnExamPaper';
@@ -934,6 +940,200 @@
     });
   }
 
+  // ---------------------------------------------------------- reading coverage
+  var READ_FULL_PCT = 75;     // coverage that counts as one finished round
+  var DWELL_MIN = 5000;       // ms a section must stay on screen: 50 ms per character,
+  var DWELL_MAX = 30000;      // but never less than 5 s or more than 30 s
+  var DWELL_PER_CHAR = 50;
+  var DWELL_TICK = 1000;
+  var DONE_KEEP = 20;
+
+  // A stored record, checked and copied; null when its shape is wrong.
+  function normReading(rec) {
+    if (!isMap(rec)) return null;
+    function whole(v, max) { return typeof v === 'number' && isFinite(v) && v >= 0 && v <= max && Math.floor(v) === v; }
+    if (!whole(rec.r, 100000) || !whole(rec.pct, 100)) return null;
+    if (typeof rec.t !== 'number' || !isFinite(rec.t) || rec.t < 0) return null;
+    if (!isMap(rec.seen) || !Array.isArray(rec.done)) return null;
+    var seen = {};
+    Object.keys(rec.seen).forEach(function (id) {
+      if (rec.seen[id] === 1 && /^[a-z0-9-]{1,80}$/.test(id)) seen[id] = 1;
+    });
+    var done = rec.done.filter(function (x) { return typeof x === 'number' && isFinite(x) && x >= 0; }).slice(-DONE_KEEP);
+    return { r: rec.r, seen: seen, pct: rec.pct, t: rec.t, done: done };
+  }
+  // { 'fitz-52': record } with every malformed entry left out.
+  function readingMap() {
+    var all = load(READING_KEY, {});
+    var out = {};
+    if (!isMap(all)) return out;
+    Object.keys(all).forEach(function (key) {
+      if (!/^fitz-\d+$/.test(key)) return;
+      var rec = normReading(all[key]);
+      if (rec) out[key] = rec;
+    });
+    return out;
+  }
+  // Replace one chapter's record (null removes it), keeping the others.
+  function saveReading(slug, rec) {
+    var map = readingMap();
+    if (rec) map[slug] = rec; else delete map[slug];
+    return store(READING_KEY, map);
+  }
+
+  // Chapter page: time on screen per note section -> coverage of the notes.
+  // Only a visible tab counts; nothing runs unless a section is on screen.
+  function initReading(slug) {
+    var status = document.getElementById('ex-reading');
+    var nodes = document.querySelectorAll('.ex-notes section.ex-note[id]');
+    if (!slug || !status || !nodes.length || !window.IntersectionObserver || !storageWorks()) return;
+
+    var secs = [], byId = {}, total = 0;
+    nodes.forEach(function (node) {
+      if (own(byId, node.id)) return;
+      var w = parseInt(node.getAttribute('data-w'), 10);
+      if (!(w >= 1)) w = 1;
+      var sec = { el: node, id: node.id, w: w, need: Math.min(DWELL_MAX, Math.max(DWELL_MIN, DWELL_PER_CHAR * w)), ms: 0 };
+      secs.push(sec);
+      byId[sec.id] = sec;
+      total += w;
+    });
+
+    var rec = readingMap()[slug] || { r: 0, seen: {}, pct: 0, t: 0, done: [] };
+    function coverage() {
+      var sum = 0;
+      secs.forEach(function (sec) { if (own(rec.seen, sec.id)) sum += sec.w; });
+      return Math.round(100 * sum / total);
+    }
+    // Sections that no longer exist do not count: coverage is judged on the page as it is now.
+    Object.keys(rec.seen).forEach(function (id) { if (!own(byId, id)) delete rec.seen[id]; });
+    rec.pct = coverage();
+
+    var line = el('span', 'ex-reading-text');
+    var reset = el('button', 'ex-reading-reset', '重設本章閱讀紀錄');
+    reset.type = 'button';
+    status.appendChild(line);
+    status.appendChild(reset);
+    function render() {
+      var text = '本章重點：第 ' + (rec.r + 1) + ' 輪，已讀 ' + rec.pct + '%' + (rec.r >= 1 ? '（已讀完 ' + rec.r + ' 次）' : '');
+      if (line.textContent !== text) line.textContent = text;
+    }
+    render();
+    status.hidden = false;
+
+    var dirty = false, saveTimer = null;
+    function persist() {
+      if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; }
+      if (!dirty) return;
+      dirty = false;
+      rec.t = Date.now();
+      saveReading(slug, rec);
+    }
+    function schedule() {
+      if (!saveTimer) saveTimer = setTimeout(persist, 1000);
+    }
+
+    var active = [], timer = null, last = 0;
+    function unseen(sec) { return !own(rec.seen, sec.id); }
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+    function start() {
+      if (timer || document.visibilityState !== 'visible' || !active.some(unseen)) return;
+      last = Date.now();
+      timer = setInterval(tick, DWELL_TICK);
+    }
+    // At least half of the section, or half of the window's height, is on screen.
+    function inView(sec, vh) {
+      var r = sec.el.getBoundingClientRect();
+      if (!(r.height > 0)) return false;
+      var shown = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top, 0));
+      return shown >= r.height * 0.5 || shown >= vh * 0.5;
+    }
+    function tick() {
+      if (document.visibilityState !== 'visible') { stop(); return; }
+      var now = Date.now();
+      var dt = Math.min(Math.max(now - last, 0), 2500);  // a stalled timer is not reading time
+      last = now;
+      var vh = window.innerHeight || document.documentElement.clientHeight || 0;
+      var waiting = false;
+      active.slice().forEach(function (sec) {
+        if (!unseen(sec)) return;
+        waiting = true;
+        if (!inView(sec, vh)) return;
+        sec.ms += dt;
+        if (sec.ms >= sec.need) markSeen(sec);
+      });
+      if (!waiting) stop();
+    }
+    function markSeen(sec) {
+      rec.seen[sec.id] = 1;
+      rec.pct = coverage();
+      dirty = true;
+      if (rec.pct >= READ_FULL_PCT) {
+        rec.r += 1;
+        rec.done.push(Date.now());
+        if (rec.done.length > DONE_KEEP) rec.done = rec.done.slice(-DONE_KEEP);
+        rec.seen = {};
+        rec.pct = 0;
+        secs.forEach(function (other) { other.ms = 0; });
+        persist();
+        showToast('本章重點第 ' + rec.r + ' 輪讀完 ✓');
+      } else {
+        schedule();
+      }
+      render();
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var sec = null;
+        for (var i = 0; i < secs.length; i++) if (secs[i].el === entry.target) { sec = secs[i]; break; }
+        if (!sec) return;
+        var at = active.indexOf(sec);
+        if (entry.isIntersecting) { if (at < 0) active.push(sec); }
+        else if (at >= 0) active.splice(at, 1);
+      });
+      start();
+    });
+    secs.forEach(function (sec) { io.observe(sec.el); });
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'visible') start();
+      else { stop(); persist(); }
+    });
+    window.addEventListener('pagehide', persist);
+
+    reset.addEventListener('click', function () {
+      var ok = false;
+      try { ok = window.confirm('重設本章的閱讀次數與進度？作答紀錄不受影響。'); } catch (e) { ok = false; }
+      if (!ok) return;
+      if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; }
+      dirty = false;
+      rec = { r: 0, seen: {}, pct: 0, t: 0, done: [] };
+      secs.forEach(function (sec) { sec.ms = 0; });
+      saveReading(slug, null);
+      render();
+      start();
+    });
+  }
+  // Small status toast in the look of the reading-place hint; closes itself.
+  function showToast(text) {
+    var box = el('div', 'ex-resume ex-toast');
+    box.setAttribute('role', 'status');
+    // Sit above the reading-place hint while that is still showing.
+    if (document.querySelector('.ex-resume')) box.classList.add('ex-resume-up');
+    box.appendChild(el('span', 'ex-resume-text', text));
+    var close = el('button', 'ex-resume-close', '×');
+    close.type = 'button';
+    close.setAttribute('aria-label', '關閉提示');
+    box.appendChild(close);
+    var timer = setTimeout(dismiss, 6000);
+    function dismiss() { clearTimeout(timer); box.remove(); }
+    close.addEventListener('click', dismiss);
+    document.body.appendChild(box);
+  }
+
   // Hub: per-chapter progress from this browser's storage (static cells show —).
   // Without working storage nothing could be saved, so the placeholders stay
   // and the controls stay disabled rather than accepting edits that vanish.
@@ -969,12 +1169,53 @@
     el2.textContent = '已作答 ' + answered + (totalCount ? ' / ' + totalCount : '') + ' 題' +
       (answered ? '，正確率 ' + Math.round(100 * right / answered) + '%' : '') +
       '，課本已讀完 ' + Object.keys(readMap()).length + ' 章';
+    var noteRows = document.querySelectorAll('.ex-progress tbody tr[data-notes]');
+    if (noteRows.length) {
+      var reading = readingMap();
+      var once = 0, twice = 0;
+      noteRows.forEach(function (row) {
+        var key = 'fitz-' + row.getAttribute('data-ch');
+        var rec = own(reading, key) ? reading[key] : null;
+        if (rec && rec.r >= 1) once += 1;
+        if (rec && rec.r >= 2) twice += 1;
+      });
+      el2.textContent += '，重點已讀完 ' + once + '／' + noteRows.length + ' 章（其中 ' + twice + ' 章 2 次以上）';
+    }
+  }
+  // 閱讀 cell of a chapter with notes: ✓rounds badge, coverage bar and percentage.
+  function fillReading(cell, rec) {
+    var r = rec ? rec.r : 0;
+    var pct = rec ? rec.pct : 0;
+    var row = cell.closest('tr');
+    row.setAttribute('data-r', String(r));
+    row.setAttribute('data-rpct', String(pct));
+    while (cell.firstChild) cell.removeChild(cell.firstChild);
+    var wrap = el('span', 'ex-rd');
+    if (r >= 1) {
+      var badge = el('span', 'ex-rd-badge', '✓' + r);
+      badge.setAttribute('role', 'img');
+      badge.setAttribute('aria-label', '讀完 ' + r + ' 次');
+      badge.title = '讀完 ' + r + ' 次';
+      wrap.appendChild(badge);
+    }
+    // Bar and percentage stay together; on a narrow cell the badge sits above them.
+    var meter = el('span', 'ex-rd-meter');
+    var bar = el('span', 'ex-rd-bar');
+    bar.setAttribute('aria-hidden', 'true');
+    var fill = el('span', 'ex-rd-fill');
+    fill.style.width = pct + '%';
+    bar.appendChild(fill);
+    meter.appendChild(bar);
+    meter.appendChild(el('span', 'ex-rd-pct', pct + '%'));
+    wrap.appendChild(meter);
+    cell.appendChild(wrap);
   }
   // Fill every row from storage; safe to repeat (back-forward cache restores).
   // A row counts only the answers given on that chapter's own page.
   function refreshProgress() {
     var all = chapterProgressAll();
     var read = readMap();
+    var reading = readingMap();
     document.querySelectorAll('.ex-progress tbody tr').forEach(function (row) {
       var ids = (row.getAttribute('data-qids') || '').split(',').filter(Boolean);
       var ch = row.getAttribute('data-ch') || '';
@@ -996,6 +1237,8 @@
       accCell.textContent = acc === null ? '—' : acc + '%';
       accCell.classList.toggle('ex-pg-low', acc !== null && acc < 60);
       row.querySelector('.ex-pg-date').textContent = last ? day(last) : '—';
+      var readingCell = row.querySelector('.ex-pg-reading');
+      if (readingCell && row.hasAttribute('data-notes')) fillReading(readingCell, own(reading, slug) ? reading[slug] : null);
       var box = row.querySelector('.ex-pg-read');
       box.disabled = false;
       box.checked = Object.prototype.hasOwnProperty.call(read, row.getAttribute('data-ch'));
@@ -1013,6 +1256,14 @@
         if (mode === 'todo') {
           var da = Number(a.getAttribute('data-done')), db = Number(b.getAttribute('data-done'));
           return (da === 0) === (db === 0) ? oa - ob : (da === 0 ? -1 : 1);
+        }
+        if (mode === 'reading') {
+          // Chapters with notes first: fewest finished rounds, then lowest coverage.
+          var na = a.hasAttribute('data-notes'), nb = b.hasAttribute('data-notes');
+          if (na !== nb) return na ? -1 : 1;
+          if (!na) return oa - ob;
+          return (Number(a.getAttribute('data-r')) || 0) - (Number(b.getAttribute('data-r')) || 0) ||
+            (Number(a.getAttribute('data-rpct')) || 0) - (Number(b.getAttribute('data-rpct')) || 0) || oa - ob;
         }
         if (mode === 'low') {
           var aa = a.getAttribute('data-acc'), ab = b.getAttribute('data-acc');
@@ -1055,6 +1306,81 @@
     // answers given on other pages since then must still show up here.
     window.addEventListener('pageshow', function (event) {
       if (event.persisted) refreshProgress();
+    });
+  }
+
+  // ---------------------------------------------------------- hub: continue reading
+  function relativeTime(t) {
+    var diff = Date.now() - t;
+    if (diff < 60000) return '剛剛';
+    if (diff < 3600000) return Math.floor(diff / 60000) + ' 分鐘前';
+    if (diff < 86400000) return Math.floor(diff / 3600000) + ' 小時前';
+    if (diff < 30 * 86400000) return Math.floor(diff / 86400000) + ' 天前';
+    return day(t);
+  }
+  function shortTitle(title) {
+    if (title.length <= 24) return title;
+    var cut = title.slice(0, 24);
+    var space = cut.lastIndexOf(' ');
+    return (space > 12 ? cut.slice(0, space) : cut).replace(/[\s,:;]+$/, '') + '…';
+  }
+  // 「繼續閱讀」 card from the reading places saved on chapter pages; it stays
+  // hidden (as generated) without JS or without a record for a listed chapter.
+  function initContinue(box) {
+    var rows = {};
+    document.querySelectorAll('.ex-progress tbody tr[data-ch]').forEach(function (row) {
+      var link = row.querySelector('th a');
+      var ch = row.getAttribute('data-ch') || '';
+      if (!link || !/^\d+$/.test(ch)) return;
+      rows[ch] = { title: link.textContent.replace(/^\s*Ch\.\d+\s*/, '').trim(), notes: row.hasAttribute('data-notes') };
+    });
+    function fill() {
+      while (box.firstChild) box.removeChild(box.firstChild);
+      var map = posMap();
+      var list = [];
+      Object.keys(map).forEach(function (key) {
+        var m = /^fitz-(\d+)$/.exec(key);
+        var rec = map[key];
+        if (!m || !own(rows, m[1]) || !isMap(rec) || typeof rec.t !== 'number' || !isFinite(rec.t)) return;
+        var h = typeof rec.h === 'string' ? rec.h.replace(/\s+/g, ' ').trim().slice(0, 120) : '';
+        list.push({ n: m[1], t: rec.t, h: h });
+      });
+      list.sort(function (a, b) { return b.t - a.t; });
+      if (!list.length) { box.hidden = true; return; }
+      var top = list[0];
+      var info = rows[top.n];
+      var heading = el('h2', 'ex-h2 ex-h2-sm', '繼續閱讀');
+      heading.id = 'ex-continue-h';
+      box.appendChild(heading);
+      box.appendChild(el('p', 'ex-continue-main', 'Ch.' + top.n + ' ' + info.title + (top.h ? ' 〈' + top.h + '〉' : '')));
+      var sub = relativeTime(top.t);
+      if (info.notes) {
+        var reading = readingMap();
+        sub += ' · 本章重點已讀 ' + (own(reading, 'fitz-' + top.n) ? reading['fitz-' + top.n].pct : 0) + '%';
+      }
+      box.appendChild(el('p', 'ex-continue-sub', sub));
+      var go = el('p', 'ex-continue-go');
+      var cta = el('a', 'ex-cta', '繼續 →');
+      cta.href = '/exam/fitz-' + top.n;  // no #: the page itself reopens at the saved place
+      go.appendChild(cta);
+      box.appendChild(go);
+      var more = list.slice(1, 4);
+      if (more.length) {
+        var line = el('p', 'ex-continue-more', '最近也讀過：');
+        more.forEach(function (item, i) {
+          if (i) line.appendChild(el('span', 'ex-continue-sep', '·'));
+          var a = el('a', null, 'Ch.' + item.n + ' ' + shortTitle(rows[item.n].title));
+          a.href = '/exam/fitz-' + item.n;
+          line.appendChild(a);
+        });
+        box.appendChild(line);
+      }
+      box.hidden = false;
+    }
+    fill();
+    // A page restored from the back-forward cache skips DOMContentLoaded.
+    window.addEventListener('pageshow', function (event) {
+      if (event.persisted) fill();
     });
   }
 
@@ -1480,14 +1806,17 @@
         best = list[i];
         top = r.top;
       }
-      return best ? { id: best.id, dy: Math.round(POS_LINE - top) } : null;
+      return best ? { id: best.id, dy: Math.round(POS_LINE - top), h: anchorTitle(best).slice(0, 120) } : null;
     }
     function save() {
       if (pending) { clearTimeout(pending); pending = null; }
       if (settling) return;
       var pos = current();
       var map = posMap();
-      if (pos) map[slug] = { id: pos.id, dy: pos.dy, t: Date.now() };
+      if (pos) {
+        map[slug] = { id: pos.id, dy: pos.dy, t: Date.now() };
+        if (pos.h) map[slug].h = pos.h;
+      }
       else delete map[slug];  // back above the notes: next visit starts at the top
       store(POS_KEY, map);
     }
@@ -1605,7 +1934,12 @@
     }
     var form = document.querySelector('[data-practice-form]');
     if (form && barApi) initPractice(form, barApi);
-    if (kind === 'chapter') initReadingPlace(pageSlug());
+    if (kind === 'chapter') {
+      initReadingPlace(pageSlug());
+      initReading(chapterSlug());
+    }
+    var continueBox = document.querySelector('.ex-continue');
+    if (continueBox) initContinue(continueBox);
     var list = document.getElementById('ex-review-list');
     if (list) renderReview(list);
     if (document.querySelector('.ex-progress')) initProgress();

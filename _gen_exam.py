@@ -455,6 +455,24 @@ def links_html(links: dict | None) -> str:
             f'{"".join(groups)}</section>')
 
 
+NOTE_SECTION = re.compile(r'<section class="ex-note" id="([a-z0-9-]+)">(.*?)</section>', re.S)
+
+
+def add_note_weights(rendered: str) -> str:
+    """Add data-w="<weight>" to every rendered note section's start tag.
+
+    The weight is the number of non-whitespace characters of the section's
+    visible text (at least 1); exam.js uses it to size the time a section must
+    stay on screen and to weigh each section in the chapter's reading coverage.
+    Done on the rendered HTML, so the .frag sources stay untouched.
+    """
+    def repl(m: re.Match) -> str:
+        text = html.unescape(re.sub(r"<[^>]+>", "", m.group(2)))
+        weight = max(1, len(re.sub(r"\s+", "", text)))
+        return f'<section class="ex-note" id="{m.group(1)}" data-w="{weight}">{m.group(2)}</section>'
+    return NOTE_SECTION.sub(repl, rendered)
+
+
 def wrap_tables(fragment: str) -> str:
     """Note tables scroll inside their own box so a wide table never widens the page."""
     return re.sub(r'(<table\b[^>]*>.*?</table>)', r'<div class="ex-table-wrap">\1</div>', fragment, flags=re.S)
@@ -476,7 +494,7 @@ def expand_hits(fragment: str, chapter: int, on_page: set[str]) -> str:
 
 
 MARK = re.compile(r'<mark data-q="([0-9,\- ]+)">(.*?)</mark>', re.S)
-SECTION = re.compile(r'<section class="ex-note" id="([a-z0-9-]+)">\s*<h2>(.*?)</h2>', re.S)
+SECTION = re.compile(r'<section class="ex-note" id="([a-z0-9-]+)"(?: data-w="\d+")?>\s*<h2>(.*?)</h2>', re.S)
 
 
 def expand_marks(fragment: str, on_page: set[str]) -> str:
@@ -655,6 +673,11 @@ NOTES_TOOLS = (
 )
 
 
+# Filled and unhidden by exam.js (reading coverage of this chapter's notes);
+# stays hidden without JS or storage.
+READING_STATUS = '<p class="ex-reading" id="ex-reading" hidden></p>'
+
+
 # ---------------------------------------------------------------- pages
 
 def chapter_page(shell, data, chapter: dict, qs: list[dict]) -> str:
@@ -665,7 +688,8 @@ def chapter_page(shell, data, chapter: dict, qs: list[dict]) -> str:
     explained = sum(1 for q in qs if q["id"] in data["explanations"])
     if note:
         notes_html = (f'<section class="ex-notes" aria-labelledby="notes-h"><h2 id="notes-h" class="ex-h2">重點整理</h2>'
-                      f'{NOTES_TOOLS}{wrap_tables(expand_marks(expand_hits(note, n, on_page), on_page))}</section>')
+                      f'{NOTES_TOOLS}{READING_STATUS}'
+                      f'{add_note_weights(wrap_tables(expand_marks(expand_hits(note, n, on_page), on_page)))}</section>')
     else:
         notes_html = '<section class="ex-notes"><h2 class="ex-h2">重點整理</h2><p class="ex-pending">這一章的重點尚未整理。</p></section>'
     year_text = "、".join(f"{y} 年 {c} 題" for y, c in sorted(years.items()))
@@ -825,13 +849,18 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
             title = esc(chapters[n]["title"])
             name = (f'<a href="/exam/fitz-{n}">Ch.{n} {title}</a>' if qs else f'Ch.{n} {title}')
             badge = ' <span class="ex-badge">有重點</span>' if n in data["notes"] else ""
+            # 閱讀 cell: filled by exam.js for chapters with notes (round count and
+            # coverage of the current round); the others stay "—".
+            reading_cell = ('<td class="ex-num ex-pg-reading">—</td>' if n in data["notes"]
+                            else '<td class="ex-num ex-pg-reading" title="本章尚無重點整理">—</td>')
             # Progress cells start as "—" and are filled from this browser's
             # localStorage by exam.js; data-qids lists the chapter's questions,
             # counted from the answers given on /exam/fitz-<data-ch> only.
             prog_rows.append(
                 f'<tr data-ch="{n}" data-order="{idx}" data-qids="{",".join(q["id"] for q in qs)}"'
+                f'{" data-notes=\"1\"" if n in data["notes"] else ""}'
                 f'{" class=\"ex-none\"" if not qs else ""}>'
-                f'<th scope="row">{name}{badge}</th><td class="ex-num">{len(qs)}</td>'
+                f'<th scope="row">{name}{badge}</th>{reading_cell}<td class="ex-num">{len(qs)}</td>'
                 '<td class="ex-num ex-pg-done">—</td><td class="ex-num ex-pg-acc">—</td><td class="ex-pg-date">—</td>'
                 f'<td class="ex-pg-readcell"><input type="checkbox" class="ex-pg-read" data-ch="{n}" '
                 f'aria-label="Ch.{n} 課本已讀完" disabled></td></tr>'
@@ -840,7 +869,7 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
         part_html.append(
             f'<details class="ex-part"><summary>{esc((part or "").title())} <span class="ex-count">{count} 題次</span></summary>'
             '<div class="ex-table-wrap"><table class="ex-progress"><thead><tr><th scope="col">章節</th>'
-            '<th scope="col">題數</th><th scope="col">已做</th><th scope="col">正確率</th>'
+            '<th scope="col">閱讀</th><th scope="col">題數</th><th scope="col">已做</th><th scope="col">正確率</th>'
             '<th scope="col">最後作答</th><th scope="col">課本已讀完</th></tr></thead>'
             f'<tbody>{"".join(prog_rows)}</tbody></table></div></details>'
         )
@@ -852,6 +881,8 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
     body = (
         f'<h1 class="ex-h1">{HUB_TITLE}</h1>'
         '<p class="ex-lead">目前整理 101–115 年考題以及各章節重點整理（陸續更新中）</p>'
+        # Filled by exam.js from this device's reading places; hidden without JS or records.
+        '<section class="ex-continue" aria-labelledby="ex-continue-h" hidden></section>'
         '<h2 class="ex-h2 ex-h2-sm">目前甄審筆試出題參考範圍</h2>'
         f'<ol class="ex-refs">{refs}</ol>{NOTICE}'
         # 考古卷 and 考點總覽 sit side by side (stacked on phones).
@@ -870,10 +901,12 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
         '<p class="ex-meta">已做題數、正確率（以每題最近一次作答計算）與「課本已讀完」只存在這台裝置的瀏覽器，'
         '不同電腦或手機不會同步。正確率低於 60% 以紅字標示。</p>'
         '<p class="ex-meta">章節統計只計算在該章頁面作答的題目。</p>'
+        '<p class="ex-meta">「閱讀」欄記錄各章重點整理的閱讀進度：每一段在畫面上停留夠久才算讀過，'
+        '讀過約 75% 算讀完一次（✓ 後面是次數），之後從 0% 開始下一輪；同樣只存在這台裝置。</p>'
         f'<div class="ex-toolbar ex-progress-bar" data-exam-total="{total}"><span id="ex-progress-summary" class="ex-meta" aria-live="polite"></span>'
         '<label class="ex-check">排序 <select class="ex-select ex-progress-sort" aria-label="章節排序" disabled>'
         '<option value="order">章節順序</option><option value="todo">尚未作答優先</option>'
-        '<option value="low">正確率低優先</option></select></label></div>' + "".join(part_html)
+        '<option value="low">正確率低優先</option><option value="reading">閱讀進度低優先</option></select></label></div>' + "".join(part_html)
         + '<h2 class="ex-h2" id="rank-h">出題頻率：最常考的章節</h2>'
         f'<p class="ex-meta">有考題的 {len(ranked)} 章依題數排序。一題可能計入多章，所以加總會超過題數。</p>'
         '<table class="ex-rank" id="ex-rank" aria-labelledby="rank-h" data-rank-page="25"><thead><tr><th scope="col">章節</th>'
@@ -903,7 +936,7 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
 TAG = re.compile(r"<[^>]+>")
 CJK = re.compile(r"[\u3400-\u9fff]")
 LATIN = re.compile(r"[A-Za-z]")
-SECTION_BLOCK = re.compile(r'<section class="ex-note" id="([a-z0-9-]+)">(.*?)</section>', re.S)
+SECTION_BLOCK = re.compile(r'<section class="ex-note" id="([a-z0-9-]+)"(?: data-w="\d+")?>(.*?)</section>', re.S)
 PAREN = re.compile(r"[（(]([^（）()]*)[）)]")
 NAME_SOURCES = (
     re.compile(r"<h[23][^>]*>(.*?)</h[23]>", re.S),
@@ -1265,7 +1298,7 @@ EXAM_STYLE = """<style data-exam-style>
 .ex-links ul{margin:4px 0 8px;padding-left:20px;font-size:14px;line-height:1.8}.ex-links a{color:var(--teal-deep);text-decoration:underline;text-underline-offset:2px}.ex-links-name{font-weight:700;font-size:13.5px;margin:8px 0 0}
 .ex-progress-bar{flex-wrap:wrap;gap:10px;align-items:center}
 .ex-table-wrap{overflow-x:auto}
-.ex-progress{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0;background:#fff;min-width:560px}
+.ex-progress{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0;background:#fff;min-width:640px}
 .ex-progress th,.ex-progress td{border:1px solid var(--border);padding:6px 8px;text-align:left;vertical-align:middle}
 .ex-progress thead th{background:#f1ece4;font-size:12.5px;white-space:nowrap}
 .ex-progress tbody th{font-weight:500}.ex-progress tbody th a{color:var(--teal-deep)}
@@ -1403,6 +1436,35 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 :root[data-theme="dark"] .ex-resume{background:#e8e2d6;color:#16140f}
 :root[data-theme="dark"] .ex-resume button{color:#0c5159}
 :root[data-theme="dark"] .ex-resume .ex-resume-close{color:#16140f}
+.ex-resume.ex-resume-up{bottom:72px}
+@media (max-width:767px){body.dn-has-sticky-cta .ex-resume.ex-resume-up{bottom:124px}}
+.ex-continue{border:1px solid var(--line);border-radius:14px;padding:2px 18px 14px;margin:18px 0 4px;background:rgba(77,99,88,.05)}
+.ex-continue[hidden]{display:none}
+.ex-continue .ex-h2{margin:12px 0 8px}
+.ex-continue-main{margin:0;font-size:15.5px;line-height:1.6;font-weight:700;overflow-wrap:anywhere}
+.ex-continue-sub{margin:2px 0 0;font-size:13px;line-height:1.7;color:var(--muted)}
+.ex-continue-go{margin:10px 0 0}
+.ex-continue-more{margin:10px 0 0;font-size:13px;line-height:1.8;color:var(--ink-2)}
+.ex-continue-more a{color:var(--teal-deep);text-underline-offset:2px;overflow-wrap:anywhere}
+.ex-continue-sep{margin:0 6px;opacity:.5}
+:root[data-theme="dark"] .ex-continue{background:rgba(164,181,168,.07)}
+:root[data-theme="dark"] .ex-continue-more a{color:#a4b5a8}
+.ex-reading{display:flex;flex-wrap:wrap;align-items:center;gap:2px 10px;margin:0 0 10px;padding:6px 12px;border-radius:10px;background:rgba(77,99,88,.07);font-size:13px;line-height:1.7}
+.ex-reading[hidden]{display:none}
+.ex-reading-reset{border:0;background:transparent;color:var(--teal-deep);font:inherit;font-size:12.5px;cursor:pointer;padding:2px 4px;text-decoration:underline;text-underline-offset:2px}
+:root[data-theme="dark"] .ex-reading{background:rgba(164,181,168,.09)}
+:root[data-theme="dark"] .ex-reading-reset{color:#a4b5a8}
+.ex-progress .ex-pg-reading{white-space:normal;min-width:92px}
+.ex-rd{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px 5px}
+@media (max-width:767px){.ex-progress tbody th{max-width:190px}}
+.ex-rd-meter{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.ex-rd-badge{font-size:11px;font-weight:700;color:#14532d;background:#dcfce7;border-radius:9999px;padding:0 6px;white-space:nowrap}
+.ex-rd-bar{display:inline-block;width:40px;max-width:48px;height:6px;border-radius:9999px;background:#e7e0d3;overflow:hidden;vertical-align:middle}
+.ex-rd-fill{display:block;height:100%;background:#4d6358}
+.ex-rd-pct{font-size:12px;white-space:nowrap}
+:root[data-theme="dark"] .ex-rd-badge{background:#14532d;color:#dcfce7}
+:root[data-theme="dark"] .ex-rd-bar{background:#3a352c}
+:root[data-theme="dark"] .ex-rd-fill{background:#a4b5a8}
 .cx-rule{font-size:12.5px;line-height:1.75;color:var(--ink-2);background:#f6f3ee;border-radius:8px;padding:6px 10px;margin:8px 0 12px}
 .cx-list{list-style:none;padding:0;margin:10px 0}
 .cx-list>li{content-visibility:auto;contain-intrinsic-size:auto 56px;scroll-margin-top:80px}
