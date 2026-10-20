@@ -3666,5 +3666,84 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorneutrophilicderm.html"
    }
   ]
+ },
+ "204": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Mohs micrographic surgery",
+    "url": "https://dermnetnz.org/topics/mohs-micrographic-surgery"
+   },
+   {
+    "label": "Basal cell carcinoma",
+    "url": "https://dermnetnz.org/topics/basal-cell-carcinoma"
+   },
+   {
+    "label": "Cutaneous squamous cell carcinoma",
+    "url": "https://dermnetnz.org/topics/cutaneous-squamous-cell-carcinoma"
+   },
+   {
+    "label": "Dermatofibrosarcoma protuberans",
+    "url": "https://dermnetnz.org/topics/dermatofibrosarcoma-protuberans"
+   },
+   {
+    "label": "Atypical fibroxanthoma",
+    "url": "https://dermnetnz.org/topics/atypical-fibroxanthoma"
+   },
+   {
+    "label": "Melanoma in situ",
+    "url": "https://dermnetnz.org/topics/melanoma-in-situ"
+   },
+   {
+    "label": "Extramammary Paget disease",
+    "url": "https://dermnetnz.org/topics/extramammary-paget-disease"
+   },
+   {
+    "label": "Merkel cell carcinoma",
+    "url": "https://dermnetnz.org/topics/merkel-cell-carcinoma"
+   },
+   {
+    "label": "Sebaceous carcinoma",
+    "url": "https://dermnetnz.org/topics/sebaceous-carcinoma"
+   },
+   {
+    "label": "Microcystic adnexal carcinoma",
+    "url": "https://dermnetnz.org/topics/microcystic-adnexal-carcinoma"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Basal cell carcinoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticbcc.html"
+   },
+   {
+    "label": "Squamous cell carcinoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticscc.html"
+   },
+   {
+    "label": "Dermatofibrosarcoma protuberans",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticdfsp.html"
+   },
+   {
+    "label": "Atypical fibroxanthoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticAFX.html"
+   },
+   {
+    "label": "Extramammary Paget disease",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticpagets.html"
+   },
+   {
+    "label": "Merkel cell carcinoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticmerkelcell.html"
+   },
+   {
+    "label": "Microcystic adnexal carcinoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticsclerosingsweatductcarcinoma.html"
+   },
+   {
+    "label": "Sebaceous carcinoma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumornonmelanocyticsebaceouscarcinoma.html"
+   }
+  ]
  }
 }
