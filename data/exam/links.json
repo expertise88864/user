@@ -3418,5 +3418,56 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumordariersdisease.html"
    }
   ]
+ },
+ "63": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Systemic sclerosis",
+    "url": "https://dermnetnz.org/topics/systemic-sclerosis"
+   },
+   {
+    "label": "Scleroderma",
+    "url": "https://dermnetnz.org/topics/scleroderma"
+   },
+   {
+    "label": "Raynaud phenomenon",
+    "url": "https://dermnetnz.org/topics/raynaud-phenomenon"
+   },
+   {
+    "label": "Calcinosis cutis",
+    "url": "https://dermnetnz.org/topics/calcinosis-cutis"
+   },
+   {
+    "label": "Mixed connective tissue disease",
+    "url": "https://dermnetnz.org/topics/mixed-connective-tissue-disease"
+   },
+   {
+    "label": "Eosinophilic fasciitis",
+    "url": "https://dermnetnz.org/topics/eosinophilic-fasciitis"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Morphea and systemic sclerosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorscleroderma.html"
+   },
+   {
+    "label": "Calcinosis cutis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorcalcinosiscutis.html"
+   },
+   {
+    "label": "Eosinophilic fasciitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoreosinophilicfasciitis.html"
+   },
+   {
+    "label": "Scleredema",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorscleredema.html"
+   },
+   {
+    "label": "Scleromyxedema",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorscleromyxedema.html"
+   }
+  ]
  }
 }
