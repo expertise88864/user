@@ -881,8 +881,6 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
     body = (
         f'<h1 class="ex-h1">{HUB_TITLE}</h1>'
         '<p class="ex-lead">目前整理 101–115 年考題以及各章節重點整理（陸續更新中）</p>'
-        # Filled by exam.js from this device's reading places; hidden without JS or records.
-        '<section class="ex-continue" aria-labelledby="ex-continue-h" hidden></section>'
         '<h2 class="ex-h2 ex-h2-sm">目前甄審筆試出題參考範圍</h2>'
         f'<ol class="ex-refs">{refs}</ol>{NOTICE}'
         # 考古卷 and 考點總覽 sit side by side (stacked on phones).
@@ -897,6 +895,8 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
            if data["concepts"] else "") +
         '</div>'
         f'{SEARCH_BOX.format(index=f"/exam/search-index.json?v={SEARCH_VERSION[0]}")}'
+        # Filled by exam.js from this device's reading places; hidden without JS or records.
+        '<section class="ex-continue" aria-labelledby="ex-continue-h" hidden></section>'
         '<h2 class="ex-h2">依章節瀏覽與讀書進度</h2>'
         '<p class="ex-meta">已做題數、正確率（以每題最近一次作答計算）與「課本已讀完」只存在這台裝置的瀏覽器，'
         '不同電腦或手機不會同步。正確率低於 60% 以紅字標示。</p>'
@@ -1438,7 +1438,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 :root[data-theme="dark"] .ex-resume .ex-resume-close{color:#16140f}
 .ex-resume.ex-resume-up{bottom:72px}
 @media (max-width:767px){body.dn-has-sticky-cta .ex-resume.ex-resume-up{bottom:124px}}
-.ex-continue{border:1px solid var(--line);border-radius:14px;padding:2px 18px 14px;margin:18px 0 4px;background:rgba(77,99,88,.05)}
+.ex-continue{border:1px solid var(--line);border-radius:14px;padding:2px 18px 14px;margin:16px 0 0;background:rgba(77,99,88,.05)}
 .ex-continue[hidden]{display:none}
 .ex-continue .ex-h2{margin:12px 0 8px}
 .ex-continue-main{margin:0;font-size:15.5px;line-height:1.6;font-weight:700;overflow-wrap:anywhere}

@@ -41,6 +41,10 @@ module.exports = async function checkExamReading(browser) {
   assert.ok(!fs.readFileSync('exam/fitz-' + PLAIN_CH + '.html', 'utf8').includes('data-w='), 'no weights without notes');
   assert.ok(!fs.readFileSync('exam/fitz-' + PLAIN_CH + '.html', 'utf8').includes('id="ex-reading"'), 'no status line without notes');
   assert.match(hubSource, /<section class="ex-continue" aria-labelledby="ex-continue-h" hidden><\/section>/);
+  // the card sits between the disease search box and the progress table's heading
+  const cardAt = hubSource.indexOf('<section class="ex-continue"');
+  assert.ok(hubSource.indexOf('data-exam-search') < cardAt && cardAt < hubSource.indexOf('依章節瀏覽與讀書進度'), 'card sits after the search box and before 依章節瀏覽');
+  assert.ok(cardAt > hubSource.indexOf('id="ex-search-results"'), 'after the whole search box');
   assert.match(hubSource, /<option value="reading">閱讀進度低優先<\/option>/);
 
   // ---- fixture origin
@@ -327,6 +331,7 @@ module.exports = async function checkExamReading(browser) {
       await readRound(1);
       let saved = (await store(page, 'dnExamReading'))['fitz-' + NOTE_CH];
       assert.equal(saved.r, 1);
+      assert.ok(typeof saved.g === 'string' && saved.g.length > 0, 'record carries a generation id');
       assert.deepEqual(saved.seen, {});
       assert.equal(saved.pct, 0);
       assert.equal(saved.done.length, 1);
@@ -366,12 +371,144 @@ module.exports = async function checkExamReading(browser) {
       accept = true;
       await page.locator('.ex-reading-reset').click();
       const left = await store(page, 'dnExamReading');
-      assert.deepEqual(Object.keys(left), ['fitz-17']);
-      assert.deepEqual(left['fitz-17'], other);
+      assert.deepEqual(Object.keys(left).sort(), ['fitz-' + NOTE_CH, 'fitz-17'].sort());
+      assert.deepEqual(left['fitz-17'], other, 'other chapters untouched');
+      const wiped = left['fitz-' + NOTE_CH];
+      assert.ok(typeof wiped.g === 'string' && wiped.g.length > 0);
+      assert.deepEqual({ r: wiped.r, seen: wiped.seen, pct: wiped.pct, done: wiped.done }, { r: 0, seen: {}, pct: 0, done: [] }, 'reset writes a fresh record');
       assert.deepEqual(await store(page, 'dnExamChapterProgress'), answers, 'answers untouched');
       assert.equal(await status(page), '本章重點：第 1 輪，已讀 0%');
       assert.equal(await page.locator('#ex-reading').isVisible(), true);
       await page.close();
+
+      // ---- several tabs of the same chapter share one record without overwriting each other
+      const chapterRecord = p => store(p, 'dnExamReading').then(all => (all || {})['fitz-' + NOTE_CH] || null);
+      const blockStorageEvents = () => window.addEventListener('storage', event => event.stopImmediatePropagation(), true);
+      // Read one section on page p: scroll to it and let its dwell time pass.
+      const readSection = async (p, section) => {
+        await scrollTo(p, section.id);
+        for (let t = 0; t < need(section) + 4000; t += 1000) {
+          await p.clock.runFor(1000);
+          const now = await chapterRecord(p);
+          if (now && now.seen[section.id] === 1) return;
+        }
+      };
+      const finishRound = async (p, rounds) => {
+        for (const section of sections) {
+          if ((await chapterRecord(p) || { r: 0 }).r >= rounds) return;
+          await scrollTo(p, section.id);
+          for (let t = 0; t < need(section) + 4000; t += 1000) {
+            await p.clock.runFor(1000);
+            if ((await chapterRecord(p) || { r: 0 }).r >= rounds) return;
+          }
+        }
+      };
+      // page.clock is shared by the whole context: park the tabs that must stay idle
+      // at the bottom of the page (questions, no note section on screen).
+      const park = async p => {
+        await p.evaluate(() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' }));
+        await p.waitForTimeout(250);
+      };
+      const statusIs = (p, expected) => p.waitForFunction(want => {
+        const node = document.querySelector('.ex-reading-text');
+        return node && node.textContent === want;
+      }, expected, { polling: 100, timeout: 10000 });
+
+      // (a) tab A completes a round; tab B (which may or may not have heard about it) reads one section
+      for (const blocked of [true, false]) {
+        const A = await open(url, { seedData: {} });
+        const B = await open(url, blocked ? { init: blockStorageEvents } : {});
+        await freeze(A); await freeze(B);
+        await park(B);
+        await finishRound(A, 1);
+        await park(A);
+        const afterA = await chapterRecord(A);
+        assert.equal(afterA.r, 1);
+        assert.equal(afterA.done.length, 1);
+        await readSection(B, sections[0]);
+        const merged = await chapterRecord(B);
+        assert.equal(merged.r, 1, "B did not overwrite A's finished round (events blocked: " + blocked + ')');
+        assert.equal(merged.g, afterA.g, 'same generation');
+        assert.deepEqual(merged.done, afterA.done, "A's completion time kept");
+        assert.equal(merged.seen[sections[0].id], 1, "B's section is in the new round");
+        assert.equal(merged.pct, pctOf(Object.keys(merged.seen)));
+        await statusIs(B, '本章重點：第 2 輪，已讀 ' + merged.pct + '%（已讀完 1 次）');
+        await A.close(); await B.close();
+      }
+
+      // (b) A resets while B holds older state: B must not revive the old rounds or sections
+      const oldRecord = { g: 'oldgen1', r: 1, seen: { [sections[0].id]: 1, [sections[1].id]: 1 }, pct: pctOf([sections[0].id, sections[1].id]), t: 5, done: [7] };
+      for (const blocked of [true, false]) {
+        const A = await open(url, { seedData: { dnExamReading: { ['fitz-' + NOTE_CH]: oldRecord } } });
+        const B = await open(url, blocked ? { init: blockStorageEvents } : {});
+        await freeze(A); await freeze(B);
+        await statusIs(B, '本章重點：第 2 輪，已讀 ' + oldRecord.pct + '%（已讀完 1 次）');
+        A.on('dialog', dialog => dialog.accept().catch(() => {}));
+        await A.locator('.ex-reading-reset').click();
+        await park(A);
+        const wiped = await chapterRecord(A);
+        assert.ok(wiped.g && wiped.g !== 'oldgen1', 'reset starts a new generation');
+        assert.equal(wiped.r, 0);
+        if (!blocked) await statusIs(B, '本章重點：第 1 輪，已讀 0%');  // (c) the storage event updated B
+        await readSection(B, sections[3]);
+        let now = await chapterRecord(B);
+        if (blocked) {
+          assert.equal(now.g, wiped.g, 'B did not write over the reset record');
+          assert.equal(now.r, 0, 'old rounds not revived');
+          assert.deepEqual(now.seen, {}, "B's read from before the reset is dropped ");
+          assert.deepEqual(now.done, []);
+          await statusIs(B, '本章重點：第 1 輪，已讀 0%');
+        } else {
+          assert.equal(now.g, wiped.g);
+          assert.equal(now.r, 0);
+          assert.deepEqual(Object.keys(now.seen), [sections[3].id], 'a read after the reset counts');
+        }
+        // after adopting the new generation B keeps contributing to it
+        await readSection(B, sections[4]);
+        now = await chapterRecord(B);
+        assert.equal(now.g, wiped.g);
+        assert.equal(now.r, 0);
+        assert.equal(now.seen[sections[4].id], 1);
+        assert.equal(now.seen[sections[0].id], undefined, 'old seen not revived');
+        assert.equal(now.seen[sections[1].id], undefined, 'old seen not revived');
+        await A.close(); await B.close();
+      }
+
+      // (c) B's status line follows A through the storage event, and C through becoming visible again
+      {
+        const A = await open(url, { seedData: {} });
+        const B = await open(url);
+        const C = await open(url, { init: blockStorageEvents });
+        await freeze(A); await freeze(B); await freeze(C);
+        await park(B); await park(C);
+        await readSection(A, sections[1]);
+        const wrote = await chapterRecord(A);
+        const expected = '本章重點：第 1 輪，已讀 ' + wrote.pct + '%';
+        await statusIs(B, expected);
+        assert.deepEqual(await chapterRecord(B), wrote, 'B only displayed; it wrote nothing');
+        assert.equal(await status(C), '本章重點：第 1 輪，已讀 0%', 'C heard nothing yet');
+        await C.evaluate(() => { Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => 'hidden' }); document.dispatchEvent(new Event('visibilitychange')); });
+        await C.evaluate(() => { delete document.visibilityState; document.dispatchEvent(new Event('visibilitychange')); });
+        await statusIs(C, expected);
+        assert.deepEqual(await chapterRecord(C), wrote, 'C only displayed; it wrote nothing');
+        await A.close(); await B.close(); await C.close();
+      }
+
+      // (d) a record written before generation ids existed still loads and gets one on the next write
+      {
+        const legacy = { r: 1, seen: {}, pct: 0, t: 3, done: [3] };
+        const A = await open(url, { seedData: { dnExamReading: { ['fitz-' + NOTE_CH]: legacy } } });
+        await freeze(A);
+        assert.equal(await status(A), '本章重點：第 2 輪，已讀 0%（已讀完 1 次）');
+        assert.equal((await chapterRecord(A)).g, undefined, 'nothing written yet');
+        await readSection(A, sections[2]);
+        const now = await chapterRecord(A);
+        assert.ok(typeof now.g === 'string' && now.g.length > 0, 'a generation id is assigned on the first write');
+        assert.equal(now.r, 1);
+        assert.deepEqual(now.done, [3]);
+        assert.equal(now.seen[sections[2].id], 1);
+        await A.close();
+      }
 
       // (g) malformed storage and unusable storage on a chapter page
       page = await open(url, { seedData: { dnExamReading: { ['fitz-' + NOTE_CH]: { r: -1, seen: [], pct: 'x' } }, dnExamPos: 'oops' } });

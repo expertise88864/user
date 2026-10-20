@@ -25,9 +25,10 @@
   // 「繼續閱讀」 card; records from before h existed lack it).
   var POS_KEY = 'dnExamPos';
   // Reading coverage of a chapter's study notes, per chapter page:
-  // { 'fitz-52': { r: rounds completed, seen: { sectionId: 1 } read in the current
-  // round, pct: weighted coverage 0-100 of the current round, t: epoch ms of the
-  // last change, done: [epoch ms of each completed round, newest 20] } }.
+  // { 'fitz-52': { g: generation id (changes when the record is created or reset),
+  // r: rounds completed, seen: { sectionId: 1 } read in the current round,
+  // pct: weighted coverage 0-100 of the current round, t: epoch ms of the last
+  // change, done: [epoch ms of each completed round, newest 20] } }.
   var READING_KEY = 'dnExamReading';
   // Timed papers not yet handed in: { 'year-105' | 'practice': { start, seen,
   // ids (practice only), sel: { id: key picked, not submitted }, done: { id: key submitted } } }.
@@ -960,7 +961,10 @@
       if (rec.seen[id] === 1 && /^[a-z0-9-]{1,80}$/.test(id)) seen[id] = 1;
     });
     var done = rec.done.filter(function (x) { return typeof x === 'number' && isFinite(x) && x >= 0; }).slice(-DONE_KEEP);
-    return { r: rec.r, seen: seen, pct: rec.pct, t: rec.t, done: done };
+    // g: generation id of the record ('' for one written before ids existed;
+    // the next write gives it one).
+    var g = typeof rec.g === 'string' && /^[a-z0-9]{1,40}$/.test(rec.g) ? rec.g : '';
+    return { g: g, r: rec.r, seen: seen, pct: rec.pct, t: rec.t, done: done };
   }
   // { 'fitz-52': record } with every malformed entry left out.
   function readingMap() {
@@ -974,15 +978,23 @@
     });
     return out;
   }
-  // Replace one chapter's record (null removes it), keeping the others.
+  // Replace one chapter's record, leaving every other entry exactly as stored.
   function saveReading(slug, rec) {
-    var map = readingMap();
-    if (rec) map[slug] = rec; else delete map[slug];
-    return store(READING_KEY, map);
+    var all = load(READING_KEY, {});
+    if (!isMap(all)) all = {};
+    all[slug] = rec;
+    return store(READING_KEY, all);
   }
 
   // Chapter page: time on screen per note section -> coverage of the notes.
   // Only a visible tab counts; nothing runs unless a section is on screen.
+  //
+  // Several tabs may show the same chapter, so a page never writes back a copy
+  // of the record it loaded. It remembers only `pending` (section ids it saw
+  // read since its last sync) and `baseG` (the generation id of the record it
+  // last synced with). sync() re-reads the stored record, merges the pending
+  // ids into it and writes the result; a record that was reset or recreated
+  // elsewhere (different g) is adopted as it is and the pending ids dropped.
   function initReading(slug) {
     var status = document.getElementById('ex-reading');
     var nodes = document.querySelectorAll('.ex-notes section.ex-note[id]');
@@ -999,15 +1011,30 @@
       total += w;
     });
 
-    var rec = readingMap()[slug] || { r: 0, seen: {}, pct: 0, t: 0, done: [] };
-    function coverage() {
+    function newGeneration() {
+      return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+    }
+    function freshRecord(g) {
+      return { g: g, r: 0, seen: {}, pct: 0, t: Date.now(), done: [] };
+    }
+    // Only the sections of this page count towards coverage.
+    function coverage(seen) {
       var sum = 0;
-      secs.forEach(function (sec) { if (own(rec.seen, sec.id)) sum += sec.w; });
+      secs.forEach(function (sec) { if (own(seen, sec.id)) sum += sec.w; });
       return Math.round(100 * sum / total);
     }
-    // Sections that no longer exist do not count: coverage is judged on the page as it is now.
-    Object.keys(rec.seen).forEach(function (id) { if (!own(byId, id)) delete rec.seen[id]; });
-    rec.pct = coverage();
+    function onPage(record) {
+      var seen = {};
+      Object.keys(record.seen).forEach(function (id) { if (own(byId, id)) seen[id] = 1; });
+      return { g: record.g, r: record.r, seen: seen, pct: coverage(seen), t: record.t, done: record.done.slice() };
+    }
+    function stored() { return readingMap()[slug] || null; }
+    function resetTimers() { secs.forEach(function (sec) { sec.ms = 0; }); }
+
+    var pending = {};          // ids read since the last sync
+    var first = stored();
+    var baseG = first ? first.g : null;   // null: the chapter had no record when loaded
+    var rec = first ? onPage(first) : freshRecord('');  // what the status line shows
 
     var line = el('span', 'ex-reading-text');
     var reset = el('button', 'ex-reading-reset', '重設本章閱讀紀錄');
@@ -1021,20 +1048,52 @@
     render();
     status.hidden = false;
 
-    var dirty = false, saveTimer = null;
-    function persist() {
-      if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; }
-      if (!dirty) return;
-      dirty = false;
-      rec.t = Date.now();
-      saveReading(slug, rec);
+    // Show the stored record (null: none) without writing anything. Reads of
+    // this page that predate a reset or recreation elsewhere are dropped.
+    function adopt(record) {
+      var next = record ? onPage(record) : freshRecord('');
+      var forgotten = record ? (baseG !== null && record.g !== baseG) : baseG !== null;
+      if (forgotten) pending = {};
+      if (forgotten || next.r !== rec.r) resetTimers();
+      baseG = record ? record.g : null;
+      rec = next;
+      render();
     }
-    function schedule() {
-      if (!saveTimer) saveTimer = setTimeout(persist, 1000);
+    function sync() {
+      if (!Object.keys(pending).length) return;
+      var latest = stored();
+      if (latest && baseG !== null && latest.g !== baseG) { adopt(latest); return; }
+      var base, apply = true;
+      if (latest) {
+        base = latest;
+      } else {
+        base = freshRecord(newGeneration());
+        apply = baseG === null;  // storage was cleared since we loaded: those reads are not trusted
+      }
+      if (!base.g) base.g = newGeneration();  // a record from before generation ids
+      if (apply) Object.keys(pending).forEach(function (id) { if (own(byId, id)) base.seen[id] = 1; });
+      base = onPage(base);
+      var finished = apply && base.pct >= READ_FULL_PCT;
+      if (finished) {
+        base.r += 1;
+        base.done.push(Date.now());
+        if (base.done.length > DONE_KEEP) base.done = base.done.slice(-DONE_KEEP);
+        base.seen = {};
+        base.pct = 0;
+      }
+      base.t = Date.now();
+      if (!saveReading(slug, base)) return;  // keep the pending ids for the next try
+      var changedRound = base.r !== rec.r;
+      baseG = base.g;
+      pending = {};
+      rec = base;
+      render();
+      if (finished || changedRound) resetTimers();
+      if (finished) showToast('本章重點第 ' + rec.r + ' 輪讀完 ✓');
     }
 
     var active = [], timer = null, last = 0;
-    function unseen(sec) { return !own(rec.seen, sec.id); }
+    function unseen(sec) { return !own(rec.seen, sec.id) && !own(pending, sec.id); }
     function stop() {
       if (timer) { clearInterval(timer); timer = null; }
     }
@@ -1062,27 +1121,9 @@
         waiting = true;
         if (!inView(sec, vh)) return;
         sec.ms += dt;
-        if (sec.ms >= sec.need) markSeen(sec);
+        if (sec.ms >= sec.need) { pending[sec.id] = 1; sync(); }
       });
       if (!waiting) stop();
-    }
-    function markSeen(sec) {
-      rec.seen[sec.id] = 1;
-      rec.pct = coverage();
-      dirty = true;
-      if (rec.pct >= READ_FULL_PCT) {
-        rec.r += 1;
-        rec.done.push(Date.now());
-        if (rec.done.length > DONE_KEEP) rec.done = rec.done.slice(-DONE_KEEP);
-        rec.seen = {};
-        rec.pct = 0;
-        secs.forEach(function (other) { other.ms = 0; });
-        persist();
-        showToast('本章重點第 ' + rec.r + ' 輪讀完 ✓');
-      } else {
-        schedule();
-      }
-      render();
     }
 
     var io = new IntersectionObserver(function (entries) {
@@ -1099,20 +1140,28 @@
     secs.forEach(function (sec) { io.observe(sec.el); });
 
     document.addEventListener('visibilitychange', function () {
-      if (document.visibilityState === 'visible') start();
-      else { stop(); persist(); }
+      if (document.visibilityState === 'visible') { adopt(stored()); start(); }
+      else { stop(); sync(); }
     });
-    window.addEventListener('pagehide', persist);
+    window.addEventListener('pagehide', sync);
+    // Another tab changed the record: show it (nothing is written here).
+    window.addEventListener('storage', function (event) {
+      if (event.key !== null && event.key !== READING_KEY) return;
+      adopt(stored());
+      start();
+    });
 
     reset.addEventListener('click', function () {
       var ok = false;
       try { ok = window.confirm('重設本章的閱讀次數與進度？作答紀錄不受影響。'); } catch (e) { ok = false; }
       if (!ok) return;
-      if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; }
-      dirty = false;
-      rec = { r: 0, seen: {}, pct: 0, t: 0, done: [] };
-      secs.forEach(function (sec) { sec.ms = 0; });
-      saveReading(slug, null);
+      // A new generation, so tabs that still hold older reads cannot revive them.
+      var fresh = freshRecord(newGeneration());
+      saveReading(slug, fresh);
+      pending = {};
+      baseG = fresh.g;
+      rec = fresh;
+      resetTimers();
       render();
       start();
     });
