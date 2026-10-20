@@ -4101,5 +4101,40 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorpyodermagangrenosum.html"
    }
   ]
+ },
+ "43": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Erythema multiforme",
+    "url": "https://dermnetnz.org/topics/erythema-multiforme"
+   },
+   {
+    "label": "Herpes simplex",
+    "url": "https://dermnetnz.org/topics/herpes-simplex"
+   },
+   {
+    "label": "Rowell syndrome",
+    "url": "https://dermnetnz.org/topics/rowell-syndrome"
+   },
+   {
+    "label": "Mycoplasma pneumoniae infection",
+    "url": "https://dermnetnz.org/topics/mycoplasma-pneumoniae-infection"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Erythema multiforme",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorerythemamultiforme.html"
+   },
+   {
+    "label": "Herpes simplex / zoster",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorherpeszoster.html"
+   },
+   {
+    "label": "Interface dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorinterfacedermatitis.html"
+   }
+  ]
  }
 }
