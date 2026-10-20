@@ -40,7 +40,15 @@ module.exports = async function checkLanguageEnhancements(browser, { sharedSourc
           assert.equal((await page.goto(origin + address, { waitUntil: 'load' })).status(), 200);
           await page.waitForTimeout(1700);
           assert.equal(await page.locator('#dn-bmc-footer').count(), 0, 'The optional support UI is deferred');
-          if (width === 390 && address === '/en/about') {
+          if (address === '/en/about') {
+            const requestsBefore = supportRequests;
+            await page.evaluate(() => DN.injectBMC());
+            assert.equal(await page.locator('#dn-bmc-footer').count(), 0, 'The About page opts out of the support card');
+            assert.equal(supportRequests - requestsBefore, 0, 'An opted-out page never fetches the support bundle');
+            rows.push({ address, width, supportOptOut: true });
+            continue;
+          }
+          if (width === 390 && address === '/en/glossary') {
             failSupportOnce = true;
             await page.evaluate(() => DN.injectBMC());
             assert.equal(await page.locator('#dn-bmc-footer').count(), 0, 'A failed optional request does not insert partial UI');
