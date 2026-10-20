@@ -3816,5 +3816,64 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorleprosy.html"
    }
   ]
+ },
+ "54": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Bullous pemphigoid",
+    "url": "https://dermnetnz.org/topics/bullous-pemphigoid"
+   },
+   {
+    "label": "Pemphigoid gestationis",
+    "url": "https://dermnetnz.org/topics/pemphigoid-gestationis"
+   },
+   {
+    "label": "Mucous membrane pemphigoid",
+    "url": "https://dermnetnz.org/topics/mucous-membrane-pemphigoid"
+   },
+   {
+    "label": "Epidermolysis bullosa acquisita",
+    "url": "https://dermnetnz.org/topics/epidermolysis-bullosa-acquisita"
+   },
+   {
+    "label": "Linear IgA bullous disease",
+    "url": "https://dermnetnz.org/topics/linear-iga-bullous-disease"
+   },
+   {
+    "label": "Dermatitis herpetiformis",
+    "url": "https://dermnetnz.org/topics/dermatitis-herpetiformis"
+   },
+   {
+    "label": "Pemphigus vulgaris",
+    "url": "https://dermnetnz.org/topics/pemphigus-vulgaris"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Bullous pemphigoid",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorbullouspemphigoid.html"
+   },
+   {
+    "label": "Pemphigoid gestationis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorpemphigoidgestationis.html"
+   },
+   {
+    "label": "Cicatricial (mucous membrane) pemphigoid",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorcicatricialpemphigoid.html"
+   },
+   {
+    "label": "Epidermolysis bullosa acquisita",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoreba.html"
+   },
+   {
+    "label": "Linear IgA bullous dermatosis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorlineariga.html"
+   },
+   {
+    "label": "Dermatitis herpetiformis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumordermatitisherpetiformis.html"
+   }
+  ]
  }
 }
