@@ -3252,5 +3252,76 @@
     "url": "https://www.pathologyoutlines.com/topic/lymphnodeshemophagocyticlymphohistiocytosis.html"
    }
   ]
+ },
+ "186": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Impetigo",
+    "url": "https://dermnetnz.org/topics/impetigo"
+   },
+   {
+    "label": "Cellulitis",
+    "url": "https://dermnetnz.org/topics/cellulitis"
+   },
+   {
+    "label": "Erysipelas",
+    "url": "https://dermnetnz.org/topics/erysipelas"
+   },
+   {
+    "label": "Methicillin-resistant Staphylococcus aureus",
+    "url": "https://dermnetnz.org/topics/methicillin-resistant-staphylococcus-aureus"
+   },
+   {
+    "label": "Bacterial skin infections",
+    "url": "https://dermnetnz.org/topics/bacterial-skin-infections"
+   },
+   {
+    "label": "Syphilis",
+    "url": "https://dermnetnz.org/topics/syphilis"
+   },
+   {
+    "label": "Lyme disease",
+    "url": "https://dermnetnz.org/topics/lyme-disease"
+   },
+   {
+    "label": "Anthrax",
+    "url": "https://dermnetnz.org/topics/anthrax"
+   },
+   {
+    "label": "Antibiotics",
+    "url": "https://dermnetnz.org/topics/antibiotics"
+   },
+   {
+    "label": "Mupirocin",
+    "url": "https://dermnetnz.org/topics/mupirocin"
+   },
+   {
+    "label": "Clindamycin",
+    "url": "https://dermnetnz.org/topics/clindamycin"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Impetigo",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorimpetigo.html"
+   },
+   {
+    "label": "Erysipelas",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorerysipelas.html"
+   },
+   {
+    "label": "Syphilis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorsyphilis.html"
+   },
+   {
+    "label": "Anthrax",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoranthrax.html"
+   },
+   {
+    "label": "Necrotizing fasciitis",
+    "url": "https://www.pathologyoutlines.com/topic/softtissuenecrotizingfasciitis.html"
+   }
+  ]
  }
 }
