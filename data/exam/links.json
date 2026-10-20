@@ -4593,5 +4593,60 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumoranthrax.html"
    }
   ]
+ },
+ "163": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Measles",
+    "url": "https://dermnetnz.org/topics/measles"
+   },
+   {
+    "label": "Rubella",
+    "url": "https://dermnetnz.org/topics/rubella"
+   },
+   {
+    "label": "Erythema infectiosum",
+    "url": "https://dermnetnz.org/topics/erythema-infectiosum"
+   },
+   {
+    "label": "Papular purpuric gloves and socks syndrome",
+    "url": "https://dermnetnz.org/topics/papular-purpuric-gloves-and-socks-syndrome"
+   },
+   {
+    "label": "Epstein-Barr virus",
+    "url": "https://dermnetnz.org/topics/epstein-barr-virus"
+   },
+   {
+    "label": "Infectious mononucleosis",
+    "url": "https://dermnetnz.org/topics/infectious-mononucleosis"
+   },
+   {
+    "label": "Gianotti-Crosti syndrome",
+    "url": "https://dermnetnz.org/topics/papular-acrodermatitis-of-childhood"
+   },
+   {
+    "label": "Roseola",
+    "url": "https://dermnetnz.org/topics/roseola"
+   },
+   {
+    "label": "Hand, foot and mouth disease",
+    "url": "https://dermnetnz.org/topics/hand-foot-and-mouth-disease"
+   },
+   {
+    "label": "Eczema coxsackium",
+    "url": "https://dermnetnz.org/topics/eczema-coxsackium"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Epstein-Barr virus (EBV)",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorEBV.html"
+   },
+   {
+    "label": "Parvovirus B19",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorparvovirus.html"
+   }
+  ]
  }
 }
