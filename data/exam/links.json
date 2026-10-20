@@ -4475,5 +4475,68 @@
     "url": "https://www.pathologyoutlines.com/topic/lymphnodescatscratch.html"
    }
   ]
+ },
+ "207": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Acne",
+    "url": "https://dermnetnz.org/topics/acne"
+   },
+   {
+    "label": "Rosacea",
+    "url": "https://dermnetnz.org/topics/rosacea"
+   },
+   {
+    "label": "Melasma",
+    "url": "https://dermnetnz.org/topics/melasma"
+   },
+   {
+    "label": "Dry skin",
+    "url": "https://dermnetnz.org/topics/dry-skin"
+   },
+   {
+    "label": "Allergic contact dermatitis",
+    "url": "https://dermnetnz.org/topics/allergic-contact-dermatitis"
+   },
+   {
+    "label": "Irritant contact dermatitis",
+    "url": "https://dermnetnz.org/topics/irritant-contact-dermatitis"
+   },
+   {
+    "label": "Solar lentigo",
+    "url": "https://dermnetnz.org/topics/solar-lentigo"
+   },
+   {
+    "label": "Pityriasis alba",
+    "url": "https://dermnetnz.org/topics/pityriasis-alba"
+   },
+   {
+    "label": "Postinflammatory hyperpigmentation",
+    "url": "https://dermnetnz.org/topics/postinflammatory-hyperpigmentation"
+   }
+  ],
+  "pathologyoutlines": [
+   {
+    "label": "Acne vulgaris",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoracne.html"
+   },
+   {
+    "label": "Rosacea",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumoracnerosacea.html"
+   },
+   {
+    "label": "Melasma",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticmelasma.html"
+   },
+   {
+    "label": "Lentigo (solar lentigo)",
+    "url": "https://www.pathologyoutlines.com/topic/skintumormelanocyticsolarlentigo.html"
+   },
+   {
+    "label": "Allergic contact dermatitis",
+    "url": "https://www.pathologyoutlines.com/topic/skinnontumorallergiccontact.html"
+   }
+  ]
  }
 }
