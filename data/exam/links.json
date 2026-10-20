@@ -3953,5 +3953,19 @@
     "url": "https://www.pathologyoutlines.com/topic/skinnontumorlineariga.html"
    }
   ]
+ },
+ "216": {
+  "verified": "2026-10-21",
+  "dermnet": [
+   {
+    "label": "Botulinum toxin",
+    "url": "https://dermnetnz.org/topics/botulinum-toxin"
+   },
+   {
+    "label": "Hyperhidrosis",
+    "url": "https://dermnetnz.org/topics/hyperhidrosis"
+   }
+  ],
+  "pathologyoutlines": []
  }
 }
