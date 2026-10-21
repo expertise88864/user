@@ -97,6 +97,35 @@
    }
   ]
  },
+ "105-16": {
+  "then": "105 年（2016）考題把③「免疫染色為 CD34、vimentin、factor XIIIa 陽性」視為正確，官方答案 A（①③）。課本（McKee 5e p.1743、Fitzpatrick 9e p.36）寫的是 DFSP 腫瘤細胞 CD34 陽性、factor XIIIa 陰性，與③的 factor XIIIa 陽性不一致。",
+  "now": "Abenoza 與 Lillemoe 1993：多數 DFSP 只有極少或沒有 factor XIIIa 反應細胞。Goldblum 與 Tuthill 1997：24 例 DFSP 中 18 例（75%）可見 factor XIIIa 染色，但分數低（平均 1.3/5，dermatofibroma 為 4.1/5），多數病例的陽性細胞被認為是被包埋的非腫瘤性 dermal dendrocytes；作者提醒 DFSP 可有少數 factor XIIIa 陽性細胞。Jozwik 2024 回顧：DFSP 腫瘤細胞典型為 CD34 強陽性、factor XIIIa 陰性。這幾篇的摘要（Jozwik 2024 為全文）都沒有提到 vimentin。",
+  "changed": "觀念未改變：Abenoza 1993 已發現多數 DFSP 只有極少或沒有 factor XIIIa 反應細胞，Goldblum 1997 認為 DFSP 中的陽性細胞多為非腫瘤細胞（皆早於本題出題）；2024 年回顧仍以 factor XIIIa 陰性描述 DFSP 腫瘤細胞。",
+  "answer_impact": {
+   "level": "依現行觀念答案會不同",
+   "note": "以腫瘤細胞而言③不成立。依課本，②（可有萎縮性斑塊表現）與④（很少轉移）仍錯，只剩①成立，但選項沒有「①」單獨一項（A①③、B②④、C①②③、D④、E①②③④ 都含錯誤敘述），本題將沒有正確選項。若把 DFSP 內被包埋的非腫瘤性 factor XIIIa 陽性細胞也算進去，③才勉強成立。"
+  },
+  "sources": [
+   {
+    "title": "CD34 and factor XIIIa in the differential diagnosis of dermatofibroma and dermatofibrosarcoma protuberans.",
+    "year": 1993,
+    "pmid": "7694515",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/7694515/"
+   },
+   {
+    "title": "CD34 and factor-XIIIa immunoreactivity in dermatofibrosarcoma protuberans and dermatofibroma.",
+    "year": 1997,
+    "pmid": "9129699",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/9129699/"
+   },
+   {
+    "title": "Dermatofibrosarcoma Protuberans: An Updated Review of the Literature.",
+    "year": 2024,
+    "pmid": "39335097",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39335097/"
+   }
+  ]
+ },
  "106-23": {
   "then": "106 年（2017）考題 B 選項（依官方答案視為正確）沿用壓瘡（pressure ulcer）4 級分法，C 選項則以「紗布優於 hydrocolloid」為錯誤敘述。",
   "now": "美國壓瘡諮詢委員會（National Pressure Ulcer Advisory Panel, NPUAP）2016 年修訂：改稱壓力性損傷（pressure injury），分期由羅馬數字改為阿拉伯數字，並把 Deep Tissue Pressure Injury 名稱中的 suspected 刪除。2017 年 Cochrane 網絡統合分析（network meta-analysis）的證據確定性低或極低，無法判定哪種敷料或外用劑最能促進壓瘡癒合，多數治療是否優於生理食鹽水紗布也不明確；其中親水性膠體（hydrocolloid）敷料與生理食鹽水紗布比較屬極低確定性證據，無法判定癒合率是否有差異。",
@@ -175,6 +204,63 @@
     "year": 2013,
     "pmid": "23947590",
     "url": "https://pubmed.ncbi.nlm.nih.gov/23947590/"
+   }
+  ]
+ },
+ "107-02": {
+  "then": "107 年（2018）考題 A「UV index 共分十五級，十級以上屬於危險範圍」，官方答案 D（以上皆是），即把 A 當成正確。這與臺灣環保署的舊分級大致吻合：2000–2003 年的隔日紫外線指數預報單列 UVI 0~2 微量級、3~4 低量級、5~6 中量級、7~9 過量級、10~15 危險級（共五級，指數範圍到 15、10 以上為危險級）。",
+  "now": "世界衛生組織（WHO）2002 年 Global Solar UV Index 分為 Low（1–2）、Moderate（3–5）、High（6–7）、Very high（8–10）、Extreme（11+）五級，Extreme 為 11 以上、沒有上限。中央氣象署現行分級依 WHO 規範：0–2 低量級、3–5 中量級、6–7 高量級、8–10 過量級、11 以上危險級；指數 10 屬過量級，不是危險級。",
+  "changed": "環保署 2003 年 12 月的預報單仍用舊分級，最遲 2007 年 10 月的預報頁已改用與 WHO 相同的界線（0~2／3~5／6~7／8~10／11+）；確切改制年份未查到公告，介於兩者之間，都早於本題出題。WHO 新分級於 2002 年發布。",
+  "answer_impact": {
+   "level": "依現行觀念答案會不同",
+   "note": "依現行分級 A 不成立；B、C 有課本依據，仍正確。本題為單選，D（以上皆是）因 A 錯而不成立，B、C 又同時正確，依現行觀念沒有唯一正確選項。"
+  },
+  "sources": [
+   {
+    "title": "Global solar UV index: a practical guide (WHO/SDE/OEH/02.2)",
+    "year": 2002,
+    "url": "https://www.who.int/publications/i/item/9241590076"
+   },
+   {
+    "title": "行政院環境保護署 隔日紫外線指數預報單（92 年 12 月 9 日發佈；Wayback Machine 存檔）",
+    "year": 2003,
+    "url": "https://web.archive.org/web/20031209110845/http://www.epa.gov.tw/monitoring/uvi7/tm/missuv2.htm"
+   },
+   {
+    "title": "環保署空氣品質監測網 紫外線指數預報（2007 年 10 月；Wayback Machine 存檔）",
+    "year": 2007,
+    "url": "https://web.archive.org/web/20071012115544/http://taqm.epa.gov.tw/emc/default.aspx?mod=UvForcast"
+   },
+   {
+    "title": "中央氣象署 紫外線預報（紫外線指數分級係依據 WHO 相關規範）",
+    "year": 2026,
+    "url": "https://www.cwa.gov.tw/V8/C/W/MFC_UVI_Map.html"
+   }
+  ]
+ },
+ "107-19": {
+  "then": "107 年（2018）考題問可協助診斷登革熱（dengue）的臨床表徵何者錯誤，官方答案 B（②④），即把②白血球低下（leukopenia）與④分布於手掌與腳掌的皮疹當成不能協助診斷。可能的理由是 leukopenia 屬檢驗值而非「臨床表徵」；Fitzpatrick 9e 則把 leukopenia 列為 dengue 的支持性檢驗異常。",
+  "now": "世界衛生組織（WHO）2009 年 dengue 指引的建議病例分類（Figure 1.4）列出 probable dengue 的條件：居住或前往流行區、發燒，加上下列任兩項——nausea/vomiting、rash、aches and pains、tourniquet test positive、leukopenia、any warning sign。美國疾病管制與預防中心（CDC）2026 年病例定義（需有發燒或寒顫，且無更可能的其他診斷）也把 leukopenia（例如白血球總數 <5,000/mm³）與 rash 列為臨床條件；疾管署 2015 年致醫界通函列出的疑似登革熱症狀同樣包含出疹與白血球減少。手掌腳掌皮疹方面，這三份文件都只列 rash（出疹）、未規定部位，Fitzpatrick 則寫 dengue 疹常侵犯手掌腳掌；④是否不能協助診斷，無法由這些來源確定。",
+  "changed": "WHO 2009 年新版指引（2009 年 4 月出版）的建議分類已把 leukopenia 列為 probable dengue 的條件，早於本題出題。",
+  "answer_impact": {
+   "level": "依現行觀念答案會不同",
+   "note": "依 WHO 2009 等診斷條件，②可協助診斷，B（②④）不再成立；①③為典型表現。若④也可協助診斷，四項都對，五個選項都不成立；若④不能協助診斷，答案會是 D（④）。④無法由現有來源確定，只能確定 B 不成立。"
+  },
+  "sources": [
+   {
+    "title": "Dengue: guidelines for diagnosis, treatment, prevention and control – New edition (WHO/TDR)",
+    "year": 2009,
+    "url": "https://www.who.int/publications/i/item/9789241547871"
+   },
+   {
+    "title": "Dengue 2026 Case Definition (CDC National Notifiable Diseases Surveillance System)",
+    "year": 2026,
+    "url": "https://ndc.services.cdc.gov/case-definitions/dengue/"
+   },
+   {
+    "title": "今年已出現登革熱重症死亡病例，籲請醫師提高警覺，加強登革熱病例之通報，並給予適當臨床處置（疾病管制署致醫界通函第277號）",
+    "year": 2015,
+    "url": "https://www.cdc.gov.tw/Bulletin/Detail/SpMbLwjexQCYZpL0iv0W7Q?typeid=48"
    }
   ]
  },
