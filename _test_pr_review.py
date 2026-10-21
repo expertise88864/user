@@ -168,8 +168,12 @@ class ResumeScopeTests(unittest.TestCase):
              patch("sys.stdout", io.StringIO()):
             self.assertEqual(pr.resume_plan({"head": prev}, head), ("full", prev))
         with patch.object(pr.subprocess, "run", return_value=subprocess.CompletedProcess([], 0)) as run:
-            self.assertEqual(pr.resume_plan({"head": prev}, head), ("incremental", prev))
+            self.assertEqual(pr.resume_plan({"head": prev, "base": "c" * 40}, head), ("incremental", prev))
         self.assertEqual(run.call_args.args[0][-2:], [prev, head])
+        # PR review round 1 (P2): a binding written before the chain cannot be continued.
+        with patch.object(pr.subprocess, "run", return_value=subprocess.CompletedProcess([], 0)), \
+             patch("sys.stdout", io.StringIO()):
+            self.assertEqual(pr.resume_plan({"head": prev}, head), ("legacy", prev))
 
     def test_previous_head_reaches_the_wrapper_only_on_resume(self):
         import os
@@ -647,6 +651,28 @@ class IncrementalChainEndToEndTests(unittest.TestCase):
         self.assertEqual(self.statuses[self.H1][-1]["description"],
                          f"APPROVE base={self.BASE} prev={self.H0} s=0123abcd")
         self.assertEqual(self.gate(self.H1)["chain"], [self.H1, self.H0])
+
+    def test_session_started_by_older_tooling_is_reviewed_whole_then_chains(self):
+        """PR review round 1 (P2): an older binding has no base/prev and its statuses no s=."""
+        import _delivery as d
+        self.assertEqual(self.round("REQUEST_CHANGES"), 2)
+        binding = self.root / ".codex-review" / "pr_review.json"
+        saved = json.loads(binding.read_text(encoding="utf-8"))
+        binding.write_text(json.dumps({k: v for k, v in saved.items() if k not in ("base", "prev")}),
+                           encoding="utf-8")
+        self.statuses[self.H0] = [{**self.statuses[self.H0][-1], "description": f"REQUEST_CHANGES base={self.BASE}"}]
+        self.head = self.H1
+        self.assertEqual(self.round("REQUEST_CHANGES", "--resume"), 2)
+        self.assertEqual(self.reviews[-1], ("legacy", self.BASE, self.H0))
+        self.assertEqual(self.statuses[self.H1][-1]["description"], f"REQUEST_CHANGES base={self.BASE} s=0123abcd")
+        self.head = self.H2
+        self.assertEqual(self.round("APPROVE", "--resume"), 0)
+        self.assertEqual(self.reviews[-1], ("incremental", self.BASE, self.H1))
+        self.assertEqual(self.gate(self.H2)["chain"], [self.H2, self.H1])
+        with self.assertRaises(d.Blocked):
+            # What the round-1 finding described: an incremental link onto a legacy status.
+            self.statuses[self.H1] = self.statuses[self.H0]
+            self.gate(self.H2)
 
     def test_link_must_be_an_ancestor_and_old_whole_range_statuses_still_pass(self):
         import _delivery as d

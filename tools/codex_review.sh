@@ -35,7 +35,8 @@
 #                              tools/pr_review.py 設定:整個 PR 一次審查(使用者 2026-10-15 定案),
 #                              範圍為 merge-base(main, head)..head。TIP 必須是目前 checkout 的 HEAD。
 #   CODEX_REVIEW_PREV_TIP      PR 續審時上一次裁決的 head;續審涵蓋 PREV_TIP..TIP 的所有變更。
-#   CODEX_REVIEW_FULL_RESUME   PR 續審時上一次裁決的 head 已不在歷史中(rebase):同一 session 完整重審。
+#   CODEX_REVIEW_FULL_RESUME   PR 續審時上一次裁決無法接續(rebase 使其 head 不在歷史中,或舊版工具記錄、
+#                              沒有審查鏈):同一 session 完整重審。
 #   CODEX_REVIEW_REBUTTAL_FILE PR 續審時對 REJECTED finding 的證據(不可含 diff),審查者自行查證。
 set -uo pipefail
 
@@ -278,7 +279,7 @@ if [ "$MODE" = "resume" ]; then
 
   # PR flow (tools/pr_review.py names BASE and TIP) decides the scope itself:
   #   CODEX_REVIEW_PREV_TIP    incremental — every change since the last verdict;
-  #   CODEX_REVIEW_FULL_RESUME the branch was rewritten (rebase) — whole PR again;
+  #   CODEX_REVIEW_FULL_RESUME the last verdict cannot be continued (rebase, legacy) — whole PR again;
   #   neither                  same-head rebuttal — re-examine rejected findings only.
   # Outside the PR flow the wrapper's own last_reviewed_head decides (D-19).
   PREV_TIP="${CODEX_REVIEW_PREV_TIP:-}"
@@ -316,16 +317,17 @@ RP
       echo "[codex-review] incremental scope: $PREV_TIP..$TIP"
     elif [ -n "$FULL_FROM" ]; then
       read -r -d '' RESUME_PROMPT <<'RP' || true
-Follow-up review pass (FULL, history rewritten). The commit your previous verdict
-covered, {{FULL_FROM}}, is no longer an ancestor of the pull request head (the
-branch was rebased or rewritten), so nothing reviewed earlier can be assumed.
+Follow-up review pass (FULL). Your previous verdict covered {{FULL_FROM}}, but
+this pass cannot build on it: that commit left the pull request history (the
+branch was rebased or rewritten), or that verdict was recorded by older tooling
+without a review chain. Nothing reviewed earlier can be assumed.
 Re-review the COMPLETE pull request range {{RANGE}} under the first-pass review
 contract, severities and limits, and verify that every finding of your previous
 verdict is resolved at {{TIP}}.
 RP
       RESUME_PROMPT="${RESUME_PROMPT//\{\{FULL_FROM\}\}/$FULL_FROM}"
       SCOPE_FROM="$CODEX_REVIEW_BASE"
-      echo "[codex-review] full scope (rebase fallback; $FULL_FROM is not an ancestor): $PR_RANGE"
+      echo "[codex-review] full scope (cannot continue from $FULL_FROM): $PR_RANGE"
     else
       [ -n "$REBUTTAL_FILE" ] || die "PR 續審需要 CODEX_REVIEW_PREV_TIP、CODEX_REVIEW_FULL_RESUME 或 rebuttal 檔。"
       [ "$(tr -d '[:space:]' < "$REVIEWED_HEAD_FILE" 2>/dev/null)" = "$TIP" ] || die "同一 head 的反駁續審只能接在該 head 的裁決之後。"

@@ -407,7 +407,7 @@ fi
         self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
         self.assertIn(f"Re-review the COMPLETE pull request range {self.fixture_base}..{self.fixture_head}",
                       self.last_prompt)
-        self.assertIn("0" * 40 + ", is no longer an ancestor", self.last_prompt)
+        self.assertIn("Your previous verdict covered " + "0" * 40 + ", but", self.last_prompt)
         self.assertNotIn("(INCREMENTAL)", self.last_prompt)
         for kwargs in ({"full_from": "short"}, {"full_from": "0" * 40, "prev_tip": "base"},
                        {"full_from": "0" * 40, "pr_range": None}):

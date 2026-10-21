@@ -202,7 +202,7 @@ def run_review(mode: str, base: str, head: str, ctx: str | None,
     if resume_session and previous_head:
         # Incremental: every change since the last verdict, not only fixes. Full: that
         # verdict's head left the history (rebase), so the whole PR is reviewed again.
-        env["CODEX_REVIEW_FULL_RESUME" if scope == "full" else "CODEX_REVIEW_PREV_TIP"] = previous_head
+        env["CODEX_REVIEW_FULL_RESUME" if scope in ("full", "legacy") else "CODEX_REVIEW_PREV_TIP"] = previous_head
     if resume_session and rebuttal:
         # Evidence for findings Claude Code REJECTED; the reviewer re-checks it itself.
         env["CODEX_REVIEW_REBUTTAL_FILE"] = rebuttal
@@ -253,6 +253,9 @@ def round_label(entry: dict) -> str:
     if scope == "full":
         return (f"resume, WHOLE range again: the last reviewed head `{entry.get('replaced', '')}` "
                 "is no longer in the history (rebase fallback)")
+    if scope == "legacy":
+        return (f"resume, WHOLE range again: the verdict on `{entry.get('replaced', '')}` was recorded "
+                "by older tooling without a review chain")
     if scope == "incremental":
         return f"resume, incremental `{prev}..{entry['head']}`" if prev else "resume"
     return "first (whole range)"
@@ -336,6 +339,8 @@ def resume_plan(saved: dict, head: str, rebuttal: bool = False) -> tuple[str, st
 
     incremental: the last verdict's head is an ancestor; review previous..head only.
     full: a rebase removed it from the history; review the whole range again.
+    legacy: the binding predates the review chain (no base/prev, its statuses no s=), so
+    no incremental link could reach a root the gate accepts; review the whole range again.
     rebuttal: an unchanged head may resume only with a rebuttal of a REQUEST_CHANGES
     verdict (user decision 2026-10-15), once per head; nothing new to review."""
     previous = str(saved.get("head", ""))
@@ -358,6 +363,9 @@ def resume_plan(saved: dict, head: str, rebuttal: bool = False) -> tuple[str, st
     if subprocess.run(["git", "merge-base", "--is-ancestor", previous, head], cwd=ROOT).returncode != 0:
         print(f"[pr-review] {previous[:12]} is no longer in this history (rebase): whole-range review")
         return "full", previous
+    if "base" not in saved:
+        print(f"[pr-review] the verdict on {previous[:12]} predates the review chain: whole-range review")
+        return "legacy", previous
     return "incremental", previous
 
 
@@ -473,7 +481,7 @@ def main() -> int:
             elif scope == "rebuttal":
                 # Same head, same coverage as the verdict being rebutted.
                 prev_link = str(saved.get("prev", ""))
-            if scope != "full" and SHA.fullmatch(str(saved.get("base", ""))) and subprocess.run(
+            if scope in ("incremental", "rebuttal") and SHA.fullmatch(str(saved.get("base", ""))) and subprocess.run(
                     ["git", "merge-base", "--is-ancestor", saved["base"], head], cwd=ROOT).returncode == 0:
                 # Every link of a chain keeps the base its whole-range round reviewed from.
                 base = saved["base"]
@@ -487,7 +495,7 @@ def main() -> int:
                  "session": session, "bound_session": resume_session or session,
                  "message": message, "resume": args.resume, "rebuttal": bool(rebuttal),
                  "same_head_rebuttal": scope == "rebuttal", "scope": scope, "prev": prev_link,
-                 "replaced": previous_head if scope == "full" else ""}
+                 "replaced": previous_head if scope in ("full", "legacy") else ""}
         unrecorded.write_text(json.dumps(entry), encoding="utf-8")
         return finish(api, pr, entry, binding, unrecorded)
     except (Blocked, OSError, ValueError, KeyError, subprocess.SubprocessError) as exc:

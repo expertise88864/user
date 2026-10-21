@@ -26,7 +26,7 @@ Codex review、遠端 CI 與正式交付流程（D-03 等）照常適用。源�
 為何：完整重讀 386 檔（含 228 個生成頁）讓每次續審要 4–5 小時，即使只修幾行。
 `tools/codex_review.ps1` 仍是完整重審（較嚴格），本 repo 一律用 .sh。重開：使用者要求恢復完整重審。
 PR 流程（2026-10-21 實作）：`tools/pr_review.py --resume` 只審上次裁決 head..目前 head；舊 head 因 rebase
-不在歷史中時同一 session 整段重審。status 記 `base=`、`prev=`、`s=`，`_delivery.py` 的 pre-push gate 沿 `prev=`
+不在歷史中、或該 session 由舊版工具開始（binding 無 base），同一 session 整段重審。status 記 `base=`、`prev=`、`s=`，`_delivery.py` 的 pre-push gate 沿 `prev=`
 回溯（每一環須為同 session、同 base、祖先 commit 的完成裁決），直到一個沒有 `prev=` 的整段審查，base 仍須是 main 的祖先。
 生成物清單與抽樣在 `tools/review_scope.py`（不在清單上的檔案一律全讀；分類失敗也全讀）。
 

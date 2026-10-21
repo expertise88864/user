@@ -28,7 +28,7 @@ change medical content, visual baselines, credentials, recipients or scoring.
    quota exhaustion records quota-pending (publishable, not approval); backfill via --pending.
    A --resume reviews only the commits after the last verdict (prev..head, same session),
    plus whether the previous findings are fixed; after a rebase that removed the last
-   reviewed head it re-reviews the whole range. Each status records base=, prev= and the
+   reviewed head, or for a session started by older tooling, it re-reviews the whole range. Each status records base=, prev= and the
    session prefix s=; the pre-push gate follows prev= links (completed verdicts of the same
    session and base, each an ancestor) back to a whole-range review whose base is in main.
    Generated output listed in tools/review_scope.py is reviewed through its generator and
