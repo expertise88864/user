@@ -174,15 +174,25 @@ class BashWrapperTests(unittest.TestCase):
     def run_wrapper(self, *, resume=False, returned=SID, rc=0, actual_model="gpt-6.1-sol",
                     actual_effort="xhigh", actual_sandbox="read-only", count=1, legacy=False,
                     retry_after_failure=False, crlf=False, python3_only=False, from_subdir=False,
-                    reviewed_head=None, pr_range=None, prev_tip=None, rebuttal=None):
+                    reviewed_head=None, pr_range=None, prev_tip=None, rebuttal=None,
+                    full_from=None, verification=None):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             subprocess.run(["git", "init", "-q", str(root)], check=True)
-            subprocess.run(["git", "-C", str(root), "-c", "user.name=Fixture", "-c",
-                            "user.email=fixture@example.invalid", "commit", "--allow-empty", "-qm", "fixture"], check=True)
+            commit = ["git", "-C", str(root), "-c", "user.name=Fixture", "-c",
+                      "user.email=fixture@example.invalid", "commit", "-qm"]
+            subprocess.run(commit[:-1] + ["--allow-empty", "-qm", "fixture base"], check=True)
+            self.fixture_base = subprocess.run(["git", "-C", str(root), "rev-parse", "HEAD"], capture_output=True,
+                                               text=True, check=True).stdout.strip()
+            # The PR adds one source file and generated exam pages (sampled, not read in full).
+            (root / "exam").mkdir()
+            for name in ("src.py", "exam/a.html", "exam/b.html", "exam/c.html", "exam/d.html"):
+                (root / name).write_text(name + "\n", encoding="utf-8")
+            subprocess.run(["git", "-C", str(root), "add", "-A"], check=True)
+            subprocess.run(commit + ["fixture"], check=True)
             tools = root / "tools"
             tools.mkdir()
-            for name in ("codex_review.sh", "codex_review_identity.py"):
+            for name in ("codex_review.sh", "codex_review_identity.py", "review_scope.py"):
                 shutil.copyfile(ROOT / "tools" / name, tools / name)
             state = root / ".codex-review"
             state.mkdir()
@@ -191,7 +201,8 @@ class BashWrapperTests(unittest.TestCase):
             head = subprocess.run(["git", "-C", str(root), "rev-parse", "HEAD"], capture_output=True,
                                   text=True, check=True).stdout.strip()
             if reviewed_head is not None:
-                (state / "last_reviewed_head").write_text((head if reviewed_head == "head" else reviewed_head) + "\n")
+                (state / "last_reviewed_head").write_text(
+                    {"head": head, "base": self.fixture_base}.get(reviewed_head, reviewed_head) + "\n")
             model, effort = ("gpt-6.1-sol", "high") if legacy else ("gpt-6.1-sol", "xhigh")
             (state / "usage.tsv").write_text("timestamp\trepository\tmode\tmodel\teffort\tbase_ref\tsession_id\ttokens_used\tresult\tfindings\tpass\n"
                 f"now\tfixture\tdeep\t{model}\t{effort}\tHEAD\t{SID}\t0\tREQUEST_CHANGES\t1\t{count}\n",
@@ -233,19 +244,24 @@ fi
                        CODEX_REVIEW_CLI="codex")
             env.pop("CODEX_REVIEW_TIP", None)
             env.pop("CODEX_REVIEW_BASE", None)
-            env.pop("CODEX_REVIEW_PREV_TIP", None)
-            env.pop("CODEX_REVIEW_REBUTTAL_FILE", None)
+            for name in ("CODEX_REVIEW_PREV_TIP", "CODEX_REVIEW_REBUTTAL_FILE", "CODEX_REVIEW_FULL_RESUME",
+                         "CODEX_REVIEW_VERIFICATION"):
+                env.pop(name, None)
+            if verification is not None:
+                env["CODEX_REVIEW_VERIFICATION"] = verification
+            if full_from is not None:
+                env["CODEX_REVIEW_FULL_RESUME"] = full_from
             if rebuttal is not None:
                 evidence = root / "rebuttal.txt"
                 if rebuttal != "missing":
                     evidence.write_text(rebuttal, encoding="utf-8")
                 env["CODEX_REVIEW_REBUTTAL_FILE"] = evidence.as_posix()
             if prev_tip is not None:
-                env["CODEX_REVIEW_PREV_TIP"] = head if prev_tip == "head" else prev_tip
+                env["CODEX_REVIEW_PREV_TIP"] = {"head": head, "base": self.fixture_base}.get(prev_tip, prev_tip)
             if pr_range is not None:
                 # tools/pr_review.py names the exact PR head and its merge base.
                 env["CODEX_REVIEW_TIP"] = head if pr_range == "head" else pr_range
-                env["CODEX_REVIEW_BASE"] = head
+                env["CODEX_REVIEW_BASE"] = self.fixture_base
             # Bash itself receives native PATH. Its fixture PATH changes only in this child.
             fixture_path = bin_dir.as_posix()
             if os.name == "nt":
@@ -255,7 +271,9 @@ fi
             if python3_only:
                 # Hide python discovery even on CI hosts that provide both names.
                 command += 'command() { if [[ "$1" == -v && "$2" == python ]]; then return 1; fi; builtin command "$@"; }; export -f command; '
-            command += "exec bash " + ("../tools/" if from_subdir else "tools/") + "codex_review.sh " + (f"resume {SID.upper()}" if resume else "deep HEAD")
+            # A PR first pass gets the merge base from tools/pr_review.py.
+            first = f"deep {self.fixture_base}" if pr_range else "deep HEAD"
+            command += "exec bash " + ("../tools/" if from_subdir else "tools/") + "codex_review.sh " + (f"resume {SID.upper()}" if resume else first)
             env.pop("BASH_ENV", None)
             cwd = root / "nested" if from_subdir else root
             cwd.mkdir(exist_ok=True)
@@ -282,7 +300,7 @@ fi
                                      ["git", "-C", str(root), "rev-parse", "--show-toplevel"],
                                      capture_output=True, text=True, encoding="utf-8", check=True).stdout.strip() + "'")
                 self.assertIn("--json", args)
-                self.assertIn("COMPLETE", args[-1])
+                self.assertIn("End with exactly", args[-1])
                 self.last_prompt = args[-1]
             reviewed = state / "last_reviewed_head"
             self.last_reviewed = reviewed.read_text().strip() if reviewed.exists() else None
@@ -350,7 +368,7 @@ fi
                 self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
                 self.assertNotIn("INCREMENTAL", self.last_prompt)
                 self.assertIn("Re-read the COMPLETE current delivery scope", self.last_prompt)
-                self.assertIn("representative sample of the generated files", self.last_prompt)
+                self.assertIn("REVIEW SCOPE (committed range", self.last_prompt)
 
     def test_failed_resume_keeps_reviewed_head(self):
         result = self.run_wrapper(resume=True, rc=1, reviewed_head="0" * 40)
@@ -358,23 +376,47 @@ fi
         self.assertEqual(self.last_reviewed, "0" * 40)
 
     def test_pr_review_names_whole_pr_range(self):
-        result = self.run_wrapper(pr_range="head")
+        result = self.run_wrapper(pr_range="head", verification="unit tests: OK")
         self.assertEqual(result[:4], (0, True, SID, "1"), result[-1])
-        self.assertIn(f"Committed range {self.fixture_head}..{self.fixture_head} (one whole pull request",
+        self.assertIn(f"Committed range {self.fixture_base}..{self.fixture_head} (one whole pull request",
                       self.last_prompt)
-        self.assertNotIn("{{RANGE}}", self.last_prompt)
+        for text in ("{{RANGE}}", "{{SCOPE}}", "{{VERIFICATION_RESULTS}}"):
+            self.assertNotIn(text, self.last_prompt)
+        self.assertIn("unit tests: OK", self.last_prompt)
+        # Four generated pages changed; only three are sampled.
+        self.assertIn("5 (1 source, 4 generated)", self.last_prompt)
+        self.assertEqual(self.last_prompt.count("    sample: exam/"), 3)
+        # A PR resume must say what to review: no silent whole-range or empty pass.
         result = self.run_wrapper(resume=True, reviewed_head="head", pr_range="head")
-        self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
-        self.assertIn(f"The pull request range is now {self.fixture_head}..{self.fixture_head};",
-                      self.last_prompt)
+        self.assertEqual(result[:2], (64, False), result[-1])
 
     def test_pr_resume_reviews_every_change_since_last_verdict(self):
-        result = self.run_wrapper(resume=True, reviewed_head="head", pr_range="head", prev_tip="head")
+        result = self.run_wrapper(resume=True, reviewed_head="base", pr_range="head", prev_tip="base",
+                                  verification="resume tests: OK")
         self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
-        self.assertIn(f"Review EVERY change in {self.fixture_head}..{self.fixture_head}", self.last_prompt)
+        self.assertIn("(INCREMENTAL)", self.last_prompt)
+        self.assertIn(f"Review EVERY change in {self.fixture_base}..{self.fixture_head}", self.last_prompt)
+        self.assertIn("do not re-read the", self.last_prompt)
+        self.assertIn(f"REVIEW SCOPE (committed range {self.fixture_base}..{self.fixture_head})", self.last_prompt)
+        self.assertIn("LOCAL VERIFICATION (this pass):\nresume tests: OK", self.last_prompt)
+        self.assertTrue(self.last_prompt.rstrip().endswith("End with exactly APPROVE or REQUEST_CHANGES."))
+        self.assertEqual(self.last_reviewed, self.fixture_head)
+
+    def test_pr_resume_after_rebase_reviews_the_whole_range(self):
+        result = self.run_wrapper(resume=True, reviewed_head="0" * 40, pr_range="head", full_from="0" * 40)
+        self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
+        self.assertIn(f"Re-review the COMPLETE pull request range {self.fixture_base}..{self.fixture_head}",
+                      self.last_prompt)
+        self.assertIn("0" * 40 + ", is no longer an ancestor", self.last_prompt)
+        self.assertNotIn("(INCREMENTAL)", self.last_prompt)
+        for kwargs in ({"full_from": "short"}, {"full_from": "0" * 40, "prev_tip": "base"},
+                       {"full_from": "0" * 40, "pr_range": None}):
+            with self.subTest(kwargs=kwargs):
+                args = {"resume": True, "pr_range": "head", **kwargs}
+                self.assertEqual(self.run_wrapper(**args)[:2], (64, False))
 
     def test_pr_resume_rejects_invalid_previous_head(self):
-        for prev_tip, pr_range in (("short", "head"), ("0" * 40, "head"), ("head", None)):
+        for prev_tip, pr_range in (("short", "head"), ("0" * 40, "head"), ("head", None), ("head", "head")):
             with self.subTest(prev_tip=prev_tip, pr_range=pr_range):
                 result = self.run_wrapper(resume=True, pr_range=pr_range, prev_tip=prev_tip)
                 self.assertEqual(result[:2], (64, False), result[-1])
@@ -385,6 +427,10 @@ fi
         self.assertEqual(result[:4], (0, True, SID, "2"), result[-1])
         self.assertIn("Never withdraw a finding on assertion alone", self.last_prompt)
         self.assertIn("F1 REJECTED: guarded by _delivery.py:340", self.last_prompt)
+        self.assertIn("do not re-review the range", self.last_prompt)
+        # A same-head rebuttal must follow that head's own verdict.
+        result = self.run_wrapper(resume=True, reviewed_head="base", pr_range="head", rebuttal="F1 REJECTED\n")
+        self.assertEqual(result[:2], (64, False), result[-1])
 
     def test_pr_resume_rebuttal_rejects_diff_or_missing_file(self):
         for rebuttal in ("diff --git a/x b/x\n@@ -1 +1 @@\n", "missing"):

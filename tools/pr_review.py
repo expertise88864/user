@@ -12,11 +12,17 @@ then records the outcome on GitHub instead of in commits:
 Usage (clean checkout of the exact, already pushed codex/* head):
     python tools/pr_review.py                       # first round; opens the PR if missing
     python tools/pr_review.py --resume              # after fixing CONFIRMED findings
+    python tools/pr_review.py --resume --verification local.txt  # local test summary for the prompt
     python tools/pr_review.py --mode deep --ctx task.txt
     python tools/pr_review.py --pr 12               # backfill a PR (HEAD must equal its head)
     python tools/pr_review.py --pending             # list PRs whose head is not approved
     python tools/pr_review.py --retry-record        # re-post a verdict GitHub did not accept
     python tools/pr_review.py --resume --rebuttal r.txt  # once per head: evidence for REJECTED findings
+
+A resume reviews only the commits after the last verdict (previous..head) in the
+same session; if a rebase removed that head from the history it re-reviews the whole
+PR. Each status names the head it continues from (prev=) and the session (s=), so
+the pre-push gate can walk the chain back to a review of the whole range.
 
 Exit codes: 0 APPROVE, 2 REQUEST_CHANGES, 3 quota pending, 1 blocked/error.
 Quota pending is not approval; rerun when quota returns (same PR, same head).
@@ -42,6 +48,7 @@ MARKER = "<!-- codex-pr-review -->"
 SHA = re.compile(r"^[0-9a-f]{40}$")
 QUOTA = re.compile(r"usage limit|rate limit|try again at|quota", re.I)
 BASE_IN_STATUS = re.compile(r"base=([0-9a-f]{40})")
+SESSION = re.compile(r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$")
 # A quota/usage message that still says it is retrying did not end the run.
 RETRYING = re.compile(r"retry|retrying|reconnect", re.I)
 # Wording of an exhausted plan, as opposed to a transient rate limit.
@@ -187,14 +194,15 @@ def provider_quota_error(raw: str) -> bool:
 
 def run_review(mode: str, base: str, head: str, ctx: str | None,
                resume_session: str | None, previous_head: str | None = None,
-               rebuttal: str | None = None) -> tuple[str, str, str]:
+               rebuttal: str | None = None, scope: str = "incremental") -> tuple[str, str, str]:
     """Return (verdict, session_id, last_message)."""
     env = {**os.environ, "CODEX_REVIEW_TIP": head, "CODEX_REVIEW_BASE": base}
-    env.pop("CODEX_REVIEW_PREV_TIP", None)
-    env.pop("CODEX_REVIEW_REBUTTAL_FILE", None)
+    for name in ("CODEX_REVIEW_PREV_TIP", "CODEX_REVIEW_FULL_RESUME", "CODEX_REVIEW_REBUTTAL_FILE"):
+        env.pop(name, None)
     if resume_session and previous_head:
-        # The wrapper must review every change since the last verdict, not only fixes.
-        env["CODEX_REVIEW_PREV_TIP"] = previous_head
+        # Incremental: every change since the last verdict, not only fixes. Full: that
+        # verdict's head left the history (rebase), so the whole PR is reviewed again.
+        env["CODEX_REVIEW_FULL_RESUME" if scope == "full" else "CODEX_REVIEW_PREV_TIP"] = previous_head
     if resume_session and rebuttal:
         # Evidence for findings Claude Code REJECTED; the reviewer re-checks it itself.
         env["CODEX_REVIEW_REBUTTAL_FILE"] = rebuttal
@@ -223,14 +231,41 @@ def run_review(mode: str, base: str, head: str, ctx: str | None,
     return "ERROR", session, message or raw[-2000:]
 
 
+def status_description(verdict: str, base: str, prev: str, session: str) -> str:
+    """`<verdict> base=<sha> [prev=<sha>] [s=<8 hex>]`, parsed by _delivery.py.
+
+    prev names the head of the verdict this round continues from (prev's range was
+    reviewed earlier in the same session); no prev means base..head was reviewed whole."""
+    text = f"{'quota-pending' if verdict == 'QUOTA_PENDING' else verdict} base={base}"
+    if SHA.fullmatch(prev or ""):
+        text += f" prev={prev}"
+    if SESSION.fullmatch(session or ""):
+        text += f" s={session[:8]}"
+    return text
+
+
+def round_label(entry: dict) -> str:
+    scope = entry.get("scope") or ("rebuttal" if entry.get("rebuttal") else
+                                   "incremental" if entry.get("resume") else "first")
+    prev = entry.get("prev", "")
+    if scope == "rebuttal":
+        return "resume + rebuttal (unchanged head; " + (f"continues from `{prev}`)" if prev else "whole range)")
+    if scope == "full":
+        return (f"resume, WHOLE range again: the last reviewed head `{entry.get('replaced', '')}` "
+                "is no longer in the history (rebase fallback)")
+    if scope == "incremental":
+        return f"resume, incremental `{prev}..{entry['head']}`" if prev else "resume"
+    return "first (whole range)"
+
+
 def record(api: API, pr: dict, verdict: str, base: str, head: str, session: str,
-           message: str, resume: bool, rebuttal: bool = False) -> None:
+           message: str, resume: bool, rebuttal: bool = False, entry: dict | None = None) -> None:
+    entry = entry or {"head": head, "resume": resume, "rebuttal": rebuttal}
     state = {"APPROVE": "success", "REQUEST_CHANGES": "failure",
              "QUOTA_PENDING": "pending", "ERROR": "error"}[verdict]
-    prefix = "quota-pending" if verdict == "QUOTA_PENDING" else verdict
     api.call("POST", f"/statuses/{head}", {
         "state": state, "context": CONTEXT,
-        "description": f"{prefix} base={base}"[:140],
+        "description": status_description(verdict, base, entry.get("prev", ""), session),
         "target_url": pr["html_url"]})
     findings = message.strip() or "(no review message)"
     if len(findings) > MAX_COMMENT:
@@ -240,7 +275,7 @@ def record(api: API, pr: dict, verdict: str, base: str, head: str, session: str,
             "ERROR": "Review did not produce a verified verdict; this round does not count."}.get(verdict, "")
     body = (f"{MARKER}\n### Codex PR review: **{verdict}**\n\n"
             f"| | |\n|---|---|\n| model / effort | `{MODEL}` / `{EFFORT}` (read-only, identity verified) |\n"
-            f"| range | `{base}..{head}` |\n| round | {('resume + rebuttal' if rebuttal else 'resume') if resume else 'first'} |\n"
+            f"| range | `{base}..{head}` |\n| round | {round_label(entry)} |\n"
             f"| session | `{session}` |\n\n"
             + (note + "\n\n" if note else "")
             + "Findings are validated by Claude Code before any fix (CONFIRMED / REJECTED / UNCERTAIN).\n\n"
@@ -296,12 +331,13 @@ def list_pending(api: API) -> int:
     return 0
 
 
-def resume_base(saved: dict, head: str, rebuttal: bool = False) -> str | None:
-    """The head of the last verdict in this session; a resume reviews saved..head.
+def resume_plan(saved: dict, head: str, rebuttal: bool = False) -> tuple[str, str | None]:
+    """(scope, previous head) of a resume in this session.
 
-    An unchanged head may resume only with a rebuttal of a REQUEST_CHANGES verdict
-    (user decision 2026-10-15), once per head; it then returns None (nothing new
-    to review, only the rejected findings to re-examine)."""
+    incremental: the last verdict's head is an ancestor; review previous..head only.
+    full: a rebase removed it from the history; review the whole range again.
+    rebuttal: an unchanged head may resume only with a rebuttal of a REQUEST_CHANGES
+    verdict (user decision 2026-10-15), once per head; nothing new to review."""
     previous = str(saved.get("head", ""))
     if not SHA.fullmatch(previous):
         raise Blocked("The recorded review has no reviewed head; run a first round")
@@ -318,22 +354,24 @@ def resume_base(saved: dict, head: str, rebuttal: bool = False) -> str | None:
             raise Blocked("Only a REQUEST_CHANGES verdict can be rebutted")
         if saved.get("rebutted_head") == head:
             raise Blocked("This head was already rebutted once; change the code or accept the findings")
-        return None
+        return "rebuttal", None
     if subprocess.run(["git", "merge-base", "--is-ancestor", previous, head], cwd=ROOT).returncode != 0:
-        raise Blocked("The last reviewed head is not an ancestor of this head; run a first round")
-    return previous
+        print(f"[pr-review] {previous[:12]} is no longer in this history (rebase): whole-range review")
+        return "full", previous
+    return "incremental", previous
 
 
 def finish(api: API, pr: dict, entry: dict, binding: Path, unrecorded: Path) -> int:
     verdict, head = entry["verdict"], entry["head"]
     record(api, pr, verdict, entry["base"], head, entry["session"], entry["message"],
-           entry["resume"], entry.get("rebuttal", False))
+           entry["resume"], entry.get("rebuttal", False), entry)
     if verdict in ("APPROVE", "REQUEST_CHANGES"):
         # Remember the head this session last judged, only once GitHub has the verdict;
         # the next --resume reviews every commit after it (fixes and anything else).
         binding.write_text(json.dumps({"repo": api.repo, "pr": pr["number"],
                                        "session": entry["bound_session"], "head": head,
-                                       "verdict": verdict,
+                                       "verdict": verdict, "base": entry["base"],
+                                       "prev": entry.get("prev", ""),
                                        "rebutted_head": head if entry.get("same_head_rebuttal") else ""}),
                            encoding="utf-8")
     unrecorded.unlink(missing_ok=True)
@@ -357,6 +395,8 @@ def main() -> int:
     parser.add_argument("--resume", action="store_true", help="continue the recorded session")
     parser.add_argument("--rebuttal", help="with --resume: evidence for REJECTED findings (never a diff); "
                                            "allows one re-examination of an unchanged head")
+    parser.add_argument("--verification", help="local verification summary file for the prompt "
+                                               "(tests run and results; never a diff)")
     parser.add_argument("--pr", type=int, help="PR number (default: open PR of the current branch)")
     parser.add_argument("--pending", action="store_true", help="list PRs whose head lacks APPROVE")
     parser.add_argument("--retry-record", action="store_true",
@@ -405,6 +445,13 @@ def main() -> int:
         resume_session = None
         previous_head = None
         rebuttal = None
+        scope = "first"
+        prev_link = ""
+        if args.verification:
+            summary = Path(args.verification).read_text(encoding="utf-8")
+            if not summary.strip() or len(summary) > 20000 or DIFF_MARKER.search(summary):
+                raise Blocked("The verification summary must be non-empty text (<= 20000 chars), never a diff")
+            os.environ["CODEX_REVIEW_VERIFICATION"] = summary
         if args.rebuttal:
             if not args.resume:
                 raise Blocked("--rebuttal continues a session: use it with --resume")
@@ -420,17 +467,27 @@ def main() -> int:
             if saved.get("pr") != pr["number"] or saved.get("repo") != api.repo \
                     or not resume_session or resume_session != current:
                 raise Blocked("The recorded review session is not this PR's; run a first round")
-            previous_head = resume_base(saved, head, bool(rebuttal))
+            scope, previous_head = resume_plan(saved, head, bool(rebuttal))
+            if scope == "incremental":
+                prev_link = previous_head
+            elif scope == "rebuttal":
+                # Same head, same coverage as the verdict being rebutted.
+                prev_link = str(saved.get("prev", ""))
+            if scope != "full" and SHA.fullmatch(str(saved.get("base", ""))) and subprocess.run(
+                    ["git", "merge-base", "--is-ancestor", saved["base"], head], cwd=ROOT).returncode == 0:
+                # Every link of a chain keeps the base its whole-range round reviewed from.
+                base = saved["base"]
         else:
             binding.unlink(missing_ok=True)
         verdict, session, message = run_review(args.mode, base, head, args.ctx, resume_session,
-                                               previous_head, rebuttal)
+                                               previous_head, rebuttal, scope)
         # Keep the verdict until GitHub has it: a failed POST is retried with
         # --retry-record instead of being lost (or blocking the next --resume).
         entry = {"repo": api.repo, "pr": pr["number"], "verdict": verdict, "base": base, "head": head,
                  "session": session, "bound_session": resume_session or session,
                  "message": message, "resume": args.resume, "rebuttal": bool(rebuttal),
-                 "same_head_rebuttal": bool(rebuttal) and previous_head is None}
+                 "same_head_rebuttal": scope == "rebuttal", "scope": scope, "prev": prev_link,
+                 "replaced": previous_head if scope == "full" else ""}
         unrecorded.write_text(json.dumps(entry), encoding="utf-8")
         return finish(api, pr, entry, binding, unrecorded)
     except (Blocked, OSError, ValueError, KeyError, subprocess.SubprocessError) as exc:

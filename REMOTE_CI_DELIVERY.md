@@ -26,6 +26,14 @@ change medical content, visual baselines, credentials, recipients or scoring.
    --rebuttal FILE (evidence, never a diff); the reviewer re-checks it and keeps or
    withdraws it. Confirmed
    quota exhaustion records quota-pending (publishable, not approval); backfill via --pending.
+   A --resume reviews only the commits after the last verdict (prev..head, same session),
+   plus whether the previous findings are fixed; after a rebase that removed the last
+   reviewed head it re-reviews the whole range. Each status records base=, prev= and the
+   session prefix s=; the pre-push gate follows prev= links (completed verdicts of the same
+   session and base, each an ancestor) back to a whole-range review whose base is in main.
+   Generated output listed in tools/review_scope.py is reviewed through its generator and
+   sources plus a few sampled files; the required "Canonical generated file consistency"
+   job enforces the rest. --verification FILE passes the local test summary to the prompt.
 
 Protected Vercel previews require the project automation bypass credential stored
 as the encrypted repository Actions secret VERCEL_AUTOMATION_BYPASS_SECRET.

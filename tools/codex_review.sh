@@ -12,6 +12,8 @@
 #   resume                  修正後沿用同一個已驗證 session 續審至通過。上一輪可信審查
 #                           的 HEAD 若仍是目前 HEAD 的祖先，只審「該 HEAD..HEAD + 未提交
 #                           變更」並複核先前 finding(使用者 2026-10-15 定案);否則完整重審。
+#                           生成物(tools/review_scope.py 清單)首輪與續審都只審產生器、
+#                           源頭與少量抽樣頁,一致性由 CI 的生成物一致性 job 把關。
 #
 # 設計原則(勿改):
 #   * 絕不把完整 diff 放進 prompt 或 argv;Codex 在 repo 內自行跑 git。
@@ -33,6 +35,7 @@
 #                              tools/pr_review.py 設定:整個 PR 一次審查(使用者 2026-10-15 定案),
 #                              範圍為 merge-base(main, head)..head。TIP 必須是目前 checkout 的 HEAD。
 #   CODEX_REVIEW_PREV_TIP      PR 續審時上一次裁決的 head;續審涵蓋 PREV_TIP..TIP 的所有變更。
+#   CODEX_REVIEW_FULL_RESUME   PR 續審時上一次裁決的 head 已不在歷史中(rebase):同一 session 完整重審。
 #   CODEX_REVIEW_REBUTTAL_FILE PR 續審時對 REJECTED finding 的證據(不可含 diff),審查者自行查證。
 set -uo pipefail
 
@@ -144,6 +147,16 @@ resolve_cli() {
   [ -n "$CODEX_CLI" ] || die "找不到可用的 Codex CLI;不降級到其他模型。"
   echo "[codex-review] cli=$CODEX_CLI"
   review_git_scope
+}
+
+# Generated output in a committed range (tools/review_scope.py, D-19): the reviewer
+# reads generators and sources in full and only a sample of generated files. If the
+# classification fails, nothing is sampled: every changed file is read in full.
+scope_section() {   # $1 = from commit ; $2 = to commit
+  local out
+  out="$("$PYTHON" -X utf8 "$SCRIPT_DIR/review_scope.py" "$1" "$2" 2>/dev/null)" && [ -n "$out" ] ||
+    out="Generated-output classification unavailable: read every changed file in full."
+  printf 'REVIEW SCOPE (committed range %s..%s):\n%s' "$1" "$2" "$out"
 }
 
 # ---------- 解析輸出 ----------
@@ -263,44 +276,106 @@ if [ "$MODE" = "resume" ]; then
   NEXT_PASS=$((PREV_PASS + 1))
   build_flags "$RESUME_EFFORT" resume
 
-  # The earlier passes of this session already reviewed the whole delivery scope.
-  # When their HEAD is still an ancestor of the current HEAD, review only what
-  # changed since then (user decision 2026-10-15: full re-reads took 4-5 hours).
-  PREV_HEAD="$(tr -d '[:space:]' < "$REVIEWED_HEAD_FILE" 2>/dev/null || true)"
+  # PR flow (tools/pr_review.py names BASE and TIP) decides the scope itself:
+  #   CODEX_REVIEW_PREV_TIP    incremental — every change since the last verdict;
+  #   CODEX_REVIEW_FULL_RESUME the branch was rewritten (rebase) — whole PR again;
+  #   neither                  same-head rebuttal — re-examine rejected findings only.
+  # Outside the PR flow the wrapper's own last_reviewed_head decides (D-19).
+  PREV_TIP="${CODEX_REVIEW_PREV_TIP:-}"
+  FULL_FROM="${CODEX_REVIEW_FULL_RESUME:-}"
+  REBUTTAL_FILE="${CODEX_REVIEW_REBUTTAL_FILE:-}"
   CUR_HEAD="$(git -C "$REPO_ROOT" rev-parse HEAD 2>/dev/null || true)"
-  if printf '%s' "$PREV_HEAD" | grep -Eq '^[0-9a-f]{40}$' &&
-     git -C "$REPO_ROOT" merge-base --is-ancestor "$PREV_HEAD" HEAD 2>/dev/null; then
-    read -r -d '' RESUME_PROMPT <<'RP' || true
+  for v in "$PREV_TIP" "$FULL_FROM"; do
+    [ -z "$v" ] || printf '%s' "$v" | grep -Eq '^[0-9a-f]{40}$' || die "CODEX_REVIEW_PREV_TIP／CODEX_REVIEW_FULL_RESUME 必須是完整 40 碼 SHA。"
+  done
+  [ -z "$PREV_TIP" ] || [ -z "$FULL_FROM" ] || die "CODEX_REVIEW_PREV_TIP 與 CODEX_REVIEW_FULL_RESUME 只能擇一。"
+  if [ -n "$PREV_TIP$FULL_FROM" ]; then
+    [ -n "$TIP" ] && [ -n "${CODEX_REVIEW_BASE:-}" ] || die "CODEX_REVIEW_PREV_TIP／FULL_RESUME 只用於 PR 續審(需同時有 CODEX_REVIEW_BASE 與 CODEX_REVIEW_TIP)。"
+  fi
+  if [ -n "$TIP" ] && [ -n "${CODEX_REVIEW_BASE:-}" ]; then
+    PR_RANGE="${CODEX_REVIEW_BASE}..${TIP}"
+    if [ -n "$PREV_TIP" ]; then
+      git -C "$REPO_ROOT" merge-base --is-ancestor "$PREV_TIP" "$TIP" 2>/dev/null || die "CODEX_REVIEW_PREV_TIP 不是 CODEX_REVIEW_TIP 的祖先;請重跑第一輪。"
+      [ "$PREV_TIP" != "$TIP" ] || die "CODEX_REVIEW_PREV_TIP 等於 TIP:沒有新 commit 可續審。"
+      # An APPROVE here covers the whole new head: earlier passes covered BASE..PREV_TIP,
+      # this pass covers PREV_TIP..TIP (the pre-push gate verifies that chain).
+      read -r -d '' RESUME_PROMPT <<'RP' || true
+Follow-up review pass (INCREMENTAL) of pull request {{RANGE}}. Your earlier
+passes in this session reviewed this pull request up to commit {{PREV}}.
+Review EVERY change in {{PREV}}..{{TIP}} (git log / git diff {{PREV}}..{{TIP}}),
+not only corrections: each new commit gets the same full review contract,
+severities and limits as the first pass. Verify that every finding of your
+previous verdict is resolved at {{TIP}}; one that is still present stays open.
+Read each changed source file through END in bounded chunks. Expand only into
+the files this delta touches and the directly related callers, contracts and
+tests that a concrete concern raised by the delta requires; do not re-read the
+rest of the pull request range.
+RP
+      RESUME_PROMPT="${RESUME_PROMPT//\{\{PREV\}\}/$PREV_TIP}"
+      SCOPE_FROM="$PREV_TIP"
+      echo "[codex-review] incremental scope: $PREV_TIP..$TIP"
+    elif [ -n "$FULL_FROM" ]; then
+      read -r -d '' RESUME_PROMPT <<'RP' || true
+Follow-up review pass (FULL, history rewritten). The commit your previous verdict
+covered, {{FULL_FROM}}, is no longer an ancestor of the pull request head (the
+branch was rebased or rewritten), so nothing reviewed earlier can be assumed.
+Re-review the COMPLETE pull request range {{RANGE}} under the first-pass review
+contract, severities and limits, and verify that every finding of your previous
+verdict is resolved at {{TIP}}.
+RP
+      RESUME_PROMPT="${RESUME_PROMPT//\{\{FULL_FROM\}\}/$FULL_FROM}"
+      SCOPE_FROM="$CODEX_REVIEW_BASE"
+      echo "[codex-review] full scope (rebase fallback; $FULL_FROM is not an ancestor): $PR_RANGE"
+    else
+      [ -n "$REBUTTAL_FILE" ] || die "PR 續審需要 CODEX_REVIEW_PREV_TIP、CODEX_REVIEW_FULL_RESUME 或 rebuttal 檔。"
+      [ "$(tr -d '[:space:]' < "$REVIEWED_HEAD_FILE" 2>/dev/null)" = "$TIP" ] || die "同一 head 的反駁續審只能接在該 head 的裁決之後。"
+      read -r -d '' RESUME_PROMPT <<'RP' || true
+Re-examination pass of pull request {{RANGE}}. No commit was added since your
+previous verdict on {{TIP}}; do not re-review the range. Re-examine only the
+findings the implementer rebutted below. APPROVE only if no finding of your
+previous verdict remains open.
+RP
+      SCOPE_FROM=""
+      echo "[codex-review] rebuttal re-examination on unchanged head $TIP"
+    fi
+    RESUME_PROMPT="${RESUME_PROMPT//\{\{RANGE\}\}/$PR_RANGE}"
+    RESUME_PROMPT="${RESUME_PROMPT//\{\{TIP\}\}/$TIP}"
+    SCOPE_TO="$TIP"
+  else
+    # The earlier passes of this session already reviewed the whole delivery scope.
+    # When their HEAD is still an ancestor of the current HEAD, review only what
+    # changed since then (user decision 2026-10-15: full re-reads took 4-5 hours).
+    PREV_HEAD="$(tr -d '[:space:]' < "$REVIEWED_HEAD_FILE" 2>/dev/null || true)"
+    if printf '%s' "$PREV_HEAD" | grep -Eq '^[0-9a-f]{40}$' &&
+       git -C "$REPO_ROOT" merge-base --is-ancestor "$PREV_HEAD" HEAD 2>/dev/null; then
+      read -r -d '' RESUME_PROMPT <<'RP' || true
 Follow-up review pass (INCREMENTAL). Earlier passes of this session reviewed the
 complete delivery scope up to commit {{PREV_HEAD}}. Review the COMPLETE delta
 since then: `git diff {{PREV_HEAD}} HEAD`, plus staged, unstaged and relevant
 untracked changes. Verify that every confirmed prior finding is fixed. Read each
 changed source file through END in bounded chunks and expand into directly
-related callers, contracts and tests the delta affects. For deterministic
-generated output (regenerated from tracked sources and verified by a --check
-step, e.g. exam/** from _gen_exam.py), review the generator and source
-data change in full and read a representative sample of the generated files.
-Remain strictly read-only: do not modify files, run tests, builds, linters,
-package managers, application code, probes, web search, browser, apps,
-connectors, or external MCP tools. End with exactly APPROVE or REQUEST_CHANGES.
+related callers, contracts and tests the delta affects.
 RP
-    RESUME_PROMPT="${RESUME_PROMPT//\{\{PREV_HEAD\}\}/$PREV_HEAD}"
-    echo "[codex-review] incremental scope: $PREV_HEAD..HEAD + uncommitted"
-  else
-    read -r -d '' RESUME_PROMPT <<'RP' || true
+      RESUME_PROMPT="${RESUME_PROMPT//\{\{PREV_HEAD\}\}/$PREV_HEAD}"
+      SCOPE_FROM="$PREV_HEAD"
+      echo "[codex-review] incremental scope: $PREV_HEAD..HEAD + uncommitted"
+    else
+      read -r -d '' RESUME_PROMPT <<'RP' || true
 Follow-up review pass. Re-read the COMPLETE current delivery scope: staged,
 unstaged, committed-but-unpushed, relevant untracked and generated files. Verify
 confirmed prior findings and read all changed OLD/NEW content through END in
-bounded chunks; do not restrict this pass to corrections only. As in the first
-pass, deterministic generated output that the repository regenerates from
-tracked sources and verifies with a --check step (e.g. exam/** from
-_gen_exam.py) is reviewed through its generator and source data plus a
-representative sample of the generated files.
-Remain strictly read-only: do not modify files, run tests, builds, linters,
-package managers, application code, probes, web search, browser, apps,
-connectors, or external MCP tools. End with exactly APPROVE or REQUEST_CHANGES.
+bounded chunks; do not restrict this pass to corrections only.
 RP
-    echo "[codex-review] full scope (no reviewed ancestor HEAD recorded)"
+      SCOPE_FROM="$(git -C "$REPO_ROOT" merge-base "$RESUME_BASE" HEAD 2>/dev/null || true)"
+      echo "[codex-review] full scope (no reviewed ancestor HEAD recorded)"
+    fi
+    SCOPE_TO="$CUR_HEAD"
+  fi
+  # Generated output in this pass's committed scope: generator + sources + a sample.
+  if [ -n "$SCOPE_FROM" ] && [ -n "$SCOPE_TO" ]; then
+    RESUME_PROMPT="$RESUME_PROMPT
+
+$(scope_section "$SCOPE_FROM" "$SCOPE_TO")"
   fi
   # The caller's local verification summary, as in the first pass.
   if [ -n "${CODEX_REVIEW_VERIFICATION:-}" ]; then
@@ -309,27 +384,8 @@ RP
 LOCAL VERIFICATION (this pass):
 ${CODEX_REVIEW_VERIFICATION}"
   fi
-  # PR flow: the head moved after the fixes; name the exact range under review.
-  if [ -n "${CODEX_REVIEW_BASE:-}" ] && [ -n "$TIP" ]; then
-    RESUME_PROMPT="$RESUME_PROMPT
-
-The pull request range is now ${CODEX_REVIEW_BASE}..${TIP}; inspect the corrections with git diff/log inside that range."
-  fi
-  # 續審時上一次裁決所審的 head(pr_review.py 設定):續審必須涵蓋 PREV..TIP 的**所有**變更,
-  # 不只修正 —— 否則 APPROVE 後再推的其他 commit 會在「只看修正」的指示下被略過。
-  PREV_TIP="${CODEX_REVIEW_PREV_TIP:-}"
-  if [ -n "$PREV_TIP" ]; then
-    printf '%s' "$PREV_TIP" | grep -Eq '^[0-9a-f]{40}$' || die "CODEX_REVIEW_PREV_TIP 必須是完整 40 碼 SHA。"
-    [ -n "$TIP" ] && [ -n "${CODEX_REVIEW_BASE:-}" ] || die "CODEX_REVIEW_PREV_TIP 只用於 PR 續審(需同時有 CODEX_REVIEW_BASE 與 CODEX_REVIEW_TIP)。"
-    git -C "$REPO_ROOT" merge-base --is-ancestor "$PREV_TIP" "$TIP" 2>/dev/null || die "CODEX_REVIEW_PREV_TIP 不是 CODEX_REVIEW_TIP 的祖先;請重跑第一輪。"
-    # An APPROVE here covers the whole new head, so every new commit is in scope.
-    RESUME_PROMPT="$RESUME_PROMPT
-
-Scope override: your previous verdict covered ${PREV_TIP}. Review EVERY change in ${PREV_TIP}..${TIP} (git log/diff ${PREV_TIP}..${TIP}), not only corrections: any other commit pushed since then gets the same full review contract, severities and limits as the first pass. Also confirm the previous CONFIRMED findings are resolved."
-  fi
   # 反駁續審(使用者定案 2026-10-15):實作者以證據 REJECTED 的 finding,可在同一 session
   # 請審查者重新查證一次;審查者必須自己在 repo 裡核實,不能只憑說法撤回。
-  REBUTTAL_FILE="${CODEX_REVIEW_REBUTTAL_FILE:-}"
   if [ -n "$REBUTTAL_FILE" ]; then
     [ -f "$REBUTTAL_FILE" ] || die "rebuttal 檔不存在:$REBUTTAL_FILE"
     # 縮排的 diff 也算(與 tools/pr_review.py 的 DIFF_MARKER 同一套標記)。
@@ -341,6 +397,11 @@ Scope override: your previous verdict covered ${PREV_TIP}. Review EVERY change i
 Implementer rebuttal: the implementer validated your previous findings against the code and REJECTED the ones below with evidence; no code was changed for them. Re-examine each rejected finding in the repository yourself (read-only). Withdraw it only if the evidence holds; otherwise keep it and state the concrete reason. Never withdraw a finding on assertion alone. Rebuttal text:
 $(cat "$REBUTTAL_FILE")"
   fi
+  RESUME_PROMPT="$RESUME_PROMPT
+
+Remain strictly read-only: do not modify files, run tests, builds, linters,
+package managers, application code, probes, web search, browser, apps,
+connectors, or external MCP tools. End with exactly APPROVE or REQUEST_CHANGES."
 
   echo "[codex-review] resume session=$SID effort=$RESUME_EFFORT (pass $NEXT_PASS)"
   : > "$LAST_MSG"
@@ -407,6 +468,8 @@ TASK CONTEXT:
 LOCAL VERIFICATION:
 {{VERIFICATION_RESULTS}}
 
+{{SCOPE}}
+
 Operate strictly in read-only mode.
 
 Do not modify, create, delete, rename, format, stage, commit, revert, or patch
@@ -444,13 +507,11 @@ Prioritize:
 
 Review the COMPLETE delivery scope: staged, unstaged, committed-but-unpushed,
 relevant untracked files, and generated output. Read every changed file in full,
-including old/new generated bundles, using bounded chunks through END; continue
-when output is truncated. Do not cap additional related files/findings. The one
-exception is deterministic generated output that the repository regenerates from
-tracked sources and verifies with a --check step (e.g. exam/** from
-_gen_exam.py): review its generator and source data in full and read a
-representative sample of the generated files. Expand into directly
-related callers, contracts, and tests as needed. This diff review is separate
+using bounded chunks through END; continue when output is truncated. Do not cap
+additional related files/findings. The one exception is the GENERATED output
+listed under REVIEW SCOPE: review it through its generator and source data
+and read the sampled files. Expand into directly related callers, contracts, and
+tests as needed. This diff review is separate
 from the project's module-by-module audit and medical/user acceptance.
 
 Report only concrete defects involving:
@@ -509,6 +570,10 @@ sed -i -e "s|{{MODE}}|$MODE|" -e "s|{{BASE}}|$BASE|" -e "s|{{RANGE}}|$RANGE|" \
        "$TMP/prompt.txt"
 sed -i -e "/{{TASK_CONTEXT}}/r $TMP/ctx.txt" -e "/{{TASK_CONTEXT}}/d" "$TMP/prompt.txt"
 sed -i -e "/{{VERIFICATION_RESULTS}}/r $TMP/ver.txt" -e "/{{VERIFICATION_RESULTS}}/d" "$TMP/prompt.txt"
+SCOPE_TIP="${TIP:-$(git -C "$REPO_ROOT" rev-parse HEAD 2>/dev/null)}"
+scope_section "$(git -C "$REPO_ROOT" merge-base "$BASE" "$SCOPE_TIP")" "$SCOPE_TIP" > "$TMP/scope.txt"
+echo >> "$TMP/scope.txt"
+sed -i -e "/{{SCOPE}}/r $TMP/scope.txt" -e "/{{SCOPE}}/d" "$TMP/prompt.txt"
 
 build_flags "$EFFORT"
 echo "[codex-review] mode=$MODE effort=$EFFORT base=$BASE model=$MODEL (pass 1, read-only, user-config ignored)"

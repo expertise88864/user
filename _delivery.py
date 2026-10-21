@@ -318,7 +318,14 @@ def verify_pr_checks(sha: str, cfg: dict, api: API, runs: list, candidate: dict)
 
 
 REVIEW_CONTEXT = "codex-review/gpt-6.1-sol"
-REVIEW_DESCRIPTION = re.compile(r"(APPROVE|quota-pending) base=([0-9a-f]{40})")
+# tools/pr_review.py: "<verdict> base=<sha> [prev=<sha>] [s=<session prefix>]". A status
+# with prev= reviewed only prev..head and continues an earlier verdict of the same
+# session; one without reviewed base..head whole (also every status older tools wrote).
+REVIEW_DESCRIPTION = re.compile(r"(APPROVE|REQUEST_CHANGES|quota-pending) base=([0-9a-f]{40})"
+                                r"(?: prev=([0-9a-f]{40}))?(?: s=([0-9a-f]{8}))?")
+REVIEW_HEAD_STATES = (("APPROVE", "success"), ("quota-pending", "pending"))
+REVIEW_LINK_STATES = (("APPROVE", "success"), ("REQUEST_CHANGES", "failure"))
+MAX_REVIEW_CHAIN = 100
 
 
 def requires_pr_review(cfg: dict, base_cfg: dict | None) -> bool:
@@ -326,31 +333,64 @@ def requires_pr_review(cfg: dict, base_cfg: dict | None) -> bool:
     return bool(cfg.get("pr_review")) or bool((base_cfg or {}).get("pr_review"))
 
 
-def pr_review(api: API, cfg: dict, sha: str, previous: str) -> dict:
-    """One review per PR (user decision 2026-10-15), recorded by tools/pr_review.py as
-    the owner's commit status on the exact head. Its reviewed range must cover every
-    commit being promoted. Quota pending may publish but is reported, never approval."""
+def review_statuses(api: API, owner: str, sha: str) -> list:
     check_sha(sha)
-    owner = cfg["repository"].split("/")[0].lower()
     rows = [s for s in api.pages(f"/commits/{sha}/statuses")
             if s.get("context") == REVIEW_CONTEXT
             and str((s.get("creator") or {}).get("login", "")).lower() == owner]
+    return sorted(rows, key=lambda s: s.get("id", 0), reverse=True)
+
+
+def is_ancestor(older: str, newer: str) -> bool:
+    return subprocess.run(["git", "merge-base", "--is-ancestor", older, newer], cwd=ROOT).returncode == 0
+
+
+def pr_review(api: API, cfg: dict, sha: str, previous: str) -> dict:
+    """One review per PR (user decision 2026-10-15), recorded by tools/pr_review.py as
+    the owner's commit status on the exact head. Its reviewed range must cover every
+    commit being promoted. Quota pending may publish but is reported, never approval.
+
+    An incremental resume reviews only prev..head, so the head's status is followed
+    back through prev= links: each link needs a completed verdict (APPROVE or
+    REQUEST_CHANGES) of the same session on the same base, on an ancestor commit,
+    until a status without prev (a review of the whole range base..link)."""
+    check_sha(sha)
+    owner = cfg["repository"].split("/")[0].lower()
+    rows = review_statuses(api, owner, sha)
     if not rows:
         raise Blocked("No PR review for this exact head: run python tools/pr_review.py")
-    latest = max(rows, key=lambda s: s.get("id", 0))
+    latest = rows[0]
     match = REVIEW_DESCRIPTION.fullmatch(str(latest.get("description", "")))
     state = latest.get("state")
-    if not match or (match.group(1), state) not in (("APPROVE", "success"), ("quota-pending", "pending")):
+    if not match or (match.group(1), state) not in REVIEW_HEAD_STATES:
         raise Blocked(f"PR review not approved: {state} {latest.get('description')!r}")
-    reviewed_base = match.group(2)
-    if subprocess.run(["git", "merge-base", "--is-ancestor", reviewed_base, previous],
-                      cwd=ROOT).returncode != 0:
+    verdict, reviewed_base, link, session = match.groups()
+    chain = [sha]
+    while link:
+        if link in chain or len(chain) >= MAX_REVIEW_CHAIN:
+            raise Blocked("PR review chain loops or is too long; review the PR again")
+        if not is_ancestor(link, chain[-1]):
+            raise Blocked(f"PR review chain link {link[:12]} is not an ancestor of "
+                          f"{chain[-1][:12]}; review the PR again")
+        found = None
+        for row in review_statuses(api, owner, link):
+            step = REVIEW_DESCRIPTION.fullmatch(str(row.get("description", "")))
+            if step and (step.group(1), row.get("state")) in REVIEW_LINK_STATES \
+                    and step.group(2) == reviewed_base and step.group(4) == session:
+                found = step
+                break
+        if found is None:
+            raise Blocked(f"No completed review of {link[:12]} in the same session and base; "
+                          "the incremental review chain does not reach a whole-range review")
+        chain.append(link)
+        link = found.group(3)
+    if not is_ancestor(reviewed_base, previous):
         raise Blocked("The reviewed range does not cover main..head; review the PR again")
-    if match.group(1) == "quota-pending":
+    if verdict == "quota-pending":
         print("WARNING: PR review is quota-pending (not approved); backfill with "
               "python tools/pr_review.py --pending", file=sys.stderr)
-    return {"sha": sha, "pr_review": match.group(1), "reviewed_base": reviewed_base,
-            "url": latest.get("target_url", "")}
+    return {"sha": sha, "pr_review": verdict, "reviewed_base": reviewed_base,
+            "chain": chain, "url": latest.get("target_url", "")}
 
 
 def needs_morning_preview(paths: list[str]) -> bool:
