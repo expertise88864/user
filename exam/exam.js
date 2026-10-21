@@ -1259,6 +1259,25 @@
     wrap.appendChild(meter);
     cell.appendChild(wrap);
   }
+  // 出題頻率 table: a ✓rounds badge after the chapter link once its notes have
+  // been read through at least once on this device; none for 0 rounds.
+  function fillRankBadges(reading) {
+    document.querySelectorAll('#ex-rank tbody tr[data-ch]').forEach(function (row) {
+      var ch = row.getAttribute('data-ch') || '';
+      var slug = 'fitz-' + ch;
+      var r = /^\d+$/.test(ch) && own(reading, slug) ? reading[slug].r : 0;
+      var cell = row.querySelector('td');
+      if (!cell) return;
+      var old = cell.querySelector('.ex-rd-badge');
+      if (old) old.parentNode.removeChild(old);
+      if (r < 1) return;
+      var badge = el('span', 'ex-rd-badge', '✓' + r);
+      badge.setAttribute('role', 'img');
+      badge.setAttribute('aria-label', '讀完 ' + r + ' 次');
+      badge.title = '讀完 ' + r + ' 次';
+      cell.appendChild(badge);
+    });
+  }
   // Fill every row from storage; safe to repeat (back-forward cache restores).
   // A row counts only the answers given on that chapter's own page.
   function refreshProgress() {
@@ -1292,6 +1311,7 @@
       box.disabled = false;
       box.checked = Object.prototype.hasOwnProperty.call(read, row.getAttribute('data-ch'));
     });
+    fillRankBadges(reading);
     progressSummary();
     var sort = document.querySelector('.ex-progress-sort');
     if (sort && sort.value !== 'order') sortProgress(sort.value);

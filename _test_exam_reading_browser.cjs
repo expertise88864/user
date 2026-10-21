@@ -52,6 +52,13 @@ module.exports = async function checkExamReading(browser) {
   assert.ok(hubSource.indexOf('data-exam-search') < cardAt && cardAt < hubSource.indexOf('依章節瀏覽與讀書進度'), 'card sits after the search box and before 依章節瀏覽');
   assert.ok(cardAt > hubSource.indexOf('id="ex-search-results"'), 'after the whole search box');
   assert.match(hubSource, /<option value="reading">閱讀進度低優先<\/option>/);
+  // no static 「有重點」 badge anywhere on the hub (every chapter has notes; the 閱讀 column shows progress)
+  assert.ok(!hubSource.includes('有重點') && !hubSource.includes('class="ex-badge"'), 'hub has no 有重點 badge');
+  // 出題頻率 rows carry data-ch for exam.js and no badge markup
+  const rankChs = [...hubSource.matchAll(/<tr data-ch="(\d+)"><td><a href="\/exam\/fitz-\1">Ch\.\1 [^<]*<\/a><\/td>/g)].map(m => Number(m[1]));
+  assert.ok(rankChs.length >= 25, 'ranked rows carry data-ch');
+  const rankNotes = withNotes.filter(ch => rankChs.includes(ch));
+  assert.ok(rankNotes.length >= 4, 'ranked chapters with notes for the ✓N badge');
 
   // ---- fixture origin
   const violations = [];
@@ -135,6 +142,8 @@ module.exports = async function checkExamReading(browser) {
       }
       assert.equal(await text(page, '#ex-progress-summary').then(t => t.includes('，重點已讀完 0／' + withNotes.length + ' 章（其中 0 章 2 次以上）')), true);
       assert.equal(await page.locator('.ex-progress-sort option[value="reading"]').innerText(), '閱讀進度低優先');
+      assert.equal(await page.locator('#ex-rank .ex-rd-badge').count(), 0, 'no ranking badge without reading records');
+      assert.equal(await page.locator('.ex-progress th').filter({ hasText: '有重點' }).count(), 0, 'no 有重點 in the progress table');
       await page.close();
 
       // no JavaScript: nothing new shows, the table keeps its placeholders
@@ -145,6 +154,7 @@ module.exports = async function checkExamReading(browser) {
         await bare.goto(ORIGIN + '/exam');
         assert.equal(await bare.locator('.ex-continue').isVisible(), false);
         assert.equal((await bare.locator('.ex-progress tbody tr[data-notes="1"] .ex-pg-reading').first().textContent()).trim(), '—');
+        assert.equal(await bare.locator('#ex-rank .ex-rd-badge, #ex-rank .ex-badge').count(), 0, 'no ranking badge without JS');
         await bare.goto(ORIGIN + '/exam/fitz-' + NOTE_CH);
         assert.equal(await bare.locator('#ex-reading').isVisible(), false);
         assert.ok(await bare.locator('.ex-note').count() >= 6, 'notes still render without JS');
@@ -248,6 +258,44 @@ module.exports = async function checkExamReading(browser) {
       assert.equal(restored, true, 'chapter order restored');
       await page.close();
 
+      // (c2) 出題頻率 table: ✓N (rounds read) after the chapter link, none for 0 rounds
+      {
+        const [r2, r1, r0, bad] = rankNotes;
+        const rankSeed = {
+          ['fitz-' + r2]: { r: 2, seen: {}, pct: 30, t: 1, done: [1, 2] },
+          ['fitz-' + r1]: { r: 1, seen: {}, pct: 80, t: 1, done: [1] },
+          ['fitz-' + r0]: { r: 0, seen: {}, pct: 60, t: 1, done: [] },
+          ['fitz-' + bad]: { r: 'x', seen: {}, pct: 10, t: 1, done: [] },  // malformed -> no badge
+        };
+        page = await open('/exam', { seedData: { dnExamReading: rankSeed } });
+        const rankBadge = ch => page.locator('#ex-rank tbody tr[data-ch="' + ch + '"] td:first-child .ex-rd-badge');
+        assert.equal(await rankBadge(r2).count(), 1);
+        assert.equal((await rankBadge(r2).textContent()).trim(), '✓2', 'badge text carries the count, not only colour');
+        assert.equal(await rankBadge(r2).getAttribute('aria-label'), '讀完 2 次');
+        assert.equal(await rankBadge(r2).getAttribute('role'), 'img');
+        assert.equal((await rankBadge(r1).textContent()).trim(), '✓1');
+        assert.equal(await rankBadge(r1).getAttribute('aria-label'), '讀完 1 次');
+        assert.equal(await rankBadge(r0).count(), 0, 'no badge for 0 rounds');
+        assert.equal(await rankBadge(bad).count(), 0, 'no badge for a malformed record');
+        assert.equal(await page.locator('#ex-rank .ex-rd-badge').count(), 2, 'only chapters with finished rounds');
+        // the badge follows the link inside the same cell
+        assert.equal(await page.locator('#ex-rank tbody tr[data-ch="' + r2 + '"] td:first-child').evaluate(td => td.lastElementChild.className), 'ex-rd-badge');
+        // readable in dark mode: text and background differ
+        await page.evaluate(() => document.documentElement.setAttribute('data-theme', 'dark'));
+        const dark = await rankBadge(r2).evaluate(node => { const s = getComputedStyle(node); return [s.color, s.backgroundColor]; });
+        assert.deepEqual(dark, ['rgb(220, 252, 231)', 'rgb(20, 83, 45)'], 'dark-mode badge colours');
+        // a back-forward restore after another round redraws without duplicates
+        await page.evaluate(ch => {
+          const all = JSON.parse(localStorage.getItem('dnExamReading'));
+          all['fitz-' + ch].r = 3;
+          localStorage.setItem('dnExamReading', JSON.stringify(all));
+          window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true }));
+        }, r2);
+        assert.equal(await rankBadge(r2).count(), 1);
+        assert.equal(await rankBadge(r2).getAttribute('aria-label'), '讀完 3 次');
+        await page.close();
+      }
+
       // (g) malformed storage is ignored; storage that throws leaves the page untouched
       page = await open('/exam', { seedData: { dnExamReading: '{not json', dnExamPos: '[1,2]' } });
       assert.equal(await page.locator('.ex-continue').isVisible(), false);
@@ -256,6 +304,7 @@ module.exports = async function checkExamReading(browser) {
       page = await open('/exam', { init: () => { Object.defineProperty(window, 'localStorage', { get() { throw new Error('denied'); } }); } });
       assert.equal(await page.locator('.ex-continue').isVisible(), false);
       assert.equal((await page.locator('.ex-progress tbody tr[data-notes="1"] .ex-pg-reading').first().textContent()).trim(), '—');
+      assert.equal(await page.locator('#ex-rank .ex-rd-badge').count(), 0, 'no ranking badge without storage');
       await page.close();
       results.push('hub');
     }

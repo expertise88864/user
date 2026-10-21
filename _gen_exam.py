@@ -833,9 +833,10 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
     # at a time behind a 「載入更多」 button, and without JS the whole table shows.
     ranked = sorted(by_chapter.items(), key=lambda kv: (-len(kv[1]), kv[0]))
     peak = len(ranked[0][1]) if ranked else 1
+    # data-ch lets exam.js add a ✓N badge (rounds of the chapter's notes read on
+    # this device) after the link; nothing shows without JS or a finished round.
     rows = "".join(
-        f'<tr><td><a href="/exam/fitz-{n}">Ch.{n} {esc(chapters[n]["title"])}</a>'
-        f'{" <span class=\"ex-badge\">有重點</span>" if n in data["notes"] else ""}</td>'
+        f'<tr data-ch="{n}"><td><a href="/exam/fitz-{n}">Ch.{n} {esc(chapters[n]["title"])}</a></td>'
         f'<td class="ex-num">{len(qs)}</td>'
         f'<td class="ex-bar-cell"><span class="ex-bar" style="width:{round(100 * len(qs) / peak)}%"></span></td></tr>'
         for n, qs in ranked
@@ -850,7 +851,6 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
             qs = by_chapter.get(n, [])
             title = esc(chapters[n]["title"])
             name = (f'<a href="/exam/fitz-{n}">Ch.{n} {title}</a>' if qs or n in data["notes"] else f'Ch.{n} {title}')
-            badge = ' <span class="ex-badge">有重點</span>' if n in data["notes"] else ""
             # 閱讀 cell: filled by exam.js for chapters with notes (round count and
             # coverage of the current round); the others stay "—".
             reading_cell = ('<td class="ex-num ex-pg-reading">—</td>' if n in data["notes"]
@@ -862,7 +862,7 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
                 f'<tr data-ch="{n}" data-order="{idx}" data-qids="{",".join(q["id"] for q in qs)}"'
                 f'{" data-notes=\"1\"" if n in data["notes"] else ""}'
                 f'{" class=\"ex-none\"" if not qs else ""}>'
-                f'<th scope="row">{name}{badge}</th>{reading_cell}<td class="ex-num">{len(qs)}</td>'
+                f'<th scope="row">{name}</th>{reading_cell}<td class="ex-num">{len(qs)}</td>'
                 '<td class="ex-num ex-pg-done">—</td><td class="ex-num ex-pg-acc">—</td><td class="ex-pg-date">—</td>'
                 f'<td class="ex-pg-readcell"><input type="checkbox" class="ex-pg-read" data-ch="{n}" '
                 f'aria-label="Ch.{n} 課本已讀完" disabled></td></tr>'
@@ -1470,6 +1470,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 .ex-rd-bar{display:inline-block;width:40px;max-width:48px;height:6px;border-radius:9999px;background:#e7e0d3;overflow:hidden;vertical-align:middle}
 .ex-rd-fill{display:block;height:100%;background:#4d6358}
 .ex-rd-pct{font-size:12px;white-space:nowrap}
+.ex-rank .ex-rd-badge{display:inline-block;margin-left:6px;vertical-align:1px}
 :root[data-theme="dark"] .ex-rd-badge{background:#14532d;color:#dcfce7}
 :root[data-theme="dark"] .ex-rd-bar{background:#3a352c}
 :root[data-theme="dark"] .ex-rd-fill{background:#a4b5a8}
