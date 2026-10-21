@@ -37,7 +37,7 @@
 <ul>
 <li>Crepe-like skin（細緻表淺紋理變化）通常沒有反應。</li>
 <li>Pigmentary abnormalities 要用 vascular 或 pigment devices 處理，不是 skin-tightening devices。</li>
-<li>Extremely saggy skin（底層支撐結構與 fat pad 喪失）無法恢復年輕輪廓。</li>
+<li>Extremely saggy skin（底層 substructure 與 fat-pad integrity 喪失）在 noninvasive tightening 後無法恢復年輕輪廓。</li>
 <li>Severe photodamage 或 severe sagging 而想要 gold standard 治療者，通常（typically）會被勸阻接受 skin tightening；nonablative 或 ablative resurfacing，加或不加 rhytidectomy、brow lift、blepharoplasty 等 excisional lifting，可能較成功。</li>
 </ul>
 </li>
@@ -49,9 +49,9 @@
 <h3>Types of devices（儀器種類）</h3>
 <ul>
 <li>Light-based devices：特別是 <strong>infrared</strong> lasers 與 light sources。<span class="ex-ref">p.3858</span></li>
-<li><strong>Radiofrequency（RF）</strong>：monopolar、bipolar 及其他特殊構型，廣泛使用；近來 insertional needle 與 injectable RF 裝置增加，介於 noninvasive 與 minimally invasive 之間。</li>
-<li><strong>High-frequency ultrasound</strong> 也常用於緊膚。</li>
-<li>主要適應症是其他用途、但會「附帶」緊膚的：ablative resurfacing（尤其 <strong>CO₂ laser</strong>）、laser lipolysis 用的 insertional infrared laser-tipped devices。</li>
+<li><strong>Radiofrequency（RF）</strong>：monopolar、bipolar 及其他特殊構型，廣泛使用；近來 insertional needle 與 injectable RF 裝置增加，介於 noninvasive 與 minimally invasive 之間。<span class="ex-ref">p.3858</span></li>
+<li><strong>High-frequency ultrasound</strong> 也常用於緊膚。<span class="ex-ref">p.3858</span></li>
+<li>主要適應症是其他用途、但會「附帶」緊膚的：ablative resurfacing（尤其 <strong>CO₂ laser</strong>）、laser lipolysis 用的 insertional infrared laser-tipped devices。<span class="ex-ref">p.3858</span></li>
 </ul>
 <h3>Mechanism（機轉）</h3>
 <ul>
@@ -87,7 +87,7 @@
 <li>Noninvasive skin tightening 一般非常安全；預期的術後反應是 <strong>erythema 與 edema</strong>，持續數小時到 <strong class="ex-n">1–2 days</strong>。<span class="ex-ref">p.3858–3859</span></li>
 <li>術中不適可用 topical anesthesia，或部分情況（in some cases）用 oral benzodiazepines 與 analgesics。<span class="ex-ref">p.3859</span></li>
 <li>因治療原則已不再用 very-high-energy passes，<strong>burns 與 fat atrophy 已變得罕見</strong>。<span class="ex-ref">p.3859</span></li>
-<li>對同一處重複治療（原文作 the same size）可能 very rarely 造成 <strong>heat stacking</strong>，形成白色 wheal-like skin plaques，會隨時間及 topical steroids 消退。Scars 與 pigmentary change 極為罕見（exceedingly rare）。<span class="ex-ref">p.3859</span></li>
+<li>對同一處重複治療（原文印為 repeated treatment of the same size，疑為 same site 之誤植）可能 very rarely 造成 <strong>heat stacking</strong>，形成白色 wheal-like skin plaques，會隨時間及 topical steroids 消退。Scars 與 pigmentary change 極為罕見（exceedingly rare）。<span class="ex-ref">p.3859</span></li>
 <li>RF needling：可能有點狀痕跡，<strong class="ex-n">1–2 days</strong> 消退；部分儀器可能有 pinpoint bleeding；曾有罕見 indented scarring 報告。<span class="ex-ref">p.3859</span></li>
 <li>CO₂ laser：常規（routinely）伴隨較長的 downtime，fractional resurfacing <strong class="ex-n">1 week</strong>、traditional full-face resurfacing <strong class="ex-n">2–3 weeks</strong>；persistent erythema、edema、crust、serous drainage 常見（尤其 full-face）；overtreatment 與 heat stacking 可造成嚴重不良反應，特別是<strong>不會消退的 hypopigmentation</strong>，以及 scarring。<span class="ex-ref">p.3859–3860</span></li>
 <li>Laser lipolysis：通常無併發症，只需入口處癒合；雷射尖端在同一處停留過久可造成 burns（包括伴隨皮膚 full-thickness tears 者）；overtreatment 也可造成 <strong>seromas，須儘速引流</strong>。內建溫度監測的 RF wands 可幫助預防 burns。<span class="ex-ref">p.3860</span></li>
@@ -211,7 +211,7 @@
 </section>
 
 <section class="ex-note" id="histopathology">
-<h2>9. Histopathology：Cold Panniculitis（病理：與 cryolipolysis 相關的冷傷害脂膜炎，McKee 補充）</h2>
+<h2>9. Histopathology：Cold Panniculitis（病理：冷傷害脂膜炎，McKee 補充）</h2>
 <p>Fitzpatrick 指出 cryolipolysis 以 popsicle panniculitis 的機轉為基礎。<span class="ex-ref">p.3863</span> McKee 對 cold panniculitis 的描述如下。</p>
 <ul>
 <li>Clinical：罕見；最早描述於嬰幼兒，在低溫暴露後於暴露部位（即 cheeks 與 submental region）出現壓痛、溫熱的紅色斑塊，通常在暴露後 <strong class="ex-n">72 hours</strong> 內出現，<strong class="ex-n">2–3 weeks</strong> 自行消退且無後遺症。<span class="ex-ref ex-ref-mckee">McKee p.361–362</span></li>

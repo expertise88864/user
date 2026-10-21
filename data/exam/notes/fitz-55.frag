@@ -36,13 +36,13 @@
 <ul>
 <li><strong>Mouth 是 MMP 最常侵犯的部位</strong>，常是第一個（也是唯一）受侵犯處。<span class="ex-ref">p.960</span></li>
 <li>常侵犯 gingiva、buccal mucosa、palate；alveolar ridge、tongue、lips 也可受侵犯。Gingiva 糜爛造成組織退縮與流失是常見表現。<span class="ex-ref">p.960</span></li>
-<li>其他口內部位可見容易破的 tense blisters，或因上皮脆弱形成的糜爛；可能留下細緻的白色 reticulated scarring，但有些情況可無疤癒合。<span class="ex-ref">p.960</span></li>
-<li>嚴重者可在 buccal mucosa 與 alveolar process、uvula 與 tonsillar fossae、tongue 與 floor of the mouth 之間形成 adhesions；gingiva 侵犯可導致組織流失與牙科併發症（caries、periodontal ligament damage、骨質與牙齒流失）。<span class="ex-ref">p.960–961</span></li>
+<li>其他口內部位可能（may）出現容易破的 tense blisters，或因上皮脆弱形成的糜爛；可能留下細緻的白色 reticulated scarring，但有些情況可無疤癒合。<span class="ex-ref">p.960</span></li>
+<li>嚴重者可能（may）在 buccal mucosa 與 alveolar process、uvula 與 tonsillar fossae、tongue 與 floor of the mouth 之間形成 adhesions；gingiva 侵犯可導致組織流失與牙科併發症（caries、periodontal ligament damage、骨質與牙齒流失）。<span class="ex-ref">p.960–961</span></li>
 </ul>
 <p><strong>McKee 補充</strong>：oral lesions 見於 <strong class="ex-n">85–95%</strong> 病人，常在輕微外傷後出現；<strong>desquamative gingivitis</strong> 是最常見表現，可能是早期或唯一表現；但多數 desquamative gingivitis 是 lichen planus，只有約 <strong class="ex-n">9%</strong> 是 MMP。限於口腔者通常預後較好但慢性。McKee 也寫 scarring 是特徵，但一般不見於口腔病灶（not generally in the oral lesions）。<span class="ex-ref ex-ref-mckee">McKee p.151</span></p>
 <h3>Ocular（眼部）</h3>
 <ul>
-<li>眼部侵犯常見，且可能威脅視力；典型表現為 conjunctivitis，緩慢進展到結疤。<span class="ex-ref">p.961</span></li>
+<li>眼部侵犯常見，且可能威脅視力；典型表現為 conjunctivitis，隱伏地（insidiously）進展到結疤。<span class="ex-ref">p.961</span></li>
 <li>早期可非常細微且不具特異性；通常雙側，但<strong>常由單側開始，數年內進展到雙眼</strong>。<span class="ex-ref">p.961</span></li>
 <li>病人可能主訴單眼或雙眼 burning、dryness 或 foreign-body sensation；結膜上<strong>罕見</strong>明顯水疱。<span class="ex-ref">p.961</span></li>
 <li>早期病變以 <strong>slitlamp examination</strong> 最能發現；病灶可能侷限在 upper tarsal conjunctiva，不翻眼瞼可能漏掉。<span class="ex-ref">p.961</span></li>
@@ -50,7 +50,7 @@
 <li>結膜結疤可造成 entropion 與 trichiasis → corneal irritation、superficial punctate keratopathy、corneal neovascularization、corneal ulceration 及／或 blindness；另有淚管結疤、淚液分泌減少、goblet cells 流失造成 tear film 不穩定。<span class="ex-ref">p.961</span></li>
 <li>疑似眼部侵犯者由眼科醫師檢查非常重要（早期病變可能很細微、只有 slitlamp examination 才看得出，且可能有嚴重併發症）；<strong>MMP 可能只侷限於眼睛</strong>。<span class="ex-ref">p.961</span></li>
 </ul>
-<p><strong>McKee 補充</strong>：ocular lesions 約見於 <strong class="ex-n">64%</strong> 病人；角膜病灶最終可致盲；失明可為雙側，最多可發生於 <strong class="ex-n">16%</strong> 病人（blindness … occurring in up to 16%）。Drug-induced pseudo-ocular MMP 是自限性、單側的眼部結疤病，最常因長期使用含 pilocarpine、echothiophate iodide、idoxuridine、timolol、adrenaline 的青光眼眼藥水所致。<span class="ex-ref ex-ref-mckee">McKee p.151</span></p>
+<p><strong>McKee 補充</strong>：ocular lesions 約見於 <strong class="ex-n">64%</strong> 病人；角膜病灶最終可致盲；失明可能（may）為雙側，最多可發生於 <strong class="ex-n">16%</strong> 病人（blindness … occurring in up to 16%）。Drug-induced pseudo-ocular MMP 是自限性、單側的眼部結疤病，最常因長期使用含 pilocarpine、echothiophate iodide、idoxuridine、timolol、adrenaline 的青光眼眼藥水所致。<span class="ex-ref ex-ref-mckee">McKee p.151</span></p>
 <h3>Other mucosae（其他黏膜）</h3>
 <ul>
 <li>Nasopharyngeal：可造成 discharge、epistaxis、過多結痂、氣流受阻、chronic sinusitis、結疤與組織流失。<span class="ex-ref">p.961</span></li>
@@ -178,7 +178,7 @@
 <h2>8. Histopathology（McKee 補充）</h2>
 <ul>
 <li>皮膚病灶常與 cell-rich（inflammatory）bullous pemphigoid 無法區分：表皮下水疱含 fibrin、水腫液與數量不等的發炎細胞；eosinophils 通常可見，但傾向比 generalized BP 少很多。<span class="ex-ref ex-ref-mckee">McKee p.153</span></li>
-<li>真皮 perivascular lymphohistiocytic infiltrate，有時有明顯 plasma cells，並伴 neutrophils 與 eosinophils；舊病灶或復發病灶可見 scarring；較少見 cell-poor blister。<span class="ex-ref ex-ref-mckee">McKee p.153</span></li>
+<li>真皮 perivascular lymphohistiocytic infiltrate，有時有明顯 plasma cells，並伴 neutrophils 與 eosinophils；舊病灶或復發病灶可能（may）出現 scarring；較少見 cell-poor blister。<span class="ex-ref ex-ref-mckee">McKee p.153</span></li>
 <li>晚期病灶可能只見表淺真皮的疤痕帶、沒有發炎，有無表皮下裂隙皆可；若有裂隙是很好的診斷線索，尤其在臨床未懷疑的 localized variants。<span class="ex-ref ex-ref-mckee">McKee p.153</span></li>
 <li>Anti-laminin 332 MMP（僅少數病例研究，a small number of cases）：病理無診斷性，無法與其他自體免疫水疱病區分。<span class="ex-ref ex-ref-mckee">McKee p.153</span></li>
 <li>口腔：罕見可見上皮與 lamina propria 間的水疱（lamina propria 通常水腫，混合浸潤含 plasma cells）；較常見的是覆有肉芽或纖維組織的糜爛／潰瘍，常因繼發感染而改變。<span class="ex-ref ex-ref-mckee">McKee p.153</span></li>

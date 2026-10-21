@@ -327,14 +327,14 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <style id="dn-nav-critical">.dn-nav{display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:auto}.dn-nav-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep,#4d6358);text-decoration:none;white-space:nowrap}.dn-nav-link:hover{background:var(--mint-soft,#eaf6f3);color:#0e7c86}.dn-nav .dn-nav-divider{width:1px;height:20px;background:var(--border,#dcd5c8);margin:0 4px}.dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9999px;color:var(--teal-deep,#4d6358);background:transparent;border:0;cursor:pointer;font-size:15px;line-height:1;padding:0}.dn-nav-icon:hover{background:var(--mint-soft,#eaf6f3)}.dn-nav-icon::after{display:none}.dn-nav .lang-select{margin:0 0 0 6px;padding:6px 22px 6px 10px;min-height:32px;font-size:11.5px}.dn-nav-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:9999px;color:var(--teal-deep,#4d6358);background:transparent;border:0;cursor:pointer;flex-shrink:0;margin-left:auto}@media(max-width:899px){header.dn-nav-expanded{z-index:70}.dn-nav{display:none;position:fixed;top:64px;right:0;left:0;background:var(--bg,#faf7f2);max-height:calc(100dvh - 64px);overflow-y:auto;overscroll-behavior:contain;flex-direction:column;align-items:stretch;padding:14px 18px;border-bottom:1px solid var(--border,#dcd5c8);gap:2px}.dn-nav.open,.dn-nav.dn-nav-open{display:flex}.dn-nav-link{min-height:44px;padding:11px 14px;font-size:14px;border-radius:10px;justify-content:flex-start}.dn-nav-icon{width:auto;min-height:44px;height:auto;padding:11px 14px;border-radius:10px;justify-content:flex-start;gap:10px;font-size:14px}.dn-nav-icon::after{display:inline;content:attr(aria-label)!important;white-space:nowrap;font-size:14px;font-weight:600}.dn-nav .dn-nav-divider{display:none}.dn-nav .lang-select{min-height:44px;flex-shrink:0}.dn-nav-burger{display:inline-flex}}</style></head><body class="font-sans antialiased text-ink-900"><a href="#main-content" class="skip-to-main" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a><header class="sticky top-0 z-40 backdrop-blur border-b" style="background:rgba(250,247,242,.92); border-color:var(--border)"><div class="max-w-6xl mx-auto px-5 sm:px-8"><div class="h-16 flex items-center justify-between gap-3"><a href="/" class="flex items-center gap-3 min-w-0 flex-shrink-0"><img src="/icon.svg" alt="ChenDermatologist" class="w-9 h-9 rounded-lg flex-shrink-0" width="36" height="36" fetchpriority="high" loading="eager" decoding="async"><div class="min-w-0 leading-tight"><div class="font-display font-semibold text-[16px] sm:text-[18px] teal-text">ChenDermatologist</div><div class="text-[10.5px] sm:text-[11.5px] text-ink-500 mt-0.5 truncate" data-zh="陳翊嘉醫師 · 皮膚科衛教筆記" data-en="Dr. Chen Yi-Jia · Dermatology Notes">陳翊嘉醫師 · 皮膚科衛教筆記</div></div></a><nav class="dn-nav" aria-label="主導覽"><a href="/blog" class="dn-nav-link" data-zh="衛教文章" data-en="Articles">衛教文章</a><a href="/exam" class="dn-nav-link" data-zh="皮膚科專科考試" data-en="Board Exam">皮膚科專科考試</a><a href="/about" class="dn-nav-link" data-zh="關於我" data-en="About">關於我</a><span class="dn-nav-divider" aria-hidden="true"></span><button type="button" id="dn-nav-search" class="dn-nav-icon" aria-label="搜尋" title="搜尋文章 (Cmd/Ctrl + K)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></button><button type="button" id="dn-nav-theme" class="dn-nav-icon" aria-label="切換暗色模式" title="切換亮 / 暗">🌙</button><select id="langToggle" class="lang-select" aria-label="Language" title="語言切換"><option value="zh">中文</option><option value="en">EN</option></select></nav><button type="button" id="dn-nav-burger" class="dn-nav-burger" aria-label="開啟選單" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button></div></div></header>
 <style>          @media (max-width:899px){   @keyframes dnNavSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}    #dn-nav-search::after{content:'搜尋'} #dn-nav-theme::after{content:'切換暗色'}  #langToggle{align-self:flex-start;margin-top:4px} } body.dn-en #dn-nav-search::after{content:'Search'} body.dn-en #dn-nav-theme::after{content:'Theme'}</style>
 <script src="/assets/inline/nav-burger.js?v=202610201800" defer></script>
-<main id="main-content" class="ex-main" data-exam-page="chapter" data-exam-data="/exam/exam-data.json?v=c241988238"><div class="ex-layout"><details class="ex-toc ex-toc-side" open><summary>本章目錄</summary><nav aria-label="本章目錄"><ol><li><a href="#innate-adaptive">1. Innate vs Adaptive Immune System（先天與後天免疫）</a></li><li><a href="#t-cells">2. T Cells and Subsets（T 細胞與次群）</a></li><li><a href="#skin-homing">3. Skin Homing（皮膚歸巢）</a></li><li><a href="#memory-t">4. TRM, TEM, TCM and TMM（組織常駐與循環記憶 T 細胞）</a></li><li><a href="#b-cells">5. B Cells（B 細胞）</a></li><li><a href="#ilc-unconventional">6. ILCs and Unconventional T Cells（先天淋巴細胞與非典型 T 細胞）</a></li><li><a href="#nk-cells">7. Natural Killer（NK）Cells（自然殺手細胞）</a></li><li><a href="#dendritic-cells">8. Dendritic Cells（樹突細胞）</a></li><li><a href="#macrophages">9. Macrophages（巨噬細胞）</a></li><li><a href="#mast-cells">10. Mast Cells（肥大細胞）</a></li><li><a href="#granulocytes">11. Granulocytes（顆粒球）：Neutrophils, Eosinophils, Basophils</a></li><li><a href="#keratinocytes-amp">12. Keratinocytes and Antimicrobial Peptides（角質細胞與抗菌胜肽）</a></li><li><a href="#tlr-link">13. TLR 與免疫活化的串連（本章內容整理）</a></li><li><a href="#cell-quick-ref">14. 皮膚免疫細胞位置速記</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（12）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（9 題）</a></li></ol></nav></details><div class="ex-content"><nav class="crumbs" aria-label="麵包屑"><a href="/">首頁</a><span class="ex-sep" aria-hidden="true">/</span><a href="/exam">專科考試</a><span class="ex-sep" aria-hidden="true">/</span><span>Ch.11</span></nav><p class="ex-kicker">Fitzpatrick 9e · Part 2 Structure And Function Of Skin</p><h1 class="ex-h1">Ch.11 Cellular Components of the Cutaneous Immune System</h1><p class="ex-meta">原書 p.143–158 · 考題共 9 題（已有詳解 9 題）</p><p class="ex-meta">103 年 1 題、104 年 1 題、105 年 1 題、106 年 1 題、107 年 1 題、109 年 2 題、111 年 1 題、113 年 1 題</p><div class="ex-notice">題目取自<a href="https://www.derma.org.tw/specialist/download.php?id=9" target="_blank" rel="noopener noreferrer">臺灣皮膚科醫學會專科醫師甄審筆試試題</a>，答案為學會公告的標準答案；重點與詳解依據 Fitzpatrick's Dermatology, 9th Edition 與 McKee's Pathology of the Skin, 5th Edition 整理</div><section class="ex-links" aria-labelledby="links-h"><h2 id="links-h" class="ex-h2 ex-h2-sm">圖片與延伸閱讀</h2><p class="ex-meta">課本圖片有版權，請到以下網站看臨床與病理照片（外部網站，另開新分頁）。</p><div class="ex-links-group"><p class="ex-links-name">DermNet（臨床照片與疾病介紹）</p><ul><li><a href="https://dermnetnz.org/topics/psoriasis" target="_blank" rel="noopener noreferrer">Psoriasis</a></li><li><a href="https://dermnetnz.org/topics/generalised-pustular-psoriasis" target="_blank" rel="noopener noreferrer">Generalised pustular psoriasis</a></li><li><a href="https://dermnetnz.org/topics/atopic-dermatitis" target="_blank" rel="noopener noreferrer">Atopic dermatitis</a></li><li><a href="https://dermnetnz.org/topics/fixed-drug-eruption" target="_blank" rel="noopener noreferrer">Fixed drug eruption</a></li><li><a href="https://dermnetnz.org/topics/mycosis-fungoides" target="_blank" rel="noopener noreferrer">Mycosis fungoides</a></li><li><a href="https://dermnetnz.org/topics/sezary-syndrome" target="_blank" rel="noopener noreferrer">Sezary syndrome</a></li><li><a href="https://dermnetnz.org/topics/pyoderma-gangrenosum" target="_blank" rel="noopener noreferrer">Pyoderma gangrenosum</a></li><li><a href="https://dermnetnz.org/topics/allergic-contact-dermatitis" target="_blank" rel="noopener noreferrer">Allergic contact dermatitis</a></li><li><a href="https://dermnetnz.org/topics/urticaria-an-overview" target="_blank" rel="noopener noreferrer">Urticaria (overview)</a></li><li><a href="https://dermnetnz.org/topics/leprosy" target="_blank" rel="noopener noreferrer">Leprosy</a></li></ul></div><div class="ex-links-group"><p class="ex-links-name">PathologyOutlines（病理圖片）</p><ul><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorpsoriasis.html" target="_blank" rel="noopener noreferrer">Psoriasis</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorallergiccontact.html" target="_blank" rel="noopener noreferrer">Allergic contact dermatitis</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorurticaria.html" target="_blank" rel="noopener noreferrer">Urticaria</a></li><li><a href="https://www.pathologyoutlines.com/topic/skintumornonmelanocyticmycosisfungoides.html" target="_blank" rel="noopener noreferrer">Mycosis fungoides</a></li><li><a href="https://www.pathologyoutlines.com/topic/skintumornonmelanocyticsezary.html" target="_blank" rel="noopener noreferrer">Sezary syndrome</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorleprosy.html" target="_blank" rel="noopener noreferrer">Leprosy</a></li></ul></div></section><details class="ex-toc ex-toc-mobile"><summary>本章目錄</summary><nav aria-label="本章目錄（展開式）"><ol><li><a href="#innate-adaptive">1. Innate vs Adaptive Immune System（先天與後天免疫）</a></li><li><a href="#t-cells">2. T Cells and Subsets（T 細胞與次群）</a></li><li><a href="#skin-homing">3. Skin Homing（皮膚歸巢）</a></li><li><a href="#memory-t">4. TRM, TEM, TCM and TMM（組織常駐與循環記憶 T 細胞）</a></li><li><a href="#b-cells">5. B Cells（B 細胞）</a></li><li><a href="#ilc-unconventional">6. ILCs and Unconventional T Cells（先天淋巴細胞與非典型 T 細胞）</a></li><li><a href="#nk-cells">7. Natural Killer（NK）Cells（自然殺手細胞）</a></li><li><a href="#dendritic-cells">8. Dendritic Cells（樹突細胞）</a></li><li><a href="#macrophages">9. Macrophages（巨噬細胞）</a></li><li><a href="#mast-cells">10. Mast Cells（肥大細胞）</a></li><li><a href="#granulocytes">11. Granulocytes（顆粒球）：Neutrophils, Eosinophils, Basophils</a></li><li><a href="#keratinocytes-amp">12. Keratinocytes and Antimicrobial Peptides（角質細胞與抗菌胜肽）</a></li><li><a href="#tlr-link">13. TLR 與免疫活化的串連（本章內容整理）</a></li><li><a href="#cell-quick-ref">14. 皮膚免疫細胞位置速記</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（12）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（9 題）</a></li></ol></nav></details><section class="ex-notes" aria-labelledby="notes-h"><h2 id="notes-h" class="ex-h2">重點整理</h2><div class="ex-notes-tools"><span class="ex-legend"><mark class="ex-key">螢光</mark>＝考過（後附題號）<span class="ex-legend-trap">紅框</span>＝易錯陷阱<strong class="ex-n">粗體數字</strong>＝門檻值</span></div><p class="ex-reading" id="ex-reading" hidden></p><section class="ex-note" id="innate-adaptive" data-w="1527">
+<main id="main-content" class="ex-main" data-exam-page="chapter" data-exam-data="/exam/exam-data.json?v=c241988238"><div class="ex-layout"><details class="ex-toc ex-toc-side" open><summary>本章目錄</summary><nav aria-label="本章目錄"><ol><li><a href="#innate-adaptive">1. Innate vs Adaptive Immune System（先天與後天免疫）</a></li><li><a href="#t-cells">2. T Cells and Subsets（T 細胞與次群）</a></li><li><a href="#skin-homing">3. Skin Homing（皮膚歸巢）</a></li><li><a href="#memory-t">4. TRM, TEM, TCM and TMM（組織常駐與循環記憶 T 細胞）</a></li><li><a href="#b-cells">5. B Cells（B 細胞）</a></li><li><a href="#ilc-unconventional">6. ILCs and Unconventional T Cells（先天淋巴細胞與非典型 T 細胞）</a></li><li><a href="#nk-cells">7. Natural Killer（NK）Cells（自然殺手細胞）</a></li><li><a href="#dendritic-cells">8. Dendritic Cells（樹突細胞）</a></li><li><a href="#macrophages">9. Macrophages（巨噬細胞）</a></li><li><a href="#mast-cells">10. Mast Cells（肥大細胞）</a></li><li><a href="#granulocytes">11. Granulocytes（顆粒球）：Neutrophils, Eosinophils, Basophils</a></li><li><a href="#keratinocytes-amp">12. Keratinocytes and Antimicrobial Peptides（角質細胞與抗菌胜肽）</a></li><li><a href="#tlr-link">13. TLR 與免疫活化的串連（本章內容整理）</a></li><li><a href="#cell-quick-ref">14. 皮膚免疫細胞位置速記</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（12）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（9 題）</a></li></ol></nav></details><div class="ex-content"><nav class="crumbs" aria-label="麵包屑"><a href="/">首頁</a><span class="ex-sep" aria-hidden="true">/</span><a href="/exam">專科考試</a><span class="ex-sep" aria-hidden="true">/</span><span>Ch.11</span></nav><p class="ex-kicker">Fitzpatrick 9e · Part 2 Structure And Function Of Skin</p><h1 class="ex-h1">Ch.11 Cellular Components of the Cutaneous Immune System</h1><p class="ex-meta">原書 p.143–158 · 考題共 9 題（已有詳解 9 題）</p><p class="ex-meta">103 年 1 題、104 年 1 題、105 年 1 題、106 年 1 題、107 年 1 題、109 年 2 題、111 年 1 題、113 年 1 題</p><div class="ex-notice">題目取自<a href="https://www.derma.org.tw/specialist/download.php?id=9" target="_blank" rel="noopener noreferrer">臺灣皮膚科醫學會專科醫師甄審筆試試題</a>，答案為學會公告的標準答案；重點與詳解依據 Fitzpatrick's Dermatology, 9th Edition 與 McKee's Pathology of the Skin, 5th Edition 整理</div><section class="ex-links" aria-labelledby="links-h"><h2 id="links-h" class="ex-h2 ex-h2-sm">圖片與延伸閱讀</h2><p class="ex-meta">課本圖片有版權，請到以下網站看臨床與病理照片（外部網站，另開新分頁）。</p><div class="ex-links-group"><p class="ex-links-name">DermNet（臨床照片與疾病介紹）</p><ul><li><a href="https://dermnetnz.org/topics/psoriasis" target="_blank" rel="noopener noreferrer">Psoriasis</a></li><li><a href="https://dermnetnz.org/topics/generalised-pustular-psoriasis" target="_blank" rel="noopener noreferrer">Generalised pustular psoriasis</a></li><li><a href="https://dermnetnz.org/topics/atopic-dermatitis" target="_blank" rel="noopener noreferrer">Atopic dermatitis</a></li><li><a href="https://dermnetnz.org/topics/fixed-drug-eruption" target="_blank" rel="noopener noreferrer">Fixed drug eruption</a></li><li><a href="https://dermnetnz.org/topics/mycosis-fungoides" target="_blank" rel="noopener noreferrer">Mycosis fungoides</a></li><li><a href="https://dermnetnz.org/topics/sezary-syndrome" target="_blank" rel="noopener noreferrer">Sezary syndrome</a></li><li><a href="https://dermnetnz.org/topics/pyoderma-gangrenosum" target="_blank" rel="noopener noreferrer">Pyoderma gangrenosum</a></li><li><a href="https://dermnetnz.org/topics/allergic-contact-dermatitis" target="_blank" rel="noopener noreferrer">Allergic contact dermatitis</a></li><li><a href="https://dermnetnz.org/topics/urticaria-an-overview" target="_blank" rel="noopener noreferrer">Urticaria (overview)</a></li><li><a href="https://dermnetnz.org/topics/leprosy" target="_blank" rel="noopener noreferrer">Leprosy</a></li></ul></div><div class="ex-links-group"><p class="ex-links-name">PathologyOutlines（病理圖片）</p><ul><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorpsoriasis.html" target="_blank" rel="noopener noreferrer">Psoriasis</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorallergiccontact.html" target="_blank" rel="noopener noreferrer">Allergic contact dermatitis</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorurticaria.html" target="_blank" rel="noopener noreferrer">Urticaria</a></li><li><a href="https://www.pathologyoutlines.com/topic/skintumornonmelanocyticmycosisfungoides.html" target="_blank" rel="noopener noreferrer">Mycosis fungoides</a></li><li><a href="https://www.pathologyoutlines.com/topic/skintumornonmelanocyticsezary.html" target="_blank" rel="noopener noreferrer">Sezary syndrome</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorleprosy.html" target="_blank" rel="noopener noreferrer">Leprosy</a></li></ul></div></section><details class="ex-toc ex-toc-mobile"><summary>本章目錄</summary><nav aria-label="本章目錄（展開式）"><ol><li><a href="#innate-adaptive">1. Innate vs Adaptive Immune System（先天與後天免疫）</a></li><li><a href="#t-cells">2. T Cells and Subsets（T 細胞與次群）</a></li><li><a href="#skin-homing">3. Skin Homing（皮膚歸巢）</a></li><li><a href="#memory-t">4. TRM, TEM, TCM and TMM（組織常駐與循環記憶 T 細胞）</a></li><li><a href="#b-cells">5. B Cells（B 細胞）</a></li><li><a href="#ilc-unconventional">6. ILCs and Unconventional T Cells（先天淋巴細胞與非典型 T 細胞）</a></li><li><a href="#nk-cells">7. Natural Killer（NK）Cells（自然殺手細胞）</a></li><li><a href="#dendritic-cells">8. Dendritic Cells（樹突細胞）</a></li><li><a href="#macrophages">9. Macrophages（巨噬細胞）</a></li><li><a href="#mast-cells">10. Mast Cells（肥大細胞）</a></li><li><a href="#granulocytes">11. Granulocytes（顆粒球）：Neutrophils, Eosinophils, Basophils</a></li><li><a href="#keratinocytes-amp">12. Keratinocytes and Antimicrobial Peptides（角質細胞與抗菌胜肽）</a></li><li><a href="#tlr-link">13. TLR 與免疫活化的串連（本章內容整理）</a></li><li><a href="#cell-quick-ref">14. 皮膚免疫細胞位置速記</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（12）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（9 題）</a></li></ol></nav></details><section class="ex-notes" aria-labelledby="notes-h"><h2 id="notes-h" class="ex-h2">重點整理</h2><div class="ex-notes-tools"><span class="ex-legend"><mark class="ex-key">螢光</mark>＝考過（後附題號）<span class="ex-legend-trap">紅框</span>＝易錯陷阱<strong class="ex-n">粗體數字</strong>＝門檻值</span></div><p class="ex-reading" id="ex-reading" hidden></p><section class="ex-note" id="innate-adaptive" data-w="1566">
 <h2>1. Innate vs Adaptive Immune System（先天與後天免疫）</h2>
 <ul>
-<li>Skin immune system 同時含 innate 與 adaptive 成分：由大量 skin-resident immune cells，加上在 skin、skin-draining lymph nodes 與 peripheral circulation 之間不斷 recirculate 的 lymphocytes 組成；keratinocytes、endothelial cells、fibroblasts 等 parenchymal cells 也參與。<span class="ex-ref">p.143</span></li>
+<li>Skin immune system 同時含 innate 與 adaptive 成分：由大量 skin-resident immune cells，加上在 skin、skin-draining lymph nodes 與 peripheral circulation 之間不斷 recirculate 的 lymphocytes 組成；keratinocytes、endothelial cells、fibroblasts 等 parenchymal cells 也常參與（often involve）。<span class="ex-ref">p.143</span></li>
 <li><strong>Innate</strong>：辨識與廣泛類別病原相關的 motifs（proteins、lipids、nucleotides、metabolites），受體由 <strong>germline DNA</strong> 編碼；功能是快速的第一線防禦，並促進 adaptive response、決定其類型。<span class="ex-ref">p.143</span></li>
 <li><strong>Adaptive</strong>：靠 <strong>somatic recombination</strong> 產生近乎無限的 antigen receptor／antibody 多樣性，並形成 immunologic memory（long-lived antigen-specific lymphocytes）；反應較慢但更強大。<span class="ex-ref">p.143</span></li>
-<li><mark class="ex-key">T cells 與 B cells 是 adaptive immune system 的主要細胞</mark><span class="ex-qref"><a href="#q-103-03">103-03</a></span>；dendritic cells 與 macrophages（強表現 pattern recognition receptors）是 innate immune system 的關鍵細胞。其他參與 innate response 的有 mast cells、neutrophils，以及 keratinocytes、endothelial cells、fibroblasts 等 resident tissue cells。<span class="ex-ref">p.143</span></li>
-<li>AT-A-GLANCE：innate 的各細胞次群共同點是對感染與損傷反應快，但辨識與回應所有病原的能力有限，靠 germline-encoded pattern recognition receptors 與 danger signals；adaptive 較慢但能回應近乎無限範圍的病原；ILCs 與 unconventional T cells 橫跨 innate 與 adaptive。兩個系統協同防禦，但異常活化常導致各種發炎疾病。<span class="ex-ref">p.143, 145</span></li>
+<li><mark class="ex-key">T cells 與 B cells 是 adaptive immune system 的主要細胞</mark><span class="ex-qref"><a href="#q-103-03">103-03</a></span>；dendritic cells 與 macrophages（顯著表現 pattern-associated receptors，原文用字）是 innate immune system 的關鍵細胞。其他參與 innate response 的有 mast cells、neutrophils，以及 keratinocytes、endothelial cells、fibroblasts 等 resident tissue cells。<span class="ex-ref">p.143</span></li>
+<li>AT-A-GLANCE：innate 的各細胞次群共同點是對感染與損傷反應快，但辨識與回應所有病原的能力有限，靠 germline-encoded pattern recognition receptors 與 danger signals；adaptive 較慢但能回應近乎無限範圍的病原；ILCs 與 unconventional T cells 橫跨 innate 與 adaptive。兩個系統協同防禦，但異常活化可能經常（can frequently）導致各種發炎疾病。<span class="ex-ref">p.143, 145</span></li>
 <li>兼具 innate 與 adaptive 特性的細胞：<strong>innate lymphoid cells（ILCs）</strong>與 <strong>innate-like T cells</strong>（Fig. 11-2）。<span class="ex-ref">p.143–144</span></li>
 <li><strong>Trained immunity</strong>：innate immune system 對反覆挑戰的「記憶」反應，不依賴 T、B cells 即可保護避免再感染。<span class="ex-ref">p.143</span></li>
 </ul>
@@ -350,12 +350,12 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <aside class="ex-trap"><strong>易錯</strong>本章 p.143 明列 T cells 與 B cells 為 adaptive immune system 的 primary cells；dendritic cells 與 macrophages 則列為 innate immune system 的 key players。</aside>
 </section>
 
-<section class="ex-note" id="t-cells" data-w="1636">
+<section class="ex-note" id="t-cells" data-w="1718">
 <h2>2. T Cells and Subsets（T 細胞與次群）</h2>
 <ul>
 <li>T cells 來自骨髓的 multipotent hematopoietic stem cells，在 <strong>thymus</strong> 成熟（T = thymus-dependent）。多數是 <strong>αβ T cells</strong>；少數是 <strong>γδ T cells</strong>（limited diversity，被視為 innate immune system 的一部分）。<span class="ex-ref">p.145</span></li>
 <li><strong>Naïve T cells</strong>：已完成 thymus 發育、尚未遇到特定 antigen，循環於血液與 secondary lymphoid organs（lymph nodes、spleen）。遇到 antigen-presenting cell 上的 peptide–MHC complex 後，發育成 <strong>effector T cells</strong> 與較長壽的 <strong>central memory T cells</strong>。<span class="ex-ref">p.145</span></li>
-<li><strong>CD8+</strong>：辨識 MHC class I（HLA-A、-B、-C）上的 peptide，分化為 cytotoxic effector T cells；effector 依主要 cytokine 稱 TC1（IFN-γ）、TC2（IL-4）、TC17（IL-17）。部分 αβ CD8+ T cells 的 TCR diversity 有限，可經 CD1 等 MHC class I–like 分子辨識 lipid antigens。<span class="ex-ref">p.145</span></li>
+<li><strong>CD8+</strong>：辨識 MHC class I（HLA-A、-B、-C）上的 peptide，分化為 cytotoxic effector T cells；effector 常（often）依主要 cytokine 稱 TC1（IFN-γ）、TC2（IL-4）、TC17（IL-17）。部分 αβ CD8+ T cells 的 TCR diversity 有限，可經 CD1 等 MHC class I–like 分子辨識 lipid antigens。<span class="ex-ref">p.145</span></li>
 <li><strong>CD4+</strong>：辨識 MHC class II（HLA-DR、-DQ、-DP）上的 peptide，分化為 TH1、TH2、TH17、TFH 與 Tregs（Fig. 11-4）。<span class="ex-ref">p.145</span></li>
 </ul>
 <div class="ex-table-wrap"><table class="ex-table">
@@ -364,7 +364,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <tr><td>TH1</td><td>IL-2、IFN-γ、TNF-α；對 TH1-polarizing cytokine IL-12 有反應</td><td>T-bet</td><td>Cell-mediated immunity 的主要媒介；IFN-γ 活化 macrophages、觸發 cytotoxic T-cell response</td></tr>
 <tr><td>TH2</td><td>IL-4、IL-5、IL-13</td><td>GATA-3</td><td>促進 humoral（antibody）response，抑制部分 cell-mediated response</td></tr>
 <tr><td>TH9</td><td>IL-9，並共同產生 TNF-α；不像小鼠 TH9，<strong>不產生 IL-10</strong></td><td>—</td><td>主要見於 skin-homing（CLA+）T cells，存在於健康人類皮膚；IL-9 可上調 IFN-γ、IL-13、IL-17</td></tr>
-<tr><td>TH17</td><td>IL-17A、IL-17F、IL-21、IL-22、IL-26；存活與擴增依賴 <strong>IL-23</strong></td><td>RORγt</td><td>對抗 extracellular bacteria 與 fungi；psoriasis pathogenesis 的 key players</td></tr>
+<tr><td>TH17</td><td>IL-17A、IL-17F、IL-21、IL-22、IL-26；存活與擴增依賴 <strong>IL-23</strong></td><td>RORγt</td><td>參與對 extracellular pathogens（bacteria 與 fungi）的 antigen responses；被認為（implicated）是 psoriasis pathogenesis 的 key players</td></tr>
 <tr><td>Treg</td><td>抑制其他 T cells 的活化、cytokine 產生與增生</td><td>FOXP3</td><td>維持對 self-antigen 的 peripheral tolerance；缺乏見於 IPEX syndrome</td></tr>
 <tr><td>TFH</td><td>CD40L；分泌 IL-21、IL-4</td><td>—</td><td>主要在 lymph nodes、spleen、Peyer patches 的 B-cell areas；觸發並維持 germinal centers</td></tr>
 </tbody>
@@ -372,7 +372,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <p class="ex-cite">p.145–146；Fig. 11-4，p.146（Fig. 11-4 另列 Th22）。</p>
 <ul>
 <li>Cross-regulation：TH1 cytokine <strong>IFN-γ</strong> 下調 TH2 response；<strong>IL-4</strong> 下調 TH1 response 與 macrophage function。<span class="ex-ref">p.146</span></li>
-<li>Tregs：<strong>IPEX</strong>（immune dysregulation, polyendocrinopathy, enteropathy, X-linked）syndrome 的基因病因就是 <em>FOXP3</em>，Treg 缺乏導致 multiorgan autoimmune disease；正常人類皮膚 resident T cells 中約 <strong class="ex-n">5% 到 10%</strong> 是 FOXP3+ Tregs。另有 IL-10 producing、FOXP3-negative 的 Treg 族群，與 SLE 有關。<span class="ex-ref">p.146</span></li>
+<li>Tregs：<strong>IPEX</strong>（immune dysregulation, polyendocrinopathy, enteropathy, X-linked）syndrome 的基因病因就是 <em>FOXP3</em>，Treg 缺乏導致 multiorgan autoimmune disease；正常人類皮膚 resident T cells 中約 <strong class="ex-n">5% 到 10%</strong> 是 FOXP3+ Tregs。人類另有報告（reported）IL-10 producing、FOXP3-negative 的 Treg 族群，被認為與 SLE 有關（implicated）。<span class="ex-ref">p.146</span></li>
 </ul>
 </section>
 
@@ -390,7 +390,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <aside class="ex-trap"><strong>易錯</strong>本章 p.147 把 CCR7／L-selectin（CD62L）列為 central memory markers，與 skin-homing receptor CLA、CCR4 並列；skin homing 的 chemokine receptors 本章寫的是 CCR4 與 CCR10。</aside>
 </section>
 
-<section class="ex-note" id="memory-t" data-w="1832">
+<section class="ex-note" id="memory-t" data-w="1932">
 <h2>4. TRM, TEM, TCM and TMM（組織常駐與循環記憶 T 細胞）</h2>
 <ul>
 <li>健康人類皮膚約有血液全體 T cells 的 <strong>2 倍</strong>（約 <strong class="ex-n">20 billion</strong>）；skin-tropic（CLA+）memory T cells 在非發炎狀態下，<strong class="ex-n">98%</strong> 在皮膚、只有 <strong class="ex-n">2%</strong> 在循環中。<span class="ex-ref">p.147</span></li>
@@ -408,46 +408,46 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <tr><td>TEM（effector memory）</td><td>—</td><td>TCR 觸發後由 TCM 增生分化而來；effector function 快，可產生大量 IFN-γ、IL-4、IL-17，CD8+ TEM 另產生 perforin</td></tr>
 </tbody>
 </table></div>
-<p class="ex-cite">p.147。CD103 表現受 keratinocyte 接觸增強、依賴 TGF-β，並經與 E-cadherin 結合將細胞留在 epidermis。</p>
+<p class="ex-cite">p.147。TRM 被提出（have been suggested）可分為 2 個表型與功能不同的族群，皆表現 TRM marker CD69，以 CD103 區分。CD103 表現受 keratinocyte 接觸增強、依賴 TGF-β，並經與 E-cadherin 結合將細胞留在 epidermis。</p>
 <ul>
 <li><mark class="ex-key">人類皮膚也有 recirculating memory T cells：<strong>TMM</strong>（L-selectin 陰性）與 <strong>TCM</strong>（L-selectin 陽性），共同表現 CLA、CCR4 與 CCR7/L-selectin</mark><span class="ex-qref"><a href="#q-111-15">111-15</a></span>。<span class="ex-ref">p.147</span></li>
 <li><mark class="ex-key">TCM 在 TCR 觸發後主要產生 <strong>IL-2</strong>，增生後分化為 <strong>TEM</strong></mark><span class="ex-qref"><a href="#q-111-15">111-15</a></span>。<span class="ex-ref">p.147</span></li>
 </ul>
 <h3>TRM 生物學如何解釋臨床（p.147）</h3>
 <ul>
-<li><mark class="ex-key">TRM 不遷移、不 recirculate，所以 TRM 造成的發炎病灶 <strong>sharply demarcated</strong>、與正常皮膚界線突然中斷（psoriasis 典型特徵）；病灶傾向長期留在特定位置，停掉有效治療後常在同一位置復發</mark><span class="ex-qref"><a href="#q-111-15">111-15</a></span>。</li>
-<li><mark class="ex-key">TRM 已在原位，所以對重複 antigen 挑戰反應極快，常在數小時內，例如 <strong>fixed drug eruptions</strong></mark><span class="ex-qref"><a href="#q-111-15">111-15</a></span>。</li>
+<li><mark class="ex-key">TRM 不遷移、不 recirculate，所以 TRM 造成的發炎病灶傾向（tend to be）<strong>sharply demarcated</strong>、與正常皮膚界線突然中斷（psoriasis 典型特徵）；病灶傾向長期留在特定位置，停掉有效治療後常在同一位置復發</mark><span class="ex-qref"><a href="#q-111-15">111-15</a></span>。</li>
+<li><mark class="ex-key">TRM 已在原位，所以可對重複 antigen 挑戰反應極快，常在數小時內，例如 <strong>fixed drug eruptions</strong></mark><span class="ex-qref"><a href="#q-111-15">111-15</a></span>。</li>
 <li>Cutaneous lymphomas：<strong>mycosis fungoides</strong> 由 TRM cells 介導，<strong>Sézary syndrome</strong> 由循環的 central memory T cells（TCM）介導。</li>
 <li>TRM 傾向在反覆 antigen 暴露的組織中逐漸累積，TRM 介導的發炎疾病往往隨時間惡化：每次暴露發炎起得更快、更嚴重。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>本章 p.147 把 psoriasis 病灶界線分明、停藥後原位復發，以及 fixed drug eruption 數小時內反應，都歸因於 <strong>TRM</strong>（不遷移、不 recirculate）；TEM 在本章是 TCM 增生後的產物，具快速 effector function。TRM 與 TCM／TMM 的差別是 nonrecirculating vs recirculating。</aside>
+<aside class="ex-trap"><strong>易錯</strong>本章 p.147 把 psoriasis 病灶界線分明、停藥後原位復發，以及 fixed drug eruption 常在數小時內（often within hours）反應，都歸因於 <strong>TRM</strong>（不遷移、不 recirculate）；TEM 在本章是 TCM 增生後的產物，具快速 effector function。TRM 與 TCM／TMM 的差別是 nonrecirculating vs recirculating。</aside>
 </section>
 
-<section class="ex-note" id="b-cells" data-w="569">
+<section class="ex-note" id="b-cells" data-w="640">
 <h2>5. B Cells（B 細胞）</h2>
 <ul>
-<li>B cells 是 <strong>humoral</strong> arm，產生 antibodies：中和病原與毒素、opsonization（促進 phagocytes 經 Fc receptor 攝取）、活化 classical complement pathway。<span class="ex-ref">p.148</span></li>
+<li>B cells 是 <strong>humoral</strong> arm，產生 antibodies：中和病原（阻止其進入並感染細胞），也可能（may）中和 bacterial toxins、opsonization（促進 phagocytes 經 Fc receptor 攝取）、活化 classical complement pathway。<span class="ex-ref">p.148</span></li>
 <li>B cells 離開骨髓後遷移到 spleen、peripheral lymph nodes、gut-associated lymphoid tissue；活化通常需要 <strong>TFH</strong> 幫助；活化後分化為 <strong>memory B cells</strong> 或 antibody-secreting <strong>plasma cells</strong>。<span class="ex-ref">p.148</span></li>
 <li>TFH cytokines 決定 isotype：<strong>IL-4</strong> 促進 IgG1、IgG4、IgE；<strong>IFN-γ</strong> 誘導 IgG3；<strong>TGF-β</strong> 誘導 IgA。<span class="ex-ref">p.148</span></li>
 <li>正常皮膚中 B cells <strong>很少</strong>，在皮膚免疫的角色仍不清楚；但在 cutaneous leishmaniasis、diffuse cutaneous sclerosis、cutaneous lupus、atopic dermatitis 等慢性發炎皮膚病可見 B cells；plasma cells 可見於 syphilis 與 leprosy。<span class="ex-ref">p.148–149</span></li>
-<li><strong>Bregs</strong>（IL-10 producing B cells）有抗發炎作用，目前主要在 murine models 證實，近來已在人類皮膚描述。<span class="ex-ref">p.149</span></li>
+<li><strong>Bregs</strong>（IL-10 producing B cells）有抗發炎作用，但至今這些發現僅（only）在 murine models of skin inflammation 證實；近來已有在人類皮膚描述這些細胞的存在。<span class="ex-ref">p.149</span></li>
 </ul>
 </section>
 
-<section class="ex-note" id="ilc-unconventional" data-w="2007">
+<section class="ex-note" id="ilc-unconventional" data-w="2165">
 <h2>6. ILCs and Unconventional T Cells（先天淋巴細胞與非典型 T 細胞）</h2>
 <p>這些是 nonrecirculating、位於 nonlymphoid tissues 的 lymphocytes，橫跨 innate 與 adaptive；被認為是組織完整性受損（感染、損傷）的 sensors，可招募血液中的免疫細胞並放大局部發炎。包括 iNKT、MAIT、γδ T cells、intestinal IELs 與 ILCs。<span class="ex-ref">p.149</span></p>
 <h3>Innate lymphoid cells（ILCs）</h3>
 <ul>
 <li>定義三特徵：沒有 <strong>RAG-dependent</strong> rearranged antigen receptors；缺乏 myeloid 與 dendritic cell 表型標記（lineage negative）；lymphoid morphology。<span class="ex-ref">p.149</span></li>
-<li>一致表現 IL-7 receptor α chain <strong>CD127</strong>，發育需要 IL-7；keratinocytes 是 IL-7 的重要來源。主要聚集在 <strong>dermal-epidermal junction</strong> 下方，與 T lymphocytes 空間上很近；主要靠產生 cytokines 反應。<span class="ex-ref">p.149</span></li>
+<li>一致表現 IL-7 receptor α chain <strong>CD127</strong>，發育需要 IL-7；keratinocytes 是 IL-7 的重要來源。主要聚集在 <strong>dermal-epidermal junction</strong> 下方，與 T lymphocytes 空間上很近；對 epithelial cell–derived mediators 反應快，幾乎只（almost exclusively）靠產生 cytokines 反應。<span class="ex-ref">p.149</span></li>
 </ul>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Group</th><th scope="col">Transcription factor</th><th scope="col">Cytokines</th><th scope="col">Activators / 皮膚疾病關聯</th></tr></thead>
 <tbody>
-<tr><td><mark class="ex-key">ILC1（對應 TH1）</mark><span class="ex-qref"><a href="#q-109-10">109-10</a></span></td><td>T-bet</td><td>IFN-γ、TNF-α；沒有 cytotoxic molecules</td><td>IL-12、IL-15 活化；CD161；與 allergic contact dermatitis 有關</td></tr>
-<tr><td><mark class="ex-key">ILC2（對應 TH2）</mark><span class="ex-qref"><a href="#q-109-10">109-10</a></span></td><td>GATA-3（高表現）</td><td>IL-4、IL-5、IL-13</td><td>IL-25、IL-33、TSLP、PGD2 活化；表現 KLRG1、CRTH2、CCR4；與 atopic dermatitis 有關</td></tr>
-<tr><td><mark class="ex-key">ILC3（對應 TH17）</mark><span class="ex-qref"><a href="#q-109-10">109-10</a></span></td><td>RORγt、AHR、T-bet（程度不一）</td><td>IFN-γ、IL-22、IL-17（量不一）</td><td>IL-1β、IL-23 活化；表現 NKp44；與 psoriasis 有關</td></tr>
+<tr><td><mark class="ex-key">ILC1（對應 TH1）</mark><span class="ex-qref"><a href="#q-109-10">109-10</a></span></td><td>T-bet</td><td>IFN-γ、TNF-α；沒有 cytotoxic molecules</td><td>被認為（thought to）由 IL-12、IL-15 活化；表現 CD161；被認為與 allergic contact dermatitis 有關（Fig. 11-6 標 ?）</td></tr>
+<tr><td><mark class="ex-key">ILC2（對應 TH2）</mark><span class="ex-qref"><a href="#q-109-10">109-10</a></span></td><td>GATA-3（高表現）</td><td>IL-4、IL-5、IL-13</td><td>IL-25、IL-33、TSLP、PGD2 活化；表現 KLRG1、CRTH2、CCR4；被認為與 atopic dermatitis 有關（implicated）</td></tr>
+<tr><td><mark class="ex-key">ILC3（對應 TH17）</mark><span class="ex-qref"><a href="#q-109-10">109-10</a></span></td><td>RORγt、AHR、T-bet（程度不一）</td><td>IFN-γ、IL-22、IL-17（量不一）</td><td>IL-1β、IL-23 活化；表現 NKp44；被認為與 psoriasis 有關（implicated）</td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">p.149；Fig. 11-6，p.150。</p>
@@ -462,8 +462,8 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <thead><tr><th scope="col">Cell</th><th scope="col">TCR</th><th scope="col">Recognizes（辨識）</th><th scope="col">Other</th></tr></thead>
 <tbody>
 <tr><td>iNKT</td><td>Invariant α chain <strong>Vα24-Jα18</strong>（human）配 limited-diversity β</td><td>Glycolipid antigens，由 <strong>CD1d</strong> 呈現（e.g. bacterial cell wall sphingolipids）</td><td>iNKT1、iNKT2、iNKT17 對應 TH1、TH2、TH17；發育依賴 <strong>PLZF</strong></td></tr>
-<tr><td>MAIT</td><td>Semi-variant：<strong>Vα7.2-Jα33</strong> 配有限的 β chains</td><td>細菌 <strong>riboflavin biosynthesis</strong> intermediates，由 MHC class I–like <strong>MR1</strong> 呈現</td><td>只有具 riboflavin 合成路徑的微生物能活化；可產生 IFN-γ 或 IL-17</td></tr>
-<tr><td>γδ T cells</td><td>γδ TCR</td><td>Lipid antigens（CD1）、MICA 等 MHC class I–like 分子，甚至 soluble ligands</td><td>可在組織內 self-renew；小鼠皮膚多數 lymphocytes 是 γδ，但人類皮膚 resident T cells 只佔 <strong class="ex-n">1% 到 2%</strong></td></tr>
+<tr><td>MAIT</td><td>Semi-variant：<strong>Vα7.2-Jα33</strong> 配有限的 β chains</td><td>細菌 <strong>riboflavin biosynthesis</strong> intermediates，由 MHC class I–like <strong>MR1</strong> 呈現</td><td>只有具 riboflavin 合成路徑的微生物能活化；不同 subsets 可產生 IFN-γ 與 IL-17</td></tr>
+<tr><td>γδ T cells</td><td>γδ TCR</td><td>不同 subsets 已被證實（have been shown）可辨識 lipid antigens（CD1）、MICA 等 MHC class I–like 分子，甚至 soluble ligands</td><td>可在組織內 self-renew；小鼠皮膚多數 lymphocytes 是 γδ，但人類皮膚 resident T cells 只佔 <strong class="ex-n">1% 到 2%</strong></td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">p.151；Fig. 11-7，p.150。</p>
@@ -480,7 +480,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 </ul>
 </section>
 
-<section class="ex-note" id="dendritic-cells" data-w="2779">
+<section class="ex-note" id="dendritic-cells" data-w="2873">
 <h2>8. Dendritic Cells（樹突細胞）</h2>
 <ul>
 <li>DCs 的主要功能是處理 antigen、呈現於細胞表面並活化 T cells；主要來自骨髓 myeloid progenitors。Ralph Steinman 因發現其在 adaptive immune response 的核心角色獲 Nobel Prize。<span class="ex-ref">p.151</span></li>
@@ -509,7 +509,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <li><mark class="ex-key">表現 <strong>TLR7</strong> 與 <strong>TLR9</strong>，以及 intracellular nucleic acid sensor <strong>RIG-1</strong>（對某些 single-stranded RNA viruses 的 pattern recognition receptor）</mark><span class="ex-qref"><a href="#q-113-43">113-43</a> <a href="#q-109-10">109-10</a></span>。<span class="ex-ref">p.152</span></li>
 <li>與 conventional DCs 相比，pDCs 表面的 MHC class II 與 costimulatory molecules 較少，處理 antigen 較不有效。<span class="ex-ref">p.152</span></li>
 <li><mark class="ex-key">產生 <strong>type 1 interferons</strong> 的量估計比任何其他細胞多約 <strong class="ex-n">10,000-fold</strong>；主要誘導物是含重複 CG 的 viral RNA／DNA（CpG）結合 TLR7 與 TLR9</mark><span class="ex-qref"><a href="#q-109-10">109-10</a> <a href="#q-113-43">113-43</a></span>。<span class="ex-ref">p.152</span></li>
-<li>Psoriasis：pDCs 被認為在觸發 psoriatic lesions 起始中扮演關鍵角色，機轉是 cathelicidin（LL37）與 self-DNA 結合後活化 <strong>TLR9</strong>。<span class="ex-ref">p.152</span></li>
+<li>Psoriasis：pDCs 被認為與 psoriasis 致病有關（implicated），似乎（appearing to）在觸發 psoriatic lesions 起始中扮演關鍵角色，機轉是 cathelicidin（LL37）與 self-DNA 結合後活化 <strong>TLR9</strong>。<span class="ex-ref">p.152</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>本章 p.152 寫 pDCs 大量產生的是 type 1 interferons（約為其他細胞的 10,000-fold），沒有寫 IFN-γ；IFN-γ 在本章出現於 TH1 cells（p.145）、ILC1（p.149）與 M1 macrophage 活化（p.153）。</aside>
 <h3>Langerhans cells（LCs）</h3>
@@ -518,7 +518,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <li><mark class="ex-key">占表皮細胞的 <strong class="ex-n">2% 到 4%</strong>，在 keratinocytes 之間排成 dense network</mark><span class="ex-qref"><a href="#q-113-43">113-43</a></span>。<span class="ex-ref">p.152</span></li>
 <li><mark class="ex-key">特徵性 organelle 是 electron-dense 的 <strong>Birbeck granules</strong>，形狀獨特如「<strong>tennis-racket</strong>」；<strong>高表現 CD1a</strong></mark><span class="ex-qref"><a href="#q-113-43">113-43</a></span>。<span class="ex-ref">p.152</span></li>
 <li><mark class="ex-key"><strong>CD207（langerin）</strong>：C-type lectin receptor，位於 Birbeck granules，可能把 antigen 導向 nonclassical processing pathway 而 cross-presentation 於 MHC class I；langerin 是 Birbeck granule 形成所必需</mark><span class="ex-qref"><a href="#q-113-43">113-43</a></span>。<span class="ex-ref">p.152, 151</span></li>
-<li>LCs 的發育與 epidermal residence 需要 keratinocyte 來源的 <strong>IL-34</strong> 與 <strong>TGF-β</strong>；可在 IL-15 依賴下 cross-prime CD8+ T cells，也促進 Tregs 擴增。<span class="ex-ref">p.153</span></li>
+<li>LCs 的發育與 epidermal residence 需要 keratinocyte 來源的 <strong>IL-34</strong> 與 <strong>TGF-β</strong>；LCs 的角色尚未完全清楚：可在 IL-15 依賴下 cross-prime CD8+ T cells，也參與（contribute to）Tregs 擴增，提示其在 tissue homeostasis 的角色。<span class="ex-ref">p.153</span></li>
 <li>抗原捕捉後 LCs 成熟並遷移到 regional lymph nodes 活化 T cells，T cells 再回到皮膚。<span class="ex-ref">p.151</span></li>
 </ul>
 <h3>McKee 補充（組織／電顯）</h3>
@@ -530,7 +530,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 </ul>
 </section>
 
-<section class="ex-note" id="macrophages" data-w="858">
+<section class="ex-note" id="macrophages" data-w="884">
 <h2>9. Macrophages（巨噬細胞）</h2>
 <ul>
 <li>Innate immunity 的 essential component；常駐組織作為 immune sentinels，以 scavenger、pattern recognition、phagocytic receptors 偵測感染與組織傷害。多數健康組織的 macrophages 只需極少循環 monocytes 補充；損傷或感染時大量 monocytes 湧入，分化為 macrophage-like 與 DC-like cells。<span class="ex-ref">p.153</span></li>
@@ -544,28 +544,28 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <tr><td>Cytokines（細胞激素）</td><td>IL-1β、IL-6、IL-12、IL-15、IL-18、IL-23、TNF</td><td>IL-10、TGF-β</td></tr>
 <tr><td>Transcription factors</td><td>IRF5</td><td>STAT6、IRF4</td></tr>
 <tr><td>NFκB</td><td>p65</td><td>p50</td></tr>
-<tr><td>Role（角色）</td><td>大量 phagocytosis、殺 intracellular bacteria</td><td>對 parasites、tissue remodeling、allergic diseases 的反應；可能參與皮膚發炎的 resolution</td></tr>
+<tr><td>Role（角色）</td><td>大量 phagocytosis、殺 intracellular bacteria</td><td>被認為（thought to）在對 parasites 的反應、tissue remodeling、allergic diseases 扮演核心角色；可能（may）參與皮膚發炎的 resolution</td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">Table 11-2，p.153。M1 段落接著寫 efficient intracellular killing 需要 vitamin D（p.153）；p.151 寫 CD1-restricted T cells 釋出 IFN-γ 的能力可能導致 vitamin D–dependent antimicrobial response 被誘導。</p>
 </section>
 
-<section class="ex-note" id="mast-cells" data-w="1021">
+<section class="ex-note" id="mast-cells" data-w="1099">
 <h2>10. Mast Cells（肥大細胞）</h2>
 <ul>
-<li>最常見於 epithelial sites（skin、mucosa），是對外在病原與環境刺激的 <strong>first line of defense</strong>；源自 pluripotent bone marrow precursors，progenitors 經血液進入組織後才成熟。<span class="ex-ref">p.153</span></li>
+<li>通常（usually）最多見於 epithelial sites（skin、mucosa），是對外在病原與環境刺激的 <strong>first line of defense</strong>；源自 pluripotent bone marrow precursors，progenitors 經血液進入組織後才成熟。<span class="ex-ref">p.153</span></li>
 <li>成熟關鍵因子：<strong>stem cell factor（SCF，即 KIT ligand）</strong>，結合 <strong>c-kit receptor（CD117）</strong>，以及 <strong>IL-3</strong>。<span class="ex-ref">p.153</span></li>
 <li>壽命長（組織中可存活 <strong class="ex-n">months to years</strong>），保有增生能力。<span class="ex-ref">p.153</span></li>
-<li>組成性表現 <strong>FcεRI</strong>；最典型的活化是 antigen 交聯結合在 FcεRI 上的 <strong>IgE</strong>，所需 allergen 量相對少；也能經 FcγRII 結合 IgG。<span class="ex-ref">p.153</span></li>
-<li>也有 pattern recognition receptors（多種 TLRs）：<strong>TLR4</strong> 被 lipopolysaccharide 活化 → 產生 cytokines 但<strong>不 degranulation</strong>；<strong>TLR2</strong> 被 peptidoglycans 活化 → degranulation 與 cytokine 產生<strong>都有</strong>。其他活化因子：complement（C3a、C5a）、neuropeptide（substance P）、毒素。<span class="ex-ref">p.153</span></li>
+<li>組成性表現 <strong>FcεRI</strong>；最為人知（best-known）的活化原因是 antigen 交聯結合在 FcεRI 上的 <strong>IgE</strong>，所需 allergen 量相對少；也能經 FcγRII 結合 IgG。<span class="ex-ref">p.153</span></li>
+<li>也有 pattern recognition receptors（多種 TLRs）：<strong>TLR4</strong> 被 lipopolysaccharide 活化 → 產生 cytokines 但<strong>不 degranulation</strong>；<strong>TLR2</strong> 被 peptidoglycans 活化 → degranulation 與 cytokine 產生<strong>都有</strong>。其他活化因子：complement（C3a、C5a）、neuropeptide（substance P）、某些毒素（certain toxins）。<span class="ex-ref">p.153</span></li>
 <li>電子緻密的 lysosome-like secretory granules 佔成熟 mast cell 細胞質大部分；初期命名 "mastung"，意為 "well fed" 或 "fattened"。<span class="ex-ref">p.153</span></li>
-<li>顆粒內預先形成：histamine（最著名）、serotonin、TNF-α、VEGF、proteases、<mark class="ex-key">抗菌蛋白 <strong>cathelicidins</strong></mark><span class="ex-qref"><a href="#q-106-08">106-08</a></span>、chemokines。活化後可再產生 TNF-α、IL-3、IL-4、IL-5、IL-6，以及 leukotrienes、prostaglandins、platelet-activating factor。<span class="ex-ref">p.154</span></li>
-<li>這些介質造成血管通透性上升與水腫，即數分鐘內發生的 <strong>wheal and flare</strong>；mast cell–derived TNF 上調血管內皮 E-selectin（結合 T cells 上的 CLA）等 adhesion molecules，加上 CCL20，促進 T cells 與 DCs 湧入。整體因含 IL-4 等 cytokines，反應偏向 <strong>TH2</strong>。<span class="ex-ref">p.154</span></li>
+<li>顆粒內預先形成：histamine（可能是最著名者，probably the most well known）、serotonin、TNF-α、VEGF、proteases、<mark class="ex-key">抗菌蛋白 <strong>cathelicidins</strong></mark><span class="ex-qref"><a href="#q-106-08">106-08</a></span>、chemokines。活化後可再產生 TNF-α、IL-3、IL-4、IL-5、IL-6，以及 leukotrienes、prostaglandins、platelet-activating factor。<span class="ex-ref">p.154</span></li>
+<li>這些介質造成血管通透性上升與水腫，即數分鐘內發生的 <strong>wheal and flare</strong>；mast cell–derived TNF 可（can）上調血管內皮 E-selectin（結合 T cells 上的 CLA）等 adhesion molecules，加上 CCL20，促進 T cells 與 DCs 湧入。整體因含 IL-4 等 cytokines，反應偏向 <strong>TH2</strong>。<span class="ex-ref">p.154</span></li>
 <li>最常直接歸因於 mast cell 活化的皮膚反應：<strong>urticaria</strong> 與 <strong>anaphylaxis</strong>。<span class="ex-ref">p.154</span></li>
 </ul>
 </section>
 
-<section class="ex-note" id="granulocytes" data-w="3306">
+<section class="ex-note" id="granulocytes" data-w="3426">
 <h2>11. Granulocytes（顆粒球）：Neutrophils, Eosinophils, Basophils</h2>
 <p>Basophils、neutrophils、eosinophils 屬 granulocytes：特徵是 lobulated nuclei 與細胞質 secretory granules（Table 11-3）。<span class="ex-ref">p.154</span></p>
 <h3>Neutrophils（嗜中性球）</h3>
@@ -580,12 +580,12 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <thead><tr><th scope="col">Granule type（先後）</th><th scope="col">Contents（內容）</th></tr></thead>
 <tbody>
 <tr><td>First released：peroxidase-<strong>negative</strong></td><td>Lactoferrin、lipocalin、<mark class="ex-key">cathelicidin（LL37）</mark><span class="ex-qref"><a href="#q-106-08">106-08</a></span>、數種 metalloproteinases（降解 laminin、collagen、proteoglycans、fibronectin，促進 neutrophil 招募與組織破壞）</td></tr>
-<tr><td>Next：peroxidase-<strong>positive</strong>（chemoattractants 濃度升高時）</td><td>Alpha-defensins、serprocidins；serine proteases（cathepsin G、neutrophil elastase、proteinase 3）；<strong>myeloperoxidase（MPO）</strong>：含鐵酵素，使膿呈綠色，由 H₂O₂ 與 Cl⁻ 產生 hypochlorous acid（HOCl）</td></tr>
+<tr><td>Next：peroxidase-<strong>positive</strong>（通常（usually）在 chemoattractants 濃度升高時）</td><td>Alpha-defensins、serprocidins；serine proteases（cathepsin G、neutrophil elastase、proteinase 3）；<strong>myeloperoxidase（MPO）</strong>：含鐵酵素，使膿呈綠色，由 H₂O₂ 與 Cl⁻ 產生 hypochlorous acid（HOCl）</td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">p.155。</p>
 <ul>
-<li>Serine proteases 可把 <strong>IL-36 family</strong>（IL-36α、β、γ）切成更活躍形式，活性增加約 <strong class="ex-n">500-fold</strong>；IL-36 反應是 pustular psoriasis 中 neutrophil infiltration 的驅動者；neutrophil elastase 也能切割 IL-36 receptor antagonist。<span class="ex-ref">p.155–156</span></li>
+<li>Serine proteases 可把 <strong>IL-36 family</strong>（IL-36α、β、γ）切成更活躍形式，活性增加約 <strong class="ex-n">500-fold</strong>；neutrophil elastase 則可把 IL-36 receptor antagonist 切成高活性的 antagonistic form。IL-36 介導的反應已被證實是 pustular psoriasis 中 neutrophil infiltration 的一個驅動因子（a driver）；這些研究顯示 neutrophils 可能（may）既促進發炎、也幫助控制發炎。<span class="ex-ref">p.155–156</span></li>
 <li><strong>Respiratory burst</strong>：NADPH oxidase 驅動 ROS 快速釋放，在 phagolysosomes 產生 superoxide，經 superoxide dismutase（SOD）轉成 H₂O₂，再生成 hydroxyl radical、hypochlorite、hypobromite。<span class="ex-ref">p.156</span></li>
 <li><strong>NETs</strong>：活化過程中，部分 neutrophils 經特殊細胞死亡釋放 nuclear chromatin 形成基質，捕捉胞外微生物；NET 形成需要 ROS，<strong>chronic granulomatous disease</strong> 除 respiratory burst 缺陷外，NET 形成也減少。<span class="ex-ref">p.156</span></li>
 <li>Neutrophil 活化可造成大量組織傷害（e.g. pyoderma gangrenosum）；清除可經 necrosis 後被 macrophages phagocytosis、apoptosis，或 neutrophil reverse migration。<span class="ex-ref">p.156</span></li>
@@ -598,7 +598,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <li><mark class="ex-key">顆粒含 <strong>4</strong> 種主要蛋白：<strong>eosinophil peroxidase、major basic protein</strong>，以及 ribonucleases <strong>eosinophil cationic protein</strong> 與 <strong>eosinophil-derived neurotoxin</strong></mark><span class="ex-qref"><a href="#q-107-11">107-11</a></span>；顆粒還儲存多種 cytokines、enzymes、growth factors。<span class="ex-ref">p.156</span></li>
 <li>招募：<strong>IL-5</strong> 與 eotaxin chemokines（CCL11、CCL13、CCL26）；表現 <strong>IL-5Rα</strong> 與 <strong>CCR3</strong>（結合 CCL11、CCL13、CCL26）。<span class="ex-ref">p.156</span></li>
 <li><mark class="ex-key">IL-5 對 eosinophil 發育的各方面都有重要作用，可由 T cells 與 mast cells 產生</mark><span class="ex-qref"><a href="#q-107-11">107-11</a></span>；epithelial cell–derived cytokines <strong>TSLP</strong>（atopic dermatitis 常見）、<strong>IL-25（IL-17E）</strong>、<strong>IL-33</strong> 經誘導 IL-5 產生而促進 eosinophilia。<span class="ex-ref">p.156</span></li>
-<li>組織中的 eosinophils 常靠近 mast cells，兩者密切 crosstalk（physical 與 soluble mediators），調節 allergic inflammation。<span class="ex-ref">p.156</span></li>
+<li>組織中的 eosinophils 通常（usually）靠近 mast cells，兩者大量溝通；其 crosstalk 被認為（thought to）涉及 physical 與多種 soluble mediators，調節 allergic inflammation。<span class="ex-ref">p.156</span></li>
 </ul>
 <h3>Basophils（嗜鹼性球）</h3>
 <ul>
@@ -618,7 +618,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <p class="ex-cite">Table 11-3，p.154（逐列對照原頁圖片；表中 LL37 只列在 mast cells 欄；neutrophil granules 的 LL37 見 p.155 內文）。</p>
 </section>
 
-<section class="ex-note" id="keratinocytes-amp" data-w="1391">
+<section class="ex-note" id="keratinocytes-amp" data-w="1445">
 <h2>12. Keratinocytes and Antimicrobial Peptides（角質細胞與抗菌胜肽）</h2>
 <ul>
 <li>Keratinocytes 是皮膚最多的細胞，構成 epidermis：形成物理屏障，防止病原與化學物質進入，及水分與可溶性介質流失。<span class="ex-ref">p.156</span></li>
@@ -641,7 +641,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <ul>
 <li>皮膚有數十甚至可能數百種 antimicrobial peptides：cathelicidins、β-defensins、substance P、RANTES、RNase 2／3／7、S100A7 等；<mark class="ex-key">許多對 <strong>bacteria、viruses、fungi</strong> 都有抗菌作用</mark><span class="ex-qref"><a href="#q-106-08">106-08</a></span>。<span class="ex-ref ex-ref-mckee">McKee p.10</span></li>
 <li>層次分布：stratum corneum 有 constitutive S100A7（psoriasin，殺 <em>E. coli</em> 很有效）；其下有 RNASE7（廣譜，尤其對 enterococci）；活細胞層有 β-defensins。Inducible peptides 包括 β-defensins、RNASE7 與 <mark class="ex-key">LL-37</mark><span class="ex-qref"><a href="#q-106-08">106-08</a></span>（Fig. 1.32）。<span class="ex-ref ex-ref-mckee">McKee p.10–11</span></li>
-<li>Antimicrobial peptides 破壞微生物細胞膜而不傷人類細胞膜；也有 immunostimulatory／immunomodulatory 與 chemotactic 作用，部分稱為 <strong>alarmins</strong>。<span class="ex-ref ex-ref-mckee">McKee p.10</span></li>
+<li>多數（most）antimicrobial peptides 的抗菌活性來自能破壞微生物細胞膜而保留人類細胞膜完整的結構特性；antimicrobial peptides 可具有（can have）immunostimulatory／immunomodulatory 與 chemotactic 作用，部分稱為 <strong>alarmins</strong>。<span class="ex-ref ex-ref-mckee">McKee p.10</span></li>
 <li>Filaggrin 缺乏時（<em>FLG</em> loss-of-function mutations），外來 allergens 可穿透表皮接觸 Langerhans cells，可能導致 atopic dermatitis。<span class="ex-ref ex-ref-mckee">McKee p.10</span></li>
 </ul>
 <h3>本章中 cathelicidin（LL37）出現的位置</h3>
@@ -651,13 +651,13 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 </ul>
 </section>
 
-<section class="ex-note" id="tlr-link" data-w="580">
+<section class="ex-note" id="tlr-link" data-w="611">
 <h2>13. TLR 與免疫活化的串連（本章內容整理）</h2>
 <ul>
 <li><mark class="ex-key">Mast cells 的 <strong>TLR4</strong> 被 lipopolysaccharide活化；<strong>TLR2</strong> 被 peptidoglycans 活化；mast cells 的 TLRs 對 conserved pathogen-associated molecular patterns 反應</mark><span class="ex-qref"><a href="#q-105-36">105-36</a></span>。<span class="ex-ref">p.153</span></li>
 <li>pDCs：<strong>TLR7、TLR9</strong>（viral RNA、含 CpG 的 DNA）；CD1c+ myeloid DCs：TLR3（Table 11-1）。<span class="ex-ref">p.152</span></li>
 <li><mark class="ex-key">Innate immune system 的活化會促進 adaptive immune system 的活化，並決定對入侵病原產生哪一種 adaptive response；兩者協同防禦</mark><span class="ex-qref"><a href="#q-105-36">105-36</a></span>。<span class="ex-ref">p.143, 145</span></li>
-<li><mark class="ex-key">皮膚 DCs 經 TLR 活化後遷移到 skin-draining lymph nodes，辨識細菌 peptide 的 naïve T cells 分化為 skin-homing TEM 與 TCM</mark><span class="ex-qref"><a href="#q-105-36">105-36</a></span>（Fig. 11-5）。<span class="ex-ref">p.148</span></li>
+<li><mark class="ex-key">暴露於 bacterial pathogens 後，皮膚 resident DCs 經 TLR 活化後遷移到 skin-draining lymph nodes，辨識細菌 peptide 的 naïve T cells 分化為 skin-homing TEM 與 TCM</mark><span class="ex-qref"><a href="#q-105-36">105-36</a></span>（Fig. 11-5）。<span class="ex-ref">p.148</span></li>
 <li>Innate immune system 的 pattern recognition receptors 由 germline 編碼（Fig. 11-3：CD14、mannose、scavenger receptors），並可直接 phagocytosis 與發揮 antimicrobial activity。<span class="ex-ref">p.143, 145</span></li>
 </ul>
 </section>

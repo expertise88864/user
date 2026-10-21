@@ -78,7 +78,7 @@
 </ul>
 <h3>Racial differences（種族差異）</h3>
 <ul>
-<li><mark data-q="107-28">白人平均每個 FU 約含 <strong class="ex-n">2.3</strong> 根毛髮；其他種族通常（usually）hair density 較低、每個 FU 的毛髮數也較少</mark>。<span class="ex-ref">p.3942</span></li>
+<li><mark data-q="107-28">白人平均每個 FU 含 <strong class="ex-n">2.3</strong> 根毛髮（an average of 2.3 hairs）；其他種族通常（usually）hair density 較低、每個 FU 的毛髮數也較少</mark>。<span class="ex-ref">p.3942</span></li>
 <li>亞洲人的 hair shaft diameter 一般比白人大且較直，較容易裝入 implanter。<span class="ex-ref">p.3946</span></li>
 </ul>
 </section>
@@ -122,7 +122,7 @@
 <li>之後每次取條都包含前次疤痕及其上下的 donor hair，所以不論做幾次都只有 <strong class="ex-n">1</strong> 條疤。<span class="ex-ref">p.3936</span></li>
 <li>弄濕頭髮有時（sometimes）可幫助找出已變稀的上下界；hand-held densitometer 可較客觀量化 donor density。<span class="ex-ref">p.3936</span></li>
 <li>確定 donor area 後，剪短 <strong class="ex-n">10–18 mm</strong> 寬區域的頭髮至約 <strong class="ex-n">2 mm</strong>，以 alcohol 與（通常）iodine-based antiseptic 消毒。<span class="ex-ref">p.3936</span></li>
-<li>FUE 可取自稍微擴大的 SDA，但仍須小心（wary）不要離 SDA 太遠；重複取髮會讓點狀疤更多更密。「Splitting individual multi-hair FU in vivo」尚未證實受區與供區毛髮存活良好。<span class="ex-ref">p.3936</span></li>
+<li>FUE 可取自稍微擴大的 SDA，但仍須小心（wary）不要離 SDA 太遠；重複取髮會讓點狀疤更多更密；為減少此問題，部分（some）FUE 醫師建議「splitting individual multi-hair FU in vivo」，但此技術尚未證實受區與供區毛髮存活良好。<span class="ex-ref">p.3936</span></li>
 </ul>
 </section>
 
@@ -141,7 +141,7 @@
 <ul>
 <li>依 scalp laxity 決定寬度，作者通常（typically）<strong class="ex-n">8–15 mm</strong>，通常（usually）中段較寬、往 temporal 漸窄。<span class="ex-ref">p.3939</span></li>
 <li><mark data-q="103-38">寧可取得比檢查所估的<strong>稍窄（slightly narrower）</strong>，保留誤差空間，以降低 high-tension donor closure 及因此產生較寬疤痕的可能</mark>。<span class="ex-ref">p.3939</span></li>
-<li>切取前以 <strong class="ex-n">10–40 mL</strong> normal saline 做 tumescence：增加 turgor、減少出血、減少毛囊扭曲造成的 FU transection。<span class="ex-ref">p.3939</span></li>
+<li>切取前以 <strong class="ex-n">10–40 mL</strong> normal saline 做 tumescence：增加組織 turgor，從而（thereby）減少出血，也限制毛囊扭曲（否則可能（might）造成 FU transection）。<span class="ex-ref">p.3939</span></li>
 <li>作者通常（typically）用單刃刀沿毛髮出口角度切；切口超出剪髮區兩端約 <strong class="ex-n">2 cm</strong>，兩端以 No. 15 刀片收成 <strong class="ex-n">30°</strong> 角以減少 dog ears。<span class="ex-ref">p.3939</span></li>
 <li>第一次手術切到 high subcutaneous fat，減少神經血管傷害；之後的手術若原供區深處已形成纖維疤痕組織，切口可（may）加深以移除之（avascular、佔空間、牽拉傷口邊緣，增加張力並妨礙癒合）。<span class="ex-ref">p.3939</span></li>
 <li>整條分 <strong class="ex-n">3</strong> 段切取，每段縫合後再評估剩餘部分的 laxity。出血旺盛的血管以 unipolar hyfrecator 燒灼。<span class="ex-ref">p.3939</span></li>
@@ -163,7 +163,7 @@
 <li>最主要缺點：若病人將發展到超過 Type V（需 <strong class="ex-n">&gt;6000</strong> FUs），因多數病人（in most patients）的 FUE 是每 <strong class="ex-n">third 或 fourth</strong> FU 取 1 個，donor area 需為 strip 的 <strong class="ex-n">3 to 4 times</strong>，必須超出 SDA；其中許多 FU 的毛髮較不可能永久、日後可能（may）消失，SDA 以外的 fringe 逐漸流失及／或 miniaturized 時，小 hypopigmented scars 可能露出；最壞情況（worse-case scenario）下過度取髮可能造成難以矯正的 moth-eaten appearance。<span class="ex-ref">p.3940</span></li>
 <li>多數兩法都做的醫師仍發現 FUE 的 transection rates 較高；FUE 是盲取，每個 FU 都有被切斷風險，strip 只有邊緣的 grafts 易受傷。<span class="ex-ref">p.3940–3941</span></li>
 <li>FUE grafts 傾向（tend to）較 skeletonized、周圍支持組織少；strip grafts 則傾向（tend to）有較多保護組織，被認為（believed）能給 FU 更多保護，並可能（likely）有助於 strip 手術較高的存活率與生長。評估 FUE grafts 生長的存活研究很少，已完成的少數顯示（FUE grafts）存活較低。<span class="ex-ref">p.3941</span></li>
-<li>作者多半建議 FUE 補充而非取代 strip，除非是利大於弊的特定病人（except in select patients for whom the benefits outweigh the drawbacks）；預後差（MPB <strong>Type VI 或 VII</strong>）者建議先做 strip 再做 FUE，以最大化一生可取的永久毛髮。FUE 可用來取 FU 植入 strip 的線狀疤（疤比平均寬或不再計畫取條時尤其適合）；在部分病人也可能（may）有助於使茂密的 temple 變稀。<span class="ex-ref">p.3941</span></li>
+<li>作者最常（most often）建議 FUE 補充而非取代 strip，除非是利大於弊的特定病人（except in select patients for whom the benefits outweigh the drawbacks）；預後差（MPB <strong>Type VI 或 VII</strong>）者建議先做 strip 再做 FUE，以最大化一生可取的永久毛髮。FUE 可用來取 FU 植入 strip 的線狀疤（疤比平均寬或不再計畫取條時尤其適合）；在部分病人也可能（may）有助於使茂密的 temple 變稀。<span class="ex-ref">p.3941</span></li>
 <li>Anesthesia：與 strip 相同，手術當天早上給 oral sedation；local anesthesia 則是在取髮區剃髮並以（通常）povidone iodine 消毒後，以 ring block 圍繞取髮區施打。<span class="ex-ref">p.3941</span></li>
 </ul>
 <table class="ex-table">
@@ -187,7 +187,7 @@
 <tr><td>Area of scar</td><td><strong class="ex-n">12.72 cm²</strong></td><td><strong class="ex-n">2.4 cm²</strong>（at most）</td></tr>
 </tbody>
 </table>
-<p class="ex-cite">Table 217-6，p.3939：typical strip harvesting 的總切口長度與疤痕總面積遠小於 typical FUE。</p>
+<p class="ex-cite">Table 217-6，p.3939：表註寫 typical strip harvesting 的總切口長度與疤痕總面積遠小於 typical FUE（表註以 1 mm diameter punch 敘述，並另列 0.9-mm punch 為 565.2 cm、12.71 cm²，0.8-mm punch 為 502.4 cm、10.048 cm²）。</p>
 <aside class="ex-trap"><strong>易錯</strong>課本認為把 FUE 宣傳為「minimal incision surgery」completely unwarranted，Table 217-6 中 strip 的總切口長度與疤痕面積都比 FUE 小。<span class="ex-ref">p.3937、p.3939</span></aside>
 <h3>Instrumentation &amp; body FUE</h3>
 <ul>
@@ -201,7 +201,7 @@
 <h3>Strip harvesting</h3>
 <ul>
 <li>以 stereoscopic microscopes 或放大鏡處理：先「slivering」（切成一個 FU 寬的薄片，每片含 <strong class="ex-n">4–10</strong> FUs），再分成單一 FU。<span class="ex-ref">p.3942</span></li>
-<li>FUs 自然以 <strong class="ex-n">1–4</strong> 根毛髮成簇（Fig. 217-3 說明寫多數為 <strong class="ex-n">2–5</strong> 根成群）。偶爾把兩個很近的 FU 合成「follicular family」（FF）。<span class="ex-ref">p.3935、p.3942</span></li>
+<li>FUs 自然以 <strong class="ex-n">1–4</strong> 根毛髮成簇（Fig. 217-3 說明寫最常（most often）為 <strong class="ex-n">2–5</strong> 根成群）。偶爾把兩個很近的 FU 合成「follicular family」（FF）。<span class="ex-ref">p.3935、p.3942</span></li>
 <li>FUs 與 FFs 比大型 multi-FU grafts 遠更容易（far more susceptible）在處理、保存、植入時受傷，技術員需長期訓練與監督。<span class="ex-ref">p.3942</span></li>
 <li><mark data-q="103-38">理想的 FU 去除大部分表皮，呈 <strong>tear shape</strong>：<strong>尖端靠近表皮、較厚的一端在皮下組織</strong>，使 follicle isthmus、hair bulge、dermal papilla 周圍保留真皮與皮下組織</mark>。<span class="ex-ref">p.3942</span></li>
 <li><mark data-q="103-38">Strip grafts 修成「tear drop」形，保留附屬構造並留下足夠脂肪保護毛囊；motorized FUE grafts 則 skeletonized、「naked」，且帶有過多需修除的表皮（Fig. 217-8B）</mark>。<span class="ex-ref">p.3941（Fig. 217-8）</span></li>
@@ -233,7 +233,7 @@
 <tr><td>3- and 4-hair FU</td><td><strong class="ex-n">18-G</strong></td></tr>
 </tbody>
 </table>
-<p class="ex-cite">p.3945（typically）。原則是做出能輕鬆放入 graft 的最小 site 以減少血管破壞，理想是「snug」；hairline 區多用 1–2 根細毛 FU，需要密度處用 2–3 根粗毛 FU。</p>
+<p class="ex-cite">p.3945（typically）。原則是做出能輕鬆放入 graft 的最小 site 以減少血管破壞，理想是「snug」；各區都混用 1、2、3 根以上的 FU，但一般（in general）hairline 區做 1–2 根細毛 FU 的 sites，需要較高密度處做 2–3 根粗毛 FU 的 sites。</p>
 <h3>Graft density（密度）</h3>
 <ul>
 <li>若存活率高，<strong class="ex-n">20–30 FUs/cm²</strong> 外觀就很好，並保留 donor hair 給未來區域，為作者偏好密度。<span class="ex-ref">p.3944</span></li>
@@ -248,7 +248,7 @@
 <h2>11. Graft Insertion &amp; Implanters（植入）</h2>
 <ul>
 <li>通常 <strong class="ex-n">2 或 3</strong> 位技術員同時操作；植入前把 PRP 與 ACell 注入 recipient sites，並保留部分浸泡 grafts（放在手指上的「ring」中）。<span class="ex-ref">p.3945</span></li>
-<li>只夾 graft 基部的皮下組織，不夾毛囊本身；切口長軸指示放入方向。<span class="ex-ref">p.3945–3946</span></li>
+<li>熟練技術員只接觸（handling）graft 基部的皮下組織，而非 graft 本身，以減少對毛囊的傷害；切口長軸指示放入方向。<span class="ex-ref">p.3945–3946</span></li>
 <li>定時噴 saline（<strong class="ex-n">90%</strong>）與 peroxide（<strong class="ex-n">10%</strong>）混合液保持清潔；grafts 先略高以辨識未填的 sites。<span class="ex-ref">p.3946</span></li>
 <li>結束時 grafts 調整到表皮高度或略高，<strong>絕不可低於皮膚表面</strong>（可能（can）造成 pitting／depressions）。<span class="ex-ref">p.3946</span></li>
 <li><strong>Hair implanters</strong>：在某些國家（e.g. Korea）已大多取代 forceps；正確使用時（when used properly），抓毛髮把 graft 拉入，不碰 hair bulge 與 dermal papilla，減少機械傷害；有些裝置可邊做 site 邊植入。<span class="ex-ref">p.3946</span></li>
@@ -292,7 +292,7 @@
 <ul>
 <li>作者的病人手術隔天回診拆繃帶並清洗頭髮頭皮、調整偶爾脫位的 graft、說明術後注意事項並戴乾淨帽子。<span class="ex-ref">p.3948</span></li>
 <li>除非有禁忌，給予 tapering course 的 oral corticosteroids 以減少術後腫脹。<span class="ex-ref">p.3948</span></li>
-<li>術後 <strong class="ex-n">8–12 days</strong> 回診拆線；一般（generally）另約 <strong class="ex-n">4–6 weeks</strong> 確認癒合；<strong class="ex-n">9–12 months</strong> 評估結果與是否需再治療。<span class="ex-ref">p.3948</span></li>
+<li>術後 <strong class="ex-n">8–12 days</strong> 回診拆線；一般（generally）另約 <strong class="ex-n">4–6 weeks</strong> 確認癒合，並於 <strong class="ex-n">9–12 months</strong> 再約評估結果與是否需再治療。<span class="ex-ref">p.3948</span></li>
 <li>植髮醫師不是奇蹟創造者，必須讓病人了解實際可期待的結果。<span class="ex-ref">p.3948</span></li>
 </ul>
 </section>
@@ -315,5 +315,5 @@
 <ul>
 <li>曾有報告發生於植髮後或與植髮相關（after／associated with hair transplantation）：lichen planopilaris <span class="ex-ref ex-ref-mckee">McKee p.1097</span>、frontal fibrosing alopecia <span class="ex-ref ex-ref-mckee">McKee p.1100</span>、erosive pustular dermatosis of the scalp <span class="ex-ref ex-ref-mckee">McKee p.1109</span>、trichorrhexis nodosa <span class="ex-ref ex-ref-mckee">McKee p.1111</span>、atypical fibroxanthoma <span class="ex-ref ex-ref-mckee">McKee p.1776</span>、traumatic neuroma <span class="ex-ref ex-ref-mckee">McKee p.1781</span>。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>每個 FU 的組成數字兩本書寫法不同：Fitzpatrick 寫 FUs 以 1–4 根毛髮成簇 <span class="ex-ref">p.3942</span>（Fig. 217-3 寫多數 2–5 根 <span class="ex-ref">p.3935</span>）；McKee 寫每單位 3–6 個毛囊（含 1–2 個 vellus）<span class="ex-ref ex-ref-mckee">McKee p.1057</span>。</aside>
+<aside class="ex-trap"><strong>易錯</strong>每個 FU 的組成數字兩本書寫法不同：Fitzpatrick 寫 FUs 以 1–4 根毛髮成簇 <span class="ex-ref">p.3942</span>（Fig. 217-3 寫最常（most often）2–5 根 <span class="ex-ref">p.3935</span>）；McKee 寫每單位 3–6 個毛囊（含 1–2 個 vellus）<span class="ex-ref ex-ref-mckee">McKee p.1057</span>。</aside>
 </section>

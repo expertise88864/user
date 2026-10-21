@@ -2,7 +2,7 @@
 <h2>1. Definitions &amp; Neonatal Skin Physiology（定義與新生兒皮膚生理）</h2>
 <ul>
 <li>Neonatal period：出生後頭 <strong class="ex-n">30 days</strong>；之後為 infancy。Full-term：<strong class="ex-n">37–42 週</strong>；preterm：<strong class="ex-n">&lt;37 週</strong>。<span class="ex-ref">p.1727</span></li>
-<li>新生兒（尤其早產兒）外用物質造成 systemic toxicity 的風險較高：surface-area-to-body-mass ratio 較大，代謝、排泄、分布與蛋白結合也不同；congenital ichthyosis 等屏障異常者風險更高。<span class="ex-ref">p.1727、p.1729</span></li>
+<li>新生兒（尤其早產兒）外用物質造成 systemic toxicity 的風險較高：surface-area-to-body-mass ratio 較大，代謝、排泄、分布與蛋白結合也可能與成人明顯不同（can differ significantly）；congenital ichthyosis 等皮膚屏障功能異常者，外用藥物與化學物質全身吸收的風險增加。<span class="ex-ref">p.1727、p.1729</span></li>
 </ul>
 <h3>Embryology（胚胎發育）</h3>
 <table class="ex-table">
@@ -10,44 +10,44 @@
 <tbody>
 <tr><td>Epidermis（basal layer + periderm）</td><td>約 <strong class="ex-n">6 週</strong>開始；periderm 不參與 stratified epithelium，於第二孕期末脫落</td></tr>
 <tr><td>Stratification</td><td>第 <strong class="ex-n">8 週</strong>開始；22–24 週表皮 4–5 層</td></tr>
-<tr><td>Dermal–epidermal junction</td><td><strong class="ex-n">8 週</strong>可見；15 週真皮乳頭層／網狀層成形；elastic fibers 22–24 週</td></tr>
-<tr><td>Hair follicles／lanugo</td><td>毛囊約 14 週；lanugo 18 週開始、28 週完成</td></tr>
+<tr><td>Dermal–epidermal junction</td><td><strong class="ex-n">8 週</strong>可見；collagen fiber 形成與乳頭層／網狀層組織化於 15 週前（by 15 weeks）完成；elastic fibers 22–24 週</td></tr>
+<tr><td>Hair follicles／lanugo</td><td>毛囊約 14 週開始發育；lanugo 約 18 週開始、28 週完成</td></tr>
 <tr><td>Eccrine glands</td><td>第二孕期發育完成，但出生後才有功能</td></tr>
 <tr><td>Apocrine glands</td><td>較晚形成，第三孕期短暫有功能</td></tr>
-<tr><td>Sebaceous glands</td><td>約 <strong class="ex-n">16 週</strong>形成，形成後即有功能；皮脂是 vernix 脂質的重要來源</td></tr>
+<tr><td>Sebaceous glands</td><td>約 <strong class="ex-n">16 週</strong>開始形成，形成後不久即有功能；皮脂是 vernix 脂質的重要來源</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.1727–1728。</p>
 <h3>Vernix caseosa 與屏障功能</h3>
 <ul>
-<li><mark data-q="115-05">Vernix caseosa：含水的 corneocytes 分布在以 nonpolar lipids（sterol esters、triglycerides）為主的脂質基質中</mark>；約妊娠 <strong class="ex-n">36 週</strong>開始產生，與 stratum corneum 成熟相關。<span class="ex-ref">p.1728</span></li>
+<li><mark data-q="115-05">Vernix caseosa：含水的 corneocytes 分布在以 nonpolar lipids（sterol esters、triglycerides）為主的脂質基質中</mark>；約妊娠 <strong class="ex-n">36 週</strong>開始產生，與表皮成熟及 stratum corneum 形成相關。<span class="ex-ref">p.1728</span></li>
 <li><mark data-q="115-05">具 antimicrobial、antioxidant 與 barrier 功能，含 LL-37、cystatin A、calgranulins 等 antimicrobial peptides</mark>；<mark data-q="115-05">出生後常被擦除，但有專家質疑此做法</mark>。<span class="ex-ref">p.1728</span></li>
 <li>足月兒一般認為出生後 <strong class="ex-n">2–4 週</strong>內達到完整屏障功能（也有專家認為出生時已完整）。<span class="ex-ref">p.1728</span></li>
-<li><mark data-q="115-05">足月兒出生後數小時皮膚乾燥後，TEWL 即與成人相當</mark>；但 diaper area 的 TEWL 較高，造成屏障受損與 diaper dermatitis 風險。<span class="ex-ref">p.1728</span></li>
+<li><mark data-q="115-05">足月兒出生後數小時皮膚乾燥後，TEWL 即與成人相當</mark>，但部位與環境溫濕度有部分差異，包括 diaper area 的 TEWL 較高，造成屏障受損與 diaper dermatitis 風險。<span class="ex-ref">p.1728</span></li>
 <li>所有嬰兒都有角質層上層脫屑；postterm（&gt;40 週）vernix 較少、脫屑更明顯（乾燥、hyperlinear、scaly）。頭 <strong class="ex-n">3 個月</strong>角質層變薄、表皮變厚，形成 dermal papillae 與 epidermal ridges。<span class="ex-ref">p.1728</span></li>
-<li>Skin pH：新生兒（足月與早產）比成人偏鹼性，頭數週逐漸下降。Sebum 分泌出生時高，之後數月下降。Eccrine sweating 足月兒即有，早產兒延遲。<span class="ex-ref">p.1728</span></li>
+<li>Skin pH：新生兒（足月與早產）比較大嬰兒與成人偏鹼性，頭數週逐漸下降。Sebum 分泌出生時高，之後數月下降。Eccrine sweating 足月兒即有，早產兒延遲。<span class="ex-ref">p.1728</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>足月兒出生後數小時皮膚乾燥後，TEWL 與成人相當（部位與環境溫濕度有差異，diaper area 的 TEWL 較高）；preterm 與 low-birthweight 新生兒 TEWL 明顯增加，且隨妊娠週數下降而增加。</aside>
+<aside class="ex-trap"><strong>易錯</strong>足月兒出生後數小時皮膚乾燥後，TEWL 與成人相當（部位與環境溫濕度有差異，diaper area 的 TEWL 較高）；preterm 與 low-birthweight 新生兒 TEWL 明顯增加，且隨妊娠週數下降而增加。<span class="ex-ref">p.1728–1729</span></aside>
 <h3>Prematurity（早產）</h3>
 <ul>
-<li><strong class="ex-n">&lt;34 週</strong>出生者表皮屏障明顯不足；角質層功能成熟約自 24 週開始，<strong class="ex-n">&lt;26 週</strong>出生者屏障成熟可能超過 4 週。<span class="ex-ref">p.1728</span></li>
+<li>早產兒（尤其 <strong class="ex-n">&lt;34 週</strong>出生者）表皮屏障明顯不足；角質層功能成熟約自 24 週開始，<strong class="ex-n">&lt;26 週</strong>出生者屏障成熟可能超過 4 週。<span class="ex-ref">p.1728</span></li>
 <li><mark data-q="115-05">TEWL 在 preterm 與 low-birthweight 新生兒明顯增加，且隨妊娠週數下降而上升</mark>；radiant warmer 與 phototherapy 也會增加 TEWL。<span class="ex-ref">p.1729</span></li>
-<li>屏障不良 → electrolyte imbalance、體溫調節差、脫水、外用藥吸收增加、感染；皮膚脆弱，連例行照護都可造成疼痛；indwelling catheter 是感染入口。</li>
-<li>體溫調節差：皮下脂肪薄、出汗能力差、皮膚血管自主神經控制差、表面積／體重比大。</li>
+<li>屏障不良 → electrolyte imbalance、體溫調節差、脫水、外用藥吸收增加、感染；皮膚脆弱，表皮與真皮損傷可能（may）即使在例行照護下也造成明顯疼痛；皮膚菌可經薄而脆弱皮膚的破損處及 indwelling venous catheter 等醫源性入口造成感染與 sepsis。<span class="ex-ref">p.1729</span></li>
+<li>體溫調節差：皮下脂肪薄、出汗能力差、皮膚血管自主神經控制差、表面積／體重比大。<span class="ex-ref">p.1729</span></li>
 </ul>
 <h3>Emollients in preterm infants（早產兒潤膚劑）</h3>
 <ul>
-<li>Petrolatum-based emollient 可降低 TEWL、改善皮膚完整性，但在 extremely low-birthweight（<strong class="ex-n">≤1000 g</strong>）出現 systemic candidiasis 增加三倍，very-low-birthweight（≤1500 g）也有爆發。<span class="ex-ref">p.1729</span></li>
-<li>2004 Cochrane：預防性外用油膏增加 nosocomial infection，不建議常規使用；2016 Cochrane：emollient 無法預防 invasive infection 或死亡。</li>
-<li>孟加拉資源不足地區的 RCT：sunflower seed oil 或 Aquaphor 按摩可降低早產兒死亡率。</li>
-<li>結論：使用 petrolatum emollient 者需監測感染，特別是出生體重 <strong class="ex-n">&lt;1500 g</strong>。</li>
+<li>1990 年代研究報告 petrolatum-based emollient 似乎（appeared）可降低住院早產兒 TEWL 而有益；之後許多 NICU 開始使用各種 emollient，皮膚完整性雖持續改善，但一個 NICU 對 extremely low-birthweight（<strong class="ex-n">≤1000 g</strong>）早產兒實施後報告 systemic candidiasis 發生率增加三倍，另一個 NICU 使用 emollient 的 very-low-birthweight（≤1500 g）新生兒也發生 systemic candidiasis 爆發。<span class="ex-ref">p.1729</span></li>
+<li>2004 Cochrane：預防性外用油膏增加 nosocomial infection 風險，不建議早產兒常規使用；2016 Cochrane：早產兒外用 emollient 無法預防 invasive infection 或死亡。<span class="ex-ref">p.1729</span></li>
+<li>貧困孟加拉早產兒族群的 RCT：以 sunflower seed oil 或 Aquaphor 按摩者，相較未接受按摩或 emollient 者死亡率下降；提示（suggesting）在某些族群（如無法取得精密新生兒加護照護者），emollient 可能（may）對高風險早產兒有益。<span class="ex-ref">p.1729</span></li>
+<li>在前瞻性對照試驗完成前，使用 petrolatum-based emollient 的新生兒應仔細監測感染，特別是出生體重 <strong class="ex-n">&lt;1500 g</strong>。<span class="ex-ref">p.1729</span></li>
 </ul>
 <h3>Skin care &amp; examination（照護與檢查）</h3>
 <ul>
-<li>歐洲專家建議：每週洗澡 <strong class="ex-n">2–3 次</strong>、每次不超過 <strong class="ex-n">5–10 分鐘</strong>，用溫和 soap-free liquid cleanser（不用毛巾搓），洗後擦 emollient；原則「less is best」。<span class="ex-ref">p.1729</span></li>
-<li>新生兒第一個月平均接觸約 10 種產品、&gt;50 種化學物；過度清潔會刺激、asteatosis，並可能增加 allergic contact dermatitis。足月兒用 cleanser 與只用清水對 TEWL、pH、角質層含水量無差異。</li>
+<li>歐洲專家建議：每週洗澡 <strong class="ex-n">2–3 次</strong>、每次不超過 <strong class="ex-n">5–10 分鐘</strong>，用溫和 soap-free liquid cleanser（不用毛巾搓），洗後擦 emollient。<span class="ex-ref">p.1729</span></li>
+<li>估計新生兒第一個月平均接觸約 10 種產品、&gt;50 種化學物；應教導家長「less is best」；洗澡過度頻繁與使用多種產品除了刺激與 asteatosis，還可能（may）增加 allergic contact dermatitis 風險。健康足月兒用 cleanser 與只用清水洗澡相比，對 TEWL、skin surface pH、角質層含水量無影響。<span class="ex-ref">p.1729</span></li>
 <li>病史須含妊娠與生產史、家族史、孕期藥物與感染（varicella、rubella、STD）及胎盤外觀。<span class="ex-ref">p.1729</span></li>
-<li>Vasoconstricted macule 或 erosion 可能是 infantile hemangioma 的最早表現。</li>
+<li>Vasoconstricted macule 或 erosion 可能是 infantile hemangioma 的最早表現。<span class="ex-ref">p.1729</span></li>
 <li><mark data-q="104-24">Midline face、scalp、spine 病灶可能與 CNS 相通，切片前應先影像檢查排除 CNS communication</mark>。<span class="ex-ref">p.1730</span></li>
 </ul>
 </section>
@@ -59,24 +59,24 @@
 <tbody>
 <tr><td>Pustules（膿疱）</td><td>Erythema toxicum neonatorum、transient neonatal pustular melanosis、congenital candidiasis、pustular psoriasis、Langerhans cell histiocytosis、neonatal cephalic pustulosis、bacterial sepsis、herpes simplex infection</td></tr>
 <tr><td>Blisters（水疱）</td><td>Sucking blisters、HSV、aplasia cutis congenita、cutaneous mastocytosis、epidermolysis bullosa、neonatal pemphigus、varicella、impetigo、incontinentia pigmenti、epidermolytic ichthyosis</td></tr>
-<tr><td>The red scaly baby（紅皮脫屑）</td><td>Physiologic scaling（postdates）、psoriasis、atopic dermatitis、scabies、seborrheic dermatitis、immunodeficiency、hypohidrotic ectodermal dysplasia、<mark data-q="105-50">Netherton syndrome</mark>、acrodermatitis enteropathica</td></tr>
+<tr><td>The red scaly baby（紅皮脫屑）</td><td>Physiologic scaling and redness（postdates）infant、psoriasis、atopic dermatitis、scabies、seborrheic dermatitis、immunodeficiency、hypohidrotic ectodermal dysplasia、<mark data-q="105-50">Netherton syndrome</mark>、acrodermatitis enteropathica</td></tr>
 <tr><td>The collodion baby（膠膜兒）</td><td><mark data-q="105-50,108-01">Lamellar ichthyosis、congenital ichthyosiform erythroderma</mark>、Gaucher syndrome、<mark data-q="105-50">trichothiodystrophy</mark>、neutral lipid storage disorder</td></tr>
 <tr><td>The "blueberry muffin" baby</td><td>TORCH infections、congenital leukemia、congenital self-healing reticulohistiocytosis、blue rubber bleb nevus syndrome、twin–twin transfusion（內文另提 neuroblastoma）</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 103-1，p.1730；neuroblastoma 見 p.1744。</p>
-<aside class="ex-trap"><strong>易錯</strong>Table 103-1 把 Netherton syndrome 列在「red scaly baby」；「collodion baby」列的是 lamellar ichthyosis、congenital ichthyosiform erythroderma、Gaucher syndrome、trichothiodystrophy、neutral lipid storage disorder。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Table 103-1 把 Netherton syndrome 列在「red scaly baby」；「collodion baby」列的是 lamellar ichthyosis、congenital ichthyosiform erythroderma、Gaucher syndrome、trichothiodystrophy、neutral lipid storage disorder。<span class="ex-ref">p.1730</span></aside>
 </section>
 
 <section class="ex-note" id="transient">
 <h2>3. Transient Dermatoses of the Neonate（新生兒暫時性皮膚病）</h2>
-<p>多數在 <strong class="ex-n">30 天</strong>內消退、不需治療。<span class="ex-ref">p.1730</span></p>
+<p>傾向在 <strong class="ex-n">30 天</strong>內消退的良性狀況稱為 transient；很常見，多數不需處置。<span class="ex-ref">p.1730</span></p>
 <h3>Scalp birth trauma（產傷頭皮病灶）</h3>
 <table class="ex-table">
 <thead><tr><th scope="col">Condition</th><th scope="col">Mechanism（機轉）</th><th scope="col">Features（特徵）</th><th scope="col">Course（病程）</th></tr></thead>
 <tbody>
 <tr><td>Caput succedaneum</td><td><mark data-q="109-49">先露部受子宮頸壓迫造成 subcutaneous edema</mark></td><td>軟、邊界不清；可有 petechiae、ecchymosis；很常見</td><td><mark data-q="109-49">水腫 <strong class="ex-n">7–10 天</strong>自行消退</mark></td></tr>
-<tr><td>Cephalohematoma</td><td>Diploic／emissary veins 破裂 → subperiosteal 出血；與產傷、vacuum extraction 有關</td><td>不越過 suture lines、邊界清楚、多為單側、觸感硬；可合併 skull fracture</td><td>數週消退，可能 calcification</td></tr>
+<tr><td>Cephalohematoma</td><td>Diploic／emissary veins 破裂 → subperiosteal 出血；與產傷、vacuum extraction 有關</td><td>不越過 suture lines、邊界清楚、多為單側、觸感硬；可合併 skull fracture</td><td>通常數週內消退、無後遺症，但可能 calcification</td></tr>
 <tr><td>Subgaleal hemorrhage</td><td>Emissary veins 損傷，出血位於骨膜與 galea 之間</td><td>嚴重、可能致命</td><td>可致 hypovolemic shock、DIC</td></tr>
 </tbody>
 </table>
@@ -84,12 +84,12 @@
 <h3>Milia（粟粒疹）</h3>
 <ul>
 <li><mark data-q="109-49">針尖至 2 mm 丘疹，為良性、表淺的 epidermal inclusion cysts；多在臉部，通常數週內自行消退</mark>。<span class="ex-ref">p.1730–1731</span></li>
-<li>口腔內者稱 <strong>Epstein pearls</strong>；亦有 congenital milia en plaque。</li>
-<li>持續或大量 milia 可見於 oral-facial-digital syndrome、Bazex-Dupré-Christol syndrome、Basan syndrome。<span class="ex-ref">p.1731</span></li>
+<li>口腔內者稱 <strong>Epstein pearls</strong>；亦有 congenital milia en plaque 的報告（has been reported）。<span class="ex-ref">p.1731</span></li>
+<li>持續或大量 milia 可能（may）合併數種罕見遺傳疾病，包括 oral-facial-digital syndrome、Bazex-Dupré-Christol syndrome、Basan syndrome。<span class="ex-ref">p.1731</span></li>
 </ul>
 <h3>Sebaceous gland hyperplasia（皮脂腺增生）</h3>
 <ul>
-<li><mark data-q="109-49">至少 <strong class="ex-n">50%</strong> 正常新生兒有；鼻與前額中央毛孔處 &lt;1 mm 黃色斑點或丘疹；推測為 maternal androgen 刺激，通常 <strong class="ex-n">4–6 個月</strong>大自行消退</mark>。<span class="ex-ref">p.1731</span></li>
+<li><mark data-q="109-49">至少 <strong class="ex-n">50%</strong> 正常新生兒有；足月兒鼻與前額中央毛孔處常見 &lt;1 mm 黃色斑點或丘疹；推測為 maternal androgen 刺激，通常 <strong class="ex-n">4–6 個月</strong>大自行消退</mark>。<span class="ex-ref">p.1731</span></li>
 </ul>
 <h3>Erythema toxicum neonatorum（ETN，新生兒毒性紅斑）</h3>
 <ul>
@@ -97,29 +97,29 @@
 <li>1–3 cm 斑駁紅斑，中央有 1–4 mm vesicle 或 pustule；毛囊性。</li>
 <li><mark data-q="107-04">通常出生後 <strong class="ex-n">24–48 小時</strong>出現，但有晚到 <strong class="ex-n">10 天</strong>的紀錄</mark>。</li>
 <li><mark data-q="115-22">任何部位皆可，但傾向不侵犯 palms and soles</mark>。</li>
-<li><mark data-q="103-39,107-04,108-16,115-22">中央內容物 Wright stain 可見大量 eosinophils</mark>；病灶多者可有 <strong class="ex-n">最高 20%</strong> peripheral blood eosinophilia。</li>
+<li><mark data-q="103-39,107-04,108-16,115-22">中央內容物 Wright stain 可見大量 eosinophils</mark>；可能（may）伴有 <strong class="ex-n">最高 20%</strong> peripheral blood eosinophilia，尤其病灶多的嬰兒。</li>
 <li><mark data-q="107-04,109-49,115-22">良性，<strong class="ex-n">2–3 週</strong>大時自行消退且不留痕跡（without residua）</mark>。</li>
 </ul>
 <h3>Transient neonatal pustular melanosis（TNPM，暫時性新生兒膿疱性黑變病）</h3>
 <ul>
 <li><mark data-q="108-24">Idiopathic pustular eruption</mark>，消退後留下 hyperpigmented macules；比 ETN 少見，<mark data-q="115-22">深膚色新生兒較常見</mark>。<span class="ex-ref">p.1731</span></li>
 <li>通常出生時或剛出生即有，可晚到 <strong class="ex-n">3 週</strong>；多發表淺 vesicles／pustules，破後留 collarettes of scale；色素斑常出生即有，或在數小時到頭幾天於膿疱處出現。</li>
-<li>好發 forehead、mandibular area；<mark data-q="115-22">palms and soles 可侵犯</mark>。</li>
+<li>可在任何部位，但常見於 forehead、mandibular area；<mark data-q="115-22">palms and soles 可侵犯</mark>。</li>
 <li><mark data-q="115-22">抹片以 neutrophils 為主，偶見 eosinophils</mark>。</li>
-<li><mark data-q="115-22">膿疱 <strong class="ex-n">5–7 天</strong>消失，殘留色素斑數週內消退</mark>。</li>
+<li><mark data-q="115-22">膿疱通常 <strong class="ex-n">5–7 天</strong>內消失，殘留色素斑數週內消退</mark>。</li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Feature（特徵）</th><th scope="col">ETN</th><th scope="col">TNPM</th></tr></thead>
 <tbody>
 <tr><td>Population（族群）</td><td>足月兒最多 75%；早產兒罕見</td><td>較少見；深膚色新生兒較多（McKee：黑人 4–5%、白人 0.1–0.3%）</td></tr>
-<tr><td>Onset（發生）</td><td>24–48 小時（最晚 10 天）</td><td>出生時即有（最晚 3 週）</td></tr>
+<tr><td>Onset（發生）</td><td>24–48 小時（最晚 10 天）</td><td>通常出生時或剛出生即有（最晚 3 週）</td></tr>
 <tr><td>Palms／soles</td><td>傾向不侵犯</td><td>可侵犯</td></tr>
 <tr><td>Smear（抹片）</td><td>Eosinophils</td><td>Neutrophils（偶見 eosinophils）</td></tr>
 <tr><td>Resolution（消退）</td><td>2–3 週，不留痕跡</td><td>膿疱 5–7 天；色素斑數週（McKee：通常 3 個月大前消失）</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.1731；<span class="ex-ref ex-ref-mckee">McKee p.240</span>。</p>
-<aside class="ex-trap"><strong>易錯</strong>TNPM 消退後留下 hyperpigmented macules；ETN 於 2–3 週大自行消退且不留痕跡（without residua）。抹片：ETN 有大量 eosinophils；TNPM 以 neutrophils 為主、偶見 eosinophils。ETN 見於多達 75% 足月新生兒，早產兒罕見。歸因於 <em>Malassezia</em> spp. 過度生長的是 neonatal cephalic pustulosis。</aside>
+<aside class="ex-trap"><strong>易錯</strong>TNPM 消退後留下 hyperpigmented macules；ETN 於 2–3 週大自行消退且不留痕跡（without residua）。抹片：ETN 有大量 eosinophils；TNPM 以 neutrophils 為主、偶見 eosinophils。ETN 見於多達 75% 足月新生兒，早產兒罕見。歸因於 <em>Malassezia</em> spp. 過度生長的是 neonatal cephalic pustulosis。<span class="ex-ref">p.1731–1732</span></aside>
 <h3>Miliaria rubra and crystallina（汗疹）</h3>
 <ul>
 <li>Eccrine gland 疾病，常因發燒或過熱（如包得太緊）引起；汗液及可能的 <em>Staphylococcus epidermidis</em> extracellular polysaccharides 阻塞汗管。<span class="ex-ref">p.1731–1732</span></li>
@@ -127,7 +127,7 @@
 <li><mark data-q="110-02">Miliaria rubra：阻塞位置較深但仍在表皮內（deeper level within the epidermis），伴發炎，表現為 1–3 mm 紅色丘疹或丘膿疱</mark>。<span class="ex-ref">p.1732</span></li>
 <li>去除誘因後自行消退。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Miliaria rubra：Fitzpatrick 寫 deeper level of occlusion within the epidermis；McKee 寫阻塞在 prickle cell layer，組織為以表皮內 eccrine duct 為中心的 intraepidermal spongiotic vesicle。Miliaria profunda（McKee）：eccrine duct 真皮段 spongiosis。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Miliaria rubra：Fitzpatrick 寫 deeper level of occlusion within the epidermis；McKee 寫阻塞在 prickle cell layer，組織為以表皮內 eccrine duct 為中心的 intraepidermal spongiotic vesicle。Miliaria profunda（McKee）：eccrine duct 真皮段 spongiosis。<span class="ex-ref">p.1732</span>；<span class="ex-ref ex-ref-mckee">McKee p.221–222</span></aside>
 <h3>Mottling and cutis marmorata（生理性網狀青斑）</h3>
 <ul>
 <li>受冷時四肢與軀幹的網狀暗紅斑；幾乎所有新生兒都會出現，因皮膚血管叢自主神經控制不成熟。<span class="ex-ref">p.1732</span></li>
@@ -136,15 +136,15 @@
 <h3>Harlequin color change（丑角色變）</h3>
 <ul>
 <li><mark data-q="108-24">罕見血管現象；見於足月新生兒，也見於 low-birthweight、premature，以及缺氧或使用 systemic prostaglandins 的嬰兒</mark>。<span class="ex-ref">p.1732</span></li>
-<li>側躺時下側半身潮紅、上側蒼白，中線界線分明；轉為仰躺後數秒消退，最長可持續 <strong class="ex-n">20 分鐘</strong>。</li>
+<li>側躺時下側半身潮紅、上側蒼白，中線界線分明；轉為仰躺後通常數秒內消退，最長可持續 <strong class="ex-n">20 分鐘</strong>。</li>
 <li><mark data-q="108-24">機轉不明，可能是 autonomic vasomotor control 不成熟</mark>。</li>
 <li>很少見於 <strong class="ex-n">10 天</strong>大以後；持續存在或較大年紀才出現，可能是潛在神經疾病。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 9e：harlequin color change 見於 full-term newborns，也見於 low-birthweight 與 premature infants，以及暴露於 hypoxia 或 systemic prostaglandins 的嬰兒（108-24 見題目疑義）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 9e：harlequin color change 見於 full-term newborns，也見於 low-birthweight 與 premature infants，以及暴露於 hypoxia 或 systemic prostaglandins 的嬰兒（108-24 見題目疑義）。<span class="ex-ref">p.1732</span></aside>
 <h3>Sucking blisters（吸吮水疱）</h3>
 <ul>
 <li>可在出生時即有（子宮內吸吮），但較常在頭幾週出現；通常單一、完整的橢圓或線狀水疱、糜爛或痂，位於前臂背側、手腕或手指，皮膚無發炎；上唇可有 callus。<span class="ex-ref">p.1732</span></li>
-<li>數天內消退；把患肢放到嘴邊，嬰兒會開始吸吮即可確診。</li>
+<li>數天內消退；把患肢放到嘴邊，嬰兒常會開始吸吮該處，即可確診。</li>
 </ul>
 <h3>Benign neonatal cephalic pustulosis（良性新生兒頭部膿疱症）</h3>
 <ul>
@@ -152,7 +152,7 @@
 <li><mark data-q="108-24,114-25">歸因於 <em>Malassezia</em> spp. 過度生長</mark>；<mark data-q="114-25">多數自行消退，也可外用 ketoconazole 治療</mark>。</li>
 <li><mark data-q="112-07">True infantile acne 較少見，以較晚發病，以及有 comedones、acneiform cysts、scars 區分</mark>。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>本章：true infantile acne 以較晚發病，以及有 comedones、acneiform cysts、scars 區分；neonatal acneiform facial eruptions 估計見於 50% 新生兒。ch80 p.1448：neonatal acne 見於多達 20% 健康新生兒，約 2 週大出現、3 個月內自行消退，沒有 comedo formation；neonatal cephalic pustulosis 為類似但分布較廣（臉、頭皮、上胸背、肩）的 papulopustular lesions。</aside>
+<aside class="ex-trap"><strong>易錯</strong>本章：true infantile acne 以較晚發病，以及有 comedones、acneiform cysts、scars 區分；neonatal acneiform facial eruptions 估計見於 50% 新生兒。ch80 p.1448：neonatal acne 見於多達 20% 健康新生兒，通常約 2 週大出現、3 個月內自行消退，沒有 comedo formation；neonatal cephalic pustulosis 為類似但分布較廣（臉、頭皮、上胸背、肩）的 papulopustular lesions。<span class="ex-ref">p.1732、p.1448（ch80）</span></aside>
 </section>
 
 <section class="ex-note" id="transient-histo">
@@ -168,10 +168,10 @@
 </tbody>
 </table>
 <ul>
-<li>McKee 的 ETN 流行病學：影響 <strong class="ex-n">48–72%</strong> 新生兒（ch6），另一處寫「up to 50%」（ch15）；<mark data-q="108-24">較常見於出生體重較高、妊娠週數較大、經陰道生產者</mark>；常於出生後 3 天內出現，palms and soles 通常不侵犯，病灶多僅持續數小時至數天，最多 11% 復發。<span class="ex-ref ex-ref-mckee">McKee p.239、p.709</span></li>
-<li>ETN 病因不明；目前較支持是對皮膚初次 commensal 菌落化的免疫反應，而非母體淋巴球造成的 GVH 樣反應。<span class="ex-ref ex-ref-mckee">McKee p.239</span></li>
-<li>ETN 的鑑別：<mark data-q="103-39">incontinentia pigmenti 有 eosinophilic spongiosis</mark>，ETN 沒有；miliaria rubra 的水疱與汗管相關（非毛囊），內含 mononuclear cells 而非 eosinophils。<span class="ex-ref ex-ref-mckee">McKee p.239、p.709</span></li>
-<li>Miliaria 三型阻塞層次（McKee）：crystallina 在 stratum corneum、rubra 在 prickle cell layer、profunda 在 sweat duct 層次；<em>S. epidermidis</em> 的 PAS-positive extracellular polysaccharide substance 可阻塞汗管。<span class="ex-ref ex-ref-mckee">McKee p.221–222</span></li>
+<li>McKee 的 ETN 流行病學：影響 <strong class="ex-n">48–72%</strong> 新生兒（ch6），另一處寫「up to 50%」（ch15）；<mark data-q="108-24">一前瞻性研究（盛行率 16.7%）中較常見於白人、出生體重較高、妊娠週數較大、經陰道生產者</mark>；通常於出生後 3 天內出現，palms and soles 典型不侵犯，病灶多僅持續數小時至數天，最多 11% 可能（may）復發。<span class="ex-ref ex-ref-mckee">McKee p.239、p.709</span></li>
+<li>ETN 病因不明；其他資料（other data）較支持是對皮膚初次 commensal 菌落化的免疫反應，而非母體淋巴球造成的 GVH 樣反應。<span class="ex-ref ex-ref-mckee">McKee p.239</span></li>
+<li>ETN 的鑑別：<mark data-q="103-39">incontinentia pigmenti 有 eosinophilic spongiosis</mark>，ETN 沒有；miliaria rubra 的水疱與汗管相關（非毛囊），典型含 mononuclear cells 而非 eosinophils。<span class="ex-ref ex-ref-mckee">McKee p.239、p.709</span></li>
+<li>Miliaria 三型阻塞層次（McKee）：crystallina 在 stratum corneum、rubra 在 prickle cell layer、profunda 在 sweat duct 層次；有證據顯示部分 <em>S. epidermidis</em> 菌株產生的 PAS-positive extracellular polysaccharide substance 會阻塞汗管。<span class="ex-ref ex-ref-mckee">McKee p.221–222</span></li>
 </ul>
 <p class="ex-cite">Fitzpatrick 與 McKee 對 ETN 盛行率數字不同（Fitz 足月兒最多 75%；McKee 48–72% 或 up to 50%），兩者並列。</p>
 </section>
@@ -196,9 +196,9 @@
 </table>
 <p class="ex-cite">p.1733；嬰兒到成人的放大倍數：頭部 1.7 倍、下肢 3.3 倍、其他部位 2.8 倍。</p>
 <ul>
-<li>Large／giant CMN：melanoma 風險增加；posterior axial 位置或 <strong class="ex-n">&gt;20 顆 satellite nevi</strong> 時 neurocutaneous melanocytosis 風險高；新生兒有 <strong class="ex-n">&gt;2 顆 medium CMN</strong> 也有風險。NCM 可致 obstructive hydrocephalus 與 primary CNS melanoma。<span class="ex-ref">p.1733</span></li>
-<li><strong>Pigmentary mosaicism</strong>：晚期 somatic mosaic mutation；不越過中線；Blaschko lines、checkerboard、phylloid 或 patchy；多為單獨表現，但廣泛分布或合併神經、心臟、骨骼肌肉疾病、發展遲緩時要找相關疾病。<span class="ex-ref">p.1733–1734</span></li>
-<li><strong>Nevus depigmentosus</strong>：出生即有、邊界清楚的 hypopigmented patch，背景膚色變深後第一年更明顯；<strong class="ex-n">≥3 塊</strong> hypomelanotic patches 應評估 tuberous sclerosis complex。<span class="ex-ref">p.1734</span></li>
+<li>Large／giant CMN：melanoma 風險增加；可能有 neurocutaneous melanocytosis 併發症風險，尤其 posterior axial 位置或 <strong class="ex-n">&gt;20 顆 satellite nevi</strong> 時；新生兒有 <strong class="ex-n">&gt;2 顆 medium CMN</strong> 也有風險。NCM 可致 obstructive hydrocephalus 與 primary CNS melanoma。<span class="ex-ref">p.1733</span></li>
+<li><strong>Pigmentary mosaicism</strong>：晚期 somatic mosaic mutation；傾向不越過中線；Blaschko lines、checkerboard、phylloid 或 patchy；多為單獨表現，但廣泛分布或合併神經、心臟、骨骼肌肉疾病、發展遲緩時要找相關疾病。<span class="ex-ref">p.1733–1734</span></li>
+<li><strong>Nevus depigmentosus</strong>：出生即有、邊界清楚的 hypopigmented patch，隨背景膚色漸深，第一年有時更明顯；新生兒有 <strong class="ex-n">≥3 塊</strong> hypomelanotic patches 應評估是否為 tuberous sclerosis complex。<span class="ex-ref">p.1734</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col"> </th><th scope="col">Nevus anemicus</th><th scope="col">Nevus depigmentosus</th></tr></thead>
@@ -214,17 +214,17 @@
 <li><mark data-q="102-46,107-06">所有種族都很常見：白人嬰兒 <strong class="ex-n">70%</strong>、黑人嬰兒 <strong class="ex-n">59%</strong></mark>；多數在 <strong class="ex-n">2 年</strong>內變淡，但 occipital scalp 者常持續。<mark data-q="107-06">須與其他 capillary malformations（如 port-wine stain）區分</mark>。</li>
 <li>Infantile hemangioma 是嬰兒最常見腫瘤（詳見 ch118）；vascular malformations 分 slow-flow（capillary、venous、lymphatic）與 fast-flow（AVM、complex combined）（詳見 ch147）。<span class="ex-ref">p.1734</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Nevus simplex 最常見於 glabella、upper eyelids、nuchal area，較少見於下背與頭皮；dermal melanocytosis 典型位於 lumbosacral 或 buttock；solitary café-au-lait macules are very common，multiple CALM raises the possibility of NF1（p.1733）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Nevus simplex 最常見於 glabella、upper eyelids、nuchal area，較少見於下背與頭皮；dermal melanocytosis 典型位於 lumbosacral 或 buttock；solitary café-au-lait macules are very common，multiple CALM raises the possibility of NF1。<span class="ex-ref">p.1733–1734</span></aside>
 <h3>Other birthmarks（其他胎記）</h3>
 <ul>
-<li><strong>Nevus sebaceus</strong>：大量皮脂腺構成的 hamartoma，頭部黃色無毛斑塊；青春期變厚、疣狀；可長 trichoblastoma、syringocystadenoma papilliferum，BCC 少見；廣泛者可合併 CNS、眼、骨骼異常（Schimmelpenning／nevus sebaceus syndrome）。<span class="ex-ref">p.1734</span></li>
-<li><strong>Epidermal nevus</strong>：沿 Blaschko lines 的褐色 hyperkeratotic 丘疹或細長斑塊；難治（切除留大疤、雷射與 dermal shave 易復發）；廣泛者評估 epidermal nevus syndrome（CNS、眼、骨骼）。</li>
+<li><strong>Nevus sebaceus</strong>：大量皮脂腺構成的 hamartoma，最常為新生兒頭部黃色無毛斑塊；青春期前後可能變厚、疣狀；有時長出 trichoblastoma、syringocystadenoma papilliferum，少數報告發生 BCC；廣泛者可合併 CNS、眼、骨骼異常（Schimmelpenning／nevus sebaceus syndrome）。<span class="ex-ref">p.1734</span></li>
+<li><strong>Epidermal nevus</strong>：沿 Blaschko lines 的褐色 hyperkeratotic 丘疹或細長斑塊；難治（切除可能留大疤，某些部位會限制活動度；雷射與 dermal shave 有局部疤痕與高復發風險）；廣泛者評估 epidermal nevus syndrome（CNS、眼、骨骼）。</li>
 </ul>
 <h3>McKee 補充</h3>
 <ul>
-<li>Mongolian spot：<mark data-q="107-06">最常位於 sacral region</mark>；<mark data-q="102-46">最常見於日本人、華人與有色人種</mark>；男性略多；多在嬰幼兒期消退、青春期前消失，sacrum 以外者較易持續。可合併 inherited metabolic disorders（Hurler、GM1 gangliosidosis、mucolipidosis II 等，這類通常不消退甚至更深）、occult spinal dysraphism、vascular birthmarks（phakomatosis pigmentovascularis）。<span class="ex-ref ex-ref-mckee">McKee p.1292–1293</span></li>
+<li>Mongolian spot：<mark data-q="107-06">最常位於 sacral region</mark>；<mark data-q="102-46">最常見於日本人、華人與有色人種</mark>；男性略多；多數在嬰兒期或兒童期自行消退，一般在青春期前消失；持續到成人罕見，通常與 sacrum 以外位置有關。常合併（often associated）多種共病，包括 inherited metabolic disorders（Hurler、GM1 gangliosidosis、mucolipidosis II 等，這類通常不消退，甚至可能隨時間更深）、occult spinal dysraphism、vascular birthmarks（phakomatosis pigmentovascularis）。<span class="ex-ref ex-ref-mckee">McKee p.1292–1293</span></li>
 <li>Mongolian spot 組織學：表皮正常；稀疏、與皮面平行的 dendritic、色素不一的 melanocytes，主要位於 deep reticular dermis（被認為是神經嵴 melanocytes 遷移停滯）。<span class="ex-ref ex-ref-mckee">McKee p.1293</span></li>
-<li>Salmon patch：<mark data-q="102-46,107-06">可見於最多三分之一新生兒，是最常見的 vascular malformation</mark>；另有研究足月兒 28%、早產兒 25.8%；後頸者與母親 &gt;35 歲較相關。McKee 註明舊稱 nevus flammeus 包含 salmon patch 與 port-wine stain，現在只指 port-wine stain。<span class="ex-ref ex-ref-mckee">McKee p.1824–1825</span></li>
+<li>Salmon patch：<mark data-q="102-46,107-06">可見於最多三分之一新生兒，是最常見的 vascular malformation</mark>；另有研究足月兒 28%、早產兒 25.8%；後頸者似乎與母親 &gt;35 歲較相關。McKee 註明舊稱 nevus flammeus 包含 salmon patch 與 port-wine stain，現在只指 port-wine stain。<span class="ex-ref ex-ref-mckee">McKee p.1824–1825</span></li>
 </ul>
 </section>
 
@@ -244,7 +244,7 @@
 <thead><tr><th scope="col">Risk of occult spinal dysraphism</th><th scope="col">Lumbosacral midline lesions（腰薦中線病灶）</th><th scope="col">Imaging（影像）</th></tr></thead>
 <tbody>
 <tr><td>Group 1（high）</td><td><strong class="ex-n">≥2</strong> 個任何病灶；1 個病灶 + spinal cord dysfunction；lipoma；tail；dermal sinus</td><td>MRI</td></tr>
-<tr><td>Group 2（intermediate）</td><td>Atypical sacral dimple（深、直徑 <strong class="ex-n">≥5 mm</strong> 或距肛門 <strong class="ex-n">&gt;2.5 cm</strong>）；unclassified hamartoma；<mark data-q="102-10">aplasia cutis congenita</mark>；deviation of gluteal crease</td><td><strong class="ex-n">&lt;4 個月</strong>：ultrasonography（異常再 MRI）；<strong class="ex-n">&gt;4 個月</strong>或無超音波專家：MRI</td></tr>
+<tr><td>Group 2（intermediate）</td><td>Atypical sacral dimple（Fig. 103-8：deep、距肛門 <strong class="ex-n">&gt;2.5 cm</strong>、size <strong class="ex-n">≥5 mm</strong>；內文：直徑 ≥5 mm 或距肛門 ≥2.5 cm）；unclassified hamartoma；<mark data-q="102-10">aplasia cutis congenita</mark>；deviation of gluteal crease</td><td><strong class="ex-n">&lt;4 個月</strong>：ultrasonography（異常再 MRI）；<strong class="ex-n">&gt;4 個月</strong>或無超音波專家：MRI</td></tr>
 <tr><td>Group 3（low）</td><td>Port-wine stain；hypertrichosis（除非大或不尋常）；pigmented nevus；simple sacral dimple（&lt;5 mm、距肛門 ≤2.5 cm）；Mongolian spot；<mark data-q="102-10">small focal infantile hemangioma</mark></td><td>No imaging</td></tr>
 </tbody>
 </table>
@@ -253,60 +253,60 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Anomaly</th><th scope="col">Key points（重點）</th></tr></thead>
 <tbody>
-<tr><td>Dermoid cyst</td><td>沿臉部、頭皮胚胎融合線；出生時不一定明顯；硬結節，可黏附骨膜。<mark data-q="102-10,111-04">Nasal dermoid 可合併 dermal pit 或 sinus，有顯著 intracranial extension 風險</mark>；建議切除，<mark data-q="104-24">中線者術前考慮 MRI</mark>。<span class="ex-ref">p.1735</span></td></tr>
+<tr><td>Dermoid cyst</td><td>典型沿臉部、頭皮胚胎融合線發生；出生時不一定明顯；硬結節，可黏附骨膜。<mark data-q="102-10,111-04">Nasal dermoid 可合併 dermal pit 或 sinus，有顯著 intracranial extension 風險</mark>；一般建議切除，<mark data-q="104-24">中線者術前考慮 MRI</mark>。<span class="ex-ref">p.1735</span></td></tr>
 <tr><td>Nasal glioma</td><td><mark data-q="102-10">Heterotopic neural tissue</mark>；鼻部硬、膚色至紅色結節，可扭曲中臉；轉神經外科切除。Fig. 103-9 曾被誤認為 hemangioma。<span class="ex-ref">p.1735</span></td></tr>
 <tr><td>Meningocele／myelomeningocele</td><td>腦膜與 CSF 經顱骨或脊椎缺損疝出；含脊髓神經組織者為 myelomeningocele（spina bifida 最常見表現）；術前影像。<span class="ex-ref">p.1735</span></td></tr>
 <tr><td>Encephalocele</td><td><mark data-q="111-04">神經組織連同腦膜與 CSF 經顱骨缺損疝出；術前影像</mark>；常合併其他顱顏缺陷，可有神經發展後遺症。<span class="ex-ref">p.1736</span></td></tr>
-<tr><td>Human tail</td><td>True tail（脂肪、血管、肌纖維、神經）與 spinal dysraphism 相關，建議 MRI；pseudotail（sacrococcygeal teratoma、myelomeningocele）則無此關聯。<span class="ex-ref">p.1736</span></td></tr>
+<tr><td>Human tail</td><td>True tail（可由脂肪、血管、肌纖維、神經組成）與 spinal dysraphism 相關，建議 MRI；pseudotail（sacrococcygeal teratoma、myelomeningocele）則無此關聯。<span class="ex-ref">p.1736</span></td></tr>
 <tr><td>Hypertrichosis</td><td>腰薦、頸、胸椎上方局部多毛可合併 spinal dysraphism，尤其明顯者（faun tail）。<span class="ex-ref">p.1736</span></td></tr>
 <tr><td>Branchial cleft anomalies</td><td><mark data-q="111-04">頸部常見發育殘留；表現為腫塊、引流竇道或反覆感染；branchial cyst 最常見，多源自第二鰓弓，位於頸部外側、胸鎖乳突肌旁</mark>；手術切除。<span class="ex-ref">p.1736</span></td></tr>
 <tr><td>Thyroglossal duct cyst</td><td>中線頸部腫塊（suprasternal notch 至舌後）；可含 ectopic thyroid；術前必須確認甲狀腺正常。<span class="ex-ref">p.1736</span></td></tr>
-<tr><td>Urachal／omphalomesenteric remnants</td><td>臍部持續引流或腫塊，需手術；umbilical granuloma 則是臍帶脫落後的易出血肉芽組織，silver nitrate 燒灼有效。<span class="ex-ref">p.1737</span></td></tr>
+<tr><td>Urachal／omphalomesenteric remnants</td><td>通常以臍部持續引流或腫塊表現，需手術；umbilical granuloma（常見）則是臍帶脫落後持續的易出血肉芽組織，silver nitrate 燒灼通常有效。<span class="ex-ref">p.1737</span></td></tr>
 </tbody>
 </table>
-<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 要求術前或切片前影像的：midline nasal 與 facial lesions（排除 intracranial connection）、中線 dermoid cyst（考慮 MRI；nasal dermoid 有 significant risk for intracranial extension）、meningocele 與 encephalocele（術前影像）、中線 ACC（顱部影像前不切片）。Branchial cleft anomalies 是頸部常見發育殘留，確定治療為手術切除。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 要求術前或切片前影像的：midline nasal 與 facial lesions（排除 intracranial connection）、中線 dermoid cyst（考慮 MRI；nasal dermoid 有 significant risk for intracranial extension）、meningocele 與 encephalocele（術前影像）、中線 ACC（顱部影像前不切片）。Branchial cleft anomalies 是頸部常見發育殘留，確定治療為手術切除。<span class="ex-ref">p.1735–1738</span></aside>
 <h3>Aplasia cutis congenita（ACC，先天性皮膚發育不全）</h3>
 <ul>
 <li>局部缺少皮膚，有時連皮下組織與骨頭；最常在頭皮。常為單獨表現，也有許多相關疾病。<span class="ex-ref">p.1737</span></li>
-<li><mark data-q="102-10,111-04">沒有單一病因，是多種病程的最終結果，包括 neural tube defect 的 forme fruste</mark>。</li>
-<li>最常見型：後頭皮中線的橢圓、邊界清楚萎縮斑，可潰瘍、結痂或覆蓋薄而亮的膜（membranous aplasia cutis）；多單一，也可多發；<strong>一定無毛</strong>；癒合成萎縮疤（偶有 keloidal）；深度從表皮、淺真皮到包含顱骨的全層缺損；大小從數 mm 到數 cm。</li>
+<li><mark data-q="102-10,111-04">沒有單一病因，似乎是多種病程的最終結果，包括 neural tube defect 的 forme fruste</mark>。</li>
+<li>最常見型：後頭皮中線的橢圓、邊界清楚萎縮斑，可潰瘍、結痂或覆蓋薄而亮的膜（membranous aplasia cutis）；多單一，也可多發；<strong>一定無毛</strong>；癒合後通常為萎縮疤（曾觀察到 keloidal）；深度從表皮、淺真皮到包含顱骨的全層缺損；大小從數 mm 到數 cm。</li>
 <li><mark data-q="104-24,111-04">中線病灶在顱部影像排除 intracranial connection 前不應切片</mark>；<mark data-q="104-24">Fig. 103-11：scraping or biopsy is contraindicated</mark>。<span class="ex-ref">p.1737–1738</span></li>
 <li>處置：排除相關異常後以局部傷口照護保守治療；兒童或青少年期可選擇性疤痕修整。<span class="ex-ref">p.1738</span></li>
 <li><mark data-q="102-10"><strong>Hair collar sign</strong>：頭皮病灶（ACC、dermoid cyst、encephalocele、meningocele、heterotopic brain tissue）周圍一圈較深或較粗的終毛，本身就是 cranial dysraphism 的標記</mark>。<span class="ex-ref">p.1738</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Fig. 103-11：頭頂成群的頭皮糜爛（ACC），scraping or biopsy is contraindicated；中線病灶在顱部影像排除 intracranial connection 前不應切片。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fig. 103-11：頭頂成群的頭皮糜爛（ACC），scraping or biopsy is contraindicated；中線病灶在顱部影像排除 intracranial connection 前不應切片。<span class="ex-ref">p.1737–1738</span></aside>
 <h3>McKee 補充</h3>
 <ul>
 <li>Dermoid cyst：沿胚胎閉合線隔離的皮膚組織；最常見是出生即有、上眼瞼外側的無痛小皮下結節；其他部位含頸中線、鼻根、鼻、前額、乳突、前胸、頭皮。<mark data-q="102-10">頭皮者極少數可有 intracranial extension（dumbbell dermoid），以中線枕部最常見</mark>；顱部 dermoid 感染可能侵犯 CNS。<span class="ex-ref ex-ref-mckee">McKee p.1689–1690</span></li>
-<li>Dermoid 組織學：單房、皮下，可黏附骨膜；stratified squamous epithelium 內襯，<strong>壁上一定有毛囊、皮脂腺</strong>；eccrine 腺 <strong class="ex-n">35%</strong>、apocrine 腺 <strong class="ex-n">15%</strong>；可有平滑肌，但沒有 cartilage 與 bone（與 benign cystic teratoma 不同）。<span class="ex-ref ex-ref-mckee">McKee p.1690</span></li>
-<li>Nasal glioma（glial heterotopia）：多為鼻根旁皮下硬塊（常有 hypertelorism），最多三分之一純鼻內。<mark data-q="102-10,104-24">約 <strong class="ex-n">20%</strong> 與額葉有持續連通（多為 fibrous cord，也可能是真正的 meningocele／encephalocele），臨床與組織學都無法區分 heterotopia 與 encephalocele，術前必須做神經影像</mark>。組織學：疏鬆 glial fibrillary stroma 中的細胞結節，以 astrocytes 為主，夾雜 oligodendrocytes。<span class="ex-ref ex-ref-mckee">McKee p.1806–1807</span></li>
-<li>Branchial（lymphoepithelial）cyst：下顎角附近、胸鎖乳突肌前緣，患者多在 second or third decade，男女相當；內襯 stratified squamous 或 pseudostratified ciliated columnar epithelium，壁上有明顯 germinal centers 的淋巴組織；需排除 cystic lymph node metastasis。<span class="ex-ref ex-ref-mckee">McKee p.1692</span></li>
-<li>ACC：發生率約 <strong class="ex-n">3:20 000</strong> 活產；自 1986 年分為 9 群（Frieden）。Group 1 典型頭皮型（頭頂髮旋附近，1–2 cm），<strong class="ex-n">20–30%</strong> 合併顱骨、腦膜（少數為腦）缺損；Group 2 Adams-Oliver syndrome（頭皮缺損 + transverse terminal limb defects，可合併 CMTC）；Group 3 合併 organoid nevi；<mark data-q="102-10,111-04">Group 4 合併腦或脊髓發育異常（porencephaly、meningomyelocele 等），也有合併 faun tail</mark>；Group 5 fetus papyraceus／胎盤梗塞；Group 6 EB（Bart syndrome）；Group 7 肢端無水疱型；Group 8 子宮內感染（HSV／VZV）或藥物（methimazole、misoprostol）；Group 9 畸形症候群（trisomy 13、4p-、focal dermal hypoplasia）。<span class="ex-ref ex-ref-mckee">McKee p.1020</span></li>
-<li>ACC 組織學：潰瘍底部下方肉芽組織，appendages 缺如；已癒合者可見再上皮化與真皮疤痕（可有骨形成）。<span class="ex-ref ex-ref-mckee">McKee p.1021</span></li>
+<li>Dermoid 組織學：單房、通常位於皮下，可黏附骨膜；stratified squamous epithelium 內襯，伴有毛囊與皮脂腺；eccrine 腺 <strong class="ex-n">35%</strong>、apocrine 腺 <strong class="ex-n">15%</strong>；可有平滑肌，但未見 cartilage 與 bone 的描述（與 benign cystic teratoma 不同）。<span class="ex-ref ex-ref-mckee">McKee p.1690</span></li>
+<li>Nasal glioma（glial heterotopia）：多為鼻根旁皮下硬塊（常有 hypertelorism），最多三分之一純鼻內。<mark data-q="102-10,104-24">約 <strong class="ex-n">20%</strong> 與額葉有持續連通（多為 fibrous cord，也可能是真正的 meningocele／encephalocele），臨床與組織學都無法區分 heterotopia 與 encephalocele，術前必須做神經影像</mark>。組織學：疏鬆 glial fibrillary stroma 中的細胞結節，以 astrocytes 為主，可局部見 oligodendrocytes。<span class="ex-ref ex-ref-mckee">McKee p.1806–1807</span></li>
+<li>Branchial（lymphoepithelial）cyst：下顎角附近、胸鎖乳突肌前緣，患者多在 second or third decade，男女相當；內襯 stratified squamous 或 pseudostratified ciliated columnar epithelium，壁上典型含淋巴組織，germinal centers 通常明顯；合併癌的病例需排除他處原發的 cystic lymph node metastasis。<span class="ex-ref ex-ref-mckee">McKee p.1692</span></li>
+<li>ACC：發生率約 <strong class="ex-n">3:20 000</strong> 活產；自 1986 年分為 9 群。Group 1 典型頭皮型（多位於後頭皮、頂部髮旋附近，1–2 cm），最多 <strong class="ex-n">20–30%</strong> 合併顱骨、腦膜（少數為腦）缺損；Group 2 Adams-Oliver syndrome（頭皮缺損 + transverse terminal limb defects，可合併 CMTC）；Group 3 合併 organoid nevi；<mark data-q="102-10,111-04">Group 4 合併腦或脊髓發育異常（porencephaly、meningomyelocele 等），也有合併 faun tail</mark>；Group 5 軀幹與肢體 ACC 合併 fetus papyraceus 或胎盤梗塞；Group 6 EB（Bart syndrome）；Group 7 肢端無水疱型；Group 8 子宮內感染（HSV／VZV）或藥物（methimazole、misoprostol）；Group 9 畸形症候群與 ectodermal dysplasias（trisomy 13、4p-、focal dermal hypoplasia）。<span class="ex-ref ex-ref-mckee">McKee p.1020</span></li>
+<li>ACC 組織學：典型為潰瘍底，其下可見肉芽組織，appendages 缺如；已癒合者可見再上皮化與真皮疤痕（可有骨形成）。<span class="ex-ref ex-ref-mckee">McKee p.1021</span></li>
 </ul>
 </section>
 
 <section class="ex-note" id="infections">
 <h2>7. Infections of the Neonate（新生兒感染）</h2>
 <ul>
-<li><strong class="ex-n">&lt;2 個月</strong>大嬰兒免疫系統未成熟，sepsis 可快速且隱伏發生；體溫下降、餵食差、肌張力差等細微線索都要重視，懷疑時抽 blood、CSF、urine culture 並先給 IV antibiotics。<span class="ex-ref">p.1738</span></li>
+<li><strong class="ex-n">&lt;2 個月</strong>大嬰兒免疫系統未成熟，sepsis 可快速且隱伏發生；體溫下降、餵食差、肌張力差等細微線索都要重視，臨床高度懷疑時一般抽 blood、CSF、urine culture，並在等待結果時先給 IV antibiotics。<span class="ex-ref">p.1738</span></li>
 <li>Table 103-4 新生兒皮膚感染：staphylococcal（impetigo、SSSS、omphalitis、breast abscess［多為 <em>S. aureus</em> 與 Gram-negative］）、viral（varicella、HSV）、fungal／candidal、scabies。<span class="ex-ref">p.1738</span></li>
 <li><strong>Congenital viral infection（TORCH）</strong>：petechiae、purpura、黃疸、肝脾腫大、小頭、腦病變、眼部異常、貧血、血小板低下、conjugated hyperbilirubinemia、肝指數上升，尤其合併「blueberry muffin」紫色結節時要考慮。<span class="ex-ref">p.1738</span></li>
 </ul>
 <h3>Neonatal herpes simplex virus infection（新生兒 HSV）</h3>
 <ul>
-<li>未治療死亡率 <strong class="ex-n">50%</strong>，存活者 <strong class="ex-n">75%</strong> 有神經後遺症。<span class="ex-ref">p.1738</span></li>
+<li>估計未治療死亡率 <strong class="ex-n">50%</strong>，存活者 <strong class="ex-n">75%</strong> 有神經後遺症。<span class="ex-ref">p.1738</span></li>
 <li>風險最高：經陰道生產且母親有 active、<strong>primary</strong> genital herpes（recurrent 時母體經胎盤給抗體，有部分保護）。</li>
 <li><mark data-q="108-24">絕大多數新生兒 HSV 由 <strong>HSV type 2</strong> 引起</mark>。</li>
 <li>多數侵犯 skin、eye 或 mouth，但部分 CNS 或 disseminated disease 從未出現皮膚病灶。<span class="ex-ref">p.1738–1739</span></li>
 <li>出生 <strong class="ex-n">24 小時</strong>內出現水疱提示子宮內感染；較常見在出生後 <strong class="ex-n">第 1 週到 10 天</strong>出現（產道暴露）。<span class="ex-ref">p.1739</span></li>
-<li>即使母親無感染史也要高度懷疑；檢體做 DFA 及／或 viral culture，Tzanck smear 可快速支持，PCR 有助快速診斷；採檢後盡快給 <strong>IV acyclovir</strong>。</li>
+<li>即使母親無感染史也要高度懷疑；檢體做 DFA 及／或 viral culture，Tzanck smear 可快速支持，若可取得，PCR 對快速診斷很有幫助；採檢後盡快給 <strong>IV acyclovir</strong>。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>The vast majority of neonatal HSV cases are caused by HSV type 2；部分 CNS 或 disseminated disease 病人從未出現皮膚病灶。</aside>
+<aside class="ex-trap"><strong>易錯</strong>The vast majority of neonatal HSV cases are caused by HSV type 2；部分 CNS 或 disseminated disease 病人從未出現皮膚病灶。<span class="ex-ref">p.1738–1739</span></aside>
 <h3>Fungal infection（黴菌感染）</h3>
 <ul>
-<li>Congenital cutaneous candidiasis：足月兒為廣泛紅斑、丘疹、膿疱伴表淺脫屑；早產兒可出現大片滲液糜爛。<span class="ex-ref">p.1739</span></li>
-<li>早產兒 angioinvasive fungal disease：潰瘍或壞死灶伴 eschar 與周圍紅斑。</li>
+<li>Congenital cutaneous candidiasis：足月兒典型為廣泛紅斑、丘疹、膿疱伴表淺脫屑；早產兒可出現大片滲液糜爛。<span class="ex-ref">p.1739</span></li>
+<li>早產兒 angioinvasive fungal disease：常表現為潰瘍或壞死灶伴 eschar 與周圍紅斑。</li>
 </ul>
 </section>
 
@@ -314,36 +314,36 @@
 <h2>8. Neonatal Erythroderma &amp; Seborrheic Dermatitis（新生兒紅皮症與脂漏性皮膚炎）</h2>
 <ul>
 <li>新生兒紅皮症少見，但可能代表嚴重疾病，並易併發 sepsis、脫水、電解質失衡。<span class="ex-ref">p.1739</span></li>
-<li>一系列新生兒與嬰兒紅皮症病因：immunodeficiency <strong class="ex-n">30%</strong>、congenital ichthyosis <strong class="ex-n">24%</strong>、eczematous／papulosquamous dermatitis <strong class="ex-n">20%</strong>、Netherton syndrome <strong class="ex-n">18%</strong>、其餘不明。</li>
-<li>Inflammatory：seborrheic dermatitis、infantile psoriasis（典型特徵可能缺乏；congenital psoriasis 可無家族史）、juvenile PRP、atopic／nonatopic eczema。<strong>Atopic dermatitis 很少在頭幾週出現，通常第一個月後才發病</strong>；infantile eczema 與 psoriasis 可並存。<span class="ex-ref">p.1739</span></li>
-<li>Metabolic：holocarboxylase synthetase deficiency、biotinidase deficiency（multiple carboxylase deficiency）→ desquamative dermatitis，亦有 collodion 表現；常伴 lethargy、seizures、apnea；late-onset 者症狀較晚。Essential fatty acid deficiency → exfoliative dermatitis（特殊配方、餵食不當、hyperalimentation、cystic fibrosis 吸收不良），可合併 zinc deficiency。<span class="ex-ref">p.1739–1740</span></li>
+<li>一回溯性新生兒與嬰兒紅皮症病例系列，診斷比例約為：immunodeficiency <strong class="ex-n">30%</strong>、congenital ichthyosis <strong class="ex-n">24%</strong>、eczematous／papulosquamous dermatitis <strong class="ex-n">20%</strong>、Netherton syndrome <strong class="ex-n">18%</strong>，另有 unknown（比例未註明）。<span class="ex-ref">p.1739</span></li>
+<li>Inflammatory：seborrheic dermatitis、infantile psoriasis（典型特徵可能缺乏；congenital psoriasis 為少見表現，可能無 psoriasis 家族史）、juvenile PRP、atopic／nonatopic eczema，可於頭幾週以全身紅斑脫屑表現。<strong>Atopic dermatitis 在頭幾週出現並不常見（uncommon），通常第一個月後才發病</strong>；infantile eczema 與 psoriasis 可並存。<span class="ex-ref">p.1739</span></li>
+<li>Metabolic：holocarboxylase synthetase deficiency、biotinidase deficiency（multiple carboxylase deficiency）可表現 desquamative dermatitis，亦有 collodion 表現的報告；患兒通常（typically）也有 lethargy、seizures、apnea；late-onset 者症狀可能到嬰兒後期或兒童期才出現。Essential fatty acid deficiency（少見）可表現 exfoliative dermatitis；危險因子包括營養不良（可能源於特殊配方、餵食不當、hyperalimentation，或 cystic fibrosis 等吸收不良），可合併 zinc deficiency。<span class="ex-ref">p.1739–1740</span></li>
 <li>Infectious：SSSS（足月與早產兒；先天型罕見）、early congenital syphilis（desquamative 或 vesiculobullous dermatitis）。<span class="ex-ref">p.1740</span></li>
 </ul>
 <h3>Ichthyoses &amp; collodion membrane（魚鱗癬與膠膜）</h3>
 <ul>
-<li>以新生兒紅皮症表現的 congenital ichthyoses：<mark data-q="105-50">Netherton syndrome</mark>、<mark data-q="105-50,108-01">autosomal recessive congenital ichthyosis（常以 collodion membrane 表現）</mark>、Sjögren-Larsson syndrome、KID syndrome、neutral lipid storage disease（Chanarin-Dorfman）。<span class="ex-ref">p.1740</span></li>
+<li>可能（may）以新生兒紅皮症表現的 congenital ichthyoses：<mark data-q="105-50">Netherton syndrome</mark>、<mark data-q="105-50,108-01">autosomal recessive congenital ichthyosis（常以 collodion membrane 表現）</mark>、Sjögren-Larsson syndrome、KID syndrome、neutral lipid storage disease（Chanarin-Dorfman）。<span class="ex-ref">p.1740</span></li>
 <li><mark data-q="105-50">有時以紅皮症或 collodion membrane 表現的其他遺傳病：X-linked hypohidrotic ectodermal dysplasia、type 2 Gaucher disease</mark>。</li>
 </ul>
 <h3>Primary immunodeficiency（原發性免疫缺陷）</h3>
 <table class="ex-table">
 <thead><tr><th scope="col">Syndrome</th><th scope="col">Key points（重點）</th></tr></thead>
 <tbody>
-<tr><td>SCID</td><td>T 與 B cell 合併缺陷，至少 <strong class="ex-n">13</strong> 個基因；diffuse eczematous dermatitis，部分來自 maternal engraftment 造成的 cutaneous GVHD；預後差，建議 <strong class="ex-n">3–4 個月</strong>前做 bone marrow transplantation；新生兒篩檢用 TREC assay</td></tr>
+<tr><td>SCID</td><td>T 與 B cell 合併缺陷，至少 <strong class="ex-n">13</strong> 個基因；diffuse eczematous dermatitis，部分來自 maternal engraftment 造成的 cutaneous GVHD；預後差，一般建議 <strong class="ex-n">3–4 個月</strong>前做 bone marrow transplantation（ideally 在感染併發症出現前）；美國許多州的新生兒篩檢以 TREC assay 篩檢 SCID</td></tr>
 <tr><td>Omenn syndrome</td><td>SCID 罕見型，AR <em>RAG-1</em>／<em>RAG-2</em> 突變；exfoliative erythroderma、failure to thrive、chronic diarrhea、lymphadenopathy、hepatosplenomegaly；未移植預後差</td></tr>
-<tr><td>Hyper-IgE syndrome</td><td><em>STAT3</em> 突變；嬰兒期 diffuse eczematous dermatitis、atopy、mucocutaneous candidiasis、反覆 staphylococcal 感染；特徵為臉與頭皮 papulopustular dermatitis</td></tr>
-<tr><td>DiGeorge syndrome</td><td>22q11.21 deletion；thymic aplasia、主動脈弓心臟異常、hypoparathyroidism、cleft palate、dysmorphism；部分有 eczematous dermatitis</td></tr>
+<tr><td>Hyper-IgE syndrome</td><td><em>STAT3</em> 突變；嬰兒期可能表現 diffuse eczematous dermatitis；atopy、mucocutaneous candidiasis、反覆 staphylococcal 皮膚感染為典型特徵；嬰兒期的一個特徵性臨床表現（a characteristic clinical finding）是臉與頭皮 papulopustular dermatitis</td></tr>
+<tr><td>DiGeorge syndrome</td><td>22q11.21 deletion；thymic aplasia、主動脈弓心臟異常、hypoparathyroidism、cleft palate、dysmorphism；曾報告部分嬰兒有 eczematous dermatitis</td></tr>
 </tbody>
 </table>
-<p class="ex-cite">p.1740；皮膚切片對 Netherton syndrome 與 SCID 特別有幫助。</p>
+<p class="ex-cite">p.1740；皮膚切片可能對部分診斷有幫助，特別是 Netherton syndrome 與 SCID。</p>
 <h3>Seborrheic dermatitis（脂漏性皮膚炎）</h3>
 <ul>
 <li>嬰兒期常見良性發炎，最早可在頭幾週出現；最常見為頭皮油膩黃色鱗屑伴輕微紅斑（cradle cap）。<span class="ex-ref">p.1740</span></li>
 <li><mark data-q="113-30">Diaper 與 intertriginous areas：鱗屑較不明顯、紅斑邊界較清楚，與 infantile psoriasis 重疊（sebopsoriasis）</mark>；較少見於臉（眉毛、鼻唇溝）與軀幹；深膚色嬰兒可以 postinflammatory hypopigmentation 為主；可續發膿痂疹或念珠菌感染。</li>
-<li>病生理：可能是對 <em>Malassezia</em> 菌落的過度免疫反應。<mark data-q="113-30">通常 <strong class="ex-n">1–2 年</strong>內自行緩解</mark>，可能與日後成人 SD 及 atopic dermatitis 相關。</li>
+<li>病生理：部分專家假設（hypothesized）涉及對 <em>Malassezia</em> 菌落的過度免疫反應。<mark data-q="113-30">通常 <strong class="ex-n">1–2 年</strong>內自行緩解</mark>，可能與日後成人 SD 及 atopic dermatitis 相關。</li>
 <li>治療：輕者以 baby oil／mineral oil 軟化後梳洗；重者 antifungal shampoo 或 cream、low-potency topical corticosteroid。</li>
 <li><mark data-q="113-30">鑑別：infantile psoriasis、atopic／nonatopic eczema、Langerhans cell histiocytosis</mark>；免疫缺陷、營養與代謝疾病也可有 SD 樣疹；有 failure to thrive、發展遲緩、反覆感染要找全身性疾病。<span class="ex-ref">p.1740</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>本章寫 infantile SD typically remits spontaneously within the first 1 to 2 years of life，Table 103-5 年齡欄寫「first few weeks to 3 months」；ch26（p.434）寫 ISD spontaneously disappears by 6 to 12 months of age。</aside>
+<aside class="ex-trap"><strong>易錯</strong>本章寫 infantile SD typically remits spontaneously within the first 1 to 2 years of life，Table 103-5 年齡欄寫「first few weeks to 3 months」；ch26（p.434）寫 ISD spontaneously disappears by 6 to 12 months of age。<span class="ex-ref">p.1740–1741、p.434（ch26）</span></aside>
 </section>
 
 <section class="ex-note" id="diaper">
@@ -351,12 +351,12 @@
 <ul>
 <li>長期潮濕 → 摩擦損傷增加、屏障下降、對刺激物反應增加。<mark data-q="106-43">相關因子：接觸尿液與糞便、糞便 proteolytic 與 lipolytic 消化酵素、皮膚 pH 上升、<em>Candida</em> 重複感染</mark>；細菌重複感染較少。<span class="ex-ref">p.1741</span></li>
 <li><strong>Irritant diaper dermatitis</strong>：<mark data-q="106-43">最常見原因</mark>；紅、濕、有時脫屑的斑片，好發生殖器與臀部凸面，<strong>皮膚皺褶處典型不侵犯</strong>；barrier cream 與勤換尿布很有效。</li>
-<li><strong>Allergic contact diaper dermatitis</strong>：過敏原為尿布或濕紙巾中的 preservatives、fragrances、rubber additives、disperse dyes。</li>
-<li><strong>Candidal diaper dermatitis</strong>：第二常見；鮮紅、濕潤丘疹斑塊，<strong>皺褶與凸面都侵犯</strong>，常有 satellite papules／pustules，可有 oral thrush。<mark data-q="104-31,106-43">來自腸道菌叢的 <em>Candida</em> 可污染並加重任何持續 <strong class="ex-n">&gt;3 天</strong>的尿布疹</mark>。</li>
+<li><strong>Allergic contact diaper dermatitis</strong>：常見過敏原為尿布或濕紙巾中的 preservatives、fragrances、rubber additives、disperse dyes。</li>
+<li><strong>Candidal diaper dermatitis</strong>：第二常見；鮮紅、濕潤丘疹斑塊，<strong>傾向皺褶與凸面都侵犯</strong>，常有 satellite papules／pustules，可有 oral thrush。<mark data-q="104-31,106-43">來自腸道菌叢的 <em>Candida</em> 可污染並加重任何持續 <strong class="ex-n">&gt;3 天</strong>的尿布疹</mark>。</li>
 <li><strong>Pseudoverrucous papules and nodules</strong>：任何年齡、長期潮濕（如大小便失禁）的尿布區與肛周平頂膚色丘疹。</li>
-<li><mark data-q="106-43"><strong>Jacquet erosive dermatitis</strong>：少見、嚴重，邊界清楚的 punched-out ulcers 與 erosions，由尿液與糞便在包覆下長期接觸所致</mark>；超吸收紙尿布普及後已少見。<span class="ex-ref">p.1741–1742</span></li>
-<li><strong>Granuloma gluteale infantum</strong>：<strong class="ex-n">2–9 個月</strong>大嬰兒，尿布區凸面 <strong class="ex-n">0.5–3 cm</strong> 紅紫色結節，發生於原有尿布疹；切片為 lymphocytes、plasma cells、neutrophils、eosinophils 密集浸潤，<strong>沒有真正的 granulomas</strong>；與刺激因子、<em>Candida</em>、部分與尿布區外用類固醇有關；治療為避開刺激物、barrier ointment、<strong>避免外用類固醇</strong>，數月消退。<span class="ex-ref">p.1742</span></li>
-<li>不是尿布造成但會出現在尿布區：infantile SD、napkin psoriasis、bullous impetigo、acrodermatitis enteropathica、scabies、HSV、LCH；<strong>尿布區出現不癒合 erosions 或 petechiae 要切片排除 LCH</strong>。<span class="ex-ref">p.1742</span></li>
+<li><mark data-q="106-43"><strong>Jacquet erosive dermatitis</strong>：少見、嚴重，邊界清楚的 punched-out ulcers 與 erosions，由尿液與糞便在包覆下長期接觸所致</mark>；超吸收紙尿布普及後已較少見。<span class="ex-ref">p.1741–1742</span></li>
+<li><strong>Granuloma gluteale infantum</strong>：少見；<strong class="ex-n">2–9 個月</strong>大嬰兒，尿布區凸面 <strong class="ex-n">0.5–3 cm</strong> 紅紫色結節，發生於原有尿布疹；切片為 lymphocytes、plasma cells、neutrophils、eosinophils 密集浸潤，<strong>沒有真正的 granulomas</strong>；似乎是對常見刺激因子、<em>Candida</em> 感染，以及部分病例尿布區外用類固醇的不尋常反應；治療為避開刺激物、barrier ointment、<strong>避免外用類固醇</strong>，數月消退。<span class="ex-ref">p.1742</span></li>
+<li>可出現在尿布區、但非主要由穿尿布造成：infantile SD、napkin psoriasis、bullous impetigo、acrodermatitis enteropathica、scabies、HSV、LCH；<strong>尿布區出現不癒合 erosions 或 petechiae 要切片排除 LCH</strong>。<span class="ex-ref">p.1742</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Lesion</th><th scope="col">Age</th><th scope="col">Sites（部位）</th><th scope="col">Appearance（外觀）</th><th scope="col">Treatment</th></tr></thead>
@@ -373,17 +373,17 @@
 <thead><tr><th scope="col">ABCDE（Table 103-6）</th><th scope="col">Content（內容）</th></tr></thead>
 <tbody>
 <tr><td>A = Air</td><td>嬰兒睡覺時盡量讓尿布打開保持乾燥</td></tr>
-<tr><td>B = Barrier ointments</td><td>Zinc oxide paste、petrolatum 等是主力；每次換尿布維持連續一層；<strong>baby powder 無抗菌益處且有吸入風險</strong></td></tr>
+<tr><td>B = Barrier ointments</td><td>Zinc oxide paste、petrolatum 等是主力；維持連續一層，必要時每次換尿布重擦；<strong>baby powder 無抗菌益處且有吸入風險</strong></td></tr>
 <tr><td>C = Cleansing and anticandidal treatment</td><td>清水、mineral oil 或無香料溫和清潔劑，避免摩擦；有念珠菌徵象加外用抗念珠菌藥；有 oral thrush 時給 <strong>oral nystatin</strong></td></tr>
 <tr><td>D = Diapers</td><td>盡量勤換、髒了立即換，尤其布尿布</td></tr>
 <tr><td>E = Education</td><td>教育家長與照顧者</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 103-6，p.1743。</p>
-<aside class="ex-trap"><strong>易錯</strong>Irritant diaper dermatitis：skin folds are classically spared；candidal：皺褶與凸面都侵犯。來自腸道菌叢的 <em>Candida</em> 可污染並加重任何持續 &gt;3 天的尿布疹。Granuloma gluteale infantum 的治療包含 avoidance of topical corticosteroids。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Irritant diaper dermatitis：skin folds are classically spared；candidal：皺褶與凸面都侵犯。來自腸道菌叢的 <em>Candida</em> 可污染並加重任何持續 &gt;3 天的尿布疹。Granuloma gluteale infantum 的治療包含 avoidance of topical corticosteroids。<span class="ex-ref">p.1741–1742</span></aside>
 <h3>McKee 補充</h3>
 <ul>
-<li>Infantile gluteal granuloma（McKee 稱 papuloerosive dermatitis of Jacquet and Sevestre 為同義詞）：常發生於刺激性尿布疹背景，尿布區凸面橢圓或圓形丘疹結節，數週自行消退，偶留疤；成人失禁女性陰唇也有類似病灶。病因與 occlusion、<em>Candida</em>、fluorinated corticosteroids 有關。<span class="ex-ref ex-ref-mckee">McKee p.478</span></li>
+<li>Infantile gluteal granuloma（McKee 稱 papuloerosive dermatitis of Jacquet and Sevestre 為同義詞）：常發生於刺激性尿布疹背景，尿布區凸面橢圓或圓形丘疹結節，傾向數週內自行消退，偶留疤；失禁老年女性的大陰唇也有類似病灶。病因不明，但 occlusion、<em>Candida</em> 感染、fluorinated corticosteroids 被認為有關（fluorinated corticosteroids 在失禁老年病人似乎不重要）。<span class="ex-ref ex-ref-mckee">McKee p.478</span></li>
 <li>組織學非特異：表淺潰瘍、局部壞死、明顯混合浸潤，<strong>含 granulomata</strong> 與大量 lymphocytes、plasma cells，可有出血與 hemosiderin。<span class="ex-ref ex-ref-mckee">McKee p.478</span></li>
 </ul>
 <p class="ex-cite">兩書不同：Fitzpatrick 說 granuloma gluteale infantum「沒有真正的 granulomas」並與 Jacquet erosive dermatitis 分開描述；McKee 寫有 granulomata，且把 Jacquet and Sevestre 列為同義詞。</p>
@@ -394,13 +394,13 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Lesion</th><th scope="col">Fitzpatrick 重點</th><th scope="col">McKee histology（病理）</th></tr></thead>
 <tbody>
-<tr><td>Infantile myofibromatosis</td><td>橡皮樣真皮、皮下結節，單一（myofibroma）或多發（myofibromatosis）；可侵犯骨、GI、心、肺、腎；只限軟組織者 <strong class="ex-n">1–2 年</strong>內自行消退 → 觀察。<span class="ex-ref">p.1742–1743</span></td><td>邊界尚清楚、無包膜；<strong>biphasic</strong>：成束嗜酸性 myofibroblasts，加上較原始的小圓／梭形細胞圍繞分支血管呈 hemangiopericytomatous pattern；可見小壞死灶與血管侵犯；muscle actin 陽性；PDGFRB 變異。多數腫瘤 2 歲前出現、很多是先天；多發型女性較多。<span class="ex-ref ex-ref-mckee">McKee p.1871–1872</span></td></tr>
-<tr><td>Fibrous hamartoma of infancy</td><td>少見；多為單一、無痛、<strong class="ex-n">0.5–10 cm</strong> 深真皮或皮下結節；切除為主，復發率低。<span class="ex-ref">p.1743</span></td><td>邊界不清、以深真皮與皮下脂肪為主；四種成分形成 <strong>organoid pattern</strong>：雜亂纖維組織、整齊的 actin 陽性 myofibroblast 束、成熟脂肪、原始 myxoid 間質細胞渦狀聚集；SMA、calponin 陽性，S100、desmin 通常陰性。<span class="ex-ref ex-ref-mckee">McKee p.1732–1733</span></td></tr>
-<tr><td>Infantile digital fibroma</td><td>指（趾）骨上平滑粉紅結節，手指最常見，<strong>拇指與大腳趾典型不侵犯</strong>；約 <strong class="ex-n">1/3</strong> 出生即有；切片見 myofibroblast 束與圓形 cytoplasmic inclusions，<strong>Masson trichrome</strong> 或 <strong>PTAH</strong> 可凸顯；切除後復發率高、多年內自行消退 → 保守觀察。<span class="ex-ref">p.1743</span></td><td>McKee 稱 inclusion body fibromatosis；幾乎都在 3 歲前的指趾，1/3 先天；切除後局部復發可達 <strong class="ex-n">50%</strong>，不轉移。診斷關鍵是 myofibroblasts 內<strong>嗜酸性 intracytoplasmic inclusions</strong>（Masson trichrome 呈紅色；actin 陽性，酒精固定較佳；calponin 也可凸顯）；腫瘤細胞 SMA、calponin、desmin 陽性。<span class="ex-ref ex-ref-mckee">McKee p.1730</span></td></tr>
-<tr><td>Congenital smooth muscle hamartoma（CSMH）</td><td>增生平滑肌的良性真皮增生；多為軀幹或近端四肢單一不規則真皮斑塊；<mark data-q="110-17">表面膚色至略色素沉著，可合併 hypertrichosis</mark>；<mark data-q="110-17">快速摩擦後短暫 piloerection 與硬化，稱 <strong>pseudo-Darier sign</strong>，約 <strong class="ex-n">80%</strong> 可誘發</mark>；<mark data-q="110-17">良性</mark>，可觀察，有症狀或外觀考量才切除。<span class="ex-ref">p.1743–1744</span></td><td>盛行率約 <strong class="ex-n">1:2600</strong> 活產，男性略多；最常在 lumbosacral 與近端四肢。組織學：真皮內大量雜亂排列的成熟平滑肌束，毛囊數目正常；SMA、desmin、h-caldesmon 陽性。<mark data-q="110-17">與 Becker nevus 關係密切，但 Becker nevus 是後天、較晚出現，平滑肌只輕度增加</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1813</span></td></tr>
+<tr><td>Infantile myofibromatosis</td><td>橡皮樣真皮、皮下結節，單一（myofibroma）或多發（myofibromatosis）；可侵犯骨、GI、心、肺、腎；只限軟組織者通常 <strong class="ex-n">1–2 年</strong>內自行消退 → 觀察。<span class="ex-ref">p.1742–1743</span></td><td>邊界尚清楚、無包膜；<strong>biphasic</strong>：成束嗜酸性 myofibroblasts，加上較原始的小圓／梭形細胞圍繞分支血管呈 hemangiopericytomatous pattern；常見小壞死灶與血管侵犯；兩種細胞通常 SMA 局部陽性、calponin 較瀰漫陽性；有 recurrent PDGFRB alterations。多數腫瘤 2 歲前出現、很多是先天；多發型女性較多。<span class="ex-ref ex-ref-mckee">McKee p.1871–1872</span></td></tr>
+<tr><td>Fibrous hamartoma of infancy</td><td>少見；多為單一、無痛、<strong class="ex-n">0.5–10 cm</strong> 深真皮或皮下結節；切除為主，復發率低。<span class="ex-ref">p.1743</span></td><td>邊界不清、以深真皮與皮下脂肪為主；四種成分形成 <strong>organoid pattern</strong>：雜亂纖維組織、整齊的 actin 陽性 myofibroblast 束、成熟脂肪、原始 myxoid 間質細胞渦狀聚集；其中 myofibroblasts SMA、calponin 陽性，S100、desmin 通常陰性。<span class="ex-ref ex-ref-mckee">McKee p.1732–1733</span></td></tr>
+<tr><td>Infantile digital fibroma</td><td>指（趾）骨上平滑粉紅結節，手指最常見，<strong>拇指與大腳趾典型不侵犯</strong>；約 <strong class="ex-n">1/3</strong> 出生即有；切片見 myofibroblast 束與圓形 cytoplasmic inclusions，<strong>Masson trichrome</strong> 或 <strong>PTAH</strong> 可凸顯；切除後復發率高、傾向多年內自行消退 → 通常建議保守觀察。<span class="ex-ref">p.1743</span></td><td>McKee 稱 inclusion body fibromatosis；幾乎都在 3 歲前的指趾，1/3 先天；切除後局部復發可達 <strong class="ex-n">50%</strong>，不轉移。診斷關鍵是 myofibroblasts 內<strong>嗜酸性 intracytoplasmic inclusions</strong>（Masson trichrome 呈紅色；actin 陽性，酒精固定較佳；calponin 也可凸顯）；腫瘤細胞通常 SMA、calponin、desmin 陽性。<span class="ex-ref ex-ref-mckee">McKee p.1730</span></td></tr>
+<tr><td>Congenital smooth muscle hamartoma（CSMH）</td><td>增生平滑肌的良性真皮增生；多為軀幹或近端四肢單一不規則真皮斑塊；<mark data-q="110-17">表面傾向膚色至略色素沉著，可合併 hypertrichosis</mark>；<mark data-q="110-17">快速摩擦後短暫 piloerection 與硬化，稱 <strong>pseudo-Darier sign</strong>，約 <strong class="ex-n">80%</strong> 可誘發</mark>；<mark data-q="110-17">良性</mark>，可觀察，有症狀或外觀考量者可考慮切除。<span class="ex-ref">p.1743–1744</span></td><td>盛行率約 <strong class="ex-n">1:2600</strong> 活產，男性略多；最常在 lumbosacral 與近端四肢。組織學：真皮內大量雜亂排列的成熟平滑肌束，毛囊數目正常；SMA、desmin、h-caldesmon 陽性。<mark data-q="110-17">有人提出與 Becker nevus 關係密切，但 Becker nevus 是後天、較晚出現，平滑肌通常只輕度增加</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1813</span></td></tr>
 </tbody>
 </table>
-<aside class="ex-trap"><strong>易錯</strong>Pseudo-Darier sign（CSMH）：快速摩擦後短暫 piloerection 與 induration；Darier sign（cutaneous mastocytosis）：快速摩擦後 mast cell degranulation 造成 wheal and flare。CSMHs are benign，可觀察。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Pseudo-Darier sign（CSMH）：快速摩擦後短暫 piloerection 與 induration；Darier sign（cutaneous mastocytosis）：快速摩擦後 mast cell degranulation 造成 wheal and flare。CSMHs are benign，可觀察。<span class="ex-ref">p.1743–1744</span></aside>
 </section>
 
 <section class="ex-note" id="neoplastic">
@@ -408,20 +408,20 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Disease</th><th scope="col">Key points（重點）</th></tr></thead>
 <tbody>
-<tr><td>Neuroblastoma</td><td>兒童第二常見實體腫瘤，約 <strong class="ex-n">25%</strong> 為先天；皮膚轉移為紫色丘疹結節（blueberry muffin 鑑別）；摩擦後局部 catecholamine 釋放造成變白可持續達 <strong class="ex-n">1 小時</strong>；切片為大型非典型核的小圓細胞，可有 pseudorosettes；IHC neuron-specific enolase 有幫助。<span class="ex-ref">p.1744</span></td></tr>
-<tr><td>Congenital leukemia</td><td>佔兒童白血病 <strong class="ex-n">&lt;1%</strong>；新生兒以 <strong>AML</strong> 多於 ALL；ecchymoses、petechiae、皮膚結節；約 <strong class="ex-n">60%</strong> 有多發藍紫結節（blueberry muffin）；切片為非典型單核細胞浸潤真皮或皮下脂肪；CBC 與骨髓切片確診。<span class="ex-ref">p.1744</span></td></tr>
+<tr><td>Neuroblastoma</td><td>兒童第二常見實體腫瘤，約 <strong class="ex-n">25%</strong> 為先天；皮膚轉移為紫色丘疹結節（blueberry muffin 鑑別）；皮膚病灶摩擦後可變白（歸因於局部 catecholamine 釋放），最長可持續 <strong class="ex-n">1 小時</strong>；切片為大型非典型核的小圓細胞，可有 pseudorosettes；IHC neuron-specific enolase 有幫助。<span class="ex-ref">p.1744</span></td></tr>
+<tr><td>Congenital leukemia</td><td>佔兒童白血病 <strong class="ex-n">&lt;1%</strong>；新生兒以 <strong>AML</strong> 多於 ALL；ecchymoses、petechiae、皮膚結節；約 <strong class="ex-n">60%</strong> 有多發藍紫結節（blueberry muffin）；切片為非典型單核細胞浸潤真皮或皮下脂肪；CBC 與骨髓切片有助確診。<span class="ex-ref">p.1744</span></td></tr>
 <tr><td>Langerhans cell histiocytosis</td><td>約 <strong class="ex-n">5%</strong> 在新生兒期診斷；tan-to-pink papulovesicles、nodules、ulcerations、petechiae，好發 scalp 與皺褶；也可為 blueberry muffin 或紅褐結節；可自行消退（舊稱 congenital self-healing LCH），但可復發至兒童期，<strong>所有 LCH 都需持續追蹤</strong>其他器官；組織球 <strong>CD1a</strong> 與 <strong>Langerin</strong> 陽性（原文印作「CD107 (Langerin)」）。<span class="ex-ref">p.1744</span></td></tr>
 <tr><td>Cutaneous mastocytosis</td><td>Solitary mastocytoma、urticaria pigmentosa（maculopapular cutaneous mast cell disease）、diffuse cutaneous mastocytosis（peau-de-orange）；TMEP 在嬰幼兒極罕見。前兩者常在頭幾個月出現；摩擦後 wheal and flare = <strong>Darier sign</strong>；特殊染色 toluidine blue、Giemsa、c-kit（CD117）。<span class="ex-ref">p.1744</span></td></tr>
 </tbody>
 </table>
 <ul>
-<li>Mastocytosis 系統評估：詢問 flushing、wheezing、嘔吐、腹瀉、腹痛、骨痛、休克；廣泛皮膚病灶可驗 serum tryptase。骨髓切片門檻有人用 <strong class="ex-n">&gt;20 ng/mL</strong>，也有人只在 <strong class="ex-n">&gt;100 ng/mL</strong> 才做；近期研究認為兒童的肝脾腫大比 tryptase 或嚴重 mediator 症狀更敏感，且 tryptase 會隨時間下降。<span class="ex-ref">p.1744</span></li>
-<li>治療：口服 H1 與 H2 antihistamines；避免誘發物（anesthetics、其他藥物、物理刺激）。</li>
+<li>Mastocytosis 系統評估：廣泛皮膚 mast cell disease 者應詢問 flushing、wheezing、嘔吐、腹瀉、腹痛、骨痛、休克；皮膚病灶廣泛或症狀可疑時，serum tryptase 可能是有用指標。由成人 systemic mastocytosis 文獻外推，有人建議 tryptase <strong class="ex-n">&gt;20 ng/mL</strong> 的兒童做骨髓切片排除 systemic mastocytosis，也有人只在 <strong class="ex-n">&gt;100 ng/mL</strong> 才做；近期研究提示（suggests）兒童的肝脾腫大是比 serum tryptase 或嚴重 mediator 症狀更敏感的 systemic mast cell disease 指標，且兒童 serum tryptase 傾向隨時間下降。<span class="ex-ref">p.1744</span></li>
+<li>治療：一般以口服 H1 與 H2 antihistamines；避免誘發物（anesthetics、其他藥物、物理刺激）。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>In the newborn, AML is more common than ALL。Congenital LCH 皮膚病灶可自行消退，但因有復發風險（可到兒童期），所有 LCH 病人都需持續監測其他器官。</aside>
+<aside class="ex-trap"><strong>易錯</strong>In the newborn, AML is more common than ALL。Congenital LCH 皮膚病灶可自行消退，但因有復發風險（可到兒童期），所有 LCH 病人都需持續監測其他器官。<span class="ex-ref">p.1744</span></aside>
 <h3>McKee 補充</h3>
 <ul>
-<li>Congenital self-healing histiocytosis（Hashimoto-Pritzker disease）：歸為 LCH 的先天自癒型；出生或周產期出現廣泛紅、藍或褐色 2–15 mm 斑丘疹結節，黏膜不侵犯；約 <strong class="ex-n">30%</strong> 為單一紅褐結節；常中央潰瘍結痂；通常 <strong class="ex-n">3–4 個月</strong>消退，少數之後出現 LCH 特徵（復發、骨侵犯、diabetes insipidus），需持續追蹤。<span class="ex-ref ex-ref-mckee">McKee p.1495</span></li>
+<li>Congenital self-healing histiocytosis（Hashimoto-Pritzker disease）：歸為 LCH 的先天自癒型；出生或周產期出現，通常為廣泛紅、藍或褐色 2–15 mm 斑丘疹結節，黏膜不侵犯；約 <strong class="ex-n">30%</strong> 為單一紅褐結節；常中央潰瘍結痂；通常 <strong class="ex-n">3–4 個月</strong>消退，少數之後出現 LCH 特徵（復發、骨侵犯、diabetes insipidus），需持續追蹤。<span class="ex-ref ex-ref-mckee">McKee p.1495</span></li>
 <li>組織學：上真皮 epidermotropic 大型組織球，嗜酸性細胞質、notched／reniform 核，混有 neutrophils、eosinophils、lymphocytes；與 LCH 無法以組織學區分（eosinophils、壞死、潰瘍可能較多）。<span class="ex-ref ex-ref-mckee">McKee p.1495</span></li>
 </ul>
 </section>
@@ -431,31 +431,31 @@
 <p>最常見：epidermolysis bullosa、congenital ichthyoses、ectodermal dysplasia。<span class="ex-ref">p.1745</span></p>
 <ul>
 <li><strong>Epidermolysis bullosa</strong>：4 大型（EB simplex、junctional、dystrophic、Kindler syndrome），依裂隙層次區分；新生兒水疱要懷疑，但須考慮感染；診斷靠臨床、TEM 與 immunoepitope mapping、基因檢測；junctional 與 recessive dystrophic 罹病與死亡率高。<span class="ex-ref">p.1745</span></li>
-<li><strong>Congenital ichthyosis</strong>：分 syndromic 與 nonsyndromic；<mark data-q="105-50,108-01">collodion membrane 最常見於 ARCI，如 lamellar ichthyosis 與 nonbullous congenital ichthyosiform erythroderma</mark>。ARCI 最極端是 <strong>harlequin ichthyosis</strong>：厚板狀鱗屑、ectropion、eclabium，易呼吸衰竭、脫水、代謝異常與 sepsis。<span class="ex-ref">p.1745</span></li>
-<li><strong>Ectodermal dysplasia</strong>：皮膚、毛髮、指甲、牙齒、eccrine glands 一種以上異常；&gt;200 種，僅少數基因已知；多數新生兒期難診斷。<mark data-q="105-50">X-linked hypohidrotic ED</mark> 可由特徵臉、alopecia、不明原因高燒懷疑；p63 相關的 AEC spectrum（舊稱 Hay-Wells、Rapp-Hodgkin、EEC）也可在新生兒期表現。<span class="ex-ref">p.1745</span></li>
+<li><strong>Congenital ichthyosis</strong>：分 syndromic 與 nonsyndromic；<mark data-q="105-50,108-01">collodion membrane 最常見於 ARCI，如 lamellar ichthyosis 與 nonbullous congenital ichthyosiform erythroderma</mark>。ARCI 最極端是 <strong>harlequin ichthyosis</strong>：厚板狀鱗屑、ectropion、eclabium，可能發生呼吸功能不全，並有脫水、代謝異常與 sepsis 風險。<span class="ex-ref">p.1745</span></li>
+<li><strong>Ectodermal dysplasia</strong>：皮膚、毛髮、指甲、牙齒、eccrine glands 一種以上異常；&gt;200 種，僅少數基因已知；許多型在新生兒期通常無法診斷。<mark data-q="105-50">X-linked hypohidrotic ED</mark> 可由特徵臉、alopecia、不明原因高燒懷疑；p63 相關的 ankyloblepharon-ectrodactyly-clefting syndrome spectrum（涵蓋舊稱 Hay-Wells syndrome、Rapp-Hodgkin syndrome、ectodermal dysplasia-ectrodactyly-clefting syndrome）也可能在新生兒期表現。<span class="ex-ref">p.1745</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Collodion membrane 最常見於 ARCI（lamellar ichthyosis、nonbullous CIE）；X-linked hypohidrotic ED 與 type 2 Gaucher disease 有時以紅皮症或 collodion membrane 表現；Table 103-1 collodion baby 另列 Gaucher syndrome、trichothiodystrophy、neutral lipid storage disorder。Netherton syndrome 在 p.1740 列於以新生兒紅皮症表現的 congenital ichthyoses（108-01 見題目疑義）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Collodion membrane 最常見於 ARCI（lamellar ichthyosis、nonbullous CIE）；X-linked hypohidrotic ED 與 type 2 Gaucher disease 有時以紅皮症或 collodion membrane 表現；Table 103-1 collodion baby 另列 Gaucher syndrome、trichothiodystrophy、neutral lipid storage disorder。Netherton syndrome 在 p.1740 列於以新生兒紅皮症表現的 congenital ichthyoses（108-01 見題目疑義）。<span class="ex-ref">p.1730、p.1740、p.1745</span></aside>
 <h3>Incontinentia pigmenti（色素失禁症）</h3>
 <ul>
 <li><mark data-q="106-46">X-linked 疾病，歸為 ectodermal dysplasia；由 <strong>NEMO</strong>（nuclear factor κB essential modulator）基因突變造成</mark>。<span class="ex-ref">p.1745</span></li>
-<li>皮膚、毛髮、牙齒、指甲、眼與神經異常；最早表現是沿 Blaschko lines 的 vesicular eruption。</li>
-<li>多數男性胚胎於產前死亡，故女性較多；男性可見於 XXY（Klinefelter）、somatic mosaicism、hypomorphic mutation。</li>
+<li>皮膚、毛髮、牙齒、指甲、眼與神經異常；最早表現包括沿 Blaschko lines 的特徵性 vesicular eruption。</li>
+<li>多數受影響男性胎兒於產前死亡，故女性較多；男性可見於 XXY（Klinefelter）、somatic mosaicism、hypomorphic mutation。</li>
 </ul>
 <h3>McKee 補充（IP）</h3>
 <ul>
-<li><mark data-q="106-46"><strong>X-linked dominant</strong>；女：男 <strong class="ex-n">&gt;37:1</strong></mark>；毛髮、牙齒、指甲、眼、骨骼、CNS 病灶可達 <strong class="ex-n">80%</strong>；男性存活者多合併 Klinefelter syndrome。<span class="ex-ref ex-ref-mckee">McKee p.706</span></li>
+<li><mark data-q="106-46"><strong>X-linked dominant</strong>；女：男 <strong class="ex-n">&gt;37:1</strong></mark>；毛髮、牙齒、指甲、眼、骨骼、CNS 病灶可達 <strong class="ex-n">80%</strong>；男性病例多數合併 Klinefelter syndrome。<span class="ex-ref ex-ref-mckee">McKee p.706–707</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Stage</th><th scope="col">Clinical（臨床，McKee）</th><th scope="col">Histology（病理，McKee）</th></tr></thead>
 <tbody>
-<tr><td>1 Vesicular</td><td>出生或頭 2 週，軀幹四肢紅斑與線狀水疱，臉不侵犯；常伴 leukocytosis、eosinophilia；平均 4 個月內消退</td><td><mark data-q="103-39">Eosinophilic spongiosis</mark>，偶見 dyskeratotic cells 聚集；真皮慢性發炎含明顯 eosinophils</td></tr>
-<tr><td>2 Verrucous</td><td>不常見、短暫；第 2–6 週出現於四肢，6 個月內消退</td><td>Hyperkeratosis、acanthosis、papillomatosis、focal dyskeratosis（呈渦狀排列）</td></tr>
-<tr><td>3 Hyperpigmented</td><td>具 pathognomonic 意義；約 12–26 週出現，軀幹四肢的漩渦狀色素（Chinese lettering），乳頭色素、腋下與鼠蹊特徵性侵犯</td><td><mark data-q="106-46">Marked pigmentary incontinence，真皮大量 melanophages</mark>，伴表皮基底細胞退化</td></tr>
-<tr><td>4 Hypopigmented／atrophic</td><td>成人期；下肢萎縮、色素減退、無毛的線狀斑</td><td>表皮萎縮，可有 adnexa 缺失</td></tr>
+<tr><td>1 Vesicular</td><td>出生或頭 2 週，軀幹四肢紅斑與線狀水疱，臉典型不侵犯；通常伴 leukocytosis、eosinophilia；平均 4 個月內消退</td><td><mark data-q="103-39">Eosinophilic spongiosis</mark>，偶見 dyskeratotic cells 聚集；真皮可有含明顯 eosinophils 的慢性發炎</td></tr>
+<tr><td>2 Verrucous</td><td>不常見、通常短暫；出現時在第 2–6 週，最常見於四肢，通常到 6 個月時（by 6 months）完全消退</td><td>Hyperkeratosis、acanthosis、papillomatosis、focal dyskeratosis（呈渦狀排列）</td></tr>
+<tr><td>3 Hyperpigmented</td><td>具 pathognomonic 意義；通常在出生後 12–26 週出現，軀幹四肢的漩渦狀色素（Chinese lettering），乳頭色素、腋下與鼠蹊特徵性侵犯</td><td><mark data-q="106-46">Marked pigmentary incontinence，真皮大量 melanophages</mark>，伴表皮基底細胞退化</td></tr>
+<tr><td>4 Hypopigmented／atrophic</td><td>通常成人期出現；殘留的萎縮、色素減退、無毛網狀斑與條紋，下肢最明顯</td><td>表皮萎縮，可有 adnexa 缺失</td></tr>
 </tbody>
 </table>
-<p class="ex-cite"><span class="ex-ref ex-ref-mckee">McKee p.706–708</span>；致病基因 <em>IKBKG</em>（NEMO），影響 NF-κB 活化，p.708。</p>
-<aside class="ex-trap"><strong>易錯</strong>IP：Fitzpatrick 寫 X-linked；McKee 寫 X-linked dominant mode of inheritance。McKee：ETN 須與 IP 區分，IP 有 eosinophilic spongiosis，ETN 沒有。</aside>
+<p class="ex-cite"><span class="ex-ref ex-ref-mckee">McKee p.706–708</span>；致病基因 <em>IKBKG</em>（NEMO），在抑制 TNF 誘發的 apoptosis 中扮演角色，p.708。</p>
+<aside class="ex-trap"><strong>易錯</strong>IP：Fitzpatrick 寫 X-linked；McKee 寫 X-linked dominant mode of inheritance。McKee：ETN 須與 IP 區分，IP 有 eosinophilic spongiosis，ETN 沒有。<span class="ex-ref">p.1745</span>；<span class="ex-ref ex-ref-mckee">McKee p.239、p.706</span></aside>
 </section>
 
 <section class="ex-note" id="other-dermatoses">
@@ -463,34 +463,34 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Feature</th><th scope="col">Subcutaneous fat necrosis of the newborn</th><th scope="col">Sclerema neonatorum</th></tr></thead>
 <tbody>
-<tr><td>Patient（病人）</td><td>足月或過期產兒（McKee）；多與 fetal distress 相關</td><td>重病、早產新生兒（Fitz）；McKee：早產兒只佔少數</td></tr>
-<tr><td>Onset（發生）</td><td>頭 <strong class="ex-n">2 週</strong>內</td><td>典型在 <strong class="ex-n">24 小時</strong>後（McKee：平均 4 天，出生至 70 天）</td></tr>
-<tr><td>Clinical（臨床）</td><td>硬、紅至紫色皮下結節或斑塊，位於背、頰、臀、手臂、大腿</td><td>瀰漫皮膚變硬、發亮；McKee：蠟樣如豬油，自臀、大腿、軀幹開始擴及全身，不侵犯 palms、soles、genitalia；皮膚無法捏起，無 pitting edema</td></tr>
-<tr><td>Risk factors（危險因子）</td><td>McKee：產傷、臍帶事故、胎便吸入、感染、低體溫、前置胎盤、剖腹產、窒息、子癇前症、母親糖尿病；高出生體重是窒息新生兒的獨立危險因子</td><td>Sepsis、hypoglycemia、acidosis 或其他嚴重代謝異常</td></tr>
+<tr><td>Patient（病人）</td><td>McKee：足月或過期產兒；多數病例與某種 fetal distress 相關</td><td>重病、早產新生兒（Fitz）；McKee：早產兒只佔少數</td></tr>
+<tr><td>Onset（發生）</td><td>通常頭 <strong class="ex-n">2 週</strong>內</td><td>典型在 <strong class="ex-n">24 小時</strong>後（McKee：第一週內，平均 4 天，範圍出生至 70 天）</td></tr>
+<tr><td>Clinical（臨床）</td><td>硬、紅至紫色皮下結節或斑塊，位於背、頰、臀、手臂、大腿</td><td>瀰漫皮膚變硬、發亮；McKee：蠟樣如豬油，通常自臀、大腿、軀幹開始，常擴及全身，不侵犯 palms、soles、genitalia；皮膚無法捏起，無 pitting edema</td></tr>
+<tr><td>Risk factors（危險因子）</td><td>McKee：產傷、臍帶事故、胎便吸入、感染、低體溫、前置胎盤、剖腹產、窒息、子癇前症、母親糖尿病；一前瞻性研究確立高出生體重是窒息新生兒的獨立危險因子</td><td>Sepsis、hypoglycemia、acidosis 或其他嚴重代謝異常</td></tr>
 <tr><td>Histology（病理）</td><td>Lobular fat necrosis，脂肪細胞內 needle-shaped clefts，混合浸潤（lymphocytes、macrophages、giant cells）</td><td>脂肪細胞內 needle-like crystals，<strong>但沒有發炎浸潤或脂肪壞死</strong></td></tr>
-<tr><td>Complication／prognosis（併發症／預後）</td><td><strong>Hypercalcemia</strong>，需監測；數週內自行消退</td><td>病因不明、死亡率高（McKee：<strong class="ex-n">75–90%</strong>）；現代照護下極少見</td></tr>
+<tr><td>Complication／prognosis（併發症／預後）</td><td><strong>Hypercalcemia</strong>，需監測；數週內自行消退</td><td>病因不明、嬰兒死亡率高（McKee：morbidity 與 mortality 高，<strong class="ex-n">75–90%</strong>）；被認為在現代新生兒照護下極少見</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.1745–1746；<span class="ex-ref ex-ref-mckee">McKee p.367–369</span>。</p>
 <h3>McKee 補充（SCFN 與 sclerema）</h3>
 <ul>
-<li>SCFN 合併 hypercalcemia <strong class="ex-n">29–69%</strong>，少見 dyslipidemia、thrombocytopenia、hyperglycemia、lactic acidosis；hypercalcemia 可延遲到 <strong class="ex-n">6 個月</strong>後才出現，鈣可沉積於腎、肝、IVC、心臟；偶可致死。最新機轉假說是病灶組織球產生過多 1,25-dihydroxyvitamin D3。<span class="ex-ref ex-ref-mckee">McKee p.367–368</span></li>
+<li>SCFN 合併 hypercalcemia <strong class="ex-n">29–69%</strong>，少見 dyslipidemia、thrombocytopenia、hyperglycemia、lactic acidosis；hypercalcemia 也可能延遲出現，最晚可在 SCFN 發生後 <strong class="ex-n">6 個月</strong>，鈣可沉積於腎、肝、IVC、心臟；極少數（exceptionally）可致死。Hypercalcemia 機轉不明，最新提出的理論是病灶組織球產生過多 1,25-dihydroxyvitamin D3，使腸道鈣吸收增加。<span class="ex-ref ex-ref-mckee">McKee p.367–368</span></li>
 <li>新生兒脂肪 saturated fatty acids 比例高、熔點高，低體溫時易析出。<span class="ex-ref ex-ref-mckee">McKee p.368</span></li>
 <li>SCFN 組織學：強烈脂肪壞死；脂肪細胞腫大，含放射狀排列的嗜酸性結晶狀空隙（主要是 triglycerides）；浸潤含 lymphocytes、histiocytes 與大量 <strong>foreign body giant cells</strong>，neutrophils 通常缺乏或很少（另有 neutrophil-rich 變異型）。<span class="ex-ref ex-ref-mckee">McKee p.368</span></li>
 <li>Sclerema 組織學「出奇平淡」：皮下脂肪變厚、纖維隔變寬，脂肪細胞變大，可有相同的放射狀細結晶（常不明顯），<strong>沒有壞死或明顯發炎</strong>。<span class="ex-ref ex-ref-mckee">McKee p.369</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>SCFN 切片：lobular fat necrosis、lipocytes 內 needle-shaped clefts、lymphocytes／macrophages／giant cells 混合發炎。Sclerema 切片：lipocytes 內 needle-like crystals，但沒有發炎浸潤或脂肪壞死，以此與 SCFN 區分。SCFN 有 hypercalcemia 風險需監測；sclerema infant mortality is high。</aside>
+<aside class="ex-trap"><strong>易錯</strong>SCFN 切片：lobular fat necrosis、lipocytes 內 needle-shaped clefts、lymphocytes／macrophages／giant cells 混合發炎。Sclerema 切片：lipocytes 內 needle-like crystals，但沒有發炎浸潤或脂肪壞死，以此與 SCFN 區分。SCFN 有 hypercalcemia 風險需監測；sclerema infant mortality is high。<span class="ex-ref">p.1745–1746</span></aside>
 <h3>Anetoderma of prematurity（早產兒皮膚鬆弛症）</h3>
 <ul>
 <li>醫源性 anetoderma；見於 <strong class="ex-n">24–30 週</strong>出生、極低體重、長期住 NICU 的早產兒。<span class="ex-ref">p.1746</span></li>
 <li>11 例回顧：胸腹（含臍周）圓形平坦萎縮斑，於 <strong class="ex-n">6 週至 5 個月</strong>大出現；8 例位於移除黏貼監測電極處，5 例先有移除電極造成的圓形瘀斑。</li>
-<li>不會隨時間改善；避免壓迫（如仰睡時把電極放在前胸）可能降低風險。</li>
+<li>該系列的 anetoderma 未隨時間改善；避免壓迫（如仰睡時把電極放在前胸）可能降低風險。</li>
 </ul>
 <h3>Cutis marmorata telangiectatica congenita（CMTC，先天性網狀毛細血管擴張性大理石樣皮膚）</h3>
 <ul>
 <li>持續性、網狀、萎縮性紫色血管斑，有時伴 telangiectasias 與潰瘍；sporadic，病因不明，目前傾向 vascular malformation。<span class="ex-ref">p.1746</span></li>
-<li>最常在單一下肢，軀幹或上肢也不少見；可有肢體不對稱；多數預後好，約 <strong class="ex-n">一半</strong>在頭 <strong class="ex-n">2 年</strong>內改善。</li>
+<li>最常在單一下肢，軀幹或上肢也不少見；可有肢體不對稱；多數預後好，<strong class="ex-n">一半</strong>在頭 <strong class="ex-n">2 年</strong>內 mottled appearance 改善。</li>
 <li>與 physiologic mottling 不同：mottling 回暖即消失。<span class="ex-ref">p.1732</span></li>
-<li>McKee：出生即有、男女相同；多為單側、局部、好發四肢；<strong>約 2/3</strong> 合併其他異常（nevus flammeus、macrocephaly、syndactyly、hydrocephalus、body asymmetry、心血管異常等）；Adams-Oliver syndrome 合併 ACC 與 transverse limb defects。組織學為淺真皮 capillaries 與 venules 擴張，偶見真正血管增生。<span class="ex-ref ex-ref-mckee">McKee p.1826</span></li>
+<li>McKee：出生即有、男女相同；多為單側、局部、好發四肢；<strong>2/3</strong> 病例可見（may be seen）其他異常（nevus flammeus、macrocephaly、syndactyly、hydrocephalus、body asymmetry、心血管異常等）；Adams-Oliver syndrome 的 ACC 與 transverse limb defects，除 CMTC 外還合併其他畸形。組織學為淺真皮 capillaries 與 venules 擴張，偶見真正血管增生。<span class="ex-ref ex-ref-mckee">McKee p.1826</span></li>
 </ul>
 </section>
