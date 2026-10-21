@@ -197,7 +197,7 @@ test('reads: list, note and explanation from main', async () => {
   const expl = await h.get('?kind=expl&id=' + ID_A);
   assert.deepEqual(plain(expl.body), { ok: true, id: ID_A, entry: EXPL_DATA[ID_A], source: 'main', blobSha: EXPL_TOKEN });
   assert.ok(h.calls.some(call => call.path.startsWith('git/blobs/')), 'the 1.2 MB file is read through its Git blob');
-  for (const bad of ['?kind=note&ch=2', '?kind=note&ch=999']) { const r = await h.get(bad); assert.equal(r.status, 404); assert.equal(r.body.error, 'unknown_note'); }
+  for (const bad of ['?kind=note&ch=218', '?kind=note&ch=999']) { const r = await h.get(bad); assert.equal(r.status, 404); assert.equal(r.body.error, 'unknown_note'); }
   for (const bad of ['?kind=note&ch=0', '?kind=note&ch=abc', '?kind=note&ch=17x', '?kind=note&ch=-1', '?kind=note&ch=1000', '?kind=note']) {
     const r = await h.get(bad); assert.equal(r.status, 400, bad); assert.equal(r.body.error, 'invalid_chapter');
   }
@@ -345,7 +345,7 @@ test('note sanitizer: accepts the allowed grammar, rejects everything else with 
     const bad = await h.post(body); assert.equal(bad.status, 400, JSON.stringify(body)); assert.equal(bad.body.error, 'invalid_request');
   }
   assert.equal((await h.post(noteBody({ ch: 2.5 }))).body.error, 'invalid_chapter');
-  assert.equal((await h.post(noteBody({ ch: 2 }))).body.error, 'unknown_note');
+  assert.equal((await h.post(noteBody({ ch: 218 }))).body.error, 'unknown_note');
   assert.equal((await h.post(noteBody({ baseBlobSha: 'abc' }))).body.error, 'invalid_revision');
 });
 
