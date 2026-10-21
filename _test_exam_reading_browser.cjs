@@ -24,11 +24,15 @@ module.exports = async function checkExamReading(browser) {
 
   // ---- what the generator emitted
   const hubSource = fs.readFileSync('exam/index.html', 'utf8');
-  const rowInfo = [...hubSource.matchAll(/<tr data-ch="(\d+)" data-order="(\d+)" data-qids="([^"]*)"( data-notes="1")?( class="ex-none")?>/g)]
-    .map(m => ({ ch: Number(m[1]), order: Number(m[2]), notes: !!m[4], linked: !m[5] }));
+  // linked: the chapter name is a link (chapters with questions or notes; a
+  // chapter with notes but no question is linked and still class="ex-none").
+  const rowInfo = [...hubSource.matchAll(/<tr data-ch="(\d+)" data-order="(\d+)" data-qids="([^"]*)"( data-notes="1")?( class="ex-none")?><th scope="row">(<a )?/g)]
+    .map(m => ({ ch: Number(m[1]), order: Number(m[2]), notes: !!m[4], linked: !!m[6] }));
   const withNotes = rowInfo.filter(row => row.notes && row.linked).map(row => row.ch);
   const withoutNotes = rowInfo.filter(row => !row.notes && row.linked).map(row => row.ch);
-  assert.ok(withNotes.length >= 5 && withoutNotes.length >= 1, 'fixtures need chapters with and without notes');
+  // Every Fitzpatrick chapter now has notes; the checks for a chapter without
+  // notes run only while such a chapter exists (PLAIN_CH undefined otherwise).
+  assert.ok(withNotes.length >= 7, 'fixtures need chapters with notes');
   assert.equal(rowInfo.filter(row => row.notes).length, withNotes.length, 'every chapter with notes is linked');
   const NOTE_CH = 52, PLAIN_CH = withoutNotes[0];
   assert.ok(withNotes.includes(NOTE_CH));
@@ -38,8 +42,10 @@ module.exports = async function checkExamReading(browser) {
   const totalW = sections.reduce((sum, s) => sum + s.w, 0);
   const need = s => Math.min(30000, Math.max(5000, 50 * s.w));
   const pctOf = ids => Math.round(100 * sections.filter(s => ids.includes(s.id)).reduce((sum, s) => sum + s.w, 0) / totalW);
-  assert.ok(!fs.readFileSync('exam/fitz-' + PLAIN_CH + '.html', 'utf8').includes('data-w='), 'no weights without notes');
-  assert.ok(!fs.readFileSync('exam/fitz-' + PLAIN_CH + '.html', 'utf8').includes('id="ex-reading"'), 'no status line without notes');
+  if (PLAIN_CH !== undefined) {
+    assert.ok(!fs.readFileSync('exam/fitz-' + PLAIN_CH + '.html', 'utf8').includes('data-w='), 'no weights without notes');
+    assert.ok(!fs.readFileSync('exam/fitz-' + PLAIN_CH + '.html', 'utf8').includes('id="ex-reading"'), 'no status line without notes');
+  }
   assert.match(hubSource, /<section class="ex-continue" aria-labelledby="ex-continue-h" hidden><\/section>/);
   // the card sits between the disease search box and the progress table's heading
   const cardAt = hubSource.indexOf('<section class="ex-continue"');
@@ -122,9 +128,11 @@ module.exports = async function checkExamReading(browser) {
       const first = page.locator('.ex-progress tbody tr[data-notes="1"]').first();
       assert.equal(await first.locator('.ex-pg-reading .ex-rd-pct').innerText(), '0%');
       assert.equal(await first.locator('.ex-pg-reading .ex-rd-badge').count(), 0, 'no badge before a finished round');
-      const plain = page.locator('.ex-progress tbody tr[data-ch="' + PLAIN_CH + '"] .ex-pg-reading');
-      assert.equal((await plain.textContent()).trim(), '—');
-      assert.equal(await plain.getAttribute('title'), '本章尚無重點整理');
+      if (PLAIN_CH !== undefined) {
+        const plain = page.locator('.ex-progress tbody tr[data-ch="' + PLAIN_CH + '"] .ex-pg-reading');
+        assert.equal((await plain.textContent()).trim(), '—');
+        assert.equal(await plain.getAttribute('title'), '本章尚無重點整理');
+      }
       assert.equal(await text(page, '#ex-progress-summary').then(t => t.includes('，重點已讀完 0／' + withNotes.length + ' 章（其中 0 章 2 次以上）')), true);
       assert.equal(await page.locator('.ex-progress-sort option[value="reading"]').innerText(), '閱讀進度低優先');
       await page.close();
@@ -154,7 +162,7 @@ module.exports = async function checkExamReading(browser) {
         'fitz-9999': { id: 'x', dy: 0, t: T0.getTime() - 1000, h: 'not a chapter in the table' },
         'fitz-abc': { id: 'x', dy: 0, t: T0.getTime() },
         'year-105': { id: 'x', dy: 0, t: T0.getTime() },
-        ['fitz-' + PLAIN_CH]: 'junk',
+        ['fitz-' + (PLAIN_CH !== undefined ? PLAIN_CH : withNotes[6])]: 'junk',
       };
       const reading = { ['fitz-' + c1]: { r: 1, seen: { a: 1 }, pct: 41, t: 1, done: [5] } };
       page = await open('/exam', { seedData: { dnExamPos: places, dnExamReading: reading } });
@@ -187,9 +195,11 @@ module.exports = async function checkExamReading(browser) {
       }
       // >= 30 days: the date
       const oldT = T0.getTime() - 45 * DAY, od = new Date(oldT);
-      page = await open('/exam', { seedData: { dnExamPos: { ['fitz-' + PLAIN_CH]: { id: 'x', dy: 0, t: oldT, h: 'x'.repeat(300) } } } });
-      assert.equal(await text(page, '.ex-continue-sub'), od.getFullYear() + '/' + (od.getMonth() + 1) + '/' + od.getDate(), 'no coverage for a chapter without notes');
-      assert.ok((await text(page, '.ex-continue-main')).length <= 'Ch.000 '.length + (await titleOf(page, PLAIN_CH)).length + 125, 'h is capped');
+      const oldCh = PLAIN_CH !== undefined ? PLAIN_CH : withNotes[6];
+      page = await open('/exam', { seedData: { dnExamPos: { ['fitz-' + oldCh]: { id: 'x', dy: 0, t: oldT, h: 'x'.repeat(300) } } } });
+      assert.equal(await text(page, '.ex-continue-sub'), od.getFullYear() + '/' + (od.getMonth() + 1) + '/' + od.getDate() +
+        (PLAIN_CH !== undefined ? '' : ' · 本章重點已讀 0%'), 'coverage only for a chapter with notes');
+      assert.ok((await text(page, '.ex-continue-main')).length <= 'Ch.000 '.length + (await titleOf(page, oldCh)).length + 125, 'h is capped');
       await page.close();
 
       // (c) table cells, summary and the new sort order
@@ -267,10 +277,13 @@ module.exports = async function checkExamReading(browser) {
         const Real = window.IntersectionObserver;
         window.IntersectionObserver = function (...args) { window.__io += 1; return new Real(...args); };
       };
-      let page = await open('/exam/fitz-' + PLAIN_CH, { seedData: {}, init: counter });
-      assert.equal(await page.locator('#ex-reading').count(), 0);
-      assert.equal(await page.evaluate(() => window.__io), 0, 'no observer on a page without notes');
-      await page.close();
+      let page;
+      if (PLAIN_CH !== undefined) {
+        page = await open('/exam/fitz-' + PLAIN_CH, { seedData: {}, init: counter });
+        assert.equal(await page.locator('#ex-reading').count(), 0);
+        assert.equal(await page.evaluate(() => window.__io), 0, 'no observer on a page without notes');
+        await page.close();
+      }
 
       page = await open(url, { seedData: {}, init: counter });
       assert.ok(await page.evaluate(() => window.__io) >= 1);

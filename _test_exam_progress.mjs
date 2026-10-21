@@ -493,8 +493,9 @@ test('the hub shows reading rounds, a summary and the continue-reading card from
   assert.equal(row(c).querySelector('.ex-pg-reading').textContent, '0%');
   assert.equal(row(b).querySelector('.ex-rd-badge').getAttribute('aria-label'), '讀完 1 次');
   assert.equal(row(b).querySelector('.ex-rd-fill').style.width, '55%');
-  const plain = hub.document.querySelectorAll('.ex-progress tbody tr').find(r => !r.hasAttribute('data-notes')).querySelector('.ex-pg-reading');
-  assert.equal(plain.textContent, '—');
+  // Every chapter has notes now; check a chapter without notes only while one exists.
+  const plainRow = hub.document.querySelectorAll('.ex-progress tbody tr').find(r => !r.hasAttribute('data-notes'));
+  if (plainRow) assert.equal(plainRow.querySelector('.ex-pg-reading').textContent, '—');
   assert.match(hub.document.getElementById('ex-progress-summary').textContent,
     new RegExp('，重點已讀完 2／' + noted.length + ' 章（其中 1 章 2 次以上）$'));
 
