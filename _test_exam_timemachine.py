@@ -35,7 +35,7 @@ def card(html: str, qid: str) -> str:
 class ValidationTests(unittest.TestCase):
     def test_committed_data_is_valid(self):
         self.assertEqual(gen.validate_timemachine(TM, QIDS), [])
-        self.assertEqual(sorted(TM), ["101-04", "104-25", "104-42", "106-23", "106-24", "106-44", "107-49", "109-15", "112-11"])
+        self.assertEqual(sorted(TM), ["101-04", "104-25", "104-42", "105-16", "106-23", "106-24", "106-44", "107-02", "107-19", "107-49", "109-15", "112-11"])
         self.assertNotIn("106-20", TM, "106-20 was moved out by the physician (2026-10-18)")
 
     def test_unknown_question_id(self):
