@@ -1737,18 +1737,22 @@
     "key": "④",
     "label": "正確",
     "ok": true,
-    "text": "Eruptive seborrheic keratoses 除了 Leser-Trélat sign，也有報告見於 erythroderma，且在紅皮症緩解後會跟著消退。",
+    "text": "Fitzpatrick 9e 寫 eruptive seborrheic keratoses 除了作為內臟惡性腫瘤徵象的 Leser-Trélat sign，也有報告見於 erythroderma 與 HIV infection 等情況；McKee 5e 也記載 multiple eruptive seborrheic keratoses 曾見於 erythroderma 的背景下。題目後半「ED 緩解後 eruptive SK 會自行消失」課本未提及（屬舊版內容，見疑義說明）。",
     "refs": [
      [
       108,
       "1799"
+     ],
+     [
+      "M",
+      "1161"
      ]
     ]
    }
   ],
   "dispute": {
    "kind": "old",
-   "exam": "考試答案：依課本出題本意維持原答案 E。疑義在於 Fitzpatrick 9e 已刪除舊版的 Exfoliative Dermatitis（Erythroderma）專章，題目中的病因排序與比例、shoreline nails、psoriatic ED 的 IgE 上升比例、eruptive SK 隨 ED 緩解而消退等細節，在 9e 都只能找到零星或無法對應的敘述，McKee 5e 也只描述藥物性 erythroderma 的非特異組織變化（p.636），應依舊版內容作答。現行文獻觀念大致未變：乾癬仍為多數系列最常見的病因，藥物與特發性各占一部分，但各地區病例系列的比例差異很大。"
+   "exam": "考試答案：依課本出題本意維持原答案 E。疑義在於 Fitzpatrick 9e 已刪除舊版的 Exfoliative Dermatitis（Erythroderma）專章，題目中的病因排序與比例、shoreline nails、psoriatic ED 的 IgE 上升比例、eruptive SK 隨 ED 緩解而消退等細節，在 9e 都只能找到零星或無法對應的敘述，McKee 5e 也只描述藥物性 erythroderma 的非特異組織變化（p.636）及 erythroderma 背景下出現 multiple eruptive SK（p.1161），未提及隨 ED 緩解而消退，應依舊版內容作答。現行文獻觀念大致未變：乾癬仍為多數系列最常見的病因，藥物與特發性各占一部分，但各地區病例系列的比例差異很大。"
   }
  },
  "101-28": {
@@ -3544,7 +3548,7 @@
     "key": "D",
     "label": "本題答案",
     "ok": true,
-    "text": "手掌腳底皮疹缺乏特異性（梅毒、手足口病、立克次體等亦可見），不是登革熱的診斷依據。但 Fitzpatrick 寫登革熱皮疹常侵犯手掌腳底，見 dispute。",
+    "text": "官方答案認為手掌腳掌的皮疹不能協助診斷登革熱，但課本未提及此說。Fitzpatrick 反而寫第 3–5 天出現的 morbilliform（麻疹樣）疹常侵犯手掌腳掌（frequently involves the palms and soles），常伴手腳輕度水腫，之後可脫屑；鑑別診斷另列 rickettsiosis（立克次體症）、secondary syphilis（二期梅毒）、enterovirus（腸病毒）infection 等發燒合併皮疹的疾病。見 dispute。",
     "refs": [
      [
       169,
@@ -3555,7 +3559,7 @@
   ],
   "dispute": {
    "kind": "conflict",
-   "exam": "考試答案：依課本出題本意維持原答案 D。疑義在 D：Fitzpatrick 明寫登革熱的全身紅疹「frequently involves the palms and soles」，且之後可脫屑，因此手掌腳底皮疹其實常見。出題本意應是發燒、全身紅疹、血小板低下屬於登革熱診斷標準中的臨床／檢驗項目，而手掌腳底分布不在診斷標準內、也缺乏特異性，所以選 D。McKee 未涉及此臨床診斷問題。現行文獻觀念未變（現行病例定義仍以發燒加上皮疹、白血球或血小板低下等為臨床依據，不以手掌腳底分布作為診斷項目）。"
+   "exam": "考試答案：依課本出題本意維持原答案 D。疑義在 D：Fitzpatrick 明寫登革熱的全身紅疹「frequently involves the palms and soles」，且之後可脫屑，因此手掌腳底皮疹其實常見。出題本意應是發燒、全身紅疹、血小板低下屬於登革熱診斷標準中的臨床／檢驗項目，而手掌腳底分布不在診斷標準內、也缺乏特異性，所以選 D。McKee 寫 dengue hemorrhagic fever（登革出血熱）常伴 morbilliform（麻疹樣）疹（often with islands of spared skin），約 30% 有黏膜侵犯（多為結膜），但未提及是否侵犯手掌腳掌。現行文獻觀念未變（現行病例定義仍以發燒加上皮疹、白血球或血小板低下等為臨床依據，不以手掌腳底分布作為診斷項目）。"
   }
  },
  "102-04": {
@@ -5095,6 +5099,9 @@
      ]
     ]
    }
+  ],
+  "flags": [
+   "Fitzpatrick 9e 前後不一致：ch40（p.667 本文、p.669 Table 40-9）寫 Kimura disease 主要見於亞洲男性，ch120 p.2124 則寫 ALHE 與 Kimura disease 都沒有性別傾向；McKee 5e p.1841 只寫 Kimura disease 較常見於東方人（Orientals）的第一、二個十年，p.1488 也只寫多數病人為亞洲人（Asian），均未提性別。本題依 ch40 判 D 正確。"
   ]
  },
  "102-27": {
@@ -5270,13 +5277,19 @@
   "dispute": {
    "kind": "missing",
    "exam": "考試答案：依課本出題本意維持原答案 A。疑義在②與③：Fitzpatrick 9e 只寫 SSTIs 在靜脈藥癮者很常見、skin popping 的感染較深且多房，沒有說膿瘍是否最常見；③也只提到 IDUs 出現 osteoarticular disease 時要詢問檸檬汁溶解 heroin（[i]Candida[/i]），未直接寫骨髓炎；McKee 5e 兩者都沒有討論。①④有課本明確支持，出題本意為①③正確、②④錯誤，故維持 A。",
-   "current": "現行觀念：2025 年系統性回顧與統合分析顯示，注射藥物者的 SSTI 中以 skin abscess 最常被報告（近 3–12 個月約 18%、終生約 41%，cellulitis 終生約 32%），亦即「膿瘍是最常見的臨床表現」與現行證據相符，②依現行文獻應屬正確。",
+   "current": "現行觀念：2025 年系統性回顧與統合分析（Wheeler 等，Open Forum Infect Dis 2025）中，注射藥物者的 skin abscess 終生盛行率約 41%、近 3–12 個月約 18%，cellulitis 分別約 32% 與 11%（cellulitis 的研究數較少）；倫敦 455 名注射藥物者的社區研究（Wright 等，PLoS One 2020）也指出最常見的 SSTI 表現是 abscess 與 cellulitis，且 abscess 較多（終生 55% 對 34%）。現行證據傾向支持②；若②判為正確，①②③皆對、④錯，答案應為 C 而非官方的 A。",
    "sources": [
     {
      "pmid": "40160341",
      "title": "Prevalence of Injection-Related Bacterial and Fungal Infection Among People Who Inject Drugs: A Systematic Review and Meta-analysis.",
      "year": 2025,
      "url": "https://pubmed.ncbi.nlm.nih.gov/40160341/"
+    },
+    {
+     "pmid": "32663203",
+     "title": "Prevalence and severity of abscesses and cellulitis, and their associations with other health outcomes, in a community-based study of people who inject drugs in London, UK.",
+     "year": 2020,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/32663203/"
     }
    ]
   }
@@ -12053,9 +12066,9 @@
    },
    {
     "key": "B",
-    "label": "正確",
+    "label": "正確（依官方答案）",
     "ok": true,
-    "text": "Barrier 受損後會啟動修復反應（例如 epidermal cholesterol biosynthesis 在 barrier repair 時上調），表皮 calcium gradient 與 cytokines 參與調節此恆定機制；9e 對此僅簡述。",
+    "text": "Barrier 受擾後有恢復 barrier 的恆定機制：epidermal cholesterol biosynthesis 在 barrier repair 時上調；老年人的 barrier 功能正常，但受擾後的恢復明顯變慢。至於修復由 cytokines 與 calcium gradient 的變化調節，課本未提及（見 flags），依官方答案判正確。",
     "refs": [
      [
       14,
@@ -19762,7 +19775,7 @@
     "key": "B",
     "label": "正確",
     "ok": true,
-    "text": "致病基因是 Xq28 上的 IKBKG（舊稱 NEMO，NF-κB essential modulator），其產物是 IκB kinase complex 的調節次單元；突變使 NF-κB 無法活化，細胞易受 TNF-α 誘發凋亡。約 80% 病人有 exon 4–10 的 11.7-kb deletion。",
+    "text": "致病基因是 Xq28 上的 IKBKG（舊稱 NEMO，NF-κB essential modulator），其產物是 IκB kinase complex 的調節次單元；突變使 NF-κB 無法活化，細胞易受 TNF-α 誘發凋亡。Fitzpatrick ch75（p.1320）寫 80% 病人有 exon 4–10 的 11.7-kb deletion，ch131（p.2387）則寫約 75%（ch75 p.1320 與 ch131 p.2386 IP 摘要把基因位置印成 Xp28；ch77 p.1352、ch131 p.2373 HED-ID 段寫 Xq28，McKee 寫 IP2 locus 在 Xq28）。",
     "refs": [
      [
       77,
@@ -19771,6 +19784,14 @@
      [
       75,
       "1320"
+     ],
+     [
+      131,
+      "2373"
+     ],
+     [
+      131,
+      "2386-2387"
      ],
      [
       "M",
@@ -24700,9 +24721,9 @@
    },
    {
     "key": "D",
-    "label": "正確",
+    "label": "正確（依官方答案）",
     "ok": true,
-    "text": "MCC 好發於日曬部位：Fitzpatrick 的 168 例中 57% 位於嚴重日曬的臉、頸、手臂，37% 位於部分遮蔽處；McKee 指出 head and neck 約 50%、四肢約 40%，偏好日光受損皮膚。",
+    "text": "MCC 好發於日曬部位：Fitzpatrick Fig. 113-3 的 168 例中 57% 位於嚴重日曬的臉、頸、手臂，37% 位於部分遮蔽處，約 6% 位於完全遮蔽處；McKee 指出 head and neck 約 50%、四肢約 40%，偏好日光受損皮膚。兩本課本都沒有「八成」這個數字（只算嚴重日曬部位為 57%，加上部分遮蔽處為 94%），但「多數病灶在日曬部位」的觀念一致。",
     "refs": [
      [
       113,
@@ -26172,7 +26193,7 @@
     "key": "A",
     "label": "錯誤（本題答案）",
     "ok": false,
-    "text": "一般吸收階序為 mucous membrane > scrotum > eyelids > face > chest；本選項把 eyelids 排在 scrotum 之前。Fig. 183-2 的實測資料中 scrotum 是吸收最高的部位。",
+    "text": "官方答案依一般教學的吸收階序 mucous membrane > scrotum > eyelids > face > chest，判本選項把 eyelids 排在 scrotum 之前為錯；此完整階序課本未提及。Fitzpatrick 只寫外用類固醇經 eyelids 與 scrotum 的穿透大於 forehead、明顯大於 palms and soles；Fig. 183-2 測量的部位中 scrotum 吸收最高（圖中未含 eyelids 與 chest）。",
     "refs": [
      [
       183,
@@ -26326,7 +26347,7 @@
   }
  },
  "108-44": {
-  "summary": "①②③正確，答案 C。",
+  "summary": "①②③正確，答案 C；②把 Behçet disease 的靜脈炎也稱為 Trousseau sign，課本沒有這種說法，見疑義說明。",
   "items": [
    {
     "key": "①",
@@ -26400,7 +26421,11 @@
      ]
     ]
    }
-  ]
+  ],
+  "dispute": {
+   "kind": "ambiguous",
+   "exam": "考試答案：依課本出題本意維持原答案 C。疑義在②：Fitzpatrick 9e 的 Trousseau syndrome 是癌症相關的血栓（原指合併胃癌的遊走性血栓靜脈炎，後擴大為 cancer-associated hypercoagulability；Table 134-1 列胰臟、腦、肺癌），Behçet disease 雖有遊走性的血管侵犯與表淺性血栓靜脈炎（p.2571、p.2574），課本並未稱為 Trousseau；Fitzpatrick 另把「Trousseau sign」用於低血鈣的 carpal spasm（p.2509），McKee 5e 沒有 Trousseau 的敘述。若「稱為 Trousseau sign」也涵蓋 Behçet，②在兩本課本都找不到依據。①③正確、④錯誤，含①③而不含④的組合有 A（①③）與 C（①②③），官方選 C，表示出題者把②的命名理解為指胰臟癌相關的遊走性血栓靜脈炎，故仍選 C。"
+  }
  },
  "108-45": {
   "summary": "①②③正確，答案 C。",
@@ -28500,7 +28525,7 @@
     "key": "①",
     "label": "正確",
     "ok": true,
-    "text": "成人型 APD 最常見的相關系統疾病是 chronic kidney disease 與 diabetes mellitus；4.5%–11% 的透析病人有 APD。",
+    "text": "成人型 APD 最常見的相關系統疾病是 chronic kidney disease 與 diabetes mellitus；北美 4.5%–10% 的 hemodialysis 病人有 APD，英國的透析族群（含 hemodialysis 與 peritoneal dialysis）則為 11%。",
     "refs": [
      [
       71,
@@ -33238,7 +33263,7 @@
     "key": "④",
     "label": "錯誤",
     "ok": false,
-    "text": "Potent topical steroids 與 intralesional steroids 確實可用；但 broadband／narrowband UVB、PUVA 對廣泛病例有效，308-nm excimer 在小型系列研究中也有效，都列在第二線治療，並非不建議使用。",
+    "text": "Potent topical steroids 是第一線、intralesional steroids 屬第二線治療，都可以使用；broadband／narrowband UVB、PUVA 對廣泛病例有效，308-nm excimer 在小型系列研究中也有效，Figure 23-7 把這些光療列在 recalcitrant cases（頑固病例）的治療，並非不建議使用。",
     "refs": [
      [
       23,
@@ -44722,6 +44747,9 @@
      ]
     ]
    }
+  ],
+  "flags": [
+   "Fitzpatrick 9e 前後不一致：ch40（p.667 本文、p.669 Table 40-9）寫 Kimura disease 主要見於亞洲男性，ch120 p.2124 則寫 ALHE 與 Kimura disease 都沒有性別傾向；McKee 5e p.1841 只寫 Kimura disease 較常見於東方人（Orientals）的第一、二個十年，p.1488 也只寫多數病人為亞洲人（Asian），均未提性別。本題依 ch40 判③正確。"
   ]
  },
  "114-34": {
