@@ -6,7 +6,7 @@
 <li>這些疾病罕見（<strong class="ex-n">1 in 100,000 to 1 in 1,000,000</strong>），但 heterozygous carriers 較常見，可能占一般人口的 several percent；多數為 autosomal recessive，carriers 通常無臨床症狀，流行病學研究提示 carriers 可能也有較高的腫瘤風險。<span class="ex-ref">p.2342</span></li>
 <li>Spontaneous genome instability（primary blood 或 skin cells 的 chromosome breakage 增加）見於 <strong>Bloom syndrome（BS）、ataxia telangiectasia（AT）、Fanconi anemia（FA）</strong>；XP 細胞則是接觸 UV 或 benzo[a]pyrene（cigarette smoke 內）等 DNA-damaging agents 之後才出現 genome instability。<span class="ex-ref">p.2342</span></li>
 <li><mark data-q="103-20">Nucleotide excision repair（NER）處理 bulky DNA lesions（包括 UV-induced DNA photoproducts），在 XP、Cockayne syndrome（CS）、trichothiodystrophy（TTD）受損</mark>；這三種病的細胞 cell death 與 mutagenesis 增加，但原文寫 only XP patients have an increased cancer risk，原因不明。<span class="ex-ref">p.2342</span></li>
-<li>XP、CS、TTD 部分致病基因的蛋白除了 DNA repair，也參與 transcription 與 cellular DNA damage responses，所以同一基因不同功能的突變會造成三者之間的 overlap syndromes（Table 130-3）；TTD 的 multisystem 異常可能是 NER pathway proteins 的 transcription 功能失效所致。<span class="ex-ref">p.2342</span></li>
+<li>XP、CS、TTD 部分致病基因的蛋白除了 DNA repair，也參與 transcription 與 cellular DNA damage responses，所以影響同一基因不同功能的突變似乎（appear to）參與一些與 DNA repair 無直接關聯的表型，並構成三者之間數種 overlap syndromes（Table 130-3）；TTD 的 multisystem 異常可能是 NER pathway proteins 的 transcription 功能失效所致。<span class="ex-ref">p.2342</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>NER 缺陷的 XP、CS、TTD 中，原文寫 only XP patients 有 increased cancer risk（p.2342）；Table 130-1 中 CS 與 TTD 的 Neoplasia 欄寫 No increased incidence，XP/CS complex 列 BCC、SCC，XP/TTD 列 BCC、SCC、melanoma（p.2343）。</aside>
 <h3>Table 130-1：臨床特徵（Disorders of Genome Instability With Defective DNA Repair）</h3>
@@ -97,7 +97,7 @@
 <li>XP 最早由 Moriz Kaposi 在 Vienna 於 1870 年與岳父 Ferdinand Hebra 合著的教科書中描述；原名 xeroderma（parchment skin），後加 pigmentosum 指大量 freckle-like pigmentation。<span class="ex-ref">p.2347</span></li>
 <li>1968 年 Cleaver 報告培養的 XP 細胞對 UV 的 hypersensitivity 是 defective DNA repair 所致；多數 XP 細胞對 X-rays 反應正常。<span class="ex-ref">p.2347</span></li>
 <li>XP 許多嚴重表現（如 cancer、corneal scarring 導致失明）是 genetic risk 與 environmental exposure 交互作用的結果；避免 UV 的患者發生 skin cancer 與失明的機率大幅降低或消除。<span class="ex-ref">p.2347</span></li>
-<li>全球各種族都有；Europe 與 United States 頻率約 <strong class="ex-n">1 in 1 million</strong>，Japan 估計 <strong class="ex-n">1 in 22,000</strong>；近親婚姻盛行地區（如 Middle East）相對較常見；founder mutations 見於 Japan、India、Tunisia、North Africa、Israel、Spain、Brazil。<span class="ex-ref">p.2347</span></li>
+<li>全球各種族都有；Europe 與 United States 頻率約 <strong class="ex-n">1 in 1 million</strong>，Japan 估計 <strong class="ex-n">1 in 22,000</strong>；近親婚姻盛行地區（如 Middle East）相對較常見；founder mutations 曾報告於 Japan、India、Tunisia、North Africa、Israel、Spain、Brazil。<span class="ex-ref">p.2347</span></li>
 <li>Autosomal recessive；雙親皆為 asymptomatic carriers（obligate heterozygotes），子女有 <strong class="ex-n">1 in 4</strong> 機率得病。<span class="ex-ref">p.2347、p.2351</span></li>
 <li>McKee 寫 incidence 約 <strong class="ex-n">1 : 250 000</strong>、兩性相等、parental consanguinity 頻率高，與 Fitzpatrick 的 1 in 1 million 數字不同。<span class="ex-ref ex-ref-mckee">McKee p.1223</span></li>
 </ul>
@@ -105,7 +105,7 @@
 <ul>
 <li>約 <strong class="ex-n">50%</strong> 患者有 minimal sun exposure 即 acute burning 的病史，另 <strong class="ex-n">50%</strong> 正常曬黑、不過度曬傷。<span class="ex-ref">p.2347</span></li>
 <li>所有患者都出現大量 freckle-like hyperpigmented macules（lentigines），主要在曝曬部位；皮膚症狀發病年齡 median 介於 <strong class="ex-n">1 and 2 years</strong>，AT-A-GLANCE 寫多數患者在 <strong class="ex-n">2 歲前</strong>出現雀斑。<span class="ex-ref">p.2347</span></li>
-<li>通常不累及防曬處如 buttocks；但嚴重曝曬者腋下可能有色素異常。持續曝曬使皮膚乾燥、parchment-like 並色素增加；actinic keratosis 很早出現，外觀類似長年極度曝曬的 farmers 與 sailors。<span class="ex-ref">p.2347</span></li>
+<li>通常不累及防曬處如 buttocks；但部分（some）嚴重曝曬的患者腋下可能有色素異常。持續曝曬使皮膚乾燥、parchment-like 並色素增加；actinic keratosis 很早出現；XP 兒童曝曬部位皮膚的外觀類似長年極度曝曬的 farmers 與 sailors。<span class="ex-ref">p.2347</span></li>
 <li>McKee：患者 minimal erythema dose of UV light 降低、maximum reaction time 延遲；組織學為 actinic damage、hyperkeratosis with epidermal atrophy、pigmentary incontinence、telangiectasia、actinic keratoses 與各種腫瘤，older patients 可見 solar elastosis。<span class="ex-ref ex-ref-mckee">McKee p.1224–1225</span></li>
 </ul>
 <h3>Cancer（腫瘤）</h3>
@@ -113,14 +113,14 @@
 <li>&lt;20 歲的 XP 患者發生 cutaneous BCC、SCC 或 melanoma 的風險增加 <strong class="ex-n">&gt;10,000-fold</strong>；nonmelanoma skin cancer 發病年齡 median 為 <strong class="ex-n">8 years</strong>。<span class="ex-ref">p.2347</span></li>
 <li>與一般人口比，first nonmelanoma skin cancer 發病年齡提早 <strong class="ex-n">&gt;50 years</strong>、first melanoma 提早 <strong class="ex-n">&gt;30 years</strong>，顯示 DNA repair 對一般人皮膚癌的保護。<span class="ex-ref">p.2347</span></li>
 <li>Fig. 130-4：NMSC 的 XP median 9 yr、一般人口 median 67 yr（差 58 yr）；melanoma 的 XP median 22 yr、一般人口 55 yr（差 33 yr）。<span class="ex-ref">p.2349</span></li>
-<li>Internal cancers：oral cavity neoplasms 不少，尤其是舌尖 SCC（presumed sun-exposed location）；少數患者報告 brain（sarcoma、medulloblastoma）、CNS（spinal cord astrocytoma）、lung、uterine、breast、pancreatic、gastric、renal、testicular tumors 與 leukemia；整體 internal neoplasms 約增加 <strong class="ex-n">10- to 20-fold</strong>。<span class="ex-ref">p.2350</span></li>
-<li>McKee：皮膚腫瘤發生率約 1000-fold，median 發病年齡 8 years，好發 face、neck、head，也可有 basisquamous carcinoma、keratoacanthoma、atypical fibroxanthoma、cutaneous angiosarcoma；DNA repair capacity 較低者腫瘤更多更早。<span class="ex-ref ex-ref-mckee">McKee p.1224</span></li>
+<li>Internal cancers：oral cavity neoplasms 不少，尤其是舌尖 SCC（presumed sun-exposed location）；少數患者報告 brain（sarcoma、medulloblastoma）、CNS（spinal cord astrocytoma）、lung、uterine、breast、pancreatic、gastric、renal、testicular tumors 與 leukemia；整體而言這些報告提示（suggest）internal neoplasms 約增加 <strong class="ex-n">10- to 20-fold</strong>。<span class="ex-ref">p.2350</span></li>
+<li>McKee：皮膚腫瘤發生率比一般人口高 1000-fold，median 發病年齡 8 years，好發 face、neck、head，也可有 basisquamous carcinoma、keratoacanthoma，較少見（less frequently）的有 atypical fibroxanthoma、cutaneous angiosarcoma；DNA repair capacity 較低者腫瘤更多更早。<span class="ex-ref ex-ref-mckee">McKee p.1224</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>原文 NMSC 發病年齡 median 在 p.2347 內文寫 8 years，Fig. 130-4 圖示 XP median 為 9 yr（p.2349），兩處照原文並列，未統一。</aside>
 <h3>Ocular findings（眼）</h3>
 <ul>
 <li>眼部異常幾乎和皮膚異常一樣常見；posterior portion（retina）被 anterior portion（lids、cornea、conjunctiva）遮擋 UV，臨床發現局限於這些 anterior、UV-exposed structures。<span class="ex-ref">p.2347</span></li>
-<li>常有 photophobia，並可能伴隨明顯 conjunctival injection；Schirmer testing 常顯示 tearing 減少而 dry eyes；持續 UV 可造成 severe keratitis → corneal opacification 與 vascularization。<span class="ex-ref">p.2347–2349</span></li>
+<li>常有 photophobia，並可能伴隨明顯 conjunctival injection；Schirmer testing 常顯示 tearing 減少而 dry eyes；持續 UV 可能造成 severe keratitis → corneal opacification 與 vascularization。<span class="ex-ref">p.2347–2349</span></li>
 <li>眼瞼色素增加與 lash loss；lid skin atrophy 造成 ectropion、entropion，嚴重者眼瞼完全喪失；可有 benign conjunctival inflammatory masses 或眼瞼 papillomas；眼睛 UV-exposed 部位的 epithelioma、SCC、melanoma 常見；black patients 的眼部表現可能較嚴重。<span class="ex-ref">p.2349</span></li>
 </ul>
 <h3>Neurologic（神經）</h3>
@@ -128,8 +128,8 @@
 <li>約 <strong class="ex-n">25%</strong> 患者有 neurologic abnormalities（AT-A-GLANCE：progressive hearing loss 與 cognitive impairment）；可在 infancy 早期出現，部分患者延到 second decade。<span class="ex-ref">p.2347、p.2349</span></li>
 <li>輕者如 isolated hyporeflexia；重者有 progressive mental retardation、sensorineural deafness（先從 high-frequency hearing loss 開始）、spasticity 或 seizures。<span class="ex-ref">p.2349</span></li>
 <li><strong>De Sanctis-Cacchione syndrome</strong>：classic XP 的皮膚與眼部表現，加上 microcephaly、progressive mental deterioration、low intelligence、hyporeflexia 或 areflexia、choreoathetosis、ataxia、spasticity、Achilles tendon shortening 導致 quadriparesis、dwarfism、immature sexual development；完整 DSC 只在很少患者被確認，但許多 XP 患者有其中一項或多項神經特徵。<span class="ex-ref">p.2349</span></li>
-<li>臨床篩檢：deep-tendon reflex testing 與 routine audiometry 通常可作為 XP 神經異常的 screen；早期神經異常時 brain MRI 或 CT 可見 enlarged ventricles。<span class="ex-ref">p.2349</span></li>
-<li>Neuropathology：autopsy 主要是 neurons 喪失（或缺如），尤其 cerebrum 與 cerebellum；有 primary axonal degeneration 的證據。McKee 寫 Betz cells 與 Purkinje cells 喪失，basal ganglia 與 cerebellum nuclei 的 neurons 減少，沒有 associated gliosis。<span class="ex-ref">p.2349</span><span class="ex-ref ex-ref-mckee">McKee p.1225</span></li>
+<li>臨床篩檢：deep-tendon reflex testing 與 routine audiometry 通常可作為 XP 神經異常的 screen；早期神經異常時 brain MRI 或 CT 可能顯示 enlarged ventricles。<span class="ex-ref">p.2349</span></li>
+<li>Neuropathology：有神經症狀的患者 autopsy 主要是 neurons 喪失（或缺如），尤其 cerebrum 與 cerebellum；這些患者有 primary axonal degeneration 的證據。McKee 寫有神經侵犯者病變非特異性：Betz cells 與 Purkinje cells 喪失，basal ganglia 與 cerebellum nuclei 的 neurons 減少，沒有 associated gliosis。<span class="ex-ref">p.2349</span><span class="ex-ref ex-ref-mckee">McKee p.1225</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>XP 的神經異常見於約 25% 患者（p.2349）；XP-C 患者除罕見例外沒有神經異常（p.2350）；XP variant 多數沒有神經異常（p.2351）。</aside>
 </section>
@@ -138,7 +138,7 @@
 <h2>4. XP：Etiology, Complementation Groups &amp; Genetics（病因與互補群）</h2>
 <ul>
 <li>XP 患者與其培養細胞都對 UV hypersensitive；皮膚與眼部異常局限於 UV-exposed areas，通常不累及 axillae、buttocks、retina 等 UV 遮蔽處。<mark data-q="102-16,105-10">Patients with XP are hypersensitive to UV radiation, as are their cultured cells</mark>。<span class="ex-ref">p.2350</span></li>
-<li>Black patients with XP 的 skin cancer 頻率也增加，顯示功能正常的 DNA repair system 比黑皮膚的天然色素提供更好的保護。<span class="ex-ref">p.2350</span></li>
+<li>Black patients with XP 的 skin cancer 頻率也增加，提示（suggests）功能正常的 DNA repair system 比黑皮膚的天然色素提供更好的保護。<span class="ex-ref">p.2350</span></li>
 <li>XP 的 DNA repair defects 有 genetic heterogeneity：將不同患者的培養 fibroblasts 融合，定義 <strong>complementation groups</strong>；共 <strong class="ex-n">7</strong> 個 DNA excision repair-deficient groups（XP-A 到 XP-G）。<span class="ex-ref">p.2350</span></li>
 <li>另有臨床 XP 但 NER 正常的病人稱為 <strong>XP variants</strong>（見下）。XP 的一個臨床表型可與數個基因缺陷有關，一個基因的突變也可有數種臨床表型。<span class="ex-ref">p.2350</span></li>
 <li>McKee：XP 並非單一疾病；至少 7 個 complementation groups（A 到 G）加一個 excision-proficient variant；groups H 與 I 後來重新分入 groups D 與 C。多數 groups 與 NER 初始 incision 階段的 enzyme deficiency 有關。<span class="ex-ref ex-ref-mckee">McKee p.1223–1224</span></li>
@@ -146,10 +146,10 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Group（gene）</th><th scope="col">Fitzpatrick 9e 重點</th></tr></thead>
 <tbody>
-<tr><td>XP-A（<em>XPA</em>）</td><td>包含最嚴重神經與 somatic 異常的患者（De Sanctis-Cacchione syndrome），也有神經異常極輕微或沒有的患者；最嚴重者似乎兩個 alleles 都有 truncating mutations、無可測得的正常蛋白；神經異常輕微者有 splice-site mutations，可產生少量正常 mRNA；<strong>日本最常見的 XP 型</strong>，約 <strong class="ex-n">90%</strong> 日本 XP-A 患者有同一個 founder mutation（single base substitution），可作 PCR 快速診斷（含 prenatal diagnosis）；該突變的 heterozygous carriers 約占日本人口 <strong class="ex-n">1%</strong>。</td></tr>
+<tr><td>XP-A（<em>XPA</em>）</td><td>包含最嚴重神經與 somatic 異常的患者（De Sanctis-Cacchione syndrome），也有神經異常極輕微或沒有的患者；最嚴重者似乎兩個 alleles 都有 truncating mutations、無可測得的正常蛋白；神經異常輕微者有 splice-site mutations，可產生少量正常 mRNA；<strong>日本最常見的 XP 型</strong>，約 <strong class="ex-n">90%</strong> 日本 XP-A 患者有同一個 founder mutation（single base substitution），可作 PCR 快速診斷（含 prenatal diagnosis）；該突變的 heterozygous carriers 估計約占日本人口 <strong class="ex-n">1%</strong>。</td></tr>
 <tr><td>XP-B（<em>XPB/ERCC3</em>）</td><td>5 位患者（4 個 kindreds）有 XP 的皮膚異常（含腫瘤）加上 CS 典型的神經與眼部異常；另一家族 2 位成年姊妹有 XP 但無 CS，有 ocular melanomas；另有 TTD 患者也發現 XPB 缺陷。</td></tr>
 <tr><td>XP-C（<em>XPC</em>）</td><td>除罕見例外，有 XP 皮膚與眼部侵犯而<strong>無神經異常</strong>；是美國、歐洲、埃及<strong>最常見</strong>的 group，日本罕見；多數為兩個 alleles truncating mutations，XPC mRNA 測不到（nonsense-mediated message decay）；Turkey 一家族的 splice lariat branchpoint mutation 低至 <strong class="ex-n">3% to 5%</strong> 的正常 mRNA，症狀較輕；通常<strong>沒有</strong>輕微曝曬即嚴重 blistering sunburn 的病史，有時是兒童出現皮膚癌時才首次診斷。</td></tr>
-<tr><td>XP-D（<em>XPD/ERCC2</em>）</td><td>多種臨床表型：cutaneous XP 於 second decade 才出現神經異常，或 XP 無神經異常；2 位 XP-D 患者同時有 XP 與 CS 症狀；photosensitive TTD（無 XP）的細胞也被歸入 XP-D；2 位患者同時有 TTD 與 XP（1 位有 skin cancer、1 位死於 metastatic melanoma）；1 位 COFS 患者有 XPD 突變。</td></tr>
+<tr><td>XP-D（<em>XPD/ERCC2</em>）</td><td>多種臨床表型：可能為 cutaneous XP 於 second decade 才出現神經異常，或 XP 無神經異常；2 位 XP-D 患者同時有 XP 與 CS 症狀；photosensitive TTD（無 XP）的細胞也被歸入 XP-D；2 位患者同時有 TTD 與 XP（1 位有 skin cancer、1 位死於 metastatic melanoma）；1 位 COFS 患者有 XPD 突變。</td></tr>
 <tr><td>XP-E（<em>XPE/DDB2</em>）</td><td>歐洲 1 個 kindred、日本數個 kindreds；作者研究的美國與德國 3 個 kindreds 成人無神經侵犯。</td></tr>
 <tr><td>XP-F（<em>XPF/ERCC4</em>）</td><td>主要在日本；多數症狀輕微，無神經異常或 skin cancer；但近期發現 2 個家族於成年出現嚴重 neurodegeneration，residual DNA repair 很低（僅 <strong class="ex-n">10% to 20%</strong> of normal）。</td></tr>
 <tr><td>XP-G（<em>XPG/ERCC5</em>）</td><td>已確認 <strong class="ex-n">13</strong> 位患者（US、Europe、Japan）；臨床差異大：數位有 XP 加 severe CS 的特徵（cachexia、10 歲內死亡）；其他 missense mutations 患者沒有神經異常，可能因細胞有低量 residual activity。</td></tr>
@@ -169,13 +169,13 @@
 <h2>5. XP：Diagnosis, Differential Diagnosis &amp; Prognosis（診斷、鑑別與預後）</h2>
 <h3>Laboratory testing（實驗室診斷）</h3>
 <ul>
-<li><strong>Cellular hypersensitivity</strong>：培養的 XP 細胞在沒有 damaging agents 時正常生長，UV 暴露後 population growth rate 或 single-cell colony-forming ability 的下降比正常細胞更明顯；各患者 fibroblasts 的 post-UV colony-forming ability 範圍很廣。<span class="ex-ref">p.2351</span></li>
-<li><strong>Host cell reactivation assays</strong>：XP fibroblasts 修復受 UV 損傷的 viruses 或 plasmids 至功能狀態的能力不足，測過的每一型 XP 都有異常。<span class="ex-ref">p.2351</span></li>
+<li><strong>Cellular hypersensitivity</strong>：培養的 XP 細胞在沒有 damaging agents 時通常（generally）正常生長，UV 暴露後 population growth rate 或 single-cell colony-forming ability 的下降比正常細胞更明顯；各患者 fibroblasts 的 post-UV colony-forming ability 範圍很廣。<span class="ex-ref">p.2351</span></li>
+<li><strong>Host cell reactivation assays</strong>：XP fibroblasts 修復某些（some）受 UV 損傷的 viruses 或 plasmids 至功能狀態的能力不足，測過的每一型 XP 都有異常。<span class="ex-ref">p.2351</span></li>
 <li>UV-irradiated XP fibroblasts 比正常 fibroblasts <strong>hypermutable</strong>；這被認為是 sunlight-induced somatic mutations 增加、導致癌症的基礎。<span class="ex-ref">p.2351</span></li>
 <li><strong>Chromosome</strong>：XP 細胞通常 karyotype 正常，沒有過多 chromosome breakage 或增加的 sister chromatid exchanges（如 BS 所見）；但 UV 暴露後 chromosome breakage 與 SCE 異常大幅增加，程度因人而異。<span class="ex-ref">p.2351–2352</span></li>
 <li><strong>DNA repair testing</strong>：活的培養細胞在 UV 暴露後核苷酸併入 DNA（unscheduled DNA synthesis）在 XP complementation groups A 到 G 降低；XP-variant 的 unscheduled DNA synthesis 正常。McKee 的方法是 UV 照射 fibroblasts 後以 tritiated thymidine 併入量做 autoradiography，XP 患者併入較少。<span class="ex-ref">p.2352</span><span class="ex-ref ex-ref-mckee">McKee p.1223</span></li>
 <li><strong>Drug and chemical hypersensitivity</strong>：XP 細胞對 psoralens、chlorpromazine、cisplatin、carmustine、benzo[a]pyrene derivatives 等也有 hypersensitive responses。<span class="ex-ref">p.2352</span></li>
-<li>DNA sequence analysis 可由 CLIA-certified laboratories 做；prenatal diagnosis 可用 cultured amniotic fluid cells 的 UV-induced unscheduled DNA synthesis，或早期取得的 trophoblast cells 做 DNA diagnosis。<span class="ex-ref">p.2352–2353</span></li>
+<li>DNA sequence analysis 可由 CLIA-certified laboratories 做；在已有 XP 患者的家族中，曾有報告以 cultured amniotic fluid cells 的 UV-induced unscheduled DNA synthesis，或早期取得的 trophoblast cells 做 DNA diagnosis 進行 prenatal diagnosis。<span class="ex-ref">p.2352–2353</span></li>
 <li>診斷依靠辨識特徵性臨床表現，再以 UV cellular hypersensitivity 與 defective DNA repair 的實驗室檢查確認。<span class="ex-ref">p.2353</span></li>
 </ul>
 <h3>UV spectrum（作用光譜）</h3>
@@ -214,31 +214,31 @@
 <ul>
 <li>患者要保護全身表面：protective clothing、UV-absorbing glasses、long hair styles；生活方式盡量減少 UV 暴露；每天使用高 SPF 防曬（minimum <strong class="ex-n">SPF 30</strong>）。<span class="ex-ref">p.2353</span></li>
 <li><mark data-q="102-16,105-10">Because the cells of individuals with XP are hypersensitive to UVA（found in sunlight）, UVB（found in sunlight）, and UVC（found in some artificial light sources）</mark>，建議用 light meter 測量家中、學校、工作環境的 UV，可偵測 halogen lamps 等高 UV 來源並排除；但沒有「perfectly safe UV exposure」的標準。<span class="ex-ref">p.2353</span></li>
-<li>由受過訓練的家人經常檢查皮膚；全身彩色照片（含近照與尺規）有助偵測新的或變化的病灶；醫師約每 <strong class="ex-n">3 to 6 months</strong> 檢查一次（依皮膚病嚴重度）。<span class="ex-ref">p.2353</span></li>
+<li>由受過訓練的家人經常檢查皮膚；全身彩色照片（含近照與尺規）常（often）非常有助於偵測新的或變化的病灶；醫師約每 <strong class="ex-n">3 to 6 months</strong> 檢查一次（依皮膚病嚴重度）。<span class="ex-ref">p.2353</span></li>
 <li>XP 細胞對 benzo[a]pyrene（cigarette smoke）等環境 mutagens 也 hypersensitive；有 1 位吸菸 &gt;10 年的患者 37 歲死於 bronchogenic carcinoma，另一位吸菸者 48 歲發生 lung cancer；建議 XP 患者不要吸菸，父母也要避免孩子接觸 secondhand smoke。<span class="ex-ref">p.2353–2354</span></li>
 </ul>
 <h3>Premalignant lesions &amp; skin cancer（癌前病灶與皮膚癌）</h3>
 <ul>
-<li>Actinic keratoses：liquid nitrogen 冷凍、topical 5-fluorouracil 或 imiquimod；較大範圍可用 therapeutic dermatome shaving 或 dermabrasion 移除較受損的表層表皮，讓較深、相對受 UV 遮蔽的 follicles 與 glands 的細胞重新 repopulate。<span class="ex-ref">p.2353</span></li>
+<li>Actinic keratoses：可用 liquid nitrogen 冷凍、topical 5-fluorouracil 或 imiquimod；較大範圍曾以 therapeutic dermatome shaving 或 dermabrasion 治療，移除較受損的表層表皮，讓較深、相對受 UV 遮蔽的 follicles 與 glands 的細胞重新 repopulate。<span class="ex-ref">p.2353</span></li>
 <li>Photodynamic therapy（ALA + blue light）對一般多發 AK 患者有效，但 XP 患者沒有安全性與療效資料；因 XP 細胞對 PDT 或其他 light/laser-based therapy 的異常反應不能排除，建議謹慎。<span class="ex-ref">p.2353</span></li>
 <li>皮膚腫瘤的治療與非 XP 患者相同（electrodesiccation and curettage、surgical excision、Mohs micrographic surgery），但要考慮腫瘤周圍 actinic damage 範圍與 tissue conservation（未來腫瘤風險很高）；XP 皮膚 atrophic and taut（一般 actinically damaged 皮膚是 laxity 與 wrinkling），使縫合困難；應盡量減少移除未受損皮膚；極嚴重者曾切除大片臉部皮膚並以未受累皮膚移植。<span class="ex-ref">p.2354</span></li>
 <li>多數 XP 患者對 therapeutic X-rays 沒有異常敏感，曾對 inoperable neoplasms（spinal cord astrocytoma、frontal lobe astrocytoma、orbit 的 recurrent SCC）給予完整劑量放療，反應正常。<span class="ex-ref">p.2354</span></li>
 </ul>
 <h3>Medications（藥物）</h3>
 <ul>
-<li><mark data-q="107-27">Controlled study 中，oral isotretinoin 可有效預防多發 skin cancers 患者的新腫瘤</mark>；因毒性（hepatic、hyperlipidemic、teratogenic、calcification of ligaments and tendons、premature closure of the epiphyses），僅保留給正在發生大量新 skin cancers 的 XP 患者；有效劑量因人而異，有些患者低至 <strong class="ex-n">0.5 mg/kg/day</strong> 即有反應。<span class="ex-ref">p.2354</span></li>
+<li><mark data-q="107-27">Controlled study 中，oral isotretinoin 可有效預防多發 skin cancers 患者的新腫瘤</mark>；因毒性（hepatic、hyperlipidemic、teratogenic、calcification of ligaments and tendons、premature closure of the epiphyses），僅保留給正在發生大量新 skin cancers 的 XP 患者；有效劑量因人而異，有些患者對低至 <strong class="ex-n">0.5 mg/kg/day</strong> 的劑量可能（may）就有反應。<span class="ex-ref">p.2354</span></li>
 <li>Topical liposome 製劑的細菌 DNA repair enzyme <strong>denV T4 endonuclease</strong>：一項研究報告可降低 XP 患者新 actinic keratoses 與 BCC 的頻率；截至 2018 年 FDA 未核准。<span class="ex-ref">p.2354</span></li>
 <li>Intralesional interferon-α：1 位 XP 患者多個 melanoma in situ，只有注射的病灶局部清除。Imiquimod：數例 case reports 有反應，皆無長期追蹤。<span class="ex-ref">p.2354</span></li>
-<li>Oral <strong>vismodegib</strong>（hedgehog pathway inhibitor）：FDA 核准用於 metastatic BCC、surgery 後復發的 locally advanced BCC，及不適合 surgery 或 radiation 的 BCC；沒有 XP 的療效研究；為 teratogen（embryo-fetal death、midline defects、missing digits），男女皆需有效避孕；擔心 mixed BCC/SCC histology 的腫瘤使用後 BCC 成分縮小而 SCC 成分增生。<span class="ex-ref">p.2354</span></li>
-<li>Vitamin D：成年活躍 XP 患者的 active form（1,25-dihydroxy vitamin D）血中濃度正常；但很早就避光的兒童曾有低 25-hydroxy vitamin D，1 位孩子易骨折；血中濃度低者建議 oral vitamin D supplementation。<span class="ex-ref">p.2354</span></li>
+<li>Oral <strong>vismodegib</strong>（hedgehog pathway inhibitor）：FDA 核准用於 metastatic BCC、surgery 後復發的 locally advanced BCC，及不適合 surgery 或 radiation 的 BCC；沒有 XP 的療效研究；為 teratogen（embryo-fetal death、midline defects、missing digits），男女皆需有效避孕；擔心 mixed BCC/SCC histology 的腫瘤使用後可能（might）BCC 成分縮小而 SCC 成分增生。<span class="ex-ref">p.2354</span></li>
+<li>Vitamin D：過去成年、活躍且有 skin cancers 的 XP 患者從飲食得到足夠 vitamin D，active form（1,25-dihydroxy vitamin D）血中濃度正常；但很早就避光的兒童曾有低 25-hydroxy vitamin D，1 位孩子易骨折；血中濃度低者建議 oral vitamin D supplementation。<span class="ex-ref">p.2354</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>oral isotretinoin 因毒性保留給正在發生大量新 skin cancers 的 XP 患者；有效劑量因人而異，最低有人 0.5 mg/kg/day 即有反應（p.2354）。Vismodegib 沒有 XP 療效研究，且為 teratogen（p.2354）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>oral isotretinoin 因毒性保留給正在發生大量新 skin cancers 的 XP 患者；有效劑量因人而異，有些患者對低至 0.5 mg/kg/day 可能（may）就有反應（p.2354）。Vismodegib 沒有 XP 療效研究，且為 teratogen（p.2354）。</aside>
 <p class="ex-cite">本章 isotretinoin 見於 XP 段（p.2354）；MTS 部分未提 isotretinoin。</p>
 <h3>Eyes, hearing, heterozygotes（眼、聽力、帶因者）</h3>
 <ul>
-<li>眼睛：戴有 side shields 的 UV-absorbing glasses；methylcellulose eye drops 保持角膜濕潤；corneal transplantation 可使 severe keratitis 造成 corneal opacity 的患者恢復視力，但部分因 neovascularization 發生 graft rejection；眼瞼、conjunctiva、cornea 的腫瘤通常手術治療。<span class="ex-ref">p.2354</span></li>
-<li>聽力：sensorineural hearing loss 合併學習困難者，hearing aids 很有幫助。<span class="ex-ref">p.2354</span></li>
-<li>XP heterozygotes（父母及部分親屬）是 gene carriers 但臨床正常；有限的流行病學證據顯示他們發生 skin cancer 的風險可能增加；多數細胞功能或 DNA repair 檢查在 heterozygotes 細胞呈正常反應。<span class="ex-ref">p.2354</span></li>
+<li>眼睛：戴有 side shields 的 UV-absorbing glasses；methylcellulose eye drops 保持角膜濕潤；corneal transplantation 曾使 severe keratitis 造成 corneal opacity 的患者恢復視力，但部分因 neovascularization 發生 graft rejection；眼瞼、conjunctiva、cornea 的腫瘤通常手術治療。<span class="ex-ref">p.2354</span></li>
+<li>聽力：sensorineural hearing loss 合併學習困難者，hearing aids 可以（can）很有幫助。<span class="ex-ref">p.2354</span></li>
+<li>XP heterozygotes（父母及部分親屬）是 gene carriers 但臨床正常；有限的（limited）流行病學證據顯示他們發生 skin cancer 的風險增加；多數細胞功能或 DNA repair 檢查在 heterozygotes 細胞呈正常反應。<span class="ex-ref">p.2354</span></li>
 </ul>
 </section>
 
@@ -257,8 +257,8 @@
 <li><strong>CS 與 neoplasia 增加無關</strong>（not associated with an increased incidence of neoplasia）。<span class="ex-ref">p.2355</span></li>
 <li><strong>眼</strong>：microphthalmia，隨時間因 orbital fat 喪失而眼睛凹陷；progressive pigmentary retinal degeneration 與 optic atrophy，終致失明；其他有 photophobia、early cataract、tearing 減少導致 conjunctivitis、corneal infection 與 scarring；瞳孔通常小、iris atrophy、對光反應差；electroretinogram 常異常。<span class="ex-ref">p.2355</span></li>
 <li><strong>神經</strong>：出生體重與早期發育通常正常；除 deafness 外有 peripheral neuropathy、normal pressure hydrocephalus、microcephaly、segmental myelin loss（“tigroid leukodystrophy”）。<span class="ex-ref">p.2355</span></li>
-<li><strong>分型</strong>：發病通常在第二年、神經退化緩慢進展（<strong>CS Type I</strong>）；severe infantile form（<strong>CS Type II</strong>）；較輕、晚發的 <strong>CS Type III</strong>。COFS syndrome（microcephaly、severe mental retardation）與 CAMFAK syndrome（congenital cataracts、microcephaly、failure to thrive、kyphoscoliosis）有類似特徵。嚴重度為連續譜：最嚴重 COFS，其次 CS Type II、CS Type I、CS Type III；最輕為 UVSS（photosensitivity 而無 CS 的系統性特徵）。<span class="ex-ref">p.2355</span></li>
-<li>McKee：出生時正常，通常第二年出現 photosensitivity 與 malar 區 “butterfly” rash，加上 prognathism、sunken eyes、皮下脂肪喪失、nasal atrophy（“beaked” nose），呈 progeria-like 或 bird-headed 外觀；眼底 “salt and pepper” pigmentation；progressive sensorineural deafness；患者多在第三個十年內死亡。<span class="ex-ref ex-ref-mckee">McKee p.272</span></li>
+<li><strong>分型</strong>：發病通常在第二年、神經退化緩慢進展（<strong>CS Type I</strong>）；severe infantile form（<strong>CS Type II</strong>）；較輕、晚發的 <strong>CS Type III</strong>。COFS syndrome（microcephaly、severe mental retardation）與 CAMFAK syndrome（congenital cataracts、microcephaly、failure to thrive、kyphoscoliosis）有類似特徵。有人提出（has been proposed）嚴重度為連續譜：最嚴重 COFS，其次 CS Type II、CS Type I、CS Type III；最輕為 UVSS（photosensitivity 而無 CS 的系統性特徵）。<span class="ex-ref">p.2355</span></li>
+<li>McKee：出生時似乎（appear）正常，通常第二年出現 photosensitivity 與 malar 區 “butterfly” rash，加上 prognathism、sunken eyes、皮下脂肪喪失、nasal atrophy（“beaked” nose），呈 progeria-like 或 bird-headed 外觀；眼底 “salt and pepper” pigmentation；患者通常有 progressive sensorineural deafness；感染增加，通常在第三個十年內死亡。<span class="ex-ref ex-ref-mckee">McKee p.272</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>CS 的 AT-A-GLANCE 寫 acute burning of the skin on minimal sun exposure（p.2355），Table 130-1 則寫 photosensitivity（burning on sun exposure in some patients）（p.2343）。CS 沒有 increased neoplasia（p.2355）。</aside>
 <h3>Etiology &amp; pathogenesis</h3>
@@ -270,10 +270,10 @@
 </ul>
 <h3>Diagnosis</h3>
 <ul>
-<li><strong>Diagnostic criteria</strong>：mandatory major criteria 為 developmental delay、progressive growth failure、progressive microcephaly；minor criteria（<strong class="ex-n">3 out of 5</strong>）：cutaneous photosensitivity、pigmentary retinopathy 及／或 cataracts、progressive sensorineural hearing loss、tooth enamel hypoplasia、enophthalmia（abnormally sunken eyes）。Brain imaging criteria：white matter hypomyelination、cerebellar atrophy 或 hypoplasia、bilateral calcifications of the putamen。<span class="ex-ref">p.2355–2356</span></li>
+<li><strong>Diagnostic criteria</strong>（已被提出，have been proposed）：mandatory major criteria 為 developmental delay、progressive growth failure、progressive microcephaly；minor criteria（<strong class="ex-n">3 out of 5</strong>）：cutaneous photosensitivity、pigmentary retinopathy 及／或 cataracts、progressive sensorineural hearing loss、tooth enamel hypoplasia、enophthalmia（abnormally sunken eyes）。Brain imaging criteria：white matter hypomyelination、cerebellar atrophy 或 hypoplasia、bilateral calcifications of the putamen。<span class="ex-ref">p.2355–2356</span></li>
 <li><strong>COFS syndrome</strong>：autosomal recessive，microcephaly、cataracts、microphthalmia、arthrogryposis。<span class="ex-ref">p.2356</span></li>
-<li>檢查：常見 sensorineural deafness、neuropathic EMG、slow motor nerve conduction velocity；EEG 可能異常；X-ray 可見 thickened skull 與 microcephaly；CT 可偵測 normal-pressure hydrocephalus 與 basal ganglia 等處 calcification（Fig. 130-7）；MRI 可見 cerebrum 與 cerebellum atrophy 及 dysmyelination；bone age 通常正常；身高體重通常遠低於 third percentile。<span class="ex-ref">p.2356</span></li>
-<li>Cellular hypersensitivity：CS 的 fibroblasts 或 lymphocytes 對 UV-induced inhibition of growth 與 colony-forming ability hypersensitive；host cell reactivation 降低，但程度通常比 XP 輕。Prenatal diagnosis：以 post-UV RNA synthesis 恢復延遲與 UV 殺細胞增加；目前較常用分子鑑定。<span class="ex-ref">p.2356</span></li>
+<li>檢查：常見 sensorineural deafness、neuropathic EMG、slow motor nerve conduction velocity；EEG 可能異常；X-ray 可能顯示 thickened skull 與 microcephaly；CT 可能有助於偵測 normal-pressure hydrocephalus 與顯示 basal ganglia 等處 calcification（Fig. 130-7）；brain MRI 顯示 cerebrum 與 cerebellum atrophy 及 dysmyelination；bone age 通常正常；身高體重通常遠低於 third percentile。<span class="ex-ref">p.2356</span></li>
+<li>Cellular hypersensitivity：CS 的 fibroblasts 或 lymphocytes 對 UV-induced inhibition of growth 與 colony-forming ability hypersensitive；host cell reactivation 降低，但程度通常比 XP 輕。Prenatal diagnosis：曾以 post-UV RNA synthesis 恢復延遲與 UV 殺細胞增加進行；目前對已有患病孩子且已知致病突變的家族，較常用分子鑑定。<span class="ex-ref">p.2356</span></li>
 <li>McKee 病理：malar rash 活檢為 epidermal atrophy 合併 basal cell hydropic degeneration，淺層真皮有 chronic inflammatory cell infiltrate；腦部有 white matter 喪失、cerebellar cortical atrophy、hydrocephalus 與廣泛 calcification，組織學為 demyelination 與 gliosis；kidney 可見 global sclerosis（type IV collagen 沉積）。<span class="ex-ref ex-ref-mckee">McKee p.272</span></li>
 </ul>
 <h3>Differential diagnosis（鑑別診斷）</h3>
@@ -303,16 +303,16 @@
 <li>通常 autosomal recessive，1 個家族為 X-linked（<em>RNF113A</em>）。TTD 包含曾被描述為 Tay syndrome、Amish brittle hair syndrome、Sabinas brittle hair syndrome、Pollitt syndrome 的患者。<span class="ex-ref">p.2357、p.2360</span></li>
 <li>TTD 與 XP 部分致病基因相同但突變不同：XP 的功能缺陷是 abnormal DNA repair，TTD 的異常被認為與 transcription 有關。<span class="ex-ref">p.2357</span></li>
 <li>歷史：Pollitt（1968）報告一對兄妹有 mental and physical growth retardation、trichorrhexis nodosa，頭髮 cystine 含量低；Tay（1971）描述一個 Chinese family 的 3 位孩子；Brown（1970）描述頭髮 alternating pattern，Baden 等研究 Amish kindred，在 polarizing microscopy 下見明暗交替的帶；Price 提出 trichothiodystrophy（tricho：hair；thio：sulfur；dys：faulty；trophe：nourishment）。<span class="ex-ref">p.2358–2359</span></li>
-<li>Epidemiology：截至 2005 年的回顧只找到 <strong class="ex-n">112</strong> 例；原文認為 TTD 可能因未被辨識而被低估。<span class="ex-ref">p.2359</span></li>
+<li>Epidemiology：截至 2005 年的回顧只找到 <strong class="ex-n">112</strong> 例；原文認為 TTD 可能（probably）遠比此常見，因未被辨識而被低估。<span class="ex-ref">p.2359</span></li>
 </ul>
 <h3>Cutaneous findings（皮膚與毛髮）</h3>
 <ul>
 <li><mark data-q="105-50">新生兒 TTD 常有 generalized redness 或 mild collodion appearance，通常數週內消退</mark>；之後可進展為 ichthyosis（常較輕，累及 trunk 與 scalp）。<span class="ex-ref">p.2359</span></li>
-<li>多數患者頭髮 short、broken（有些不需剪髮）；發燒生病後常有掉髮。<span class="ex-ref">p.2359</span></li>
+<li>多數患者頭髮 short、broken（有些不需剪髮）；發燒生病後，許多（many）患者會有一次掉髮。<span class="ex-ref">p.2359</span></li>
 <li>在 polarizing light microscopy 下 TTD hair shafts 有特徵性明暗交替 banding，呈 <strong>“tiger tail”</strong> 外觀；hair shaft 還有 undulating surface、<strong>trichoschisis</strong>（頭髮乾淨的橫斷）、trichorrhexis nodosa-like defects 與 ribboning。<span class="ex-ref">p.2359</span></li>
 <li>Hair shafts 脆是因 high-sulfur matrix proteins 減少；胺基酸分析顯示 cysteine 與 cystine 降低，並伴隨頭髮內 strong 對 weak disulfide bonds 比例降低。<span class="ex-ref">p.2359</span></li>
 <li>約 <strong class="ex-n">50%</strong> 患者有 clinical photosensitivity（輕微到嚴重）；但與典型 XP 不同，TTD 患者<strong>不發生 poikilodermatous changes，也不發生 skin cancer</strong>。指甲 brittle，可有 onychoschizia、koilonychia 或其他 dystrophy。<span class="ex-ref">p.2359</span></li>
-<li>罕見 overlap syndrome：TTD 與 XP 特徵都淡化，頭髮較長、只有部分 hair shafts 有 TTD 特徵，並有 XP 提示的色素與皮膚癌。<span class="ex-ref">p.2359</span></li>
+<li>罕見 overlap syndrome：TTD 與 XP 特徵都淡化，可能頭髮較長、只有部分 hair shafts 有 TTD 特徵，並有 XP 提示的色素與皮膚癌。<span class="ex-ref">p.2359</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>TTD 在 Table 130-1 列的 Cutaneous 包含 ichthyosis 與 collodion membrane；原文寫新生兒 often 有 generalized redness 或 mild collodion appearance，通常數週內消退（p.2343、p.2359）。TTD 患者不發生 poikilodermatous changes 也沒有 skin cancer（p.2359）。</aside>
 <h3>Table 130-4：112 位 TTD 患者最常見表現</h3>
@@ -340,7 +340,7 @@
 <h3>Etiology &amp; pathogenesis</h3>
 <ul>
 <li>多數 TTD 患者缺陷在 <em>XPD（ERCC2）</em>；少數在 <em>XPB（ERCC3）</em>或 <em>TTDA（GTF2H5）</em>，這些都是 <strong>TFIIH</strong>（同時調控 DNA repair 與 transcription 的 transcription factor）的成分；<em>GTF2E2</em>（編碼 general transcription factor IIE）突變近期被證實造成 TTD，支持 TTD 由 impaired transcription 造成；部分患者有 <em>TTDN1</em> 突變；X-linked 型與 <em>RNF113A</em> 有關，TTDN1 與 RNF113A 的分子功能尚不明。<span class="ex-ref">p.2360</span></li>
-<li>影響 NER 基因 repair function 的突變與 XP 特徵有關；影響 transcription-related function 的突變導致 TTD 特徵；兩種功能都受損者可有兼具兩病特徵的 overlap syndromes；同一 <em>XPD</em> 的不同突變可造成廣泛臨床表型。<span class="ex-ref">p.2360</span></li>
+<li>原文寫一般認為（It is believed）影響 NER 基因 repair function 的突變與 XP 特徵有關；影響 transcription-related function 的突變導致 TTD 特徵；兩種功能都受損者可有兼具兩病特徵的 overlap syndromes；同一 <em>XPD</em> 的不同突變可造成廣泛臨床表型。<span class="ex-ref">p.2360</span></li>
 <li>McKee：photosensitive TTD 有 NER 缺陷，NER pathway 涉及至少 28 個基因；TTD 由 <em>XPB、XPD、TTD-A</em> 突變造成；TTD 患者沒有 XP 那樣增加的癌症易感性；about half 患者可證實 UV 損傷 DNA 的 excision repair 異常。<span class="ex-ref ex-ref-mckee">McKee p.1112</span></li>
 <li>McKee：photosensitive group 有 TFIIH subunits 的 DNA-repair anomalies，non-photosensitive group 沒有 DNA-repair defect，突變在 <em>C7ORF11</em>（TTDN1 protein）；原文寫 an increased risk of malignancy is not regarded as a feature of photosensitive TTD。<span class="ex-ref ex-ref-mckee">McKee p.75</span></li>
 </ul>
@@ -350,7 +350,7 @@
 <li>新生兒典型表現：早產、small for gestational age、short stature、micrognathia、congenital cataracts、cryptorchidism，<mark data-q="105-50">可有 erythroderma 或 collodion membrane</mark>；這些新生兒常在 NICU，感染風險高；母親常有妊娠困難（hypertension、preeclampsia 或更嚴重的 HELLP syndrome）。<span class="ex-ref">p.2360</span></li>
 <li>兒童期典型表現：快樂外向、short brittle hair、developmental delay、short stature、microcephaly、micrognathia、brain 異常 myelination、recurrent infections、feeding difficulties。<span class="ex-ref">p.2360</span></li>
 <li><mark data-q="105-50">TTDN1 突變患者的 TTD 表型較特別：較可能有 autistic behaviors、delayed bone age、seizures；較不可能有 low birth weight、collodion presentation、cataracts、brain 異常 myelination</mark>。<span class="ex-ref">p.2360</span></li>
-<li>Imaging：brain MRI 可見 dysmyelination（TTD 患者無法形成 myelin）；overlap 患者可有 brain atrophy；TTD–CS 患者可有 CS 的 deep-set eyes 與 pigmentary retinopathy。Bone imaging（X-ray 或 DEXA）：axial skeleton osteosclerosis 合併 peripheral skeleton osteopenia。<span class="ex-ref">p.2360</span></li>
+<li>Imaging：brain MRI 可見 dysmyelination（TTD 患者無法形成 myelin）；罕見（rare）的 overlap 患者可能有 brain atrophy；TTD–CS 患者可能有 CS 的 deep-set eyes 與 pigmentary retinopathy。Bone imaging（X-ray 或 DEXA）：axial skeleton osteosclerosis 合併 peripheral skeleton osteopenia。<span class="ex-ref">p.2360</span></li>
 <li>診斷流程：剪一束 hair shafts 做顯微鏡檢查，regular light microscopy 看 hair shaft defects、polarizing lenses 看 tiger tail banding；必要時做 hair shafts 胺基酸分析確認低硫含量；基因檢測可能找到突變，但並非所有患者都找得到。<span class="ex-ref">p.2360</span></li>
 <li>Laboratory testing 可測基因：XPD（ERCC2）、XPB（ERCC3）或 TTDA（TFB5）、GTF2E2、TTDN、RNF113A。<span class="ex-ref">p.2360</span></li>
 <li>McKee：偏振光（polarized light）檢查是看到典型明暗交替帶（tiger’s tail）的關鍵；hair shafts 扁平，有 trichoschisis 與 cuticle 缺如或不足；毛髮硫與 cystine 含量約減少 <strong class="ex-n">50%</strong>；可經 fetal eyebrow biopsy 或 amniotic fluid trophoblasts 做 in utero 診斷。<span class="ex-ref ex-ref-mckee">McKee p.1112</span></li>
@@ -359,8 +359,8 @@
 <p class="ex-cite">p.2360 診斷段寫 TTDA（TFB5），本章其他處（Table 130-2、Fig. 130-1、p.2360 前段）寫 TTDA（GTF2H5），照原文。</p>
 <h3>Prognosis &amp; management</h3>
 <ul>
-<li>TTD 兒童易有 feeding difficulties、failure to thrive、recurrent infections；輕度感染可迅速進展成 systemic illness；文獻回顧 &lt;10 歲兒童死亡率高（<strong class="ex-n">&gt;20%</strong>），多數死於感染。<span class="ex-ref">p.2360</span></li>
-<li>處置著重辨識與支持個別臨床問題：photosensitive 患者防曬、衣物遮蔽與避光；發展遲緩與智力障礙者神經與發展評估支持；眼科會診（congenital cataracts 等，cataracts 與 refraction errors 可治療）；部分患者反覆感染用 prophylactic antibiotics 或 IVIG；生長異常與難維持體重，部分可用 gastrostomy tubes；部分患者在第一或第二個十年因 bilateral aseptic necrosis of hips 逐漸無法行走。<span class="ex-ref">p.2360–2361</span></li>
+<li>TTD 兒童易有 feeding difficulties、failure to thrive、recurrent infections；許多（many）兒童相對輕微的感染可迅速進展成 systemic illness；文獻回顧 &lt;10 歲兒童死亡率高（<strong class="ex-n">&gt;20%</strong>），多數死於感染。<span class="ex-ref">p.2360</span></li>
+<li>處置著重辨識與支持個別臨床問題：photosensitive 患者防曬、衣物遮蔽與避光；發展遲緩與智力障礙者可能（may）受益於神經與發展評估支持；眼科會診（congenital cataracts 等，cataracts 與 refraction errors 可治療）；部分患者反覆感染曾用 prophylactic antibiotics 或 IVIG 處理；患者通常（generally）生長異常且難維持體重，部分情況 gastrostomy tubes 可能有助維持營養；部分患者在第一或第二個十年因 bilateral aseptic necrosis of hips 逐漸無法行走。<span class="ex-ref">p.2360–2361</span></li>
 <li>懷有 TTD 胎兒的妊娠併發症頻率高：intrauterine growth restriction、preeclampsia、preterm delivery、HELLP syndrome、maternal serum screening markers 異常。<span class="ex-ref">p.2361</span></li>
 </ul>
 </section>
@@ -393,14 +393,14 @@
 </ul>
 <h3>McKee 補充（Chapter 32, Muir-Torre syndrome）</h3>
 <ul>
-<li>Torre 與 Muir 於 1967 年各報告 1 位有多發 cutaneous tumors 與 gastrointestinal malignancies 的患者；有家族性者（<mark data-q="107-27,110-14">autosomal dominant, 59%</mark>）稱為 “family cancer syndrome”；penetrance 高但 expression 不一；已報告 &gt;300 位患者。<span class="ex-ref ex-ref-mckee">McKee p.1606</span></li>
+<li>Torre 與 Muir 於 1967 年各報告 1 位有多發 cutaneous tumors 與 gastrointestinal malignancies 的患者；有家族性者（<mark data-q="107-27,110-14">autosomal dominant, 59%</mark>）稱為 “family cancer syndrome”；penetrance 似乎（appears）高但 expression 不一；已報告 &gt;300 位患者。<span class="ex-ref ex-ref-mckee">McKee p.1606</span></li>
 <li>皮膚病灶：sebaceous adenoma、sebaceoma、ocular 與 extraocular sebaceous carcinoma、keratoacanthoma；Torre 的定義為至少 1 個 cutaneous sebaceous neoplasm 加至少 1 個 visceral cancer，不需要家族史。傳統上 sebaceous adenoma 是最具特異性的 marker，sebaceoma 的關聯度可能相近，多發病灶增加特異性。<span class="ex-ref ex-ref-mckee">McKee p.1606</span></li>
 <li><mark data-q="107-27">皮膚腫瘤可早於 internal malignancies 數年出現，但較常是 subsequent 或 simultaneous development</mark>；發病從第三到第九個十年，最常見於第五與第六個十年。<span class="ex-ref ex-ref-mckee">McKee p.1607</span></li>
 <li>常見 internal malignancies：gastrointestinal（≈<strong class="ex-n">53%</strong>）、bladder 與 renal pelvis（≈<strong class="ex-n">11%</strong>）、endometrium（≈<strong class="ex-n">10%</strong>）、breast（≈5%）、hematological（≈5%）；colonic carcinomas 傾向 proximal（60%）。<span class="ex-ref ex-ref-mckee">McKee p.1607</span></li>
 <li><mark data-q="107-27">Sebaceous adenoma 最常累及 face（尤其 nose 與 cheek）與 scalp；但它是 Muir-Torre syndrome 譜系的一部分，尤其是發生在 head and neck 以外者</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1596</span></li>
 <li><mark data-q="110-14">Periocular sebaceous carcinoma 一般被認為比 extraocular 型較少與 DNA MMR deficiency 及 Muir-Torre syndrome 相關（文獻看法不一）；periocular 與 MTS 的關聯似乎不如 extraocular 型明顯</mark>；head and neck 以外的 sebaceous carcinomas 可能最能提示 MTS。<span class="ex-ref ex-ref-mckee">McKee p.1602–1603</span></li>
 <li>機轉：Lynch syndrome 是一個 DNA MMR gene 的 inherited defect；另一 wild-type allele 缺失後造成 microsatellite instability（MSI）；主要 MMR proteins 是 MLH1 與 MSH2；MTS 是 Lynch syndrome 的 subset，至少 <strong class="ex-n">70%</strong> 腫瘤有 MSI。<span class="ex-ref ex-ref-mckee">McKee p.1607–1608</span></li>
-<li><mark data-q="107-27">Germline disruption 在 HNPCC 中 MLH1 與 MSH2 分布均等，但 Muir-Torre 患者多數（&gt;90%）是 MSH2 disruption</mark>；MSH2 loss 時 MSH6 常一併失表現；immunohistochemistry 或 PCR-based MSI 檢測可用，但 MSI 缺如與 MMR proteins 表現完整並不排除 MTS。<span class="ex-ref ex-ref-mckee">McKee p.1607–1609</span></li>
+<li><mark data-q="107-27">Germline disruption 在 HNPCC 中 MLH1 與 MSH2 分布均等，但 Muir-Torre 患者多數（&gt;90%）是 MSH2 disruption</mark>；MSH2 loss 時 MSH6 通常（usually）一併失表現；immunohistochemistry 或 PCR-based MSI 檢測可用，但 MSI 缺如與 MMR proteins 表現完整並不排除 MTS。<span class="ex-ref ex-ref-mckee">McKee p.1607–1609</span></li>
 </ul>
 <p class="ex-cite">McKee 頁碼依兩欄版面對照；Fitzpatrick 本章 MTS 沒有 sebaceous tumors 位置或 MSH2 比例的敘述。</p>
 </section>
@@ -413,7 +413,7 @@
 <li><strong>皮膚</strong>：常在出生後數週內於 malar area、nose、ears 周圍出現 facial erythema 與 telangiectasia，表面上像 lupus erythematosus；曝曬加重，可誘發 bullae、bleeding 與 lips 和 eyelids 的 crusting；café-au-lait spots 常見，有時鄰近有 depigmented areas。<span class="ex-ref">p.2361</span></li>
 <li><strong>非皮膚</strong>：身材 well proportioned 但矮小，成人身高通常 &lt;<strong class="ex-n">150 cm</strong>（5 feet）；長而窄的頭，narrow prominent nose、relatively hypoplastic malar areas、receding chin。<span class="ex-ref">p.2361</span></li>
 <li><strong>併發症</strong>：因 immune dysfunction 易有多重感染；fertility 降低，diabetes mellitus 常見；約 <strong class="ex-n">20%</strong> 發生惡性腫瘤，其中一半發生在 <strong class="ex-n">20 歲前</strong>（原文寫 comprising a normal spectrum of cancer types；Table 130-1 寫 most cancer types，particularly leukemias、lymphomas、carcinomas of the breast and GI tract）。<span class="ex-ref">p.2361、p.2343</span></li>
-<li><strong>病因</strong>：<em>BLM</em> 突變，編碼 <strong>RecQ helicase</strong>。BS 細胞 spontaneous sister chromatid exchanges 與 homologous chromosomes 之間的 exchanges 增加，後者常可見 <strong>quadriradial chromosomes</strong>（4-arm chromosomes，幾乎不見於未受影響者），顯示 <strong>hyperrecombination</strong>。BLM 被認為與 FANCD2 交互作用，也參與 telomere replication；hyperrecombination 可使 loss of heterozygosity 增加，連同 spontaneous mutation frequency 增加導致 malignant transformation 增加。<span class="ex-ref">p.2362</span></li>
+<li><strong>病因</strong>：<em>BLM</em> 突變，編碼 <strong>RecQ helicase</strong>。BS 細胞 spontaneous sister chromatid exchanges 與 homologous chromosomes 之間的 exchanges 增加，後者常可見 <strong>quadriradial chromosomes</strong>（4-arm chromosomes，幾乎不見於未受影響者），顯示 <strong>hyperrecombination</strong>。BLM 突變如何導致 hyperrecombination 的確切機轉仍未完全了解，有人提出（suggested）BLM 與 FANCD2 交互作用，也已證實參與 telomere replication；hyperrecombination 可能（may）使 loss of heterozygosity 增加，並經此機轉連同 spontaneous mutation frequency 增加，使 malignant transformation 頻率增加。<span class="ex-ref">p.2362</span></li>
 <li>Immune deficiency：immunoglobulin levels 降低、cellular proliferative response to mitogens 降低、mixed leukocyte reaction 增殖降低，可能是 immunoglobulin 與 lymphocyte receptor genes recombination 受損所致，可能進一步增加癌症風險。<span class="ex-ref">p.2362</span></li>
 <li><strong>診斷</strong>：quadriradial chromosomes（BS 患者 lymphocytes 的 <strong class="ex-n">0.5% to 14%</strong>）與約 <strong class="ex-n">10-fold</strong> 增加的 spontaneous sister chromatid exchanges；Ashkenazi Jews 有 founder deletion/insertion mutation（BLMAsh，頻率約 1%），可用於 DNA 診斷與 carrier 檢測。<span class="ex-ref">p.2362</span></li>
 <li>鑑別：photosensitivity 見於 XP 與 RTS，café-au-lait macules 見於 neurofibromatosis，早發 telangiectasias 見於 ataxia telangiectasia。<span class="ex-ref">p.2362</span></li>
@@ -428,12 +428,12 @@
 <li>Rare autosomal recessive：premature aging 特徵加上癌症風險增加。Epidemiology：已報告 <strong class="ex-n">&gt;800</strong> 位患者，多數是日本人。<span class="ex-ref">p.2362</span></li>
 <li><strong>皮膚</strong>：到青春期前臨床正常，之後沒有 usual growth spurt，並開始早發老化特徵：頭髮 graying 與 thinning、subcutaneous fat 喪失、skin wrinkling；非正常皮膚老化的特徵有 scleroderma-like changes with subcutaneous atrophy、leg ulcers、soft-tissue calcifications。<span class="ex-ref">p.2362</span></li>
 <li><strong>非皮膚</strong>：Type 2 diabetes、osteoporosis、atherosclerosis 引起的 cardiovascular disease；因早發 cataracts，常由眼科醫師最先診斷；<strong>bird-like facies</strong> 與老化無關。<span class="ex-ref">p.2362</span></li>
-<li><strong>腫瘤</strong>：一般老化人口 epithelial 對 mesenchymal cancer 比例約 <strong class="ex-n">10:1</strong>，WS 患者變成 <strong class="ex-n">1:1</strong>；包含 thyroid epithelioid carcinomas、melanomas、meningiomas、soft-tissue sarcomas、hematologic neoplasias（多為 leukemias）、osteosarcomas。多數 melanoma 為 acral-lentiginous type 或源自 mucous membranes，與日本一般人口相同，因此不被認為與 UV exposure 有關；thyroid cancer 發生年齡比日本一般人口早。<span class="ex-ref">p.2362–2363</span></li>
+<li><strong>腫瘤</strong>：一般老化人口 epithelial 對 mesenchymal cancer 比例約 <strong class="ex-n">10:1</strong>，WS 患者變成 <strong class="ex-n">1:1</strong>；主要（mostly）為 thyroid epithelioid carcinomas、melanomas、meningiomas、soft-tissue sarcomas、hematologic neoplasias（多為 leukemias）、osteosarcomas。多數 melanoma 為 acral-lentiginous type 或源自 mucous membranes，與日本一般人口相同，因此不被認為與 UV exposure 有關；thyroid cancer 發生年齡比日本一般人口早。<span class="ex-ref">p.2362–2363</span></li>
 <li><strong>病因</strong>：<em>WRN</em> 突變，編碼 <strong>RecQ helicase</strong>；多數突變導致蛋白 truncation（有時只少了一小段），並喪失 nuclear targeting sequence。WRN 參與 DNA replication、recombination、<mark data-q="103-20">base excision repair of oxidative DNA damage</mark>、DNA strand breaks 修復、DNA damage signaling、telomere maintenance 與 transcription。<span class="ex-ref">p.2363</span></li>
 <li>WS 細胞在培養中 replicative life span 縮短，telomere 結構改變與 telomere attrition 加速；genome instability 表現為 nonhomologous chromosome exchanges 與 large chromosomal deletions 頻率增加。Atypical Werner syndrome 指懷疑 WS 但無 <em>WRN</em> 突變者。<span class="ex-ref">p.2363</span></li>
 <li>鑑別：其他 premature aging 遺傳病，例如 Hutchinson-Gilford Progeria。預後：通常在 <strong class="ex-n">50 歲前</strong>死於 myocardial infarction 或癌症。<span class="ex-ref">p.2363</span></li>
 <li>處置：沒有 specific treatment；建議早期癌症監測、心臟病處理及避免心血管危險因子。mTOR inhibitors、p38 MAPK inhibitors、vitamin C 與 stem cell-based treatments 已被探索，但都未在臨床應用中研究。<span class="ex-ref">p.2363</span></li>
-<li>McKee：通常在第三個十年被辨識；short stature、low weight、bird-like beaked nose 與 protuberant eyes 的 dysmorphic facies、distal sclerodermoid features；atherosclerosis（重要死因）、diabetes 與癌症增加；CNS 不受影響，Alzheimer disease 發生率未增加；約 <strong class="ex-n">up to 10%</strong> 發生惡性腫瘤；WRN protein 有 exonuclease 與 helicase activity；皮膚組織學為 hyperkeratosis、epidermal atrophy、hyperpigmentation、dermal fibrosis with hyalinization（可似 scleroderma），appendages atrophic、皮下脂肪變薄。<span class="ex-ref ex-ref-mckee">McKee p.1047</span></li>
+<li>McKee：通常在第三個十年被辨識；short stature、low weight、bird-like beaked nose 與 protuberant eyes 的 dysmorphic facies、distal sclerodermoid features；atherosclerosis（重要死因）、diabetes 與癌症增加；CNS 不受影響，Alzheimer disease 發生率未增加；最多（<strong class="ex-n">up to 10%</strong>）發生惡性腫瘤；WRN protein 有 exonuclease 與 helicase activity；皮膚組織學為 hyperkeratosis、epidermal atrophy、hyperpigmentation、dermal fibrosis with hyalinization（可似 scleroderma），appendages atrophic、皮下脂肪變薄。<span class="ex-ref ex-ref-mckee">McKee p.1047</span></li>
 </ul>
 </section>
 
@@ -448,7 +448,7 @@
 <li>RTS 細胞有 chromosomal instability（trisomy、aneuploidy、chromosomal rearrangements）；RecQL4 的確切功能不清楚，可能類似 BS 與 WS 的 RecQ helicases，涉及 DNA replication、homologous recombination、DNA damage repair，以及 mitochondrial 與 telomeric DNA integrity 的維持。<span class="ex-ref">p.2364</span></li>
 <li>鑑別：childhood myeloblastic syndrome 也可見於 Fanconi anemia 與 dyskeratosis congenita。預後：壽命受癌症限制，沒有癌症的 RTS 患者壽命正常。<span class="ex-ref">p.2364</span></li>
 <li>處置：沒有 specific treatment；建議 photoprotection 與定期皮膚檢查篩檢皮膚癌；poikiloderma 的 telangiectatic 成分可用 pulsed-dye laser photocoagulation 改善；對 ionizing radiation 與 chemotherapeutic agents 的細胞與臨床 hypersensitivity 報告不一致，進行放療或化療時必須考慮。<span class="ex-ref">p.2364</span></li>
-<li>McKee：男性略多（2 : 1）；通常在出生後第 3 到 6 個月出現（故稱 poikiloderma congenitale）臉部 reticulated erythematous rash，之後擴散到 extremities 與 buttocks，trunk 與 flexural areas 通常不受累；alopecia（scalp、eyebrows、eyelashes）可達 <strong class="ex-n">80%</strong>；juvenile subcapsular cataracts 常見；absent 或 malformed radii 見於 <strong class="ex-n">10–20%</strong>；有 cutaneous SCC，BCC 較罕見；osteosarcoma（<strong class="ex-n">7–32%</strong>）；多數患者壽命正常；組織學為 poikiloderma 的 hyperkeratosis、epidermal atrophy、basal cells liquefactive degeneration、telangiectasia，可有 pigmentary incontinence。<span class="ex-ref ex-ref-mckee">McKee p.270–271</span></li>
+<li>McKee：較近期文獻提示（suggests）男性較多（2 : 1）；通常在出生後第 3 到 6 個月出現（故稱 poikiloderma congenitale）臉部 reticulated erythematous rash，之後擴散到 extremities 與 buttocks，trunk 與 flexural areas 通常不受累；alopecia（scalp、eyebrows、eyelashes）可達 <strong class="ex-n">80%</strong>；juvenile subcapsular cataracts 常見；absent 或 malformed radii 見於 <strong class="ex-n">10–20%</strong>；有 cutaneous SCC，BCC 較罕見；osteosarcoma（<strong class="ex-n">7–32%</strong>）；多數患者壽命正常；組織學為 poikiloderma 的 hyperkeratosis、epidermal atrophy、basal cells liquefactive degeneration、telangiectasia，可有 pigmentary incontinence。<span class="ex-ref ex-ref-mckee">McKee p.270–271</span></li>
 <li>McKee 寫 affected infants are photosensitive，故皮膚病灶出現前常有曝曬史（McKee p.270）；但多數研究未顯示對 UVA 或 UVB 異常敏感，僅有少數報告 UVB 與 UVC 照射後 unscheduled DNA synthesis 降低（McKee p.271）；Fitzpatrick 寫 RTS 患者 photosensitive，早年曝曬後出現 erythema 與 facial swelling（p.2363）。<span class="ex-ref ex-ref-mckee">McKee p.270–271</span></li>
 </ul>
 </section>
@@ -477,10 +477,10 @@
 <li>其他皮膚異常：手足背 atrophic、wrinkled skin；palms 與 soles 的 hyperhidrosis 與 hyperkeratosis，dermal ridges 消失（absence of fingerprints）。<span class="ex-ref">p.2366</span></li>
 <li><strong>Leukoplakia</strong> 可見於任何 mucosal site，oral mucosa 最常見，也見於 urethra、glans penis、vagina、rectum；可有 lingual hyperkeratosis。<span class="ex-ref">p.2366</span></li>
 <li><strong>非皮膚</strong>：約 <strong class="ex-n">50%</strong> 患者 <strong class="ex-n">10 歲前</strong>發生 pancytopenia，血液學表現類似 FA；亦易發生 myelodysplasia 與 acute myeloid leukemia。Esophagus、urethra、lacrimal duct 黏膜可狹窄而造成 dysphagia、dysuria、epiphora；常有多發 dental caries 與早期掉牙；progressive pulmonary disease（感染與 fibrosis，部分有 cirrhosis）見於 <strong class="ex-n">19%</strong> 患病男性；約 <strong class="ex-n">20%</strong> 有 learning difficulties 或 mental retardation；有 intracranial calcifications（尤其 basal ganglia）的報告，類似 CS。<span class="ex-ref">p.2366</span></li>
-<li><strong>併發症</strong>：原文寫多數（<strong class="ex-n">93%</strong>）患者發生 bone marrow failure，其中 <strong class="ex-n">71%</strong> 為早死的主因；solid tumors 增加，特別是 mouth、rectum、cervix、vagina、esophagus、skin 的 SCC；1 個大型英國家族有 Hodgkin disease 與 pancreas adenocarcinoma。<span class="ex-ref">p.2367</span></li>
-<li><strong>病因</strong>：telomere biology genes 的 germline mutations。<em>DKC1</em> 位於 X chromosome q28 區，編碼 <strong>dyskerin</strong>（有 nucleolar function，並參與 telomere maintenance 與 aging）；autosomal 型（含患病女性）為 <em>TERC</em> 突變（也與 telomere function 有關）；約 <strong class="ex-n">70%</strong> DC 患者在 DKC1、TERC 或其他 telomere biology 基因（TERT、TINF2、NOLA2、NOLA3、NOP10、NHP2、WRAP53、CTC1、RTEL1、ACD、PARN）有突變。許多患者 telomere 很短且隨年齡縮短，最短者與 severe DC 變異型有關。<span class="ex-ref">p.2367</span></li>
+<li><strong>併發症</strong>：原文寫多數（<strong class="ex-n">93%</strong>）患者被報告（have been reported）發生 bone marrow failure，其中 <strong class="ex-n">71%</strong> 為早死的主因；solid tumors 增加，特別是 mouth、rectum、cervix、vagina、esophagus、skin 的 SCC；1 個大型英國家族有 Hodgkin disease 與 pancreas adenocarcinoma。<span class="ex-ref">p.2367</span></li>
+<li><strong>病因</strong>：telomere biology genes 的 germline mutations。<em>DKC1</em> 位於 X chromosome q28 區，編碼 <strong>dyskerin</strong>（有 nucleolar function，並參與 telomere maintenance 與 aging）；也有證據（evidence）顯示有 autosomal 型，患病女性有 <em>TERC</em> 突變（也與 telomere function 有關）；約 <strong class="ex-n">70%</strong> DC 患者在 DKC1、TERC 或其他 telomere biology 基因（TERT、TINF2、NOLA2、NOLA3、NOP10、NHP2、WRAP53、CTC1、RTEL1、ACD、PARN）有突變。許多患者 telomere 很短且隨年齡縮短，最短者與 severe DC 變異型有關。<span class="ex-ref">p.2367</span></li>
 <li><strong>診斷</strong>：short telomere length 是 DC 典型發現並用於診斷。預後：壽命受 bone marrow failure、myelodysplastic syndrome、malignancies 限制。處置：沒有 specific treatment；allogeneic hematopoietic stem cell transplantation 是 bone marrow failure 與 leukemia 的治療選擇；肺纖維化可考慮 lung transplantation。<span class="ex-ref">p.2367</span></li>
-<li>McKee：男性為主（6 : 1），predominantly X-linked recessive；reticular pigmentation 先出現在 face、neck、upper chest 的 ‘V’ 區，之後擴散；childhood nails 變 dystrophic 常脫落；palmoplantar hyperkeratosis 合併 hyperhidrosis；mouth 與 anus 的 premalignant leukoplakia 有發生 SCC 的風險；X-linked 型是 <em>DKC1</em>（Xq28，dyskerin，nucleolar protein）；telomeres 明顯縮短；色素變化的組織學非特異性，只有 pigmentary incontinence；mucosal lesions 為 acanthotic epithelium，可有 dysplasia。<span class="ex-ref ex-ref-mckee">McKee p.272–273</span></li>
+<li>McKee：男性為主（6 : 1），predominantly X-linked recessive；reticular pigmentation 先出現在 face、neck、upper chest 的 ‘V’ 區，之後擴散；childhood nails 變 dystrophic 常脫落；可能（may）有 palmoplantar hyperkeratosis 合併 hyperhidrosis；mouth 與 anus 的 premalignant leukoplakia 有發生 SCC 的風險；X-linked 型是 <em>DKC1</em>（Xq28，dyskerin，nucleolar protein）；telomeres 明顯縮短；色素變化的組織學非特異性，只有 pigmentary incontinence；mucosal lesions 為 acanthotic epithelium，可有 dysplasia。<span class="ex-ref ex-ref-mckee">McKee p.272–273</span></li>
 </ul>
 <p class="ex-cite">兩處數字不同：p.2346 寫約一半 DC 患者在 6 個 telomere maintenance genes 之一有突變，p.2367 寫約 70% 患者在 DKC1、TERC 或其他 telomere biology 基因有突變；p.2367 的「93% 與 71%」句子照原文敘述翻譯。</p>
 </section>

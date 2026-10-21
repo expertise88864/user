@@ -6,7 +6,7 @@
 <li><mark data-q="114-15">Irritant dermatitis 由表皮的 physical damage 造成，時間上比 ACD 的 delayed hypersensitivity response 更即時</mark>。影響表現的變數：climate and season、occlusion、接觸頻率、irritant 濃度。<span class="ex-ref">p.414</span></li>
 <li>Corrosive chemicals 會使蛋白質凝固並造成 scars，本章不討論；irritant chemicals 依定義，接觸皮膚 <strong class="ex-n">&lt;4 hours</strong> 不會造成 scarring。Scarring 罕見地可來自 dermatitis 的 secondary infection，但不會來自單純的 dermatitis。<span class="ex-ref">p.414</span></li>
 <li><mark data-q="107-48">Hand dermatitis 是 irritant contact dermatitis 的常見部位</mark>；反覆 wetting and drying 造成 fissuring，環境濕度低、乾得快時尤其明顯。<span class="ex-ref">p.414</span></li>
-<li>接觸過敏原常使 irritant hand dermatitis 併發 allergic contact hand dermatitis，所以 <strong>pure ICD 的定義是排除性的</strong>。Irritant hand dermatitis 的定義（引用文獻）：hands 有已記錄的 irritant 暴露，且量上足以引起 contact dermatitis；<strong>沒有 relevant contact allergy</strong>（目前沒有接觸 patch test 呈陽性反應的過敏原）。<span class="ex-ref">p.414–415</span></li>
+<li>接觸過敏原常使 irritant hand dermatitis 併發 allergic contact hand dermatitis，所以 <strong>pure ICD 的定義是排除性的</strong>。Irritant hand dermatitis 的定義（引用文獻）：hands 有已記錄的 irritant 暴露，且量上很可能（quantitatively likely）引起 contact dermatitis；<strong>沒有 relevant contact allergy</strong>（目前沒有接觸 patch test 呈陽性反應的過敏原）。<span class="ex-ref">p.414–415</span></li>
 </ul>
 <h3>Introduction（概論）</h3>
 <ul>
@@ -20,7 +20,7 @@
 <section class="ex-note" id="history-epi">
 <h2>2. Historical Perspective &amp; Epidemiology（歷史與流行病學）</h2>
 <ul>
-<li>過去 homemakers 手洗碗盤的 wet work 多，常被診斷為 “dishpan hands”；現在純 irritant dermatitis 常被描述為 “chapping”（粗糙、龜裂、疼痛的皮膚），較常來自 health care workers 的頻繁 hand hygiene，或戶外運動時的風與冷。<span class="ex-ref">p.415</span></li>
+<li>過去 homemakers 手洗碗盤的 wet work 多，常被診斷為 “dishpan hands”；現在純 irritant dermatitis 常被描述為 “chapping”（粗糙、龜裂、疼痛的皮膚），與過去數十年相比，較常來自 health care workers 的頻繁 hand hygiene，或戶外運動時的風與冷。<span class="ex-ref">p.415</span></li>
 <li>病史有助於區分 acute irritant 與 acute allergic contact dermatitis；<strong>chronic 時兩者無法單靠臨床或組織學可靠區分</strong>，診斷 ACD 需要詳細病史，且常需 patch testing（Table 25-1）。<span class="ex-ref">p.415</span></li>
 <li>Hand dermatitis 是否被歸為 purely irritant，可能取決於有無 relevant positive patch tests；各診所 irritant 的比例不同，因為使用的 patch tests 數量不同。<span class="ex-ref">p.415</span></li>
 <li><strong>Irritant dermatitis 沒有診斷性檢驗</strong>，因此很難評論其盛行率隨時間的變化；純 ICD 可能比過去更少成為就診原因。<span class="ex-ref">p.415</span></li>
@@ -41,7 +41,7 @@
 <ul>
 <li>部分 AD 病人有遺傳性 barrier defect；在某些種族族群中是 <strong>filaggrin</strong> 突變造成，使 stratum corneum 中連結 corneocytes 的蛋白質環境變弱，並降低 natural moisturizing factor。<span class="ex-ref">p.416</span></li>
 <li>AD 病人對 irritant detergent <strong>sodium lauryl sulfate（SLS）</strong>的反應比健康對照組強；在被評估 ICD 的工人中，atopic 病人較可能停止工作。</li>
-<li>相對地，在沒有嚴重到需要就醫的 dermatitis 病史的 health care workers，childhood flexural dermatitis 病史並未降低對各濃度 SLS 的 irritancy threshold；但對 SLS 的 irritant 反應與冬季 irritant hand dermatitis 的發生有相關，顯示健康醫院員工中除了 AD 之外還有個人的 risk factors。</li>
+<li>相對地，在沒有嚴重到需要就醫的 dermatitis 病史的 health care workers，childhood flexural dermatitis 病史並未降低對各濃度 SLS 的 irritancy threshold；但對 SLS 的 irritant 反應與冬季 irritant hand dermatitis 的發生有相關，提示（suggests）健康醫院員工中除了 AD 之外還有個人的 risk factors。</li>
 </ul>
 </section>
 
@@ -76,21 +76,21 @@
 <li><strong>Allergen 側（epoxy resin）</strong>：<mark data-q="101-17">epoxy resin 在 Table 25-5 列為 Strong potency 的過敏原（與 poison ivy 並列）</mark><span class="ex-ref">p.423</span>；Fig. 25-1 的例子之一是 allergic dermatitis to poison ivy or epoxy resin。<span class="ex-ref">p.415</span>本章沒有直接寫 epoxy resin 造成 irritant dermatitis 或 airborne dermatitis。</li>
 <li><strong>一般性敘述（原文未點名 epoxy）</strong>：<mark data-q="101-17">strong sensitizers function as their own irritant，可使未發炎皮膚致敏</mark><span class="ex-ref">p.423</span>；potent sensitizers 能在先前未發炎的皮膚引起過敏，依賴其 inherent irritant properties。<span class="ex-ref">p.421</span></li>
 <li><strong>Allergen 側（formaldehyde）</strong>：<mark data-q="101-17">formaldehyde 在本章只出現在 Table 25-5 的 formaldehyde-releasing preservatives（Medium potency 過敏原）</mark>。<span class="ex-ref">p.423</span></li>
-<li><mark data-q="101-17">其他章對照：ch24 寫 volatile agents 可先且僅侵犯 eyelids，造成 airborne eyelid contact dermatitis <span class="ex-ref">p.400（ch24）</span>；ch24 寫 formaldehyde 是 colorless gas，具 preservative 與 disinfectant 性質 <span class="ex-ref">p.404（ch24）</span>；ch27 Table 27-2 的 Construction workers 列 irritants 為 acids、fibrous glass、concrete、solvents、hand cleaners，allergens 含 cement 與 epoxy resins <span class="ex-ref">p.442（ch27）</span>。</mark>ch24 的 epoxy resin 則出現在 eyelids 的 “ectopic contact dermatitis”：eyelids 是 nail lacquer 成分（tosylamide formaldehyde resin，以及部分 nail polish 添加的 epoxy resin）造成 ectopic contact dermatitis 的典型部位；ectopic ACD 的 auto transfer 是過敏原經手指不明顯地轉移到其他部位，典型例子為 eyelids 或頸部側面的 nail lacquer dermatitis。<span class="ex-ref">p.400（ch24）</span></li>
+<li><mark data-q="101-17">其他章對照：ch24 寫 volatile agents 可能（may）先且僅侵犯 eyelids，造成 airborne eyelid contact dermatitis <span class="ex-ref">p.400（ch24）</span>；ch24 寫 formaldehyde 是 colorless gas，具 preservative 與 disinfectant 性質 <span class="ex-ref">p.404（ch24）</span>；ch27 Table 27-2 的 Construction workers 列 irritants 為 acids、fibrous glass、concrete、solvents、hand cleaners，allergens 含 cement 與 epoxy resins <span class="ex-ref">p.442（ch27）</span>。</mark>ch24 的 epoxy resin 則出現在 eyelids 的 “ectopic contact dermatitis”：eyelids 是 nail lacquer 成分（tosylamide formaldehyde resin，以及部分 nail polish 添加的 epoxy resin）造成 ectopic contact dermatitis 的典型部位；ectopic ACD 的 auto transfer 是過敏原經手指不明顯地轉移到其他部位，典型例子為 eyelids 或頸部側面的 nail lacquer dermatitis。<span class="ex-ref">p.400（ch24）</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>本章 airborne irritant dermatitis 的原文只寫 fiberglass dermatitis（p.417）；cement 在 Table 25-2 是 construction workers 的 irritant（p.417）。Epoxy resin 在本章是以過敏原出現：Table 25-5 的 Strong potency allergen（p.423）、Fig. 25-1 的 allergic dermatitis 例子（p.415）；本章另有一般性敘述 strong sensitizers function as their own irritant（p.423），但該句沒有點名 epoxy resin。Formaldehyde 只以 formaldehyde-releasing preservatives 出現在 Table 25-5（Medium，p.423）。本章沒有直接寫 epoxy resin 或 formaldehyde 是 irritant 或 airborne dermatitis 的原因。</aside>
 <h3>Nonoccupational exposures（非職業暴露）</h3>
 <ul>
 <li>Table 25-3 的 Common irritants：<strong>Solvents including water、Detergents、Disinfectants、Anti-wrinkle medicaments</strong>。<span class="ex-ref">p.418</span></li>
-<li>Medicaments 可造成刺激，<strong>retinoids 與 benzoyl peroxide</strong> 常見。<span class="ex-ref">p.417–418</span></li>
+<li>Medicaments 可能（may）造成刺激，<strong>retinoids 與 benzoyl peroxide</strong> 常見。<span class="ex-ref">p.417–418</span></li>
 <li><mark data-q="105-29,106-43"><strong>Diaper rash</strong> 是 irritant dermatitis 的另一常見例子，可由 wet-to-dry cycles 與 stool 的刺激造成</mark>；<strong>irritant diaper dermatitis 已隨 superabsorbent 與較不 occlusive 的 disposable diapers 而減少</strong>。<span class="ex-ref">p.418</span></li>
 </ul>
 <h3>Rubbing or stretching the skin（摩擦與拉扯）</h3>
 <ul>
 <li><mark data-q="107-03,105-29">Friction（如運動用 shin guards 摩擦皮膚）可造成 irritant dermatitis，perspiration 使 friction 更嚴重</mark>；<mark data-q="107-03,108-11">所造成的 dermatitis 可能併發對 shin guard 中 rubber chemicals 或 textile dyes 的 allergic contact dermatitis</mark>。<span class="ex-ref">p.418</span></li>
-<li>運動員也可因衣物的 dye 在 perspiration 與 friction 下從布料釋出接觸皮膚而發生 contact dermatitis。</li>
-<li><mark data-q="107-03">除了相關的 commercial patch test series，加測病人自己運動器材的材料，可提高 patch testing 診斷運動器材引起 ACD 的 sensitivity</mark>。</li>
-<li>以吸收汗水並減少摩擦的 powder 可緩解 irritant dermatitis。Friction blisters 是急性皮膚損傷，可為職業或休閒（例如耙落葉）所致。</li>
+<li>運動員也可能因衣物的 dye 在 perspiration 與 friction 下從布料釋出接觸皮膚而發生 contact dermatitis。</li>
+<li><mark data-q="107-03">除了相關的 commercial patch test series，加測病人自己運動器材的材料，會提高（increases）patch testing 診斷運動器材引起 ACD 的 sensitivity</mark>。</li>
+<li>Irritant dermatitis 可能（may）可藉吸收汗水並減少摩擦的 powder 緩解。Friction blisters 是急性皮膚損傷，可為職業或休閒（例如耙落葉）所致。</li>
 <li><strong>Stasis dermatitis</strong>：腫脹的下肢因皮膚被拉扯而 barrier disruption。<span class="ex-ref">p.418</span></li>
 </ul>
 </section>
@@ -144,7 +144,7 @@
 <h3>Wet work, detergents and gloves（濕作業、清潔劑與手套）</h3>
 <ul>
 <li>Occupational hand dermatitis 在 wet workers 常見。<strong>Water 的刺激與 detergent 的刺激有 synergistic 作用；solvent 暴露與 detergent 暴露也有 synergistic 作用</strong>。<span class="ex-ref">p.420</span></li>
-<li>手套可保護皮膚免於 water 與 detergents，但汗水或袖口漏水會使水分被 occlude 在手套內而造成 maceration；脫下手套時殘留水分快速乾燥會對表皮造成更大損傷（Fig. 25-9）。<span class="ex-ref">p.420</span></li>
+<li>手套可保護皮膚免於 water 與 detergents，但汗水或袖口漏水可（can）使水分被 occlude 在手套內而造成 maceration；脫下手套時殘留水分快速乾燥會對表皮造成更大損傷（Fig. 25-9）。<span class="ex-ref">p.420</span></li>
 <li>在無 AD 病史的健康對照，反覆半小時水 occlusion 共 <strong class="ex-n">4 days</strong> 後，SLS 與 n-propanol 在這些測試部位的刺激都比在先前未 occlude 的皮膚更強；以肉眼、TEWL 與 natural moisturizing factor 下降衡量，detergent 比 alcohol 溶液更刺激。一篇回顧也結論認為 waterproof gloves 使皮膚對手部衛生用 detergents 的刺激更嚴重。<span class="ex-ref">p.420</span></li>
 <li>Filaggrin mutations 與 <strong>early-onset dermatitis</strong>（常被視為 “atopic dermatitis”）有關；孩子活動增加後，flexural areas 發生 frictional irritant dermatitis，許多病例進而發展為 ACD；慢性 flexural dermatitis 應考慮 patch testing。<span class="ex-ref">p.420</span></li>
 </ul>
@@ -170,7 +170,7 @@
 <ul>
 <li>Childhood-onset dermatitis（即 atopic dermatitis）與對常見微生物 <em>Staphylococcus aureus</em>、<em>Malassezia sympodialis</em>、<em>Alternaria</em> 的發炎反應有關；這些微生物可能以 biofilm 存在，使微生物及其抗原濃縮。Fig. 25-10 為成人頸部與上軀幹皮膚炎病人對 <em>M. sympodialis</em> 酵母的 positive patch test。<span class="ex-ref">p.421</span></li>
 <li>Propylene glycol 這類弱抗原（在 guinea pig local lymph node assay 為 negative）在 barrier disruption 觸發 “danger signals” 的病人較可能造成 contact allergy；一般而言，有持續 innate immune signals（遺傳性 barrier dysfunction 或 wet work）的病人，會對 local lymph node assay 測得較弱的過敏原致敏。<span class="ex-ref">p.421</span></li>
-<li>沒有既存 irritant dermatitis 的病人較可能對自身即可製造 innate signal 的 <strong>potent antigens（如 poison ivy）</strong>致敏；<strong>AD 病人較不易對 poison ivy 的 potent allergen（同時也是 strong irritant）表現出皮膚炎</strong>。<span class="ex-ref">p.421</span></li>
+<li>沒有既存 irritant dermatitis 的病人較可能對很可能（likely）自身製造 innate signal 的 <strong>potent antigens（如 poison ivy）</strong>致敏；<strong>AD 病人較不易對 poison ivy 的 potent allergen（同時也是 strong irritant）表現出皮膚炎</strong>。<span class="ex-ref">p.421</span></li>
 </ul>
 <h3>Food allergy and atopic march（食物過敏與 atopic march）</h3>
 <ul>
@@ -199,7 +199,7 @@
 <h3>McKee 補充</h3>
 <ul>
 <li>McKee：spongiotic dermatitis 的組織學標誌是 <strong>intercellular edema（spongiosis）</strong>；液體持續累積可形成 intraepidermal vesicle；常伴 lymphocytic exocytosis。<span class="ex-ref ex-ref-mckee">McKee p.207</span></li>
-<li>McKee：<strong>severe contact irritant dermatitis</strong> 時，表皮可被大量 neutrophil polymorphs 浸潤並伴 necrotic keratinocytes，也可伴 dermal–epidermal separation 而形成 vesicle 或 blister。<span class="ex-ref ex-ref-mckee">McKee p.207</span></li>
+<li>McKee：<strong>severe contact irritant dermatitis</strong> 時，表皮可能（may）被大量 neutrophil polymorphs 浸潤並伴 necrotic keratinocytes，也可能伴 dermal–epidermal separation 而形成 vesicle 或 blister。<span class="ex-ref ex-ref-mckee">McKee p.207</span></li>
 <li>McKee：僅憑組織學要區分各臨床亞型一般是徒勞的，一旦確認為 spongiotic，臨床檢查才是決定亞型較令人滿意的方法。<span class="ex-ref ex-ref-mckee">McKee p.207</span>（與 Fitzpatrick 的「chronic 時無法單靠臨床或組織學可靠區分」p.415 互補。）</li>
 <li>McKee：ICD <strong>遠比 ACD 常見</strong>，接觸能直接傷害皮膚的 physical 或 chemical substances 後發生；機轉包括 keratin denaturation、移除 surface lipids 與 water-holding substances、細胞膜損傷，和／或直接 cytotoxic effects。<span class="ex-ref ex-ref-mckee">McKee p.206</span></li>
 <li>McKee：急性 irritant dermatitis 通常來自短暫單次接觸 potent irritant（如強酸、強鹼）；<strong>chronic cumulative（“wear and tear”）dermatitis</strong> 來自較長期接觸一或多種較弱 irritants（如 soap and water、detergents、industrial oil、plants）。大多數 occupational hand dermatitis（包括 ‘housewives’ 與 ‘wedding ring’ dermatitis）屬 irritant contact 型。<span class="ex-ref ex-ref-mckee">McKee p.206</span></li>
@@ -224,7 +224,7 @@
 </table>
 <p class="ex-cite">Table 25-4，p.423。表下註：irritant dermatitis 常是 allergic dermatitis 的前驅，因此除了確診 allergic dermatitis 的 counseling，通常也適合做 irritant dermatitis 的 counseling。</p>
 <ul>
-<li>Latex contact urticaria 是在 atopic 病人較常見的 contact allergen 例子，其 allergic contact sensitization 呈現較持久的 Th2（而非 Th1）反應。<span class="ex-ref">p.423</span></li>
+<li>Latex contact urticaria 是在 atopic 病人較常見的 contact allergen 例子，其 allergic contact sensitization 呈現的 Th2 反應比 Th1 反應更持久（more persistent Th2 than Th1 response）。<span class="ex-ref">p.423</span></li>
 <li>引發 sensitization 的過敏原，取決於致敏當時存在的 irritant dermatitis 類型與程度；需要更多研究來發展適當的 patch test series（Table 25-5 說明此概念）。<span class="ex-ref">p.423</span></li>
 </ul>
 <table class="ex-table">
@@ -239,7 +239,7 @@
 <ul>
 <li>在 subclinical 下降的 irritancy threshold（以低濃度 SLS patch test 反應偵測）的病人，對 moderate 到 highly potent antigen 致敏的可能性可能較高；wet workers 較可能對 moderately potent allergens（如 rubber accelerators）致敏。<span class="ex-ref">p.423</span></li>
 <li>秋季或冬季出生的兒童，eczema 與 food allergy 的盛行率較高；但與季節相關的母體免疫因子也可能有貢獻。<span class="ex-ref">p.423</span></li>
-<li>Patch test series 目前依暴露的共通性分組，而非致敏當時的皮膚狀態；標準篩檢 series 上多數是 strong 或 medium potency 的過敏原，因此難以偵測使嚴重既存 ICD 病人致敏的較弱過敏原；因此 weakly potent allergens 在 ICD 背景下造成的 ACD 研究不足，其盛行率與 patch testing 的種類、頻率建議尚未確立。<span class="ex-ref">p.423–424</span></li>
+<li>Patch test series 目前依暴露的共通性分組，而非致敏當時的皮膚狀態（後者常未知）；標準篩檢 series 上多數是 strong 或 medium potency 的過敏原，因此無法偵測（fail to detect）使嚴重既存 ICD 病人致敏的較弱過敏原；因此 weakly potent allergens 在 ICD 背景下造成的 ACD 研究不足，其盛行率與 patch testing 的種類、頻率建議尚未確立。<span class="ex-ref">p.423–424</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Table 25-5 標題寫的是 “Speculated”，表示這些過敏原與 irritation 類型的對應是原文的推測（p.423）。Table 25-4 中 contact urticaria 的檢查為 skin prick 或 antigen specific IgE，陰性再做 15-minute wear test（p.423）。</aside>
 </section>
@@ -249,7 +249,7 @@
 <ul>
 <li><strong>Hardening</strong>：irritant dermatitis 常在持續暴露 irritant 的情況下自行消退。此過程尚未完全了解，因此難以知道哪些病人會發展為 chronic irritant hand dermatitis。<span class="ex-ref">p.424</span></li>
 <li>前瞻實驗：反覆接受較高濃度 SLS 挑戰的受試者，比接受較低濃度或蒸餾水者更可能 harden；<strong>只有約一半</strong>的受試者 hardened；harden 與否的人，其 stratum corneum 的 hyperkeratosis 與 ceramide content 測量相似。<span class="ex-ref">p.424</span></li>
-<li>Hardening 是面對無法避免的慢性 irritant 暴露時的理想反應；了解如何促進 hardening 可降低 irritant dermatitis 的 allergic 併發症（包括 ACD 與 atopic diseases）的衝擊。<span class="ex-ref">p.424</span></li>
+<li>Hardening 是面對無法避免的慢性 irritant 暴露時的理想反應；了解如何促進 hardening 可能（could）降低 irritant dermatitis 的 allergic 併發症（包括 ACD 與 atopic diseases）的衝擊。<span class="ex-ref">p.424</span></li>
 <li><strong>Chronic dermatitis 的預後比 acute dermatitis 差</strong>，因此皮膚炎一經辨認就應治療。<span class="ex-ref">p.425</span></li>
 <li>All irritants 應在視覺上恢復後<strong>再避免數週</strong>：在 3 週內於前臂皮膚施用 SLS 共 <strong class="ex-n">15</strong> 次的實驗，視覺恢復後 irritancy threshold 降低可持續超過 <strong class="ex-n">10 weeks</strong>。<span class="ex-ref">p.425</span></li>
 </ul>
@@ -273,7 +273,7 @@
 <h3>Counseling（衛教）</h3>
 <ul>
 <li>Nurse-led counseling 有 weak evidence 可改善手部 contact dermatitis 的嚴重度，但不改善 quality of life。<span class="ex-ref">p.424</span></li>
-<li>減少接觸頻率可讓工人繼續工作；<strong>在允許時，應以 alcohol-based hand sanitizers 取代洗手</strong>，尤其是室內暖氣使環境濕度降低的冷季。<span class="ex-ref">p.424</span></li>
+<li>減少接觸頻率可能（may）讓工人繼續工作；<strong>在允許時，應以 alcohol-based hand sanitizers 取代洗手</strong>，尤其是室內暖氣使環境濕度降低的冷季。<span class="ex-ref">p.424</span></li>
 </ul>
 <h3>Gloves（手套）</h3>
 <ul>
@@ -299,14 +299,14 @@
 </ul>
 <h3>Prevention of complications（預防併發症）</h3>
 <ul>
-<li>一項隨機對照試驗：嬰兒從 <strong class="ex-n">3 weeks</strong> 到 <strong class="ex-n">6 months</strong> 每日使用 emollients，與不用 emollients 相比有顯著益處。<span class="ex-ref">p.425</span></li>
+<li>就預防 genetic barrier deficits 所致 irritant dermatitis 併發的 atopic dermatitis 而言，一項隨機對照試驗：嬰兒從 <strong class="ex-n">3 weeks</strong> 到 <strong class="ex-n">6 months</strong> 每日使用 emollients，與不用 emollients 相比有顯著益處。<span class="ex-ref">p.425</span></li>
 <li>另一研究比較嬰兒從出生到 <strong class="ex-n">32 weeks</strong> 每日與偶爾使用 petroleum jelly：每日組的 dermatitis 發生率較低，但在 32 週時以 antigen-specific IgE 衡量的對 egg white 致敏並無顯著降低。<span class="ex-ref">p.425</span></li>
 <li>原文指出尚不知道哪些 emollient 成分在各族群最不易造成 ACD，也不知道 emollients 的理想 pH。<span class="ex-ref">p.425</span></li>
 </ul>
 <h3>Screening（篩檢）</h3>
 <ul>
 <li>多倫多 health care workers 以問卷與手部目視評估篩檢：<strong class="ex-n">72%</strong> 有以輕度為主、部分中度的 hand dermatitis；risk factors 包括洗手頻率與戴手套的時間長短，<strong>但不包括年齡或性別</strong>。<span class="ex-ref">p.425</span></li>
-<li>篩檢有助於早期發現 irritant hand dermatitis；從症狀開始到取得診斷性 patch testing 的延遲約 <strong class="ex-n">2 to 5 years</strong>，原因包括病人希望會自己好、對就醫的焦慮，以及多數病人先看家醫科，再等皮膚科，再等轉診到 patch test 專家。<span class="ex-ref">p.425–426</span></li>
+<li>篩檢可能（may）有助於早期發現 irritant hand dermatitis；從症狀開始到取得診斷性 patch testing 的延遲介於（ranging from）<strong class="ex-n">2 to 5 years</strong>，原因包括病人希望會自己好、對就醫的焦慮，以及多數病人先看家醫科，再等皮膚科，再等轉診到 patch test 專家。<span class="ex-ref">p.425–426</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Emollients 的相關敘述有兩面：不確定可預防 hand dermatitis，卻建議用於治療（p.424）；SLS 暴露前 15 分鐘使用可預防刺激，但每日使用同一 emollient 反而增加刺激（p.425）。</aside>
 </section>

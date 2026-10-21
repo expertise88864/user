@@ -1,6 +1,6 @@
 <section class="ex-note" id="def">
 <h2>1. Definition &amp; Classification（定義與分類）</h2>
-<p>EBA 是罕見的 autoimmune subepidermal bullous disease，由針對 <mark data-q="104-26,105-49,113-38"><strong>Type VII collagen</strong>（anchoring fibril 內的 collagen）的 IgG autoantibodies</mark> 引起；病因不明，但多數證據支持 autoimmune etiology。<span class="ex-ref">p.971</span></p>
+<p>EBA 是罕見的 autoimmune subepidermal bullous disease，由針對 <mark data-q="104-26,105-49,113-38"><strong>Type VII collagen</strong>（anchoring fibril 內的 collagen）的 IgG autoantibodies</mark> 引起；病因不明，但多數證據提示（suggests）autoimmune etiology。<span class="ex-ref">p.971</span></p>
 <ul>
 <li>Anchoring fibrils 位於 dermal–epidermal junction（DEJ），把 epidermis 及其下的 basement membrane zone（BMZ）固定到 papillary dermis。<span class="ex-ref">p.971</span></li>
 <li>EBA 是後天疾病、通常在成年發病；因為臨床病灶與兒童遺傳性 dystrophic EB 極為相似，一百多年前就被歸入 epidermolysis bullosa 這個類別。<span class="ex-ref">p.971</span></li>
@@ -51,16 +51,16 @@
 <h3>免疫反應</h3>
 <ul>
 <li>病人血中與 DEJ 組織上的 EBA IgG 涵蓋 IgG 的 4 個 subclasses，尤其是 <strong>IgG1 與 IgG4</strong>。<span class="ex-ref">p.972</span></li>
-<li>循環中的 EBA autoantibodies 同時有 complement-binding 與 non–complement-binding 兩種族群；與 BP 比較，EBA 病人的 C3b（<strong class="ex-n">90% vs 33%</strong>）與 C5（<strong class="ex-n">90% vs 58%</strong>）出現率較高，表示多數 EBA 病人在 DEJ 有 complement activation，且 EBA antibodies 是比 BP antibodies 更強的 C5 activators。<span class="ex-ref">p.972</span></li>
+<li>循環中的 EBA autoantibodies 同時有 complement-binding 與 non–complement-binding 兩種族群；與 BP 比較，EBA 病人的 C3b（<strong class="ex-n">90% vs 33%</strong>）與 C5（<strong class="ex-n">90% vs 58%</strong>）出現率較高；這些研究提供證據，顯示多數（majority）EBA 病人在 DEJ 有 complement activation，且 EBA antibodies 是比 BP antibodies 更強的 C5 activators。<span class="ex-ref">p.972</span></li>
 <li>Gammon 等的 in vitro 切片試驗（以 leukocytes 向 DEJ 的移動與聚集為 readout）也顯示：EBA immune complexes 產生的 complement activation 比 bullous pemphigoid immune complexes 更多。<span class="ex-ref">p.972</span></li>
 <li>主動誘發的小鼠 EBA 模型涉及 complement-fixing anti–Type VII collagen antibodies，且需要 T cells 才能誘發疾病。<span class="ex-ref">p.972</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>EBA 的 IgG 以 IgG1 與 IgG4 為主（p.972）。多數 EBA autoantibodies 辨認的是 NC-1 domain 的 epitopes，不是 helical 或 NC-2 domain（p.972）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>EBA 的 IgG 涵蓋 IgG 的 4 個 subclasses，尤其是 IgG1 與 IgG4（p.972）。多數 EBA autoantibodies 辨認的是 NC-1 domain 的 epitopes，不是 helical 或 NC-2 domain（p.972）。</aside>
 <p><strong>McKee 補充：</strong></p>
 <ul>
 <li>N 端 <strong class="ex-n">145-kDa</strong> NC1 domain 含 cartilage matrix protein subdomain、<strong class="ex-n">9</strong> 個 fibronectin III-like subdomains、collagen-binding von Willebrand factor A-like subdomain 與 cysteine/proline-rich subdomain，是大多數 EBA 病人 autoantibodies 辨認的 immunodominant region；NC2（<strong class="ex-n">34 kDa</strong>）與中央 collagenous domain 較少成為標的。對不同 epitopes 的免疫反應被認為可能與臨床表現的多樣性有關。<span class="ex-ref ex-ref-mckee">McKee p.156</span></li>
 <li>致病性抗體常針對 NC1 的 cartilage matrix protein subdomain；部分 inflammatory EBA 的抗體則辨認 triple-helical collagenous domain。Type VII collagen 與 fibronectin 親和力高。<span class="ex-ref ex-ref-mckee">McKee p.160</span></li>
-<li>Inflammatory 型的發病與 complement activation（C5a）造成的 neutrophil 招募有關；「cell-free」mechanobullous 型的機轉了解很少，幾乎沒有 neutrophil chemotactic activity 的證據，推測可能是 autoantibody 破壞 type VII collagen 與 laminin-332 及 fibronectin 等 matrix proteins 的親和力，或影響 type VII collagen antiparallel dimer assembly 而使 anchoring fibril 形成減少。<span class="ex-ref ex-ref-mckee">McKee p.160</span></li>
+<li>部分研究顯示致病機轉至少部分（at least in part）與 complement activation（C5a）造成的 neutrophil 招募有關；「cell-free」mechanobullous 型的機轉了解很少，幾乎沒有 neutrophil chemotactic activity 的證據，推測可能是 autoantibody 破壞 type VII collagen 與 laminin-332 及 fibronectin 等 matrix proteins 的親和力，或影響 type VII collagen antiparallel dimer assembly 而使 anchoring fibril 形成減少。<span class="ex-ref ex-ref-mckee">McKee p.160</span></li>
 </ul>
 </section>
 
@@ -74,7 +74,7 @@
 <tr><td>Classic（mechanobullous）</td><td><mark data-q="112-46">Noninflammatory bullous disease、acral distribution，癒合後留下 scarring 與 milia</mark>；skin fragility；erosions、tense blisters within noninflamed skin，scars 在 trauma-prone 部位（手背、knuckles、肘、膝、sacral area、toes）。輕症像 PCT，重症像 recessive dystrophic EB。<span class="ex-ref">p.973–974</span></td></tr>
 <tr><td>Bullous pemphigoid（BP）-like</td><td>廣泛的 <mark data-q="112-46">inflammatory</mark> vesiculobullous eruption，侵犯 trunk、central body、skin folds 與四肢；tense bullae 周圍有 inflamed 或 urticarial skin；常有 pruritus；不明顯有 skin fragility、scarring 或 milia；分布可能在 flexural areas 與 skin folds 較明顯。<span class="ex-ref">p.974</span></td></tr>
 <tr><td>Mucous membrane pemphigoid（MMP）-like</td><td>黏膜侵犯為主；通常在口腔、upper esophagus、conjunctiva、anus 或 vagina 有 erosions 與 scars，glabrous skin 可有或無類似病灶。classic 與 BP-like 型本身也可能有黏膜侵犯。<span class="ex-ref">p.975</span></td></tr>
-<tr><td>Brunsting–Perry pemphigoid-like</td><td>慢性反覆的 vesiculobullous eruption，局限於 head and neck；residual scars、subepidermal bullae、DEJ 有 IgG deposits、黏膜侵犯輕微或沒有。作者另見 3 位有 Type VII collagen autoantibodies 的病人，因此 EBA 病人可能呈現此表型。<span class="ex-ref">p.975</span></td></tr>
+<tr><td>Brunsting–Perry pemphigoid-like</td><td>慢性反覆的 vesiculobullous eruption，局限於 head and neck；residual scars、subepidermal bullae、DEJ 有 IgG deposits、黏膜侵犯輕微或沒有。作者另見 3 位有 Type VII collagen autoantibodies 的病人，因此 EBA 病人似乎（it appears）可能呈現此表型。<span class="ex-ref">p.975</span></td></tr>
 <tr><td>Linear IgA bullous dermatosis（LABD）-like</td><td>Subepidermal bullous eruption、neutrophilic infiltrate、DIF 在 BMZ 呈 linear IgA deposits；可能像 LABD、dermatitis herpetiformis 或 chronic bullous disease of childhood，可有環狀排列的 tense vesicles 與黏膜侵犯；autoantibodies 通常是 IgA、IgG 或兩者。此類診斷有爭議：有人視為單純 LABD，有人視為 EBA 的亞型。大多數 EBA 病人血中有針對 Type VII collagen 的 low-titer IgA antibodies。<span class="ex-ref">p.975</span></td></tr>
 </tbody>
 </table>
@@ -88,26 +88,26 @@
 <h3>Classic 型的其他表現</h3>
 <ul>
 <li>部分水疱可能是 hemorrhagic，或出現 scales、crusts、erosions；癒合時留下 scarring，並常在疤痕內形成珍珠狀 milia cysts。<span class="ex-ref">p.974</span></li>
-<li>像 PCT 但沒有 PCT 的 hallmarks：沒有 hirsutism、photodistribution 或 scleroderma-like changes，urinary porphyrins 在正常範圍內。<span class="ex-ref">p.974</span></li>
-<li>可見 scarring alopecia 與某種程度的 nail dystrophy。<span class="ex-ref">p.974</span></li>
+<li>雖然可能像 PCT，但沒有 PCT 的其他 hallmarks：沒有 hirsutism、photodistribution 或 scleroderma-like changes，urinary porphyrins 在正常範圍內。<span class="ex-ref">p.974</span></li>
+<li>可能（may）可見 scarring alopecia 與某種程度的 nail dystrophy。<span class="ex-ref">p.974</span></li>
 <li>通常不像遺傳性 recessive dystrophic EB 那麼嚴重，但 classic 型 EBA 可能出現許多相同後遺症：scarring、掉髮、掉指甲、hands and fingers 的 fibrosis、esophageal stenosis。<span class="ex-ref">p.974</span></li>
 </ul>
 <h3>Related physical findings（相關理學表現）</h3>
 <ul>
-<li>與 Type VII collagen gene 缺陷造成的遺傳性 dystrophic EB 相似：oral erosions、esophageal strictures、hypo- 與 hyperpigmentation 造成的皮膚斑駁、nail loss、milia formation、scarring，以及手部某種程度的 fibrosis。<span class="ex-ref">p.975–976</span></li>
+<li>EBA 病人可能（may）有許多與 Type VII collagen gene 缺陷造成的遺傳性 dystrophic EB 相似的理學表現：oral erosions、esophageal strictures、hypo- 與 hyperpigmentation 造成的皮膚斑駁、nail loss、milia formation、scarring，以及手部某種程度的 fibrosis。<span class="ex-ref">p.975–976</span></li>
 </ul>
 <h3>相關系統性疾病</h3>
 <ul>
 <li>已有報告顯示 EBA 可能與多種系統性疾病相關：inflammatory bowel disease、SLE、amyloidosis、thyroiditis、multiple endocrinopathy syndrome、rheumatoid arthritis、pulmonary fibrosis、chronic lymphocytic leukemia、thymoma、diabetes、multiple myeloma，以及其他可能有 autoimmune pathogenesis 的疾病。<span class="ex-ref">p.976</span></li>
 <li><mark data-q="108-28,115-16">University of North Carolina、Stanford、Northwestern 與 University of Southern California 合計追蹤超過 <strong class="ex-n">62</strong> 位 EBA 病人，經驗顯示 <strong>inflammatory bowel disease</strong> 似乎是與 EBA 最常相關的系統性疾病</mark>。<span class="ex-ref">p.976</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Classic EBA 是 noninflammatory、發生在 noninflamed skin 的 mechanobullous disease（p.973–974）；BP-like 型才是 inflammatory、常有 pruritus，且不明顯有 skin fragility、scarring 或 milia（p.974）。作者經驗中 BP-like 約 25%，classic 與 BP-like 是最常被報告的兩型（p.973、p.975）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Classic EBA 是 noninflammatory、發生在 noninflamed skin 的 mechanobullous disease（p.973–974）；BP-like 型則是 inflammatory、常有 pruritus，且不明顯有 skin fragility、scarring 或 milia（p.974）。作者經驗中約 25% 的病人可能呈現 BP-like，classic 與 BP-like 是最常被報告的兩型（p.973、p.975）。</aside>
 <p><strong>McKee 補充：</strong></p>
 <ul>
 <li>EBA 最初被描述為像 porphyria cutanea tarda 的 mechanobullous dermatosis，後來也有廣泛 inflammatory bullous dermatosis 的病例。<span class="ex-ref ex-ref-mckee">McKee p.156</span></li>
 <li>Roenigk 於 1971 年的定義：類似 dystrophic EB 的病灶（手、腳、肘、膝輕微外傷後起水疱，並有 atrophic scarring、milia、nail dystrophy）、成年發病、EB 家族史陰性、排除其他 bullous dermatoses（包括 PCT、BP、DH、pemphigus、erythema multiforme、bullous drug reactions）。<span class="ex-ref ex-ref-mckee">McKee p.156</span></li>
 <li>最重要的相關系統性疾病是 inflammatory bowel disease 與 diabetes mellitus；約 <strong class="ex-n">30%</strong> 的 EBA 病人有 IBD（以 Crohn disease 為主），控制 IBD 在部分病人可改善皮膚病灶；IBD 通常早於 EBA 出現。多達 <strong class="ex-n">68%</strong> 的 IBD 病人有抗 collagen type VII 抗體，但只有極少數發展成 EBA。另有 celiac disease 的相關報告，也偶見以 paraneoplastic phenomenon 表現。<span class="ex-ref ex-ref-mckee">McKee p.157</span></li>
-<li>MMP-like 型常侵犯口腔（舌、牙齦、上顎、頰黏膜），少見喉與食道 stricture，conjunctival lesions 可造成 symblepharon、epiphora 甚至失明。Brunsting-Perry 型中有些病人有 type VII collagen 抗體，可能更適合歸入 EBA spectrum。<span class="ex-ref ex-ref-mckee">McKee p.157</span></li>
+<li>MMP-like 型常侵犯口腔（舌、牙齦、上顎、頰黏膜），少見喉與食道 stricture；conjunctival lesions 是重要但不常見（infrequent）的 morbidity 原因，可能出現 symblepharon、epiphora 甚至失明。Brunsting-Perry 型中有些病人有 type VII collagen 抗體，可能更適合歸入 EBA spectrum。<span class="ex-ref ex-ref-mckee">McKee p.157</span></li>
 <li>IgA-EBA（linear IgA disease-like）：成人與兒童病人都有針對 type VII collagen 的 IgA autoantibodies；成人眼部侵犯常嚴重，失明並不罕見。<span class="ex-ref ex-ref-mckee">McKee p.157</span></li>
 </ul>
 </section>
@@ -130,7 +130,7 @@
 <tr><td>流行病學</td><td>常在第二、第三個十年發病，年輕黑人女性最常見，但各年齡、種族與男女皆可發病；SLE 病人 <strong class="ex-n">&lt;5%</strong> 會出現水疱；incidence 估計不超過 <strong class="ex-n">0.2</strong> cases per million per year；兒童極少見。<span class="ex-ref ex-ref-mckee">McKee p.161</span></td></tr>
 <tr><td>臨床</td><td>急性、廣泛、有時會癢的 tense vesiculobullous eruption，<mark data-q="107-47">多數侵犯 sun-exposed areas，但 non-sun-exposed skin 與黏膜（口腔、咽部）也常被侵犯</mark>；好發於 upper trunk、supraclavicular regions、upper extremities、face、vermilion border 與 oral mucosa；與 DH 相比，四肢 extensor surfaces 較少被侵犯。水疱可出現在紅斑背景上，較少出現在 urticaria 背景上；水疱液通常清澈，較少為 hemorrhagic；可早於 SLE 發病，也可在之後出現。<span class="ex-ref ex-ref-mckee">McKee p.161</span></td></tr>
 <tr><td>與 EBA 的差異</td><td>不見 mechanobullous lesions，也沒有 scarring 的證據；milia 罕見（僅記錄過兩次，均為兒童）；postinflammatory hyperpigmentation 不少見；通常不會出現其他皮膚型 lupus 表現。常伴 SLE 的全身症狀與 flare，尤其是 lupus nephritis。<span class="ex-ref ex-ref-mckee">McKee p.161</span></td></tr>
-<tr><td>組織學</td><td>Subepidermal vesicle，常與 DH 難以區分；roof 通常完整，水疱腔含 fibrin、<mark data-q="107-47">大量 neutrophils 與 karyorrhectic debris，偶見 lymphocytes</mark>、histiocytes、eosinophils；鄰近非水疱皮膚常見 subepidermal neutrophil microabscesses；上真皮 perivascular 混合性發炎細胞浸潤（neutrophils、偶見 eosinophils、lymphocytes、histiocytes）；<mark data-q="107-47">有時也可見 leukocytoclastic vasculitis 的特徵</mark>。EM 顯示分離位置在 lamina densa 之下。<span class="ex-ref ex-ref-mckee">McKee p.161–162</span></td></tr>
+<tr><td>組織學</td><td>Subepidermal vesicle，常與 DH 難以區分；roof 通常完整，水疱腔含 fibrin、<mark data-q="107-47">大量 neutrophils 與 karyorrhectic debris，偶見 lymphocytes</mark>、histiocytes、eosinophils；鄰近非水疱皮膚典型（characteristically）可見 subepidermal neutrophil microabscesses；上真皮 perivascular 混合性發炎細胞浸潤（neutrophils、偶見 eosinophils、lymphocytes、histiocytes）；<mark data-q="107-47">有時也可見 leukocytoclastic vasculitis 的特徵</mark>。EM 顯示分離位置在 lamina densa 之下。<span class="ex-ref ex-ref-mckee">McKee p.161–162</span></td></tr>
 <tr><td>DIF</td><td>Lesional 與 perilesional skin 的 BMZ 有 immunoglobulin 與 complement；常為多重 immunoglobulins：IgG 見於 <strong class="ex-n">100%</strong>、IgA <strong class="ex-n">67%</strong>、IgM <strong class="ex-n">50%</strong>。<mark data-q="107-47">有 2 種 pattern：granular 佔 <strong class="ex-n">40%</strong>、linear 佔 <strong class="ex-n">60%</strong></mark>；有時上真皮血管壁（尤其 venules）也有 immunoreactants。<span class="ex-ref ex-ref-mckee">McKee p.162</span></td></tr>
 <tr><td>IIF（salt-split skin）</td><td>DIF 呈 linear 的病人，IIF 可見 low titer 的抗基底膜抗體（type 1 BSLE），通常標在水疱底（floor），罕見標在 roof；IIF 陰性者為 type 2 BSLE；type 3 BSLE 指標的抗原是 epidermal 而非 dermal epitope。<span class="ex-ref ex-ref-mckee">McKee p.162</span></td></tr>
 <tr><td>Immunoelectron microscopy／Western</td><td>Immunoreactants 位於 lamina densa 上與緊鄰其下（遮蔽 anchoring fibrils），與 EBA 的位置相同；Western immunoblot 顯示抗體辨認 290 kD 與 145 kD 抗原，與 EBA 相同（McKee 寫作針對 type VII collagen 的 NC1 與 NC2）。抗體具 complement activation 活性，造成 neutrophil 移行與黏附，neutrophil 釋出 enzymes 破壞基底膜而使 dermal–epidermal 分離。<span class="ex-ref ex-ref-mckee">McKee p.162–163</span></td></tr>
@@ -145,14 +145,14 @@
 <h3>Histopathology（組織病理）</h3>
 <ul>
 <li>Lesional skin 的 H&amp;E：subepidermal blister，epidermis 與 dermis 之間 clean separation。真皮發炎細胞浸潤的程度通常反映臨床發炎程度。<span class="ex-ref">p.976</span></li>
-<li>像 recessive dystrophic EB 或 PCT 的病灶，真皮內發炎細胞明顯稀少；像 BP 的病灶有較多發炎細胞，可混合 lymphocytes、monocytes、neutrophils 與 eosinophils；BP-like 病灶的組織學可能很難與 BP 本身區分。<span class="ex-ref">p.976</span></li>
+<li>像 recessive dystrophic EB 或 PCT 的病灶，真皮內發炎細胞通常（usually）明顯稀少；像 BP 的病灶通常有明顯較多發炎細胞，可混合 lymphocytes、monocytes、neutrophils 與 eosinophils；BP-like 病灶的組織學可能很難與 BP 本身區分。<span class="ex-ref">p.976</span></li>
 </ul>
 <p><strong>McKee 補充：</strong></p>
 <ul>
-<li><strong>Mechanobullous 型</strong>：bland、&ldquo;cell-free&rdquo; subepidermal vesicle，只含少量紅血球與一點 fibrin；水疱腔內與鄰近或下方真皮通常沒有明顯發炎細胞浸潤（偶有少量 neutrophils、histiocytes、eosinophils）；basement membrane 位於水疱 roof；鄰近真皮常見明顯 scarring，也常見 milia。<span class="ex-ref ex-ref-mckee">McKee p.157</span></li>
+<li><strong>Mechanobullous 型</strong>：bland、&ldquo;cell-free&rdquo; subepidermal vesicle，只含少量紅血球與一點 fibrin；水疱腔內與鄰近或下方真皮通常沒有明顯發炎細胞浸潤（但有時可有少量 neutrophils、histiocytes、eosinophils）；basement membrane 位於水疱 roof；鄰近真皮常見明顯 scarring，也常見 milia。<span class="ex-ref ex-ref-mckee">McKee p.157</span></li>
 <li><strong>Inflammatory 型</strong>：subepidermal vesicle 加上 lymphocytes、histiocytes、突出的 neutrophils 與 eosinophils 的混合浸潤；通常以 neutrophils 為主，初期病灶可見 neutrophils 沿 DEJ 呈線狀排列，偶以 eosinophils 為主；可像 BP 或 DH。<span class="ex-ref ex-ref-mckee">McKee p.157</span></li>
 <li>Paraffin 切片的 direct immunoperoxidase：type IV collagen 位於水疱 roof。EM：分離位置在淺層真皮、緊鄰 lamina densa 之下；basal keratinocytes 正常；anchoring fibrils 被報告為減少或消失。偶見電子緻密的無定形顆粒物質（位於 roof 內）。<span class="ex-ref ex-ref-mckee">McKee p.158</span></li>
-<li>自溶（autolysis）造成的 dermal–epidermal 分離不要和 in vivo 水疱混淆：autolysis 的上皮常明顯嗜酸性且細胞核常消失。<span class="ex-ref ex-ref-mckee">McKee p.160</span></li>
+<li>自溶（autolysis）造成的 dermal–epidermal 分離不要和 in vivo 水疱混淆：autolysis 的上皮典型（typically）呈明顯嗜酸性，細胞核常消失。<span class="ex-ref ex-ref-mckee">McKee p.160</span></li>
 </ul>
 <h3>Direct immunofluorescence（DIF）</h3>
 <ul>
@@ -160,10 +160,10 @@
 <li>Yaoita 等認為 DIF 陽性且 IgG deposits 位於 sublamina densa zone 是診斷 EBA 的必要條件。<span class="ex-ref">p.976</span></li>
 <li>PCT 的 DEJ 常也有 IgG 與 complement deposits，與 EBA 相似；能區分 PCT 與 EBA 的 DIF 特徵是 PCT 皮膚的 <strong>真皮血管周圍</strong> 也有免疫沉積。<span class="ex-ref">p.976</span></li>
 </ul>
-<p><strong>McKee 補充：</strong>絕大多數 EBA 在基底膜區有線狀 IgG 與 C3（與 BP 相同）；IgG 而無 C3 的沉積在 EBA 比 BP 常見；IgM、IgA、properdin、factor B 較少見；linear IgA disease-like 病人可只有 IgA 而無 IgG。另有 serrated pattern：&lsquo;u-serrated&rsquo; 為 EBA 與 SLE 的典型，&lsquo;n-serrated&rsquo; 見於 BP、MMP、linear IgA disease 等其他 subepithelial autoimmune blistering diseases。<span class="ex-ref ex-ref-mckee">McKee p.158</span></p>
+<p><strong>McKee 補充：</strong>絕大多數 EBA 在基底膜區有線狀 IgG 與 C3（與 BP 相同）；IgG 而無 C3 的沉積在 EBA 比 BP 常見；IgM、IgA、properdin、factor B 較少見；linear IgA disease-like 病人可只有 IgA 而無 IgG。另有 serrated pattern：&lsquo;u-serrated&rsquo; 為 EBA 與 SLE 的典型，&lsquo;n-serrated&rsquo; 一般（generally）見於 BP、MMP、linear IgA disease 等其他 subepithelial autoimmune blistering diseases。<span class="ex-ref ex-ref-mckee">McKee p.158</span></p>
 <h3>Indirect immunofluorescence（IIF）</h3>
 <ul>
-<li>以病人血清在 monkey 或 rabbit esophagus 或 human skin 上檢測，DEJ 呈 linear 染色，可能與 BP 血清無法區分。<span class="ex-ref">p.976</span></li>
+<li>EBA 病人血中可能（may）有針對 DEJ 的 autoantibodies；以病人血清在 monkey 或 rabbit esophagus 或 human skin 上檢測，DEJ 呈 linear 染色，可能與 BP 血清無法區分。<span class="ex-ref">p.976</span></li>
 </ul>
 <p><strong>McKee 補充：</strong>IgG 抗基底膜抗體（antibasement membrane antibodies）可在 <strong class="ex-n">25–50%</strong> 的病人檢出，使其更類似 BP；EBA 的 IgG 多為 IgG1 與 IgG4 subclass；許多病人的抗體具 complement-fixing 性質。<span class="ex-ref ex-ref-mckee">McKee p.158</span></p>
 <h3>Immunoelectron microscopy（IEM）</h3>
@@ -217,7 +217,7 @@
 <p class="ex-cite">Table 56-1，p.978。</p>
 <ul>
 <li>EBA 也見於嬰兒與兒童，所以被認為是 genetic dystrophic EB 的病人也可能是罕見的兒童 EBA，可用前述抗體檢查排除。<span class="ex-ref">p.977</span></li>
-<li><strong>PCT</strong> 臨床上很像 classic EBA，可用尿液或血漿 uroporphyrins 檢查排除。<span class="ex-ref">p.977</span></li>
+<li><strong>PCT</strong> 臨床上可以（can）很像 classic EBA，可用尿液或血漿 uroporphyrins 檢查排除。<span class="ex-ref">p.977</span></li>
 <li><strong>Pseudo-PCT</strong> 通常由 NSAIDs 等藥物造成，可像 EBA 一樣有 skin fragility、erosions、trauma-prone 部位水疱、scarring 與 milia；但 DIF 不同：pseudo-PCT 和 PCT 一樣，IgG deposits 位於 DEJ 的 BMZ 以及真皮血管周圍（EBA 的血管不被染色）。<span class="ex-ref">p.977</span></li>
 <li>BP-like EBA 可用多種方法排除，first-line 是 indirect 與 direct salt-split immunofluorescence。<span class="ex-ref">p.978</span></li>
 </ul>
@@ -240,7 +240,7 @@
 <h3>Supportive care（支持性治療）</h3>
 <ul>
 <li>教導 open wound care 與避免外傷；不要過度清洗、不要使用熱水或刺激性肥皂，避免用毛巾長時間或用力摩擦皮膚。<span class="ex-ref">p.978</span></li>
-<li>部分病人長時間日曬似乎會加重或誘發手背與 knuckles 的新病灶，因此要避免長時間日曬並使用防曬。<span class="ex-ref">p.978</span></li>
+<li>部分病人長時間日曬似乎會加重或誘發手背與 knuckles 的新病灶，因此避免長時間日曬與使用防曬有幫助（helpful）。<span class="ex-ref">p.978</span></li>
 <li>教育病人辨識局部皮膚感染，並盡快就醫、接受抗生素治療。<span class="ex-ref">p.978</span></li>
 </ul>
 <h3>Systemic therapy（系統性治療）</h3>

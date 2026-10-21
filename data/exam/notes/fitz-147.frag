@@ -31,7 +31,7 @@
 <li>Vascular malformations 約佔人口 <strong class="ex-n">0.3%</strong>，其中多數是 capillary malformations（CMs）；多為 congenital，但可能較晚才被診斷。<span class="ex-ref">p.2636</span></li>
 <li>隨病人<strong>等比例生長</strong>（grow proportionately），通常不會消退（usually do not regress）；多半邊界清楚、局限；可發生在身體任何部位，包括 viscera。少數情況下可是深部病灶的 stigmata，或是某症候群的第一個徵象。<span class="ex-ref">p.2636</span></li>
 <li>依 rheology 分為 <strong>slow flow</strong>（capillary、lymphatic、venous、combined）與 <strong>fast flow</strong>（arterial、arteriovenous、combined）。可造成美觀或功能障礙，少數情況可威脅生命。<span class="ex-ref">p.2636</span></li>
-<li>Diagnosis：<strong class="ex-n">90%</strong> 的表淺 malformations 可依臨床特徵診斷。<span class="ex-ref">p.2637</span></li>
+<li>Diagnosis：<strong class="ex-n">90%</strong> 的表淺 malformations，診斷通常（usually）依臨床特徵。<span class="ex-ref">p.2637</span></li>
 <li>Pathology：enlarged、tortuous vessels with quiescent endothelium；與 hemangioma 不同，沒有 parenchymal mass，也沒有 overt cellular proliferation。<span class="ex-ref">p.2637</span></li>
 <li>Imaging：用於界定範圍，除深部病灶外很少用於診斷；Doppler ultrasonography 是很有用的非侵入性檢查，可提供區分各類型的線索；MRI 顯示病灶範圍與精確位置。<span class="ex-ref">p.2637</span></li>
 <li>Genetic testing：已知許多 vascular anomalies 有 germline 或 somatic 原因；<strong>somatic 突變需取受侵組織做 biopsy，inherited 突變抽血即可</strong>。<span class="ex-ref">p.2637</span></li>
@@ -101,7 +101,7 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Syndrome</th><th scope="col">Key features（重點）</th></tr></thead>
 <tbody>
-<tr><td><mark data-q="102-36">Phakomatosis pigmentovascularis（PPV）</mark></td><td>被認為（thought to）是影響 vasomotor nerves 與 melanocytes（皆源自 neural crest）的 embryogenic anomaly；表現為大面積 <mark data-q="102-36">metameric CMs（常在 trunk 或 extremities）合併 pigmented cutaneous lesions</mark>，如 pigmented nevus、nevus spilus、café-au-lait patch，或<strong>不在 sacrum</strong> 的 atypical Mongolian spot；附近可見 nevus anemicus（twin spot）。皮膚病灶可合併全身性、內臟（hypoplasia of the larynx、intestinal polyposis）、肌肉（scoliosis）或神經（mental retardation、epilepsy、intracranial）徵象，見於 <strong class="ex-n">60%</strong> 的病例。需要 ophthalmologic、neurologic、orthopedic follow-up。<span class="ex-ref">p.2639</span> <span class="ex-ref">p.2641</span> <span class="ex-ref">p.2643</span></td></tr>
+<tr><td><mark data-q="102-36">Phakomatosis pigmentovascularis（PPV）</mark></td><td>被認為（thought to）是影響 vasomotor nerves 與 melanocytes（皆源自 neural crest）的 embryogenic anomaly；表現為大面積 <mark data-q="102-36">metameric CMs（通常位於 trunk 或 extremities）合併 pigmented cutaneous lesions</mark>，如 pigmented nevus、nevus spilus、café-au-lait patch，或<strong>不在 sacrum</strong> 的 atypical Mongolian spot；附近可見 nevus anemicus（twin spot）。皮膚病灶可合併全身性、內臟（hypoplasia of the larynx、intestinal polyposis）、肌肉（scoliosis）或神經（mental retardation、epilepsy、intracranial）徵象，見於 <strong class="ex-n">60%</strong> 的病例。需要 ophthalmologic、neurologic、orthopedic follow-up。<span class="ex-ref">p.2639</span> <span class="ex-ref">p.2641</span> <span class="ex-ref">p.2643</span></td></tr>
 <tr><td><mark data-q="111-21">Sturge-Weber syndrome（SWS）</mark></td><td>CM 位於 frontopalpebral area 時可是 SWS；neuro-oculo-cutaneous syndrome，<mark data-q="111-21">皮膚 CM 位於 trigeminal nerve 眼支（V1）</mark>，合併同側 leptomeningeal capillary-venous malformation（CVM）與 choroid CVM；常有 glaucoma。因腦部 venous drainage 異常而有 <strong>epilepsy 與 mental retardation</strong> 的高風險，另有 glaucoma、buphthalmos，有時 retinal detachment。<span class="ex-ref">p.2639</span> <span class="ex-ref">p.2641</span></td></tr>
 <tr><td>Diffuse CM with overgrowth（DCMO）</td><td>Hemihypertrophy（可為 total、regional 或 contralateral）；CM 可遍布全身，呈 reticulated、ill-defined，<strong>不沿 Blaschko lines</strong>；toe anomalies 見於 <strong class="ex-n">30%</strong>，並有 prominent veins。<span class="ex-ref">p.2639</span> <span class="ex-ref">p.2641</span></td></tr>
 <tr><td>Macrocephaly–CM（M-CM）</td><td>Vermilion border 或 tip of the nose（或兩者）的 well-delineated dark CM 合併 macrocephaly，常為 pathognomonic；有 megalencephaly，有 mental retardation 風險；文獻有兩例合併 Wilms tumor。<span class="ex-ref">p.2639</span> <span class="ex-ref">p.2641</span></td></tr>
@@ -151,7 +151,7 @@
 <li>CM 通常不需影像檢查；若所謂「CM」有<strong>疼痛、發熱或自發出血</strong>，應做 Doppler ultrasound 排除 fast-flow malformation，如 AVM、Parkes Weber syndrome 或 proliferating hemangioma。<span class="ex-ref">p.2642</span></li>
 <li>CM 位於 frontopalpebral area（尤其涉及 upper eyelid 內側）可能是 SWS：<strong>ophthalmologic 與 neurologic examination 為必要</strong>，出生後數個月內做，並每年重複至青春期；另做 brain MRI 評估 leptomeningeal CVM。<span class="ex-ref">p.2643</span></li>
 <li>PPV：ophthalmologic、neurologic、orthopedic follow-up 為必要。<span class="ex-ref">p.2643</span></li>
-<li>下肢廣泛 CM（如 DCMO）：約 <strong class="ex-n">4 to 6 years</strong> 做 scaniometry（leg length films）評估 growth discrepancy，並重複至生長結束；<strong>serial renal ultrasound</strong> 排除 Wilms tumor。<span class="ex-ref">p.2643</span></li>
+<li>下肢廣泛 CM（如 DCMO）：約 <strong class="ex-n">4 to 6 years</strong> 做 scaniometry（leg length films）評估可能的（possible）進行性 growth discrepancy，並重複至生長結束；<strong>serial renal ultrasound</strong> 排除 Wilms tumor。<span class="ex-ref">p.2643</span></li>
 <li>Lumbosacral CM：做脊髓 MRI；CM-AVM：應考慮 brain 與 spinal MRI。<span class="ex-ref">p.2643</span></li>
 <li>Genetic testing：多發病灶（CM-AVM1 與 2）因 intracerebral fast-flow lesions 風險增加，應篩檢 <em>RASA1</em> 與 <em>EPHB4</em>。蒼白、不典型、不顯眼的 CMs 可能是 PHTS 的徵象，尤其合併 macrocephaly 時；因癌症風險增加應篩檢 <em>PTEN</em>。<span class="ex-ref">p.2643</span></li>
 </ul>
@@ -187,9 +187,9 @@
 <ul>
 <li>目標是監測相關併發症，並將 CM 對自尊與 quality of life 的影響降到最低；以 foundation（如 Covermark）camouflage 仍是有效做法。<span class="ex-ref">p.2644</span></li>
 <li><mark data-q="101-29"><strong>Laser treatment 是多數 CM 的 gold standard therapy</strong>；<strong>Pulsed-dye laser</strong>（波長 <strong class="ex-n">585 or 595 nm</strong>、short pulse duration）目前在嬰幼兒與兒童給出 best results，作用是淡化 CM 的紅色</mark>。原文寫 pulse duration 為 400–1500 ms（原文如此）。<span class="ex-ref">p.2644</span></li>
-<li>Laser 併發症少；通常需 <strong class="ex-n">6–12</strong> 次治療，因疼痛可能需要 general anesthesia；在 cervicofacial 與 trunk 的效果比 extremities 好；<strong>兒童期早期治療並不會減少治療次數</strong>。<span class="ex-ref">p.2644</span></li>
+<li>Laser 併發症少；需多次治療（<strong class="ex-n">6–12</strong> 次），因疼痛可能需要 general anesthesia；在 cervicofacial 與 trunk 的效果比 extremities 好；<strong>兒童期早期治療並不會減少治療次數</strong>。<span class="ex-ref">p.2644</span></li>
 <li>Dynamic cooling system 保護表皮，可用較高 fluence；停止治療後可能復發；<strong>laser 對併發的 hypertrophy 沒有影響</strong>。<span class="ex-ref">p.2644</span></li>
-<li>Contour resection 用於處理 pyogenic granuloma 或 lip hypertrophy 等併發症。<span class="ex-ref">p.2644</span></li>
+<li>可考慮（is considered）以 contour resection 處理 pyogenic granuloma 或 lip hypertrophy 等併發症。<span class="ex-ref">p.2644</span></li>
 <li>Orthopedic：leg-length discrepancy 超過 <strong class="ex-n">1.5 cm</strong> 時需及早使用 shoe lift，以免骨盆代償傾斜；約 <strong class="ex-n">11 to 13</strong> 歲時有時需要 epiphysiodesis。<span class="ex-ref">p.2644</span></li>
 <li>Genetic 與心理 counseling 屬 multidisciplinary management 的一部分。<span class="ex-ref">p.2644</span></li>
 </ul>
@@ -203,7 +203,7 @@
 <h2>8. Venous Anomalies: Epidemiology &amp; Syndromes（靜脈異常：流行病學與症候群）</h2>
 <ul>
 <li>VM 是 congenital lesion，由 venous-type vessels 構成，可侵犯皮膚或 mucosa，也可涉及任何結構（subcutis、muscles、bones、nerves）與器官（CNS、GI tract）。<strong class="ex-n">50%</strong> 位於 cervicofacial area，<strong class="ex-n">37%</strong> 位於 extremities。<span class="ex-ref">p.2646</span></li>
-<li>轉診到專門中心最常見的是 venous anomalies，整體 incidence 為 <strong class="ex-n">1 in 10,000</strong>；多為 sporadic，<strong class="ex-n">1%</strong> 是 inherited VMCM，<strong class="ex-n">5%</strong> 是 inherited GVM；沒有性別差異。<span class="ex-ref">p.2646</span></li>
+<li>轉診到專門中心最常見的是 venous anomalies，整體 incidence 為 <strong class="ex-n">1 in 10,000</strong>；多為 sporadic，<strong class="ex-n">1%</strong> 是 inherited VMCM，<strong class="ex-n">5%</strong> 是 inherited GVM；未有性別差異的報告（No sex preponderance is reported）。<span class="ex-ref">p.2646</span></li>
 <li>VMCM 與 GVM 的 penetrance 隨年齡變化，<strong>約 20 歲達最高</strong>（VMCM <strong class="ex-n">87%</strong>、GVM <strong class="ex-n">92.7%</strong>）；大型 VMCMs 與 GVMs 出生時即有，但 <strong class="ex-n">17%</strong> 的患者之後會出現新的小病灶。<span class="ex-ref">p.2646</span></li>
 <li>BRBN syndrome 罕見、sporadic，文獻約 <strong class="ex-n">200</strong> 例。<span class="ex-ref">p.2646</span></li>
 </ul>
@@ -238,7 +238,7 @@
 <li>VMs 通常 solitary，但可 multifocal，多發多半提示可遺傳的疾病；可局限或在解剖區域內廣泛，<strong>最常見位置是 head and neck</strong>。<span class="ex-ref">p.2647</span></li>
 <li>VM 是 congenital、淡藍到深藍色病灶；<strong>deep VM 的表面皮膚為正常顏色</strong>，常到青春期或之後因疼痛才被診斷；大小從小的 spongy blebs 到數 cm；皮膚溫度正常；<strong>沒有 thrill 或 bruit</strong>；在 dependent position 時變大，可藉加壓或促進 venous drainage 輕易排空；除非發生 thrombosis，否則觸診不痛。<span class="ex-ref">p.2647</span></li>
 <li><strong>VMCM</strong>：病灶小而多發，較像小的 sporadic VMs，不像 BRBN；可隨時間變大、常無症狀；通常小（<strong class="ex-n">&lt;5 cm</strong>），<strong class="ex-n">&gt;80%</strong> 的患者有超過兩個病灶；部分出生時即有，多數在青春期前出現；mucosal lesions 侵犯 lips、tongue 與 buccal mucosa。<span class="ex-ref">p.2647</span></li>
-<li><strong>Multifocal VM（MVM）</strong>：sporadic 但多發，與 VMCM 病灶很相似，但沒有家族史。<span class="ex-ref">p.2647</span></li>
+<li><strong>Multifocal VM（MVM）</strong>：少數情況下（in rare instances）VM 可為 sporadic 但多發，與 VMCM 病灶很相似，但沒有家族史。<span class="ex-ref">p.2647</span></li>
 <li><strong>GVM</strong>：bluish to purple、raised，特徵為 multifocality、hyperkeratosis、nodularity 與 <strong>cobblestone surface</strong>；少數（尤其新生兒）病灶可為 flat purple 而像 CM，此 plaque-like GVM 通常隨時間變暗。通常出生時即有、童年期緩慢擴大，並陸續出現新的小病灶。<span class="ex-ref">p.2647–2648</span></li>
 <li>與 VM 相比，GVM 觸診<strong>常疼痛</strong>，且<strong>無法被加壓完全排空</strong>；通常多發於 extremities，侵犯 skin 與 subcutis；<strong>很少見於 mucosae，沒有 intestinal hemorrhage</strong>；病人心智與身體發育正常。GVM 的診斷依據皮膚病灶的臨床與組織學評估；genetic testing 可區分小型多發 GVMs 與 VMCMs。<span class="ex-ref">p.2648</span></li>
 <li><strong>Verrucous venous malformation（VVM）</strong>（舊稱 verrucous hemangioma）：罕見 congenital vascular anomaly；免疫組化類似 vascular neoplasms（<strong>Wilms tumor 1 與 GLUT-1 positive</strong>），但與 infantile hemangioma 不同，通常出生時即被發現且<strong>從不自行消退</strong>。主要在 legs，也可見於 head 與 trunk；起初為 bluish macule，之後變 erythematous-violaceous，經外傷與續發感染常演變成 verrucous nodule；<strong>從不侵犯 muscles 或深部組織</strong>；常潰瘍。<span class="ex-ref">p.2649–2650</span></li>
@@ -251,10 +251,10 @@
 <h3>Complications（併發症）</h3>
 <ul>
 <li>VM 通常單側，造成不對稱與逐漸、緩慢惡化的變形；依大小與位置可造成疼痛（尤其早晨起床時）、解剖變形，甚至因出血、擴張或阻塞重要結構而威脅生命。VM 位於 temporal muscle 時 migraine 常見。oropharyngeal VM 可影響說話與吞嚥；pharyngeal 或 laryngeal 病灶可危及 airway，造成 snoring 與 sleeping apnea。<span class="ex-ref">p.2650</span></li>
-<li>Extremities 的 VMs 常侵犯 muscles 與 joints，造成肌力下降、hypotrophy，有時 hypertrophy，導致 leg-length discrepancy，<strong>程度比 KTS 輕</strong>；膝關節內 intraarticular bleeding 會導致早發 arthrosis。Genital VM 常與 limb VM 並存，可造成 dyspareunia；GI VM 可造成 chronic anemia。<span class="ex-ref">p.2650</span></li>
+<li>Extremities 的 VMs 常侵犯 muscles 與 joints，造成肌力下降、hypotrophy，有時 hypertrophy，導致 leg-length discrepancy，<strong>程度比 KTS 輕</strong>；膝關節內 intraarticular bleeding 會導致早發 arthrosis。Genital VM 常與 limb VM 並存，可造成 dyspareunia；GI VM 可能（may）導致 chronic anemia。<span class="ex-ref">p.2650</span></li>
 <li>局部 thrombosis 通常造成持續數天的急性疼痛，並隨 <strong>phleboliths</strong> 形成而消退（可用觸診或 radiography 辨識）。VM 很少造成 pulmonary embolism，但有大型 draining veins 時可能發生。<span class="ex-ref">p.2650</span></li>
 <li><strong>Localized intravascular coagulopathy（LIC）</strong>：與 solitary 或 syndromic spongy VMs 相關；特徵是 D-dimer &gt;<strong class="ex-n">500 ng/mL</strong>，見於 <strong class="ex-n">40%</strong> 的病人。嚴重 LIC 合併 low fibrinogen 常見於 extremities 的大型 VMs，在 cervicofacial area 罕見；<strong>手術、sclerotherapy 與 hormonal influences 可觸發 LIC 轉為 DIC</strong>。<span class="ex-ref">p.2650</span></li>
-<li>與皮膚病灶不同，BRBN 的 <strong>GI lesions 有出血傾向</strong>：可自發破裂造成急性出血甚至死亡；但多數出血進展緩慢，造成慢性隱性失血與 iron-deficiency anemia。其他併發症有 intussusception、volvulus 與 bowel infarction，BRBN 合併腹痛時要考慮。<span class="ex-ref">p.2650</span></li>
+<li>與皮膚病灶不同，BRBN 的 <strong>GI lesions 有出血傾向</strong>：可能（may）自發破裂造成急性出血甚至死亡；但多數出血傾向（tends to）緩慢進展，造成慢性隱性失血，可導致 iron-deficiency anemia。其他併發症有 intussusception、volvulus 與 bowel infarction，BRBN 合併腹痛時要考慮。<span class="ex-ref">p.2650</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>VM：skin temperature 正常、沒有 thrill 或 bruit、可被加壓排空（p.2647）；GVM 觸診常疼痛、無法被加壓完全排空、沒有 intestinal hemorrhage（p.2648）。VMCM 與 GVM 都是 autosomal dominant，BRBN 與 VM 為 sporadic（Table 147-5，p.2648）。</aside>
 </section>
@@ -262,11 +262,11 @@
 <section class="ex-note" id="vm-patho">
 <h2>10. VM Etiology &amp; Pathogenesis（VM 致病機轉）</h2>
 <ul>
-<li><strong>VMCM</strong>：autosomal dominant，<em>TEK</em> gene（編碼 angiopoietin receptor <strong>TIE2</strong>）的 germline mutations；遺傳的突變即使沒有 ligand 也造成 receptor hyperphosphorylation；VMCM 組織曾找到 somatic second hits；這些突變活化內皮細胞的 <strong>PI3K/AKT</strong> signaling pathway。<span class="ex-ref">p.2650</span></li>
+<li><strong>VMCM</strong>：autosomal dominant，<em>TEK</em> gene（編碼 angiopoietin receptor <strong>TIE2</strong>）的 germline mutations；遺傳的突變即使沒有 ligand 也造成 receptor hyperphosphorylation；曾在兩位病人（two patients）的 VMCM 組織找到 somatic second hits；這些突變活化內皮細胞的 <strong>PI3K/AKT</strong> signaling pathway。<span class="ex-ref">p.2650</span></li>
 <li><strong>GVM</strong>：<em>glomulin</em> gene 的 dominant、<strong>loss-of-function</strong> mutations；病灶形成還需要 <strong>somatic second hit</strong> 使 glomulin 完全失去功能，最常見的 second hit 是 acquired uniparental isodisomy（使遺傳的突變變成 homozygous）；這解釋同一家族內 penetrance、病灶範圍與數量的 variable expressivity。幾乎所有受檢 GVM 家族都找到 glomulin 突變（locus homogeneity）；glomulin 似乎表現在 vascular smooth muscle cells，確切功能未知。<span class="ex-ref">p.2650</span></li>
 <li><strong>Sporadic VM</strong>：<strong class="ex-n">60%</strong> 由 <em>TIE2</em> 的 somatic activating mutations 引起（最常見是 L914F，未在 VMCM 發現；VMCM 最常見的遺傳突變 R849W 未在單一 somatic VM 發現）；另 <strong class="ex-n">20%</strong> 由 <em>PIK3CA</em> somatic mutations 引起，這些突變同樣見於癌症並活化 PI3K/AKT pathway。<span class="ex-ref">p.2650</span></li>
-<li><strong>MVM</strong>：也由 <em>TIE2</em> 突變引起，常有兩個 <em>TIE2</em> 突變（常見為 mosaic 的 R915C，加上同一 allele 上的 somatic Y897C）；因此沒有家族史、多發，且臨床類似 VMCM。<span class="ex-ref">p.2650</span></li>
-<li><strong>VVM</strong>：somatic <em>MAP3K3</em> mutations。<strong>BRBN</strong>：與 VMCM、MVM 及 60% 的 VMs 一樣由 <em>TIE2</em> 突變引起，但<strong>血液中偵測不到（為 somatic）</strong>；同一病人不同遠端病灶可找到相同的 double mutation（最常見 T1105N–T1106P），表示病灶源自單一共同來源（如 dominant lesion 或 bone marrow）。<span class="ex-ref">p.2650–2651</span></li>
+<li><strong>MVM</strong>：也由 <em>TIE2</em> 突變引起，常有兩個 <em>TIE2</em> 突變（最常見（most frequently）為 mosaic 的 R915C，加上同一 allele 上的 somatic Y897C）；因此沒有家族史、多發，且臨床類似 VMCM。<span class="ex-ref">p.2650</span></li>
+<li><strong>VVM</strong>：somatic <em>MAP3K3</em> mutations。<strong>BRBN</strong>：與 VMCM、MVM 及 60% 的 VMs 一樣由 <em>TIE2</em> 突變引起，但<strong>血液中偵測不到（為 somatic）</strong>；同一病人不同遠端病灶可找到相同的 double mutation（最常見 T1105N–T1106P），提示（suggests）病灶源自單一共同來源（如 dominant lesion 或 bone marrow）。<span class="ex-ref">p.2650–2651</span></li>
 <li><strong>Maffucci syndrome</strong>：<em>IDH1</em> 與 <em>IDH2</em> 的 somatic mutations。<span class="ex-ref">p.2651</span></li>
 </ul>
 </section>
@@ -291,7 +291,7 @@
 <li>Doppler ultrasonography 可確認 slow-flow 性質；<strong>與 LMs 相反，venous channels 可被探頭壓扁（compressible）</strong>。<span class="ex-ref">p.2651</span></li>
 <li>MRI（spin-echo T1、T2 與 fat-saturation sequences）顯示精確位置，並突顯 GVM 比 VM 更 cellular、更表淺；MRI 表現不典型須 biopsy 排除 sarcoma 或 neurofibroma。BRBN 的 palmar-plantar multifocal lesions 應做 endoscopy、colonoscopy 或 wireless capsule endoscopy 找 GI lesions。這些影像檢查是任何 venous anomaly <strong>治療前評估的必要項目</strong>。<span class="ex-ref">p.2651</span></li>
 <li>Genetic testing：多發病灶可考慮 <em>TIE2</em> 與 <em>glomulin</em> 檢測，以區分疾病並提供 genetic counseling。<span class="ex-ref">p.2651</span></li>
-<li>Cerebral developmental venous anomaly（dilated intramedullary veins 匯入較大的 draining vein）在一般人口約 <strong class="ex-n">0.5%</strong>，但在廣泛 head and neck VMs 的病人為 <strong class="ex-n">20%</strong>；通常無症狀，可造成 headache。<span class="ex-ref">p.2652</span></li>
+<li>Cerebral developmental venous anomaly（dilated intramedullary veins 匯入較大的 draining vein）可見於（can be seen in）一般人口的 <strong class="ex-n">0.5%</strong>，但在廣泛 head and neck VMs 的病人為 <strong class="ex-n">20%</strong>；通常無症狀，可造成 headache。<span class="ex-ref">p.2652</span></li>
 </ul>
 <h3>Differential diagnosis（鑑別診斷，Table 147-6）</h3>
 <table class="ex-table">
@@ -324,11 +324,11 @@
 <h3>Management（治療）</h3>
 <ul>
 <li>有症狀或為美觀目的時，治療有其必要（warranted）；最常見的治療適應症是疼痛與功能障礙；常需血液科、外科與 interventional radiologists 共同處理。<span class="ex-ref">p.2652</span></li>
-<li><strong>Compression garments</strong>：藉降低 venous pressure 減輕 extremity VMs 的腫脹與疼痛；但<strong>對 GVM 會增加疼痛，不適用</strong>。<span class="ex-ref">p.2652</span></li>
-<li><strong>LMWH</strong>（<strong class="ex-n">100 IU anti-Xa/kg/day</strong>）：有 LIC 徵象者，手術前 <strong class="ex-n">24 hours</strong> 與術後另 <strong class="ex-n">5 days</strong> 給予以降低出血風險；局部 thrombosis 疼痛發作者同樣給予，療程通常 <strong class="ex-n">2 weeks</strong>。<span class="ex-ref">p.2652</span></li>
+<li><strong>Compression garments</strong>：藉降低 venous pressure，可有助於（can be helpful）減輕 extremity VMs 的腫脹與疼痛；但<strong>對 GVM 會增加疼痛，不適用</strong>。<span class="ex-ref">p.2652</span></li>
+<li><strong>LMWH</strong>（<strong class="ex-n">100 IU anti-Xa/kg/day</strong>）：有 LIC 徵象者，手術前 <strong class="ex-n">24 hours</strong> 與術後另 <strong class="ex-n">5 days</strong> 通常（usually）給予以降低出血風險；局部 thrombosis 疼痛發作者同樣給予，療程通常 <strong class="ex-n">2 weeks</strong>。<span class="ex-ref">p.2652</span></li>
 <li>BRBN 的 GI 出血可保守處理：iron supplementation 與 blood transfusions。<span class="ex-ref">p.2652</span></li>
 <li><mark data-q="110-32"><strong>Sirolimus（rapamycin）</strong>：針對 PI3K-AKT signaling 的 targeted therapy；phase II trial 對難治的廣泛 VMs 或複雜 slow-flow vascular anomalies 結果令人鼓舞</mark>：疼痛與症狀幾乎完全緩解、coagulopathy 減輕、功能與 quality of life 改善；sporadic VM 與 BRBN 的出血在 <strong class="ex-n">24 hours</strong> 內停止；副作用輕微（mucositis、mild headache、fatigue、diarrhea）；多數追蹤滿 1 年的病人 MRI 體積明顯縮小。歐洲多中心 VASE study 進行中；<strong>不建議用於小型、局限、無症狀、對標準處置有反應的 slow-flow malformations</strong>。<span class="ex-ref">p.2652</span></li>
-<li><mark data-q="110-32"><strong>Percutaneous intralesional sclerotherapy 是 VM 的 primary treatment</strong>（與 GVM 不同）</mark>；<strong>absolute ethanol</strong> 是最有效的 sclerosing agent；以 local compression 或 intralesional coils 避免 ethanol 進入全身循環。局部併發症：inflammation、edema、blistering、necrosis、chronic drainage、暫時或永久 nerve deficit；全身併發症：renal 或 pulmonary toxicity、myocardial depression、cardiac arrest。VMs 傾向 recanalize 與復發，常需多次治療。<span class="ex-ref">p.2652</span></li>
+<li><mark data-q="110-32"><strong>Percutaneous intralesional sclerotherapy 是 VM 的 primary treatment</strong>（與 GVM 不同）</mark>；<strong>absolute ethanol</strong> 是最有效的 sclerosing agent；以 local compression 或 intralesional coils 避免 ethanol 進入全身循環。局部併發症：inflammation、edema、blistering、necrosis、chronic drainage、暫時或永久 nerve deficit；曾有報告（have been reported）的全身併發症：renal 或 pulmonary toxicity、myocardial depression、cardiac arrest。VMs 傾向 recanalize 與復發，常需多次治療。<span class="ex-ref">p.2652</span></li>
 <li>Ethanol 的替代：sodium tetradecyl-sulphate foam 或 lauromacrogol，對小型 VMs 有效且局部不良反應較少；microfoams 的 neurologic complications 見於 <strong class="ex-n">2%</strong>；因此發展出以 ethylcellulose 增加黏度的 modified radiopaque ethanol。<span class="ex-ref">p.2652</span></li>
 <li><strong>Surgical resection</strong> 常在 sclerotherapy 之後進行。BRBN：endoscopic coagulation（Nd:YAG laser、bipolar 或 argon plasma coagulation）與 band-ligation 有用；open surgery 切除所有 GI lesions 可免除輸血與 intussusception 造成的間歇腹痛。GVM 切除常需 skin graft；VVM 也是 best treated with surgical resection，關閉常需 skin graft。<span class="ex-ref">p.2652</span></li>
 <li>VMCM 或 GVM 的家族應提供 genetic counseling：子代有 <strong class="ex-n">50%</strong> 風險遺傳致病突變，且臨床表現有變異性。<span class="ex-ref">p.2652–2653</span></li>
@@ -354,7 +354,7 @@
 <ul>
 <li>LMs 由 <strong>microcysts</strong>（舊稱 lymphangioma circumscriptum）或 <strong>macrocysts</strong>（<strong class="ex-n">&gt;1 cm</strong>，舊稱 cystic hygroma）組成，隨孩子等比例生長，內含 clear 或 serosanguineous fluid。Macrocystic LM 是柔軟、multilobulated、邊界清楚的腫塊；microcystic LMs 邊界不清且常侵犯鄰近結構。Dermal LMs 可為 mm 大小的 vesicles，透明或（有 intracystic bleeding 時）暗紅色，可出血並變成紫色結節。<span class="ex-ref">p.2654</span></li>
 <li><strong>Angiokeratoma circumscriptum</strong>（capillary-lymphatic malformation，CLM）：combined、邊界清楚的病灶，常在 extremity；pink 到 bluish-red，稍隆起，通常 hyperkeratotic。臨床上分 angiokeratoma circumscriptum、angiokeratoma of Mibelli（distal extremities 的 circumscribed、dark-red、hyperkeratotic plaques）、angiokeratoma of Fordyce（elderly men 陰囊上非常常見的 hyperkeratotic blue-black papules）；須與 Fabry disease 的 angiokeratomas（Chap. 127）與 VVM 區分。<span class="ex-ref">p.2655</span></li>
-<li><strong>Lymphedema</strong>：受影響部位腫脹（常是 lower extremity），因 intrinsic lymphatic dysfunction 使淋巴液積在細胞外間隙。<strong>Milroy disease</strong>：足背腫脹並有 lymphedema 家族史時要懷疑；出生時即有、常雙側、侵犯膝以下 lower limbs；可合併 hydrocele（<strong class="ex-n">37%</strong> 男性）、prominent veins（<strong class="ex-n">23%</strong>）、upslanting toenails（<strong class="ex-n">14%</strong>）、papillomatosis（<strong class="ex-n">10%</strong>）、男性 urethral abnormalities（<strong class="ex-n">4%</strong>）。<span class="ex-ref">p.2655</span></li>
+<li><strong>Lymphedema</strong>：受影響部位腫脹（通常是 lower extremity），因 intrinsic lymphatic dysfunction 使淋巴液積在細胞外間隙。<strong>Milroy disease</strong>：足背腫脹並有 lymphedema 家族史時要懷疑；出生時即有、常雙側、侵犯膝以下 lower limbs；可合併 hydrocele（<strong class="ex-n">37%</strong> 男性）、prominent veins（<strong class="ex-n">23%</strong>）、upslanting toenails（<strong class="ex-n">14%</strong>）、papillomatosis（<strong class="ex-n">10%</strong>）、男性 urethral abnormalities（<strong class="ex-n">4%</strong>）。<span class="ex-ref">p.2655</span></li>
 </ul>
 <h3>Complications（併發症）</h3>
 <ul>
@@ -395,16 +395,16 @@
 <p class="ex-cite">Table 147-7，p.2657。</p>
 <h3>Clinical course（病程）</h3>
 <ul>
-<li>LM 通常隨孩子生長，可因 bony overgrowth 造成不對稱；感染或 intralesional bleeding 時增大。<strong>有自發 involution 的零星報告</strong>；局部感染後常見消退，可能由 postinflammatory autosclerosis 造成。<span class="ex-ref">p.2657</span></li>
+<li>LM 通常隨孩子生長，可因 bony overgrowth 造成不對稱；感染或 intralesional bleeding 時可見（can be seen）增大。<strong>有自發 involution 的零星報告</strong>；局部感染後常見消退，可能由 postinflammatory autosclerosis 造成。<span class="ex-ref">p.2657</span></li>
 <li>Gorham-Stout syndrome 預後差，<strong class="ex-n">16%</strong> 致死。<span class="ex-ref">p.2657</span></li>
 </ul>
 <h3>Management（治療）</h3>
 <ul>
-<li>Systemic antibiotics 治療 intralesional bacterial infection 與早期 cellulitis（isolated 與 syndromic LM 皆然）；pain 可用 anti-inflammatory drugs。<span class="ex-ref">p.2657</span></li>
+<li>Systemic antibiotics 治療 intralesional bacterial infection 與早期 cellulitis（isolated 與 syndromic LM 皆然）；緩解 pain 可能需要（may be required）anti-inflammatory drugs。<span class="ex-ref">p.2657</span></li>
 <li>CLOVES 或 KTS 病人在任何手術前須給預防劑量 <strong>LMWH（100 anti-Xa/kg/day）</strong>，術後再持續 <strong class="ex-n">10 to 20 days</strong>，以避免凝血異常在圍手術期失代償，並降低危及生命的 postoperative pulmonary embolism。<span class="ex-ref">p.2657</span></li>
 <li><strong>Rapamycin</strong> 已有效用於對標準治療抗性的廣泛 LMs，以及 KTS 與 GLA 病人；雖無完全緩解，部分病人 lymphatic leakage 與感染停止、病灶體積縮小，副作用輕微。<span class="ex-ref">p.2657–2658</span></li>
 <li>Lymphedema is best treated with <strong>elastic stockings、massage、pneumatic compression devices</strong> 治療。Sildenafil 曾被提出對 LM 有效，但後續研究未證實療效，且點出感染與出血等潛在副作用。<span class="ex-ref">p.2658</span></li>
-<li>Procedures：<strong>Nd:YAG 或 carbon dioxide laser photocoagulation</strong> 用於處理造成 oozing 的 dermal LM vesicles；<strong>macrocystic LM</strong> 先 fluid aspiration 再由 interventional radiologist 經皮病灶內注射 sclerosing agents（sodium tetradecyl sulfate、pure ethanol、<strong>OK432</strong>〔group A <em>Streptococcus pyogenes</em> 殺死菌株萃取物，picibanil〕、doxycycline、bleomycin）；副作用從發燒、紅斑到水腫。<span class="ex-ref">p.2658</span></li>
+<li>Procedures：<strong>Nd:YAG 或 carbon dioxide laser photocoagulation</strong> 曾被用於（has been used）處理造成 oozing 的 dermal LM vesicles；<strong>macrocystic LM</strong> 先 fluid aspiration 再由 interventional radiologist 經皮病灶內注射 sclerosing agents（sodium tetradecyl sulfate、pure ethanol、<strong>OK432</strong>〔group A <em>Streptococcus pyogenes</em> 殺死菌株萃取物，picibanil〕、doxycycline、bleomycin）；副作用從發燒、紅斑到水腫。<span class="ex-ref">p.2658</span></li>
 <li>Surgical resection 是 LM、CLOVES 與 KTS 的另一選項；<strong>復發常見</strong>，因 microcystic LM 難與鄰近正常組織區分，導致切除不完全或不必要地犧牲正常結構。<span class="ex-ref">p.2658</span></li>
 <li>Primary lymphedema 因可遺傳且可伴隨其他重要疾病，需做家庭與病人教育，納入特殊 surveillance programs。<span class="ex-ref">p.2658–2659</span></li>
 </ul>
@@ -415,7 +415,7 @@
 <ul>
 <li>Fast-flow vascular malformations（AVM 與 AVF）是最嚴重、最具破壞性的 malformations；<strong>AVF 通常是外傷的結果</strong>。AVM 的特徵是 <strong>nidus</strong>：病灶中心，由多條 feeding arteries 與 draining veins 之間的<strong>直接連通</strong>組成，<strong>中間沒有正常 capillary bed</strong>。<span class="ex-ref">p.2658–2659</span></li>
 <li>AVMs 出生時即存在，但不一定看得到；可局限或廣泛，並隨年齡演變。<span class="ex-ref">p.2659</span></li>
-<li>AVM 的發生率不明，沒有性別差異；為罕見、通常 sporadic 的 fast-flow malformation。<strong>HHT</strong> 是 autosomal inherited disorder，prevalence <strong class="ex-n">1 in 5000</strong>；<strong>CM-AVM</strong> 是另一種 autosomal dominant 的家族型，盛行率估計相近。<span class="ex-ref">p.2659</span></li>
+<li>AVM 的發生率不明，未發現性別差異（No sex preponderance has been identified）；為罕見、通常 sporadic 的 fast-flow malformation。<strong>HHT</strong> 是 autosomal inherited disorder，prevalence <strong class="ex-n">1 in 5000</strong>；<strong>CM-AVM</strong> 是另一種 autosomal dominant 的家族型，盛行率估計相近。<span class="ex-ref">p.2659</span></li>
 </ul>
 <h3>Syndromic disorders（症候群）</h3>
 <table class="ex-table">
@@ -423,7 +423,7 @@
 <tbody>
 <tr><td>Bonnet-Dechaume-Blanc / Wyburn-Mason syndrome</td><td>Sporadic、syndromic AVM，位於 centrofacial 或 hemifacial area（或兩者），合併 oculo-orbital 與 cerebral involvement；<strong>很少</strong>像 SWS 那樣依 trigeminal distribution。Intracerebral AVMs 常見，可造成 epistaxis、exophthalmos、hemianopia；也可有 mental retardation。<span class="ex-ref">p.2659</span></td></tr>
 <tr><td>Cobb syndrome</td><td>Sporadic、syndromic AVM，同一 metamere 的 <strong>cutaneous 與 spinal cord AVMs</strong>；皮膚病灶偽裝成 CM，但觸診發熱。童年期突然發生背部或下肢疼痛合併感覺障礙；依位置與範圍可有疼痛、感覺與運動障礙、neurogenic bladder。<span class="ex-ref">p.2659</span></td></tr>
-<tr><td>Hereditary hemorrhagic telangiectasia（HHT）</td><td>三聯：<strong>多發皮膚與黏膜 telangiectasias</strong>（常在 mucosal lip）、<strong>epistaxis</strong>、<strong>positive family history</strong>；診斷為臨床診斷，依 <strong>Curaçao criteria</strong>。頻率：spontaneous recurrent epistaxis <strong class="ex-n">90%</strong>、skin telangiectasia <strong class="ex-n">75%</strong>、hepatic 或 pulmonary AVMs <strong class="ex-n">30%</strong>、GI bleeding <strong class="ex-n">15%</strong>。Epistaxis 通常是 HHT 的首發表現，嚴重時需輸血。<span class="ex-ref">p.2659</span></td></tr>
+<tr><td>Hereditary hemorrhagic telangiectasia（HHT）</td><td>三聯：<strong>多發皮膚與黏膜 telangiectasias</strong>（常在 mucosal lip）、<strong>epistaxis</strong>、<strong>positive family history</strong>；診斷為臨床診斷，依 <strong>Curaçao criteria</strong>。估計頻率（estimated frequencies）：spontaneous recurrent epistaxis <strong class="ex-n">90%</strong>、skin telangiectasia <strong class="ex-n">75%</strong>、hepatic 或 pulmonary AVMs <strong class="ex-n">30%</strong>、GI bleeding <strong class="ex-n">15%</strong>。Recurrent epistaxis 典型（typically）是 HHT 的首發表現，可嚴重到需要輸血。<span class="ex-ref">p.2659</span></td></tr>
 <tr><td>Parkes Weber syndrome</td><td><mark data-q="102-36">Extremity 上大型 congenital 皮膚紅色血管斑，合併患肢 soft tissue 與 skeletal hypertrophy，及底下多發 <strong>arteriolar-venular microfistulas</strong></mark>；患肢（常為下肢）比對側更長更大；常為 sporadic，但可是 CM-AVM 的一部分（身體他處有小型多發 CMs）；症狀隨年齡惡化，可發展為 congestive heart failure。<span class="ex-ref">p.2659</span></td></tr>
 <tr><td>PTEN hamartoma tumor syndrome（PHTS）</td><td>Autosomal-dominant；包含 Bannayan-Riley-Ruvalcaba syndrome 與 Cowden syndrome（分別 <strong class="ex-n">60%</strong> 與 <strong class="ex-n">81%</strong> 有 <em>PTEN</em> 突變）；典型有 macrocephaly、penile freckling、brain 多發 developmental venous anomalies、fast-flow VMs（<strong class="ex-n">54%</strong>）、惡性腫瘤風險增加；VMs 常 multifocal（<strong class="ex-n">57%</strong>）、位於 musculoskeletal，並伴 ectopic fat deposition 與正常組織結構破壞。<span class="ex-ref">p.2659</span></td></tr>
 </tbody>
@@ -477,7 +477,7 @@
 <li>Pathology：AVMs <strong>邊界不清</strong>，由變形的 arteries 與 veins 組成，管壁因 arteriovenous shunting 與 fibrosis 而增厚。<span class="ex-ref">p.2662</span></li>
 <li>Ultrasonography 與 color Doppler：<strong>沒有 mass</strong>，但有 high-velocity arterial 與 pulsatile venous flow 的聚集，且低阻力；血管 tortuous。MRI 優於 CT，用於界定範圍並與 hemangiomas 與其他 VMs 區分；<strong>flow voids（對應 fast-flow vessels）是 AVM 的 pathognomonic 表現</strong>；<strong>任何治療前需做 arteriography</strong>，以確定 feeding arteries 與 nidus。<span class="ex-ref">p.2662</span></li>
 <li>Genetic testing：AVM 合併多發皮膚 CMs（CM-AVM）或 telangiectasias（HHT）時有適應症；AVM 合併 macrocephaly 者應篩檢 <em>PTEN</em>。<span class="ex-ref">p.2662</span></li>
-<li>童年期 AVM 常被誤認為 CM 或 hemangioma（faint、ill-defined、macular red stain）；<strong>不成比例的 warmth</strong> 是 fast-flow 的線索；pulse、thrill 與 bruit 也支持 AVM。Doppler ultrasonography 可區分 slow-flow CM 與 fast-flow AVM 或 hemangioma；hemangiomas 有 equatorial feeding arteries、peripheral veins、variable echogenicity、fast flow，但<strong>沒有真正的 arteriovenous shunting</strong>。<span class="ex-ref">p.2662</span></li>
+<li>童年期 AVM 常被誤認為 CM 或 hemangioma（faint、ill-defined、macular red stain）；<strong>不成比例的 warmth</strong> 是 fast-flow 的線索；pulse、thrill 與 bruit 也支持 AVM。Doppler ultrasonography 可幫助（can help）區分 slow-flow CM 與 fast-flow AVM 或 hemangioma；hemangiomas 有 equatorial feeding arteries、peripheral veins、variable echogenicity、fast flow，但<strong>沒有真正的 arteriovenous shunting</strong>。<span class="ex-ref">p.2662</span></li>
 <li>其他可模仿 AVM 的皮膚病：epithelioid hemangioendothelioma（extremity 的紫色、局部侵襲性病灶）、tumid lupus erythematosus、臉部 sarcoidosis、唇部 Melkersson-Rosenthal syndrome；耳部的 Dabska tumor 在兒童可模擬 AVM。<span class="ex-ref">p.2662</span></li>
 </ul>
 <table class="ex-table">
@@ -525,7 +525,7 @@
 </ul>
 <h3>Angiokeratoma</h3>
 <ul>
-<li>Superficial blood vessels 的 ectasia 合併續發表皮變化（acanthosis、hyperkeratosis）；<strong>五型</strong>：Fordyce（elderly men 陰囊的 blue 或 red papules）、Mibelli（children 與 adolescents 遠端肢體〔手指腳趾〕的 warty papules，女性居多）、circumscriptum（very rare，children 肢體的群聚 papules 或 plaque，女性居多）、corporis diffusum（對稱、「bathing-trunk」區，通常與 Anderson-Fabry disease〔α-galactosidase A 缺乏〕相關）、solitary and multiple angiokeratomas（偏好下肢，多為單發）。<span class="ex-ref ex-ref-mckee">McKee p.1828</span></li>
+<li>Superficial blood vessels 的 ectasia 合併續發表皮變化（acanthosis、hyperkeratosis）；<strong>五型</strong>：Fordyce（主要（mainly）在 elderly men 陰囊的 blue 或 red papules）、Mibelli（children 與 adolescents 遠端肢體〔手指腳趾〕的 warty papules，女性居多）、circumscriptum（very rare，children 肢體的群聚 papules 或 plaque，女性居多）、corporis diffusum（對稱、「bathing-trunk」區，通常與 Anderson-Fabry disease〔α-galactosidase A 缺乏〕相關）、solitary and multiple angiokeratomas（偏好下肢，多為單發）。<span class="ex-ref ex-ref-mckee">McKee p.1828</span></li>
 <li>Histology：papillary dermis 中許多 dilated、congested capillaries，上方表皮 acanthosis 與 hyperkeratosis；Anderson-Fabry disease 中內皮細胞、pericytes 與 fibroblasts 可見細胞質內 lipid vacuoles；與 verrucous hemangioma 的表淺部分有相同表現，但後者<strong>一定有 deep dermal 與 subcutaneous component</strong>，angiokeratoma 沒有 deep component。<span class="ex-ref ex-ref-mckee">McKee p.1829</span></li>
 <li>兩書分類差異：Fitzpatrick 把 angiokeratoma circumscriptum 視為 capillary-lymphatic malformation（<span class="ex-ref">p.2655</span>）；McKee 描述 circumscriptum 為 very rare，且是 children 肢體的群聚 papules 或 plaque。</li>
 </ul>
@@ -538,20 +538,20 @@
 </ul>
 <h3>Cavernous hemangioma（venous malformation 相關）</h3>
 <ul>
-<li>比 capillary hemangioma 更大、更 diffuse，<strong>幾乎沒有 involution 傾向</strong>；覆蓋皮膚偏 bluish-red。McKee 認為多數 cavernous hemangiomas 可能是 vascular malformations 的變異。<span class="ex-ref ex-ref-mckee">McKee p.1835–1836</span></li>
+<li>比 capillary hemangioma 傾向（tendency）更大、更 diffuse，<strong>幾乎沒有 involution 傾向</strong>；覆蓋皮膚偏 bluish-red。McKee 認為多數 cavernous hemangiomas 可能是 vascular malformations 的變異。<span class="ex-ref ex-ref-mckee">McKee p.1835–1836</span></li>
 <li>Histology：<strong>nonlobular、邊界不清</strong>的增生，由眾多擴張、內皮扁平的血管組成，管壁厚度不一，常有中度 stromal chronic inflammation。<span class="ex-ref ex-ref-mckee">McKee p.1836</span></li>
 <li><mark data-q="110-06">Cavernous hemangioma 少見地可合併 multiple enchondromas（Maffucci syndrome）、alimentary tract hemangiomas（blue rubber bleb nevus syndrome），或因 <strong>platelets 被困在病灶內（sequestration of platelets）</strong>造成 consumption coagulopathy（Kasabach-Merritt syndrome）</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1836</span></li>
 </ul>
 <h3>Glomuvenous malformation（McKee 稱 familial glomangiomas）</h3>
 <ul>
-<li>Familial glomangiomas，也稱 glomuvenous malformations，與 <em>GLMN</em>（1p21-22）inactivating mutations 有關，該基因編碼 glomulin，正常表現於 vascular smooth muscle cells。多發病灶多見於兒童，autosomal dominant。<span class="ex-ref ex-ref-mckee">McKee p.1867</span></li>
+<li>Familial glomangiomas，也稱 glomuvenous malformations，與 <em>GLMN</em>（1p21-22）inactivating mutations 有關，該基因編碼 glomulin，正常表現於 vascular smooth muscle cells。多發病灶通常（usually）見於兒童，autosomal dominant。<span class="ex-ref ex-ref-mckee">McKee p.1867</span></li>
 <li>Glomus tumor 腫瘤細胞 SMA、muscle-specific actin 陽性（依抗體也可 myosin 陽性），desmin 只罕見地 focal 陽性；CD34 可陽性。<strong>Glomangioma</strong> 是最常見的 glomus tumor 變異型（up to 60%），血管成分較明顯，管腔偏擴張或 cavernous；glomus cells 可為薄的單層或雙層分布於血管壁。<span class="ex-ref ex-ref-mckee">McKee p.1868</span></li>
 </ul>
 <h3>Lymphangioma（對應 LM）</h3>
 <ul>
 <li>McKee 的四型：<strong>cavernous lymphangioma、cystic hygroma、lymphangioma circumscriptum、acquired progressive lymphangioma（benign lymphangioendothelioma）</strong>。<span class="ex-ref ex-ref-mckee">McKee p.1863</span></li>
-<li>Cavernous lymphangioma：congenital 或 infantile，常在 head and neck（尤其 tongue）與 extremities；大型 diffuse、doughy mass，單純切除後<strong>很容易局部復發</strong>。Cystic hygroma：infancy 的大型 cystic mass，多在頸、腋或腹股溝；與 trisomy 21、13、18 以及 Turner、Noonan syndrome 有關。Lymphangioma circumscriptum：多在 infancy，局部聚集的小 vesicles 或 blebs，內含 clear fluid 或 blood，常見於近端肢體與 limb girdles；切除後復發相當常見。<span class="ex-ref ex-ref-mckee">McKee p.1864</span></li>
-<li>淋巴腫瘤（單獨或為複雜血管畸形的一部分）已顯示有 <em>PIK3CA</em> somatic mutations。<span class="ex-ref ex-ref-mckee">McKee p.1864</span></li>
-<li>Histology：<strong>Cavernous lymphangioma</strong> 為真皮或皮下脂肪中邊界不清的病灶，由大量擴張的 lymphatic channels（無內皮異型性）組成；<strong>cystic hygroma</strong> 組織學上與 cavernous 型幾乎無法區分，但其薄壁 lymphatic spaces 呈明顯 cystic dilatation，並常見散在 lymphoid follicles；兩者管腔常含蛋白質性的淡嗜酸性 lymph，管壁可含不完整的 smooth muscle 層。<strong>Lymphangioma circumscriptum</strong> 位於 superficial dermis，由多個擴張的 lymphatic channels 組成，管壁常相當厚，常似延伸到上方 acanthotic 的表皮。<span class="ex-ref ex-ref-mckee">McKee p.1864</span></li>
+<li>Cavernous lymphangioma：congenital 或 infantile，最常（most often）在 head and neck（尤其 tongue）與 extremities；大型 diffuse、doughy mass，單純切除後<strong>很容易局部復發</strong>。Cystic hygroma：infancy 的大型 cystic mass，最常（most often）在頸、腋或腹股溝；與 trisomy 21、13、18 以及 Turner、Noonan syndrome 有關。Lymphangioma circumscriptum：最常（most often）在 infancy 出現，但可發生於任何年齡；局部聚集的小 vesicles 或 blebs，內含 clear fluid 或 blood，通常（usually）侵犯近端肢體與 limb girdles；切除後復發相當常見。<span class="ex-ref ex-ref-mckee">McKee p.1864</span></li>
+<li>近期一些（a number of）淋巴腫瘤（單獨或為複雜血管畸形的一部分）已顯示有 <em>PIK3CA</em> somatic mutations。<span class="ex-ref ex-ref-mckee">McKee p.1864</span></li>
+<li>Histology：<strong>Cavernous lymphangioma</strong> 典型（typically）為真皮或皮下脂肪中邊界不清的病灶，由大量擴張的 lymphatic channels（無內皮異型性）組成；<strong>cystic hygroma</strong> 組織學上與 cavernous 型幾乎無法區分，但其薄壁 lymphatic spaces 呈明顯 cystic dilatation，並常見散在 lymphoid follicles；兩者管腔常含蛋白質性的淡嗜酸性 lymph，管壁可含不完整的 smooth muscle 層。<strong>Lymphangioma circumscriptum</strong> 通常（usually）位於 superficial dermis，由多個擴張的 lymphatic channels 組成，管壁常相當厚，常似延伸到上方 acanthotic 的表皮。<span class="ex-ref ex-ref-mckee">McKee p.1864</span></li>
 </ul>
 </section>

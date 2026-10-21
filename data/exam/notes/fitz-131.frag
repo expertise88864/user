@@ -31,7 +31,7 @@
 <h2>2. Hypohidrotic ED（HED）：Epidemiology &amp; Clinical Features（流行病學與臨床表現）</h2>
 <h3>Variants 與流行病學</h3>
 <ul>
-<li>HED 最早的描述在 <strong class="ex-n">1848</strong> 年：男性表兄弟與其祖母，頭髮稀疏、缺牙、皮膚乾燥。<span class="ex-ref">p.2373</span></li>
+<li>HED 最早的描述之一（one of the earliest descriptions）在 <strong class="ex-n">1848</strong> 年：男性表兄弟與其祖母，頭髮稀疏、缺牙、皮膚乾燥。<span class="ex-ref">p.2373</span></li>
 <li><strong>HED 是最常見的 ED</strong>；其中 X-linked recessive 型（XLHED）佔 NFED 登錄家族的 <strong class="ex-n">80%</strong>。<span class="ex-ref">p.2373</span></li>
 <li>HED 的型別：XLHED（又稱 Christ–Siemens–Touraine syndrome）、ADHED、ARHED、HED with immunodeficiency（HED-ID）。ADHED 與 ARHED 和 XLHED 相似，ADHED 可能較輕。<span class="ex-ref">p.2373</span></li>
 <li><mark data-q="109-16">男性 HED 病人若合併 <strong>recurrent or significant infections</strong>，應考慮 <strong>HED-ID</strong></mark>。<span class="ex-ref">p.2373</span></li>
@@ -45,7 +45,7 @@
 <h3>Hair、sweating、skin、nails</h3>
 <ul>
 <li>頭髮：通常稀疏、細、金黃色；青春期可能變粗變黑；secondary sexual hair 通常正常；其他體毛通常稀疏或缺如。<span class="ex-ref">p.2374</span></li>
-<li><mark data-q="109-16">排汗能力明顯受損，多數 XLHED 男性有明顯 <strong>heat intolerance</strong></mark>；環境高溫下無法適當排汗 → 核心體溫上升、不明原因反覆高燒，常先做感染、惡性腫瘤或自體免疫疾病的大範圍檢查才被診斷。ADHED 似乎排汗缺陷較輕。<span class="ex-ref">p.2374</span></li>
+<li><mark data-q="109-16">排汗能力明顯受損，多數 XLHED 男性有明顯 <strong>heat intolerance</strong></mark>；環境高溫下無法適當排汗 → 核心體溫上升、不明原因反覆高燒，通常（usually）先做感染、惡性腫瘤或自體免疫疾病的大範圍檢查才被診斷。ADHED 似乎排汗缺陷較輕。<span class="ex-ref">p.2374</span></li>
 <li><mark data-q="109-16">舊病例系列曾把 <strong>intellectual disability</strong> 列為 XLHED 的特徵；現在認為那是長時間高燒與 seizures 造成的損傷，不是疾病本身的特徵</mark>。<span class="ex-ref">p.2374</span></li>
 <li><mark data-q="110-50">指甲通常正常</mark>，但有 thin、fragile nails 的報告。Fingerprint ridges 消失（effaced）。<span class="ex-ref">p.2374</span></li>
 <li>Periorbital wrinkling 與 hyperpigmentation 典型，常在出生時就有。<span class="ex-ref">p.2374</span></li>
@@ -60,7 +60,7 @@
 <ul>
 <li>臉部特徵：<strong>frontal bossing</strong>、depressed midface 伴 saddle nose、full everted lips。<span class="ex-ref">p.2375</span></li>
 <li>耳鼻喉與肺部：thick nasal secretions 與 impaction、ozena（atrophic rhinitis）、sinusitis、反覆 upper respiratory tract infections 與 pneumonias、唾液減少、hoarse voice、asthma 頻率增加；呼吸道感染增加被歸因於支氣管的 mucus-secreting glands hypoplastic 或缺如。<span class="ex-ref">p.2375</span></li>
-<li>嬰兒期可有 gastroesophageal reflux 與餵食困難（原因不明）；初步研究顯示 failure to thrive 可見於多達 <strong class="ex-n">20% to 40%</strong> 的受影響男孩，之後 catch-up growth。<span class="ex-ref">p.2375</span></li>
+<li>嬰兒期可有 gastroesophageal reflux 與餵食困難（原因不明）；初步研究提示（suggest）嬰兒期與幼兒早期可能有 failure to thrive，多達 <strong class="ex-n">20% to 40%</strong> 的受影響男孩，之後可見 catch-up growth。<span class="ex-ref">p.2375</span></li>
 <li>系統性：常合併 atopic dermatitis、asthma、upper respiratory tract infections、pneumonias。<span class="ex-ref">p.2373</span></li>
 </ul>
 <h3>Female carriers（帶因女性）</h3>
@@ -75,8 +75,8 @@
 <ul>
 <li><mark data-q="109-16">HED 在遺傳上異質性高，多個型別對應 <strong>TNF-α signaling pathway</strong> 中不同的基因；此路徑的突變使 epithelial cells 與 underlying mesenchyme 的交互作用中斷，造成各型臨床相似的表現。</mark><span class="ex-ref">p.2375</span></li>
 <li><mark data-q="109-16">XLHED 是 <strong>EDA1</strong>（encoding ectodysplasin-A，Xq12-13.1）改變所致</mark>；約 <strong class="ex-n">70%</strong> 受影響男性的突變遺傳自帶因母親。<span class="ex-ref">p.2375</span></li>
-<li>Ectodysplasin 是 transmembrane protein，調控 ectodermal structures 的形成；形成 trimers，表現於 keratinocytes、hair follicle 的 outer root sheath 與 sweat glands；位於細胞的 lateral 與 apical surfaces。XLHED 的突變種類很多，家族間與家族內都有變異，但有皮膚與毛髮表現的 genotype–phenotype correlation 報告。<span class="ex-ref">p.2375–2376</span></li>
-<li><mark data-q="109-16"><strong>EDAR</strong>（2q11-q13）與 <strong>EDARADD</strong>（1q42.2-q43）的突變造成 ADHED 與 ARHED</mark>；臨床上與 XLHED 相似但較罕見。EDAR 是 ectodysplasin 的 receptor；EDARADD 是 intracellular adaptor protein，協助把活化的 EDA receptor 訊號傳到細胞核。<span class="ex-ref">p.2376</span></li>
+<li>Ectodysplasin 是 transmembrane protein，參與調控（plays a role in regulation）ectodermal structures 的形成；形成 trimers，表現於 keratinocytes、hair follicle 的 outer root sheath 與 sweat glands；位於細胞的 lateral 與 apical surfaces。XLHED 的突變種類很多，家族間與家族內都有變異，但有皮膚與毛髮表現的 genotype–phenotype correlation 報告。<span class="ex-ref">p.2375–2376</span></li>
+<li><mark data-q="109-16"><strong>EDAR</strong>（2q11-q13）與 <strong>EDARADD</strong>（1q42.2-q43）的突變被認為與（implicated in）ADHED 及 ARHED 有關</mark>；臨床上與 XLHED 相似但較罕見。EDAR 是 ectodysplasin 的 receptor；EDARADD 是 intracellular adaptor protein，協助把活化的 EDA receptor 訊號傳到細胞核。<span class="ex-ref">p.2376</span></li>
 <li><mark data-q="109-16">X-linked <strong>IKBKG</strong> 基因的特定突變在女性造成 incontinentia pigmenti（IP），在男性造成 <strong>HED-ID</strong></mark>。這些病人有 ED、dysgammaglobulinemia 與明顯的早期 morbidity 與 mortality；NFKB signaling pathway 的複雜性解釋了 HED-ID 多樣的基因型與免疫表型。<span class="ex-ref">p.2376</span></li>
 <li>另一個 OMIM 定義的類似症候群 OLEDAID（ectodermal dysplasia, anhidrotic with immunodeficiency, osteopetrosis, and lymphedema；OMIM 300301）也是男性、IKBKG 突變。<span class="ex-ref">p.2376</span></li>
 </ul>
@@ -97,9 +97,9 @@
 <h2>4. HED：Diagnosis、Histopathology、DDx、Management（診斷、病理、鑑別、處置）</h2>
 <h3>Diagnosis（診斷）</h3>
 <ul>
-<li>家族已知有 HED 時容易辨認；沒有先備知識時臨床上可能困難。隨年齡增加，hypotrichosis、hypohidrosis、hypodontia 的特徵更明顯。<span class="ex-ref">p.2376</span></li>
+<li>家族已知有 HED 時容易辨認；沒有先備知識時，初期臨床診斷可能困難。隨年齡增加，hypotrichosis、hypohidrosis、hypodontia 的特徵更明顯。<span class="ex-ref">p.2376</span></li>
 <li>Hypoplastic alveolar ridges（代表缺牙）可作為早期線索；<strong>Panorex</strong> 可協助診斷。<span class="ex-ref">p.2376</span></li>
-<li>雖然很少需要，以下可協助確認：<strong>iodine solution</strong> 檢查 sweat pores、<strong>pilocarpine-induced sweating</strong> 定量、<strong>skin biopsy</strong> 看 scalp 和／或 palmar 區域是否缺乏 eccrine structures。<span class="ex-ref">p.2376</span></li>
+<li>雖然很少需要，以下可能有助於確認（may help confirm）：<strong>iodine solution</strong> 檢查 sweat pores、<strong>pilocarpine-induced sweating</strong> 定量、<strong>skin biopsy</strong> 看 scalp 和／或 palmar 區域是否缺乏 eccrine structures。<span class="ex-ref">p.2376</span></li>
 <li>孤立且完整表現的女性，需考慮 autosomal dominant 與 recessive 型 HED；要詳問家族史，母親一定要完整檢查以發現 X-linked 型的輕微表現。分子基因檢測越來越容易取得。<span class="ex-ref">p.2376</span></li>
 </ul>
 <h3>Histopathology（病理）</h3>
@@ -126,7 +126,7 @@
 <li>維持涼爽環境以預防 hyperpyrexia 至關重要：多數孩子用簡單方法即可（wet T-shirts、headbands、家中與學校的空調）；偶爾 cooling vests 讓病人在溫暖氣候下有更大的運動空間。<span class="ex-ref">p.2376–2377</span></li>
 <li><strong>Dental restoration 最重要</strong>：早期使用 dentures，最終使用 dental implants 是治療主軸。<span class="ex-ref">p.2377</span></li>
 <li>耳鼻喉併發症、asthma 與反覆感染需個別化處置；eczema 可能相當頑固而難處理。<span class="ex-ref">p.2377</span></li>
-<li>嬰兒 HED 因 hyperthermia 及感染等因素，死亡風險增加；Ectodermal Dysplasia International Registry（EDIR）調查中，<strong class="ex-n">21%</strong> 的 XLHED 報告有嬰兒或兒童期死亡的家族史。<span class="ex-ref">p.2377</span></li>
+<li>嬰兒 HED 因 hyperthermia，以及可能（potentially）其他疾病特徵如感染，死亡風險增加；Ectodermal Dysplasia International Registry（EDIR）調查中，<strong class="ex-n">21%</strong> 的 XLHED 報告有嬰兒或兒童期死亡的家族史。<span class="ex-ref">p.2377</span></li>
 <li>多數 HED 病人成年後能在社會中成功運作；heat intolerance 似乎隨青春期出現一些排汗能力或生活型態調整而減輕。<span class="ex-ref">p.2377</span></li>
 <li>動物模型：對懷孕的 affected mice 注射 recombinant ectodysplasin protein 可使子代表型永久矯正，出生後早期注射也能改善；犬模型出生後給予可使牙齒、淚液、排汗恢復並減少眼睛與呼吸道感染；目前有人體試驗進行中。<span class="ex-ref">p.2377</span></li>
 </ul>
@@ -166,9 +166,9 @@
 <h2>6. p63-related EDs：AEC、EEC、Limb–mammary、ADULT、Split hand–split foot</h2>
 <h3>共同的遺傳基礎</h3>
 <ul>
-<li>這些疾病都是 AD，突變在 tumor-suppressor gene <strong>TP63</strong>（3q27），encoding p63 transcription protein；TP63 廣泛表現，包括增生中上皮組織的 basal cells；同一基因的不同突變造成不同症候群，有一些 genotype–phenotype correlation。<span class="ex-ref">p.2378</span></li>
+<li>這些疾病都是 AD，突變在 tumor-suppressor gene <strong>TP63</strong>（3q27），encoding p63 transcription protein；TP63 廣泛表現，包括增生中上皮組織的 basal cells；同一基因的不同突變造成不同症候群，似乎有一些（there appear to be some）genotype–phenotype correlations。<span class="ex-ref">p.2378</span></li>
 <li>p63 突變見於大多數（但不是全部）AEC（ankyloblepharon-ectodermal defects-clefting；Hay–Wells；Rapp–Hodgkin）病人；同一基因的突變也造成部分 isolated split hand–split foot malformation、limb–mammary syndrome 與 ADULT syndrome。<span class="ex-ref">p.2378</span></li>
-<li>AEC 為 AD、<strong>complete penetrance</strong>、表現度多變；多數突變是 p63 的 <strong>sterile α motif（SAM）domain</strong> missense mutations。<span class="ex-ref">p.2382</span></li>
+<li>AEC 為 AD、<strong>complete penetrance</strong>、表現度多變；目前已發現的多數改變（majority of alterations identified thus far）是 p63 的 <strong>sterile α motif（SAM）domain</strong> missense mutations。<span class="ex-ref">p.2382</span></li>
 <li>EEC 為 AD、表現度多變且 <strong>reduced penetrance</strong>；多數突變是 p63 <strong>DNA-binding domain</strong> 的單一胺基酸替代。<span class="ex-ref">p.2382</span></li>
 <li>Split hand–split foot malformation 同樣是 DNA-binding domain 突變；<strong>Limb–mammary syndrome</strong> 是 TP63 的 frameshift mutations（除乳腺外的 ectodermal structures 常常但不一定正常）；<strong>ADULT syndrome</strong>：3 個不相關家族都有同一個 p63 point mutation。<span class="ex-ref">p.2382</span></li>
 </ul>
@@ -176,11 +176,11 @@
 <ul>
 <li>Hay–Wells 於 <strong class="ex-n">1976</strong> 年首次描述，Rapp–Hodgkin 於 <strong class="ex-n">1968</strong> 年首次描述；兩者是 allelic，應視為同一疾病 AEC syndrome 的變異型。<span class="ex-ref">p.2379</span></li>
 <li>出生時 <strong class="ex-n">80–90%</strong> 嬰兒有 shiny red、cracking、peeling skin 與表淺糜爛，類似 collodion membrane；數週內脫落，底下皮膚乾而薄。<span class="ex-ref">p.2379</span></li>
-<li>頭皮幾乎一定受影響：慢性糜爛性皮膚炎伴 abnormal granulation tissue 與反覆細菌感染；alopecia 範圍不一；毛髮常 wiry、coarse、淺色、uncombable；體毛稀疏到缺如。<span class="ex-ref">p.2379</span></li>
-<li>Cutaneous dyspigmentation（hypo- 與 hyperpigmentation）可非常明顯，且在受影響病人中 seen universally；指甲可正常、hyperconvex 與增厚、缺如或部分 dystrophic；dermatoglyphics 消失與 palmoplantar erosive changes 相當常見。排汗正常到略減少；多數病人主觀有 heat intolerance，但 frank hyperpyrexia 不常見。<span class="ex-ref">p.2379</span></li>
+<li>頭皮幾乎一定受影響：許多病人有（many individuals）慢性糜爛性皮膚炎伴 abnormal granulation tissue 與反覆細菌感染；alopecia 範圍不一；毛髮常 wiry、coarse、淺色、uncombable；體毛稀疏到缺如是典型（typical）表現。<span class="ex-ref">p.2379</span></li>
+<li>Cutaneous dyspigmentation（hypo- 與 hyperpigmentation）可非常明顯，且在受影響病人中 seen universally；指甲可正常、hyperconvex 與增厚、缺如或部分 dystrophic；dermatoglyphics 消失與 palmoplantar erosive changes 相當常見。排汗可能（may）正常到略減少；多數病人主觀有 heat intolerance，但 frank hyperpyrexia 不常見。<span class="ex-ref">p.2379</span></li>
 <li><strong>Ankyloblepharon filiforme adnatum（AFA）</strong>：眼瞼間的皮膚條索，約 <strong class="ex-n">70%</strong> 的受影響嬰兒可見；可能在出生前自行撕裂、只影響外側眼瞼，或需手術分離。Lacrimal duct atresia 或阻塞常見。<span class="ex-ref">p.2379–2380</span></li>
-<li>Supernumerary nipples 與 ectopic breast tissue 偶見；第 2、3 趾輕度 cutaneous syndactyly；也觀察過較明顯的肢體缺損包括 ectrodactyly。<span class="ex-ref">p.2380</span></li>
-<li>Cleft palate（有或無 cleft lip）發生於 <strong class="ex-n">80% to 100%</strong>，有些只有 submucosal cleft palate；典型有 hypodontia（缺牙或牙形異常）；maxillary hypoplasia 常見；反覆 otitis media 與 secondary conductive hearing loss 常見；男性有 hypospadias 報告。<span class="ex-ref">p.2380</span></li>
+<li>Supernumerary nipples、ectopic breast tissue 與第 2、3 趾輕度 cutaneous syndactyly 皆偶見（occasionally）；也觀察過較明顯的肢體缺損包括 ectrodactyly。<span class="ex-ref">p.2380</span></li>
+<li>Cleft palate（有或無 cleft lip）發生於 <strong class="ex-n">80% to 100%</strong> 的報告病例（reported cases），有些只有 submucosal cleft palate；典型有 hypodontia（缺牙或牙形異常）；maxillary hypoplasia 常見；反覆 otitis media 與 secondary conductive hearing loss 常見；男性有 hypospadias 報告。<span class="ex-ref">p.2380</span></li>
 <li>歷史上 Rapp–Hodgkin 與 Hay–Wells 的臨床差異：Rapp–Hodgkin 有短 nasal columella 與 maxillary hypoplasia、薄上唇、豐滿下唇；牙齒可能 conical 且易 caries；lacrimal puncta 在將近 <strong class="ex-n">1/3</strong> 病人 aplastic，但 AFA 罕見，頭皮破損與肉芽組織形成少得多。<span class="ex-ref">p.2380</span></li>
 </ul>
 <h3>AEC：Histopathology、DDx、Management</h3>
@@ -188,14 +188,14 @@
 <li>病理：mild epidermal atrophy、focal orthokeratosis、prominent superficial vascular plexus、pigment incontinence with melanophages。<span class="ex-ref">p.2380</span></li>
 <li>毛髮電子顯微鏡：cuticular structure 缺陷、萎縮與 melanin 消失，併 <strong>pili torti</strong> 與 <strong>pili trianguli et canaliculi</strong>；表皮 basal 與 suprabasal 層 keratins 減少，stratum corneum 的 keratin filaments 紊亂。<span class="ex-ref">p.2380</span></li>
 <li>鑑別：EEC syndrome 有 AEC 通常沒有的骨性手足異常，且沒有 ankyloblepharon；新生兒脫皮糜爛皮膚可被誤診為 epidermolysis bullosa 或 congenital ichthyosis；AFA 也可在沒有症候群時單獨出現，並見於數種 arthrogryposis 及 CHANDS（curly hair, ankyloblepharon, and nail dysplasia syndrome；AR 型 ED）。<span class="ex-ref">p.2381</span></li>
-<li>處置：collodion membrane 脫落前用 light emollients；ankyloblepharon 可能需手術分離；注意眼部衛生；頭皮糜爛難處理且易肉芽增生與次發感染，用 gentle wound care、<strong>dilute bleach</strong> 或其他 antimicrobial soaks，<strong>應避免 occlusive dressings</strong>；頭皮植皮多數沒有成功；clefting 需團隊處理。<span class="ex-ref">p.2381</span></li>
+<li>處置：collodion membrane 脫落前用 light emollients；ankyloblepharon 可能需手術分離；注意眼部衛生；皮膚糜爛（尤其頭皮）難處理且易肉芽增生與次發感染，用 gentle wound care、<strong>dilute bleach</strong> 或其他 antimicrobial soaks，<strong>應避免 occlusive dressings</strong>；頭皮植皮多數沒有成功；clefting 需團隊處理。<span class="ex-ref">p.2381</span></li>
 </ul>
 <h3>EEC syndrome</h3>
 <ul>
-<li>EEC 是被歸類為 multiple congenital anomaly syndrome 的 ED，因為有明顯非 ectoderm 來源的構造受侵犯。有 3 個變異型：EEC1（OMIM 129900；基因產物不明，已連結到 chromosome 7 的突變）、EEC2（無 OMIM 編號；基因產物不明）、EEC3（OMIM 604292；<strong>AD TP63</strong> 突變）。三型臨床表現相同。<span class="ex-ref">p.2381</span></li>
+<li>EEC 是被歸類為 multiple congenital anomaly syndrome 的 ED，因為有明顯非 ectoderm 來源的構造受侵犯。有 3 個變異型：EEC1（OMIM 129900；基因產物不明，已連結到 chromosome 7 的突變）、EEC2（無 OMIM 編號；基因產物不明）、EEC3（OMIM 604292；<strong>AD TP63</strong> 突變）。三型有共同的臨床表現（share clinical manifestations）。<span class="ex-ref">p.2381</span></li>
 <li>ED 表現可能很輕：頭髮通常 blonde、coarse、dry，可能稀疏且生長慢；指甲約 <strong class="ex-n">4/5</strong>（four-fifths）dystrophic（transverse ridging、pitting、生長慢）；乾皮與掌蹠增厚可發生；排汗通常正常。<span class="ex-ref">p.2381</span></li>
 <li>主要的區分特徵是 <strong>ectrodactyly</strong>：腳比手更常受影響，可不對稱。<span class="ex-ref">p.2381</span></li>
-<li>Cleft palate（有或無 cleft lip）發生於 <strong class="ex-n">70% to 100%</strong>；hypodontia 與 secondary teeth 提早脫落；lacrimal gland 異常與 secondary conductive hearing loss 常見；genitourinary 異常（hydronephrosis、結構性腎或生殖器畸形）影響 <strong class="ex-n">one-third or more</strong>。Intellectual disability 雖有報告，但不被認為是疾病的固有特徵。<span class="ex-ref">p.2381</span></li>
+<li>Cleft palate（有或無 cleft lip）發生於 <strong class="ex-n">70% to 100%</strong>；hypodontia 與 secondary teeth 提早脫落見於多數（most）受影響者；lacrimal gland 異常與 secondary conductive hearing loss 常見；genitourinary 異常（hydronephrosis、結構性腎或生殖器畸形）影響 <strong class="ex-n">one-third or more</strong>。Intellectual disability 雖有報告，但不被認為是疾病的固有特徵。<span class="ex-ref">p.2381</span></li>
 <li>鑑別：odontotrichomelic syndrome（肢體嚴重缺失）；Adams–Oliver syndrome（aplasia cutis congenita with limb defects，除皮膚缺損外沒有 clefting 或 ectodermal defects；部分病人報告有 cutis marmorata telangiectatica congenita）；AEC 與 limb–mammary syndrome 與 EEC 為 allelic。產前超音波偵測肢體異常不可靠。<span class="ex-ref">p.2381</span></li>
 <li>處置：需團隊（orofacial clefting 與眼科受累）；肢體缺損個別化；<strong>renal ultrasonography</strong> 與對泌尿道問題的高度警覺是適當且必要的。<span class="ex-ref">p.2381</span></li>
 </ul>
@@ -216,10 +216,10 @@
 <h2>7. WNT10A disorders：OODD、Schopf–Schulz–Passarge syndrome（SSPS）</h2>
 <ul>
 <li>兩者都是 WNT10A（wingless-type MMTV integration site family, member 10A；2q35）突變所致，大多數為 <strong>autosomal recessive</strong>，但多達 <strong class="ex-n">50%</strong> 的 heterozygotes 可能出現臨床特徵。<span class="ex-ref">p.2382–2383</span></li>
-<li>流行病學：WNT10A 突變見於約 <strong class="ex-n">9%</strong> 的 EDs，以及 <strong class="ex-n">25%</strong> 沒有 EDA 突變的 HED 病人；較近的分子檢測發現約 <strong class="ex-n">16%</strong> 疑似 HED 病例有 WNT10A 突變。<span class="ex-ref">p.2383</span></li>
+<li>流行病學：有報告（reported）WNT10A 突變見於約 <strong class="ex-n">9%</strong> 的 EDs，以及 <strong class="ex-n">25%</strong> 沒有 EDA 突變的 HED 病人；較近的分子檢測發現約 <strong class="ex-n">16%</strong> 疑似 HED 病例有 WNT10A 突變。<span class="ex-ref">p.2383</span></li>
 <li><strong>OODD</strong>（odonto-onycho-dermal dysplasia；OMIM 257980）：臨床光譜廣；最一致的表現是 permanent teeth 的 severe hypodontia 到 anodontia；primary teeth 數目幾乎都正常，但可能小而間距寬。舌可光滑（fungiform 與 filiform papillae 減少）；指甲 dystrophic，可有 congenital anonychia；出生時無毛髮，之後為乾而薄的毛髮，眉毛可稀疏；皮膚有 palmar erythema、palmar plantar hyperkeratosis、keratosis pilaris；掌蹠常 hyperhidrosis，身體其他部位則 hypohidrosis。<span class="ex-ref">p.2383</span></li>
 <li><strong>SSPS</strong>（OMIM 224750）：除上述 OODD 表現外，特徵是 <strong>eyelid hidrocystomas</strong>。<span class="ex-ref">p.2383</span></li>
-<li>病理：orthokeratosis、hyperkeratosis、hypergranulosis、mild acanthosis；OODD 的毛髮電子顯微鏡可見 longitudinal depressions。基因檢測有幫助。<span class="ex-ref">p.2384</span></li>
+<li>病理：orthokeratosis、hyperkeratosis、hypergranulosis、mild acanthosis；OODD 的毛髮電子顯微鏡可見 longitudinal depressions。基因檢測可有幫助（can be helpful）。<span class="ex-ref">p.2384</span></li>
 <li>處置：restorative dentistry 很重要；角化症處理沒有特異性，指甲通常不需治療；SSPS 的 nonmelanoma skin cancer 風險可能增加，需適當追蹤。<span class="ex-ref">p.2384</span></li>
 </ul>
 </section>
@@ -237,13 +237,13 @@
 <li><strong>Linear、punctate、streaky cribriform atrophy</strong> 伴 telangiectasia，沿 <strong>lines of Blaschko</strong> 分布；cribriform atrophy 的特徵是皮膚上細小的 ice pick-like depressions。<span class="ex-ref">p.2384</span></li>
 <li>真皮薄到缺如的區域不規則分布，造成 <strong>fat herniation</strong>：黃粉色、容易壓下的突起。<span class="ex-ref">p.2384</span></li>
 <li>Papillomas（raspberry-like 或 vascular）終生發生，偏好 perigenital、perioral、intertriginous 與 mucosal surfaces。其他：色素變化、patchy alopecia、brittle 或 sparse hair、palmar 與 plantar hyperkeratoses；有些人 hyperhidrosis，有些有 aplasia cutis congenita。<span class="ex-ref">p.2384</span></li>
-<li>最常受影響的其他器官：skeleton、CNS、teeth、eyes。<strong>Microphthalmia 與 colobomas</strong> 常見，診斷 FDH 應促成完整眼科評估；oligodontia、tooth dysplasia、enamel defects 常見。骨骼異常最常見的是 vertical banding of bones（<strong>osteopathia striata</strong>）、syndactyly（皮膚與骨性）、ectrodactyly、asymmetry、oligodactyly、short stature。Intellectual disability 約 <strong class="ex-n">15%</strong>；心臟缺陷、腹壁缺陷、腎臟畸形見於少數。<span class="ex-ref">p.2384</span></li>
+<li>最常受影響的其他器官：skeleton、CNS、teeth、eyes。<strong>Microphthalmia 與 colobomas</strong> 常見，診斷 FDH 應促成完整眼科評估；oligodontia、tooth dysplasia、enamel defects 常見。骨骼異常最常見的是 vertical banding of bones（<strong>osteopathia striata</strong>）、syndactyly（皮膚與骨性）、ectrodactyly、asymmetry、oligodactyly、short stature。Intellectual disability 的報告約 <strong class="ex-n">15%</strong>；心臟缺陷、腹壁缺陷、腎臟畸形見於少數。<span class="ex-ref">p.2384</span></li>
 </ul>
 <h3>Diagnosis、DDx、Management</h3>
 <ul>
-<li>診斷：罕見所以有挑戰；皮膚切片可顯示 <strong>dermal hypoplasia</strong> 與 papillary dermis 的 <strong>capillaries 增加</strong>；基因檢測可商業取得，但 postzygotic mutations 的病人較困難。<span class="ex-ref">p.2385</span></li>
+<li>診斷：罕見所以有挑戰；皮膚切片可有助於（can be helpful in）顯示 <strong>dermal hypoplasia</strong> 與 papillary dermis 的 <strong>capillaries 增加</strong>；基因檢測可商業取得，但 postzygotic mutations 的病人較困難。<span class="ex-ref">p.2385</span></li>
 <li>鑑別：X-linked dominant Conradi–Hünermann syndrome（chondrodysplasia punctata）也有 cribriform atrophy，但 FDH 沒有 ichthyosis，Conradi–Hünermann 沒有 fat herniation；IP 的 atrophic lesions 也沿 Blaschko 分布，但 IP 的 blistering 與 hyperkeratosis 在 FDH 不見；MIDAS（OMIM 309801）的皮膚缺損侷限於頭頸，是萎縮與疤痕（較像 aplasia cutis congenita，不只是 dermal atrophy），兩者有相似的眼部異常。<span class="ex-ref">p.2385</span></li>
-<li>處置：皮膚與全身表現沒有特異治療；萎縮區容易感染或糜爛；papillomas 若影響功能可切除；喉或氣管 papillomas 可能需耳鼻喉科處理，並考慮術前評估；vascular lasers 可減少 telangiectatic 區域紅斑；臨床嚴重度差異大，嬰兒早期預後諮詢困難，通常建議耐心與安撫，直到全身侵犯程度明朗。<span class="ex-ref">p.2385–2386</span></li>
+<li>處置：皮膚與全身表現沒有特異治療；萎縮區可能（may）容易感染或糜爛；papillomas 若影響功能可切除；喉或氣管 papillomas 可能需耳鼻喉科處理，並考慮術前評估；以 vascular lasers 減少 telangiectatic 區域紅斑可能有美容效益（may have cosmetic benefit）；臨床嚴重度差異大，嬰兒早期預後諮詢困難，通常建議耐心與安撫，直到全身侵犯程度明朗。<span class="ex-ref">p.2385–2386</span></li>
 </ul>
 <h3>McKee 補充</h3>
 <ul>
@@ -264,7 +264,7 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Stage</th><th scope="col">Fitzpatrick 9e（p.2386）</th><th scope="col">McKee 5e（McKee p.707）</th></tr></thead>
 <tbody>
-<tr><td><mark data-q="113-23">I：Vesicular／inflammatory</mark></td><td><mark data-q="106-46,113-23">Perinatal inflammatory stage：erythema、vesicles、pustules，單一病灶持續數天到數週；出生時 present 於 <strong class="ex-n">50%</strong>、<strong class="ex-n">2 週</strong>大時 <strong class="ex-n">90%</strong>；通常 4 到 6 個月消退，但可能隨疾病復發</mark></td><td>Erythema 與 linear vesiculation 在軀幹與四肢，出生時或前 <strong class="ex-n">2 週</strong>內明顯；臉部通常不受影響；常合併 leukocytosis 與 eosinophilia；平均 <strong class="ex-n">4 個月</strong>內完全消退</td></tr>
+<tr><td><mark data-q="113-23">I：Vesicular／inflammatory</mark></td><td><mark data-q="106-46,113-23">Perinatal inflammatory stage：erythema、vesicles、pustules，單一病灶持續數天到數週；出生時 present 於 <strong class="ex-n">50%</strong>、<strong class="ex-n">2 週</strong>大時 <strong class="ex-n">90%</strong>；通常 4 到 6 個月消退，但可能隨疾病復發</mark></td><td>Erythema 與 linear vesiculation 在軀幹與四肢，出生時或前 <strong class="ex-n">2 週</strong>內明顯；特徵上臉部不受影響（characteristically unaffected）；通常（usually）合併 leukocytosis 與 eosinophilia；平均 <strong class="ex-n">4 個月</strong>內完全消退</td></tr>
 <tr><td><mark data-q="113-23">II：Verrucous</mark></td><td><mark data-q="106-46,113-23">Verrucous 與 hyperkeratotic papules，持續數週到數月，有報告可達數年</mark></td><td>Hyperkeratotic verrucous papules 與 plaques，最常見於四肢；不常見且通常短暫；出現於生後第 <strong class="ex-n">2 到 6 週</strong>，通常 <strong class="ex-n">6 個月</strong>前完全消退</td></tr>
 <tr><td><mark data-q="113-23">III：Hyperpigmentation</mark></td><td><mark data-q="106-46,113-23">Hyperpigmentation 通常約 <strong class="ex-n">6 個月</strong>大出現，持續數年，有報告持續到成年；範圍高度多變，常與前面 stages 的分布無關；最常侵犯 groin 與 axillae</mark></td><td>Bizarre reticulated pigmentation，通常在生後第 <strong class="ex-n">12 到 26 週</strong>；褐色到石板灰色，呈 splashes、streaks、whorls（'Chinese lettering'）；乳頭通常色素沉著，groin 與 axillae 特徵性侵犯；稱為 <strong>pathognomonic</strong></td></tr>
 <tr><td><mark data-q="113-23">IV：Hypopigmentation &amp; atrophy</mark></td><td><mark data-q="106-46,113-23">先前受影響的區域出現 hypopigmentation 與 atrophy；從前面 stages 消退時開始，持續到成年</mark></td><td>通常出現在成年，只留下殘餘變化：偶爾 atrophic、hypopigmented、hairless 的 reticulated patches 與 streaks，最容易在小腿看到</td></tr>
@@ -273,12 +273,12 @@
 <p class="ex-cite">Fitzpatrick p.2386；McKee 5e p.707。兩本書的 stage 分期相同，時間描述略有差異（見下方）。</p>
 <ul>
 <li>許多皮膚特徵在 <strong class="ex-n">20 歲</strong>前消退或變得很細微；cicatricial 與 patchy alopecia 常見且傾向持續；成年女性腿部的 hypotrichosis 與 scalp 的 <strong>whorled alopecia</strong> 在臨床上有幫助。<span class="ex-ref">p.2386</span></li>
-<li>指甲 dystrophy 在第二期常見但通常輕微；牙齒表現多樣：hypodontia、microdontia、adontia、conical teeth。<span class="ex-ref">p.2386</span></li>
+<li>指甲 dystrophy 在第二期常見，但常（often）輕微；牙齒表現多樣：hypodontia、microdontia、adontia、conical teeth。<span class="ex-ref">p.2386</span></li>
 <li><strong>眼睛</strong>：<strong class="ex-n">20% to 77%</strong> 的病人有眼部侵犯：retinal neovascularization、strabismus、cataracts、optic atrophy、retinal pigmentary abnormalities。診斷時就要篩檢眼部，因 retinal neovascularization 可造成 retinal detachment，風險最高在新生兒期到最初 <strong class="ex-n">6 年</strong>；需重複眼科檢查。<span class="ex-ref">p.2386</span></li>
 <li><strong>CNS</strong>：估計 <strong class="ex-n">10% to 30%</strong>（可能更低）；從單次 seizure 到 encephalopathy、ischemic stroke、明顯 developmental delay；症狀多在第一年出現，與神經表現源於 inflammation 與 vasculopathy／ischemia 的假說一致；CNS 表現對 morbidity 與 mortality 影響大；retinal neovascularization 與 male gender 是有助評估風險的預測因子。<span class="ex-ref">p.2386</span></li>
 <li>單側 breast aplasia 不常見，但應警覺 IP 的可能。<span class="ex-ref">p.2386</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>IP 皮膚病灶四期依序為 vesicular／inflammatory（Stage I）、verrucous（Stage II）、hyperpigmentation（Stage III，通常約 6 個月大出現）、hypopigmentation 與 atrophy（Stage IV）（p.2386）。並非每個 stage 都一定出現，部分 stages 可重疊（p.2386）。Fitzpatrick 寫 IP 為 X-linked dominant、通常在男性胎兒致死（p.2386）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>IP 皮膚病灶四期依序為 vesicular／inflammatory（Stage I）、verrucous（Stage II）、hyperpigmentation（Stage III，通常約 6 個月大出現）、hypopigmentation 與 atrophy（Stage IV）（p.2386）。並非每個 stage 都一定出現，部分 stages 可能（may）重疊（p.2386）。Fitzpatrick 寫 IP 為 X-linked dominant、通常在男性胎兒致死（p.2386）。</aside>
 <h3>Etiology &amp; Pathogenesis（病因與致病機轉）</h3>
 <ul>
 <li><mark data-q="106-46">IP 的基因是 <strong>IKBKG</strong>（也稱 <strong>NEMO</strong>；AT-A-GLANCE 印 Xp28），encoding I-kappa-B kinase gamma subunit（IKK-gamma）</mark>，參與保護細胞免於 apoptosis。<span class="ex-ref">p.2386</span></li>
@@ -290,25 +290,25 @@
 <ul>
 <li>2014 年 Minic 等更新診斷標準：<strong>Major criteria</strong> 為 4 個皮膚病灶 stages 中的任何一個；<strong>Minor criteria</strong> 包括牙齒、眼睛、CNS、毛髮、指甲、palate、breast 與 nipple 異常、家族史、多次男性流產與皮膚組織病理表現。<span class="ex-ref">p.2387</span></li>
 <li>皮膚切片對診斷幫助很大（尤其疑似男性病人），且病理 <strong>stage specific</strong>：<mark data-q="103-39">vesiculobullous 病灶為 <strong>spongiotic epidermis 合併 eosinophilic infiltrates 與 microabscesses</strong>，以及 dyskeratosis</mark>；verrucous 病灶為 hyperkeratosis、papillomatosis 與 dyskeratosis。<span class="ex-ref">p.2387</span></li>
-<li>基因檢測可商業取得（IKBKG common deletion／duplication 與 gene sequencing，可辨識 IP 與 HED-ID）；約 <strong class="ex-n">75%</strong> 病人有 exons 4 到 10 的 common <strong class="ex-n">11.7 kb</strong> deletion。檢測可確認臨床診斷、偵測女性帶因者與評估高風險妊娠。沒有家族史時產前診斷困難，因為除 intrauterine growth retardation 外沒有特徵性超音波表現。<span class="ex-ref">p.2387</span></li>
+<li>基因檢測可商業取得（IKBKG common deletion／duplication 與 gene sequencing，可辨識 IP 與 HED-ID）；約 <strong class="ex-n">75%</strong> 病人有 exons 4 到 10 的 common <strong class="ex-n">11.7 kb</strong> deletion。檢測可確認臨床診斷、偵測女性帶因者，並評估帶有 IKBKG 突變家族的高風險妊娠。沒有家族史時產前診斷困難，因為除 intrauterine growth retardation 外沒有特徵性超音波表現。<span class="ex-ref">p.2387</span></li>
 </ul>
 <h3>Differential diagnosis（鑑別）</h3>
 <ul>
-<li>依病程時點而定：新生兒期要考慮 vesiculobullous disorders（HSV、VZV、bullous impetigo、bullous mastocytosis、epidermolysis bullosa）與其他 mosaic disorders（focal dermal hypoplasia、epidermal nevus syndrome）；之後 linear epidermal nevus、ILVEN、pigmentary mosaicism 可以類似。<span class="ex-ref">p.2387</span></li>
+<li>依病程時點而定：新生兒期可考慮（may be considered）vesiculobullous disorders（HSV、VZV、bullous impetigo、bullous mastocytosis、epidermolysis bullosa）與其他 mosaic disorders（focal dermal hypoplasia、epidermal nevus syndrome）；之後 linear epidermal nevus、ILVEN、pigmentary mosaicism 可以類似。<span class="ex-ref">p.2387</span></li>
 </ul>
 <h3>Management（處置）</h3>
 <ul>
-<li>沒有嚴重併發症的多數病人預期壽命正常；治療為症狀導向；皮膚除 blister wound care（預防次發感染）外不需特異治療；有 topical corticosteroids 減少發炎與加速第一期癒合的報告；牙科評估與修復重要。<span class="ex-ref">p.2388</span></li>
+<li>嬰兒期沒有嚴重併發症的多數病人預期壽命正常；治療為症狀導向；皮膚除 blister wound care（預防次發感染）外不需特異治療；有 topical corticosteroids 減少發炎與加速第一期癒合的報告；牙科評估與修復重要。<span class="ex-ref">p.2388</span></li>
 <li>診斷時做 baseline 眼科檢查，並依建議在最初 <strong class="ex-n">3 年</strong>內重複檢查；<strong>Peripheral retinal photocoagulation</strong> 可降低 retinal detachment 風險。診斷時考慮轉介神經科；有神經症狀時應做 MRI 與 EEG；retinal neovascularization 的病人可考慮 MRI。<span class="ex-ref">p.2388</span></li>
 </ul>
 <h3>McKee 補充（病理與其他）</h3>
 <ul>
 <li>McKee：IP 女性比例明顯偏高（超過 <strong class="ex-n">37 : 1</strong>），男性通常在子宮內死亡；X-linked dominant；皮膚表現通常出生或前幾週出現；毛髮、牙齒、指甲、眼睛、骨骼與 CNS 病灶可見於多達 <strong class="ex-n">80%</strong> 病人；女性表型多變，取決於 X-chromosome lyonization 造成的 mosaicism；存活的男性病例多數與 Klinefelter syndrome 有關。<span class="ex-ref ex-ref-mckee">McKee p.706–707</span></li>
 <li>McKee：另可見 mild nail dystrophy（<strong class="ex-n">40%</strong>）、vertex 頭皮 alopecia、woolly hair nevus；whorled scarring alopecia 沿 Blaschko lines。<span class="ex-ref ex-ref-mckee">McKee p.707</span></li>
-<li>McKee 病理：<mark data-q="103-39">Vesicular stage（stage 1）為 <strong>eosinophilic spongiosis</strong>，偶有 dyskeratotic cells 聚集，真皮可有明顯 eosinophilia 的慢性發炎細胞浸潤</mark>；<strong>Verrucous（stage 2）</strong>為 hyperkeratosis、acanthosis、papillomatosis 與 focal dyskeratosis（dyskeratotic cells 常呈 whorled 排列）；<mark data-q="106-46"><strong>Stage 3</strong> 為明顯的 <strong>pigmentary incontinence</strong>，真皮有許多 <strong>melanophages</strong>，伴表皮 basal cell degeneration</mark>；end-stage 為表皮萎縮，可有附屬器缺失，melanocytes 數目減少或正常。<span class="ex-ref ex-ref-mckee">McKee p.708</span></li>
+<li>McKee 病理：<mark data-q="103-39">Vesicular stage（stage 1）為 <strong>eosinophilic spongiosis</strong>，偶有 dyskeratotic cells 聚集，真皮可有明顯 eosinophilia 的慢性發炎細胞浸潤</mark>；<strong>Verrucous（stage 2）</strong>為 hyperkeratosis、acanthosis、papillomatosis 與 focal dyskeratosis（dyskeratotic cells 典型（typically）呈 whorled 排列）；<mark data-q="106-46"><strong>Stage 3</strong> 為明顯的 <strong>pigmentary incontinence</strong>，真皮有許多 <strong>melanophages</strong>，伴表皮 basal cell degeneration</mark>；end-stage 為表皮萎縮，可有附屬器缺失，melanocytes 似乎（appear）數目減少或正常。<span class="ex-ref ex-ref-mckee">McKee p.708</span></li>
 <li>McKee：色素的 <strong>whorl-like distribution</strong> 具特徵性（<mark data-q="107-31">Stage 3 的 splashes、streaks、whorls</mark>）。<span class="ex-ref ex-ref-mckee">McKee p.707–708</span></li>
-<li>McKee 發病機轉：兩個 IP loci 位於 X 長臂 Xq11（IP1）與 Xq28（IP2）；IKBKG（NEMO）抑制 TNF-induced apoptosis；NEMO disruption 的小鼠模型在雄鼠致死、異型接合雌鼠有類似 IP 的皮膚與眼部病灶；<strong>Eotaxin</strong>（NF-κB 活化的 chemokine）強烈表現於受累皮膚的 suprabasal epidermis，與表皮上層 eosinophils 聚集同時出現。<span class="ex-ref ex-ref-mckee">McKee p.708</span></li>
-<li>McKee：痛的 <strong>subungual digital verrucous nodules</strong> 是偶見的晚期特徵，常多發、手多於腳，可造成指甲破壞與底下 phalanx 的 scalloped resorption；可能誤認為 wart、subungual fibroma、keratoacanthoma 或 SCC；可有 late reactivation。眼部最特徵性的變化是 strabismus、microphthalmos、cataract、optic atrophy，最常見的眼內異常是 retinal detachment 伴 fibrovascular retrolental membrane。<span class="ex-ref ex-ref-mckee">McKee p.708</span></li>
+<li>McKee 發病機轉：兩個 IP loci 位於 X 長臂 Xq11（IP1）與 Xq28（IP2）；IKBKG（NEMO）參與抑制（plays a role in inhibiting）TNF-induced apoptosis；NEMO disruption 的小鼠模型在雄鼠致死、異型接合雌鼠有類似 IP 的皮膚與眼部病灶；<strong>Eotaxin</strong>（NF-κB 活化的 chemokine）強烈表現於受累皮膚的 suprabasal epidermis，與表皮上層 eosinophils 聚集同時出現。<span class="ex-ref ex-ref-mckee">McKee p.708</span></li>
+<li>McKee：痛的 <strong>subungual digital verrucous nodules</strong> 是偶見的晚期特徵，通常（usually）多發、手多於腳，可造成指甲破壞與底下 phalanx 的 scalloped resorption；可能誤認為 wart、subungual fibroma、keratoacanthoma 或 SCC；部分病人（some patients）有 late reactivation。眼部最特徵性的變化是 strabismus、microphthalmos、cataract、optic atrophy，最常見的眼內異常是 retinal detachment 伴 fibrovascular retrolental membrane。<span class="ex-ref ex-ref-mckee">McKee p.708</span></li>
 <li>McKee 鑑別：toxic erythema of the neonate 與 IP 要區分——IP 有 eosinophilic spongiosis，toxic erythema 沒有。<mark data-q="103-39">Toxic erythema of the neonate 早期紅斑病灶有明顯的 eosinophils；pustules 特徵上在毛囊內（intrafollicular），有時 subcorneal 或 intraepidermal，含大量 eosinophils 與少數 neutrophils</mark>。Miliaria rubra 的水泡與汗管相關，通常含 mononuclear cells 而非 eosinophils。<span class="ex-ref ex-ref-mckee">McKee p.709</span></li>
 <li><mark data-q="107-31">McKee：IP 臨床上可能與 hypomelanosis of Ito（incontinentia pigmenti achromians）混淆，兩者 CNS 侵犯相似；後者的特徵是皮膚色素改變而沒有 vesicular 或 verrucous 病灶</mark>。<span class="ex-ref ex-ref-mckee">McKee p.709</span></li>
 <li>兩本書差異：Stage II 的持續時間——Fitzpatrick 寫持續數週到數月、有報告達數年；McKee 寫出現於第 2 到 6 週、通常 6 個月前完全消退。Stage III 的起始——Fitzpatrick「約 6 個月大」，McKee「生後第 12 到 26 週」。IKBKG 的 deletion 比例以 Fitzpatrick ch131 所述（約 75%，exons 4–10 的 11.7 kb）為準。</li>
@@ -329,7 +329,7 @@
 <ul>
 <li>罕見 AD ED，侵犯牙齒、毛髮、指甲與骨骼。毛髮 kinky 或極捲（尤其新生兒期）；牙齒 enamel hypoplasia、hypocalcification、<strong>taurodontism</strong>（牙體與 pulp chamber 變大），乳牙與恆牙都有；指甲常增厚且表層分裂；<strong>sweat gland function 與皮膚不受影響</strong>。<span class="ex-ref">p.2389</span></li>
 <li>骨骼：long bones 與頭顱骨密度增加；可有 craniosynostosis 造成 dolichocephaly。<span class="ex-ref">p.2389</span></li>
-<li>遺傳：AD，<strong>DLX3</strong>（17q21.3-q22；distal-less homeobox）；依突變嚴重度不同，但 penetrance 通常完全。鑑別：與 amelogenesis imperfecta（hypomaturation-hypoplasia type）with taurodontism（AIHHT）有相同牙齒表現，但 AIHHT 沒有毛髮與指甲表現。處置為 enamel hypoplasia 的牙科照護與 genetic counseling。<span class="ex-ref">p.2389</span></li>
+<li>遺傳：AD，<strong>DLX3</strong>（17q21.3-q22；distal-less homeobox）；依突變不同，表型嚴重度不同，但 penetrance 通常完全。鑑別：與 amelogenesis imperfecta（hypomaturation-hypoplasia type）with taurodontism（AIHHT）有相同牙齒表現，但 AIHHT 沒有毛髮與指甲表現。處置為 enamel hypoplasia 的牙科照護與 genetic counseling。<span class="ex-ref">p.2389</span></li>
 </ul>
 <h3>Oculo-dento-digital dysplasia（ODDD）</h3>
 <ul>

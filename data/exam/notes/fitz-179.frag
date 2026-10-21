@@ -31,7 +31,7 @@
 <li>美國：多數病例來自 Northeast、mid-Atlantic 與 North Central；Northwestern United States 有較小的疾病聚集區。<span class="ex-ref">p.3287</span></li>
 <li>美國 CDC 於 <strong class="ex-n">1982</strong> 年開始監測，1991 年 Council of State and Territorial Epidemiologists 將其列為全國應通報疾病（nationally notifiable）。<span class="ex-ref">p.3288</span></li>
 <li>通報病例：1992 至 2006 年每年病例數倍增，從 <strong class="ex-n">9908</strong> 增至 <strong class="ex-n">19,931</strong>；2015 年新通報病例 <strong class="ex-n">34,390</strong>；2015 年考慮未通報病例後，CDC 估計美國發生率約 <strong class="ex-n">300,000</strong> 例／年。<span class="ex-ref">p.3288</span></li>
-<li>2005 至 2014 年，約 <strong class="ex-n">96%</strong> 通報病例集中在 Northeastern、mid-Atlantic、North Central 的 14 個州（Connecticut、Delaware、Maine、Maryland、Massachusetts、Minnesota、New Hampshire、New Jersey、New York、Pennsylvania、Rhode Island、Vermont、Virginia、Wisconsin）；低發生率州的病例多為去流行區旅行而感染的旅客。<span class="ex-ref">p.3288</span></li>
+<li>2005 至 2014 年，約 <strong class="ex-n">96%</strong> 通報病例集中在 Northeastern、mid-Atlantic、North Central 的 14 個州（Connecticut、Delaware、Maine、Maryland、Massachusetts、Minnesota、New Hampshire、New Jersey、New York、Pennsylvania、Rhode Island、Vermont、Virginia、Wisconsin）；許多低發生率州的病例代表前往較高流行區旅行時感染的旅客。<span class="ex-ref">p.3288</span></li>
 <li>美國病人：男性略多（<strong class="ex-n">53.1%</strong>）；白人占 <strong class="ex-n">94.1%</strong>；<strong class="ex-n">two-thirds</strong> 病例在 6、7、8 月發病；年齡呈 bimodal distribution，高峰在 <strong class="ex-n">5–9 歲</strong>（8.6 cases per 100,000）與 <strong class="ex-n">55–59 歲</strong>（7.8 cases per 100,000）。<span class="ex-ref">p.3288</span></li>
 <li>McKee：感染率在 5–15 歲兒童與 50 歲以上成人最高；男女發生率相同；病灶最常出現在 May to September。<span class="ex-ref ex-ref-mckee">McKee p.876</span>（兩本書的年齡分組與性別描述不同，兩種都以出處為準。）</li>
 <li>Risk factors：感染風險幾乎完全取決於在 Lyme disease 盛行區接觸蜱媒；避開蜱可能出沒的環境是有效的預防策略。<span class="ex-ref">p.3295</span></li>
@@ -51,13 +51,13 @@
 <li>每個生活期吸 1 次血：larval ticks 在 late summer、nymphal ticks 在隔年 spring 與 early summer、adult ticks 在 fall 與 early winter；菌在兩次吸血之間留在蜱的 midgut 呈休眠。<span class="ex-ref">p.3296</span></li>
 <li>主要 reservoir 是被幼蟲與若蟲吸血的小型囓齒動物與鳥類；成蟲吸大型哺乳動物（如 deer）的血，deer 不是重要的 reservoir 但是成蟲的重要食物來源；減少 deer 數量可顯著降低蜱的數量。<span class="ex-ref">p.3296</span></li>
 <li>人是 incidental host，不參與菌在野外的維持；多數病例發生在 late spring 與 summer（nymphs 最活躍且人的戶外活動最多）。<span class="ex-ref">p.3296</span></li>
-<li>Transmission 通常認為需要蜱附著至少 <strong class="ex-n">36 hours</strong>；蜱常在 popliteal fossa、groin、axilla、back、head 不被發現。<span class="ex-ref">p.3289</span></li>
+<li>Transmission 通常認為需要蜱附著至少 <strong class="ex-n">36 hours</strong>；蜱可能（may）在 popliteal fossa、groin、axilla、back、head 未被發現。<span class="ex-ref">p.3289</span></li>
 </ul>
 <h3>Coinfection（共同感染）</h3>
 <ul>
 <li>美國的 <em>I. scapularis</em> 與歐洲的 <em>I. ricinus</em> 也可能傳播 <em>Babesia microti</em>（red blood cell parasite）、<em>Anaplasma phagocytophilum</em>（舊稱 human granulocytic ehrlichiosis 病原）與 <em>Borrelia miyamotoi</em>（relapsing fever type Borrelia）。<span class="ex-ref">p.3296</span></li>
 <li>歐洲 <em>I. ricinus</em> 與亞洲 <em>I. persulcatus</em> 也是 tick-borne encephalitis virus 的病媒；<em>I. scapularis</em> 傳播相關的 Powassan family virus（deer tick virus）。<span class="ex-ref">p.3296</span></li>
-<li>與 <em>B. microti</em> 或 <em>A. phagocytophilum</em> 共同感染的頻率依地理位置而異，可能改變臨床表現；有些研究認為共同感染者病情較重，但原文說仍不確定（uncertain）。<span class="ex-ref">p.3295</span></li>
+<li>與 <em>B. microti</em> 或 <em>A. phagocytophilum</em> 共同感染的頻率依地理位置而異，可能改變部分病人（some patients）的臨床表現；有些研究提示（suggest）共同感染者病情較重，但原文說仍不確定（uncertain）。<span class="ex-ref">p.3295</span></li>
 </ul>
 </section>
 
@@ -65,7 +65,7 @@
 <h2>4. Pathogenesis（致病機轉）</h2>
 <ul>
 <li><em>B. burgdorferi</em> sensu lato 屬 eubacterial phylum Spirochaetales（劇烈運動、螺旋狀細菌）。<span class="ex-ref">p.3295</span></li>
-<li>Genome：1 條 linear chromosome 加上超過 <strong class="ex-n">20</strong> 個 circular 與 linear plasmids，是已知細菌中 plasmids 最多的；genome 編碼超過 <strong class="ex-n">150</strong> 種 lipoproteins；缺乏製造許多必需營養素（如 amino acids、fatty acids）的 biosynthetic machinery，高度依賴宿主。<span class="ex-ref">p.3295–3296</span></li>
+<li>Genome：1 條 linear chromosome 加上超過 <strong class="ex-n">20</strong> 個 circular 與 linear plasmids，是已知細菌中 plasmids 最多的；genome 編碼超過 <strong class="ex-n">150</strong> 種 lipoproteins；缺乏製造許多必需營養素（如 amino acids、fatty acids）的 biosynthetic machinery，提示（suggesting）菌高度依賴宿主。<span class="ex-ref">p.3295–3296</span></li>
 <li>基因表現調控：HK1/Rrp1 pathway 在菌離開哺乳動物宿主、進入蜱時活化；Rrp2/RpoS/RpoN 在菌準備進入哺乳動物宿主時活化，其上調的基因包含可能協助 immune evasion 與 cellular adhesion 的基因。<span class="ex-ref">p.3296</span></li>
 <li>在叮咬處菌隨蜱唾液注入皮膚；菌表面的 tick salivary protein <strong>Salp15</strong> 有助於早期感染時躲避哺乳動物免疫系統。<span class="ex-ref">p.3296</span></li>
 <li>潛伏 <strong class="ex-n">3 days 到 1 month</strong> 後在皮膚擴散；宿主免疫反應造成特徵性 EM；之後進入血流 hematogenous dissemination，通常在感染後數天到數週內。北美 OspC type A（RST 1）等特定菌株特別容易造成血行散播。<span class="ex-ref">p.3296</span></li>
@@ -74,7 +74,7 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Immune evasion（躲避免疫）</th><th scope="col">內容</th></tr></thead>
 <tbody>
-<tr><td>Motility</td><td>菌在組織內移動很快，曾測得達 4 µM/s（原文單位），比 neutrophils 或 macrophages 的移動速度快</td></tr>
+<tr><td>Motility</td><td>菌在組織內移動很快，最高（up to）曾測得 4 µM/s（原文單位），比 neutrophils 或 macrophages 的移動速度快</td></tr>
 <tr><td>Antigenic variation</td><td>哺乳動物感染期間表現的主要蛋白 <strong>VlsE</strong>，可透過和 silent cassettes 重組而改變抗原組成</td></tr>
 <tr><td>Factor H binding</td><td>表現可結合宿主 complement inhibitory protein <strong>factor H</strong> 的蛋白；in vitro 有助躲避 complement 殺菌，但各蛋白在體內的重要性不明</td></tr>
 </tbody>
@@ -83,7 +83,7 @@
 <ul>
 <li>McKee：早期感染時 <em>B. burgdorferi</em> 抗原引起以 IFN-γ、TNF-α、TGF-β1 為主的強烈宿主免疫反應；chronic neuroborreliosis 則缺乏 TNF-α 與 TGF-β1 反應。<span class="ex-ref ex-ref-mckee">McKee p.877</span></li>
 <li>McKee：病灶皮膚中 T-cell-active chemokines <strong>CXCL9、CXCL10</strong> 在 EM 與 ACA 偏高；borrelial lymphocytoma 則是 B-cell-active chemokine <strong>CXCL13</strong> 偏高。<span class="ex-ref ex-ref-mckee">McKee p.877</span></li>
-<li>ACA 被認為是 T-cell–mediated immune response：浸潤淋巴球主要為 CD4 phenotype，血管內皮細胞、淋巴球與 basal keratinocytes 表現 ICAM-1；病灶慢性化可能部分由 Langerhans cells 的 MHC class II 下調（downregulation）解釋。<span class="ex-ref">p.3292</span></li>
+<li>浸潤淋巴球主要為 CD4 phenotype，支持（favoring）ACA 是 T-cell–mediated immune response 的概念；血管內皮細胞、淋巴球與 basal keratinocytes 表現 ICAM-1 進一步支持此理論；病灶慢性化可能部分由 Langerhans cells 的 MHC class II 下調（downregulation）解釋。<span class="ex-ref">p.3292</span></li>
 <li>McKee：免疫抑制似乎不改變臨床表現、治療反應或 anti-<em>B. burgdorferi</em> antibody 的產生。<span class="ex-ref ex-ref-mckee">McKee p.877</span></li>
 </ul>
 </section>
@@ -94,7 +94,7 @@
 <ul>
 <li><mark data-q="106-26,112-43">Erythema migrans（EM）是感染後通常最先出現的症狀</mark>；在蜱吸血結束後 <strong class="ex-n">3 to 30 days</strong>（平均 <strong class="ex-n">7 days</strong>）開始。<span class="ex-ref">p.3288</span></li>
 <li>EM 被認為出現在 <strong class="ex-n">70% to 80%</strong> 的感染者；在已診斷 Lyme disease 的病人中，估計高達 <strong class="ex-n">90%</strong>。<span class="ex-ref">p.3288</span></li>
-<li>EM 是宿主對新感染的 inflammatory response 造成的；菌可從 EM 病灶 biopsy 培養出，也可用 immunofluorescence 在組織看到。<span class="ex-ref">p.3288–3289</span></li>
+<li>EM 是宿主對新感染的 inflammatory response 造成的；菌可容易地（readily）從 EM 病灶 biopsy 培養出，也可用 immunofluorescence 在組織看到。<span class="ex-ref">p.3288–3289</span></li>
 <li>McKee：EM 平均在叮咬後 <strong class="ex-n">1–3 weeks</strong> 出現（Fitzpatrick 寫 3–30 days，平均 7 days）。<span class="ex-ref ex-ref-mckee">McKee p.876</span></li>
 </ul>
 <h3>Morphology（外觀）</h3>
@@ -127,9 +127,9 @@
 <h3>Dissemination（散播）</h3>
 <ul>
 <li>菌最早可在原始 EM 出現後 <strong class="ex-n">3 days</strong> 就從接種處散播。<span class="ex-ref">p.3289</span></li>
-<li>血行散播最常見的表現是遍布全身的<strong>多發 EM</strong>：隨機分布，不代表多個叮咬處各自局部感染；估計發生在 <strong class="ex-n">10% to 18%</strong> 的 <em>B. burgdorferi</em> 感染者，且隨疾病較早被辨識與治療而似乎變得較少見。<span class="ex-ref">p.3289</span></li>
+<li>血行散播最常見的表現是遍布全身的<strong>多發 EM</strong>：隨機分布，不代表多個叮咬處各自局部感染；估計約發生在 <strong class="ex-n">10% to 18%</strong> 的 <em>B. burgdorferi</em> 感染者，且隨疾病較早被辨識與治療而似乎變得較少見。<span class="ex-ref">p.3289</span></li>
 <li>Secondary EM lesions 通常比原發 EM 小，但在外觀與組織學上與原發病灶沒有差別。<span class="ex-ref">p.3289–3290</span></li>
-<li>McKee：約 <strong class="ex-n">50%</strong> 病人有較小的 secondary lesions；掌、蹠與黏膜通常不受侵；EM 偶爾會復發；multiple lesions「usually 2 or 3」；歐洲 54 例系列中 <strong class="ex-n">46%</strong> 有多發 EM。<span class="ex-ref ex-ref-mckee">McKee p.876–877</span>（與 Fitzpatrick 的 10–18% 以及 Table 179-1 的比例不一致，兩本都照原文。）</li>
+<li>McKee：約 <strong class="ex-n">50%</strong> 病人有較小的 secondary lesions；掌、蹠與黏膜通常不受侵；EM 偶爾可能復發；multiple lesions「usually 2 or 3」；歐洲 54 例系列中 <strong class="ex-n">46%</strong> 有多發 EM。<span class="ex-ref ex-ref-mckee">McKee p.876–877</span>（與 Fitzpatrick 的 10–18% 以及 Table 179-1 的比例不一致，兩本都照原文。）</li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>經典 bull's-eye 只出現在少數病例；美國最常見的是無中央 clearing 的 homogeneous 紅斑（p.3289–3290）。多發 EM 代表血行散播，不是多處叮咬（p.3289）。</aside>
 <h3>Early symptoms（早期非特異症狀）</h3>
@@ -157,15 +157,15 @@
 <li>主要見於歐洲的老年病人；起病隱匿（insidious）；似乎偏好女性；兒童罕見。從接種到發病的間隔極難評估，多數病人不記得叮咬；曾有 ACA 病人皮膚切片在 <strong class="ex-n">20 years</strong> 後仍回收到菌，支持菌可存活數十年。<span class="ex-ref">p.3290</span></li>
 <li>呈 biphasic：早期 <strong>inflammatory phase</strong> 為手指、手與關節（常為 elbows、knees）及下肢伸側的 bluish-red discoloration；關節旁可有不同寬度的 infiltrated purple bands；手足背可有 cushion-like（doughy）腫脹；四肢最常受侵，病灶通常由遠端向近端延伸。<span class="ex-ref">p.3291</span></li>
 <li>後期 <strong>atrophic phase</strong>：病灶呈「cigarette paper-like」外觀（圖說寫 tissue paper-like）並有淺層靜脈明顯；原文說皮膚萎縮不是 inflammatory phase 的必然後續，兩種病灶罕見（rarely）同時存在於同一病人不同部位。<span class="ex-ref">p.3291</span></li>
-<li>McKee：ACA 特徵是腫脹的末梢皮膚出現紅色或紫色變色，病灶常為雙側；晚期萎縮期皮膚像皺紙（crumpled tissue paper）；可有 sclerodermatous changes 與 lichen sclerosus et atrophicus-like 病灶；ACA 主要在歐洲，歐洲以 <em>B. afzelii</em> 壓倒性占優，而 <em>B. afzelii</em> 在北美並非 endemic。<span class="ex-ref ex-ref-mckee">McKee p.877</span></li>
-<li>神經與骨關節：約 <strong class="ex-n">45%</strong> 的 ACA 病人有 CNS 與 peripheral nervous system 侵犯；<strong class="ex-n">30% to 45%</strong> 有 polyneuropathy（常在有皮膚病灶的肢體最明顯）。慢性關節與骨骼侵犯多見於長期 ACA 或未治療的 EM／ACA，通常侷限在受侵肢體；一項研究中約 <strong class="ex-n">one-third</strong> 病人有特徵性症狀 swollen or painful foot and heel。<span class="ex-ref">p.3291</span></li>
+<li>McKee：ACA 特徵是腫脹的末梢皮膚出現紅色或紫色變色，病灶常為雙側；晚期萎縮期皮膚可能像皺紙（crumpled tissue paper）；可有 sclerodermatous changes 與 lichen sclerosus et atrophicus-like 病灶；ACA 主要在歐洲，歐洲以 <em>B. afzelii</em> 壓倒性占優，而 <em>B. afzelii</em> 在北美並非 endemic。<span class="ex-ref ex-ref-mckee">McKee p.877</span></li>
+<li>神經與骨關節：約 <strong class="ex-n">45%</strong> 的 ACA 病人有 CNS 與 peripheral nervous system 侵犯；<strong class="ex-n">30% to 45%</strong> 有 polyneuropathy（常在有皮膚病灶的肢體最明顯）。慢性關節與骨骼侵犯最常見於長期 ACA 或未治療的 EM／ACA，通常侷限在受侵肢體；一項研究中約 <strong class="ex-n">one-third</strong> 病人有特徵性症狀 swollen or painful foot and heel。<span class="ex-ref">p.3291</span></li>
 <li>一項研究中，約 <strong class="ex-n">18%</strong> 的 ACA 病人有數月到數年前同側 EM 的病史；ACA 的 serologic testing 通常為陽性。<span class="ex-ref">p.3298</span></li>
 <li>三種會感染人的 <em>B. burgdorferi</em> species 都曾在 ACA 病灶中發現。<span class="ex-ref">p.3291</span></li>
 </ul>
 <h3>Cutaneous scleroborrelioses（硬化性病灶）</h3>
 <ul>
 <li>臨床上與 primary lichen sclerosus et atrophicus 或 morphea 無法區分的硬化病灶，可伴隨其他 dermatoborrelioses（約 <strong class="ex-n">10%</strong> 的 ACA 與 borrelial lymphocytoma 病人），也可在沒有其他皮膚表現下出現。<span class="ex-ref">p.3292</span></li>
-<li>Periarticular（&ldquo;ulnar&rdquo;）fibrous nodules：硬結節，位於 elbows、knees 及指側靠近關節處；曾報告可由 trauma、surgery、electromagnetic radiation 誘發。<span class="ex-ref">p.3292</span></li>
+<li>Periarticular（&ldquo;ulnar&rdquo;）fibrous nodules：通常（usually）表現為硬結節，位於 elbows、knees 及指側靠近關節處；曾報告可由 trauma、surgery、electromagnetic radiation 誘發。<span class="ex-ref">p.3292</span></li>
 <li>少見的硬化性疾病：progressive facial hemiatrophy（Parry-Romberg syndrome）與 eosinophilic fasciitis（Shulman syndrome）；與 borrelial infection 相關的 eosinophilic fasciitis 稱為 <strong>borrelial fasciitis</strong>，但這類病人缺乏 Shulman disease 典型的 peripheral blood eosinophilia。<span class="ex-ref">p.3292</span></li>
 </ul>
 <h3>Cutaneous atrophoborrelioses（萎縮性病灶）</h3>
@@ -180,10 +180,10 @@
 <li>多數病人不知道先前有叮咬；incubation 從數週到 <strong class="ex-n">10 months</strong>；未治療的單發病灶可持續數月到數年（average：<strong class="ex-n">5 years</strong>）；可自行消退，但抗生素治療通常使病灶消退較快；多發 lymphocytoma 可完全在皮下、可持續數十年，通常沒有特定好發部位或其他 dermatoborrelioses 的合併。<span class="ex-ref">p.3292</span></li>
 <li>McKee：lymphocytoma cutis（borrelial lymphocytoma）是 B-cell response，可出現在急性期，最常侵犯 lower ear lobes 與 nipples，但更常是第三期的表現。<span class="ex-ref ex-ref-mckee">McKee p.876</span></li>
 <li>Benign lymphocytic infiltrates of the skin（Jessner-Kanof）：離心擴大並中央清除的 discoid 病灶，時好時壞（wax and wane）；男性較常見，好發 face、neck、upper trunk。<span class="ex-ref">p.3293</span></li>
-<li>與 borrelial infection 相關的 low-grade cutaneous B-cell lymphoma：多發界線不清、緩慢進展的 plaques 與 nodules，位於軀幹或四肢，多為年長者。Borrelia 感染率最高的是 <strong>marginal zone lymphoma</strong>（<strong class="ex-n">20% to 52%</strong>），其次是 follicular center lymphoma（<strong class="ex-n">15% to 26%</strong>）與 diffuse large B-cell lymphoma（<strong class="ex-n">15% to 16%</strong>）。<span class="ex-ref">p.3293</span></li>
+<li>數個報告提示（suggest）low-grade cutaneous B-cell lymphoma 與 <em>B. burgdorferi</em> 感染有關；臨床表現多樣，為多發界線不清、緩慢進展的 plaques 與 nodules，位於軀幹或四肢，多為年長者。Borrelia 感染率最高的是 <strong>marginal zone lymphoma</strong>（<strong class="ex-n">20% to 52%</strong>），其次是 follicular center lymphoma（<strong class="ex-n">15% to 26%</strong>）與 diffuse large B-cell lymphoma（<strong class="ex-n">15% to 16%</strong>）。<span class="ex-ref">p.3293</span></li>
 <li>根除 <em>B. burgdorferi</em> 後 marginal zone lymphoma 出現臨床消退，原文認為這支持它是 benign process。<span class="ex-ref">p.3293</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>ACA 與 lymphocytoma 都被寫成主要（或只在）歐洲被報告（p.3287、p.3290、p.3292）；ACA 的 histology 中 plasma cells 的記載主要來自歐洲，美國報告則少見或沒有（p.3291）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>ACA 與 lymphocytoma 都被寫成主要（或只在）歐洲被報告（p.3287、p.3290、p.3292）；ACA 的 histology 中 plasma cells 的記載主要來自歐洲，美國報告則指出 plasma cells 很少或沒有（few or no）（p.3291）。</aside>
 <h3>Other cutaneous lesions（其他皮膚病灶）</h3>
 <ul>
 <li>在確診 Lyme disease 的病人也曾報告 panniculitis、vasculitis、granuloma annulare、erythema multiforme 與 syphilis-like papulosquamous eruption，但 <em>B. burgdorferi</em> 從未直接從這些病灶回收到。<span class="ex-ref">p.3293</span></li>
@@ -203,18 +203,18 @@
 </ul>
 <h3>Cardiac（心臟）</h3>
 <ul>
-<li>未治療病人中，美國 <strong class="ex-n">1% to 10%</strong>、歐洲 <strong class="ex-n">0.3% to 4%</strong> 有心臟侵犯；範圍寬被認為反映近年 Lyme disease 更早被辨識與治療。通常在感染開始後數週內出現，最早 <strong class="ex-n">1 week</strong>、最晚到 <strong class="ex-n">7 months</strong>。<span class="ex-ref">p.3294</span></li>
-<li><em>B. burgdorferi</em> 對 <strong>atrioventricular node</strong> 有親和性，造成 atrioventricular block；acute myopericarditis 與 left ventricular dysfunction 也可發生，但通常 self-limited 且輕微。歐洲有 chronic dilated cardiomyopathy 病人的 endomyocardial biopsy 分離出菌（美國較少觀察到）；美國曾有未診斷的 Lyme disease 造成心肌炎而猝死的案例。<span class="ex-ref">p.3294</span></li>
+<li>未治療病人中，美國 <strong class="ex-n">1% to 10%</strong>、歐洲 <strong class="ex-n">0.3% to 4%</strong> 有心臟侵犯；範圍寬可能（probably）反映近年 Lyme disease 更早被辨識與治療。通常在感染開始後數週內出現，最早 <strong class="ex-n">1 week</strong>、最晚到 <strong class="ex-n">7 months</strong>。<span class="ex-ref">p.3294</span></li>
+<li><em>B. burgdorferi</em> 對 <strong>atrioventricular node</strong> 有親和性，造成 atrioventricular block；acute myopericarditis 與 left ventricular dysfunction 也可發生，但通常 self-limited 且輕微。歐洲數名（several）chronic dilated cardiomyopathy 病人的 endomyocardial biopsy 分離出菌（美國較少觀察到）；美國曾有未診斷的 Lyme disease 造成心肌炎而猝死的案例。<span class="ex-ref">p.3294</span></li>
 </ul>
 <h3>Musculoskeletal（肌肉骨骼）</h3>
 <ul>
 <li>Inflammatory arthritis 是美國晚期散播性 Lyme disease 最常見的臨床徵象，未治療或治療不完整的病人約 <strong class="ex-n">60%</strong> 出現；通常在發病後 <strong class="ex-n">1 或更多個月</strong>出現，為大關節（最常是膝）的 asymmetric monoarthritis 或 oligoarthritis。<span class="ex-ref">p.3294–3295</span></li>
-<li>Migratory arthralgia 也相對常見，尤其在 disseminated 期；關節炎發作一開始頻繁且短，之後變長且較少，每次持續數天到 <strong class="ex-n">1 year</strong>。<span class="ex-ref">p.3295</span></li>
+<li>Migratory arthralgia 也相對常見，尤其在 disseminated 期；關節炎發作一開始通常（generally）頻繁且短，之後變長且較少，每次持續數天到 <strong class="ex-n">1 year</strong>。<span class="ex-ref">p.3295</span></li>
 </ul>
 <h3>Other（其他）</h3>
 <ul>
 <li>眼：conjunctivitis、keratitis、iridocyclitis、retinal vasculitis、choroiditis、optic neuropathy 是罕見表現；也可有 cranial nerve pareses 與 orbital myositis 等眼外表現。<span class="ex-ref">p.3295</span></li>
-<li>Perinatal：<em>B. burgdorferi</em> 在最初 spirochetemia 時可能通過胎盤，但胎兒免疫反應或不良新生兒結果並未確立；數個研究顯示母親感染與日後 birth defects 沒有關聯。<span class="ex-ref">p.3295</span></li>
+<li>Perinatal：人類與動物模式研究顯示 <em>B. burgdorferi</em> 在最初 spirochetemia 時可通過胎盤，但胎兒免疫反應或不良新生兒結果的證據並未明確（definitively）確立；數個研究顯示母親感染與日後 birth defects 沒有關聯。<span class="ex-ref">p.3295</span></li>
 <li>兒童：除了 EM 較常位於 head 與 neck 外，與成人相似；optic nerve 侵犯在兒童可能導致失明。<span class="ex-ref">p.3295</span></li>
 </ul>
 </section>
@@ -227,14 +227,14 @@
 <tbody>
 <tr><td>Stage I</td><td>EM；早期全身症狀（chills、fever、malaise、arthralgia、myalgia、headache、neck stiffness）；lymphocytoma cutis 可出現在急性期</td></tr>
 <tr><td>Stage II</td><td>主要侵犯 cardiovascular 與 nervous system（meningopolyradiculitis；Garin-Bujadoux-Bannwarth syndrome）；常在初次感染後 <strong class="ex-n">1–2 months</strong> 出現，症狀有 meningism、nerve palsies（especially Bell palsy）與腦部症狀；神經侵犯據說約 <strong class="ex-n">11%</strong>；心臟侵犯 <strong class="ex-n">4% to 8%</strong>（myocarditis、conduction defects）</td></tr>
-<tr><td>Stage III</td><td>Arthritis 是此期特徵：recurrent、asymmetrical、oligoarticular，侵犯大關節（especially knee），或 migratory polyarthritis（單一關節最多持續約 1 週）；約 <strong class="ex-n">45% to 60%</strong> 病人出現；皮膚病灶與 peripheral nervous system 侵犯也常見</td></tr>
+<tr><td>Stage III</td><td>Arthritis 是此期特徵：recurrent、asymmetrical、oligoarticular，侵犯大關節（especially knee），或 migratory polyarthritis（單一關節最多持續 1 週）；arthritis 可能（may）出現於 <strong class="ex-n">45% to 60%</strong> 病人；皮膚病灶與 peripheral nervous system 侵犯也常見</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">McKee p.876。McKee 的神經（11%）與心臟（4–8%）比例與 Fitzpatrick（神經 10–15%、心臟美國 1–10%／歐洲 0.3–4%）不同，兩本都照原文。</p>
 <ul>
-<li>McKee 比較歐洲與北美：ACA 是明顯的歐洲現象；borrelial lymphocytoma 與 meningoradiculoneuritis 在歐洲較常見；多發 EM 據說在北美以外較少見。<span class="ex-ref ex-ref-mckee">McKee p.877</span></li>
-<li>McKee：歐洲致病種以 <em>B. garinii</em> 與 <em>B. afzelii</em> 為主；<em>B. garinii</em> 相關的 erythema 傾向進展較快、較大且 homogeneous、較常位於軀幹、較常伴全身症狀，而 <em>B. afzelii</em> 的 erythema 多為 annular；<em>B. garinii</em> 感染者傾向年紀較大且潛伏期較短。<span class="ex-ref ex-ref-mckee">McKee p.876</span></li>
-<li>治療後可能再感染，通常表現為不同皮膚部位的 EM 復發；瑞典一項研究顯示女性比男性更容易再感染。<span class="ex-ref ex-ref-mckee">McKee p.877</span></li>
+<li>McKee 比較歐洲與北美：ACA 似乎（apparently）是歐洲的現象；borrelial lymphocytoma 與 meningoradiculoneuritis 在歐洲較常見；多發 EM 據說在北美以外較少見。<span class="ex-ref ex-ref-mckee">McKee p.877</span></li>
+<li>McKee：歐洲致病種以 <em>B. garinii</em> 與 <em>B. afzelii</em> 最常被牽涉；有些作者（some authors）描述 <em>B. garinii</em> 相關的 erythema 傾向進展較快、較大且 homogeneous、較常位於軀幹、較常伴全身症狀，而 <em>B. afzelii</em> 的 erythema 多為 annular；<em>B. garinii</em> 感染者傾向年紀較大且潛伏期較短。<span class="ex-ref ex-ref-mckee">McKee p.876</span></li>
+<li>治療後少數但有意義比例（a small but significant proportion）的病人可能再感染，通常表現為不同皮膚部位的 EM 復發；瑞典一項研究顯示女性比男性更容易再感染。<span class="ex-ref ex-ref-mckee">McKee p.877</span></li>
 </ul>
 </section>
 
@@ -243,7 +243,7 @@
 <ul>
 <li>Lyme disease 的所有表現即使沒有 antibiotic therapy 也會隨時間緩解；抗生素可加速部分表現（EM、arthritis）的緩解，但不是全部（facial palsy、radiculitis 不行），而且能明確阻止晚期表現發生。<span class="ex-ref">p.3295</span></li>
 <li><strong>Antibiotic-refractory arthritis</strong>：接受適當抗生素的 Lyme arthritis 病人中，up to <strong class="ex-n">10%</strong> 的關節炎可持續數年；這些病人的關節炎通常對 immunosuppressive agents（methotrexate、anti-TNF）有反應，因此有人認為可能是 autoimmune syndrome；molecular mimicry 被提出作為可能機轉，但仍未證實。<span class="ex-ref">p.3295</span></li>
-<li><strong>Posttreatment Lyme disease syndrome</strong>：少數病人在標準療程（<strong class="ex-n">2 to 4 weeks</strong>）後仍有 profound fatigue、depression、myalgia、不伴 arthritis 的 polyarthralgias、paresthesias，以及 memory、concentration、mental flexibility 的 neurocognitive difficulties。這些症狀與 <em>B. burgdorferi</em> 感染的關聯仍有爭議；多個大型流行病學研究顯示曾感染 Lyme disease 的人出現這些症狀的機率並不比一般人群高。<span class="ex-ref">p.3295</span></li>
+<li><strong>Posttreatment Lyme disease syndrome</strong>：有許多報告（many reports）描述病人在標準療程（<strong class="ex-n">2 to 4 weeks</strong>）後仍有 profound fatigue、depression、myalgia、不伴 arthritis 的 polyarthralgias、paresthesias，以及 memory、concentration、mental flexibility 的 neurocognitive difficulties。這些症狀與 <em>B. burgdorferi</em> 感染的關聯仍有爭議；多個大型流行病學研究顯示曾感染 Lyme disease 的人出現這些症狀的機率並不比一般人群高。<span class="ex-ref">p.3295</span></li>
 <li>多個研究顯示比標準更長的抗生素療程不能改善長期症狀，且延長抗生素有嚴重不良反應；因此超過標準療程的抗生素目前不建議。<span class="ex-ref">p.3295</span></li>
 </ul>
 </section>
@@ -264,9 +264,9 @@
 <ul>
 <li>免疫學診斷是支持臨床診斷的主要檢驗方式；美國 FDA 已核准超過 <strong class="ex-n">70</strong> 種 immunoassays，主要是 ELISA 與 Western immunoblot。<span class="ex-ref">p.3297</span></li>
 <li>ELISA 用 <em>B. burgdorferi</em> sensu lato 的 whole-cell lysates 或純化抗原，捕捉樣本中的 IgG 和（或）IgM；雖相對敏感，但 false-positive 比例高。<span class="ex-ref">p.3297</span></li>
-<li>IgM 偽陽性風險增加：autoimmune diseases（lupus、rheumatoid arthritis）、Epstein-Barr virus、bacterial endocarditis、其他 tick-borne diseases。IgG 偽陽性：syphilis、<em>Helicobacter pylori</em>、systemic lupus erythematosus、ehrlichiosis、babesiosis。<span class="ex-ref">p.3297</span></li>
+<li>似乎（appear）有 IgM 偽陽性風險增加者：autoimmune diseases（lupus、rheumatoid arthritis）、Epstein-Barr virus、bacterial endocarditis、其他 tick-borne diseases。IgG 偽陽性：syphilis、<em>Helicobacter pylori</em>、systemic lupus erythematosus、ehrlichiosis、babesiosis。<span class="ex-ref">p.3297</span></li>
 <li>C6 peptide test：新型 ELISA，只用 VlsE 蛋白 constant region 的一小段 peptide，specificity 似乎比傳統 whole-cell ELISA 高；只量 IgG，但針對 C6 peptide 的 IgG 在病程早期就出現，早期病人的 sensitivity 與 IgM whole-cell ELISA 相當。<span class="ex-ref">p.3297</span></li>
-<li>Western immunoblot 因可偵測針對 <em>B. burgdorferi</em> 個別成分的抗體，specificity 較高。歐洲與亞洲目前沒有被廣泛接受的標準血清診斷檢驗或準則（有多個只有部分抗原交叉反應的菌株）。<span class="ex-ref">p.3297</span></li>
+<li>Western immunoblot 因可偵測針對 <em>B. burgdorferi</em> 個別成分的抗體，specificity 較高。歐洲與亞洲目前沒有被廣泛接受的標準血清診斷檢驗或準則（部分原因是有多個只有部分抗原交叉反應的菌株）。<span class="ex-ref">p.3297</span></li>
 </ul>
 <h3>When to test（何時檢驗）</h3>
 <ul>
@@ -282,8 +282,8 @@
 <ul>
 <li>病程未治療超過 <strong class="ex-n">1 month</strong> 的病人不應做 IgM 檢驗；此時 IgM Western blot 陽性而 IgG Western blot 陰性，視為陰性結果（IgM 偽陽性率高）。誤用或誤判 IgM 是 Lyme disease 過度診斷的主要因素。<span class="ex-ref">p.3297</span></li>
 <li>懷疑晚期 Lyme disease 的病人若 seronegative，幾乎可排除診斷。<span class="ex-ref">p.3297</span></li>
-<li>IgG 與 IgM 抗體可在抗生素治療後持續數年，所以持續 seropositivity 本身不代表治療失敗，也不是近期感染或再感染的證據；目前沒有能確認治療後菌已清除的檢驗。<span class="ex-ref">p.3297</span></li>
-<li>近期研究提示 2-step testing 可能造成 underdiagnosis：傳統 ELISA 對 nonisogenic genotypes 的表現下降，早期感染這類菌株的病人 sensitivity 較低；C6 抗體試驗在 <em>B. burgdorferi</em> sensu stricto 各基因型及歐洲菌株 <em>B. garinii</em>、<em>B. afzelii</em> 的表現似乎較好。以 C6 ELISA 當第二步（dual enzyme immunoassay）、取代 Western blot，或在第二步 Western blot IgG 用 C6 band，結果有希望，但需進一步確認才可建議。<span class="ex-ref">p.3297</span></li>
+<li>IgG 與 IgM 抗體可能（may）在抗生素治療後仍持續數年，所以持續 seropositivity 本身不代表治療失敗，也不是近期感染或再感染的證據；目前沒有能確認治療後菌已清除的檢驗。<span class="ex-ref">p.3297</span></li>
+<li>部分近期研究（some recent studies）提示 2-step testing 可能造成 underdiagnosis：傳統 ELISA 對 nonisogenic genotypes 的表現下降，早期感染這類菌株的病人 sensitivity 較低；C6 抗體試驗在 <em>B. burgdorferi</em> sensu stricto 各基因型及歐洲菌株 <em>B. garinii</em>、<em>B. afzelii</em> 的表現似乎較好。以 C6 ELISA 當第二步（dual enzyme immunoassay）、取代 Western blot，或在第二步 Western blot IgG 用 C6 band，結果有希望，但需進一步確認才可建議。<span class="ex-ref">p.3297</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Two-stage 的順序是先 ELISA 後 Western immunoblot（p.3297）。未治療超過 1 個月的病人不應做 IgM；IgM Western blot 陽性而 IgG Western blot 陰性視為陰性（p.3297）。持續 seropositive 不代表治療失敗（p.3297）。</aside>
 </section>
@@ -295,12 +295,12 @@
 <li>Fitzpatrick：superficial 與 deep perivascular infiltrate，病灶中央為 <strong>eosinophils</strong>，周邊為 plasma cells、lymphocytes、histiocytes；immunohistochemistry 顯示浸潤細胞為 <strong>CD4+ T lymphocytes</strong>，但 HIV 感染者的浸潤以 CD8+ T lymphocytes 為主（反映 HIV 的 CD4 lymphopenia）。<span class="ex-ref">p.3288–3289</span></li>
 <li>圖 179-2（較晚期 EM）：dense nodular perivascular lymphoid cell infiltrate，有許多 plasma cells 與少量 eosinophils。<span class="ex-ref">p.3289</span></li>
 <li>McKee：病灶中央呈典型 insect bite reaction，有 neutrophils、eosinophils、histiocytes、lymphocytes、mast cells 的 polymorphic infiltrate，可伴 vascular proliferation 與 dermal necrosis；之後發展出淺層與深層 dermal perivascular lymphocytic infiltrate。周邊的 biopsy 為非特異性，呈 perivascular 與 interstitial 的 lymphocytes、mast cells、plasma cells，位於淺層與深層 dermis。<span class="ex-ref ex-ref-mckee">McKee p.877</span></li>
-<li>McKee：不尋常的組織學特徵可成為診斷陷阱，包括 spongiosis、focal interface dermatitis、浸潤局限於 superficial vascular plexus，以及沒有 plasma cells。<span class="ex-ref ex-ref-mckee">McKee p.877</span></li>
+<li>McKee：部分病例（some cases）曾報告不尋常的組織學特徵，可能成為（potential）診斷陷阱，包括 spongiosis、focal interface dermatitis、浸潤局限於 superficial vascular plexus，以及沒有 plasma cells。<span class="ex-ref ex-ref-mckee">McKee p.877</span></li>
 <li>McKee：<strong>silver stain</strong> 辨識出 spirochetes 有診斷價值；亦有 immunohistochemical method；福馬林固定石蠟包埋組織可用 PCR 偵測；EM 病灶的 DNA 中曾記錄到 clonal 或 pseudoclonal IgH gene rearrangements，解讀 PCR 時需小心。<span class="ex-ref ex-ref-mckee">McKee p.877–878</span></li>
 </ul>
 <h3>Acrodermatitis chronica atrophicans</h3>
 <ul>
-<li>Fitzpatrick（inflammatory lesion）：典型分 3 層，atrophic epidermis、未受侵的 papillary dermis zone、以 lymphocytes 與 plasma cells 組成的 inflammatory cell layer；plasma cells 的記載主要來自歐洲研究，美國報告少見或沒有；浸潤可很深並延伸到 subcutis；偶有 interface dermatitis；真皮不同層可見單一或成群的 vacuoles，有人認為是 mature adipocytes，也有人認為是 lymphedema 的表現（治療後同一部位不再出現支持後者）。<span class="ex-ref">p.3291</span></li>
+<li>Fitzpatrick（inflammatory lesion）：典型分 3 層，atrophic epidermis、未受侵的 papillary dermis zone、以 lymphocytes 與 plasma cells 組成的 inflammatory cell layer；plasma cells 的記載主要來自歐洲研究，美國報告則指出 plasma cells 很少或沒有（few or no）；浸潤可很深並延伸到 subcutis；偶有 interface dermatitis；真皮不同層可見單一或成群的 vacuoles，有人認為是 mature adipocytes，也有人認為是 lymphedema 的表現（治療後同一部位不再出現支持後者）。<span class="ex-ref">p.3291</span></li>
 <li>浸潤淋巴球主要為 CD4 phenotype。<span class="ex-ref">p.3292</span></li>
 <li>McKee：mid 與 upper dermis 血管擴張，有 lymphocytes、plasma cells、macrophages、mast cells 的 dense infiltrate；散在的 vacuoles 被認為是 lymphedema 所致；epidermis 通常 hyperkeratotic，可 acanthotic 或 atrophic 並失去 ridge pattern；部分病人像 lichen sclerosus 或 eosinophilic fasciitis，偶爾與 scleromyxedema 重疊。<span class="ex-ref ex-ref-mckee">McKee p.878</span>（Fitzpatrick 寫 atrophic epidermis、McKee 寫 epidermis 通常 hyperkeratotic，兩本照原文並列。）</li>
 </ul>
@@ -372,7 +372,7 @@
 <li>所有皮膚表現一開始都應用 oral antibiotics。<mark data-q="115-28"><strong>Doxycycline</strong> 一般被視為 first-line therapy，因為對 CNS 穿透力佳，並對 <em>A. phagocytophilum</em> 也有效</mark>；兒童與孕婦也應使用 doxycycline（原文如此）。<span class="ex-ref">p.3299</span></li>
 <li>Cefuroxime 是 alternative first-line agent；原文接著寫 &ldquo;these 3 agents&rdquo; 療效相當（p.3287 at-a-glance 與 Table 179-5 列的是 doxycycline、amoxicillin、cefuroxime）。Macrolides 是 second-line，只用於無法耐受其他藥的人，且需密切監測與追蹤。<span class="ex-ref">p.3299</span></li>
 <li>EM 的療程一般建議 <strong class="ex-n">10 to 14 days</strong>；一項隨機雙盲 placebo-controlled 研究顯示，EM 病人用 oral doxycycline <strong class="ex-n">10 天</strong>或 <strong class="ex-n">20 天</strong>結果相近。<span class="ex-ref">p.3299</span></li>
-<li>IV antibiotics（ceftriaxone、cefotaxime 或 penicillin G）可考慮用於皮膚表現合併神經疾病（meningitis、encephalopathy）或 high-degree heart block；但多項近期研究顯示神經疾病用 oral doxycycline 或 IV ceftriaxone 結果相似；IV antibiotics 有時也用於 refractory ACA 或 arthritis。<span class="ex-ref">p.3299</span></li>
+<li>IV antibiotics（ceftriaxone、cefotaxime 或 penicillin G）可考慮用於皮膚表現合併神經疾病（meningitis、encephalopathy）或 high-degree heart block；但多項近期研究提示（suggest）神經疾病用 oral doxycycline 或 IV ceftriaxone 結果相似；IV antibiotics 有時也用於 refractory ACA 或 arthritis。<span class="ex-ref">p.3299</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Clinical finding</th><th scope="col">Antibiotic（成人，美國）</th><th scope="col">Duration</th><th scope="col">Alternative</th></tr></thead>

@@ -36,7 +36,7 @@
 <li>病因不明（cause is unknown）；pustule 培養一致沒有細菌生長；先前或同時的感染是否為誘發因素，雖屢被討論，仍屬推測（speculative）。<span class="ex-ref">p.617</span></li>
 <li>免疫機轉被認為與致病有關：在一部分臨床上類似 SPD 的病人可偵測到 <strong>intraepidermal IgA deposits</strong>，其中一些人血中也有針對表皮同樣位置的 circulating IgA antibodies。<span class="ex-ref">p.617</span></li>
 <li><mark data-q="106-28">這類病例被描述的 autoantigen 是 <strong>desmocollin 1</strong>，另有單一病例同時有 desmocollins 2 與 3</mark>，疾病被分類為 pemphigus variant（SPD-type IgA pemphigus，見 Chap. 57）。<span class="ex-ref">p.617</span></li>
-<li>McKee：很多病例以 DIF 找到 intercellular IgA，許多病人有 circulating IgA pemphigus antibody，這些病例在文獻中記為 IgA pemphigus。<span class="ex-ref ex-ref-mckee">McKee p.238</span></li>
+<li>McKee：相當多（a significant number of）病例以 DIF 找到 intercellular IgA，許多病人有 circulating IgA pemphigus antibody，這些病例在文獻中記為 IgA pemphigus。<span class="ex-ref ex-ref-mckee">McKee p.238</span></li>
 </ul>
 <p class="ex-cite">ch38 內文提到的 autoantigen 只有 desmocollin（Dsc）1／2／3；ch57 p.981 寫 IgA PF 與 IgA PV 的 IgA autoantibodies 分別針對 desmoglein（Dsg）1 與 Dsg3。</p>
 <aside class="ex-trap"><strong>易錯</strong>SPD-type IgA pemphigus 的 autoantigen 在 ch38 寫的是 desmocollin 1（p.617、p.618–619 的 DIF 段亦寫 desmocollin 1）；ch57 則寫 IgA PF 與 IgA PV 的 IgA autoantibodies 分別針對 Dsg1 與 Dsg3（p.981，ch57）。</aside>
@@ -51,7 +51,7 @@
 </table>
 <p class="ex-cite">p.617。</p>
 <ul>
-<li>這些相關疾病的共存是否反映共同致病機轉仍待釐清；<mark data-q="113-26">另一個把它們連在一起的共通點是都對 sulfone 與 sulfonamide 治療有反應</mark>。<span class="ex-ref">p.617</span></li>
+<li>SPD 偶爾（occasional）與某些其他疾病合併，可能不只是巧合（may represent more than a mere coincidence）；這些相關疾病的共存是否反映共同致病機轉仍待釐清；<mark data-q="113-26">另一個把它們連在一起的共通點是都對 sulfone 與 sulfonamide 治療有反應</mark>。<span class="ex-ref">p.617</span></li>
 <li>McKee：可合併 benign 或 malignant IgA paraproteinemia（<strong class="ex-n">up to 40%</strong> of cases）或 multiple myeloma，有時合併 pyoderma gangrenosum；其他報告的相關疾病還有 rheumatoid arthritis、SLE、hyperthyroidism、Crohn disease、multiple sclerosis、IgG cryoglobulinemia、bullous pemphigoid、morphea、diffuse scleroderma、Sjögren syndrome、marginal zone lymphoma、CLL、squamous carcinoma of the bronchus、metastatic gastrinoma，但這些是否有重要意義 McKee 認為 doubtful。<span class="ex-ref ex-ref-mckee">McKee p.238</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫最常見的是 IgA monoclonal gammopathy（At-a-glance，p.617）；IgG paraproteinemia 列在 further associations reported to date（p.617）。McKee 記載的是 IgA paraproteinemia（up to 40%）或 multiple myeloma（McKee p.238）。</aside>
@@ -63,14 +63,14 @@
 <ul>
 <li><mark data-q="106-28,108-36">原發病灶是小而分散的 <strong>flaccid pustules</strong>，或很快變成膿疱的 vesicles</mark>，通常在數小時內成群（crops）出現在臨床正常或輕微紅斑的皮膚上。<span class="ex-ref">p.617</span></li>
 <li>在 dependent regions，膿液特徵性地積在膿疱下半部（Fig. 38-1B 的 hypopyon formation；McKee 稱 fluid levels sometimes evident）。<span class="ex-ref">p.617</span><span class="ex-ref ex-ref-mckee">McKee p.238</span></li>
-<li><mark data-q="106-28,108-36">膿疱有融合傾向，常（但不一定）形成 <strong>annular、circinate 或 bizarre serpiginous</strong> patterns</mark>。<span class="ex-ref">p.617</span></li>
+<li><mark data-q="106-28,108-36">膿疱通常（usually）有融合傾向，常（但不一定）形成 <strong>annular、circinate 或 bizarre serpiginous</strong> patterns</mark>。<span class="ex-ref">p.617</span></li>
 <li>數天後膿疱破裂乾涸，形成薄而表淺的鱗屑與結痂，外觀很像 impetigo；邊緣向外擴展、中央癒合，留下 polycyclic erythematous areas，新膿疱在其中出現而舊的消失。<span class="ex-ref">p.617–618</span></li>
-<li>不留 atrophy 或 scarring；偶有 brownish hyperpigmentation 標示舊病灶處。靜止期可由數天到數週，之後可能突然出現新病灶。<span class="ex-ref">p.618</span></li>
+<li>不留 atrophy 或 scarring，但偶有 brownish hyperpigmentation 可能（may）標示舊病灶處。靜止期長短不一（variable），數天到數週，之後可能突然出現新病灶。<span class="ex-ref">p.618</span></li>
 </ul>
 <h3>Distribution（分布）</h3>
 <ul>
 <li><mark data-q="106-28,107-12,108-36">皮疹傾向對稱，主要在 axillae、groin、abdomen、submammary areas 與四肢的 <strong>flexor aspects</strong></mark>。<span class="ex-ref">p.618</span></li>
-<li><mark data-q="107-12,108-36">Face、palms、soles 只在 rare cases 受侵犯</mark>。<span class="ex-ref">p.618</span></li>
+<li><mark data-q="107-12,108-36">Face、palms、soles 在 rare cases 可能（may）受侵犯</mark>。<span class="ex-ref">p.618</span></li>
 <li><mark data-q="102-07,106-28,107-12,113-26">Scalp 與 mucous membranes invariably remain free of lesions</mark>。<span class="ex-ref">p.618</span></li>
 <li>McKee：mucous membranes、face、scalp 與 peripheries 典型不受侵犯；癒合快（usually within a few days or weeks），PIH 常見。<span class="ex-ref ex-ref-mckee">McKee p.238</span></li>
 </ul>
@@ -78,7 +78,7 @@
 <ul>
 <li>少數病人有 episodic itching 與 burning；<mark data-q="107-12">沒有 systemic symptoms，routine laboratory parameters 也沒有異常</mark>。<span class="ex-ref">p.618</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>分布寫的是 axillae、groin、abdomen、submammary areas 與四肢 flexor aspects（p.618）；face、palms、soles 是 rare cases（p.618）；scalp 與 mucous membranes invariably free（p.618）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>分布寫的是 axillae、groin、abdomen、submammary areas 與四肢 flexor aspects（p.618）；face、palms、soles 在 rare cases 可能受侵犯（p.618）；scalp 與 mucous membranes invariably free（p.618）。</aside>
 </section>
 
 <section class="ex-note" id="histo">
@@ -86,7 +86,7 @@
 <ul>
 <li><mark data-q="102-07,108-36">特徵（hallmark）是 <strong>strictly subcorneal pustule</strong>，內含大量 polymorphonuclear leukocytes</mark>，僅偶見 eosinophils。<span class="ex-ref">p.618</span></li>
 <li>Pustule 形成不涉及 acantholysis；但較舊的病灶可見少數 acantholytic cells（secondary acantholysis）。<span class="ex-ref">p.618</span></li>
-<li>膿疱下方的表皮變化很少：除了游走的白血球外，幾乎沒有 spongiosis 或 cytolytic damage 的證據。<span class="ex-ref">p.618</span></li>
+<li>膿疱下方的表皮變化很少：除了數量不一（variable number）的游走白血球外，幾乎沒有 spongiosis 或 cytolytic damage 的證據。<span class="ex-ref">p.618</span></li>
 <li>真皮有 perivascular infiltrate，主要為 neutrophils，少見 mononuclear cells 與 eosinophils。<span class="ex-ref">p.618</span></li>
 <li><strong>Direct immunofluorescence 通常陰性</strong>；若 DIF 見到 pemphigus-like intercellular pattern 的 IgA（不論是否有針對 desmocollin 1 的 circulating IgA antibodies），應診斷為 SPD-type IgA pemphigus。<span class="ex-ref">p.618–619</span></li>
 </ul>
@@ -118,7 +118,7 @@
 <ul>
 <li>AGEP 的用藥時間：ch45 寫 AGEP 是 acute febrile pustular eruption，發生於開始使用相關藥物後 <strong class="ex-n">24 to 48 hours</strong>。<span class="ex-ref">p.751（ch45）</span></li>
 <li>ch38 的 SPD 內文沒有討論藥物接觸史；SPD 本身「沒有 systemic symptoms、routine laboratory 無異常」見 Clinical findings。<span class="ex-ref">p.618</span></li>
-<li>McKee：SPD 的組織學無法可靠地與 bullous impetigo、staphylococcal scalded skin syndrome、pemphigus foliaceus、IgA pemphigus 區分；impetigo 是 young children 的疾病，Gram stain 常陰性，但培養應長出 staphylococci 或 streptococci；SSSS 主要見於 infants，罕見於成人。<span class="ex-ref ex-ref-mckee">McKee p.239</span></li>
+<li>McKee：SPD 的組織學無法可靠地與 bullous impetigo、staphylococcal scalded skin syndrome、pemphigus foliaceus、IgA pemphigus 區分；impetigo 是 young children 的疾病，Gram stain 常陰性，但培養應長出 staphylococci 或 streptococci；SSSS 主要見於 infants，但罕見情況下（rarely）可能發生於成人。<span class="ex-ref ex-ref-mckee">McKee p.239</span></li>
 <li>McKee 認為 SPD 與 pustular psoriasis 是兩個不同疾病：SPD 沒有家族史、其他部位沒有典型 psoriasiform lesions；絕大多數對 dapsone 有反應；pustule 深部的 spongiform change（psoriasis 典型）特徵性地不存在；psoriasis 不合併 monoclonal gammopathy 或 multiple myeloma。<span class="ex-ref ex-ref-mckee">McKee p.239</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫 generalized pustular psoriasis 有 systemic symptoms（fever、malaise、leukocytosis）與表皮內 spongiform pustules（p.619）；AGEP 是 widespread 且 acute febrile onset（p.619）；SPD 沒有 systemic symptoms（p.618）。</aside>
@@ -151,7 +151,7 @@
 </table>
 <p class="ex-cite">Table 38-2，p.619。</p>
 <ul>
-<li>內文另提 topical tacalcitol（1α-24R-dihydroxyvitamin D3）有個案報告。<span class="ex-ref">p.619</span></li>
+<li>內文另提 topical tacalcitol（1α-24R-dihydroxyvitamin D3）的反應有零星報告（anecdotally reported）。<span class="ex-ref">p.619</span></li>
 <li>Anti–TNF-α 在單一病例成功使用：infliximab 在 <strong class="ex-n">3</strong> 例 recalcitrant 病例誘導快速反應，其中 <strong class="ex-n">1</strong> 例在持續治療下仍復發；etanercept 在 <strong class="ex-n">2</strong> 位病人誘導幾乎完全且持續的緩解，分別持續 <strong class="ex-n">7</strong> 與 <strong class="ex-n">22</strong> 個月（原文 respectively：7 個月為 monotherapy，22 個月為與 acitretin 合併）。<span class="ex-ref">p.619</span></li>
 <li>1 例 IgA myeloma 相關的 SPD，以 melphalan 加 autologous stem cell transplantation 使兩種疾病都長期緩解。<span class="ex-ref">p.619</span></li>
 </ul>

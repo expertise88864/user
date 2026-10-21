@@ -2,7 +2,7 @@
 <h2>1. Definition &amp; Classification（定義與分類）</h2>
 <ul>
 <li>Inherited epidermolysis bullosa（EB）是一群共同特徵為<strong>輕微外傷即起水疱</strong>的疾病；水疱可為小 vesicles 或較大 bullae，嚴重型也會出現在黏膜。<span class="ex-ref">p.1011</span></li>
-<li>水疱的分布、深度、是否有皮膚外侵犯與嚴重度，隨 EB subtype 與其遺傳分子缺陷而異；較輕型壽命正常、少有內臟侵犯，最嚴重的隱性型則是 mutilating、multiorgan 疾病，影響生活品質與壽命。<span class="ex-ref">p.1011</span></li>
+<li>水疱的分布、深度、是否有皮膚外侵犯與嚴重度，隨 EB subtype 與其遺傳分子缺陷而異；較輕型壽命正常、很少或沒有內臟侵犯（little or no internal involvement），最嚴重的隱性型則是 mutilating、multiorgan 疾病，影響生活品質與壽命。<span class="ex-ref">p.1011</span></li>
 <li>傷口修復常異常：可演變成 chronic erosions、hypertrophic granulation tissue、scarring，甚至 invasive carcinoma。<span class="ex-ref">p.1011</span></li>
 <li>致病本質：EB 源自 basal keratinocytes 與下方真皮之間的附著缺陷，缺陷可在 keratinocyte 細胞內，也可在細胞外的 dermal-epidermal basement membrane zone（BMZ）。<span class="ex-ref">p.1011</span></li>
 <li>歷史：Hallopeau 首先區分 simplex（nonscarring）與 dystrophic（scarring）；Weber、Cockayne、Dowling 與 Meara、Koebner 各自描述了不同的 EB simplex 型；Herlitz 描述的 epidermolysis bullosa letalis 後來被歸入第三大類 junctional。<span class="ex-ref">p.1011</span></li>
@@ -20,7 +20,7 @@
 </table>
 <p class="ex-cite">Fig. 60-2（p.1014）以電顯圖示 EBS 為 intraepidermal separation、JEB 為 intralamina lucida separation、DEB 為 sublamina densa separation。EBS with muscular dystrophy 與 JEB with pyloric atresia 的分離層次相同，皆在 hemidesmosome 上方、BMZ 的細胞內部分，卻分屬兩類，書中指出這顯示現行分類的限制（p.1017–1018）。</p>
 <ul>
-<li>傳統的診斷「gold standard」是 electron microscopy；基底膜抗原的 indirect immunofluorescence immunomapping 也很有用。<span class="ex-ref">p.1013</span></li>
+<li>傳統的診斷「gold standard」是 electron microscopy；基底膜抗原的 indirect immunofluorescence immunomapping 在區分 EB subtypes 上也可相當有用（can also be quite useful）。<span class="ex-ref">p.1013</span></li>
 <li>可能時，應在臨床 subtype 之後加上蛋白或 DNA 層次的分子特徵，稱為 <strong>onion skin approach</strong>，以利診斷與日後分子治療。<span class="ex-ref">p.1013</span></li>
 </ul>
 <h3>McKee 補充（分類）</h3>
@@ -29,7 +29,7 @@
 <li>超微構造異常：EB simplex 為 keratin filament disruption、junctional EB 為 poorly formed hemidesmosomes、dystrophic EB 為 rudimentary anchoring fibrils。<span class="ex-ref ex-ref-mckee">McKee p.121</span></li>
 <li>2014 年國際共識建議放棄多數歷史 eponyms，採用 onion skin approach；已在 <strong class="ex-n">18</strong> 個基因找到 EB 的致病突變（McKee Table 4.5）。<span class="ex-ref ex-ref-mckee">McKee p.121</span></li>
 <li>McKee 指出 Herlitz、non-Herlitz、generalized atrophic benign 等名稱在更新分類中已不再使用，也不宜再用 “lethal” 當診斷標籤；Fitzpatrick 本章仍使用這些名稱。<span class="ex-ref ex-ref-mckee">McKee p.125</span></li>
-<li>全球約 <strong class="ex-n">500 000</strong> 人有 EB（所有 EB 都罕見）。<span class="ex-ref ex-ref-mckee">McKee p.119</span></li>
+<li>估計（it is estimated）全球約 <strong class="ex-n">500 000</strong> 人有 EB（所有 EB 都罕見）。<span class="ex-ref ex-ref-mckee">McKee p.119</span></li>
 </ul>
 </section>
 
@@ -93,18 +93,18 @@
 <h3>Collagen VII（anchoring fibril）</h3>
 <ul>
 <li>Collagen VII 有長的 central collagenous region（重複的 Gly-X-Y）與多個非膠原中斷，中心有 <strong class="ex-n">39</strong>–amino acid 的 noncollagenous segment 對應「hinge region」；這些中斷讓分子有彈性，能繞圈並困住真皮基質分子，穩定 BMZ 與 papillary dermis。<span class="ex-ref">p.1013</span></li>
-<li><strong class="ex-n">145-kD</strong> N-terminal 端含最大的 noncollagenous domain（NC1），插入 lamina densa 與 anchoring plaques；collagen IV 結合 NC1；laminin-332 與 collagen VII NC1 有直接交互作用，collagen VII 結合 laminin-332 的 β3 chain，這被認為是維持 dermal-epidermal cohesion 的關鍵。<span class="ex-ref">p.1013</span></li>
+<li><strong class="ex-n">145-kD</strong> N-terminal 端含最大的 noncollagenous domain（NC1），插入 lamina densa 與 anchoring plaques；collagen IV 結合 NC1；laminin-332 與 collagen VII NC1 有直接交互作用，collagen VII 結合 laminin-332 的 β3 chain，這似乎（appears to be）是維持 dermal-epidermal cohesion 的關鍵因素。<span class="ex-ref">p.1013</span></li>
 <li>只鑑定出 α1 一種 chain，一個基因編碼整個分子，所以 collagen VII 是 homotrimer；triple helices 在處理過的 NC-2 domains 處接成 antiparallel dimers，anchoring fibrils 可能來自這些 dimers 的側向結合；NC-2 的處理與 laminin-332 同屬 C-proteinases（BMP-1 及／或 mammalian tolloid）。<span class="ex-ref">p.1013</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Anchoring filaments（含 laminin-332、collagen XVII 等，位於 lamina lucida）與 anchoring fibrils（collagen VII，自 lamina densa 伸入 papillary dermis）是 BMZ 的不同構造。<span class="ex-ref">p.1012–1013</span></aside>
 <h3>McKee 補充（機轉）</h3>
 <ul>
 <li>EB 的兩個關鍵 adhesion complexes 是 hemidesmosome 與 desmosome。<span class="ex-ref ex-ref-mckee">McKee p.130</span></li>
-<li>Keratin 5 與 14 是 basal keratinocytes 的主要 keratins；KRT5 或 KRT14 的 autosomal dominant 突變造成最常見的 EB 類型 localized EB simplex，全球約 <strong class="ex-n">400 000</strong> 人；blistering 通常出現在 basal keratinocyte layer 內，部分突變可見 keratin filament network 結構改變。<span class="ex-ref ex-ref-mckee">McKee p.130</span></li>
+<li>Keratin 5 與 14 是 basal keratinocytes 的主要 keratins；KRT5 或 KRT14 的 autosomal dominant 突變造成最常見的 EB 類型 localized EB simplex，全球約 <strong class="ex-n">400 000</strong> 人；blistering 通常出現在 basal keratinocyte layer 內，部分 KRT5 或 KRT14 突變可能（may）造成 keratin filament network 結構改變。<span class="ex-ref ex-ref-mckee">McKee p.130</span></li>
 <li>Plectin 也存在於 striated muscle 的 z-lines；PLEC 的 autosomal recessive 突變造成 EB simplex with muscular dystrophy，也可造成 skin blistering with pyloric atresia；autosomal dominant 的 plectin 突變可見於其他 localized EB simplex（至多 <strong class="ex-n">10%</strong> 的病例），包括 Ogna 型。<span class="ex-ref ex-ref-mckee">McKee p.132</span></li>
 <li>Type XVII collagen（180 kDa bullous pemphigoid antigen）：兩個 allele 都 loss-of-function 造成 generalized intermediate junctional EB；多數致病突變為 autosomal recessive。<span class="ex-ref ex-ref-mckee">McKee p.133</span></li>
 <li>Laminin-332 的 autosomal recessive 突變造成 generalized severe、generalized intermediate 或較局限的 junctional EB，cleavage 通過 lamina lucida；較輕型多半保有部分殘留功能的 laminin-332。<span class="ex-ref ex-ref-mckee">McKee p.133</span></li>
-<li>Type VII collagen：COL7A1 突變造成顯性與隱性 dystrophic EB；兩個 allele 都 loss-of-function 者造成 generalized severe recessive DEB，anchoring fibrils 結構缺陷或完全缺如；多數 dominant DEB 為 type VII collagen triple helix 內的 heterozygous missense mutation。<span class="ex-ref ex-ref-mckee">McKee p.133</span></li>
+<li>Type VII collagen：COL7A1 突變造成顯性與隱性 dystrophic EB；通常（Typically）兩個 allele 都 loss-of-function 者造成 generalized severe recessive DEB，anchoring fibrils 結構缺陷或完全缺如；多數 dominant DEB 為 type VII collagen triple helix 內的 heterozygous missense mutation。<span class="ex-ref ex-ref-mckee">McKee p.133</span></li>
 </ul>
 </section>
 
@@ -114,9 +114,9 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Subtype</th><th scope="col">Clinical features（臨床表現）</th></tr></thead>
 <tbody>
-<tr><td>Generalized severe（Dowling-Meara，herpetiformis）</td><td>出生即發病、分布廣泛；<mark data-q="102-06">被視為 EBS 次型中最嚴重（regarded as the most severe of the EBS subtypes）</mark>。與 generalized intermediate 的差別是口腔黏膜較常受侵犯，偶有廣泛 erosions。嬰兒期可能有 milia，但這種傷後現象通常在之後的兒童期消退。常自發出現成群的 “herpetiform” 水疱（軀幹與近端肢體），癒合不留疤；但全身性水疱的病人常看不到此型態，所以沒有 herpetiform pattern 不能用來排除此型。常有指甲侵犯（脫落、再長出時 dystrophic）。熱會加重其他 EBS 次型的水疱，但在此型似乎沒有大影響。手掌足底 hyperkeratosis 自幼兒期開始，可進展為 confluent keratoderma，可相當疼痛，偶因影響行走而造成 flexural contractures。偶有食道侵犯（erosions 到 pyloric atresia）與上呼吸道（含喉黏膜）受累。<span class="ex-ref">p.1015–1016</span></td></tr>
+<tr><td>Generalized severe（Dowling-Meara，herpetiformis）</td><td>出生即發病、分布廣泛；<mark data-q="102-06">被視為 EBS 次型中最嚴重（regarded as the most severe of the EBS subtypes）</mark>。與 generalized intermediate 的差別是口腔黏膜較常受侵犯，偶有廣泛 erosions。嬰兒期有時可能（may sometimes）出現 milia，但這種傷後現象通常在之後的兒童期消退。常可（can often）伴自發出現的成群 “herpetiform” 水疱（軀幹與近端肢體），癒合不留疤；但全身性水疱的病人常看不到此型態，所以沒有 herpetiform pattern 不能用來排除此型。常有指甲侵犯（指甲可能脫落、可能再長出時 dystrophic）。熱會加重其他 EBS 次型的水疱，但在此型似乎沒有大影響。手掌足底 hyperkeratosis 常（often）自幼兒期開始出現，可進展為 confluent keratoderma，可相當疼痛，偶因影響行走而造成 flexural contractures。偶有食道侵犯（erosions 到 pyloric atresia）的報告（has been reported）；上呼吸道（含喉黏膜）也可受累。<span class="ex-ref">p.1015–1016</span></td></tr>
 <tr><td>Generalized intermediate（Koebner）</td><td>出生或最晚在嬰兒早期開始全身性水疱；手、足與四肢通常最嚴重。常癒合後留下 postinflammatory hyper- 或 hypopigmentation；atrophy 與 milia 偶爾可見，但罕見且遠少於 generalized severe。可有 palmar-plantar hyperkeratosis 與 erosions；足底變厚常見但常到較大的兒童期才出現。口腔黏膜有時有輕微 erosions，通常隨年齡改善。通常沒有嚴重的生長遲滯。<span class="ex-ref">p.1016</span></td></tr>
-<tr><td>Localized（Weber-Cockayne）</td><td><mark data-q="102-06">這是 EB 的輕型，也是最常見的 EB 類型（the most common form of EB）</mark>；常在嬰兒或兒童期發病，偶在成年早期才出現（例如軍中行軍後出現水疱）。可能有許多未被診斷的病例。手掌足底 hyperhidrosis 常見；水疱偶爾會被續發感染；有 postinflammatory pigmentary abnormalities，但 milia 與疤痕通常（as a rule）不存在。水疱常在受創處，以手足最常見、頭皮最少見；輕微口腔 erosions 只是罕見，通常隨年齡消退；指甲侵犯罕見。<span class="ex-ref">p.1016</span></td></tr>
+<tr><td>Localized（Weber-Cockayne）</td><td><mark data-q="102-06">這是 EB 的輕型，也是最常見的 EB 類型（the most common form of EB）</mark>；常在嬰兒或兒童期發病，偶在成年早期才出現（例如軍中行軍後出現水疱）。推測（It is speculated）有一些未被診斷的病例，因為可能輕微到未被報告或在門診未被發現。手掌足底 hyperhidrosis 常見；水疱偶爾會被續發感染；有 postinflammatory pigmentary abnormalities，但 milia 與疤痕通常（as a rule）不存在。水疱通常（usually）出現在受創處，以手足最常見、頭皮最少見；輕微口腔 erosions 僅罕見（only rarely）出現，通常隨年齡消退；指甲侵犯罕見。<span class="ex-ref">p.1016</span></td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 60-3，p.1029：generalized severe 為出生發病，後遺症含 milia、contractures、esophageal erosions、pyloric atresia；generalized intermediate 為出生發病，後遺症為 postinflammatory hyper-／hypopigmentation 與 milia；localized 為嬰兒、兒童、偶在成年發病，後遺症為 no milia formation、no scarring sequelae。</p>
@@ -130,11 +130,11 @@
 <tr><td>EBS with mottled pigmentation</td><td>KRT5 / keratin 5</td><td>軀幹與近端肢體 mottled hyperpigmentation；出生或嬰兒早期起全身性水疱；色素變化與水疱可能隨年齡改善；嬰兒期可能有輕微口腔黏膜侵犯。與三種 EB 都可見的大型 melanocytic nevi 不同。<span class="ex-ref">p.1017</span></td></tr>
 <tr><td>EBS superficialis</td><td>Unknown</td><td>水疱由 subcorneal separation 產生；通常見到 erosions 與 crusts 而非完整 bullae，癒合後有 postinflammatory pigmentary changes；儘管分離面表淺，仍觀察到指甲侵犯、atrophic scarring 與 milia。<span class="ex-ref">p.1017</span></td></tr>
 <tr><td>Acantholytic EBS</td><td><mark data-q="113-38,114-22">DSP, JUP / desmoplakin, plakoglobin</mark></td><td>罕見、recessively inherited 且 lethal，出生即有全身性 erosions；因分離面非常表淺（形容為 sheetlike），通常看不到水疱；指甲 dystrophic；alopecia、neonatal teeth、口腔 erosions 與呼吸道侵犯可與其他表淺型 EBS 區分。<span class="ex-ref">p.1017</span></td></tr>
-<tr><td>Plakophilin deficiency（ectodermal dysplasia skin fragility syndrome）</td><td><mark data-q="114-22">PKP1 / plakophilin 1</mark></td><td>suprabasilar epidermal separation 的遺傳病；出生即有全身性 erosions，有時有表淺水疱；alopecia 非常常見，palmoplantar keratoderma、painful fissures、nail dystrophy 也常見；可能有 failure to thrive、cheilitis、hypohidrosis、pruritus。<span class="ex-ref">p.1017</span></td></tr>
+<tr><td>Plakophilin deficiency（ectodermal dysplasia skin fragility syndrome）</td><td><mark data-q="114-22">PKP1 / plakophilin 1</mark></td><td>suprabasilar epidermal separation 的遺傳病；出生即有全身性 erosions，有時有表淺水疱；alopecia 非常常見，palmoplantar keratoderma、painful fissures、nail dystrophy 也常見；有時可能（may sometimes）有 failure to thrive、cheilitis、hypohidrosis、pruritus。<span class="ex-ref">p.1017</span></td></tr>
 <tr><td>Plakoglobin deficiency</td><td>JUP / plakoglobin</td><td>本章僅列於 Table 60-1。<span class="ex-ref">p.1015</span></td></tr>
-<tr><td>BP230 deficiency</td><td>DST-e / BP230（BPAG1）</td><td>極罕見，曾見於少數科威特與伊朗家族；通常出生發病，局限性（常在足部），沒有明顯黏膜或其他皮膚外侵犯；可有 postinflammatory pigment change 但無疤痕；遺傳似為 autosomal recessive，部分 heterozygous carriers 在第一、二個十年有自限的輕微水疱。<span class="ex-ref">p.1017</span></td></tr>
+<tr><td>BP230 deficiency</td><td>DST-e / BP230（BPAG1）</td><td>極罕見，曾見於少數科威特與伊朗家族；通常出生發病，局限性（常在足部），沒有明顯黏膜或其他皮膚外侵犯；可有 postinflammatory pigment change 但無疤痕；遺傳似為 autosomal recessive，部分 heterozygous carriers 也曾自述（have also reported）在第一、二個十年有自限的輕微水疱。<span class="ex-ref">p.1017</span></td></tr>
 <tr><td>Exophilin-5 deficiency</td><td>EXPH5 / exophilin 5</td><td>極罕見的 autosomal recessive 變異；水疱位置在表皮高處，造成受創後結痂或脆弱的水疱與 vesicles；整體輕微、無皮膚外侵犯，兒童期緩解或改善是其特徵。<span class="ex-ref">p.1017</span></td></tr>
-<tr><td>Acral peeling skin syndrome</td><td>TGM5 / transglutaminase 5</td><td>表淺、無痛的皮膚剝落，最常見於手足；濕度、熱與接觸水會加重；組織學分離層次在 stratum granulosum 與 stratum corneum 之間。<span class="ex-ref">p.1017</span></td></tr>
+<tr><td>Acral peeling skin syndrome</td><td>TGM5 / transglutaminase 5</td><td>表淺、無痛的皮膚剝落，最常見於手足；濕度、熱與接觸水可（can）加重；組織學分離層次在 stratum granulosum 與 stratum corneum 之間。<span class="ex-ref">p.1017</span></td></tr>
 </tbody>
 </table>
 <h3>Molecular pathology of EBS（分子病理）</h3>
@@ -145,19 +145,19 @@
 <li>Keratin 5 amino terminus 特定區域的突變見於 EBS with mottled pigmentation；有人提出 keratin 5 globular head domain 負責 keratin filament 插入 melanosomes。部分 keratin 5 突變產生的蛋白在升高溫度下不穩定，可能解釋某些 EBS 次型在溫暖時惡化。<span class="ex-ref">p.1017</span></li>
 <li>EBS with muscular dystrophy 的突變產生 premature termination codons、splice-site 或其他突變，使 plectin 不表現或表現缺陷。雖然分類為 simplex，但其皮膚分離層次與 JEB with pyloric atresia 相同，位於 hemidesmosome 上方、BMZ 的細胞內部分。Plectin 缺陷與 α6β4 integrin 缺陷一樣，也可伴 pyloric atresia。<span class="ex-ref">p.1017–1018</span></li>
 <li><mark data-q="110-46">Plectin 正常表現於包括肌肉在內的廣泛組織</mark>；plectin 缺乏病人造成肌肉病變的機轉不明，但觀察到沒有 plectin 時 muscle sarcomeres 排列紊亂；plectin 的 spectrin-like domain 可能與肌肉中的 actin filaments 作用，缺少它可能是關鍵。<span class="ex-ref">p.1018</span></li>
-<li>Ectodermal dysplasia skin fragility syndrome 的分子缺陷是 desmosomal protein <mark data-q="114-22">plakophilin 1</mark> 的 loss of function（PKP1 突變）；plakophilin 主要表現於 suprabasilar keratinocytes 與 outer root sheath cells，顯微鏡下可見 intraepidermal acantholysis。<span class="ex-ref">p.1018</span></li>
-<li>BP230（DST-e）缺乏：免疫螢光下 BP230 表現下降或缺如，TEM 見 inner hemidesmosomal plate 消失；與 homozygous premature termination codon 突變及 coiled-coil domain 區域的點突變有關。EXPH5 缺乏：皮膚免疫螢光可完全缺乏該蛋白，電顯可見基底 keratinocyte 核周囊泡異常聚集。TGM5 突變與 acral peeling skin syndrome 有關。<span class="ex-ref">p.1018</span></li>
+<li>Ectodermal dysplasia skin fragility syndrome 的分子缺陷是 desmosomal protein <mark data-q="114-22">plakophilin 1</mark> 的 loss of function（PKP1 突變）；plakophilin 主要表現於 suprabasilar keratinocytes 與 outer root sheath cells，顯微鏡下通常（usually）可見 intraepidermal acantholysis。<span class="ex-ref">p.1018</span></li>
+<li>BP230（DST-e）缺乏：免疫螢光下 BP230 表現下降或缺如，TEM 見 inner hemidesmosomal plate 消失；與 homozygous premature termination codon 突變及 coiled-coil domain 區域的點突變有關。EXPH5 缺乏：皮膚免疫螢光可完全缺乏該蛋白，電顯可能（may）見基底 keratinocyte 核周囊泡異常聚集。TGM5 突變與 acral peeling skin syndrome 有關。<span class="ex-ref">p.1018</span></li>
 </ul>
 <h3>McKee 補充（EBS 臨床與病理）</h3>
 <ul>
-<li>Localized EBS 是最常見的 EB，autosomal dominant，主要侵犯手掌與足底，溫暖天氣惡化；足部 hyperhidrosis 常見，會增加摩擦而加重水疱；水疱通常癒合不留疤或 milia；calluses 很常見（尤其成人）；口腔水疱見於少於 <strong class="ex-n">25%</strong> 的病例；毛髮與牙齒正常。<span class="ex-ref ex-ref-mckee">McKee p.122</span></li>
-<li>Generalized severe EBS（舊稱 Dowling-Meara）為 autosomal dominant；水疱成群（舊稱 EB herpetiformis）；特徵是軀幹、四肢與頸部自發的 herpetiform、annular 或 arcuate 水疱；掌蹠常有 irregular hyperkeratosis 或 keratoderma；整體狀況通常隨年齡改善。<span class="ex-ref ex-ref-mckee">McKee p.123</span></li>
+<li>Localized EBS 是最常見的 EB，autosomal dominant，主要侵犯手掌與足底，通常（typically）在溫暖天氣較嚴重；足部 hyperhidrosis 常見，會增加摩擦而加重水疱；水疱通常癒合不留疤或 milia；calluses 很常見（尤其成人）；口腔水疱見於少於 <strong class="ex-n">25%</strong> 的病例；毛髮與牙齒正常。<span class="ex-ref ex-ref-mckee">McKee p.122</span></li>
+<li>Generalized severe EBS（舊稱 Dowling-Meara）為 autosomal dominant；水疱傾向（tend to）成群（舊稱 EB herpetiformis）；特徵是軀幹、四肢與頸部自發的 herpetiform、annular 或 arcuate 水疱；掌蹠常有 irregular hyperkeratosis 或 keratoderma；整體狀況傾向（tends to）隨年齡改善。<span class="ex-ref ex-ref-mckee">McKee p.123</span></li>
 <li>Generalized intermediate EBS（舊稱 Koebner）多數為 autosomal dominant；水疱一歲內出現，嬰兒期常在枕部、背部與腿，兒童期手足常受累，但不像 localized EBS 那樣偏好掌蹠；與其他 EBS 一樣溫暖天氣惡化。<span class="ex-ref ex-ref-mckee">McKee p.123–124</span></li>
 <li>Acral peeling skin syndrome 是 autosomal recessive，水疱層次高於 granular layer；因肢端 stratum corneum 較厚，臨床上可能與穿透基底層的水疱幾乎相同，是 localized autosomal dominant EBS 的鑑別診斷。<span class="ex-ref ex-ref-mckee">McKee p.123</span> <span class="ex-ref ex-ref-mckee">McKee p.132</span></li>
 <li>Plakophilin-1 缺乏：水疱與 erosions 來自 desmosomal inner plaque 內的 keratinocyte adhesion 喪失（不是真正的 acantholysis）；沒有心臟侵犯，因為 plakophilin-1 不表現於心臟。<span class="ex-ref ex-ref-mckee">McKee p.124</span> <span class="ex-ref ex-ref-mckee">McKee p.130</span></li>
-<li>Desmoplakin 缺乏（舊稱 lethal acantholytic EB）：表皮各層都有 acantholysis，超微構造的分離通過 desmosome 的 inner plaque；因大量皮膚喪失與可能的心臟等器官侵犯而早死。Plakoglobin 缺乏的 autosomal recessive 突變也造成嚴重的 acantholytic EBS，並見於 Naxos disease（woolly hair、palmoplantar keratoderma、cardiomyopathy）。<span class="ex-ref ex-ref-mckee">McKee p.132</span></li>
+<li>Desmoplakin 缺乏（舊稱 lethal acantholytic EB）：表皮各層都有 acantholysis，超微構造的分離通過 desmosome 的 inner plaque；因大量皮膚喪失與可能的心臟等器官侵犯而早死。Plakoglobin 的 autosomal recessive 突變也可（can）造成 acantholytic EBS（預後差），也曾報告於 Naxos disease 病人（woolly hair、palmoplantar keratoderma、cardiomyopathy）。<span class="ex-ref ex-ref-mckee">McKee p.132</span></li>
 <li>EBS with muscular dystrophy：皮膚與口腔黏膜水疱在出生或不久後出現；肌無力與萎縮可嚴重且在幼兒期明顯，也可較輕、晚年才發現；supraglottic scarring 與 hoarseness 可能需要 tracheostomy；autosomal recessive，由 plectin 突變造成。<span class="ex-ref ex-ref-mckee">McKee p.124</span></li>
-<li>EBS with pyloric atresia：McKee 描述它可能與 junctional EB with pyloric atresia 一樣嚴重，臨床上無法區分，為 plectin 突變。<span class="ex-ref ex-ref-mckee">McKee p.124</span></li>
+<li>EBS with pyloric atresia：McKee 指出目前僅少數病例報告，它似乎（appears to be）與 junctional EB with pyloric atresia 一樣嚴重且臨床上無法區分，為 plectin 突變。<span class="ex-ref ex-ref-mckee">McKee p.124</span></li>
 </ul>
 </section>
 
@@ -171,10 +171,10 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Subtype</th><th scope="col">Clinical features（臨床表現）</th></tr></thead>
 <tbody>
-<tr><td>Generalized severe JEB（Herlitz）</td><td>嬰兒期或幼兒期致死；出生即有全身性且常廣泛的水疱；嬰兒後期出現特徵性 <strong>periorificial granulation tissue</strong>（嘴、眼、鼻孔周圍最常見，也可在頭皮、耳周）；指甲通常嚴重受累、嬰兒期常脫落；牙齒有 enamel pitting；口咽黏膜 erosions 常見且可廣泛，所有 stratified squamous epithelial tissues（鼻、結膜、食道、氣管、喉、直腸、尿道黏膜）都可受侵。大呼吸道（tracheolaryngeal stenosis 或 obstruction）侵犯常見，嬰兒早期的 hoarseness 是不祥徵兆（ominous sign）；特徵性 failure to thrive 與生長遲滯，常合併 mixed anemia；sepsis 常見且常致命。<span class="ex-ref">p.1018</span></td></tr>
-<tr><td>Generalized intermediate JEB</td><td>起初可呈現 generalized severe 表型但撐過嬰兒期者；水疱與口腔 erosions 較致命型輕；<strong>缺乏明顯 hoarseness 是預後良好的徵象</strong>，代表內臟侵犯較輕。頭皮與指甲病灶及 periorificial nonhealing erosions 是童年期最常見的表現之一。雖非致命，仍可有嚴重的上皮附著異常，tracheostomy 或 gastrostomy tube 可幫助存活。過去稱為 nonlethal JEB 或 JEB mitis，比 severe generalized JEB 少見。<span class="ex-ref">p.1018–1019</span></td></tr>
+<tr><td>Generalized severe JEB（Herlitz）</td><td>是最嚴重的 EB 次型之一（one of the most severe EB subtypes），嬰兒期或幼兒期致死；出生即有全身性且常廣泛的水疱；嬰兒後期出現特徵性 <strong>periorificial granulation tissue</strong>（嘴、眼、鼻孔周圍最常見，也可在頭皮、耳周）；指甲通常嚴重受累、嬰兒期常脫落；牙齒有 enamel pitting；口咽黏膜 erosions 通常存在（usually present）且可能廣泛，所有 stratified squamous epithelial tissues（鼻、結膜、食道、氣管、喉、直腸、尿道黏膜）都可受侵。大呼吸道（tracheolaryngeal stenosis 或 obstruction）侵犯常見，嬰兒早期的 hoarseness 是不祥徵兆（ominous sign）；特徵性 failure to thrive 與生長遲滯，常合併 mixed anemia；sepsis 常見且常致命。<span class="ex-ref">p.1018</span></td></tr>
+<tr><td>Generalized intermediate JEB</td><td>有時（Sometimes）起初呈現 generalized severe 表型的病人撐過嬰兒期；水疱與口腔 erosions 較致命型輕；<strong>缺乏明顯 hoarseness 被視為（is regarded as）預後良好的徵象</strong>，代表內臟侵犯較輕。頭皮與指甲病灶及 periorificial nonhealing erosions 是童年期最常見的表現之一。雖非致命，仍可有嚴重的上皮附著異常，tracheostomy 或 gastrostomy tube 可幫助存活。過去稱為 nonlethal JEB 或 JEB mitis，比 severe generalized JEB 少見得多（much less common）。<span class="ex-ref">p.1018–1019</span></td></tr>
 <tr><td>Generalized atrophic benign EB（GABEB，generalized intermediate JEB 的一個亞群）</td><td>出生即有全身性皮膚水疱，但口腔或其他黏膜 erosions 相對少；enamel pitting 造成廣泛齲齒，指甲 dystrophy 常嚴重；水疱癒合帶 atrophic scarring，但病人通常壽命正常；水疱隨年齡改善、生長正常、很少貧血；有些病人可正常懷孕與生產；特殊之處是頭皮與身體終毛的 progressive alopecia，青春期後開始變嚴重，常為 diffuse，疤痕輕微或沒有。<span class="ex-ref">p.1019</span></td></tr>
-<tr><td>Localized JEB（前稱 minimus JEB）</td><td>罕見；通常為輕度，局部可加重，最常見於手、足與 pretibial regions；指甲可脫落或 dystrophic，可有 enamel pitting，口腔或鼻部 erosions 可出現但無內臟侵犯；預後良好、壽命正常。<span class="ex-ref">p.1019</span></td></tr>
+<tr><td>Localized JEB（前稱 minimus JEB）</td><td>罕見；通常為輕度，局部可加重，最常見於手、足與 pretibial regions；指甲有時（sometimes）可脫落或 dystrophic，可有 enamel pitting，口腔或鼻部 erosions 可出現但無內臟侵犯；通常（generally）預後良好、壽命正常。<span class="ex-ref">p.1019</span></td></tr>
 <tr><td>JEB with pyloric atresia</td><td>極端的黏膜與皮膚脆弱，可有 hydronephrosis 與 nephritis 等泌尿系統異常；β4 與 α6 integrin 基因突變相關，且有 pyloric atresia（比 pyloric stenosis 罕見）；hemidesmosomes 通常缺如或殘留，分離層次為 hemidesmosome 層次的 low intrabasal epidermal。多數病例相當嚴重，嬰兒期因廣泛皮膚外上皮脫落與全身水疱而致命；罕見的非致命型似來自 β4 integrin 部分功能喪失。<span class="ex-ref">p.1019</span></td></tr>
 <tr><td>JEB with respiratory and renal involvement</td><td>皮膚水疱早年開始但通常輕微甚至沒有，可伴 diffuse alopecia 與 nail dystrophy；皮膚外侵犯出生即有且很嚴重：interstitial lung disease（呼吸窘迫、肺感染）；腎臟有 renal failure、nephrotic syndrome、renal hypoplasia、hydronephrosis；病人在嬰兒期死於呼吸或腎臟併發症。<span class="ex-ref">p.1019</span></td></tr>
 <tr><td>Laryngo-onycho-cutaneous syndrome</td><td>罕見 autosomal recessive；指甲 dystrophy、皮膚 erosions，以及廣泛 granulation tissue（尤其在 conjunctiva 與 larynx）；皮膚病灶在反覆受創或受壓處（肘、膝、手指、腳趾）。<span class="ex-ref">p.1020</span></td></tr>
@@ -198,9 +198,9 @@
 <h3>McKee 補充（JEB）</h3>
 <ul>
 <li>幾乎所有 junctional EB 都是 autosomal recessive，水疱在 lamina lucida 層次；傳統分 generalized 與 localized 兩大類。<span class="ex-ref ex-ref-mckee">McKee p.125</span></li>
-<li>Generalized severe JEB：最嚴重；移動嬰兒就可能造成廣泛水疱；指甲床侵犯很常見；糜爛區癒合慢，可能留 atrophic scarring；milia 通常看不到；喉或聲門上侵犯造成 hoarseness 與 stridor，可能有危及生命的 stenosis；許多嬰兒死於嚴重感染或 failure to thrive；存活者出現不癒合、結痂且含 exuberant granulation tissue 的糜爛。<span class="ex-ref ex-ref-mckee">McKee p.125</span></li>
-<li>Generalized intermediate JEB：病人通常活到成年；水疱嚴重度隨年齡減輕；牙齒有嚴重 enamel defects；atrophic scarring；頭皮、眉毛、睫毛 alopecia；常見大型 pigmented nevi；可見 revertant mosaicism（natural gene therapy，一個突變基因拷貝的自發校正）。<span class="ex-ref ex-ref-mckee">McKee p.125</span></li>
-<li>JEB with pyloric atresia：出生即有水疱，懷孕常併 polyhydramnios；牙齒 hypoplastic；餵食早期嘔吐；多數病例無法撐過嬰兒早期；存活者可有血尿、排尿困難與反覆泌尿道感染；pyloric canal 常完全阻塞，需手術矯正。<span class="ex-ref ex-ref-mckee">McKee p.125–126</span></li>
+<li>Generalized severe JEB：最嚴重；移動嬰兒就可能造成廣泛水疱；指甲床侵犯很常見；糜爛區常（often）癒合很慢，可能留 atrophic scarring；milia 通常看不到；口咽黏膜侵犯常見且可能嚴重；hoarseness 與 stridor 可能（may）代表喉或聲門上侵犯，尤其可能危及生命的 stenosis；許多嬰兒死於嚴重感染或 failure to thrive；撐過頭幾個月者常（often）出現不癒合、結痂且含 exuberant granulation tissue 的糜爛。<span class="ex-ref ex-ref-mckee">McKee p.125</span></li>
+<li>Generalized intermediate JEB：病人通常活到成年；水疱嚴重度隨年齡減輕；牙齒有嚴重 enamel defects；atrophic scarring；頭皮、眉毛、睫毛 alopecia；大型 pigmented nevi 是典型（typical）表現；常可見小片不起水疱的皮膚，即 revertant mosaicism（natural gene therapy，一個突變基因拷貝的自發校正）。<span class="ex-ref ex-ref-mckee">McKee p.125</span></li>
+<li>JEB with pyloric atresia：通常（usually）出生即有水疱，之前的懷孕併 polyhydramnios；牙齒 hypoplastic；餵食早期嘔吐；多數病例無法撐過嬰兒早期；存活者可有血尿、排尿困難與反覆泌尿道感染；pyloric canal 常完全阻塞，需手術矯正。<span class="ex-ref ex-ref-mckee">McKee p.125–126</span></li>
 <li>JEB with respiratory and renal involvement 為 α3 integrin 的 autosomal recessive 突變，表現為 congenital nephrotic syndrome、interstitial lung disease 與皮膚脆弱，口腔黏膜不受侵犯，預後差。<span class="ex-ref ex-ref-mckee">McKee p.126</span></li>
 <li>Laryngo-onycho-cutaneous syndrome：嬰兒期開始臉部（鼻口周圍）慢性 erosions，hoarseness 是普遍特徵，明顯 granulation tissue 可致喉阻塞與失明；為 laminin α3 的特定 splice variant（LAMA3A）的 autosomal recessive 突變。<span class="ex-ref ex-ref-mckee">McKee p.126</span> <span class="ex-ref ex-ref-mckee">McKee p.133</span></li>
 </ul>
@@ -216,8 +216,8 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Subtype</th><th scope="col">Clinical features（臨床表現）</th></tr></thead>
 <tbody>
-<tr><td>Localized DDEB（Cockayne-Touraine）</td><td>可出生即有，偶到兒童期才被注意；早期可全身性水疱，之後通常局限於反覆受創處（膝、sacrum、肢端），呈特徵性疤痕與 dystrophic 外觀，疤痕常為 hypertrophic；milia 常見；指甲 dystrophy 與指甲脫落、遠端指節 atrophic scarring 常見，偶爾指甲異常是 DDEB 唯一的表現；口腔病灶不常見，牙齒通常不受影響；預後良好、壽命正常。<span class="ex-ref">p.1021</span></td></tr>
-<tr><td>Generalized DDEB（Pasini）</td><td>出生即有，水疱比 localized 型更嚴重而廣泛；癒合留下 scarring plaques 與 milia；有時自發出現軀幹上疤痕樣、膚色的 albopapuloid 丘疹，但這些病灶並非 pathognomonic，也見於其他 EB 次型；年長後全身性水疱可能局限於四肢；指甲常 dystrophic 或缺如；口腔 erosions 常見但通常不廣泛，部分病人有 enamel defects。<span class="ex-ref">p.1021</span></td></tr>
+<tr><td>Localized DDEB（Cockayne-Touraine）</td><td>可出生即有，偶到兒童期才被注意；有時（sometimes）可有全身性水疱，尤其早年，但水疱通常局限於反覆受創處（膝、sacrum、肢端），呈特徵性疤痕與 dystrophic 外觀，疤痕常為 hypertrophic；milia 常見；指甲 dystrophy 與指甲脫落、遠端指節 atrophic scarring 常見，偶爾指甲異常是 DDEB 唯一的表現；口腔病灶不常見，牙齒通常不受影響；預後良好、壽命正常。<span class="ex-ref">p.1021</span></td></tr>
+<tr><td>Generalized DDEB（Pasini）</td><td>出生即有，水疱通常（generally）比 localized 型更嚴重而廣泛；癒合留下 scarring plaques 與 milia；有時自發出現軀幹上疤痕樣、膚色的 albopapuloid 丘疹，但這些病灶並非 pathognomonic，也見於其他 EB 次型；年長後全身性水疱可能局限於四肢；指甲常 dystrophic 或缺如；口腔 erosions 常見但通常不廣泛，部分病人有 enamel defects。<span class="ex-ref">p.1021</span></td></tr>
 <tr><td>Bullous dermolysis of the newborn</td><td>罕見的自行緩解型 generalized DDEB：全身性水疱在嬰兒期後逐漸消退；皮膚切片的免疫螢光常見基底表皮細胞質內 collagen VII 堆積。<span class="ex-ref">p.1021</span></td></tr>
 <tr><td>Localized RDEB（前稱 RDEB mitis）</td><td>RDEB 嚴重度變異大，severe 次型最常見（the severe subtype is the most common）；localized 型偶見，類似 localized DDEB，通常局限於反覆受創的皮膚（常在肢端）；水疱癒合伴 scarring 與 milium formation；若有黏膜侵犯則輕微。<span class="ex-ref">p.1021–1022</span></td></tr>
 <tr><td>Severe RDEB（Hallopeau-Siemens）</td><td>出生即有全身性水疱；偶有整區皮膚大片剝落（常在一側肢體），這種先天性皮膚缺損有時稱為 Bart syndrome。嬰兒期反覆癒合與起水疱導致進行性且可相當廣泛的疤痕；<strong>pseudosyndactyly</strong>（手指被一層皮膚封閉成 “mitten”）極常見；疤痕可造成手與肢體的 flexion contracture。與 severe JEB 不同，這些病人沒有明顯 periorificial 侵犯；頭頸部最常受累的是頭皮。<span class="ex-ref">p.1022</span></td></tr>
@@ -225,8 +225,8 @@
 </table>
 <h3>Severe RDEB 的皮膚外侵犯與預後</h3>
 <ul>
-<li>口咽在 dominant 與 recessive DEB 都可嚴重受累：廣泛 erosions 演變成疤痕，限制舌頭活動並使口腔開口變窄；牙齒可有明顯 enamel pitting，齲齒廣泛可導致掉牙。<span class="ex-ref">p.1022–1023</span></li>
-<li>氣管或喉受累可使氣道變窄，可能需要 tracheostomy；食道 mucosal erosions 可導致 stricture 與 webbing。口腔病灶、齲齒、食道 stricture 與大面積傷口癒合的熱量需求增加，可使病人走向營養不良與生長遲滯；常有貧血，並可有鐵吸收缺乏。<span class="ex-ref">p.1023</span></li>
+<li>口咽在 dominant 與 recessive DEB 都可廣泛（extensively）受累：廣泛 erosions 演變成疤痕，限制舌頭活動並使口腔開口變窄；牙齒可有明顯 enamel pitting，齲齒廣泛可導致掉牙。<span class="ex-ref">p.1022–1023</span></li>
+<li>氣管或喉受累可使氣道變窄，可能需要 tracheostomy；食道 mucosal erosions 可導致 stricture 與 webbing。口腔病灶、齲齒、食道 stricture 與大面積傷口癒合的熱量需求增加，可使病人走向營養不良與生長遲滯；通常（usually）有貧血問題，並可能有鐵吸收缺乏。<span class="ex-ref">p.1023</span></li>
 <li>過去多數 severe RDEB 病人在嬰兒期死於 sepsis 與其他併發症；近年隨營養、感染與傷口支持改善，通常可活到青少年或成年。<span class="ex-ref">p.1023</span></li>
 <li>但<mark data-q="102-06,110-46">青春期後 SCC 可能且常常出現；估計 <strong class="ex-n">50% 到 80%</strong> 的 severe RDEB 病人最終發生 SCC，許多人死於轉移</mark>。RDEB 相關癌症與多數其他皮膚 SCC 不同，極具侵襲性，有強烈的侵犯與轉移傾向。<span class="ex-ref">p.1023</span></li>
 <li><mark data-q="102-06">Fig. 60-13（診斷流程）建議對青春期後 RDEB 病人的可疑或不癒合病灶做切片以排除 SCC</mark>。<span class="ex-ref">p.1022</span> 治療章節也指出 SCC 常在青春期後出現於 recessive DEB，可有多個原發部位，尤其在 nonhealing areas。<span class="ex-ref">p.1026</span></li>
@@ -236,16 +236,16 @@
 <ul>
 <li>DEB 病人都有 anchoring fibril 異常：從部分顯性病人的輕微變化，到嚴重隱性病人的 anchoring fibrils 缺如；blister cleavage 在 sublamina densa。免疫螢光顯示：顯性病人 DEJ 的 linear collagen VII 染色程度不一，嚴重隱性病人完全沒有。有些病人 collagen VII 在細胞質內滯留。<span class="ex-ref">p.1023</span></li>
 <li><mark data-q="105-49">到目前為止，所有 DEB 都與編碼 collagen VII 的基因（COL7A1）突變有關</mark>。<span class="ex-ref">p.1023</span></li>
-<li>隱性型的突變通常造成 premature termination codons，使組織缺乏 collagen VII（含 PTC 的 mRNA 與截短蛋白的轉換加速）；即使免疫螢光缺如，病人 keratinocytes 常仍有低量的突變 collagen VII 表現。RDEB 也已有 revertant mosaicism 的報告。<span class="ex-ref">p.1023</span></li>
-<li>不產生 premature termination codons 的 COL7A1 突變通常病情較輕：triple helical region 的 glycine substitution 干擾 triple helix 組裝，見於許多較輕的顯性病人；EB pruriginosa（DEB 的一個伴 pruritus 增加的次型）也被描述與 glycine 突變有關；其他突變造成 collagen VII 分泌受損與細胞內堆積；NC2 domain 區域突變會干擾 NC2 處理與 anchoring fibril 組裝。<span class="ex-ref">p.1024</span></li>
+<li>隱性型的突變通常造成 premature termination codons，使組織缺乏 collagen VII（含 PTC 的 mRNA 與截短蛋白的轉換加速）；即使免疫螢光缺如，分析病人 keratinocytes 在許多病例中（in many cases）仍可測得低量的突變 collagen VII 表現。RDEB 也已有 revertant mosaicism 的報告。<span class="ex-ref">p.1023</span></li>
+<li>不產生 premature termination codons 的 COL7A1 突變通常病情較輕：triple helical region 的 glycine substitution 干擾 triple helix 組裝，見於許多較輕的顯性病人；EB pruriginosa（DEB 的一個伴 pruritus 增加的次型）也被描述與 glycine 突變有關；其他突變造成 collagen VII 分泌受損與細胞內堆積；一項研究（In one study）顯示 NC2 domain 區域突變會干擾 NC2 處理與 anchoring fibril 組裝。<span class="ex-ref">p.1024</span></li>
 </ul>
 <h3>McKee 補充（DEB）</h3>
 <ul>
-<li>臨床特徵為皮膚脆弱、水疱、scarring、nail dystrophy 與 milia；黏膜侵犯常見，口、食道、生殖器與肛門可有 erosions 與疤痕；recessive 與 dominant 之間可有臨床重疊，使 genetic counseling 困難。最新分類不再含 eponymous subtypes。<span class="ex-ref ex-ref-mckee">McKee p.126</span></li>
+<li>臨床特徵為皮膚脆弱、水疱、scarring、nail dystrophy 與 milia；黏膜侵犯常見，口、食道、生殖器與肛門可有 erosions 與疤痕；部分 recessive 與 dominant 病例之間可能（may）有臨床重疊，可使 genetic counseling 困難。最新分類不再含 eponymous subtypes。<span class="ex-ref ex-ref-mckee">McKee p.126</span></li>
 <li>Dominant DEB：水疱主要在骨突處；最一致的是局部疤痕伴 milia 與 dystrophic nails；<strong>nail dystrophy 可能是最重要的診斷特徵，尤其在成人</strong>；Bart syndrome 一詞已被視為過時；albopapuloid lesions 曾被認為是 DDEB 某些次型的 pathognomonic 表現，現已知見於數種 DEB。<span class="ex-ref ex-ref-mckee">McKee p.126–127</span></li>
-<li>DEB pruriginosa 的主要特色是劇烈 pruritus，表現可像 hypertrophic lichen planus 或 nodular prurigo；DDEB nails only 的病人除指甲 dystrophy 外沒有其他臨床徵象，可能比目前認知的更常見。<span class="ex-ref ex-ref-mckee">McKee p.127</span></li>
+<li>DEB pruriginosa 的主要特色是劇烈 pruritus，表現可像 hypertrophic lichen planus 或 nodular prurigo；DDEB nails only：部分病人（some individuals）除指甲 dystrophy 外沒有其他臨床徵象，此型很可能（likely）比目前認知的常見得多。<span class="ex-ref ex-ref-mckee">McKee p.127</span></li>
 <li>Bullous dermolysis of the newborn：初始切片可見 type VII collagen 的點狀表皮內標記，電顯可見 stellate bodies（含 type VII collagen 的擴張 Golgi apparatus）；多數病例並未完全緩解，可能留下較輕的永久性 DEB 表徵。<span class="ex-ref ex-ref-mckee">McKee p.127–128</span></li>
-<li>Generalized severe RDEB：出生或嬰兒早期多發水疱，可有局部皮膚缺損（尤其下腿）；milia 與疤痕很常見；慢性糜爛可覆蓋 slough 並有堆積的結痂；digits 進行性 contractures，最終被薄疤痕包成 mitten 狀；口腔疤痕可致 ankyloglossia 與 microstomia；眼部併發症含 symblepharon、corneal erosions；常貧血；SCC 一個常見且臨床上極為重要的併發症，最早可在 <strong class="ex-n">6</strong> 歲發生，多數癌發生在肢體，常在慢性、不癒合的潰瘍處；多個原發腫瘤且後續每個癌的分化逐漸變差是常見過程，死亡通常發生於第一個惡性腫瘤後 <strong class="ex-n">5</strong> 年內。<span class="ex-ref ex-ref-mckee">McKee p.128–129</span></li>
+<li>Generalized severe RDEB：出生或嬰兒早期多發水疱，可有局部皮膚缺損（尤其下腿）；milia 與疤痕很常見；慢性糜爛傾向（tend to）覆蓋 slough 並有堆積的結痂；digits 可（can）進行性 contractures，逐漸被薄疤痕包成 mitten 狀；口腔疤痕可致 ankyloglossia 與 microstomia；眼部併發症含 symblepharon、corneal erosions；常貧血；SCC 一個常見且臨床上極為重要的併發症，最早可在 <strong class="ex-n">6</strong> 歲發生，多數癌發生在肢體，常在慢性、不癒合的潰瘍處；多個原發腫瘤且後續每個癌的分化逐漸變差是通常的病程（the usual course），死亡通常發生於第一個惡性腫瘤後 <strong class="ex-n">5</strong> 年內。<span class="ex-ref ex-ref-mckee">McKee p.128–129</span></li>
 <li>COL7A1 的 SCC 在 McKee 還指出：起初的腫瘤可能分化良好或呈 verrucous，不易與 pseudoepitheliomatous hyperplasia 區分，之後的腫瘤逐漸分化變差。<span class="ex-ref ex-ref-mckee">McKee p.133</span></li>
 <li>Generalized intermediate RDEB 與 generalized severe 共享特徵但程度輕得多；Localized RDEB 的皮膚脆弱、疤痕與 milia 多局限於手、足與指甲，黏膜侵犯罕見。<span class="ex-ref ex-ref-mckee">McKee p.129</span></li>
 </ul>
@@ -257,7 +257,7 @@
 <li>Theresa Kindler 於 1954 年首次描述。特徵是出生與嬰兒期有類 EB 的外傷誘發水疱，癒合時有類似 JEB 或 DEB 的 atrophic changes；但到兒童晚期水疱通常消退，轉為進行性 <strong>poikiloderma</strong>，分布在曝光部位。<span class="ex-ref">p.1024</span></li>
 <li>Poikiloderma 可有 atrophy、hyperkeratosis、hypopigmentation、hyperpigmentation 與 telangiectasias；病人常有 photosensitivity；有時有指甲變化與手指腳趾 webbing。內臟併發症包括口腔發炎、食道或輸尿管 strictures 與 ectropion。<span class="ex-ref">p.1024</span></li>
 <li>超微構造最一致的特徵是 basement membrane reduplication；常有 sublamina densa split 與 anchoring fibril 異常，有時也見 lamina lucida 或 intraepidermal separation。<span class="ex-ref">p.1024</span></li>
-<li>分子：發現新的表皮蛋白 <strong>kindlin-1</strong>（基因 KIND1），病人免疫螢光下 kindlin-1 表現下降；突變包括 nonsense、frameshift 與 splice-site。Kindlin-1 與 talin 等 signaling proteins 有些同源性，但其在 Kindler syndrome 中的角色仍不清楚；為何疾病從水疱轉為 poikiloderma 型尚未釐清。<span class="ex-ref">p.1024</span></li>
+<li>分子：發現新的表皮蛋白 <strong>kindlin-1</strong>（基因 KIND1），病人免疫螢光下 kindlin-1 表現下降；突變包括 nonsense、frameshift 與 splice-site。Kindlin-1 似乎（appears to）與 talin 等 signaling proteins 有些同源性，但其在 Kindler syndrome 中的角色仍不清楚；為何疾病從水疱轉為 poikiloderma 型尚待完全釐清（remains to be fully elucidated）。<span class="ex-ref">p.1024</span></li>
 </ul>
 <h3>McKee 補充</h3>
 <ul>
@@ -276,11 +276,11 @@
 <li>Fig. 60-13 流程：Biopsy（light microscopy）不能用來診斷 EB，但可排除其他疾病；electron microscopy 或 indirect immunofluorescent microscopy 是診斷必需；DNA analysis 有助判斷預後與家庭計畫；治療以支持性為主。<span class="ex-ref">p.1022</span></li>
 </ul>
 <h3>Skin biopsy（皮膚切片）</h3>
-<aside class="ex-trap"><strong>易錯</strong>原文寫常規 histologic analysis 不能用來診斷 EB，只能用來排除其他水疱原因；BMZ 太小，光學顯微鏡看不到，要分辨 BMZ 的分離層次必須用 TEM 或 indirect immunofluorescent microscopy。<span class="ex-ref">p.1024</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>原文寫常規 histologic analysis 不能用來診斷 EB，但可用於排除其他水疱原因（can be useful for excluding other causes of blistering）；BMZ 太小，光學顯微鏡看不到，要分辨 BMZ 的分離層次必須用 TEM 或 indirect immunofluorescent microscopy。<span class="ex-ref">p.1024</span></aside>
 <ul>
 <li>水疱內部會迅速重新上皮化，可能掩蓋真正的水疱層次，所以切片要盡可能用最新鮮的水疱；一種做法是在診間用 pencil eraser 輕輕旋轉於完整皮膚上，直到表皮與真皮分離，此法在嚴重病人比輕症病人容易。<span class="ex-ref">p.1024</span></li>
-<li>切片時，原文建議（its best）把 punch 放成只有 <strong class="ex-n">10%</strong> 蓋住可見水疱、<strong class="ex-n">90%</strong> 蓋住完整皮膚，因為同一標本同時含完整與起水疱的皮膚有幫助，且水疱在切取或運送期間可能擴大。<span class="ex-ref">p.1024</span></li>
-<li><mark data-q="110-46">TEM 多年來被視為決定 EB 水疱層次的 gold standard</mark>；TEM 還可看特徵性構造：basal keratinocyte 胞質內 keratin intermediate filaments 聚集（clumping）是 severe generalized（Dowling-Meara）EBS 的 pathognomonic 發現；hemidesmosomes 殘留（rudimentary）是診斷 JEB 的重要線索；anchoring fibrils 缺如或改變常見於 DEB，尤其隱性型。<span class="ex-ref">p.1024</span></li>
+<li>切片時，原文建議（its best）把 punch 放成只有 <strong class="ex-n">10%</strong> 蓋住可見水疱、<strong class="ex-n">90%</strong> 蓋住完整皮膚，因為同一標本同時含完整與起水疱的皮膚有幫助，且水疱很可能（is likely to）在切取或運送期間擴大。<span class="ex-ref">p.1024</span></li>
+<li><mark data-q="110-46">TEM 多年來被視為決定 EB 水疱層次的 gold standard</mark>；TEM 還可看特徵性構造：basal keratinocyte 胞質內 keratin intermediate filaments 聚集（clumping）是 severe generalized（Dowling-Meara）EBS 的 pathognomonic 發現；hemidesmosomes 殘留（rudimentary）可為（can be）診斷 JEB 的重要線索；anchoring fibrils 缺如或改變常見於 DEB，尤其隱性型。<span class="ex-ref">p.1024</span></li>
 <li>Indirect immunofluorescence（IIF／IDIF）：把一組針對已知 BMZ 抗原的抗體施用在水疱病人皮膚的冷凍切片，依抗原落在水疱的表皮側或真皮側判斷分離層次。<span class="ex-ref">p.1024–1025</span></li>
 </ul>
 <table class="ex-table">
@@ -313,15 +313,15 @@
 </ul>
 <h3>Gene mutation analysis（基因突變分析）</h3>
 <ul>
-<li>Gene mutation analysis 被認為是得到 EB 分子診斷的 ultimate final step；EB 診斷需要臨床與分子兩方面資訊。取病人與父母、手足的血液或 buccal swabs 做基因分析。Whole-exome sequencing 預期會使突變偵測更容易、更快且更便宜。<span class="ex-ref">p.1025</span></li>
+<li>Gene mutation analysis 被認為是得到 EB 分子診斷的 ultimate final step；EB 診斷需要臨床與分子兩方面資訊。取病人與父母、手足的血液或 buccal swabs 做基因分析。Whole-exome sequencing 很可能（will likely）會使突變偵測更容易、更快且更便宜。<span class="ex-ref">p.1025</span></li>
 </ul>
 <h3>McKee 補充（診斷與病理）</h3>
 <ul>
 <li>EB 的 skin immunohistochemistry 以 frozen sections 進行為宜（原文 is best performed on frozen sections）；因 IHC 抗體進步，需要 TEM 才能診斷的 EB 切片數在過去十年減少超過 <strong class="ex-n">50%</strong>；immunoelectron microscopy 不是常規診斷，主要用於研究。<span class="ex-ref ex-ref-mckee">McKee p.122</span></li>
 <li>基因定序（Sanger 或 NGS：whole exome 或選定基因 panel）逐漸成為主要（primary）檢查之一，切片角色漸減；但 skin biopsy 對快速診斷 autosomal recessive EB 仍有用，尤其是皮膚脆弱的新生兒。<span class="ex-ref ex-ref-mckee">McKee p.122</span></li>
-<li>Paraffin 切片的診斷取決於是否有新鮮水疱：存在超過 <strong class="ex-n">12</strong> 小時的水疱因 re-epithelialization 難以判定真正的 cleavage plane，所以優先取 rubbed non-blistered skin。<span class="ex-ref ex-ref-mckee">McKee p.122</span></li>
+<li>Paraffin 切片能否成功診斷可能（may）取決於是否有新鮮水疱：存在超過 <strong class="ex-n">12</strong> 小時的水疱很可能（is likely to）因 re-epithelialization 難以判定真正的 cleavage plane，所以優先取 rubbed non-blistered skin。<span class="ex-ref ex-ref-mckee">McKee p.122</span></li>
 <li>Type IV collagen 的 antigen mapping／immunoperoxidase 可判定 lamina densa 在水疱頂（dystrophic EB）或底（EB simplex 與 junctional EB）；type VII collagen 在 recessive DEB 減少。<span class="ex-ref ex-ref-mckee">McKee p.122</span></li>
-<li>EB simplex 的光學顯微鏡：paraffin 切片診斷有挑戰，早期變化非常靠近 dermal-epidermal junction 而且細微（最早的特徵是基底 keratinocytes 明顯空泡化，即 cytolysis）；舊病灶可呈細胞稀少的 subepidermal blister，缺乏特異性。電顯可見 tonofilament clumps 與 intrakeratinocyte splitting（generalized severe EBS）。<span class="ex-ref ex-ref-mckee">McKee p.130</span> <span class="ex-ref ex-ref-mckee">McKee p.131</span></li>
+<li>EB simplex 的光學顯微鏡：paraffin 切片診斷有挑戰，早期變化非常靠近 dermal-epidermal junction 而且可能（may）細微（最早的特徵是基底 keratinocytes 明顯空泡化，即 cytolysis）；舊病灶可呈細胞稀少的 subepidermal blister，缺乏特異性。電顯可見 tonofilament clumps 與 intrakeratinocyte splitting（generalized severe EBS）。<span class="ex-ref ex-ref-mckee">McKee p.130</span> <span class="ex-ref ex-ref-mckee">McKee p.131</span></li>
 <li>Dominant 型 EB simplex 或 dominant DEB 的皮膚病理（超微構造與免疫組織化學）可能與正常皮膚差異不大，尤其切片未含新鮮水疱時。<span class="ex-ref ex-ref-mckee">McKee p.122</span></li>
 <li>Desmosomal EB simplex（desmoplakin 缺乏）：表皮全層細胞間分離（pan-epidermal cell-cell detachment）。<span class="ex-ref ex-ref-mckee">McKee p.132</span></li>
 <li>Recessive DEB：anchoring fibrils 完全缺如，sublamina densa 水疱形成，並見真皮疤痕與慢性發炎。<span class="ex-ref ex-ref-mckee">McKee p.133</span> <span class="ex-ref ex-ref-mckee">McKee p.134</span></li>
@@ -341,7 +341,7 @@
 <p class="ex-cite">Table 60-2，p.1025。</p>
 <h3>Genetic counseling（遺傳諮詢）</h3>
 <ul>
-<li>DNA 突變分析對預後很有幫助：recessive DEB 的水疱活動度可能與較嚴重的 dominant 病例相當，但 invasive SCC 的風險大得多；透過 DNA 診斷可區分兩者，找出有 invasive SCC 風險的病人。<span class="ex-ref">p.1025</span></li>
+<li>DNA 突變分析對 EB 病人可極有幫助（can be extremely helpful），對預後的益處常（often）相當顯著：recessive DEB 的水疱活動度可能與較嚴重的 dominant 病例相當，但 invasive SCC 的風險大得多；透過 DNA 診斷可區分兩者，找出可能（potentially）有 invasive SCC 風險的病人。<span class="ex-ref">p.1025</span></li>
 <li>產前診斷在受累家族可非常準確，尤其先證者已做過突變分析或已找到缺陷基因時；可用 chorionic villus sampling（最早 <strong class="ex-n">8 to 10 weeks</strong>）或第二孕期 amniocentesis，避免胎兒皮膚切片與 fetoscopy 的流產風險。Preimplantation diagnosis（結合 in vitro fertilization）已成功用於 EB；母血中胎兒細胞偵測則是未來可能的方向。<span class="ex-ref">p.1025</span></li>
 <li>Laminin-332 缺陷的產前檢測比其他 EB 候選基因容易（約 80% 的 laminin-332 突變可追溯到 LAMB3 兩個 recurrent nonsense mutations 之一）。<span class="ex-ref">p.1020</span></li>
 </ul>
@@ -349,27 +349,27 @@
 
 <section class="ex-note" id="treatment">
 <h2>10. Treatment（治療）</h2>
-<p>多數 EB 治療為支持性，依嚴重度與範圍量身訂做，通常結合 wound management、infection control、必要時手術與營養支持；以多專科方式最能協調；<strong>avoidance of trauma</strong> 是 comprehensive topical therapy 的主要目標。傷口癒合受異物、細菌、營養缺乏、貧血與反覆創傷影響，需一併控制。<span class="ex-ref">p.1025–1026</span></p>
+<p>多數 EB 治療為支持性，依嚴重度與範圍量身訂做，通常結合 wound management、infection control、必要時手術與營養支持；某些 EB 次型的皮膚照護與其他器官支持照護以多專科方式最能協調；<strong>avoidance of trauma</strong> 是 comprehensive topical therapy 的主要目標。傷口癒合受異物、細菌、營養缺乏、貧血與反覆創傷影響，需一併控制。<span class="ex-ref">p.1025–1026</span></p>
 <h3>Supportive skin care and infection（皮膚支持與感染）</h3>
 <ul>
-<li>大面積裸露皮膚失去 stratum corneum 屏障，細菌穿透後血清與水分堆積更促進細菌增生；預防感染顯然是首選策略（原文 obviously the preferred strategy）。<span class="ex-ref">p.1026</span></li>
+<li>大面積裸露皮膚可造成 stratum corneum 屏障喪失，之後細菌穿透可造成血清與水分堆積，更促進細菌增生；預防感染顯然是首選策略（原文 obviously the preferred strategy）。<span class="ex-ref">p.1026</span></li>
 <li>Modified Dakin solution（<strong class="ex-n">0.025%</strong> w/v sodium hypochlorite）可降低皮膚細菌量；換藥前浸泡傷口 <strong class="ex-n">20 minutes</strong> 也有助鬆開乾在傷口上的敷料；之後可敷 mupirocin 或其他局部抗生素，覆蓋 semiocclusive nonadhesive dressings；膠帶會造成更多水疱與皮膚剝落，要用 self-adhering（clinging）gauze 或 self-adherent paper 固定。<span class="ex-ref">p.1026</span></li>
-<li>EBS（generalized 或 localized）病人控制熱暴露可能有助減少水疱；建議穿柔軟、通風良好的鞋。Herlitz JEB 因缺乏功能性 laminin-332，傷口癒合特別困難。DEB 病人手部可用 finger splinting 或勤做手部包覆與保護，手術後尤其重要。<span class="ex-ref">p.1026</span></li>
+<li>EBS（generalized 或 localized）病人控制熱暴露可能有助減少水疱；建議穿柔軟、通風良好的鞋。Herlitz JEB 因缺乏功能性 laminin-332，傷口癒合可能（may）特別困難。DEB 病人用 finger splinting 或勤做手部包覆與保護有幫助，尤其在手部手術後。<span class="ex-ref">p.1026</span></li>
 <li>常見致病菌為 <em>Staphylococcus aureus</em> 與 <em>Streptococcus pyogenes</em>；也可有 <em>Pseudomonas aeruginosa</em> 的 Gram-negative 感染。傷口感染應做皮膚培養並使用適當的全身性抗生素；輕柔 whirlpool therapy、每日換藥、dilute chlorine baths、輪替局部抗生素與 iodine-povidone 等局部消毒劑，都有助減少抗藥菌。<span class="ex-ref">p.1026</span></li>
 </ul>
 <h3>Surgery and tumors（手術與腫瘤）</h3>
 <ul>
-<li>Severe recessive DEB（Hallopeau-Siemens）通常最需要手術介入；mitten pseudosyndactyly 可手術鬆解，但因復發傾向強，可能需定期重複；術後 splinting 對減少手畸形復發很重要；也可矯正肢體、口周與會陰的 contracture，但復發率高。EB 病人插管時要特別小心減少口腔黏膜創傷。<span class="ex-ref">p.1026</span></li>
+<li>Severe recessive DEB（Hallopeau-Siemens）通常最需要手術介入；mitten pseudosyndactyly 可手術鬆解，但因復發傾向強，可能需定期重複；術後 splinting 對減少手畸形復發很重要；手術也可用於矯正肢體、口周與會陰的 contracture，但常有高復發率（a high rate of recurrence is common）。EB 病人插管時要特別小心減少口腔黏膜創傷。<span class="ex-ref">p.1026</span></li>
 <li>SCC 常在 recessive DEB 青春期後出現，可有多個原發部位，尤其在不癒合處；對不癒合處的 careful surveillance「of utmost importance」，因為病人常死於轉移。<span class="ex-ref">p.1026</span></li>
 <li>手術切除（Mohs 或非 Mohs）是重要的第一線方式，部分情況放射線治療是有用的輔助。Isotretinoin 曾用於 RDEB 病人做 SCC chemoprevention，似乎耐受良好，但不確定能否提高整體存活率；cetuximab 已顯示一些益處，但皮膚副作用有時是問題。<span class="ex-ref">p.1026</span></li>
 </ul>
 <h3>Extracutaneous care（皮膚外照護）</h3>
 <ul>
-<li>Esophageal lesions 常是 recessive DEB 與 severe 及 intermediate generalized JEB 最致殘的併發症；strictures 通常對 dilation 有反應，但擴張後復發常見；colonic interposition 對進階病例有效但很少使用；gastrostomy tube 可為食道 stricture 病人提供營養。便祕與 colitis 可用增加液體與纖維攝取及 stool softeners。<span class="ex-ref">p.1026–1027</span></li>
+<li>Esophageal lesions 常是 recessive DEB 與 severe 及 intermediate generalized JEB 最致殘的併發症；strictures 通常對 dilation 有反應，但擴張後復發常見；colonic interposition 對進階病例有效但很少使用；gastrostomy tube 可為食道 stricture 病人提供營養。便祕與 colitis 增加液體與纖維攝取及 stool softeners 也可能有益（may also be of value）。<span class="ex-ref">p.1026–1027</span></li>
 <li>眼：EBS（尤其 Dowling-Meara）可反覆眼瞼發炎與結膜水疱；JEB 與 recessive DEB 可有 corneal ulcerations 伴疤痕、tear ducts 閉塞與眼瞼病灶，recessive DEB 也可有 cicatricial conjunctivitis。角膜 erosions 以抗生素藥膏與 cycloplegic agents 支持治療，也常用 moisture chambers 與 ocular lubricants；嚴重上眼瞼可做全層皮膚移植；需要眼科醫師協助。<span class="ex-ref">p.1027</span></li>
 <li>口咽：良好口腔衛生與定期牙科很重要；JEB 的 enamel defects 與嚴重 JEB、DEB 刷牙與用牙線的疼痛常導致齲齒；用最軟的牙刷；severe generalized recessive DEB 的口腔水疱與疤痕可造成 microstomia 與 ankyloglossia；用 normal saline 漱口，避免含酒精或其他刺激性的漱口水；氣道侵犯者有肺 aspiration 危險，插管應由有 EB 經驗的麻醉醫師、以小口徑氣道輕柔進行。<span class="ex-ref">p.1027</span></li>
-<li>營養與貧血：oropharyngeal 與 GI lesions 是營養狀態最大的整體威脅；病人常無法增加進食量以平衡增加的熱量需求；全身性黏膜 disadhesion 可造成 malabsorption（含鐵）。Anemia of chronic disease 可見於所有嚴重 EB 次型；recessive DEB 病人常有特別嚴重、口服鐵不易反應的缺鐵，可用 parenteral iron；若鐵劑補充後 reticulocyte 無反應，評估 erythropoietin level，必要時用 recombinant erythropoietin；transfusion 對症狀需快速矯正時有用。Dilated cardiomyopathy 是嚴重 DEB 與 JEB 病人的毀滅性且可能致命的併發症，與慢性貧血高度相關。<span class="ex-ref">p.1027</span></li>
-<li>心理面向：嚴重 EB 病人可有慢性疼痛與憂鬱，需多專科（精神科醫師與臨床心理師）合作；支持性心理治療與病友團體對病人與家屬有幫助。<span class="ex-ref">p.1027</span></li>
+<li>營養與貧血：oropharyngeal 與 GI lesions 是營養狀態最大的整體威脅；病人常無法增加進食量以平衡增加的熱量需求；GI 道內廣泛的黏膜 disadhesion 可能造成 GI motility 異常、strictures 與 diarrhea，進而可能導致鐵與其他營養素吸收不良。Anemia of chronic disease 可見於所有嚴重 EB 次型；recessive DEB 病人常有特別嚴重、可能對口服鐵無反應（may not be responsive）的缺鐵，可用 parenteral iron；若鐵劑補充後 reticulocyte 無反應，評估 erythropoietin level，必要時用 recombinant erythropoietin；transfusion 對症狀需快速矯正時有用。Dilated cardiomyopathy 是嚴重 DEB 與 JEB 病人的毀滅性且可能致命的併發症，與慢性貧血高度相關。<span class="ex-ref">p.1027</span></li>
+<li>心理面向：EB 病人（尤其嚴重次型）可受慢性疼痛所苦；許多人似乎（seem）能維持正面態度，另一些則陷入憂鬱；必要時（as needed）需多專科（精神科醫師與臨床心理師）合作；支持性心理治療與病友團體對病人與家屬有幫助。<span class="ex-ref">p.1027</span></li>
 </ul>
 <h3>Emerging and investigational therapies（新興與研究中治療）</h3>
 <table class="ex-table">
@@ -378,9 +378,9 @@
 <tr><td>Topical corticosteroids</td><td>可短期止癢、減輕發炎，但長期造成皮膚萎縮，加重 EB 皮膚本身的脆弱並使水疱／癒合惡化。<span class="ex-ref">p.1028</span></td></tr>
 <tr><td>Tetracycline、phenytoin</td><td>過去曾用於 EB，但目前並非適應症（not currently indicated）。<span class="ex-ref">p.1028</span></td></tr>
 <tr><td>Diacerein</td><td>天然來源（rhubarb root）的 interleukin-β blocker，耐受良好，在有發炎皮膚表型的 severe EBS 病人能減少水疱形成。<span class="ex-ref">p.1028</span></td></tr>
-<tr><td>Losartan</td><td>angiotensin II type I receptor antagonist；在前臨床研究中顯示能減少 DEB 傷口伴隨的纖維化，機轉是降低皮膚 transforming growth factor-β 表現。<span class="ex-ref">p.1028</span></td></tr>
-<tr><td>Allogeneic cell therapies</td><td>Allogeneic keratinocyte skin equivalents、fibroblast injections、mesenchymal stem cell infusions 有短期正向效果，但沒有長期益處。Allogeneic bone marrow transplantation 用於 <strong class="ex-n">7</strong> 名 recessive DEB 兒童：部分病人有明顯臨床益處並在 DEJ 有 collagen VII 染色達 1 年或更久，但 anchoring fibrils 恢復不完全；死亡率約 <strong class="ex-n">30%</strong>。<span class="ex-ref">p.1028</span></td></tr>
-<tr><td>Autologous genetic therapies</td><td>JEB：以 retroviral ex vivo gene therapy，基因校正的自體 keratinocyte monolayers 移植（1 名 laminin-332 missense 突變病人，追蹤 6.5 年仍表現 laminin-332 並抵抗水疱；後來另一名病人的基因校正表皮移植覆蓋超過 <strong class="ex-n">80%</strong> 皮膚表面）。Recessive DEB：4 名病人的臨床試驗，full-length COL7A1 ex vivo 轉入 keratinocytes 後移植（每人 6 個 grafts），臨床改善並恢復 collagen VII 表現與 anchoring fibril 形成達 1 年。CRISPR/Cas9 結合 induced pluripotent stem cells 與 exon skipping 是有前景的未來療法。<span class="ex-ref">p.1030</span></td></tr>
+<tr><td>Losartan</td><td>angiotensin II type I receptor antagonist；在前臨床研究中顯示有希望（has shown promise）減少 DEB 傷口伴隨的纖維化，機轉是降低皮膚 transforming growth factor-β 表現。<span class="ex-ref">p.1028</span></td></tr>
+<tr><td>Allogeneic cell therapies</td><td>Allogeneic keratinocyte skin equivalents、fibroblast injections、mesenchymal stem cell infusions 有短期正向效果，但未能顯示任何長期益處（fail to show any long-term benefits）。Allogeneic bone marrow transplantation 用於 <strong class="ex-n">7</strong> 名 recessive DEB 兒童：部分病人有明顯臨床益處並在 DEJ 有 collagen VII 染色達 1 年或更久，但 anchoring fibrils 恢復不完全；死亡率約 <strong class="ex-n">30%</strong>。<span class="ex-ref">p.1028</span></td></tr>
+<tr><td>Autologous genetic therapies</td><td>JEB：以 retroviral ex vivo gene therapy，基因校正的自體 keratinocyte monolayers 移植（1 名 laminin-332 missense 突變病人，追蹤 6.5 年仍表現 laminin-332 並抵抗水疱；後來另一名病人的基因校正表皮移植覆蓋超過 <strong class="ex-n">80%</strong> 皮膚表面）。Recessive DEB：4 名病人的臨床試驗，full-length COL7A1 ex vivo 轉入 keratinocytes 後移植（每人 6 個 grafts），臨床改善並恢復 collagen VII 表現與 anchoring fibril 形成達 1 年。CRISPR/Cas9 結合 induced pluripotent stem cells 是另一個有前景的未來療法；exon skipping 已顯示有望（has shown promise）成為 JEB 與 DEB 的潛在未來療法。<span class="ex-ref">p.1030</span></td></tr>
 </tbody>
 </table>
 </section>

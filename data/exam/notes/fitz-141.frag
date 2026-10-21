@@ -8,7 +8,7 @@
 <li>命名：Benediktos Adamantiades（希臘眼科醫師，1931）與 Hulûsi Behçet（土耳其皮膚科醫師，1937）。Hippocrates（460–377 bc）在 Epidemion Book III, Case 7 中可能已首次描述此病。<span class="ex-ref">p.2567</span></li>
 <li>At-a-glance：<strong>neutrophilic vascular reaction</strong> 或 vasculitis 的炎症疾病；慢性、復發、進行性病程；預後可能不佳（尤其是以系統性表現起病的男性）；mortality <strong class="ex-n">0%–6%</strong>。<span class="ex-ref">p.2567</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 在 Definition 寫明本病是侵犯 all types and sizes of blood vessels 的 systemic vasculitis（p.2567）；McKee 引用的 Chapel Hill 定義把它列為 variable vessel vasculitis，可侵犯 arteries 與 veins（McKee p.715）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 在 Definition 寫明本病是侵犯 all types and sizes of blood vessels 的 systemic vasculitis（p.2567）；McKee 引用的 Chapel Hill 定義把它列為 variable vessel vasculitis，可侵犯 arteries 或 veins（McKee p.715）。</aside>
 </section>
 
 <section class="ex-note" id="epi">
@@ -44,12 +44,12 @@
 <section class="ex-note" id="genetics">
 <h2>3. Etiology &amp; Genetics（病因與遺傳）</h2>
 <ul>
-<li>病因未明；genetic factors、infectious agents、environmental pollution、immunologic mechanisms、endothelial and clotting factors 都被研究。沿 Silk Road 的 endemic 分布、主要侵犯 Turkmenic 與 Mongol 後裔族群，支持疾病隨古代遊牧民族遷徙的假說；同一族群在不同居住地盛行率差異大，顯示另有 environmental triggering factor。<span class="ex-ref">p.2567</span></li>
+<li>病因未明；genetic factors、infectious agents、environmental pollution、immunologic mechanisms、endothelial and clotting factors 都被研究。沿 Silk Road 的 endemic 分布、主要侵犯特定族群（mostly of Turkmenic and Mongol descent，多為 Turkmenic 與 Mongol 後裔），支持疾病隨古代遊牧民族遷徙的假說；同一族群在不同居住地盛行率差異大，顯示另有 environmental triggering factor。<span class="ex-ref">p.2567</span></li>
 <li>沒有特定的 Mendelian 遺傳模式。<span class="ex-ref">p.2567</span></li>
 <li><mark data-q="115-04"><strong>HLA-B51</strong>：與疾病顯著相關（Japan、Middle East、Mediterranean 國家），西方國家關聯較不強；此 allele <strong>似乎</strong>與較嚴重的 prognosis 及 ocular involvement 有關</mark>。<span class="ex-ref">p.2568</span></li>
 <li>HLA-B51 的確切角色未知，可能經由特定 antigen presentation、與微生物抗原的 molecular mimicry，或與未知 susceptibility gene 的 linkage disequilibrium 參與。<span class="ex-ref">p.2568</span></li>
 <li>有人提出本病屬於 “MHC-I-opathies”；目前已描述 <strong class="ex-n">24</strong> 個 alleles，其中 HLA-B5101 與 -B5108 最常與本病相關；Bw4 epitope 的共有 amino acid residues 對 antigen binding 與 NK cell interactions 重要，Bw4 也被報告與疾病嚴重度有關。<span class="ex-ref">p.2568</span></li>
-<li>相關基因位於 chromosome 6（TNF gene 與 HLA-B／HLA-C 之間），包括 MICA（A6 allele）與 heat shock protein genes；susceptibility locus 定位於 6p22-23。GWAS：1p31.3（IL23R-IL12RB2）、1q32.1（IL10）；IL-8 gene haplotype 也有關聯；另報告 ERAP-1、CCR1-CCR3、KLRC4、STAT4。<span class="ex-ref">p.2568</span></li>
+<li>可能相關（possibly associated）的基因位於 chromosome 6（TNF gene 與 HLA-B／HLA-C 之間），包括 MICA（A6 allele）與 heat shock protein genes；susceptibility locus 定位於 6p22-23。GWAS：1p31.3（IL23R-IL12RB2）、1q32.1（IL10）；IL-8 gene haplotype 也有關聯；另報告 ERAP-1、CCR1-CCR3、KLRC4、STAT4。<span class="ex-ref">p.2568</span></li>
 <li>McKee：疾病與 HLA-B5、-B12、-B15、-B27、-A26 相關，尤其是 HLA-BW51；GWAS 列出 IL23R-IL12RB2、IL10、STAT4、CCR1-CCR3、KLRC4、ERAP1、TNFAIP3、FUT2 loci，這些基因與 polarization toward a Th1 phenotype 有關；也曾描述 anticardiolipin antibodies。<span class="ex-ref ex-ref-mckee">McKee p.745–746</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>原文用 seems to be associated 描述 HLA-B51 與較嚴重 prognosis、ocular involvement 的關係（p.2568）；Prognosis 段落把 HLA-B51 positivity 列為 markers of severe prognosis 之一（p.2574）。</aside>
@@ -61,20 +61,20 @@
 <ul>
 <li>不被視為 contagious（從未有 horizontal transmission 的報告），但病毒與細菌感染被認為可能啟動免疫病理途徑。<span class="ex-ref">p.2568</span></li>
 <li>Viral：報告過病人 peripheral blood lymphocytes 有部分 HSV-1 DNA 轉錄；病人唾液、口腔與生殖器潰瘍可測到 HSV-1 DNA，血清中有 HSV-1 antibodies。<span class="ex-ref">p.2568</span></li>
-<li>Bacterial：疾病活動度與細菌感染（尤其 Streptococci）相關；<em>Streptococcus sanguinis</em> 主導病人口腔黏膜菌叢，似乎是最相關的誘發菌株；可能涉及產生 IgA protease 的 <em>S. sanguinis</em>；病人有高 titer 的 <em>S. sanguinis</em> antigen KTH-1。<em>Mycoplasma fermentans</em> 的 lipoprotein MALP-404 在病人血清中發現（健康對照無），其 peptide motif 可被 HLA-B51 呈現。細菌經 Toll-like receptor-2 刺激 monocytes，產生 neutrophil-stimulating proinflammatory factors。<span class="ex-ref">p.2568</span></li>
+<li>Bacterial：疾病活動度與細菌感染（尤其 Streptococci）相關；<em>Streptococcus sanguinis</em> 主導病人口腔黏膜菌叢，似乎是最相關的誘發菌株；可能涉及產生 IgA protease 的 <em>S. sanguinis</em>；病人有高 titer 的 <em>S. sanguinis</em> antigen KTH-1。<em>Mycoplasma fermentans</em> 的 lipoprotein MALP-404 在病人血清中發現（健康對照無），其 peptide motif 可被 HLA-B51 呈現。已偵測到細菌經 Toll-like receptor-2 刺激 monocytes、產生 neutrophil-stimulating proinflammatory factors 的可能角色（a possible role）。<span class="ex-ref">p.2568</span></li>
 </ul>
 <h3>Immunologic mechanisms（免疫機轉）</h3>
 <ul>
 <li>免疫機轉被認為在致病中扮演主要角色；本病目前被歸類為 <strong>autoinflammatory disorders</strong>（innate immune system 的 primary dysfunction）。<span class="ex-ref">p.2568</span></li>
 <li>多數活動部位最主要的顯微鏡下發現是 immune-mediated <strong>occlusive vasculitis</strong>。<span class="ex-ref">p.2568</span></li>
 <li>Pathergy reaction：針刺處先有 neutrophils 快速聚集（hyperchemotaxis），之後有 T lymphocytes 與 monocytes/macrophages。<span class="ex-ref">p.2568</span></li>
-<li>傳統上視為典型 <strong>Th1-mediated</strong> 發炎疾病（IFN-γ、IL-2、TNF-α 升高）；近來研究報告 Th17-associated cytokines 增加，Th17 cells 與 IL-17/IL-23 pathway 可能扮演重要角色；IL-12 誘發的 Th1 反應已被證實。<span class="ex-ref">p.2568–2569</span></li>
+<li>傳統上視為典型 <strong>Th1-mediated</strong> 發炎疾病（IFN-γ、IL-2、TNF-α 升高）；近來有些研究（some studies）報告 Th17-associated cytokines 增加，Th17 cells 與 IL-17/IL-23 pathway 可能扮演重要角色；IL-12 誘發、以 Th1 為主（predominant）的免疫反應已被證實。<span class="ex-ref">p.2568–2569</span></li>
 <li>病人 lymphocytes 表現 CD29 並在活動期與 endothelial cells 結合；除 T-cell 免疫缺陷外，B-cell activation 也受損；可能涉及 circulating immune complexes 與 neutrophil migration 增強。Tropomyosins 與 160-kDa polypeptide <strong>kinectin</strong> 被偵測為 autoantigens。<span class="ex-ref">p.2569</span></li>
 <li>Heat shock proteins：病人血清有 HSP-specific antibodies 升高；T cells 對 <strong class="ex-n">60-kDa</strong> HSP 起反應，T-cell epitope mapping 找到 <strong class="ex-n">4</strong> 個 peptide determinants。<span class="ex-ref">p.2569</span></li>
 <li>Cytokines：IL-1、-8、-12、-17、-23、TNF-α 在病人血清升高；<strong>IL-8</strong> 似乎扮演重要角色，是 sensitive marker of disease activity。<span class="ex-ref">p.2569</span></li>
-<li>Endothelial cells：endothelium 似乎是 primary target（也可能只是受異常免疫反應影響）；病人血清有 IgM-type 47-kDa cell surface HSP，針對 endothelial α-enolase；plasma endothelin-1 與 thrombomodulin 增加。<span class="ex-ref">p.2569</span></li>
+<li>Endothelial cells：endothelium 似乎是 primary target（也可能只是受異常免疫反應影響）；病人血清有 IgM-type 47-kDa cell surface HSP，針對 endothelial α-enolase；plasma endothelin-1 顯著增加；thrombomodulin 在 active disease 病人的 plasma 中也增加。<span class="ex-ref">p.2569</span></li>
 <li>Epigenetics：interspersed repetitive sequence elements 的 methylation 改變、histone modifications（H3K4me27、H3K4me3）、miR-182 與 miR-3591-3p 上調、miR-155、miR-638、miR-4488 下調。<span class="ex-ref">p.2569</span></li>
-<li>McKee：heat shock proteins 與 VEGF、antiphospholipid antibodies 在血清升高（與疾病活動度無關）；病人的 reactive heat shock proteins 在大鼠誘發 uveitis；VEGF 升高與 vascular 或 ocular disease 顯著相關；有些病人可見 T cells oligoclonal expansion；血清 IL-12 與周邊 Th1 lymphocyte 量與疾病活動度相關；口腔切片血管壁有 complement C3 與 C9；常有高量 circulating immune complexes，血管壁可偵測到 immunoglobulins（尤其 IgM）與 complement。<span class="ex-ref ex-ref-mckee">McKee p.745–746</span></li>
+<li>McKee：heat shock proteins 與 VEGF、antiphospholipid antibodies 在血清升高（與疾病活動度無關）；病人的 reactive heat shock proteins 在大鼠誘發 uveitis；VEGF 升高與 vascular 或 ocular disease 顯著相關；有些病人可見 T cells oligoclonal expansion；一項研究中（in one study）血清 IL-12 與周邊 Th1 lymphocyte 量與疾病活動度相關；口腔切片血管壁有 complement C3 與 C9；常有高量 circulating immune complexes，血管壁常可偵測到 immunoglobulins（尤其 IgM）與 complement。<span class="ex-ref ex-ref-mckee">McKee p.745–746</span></li>
 </ul>
 </section>
 
@@ -91,7 +91,7 @@
 <li>Aphthae 在 <strong class="ex-n">4 days to 1 month</strong> 內自行癒合；genital ulcers 可能持續更久。<span class="ex-ref">p.2569</span></li>
 <li>大型口腔潰瘍可併有 pharyngeal involvement、dysphagia、dyspnea，或 pharynx、larynx、trachea、esophagus 的 fistulae。<span class="ex-ref">p.2569</span></li>
 <li>Genital ulcers 位置：penis、scrotum、vagina、labia、urethra，以及 anal、perineal、inguinal regions。<span class="ex-ref">p.2569</span></li>
-<li>McKee：口腔潰瘍典型 <strong>up to 1 cm</strong>（可更大），可在口腔任何部位、pharynx 甚至 larynx，極度疼痛，通常 <strong class="ex-n">14 days</strong> 內自行消退（也可持續更久），潰瘍底部有黃色壞死痂；有些病人呈 herpetiform 排列；較大潰瘍的病人口腔疾病較嚴重、復發較頻繁。Genital lesions 外觀與口腔相似，發生在 scrotum、penis、vagina、vulva。<span class="ex-ref ex-ref-mckee">McKee p.743–744</span></li>
+<li>McKee：口腔潰瘍典型 <strong>up to 1 cm</strong>（可更大），可在口腔任何部位、pharynx 甚至 larynx，極度疼痛，通常 <strong class="ex-n">14 days</strong> 內自行消退（也可持續更久），潰瘍底部有黃色壞死痂；有些病人呈 herpetiform 排列；較大潰瘍的病人傾向（tend to）口腔疾病較嚴重、復發較頻繁。Genital lesions 外觀與口腔相似，發生在 scrotum、penis、vagina、vulva。<span class="ex-ref ex-ref-mckee">McKee p.743–744</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>原文：oral aphthous ulcers 通常不留疤（92%）；genital ulcers 通常癒合後留下特徵性疤痕（64%–88%）（Fitzpatrick p.2569）。</aside>
 <h3>Skin lesions（皮膚病灶）</h3>
@@ -99,7 +99,7 @@
 <li><mark data-q="107-40">具診斷意義的皮膚病灶應限於：<strong>pustular vasculitic lesions</strong>（含 pathergy lesions）、<strong>erythema nodosum–like lesions</strong>、Sweet-like lesions、pyoderma gangrenosum–like lesions，以及 necrotizing venulitis 的 palpable purpuric lesions</mark>；這些病灶早期都有 neutrophilic vascular reaction。<span class="ex-ref">p.2569</span></li>
 <li>Single acneiform lesions 或 follicle-based pustules 不應視為相關。<span class="ex-ref">p.2569</span></li>
 <li>Mucocutaneous Activity Index：已建立用來標準化評估 mucocutaneous severity，可協助治療決策，但仍缺乏驗證。<span class="ex-ref">p.2570</span></li>
-<li>McKee：皮膚病灶常見且復發，包括 <mark data-q="107-40">erythema nodosum-like lesions（通常在下肢）</mark>、acneiform papules 與 pustules、furuncles、pyoderma、thrombophlebitis；一項很大型研究中 papulopustular lesions 最常見，其次為 erythema nodosum-like nodules；也有 Sweet syndrome-like 特徵的描述。<span class="ex-ref ex-ref-mckee">McKee p.744</span></li>
+<li>McKee：皮膚病灶常見且復發，包括 <mark data-q="107-40">erythema nodosum-like lesions（通常在下肢）</mark>；病人也可能（may also）出現 acneiform papules 與 pustules、furuncles、pyoderma、thrombophlebitis；一項很大型研究中 papulopustular lesions 最常見，其次為 erythema nodosum-like nodules；也有 Sweet syndrome-like 特徵的描述。<span class="ex-ref ex-ref-mckee">McKee p.744</span></li>
 <li>McKee Table 16.7（<span class="ex-ref ex-ref-mckee">McKee p.744</span>）：cutaneous lesions <strong class="ex-n">48–88%</strong>。</li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫 single acneiform lesions 或 follicle-based pustules 不應視為相關（p.2569）；McKee 的 1990 criteria 把 pseudofolliculitis、papulopustular lesions 或 acneiform nodules 列為 skin lesions（McKee p.744）。</aside>
@@ -120,23 +120,23 @@
 <h3>Joint（關節）</h3>
 <ul>
 <li>特徵性 arthritis：<strong>nonerosive、asymmetric、sterile、seronegative oligoarthritis</strong>；但 symmetric polyarticular involvement 也常見。常先在一側膝或踝，呈 migratory monoarthritis，再雙側同時，最後幾乎影響所有關節。需排除 HLA-B27-positive erosive sacroiliitis。<span class="ex-ref">p.2571</span></li>
-<li>McKee：多影響 knees、ankles、elbows、wrists；典型為 mono- 或 oligoarticular；儘管多年關節症狀，不會發生 joint deformities。<span class="ex-ref ex-ref-mckee">McKee p.745</span></li>
+<li>McKee：joint involvement 並不少見（not uncommon），通常影響 knees、ankles、elbows、wrists；典型為 mono- 或 oligoarticular；儘管多年關節症狀，不會發生 joint deformities。<span class="ex-ref ex-ref-mckee">McKee p.745</span></li>
 </ul>
 <h3>Vascular（血管）</h3>
 <ul>
 <li>Systemic vascular involvement 可相當明顯：venous occlusions 與 varices、arterial occlusions、aneurysms，常呈 migratory。Large-vein thrombosis（inferior vena cava、cranial venous sinuses）或 large-artery aneurysms 可能致命。<span class="ex-ref">p.2571</span></li>
 <li>Arterial involvement 相當罕見，通常表現為 thromboses，較少為 aneurysms（來自 multicentric arteritis）；large arteries 的 aneurysms 可由 vasa vasorum vasculitis 穿透 lamina elastica 造成。<span class="ex-ref">p.2571–2572</span></li>
-<li><mark data-q="103-35">Superficial thrombophlebitis 是 Behçet 病程中會出現的病灶</mark>（Fitzpatrick 列出其 risk factors：recurrent erythema nodosum 與 HLA-B51 positivity，<span class="ex-ref">p.2573–2574</span>）；McKee：<mark data-q="103-35">thrombophlebitis 常見，可侵犯四肢 superficial 與 deep veins</mark>，Table 16.7 發生率 <strong class="ex-n">10–37%</strong>；vascular disease 約見於 one-third of patients，男性風險可能較高。<span class="ex-ref ex-ref-mckee">McKee p.744–745</span></li>
+<li><mark data-q="103-35">Superficial thrombophlebitis 是 Behçet 病程中會出現的病灶</mark>（Fitzpatrick 列出其 risk factors：recurrent erythema nodosum 與 HLA-B51 positivity，<span class="ex-ref">p.2573–2574</span>）；McKee：<mark data-q="103-35">thrombophlebitis 常見，可侵犯四肢 superficial 與 deep veins</mark>，Table 16.7 發生率 <strong class="ex-n">10–37%</strong>；vascular disease 約見於 one-third of patients，男性似乎（appear）風險較高。<span class="ex-ref ex-ref-mckee">McKee p.744–745</span></li>
 <li>McKee：Superior 與 inferior vena caval obstruction 並不少見；hepatic vein occlusion（Budd-Chiari syndrome）死亡率高；pulmonary artery aneurysm 約 <strong class="ex-n">1%</strong> 病人，死亡率 <strong class="ex-n">50%</strong>；動脈瘤破裂是重要死因。<span class="ex-ref ex-ref-mckee">McKee p.745</span></li>
-<li>Pulmonary artery aneurysms 是 pulmonary involvement 的 principal feature，偶爾造成咳嗽與咳血（hemoptysis）。<span class="ex-ref">p.2572</span>　McKee：lung involvement 最多約 <strong class="ex-n">5%</strong>，hemoptysis 來自 pulmonary artery–bronchial fistula 形成，是重要死因。<span class="ex-ref ex-ref-mckee">McKee p.745</span></li>
-<li>Cardiac：myocarditis、coronary arteritis、endocarditis、valvular disease。Renal：從 minimal-change disease 到 proliferative glomerulonephritis 與 rapidly progressive crescentic glomerulonephritis；部分病例可能是 immune complex deposition。<span class="ex-ref">p.2572</span>　McKee：kidney 受影響最多約 <strong class="ex-n">55%</strong>（amyloidosis、glomerulonephritis、interstitial nephritis、vasculitis、IgA nephropathy）。<span class="ex-ref ex-ref-mckee">McKee p.745</span></li>
+<li>Pulmonary artery aneurysms 是 pulmonary involvement 的 principal feature，偶爾造成咳嗽與咳血（hemoptysis）。<span class="ex-ref">p.2572</span>　McKee：lung involvement 最多（up to）<strong class="ex-n">5%</strong>，hemoptysis 來自 pulmonary artery–bronchial fistula 形成，是重要死因。<span class="ex-ref ex-ref-mckee">McKee p.745</span></li>
+<li>Cardiac：myocarditis、coronary arteritis、endocarditis、valvular disease。Renal：從 minimal-change disease 到 proliferative glomerulonephritis 與 rapidly progressive crescentic glomerulonephritis；部分病例的 glomerulonephritis 被認為（is thought to be）由 immune complex deposition 造成。<span class="ex-ref">p.2572</span>　McKee：kidney 受影響最多（up to）<strong class="ex-n">55%</strong>（amyloidosis、glomerulonephritis、interstitial nephritis、vasculitis、IgA nephropathy）。<span class="ex-ref ex-ref-mckee">McKee p.745</span></li>
 </ul>
 <h3>GI、genitourinary、neurologic（腸胃、泌尿生殖、神經）</h3>
 <ul>
 <li>GI：aphthae 可見於整個 GI tract，罕見造成 perforation 與 peritonitis（<strong class="ex-n">0.5%</strong>）；GI involvement 有急性加重病程，潰瘍最常在 ileocolonic area，可大而深，造成 perforation 與大出血；需排除 inflammatory bowel disease。<span class="ex-ref">p.2572–2573</span>　McKee：particularly ileocecal region，perforation 可為 intra-abdominal emergency；esophagus 少見受侵犯。<span class="ex-ref ex-ref-mckee">McKee p.745</span></li>
 <li>男性可有 sterile prostatitis 與 epididymitis，即使沒有 genital ulcers。<span class="ex-ref">p.2573</span></li>
-<li>Neurologic：約 <strong class="ex-n">10%</strong> 病人有顯著神經表現，發病可能延遲：meningoencephalitis、cerebral venous sinus thrombosis、benign intracranial hypertension、cranial nerve palsies、brainstem lesions、pyramidal 或 extrapyramidal lesions。預後不佳與進行性病程、治療後復發、反覆發作、cerebellar symptoms 或 parenchymal disease 有關；常以 severe headache 表現；也可有 gait disturbance、dysarthria、vertigo、diplopia、hyperreflexia、epileptic seizures、hemiplegia、ataxia、positive Babinski reflex；depression、insomnia、memory impairment 等 psychiatric symptoms 也是神經侵犯的徵象。<span class="ex-ref">p.2573</span></li>
-<li>McKee：nervous system involvement 與 poor prognosis 相關，最多約 <strong class="ex-n">25%</strong> 病人；dural sinus thrombosis 是已知併發症。<span class="ex-ref ex-ref-mckee">McKee p.745</span></li>
+<li>Neurologic：約 <strong class="ex-n">10%</strong> 病人有顯著神經表現，發病可能延遲：meningoencephalitis、cerebral venous sinus thrombosis、benign intracranial hypertension、cranial nerve palsies、brainstem lesions、pyramidal 或 extrapyramidal lesions。預後不佳與進行性病程、治療後復發、反覆發作、cerebellar symptoms 或 parenchymal disease 有關；神經表現通常（usually）以 severe headache 表現；也可有 gait disturbance、dysarthria、vertigo、diplopia、hyperreflexia、epileptic seizures、hemiplegia、ataxia、positive Babinski reflex；depression、insomnia、memory impairment 等 psychiatric symptoms 也是神經侵犯的徵象。<span class="ex-ref">p.2573</span></li>
+<li>McKee：nervous system involvement 與 poor prognosis 相關，最多（up to）<strong class="ex-n">25%</strong> 病人；dural sinus thrombosis 是已知併發症。<span class="ex-ref ex-ref-mckee">McKee p.745</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Sign or symptom（McKee Table 16.7）</th><th scope="col">Incidence（%）</th></tr></thead>
@@ -249,17 +249,17 @@
 <li>Onset in childhood does not necessarily predict a poor prognosis；可有部分或全部表現的 spontaneous remissions。Ophthalmic 與 neurologic sequelae 是 morbidity 的主因，其次是嚴重 vascular 與 GI manifestations，其影響可能累積。<span class="ex-ref">p.2574</span></li>
 <li>McKee：mortality 很低，約 <strong class="ex-n">2% to 4%</strong>；男性似乎死亡率較高。<span class="ex-ref ex-ref-mckee">McKee p.743, 745</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫 mortality 為 0 to 6%（p.2574），McKee 寫約 2% to 4%（McKee p.745）。神經侵犯比例：Fitzpatrick 約 10%（p.2573），McKee up to 25%（McKee p.745）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫 mortality 為 0 to 6%（p.2574），McKee 寫約 2% to 4%（McKee p.745）。Significant neurologic manifestations（顯著神經表現）：Fitzpatrick 約 10%（p.2573），McKee up to 25%（McKee p.745）。</aside>
 </section>
 
 <section class="ex-note" id="treatment">
 <h2>11. Treatment（治療）</h2>
 <ul>
-<li>治療選擇依 clinical manifestations 的部位與嚴重度。Recurrent aphthae 多以 palliative agents 處理：mild diet、避免刺激物、potent topical glucocorticoids、local anesthetics；topical hyaluronic acid <strong class="ex-n">0.2%</strong> gel 每日 2 次、<strong class="ex-n">30 days</strong> 有效。<span class="ex-ref">p.2574</span></li>
+<li>治療選擇依 clinical manifestations 的部位與嚴重度。Recurrent aphthae 最常（most often）以 palliative agents 處理：mild diet、避免刺激物、potent topical glucocorticoids、local anesthetics；topical hyaluronic acid <strong class="ex-n">0.2%</strong> gel 每日 2 次、<strong class="ex-n">30 days</strong> 有效。<span class="ex-ref">p.2574</span></li>
 <li>Genital ulcers 與皮膚病灶：corticosteroid 與 antiseptic creams 最多使用 <strong class="ex-n">7 days</strong>；疼痛的 genital ulcerations 可用 topical anesthetics cream；頑固病灶可用 corticosteroid injection（triamcinolone acetonide <strong class="ex-n">0.1–0.5 mL/lesion</strong>）。<span class="ex-ref">p.2574</span></li>
-<li>Panuveitis 與 cystoid macular edema：單次 intravitreal triamcinolone acetonide <strong class="ex-n">4 mg</strong>。<span class="ex-ref">p.2575</span></li>
+<li>Corticosteroid 單次 intravitreal injection（triamcinolone acetonide <strong class="ex-n">4 mg</strong>）對 panuveitis 與 cystoid macular edema 也可有益（can also be beneficial）。<span class="ex-ref">p.2575</span></li>
 <li>系統性治療的適應：topical treatment 無效的 mucocutaneous lesions、有 systemic involvement、有 poor prognosis markers 的病人。<span class="ex-ref">p.2575</span></li>
-<li>Prednisolone（口服或靜脈）可併用其他 immunosuppressants、colchicine、dapsone、sulfasalazine 或 interferon-α；與 cyclosporine A 併用在 ocular involvement 病人有 synergistic effect；prednisolone 是少數可在懷孕時使用的藥物。Colchicine 可併用 immunosuppressants 與 interferon-α。停用 cyclosporine A、interferon-α、dapsone 或 infliximab 後常迅速復發。<span class="ex-ref">p.2575</span></li>
+<li>Prednisolone（口服或靜脈）可併用其他 immunosuppressants、colchicine、dapsone、sulfasalazine 或 interferon-α；與 cyclosporine A 併用在 ocular involvement 病人的 synergistic effect 已有描述（has been described）；prednisolone 是少數可在懷孕時使用的藥物。Colchicine 可併用 immunosuppressants 與 interferon-α。停用 cyclosporine A、interferon-α、dapsone 或 infliximab 後常迅速復發。<span class="ex-ref">p.2575</span></li>
 <li>Prevention：severe 或 progressive recurrent aphthous stomatitis 病人應追蹤多年，視為潛在 Adamantiades–Behçet disease 候選者（尤其有家族史者）；疑似病例應早期轉介專科；以 systemic involvement 起病的男性和／或早發者，因預後差應給予 systemic treatment。<span class="ex-ref">p.2575</span></li>
 </ul>
 <h3>Topical treatment of oral aphthous ulcers（Table 141-3 摘錄）</h3>

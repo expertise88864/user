@@ -8,7 +8,7 @@
 <li><mark data-q="103-29">病理特徵是 granulomatous inflammation（palisaded 或 interstitial pattern），合併不同程度的 connective tissue degeneration 與 mucin deposition</mark>。<span class="ex-ref">p.564</span></li>
 <li><mark data-q="103-29,114-07">Most localized cases resolve spontaneously within <strong class="ex-n">2 years</strong></mark>。<span class="ex-ref">p.564</span></li>
 </ul>
-<p>McKee 把 GA 分為六個 clinical subsets：localized、generalized、perforating、subcutaneous、papular、linear；pustular follicular 與 patch 列為少見變異。<span class="ex-ref ex-ref-mckee">McKee p.313</span></p>
+<p>McKee 寫 GA 可分為（may be divided into）六個 clinical subsets：localized、generalized、perforating、subcutaneous、papular、linear；pustular follicular 與 patch 列為少見變異。<span class="ex-ref ex-ref-mckee">McKee p.313</span></p>
 </section>
 
 <section class="ex-note" id="epidemiology">
@@ -18,9 +18,9 @@
 <li><mark data-q="103-29">Localized annular 與 subcutaneous 型較常見於兒童與 young adults；generalized（disseminated）型較常見於成人</mark>。<span class="ex-ref">p.564</span></li>
 <li>許多研究報告女性較多（female preponderance），但也有研究發現男性頻率較高；不偏好特定種族或地區。<span class="ex-ref">p.564</span></li>
 <li>多數為 sporadic；偶有家族病例（雙胞胎、手足、連續世代）。HLA subtype 的研究結果在不同族群間不一致。<span class="ex-ref">p.564</span></li>
-<li>McKee：localized 型通常在前三個十年（first three decades）發病，女：男約 <strong class="ex-n">2.25 : 1</strong>；generalized 型多數在第四到第七個十年（fourth to seventh decades），其餘在第一個十年，同樣女性較多，且 HLA-Bw35 發生率增加。<span class="ex-ref ex-ref-mckee">McKee p.313–314</span></li>
+<li>McKee：localized 型通常在前三個十年（first three decades）發病，女：男 <strong class="ex-n">2.25 : 1</strong>；generalized 型多數在第四到第七個十年（fourth to seventh decades），其餘在第一個十年，同樣女性較多，且 HLA-Bw35 發生率增加。<span class="ex-ref ex-ref-mckee">McKee p.313–314</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫 subcutaneous GA <em>occurs predominantly in children</em>，但「也見於成人」（p.565）；generalized variant 則 <em>more common in adults</em>，但「也可見於兒童」（p.564）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫 subcutaneous GA <em>occurs predominantly in children</em>，但「也描述於成人病人」（<em>also described in adult patients</em>，p.565）；generalized variant 則 <em>more common in adults</em>，但「也可見於兒童」（p.564）。</aside>
 </section>
 
 <section class="ex-note" id="clinical-variants">
@@ -29,9 +29,9 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Type（型別）</th><th scope="col">Key features（重點）</th><th scope="col">Sites（好發部位）</th></tr></thead>
 <tbody>
-<tr><td>Localized</td><td>最常見的型態；annular 或 arcuate lesion，膚色、紅或紫紅色，通常 <strong class="ex-n">1 to 5 cm</strong>；環緣 firm，可連續或由分散／融合的 papules 組成；表皮通常正常；環內皮膚可呈紫紅或色素沉著</td><td>Dorsal hands and feet、ankles、lower limbs、wrists；其他部位較少見（包括 eyelids）；palms/soles 偶爾侵犯。手指的 papular lesions 可呈 umbilicated</td></tr>
+<tr><td>Localized</td><td>最常見的型態；annular 或 arcuate lesion，可為膚色、紅或紫紅色，通常 <strong class="ex-n">1 to 5 cm</strong>；環緣 firm，可連續或由分散／融合的 papules 組成；表皮通常正常；環內皮膚可呈紫紅或色素沉著</td><td>Dorsal hands and feet、ankles、lower limbs、wrists；其他部位較少見（包括 eyelids）；palms/soles 偶爾侵犯。手指的 papular lesions 可呈 umbilicated</td></tr>
 <tr><td>Generalized</td><td>據稱佔 <strong class="ex-n">8% to 15%</strong>；多數為成人，兒童也可見；廣泛的 papules，部分融合成小 annular plaques 或較大、邊緣 arcuate/serpiginous 隆起的變色斑；顏色可為膚色、粉紅、紫紅、tan 或黃色；annular 或 nonannular 型態可佔優勢</td><td>除頸部與四肢外，<strong>trunk 常受侵犯</strong>；face、scalp、palms、soles 也可受侵犯</td></tr>
-<tr><td>Subcutaneous</td><td>Predominantly in children，也描述於成人；firm 到 hard、通常無症狀的結節，位於 deep dermis 與 subcutaneous tissue，可延伸至肌肉；頭皮與眼眶的結節常與 periosteum 黏連；大小 <strong class="ex-n">6 mm to 3.5 cm</strong></td><td>最常在 anterior lower legs（pretibial）；其次 ankles、dorsal feet、buttocks、hands；scalp、eyelids、orbital rim 的結節是診斷挑戰；也可見於 penis</td></tr>
+<tr><td>Subcutaneous</td><td>Predominantly in children，也描述於成人；firm 到 hard、通常無症狀的結節，位於 deep dermis 與 subcutaneous tissue，可延伸至肌肉；頭皮與眼眶的結節常與 periosteum 黏連；大小 <strong class="ex-n">6 mm to 3.5 cm</strong></td><td>最常在 anterior lower legs（pretibial）；其他好發部位為 ankles、dorsal feet、buttocks、hands；scalp、eyelids、orbital rim 的結節可能是診斷挑戰（may present a diagnostic challenge）；也可見於 penis</td></tr>
 <tr><td>Perforating</td><td>罕見變異；necrobiotic collagen 發生 transepidermal elimination；表淺小 papules 出現中央 umbilication 或結痂，可流出 creamy fluid；癒合後留下 atrophic 或 hyperpigmented scars；一個系列中 <strong class="ex-n">24%</strong> 有 pruritus、<strong class="ex-n">21%</strong> 有疼痛</td><td>Localized 時通常在 dorsal hands and fingers；也可 generalized 分布於 trunk 與四肢；曾描述於 ears、scrotum、herpes zoster scars 與 tattoos</td></tr>
 <tr><td>Patch</td><td>無 annular rim 的 erythematous、red-brown 或 violaceous 斑（macular）；也觀察到 arcuate dermal erythema；報告於成年女性</td><td>—</td></tr>
 </tbody>
@@ -40,7 +40,7 @@
 <ul>
 <li>各型之間可並存：localized annular lesions 可與 subcutaneous 或 patch 型並存。<span class="ex-ref">p.564</span></li>
 <li>兒童手部的 papular umbilicated GA 與 generalized follicular pustular type 可能是臨床變異。<span class="ex-ref">p.565–566</span></li>
-<li><strong>Noncutaneous：</strong>多數病人健康、無其他異常理學發現；手部疼痛性病灶可伴 arthralgia；GA 樣皮膚病灶合併關節病變，屬 multisystem disorder「interstitial granulomatous dermatitis with arthritis」；<mark data-q="104-23">HIV-associated disease 可見 oral involvement</mark>。<span class="ex-ref">p.566</span></li>
+<li><strong>Noncutaneous：</strong>多數病人健康、無其他異常理學發現；曾報告 arthralgia 伴隨手部疼痛性病灶（is reported）；GA 樣皮膚病灶合併關節病變，屬 multisystem disorder「interstitial granulomatous dermatitis with arthritis」；<mark data-q="104-23">HIV-associated disease 曾觀察到 oral involvement（has been observed）</mark>。<span class="ex-ref">p.566</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>原文 GA is <em>usually asymptomatic</em>，<em>mild pruritus may be present</em>，<em>painful lesions are rare</em>（p.564）。Perforating 型的一個系列中，<strong class="ex-n">24%</strong> 有 pruritus、<strong class="ex-n">21%</strong> 有疼痛（p.565）。</aside>
 <h3>McKee 補充（臨床）</h3>
@@ -57,9 +57,9 @@
 <p>病因不明；多數病例發生於其他方面健康的兒童。各種誘發事件與合併的全身疾病都有報告，但意義不明；GA 可能是一種有許多不同起始因子的 phenotypic reaction pattern。<span class="ex-ref">p.566</span></p>
 <h3>Predisposing events &amp; infections（誘發事件與感染）</h3>
 <ul>
-<li>輕微 trauma 被認為可能是誘發因素（病灶常在兒童遠端肢體）；早期研究發現 subcutaneous GA 的兒童中 <strong class="ex-n">25%</strong> 有外傷史，但未被重複驗證。蜂螫、貓咬、章魚咬、昆蟲叮咬反應也有報告；perforating GA 見於長期存在的 tattoos。<span class="ex-ref">p.566</span></li>
+<li>輕微 trauma 被認為可能是誘發因素（病灶常在兒童遠端肢體）；早期研究發現 subcutaneous GA 的兒童中 <strong class="ex-n">25%</strong> 有外傷史，但未被重複驗證。蜂螫、貓咬、章魚咬、昆蟲叮咬反應也有報告；有一篇報告 perforating GA 發生於長期存在的 tattoos。<span class="ex-ref">p.566</span></li>
 <li>廣泛病灶曾發生於 waxing 引起的 pseudofolliculitis、erythema multiforme minor 之後，以及合併 systemic sarcoidosis 時；少數 GA 病人有 severe uveitis 而無其他 sarcoidosis 證據。<span class="ex-ref">p.566</span></li>
-<li>GA 可發生在 <mark data-q="104-23">herpes zoster scars 內（有時在感染後多年），也見於 chickenpox 之後</mark>。<span class="ex-ref">p.566</span></li>
+<li>有數篇報告 GA 發生在 <mark data-q="104-23">herpes zoster scars 內（有時在感染後多年），也有發生於 chickenpox 之後的描述</mark>。<span class="ex-ref">p.566</span></li>
 <li><mark data-q="104-23">Generalized、localized、perforating 各型 GA 都可能合併 HIV infection</mark>；有一位 HIV 陽性病人的病灶分離出 adenovirus；在這些病例中 Epstein-Barr virus 被排除為病因。<span class="ex-ref">p.566</span></li>
 <li>另一方面，<mark data-q="104-23">generalized GA 也曾與病毒感染相關連，包括 Epstein-Barr virus infection、chronic hepatitis B 與 hepatitis C</mark>。<span class="ex-ref">p.566</span></li>
 <li>疫苗：tetanus、diphtheria toxoid、hepatitis B 疫苗曾被認為是誘發因素（但一例 generalized GA 的接種部位未受侵犯）。活動性 tuberculosis 的病人可出現符合 GA 的病灶；tuberculin skin test 與 BCG 免疫後也有報告。<span class="ex-ref">p.566</span></li>
@@ -106,7 +106,7 @@
 </ul>
 <h3>Dyslipidemia</h3>
 <ul>
-<li><mark data-q="112-28">GA 病人 dyslipidemia 的 prevalence 增加</mark>；在 <strong>generalized GA</strong>，尤其 annular morphology 的病例，更常被發現。<span class="ex-ref">p.567</span></li>
+<li><mark data-q="112-28">曾有報告 GA 病人 dyslipidemia 的 prevalence 增加</mark>；在 <strong>generalized GA</strong>，尤其 annular morphology 的病例，更常被發現。<span class="ex-ref">p.567</span></li>
 </ul>
 </section>
 
@@ -128,21 +128,21 @@
 <li>低倍鏡下最容易診斷；變化通常在 upper and middle dermis，但 dermis 任何部位或 subcutis 都可受侵犯。<span class="ex-ref">p.567</span></li>
 <li><mark data-q="103-29"><strong>Lymphohistiocytic granuloma</strong> 合併不同程度的 <strong>connective tissue degeneration</strong> 與 <strong>mucin deposition</strong></mark>；浸潤可為 palisaded、interstitial 或兩者混合；偶見 sarcoid-like pattern（large epithelioid histiocytes）。<span class="ex-ref">p.567</span></li>
 <li>Palisaded pattern 典型：單一或多個發炎病灶，中央為 altered collagen（necrobiosis），外圍被 palisaded histiocytes 包圍；necrobiotic centers 通常呈卵圓形、輕度 basophilic、無細胞核，collagen bundles 失去輪廓，elastic fibers 減少或消失；mucin 與 lipid 染色常為陽性。<span class="ex-ref">p.567</span></li>
-<li>Interstitial、non-palisaded pattern：histiocytes 浸潤在斷裂的 collagen bundles 之間，尤其在 generalized form 可佔優勢；也可見於無明顯 connective tissue 變化時；mucin 染色有助於偵測浸潤中的 connective tissue 改變。<span class="ex-ref">p.567</span></li>
+<li>Interstitial、non-palisaded pattern：histiocytes 浸潤在斷裂的 collagen bundles 之間，尤其在 generalized form 可佔優勢；也可見於無明顯 connective tissue 變化時；mucin 染色可能有助於（may be helpful）偵測浸潤中的 connective tissue 改變。<span class="ex-ref">p.567</span></li>
 <li>Lymphocytes 與 histiocytes 混雜，也呈 perivascular 分布；multinucleated giant cells 可存在但不如 actinic granuloma 多；<mark data-q="104-30">neutrophils 與 eosinophils 偶爾可見</mark>，plasma cells 罕見。<span class="ex-ref">p.568</span></li>
-<li>Vascular reactivity 的證據：endothelial cell swelling、red cell extravasation、fibrin、leukocytoclasis、血管壁 neutrophilic infiltration；若 leukocytoclastic vasculitis 或 nuclear debris 很明顯，要考慮 palisaded neutrophilic and granulomatous dermatitis of immune complex disease。<span class="ex-ref">p.568</span></li>
+<li>Vascular reactivity 的證據：不同程度的（variable）endothelial cell swelling、red cell extravasation、fibrin、leukocytoclasis、血管壁 neutrophilic infiltration；若 leukocytoclastic vasculitis 或 nuclear debris 很明顯，要考慮 palisaded neutrophilic and granulomatous dermatitis of immune complex disease。<span class="ex-ref">p.568</span></li>
 <li>Subcutaneous GA：necrobiosis 的病灶較大，位於 deep dermis 與 subcutaneous fat；<strong>可藉由 necrobiotic zone 內有 mucin 與 rheumatoid nodules 區分</strong>（may be distinguished）。<span class="ex-ref">p.568</span></li>
 <li>Perforating GA：中央 ulceration，necrobiosis 區與表面相通；可能需要 serial sections 才看得到 necrobiotic plug。<span class="ex-ref">p.568</span></li>
-<li>Patch type：interstitial pattern 合併 diffuse necrobiosis；macular lesions 也曾觀察到 palisaded granulomas。<span class="ex-ref">p.568</span></li>
-<li>Immunofluorescence：血管壁或 basement membrane zone 周圍可有 fibrin、IgM、C3 沉積（為 variable finding）；也有 IgM cytoid bodies 的報告。Immunohistochemistry 可用來確認可疑病灶的 histiocytic nature。<span class="ex-ref">p.568</span></li>
+<li>Patch type：曾報告 interstitial pattern 合併 diffuse necrobiosis；macular lesions 也曾觀察到 palisaded granulomas。<span class="ex-ref">p.568</span></li>
+<li>Immunofluorescence：血管壁或 basement membrane zone 周圍可有 fibrin、IgM、C3 沉積（為 variable finding）；也有 IgM cytoid bodies 的報告。Immunohistochemistry 可能有助於（may be useful）確認可疑病灶的 histiocytic nature。<span class="ex-ref">p.568</span></li>
 </ul>
 <h3>McKee 補充</h3>
 <ul>
 <li><mark data-q="103-29">最具特徵的是 <strong>palisading granuloma</strong>：中央為 degenerate（necrobiotic）collagen，周圍常呈放射狀排列 lymphocytes、histiocytes 與 fibroblasts</mark>；病灶內 elastic tissue 可缺失，周邊 giant cells 可吞噬 elastic fibers，但 altered elastic fibers 並非恆定；solar elastosis 不是 GA 的特徵。<span class="ex-ref ex-ref-mckee">McKee p.317</span></li>
 <li>變性 collagen 有時因 acid mucopolysaccharides 而偏 basophilic，但更常是 eosinophilic（部分由 fibrin 沉積造成）；<strong>heparan sulfate</strong>（原文拼為 heparin sulfate）是 GA mucin 的重要成分，其他伴 mucin 沉積的皮膚疾病則不是。<span class="ex-ref ex-ref-mckee">McKee p.317</span></li>
-<li>Diffuse / interstitial form：腫脹且強嗜伊紅的 collagen fibers 與看似正常的纖維交替，necrobiosis 極少或沒有；<mark data-q="103-29">collagen fibers 被 mucin 分隔，mucin 對 <strong>Alcian blue pH 2.5</strong> 染色呈陽性</mark>；histiocytes 常浸潤在受影響纖維周圍與之間，是早期病例的診斷線索。<span class="ex-ref ex-ref-mckee">McKee p.317</span></li>
-<li>幾乎必有 perivascular chronic inflammatory infiltrate；部分病例有 well-formed sarcoidal granulomata 伴 giant cells。<mark data-q="104-30">Eosinophils 可有相當數量：一項研究中 <strong class="ex-n">66%</strong> 的切片可見 eosinophils，其中 <strong class="ex-n">14%</strong> 每個 high-power field 超過 10 個</mark>。Plasma cells 罕見，這點有助於和 necrobiosis lipoidica 鑑別；neutrophils 罕見，出現時（尤其合併 vasculitis 變化）可能與 systemic disease 有關。<span class="ex-ref ex-ref-mckee">McKee p.317–319</span></li>
-<li>Perforating GA：necrobiotic debris 靠近表皮，被表皮包裹形成 perforating channel；serial sections 常顯示穿孔經過 hair follicle。<span class="ex-ref ex-ref-mckee">McKee p.319</span></li>
+<li>Diffuse / interstitial form：腫脹且強嗜伊紅的 collagen fibers 與看似正常的纖維交替，necrobiosis 極少或沒有；<mark data-q="103-29">collagen fibers 被 mucin 分隔，mucin 對 <strong>Alcian blue pH 2.5</strong> 染色呈陽性</mark>；histiocytes 常浸潤在受影響纖維周圍與之間，在 collagen 變化不明顯的早期病例可能是有幫助的診斷線索（may be a helpful clue）。<span class="ex-ref ex-ref-mckee">McKee p.317</span></li>
+<li>幾乎必有 perivascular chronic inflammatory infiltrate；部分病例有 well-formed sarcoidal granulomata 伴 giant cells。<mark data-q="104-30">Eosinophils 可有相當數量：一項研究中 <strong class="ex-n">66%</strong> 的切片可見 eosinophils，其中 <strong class="ex-n">14%</strong> 每個 high-power field 超過 10 個</mark>。Plasma cells 罕見，這點有助於和 necrobiosis lipoidica 鑑別；neutrophils 罕見，出現時（尤其合併 vasculitis 變化）很可能（likely）與 systemic disease 有關。<span class="ex-ref ex-ref-mckee">McKee p.317–319</span></li>
+<li>Perforating GA：necrobiotic debris 靠近表皮，可見被表皮包裹形成 perforating channel；serial sections 常顯示穿孔經過 hair follicle。<span class="ex-ref ex-ref-mckee">McKee p.319</span></li>
 <li>Subcutaneous GA：病灶遠大於表淺型，常由多個結節組成；通常有 massive necrobiosis 與大量 mucin，multinucleate giant cells 常見；mucin 也可能很少或不明顯，若有 fibrin deposition，則與 rheumatoid nodule 無法區分；<strong class="ex-n">up to 25%</strong> 的病例在 dermis 可見 classic GA 變化。Papular 與 linear 型的組織學與典型 GA 相似。<span class="ex-ref ex-ref-mckee">McKee p.319</span></li>
 <li>Adipophilin 染色：GA 為 intra- 與 extracellular（與 histiocytes 相關）；necrobiosis lipoidica 傾向只在異常 collagen 處 extracellular；sarcoidosis 通常只在 histiocytes 內 intracellular。GA 若出現 epithelioid cell granulomas 而 mimic sarcoidosis，背景中的 mucin 與其他典型變化可幫助區分。<span class="ex-ref ex-ref-mckee">McKee p.319–320</span></li>
 </ul>
@@ -161,7 +161,7 @@
 <p class="ex-cite">McKee Table 9.1，p.320（只摘錄部分欄位與列）。</p>
 <aside class="ex-trap"><strong>易錯</strong>Subcutaneous GA 與 rheumatoid nodule：Fitzpatrick 寫可藉由 necrobiotic zone 內有 mucin 與 rheumatoid nodules 區分（may be distinguished，p.568）；McKee 則寫 mucin 也可能很少或不明顯，若有 fibrin deposition，兩者無法區分（McKee p.319）。</aside>
 <ul>
-<li>McKee：出現 interface changes 時偏向 drug eruption（GA-like drug eruptions）；<em>Mycobacterium marinum</em> 感染偶爾可 mimic interstitial GA，需靠特殊染色與培養；epithelioid sarcoma 以較明顯的 nuclear atypia 與 pleomorphism 區分，且常有 perineural tumor infiltration。<span class="ex-ref ex-ref-mckee">McKee p.320</span></li>
+<li>McKee：出現 interface changes 時偏向 drug eruption（GA-like drug eruptions）；<em>Mycobacterium marinum</em> 感染偶爾可 mimic interstitial GA，需靠特殊染色與培養；epithelioid sarcoma 的 nuclear atypia 與 pleomorphism 程度在多數病例（in the majority of cases）應可區分兩者，且常有 perineural tumor infiltration。<span class="ex-ref ex-ref-mckee">McKee p.320</span></li>
 </ul>
 </section>
 
@@ -210,7 +210,7 @@
 <li>Generalized GA 常有較 protracted 的病程。<span class="ex-ref">p.570</span></li>
 <li>Perforating GA 會留下 scarring。<span class="ex-ref">p.570</span></li>
 <li>Generalized GA 與 annular elastolytic giant cell granuloma 之後，有數篇 anetoderma 或 middermal elastolysis 的報告；一例 photosensitive distribution 的 generalized GA 癒合後留下 scarring 與 milia。<span class="ex-ref">p.570</span></li>
-<li>McKee：spontaneous resolution 少見地可造成 mid-dermal elastolysis；偶有病灶在 biopsy 後自行消退。<span class="ex-ref ex-ref-mckee">McKee p.313</span></li>
+<li>McKee：spontaneous resolution 罕見地（rarely）可能造成 mid-dermal elastolysis；偶有病灶在 biopsy 後自行消退。<span class="ex-ref ex-ref-mckee">McKee p.313</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>原文：localized GA 多數自行消退且不留後遺症、majority disappear within 2 years；generalized GA often runs a more protracted course；perforating GA results in scarring（p.570）。</aside>
 </section>

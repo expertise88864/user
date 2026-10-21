@@ -92,7 +92,7 @@
 <li><span class="ex-ref ex-ref-mckee">McKee p.885</span> 一般細胞反應為 epithelioid macrophages、Langhans giant cells 與 caseous necrosis，周圍有 lymphocytes 與 plasma cells；tuberculoid granulomata（例如 sarcoidosis）依定義沒有 true caseation。</li>
 <li><span class="ex-ref ex-ref-mckee">McKee p.888</span> 典型的肉芽腫加 caseation 幾乎是 tuberculous infection 的 pathognomonic，但 sarcoidosis 可有相似外觀；sarcoidosis 的 necrosis 偏 fibrinoid 而非 caseating，周圍較少 lymphocytic 與 plasmacytic infiltrate、giant cells 較少、肉芽腫較分離（sarcoidal naked granuloma）；Schaumann bodies 是 sarcoidosis 的特徵，但偶爾可見於 mycobacterial infections。</li>
 <li><span class="ex-ref ex-ref-mckee">McKee p.888</span> 較不肉芽腫性的皮膚 TB 要與 leprosy 區分，perineural distribution 指向 leprosy；deep fungal infections 與 leishmaniasis 也可能混淆；granulomatous late secondary 與 tertiary syphilis 的區別在血管變化與大量 plasma cells；caseation necrosis 在 acne agminata 也是典型，beryllium 與 zirconium 的 foreign body reactions 也可見。</li>
-<li><span class="ex-ref ex-ref-mckee">McKee p.888</span> 即使確定的 TB 也常無法證實 bacilli，培養需 <strong class="ex-n">3–4 weeks</strong>；有時是 diagnosis of exclusion，以 therapeutic trial of antituberculous drugs 確認；因此 PCR 的使用增加。</li>
+<li><span class="ex-ref ex-ref-mckee">McKee p.888</span> 即使確定的 TB 也常無法證實 bacilli，培養需 <strong class="ex-n">3–4 weeks</strong>；偶爾（occasionally）可能是 diagnosis of exclusion，以 therapeutic trial of antituberculous drugs 確認；因此 PCR 的使用增加。</li>
 </ul>
 <h3>PCR</h3>
 <ul>
@@ -147,7 +147,7 @@
 <section class="ex-note" id="primary-inoculation">
 <h2>6. Primary Inoculation Tuberculosis（原發接種性結核，tuberculous chancre）</h2>
 <ul>
-<li>Tuberculous chancre 加上受影響的 regional lymph nodes，構成皮膚的 tuberculous primary complex。被認為罕見，但發生率可能被低估；在高 TB prevalence 與生活條件差的地區並不少見。<strong>兒童</strong>最常受影響。<span class="ex-ref">p.2861</span></li>
+<li>Tuberculous chancre 加上受影響的 regional lymph nodes，構成皮膚的 tuberculous primary complex。被認為罕見，但發生率可能被低估；在部分（some regions）高 TB prevalence 與生活條件差的地區並不少見。<strong>兒童</strong>最常受影響。<span class="ex-ref">p.2861</span></li>
 <li>Tubercle bacilli 經由小傷口進入組織；口腔病灶可由未經 pasteurized 牛奶中的 bovine bacilli 引起，發生在黏膜外傷或拔牙後。起初是 multibacillary，隨免疫發展變成 paucibacillary。<span class="ex-ref">p.2861</span></li>
 </ul>
 <h3>Clinical findings</h3>
@@ -177,15 +177,15 @@
 <li>Paucibacillary 疾病，由已致敏、具高免疫力者的 <strong>exogenous reinfection（inoculation）</strong>引起。<span class="ex-ref">p.2863</span></li>
 <li>經小傷口，或罕見地經病人自己的痰接種；處理感染性材料的專業人員有風險；兒童可能在被污染的土地上玩耍而感染。<span class="ex-ref">p.2864</span></li>
 <li>病灶多在手；兒童則多在下肢；起初為無症狀的小丘疹或 papulopustule 加紫色發炎暈，變 hyperkeratotic，常被誤認為 common wart；緩慢生長、向周邊擴展，形成邊界不規則的 verrucous plaque，裂隙排膿並延伸到褐紅至紫紅的浸潤底部。通常單發，也可多發；regional lymph nodes 罕見受影響。<span class="ex-ref">p.2864</span></li>
-<li>病灶緩慢進展，未治療可持續多年；最後自然消退，留下萎縮性疤痕。<span class="ex-ref">p.2864</span></li>
+<li>病灶緩慢進展，未治療會持續多年；最後自然消退，留下萎縮性疤痕。<span class="ex-ref">p.2864</span></li>
 <li>組織：最突出的是 <strong>pseudoepitheliomatous hyperplasia</strong> 伴明顯 hyperkeratosis、緻密發炎浸潤，以及位於淺真皮或 pseudoepitheliomatous rete pegs 內的膿瘍；epithelioid cells 與 giant cells 見於真皮上、中層；典型 tubercles 少見，浸潤可能無特異性。<span class="ex-ref">p.2864</span></li>
 <li>鑑別診斷（Table 157-5）：Most likely：blastomycosis、hyperkeratotic lupus vulgaris、hypertrophic lichen planus、warts or keratoses；Consider：bromoderma、chromomycosis、tertiary syphilis；Always rule out：lesions caused by other mycobacteria。<span class="ex-ref">p.2864</span></li>
 </ul>
 <p><strong>McKee 補充</strong></p>
 <ul>
-<li>Warty lupus 發生在具某種程度免疫、或他處有 active infection 者；在亞洲某些系列是最常見的變異型。典型為病理醫師或 autopsy technicians 的 <strong>prosector's warts</strong>，也可見於處理受感染牛隻的 butchers；受感染的痰接種（甚至來自同一病人）可造成類似病灶；兒童多在下肢或臀部。<span class="ex-ref ex-ref-mckee">McKee p.882</span></li>
+<li>Warty lupus 發生在具某種程度免疫、或他處可能有 active infection 者；在亞洲某些系列是最常見的變異型。典型為病理醫師或 autopsy technicians 的 <strong>prosector's warts</strong>，也可見於處理受感染牛隻的 butchers；受感染的痰接種（甚至來自同一病人）可造成類似病灶；兒童多在下肢或臀部。<span class="ex-ref ex-ref-mckee">McKee p.882</span></li>
 <li>病灶始於角化的 warty 小硬結，呈 serpiginous 緩慢擴展成不規則紅褐色 warty plaque；部分區域較軟、可排膿；部分區域局部消退留下萎縮蒼白疤痕。<span class="ex-ref ex-ref-mckee">McKee p.882</span></li>
-<li>組織：<strong>acanthotic papillomatosis</strong> 伴明顯 hyperkeratosis，也可有 pseudoepitheliomatous hyperplasia；真皮浸潤以 neutrophils 與 lymphocytes 為主，可有膿瘍；肉芽腫見於較深真皮，偶有 caseation；仔細找可找到 bacilli（McKee Table 18.2 則寫 Absent or very scanty）。McKee 與 Fitzpatrick 對肉芽腫位置的描述略有不同（Fitzpatrick：upper and middle dermis）。<span class="ex-ref ex-ref-mckee">McKee p.886</span></li>
+<li>組織：<strong>acanthotic papillomatosis</strong> 伴明顯 hyperkeratosis，也可有 pseudoepitheliomatous hyperplasia；真皮浸潤以 neutrophils 與 lymphocytes 為主，有時（sometimes）可有膿瘍；肉芽腫見於較深真皮，偶有 caseation；仔細找可找到 bacilli（McKee Table 18.2 則寫 Absent or very scanty）。McKee 與 Fitzpatrick 對肉芽腫位置的描述略有不同（Fitzpatrick：upper and middle dermis）。<span class="ex-ref ex-ref-mckee">McKee p.886</span></li>
 </ul>
 </section>
 
@@ -198,7 +198,7 @@
 </ul>
 <h3>Clinical findings</h3>
 <ul>
-<li>通常單發，也可同時兩處以上；活動性肺結核的病人可出現多處病灶。約 <strong class="ex-n">90%</strong> 的病人侵犯頭頸；常始於鼻、臉頰、耳垂或頭皮，再緩慢擴及鄰近區域，其他部位罕見。<span class="ex-ref">p.2864</span></li>
+<li>通常單發，也可同時兩處以上；活動性肺結核的病人可出現多處病灶。約 <strong class="ex-n">90%</strong> 的病人侵犯頭頸；通常始於鼻、臉頰、耳垂或頭皮，再緩慢擴及鄰近區域，其他部位罕見。<span class="ex-ref">p.2864</span></li>
 <li>初始病灶為褐紅色、柔軟或易碎的斑或丘疹，表面平滑或 hyperkeratotic。<mark data-q="105-35">Diascopy 下，浸潤呈典型的 <strong>apple jelly</strong> 色</mark>。<span class="ex-ref">p.2864</span></li>
 <li>進展特徵為隆起、顏色變深褐、形成斑塊；一處消退、另一處擴展，常形成 gyrate 外緣；可潰瘍。Hypertrophic form 表現為表面角化的軟結節或斑塊；黏膜可原發受侵或由皮膚病灶延伸；感染可表現為小而軟的灰色或粉紅色丘疹、潰瘍或易碎的 granulating masses。<span class="ex-ref">p.2864–2865</span></li>
 <li>免疫暫時受損後（特別是 <strong>measles</strong> 之後，因此稱 lupus postexanthematicus），latent tuberculous focus 經血行散播，可同時在身體不同區域出現多發散在病灶；發疹期間與之後，原本陽性的 tuberculin reaction 可能轉為 negative，通常隨全身狀況改善而回復為 positive。<span class="ex-ref">p.2865</span></li>
@@ -207,7 +207,7 @@
 <h3>Histopathology</h3>
 <ul>
 <li>最突出的是形成典型 <strong>tubercles</strong>；可疊加次發變化：表皮變薄萎縮，或 acanthosis 伴過度角化或 pseudoepitheliomatous hyperplasia；Acid-fast bacilli 通常找不到；非特異性發炎反應可部分遮蓋結核構造；舊病灶主要由 epithelioid cells 組成，可能無法與 sarcoidal infiltrates 區分。<span class="ex-ref">p.2865</span></li>
-<li><span class="ex-ref ex-ref-mckee">McKee p.886</span> 病灶位於淺真皮，tubercles 部分融合，中央 caseation 少或沒有，周圍 epithelioid histiocytes 與 multinucleate giant cells；周邊 lymphocytes 與 plasma cells 通常明顯；細菌非常少。表皮可潰瘍（此時浸潤較混合）、萎縮或 acanthotic，acanthosis 嚴重時（pseudoepitheliomatous hyperplasia）要與 invasive squamous carcinoma 區分，因為 SCC 是 LV 重要的罕見併發症；也有 transepithelial elimination of granulomata 的描述。</li>
+<li><span class="ex-ref ex-ref-mckee">McKee p.886</span> 病灶位於淺真皮，tubercles 部分融合，中央 caseation 少或沒有，周圍 epithelioid histiocytes 與 multinucleate giant cells；周邊 lymphocytes 與 plasma cells 通常明顯；細菌非常少。表皮可潰瘍（此時浸潤通常較混合）、萎縮或 acanthotic，acanthosis 嚴重時（pseudoepitheliomatous hyperplasia）要與 invasive squamous carcinoma 區分，因為 SCC 是 LV 重要的罕見併發症；也有 transepithelial elimination of granulomata 的描述。</li>
 <li><span class="ex-ref ex-ref-mckee">McKee p.886</span> LV 好發鼻周，McKee 解釋為該處有大的靜脈管道，血流停滯、相對寒冷與缺氧，損害 fibrinolysis 與宿主防禦。</li>
 </ul>
 <h3>Diagnosis / DDx</h3>
@@ -220,7 +220,7 @@
 <li>鼻或耳廓軟骨受侵可造成廣泛破壞與毀形；萎縮性疤痕（不論有無先前潰瘍）是特徵，疤痕內復發亦然；纖維化可明顯而毀形。早期鼻 LV 常只有 dry rhinitis 一個症狀，但病灶也可破壞鼻中隔軟骨；軟顎疤痕與喉狹窄也會發生。<span class="ex-ref">p.2865</span></li>
 <li>無治療時，LV 數年間進展成功能受損與毀形；長期 LV 可發展為癌，<strong>squamous cell carcinoma 遠多於 basal cell carcinoma</strong>，轉移風險高。<span class="ex-ref">p.2865–2866</span></li>
 <li><strong class="ex-n">40%</strong> 病人合併 tuberculous lymphadenitis，<strong class="ex-n">10% to 20%</strong> 有 active pulmonary TB 或骨與關節 TB；LV 病人的肺結核比一般人口多 <strong class="ex-n">4 to 10</strong> 倍。<span class="ex-ref">p.2866</span></li>
-<li><span class="ex-ref ex-ref-mckee">McKee p.883</span> 慢性 LV 可發生 squamous cell carcinoma、basal cell carcinoma、melanoma 與 lymphoma；contractures 與 lymphedema 是晚期併發症；眼部侵犯是另一嚴重併發症；LV 是 alopecia 的罕見原因。LV 偶可因直接接種而發生，甚至發生在 BCG 接種部位。McKee 描述 LV 為 papules 與隆起的紅斑性（有時有鱗屑）斑塊，質地 gelatinous，經 diascopy 像 apple jelly。</li>
+<li><span class="ex-ref ex-ref-mckee">McKee p.883</span> 慢性 LV 可發生 squamous cell carcinoma、basal cell carcinoma、melanoma 與 lymphoma；contractures 與 lymphedema 是晚期併發症；眼部侵犯是另一嚴重併發症；LV 是 alopecia 的罕見原因。LV 偶可因直接接種而發生，甚至發生在 BCG 接種部位。McKee 描述 LV 為 papules 與隆起的紅斑性（有時有鱗屑）斑塊，質地 gelatinous，據稱（said）經 diascopy 像 apple jelly。</li>
 <li><span class="ex-ref ex-ref-mckee">McKee p.882</span> LV 較常是來自通常隱匿的 tuberculous focus 的 hematogenous 或 lymphatic spread；西方的病灶多在臉（尤其鼻周）、頸與耳垂，女性較多。</li>
 </ul>
 </section>
@@ -230,7 +230,7 @@
 <ul>
 <li>盛行率在兒童、青少年與老年人較高。<span class="ex-ref">p.2866</span>（p.2858 寫 scrofuloderma usually occurs in adolescents and the elderly，未列兒童；兩處用詞不同，照原文。）</li>
 <li>是 subcutaneous TB 造成 <strong>cold abscess</strong>，繼而使上方皮膚破潰；可為 multibacillary 或 paucibacillary；代表皮膚<strong>連續性（contiguous）侵犯</strong>其下另一處感染灶（如 tuberculous lymphadenitis、骨與關節 TB、tuberculous epididymitis）。<span class="ex-ref">p.2866</span></li>
-<li>多在 parotideal、submandibular 與 supraclavicular 區，可雙側。起初為堅實的皮下結節，通常界線清楚、可自由移動、無症狀；增大後變軟；數月後 liquefaction 並穿破，形成潰瘍與 sinuses。潰瘍呈線狀或匍行性，邊緣 undermined、內翻、帶藍色，底部柔軟呈 granulating；sinus tracts 掘空皮膚，clefts 與軟結節交替；疤痕索橋接潰瘍區甚至正常皮膚。Tuberculin sensitivity 通常明顯。<span class="ex-ref">p.2866</span></li>
+<li>最常發生在 parotideal、submandibular 與 supraclavicular 區，可雙側。起初為堅實的皮下結節，通常界線清楚、可自由移動、無症狀；增大後變軟；數月後 liquefaction 並穿破，形成潰瘍與 sinuses。潰瘍呈線狀或匍行性，邊緣 undermined、內翻、帶藍色，底部柔軟呈 granulating；sinus tracts 掘空皮膚，clefts 與軟結節交替；疤痕索橋接潰瘍區甚至正常皮膚。Tuberculin sensitivity 通常明顯。<span class="ex-ref">p.2866</span></li>
 <li>組織：病灶中心的大片壞死與膿瘍屬非特異性；膿瘍周邊或 sinuses 邊緣含 tuberculoid granulomas。<span class="ex-ref">p.2866</span></li>
 <li>診斷：若有潛在 tuberculous lymphadenitis 或骨關節疾病，診斷通常不難；培養陽性可確診。<span class="ex-ref">p.2866</span></li>
 <li>鑑別診斷（Table 157-7）：Most likely：hidradenitis suppurativa、sporotrichosis；Consider：actinomycosis、<em>Mycobacterium scrofulaceum</em> infection、severe acne conglobata、syphilitic gummas；Always rule out：<em>Mycobacterium avium</em>-intracellulare lymphadenitis。<span class="ex-ref">p.2867</span></li>
@@ -239,7 +239,7 @@
 <p><strong>McKee 補充</strong></p>
 <ul>
 <li>Scrofuloderma 是 lymph node、bone、joint 或皮下組織 deep tuberculous infection 的併發症；藍紅色結節潰瘍並排出膿或壞死物；常見於頸、下頜下與腋窩；疤痕加慢性排膿潰瘍可能像 hidradenitis suppurativa；極少數可來自 lacrimal system。<span class="ex-ref ex-ref-mckee">McKee p.882</span></li>
-<li>組織：潰瘍性真皮膿瘍，histiocytic 成分界線不清；周邊可有肉芽腫；較深組織有明顯 caseation necrosis，其中 bacilli 可很多。<span class="ex-ref ex-ref-mckee">McKee p.887</span></li>
+<li>組織：通常（usually）為潰瘍性真皮膿瘍，histiocytic 成分界線不清；周邊可有肉芽腫；較深組織可見明顯 caseation necrosis，其中 bacilli 可很多。<span class="ex-ref ex-ref-mckee">McKee p.887</span></li>
 </ul>
 </section>
 
@@ -248,7 +248,7 @@
 <ul>
 <li>黏膜與腔口的罕見 TB，因進行性內臟結核的 mycobacteria <strong>autoinoculation</strong> 所致。原發疾病是進展期的肺、腸，或罕見地泌尿生殖道 TB；這些病灶大量排出的 mycobacteria 被接種到黏膜。<span class="ex-ref">p.2867</span></li>
 <li>黏膜出現黃色或紅色小結節，破潰成軟潰瘍，典型為 <strong>punched-out</strong> 外觀、邊緣 undermined、邊界圓形或不規則；潰瘍底常有多個黃色 tubercles，容易出血；周圍黏膜水腫、發炎；可單發或多發，<strong>極度疼痛</strong>，造成吞嚥困難。<span class="ex-ref">p.2867</span></li>
-<li>舌最常受影響，尤其舌尖與外側緣；軟、硬顎也常見；進展期可侵犯唇，口腔病灶常是咽喉潰瘍性 TB 的延伸。腸結核病人的病灶發生在肛周；有 active genitourinary disease 的女性則侵犯 vulva。<span class="ex-ref">p.2867</span></li>
+<li>舌最常受影響，尤其舌尖與外側緣；軟、硬顎也常見；進展期會侵犯唇，口腔病灶常是咽喉潰瘍性 TB 的延伸。腸結核病人的病灶發生在肛周；有 active genitourinary disease 的女性則侵犯 vulva。<span class="ex-ref">p.2867</span></li>
 <li>組織：大量非特異性發炎浸潤與壞死，但深層真皮可找到有 caseation 的 tubercles；mycobacteria 容易證實。<span class="ex-ref">p.2867</span></li>
 <li>鑑別診斷（Table 157-8）：Most likely：aphthous ulcers；Consider：syphilitic lesions（not painful）；Always rule out：squamous cell carcinoma。<span class="ex-ref">p.2867</span></li>
 <li>病程：orificial tuberculosis 是進展期內臟疾病的症狀，通常預示致命結局。<span class="ex-ref">p.2867</span></li>
@@ -273,7 +273,7 @@
 <p class="ex-cite">Table 18.2，McKee p.885；已對照原頁圖片。</p>
 <ul>
 <li><strong>Tuberculous gumma</strong>：metastatic tuberculous subcutaneous abscess，經血行由他處感染而來；最常見於營養不良、免疫缺乏或免疫抑制者；表現為堅實皮下結節（多在手臂或腿），慢慢變 fluctuant，上方皮膚穿破形成如 scrofuloderma 的慢性 undermined ulcer。組織：明顯 caseation、少量 bacilli，周圍有肉芽腫性浸潤。<span class="ex-ref ex-ref-mckee">McKee p.883、p.887</span></li>
-<li><strong>Miliary tuberculosis of the skin</strong>（tuberculosis cutis miliaris disseminata）：伴隨 generalized miliary TB，非常罕見，通常見於嬰兒，預後差。組織可為嚴重型（neutrophil abscess 內大量中央 bacilli、周圍 histiocytes，可見含微生物的血管血栓），較不積極的型態類似但缺乏大量細菌；AIDS 病人的 miliary 皮膚病灶常沒有肉芽腫或僅有發育不良的肉芽腫，常見廣泛壞死與膿瘍，Langhans giant cells 少見；乳頭層真皮的 neutrophilic microabscesses 可像 dermatitis herpetiformis；特殊染色可見大量 acid-fast bacilli。<span class="ex-ref ex-ref-mckee">McKee p.883、p.886–887</span></li>
+<li><strong>Miliary tuberculosis of the skin</strong>（tuberculosis cutis miliaris disseminata）：伴隨 generalized miliary TB，非常罕見，通常見於嬰兒，預後差。組織可為嚴重型（neutrophil abscess 內大量中央 bacilli、周圍 histiocytes，可見含微生物的血管血栓），較不積極的型態類似但缺乏大量細菌；AIDS 病人的 miliary 皮膚病灶常沒有肉芽腫或僅有發育不良的肉芽腫，常見廣泛壞死與膿瘍，Langhans giant cells 少見；有時（sometimes）可見類似 dermatitis herpetiformis 的乳頭層真皮 neutrophilic microabscesses；特殊染色可見大量 acid-fast bacilli。<span class="ex-ref ex-ref-mckee">McKee p.883、p.886–887</span></li>
 <li>McKee 另提到少見表現：tuberculous cellulitis、neutrophilic tuberculous panniculitis、sporotrichoid lesions，見於 iatrogenically immunosuppressed 病人。<span class="ex-ref ex-ref-mckee">McKee p.884</span></li>
 </ul>
 </section>
@@ -312,13 +312,13 @@
 <ul>
 <li>Lichen scrofulosorum、erythema induratum、papulonecrotic tuberculids、lupus miliaris disseminatus faciei 等疹子原本都被列入 tuberculids。TB 發生率下降且治療有效後，tuberculids 在已開發國家也變罕見，但 TB 仍常見的地區並非如此；隨著 AIDS 相關 TB 在某些西方國家復甦，部分 tuberculids 又被觀察到。<span class="ex-ref">p.2868</span></li>
 <li>Tuberculids 與 TB 的致病關係仍了解不足：對某些毫無疑問存在，對其他則看來極不可能。<span class="ex-ref">p.2868</span></li>
-<li><mark data-q="111-08,115-18">一個系列的 PCR 在 erythema induratum／nodular vasculitis 與 papulonecrotic tuberculid 的皮膚病灶中檢出 <em>M. tuberculosis</em> DNA，另一個系列則結果一致為陰性</mark>；因此 <em>M. tuberculosis</em> 感染可能直接或間接造成其中某些病例，但不是全部；抗結核藥對某些病例有益但非全部，也可能自然消退，部分病人對其他治療反應良好。Sarcoidosis 雖不被視為 tuberculid，但有人推測它源於對 mycobacterial antigens 的免疫反應。<span class="ex-ref">p.2868</span></li>
+<li><mark data-q="111-08,115-18">一個系列的 PCR 在 erythema induratum／nodular vasculitis 與 papulonecrotic tuberculid 的皮膚病灶中檢出 <em>M. tuberculosis</em> DNA，另一個系列則結果一致為陰性</mark>；因此 <em>M. tuberculosis</em> 感染可能直接或間接造成其中某些病例，但不是全部；抗結核藥對某些病例有益但非全部，也可能自然消退，部分病人似乎（appear）對其他治療反應良好。Sarcoidosis 雖不被視為 tuberculid，但有人推測它源於對 mycobacterial antigens 的免疫反應。<span class="ex-ref">p.2868</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Table 157-9 中，Nodular vasculitis／erythema induratum of Bazin 與 erythema nodosum 屬 facultative tuberculids：<em>M. tuberculosis</em>／<em>M. bovis</em> 可能只是數個致病因素之一；Lupus miliaris disseminatus faciei、rosacea-like tuberculid 與 lichenoid tuberculid 被列為與 TB 沒有關係的 nontuberculids（p.2868）。Fitzpatrick 另指出 nodular vasculitis 與 erythema nodosum 見 Chapter 73（p.2869–2870）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Table 157-9 中，Nodular vasculitis／erythema induratum of Bazin 與 erythema nodosum 屬 facultative tuberculids：<em>M. tuberculosis</em>／<em>M. bovis</em> 可能是數個致病因素之一（may be one of several pathogenic factors）；Lupus miliaris disseminatus faciei、rosacea-like tuberculid 與 lichenoid tuberculid 被列為與 TB 沒有關係的 nontuberculids（p.2868）。Fitzpatrick 另指出 nodular vasculitis 與 erythema nodosum 見 Chapter 73（p.2869–2870）。</aside>
 <h3>McKee 對 tuberculids 的總述</h3>
 <ul>
 <li>Tuberculid 是對身體他處（常為隱匿的）結核的皮膚免疫反應；<strong>依定義，tuberculids 的特殊染色與 tubercle bacilli 培養是陰性</strong>。在西方罕見，但在 TB 常見的開發中國家仍重要。<span class="ex-ref ex-ref-mckee">McKee p.888</span></li>
-<li>所有 tuberculids 被認為是對血行散播的 <em>M. tuberculosis</em> antigens 或少量死菌（可能經 opsonization）的免疫反應，栓塞於循環緩慢處；小真皮血管的變化（Arthus reaction 或 lymphohistiocytic vasculitis）造成真皮膠原退化；組織可見血管炎伴壞死、中度至強烈的 lymphohistiocytic infiltrate 與肉芽腫性發炎的不同組合。<span class="ex-ref ex-ref-mckee">McKee p.889</span></li>
+<li>所有 tuberculids 被認為是對血行散播的 <em>M. tuberculosis</em> antigens 或少量死菌（可能經 opsonization）的免疫反應，栓塞後產生病灶，尤其（particularly）在循環緩慢處；小真皮血管的變化（Arthus reaction 或 lymphohistiocytic vasculitis）造成真皮膠原退化；組織可見血管炎伴壞死、中度至強烈的 lymphohistiocytic infiltrate 與肉芽腫性發炎的不同組合。<span class="ex-ref ex-ref-mckee">McKee p.889</span></li>
 <li>Tuberculid 概念的成立，依據是與潛在 TB 的關聯、強烈的 tuberculin reaction，以及對抗結核藥一貫有反應。<span class="ex-ref ex-ref-mckee">McKee p.890</span></li>
 </ul>
 </section>
@@ -327,7 +327,7 @@
 <h2>14. Lichen Scrofulosorum（瘰癧性苔癬）</h2>
 <ul>
 <li>少見的 lichenoid eruption，歸因於對 <em>M. tuberculosis</em> 高度敏感的個體發生 mycobacteria 血行散播。通常與淋巴結、骨或胸膜的慢性 TB 有關；也曾見於 BCG 接種後，以及與 <em>M. avium</em>-intracellulare 感染並存。<span class="ex-ref">p.2868</span></li>
-<li>病灶多限於軀幹，最常發生在有活動性 TB 的兒童與青少年；無症狀、堅實的毛囊性或毛囊周圍 flat-topped 黃色或粉紅色丘疹，有時有細鱗屑；lichenoid grouping 明顯，可融合成粗糙的圓盤狀斑塊；持續數月，最後自然消退；抗結核治療數週內完全消退。<span class="ex-ref">p.2868</span></li>
+<li>病灶通常限於軀幹，最常發生在有活動性 TB 的兒童與青少年；無症狀、堅實的毛囊性或毛囊周圍 flat-topped 黃色或粉紅色丘疹，有時有細鱗屑；lichenoid grouping 明顯，可融合成粗糙的圓盤狀斑塊；持續數月，最後自然消退；抗結核治療數週內完全消退。<span class="ex-ref">p.2868</span></li>
 <li>組織：毛囊周圍或不依附屬器處出現淺層 tuberculoid granulomas。<mark data-q="111-28">切片中看不到 mycobacteria，也無法從 biopsy material 培養出來</mark>。<span class="ex-ref">p.2868</span></li>
 <li>鑑別診斷（原書 Table 157-10 標題與內文印為「lichen scrofuloderma」，疑似印刷錯誤，內容為 lichen scrofulosorum 的鑑別，照原文）：Most likely：lichen nitidus、lichen planus；Consider：lichenoid secondary syphilis、micropapular forms of sarcoidosis。<span class="ex-ref">p.2869</span></li>
 <li><span class="ex-ref ex-ref-mckee">McKee p.889</span> 表現為 yellow 或 brown 無症狀毛囊性丘疹，直徑 &lt;<strong class="ex-n">3 mm</strong>，位於軀幹；緩慢消退不留疤；通常見於兒童與年輕成人；據稱較常與 tuberculous lymphadenitis（cervical、hilar 或 mediastinal）或 osseous tuberculosis 相關，而非肺結核（但有他人不支持此觀察）；也見於 BCG 接種後及潛在 <em>M. avium</em>-intracellulare（MAI）感染。組織為以毛囊與 eccrine units 為中心的肉芽腫性浸潤，Langhans giant cells 明顯，通常沒有 caseous necrosis（McKee p.889，Fig. 18.170）。</li>
@@ -349,7 +349,7 @@
 <aside class="ex-trap"><strong>易錯</strong>原書 p.2869 寫「As a rule, bacteria cannot be demonstrated in lesions」，同一頁也寫「some of the lesions have been positive on culture」；McKee 則寫 tuberculids 的 stains 與 cultures 依定義為陰性（McKee p.888）。兩本書在這一點的描述略有出入。</aside>
 <p><strong>McKee 補充</strong></p>
 <ul>
-<li>反覆成批的 flesh-colored、erythematous 或暗紅色丘疹，最常見於耳與四肢，尤其肘與膝的伸側；丘疹可變膿疱、潰瘍或結痂；常對稱；數週內緩慢消退，留下 depressed、varioliform scars；通常見於看來頗健康的年輕人；偶有病例進展為 LV。<span class="ex-ref ex-ref-mckee">McKee p.888</span></li>
+<li>反覆成批的 flesh-colored、erythematous 或暗紅色丘疹，最常見於耳與四肢，尤其肘與膝的伸側；丘疹可變膿疱、潰瘍或結痂；常對稱；數週內緩慢消退，留下 depressed、varioliform scars；通常見於年輕人，這些人常（often）看來頗健康；偶有病例被報告進展為 LV。<span class="ex-ref ex-ref-mckee">McKee p.888</span></li>
 <li>組織：完全發展時為 cutaneous infarction：壞死的表皮伴潰瘍，其下有 <strong>V-shaped</strong> 真皮凝固性壞死區，伴緻密慢性發炎浸潤與散在 giant cells；毛囊可壞死；偶有 histiocytic palisade，使特徵像 granuloma annulare；neutrophils 通常不明顯；老病灶可見成形肉芽腫，但找不到 bacilli；可有 vasculitis；組織上有時會與 PLEVA 混淆。<span class="ex-ref ex-ref-mckee">McKee p.889</span></li>
 </ul>
 </section>
@@ -362,10 +362,10 @@
 </ul>
 <p><strong>McKee 補充</strong></p>
 <ul>
-<li>Erythema induratum（Bazin disease、nodular vasculitis）表現為小腿上界線不清的結節，<mark data-q="111-08">好發於年輕與中年女性，特徵為肥胖（obese）且小腿皮膚呈 erythrocyanotic</mark>；冷天可能更糟，因此要與 pernio 區分；進展後結節形成不規則潰瘍，邊緣帶藍色且 undermined；緩慢痊癒，多數病灶在數月內自行消退；後遺症可有 postinflammatory hyperpigmentation 或萎縮性疤痕。<span class="ex-ref ex-ref-mckee">McKee p.889</span></li>
+<li>Erythema induratum（Bazin disease、nodular vasculitis）表現為小腿上界線不清的結節，<mark data-q="111-08">好發於年輕與中年女性，特徵為肥胖（obese）且小腿皮膚呈 erythrocyanotic</mark>；冷天可能更糟，因此要與 pernio 區分；進展後結節形成不規則潰瘍，邊緣傾向（tend to）帶藍色且 undermined；緩慢痊癒，多數病灶在數月內自行消退；後遺症可有 postinflammatory hyperpigmentation 或萎縮性疤痕。<span class="ex-ref ex-ref-mckee">McKee p.889</span></li>
 <li>組織：<strong>與 nodular vasculitis 無法區分</strong>；變化集中在皮下脂肪，以 lobular panniculitis 為主，伴 tuberculoid granulomas、caseation necrosis，以及主要為小靜脈與中小動脈的可變血管侵犯（含明顯的 vasculitis）；因壞死明顯，vasculitis 常難辨認；原發血管炎變化與肉芽腫性發炎並存，提示 type III 與 type IV hypersensitivity 反應都重要。<span class="ex-ref ex-ref-mckee">McKee p.889–890</span></li>
-<li>抗酸染色看不到 acid-fast organisms，培養一貫陰性，但許多病例以 PCR 檢出 <em>M. tuberculosis</em> DNA，提示 mycobacterial components 確實造成病理表現。<span class="ex-ref ex-ref-mckee">McKee p.890</span></li>
-<li>McKee 也描述 nodular tuberculid（下肢非潰瘍結節，病變同時位於真皮與皮下脂肪，被提出為 papulonecrotic tuberculid 與 erythema induratum 的混合型）以及 nodular granulomatous phlebitis／superficial thrombophlebitic tuberculid（沿腿部靜脈走行的皮下結節）。<span class="ex-ref ex-ref-mckee">McKee p.889</span></li>
+<li>抗酸染色看不到 acid-fast organisms，培養一貫陰性，但部分（a number of）病例以 PCR 檢出 <em>M. tuberculosis</em> DNA，提示 mycobacterial components 確實造成病理表現。<span class="ex-ref ex-ref-mckee">McKee p.890</span></li>
+<li>McKee 也描述 nodular tuberculid（用於罕見的一群病人（a rare subset）：下肢非潰瘍結節，病變同時位於真皮與皮下脂肪，被提出為 papulonecrotic tuberculid 與 erythema induratum 的混合型）以及 nodular granulomatous phlebitis／superficial thrombophlebitic tuberculid（沿腿部靜脈走行的皮下結節）。<span class="ex-ref ex-ref-mckee">McKee p.889</span></li>
 </ul>
 </section>
 
@@ -374,9 +374,9 @@
 <ul>
 <li>由多種 obligate 或 facultative pathogenic mycobacteria（非 <em>M. tuberculosis</em> complex）引起的異質性疾病群；侵犯情形取決於 <em>Mycobacterium</em> 種類、感染途徑與宿主免疫狀態；可侵犯多個器官。<span class="ex-ref">p.2870</span></li>
 <li>MOTT 比 <em>M. tuberculosis</em> 更常引起皮膚疾病。治療與 TB 不同，沒有嚴格的國際指引；每一種 mycobacterial species 都有已知的有效抗生素，但應以 sensitivity testing 檢查。<span class="ex-ref">p.2870</span></li>
-<li>MOTT 被確認為人類病原的時間：<em>M. fortuitum</em> <strong class="ex-n">1938</strong>、<em>M. ulcerans</em> <strong class="ex-n">1948</strong>、<em>M. marinum</em> <strong class="ex-n">1954</strong>。MOTT 感染常與 <em>M. tuberculosis</em> 感染極相似，且細菌對培養有嚴格且常不尋常的要求，因此可能仍被低估診斷。<span class="ex-ref">p.2870</span></li>
-<li>MOTT 廣泛分布於自然界，通常是 commensals 或 saprophytes 而非病原；多從水或土壤等環境來源獲得，病例常為 sporadic，但特定暴露可造成小型社區群聚。<span class="ex-ref">p.2870</span></li>
-<li>MOTT 似乎比 <em>M. tuberculosis</em> 更不易播散，感染通常病程較良性、侷限；通常對抗結核藥反應差得多，但可能對其他化療藥敏感。<span class="ex-ref">p.2870</span></li>
+<li>MOTT 被確認為人類病原的時間：<em>M. fortuitum</em> <strong class="ex-n">1938</strong>、<em>M. ulcerans</em> <strong class="ex-n">1948</strong>、<em>M. marinum</em> <strong class="ex-n">1954</strong>。MOTT 感染通常與 <em>M. tuberculosis</em> 感染極相似，且細菌對培養有嚴格且常不尋常的要求，因此可能仍被低估診斷。<span class="ex-ref">p.2870</span></li>
+<li>MOTT 廣泛分布於自然界，通常是 commensals 或 saprophytes 而非病原；通常從水或土壤等環境來源獲得，病例常為 sporadic，但特定暴露可造成小型社區群聚。<span class="ex-ref">p.2870</span></li>
+<li>MOTT 似乎遠比 <em>M. tuberculosis</em> 不易播散（seem much less likely to disseminate），感染通常病程較良性、侷限；通常對抗結核藥反應差得多，但可能對其他化療藥敏感。<span class="ex-ref">p.2870</span></li>
 <li>只有 <strong>2 種</strong> organisms，<em>M. ulcerans</em> 與 <em>M. marinum</em>，產生特徵性臨床圖像。宿主免疫抑制或特定器官受損（例如 <em>M. kansasii</em> 感染肺）會促成這些感染。<span class="ex-ref">p.2870</span></li>
 <li>Satowan 的太平洋島民曾爆發由 nontuberculous mycobacteria 引起的皮膚病，表現為長期的 verrucous 與 keloidal plaques（當地稱「spam」disease）。<span class="ex-ref">p.2870</span></li>
 </ul>
@@ -397,14 +397,14 @@
 <p class="ex-cite">Table 157-12，p.2870；已對照原頁圖片。</p>
 <h3>Identification（鑑定）</h3>
 <ul>
-<li>診斷依賴自宿主分離出微生物；培養檢體應送到熟悉這些菌特殊生長需求的專門實驗室。各 mycobacterial species 的皮內試驗抗原（PPDs）已仿 <em>M. tuberculosis</em> PPD 製備，但取得非常有限，因此很少使用。<span class="ex-ref">p.2870–2871</span></li>
+<li>診斷依賴自宿主分離出微生物；培養檢體應送到熟悉這些菌特殊生長需求的專門實驗室。許多臨床相關 mycobacterial species（many of the clinically relevant species）的皮內試驗抗原（PPDs）已仿 <em>M. tuberculosis</em> PPD 製備，但取得非常有限，因此很少使用。<span class="ex-ref">p.2870–2871</span></li>
 <li>組織病理只具支持性，因所有 species 的組織特徵相似，無法區分菌種。有些 MOTT 對標準 TB 治療有抗藥性。Mycobacterial DNA 的 PCR 還不夠可靠，不足以在診斷上扮演角色，但有時可用來區分菌種。<span class="ex-ref">p.2871</span></li>
 </ul>
 <p><strong>McKee 補充：分類與組織</strong></p>
 <ul>
 <li>Nontuberculous mycobacteria 依生長速度與在培養中產生黃色素的能力（有無曝光）分為 4 組：<strong>Group I photochromogens</strong>（暴露光線後產色素；<em>M. marinum</em>、<em>M. kansasii</em>）；<strong>Group II scotochromogens</strong>（有無光線都產色素；<em>M. scrofulaceum</em>、<em>M. szulgai</em>）；<strong>Group III</strong> 一致不產色素（<em>M. avium</em>、<em>M. intracellulare</em>）；<strong>Group IV</strong> fast growers（<em>M. chelonei</em>、<em>M. fortuitum</em>、<em>M. abscessus</em>）。<span class="ex-ref ex-ref-mckee">McKee p.891</span></li>
-<li>免疫抑制者（HIV/AIDS、anti-TNF-α 藥物、以類固醇與免疫抑制劑治療的 SLE）有風險；免疫正常者的皮膚感染通常在外傷後發生，局部病灶常像 panniculitis；免疫抑制者常缺乏外傷史，表現為多發皮下結節、較瀰漫的發炎與常見膿瘍。<span class="ex-ref ex-ref-mckee">McKee p.891</span></li>
-<li>多數 atypical mycobacteria 早期皮膚壞死伴 neutrophil abscess，此期通常易證實 bacilli，微生物常位於模仿脂肪細胞的圓形空洞內，H&amp;E 切片即可見菌團；膿瘍期逐漸被肉芽腫性發炎與纖維化取代，常伴 sinus formation。<span class="ex-ref ex-ref-mckee">McKee p.894</span></li>
+<li>免疫抑制者（HIV/AIDS、anti-TNF-α 藥物、以類固醇與免疫抑制劑治療的 SLE）有風險；免疫正常者的皮膚感染通常在外傷後發生，局部病灶常像 panniculitis；免疫抑制者通常缺乏外傷史，傾向（tend to）表現為多發皮下結節、較瀰漫的發炎與常見膿瘍。<span class="ex-ref ex-ref-mckee">McKee p.891</span></li>
+<li>多數 atypical mycobacteria 早期皮膚壞死伴 neutrophil abscess，此期通常易證實 bacilli，微生物常位於模仿脂肪細胞的圓形空洞內，H&amp;E 切片甚至可能（may even）見到菌團；膿瘍期逐漸被肉芽腫性發炎與纖維化取代，常伴 sinus formation。<span class="ex-ref ex-ref-mckee">McKee p.894</span></li>
 </ul>
 </section>
 
@@ -412,17 +412,17 @@
 <h2>18. <em>Mycobacterium ulcerans</em>（Buruli ulcer disease）</h2>
 <ul>
 <li>自然棲息地仍不明，從未在人體外被發現；感染發生在潮濕、沼澤地區，似乎與受污染的水有關。<em>M. ulcerans</em> 是繼 <em>M. tuberculosis</em> 與 <em>M. leprae</em> 之後第三常見的 mycobacterial pathogen。<span class="ex-ref">p.2871</span></li>
-<li>多見於兒童與年輕成人，女性較多。皮下結節逐漸增大，最後潰瘍；潰瘍前可能先出現水疱；潰瘍 <strong>deeply undermined</strong>，暴露壞死脂肪。結節與潰瘍都 <strong>無痛</strong>，病人感覺良好；無痛被歸因於毒素 <strong>mycolactone</strong> 造成的神經損傷與組織破壞。<span class="ex-ref">p.2871</span></li>
-<li>病灶可發生在任何部位，但成人多侷限於四肢；可很大，涉及整條肢體；潰瘍可持續數月至數年，同一病人可同時有癒合與進展；可造成明顯、有時致殘的疤痕與 lymphedema。<strong>不出現 lymphadenopathy 或全身症狀</strong>，除非病程併發細菌重複感染（neither…at any time）。<span class="ex-ref">p.2871</span></li>
+<li>最常見於兒童與年輕成人，女性較多。皮下結節逐漸增大，最後潰瘍；潰瘍前可能先出現水疱；潰瘍 <strong>deeply undermined</strong>，暴露壞死脂肪。結節與潰瘍都 <strong>無痛</strong>，病人感覺良好；無痛被歸因於毒素 <strong>mycolactone</strong> 造成的神經損傷與組織破壞。<span class="ex-ref">p.2871</span></li>
+<li>病灶可發生在任何部位，但成人傾向（tend to）侷限於四肢；可很大，涉及整條肢體；潰瘍可持續數月至數年，同一病人可同時有癒合與進展；可造成明顯、有時致殘的疤痕與 lymphedema。<strong>不出現 lymphadenopathy 或全身症狀</strong>，除非病程併發細菌重複感染（neither…at any time）。<span class="ex-ref">p.2871</span></li>
 <li>鑑別診斷（Table 157-14）：早期病灶 Most likely：foreign-body granuloma、sebaceous cyst；Consider：phycomycosis、nodular fasciitis、appendageal tumor；Always rule out：panniculitis、nodular vasculitis。晚期病灶 Most likely：blastomycosis or other deep fungus infection、pyoderma gangrenosum；Consider：suppurative panniculitis；Always rule out：necrotizing cellulitis。<span class="ex-ref">p.2872</span></li>
 <li>Table 157-13 列出的治療：clofazimine、cotrimoxazole、dapsone、ethambutol、minocycline、rifampicin、streptomycin 與 surgery。<span class="ex-ref">p.2872</span></li>
 </ul>
 <p><strong>McKee 補充</strong></p>
 <ul>
-<li>在免疫正常者是繼 tuberculosis 與 leprosy 之後第三常見的 mycobacterial disease；病原為 slow-growing <strong>nonchromogen</strong>，存在於熱帶沼澤區的茂盛植被；西非與中非稱 Buruli ulcer，澳洲稱 Bairnsdale ulcer；全球約 33 國有病例。<span class="ex-ref ex-ref-mckee">McKee p.892</span></li>
-<li>輕微外傷後約 <strong class="ex-n">8 weeks</strong> 出現病灶，常在腿部，多見於 <strong class="ex-n">5 to 15</strong> 歲兒童；潰瘍無滲液、無周邊反應，可深及筋膜或脂肪，邊緣 undermined；潰瘍可大到 <strong class="ex-n">50 cm</strong>；通常無痛，除非併發二次細菌感染；<strong class="ex-n">6–9 months</strong> 後發展出肉芽腫性反應，之後痊癒，常留下疤痕、畸形與攣縮。過去手術是首選，現在 antibiotics 在治療指引中也扮演重要角色。<span class="ex-ref ex-ref-mckee">McKee p.892–893</span></li>
+<li>在免疫正常者是繼 tuberculosis 與 leprosy 之後第三常見的 mycobacterial disease；病原為 slow-growing <strong>nonchromogen</strong>，零星（sporadically）存在於熱帶沼澤區的茂盛植被；西非與中非稱 Buruli ulcer，澳洲稱 Bairnsdale ulcer；全球約 33 國有病例。<span class="ex-ref ex-ref-mckee">McKee p.892</span></li>
+<li>輕微外傷後約 <strong class="ex-n">8 weeks</strong> 出現病灶，通常在腿部，較常見於（tends to occur more often）<strong class="ex-n">5 to 15</strong> 歲兒童；潰瘍無滲液、無周邊反應，但延伸侵犯其下筋膜或脂肪，典型（typically）邊緣 undermined；很大的潰瘍最大可達（up to）<strong class="ex-n">50 cm</strong>；通常無痛，除非併發二次細菌感染；<strong class="ex-n">6–9 months</strong> 後發展出肉芽腫性反應，之後痊癒，通常伴隨疤痕，可能導致嚴重畸形與攣縮。過去手術是首選，現在 antibiotics 在治療指引中也扮演重要角色。<span class="ex-ref ex-ref-mckee">McKee p.892–893</span></li>
 <li>組織壞死與潰瘍來自 <strong>mycolactone</strong>：強力可溶性毒性 macrolide，兼具細胞毒性與免疫抑制性，經 apoptosis 與 necrosis 導致細胞死亡；McKee 並提到 mycolactone 的兩個分子標的：WASP 與 Sec61。<span class="ex-ref ex-ref-mckee">McKee p.893</span></li>
-<li>組織：低倍鏡可見潰瘍 undermined 的邊緣；已成形病灶的特徵為廣泛 <strong>coagulative necrosis</strong> 與潰瘍，炎症反應很少；無反應期 bacilli 非常多，聚集在潰瘍底部筋膜的膠原或脂肪；可見 leukocytoclastic vasculitis；痊癒時 burulin test 漸轉陽性並出現肉芽腫反應，此時 mycobacteria 稀少或沒有；<strong>caseation 不是特徵</strong>。<span class="ex-ref ex-ref-mckee">McKee p.894–895</span></li>
+<li>組織：低倍鏡可見潰瘍 undermined 的邊緣；已成形病灶的特徵為廣泛 <strong>coagulative necrosis</strong> 與潰瘍，炎症反應很少；無反應期 bacilli 非常多，聚集在潰瘍底部筋膜的膠原或脂肪；曾有 leukocytoclastic vasculitis 的描述（has been described）；痊癒時 burulin test 漸轉陽性並出現肉芽腫反應，此時 mycobacteria 稀少或沒有；<strong>caseation 不是特徵</strong>。<span class="ex-ref ex-ref-mckee">McKee p.894–895</span></li>
 <li>McKee 認為 PCR 與組織病理是確認診斷最可靠的方法，其次為直接抹片與培養。<span class="ex-ref ex-ref-mckee">McKee p.895</span></li>
 </ul>
 </section>
@@ -439,8 +439,8 @@
 <aside class="ex-trap"><strong>易錯</strong>原書寫的 <em>M. marinum</em> 危險因子是外傷史加上水或魚／海產相關的嗜好與職業；發生部位為接種處，通常是手、足、肘或膝（p.2871）。MOTT 中只有 <em>M. ulcerans</em> 與 <em>M. marinum</em> 有特徵性臨床圖像（p.2870）。</aside>
 <p><strong>McKee 補充</strong></p>
 <ul>
-<li><em>M. marinum</em>（balnei）是 slow-growing <strong>photochromogen</strong>，與水環境中的傷口、魚或水下器材有關；<strong class="ex-n">約 90% 或更多</strong>（around 90% or more）的感染位於上肢。感染多來自 swimming pools（swimming pool granuloma、fish tank granuloma；兒童多在肘與膝）或水族箱（多在手）；有些研究中魚缸暴露占 <strong class="ex-n">&gt;80%</strong> 病例。<span class="ex-ref ex-ref-mckee">McKee p.891</span></li>
-<li>淺表外傷後 <strong class="ex-n">1 week to 2 months</strong>（平均 2–3 週）出現，通常為無痛發炎性結節或斑塊；可潰瘍並排出黃色液體，舊病灶可呈疣狀；沿淋巴管擴展形成類似 sporotrichosis 的次發結節（sporotrichoid spread）；穿刺傷有時造成 tenosynovitis；免疫缺陷者產生深層 undermined ulcer；一項大型回溯研究平均病程為 19 個月。<span class="ex-ref ex-ref-mckee">McKee p.891</span></li>
+<li><em>M. marinum</em>（balnei）是 slow-growing <strong>photochromogen</strong>，與水環境中的傷口、魚或水下器材有關；<strong class="ex-n">約 90% 或更多</strong>（around 90% or more）的感染位於上肢。感染最常（most often）來自 swimming pools（swimming pool granuloma、fish tank granuloma；兒童多在肘與膝）或水族箱（多在手）；有些研究中魚缸暴露占 <strong class="ex-n">&gt;80%</strong> 病例。<span class="ex-ref ex-ref-mckee">McKee p.891</span></li>
+<li>淺表外傷後 <strong class="ex-n">1 week to 2 months</strong>（平均 2–3 週）通常（usually）出現，典型為無痛發炎性結節或斑塊；可潰瘍並排出黃色液體，舊病灶可呈疣狀；相當常見（quite often）沿淋巴管擴展形成類似 sporotrichosis 的次發結節（sporotrichoid spread）；穿刺傷有時造成 tenosynovitis；免疫缺陷者產生深層 undermined ulcer；一項大型回溯研究平均病程為 19 個月。<span class="ex-ref ex-ref-mckee">McKee p.891</span></li>
 <li>組織：循一般「膿瘍 → 肉芽腫」進程，但除免疫抑制者外很少見到寬而長的 bacilli；肉芽腫性發炎比其他非結核分枝桿菌感染更常見；<strong>沒有 caseation</strong>，但可有 fibrinoid necrosis；Langhans cells 可明顯或稀少；表皮 parakeratotic、acanthotic 或潰瘍，可有 pseudoepitheliomatous hyperplasia；sporotrichoid 結節是沒有先前膿瘍期的 tuberculoid granulomata。培養陽性率常偏低，PCR 可能是較有用的確診方法。<span class="ex-ref ex-ref-mckee">McKee p.894</span></li>
 </ul>
 </section>
@@ -450,11 +450,11 @@
 <ul>
 <li>是與 <em>M. tuberculosis</em> 關係最近的 atypical <em>Mycobacterium</em>，通常從環境獲得；流行區包含 Texas、Louisiana、Chicago 地區、California 與 Japan。<span class="ex-ref">p.2871</span></li>
 <li>皮膚疾病通常發生在成人；在有基礎免疫抑制（Hodgkin disease、器官移植治療或 AIDS）者較常見；通常因穿刺傷等輕微外傷接種。<span class="ex-ref">p.2873</span></li>
-<li>臨床：最常見為 <strong>sporotrichoid distribution</strong> 的丘疹；皮下結節可向深部延伸，造成 carpal tunnel syndrome 或關節疾病；也可出現潰瘍性斑塊作為轉移性病灶。免疫抑制病人的 disseminated disease 表現為 cellulitis 與膿瘍，而不是肉芽腫性病灶。最常受影響的器官是肺（通常是已有 silicosis、emphysema 等肺部疾病者），也可造成 cervical lymphadenopathy；與 <em>M. tuberculosis</em> 一樣，鼻咽分泌物中的 <em>M. kansasii</em> 可造成 periorificial cutaneous infection。<span class="ex-ref">p.2871–2873</span></li>
+<li>臨床：最常見為 <strong>sporotrichoid distribution</strong> 的丘疹；有時（sometimes）皮下結節向深部延伸，可能造成 carpal tunnel syndrome 或關節疾病；也可出現潰瘍性斑塊作為轉移性病灶。免疫抑制病人的 disseminated disease 表現為 cellulitis 與膿瘍，而不是肉芽腫性病灶。最常受影響的器官是肺（通常是已有 silicosis、emphysema 等肺部疾病者），也可造成 cervical lymphadenopathy；與 <em>M. tuberculosis</em> 一樣，鼻咽分泌物中的 <em>M. kansasii</em> 可造成 periorificial cutaneous infection。<span class="ex-ref">p.2871–2873</span></li>
 <li>通常進展緩慢，也可為慢性穩定病灶甚至自然消退；確診後應立即開始藥物治療。<span class="ex-ref">p.2873</span></li>
 <li>鑑別診斷（Table 157-16）：Most likely：sporotrichosis；Consider：tuberculosis；Always rule out：other granulomatous infections of the skin。<span class="ex-ref">p.2873</span></li>
 <li>Table 157-13 列出的治療：amikacin、cycloserine、ethambutol、ethionamide、isoniazid、kanamycin、minocycline、rifampicin、rifamycin、streptomycin。<span class="ex-ref">p.2872</span></li>
-<li><span class="ex-ref ex-ref-mckee">McKee p.892</span> 為 slow-growing photochromogen；主要是肺與淋巴結疾病，皮膚病灶少見，多見於免疫抑制者並與 disseminated disease 相關；可表現為結節（可呈疣狀）、結痂潰瘍、papulopustules、cellulitis 或類似 sporotrichosis 的擴散性感染。組織：早期混合性發炎常很強，之後轉為 tuberculoid；可有膿瘍；bacilli 常見；菌體較大、較寬、較粗大呈串珠狀；免疫抑制病人的急性病灶典型為強烈 neutrophil 浸潤與膿瘍形成（McKee p.894）。</li>
+<li><span class="ex-ref ex-ref-mckee">McKee p.892</span> 為 slow-growing photochromogen；主要是肺與淋巴結疾病，僅罕見（only rarely）造成皮膚病灶，最常見於免疫抑制者，此時通常與 disseminated disease 相關；可表現為結節（可呈疣狀）、結痂潰瘍、papulopustules、cellulitis 或類似 sporotrichosis 的擴散性感染。組織：早期混合性發炎通常很強，之後轉為 tuberculoid；可有膿瘍；bacilli 常見；菌體較大、較寬、較粗大呈串珠狀；免疫抑制病人的急性病灶典型為強烈 neutrophil 浸潤與膿瘍形成（McKee p.894）。</li>
 </ul>
 </section>
 
@@ -462,7 +462,7 @@
 <h2>21. <em>M. scrofulaceum</em>、<em>M. avium</em>-intracellulare（MAI）與其他 MOTT</h2>
 <h3><em>Mycobacterium scrofulaceum</em></h3>
 <ul>
-<li>廣泛分布於環境。通常表現為 <strong>cervical lymphadenitis</strong>，常為單側，見於 <strong class="ex-n">1 to 3</strong> 歲兒童；典型侵犯 submandibular 與 submaxillary nodes，而非 <em>M. tuberculosis</em> 感染特徵性的 tonsillar 與 anterior cervical nodes；沒有全身症狀。淋巴結數週內緩慢增大，最終潰瘍並形成 fistulas；很少有肺或其他器官侵犯；多數病例為良性、自限性。<span class="ex-ref">p.2873</span></li>
+<li>廣泛分布於環境。通常表現為 <strong>cervical lymphadenitis</strong>，常為單側，主要（mainly）見於 <strong class="ex-n">1 to 3</strong> 歲兒童；典型侵犯 submandibular 與 submaxillary nodes，而非 <em>M. tuberculosis</em> 感染特徵性的 tonsillar 與 anterior cervical nodes；沒有全身症狀。淋巴結數週內緩慢增大，最終潰瘍並形成 fistulas；很少有肺或其他器官侵犯；多數病例為良性、自限性。<span class="ex-ref">p.2873</span></li>
 <li>鑑別診斷：其他細菌性 lymphadenitis；病毒感染（含 mumps 與 mononucleosis）；惡性腫瘤（solid tumors、lymphoma、leukemia）。<span class="ex-ref">p.2874</span></li>
 <li>Table 157-13 列出的治療：clarithromycin、isoniazid、rifampicin 與 surgery。<span class="ex-ref">p.2872</span></li>
 </ul>
@@ -472,22 +472,22 @@
 <li><em>M. scrofulaceum</em> 只造成良性、自限性、沒有器官侵犯的 lymphadenopathy；MAI 感染則通常造成肺病，較少見為 osteomyelitis；也可造成伴 sinus formation 的 cervical lymphadenitis，臨床上與結核性 scrofuloderma 無法區分。<span class="ex-ref">p.2874</span></li>
 <li>罕見的原發性皮膚病：單發或多發無痛、有鱗屑的黃色斑塊（有時像 LV），或有潰瘍傾向的皮下結節，病程緩慢進展、慢性。有時皮膚侵犯是 disseminated MAI infection 的次發表現：generalized cutaneous ulcerations、granulomas、四肢浸潤性紅斑、膿疱與軟組織腫脹。MAI 感染是 AIDS 病人重要的 morbidity 原因（Chap. 168）。<span class="ex-ref">p.2874</span></li>
 <li>Table 157-13 列出的治療：ansamycin、azithromycin、clarithromycin、clofazimine、ethambutol、ethionamide、isoniazid、minocycline、rifampicin、rifamycin、streptomycin。<span class="ex-ref">p.2872</span></li>
-<li><span class="ex-ref ex-ref-mckee">McKee p.893</span> MAI complex 是 slow-growing <strong>nonchromogens</strong>，廣泛存在於灰塵、土壤與水；最常引起 cervical lymphadenitis 或免疫低下宿主的 disseminated infection；是 AIDS 病人最常見的菌血症原因之一（one of the commonest causes）；原發皮膚感染不常見；皮膚病灶常表現為 panniculitis 或結節進展為膿瘍與潰瘍；癒合緩慢，可能需要切除。HIV 病人接受 HAART 後的 IRIS 也可出現皮膚與軟組織侵犯。</li>
-<li><span class="ex-ref ex-ref-mckee">McKee p.895</span> 組織：有時有早期膿瘍期再轉為肉芽腫期，有時浸潤較偏 lymphohistiocytic，類似 lepromatous leprosy（LL）；bacilli 通常在細胞內；罕見的 infected histiocytes 變大而飽滿，稱為 pseudogaucher cells。</li>
+<li><span class="ex-ref ex-ref-mckee">McKee p.893</span> MAI complex 是 slow-growing <strong>nonchromogens</strong>，廣泛存在於灰塵、土壤與水；最常引起 cervical lymphadenitis 或免疫低下宿主的 disseminated infection；是 AIDS 病人最常見的菌血症原因之一（one of the commonest causes）；原發皮膚感染不常見；皮膚病灶一般（generally）表現為 panniculitis 或結節進展為膿瘍與潰瘍；癒合緩慢，可能需要切除。HIV 病人接受 HAART 後的 IRIS 也可出現皮膚與軟組織侵犯。</li>
+<li><span class="ex-ref ex-ref-mckee">McKee p.895</span> 組織：有時似乎（sometimes appears）有早期膿瘍期再轉為肉芽腫期，有時浸潤較偏 lymphohistiocytic，類似 lepromatous leprosy（LL）；bacilli 通常在細胞內；罕見的 infected histiocytes 變大而飽滿，稱為 pseudogaucher cells。</li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 把 <em>M. scrofulaceum</em> 與 MAI 分開討論：<em>M. scrofulaceum</em> 只產生良性、自限性的 lymphadenopathy，沒有器官侵犯；MAI 通常造成肺病（p.2874）。McKee 的 Group II scotochromogens 含 <em>M. scrofulaceum</em>，Group III 含 <em>M. avium</em> 與 <em>M. intracellulare</em>（McKee p.891）。</aside>
 <h3><em>M. szulgai</em>、<em>M. haemophilum</em>、<em>M. genavense</em></h3>
 <ul>
 <li>罕見地在原因不明的 cervical lymphadenitis、cellulitis、引流性結節與斑塊、bursitis、pneumonia 與皮下肉芽腫性疹中被發現引起人類疾病。<span class="ex-ref">p.2874</span></li>
 <li>Table 157-13：<em>M. haemophilum</em> 的治療為 minocycline（單用或合併 ciprofloxacin 或 rifampicin）與 rifamycin。<span class="ex-ref">p.2872</span></li>
-<li><span class="ex-ref ex-ref-mckee">McKee p.894–895</span> 其他可能罕見引起皮膚病灶（多在接種後）的 mycobacteria 包含 <em>M. scrofulaceum</em>、<em>M. gordonae</em>、<em>M. simiae</em>、<em>M. xenopi</em>、<em>M. malmoense</em>、<em>M. haemophilum</em> 等，產生結節與膿瘍，常有潰瘍與 sinus formation；<em>M. haemophilum</em> 可有混合化膿性與肉芽腫性反應、paucigranulomatous reaction、lichenoid interface dermatitis 與 lymphocytic vasculitis。</li>
+<li><span class="ex-ref ex-ref-mckee">McKee p.894–895</span> 其他可能罕見引起皮膚病灶（多在接種後）的 mycobacteria 包含 <em>M. scrofulaceum</em>、<em>M. gordonae</em>、<em>M. simiae</em>、<em>M. xenopi</em>、<em>M. malmoense</em>、<em>M. haemophilum</em> 等，產生結節與膿瘍，通常有潰瘍與 sinus formation；<em>M. haemophilum</em> 可有混合化膿性與肉芽腫性反應、paucigranulomatous reaction、lichenoid interface dermatitis 與 lymphocytic vasculitis。</li>
 </ul>
 </section>
 
 <section class="ex-note" id="fast-growers">
 <h2>22. Fast Growers：<em>M. fortuitum</em>、<em>M. chelonae</em>、<em>M. abscessus</em></h2>
 <ul>
-<li>3 種 fast-growing、facultative pathogenic mycobacteria，原先歸於 <em>M. fortuitum</em> complex，現已視為不同 species；廣泛分布，常見於土壤與水；各種物品（包括外科用品）可被污染，但不一定造成臨床疾病。<span class="ex-ref">p.2874</span></li>
+<li>3 種 fast-growing、facultative pathogenic mycobacteria，原先歸於 <em>M. fortuitum</em> complex，現已視為不同 species；似乎（seem）廣泛分布，常可見於土壤與水；各種物品（包括外科用品）可被污染，但不一定造成臨床疾病。<span class="ex-ref">p.2874</span></li>
 <li>三者造成相似的臨床疾病。感染通常發生在穿刺傷或外科手術後；表現為接種處的疼痛紅色浸潤，沒有播散徵象也沒有全身症狀；尤其在熱帶，cold postinjection abscesses 也可由快速生長分枝桿菌引起；美國近期病例發生在 pedicures 與在 salons 浸水之後。<span class="ex-ref">p.2874</span></li>
 <li>病灶為暗紅色結節，常有膿瘍形成並流出清澈液體；健康的兒童與成人也可能感染，但 disseminated disease 通常發生在 hemodialysis 病人或其他免疫低下者；病程為四肢反覆多次的膿瘍，或全身性斑疹與丘疹疹；內臟可受侵犯。<span class="ex-ref">p.2874</span></li>
 <li>組織：<strong>polymorphonuclear leukocyte microabscesses</strong> 與含 foreign-body type giant cells 的肉芽腫同時存在，稱為 <strong>dimorphic inflammatory response</strong>；通常有壞死但<strong>沒有 caseation</strong>；acid-fast bacilli 偶爾可見於 microabscesses。<span class="ex-ref">p.2874</span></li>
@@ -496,7 +496,7 @@
 </ul>
 <p><strong>McKee 補充</strong></p>
 <ul>
-<li>屬 rapid-growing organisms（Group IV），存在於土壤與水；病灶多在皮膚傷口污染後 <strong class="ex-n">3–4 weeks</strong> 出現，包括手術切口、注射（例如 cosmetic fillers）、liposuction、CO2 laser resurfacing、tattooing、acupuncture 與心臟裝置植入；曾有因 nail salons 共用 footbaths 造成 <em>M. fortuitum</em> furunculosis 群聚的報告，也有 2004 年海嘯倖存者的感染報告；病灶為 indolent abscesses 伴 fistula、膿性分泌物與疤痕，也可呈 sporotrichoid distribution；<em>M. chelonae</em> 更難治療。<span class="ex-ref ex-ref-mckee">McKee p.891–892</span></li>
+<li>屬 rapid-growing organisms（Group IV），存在於土壤與水；病灶少見（uncommon），通常在皮膚傷口污染後 <strong class="ex-n">3–4 weeks</strong> 出現，包括手術切口、注射（例如 cosmetic fillers）、liposuction、CO2 laser resurfacing、tattooing、acupuncture 與心臟裝置植入；曾有因 nail salons 共用 footbaths 造成 <em>M. fortuitum</em> furunculosis 群聚的報告，也有 2004 年海嘯倖存者的感染報告；病灶為 indolent abscesses 伴 fistula、膿性分泌物與疤痕，也可呈 sporotrichoid distribution；<em>M. chelonae</em> 更難治療。<span class="ex-ref ex-ref-mckee">McKee p.891–892</span></li>
 <li>組織：早期急性發炎，進展為界線不清的肉芽腫伴偶發壞死灶；可見 panniculitis 與急性化膿性 folliculitis；bacilli 容易見到，呈團簇狀，H&amp;E 切片即可見，且 acid-fast 強陽性。<span class="ex-ref ex-ref-mckee">McKee p.894–895</span></li>
 </ul>
 </section>

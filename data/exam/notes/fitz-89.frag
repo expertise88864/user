@@ -22,28 +22,28 @@
 <ul>
 <li>毛髮易斷、無光澤，沿毛幹不規則間隔有白色結節狀腫脹；病人常抱怨頭髮長不過某個長度。<span class="ex-ref">p.1537</span></li>
 <li>TN 可為 acquired 或 inherited；<strong>acquired</strong> 是較常見的亞型，由外在創傷（mechanical、chemical、thermal）造成。<span class="ex-ref">p.1537</span></li>
-<li>Acquired TN 依位置分 3 群：<strong>localized</strong>（孤立斑片，繼發於搔癢性皮膚病的機械性創傷）、<strong>proximal</strong>（主要見於 African American 族群，常用強力化學及熱力拉直）、<strong>distal</strong>（見於白人與亞洲人，與頻繁洗髮、梳刷及漂白等化學處理有關）。<span class="ex-ref">p.1537</span></li>
+<li>Acquired TN 依位置分 3 群：<strong>localized</strong>（通常表現為孤立斑片，繼發於搔癢性皮膚病的機械性創傷）、<strong>proximal</strong>（主要見於 African American 族群，該族群較常使用強力化學及熱力拉直）、<strong>distal</strong>（見於白人與亞洲人，與頻繁洗髮、梳刷及漂白等化學處理有關）。<span class="ex-ref">p.1537</span></li>
 <li>其他後天原因：malnutrition、iron deficiency、hypothyroidism。<span class="ex-ref">p.1537</span></li>
 <li>Inherited TN：出生時或出生後數個月內發生，為單獨出現的 autosomal dominant 疾病。Congenital TN 可合併 ectodermal dysplasias 或 metabolic disorders，例如 <strong>arginosuccinic aciduria</strong>。<span class="ex-ref">p.1537</span></li>
-<li>Arginosuccinic aciduria：<em>ASL</em> gene（arginosuccinase lyase）缺陷；出生數日內出現 lethargy、temperature instability、ataxia；檢查含 <em>ASL</em> 基因檢測與 complete metabolic panel（acidosis、hyperammonemia、低 serum arginine）；補充 arginine 並限制蛋白質飲食後毛髮可恢復正常。<span class="ex-ref">p.1537</span></li>
+<li>Arginosuccinic aciduria：<em>ASL</em> gene（arginosuccinase lyase）缺陷；出生數日內出現 lethargy、temperature instability、ataxia；檢查含 <em>ASL</em> 基因檢測與 complete metabolic panel（acidosis、hyperammonemia、低 serum arginine）；治療（補充 arginine 並限制蛋白質飲食）使毛髮恢復正常。<span class="ex-ref">p.1537</span></li>
 </ul>
 <h3>Diagnosis &amp; management（診斷與處置）</h3>
 <ul>
 <li>LM 與 EM：特徵為 <strong>splayed paint brush bristle</strong> appearance，因 cuticle 破損使纖維外露而易斷。<span class="ex-ref">p.1537</span>（McKee 也以 dried paintbrushes joined by their hair 形容，並說明 node 是 cortical fibers 穿出破損 cuticle。<span class="ex-ref ex-ref-mckee">McKee p.1112</span>）</li>
-<li>可加做 CBC、thyroid function、copper levels 找 acquired 或 congenital 原因。<span class="ex-ref">p.1537</span></li>
-<li>Acquired TN 常為 self-limited 且可逆；避免 harsh chemical treatments、過度梳刷、熱力、搔抓摩擦；<strong class="ex-n">2 to 4 years</strong> 內可恢復正常毛髮；protein-enriched shampoo、distal 受損者剪髮可能預防復發。<span class="ex-ref">p.1538</span></li>
+<li>毛幹的進一步分析，以及 CBC、thyroid function、copper levels 等血液檢查，可能（may）找出其他 acquired 或 congenital 原因。<span class="ex-ref">p.1537</span></li>
+<li>Acquired TN 常為 self-limited 且可逆；避免 harsh chemical treatments、過度梳刷、熱力、搔抓摩擦；會在 <strong class="ex-n">2 to 4 years</strong> 內恢復正常毛髮；protein-enriched shampoo、distal 受損者剪髮可能預防復發。<span class="ex-ref">p.1538</span></li>
 <li>Differential diagnosis（Table 89-2）：alopecia areata、androgenic alopecia、monilethrix、piedra、seborrheic dermatitis、telogen effluvium、trichotillomania。<span class="ex-ref">p.1538</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Condition</th><th scope="col">Inheritance &amp; gene</th><th scope="col">Key features（重點）</th><th scope="col">Treatment &amp; prognosis</th></tr></thead>
 <tbody>
-<tr><td>Multiple carboxylase deficiency</td><td>AR；early onset <em>HLCS</em>，late onset <em>BTD</em></td><td>Hypotonia、failure to thrive、seizures、TN、generalized rash</td><td>多數表現（含毛髮）可隨 biotin supplementation 緩解</td></tr>
+<tr><td>Multiple carboxylase deficiency</td><td>AR；early onset <em>HLCS</em>，late onset <em>BTD</em></td><td>Hypotonia、failure to thrive、seizures、TN、generalized rash</td><td>多數表現（含毛髮）會隨 biotin supplementation 緩解</td></tr>
 <tr><td>Trichohepatoenteric syndrome（THE）</td><td>AR；<em>TTC37</em></td><td>Intractable diarrhea、facial dysmorphism、IUGR、immune dysfunction、wooly 或易拔除的毛髮</td><td>Supportive care、TPN；預後差，主要併發症為感染與嚴重肝病</td></tr>
-<tr><td>Menkes syndrome</td><td>X-linked recessive；<em>ATP7A</em>（copper transporter）</td><td>Hypotonia、failure to thrive、seizures、developmental delay、pale skin、稀疏粗淡色毛髮</td><td>早期補 copper 或有益，多數病人活不過 <strong class="ex-n">3 years</strong></td></tr>
+<tr><td>Menkes syndrome</td><td>X-linked recessive；<em>ATP7A</em>（copper transporter）</td><td>Hypotonia、failure to thrive、seizures、developmental delay、pale skin、稀疏粗淡色毛髮</td><td>早期補 copper 可能有些益處（may be of some benefit），但多數病人活不過 <strong class="ex-n">3 years</strong></td></tr>
 <tr><td>Goltz syndrome</td><td>X-linked dominant ectodermal dysplasia；<em>PORCN</em></td><td>Craniofacial、skeletal、ocular、renal、GI 可受侵犯，並有毛幹異常</td><td>矯正治療與各異常的醫療處置</td></tr>
 <tr><td>Netherton syndrome</td><td>AR；<em>SPINK5</em></td><td><mark data-q="114-42">Atopic diathesis、severe dehydration、growth retardation、ichthyosis linearis circumflexa，毛幹異常包括 trichorrhexis nodosa、trichorrhexis invaginata 與 pili torti</mark></td><td>無已知治癒方法；IVIG 已成為 treatment of choice，並配合 supportive care</td></tr>
 <tr><td>Wooly hair</td><td>AD；<mark data-q="114-42"><em>KRT74</em>（keratin 74）</mark></td><td>細而緊捲的毛髮；<mark data-q="114-42">可有 trichorrhexis nodosa 等結構異常</mark></td><td>無有效治療；避免 harsh chemicals，塗油可使毛髮較易整理</td></tr>
-<tr><td>Trichothiodystrophy（TTD）</td><td>AR；Table 列 4 個基因：<em>MPLKIP</em>、<em>ERCC2</em>、<em>ERCC3</em>、<em>GTF2H5</em></td><td>嚴重型可有 developmental delay、short stature、dry skin、指趾甲異常、congenital cataracts、呼吸道感染風險增加；較輕型僅毛髮改變，並與 TN 及 trichoschisis 都有關</td><td>無有效治療；避免創傷可能防止進一步斷髮或掉髮</td></tr>
+<tr><td>Trichothiodystrophy（TTD）</td><td>AR；Table 列 4 個基因：<em>MPLKIP</em>、<em>ERCC2</em>、<em>ERCC3</em>、<em>GTF2H5</em></td><td>嚴重型可能（may）合併 developmental delay、short stature、dry skin、指趾甲異常、congenital cataracts、呼吸道感染風險增加；較輕型可僅限於毛髮改變，並與 TN 及 trichoschisis 都有關</td><td>無有效治療；避免創傷可能防止進一步斷髮或掉髮</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 89-1，p.1538。</p>
@@ -55,13 +55,13 @@
 <h3>Definition &amp; epidemiology（定義與流行病學）</h3>
 <ul>
 <li><strong>Trichoschisis</strong>：cuticle 局部缺失，造成毛幹外露並出現乾淨的橫向斷裂；與 TTD 的 <strong>low-sulfur</strong> 毛髮有關，也可由外在創傷造成。<span class="ex-ref">p.1539</span>（McKee：trichoschisis 是橫切整個 hair shaft 的斷裂，同時涉及 cuticle 與 cortex。<span class="ex-ref ex-ref-mckee">McKee p.1112</span>）</li>
-<li>TTD 極罕見，約 <strong class="ex-n">1 in 1 million</strong> live births；與 DNA repair 及 transcription 相關基因缺陷有關，為多個遺傳症候群的一部分。<span class="ex-ref">p.1539</span></li>
+<li>TTD 極罕見，發生率 <strong class="ex-n">1 in 1 million</strong> live births；與 DNA repair 及 transcription 相關基因缺陷有關，為多個遺傳症候群的一部分。<span class="ex-ref">p.1539</span></li>
 <li>Trichoschisis 較常由外在創傷造成：熱、化學藥劑、relaxants、過度梳刷。<span class="ex-ref">p.1539</span></li>
 </ul>
 <h3>Clinical features（臨床表現）</h3>
 <ul>
 <li>毛髮脆而易斷，眉毛與睫毛短而脆。<span class="ex-ref">p.1539</span></li>
-<li>TTD 可能的表現：lamellar ichthyosis、brittle nails、short stature、mental retardation、facial dysmorphisms、gonadal dysgenesis；嚴重感染風險增加（尤其呼吸道）。<span class="ex-ref">p.1539</span></li>
+<li>TTD 可能的表現：lamellar ichthyosis、brittle nails、short stature、mental retardation、facial dysmorphisms、gonadal dysgenesis；近期一篇文獻回顧指出 TTD 病人嚴重感染風險增加（尤其呼吸道）。<span class="ex-ref">p.1539</span></li>
 <li>部分 TTD 有 photosensitivity，但未發現皮膚癌風險隨之增加。<span class="ex-ref">p.1539</span>（McKee：TTD 病人沒有 XP 病人那樣的癌症易感性增加，XP 為 1000-fold。<span class="ex-ref ex-ref-mckee">McKee p.1112</span>）</li>
 </ul>
 <h3>Etiology（病因）</h3>
@@ -86,13 +86,13 @@
 <ul>
 <li><strong>Polarized light microscopy</strong>：「<strong>tiger tail</strong>」毛髮，呈明暗交替的 bands；此圖形與毛髮硫含量不規則有關，較亮處代表硫濃度較低。<span class="ex-ref">p.1539</span>（McKee 同樣描述 polarized light 下明暗交替，外觀似 tiger's tail。<span class="ex-ref ex-ref-mckee">McKee p.1112</span>）</li>
 <li>可用相關基因檢測，或毛幹 sulfur 與 amino acid analysis 確認；<strong>hair cysteine 與 sulfur 含量</strong>在 cuticle 與 cortex 都 <strong class="ex-n">&lt;50%</strong> of normal。<span class="ex-ref">p.1539</span>（McKee：硫與 cystine 含量約減少至 50%。<span class="ex-ref ex-ref-mckee">McKee p.1112</span>）</li>
-<li>鑑別診斷：最常考慮 xeroderma pigmentosum 與 Cockayne syndrome（兩者都有 photosensitivity 與 DNA repair 缺陷機轉）；臨床表現、低硫含量與毛髮病理有助區分。<span class="ex-ref">p.1540</span></li>
+<li>鑑別診斷：最常考慮 xeroderma pigmentosum 與 Cockayne syndrome（因 TTD 的 photosensitivity 增加，以及 DNA repair pathway 缺陷的機轉）；臨床表現、低硫含量與毛髮病理有助區分。<span class="ex-ref">p.1540</span></li>
 </ul>
 <h3>Course &amp; management（病程與處置）</h3>
 <ul>
-<li>後天性 trichoschisis 在減少機械或化學創傷後預後通常良好，毛髮可恢復正常。<span class="ex-ref">p.1540</span></li>
+<li>後天性 trichoschisis 在減少機械或化學創傷後預後常（often）良好，毛髮恢復正常。<span class="ex-ref">p.1540</span></li>
 <li>TTD 表現型差異大：從只有毛髮受侵犯的輕症，到嚴重 developmental delay 與高死亡率。Faghri 的 systematic review：10 歲以下兒童死亡率為美國一般人口的 <strong class="ex-n">20-fold</strong>，多數死於嚴重感染的併發症。<span class="ex-ref">p.1540</span></li>
-<li>同一 review 列出的併發症：intellectual impairment <strong class="ex-n">86%</strong>、short stature <strong class="ex-n">73%</strong>、ocular abnormalities <strong class="ex-n">51%</strong>、ichthyosis <strong class="ex-n">65%</strong>。<span class="ex-ref">p.1540</span></li>
+<li>同一 review 指出病人一生中任何時點可能（can）出現的併發症：intellectual impairment <strong class="ex-n">86%</strong>、short stature <strong class="ex-n">73%</strong>、ocular abnormalities <strong class="ex-n">51%</strong>、ichthyosis <strong class="ex-n">65%</strong>。<span class="ex-ref">p.1540</span></li>
 <li>後天性 trichoschisis 減少 hair manipulation 可緩解；TTD 無有效治療，須定期監測並採 multidisciplinary approach（皮膚、眼科、聽力、骨骼、發展評估）。<span class="ex-ref">p.1540</span></li>
 </ul>
 <h3>Trichoclasis（McKee 補充）</h3>
@@ -107,7 +107,7 @@
 <ul>
 <li>定義：hair shaft 扁平，並沿長軸扭轉 <strong class="ex-n">180 degrees</strong>。<span class="ex-ref">p.1540</span></li>
 <li>流行病學：常在出生後 <strong class="ex-n">3 years</strong> 內出現；也有較少見的 postpubertal 型。<span class="ex-ref">p.1540</span></li>
-<li>臨床：毛髮脆、乾，因光反射不均而呈 spangled 外觀；扭轉的弱點處斷裂使毛髮變短、更易碎；粗髮或禿髮區特別常見於 parietal 與 occipital。頭皮為主要部位，眉毛、睫毛與其他體毛也可受侵犯。可伴 neurologic disorders、hearing loss、ectodermal dysplasia。<span class="ex-ref">p.1540</span></li>
+<li>臨床：毛髮脆、乾，因光反射不均而呈 spangled 外觀；扭轉的弱點處斷裂使毛髮變短、更易碎；粗髮或禿髮區特別常見於 parietal 與 occipital。頭皮為主要部位，眉毛、睫毛與其他體毛也可能受侵犯。Pili torti 病例中可能（may）發現 neurologic disorders、hearing loss、ectodermal dysplasia。<span class="ex-ref">p.1540</span></li>
 <li>外觀毛色偏淡；postpubertal 型則可見較深色毛髮、禿髮區，及晚發的 intellectual disability。<span class="ex-ref">p.1540</span></li>
 </ul>
 <h3>Etiology（病因）</h3>
@@ -122,7 +122,7 @@
 <li><mark data-q="114-42">Light microscopy：flattened, twisted hair occurring at irregular intervals along the hair shaft</mark>。<span class="ex-ref">p.1540–1541</span></li>
 <li>扭轉成組出現，每組 <strong class="ex-n">3 to 10</strong> 個，寬 <strong class="ex-n">0.4 to 0.9 mm</strong>；SEM 可見 spiral pattern。<span class="ex-ref">p.1541</span></li>
 <li>Differential diagnosis（Table 89-5）：hypotrichosis、monilethrix、pseudomonilethrix、trichorrhexis nodosa。<span class="ex-ref">p.1541</span></li>
-<li>McKee：組織學為扁平毛幹，在不規則間隔扭轉 180°（偶爾角度 90° 到 360°）；扭轉處易斷，造成 trichoptilosis；許多毛髮呈雙螺旋稱 corkscrew hair；因 LM 外觀相似常與 monilethrix 混淆，SEM 可區分。<span class="ex-ref ex-ref-mckee">McKee p.1118</span></li>
+<li>McKee：組織學為扁平毛幹，在不規則間隔扭轉 180°（罕見情況下（rarely）角度為 90° 到 360°）；扭轉處易斷，造成 trichoptilosis；許多毛髮呈雙螺旋稱 corkscrew hair；因 LM 外觀相似常與 monilethrix 混淆，SEM 可區分。<span class="ex-ref ex-ref-mckee">McKee p.1118</span></li>
 </ul>
 <h3>Course &amp; management（病程與處置）</h3>
 <ul>
@@ -152,30 +152,30 @@
 <h2>5. Trichorrhexis Invaginata（Bamboo Hair）&amp; Netherton Syndrome</h2>
 <h3>Definition &amp; epidemiology（定義與流行病學）</h3>
 <ul>
-<li>Trichorrhexis invaginata（bamboo hair）：遠端 hair shaft 套入（invagination）近端；<mark data-q="107-24,112-01">常與 Netherton syndrome 合併</mark>，也可單獨或與其他毛幹異常散發出現。<span class="ex-ref">p.1542</span></li>
-<li>單獨的 trichorrhexis invaginata 罕見；Netherton syndrome 發生率估計約 <strong class="ex-n">1 in 200,000</strong> live births。<span class="ex-ref">p.1542</span></li>
+<li>Trichorrhexis invaginata（bamboo hair）：遠端 hair shaft 套入（invagination）近端；<mark data-q="107-24,112-01">常與 Netherton syndrome 合併</mark>，也可能（may）單獨出現，或與其他毛幹異常散發出現。<span class="ex-ref">p.1542</span></li>
+<li>單獨的 trichorrhexis invaginata 罕見；Netherton syndrome 發生率估計為 <strong class="ex-n">1 in 200,000</strong> live births。<span class="ex-ref">p.1542</span></li>
 </ul>
 <h3>Clinical features（臨床表現）</h3>
 <ul>
-<li>毛髮乾、無光澤、脆而易斷；可呈瀰漫性稀疏，有些甚至完全禿；眉毛與睫毛也受影響。<span class="ex-ref">p.1542</span></li>
+<li>毛髮乾、無光澤、脆而易斷；有瀰漫性稀疏的區域，部分病例（some instances）完全禿；眉毛與睫毛也受影響。<span class="ex-ref">p.1542</span></li>
 <li><mark data-q="112-01">Netherton syndrome 臨床三聯：atopic diathesis、ichthyosiform erythroderma、trichorrhexis invaginata</mark>；曾有少數病例只有 ichthyosis linearis circumflexa 而無其他特徵。<span class="ex-ref">p.1542</span></li>
 <li>Atopic diathesis 約見於 <strong class="ex-n">75%</strong> 的 Netherton syndrome，包括 atopic dermatitis、asthma、allergic rhinitis、angioedema、urticaria、hypereosinophilia、elevated IgE。<span class="ex-ref">p.1542</span></li>
-<li>毛幹異常在嬰兒期之後才變得明顯；<mark data-q="114-42">trichorrhexis invaginata 最常見，也可有 pili torti</mark>（p.1542 此句原文寫 pili torti and trichorrhexis invaginata）。<span class="ex-ref">p.1542</span>（Table 89-1、89-4 另列 trichorrhexis nodosa、trichorrhexis invaginata、pili torti。<span class="ex-ref">p.1538、1541</span>）</li>
+<li>毛幹異常在嬰兒期之後才變得明顯；<mark data-q="114-42">trichorrhexis invaginata 最常見，也可能（may）有 pili torti</mark>（p.1542 此句原文寫 pili torti and trichorrhexis invaginata）。<span class="ex-ref">p.1542</span>（Table 89-1、89-4 另列 trichorrhexis nodosa、trichorrhexis invaginata、pili torti。<span class="ex-ref">p.1538、1541</span>）</li>
 <li>魚鱗癬在出生時表現為 collodion baby，或在最初數個月出現 <strong>ichthyosis linearis circumflexa</strong>：<mark data-q="107-24">典型描述為 migratory hyperkeratosis，呈 polycyclic、serpiginous 的紅斑塊，鱗屑處有 double-edged margins</mark>。<span class="ex-ref">p.1542</span></li>
 <li>其他皮膚外表現：recurrent infections、hypogammaglobulinemia、neurologic deficits、hypernatremia、hypothermia、mental disability、delayed growth、short stature。<span class="ex-ref">p.1542</span></li>
-<li>McKee：毛髮短、乾、無光澤、易斷；睫毛眉毛稀少或缺如；眉毛比頭皮更常且更嚴重受侵犯，因此是切片的首選部位；trichorrhexis invaginata 是 Netherton syndrome 診斷所必需；atopic dermatitis 約見於 <strong class="ex-n">75%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.1113</span></li>
+<li>McKee：典型病例（in typical cases）毛髮短、乾、無光澤、易斷；睫毛眉毛稀少或缺如；眉毛比頭皮更常且更嚴重受侵犯，因此是切片的首選部位；trichorrhexis invaginata 是 Netherton syndrome 診斷所必需；atopic dermatitis 約見於 <strong class="ex-n">75%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.1113</span></li>
 </ul>
 <h3>Etiology（病因）</h3>
 <ul>
 <li><mark data-q="107-24,111-18,114-42">Netherton syndrome 為 autosomal recessive，致病基因 <em>SPINK5</em>（serine protease inhibitor, Kazal type 5），位於 chromosome <strong class="ex-n">5q32</strong></mark>，編碼 <strong>LEKTI</strong>（lymphoepithelial Kazal-type–related inhibitor）。<span class="ex-ref">p.1542</span></li>
-<li><mark data-q="111-18">McKee：<em>SPINK5</em> 編碼 serine protease inhibitor LEKT1（LEKTI），LEKTI 表現改變會使角質層中的 proteolytic enzymes 提早活化，造成 corneocytes 分離</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1113</span></li>
+<li><mark data-q="111-18">McKee：<em>SPINK5</em> 編碼 serine protease inhibitor LEKT1（LEKTI），一般認為（it is thought）LEKTI 在表皮的表現改變會使角質層中的 proteolytic enzymes 提早活化，造成 corneocytes 分離</mark>。<span class="ex-ref ex-ref-mckee">McKee p.1113</span></li>
 <li>Fitzpatrick 內文另寫 LEKTI 在 hair follicle 的 <mark data-q="107-24">inner root sheaths 也存在</mark>；毛幹異常可能來自 keratogenous zone 中 disulfide bonds 間歇性形成不全。<span class="ex-ref">p.1542</span></li>
 </ul>
 <h3>Diagnosis（診斷）</h3>
 <ul>
 <li>Light microscopy：遠端 hair shaft 套入柔軟、角化不全的近端，造成「<strong>golf-tee</strong>」變形；因該處脆弱，沿毛幹不規則間隔也可見結節狀斷裂。<span class="ex-ref">p.1542</span></li>
 <li>EM：<mark data-q="107-24">inner root sheath 角化缺陷</mark>。Trichoscopy 被提出為快速而準確的診斷工具。<span class="ex-ref">p.1542</span></li>
-<li>輔助檢查：皮膚切片免疫組織化學偵測 <strong>LEKTI deficiency</strong>、elevated IgE、moderate eosinophilia。<span class="ex-ref">p.1542</span>（McKee：可用抗 LEKTI 抗體做 IHC 輔助診斷。<span class="ex-ref ex-ref-mckee">McKee p.1113</span>）</li>
+<li>可能（may）有助診斷的其他檢查：皮膚切片免疫組織化學偵測 <strong>LEKTI deficiency</strong>、elevated IgE、moderate eosinophilia。<span class="ex-ref">p.1542</span>（McKee：可用抗 LEKTI 抗體做 IHC 輔助診斷。<span class="ex-ref ex-ref-mckee">McKee p.1113</span>）</li>
 <li>McKee 病理：近端出現 dome-shaped expansion，為遠端節段套入近端，形似 joint 或「cup and ball」；只看到近端一半時外觀稱 golf-tee 或 tulip；結節很脆，以牽拉取樣只會取到毛幹遠端而不適合診斷；超微結構可見 cornification 受抑制、keratohyalin granules 缺如、keratin filaments 減少。<span class="ex-ref ex-ref-mckee">McKee p.1113</span></li>
 </ul>
 <h3>Differential diagnosis（鑑別診斷）</h3>
@@ -190,7 +190,7 @@
 <li>皮膚處置：emollients、topical steroids、topical immunomodulators（<strong>tacrolimus</strong>、pimecrolimus）；<mark data-q="107-24">Netherton syndrome 病人對外用藥物的吸收增加，使用時須謹慎</mark>。<span class="ex-ref">p.1542–1543</span></li>
 <li>全身治療：low-dose corticosteroids、retinoids、phototherapy。<span class="ex-ref">p.1543</span>；Table 89-1 另寫 IVIG 已成為 treatment of choice。<span class="ex-ref">p.1538</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Netherton syndrome 的毛幹異常以 trichorrhexis invaginata 最常見，但也可有 pili torti 與 TN（p.1542；Table 89-1，p.1538）。Fitzpatrick p.1542 內文寫 LEKTI「As a serine protease enzyme」負責分解 intracellular adhesions（原文用語）而使表皮細胞脫屑；McKee p.1113 則寫 LEKT1 是 serine protease inhibitor，其表現改變使角質層蛋白水解酵素提早活化。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Netherton syndrome 的毛幹異常以 trichorrhexis invaginata 最常見，但也可能有 pili torti 與 TN（p.1542；Table 89-1，p.1538）。Fitzpatrick p.1542 內文寫 LEKTI「As a serine protease enzyme」負責分解 intracellular adhesions（原文用語）而使表皮細胞脫屑；McKee p.1113 則寫 LEKT1 是 serine protease inhibitor，並認為（it is thought）其表現改變使角質層蛋白水解酵素提早活化。</aside>
 </section>
 
 <section class="ex-note" id="monilethrix">
@@ -198,7 +198,7 @@
 <ul>
 <li>罕見遺傳病，毛髮脆弱，並有 pathognomonic 的 <strong>beaded hair</strong> 外觀。<span class="ex-ref">p.1543</span></li>
 <li>嬰兒早期出現，通常為 <strong>autosomal dominant</strong>，也有 AR 的報告；表現差異大，從少數毛囊受侵犯到完全禿髮。<span class="ex-ref">p.1543</span></li>
-<li>臨床：出生後數個月 lanugo 脫落後，被短、乾、無光澤的毛髮取代；毛髮稀疏易斷；beaded hairs 從 keratotic follicular papules 長出，主要在 occiput；輕症只在頭皮，較重者可侵犯眉毛、睫毛與全身體毛；有 scarring alopecia 的報告。可單獨出現，或合併 keratosis pilaris、nail defects（koilonychia）、cataracts、牙齒異常、syndactyly、oligophrenia、mental disability。<span class="ex-ref">p.1543</span></li>
+<li>臨床：出生後數個月 lanugo 脫落後，被短、乾、無光澤的毛髮取代；毛髮稀疏易斷；beaded hairs 從 keratotic follicular papules 長出，主要在 occiput；輕症可能（may）只侵犯頭皮，較重者可侵犯眉毛、睫毛與全身體毛；有 scarring alopecia 的報告。可能（may）單獨出現，或合併 keratosis pilaris、nail defects（koilonychia）、cataracts、牙齒異常、syndactyly、oligophrenia、mental disability。<span class="ex-ref">p.1543</span></li>
 </ul>
 <h3>Etiology（病因）</h3>
 <ul>
@@ -220,7 +220,7 @@
 </ul>
 <h3>Bubble hair（McKee 補充）</h3>
 <ul>
-<li>Acquired 毛幹異常，主要見於年輕女性；因熱使毛幹內水分快速蒸發、氣體堆積，造成 medulla 區域的氣泡；常與吹風機等加熱器具有關；鑑別診斷包括 pili annulati、fungal infections、thallium intoxication。<span class="ex-ref ex-ref-mckee">McKee p.1117</span></li>
+<li>Acquired 毛幹異常，主要見於年輕女性；因熱使毛幹內水分快速蒸發、氣體堆積，造成毛幹內（尤其 medulla 區域）的氣泡；常與吹風機等加熱器具有關；鑑別診斷包括 pili annulati、fungal infections、thallium intoxication。<span class="ex-ref ex-ref-mckee">McKee p.1117</span></li>
 </ul>
 </section>
 
@@ -228,7 +228,7 @@
 <h2>7. Uncombable Hair Syndrome（Pili Trianguli et Canaliculi／Spun Glass Hair）</h2>
 <ul>
 <li>罕見的頭髮疾病，特徵為 inner 與 outer hair sheath 的結構異常。<span class="ex-ref">p.1543</span></li>
-<li>流行病學：最常在最初數個月內出現，但可到 <strong class="ex-n">12 years</strong> 才發病；男女相等；多數為 AD（完全或不完全 penetrance），也有 sporadic；後天型較常見於深色捲髮者，且多發生在較晚年齡；另有局限於 frontal 與 occipital 的 partial variant。<span class="ex-ref">p.1543</span></li>
+<li>流行病學：最常在最初數個月內出現，但可到 <strong class="ex-n">12 years</strong> 才發病；男女相等；多數為 AD（完全或不完全 penetrance），也有 sporadic；後天型較常見於深色捲髮者，且傾向（tend to）較晚發生；另有斑片狀、界線清楚的 partial variant，通常（typically）在 frontal 與 occipital。<span class="ex-ref">p.1543</span></li>
 <li>臨床：毛髮 unruly、frizzy、乾，豎立而難以梳平；毛色多為 red-blond 到淡金色，有 spangled 外觀；<strong>沒有</strong>增加的脆弱性，毛量與長度通常正常；眉毛、睫毛、體毛不受影響。可伴 ectodermal dysplasia（Bork syndrome）、multiple epiphyseal dysplasia、type I neurofibromatosis。<span class="ex-ref">p.1544</span></li>
 <li>病因：2016 年有 3 個基因被認為與 AR 型有關：<em>PADI3</em>、<em>TGM3</em>、<em>TCHH</em>；過早角化或毛囊 dermal papillae 的結構異常，可能造成其特有的僵硬形態。<span class="ex-ref">p.1544</span></li>
 <li>診斷：EM 毛髮橫切面呈 <strong>triangular 或 kidney shape</strong>，有淺的縱向溝；此溝被認為造成毛髮外觀（毛幹邊緣出現閃亮）。<span class="ex-ref">p.1544</span></li>
@@ -242,9 +242,9 @@
 <h2>8. Marie-Unna Hereditary Hypotrichosis（MUHH）</h2>
 <ul>
 <li>Autosomal dominant；出生時毛髮稀疏或缺如。最常見於歐洲裔，中國也有報告；男女相等。<span class="ex-ref">p.1544</span></li>
-<li>臨床病程隨時間變化：出生時稀疏或完全無毛 → 兒童期長出粗、硬（wiry）、unruly 的毛髮 → 約 puberty 時再次出現 <strong>nonscarring</strong> 掉髮；掉髮型態可類似 androgenic alopecia，稀疏處有粗髮散在，特別在 vertex、parietal、occipital；可有 total alopecia。頭皮、眉毛、睫毛、secondary sexual hairs 與體毛都受影響；臉部 milia-like lesions 與 follicular hyperkeratosis 也相關。<span class="ex-ref">p.1544</span></li>
+<li>臨床病程隨時間變化：出生時通常（typically）稀疏或完全無毛 → 兒童期長出粗、硬（wiry）、unruly 的毛髮 → 約 puberty 時再次出現 <strong>nonscarring</strong> 掉髮；掉髮型態可能（may）類似 androgenic alopecia，稀疏處有粗髮散在，特別在 vertex、parietal、occipital；可能出現 total alopecia。頭皮、眉毛、睫毛、secondary sexual hairs 與體毛都受影響；臉部 milia-like lesions 與 follicular hyperkeratosis 也相關。<span class="ex-ref">p.1544</span></li>
 <li>病因：<em>U2HR</em> 的 heterozygous mutation；U2HR 是 upstream open reading frame，正常抑制位於 chromosome <strong class="ex-n">8p21</strong> 的 <em>HR</em> gene；文獻描述的 <em>U2HR</em> 突變最多 <strong class="ex-n">17</strong> 種。<span class="ex-ref">p.1545</span></li>
-<li>診斷：pull test 可見多根 anagen hairs；頭皮切片毛囊數減少並有發炎，但沒有 fibrosis 或 scarring；LM 與 EM 可見毛髮不規則扭轉、縱向 ridges 與 cuticle 剝落（peeling）。<span class="ex-ref">p.1545</span></li>
+<li>診斷：pull test 可見多根 anagen hairs；頭皮切片可能（may）顯示毛囊數減少並有發炎，但沒有 fibrosis 或 scarring；LM 與 EM 可見毛髮不規則扭轉、縱向 ridges 與 cuticle 剝落（peeling）。<span class="ex-ref">p.1545</span></li>
 <li>鑑別：hereditary hypotrichosis 與 MUHH 臨床重疊大，但前者出生時毛髮正常且無毛幹異常。Table 89-8：androgenetic alopecia、alopecia areata、congenital atrichia with papular lesions、hereditary hypotrichosis simplex、loose anagen syndrome、uncombable hair syndrome。<span class="ex-ref">p.1545</span></li>
 <li>病程：毛髮特徵持續存在；無已知治療。<span class="ex-ref">p.1545</span></li>
 </ul>
@@ -261,7 +261,7 @@
 <thead><tr><th scope="col">Variant（4 種）</th><th scope="col">Inheritance</th><th scope="col">Key features（重點）</th></tr></thead>
 <tbody>
 <tr><td>Hereditary wooly hair</td><td>AD</td><td>常伴眼部異常：persistent pupillary membranes、retinal defects、cataracts</td></tr>
-<tr><td>Familial wooly hair</td><td>AR</td><td>可合併 <mark data-q="112-01">palmoplantar hyperkeratosis 與 cardiac anomalies</mark></td></tr>
+<tr><td>Familial wooly hair</td><td>AR</td><td>可能（may）合併 <mark data-q="112-01">palmoplantar hyperkeratosis 與 cardiac anomalies</mark></td></tr>
 <tr><td>Symmetrical circumscribed allotrichia</td><td>—</td><td>原文只列名稱</td></tr>
 <tr><td>Wooly hair nevus</td><td>—</td><td>可伴 melanocytic 或 epidermal nevi、delayed bone growth、periodontal changes、developmental delay</td></tr>
 </tbody>
@@ -323,7 +323,7 @@
 <ul>
 <li>LAS 為 sporadic 或 inherited，毛髮與頭皮附著鬆弛；掉髮為 <strong>nonscarring、noninflammatory</strong>。<span class="ex-ref">p.1547</span></li>
 <li><mark data-q="105-03,114-42">最常在 <strong class="ex-n">2 and 6 years</strong> 的兒童被診斷，也可能首次在成年出現</mark>。<span class="ex-ref">p.1547</span></li>
-<li>女：男約 <strong class="ex-n">6:1</strong>，但男性病例因髮型差異而被低估；經典描述於淡膚色與淡髮色者，深膚色與深髮色者也可受影響；任何稀疏、變細的頭髮都應考慮此診斷。<span class="ex-ref">p.1547</span></li>
+<li>據報告（has been reported）女：男為 <strong class="ex-n">6:1</strong>，但男性病例因髮型差異而被低估；經典描述於淡膚色與淡髮色者，深膚色與深髮色者也可受影響；任何稀疏、變細的頭髮都應考慮此診斷。<span class="ex-ref">p.1547</span></li>
 <li>McKee：通常見於 2–5 歲女童，金髮女孩特徵性；多數自發，並隨年齡改善；少數為 AD 遺傳。<span class="ex-ref ex-ref-mckee">McKee p.1086</span></li>
 </ul>
 <h3>Clinical features（臨床表現）</h3>
@@ -335,8 +335,8 @@
 <h3>Etiology（病因）</h3>
 <ul>
 <li>家族性時為 autosomal dominant。<span class="ex-ref">p.1547</span></li>
-<li>由 <strong>inner root sheath</strong> 角化缺陷造成，削弱其與 hair shaft cuticle 的黏附；研究顯示 <em>K6HF</em> keratin gene 的 <strong>E337K</strong> 突變，其他基因也可能參與；LAS 合併 Noonan-like syndrome 與 <em>SHOC2</em>（10q25）heterozygous mutation 有關。<span class="ex-ref">p.1547</span></li>
-<li>McKee：K6HF 與 K6IRS keratins 突變，使 inner root sheath 過早角化、與毛幹 cuticle 附著不良，造成 anagen 過早終止。<span class="ex-ref ex-ref-mckee">McKee p.1086</span></li>
+<li>由 <strong>inner root sheath</strong> 角化缺陷造成，削弱其與 hair shaft cuticle 的黏附；研究提示（suggest）<em>K6HF</em> keratin gene 的 <strong>E337K</strong> 突變，其他基因也可能參與；LAS 合併 Noonan-like syndrome 與 <em>SHOC2</em>（10q25）heterozygous mutation 有關。<span class="ex-ref">p.1547</span></li>
+<li>McKee：病因似乎（appears）是 K6HF 與 K6IRS keratins 突變，使 inner root sheath 過早角化、與毛幹 cuticle 附著不良，造成 anagen 過早終止。<span class="ex-ref ex-ref-mckee">McKee p.1086</span></li>
 </ul>
 <h3>Diagnosis（診斷）</h3>
 <ul>
@@ -344,7 +344,7 @@
 <li><mark data-q="105-03">Pull test 通常可輕易而不痛地拔下 <strong class="ex-n">3 to 10</strong> 根毛髮</mark>。<span class="ex-ref">p.1547</span></li>
 <li>Light microscopy：<mark data-q="105-03">以 anagen hairs 為主</mark>，毛球變形，root sheaths 角化異常；cuticle 呈 ruffled、baggy、twisted 的「floppy sock」外觀；EM 可見毛髮扁平與縱向溝。<span class="ex-ref">p.1547</span></li>
 <li><mark data-q="105-03">Trichogram 顯示 <strong>at least 70%</strong> anagen hairs</mark>。<span class="ex-ref">p.1547</span></li>
-<li>Trichoscopy：solitary rectangular black granular structures、solitary yellow dots、單根毛髮的 follicles。<span class="ex-ref">p.1547</span></li>
+<li>Trichoscopy 也可能（may）有助診斷，典型表現包括 solitary rectangular black granular structures、solitary yellow dots、單根毛髮的 follicles。<span class="ex-ref">p.1547</span></li>
 <li>McKee：顯微鏡檢確認多數（&gt;70%）甚至全部毛髮為 anagen；拔出的毛髮缺乏 inner 與 outer root sheaths，cuticle 有皺褶（ruffled）；10 歲以下兒童 anagen 比例高屬正常；單次 pull test 陰性不能排除診斷。<span class="ex-ref ex-ref-mckee">McKee p.1086</span></li>
 <li>Differential diagnosis（Table 89-11）：alopecia areata、甲狀腺功能低下或亢進、iron-deficiency anemia、藥物相關掉髮、telogen effluvium、traction alopecia、trichotillomania、uncombable hair syndrome。<span class="ex-ref">p.1547</span></li>
 </ul>
@@ -361,7 +361,7 @@
 <ul>
 <li>毛髮呈環狀，通常不伴脆弱性增加；特徵是 <strong>alternating light and dark bands</strong>。<span class="ex-ref">p.1548</span></li>
 <li>流行病學：通常出生或嬰兒期出現，也可晚發；家族性者為 AD，penetrance 降低且變異；可為 sporadic 單獨出現，也見於 wooly hair 與 alopecia areata 病人；淺金或棕髮者較常表現，深髮色者的條帶不易看出。<span class="ex-ref">p.1548</span></li>
-<li>臨床：亮暗相間使毛髮整體呈發亮、斑點狀外觀；主要侵犯頭皮，涉及 <strong class="ex-n">20% to 80%</strong> 的毛髮，條帶數往遠端減少；也有局限於 axillary、pubic、beard hair 的報告；毛髮強度與生長通常正常，文獻中有 <strong class="ex-n">6</strong> 例合併脆弱性增加。多數僅限於毛幹，無皮膚或皮膚外特徵。<span class="ex-ref">p.1548</span></li>
+<li>臨床：亮暗相間使毛髮整體呈發亮、斑點狀外觀；主要侵犯頭皮，涉及 <strong class="ex-n">20% to 80%</strong> 的毛髮，條帶數往遠端減少；也有局限於 axillary、pubic、beard hair 的報告；毛髮強度與生長通常正常，文獻中有 <strong class="ex-n">6</strong> 例合併脆弱性增加。較常見的情況（more commonly）是僅限於毛幹，無皮膚或皮膚外特徵。<span class="ex-ref">p.1548</span></li>
 <li>病因：遺傳型為 chromosome <strong class="ex-n">12q24.33</strong> 上的單一缺陷；確切病理機轉尚未確立。有脆弱性的少數病例中，受影響毛髮 lysine 升高、cysteine 降低。<span class="ex-ref">p.1548</span>（McKee：locus 定位於 12q24.32–24.33；cystine 含量低於正常、lysine 升高。<span class="ex-ref ex-ref-mckee">McKee p.1117</span>）</li>
 </ul>
 <h3>Diagnosis（診斷）</h3>
@@ -388,7 +388,7 @@
 <tr><td>Trichorrhexis nodosa</td><td>Acquired（外在創傷）；inherited AD；congenital（ectodermal dysplasias、metabolic）</td><td>LM／EM：splayed paint brush bristle</td><td>Acquired 去除外在創傷可改善；inherited 不一</td></tr>
 <tr><td>Trichoschisis／TTD</td><td>TTD 為 AR；<em>ERCC2</em>、<em>ERCC3</em>、<em>p8</em>、<em>C7Orf11</em></td><td>Polarized light：tiger tail；cysteine 與 sulfur <strong class="ex-n">&lt;50%</strong></td><td>取決於表現型，從只有毛髮到高死亡率</td></tr>
 <tr><td>Pili torti</td><td>Acquired；isolated inherited 可為 AD、AR 或 sporadic；Menkes（X-linked recessive）</td><td><mark data-q="114-42">LM：flattened, twisted hair at irregular intervals；180° 扭轉</mark><span class="ex-ref">p.1540</span></td><td>多數 puberty 後自行改善</td></tr>
-<tr><td>Trichorrhexis invaginata</td><td>Netherton syndrome：AR，<em>SPINK5</em></td><td>LM：遠端套入近端，golf-tee</td><td>輕症隨年齡改善；重症持續</td></tr>
+<tr><td>Trichorrhexis invaginata</td><td>Netherton syndrome：AR，<em>SPINK5</em></td><td>LM：遠端套入近端，golf-tee</td><td>輕症可能隨年齡改善；重症持續</td></tr>
 <tr><td>Monilethrix</td><td>AD（<em>KRT81</em>、<em>KRT83</em>、<em>KRT86</em>）；罕見 AR（<em>DSG4</em>）</td><td>LM：pearl necklace；nonmedullated elliptical nodes，間隔 0.7–1 mm<span class="ex-ref">p.1543</span></td><td>變異大，常隨年齡改善</td></tr>
 <tr><td>Uncombable hair syndrome</td><td>多為 AD；AR 型 <em>PADI3</em>、<em>TGM3</em>、<em>TCHH</em></td><td>EM：triangular／kidney 橫切面，縱向溝</td><td>通常 puberty 後緩解</td></tr>
 <tr><td>Marie-Unna hereditary hypotrichosis</td><td>AD；<em>U2HR</em></td><td>Pull test 多根 anagen；LM／EM 不規則扭轉、縱向 ridges、cuticle peeling</td><td>持續存在</td></tr>

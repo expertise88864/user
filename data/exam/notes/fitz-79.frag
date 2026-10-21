@@ -14,9 +14,9 @@
 <ul>
 <li>全球估計超過 <strong class="ex-n">2000 萬</strong>（more than 20 million）病人，但缺乏可靠統計；在許多國家比 asthma 或 diabetes 更常見。<span class="ex-ref">p.1419</span></li>
 <li>Prevalence 依國家為至少 <strong class="ex-n">2%–18%</strong>，Celtic populations 報告最高；瑞典 <strong class="ex-n">10%</strong>、德國 <strong class="ex-n">12.3%</strong>、愛爾蘭（2010）<strong class="ex-n">13.9%</strong>。盛行率可能與被研究族群的 genetic make-up 有關。<span class="ex-ref">p.1419</span></li>
-<li>女性較常見（women:men <strong class="ex-n">3:1</strong>），女性發病通常比男性早約十年。<mark data-q="102-40">一般認為 normal age of onset：女性 <strong class="ex-n">35–45</strong> 歲、男性 <strong class="ex-n">45–55</strong> 歲</mark>；近期研究顯示臨床發病可更早、以 flushing 為首發，而 flushing 常不被認為是 rosacea 的早期徵象。第一個、常未被察覺的徵象 can occur in the <strong class="ex-n">second decade</strong>，女性多於男性。<span class="ex-ref">p.1419</span></li>
+<li>女性較常見（women:men <strong class="ex-n">3:1</strong>），女性發病通常比男性早約十年。<mark data-q="102-40">一般認為 normal age of onset：女性 <strong class="ex-n">35–45</strong> 歲、男性 <strong class="ex-n">45–55</strong> 歲</mark>；近期研究提示（suggest）臨床發病可更早、以 flushing 為首發，而 flushing 常不被認為是 rosacea 的早期徵象。第一個、常未被察覺的徵象 can occur in the <strong class="ex-n">second decade</strong>，女性多於男性。<span class="ex-ref">p.1419</span></li>
 <li>McKee：rosacea most often presents in the fourth to sixth decades，也可見於青少年晚期或二十出頭，兒童例外地受侵犯；約占皮膚科門診 <strong class="ex-n">0.5–1.0%</strong>；女性較多（<strong class="ex-n">2–3:1</strong>）；fair skin、Northern European ancestry 最常受影響。<span class="ex-ref ex-ref-mckee">McKee p.1123–1124</span></li>
-<li>Disease burden：常被誤解為 alcohol overconsumption 的疾病而被污名化；病人可能自尊明顯受損、失業、不再社交、離婚或憂鬱；也可有明顯的 stinging 或 burning（與 flushing、erythema 相關）。<span class="ex-ref">p.1419</span></li>
+<li>Disease burden：常被誤解為 alcohol overconsumption 的疾病而被污名化；病人報告自尊明顯受損，並可能失業、不再社交、離婚或憂鬱；也可能有 potentially severe 的 stinging 或 burning（與 flushing、erythema 相關）。<span class="ex-ref">p.1419</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>課本寫的是 normal age of onset 為女性 35–45 歲、男性 45–55 歲（p.1419）；同頁也寫第一個常未被察覺的徵象 can occur in the second decade。Fitzpatrick 的 women:men 為 3:1，McKee 為 2–3:1。</aside>
 </section>
@@ -25,9 +25,9 @@
 <h2>3. Clinical Findings（臨床表現）</h2>
 <h3>General features（整體特徵）</h3>
 <ul>
-<li>多為 <strong>symmetric</strong>，侵犯 central face、nose、chin、central cheeks、glabella；forehead（禿頭男性較常見）、neck、chest 只是少見；perioral、periorbital 或耳後也少見。<span class="ex-ref">p.1419–1420</span></li>
+<li>多為 <strong>symmetric</strong>，侵犯 central face、nose、chin、central cheeks、glabella；forehead（禿頭男性較常見）、neck、chest 只是很少（only rarely）受侵犯；perioral、periorbital 或耳後也很少（rarely）受侵犯。<span class="ex-ref">p.1419–1420</span></li>
 <li>可能出現的徵象：flushing、transient erythema、persistent erythema、telangiectasia、papules、pustules、phymata、edema、pain、stinging 或 burning，以及（very rarely）pruritus。<span class="ex-ref">p.1420</span></li>
-<li>Flushing 是 hallmark，但有些病人沒有太多 flushing 也發生 rosacea。典型為「crescendo」發展：接觸 trigger 後 flushes 越來越多，遲早多數病人出現 persistent erythema（可有或無 telangiectasia）。<span class="ex-ref">p.1420</span></li>
+<li>Flushing 是 hallmark，但有些病人沒有太多 flushing 也發生 rosacea。典型上（classically）多數病人描述為「crescendo」發展：接觸 trigger 後 flushes 越來越多，遲早多數病人出現 persistent erythema（可有或無 telangiectasia）。<span class="ex-ref">p.1420</span></li>
 <li>Notably, <strong>comedones 不存在</strong>，這是 papulopustular rosacea 與 acne 或 Favre-Racouchot disease 的區別。<span class="ex-ref">p.1420</span></li>
 <li>年齡與性別：年輕男女常以 flushing 與 erythema 為首發；較年長病人 telangiectasia 可為首發徵象；<strong>rhinophyma 是男性病人的特徵</strong>。病人若對 UV 特別敏感，可能因窗戶曝曬出現不對稱的臉部 erythema（例如駕駛 vs. 副駕駛）。病程進展相對緩慢。<span class="ex-ref">p.1420</span></li>
 </ul>
@@ -37,10 +37,10 @@
 </ul>
 <h3>Phymata</h3>
 <ul>
-<li>Phymata 是與 rosacea 獨特相關的 macroscopic lesion：persistent、firm、<strong>nonpainful、nonpitting</strong> 的組織腫脹，部位有 nose（rhinophyma）、chin（gnathophyma）、forehead（metophyma）、eyelids（blepharophyma），通常 seldom begins before the age of <strong class="ex-n">40</strong> years；一般不會自行消退。<span class="ex-ref">p.1420</span>耳垂與耳輪下半部則主要為 otophyma。<span class="ex-ref">p.1422</span></li>
-<li>Phymatous changes 在 rosacea 病人中是少見的；病人常被誤認為酗酒（「brandy nose」是誤導性的稱呼）。<span class="ex-ref">p.1420</span></li>
+<li>Phymata 是與 rosacea 獨特相關的 macroscopic lesion：persistent、firm、<strong>nonpainful、nonpitting</strong> 的組織腫脹，部位有 nose（rhinophyma）、chin（gnathophyma）、forehead（metophyma）、eyelids（blepharophyma），很少（seldom）在 <strong class="ex-n">40</strong> 歲前開始；一般不會自行消退。<span class="ex-ref">p.1420</span>耳垂與耳輪下半部則主要為 otophyma。<span class="ex-ref">p.1422</span></li>
+<li>Phymatous changes 在 rosacea 病人中是罕見的（rare）；病人常被誤認為酗酒（「brandy nose」是誤導性的稱呼）。<span class="ex-ref">p.1420</span></li>
 <li><strong>Rhinophyma</strong> 在男性比女性多 almost <strong class="ex-n">20 times</strong>；初期常見於 alae nasi 與鼻尖，呈 dilated patulous follicles；表面凹凸如 peau d'orange；擠壓可擠出白色糊狀物（sebum、corneocytes、bacteria，有時含 <em>Demodex folliculorum</em>）。<span class="ex-ref">p.1420</span></li>
-<li>Fibrous form：鼻部不對稱腫脹（connective tissue 與 sebaceous hyperplasia），大型 actinic comedones（有時稱「potato nose」）；fibroangiomatous form：鼻子呈 copper 到 dark red、明顯變大，有 ectatic veins 網絡，有時有膿疱。<span class="ex-ref">p.1420–1422</span></li>
+<li>Fibrous form：鼻部不對稱腫脹（connective tissue 與 sebaceous hyperplasia），大型 actinic comedones 可很明顯（有時稱「potato nose」）；fibroangiomatous form：鼻子呈 copper 到 dark red、明顯變大，有 ectatic veins 網絡，有時有膿疱。<span class="ex-ref">p.1420–1422</span></li>
 <li>BCC 與 SCC 的發生率曾被報告在 rhinophyma 皮膚較高，但這個觀察尚未被明確證實。Rhinophyma 與 rosacea 的病程、嚴重度或其他特徵之間沒有一致關係，所以被歸為「與 rosacea 密切相關的皮膚狀態」，而不是疾病的後果。<span class="ex-ref">p.1422</span></li>
 <li>Rhinophymata 在合併 seborrhea 時特別常見；seborrhea 並不特別與 rhinophymata 相關，常見於沒有 phyma 的 rosacea。<span class="ex-ref">p.1422</span></li>
 <li>McKee：男性可出現 chin（gnatophyma）、forehead（metophyma）、ears（otophyma）、eyelids、malar areas、nose 的 phymatous change，最後形成 rhinophyma；這是最常見的 phyma，由持續的 lymphedema 與 sebaceous glands 及周圍 connective tissue 的 hypertrophy 造成，毛囊明顯、常塞有 grumous material。<span class="ex-ref ex-ref-mckee">McKee p.1124</span></li>
@@ -66,9 +66,9 @@
 </ul>
 <h3>Papules and pustules（丘疹與膿疱）</h3>
 <ul>
-<li>可有或無 pustules，可發展成 cysts 與 nodules（rosacea conglobata）；多數可從 centrofacial distribution 與<strong>缺少 comedones 與 scales</strong> 辨認。丘疹多為小、少痛、dome shaped、紅色、常為多發；可發展成類似 lupus erythematosus 的 edematous plaques。<span class="ex-ref">p.1423</span></li>
+<li>可有或無 pustules，可發展成 cysts 與 nodules（rosacea conglobata）；多數可從 centrofacial distribution 與<strong>缺少 comedones 與 scales</strong> 辨認。丘疹多為小、少痛、dome shaped、紅色、通常（usually）多發；可發展成類似 lupus erythematosus 的 edematous plaques。<span class="ex-ref">p.1423</span></li>
 <li>可延伸到 neck、chest 與 forehead（甚至兒童）。<strong>Forehead rosacea 幾乎只發生在 male pattern baldness 病人</strong>，支持 UV 是 trigger；bald scalp 的丘疹與膿疱也提示 UV 為 trigger。<span class="ex-ref">p.1423</span></li>
-<li>Papules 與 pustules 可 rarely 在 <strong class="ex-n">4 to 8 weeks</strong> 後自行消退，且不留疤；病情因 trigger factors 而起伏（waxes and wanes），強調 maintenance therapy 與 tapering 策略。Erythema 或 flushing 常在 antibiotic therapy 後仍留存。<span class="ex-ref">p.1424</span></li>
+<li>Papules 與 pustules 可 rarely 在 <strong class="ex-n">4 to 8 weeks</strong> 後自行消退，且不留疤；病情因 trigger factors 而起伏（waxes and wanes），強調 maintenance therapy 與 tapering 策略。Papules 與 pustules 常伴 erythema 或 flushing，後者在 antibiotic therapy 後多半（mostly）仍留存。<span class="ex-ref">p.1424</span></li>
 <li>McKee：丘疹不痛、沒有 scarring；crops of papules 與（較少見的）pustules 分布在 forehead、malar areas、nose、chin。<span class="ex-ref ex-ref-mckee">McKee p.1124</span></li>
 </ul>
 <h3>Ocular rosacea（眼型）</h3>
@@ -80,7 +80,7 @@
 <h3>Persistent edema of rosacea（持續性水腫）</h3>
 <ul>
 <li>Rosacea 的水腫是 hard、nonpitting swelling，主要在臉的下半部（forehead、eyelids、cheeks、nose）及 glabella，後期持續存在並伴 erythema；眼瞼腫脹可造成視覺困擾；可有 skin tightness，少見 pruritus；全身反應明顯缺乏；傾向慢性、有 flare-up 與部分緩解期。<span class="ex-ref">p.1426</span></li>
-<li>需與 <strong>Morbihan disease</strong>（diffuse idiopathic solid upper-facial edema，又稱 edematous rosacea）區分：Morbihan 之前通常沒有顯著皮膚發炎，原因不明，與 rosacea 典型病理生理的關係存疑。<span class="ex-ref">p.1425–1426</span></li>
+<li>需與 <strong>Morbihan disease</strong>（diffuse idiopathic solid upper-facial edema，有時稱 Morbihan disease 或 edematous rosacea）區分：Morbihan 之前通常沒有顯著皮膚發炎，原因不明，與 rosacea 典型病理生理的關係存疑。<span class="ex-ref">p.1425–1426</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Comedones 在 rosacea 不存在（p.1420）；blushing 不是 rosacea 的特徵（p.1422）；pruritus 在 rosacea 被列為 very rarely（p.1420）。Rhinophyma 被課本歸為與 rosacea 密切相關的皮膚狀態，不是 rosacea 的後果（p.1422）。</aside>
 </section>
@@ -90,10 +90,10 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Form</th><th scope="col">Key points（重點）</th></tr></thead>
 <tbody>
-<tr><td>Lupoid／granulomatous rosacea</td><td>慢性、therapy-resistant，<strong class="ex-n">0.2–0.3 cm</strong>、常 follicular 的 brown-red 或 red papules，可發展成 epithelioid（lupoid）granulomatous plaques 與 nodules（cheek、forehead、chin）；centrofacial 與 perioral 常受侵犯；diascopy 可見 follicle-associated lupoid infiltrate；少數病例發生在 infliximab 或 etanercept 治療後。與 lupus miliaris disseminatus faciei 是否為不同疾病尚未釐清。<span class="ex-ref">p.1424</span></td></tr>
+<tr><td>Lupoid／granulomatous rosacea</td><td>慢性、therapy-resistant，<strong class="ex-n">0.2–0.3 cm</strong>、常 follicular 的 brown-red 或 red papules，可發展成 epithelioid（lupoid）granulomatous plaques 與 nodules（cheek、forehead、chin）；典型上（typically）侵犯 centrofacial 與 perioral；diascopy 可見 follicle-associated lupoid infiltrate；罕見病例曾在 infliximab 或 etanercept 治療後被觀察到。與 lupus miliaris disseminatus faciei 是否為不同疾病尚未釐清。<span class="ex-ref">p.1424</span></td></tr>
 <tr><td>Rosacea conglobata</td><td>罕見、慢性、嚴重，類似 acne conglobata：hemorrhagic nodular abscesses 與紅斑背景上的 indurated plaques。<span class="ex-ref">p.1424</span></td></tr>
-<tr><td>Rosacea fulminans（pyoderma faciale–O'Leary）</td><td>罕見、急性或亞急性；好發 postadolescent（<strong class="ex-n">20–30 years</strong>）women，尤其孕婦，男性罕見；數天到數週發展；papulopustules、coalescent purplish nodules、abscesses 與 confluent fistulae；病人常在發作前覺得皮膚油；fatigue、fever、arthralgia、anaemia 等全身症狀通常沒有；控制後不會復發。曾描述與 seborrhoeic dermatitis、Crohn disease 相關，但無機轉上的連結。<span class="ex-ref">p.1424–1425</span><br>McKee：very rare，突然出現 papulopustules、cysts 與大量 conglobate nodular lesions。<span class="ex-ref ex-ref-mckee">McKee p.1126</span></td></tr>
-<tr><td>Halogen rosacea</td><td>攝入 iodides 或 bromides 可造成 rosacea-like reaction 或使原有 rosacea 惡化；可有 erythematous pustules、vegetative nodules、水疱、ulcer、panniculitis 等；halogen 來源包括 citrus-flavored soft drinks、(sea)food、radiocontrast media、pool disinfectants、某些 topical antiseptics、permanent hair wave、維他命與藥物（thyroid medication、chemotherapeutics）。通常在去除暴露後 <strong class="ex-n">4 to 6 weeks</strong> 改善，可留下 scarring 與 postinflammatory pigmentation。<span class="ex-ref">p.1425</span></td></tr>
+<tr><td>Rosacea fulminans（pyoderma faciale–O'Leary）</td><td>罕見、急性或亞急性；好發 postadolescent（<strong class="ex-n">20–30 years</strong>）women，尤其孕婦，男性罕見；數天到數週發展；papulopustules、coalescent purplish nodules、abscesses 與 confluent fistulae；病人常在發作前覺得皮膚油；fatigue、fever、arthralgia、anaemia 等全身症狀通常沒有；控制後不會復發。曾描述與 seborrhoeic dermatitis、Crohn disease 相關，但未揭示（without disclosing）與 rosacea fulminans 的機轉連結。<span class="ex-ref">p.1424–1425</span><br>McKee：very rare，突然出現 papulopustules、cysts 與大量 conglobate nodular lesions。<span class="ex-ref ex-ref-mckee">McKee p.1126</span></td></tr>
+<tr><td>Halogen rosacea</td><td>攝入 iodides 或 bromides 可能（might）造成 rosacea-like reaction 或使原有 rosacea 惡化；可有 erythematous pustules、vegetative nodules、水疱、ulcer、panniculitis 等；halogen 來源包括 citrus-flavored soft drinks、(sea)food、radiocontrast media、pool disinfectants、某些 topical antiseptics、permanent hair wave、維他命與藥物（thyroid medication、chemotherapeutics）。通常在去除暴露後 <strong class="ex-n">4 to 6 weeks</strong> 改善，可能（might）留下 scarring 與 postinflammatory pigmentation。<span class="ex-ref">p.1425</span></td></tr>
 <tr><td>Steroid rosacea</td><td>Rosacea 病人長期使用 topical corticosteroids，其 atrophic side effects 有時使病情加重：膚色變 deep flaming red 或 copper-red，覆有 telangiectases 網絡；萎縮皮膚出現 scales、follicular papulopustules、nodules 與 secondary comedones；通常局限於塗藥區；病人有嚴重不適與 nagging pain。<span class="ex-ref">p.1425</span></td></tr>
 <tr><td>Gram-negative rosacea</td><td>長期使用涵蓋 gram-positive 的 topical 或 systemic antibiotic，會篩選出 gram-negative pathogens；特徵為在紅斑背景上出現微小黃色 pustules；臨床上與 papulopustular rosacea 無法區分，但因治療不同，鑑別是必要的。<span class="ex-ref">p.1425</span></td></tr>
 <tr><td>Disseminated rosacea（McKee）</td><td>Rarely 出現 extrafacial 的 papular 或 vascular 型，侵犯 buttocks、limbs、presternal area。<span class="ex-ref ex-ref-mckee">McKee p.1124</span></td></tr>
@@ -144,7 +144,7 @@
 </table>
 <p class="ex-cite">Table 79-1，p.1427；為 National Rosacea Society 的 most common patient-reported triggers；Microorganisms 在 NRS survey 中未被報告為已知 trigger；NR = not reported。</p>
 <ul>
-<li><strong>Heat、noxious cold</strong>：transcriptome 與 immunohistochemistry 資料提示 TRP ion channels（e.g. <strong>TRPV1</strong>、<strong>TRPA1</strong>）的角色，它們可被溫度變化活化；是否有 noxious cold receptor 會誘發 rosacea 則未知。<mark data-q="105-01">Heat 與 noxious cold 都被列為 trigger</mark>。<span class="ex-ref">p.1426–1427</span></li>
+<li><strong>Heat、noxious cold</strong>：transcriptome 與 immunohistochemistry 資料提示 TRP ion channels（e.g. <strong>TRPV1</strong>、<strong>TRPA1</strong>）的角色，它們可被溫度變化活化；是否有 noxious cold receptor 會誘發 rosacea 則未知。<mark data-q="105-01">Heat 與（rarely）noxious cold 都被列為 trigger</mark>。<span class="ex-ref">p.1426–1427</span></li>
 <li><strong>UV radiation</strong>：sun exposure 是公認的 trigger，可能是 bald scalp rosacea 的 trigger；UVA、UVB 或溫度各占多少不清楚；病人在玻璃後出現不對稱 erythema 與 flushing，指出至少 UVA 有角色；UVB 活化 keratinocytes 上的 <strong>TRPV4</strong>。<span class="ex-ref">p.1427</span></li>
 <li><strong>Microorganisms</strong>：<em>Demodex folliculorum</em> 是人與動物皮膚的 commensal（偏油性皮膚、近 pilosebaceous glands），在部分 rosacea 病人增加，主要是有 phymata 以及 papules 與 pustules 者；降低 demodex 密度的治療與臨床改善呈正相關；候選分子包括 <em>Bacillus oleronius</em>、proteases、chitins，可活化 PAR-2 或 TLR-2。Demodex mites 特別見於 papulopustular lesions。<span class="ex-ref">p.1427</span></li>
 <li>papules 與 pustules 的誘發機轉不清楚，可能包括 demodex mites、皮膚或 GI 細菌、gut 的 dysbalanced microbiota（e.g. SIBO）、胃感染（e.g. <em>Helicobacter pylori</em>）。<span class="ex-ref">p.1427</span></li>
@@ -161,15 +161,15 @@
 <li><mark data-q="115-32">多數 trigger factors 會活化 sensory nerves 上的 <strong>TRP ion channels</strong>，經釋放 neuropeptides（如 <strong>substance P</strong>、<strong>PACAP</strong>）誘發 neurogenic inflammation；neuropeptides 是 edema 與 vasodilation 的強力誘導物，也是 flushing 與 erythema 的基礎</mark>。<span class="ex-ref">p.1429</span></li>
 <li>Fig. 79-10：SP 主要促進 plasma extravasation（edema），CGRP 與 PACAP 促進 vascular dilation，三者都能引起 pain。<span class="ex-ref">p.1431</span></li>
 <li>Rosacea 病人皮膚對 epinephrine、norepinephrine、acetylcholine 的血管反應正常。Flushing 在病理生理上是 neurogenic inflammation；持續超過 5 分鐘的 flushing 一定屬於 neurogenic inflammation cascade（erythema、edema、leukocyte recruitment）。Sensory neuron density 在 erythematotelangiectatic rosacea 中度增加。<span class="ex-ref">p.1430</span></li>
-<li>臉部是少數血管同時受 sympathetic、parasympathetic、sensory nerves 控制的部位。TRPV1–4 與 TRPA1 廣泛表現於 rosacea 皮膚的神經與非神經細胞；TRP 與 neuropeptide receptors 可 cross-talk，特別是 TRPA1 與 TRPV1。<span class="ex-ref">p.1430</span></li>
-<li>TRPA1、TRPV1、TRPV4 活化會造成疼痛、burning 感覺；rosacea 病人 rarely 有 pruritus。<span class="ex-ref">p.1429</span></li>
+<li>臉部是少數血管同時受 sympathetic、parasympathetic、sensory nerves 控制的部位。TRPV1–4 與 TRPA1 廣泛表現於 rosacea 皮膚的神經與非神經細胞；TRP channels 可與 neuropeptide receptors cross-talk，兩者的交互作用可能（may）參與維持 neurovascular responses 與發炎，特別是 TRPA1 與 TRPV1。<span class="ex-ref">p.1430</span></li>
+<li>TRPA1、TRPV1、TRPV4 活化會造成疼痛、burning 感覺，可能（may）與 rosacea 病人所見相似；rosacea 病人 rarely 有 pruritus。<span class="ex-ref">p.1429</span></li>
 </ul>
 <h3>Innate immunity: TLR-2, KLK-5, cathelicidin（先天免疫）</h3>
 <ul>
 <li>Innate immunity 在 initiation 與 maintenance 都有重要角色（與 psoriasis、atopic dermatitis 類似），近期結果也指出 cytotoxic T-cell response 的重要性。<span class="ex-ref">p.1429</span></li>
 <li>Skin barrier dysfunction：病人有較高的 transepidermal water loss（TEWL）與皮膚 pH 上升；alkali pH 增強 kallikreins（KLK-5、-6、-7、-12）活性；KLK-5 活化 LL-37；KLK-5、-7 也活化 PAR-2。LL-37 與 PAR-2 在 rosacea 皮膚都 upregulated，且 PAR-2 會 upregulate LL-37。<span class="ex-ref">p.1429</span></li>
 <li><mark data-q="115-32,106-08"><strong>TLR-2</strong> 在 rosacea 病人 upregulated，經 <strong>KLK-5</strong> 使 innate immune peptide <strong>cathelicidin（活性型為 LL-37）</strong>的表現上調並活化，造成 erythema、immune response 與 angiogenesis</mark>（經 serine proteases、MMPs、cytokines、chemokines 釋放與 endothelial cells 增殖）。Cathelicidins 在 rosacea 發炎的角色現已被廣泛接受，但人體直接 in vivo 功能資料仍缺。<span class="ex-ref">p.1429；Fig. 79-9，p.1428</span></li>
-<li>Rosacea 中 keratinocytes 與 mast cells 都被認為釋放 cathelicidin（keratinocytes：cathelicidin、VEGF、endothelin-1；mast cells：cathelicidin、MMPs、TNF-α）。<span class="ex-ref">p.1427</span></li>
+<li>前述 trigger factors 可能（probably）啟動 keratinocytes（e.g. cathelicidin、VEGF、endothelin-1）與 mast cells（cathelicidin、MMPs、TNF-α）等細胞釋放 proinflammatory mediators。<span class="ex-ref">p.1427</span></li>
 <li>TLR-2 的上游刺激物仍不明；Vitamin D 在 rosacea 病人增加，可增加 TLR-2 與 KLK-5 mRNA 表現。<span class="ex-ref">p.1429</span></li>
 <li>Inflammasome：NALP3、caspase-1 與 ASC 組成，促使 IL-1 切割活化；TLR-2 能促進 NLRP3 inflammasome 活化，IL-1β 在 rosacea 升高。Inflammasome 活化造成 neutrophil chemotaxis、IL-1 與 TNF 放大發炎，並釋放 substance P、CGRP、ADM、PACAP、ATP 等。<span class="ex-ref">p.1429</span></li>
 </ul>
@@ -177,7 +177,7 @@
 <h3>Adaptive immunity（後天免疫）</h3>
 <ul>
 <li>T 與 B lymphocytes 都有角色；皮膚以 <strong>CD4+</strong> T cells 為主、CD8+ 較少，主要是 <strong>TH1</strong> 與 <strong>TH17</strong> 細胞；細胞激素 IFN-γ、TNF（TH1）與 IL-17A、IL-22（TH17）升高。TH17 cells 誘導 VEGF，促成 angiogenesis。<span class="ex-ref">p.1430</span></li>
-<li>Rosacea 發作也與感染後或治療（corticosteroids、calcineurin inhibitors、phototherapy）造成的 T-cell immunosuppression 相關；病人常有 Demodex 感染，且曾發現抗 Demodex 抗體；rosacea 中 regulatory T cells 數目相對較高，immunologic tolerance 保存良好。<span class="ex-ref">p.1430</span></li>
+<li>Rosacea 發作也與感染後或治療（corticosteroids、calcineurin inhibitors、phototherapy）造成的 T-cell immunosuppression 相關；有 rosacea eruptions 的病人常（commonly）有 Demodex 感染，且曾發現抗 Demodex 抗體；rosacea 中 regulatory T cells 數目相對較高，immunologic tolerance 保存良好。<span class="ex-ref">p.1430</span></li>
 </ul>
 <h3>Phymata, telangiectasia, GI tract（其他）</h3>
 <ul>
@@ -190,21 +190,21 @@
 <section class="ex-note" id="diagnosis">
 <h2>7. Diagnosis, Classification &amp; Grading（診斷、分類與嚴重度）</h2>
 <ul>
-<li>診斷以臨床特徵為主，加上詳細的病史（age、gender、trigger factors、hormonal changes、profession、hobbies、gut surgeries、Demodex infestation、exercising、heat 與 noxious cold exposure、飲食習慣）與家族史。<strong>沒有診斷用 marker 或 laboratory workup</strong>；實驗室與診斷工具只用於鑑別其他疾病。Histopathology（尤其早期紅斑期）常 nonspecific，biopsy 可用來排除鑑別診斷。<span class="ex-ref">p.1434</span></li>
+<li>診斷以臨床特徵為主，加上詳細的病史（age、gender、trigger factors、hormonal changes、profession、hobbies、gut surgeries、Demodex infestation、exercising、heat 與 noxious cold exposure、飲食習慣）與家族史。<strong>沒有診斷用 marker 或 laboratory workup</strong>；為鑑別其他皮膚或全身疾病，可能（may）使用實驗室檢查與診斷工具。Histopathology（尤其早期紅斑期）常 nonspecific，但 biopsy 可能（may）有助於排除鑑別診斷。<span class="ex-ref">p.1434</span></li>
 </ul>
 <h3>Classification 2002／2004（四亞型）</h3>
 <table class="ex-table">
 <thead><tr><th scope="col">Subtype</th><th scope="col">Clinical characteristics（臨床特徵）</th></tr></thead>
 <tbody>
 <tr><td>1. Erythematotelangiectatic</td><td>Persistent central facial erythema, frequent flushing; may be telangiectatic vessels</td></tr>
-<tr><td>2. Papulopustular</td><td>Erythematous dome-shaped papules, some with surrounding pustulation, in a centrofacial distribution on a background of persistent erythema</td></tr>
+<tr><td>2. Papulopustular</td><td>Erythematous dome-shaped papules, some with surmounting pustulation, in a centrofacial distribution on a background of persistent erythema</td></tr>
 <tr><td>3. Phymatous</td><td>Persistent facial swelling with hypertrophy of tissue (rhinophyma); different variants described</td></tr>
 <tr><td>4. Ocular</td><td>Ocular inflammation (e.g. blepharitis, conjunctivitis, meibomian gland dysfunction; chalazion)</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 79-2，p.1435；每個亞型可分 mild、moderate、severe。</p>
 <ul>
-<li>優點：使這個疾病的現象學更有結構，利於日常監測療效。缺點：同一亞型內累積的症狀（如 erythema 與 telangiectasia）可能有不同的病理生理；許多病人是各亞型的重疊；常見甚至占優勢的症狀 <strong>flushing</strong> 被忽略或歸入 erythema。這些亞型可以是獨立的變異型，也可能從一型進展到另一型。<span class="ex-ref">p.1434–1435</span></li>
+<li>優點：使這個疾病的現象學更有結構，利於日常監測療效。缺點：同一亞型內累積的症狀（如 erythema 與 telangiectasia）可能有不同的病理生理；許多病人是各亞型的重疊；常見甚至占優勢的症狀 <strong>flushing</strong> 被忽略或歸入 erythema。這些亞型可能是獨立的變異型，也可能從一型進展到另一型（may…or may）。<span class="ex-ref">p.1434–1435</span></li>
 <li>McKee（Table 22.6）：同樣列出四個亞型，另有一個 variant：<strong>granulomatous</strong>（noninflammatory；hard；brown、yellow 或 red cutaneous papules 或 nodules of uniform size）；McKee 寫該委員會不接受疾病會從一期演進到另一期。<span class="ex-ref ex-ref-mckee">McKee p.1123</span></li>
 </ul>
 <h3>Classification 2016／2017（diagnostic／major／secondary features）</h3>
@@ -217,7 +217,7 @@
 <p class="ex-cite">Table 79-3，p.1435；所有 features 都可為 mild、moderate、severe。</p>
 <ul>
 <li>專家組認為 <strong>phymatous changes</strong> 是單獨即具診斷性的徵象；<strong>persistent centrofacial erythema 合併 trigger 引起的週期性加重</strong>是 rosacea 的最低診斷徵象；flushing、telangiectasia、inflammatory papules 或 pustules 是 major features，但本身不具診斷性。Diagnostic 與 major features 的 <strong>centrofacial location</strong> 是必要的；雙側分布被視為典型但不是必要。Stinging、edema、dry sensation、burning 屬 secondary features（symptoms）。<span class="ex-ref">p.1435</span></li>
-<li>新分類較能反映臨床實況（許多 overlap 病人），但仍缺乏驗證資料。<span class="ex-ref">p.1435</span></li>
+<li>新分類可能（likely）更精確反映臨床實況（許多 overlap 病人），但仍缺乏驗證資料。<span class="ex-ref">p.1435</span></li>
 </ul>
 <h3>Diagnostic tools &amp; severity grading（診斷工具與嚴重度）</h3>
 <table class="ex-table">
@@ -233,7 +233,7 @@
 </table>
 <p class="ex-cite">Table 79-4，p.1435。</p>
 <ul>
-<li>嚴重度分 mild、moderate、severe。Rhinophyma 有依形態的臨床量表（Table 79-5：group 1 distal end／apex of nose；group 2 distal half nose、apex、alae；group 3 distal half nose、apex、alar nodules；group 4 complete nose including bridge and nasofacial sulci）；telangiectasia 沒有廣被接受的分類；papules 與 pustules 依數目（few、several、many）及是否有 plaques（raised erythema 上 confluent 的 inflammatory lesions）分級。<span class="ex-ref">p.1436</span></li>
+<li>嚴重度分 mild、moderate、severe。Rhinophyma 有依形態的臨床量表（Table 79-5：group 1 distal end／apex of nose；group 2 distal half nose、apex、alae；group 3 distal half nose、apex、alar nodules；group 4 complete nose including bridge and nasofacial sulci）；telangiectasia 沒有廣被接受的分類；papules 與 pustules 可（may）依數目（few、several、many）及是否有 plaques（raised erythema 上 confluent 的 inflammatory lesions）分級。<span class="ex-ref">p.1436</span></li>
 <li>Ocular rosacea 需分級（Table 79-6：mild＝輕度 itch、dryness、grittiness、eyelid margin fine scaling 與 telangiectasia 和 erythema、mild conjunctival injection；moderate＝burning、eyelid margin crusting 或不規則並有 erythema 與 edema、chalazion 或 hordeolum；severe＝pain、photosensitivity、blurred vision、loss of eyelashes、severe conjunctival inflammation、corneal changes、scleritis 或 episcleritis、uveitis、iritis）；<strong>moderate 到 severe 時應儘快會診眼科</strong>。<span class="ex-ref">p.1436</span></li>
 <li>McKee（Table 22.7）：papules／pustules 嚴重度：mild＝few、無 plaques；moderate＝several、無 plaques；severe＝many、有 plaques。<span class="ex-ref ex-ref-mckee">McKee p.1123</span></li>
 </ul>
@@ -243,27 +243,27 @@
 <section class="ex-note" id="histo">
 <h2>8. Histopathology（病理）</h2>
 <ul>
-<li>依表現或亞型而異。<strong>Erythema 與 telangiectasia</strong>：perivascular inflammatory infiltrate，主要為 TH1 與 TH17 cells、macrophages、mast cells（稀疏到大量）；blood 與 lymphatic vessels 明顯擴張；顯微鏡下可見 dermal edema（所有階段都有，但臨床上少見）。<span class="ex-ref">p.1434</span></li>
+<li>依表現或亞型而異。<strong>Erythema 與 telangiectasia</strong>：perivascular inflammatory infiltrate，主要為 TH1 與 TH17 cells、macrophages、mast cells（稀疏到大量）；blood 與 lymphatic vessels 明顯擴張；顯微鏡下可見 dermal edema（所有階段都可見，但臨床上很少見到）。<span class="ex-ref">p.1434</span></li>
 <li><strong>Papules</strong>：CD4+ TH1 與 TH17 cells、macrophages、mast cells、plasma cells；<strong>pustules</strong> 另有 neutrophils。<span class="ex-ref">p.1434</span></li>
 <li><strong>Phymatous rosacea</strong>：infiltrate 仍為 TH1／TH17、macrophages、mast cells，且 plasma cells 比非 phymatous rosacea 多；glandular hyperplasia 與 follicular plugging（<strong>無 comedones</strong>）、fibrosis 與 fibroblasts 增加。Phymatous 皮膚中 <em>Demodex folliculorum</em> 最多，在檢體中最多可達 <strong class="ex-n">50%</strong> 出現，可能解釋 folliculitis 與 perifolliculitis。<span class="ex-ref">p.1434</span></li>
 <li><strong>Ocular rosacea</strong>：血管與淋巴管擴張，meibomian gland 阻塞。<span class="ex-ref">p.1434</span></li>
 <li><strong>Granulomatous rosacea</strong>：dermal edema 與 vasodilation，tuberculoid-type dermal granulomas（T cells、macrophages、multinucleated giant cells、plasma cells）；上真皮明顯的 blood 與 lymphatic vessels vasodilation 可與 lupus vulgaris 等其他肉芽腫疾病區分。<span class="ex-ref">p.1434</span></li>
 <li><strong>Rosacea fulminans</strong>：除上述 infiltrate 外，可見大量 epithelioid cells，偶有含 multinucleated giant cells 的 granulomas。<span class="ex-ref">p.1434</span></li>
-<li>Erythema 合併 telangiectasia 的病理相對輕微、不具診斷性；最一致的異常是上真皮 collagen 改變，即 <strong>solar elastosis</strong>（chronic actinic damage 的結果）；有些病人有表淺與網狀真皮明顯 fibrosis（毛囊周圍更明顯、fibroblasts 增加），也有（尤其 obstructive form）真皮 mucin 沉積；rhinophyma 的 solar elastosis 在 actinic damage 繼發者明顯。<span class="ex-ref">p.1434</span></li>
+<li>Erythema 合併 telangiectasia 的病理相對輕微、不具診斷性；最一致的異常是上真皮 collagen 改變，即 <strong>solar elastosis</strong>（chronic actinic damage 的結果）；有些病人有表淺與網狀真皮明顯 fibrosis（毛囊周圍更明顯、fibroblasts 增加），也有（尤其 obstructive form）真皮 mucin 沉積；上真皮 collagen 常（often）呈 solar elastosis 改變，在 rhinophyma 病人中明顯（secondary to actinic damage）。<span class="ex-ref">p.1434</span></li>
 <li>Langerhans cells 或 dendritic cells 是否在所有病灶增加仍不清楚。<span class="ex-ref">p.1434</span></li>
 </ul>
 <h3>McKee 補充</h3>
 <ul>
 <li>許多組織學發現 non-specific。<strong>Erythematotelangiectatic</strong>：dermis 中 non-specific lymphohistiocytic infiltrate，常在 perivascular 與 perifollicular，伴 edema 與 telangiectasia。<span class="ex-ref ex-ref-mckee">McKee p.1125</span></li>
 <li><strong>Papulopustular</strong>：毛囊中聚集 neutrophils，周圍 non-specific chronic inflammatory infiltrate；部分丘疹出現 granulomatous inflammation（granulomatous rosacea），與受損毛囊相關，並可見 <em>D. folliculorum</em>；solar elastosis 常見，但可能只是巧合。<span class="ex-ref ex-ref-mckee">McKee p.1125</span></li>
-<li><strong>Rhinophyma</strong>：sebaceous glands 的大小與數目增加；follicular infundibula 可擴張並充滿 keratinous debris；上真皮慢性發炎 infiltrate 與 capillaries 擴張；真皮 connective tissue 增加，後期可占優勢並失去 sebaceous glands。<span class="ex-ref ex-ref-mckee">McKee p.1125</span></li>
+<li><strong>Rhinophyma</strong>：sebaceous glands 的大小與數目增加；follicular infundibula 可擴張並充滿 keratinous debris；上真皮慢性發炎 infiltrate 與 capillaries 擴張；有時（sometimes）真皮 connective tissue 增加，後期可能（may）占優勢並失去 sebaceous glands。<span class="ex-ref ex-ref-mckee">McKee p.1125</span></li>
 <li><strong>Granulomatous rosacea</strong> 的組織學診斷常極困難，因為對 <em>D. folliculorum</em>、keratin、sebum 與破裂囊腫起反應的 foreign body granulomata 在臉上很常見；診斷應限於 interfollicular distribution 中明確界定的 granulomata 並符合臨床。<span class="ex-ref ex-ref-mckee">McKee p.1125</span></li>
 </ul>
 </section>
 
 <section class="ex-note" id="ddx">
 <h2>9. Differential Diagnosis（鑑別診斷）</h2>
-<p>最需要與 rosacea 混淆的疾病：seborrheic dermatitis、acne vulgaris、chronic discoid lupus erythematosus、sarcoidosis、polymorphous light eruption、erysipelas；若懷疑其他診斷，可能需要徹底檢查以排除 multisystem involvement。<span class="ex-ref">p.1436</span></p>
+<p>最主要可能（may）與 rosacea 混淆的疾病：seborrheic dermatitis、acne vulgaris、chronic discoid lupus erythematosus、sarcoidosis、polymorphous light eruption、erysipelas；若懷疑其他診斷，可能需要徹底檢查以排除 multisystem involvement。<span class="ex-ref">p.1436</span></p>
 <table class="ex-table">
 <thead><tr><th scope="col">Condition</th><th scope="col">Distinguishing points／investigation（區分重點與檢查）</th></tr></thead>
 <tbody>
@@ -274,7 +274,7 @@
 <tr><td>Dermatomyositis</td><td>Muscle weakness；anti-Jo antibody。</td></tr>
 <tr><td>Seborrheic dermatitis</td><td>紅斑底上有輕微黃到橙色色調或 scales；較癢、較少 stinging 或 burning；分布與較 eczematous。</td></tr>
 <tr><td>Erysipelas</td><td>Leucocytosis、CRP；ASO、ADB titer；fever。</td></tr>
-<tr><td>Steroid-induced acneiform folliculitis, steroid rosacea</td><td>藥物史。McKee：steroid-induced rosacea-like dermatitis 依部位有 perioral、centrofacial、diffuse 三型，紅斑涵蓋整個塗藥區且常伴 atrophy。<span class="ex-ref ex-ref-mckee">McKee p.1125</span></td></tr>
+<tr><td>Steroid-induced acneiform folliculitis, steroid rosacea</td><td>藥物史。McKee：steroid-induced rosacea-like dermatitis 依部位有 perioral、centrofacial、diffuse 三型，紅斑涵蓋整個塗藥區且通常（usually）伴 atrophy。<span class="ex-ref ex-ref-mckee">McKee p.1125</span></td></tr>
 <tr><td>Jessner lymphocytic infiltrate</td><td>沒有 pustules；分布、病史與組織學。</td></tr>
 <tr><td>Sarcoidosis</td><td>ACE、sIL-2R、neopterin、Ca2+；serum electrophoresis（IgG）；組織學。</td></tr>
 <tr><td>Perioral dermatitis</td><td>有「intensive」local therapy 病史；沒有 flushing；rarely 有 erythematous plaques。McKee：有時被視為 rosacea 的變異但臨床不同，病人（特別是年輕女性與兒童）有 variably pruritic 的紅色 microvesicles、scaling、papules、micronodules、pustules，位於 chin、nasolabial folds、periocular region。<span class="ex-ref ex-ref-mckee">McKee p.1126</span></td></tr>
@@ -288,10 +288,10 @@
 <p class="ex-cite">Table 79-7，p.1437；McKee 補充如各列所註。</p>
 <h3>Differential by feature（依表現的鑑別）</h3>
 <ul>
-<li><strong>Rhinophyma</strong>（Table 79-8）：lupus pernio（鼻部 shiny brown／red／violaceous firm swelling，diascopy 見 apple jelly nodules，需 systemic 評估）；BCC 或 SCC（可模仿或合併 rhinophyma，快速生長與表面糜爛需 biopsy）；lymphoma 或 angiosarcoma（鼻部 lymphoma 沒有 glandular hyperplasia 而是 shiny surface）；lupus vulgaris（常有 scarring、也有 extrafacial）；acrocyanosis（遇冷鼻呈青紫、無 deformity、無 glandular hyperplasia）；lupus erythematosus（無 flushing 病史、CDLE 有 scales 與 scarring）。<span class="ex-ref">p.1437</span></li>
+<li><strong>Rhinophyma</strong>（Table 79-8）：lupus pernio（鼻部 shiny brown／red／violaceous firm swelling，diascopy 見 apple jelly nodules，需 systemic 評估）；BCC 或 SCC（可模仿或合併 rhinophyma，快速生長與表面糜爛需 biopsy）；lymphoma 或 angiosarcoma（rare；鼻部 lymphoma 可能被誤認為 rhinophyma，但沒有 glandular hyperplasia 而是 shiny surface）；lupus vulgaris（常有 scarring、也有 extrafacial）；acrocyanosis（尤其遇冷時鼻呈青紫、通常（usually）無 deformity、無 glandular hyperplasia）；lupus erythematosus（無 flushing 病史、CDLE 有 scales 與 scarring 傾向、較罕見有 papules 與 pustules）。<span class="ex-ref">p.1437</span></li>
 <li><strong>Persistent erythema</strong>（Table 79-9）：rosacea、demodicosis、drug induced（e.g. cortisone）、contact dermatitis、seborrheic dermatitis、tinea、dermatomyositis、lupus erythematosus、polymorphous light eruption、disorders of flushing 等。<span class="ex-ref">p.1438</span></li>
-<li><strong>Flushing</strong>（Table 79-10／79-11）：benign causes（emotion、climacteric、temperature、sun、exercise、foods、alcohol 等）；systemic diseases（carcinoid syndrome、mastocytosis、polycythemia vera、anaphylaxis、Zollinger-Ellison syndrome 等）；tumors（medullary carcinoma of thyroid、pheochromocytoma 等）。Menopausal flushing 常伴 sweating，平均一次 hot flush 約 <strong class="ex-n">4 minutes</strong>；carcinoid syndrome、mastocytosis、pheochromocytoma 的 flushing 通常不伴 sweating，屬 <strong>dry flushing</strong>；mastocytosis 的 flushing 可在運動、alcohol 或 codeine 後，常有 dermatographia。<span class="ex-ref">p.1438</span></li>
-<li>Table 79-11（Helpful observations to differentiate various forms of flushing）補充：hormonal therapy（e.g. estrogen）是 menopausal hot flushes 的標準治療，可使其頻率與嚴重度降低 up to <strong class="ex-n">90%</strong>；carcinoid syndrome 的 flush 分為 four different patterns，其中一型侵犯臉與胸、持續 <strong class="ex-n">&lt;5 minutes</strong>，其他病人可超過 5 minutes，長期病例曾有 persistent edema 與「leonine facies」；pheochromocytoma 的 flushing 可伴 hyperhidrosis、piloerection、episodic hypertension，侵犯 face、neck、chest、trunk，持續 <strong class="ex-n">15 minutes to several hours</strong>（同表前面另一條把 pheochromocytoma 歸為 dry flushing）；polycythemia 在熱水澡後出現 flushing 與嚴重 pruritus 或 burning，外觀 plethoric，可有 facial telangiectasias。<span class="ex-ref">p.1438</span></li>
+<li><strong>Flushing</strong>（Table 79-10／79-11）：benign causes（emotion、climacteric、temperature、sun、exercise、foods、alcohol 等）；systemic diseases（carcinoid syndrome、mastocytosis、polycythemia vera、anaphylaxis、Zollinger-Ellison syndrome 等）；tumors（medullary carcinoma of thyroid、pheochromocytoma 等）。Menopausal flushing 通常（usually）臉部瀰漫、典型上（typically）伴 sweating，平均一次 hot flush 約 <strong class="ex-n">4 minutes</strong>；carcinoid syndrome、mastocytosis、pheochromocytoma 的 flushing 通常不伴 sweating，屬 <strong>dry flushing</strong>；mastocytosis 的 flushing 可在運動、alcohol 或 codeine 後，常有 dermatographia。<span class="ex-ref">p.1438</span></li>
+<li>Table 79-11（Helpful observations to differentiate various forms of flushing）補充：hormonal therapy（e.g. estrogen）是 menopausal hot flushes 的標準治療，可使其頻率與嚴重度降低 up to <strong class="ex-n">90%</strong>；carcinoid syndrome 的 flush 分為 four different patterns，其中一型侵犯臉與胸、持續 <strong class="ex-n">&lt;5 minutes</strong>，其他病人可超過 5 minutes，曾報告一位長期 carcinoid syndrome 病人有 persistent edema 與「leonine facies」；pheochromocytoma 的 flushing 可伴 hyperhidrosis、piloerection、episodic hypertension，侵犯 face、neck、chest、trunk，持續 <strong class="ex-n">15 minutes to several hours</strong>（同表前面另一條把 pheochromocytoma 歸為 dry flushing）；曾報告 polycythemia 病人在熱水澡後出現 flushing 與嚴重 pruritus 或 burning，外觀 plethoric，可有 facial telangiectasias。<span class="ex-ref">p.1438</span></li>
 <li><strong>Papules and pustules</strong>（Table 79-13）：rosaceiform dermatitis（查藥物史）、acne vulgaris、perioral dermatitis、seborrheic dermatitis、pityriasis folliculorum／demodicosis（skin scraping）、tinea faciei／Candida（scraping 或培養）、contact dermatitis（patch test）、Jessner、lymphocytoma cutis、sarcoid（biopsy）、Morbihan disease、polycythemia、polymorphic light eruption。<span class="ex-ref">p.1439</span></li>
 <li><strong>Lupoid rosacea</strong>：perioral dermatitis、steroid rosacea、small nodular sarcoidosis。<strong>Rosacea fulminans</strong>：acne conglobata、acne fulminans、halogen rosacea、gram-negative folliculitis。<strong>Halogen rosacea</strong>：acne vulgaris、acneiform exanthema、acneiform syphilid、rosacea conglobata 或 fulminans、follicular pyoderma、tinea barbae。<span class="ex-ref">p.1439</span></li>
 <li><strong>Telangiectasia</strong>（Table 79-12）：CDLE、drug induced、senile atrophy、BCC、dermatomyositis、Haber syndrome、carcinoid syndrome、SLE、heliodermatosis、nevus flammeus、poikiloderma、sarcoidosis。<span class="ex-ref">p.1438</span></li>
@@ -305,17 +305,17 @@
 <li>治療前先評估特徵與嚴重度；詢問病史（包括 steroids、topical calcineurin inhibitors），並停用藥物性 trigger。<strong>Trigger avoidance 對改善病情與預防復發很重要，與治療同等重要</strong>。<mark data-q="105-01,102-40,104-35">一般處置（general measures）包括 patient education、avoidance of triggers、sun protection、skin care</mark>，適用於各種表現（Fig. 79-13 的所有欄位）。<span class="ex-ref">p.1436、p.1440</span></li>
 <li>Skin care 重點元素：避免 trigger、使用不加重症狀的粉底與遮蓋、<mark data-q="102-40,104-35,105-01">使用 SPF 至少 <strong class="ex-n">30+</strong> 的 sunscreen</mark>、乾燥時常用 moisturizers、油性鼻用 drying cleansing、全臉使用溫和 cleansers、用 matte green-toned foundations 遮蓋紅色、避免揉擦臉部。<span class="ex-ref">p.1436</span></li>
 <li>Table 79-17（Dos and Don'ts）ALLOWED 欄：使用 matte finish 的 powder cosmetics（the best is green，紅色的互補色）；購買前先試用；topical medication 之後、cosmetics 之前另塗 sunblock；乾燥皮膚的 moisturizer 至少 <strong class="ex-n">SPF20+</strong>；Avoid 含 formaldehyde、propylene glycol、alcohol、toners、palmitic／oleic acid 與其他刺激物的 cosmetics；新藥或化妝品先在週末或假期於單一部位試用並拍照比較。NOT ALLOWED 欄：cream 或 liquid cosmetics、old cosmetics、含香料 cosmetics、成分超過 10 種的 cosmetics、按摩 creams 入皮膚、peeling「rejuvenating」agents、含 mica 的 light-reflective powders、waterproof eye cosmetics。此表的 SPF20+ 是針對 moisturizer，p.1436 的 sunscreen 寫 SPF at least 30+。<span class="ex-ref">p.1441；p.1436</span></li>
-<li>若首線療法失敗，應考慮其他首線選擇或第二線療法，並永遠與適當的 general skin care 與預防合併。因不同症狀病理生理不同，常需合併 topical 與 systemic 治療，甚至加物理治療。<span class="ex-ref">p.1436–1438</span></li>
+<li>若首線療法失敗，應考慮其他首線選擇或第二線療法，並永遠與適當的 general skin care 與預防合併。因不同症狀病理生理不同，需考慮（has to be considered）合併 topical 與 systemic 治療，甚至加物理治療。<span class="ex-ref">p.1436–1438</span></li>
 </ul>
 <h3>By feature（依症狀的治療，Fig. 79-13）</h3>
 <table class="ex-table">
 <thead><tr><th scope="col">Feature</th><th scope="col">Therapy（治療）</th></tr></thead>
 <tbody>
-<tr><td>Persistent erythema</td><td>核准：topical <strong>brimonidine</strong> gel（1%）、<strong>oxymetazoline</strong> cream（1%）。Off-label：beta-blockers（e.g. carvedilol，應逐步減量）；IPL 與 laser 可用，但有疼痛等 somatosensations 的病人若未先處理，可能因 neuroinflammation 使疼痛加重。伴疼痛時：lidocaine gel（最高 4%）、polidocanol cream（輕症）、NSAIDs（e.g. ibuprofen）；可能需 amitriptyline、gabapentin、pregabalin；懷疑他因時請神經科排除 trigeminal neuralgia、small-fiber neuropathy、早期 MS。<span class="ex-ref">p.1438</span></td></tr>
-<tr><td>Flushing／transient erythema</td><td>Laser 是常用治療；off-label topical adrenergic receptor modulators（brimonidine、oxymetazoline）可能減輕 flushing 的強度與頻率；避免 trigger 並寫 diary；topical lidocaine（4%）可能有幫助；新藥物或化妝品先在臉一側單點試用。<span class="ex-ref">p.1439</span></td></tr>
+<tr><td>Persistent erythema</td><td>核准：topical <strong>brimonidine</strong> gel（1%）、<strong>oxymetazoline</strong> cream（1%）。Off-label：beta-blockers（e.g. carvedilol，應逐步減量）；IPL 與 laser 可用，但有疼痛等 somatosensations 的病人若未先處理（without pretreatment）應避免使用，以免因 neuroinflammation 使疼痛加重。伴疼痛時：lidocaine gel（最高 4%）、polidocanol cream（輕症）、NSAIDs（e.g. ibuprofen）；可能需 amitriptyline、gabapentin、pregabalin；懷疑他因時請神經科排除 trigeminal neuralgia、small-fiber neuropathy、早期 MS。<span class="ex-ref">p.1438</span></td></tr>
+<tr><td>Flushing／transient erythema</td><td>Laser 是常用治療；off-label topical adrenergic receptor modulators（brimonidine、oxymetazoline）可能減輕 flushing 的強度與頻率；避免 trigger 可能（likely）預防或減輕 flushing，故應建議病人寫 diary；topical lidocaine（4%）可能有幫助；新藥物或化妝品先在臉一側單點試用。<span class="ex-ref">p.1439</span></td></tr>
 <tr><td>Telangiectasia</td><td><mark data-q="108-07,104-35">只能用 <strong>laser therapy</strong> 或 <strong class="ex-n">0.5%–1.0%</strong> aethoxysclerol injections 治療（類似 leg sclerotherapy）</mark>，須考量禁忌與血管閉塞風險，由專科醫師謹慎使用；避免 steroid 與日曬，sunscreen 有助預防日曬後的 extracellular matrix 破壞。<span class="ex-ref">p.1439</span></td></tr>
-<tr><td>Papules and pustules</td><td><mark data-q="102-14,108-07">輕到中度對 topical <strong>ivermectin（1%）</strong>、<strong>metronidazole（0.75%–1%）</strong>、<strong>azelaic acid（15%）</strong>、sodium sulfacetamide、sulphur 反應良好</mark>；off-label 成功者有 topical erythromycin（2%）、tretinoin 或 isotretinoin、clindamycin、permethrin。證據顯示合併療法（如 slow-release doxycycline 加 topical ivermectin）使丘疹與膿疱消退更快更久。<span class="ex-ref">p.1439</span><br><mark data-q="108-07">Off-label systemic：oxytetracycline 500 mg bid、doxycycline 100 mg bid、minocycline 50 mg/day、erythromycin 500 mg bid 報告有良好成效與耐受性</mark>；嚴重或抗藥者，systemic metronidazole、clarithromycin、azithromycin 被描述為療效出現較快、GI 不良反應較 erythromycin 少、色素沉著傾向較 minocycline 少。Demodex mites 增加時，除核准的 ivermectin 外加短期 permethrin cream。<span class="ex-ref">p.1439</span></td></tr>
-<tr><td>Phymata／connective tissue and sebaceous hyperplasia</td><td><mark data-q="104-35,105-01,108-07">Low-dose <strong>isotretinoin</strong> 對早期與已形成的 rosacea phymata 有 substantial evidence 的益處（抑制 sebaceous glands 並有部分 antiinflammatory capacity）</mark>；可在 laser 與 dermatosurgery 前使用以縮小並減輕發炎；因 isotretinoin 抑制 keratinocyte-mediated wound healing，常被建議手術前停用，但 low-dose isotretinoin 是否如此尚無對照研究；rarely 用 dapsone。物理治療：ablative laser、dermabrasion、tangential excision。<span class="ex-ref">p.1439–1440</span></td></tr>
+<tr><td>Papules and pustules</td><td><mark data-q="102-14,108-07">一般而言（in general），輕到中度對 topical <strong>ivermectin（1%）</strong>、<strong>metronidazole（0.75%–1%）</strong>、<strong>azelaic acid（15%）</strong>、sodium sulfacetamide、sulphur 反應良好</mark>；曾被描述成功的 off-label 療法有 topical erythromycin（2%）、tretinoin 或 isotretinoin、clindamycin、permethrin。證據顯示合併療法（如 slow-release doxycycline 加 topical ivermectin）使丘疹與膿疱消退更快更久。<span class="ex-ref">p.1439</span><br><mark data-q="108-07">Off-label systemic：oxytetracycline 500 mg bid、doxycycline 100 mg bid、minocycline 50 mg/day、erythromycin 500 mg bid 報告有良好成效與耐受性</mark>；嚴重或抗藥者，systemic metronidazole、clarithromycin、azithromycin 療效出現相對較快（relatively rapid）、GI 不良反應較 erythromycin 少、色素沉著傾向較 minocycline 少。Demodex mites 增加時，除核准的 ivermectin 外加短期 permethrin cream。<span class="ex-ref">p.1439</span></td></tr>
+<tr><td>Phymata／connective tissue and sebaceous hyperplasia</td><td><mark data-q="104-35,105-01,108-07">Low-dose <strong>isotretinoin</strong> 對 early as well as established rosacea 有益處，有 substantial evidence（列於 Phymata 段）（抑制 sebaceous glands 並有部分 antiinflammatory capacity）</mark>；可在 laser 與 dermatosurgery 前使用以縮小並減輕發炎；因 isotretinoin 抑制 keratinocyte-mediated wound healing，常被建議手術前停用，但 low-dose isotretinoin 是否如此尚無對照研究；rarely 用 dapsone。物理治療：ablative laser、dermabrasion、tangential excision。<span class="ex-ref">p.1439–1440</span></td></tr>
 <tr><td>Facial lymph edema（Morbihan）</td><td>沒有核准或標準療法；oral isotretinoin、dapsone、hydroxychloroquine、minocycline、doxycycline 加 prednisolone 都試過，結果不一。<span class="ex-ref">p.1442</span></td></tr>
 </tbody>
 </table>
@@ -323,15 +323,15 @@
 <ul>
 <li>Systemic 療法在 <strong class="ex-n">3 或 4 months</strong> 後視改善可減量，並繼續 topical therapy；仍有 erythema 時可繼續 topical brimonidine、oxymetazoline；topical maintenance 可能有助預防復發。<span class="ex-ref">p.1439</span></li>
 <li><mark data-q="102-14">Fig. 79-13 的 papules and pustules 欄：approved systemic 為 low-dose、modified-release <strong>doxycycline 40 mg</strong>；off-label systemic 有 low-dose isotretinoin、doxycycline、tetracycline、azithromycin、clarithromycin</mark>。<span class="ex-ref">p.1440</span></li>
-<li>Maintenance：與 AD、psoriasis 相比，rosacea 的 maintenance therapy 缺乏驗證；作者經驗為 maintenance 優於突然停藥；general skin care 應持續。<span class="ex-ref">p.1442</span>Fig. 79-13 的 maintenance 列：papules and pustules 欄為 topical ivermectin 10 mg/g、azelaic acid 150 mg/g、metronidazole 7.5 mg/g；persistent erythema 欄為 low-dose antibiotics（e.g. minocycline 50 mg twice weekly）。<span class="ex-ref">p.1440</span></li>
+<li>Maintenance：與 AD、psoriasis 相比，rosacea 的 maintenance therapy 驗證不足（poorly validated）；作者經驗為 maintenance 優於突然停藥；general skin care 應一直持續。<span class="ex-ref">p.1442</span>Fig. 79-13 的 maintenance 列：papules and pustules 欄為 topical ivermectin 10 mg/g、azelaic acid 150 mg/g、metronidazole 7.5 mg/g；persistent erythema 欄為 low-dose antibiotics（e.g. minocycline 50 mg twice weekly）。<span class="ex-ref">p.1440</span></li>
 <li>Fig. 79-13 的 persistent erythema 欄另列 off-label 的 low-dose antibiotics（e.g. minocycline 50 mg every other day）；papules and pustules 欄的 off-label topical therapy 有 permethrin、benzyl benzoate、retinoids、calcineurin inhibitors。<span class="ex-ref">p.1440</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>Topical glucocorticosteroids 被列為 flushing 的 trigger（p.1422），並可造成 steroid rosacea（p.1425）；治療前課本要求停用藥物性 trigger（p.1436）；telangiectasia 一節寫 steroid use 與 sun exposure 應避免（p.1439）。Fig. 79-13 把 low-dose isotretinoin 放在 phymata（connective tissue／sebaceous hyperplasia）的 off-label systemic therapy（p.1440）。</aside>
 <h3>Ocular rosacea（眼型的治療）</h3>
 <ul>
-<li>每位 cutaneous rosacea 病人都應詢問眼部症狀；需 ophthalmologists 與 dermatologists 的 multidisciplinary 處理；眼型病人也應篩檢皮膚特徵。<span class="ex-ref">p.1442</span></li>
+<li>每位 cutaneous rosacea 病人都應詢問眼部症狀；需 ophthalmologists 與 dermatologists 的 multidisciplinary 處理；眼型病人必須（obligatory）篩檢皮膚特徵。<span class="ex-ref">p.1442</span></li>
 <li>基礎處置：eyelid hygiene（warm compresses、meibomian gland expression、dilute baby shampoo scrubs、lubricating drops）與 artificial tears；較嚴重時加 topical 與 systemic therapy；UV-blocking sunglasses 可能有幫助。<span class="ex-ref">p.1442</span></li>
-<li>Table 79-19：topical antibiotics（infected blepharitis，eyelid hygiene 後每日兩次）；systemic antibiotics（minocycline、doxycycline、oxytetracycline、erythromycin 常用，<strong class="ex-n">6–12 wk</strong>，約 <strong class="ex-n">2 wk</strong> 後開始有反應，療程結束後復發常見；metronidazole rarely）；chalazion 切開與刮除；角膜穿孔迫近的 keratitis 需手術。Tacrolimus–cyclosporine 的證據不足。<span class="ex-ref">p.1443</span></li>
+<li>Table 79-19：topical antibiotics（infected blepharitis，eyelid hygiene 後每日兩次）；systemic antibiotics（minocycline、doxycycline、oxytetracycline、erythromycin 常用，<strong class="ex-n">6–12 wk</strong>，<strong class="ex-n">2 wk</strong> 後開始有反應，療程結束後復發常見；metronidazole rarely）；chalazion 切開與刮除；角膜穿孔迫近的 keratitis 需手術。Tacrolimus–cyclosporine 的證據不足。<span class="ex-ref">p.1443</span></li>
 </ul>
 <h3>Physical &amp; surgical therapy（物理與手術治療）</h3>
 <table class="ex-table">
