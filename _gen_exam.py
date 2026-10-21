@@ -512,7 +512,8 @@ def toc_html(note: str | None, qs_count: int, *, mobile: bool = False, concepts:
     items = [f'<li><a href="#{sid}">{title}</a></li>' for sid, title in SECTION.findall(note or "")]
     if concepts:  # the 本章考點 block sits between the notes and the questions
         items.append(f'<li class="ex-toc-cx"><a href="#concepts-h">本章考點（{concepts}）</a></li>')
-    items.append(f'<li class="ex-toc-qs"><a href="#qs-h">考題（{qs_count} 題）</a></li>')
+    if qs_count:  # chapters never tested have notes only
+        items.append(f'<li class="ex-toc-qs"><a href="#qs-h">考題（{qs_count} 題）</a></li>')
     cls, state, label = (("ex-toc ex-toc-mobile", "", "本章目錄（展開式）") if mobile
                          else ("ex-toc ex-toc-side", " open", "本章目錄"))
     return (f'<details class="{cls}"{state}><summary>本章目錄</summary>'
@@ -697,17 +698,18 @@ def chapter_page(shell, data, chapter: dict, qs: list[dict]) -> str:
     body = (
         f'<p class="ex-kicker">Fitzpatrick 9e · {esc(chapter["part"].title() if chapter["part"] else "")}</p>'
         f'<h1 class="ex-h1">Ch.{n} {esc(chapter["title"])}</h1>'
-        f'<p class="ex-meta">原書 p.{chapter["pageStart"]}–{chapter["pageEnd"]} · 考題共 {len(qs)} 題'
-        f'（已有詳解 {explained} 題）</p>'
-        f'<p class="ex-meta">{esc(year_text)}</p>{NOTICE}{links_html(data["links"].get(n))}'
+        f'<p class="ex-meta">原書 p.{chapter["pageStart"]}–{chapter["pageEnd"]} · '
+        + (f'考題共 {len(qs)} 題（已有詳解 {explained} 題）</p><p class="ex-meta">{esc(year_text)}</p>' if qs
+           else '101–115 年歷屆未出題</p>')
+        + f'{NOTICE}{links_html(data["links"].get(n))}'
         f'{toc_html(note, len(qs), mobile=True, concepts=n_concepts)}{notes_html}{concepts_html}'
-        f'<section aria-labelledby="qs-h"><h2 id="qs-h" class="ex-h2">考題</h2>{MODE_BAR}'
-        + "".join(question_html(q, data, current_chapter=n) for q in qs)
-        + "</section>"
+        + (f'<section aria-labelledby="qs-h"><h2 id="qs-h" class="ex-h2">考題</h2>{MODE_BAR}'
+           + "".join(question_html(q, data, current_chapter=n) for q in qs) + "</section>" if qs else "")
     )
     title = f"Fitzpatrick Ch.{n} {chapter['title']} 重點與考題"
     desc = (f"皮膚科專科醫師考試讀書筆記：Fitzpatrick's Dermatology 9e 第 {n} 章 {chapter['title']}"
-            f"，整理 101–115 年考題 {len(qs)} 題" + ("與重點整理" if note else "") + "。")
+            + (f"，整理 101–115 年考題 {len(qs)} 題" + ("與重點整理" if note else "") if qs
+               else "，重點整理（101–115 年歷屆未出題）") + "。")
     return page(shell, path=f"/exam/fitz-{n}", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
                 description=desc, og_title=title, crumbs=[(f"Ch.{n}", f"/exam/fitz-{n}")],
                 jsonld_type="WebPage", body=body, page_kind="chapter",
@@ -847,7 +849,7 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
         for idx, n in enumerate(nums):
             qs = by_chapter.get(n, [])
             title = esc(chapters[n]["title"])
-            name = (f'<a href="/exam/fitz-{n}">Ch.{n} {title}</a>' if qs else f'Ch.{n} {title}')
+            name = (f'<a href="/exam/fitz-{n}">Ch.{n} {title}</a>' if qs or n in data["notes"] else f'Ch.{n} {title}')
             badge = ' <span class="ex-badge">有重點</span>' if n in data["notes"] else ""
             # 閱讀 cell: filled by exam.js for chapters with notes (round count and
             # coverage of the current round); the others stay "—".
@@ -1183,15 +1185,21 @@ def build() -> dict[str, str]:
     for qid in data["explanations"]:
         if not data["tags"][qid]["fitz"]:
             raise SystemExit(f"{qid} has an explanation but no Fitzpatrick chapter")
+    # Every chapter with questions gets a page, and so does every chapter that has
+    # notes but was never tested (batch 10, 2026-10-21); the hub ranking still lists
+    # tested chapters only.
+    pages: dict[int, list] = dict(by_chapter)
+    for n in data["notes"]:
+        pages.setdefault(n, [])
     CHAPTER_PAGES.clear()
-    CHAPTER_PAGES.update(by_chapter)
+    CHAPTER_PAGES.update(pages)
     client = json.dumps(client_data(data), ensure_ascii=False, separators=(",", ":")) + "\n"
     DATA_VERSION[0] = hashlib.sha256(client.encode("utf-8")).hexdigest()[:10]
-    index = json.dumps(search_index(data, by_chapter), ensure_ascii=False, separators=(",", ":")) + "\n"
+    index = json.dumps(search_index(data, pages), ensure_ascii=False, separators=(",", ":")) + "\n"
     SEARCH_VERSION[0] = hashlib.sha256(index.encode("utf-8")).hexdigest()[:10]
     files: dict[str, str] = {}
     files["index.html"] = hub_page(shell, data, by_chapter, by_year, by_book)
-    for n, qs in sorted(by_chapter.items()):
+    for n, qs in sorted(pages.items()):
         files[f"fitz-{n}.html"] = chapter_page(shell, data, data["chapters"][n], qs)
     for y, qs in sorted(by_year.items()):
         files[f"year-{y}.html"] = year_page(shell, data, y, qs)
