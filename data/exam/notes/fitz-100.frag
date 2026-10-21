@@ -76,7 +76,7 @@
 </section>
 
 <section class="ex-note" id="psychopharmacology">
-<h2>3. Psychopharmacologic Agents（精神藥物）</h2>
+<h2>3. Psychopharmacologic Agents（精神科藥物）</h2>
 <table class="ex-table">
 <thead><tr><th scope="col">Drug</th><th scope="col">Class</th><th scope="col">Starting</th><th scope="col">Titration</th><th scope="col">Maximum</th><th scope="col">Adverse reactions</th><th scope="col">Monitoring</th></tr></thead>
 <tbody>
