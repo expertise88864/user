@@ -351,7 +351,7 @@ test('note sanitizer: accepts the allowed grammar, rejects everything else with 
 
 test('note sanitizer: accepts every committed fragment unchanged and rejects each with a forbidden element added', () => {
   const api = content();
-  assert.equal(Object.keys(NOTES).length, 150);
+  assert.equal(Object.keys(NOTES).length, 200);
   for (const [ch, text] of Object.entries(NOTES)) {
     assert.equal(api.validateNote(text), text, 'fitz-' + ch);
     assert.equal(api.validateNote(text.replace(/\n/g, '\r\n')), text, 'CRLF input is normalized, fitz-' + ch);
