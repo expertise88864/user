@@ -939,6 +939,10 @@
       if (bar) bar.hidden = false;
       summary.hidden = false;
     }
+    // Each 產生試卷 (and the resume below) takes a number; the two banks load
+    // independently, so a request that finishes after a newer one was made is
+    // dropped instead of replacing the newer paper.
+    var buildSeq = 0;
     form.querySelector('.ex-build').addEventListener('click', function () {
       var mock = !!(mockBox && mockBox.checked);
       var years = [];
@@ -947,7 +951,9 @@
       var count = Number(form.querySelector('select[name=ex-count]').value);
       var order = form.querySelector('input[name=ex-order]:checked').value;
       note.textContent = '題目載入中…';
+      var seq = ++buildSeq;
       (mock ? mockData() : examData()).then(function (data) {
+        if (seq !== buildSeq) return;
         var pool = mock ? data.questions.slice()
           : data.questions.filter(function (q) { return years.indexOf(q.year) !== -1; });
         if (order === 'random') shuffle(pool);
@@ -965,7 +971,7 @@
         updateAnswerBar();
         list.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }).catch(function () {
-        note.textContent = '題庫載入失敗，請重新整理頁面。';
+        if (seq === buildSeq) note.textContent = '題庫載入失敗，請重新整理頁面。';
       });
     });
     // A paper generated earlier and not handed in yet continues where it was.
@@ -974,8 +980,10 @@
     note.textContent = '載入上次未交卷的試卷…';
     var savedMock = saved.mock === true;
     if (savedMock && mockBox) { mockBox.checked = true; syncMock(); }
+    var resumeSeq = buildSeq;
     (savedMock ? mockData() : examData()).then(function (data) {
-      if (paper) return;  // a new paper was generated meanwhile
+      // A new paper was asked for (or generated) meanwhile.
+      if (paper || buildSeq !== resumeSeq) return;
       // Another tab may have handed it in or saved to it while the data loaded.
       saved = loadPaper('practice');
       if (!saved || !Array.isArray(saved.ids) || !saved.ids.length) { note.textContent = ''; return; }
@@ -995,7 +1003,7 @@
       updateAnswerBar();
       note.textContent = '已接續上次未交卷的試卷（共 ' + pool.length + ' 題）。按「產生試卷並開始計時」會改出一份新的試卷。';
     }).catch(function () {
-      note.textContent = '題庫載入失敗，請重新整理頁面。';
+      if (buildSeq === resumeSeq) note.textContent = '題庫載入失敗，請重新整理頁面。';
     });
   }
 

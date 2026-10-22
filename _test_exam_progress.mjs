@@ -510,6 +510,43 @@ test('a mock paper is labelled and kept out of every official record', async () 
   assert.ok(again.document.getElementById('q-' + qid).hasAttribute('data-mock'));
 });
 
+// The two banks load independently: a paper asked for earlier whose bank
+// arrives later must not replace the newer paper (or its saved answers).
+test('a slower earlier build never replaces a newer paper', async () => {
+  const exam = JSON.parse(fs.readFileSync('exam/exam-data.json', 'utf8'));
+  const mock = JSON.parse(fs.readFileSync('exam/mock-data.json', 'utf8'));
+  const pending = {};
+  const fetch = url => new Promise(resolve => {
+    const which = String(url).startsWith('/exam/mock-data.json') ? 'mock' : 'exam';
+    pending[which] = () => resolve({ ok: true, json: () => Promise.resolve(which === 'mock' ? mock : exam) });
+  });
+  const flush = async () => { for (let i = 0; i < 5; i++) await new Promise(resolve => setImmediate(resolve)); };
+  const storage = new FakeStorage();
+  const page = open(storage, '/exam/practice', { fetch });
+  const form = page.document.querySelector('[data-practice-form]');
+  form.querySelector('.ex-build').click();          // official paper, bank still loading
+  const box = form.querySelector('input[name=ex-mock]');
+  box.checked = true;
+  box.dispatch('change');
+  form.querySelector('.ex-build').click();          // then a mock paper
+  pending.mock();
+  await flush();
+  const first = page.document.querySelector('#ex-practice-list .ex-q');
+  const qid = first.getAttribute('data-qid');
+  assert.ok(first.hasAttribute('data-mock'));
+  const key = first.getAttribute('data-answer');
+  assert.equal(answer(page, qid, key), 'right');
+  pending.exam();                                   // the earlier official bank arrives last
+  await flush();
+  const cards = page.document.querySelectorAll('#ex-practice-list .ex-q');
+  assert.ok(cards.length && cards.every(card => card.hasAttribute('data-mock')), 'the mock paper stays');
+  assert.equal(graded(page, qid), 'right');
+  const saved = storage.json('dnExamPaper').practice;
+  assert.equal(saved.mock, true);
+  assert.equal(saved.done[qid], key);
+  assert.equal(storage.getItem('dnExamProgress'), null);
+});
+
 // Reading progress on the hub (the real browser behaviour, dwell time and the
 // chapter page are covered by _test_exam_reading_browser.cjs).
 test('the hub shows reading rounds, a summary and the continue-reading card from storage', () => {
