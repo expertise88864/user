@@ -5827,6 +5827,3855 @@
     "fixes": 1,
     "replaced_items": false
    }
+  },
+  {
+   "id": "M-61",
+   "topic": "Bullous pemphigoid — autoantigens and laboratory findings",
+   "fitz": [
+    54
+   ],
+   "polarity": "negative",
+   "stem": "關於 bullous pemphigoid 的自體抗原與實驗室檢查，下列敘述何者錯誤？",
+   "options": {
+    "A": "約 75% 病人血清 total IgE 上升，且常與 IF 測得的 BP IgG 自體抗體效價相關。",
+    "B": "超過半數病人有 peripheral blood eosinophilia。",
+    "C": "主要的自體抗體反應抗原決定位（epitope）位於 BP230 的 NC16A domain。",
+    "D": "約 7% 的正常族群可用 ELISA 測到 anti-BP180 抗體，因此 ELISA 不宜用來篩檢缺乏其他疾病特徵的病人。"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "NC16A domain 屬於 BP180（type XVII collagen）而非 BP230，答案 C。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "約 75% 病人血清 total IgE 上升，且常（often）與 IF 測得的 bullous pemphigoid IgG 自體抗體效價相關。",
+      "refs": [
+       [
+        54,
+        "946"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "超過半數（more than half）的病人同時有 peripheral blood eosinophilia。",
+      "refs": [
+       [
+        54,
+        "946"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "本題答案",
+      "ok": true,
+      "text": "NC16A domain 是 BP180（BPAG2、type XVII collagen）細胞外區中緊鄰跨膜區的非膠原區段，帶有主要的自體抗體反應 epitope；BP180 NC16A ELISA 對診斷敏感且特異。BP230（BPAG1）屬 plakin family，位於 hemidesmosome 細胞內 plaque。McKee 亦寫 BP180 是主要致病抗原，抗體最常與其 NC16A 區段反應。",
+      "refs": [
+       [
+        54,
+        "946-947"
+       ],
+       [
+        "M",
+        "143"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "約 7% 的正常族群在沒有臨床與組織學疾病特徵下，可用 ELISA 測到 anti-BP180 抗體；這強調 ELISA 應在適當臨床情境使用，而不是作為缺乏其他疾病特徵者的篩檢工具。",
+      "refs": [
+       [
+        54,
+        "951"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-62",
+   "topic": "Dermatitis herpetiformis — DIF biopsy site, IgA subclass, anti-eTG, NSAID exacerbation",
+   "fitz": [
+    59
+   ],
+   "polarity": "positive",
+   "stem": "32 歲男性，數月來手肘、膝蓋、臀部與肩膀反覆出現對稱分布、成群的紅色丘疹與小水疱，伴隨劇烈灼熱感與搔癢，就診時多為抓痕與結痂。早期病灶切片顯示真皮乳頭有 neutrophil microabscesses。關於此病人的診斷與處置，下列敘述何者正確？",
+   "options": {
+    "A": "皮膚沉積的 IgA 以 IgA2 subclass 為主。",
+    "B": "以 dapsone 控制良好後，使用 NSAIDs 不會使病情惡化。",
+    "C": "DIF 切片取活動病灶附近外觀正常的皮膚，可能較容易偵測到 granular IgA 沉積",
+    "D": "開始嚴格無麩質飲食後，血中 IgA anti-epidermal transglutaminase 抗體濃度會上升。"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "Dermatitis herpetiformis 的 granular IgA 沉積在活動病灶附近外觀正常的皮膚可能較容易偵測到，答案 C。",
+    "items": [
+     {
+      "key": "A",
+      "label": "以 IgA1 為主",
+      "ok": false,
+      "text": "Dermatitis herpetiformis 病人皮膚中鑑定出的主要（或唯一）IgA subclass 是 IgA1，而非 IgA2。",
+      "refs": [
+       [
+        59,
+        "1006"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "NSAIDs 可能使病情惡化",
+      "ok": false,
+      "text": "NSAIDs 可能使 dermatitis herpetiformis 惡化，即使病情已用 dapsone 或無麩質飲食控制良好。",
+      "refs": [
+       [
+        59,
+        "1007"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "本題答案",
+      "ok": true,
+      "text": "在外觀正常的皮膚找到 granular IgA 沉積是診斷 dermatitis herpetiformis 最可靠的依據；IgA 沉積在全身皮膚的強度並不均一，在活動病灶附近外觀正常的皮膚可能較容易偵測到。McKee 亦寫 dermatitis herpetiformis 病人在 perilesional skin 的真皮乳頭有 granular IgA 沉積。",
+      "refs": [
+       [
+        59,
+        "1006"
+       ],
+       [
+        "M",
+        "164"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "會下降",
+      "ok": false,
+      "text": "循環中 IgA anti-eTG 在皮膚病灶形成中的確切角色未明，但開始無麩質飲食後其濃度會下降，而非上升。",
+      "refs": [
+       [
+        59,
+        "1004"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-63",
+   "topic": "Systemic sclerosis — MCTD serology, anti-RNAP III, renal crisis, digital ulcers",
+   "fitz": [
+    63
+   ],
+   "polarity": "negative",
+   "stem": "關於 systemic sclerosis 的自體抗體、overlap syndrome 與器官併發症，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Mixed connective tissue disease（MCTD）的特徵是高效價的 circulating anti-Scl-70（antitopoisomerase-I）抗體。"
+    },
+    {
+     "id": "②",
+     "text": "Anti-RNA polymerase III 抗體與 diffuse skin sclerosis 及 hypertensive renal crisis 相關。"
+    },
+    {
+     "id": "③",
+     "text": "Scleroderma renal crisis 見於約 30%–40% 的 SSc 病人，可突然出現顯著的全身性高血壓並導致急性腎衰竭。"
+    },
+    {
+     "id": "④",
+     "text": "約 50% 的 SSc 病人在病程中的某個時點會發生與 vasculopathy 相關的 digital ulceration。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "①③錯誤，答案 A。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "MCTD 的特徵是高效價的 circulating anti-U1RNP 抗體，而非 anti-Scl-70；anti-Scl-70（topoisomerase-1）與 diffuse skin sclerosis、pulmonary fibrosis 相關。McKee 亦寫高效價 anti-ENA（anti-U1-RNP）抗體是 MCTD 診斷的必要條件。",
+      "refs": [
+       [
+        63,
+        "1087"
+       ],
+       [
+        63,
+        "1090"
+       ],
+       [
+        "M",
+        "822"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確",
+      "ok": true,
+      "text": "Table 63-3：anti-RNA polymerase III 在 SSc 的頻率約 20%，臨床上與 diffuse skin sclerosis、hypertensive renal crisis 相關，並與較高的死亡率相關；diffuse cutaneous SSc 也很常出現 anti-Scl-70 或 anti-RNA polymerase III 抗體。",
+      "refs": [
+       [
+        63,
+        "1087"
+       ],
+       [
+        63,
+        "1090"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Scleroderma renal crisis 見於 5%–10% 的 SSc 病人，而非 30%–40%；可能突然出現顯著的全身性高血壓，合併 creatinine 上升、蛋白尿、血尿、血小板低下或溶血，接著發生急性腎衰竭。McKee 亦寫約 10% 的 SSc 病人發生 scleroderma renal crisis。",
+      "refs": [
+       [
+        63,
+        "1091"
+       ],
+       [
+        "M",
+        "801"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確",
+      "ok": true,
+      "text": "約 50% 的 SSc 病人在病程中的某個時點會受到與 vasculopathy 相關的 digital ulceration 影響，這是結構性血管病變的主要外在表現。",
+      "refs": [
+       [
+        63,
+        "1090"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-64",
+   "topic": "Histiocytic disorders — Rosai-Dorfman, ocular JXG, Erdheim-Chester, HLH",
+   "fitz": [
+    117
+   ],
+   "polarity": "negative",
+   "stem": "關於 Langerhans cell histiocytosis 以外的組織球疾病（histiocytic disorders），下列敘述何者錯誤？",
+   "options": {
+    "A": "Rosai-Dorfman disease 的特徵是 emperipolesis，病灶組織球 S100B 陽性、CD1a 陰性。",
+    "B": "Juvenile xanthogranuloma 的眼部病灶見於最多 10% 的病童，很少自行改善而需要治療。",
+    "C": "Erdheim-Chester disease 的長骨侵犯少見，且通常為單側。",
+    "D": "Hemophagocytic lymphohistiocytosis 的特徵包括持續發燒、脾腫大合併血球低下、hypertriglyceridemia 與 hypofibrinogenemia。"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "Erdheim-Chester disease 幾乎都有長骨侵犯，且為雙側對稱，答案 C。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "RDD 細胞典型為 S100B 陽性、CD1a 陰性；其 hallmark 是 emperipolesis，即組織球細胞質內可見 lymphocytes 或 neutrophils 等骨髓來源細胞，背景為成熟 lymphocytes 與 plasma cells。McKee 亦寫組織球表現 S100 protein 與 CD68、CD163，CD1a 與 langerin 陰性，細胞質內含 lymphocytes、紅血球或 granulocytes 稱為 emperipolesis。",
+      "refs": [
+       [
+        117,
+        "2031"
+       ],
+       [
+        "M",
+        "1505-1506"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "眼部病灶見於最多 10% 的 JXG 病童，可能影響視力；JXG 通常在 1–5 年內自行消退，但眼部病灶很少自行改善，需要治療。",
+      "refs": [
+       [
+        117,
+        "2032"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Erdheim-Chester disease 的長骨侵犯幾乎是普遍的（almost universal），且為雙側、對稱。McKee 亦寫骨掃描或 PET 典型可見下肢對稱性的 diaphyseal 與 metaphyseal osteosclerosis。",
+      "refs": [
+       [
+        117,
+        "2038"
+       ],
+       [
+        "M",
+        "1497"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "HLH 的特徵為持續發燒、脾腫大合併血球低下、hypertriglyceridemia 與 hypofibrinogenemia；它被歸類為 cytokine storm syndromes 之一。",
+      "refs": [
+       [
+        117,
+        "2032"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-65",
+   "topic": "Endemic systemic mycoses — characteristic fungal forms in KOH mounts and tissue",
+   "fitz": [
+    162
+   ],
+   "polarity": "positive",
+   "stem": "下列深部黴菌與其在檢體（KOH 鏡檢或組織切片）中特徵型態的配對，何者正確？",
+   "options": {
+    "A": "[i]Paracoccidioides brasiliensis[/i]：內含 endospores 的大型 spherules。",
+    "B": "[i]Blastomyces dermatitidis[/i]：厚壁、具折光性的球形細胞，帶有 broad-based buds。",
+    "C": "[i]Coccidioides immitis[/i]：一個母細胞周圍環繞許多較小芽體的 multiple budding。",
+    "D": "[i]Histoplasma capsulatum[/i] var. [i]duboisii[/i]：比 var. [i]capsulatum[/i] 更小的細胞內酵母。"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "[i]Blastomyces dermatitidis[/i] 為厚壁、具折光性、帶 broad-based buds 的球形細胞，答案 B。",
+    "items": [
+     {
+      "key": "A",
+      "label": "為 multiple budding",
+      "ok": false,
+      "text": "[i]Paracoccidioides brasiliensis[/i] 在 KOH 中為圓形酵母，具特徵性的 multiple budding：一個母細胞周圍環繞大量較小的芽體；組織中也可見此出芽型態，但可能需搜尋多個視野。McKee 亦寫其產生多個 narrow-based buds，形似「pilot's wheel」。內含 endospores 的 spherules 是 [i]Coccidioides[/i] 的特徵。",
+      "refs": [
+       [
+        162,
+        "2981"
+       ],
+       [
+        "M",
+        "943"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "本題答案",
+      "ok": true,
+      "text": "[i]Blastomyces[/i] 在膿、皮膚刮屑或痰的 KOH 檢體中為厚壁、圓形、具折光性、帶 broad-based buds 的球形細胞；組織切片中也可找到典型的 broad buds，但可能需搜尋多個視野。McKee 亦寫其特徵為具單一 broad-based bud 的多核酵母。",
+      "refs": [
+       [
+        162,
+        "2978-2979"
+       ],
+       [
+        "M",
+        "941"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "為 spherules",
+      "ok": false,
+      "text": "[i]Coccidioides[/i] 的實驗室特徵是形成含孢子的 spherules，可在痰、腦脊髓液或膿的 KOH 檢體中看到；組織切片可見含大型 endospores 的 spherules，菌絲在切片中很少見。Multiple budding 是 [i]Paracoccidioides[/i] 的特徵。McKee 亦寫其在組織中為內含多個 endospores 的 doubly refractile spherules。",
+      "refs": [
+       [
+        162,
+        "2980"
+       ],
+       [
+        "M",
+        "944"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "比 var. capsulatum 大",
+      "ok": false,
+      "text": "[i]H. capsulatum[/i] var. [i]duboisii[/i] 的菌體與較小的 capsulatum 型不同，通常直徑 10–15 µm、略呈梨形，聚集在 giant cells 中；var. [i]capsulatum[/i] 則是 macrophages 內 2–4 µm 的小型卵圓形酵母。McKee 亦寫 var. [i]duboisii[/i] 是厚壁的大型酵母，通常位於多核巨細胞內。",
+      "refs": [
+       [
+        162,
+        "2976-2977"
+       ],
+       [
+        "M",
+        "958"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-66",
+   "topic": "Topical antibiotics — mechanisms of action",
+   "fitz": [
+    186
+   ],
+   "polarity": "positive",
+   "stem": "關於外用抗生素（topical antibiotics）與其作用機轉的配對，下列何者正確？",
+   "options": {
+    "A": "Mupirocin：結合 50S ribosomal subunit 的 protein L3，抑制 peptidyl transferase",
+    "B": "Fusidic acid：可逆地結合 isoleucyl-transfer RNA synthetase，抑制蛋白質合成",
+    "C": "Polymyxin B：結合 30S ribosomal subunit，抑制蛋白質合成",
+    "D": "Bacitracin：抑制 membrane-bound lipid pyrophosphate 的 dephosphorylation，干擾細菌細胞壁合成"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "Bacitracin 藉抑制 membrane-bound lipid pyrophosphate 的 dephosphorylation 干擾細胞壁合成，答案 D。",
+    "items": [
+     {
+      "key": "A",
+      "label": "是 retapamulin 的機轉",
+      "ok": false,
+      "text": "Mupirocin（舊稱 pseudomonic acid A）是可逆地結合 isoleucyl-transfer RNA synthetase 而抑制蛋白質合成。經 50S ribosome 的 protein L3、靠近 peptidyl transferase center 抑制蛋白質合成的是 retapamulin（pleuromutilin 類）。",
+      "refs": [
+       [
+        186,
+        "3420"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "是 mupirocin 的機轉",
+      "ok": false,
+      "text": "Fusidic acid 是藉中斷 elongation factor G 而抑制細菌蛋白質合成的 translocation；可逆結合 isoleucyl-transfer RNA synthetase 的是 mupirocin。",
+      "refs": [
+       [
+        186,
+        "3420-3421"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "是 aminoglycosides 的機轉",
+      "ok": false,
+      "text": "Polymyxin B 是 cyclic polypeptides（polymyxin B1 與 B2）的混合物，作用如 cationic detergent，破壞細菌細胞膜的完整性，對多種 Gram-negative 菌有效。結合 30S ribosomal subunit 抑制蛋白質合成的是 aminoglycosides（neomycin、gentamicin）。",
+      "refs": [
+       [
+        186,
+        "3420-3421"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Bacitracin 是 cyclic polypeptide，藉抑制 membrane-bound lipid pyrophosphate 的 dephosphorylation 干擾細菌細胞壁合成；對 staphylococci、streptococci 等 Gram-positive cocci 有效，但對多數 Gram-negative 菌與 yeasts 無效。",
+      "refs": [
+       [
+        186,
+        "3420-3421"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-67",
+   "topic": "Mohs surgery — staged excision, second intent healing, adverse events",
+   "fitz": [
+    204
+   ],
+   "polarity": "negative",
+   "stem": "關於 Mohs micrographic surgery 的分階段切除、傷口癒合與術後不良事件，下列敘述何者錯誤？",
+   "options": {
+    "A": "約半數病人在第一個 stage 後即達切緣清除，約 90% 在兩個 stage 後清除",
+    "B": "在大型多中心前瞻性研究中，Mohs surgery 最常見的不良事件是術後出血或血腫，感染較為少見",
+    "C": "Mohs 技術不檢查切除腫瘤的中央部分；在特定病例需要 perineural invasion 或分化不良等資訊時，可將冷凍組織解凍後改做標準垂直切片",
+    "D": "位於凹面的傷口，如 medial canthus、耳前面與 temple，以 second intent healing 可有可靠的功能與外觀結果"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "Mohs surgery 最常見的不良事件是感染，不是術後出血或血腫，答案 B。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "作者實驗室中每個 stage 約需 20–45 分鐘處理；約半數病人一個 stage 後切緣即清除，約 90% 在兩個 stage 後清除，需要四到六個 stage 的情形不常見。",
+      "refs": [
+       [
+        204,
+        "3765"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "本題答案",
+      "ok": true,
+      "text": "在 20,821 例 Mohs surgery 的多中心前瞻性研究中，整體不良事件率為 0.72%；最常見的不良事件是感染（0.40%），其次為傷口癒合不良（包括 dehiscence 與 necrosis，0.14%），再其次才是術後出血或血腫（0.11%）。",
+      "refs": [
+       [
+        204,
+        "3770"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Mohs 技術不檢查切除腫瘤的中央部分；特定病例若需要 perineural invasion 或 poor differentiation 等組織病理危險因子資訊，可將冷凍組織解凍，送標準垂直切片處理腫瘤主體。多數以 Mohs 治療的 BCC 與 SCC 不需要這項額外檢查。",
+      "refs": [
+       [
+        204,
+        "3765"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Second intent healing 可有可靠功能與外觀結果的傷口，包括薄皮膚處（eyelid、ear）與凹面處（medial canthus、耳前面、temple）；nasal tip、malar cheek、central forehead 等凸面雖也可癒合，但疤痕較可能凹陷而明顯。",
+      "refs": [
+       [
+        204,
+        "3769"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 1,
+    "fixes": 2,
+    "replaced_items": true
+   }
+  },
+  {
+   "id": "M-68",
+   "topic": "Granuloma annulare — histopathology and differential diagnosis",
+   "fitz": [
+    34
+   ],
+   "polarity": "negative",
+   "stem": "關於 granuloma annulare 的組織病理與病理鑑別診斷，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Perforating granuloma annulare 的特徵是 elastic fibers 經表皮排出（transepidermal elimination）"
+    },
+    {
+     "id": "②",
+     "text": "浸潤中常見大量 plasma cells，可藉此與 necrobiosis lipoidica 區分"
+    },
+    {
+     "id": "③",
+     "text": "與 actinic granuloma 相比，granuloma annulare 中的 multinucleated giant cells 通常更多"
+    },
+    {
+     "id": "④",
+     "text": "若 leukocytoclastic vasculitis 或 nuclear debris 很明顯，應考慮 palisaded neutrophilic and granulomatous dermatitis of immune complex disease"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③錯誤，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Perforating granuloma annulare（GA）的特徵是 necrobiotic collagen 經表皮排出（transepidermal elimination），不是 elastic fibers；病理上 necrobiosis 區與表面相通並有中央潰瘍，可能需要 serial sections 才能看到 necrobiotic plug。McKee 也寫其特徵為 necrobiotic collagen 的 transepidermal elimination。",
+      "refs": [
+       [
+        34,
+        "565"
+       ],
+       [
+        34,
+        "568"
+       ],
+       [
+        "M",
+        "314"
+       ],
+       [
+        "M",
+        "319"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "GA 偶可見 neutrophils 與 eosinophils，但 plasma cells 罕見（rare）。McKee 指出 plasma cells 罕見這一點正是與 necrobiosis lipoidica 鑑別時有用的線索。",
+      "refs": [
+       [
+        34,
+        "568"
+       ],
+       [
+        "M",
+        "319"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "GA 可有 multinucleated giant cells，但數量不如 actinic granuloma 多。McKee 的 Table 9.1 也列 GA 的 giant cells 為 relatively few，actinic granuloma 則為 abundant 並含 elastica。",
+      "refs": [
+       [
+        34,
+        "568"
+       ],
+       [
+        "M",
+        "320"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確",
+      "ok": true,
+      "text": "GA 可有血管反應的表現（endothelial swelling、紅血球外滲、fibrin、leukocytoclasis）；若 leukocytoclastic vasculitis 或 nuclear debris 很明顯，應考慮 palisaded neutrophilic and granulomatous dermatitis of immune complex disease。McKee 也寫帶有 vasculitis 與明顯急性發炎細胞的 GA-like 病灶可見於系統性疾病。",
+      "refs": [
+       [
+        34,
+        "568"
+       ],
+       [
+        "M",
+        "319-320"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "minor",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-69",
+   "topic": "Sarcoidosis — scar sarcoid, foreign material, diagnostic pitfalls",
+   "fitz": [
+    35
+   ],
+   "polarity": "positive",
+   "stem": "45 歲男性，10 年前右膝手術留下的疤痕近 3 個月逐漸變紅、隆起、變硬，並有輕微癢感。皮膚切片顯示真皮內周圍淋巴球稀少的 epithelioid granulomas，偏光檢查可見少量異物顆粒，臨床懷疑 scar sarcoidosis。下列敘述何者正確？",
+   "options": {
+    "A": "切片中可見異物，即可排除 sarcoidosis，診斷為單純的 foreign-body granuloma",
+    "B": "疤痕的發炎變化可能先於全身性疾病活動出現，也可能與其平行",
+    "C": "若血清 angiotensin-converting enzyme（ACE）正常，即可排除 sarcoidosis",
+    "D": "若切片同時見到大片壞死（gross necrosis），更支持 sarcoidosis 的診斷"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "舊疤痕的發炎可能先於或平行於全身性疾病活動，答案 B。",
+    "items": [
+     {
+      "key": "A",
+      "label": "異物不能排除診斷",
+      "ok": false,
+      "text": "Sarcoidosis 好發於疤痕、外傷部位及 silica、刺青墨水等異物周圍；肉芽腫圍繞異物不能確立 sarcoidosis 診斷，但有異物也不能排除。McKee 亦寫 sarcoidal granulomata 中出現異物並不排除 sarcoidosis，並指出部分合併 silica 或刺青色素的病人有或之後發生 systemic sarcoidosis。",
+      "refs": [
+       [
+        35,
+        "573"
+       ],
+       [
+        "M",
+        "307"
+       ],
+       [
+        "M",
+        "312"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Scar sarcoid 是疤痕發炎並被 sarcoidal granulomas 浸潤；舊疤痕的發炎可能先於或平行於全身性疾病活動。浸潤的疤痕可能有壓痛或癢，甚至可能是明顯系統侵犯病人身上唯一的發現。",
+      "refs": [
+       [
+        35,
+        "573"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "ACE 敏感度不足",
+      "ok": false,
+      "text": "Serum ACE 由 sarcoidal granuloma 的 epithelioid cell 分泌，反映總肉芽腫負荷；但 ACE 上升的特異性不足以單獨作為診斷依據，敏感度也不足以排除診斷，且在所有肉芽腫疾病（包括感染性）都會上升。",
+      "refs": [
+       [
+        35,
+        "578"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "提示其他診斷",
+      "ok": false,
+      "text": "Sarcoidal granuloma 中心的 fibrinoid necrosis 不少見（McKee：小灶性、有時可見，caseation necrosis 罕見），但 gross necrosis 不是其特徵，反而提示 tuberculosis、fungal infection 或 vasculitis 等其他診斷；Fitzpatrick 並指出分枝桿菌與黴菌必須列入鑑別，應常規做這些染色與培養。",
+      "refs": [
+       [
+        35,
+        "579"
+       ],
+       [
+        "M",
+        "311"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-70",
+   "topic": "Erythema multiforme — HSV Pol gene pathogenesis and histopathology",
+   "fitz": [
+    43
+   ],
+   "polarity": "negative",
+   "stem": "關於 erythema multiforme 的致病機轉與組織病理，下列敘述何者錯誤？",
+   "options": {
+    "A": "HSV 相關 EM 的病灶 keratinocytes 中可用 PCR 偵測到 HSV DNA 片段，這些片段包含 viral polymerase（Pol）gene",
+    "B": "Immunofluorescence 檢查結果為陰性或非特異性",
+    "C": "早期病灶可見淋巴球附著於散在的壞死 keratinocytes（satellite cell necrosis），以及基底細胞層的 vacuolar degeneration",
+    "D": "Acantholysis 是 EM 的組織病理特徵之一"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "Acantholysis 不是 EM 的病理特徵，答案 D。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "HSV 相關 EM 的病灶中，多項研究以 PCR 偵測到 HSV DNA；keratinocytes 含有的病毒 DNA 片段包含 viral polymerase（Pol）gene，Pol DNA 位於基底層與下層 spinous keratinocytes，並有 Pol protein 合成。McKee 亦寫病灶表皮內可用 PCR 找到病毒 DNA，EM 可能是對 keratinocytes 表面表現的 DNA polymerase 等病毒抗原產生的 delayed hypersensitivity 反應。",
+      "refs": [
+       [
+        43,
+        "728"
+       ],
+       [
+        "M",
+        "263-264"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "EM 的 immunofluorescence 結果為陰性或非特異性；切片的主要目的在於排除 autoimmune blistering diseases、Sweet syndrome 與 vasculitis 等其他診斷。",
+      "refs": [
+       [
+        43,
+        "728-729"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "早期病灶在真皮表皮交界有淋巴球聚集並 exocytosis 進入表皮、淋巴球附著於散在壞死 keratinocytes（satellite cell necrosis）、spongiosis、基底層 vacuolar degeneration，以及局部 junctional 與 subepidermal cleft。McKee 亦描述基底細胞 hydropic degeneration、keratinocyte apoptosis 合併 lymphocytic exocytosis 與 satellite cell necrosis。",
+      "refs": [
+       [
+        43,
+        "728"
+       ],
+       [
+        "M",
+        "264"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "本題答案",
+      "ok": true,
+      "text": "課本明言 acantholysis is not a feature of EM。Fitzpatrick 提到曾有報告伴 desmoplakin I、II 自體抗體的復發性 EMM，但其切片出現 acantholysis，認為較可能是臨床類似 EM 的 pemphigus 變異型（McKee 則僅寫該自體抗體可能在 EMM 中扮演角色）。",
+      "refs": [
+       [
+        43,
+        "728"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-71",
+   "topic": "Inherited PPK — causative genes and associated features",
+   "fitz": [
+    48
+   ],
+   "polarity": "negative",
+   "stem": "下列遺傳性掌蹠角化症（inherited palmoplantar keratoderma, PPK）與其致病基因及合併特徵的配對，何者錯誤？",
+   "options": {
+    "A": "Mal de Meleda：SLURP1 雙對偶基因突變；autosomal recessive、progressive、mutilating 的 diffuse PPK 合併 transgrediens。",
+    "B": "Olmsted syndrome：TRPV3 突變；diffuse mutilating PPK 合併 periorificial keratotic plaques。",
+    "C": "Papillon-Lefèvre syndrome：TAT（tyrosine aminotransferase）突變；painful focal PPK 合併 bilateral keratitis。",
+    "D": "Howel-Evans syndrome：RHBDF2（iRhom2）突變；focal PPK 合併黏膜（特別是食道）squamous cell carcinoma。"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "TAT 突變合併 bilateral keratitis 的是 Richner-Hanhart syndrome，Papillon-Lefèvre syndrome 是 CTSC 突變合併嚴重牙周炎，答案 C。",
+    "items": [
+     {
+      "key": "A",
+      "label": "配對正確",
+      "ok": false,
+      "text": "Mal de Meleda 是 autosomal recessive、progressive、diffuse、mutilating 並有 transgrediens 的 PPK，由 SLURP1 雙對偶基因（biallelic）突變造成；SLURP1 編碼 SLURP-1。",
+      "refs": [
+       [
+        48,
+        "816"
+       ],
+       [
+        48,
+        "826"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "配對正確",
+      "ok": false,
+      "text": "Olmsted syndrome 由 TRPV3 突變（autosomal dominant 或 autosomal recessive）或 MBTPS2 突變（X-linked recessive）造成，特徵為 diffuse mutilating PPK 合併 periorificial keratotic plaques。",
+      "refs": [
+       [
+        48,
+        "816"
+       ],
+       [
+        48,
+        "828"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "本題答案",
+      "ok": true,
+      "text": "TAT（tyrosine aminotransferase）突變、painful focal PPK 合併 bilateral keratitis（及 mental retardation）描述的是 autosomal recessive 的 Richner-Hanhart syndrome。Papillon-Lefèvre syndrome 是 autosomal recessive、由 CTSC（cathepsin C）突變造成，特徵為 diffuse PPK with transgrediens 合併 severe progressive periodontitis。",
+      "refs": [
+       [
+        48,
+        "816"
+       ],
+       [
+        48,
+        "817"
+       ],
+       [
+        48,
+        "834"
+       ],
+       [
+        48,
+        "842"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "配對正確",
+      "ok": false,
+      "text": "Howel-Evans syndrome 為 autosomal dominant，表現為 focal PPK 與黏膜（特別是食道）squamous cell carcinoma，並可有 follicular hyperkeratosis 與 oral leukokeratosis；由 RHBDF2 的 heterozygous 突變造成，RHBDF2 編碼 iRhom2。",
+      "refs": [
+       [
+        48,
+        "817"
+       ],
+       [
+        48,
+        "841"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-72",
+   "topic": "Basal cell carcinoma — treatment selection (Hedgehog inhibitors, C&D, imiquimod, radiation in BCNS)",
+   "fitz": [
+    111
+   ],
+   "polarity": "positive",
+   "stem": "關於 basal cell carcinoma（BCC）及 basal cell nevus syndrome（BCNS）病人 BCC 的治療選擇，下列敘述何者正確？",
+   "options": {
+    "A": "Vismodegib 與 sonidegib 藉由抑制 PTCH1 阻斷 Hedgehog 訊息傳遞，已獲 FDA 核准用於 locally advanced BCC。",
+    "B": "Curettage and desiccation（C&D）適合用於 morpheaform BCC 與 recurrent BCC。",
+    "C": "Imiquimod 5% cream 是 Toll-like receptor 7 agonist，FDA 核准用於切片證實、小於 2 cm 的 primary superficial BCC。",
+    "D": "BCNS 病人的多發 BCC 宜優先以 ionizing radiation（radiation therapy）治療，以減少手術造成的疤痕。"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "Imiquimod 是 TLR7 agonist，FDA 核准用於切片證實、<2 cm 的 primary superficial BCC，答案 C。",
+    "items": [
+     {
+      "key": "A",
+      "label": "作用標的是 SMO",
+      "ok": false,
+      "text": "Vismodegib 與 sonidegib 是 SMO inhibitors，不是抑制 PTCH1；PTCH1 本身是抑制 SMO 的 tumor suppressor，PTCH1 失去功能才使 SMO 不受調控而促成腫瘤。Hedgehog pathway inhibitors（vismodegib、sonidegib）已獲 FDA 核准用於 locally advanced BCC，vismodegib 亦核准用於 metastatic BCC。",
+      "refs": [
+       [
+        111,
+        "1890"
+       ],
+       [
+        111,
+        "1891"
+       ],
+       [
+        111,
+        "1892"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "不建議用 C&D",
+      "ok": false,
+      "text": "C&D 的治癒率隨原發病灶變大而下降，因此不建議用於大的 primary BCC，也不建議用於 morpheaform 或 recurrent BCC；在適當選擇的病灶與部位，C&D 仍是有效且符合成本效益的治療。",
+      "refs": [
+       [
+        111,
+        "1889"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Imiquimod（5% cream）於 2004 年獲 FDA 核准，用於切片證實、small（<2 cm）的 primary superficial BCC；它是 Toll-like receptor 7 agonist，被認為可誘導 interferon-α、TNF-α 等細胞激素以增強 Th1 免疫。對其他類型 BCC 的安全性與有效性尚未確立。",
+      "refs": [
+       [
+        111,
+        "1889"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "應避免放射線",
+      "ok": false,
+      "text": "Sunlight 與 ionizing radiation 會加速 BCNS 病人 BCC 的形成，因此 ionizing radiation 對多數 BCNS 病人的 BCC 是很差的治療選擇；BCNS 的特徵之一是放射線誘發的致癌作用增強，接受放射線的病人短時間內會在照射區長出異常大量的 BCC。BCNS 宜積極採用非手術方式，例如 topical 5-FU、imiquimod 與 PDT。",
+      "refs": [
+       [
+        111,
+        "1893"
+       ],
+       [
+        111,
+        "1896"
+       ],
+       [
+        111,
+        "1897"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-73",
+   "topic": "Primary cutaneous B-cell lymphomas — immunophenotype and treatment",
+   "fitz": [
+    119
+   ],
+   "polarity": "negative",
+   "stem": "關於 primary cutaneous B-cell lymphomas 的免疫表現型與治療，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Primary cutaneous follicle center lymphoma（PCFCL）的腫瘤細胞表現 germinal center marker Bcl6，其基因表現型態類似 germinal center B-cell–like diffuse large B-cell lymphoma。"
+    },
+    {
+     "id": "②",
+     "text": "Primary cutaneous diffuse large B-cell lymphoma, leg type 的腫瘤細胞通常不表現 IRF4/MUM-1 與 FOXP1。"
+    },
+    {
+     "id": "③",
+     "text": "Primary cutaneous marginal zone lymphoma（PCMZL）的 marginal zone cells 表現 CD20、CD79a 與 Bcl2，CD10 與 Bcl6 則為陰性。"
+    },
+    {
+     "id": "④",
+     "text": "侷限於單一部位的 PCFCL，首選治療為 R-CHOP 全身性化學治療。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "②④錯誤，答案 B。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確",
+      "ok": true,
+      "text": "PCFCL 的腫瘤細胞表現 pan–B-cell markers CD19、CD20、CD79a 與 germinal center marker Bcl6；gene expression studies 顯示其型態類似 germinal center B-cell–like DLBCL。McKee 亦寫 PCFCL 一致表現 CD20 與 bcl-6，gene expression profiling 類似 germinal center type DLBCL，且常有 c-REL amplification。",
+      "refs": [
+       [
+        119,
+        "2098-2099"
+       ],
+       [
+        "M",
+        "1464-1465"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "PCLBCL, leg type 的腫瘤細胞為 CD20+、CD79a、IRF4-MUM-1+、FOXP1+，並有 cytoplasmic IgM ± D、Bcl2+；反而是 PCFCL 通常不表現 IRF4-MUM-1、FOXP1 與 cytoplasmic immunoglobulin。McKee 亦寫 leg type almost always（幾乎都）強陽性表現 bcl-2、MUM1/IRF4 與 FOXP1，但有至多 10% 的病例 bcl-2 與 MUM1/IRF4 染色為陰性。",
+      "refs": [
+       [
+        119,
+        "2097"
+       ],
+       [
+        119,
+        "2099"
+       ],
+       [
+        "M",
+        "1467"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確",
+      "ok": true,
+      "text": "PCMZL 的 marginal zone cells 典型表現 CD20、CD79a 與 Bcl2，CD5、CD10 與 Bcl6 陰性；plasma cells 表現 CD138 與 CD79a，並有 monotypic cytoplasmic light chain。McKee 亦寫腫瘤細胞 CD20+、CD79a+，CD10–、bcl-6–，Bcl-2 陽性。",
+      "refs": [
+       [
+        119,
+        "2099"
+       ],
+       [
+        "M",
+        "1461"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Radiotherapy（30 Gy）是 PCFCL 的首選治療；Table 119-12 中 solitary/localized PCFCL 的 first-line therapy 為 local radiotherapy 或 excision，R-CVP/CHOP 只用於例外情況或發生 extracutaneous disease 的病人。R-CHOP 是 PCLBCL, leg type 的治療。McKee 亦寫 radiotherapy 是單一或侷限病灶的 treatment of choice，全身性合併化療很少需要。",
+      "refs": [
+       [
+        119,
+        "2099"
+       ],
+       [
+        "M",
+        "1464"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-74",
+   "topic": "Ectodermal dysplasias — causative genes, inheritance, and key features (AEC, FDH, Witkop, ODDD)",
+   "fitz": [
+    131
+   ],
+   "polarity": "negative",
+   "stem": "下列 ectodermal dysplasia 與其致病基因、遺傳方式及特徵的配對，何者錯誤？",
+   "options": {
+    "A": "AEC（Hay–Wells／Rapp–Hodgkin）syndrome：TP63 突變，autosomal dominant；可見 ankyloblepharon filiforme adnatum 與 cleft palate。",
+    "B": "Focal dermal hypoplasia（Goltz syndrome）：WNT10A 突變，autosomal recessive；沿 Blaschko lines 的 dermal atrophy 合併 fat herniation。",
+    "C": "Tooth and nail syndrome（Witkop syndrome）：MSX1 突變，autosomal dominant；恆牙可能無法萌出，趾甲通常比指甲嚴重。",
+    "D": "Oculo-dento-digital dysplasia：GJA1（connexin 43）突變，autosomal dominant；可見 enamel hypoplasia 與第四、五指 camptodactyly。"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "Focal dermal hypoplasia 是 X-linked dominant、PORCN 突變；WNT10A 是 OODD／SSPS 的致病基因，答案 B。",
+    "items": [
+     {
+      "key": "A",
+      "label": "配對正確",
+      "ok": false,
+      "text": "AEC（Hay–Wells／Rapp–Hodgkin）syndrome 屬 p63-related ED，為 autosomal dominant，由位於 3q27 的 TP63 突變造成。Ankyloblepharon filiforme adnatum 見於約 70% 的罹病嬰兒，cleft palate（合併或不合併 cleft lip）見於 80% 到 100% 的報告病例。",
+      "refs": [
+       [
+        131,
+        "2378"
+       ],
+       [
+        131,
+        "2379-2380"
+       ],
+       [
+        131,
+        "2382"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Focal dermal hypoplasia 是 X-linked dominant 疾病，男性通常致死，致病基因為 PORCN（Drosophila porcupine gene 的人類同源基因，與 Wnt protein 的 palmitoylation 及分泌有關），不是 WNT10A、也不是 autosomal recessive。皮膚表現為沿 Blaschko lines 的線狀、點狀 cribriform atrophy 合併 telangiectasia，dermis 變薄或缺如處的 fat herniation 呈黃粉紅色突起。WNT10A 突變（多數為 autosomal recessive）造成的是 odonto-onycho-dermal dysplasia 與 Schopf–Schulz–Passarge syndrome。",
+      "refs": [
+       [
+        131,
+        "2384"
+       ],
+       [
+        131,
+        "2383"
+       ],
+       [
+        131,
+        "2382"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "配對正確",
+      "ok": false,
+      "text": "Tooth and nail syndrome 為 autosomal dominant，由 MSX1 突變造成。指甲薄、小而易碎，趾甲通常（usually）比指甲嚴重；乳牙通常不受影響，恆牙可能無法萌出，並可部分或完全缺牙。",
+      "refs": [
+       [
+        131,
+        "2388"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "配對正確",
+      "ok": false,
+      "text": "Oculo-dento-digital dysplasia 為 autosomal dominant，由 connexin-43 基因（GJA1）突變造成。乳牙與恆牙都有 enamel hypoplasia；超過 80% 的病例有第四、五指 camptodactyly。",
+      "refs": [
+       [
+        131,
+        "2389-2390"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-75",
+   "topic": "Hepatobiliary disease — pigmentary changes (hemochromatosis, PBC) and viral hepatitis–associated vasculitis/cryoglobulinemia",
+   "fitz": [
+    133
+   ],
+   "polarity": "positive",
+   "stem": "關於肝膽疾病（hepatobiliary disease）相關的皮膚表現，下列敘述何者正確？",
+   "options": {
+    "A": "Hemochromatosis 的皮膚色素沉著同時有 hemosiderin 與過多的 melanin。",
+    "B": "Primary biliary cirrhosis 的 hyperpigmentation 主要來自皮膚中 hemosiderin 的沉積。",
+    "C": "Hepatitis B 與 hepatitis C 感染都與 cryoglobulinemia 有關，其中以 hepatitis B 較常見。",
+    "D": "與 hepatitis B 感染相關的 polyarteritis nodosa 屬於 small-vessel vasculitis。"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "Hemochromatosis 皮膚中同時有 hemosiderin 與過多 melanin，答案 A。",
+    "items": [
+     {
+      "key": "A",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Hemochromatosis 的皮膚可呈明顯的全身性 metallic gray 或 bronze-brown 色，曝光與受傷處較明顯；皮膚中同時有 hemosiderin 與過多的 melanin。約 70% 的病人就診時可見 diffuse bronze hyperpigmentation，為 iron deposition 與 melanin 增加共同造成。",
+      "refs": [
+       [
+        133,
+        "2431"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "主要為 melanin",
+      "ok": false,
+      "text": "PBC 或長期 cirrhosis 的色素沉著主要（predominantly）來自過多的 melanin，沒有可染出的 iron；同時有 hemosiderin 與 melanin 的是 hemochromatosis。PBC 的 hyperpigmentation 見於 25% 到 50% 的病人，由 melanin deposition 造成。",
+      "refs": [
+       [
+        133,
+        "2431"
+       ],
+       [
+        133,
+        "2433"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "HCV 較常見",
+      "ok": false,
+      "text": "HBV 與 HCV 都與 cryoglobulinemia 相關，但在 HCV 感染較常見，不是 HBV。",
+      "refs": [
+       [
+        133,
+        "2433"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "屬 medium-vessel vasculitis",
+      "ok": false,
+      "text": "Polyarteritis nodosa 可與 HBV 感染相關；此時的 medium-vessel vasculitis 被認為是含 hepatitis B surface antigen 與 immunoglobulin 的 immune complexes 形成所致，不是 small-vessel vasculitis。",
+      "refs": [
+       [
+        133,
+        "2433"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-76",
+   "topic": "Genodermatoses associated with internal malignancy (Table 134-2)",
+   "fitz": [
+    134
+   ],
+   "polarity": "negative",
+   "stem": "關於合併內臟惡性腫瘤的遺傳性皮膚症候群（genodermatoses），下列敘述何者錯誤？",
+   "options": {
+    "A": "Birt-Hogg-Dubé syndrome（FLCN）：fibrofolliculomas 與反覆自發性氣胸，主要相關的內臟惡性腫瘤為 renal carcinoma。",
+    "B": "Howel-Evans syndrome（TOC）：non-transgrediens palmoplantar keratoderma，esophageal carcinoma 的比例可高達 90%。",
+    "C": "MEN IIb（RET）：mucosal neuromas 與 marfanoid habitus，約 95% 發生 medullary thyroid carcinoma，且常合併 parathyroid tumors。",
+    "D": "Cowden disease（PTEN）：trichilemmomas 與 acral papules and keratoses，主要相關 breast cancer、thyroid cancer 與 endometrial cancer。"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "MEN IIb 沒有 parathyroid tumors（合併 parathyroid tumors 的是 MEN IIa），答案 C。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確配對",
+      "ok": false,
+      "text": "Birt-Hogg-Dubé syndrome 為 FLCN 缺陷，皮膚表現為 fibrofolliculomas、trichodiscomas、acrochordons，並有 lung cysts、emphysema 與反覆自發性氣胸；主要相關的內臟惡性腫瘤為 renal carcinoma。",
+      "refs": [
+       [
+        134,
+        "2444"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "正確配對",
+      "ok": false,
+      "text": "Howel-Evans syndrome 為 TOC 缺陷，表現為 non-transgrediens palmoplantar keratoderma 與 oral leukoplakia；主要相關惡性腫瘤為 esophageal carcinoma（up to 90%）。",
+      "refs": [
+       [
+        134,
+        "2444"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "本題答案",
+      "ok": true,
+      "text": "MEN IIb/III（RET）有 mucosal neuromas、marfanoid habitus，主要相關 medullary thyroid carcinoma（95%）與 pheochromocytoma，但 Table 134-2 明列「no parathyroid tumors」。合併 parathyroid tumors 的是 MEN IIa（medullary thyroid carcinoma 95%、pheochromocytomas、parathyroid tumors）。",
+      "refs": [
+       [
+        134,
+        "2444"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "正確配對",
+      "ok": false,
+      "text": "Cowden disease 為 PTEN 缺陷，皮膚表現為 trichilemmomas、acral papules and keratoses、oral papillomas、sclerotic fibromas；主要相關內臟惡性腫瘤為 breast cancer、thyroid cancer、endometrial cancer（另有 hamartomatous intestinal polyps）。",
+      "refs": [
+       [
+        134,
+        "2444"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 1,
+    "fixes": 1,
+    "replaced_items": true
+   }
+  },
+  {
+   "id": "M-77",
+   "topic": "Neisseria meningitidis infection — risk factors, chronic meningococcemia, skin culture, chemoprophylaxis",
+   "fitz": [
+    154
+   ],
+   "polarity": "positive",
+   "stem": "關於 [i]Neisseria meningitidis[/i] 感染的危險因子、皮膚表現、診斷與預防，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Terminal complement（C5–C9）或 alternative complement pathway（如 properdin）缺乏者，罹患 disseminated meningococcal disease 的風險增加。"
+    },
+    {
+     "id": "②",
+     "text": "與 blood、CSF 不同，皮膚病灶在給予抗生素後長達 13 小時仍曾培養出 meningococci。"
+    },
+    {
+     "id": "③",
+     "text": "Chronic meningococcemia 的皮疹呈多形性，最常見為 rose-colored macules and papules，常位於疼痛關節或受壓處周圍，並可隨間歇性發燒消退又復發。"
+    },
+    {
+     "id": "④",
+     "text": "密切接觸者的化學預防中，孕婦可使用單劑 ciprofloxacin。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③正確，④錯誤（rifampin 與 ciprofloxacin 不建議用於孕婦），答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Disseminated meningococcal disease 最大的危險因子是缺乏 bactericidal antibodies；anatomic 或 functional asplenia、HIV 感染，以及 terminal（C5 to C9）或 alternative complement pathway 缺陷者風險也增加，其中 properdin 缺乏會增加感受性。",
+      "refs": [
+       [
+        154,
+        "2785"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Blood culture 敏感度在開始抗生素後迅速下降，一項研究中 9 名 CSF 培養陽性的兒童在給藥後 2 小時內 CSF 皆轉為無菌；相較之下，曾在給予抗生素後長達 13 小時仍自皮膚病灶培養出 meningococci。皮膚可經 needle aspiration 或 punch biopsy 取得檢體。",
+      "refs": [
+       [
+        154,
+        "2786"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Chronic meningococcemia 的皮膚表現為多形性，可隨間歇性發燒消退又復發，常出現在疼痛關節或受壓處周圍；由最常見到最少見依序為 rose-colored macules and papules、類 erythema nodosum 的結節、petechiae 等。",
+      "refs": [
+       [
+        154,
+        "2784"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "化學預防用藥包括 rifampin（兒童與成人，2 天共 4 劑）、ciprofloxacin（成人，單劑）與 ceftriaxone（兒童、成人與孕婦，單劑肌肉注射）；rifampin 與 ciprofloxacin 不建議用於孕婦，孕婦應使用 ceftriaxone。",
+      "refs": [
+       [
+        154,
+        "2788"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-78",
+   "topic": "Tularemia — transmission, microbiology, diagnosis, ulceroglandular lesion",
+   "fitz": [
+    156
+   ],
+   "polarity": "negative",
+   "stem": "關於 tularemia（[i]Francisella tularensis[/i] 感染）的傳播、微生物學、診斷與皮膚表現，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "除了經節肢動物叮咬與接觸受感染動物外，也常經由 human-to-human transmission 傳播。"
+    },
+    {
+     "id": "②",
+     "text": "[i]F. tularensis[/i] 會產生 spores，因此能在環境中存活並維持感染力達數月。"
+    },
+    {
+     "id": "③",
+     "text": "[i]F. tularensis[/i] 容易培養，因此診斷通常依靠培養，而非血清學力價上升。"
+    },
+    {
+     "id": "④",
+     "text": "Ulceroglandular tularemia 在接種處出現疼痛的紅色丘疹，迅速變大成 necrotic chancriform ulcer，常覆蓋 black eschar，區域淋巴結腫大且壓痛。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③錯誤，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Tularemia 是 zoonotic 感染，可經 tick 等節肢動物叮咬、接觸受感染動物（如兔子）、aerosol、受污染飲水，少數經結膜接種或食入未煮熟的肉傳播；課本明寫沒有 human-to-human transmission。",
+      "refs": [
+       [
+        156,
+        "2830"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "[i]F. tularensis[/i] 不會產生 spores；雖然如此，它仍能在環境中存活並維持感染力達數月。",
+      "refs": [
+       [
+        156,
+        "2830"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "因為 [i]F. tularensis[/i] 不易培養（difficult to grow），診斷通常靠血清學檢查顯示力價上升；懷疑時應通知實驗室在 biohazard 條件下培養，以 cysteine-supplemented blood agar 生長最佳。",
+      "refs": [
+       [
+        156,
+        "2831"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確",
+      "ok": true,
+      "text": "Ulceroglandular tularemia 在接種處出現疼痛的紅色丘疹，迅速變大並演變成 necrotic chancriform ulcer，常覆蓋 black eschar，區域淋巴結大且壓痛；這也是美國最常見的型態。",
+      "refs": [
+       [
+        156,
+        "2830"
+       ],
+       [
+        156,
+        "2831"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-79",
+   "topic": "Rubella and congenital rubella syndrome",
+   "fitz": [
+    163
+   ],
+   "polarity": "negative",
+   "stem": "關於 rubella 的臨床表現與 congenital rubella syndrome，下列敘述何者錯誤？",
+   "options": {
+    "A": "皮疹先出現在軀幹，之後才擴散到頸部、臉部與四肢。",
+    "B": "成人（尤其女性，可達 70%）感染時可出現小關節與大關節的 arthritis，關節症狀常在皮疹消退時開始。",
+    "C": "懷孕最初 12 週內暴露於 rubella 的胎兒，可高達 85% 發生嚴重後遺症，如 sensorineural deafness、cataracts 與 congenital heart disease。",
+    "D": "Congenital rubella syndrome 的嬰兒具傳染性，建議 contact isolation 至至少 12 個月大，或 3 個月大後重複培養皆為陰性。"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "Rubella 的皮疹由臉部開始，再擴散到頸部、軀幹與四肢，答案 A。",
+    "items": [
+     {
+      "key": "A",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Rubella 的皮疹於暴露後 14 到 17 天出現，為搔癢的粉紅至紅色斑疹與丘疹，由臉部開始，迅速擴散到頸部、軀幹與四肢；軀幹病灶可融合，四肢病灶常較分散，皮疹通常 2 到 3 天開始消退。",
+      "refs": [
+       [
+        163,
+        "2992"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "成人，特別是女性（up to 70%），感染 rubella 時可發生小關節與大關節的 arthritis；關節症狀常在皮疹消退時首次出現，可持續數週，部分病人會持續或反覆發作。",
+      "refs": [
+       [
+        163,
+        "2993"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "胎兒畸形風險在懷孕早期最高：懷孕最初 12 週內暴露的胎兒，up to 85% 發生嚴重後遺症，如 microcephaly 合併智能障礙、congenital heart disease（ventricular septal defect、patent ductus arteriosus、pulmonary artery stenosis）、sensorineural deafness、cataracts、glaucoma、低出生體重與胎死腹中。",
+      "refs": [
+       [
+        163,
+        "2993"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Congenital rubella syndrome 的新生兒具傳染性，應隔離以免傳染給易感者；建議 contact isolation 直到至少 12 個月大，或 3 個月大後重複培養為陰性。",
+      "refs": [
+       [
+        163,
+        "2994"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-80",
+   "topic": "Nail fold disorders — recalcitrant chronic paronychia, retronychia, juvenile ingrown nail, distal toenail embedding",
+   "fitz": [
+    205
+   ],
+   "polarity": "negative",
+   "stem": "關於甲皺襞相關疾病（chronic paronychia、retronychia、ingrown nail）的致病機轉與手術處置，下列敘述何者錯誤？",
+   "options": {
+    "A": "Recalcitrant chronic paronychia 的主要原因是 proximal nail fold 下的 foreign body（如毛髮），可做 proximal nail fold 的 crescentic en bloc excision（最寬處 4 mm）。",
+    "B": "Retronychia 為甲板向後嵌入 proximal nail fold，超音波的 pathognomonic sign 是甲板近端邊緣與 distal interphalangeal joint 之間的距離增加。",
+    "C": "Juvenile（subcutaneous）ingrown nail 是最常見的 ingrown nail 類型，病人自行剪去嵌入的甲角後，殘留的 nail spicule 刺入側甲溝，造成續發感染與過多肉芽組織。",
+    "D": "趾甲經手術拔除或外傷（如 tennis toe）脫落後，遠端甲下組織失去甲板的生理對抗壓力而肥厚，新生甲板頂住此遠端組織，形成 distal toenail embedding。"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "Retronychia 的超音波 pathognomonic sign 是甲板近端邊緣與 DIP joint 的距離縮短，答案 B。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Proximal nail fold 下的 foreign body（例如毛髮）是 recalcitrant chronic paronychia 的主要原因。治療可做 crescentic excision：以 Freer septum elevator 保護 matrix 與 extensor tendon，en bloc 切除一段從一側側甲皺襞延伸到另一側、最寬處 4 mm 的新月形全層皮膚。",
+      "refs": [
+       [
+        205,
+        "3786"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Retronychia 是甲板向後嵌入 proximal nail fold 造成的近端再生長，常見於大腳趾，多在手指或腳趾急性傷害後發生；超音波的 pathognomonic sign 是甲板近端邊緣與 distal interphalangeal joint 之間的距離縮短（shortening），不是增加。手術治療為拔除帶有重疊角質層的甲板。",
+      "refs": [
+       [
+        205,
+        "3788"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Juvenile 或 subcutaneous embedded nail 是最常見的 ingrown nail 類型，通常嵌入內側，但常兩側都受影響。病人為緩解疼痛常自行剪掉發炎腫脹軟組織下的甲角，殘留部分形成 nail spicule 刺穿側甲溝上皮，造成續發感染與過多 granulation tissue。",
+      "refs": [
+       [
+        205,
+        "3788"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "手術拔甲或外傷（如 tennis toe）造成趾甲脫落後可引發 distal toenail embedding：遠端甲下組織失去甲板的生理對抗壓力而肥厚，新生甲板頂住這道遠端組織牆。治療是在末節趾周圍做新月形楔狀切除（最寬處 4 mm），並須從骨面剝離。",
+      "refs": [
+       [
+        205,
+        "3787"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-81",
+   "topic": "Cosmeceuticals — humectants, occlusives, stinging-type sensitive skin, cosmetic allergy",
+   "fitz": [
+    207
+   ],
+   "polarity": "positive",
+   "stem": "關於保濕成分的特性、stinging type 敏感肌與化妝品過敏，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Humectants 在大氣濕度高於 80% 時效果最好；在低濕度環境下可能從較深層的表皮與真皮吸水而使皮膚更乾，因此與 occlusives 併用效果較佳。"
+    },
+    {
+     "id": "②",
+     "text": "Occlusives 使 TEWL 下降超過 40% 可能導致 maceration 與細菌增加，因此 occlusive 成分的用量有其上限。"
+    },
+    {
+     "id": "③",
+     "text": "Stinging type 敏感肌的 sensory irritation 由 C nerve fibers 傳導，易感者於塗抹後一小時內在臉部出現刺痛，且刺痛未必伴隨紅斑。"
+    },
+    {
+     "id": "④",
+     "text": "多項研究顯示，約 10% 接受 patch test 的皮膚科病人對至少一種常見化妝品成分過敏，最常見的過敏原為 fragrances 與 preservatives。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "E"
+   ],
+   "expl": {
+    "summary": "①②③④皆正確，答案 E。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Humectants 能從大氣吸水，在大氣濕度高於 80% 時最有效；但在低濕度環境下可能從較深層的表皮與真皮吸水，使皮膚更乾燥，因此與 occlusives 併用時效果較好。其效果是暫時性的，通常維持不到 24 小時。",
+      "refs": [
+       [
+        207,
+        "3807"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Occlusives 覆蓋皮膚表面以降低 TEWL，只在留在皮膚上時有效；但 TEWL 下降超過 40% 可能導致 maceration 與細菌增加，所以 occlusive 成分的用量有其上限。",
+      "refs": [
+       [
+        207,
+        "3807"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "塗抹化妝品或外用藥後出現灼熱、刺痛或癢，卻沒有可見或顯微鏡下變化，稱為 sensory irritation，其傳入路徑由分布於真皮與表皮的 C nerve fibers 負責；易感者在塗抹後一小時內於臉部出現刺痛，且許多病人有刺痛感但沒有發紅。",
+      "refs": [
+       [
+        207,
+        "3809"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "多項研究顯示約 10% 接受 patch test 的皮膚科病人對至少一種常見化妝品成分過敏，其中 fragrances 與 preservatives 是最常見的過敏原（Table 207-5）。",
+      "refs": [
+       [
+        207,
+        "3809"
+       ],
+       [
+        207,
+        "3810"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "E/E",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-82",
+   "topic": "Botulinum toxin — mechanism, recovery, product properties",
+   "fitz": [
+    216
+   ],
+   "polarity": "positive",
+   "stem": "關於 botulinum toxin 的作用機轉、藥效消退與各商品製劑的特性，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Serotype B 的 rimabotulinumtoxin B 所切斷的 SNARE 蛋白是 VAMP（synaptobrevin），而非 SNAP-25。"
+    },
+    {
+     "id": "②",
+     "text": "藥效消退的機轉之一是被阻斷的神經末梢在原末端附近長出 collateral sprouts，與肌肉或腺體重新建立接觸；在原末梢修復並重新與目標器官建立聯繫的同時，sprouts 逐漸被吸收，最後只剩原末梢。"
+    },
+    {
+     "id": "③",
+     "text": "以含 preservative（benzyl alcohol）的無菌生理食鹽水稀釋 Botox 或 Dysport 似可減輕注射刺痛；serotype B 的 Myobloc 則因 pH 較低，注射時較不舒服。"
+    },
+    {
+     "id": "④",
+     "text": "Incobotulinumtoxin A（Xeomin）與 onabotulinumtoxinA 相同，是含 accessory complexing proteins、分子量約 900 kDa 的 neurotoxin complex。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③正確，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Toxin 的 light chain 進入神經細胞質後切斷 SNARE 蛋白複合體以抑制 acetylcholine 胞吐；type A 切斷 SNAP-25，type B 則切斷 VAMP（vesicle-associated membrane protein，又稱 synaptobrevin）。Myobloc（rimabotulinumtoxin B）即為 serotype B 製劑。",
+      "refs": [
+       [
+        216,
+        "3922"
+       ],
+       [
+        216,
+        "3924"
+       ],
+       [
+        216,
+        "3925"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "神經如何擺脫 toxin 作用只部分被了解：被 chemodenervation 的神經末梢在原末端附近長出 collateral sprouts，與肌肉或腺體接觸後肌肉恢復活動、腺體恢復分泌；同時原末梢分解被阻斷的 SNARE 蛋白並合成新蛋白。在這些修復進行、原末梢重新與目標器官建立聯繫的同時，sprouts 慢慢被吸收，最後只剩恢復功能的原末梢。",
+      "refs": [
+       [
+        216,
+        "3922-3923"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "使用含 preservative（benzyl alcohol）的無菌生理食鹽水作為稀釋液，似可減輕 Botox 與 Dysport 的注射刺痛；serotype B 的 Myobloc 因 pH 較低，注射時較不舒服，但以液體形式在室溫下可穩定保存數個月。",
+      "refs": [
+       [
+        216,
+        "3923"
+       ],
+       [
+        216,
+        "3928"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Serotype A 與 B 的分子在生合成時可被蛋白包覆形成 500 至 900 kDa 的 neurotoxin complex，但 Xeomin（incobotulinumtoxin A）只由 150-kDa 的 dichain 組成，不含 accessory proteins。約 900 kDa complex 的是 Botox（onabotulinumtoxinA）。",
+      "refs": [
+       [
+        216,
+        "3922"
+       ],
+       [
+        216,
+        "3925"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 1,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-83",
+   "topic": "Irritant hand dermatitis — management counseling",
+   "fitz": [
+    25
+   ],
+   "polarity": "positive",
+   "stem": "32 歲護理師，冬季時雙手反覆發紅、乾裂、刺痛，以指縫與手指皺褶處最明顯。她每班需頻繁洗手，並常長時間戴防水手套。標準系列 patch test 無相關陽性反應，臨床診斷為 irritant hand dermatitis。下列處置建議何者正確？",
+   "options": {
+    "A": "在允許的情況下以 alcohol-based hand sanitizer 取代洗手；若需戴防水手套超過 10 分鐘，內層加戴棉質手套。",
+    "B": "皮膚外觀一恢復正常即可回到原本的洗手與濕性工作頻率，因為刺激閾值會隨外觀同步恢復。",
+    "C": "宜長期每日使用 topical corticosteroids 維持治療，因長期使用可增厚表皮、強化屏障功能。",
+    "D": "與 allergic contact dermatitis 相同，需完全避免刺激物才會改善，單純減少接觸的頻率與時間並無幫助。"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "以酒精性乾洗手取代洗手、手套超過 10 分鐘內層加棉手套，答案 A。",
+    "items": [
+     {
+      "key": "A",
+      "label": "本題答案",
+      "ok": true,
+      "text": "只要允許，alcohol-based hand sanitizers 應取代洗手，尤其在室內暖氣使濕度降低的寒冷季節。濕性工作應戴 occlusive gloves，但戴的時間越短越好；已有 irritant dermatitis 者若戴手套超過 10 分鐘，建議在 occlusive gloves 內加戴棉質手套。",
+      "refs": [
+       [
+        25,
+        "424"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "應避免刺激物至外觀恢復後數週",
+      "ok": false,
+      "text": "所有刺激物應在外觀恢復後仍持續避免數週。實驗中以 sodium lauryl sulfate 誘發的皮膚炎，在外觀恢復後刺激閾值降低的情形持續超過 10 週，閾值並未隨外觀同步恢復。",
+      "refs": [
+       [
+        25,
+        "425"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "長期使用可能損害屏障",
+      "ok": false,
+      "text": "Topical corticosteroids 雖常被使用，但長期使用可能使表皮變薄而損害屏障功能，方向相反。課本也指出因常用治療的證據薄弱，避免刺激物是最好的治療選擇。",
+      "refs": [
+       [
+        25,
+        "424"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "減少接觸即可能改善",
+      "ok": false,
+      "text": "減少接觸刺激物的時間與頻率可能改善 irritant contact dermatitis 的症狀；需要完全避免才會消退的是 allergic contact dermatitis。減少暴露頻率也可能讓工作者繼續原本的工作。",
+      "refs": [
+       [
+        25,
+        "414"
+       ],
+       [
+        25,
+        "424"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-84",
+   "topic": "Sweet syndrome — histiocytoid variant, potassium iodide, malignancy follow-up, HLA vs Behçet",
+   "fitz": [
+    36
+   ],
+   "polarity": "negative",
+   "stem": "關於 Sweet syndrome 的病理變異、治療副作用、追蹤與鑑別診斷，下列敘述何者錯誤？",
+   "options": {
+    "A": "Histiocytoid Sweet syndrome 的真皮浸潤細胞外觀似組織球，被認為是 immature myeloid cells；此型常合併惡性腫瘤。",
+    "B": "以 potassium iodide 治療時，潛在的藥物副作用包括 vasculitis 與 hypothyroidism。",
+    "C": "相關血液惡性腫瘤可在 Sweet syndrome 皮膚病灶出現後長達 11 年才被診斷，因此有學者建議每 6–12 個月追蹤 CBC。",
+    "D": "在日本，HLA-B51 在 Sweet syndrome 顯著較高，而 HLA-B54 則較常與 Behçet disease 相關。"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "HLA 標記寫反了：日本的 Behçet disease 與 B51、Sweet syndrome 與 B54 相關，答案 D。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確",
+      "ok": false,
+      "text": "Histiocytoid Sweet syndrome 的皮膚形態與 idiopathic Sweet syndrome 相似，但真皮浸潤由外觀似組織球的 mononuclear cells 組成，代表 immature myeloid cells；此型常合併惡性腫瘤。McKee 亦寫這些似組織球的細胞被推測為 immature granulocytes，除了組織球標記外，多數細胞對 myeloperoxidase 呈陽性。",
+      "refs": [
+       [
+        36,
+        "591"
+       ],
+       [
+        36,
+        "598"
+       ],
+       [
+        "M",
+        "689"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "正確",
+      "ok": false,
+      "text": "Potassium iodide 是 Sweet syndrome 的 first-line 系統性治療之一，其潛在藥物副作用包括 vasculitis 與 hypothyroidism；colchicine 的副作用則是腹瀉、腹痛、噁心嘔吐等腸胃症狀，降低劑量後可能改善。",
+      "refs": [
+       [
+        36,
+        "602"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確",
+      "ok": false,
+      "text": "Cohen 與 Kurzrock 對無癌症病史的新診斷病人提出惡性腫瘤篩檢建議，並認為每 6 到 12 個月檢查 CBC（含白血球分類與血小板）是合理的，因為曾有報告 Sweet syndrome 皮膚病灶的出現早於相關血液惡性腫瘤的診斷長達 11 年。",
+      "refs": [
+       [
+        36,
+        "602"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Behçet disease 與 Sweet syndrome 都可在外傷處出現病灶，HLA 分析是重要的鑑別點：在日本，B51 在 Behçet disease 顯著較高，B54 則較常與 Sweet syndrome 相關；題目寫反了。",
+      "refs": [
+       [
+        36,
+        "599-600"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-85",
+   "topic": "Subcorneal pustular dermatosis — etiology, clinical course, histopathology",
+   "fitz": [
+    38
+   ],
+   "polarity": "negative",
+   "stem": "關於 subcorneal pustular dermatosis 的病因、臨床病程與組織病理，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "膿疱的細菌培養常可長出致病菌，且抗生素治療通常有效。"
+    },
+    {
+     "id": "②",
+     "text": "Acantholysis（棘層鬆解）是膿疱形成的主要機轉，早期病灶即可見大量 acantholytic cells。"
+    },
+    {
+     "id": "③",
+     "text": "膿疱下方的表皮常見明顯 spongiosis 與 spongiform pustules，與 pustular psoriasis 相似。"
+    },
+    {
+     "id": "④",
+     "text": "在身體下垂部位，膿液常積聚於膿疱下半部；病灶癒合後不留萎縮或疤痕，但偶可留下褐色色素沉著。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③錯誤，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "SPD 病因不明，膿疱的細菌培養一致地沒有細菌生長（consistently do not reveal bacterial growth）；與 impetigo 鑑別時，膿疱內無細菌、抗生素治療無效正是支持 SPD 的線索。McKee 亦描述 SPD 是看似非感染性（apparently noninfective）的發疹。",
+      "refs": [
+       [
+        38,
+        "617"
+       ],
+       [
+        38,
+        "619"
+       ],
+       [
+        "M",
+        "238"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Acantholysis 並不參與膿疱形成，只有在較舊的病灶中可能見到少數 acantholytic cells（secondary acantholysis）。McKee 亦寫較舊的病灶可能含有 acantholytic cells。",
+      "refs": [
+       [
+        38,
+        "618"
+       ],
+       [
+        "M",
+        "239"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "SPD 膿疱下方的表皮病變出奇地少，除了移行中的白血球外，幾乎沒有 spongiosis 或表皮細胞的 cytolytic damage；有 spongiform pustules 的是 generalized pustular psoriasis。McKee 亦寫膿疱下方表皮變化很少，與 pustular psoriasis 的差別在於膿疱深處典型地沒有 spongiform change。",
+      "refs": [
+       [
+        38,
+        "618"
+       ],
+       [
+        38,
+        "619"
+       ],
+       [
+        "M",
+        "238"
+       ],
+       [
+        "M",
+        "239"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確",
+      "ok": true,
+      "text": "在下垂部位，膿液特徵性地積聚於膿疱下半部（hypopyon formation）；病灶不留萎縮或疤痕，但偶有褐色色素沉著標記先前侵犯處。McKee 亦寫有時可見液面（fluid levels），並指出 postinflammatory hyperpigmentation 常見（Fitzpatrick 則描述為偶有褐色色素沉著）。",
+      "refs": [
+       [
+        38,
+        "617"
+       ],
+       [
+        38,
+        "618"
+       ],
+       [
+        "M",
+        "238"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-86",
+   "topic": "Inherited epidermolysis bullosa — subtype-specific clinical features and complications",
+   "fitz": [
+    60
+   ],
+   "polarity": "positive",
+   "stem": "關於 inherited epidermolysis bullosa（EB）各亞型的臨床表現、併發症與分子缺陷，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Generalized severe junctional EB（Herlitz）病童在嬰兒早期出現聲音沙啞（hoarseness），是不祥的徵兆。"
+    },
+    {
+     "id": "②",
+     "text": "Severe recessive dystrophic EB 極常見手指被「mitten」狀皮膚包覆的 pseudosyndactyly，手術鬆解後容易復發，可能需定期重複手術。"
+    },
+    {
+     "id": "③",
+     "text": "Dilated cardiomyopathy 是 severe DEB 與 JEB 病人可能致命的併發症，與慢性貧血高度相關。"
+    },
+    {
+     "id": "④",
+     "text": "EB simplex with mottled pigmentation 是由 plectin 基因突變所致。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③正確，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Herlitz JEB 常合併大氣道受侵犯，包括 tracheolaryngeal stenosis 或 obstruction，嬰兒早期出現 hoarseness 是不祥的徵兆；反之，存活過嬰兒期的病人若沒有明顯 hoarseness，被視為較好的預後徵象。McKee 亦寫 generalized severe JEB 的 hoarseness 與 stridor 可能代表喉部或聲門上侵犯，特別是可能危及生命的狹窄。",
+      "refs": [
+       [
+        60,
+        "1018-1019"
+       ],
+       [
+        "M",
+        "125"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Severe RDEB（Hallopeau-Siemens）中，手指閉合於「mitten」狀皮膚內形成的 pseudosyndactyly 是極常見的表現；mitten pseudosyndactyly 可手術鬆解，但因強烈的復發傾向，可能需定期重複手術，術後 splinting 對減少手部變形復發十分重要。McKee 亦描述反覆水疱與進行性結疤導致相鄰手指與腳趾融合（pseudosyndactyly），外觀似 mitten。",
+      "refs": [
+       [
+        60,
+        "1022"
+       ],
+       [
+        60,
+        "1026"
+       ],
+       [
+        "M",
+        "128"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Dilated cardiomyopathy 是 severe DEB 與 JEB 病人毀滅性且可能致命的併發症，與慢性貧血高度相關；RDEB 病人常有特別嚴重、可能對口服鐵劑反應不佳的缺鐵，可考慮靜脈鐵劑。",
+      "refs": [
+       [
+        60,
+        "1027"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "EBS with mottled pigmentation 的病人帶有 keratin 5 胺基端（amino terminus）特定區域的突變（Table 60-1：KRT5／keratin 5）；plectin 突變造成的是 EBS with muscular dystrophy 與 EBS Ogna。McKee 亦寫此型多數為 keratin 5 的特定 heterozygous missense mutation。",
+      "refs": [
+       [
+        60,
+        "1015"
+       ],
+       [
+        60,
+        "1017"
+       ],
+       [
+        "M",
+        "124"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-87",
+   "topic": "Rosacea — clinical features and rare subforms",
+   "fitz": [
+    79
+   ],
+   "polarity": "positive",
+   "stem": "關於 rosacea 的臨床表現與特殊亞型，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Papulopustular rosacea 沒有 comedones，可據此與 acne 或 Favre-Racouchot disease 區分。"
+    },
+    {
+     "id": "②",
+     "text": "Rosacea fulminans（pyoderma faciale）好發於中老年男性，女性罕見。"
+    },
+    {
+     "id": "③",
+     "text": "長期以涵蓋 gram-positive 細菌的外用或全身性抗生素治療 rosacea，可篩選出 gram-negative 菌而形成 gram-negative rosacea，特徵為紅斑背景上出現極小的黃色膿疱。"
+    },
+    {
+     "id": "④",
+     "text": "Rhinophyma 在女性病人的發生率約為男性的 20 倍。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "①③正確，答案 A。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Rosacea 沒有 comedones，這點可區分 papulopustular rosacea 與 acne 或 Favre-Racouchot disease。McKee 亦寫 rosacea 與 acne vulgaris 的區別在於沒有 comedones，並有 telangiectasia 與 flushing 病史。",
+      "refs": [
+       [
+        79,
+        "1420"
+       ],
+       [
+        "M",
+        "1125"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Rosacea fulminans（pyoderma faciale-O'Leary）是罕見、急性或亞急性的 rosacea 極端型，好發於青春期後（20–30 歲）女性，特別是懷孕女性；男性只是罕見受影響。",
+      "refs": [
+       [
+        79,
+        "1424"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "長期以涵蓋 gram-positive 細菌的外用或全身抗生素治療 rosacea，會篩選出 gram-negative 病原菌；特徵是在原有或新生的紅斑背景上出現極小的黃色膿疱。臨床外觀與 papulopustular rosacea 無法區分，但因治療不同，鑑別十分重要。",
+      "refs": [
+       [
+        79,
+        "1425"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "方向相反：rhinophyma 在男性病人的發生率約為女性的 20 倍（almost 20 times），rhinophyma 是男性病人的特徵。",
+      "refs": [
+       [
+        79,
+        "1420"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-88",
+   "topic": "Hidradenitis suppurativa — epidemiology, pathogenesis and severity distribution",
+   "fitz": [
+    84
+   ],
+   "polarity": "positive",
+   "stem": "關於 hidradenitis suppurativa 的流行病學、致病機轉與嚴重度分布，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "HS 以男性病人較多，男女比約 3.3:1。"
+    },
+    {
+     "id": "②",
+     "text": "皮脂腺增生（sebaceous gland hyperplasia）是 HS 致病的早期事件，發生在淋巴球性毛囊發炎與 infundibulum 角化過度之前。"
+    },
+    {
+     "id": "③",
+     "text": "依 Hurley staging，大多數 HS 病人屬於 stage III。"
+    },
+    {
+     "id": "④",
+     "text": "在家族性 HS 中，已發現 γ-secretase complex 次單元（presenilin、presenilin enhancer-2、nicastrin）基因的 loss-of-function 突變。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "只有④正確，答案 D。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤",
+      "ok": false,
+      "text": "女性受影響的比例不成比例地高，female-to-male ratio 為 3.3:1；女性較易出現 axillary 與 genitofemoral 病灶，男性則傾向 perineal 與 perianal 病灶。",
+      "refs": [
+       [
+        84,
+        "1480"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤",
+      "ok": false,
+      "text": "HS 早期出現的是皮脂腺萎縮（sebaceous gland atrophy），而非增生；它發生在淋巴球性毛囊發炎與 infundibulum 角化過度之前，但究竟是原發事件或上游變化的反映仍待確定。",
+      "refs": [
+       [
+        84,
+        "1483"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤",
+      "ok": false,
+      "text": "絕大多數 HS 病人（68%）屬 Hurley stage I；stage II 與 stage III 分別約占 28% 與 4%。",
+      "refs": [
+       [
+        84,
+        "1485"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "約三分之一病人有家族史；在 HS 家族中已發現編碼 γ-secretase complex 次單元蛋白（presenilin PSEN1／PSEN2、presenilin enhancer-2 PSENEN、nicastrin NCSTN）基因的 loss-of-function 突變。動物模式中 γ-secretase 缺乏會造成皮脂腺萎縮與 epidermal cyst 形成，並影響 Notch signaling。",
+      "refs": [
+       [
+        84,
+        "1483"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-89",
+   "topic": "Telogen effluvium — clinical subtypes, mechanisms and trichoscopy",
+   "fitz": [
+    86
+   ],
+   "polarity": "positive",
+   "stem": "關於 telogen effluvium（TE）的臨床亞型、致病機轉與 trichoscopy 表現，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Chronic telogen effluvium 是好發於中年女性的特發性瀰漫性 club hair 落髮，落髮持續超過 6 個月至數年且起伏不定，常可見明顯的 bitemporal recession。"
+    },
+    {
+     "id": "②",
+     "text": "Effluvium of the newborn 屬生理性 TE，落髮在出生後 4 個月內開始，其 telogen counts 約 60%–80%，高於其他病理性 TE。"
+    },
+    {
+     "id": "③",
+     "text": "開始使用 topical minoxidil 時出現的落髮期，可用 immediate telogen release 的機轉解釋。"
+    },
+    {
+     "id": "④",
+     "text": "Trichoscopy 下，TE 可見毛髮密度下降與 empty hair openings（活動期）或 short vellus hairs（恢復期），而不應出現 hair diameter diversity、black dots 等提示 AGA 或 alopecia areata 的徵象。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "E"
+   ],
+   "expl": {
+    "summary": "四個敘述都正確，答案 E。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "CTE 是特發性的瀰漫性 club hair 落髮，見於第四至第六個十年的中年女性；telogen 落髮持續超過 6 個月至數年並起伏不定，常可見明顯的 bitemporal recession，需排除 female pattern hair loss。McKee 亦描述 CTE 好發於中年（停經後）女性，持續超過 6 個月、原因不明、病程起伏，常合併 bitemporal recession。",
+      "refs": [
+       [
+        86,
+        "1508"
+       ],
+       [
+        "M",
+        "1083"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "嬰兒可見生理性的 TE，落髮在出生後 4 個月內開始，可視為出生後 6 個月內完成的第一代毛髮全面更替；此型的 telogen counts 約 60%–80%，高於其他病理性 TE。",
+      "refs": [
+       [
+        86,
+        "1508-1509"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "毛囊在前一次 anagen 結束後約 100 天釋出 club hair 並進入新的 anagen；若提早進入 anagen，落髮頻率會增加而造成 TE（immediate telogen release），開始使用 topical minoxidil 時的落髮期即可用此機轉解釋。McKee 亦將 topical minoxidil therapy 列為 immediate telogen release 的例子。",
+      "refs": [
+       [
+        86,
+        "1511"
+       ],
+       [
+        "M",
+        "1084"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Trichoscopy 可區分 TE、AGA 與 diffuse AA；TE 可見毛髮密度下降與 empty hair openings（活動期）或 short vellus hairs（恢復期），而 hair diameter diversity、broken hairs、black dots、tapering hairs 等提示 AGA 或 AA 的徵象應不存在，因此 TE 的 trichoscopy 診斷相當程度是排除性的。",
+      "refs": [
+       [
+        86,
+        "1513"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/E",
+    "blind_match": true,
+    "ambiguity": "minor",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-90",
+   "topic": "Hair shaft disorders — trichorrhexis nodosa, trichothiodystrophy, Menkes syndrome, uncombable hair",
+   "fitz": [
+    89
+   ],
+   "polarity": "negative",
+   "stem": "關於 hair shaft disorders 的病因、顯微鏡診斷與相關症候群，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Trichorrhexis nodosa 以遺傳型較常見，外力（機械、化學、熱）造成的後天型較少見。"
+    },
+    {
+     "id": "②",
+     "text": "Trichothiodystrophy 的毛髮在 polarized light microscopy 下呈明暗交替的「tiger tail」條紋，與毛髮 sulfur 含量不規則有關。"
+    },
+    {
+     "id": "③",
+     "text": "Menkes syndrome 為 ATP7A 銅轉運蛋白基因缺陷，診斷依據為血清 copper 與 ceruloplasmin 濃度上升。"
+    },
+    {
+     "id": "④",
+     "text": "Uncombable hair syndrome 的毛髮橫切面在電子顯微鏡下呈三角形或腎形，並有淺的縱向溝槽，但頭髮脆性並未增加。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "①③錯誤，答案 A。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Trichorrhexis nodosa 可為後天或遺傳，其中後天型較常見，由機械、化學與熱的外力傷害造成；遺傳型在出生時或出生後數月內出現，為獨立的 autosomal dominant 疾病。TN 是與頭髮斷裂相關的最常見 hair shaft disorder。",
+      "refs": [
+       [
+        89,
+        "1537"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確",
+      "ok": true,
+      "text": "TTD 在 polarized light microscopy 下可見明暗交替的「tiger tail」條紋，這種交替模式與毛髮 sulfur 含量不規則有關，較亮處代表 sulfur 濃度較低；TTD 的毛髮為 sulfur-deficient 與 cysteine-deficient。McKee 亦寫需以 polarized light 觀察典型的明暗交替條紋，外觀似 tiger's tail，且 TTD 毛髮的 cystine 濃度顯著下降。",
+      "refs": [
+       [
+        89,
+        "1539"
+       ],
+       [
+        "M",
+        "1112"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Menkes syndrome 是 ATP7A（copper transporter）基因缺陷造成的 X-linked recessive 疾病，診斷依據是血中 copper 與 ceruloplasmin 濃度偏低，而非上升；預後差，多數病人活不過 3 歲。McKee 亦寫 Menkes syndrome 是 X-linked recessive 的銅代謝疾病，主要的毛髮表現是 pili torti 造成的脆性。",
+      "refs": [
+       [
+        89,
+        "1540"
+       ],
+       [
+        "M",
+        "1117"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確",
+      "ok": true,
+      "text": "Uncombable hair syndrome（pili trianguli et canaliculi）的毛髮橫切面在電子顯微鏡下呈三角形或腎形，並有淺的縱向溝槽，被認為是其外觀的成因；頭髮沒有脆性增加，量與長度通常正常。McKee 亦寫水平切面的毛囊與毛幹呈三角形、腎形或心形，可有縱向溝槽，且頭髮脆性通常不是此病特徵。",
+      "refs": [
+       [
+        89,
+        "1544"
+       ],
+       [
+        "M",
+        "1114-1115"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-91",
+   "topic": "Skin aging — appendages (eccrine, apocrine, nails) and sensory changes",
+   "fitz": [
+    106
+   ],
+   "polarity": "negative",
+   "stem": "關於皮膚附屬器與皮膚感覺功能隨年齡老化的變化，下列敘述何者錯誤？",
+   "options": {
+    "A": "Eccrine glands 的數目與分泌量隨年齡下降，使老年人較易發生 heat stroke。",
+    "B": "老化皮膚中 apocrine glands 的大小與功能皆下降。",
+    "C": "指甲的線性生長速度約在 25 歲前逐漸增加，之後下降；老年人的指甲通常較脆。",
+    "D": "隨年齡增加，皮膚的 tactile threshold 與 thermal pain threshold 皆下降。"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "老化時 tactile threshold 與 thermal pain threshold 都是上升而非下降，答案 D。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Eccrine glands 的數目與分泌量（number and output）都隨年齡下降；自發性流汗減少使老年人較容易發生 heat stroke。",
+      "refs": [
+       [
+        106,
+        "1784"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "老化皮膚的 apocrine glands 大小與功能都下降（reduction in the size and function）。",
+      "refs": [
+       [
+        106,
+        "1784"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "大約到 25 歲之前，指甲的線性生長速度穩定增加，之後下降；老年人的指甲通常較脆（more brittle），也可能因脂質組成變化而出現 ridging。",
+      "refs": [
+       [
+        106,
+        "1784"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "本題答案",
+      "ok": true,
+      "text": "隨年齡增加，tactile thresholds 是上升（increased），可能與 Pacinian 及 Meissner corpuscles 的大小與密度下降有關；老年人的 thermal pain thresholds 也是上升，並非下降。",
+      "refs": [
+       [
+        106,
+        "1784"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-92",
+   "topic": "Appendage tumors — hidradenoma/cylindroma/syringoma genetics and origin",
+   "fitz": [
+    109
+   ],
+   "polarity": "positive",
+   "stem": "關於 hidradenoma、cylindroma 與 syringoma 的分子遺傳與組織來源，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Hidradenoma 約半數帶有 t(6;9) 所形成的 MYB-NFIB 融合基因。"
+    },
+    {
+     "id": "②",
+     "text": "Sporadic cylindroma 可帶有與 adenoid cystic carcinoma 相似的 MYB-NFIB 融合基因，而帶 CYLD 突變的遺傳性 cylindroma 則沒有此轉位。"
+    },
+    {
+     "id": "③",
+     "text": "以多發性 cylindroma 為特徵的 Brooke-Spiegler syndrome 是 CYLD 基因突變所致的 autosomal recessive 疾病。"
+    },
+    {
+     "id": "④",
+     "text": "Syringoma 被認為源自 intraepidermal eccrine duct，病理上導管結構常帶有 tadpole 或 comma 形的尾巴。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "②④正確，答案 B。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤",
+      "ok": false,
+      "text": "約 50% 的 hidradenoma 帶有 t(11;19) 轉位，形成 MECT1（TORC1、CRTC1）與 MAML2 的融合，與 salivary gland mucoepidermoid carcinoma 相同；McKee 亦寫 CRTC1-MAML2 融合見於約 50% hidradenoma，其餘至少一部分帶 t(6;22)（EWS-POU5F1）。MYB-NFIB 融合是 sporadic cylindroma 的特徵。",
+      "refs": [
+       [
+        109,
+        "1823"
+       ],
+       [
+        "M",
+        "1651"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Sporadic cylindroma 被證實帶有 MYB-NFIB 融合基因，與 adenoid cystic carcinoma 類似；帶 CYLD 突變的家族性 cylindroma 則不含此轉位。McKee 亦指出 t(6;9) 形成 MYB-NFIB 融合，而遺傳性 CYLD 缺陷腫瘤沒有 t(6;9)，MYB 經其他途徑活化。",
+      "refs": [
+       [
+        109,
+        "1825"
+       ],
+       [
+        "M",
+        "1658"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Brooke-Spiegler syndrome 是由位於 16q 的 CYLD tumor-suppressor gene 突變所致的 autosomal dominant 疾病，病人有多發性 cylindroma、spiradenoma 與 trichoepithelioma；McKee 亦稱之為 autosomal dominant Brooke-Spiegler syndrome。",
+      "refs": [
+       [
+        109,
+        "1825"
+       ],
+       [
+        "M",
+        "1657"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Syringoma 被認為源自 intraepidermal eccrine ducts；病理上為上層真皮 sclerotic stroma 中的細胞索、細胞巢與小導管，導管典型帶有 tadpole 或 comma 形的尾巴。McKee 亦寫 syringoma 是 acrosyringium（intraepidermal eccrine sweat duct）的 adenoma，並有特徵性的 tadpole configuration。",
+      "refs": [
+       [
+        109,
+        "1827"
+       ],
+       [
+        "M",
+        "1646"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "minor",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-93",
+   "topic": "Gout — crystal diagnosis, tophus histopathology, colchicine interactions",
+   "fitz": [
+    128
+   ],
+   "polarity": "negative",
+   "stem": "關於 gout 的診斷、痛風石（tophus）病理與治療，下列敘述何者錯誤？",
+   "options": {
+    "A": "痛風石的病理可見 granulomatous inflammation 圍繞 urate 沉積，常伴有許多giant cells。",
+    "B": "確診有賴以偏光顯微鏡找到細胞內 positively birefringent 的 rhomboid 形結晶。",
+    "C": "Colchicine 與 clarithromycin、erythromycin 或 cyclosporine 等 P-glycoprotein／CYP3A4 強力抑制劑併用時，曾有嚴重不良反應與死亡的報告。",
+    "D": "若要在痛風石切片中保留 urate 結晶，需以 alcohol fixation 與 anhydrous processing 處理，因 monosodium urate 為水溶性。"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "Urate 結晶在偏光下為 negatively birefringent 的針狀結晶，答案 B。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "痛風石的病理為 granulomatous inflammation 圍繞 yellow-brown urate crystals 或放射狀排列的針狀空隙（處理過程中結晶溶解所致）；McKee 亦寫 urate 沉積周圍有明顯的 granulomatous response，通常可見許多 giant cells。",
+      "refs": [
+       [
+        128,
+        "2315"
+       ],
+       [
+        "M",
+        "603"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Gout 的準確診斷有賴以偏光顯微鏡找到細胞內 negatively birefringent、needle-shaped 的結晶，而非 positively birefringent 的 rhomboid 形結晶；McKee 亦寫 urate 為成束的針狀棕色結晶，在偏光下呈 negative birefringence。",
+      "refs": [
+       [
+        128,
+        "2315"
+       ],
+       [
+        "M",
+        "603"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Colchicine 會抑制 P-glycoprotein 與 cytochrome 3A4 途徑；與其他強力抑制這些途徑的藥物（例如 clarithromycin、erythromycin、cyclosporine）併用時，曾有嚴重不良反應與死亡的報告。",
+      "refs": [
+       [
+        128,
+        "2315"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Monosodium urate 是水溶性的，要在痛風石中顯示 uric acid crystals 需要 alcohol fixation 與 anhydrous processing；formalin 固定的切片中結晶多呈 amorphous material。",
+      "refs": [
+       [
+        "M",
+        "603"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-94",
+   "topic": "Genome instability — Bloom, Werner, Rothmund-Thomson syndromes and Fanconi anemia",
+   "fitz": [
+    130
+   ],
+   "polarity": "positive",
+   "stem": "關於 Bloom syndrome、Werner syndrome、Rothmund-Thomson syndrome 與 Fanconi anemia 等 genome instability 疾病，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Bloom syndrome 由編碼 RecQ helicase 的 BLM 基因突變所致，其細胞的 spontaneous sister chromatid exchanges 約增加 10 倍，可用於診斷。"
+    },
+    {
+     "id": "②",
+     "text": "Werner syndrome 病人自嬰兒期即生長遲緩，並在幼兒期出現早老表現。"
+    },
+    {
+     "id": "③",
+     "text": "Rothmund-Thomson syndrome 的 poikiloderma 自嬰兒期由臉部開始，之後擴散到四肢與臀部；約三分之二病人帶有 RECQL4 突變。"
+    },
+    {
+     "id": "④",
+     "text": "Fanconi anemia 的皮膚異常少見（約一成病人），主要表現為 diffuse hypopigmentation。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "①③正確，答案 A。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Bloom syndrome 由編碼 RecQ helicase 的 BLM 突變所致，細胞呈 hyperrecombination；診斷依據為 quadriradial chromosomes（見於 0.5% 到 14% 的淋巴球）與約 10 倍增加的 spontaneous sister chromatid exchanges。",
+      "refs": [
+       [
+        130,
+        "2362"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Werner syndrome（adult progeria）病人在青春期之前臨床上正常，到青春期才沒有出現應有的 growth spurt，並開始提早出現老化特徵，例如頭髮變灰變細、皮下脂肪流失與皮膚皺紋。",
+      "refs": [
+       [
+        130,
+        "2362"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "RTS 的特徵 poikiloderma（variegated pigmentation、atrophy、telangiectasias）自嬰兒期由臉部開始，之後擴散到四肢與臀部；約三分之二（approximately 67%）病人可找到 RECQL4 helicase 突變，其餘 33% 的基因缺陷未知。",
+      "refs": [
+       [
+        130,
+        "2363-2364"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Fanconi anemia 將近 80% 的病人有皮膚異常；hyperpigmentation 自出生或幼兒期即出現，呈 diffuse 分布並在頸部、關節與軀幹較明顯，另可見 café-au-lait spots 與 achromic lesions。",
+      "refs": [
+       [
+        130,
+        "2364"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-95",
+   "topic": "Adamantiades–Behçet disease — pulmonary, GI, neurologic involvement and gender-related prognosis",
+   "fitz": [
+    141
+   ],
+   "polarity": "positive",
+   "stem": "關於 Adamantiades–Behçet disease 的全身器官侵犯與預後，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Pulmonary artery aneurysm 是肺部侵犯的主要表現，偶可造成咳嗽與 hemoptysis。"
+    },
+    {
+     "id": "②",
+     "text": "GI involvement 的潰瘍最常見於 ileocolonic area，可大而深並導致穿孔與大出血，須排除 inflammatory bowel disease。"
+    },
+    {
+     "id": "③",
+     "text": "明顯的神經學侵犯約見於 10% 的病人，可能延遲出現，常以嚴重頭痛表現。"
+    },
+    {
+     "id": "④",
+     "text": "女性病人較常合併 ocular involvement 與 vascular involvement，女性性別也是嚴重預後的指標之一。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③正確，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Pulmonary artery aneurysms 是 Adamantiades–Behçet disease 肺部侵犯的主要特徵，偶爾造成咳嗽與 hemoptysis；大動脈的 aneurysm 可能源於 vasa vasorum 的血管炎並穿透 lamina elastica。",
+      "refs": [
+       [
+        141,
+        "2572"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "GI involvement 呈急性惡化病程，潰瘍最常見於 ileocolonic area；這些潰瘍可大而深，造成穿孔與大量出血，必須排除 inflammatory bowel disease。",
+      "refs": [
+       [
+        141,
+        "2572-2573"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "明顯的神經學表現約見於 10% 的病人，且可能延遲發生；神經學表現通常以嚴重頭痛（severe headache）出現，其他包括 meningoencephalitis、cerebral venous sinus thrombosis、cranial nerve palsies 等。",
+      "refs": [
+       [
+        141,
+        "2573"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "與 ocular involvement、vascular involvement、表淺與深部靜脈栓塞、心臟侵犯相關的是男性；女性較常出現 genital ulcers、erythema nodosum 與關節侵犯。嚴重預後的指標包括 HLA-B51 positivity、male gender 與早期出現系統性表現。",
+      "refs": [
+       [
+        141,
+        "2574"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-96",
+   "topic": "Venous anomalies — VM vs glomuvenous malformation: genetics, coagulopathy, histology, compression",
+   "fitz": [
+    147
+   ],
+   "polarity": "negative",
+   "stem": "關於 venous malformation（VM）與 glomuvenous malformation（GVM）的致病機轉、檢查與處置，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "散發性 VM 約 60% 是由 TIE2 的 activating somatic mutations 造成。"
+    },
+    {
+     "id": "②",
+     "text": "約 40% 的 VM 病人 D-dimer 上升，反映 chronic localized intravascular coagulopathy（LIC）；若合併 fibrinogen 低下，為 severe LIC 的特徵。"
+    },
+    {
+     "id": "③",
+     "text": "GVM 由 glomulin 基因的 loss-of-function 突變造成，病理可見擴張的靜脈管道周圍有 mural glomus cells。"
+    },
+    {
+     "id": "④",
+     "text": "與 VM 相同，GVM 病人穿著 compression garments 可降低靜脈壓而減輕疼痛。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "只有④錯誤：compression 會加重 GVM 的疼痛，答案 D。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確",
+      "ok": true,
+      "text": "散發性 VM 也由基因突變造成，其中 60% 為 TIE2 的 activating somatic mutations，另有 20% 為 PIK3CA 的 somatic mutations；兩者都活化 PI3K/AKT 訊號路徑。",
+      "refs": [
+       [
+        147,
+        "2640"
+       ],
+       [
+        147,
+        "2650"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確",
+      "ok": true,
+      "text": "Chronic LIC 與孤立或症候群性的 spongy VM 相關，40% 病人 D-dimer 上升（>500 ng/mL）；合併 low fibrinogen 是 severe LIC 的 pathognomonic 表現，severe LIC 在介入或手術時容易惡化成 DIC。因此 pure VM 或含靜脈成分的複雜畸形病人都應檢查包含 platelet count、fibrinogen 與 D-dimer 的凝血功能。",
+      "refs": [
+       [
+        147,
+        "2650-2651"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確",
+      "ok": true,
+      "text": "GVM 由 glomulin 基因的 dominant loss-of-function 突變造成，且需要 somatic second hit 才會形成病灶。病理上為擴張的靜脈管道周圍環繞 mural glomus cells（異常分化的 smooth muscle cells）。McKee 亦指出 familial glomangiomas（即 GVM）與 GLMN（glomulin）的 inactivating mutations 相關。",
+      "refs": [
+       [
+        147,
+        "2650-2651"
+       ],
+       [
+        "M",
+        "1867"
+       ],
+       [
+        "M",
+        "1868"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Compression garments 可降低靜脈壓，有助於減輕肢體 VM 的腫脹與疼痛；相反地，compression 會增加 GVM 病人的疼痛，GVM 不適用。GVM 觸診常會痛，且無法以按壓完全排空。",
+      "refs": [
+       [
+        147,
+        "2648"
+       ],
+       [
+        147,
+        "2652"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-97",
+   "topic": "Cutaneous tuberculosis — TVC, lupus vulgaris, scrofuloderma, orificial TB: route and clinical features",
+   "fitz": [
+    157
+   ],
+   "polarity": "positive",
+   "stem": "關於各型 cutaneous tuberculosis 的感染途徑與臨床表現，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Tuberculosis verrucosa cutis 是已致敏且免疫力高的人經外源性再接種（exogenous reinfection）所造成的 paucibacillary 型態。"
+    },
+    {
+     "id": "②",
+     "text": "Lupus vulgaris 約 90% 侵犯頭頸部；長期病灶可能發生癌變，其中 squamous cell carcinoma 遠多於 basal cell carcinoma。"
+    },
+    {
+     "id": "③",
+     "text": "Scrofuloderma 是其下感染灶（如 tuberculous lymphadenitis）向皮膚連續蔓延所致，最常見於 parotid、submandibular 與 supraclavicular 區域。"
+    },
+    {
+     "id": "④",
+     "text": "Orificial tuberculosis 是內臟進行性結核的分枝桿菌自體接種（autoinoculation）到黏膜所致，潰瘍極為疼痛，以舌頭最常受侵犯。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "E"
+   ],
+   "expl": {
+    "summary": "①②③④皆正確，答案 E。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Tuberculosis verrucosa cutis 是 paucibacillary 疾病，由先前已致敏、具高度免疫力者的外源性再感染（inoculation）造成；病灶通常位於手部，兒童則位於下肢，常被誤認為一般的疣。",
+      "refs": [
+       [
+        157,
+        "2863-2864"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "約 90% 的 LV 病人侵犯頭頸部，通常從鼻、頰、耳垂或頭皮開始。長期 LV 可能發生癌變，squamous cell carcinoma 遠多於 basal cell carcinoma，且轉移風險高。",
+      "refs": [
+       [
+        157,
+        "2864-2866"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Scrofuloderma 是皮下結核造成 cold abscess 並使其上皮膚破壞，代表皮膚受其下感染灶（如 tuberculous lymphadenitis、骨關節結核或 tuberculous epididymitis）的連續侵犯；最常發生在 parotideal、submandibular 與 supraclavicular 區域，且可為雙側。",
+      "refs": [
+       [
+        157,
+        "2866"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Orificial tuberculosis 少見，是內臟進行性結核（多為很晚期的肺、腸道，少數為泌尿生殖道結核）的分枝桿菌自體接種到黏膜與孔口所致；病灶極為疼痛而造成吞嚥困難，舌頭最常受侵犯（特別是舌尖與兩側緣），通常預示致命的結局。",
+      "refs": [
+       [
+        157,
+        "2867"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "E/E",
+    "blind_match": true,
+    "ambiguity": "minor",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-98",
+   "topic": "Lyme borreliosis — ACA, borrelial lymphocytoma, Lyme carditis, Bannwarth syndrome",
+   "fitz": [
+    179
+   ],
+   "polarity": "positive",
+   "stem": "關於 Lyme borreliosis 的皮膚表現與皮膚外侵犯，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Acrodermatitis chronica atrophicans 主要見於歐洲的老年病人，似乎好發於女性；發炎期於四肢伸側呈 bluish-red 變色，萎縮期呈 cigarette paper-like 外觀。"
+    },
+    {
+     "id": "②",
+     "text": "Borrelial lymphocytoma 兒童較成人常見，兒童好發於耳垂與陰囊，成人好發於乳頭乳暈區。"
+    },
+    {
+     "id": "③",
+     "text": "Lyme carditis 中 [i]Borrelia burgdorferi[/i] 偏好侵犯 atrioventricular node，造成 atrioventricular block。"
+    },
+    {
+     "id": "④",
+     "text": "Bannwarth syndrome 為 lymphocytic meningitis、cranial nerve palsy（常為 facial）與 radiculoneuritis 的三聯症，在歐洲常見而在美國少見。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "E"
+   ],
+   "expl": {
+    "summary": "①②③④皆正確，答案 E。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "ACA 主要見於歐洲的老年病人，起病隱匿，似乎好發於女性。早期發炎期在手指、手、關節與下肢的伸側出現 bluish-red 變色；晚期萎縮期病灶呈 cigarette paper-like 外觀並可見明顯的表淺靜脈，但萎縮並非發炎期必然的後果。",
+      "refs": [
+       [
+        179,
+        "3290-3291"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Borrelial lymphocytoma 兒童比成人常見，臨床為結節丘疹性病灶，兒童好發於耳垂與陰囊，成人好發於乳頭乳暈區，推測與組織溫度有關；lymphocytoma 只在歐洲有報告。",
+      "refs": [
+       [
+        179,
+        "3287"
+       ],
+       [
+        179,
+        "3292"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "美國未治療病人中 1%–10% 有心臟侵犯，通常發生於感染後數週內；在心臟中 [i]B. burgdorferi[/i] 偏好侵犯 atrioventricular node，導致 atrioventricular block，也可發生通常輕微且自限的 acute myopericarditis。",
+      "refs": [
+       [
+        179,
+        "3294"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Lymphocytic meningitis、cranial palsy（常為 facial）與 radiculoneuritis 的三聯症稱為 Bannwarth syndrome，對 Lyme disease 為 pathognomonic；在歐洲常有報告，在美國則少見，一般認為 [i]B. garinii[/i] 比 [i]B. burgdorferi[/i] 更常造成 meningitis 與 radiculopathy。",
+      "refs": [
+       [
+        179,
+        "3293"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "E/E",
+    "blind_match": true,
+    "ambiguity": "minor",
+    "source_errors": 0,
+    "fixes": 2,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-99",
+   "topic": "Principles of topical therapy — systemic (percutaneous) toxicity: first-pass, reservoir, vehicle, age, clearance",
+   "fitz": [
+    183
+   ],
+   "polarity": "positive",
+   "stem": "45 歲男性有大面積 psoriasis，病情惡化期間自行增加塗抹範圍與次數，連續 11 天於全身病灶塗抹含 6% salicylic acid 的外用製劑後，出現流鼻血（epistaxis）與聽力下降。關於外用藥物造成全身毒性的機轉與風險因子，下列敘述何者正確？",
+   "options": {
+    "A": "外用藥物的全身毒性與所用 vehicle 無關，相同濃度的 salicylic acid 換成其他 vehicle 風險相同。",
+    "B": "嬰幼兒的 surface area–volume ratio 小於成人，因此外用藥物造成全身毒性的風險低於成人。",
+    "C": "外用藥物沒有 hepatic first-pass metabolism，且 stratum corneum 的 reservoir 可經長達數天的擴散期持續釋放藥物進入全身循環。",
+    "D": "腎臟或肝臟疾病不會增加外用藥物的全身毒性風險，因為外用藥物不經由腸胃道吸收。"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "外用藥物缺乏 hepatic first-pass metabolism，且角質層 reservoir 可長時間持續釋放藥物，答案 C。",
+    "items": [
+     {
+      "key": "A",
+      "label": "vehicle 會影響毒性",
+      "ok": false,
+      "text": "經皮毒性與經皮吸收直接相關，因此影響吸收的因素都會影響毒性，包括藥物濃度、vehicle、occlusion、塗抹部位與面積、使用頻率、療程與病灶皮膚的性質。例如 6% salicylic acid 於 Eucerin 中治療 psoriasis 11 天曾造成 epistaxis 與 deafness，而相同濃度於 hydrophilic cream 中加上 occlusion 4 天治療皮膚炎則可能造成幻覺。",
+      "refs": [
+       [
+        183,
+        "3378"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "嬰幼兒風險較高",
+      "ok": false,
+      "text": "Infants 與 young children 的 surface area–volume ratio 較成人大，因此經皮毒性的風險高於成人；兒童有廣泛皮膚病時需要改用其他藥物、劑型與給藥時程。",
+      "refs": [
+       [
+        183,
+        "3378"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "本題答案",
+      "ok": true,
+      "text": "外用藥物的動力學與其他給藥途徑明顯不同，重要的一點是沒有 hepatic first-pass metabolism，這對 salicylic acid 這類藥物特別重要，外用時可能出現中樞神經毒性。此外 stratum corneum 可作為 reservoir 儲存大量外用藥物，之後經長達數天的擴散期，持續將藥物送入全身循環。",
+      "refs": [
+       [
+        183,
+        "3378"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "會增加毒性",
+      "ok": false,
+      "text": "與全身給藥的情況相似，腎臟與肝臟疾病會影響藥物清除，因而也會增加外用藥物毒性的可能性。",
+      "refs": [
+       [
+        183,
+        "3378"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-100",
+   "topic": "Antihistamines — practical prescribing: fexofenadine–antacid, cimetidine–dofetilide, first-generation sleep effects, cetirizine sedation",
+   "fitz": [
+    189
+   ],
+   "polarity": "positive",
+   "stem": "52 歲男性因 chronic idiopathic urticaria 就診，每天服用標準劑量 cetirizine 4 週後膨疹仍反覆發作，並抱怨白天嗜睡。病史有 atrial fibrillation 長期服用 dofetilide，另因胃食道逆流規則服用制酸劑（antacids）。關於此病人後續抗組織胺的調整，下列敘述何者正確？",
+   "options": {
+    "A": "若改用 fexofenadine，應提醒病人避免與制酸劑同時服用，以免干擾藥物吸收。",
+    "B": "可加用 cimetidine 作為 H2 antihistamine 輔助治療，與 dofetilide 併用並無安全疑慮。",
+    "C": "可改為睡前服用 hydroxyzine 幫助入睡，因其不影響 REM sleep，隔天的注意力與記憶不受影響。",
+    "D": "白天嗜睡應與 cetirizine 無關，因 cetirizine 與 fexofenadine 一樣幾乎不會進入腦部。"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "Fexofenadine 不應與制酸劑併服，以免干擾吸收，答案 A。",
+    "items": [
+     {
+      "key": "A",
+      "label": "本題答案",
+      "ok": true,
+      "text": "與食物併服可減輕抗組織胺偶爾造成的腸胃不適，但應告知病人避免 fexofenadine 與 antacids 同時服用，因為會干擾藥物吸收。",
+      "refs": [
+       [
+        189,
+        "3454"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "併用為禁忌",
+      "ok": false,
+      "text": "H2 antihistamines 一般在單用 H1 antihistamines 失敗後才加用，開始前應仔細檢視病人用藥，CYP 抑制造成的藥物交互作用通常是最大顧慮。服用 dofetilide 的病人禁用 cimetidine，因有 QT interval 延長與致命性心律不整的風險。",
+      "refs": [
+       [
+        189,
+        "3457"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "會影響睡眠品質",
+      "ok": false,
+      "text": "鎮靜型 H1 antihistamines 有時被用於夜間助眠，但這類藥物實際上會延遲 REM sleep 的開始，導致睡眠品質變差，並使隔天的記憶、注意力與感覺運動表現受損。",
+      "refs": [
+       [
+        189,
+        "3455"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "cetirizine 可致鎮靜",
+      "ok": false,
+      "text": "大多數第二代 H1 antihistamines 為低鎮靜，但 cetirizine 與 levocetirizine 例外；cetirizine 雖遠比其母化合物 hydroxyzine 不嗜睡，仍約有 10%–15% 使用者出現鎮靜，且似乎與劑量相關。Fexofenadine 與 loratadine／desloratadine 才是最不易進入腦部者。",
+      "refs": [
+       [
+        189,
+        "3455-3456"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
   }
  ]
 }
