@@ -1900,6 +1900,3933 @@
     "fixes": 3,
     "replaced_items": false
    }
+  },
+  {
+   "id": "M-21",
+   "topic": "Psoriasis — risk factors and exacerbating drugs",
+   "fitz": [
+    28
+   ],
+   "polarity": "positive",
+   "stem": "關於乾癬的危險因子與誘發惡化的藥物，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Obesity 與重度乾癬相關，且和 smoking 一樣，被認為在乾癬的發病（onset）上扮演角色。"
+    },
+    {
+     "id": "②",
+     "text": "Imiquimod 作用於 plasmacytoid dendritic cells，刺激 IFN-α 產生，可使乾癬惡化。"
+    },
+    {
+     "id": "③",
+     "text": "Lithium 被認為是透過干擾 keratinocyte 內的 cyclic AMP 濃度而使乾癬惡化，β blockers 則被認為是干擾 keratinocyte 內的 calcium release。"
+    },
+    {
+     "id": "④",
+     "text": "接受 TNF inhibitor 治療後新發生或惡化的乾癬，多數為 palmoplantar pustulosis，約三分之一為 chronic plaque psoriasis。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "②④正確，答案 B。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Obesity 者較可能出現重度乾癬，但 obesity 似乎在決定乾癬發病上並不扮演角色；與 obesity 不同，smoking 似乎在乾癬發病上扮演角色，重度吸菸（每天 >20 支）與重度乾癬風險增加兩倍以上相關。",
+      "refs": [
+       [
+        28,
+        "479"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "會使乾癬惡化的藥物包括 antimalarials、β blockers、lithium、NSAIDs、IFN-α 與 IFN-γ、imiquimod、ACE inhibitors 與 gemfibrozil。Imiquimod 作用於 plasmacytoid dendritic cells（pDCs）、刺激 IFN-α 產生，進而增強 innate 與 Th1 免疫反應。",
+      "refs": [
+       [
+        28,
+        "479"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤",
+      "ok": false,
+      "text": "機轉寫反了：lithium 被認為是干擾 keratinocytes 內的 calcium release，β blockers 則被認為是干擾細胞內 cyclic adenosine monophosphate（cAMP）濃度；其餘藥物使乾癬惡化的機轉大多不明。",
+      "refs": [
+       [
+        28,
+        "479"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "接受 TNF inhibitor 治療的病人曾有乾癬惡化或新發生的報告，其中多數為 palmoplantar pustulosis（PPP），約三分之一為 chronic plaque psoriasis；anti-IL-6 的 tocilizumab 治療後也有新發乾癬的描述。",
+      "refs": [
+       [
+        28,
+        "479"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-22",
+   "topic": "Cutaneous reactions to drugs — drug-induced lupus, dermatomyositis, pseudolymphoma and vasculitis",
+   "fitz": [
+    45
+   ],
+   "polarity": "negative",
+   "stem": "關於藥物引起的 lupus、dermatomyositis、cutaneous pseudolymphoma 與 vasculitis，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Drug-induced dermatomyositis 的病例多數缺乏 heliotrope rash 或 Gottron papules 等典型皮膚表現。"
+    },
+    {
+     "id": "②",
+     "text": "Drug-induced lupus 有超過半數病人出現 pleuropulmonary involvement，且許多病人沒有 lupus erythematosus 的皮膚表現。"
+    },
+    {
+     "id": "③",
+     "text": "Anticonvulsant 引起的 pseudolymphoma 通常在用藥 1 週至 2 年後出現，停藥後症狀通常需 6 個月以上才會緩解。"
+    },
+    {
+     "id": "④",
+     "text": "與其他原因的 cutaneous vasculitis 相比，drug-induced vasculitis 較少進展為 glomerulonephritis，預後較好，所需的免疫抑制治療也較少。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "①③錯誤，答案 A。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Drug-induced dermatomyositis 可呈現 dermatomyositis 的典型皮膚表現，多數藥物引起的病例具有 pathognomonic 的 heliotrope rash 或 Gottron papules。一篇 70 例的回顧中，40% 有肌肉侵犯、11% 有肺部侵犯；最常見的相關藥物是 hydroxyurea、penicillamine 與 HMG-CoA reductase inhibitors。",
+      "refs": [
+       [
+        45,
+        "756"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確",
+      "ok": true,
+      "text": "Drug-induced lupus 的特徵是常見 musculoskeletal 症狀、發燒、體重減輕，超過半數病人有 pleuropulmonary involvement，少數有腎臟、神經或血管炎侵犯；許多病人沒有 lupus erythematosus 的皮膚表現。",
+      "refs": [
+       [
+        45,
+        "756"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Anticonvulsant 引起的 pseudolymphoma 一般在用藥 1 週至 2 年後出現，但停藥後 7–14 天內症狀通常就會緩解，不需數個月。多數病人也有發燒、明顯淋巴結腫大、肝脾腫大與 eosinophilia。",
+      "refs": [
+       [
+        45,
+        "756"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確",
+      "ok": true,
+      "text": "Drug-induced vasculitis 較少進展為 glomerulonephritis、預後較好，需要的免疫抑制治療較少；多數僅停藥即可緩解，systemic glucocorticoids 可能有幫助。Tissue eosinophilia 可能是 cutaneous small-vessel vasculitis 由藥物誘發的指標。",
+      "refs": [
+       [
+        45,
+        "757"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-23",
+   "topic": "Nail disorders — nail lichen planus: diagnosis, associations and treatment",
+   "fitz": [
+    91
+   ],
+   "polarity": "negative",
+   "stem": "關於指甲的 lichen planus（nail lichen planus）的診斷、疾病關聯與治療，下列敘述何者錯誤？",
+   "options": {
+    "A": "疾病關聯與 cutaneous lichen planus 相同，包括 alopecia areata、vitiligo、localized scleroderma 與 chronic liver disease",
+    "B": "Perimatricial triamcinolone acetonide 每 4–8 週注射常可成功，但有效者最多可達 50% 復發",
+    "C": "對大多數外用治療反應良好，單用外用 steroid 通常即可使指甲恢復正常",
+    "D": "通常以臨床診斷，沒有可用的血液檢查，最終可以 nail biopsy 確診"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "Nail lichen planus 對幾乎所有外用治療都頑固難治，答案 C。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Nail lichen planus 的疾病關聯與 cutaneous lichen planus 相同：alopecia areata、vitiligo、localized scleroderma、Castleman tumor 合併 pemphigus vulgaris，以及 chronic liver disease。",
+      "refs": [
+       [
+        91,
+        "1585"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Perimatricial 注射 triamcinolone acetonide（每 4–8 週，可用針或無針注射）常可成功，之後可接續肌肉注射 0.5–1 mg/kg；但有效者最多可達 50% 復發。頑固病例使用 biologics 效果很好。",
+      "refs": [
+       [
+        91,
+        "1586"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Nail lichen planus 特別慢性，且對幾乎所有外用治療都頑固難治（stubbornly resistant）；雖缺乏對照研究，仍建議外用 steroid 合併 calcipotriol，可能帶來一些改善或使疾病停止進展。一旦形成 pterygium 就不再能治療，強烈的治療手段也可能引發 Koebner phenomenon。",
+      "refs": [
+       [
+        91,
+        "1586"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Nail lichen planus 通常以臨床診斷，沒有血液檢查可用；應檢查皮膚、口腔與生殖器黏膜有無 lichen planus 病灶，最終可由 nail biopsy 確診。",
+      "refs": [
+       [
+        91,
+        "1585"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-24",
+   "topic": "Cutaneous manifestations of HIV — immune reconstitution inflammatory syndrome (IRIS)",
+   "fitz": [
+    168
+   ],
+   "polarity": "positive",
+   "stem": "關於 HIV 病人開始 antiretroviral therapy（ART）後的 immune reconstitution inflammatory syndrome（IRIS），下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "接受 ART 的病人中最多可達 20% 曾被報告發生 IRIS，通常出現在開始 ART 後最初 2–3 個月內。"
+    },
+    {
+     "id": "②",
+     "text": "開始 ART 前 CD4+ 數目（或百分比）較低、HIV RNA 較高是發生 IRIS 的兩大因素；年輕及男性病人的比例偏高。"
+    },
+    {
+     "id": "③",
+     "text": "開始 ART 後才顯現原本臨床上未察覺的疾病稱為 unmasking IRIS；原本已知的疾病在開始 ART 後惡化則稱為 paradoxical IRIS。"
+    },
+    {
+     "id": "④",
+     "text": "IRIS 的皮膚反應若臨床上明顯，可使用 systemic corticosteroids；其中 Kaposi sarcoma 相關的 IRIS 特別適合以 systemic corticosteroids 治療。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③正確，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "隨著免疫功能恢復，先前未被辨識或被耐受的抗原可引發強烈免疫反應；IRIS 在接受 ART 的病人中被報告最多可達 20%，通常發生在開始 ART 後最初 2–3 個月內。",
+      "refs": [
+       [
+        168,
+        "3124"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "IRIS 的致病為多因素，與發生可能性相關的兩大因素是開始 ART 前較低的 CD4+ 數目和／或百分比，以及較高的 HIV RNA；年輕與男性病人受影響的比例偏高。其他危險因子包括開始治療 opportunistic infection 與開始 ART 的間隔較短，以及 viral load 快速下降。",
+      "refs": [
+       [
+        168,
+        "3124"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "開始 ART 後才注意到原本臨床上未察覺的疾病，稱為 unmasking IRIS；原本已辨識的臨床疾病惡化，稱為 paradoxical IRIS。",
+      "refs": [
+       [
+        168,
+        "3124"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "多數 IRIS 為自限性；臨床上明顯、可能導致病人不遵從治療的皮膚反應，可用 prednisone 最高 1 mg/kg 並快速減量。但 Kaposi sarcoma 是顯著的例外，systemic corticosteroids 可能使其結果更差。治療最重要的一環是持續 ART。",
+      "refs": [
+       [
+        168,
+        "3124"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-25",
+   "topic": "Immunobiologics — TNF-α inhibitors: properties, dosing and safety",
+   "fitz": [
+    193,
+    28
+   ],
+   "polarity": "negative",
+   "stem": "關於用於乾癬的 TNF-α inhibitors 的特性、劑量與安全性，下列敘述何者錯誤？",
+   "options": {
+    "A": "Infliximab 是含有 mouse variable domain 的 chimeric monoclonal antibody，產生 anti-drug antibodies 的風險高於其他 anti-TNF 藥物",
+    "B": "在用於 plaque psoriasis 的 3 種 TNF biologics 中，infliximab 最常被用於 pustular psoriasis，據報告膿疱最快可在首次輸注後 2 天開始消退",
+    "C": "Etanercept 與 anakinra 併用會增加嚴重感染風險，因此建議 anakinra 不與任何 TNF inhibitor 併用",
+    "D": "Adalimumab 治療乾癬的起始劑量為 40 mg，一週後開始改為每週 80 mg 維持"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "Adalimumab 起始劑量為 80 mg，之後每 2 週 40 mg，答案 D。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Infliximab 是含有 mouse variable domain 的 chimeric monoclonal antibody；因為有 mouse variable domain，產生 anti-drug antibodies 的風險高於其他 anti-TNF 藥物。",
+      "refs": [
+       [
+        193,
+        "3538"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "在 3 種用於 plaque psoriasis 的 TNF biologics 中，infliximab 最常被用於 pustular psoriasis，雖缺乏充分臨床試驗，已成為嚴重 acute GPP 的建議治療選項之一；據報告作用迅速，全身發炎與皮膚膿疱最快在首次輸注後 2 天即開始消退。",
+      "refs": [
+       [
+        193,
+        "3538"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Etanercept 與 anakinra 併用與嚴重感染風險增加相關，因此建議 anakinra 不要與任何 TNF inhibitor 同時使用。",
+      "refs": [
+       [
+        193,
+        "3538"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "本題答案",
+      "ok": true,
+      "text": "劑量寫反了：adalimumab 治療乾癬的起始劑量為 80 mg，從起始劑量 1 週後開始每 2 週給予 40 mg（every other week）。",
+      "refs": [
+       [
+        193,
+        "3538"
+       ],
+       [
+        28,
+        "487"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 1,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-26",
+   "topic": "Laser fundamentals — thermal effects, fractional photothermolysis, skin cooling",
+   "fitz": [
+    208
+   ],
+   "polarity": "negative",
+   "stem": "關於雷射與組織的交互作用、fractional photothermolysis 與皮膚冷卻，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "雷射使組織溫度上升但仍低於 50°C 時，即會造成組織蛋白質不可逆的凝固與變性（irreversible coagulation）。"
+    },
+    {
+     "id": "②",
+     "text": "Nonablative fractional photothermolysis 的熱能集中於真皮，表皮相對或完全不受損；與 ablative fractional resurfacing 相比耐受性較佳、癒合時間較短，但效果可能較不顯著。"
+    },
+    {
+     "id": "③",
+     "text": "Low-level laser therapy 治療落髮是 photoacoustic（光聲）效應的代表例子。"
+    },
+    {
+     "id": "④",
+     "text": "Dynamic cooling device（DCD）屬於 noncontact cooling，在雷射發射前一刻噴出 cryogen（通常為 1,1,1,2-tetrafluoroethane）。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "①③錯誤，答案 A。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "溫度低於 50°C 只產生可逆的熱傷害（reversible thermal damage）、局部血管擴張與發炎反應活化；50°C 到 100°C 之間組織與蛋白質才發生不可逆的凝固或變性，超過 100°C 則發生組織汽化（vaporization）。",
+      "refs": [
+       [
+        208,
+        "3827"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確",
+      "ok": true,
+      "text": "Ablative fractionation 是表皮與真皮細柱都被控制性汽化；nonablative fractionation 的加熱集中在真皮，表皮相對或完全不受損。Nonablative fractional photothermolysis 耐受性好得多、副作用較少、癒合時間較短，但效果可能不如 ablative fractional resurfacing。",
+      "refs": [
+       [
+        208,
+        "3830"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "課本以 low-level laser therapy 治療落髮作為 photochemical（光化學）效應的例子：光子被推測由粒線體吸收，活化細胞呼吸鏈而誘導毛髮生長。Photoacoustic 效應的例子是以 nanosecond 或 picosecond 雷射治療色素病灶與刺青，色素吸收高能光子後產生聲波使顆粒碎裂。",
+      "refs": [
+       [
+        208,
+        "3826"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確",
+      "ok": true,
+      "text": "Noncontact cooling 可用 cryogen spray 或 forced cold air 達成；整合於雷射系統內的 DCD 在雷射照射前一刻噴出 cryogen（通常為無毒的 1,1,1,2-tetrafluoroethane，–15°C），可在每一發雷射提供均勻、精準、可重複的冷卻。",
+      "refs": [
+       [
+        208,
+        "3830"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-27",
+   "topic": "Nonablative laser — hair removal, chrysiasis, melasma",
+   "fitz": [
+    210
+   ],
+   "polarity": "positive",
+   "stem": "關於 nonablative laser 在除毛與色素性疾病的應用及其併發症，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "雷射除毛對白色或金色（blond）毛髮無效，因為這類毛髮缺乏 eumelanin，無法充分吸收雷射能量。"
+    },
+    {
+     "id": "②",
+     "text": "雷射除毛療程期間應避免 waxing、threading 與 plucking；治療前剃毛（shaving）則是可接受且常規進行的。"
+    },
+    {
+     "id": "③",
+     "text": "曾接受 systemic gold therapy 的病人以 Q-switched laser 治療後，可能在治療部位出現 localized chrysiasis（藍灰色變色）。"
+    },
+    {
+     "id": "④",
+     "text": "Melasma 對 Q-switched laser 與 IPL 治療通常反應良好，已取代外用藥物成為治療主軸。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③正確，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "雷射或光源除毛是靠毛囊含黑色素的構造吸收能量而造成熱傷害；白色或金色毛髮缺乏 eumelanin，無法充分吸收雷射能量，因此治療無效。粗厚（thick or coarse）的毛髮通常也比細毛容易去除。",
+      "refs": [
+       [
+        210,
+        "3851"
+       ],
+       [
+        210,
+        "3852"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Waxing、threading、plucking 會移除標的 chromophore，使光除毛無效，病人應避免；shaving 則可接受，且常在治療前進行，讓雷射能量最大程度穿透、不在皮膚表面被大量吸收，也可能有助於避免表面毛髮燒焦造成的灼傷。",
+      "refs": [
+       [
+        210,
+        "3852"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "接受過 systemic gold therapy 的病人以 QS laser 治療時有發生 localized chrysiasis 的風險，因真皮內金沉積物結構改變，治療部位出現藍灰色變色。",
+      "refs": [
+       [
+        210,
+        "3854"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Melasma 常對 QS laser 與 IPL 治療有抗性（often resistant）；以保守能量進行的 nonablative fractionated laser 結果較令人鼓舞但不一致，low-fluence QS 1064-nm Nd:YAG 的治療方案仍在發展研究中。治療主軸仍是外用藥物並避免紫外線等加重因子。",
+      "refs": [
+       [
+        210,
+        "3851"
+       ],
+       [
+        210,
+        "3853"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "minor",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-28",
+   "topic": "Urticaria — cold, solar, aquagenic, vibratory subtypes",
+   "fitz": [
+    41
+   ],
+   "polarity": "positive",
+   "stem": "關於 cold、solar、aquagenic 與 vibratory urticaria，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Cold contact urticaria 可用包裹的冰塊做 cold provocation test 誘發 wheal；familial cold urticaria 等遺傳性 cold urticaria 病人則對局部 ice-cube test 不會產生 wheal and flare。"
+    },
+    {
+     "id": "②",
+     "text": "Solar urticaria 病人的臉與手，病灶可能比平常被衣物遮蓋的部位少；其光激發試驗宜在臀部皮膚進行。"
+    },
+    {
+     "id": "③",
+     "text": "Aquagenic urticaria 的皮疹不論水溫高低都會被誘發，可藉此與 cold urticaria 及 heat urticaria 區分。"
+    },
+    {
+     "id": "④",
+     "text": "ADGRE2 的 missense mutation 與體染色體顯性遺傳的 familial vibratory urticaria 有關。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "E"
+   ],
+   "expl": {
+    "summary": "四個敘述皆正確，答案 E。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Cold provocation 以包裹的冰塊或冷水敷 5 分鐘，可在 cold contact urticaria 誘發 wheal，但 systemic cold urticaria 不會。Familial cold urticaria syndrome 現歸為 CAPS 的亞型（NLRP3 突變，體染色體顯性），這類遺傳性疾病的病人對局部 ice-cube test 不會出現 wheal and flare。",
+      "refs": [
+       [
+        41,
+        "689"
+       ],
+       [
+        41,
+        "697"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Solar urticaria 的皮疹分布與照到誘發波長的區域一致；臉與手因長期日曬產生 hardening，病灶可能比平常被衣物遮蓋的部位少。光激發試驗應在臀部皮膚進行，平常被衣物遮蓋的軀幹部位也可測試。",
+      "refs": [
+       [
+        41,
+        "690"
+       ],
+       [
+        41,
+        "698"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Aquagenic urticaria 由皮膚局部接觸水誘發，與水溫無關，這點有助於與某些溫度的水也能誘發的 cold urticaria、heat urticaria 區分。其 wheal 小、類似 cholinergic urticaria，但數目通常較少，周圍常有大片 flare。",
+      "refs": [
+       [
+        41,
+        "690"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "ADGRE2 的 missense mutation 已被報告與體染色體顯性遺傳的 familial vibratory urticaria 相關，可使 mast cell 以 IgE 非依賴的方式對振動敏感；ADGRE2 在非遺傳型 vibratory angioedema 的角色仍待研究。",
+      "refs": [
+       [
+        41,
+        "690"
+       ],
+       [
+        41,
+        "693"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "E/E",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-29",
+   "topic": "Vitiligo — differential diagnosis",
+   "fitz": [
+    76
+   ],
+   "polarity": "negative",
+   "stem": "關於 vitiligo 的鑑別診斷，下列敘述何者錯誤？",
+   "options": {
+    "A": "Nevus depigmentosus 通常為先天或出生後數月內即被發現，大小穩定、只隨身體成比例長大，且通常是 hypopigmented 而非 depigmented。",
+    "B": "Nevus anemicus 在 Wood lamp 下會像 vitiligo 一樣增強（accentuation），且以 diascopy 壓迫後白斑仍持續存在。",
+    "C": "Piebaldism 以 white forelock、前側身體中線脫色、雙側脛部脫色及大片色素保留島（islands of sparing）為特徵，多為顯性遺傳。",
+    "D": "只侵犯生殖器的脫色病灶須仔細與 lichen sclerosus et atrophicus 鑑別，且兩者可能同時存在於同一病人。"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "Nevus anemicus 在 Wood lamp 下不會增強，且壓迫後會消失，答案 B。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Nevus depigmentosus 是 segmental vitiligo 最主要的鑑別診斷，通常為先天或出生後數月內被發現，大小穩定、只隨孩子成比例長大；它通常是 hypopigmented 而非 depigmented，邊緣常呈鋸齒狀而非平滑，病灶內毛髮一般仍有色素。",
+      "refs": [
+       [
+        76,
+        "1338"
+       ],
+       [
+        76,
+        "1339"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Nevus anemicus 通常出生即有，為邊界不清、周圍有紅斑的白斑；與 segmental vitiligo 相反，它在 Wood lamp 下不會增強，且以 diascopy 或輕壓皮膚後會消失。",
+      "refs": [
+       [
+        76,
+        "1338"
+       ],
+       [
+        76,
+        "1339"
+       ],
+       [
+        76,
+        "1340"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Piebaldism（KIT mutation）以 white forelock、前側身體中線脫色、雙側脛部脫色及大片色素保留島為特徵，出生即存在；多為顯性遺傳，家族史常可直接診斷。",
+      "refs": [
+       [
+        76,
+        "1337"
+       ],
+       [
+        76,
+        "1338"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "單獨侵犯生殖器時須仔細與 lichen sclerosus et atrophicus 鑑別，因後者可具破壞性且常不可逆；但也有生殖器 lichen sclerosus 與 vitiligo 同時存在的報告，困難案例可做切片。",
+      "refs": [
+       [
+        76,
+        "1331"
+       ],
+       [
+        76,
+        "1338"
+       ],
+       [
+        76,
+        "1339"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-30",
+   "topic": "Topical antimicrobials and antiparasitics — mechanisms",
+   "fitz": [
+    196
+   ],
+   "polarity": "negative",
+   "stem": "關於外用抗菌與抗寄生蟲藥物的作用機轉，下列敘述何者錯誤？",
+   "options": {
+    "A": "Mupirocin 抑制細菌的 isoleucyl-tRNA synthetase，因作用機轉獨特，與其他抗微生物藥物沒有 cross-resistance。",
+    "B": "Retapamulin 選擇性結合細菌核糖體的 30S subunit，抑制蛋白質合成。",
+    "C": "Ivermectin 結合寄生蟲神經與肌肉細胞的 glutamate-gated 及 γ-aminobutyric acid–gated chloride channels，導致麻痺與死亡。",
+    "D": "Malathion 是 organophosphate 殺蟲劑，作用為不可逆地結合 acetylcholinesterase。"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "Retapamulin 結合的是 50S subunit，答案 B。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Mupirocin 藉抑制細菌 isoleucyl-tRNA synthetase，阻止 isoleucine 併入蛋白質；因作用機轉獨特，與其他抗微生物藥物沒有 cross-resistance。它對 [i]Pseudomonas[/i] 無效，且對大部分正常皮膚菌叢沒有活性。",
+      "refs": [
+       [
+        196,
+        "3613"
+       ],
+       [
+        196,
+        "3614"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Retapamulin 屬 pleuromutilin 類抗生素，為 bacteriostatic，透過選擇性結合原核生物核糖體的 50S subunit，抑制蛋白質合成的 elongation phase，不是 30S subunit；以 1% ointment 使用，FDA 核准用於 methicillin-sensitive [i]Staphylococcus aureus[/i] 與 [i]Streptococcus pyogenes[/i]。",
+      "refs": [
+       [
+        196,
+        "3613"
+       ],
+       [
+        196,
+        "3614"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Ivermectin 屬 avermectin 家族，結合寄生蟲神經與肌肉細胞的 glutamate-gated 及 γ-aminobutyric acid–gated chloride ion channels，增加 chloride 通透性，造成麻痺與死亡；外用可治療 scabies、head lice 與 rosacea。",
+      "refs": [
+       [
+        196,
+        "3615"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Malathion 是 organophosphate 殺蟲劑，作用為不可逆地結合 acetylcholinesterase；美國核准 0.5% lotion 用於頭蝨與體蝨，該 lotion 含 78% isopropyl alcohol，易燃。",
+      "refs": [
+       [
+        196,
+        "3615"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "minor",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-31",
+   "topic": "Wells syndrome — distribution, flame figures, treatment",
+   "fitz": [
+    40
+   ],
+   "polarity": "negative",
+   "stem": "關於 Wells syndrome（eosinophilic cellulitis）的臨床表現、病理與治療，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "病灶典型好發於頭頸部，較少侵犯四肢。"
+    },
+    {
+     "id": "②",
+     "text": "Flame figures 為 Wells syndrome 所特有（pathognomonic），不會出現在其他皮膚病的切片中。"
+    },
+    {
+     "id": "③",
+     "text": "病灶對 systemic glucocorticoids 反應不佳，一般不建議以其治療。"
+    },
+    {
+     "id": "④",
+     "text": "以 eosinophil granule major basic protein（MBP）免疫螢光檢查時，flame figures 呈明亮的細胞外染色，表示曾發生廣泛的 eosinophil 去顆粒。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③錯誤，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Wells syndrome 的病灶可為單一或多發，可出現在任何部位，但典型侵犯四肢，較少侵犯軀幹，並非以頭頸部為主。McKee 亦指出本病特別侵犯四肢與軀幹。",
+      "refs": [
+       [
+        40,
+        "665"
+       ],
+       [
+        "M",
+        "704"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Flame figures 是 Wells syndrome 的 hallmark，但也見於許多其他疾病的切片（Table 40-6，例如 arthropod bite、eczema、herpes gestationis、immunobullous diseases、tinea），因此 flame figure 對 Wells syndrome 具特徵性但不具診斷性；不過若缺乏 flame figures，Wells syndrome 的診斷應存疑。McKee 亦指出 eosinophil 浸潤合併 flame figures 雖為 Wells syndrome 的特徵，但並非 pathognomonic。",
+      "refs": [
+       [
+        40,
+        "666"
+       ],
+       [
+        40,
+        "667"
+       ],
+       [
+        "M",
+        "705"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Systemic glucocorticoids 通常有效（usually therapeutic）：病灶使用後通常顯著改善，多數病人可耐受在 1 個月內逐步減量；復發或持續者可用低劑量（5 mg）隔日 prednisone 維持。輕症可能只需外用類固醇。",
+      "refs": [
+       [
+        40,
+        "665"
+       ],
+       [
+        40,
+        "667"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確",
+      "ok": true,
+      "text": "Wells syndrome 的皮膚病灶以真皮瀰漫 eosinophils、histiocytes 浸潤及 flame figures 為特徵；以 eosinophil granule MBP 免疫螢光檢查時，flame figures 呈明亮的細胞外染色，表示已發生廣泛的 eosinophil degranulation。McKee 亦指出 indirect immunofluorescence 證實 flame figures 含細胞外的 eosinophil granule MBP。",
+      "refs": [
+       [
+        40,
+        "666"
+       ],
+       [
+        "M",
+        "705"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-32",
+   "topic": "Bowen disease — histopathologic differential diagnosis and prognosis",
+   "fitz": [
+    110
+   ],
+   "polarity": "positive",
+   "stem": "關於 Bowen disease 的組織病理鑑別診斷與預後，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Extramammary Paget disease 的 Paget cells 可呈 diastase-resistant PAS 陽性並可表現 GCDFP-15，Bowen disease 的腫瘤細胞則通常為陰性。"
+    },
+    {
+     "id": "②",
+     "text": "與 pagetoid melanoma in situ 鑑別時，Bowen disease 的非典型角質細胞之間應可辨識 desmosomal bridges，且 melanocyte-specific 免疫染色為陰性。"
+    },
+    {
+     "id": "③",
+     "text": "Condyloma 外用 podophyllin 可造成 metaphase arrest 與類似 Bowen disease 的組織變化，這些變化通常在數天至一週內消退。"
+    },
+    {
+     "id": "④",
+     "text": "未治療的 Bowen disease 進展為 invasive carcinoma 的整體風險約為 30%。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③正確，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Extramammary Paget disease 的 Paget cells 可呈 diastase-resistant PAS 陽性並可表現 GCDFP-15，Bowen disease 的腫瘤細胞對 GCDFP-15 與 diastase-PAS 則通常為陰性。",
+      "refs": [
+       [
+        110,
+        "1870"
+       ],
+       [
+        "M",
+        "1542"
+       ],
+       [
+        "M",
+        "1544"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Pagetoid melanoma in situ 有時在組織上難與 BD 區分：BD 的非典型角質細胞之間應可辨識 intercellular desmosomal bridges；melanocyte-specific immunoperoxidase 染色在 melanoma 細胞為陽性，在 BD 與 Paget disease 細胞為陰性。McKee 亦列出 BD 腫瘤細胞為 S100 protein 與 HMB-45 陰性。",
+      "refs": [
+       [
+        110,
+        "1870"
+       ],
+       [
+        "M",
+        "1195"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "外用 podophyllin 會誘發 metaphase arrest，造成怪異的角質細胞、結構紊亂、空泡化，有時呈 pseudoepitheliomatous hyperplasia，可被誤認為 BD；這些變化通常在數天至一週後消退。McKee 亦提醒診斷肛門生殖器 BD 前須詢問治療史，明顯的 metaphase 細胞是 podophyllin 治療的線索。",
+      "refs": [
+       [
+        110,
+        "1870"
+       ],
+       [
+        "M",
+        "1197"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "未治療的 BD 進展為 invasive carcinoma 的整體風險估計約 5%，不是 30%；器官移植受者等免疫低下者特別容易復發、多發及轉變為 invasive SCC。McKee 亦記載約 5% 的病例發展出侵襲性成分，其中約 30% 具轉移潛力。",
+      "refs": [
+       [
+        110,
+        "1870"
+       ],
+       [
+        "M",
+        "1193"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-33",
+   "topic": "Systemic retinoids — adverse effects and interactions",
+   "fitz": [
+    185
+   ],
+   "polarity": "positive",
+   "stem": "關於 systemic retinoids 的副作用與藥物交互作用，下列敘述何者正確？",
+   "options": {
+    "A": "飲酒會促使 etretinate 轉換為 acitretin",
+    "B": "Telogen effluvium 型掉髮在 isotretinoin 治療時比 acitretin 嚴重",
+    "C": "Bexarotene 引起的 central hypothyroidism 停藥後可迅速且完全恢復",
+    "D": "暫時性 transaminase 上升以 isotretinoin 最常見，etretinate 與 acitretin 則少見"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "Bexarotene 引起的 central hypothyroidism 停藥後迅速且完全恢復，答案 C。",
+    "items": [
+     {
+      "key": "A",
+      "label": "方向說反",
+      "ok": false,
+      "text": "酒精會增加 acitretin 轉換為 etretinate（並增加肝毒性），方向與選項相反；因此口服 retinoid 應避免與酒精併用。",
+      "refs": [
+       [
+        185,
+        "3404"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "方向說反",
+      "ok": false,
+      "text": "瀰漫或局部掉髮（telogen effluvium）是常見主訴，在 acitretin 治療時比 isotretinoin 更嚴重；客觀可見的 alopecia 通常只在較高劑量並治療數個月後才出現。",
+      "refs": [
+       [
+        185,
+        "3403"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Bexarotene 治療 CTCL 的試驗中，40% 病人出現臨床與生化的 central hypothyroidism，停藥後迅速且完全恢復、無臨床後遺症；alitretinoin 也有相同副作用，因兩者都結合會與 nuclear thyroid receptor 形成二聚體的 RXR。外用 bexarotene gel 則未觀察到此副作用。",
+      "refs": [
+       [
+        185,
+        "3402"
+       ],
+       [
+        185,
+        "3403"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "藥物說反",
+      "ok": false,
+      "text": "約 20% 的 etretinate 或 acitretin 使用者出現暫時性 transaminase 上升，其他 retinoids 則少得多；isotretinoin 偶見 alkaline phosphatase 上升，但不具臨床意義。",
+      "refs": [
+       [
+        185,
+        "3403"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-34",
+   "topic": "Mycophenolate mofetil — mechanism, pharmacokinetics, interactions, contraindications",
+   "fitz": [
+    192
+   ],
+   "polarity": "positive",
+   "stem": "關於 mycophenolate mofetil（MMF）的藥理與使用，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "其活性代謝物 mycophenolic acid（MPA）可逆地抑制 type II isoform 的 inosine monophosphate dehydrogenase，阻斷 de novo purine synthesis。"
+    },
+    {
+     "id": "②",
+     "text": "腎衰竭時，上升的 MPAG（MPA glucuronide）會把 MPA 從 albumin 結合位置置換出來，使游離 MPA 濃度升高。"
+    },
+    {
+     "id": "③",
+     "text": "同時服用 antacids、cholestyramine 或 proton pump inhibitors 會降低 MMF 的吸收。"
+    },
+    {
+     "id": "④",
+     "text": "Hypoxanthine-guanine phosphoribosyl transferase 缺乏（如 Lesch-Nyhan syndrome）是使用 MMF 的 relative contraindication。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "E"
+   ],
+   "expl": {
+    "summary": "四個敘述皆正確，答案 E。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "MPA 可逆地抑制 type II isoform 的 inosine monophosphate dehydrogenase，此酵素是 de novo purine synthesis 的關鍵酵素；由於 T 與 B lymphocytes 利用 hypoxanthine-guanine phosphoribosyl transferase 依賴的 purine salvage pathway 的能力不足，其增生被選擇性抑制，臨床上可見遲發型過敏反應與免疫球蛋白濃度下降。",
+      "refs": [
+       [
+        192,
+        "3517"
+       ],
+       [
+        192,
+        "3518"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "在臨床濃度下 97% 的 MPA 與 plasma albumin 結合，經肝臟 glucuronyl transferases 代謝為無活性的 MPAG，幾乎完全由腎臟排除；腎衰竭時 MPAG 上升會把 MPA 從 albumin 結合位置置換出來，游離 MPA 升高，可能造成超治療濃度。",
+      "refs": [
+       [
+        192,
+        "3518"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Antacids、cholestyramine 與 PPIs 會降低 MMF 吸收：cholestyramine 破壞 enterohepatic circulation，PPIs 則因提高胃 pH 而妨礙吸收；PPI 與 MMF 間隔 2 小時服用可能避開此交互作用。",
+      "refs": [
+       [
+        192,
+        "3519"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "因 MMF 抑制 de novo purine synthesis，hypoxanthine-guanine phosphoribosyl transferase 缺乏（例如 Lesch-Nyhan syndrome）屬使用 MMF 的 relative contraindication；另一個 relative contraindication 是嚴重腎功能不全。",
+      "refs": [
+       [
+        192,
+        "3518"
+       ],
+       [
+        192,
+        "3519"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "E/E",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-35",
+   "topic": "Paraneoplastic pemphigus — serologic screening, tumor work-up, lung involvement, prognosis",
+   "fitz": [
+    53
+   ],
+   "polarity": "positive",
+   "stem": "58 歲男性，近 2 個月有頑固且疼痛的口腔糜爛，侵犯舌頭側緣並延伸至唇紅；軀幹有易破的水疱與糜爛，手掌、腳掌與甲周可見 lichenoid 丘疹。皮膚切片顯示 suprabasilar acantholysis 合併 vacuolar interface change。病人過去沒有已知的腫瘤。關於此病人的診斷、後續評估與預後，下列敘述何者正確？",
+   "options": {
+    "A": "可用 rodent urinary bladder epithelium 做 indirect immunofluorescence 篩檢 plakin 自體抗體",
+    "B": "尋找潛在腫瘤時，endoscopy 是最有效率的篩檢方法",
+    "C": "日後若出現漸進性呼吸困難，只要胸部 X 光正常即可排除肺部侵犯",
+    "D": "皮疹呈 erythema multiforme 樣且切片可見 keratinocyte necrosis 者，預後較佳"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "以 rodent urinary bladder epithelium 做 indirect immunofluorescence 可篩檢 plakin 自體抗體，答案 A。",
+    "items": [
+     {
+      "key": "A",
+      "label": "本題答案",
+      "ok": true,
+      "text": "頑固疼痛的口腔炎（好發舌側緣並延伸至唇紅）合併多形性皮疹，切片兼有 acantholysis 與 interface change，符合 paraneoplastic pemphigus（PNP）。篩檢可用 rodent urinary bladder epithelium 做 IgG 的 indirect immunofluorescence，陽性表示有 plakin 自體抗體，但其 sensitivity 與 specificity 只有約 75% 與 83%；以 envoplakin、periplakin 重組蛋白做的 ELISA 具高敏感性與特異性，immunoblotting 與 immunoprecipitation 更敏感且更特異，但較費時、技術要求高且不普及。McKee 亦指出最多 25% 病例的 rat bladder 檢查為陰性。",
+      "refs": [
+       [
+        53,
+        "936"
+       ],
+       [
+        53,
+        "937"
+       ],
+       [
+        "M",
+        "185"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "應以影像檢查",
+      "ok": false,
+      "text": "約三分之一病人在發生 PNP 時有 occult malignancy，最可能是腹腔內 lymphoma、胸腔內或後腹腔 Castleman tumor 或後腹腔 sarcoma；最有效率的篩檢方法是頸部至膀胱底的 CT 或 MRI，可行時 FDG PET/CT 對 occult lymphoma 可更具特異性，endoscopy 等其他檢查並非必要。",
+      "refs": [
+       [
+        53,
+        "940"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "不能排除",
+      "ok": false,
+      "text": "PNP 肺部侵犯的最早症狀是漸進性呼吸困難，起初胸部 X 光沒有異常；肺功能檢查顯示大、小呼吸道的氣流阻塞，多數病例儘管接受免疫抑制治療仍惡化，發展出 bronchiolitis obliterans。出現呼吸困難與缺氧是不祥的預後徵象。",
+      "refs": [
+       [
+        53,
+        "937"
+       ],
+       [
+        53,
+        "941"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "預後較差",
+      "ok": false,
+      "text": "法國一項 18 年追蹤的多中心回溯世代研究發現，以 erythema multiforme 樣病灶表現，以及皮膚切片可見 keratinocyte necrosis，是顯著的不良預後因子。",
+      "refs": [
+       [
+        53,
+        "941"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-36",
+   "topic": "Porphyrias — EPP and CEP",
+   "fitz": [
+    124
+   ],
+   "polarity": "negative",
+   "stem": "關於 erythropoietic protoporphyria（EPP）與 congenital erythropoietic porphyria（CEP）的生化特徵與處置，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "EPP 病人紅血球中累積的 protoporphyrin 主要是與鋅結合的 zinc protoporphyrin。"
+    },
+    {
+     "id": "②",
+     "text": "EPP 病人的尿液 porphyrin 通常正常，因為 protoporphyrin 具疏水性、不經尿液排出（合併 protoporphyric hepatopathy 者除外）。"
+    },
+    {
+     "id": "③",
+     "text": "CEP 的有害光主要為 UVB，因此使用可吸收 UVA 與 UVB 的外用防曬品即可有效預防皮膚病灶。"
+    },
+    {
+     "id": "④",
+     "text": "Hematopoietic stem cell transplantation 具治癒性，是年輕重症 CEP 病人的首選治療（treatment of choice）。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "①③錯誤，答案 A。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "EPP 紅血球中過多的 protoporphyrin 主要是 metal-free（未與金屬結合）的 protoporphyrin；lead intoxication、iron deficiency、anemia of chronic disease、hemolytic states 等情況增加的才主要是 zinc protoporphyrin。紅血球 protoporphyrin 增加且以 metal-free 為主，是 protoporphyrias 特有的發現。",
+      "refs": [
+       [
+        124,
+        "2246"
+       ],
+       [
+        124,
+        "2248"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確",
+      "ok": true,
+      "text": "Protoporphyrin 具疏水性、不經尿液排出，而是由肝細胞攝取後經膽汁與糞便排出。因此 EPP 的尿液 porphyrin 正常；只有合併 protoporphyric hepatopathy 的病人，尿液 coproporphyrin 會像其他原因的肝功能異常一樣上升。",
+      "refs": [
+       [
+        124,
+        "2246"
+       ],
+       [
+        124,
+        "2249"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "CEP 的有害光主要是可見光（mostly visible），所以吸收 UVA 與 UVB 的外用防曬品只有些微幫助（marginally beneficial），口服 beta-carotene 也無效。病人應避免日曬、皮膚外傷與感染，以免嚴重結疤及臉部特徵與手指的喪失。",
+      "refs": [
+       [
+        124,
+        "2244"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確",
+      "ok": true,
+      "text": "Hematopoietic stem cell transplantation 具治癒性，是年輕重症 CEP 病人的首選治療；移植成功可使臨床表現明顯改善並降低 porphyrin 濃度。",
+      "refs": [
+       [
+        124,
+        "2243"
+       ],
+       [
+        124,
+        "2244"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-37",
+   "topic": "Phototherapy — combination with topical agents and uremic pruritus",
+   "fitz": [
+    198
+   ],
+   "polarity": "positive",
+   "stem": "關於 UVB phototherapy 合併外用藥物與其臨床應用，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Vitamin D analog（如 calcipotriol）與 NB-UVB 光療併用時，應於照光後塗抹，因照光前塗抹會造成 vitamin D3 降解，且 calcipotriene 會提高 MED。"
+    },
+    {
+     "id": "②",
+     "text": "UVB 光療前外用 salicylic acid 去除鱗屑，可增加 UVB 穿透而提高光療療效。"
+    },
+    {
+     "id": "③",
+     "text": "Chronic renal failure 相關搔癢以 BB-UVB 只照射一半身體時，照射與未照射部位的搔癢都會改善，顯示光療對此病是作用在全身層次。"
+    },
+    {
+     "id": "④",
+     "text": "外用 tazarotene 併用 UVB 光療時，因 retinoid 會降低光敏感性，常規做法是以高於一般起始劑量的劑量開始照光。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "①③正確，答案 A。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "照光前塗抹 calcipotriol 會造成 vitamin D3 不必要的降解；calcipotriene 會提高病人的 MED，提示其具有 photoprotective effect（光保護作用）。因此與光療併用時，vitamin D analogs 必須在照光之後塗抹。",
+      "refs": [
+       [
+        198,
+        "3647"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤",
+      "ok": false,
+      "text": "外用 salicylic acid 合併 UVB 並未被發現能增加 UVB 光療的療效，因為它會阻擋 UVB 穿透。能減少角質層鱗屑造成的散射、改善 UVB 穿透並增加療效的是外用 lubricants。",
+      "refs": [
+       [
+        198,
+        "3647"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "UVB phototherapy 是 chronic renal failure 相關搔癢的治療選項，約 80%–90% 病人在 2–5 週內改善。BB-UVB 只照射一半身體即可同時改善照射與未照射部位的搔癢，因此此病的光療作用在全身層次而非局部。",
+      "refs": [
+       [
+        198,
+        "3651"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "方向相反：retinoids 可能造成 photosensitivity（光敏感），因此 tazarotene 與 UVB 併用時，常規做法是以一般起始劑量的 50%–75% 開始光療。Tazarotene 0.1% gel 與 NB-UVB 併用具有加成或協同效果。",
+      "refs": [
+       [
+        198,
+        "3647"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 2,
+    "fixes": 3,
+    "replaced_items": true
+   }
+  },
+  {
+   "id": "M-38",
+   "topic": "Grafts and interpolation flaps",
+   "fitz": [
+    203
+   ],
+   "polarity": "negative",
+   "stem": "關於皮膚缺損重建所用的 grafts 與 interpolation flaps，下列敘述何者錯誤？",
+   "options": {
+    "A": "以 cartilage 為底的 composite graft 只能從側緣獲得血流，因此面積應小於 2 cm²。",
+    "B": "Free cartilage graft 用於重塑輪廓時，以鼻部的 hyaline cartilage 優於耳朵的 elastic cartilage。",
+    "C": "Abbé flap 取自同側下唇，以 inferior labial artery 為血管蒂，蒂部至少保留 3 週才斷蒂。",
+    "D": "Conchal bowl 的 FTSG 與鼻尖、鼻翼皮膚的質地及皮脂腺密度相近，特別適合修補這兩處缺損。"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "重塑輪廓以耳朵的 elastic cartilage 最好，不是鼻部的 hyaline cartilage，答案 B。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確",
+      "ok": false,
+      "text": "以 cartilage 為底的 composite graft 縫上後只從側緣獲得血流，因此應小於 2 cm²，較大的植皮中央部分得不到足夠養分而無法存活；這類植皮代謝需求最高，失敗率也最高。",
+      "refs": [
+       [
+        203,
+        "3757"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "本題答案",
+      "ok": true,
+      "text": "課本指出重塑輪廓（recontouring）以耳朵的 elastic cartilage 最好，優於鼻部的 hyaline cartilage。Free cartilage graft 常經 postauricular sulcus 或 conchal bowl 切口取得，用於鼻尖、鼻翼、耳朵與眼瞼等游離緣，以提供結構支撐並維持自然輪廓。",
+      "refs": [
+       [
+        203,
+        "3757"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確",
+      "ok": false,
+      "text": "Abbé flap（lip-switch flap）用於大而深、通常位於上唇的缺損，取自同側下唇並以 inferior labial artery 為蒂；與其他 interpolation flaps 一樣，蒂部至少保留 3 週，期間口裂會明顯變形，須事先告知病人。",
+      "refs": [
+       [
+        203,
+        "3751"
+       ],
+       [
+        203,
+        "3752"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "正確",
+      "ok": false,
+      "text": "Conchal bowl 植皮與鼻尖、鼻翼皮膚的質地相似、皮脂腺密度都高，因此特別適合這些部位的缺損，供皮處也可以二期癒合。",
+      "refs": [
+       [
+        203,
+        "3753"
+       ],
+       [
+        203,
+        "3754"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-39",
+   "topic": "Occupational skin diseases — latex, vibration white finger, prevention, butcher warts",
+   "fitz": [
+    27
+   ],
+   "polarity": "positive",
+   "stem": "關於職業性皮膚病的致病因子、表現與預防，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Natural rubber latex（NRL）只會引起 type I 立即型過敏（immunologic contact urticaria），不會造成 type IV 遲發型過敏。"
+    },
+    {
+     "id": "②",
+     "text": "Vibration-induced white finger 屬於 secondary Raynaud phenomenon，與 30–300 Hz 的振動頻率關聯最強，吸菸是已知危險因子。"
+    },
+    {
+     "id": "③",
+     "text": "依 hierarchy of controls，手套、防護衣等 personal protective equipment 是預防職業性皮膚危害時最優先採取的措施。"
+    },
+    {
+     "id": "④",
+     "text": "HPV-7（butcher wart virus）幾乎只見於屠夫及肉品、魚類處理者。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "②④正確，答案 B。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤",
+      "ok": false,
+      "text": "NRL 可引起 immunologic contact urticaria（type I），也可造成 type IV hypersensitivity（即 ACD）；課本指出 ACD 占 NRL 過敏反應的大多數（>80%）。",
+      "refs": [
+       [
+        27,
+        "446"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "使用振動工具可誘發手指與手部的疼痛性血管痙攣，稱為 vibration-induced white finger（VWF），屬 secondary Raynaud phenomenon；使用氣動鉚釘槍、鏈鋸、電鑽、錘子等工具者風險較高，寒冷氣候下尤甚。30–300 Hz 的振動頻率與 VWF 關聯最強，吸菸是已知危險因子。",
+      "refs": [
+       [
+        27,
+        "447"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Hierarchy of controls 由最具保護力到最弱依序為 elimination、substitution、engineering controls、administrative controls 與 PPE；防護衣與外用屏障是最後手段（last resort）。PPE 使用不當反而可能增加刺激物與過敏原的滲透，PPE 本身（如 latex 手套）也可能含過敏原。",
+      "refs": [
+       [
+        27,
+        "438"
+       ],
+       [
+        27,
+        "452"
+       ],
+       [
+        27,
+        "453"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "屠夫及肉品、魚類處理者的 viral warts 可由多種 HPV 型別引起，但 HPV-7（butcher wart virus）幾乎只見於這群工作者。",
+      "refs": [
+       [
+        27,
+        "450"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": true
+   }
+  },
+  {
+   "id": "M-40",
+   "topic": "Acne variants — infantile acne, Favre-Racouchot, PAPA, Morbihan disease",
+   "fitz": [
+    80
+   ],
+   "polarity": "positive",
+   "stem": "關於 acne variants 與 acneiform eruptions 的臨床特徵與致病機轉，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Infantile acne 典型在 3–6 個月大出現，以臉頰與下巴的 open 與 closed comedones 為主，部分與未成熟腎上腺產生的 DHEA 短暫升高有關。"
+    },
+    {
+     "id": "②",
+     "text": "過度 UV 暴露可造成 Favre-Racouchot syndrome，表現為布滿大型 open comedones 的黃色萎縮性斑塊，通常對稱分布於顳部與眼周。"
+    },
+    {
+     "id": "③",
+     "text": "PAPA syndrome 屬於系統性自體發炎疾病，PSTPIP1 突變會使 IL-1β 產生增加。"
+    },
+    {
+     "id": "④",
+     "text": "Acne with solid facial edema（Morbihan disease）以臉部中三分之一的 woody edema 合併紅斑與痤瘡為特徵，口服抗生素治療通常無效。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "E"
+   ],
+   "expl": {
+    "summary": "①②③④皆正確，答案 E。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Infantile acne 典型在 3–6 個月大出現，臉頰與下巴有 open 與 closed comedones，也可有丘疹、膿疱與結節，即使相對輕微也可能留下 pitted scarring。部分原因是未成熟腎上腺產生的 DHEA 短暫升高；男嬰在出生後最初 6–12 個月內 LH 也可能升高而刺激 testosterone 生成，約 1 歲起這些荷爾蒙濃度趨於穩定，因此通常在 1–2 歲左右消退。",
+      "refs": [
+       [
+        80,
+        "1448"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "過度 UV 暴露可造成布滿大型 open comedones 的黃色萎縮性斑塊，稱為 Favre-Racouchot syndrome（又稱 solar comedones、senile comedones、nodular elastoidosis with cysts and comedones）；估計見於 6% 的 50 歲以上者。病灶通常對稱分布於 temporal 與 periorbital 區，依暴露情形也有單側的報告。",
+      "refs": [
+       [
+        80,
+        "1453"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "PAPA（pyogenic arthritis、pyoderma gangrenosum、acne）、PASH 與 PAPASH 是先天免疫失調、IL-1 過度產生所致的系統性自體發炎疾病；PSTPIP1 突變會使 IL-1β 產生增加。曾有以 cyclosporine、dapsone、infliximab 與 anakinra 成功治療的報告。",
+      "refs": [
+       [
+        80,
+        "1450"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Acne with solid facial edema（Morbihan disease）是罕見且會毀容的 acne vulgaris 變異型，臉部中三分之一出現 woody edema 並伴隨紅斑與痤瘡；水腫程度可起伏，但不會自行消退。口服抗生素通常無效；低劑量 isotretinoin（0.2–0.5 mg/kg/day）單用或併用口服類固醇、ketotifen 或 clofazimine 4–5 個月，有報告指出有益。",
+      "refs": [
+       [
+        80,
+        "1451"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "E/E",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-41",
+   "topic": "Pitted keratolysis — epidemiology, distribution, diagnosis, histopathology",
+   "fitz": [
+    150
+   ],
+   "polarity": "positive",
+   "stem": "關於 pitted keratolysis 的流行病學、臨床表現、診斷與病理，下列敘述何者正確？",
+   "options": {
+    "A": "男女皆可罹病，但以成年女性較常見，女男比約 8:1。",
+    "B": "凹洞（pits）主要分布於足底非承重部位，承重的角化處較少侵犯。",
+    "C": "刮屑檢查時，KOH 鏡檢比 Gram stain 更容易找到致病菌。",
+    "D": "切片特殊染色可見 coccoid forms 位於較表淺處，具分枝與分隔的 filamentous forms 位於較深處。"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "Pitted keratolysis 切片中 coccoid forms 較表淺、filamentous forms 較深，答案 D。",
+    "items": [
+     {
+      "key": "A",
+      "label": "好發於男性",
+      "ok": false,
+      "text": "Pitted keratolysis 雖然男女、成人與兒童皆可發生，但以足部多汗的成年男性最易感（約 90%），男女比約 8:1，不是女性較多。McKee 亦寫主要見於年輕男性，兒童罕見。",
+      "refs": [
+       [
+        150,
+        "2740"
+       ],
+       [
+        "M",
+        "912"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "主要在承重部位",
+      "ok": false,
+      "text": "Pits 主要位於足部承重的角化處，例如腳趾腹側、蹠球（ball of the foot）與足跟，非承重處也可見；趾縫也常侵犯，且可為唯一表現。McKee 亦寫 crateriform defects 集中在足部承重部位。",
+      "refs": [
+       [
+        150,
+        "2740"
+       ],
+       [
+        "M",
+        "912"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "Gram stain 較易找到菌",
+      "ok": false,
+      "text": "Pitted keratolysis 為臨床診斷；刮屑以 Gram stain 檢查可能比 potassium hydroxide（KOH）檢查更容易找到致病菌，方向相反。細菌培養常無幫助，因為會長出多種細菌。",
+      "refs": [
+       [
+        150,
+        "2741"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "本題答案",
+      "ok": true,
+      "text": "切片通常不需要，若做，Gram、PAS 與 methenamine silver 染色可見細菌位於上層角質層 crateriform defects 的壁與底部：coccoid forms 位於較表淺處，具分枝與分隔的 filamentous forms 位於較深處。McKee 亦寫需特殊染色才看得到菌，coccoid forms 傾向集中在凹洞表面附近，filamentous forms 則在缺損較深處。",
+      "refs": [
+       [
+        150,
+        "2741"
+       ],
+       [
+        "M",
+        "913"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-42",
+   "topic": "Syphilis — treatment principles, penicillin allergy in pregnancy, Jarisch-Herxheimer reaction",
+   "fitz": [
+    170
+   ],
+   "polarity": "negative",
+   "stem": "關於梅毒（syphilis）的治療與 Jarisch-Herxheimer reaction，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Jarisch-Herxheimer reaction 為自限性症候群，於開始治療後 24 小時內發生，可有發燒、頭痛、皮膚黏膜病灶 flare 與淋巴結壓痛。"
+    },
+    {
+     "id": "②",
+     "text": "發生 Jarisch-Herxheimer reaction 並不妨礙日後再使用 penicillin，這點與 penicillin 過敏反應不同。"
+    },
+    {
+     "id": "③",
+     "text": "[i]T. pallidum[/i] 分裂緩慢（體外約 30–50 小時），benzathine penicillin G 的半衰期長，因此在治療上很重要。"
+    },
+    {
+     "id": "④",
+     "text": "對 penicillin 過敏的梅毒孕婦，應改用 doxycycline 治療，不需進行 penicillin desensitization。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "④錯誤，答案 D。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確",
+      "ok": true,
+      "text": "Jarisch-Herxheimer reaction 是自限性的臨床症候群，包括發燒、頭痛、皮膚黏膜病灶 flare、tender lymphadenopathy、pharyngitis、malaise、myalgia 與 leukocytosis，發生在開始治療後的頭 24 小時內；發燒在發作後 6–8 小時達高峰，通常約 39°C。",
+      "refs": [
+       [
+        170,
+        "3167"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確",
+      "ok": true,
+      "text": "初次治療時應教導病人區分 allergic reaction 與 Jarisch-Herxheimer reaction：前者會排除日後再使用 penicillin 或相關藥物，後者則不會。",
+      "refs": [
+       [
+        170,
+        "3167"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確",
+      "ok": true,
+      "text": "[i]T. pallidum[/i] 分裂緩慢，體外需 30–50 小時，因此藥物必須在體內存在很長時間才能確保療效。Benzathine penicillin G 是多數分期建議的 penicillin 劑型，其半衰期長，因應 [i]T. pallidum[/i] 分裂緩慢的特性，在治療上很重要。",
+      "refs": [
+       [
+        170,
+        "3160"
+       ],
+       [
+        170,
+        "3166"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "孕婦不可使用 doxycycline。對 penicillin 過敏的孕婦必須先 desensitization 再以 penicillin 治療，因為 penicillin 是目前已知唯一能預防母嬰傳染並治療胎兒感染的藥物。非懷孕且沒有 neurosyphilis 的 penicillin 過敏者才可用 doxycycline。",
+      "refs": [
+       [
+        170,
+        "3160"
+       ],
+       [
+        170,
+        "3166"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-43",
+   "topic": "Dapsone — metabolism, drug interactions, laboratory monitoring, HbA1c in diabetes",
+   "fitz": [
+    187
+   ],
+   "polarity": "positive",
+   "stem": "58 歲男性，有第 2 型糖尿病。經切片與 direct immunofluorescence 確診 dermatitis herpetiformis，G6PD 檢測正常，準備開始口服 dapsone。關於此病人的用藥與追蹤，下列敘述何者正確？",
+   "options": {
+    "A": "Dapsone 的療效與毒性和 acetylation 速率有關，用藥前應先檢測 acetylator phenotype。",
+    "B": "若同時服用 rifampicin，dapsone 血中濃度會升高，增加副作用風險。",
+    "C": "用藥後 hemoglobin 下降 1–2 g/dL 時，即使沒有症狀也應停藥。",
+    "D": "Dapsone 可使 HbA1c 假性偏低，可改以 fructosamine 追蹤血糖控制。"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "Dapsone 會使 HbA1c 假性偏低，可改追蹤 fructosamine，答案 D。",
+    "items": [
+     {
+      "key": "A",
+      "label": "與 acetylation 速率無關",
+      "ok": false,
+      "text": "Dapsone 雖以多型性方式被 acetylate 成 MADDS，但 MADDS 會快速 deacetylation，兩者很快達平衡；dapsone 的療效、half-life 與毒性看來與 acetylation 速率無關，用藥前不需要檢測 acetylator phenotype。就療效與副作用而言，最重要的是 dapsone hydroxylamine（DDS-NOH）的生成。",
+      "refs": [
+       [
+        187,
+        "3424"
+       ],
+       [
+        187,
+        "3425"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "Rifampicin 降低濃度",
+      "ok": false,
+      "text": "Rifampicin 會 upregulate P450 系統而降低 dapsone 血中濃度（降低療效），方向相反；會使 dapsone 血中濃度升高、增加副作用機會的是 probenecid 與 trimethoprim。",
+      "refs": [
+       [
+        187,
+        "3425"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "無症狀不需停藥",
+      "ok": false,
+      "text": "開始治療後應於第 1 個月每週、之後 2 個月每月兩次追蹤白血球分類、hemoglobin 與 reticulocyte count；hemoglobin 下降 1–2 g/dL 是可預期的，若沒有症狀不應因此停藥。",
+      "refs": [
+       [
+        187,
+        "3429"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "本題答案",
+      "ok": true,
+      "text": "應告知糖尿病病人 dapsone 會因紅血球更新加速（accelerated RBC turnover）而使 hemoglobin A1c 假性偏低；改為監測 fructosamine 可避免這個干擾因素。",
+      "refs": [
+       [
+        187,
+        "3429"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-44",
+   "topic": "Systemic antifungals — griseofulvin mechanism, terbinafine CYP2D6 inhibition, fluconazole spectrum and elimination",
+   "fitz": [
+    188
+   ],
+   "polarity": "negative",
+   "stem": "關於口服抗黴菌藥 griseofulvin、terbinafine 與 fluconazole 的作用機轉、抗菌譜與藥物動力學，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Griseofulvin 抑制 lanosterol 14α-demethylase，阻斷 ergosterol 的合成。"
+    },
+    {
+     "id": "②",
+     "text": "Terbinafine 對 CYP2D6 有強力抑制作用，可增加 nortriptyline、amitriptyline 等經此酵素代謝藥物的毒性。"
+    },
+    {
+     "id": "③",
+     "text": "Fluconazole 對所有 [i]Candida[/i] 菌種都有效，包括 [i]C. krusei[/i]。"
+    },
+    {
+     "id": "④",
+     "text": "Fluconazole 在肝臟代謝很少，主要經腎臟排除，腎功能不全時需調整劑量。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "①③錯誤，答案 A。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Griseofulvin 是 fungistatic 藥物，結合 tubulin 與 microtubule-associated proteins（MAPs），在 G2/M 期抑制 mitotic spindle 形成，使細胞無法分裂並走向 apoptosis。抑制 lanosterol 14α-demethylase 的是 azoles。",
+      "refs": [
+       [
+        188,
+        "3448"
+       ],
+       [
+        188,
+        "3443"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確",
+      "ok": true,
+      "text": "Terbinafine 對 CYP2D6 有強力抑制作用，會增加經此酵素代謝之藥物（nortriptyline、amitriptyline、venlafaxine、desipramine）的潛在毒性；也會減少 caffeine 與 cyclosporine 的排除。",
+      "refs": [
+       [
+        188,
+        "3440"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Fluconazole 對所有 [i]Candida[/i] 都有效，唯獨 [i]C. krusei[/i] 例外（all [i]Candida[/i] except [i]C. krusei[/i]）。",
+      "refs": [
+       [
+        188,
+        "3445"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確",
+      "ok": true,
+      "text": "Fluconazole 在肝臟代謝很少，腎臟是主要排除途徑，因此腎功能不全時需要調整劑量。",
+      "refs": [
+       [
+        188,
+        "3445"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-45",
+   "topic": "PUVA — psoralen photochemistry, lymphocyte apoptosis, combination with cyclosporine and retinoids",
+   "fitz": [
+    199
+   ],
+   "polarity": "positive",
+   "stem": "關於 PUVA（psoralen plus UVA）的作用機轉與合併治療，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "沒有紫外線時 psoralen 先 intercalate 於 DNA 雙股的鹼基對之間；吸收 UVA 光子後與 pyrimidine 形成 monofunctional adduct，部分 psoralen 可再吸收一個光子形成 interstrand crosslink。"
+    },
+    {
+     "id": "②",
+     "text": "PUVA 合併 cyclosporine 會大幅增加皮膚癌風險，此合併治療明確不建議。"
+    },
+    {
+     "id": "③",
+     "text": "RePUVA（口服 retinoid 合併 PUVA）典型可使照射次數減少約 1/3，累積 UVA 劑量減少一半以上。"
+    },
+    {
+     "id": "④",
+     "text": "PUVA 誘發 keratinocytes 凋亡（apoptosis）的可能性遠高於 lymphocytes。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③正確，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "沒有 UV 時，psoralens 先 intercalate 於 DNA 雙股相對的鹼基對之間；吸收 UVA 光子後先與 thymine 或 cytosine 形成 monofunctional adduct，部分 psoralens（包括 8-MOP、TMP、5-MOP）可再吸收第二個光子形成 bifunctional adduct，造成雙股間的 interstrand crosslink。但 crosslinking 看來並不是療效的必要條件。",
+      "refs": [
+       [
+        199,
+        "3665"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Cyclosporine 合併 PUVA 會大幅增強皮膚致癌性，與 solid organ transplant 病人以此免疫抑制劑維持時 cutaneous SCC 風險大增的觀察相符，因此課本寫此合併應明確不鼓勵（definitely discouraged）。",
+      "refs": [
+       [
+        199,
+        "3670"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "在 PUVA 開始前 5–10 天每日口服 retinoid（etretinate、acitretin、isotretinoin；1 mg/kg）並持續整個清除期，稱為 RePUVA；典型可減少約三分之一的照射次數，總累積 UVA 劑量減少超過一半，也常能清除單用 PUVA 反應不佳者。",
+      "refs": [
+       [
+        199,
+        "3670"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "方向相反：對 PUVA 而言，lymphocytes 發生 apoptosis 的可能性遠高於 keratinocytes，這可能解釋 PUVA 對 cutaneous T-cell lymphoma 與部分由 T cell 媒介的 psoriasis 療效高。",
+      "refs": [
+       [
+        199,
+        "3666"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-46",
+   "topic": "Cutaneous surgical anatomy — sensory nerves, lymphatic drainage, free margins",
+   "fitz": [
+    201
+   ],
+   "polarity": "positive",
+   "stem": "關於頭頸部皮膚外科解剖中的感覺神經、淋巴引流與 free margin，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "下唇中間三分之二與頦部（chin）的淋巴引流至 submental nodes。"
+    },
+    {
+     "id": "②",
+     "text": "Herpes zoster 病人鼻尖出現水疱（Hutchinson sign）時，提示眼睛可能受侵犯，因為 V1 的 nasociliary branch 同時分支到鼻尖與角膜。"
+    },
+    {
+     "id": "③",
+     "text": "Nasal ala 沒有 cartilage，由纖維脂肪組織構成，因此在傷口縫合張力下很容易變形。"
+    },
+    {
+     "id": "④",
+     "text": "Mental nerve 經 mental foramen 穿出，是 inferior alveolar nerve 的延續，負責下唇與頦部的感覺。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "E"
+   ],
+   "expl": {
+    "summary": "①②③④皆正確，答案 E。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "臉部淋巴大致由淺到深、由內向外並往下引流（但可能有變異）。下唇中間三分之二與 chin 引流至 submental nodes；內側與下方臉部（含內側眼瞼與外側嘴唇）引流至 submandibular nodes；外側與上方臉部、前額與外側眼瞼則引流至 parotid nodes。",
+      "refs": [
+       [
+        201,
+        "3705"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "External nasal branch（dorsal nasal nerve）屬 V1 nasociliary branch，支配鼻背，是部分 ophthalmic herpes zoster 出現 Hutchinson sign 的解剖基礎；鼻尖水疱表示眼睛可能受侵犯，因為 nasociliary branch 同時分支到鼻尖與角膜。",
+      "refs": [
+       [
+        201,
+        "3703"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Free margin 是張力下容易變形的構造，包括 eyelid margin、alar rim、lip vermilion 與 helical rim。Nasal ala 沒有 cartilage、由 fibrofatty tissue 構成，因此受張力時特別容易變形；縫合時要注意張力向量以避免 free margin 變形。",
+      "refs": [
+       [
+        201,
+        "3699"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Mental nerve 是 V3（mandibular nerve）的三條主要皮膚分支之一，經 mental foramen 穿出，是 inferior alveolar nerve 的延續，支配下唇與 chin 的感覺。",
+      "refs": [
+       [
+        201,
+        "3703"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "E/E",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-47",
+   "topic": "Lupus erythematosus — CCLE variants (tumid LE, LE panniculitis, mucosal DLE, generalized DLE)",
+   "fitz": [
+    61
+   ],
+   "polarity": "positive",
+   "stem": "關於 chronic cutaneous lupus erythematosus（CCLE）的各亞型，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Lupus erythematosus tumidus（LET）病人多數 ANA 陽性，病程通常較嚴重。"
+    },
+    {
+     "id": "②",
+     "text": "LE profundus／LE panniculitis 的發炎主要侷限於乳頭真皮，病灶消退後不會造成皮膚凹陷。"
+    },
+    {
+     "id": "③",
+     "text": "口腔 mucosal DLE 最常侵犯舌頭，buccal mucosa 較少受侵犯。"
+    },
+    {
+     "id": "④",
+     "text": "Generalized DLE（頸部以上與以下皆有病灶）與 localized DLE 相比，進展為 SLE 的風險較高。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "只有④正確，答案 D。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤",
+      "ok": false,
+      "text": "LET 雖然在部分 SLE 病人可見，但多數 LET 病人 ANA 陰性、病程良性；LET 似乎是最光敏感的 CLE 亞型，通常對 antimalarials 反應良好，病灶傾向完全消退而不留疤痕或萎縮。",
+      "refs": [
+       [
+        61,
+        "1048"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤",
+      "ok": false,
+      "text": "LE profundus／LE panniculitis 的發炎病灶位於下層真皮與皮下組織，典型為 1–3 cm 的堅硬結節，上方皮膚常與結節相連並被往內拉，形成深的碟狀凹陷。McKee 亦描述浸潤位於深層真皮並延伸到增寬的皮下脂肪中隔，消退後可留下凹陷的萎縮性疤痕（lipoatrophy）。",
+      "refs": [
+       [
+        61,
+        "1047"
+       ],
+       [
+        "M",
+        "384-385"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Mucosal DLE 約見於 25% 的 CCLE 病人，以口腔黏膜最常受侵犯；口腔內最常侵犯的是 buccal mucosa，palate、alveolar processes 與 tongue 則較少受侵犯。",
+      "refs": [
+       [
+        61,
+        "1046"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Localized DLE 只出現在頭頸部，generalized DLE 則在頸部以上與以下皆有病灶。Generalized DLE 較常合併 SLE，免疫學異常比例稍高，進展為 SLE 及發生較嚴重 SLE 表現的風險也較 localized DLE 高。",
+      "refs": [
+       [
+        61,
+        "1045"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-48",
+   "topic": "Reactive arthritis — laboratory findings, prognosis, treatment (vignette)",
+   "fitz": [
+    65
+   ],
+   "polarity": "positive",
+   "stem": "28 歲男性，3 週前有血便腹瀉，之後出現右膝與左踝不對稱腫痛及右腳跟疼痛。檢查見腳底有膿疱性角化斑塊；未割包皮，翻開包皮可見龜頭有濕潤、無痛的紅色環狀病灶。關於此病人可能診斷的檢查與處置，下列敘述何者正確？",
+   "options": {
+    "A": "受侵犯關節的關節液 Gram stain 與細菌培養通常呈陽性，與 septic arthritis 相似。",
+    "B": "若 HLA-B27 陽性，表示病程較短、較不會轉為慢性。",
+    "C": "血清 rheumatoid factor 或 antinuclear antibody 常呈陽性，可用來確立診斷。",
+    "D": "急性期可先以 NSAIDs 作為初始治療；腳底與龜頭的皮膚病灶可先使用 topical corticosteroids。"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "此為 reactive arthritis，NSAIDs 與外用類固醇是適當的初始治療，答案 D。",
+    "items": [
+     {
+      "key": "A",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Reactive arthritis（ReA）的受侵犯關節找不到感染原，這也是它與 septic arthritis 不同之處。關節液典型為無菌性發炎，白血球 4,000–50,000/µL、以 polymorphonuclear cells 為主，crystal analysis、Gram stain 與細菌培養皆為陰性。",
+      "refs": [
+       [
+        65,
+        "1139"
+       ],
+       [
+        65,
+        "1141"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "錯誤",
+      "ok": false,
+      "text": "HLA-B27 是 ReA 的危險因子；多項研究顯示 HLA-B27 陽性病人症狀較嚴重、較可能發展為慢性病程，其存在對預測較慢性的預後比對確立診斷更有幫助。",
+      "refs": [
+       [
+        65,
+        "1140-1141"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "錯誤",
+      "ok": false,
+      "text": "ReA 沒有確診用的實驗室檢查；acute-phase reactants 可能上升，但與 rheumatoid factor、antinuclear antibody 等已知自體抗體無關，這也是 ReA 與 RA、SLE 的鑑別點之一。",
+      "refs": [
+       [
+        65,
+        "1141"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "本題答案",
+      "ok": true,
+      "text": "急性期以 NSAIDs 症狀治療是適當的初始治療，同時具抗發炎與止痛效果，且許多急性症狀會自行緩解。Keratoderma blenorrhagicum 與 circinate balanitis 等關節外表現也以 topical corticosteroids 作為初始治療；較嚴重者才保留 etretinate 或口服 methotrexate。",
+      "refs": [
+       [
+        65,
+        "1142"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-49",
+   "topic": "Secondary hyperhidrosis and anhidrosis — Frey syndrome, CIPA, AIGA, Fabry disease",
+   "fitz": [
+    81
+   ],
+   "polarity": "negative",
+   "stem": "關於 secondary hyperhidrosis 與 anhidrosis 的相關疾病，下列敘述何者錯誤？",
+   "options": {
+    "A": "Frey syndrome 是 parotid gland 區域受傷或手術後，在 auriculotemporal nerve 分布區出現的病理性 gustatory sweating。",
+    "B": "Congenital insensitivity to pain with anhidrosis（HSAN type IV）為體染色體隱性遺傳，與 NTRK1 基因的 loss-of-function variants 有關。",
+    "C": "Acquired idiopathic generalized anhidrosis 可合併 cholinergic urticaria 與血清 IgE 上升，並可能對 glucocorticoids 有明顯反應。",
+    "D": "Fabry disease 是因 β-glucocerebrosidase 活性不足所致的 lysosomal storage disorder，hypohidrosis 是其早期表現之一。"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "Fabry disease 缺乏的是 α-galactosidase A，不是 β-glucocerebrosidase，答案 D。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確",
+      "ok": false,
+      "text": "吃辣時嘴唇、前額、頭皮與鼻子局部出汗是經 trigeminovascular reflex 的生理反應；病理性 gustatory sweating 通常不對稱且強烈，可在 parotid gland 區域受傷或手術後出現於 auriculotemporal nerve 分布區，即 Frey syndrome，推測是自主神經纖維異常再生所致。",
+      "refs": [
+       [
+        81,
+        "1463"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "正確",
+      "ok": false,
+      "text": "CIPA（HSAN type IV）是罕見的體染色體隱性疾病，特徵為先天對傷害性刺激無感、anhidrosis、反覆高燒、智能障礙與自殘行為，由 NTRK1 基因的 loss-of-function variants 造成。",
+      "refs": [
+       [
+        81,
+        "1466"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確",
+      "ok": false,
+      "text": "AIGA 臨床表現多樣，可包括急性發作、cholinergic urticaria、血清 IgE 上升、無其他自主神經功能異常，以及對 glucocorticoids 明顯反應；文獻報告的病例主要是亞洲人。",
+      "refs": [
+       [
+        81,
+        "1466"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "錯誤（本題答案）",
+      "ok": true,
+      "text": "Fabry disease 是 X-linked lysosomal storage disorder，由 α-galactosidase A 活性不足所致。早期表現包括 hypohidrosis、telangiectasia、angiokeratoma、acroparesthesia 與腸胃症狀，hypohidrosis 是其第二常見的症狀。",
+      "refs": [
+       [
+        81,
+        "1466"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-50",
+   "topic": "Vascular tumors other than infantile hemangioma — congenital hemangioma, KHE, tufted angioma, Dabska tumor",
+   "fitz": [
+    118
+   ],
+   "polarity": "positive",
+   "stem": "關於 infantile hemangioma 以外的血管腫瘤，下列敘述何者正確？",
+   "options": {
+    "A": "RICH 與 NICH 由 IDH1／IDH2 的 somatic mutation 所造成。",
+    "B": "Kaposiform hemangioendothelioma 常侵犯肝臟，並可發生遠處轉移。",
+    "C": "Tufted angioma 的組織學可見緊密排列的微血管團散佈於真皮，呈 cannonball distribution，周圍有新月形空隙。",
+    "D": "Papillary intralymphatic angioendothelioma（Dabska tumor）幾乎只發生於老年人。"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "Tufted angioma 的特徵病理為 cannonball distribution 的微血管團，答案 C。",
+    "items": [
+     {
+      "key": "A",
+      "label": "錯誤",
+      "ok": false,
+      "text": "RICH 與 NICH 是由 GNAQ 與 GNA11 的 somatic activating missense mutations（Gln209）造成，不是 IDH1／IDH2 突變。",
+      "refs": [
+       [
+        118,
+        "2060"
+       ],
+       [
+        118,
+        "2063"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "錯誤",
+      "ok": false,
+      "text": "KHE 在 ISSVA 分類屬 locally aggressive 或 borderline；可侵犯皮膚、肌肉及頸胸、腹部與後腹腔等深部構造，但不會發生在肝臟。可能有局部區域淋巴結侵犯（可能代表 multifocal disease），但不會遠處轉移。",
+      "refs": [
+       [
+        118,
+        "2062"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "本題答案",
+      "ok": true,
+      "text": "不論後天或先天的 tufted angioma，組織學都可見緊密排列微血管構成的 vascular tufts 隨機散佈於真皮，呈典型 cannonball distribution，tufts 周圍有新月形空隙，腫瘤間質中有類似淋巴管的空隙。McKee 亦描述真皮與表淺皮下的微血管小葉呈 cannonball 分布，小葉周邊有擴張的新月形淋巴管。",
+      "refs": [
+       [
+        118,
+        "2062"
+       ],
+       [
+        "M",
+        "1835"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "錯誤",
+      "ok": false,
+      "text": "PILA／Dabska tumor 是頭頸部或四肢的真皮結節或瀰漫性紫色腫脹，幾乎只見於兒童；腫瘤血管內的 hobnail endothelial cells 是其診斷必要條件（sine qua non）。主要發生於成人、與其重疊的是 retiform hemangioendothelioma。",
+      "refs": [
+       [
+        118,
+        "2064"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-51",
+   "topic": "Wound healing — growth factors",
+   "fitz": [
+    149
+   ],
+   "polarity": "positive",
+   "stem": "關於生長因子（growth factors）在傷口癒合中的角色與臨床應用，下列敘述何者正確？",
+   "options": {
+    "A": "TGF-β1 與 TGF-β2 促進 fibrosis 與疤痕形成，TGF-β3 則具有 antifibrotic 性質。",
+    "B": "Becaplermin 是 recombinant human basic FGF（FGF-2），為 FDA 核准用於 nonhealing neuropathic diabetic foot ulcers 的藥物。",
+    "C": "胎兒傷口的 scarless healing，部分可由 TGF-β1 轉錄增加來解釋。",
+    "D": "Venous ulcer 來源的 fibroblasts 對 TGF-β1 與 PDGF 反應增強，與 Type II TGF-β receptors 表現增加有關。"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "TGF-β1／TGF-β2 促進纖維化與疤痕形成，TGF-β3 具 antifibrotic 性質，答案 A。",
+    "items": [
+     {
+      "key": "A",
+      "label": "本題答案",
+      "ok": true,
+      "text": "TGF-β family 中，TGF-β1 與 TGF-β2 促進 fibrosis 與疤痕形成，TGF-β3 則具 antifibrotic 性質（Table 149-1 寫為 antiscar properties）；傷口癒合中以 TGF-β1 為主。",
+      "refs": [
+       [
+        149,
+        "2704"
+       ],
+       [
+        149,
+        "2706"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "成分錯誤",
+      "ok": false,
+      "text": "Becaplermin 是 recombinant human PDGF-BB，不是 bFGF；課本寫它是 FDA 核准用於 nonhealing neuropathic diabetic foot ulcers 的唯一藥物。PDGF-BB、bFGF 與 GM-CSF 雖都用於臨床傷口處理，但只有 PDGF 獲 FDA 核准用於傷口癒合。",
+      "refs": [
+       [
+        149,
+        "2706-2707"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "方向相反",
+      "ok": false,
+      "text": "課本寫胎兒傷口中 TGF-β1 轉錄減少，有助於解釋所見的 scarless healing；早期胚胎的傷口以 regeneration 而非 repair 癒合，不留纖維化。",
+      "refs": [
+       [
+        149,
+        "2705"
+       ],
+       [
+        149,
+        "2707"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "方向相反",
+      "ok": false,
+      "text": "Venous ulcer 來源的 fibroblasts 對 TGF-β1 與 PDGF 沒有反應（unresponsive）；對 TGF-β1 無反應可能是因為 Type II TGF-β receptors 表現減少，並使 Smad2、Smad3 等訊號蛋白的磷酸化減少。",
+      "refs": [
+       [
+        149,
+        "2712"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-52",
+   "topic": "Candidiasis — invasive candidiasis and candidemia",
+   "fitz": [
+    161
+   ],
+   "polarity": "positive",
+   "stem": "關於 invasive candidiasis 與 candidemia 的臨床表現與治療，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Candidemia 病人約 10%–30% 出現典型皮膚病灶（如中央蒼白或壞死的紅色丘疹），最常見於 [i]Candida tropicalis[/i] 感染。"
+    },
+    {
+     "id": "②",
+     "text": "Candidemia 的 myalgia 是 [i]Candida[/i] 經血行播散到肌肉（通常在下肢）形成 muscle abscess 所致，可見於多達 25% 的 candidemia 病人。"
+    },
+    {
+     "id": "③",
+     "text": "Neutropenic 的 candidemia 病人應先給予 empiric echinocandin，病情穩定後再改為 fluconazole。"
+    },
+    {
+     "id": "④",
+     "text": "雖然 [i]C. albicans[/i] 仍是單一最常見的菌種，non-albicans 菌種合計只占 invasive candidiasis 與 candidemia 的少數。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③正確，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Candidemia 的典型皮膚病灶多為散在稀疏的病灶，從中央蒼白或壞死的紅色丘疹到紅色結節（較少為斑塊），好發於軀幹與近端肢體；據報約 10%–30% 的 candidemia 會出現，最常見於 [i]C. tropicalis[/i] 感染。",
+      "refs": [
+       [
+        161,
+        "2955"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Fever、rash 與 myalgia 的典型三聯徵可作為住院病人開始 empiric 治療的依據；myalgia 是 [i]Candida[/i] 血行播散到肌肉（通常在下肢）造成 muscle abscess，臨床為溫熱、痠痛的肌肉，可見於多達 25% 的 candidemia 病人。",
+      "refs": [
+       [
+        161,
+        "2955"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Neutropenic 病人應先給予 empiric echinocandin，穩定後改為 fluconazole；血行動力學穩定的免疫正常病人，則以 echinocandin（caspofungin、micafungin 或 anidulafungin）或 fluconazole 作為第一線治療。",
+      "refs": [
+       [
+        161,
+        "2958-2959"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "[i]C. albicans[/i] 仍是單一最常見的菌種，但 non-albicans 菌種合計現已占 invasive candidiasis 與 candidemia 的多數（majority），不是少數。",
+      "refs": [
+       [
+        161,
+        "2952"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-53",
+   "topic": "Systemic glucocorticoids — monitoring and prevention of adverse effects",
+   "fitz": [
+    184
+   ],
+   "polarity": "positive",
+   "stem": "關於 systemic glucocorticoid 治療的副作用監測與預防，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "預計使用 glucocorticoid 15 mg 以上達 1 個月以上的病人應篩檢結核；此族群的 PPD 硬結需達 10 mm 以上才判為陽性。"
+    },
+    {
+     "id": "②",
+     "text": "Glucocorticoid 造成的骨質流失在用藥最初幾個月進展最慢，之後才逐漸加快。"
+    },
+    {
+     "id": "③",
+     "text": "情緒副作用方面，男性較可能出現 depression，女性較可能出現 mania。"
+    },
+    {
+     "id": "④",
+     "text": "預計接受 glucocorticoid 治療 3 個月以上者，應經由飲食與補充品攝取 calcium 1200 mg/day 及 vitamin D 800 IU/day。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "只有④正確，答案 D。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤",
+      "ok": false,
+      "text": "預計使用 15 mg 以上、為期 1 個月以上者，應以 PPD 或 interferon-gamma release assay 篩檢結核；但 glucocorticoids 會抑制 delayed-type hypersensitivity、可能壓低 PPD 反應，因此此族群 PPD 硬結 5 mm 以上即視為陽性，不是 10 mm。",
+      "refs": [
+       [
+        184,
+        "3384-3385"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤",
+      "ok": false,
+      "text": "方向相反：骨質流失在用藥最初幾個月最快，之後以較慢的速度持續。長期使用者約 40% 發生 osteoporosis，即使低劑量 prednisone（2.5 mg/day）也會傷害骨骼並增加脊椎與髖部骨折。",
+      "refs": [
+       [
+        184,
+        "3386"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤",
+      "ok": false,
+      "text": "性別寫反了：女性可能較易出現 depression，男性可能較易出現 mania。情緒與認知變化與劑量相關，neuropsychiatric events 以治療最初 3 個月發生率最高。",
+      "refs": [
+       [
+        184,
+        "3387"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "任何預計使用 glucocorticoid 3 個月以上的病人，都應經由飲食與補充品攝取 calcium 1200 mg/day 及 vitamin D 800 IU/day；合併 sarcoidosis 或腎結石等共病者，可能需要密切監測或調整此建議。",
+      "refs": [
+       [
+        184,
+        "3386"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-54",
+   "topic": "Cutaneous immune system — T-cell subsets",
+   "fitz": [
+    11
+   ],
+   "polarity": "positive",
+   "stem": "關於皮膚中 T cell 亞群（subsets）的特性與臨床關聯，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Tregs 表現 transcription factor FOXP3（其缺陷造成 IPEX syndrome），正常人類皮膚中的 resident T cells 約 5%–10% 為 FOXP3+ Tregs。"
+    },
+    {
+     "id": "②",
+     "text": "Mycosis fungoides 由循環的 central memory T cells（TCM）介導，Sézary syndrome 則由 resident memory T cells（TRM）介導。"
+    },
+    {
+     "id": "③",
+     "text": "健康人類皮膚中的 T cells 總數約 20 billion 個，約為全身血液中 T cells 的兩倍。"
+    },
+    {
+     "id": "④",
+     "text": "TH17 cells 依賴 IL-12 維持存活與擴增，並受 transcription factor GATA-3 調控。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "①③正確，答案 A。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Tregs 以表現 transcription factor FOXP3 為特徵，FOXP3 是 IPEX syndrome 的遺傳病因；Tregs 缺失會造成多器官自體免疫疾病。約 5%–10% 的正常人類皮膚 resident T cells 是 FOXP3+ Tregs。",
+      "refs": [
+       [
+        11,
+        "146"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤",
+      "ok": false,
+      "text": "寫反了：TRM 的生物學可協助解釋 cutaneous lymphoma 的差異，mycosis fungoides 由 TRM 介導，Sézary syndrome 則由循環的 central memory T cells（TCM）介導。",
+      "refs": [
+       [
+        11,
+        "147"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "健康人類皮膚所含的 T cells 約為全身血液中的兩倍（約 20 billion）；在非發炎狀態下，skin-tropic（CLA+）memory T cells 有 98% 位於皮膚，只有 2% 在循環中。",
+      "refs": [
+       [
+        11,
+        "147"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "TH17 cells 依賴 IL-23（不是 IL-12）維持存活與擴增，並受 RORγt 調控；GATA-3 是誘導 TH2 程式的 transcription factor，IL-12 則是 TH1 的 polarizing cytokine。TH17 產生 IL-17A、IL-17F、IL-21、IL-22 與 IL-26，被認為是 psoriasis 致病的關鍵角色。",
+      "refs": [
+       [
+        11,
+        "145-146"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-55",
+   "topic": "Skin barrier — barrier molecules and genetic defects",
+   "fitz": [
+    14
+   ],
+   "polarity": "positive",
+   "stem": "關於皮膚屏障（skin barrier）相關分子及其遺傳缺陷，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "ABCA12 負責 lamellar bodies 之 limiting membrane 上的 lipid trafficking，其嚴重缺陷造成 harlequin ichthyosis。"
+    },
+    {
+     "id": "②",
+     "text": "Corneodesmosin（CDSN）先天缺陷可見整層角質層剝落，造成 peeling skin syndrome。"
+    },
+    {
+     "id": "③",
+     "text": "缺乏 tight junction 蛋白 claudin-1 會造成 neonatal ichthyosis–sclerosing cholangitis（NISCH）syndrome。"
+    },
+    {
+     "id": "④",
+     "text": "Cholesterol 生合成酵素 NSDHL 缺陷，可因 toxic intermediates 累積而造成 CHILD syndrome 的發炎性 ichthyotic 皮膚病灶。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "E"
+   ],
+   "expl": {
+    "summary": "①②③④皆正確，答案 E。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Lamellar bodies 由 Golgi complex 產生並儲存於 SG3 細胞；ABCA12 在 lamellar bodies 的 limiting membrane 上負責細胞 lipid trafficking，嚴重缺陷造成 Harlequin ichthyosis（Table 14-2 列為 ARCI4B）。",
+      "refs": [
+       [
+        14,
+        "208"
+       ],
+       [
+        14,
+        "211"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Corneodesmosin 由 lamellar bodies 分泌並整合進 desmosomes 而形成 corneodesmosomes；corneodesmosin 或 desmoglein 1 的先天缺陷可見整層角質層剝落，Table 14-2 將 CDSN 缺陷列為 peeling skin syndrome 1（McKee 稱為 peeling skin syndrome type B，為 CDSN 的 autosomal recessive loss-of-function 突變）。容易整層剝落的病人可能也較易有各種過敏狀況。",
+      "refs": [
+       [
+        14,
+        "208"
+       ],
+       [
+        14,
+        "214-215"
+       ],
+       [
+        "M",
+        "71"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Claudin-1 是表皮主要的 claudin；小鼠缺乏 claudin-1 會使表皮 tight junction 屏障滲漏、角質層屏障形成不全而在新生兒早期死亡；人類缺乏 claudin-1 則造成罕見的先天疾病 neonatal ichthyosis sclerosing cholangitis syndrome。",
+      "refs": [
+       [
+        14,
+        "208"
+       ],
+       [
+        14,
+        "220"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "NSDHL 與 MSMO1 是 cholesterol 生合成的酵素，其缺陷會因 toxic intermediates 累積而造成發炎性 ichthyotic 皮膚病灶，分別見於 CHILD（congenital hemidysplasia with ichthyosiform erythroderma and limb defects）syndrome 與 MSMO1 deficiency。",
+      "refs": [
+       [
+        14,
+        "208"
+       ],
+       [
+        14,
+        "213"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "E/E",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-56",
+   "topic": "Epidermal and dermal adhesion — hemidesmosome and focal contact proteins",
+   "fitz": [
+    15
+   ],
+   "polarity": "positive",
+   "stem": "關於真皮表皮交界（dermal–epidermal junction）的黏附蛋白與相關疾病，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Collagen XVII（BP180）為跨膜膠原蛋白，其 collagenous domain 位於細胞內。"
+    },
+    {
+     "id": "②",
+     "text": "Collagen XVII 的 ectodomain 可被 ADAM 家族蛋白酶自細胞表面切下，形成 120-kDa 的可溶性片段，為 linear IgA dermatosis 的抗原。"
+    },
+    {
+     "id": "③",
+     "text": "Integrin α6 或 β4 chain 突變造成 epidermolysis bullosa simplex with muscular dystrophy。"
+    },
+    {
+     "id": "④",
+     "text": "Kindlin-1 突變造成 Kindler syndrome，表現為嬰兒期皮膚水疱、進行性 poikiloderma、光敏感與皮膚癌。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "②④正確，答案 B。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Collagen XVII（180-kDa bullous pemphigoid antigen 2）是跨膜膠原蛋白，其 collagenous domain 位於細胞外；N 端在細胞內，細胞外的 C 端（ectodomain）含數個 collagenous subdomains。McKee 亦描述其由細胞質內 N 端片段、跨膜區與細胞外 collagenous C 端 ectodomain 組成。",
+      "refs": [
+       [
+        15,
+        "243-244"
+       ],
+       [
+        "M",
+        "143"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Collagen XVII 的 120-kDa ectodomain 可經 ADAM（a disintegrin-like and metalloproteinase-containing）家族蛋白酶在近膜的 NC-16 domain 切下而脫落；180-kDa 全長分子是典型的 bullous pemphigoid antigen-2，ectodomain 則是 120-kDa 的 linear IgA dermatosis 抗原，其 C 端再降解可產生 97-kDa 的 linear IgA dermatosis 抗原。",
+      "refs": [
+       [
+        15,
+        "243-244"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Integrin α6 或 β4 chain 突變造成 junctional epidermolysis bullosa associated with pyloric atresia；造成 epidermolysis bullosa simplex with progressive muscular dystrophy 的是 plectin 突變。McKee 亦寫 ITGA6 或 ITGB4 突變造成體染色體隱性 junctional EB with pyloric atresia，PLEC 突變則造成 EB simplex with muscular dystrophy。",
+      "refs": [
+       [
+        15,
+        "245"
+       ],
+       [
+        "M",
+        "132"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Kindlin-1 是 focal contact 複合體的細胞內成分，在 Kindler syndrome 中發生突變；此病表現為嬰兒期皮膚水疱、進行性 poikiloderma、光敏感與皮膚癌。McKee 亦描述 Kindler syndrome 早期可類似 dystrophic EB，隨年齡增長水疱常減少，出現 photosensitivity 與 poikiloderma，並有較高的 squamous cell carcinoma 風險。",
+      "refs": [
+       [
+        15,
+        "245"
+       ],
+       [
+        "M",
+        "133"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-57",
+   "topic": "Neurobiology of the skin — pruritus fibers, mediators, and classification",
+   "fitz": [
+    21
+   ],
+   "polarity": "negative",
+   "stem": "關於搔癢（pruritus）的神經生物學與分類，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "搔癢持續超過 6 週即視為 chronic pruritus。"
+    },
+    {
+     "id": "②",
+     "text": "傳遞癢覺的 C fibers 為有髓鞘（myelinated）纖維，傳導速度比 Aδ fibers 快。"
+    },
+    {
+     "id": "③",
+     "text": "IL-31 receptor 是由 IL-31RA subunit 與 oncostatin M receptor subunit 組成的 heterodimer。"
+    },
+    {
+     "id": "④",
+     "text": "μ-opioid（如 morphine）具止癢作用，κ-opioid 則可能誘發搔癢。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "②④錯誤，答案 B。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確",
+      "ok": true,
+      "text": "搔癢若持續超過 6 週即視為 chronic pruritus；估計全球約五分之一人口有 chronic pruritus。",
+      "refs": [
+       [
+        21,
+        "357"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "C fibers 是無髓鞘（unmyelinated）、細（0.2–1.5 µm）、傳導慢（0.5–2.0 m/sec）的纖維；Aδ fibers 有薄髓鞘（1–5 µm），傳導速度居中（4–30 m/sec）。因此 C fibers 傳導比 Aδ fibers 慢。",
+      "refs": [
+       [
+        21,
+        "353"
+       ],
+       [
+        21,
+        "354"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確",
+      "ok": true,
+      "text": "IL-31 receptor（IL-31R）是由 IL-31RA subunit 與 oncostatin M receptor subunit 組成的 heterodimeric receptor；IL-31 在 atopic dermatitis 病人的病灶皮膚與血清中都上升，可由 T cells（包括 Th2 cells）與 eosinophils 釋放。",
+      "refs": [
+       [
+        21,
+        "356"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "兩者寫反了。κ-opioids 具止痛與止癢作用；μ-opioids（如 morphine）雖可止痛，卻可能誘發搔癢。臨床上 μ-antagonists（naltrexone、naloxone）與 κ-agonists（nalfurafine）可用於控制包括 cholestatic 與 uremic pruritus 在內的多種 chronic pruritus。",
+      "refs": [
+       [
+        21,
+        "355"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-58",
+   "topic": "Lichen planus — Wickham striae, pigmentation, palmoplantar variant, and DIF",
+   "fitz": [
+    32
+   ],
+   "polarity": "positive",
+   "stem": "關於 lichen planus 的臨床表現、病理與免疫螢光，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Wickham striae 在組織學上對應 orthokeratosis、表皮增厚與 granular layer 增加。"
+    },
+    {
+     "id": "②",
+     "text": "病灶消退後通常留下 postinflammatory hyperpigmentation；若出現 hypopigmentation，應考慮其他診斷。"
+    },
+    {
+     "id": "③",
+     "text": "Palmoplantar lichen planus 因掌蹠皮膚較厚，通常看不到 Wickham striae。"
+    },
+    {
+     "id": "④",
+     "text": "Direct immunofluorescence 可見 dermal–epidermal junction 有 shaggy 的 fibrinogen 沉積，cytoid bodies 主要被 IgM 標記。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "E"
+   ],
+   "expl": {
+    "summary": "四個敘述都正確，答案 E。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Lichen planus 的臨床與 dermoscopy 特徵和組織學相對應：Wickham striae 對應 orthokeratosis、表皮增厚與 granular layer 增加；dull red-violet 顏色則對應血管擴張與 pigment incontinence。McKee 亦指出典型的 wedge-shaped hypergranulosis 在臨床上表現為 Wickham striae。",
+      "refs": [
+       [
+        32,
+        "530"
+       ],
+       [
+        "M",
+        "247"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Lichen planus 通常癒合後留下 postinflammatory hyperpigmentation，在膚色較深者較常見；hypopigmentation 在 lichen planus 不常見，出現時應考慮其他診斷。McKee 亦提到 postinflammatory hyperpigmentation 並不少見，特別是膚色較深者。",
+      "refs": [
+       [
+        32,
+        "530"
+       ],
+       [
+        "M",
+        "243"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Palmoplantar lichen planus 是少見且不易診斷的型態，表現為會癢、紅紫色、有鱗屑的斑塊，可伴或不伴 hyperkeratosis；由於手掌與腳掌皮膚較厚，看不到 Wickham striae。",
+      "refs": [
+       [
+        32,
+        "536"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "DIF 可見 DEJ 有 shaggy 的 fibrinogen 沉積（55% 至 70% 的病例），DEJ 的大量 apoptotic cells 以 IgM 染色為主，偶爾也有 IgG 與 IgA。McKee 亦寫 DIF 通常可見 DEJ 的 linear fibrillar band of fibrin，cytoid bodies 可被非特異性標記，主要為 IgM，也可有 IgG、IgA 與 C3。",
+      "refs": [
+       [
+        32,
+        "542"
+       ],
+       [
+        "M",
+        "250"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "E/E",
+    "blind_match": true,
+    "ambiguity": "minor",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-59",
+   "topic": "Pyoderma gangrenosum — postoperative PG, pathergy, and wound management",
+   "fitz": [
+    37
+   ],
+   "polarity": "positive",
+   "stem": "52 歲女性接受乳房重建手術後 10 天，手術傷口出現劇痛且快速擴大的潰瘍，邊緣呈紫紅色並潛掘（undermined），周圍有紅暈。病人無發燒，組織切片的細菌、分枝桿菌與黴菌培養皆為陰性，使用抗生素沒有改善，外科清創後潰瘍反而擴大。關於此病人，下列敘述何者正確？",
+   "options": {
+    "A": "此表現屬於 ulcerative pyoderma gangrenosum 展現 pathergic phenomenon 的例子。",
+    "B": "確診需做 direct immunofluorescence，並須見到血管壁的免疫沉積。",
+    "C": "傷口表面培養出的細菌通常即為致病菌，應依培養結果給予抗生素治療。",
+    "D": "為加速癒合，應積極清創後以 split-thickness skin graft 覆蓋。"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "術後傷口的 PG 屬於 ulcerative PG 的 pathergic phenomenon，答案 A。",
+    "items": [
+     {
+      "key": "A",
+      "label": "本題答案",
+      "ok": true,
+      "text": "PG 可發生在外傷或手術部位，稱為 pathergic phenomenon，即外傷或刺激可誘發 PG 過度惡化；postoperative 與 parastomal PG 被視為 ulcerative PG 展現 pathergic phenomenon 的例子。McKee 亦指出術後 PG 以女性比例較高，乳房重建手術是最常見的誘發事件。",
+      "refs": [
+       [
+        37,
+        "606-607"
+       ],
+       [
+        "M",
+        "682"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "非診斷必要",
+      "ok": false,
+      "text": "PG 病灶的 immunofluorescence 可能因強烈發炎而出現血管周圍染色，但並非診斷所需，除非鑑別診斷中懷疑 vasculitis，否則可以省略。McKee 亦指出 immunofluorescence 不應被視為輔助診斷檢查。",
+      "refs": [
+       [
+        37,
+        "609"
+       ],
+       [
+        "M",
+        "685"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "通常為污染菌",
+      "ok": false,
+      "text": "PG 傷口表面可培養出多種細菌，但通常只是污染菌（contaminants）；除非傷口周圍出現早期 cellulitis 的臨床徵象，否則不需要針對性抗生素治療。",
+      "refs": [
+       [
+        37,
+        "613"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "應避免",
+      "ok": false,
+      "text": "由於 pathergy，清創不可積極進行，也應盡量避免植皮，因為可能在供皮處誘發新的 PG 病灶；對疾病已控制但上皮化不完全的病人，可考慮 cultured tissue allografts／autografts 或 bovine collagen matrix。",
+      "refs": [
+       [
+        37,
+        "613"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-60",
+   "topic": "Acantholytic disorders — Hailey-Hailey disease pathology/mucosa/IF and Grover disease triggers",
+   "fitz": [
+    50
+   ],
+   "polarity": "positive",
+   "stem": "關於 Hailey-Hailey disease 與 Grover disease 的臨床與病理特徵，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Hailey-Hailey disease 的病理可見 suprabasal 角質細胞之間廣泛的部分失去黏合，外觀如 dilapidated brick wall。"
+    },
+    {
+     "id": "②",
+     "text": "Hailey-Hailey disease 一般不侵犯黏膜。"
+    },
+    {
+     "id": "③",
+     "text": "Hailey-Hailey disease 與 pemphigus vulgaris 不同，表皮內偵測不到 intercellular IgG 與補體沉積。"
+    },
+    {
+     "id": "④",
+     "text": "Grover disease 可由促進流汗的因素誘發，例如發燒性疾病、臥床或 occlusion。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "E"
+   ],
+   "expl": {
+    "summary": "四個敘述都正確，答案 E。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Hailey-Hailey disease 受侵犯的皮膚可見 suprabasal 角質細胞之間廣泛的部分失去黏合，外觀比擬為 dilapidated brick wall，鬆散相連的細胞團漂浮在 suprabasal 裂隙或水疱中；dyskeratosis 若存在通常輕微。McKee 亦指出其 acantholysis 典型上不完全，細胞仍保留部分連結，呈 dilapidated brick wall 外觀，附屬器上皮通常不受影響。",
+      "refs": [
+       [
+        50,
+        "888"
+       ],
+       [
+        "M",
+        "189"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Hailey-Hailey disease 一般不侵犯黏膜；少數結膜、口腔、食道或陰道受侵犯的病例，可能由外傷或感染所誘發。McKee 亦寫 mucosal involvement is unusual。",
+      "refs": [
+       [
+        50,
+        "887"
+       ],
+       [
+        "M",
+        "188"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "糜爛或 vesiculobullous 型的 Hailey-Hailey disease 可類似 toxic epidermal necrolysis 或 pemphigus vulgaris；與 pemphigus vulgaris 不同，HHD 的 immunofluorescence（immunoglobulin 與補體）一律為陰性，表皮內偵測不到 intercellular IgG 與補體，有助於與 immunobullous disorders 區分（McKee）。Fitzpatrick 在鑑別診斷中也提到表皮內偵測不到 intercellular IgG 與補體。",
+      "refs": [
+       [
+        50,
+        "888"
+       ],
+       [
+        "M",
+        "189"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Grover disease 可由促進流汗的因素誘發，例如發燒性疾病、臥床（bed confinement）或 occlusion，但也常見於冬天皮膚乾燥的年長男性。McKee 亦指出其與過度熱及流汗關係明確，臥床且發燒的病人特別容易發生。",
+      "refs": [
+       [
+        50,
+        "890-891"
+       ],
+       [
+        "M",
+        "195"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "E/E",
+    "blind_match": true,
+    "ambiguity": "minor",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
   }
  ]
 }
