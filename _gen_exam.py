@@ -11,11 +11,15 @@ Sources (hand-maintained):
   data/exam/timemachine.json   physician-approved 「考試當年 vs 現行觀念」 notes per question
                                (text is verbatim; validated by validate_timemachine)
   data/exam/concepts/concepts.json  考點 (exam concepts), built by _import_exam_concepts.py
+  data/exam/mock.json          模擬題 (newly written practice questions, NOT official exam
+                               questions; validated by validate_mock). Used only by the
+                               practice page's 模擬考 option, never by chapter/year pages,
+                               concepts, the time machine, search or exam-data.json
 
 Outputs (generated, never hand-edit):
   exam/index.html, exam/fitz-<n>.html, exam/year-<y>.html, exam/mckee.html,
   exam/kantor.html, exam/review.html, exam/concepts.html, exam/exam-data.json,
-  exam/search-index.json
+  exam/search-index.json, exam/mock-data.json
 
 Pages reuse the normalized notes.html shell (head, header, footer), and the
 output is already in its final normalized form. REGEN_STEPS runs it twice:
@@ -105,9 +109,15 @@ def load() -> dict:
         unknown_q = [h["q"] for h in c["how"] if h["q"] not in qids]
         if unknown_q or any(ch not in chapters for ch in c["chs"]):
             raise SystemExit(f"concepts.json {c['id']}: unknown question/chapter {unknown_q or c['chs']}")
+    mock_path = DATA / "mock.json"
+    mock = (json.loads(mock_path.read_text(encoding="utf-8")) if mock_path.exists()
+            else {"_meta": {"label": MOCK_LABEL}, "questions": []})
+    errors = validate_mock(mock, chapters)
+    if errors:
+        raise SystemExit("mock.json is invalid:\n  " + "\n  ".join(errors))
     return {"questions": questions, "tags": tags, "explanations": explanations,
             "chapters": chapters, "notes": notes, "links": links, "aliases": aliases,
-            "timemachine": timemachine,
+            "timemachine": timemachine, "mock": mock["questions"],
             "concepts": concept_data["concepts"], "concept_rule": concept_data["_meta"]["rule"],
             "qmap": {q["id"]: q for q in questions}}
 
@@ -184,6 +194,108 @@ def validate_timemachine(tm, qids: set[str]) -> list[str]:
     return errors
 
 
+# ---------------------------------------------------------------- mock exam
+# 模擬題: questions written for practice from the two textbooks, each checked by
+# a separate blind solver and a line-by-line source check before it is added.
+# They are never official exam questions, so every place that shows one says so.
+
+MOCK_LABEL = "模擬題，非官方考題"
+MOCK_ID = re.compile(r"M-\d{2,3}")
+SINGLE_KEYS = ["A", "B", "C", "D"]
+COMBO_OPTIONS = {"A": "①③", "B": "②④", "C": "①②③", "D": "④", "E": "①②③④"}
+STATEMENT_IDS = ["①", "②", "③", "④"]
+MOCK_POLARITY = ("positive", "negative")
+
+
+def validate_mock(mock, chapters: dict) -> list[str]:
+    """Shape of every mock question, its explanation and refs; for combination
+    questions the answer must be exactly the true (positive stem) or false
+    (negative stem) statements; no simplified-only characters."""
+    if not isinstance(mock, dict) or not isinstance(mock.get("questions"), list):
+        return ["top level must be {_meta, questions: [...]}"]
+    if not isinstance(mock.get("_meta"), dict) or mock["_meta"].get("label") != MOCK_LABEL:
+        return [f"_meta.label must be {MOCK_LABEL!r}"]
+    errors, seen = [], set()
+    for q in mock["questions"]:
+        qid = q.get("id") if isinstance(q, dict) else None
+        if not isinstance(qid, str) or not MOCK_ID.fullmatch(qid):
+            errors.append(f"bad id {qid!r}")
+            continue
+        if qid in seen:
+            errors.append(f"{qid}: duplicate id")
+        seen.add(qid)
+        for field in ("stem", "topic"):
+            if not isinstance(q.get(field), str) or not q[field].strip():
+                errors.append(f"{qid}: missing {field}")
+        fitz = q.get("fitz")
+        if not isinstance(fitz, list) or not fitz or any(c not in chapters for c in fitz):
+            errors.append(f"{qid}: fitz must list known chapters, got {fitz!r}")
+        answer, options = q.get("answer"), q.get("options")
+        if not isinstance(answer, list) or len(answer) != 1 or not isinstance(options, dict) or answer[0] not in options:
+            errors.append(f"{qid}: answer must be one option key")
+            continue
+        expl = q.get("expl")
+        items = expl.get("items") if isinstance(expl, dict) else None
+        if not isinstance(items, list) or not isinstance(expl.get("summary"), str) or not expl["summary"].strip():
+            errors.append(f"{qid}: missing explanation")
+            continue
+        keys = [it.get("key") if isinstance(it, dict) else None for it in items]
+        if q.get("statements") is not None:
+            ids = [s.get("id") for s in q["statements"]] if isinstance(q["statements"], list) else None
+            if ids != STATEMENT_IDS or options != COMBO_OPTIONS:
+                errors.append(f"{qid}: combination questions need statements ①②③④ and options {COMBO_OPTIONS}")
+            elif keys != STATEMENT_IDS:
+                errors.append(f"{qid}: explanation items must be ①②③④")
+            elif q.get("polarity") not in MOCK_POLARITY:
+                errors.append(f"{qid}: polarity must be one of {list(MOCK_POLARITY)}")
+            else:
+                want = q["polarity"] == "positive"
+                chosen = "".join(it["key"] for it in items if bool(it.get("ok")) == want)
+                if COMBO_OPTIONS[answer[0]] != chosen:
+                    errors.append(f"{qid}: answer {answer[0]} does not match statements {chosen or '(none)'}")
+        else:
+            if list(options) != SINGLE_KEYS:
+                errors.append(f"{qid}: single-answer questions need options A-D")
+            elif keys != SINGLE_KEYS:
+                errors.append(f"{qid}: explanation items must be A-D")
+            elif [it["key"] for it in items if it.get("ok")] != answer:
+                errors.append(f"{qid}: explanation ok flags do not match the answer")
+        for it in items:
+            if not isinstance(it, dict):
+                continue
+            for field in ("label", "text"):
+                if not isinstance(it.get(field), str) or not it[field].strip():
+                    errors.append(f"{qid} {it.get('key')}: missing {field}")
+            refs = it.get("refs")
+            if not isinstance(refs, list) or not refs:
+                errors.append(f"{qid} {it.get('key')}: needs at least one textbook ref")
+                continue
+            for ref in refs:
+                ok = (isinstance(ref, list) and len(ref) == 2 and (ref[0] == "M" or ref[0] in chapters)
+                      and isinstance(ref[1], str) and re.fullmatch(r"\d+(?:[–-]\d+)?", ref[1]))
+                if not ok:
+                    errors.append(f"{qid} {it.get('key')}: bad ref {ref!r}")
+        hans = sorted({c for text in _strings(q) for c in text if c in HANS_ONLY})
+        if hans:
+            errors.append(f"{qid}: simplified characters {''.join(hans)}")
+    return errors
+
+
+def mock_client_data(data) -> dict:
+    """The 模擬考 bank for the practice page (same row shape as exam-data.json)."""
+    out = []
+    for q in data["mock"]:
+        row = {"id": q["id"], "mock": True, "stem": q["stem"], "options": q["options"], "answer": q["answer"],
+               "fitz": q["fitz"]}
+        if q.get("statements"):
+            row["statements"] = q["statements"]
+        row["expl"] = {"summary": q["expl"]["summary"], "items": [
+            {"key": it["key"], "label": it["label"], "ok": it["ok"], "text": it["text"],
+             "refs": [ref_label(r) for r in it["refs"]]} for it in q["expl"]["items"]]}
+        out.append(row)
+    return {"label": MOCK_LABEL, "questions": out}
+
+
 # ---------------------------------------------------------------- page shell
 
 def split_template() -> tuple[str, str, str]:
@@ -253,6 +365,7 @@ def crumbs_html(items: list[tuple[str, str]]) -> str:
 
 
 DATA_VERSION = [""]  # content hash of exam-data.json, set by build() before any page renders
+MOCK_VERSION = [""]  # content hash of mock-data.json, set by build()
 
 
 def script_version() -> str:
@@ -261,7 +374,8 @@ def script_version() -> str:
     return hashlib.sha256(raw).hexdigest()[:10]
 
 
-def page(shell, *, path, title, description, og_title, crumbs, jsonld_type, body, page_kind, toc="") -> str:
+def page(shell, *, path, title, description, og_title, crumbs, jsonld_type, body, page_kind, toc="",
+         mock_data=False) -> str:
     head, mid, tail = shell
     crumb_items = [("首頁", "/"), ("專科考試", "/exam")] + crumbs
     if path == "/exam":
@@ -279,8 +393,9 @@ def page(shell, *, path, title, description, og_title, crumbs, jsonld_type, body
         inner = f'<div class="ex-layout">{toc}<div class="ex-content">{content}</div></div>'
     else:
         inner = f'<div class="max-w-3xl mx-auto px-5 sm:px-8 pt-12 sm:pt-14 pb-16">{content}</div>'
+    mock_attr = f' data-mock-data="/exam/mock-data.json?v={MOCK_VERSION[0]}"' if mock_data else ""
     main = (f'<main id="main-content" class="ex-main" data-exam-page="{page_kind}" '
-            f'data-exam-data="/exam/exam-data.json?v={DATA_VERSION[0]}">{inner}</main>')
+            f'data-exam-data="/exam/exam-data.json?v={DATA_VERSION[0]}"{mock_attr}>{inner}</main>')
     tail = tail.replace("</body>", f'<script src="/exam/exam.js?v={script_version()}" defer></script>\n</body>', 1)
     return out + mid + main + tail
 
@@ -750,7 +865,16 @@ def book_page(shell, data, book: str, qs: list[dict]) -> str:
                 jsonld_type="WebPage", body=body, page_kind="book")
 
 
-def practice_page(shell, by_year) -> str:
+def practice_page(shell, by_year, n_mock: int) -> str:
+    # 模擬考 replaces the year selection with the mock bank; shown only once the bank has questions.
+    mock = (
+        '<fieldset class="ex-fieldset ex-mock-set"><legend>模擬考</legend>'
+        f'<label class="ex-check"><input type="checkbox" name="ex-mock" value="1" aria-label="模擬考（題庫 {n_mock} 題）">'
+        f' 模擬考（題庫 {n_mock} 題）</label>'
+        f'<p class="ex-mock-note">勾選後改從模擬題出題（{MOCK_LABEL}；年份選擇不適用）。'
+        "模擬題依 Fitzpatrick 與 McKee 新撰寫，比照歷屆題型，每題經獨立作答與逐句對照原文核對；"
+        "作答紀錄另外保存，不計入考古題的作答統計與錯題本。</p></fieldset>"
+    ) if n_mock else ""
     years = "".join(
         f'<label class="ex-check"><input type="checkbox" name="ex-year" value="{y}" checked aria-label="{y} 年"> {y} 年</label>'
         for y in sorted(by_year)
@@ -760,7 +884,8 @@ def practice_page(shell, by_year) -> str:
         '<p class="ex-kicker">考古卷</p><h1 class="ex-h1">自選年份／隨機出題</h1>'
         f"{NOTICE}"
         '<form class="ex-practice-form" data-practice-form>'
-        '<fieldset class="ex-fieldset"><legend>出題年份</legend>'
+        f"{mock}"
+        '<fieldset class="ex-fieldset ex-year-set"><legend>出題年份</legend>'
         f'<div class="ex-checks">{years}</div>'
         '<div class="ex-toolbar"><button type="button" class="ex-years-all">全選</button>'
         '<button type="button" class="ex-years-none">全不選</button></div></fieldset>'
@@ -782,10 +907,11 @@ def practice_page(shell, by_year) -> str:
         f'<ul class="ex-year-links">{year_links}</ul></noscript>'
     )
     title = "皮膚科專科醫師考試考古卷：自選年份與隨機出題"
-    desc = "從 101–115 年皮膚科專科醫師甄審筆試選擇題中自選年份、題數，隨機或依序出題，計時作答並交卷計分。"
+    desc = ("從 101–115 年皮膚科專科醫師甄審筆試選擇題中自選年份、題數，隨機或依序出題，計時作答並交卷計分"
+            + (f"；也可改做模擬考（{n_mock} 題{MOCK_LABEL}）。" if n_mock else "。"))
     return page(shell, path="/exam/practice", title=f"{title} | 陳翊嘉醫師 · ChenDermatologist",
                 description=desc, og_title=title, crumbs=[("自選／隨機出題", "/exam/practice")],
-                jsonld_type="WebPage", body=body, page_kind="practice")
+                jsonld_type="WebPage", body=body, page_kind="practice", mock_data=bool(n_mock))
 
 
 def review_page(shell) -> str:
@@ -888,7 +1014,8 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
         # 考古卷 and 考點總覽 sit side by side (stacked on phones).
         '<div class="ex-hub-cards">'
         '<section class="ex-hub-card" aria-labelledby="hub-practice-h"><h2 class="ex-h2" id="hub-practice-h">考古卷</h2>'
-        '<p class="ex-meta">選擇年份成卷，或從歷年考題隨機出題。</p>'
+        '<p class="ex-meta">選擇年份成卷，或從歷年考題隨機出題'
+        + (f'；也可改做模擬考（{len(data["mock"])} 題{MOCK_LABEL}）' if data["mock"] else "") + '。</p>'
         '<p class="ex-meta"><a class="ex-cta" href="/exam/practice">自選年份／隨機出題</a></p></section>'
         + (('<section class="ex-hub-card" aria-labelledby="hub-concepts-h"><h2 class="ex-h2" id="hub-concepts-h">考點總覽</h2>'
             f'<p class="ex-meta">把歷年考題拆成 {len(data["concepts"])} 個考點，依考過的題數排序，'
@@ -1195,6 +1322,8 @@ def build() -> dict[str, str]:
     CHAPTER_PAGES.update(pages)
     client = json.dumps(client_data(data), ensure_ascii=False, separators=(",", ":")) + "\n"
     DATA_VERSION[0] = hashlib.sha256(client.encode("utf-8")).hexdigest()[:10]
+    mock = json.dumps(mock_client_data(data), ensure_ascii=False, separators=(",", ":")) + "\n"
+    MOCK_VERSION[0] = hashlib.sha256(mock.encode("utf-8")).hexdigest()[:10]
     index = json.dumps(search_index(data, pages), ensure_ascii=False, separators=(",", ":")) + "\n"
     SEARCH_VERSION[0] = hashlib.sha256(index.encode("utf-8")).hexdigest()[:10]
     files: dict[str, str] = {}
@@ -1205,12 +1334,14 @@ def build() -> dict[str, str]:
         files[f"year-{y}.html"] = year_page(shell, data, y, qs)
     for b, qs in sorted(by_book.items()):
         files[f"{b}.html"] = book_page(shell, data, b, qs)
-    files["practice.html"] = practice_page(shell, by_year)
+    files["practice.html"] = practice_page(shell, by_year, len(data["mock"]))
     files["review.html"] = review_page(shell)
     if data["concepts"]:
         files["concepts.html"] = concepts_page(shell, data, by_chapter)
     files["exam-data.json"] = client
     files["search-index.json"] = index
+    if data["mock"]:
+        files["mock-data.json"] = mock
     return files
 
 
@@ -1328,6 +1459,8 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 :root[data-theme="dark"] .ex-chip-book{background:#2e1065;color:#ddd6fe}
 :root[data-theme="dark"] .ex-notice{background:#3a2818;color:#fed7aa;border-color:#9a3412}
 :root[data-theme="dark"] .ex-notice a{color:#fed7aa}
+:root[data-theme="dark"] .ex-mock-notice{background:#3a2818;color:#fed7aa;border-color:#9a3412}
+:root[data-theme="dark"] .ex-mock-tag{background:#332a14;color:#fde68a}
 :root[data-theme="dark"] .ex-hit,:root[data-theme="dark"] .ex-flag,:root[data-theme="dark"] .ex-warn{background:#332a14;color:#fde68a}
 :root[data-theme="dark"] .ex-dispute{background:#332a14;border-color:#92400e;color:#fde68a}
 :root[data-theme="dark"] .ex-dispute-h{color:#fcd34d}:root[data-theme="dark"] .ex-sources a{color:#fde68a}
@@ -1355,6 +1488,10 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 .ex-cta{display:inline-block;border-radius:9999px;padding:6px 16px;background:#4d6358;color:#fff;font-weight:700;text-decoration:none}
 .ex-fieldset{border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin:10px 0}
 .ex-fieldset legend{font-weight:700;font-size:14px;padding:0 4px}
+.ex-fieldset:disabled{opacity:.55}
+.ex-mock-note{font-size:12.5px;color:var(--ink-2);line-height:1.7;margin:6px 0 2px}
+.ex-mock-tag{font-size:11px;font-weight:700;border-radius:9999px;padding:1px 8px;background:#fef3c7;color:#854d0e}
+.ex-mock-notice{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:10px 14px;margin:0 0 14px;font-size:13px;font-weight:600;color:#7c2d12;line-height:1.7}
 .ex-checks{display:flex;flex-wrap:wrap;gap:6px 14px}
 .ex-check{font-size:14px;display:inline-flex;align-items:center;gap:4px;margin-right:12px}
 .ex-select{border:1px solid var(--border);border-radius:8px;padding:4px 8px;font-size:14px;background:#fff;color:inherit}
