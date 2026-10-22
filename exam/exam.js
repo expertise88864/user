@@ -2028,6 +2028,67 @@
     }, 12000);
   }
 
+  // ------------------------------------------------------------ TOC scrollspy
+  // Chapter pages: mark the 本章目錄 entry of the section being read
+  // (aria-current="location" plus a highlight) and keep it inside the visible
+  // sidebar. Only the sidebar's own scroll position moves, never the page's.
+  var SPY_LINE = 0.3;  // a section is "current" once its top passed 30% of the window
+  function initTocSpy() {
+    var links = document.querySelectorAll('.ex-toc a');
+    if (!links.length || !window.IntersectionObserver) return;
+    var byId = {}, order = [];
+    links.forEach(function (link) {
+      var href = link.getAttribute('href') || '';
+      var id = href.charAt(0) === '#' ? href.slice(1) : '';
+      var node = id ? document.getElementById(id) : null;
+      if (!node) return;
+      // #concepts-h and #qs-h are headings; the block they open is the section.
+      var anchor = node.matches('section') ? node : (node.closest('section') || node);
+      if (!own(byId, id)) { byId[id] = { id: id, el: anchor, links: [] }; order.push(byId[id]); }
+      byId[id].links.push(link);
+    });
+    if (!order.length) return;
+    order.sort(function (a, b) {
+      return a.el === b.el ? 0 : (a.el.compareDocumentPosition(b.el) & 4 ? -1 : 1);
+    });
+    var reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    var shown = null;
+
+    function keepVisible(link) {
+      var box = link.closest('.ex-toc-side');
+      if (!box || !link.getClientRects().length || box.scrollHeight <= box.clientHeight + 1) return;
+      var b = box.getBoundingClientRect(), r = link.getBoundingClientRect();
+      var pad = 8, top = box.scrollTop;
+      if (r.top < b.top + pad) top += r.top - b.top - pad;
+      else if (r.bottom > b.bottom - pad) top += r.bottom - b.bottom + pad;
+      else return;
+      top = Math.max(0, top);
+      if (typeof box.scrollTo === 'function') box.scrollTo({ top: top, behavior: reduced ? 'auto' : 'smooth' });
+      else box.scrollTop = top;
+    }
+    function update() {
+      var line = (window.innerHeight || document.documentElement.clientHeight || 0) * SPY_LINE;
+      var best = null;
+      for (var i = 0; i < order.length; i++) {
+        if (!order[i].el.getClientRects().length) continue;  // hidden (只看未作答)
+        if (order[i].el.getBoundingClientRect().top <= line) best = order[i];
+        else break;
+      }
+      if (best === shown) return;
+      if (shown) shown.links.forEach(function (link) { link.removeAttribute('aria-current'); });
+      shown = best;
+      if (!best) return;
+      best.links.forEach(function (link) { link.setAttribute('aria-current', 'location'); });
+      best.links.forEach(keepVisible);
+    }
+    // The observed band is the top 30% of the window: a section enters or
+    // leaves it exactly when its top crosses the reading line.
+    var io = new IntersectionObserver(update, { rootMargin: '0px 0px -70% 0px', threshold: [0, 1] });
+    order.forEach(function (item) { io.observe(item.el); });
+    window.addEventListener('resize', update);
+    update();
+  }
+
   function init() {
     var search = document.querySelector('[data-exam-search]');
     if (search && window.fetch) initSearch(search);
@@ -2072,6 +2133,7 @@
     if (kind === 'chapter') {
       initReadingPlace(pageSlug());
       initReading(chapterSlug());
+      initTocSpy();
     }
     var continueBox = document.querySelector('.ex-continue');
     if (continueBox) initContinue(continueBox);

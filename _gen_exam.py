@@ -623,8 +623,39 @@ def expand_marks(fragment: str, on_page: set[str]) -> str:
     return MARK.sub(repl, fragment)
 
 
+CJK = re.compile(r"[\u3400-\u9fff\uf900-\ufaff]")
+ZH_PAREN = re.compile(r"（[^（）]*）")
+TAGS = re.compile(r"<[^>]+>")
+
+
+def toc_label(title: str) -> tuple[str, str]:
+    """(label html, plain full heading) for one 本章目錄 entry.
+
+    Owner decision 2026-10-22: the outline shows English only so entries stay
+    short. The label is the heading without its full-width parenthetical(s)
+    that hold Chinese (「9. Drug-Induced Lichenoid Eruptions（苔蘚樣藥疹）」 ->
+    「9. Drug-Induced Lichenoid Eruptions」); an abbreviation such as （NK） is
+    kept. A heading with no English left (Chinese only) keeps its full text.
+    The full heading goes to the tooltip and the accessible name."""
+    full = re.sub(r"\s+", " ", TAGS.sub("", title)).strip()
+    label = ZH_PAREN.sub(lambda m: "" if CJK.search(TAGS.sub("", m.group(0))) else m.group(0), title)
+    label = re.sub(r"\s+", " ", label)
+    label = re.sub(r"\s+([：；，、])", r"\1", label).strip()
+    label = re.sub(r"[\s：；，、:;,]+$", "", label)
+    if not re.search(r"[A-Za-z]", re.sub(r"^\d+\.\s*", "", TAGS.sub("", label))):
+        label = title.strip()
+    return label, full
+
+
+def toc_item(sid: str, title: str) -> str:
+    label, full = toc_label(title)
+    name = re.sub(r"\s+", " ", TAGS.sub("", label)).strip()
+    extra = f' title="{full}" aria-label="{full}"' if name != full else ""
+    return f'<li><a href="#{sid}"{extra}>{label}</a></li>'
+
+
 def toc_html(note: str | None, qs_count: int, *, mobile: bool = False, concepts: int = 0) -> str:
-    items = [f'<li><a href="#{sid}">{title}</a></li>' for sid, title in SECTION.findall(note or "")]
+    items = [toc_item(sid, title) for sid, title in SECTION.findall(note or "")]
     if concepts:  # the 本章考點 block sits between the notes and the questions
         items.append(f'<li class="ex-toc-cx"><a href="#concepts-h">本章考點（{concepts}）</a></li>')
     if qs_count:  # chapters never tested have notes only
@@ -1500,12 +1531,17 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 .ex-layout{max-width:48rem;margin:0 auto;padding:3rem 1.25rem 4rem}
 .ex-content{min-width:0}
 .ex-toc-side{display:none}
-@media (min-width:1100px){.ex-layout{max-width:76rem;display:grid;grid-template-columns:230px minmax(0,48rem);gap:44px;justify-content:center}.ex-toc-side{display:block;position:sticky;top:84px;align-self:start;max-height:calc(100vh - 110px);overflow:auto}.ex-toc-mobile{display:none}}
+@media (min-width:1100px){.ex-layout{max-width:76rem;display:grid;grid-template-columns:250px minmax(0,48rem);gap:44px;justify-content:center}.ex-toc-side{display:block;position:sticky;top:84px;align-self:start;max-height:calc(100vh - 110px);overflow:auto}.ex-toc-mobile{display:none}}
 .ex-toc{border:1px solid var(--border);border-radius:12px;background:#fff;padding:10px 14px;margin-bottom:16px;font-size:13px}
 .ex-toc summary{font-weight:700;cursor:pointer}
-.ex-toc ol{margin:8px 0 0;padding-left:0;line-height:1.9;list-style:none}
-.ex-toc a{color:var(--teal-deep);text-decoration:none}
-.ex-toc-qs{font-weight:700;margin-top:6px;border-top:1px solid var(--line);padding-top:6px}
+.ex-toc ol{margin:6px -6px 0;padding-left:0;line-height:1.45;list-style:none}
+.ex-toc li{margin:0}
+.ex-toc a{display:block;color:var(--teal-deep);text-decoration:none;padding:3px 6px;border-radius:6px;overflow-wrap:break-word;scroll-margin:8px}
+.ex-toc a:hover{background:rgba(77,99,88,.08)}
+.ex-toc a:focus-visible{outline:2px solid var(--teal-deep);outline-offset:1px}
+.ex-toc a[aria-current="location"]{background:#e3ece5;color:var(--ink);font-weight:600}
+@media (max-width:1099px),(pointer:coarse){.ex-toc a{padding:7px 8px;min-height:32px;box-sizing:border-box}}
+.ex-toc-qs{font-weight:700;margin-top:4px;border-top:1px solid var(--line);padding-top:4px}
 .ex-note ul{list-style:disc;padding-left:22px}
 .ex-note li{margin:4px 0}
 mark.ex-key{background:linear-gradient(transparent 42%,#fde9a8 42%);color:inherit;padding:0 1px}
@@ -1519,6 +1555,8 @@ mark.ex-key{background:linear-gradient(transparent 42%,#fde9a8 42%);color:inheri
 .ex-legend-trap{border-left:3px solid #f87171;background:#fef5f5;padding:0 6px;border-radius:4px}
 :root[data-theme="dark"] .ex-toc{background:#24211c;border-color:#3a352c}
 :root[data-theme="dark"] .ex-toc a{color:#a4b5a8}
+:root[data-theme="dark"] .ex-toc a:hover{background:rgba(164,181,168,.1)}
+:root[data-theme="dark"] .ex-toc a[aria-current="location"]{background:rgba(164,181,168,.2);color:#eef3ef}
 :root[data-theme="dark"] mark.ex-key{background:linear-gradient(transparent 42%,rgba(234,179,8,.32) 42%)}
 :root[data-theme="dark"] .ex-qref a{color:#f2c14e}
 :root[data-theme="dark"] .ex-trap,:root[data-theme="dark"] .ex-legend-trap{background:rgba(127,29,29,.3);border-left-color:#b45454;color:inherit}
@@ -1654,7 +1692,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 .cx-filters .ex-check{flex-wrap:wrap;max-width:100%}
 .cx-status{font-size:13px;color:var(--ink-2);margin:8px 0 0}
 .cx-status:empty{display:none}
-.ex-toc-cx{font-weight:700;margin-top:6px;border-top:1px solid var(--line);padding-top:6px}
+.ex-toc-cx{font-weight:700;margin-top:4px;border-top:1px solid var(--line);padding-top:4px}
 .ex-toc-cx+.ex-toc-qs{margin-top:0;border-top:0;padding-top:0}
 :root[data-theme="dark"] .cx-rule{background:#24211c;color:#d6d3cd}
 :root[data-theme="dark"] .cx-list details,:root[data-theme="dark"] .cx-also{background:#24211c;border-color:#3a352c}
