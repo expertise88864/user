@@ -48751,7 +48751,7 @@
   ]
  },
  "115-46": {
-  "summary": "A 正確，答案 A。",
+  "summary": "A 正確，答案 A；D 中 Sneddon syndrome 的血壓描述兩本課本不一致，見疑義說明。",
   "items": [
    {
     "key": "A",
@@ -48793,7 +48793,7 @@
     "key": "D",
     "label": "錯誤",
     "ok": false,
-    "text": "Fitzpatrick 描述 Sneddon syndrome 是 livedo racemosa（不是 livedo reticularis）與 livedoid vasculopathy 合併缺血性腦血管病變、hypotension 及大腦以外的動靜脈栓塞，可見 antiendothelial cell antibodies。題目把 livedo racemosa 寫成 livedo reticularis（ch148 強調兩者必須區分），且血壓寫成高血壓，與 Fitzpatrick 原文不同。",
+    "text": "Fitzpatrick 描述 Sneddon syndrome 是 livedo racemosa 與 livedoid vasculopathy 合併缺血性腦血管病變、hypotension 及大腦以外的動靜脈栓塞，部分病人可測得 antiendothelial cell antibodies；McKee 則寫 cutaneous thrombotic lesions（及 livedo racemosa）合併 hypertension 與 cerebrovascular disease。題目寫 livedo reticularis（ch148 強調與 livedo racemosa 必須區分），依 Fitzpatrick 判為錯誤；血壓部分兩本課本不一致，見疑義說明。",
     "refs": [
      [
       138,
@@ -48806,13 +48806,22 @@
      [
       148,
       "2683-2684"
+     ],
+     [
+      "M",
+      "764"
+     ],
+     [
+      "M",
+      "786"
      ]
     ]
    }
   ],
-  "flags": [
-   "Fitzpatrick 9e 寫 Sneddon syndrome 合併「hypotension」，但 McKee 5e（p.764、p.786）寫的是 hypertension，一般文獻亦以高血壓為典型；Fitzpatrick 的 hypotension 可能是誤植。本題 D 仍因 livedo reticularis 與 livedo racemosa 的差異而不是正確答案，官方答案 A 不受影響。"
-  ]
+  "dispute": {
+   "kind": "conflict",
+   "exam": "考試答案：依課本作答維持官方答案 A（A 有 Fitzpatrick 9e p.2530 支持）。疑義在 D 的「高血壓」：Fitzpatrick 9e 在 Table 138-2（p.2530）與內文（p.2533）都寫 Sneddon syndrome 合併 hypotension，但 McKee 5e p.764 與 p.786 都寫 hypertension，Fitzpatrick 的 hypotension 疑似筆誤。若依 McKee，D 的「高血壓」並沒有錯，D 錯誤的理由只剩 livedo reticularis 與 livedo racemosa 的用詞差異；但 Fitzpatrick ch138 同節描述 livedoid vasculopathy 時也寫「persistent livedo reticularis (livedo racemosa)」（p.2532），ch148 也提到兩者的區分是仍在演變、舊文獻多未採用的概念（p.2682），單憑這個用詞差異判錯的理由較薄弱。依課本作答時以 Fitzpatrick 原文判 D 錯誤，A 為本題正確選項。"
+  }
  },
  "115-47": {
   "summary": "①③正確，答案 A。",
