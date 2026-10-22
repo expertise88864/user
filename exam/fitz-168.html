@@ -118,6 +118,8 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 :root[data-theme="dark"] .ex-chip-book{background:#2e1065;color:#ddd6fe}
 :root[data-theme="dark"] .ex-notice{background:#3a2818;color:#fed7aa;border-color:#9a3412}
 :root[data-theme="dark"] .ex-notice a{color:#fed7aa}
+:root[data-theme="dark"] .ex-mock-notice{background:#3a2818;color:#fed7aa;border-color:#9a3412}
+:root[data-theme="dark"] .ex-mock-tag{background:#332a14;color:#fde68a}
 :root[data-theme="dark"] .ex-hit,:root[data-theme="dark"] .ex-flag,:root[data-theme="dark"] .ex-warn{background:#332a14;color:#fde68a}
 :root[data-theme="dark"] .ex-dispute{background:#332a14;border-color:#92400e;color:#fde68a}
 :root[data-theme="dark"] .ex-dispute-h{color:#fcd34d}:root[data-theme="dark"] .ex-sources a{color:#fde68a}
@@ -145,6 +147,10 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 .ex-cta{display:inline-block;border-radius:9999px;padding:6px 16px;background:#4d6358;color:#fff;font-weight:700;text-decoration:none}
 .ex-fieldset{border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin:10px 0}
 .ex-fieldset legend{font-weight:700;font-size:14px;padding:0 4px}
+.ex-fieldset:disabled{opacity:.55}
+.ex-mock-note{font-size:12.5px;color:var(--ink-2);line-height:1.7;margin:6px 0 2px}
+.ex-mock-tag{font-size:11px;font-weight:700;border-radius:9999px;padding:1px 8px;background:#fef3c7;color:#854d0e}
+.ex-mock-notice{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:10px 14px;margin:0 0 14px;font-size:13px;font-weight:600;color:#7c2d12;line-height:1.7}
 .ex-checks{display:flex;flex-wrap:wrap;gap:6px 14px}
 .ex-check{font-size:14px;display:inline-flex;align-items:center;gap:4px;margin-right:12px}
 .ex-select{border:1px solid var(--border);border-radius:8px;padding:4px 8px;font-size:14px;background:#fff;color:inherit}
@@ -830,5 +836,5 @@ if (yr) yr.textContent = new Date().getFullYear();
 });</script>
 <!-- dn-spec-rules -->
 <script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/blog/*"},{"not":{"href_matches":"/admin*"}},{"not":{"selector_matches":"[data-no-prerender]"}}]},"eagerness":"moderate"}],"prefetch":[{"where":{"href_matches":"/*"},"eagerness":"conservative"}]}</script>
-<script src="/exam/exam.js?v=1fa3057416" defer></script>
+<script src="/exam/exam.js?v=0503ca1e78" defer></script>
 </body></html>

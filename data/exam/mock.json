@@ -1,0 +1,1905 @@
+{
+ "_meta": {
+  "label": "模擬題，非官方考題",
+  "rule": "新撰寫的模擬題，不是臺灣皮膚科醫學會的歷屆試題。內容只依 Fitzpatrick's Dermatology 9e 與 McKee's Pathology of the Skin 5e；題型比例比照歷屆。每題經三道檢查：出題、另一代理不看答案獨立作答（確認唯一答案）、另一代理逐句對照引用頁核對詳解與數字；check 欄記錄結果。"
+ },
+ "questions": [
+  {
+   "id": "M-01",
+   "topic": "Psoriasis — clinical variants",
+   "fitz": [
+    28
+   ],
+   "polarity": "negative",
+   "stem": "關於 psoriasis 的臨床表現，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Koebner phenomenon 通常在皮膚受傷後 24–48 小時內出現。"
+    },
+    {
+     "id": "②",
+     "text": "Guttate psoriasis 是與 HLA-Cw6 關聯最強的乾癬類型，streptococcal throat infection 常在其發作之前或同時出現。"
+    },
+    {
+     "id": "③",
+     "text": "Napkin psoriasis 與其他類型乾癬相比，對治療反應差且不易消退。"
+    },
+    {
+     "id": "④",
+     "text": "Erythrodermic psoriasis 因全身血管擴張而散熱過多，可能導致 hypothermia。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "①③錯誤，答案 A。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Koebner reaction 通常在受傷後 7–14 天出現，並非受傷後一兩天內；在病程中，25%–75% 的病人可能出現與外傷相關的 Koebner phenomenon。",
+      "refs": [
+       [
+        28,
+        "459"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確",
+      "ok": true,
+      "text": "Guttate psoriasis 是與 HLA-Cw6 關聯最強的乾癬類型，streptococcal throat infection 常在其發作或惡化之前或同時出現；不過抗生素治療並未被證實有益或能縮短病程。",
+      "refs": [
+       [
+        28,
+        "461"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Napkin psoriasis 通常在 3–6 個月大時從尿布區開始；與其他類型乾癬不同，它對治療反應良好（responds readily），且傾向在 1 歲後消失。",
+      "refs": [
+       [
+        28,
+        "464"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確",
+      "ok": true,
+      "text": "Erythrodermic psoriasis 病人因全身血管擴張而散失過多熱量，可能造成 hypothermia；另一方面乾癬皮膚常因汗管阻塞而少汗，在溫暖氣候下也有 hyperthermia 的風險。",
+      "refs": [
+       [
+        28,
+        "461"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-02",
+   "topic": "Cutaneous reactions to drugs — anticoagulant-induced skin necrosis",
+   "fitz": [
+    45
+   ],
+   "polarity": "positive",
+   "stem": "關於 warfarin 等抗凝血劑引起的皮膚壞死（anticoagulant-induced skin necrosis），下列敘述何者正確？",
+   "options": {
+    "A": "通常在開始治療後 3–4 週才出現",
+    "B": "早期為紅色疼痛斑塊，好發於 breasts、buttocks、hips 等脂肪豐富部位",
+    "C": "男性的發生率約為女性的 4 倍",
+    "D": "治療包括停用 warfarin 並給予 vitamin K，但應避免使用 heparin"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "病灶好發於脂肪豐富部位，答案 B。",
+    "items": [
+     {
+      "key": "A",
+      "label": "發生時間錯誤",
+      "ok": false,
+      "text": "Anticoagulant-induced skin necrosis 在開始治療後 3–5 天出現，不是數週後。",
+      "refs": [
+       [
+        45,
+        "757"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "本題答案",
+      "ok": true,
+      "text": "早期的紅色疼痛斑塊出現在脂肪豐富處，如 breasts、buttocks 與 hips，之後可能起水疱、潰瘍或形成壞死。",
+      "refs": [
+       [
+        45,
+        "757"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "性別比例相反",
+      "ok": false,
+      "text": "發生率是女性高 4 倍，且多數為肥胖者，好發於 sixth 與 seventh decades。",
+      "refs": [
+       [
+        45,
+        "757"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "治療錯誤",
+      "ok": false,
+      "text": "治療為停用 warfarin、給予 vitamin K，並以治療劑量輸注 heparin；機轉是天然抗凝血因子 protein C 被抑制的速度快於促凝血因子，造成暫時性高凝血狀態與皮膚、皮下小靜脈血栓。",
+      "refs": [
+       [
+        45,
+        "757"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-03",
+   "topic": "Nail disorders — nail signs",
+   "fitz": [
+    91
+   ],
+   "polarity": "positive",
+   "stem": "關於指甲疾病，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Subungual hematoma 的血液位於甲板與 nail bed 上皮之間，不會被巨噬細胞分解成 hemosiderin，因此 Perls stain（Prussian blue）呈陰性。"
+    },
+    {
+     "id": "②",
+     "text": "[i]Pseudomonas aeruginosa[/i] 引起的 green nail（chloronychia），首選治療是以稀釋白醋（diluted white vinegar）浸泡。"
+    },
+    {
+     "id": "③",
+     "text": "Beau lines 與 onychomadesis 在手指甲比在腳趾甲常見得多。"
+    },
+    {
+     "id": "④",
+     "text": "Pterygium 是結締組織（多為瘢痕）橋接 nail pocket 所形成，在 nail lichen planus 很常見。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "E"
+   ],
+   "expl": {
+    "summary": "①②③④皆正確，答案 E。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Subungual hematoma 的血液位於甲板與底下 matrix／nail bed 上皮之間，因此不會被巨噬細胞分解成 hemosiderin，Prussian blue（Perls stain）呈陰性；之後被包進新生的指甲，需數個月慢慢長出。",
+      "refs": [
+       [
+        91,
+        "1571"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Chloronychia 幾乎都是 [i]Pseudomonas aeruginosa[/i] 寄生所致；首選治療是稀釋白醋浸泡。全身性抗生素到不了感染處，因為 [i]Pseudomonas[/i] 主要寄生在 onycholytic 的指甲。",
+      "refs": [
+       [
+        91,
+        "1568-1569"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "指甲長得越快，病變越明顯，因此 Beau lines 與 onychomadesis 在手指甲遠比腳趾甲常見；外傷、美甲操作、onychophagia 與 onychotillomania 也是手指甲較常受影響的原因。",
+      "refs": [
+       [
+        91,
+        "1574"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Pterygium 是 nail pocket 被結締組織（多數為瘢痕）橋接；在 lichen planus 很常見，偶見於 bullous pemphigoid 等其他疾病，尤其也見於外傷後。它起初把指甲分成兩部分，當幾乎佔滿整個 nail pocket 時，可導致指甲完全破壞。",
+      "refs": [
+       [
+        91,
+        "1573"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "E/E",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 3,
+    "replaced_items": true
+   }
+  },
+  {
+   "id": "M-04",
+   "topic": "Neonatal dermatology — transient and subcutaneous conditions",
+   "fitz": [
+    103
+   ],
+   "polarity": "negative",
+   "stem": "關於新生兒的皮膚狀況，下列敘述何者錯誤？",
+   "options": {
+    "A": "Subcutaneous fat necrosis of the newborn 的病童有 hypercalcemia 的風險，應追蹤監測",
+    "B": "Sclerema neonatorum 的切片可見 lipocytes 內針狀結晶，但沒有明顯的發炎細胞浸潤或脂肪壞死",
+    "C": "Sucking blisters 常位於前臂背側、手腕或手指，通常數天內消退",
+    "D": "生理性 mottling 在回溫後仍持續存在，可藉此與 cutis marmorata telangiectatica congenita 區分"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "生理性 mottling 回溫後即消失，答案 D。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Subcutaneous fat necrosis of the newborn 表現為背部、臉頰、臀部、手臂與大腿的紅至紫色堅硬皮下結節或斑塊，通常在出生後 2 週內出現，數週內自行消退；病童有 hypercalcemia 的風險，應予監測。",
+      "refs": [
+       [
+        103,
+        "1745"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Fitzpatrick 描述 sclerema neonatorum 切片可見 lipocytes 內針狀結晶，但沒有發炎浸潤或脂肪壞死，可藉此與 subcutaneous fat necrosis of the newborn 區分。McKee 亦指出 adipocytes 內可有放射狀細小結晶，但與後者不同，沒有壞死或明顯的發炎細胞浸潤。",
+      "refs": [
+       [
+        103,
+        "1746"
+       ],
+       [
+        "M",
+        "369"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "Sucking blisters 可因子宮內吸吮而在出生時即存在，但較常見於出生後最初幾週；多為單一、完整的卵圓形或線狀水疱、淺層糜爛或結痂，位於無發炎皮膚的前臂背側、手腕或手指，數天內消退。",
+      "refs": [
+       [
+        103,
+        "1732"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "本題答案",
+      "ok": true,
+      "text": "生理性 mottling 是新生兒受寒時軀幹與四肢的網狀暗紅斑，源於自主神經對皮膚血管叢的控制尚未成熟；它在回溫後即消失，正是藉此與 cutis marmorata telangiectatica congenita 及 livedo reticularis 區分，並在 6 個月大前自行消退。",
+      "refs": [
+       [
+        103,
+        "1732"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-05",
+   "topic": "Endocrine diseases — cutaneous manifestations of hypothyroidism",
+   "fitz": [
+    137
+   ],
+   "polarity": "positive",
+   "stem": "關於 hypothyroidism 的皮膚表現，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "皮膚可因 beta-carotene 堆積於角質層而呈黃橘色，但不侵犯鞏膜（sclerae），可與真正的黃疸區分。"
+    },
+    {
+     "id": "②",
+     "text": "可出現眉毛外側三分之一脫落。"
+    },
+    {
+     "id": "③",
+     "text": "Myxedema 的皮膚呈 doughy、waxy 的腫脹，但壓之不凹陷（nonpitting）。"
+    },
+    {
+     "id": "④",
+     "text": "頭髮細軟（soft and fine），指甲生長速度加快。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③正確，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Hypothyroidism 時肝臟將 beta-carotene 轉為 vitamin A 的能力下降，循環 carotene 增加並堆積於角質層，使皮膚呈黃橘色；這種 pseudojaundice 不侵犯鞏膜，可與真正黃疸區分。McKee 亦描述 carotenemia 在手掌、腳掌與鼻唇溝特別明顯。",
+      "refs": [
+       [
+        137,
+        "2507"
+       ],
+       [
+        "M",
+        "613"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Hypothyroidism 可有眉毛外側三分之一脫落的特徵性型態；McKee 亦指出 myxedema 常見落髮，典型侵犯眉毛外側三分之一。",
+      "refs": [
+       [
+        137,
+        "2507"
+       ],
+       [
+        "M",
+        "613"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Myxedema 是 hypothyroidism 最典型的表現，皮膚可呈 doughy、swollen、waxy 但不凹陷；McKee 亦描述手腳可有 nonpitting edema。",
+      "refs": [
+       [
+        137,
+        "2507"
+       ],
+       [
+        "M",
+        "613"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Hypothyroidism 的頭髮粗、乾、易斷且生長變慢，指甲生長緩慢；頭髮細軟、指甲生長加快是 hyperthyroidism 的表現。",
+      "refs": [
+       [
+        137,
+        "2507"
+       ],
+       [
+        137,
+        "2505"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-06",
+   "topic": "Hypermelanoses — familial lentiginosis and café-au-lait syndromes: genes",
+   "fitz": [
+    77
+   ],
+   "polarity": "positive",
+   "stem": "下列遺傳性色素沉著症候群與其致病基因的配對，何者正確？",
+   "options": {
+    "A": "Peutz-Jeghers syndrome — STK11 (LKB1)",
+    "B": "LEOPARD syndrome — PRKAR1A",
+    "C": "Carney complex — PTEN",
+    "D": "Legius syndrome — NF1"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "Peutz-Jeghers syndrome 與 STK11（LKB1）突變相關，答案 A。",
+    "items": [
+     {
+      "key": "A",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Peutz-Jeghers syndrome 是罕見的體染色體顯性遺傳疾病，超過半數病例可歸因於 chromosome 19（19q13.3）上的 STK11（LKB1）突變，STK11 被認為是 tumor-suppressor gene。",
+      "refs": [
+       [
+        77,
+        "1359"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "配對錯誤",
+      "ok": false,
+      "text": "LEOPARD syndrome 是由 chromosome 12（12q24.1）上 PTPN11 基因（編碼 protein tyrosine phosphatase SHP-2）的 heterozygous missense mutation 所致，與 Noonan syndrome 為 allelic disorder；PRKAR1A 突變則見於至少半數的 Carney complex 病人。",
+      "refs": [
+       [
+        77,
+        "1359"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "配對錯誤",
+      "ok": false,
+      "text": "Carney complex 至少半數病人可找到 PRKAR1A（protein kinase A regulatory subunit 1A，17q22-24）突變；PTEN 突變見於超過 60% 的 Bannayan-Riley-Ruvalcaba syndrome 病人，也是 Cowden syndrome 的突變基因。",
+      "refs": [
+       [
+        77,
+        "1359-1360"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "配對錯誤",
+      "ok": false,
+      "text": "Legius syndrome（familial multiple CALMs）為體染色體顯性遺傳，突變基因是 SPRED1（15q13.2），有多發 CALMs，可見 axillary freckling，但沒有 neurofibromas；NF1 基因（編碼 neurofibromin）突變造成的是 neurofibromatosis type 1。",
+      "refs": [
+       [
+        77,
+        "1360-1361"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-07",
+   "topic": "Perioperative considerations — antibiotic prophylaxis, MRSA carriers, pregnancy",
+   "fitz": [
+    202
+   ],
+   "polarity": "negative",
+   "stem": "關於皮膚手術的術前評估與準備，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "符合預防性抗生素條件的病人，非口腔部位手術可於術前 1 小時口服 cephalexin 2 g，口腔部位則可口服 amoxicillin 2 g。"
+    },
+    {
+     "id": "②",
+     "text": "Chlorhexidine 對 fungi 與 mycobacteria 也有良好的殺菌效果，這是它優於 povidone-iodine 之處。"
+    },
+    {
+     "id": "③",
+     "text": "已知為 MRSA 鼻腔帶原者，術後 MRSA 傷口感染風險曾被報告增加 4 倍；術前於鼻前庭塗抹 mupirocin 2% ointment 可能降低此風險。"
+    },
+    {
+     "id": "④",
+     "text": "有人工關節（prosthetic joint）的病人接受一般乾淨的皮膚手術時，建議常規給予預防性抗生素以預防人工關節感染。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "②④錯誤，答案 B。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確",
+      "ok": true,
+      "text": "符合 endocarditis 或 prosthetic joint infection 預防條件者，術前 1 小時口服 cephalexin 2 g（非口腔部位）或 amoxicillin 2 g（口腔部位）即足夠；penicillin 過敏者可改用 clindamycin 600 mg 或 azithromycin 500 mg。",
+      "refs": [
+       [
+        202,
+        "3707"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Chlorhexidine 對 Gram-positive 與 Gram-negative 菌有廣效，並有部分抗病毒作用，但對 fungi 與 mycobacteria 沒有適當的抗菌效果；povidone-iodine 等 iodophors 則對 fungi、mycobacteria 也有效。Chlorhexidine 相對於 povidone-iodine 的優點是幾乎立即起效、塗抹後可持續作用數小時、重複塗抹有加成效果。",
+      "refs": [
+       [
+        202,
+        "3714"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確",
+      "ok": true,
+      "text": "MRSA 鼻腔帶原者術後 MRSA 傷口感染風險曾被報告增加 4 倍，可考慮術前抗生素；術前以 mupirocin 2% ointment 處理鼻前庭可能降低 MRSA 傷口感染，但已有報告最高 12% 對 mupirocin 有抗藥性。",
+      "refs": [
+       [
+        202,
+        "3707"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "課本依 ADA/AAOS guideline 推論：乾淨皮膚手術造成菌血症的風險低，不建議為預防人工關節感染而常規使用預防性抗生素；此為針對健康、免疫功能正常病人的一般建議，仍須個別判斷，曾有人工關節感染或有免疫抑制等高風險共病者可能適合術前預防性抗生素。",
+      "refs": [
+       [
+        202,
+        "3707"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 2,
+    "replaced_items": true
+   }
+  },
+  {
+   "id": "M-08",
+   "topic": "Atopic dermatitis — systemic therapy",
+   "fitz": [
+    22
+   ],
+   "polarity": "negative",
+   "stem": "關於異位性皮膚炎（atopic dermatitis）的全身性治療，下列敘述何者錯誤？",
+   "options": {
+    "A": "Cyclosporine 與細胞內的 cyclophilin 結合後抑制 calcineurin；停藥後可能出現快速復發。",
+    "B": "Mycophenolate mofetil 是 purine biosynthesis inhibitor；懷孕期間使用曾與流產及先天畸形相關。",
+    "C": "接受 dupilumab 治療的病人，對 T cell–dependent 與 T cell–independent 疫苗的反應明顯下降。",
+    "D": "全身性類固醇很少適用於慢性 AD 的治療，停藥後常伴隨嚴重的 rebound flare。"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "Dupilumab 治療下疫苗反應不受影響，C 錯誤，答案 C。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確",
+      "ok": false,
+      "text": "Cyclosporine 主要作用於 T cells，與 cyclophilin 結合成複合體後抑制 calcineurin，進而抑制 cytokine 基因轉錄；停藥可能造成皮膚病灶快速復發，但有些病人可維持緩解。",
+      "refs": [
+       [
+        22,
+        "379"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "正確",
+      "ok": false,
+      "text": "Mycophenolate mofetil 是 purine biosynthesis inhibitor，原用於器官移植的免疫抑制；open-label 研究中口服 2 g/day 單一治療可使對其他治療無效的成人 AD 皮疹清除。懷孕期間使用曾與 pregnancy loss 及 congenital malformations 相關。",
+      "refs": [
+       [
+        22,
+        "380"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "錯誤（本題答案）",
+      "ok": true,
+      "text": "Dupilumab 似乎不會抑制正常免疫反應，T cell–dependent 與 T cell–independent 疫苗的反應在治療下都沒有改變；皮膚感染反而減少。最常見的藥物相關副作用是注射部位反應與 conjunctivitis。",
+      "refs": [
+       [
+        22,
+        "379"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "正確",
+      "ok": false,
+      "text": "口服類固醇很少適用於慢性 AD，其戲劇性的改善常伴隨停藥後嚴重的 rebound flare；短期使用時須逐步減量並加強外用類固醇與保濕照護。",
+      "refs": [
+       [
+        22,
+        "379"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 3,
+    "replaced_items": true
+   }
+  },
+  {
+   "id": "M-09",
+   "topic": "Acne vulgaris — antibiotic resistance, benzoyl peroxide, isotretinoin dosing",
+   "fitz": [
+    78
+   ],
+   "polarity": "positive",
+   "stem": "關於 acne vulgaris 的治療，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "細菌無法對 benzoyl peroxide 產生抗藥性，因此適合與外用或口服抗生素併用。"
+    },
+    {
+     "id": "②",
+     "text": "[i]Propionibacterium acnes[/i] 對 acne 常用的 macrolides 與 tetracyclines 的抗藥性，整體以 erythromycin 最高、minocycline 最低。"
+    },
+    {
+     "id": "③",
+     "text": "Isotretinoin 可依體重計算累積劑量，整個療程總量 120–150 mg/kg；若需第二個療程，通常至少間隔 2–3 個月。"
+    },
+    {
+     "id": "④",
+     "text": "Oral cephalexin 屬親脂性（lipophilic）抗生素，能良好穿透毛囊皮脂腺單位（pilosebaceous unit）。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③正確，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Benzoyl peroxide 經由釋放自由氧基大幅減少細菌數量，並有輕度 comedolytic 作用；細菌無法對其產生抗藥性，使它成為與外用或口服抗生素併用的理想藥物。",
+      "refs": [
+       [
+        78,
+        "1404"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "[i]Propionibacterium[/i] 對 acne 常用的 macrolides 與 tetracyclines 抗藥性都在增加；整體以 erythromycin 最高，以 lipophilic tetracyclines（doxycycline、minocycline）較低，其中 minocycline 最低。",
+      "refs": [
+       [
+        78,
+        "1406"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "建議劑量 0.5–1 mg/kg/day，也可用累積劑量 120–150 mg/kg 計算，對劑量變動或中斷治療的病人特別有用；約 10% 病人需第二療程，兩療程之間標準做法是至少間隔 2–3 個月。",
+      "refs": [
+       [
+        78,
+        "1409"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Cephalexin 在體外可殺死 [i]P. acnes[/i]，但它是親水性（hydrophilic）而非親脂性，穿透 pilosebaceous unit 的能力差；其療效較可能來自抗發炎作用，且因可能促進 [i]Staphylococcus[/i] 抗藥性，作者不鼓勵用於 acne。",
+      "refs": [
+       [
+        78,
+        "1405"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-10",
+   "topic": "SCC — immunosuppression and drug-associated risk",
+   "fitz": [
+    112
+   ],
+   "polarity": "positive",
+   "stem": "關於免疫抑制與藥物相關的 cutaneous squamous cell carcinoma（SCC），下列敘述何者正確？",
+   "options": {
+    "A": "一般族群中 SCC 較 basal cell carcinoma（BCC）常見，免疫抑制病人則反轉為以 BCC 為主。",
+    "B": "器官移植受者中，腎臟移植受者發生 SCC 的風險高於心臟與肺臟移植受者。",
+    "C": "與 cyclosporine 為主的免疫抑制療法相比，mTOR inhibitor sirolimus 可降低腎臟移植受者發生續發性 SCC 的風險。",
+    "D": "使用 BRAF inhibitor（如 vemurafenib、dabrafenib）時快速出現的 SCC 多為 poorly differentiated。"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "Sirolimus 可降低腎臟移植受者續發性 SCC 風險，答案 C。",
+    "items": [
+     {
+      "key": "A",
+      "label": "錯誤",
+      "ok": false,
+      "text": "說反了：一般族群中 BCC 的發生頻率是 SCC 的 6 倍；在免疫抑制病人中 SCC/BCC 比例反轉，SCC 成為最常見的 NMSC。",
+      "refs": [
+       [
+        112,
+        "1905"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "錯誤",
+      "ok": false,
+      "text": "心臟與肺臟移植受者發生 SCC 的風險高於腎臟或肝臟移植受者，原因是免疫抑制療法通常較強、移植時年齡較大。",
+      "refs": [
+       [
+        112,
+        "1905"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "多中心隨機對照試驗顯示，與 cyclosporine-based 免疫抑制相比，sirolimus 可降低腎臟移植受者發生續發性 SCC 的風險並延後病灶出現；轉換為 sirolimus 可作為高風險移植受者的次級預防策略，但可能受副作用限制。",
+      "refs": [
+       [
+        112,
+        "1905"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "錯誤",
+      "ok": false,
+      "text": "BRAF inhibitors（vemurafenib、dabrafenib）與 sorafenib 在最多 25% 病人誘發快速生長的 well-differentiated SCC 和／或 eruptive KA，不是 poorly differentiated。",
+      "refs": [
+       [
+        112,
+        "1906"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-11",
+   "topic": "Ichthyoses — genes and characteristic findings",
+   "fitz": [
+    47
+   ],
+   "polarity": "negative",
+   "stem": "關於各型 ichthyosis 的致病機轉與表現，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "X-linked recessive ichthyosis 由 steroid sulfatase（arylsulfatase C）缺乏造成，大多數病例為 STS 基因 deletion。"
+    },
+    {
+     "id": "②",
+     "text": "Harlequin ichthyosis 由 ABCA12 突變造成，表皮內缺乏正常的 lamellar granules。"
+    },
+    {
+     "id": "③",
+     "text": "Superficial epidermolytic ichthyosis（ichthyosis bullosa of Siemens）由 KRT2 突變造成，可見表淺脫皮的 mauserung（molting）現象。"
+    },
+    {
+     "id": "④",
+     "text": "Sjögren-Larsson syndrome 的特徵性眼部表現為不影響視力的 comma-shaped corneal opacities。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "④錯誤，答案 D。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確",
+      "ok": true,
+      "text": "Steroid sulfatase（arylsulfatase C）缺乏造成 XLI，90% 病例是 STS locus 的 genetic deletion，其餘為 STS point mutations；這些 deletion 常可用 FISH 或 array-CGH 偵測。McKee 也寫 XLI 與 microsomal enzyme steroid sulfatase（arylsulphatase C）缺乏有關。",
+      "refs": [
+       [
+        47,
+        "785-786"
+       ],
+       [
+        "M",
+        "56"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確",
+      "ok": true,
+      "text": "Harlequin ichthyosis 由 ABCA12 的 autosomal recessive 突變造成，ABCA12 是參與 lamellar granule 分泌與表皮脂質運送的 ATP-binding cassette transporter；病人表皮找不到正常 lamellar granules，只有缺乏內部結構的小囊泡。McKee 也寫此病是 ABCA12 nonsense mutations 造成 lamellar bodies 功能嚴重喪失。",
+      "refs": [
+       [
+        47,
+        "793"
+       ],
+       [
+        "M",
+        "61"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確",
+      "ok": true,
+      "text": "Superficial epidermolytic ichthyosis（ichthyosis bullosa of Siemens）為 autosomal dominant，突變位於表達在較表淺表皮層的 keratin 2 基因；表皮脆弱較表淺，最上層（主要是角質層）脫落形成凹陷的 collarette 樣區域，稱為 mauserung（molting）。McKee 同樣寫 SEI 與 KRT2 point mutation 有關，並描述 Mauserung phenomenon。",
+      "refs": [
+       [
+        47,
+        "796-798"
+       ],
+       [
+        "M",
+        "66"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Sjögren-Larsson syndrome 的特徵性眼部表現是視網膜 macula 的 glistening white dots，1 歲後出現，且可能不是每位病人都會出現；McKee 也寫 macular degeneration 伴隨結晶沉積是其特徵，且視力常受損。不影響視力的 comma-shaped corneal opacities 則見於 X-linked recessive ichthyosis（約半數成人可能出現，女性帶因者也可能有）。",
+      "refs": [
+       [
+        47,
+        "807"
+       ],
+       [
+        47,
+        "785"
+       ],
+       [
+        "M",
+        "73"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-12",
+   "topic": "Tinea capitis — inflammatory type (Microsporum canis)",
+   "fitz": [
+    160
+   ],
+   "polarity": "positive",
+   "stem": "6 歲男童頭皮出現數塊脫髮斑，上有毛囊性丘疹、膿疱與斷髮，頭皮會痛，並可摸到 posterior cervical lymphadenopathy。家中最近開始養小貓。斷髮在 Wood lamp 下呈黃綠色螢光。關於此病人，下列敘述何者正確？",
+   "options": {
+    "A": "此表現最可能由 endothrix 型的 [i]Trichophyton tonsurans[/i] 感染引起",
+    "B": "病灶只在頭皮，可單獨使用外用抗黴菌藥治療，不需口服藥",
+    "C": "此類發炎型頭癬的發炎反應不會造成疤痕性掉髮",
+    "D": "除口服抗黴菌藥外，家人使用 ketoconazole 2% 或 selenium sulfide 2.5% 洗髮精可減少傳播"
+   },
+   "answer": [
+    "D"
+   ],
+   "expl": {
+    "summary": "家人使用 ketoconazole 2% 或 selenium sulfide 2.5% 洗髮精可減少孢子散播與傳播，答案 D。",
+    "items": [
+     {
+      "key": "A",
+      "label": "與螢光不符",
+      "ok": false,
+      "text": "[i]T. tonsurans[/i] 是 endothrix 菌，endothrix 菌在 Wood lamp 下不發螢光，典型表現是 black dot tinea capitis。本例斷髮呈黃綠色螢光、有貓接觸史，較符合 ectothrix 的親動物性 [i]Microsporum canis[/i]（常由貓、狗傳給人，Table 160-8 列為 yellow-green 螢光）。McKee 也寫 endothrix 感染的毛髮在 Wood lamp 下不發螢光。",
+      "refs": [
+       [
+        160,
+        "2943"
+       ],
+       [
+        160,
+        "2942"
+       ],
+       [
+        160,
+        "2933"
+       ],
+       [
+        160,
+        "2926"
+       ],
+       [
+        "M",
+        "926"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "需口服治療",
+      "ok": false,
+      "text": "侵犯有毛皮膚的感染通常需要口服抗黴菌藥，因為穿入毛囊的皮癬菌是外用藥「搆不到」的；課本明言不建議單用外用藥治療 tinea capitis，Table 160-9 也標明 tinea capitis 需全身治療，外用藥只作為輔助。",
+      "refs": [
+       [
+        160,
+        "2943"
+       ],
+       [
+        160,
+        "2934"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "可造成疤痕",
+      "ok": false,
+      "text": "[i]M. canis[/i] 等親動物或親土性菌種較易經過敏反應造成發炎型頭癬，從毛囊性膿疱到 furunculosis 或 kerion；強烈發炎可能造成 scarring alopecia。",
+      "refs": [
+       [
+        160,
+        "2942"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Tinea capitis 以口服抗黴菌藥治療；selenium sulfide、zinc pyrithione、povidone-iodine、ketoconazole 等洗髮精可作為輔助。所有家人每週三次使用 ketoconazole 2% 或 selenium sulfide 2.5% 洗髮精，也能減少孢子脫落而降低傳播。",
+      "refs": [
+       [
+        160,
+        "2943-2944"
+       ],
+       [
+        160,
+        "2934"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "D/D",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-13",
+   "topic": "Hydroxyurea and cyclophosphamide",
+   "fitz": [
+    190
+   ],
+   "polarity": "positive",
+   "stem": "關於 hydroxyurea 與 cyclophosphamide，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Hydroxyurea 抑制 ribonucleotide diphosphate reductase，最常見的副作用是 myelosuppression。"
+    },
+    {
+     "id": "②",
+     "text": "Hydroxyurea 肝毒性高，有肝病而不能使用 methotrexate 的乾癬病人也不適合使用。"
+    },
+    {
+     "id": "③",
+     "text": "Cyclophosphamide 引起的 hemorrhagic cystitis 被認為與代謝物 acrolein 有關，可用 mesna 降低其發生率。"
+    },
+    {
+     "id": "④",
+     "text": "Cyclophosphamide 原形即具活性，不需經肝臟代謝活化。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "①③正確，答案 A。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Hydroxyurea 抑制把 nucleotides 還原成 deoxynucleotides 的 ribonucleotide diphosphate reductase，限制 DNA 合成原料而造成 strand breakage 與細胞死亡；myelosuppression 是其最常見的副作用，停藥後通常很快恢復。",
+      "refs": [
+       [
+        190,
+        "3469"
+       ],
+       [
+        190,
+        "3470"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Hydroxyurea 的肝毒性相對很少（relatively little hepatotoxicity），因此對於有肝病而不能使用 MTX 的乾癬病人，可能是可行的替代選擇；Table 190-6 也註明 severe psoriasis 用 hydroxyurea 常是肝病病人的選項。",
+      "refs": [
+       [
+        190,
+        "3470"
+       ],
+       [
+        190,
+        "3469"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "口服 cyclophosphamide 的 hemorrhagic cystitis 發生於治療期間，被認為由代謝物 acrolein 造成；scavenging agent mesna 在膀胱內與 acrolein 結合，可用來降低 cystitis 的發生率，也建議大量補充水分。",
+      "refs": [
+       [
+        190,
+        "3477"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "錯誤",
+      "ok": false,
+      "text": "Cyclophosphamide 起初不具活性，需經肝臟 cytochrome P450 系統代謝，先成為 4-hydroxycyclophosphamide，再產生 nitrogen mustard、phosphoramide mustard 等活性代謝物。",
+      "refs": [
+       [
+        190,
+        "3476"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-14",
+   "topic": "Intrahepatic cholestasis of pregnancy",
+   "fitz": [
+    105
+   ],
+   "polarity": "negative",
+   "stem": "關於 intrahepatic cholestasis of pregnancy，下列敘述何者錯誤？",
+   "options": {
+    "A": "典型以腹部妊娠紋內的搔癢性 urticarial papules 起始",
+    "B": "血清 bile acids 上升是最敏感的診斷指標",
+    "C": "嚴重者可因 vitamin K 缺乏而容易產後出血",
+    "D": "之後懷孕或使用口服避孕藥時可能復發"
+   },
+   "answer": [
+    "A"
+   ],
+   "expl": {
+    "summary": "ICP 沒有原發皮膚病灶，A 錯誤，答案 A。",
+    "items": [
+     {
+      "key": "A",
+      "label": "本題答案",
+      "ok": true,
+      "text": "ICP 是唯一沒有原發皮膚病灶的懷孕皮膚病，表現為手掌腳底或全身的中重度搔癢，只有搔抓造成的次發性 excoriations；出現原發病灶反而不支持 ICP。從腹部妊娠紋內開始的 urticarial papules 是 polymorphic eruption of pregnancy 的特徵。",
+      "refs": [
+       [
+        105,
+        "1770-1771"
+       ],
+       [
+        105,
+        "1768"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "血清 bile acids 上升是 ICP 最敏感的單一指標（single most sensitive indicator），total serum bile acid 大於 11 µM/L 符合 ICP；搔癢程度與疾病嚴重度通常與 bile acid 濃度相關。",
+      "refs": [
+       [
+        105,
+        "1770"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "ICP 的母體預後通常良好，但嚴重病例因 vitamin K depletion 而容易發生 postpartum hemorrhage，日後也較易有 cholelithiasis 或膽囊疾病。",
+      "refs": [
+       [
+        105,
+        "1771"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "ICP 症狀與生化異常通常在產後 2 至 4 週內緩解，但估計 45% 至 70% 的病人在之後懷孕時復發；部分女性在接觸口服避孕藥或合成 estrogen、progestational agents 後也會復發。",
+      "refs": [
+       [
+        105,
+        "1771"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "A/A",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-15",
+   "topic": "Allergic contact dermatitis — allergens and clinical variants",
+   "fitz": [
+    24
+   ],
+   "polarity": "positive",
+   "stem": "關於 allergic contact dermatitis（ACD），下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Nickel 是全世界最常見的 patch test 陽性過敏原，可用含 dimethylglyoxime 的 spot test 檢測物品是否含有 nickel。"
+    },
+    {
+     "id": "②",
+     "text": "Poison ivy 等植物的致敏物 urushiol 在植物燃燒時可經空氣散播，造成暴露部位較廣泛且嚴重的皮疹。"
+    },
+    {
+     "id": "③",
+     "text": "Erythema multiforme-like ACD 的病灶典型位於接觸部位的周邊，通常沒有發燒，黏膜侵犯少見。"
+    },
+    {
+     "id": "④",
+     "text": "Pigmented ACD 主要見於亞洲族群，與 textile dyes、cosmetics、fragrances 有關。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "E"
+   ],
+   "expl": {
+    "summary": "①②③④皆正確，答案 E。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Nickel 是全世界最常見的 patch test 陽性過敏原，致敏率多在 18%–30%。市售含 dimethylglyoxime 的 spot test 可偵測 nickel，nickel 濃度 >1:10,000（或 >0.44 µg/cm2）時棉棒出現粉紅色沉澱，濃度愈高顏色愈深；cobalt 的 spot test 則呈黃橘色。",
+      "refs": [
+       [
+        24,
+        "403"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Poison ivy、poison oak、poison sumac 的 ACD 典型呈線狀或條紋狀的紅色丘疹與水疱；其致敏物 oleoresin urushiol 偶爾會在燃燒植物時經空氣散播，在暴露部位造成較全身性且嚴重的皮疹。經衣物、寵物或手轉移的樹脂也可能在意想不到的部位（如生殖器）引起皮疹。",
+      "refs": [
+       [
+        24,
+        "396"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Erythema multiforme-like ACD 主要與 exotic woods、外用藥物及多種化學物有關。與典型侵犯肢端的真正 erythema multiforme 不同，其病灶典型位於過敏原接觸部位的周邊，通常沒有發燒，黏膜侵犯少見。",
+      "refs": [
+       [
+        24,
+        "396-397"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Pigmented ACD 屬少見的 noneczematous variant，主要描述於亞洲族群，與 textile dyes、cosmetics 與 fragrances 有關。",
+      "refs": [
+       [
+        24,
+        "396-397"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "E/E",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 2,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-16",
+   "topic": "Pemphigus — histopathology and direct immunofluorescence",
+   "fitz": [
+    52
+   ],
+   "polarity": "negative",
+   "stem": "關於 pemphigus 的病理與免疫螢光檢查，下列敘述何者錯誤？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Pemphigus vulgaris 的基底細胞與基底膜分離，隨水疱頂部脫落，形成「row of tombstones」。"
+    },
+    {
+     "id": "②",
+     "text": "懷疑 pemphigus vulgaris 時，direct immunofluorescence 切片應取自已起水疱、發炎的病灶皮膚。"
+    },
+    {
+     "id": "③",
+     "text": "Pemphigus vulgaris 的 acantholysis 不侵犯毛囊等附屬器（adnexae）上皮，可藉此與 Hailey-Hailey disease 區分。"
+    },
+    {
+     "id": "④",
+     "text": "Pemphigus foliaceus 的病理常與 bullous impetigo／staphylococcal scalded skin syndrome 難以區分，需靠免疫螢光等免疫化學檢查確診。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "①②③錯誤，答案 C。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "PV 為 suprabasal acantholysis：基底細胞仍附著於基底膜，但可能失去與鄰近細胞的接觸，因而可呈現「row of tombstones」的外觀。McKee 亦描述水疱底部襯著單層完整的基底細胞，即所謂 tombstone pattern。",
+      "refs": [
+       [
+        52,
+        "921"
+       ],
+       [
+        "M",
+        "175"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "Direct immunofluorescence 應取外觀正常的 perilesional skin；在已起水疱、發炎的表皮中免疫沉積物不易偵測，可能造成偽陰性。McKee 也寫明是檢查 perilesional skin，可見細胞間 IgG 與常伴隨的 C3。",
+      "refs": [
+       [
+        52,
+        "919"
+       ],
+       [
+        "M",
+        "173"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤（本題答案）",
+      "ok": false,
+      "text": "McKee 指出 pemphigus 常可見毛囊上皮的 acantholysis，而 Hailey-Hailey disease 通常沒有；附屬器上皮受侵犯在缺少水疱頂部的病灶中是有用的診斷線索。",
+      "refs": [
+       [
+        "M",
+        "175-176"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確",
+      "ok": true,
+      "text": "PF 的病理常與 bullous impetigo／SSSS 無法區分，因為後兩者也是 desmoglein 1 功能失常（被 exfoliative toxin 切割）所致，所以確診 PF 需要免疫化學檢查。McKee 亦寫 superficial pemphigus 與這些疾病的區分取決於臨床資訊、細菌培養與免疫螢光檢查。",
+      "refs": [
+       [
+        52,
+        "921"
+       ],
+       [
+        "M",
+        "180"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 2,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-17",
+   "topic": "Melanoma — AJCC 2017 T classification",
+   "fitz": [
+    116
+   ],
+   "polarity": "positive",
+   "stem": "62 歲男性背部一個不對稱、顏色不均的黑色斑塊，切除後病理為 superficial spreading melanoma，Breslow thickness 0.9 mm，無 ulceration，未見 mitosis。依 AJCC 2017（第 8 版）分期，此腫瘤的 T 分類為何？",
+   "options": {
+    "A": "T1a",
+    "B": "T1b",
+    "C": "T2a",
+    "D": "T2b"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "厚度 0.8–1 mm 不論有無 ulceration 皆為 T1b，答案 B。",
+    "items": [
+     {
+      "key": "A",
+      "label": "需 <0.8 mm 且無 ulceration",
+      "ok": false,
+      "text": "AJCC 2017 的 T1a 限於厚度 <0.8 mm 且無 ulceration；本例厚度介於 0.8–1 mm，即使無 ulceration 也不是 T1a。Mitotic rate 在新分期中已不是獨立預後因子，不再用來定義分期，所以未見 mitosis 不影響 T 分類。",
+      "refs": [
+       [
+        116,
+        "1997"
+       ],
+       [
+        116,
+        "1999"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Table 116-6：T1 為厚度 ≤1.0 mm；T1b 為 <0.8 mm 合併 ulceration，或厚度 0.8–1 mm（不論有無 ulceration）。本例厚度落在 0.8–1 mm，故為 T1b。",
+      "refs": [
+       [
+        116,
+        "1997"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "需厚度 1.01–2.0 mm",
+      "ok": false,
+      "text": "T2 的厚度範圍是 1.01–2.0 mm（T2a 為無 ulceration）；本例厚度未超過 1.0 mm，仍屬 T1。",
+      "refs": [
+       [
+        116,
+        "1997"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "需厚度 1.01–2.0 mm 且有 ulceration",
+      "ok": false,
+      "text": "T2b 為厚度 1.01–2.0 mm 合併 ulceration；本例厚度屬 T1 範圍且無 ulceration。",
+      "refs": [
+       [
+        116,
+        "1997"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-18",
+   "topic": "Phototoxicity and photoallergy — photopatch test, slate-gray pigmentation, persistent photosensitivity",
+   "fitz": [
+    97
+   ],
+   "polarity": "positive",
+   "stem": "關於外源性物質引起的 phototoxicity 與 photoallergy，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "Photopatch test 中，照光側與未照光（遮蔽）側出現相同強度的反應，表示 photoallergy。"
+    },
+    {
+     "id": "②",
+     "text": "Amiodarone、chlorpromazine 可在曝光處造成 slate-gray pigmentation；因色素位於真皮，hydroquinone 類製劑效果不完全。"
+    },
+    {
+     "id": "③",
+     "text": "全身性藥物引起的光敏感大多為 photoallergy，外用藥物引起的大多為 phototoxicity。"
+    },
+    {
+     "id": "④",
+     "text": "停用光敏藥物後，光敏感仍可能持續多年並演變為 chronic actinic dermatitis，thiazides 與 amiodarone 皆有報告。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "B"
+   ],
+   "expl": {
+    "summary": "②④正確，答案 B。",
+    "items": [
+     {
+      "key": "①",
+      "label": "錯誤",
+      "ok": false,
+      "text": "照光側與遮蔽側反應強度相同表示 allergic contact dermatitis；只有照光側有反應才表示 photoallergy，兩側皆有但照光側較強則表示 photoallergy 合併 allergic contact dermatitis。",
+      "refs": [
+       [
+        97,
+        "1664"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "曝光處無症狀的藍灰色色素沉著與 amiodarone、chlorpromazine、clozapine、imipramine 等有關，組織上為真皮 melanin 增加及藥物或其代謝物沉積；可用 hydroquinone 或含 hydroquinone 的複方，但因色素位於真皮，效果並不完全。",
+      "refs": [
+       [
+        97,
+        "1658"
+       ],
+       [
+        97,
+        "1662-1663"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "錯誤",
+      "ok": false,
+      "text": "寫反了：全身性藥物引起的光敏感大多是 phototoxicity，外用藥物引起的大多是 photoallergy（但臨床上兩者未必能清楚區分）。",
+      "refs": [
+       [
+        97,
+        "1657"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "Phototoxicity 通常在停藥後緩解，但已有停止暴露後光敏感持續多年、演變為 chronic actinic dermatitis 的報告，藥物包括 thiazides、quinidine、quinine 與 amiodarone。",
+      "refs": [
+       [
+        97,
+        "1661"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "B/B",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 0,
+    "replaced_items": false
+   }
+  },
+  {
+   "id": "M-19",
+   "topic": "Cutaneous photobiology — photophysics, chromophores and penetration",
+   "fitz": [
+    17
+   ],
+   "polarity": "negative",
+   "stem": "關於紫外線及可見光與皮膚的光物理、光化學作用，下列敘述何者錯誤？",
+   "options": {
+    "A": "UVA 可穿透窗戶玻璃，UVB 則不能。",
+    "B": "螢光的波長比激發光長（Stokes law），例如 protoporphyrin IX 以藍光激發後發出紅色螢光。",
+    "C": "Porphyrins 的吸收極大值位於 UVB 範圍（約 300 nm）。",
+    "D": "UVC 的穿透深度最淺，在皮膚中只到達角質層與表皮上層。"
+   },
+   "answer": [
+    "C"
+   ],
+   "expl": {
+    "summary": "Porphyrins 的吸收極大值在 400–410 nm，不在 UVB 範圍，答案 C。",
+    "items": [
+     {
+      "key": "A",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "UVA 可穿透窗戶玻璃，UVB 則不能；中午日光中 UVA 約為 UVB 的 50 倍，太陽角度越低 UVA／UVB 比例越高。",
+      "refs": [
+       [
+        17,
+        "267"
+       ]
+      ]
+     },
+     {
+      "key": "B",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "受激發的 chromophore 回到基態時可放出螢光，其波長比激發波長長、能量較低（Stokes law）；例如 protoporphyrin IX 以藍光激發後放出紅光。",
+      "refs": [
+       [
+        17,
+        "268"
+       ]
+      ]
+     },
+     {
+      "key": "C",
+      "label": "本題答案",
+      "ok": true,
+      "text": "Fitzpatrick 列出皮膚中已知的 chromophores：DNA 的吸收極大值在 260 nm，porphyrins 在 400–410 nm，melanin 在 UVC 範圍但也能被 UVB 與 UVA 有效激發。Porphyrins 的吸收極大值不在 UVB 範圍。",
+      "refs": [
+       [
+        17,
+        "267"
+       ]
+      ]
+     },
+     {
+      "key": "D",
+      "label": "正確敘述",
+      "ok": false,
+      "text": "紫外線與可見光的波長越長穿透越深：UVA 比 UVB 更深入真皮，UVB 只有少部分穿過表皮，UVC 穿透最淺，只到達角質層與表皮上層。",
+      "refs": [
+       [
+        17,
+        "267"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "C/C",
+    "blind_match": true,
+    "ambiguity": "none",
+    "source_errors": 0,
+    "fixes": 1,
+    "replaced_items": true
+   }
+  },
+  {
+   "id": "M-20",
+   "topic": "Epidermal necrolysis — classification, histopathology, differential diagnosis, protopathic bias",
+   "fitz": [
+    44
+   ],
+   "polarity": "positive",
+   "stem": "關於 SJS／TEN 的分類、病程、病理與鑑別診斷，下列敘述何者正確？",
+   "statements": [
+    {
+     "id": "①",
+     "text": "依表皮剝離或可剝離（Nikolsky sign 陽性）的體表面積分類：SJS 小於 10%、SJS–TEN overlap 為 10–30%、TEN 大於 30%。"
+    },
+    {
+     "id": "②",
+     "text": "完全發展的病灶在病理上可見 keratinocytes 融合性壞死與表皮下水疱，direct immunofluorescence 為陰性。"
+    },
+    {
+     "id": "③",
+     "text": "若沒有黏膜侵犯或黏膜侵犯只限單一部位，應懷疑 staphylococcal scalded skin syndrome 等其他診斷；後者病理沒有表皮全層壞死。"
+    },
+    {
+     "id": "④",
+     "text": "前驅症狀（如發燒、喉嚨痛、咳嗽）可早於皮膚黏膜病灶 1–3 天出現；為治療前驅症狀而服用的感冒藥常被誤認為致病藥物（protopathic bias）。"
+    }
+   ],
+   "options": {
+    "A": "①③",
+    "B": "②④",
+    "C": "①②③",
+    "D": "④",
+    "E": "①②③④"
+   },
+   "answer": [
+    "E"
+   ],
+   "expl": {
+    "summary": "①②③④皆正確，答案 E。",
+    "items": [
+     {
+      "key": "①",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "依表皮剝離或可剝離（Nikolsky 陽性）的總面積分為三組：SJS 小於 10% BSA、SJS–TEN overlap 10% 到 30%、TEN 大於 30% BSA。McKee 亦以病程最嚴重時剝離或可剝離的皮膚面積分類，SJS 小於 10%，TEN 為 30% 以上（邊界值兩書略有差異），中間 10–30% 為過渡類別。",
+      "refs": [
+       [
+        44,
+        "736"
+       ],
+       [
+        "M",
+        "265"
+       ]
+      ]
+     },
+     {
+      "key": "②",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "早期在基底上層可見零星 apoptotic keratinocytes；完全發展時出現廣泛 vacuolar alteration、keratinocytes 融合性壞死與表皮下水疱，direct immunofluorescence 為陰性。McKee 亦描述表皮 apoptosis 合併表皮下水疱，水疱頂部為全層壞死。",
+      "refs": [
+       [
+        44,
+        "739"
+       ],
+       [
+        "M",
+        "267-268"
+       ]
+      ]
+     },
+     {
+      "key": "③",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "沒有黏膜侵犯或只侵犯單一部位時，應懷疑其他診斷，例如嬰兒（及合併敗血症成人）的 staphylococcal scalded skin syndrome。McKee 指出 SSSS 病理為 subcorneal 分離或缺少角質層，沒有表皮全層壞死或 interface change，可與 TEN 區分。",
+      "refs": [
+       [
+        44,
+        "739"
+       ],
+       [
+        "M",
+        "269"
+       ]
+      ]
+     },
+     {
+      "key": "④",
+      "label": "正確（本題答案）",
+      "ok": true,
+      "text": "EN 常以喉嚨痛、流鼻水、咳嗽、頭痛、發燒、倦怠等非特異前驅症狀開始，早於皮膚黏膜病灶 1 到 3 天。為治療前驅症狀而服用的 antipyretics、analgesics 等「cough and cold medicines」常被誤認為致病藥物，但這些藥多半以前用過且耐受，並在前驅症狀出現後才開始使用（protopathic bias）。",
+      "refs": [
+       [
+        44,
+        "736"
+       ]
+      ]
+     }
+    ]
+   },
+   "check": {
+    "blind": "E/E",
+    "blind_match": true,
+    "ambiguity": "minor",
+    "source_errors": 0,
+    "fixes": 3,
+    "replaced_items": false
+   }
+  }
+ ]
+}

@@ -466,6 +466,87 @@ test('the wrong notebook renders the time machine box inside the reveal', async 
   assert.equal(page.document.getElementById('q-108-44').querySelectorAll('.ex-tm').length, 0);
 });
 
+// 模擬考 on the practice page: the paper comes from exam/mock-data.json, every
+// card says it is a mock question, and answers go to their own key only —
+// never to the official records, chapter progress or the wrong notebook.
+test('a mock paper is labelled and kept out of every official record', async () => {
+  const exam = JSON.parse(fs.readFileSync('exam/exam-data.json', 'utf8'));
+  const mock = JSON.parse(fs.readFileSync('exam/mock-data.json', 'utf8'));
+  const fetch = url => Promise.resolve({
+    ok: true, json: () => Promise.resolve(String(url).startsWith('/exam/mock-data.json') ? mock : exam),
+  });
+  const flush = async () => { for (let i = 0; i < 5; i++) await new Promise(resolve => setImmediate(resolve)); };
+  const storage = new FakeStorage();
+  const page = open(storage, '/exam/practice', { fetch });
+  const form = page.document.querySelector('[data-practice-form]');
+  const box = form.querySelector('input[name=ex-mock]');
+  assert.ok(box, 'the practice page offers 模擬考');
+  assert.match(box.closest('label').textContent, new RegExp('模擬考（題庫 ' + mock.questions.length + ' 題）'));
+  box.checked = true;
+  box.dispatch('change');
+  assert.ok(form.querySelector('.ex-year-set').disabled, 'years do not apply to a mock paper');
+  form.querySelector('.ex-build').click();
+  await flush();
+  const cards = page.document.querySelectorAll('#ex-practice-list .ex-q');
+  assert.equal(cards.length, Math.min(50, mock.questions.length));
+  assert.ok(cards.every(card => card.hasAttribute('data-mock') && /^M-\d+$/.test(card.getAttribute('data-qid'))));
+  assert.ok(cards.every(card => card.querySelector('.ex-mock-tag').textContent === '模擬題，非官方考題'));
+  assert.match(page.document.querySelector('.ex-mock-notice').textContent, /模擬題，非官方考題/);
+  const first = cards[0];
+  const qid = first.getAttribute('data-qid');
+  const wrongKey = Object.keys(mock.questions.find(q => q.id === qid).options)
+    .find(k => k !== first.getAttribute('data-answer'));
+  assert.equal(answer(page, qid, wrongKey), 'wrong');
+  assert.equal(storage.json('dnExamMockProgress')[qid][0], 0);
+  for (const key of ['dnExamProgress', 'dnExamWrong', 'dnExamChapterProgress']) {
+    assert.equal(storage.getItem(key), null, key + ' is untouched');
+  }
+  assert.equal(storage.json('dnExamPaper').practice.mock, true);
+  // Reopened: the mock paper continues, with the answer and the 模擬考 choice.
+  const again = open(storage, '/exam/practice', { fetch });
+  await flush();
+  assert.equal(graded(again, qid), 'wrong');
+  assert.ok(again.document.querySelector('input[name=ex-mock]').checked);
+  assert.ok(again.document.getElementById('q-' + qid).hasAttribute('data-mock'));
+});
+
+// The two banks load independently: a paper asked for earlier whose bank
+// arrives later must not replace the newer paper (or its saved answers).
+test('a slower earlier build never replaces a newer paper', async () => {
+  const exam = JSON.parse(fs.readFileSync('exam/exam-data.json', 'utf8'));
+  const mock = JSON.parse(fs.readFileSync('exam/mock-data.json', 'utf8'));
+  const pending = {};
+  const fetch = url => new Promise(resolve => {
+    const which = String(url).startsWith('/exam/mock-data.json') ? 'mock' : 'exam';
+    pending[which] = () => resolve({ ok: true, json: () => Promise.resolve(which === 'mock' ? mock : exam) });
+  });
+  const flush = async () => { for (let i = 0; i < 5; i++) await new Promise(resolve => setImmediate(resolve)); };
+  const storage = new FakeStorage();
+  const page = open(storage, '/exam/practice', { fetch });
+  const form = page.document.querySelector('[data-practice-form]');
+  form.querySelector('.ex-build').click();          // official paper, bank still loading
+  const box = form.querySelector('input[name=ex-mock]');
+  box.checked = true;
+  box.dispatch('change');
+  form.querySelector('.ex-build').click();          // then a mock paper
+  pending.mock();
+  await flush();
+  const first = page.document.querySelector('#ex-practice-list .ex-q');
+  const qid = first.getAttribute('data-qid');
+  assert.ok(first.hasAttribute('data-mock'));
+  const key = first.getAttribute('data-answer');
+  assert.equal(answer(page, qid, key), 'right');
+  pending.exam();                                   // the earlier official bank arrives last
+  await flush();
+  const cards = page.document.querySelectorAll('#ex-practice-list .ex-q');
+  assert.ok(cards.length && cards.every(card => card.hasAttribute('data-mock')), 'the mock paper stays');
+  assert.equal(graded(page, qid), 'right');
+  const saved = storage.json('dnExamPaper').practice;
+  assert.equal(saved.mock, true);
+  assert.equal(saved.done[qid], key);
+  assert.equal(storage.getItem('dnExamProgress'), null);
+});
+
 // Reading progress on the hub (the real browser behaviour, dwell time and the
 // chapter page are covered by _test_exam_reading_browser.cjs).
 test('the hub shows reading rounds, a summary and the continue-reading card from storage', () => {
