@@ -33,6 +33,11 @@
   // Timed papers not yet handed in: { 'year-105' | 'practice': { start, seen,
   // ids (practice only), sel: { id: key picked, not submitted }, done: { id: key submitted } } }.
   var PAPER_KEY = 'dnExamPaper';
+  // 模擬考 answers (practice page with the mock bank): { 'M-01': [ok, epoch ms, key] }.
+  // Kept apart from every official-question record above, so mock questions
+  // never reach the hub statistics, chapter progress or the wrong notebook.
+  var MOCK_PROGRESS_KEY = 'dnExamMockProgress';
+  var MOCK_LABEL = '模擬題，非官方考題';
   var body = document.body;
 
   function store(key, value) {
@@ -109,6 +114,14 @@
       mine[id] = rec.slice();
       saveChapterProgress(slug, mine);
     }
+  }
+
+  function recordMock(id, ok, key) {
+    if (!id) return;
+    var map = load(MOCK_PROGRESS_KEY, {});
+    if (!isMap(map)) map = {};
+    map[id] = [ok ? 1 : 0, Date.now(), key || ''];
+    store(MOCK_PROGRESS_KEY, map);
   }
 
   // ---------------------------------------------------------- timed papers
@@ -257,6 +270,10 @@
     var answer = card.getAttribute('data-answer') || '';
     var ok = free || answer.indexOf(picked.value) !== -1;
     showGraded(card, ok, verdict(card, ok), silent);
+    if (card.hasAttribute('data-mock')) {
+      recordMock(card.getAttribute('data-qid'), ok, picked ? picked.value : '');
+      return ok;
+    }
     markWrong(card.getAttribute('data-qid'), !ok);
     recordProgress(card.getAttribute('data-qid'), ok, picked ? picked.value : '');
     return ok;
@@ -621,16 +638,24 @@
     card.setAttribute('data-qid', q.id);
     card.setAttribute('data-answer', q.answer.join(''));
     if (q.free) card.setAttribute('data-free', '');
+    // A mock question has no year page and is on no chapter page: its header
+    // names it as a mock question and its chapter chips open the chapter notes.
+    if (q.mock) card.setAttribute('data-mock', '');
     var head = el('header', 'ex-q-head');
-    var link = el('a', null, q.year + ' 年第 ' + q.number + ' 題');
-    link.href = '/exam/year-' + q.year + '#q-' + q.id;
     var no = el('span', 'ex-q-no');
-    no.appendChild(link);
+    if (q.mock) {
+      no.appendChild(document.createTextNode('模擬題 ' + q.id));
+    } else {
+      var link = el('a', null, q.year + ' 年第 ' + q.number + ' 題');
+      link.href = '/exam/year-' + q.year + '#q-' + q.id;
+      no.appendChild(link);
+    }
     head.appendChild(no);
     var chips = el('span', 'ex-chips');
+    if (q.mock) chips.appendChild(el('span', 'ex-mock-tag', MOCK_LABEL));
     q.fitz.forEach(function (c) {
       var chip = el('a', 'ex-chip', 'Ch.' + c);
-      chip.href = '/exam/fitz-' + c + '#q-' + q.id;
+      chip.href = '/exam/fitz-' + c + (q.mock ? '' : '#q-' + q.id);
       chips.appendChild(chip);
     });
     head.appendChild(chips);
@@ -684,7 +709,7 @@
     actions.appendChild(el('span', 'ex-result'));
     card.appendChild(actions);
     var reveal = el('div', 'ex-reveal');
-    var ans = el('p', 'ex-answer', '官方答案：');
+    var ans = el('p', 'ex-answer', q.mock ? '答案（' + MOCK_LABEL + '）：' : '官方答案：');
     ans.appendChild(el('strong', null, q.answer.join('、')));
     if (q.note) ans.appendChild(el('span', 'ex-flag', q.note));
     reveal.appendChild(ans);
@@ -774,6 +799,20 @@
     box.appendChild(el('p', 'ex-tm-src-h', '參考文獻'));
     box.appendChild(sourceList(tm.sources || []));
     return box;
+  }
+
+  var mockPromise = null;
+  // The practice page's 模擬考 bank (exam/mock-data.json), loaded only when used.
+  function mockData() {
+    if (!mockPromise) {
+      var main = document.querySelector('[data-mock-data]');
+      if (!main) return Promise.reject(new Error('no mock bank'));
+      mockPromise = fetch(main.getAttribute('data-mock-data'), { credentials: 'same-origin' })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+      // A failed load is tried again on the next attempt.
+      mockPromise.catch(function () { mockPromise = null; });
+    }
+    return mockPromise;
   }
 
   var dataPromise = null;
@@ -874,11 +913,23 @@
     }
     form.querySelector('.ex-years-all').addEventListener('click', function () { setAll(true); });
     form.querySelector('.ex-years-none').addEventListener('click', function () { setAll(false); });
+    // 模擬考: the paper comes from the mock bank and the year selection is off.
+    var mockBox = form.querySelector('input[name=ex-mock]');
+    var yearSet = form.querySelector('.ex-year-set');
+    function syncMock() {
+      if (yearSet) yearSet.disabled = !!(mockBox && mockBox.checked);
+    }
+    if (mockBox) mockBox.addEventListener('change', syncMock);
+    syncMock();
     var summary = buildAnswerBar(null, '');
     summary.hidden = true;
     list.parentNode.insertBefore(summary, list);
-    function show(pool) {
+    function show(pool, mock) {
       while (list.firstChild) list.removeChild(list.firstChild);
+      if (mock) {
+        list.appendChild(el('p', 'ex-mock-notice', '以下為' + MOCK_LABEL + '：依 Fitzpatrick 與 McKee 新撰寫，' +
+          '並非臺灣皮膚科醫學會的歷屆試題；作答紀錄不計入考古題統計與錯題本。'));
+      }
       pool.forEach(function (q, i) {
         var card = renderCard(q, false);
         var no = card.querySelector('.ex-q-no');
@@ -889,22 +940,26 @@
       summary.hidden = false;
     }
     form.querySelector('.ex-build').addEventListener('click', function () {
+      var mock = !!(mockBox && mockBox.checked);
       var years = [];
       form.querySelectorAll('input[name=ex-year]:checked').forEach(function (box) { years.push(Number(box.value)); });
-      if (!years.length) { note.textContent = '請至少選一個年份'; return; }
+      if (!mock && !years.length) { note.textContent = '請至少選一個年份'; return; }
       var count = Number(form.querySelector('select[name=ex-count]').value);
       var order = form.querySelector('input[name=ex-order]:checked').value;
       note.textContent = '題目載入中…';
-      examData().then(function (data) {
-        var pool = data.questions.filter(function (q) { return years.indexOf(q.year) !== -1; });
+      (mock ? mockData() : examData()).then(function (data) {
+        var pool = mock ? data.questions.slice()
+          : data.questions.filter(function (q) { return years.indexOf(q.year) !== -1; });
         if (order === 'random') shuffle(pool);
         if (count > 0) pool = pool.slice(0, count);
         // Cards read paper.sel/done when wired, so the paper exists first.
-        beginPaper('practice', {
+        var fresh = {
           start: Date.now(), ids: pool.map(function (q) { return q.id; }), sel: {}, done: {}
-        });
-        show(pool);
-        note.textContent = '共 ' + pool.length + ' 題，計時開始';
+        };
+        if (mock) fresh.mock = true;
+        beginPaper('practice', fresh);
+        show(pool, mock);
+        note.textContent = '共 ' + pool.length + ' 題' + (mock ? MOCK_LABEL : '') + '，計時開始';
         barApi.start(paper.start);
         setOnlyTodo(false);
         updateAnswerBar();
@@ -917,18 +972,21 @@
     var saved = loadPaper('practice');
     if (!saved || !Array.isArray(saved.ids) || !saved.ids.length) return;
     note.textContent = '載入上次未交卷的試卷…';
-    examData().then(function (data) {
+    var savedMock = saved.mock === true;
+    if (savedMock && mockBox) { mockBox.checked = true; syncMock(); }
+    (savedMock ? mockData() : examData()).then(function (data) {
       if (paper) return;  // a new paper was generated meanwhile
       // Another tab may have handed it in or saved to it while the data loaded.
       saved = loadPaper('practice');
       if (!saved || !Array.isArray(saved.ids) || !saved.ids.length) { note.textContent = ''; return; }
+      if ((saved.mock === true) !== savedMock) { note.textContent = '試卷已在其他分頁更換，請重新整理頁面。'; return; }
       var byId = {};
       data.questions.forEach(function (q) { byId[q.id] = q; });
       var pool = saved.ids.map(function (id) { return byId[id]; }).filter(Boolean);
       paperKey = 'practice';
       paper = saved;
       if (!pool.length) { endPaper(); note.textContent = ''; return; }
-      show(pool);
+      show(pool, savedMock);
       restoreFromPaper(pageCards());
       // The timer continues from where the page was left, not from the wall clock.
       var away = typeof saved.seen === 'number' ? Math.max(0, Date.now() - saved.seen) : 0;
