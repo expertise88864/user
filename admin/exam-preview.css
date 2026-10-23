@@ -175,8 +175,7 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 .ex-note ul{list-style:disc;padding-left:22px}
 .ex-note li{margin:4px 0}
 mark.ex-key{background:linear-gradient(transparent 42%,#fde9a8 42%);color:inherit;padding:0 1px}
-.ex-qref{font-size:10.5px;margin-left:2px;vertical-align:super;white-space:nowrap}
-.ex-qref a{color:#b45309;text-decoration:none;font-weight:600;margin-left:2px}
+.ex-qref{font-size:10.5px;margin-left:3px;vertical-align:super;white-space:nowrap;color:#b45309;font-weight:600}
 .ex-trap{border-left:4px solid #f87171;background:#fef5f5;border-radius:8px;padding:8px 12px;margin:10px 0;font-size:14px;line-height:1.8}
 .ex-trap>strong:first-child{display:inline-block;background:#ef5350;color:#fff;border-radius:6px;font-size:11px;padding:0 7px;margin-right:8px}
 .ex-n{font-family:Inter,ui-monospace,monospace;font-weight:700;color:#0c5159;white-space:nowrap}
@@ -188,7 +187,7 @@ mark.ex-key{background:linear-gradient(transparent 42%,#fde9a8 42%);color:inheri
 :root[data-theme="dark"] .ex-toc a:hover{background:rgba(164,181,168,.1)}
 :root[data-theme="dark"] .ex-toc a[aria-current="location"]{background:rgba(164,181,168,.2);color:#eef3ef}
 :root[data-theme="dark"] mark.ex-key{background:linear-gradient(transparent 42%,rgba(234,179,8,.32) 42%)}
-:root[data-theme="dark"] .ex-qref a{color:#f2c14e}
+:root[data-theme="dark"] .ex-qref{color:#f2c14e}
 :root[data-theme="dark"] .ex-trap,:root[data-theme="dark"] .ex-legend-trap{background:rgba(127,29,29,.3);border-left-color:#b45454;color:inherit}
 :root[data-theme="dark"] .ex-trap>strong:first-child{background:#c24141;color:#fff}
 :root[data-theme="dark"] .ex-n{color:#a4b5a8}

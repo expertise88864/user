@@ -134,6 +134,7 @@ def main() -> int:
             "blog-calculators",
             "blog-article-visuals",
             "blog-article-footer",
+            "blog-search",
         ):
             if f"'/blog/{bundle}.min.js'" in sw_src or f'"/blog/{bundle}.min.js"' in sw_src:
                 errors.append(f"sw.js: {bundle}.min.js should be runtime-cached on demand, not precached during install")

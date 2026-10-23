@@ -1,8 +1,8 @@
 /* ChenDermatologist service worker — offline-first for static, network-first for HTML
  * v4: + new articles, offline.html, LRU runtime cache, fetch retry, broken cache cleanup
  */
-const CACHE = 'cd-v247';
-const RUNTIME = 'cd-runtime-v245';
+const CACHE = 'cd-v248';
+const RUNTIME = 'cd-runtime-v246';
 // 2026-05-17 — bumped 60 → 150 after deep audit showed 48 articles × ≥3
 // lazy bundles each + cache-bust HTMLs were thrashing the previous cap.
 // Popular articles getting evicted after ~5 navigations caused repeat-
@@ -232,7 +232,7 @@ self.addEventListener('fetch', (e) => {
   // Network-first for generated data that changes with content updates.
   // Search results should reflect newly published/edited articles quickly;
   // cache is only an offline fallback.
-  if (url.pathname === '/assets/search-index.json') {
+  if (url.pathname === '/assets/search-index.json' || url.pathname === '/exam/nav-search.json') {
     e.respondWith(
       fetchWithRetry(req)
         .then((resp) => {

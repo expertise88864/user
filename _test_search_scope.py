@@ -92,9 +92,12 @@ class SearchScopeTest(unittest.TestCase):
         spec = importlib.util.spec_from_file_location('search_builder', '_run_pagefind.py')
         builder = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(builder)
-        public = ['index.html', 'about.html', 'blog/article.html', 'en/index.html', 'en/blog/article.html']
+        public = ['index.html', 'about.html', 'blog/article.html', 'en/index.html', 'en/blog/article.html',
+                  'exam/index.html', 'exam/fitz-45.html']
+        # Year pages repeat chapter questions; practice/review are interactive shells.
         private = ['.git/retired-workspaces/blog/private.html', '.codex-review/evidence.html',
-                   'node_modules/example/index.html', 'backup/blog/article.html']
+                   'node_modules/example/index.html', 'backup/blog/article.html',
+                   'exam/year-115.html', 'exam/practice.html', 'exam/review.html']
         with tempfile.TemporaryDirectory(prefix='pagefind-scope-') as folder:
             root = Path(folder)
             self.write_catalog(root)
@@ -117,7 +120,8 @@ class SearchScopeTest(unittest.TestCase):
             for fragment in (root / 'pagefind/fragment').glob('*.pf_fragment'):
                 data = gzip.decompress(fragment.read_bytes())
                 urls.add(json.loads(data[data.index(b'{'):])['url'])
-            self.assertEqual(urls, {'/', '/about.html', '/blog/article.html', '/en/', '/en/blog/article.html'})
+            self.assertEqual(urls, {'/', '/about.html', '/blog/article.html', '/en/', '/en/blog/article.html',
+                                    '/exam/', '/exam/fitz-45.html'})
 
     def test_author_visibility_and_robots_apply_to_both_languages(self):
         import _run_pagefind as builder

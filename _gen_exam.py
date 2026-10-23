@@ -19,7 +19,7 @@ Sources (hand-maintained):
 Outputs (generated, never hand-edit):
   exam/index.html, exam/fitz-<n>.html, exam/year-<y>.html, exam/mckee.html,
   exam/kantor.html, exam/review.html, exam/concepts.html, exam/exam-data.json,
-  exam/search-index.json, exam/mock-data.json
+  exam/search-index.json, exam/nav-search.json, exam/mock-data.json
 
 Pages reuse the normalized notes.html shell (head, header, footer), and the
 output is already in its final normalized form. REGEN_STEPS runs it twice:
@@ -613,13 +613,14 @@ SECTION = re.compile(r'<section class="ex-note" id="([a-z0-9-]+)"(?: data-w="\d+
 
 
 def expand_marks(fragment: str, on_page: set[str]) -> str:
-    """<mark data-q="102-42,105-21">fact</mark> -> highlighted fact + links to the questions."""
+    """<mark data-q="102-42,105-21">fact</mark> -> highlighted fact + plain question numbers.
+
+    The superscripts are labels, not links: a mistaken tap must not jump the
+    reader away from the notes (user request 2026-10-23).
+    """
     def repl(m: re.Match) -> str:
-        links = []
-        for qid in [i.strip() for i in m.group(1).split(",") if i.strip()]:
-            href = f"#q-{qid}" if qid in on_page else f"/exam/year-{qid.split('-')[0]}#q-{qid}"
-            links.append(f'<a href="{href}">{esc(qid)}</a>')
-        return f'<mark class="ex-key">{m.group(2)}</mark><span class="ex-qref">{" ".join(links)}</span>'
+        ids = [esc(i.strip()) for i in m.group(1).split(",") if i.strip()]
+        return f'<mark class="ex-key">{m.group(2)}</mark><span class="ex-qref">{" ".join(ids)}</span>'
     return MARK.sub(repl, fragment)
 
 
@@ -1039,7 +1040,7 @@ def hub_page(shell, data, by_chapter, by_year, by_book) -> str:
     refs = "".join(f"<li>{esc(book)}</li>" for book in REFERENCE_BOOKS)
     body = (
         f'<h1 class="ex-h1">{HUB_TITLE}</h1>'
-        '<p class="ex-lead">目前整理 101–115 年考題以及各章節重點整理（陸續更新中）</p>'
+        '<p class="ex-lead">目前整理 101–115 年考題以及各章節重點整理</p>'
         '<h2 class="ex-h2 ex-h2-sm">目前甄審筆試出題參考範圍</h2>'
         f'<ol class="ex-refs">{refs}</ol>{NOTICE}'
         # 考古卷 and 考點總覽 sit side by side (stacked on phones).
@@ -1207,6 +1208,24 @@ class Terms:
                     target.append(item)
 
 
+def nav_search(data, pages, index: dict) -> list:
+    """Section headings for the site-wide search (header search button).
+
+    Pagefind splits Traditional Chinese into single characters, so 「乾癬」
+    alone misses most chapters. The site search matches these headings as
+    plain substrings first: [[chapter, title, [[section id, heading], ...],
+    [chapter-level names and abbreviations from the hub search, e.g. 乾癬]], ...]."""
+    names: dict[int, list[str]] = {}
+    for n, sid, _, found, abbrs, primary, primary_abbrs in index["entries"]:
+        if sid == "":
+            names[n] = [t for t in found[:primary] + abbrs[:primary_abbrs] if t != data["chapters"][n]["title"]]
+    out = []
+    for n in sorted(pages):
+        heads = [[sid, plain(title)] for sid, title in SECTION.findall(data["notes"].get(n) or "")]
+        out.append([n, data["chapters"][n]["title"], heads, names.get(n, [])])
+    return out
+
+
 def search_index(data, by_chapter) -> dict:
     """Entries are [chapter, section id ("" = chapter page), section title, names,
     abbreviations, n primary names, n primary abbreviations]; primary terms come
@@ -1355,7 +1374,8 @@ def build() -> dict[str, str]:
     DATA_VERSION[0] = hashlib.sha256(client.encode("utf-8")).hexdigest()[:10]
     mock = json.dumps(mock_client_data(data), ensure_ascii=False, separators=(",", ":")) + "\n"
     MOCK_VERSION[0] = hashlib.sha256(mock.encode("utf-8")).hexdigest()[:10]
-    index = json.dumps(search_index(data, pages), ensure_ascii=False, separators=(",", ":")) + "\n"
+    hub_index = search_index(data, pages)
+    index = json.dumps(hub_index, ensure_ascii=False, separators=(",", ":")) + "\n"
     SEARCH_VERSION[0] = hashlib.sha256(index.encode("utf-8")).hexdigest()[:10]
     files: dict[str, str] = {}
     files["index.html"] = hub_page(shell, data, by_chapter, by_year, by_book)
@@ -1371,6 +1391,7 @@ def build() -> dict[str, str]:
         files["concepts.html"] = concepts_page(shell, data, by_chapter)
     files["exam-data.json"] = client
     files["search-index.json"] = index
+    files["nav-search.json"] = json.dumps(nav_search(data, pages, hub_index), ensure_ascii=False, separators=(",", ":")) + "\n"
     if data["mock"]:
         files["mock-data.json"] = mock
     return files
@@ -1545,8 +1566,7 @@ body:not(.ex-quiz) .ex-opt input{display:none}
 .ex-note ul{list-style:disc;padding-left:22px}
 .ex-note li{margin:4px 0}
 mark.ex-key{background:linear-gradient(transparent 42%,#fde9a8 42%);color:inherit;padding:0 1px}
-.ex-qref{font-size:10.5px;margin-left:2px;vertical-align:super;white-space:nowrap}
-.ex-qref a{color:#b45309;text-decoration:none;font-weight:600;margin-left:2px}
+.ex-qref{font-size:10.5px;margin-left:3px;vertical-align:super;white-space:nowrap;color:#b45309;font-weight:600}
 .ex-trap{border-left:4px solid #f87171;background:#fef5f5;border-radius:8px;padding:8px 12px;margin:10px 0;font-size:14px;line-height:1.8}
 .ex-trap>strong:first-child{display:inline-block;background:#ef5350;color:#fff;border-radius:6px;font-size:11px;padding:0 7px;margin-right:8px}
 .ex-n{font-family:Inter,ui-monospace,monospace;font-weight:700;color:#0c5159;white-space:nowrap}
@@ -1558,7 +1578,7 @@ mark.ex-key{background:linear-gradient(transparent 42%,#fde9a8 42%);color:inheri
 :root[data-theme="dark"] .ex-toc a:hover{background:rgba(164,181,168,.1)}
 :root[data-theme="dark"] .ex-toc a[aria-current="location"]{background:rgba(164,181,168,.2);color:#eef3ef}
 :root[data-theme="dark"] mark.ex-key{background:linear-gradient(transparent 42%,rgba(234,179,8,.32) 42%)}
-:root[data-theme="dark"] .ex-qref a{color:#f2c14e}
+:root[data-theme="dark"] .ex-qref{color:#f2c14e}
 :root[data-theme="dark"] .ex-trap,:root[data-theme="dark"] .ex-legend-trap{background:rgba(127,29,29,.3);border-left-color:#b45454;color:inherit}
 :root[data-theme="dark"] .ex-trap>strong:first-child{background:#c24141;color:#fff}
 :root[data-theme="dark"] .ex-n{color:#a4b5a8}

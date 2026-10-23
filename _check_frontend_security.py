@@ -52,6 +52,9 @@ def main() -> int:
     # the footer support card is the only runtime support entry point.
     forbid(errors, "blog/blog-support.js", "dn-bmc-header", "Header support pill was retired; support belongs in the footer card only")
     require(errors, "blog/blog-shared.js", "function escapeHtml(value)", "Command palette result text should be escaped before template insertion")
+    require(errors, "blog/blog-search.js", "function escapeHtml(value)", "Grouped search results should escape text before template insertion")
+    require(errors, "blog/blog-search.js", "url[0] !== '/' || url[1] === '/'", "Grouped search result URLs should require a single-rooted same-site path")
+    require(errors, "blog/blog-search.js", "escapeHtml(safeSiteUrl(", "Grouped search hrefs should use safe same-site URLs")
     require(errors, "blog/blog-shared.js", "function safeSiteUrl(value)", "Command palette result URLs should be restricted to same-site paths")
     require(errors, "blog/blog-shared.js", "url.includes('\\\\')", "Command palette URLs should reject browser-normalized backslash authorities")
     require(errors, "blog/blog-shared.js", "url[0] !== '/' || url[1] === '/'", "Command palette URLs should require a single-rooted same-site path")

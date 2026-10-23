@@ -20,7 +20,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 # _check_min_sync.py imports this so the sync checker can never drift out of
 # step with what actually gets minified.
 JS_BUNDLES = ('blog-shared', 'blog-support', 'blog-hub', 'blog-article-reading', 'blog-diagrams',
-              'blog-calculators', 'blog-article-visuals', 'blog-article-footer')
+              'blog-calculators', 'blog-article-visuals', 'blog-article-footer', 'blog-search')
 
 
 # ─────────────────────────────────────────────────────────────────

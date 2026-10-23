@@ -1,0 +1,271 @@
+/* blog-search.js — grouped header search results (patient articles + exam notes).
+ *
+ * Lazy-loaded by DN.initCmdK the first time the search dialog opens; the
+ * shared runtime keeps its own title search as the fallback. Pagefind splits
+ * Traditional Chinese into single characters, so a query such as 「乾癬」 or
+ * 「異位性皮膚炎」 misses most pages. Exact substring matches over article
+ * titles/headings and exam section headings (/exam/nav-search.json) are listed
+ * first; Pagefind full text follows, retried character by character when an
+ * exact Chinese query finds little.
+ */
+(function () {
+  'use strict';
+  var DN = window.DN;
+  if (!DN) return;
+
+  var CJK = /[\u3400-\u9fff\uf900-\ufaff]/;
+  var MAX_ARTICLES = 6;
+  var MAX_EXAM = 8;
+  var GENERIC_SUBS = { '重點整理': 1, '考題': 1, '本章考點': 1, '圖片與延伸閱讀': 1, '本章目錄': 1 };
+  var EXAM = null;
+  var examLoading = null;
+  var lastSearch = null;
+
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function safeSiteUrl(value) {
+    var url = String(value || '').replace(/[\u0000-\u001f\u007f]/g, '');
+    if (url[0] !== '/' || url[1] === '/' || url.includes('\\')) return '/';
+    return url;
+  }
+
+  // Pagefind reports file URLs (/blog/acne.html, /exam/); the site serves clean ones.
+  function cleanUrl(value) {
+    var url = String(value || '').split('?')[0];
+    var hash = url.indexOf('#') >= 0 ? url.slice(url.indexOf('#')) : '';
+    url = url.split('#')[0].replace(/\.html$/, '').replace(/\/index$/, '/');
+    if (url.length > 1) url = url.replace(/\/$/, '');
+    return url + hash;
+  }
+
+  function pageKey(url) {
+    return cleanUrl(url).split('#')[0];
+  }
+
+  function kindOf(url) {
+    return /^\/exam(?:\/|$)/.test(url) ? 'exam' : 'article';
+  }
+
+  // Escaped text with every query word wrapped in <mark> (case-insensitive).
+  // Split the raw text first so a match can never land inside an entity.
+  function highlight(text, words) {
+    var parts = words.map(function (w) {
+      return w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }).filter(Boolean);
+    if (!parts.length) return escapeHtml(text);
+    return String(text || '').split(new RegExp('(' + parts.join('|') + ')', 'gi')).map(function (piece, i) {
+      return i % 2 ? '<mark>' + escapeHtml(piece) + '</mark>' : escapeHtml(piece);
+    }).join('');
+  }
+
+  // Pagefind excerpts are raw text plus <mark> tags: escape all, then restore marks.
+  function excerptHtml(value) {
+    var text = String(value || '').replace(/\u200b/g, '').replace(/<(\/?)mark>/gi, '\u0001$1\u0002');
+    return escapeHtml(text.replace(/<[^>]*>/g, '')).replace(/\u0001(\/?)\u0002/g, '<$1mark>');
+  }
+
+  function loadExam(S) {
+    if (EXAM || examLoading || S.isEn) return;
+    examLoading = fetch('/exam/nav-search.json', { credentials: 'omit' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        if (!Array.isArray(data)) throw new Error('exam index');
+        var list = [{ url: '/exam', title: '皮膚科專科醫師考試重點及考題', heads: [] },
+                    { url: '/exam/concepts', title: '考點總覽', heads: [] }];
+        data.forEach(function (row) {
+          if (!Array.isArray(row) || !/^\d+$/.test(String(row[0]))) return;
+          list.push({
+            url: '/exam/fitz-' + row[0],
+            title: 'Ch.' + row[0] + ' ' + String(row[1] || ''),
+            aliases: Array.isArray(row[3]) ? row[3].join(' ') : '',
+            heads: (Array.isArray(row[2]) ? row[2] : []).filter(function (h) {
+              return Array.isArray(h) && /^[a-z0-9-]+$/.test(String(h[0]));
+            }).map(function (h) { return { id: String(h[0]), text: String(h[1] || '') }; })
+          });
+        });
+        list.forEach(function (item) {
+          item.norm = S.norm(item.title + ' ' + (item.aliases || ''));
+          item.heads.forEach(function (h) { h.norm = S.norm(h.text); });
+        });
+        EXAM = list;
+        if (lastSearch && lastSearch.S.fresh(lastSearch.q, lastSearch.epoch)) lastSearch.S.rerender();
+      })
+      .catch(function () { examLoading = null; });
+  }
+
+  function hasAll(text, words) {
+    return words.every(function (w) { return text.indexOf(w) >= 0; });
+  }
+
+  function localHits(S, q, words) {
+    var hits = [];
+    (S.index() || []).forEach(function (it) {
+      if (!it || !it.search || !hasAll(it.search, words)) return;
+      var title = S.norm(it.title);
+      hits.push({ url: it.url, title: it.title, meta: it.meta || '', subs: [],
+        score: title.indexOf(q) >= 0 ? 100 : hasAll(title, words) ? 80 : 50 });
+    });
+    (EXAM || []).forEach(function (ch) {
+      var heads = ch.heads.filter(function (h) { return hasAll(h.norm, words); });
+      var inTitle = hasAll(ch.norm, words);
+      if (!inTitle && !heads.length) return;
+      hits.push({
+        url: ch.url, title: ch.title, meta: '', score: inTitle ? 95 : 70 + Math.min(heads.length, 9),
+        subs: heads.slice(0, 3).map(function (h) { return { url: ch.url + '#' + h.id, title: h.text }; })
+      });
+    });
+    return hits.sort(function (a, b) { return b.score - a.score; });
+  }
+
+  function pagefindData(pf, q) {
+    var exact = 0;
+    return Promise.resolve().then(function () { return pf.search(q); }).then(function (res) {
+      var list = res.results.slice(0, 12);
+      exact = list.length;
+      var split = q.replace(/([\u3400-\u9fff\uf900-\ufaff])/g, ' $1 ').replace(/\s+/g, ' ').trim();
+      if (list.length >= 8 || !CJK.test(q) || split === q) return list;
+      return Promise.resolve().then(function () { return pf.search(split); }).then(function (more) {
+        var seen = {};
+        list.forEach(function (r) { seen[r.id] = 1; });
+        more.results.forEach(function (r) { if (list.length < 12 && !seen[r.id]) list.push(r); });
+        return list;
+      }, function () { return list; });
+    }).then(function (list) {
+      return Promise.all(list.map(function (r) { return r.data(); }));
+    }).then(function (datas) {
+      // Only the exact query's ranking is a useful tie-breaker; the
+      // character-split retry matches characters anywhere on the page.
+      datas.forEach(function (d, i) { if (d) d.rank = i < exact ? 12 - i : 0; });
+      return datas;
+    });
+  }
+
+  // Pagefind matches Chinese character by character even for the exact query,
+  // so a Chinese hit only counts when its excerpt holds the whole query.
+  function whole(S, q, excerpt) {
+    return !CJK.test(q) || S.norm(String(excerpt || '').replace(/<[^>]*>|\u200b/g, '')).indexOf(q) >= 0;
+  }
+
+  function merge(S, q, local, datas) {
+    var rows = local.map(function (row) { return Object.assign({}, row); });
+    var byKey = {};
+    rows.forEach(function (row) { byKey[pageKey(row.url)] = row; });
+    (datas || []).forEach(function (d) {
+      if (!d || !d.url) return;
+      var key = pageKey(d.url);
+      if (byKey[key]) byKey[key].score += Math.min(d.rank || 0, 12);
+      var subs = (d.sub_results || []).filter(function (s) {
+        return s && s.url && s.url.indexOf('#') > 0 && !GENERIC_SUBS[s.title] && s.title !== (d.meta && d.meta.title);
+      }).slice(0, 2).map(function (s) { return { url: cleanUrl(s.url), title: s.title }; });
+      var row = byKey[key];
+      if (row) {
+        if (!row.excerpt) row.excerpt = d.excerpt;
+        if (!row.subs.length) row.subs = subs;
+        return;
+      }
+      // A top exact Pagefind hit can outrank a heading-only match (an exam
+      // chapter titled only in English, e.g. Ch.52 Pemphigus for 天疱瘡).
+      row = { url: cleanUrl(d.url), title: (d.meta && d.meta.title) || key, excerpt: d.excerpt, subs: subs,
+        score: d.rank && whole(S, q, d.excerpt) ? 60 + Math.min(d.rank, 12) : 0 };
+      byKey[key] = row;
+      rows.push(row);
+    });
+    // Stable: equal scores keep local order, then Pagefind's.
+    rows = rows.map(function (row, i) { return [row, i]; }).sort(function (a, b) {
+      return b[0].score - a[0].score || a[1] - b[1];
+    }).map(function (pair) { return pair[0]; });
+    // Character-split Pagefind hits (score 0) are only a last resort: one
+    // shared character such as 樣 is enough for them to match.
+    if (rows.some(function (row) { return row.score > 0; })) {
+      rows = rows.filter(function (row) { return row.score > 0; });
+    }
+    var groups = { article: [], exam: [] };
+    rows.forEach(function (row) {
+      var group = groups[kindOf(pageKey(row.url))];
+      if (group.length < (group === groups.exam ? MAX_EXAM : MAX_ARTICLES)) group.push(row);
+    });
+    return groups;
+  }
+
+  function rowHtml(row, i, words) {
+    var subs = row.subs.map(function (s) {
+      return '<a class="sub" href="' + escapeHtml(safeSiteUrl(s.url)) + '">' + highlight(s.title, words) + '</a>';
+    }).join('');
+    var body = row.excerpt ? '<span class="x">' + excerptHtml(row.excerpt) + '</span>'
+      : row.meta ? '<span class="x">' + escapeHtml(row.meta) + '</span>' : '';
+    return '<div class="row dn-sr' + (i === 0 ? ' active' : '') + '" data-idx="' + i + '">' +
+      '<a class="ra" href="' + escapeHtml(safeSiteUrl(row.url)) + '"><span class="t">' + highlight(row.title, words) + '</span>' + body + '</a>' +
+      (subs ? '<span class="subs">' + subs + '</span>' : '') + '</div>';
+  }
+
+  function paint(S, q, words, local, datas, pending) {
+    var groups = merge(S, q, local, datas);
+    var order = [
+      { rows: groups.article, label: S.isEn ? 'Articles' : '衛教文章' },
+      { rows: groups.exam, label: '考試重點' }
+    ];
+    // Patient articles lead unless only the exam notes match well.
+    var best = function (rows) { return rows.length ? rows[0].score : -1; };
+    if (best(groups.exam) > best(groups.article) && best(groups.article) < 60) order.reverse();
+    var matches = [];
+    var html = '';
+    order.forEach(function (g) {
+      if (!g.rows.length) return;
+      html += '<div class="dn-sg">' + g.label + '<span>' + g.rows.length + '</span></div>';
+      g.rows.forEach(function (row) {
+        html += rowHtml(row, matches.length, words);
+        matches.push({ url: row.url, title: row.title });
+      });
+    });
+    if (pending) html += '<div class="dn-sp">' + (S.isEn ? 'Searching full text…' : '全文搜尋中…') + '</div>';
+    else if (!matches.length) html = '<div id="dn-cmdk-empty">' + (S.isEn ? 'No matching content found' : '找不到符合的內容') + '</div>';
+    S.results.innerHTML = html;
+    S.set(matches);
+  }
+
+  function injectStyle() {
+    if (document.getElementById('dn-search-style')) return;
+    var st = document.createElement('style');
+    st.id = 'dn-search-style';
+    st.textContent =
+      '#dn-cmdk-results .dn-sg{display:flex;align-items:center;gap:8px;padding:12px 20px 4px;font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--teal-deep,#4d6358)}' +
+      '#dn-cmdk-results .dn-sg span{font-weight:600;font-size:10.5px;color:var(--muted,#8b8378);background:var(--paper-deep,#ede7da);border-radius:999px;padding:0 7px;letter-spacing:0}' +
+      '#dn-cmdk-results .dn-sr{gap:4px;padding:9px 20px 10px}' +
+      '#dn-cmdk-results .dn-sr .ra{display:flex;flex-direction:column;gap:3px;text-decoration:none;color:inherit}' +
+      '#dn-cmdk-results .dn-sr .x{font-size:12.5px;line-height:1.65;color:var(--ink-2,#5e574e);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}' +
+      '#dn-cmdk-results .dn-sr .subs{display:flex;flex-direction:column;margin-top:1px}' +
+      '#dn-cmdk-results .dn-sr .sub{font-size:12.5px;line-height:1.5;color:var(--teal-deep,#4d6358);text-decoration:none;display:block;min-height:0;padding:4px 0 4px 14px;position:relative;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}' +
+      '#dn-cmdk-results .dn-sr .sub::before{content:"↳";position:absolute;left:0;top:4px;opacity:.6}' +
+      '#dn-cmdk-results .dn-sr .sub:hover,#dn-cmdk-results .dn-sr .ra:hover .t{text-decoration:underline}' +
+      '#dn-cmdk-results .dn-sr mark{background:#fde9a8;color:inherit;border-radius:2px;padding:0 1px}' +
+      '#dn-cmdk-results .dn-sp{padding:10px 20px;font-size:12px;color:var(--muted,#8b8378)}' +
+      ':root[data-theme="dark"] #dn-cmdk-results .dn-sr mark{background:rgba(234,179,8,.32)}';
+    document.head.appendChild(st);
+  }
+
+  // Called by initCmdK.render for a non-empty query; true = handled here.
+  DN.searchRender = function (S, q, epoch) {
+    var words = q.split(' ').filter(Boolean);
+    if (!words.length) return false;
+    injectStyle();
+    loadExam(S);
+    lastSearch = { S: S, q: q, epoch: epoch };
+    var local = localHits(S, q, words);
+    var pf = S.pagefind();
+    paint(S, q, words, local, null, !!pf);
+    if (!pf) return true;
+    pagefindData(pf, q).then(function (datas) {
+      if (S.fresh(q, epoch)) paint(S, q, words, local, datas, false);
+    }, function () {
+      if (S.fresh(q, epoch)) paint(S, q, words, local, [], false);
+    });
+    return true;
+  };
+})();

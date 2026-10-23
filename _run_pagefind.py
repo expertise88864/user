@@ -126,6 +126,9 @@ def locked_binary(tool_root: Path | None = None) -> Path:
     return binary
 
 
+EXAM_SEARCHABLE = re.compile(r'index|concepts|kantor|mckee|fitz-[0-9]+')
+
+
 def indexable_glob(root: Path) -> str:
     """Limit the crawler to current public visibility, including EN mirrors.
 
@@ -135,14 +138,19 @@ def indexable_glob(root: Path) -> str:
     """
     unpublished = {item['slug'] for item in load_catalog(root) if item.get('unpublished')}
     paths = []
-    for folder in (root, root / 'blog', root / 'en', root / 'en/blog'):
+    for folder in (root, root / 'blog', root / 'en', root / 'en/blog', root / 'exam'):
         for target in sorted(folder.glob('*.html')):
             relative = target.relative_to(root).as_posix()
             if target.is_symlink() or not target.resolve().is_relative_to(root.resolve()):
                 raise ValueError('Refuse indexing an HTML source outside the site root')
-            if not re.fullmatch(r'(?:en/)?(?:blog/)?[a-z0-9-]+\.html', relative):
+            if not re.fullmatch(r'(?:en/)?(?:blog/)?[a-z0-9-]+\.html|exam/[a-z0-9-]+\.html', relative):
                 raise ValueError('Unsupported public HTML path: ' + relative)
             if target.parent.name == 'blog' and target.stem in unpublished:
+                continue
+            # Exam notes are searchable. Year pages repeat every chapter's
+            # questions, and practice/review are interactive shells, so
+            # indexing them would only duplicate or add empty hits.
+            if target.parent.name == 'exam' and not EXAM_SEARCHABLE.fullmatch(target.stem):
                 continue
             parser = VisibleTextExtractor()
             parser.feed(target.read_text(encoding='utf-8'))

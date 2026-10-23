@@ -21,6 +21,7 @@ DYNAMIC_BUNDLES = [
     "blog-calculators",
     "blog-article-visuals",
     "blog-article-footer",
+    "blog-search",
 ]
 
 
@@ -238,6 +239,7 @@ def run_smoke(base_url: str) -> list[str]:
         (f"/blog/blog-calculators.min.js?v={version}", "calculators", ["DN.injectSCORAD", "DN.injectGAGS"]),
         (f"/blog/blog-article-visuals.min.js?v={version}", "article-visuals", ["DN.injectArticleHero", "DN.enhanceArticleImages"]),
         (f"/blog/blog-article-footer.min.js?v={version}", "article-footer", ["DN.addRelatedArticles", "DN.addAuthorBio"]),
+        (f"/blog/blog-search.min.js?v={version}", "search", ["DN.searchRender"]),
     ]
     for path, label, needles in js_checks:
         body, content_type = fetch(base_url, path)

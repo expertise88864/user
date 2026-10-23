@@ -101,6 +101,7 @@ INNERHTML_ALLOWLIST = frozenset({
     "blog/blog-article-footer.js",
     "blog/blog-article-visuals.js",
     "blog/pagefind-search.js",
+    "blog/blog-search.js",
 })
 
 AUDITED_GENERATED_SINKS = {
