@@ -127,3 +127,22 @@ test('clicking any result link closes the dialog (same-page section links only c
   click({ target: { closest: () => null } });
   assert.equal(closed, 1);
 });
+
+test('Chinese chapter names find English-titled chapters, fold 皰/疱, and show beside the title', async () => {
+  const x = setup({ exam: [[52, 'Pemphigus', [], ['天疱瘡'], '天疱瘡'],
+                           [165, 'Varicella and Herpes Zoster', [], ['水痘與帶狀疱疹', '皮蛇'], '水痘與帶狀疱疹']] });
+  x.run('帶狀皰疹');
+  for (let i = 0; i < 4; i += 1) await tick();
+  assert.equal(JSON.stringify(x.S.matches.map(m => m.url)), JSON.stringify(['/exam/fitz-165']));
+  assert.match(x.S.results.innerHTML, /Ch\.165 Varicella and Herpes Zoster · 水痘與帶狀疱疹/);
+  x.run('天疱瘡');
+  for (let i = 0; i < 4; i += 1) await tick();
+  assert.equal(JSON.stringify(x.S.matches.map(m => m.url)), JSON.stringify(['/exam/fitz-52']));
+});
+
+test('a query equal to a chapter name ranks that chapter above titles that merely contain it', async () => {
+  const x = setup({ exam: [[52, 'Pemphigus', [], ['天疱瘡'], '天疱瘡'], [57, 'IgA Dermatosis (IgA Pemphigus)', [], [], '']] });
+  x.run('pemphigus'); // the shared runtime passes the query already lower-cased
+  for (let i = 0; i < 4; i += 1) await tick();
+  assert.equal(JSON.stringify(x.S.matches.map(m => m.url)), JSON.stringify(['/exam/fitz-52', '/exam/fitz-57']));
+});

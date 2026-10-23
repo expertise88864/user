@@ -96,6 +96,15 @@ def load() -> dict:
     bad = [k for k in aliases if k not in chapters]
     if bad:
         raise SystemExit(f"search_aliases.json has unknown chapters {bad}")
+    # Owner-reviewed Chinese chapter names (2026-10-23), search only: the first
+    # is shown next to the English title in search results, the rest are aliases.
+    zh_path = DATA / "chapter_zh.json"
+    zh_titles = ({int(k): v for k, v in json.loads(zh_path.read_text(encoding="utf-8")).items()}
+                 if zh_path.exists() else {})
+    bad = [k for k, v in zh_titles.items() if k not in chapters or not isinstance(v, list) or not v
+           or not all(isinstance(t, str) and t.strip() == t and CJK.search(t) for t in v)]
+    if bad:
+        raise SystemExit(f"chapter_zh.json has unknown chapters or invalid names {bad}")
     tm_path = DATA / "timemachine.json"
     timemachine = json.loads(tm_path.read_text(encoding="utf-8")) if tm_path.exists() else {}
     errors = validate_timemachine(timemachine, {q["id"] for q in questions})
@@ -117,6 +126,7 @@ def load() -> dict:
         raise SystemExit("mock.json is invalid:\n  " + "\n  ".join(errors))
     return {"questions": questions, "tags": tags, "explanations": explanations,
             "chapters": chapters, "notes": notes, "links": links, "aliases": aliases,
+            "zh_titles": zh_titles,
             "timemachine": timemachine, "mock": mock["questions"],
             "concepts": concept_data["concepts"], "concept_rule": concept_data["_meta"]["rule"],
             "qmap": {q["id"]: q for q in questions}}
@@ -1214,7 +1224,8 @@ def nav_search(data, pages, index: dict) -> list:
     Pagefind splits Traditional Chinese into single characters, so 「乾癬」
     alone misses most chapters. The site search matches these headings as
     plain substrings first: [[chapter, title, [[section id, heading], ...],
-    [chapter-level names and abbreviations from the hub search, e.g. 乾癬]], ...]."""
+    [chapter-level names and abbreviations from the hub search, e.g. 乾癬],
+    Chinese chapter name shown in results or ""], ...]."""
     names: dict[int, list[str]] = {}
     for n, sid, _, found, abbrs, primary, primary_abbrs in index["entries"]:
         if sid == "":
@@ -1222,7 +1233,9 @@ def nav_search(data, pages, index: dict) -> list:
     out = []
     for n in sorted(pages):
         heads = [[sid, plain(title)] for sid, title in SECTION.findall(data["notes"].get(n) or "")]
-        out.append([n, data["chapters"][n]["title"], heads, names.get(n, [])])
+        zh = data["zh_titles"].get(n, [])
+        out.append([n, data["chapters"][n]["title"], heads,
+                    list(dict.fromkeys(names.get(n, []) + zh)), zh[0] if zh else ""])
     return out
 
 
@@ -1285,7 +1298,7 @@ def search_index(data, by_chapter) -> dict:
         terms = Terms()
         names, abbrs, _ = split_name(title)
         terms.add([title] + names, abbrs + data["aliases"].get(n, []))
-        terms.add(chinese_names([title] + names), glossary_abbrs([title]))
+        terms.add(chinese_names([title] + names) + data["zh_titles"].get(n, []), glossary_abbrs([title]))
         primary = (len(terms.names), len(terms.abbrs))
         for group in ("dermnet", "pathologyoutlines"):
             for item in (data["links"].get(n) or {}).get(group, []):

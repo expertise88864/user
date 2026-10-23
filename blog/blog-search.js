@@ -21,6 +21,7 @@
   var examLoading = null;
   var lastSearch = null;
   var lastPainted = null;
+  var EXAM_BY_URL = {};
 
   function escapeHtml(value) {
     return String(value || '')
@@ -84,21 +85,30 @@
           if (!Array.isArray(row) || !/^\d+$/.test(String(row[0]))) return;
           list.push({
             url: '/exam/fitz-' + row[0],
-            title: 'Ch.' + row[0] + ' ' + String(row[1] || ''),
+            title: 'Ch.' + row[0] + ' ' + String(row[1] || '') + (row[4] ? ' · ' + String(row[4]) : ''),
             aliases: Array.isArray(row[3]) ? row[3].join(' ') : '',
+            names: [String(row[1] || '')].concat(Array.isArray(row[3]) ? row[3] : []),
             heads: (Array.isArray(row[2]) ? row[2] : []).filter(function (h) {
               return Array.isArray(h) && /^[a-z0-9-]+$/.test(String(h[0]));
             }).map(function (h) { return { id: String(h[0]), text: String(h[1] || '') }; })
           });
         });
         list.forEach(function (item) {
-          item.norm = S.norm(item.title + ' ' + (item.aliases || ''));
-          item.heads.forEach(function (h) { h.norm = S.norm(h.text); });
+          item.norm = fold(S.norm(item.title + ' ' + (item.aliases || '')));
+          item.exact = (item.names || []).map(function (t) { return fold(S.norm(t)); });
+          item.heads.forEach(function (h) { h.norm = fold(S.norm(h.text)); });
+          EXAM_BY_URL[item.url] = item;
         });
         EXAM = list;
         if (lastSearch && lastSearch.S.fresh(lastSearch.q, lastSearch.epoch)) lastSearch.S.rerender();
       })
       .catch(function () { examLoading = null; });
+  }
+
+  // The site writes both 疱/皰 and 麻/痲 (帶狀疱疹, 帶狀皰疹); match either.
+  var VARIANT = { '皰': '疱', '痲': '麻' };
+  function fold(text) {
+    return String(text || '').replace(/[皰痲]/g, function (c) { return VARIANT[c]; });
   }
 
   function hasAll(text, words) {
@@ -108,17 +118,19 @@
   function localHits(S, q, words) {
     var hits = [];
     (S.index() || []).forEach(function (it) {
-      if (!it || !it.search || !hasAll(it.search, words)) return;
-      var title = S.norm(it.title);
+      if (!it || !it.search || !hasAll(fold(it.search), words)) return;
+      var title = fold(S.norm(it.title));
       hits.push({ url: it.url, title: it.title, meta: it.meta || '', subs: [],
         score: title.indexOf(q) >= 0 ? 100 : hasAll(title, words) ? 80 : 50 });
     });
     (EXAM || []).forEach(function (ch) {
       var heads = ch.heads.filter(function (h) { return hasAll(h.norm, words); });
       var inTitle = hasAll(ch.norm, words);
+      // The query is exactly the chapter's name (「pemphigus」, 「天疱瘡」).
+      var exact = (ch.exact || []).indexOf(q) >= 0;
       if (!inTitle && !heads.length) return;
       hits.push({
-        url: ch.url, title: ch.title, meta: '', score: inTitle ? 95 : 70 + Math.min(heads.length, 9),
+        url: ch.url, title: ch.title, meta: '', score: exact ? 99 : inTitle ? 95 : 70 + Math.min(heads.length, 9),
         subs: heads.slice(0, 3).map(function (h) { return { url: ch.url + '#' + h.id, title: h.text }; })
       });
     });
@@ -151,7 +163,7 @@
   // Pagefind matches Chinese character by character even for the exact query,
   // so a Chinese hit only counts when its excerpt holds the whole query.
   function whole(S, q, excerpt) {
-    return !CJK.test(q) || S.norm(String(excerpt || '').replace(/<[^>]*>|\u200b/g, '')).indexOf(q) >= 0;
+    return !CJK.test(q) || fold(S.norm(String(excerpt || '').replace(/<[^>]*>|\u200b/g, ''))).indexOf(fold(q)) >= 0;
   }
 
   function merge(S, q, local, datas) {
@@ -173,7 +185,8 @@
       }
       // A top exact Pagefind hit can outrank a heading-only match (an exam
       // chapter titled only in English, e.g. Ch.52 Pemphigus for 天疱瘡).
-      row = { url: cleanUrl(d.url), title: (d.meta && d.meta.title) || key, excerpt: d.excerpt, subs: subs,
+      row = { url: cleanUrl(d.url), title: (EXAM_BY_URL[key] && EXAM_BY_URL[key].title) || (d.meta && d.meta.title) || key,
+        excerpt: d.excerpt, subs: subs,
         score: d.rank && whole(S, q, d.excerpt) ? 60 + Math.min(d.rank, 12) : 0 };
       byKey[key] = row;
       rows.push(row);
@@ -269,7 +282,7 @@
         if (e.target && e.target.closest && e.target.closest('a[href]') && DN.closeSearch) DN.closeSearch();
       });
     }
-    var local = localHits(S, q, words);
+    var local = localHits(S, fold(q), words.map(fold));
     var pf = S.pagefind();
     paint(S, q, words, local, null, !!pf);
     if (!pf) return true;
