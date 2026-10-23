@@ -14,7 +14,7 @@ from _regen_fixed_points import FixedPoints
 
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-ASSET_VERSION = "202610231700"
+ASSET_VERSION = "202610231900"
 
 
 def normalize_text_color_utilities(src: str) -> str:
@@ -178,7 +178,7 @@ def normalize_file(path: str, fixed_points: FixedPoints | None = None) -> bool:
 
 
 JS_LOADER_RE = re.compile(
-    r"(/blog/blog-(?:shared|support|hub|article-reading|diagrams|calculators|article-visuals|article-footer)\.min\.js\?v=)(\d+)"
+    r"(/blog/blog-(?:shared|support|hub|article-reading|diagrams|calculators|article-visuals|article-footer|search)\.min\.js\?v=)(\d+)"
 )
 
 

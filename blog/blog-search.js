@@ -20,6 +20,7 @@
   var EXAM = null;
   var examLoading = null;
   var lastSearch = null;
+  var lastPainted = null;
 
   function escapeHtml(value) {
     return String(value || '')
@@ -227,7 +228,10 @@
     if (pending) html += '<div class="dn-sp">' + (S.isEn ? 'Searching full text…' : '全文搜尋中…') + '</div>';
     else if (!matches.length) html = '<div id="dn-cmdk-empty">' + (S.isEn ? 'No matching content found' : '找不到符合的內容') + '</div>';
     S.results.innerHTML = html;
-    S.set(matches);
+    // Repainting the same query (Pagefind arriving, exam index loaded) keeps
+    // the row picked with the arrow keys.
+    S.set(matches, q === lastPainted);
+    lastPainted = q;
   }
 
   function injectStyle() {
@@ -257,6 +261,14 @@
     injectStyle();
     loadExam(S);
     lastSearch = { S: S, q: q, epoch: epoch };
+    // A section link on the current page only changes the hash, so close the
+    // dialog on any result click instead of leaving it over the destination.
+    if (!S.results.dnCloseOnPick && S.results.addEventListener) {
+      S.results.dnCloseOnPick = true;
+      S.results.addEventListener('click', function (e) {
+        if (e.target && e.target.closest && e.target.closest('a[href]') && DN.closeSearch) DN.closeSearch();
+      });
+    }
     var local = localHits(S, q, words);
     var pf = S.pagefind();
     paint(S, q, words, local, null, !!pf);

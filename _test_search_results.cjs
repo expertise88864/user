@@ -18,9 +18,9 @@ function setup({ pagefind = null, index = [], exam = EXAM, en = false } = {}) {
   vm.runInNewContext(source, { window, document, fetch, Promise, Object, Math, Array, String, RegExp, Error });
   let epoch = 1;
   const S = {
-    results: { innerHTML: '' }, isEn: en, norm, matches: [], renders: 0,
+    results: { innerHTML: '', addEventListener(type, fn) { this.handlers[type] = fn; }, handlers: {} }, isEn: en, norm, matches: [], renders: 0,
     index: () => index, pagefind: () => pagefind,
-    set(m) { this.matches = m; },
+    set(m, keep) { this.matches = m; this.keeps.push(!!keep); }, keeps: [],
     fresh: (q, e) => e === epoch,
     rerender() { this.renders += 1; window.DN.searchRender(S, S.q, epoch); },
   };
@@ -105,4 +105,25 @@ test('Chinese Pagefind hits that share only single characters are dropped', asyn
   for (let i = 0; i < 10; i += 1) await tick();
   const urls = JSON.stringify(x.S.matches.map(m => m.url));
   assert.equal(urls, JSON.stringify(['/blog/real', '/exam/fitz-45']));
+});
+
+test('repainting the same query keeps the arrow-key selection; a new query resets it', async () => {
+  const x = setup({ pagefind: pf([{ url: '/blog/a.html', meta: { title: '乾癬 A' }, excerpt: '乾癬', sub_results: [] }]) });
+  x.run('乾癬');
+  for (let i = 0; i < 10; i += 1) await tick();
+  assert.equal(x.S.keeps[0], false, 'first paint of a query starts at the top');
+  assert.ok(x.S.keeps.slice(1).length && x.S.keeps.slice(1).every(Boolean), 'later paints keep the selection');
+  x.run('痘痘');
+  assert.equal(x.S.keeps.at(-1), false);
+});
+
+test('clicking any result link closes the dialog (same-page section links only change the hash)', async () => {
+  const x = setup();
+  let closed = 0;
+  x.DN.closeSearch = () => { closed += 1; };
+  x.run('乾癬');
+  const click = x.S.results.handlers.click;
+  click({ target: { closest: sel => (sel === 'a[href]' ? {} : null) } });
+  click({ target: { closest: () => null } });
+  assert.equal(closed, 1);
 });

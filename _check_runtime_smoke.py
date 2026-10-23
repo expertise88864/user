@@ -47,7 +47,7 @@ def assert_dynamic_loader_versions_match_html(html_version: str) -> None:
     disappeared at the same time.
     """
     pat = re.compile(
-        r"/blog/blog-(?:shared|support|hub|article-reading|diagrams|calculators|article-visuals|article-footer)\.min\.js\?v=(\d+)"
+        r"/blog/blog-(?:shared|support|hub|article-reading|diagrams|calculators|article-visuals|article-footer|search)\.min\.js\?v=(\d+)"
     )
     drift: list[str] = []
     for src_name in ("blog/blog-shared.js", "blog/blog-article-reading.js",
