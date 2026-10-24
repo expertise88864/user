@@ -1,6 +1,6 @@
 <section class="ex-note" id="def">
 <h2>1. Definition &amp; Classification（定義與分類）</h2>
-<p>SJS 與 TEN 是同一疾病的嚴重度光譜：臨床、病理、病因與機轉都相同，只差在表皮剝離面積，所以統稱 <strong>epidermal necrolysis（EN）</strong>。<span class="ex-ref">p.733</span></p>
+<p>SJS 與 TEN 臨床型態、病理、病因、危險因子與機轉都相同，被視為同一疾病的嚴重度變異，只差在表皮剝離面積，因此似乎較適合（seems more appropriate）統稱 <strong>epidermal necrolysis（EN）</strong>。<span class="ex-ref">p.733</span></p>
 <table class="ex-table">
 <thead><tr><th scope="col">Category</th><th scope="col">Skin detachment（BSA）</th><th scope="col">Lesions（病灶）</th><th scope="col">Distribution（分布）</th></tr></thead>
 <tbody>
@@ -19,19 +19,19 @@
 <ul>
 <li>McKee 同樣以 Bastuji-Garin 1993 consensus 為準：依病程最嚴重時「已剝離＋可剝離」表皮占 BSA 比例，再加上個別病灶型態來分類。<span class="ex-ref ex-ref-mckee">McKee p.261–262</span></li>
 <li>McKee 臨床段：TEN 為 <strong class="ex-n">30% or more</strong>、SJS <strong class="ex-n">&lt;10%</strong>、中間型 <strong class="ex-n">10–30%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.265</span></li>
-<li>McKee 的 SJS 定義另外要求 one or more mucous membranes 有水疱與糜爛；TEN 罕見情況下以大片表皮剝離呈現，沒有紅斑 macules。<span class="ex-ref ex-ref-mckee">McKee p.262</span></li>
+<li>McKee 的 SJS 定義另外要求 one or more mucous membranes 有水疱與糜爛；TEN 罕見情況下可能（rarely may）以大片表皮剝離（large epidermal sheets）呈現，沒有紅斑 macules。<span class="ex-ref ex-ref-mckee">McKee p.262</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Lesion（McKee 定義）</th><th scope="col">Features（特徵）</th></tr></thead>
 <tbody>
-<tr><td>Typical target</td><td>邊界清楚、圓形、直徑 <strong class="ex-n">&lt;3.0 cm</strong>、三區（中央紅或紫斑盤 ± 水疱、隆起水腫環、外圍紅暈）；acral 分布，常在 herpetic infection 後，為 EM 特徵；廣泛表皮剝離者不會出現</td></tr>
+<tr><td>Typical target</td><td>邊界清楚、圓形、直徑 <strong class="ex-n">&lt;3.0 cm</strong>、三區（中央紅或紫斑盤 ± 水疱、隆起水腫環、外圍紅暈）；典型為 acral 分布，常見於 herpetic infection 後，為 EM 特徵；廣泛表皮剝離者不會出現</td></tr>
 <tr><td>Raised atypical target</td><td>邊界不清、圓形、palpable，只有兩區（中央隆起水腫＋紅色外緣）</td></tr>
 <tr><td>Flat atypical target</td><td>邊界不清、圓形，兩區皆 nonpalpable，中央可起水疱；EM、SJS、TEN 都可見</td></tr>
-<tr><td>Macules ± blisters</td><td>Nonpalpable 紅或紫斑，形狀大小不規則、常融合，水疱可出現在整個或部分 macule 上；典型見於有用藥史且廣泛剝離的病人</td></tr>
+<tr><td>Macules ± blisters</td><td>Nonpalpable 紅或紫斑，形狀大小不規則、常融合，水疱常出現在整個或部分 macule 上；典型見於有用藥史且廣泛剝離的病人</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">McKee p.261–262（Bastuji-Garin consensus）。</p>
-<aside class="ex-trap"><strong>易錯</strong>McKee p.262 的 SJS 定義印成「&gt;10% detachment」；同書 p.265 寫 less than 10%，Fitzpatrick Table 44-1 寫 <strong class="ex-n">&lt;10%</strong>。TEN 門檻：Fitzpatrick 寫 &gt;30%（TEN on large erythema without spots 為 &gt;10%），McKee 寫 30% or more。</aside>
+<aside class="ex-trap"><strong>易錯</strong>McKee p.262 的 SJS 定義印成「&gt;10% detachment」；同書 p.265 寫 less than 10%，Fitzpatrick Table 44-1 寫 <strong class="ex-n">&lt;10%</strong>。TEN 門檻：Fitzpatrick 寫 &gt;30%（TEN on large erythema without spots 為 &gt;10%）；McKee p.262 定義寫 &gt;30%，p.265 寫 30% or more。</aside>
 </section>
 
 <section class="ex-note" id="epi">
@@ -42,7 +42,7 @@
 <li>Risk groups：HIV 感染者最明顯，其次是 collagen vascular disease 與 cancer。</li>
 <li>Mortality：整體 <strong class="ex-n">22–27%</strong>；SJS 約 <strong class="ex-n">10%</strong>，TEN 接近 <strong class="ex-n">50%</strong>。</li>
 <li>McKee 數字：incidence 歐洲 <strong class="ex-n">0.93–1.3</strong>、美國 <strong class="ex-n">0.5</strong> cases per million population。<span class="ex-ref ex-ref-mckee">McKee p.265</span></li>
-<li>McKee：以老年人為主，但兒童、嬰兒、新生兒都可發生，新生兒有時只有黏膜病灶；過去女:男約 <strong class="ex-n">2:1</strong>，近年男性與 HIV/AIDS 病例增多；兒童男女相等。<span class="ex-ref ex-ref-mckee">McKee p.266</span></li>
+<li>McKee：以老年人為主，但兒童、嬰兒、新生兒都可發生，新生兒有時只有黏膜病灶；過去研究女:男約 <strong class="ex-n">2:1</strong>，但近期報告提示（suggest）這可能正在改變，男性與 HIV/AIDS 病例報告增多；兒童男女相等。<span class="ex-ref ex-ref-mckee">McKee p.266</span></li>
 <li>McKee mortality：SJS 約 <strong class="ex-n">5%</strong>，TEN 最高約 <strong class="ex-n">40%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 <li>McKee：SJS/TEN 是 HIV 感染的重要併發症，AIDS 病人每年可達 <strong class="ex-n">1/1000</strong>，部分與常用 sulfonamides 有關；SLE 病人風險也特別高。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 </ul>
@@ -61,37 +61,37 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 44-3，p.734。Valproic acid 與其他抗癲癇藥不同，似乎沒有增加風險。<mark data-q="105-23,106-27">Table 44-3 的 NSAIDs 只列 oxicam（high）、acetic acid（moderate）、propionic acid（no increased risk）三類，aspirin 未列入</mark>。</p>
-<aside class="ex-trap"><strong>易錯</strong>NSAID 依類型風險不同：oxicam = high、acetic acid（diclofenac）= moderate、propionic acid（ibuprofen）= no increased risk。Thiazide diuretics 與 sulfonylurea antidiabetics 雖有 sulfonamide 結構，列在 no increased risk。</aside>
+<aside class="ex-trap"><strong>易錯</strong>NSAID 依類型風險不同：oxicam = high、acetic acid（diclofenac）= moderate、propionic acid（ibuprofen）= no increased risk。Thiazide diuretics 與 sulfonylurea antidiabetics 雖有 sulfonamide 結構，列在 no increased risk（Table 44-3，p.734）。</aside>
 <ul>
 <li><mark data-q="109-42">Timing：開始用藥後 <strong class="ex-n">4–28 days</strong> 發病最具提示性；風險似乎只限於用藥頭 <strong class="ex-n">8 weeks</strong></mark>。<span class="ex-ref">p.733–734</span></li>
 <li>Lamotrigine、nevirapine 緩慢加量（slow dose escalation）可降低 mild rash，但沒有證據能降低 EN 風險。<span class="ex-ref">p.734</span></li>
-<li>Oxcarbazepine 與 carbamazepine 有明顯 cross-reactivity。<span class="ex-ref">p.734</span></li>
-<li>約 <strong class="ex-n">1/3</strong> 病例找不到明確藥物病因（idiopathic）。<span class="ex-ref">p.735</span>At-a-glance 寫法：<strong class="ex-n">&gt;20%</strong> 病例仍為 idiopathic 或可能由感染引起。<span class="ex-ref">p.733</span></li>
+<li>Oxcarbazepine（過去被認為風險較低）似乎（seems）與 carbamazepine 有顯著 cross-reactivity。<span class="ex-ref">p.734</span></li>
+<li>約 <strong class="ex-n">1/3</strong>（roughly one third）病例找不到明確藥物病因，提示（suggesting）比過去認為更多的病例應視為 non–drug related 或 idiopathic。<span class="ex-ref">p.735</span>At-a-glance 寫法：<strong class="ex-n">&gt;20%</strong> 病例仍為 idiopathic 或可能由感染引起。<span class="ex-ref">p.733</span></li>
 <li><mark data-q="109-42">Infection 的角色遠小於 EM，但 <em>Mycoplasma pneumoniae</em>、viral infection 與 immunization 相關病例都有報告，尤其在兒童</mark>。<span class="ex-ref">p.735</span></li>
-<li>其他：bone marrow transplantation 後（部分是極端的 acute GVHD，臨床與病理常無法區分）；<mark data-q="110-30">LE 病人風險增加，erosive LE 是 EN 的鑑別診斷</mark>；radiotherapy 合併抗癲癇藥時病灶集中在照射部位。<span class="ex-ref">p.735</span></li>
+<li>其他：bone marrow transplantation 後有 EN 病例報告（部分是極端的 acute GVHD，其他可能為藥物引起；臨床與病理常無法區分）；<mark data-q="110-30">LE（systemic LE 或 subacute cutaneous LE）病人風險增加，erosive LE 是 EN 的鑑別診斷</mark>；radiotherapy 合併抗癲癇藥（phenytoin、phenobarbital、carbamazepine）可誘發（can trigger）EN，病灶以照射部位為主。<span class="ex-ref">p.735</span></li>
 <li>McKee：SJS/TEN 與藥物的關聯遠比 EM 強，致病藥物譜與 EM 相似；較新藥物中 nevirapine、lamotrigine 關聯強，sertraline、pantoprazole、tramadol 較弱但顯著；近期一項研究中 allopurinol 是最常見誘因（10 年間佔 <strong class="ex-n">20%</strong>）。<span class="ex-ref ex-ref-mckee">McKee p.645</span></li>
 <li>McKee 列舉的致病藥物：sulfonamides、anticonvulsants（phenytoin、barbiturates、carbamazepine）、antibiotics（aminopenicillins、quinolones、cephalosporins）、NSAIDs（phenylbutazone、oxyphenbutazone、isoxicam、piroxicam）、allopurinol，以及 HIV antiretroviral agents。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 <li>McKee：<mark data-q="109-42">兒童 SJS 有時與 <em>Mycoplasma pneumoniae</em> 感染有關</mark>；成人在感染後（hepatitis A、<em>M. pneumoniae</em>）發生 TEN 屬例外。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 <li>McKee：TEN 也可發生在 acute GVHD；部分確實是藥物反應，部分是 acute GVHD 本身的嚴重表現，預後極差。<span class="ex-ref ex-ref-mckee">McKee p.267</span><span class="ex-ref ex-ref-mckee">McKee p.274</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong><mark data-q="109-42">致病藥物典型是過去沒用過、在發病前 4 weeks 到 4 days 開始首次連續使用。前驅期才開始吃的 antipyretics、analgesics、「cough and cold medicines」常被誤判為元凶（protopathic bias）</mark>。<span class="ex-ref">p.736</span></aside>
+<aside class="ex-trap"><strong>易錯</strong><mark data-q="109-42">致病藥物典型是過去沒用過、在發病前 4 weeks 到 4 days 開始首次連續使用。前驅期才開始吃的 antipyretics、analgesics、secretolytics（有時統稱「cough and cold medicines」）常被誤判為元凶（protopathic bias）</mark>。<span class="ex-ref">p.736</span></aside>
 </section>
 
 <section class="ex-note" id="pathogenesis">
 <h2>4. Pathogenesis &amp; HLA（致病機轉）</h2>
 <ul>
-<li>Cell-mediated cytotoxic reaction 造成 keratinocyte 大量 <strong>apoptosis</strong>；<mark data-q="106-27">早期病灶可見 natural killer T cells（NKT）與 drug-specific CD8+ T lymphocytes</mark>，並招募 monocytes、macrophages、granulocytes。<span class="ex-ref">p.735</span></li>
+<li>早期病灶的免疫型態提示（suggests）cell-mediated cytotoxic reaction 造成 keratinocyte 大量 <strong>apoptosis</strong>；<mark data-q="106-27">早期病灶可見 natural killer T cells（NKT）與 drug-specific CD8+ T lymphocytes</mark>，並招募 monocytes、macrophages、granulocytes。<span class="ex-ref">p.735</span></li>
 <li>Cytotoxic T cells 通常針對藥物的 <strong>native form</strong>，而不是 reactive metabolite（與過去假設相反）。</li>
-<li><mark data-q="106-27,111-42"><strong>Granulysin</strong> 是主要的 soluble death mediator</mark>：水疱液濃度遠高於 perforin、granzyme B、Fas-L；只有 granulysin（其次 perforin）能殺死 keratinocyte，Fas-L 不行；注射到小鼠真皮即可造成 EN 樣病灶。</li>
+<li><mark data-q="106-27,111-42"><strong>Granulysin</strong> 是主要的 soluble death mediator</mark>：水疱液濃度遠高於 perforin、granzyme B、Fas-L；在此濃度下 in vitro 只有 granulysin（其次 perforin，程度低得多）能殺死 human keratinocyte，Fas-L 不行；注射到正常小鼠真皮可造成 EN 的臨床與病理病灶。</li>
 <li><mark data-q="111-42"><strong>IL-15</strong> 與 EN 的 severity 及 mortality 相關</mark>。</li>
 <li>CD4+CD25+ regulatory T cells 在小鼠模型中可能保護表皮免受嚴重破壞；<mark data-q="104-34">comorbidities（cancer、HIV、collagen vascular disease）、comedications（e.g. corticosteroids）與 genetic background 可能改變免疫調節</mark>。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>水疱液中 granulysin 濃度遠高於 perforin、granzyme B、Fas-L；在此濃度下只有 granulysin（其次 perforin）能殺 keratinocyte，Fas-L 不行（p.735）。IVIG 的提出是基於 anti-Fas 活性，但 Fas-L–Fas pathway 不參與或只些微參與 EN 機轉（p.744）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>水疱液中 granulysin 濃度遠高於 perforin、granzyme B、Fas-L；在此濃度下 in vitro 只有 granulysin（其次 perforin）能殺 keratinocyte，Fas-L 不行（p.735）。IVIG 的提出是基於 anti-Fas 活性，但 Fas-L–Fas pathway 不參與或只些微參與 EN 機轉（p.744）。</aside>
 <table class="ex-table">
 <thead><tr><th scope="col">HLA allele</th><th scope="col">Drug（藥物）</th><th scope="col">Population（族群重點）</th></tr></thead>
 <tbody>
-<tr><td><mark data-q="101-47,102-42,111-42,114-31">HLA-B*1502</mark></td><td>Carbamazepine</td><td>台灣漢人強烈相關；東南亞多國確認；<mark data-q="102-42">日本、韓國不成立；無亞洲血統的歐洲人不存在</mark></td></tr>
-<tr><td><mark data-q="101-47,112-42">HLA-B*5801</mark></td><td>Allopurinol</td><td>台灣最強；日本、歐洲也確認，但關聯較弱</td></tr>
+<tr><td><mark data-q="101-47,102-42,111-42,114-31">HLA-B*1502</mark></td><td>Carbamazepine</td><td>台灣漢人強烈相關；東南亞多國確認；<mark data-q="102-42">日本、韓國未獲證實；無亞洲血統的歐洲病人不存在此關聯</mark></td></tr>
+<tr><td><mark data-q="101-47,112-42">HLA-B*5801</mark></td><td>Allopurinol</td><td>台灣漢人強烈相關；日本、歐洲也確認，但關聯強度低於台灣</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.735；ch45 p.760 另列 HLA-B*1502 與 phenytoin 引起的 SJS（漢人）、HLA-B*5701 與 abacavir hypersensitivity。</p>
@@ -99,7 +99,7 @@
 <h3>McKee 5e 補充：免疫機轉與遺傳</h3>
 <ul>
 <li><mark data-q="106-27">水疱中的發炎細胞為 cytotoxic T lymphocytes 與 natural killer cells</mark>；<mark data-q="106-27,111-42">主要的 cytotoxic protein 是 granulysin，注射到小鼠皮膚可產生類似 TEN/SJS 的水疱</mark>。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
-<li>Keratinocyte death（McKee）：perforin 等 cytolytic enzymes 與 soluble TNF-α、IL-6 等 cytokines 共同作用；<mark data-q="111-42">Fas ligand-mediated apoptosis 被認為對最後形成 necrolysis 很重要</mark>。<span class="ex-ref ex-ref-mckee">McKee p.267–269</span></li>
+<li>Keratinocyte death（McKee）：被認為（thought to）由 perforin 等 cytolytic enzymes 與 soluble TNF-α、IL-6 等 cytokines 共同作用造成；<mark data-q="111-42">Fas ligand-mediated apoptosis 被認為對最後形成 necrolysis 很重要</mark>。<span class="ex-ref ex-ref-mckee">McKee p.267–269</span></li>
 <li>McKee 在 EM 段也提到 circulating soluble Fas 被認為是 apoptosis mediator，與 TEN/SJS 相同。<span class="ex-ref ex-ref-mckee">McKee p.265</span></li>
 <li>McKee：sulfonamide 相關病例常為 <mark data-q="104-34">slow acetylators</mark>，reactive drug metabolites 的解毒受損；推測 metabolites 以 hapten 形式誘發針對 keratinocyte 的間接細胞免疫反應。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 <li>McKee：AIDS 病人 glutathione 不足，reactive metabolites 持續存在；HIV 病人皮膚的 CD4 lymphocytes 減少、CD8+ 相對增加，可能共同解釋發生率升高。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
@@ -110,23 +110,23 @@
 <thead><tr><th scope="col">議題</th><th scope="col">Fitzpatrick 9e</th><th scope="col">McKee 5e</th></tr></thead>
 <tbody>
 <tr><td>Cytotoxic effector cells</td><td>NKT cells 與 drug-specific CD8+ T cells<span class="ex-ref">p.735</span></td><td>水疱中為 CTL 與 NK cells<span class="ex-ref ex-ref-mckee">McKee p.267</span></td></tr>
-<tr><td>Soluble death mediator</td><td>Granulysin 為主；只有 granulysin（其次 perforin）能殺 keratinocyte，Fas-L 不行<span class="ex-ref">p.735</span></td><td>Granulysin 為主要 cytotoxic protein；perforin、TNF-α、IL-6 參與；Fas-L–mediated apoptosis 對最後的 necrolysis 很重要<span class="ex-ref ex-ref-mckee">McKee p.267–269</span></td></tr>
-<tr><td>T cell 辨識的藥物形式</td><td>通常是藥物的 native form，而非 reactive metabolite<span class="ex-ref">p.735</span></td><td>推測 drug metabolites 作為 hapten；sulfonamide 病例多為 slow acetylator<span class="ex-ref ex-ref-mckee">McKee p.267</span></td></tr>
+<tr><td>Soluble death mediator</td><td>Granulysin 為主；in vitro 只有 granulysin（其次 perforin）能殺 keratinocyte，Fas-L 不行<span class="ex-ref">p.735</span></td><td>Granulysin 為主要 cytotoxic protein；perforin、TNF-α、IL-6 被認為參與；Fas-L–mediated apoptosis 對最後的 necrolysis 很重要<span class="ex-ref ex-ref-mckee">McKee p.267–269</span></td></tr>
+<tr><td>T cell 辨識的藥物形式</td><td>通常是藥物的 native form，而非 reactive metabolite<span class="ex-ref">p.735</span></td><td>推測 drug metabolites 作為 hapten；sulfonamide 病例常為 slow acetylator<span class="ex-ref ex-ref-mckee">McKee p.267</span></td></tr>
 </tbody>
 </table>
-<aside class="ex-trap"><strong>易錯</strong>兩本都以 granulysin 為主要 cytotoxic mediator。Fas-L 的角色兩本不同：Fitzpatrick 寫 Fas-L 不能殺 keratinocyte（p.735），McKee 寫 Fas ligand-mediated apoptosis 對最後形成 necrolysis 很重要（McKee p.267–269）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>兩本都以 granulysin 為主要 cytotoxic mediator。Fas-L 的角色兩本不同：Fitzpatrick 寫 in vitro Fas-L 不能殺 keratinocyte（p.735），McKee 寫 Fas ligand-mediated apoptosis 對最後形成 necrolysis 很重要（McKee p.267–269）。</aside>
 </section>
 
 <section class="ex-note" id="clinical">
 <h2>5. Clinical Findings（臨床表現）</h2>
 <h3>History（病程開端）</h3>
 <ul>
-<li>Prodrome（sore throat、runny nose、cough、fever、malaise）比皮膚黏膜病灶早 <strong class="ex-n">1–3 days</strong>。<span class="ex-ref">p.736</span></li>
-<li><strong>Protopathic bias</strong>：前驅期才開始吃的 antipyretics、analgesics、「cough and cold medicines」常被誤判為元凶；它們通常以前吃過也沒事，也不屬於高風險藥物。</li>
+<li>EN 最常（most often）以非特異 prodrome（sore throat、runny nose、cough、headache、fever、malaise）開始，比皮膚黏膜病灶早 <strong class="ex-n">1–3 days</strong>。<span class="ex-ref">p.736</span></li>
+<li><strong>Protopathic bias</strong>：前驅期才開始吃的 antipyretics、analgesics、secretolytics（有時統稱「cough and cold medicines」）常被誤判為元凶；它們通常以前吃過也沒事，也不屬於流行病學研究估計會增加 EN 風險的藥物類別。</li>
 </ul>
 <h3>Cutaneous lesions（皮膚）</h3>
 <ul>
-<li>對稱分布，先在 face、upper trunk、proximal limbs，遠端相對不受影響，但可在數天甚至數小時內擴散全身。<span class="ex-ref">p.736</span></li>
+<li>初期對稱分布於 face、upper trunk、proximal limbs，手臂遠端與腿部相對不受影響（relatively spared），但可在數天甚至數小時內擴散全身。<span class="ex-ref">p.736</span></li>
 <li>Dusky red、不規則的 purpuric macules 逐漸融合；常見中央暗色的 flat atypical targets。</li>
 <li><mark data-q="108-44">紅斑區 Nikolsky sign 陽性</mark> → flaccid blisters → 大片表皮剝離露出紅色真皮。</li>
 <li>McKee：前驅症狀後出現疼痛性皮疹，多從 face、neck、shoulders 開始，再以軀幹與近端肢體為主擴散；部分病人初期是 exanthematous morbilliform eruption，偶有與 EM 重疊的 typical targets；<mark data-q="108-44">Nikolsky sign positive</mark>，最後可能除了有毛髮的頭皮外全身受侵犯。<span class="ex-ref ex-ref-mckee">McKee p.266–267</span></li>
@@ -135,15 +135,15 @@
 <ul>
 <li><mark data-q="103-14">約 <strong class="ex-n">90%</strong> 有黏膜侵犯，而且幾乎都至少兩處</mark>；可早於或晚於皮疹。<span class="ex-ref">p.736</span></li>
 <li>Oral cavity 與 vermilion border 幾乎必定受侵犯：hemorrhagic erosions、grayish white pseudomembranes、唇部 hemorrhagic crusts。<span class="ex-ref">p.737</span></li>
-<li>約 <strong class="ex-n">80%</strong> 有 conjunctival lesions；嚴重者有 corneal ulceration、anterior uveitis、purulent conjunctivitis；eyelid 與 conjunctiva 間 synechiae 常見，可有睫毛脫落。</li>
-<li>Genital erosions 常見，女性常被忽略，可造成沾黏。</li>
+<li>約 <strong class="ex-n">80%</strong> 有 conjunctival lesions；嚴重者可能導致（may lead to）epithelial defect 與 corneal ulceration、anterior uveitis、purulent conjunctivitis；eyelid 與 conjunctiva 間 synechiae 常見，可有睫毛脫落。</li>
+<li>Genital erosions 常見，女性常被忽略，可能（may）造成沾黏（synechiae）。</li>
 <li>McKee：<mark data-q="103-14">黏膜在所有病人都受侵犯</mark>，有時是首發表現；受侵犯頻率依序為 oropharynx &gt; eyes &gt; genitalia &gt; anus。眼部可有 conjunctivitis、synechiae、sicca syndrome、trichiasis、keratitis。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 </ul>
 <h3>Systemic involvement（全身侵犯）</h3>
 <ul>
-<li><mark data-q="107-09">Early pulmonary complications 約 <strong class="ex-n">25%</strong></mark>（呼吸變快、咳嗽）；bronchial involvement 與皮膚面積、致病藥物都無關；入院時 chest X-ray 常正常，但可快速進展到 ARDS，預後差。Fiberoptic bronchoscopy 可區分支氣管上皮剝離與 infectious pneumonitis。<span class="ex-ref">p.738</span></li>
+<li><mark data-q="107-09">Early pulmonary complications 約 <strong class="ex-n">25%</strong></mark>（呼吸變快、咳嗽）；bronchial involvement 與皮膚面積、致病藥物都無關；多數病例入院時 chest X-ray 正常，但可迅速出現 interstitial lesions 並可能進展到 ARDS；所有報告中，皮膚侵犯後快速發生 acute respiratory failure 者預後差。Fiberoptic bronchoscopy 可能有助於區分支氣管上皮剝離與 infectious pneumonitis（後者預後好得多）。<span class="ex-ref">p.738</span></li>
 <li><mark data-q="107-09">GI tract involvement 較少見</mark>（diarrhea、malabsorption、melena、colonic perforation）。</li>
-<li>Kidney：proteinuria、hematuria、azotemia 不少見；proximal tubule necrosis 機轉與表皮相同；glomerulonephritis 罕見。</li>
+<li>Kidney：proteinuria、hematuria、azotemia 不少見；proximal tubule damage 可能由與表皮相同的機轉造成 tubule cell necrosis；glomerulonephritis 罕見。</li>
 <li>McKee：<mark data-q="107-09">tracheobronchial involvement 相當常見</mark>，ARDS 是重要的致命併發症；GI lesions、esophageal stricture、hepatitis、pancreatitis 偶見。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong><mark data-q="107-09">Early pulmonary complications 約 25%；GI tract involvement 較少見</mark>（p.738）。</aside>
@@ -178,9 +178,9 @@
 <p class="ex-cite">Table 44-2，p.734（表格最後一列印為「5」）。課本表格把 bicarbonate 印成「&gt;20 mM」，但 p.738 內文寫「&lt;20 mM 表示預後差」，以 &lt;20 mM 為準。</p>
 <ul>
 <li><mark data-q="107-09">Bicarbonate <strong class="ex-n">&lt;20 mM</strong>：多半是 bronchial involvement 造成的 <strong>respiratory alkalosis</strong></mark>，較少是 metabolic acidosis。<span class="ex-ref">p.738</span></li>
-<li>經皮液體流失 → electrolyte imbalance、hypoalbuminemia、hypoproteinemia、prerenal azotemia；BUN 上升是 severity marker。</li>
-<li><mark data-q="105-21">Hypercatabolic state 抑制 insulin 分泌或造成 insulin resistance → hyperglycemia，<strong class="ex-n">&gt;14 mM</strong> 可為 severity marker</mark>。</li>
-<li>Anemia 常見，可有 mild leukocytosis 與 thrombocytopenia；neutropenia 被認為預後不佳，但太少見而不影響 SCORTEN。</li>
+<li>經皮液體流失 → electrolyte imbalance、hypoalbuminemia、hypoproteinemia、prerenal azotemia；BUN 上升是 severity marker 之一（one marker of severity）。</li>
+<li><mark data-q="105-21">Hypercatabolic state 抑制 insulin 分泌或造成 insulin resistance → hyperglycemia，<strong class="ex-n">&gt;14 mM</strong> 可能是 severity marker</mark>。</li>
+<li>Anemia 常見，可有 mild leukocytosis 與 thrombocytopenia；neutropenia 常被認為預後不佳，但太少見而不影響 SCORTEN。</li>
 <li>Transient peripheral CD4+ lymphopenia 幾乎都會出現。</li>
 <li><mark data-q="101-47">Hepatic enzymes 與 amylase 輕度上升常見，但不影響預後；amylase 最可能來自 salivary gland</mark>。</li>
 <li>McKee：anemia 與 <strong>leukopenia</strong> 為典型表現。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
@@ -192,17 +192,17 @@
 <section class="ex-note" id="histo">
 <h2>7. Histopathology（病理）</h2>
 <ul>
-<li>切片取新鮮病灶的 erythematous margin，不要直接切水疱；四肢都有病灶時避免切膝蓋以下（會混入 stasis dermatitis 變化）。<span class="ex-ref">p.739</span></li>
+<li>切片取新鮮病灶，宜（preferably）取 erythematous margin，不要直接切水疱；腿部與其他部位都有類似病灶時，宜避免（preferentially not）切膝蓋以下（可能疊加 stasis dermatitis 變化）。<span class="ex-ref">p.739</span></li>
 <li>Early：基底層上方零星 apoptotic keratinocytes。</li>
 <li>Fully developed：extensive vacuolar alteration 與 confluent necrosis，造成 subepidermal vesiculation；apoptosis 可侵犯 sweat glands 與 hair follicles。</li>
-<li>Papillary dermis 中等密度 mononuclear infiltrate（多為 CD8+ lymphocytes 與 macrophages），偶見 eosinophils。</li>
+<li>Papillary dermis 中等密度 mononuclear infiltrate（主要為 lymphocytes，常為 CD8+，以及 macrophages），偶見 eosinophils。</li>
 <li>病程快速，通常看不到 melanophages 與 siderophages；cornified layer 不變。</li>
 <li><strong>Direct immunofluorescence negative</strong>。</li>
 </ul>
 <h3>McKee 5e 補充：組織學</h3>
 <ul>
 <li>基本變化：程度不一的 epidermal apoptosis，合併 basal cell hydropic degeneration 或 subepidermal vesiculation；可有 lymphocytic exocytosis，有時見 satellite cell necrosis。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
-<li><mark data-q="108-44">Subepidermal blister，blister roof 為全層壞死的表皮（full-thickness necrosis）</mark>；blister floor 可幾乎沒有發炎細胞。<span class="ex-ref ex-ref-mckee">McKee p.268</span></li>
+<li><mark data-q="108-44">Subepidermal blister，blister roof 為全層壞死的表皮（full-thickness necrosis）</mark>；Fig. 7.91 的例子中 blister floor 沒有發炎細胞。<span class="ex-ref ex-ref-mckee">McKee p.268</span></li>
 <li>Adnexa：sweat duct epithelium 受侵犯；hair follicles 也可受侵犯（basal hydropic degeneration 與 apoptosis），但少得多。<span class="ex-ref ex-ref-mckee">McKee p.267–268</span></li>
 <li>Dermis：superficial dermis 稀疏、以血管周圍為主的 lymphocytes、macrophages、melanophages 浸潤，常有 edema；可有少量 eosinophils；可見 pigment incontinence。<span class="ex-ref ex-ref-mckee">McKee p.267</span><span class="ex-ref ex-ref-mckee">McKee p.269</span></li>
 </ul>
@@ -216,13 +216,13 @@
 <thead><tr><th scope="col">項目</th><th scope="col">Fitzpatrick 9e（p.739）</th><th scope="col">McKee 5e</th></tr></thead>
 <tbody>
 <tr><td>Dermal infiltrate 密度</td><td>Papillary dermis 中等密度 mononuclear infiltrate</td><td>Superficial dermis 稀疏（light）、血管周圍為主<span class="ex-ref ex-ref-mckee">McKee p.267</span>；但 SSSS 鑑別段寫 TEN 有 moderately intense lymphocytic infiltrate<span class="ex-ref ex-ref-mckee">McKee p.862–863</span></td></tr>
-<tr><td>浸潤細胞 phenotype</td><td>多為 CD8+ lymphocytes 與 macrophages</td><td>Dermis 以 CD4+ 為主，epidermis 以 CD8+ 為主<span class="ex-ref ex-ref-mckee">McKee p.267</span></td></tr>
+<tr><td>浸潤細胞 phenotype</td><td>主要為 lymphocytes（常為 CD8+）與 macrophages</td><td>Dermis 以 CD4+ 為主，epidermis 以 CD8+ 為主<span class="ex-ref ex-ref-mckee">McKee p.267</span></td></tr>
 <tr><td>Melanophages</td><td>病程快，通常看不到 melanophages 與 siderophages</td><td>浸潤中列有 melanophages，圖示 pigment incontinence<span class="ex-ref ex-ref-mckee">McKee p.267、p.269</span></td></tr>
 <tr><td>Adnexa</td><td>Apoptosis 可侵犯 sweat glands 與 hair follicles</td><td>Sweat duct 受侵犯；hair follicles 少得多<span class="ex-ref ex-ref-mckee">McKee p.267</span></td></tr>
 <tr><td>DIF</td><td>Negative</td><td>TEN/SJS 段未提</td></tr>
 </tbody>
 </table>
-<aside class="ex-trap"><strong>易錯</strong>Melanophages 與浸潤細胞 phenotype 兩本說法不同：Fitzpatrick 說通常沒有 melanophages、浸潤多為 CD8+；McKee 列有 melanophages，並區分 dermis CD4+／epidermis CD8+。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Melanophages 與浸潤細胞 phenotype 兩本說法不同：Fitzpatrick 說通常沒有 melanophages、浸潤 lymphocytes 常為 CD8+；McKee 列有 melanophages，並區分 dermis CD4+／epidermis CD8+（p.739；McKee p.267、p.269）。</aside>
 </section>
 
 <section class="ex-note" id="ddx">
@@ -231,18 +231,18 @@
 <thead><tr><th scope="col">Condition</th><th scope="col">Key distinguishing points（區分重點）</th></tr></thead>
 <tbody>
 <tr><td>EM majus</td><td>Typical targets 或 raised atypical targets，主要在四肢；多與 HSV、<em>M. pneumoniae</em> 相關（ch43）。</td></tr>
-<tr><td>Varicella</td><td>兒童早期 EN 常被誤診為水痘；快速進展與嚴重黏膜侵犯要想到 EN。</td></tr>
-<tr><td><mark data-q="109-13">Generalized bullous FDE</mark></td><td>連病理都像 EN，但 <mark data-q="109-13">預後好得多（可能因為黏膜侵犯輕微、沒有內臟併發症）</mark>；線索是過去發作史、服藥後很快發作、very large well-demarcated blisters。</td></tr>
-<tr><td>SSSS</td><td>沒有黏膜侵犯；嬰兒，或敗血症的成人。</td></tr>
+<tr><td>Varicella</td><td>早期 EN 常被初診為水痘，尤其兒童；快速進展與嚴重黏膜侵犯要想到 EN。</td></tr>
+<tr><td><mark data-q="109-13">Generalized bullous FDE</mark></td><td>連病理都像 EN，但 <mark data-q="109-13">被認為（has a reputation for）預後好得多（可能因為黏膜侵犯輕微、沒有內臟併發症）</mark>；線索是過去發作史、服藥後很快發作、very large well-demarcated blisters。</td></tr>
+<tr><td>SSSS</td><td>沒有黏膜侵犯或只侵犯一處時要懷疑；嬰兒，也見於敗血症的成人。</td></tr>
 <tr><td>AGEP、phototoxicity、pressure blisters</td><td>成人；沒有黏膜侵犯或只有一處。</td></tr>
 <tr><td>Purpura fulminans</td><td>兒童與年輕人；沒有黏膜侵犯或只有一處。</td></tr>
 <tr><td>Linear IgA bullous disease、paraneoplastic pemphigus</td><td>病程較不急；靠病理與 DIF 陽性區分。</td></tr>
 <tr><td>Chemical toxicity（fumigants、colchicine poisoning、methotrexate overdose）</td><td>糜爛常以皺摺處為主；病因通常明顯。</td></tr>
-<tr><td><mark data-q="110-30">Erosive LE（TEN-like ACLE）</mark></td><td>LE 病人 EN 風險增加，藥物因果常可疑，可能是 cutaneous lupus 的極端表現（ch61 歸為 LE-specific）。</td></tr>
+<tr><td><mark data-q="110-30">Erosive LE（TEN-like ACLE）</mark></td><td>LE 病人 EN 風險增加，此時藥物因果關係常令人存疑（often doubtful），necrolysis 可能是 cutaneous lupus 的極端表現（ch61 歸為 LE-specific）。</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.735、p.739–740；Table 44-4 p.740。</p>
-<aside class="ex-trap"><strong>易錯</strong>沒有黏膜侵犯或只侵犯一處，一定要想其他診斷。</aside>
+<aside class="ex-trap"><strong>易錯</strong>沒有黏膜侵犯或只侵犯一處，一定要懷疑其他診斷（p.739）。</aside>
 <ul>
 <li>Over-reporting 常見：把 desquamation 當成 epidermal detachment、把口周皮膚當成黏膜。<span class="ex-ref">p.740</span></li>
 </ul>
@@ -250,9 +250,9 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Condition</th><th scope="col">McKee 區分重點</th></tr></thead>
 <tbody>
-<tr><td>Severe EM</td><td>有時無法區分。偏向 EM：lymphocytic exocytosis、apoptosis 以表皮下層為主、interface 發炎強且沿 superficial and deep vascular plexus 延伸、明顯 RBC extravasation。感染相關者較偏發炎，藥物相關者以表皮變化為主；eosinophils 無法區分藥物或感染病因<span class="ex-ref ex-ref-mckee">McKee p.269</span>。EM 的發炎通常比 SJS/TEN 明顯，最後仍需臨床對照<span class="ex-ref ex-ref-mckee">McKee p.265</span></td></tr>
-<tr><td>SSSS</td><td>Subcorneal 分離（granular cell layer）或 stratum corneum 消失，沒有 full-thickness necrosis 或 interface change<span class="ex-ref ex-ref-mckee">McKee p.269</span>；不侵犯黏膜；可用 frozen section 快速區分；Tzanck smear：TEN 為 necrotic keratinocytes 加發炎細胞，SSSS 為存活的 acantholytic keratinocytes、無發炎細胞<span class="ex-ref ex-ref-mckee">McKee p.862–863</span></td></tr>
-<tr><td>Acute GVHD（TEN-like）</td><td>藥物造成的 TEN 與嚴重 GVHD 背景下的 TEN 組織上無法區分<span class="ex-ref ex-ref-mckee">McKee p.269</span>；acute GVHD clinical stage IV 即 TEN（bilirubin <strong class="ex-n">≥15 mg/dL</strong>、diarrhea <strong class="ex-n">&gt;1500 mL/day</strong>），TEN-like GVHD mortality <strong class="ex-n">≥50%</strong><span class="ex-ref ex-ref-mckee">McKee p.274</span>；TEN-like GVHD 常見 sweat gland 侵犯與 acrosyringium keratinous plugging<span class="ex-ref ex-ref-mckee">McKee p.277</span>；少數 GVHD 角質層可見 bile pigment，EM 沒有<span class="ex-ref ex-ref-mckee">McKee p.278</span></td></tr>
+<tr><td>Severe EM</td><td>有時無法區分。偏向 EM：lymphocytic exocytosis、apoptosis 以表皮下層為主、interface 發炎強且沿 superficial and deep vascular plexus 延伸、明顯 RBC extravasation。感染相關者傾向較偏發炎，藥物相關者以表皮變化為主；eosinophils 似乎無法區分藥物或感染病因<span class="ex-ref ex-ref-mckee">McKee p.269</span>。EM 的發炎通常比 SJS/TEN 明顯，最後仍需臨床對照<span class="ex-ref ex-ref-mckee">McKee p.265</span></td></tr>
+<tr><td>SSSS</td><td>Subcorneal pustule 或 stratum corneum 消失，沒有 full-thickness necrosis 或 interface change<span class="ex-ref ex-ref-mckee">McKee p.269</span>；分離位於 granular cell layer；不侵犯黏膜；可用 frozen section 快速區分；Tzanck smear：TEN 為 necrotic keratinocytes 加發炎細胞，SSSS 為存活的 acantholytic keratinocytes、無發炎細胞<span class="ex-ref ex-ref-mckee">McKee p.862–863</span></td></tr>
+<tr><td>Acute GVHD（TEN-like）</td><td>藥物造成的 TEN 與嚴重 GVHD 背景下的 TEN 組織上無法區分<span class="ex-ref ex-ref-mckee">McKee p.269</span>；acute GVHD clinical stage IV 即 TEN（bilirubin <strong class="ex-n">≥15 mg/dL</strong>、diarrhea <strong class="ex-n">&gt;1500 mL/day</strong>），TEN-like GVHD mortality <strong class="ex-n">≥50%</strong>（尤其未治療時）<span class="ex-ref ex-ref-mckee">McKee p.274</span>；TEN-like GVHD 常見 sweat gland 侵犯，因此可見 acrosyringium keratinous plugging<span class="ex-ref ex-ref-mckee">McKee p.277</span>；少數 GVHD 角質層可見 bile pigment，EM 沒有<span class="ex-ref ex-ref-mckee">McKee p.278</span></td></tr>
 <tr><td>Fixed drug eruption</td><td>明顯 basal cell hydropic degeneration、DEJ lymphocyte tagging、individual keratinocyte necrosis、<strong>marked pigmentary incontinence</strong>；upper dermis 可有 neutrophils，eosinophils 有時明顯；<mark data-q="109-13">偶爾泛發而類似 TEN</mark><span class="ex-ref ex-ref-mckee">McKee p.644</span></td></tr>
 <tr><td>Paraneoplastic pemphigus</td><td>臨床可類似 EM、TEN<span class="ex-ref ex-ref-mckee">McKee p.185</span>；唇紅 crusting 令人聯想 SJS<span class="ex-ref ex-ref-mckee">McKee p.440</span>；組織為 suprabasal acantholysis 合併 EM-like interface change；DIF 為 intercellular IgG＋BMZ C3<span class="ex-ref ex-ref-mckee">McKee p.185、p.269</span></td></tr>
 <tr><td>Linear IgA disease</td><td>DIF 為 BMZ linear IgA<span class="ex-ref ex-ref-mckee">McKee Table 4.6，p.145</span></td></tr>
@@ -267,27 +267,27 @@
 <ul>
 <li><mark data-q="107-09">急性期最常見的併發症是 <strong>sepsis</strong>，感染是主要死因</mark>。<span class="ex-ref">p.740</span></li>
 <li>Central venous lines 是感染源，能用 peripheral lines 就用 peripheral。</li>
-<li>最常見菌種為 <em>Staphylococcus aureus</em> 與 <em>Pseudomonas</em> spp.；約 <strong class="ex-n">1/3</strong> 陽性血液培養是皮膚上沒有的 enterobacteria，表示來自腸道的 bacterial translocation。</li>
-<li>Multisystem organ failure <strong class="ex-n">&gt;30%</strong>，pulmonary complications <strong class="ex-n">15%</strong>。</li>
-<li>Sequelae 比過去認為的更常見也更嚴重：存活者 <strong class="ex-n">90%</strong> 在一年後仍有後遺症（平均每人 3 種），約一半 quality of life 明顯受影響；PTSD 症狀不少見。<span class="ex-ref">p.741</span></li>
+<li>最常見菌種為 <em>Staphylococcus aureus</em> 與 <em>Pseudomonas</em> spp.；約 <strong class="ex-n">1/3</strong> 陽性血液培養是皮膚上沒有的 enterobacteria，提示（suggests）來自腸道病灶的 bacterial translocation。</li>
+<li>Multisystem organ failure 與 pulmonary complications 分別見於 more than <strong class="ex-n">30%</strong> 與 <strong class="ex-n">15%</strong> 病例（原文 "more than 30% and 15% of cases, respectively"）。<span class="ex-ref">p.740</span></li>
+<li>Sequelae 比過去認為的更常見也更嚴重：一個大型歐洲 cohort 中，存活者 <strong class="ex-n">90%</strong> 在一年後仍有後遺症（平均每人 3 種），約一半 quality of life 明顯受影響；提示 PTSD 的症狀不少見。<span class="ex-ref">p.741</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Organ（器官）</th><th scope="col">Sequelae（後遺症）</th></tr></thead>
 <tbody>
-<tr><td>Eye（約 <strong class="ex-n">50%</strong>）</td><td>Chronic inflammation、fibrosis、entropion、trichiasis、symblepharon、corneal ulceration、vision loss；初期眼部輕微的人也可能出現</td></tr>
+<tr><td>Eye（late ophthalmic complications 報告 20–75%，可信數字約 <strong class="ex-n">50%</strong>）</td><td>Chronic inflammation、fibrosis、entropion、trichiasis、symblepharon、corneal ulceration、altered vision；初期眼部輕微的人也可能出現</td></tr>
 <tr><td>Skin</td><td>Hypo-/hyperpigmentation 最常見；hypertrophic 或 atrophic scars 少見</td></tr>
 <tr><td>Nails（<strong class="ex-n">&gt;30%</strong>）</td><td>Nail bed pigmentation、ridging、dystrophy、permanent anonychia</td></tr>
 <tr><td>Mouth（約 <strong class="ex-n">1/3</strong>）</td><td>Dryness、dysgeusia、late alterations of teeth</td></tr>
 <tr><td>Vulva/vagina（約 <strong class="ex-n">25%</strong>）</td><td>Dyspareunia、vaginal dryness、genital adhesions</td></tr>
-<tr><td>Other</td><td>Esophageal、intestinal、urethral、anal strictures（少見）；chronic lung disease（bronchiolitis obliterans）</td></tr>
+<tr><td>Other</td><td>Esophageal、intestinal、urethral、anal strictures（少見）；chronic lung disease（常歸因於 bronchiolitis obliterans）</td></tr>
 </tbody>
 </table>
-<p class="ex-cite">Table 44-5，p.741。所有存活者應在出院後數週與一年後回診，包括眼科，p.742。</p>
+<p class="ex-cite">Table 44-5 與內文（Skin 列、各比例出自內文），p.741。強烈建議所有存活者在出院後數週與一年後回診，包括眼科，p.742。</p>
 <h3>McKee 5e 補充</h3>
 <ul>
 <li>McKee 列出的死因：<mark data-q="107-09">sepsis（特別是 <em>Staphylococcus aureus</em> 與 <em>Pseudomonas aeruginosa</em>）</mark>、heart failure、pulmonary embolism、septic shock、DIC、GI bleeding。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 <li>McKee：眼部病灶造成存活者 <strong class="ex-n">40–50%</strong> 長期 morbidity，且可在數月後才出現（Fitzpatrick Table 44-5 為約 50%）。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
-<li>McKee：SJS 嚴重眼部發炎後，可出現免疫學上典型的 cicatricial pemphigoid（mucous membrane pemphigoid）。<span class="ex-ref ex-ref-mckee">McKee p.153</span></li>
+<li>McKee：SJS 嚴重眼部發炎後，曾有出現免疫學上典型的 cicatricial pemphigoid 的報告（mucous membrane pemphigoid）。<span class="ex-ref ex-ref-mckee">McKee p.153</span></li>
 <li>McKee：癒合後常見 postinflammatory hyperpigmentation。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 </ul>
 </section>
@@ -296,9 +296,9 @@
 <h2>10. Prognosis &amp; Clinical Course（病程與預後）</h2>
 <ul>
 <li>Epidermal detachment 持續進展 <strong class="ex-n">5–7 days</strong>，之後進入 plateau phase 並逐漸 reepithelialization（數天到數週）。<span class="ex-ref">p.742</span></li>
-<li>Mortality 高度取決於 age 與 comorbidity；兒童即使是重症，死亡率也很低。</li>
+<li>Mortality 高度取決於 age 與 underlying diseases；兒童即使是重症，死亡率與老年人相比也很低。</li>
 <li><strong>Prognosis 不受病因（drug、infection 或 unknown）、藥物種類或劑量、是否有 HIV 影響</strong>。</li>
-<li>出院後 <strong class="ex-n">3 months</strong> 內死亡率仍異常偏高，與原有重大慢性病（e.g. malignancy）惡化有關。</li>
+<li>Prospective follow-up 顯示出院後 <strong class="ex-n">3 months</strong> 內死亡率仍異常偏高，似乎（seems）源於 EN 對原有重大慢性病（e.g. malignancy）的負面影響。</li>
 <li>McKee 的不良預後因子：年紀增加、皮膚剝離比例高、腎功能惡化、bronchial epithelium 廣泛侵犯。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
 </ul>
 </section>
@@ -307,37 +307,37 @@
 <h2>11. Treatment（治療）</h2>
 <h3>Withdrawal of the culprit drug（停藥）</h3>
 <ul>
-<li>及早停用致病藥物，對 short elimination half-life 的藥物能提高存活率。<span class="ex-ref">p.743</span></li>
+<li>及早停用致病藥物，在 short elimination half-life 藥物引起的 EN 與存活率提高相關（associated with）。<span class="ex-ref">p.743</span></li>
 <li>重要且不被懷疑的藥物宜繼續使用（preferable to continue）；有疑慮時，停掉過去 <strong class="ex-n">8 weeks</strong> 內開始的所有非維生必要藥物。</li>
 </ul>
 <h3>Supportive care（支持性治療，Table 44-6）</h3>
 <ul>
-<li>只有侵犯範圍有限、<strong class="ex-n">SCORTEN 0–1</strong>、沒有快速進展的病人可留在一般病房；其餘轉 ICU 或 burn center。<span class="ex-ref">p.743</span></li>
-<li>Referral decision tree（Fig. 44-1）：Involved BSA <strong class="ex-n">≥10%</strong> → transfer to specialized center；BSA <strong class="ex-n">&lt;10%</strong> 但有 severity marker（serum bicarbonate <strong class="ex-n">&lt;20 mM</strong>、urea <strong class="ex-n">&gt;10 mM</strong>、glucose <strong class="ex-n">&gt;14 mM</strong>、respiratory rate <strong class="ex-n">&gt;20</strong>、pO2 <strong class="ex-n">&lt;80 mm Hg</strong> 或 rapid progression）→ 也轉送；slow progression 且無 severity marker、病情穩定 → usual medical wards；兩者都要 systemic follow-up（sequelae 風險高）。<span class="ex-ref">p.736</span></li>
+<li>只有侵犯範圍有限、<strong class="ex-n">SCORTEN 0–1</strong>、沒有快速進展的病人可留在一般病房；依當地設施，不需加護照護者可留在皮膚科病房（如許多歐洲國家），其他應轉 ICU 或 burn center。<span class="ex-ref">p.743</span></li>
+<li>Referral decision tree（Fig. 44-1）：Involved BSA <strong class="ex-n">≥10%</strong> → transfer to specialized center；BSA <strong class="ex-n">&lt;10%</strong> 但有 severity marker（serum bicarbonate <strong class="ex-n">&lt;20 mM</strong>、urea <strong class="ex-n">&gt;10 mM</strong>、glucose <strong class="ex-n">&gt;14 mM</strong>、respiratory rate <strong class="ex-n">&gt;20</strong>、pO2 <strong class="ex-n">&lt;80 mm Hg</strong> 或 rapid progression）→ 也轉送；slow progression 且無 severity marker：穩定 → usual medical wards，若 progression → 轉送；兩者都要 systemic follow-up（sequelae 風險高）。<span class="ex-ref">p.736</span></li>
 <li>Fluid replacement：盡早開始、每天調整；量通常比同面積 burns 少（沒有 interstitial edema）；優先 peripheral line。</li>
 <li>Environmental temperature 提高到 <strong class="ex-n">28–30°C</strong>；air-fluidized bed 增加舒適。</li>
-<li>Early nutritional support 以 nasogastric tube 給予，減少 bacterial translocation。</li>
+<li>Early nutritional support 優先以 nasogastric tube 給予，減少 bacterial translocation。</li>
 <li>定期培養 skin、blood、urine；<strong>不給 prophylactic antibiotics</strong>，懷疑感染才給。</li>
 <li>住院期間給 prophylactic anticoagulation。</li>
 <li><strong>不建議 extensive debridement</strong>：表淺壞死不會妨礙 reepithelialization；這是作者與 US burn centers 建議唯一明顯不同之處。</li>
-<li>Eyes：眼科每天檢查；preservative-free emollients、antibiotic 或 antiseptic eye drops、vitamin A，mechanical disruption of early synechiae；早期 cryopreserved amniotic membrane graft 可能減少嚴重眼部後遺症。</li>
+<li>Eyes：眼科每天檢查；急性期常每 2 小時使用 preservative-free emollients、antibiotic 或 antiseptic eye drops、vitamin A，並需 mechanical disruption of early synechiae；早期 cryopreserved amniotic membrane graft 被提出可能減少嚴重眼部後遺症。</li>
 <li>Mouth：每天多次以 antiseptic 或 antifungal solution 漱口。</li>
 </ul>
 <h3>Specific treatment in acute stage（急性期特異性治療）</h3>
 <table class="ex-table">
 <thead><tr><th scope="col">Treatment</th><th scope="col">Fitzpatrick 9e 立場</th></tr></thead>
 <tbody>
-<tr><td>Systemic corticosteroids</td><td><mark data-q="102-42">仍有爭議，不能當 mainstay treatment</mark>；2–3 週療程與 mortality、sepsis 上升相關；medium dose、短期（數天）可能有益</td></tr>
-<tr><td>IVIG</td><td>原理是阻斷 Fas，但 Fas-L 路徑幾乎不參與；大型 cohort 與 systematic review 都無益 → <strong>should not be used</strong></td></tr>
+<tr><td>Systemic corticosteroids</td><td><mark data-q="102-42">仍有爭議，不能當 mainstay treatment</mark>；其他研究認為 2–3 週療程無法阻止進展，甚至與 mortality、sepsis 上升相關；medium dose、短期（數天）可能有益</td></tr>
+<tr><td>IVIG</td><td>原理是阻斷 Fas，但 Fas-L 路徑幾乎不參與；大型 cohort 與 systematic review 都未能證實有益 → <strong>should not be used</strong></td></tr>
 <tr><td>Cyclosporine A</td><td><mark data-q="111-42">早期使用可能阻止剝離進展並提高存活</mark>；目前劑量 <strong class="ex-n">3 mg/kg × 10 days</strong>（腎衰竭時調整）</td></tr>
-<tr><td>Anti-TNF</td><td><mark data-q="111-42">Etanercept 與類固醇比較時結果較好，TNF-α 與 granulysin 下降；但 thalidomide 的 RCT 因 mortality 上升而中止 → extreme caution</mark></td></tr>
+<tr><td>Anti-TNF</td><td><mark data-q="111-42">一項比較類固醇與 etanercept 的研究報告 etanercept 組臨床結果改善，並觀察到 TNF-α 與 granulysin 下降；但 thalidomide 的 RCT 因 mortality 上升而中止 → extreme caution</mark></td></tr>
 <tr><td>Plasmapheresis、hemodialysis</td><td>缺乏證據且有導管風險 → not recommended</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.743–744</p>
 <aside class="ex-trap"><strong>易錯</strong>Thalidomide（anti-TNF agent）的 RCT 因 mortality 顯著上升而中止；IVIG should not be used（p.744）。</aside>
 <ul>
-<li>Treatment of sequelae：眼部有 gas-permeable scleral lenses、autologous limbal 或 oral mucosa stem cell grafting；色素變化可用 photoprotection 與 laser，但缺乏研究。<span class="ex-ref">p.744</span></li>
+<li>Treatment of sequelae：眼部有 gas-permeable scleral lenses、autologous limbal 或 oral mucosa stem cell grafting；色素變化 photoprotection 與 cosmetic laser 可能有幫助，但沒有專門研究。<span class="ex-ref">p.744</span></li>
 </ul>
 </section>
 
@@ -348,17 +348,17 @@
 <li>只在有簡單且強烈遺傳標記的族群可行，例如 Southeast Asian ancestry 與 HLA-B*1502／carbamazepine。<span class="ex-ref">p.744–745</span></li>
 <li><mark data-q="106-27,115-41">US FDA 建議 <strong>Han Chinese and Thai origin</strong> 的病人在開 carbamazepine 前檢測 HLA-B*1502</mark>。<span class="ex-ref">p.745</span></li>
 <li>台灣實施篩檢後 carbamazepine 引起的 EN 大幅減少；香港雖預防了 carbamazepine 引起的 EN，但抗癲癇藥引起的整體 EN 並未減少，可能因醫師改開不需基因檢測、但也可能致病的藥物。</li>
-<li>Phenytoin 也可能與 HLA-B*1502 相關，替代藥物仍需謹慎。</li>
+<li>Han Chinese 或 Southeast Asian 族群可謹慎開立替代抗癲癇藥，但 phenytoin 也可能與 HLA-B*1502 相關。</li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>US FDA 建議檢測的對象是 Han Chinese and Thai origin 的病人（p.745）。</aside>
 <h3>Secondary prevention（次級預防）</h3>
 <ul>
 <li>最重要的是評估 drug causality（ALDEN）；仔細詢問發病前數週的用藥，約 <strong class="ex-n">67%</strong> 能找出 probable culprit。<span class="ex-ref">p.745</span></li>
-<li>最有用的條件：用藥到發病 <strong class="ex-n">4–28 days</strong>、過去沒用過、屬於已知 high-risk drug。</li>
+<li>最有用的條件：用藥到發病典型為 <strong class="ex-n">4–28 days</strong>、過去沒用過、屬於已知 high-risk drug。</li>
 <li>In vitro tests 與 patch tests 在 EN 的 sensitivity 低。</li>
 <li>McKee：這類病人對致病藥物的 patch test 可呈陽性，也可能測得 lymphocyte transformation（兩本語氣不同：Fitzpatrick 強調 sensitivity 低）。<span class="ex-ref ex-ref-mckee">McKee p.267</span></li>
-<li>Recurrence 幾乎都是不小心再次使用同一種或結構非常相近的藥物；cross-reactivity 範圍窄。</li>
-<li>Anti-infective sulfonamide 引起 EN 的病人，只需禁用 anti-infective sulfonamides 與 sulfasalazine，<strong>不需避開</strong> sulfonamide-related diuretics 或 antidiabetics。</li>
+<li>少數已發表的復發病例都是不小心再次使用同一種或結構非常相近的藥物；epidemiology 與 in vitro 研究提示 cross-reactive 藥物範圍相當窄（基於化學結構相近）。</li>
+<li>Anti-infective sulfonamide 引起 EN 的病人，<strong>沒有證據顯示</strong>對 sulfonamide-related diuretics 或 antidiabetics 的反應風險增加；只有 anti-infective sulfonamides 與 sulfasalazine 應列為禁忌。</li>
 <li>給病人 allergy card（allergy passport），列出可疑藥物與同結構藥物，也可列出可安心使用的常用藥。</li>
 </ul>
 </section>
