@@ -26,7 +26,7 @@
 <thead><tr><th scope="col">Property</th><th scope="col">意義</th><th scope="col">臨床重要性</th></tr></thead>
 <tbody>
 <tr><td><mark data-q="104-46">Monochromatic（單一波長）</mark></td><td>單一波長（temporal coherence）</td><td>可被特定 chromophore 選擇性吸收</td></tr>
-<tr><td>Coherent（同調）</td><td>波在空間與時間上同相（crests、troughs 同步）</td><td>發散極小，遠距離不失強度</td></tr>
+<tr><td>Coherent（同調）</td><td>波在空間與時間上同相（crests、troughs 同步）</td><td>發散極小，可傳得較遠而不會大幅損失強度（without substantial loss of intensity）</td></tr>
 <tr><td>Collimated（準直）</td><td>所有 photons 彼此平行</td><td>遠距離不變形，能量可密集集中於小體積</td></tr>
 </tbody>
 </table>
@@ -44,7 +44,7 @@
 <thead><tr><th scope="col">Mode</th><th scope="col">原理</th><th scope="col">Pulse／exposure</th></tr></thead>
 <tbody>
 <tr><td>Continuous wave（cw）</td><td>持續供能，輸出功率幾乎不變；以 shutter 開關光束</td><td>Shutter 開數 ms 到數秒；exposure 為一秒的分數到數秒</td></tr>
-<tr><td>Pulsed</td><td>以 gas discharge 或 flashlamp 在限定時間供能；脈衝內能量先升、達峰、再下降</td><td><strong class="ex-n">µs 到 ms</strong>；peak power 可比 cw 最大輸出高達 <strong class="ex-n">100 倍</strong></td></tr>
+<tr><td>Pulsed</td><td>以 gas discharge 或 flashlamp 在限定時間供能；脈衝內能量先升、達峰、再下降</td><td><strong class="ex-n">µs 到 ms</strong>；peak power 常（often）高於 cw 最大輸出，最多（up to）可達 <strong class="ex-n">100 倍</strong></td></tr>
 <tr><td><mark data-q="101-29,108-45">Q-switched（circuit quality switch）</mark></td><td>Resonator 加 optical polarizer 與 nonlinear crystal：先加電壓阻斷振盪讓 excited atoms 累積到最大，再於 ns 內關掉電壓 → 極強脈衝</td><td><mark data-q="101-29,108-45"><strong class="ex-n">ns 到 ps</strong></mark></td></tr>
 </tbody>
 </table>
@@ -58,11 +58,11 @@
 <li><mark data-q="104-46">IPL <strong>不是雷射</strong>：flashlamp 發出 <strong>noncoherent</strong>、寬頻（broad spectrum）光</mark>，可調整 wavelength、fluence、pulse duration。<span class="ex-ref">p.3824</span></li>
 <li>波長範圍約 <mark data-q="104-46"><strong class="ex-n">420 nm</strong> 到 far-infrared 約 <strong class="ex-n">1200 nm</strong></mark>。<span class="ex-ref">p.3824</span></li>
 <li><mark data-q="105-25"><strong>Cutoff filter</strong> 只讓<strong>長於</strong>門檻值的波長通過</mark>，以不同 filter 與 handpiece「tune」到想要的 chromophore 與膚色。<span class="ex-ref">p.3824</span></li>
-<li>例：<strong class="ex-n">560-nm filter</strong> 治療 vascular lesions（讓 &gt;560 nm 通過，對應血管吸收峰 <strong class="ex-n">585–595 nm</strong>）；<strong>較長的 cutoff filter</strong> 用於深膚色者的色素治療。<span class="ex-ref">p.3824</span></li>
+<li>例：<strong class="ex-n">560-nm filter</strong> 治療 vascular lesions（讓 &gt;560 nm 通過，對應血管吸收峰 <strong class="ex-n">585–595 nm</strong>）；<strong>較長的 cutoff filter</strong> 可（may）用於深膚色者的色素治療。<span class="ex-ref">p.3824</span></li>
 <li>Fig. 208-8：<strong class="ex-n">500-nm</strong> cut-off 與 oxyhemoglobin 吸收重疊；<strong class="ex-n">650-nm</strong> cut-off 與 melanin 吸收重疊。<span class="ex-ref">p.3827</span></li>
 <li>IPL applicator 透過 ultrasonic gel 直接接觸皮膚；radiant exposure 由 applicator 大小與能量決定。<span class="ex-ref">p.3824</span></li>
 <li>寬頻光的吸收較複雜（不同波長被不同 chromophore 吸收），因此需要 cut-off filter。<span class="ex-ref">p.3826</span></li>
-<li>極高強度＋極短脈衝造成的 ablation、explosion <strong>只有雷射能做到，IPL 不行</strong>。<span class="ex-ref">p.3827</span></li>
+<li>雷射脈衝總能量有限，ablation 與 explosion 可侷限在極小體積；如此<strong>高強度＋短脈衝只有雷射能達成，IPL 不行</strong>。<span class="ex-ref">p.3827</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>IPL 波長範圍各章寫法不同：ch208 為 420–1200 nm（p.3824）；ch209（p.3836）、ch210（p.3848）為約 500–1200 nm；ch212 治療 telangiectasia 為 515–1200 nm（p.3890）。</aside>
 </section>
@@ -94,10 +94,10 @@
 <table class="ex-table">
 <thead><tr><th scope="col">System</th><th scope="col">重點</th></tr></thead>
 <tbody>
-<tr><td>Articulated arms</td><td>中空相連管＋各接點反射鏡，保留 collimation 與 coherence；較笨重；<strong>CO2 雷射的主流</strong>，因 <strong>CO2 無法經 fiber optics 傳導</strong></td></tr>
-<tr><td>Fiber optics</td><td>多為 <strong>quartz</strong> 細纖維，柔軟；多數 visible 與部分 invisible cw 雷射可傳；會損失能量與 coherence，限制聚焦；過度拉扯會斷裂</td></tr>
+<tr><td>Articulated arms</td><td>中空相連管＋各接點反射鏡，保留 collimation 與 coherence；即使新型較不笨重，仍可能（can）笨重、難以操作；<strong>CO2 雷射的主流</strong>，因 <strong>CO2 無法經 fiber optics 傳導</strong></td></tr>
+<tr><td>Fiber optics</td><td>多為 <strong>quartz</strong> 細纖維，柔軟；多數 visible 與部分 invisible cw 雷射可傳；有部分（some）能量與 coherence 損失，限制聚焦；過度拉扯可能（may）斷裂</td></tr>
 <tr><td>Micromanipulators</td><td>經顯微鏡耦合，精準移動；主要用於婦科（cervical lesions）與耳鼻喉（laryngeal、inner ear）</td></tr>
-<tr><td>Fiber lasers</td><td>直接在 rare-earth 摻雜的玻璃纖維內產生雷射：<strong>erbium（1550 nm）</strong>、<strong>thulium（1927 nm）</strong>；多以 diode 為 pump；精準、可靠、體積小</td></tr>
+<tr><td>Fiber lasers</td><td>直接在 rare-earth 摻雜的玻璃纖維內產生雷射：<strong>erbium（1550 nm）</strong>、<strong>thulium（1927 nm）</strong>；多以 diode 為 pump；精準、可靠，可（can）相對精巧</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.3825。</p>
@@ -105,7 +105,7 @@
 
 <section class="ex-note" id="tissue-interactions">
 <h2>6. Laser–Tissue Interactions（雷射與組織交互作用）</h2>
-<p><mark data-q="111-44">光到達組織時有 4 種反應：<strong>reflection、transmission、scattering、absorption</strong></mark>（Fig. 208-6）。<span class="ex-ref">p.3825</span></p>
+<p><mark data-q="111-44">光到達組織時可能（may）發生多種反應：<strong>reflection、transmission、scattering、absorption</strong></mark>（Fig. 208-6）。<span class="ex-ref">p.3825</span></p>
 <table class="ex-table">
 <thead><tr><th scope="col">Interaction</th><th scope="col">定義與重點</th></tr></thead>
 <tbody>
@@ -117,9 +117,9 @@
 </table>
 <p class="ex-cite">p.3825–3826。</p>
 <ul>
-<li>穿透深度：UVB（約 300 nm）只有零點幾 mm；infrared 可達數 mm。<span class="ex-ref">p.3826</span></li>
+<li>穿透深度：UVB（約 300 nm）最多（up to）只達零點幾 mm；infrared 最多（up to）可達數 mm。<span class="ex-ref">p.3826</span></li>
 <li>但波長 &gt;約 <strong class="ex-n">1100 nm</strong> 時，因被皮膚中的水吸收，穿透深度隨波長增加的趨勢<strong>反轉</strong>。<span class="ex-ref">p.3826</span></li>
-<li>At-a-glance：<mark data-q="110-29,115-30">在 visible spectrum 內<strong>波長越長穿透越深</strong></mark>；<mark data-q="110-29"><strong>spot size 越大穿透越深、散射越少</strong></mark>。<span class="ex-ref">p.3820</span></li>
+<li>At-a-glance：<mark data-q="110-29,115-30">一般而言（in general），在 visible spectrum 內<strong>波長越長穿透越深</strong></mark>；<mark data-q="110-29"><strong>spot size 越大穿透越深、散射越少</strong></mark>。<span class="ex-ref">p.3820</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>光穿過 stratum corneum 後在組織內碰到小分子而偏折，稱為 scattering。Stratum corneum 垂直照射仍約 5% reflection，因此即使技術完美仍需護目鏡。穿透深度隨波長增加的趨勢在約 1100 nm 以上反轉，因被皮膚中的水吸收。<span class="ex-ref">p.3825–3826</span></aside>
 </section>
@@ -165,14 +165,14 @@
 <tbody>
 <tr><td><mark data-q="104-46,106-31">CO2</mark></td><td><mark data-q="104-46,106-31"><strong class="ex-n">10,600 nm</strong></mark></td><td><mark data-q="104-46">被 tissue water 吸收，穿透 <strong class="ex-n">&lt;0.1 mm</strong></mark>；大 spot＋低 power density 或聚焦高 power density；<mark data-q="106-31">可氣化、切割組織<strong>同時凝固血管</strong></mark></td></tr>
 <tr><td><mark data-q="101-29,106-31">Er:YAG</mark></td><td><mark data-q="101-29,106-31"><strong class="ex-n">2940 nm</strong></mark></td><td>同樣優先被 water 吸收</td></tr>
-<tr><td>Argon-ion</td><td>488、514 nm</td><td>Hemoglobin 與 melanin 都會吸收</td></tr>
-<tr><td><mark data-q="115-30">KTP（frequency-doubled Nd:YAG）</mark></td><td>532 nm</td><td><mark data-q="115-30">Hemoglobin 與 melanin 都會吸收；優先與 oxyhemoglobin 作用</mark></td></tr>
-<tr><td><mark data-q="115-30">Pulsed dye（PDL）</mark></td><td>585–595（–600）nm</td><td><mark data-q="115-30">Hemoglobin 與 melanin 都會吸收；優先與 oxyhemoglobin 作用</mark></td></tr>
+<tr><td>Argon-ion</td><td>488、514 nm</td><td>可能（may）被 hemoglobin 與 melanin 吸收</td></tr>
+<tr><td><mark data-q="115-30">KTP（frequency-doubled Nd:YAG）</mark></td><td>532 nm</td><td><mark data-q="115-30">可能（may）被 hemoglobin 與 melanin 吸收；優先與 oxyhemoglobin 作用</mark></td></tr>
+<tr><td><mark data-q="115-30">Pulsed dye（PDL）</mark></td><td>585–595（–600）nm</td><td><mark data-q="115-30">可能（may）被 hemoglobin 與 melanin 吸收；優先與 oxyhemoglobin 作用</mark></td></tr>
 <tr><td><mark data-q="104-48">Ruby</mark></td><td>694 nm</td><td><mark data-q="104-48">主要被 <strong>melanin</strong> 吸收</mark>，少量 hemoglobin 吸收</td></tr>
 <tr><td><mark data-q="104-48">Alexandrite</mark></td><td>755 nm</td><td><mark data-q="104-48">優先被 melanin 吸收 → pigmented lesions 與 hair</mark></td></tr>
 <tr><td>Diode</td><td>約 810 nm</td><td>Ruby、alexandrite、diode 較少被 oxyhemoglobin 吸收，較適合 benign pigmented lesions 與除毛</td></tr>
 <tr><td>Nd:YAG</td><td>1064 nm</td><td><strong>沒有特定 chromophore</strong>，所有皮膚 chromophore 吸收都很少（hemoglobin、melanin 吸收少於其他可見光）；高 fluence 下可治療色素或血管病灶，cw 可做非特異凝固</td></tr>
-<tr><td>Nonablative（fractional）</td><td>1440、1540、1550、1565、1927 nm</td><td>以 dermal tissue（water）為標的 → dermal collagen bulk heating，避免表皮傷害</td></tr>
+<tr><td>Nonablative（fractional）</td><td>1440、1540、1550、1565、1927 nm</td><td>以 dermal tissue 為標的 → dermal collagen bulk heating，避免表皮傷害</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.3826、p.3829。</p>
@@ -202,7 +202,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 208-1，p.3821。</p>
-<aside class="ex-trap"><strong>易錯</strong>Table 208-1 中同一波長依 pulse duration 用途不同：alexandrite、Nd:YAG 的 <strong>ms</strong> 脈衝列為 large vessels 與 hair removal，<strong>ns、ps</strong> 脈衝列為 pigmented lesions 與 tattoos。Tattoos（red）列在 532 nm；ruby 列 tattoos（black、blue、green）。Table 208-1 把 Nd:YAG 1064 nm 也列為 tattoos（black、blue、green）；<mark data-q="109-38">ch210 Table 210-1 的 blue and green 為 QS alexandrite 755、QS ruby 694 nm，QS Nd:YAG 1064 nm 列在 black／dark blue</mark>。<span class="ex-ref">p.3821、p.3853</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>Table 208-1 中同一波長依 pulse duration 用途不同：alexandrite、Nd:YAG 的 <strong>ms</strong> 脈衝列為 large vessels 與 hair removal，<strong>ns、ps</strong> 脈衝列為 pigmented lesions 與 tattoos。Tattoos（red）列在 532 nm；ruby 列 tattoos（black、blue、green）。Table 208-1 把 Nd:YAG 1064 nm 也列為 tattoos（black、blue、green）；<mark data-q="109-38">ch210 Table 210-1 的 blue and green 為 QS alexandrite 755、QS ruby 694 nm，QS Nd:YAG 1064 nm 列在 black／dark blue</mark>。<span class="ex-ref">p.3821、p.3853（ch210）</span></aside>
 </section>
 
 <section class="ex-note" id="selective-photothermolysis">
@@ -214,7 +214,7 @@
 <li><strong>Thermal relaxation time（TRT, tR）</strong>：被照射組織<strong>冷卻到加熱溫度一半</strong>所需的時間。<span class="ex-ref">p.3829</span></li>
 <li><mark data-q="110-29"><strong>tR = ρc/(16k) × D²</strong>（ρ、c、k 為 target 的熱學參數，D 為直徑）；TRT 約與 target 平均直徑的<strong>平方成正比</strong></mark>。<span class="ex-ref">p.3829</span></li>
 <li><mark data-q="110-29">Chromophore 越大 → 需要的 pulse duration 越長</mark>、整體加熱越多。<span class="ex-ref">p.3829</span></li>
-<li>Pulse 長於 TRT → 過多熱流到 dermis，造成不必要的副作用（Fig. 208-11）。<span class="ex-ref">p.3829</span></li>
+<li>Pulse 長於 TRT → 過多熱流到 dermis，可能（may）造成不必要的副作用（Fig. 208-11）。<span class="ex-ref">p.3829</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>TRT 約與 target 平均直徑的<strong>平方成正比</strong>。Pulse duration 短於 TRT（內文另寫 comparable to TRT）可使周邊傷害最小；長於 TRT 會使過多熱流到 dermis。<span class="ex-ref">p.3829</span></aside>
 <h3>Table 208-2 Target chromophores, size, and pulse duration（標的大小與脈衝時間）</h3>
@@ -238,15 +238,15 @@
 <section class="ex-note" id="fractional">
 <h2>10. Fractional Photothermolysis（分段式光熱分解）</h2>
 <ul>
-<li>背景：1980 年代末到 1990 年代 ablative lasers（CO2、erbium）治療光老化與鬆弛效果顯著，但恢復期長、副作用嚴重；舊式 nonablative 效果不足 → 發展出 fractional photothermolysis。<span class="ex-ref">p.3830</span></li>
+<li>背景：1980 年代末到 1990 年代 ablative lasers（CO2、erbium）治療光老化與鬆弛效果顯著，但恢復期長、可能（potential）有嚴重副作用；舊式 nonablative 效果不足 → 發展出 fractional photothermolysis。<span class="ex-ref">p.3830</span></li>
 <li>在治療區內產生空間分布的柱狀微熱傷害，稱 <strong>microscopic treatment zones（MTZs）</strong>，柱間保留正常皮膚。<span class="ex-ref">p.3830</span></li>
 <li>效果：較深入 dermis、controlled denaturation、<strong>transepidermal elimination</strong> of coagulated debris、reactive collagen remodeling，同時維持表皮完整、縮短癒合、減少副作用。<span class="ex-ref">p.3830</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Type</th><th scope="col">Lasers</th><th scope="col">特點</th></tr></thead>
 <tbody>
-<tr><td>Ablative fractional</td><td>CO2、erbium</td><td>表皮與真皮細柱狀 controlled vaporization；效果較明顯</td></tr>
-<tr><td>Nonablative fractional</td><td><strong class="ex-n">1440、1540、1550、1565、1927 nm</strong></td><td>熱集中在 dermis，表皮相對或完全保留；耐受性佳、副作用少、癒合快，但效果不如 ablative；比舊式 nonfractionated nonablative（只造成均勻一層真皮加熱）好</td></tr>
+<tr><td>Ablative fractional</td><td>CO2、erbium</td><td>表皮與真皮細柱狀 controlled vaporization</td></tr>
+<tr><td>Nonablative fractional</td><td><strong class="ex-n">1440、1540、1550、1565、1927 nm</strong></td><td>熱集中在 dermis，表皮相對或完全保留；耐受性佳、副作用少、癒合快，但效果可能（may）不如 ablative fractional resurfacing；比舊式 nonfractionated nonablative（只造成均勻一層真皮加熱）好</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.3830。</p>
@@ -265,8 +265,8 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Type</th><th scope="col">Methods</th><th scope="col">重點</th></tr></thead>
 <tbody>
-<tr><td>Contact cooling（又稱 bulk cooling）</td><td>Active：copper、sapphire tips；Passive：ice、aqueous gels</td><td>熱由皮膚傳到冷卻物；active tip 以 thermoelectric elements 或流動冷卻液主動移除熱</td></tr>
-<tr><td>Noncontact cooling</td><td>Cryogen spray（liquid nitrogen）；pulsed cryogen spray（<strong>dynamic cooling device, DCD</strong>）；forced refrigerated air（Zimmer Cryo）</td><td>Liquid nitrogen 噴霧依賴操作者、不精準、有 cryonecrosis 風險；DCD 於雷射前一刻噴 <strong>1,1,1,2-tetrafluoroethane</strong>，<strong class="ex-n">−15°C</strong>，每發均勻可重複；forced cold air 可在前中後冷卻且不干擾光束，減少疼痛與熱傷害</td></tr>
+<tr><td>Contact cooling（有時稱為 bulk cooling）</td><td>Active：copper、sapphire tips；Passive：ice、aqueous gels</td><td>熱由皮膚傳到冷卻物；active tip 以 thermoelectric elements 或流動冷卻液主動移除熱</td></tr>
+<tr><td>Noncontact cooling</td><td>Cryogen spray（liquid nitrogen）；pulsed cryogen spray（<strong>dynamic cooling device, DCD</strong>）；forced refrigerated air（Zimmer Cryo）</td><td>Liquid nitrogen 噴霧依賴操作者、不精準、有 cryonecrosis 風險；DCD 於雷射前一刻噴 cryogen，通常（usually）為無毒的 <strong>1,1,1,2-tetrafluoroethane</strong>，<strong class="ex-n">−15°C</strong>，每發均勻可重複；forced cold air 可在前中後冷卻且不干擾光束，減少疼痛與熱傷害</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 208-3，p.3830；p.3830–3831。</p>
@@ -282,7 +282,7 @@
 </ul>
 <h3>Skin safety（皮膚安全）</h3>
 <ul>
-<li><strong>Cutaneous injuries</strong> 是皮膚科雷射最常見的併發症，也是雷射相關訴訟最常見原因；最常被告的是 <strong>laser hair removal</strong>，其次是 rejuvenation（CO2 全換膚、fractional、IPL）。傷害包括 burns、scars、pigmentary changes。<span class="ex-ref">p.3831</span></li>
+<li><strong>Cutaneous injuries</strong> 是皮膚科雷射最常見的併發症，也是雷射相關訴訟最常見原因；一項研究（in one study）中最常被告的是 <strong>laser hair removal</strong>（可能因每年施行數量多），其次是 rejuvenation（CO2 全換膚、fractional、IPL）。傷害包括 burns、scars、pigmentary changes。<span class="ex-ref">p.3831</span></li>
 <li><mark data-q="114-21,115-30">深膚色降低風險：<strong>lower fluences、longer pulse durations、longer wavelengths 或 higher cutoff filters</strong></mark>；配合前、中、後冷卻。<span class="ex-ref">p.3831</span></li>
 <li>Radiofrequency 裝置：避免用於 implantable devices 或 pacemakers 病人；刺青、金屬植入物、牙套處要小心。<span class="ex-ref">p.3831</span></li>
 <li>風險：pigment-specific、vascular、nonablative 雷射較低；ablative 雷射較高（infection、scarring），fractional ablative 已大幅降低風險。<span class="ex-ref">p.3831</span></li>
@@ -297,7 +297,7 @@
 <tbody>
 <tr><td><mark data-q="114-21"><strong class="ex-n">&lt;380 nm</strong></mark></td><td><mark data-q="114-21">被 <strong>cornea</strong> 的有機分子吸收</mark> → 角膜傷害或 cataract</td></tr>
 <tr><td><mark data-q="114-21"><strong class="ex-n">380–1400 nm</strong></mark></td><td><mark data-q="114-21">穿過眼球被 <strong>retina</strong> 吸收</mark>；屈光介質聚焦使 irradiance 比角膜處高 <strong class="ex-n">&gt;10,000 倍</strong> → 低功率也能嚴重傷害視網膜</td></tr>
-<tr><td><mark data-q="114-21"><strong class="ex-n">&gt;1000–1400 nm</strong></mark></td><td><mark data-q="114-21">被 water 吸收、穿透淺 → <strong>corneal</strong> injury</mark>（甚至 ablation、vaporization，thermal process）</td></tr>
+<tr><td><mark data-q="114-21"><strong class="ex-n">&gt;1000–1400 nm</strong></mark></td><td><mark data-q="114-21">被 water 吸收、穿透淺 → 可能（may）造成 <strong>corneal</strong> injury</mark>（甚至 ablation、vaporization，thermal process）</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.3831。</p>
@@ -306,7 +306,7 @@
 <tbody>
 <tr><td><mark data-q="114-21">Thermal</mark></td><td><mark data-q="114-21"><strong>µs 到 s</strong></mark></td><td>Chromophore（如 retina melanin）吸收，產熱快於散熱 → 蛋白變性、細胞死亡</td></tr>
 <tr><td><mark data-q="114-21">Mechanical</mark></td><td><mark data-q="114-21"><strong>ps 到 ns</strong></mark></td><td>快速升溫剝離電子 → <strong>plasma</strong>；水氣化產生 compressive pressure pulse（explosion）破壞周邊組織</td></tr>
-<tr><td><mark data-q="114-21">Photochemical</mark></td><td><mark data-q="114-21">較低能量、較長時間（<strong>&gt;數秒</strong>）</mark></td><td>熱不足以造成熱傷害，但單一 photon 可打斷 nucleic acids 與 proteins 的鍵結；視網膜細胞可在數週內恢復，超過門檻則不可逆</td></tr>
+<tr><td><mark data-q="114-21">Photochemical</mark></td><td><mark data-q="114-21">較低能量、較長時間（<strong>&gt;數秒</strong>）</mark></td><td>熱不足以造成熱傷害，但單一 photon 可打斷 nucleic acids 與 proteins 的鍵結；視網膜細胞可在數週內恢復，但超過某門檻傷害可能（can）不可逆</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.3831–3832。</p>
@@ -316,7 +316,7 @@
 <li>護目鏡：以 filter 反射或吸收特定波長；以 <strong>optical density（OD）</strong>評級，<strong class="ex-n">OD ≥4</strong> 視為安全；需標示 wavelength range、laser mode、scale number；<strong>eye protection 是 device-specific</strong>，多波長機器換波長要換護目鏡。最大限制是人員不願配戴。<span class="ex-ref">p.3832</span></li>
 <li>用於組織氣化時，<strong>plume 必須抽除</strong>以避免感染性物質（Table 208-4）。<span class="ex-ref">p.3831</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>380–1400 nm 傷 retina，&lt;380 nm 與 &gt;1000–1400 nm 傷 cornea。眼傷三型依 pulse duration 與能量區分：ps–ns = mechanical、µs–s = thermal、低能量長時間 = photochemical。<span class="ex-ref">p.3831–3832</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>380–1400 nm 被 retina 吸收；&lt;380 nm 被 cornea 吸收而傷角膜；&gt;1000–1400 nm 被 water 吸收、可能（may）造成 corneal injury。眼傷三型依 pulse duration 與能量區分：ps–ns = mechanical、µs–s = thermal、低能量長時間 = photochemical。<span class="ex-ref">p.3831–3832</span></aside>
 <h3>Table 208-4 Principles of laser safety（雷射安全原則）</h3>
 <ul>
 <li>Set realistic expectations；詳細說明程序與副作用。</li>
@@ -336,29 +336,29 @@
 <p>本章歷屆題常混合後續章節的臨床應用，以下只列與考點相關的重點；詳見各章整理。</p>
 <h3>Ablative lasers：Er:YAG vs CO2（ch209）</h3>
 <ul>
-<li><mark data-q="106-31">Er:YAG <strong class="ex-n">2940 nm</strong>，water absorption coefficient <strong class="ex-n">12,800 cm⁻¹</strong>，CO2 為 <strong class="ex-n">800 cm⁻¹</strong> → 被水吸收效率高 <strong class="ex-n">12–18 倍</strong></mark>；每 J/cm² 剝除 <strong class="ex-n">2–4 µm</strong>，熱壞死帶窄（<strong class="ex-n">20–50 µm</strong>）。<span class="ex-ref">p.3836</span></li>
-<li><mark data-q="106-31">Short pulse（平均 <strong class="ex-n">250 µs</strong>）熱擴散少 → <strong>止血較差、術中出血較多</strong>，真皮穿透淺，妨礙深層治療與明顯 collagen contraction；但熱效應少帶來<strong>較短的術後恢復期</strong></mark>。<span class="ex-ref">p.3836</span></li>
-<li>Modulated Er:YAG（短＋長 coagulative pulses）可達類似 CO2 的熱凝固帶，改善止血與膠原重塑。<span class="ex-ref">p.3836</span></li>
-<li>Table 209-2 適合 laser skin resurfacing 的病灶包括 epidermal lesions：<mark data-q="101-29"><strong>seborrheic keratosis</strong></mark>、epidermal nevi、verrucae；另有 actinic keratoses、superficial dyschromia、atrophic scars、syringomas、xanthelasma 等。<span class="ex-ref">p.3838</span></li>
+<li><mark data-q="106-31">Er:YAG <strong class="ex-n">2940 nm</strong>，water absorption coefficient <strong class="ex-n">12,800 cm⁻¹</strong>，CO2 為 <strong class="ex-n">800 cm⁻¹</strong> → 被水吸收效率高 <strong class="ex-n">12–18 倍</strong></mark>；在一般治療參數下（at typical treatment parameters）每 J/cm² 剝除 <strong class="ex-n">2–4 µm</strong>，熱壞死帶窄（<strong class="ex-n">20–50 µm</strong>）。<span class="ex-ref">p.3836（ch209）</span></li>
+<li><mark data-q="106-31">Short pulse（平均 <strong class="ex-n">250 µs</strong>）熱擴散少 → <strong>止血較差、術中出血較多</strong>，連同真皮穿透淺，常（often）妨礙深層治療與明顯 collagen contraction；但熱效應少帶來<strong>較短的術後恢復期</strong></mark>。<span class="ex-ref">p.3836（ch209）</span></li>
+<li>Modulated Er:YAG（短＋長 coagulative pulses）可達類似 CO2 的熱凝固帶，改善止血與膠原重塑。<span class="ex-ref">p.3836（ch209）</span></li>
+<li>Table 209-2 適合 laser skin resurfacing 的病灶包括 epidermal lesions：<mark data-q="101-29"><strong>seborrheic keratosis</strong></mark>、epidermal nevi、verrucae；另有 actinic keratoses、superficial dyschromia、atrophic scars、syringomas、xanthelasma 等。<span class="ex-ref">p.3838（ch209）</span></li>
 </ul>
 <h3>Vascular lesions（ch210、ch212）</h3>
 <ul>
-<li><mark data-q="101-29,108-45">Flashlamp-pumped PDL（現多用 <strong class="ex-n">595 nm</strong>）是 <strong>port-wine stain 的 gold standard</strong></mark>；PDL 以 flashlamp 激發 rhodamine dye 產生黃光。<span class="ex-ref">p.3848</span></li>
-<li><mark data-q="115-30">早期用 585 nm，較新的 PDL 改用 595 nm，因較長波長的 <strong>tissue penetration 較深</strong></mark>。<mark data-q="115-30">PWS 常用 <strong class="ex-n">0.45–1.5 ms</strong> 短脈衝 → purpura 持續約 <strong class="ex-n">1–2 週</strong></mark>；&gt;85% 病人至少淡化 50%。<span class="ex-ref">p.3849</span></li>
-<li><mark data-q="104-48">PWS 位置：臉部<strong>外側</strong>較易清除，<strong>中央臉（cheeks、upper lip）較頑固</strong>；四肢（尤其腿）大病灶比軀幹、頭頸差；小病灶清除較完全</mark>。<span class="ex-ref">p.3849</span></li>
-<li><mark data-q="115-30">KTP 與 Nd:YAG 有效治療單一 telangiectases（通常無 purpura）；大範圍 hypervascularity 用 PDL；extended pulse（<strong class="ex-n">≥6 ms</strong>）可 purpura-free</mark>。<span class="ex-ref">p.3850</span></li>
-<li><mark data-q="115-30">Oxyhemoglobin 吸收峰 <strong class="ex-n">418、540、575–580 nm</strong></mark>（deoxyhemoglobin 550–560 nm）；PDL（585–595 nm）與 532 nm 對應這些峰；<mark data-q="105-25">IPL（515–1200 nm）也可治療 telangiectasias</mark>。<span class="ex-ref">p.3890</span></li>
-<li><mark data-q="105-25">EVLA：原認為較短波長（<strong>810、940、980、1064 nm</strong>）以血中 hemoglobin 為標的，較長波長（<strong>1320、1470、1500 nm</strong> 以上）以靜脈壁的 water 為標的</mark>；新模型認為熱傷害主要來自光纖尖端極熱層經殘餘血液傳熱。<span class="ex-ref">p.3888</span></li>
+<li><mark data-q="101-29,108-45">Flashlamp-pumped PDL（現多用 <strong class="ex-n">595 nm</strong>）是 <strong>port-wine stain 的 gold standard</strong></mark>；PDL 以 flashlamp 激發 rhodamine dye 產生黃光。<span class="ex-ref">p.3848（ch210）</span></li>
+<li><mark data-q="115-30">早期用 585 nm，較新的 PDL 改用 595 nm，被認為（thought to be）較適合治療 PWS，因較長波長的 <strong>tissue penetration 較深</strong></mark>。<mark data-q="115-30">PWS 通常（generally）用 <strong class="ex-n">0.45–1.5 ms</strong> 相對短脈衝 → purpura 持續約 <strong class="ex-n">1–2 週</strong></mark>；&gt;85% 病人至少淡化 50%。<span class="ex-ref">p.3849（ch210）</span></li>
+<li><mark data-q="104-48">PWS 位置與大小可能（may）影響療效：一般而言（in general）臉部<strong>外側</strong>較易清除，<strong>中央臉（cheeks、upper lip）傾向（tend to）較頑固</strong>；四肢（尤其腿）大病灶可能（may）比軀幹、頭頸反應差；小病灶傾向（tend to）清除較完全</mark>。<span class="ex-ref">p.3849（ch210）</span></li>
+<li><mark data-q="115-30">KTP 與 Nd:YAG 有效治療單一 telangiectases（通常無 purpura）；photodamage 或 rosacea 情境下的大範圍 hypervascularity，PDL 常（often）非常有效；extended pulse（<strong class="ex-n">≥6 ms</strong>）通常（generally）可 purpura-free</mark>。<span class="ex-ref">p.3850（ch210）</span></li>
+<li><mark data-q="115-30">Oxyhemoglobin 吸收峰 <strong class="ex-n">418、540、575–580 nm</strong></mark>（deoxyhemoglobin 550–560 nm）；PDL（585–595 nm）與 532 nm 對應這些峰；<mark data-q="105-25">IPL（515–1200 nm）也可治療 telangiectasias</mark>。<span class="ex-ref">p.3890（ch212）</span></li>
+<li><mark data-q="105-25">EVLA：原認為較短波長（<strong>810、940、980、1064 nm</strong>）以血中 hemoglobin 為標的，較長波長（<strong>1320、1470、1500 nm</strong> 以上）以靜脈壁的 water 為標的</mark>；近期數學模型顯示熱傷害主要由兩者共同造成：光纖尖端極熱層經少量殘餘血液的傳熱，加上該血層內兩種 chromophore 的光熱吸收。<span class="ex-ref">p.3888（ch212）</span></li>
 </ul>
 <h3>Pigmented lesions &amp; hair removal（ch210）</h3>
 <ul>
-<li><mark data-q="101-29,103-26,108-45">Nevus of Ota／Ito 色素較深，用穿透較深的 <strong>QS ruby、QS alexandrite、QS Nd:YAG</strong>，通常需多次治療</mark>。<span class="ex-ref">p.3851</span></li>
-<li><mark data-q="101-29,108-45">除毛以 <strong>long-pulsed alexandrite（755 nm）</strong>與 diode（810 nm）屬最有效的裝置之一（among the most effective）</mark>；1064 nm Nd:YAG 對深膚色較安全；白色或金色毛髮缺乏 eumelanin 而無效。<span class="ex-ref">p.3851–3852</span></li>
-<li><mark data-q="104-48">較長波長被表皮 melanin 吸收相對較少 → 降低 dyspigmentation 等併發症，但能量仍足以被毛囊深處含色素結構吸收</mark>（1064 nm Nd:YAG 讓深膚色者可安全除毛）；深膚色者用較長 pulse duration 加熱較慢，進一步降低 hypopigmentation／hyperpigmentation 風險。<span class="ex-ref">p.3852</span></li>
+<li><mark data-q="101-29,103-26,108-45">Nevus of Ota／Ito 色素較深，一般（generally）使用穿透相對較深的波長；<strong>QS ruby、QS alexandrite、QS Nd:YAG</strong> 都可能（may）有效，通常需多次治療</mark>。<span class="ex-ref">p.3851（ch210）</span></li>
+<li><mark data-q="101-29,108-45">直接比較研究似乎顯示（seem to indicate），除毛以 <strong>long-pulsed alexandrite（755 nm）</strong>與 diode（810 nm）屬最有效的裝置之一（among the most effective）</mark>；1064 nm Nd:YAG 對深膚色較安全；白色或金色毛髮缺乏 eumelanin 而無效。<span class="ex-ref">p.3851–3852（ch210）</span></li>
+<li><mark data-q="104-48">較長波長被表皮 melanin 吸收相對較少 → 降低 dyspigmentation 等併發症，但能量仍足以被毛囊深處含色素結構吸收</mark>（1064 nm Nd:YAG 讓深膚色者可安全除毛）；深膚色者用較長 pulse duration 傾向（tends to）加熱較慢，進一步降低 hypopigmentation／hyperpigmentation 風險。<span class="ex-ref">p.3852（ch210）</span></li>
 </ul>
 <h3>Tattoo removal（ch210）</h3>
 <ul>
-<li>QS 雷射以 photoacoustic／photomechanical 作用，把 lysosome 內的墨水逐出到細胞外，再經 lymphatic 帶走；ns 脈衝正好配合次細胞大小的墨水顆粒。<span class="ex-ref">p.3852</span></li>
+<li>QS 雷射以 photoacoustic／photomechanical 作用，把 lysosome 內的墨水逐出到細胞外，再經 lymphatic 帶走；ns 脈衝正好配合次細胞大小的墨水顆粒。<span class="ex-ref">p.3852（ch210）</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Ink color</th><th scope="col">Preferred lasers（Table 210-1）</th></tr></thead>
@@ -367,21 +367,21 @@
 <tr><td><mark data-q="109-38,110-29">Blue and green</mark></td><td><mark data-q="109-38,110-29">QS alexandrite 755、QS ruby 694 nm</mark>（及 picosecond）</td></tr>
 <tr><td><mark data-q="105-11,105-25,108-45,109-38">Red</mark></td><td><mark data-q="105-11,105-25,108-45,109-38">QS frequency-doubled Nd:YAG 532 nm</mark></td></tr>
 <tr><td><mark data-q="109-38,110-29">Purple and orange</mark></td><td><mark data-q="109-38,110-29">532 nm 或 755 nm</mark></td></tr>
-<tr><td><mark data-q="110-29">Yellow</mark></td><td><mark data-q="110-29">不易清除，可能對 QS 532 nm 有反應</mark></td></tr>
+<tr><td><mark data-q="110-29">Yellow</mark></td><td><mark data-q="110-29">可能（may）不易清除，可能對 QS 532 nm 有反應</mark></td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 210-1，p.3853；內文 p.3852。</p>
 <ul>
-<li><mark data-q="108-12"><strong>大、較新、多色、專業</strong>刺青最難清除；<strong>小、較舊、單色、業餘</strong>刺青通常反應較好（tend to respond best）</mark>。<span class="ex-ref">p.3854</span></li>
-<li><mark data-q="103-32,105-25,108-12">部分墨水雷射後發生 oxidization reaction → <strong>立即變深</strong>；含 <strong>titanium dioxide</strong> 的墨水（常為<strong>白色或粉紅色</strong>）特別容易 → 先做小範圍測試</mark>。<span class="ex-ref">p.3854</span></li>
-<li>對刺青墨水過敏（pruritus、induration、erythema）者避免 QS 雷射（可能擴散成局部或全身過敏）。<span class="ex-ref">p.3854</span></li>
-<li>曾接受 systemic gold 治療者，QS 雷射可引起 localized <strong>chrysiasis</strong>（藍灰色）。<span class="ex-ref">p.3854</span> McKee：QS ruby laser 後可見典型 chrysiasis 病灶；組織為深層網狀真皮血管與汗腺周圍 macrophage 內的黑色小顆粒，cross-polarized light 呈 orange-red birefringence，無發炎反應。<span class="ex-ref ex-ref-mckee">McKee p.663</span></li>
+<li><mark data-q="108-12"><strong>大、較新、多色、專業</strong>刺青最難清除；<strong>小、較舊、單色、業餘</strong>刺青傾向反應較好（原文 tend to respond best）</mark>。<span class="ex-ref">p.3854（ch210）</span></li>
+<li><mark data-q="103-32,105-25,108-12">部分墨水雷射後可能（may）發生 oxidization reaction → <strong>立即變深</strong>；含 <strong>titanium dioxide</strong> 的墨水（常為<strong>白色或粉紅色</strong>）特別容易 → 先做小範圍測試</mark>。<span class="ex-ref">p.3854（ch210）</span></li>
+<li>部分病人可能對自己刺青的墨水過敏（pruritus、induration、erythema），此時一般（generally）應避免 QS 雷射（可能擴散成更廣的局部或甚至全身過敏）。<span class="ex-ref">p.3854（ch210）</span></li>
+<li>曾接受 systemic gold 治療者，以 QS 雷射治療時有發生 localized <strong>chrysiasis</strong>（藍灰色）的風險（at risk）。<span class="ex-ref">p.3854（ch210）</span> McKee：曾接受 gold 治療的病人於 QS ruby laser 治療後，有典型 chrysiasis 病灶的報告；組織為深層網狀真皮血管與汗腺周圍 macrophage 內的黑色小顆粒，cross-polarized light 呈 orange-red birefringence，無發炎反應。<span class="ex-ref ex-ref-mckee">McKee p.663</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>ch210 寫明特別容易在雷射後立即變深的是含 <strong>titanium dioxide</strong> 的墨水（常為白色或粉紅色）；治療已知高風險顏色時先做小範圍測試。<span class="ex-ref">p.3854</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>ch210 寫明特別容易在雷射後立即變深的是含 <strong>titanium dioxide</strong> 的墨水（常為白色或粉紅色）；治療已知高風險顏色時先做小範圍測試。<span class="ex-ref">p.3854（ch210）</span></aside>
 <h3>Tattoo reactions：pathology（McKee 補充）</h3>
 <ul>
-<li><mark data-q="105-11,108-12">刺青可發生 B-cell（較多）或 T-cell pseudolymphomatous reaction，<strong>最常見元凶為紅色</strong>色素，藍、綠、黑也有報告</mark>；數月到數年後出現侷限於刺青的丘疹、結節。<span class="ex-ref ex-ref-mckee">McKee p.657</span></li>
-<li>組織：除 pseudolymphoma 特徵外，<mark data-q="105-11">刺青色素位於細胞外與 macrophages 內</mark>；少數有 lichenoid infiltrate。<span class="ex-ref ex-ref-mckee">McKee p.659</span></li>
-<li><mark data-q="105-11,108-12">紅色刺青的 <strong>mercuric sulfide（cinnabar）</strong>可引起 lichenoid 與 granulomatous 反應</mark>；汞顆粒位於 macrophages 內與細胞外，分布在表淺血管周圍。<span class="ex-ref ex-ref-mckee">McKee p.664</span></li>
+<li><mark data-q="105-11,108-12">刺青可能（may）發生 B-cell（較多）或 T-cell pseudolymphomatous reaction，<strong>最常見元凶為紅色</strong>色素，藍、綠、黑也有報告</mark>；數月到數年後出現侷限於刺青的丘疹、結節。<span class="ex-ref ex-ref-mckee">McKee p.657</span></li>
+<li>組織：除 pseudolymphoma 特徵外，<mark data-q="105-11">刺青色素位於細胞外與 macrophages 內</mark>；罕見（rarely）有 lichenoid infiltrate。<span class="ex-ref ex-ref-mckee">McKee p.659</span></li>
+<li><mark data-q="105-11,108-12">紅色刺青的 <strong>mercuric sulfide（cinnabar）</strong>可能（may）引起 lichenoid 與 granulomatous 反應</mark>；汞顆粒位於 macrophages 內與細胞外，分布在表淺血管周圍。<span class="ex-ref ex-ref-mckee">McKee p.664</span></li>
 </ul>
 </section>

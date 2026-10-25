@@ -5,7 +5,7 @@
 <li>Superficial fungal infection 在本章指 keratinized tissue（皮膚、毛髮、指甲）的 dermatophyte 感染，稱 <strong>dermatophytosis</strong>：靠附著、侵入並以 keratin 為營養來源。<span class="ex-ref">p.2925</span></li>
 <li>Dermatophytes 約 <strong class="ex-n">40</strong> 種，分屬 3 個 genera：<em>Trichophyton</em>、<em>Microsporum</em>、<em>Epidermophyton</em>（皆屬 Arthrodermataceae）。美國最常分離出的是 <em>Trichophyton</em>，主要是 <em>T. rubrum</em> 與 <em>T. interdigitale</em>。<span class="ex-ref">p.2925</span></li>
 <li><mark data-q="112-15"><em>T. rubrum</em> 是皮膚 dermatophytosis 最常見的致病菌</mark>；<em>T. tonsurans</em> 是美國 tinea capitis 最常見的致病菌。<span class="ex-ref">p.2925</span></li>
-<li>命名：tinea + 拉丁部位名（barbae、capitis、corporis、cruris、favosa、manuum、nigra、pedis）；指甲感染稱 onychomycosis；毛幹感染稱 piedra。<span class="ex-ref">p.2927</span></li>
+<li>命名：tinea + 表示部位或其他描述的拉丁詞（barbae、capitis、corporis、cruris、favosa、manuum、nigra、pedis）；指甲感染稱 onychomycosis；毛幹感染稱 piedra。<span class="ex-ref">p.2927</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Genera / disease</th><th scope="col">Skin</th><th scope="col">Hair</th><th scope="col">Nails</th></tr></thead>
@@ -35,8 +35,8 @@
 <thead><tr><th scope="col">Habitat</th><th scope="col">Transmission &amp; behavior（傳染與特性）</th><th scope="col">Inflammation（發炎程度）</th></tr></thead>
 <tbody>
 <tr><td>Anthropophilic（親人性）</td><td>通常只以人為宿主，直接接觸或經衣物、梳子、帽子、襪子、毛巾傳染；常呈 <strong>epidemic</strong></td><td>Mild 至 noninflammatory</td></tr>
-<tr><td>Zoophilic（親動物性）</td><td>由動物傳給人（直接接觸或經動物毛）；好發外露部位：scalp、beard、face、arms；<mark data-q="102-09"><em>M. canis</em> 常由 cats、dogs 傳給人；guinea pigs 與 rabbits 則常傳 zoophilic <em>T. interdigitale</em></mark></td><td>Acute、intense</td></tr>
-<tr><td>Geophilic（親土性）</td><td>接觸土壤造成 sporadic 感染；毒力高、孢子可長期存活於毯子或理毛工具，有 epidemic 潛力；<mark data-q="106-41"><em>Microsporum gypseum</em> 是人類培養出最常見的 geophilic dermatophyte</mark></td><td>Intense</td></tr>
+<tr><td>Zoophilic（親動物性）</td><td>由動物傳給人（直接接觸或經動物毛）；好發外露部位：scalp、beard、face、arms；<mark data-q="102-09"><em>M. canis</em> 常由 cats、dogs 傳給人；guinea pigs 與 rabbits 則常傳 zoophilic <em>T. interdigitale</em></mark></td><td>傾向（tend to）acute、intense</td></tr>
+<tr><td>Geophilic（親土性）</td><td>接觸土壤造成 sporadic 感染；因 geophilic 菌株毒力較高，且能形成長效孢子、可能（may）藏於毯子或理毛工具，有 epidemic 擴散潛力；<mark data-q="106-41"><em>Microsporum gypseum</em> 是人類培養出最常見的 geophilic dermatophyte</mark></td><td>通常（typically）intense</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.2926。</p>
@@ -51,7 +51,7 @@
 <tr><td>Geophilic（Soil）</td><td><mark data-q="106-41"><em>M. gypseum</em></mark>、<em>M. cookei</em>、<em>M. persicolor</em>、<em>T. vanbreuseghemii</em>、<em>T. eboreum</em>、<em>T. terrestre</em></td></tr>
 </tbody>
 </table>
-<p class="ex-cite">Table 160-3，p.2927。本章新舊命名並用。</p>
+<p class="ex-cite">Table 160-3，p.2927。本章新舊命名並用（p.2926）。</p>
 <aside class="ex-trap"><strong>易錯</strong><em>M. ferrugineum</em> 與 <em>T. tonsurans</em> 是 anthropophilic，<em>T. verrucosum</em> 是 zoophilic（牛），<em>M. gypseum</em> 是 geophilic。<em>T. megninii</em> 在 Table 160-3 列為 <em>T. rubrum</em> 的同義名。<span class="ex-ref">p.2927</span></aside>
 </section>
 
@@ -72,14 +72,14 @@
 <li>Keratinolytic proteases、lipases 等 virulence factors 讓菌附著、利用 keratin 並侵入；keratin 分解釋出 proinflammatory mediators。典型 annular「ringworm」是宿主對向外擴散菌的發炎反應，加上中央菌量減少／清除所致。<span class="ex-ref">p.2927</span></li>
 <li><strong>Adherence</strong>：arthroconidia 經 adhesin 附著於 keratin，數小時後開始發芽。<strong>Invasion</strong>：trauma 與 maceration 促進穿透；分泌 proteases、lipases、ceramidases。Cell wall 成分（β-glucan、galactomannans、chitin）抑制 keratinocyte 增生與 cell-mediated immunity。<span class="ex-ref">p.2928</span></li>
 <li>Innate defense：antimicrobial peptides（defensins、cathelicidins、S100 proteins、sebum 的 fungistatic fatty acids）與競爭的細菌叢；keratinocytes 表現 C-type lectin receptors 與 TLRs（表面 TLR1、2、4、5、6；endosome TLR3、9）。<span class="ex-ref">p.2928</span></li>
-<li><strong>Dectin-1</strong> 結合 β-1,3-glucan → SYK–CARD9 → IL-23 → Th17；<strong>Dectin-2</strong>（dendritic cells）結合菌絲，誘發 Th17 反應；Th17 分泌 IL-17A、IL-17F、IL-22 對上皮抗黴菌免疫很重要。<span class="ex-ref">p.2928</span></li>
-<li><strong>Cell-mediated immunity（delayed-type hypersensitivity）</strong>：發炎反應與臨床痊癒相關；Th1 缺陷可造成 chronic 或 recurrent dermatophytosis；<strong>Th2 反應不具保護性</strong>（抗體效價高者反而感染廣泛）。<span class="ex-ref">p.2928</span></li>
-<li>Anthropophilic 菌誘發的 keratinocyte cytokine 較少；<em>T. rubrum</em> 的 <strong>mannans</strong> 比 <em>M. canis</em> 更能抑制 lymphoproliferation，可解釋 zoophilic 菌發炎較強。<em>T. rubrum</em> conidia 可下調 TLR2、TLR6 與 human β-defensin，以惰性 conidia 逃避免疫監視，等待條件適合再復發。<span class="ex-ref">p.2928–2929</span></li>
+<li><strong>Dectin-1</strong> 結合 β-1,3-glucan → SYK–CARD9 → IL-23 → Th17；發現菌絲會結合 dendritic cells 上的 <strong>Dectin-2</strong>（誘發 Th17 反應的關鍵受體），提示（suggested）Th17 反應可能參與 dermatophyte 感染；Th17 分泌 IL-17A、IL-17F、IL-22 對上皮抗黴菌免疫很重要。<span class="ex-ref">p.2928</span></li>
+<li><strong>Cell-mediated immunity（delayed-type hypersensitivity）</strong>：發炎反應與臨床痊癒相關；Th1 cell-mediated immunity 缺陷可能（may）造成 chronic 或 recurrent dermatophytosis；<strong>Th2 反應似乎（does not appear）不具保護性</strong>（觀察到抗體效價高者感染廣泛）。<span class="ex-ref">p.2928</span></li>
+<li>In vitro 研究中，anthropophilic 菌誘發 keratinocyte 分泌的 cytokine profile 比 zoophilic 菌有限（limited cytokine profile）；一項研究發現 <em>T. rubrum</em> 的 <strong>mannans</strong> 比 <em>M. canis</em> 更能抑制 mitogen-induced lymphoproliferation，此差異可能（may）反映臨床上 zoophilic 菌通常發炎較強。研究中 <em>T. rubrum</em> conidia 接觸 24 小時後 TLR2 表面表現下調，另一研究中 viable conidia 抑制 TLR2、TLR6 表現並減少 human β-defensin-1、-2；因此 <em>T. rubrum</em> 在短暫發炎清除活動性感染後，能以惰性 conidia 逃避上皮先天免疫監視，等待條件適合再發芽、復發。<span class="ex-ref">p.2928–2929</span></li>
 <li>McKee：<em>T. rubrum</em> 產生 mannan，可能抑制 antigen presentation 而降低宿主免疫反應；dermatophytes 以非 keratin 的可溶部分為營養，靠 keratin 躲避血清與宿主反應。<span class="ex-ref ex-ref-mckee">McKee p.924–925</span></li>
 </ul>
 <h3>Genetics（遺傳）</h3>
 <ul>
-<li>TLR 與其 adaptor 的突變增加細菌與病毒感染風險，但<strong>不增加黴菌感染</strong>；TLR1、TLR4 polymorphism 與 invasive fungal disease 相關，TLR3 polymorphism 與 cutaneous candidiasis 相關。<span class="ex-ref">p.2929</span></li>
+<li>TLR 與其 adaptor 的突變可能（may）增加細菌與病毒感染風險，但<strong>不增加黴菌感染</strong>；TLR1、TLR4 polymorphism 與 invasive fungal disease 相關，TLR3 polymorphism 與 cutaneous candidiasis 相關。<span class="ex-ref">p.2929</span></li>
 <li><strong>Dectin-1 polymorphism</strong> 與 <strong>CARD9 mutation</strong>（IL-17 下降）：chronic mucocutaneous candidiasis 合併 chronic dermatophyte infection。<span class="ex-ref">p.2929</span></li>
 <li>增加 mucocutaneous fungal infection：IL-17 receptor／cytokine genes、STAT1、STAT3、DOCK8、Tyk2、AIRE、IL-12RB1、MST1/STK4；增加 invasive fungal infection：CYBB、NCF1、NCF2、NCF4、CYBA、MAGT1、RAG1。<span class="ex-ref">p.2929</span></li>
 </ul>
@@ -99,9 +99,9 @@
 <p class="ex-cite">Table 160-4，p.2929。</p>
 <h3>KOH examination（直接鏡檢）</h3>
 <ul>
-<li>以 <strong class="ex-n">10–20%</strong> KOH 看到 <strong>septate、branching hyphae without constriction</strong>；所有 superficial dermatophytes 在 KOH 下外觀相同，無法分種、也無法知道藥物感受性。<span class="ex-ref">p.2930</span></li>
-<li>KOH 偽陰性可達 <strong class="ex-n">15%</strong>，臨床高度懷疑者仍應治療；需要全身治療（如 onychomycosis）時應考慮培養確認。<span class="ex-ref">p.2930</span></li>
-<li>技巧：用鈍刃（no. 15 blade 或玻片邊）由 advancing margin 向外刮；可微加熱或加 DMSO 幫助穿透；chlorazol black 可幫助辨識菌體。毛髮要 <strong>plucked（拔），不要剪</strong>。<span class="ex-ref">p.2930</span></li>
+<li>以 <strong class="ex-n">10–20%</strong> KOH 可能（may）看到 <strong>septate、branching hyphae without constriction</strong>；所有 superficial dermatophytes 在 KOH 下外觀相同，無法分種、也無法知道藥物感受性。<span class="ex-ref">p.2930</span></li>
+<li>KOH 偽陰性可達 <strong class="ex-n">15%</strong>，臨床印象懷疑 dermatophytosis 者應治療；需要全身治療（如 onychomycosis）時應考慮培養確認。<span class="ex-ref">p.2930</span></li>
+<li>技巧：用鈍刃（no. 15 blade 或玻片邊）由 advancing margin 向外刮；可微加熱或加 DMSO 幫助穿透；有人（some）認為加一滴 chlorazol black 等藍／黑色染劑有助辨識菌體。毛髮要 <strong>plucked（拔），不要剪</strong>。<span class="ex-ref">p.2930</span></li>
 <li>低倍鏡下毛髮三種型態：<strong>ectothrix</strong>（arthroconidia 在毛幹外成鞘）、<strong>endothrix</strong>（arthroconidia 在毛幹內）、<strong>favus</strong>（毛幹內菌絲與 air spaces）。<span class="ex-ref">p.2930</span></li>
 </ul>
 <h3>Culture（培養）</h3>
@@ -149,13 +149,13 @@
 <p class="ex-cite">Table 160-7，p.2933。</p>
 <h3>Histopathology（病理）</h3>
 <ul>
-<li>典型 dermatophytosis 很少切片；用於考慮全身治療的頑固或廣泛病灶、<strong>Majocchi granuloma</strong>（表面 KOH 常陰性）、確認 tinea capitis 毛幹內菌絲（但分種仍需培養）。<span class="ex-ref">p.2933</span></li>
+<li>典型 dermatophytosis 不常（not often）切片；切片可能（may）用於考慮全身治療的頑固或廣泛病灶、<strong>Majocchi granuloma</strong>（表面 KOH 較常可能陰性），有時（sometimes）用於確認 tinea capitis 侵犯毛幹的菌絲（但分種仍需培養）。<span class="ex-ref">p.2933</span></li>
 <li>H&amp;E 可見 stratum corneum 內菌絲，但 <strong>PAS</strong> 與 <strong>methenamine silver</strong> 染色更明顯。<span class="ex-ref">p.2933</span></li>
 <li><mark data-q="105-13">Onychomycosis：<strong>culture 最 specific</strong>，<strong>nail clipping PAS 最 sensitive</strong>，而且不用等數週</mark>；full-thickness 剪取 dystrophic 部分、在不受傷前提下盡量靠近近端。<span class="ex-ref">p.2933</span></li>
 </ul>
 <h3>Wood light fluorescence（伍氏燈）</h3>
 <ul>
-<li>Wood lamp（<strong class="ex-n">365 nm</strong>）可見感染毛髮的 <strong>pteridine fluorescence</strong>；會發螢光的毛髮應優先拿去培養。<span class="ex-ref">p.2933</span></li>
+<li>Wood lamp（<strong class="ex-n">365 nm</strong>）檢查可能（may）見到特定致病菌感染毛髮的 <strong>pteridine fluorescence</strong>；會發螢光的毛髮應挑選做進一步檢查（含培養）。<span class="ex-ref">p.2933</span></li>
 <li><mark data-q="101-25,110-18,112-15">Ectothrix 的 <em>M. canis</em>、<em>M. audouinii</em> 會發螢光；endothrix 的 <em>T. tonsurans</em> <strong>不發螢光</strong></mark>；<mark data-q="106-41,112-15">由於 <em>T. tonsurans</em> 已是美國 tinea capitis 最常見致病菌，限制了 Wood light 的用途</mark>。<span class="ex-ref">p.2933</span></li>
 </ul>
 <table class="ex-table">
@@ -182,7 +182,7 @@
 <thead><tr><th scope="col">Disease</th><th scope="col">Topical</th><th scope="col">Systemic（adults）</th><th scope="col">Systemic（children）</th></tr></thead>
 <tbody>
 <tr><td>Tinea capitis（<strong>requires systemic</strong>）</td><td>Only as adjuvant：selenium sulfide 1% 或 2.5%、zinc pyrithione 1% 或 2%、povidone-iodine 2.5%、ketoconazole 2%</td><td>Griseofulvin <strong class="ex-n">20–25 mg/kg/day × 6–8 weeks</strong>；terbinafine 250 mg/day × 2–8 weeks；itraconazole 5 mg/kg/day × 2–4 weeks；fluconazole 6 mg/kg/day × 3–6 weeks</td><td><mark data-q="104-31">Griseofulvin daily × <strong class="ex-n">6–8 weeks</strong>：1 month–2 years 10 mg/kg/day；≥2 years <strong class="ex-n">20–25 mg/kg/day</strong>（micro）或 10–15 mg/kg/day（ultramicro）</mark>；terbinafine × 2–4 weeks（&lt;20 kg 62.5 mg、20–40 kg 125 mg、&gt;40 kg 250 mg/day）；itraconazole 3–5 mg/kg/day × 2–4 weeks 或 5 mg/kg/day × 1 week/month × 2–3 months；fluconazole（not standard）6 mg/kg/day × 3–6 weeks 或 6 mg/kg weekly × 8–12 weeks</td></tr>
-<tr><td>Tinea barbae（<strong>requires systemic</strong>）</td><td>Only as adjuvant：zinc pyrithione、povidone-iodine</td><td>Griseofulvin 1 g/day × 6 weeks；terbinafine 250 mg/day × 2–4 weeks；itraconazole 200 mg/day × 2–4 weeks；fluconazole 200 mg/day × 4–6 weeks</td><td>—（原表此列未分 adults／children）</td></tr>
+<tr><td>Tinea barbae（<strong>requires systemic</strong>）</td><td>Only as adjuvant：zinc pyrithione、povidone-iodine</td><td>原表此列未標 adults／children：griseofulvin 1 g/day × 6 weeks；terbinafine 250 mg/day × 2–4 weeks；itraconazole 200 mg/day × 2–4 weeks；fluconazole 200 mg/day × 4–6 weeks</td><td>—（原表未分列，見左欄）</td></tr>
 <tr><td>Tinea corporis/cruris</td><td><mark data-q="107-18">Allylamines、imidazoles、tolnaftate、butenafine、ciclopirox</mark>、gentian violet</td><td>Terbinafine 250 mg/day × 2–4 weeks；itraconazole 100 mg/day × 1 week；fluconazole 150–300 mg/day × 4–6 weeks；griseofulvin 500 mg/day × 2–4 weeks</td><td>Terbinafine 3–6 mg/kg/day × 2 weeks；itraconazole 5 mg/kg/day × 1 week；griseofulvin 10–20 mg/kg/day × 2–4 weeks</td></tr>
 <tr><td>Tinea pedis/manuum</td><td><mark data-q="107-18">Allylamine、imidazoles、ciclopirox</mark>、benzylamine、<mark data-q="107-18">tolnaftate</mark>、undecenoic acid</td><td>Terbinafine 250 mg/day × 2 weeks；itraconazole 200 mg bid × 1 week；fluconazole 150 mg/week × 3–4 weeks</td><td>Terbinafine 3–6 mg/kg/day × 2 weeks；itraconazole 5 mg/kg/day × 2 weeks</td></tr>
 <tr><td>Onychomycosis</td><td>Ciclopirox、amorolfine、tioconazole、efinaconazole</td><td>Terbinafine 250 mg/day × <strong class="ex-n">6–12 weeks</strong>；itraconazole 200 mg/day × 2–3 months，或 pulse 400 mg/day × 1 week/month × 2–3 months；fluconazole 150–300 mg/week × 3–12 months</td><td>Terbinafine daily × 6–12 weeks（10–20 kg 62.5 mg、20–40 kg 125 mg、&gt;40 kg 250 mg）；itraconazole 1 week/month × 2–3 months（依體重）；fluconazole 3–6 mg/kg/week × 3–6 months</td></tr>
@@ -199,7 +199,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 160-10，p.2935。</p>
-<aside class="ex-trap"><strong>易錯</strong>Table 160-10：fluconazole D、griseofulvin X、itraconazole C、terbinafine B。<span class="ex-ref">p.2935</span>ch188 Table 188-2 則把 fluconazole 與 griseofulvin 列為 C、terbinafine 列為 B。<span class="ex-ref">p.3439–3440</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>Table 160-10：fluconazole D、griseofulvin X、itraconazole C、terbinafine B。<span class="ex-ref">p.2935</span>ch188 Table 188-2 則把 fluconazole 與 griseofulvin 列為 C、terbinafine 列為 B。<span class="ex-ref">p.3439–3440（ch188）</span></aside>
 <table class="ex-table">
 <thead><tr><th scope="col">Topical agent</th><th scope="col">Class / mechanism</th><th scope="col">Use &amp; administration（用途與用法）</th><th scope="col">Notes（備註）</th></tr></thead>
 <tbody>
@@ -221,7 +221,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 160-11，p.2935–2936。</p>
-<aside class="ex-trap"><strong>易錯</strong>Table 160-11 未列 nystatin。ch188：nystatin 是 polyene，對 dermatophytes 或 <em>Malassezia</em> 無效。<span class="ex-ref">p.3446</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>Table 160-11 未列 nystatin。ch188：nystatin 是 polyene，對 dermatophytes 或 <em>Malassezia</em> 無效。<span class="ex-ref">p.3446（ch188）</span></aside>
 </section>
 
 <section class="ex-note" id="id-reaction">
@@ -242,7 +242,7 @@
 </table>
 <p class="ex-cite">p.2937。Vesiculobullous 與 acute ulcerative tinea pedis 常引起 vesicular id（足外側、趾或手指側面），p.2949。</p>
 <ul>
-<li>McKee：Id（autosensitization）reaction 為對遠處皮膚病或感染產生的 generalized spongiotic dermatitis，可呈手腳 pompholyx-like 或軀幹四肢散在丘疹；dermatophyte infection 是相關病因之一，原病治好即消退。<span class="ex-ref ex-ref-mckee">McKee p.205</span></li>
+<li>McKee：Id（autosensitization）reaction：偶有（on occasion）病人對遠處皮膚病或感染產生 generalized spongiotic dermatitis，可呈手腳 pompholyx-like 或軀幹四肢散在丘疹；dermatophyte infection 是相關病因之一，原病治好即消退。<span class="ex-ref ex-ref-mckee">McKee p.205</span></li>
 </ul>
 </section>
 
@@ -253,8 +253,8 @@
 </ul>
 <h3>Epidemiology（流行病學）</h3>
 <ul>
-<li>最常見的指甲疾病，約佔 onychodystrophy 的 <strong class="ex-n">50%</strong>；盛行率可達 <strong class="ex-n">14%</strong>，老年人增加；兒童 dermatophyte 感染中可佔 <strong class="ex-n">20%</strong>，兒童 onychodystrophy 中可佔 <strong class="ex-n">15%</strong>。<span class="ex-ref">p.2937，p.2939</span></li>
-<li>Risk factors：年齡、男性、指甲外傷、hyperhidrosis、免疫抑制（HIV、DM、藥物）、peripheral vascular disease。HIV 且 CD4 <strong class="ex-n">&lt;400 cells/µL</strong> 者風險高，常廣泛侵犯 <strong>全部 20 片指甲</strong>。<span class="ex-ref">p.2937，p.2939</span></li>
+<li>最常見的指甲疾病，約佔 onychodystrophy 的 <strong class="ex-n">50%</strong>；影響最多（up to）<strong class="ex-n">14%</strong> 人口，盛行率上升，老年人的發生率也整體上升；兒童 dermatophyte 感染中最多（up to）佔 <strong class="ex-n">20%</strong>，兒童 onychodystrophy 中可能最多（may…up to）佔 <strong class="ex-n">15%</strong>。<span class="ex-ref">p.2937，p.2939</span></li>
+<li>Risk factors：年齡、男性、指甲外傷、hyperhidrosis、免疫抑制（HIV、DM、藥物）、peripheral vascular disease。HIV 且 CD4 <strong class="ex-n">&lt;400 cells/µL</strong>、並使用免疫抑制劑或 PMN chemotaxis 缺陷者風險增加，且傾向（tends to）較廣泛、侵犯 <strong>全部 20 片指甲</strong>。<span class="ex-ref">p.2937，p.2939</span></li>
 <li>常由 tinea pedis 延伸至甲床，<mark data-q="101-10">甲床成為局部復發或擴散的 reservoir</mark>；toenail onychomycosis 最多 <strong class="ex-n">40%</strong> 合併皮膚感染，最常是 tinea pedis（<strong class="ex-n">30%</strong>）。<span class="ex-ref">p.2937</span></li>
 <li>McKee：佔指甲疾病 <strong class="ex-n">18–50%</strong>；英、北美、澳洲一般人口 <strong class="ex-n">2–3%</strong>，老年人可達 <strong class="ex-n">15%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.1132</span></li>
 </ul>
@@ -276,20 +276,20 @@
 <aside class="ex-trap"><strong>易錯</strong>Fitzpatrick：<strong>PSO</strong> 病人應篩檢 HIV；臨床分 3 型（DLSO、PSO、WSO），另述 total dystrophic onychomycosis。<span class="ex-ref">p.2937</span>McKee 分 6 型（DLSO、SO、PSO、EO、TDO、MPO）。<span class="ex-ref ex-ref-mckee">McKee p.1132</span></aside>
 <h3>Etiology（致病菌）</h3>
 <ul>
-<li>多數為 dermatophytes：<strong><em>T. rubrum</em> 與 <em>T. interdigitale</em> 約佔 <strong class="ex-n">90%</strong></strong>；<em>T. tonsurans</em>、<em>E. floccosum</em> 也有報告。<span class="ex-ref">p.2938</span></li>
-<li>Yeast 與 nondermatophyte molds（<em>Acremonium</em>、<em>Aspergillus</em>、<em>Fusarium</em>、<em>Scopulariopsis brevicaulis</em>、<em>Scytalidium</em>）約佔 toenail 的 <strong class="ex-n">10%</strong>；<em>Candida</em> 可佔 <strong>fingernail</strong> 的 <strong class="ex-n">30%</strong>，fingernail 沒有分離出 nondermatophyte molds。<em>Candida</em>（與 irritant dermatitis）也可造成 chronic paronychia。<span class="ex-ref">p.2938–2939</span></li>
+<li>多數為 dermatophytes：<strong><em>T. rubrum</em> 與 <em>T. interdigitale</em> 約佔 <strong class="ex-n">90%</strong></strong>；<em>T. tonsurans</em>、<em>E. floccosum</em> 也是有充分記載（well-documented）的致病菌。<span class="ex-ref">p.2938</span></li>
+<li>Yeast 與 nondermatophyte molds（<em>Acremonium</em>、<em>Aspergillus</em>、<em>Fusarium</em>、<em>Scopulariopsis brevicaulis</em>、<em>Scytalidium</em>）約佔 toenail 的 <strong class="ex-n">10%</strong>；<em>Candida</em> 最多（up to）佔 <strong>fingernail</strong> 病例的 <strong class="ex-n">30%</strong>，fingernail 沒有分離出 nondermatophyte molds。<em>Candida</em>（與 irritant dermatitis）也可能（may）造成 chronic paronychia。<span class="ex-ref">p.2938–2939</span></li>
 <li>McKee：Central Europe dermatophytes 可達 <strong class="ex-n">80%</strong>，<em>T. rubrum</em> <strong class="ex-n">60–70%</strong>；yeast <strong class="ex-n">5–17%</strong>，十例中七例為 <em>C. albicans</em>（fingernails）與 <em>C. parapsilosis</em>（toenails）；molds <strong class="ex-n">&lt;5%</strong>。<span class="ex-ref ex-ref-mckee">McKee p.1132</span></li>
 </ul>
 <h3>Diagnosis（診斷）</h3>
 <ul>
-<li>Onychomycosis 只佔 dystrophic nails 的 <strong class="ex-n">50%</strong>，口服藥有毒性，治療前應實驗室確認：甲下碎屑 KOH、甲板與碎屑 SDA 培養（含與不含抗菌劑）、nail clipping PAS。KOH 常陰性；KOH 有菌絲者培養也常陰性 → 加大檢體量並重複採檢。<span class="ex-ref">p.2939</span></li>
+<li>Onychomycosis 只佔 dystrophic nails 的 <strong class="ex-n">50%</strong>，口服抗黴菌藥可能有毒性（potentially toxic），治療前宜實驗室確認：甲下碎屑 KOH、甲板與碎屑 SDA 培養（含與不含抗菌劑）、nail clipping PAS。KOH 常陰性；KOH 有菌絲者培養也常陰性 → 加大檢體量並重複採檢。<span class="ex-ref">p.2939</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Guidelines：pathogen vs contaminant（判定致病菌）</th></tr></thead>
 <tbody>
 <tr><td><mark data-q="105-13">(a) 培養分離出 <strong>dermatophyte</strong> → 視為 pathogen</mark></td></tr>
 <tr><td><mark data-q="105-13">(b) 培養出 nondermatophyte mold 或 yeast → 只有在鏡檢同時看到 hyphae、spores 或 yeast cells 才有意義</mark></td></tr>
-<tr><td><mark data-q="105-13">(c) <strong>反覆大量</strong>長出同一 nondermatophyte mold，且沒有同時分離出 dermatophyte</mark></td></tr>
+<tr><td><mark data-q="105-13">(c) <strong>反覆大量</strong>長出 nondermatophyte mold，且沒有同時分離出 dermatophyte</mark></td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.2939。</p>
@@ -297,8 +297,8 @@
 <li>建議收 nail clippings（含最近端受侵犯處的全層，不造成外傷）送 PAS 與 H&amp;E。<span class="ex-ref">p.2939</span></li>
 <li>Histopathology：菌絲位於甲板層間、與表面平行，偏好 ventral nail 與甲床角質層；表皮可有 spongiosis、focal parakeratosis，真皮發炎輕微。WSO 菌體在 dorsal nail 表淺處，具 <strong>perforating organs</strong> 與 <strong>eroding fronds</strong>；candidal onychomycosis 的 pseudohyphae 遍布整個甲板、cuticle、甲床顆粒層與棘層。<span class="ex-ref">p.2939</span></li>
 <li>McKee：<mark data-q="105-13">PAS 染色可確認診斷、判斷侵犯範圍（subungual、superficial、total）、推測致病菌類別（dermatophyte、yeast、mold）並保存玻片；但<strong>無法精確鑑定菌種</strong>，需 culture 或 PCR</mark>；若不是黴菌，切片也可能找到其他診斷（尤其 psoriasis）。<span class="ex-ref ex-ref-mckee">McKee p.1132–1133</span></li>
-<li>McKee 菌型判讀：規則、直、有隔、與甲面平行的菌絲 → dermatophyte；小圓 budding yeast、pseudohyphae、短絲 → yeast；只有孢子無 pseudohyphae 可能是污染；truncated spores 與發出細 perforating filaments 的不規則菌絲 → mold。縱切切片常呈 psoriasiform（甲床上皮增生、neutrophil exocytosis、spongiosis、parakeratosis 與 neutrophil mounds），靠 PAS 確診。<span class="ex-ref ex-ref-mckee">McKee p.1133</span></li>
-<li>McKee：多數研究認為 PAS 最 sensitive，但也有人認為不比直接鏡檢好（與採檢技術有關）。<span class="ex-ref ex-ref-mckee">McKee p.1133</span></li>
+<li>McKee 菌型判讀：規則、直、有隔、傾向（tend to）與甲面平行的菌絲支持（speak in favor of）dermatophyte；小圓 yeast（部分 budding）、pseudohyphae 及／或短絲見於 yeast；只有孢子無 pseudohyphae 可能是污染、不足以診斷；truncated spores 與發出細 perforating filaments 的不規則菌絲代表 mold。縱切切片常呈 psoriasiform（甲床上皮增生、neutrophil exocytosis、spongiosis、parakeratosis 與 neutrophil mounds），靠 PAS 確診。<span class="ex-ref ex-ref-mckee">McKee p.1133</span></li>
+<li>McKee：越來越多（more and more）研究認為 PAS 最 sensitive，但也有人認為不比直接鏡檢好（與採檢技術有關）。<span class="ex-ref ex-ref-mckee">McKee p.1133</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Differential diagnosis（Table 160-13）</th><th scope="col">Conditions</th></tr></thead>
@@ -314,11 +314,11 @@
 <li>可以不治療指甲，但<strong>合併的 tinea pedis 一定要治療</strong>，以降低 cellulitis 風險（尤其 DM、chronic venous stasis、慢性下肢水腫）。<span class="ex-ref">p.2939</span></li>
 <li>Systemic：侵犯 <strong>matrix</strong>、或希望療程較短／治癒率較高時需要口服藥；依致病菌、副作用、藥物交互作用與共病選藥。<span class="ex-ref">p.2939</span></li>
 <li><mark data-q="112-15"><strong>Griseofulvin 不再是 onychomycosis 的標準治療</strong>：療程長、潛在副作用與藥物交互作用、治癒率相對低</mark>。<span class="ex-ref">p.2939</span></li>
-<li>Topical：遠端侵犯、WSO、或全身治療禁忌時考慮；<mark data-q="101-10">topical therapy 可用來預防復發</mark>。<span class="ex-ref">p.2939</span></li>
+<li>Topical：遠端侵犯、WSO、或全身治療禁忌時考慮；<mark data-q="101-10">topical therapy 可能有助於（may be useful）預防復發</mark>。<span class="ex-ref">p.2939</span></li>
 <li>Combination（topical tioconazole、ciclopirox、amorolfine 合併口服）可能有較高清除率，但結果不一；thymol、camphor、menthol、<em>Eucalyptus citriodora</em> 油有 in vitro 殺菌作用（thymol 4% in ethanol；Vicks VapoRub 有 anecdotal 成功）。<span class="ex-ref">p.2939</span></li>
 <li>Mechanical：修剪、debridement、nail bed curettage、nail abrasion；頑固者可用 laser、surgical avulsion，或 <strong class="ex-n">40%</strong> urea 化學去甲合併外用或口服抗黴菌藥。<span class="ex-ref">p.2939–2940</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Table 160-10 列 terbinafine 為 onychomycosis first-line；griseofulvin 已不再是 onychomycosis 的標準治療。<span class="ex-ref">p.2935，p.2939</span>ch91：yeasts 與部分 nondermatophyte molds 以 itraconazole 治療較好。<span class="ex-ref">p.1595</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>Table 160-10 列 terbinafine 為 onychomycosis first-line；griseofulvin 已不再是 onychomycosis 的標準治療。<span class="ex-ref">p.2935，p.2939</span>ch91：yeasts 與部分 nondermatophyte molds 以 itraconazole 治療較好。<span class="ex-ref">p.1595（ch91）</span></aside>
 </section>
 
 <section class="ex-note" id="piedra">
@@ -334,30 +334,30 @@
 <tr><td>Site（部位）</td><td><strong>Scalp hair</strong> 最常見（尤其額部）</td><td>Facial、axillary、genital hair 多於 scalp；<em>T. ovoides</em> 頭皮、<em>T. inkin</em> 陰毛、<em>T. asahii</em> 其他體表</td></tr>
 <tr><td>Nodules（結節）</td><td>堅硬、砂粒感、緊附的 brown-black concretions；削弱毛幹 → 斷髮</td><td>較軟、易脫落的白至米色結節，可融合成 sleeve-like；斷髮較少</td></tr>
 <tr><td>KOH</td><td>周邊排列整齊菌絲，中央緊密厚壁細胞（<strong>pseudoparenchyma</strong>）；結節多在毛幹外</td><td>較不規則、偏 <strong>intrapilar</strong>；菌絲與毛幹<strong>垂直</strong></td></tr>
-<tr><td>Culture（培養）</td><td>生長慢；<strong>不受 cycloheximide 抑制</strong></td><td><em>T. asahii</em> 在 SDA 長得好，<strong>受 cycloheximide 抑制</strong></td></tr>
+<tr><td>Culture（培養）</td><td>在多數培養基生長良好但緩慢；<strong>不受 cycloheximide 抑制</strong></td><td><em>T. asahii</em> 在 SDA 長得好，<strong>受 cycloheximide 抑制</strong></td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.2940。</p>
 <ul>
-<li>鏡檢可區分 piedra 與 nits、hair casts、先天毛幹異常與 <mark data-q="102-12">trichomycosis axillaris（結節較小，Wood lamp 下可能發螢光；為細菌性 <em>Corynebacterium</em> 感染，詳見 ch150）</mark>。<span class="ex-ref">p.2940</span></li>
+<li>鏡檢可區分 piedra 與 nits、hair casts、發育性毛幹缺陷（developmental hair shaft defects）與 <mark data-q="102-12">trichomycosis axillaris（結節通常較小，Wood lamp 下可能發螢光；ch150 稱 trichobacteriosis，為 aerobic <em>Corynebacterium</em> 引起的毛幹細菌感染）</mark>。<span class="ex-ref">p.2940；p.2743（ch150）</span></li>
 <li>DDx（Table 160-14）：most likely pediculosis、<mark data-q="102-12">trichomycosis axillaris</mark>、tinea capitis；consider monilethrix。<span class="ex-ref">p.2940</span></li>
-<li>Treatment：<strong>剃除感染毛髮可治癒，是兩型首選治療</strong>，並輔以外用 azole；white piedra 復發率高且有毛囊內菌體，部分學者主張口服 itraconazole。<span class="ex-ref">p.2940</span></li>
+<li>Treatment：<strong>剃除感染毛髮可治癒，是兩型首選治療</strong>，並輔以外用 azole；因復發率高，加上 white piedra 有毛囊內菌體的證據，部分學者（some）主張使用全身性抗黴菌藥如 itraconazole。<span class="ex-ref">p.2940</span></li>
 <li>McKee（black piedra）：<em>P. hortae</em> 為 ascomycete，幾乎只侵犯頭皮，成人居多；結節內可見大量 <strong>asci 與 ascospores</strong>；毛幹 cuticle 與 cortex 受損來自菌的 keratolytic activity。<span class="ex-ref ex-ref-mckee">McKee p.927</span></li>
-<li>McKee（white piedra）：又稱 trichosporosis，過去歸於 <em>Trichosporon beigelii</em>，後鑑定為 basidiomycetous yeast <em>T. inkin</em>；男性多於女性、黑人較多，兒童也可見，指甲侵犯極少；嗜中性球低下或 HIV 病人可出現 disseminated disease（紫斑性丘疹結節與壞死）；KOH 可見大量菌絲與 arthrospores。<span class="ex-ref ex-ref-mckee">McKee p.928</span></li>
+<li>McKee（white piedra）：又稱 trichosporosis，過去歸於 <em>Trichosporon beigelii</em>，後鑑定為 basidiomycetous yeast <em>T. inkin</em>；男性多於女性、黑人較多，兒童也可見，指甲侵犯極少；嗜中性球低下的免疫不全者或 HIV 病人偶爾（occasionally）可出現 disseminated disease（紫斑性丘疹結節與壞死）；KOH 可見大量菌絲與 arthrospores。<span class="ex-ref ex-ref-mckee">McKee p.928</span></li>
 </ul>
 </section>
 
 <section class="ex-note" id="tinea-barbae">
 <h2>10. Tinea Barbae（鬚癬）</h2>
 <ul>
-<li>主要發生於男性鬍鬚區；理髮刀傳染因衛生改善而減少，<mark data-q="102-37">現在主要是直接接觸 cattle、horses、dogs，好發於鄉間 farmers 或 ranchers</mark>。<span class="ex-ref">p.2940</span></li>
+<li>主要發生於男性鬍鬚區；理髮刀傳染因衛生改善而減少，<mark data-q="102-37">現在較常見（more common）的傳染方式是直接接觸 cattle、horses、dogs，因此盛行轉向（shift toward）鄉間 farmers 或 ranchers</mark>。<span class="ex-ref">p.2940</span></li>
 <li>單側臉部，beard area 多於 moustache 或上唇。<span class="ex-ref">p.2940</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Type</th><th scope="col">Organism</th><th scope="col">Features（特徵）</th></tr></thead>
 <tbody>
-<tr><td>Superficial type</td><td>Anthropophilic，如 <em>T. violaceum</em></td><td>較不發炎，像 tinea corporis 或細菌性 folliculitis；邊緣 perifollicular papules、pustules；掉髮可逆</td></tr>
-<tr><td>Inflammatory type（<strong>最常見</strong>）</td><td>Zoophilic <em>T. interdigitale</em>、<em>T. verrucosum</em></td><td>類似 kerion：boggy crusted plaques、seropurulent discharge；毛髮易拔出且根部有膿；可形成膿瘍、sinus tracts 與 <mark data-q="112-01">scarring alopecia</mark></td></tr>
+<tr><td>Superficial type</td><td>Anthropophilic，如 <em>T. violaceum</em></td><td>較不發炎，像 tinea corporis 或細菌性 folliculitis；邊緣 perifollicular papules、pustules；若有掉髮則可逆</td></tr>
+<tr><td>Inflammatory type（<strong>最常見</strong>）</td><td>通常（usually）為 zoophilic <em>T. interdigitale</em>、<em>T. verrucosum</em></td><td>類似 kerion：boggy crusted plaques、seropurulent discharge；毛髮易拔出且根部有膿；perifollicular pustules 可能（may）融合形成膿瘍樣膿液聚集、sinus tracts 與 <mark data-q="112-01">scarring alopecia</mark></td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.2940–2941；Table 160-12，p.2938。</p>
@@ -365,18 +365,18 @@
 <li>Etiology：最常為 zoophilic <em>T. interdigitale</em>（舊名 <em>T. mentagrophytes</em> var. <em>mentagrophytes</em>）、<em>T. verrucosum</em>，較少 <em>M. canis</em>；流行區的 anthropophilic 菌有 <em>T. schoenleinii</em>、<em>T. violaceum</em>、部分 <em>T. rubrum</em>（舊名 <em>T. megninii</em>）。<span class="ex-ref">p.2941</span></li>
 <li>DDx（Table 160-15）：bacterial folliculitis（sycosis vulgaris）、pseudofolliculitis barbae、acne、rosacea、contact dermatitis、perioral dermatitis、candidal folliculitis；rule out herpes simplex、halogenoderma。<span class="ex-ref">p.2941</span></li>
 <li>Treatment：如 tinea capitis，<strong>通常需要口服抗黴菌藥</strong>；嚴重發炎者治療第一週合併 systemic glucocorticoids 有幫助。<span class="ex-ref">p.2941</span></li>
-<li>McKee：tinea barbae（tinea sycosis）幾乎都是成年男性，最常見於 farm workers，可表現為鬍鬚區 pustular folliculitis 或 kerion。<span class="ex-ref ex-ref-mckee">McKee p.926</span></li>
+<li>McKee：tinea barbae（tinea sycosis）一律（invariably）為成年男性，最常見於 farm workers，可表現為鬍鬚區 pustular folliculitis 或 kerion。<span class="ex-ref ex-ref-mckee">McKee p.926</span></li>
 </ul>
 </section>
 
 <section class="ex-note" id="tinea-capitis">
 <h2>11. Tinea Capitis（頭癬）</h2>
 <ul>
-<li>頭髮與頭皮的 dermatophyte 感染，由 <em>Trichophyton</em> 與 <em>Microsporum</em> 引起，<strong>但 <em>T. concentricum</em> 例外</strong>（不引起頭癬）。<span class="ex-ref">p.2941</span></li>
+<li>頭髮與頭皮的 dermatophyte 感染，通常（typically）由 <em>Trichophyton</em> 與 <em>Microsporum</em> 引起，<strong>但 <em>T. concentricum</em> 例外</strong>（不引起頭癬）。<span class="ex-ref">p.2941</span></li>
 </ul>
 <h3>Epidemiology（流行病學）</h3>
 <ul>
-<li>最常見於 <strong class="ex-n">3–14 歲</strong>兒童；青春期後 sebum 的 fungistatic fatty acids 使發生率驟降。<span class="ex-ref">p.2941</span></li>
+<li>最常見於 <strong class="ex-n">3–14 歲</strong>兒童；sebum 中 fatty acids 的 fungistatic 作用可能有助於解釋（may help to explain）青春期後發生率驟降。<span class="ex-ref">p.2941</span></li>
 <li>美國 carrier state 約 <strong class="ex-n">4%</strong>，sub-Saharan African American 女孩最高約 <strong class="ex-n">13%</strong>；非洲裔兒童較常見；衛生差、擁擠、社經地位低增加傳染。<span class="ex-ref">p.2941–2942</span></li>
 <li><mark data-q="112-15">美國與英國最常見 <em>T. tonsurans</em></mark>，歐洲仍以 <em>M. canis</em> 為主。梳子、帽子、枕頭套、玩具、戲院座椅都可培養出菌；脫落的毛髮可帶菌 <strong class="ex-n">&gt;1 year</strong>；大量無症狀帶菌者使根除困難。<span class="ex-ref">p.2942</span></li>
 <li>McKee：tinea capitis 是兒童最常見的 dermatophytosis；<em>M. canis</em> 是歐洲最常見；歐洲都市（尤其法國）轉向 anthropophilic <em>M. audouinii</em>；<em>T. violaceum</em> 是南非最常見；<em>T. tonsurans</em> 是美國最常見。<span class="ex-ref ex-ref-mckee">McKee p.925–926</span></li>
@@ -385,9 +385,9 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Type</th><th scope="col">Organisms</th><th scope="col">Clinical features（臨床特徵）</th></tr></thead>
 <tbody>
-<tr><td>Noninflammatory（seborrheic form；<strong>gray patch</strong>）</td><td><mark data-q="102-09,110-18">Anthropophilic，如 <em>M. audouinii</em>、<em>M. ferrugineum</em></mark>（Table 160-12 另列 <em>M. canis</em>、<em>T. tonsurans</em>）</td><td>以 scale 為主；arthroconidia 包覆毛髮使之變灰並在頭皮上方斷裂；掉髮可不明顯，較發炎者呈界線清楚（circumscribed）的紅斑脫屑 nonscarring alopecia 斑塊（gray patch），常在 occiput；<mark data-q="110-18">ectothrix 時 Wood light 下呈 green fluorescence</mark></td></tr>
-<tr><td><mark data-q="103-36">“Black dot”</mark></td><td><mark data-q="103-36,110-18">Anthropophilic <strong>endothrix</strong>：<em>T. tonsurans</em>、<em>T. violaceum</em></mark></td><td><mark data-q="103-36">毛髮在頭皮表面斷裂，留下成群黑點</mark>；polygonal alopecia、finger-like margins，斑內仍有正常毛髮；常有 diffuse scaling；發炎輕微，但少數可有 pustules、furuncle-like nodules，罕見 kerion</td></tr>
-<tr><td>Inflammatory（含 <strong>kerion</strong>）</td><td><mark data-q="102-09,110-18">Zoophilic 或 geophilic：<em>M. canis</em>、<em>M. gypseum</em>、<em>T. verrucosum</em></mark>（經 hypersensitivity reaction）</td><td>Follicular pustules → furunculosis → kerion（boggy inflammatory mass，佈滿斷髮與流膿毛囊口）；癢或痛；<strong>posterior cervical lymphadenopathy</strong> 常見，是與其他頭皮發炎疾病區分的線索；<mark data-q="112-01">強烈發炎可造成 <strong>scarring alopecia</strong></mark></td></tr>
+<tr><td>Noninflammatory（seborrheic form；<strong>gray patch</strong>）</td><td><mark data-q="102-09,110-18">最常見於 anthropophilic 菌，如 <em>M. audouinii</em>、<em>M. ferrugineum</em></mark>（Table 160-12 另列 <em>M. canis</em>、<em>T. tonsurans</em>）</td><td>以 scale 為主；arthroconidia 可能（may）包覆毛髮使之變灰並在頭皮上方斷裂；掉髮可能（may）不明顯，較發炎者可能呈界線清楚（circumscribed）的紅斑脫屑 nonscarring alopecia 斑塊（gray patch），常在 occiput；<mark data-q="110-18">ectothrix 時感染毛髮在 Wood light 下可能（may）呈 green fluorescence</mark></td></tr>
+<tr><td><mark data-q="103-36">“Black dot”</mark></td><td><mark data-q="103-36,110-18">通常（typically）為 anthropophilic <strong>endothrix</strong>：<em>T. tonsurans</em>、<em>T. violaceum</em></mark></td><td><mark data-q="103-36">毛髮在頭皮表面斷裂，留下成群黑點</mark>；polygonal alopecia、finger-like margins，斑內仍有正常毛髮；常有 diffuse scaling；傾向（tends to）發炎輕微，但少數可有 pustules、furuncle-like nodules，罕見 kerion</td></tr>
+<tr><td>Inflammatory（含 <strong>kerion</strong>）</td><td><mark data-q="102-09,110-18">Zoophilic 或 geophilic 菌較可能（more likely）引起，如 <em>M. canis</em>、<em>M. gypseum</em>、<em>T. verrucosum</em></mark>（經 hypersensitivity reaction）</td><td>發炎程度從 follicular pustules 到 furunculosis 或 kerion（boggy inflammatory mass，佈滿斷髮與流膿毛囊口）；頭皮通常癢或痛；<strong>posterior cervical lymphadenopathy</strong> 常見，可作為（may serve as）與其他頭皮發炎疾病區分的線索；<mark data-q="112-01">強烈發炎也可能（may）造成 <strong>scarring alopecia</strong></mark></td></tr>
 <tr><td>Favus</td><td><mark data-q="103-36"><em>T. schoenleinii</em>、<em>T. violaceum</em>、<em>T. mentagrophytes</em></mark></td><td>見下方 Tinea favosa</td></tr>
 </tbody>
 </table>
@@ -395,16 +395,16 @@
 <aside class="ex-trap"><strong>易錯</strong>Black dot 通常由 anthropophilic endothrix 的 <em>T. tonsurans</em>、<em>T. violaceum</em> 引起；favus 最常見的致病菌是 <em>T. schoenleinii</em>。<em>M. ferrugineum</em> 是 anthropophilic，見於 noninflammatory 型。Inflammatory 型較常由 zoophilic 或 geophilic 菌（<em>M. canis</em>、<em>M. gypseum</em>、<em>T. verrucosum</em>）引起。<span class="ex-ref">p.2942，p.2946</span>Table 160-8 中 <em>M. canis</em> 呈 yellow-green，<em>M. gypseum</em> 與 <em>T. verrucosum</em> 無螢光。<span class="ex-ref">p.2933</span></aside>
 <h3>Hair invasion &amp; diagnosis（毛髮侵犯與診斷）</h3>
 <ul>
-<li>菌先在毛囊周圍角質層建立感染，沿 mid- 至 late-anagen 毛幹周圍與內部擴散，再下行穿入 cortex；感染段隨生長升出頭皮而斷裂。<span class="ex-ref">p.2942–2943</span></li>
-<li><strong>Ectothrix</strong>：雖然毛幹內也有菌絲，但只看得到毛幹表面的 arthroconidia，<strong>cuticle 被破壞</strong>；依菌種可見 yellow-green fluorescence。<span class="ex-ref">p.2943</span></li>
+<li>菌先在毛囊周圍角質層建立感染，沿 mid- 至 late-anagen 毛幹周圍與內部擴散，再下行穿入 cortex；感染段隨生長升出頭皮，可能（may）因脆性增加而斷裂。<span class="ex-ref">p.2942–2943</span></li>
+<li><strong>Ectothrix</strong>：雖然毛幹內也有菌絲，但只看得到毛幹表面的 arthroconidia，<strong>cuticle 被破壞</strong>；依菌種可能（may）偵測到 yellow-green fluorescence。<span class="ex-ref">p.2943</span></li>
 <li><mark data-q="110-18,112-15"><strong>Endothrix</strong>：arthroconidia 與菌絲留在毛幹內，cortex 與 cuticle 完整；形成 black dots；<strong>不發螢光</strong></mark>。<span class="ex-ref">p.2943</span></li>
 <li><strong>Favus</strong>：毛幹內縱向排列菌絲與 air spaces，通常看不到 arthroconidia。<span class="ex-ref">p.2943</span></li>
-<li>Histopathology：PAS 與 methenamine silver 顯示毛幹周圍與內部菌絲；真皮 perifollicular mixed infiltrate（lymphocytes、histiocytes、plasma cells、eosinophils），毛囊破裂引起 foreign-body giant cell reaction；kerion 為真皮與毛囊內急性 PMN 浸潤，<strong>強烈宿主反應破壞菌體，常看不到菌</strong>，但可用 immunofluorescence 偵測黴菌抗原。<span class="ex-ref">p.2943</span></li>
+<li>Histopathology：PAS 與 methenamine silver 顯示毛幹周圍與內部菌絲；真皮 perifollicular mixed infiltrate（lymphocytes、histiocytes、plasma cells、eosinophils），毛囊破裂引起 foreign-body giant cell reaction；kerion 為真皮與毛囊內急性 PMN 浸潤，<strong>強烈宿主反應破壞許多菌體，可能（may）看不到菌</strong>，但黴菌抗原可能（may）可用 immunofluorescence 技術偵測。<span class="ex-ref">p.2943</span></li>
 </ul>
 <h3>McKee histopathology（McKee 補充）</h3>
 <ul>
-<li><em>M. canis</em>／<em>M. audouinii</em>（ectothrix）：arthrospores 包覆毛幹外，菌絲延伸入毛幹至 mid follicle；表皮 acanthosis、patchy parakeratosis，淺層真皮混合浸潤（<em>M. canis</em> 較明顯）；Wood lamp 可見螢光；男孩遠多於女孩。<span class="ex-ref ex-ref-mckee">McKee p.925</span></li>
-<li>Kerion：McKee 寫<strong>最常由 <em>T. interdigitale</em>（舊稱 <em>T. mentagrophytes</em>）引起</strong>，其他有 <em>M. canis</em>、<em>T. violaceum</em>、<em>T. verrucosum</em>、<em>T. tonsurans</em>；為 large-spored ectothrix；大量膿與膿瘍、表皮 acanthosis、spongiosis、parakeratosis 與表皮內嗜中性球；<strong>不發螢光</strong>；臨床可與 folliculitis decalvans、dissecting cellulitis 混淆，可合併 <em>S. aureus</em> 感染。<span class="ex-ref ex-ref-mckee">McKee p.925–926</span></li>
+<li><em>M. canis</em>／<em>M. audouinii</em>（ectothrix）：arthrospores 包覆毛幹外，菌絲延伸入毛幹至 mid follicle；表皮 acanthosis、patchy parakeratosis，淺層真皮通常（usually）有混合浸潤（<em>M. canis</em> 較明顯）；Wood lamp 可見螢光；男孩遠多於女孩。<span class="ex-ref ex-ref-mckee">McKee p.925</span></li>
+<li>Kerion：McKee 寫<strong>最常由 <em>T. interdigitale</em>（舊稱 <em>T. mentagrophytes</em>）引起</strong>，其他有 <em>M. canis</em>、<em>T. violaceum</em>、<em>T. verrucosum</em>、<em>T. tonsurans</em>；為 large-spored ectothrix；大量膿與膿瘍、表皮 acanthosis、spongiosis、parakeratosis 與表皮內嗜中性球；<strong>不發螢光</strong>；臨床可能與 folliculitis decalvans、dissecting cellulitis 混淆，繼發細菌感染（如 <em>S. aureus</em>）可能（may）參與。<span class="ex-ref ex-ref-mckee">McKee p.925–926</span></li>
 <li>Endothrix（<em>T. tonsurans</em>、<em>T. violaceum</em>）：在毛囊開口處斷裂，故呈 dots 而非 stumps；毛幹內菌絲與孢子；擴張、角質栓塞的毛囊口內殘存感染毛幹；毛囊周圍可有 histiocytes、多核細胞、lymphocytes、plasma cells；<strong>Wood lamp 不發螢光</strong>。<span class="ex-ref ex-ref-mckee">McKee p.926–927</span></li>
 </ul>
 <table class="ex-table">
@@ -418,10 +418,10 @@
 <p class="ex-cite">Table 160-16，p.2943。</p>
 <h3>Management（治療）</h3>
 <ul>
-<li>菌已進入毛囊，外用藥「out of reach」→ <strong>不建議只用外用藥</strong>；可依當地流行病學先開始經驗性口服治療，同時等待黴菌學確認。<span class="ex-ref">p.2943</span></li>
+<li>穿入毛囊的菌通常（typically）是外用藥「out of reach」→ <strong>不建議只用外用藥</strong>；可依當地流行病學先開始經驗性口服治療，同時等待黴菌學確認。<span class="ex-ref">p.2943</span></li>
 <li><mark data-q="104-31">兒童 griseofulvin（microsize）≥2 歲 <strong class="ex-n">20–25 mg/kg/day</strong>，ultramicro 10–15 mg/kg/day，療程 <strong class="ex-n">6–8 weeks</strong></mark>；完整劑量見 Table 160-9（治療總論段）。Griseofulvin 為 <em>Microsporum</em> 的 first-line。<span class="ex-ref">p.2934–2935</span></li>
 <li>Adjuvant shampoos：selenium sulfide 1%、2.5%，zinc pyrithione 1%、2%，povidone-iodine 2.5%，ketoconazole 2%；每週 <strong class="ex-n">2–4 次 × 2–4 weeks</strong>；<strong>全家人</strong>每週三次用 ketoconazole 2% 或 selenium sulfide 2.5% 可減少孢子散播與傳染。<span class="ex-ref">p.2943–2944</span></li>
-<li>Oral glucocorticoids 可能減少嚴重發炎型的 scarring，緩解疼痛腫脹，但沒有一致證據提高治癒率；常用 prednisone <strong class="ex-n">1–2 mg/kg</strong> 每早，治療第一週。<span class="ex-ref">p.2944</span></li>
+<li>Oral glucocorticoids 可能減少嚴重發炎型的 scarring，似乎（appear）可緩解疼痛腫脹，但沒有一致證據提高治癒率；常用 prednisone <strong class="ex-n">1–2 mg/kg</strong> 每早，治療第一週。<span class="ex-ref">p.2944</span></li>
 </ul>
 </section>
 
@@ -432,12 +432,12 @@
 </ul>
 <h3>Epidemiology（流行病學）</h3>
 <ul>
-<li>人或動物直接傳染、fomites，或由足部菌落 autoinoculation；兒童較易感染 zoophilic 菌，尤其來自貓狗的 <em>M. canis</em>；occlusive clothing 與潮濕氣候使病灶更多更重。<span class="ex-ref">p.2944</span></li>
+<li>人或動物直接傳染、fomites，或由足部菌落 autoinoculation；兒童較易感染 zoophilic 菌，尤其來自貓狗的 <em>M. canis</em>；occlusive clothing 與潮濕氣候與病灶更多更重相關（associated）。<span class="ex-ref">p.2944</span></li>
 <li><strong>Tinea corporis gladiatorum</strong>：競技摔角（mat burns、皮膚接觸），最常為 <em>T. tonsurans</em>，好發 head、neck、arms。<span class="ex-ref">p.2944</span>McKee 同樣寫多數爆發由 <em>T. tonsurans</em> 經人傳人。<span class="ex-ref ex-ref-mckee">McKee p.928</span></li>
 </ul>
 <h3>Clinical findings（臨床表現）</h3>
 <ul>
-<li>典型 annular（ringworm）或 serpiginous plaque，整圈 active erythematous border 有 scale，邊緣可有水疱並離心擴張；中央脫屑或完全清除。<span class="ex-ref">p.2944</span></li>
+<li>典型 annular（ringworm）或 serpiginous plaque，整圈 active erythematous border 有 scale，邊緣可有水疱並離心擴張；中央通常（usually）脫屑，但也可能完全清除。<span class="ex-ref">p.2944</span></li>
 <li>Concentric <strong>vesicular</strong> rings 提示 <strong>tinea incognito</strong>（常為 <em>T. rubrum</em>）；<strong>tinea imbricata</strong> 的同心紅環則幾乎沒有水疱。<span class="ex-ref">p.2944</span></li>
 <li><em>T. rubrum</em> 也可呈大片融合 polycyclic 或 psoriasiform plaques，尤其免疫抑制者。<span class="ex-ref">p.2944</span></li>
 <li><strong>Majocchi granuloma</strong>：侵犯毛囊較深部的表淺與皮下 dermatophyte 感染；鱗屑性 follicular papules 與 nodules 排成環狀；最常為 <em>T. rubrum</em>、<em>T. interdigitale</em>、<em>M. canis</em>；見於刮腿毛後接種或在病灶擦外用類固醇的女性腿部，免疫不全者漸增。<span class="ex-ref">p.2944</span></li>
@@ -474,10 +474,10 @@
 <aside class="ex-trap"><strong>易錯</strong>Tinea corporis 外用藥：多數每天兩次、2–4 weeks。<span class="ex-ref">p.2945</span>Tinea nigra：臨床痊癒後再持續 2–4 weeks 以防復發。<span class="ex-ref">p.2947–2948</span>Interdigital tinea pedis：terbinafine cream 每天兩次 × 1 week，有效率 66%。<span class="ex-ref">p.2949</span></aside>
 <h3>McKee histopathology（McKee 補充）</h3>
 <ul>
-<li>擴張的邊緣：parakeratosis 與 acanthosis，parakeratotic crust 中有些 neutrophils；<strong>PAS</strong> 易顯示角質層內菌絲；下方發炎通常輕微，若侵犯毛囊則較重。可呈 vesicles、bullae、pustules，甚至類似 SCLE。<span class="ex-ref ex-ref-mckee">McKee p.928</span></li>
+<li>擴張的邊緣：parakeratosis 與 acanthosis，parakeratotic crust 中有些 neutrophils；<strong>PAS</strong> 易顯示角質層內菌絲；下方發炎通常輕微，若侵犯毛囊則較重。臨床上較少見（less common）的表現可呈 vesicles、bullae、pustules，甚至類似 SCLE 的病灶。<span class="ex-ref ex-ref-mckee">McKee p.928</span></li>
 <li>Dermatophyte 感染可見 parakeratosis 覆蓋 <strong>subcorneal pustule</strong>，表皮 psoriasiform hyperplasia。<span class="ex-ref ex-ref-mckee">McKee p.930</span></li>
-<li>不當使用局部類固醇會改變臨床外觀 → <strong>tinea incognito</strong>。<span class="ex-ref ex-ref-mckee">McKee p.928</span>診斷 spongiotic dermatitis 前一定要先做黴菌染色（e.g. PAS）排除 superficial dermatophytosis，因為類固醇會使黴菌感染惡化。<span class="ex-ref ex-ref-mckee">McKee p.208</span></li>
-<li><strong>Majocchi granuloma（nodular granulomatous perifolliculitis）</strong>：毛囊受傷使菌（常帶角質碎屑）進入真皮，引起強烈發炎；臨床為 granulomata、cellulitis 或 plaques，常在小腿前側；成年女性（刮毛）、懷孕、誤用抗生素與類固醇、免疫不全（類固醇、腎移植、化療後嗜中性球低下）。真皮內可見菌絲與 arthrospores（budding、怪異形態），菌可能很少需多切；可形成 mycetoma 樣肉芽腫、Splendore-Hoeppli phenomenon；methenamine silver 強陽性。最常為 <em>T. rubrum</em>。<span class="ex-ref ex-ref-mckee">McKee p.931–932</span></li>
+<li>不當使用局部類固醇可能（may）改變臨床外觀 → <strong>tinea incognito</strong>。<span class="ex-ref ex-ref-mckee">McKee p.928</span>診斷 spongiotic dermatitis 前一定要先做黴菌染色（e.g. PAS）排除 superficial dermatophytosis，因為類固醇會使黴菌感染惡化。<span class="ex-ref ex-ref-mckee">McKee p.208</span></li>
+<li><strong>Majocchi granuloma（nodular granulomatous perifolliculitis）</strong>：毛囊受傷使菌（常帶角質碎屑）進入真皮，引起強烈發炎；臨床為 granulomata、cellulitis 或 plaques，常在小腿前側；好發成年女性（尤其與刮毛相關），兒童也可發生；曾見於懷孕及誤用抗生素與類固醇治療後；部分病人可能（may）合併免疫不全（尤其類固醇治療），也可見於腎移植後與化療相關嗜中性球低下者。真皮內可見菌絲與 arthrospores（budding、怪異形態），菌可能很少需多切；可能（may）形成 mycetoma 樣肉芽腫，曾描述 Splendore-Hoeppli phenomenon；methenamine silver 強陽性。致病菌通常（usually）為 <em>T. rubrum</em>。<span class="ex-ref ex-ref-mckee">McKee p.931–932</span></li>
 </ul>
 </section>
 
@@ -487,13 +487,13 @@
 <li>Groin、genitalia、pubic、perineal 與 perianal 皮膚的 dermatophytosis（拉丁 cruris 意為「腿」，是誤稱）；全球<strong>第二常見</strong>的 dermatophytosis。<span class="ex-ref">p.2945</span></li>
 <li>直接接觸或 fomites 傳染，occlusion 與潮濕使之惡化；常由足部 <em>T. rubrum</em> 或 <em>T. interdigitale</em> 自體傳染；男性為女性 <strong class="ex-n">3 倍</strong>，成人多於兒童。<span class="ex-ref">p.2945</span></li>
 <li>典型為由 inguinal fold 延伸至大腿內側、邊緣隆起有鱗屑的環狀斑塊，常雙側；癢常見，浸潤或繼發感染時會痛。<span class="ex-ref">p.2945</span></li>
-<li><mark data-q="102-09"><em>E. floccosum</em> 所致者較常中央清除，侵犯 genitocrural crease 與大腿內上側</mark>；<em>T. rubrum</em> 所致者融合並延伸至 pubic、perianal、buttock、下腹部。<strong>Genitalia（含 scrotum）少受侵犯</strong>，可用於與 inverse psoriasis 區分。<span class="ex-ref">p.2945–2946</span></li>
+<li><mark data-q="102-09"><em>E. floccosum</em> 所致者較常中央清除，侵犯 genitocrural crease 與大腿內上側</mark>；<em>T. rubrum</em> 所致者融合並延伸至 pubic、perianal、buttock、下腹部。<strong>Genitalia（含 scrotum）少受侵犯</strong>，可能有助於（may be useful）與 inverse psoriasis 等疾病區分。<span class="ex-ref">p.2945–2946</span></li>
 <li>Etiology：<mark data-q="102-09">多數由 <em>T. rubrum</em> 與 <em>E. floccosum</em> 引起，後者最常造成 epidemics</mark>；<em>T. interdigitale</em> 與 <em>T. verrucosum</em> 較少。<span class="ex-ref">p.2946</span></li>
 <li>DDx（Table 160-18）：most likely erythrasma、cutaneous candidiasis、intertrigo、contact dermatitis、inverse psoriasis、seborrheic dermatitis、lichen simplex chronicus、folliculitis；consider familial benign pemphigus、Darier-White disease、histiocytosis。<span class="ex-ref">p.2946</span></li>
-<li>Treatment：同 tinea corporis；改善潮濕（寬鬆衣物、zinc barrier cream）並治療 tinea pedis；建議<strong>先穿襪子再穿內褲</strong>以避免自體接種。<span class="ex-ref">p.2946</span></li>
-<li>McKee：男性多、肥胖為危險因子；軍隊與宿舍共用浴室可爆發；嬰兒（<strong class="ex-n">7–12 months</strong>）的 diaper dermatitis 可為其變異型。<strong>腳部致病菌依頻率為 <em>T. rubrum</em> &gt; <em>T. interdigitale</em> &gt; <em>E. floccosum</em>，鼠蹊部同樣是這三種但順序相反</strong>；組織學與其他部位 tinea 相似。<span class="ex-ref ex-ref-mckee">McKee p.928–929</span></li>
+<li>Treatment：同 tinea corporis；改善潮濕（寬鬆衣物、zinc barrier cream）並治療 tinea pedis 等其他感染部位也可能有幫助（may be helpful）；有 tinea pedis 者也可建議（might recommend）<strong>先穿襪子再穿內褲</strong>以避免自體接種。<span class="ex-ref">p.2946</span></li>
+<li>McKee：男性多、肥胖為危險因子；軍隊與宿舍共用浴室可爆發；Diaper dermatitis 是 tinea cruris 的變異型，主要（mainly）見於 <strong class="ex-n">7–12 months</strong> 嬰兒。<strong>腳部致病菌通常（usually）依頻率為 <em>T. rubrum</em> &gt; <em>T. interdigitale</em> &gt; <em>E. floccosum</em>，鼠蹊部同樣是這三種但順序相反</strong>；組織學與其他部位 tinea 相似。<span class="ex-ref ex-ref-mckee">McKee p.928–929</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫 tinea cruris 多數是 <em>T. rubrum</em> 與 <em>E. floccosum</em>。<span class="ex-ref">p.2946</span>McKee 則寫腳部依頻率為 <em>T. rubrum</em>、<em>T. interdigitale</em>、<em>E. floccosum</em>，鼠蹊部為同樣三種但頻率順序相反。<span class="ex-ref ex-ref-mckee">McKee p.929</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫 tinea cruris 多數是 <em>T. rubrum</em> 與 <em>E. floccosum</em>。<span class="ex-ref">p.2946</span>McKee 則寫腳部通常依頻率為 <em>T. rubrum</em>、<em>T. interdigitale</em>、<em>E. floccosum</em>，鼠蹊部為同樣三種但頻率順序相反。<span class="ex-ref ex-ref-mckee">McKee p.929</span></aside>
 </section>
 
 <section class="ex-note" id="tinea-favosa">
@@ -512,10 +512,10 @@
 <section class="ex-note" id="tinea-nigra">
 <h2>15. Tinea Nigra（黑癬）</h2>
 <ul>
-<li>由 dematiaceous（深色）的 <strong><em>Hortaea werneckii</em></strong>（舊名 <em>Phaeoannellomyces werneckii</em>、<em>Exophiala werneckii</em>）引起的表淺皮膚黴菌病；偶由 <em>Stenella araguata</em> 等其他 dematiaceous fungi 造成相同表現。<span class="ex-ref">p.2947</span></li>
+<li>由 dematiaceous（深色）的 <strong><em>Hortaea werneckii</em></strong>（舊名 <em>Phaeoannellomyces werneckii</em>、<em>Exophiala werneckii</em>）引起的表淺皮膚黴菌病（almost always 由 <em>H. werneckii</em> 引起）；<em>Stenella araguata</em> 等其他 dematiaceous fungi 也可能（may）造成相同表現。<span class="ex-ref">p.2947</span></li>
 <li>Epidemiology：熱帶與亞熱帶（中南美、非洲、亞洲）；北美約 <strong class="ex-n">150</strong> 例（1950 年以來）多與熱帶旅遊相關，美國東南沿海與 Texas 有地方性病灶；人傳人罕見；<strong>女：男 = 3:1</strong>。<span class="ex-ref">p.2947</span></li>
-<li>Pathogenesis：dematiaceous fungi 存在於土壤、污水、腐敗植物；皮膚外傷後接種，潛伏期 <strong class="ex-n">2–7 weeks</strong>。<span class="ex-ref">p.2947</span></li>
-<li>Clinical：健康人手掌或腳掌的無症狀、斑駁褐色至綠黑色 macule／patch，幾乎無鱗屑，<strong>前進邊緣顏色最深</strong>；常被誤診為 <strong>acral lentiginous melanoma</strong>。<span class="ex-ref">p.2947</span></li>
+<li>Pathogenesis：dematiaceous fungi 常見於（commonly found）土壤、污水、腐敗植物；皮膚外傷後接種，典型潛伏期 <strong class="ex-n">2–7 weeks</strong>。<span class="ex-ref">p.2947</span></li>
+<li>Clinical：見於健康人，典型（typically）為手掌或腳掌的無症狀、斑駁褐色至綠黑色 macule／patch，幾乎無鱗屑，<strong>常在前進邊緣顏色最深</strong>；常被誤診為 <strong>acral lentiginous melanoma</strong>。<span class="ex-ref">p.2947</span></li>
 <li>Diagnosis：KOH 見褐色至橄欖色、粗的分枝菌絲，以及單獨或成對、有中央橫隔的卵圓至紡錘形酵母細胞；SDA（含 cycloheximide、chloramphenicol）<strong class="ex-n">1 week</strong> 內生長，初為褐至亮黑色 yeast-like 菌落（2-celled yeast），之後菌絲為主成灰黑色絨毛狀菌落。<span class="ex-ref">p.2947</span></li>
 <li>DDx（Table 160-19）：most likely junctional nevus、dysplastic nevus、melanoma；consider chemical exposure；rule out Addison disease、syphilis、yaws。<span class="ex-ref">p.2948</span></li>
 <li>Treatment：外用 keratolytic（Whitfield ointment、2% salicylic acid）、tincture of iodine 或外用抗黴菌藥即有良好反應；<mark data-q="106-25">臨床痊癒後再持續 <strong class="ex-n">2–4 weeks</strong> 以防復發</mark>；口服 ketoconazole、itraconazole、terbinafine 也有效但很少需要。<span class="ex-ref">p.2947–2948</span></li>
@@ -537,30 +537,30 @@
 <table class="ex-table">
 <thead><tr><th scope="col">Type</th><th scope="col">Features（特徵）</th><th scope="col">Organisms</th></tr></thead>
 <tbody>
-<tr><td>Interdigital（<strong>最常見</strong>）</td><td>趾間與趾下脫屑、紅斑、浸潤，尤其第 3–4、4–5 趾間；可擴及足底、足弓，少侵犯足背；合併細菌（<em>Pseudomonas</em>、<em>Proteus</em>、<em>S. aureus</em>）→ 糜爛、癢、惡臭（dermatophytosis complex，athlete's foot）</td><td><em>T. rubrum</em>、<em>T. interdigitale</em>、<em>E. floccosum</em></td></tr>
+<tr><td>Interdigital（<strong>最常見</strong>）</td><td>趾間與趾下脫屑、紅斑、浸潤，尤其第 3–4、4–5 趾間；在適當條件下會擴及足底、足弓，少侵犯足背；occlusion 與合併細菌（<em>Pseudomonas</em>、<em>Proteus</em>、<em>S. aureus</em>）→ 糜爛、癢、惡臭（dermatophytosis complex，athlete's foot）</td><td><em>T. rubrum</em>、<em>T. interdigitale</em>、<em>E. floccosum</em></td></tr>
 <tr><td>Chronic hyperkeratotic（<strong>moccasin</strong>）</td><td>足底與足內外側片狀或瀰漫脫屑，呈 moccasin 分布；可有少數小水疱，癒合留下 <strong class="ex-n">&lt;2 mm</strong> collarets of scale</td><td><em>T. rubrum</em> 最常見，其次 <em>E. floccosum</em>、anthropophilic <em>T. interdigitale</em></td></tr>
-<tr><td>Vesiculobullous</td><td>足底與足周 <strong class="ex-n">&gt;3 mm</strong> 緊繃水疱、vesiculopustules 或 bullae；兒童少見（但有 <em>T. rubrum</em> 個案）</td><td>Zoophilic <em>T. interdigitale</em>（舊名 <em>T. mentagrophytes</em> var. <em>mentagrophytes</em>）</td></tr>
+<tr><td>Vesiculobullous</td><td>足底與足周 <strong class="ex-n">&gt;3 mm</strong> 緊繃水疱、vesiculopustules 或 bullae；兒童少見（但有 <em>T. rubrum</em> 個案）</td><td>通常（typically）為 zoophilic <em>T. interdigitale</em>（舊名 <em>T. mentagrophytes</em> var. <em>mentagrophytes</em>）</td></tr>
 <tr><td>Acute ulcerative</td><td>足底水疱、膿疱、化膿性潰瘍；常合併 cellulitis、lymphangitis、lymphadenopathy、fever</td><td>Zoophilic <em>T. interdigitale</em> + Gram-negative bacterial superinfection</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">p.2948–2949；Table 160-12，p.2938。</p>
 <ul>
 <li>Vesiculobullous 與 acute ulcerative 型常引起 <strong>vesicular id reaction</strong>（足外側、趾，或手指側面）。<span class="ex-ref">p.2949</span></li>
-<li>Tinea manuum 多為非發炎型：瀰漫乾燥鱗屑、掌紋加重；zoophilic 菌時可有水疱、膿疱、脫皮。常合併 moccasin-type tinea pedis 與 onychomycosis，<strong>三者都要治療</strong>以減少復發。<span class="ex-ref">p.2949</span></li>
+<li>Tinea manuum 多為非發炎型：瀰漫乾燥鱗屑、掌紋加重；也可有水疱、膿疱、脫皮，尤其（especially）是 zoophilic 菌時。常合併 moccasin-type tinea pedis 與 onychomycosis，<strong>三者都要治療</strong>以減少復發。<span class="ex-ref">p.2949</span></li>
 <li><mark data-q="102-09">Tinea pedis 與 tinea manuum 主要由 <em>T. rubrum</em>（最常見）、<em>T. interdigitale</em>、<em>E. floccosum</em> 引起</mark>。<span class="ex-ref">p.2949</span></li>
 </ul>
 <h3>Diagnosis &amp; histopathology（診斷與病理）</h3>
 <ul>
 <li><strong>水疱或大疱的 blister roof</strong> 做 KOH 陽性率最高。<span class="ex-ref">p.2949</span></li>
-<li>Histopathology：角質層內菌體（PAS 或 methenamine silver），有時伴 foci of neutrophils；真皮稀疏慢性淺層血管周圍浸潤；vesiculobullous 型可見 subcorneal 或 spongiotic intraepithelial vesiculation。<span class="ex-ref">p.2949</span></li>
-<li>McKee：tinea pedis 是最常見的 dermatophyte 感染，常由共用更衣室、浴室傳播（運動員、軍人、寄宿生，甚至清真寺禮拜者）；是下肢 <strong>cellulitis</strong> 的危險因子，也常引起 id reaction；角質層增厚處可見菌（PAS）。罕見 bullous tinea pedis 的病灶旁皮膚 DIF 可在真表皮交界呈陽性。<span class="ex-ref ex-ref-mckee">McKee p.928–930</span></li>
+<li>Histopathology：角質層內菌體（PAS 或 methenamine silver），有時伴 foci of neutrophils；真皮也可能（may）有稀疏慢性淺層血管周圍浸潤；vesiculobullous 型可能可見 subcorneal 或 spongiotic intraepithelial vesiculation。<span class="ex-ref">p.2949</span></li>
+<li>McKee：tinea pedis 是最常見的 dermatophyte 感染，傳播與共用更衣室、盥洗設施相關（linked to；如運動員、軍人、寄宿生，甚至曾見於在清真寺禮拜的成年男性）；是下肢 <strong>cellulitis</strong> 的危險因子，也常引起 id reaction；角質層增厚處可見菌（PAS）。bullous tinea pedis 病人的病灶旁皮膚切片罕見（rarely）可在真表皮交界呈 DIF 陽性。<span class="ex-ref ex-ref-mckee">McKee p.928–930</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Differential diagnosis（Table 160-20）</th><th scope="col">Conditions</th></tr></thead>
 <tbody>
-<tr><td>Interdigital</td><td>Erosio interdigitalis blastomycetica、erythrasma、bacterial coinfection</td></tr>
-<tr><td>Hyperkeratotic</td><td>Dyshidrosis、psoriasis、contact dermatitis、atopic dermatitis、hereditary 或 acquired keratodermas</td></tr>
-<tr><td>Vesiculobullous</td><td>Dyshidrosis、contact dermatitis、pustular psoriasis、bacterid 或其他 autoeczematization、palmoplantar pustulosis、bacterial pyodermas、scabies</td></tr>
+<tr><td>Most likely：Interdigital</td><td>Erosio interdigitalis blastomycetica、erythrasma、bacterial coinfection</td></tr>
+<tr><td>Most likely：Hyperkeratotic</td><td>Dyshidrosis、psoriasis、contact dermatitis、atopic dermatitis、hereditary 或 acquired keratodermas</td></tr>
+<tr><td>Most likely：Vesiculobullous</td><td>Dyshidrosis、contact dermatitis、pustular psoriasis、bacterid 或其他 autoeczematization、palmoplantar pustulosis、bacterial pyodermas、scabies</td></tr>
 <tr><td>Consider／Rule out</td><td>Pityriasis rubra pilaris／Reactive arthritis</td></tr>
 </tbody>
 </table>
@@ -568,9 +568,9 @@
 <h3>Management（治療）</h3>
 <ul>
 <li>輕度、無細菌感染的 interdigital 型：外用 <mark data-q="107-18">allylamine、imidazole、ciclopirox</mark>、benzylamine、<mark data-q="107-18">tolnaftate</mark>、undecenoic acid；<strong>terbinafine cream 每天兩次 × 1 week</strong> 有效率 <strong class="ex-n">66%</strong>。<span class="ex-ref">p.2949</span></li>
-<li>Vesiculobullous 型初期可加外用或全身類固醇緩解症狀。<span class="ex-ref">p.2949</span></li>
+<li>Vesiculobullous 型抗黴菌治療初期，外用或全身類固醇可能（may）有助緩解症狀。<span class="ex-ref">p.2949</span></li>
 <li>合併 onychomycosis 常見，需較持久的口服治療甲癬以防 tinea pedis 復發。<span class="ex-ref">p.2949</span></li>
-<li>浸潤、糜爛、癢、惡臭 → Gram stain 與培養找細菌（多為 Gram-negative 的 <em>Pseudomonas</em>、<em>Proteus</em>），依感受性給外用或全身抗菌藥；<strong>dilute acetoacetic acid soaks</strong> 對黴菌與細菌（含 <em>Pseudomonas</em>）都有效，可降低 DM、venous stasis、下肢水腫病人的 cellulitis 風險。<span class="ex-ref">p.2949</span></li>
+<li>浸潤、糜爛、癢、惡臭 → Gram stain 與培養找細菌（多為 Gram-negative 的 <em>Pseudomonas</em>、<em>Proteus</em>），依感受性給外用或全身抗菌藥；<strong>dilute acetoacetic acid soaks</strong> 是另一種對皮膚黴菌與細菌（含 <em>Pseudomonas</em>）感染都有用的治療，可能（may）特別有助於降低 DM、venous stasis、下肢水腫病人的 cellulitis 風險。<span class="ex-ref">p.2949</span></li>
 </ul>
 </section>
 
@@ -588,7 +588,7 @@
 <tr><td>Tinea imbricata</td><td><mark data-q="101-22"><em>T. concentricum</em></mark></td></tr>
 <tr><td>Tinea cruris</td><td><em>T. rubrum</em>、<mark data-q="102-09"><em>E. floccosum</em></mark>、<em>T. interdigitale</em>、<mark data-q="101-22"><em>T. verrucosum</em></mark></td></tr>
 <tr><td>Tinea nigra</td><td><em>Hortaea werneckii</em></td></tr>
-<tr><td>Tinea pedis：interdigital／moccasin／vesiculobullous／ulcerative</td><td><em>T. rubrum</em>、<em>T. interdigitale</em>、<em>E. floccosum</em>／<em>T. rubrum</em>、<em>E. floccosum</em>／zoophilic <em>T. interdigitale</em>／zoophilic <em>T. interdigitale</em> + Gram-negative bacteria</td></tr>
+<tr><td>Tinea pedis：interdigital／moccasin／vesiculobullous／ulcerative</td><td><em>T. rubrum</em>、<em>T. interdigitale</em>、<em>E. floccosum</em>／<em>T. rubrum</em>、<em>E. floccosum</em>／<em>T. interdigitale</em>（usually zoophilic strains）／<em>T. interdigitale</em>（zoophilic strains）+ Gram-negative bacterial superinfection</td></tr>
 <tr><td>Tinea manuum</td><td><em>T. rubrum</em>、<em>T. interdigitale</em>、<em>E. floccosum</em></td></tr>
 </tbody>
 </table>
