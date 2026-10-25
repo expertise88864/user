@@ -339,15 +339,15 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <style id="dn-nav-critical">.dn-nav{display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:auto}.dn-nav-link{display:inline-flex;align-items:center;padding:6px 12px;border-radius:9999px;font-size:12.5px;font-weight:600;color:var(--teal-deep,#4d6358);text-decoration:none;white-space:nowrap}.dn-nav-link:hover{background:var(--mint-soft,#eaf6f3);color:#0e7c86}.dn-nav .dn-nav-divider{width:1px;height:20px;background:var(--border,#dcd5c8);margin:0 4px}.dn-nav-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9999px;color:var(--teal-deep,#4d6358);background:transparent;border:0;cursor:pointer;font-size:15px;line-height:1;padding:0}.dn-nav-icon:hover{background:var(--mint-soft,#eaf6f3)}.dn-nav-icon::after{display:none}.dn-nav .lang-select{margin:0 0 0 6px;padding:6px 22px 6px 10px;min-height:32px;font-size:11.5px}.dn-nav-burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:9999px;color:var(--teal-deep,#4d6358);background:transparent;border:0;cursor:pointer;flex-shrink:0;margin-left:auto}@media(max-width:899px){header.dn-nav-expanded{z-index:70}.dn-nav{display:none;position:fixed;top:64px;right:0;left:0;background:var(--bg,#faf7f2);max-height:calc(100dvh - 64px);overflow-y:auto;overscroll-behavior:contain;flex-direction:column;align-items:stretch;padding:14px 18px;border-bottom:1px solid var(--border,#dcd5c8);gap:2px}.dn-nav.open,.dn-nav.dn-nav-open{display:flex}.dn-nav-link{min-height:44px;padding:11px 14px;font-size:14px;border-radius:10px;justify-content:flex-start}.dn-nav-icon{width:auto;min-height:44px;height:auto;padding:11px 14px;border-radius:10px;justify-content:flex-start;gap:10px;font-size:14px}.dn-nav-icon::after{display:inline;content:attr(aria-label)!important;white-space:nowrap;font-size:14px;font-weight:600}.dn-nav .dn-nav-divider{display:none}.dn-nav .lang-select{min-height:44px;flex-shrink:0}.dn-nav-burger{display:inline-flex}}</style></head><body class="font-sans antialiased text-ink-900"><a href="#main-content" class="skip-to-main" data-zh="跳至主要內容" data-en="Skip to main content">跳至主要內容</a><header class="sticky top-0 z-40 backdrop-blur border-b" style="background:rgba(250,247,242,.92); border-color:var(--border)"><div class="max-w-6xl mx-auto px-5 sm:px-8"><div class="h-16 flex items-center justify-between gap-3"><a href="/" class="flex items-center gap-3 min-w-0 flex-shrink-0"><img src="/icon.svg" alt="ChenDermatologist" class="w-9 h-9 rounded-lg flex-shrink-0" width="36" height="36" fetchpriority="high" loading="eager" decoding="async"><div class="min-w-0 leading-tight"><div class="font-display font-semibold text-[16px] sm:text-[18px] teal-text">ChenDermatologist</div><div class="text-[10.5px] sm:text-[11.5px] text-ink-500 mt-0.5 truncate" data-zh="陳翊嘉醫師 · 皮膚科衛教筆記" data-en="Dr. Chen Yi-Jia · Dermatology Notes">陳翊嘉醫師 · 皮膚科衛教筆記</div></div></a><nav class="dn-nav" aria-label="主導覽"><a href="/blog" class="dn-nav-link" data-zh="衛教文章" data-en="Articles">衛教文章</a><a href="/exam" class="dn-nav-link" data-zh="皮膚科專科考試" data-en="Board Exam">皮膚科專科考試</a><a href="/about" class="dn-nav-link" data-zh="關於我" data-en="About">關於我</a><span class="dn-nav-divider" aria-hidden="true"></span><button type="button" id="dn-nav-search" class="dn-nav-icon" aria-label="搜尋" title="搜尋文章 (Cmd/Ctrl + K)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></button><button type="button" id="dn-nav-theme" class="dn-nav-icon" aria-label="切換暗色模式" title="切換亮 / 暗">🌙</button><select id="langToggle" class="lang-select" aria-label="Language" title="語言切換"><option value="zh">中文</option><option value="en">EN</option></select></nav><button type="button" id="dn-nav-burger" class="dn-nav-burger" aria-label="開啟選單" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button></div></div></header>
 <style>          @media (max-width:899px){   @keyframes dnNavSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}    #dn-nav-search::after{content:'搜尋'} #dn-nav-theme::after{content:'切換暗色'}  #langToggle{align-self:flex-start;margin-top:4px} } body.dn-en #dn-nav-search::after{content:'Search'} body.dn-en #dn-nav-theme::after{content:'Theme'}</style>
 <script src="/assets/inline/nav-burger.js?v=202610232200" defer></script>
-<main id="main-content" class="ex-main" data-exam-page="chapter" data-exam-data="/exam/exam-data.json?v=f4437b0899"><div class="ex-layout"><details class="ex-toc ex-toc-side" open><summary>本章目錄</summary><nav aria-label="本章目錄"><ol><li><a href="#overview" title="1. Overview &amp; Exposure Classification（概論與暴露分類）" aria-label="1. Overview &amp; Exposure Classification（概論與暴露分類）">1. Overview &amp; Exposure Classification</a></li><li><a href="#epidemiology" title="2. Epidemiology &amp; Disease Spectrum（流行病學與疾病光譜）" aria-label="2. Epidemiology &amp; Disease Spectrum（流行病學與疾病光譜）">2. Epidemiology &amp; Disease Spectrum</a></li><li><a href="#ocd" title="3. Occupational Contact Dermatitis: ICD vs ACD（職業性接觸性皮膚炎）" aria-label="3. Occupational Contact Dermatitis: ICD vs ACD（職業性接觸性皮膚炎）">3. Occupational Contact Dermatitis: ICD vs ACD</a></li><li><a href="#icd" title="4. Irritant Contact Dermatitis（刺激性接觸性皮膚炎）" aria-label="4. Irritant Contact Dermatitis（刺激性接觸性皮膚炎）">4. Irritant Contact Dermatitis</a></li><li><a href="#chemical-burns" title="5. Chemical Burns Requiring Unique Therapies（需特殊處置的化學灼傷）" aria-label="5. Chemical Burns Requiring Unique Therapies（需特殊處置的化學灼傷）">5. Chemical Burns Requiring Unique Therapies</a></li><li><a href="#acd" title="6. Allergic Contact Dermatitis（過敏性接觸性皮膚炎）" aria-label="6. Allergic Contact Dermatitis（過敏性接觸性皮膚炎）">6. Allergic Contact Dermatitis</a></li><li><a href="#contact-urticaria" title="7. Contact Urticaria &amp; Immediate Contact Reactions（接觸性蕁麻疹）" aria-label="7. Contact Urticaria &amp; Immediate Contact Reactions（接觸性蕁麻疹）">7. Contact Urticaria &amp; Immediate Contact Reactions</a></li><li><a href="#chemical-acne" title="8. Chemical Exposures: Occupational Acne &amp; Chloracne（化學暴露：職業性痤瘡）" aria-label="8. Chemical Exposures: Occupational Acne &amp; Chloracne（化學暴露：職業性痤瘡）">8. Chemical Exposures: Occupational Acne &amp; Chloracne</a></li><li><a href="#mechanical" title="9. Mechanical Exposures（機械性暴露）" aria-label="9. Mechanical Exposures（機械性暴露）">9. Mechanical Exposures</a></li><li><a href="#physical" title="10. Physical Exposures: Thermal Stress &amp; Radiation（物理性暴露：溫度與輻射）" aria-label="10. Physical Exposures: Thermal Stress &amp; Radiation（物理性暴露：溫度與輻射）">10. Physical Exposures: Thermal Stress &amp; Radiation</a></li><li><a href="#biologic" title="11. Biologic Exposures: Occupational Infections（生物性暴露：職業性感染）" aria-label="11. Biologic Exposures: Occupational Infections（生物性暴露：職業性感染）">11. Biologic Exposures: Occupational Infections</a></li><li><a href="#diagnosis" title="12. Diagnosis of Occupational Skin Diseases（診斷）" aria-label="12. Diagnosis of Occupational Skin Diseases（診斷）">12. Diagnosis of Occupational Skin Diseases</a></li><li><a href="#histopathology" title="13. Histopathology（病理，McKee 補充為主）" aria-label="13. Histopathology（病理，McKee 補充為主）">13. Histopathology</a></li><li><a href="#management" title="14. Management &amp; Prevention（治療與預防）" aria-label="14. Management &amp; Prevention（治療與預防）">14. Management &amp; Prevention</a></li><li><a href="#risk-assessment" title="15. Health Risk Assessment（健康風險評估）" aria-label="15. Health Risk Assessment（健康風險評估）">15. Health Risk Assessment</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（25）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（11 題）</a></li></ol></nav></details><div class="ex-content"><nav class="crumbs" aria-label="麵包屑"><a href="/">首頁</a><span class="ex-sep" aria-hidden="true">/</span><a href="/exam">專科考試</a><span class="ex-sep" aria-hidden="true">/</span><span>Ch.27</span></nav><p class="ex-kicker">Fitzpatrick 9e · Part 3 Dermatitis</p><h1 class="ex-h1">Ch.27 Occupational Skin Diseases</h1><p class="ex-meta">原書 p.438–456 · 考題共 11 題（已有詳解 11 題）</p><p class="ex-meta">101 年 3 題、102 年 2 題、104 年 1 題、105 年 1 題、106 年 1 題、107 年 1 題、108 年 1 題、114 年 1 題</p><div class="ex-notice">題目取自<a href="https://www.derma.org.tw/specialist/download.php?id=9" target="_blank" rel="noopener noreferrer">臺灣皮膚科醫學會專科醫師甄審筆試試題</a>，答案為學會公告的標準答案；重點與詳解依據 Fitzpatrick's Dermatology, 9th Edition 與 McKee's Pathology of the Skin, 5th Edition 整理</div><section class="ex-links" aria-labelledby="links-h"><h2 id="links-h" class="ex-h2 ex-h2-sm">圖片與延伸閱讀</h2><p class="ex-meta">課本圖片有版權，請到以下網站看臨床與病理照片（外部網站，另開新分頁）。</p><div class="ex-links-group"><p class="ex-links-name">DermNet（臨床照片與疾病介紹）</p><ul><li><a href="https://dermnetnz.org/topics/occupational-skin-disease" target="_blank" rel="noopener noreferrer">Occupational skin disease</a></li><li><a href="https://dermnetnz.org/topics/irritant-contact-dermatitis" target="_blank" rel="noopener noreferrer">Irritant contact dermatitis</a></li><li><a href="https://dermnetnz.org/topics/allergic-contact-dermatitis" target="_blank" rel="noopener noreferrer">Allergic contact dermatitis</a></li><li><a href="https://dermnetnz.org/topics/contact-urticaria" target="_blank" rel="noopener noreferrer">Contact urticaria</a></li><li><a href="https://dermnetnz.org/topics/latex-allergy" target="_blank" rel="noopener noreferrer">Latex allergy</a></li><li><a href="https://dermnetnz.org/topics/chrome-allergy" target="_blank" rel="noopener noreferrer">Chrome contact allergy</a></li><li><a href="https://dermnetnz.org/topics/chemical-burn" target="_blank" rel="noopener noreferrer">Chemical burns</a></li><li><a href="https://dermnetnz.org/topics/oil-folliculitis" target="_blank" rel="noopener noreferrer">Oil folliculitis (occupational acne)</a></li><li><a href="https://dermnetnz.org/topics/orf" target="_blank" rel="noopener noreferrer">Orf</a></li><li><a href="https://dermnetnz.org/topics/erysipeloid" target="_blank" rel="noopener noreferrer">Erysipeloid</a></li></ul></div><div class="ex-links-group"><p class="ex-links-name">PathologyOutlines（病理圖片）</p><ul><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorallergiccontact.html" target="_blank" rel="noopener noreferrer">Allergic contact dermatitis</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorurticaria.html" target="_blank" rel="noopener noreferrer">Urticaria</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorradiationassociated.html" target="_blank" rel="noopener noreferrer">Chronic radiation dermatitis</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorbloodblister.html" target="_blank" rel="noopener noreferrer">Mechanical (friction) blister</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumoranthrax.html" target="_blank" rel="noopener noreferrer">Anthrax</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorfungiChromoblastomycosis.html" target="_blank" rel="noopener noreferrer">Chromoblastomycosis</a></li></ul></div></section><details class="ex-toc ex-toc-mobile"><summary>本章目錄</summary><nav aria-label="本章目錄（展開式）"><ol><li><a href="#overview" title="1. Overview &amp; Exposure Classification（概論與暴露分類）" aria-label="1. Overview &amp; Exposure Classification（概論與暴露分類）">1. Overview &amp; Exposure Classification</a></li><li><a href="#epidemiology" title="2. Epidemiology &amp; Disease Spectrum（流行病學與疾病光譜）" aria-label="2. Epidemiology &amp; Disease Spectrum（流行病學與疾病光譜）">2. Epidemiology &amp; Disease Spectrum</a></li><li><a href="#ocd" title="3. Occupational Contact Dermatitis: ICD vs ACD（職業性接觸性皮膚炎）" aria-label="3. Occupational Contact Dermatitis: ICD vs ACD（職業性接觸性皮膚炎）">3. Occupational Contact Dermatitis: ICD vs ACD</a></li><li><a href="#icd" title="4. Irritant Contact Dermatitis（刺激性接觸性皮膚炎）" aria-label="4. Irritant Contact Dermatitis（刺激性接觸性皮膚炎）">4. Irritant Contact Dermatitis</a></li><li><a href="#chemical-burns" title="5. Chemical Burns Requiring Unique Therapies（需特殊處置的化學灼傷）" aria-label="5. Chemical Burns Requiring Unique Therapies（需特殊處置的化學灼傷）">5. Chemical Burns Requiring Unique Therapies</a></li><li><a href="#acd" title="6. Allergic Contact Dermatitis（過敏性接觸性皮膚炎）" aria-label="6. Allergic Contact Dermatitis（過敏性接觸性皮膚炎）">6. Allergic Contact Dermatitis</a></li><li><a href="#contact-urticaria" title="7. Contact Urticaria &amp; Immediate Contact Reactions（接觸性蕁麻疹）" aria-label="7. Contact Urticaria &amp; Immediate Contact Reactions（接觸性蕁麻疹）">7. Contact Urticaria &amp; Immediate Contact Reactions</a></li><li><a href="#chemical-acne" title="8. Chemical Exposures: Occupational Acne &amp; Chloracne（化學暴露：職業性痤瘡）" aria-label="8. Chemical Exposures: Occupational Acne &amp; Chloracne（化學暴露：職業性痤瘡）">8. Chemical Exposures: Occupational Acne &amp; Chloracne</a></li><li><a href="#mechanical" title="9. Mechanical Exposures（機械性暴露）" aria-label="9. Mechanical Exposures（機械性暴露）">9. Mechanical Exposures</a></li><li><a href="#physical" title="10. Physical Exposures: Thermal Stress &amp; Radiation（物理性暴露：溫度與輻射）" aria-label="10. Physical Exposures: Thermal Stress &amp; Radiation（物理性暴露：溫度與輻射）">10. Physical Exposures: Thermal Stress &amp; Radiation</a></li><li><a href="#biologic" title="11. Biologic Exposures: Occupational Infections（生物性暴露：職業性感染）" aria-label="11. Biologic Exposures: Occupational Infections（生物性暴露：職業性感染）">11. Biologic Exposures: Occupational Infections</a></li><li><a href="#diagnosis" title="12. Diagnosis of Occupational Skin Diseases（診斷）" aria-label="12. Diagnosis of Occupational Skin Diseases（診斷）">12. Diagnosis of Occupational Skin Diseases</a></li><li><a href="#histopathology" title="13. Histopathology（病理，McKee 補充為主）" aria-label="13. Histopathology（病理，McKee 補充為主）">13. Histopathology</a></li><li><a href="#management" title="14. Management &amp; Prevention（治療與預防）" aria-label="14. Management &amp; Prevention（治療與預防）">14. Management &amp; Prevention</a></li><li><a href="#risk-assessment" title="15. Health Risk Assessment（健康風險評估）" aria-label="15. Health Risk Assessment（健康風險評估）">15. Health Risk Assessment</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（25）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（11 題）</a></li></ol></nav></details><section class="ex-notes" aria-labelledby="notes-h"><h2 id="notes-h" class="ex-h2">重點整理</h2><div class="ex-notes-tools"><span class="ex-legend"><mark class="ex-key">螢光</mark>＝考過（後附題號）<span class="ex-legend-trap">紅框</span>＝易錯陷阱<strong class="ex-n">粗體數字</strong>＝門檻值</span></div><p class="ex-reading" id="ex-reading" hidden></p><section class="ex-note" id="overview" data-w="958">
+<main id="main-content" class="ex-main" data-exam-page="chapter" data-exam-data="/exam/exam-data.json?v=52cdcc5074"><div class="ex-layout"><details class="ex-toc ex-toc-side" open><summary>本章目錄</summary><nav aria-label="本章目錄"><ol><li><a href="#overview" title="1. Overview &amp; Exposure Classification（概論與暴露分類）" aria-label="1. Overview &amp; Exposure Classification（概論與暴露分類）">1. Overview &amp; Exposure Classification</a></li><li><a href="#epidemiology" title="2. Epidemiology &amp; Disease Spectrum（流行病學與疾病光譜）" aria-label="2. Epidemiology &amp; Disease Spectrum（流行病學與疾病光譜）">2. Epidemiology &amp; Disease Spectrum</a></li><li><a href="#ocd" title="3. Occupational Contact Dermatitis: ICD vs ACD（職業性接觸性皮膚炎）" aria-label="3. Occupational Contact Dermatitis: ICD vs ACD（職業性接觸性皮膚炎）">3. Occupational Contact Dermatitis: ICD vs ACD</a></li><li><a href="#icd" title="4. Irritant Contact Dermatitis（刺激性接觸性皮膚炎）" aria-label="4. Irritant Contact Dermatitis（刺激性接觸性皮膚炎）">4. Irritant Contact Dermatitis</a></li><li><a href="#chemical-burns" title="5. Chemical Burns Requiring Unique Therapies（需特殊處置的化學灼傷）" aria-label="5. Chemical Burns Requiring Unique Therapies（需特殊處置的化學灼傷）">5. Chemical Burns Requiring Unique Therapies</a></li><li><a href="#acd" title="6. Allergic Contact Dermatitis（過敏性接觸性皮膚炎）" aria-label="6. Allergic Contact Dermatitis（過敏性接觸性皮膚炎）">6. Allergic Contact Dermatitis</a></li><li><a href="#contact-urticaria" title="7. Contact Urticaria &amp; Immediate Contact Reactions（接觸性蕁麻疹）" aria-label="7. Contact Urticaria &amp; Immediate Contact Reactions（接觸性蕁麻疹）">7. Contact Urticaria &amp; Immediate Contact Reactions</a></li><li><a href="#chemical-acne" title="8. Chemical Exposures: Occupational Acne &amp; Chloracne（化學暴露：職業性痤瘡）" aria-label="8. Chemical Exposures: Occupational Acne &amp; Chloracne（化學暴露：職業性痤瘡）">8. Chemical Exposures: Occupational Acne &amp; Chloracne</a></li><li><a href="#mechanical" title="9. Mechanical Exposures（機械性暴露）" aria-label="9. Mechanical Exposures（機械性暴露）">9. Mechanical Exposures</a></li><li><a href="#physical" title="10. Physical Exposures: Thermal Stress &amp; Radiation（物理性暴露：溫度與輻射）" aria-label="10. Physical Exposures: Thermal Stress &amp; Radiation（物理性暴露：溫度與輻射）">10. Physical Exposures: Thermal Stress &amp; Radiation</a></li><li><a href="#biologic" title="11. Biologic Exposures: Occupational Infections（生物性暴露：職業性感染）" aria-label="11. Biologic Exposures: Occupational Infections（生物性暴露：職業性感染）">11. Biologic Exposures: Occupational Infections</a></li><li><a href="#diagnosis" title="12. Diagnosis of Occupational Skin Diseases（診斷）" aria-label="12. Diagnosis of Occupational Skin Diseases（診斷）">12. Diagnosis of Occupational Skin Diseases</a></li><li><a href="#histopathology" title="13. Histopathology（病理，McKee 補充為主）" aria-label="13. Histopathology（病理，McKee 補充為主）">13. Histopathology</a></li><li><a href="#management" title="14. Management &amp; Prevention（治療與預防）" aria-label="14. Management &amp; Prevention（治療與預防）">14. Management &amp; Prevention</a></li><li><a href="#risk-assessment" title="15. Health Risk Assessment（健康風險評估）" aria-label="15. Health Risk Assessment（健康風險評估）">15. Health Risk Assessment</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（25）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（11 題）</a></li></ol></nav></details><div class="ex-content"><nav class="crumbs" aria-label="麵包屑"><a href="/">首頁</a><span class="ex-sep" aria-hidden="true">/</span><a href="/exam">專科考試</a><span class="ex-sep" aria-hidden="true">/</span><span>Ch.27</span></nav><p class="ex-kicker">Fitzpatrick 9e · Part 3 Dermatitis</p><h1 class="ex-h1">Ch.27 Occupational Skin Diseases</h1><p class="ex-meta">原書 p.438–456 · 考題共 11 題（已有詳解 11 題）</p><p class="ex-meta">101 年 3 題、102 年 2 題、104 年 1 題、105 年 1 題、106 年 1 題、107 年 1 題、108 年 1 題、114 年 1 題</p><div class="ex-notice">題目取自<a href="https://www.derma.org.tw/specialist/download.php?id=9" target="_blank" rel="noopener noreferrer">臺灣皮膚科醫學會專科醫師甄審筆試試題</a>，答案為學會公告的標準答案；重點與詳解依據 Fitzpatrick's Dermatology, 9th Edition 與 McKee's Pathology of the Skin, 5th Edition 整理</div><section class="ex-links" aria-labelledby="links-h"><h2 id="links-h" class="ex-h2 ex-h2-sm">圖片與延伸閱讀</h2><p class="ex-meta">課本圖片有版權，請到以下網站看臨床與病理照片（外部網站，另開新分頁）。</p><div class="ex-links-group"><p class="ex-links-name">DermNet（臨床照片與疾病介紹）</p><ul><li><a href="https://dermnetnz.org/topics/occupational-skin-disease" target="_blank" rel="noopener noreferrer">Occupational skin disease</a></li><li><a href="https://dermnetnz.org/topics/irritant-contact-dermatitis" target="_blank" rel="noopener noreferrer">Irritant contact dermatitis</a></li><li><a href="https://dermnetnz.org/topics/allergic-contact-dermatitis" target="_blank" rel="noopener noreferrer">Allergic contact dermatitis</a></li><li><a href="https://dermnetnz.org/topics/contact-urticaria" target="_blank" rel="noopener noreferrer">Contact urticaria</a></li><li><a href="https://dermnetnz.org/topics/latex-allergy" target="_blank" rel="noopener noreferrer">Latex allergy</a></li><li><a href="https://dermnetnz.org/topics/chrome-allergy" target="_blank" rel="noopener noreferrer">Chrome contact allergy</a></li><li><a href="https://dermnetnz.org/topics/chemical-burn" target="_blank" rel="noopener noreferrer">Chemical burns</a></li><li><a href="https://dermnetnz.org/topics/oil-folliculitis" target="_blank" rel="noopener noreferrer">Oil folliculitis (occupational acne)</a></li><li><a href="https://dermnetnz.org/topics/orf" target="_blank" rel="noopener noreferrer">Orf</a></li><li><a href="https://dermnetnz.org/topics/erysipeloid" target="_blank" rel="noopener noreferrer">Erysipeloid</a></li></ul></div><div class="ex-links-group"><p class="ex-links-name">PathologyOutlines（病理圖片）</p><ul><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorallergiccontact.html" target="_blank" rel="noopener noreferrer">Allergic contact dermatitis</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorurticaria.html" target="_blank" rel="noopener noreferrer">Urticaria</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorradiationassociated.html" target="_blank" rel="noopener noreferrer">Chronic radiation dermatitis</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorbloodblister.html" target="_blank" rel="noopener noreferrer">Mechanical (friction) blister</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumoranthrax.html" target="_blank" rel="noopener noreferrer">Anthrax</a></li><li><a href="https://www.pathologyoutlines.com/topic/skinnontumorfungiChromoblastomycosis.html" target="_blank" rel="noopener noreferrer">Chromoblastomycosis</a></li></ul></div></section><details class="ex-toc ex-toc-mobile"><summary>本章目錄</summary><nav aria-label="本章目錄（展開式）"><ol><li><a href="#overview" title="1. Overview &amp; Exposure Classification（概論與暴露分類）" aria-label="1. Overview &amp; Exposure Classification（概論與暴露分類）">1. Overview &amp; Exposure Classification</a></li><li><a href="#epidemiology" title="2. Epidemiology &amp; Disease Spectrum（流行病學與疾病光譜）" aria-label="2. Epidemiology &amp; Disease Spectrum（流行病學與疾病光譜）">2. Epidemiology &amp; Disease Spectrum</a></li><li><a href="#ocd" title="3. Occupational Contact Dermatitis: ICD vs ACD（職業性接觸性皮膚炎）" aria-label="3. Occupational Contact Dermatitis: ICD vs ACD（職業性接觸性皮膚炎）">3. Occupational Contact Dermatitis: ICD vs ACD</a></li><li><a href="#icd" title="4. Irritant Contact Dermatitis（刺激性接觸性皮膚炎）" aria-label="4. Irritant Contact Dermatitis（刺激性接觸性皮膚炎）">4. Irritant Contact Dermatitis</a></li><li><a href="#chemical-burns" title="5. Chemical Burns Requiring Unique Therapies（需特殊處置的化學灼傷）" aria-label="5. Chemical Burns Requiring Unique Therapies（需特殊處置的化學灼傷）">5. Chemical Burns Requiring Unique Therapies</a></li><li><a href="#acd" title="6. Allergic Contact Dermatitis（過敏性接觸性皮膚炎）" aria-label="6. Allergic Contact Dermatitis（過敏性接觸性皮膚炎）">6. Allergic Contact Dermatitis</a></li><li><a href="#contact-urticaria" title="7. Contact Urticaria &amp; Immediate Contact Reactions（接觸性蕁麻疹）" aria-label="7. Contact Urticaria &amp; Immediate Contact Reactions（接觸性蕁麻疹）">7. Contact Urticaria &amp; Immediate Contact Reactions</a></li><li><a href="#chemical-acne" title="8. Chemical Exposures: Occupational Acne &amp; Chloracne（化學暴露：職業性痤瘡）" aria-label="8. Chemical Exposures: Occupational Acne &amp; Chloracne（化學暴露：職業性痤瘡）">8. Chemical Exposures: Occupational Acne &amp; Chloracne</a></li><li><a href="#mechanical" title="9. Mechanical Exposures（機械性暴露）" aria-label="9. Mechanical Exposures（機械性暴露）">9. Mechanical Exposures</a></li><li><a href="#physical" title="10. Physical Exposures: Thermal Stress &amp; Radiation（物理性暴露：溫度與輻射）" aria-label="10. Physical Exposures: Thermal Stress &amp; Radiation（物理性暴露：溫度與輻射）">10. Physical Exposures: Thermal Stress &amp; Radiation</a></li><li><a href="#biologic" title="11. Biologic Exposures: Occupational Infections（生物性暴露：職業性感染）" aria-label="11. Biologic Exposures: Occupational Infections（生物性暴露：職業性感染）">11. Biologic Exposures: Occupational Infections</a></li><li><a href="#diagnosis" title="12. Diagnosis of Occupational Skin Diseases（診斷）" aria-label="12. Diagnosis of Occupational Skin Diseases（診斷）">12. Diagnosis of Occupational Skin Diseases</a></li><li><a href="#histopathology" title="13. Histopathology（病理，McKee 補充為主）" aria-label="13. Histopathology（病理，McKee 補充為主）">13. Histopathology</a></li><li><a href="#management" title="14. Management &amp; Prevention（治療與預防）" aria-label="14. Management &amp; Prevention（治療與預防）">14. Management &amp; Prevention</a></li><li><a href="#risk-assessment" title="15. Health Risk Assessment（健康風險評估）" aria-label="15. Health Risk Assessment（健康風險評估）">15. Health Risk Assessment</a></li><li class="ex-toc-cx"><a href="#concepts-h">本章考點（25）</a></li><li class="ex-toc-qs"><a href="#qs-h">考題（11 題）</a></li></ol></nav></details><section class="ex-notes" aria-labelledby="notes-h"><h2 id="notes-h" class="ex-h2">重點整理</h2><div class="ex-notes-tools"><span class="ex-legend"><mark class="ex-key">螢光</mark>＝考過（後附題號）<span class="ex-legend-trap">紅框</span>＝易錯陷阱<strong class="ex-n">粗體數字</strong>＝門檻值</span></div><p class="ex-reading" id="ex-reading" hidden></p><section class="ex-note" id="overview" data-w="1040">
 <h2>1. Overview &amp; Exposure Classification（概論與暴露分類）</h2>
-<p>Occupational skin diseases（OSDs）是主要由工作場所因素引起或加重的皮膚病；在美國每年相關負擔估計高達 <strong class="ex-n">$1 billion</strong>，且涉及 OSHA 通報與 workers’ compensation。<span class="ex-ref">p.438</span></p>
+<p>Occupational skin diseases（OSDs）是主要由工作場所因素引起或加重的皮膚病；在美國每年相關負擔估計高達 <strong class="ex-n">$1 billion</strong>，OSHA 規定雇主記錄職業相關傷病，判定與工作相關可能（may）使 workers’ compensation 介入。<span class="ex-ref">p.438</span></p>
 <ul>
 <li>OSDs 是第 <strong class="ex-n">2</strong> 常見的 occupational illness，約佔 occupational illnesses 的 <strong class="ex-n">15%</strong>。<span class="ex-ref">p.438</span></li>
 <li><mark class="ex-key">絕大多數 OSDs 是 occupational contact dermatoses（ICD 與 ACD），約 <strong class="ex-n">80%</strong> 發生在手部</mark><span class="ex-qref">105-47 107-48 114-15</span>。<span class="ex-ref">p.438</span></li>
 <li>通報率最高的產業：natural resources and mining、manufacturing、education and health services。</li>
-<li>職業暴露（UV 與 chemical carcinogens）在皮膚癌發生上扮演重要角色。</li>
-<li><strong>Personal protective equipment（PPE）是處理職業皮膚危害時最後才考慮的手段</strong>。</li>
+<li>職業暴露（UV 與 chemical carcinogens）可能在皮膚癌發生上扮演重要角色（can have a significant role）。</li>
+<li><strong>Personal protective equipment（PPE）應是處理職業皮膚危害時最後才考慮的手段（should be the last consideration）</strong>。</li>
 </ul>
 <h3>History（歷史）</h3>
 <ul>
@@ -366,12 +366,12 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <p class="ex-cite">p.438；工作場所常有多種暴露同時存在，鑑別診斷要一併考慮。</p>
 </section>
 
-<section class="ex-note" id="epidemiology" data-w="886">
+<section class="ex-note" id="epidemiology" data-w="988">
 <h2>2. Epidemiology &amp; Disease Spectrum（流行病學與疾病光譜）</h2>
 <ul>
 <li><mark class="ex-key">Occupational contact dermatitis（OCD）佔 OSDs 的 <strong class="ex-n">90–95%</strong></mark><span class="ex-qref">114-15</span>；其餘 <strong class="ex-n">5–10%</strong> 包括 immunologic／nonimmunologic contact urticaria、occupational skin cancers、vibration white finger、infections 等。<span class="ex-ref">p.439</span></li>
 <li>美國 BLS 2014（private industry）：非致命職業傷害與疾病近 <strong class="ex-n">3 million</strong> 例，其中 illnesses 只佔 <strong class="ex-n">4.9%</strong>；illnesses 中 skin diseases 佔 <strong class="ex-n">15.2%</strong>（Fig. 27-1：other illness 62.7%、hearing loss 12.7%、respiratory 8.4%、poisoning 1%）。<span class="ex-ref">p.439</span> <span class="ex-ref">p.441</span></li>
-<li>OSD 發生率由 <strong class="ex-n">3.2</strong> 降到 <strong class="ex-n">2.6</strong> cases per 10,000 full-time workers；BLS 資料可能低估 <strong class="ex-n">10–50 倍</strong>。歐洲（含全國通報系統）OCD 發生率 <strong class="ex-n">5–19</strong> per 10,000 full-time workers per year。<span class="ex-ref">p.439</span></li>
+<li>2014 年所有產業合計（among all industries）通報的 OSD 發生率較前一年由 <strong class="ex-n">3.2</strong> 降到 <strong class="ex-n">2.6</strong> cases per 10,000 full-time workers；BLS 資料可能低估真實發生率多達（by as much as）<strong class="ex-n">10–50 倍</strong>。數項歐洲國家研究（包括有全國 OCD 通報系統者）報告僅 OCD 的發生率為 <strong class="ex-n">5–19</strong> per 10,000 full-time workers per year。<span class="ex-ref">p.439</span></li>
 </ul>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Industry（產業，2014）</th><th scope="col">Total cases（總病例數）</th><th scope="col">Incidence（per 10,000 full-time workers）</th></tr></thead>
@@ -382,14 +382,14 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 </tbody>
 </table></div>
 <p class="ex-cite">p.439；Fig. 27-2，p.441。</p>
-<aside class="ex-trap"><strong>易錯</strong>病例「總數」最多是 education and health services，「發生率」最高是 natural resources and mining。</aside>
+<aside class="ex-trap"><strong>易錯</strong>病例「總數」最多是 education and health services，「發生率」最高是 natural resources and mining。<span class="ex-ref">p.439</span></aside>
 <ul>
-<li>OSD 總數與需請假病例近十年下降（預防與早期處置進步）。<span class="ex-ref">p.439</span></li>
+<li>OSD 總數與需請假病例的發生率近十年下降，可能（potentially）反映預防措施與早期處置的進步。<span class="ex-ref">p.439</span></li>
 <li>2014 年 skin infections 造成請假時間最長（median <strong class="ex-n">6 days</strong>）；wounds and bruises 的請假發生率最高（<strong class="ex-n">9.1</strong> per 10,000）。</li>
 </ul>
 </section>
 
-<section class="ex-note" id="ocd" data-w="3176">
+<section class="ex-note" id="ocd" data-w="3205">
 <h2>3. Occupational Contact Dermatitis: ICD vs ACD（職業性接觸性皮膚炎）</h2>
 <ul>
 <li>ICD：對化學、物理或機械刺激的 <strong>nonimmunologic</strong> 反應，經 direct cytotoxic effect 造成發炎；任何人都可能發生，<strong>atopic dermatitis、xerosis、淺膚色</strong>等屏障受損者風險較高。<span class="ex-ref">p.439</span></li>
@@ -397,7 +397,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <li>已知 <strong class="ex-n">&gt;57,000</strong> 種化學物可造成刺激（ICD），真正的皮膚過敏原只有約 <strong class="ex-n">3700</strong> 種。</li>
 <li><mark class="ex-key">OCD 絕大部分發生在手部（<strong class="ex-n">80%</strong>）</mark><span class="ex-qref">105-47 107-48</span>。<span class="ex-ref">p.439</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong><mark class="ex-key">ICD 是 nonimmunologic 反應；immunologic contact urticaria（ICU）是 allergen-specific IgE 介導的 type I hypersensitivity</mark><span class="ex-qref">114-15</span>。</aside>
+<aside class="ex-trap"><strong>易錯</strong><mark class="ex-key">ICD 是 nonimmunologic 反應；immunologic contact urticaria（ICU）是 allergen-specific IgE 介導的 type I hypersensitivity</mark><span class="ex-qref">114-15</span>。<span class="ex-ref">p.439</span> <span class="ex-ref">p.445</span></aside>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Feature</th><th scope="col">Irritant（ICD）</th><th scope="col">Allergic（ACD）</th></tr></thead>
 <tbody>
@@ -415,7 +415,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Occupation</th><th scope="col">Irritants（刺激物）</th><th scope="col">Allergens（過敏原）</th></tr></thead>
 <tbody>
-<tr><td>Agricultural workers</td><td>Fertilizers、germicides、dust、diesel、gasoline、oils、pesticides、plants、solvents、wet work</td><td>Pesticides、animal feeds、barley and oats、fungicides、cement、plants、veterinary medications、wood dust、preservatives、wool</td></tr>
+<tr><td>Agricultural workers</td><td>Fertilizers、germicides、dust、diesel、gasoline、oils、pesticides、plants、solvents、wet work</td><td>Pesticides、animal feeds、barley and oats、fungicides、germicidal products、cement、plants、veterinary medications、wood dust、preservatives、wool</td></tr>
 <tr><td>Bakers</td><td>Acids、flour、spices、soaps and detergents、oven cleaners、essential oils、yeast、enzymes</td><td>Ammonium persulfate、benzoyl peroxide、dyes、essential oils、enzymes、flavors、flour、some fruits</td></tr>
 <tr><td>Construction workers</td><td><mark class="ex-key">Acids、fibrous glass、concrete、solvents、hand cleaners</mark><span class="ex-qref">101-17</span></td><td><mark class="ex-key">Cement、chromium、chromium compounds、cobalt、epoxy resins、nickel、resins、rubber allergens、wood dust</mark><span class="ex-qref">101-17 101-23</span></td></tr>
 <tr><td>Cooks</td><td>Wet work、soaps and detergents、vegetable and fruit juices、raw meat and fish、spices、sugar and flour、heat</td><td>Flavors and spices、formaldehyde、garlic、sodium metabisulfite（蔬菜抗氧化劑）</td></tr>
@@ -432,46 +432,46 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <p class="ex-cite">Table 27-2，p.442。</p>
 </section>
 
-<section class="ex-note" id="icd" data-w="2080">
+<section class="ex-note" id="icd" data-w="2402">
 <h2>4. Irritant Contact Dermatitis（刺激性接觸性皮膚炎）</h2>
 <ul>
-<li>正常表皮屏障被刺激物破壞；通常與 <strong>concentration 或 duration</strong> 相關，<strong>不需事先暴露</strong>；數分鐘到數小時內可見。<span class="ex-ref">p.439</span></li>
+<li>正常表皮屏障被刺激物破壞；常（often）與 <strong>concentration 或 duration</strong> 相關，<strong>不需事先暴露</strong>；可能（may）在數分鐘到數小時內出現。<span class="ex-ref">p.439</span></li>
 <li><mark class="ex-key"><strong>Wet work</strong> 是最常見導致 contact dermatitis 的職業暴露</mark><span class="ex-qref">107-48</span>；其他常見原因：soaps、petroleum products、cutting oils、coolants、solvents。</li>
 <li><mark class="ex-key">暴露的手部是 ICD 最常侵犯的部位</mark><span class="ex-qref">107-48</span>。</li>
-<li><mark class="ex-key">ICD 沒有現成的診斷檢查</mark><span class="ex-qref">107-48</span>，靠仔細的病史加上臨床表現。</li>
-<li>ICD 不像 ACD 是明確的臨床實體；表現取決於 time-effect 與 dose relationship：強刺激物可壞死、潰瘍；慢性病灶多為 lichenification、scaling、hyperpigmentation、fissuring。<span class="ex-ref">p.439</span> <span class="ex-ref">p.441</span></li>
+<li><mark class="ex-key">ICD 沒有現成的診斷檢查</mark><span class="ex-qref">107-48</span>，仔細的病史加上臨床表現通常（usually）足以診斷。</li>
+<li>ICD 不像 ACD 是明確的臨床實體；表現取決於 time-effect 與 dose relationship：強刺激物可壞死、潰瘍；慢性病灶常（often）表現為 lichenification、scaling、hyperpigmentation、fissuring。<span class="ex-ref">p.439</span> <span class="ex-ref">p.441</span></li>
 </ul>
 <p>ICD presentations（沒有標準 case definition）：Acute、Irritant reaction、Cumulative、Traumatic、Asteatotic dermatitis、Pustular and acneiform、Subjective。ICD 與 ACD 都可表現為 acute、subacute、chronic。<span class="ex-ref">p.441</span></p>
 <h3>Acute ICD（急性）</h3>
 <ul>
 <li>工作意外接觸強刺激物或腐蝕性化學物；反應迅速達高峰後開始癒合 → <mark class="ex-key"><strong>decrescendo phenomenon</strong></mark><span class="ex-qref">114-15</span>。<span class="ex-ref">p.441</span></li>
-<li>Lag time 短（數分鐘到數小時）、因果明顯，通常容易診斷；病人不知道有暴露時要鑑別 acute ACD。</li>
+<li>Lag time 短（數分鐘到數小時）、暴露與症狀關聯明顯，診斷可輕易做出；但病人不知道有暴露時可能較難，應鑑別 acute ACD。</li>
 <li><mark class="ex-key">Acute ACD 是延遲型致敏反應，移除過敏原後症狀仍短暫加重 → <strong>crescendo phenomenon</strong></mark><span class="ex-qref">114-15</span>。</li>
-<li>症狀：burning、soreness、stinging；病灶侷限於受損處，可有 erythema、edema、bullae、necrosis，<strong>邊界銳利（sharply demarcated）</strong>；不對稱分布暗示外因。<span class="ex-ref">p.441–442</span></li>
-<li>預後好。<strong>Acids 與 alkaline</strong> 是最常見的強效元凶；例：營造工人鹼性 concrete 流入工作靴或滲透衣物造成化學灼傷。<span class="ex-ref">p.442</span></li>
+<li>症狀：burning、soreness、stinging；病灶侷限於受損處，可有 erythema、edema、bullae、necrosis，<strong>邊界銳利（sharply demarcated）</strong>；不對稱分布可能暗示（may hint）外因。<span class="ex-ref">p.441–442</span></li>
+<li>經適當及症狀治療（with appropriate and symptomatic management）預後好。<strong>Acids 與 alkaline</strong> 是最常見的強效元凶；例：營造工人鹼性 concrete 流入工作靴或滲透衣物造成化學灼傷。<span class="ex-ref">p.442</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong><mark class="ex-key">Acute ICD = decrescendo；acute ACD = crescendo</mark><span class="ex-qref">114-15</span>。</aside>
+<aside class="ex-trap"><strong>易錯</strong><mark class="ex-key">Acute ICD = decrescendo；acute ACD = crescendo</mark><span class="ex-qref">114-15</span>。<span class="ex-ref">p.441</span></aside>
 <h3>Irritant reaction contact dermatitis（刺激反應型）</h3>
 <ul>
 <li>手部過度潮濕工作者（hairdressers、bartenders、metal workers）的 subclinical irritant dermatitis。<span class="ex-ref">p.443</span></li>
-<li>Scaling 與 erythema 先出現在<strong>戒指下</strong>，再擴散到手指、手部、前臂；常侵犯較薄的手背；也可有類似 pompholyx 的 vesiculation。</li>
+<li>Scaling 與 erythema 先出現在<strong>戒指下</strong>，再擴散到手指、手部、前臂；較薄的手背通常（usually）受侵犯；也可有類似 pompholyx 的 vesiculation。</li>
 <li>常自行癒合並產生 hardening，但也可能進展成 cumulative ICD。</li>
 </ul>
 <h3>Cumulative ICD（累積型）</h3>
 <ul>
-<li><mark class="ex-key">多次 <strong>subthreshold</strong> 傷害，間隔不足以讓屏障完全修復</mark><span class="ex-qref">107-48</span>；多半是多種刺激，每次都在前一次恢復前開始。<span class="ex-ref">p.443</span></li>
-<li>傷害超過個人的 manifestation threshold 才出現症狀；atopics 閾值較低或修復較慢 → 較早發病；閾值會隨病程下降，所以少量刺激也能讓病持續。</li>
-<li><mark class="ex-key">與 <strong>weak irritants</strong> 相關，暴露可發生在工作與居家</mark><span class="ex-qref">107-48</span>；病人常不覺得有關聯 → 診斷延遲。</li>
-<li>症狀：pruritus、hyperkeratotic 皮膚裂傷疼痛、lichenification、chapping；邊界<strong>不如</strong>急性 ICD 銳利（Fig. 27-4：水泥工慣用手較嚴重）。</li>
+<li><mark class="ex-key">多次 <strong>subthreshold</strong> 傷害，間隔不足以讓屏障完全修復</mark><span class="ex-qref">107-48</span>；可由單一刺激因子反覆造成，但較常（more commonly）是多種刺激，每次都在前一次恢復前開始。<span class="ex-ref">p.443</span></li>
+<li>傷害超過個人的 manifestation threshold 才出現症狀；atopics 閾值較低或修復較慢 → 較早發病；閾值不是固定值，可能（may）隨病程下降，所以少量刺激也可能讓病持續。</li>
+<li><mark class="ex-key">與 <strong>weak irritants</strong> 相關，暴露可發生在工作與居家</mark><span class="ex-qref">107-48</span>；病人常不覺得有關聯 → 診斷可能大幅延遲（may be considerably delayed）。</li>
+<li>病人常（often）主訴：pruritus、hyperkeratotic 皮膚裂傷疼痛、lichenification、chapping；邊界<strong>不如</strong>急性 ICD 銳利（Fig. 27-4：水泥工慣用手較嚴重）。</li>
 </ul>
 <h3>Traumatic ICD（創傷型）</h3>
 <ul>
-<li>急性皮膚創傷（lacerations、burns 或 acute ICD）後發生，常見於使用強力清潔劑之後；表現 eczematous lesions 與 <strong>delayed healing</strong>。<span class="ex-ref">p.444</span></li>
-<li>停止暴露後可能好幾個月才完全緩解；以適當、針對該物質的溫和清潔劑取代 harsh soaps。</li>
+<li>可能（may）發生於急性皮膚創傷（lacerations、burns 或 acute ICD）之後；其中 acute ICD 常見於使用強力清潔劑之後，宜詢問病人是否用強效肥皂或清潔劑清洗皮膚；表現 eczematous lesions 與 <strong>delayed healing</strong>。<span class="ex-ref">p.444</span></li>
+<li>持續使用刺激物可能使病情持續，停止暴露後可能好幾個月才完全緩解；必要時（when warranted）應以適當的肥皂取代 harsh soaps；通常（typically）可找到針對欲移除物質、「無害」（harmless）又有效的專用清潔劑。</li>
 </ul>
 <h3>Asteatotic dermatitis（乾燥性）</h3>
 <ul>
-<li>又稱 eczema craquelé, exsiccation eczematid、asteatotic eczema、winter dermatitis；主要見於長期大量使用肥皂與清潔用品的<strong>老年人</strong>。<span class="ex-ref">p.444</span></li>
+<li>又稱 eczema craquelé, exsiccation eczematid ICD、asteatotic eczema、winter dermatitis；主要見於長期大量使用肥皂與清潔用品的<strong>老年人</strong>。<span class="ex-ref">p.444</span></li>
 <li>皮膚乾燥、ichthyosiform scaling、劇癢；好發於低濕度的冬季。</li>
 </ul>
 <h3>Pustular and acneiform ICD（膿疱與痤瘡樣）</h3>
@@ -485,7 +485,7 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 </ul>
 </section>
 
-<section class="ex-note" id="chemical-burns" data-w="937">
+<section class="ex-note" id="chemical-burns" data-w="1002">
 <h2>5. Chemical Burns Requiring Unique Therapies（需特殊處置的化學灼傷）</h2>
 <p>以下先做基本處置，再送急診進一步評估治療。<span class="ex-ref">p.443</span></p>
 <div class="ex-table-wrap"><table class="ex-table">
@@ -493,24 +493,24 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <tbody>
 <tr><td><mark class="ex-key">Burning metal fragments：sodium、potassium、lithium</mark><span class="ex-qref">104-17</span></td><td><mark class="ex-key">用 <strong>Class D fire extinguisher</strong>（sodium chloride、sodium carbonate 或 graphite base）或<strong>沙子</strong>滅火；覆蓋 mineral oil；以機械方式取出金屬顆粒。<strong>禁止用水</strong>，因會形成強鹼性 hydroxides</mark><span class="ex-qref">104-17</span></td></tr>
 <tr><td><mark class="ex-key">Hydrofluoric acid（HF）</mark><span class="ex-qref">104-17 105-47</span></td><td><mark class="ex-key">以流動清水沖洗 → <strong class="ex-n">2.5%</strong> calcium gluconate gel → 需要時再病灶內注射</mark><span class="ex-qref">104-17 105-47</span></td></tr>
-<tr><td><mark class="ex-key">White phosphorus</mark><span class="ex-qref">104-17</span></td><td><mark class="ex-key">機械移除顆粒；肥皂與清水清洗；再以 copper sulfate（CuSO4）水溶液處理數分鐘，移除黑色 copper phosphide 後水洗</mark><span class="ex-qref">104-17</span>。Wood lamp 下 white phosphorus 會螢光，有助移除；短暫以 <strong class="ex-n">1%</strong> copper sulfate 沖洗可使顆粒形成深色 copper phosphide 便於辨識清創並阻止氧化。但 <strong>copper sulfate 可致 hemolysis 與 hemoglobinuria</strong>，需謹慎；Kaushik 與 Bird 較新建議改以大量清水沖洗</td></tr>
+<tr><td><mark class="ex-key">White phosphorus</mark><span class="ex-qref">104-17</span></td><td><mark class="ex-key">機械移除顆粒；肥皂與清水清洗；再以 copper sulfate（CuSO4）水溶液處理數分鐘，移除黑色 copper phosphide 後水洗</mark><span class="ex-qref">104-17</span>。Wood lamp 下 white phosphorus 會螢光，可能有助（may facilitate）移除；短暫以 <strong class="ex-n">1%</strong> copper sulfate 沖洗可能有幫助（may be helpful）：copper sulfate 與磷結合，在顆粒表面形成深色 copper phosphide，便於辨識清創並阻止進一步氧化。但 <strong>copper sulfate 可致 hemolysis 與 hemoglobinuria</strong>，需謹慎；Kaushik 與 Bird 較新建議改以大量清水沖洗</td></tr>
 <tr><td>Phenolic compounds</td><td>以未稀釋的 <strong class="ex-n">200–400 Da</strong> polyethylene glycol（PEG）去污，再大量清水沖洗；沒有 PEG 可用 isopropanol 或 glycerol；或先肥皂水洗，再用 PEG 300／400 或 <strong class="ex-n">10%</strong> ethanol 水溶液</td></tr>
 <tr><td><mark class="ex-key">Bromine 或 iodine</mark><span class="ex-qref">104-17</span></td><td><mark class="ex-key">反覆以肥皂與清水清洗，再以 <strong class="ex-n">5%</strong> sodium thiosulfate 處理</mark><span class="ex-qref">104-17</span></td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">Table 27-4，p.443。</p>
-<aside class="ex-trap"><strong>易錯</strong><mark class="ex-key">燃燒的 Na／K／Li 禁止用水滅火（會形成強鹼性 hydroxides）</mark><span class="ex-qref">104-17</span>；HF 用 calcium gluconate gel（2.5%），bromine／iodine 用 5% sodium thiosulfate。</aside>
+<aside class="ex-trap"><strong>易錯</strong><mark class="ex-key">燃燒的 Na／K／Li 禁止用水滅火（會形成強鹼性 hydroxides）</mark><span class="ex-qref">104-17</span>；HF 用 calcium gluconate gel（2.5%），bromine／iodine 用 5% sodium thiosulfate。<span class="ex-ref">p.443</span></aside>
 </section>
 
-<section class="ex-note" id="acd" data-w="799">
+<section class="ex-note" id="acd" data-w="839">
 <h2>6. Allergic Contact Dermatitis（過敏性接觸性皮膚炎）</h2>
 <ul>
 <li><mark class="ex-key">雖然常說 OCD 有 <strong class="ex-n">80%</strong> 是 ICD，但各報告差異很大；NACDG 報告職業性 ACD（<strong class="ex-n">60%</strong>）明顯多於 ICD（<strong class="ex-n">32%</strong>）</mark><span class="ex-qref">114-15</span>。<span class="ex-ref">p.444</span></li>
-<li>差異原因：研究地區的產業別、病人年齡與性別、轉診至三級中心的 selection bias、能否完整 patch test、各國法規與通報系統。</li>
-<li>臨床上 ICD 與 ACD 表現相似（pruritus、pain、erythema、swelling、xerosis、wheals 或 blisters、lichenification），都可為 acute、subacute、chronic。<span class="ex-ref">p.444</span></li>
-<li><mark class="ex-key">Health care workers 是最常受影響的職業之一，過敏原包括 glutaraldehyde、formaldehyde、quaternium-15、thiuram mix</mark><span class="ex-qref">101-23</span>。</li>
+<li>可能的差異原因（may contribute）：研究地區的產業別、病人年齡與性別、轉診至三級中心的 selection bias、能否完整 patch test、各國法規與通報系統。</li>
+<li>臨床上 ICD 與 ACD 可有相似表現（pruritus、pain、erythema、swelling、xerosis、wheals 或 blisters、lichenification），都可為 acute、subacute、chronic。<span class="ex-ref">p.444</span></li>
+<li><mark class="ex-key">據報告（are reported to be）health care workers 是最常受影響的職業之一，過敏原包括 glutaraldehyde、formaldehyde、quaternium-15、thiuram mix</mark><span class="ex-qref">101-23</span>。</li>
 <li>其他常見職業：machinists、construction workers、homemakers／house cleaners、food handlers、custodians、stock handlers、cosmetologists、laboratory technicians。</li>
-<li><mark class="ex-key">Fig. 27-5：corrosion inhibitors 中的 <strong>mercaptobenzothiazole</strong> 造成手部皮膚炎，之後改戴的 nitrile gloves 也含 mercaptobenzothiazole</mark><span class="ex-qref">101-23</span>。<span class="ex-ref">p.445</span></li>
+<li><mark class="ex-key">Fig. 27-5：corrosion inhibitors 中的 <strong>mercaptobenzothiazole</strong> 造成手部皮膚炎，之後使用的 nitrile gloves 也含 mercaptobenzothiazole</mark><span class="ex-qref">101-23</span>。<span class="ex-ref">p.445</span></li>
 </ul>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Most frequently reported occupational skin allergens（Table 27-5）</th></tr></thead>
@@ -521,19 +521,19 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <p class="ex-cite">Table 27-5，p.445。</p>
 </section>
 
-<section class="ex-note" id="contact-urticaria" data-w="2017">
+<section class="ex-note" id="contact-urticaria" data-w="2109">
 <h2>7. Contact Urticaria &amp; Immediate Contact Reactions（接觸性蕁麻疹）</h2>
-<p>Contact urticaria（CU）：直接接觸化學物或蛋白質後的短暫 wheal and flare；<strong>數分鐘到 1 小時內出現、數小時內消退</strong>。分為 nonimmune-mediated、immune-mediated，另有 uncertain mechanism。<span class="ex-ref">p.444–445</span></p>
+<p>Contact urticaria（CU）：直接接觸化學物或蛋白質後的短暫 wheal and flare；<strong>數分鐘到 1 小時內出現、數小時內消退</strong>。分為 nonimmune-mediated、immune-mediated，另有 uncertain mechanism（兼具兩者特徵）。<span class="ex-ref">p.444–445</span></p>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Type</th><th scope="col">Key features（重點）</th></tr></thead>
 <tbody>
 <tr><td>Nonimmunologic CU（NICU）</td><td>不需事先致敏；<strong>最常見</strong>的 CU；侷限、比 ICU 輕微；<mark class="ex-key">不被 <strong>H1 antihistamines</strong> 抑制，但口服或外用 <strong>NSAIDs</strong> 有效 → 提示 <strong>prostaglandins</strong> 參與</mark><span class="ex-qref">114-15</span></td></tr>
 <tr><td>Immunologic CU（ICU）</td><td><mark class="ex-key"><strong>Type I hypersensitivity</strong>，allergen-specific IgE</mark><span class="ex-qref">114-15</span>，見於曾暴露者；<mark class="ex-key">atopic 病人特別容易</mark><span class="ex-qref">102-15</span>；可擴散到接觸點以外（Table 27-7 staging）</td></tr>
-<tr><td>CU of uncertain mechanism</td><td>同時有 CU 與全身性組織胺樣反應，但缺乏直接或免疫基礎；<mark class="ex-key">最常見原因是頭髮漂白增強劑（bleaching hair boosters）中的 <strong>ammonium persulfate</strong></mark><span class="ex-qref">101-05</span>；突然發作：erythema、edema、劇癢、urticaria，偶有 syncope 合併 wheezing、dyspnea</td></tr>
+<tr><td>CU of uncertain mechanism</td><td>可能（may）發生於會產生 CU 與全身性組織胺樣反應、但缺乏直接或免疫基礎的物質；<mark class="ex-key">最常見原因是頭髮漂白增強劑（bleaching hair boosters）中的 <strong>ammonium persulfate</strong></mark><span class="ex-qref">101-05</span>；通常（typically）突然發作：erythema、edema、劇癢、urticaria，偶有 syncope 合併 wheezing、dyspnea</td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">p.445–446。</p>
-<aside class="ex-trap"><strong>易錯</strong><mark class="ex-key">NICU 與 ICU 不同，不被 H1 antihistamines 抑制，但口服或外用 NSAIDs 有效</mark><span class="ex-qref">114-15</span>；ICU 是 allergen-specific IgE 介導的 type I hypersensitivity。</aside>
+<aside class="ex-trap"><strong>易錯</strong><mark class="ex-key">NICU 與 ICU 不同，不被 H1 antihistamines 抑制，但口服或外用 NSAIDs 有效</mark><span class="ex-qref">114-15</span>；ICU 是 allergen-specific IgE 介導的 type I hypersensitivity。<span class="ex-ref">p.445</span></aside>
 <h3>NICU exposures（Table 27-6）</h3>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Category</th><th scope="col">Examples</th></tr></thead>
@@ -562,22 +562,22 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <p class="ex-cite">Table 27-7，p.445。</p>
 <h3>Causes of ICU（ICU 的原因）</h3>
 <ul>
-<li><mark class="ex-key"><strong>Latex gloves</strong> 是 ICU 的典型例子（prototypical example）</mark><span class="ex-qref">101-05 102-15</span>。1980 年代起因 HIV、viral hepatitis 盛行而普遍使用 latex 手套做 universal precautions，造成 type I latex 過敏大流行。<span class="ex-ref">p.445–446</span></li>
-<li>預防策略：降低手套蛋白含量（降低致敏性）、提供 latex-free 替代品 → latex 過敏發生率下降。<span class="ex-ref">p.446</span></li>
+<li><mark class="ex-key"><strong>Latex gloves</strong> 是 ICU 的典型例子（prototypical example）</mark><span class="ex-qref">101-05 102-15</span>。1980 年代初起，多項因素（包括因 HIV 與 viral hepatitis 盛行增加而以 latex 手套做 universal precautions）共同促成（contributed to）type I latex 過敏人數驚人增加。<span class="ex-ref">p.445–446</span></li>
+<li>預防策略：降低手套蛋白含量（降低致敏性）、提供 latex-free 替代品 → 有助降低（helped reduce）latex 過敏發生率。<span class="ex-ref">p.446</span></li>
 <li>除醫護人員外，kitchen workers、cleaners、其他戴 NRL 者，以及製造 rubber bands、surgical gloves、latex dolls 的工人也常受影響。</li>
 <li>NRL 也可造成 <strong>type IV（ACD）</strong>，且佔 NRL 過敏反應的大多數（<strong class="ex-n">&gt;80%</strong>）。</li>
 <li><mark class="ex-key">幾乎任何<strong>食物</strong>都可引起 ICU，是<strong>第 2 常見</strong>原因：potato、carrot、apple、tomato、shellfish、seafood、meats</mark><span class="ex-qref">101-05 102-15</span>；近年注意麵包師傅的 wheat allergens。</li>
 <li><mark class="ex-key">其他原因：preservatives</mark><span class="ex-qref">102-15</span>、fragrances、disinfectants、antibiotics、topical medicaments、epoxy resin hardeners、衣物中的 formaldehyde、數種木材、birch pollen。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Latex gloves 是 ICU 的典型例子（prototypical example），但 NRL 也可造成 type IV（ACD），且佔 NRL 過敏反應的 &gt;80%。Foods 是 ICU 第 2 常見原因。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Latex gloves 是 ICU 的典型例子（prototypical example），但 NRL 也可造成 type IV（ACD），且佔 NRL 過敏反應的 &gt;80%。Foods 是 ICU 第 2 常見原因。<span class="ex-ref">p.445–446</span></aside>
 </section>
 
-<section class="ex-note" id="chemical-acne" data-w="2255">
+<section class="ex-note" id="chemical-acne" data-w="2468">
 <h2>8. Chemical Exposures: Occupational Acne &amp; Chloracne（化學暴露：職業性痤瘡）</h2>
 <ul>
 <li><strong>Oil acne</strong>：machinists 接觸 industrial／cutting oils，除了被油浸濕的衣物部位，也可出現在 airborne oil mists 暴露處。<span class="ex-ref">p.446</span></li>
-<li>Coal tar plant workers、roofers、道路與營造工人接觸 coal tar oils、creosote、pitch → <strong>comedonal acne</strong>，尤其臉部與 malar 區；這些物質含 <strong>PAH</strong>，也具致癌性。</li>
-<li><mark class="ex-key"><strong>Chloracne</strong>：dioxins、naphthalenes、biphenyls、dibenzofurans、azobenzenes、azoxybenzenes 暴露</mark><span class="ex-qref">105-47 106-11</span>；特徵為多發 <strong>closed comedones</strong> 與 <strong>straw-colored cysts</strong>，主要在 <strong>malar crescents 與 retroauricular folds</strong>，也可侵犯 neck、trunk、extremities、buttocks、scrotum、penis。<span class="ex-ref">p.446</span></li>
+<li>Coal tar plant workers、roofers、道路與營造工人接觸 coal tar oils、creosote、pitch 可發生（can develop）<strong>comedonal acne</strong>，尤其臉部與 malar 區；這些物質含 <strong>PAH</strong>，也具致癌性。</li>
+<li><mark class="ex-key"><strong>Chloracne</strong>：與某些（certain）dioxins、naphthalenes、biphenyls、dibenzofurans、azobenzenes、azoxybenzenes 暴露相關</mark><span class="ex-qref">105-47 106-11</span>；典型（typically）特徵為多發 <strong>closed comedones</strong> 與 <strong>straw-colored cysts</strong>，主要在 <strong>malar crescents 與 retroauricular folds</strong>，也可侵犯 neck、trunk、extremities、buttocks、scrotum、penis。<span class="ex-ref">p.446</span></li>
 <li><mark class="ex-key">強效誘發物：<strong>2,3,7,8-tetrachlorodibenzo-p-dioxin（TCDD）</strong>，為越戰 Agent Orange 部分批次的污染物，也是其他工業製程的副產物</mark><span class="ex-qref">106-11</span>。</li>
 <li>ch80 補充：cutting oils 是 industrial acne 最常見原因；<mark class="ex-key">chlorinated hydrocarbons（chloronaphthalene、<strong>chlorobiphenyls</strong>、chlorodiphenyloxide）造成的 chloracne 較嚴重、難處理</mark><span class="ex-qref">105-47</span>；<mark class="ex-key">停止暴露後多數在 <strong class="ex-n">2 years</strong> 內消退，外用或口服 retinoids、口服抗生素可能有益</mark><span class="ex-qref">105-47</span>。<span class="ex-ref">ch80 p.1452–1453</span></li>
 </ul>
@@ -585,24 +585,24 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <ul>
 <li><mark class="ex-key">McKee 定義 chloracne 為 <strong>dioxin（TCDD）全身中毒</strong>的皮膚表現</mark><span class="ex-qref">106-11</span>；Herxheimer 1899 年首次描述。<span class="ex-ref ex-ref-mckee">McKee p.1121</span></li>
 <li><mark class="ex-key">暴露事件：Seveso（義大利，1976）、Yusho（日本九州，1968）、<strong>Yu-Cheng（台灣，1979）</strong>、越戰 Agent Orange，或蓄意下毒</mark><span class="ex-qref">106-11</span>。</li>
-<li>McKee 的描述：以 <strong>open comedones（blackheads）</strong>、milia、epidermoid inclusion cysts 為主，缺乏明顯發炎；好發 malar crescent、crow’s foot、postauricular、penis、scrotum、axillae；<strong>鼻子典型不受侵犯</strong>；meibomian glands 常受侵犯（ophthalmic chloracne）。</li>
-<li>全身：hepatotoxicity、peripheral neuropathy、CNS 症狀、COPD、hypertriglyceridemia、diabetes，罕見 porphyria cutanea tarda；lymphatic／hematopoietic neoplasms、breast cancer、soft tissue sarcomas 風險上升。</li>
-<li>Histology：noninflammatory 的 follicular infundibular dilatation 與 plugging（hyperkeratosis）形成 comedones；sebaceous glands squamous metaplasia → milia → epidermoid cysts，皮脂腺消失。確診應以血清與組織化學分析或生物檢測證實。</li>
+<li>McKee 的描述：以 <strong>open comedones（blackheads）</strong>、milia、epidermoid inclusion cysts 為主，缺乏明顯發炎；好發 malar crescent、crow’s foot、postauricular、penis、scrotum、axillae；<strong>鼻子典型不受侵犯</strong>；meibomian glands 典型（typically）受侵犯（ophthalmic chloracne）。</li>
+<li>全身侵犯可表現為（may present as）：hepatotoxicity、peripheral neuropathy、CNS 症狀、COPD、hypertriglyceridemia、diabetes，罕見 porphyria cutanea tarda；lymphatic／hematopoietic neoplasms、breast cancer、soft tissue sarcomas 風險上升。</li>
+<li>Histology：noninflammatory 的 follicular infundibular dilatation 與 plugging（hyperkeratosis）形成 comedones；sebaceous glands squamous metaplasia → milia → epidermoid cysts，皮脂腺消失。最終診斷應在血清與組織中以直接化學分析（direct chemical analysis）或生物檢測（biological assay）證實。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫 chloracne 以 closed comedones 與 straw-colored cysts 為特徵；McKee 寫 open comedones（blackheads）、milia、epidermoid inclusion cysts，並寫鼻子典型不受侵犯（nasal involvement characteristically absent）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫 chloracne 典型（typically）以 closed comedones 與 straw-colored cysts 為特徵 <span class="ex-ref">p.446</span>；McKee 寫 open comedones（blackheads）、milia、epidermoid inclusion cysts，並寫鼻子典型不受侵犯（nasal involvement characteristically absent）<span class="ex-ref ex-ref-mckee">McKee p.1121</span>。</aside>
 <h3>Chemical leukoderma 的機轉（McKee／ch76 補充）</h3>
 <ul>
-<li><mark class="ex-key">McKee 以 <strong>monobenzyl ether of hydroquinone</strong> 等 phenols 可誘發與 vitiligo 無法區分的色素變化，作為 vitiligo self-destruction theory（toxic melanin precursors 破壞黑色素細胞）的實驗證據</mark><span class="ex-qref">106-11 107-48</span>。<span class="ex-ref ex-ref-mckee">McKee p.993</span></li>
+<li><mark class="ex-key">McKee 以 <strong>monobenzyl ether of hydroquinone</strong> 等 phenols 可誘發與 vitiligo 無法區分的色素變化，作為 vitiligo self-destruction theory（易感者〔predisposed individuals〕的黑色素細胞被 toxic melanin precursors 及 melanin 本身破壞）的實驗證據</mark><span class="ex-qref">106-11 107-48</span>。<span class="ex-ref ex-ref-mckee">McKee p.993</span></li>
 <li>Fitzpatrick ch27 本章只在化學灼傷表列出 phenolic compounds 的去污方式（Table 27-4），沒有討論 leukoderma。<span class="ex-ref">p.443</span></li>
-<li>ch76 補充：<mark class="ex-key">第一個確定與 vitiligo 發病相關的化學暴露是 <strong class="ex-n">1939</strong> 年皮革廠工人手與前臂脫色，元凶為 <strong>monobenzyl ether of hydroquinone（monobenzone）</strong>；部分工人在遠離暴露處也脫色</mark><span class="ex-qref">106-11 107-48</span>，表示不只是直接毒性，而是加劇自體免疫破壞。<span class="ex-ref">ch76 p.1336</span></li>
+<li>ch76 補充：<mark class="ex-key">第一個確定與 vitiligo 發病相關的化學暴露是 <strong class="ex-n">1939</strong> 年一群皮革廠工人中很大比例（a large proportion）手與前臂脫色，元凶為 <strong>monobenzyl ether of hydroquinone（monobenzone）</strong>；部分工人在遠離暴露處也脫色</mark><span class="ex-qref">106-11 107-48</span>，表示不只是直接毒性，而是加劇自體免疫破壞。<span class="ex-ref">ch76 p.1336</span></li>
 <li>ch76 補充：<mark class="ex-key">其他致病化學物包括 <strong>4-tert-butyl phenol</strong>、<strong>4-tert-butylcatechol</strong>；共同點是結構類似 tyrosine 的 phenols，被黑色素細胞當成 tyrosine analog 攝取、與 tyrosinase 作用，引發 cellular stress 並活化免疫發炎</mark><span class="ex-qref">106-11 107-48</span>。<span class="ex-ref">ch76 p.1336</span></li>
 </ul>
 </section>
 
-<section class="ex-note" id="mechanical" data-w="931">
+<section class="ex-note" id="mechanical" data-w="1099">
 <h2>9. Mechanical Exposures（機械性暴露）</h2>
 <ul>
-<li>Friction、pressure、pounding、vibration 可造成 calluses、blisters，甚至 myositis、tenosynovitis、骨與神經傷害、lacerations、abrasions；傷口易續發細菌感染。皮膚反應取決於適應時間，並受年齡、性別、濕度、出汗、營養、感染、既有皮膚病、遺傳與種族影響。<span class="ex-ref">p.446</span></li>
+<li>Friction、pressure、pounding、vibration 可造成 calluses、blisters，甚至 myositis、tenosynovitis、骨與神經傷害、lacerations、abrasions；lacerations、abrasions、組織破壞與 blisters 也為續發感染鋪路（細菌，較少為 fungi、parasites、viruses）。皮膚反應取決於適應時間，並受年齡、性別、濕度、出汗、營養、感染、既有皮膚病、遺傳與種族影響。<span class="ex-ref">p.446</span></li>
 </ul>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Group（族群）</th><th scope="col">Lesions（病灶）</th></tr></thead>
@@ -610,9 +610,9 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <tr><td>Musicians</td><td>Harpist’s finger、fiddler’s neck、guitar nipple、cellist’s chest、flautist’s chin</td></tr>
 <tr><td>Athletes</td><td>Black heel（talon noir）、blisters、jogger’s toe</td></tr>
 <tr><td>Computer users</td><td>Mousing callus（重複創傷）、computer palms（長時間壓迫）</td></tr>
-<tr><td><mark class="ex-key">Fiberglass workers</mark><span class="ex-qref">101-17 105-47 106-11</span></td><td><mark class="ex-key">纖維穿入皮膚造成機械性刺激，常引起類似 <strong>scabies</strong> 的搔癢疹</mark><span class="ex-qref">101-17 105-47 106-11</span></td></tr>
+<tr><td><mark class="ex-key">Fiberglass workers</mark><span class="ex-qref">101-17 105-47 106-11</span></td><td><mark class="ex-key">纖維穿入皮膚可造成機械性刺激，常引起可能類似（may resemble）<strong>scabies</strong> 的搔癢疹</mark><span class="ex-qref">101-17 105-47 106-11</span></td></tr>
 <tr><td>Plants</td><td>細毛（trichomes）或帶倒鉤的毛（glochids）；oxalate crystal 的機械作用加上植物毒素或酵素穿入</td></tr>
-<tr><td>Housewives、剝牛皮的 slaughterhouse workers</td><td>反覆壓迫使指尖 anoxia → <strong>onycholysis</strong></td></tr>
+<tr><td>Housewives、剝牛皮的 slaughterhouse workers</td><td>曾有報告（has been reported）：反覆壓迫使指尖全部或部分 anoxia → <strong>onycholysis</strong></td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">p.446–447。</p>
@@ -621,55 +621,55 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 </ul>
 <h3>Vibration-induced white finger（VWF）</h3>
 <ul>
-<li>使用振動工具造成手指與手部疼痛的血管痙攣，屬 <strong>secondary Raynaud phenomenon</strong>。<span class="ex-ref">p.447</span></li>
+<li>使用振動工具可誘發（can induce）手指與手部疼痛的血管痙攣，屬 <strong>secondary Raynaud phenomenon</strong>。<span class="ex-ref">p.447</span></li>
 <li>高風險：pneumatic riveters、chippers、chainsaws、drills、hammers 使用者，<strong>寒冷氣候</strong>更甚；<strong class="ex-n">30–300 Hz</strong> 振動頻率最相關；<strong>smoking</strong> 是已知危險因子。</li>
-<li>設備設計改良、自動化與防護裝備使機械性職業皮膚病大幅減少。</li>
+<li>現代設備設計持續改良有助（has helped）降低振動與 VWF 症狀盛行；隨自動化增加、較少手動操作工具與較佳防護裝備，機械性職業皮膚病灶盛行率已大幅下降。</li>
 </ul>
 </section>
 
-<section class="ex-note" id="physical" data-w="2174">
+<section class="ex-note" id="physical" data-w="2567">
 <h2>10. Physical Exposures: Thermal Stress &amp; Radiation（物理性暴露：溫度與輻射）</h2>
 <h3>Heat（熱）</h3>
 <ul>
-<li>可造成 burns、hyperhidrosis、erythema、telangiectasias；農夫、營造工人在衣物摩擦處發生 <strong>miliaria</strong>（搔癢、丘疹，少數有 heat exhaustion 風險），寬鬆衣物與降溫可緩解。<span class="ex-ref">p.447</span></li>
+<li>可造成 burns、hyperhidrosis、erythema、telangiectasias；農夫、營造工人等高溫環境工作者可能（may）在衣物摩擦處發生 <strong>miliaria</strong>（搔癢、丘疹，因無法藉出汗維持恆定，甚至有小幅〔a small risk〕heat exhaustion 風險），寬鬆衣物與降溫可緩解。<span class="ex-ref">p.447</span></li>
 <li><strong>Erythema ab igne</strong>：反覆長時間熱暴露，包括長時間把 laptop 放在腿上。</li>
-<li>熱會加重 rosacea、herpes simplex、acne vulgaris。</li>
-<li>職業燒燙傷：廚房 hot grease、roofers hot tar；易燃與爆炸性液體造成大多數工業燒傷；<strong>welders 燒傷發生率最高</strong>；cooks、laborers、food service、mechanics、nurse aides 也較高；住院燒傷近 <strong class="ex-n">1/3</strong> 與工作相關。</li>
+<li>既有皮膚病可能因熱暴露而加重（may be aggravated），如 rosacea、herpes simplex、acne vulgaris。</li>
+<li>職業燒燙傷：廚房 hot grease、roofers hot tar；易燃與爆炸性液體造成大多數工業燒傷；<strong>welders 燒傷發生率最高</strong>；cooks、laborers、food service、mechanics、nurse aides 也較高；一份報告（one report）指出住院燒傷近 <strong class="ex-n">1/3</strong> 與工作相關。</li>
 </ul>
 <h3>Cold（冷）</h3>
 <ul>
-<li>可導致 Raynaud phenomenon。<span class="ex-ref">p.447</span></li>
-<li><mark class="ex-key"><strong>Frostbite</strong> 是常見的冷傷害，侵犯 nose、ears、fingers、toes 等末端部位</mark><span class="ex-qref">108-11</span>；高風險：firemen、construction workers、postal workers、military personnel、winter sports、refrigeration workers、icemakers、liquefied gas makers、ski patrolmen、mountain rescue workers。</li>
+<li>可能（may）導致 Raynaud phenomenon。<span class="ex-ref">p.447</span></li>
+<li><mark class="ex-key"><strong>Frostbite</strong> 是另一常見的冷傷害，可見於（may be seen affecting）nose、ears、fingers、toes 等末端部位</mark><span class="ex-qref">108-11</span>；高風險：firemen、construction workers、postal workers、military personnel、winter sports、refrigeration workers、icemakers、liquefied gas makers、ski patrolmen、mountain rescue workers。</li>
 </ul>
 <h3>Ultraviolet radiation &amp; occupational skin cancer（紫外線與職業性皮膚癌）</h3>
 <ul>
 <li>UV（自然與人工）是 melanoma、SCC、BCC 等所有皮膚癌<strong>最重要的原因</strong>；避免 UV 估計每年可預防 <strong class="ex-n">&gt;3 million</strong> 例皮膚癌。<span class="ex-ref">p.447</span></li>
 <li>職業性皮膚癌誘導期長（常為<strong>數十年</strong>）。</li>
-<li>Outdoor workers 定義：典型工作日戶外工作 <strong class="ex-n">≥3 hours</strong>；包括農業、營造、漁業、運輸、landscaping、體育老師、警察。</li>
-<li>Pilots 與 cabin crew：meta-analysis 顯示 melanoma 為一般人 <strong class="ex-n">2 倍</strong>；UV 每升高 <strong class="ex-n">1000 m</strong> 增加 <strong class="ex-n">10–12%</strong>，巡航高度 UV 可達 <strong class="ex-n">2–3 倍</strong>；巡航約 <strong class="ex-n">56 min</strong> 的 UVA ≈ <strong class="ex-n">20-min</strong> tanning bed。</li>
-<li><strong class="ex-n">90%</strong> SCC 與 BCC、<strong class="ex-n">2/3</strong> melanoma 可歸因於過量 UV。</li>
-<li>Outdoor workers 有效的三項預防：規律使用 sunscreen、合適衣物遮蔽、行為改變與衛教；避開 <strong class="ex-n">10 am–3 pm</strong>。澳洲營造工人只有 <strong class="ex-n">10%</strong> 有適當防曬。<span class="ex-ref">p.447–448</span></li>
+<li>Outdoor workers 粗略定義（loosely defined）：典型工作日戶外工作 <strong class="ex-n">≥3 hours</strong>，屬有害 UV 暴露與皮膚癌高風險；可包括（may include）農業、營造、漁業、運輸、landscaping、體育老師、警察。</li>
+<li>Pilots 與 cabin crew：meta-analysis 顯示 melanoma 為一般人 <strong class="ex-n">2 倍</strong>；UV 每升高 <strong class="ex-n">1000 m</strong> 增加 <strong class="ex-n">10–12%</strong>，巡航高度 UV 可達 <strong class="ex-n">2–3 倍</strong>；一項研究（one study）顯示巡航約 <strong class="ex-n">56 min</strong> 的 UVA ≈ <strong class="ex-n">20-min</strong> tanning bed。</li>
+<li><strong class="ex-n">90%</strong> SCC 與 BCC、<strong class="ex-n">2/3</strong> melanoma 可能可歸因於（may be attributed to）過量 UV。</li>
+<li>Outdoor workers 有效的三項預防：規律使用 sunscreen、合適衣物遮蔽、行為改變與衛教；避開 <strong class="ex-n">10 am–3 pm</strong>。一項澳洲營造工人研究發現只有 <strong class="ex-n">10%</strong> 有適當防曬。<span class="ex-ref">p.447–448</span></li>
 <li>評估職業關聯要問從第一份工作起的詳細職業史，以及非職業活動、嗜好、戶外休閒。<span class="ex-ref">p.448</span></li>
 </ul>
 <h3>Ionizing radiation（游離輻射）</h3>
 <ul>
 <li>X-rays 等可致皮膚癌，主要是 <strong>SCC</strong>，BCC 較少。<span class="ex-ref">p.448</span></li>
-<li>Acute radiation dermatitis：erythema、itching、發炎；高劑量 → blisters、hemorrhage、necrosis（Fig. 27-6：工業 gamma 射源手指傷害）。</li>
-<li>Chronic radiation dermatitis：skin atrophy、色素異常、keratinization disorders、sclerosis、telangiectasias、hair loss、皮脂腺喪失造成 xerosis。</li>
+<li>高劑量急性暴露可能（may）導致 acute radiation dermatitis：erythema、itching、發炎；更高劑量可能表現為 blisters、hemorrhage，甚至 necrosis（Fig. 27-6：工業 gamma 射源手指傷害）。</li>
+<li>延遲後遺症可能（may）為 chronic radiation dermatitis：skin atrophy、色素異常、keratinization disorders、sclerosis、telangiectasias、hair loss、皮脂腺喪失造成 xerosis。</li>
 <li>暴露場所：醫療機構、核武生產、核反應爐與支援設施、各類製造業。</li>
 </ul>
 <h3>McKee 補充：Radiation dermatitis</h3>
 <ul>
-<li>Acute（暴露後 <strong class="ex-n">6 months</strong> 內）vs chronic（<strong class="ex-n">&gt;6 months</strong>，常多年後才出現：atrophy、scaling、poikiloderma、telangiectasia、alopecia）。<span class="ex-ref ex-ref-mckee">McKee p.1047–1048</span></li>
-<li>NCI-CTCAE v4.0 分 5 級：Grade 1 faint erythema 或 dry desquamation；Grade 2 moderate–brisk erythema、皺摺處 patchy moist desquamation；Grade 3 皺摺以外 moist desquamation、輕微外傷即出血；Grade 4 full-thickness necrosis／ulceration、自發出血、需植皮；Grade 5 death。<span class="ex-ref ex-ref-mckee">McKee p.1048</span></li>
-<li>Chronic radiation dermatitis 可併發 BCC（臉部最常見、常多發）、SCC（常為 spindle cell variant）、Merkel cell carcinoma、atypical fibroxanthoma、angiosarcoma 等。</li>
-<li>Histology：acute 有表皮壞死、spongiosis、basal hydropic degeneration、真皮水腫與 fibrin、早期血管血栓；chronic 有 hyperkeratosis、表皮 acanthosis 或 atrophy、真皮緻密纖維化、<strong>bizarre（radiation）fibroblasts</strong>（單一散在、不成群）、血管壁增厚與 fibrointimal hyperplasia、telangiectasia、附屬器（尤其毛囊）消失。Acute radiation 變化可很像 acute GVHD。<span class="ex-ref ex-ref-mckee">McKee p.1049</span></li>
+<li>Acute（暴露後 <strong class="ex-n">6 months</strong> 內）vs chronic（依慣例 <strong class="ex-n">&gt;6 months</strong>，通常（usually）多年後才出現：atrophy、scaling、poikiloderma、telangiectasia，常（often）有 alopecia）。<span class="ex-ref ex-ref-mckee">McKee p.1047–1048</span></li>
+<li>NCI-CTCAE v4.0 分 5 級：Grade 1 faint erythema 或 dry desquamation；Grade 2 moderate–brisk erythema、patchy moist desquamation（大多侷限於皺摺處，mostly confined to skin folds and creases）、moderate edema；Grade 3 皺摺以外 moist desquamation、輕微外傷即出血；Grade 4 life-threatening consequences、full-thickness dermis 的 necrosis／ulceration、自發出血、需植皮；Grade 5 death。<span class="ex-ref ex-ref-mckee">McKee p.1048</span></li>
+<li>Chronic radiation dermatitis 可併發 BCC（在臉部是最常見的腫瘤，且常多發）、SCC（常為 spindle cell variant）、Merkel cell carcinoma、atypical fibroxanthoma、angiosarcoma 等。</li>
+<li>Histology：acute 表皮可壞死（may be necrotic）並有 spongiosis，basal hydropic degeneration 可很明顯，真皮水腫、可有 fibrin，早期有血管血栓；chronic 有 hyperkeratosis、表皮 acanthosis 或 atrophy、真皮緻密纖維化、<strong>bizarre（radiation）fibroblasts</strong>（幾乎都是單一散在、不成群）、血管壁常增厚與 fibrointimal hyperplasia、或見 telangiectasia、常見附屬器（尤其毛囊）消失。Acute radiation 變化可很像 acute GVHD。<span class="ex-ref ex-ref-mckee">McKee p.1049</span></li>
 </ul>
 </section>
 
-<section class="ex-note" id="biologic" data-w="5130">
+<section class="ex-note" id="biologic" data-w="5332">
 <h2>11. Biologic Exposures: Occupational Infections（生物性暴露：職業性感染）</h2>
-<p>與動物接觸的職業特別多；醫護人員、軍人、農夫、林業工作者仍是高風險族群。<span class="ex-ref">p.448</span></p>
+<p>多種感染原可造成職業皮膚病，尤其見於需接觸動物的職業；某些感染原仍見於醫護人員、軍人、農夫、林業工作者等高風險職業族群。<span class="ex-ref">p.448</span></p>
 <h3>Bacterial infections（細菌感染）</h3>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Disease</th><th scope="col">Organism</th><th scope="col">Occupation（高風險職業）</th><th scope="col">Treatment（Table 27-1）</th></tr></thead>
@@ -686,12 +686,12 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <p class="ex-cite">Table 27-1，p.440；內文 p.448–449。</p>
 <ul>
 <li><em>Staphylococcus</em>／<em>Streptococcus</em>（gram-positive）污染小傷口（lacerations、burns、puncture wounds、abrasions）→ impetigo、cellulitis、furuncles、abscesses；所有職業都可能，meat packers、construction、farm workers 及與感染者密切接觸者（nurses、athletes、hairdressers、manicurists）較常見；<mark class="ex-key">美國職業美式足球員曾有難以控制的 MRSA 流行</mark><span class="ex-qref">108-11</span>。<span class="ex-ref">p.448</span></li>
-<li><mark class="ex-key">Anthrax：主要為皮膚型（<strong>Woolsorter disease</strong>），見於處理進口 goat hair、wool、hides（被孢子污染）的工人</mark><span class="ex-qref">102-37</span>；非洲與亞洲部分地區流行，美國罕見；CDC 1950–2001 只做了 <strong class="ex-n">49</strong> 次調查（多為農業與紡織廠）；2001 年生物恐攻後被列為 high-priority pathogen。<span class="ex-ref">p.448</span></li>
-<li><mark class="ex-key"><em>M. marinum</em>：acid-fast nontuberculous mycobacterium，<strong class="ex-n">1926</strong> 年首先從 Philadelphia 水族館的海水魚屍分離；從事與魚或水相關的職業與嗜好者風險最高</mark><span class="ex-qref">102-37</span>。Fish tank granuloma（swimming pool granuloma）表現為外傷處的 warty nodule 或 plaque，常在暴露後約 <strong class="ex-n">6 weeks</strong>；媒介包括淡水或海水魚、shellfish、snails、water fleas、dolphins。<span class="ex-ref">p.448</span></li>
+<li><mark class="ex-key">Anthrax：主要為皮膚型（<strong>Woolsorter disease</strong>），見於處理進口 goat hair、wool、hides（被孢子污染）的工人</mark><span class="ex-qref">102-37</span>；非洲與亞洲部分地區流行，美國罕見；CDC 1950–2001 只做了 <strong class="ex-n">49</strong> 次調查（多為農業與紡織廠）；因孢子高度傳染性及 2001 年美國炭疽生物恐攻等事件，<em>B. anthracis</em> 也被數個美國政府機構視為 high-priority pathogen（潛在生物恐怖製劑）。<span class="ex-ref">p.448</span></li>
+<li><mark class="ex-key"><em>M. marinum</em>：acid-fast nontuberculous mycobacterium，<strong class="ex-n">1926</strong> 年首先從 Philadelphia 水族館的海水魚屍分離；從事與魚或水相關的職業與嗜好者風險最高</mark><span class="ex-qref">102-37</span>。Fish tank granuloma（swimming pool granuloma）表現為通常（usually）在外傷處的 warty nodule 或 plaque，常在暴露後 <strong class="ex-n">6 weeks</strong>；媒介包括淡水或海水魚、shellfish、snails、water fleas、dolphins。<span class="ex-ref">p.448</span></li>
 <li>Erysipeloid（fish-handler disease）：gram-positive <em>E. rhusiopathiae</em>，<strong>幾乎都是職業病</strong>；處理腐敗動物產品（魚、貝、哺乳類、家禽），經擦傷或割傷進入；侷限、邊界銳利的鮮紅至紫紅色感染，常在手部。<span class="ex-ref">p.448–449</span></li>
-<li>Pitted keratolysis：gram-positive（通常 <em>Corynebacterium</em>）感染足底角質層 → malodor、hyperhidrosis、sliminess；熱帶赤腳的稻農，以及穿密閉鞋的軍人、礦工；行軍疼痛影響部署；越戰季風期 <strong class="ex-n">144</strong> 名陸戰隊員中 <strong class="ex-n">49%</strong> 罹患。<span class="ex-ref">p.449</span></li>
-<li>Brucellosis：gram-negative <em>Brucella</em>，人為意外宿主；經吸入氣膠、結膜接觸或皮膚傷口；非職業來源為生乳製品；全身症狀（fever、night sweats、myalgia、weight loss、arthralgia），易慢性化；皮膚表現只佔 <strong class="ex-n">1–14%</strong>，多非特異（disseminated papules／nodules、nodosum-like erythema、purpura、ulcerations、abscesses）。<span class="ex-ref">p.449</span></li>
-<li>Tularemia：gram-negative <em>F. tularensis</em>，經 ticks、fleas、deerflies、食入、吸入或直接接觸；<strong>ulceroglandular form 最常見</strong>（接種處潰瘍加區域淋巴結腫大）；pneumonic form 較少見但較嚴重；近年 landscapers 風險增加（尤其 pneumonic form）。<span class="ex-ref">p.449</span></li>
+<li>Pitted keratolysis：gram-positive（通常 <em>Corynebacterium</em>）感染足底角質層 → malodor、hyperhidrosis、sliminess；熱帶赤腳的稻農，以及穿密閉鞋的軍人、礦工；行軍疼痛可能（may）降低軍人的作戰部署能力；越戰季風期 <strong class="ex-n">144</strong> 名陸戰隊員中 <strong class="ex-n">49%</strong> 罹患。<span class="ex-ref">p.449</span></li>
+<li>Brucellosis：gram-negative <em>Brucella</em>，人為意外宿主；經吸入氣膠、結膜接觸或皮膚傷口；非職業來源為食入受感染的乳汁或乳製品；全身症狀（fever、night sweats、myalgia、weight loss、arthralgia），易慢性化；皮膚表現一般不常見，據報告（have been reported）佔感染者 <strong class="ex-n">1–14%</strong>，常（often）非特異（disseminated papules／nodules、nodosum-like erythema、purpura、ulcerations、abscesses）。<span class="ex-ref">p.449</span></li>
+<li>Tularemia：gram-negative <em>F. tularensis</em>，經 ticks、fleas、deerflies、食入、吸入或直接接觸；<strong>ulceroglandular form 最常見</strong>（接種處潰瘍加區域淋巴結腫大）；pneumonic form 較少見但較嚴重；近年文獻支持（recent literature supports）landscapers 風險增加（尤其 pneumonic form）。<span class="ex-ref">p.449</span></li>
 </ul>
 <h3>Fungal and yeast infections（黴菌與酵母菌感染）</h3>
 <div class="ex-table-wrap"><table class="ex-table">
@@ -722,9 +722,9 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <thead><tr><th scope="col">Disease</th><th scope="col">Virus</th><th scope="col">Occupation</th><th scope="col">Treatment（Table 27-1）</th></tr></thead>
 <tbody>
 <tr><td>Herpetic whitlow</td><td>HSV</td><td>Dental workers</td><td>Acyclovir、valacyclovir、famciclovir</td></tr>
-<tr><td>Orf（ecthyma contagiosum）</td><td>Parapoxvirus</td><td>Veterinarians、sheep herders、farmers</td><td>Supportive care；疑似續發感染才加抗生素</td></tr>
+<tr><td>Orf（ecthyma contagiosum）</td><td>Parapoxvirus</td><td>Veterinarians、sheep herders、farmers</td><td>Supportive care；疑似續發感染時加抗生素</td></tr>
 <tr><td>Pseudocowpox（milker’s nodule）</td><td>Paravaccinia virus</td><td>Farmers、veterinarians、fresh meat handlers</td><td>Symptomatic；大病灶可 surgical curettage</td></tr>
-<tr><td>Butcher’s warts</td><td><strong>HPV-7</strong></td><td>Butchers</td><td>Destructive modalities（cryotherapy、curettage、electrodesiccation）、podophyllotoxin、topical 5-FU、cantharidin、caustics and acids、imiquimod</td></tr>
+<tr><td>Viral warts（HPV）</td><td><strong>HPV-7</strong></td><td>Butchers</td><td>Destructive modalities（cryotherapy、curettage、electrodesiccation）、podophyllotoxin、topical 5-FU、cantharidin、caustics and acids、imiquimod</td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">Table 27-1，p.440；內文 p.449–450。</p>
@@ -732,16 +732,16 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <li>HSV：醫護人員（尤其牙科）經直接（唇）或間接（手指）接觸傳染，病人有病灶時特別容易。<span class="ex-ref">p.449</span></li>
 <li>Orf：parapoxvirus，常感染 <strong>sheep 與 goats</strong>，經接觸動物或 fomites 傳人；兒童參觀 petting zoos、livestock fairs 後也有報告。<span class="ex-ref">p.449</span></li>
 <li>Milker nodule：由受感染的<strong>牛乳房</strong>直接接觸傳染；疼痛結節類似 orf，結痂後<strong>自行消退</strong>；預防為治療牛的 mastitis，處理動物前後戴手套、肥皂水洗與消毒。<span class="ex-ref">p.450</span></li>
-<li>HPV：butchers、肉品與魚類處理者的 viral warts；<strong>HPV-7（butcher wart virus）幾乎只見於此族群</strong>。對 CO2-laser 汽化 genital warts 或 LEEP 的人員，研究顯示口鼻 HPV 傳染風險低。<span class="ex-ref">p.450</span></li>
+<li>HPV：butchers、肉品與魚類處理者的 viral warts；<strong>HPV-7（butcher wart virus）幾乎只見於此族群</strong>。對 CO2-laser 汽化 genital warts 或 LEEP 的人員，一項近期研究支持（supports）口鼻 HPV 傳染風險低，但可能（likely）需要更多研究。<span class="ex-ref">p.450</span></li>
 <li>Bloodborne pathogens：HBV、HCV、HIV 是醫護人員的嚴重職業威脅；急性期通常無皮膚表現；safer needle devices 與 universal precautions 無法完全消除風險，<strong>prophylactic treatment</strong> 仍是重要預防。<span class="ex-ref">p.450</span></li>
 </ul>
 </section>
 
-<section class="ex-note" id="diagnosis" data-w="1953">
+<section class="ex-note" id="diagnosis" data-w="2103">
 <h2>12. Diagnosis of Occupational Skin Diseases（診斷）</h2>
 <h3>Patch testing &amp; ACD（貼膚試驗）</h3>
 <ul>
-<li><mark class="ex-key">Patch testing 是診斷 ACD 的 <strong>gold standard</strong></mark><span class="ex-qref">107-48</span>；早期診斷 ACD 可降低醫療成本、改善病程與生活品質；詳細的暴露與職業史決定要測哪些過敏原。<span class="ex-ref">p.450</span></li>
+<li><mark class="ex-key">Patch testing 是診斷 ACD 的 <strong>gold standard</strong></mark><span class="ex-qref">107-48</span>；早期評估與診斷 ACD 與（has been associated with）醫療成本降低、病程與生活品質改善相關；詳細的暴露與職業史決定要測哪些過敏原。<span class="ex-ref">p.450</span></li>
 <li>市售過敏原以 petrolatum 或水調製，分 series（rubber、metals、glues and adhesives）或依職業（dental、hairdressers’、bakers’ series）。</li>
 <li><strong>TRUE Test</strong>：即貼型，<strong class="ex-n">3</strong> 片 panels、<strong class="ex-n">35</strong> 種過敏原與 mixes；<strong>NACDG standard screening tray</strong> 過敏原範圍更廣。</li>
 <li>可能需要測工作場所的產品，但基本原則：<strong>不可測未知物質，也不可測已知刺激物（solvents、cements、soaps）</strong>。</li>
@@ -765,56 +765,56 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <li><mark class="ex-key">這裡的 patch test 要在貼上 <strong class="ex-n">15–20 min</strong> 後移除，並依 open test 的時間點判讀</mark><span class="ex-qref">102-15 114-15</span>。</li>
 <li><mark class="ex-key">測試 contact urticaria 時要備妥急救設備與藥物</mark><span class="ex-qref">101-05</span>。</li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong><mark class="ex-key">評估 contact urticaria 時，patch test 要在貼上 15–20 min 後移除，並依 open test 的時間點判讀</mark><span class="ex-qref">102-15 114-15</span>；patch testing 是 ACD 的 gold standard，SPT 則用於 IgE-mediated immediate hypersensitivity（如 ICU）。</aside>
+<aside class="ex-trap"><strong>易錯</strong><mark class="ex-key">評估 contact urticaria 時，patch test 要在貼上 15–20 min 後移除，並依 open test 的時間點判讀</mark><span class="ex-qref">102-15 114-15</span>；patch testing 是 ACD 的 gold standard，SPT 則用於 IgE-mediated immediate hypersensitivity（如 ICU）。<span class="ex-ref">p.451</span> <span class="ex-ref">p.450</span></aside>
 <h3>RAST &amp; other blood tests（血液檢查）</h3>
 <ul>
-<li><mark class="ex-key">血液檢查測 allergen-specific antibodies 可輔助過敏診斷；<strong>RAST</strong> 測 serum-specific IgE，但已過時，多被較敏感、不需放射性的 <strong>ELISA</strong> 取代</mark><span class="ex-qref">101-05</span>。<span class="ex-ref">p.450–451</span></li>
+<li><mark class="ex-key">血液檢查測 allergen-specific antibodies 可輔助過敏診斷；<strong>RAST</strong> 測 serum-specific IgE，但已過時，現常（often）被較敏感、不需放射性的 <strong>ELISA</strong> 取代</mark><span class="ex-qref">101-05</span>。<span class="ex-ref">p.450–451</span></li>
 <li>2010 年 NIAID 建議放棄以 RAST 測 specific IgE，改用更敏感的 fluorescence enzyme-labeled assays。<span class="ex-ref">p.451</span></li>
 </ul>
 <h3>Other diagnostic testing（其他檢查）</h3>
 <ul>
 <li><mark class="ex-key">KOH preparation、skin biopsy 等一般檢查在職業情境同樣可用</mark><span class="ex-qref">105-47</span>。<span class="ex-ref">p.451</span></li>
 <li><strong>Arsenic</strong>：可測 blood、hair、nails、urine，<strong>urine 最可靠</strong>；要求 <strong>speciation</strong> 區分 organic 與 inorganic。Inorganic arsenic、elemental arsenic、arsine gas 有毒；organic arsenic（如 arsenobetaine）相對無害，存在海鮮中，吃海鮮後 <strong class="ex-n">72 hours</strong> 內可明顯升高總 arsenic。</li>
-<li><strong>Beryllium</strong>：致敏可用 patch test，但職場常用血液 <strong>Be-LPT（beryllium lymphocyte proliferation test）</strong>；&gt;12,000 人研究中 sensitivity <strong class="ex-n">68.3%</strong>、specificity <strong class="ex-n">96.9%</strong>。致敏者可發生 chronic beryllium disease（CBD，永久、可能進展的 granulomatous restrictive lung disease）；早期治療與肺功能等改善相關；懷疑致敏時合併暫時或永久工作限制。</li>
+<li><strong>Beryllium</strong>：致敏可用 patch test 偵測，職場也常用血液 <strong>Be-LPT（beryllium lymphocyte proliferation test）</strong>；&gt;12,000 人研究中 sensitivity <strong class="ex-n">68.3%</strong>、specificity <strong class="ex-n">96.9%</strong>。致敏者可發生 chronic beryllium disease（CBD，永久、可能進展的 granulomatous restrictive lung disease）；observational studies 提示（suggest）早期治療臨床明顯（clinically apparent）的 CBD 與肺功能、影像、呼吸症狀及功能狀態改善相關；初步懷疑致敏時，可能建議（may be recommended）進一步檢查並合併暫時或永久工作限制。</li>
 </ul>
 </section>
 
-<section class="ex-note" id="histopathology" data-w="3082">
+<section class="ex-note" id="histopathology" data-w="3320">
 <h2>13. Histopathology（病理，McKee 補充為主）</h2>
 <h3>Contact dermatitis（ICD／ACD）</h3>
 <ul>
 <li>Fitzpatrick：ICD 與 ACD 的組織學都是 <strong>spongiotic dermatitis</strong>（Table 27-3）。<span class="ex-ref">p.442</span></li>
-<li><mark class="ex-key">McKee：ICD 是物質直接損傷皮膚所致，<strong>遠比 ACD 常見</strong></mark><span class="ex-qref">114-15</span>；機轉包括 keratin denaturation、移除表面脂質與保水物質、細胞膜損傷、direct cytotoxic effects。Acute 為短時間單次強酸／強鹼；chronic cumulative（'wear and tear'）為長期接觸弱刺激物（soap and water、detergents、industrial oil、plants）。大多數職業性手部皮膚炎（含 housewives’ 與 wedding ring dermatitis）屬 irritant type。<span class="ex-ref ex-ref-mckee">McKee p.206</span></li>
+<li><mark class="ex-key">McKee：ICD 是物質直接損傷皮膚所致，<strong>遠比 ACD 常見</strong></mark><span class="ex-qref">114-15</span>；機轉包括 keratin denaturation、移除表面脂質與保水物質、細胞膜損傷、direct cytotoxic effects。Acute 通常（usually）來自相對短時間單次接觸強酸／強鹼等強刺激物；chronic cumulative（'wear and tear'）為長期接觸弱刺激物（soap and water、detergents、industrial oil、plants）。大多數職業性手部皮膚炎（含 housewives’ 與 wedding ring dermatitis）屬 irritant type。<span class="ex-ref ex-ref-mckee">McKee p.206</span></li>
 <li>McKee：FLG（filaggrin）loss-of-function mutation 可能增加 chronic ICD 易感性。<span class="ex-ref ex-ref-mckee">McKee p.207</span></li>
 <li>Spongiotic dermatitis 的 hallmark 是 intercellular edema（spongiosis），可形成 intraepidermal vesicle 並有 lymphocyte exocytosis；<strong>嚴重 irritant dermatitis</strong> 表皮可有大量 neutrophils 與 necrotic keratinocytes，甚至 dermal–epidermal separation；<strong>ACD 可有許多 eosinophils</strong>。單靠組織學通常無法區分臨床亞型，且診斷 spongiotic dermatitis 前要先做 PAS 排除黴菌。<span class="ex-ref ex-ref-mckee">McKee p.207–208</span></li>
-<li>分期：acute（vesiculation）→ subacute（acanthosis、spongiosis）→ chronic（spongiosis 輕微、明顯 psoriasiform acanthosis）。<span class="ex-ref ex-ref-mckee">McKee p.208</span></li>
-<li>Asteatotic dermatitis（McKee）：老人、冬季、輕度 ichthyosis 者；可能與 internal malignancy（lymphoproliferative disorders、solid tumors）相關。<span class="ex-ref ex-ref-mckee">McKee p.207</span></li>
+<li>分期：acute（vesiculation）→ subacute（acanthosis、spongiosis）→ chronic（spongiosis 可很輕微、vesicles 少見；acanthosis 明顯且常呈 psoriasiform）。<span class="ex-ref ex-ref-mckee">McKee p.208</span></li>
+<li>Asteatotic dermatitis（McKee）：常見於（commonly seen）老人，尤其冬季與輕度 ichthyosis 者；可能與 internal malignancy（lymphoproliferative disorders、solid tumors）相關。<span class="ex-ref ex-ref-mckee">McKee p.207</span></li>
 </ul>
 <h3>Contact urticaria</h3>
 <ul>
 <li>McKee 分 allergic 與 irritant 兩型：<mark class="ex-key">allergic contact urticaria 是 <strong>IgE 介導的 mast cell degranulation</strong></mark><span class="ex-qref">114-15</span>（化學物、foods、latex、plants、fruits、vegetables、動物抗原），常有 atopy 病史；irritant contact urticaria 為非免疫性（cosmetics、food、medications）。<span class="ex-ref ex-ref-mckee">McKee p.699–700</span></li>
-<li><mark class="ex-key">Irritant contact urticaria 機轉推測是物質直接、非免疫性使 mast cells 去顆粒、釋放 vasogenic mediators</mark><span class="ex-qref">114-15</span>（McKee 未提 NSAIDs）。<span class="ex-ref ex-ref-mckee">McKee p.700</span></li>
+<li><mark class="ex-key">Irritant contact urticaria 機轉不明，但證據提示（evidence suggests）是物質直接、非免疫性使 mast cells 去顆粒、釋放 vasogenic mediators</mark><span class="ex-qref">114-15</span>（McKee 未提 NSAIDs）。<span class="ex-ref ex-ref-mckee">McKee p.700</span></li>
 </ul>
 <h3>Occupational infections（職業性感染）</h3>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Disease</th><th scope="col">McKee key points（臨床／病理重點）</th></tr></thead>
 <tbody>
-<tr><td>Orf（ecthyma contagiosum）</td><td>Epitheliotropic DNA parapoxvirus，羊的 'scabby mouth'；潛伏 <strong class="ex-n">5–6 days</strong>，手或前臂單發丘疹 → 出血性水疱／膿疱、中央凹陷結痂，<strong class="ex-n">2–5 cm</strong>，約 <strong class="ex-n">3 weeks</strong> 消退；可併 EM-like 或 BP-like 疹。病理：對稱結節、parakeratotic crust、acanthosis 伴細長表皮索、ballooning／reticular degeneration、<strong>3–5 µm 嗜伊紅胞質內包涵體</strong>（Lendrum phloxine tartrazine 可強調）、真皮大量微血管增生擴張（virus-encoded VEGF homologue）、可有 CD30+ 浸潤 <span class="ex-ref ex-ref-mckee">McKee p.851–852</span></td></tr>
-<tr><td>Milker nodule</td><td>Parapoxvirus（與 cowpox 不同）；潛伏約 <strong class="ex-n">5 days</strong>，2–5 個紅丘疹 → 藍色觸痛結節，<strong class="ex-n">4–6 weeks</strong> 自癒不留疤；病理與 orf <strong>無法區分</strong>；CD30+ 細胞散在（不成團），勿誤認為 CD30+ lymphoproliferative disease <span class="ex-ref ex-ref-mckee">McKee p.851</span></td></tr>
-<tr><td><em>M. marinum</em></td><td>Slow-growing photochromogen；上肢約 <strong class="ex-n">90%</strong> 或以上；外傷後 1 週至 2 個月（平均 2–3 週）出現無痛結節或斑塊，可 <strong>sporotrichoid spread</strong>；病理由 abscess 進展到 granuloma，<strong>無 caseation</strong>（可有 fibrinoid necrosis），菌少，可有 pseudoepitheliomatous hyperplasia；培養陽性率低，PCR 較有用 <span class="ex-ref ex-ref-mckee">McKee p.891</span> <span class="ex-ref ex-ref-mckee">McKee p.894</span></td></tr>
-<tr><td>Pitted keratolysis</td><td><em>Corynebacterium</em> spp.，另有 <em>Kytococcus sedentarius</em>、<em>Dermatophilus congolensis</em>；足底承重處 <strong class="ex-n">≥0.7 mm</strong> 火山口狀凹陷；危險因子 hyperhidrosis、密閉鞋、赤腳、浸軟、長時間接觸水 <span class="ex-ref ex-ref-mckee">McKee p.912</span>。病理：凹陷來自致病菌（<em>D. congolensis</em>、<em>K. sedentarius</em> 的 keratolytic enzymes）溶解角質層；早期為 stratum corneum pallor；切片見上層角質層小缺損、壁幾乎垂直；需特殊染色（Gram、methenamine silver、PAS 或 Giemsa）才見菌，含 coccoid 與 filamentous 兩型 <span class="ex-ref ex-ref-mckee">McKee p.912–913</span></td></tr>
-<tr><td>Cutaneous anthrax</td><td>Gram-positive 有莢膜產孢桿菌；cutaneous 佔 <strong class="ex-n">&gt;95%</strong>；丘疹 → 水疱 → 特徵性 <strong>black eschar</strong>，周圍明顯水腫；毒素 EF、PA、LF。病理：<strong>大量 subepidermal edema</strong>、大量 neutrophils、深層出血與 fibrin、血管血栓，Gram stain 見大量大型 gram-positive bacilli（主要在淺層真皮）<span class="ex-ref ex-ref-mckee">McKee p.870–871</span></td></tr>
-<tr><td>Sporotrichosis</td><td><em>S. schenckii</em> sensu lato，腐木與植物上腐生，經木刺、荊棘、sphagnum moss 接種，常為職業感染，也可由貓傳染；lymphocutaneous 最常見。病理：PAS 或 silver 染色見 <strong class="ex-n">4–6 µm</strong> 圓形孢子或 cigar-shaped bodies，可被 <strong>Splendore-Hoeppli</strong> 嗜伊紅放射狀物質包圍（asteroid body）<span class="ex-ref ex-ref-mckee">McKee p.960–961</span></td></tr>
+<tr><td>Orf（ecthyma contagiosum）</td><td>Epitheliotropic DNA parapoxvirus，羊的 'scabby mouth'；潛伏 <strong class="ex-n">5–6 days</strong>，通常單發丘疹、最常見於手或前臂 → 出血性水疱／膿疱、中央凹陷結痂，可達 <strong class="ex-n">2–5 cm</strong>，通常約 <strong class="ex-n">3 weeks</strong> 消退不留疤；可併 EM-like 或 BP-like 疹。病理：對稱結節、parakeratotic crust、acanthosis 伴細長表皮索、ballooning／reticular degeneration、早期病灶切片可見 <strong>3–5 µm 嗜伊紅胞質內包涵體</strong>（Lendrum phloxine tartrazine 可強調）、真皮大量微血管增生擴張（virus-encoded VEGF homologue）、可有 CD30+ 浸潤 <span class="ex-ref ex-ref-mckee">McKee p.851–852</span></td></tr>
+<tr><td>Milker nodule</td><td>Parapoxvirus（與 cowpox 不同）；潛伏約 <strong class="ex-n">5 days</strong>，2–5 個紅丘疹 → 藍色觸痛結節，<strong class="ex-n">4–6 weeks</strong> 自癒不留疤；病理與 orf <strong>無法區分</strong>；有時可見 CD30+ 不典型浸潤，可能與 CD30+ lymphoproliferative disease 混淆；milker nodule 的 CD30+ 細胞散在（後者通常成團），但並非完全一致，部分病例可見成群 <span class="ex-ref ex-ref-mckee">McKee p.851</span></td></tr>
+<tr><td><em>M. marinum</em></td><td>Slow-growing photochromogen；上肢約 <strong class="ex-n">90%</strong> 或以上；通常於外傷後 1 週至 2 個月（平均 2–3 週）出現，典型為無痛結節或斑塊，常（quite often）<strong>sporotrichoid spread</strong>；病理由 abscess 進展到 granuloma，<strong>無 caseation</strong>（可有 fibrinoid necrosis），除 immunocompromised 病人外菌少，可有 pseudoepitheliomatous hyperplasia；培養陽性率常低，PCR 可能較有用 <span class="ex-ref ex-ref-mckee">McKee p.891</span> <span class="ex-ref ex-ref-mckee">McKee p.894</span></td></tr>
+<tr><td>Pitted keratolysis</td><td><em>Corynebacterium</em> spp.，另有 <em>Kytococcus sedentarius</em>、<em>Dermatophilus congolensis</em>；足底承重處 <strong class="ex-n">≥0.7 mm</strong> 火山口狀凹陷；危險因子 hyperhidrosis、密閉鞋、赤腳、浸軟、長時間接觸水 <span class="ex-ref ex-ref-mckee">McKee p.912</span>。病理：凹陷來自致病菌溶解角質層（in vitro 研究顯示 <em>D. congolensis</em>、<em>K. sedentarius</em> 會產生 keratinolytic enzymes）；早期為 stratum corneum pallor；切片見上層角質層小缺損、壁幾乎垂直；需特殊染色（Gram、methenamine silver、PAS 或 Giemsa）才見菌，含 coccoid 與 filamentous 兩型 <span class="ex-ref ex-ref-mckee">McKee p.912–913</span></td></tr>
+<tr><td>Cutaneous anthrax</td><td>Gram-positive 有莢膜產孢桿菌；cutaneous 佔 <strong class="ex-n">&gt;95%</strong>；丘疹 → 水疱 → 特徵性 <strong>black eschar</strong>，周圍常有明顯水腫；毒素 EF、PA、LF。病理：<strong>大量 subepidermal edema</strong>、大量 neutrophils、深層出血與 fibrin、深層可見血管血栓，Gram stain 見大量大型 gram-positive bacilli（主要在淺層真皮）<span class="ex-ref ex-ref-mckee">McKee p.870–871</span></td></tr>
+<tr><td>Sporotrichosis</td><td><em>S. schenckii</em> sensu lato，腐木與植物上腐生，常經木刺、荊棘、sphagnum moss 接種，常為職業感染，也有貓傳染的報告；lymphocutaneous 最常見。病理：PAS 或 silver 染色見 <strong class="ex-n">4–6 µm</strong> 圓形至卵圓形孢子，偶見 cigar-shaped rods，可被 <strong>Splendore-Hoeppli</strong> 嗜伊紅放射狀物質包圍（asteroid body）<span class="ex-ref ex-ref-mckee">McKee p.960–961</span></td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">Erysipeloid、tularemia、brucellosis 的病理不在本次整理範圍；Fitzpatrick 內容見第 11 節。</p>
 <h3>Occupational scrotal cancer（McKee）</h3>
 <ul>
-<li>過去 chemical carcinogens 是 scrotal cancer 的重要病因：chimney soot（Pott cancer）、tar workers、paraffin 與 shale oil workers、機械與螺絲製造操作員、cotton mule spinners；現今多與過去 arsenic 或 coal tar 治療 psoriasis、HPV 相關。<span class="ex-ref ex-ref-mckee">McKee p.1203</span></li>
+<li>過去 chemical carcinogens 是 scrotal cancer 的重要病因：chimney soot（Pott cancer）、tar workers、paraffin 與 shale oil workers、機械與螺絲製造操作員、cotton mule spinners；現今似乎（seems to be）特別與過去 arsenic 或 coal tar 治療 psoriasis、HPV 感染相關。<span class="ex-ref ex-ref-mckee">McKee p.1203</span></li>
 </ul>
 </section>
 
-<section class="ex-note" id="management" data-w="1274">
+<section class="ex-note" id="management" data-w="1582">
 <h2>14. Management &amp; Prevention（治療與預防）</h2>
 <ul>
 <li>治療依病因而定，與非職業性皮膚病基本相同；醫師的重要角色是找出病因並規劃避免暴露與復發的步驟。<span class="ex-ref">p.452</span></li>
@@ -833,28 +833,28 @@ body.ex-quiz .ex-q.ex-hide{display:none}
 <p class="ex-cite">Fig. 27-8，p.452。</p>
 <h3>Risk factors（危險因子）</h3>
 <ul>
-<li>Endogenous（不可控）：age、gender、race、genetics；exogenous（可修正）：職業與工作內容、工作習慣與環境、工作經驗、防護措施。<span class="ex-ref">p.452</span></li>
-<li>Age：年長者對刺激物反應較低；年齡與 ACD 的關係研究結果不一。</li>
-<li>Gender：職業性 ICD 在女性較常見，但多受暴露型態與性別相關職業影響，直接比較測試不支持女性較敏感；女性可能較易 ACD，也可能是暴露型態而非皮膚本質。</li>
-<li>Race：有證據顯示 Asian skin 可能較敏感、black skin 較不敏感（與 white skin 相比）。</li>
+<li>Endogenous（不可控）：age、gender、race、genetics；exogenous（可能可修正，potentially modifiable）：職業與工作內容、工作習慣與環境、工作經驗、防護措施。<span class="ex-ref">p.452</span></li>
+<li>Age：有報告指出（reports have indicated）年長者對刺激物反應較低；年齡與 ACD 的關係研究結果不一。</li>
+<li>Gender：數項研究顯示職業性 ICD 在女性較常見，但許多流行病學評估可能受化學物暴露型態與性別相關職業的偏差影響，此差異不一定（not necessarily）有直接比較測試支持；女性可能較易 ACD，但這很可能（likely）與暴露型態有關，而非皮膚本質。</li>
+<li>Race：已有種族差異的描述，有些證據（some evidence）顯示 Asian skin 可能較敏感、black skin 較不敏感（與 white skin 相比）。</li>
 <li>Genetics：IL-1α、IL-1β、IL-8、TNF-α 與 anti-inflammatory IL-1 的產量改變與 ICD、ACD 風險相關；<strong>filaggrin</strong> mutation 影響屏障；N-acetyltransferases 多型性可能與 ACD 相關。</li>
 <li><strong>Atopic dermatitis 增加對 irritants 的易感性，但不增加對 allergens 的易感性</strong>。</li>
 <li><mark class="ex-key"><strong>Wet work</strong> 定義：皮膚接觸液體 <strong class="ex-n">&gt;2 h/day</strong>、戴密閉手套 <strong class="ex-n">&gt;2 h/day</strong>，或頻繁洗手</mark><span class="ex-qref">107-48</span>；atopic 工作者從事 wet work 更易發生 OSDs。</li>
-<li>2010 NHIS（<strong class="ex-n">17,524</strong> 人）：產業別盛行率以 arts, entertainment, and recreation <strong class="ex-n">12.6%</strong> 最高，其次 health care and social assistance <strong class="ex-n">12.5%</strong>、accommodation and food services <strong class="ex-n">12.4%</strong>；職業類別以 life, physical, and social sciences <strong class="ex-n">18.2%</strong>、art, design, entertainment, sports, and media <strong class="ex-n">15.1%</strong> 最高；整體盛行率 <strong class="ex-n">9.8%</strong>。<span class="ex-ref">p.452</span></li>
-<li>PPE 使用不當反而會增加刺激物與過敏原的 permeation 與 penetration；PPE 本身也可能刺激或含過敏原（如 latex gloves）。過度洗手與使用肥皂、清潔劑會導致 ICD。<span class="ex-ref">p.452–453</span></li>
+<li>2010 NHIS Occupational Health Supplement（抽樣 <strong class="ex-n">17,524</strong> 名過去 12 個月內有工作的成人）：occupational dermatitis 期間盛行率（產業別為校正年齡、性別、種族後）以 arts, entertainment, and recreation <strong class="ex-n">12.6%</strong> 最高，其次 health care and social assistance <strong class="ex-n">12.5%</strong>、accommodation and food services <strong class="ex-n">12.4%</strong>；職業類別以 life, physical, and social sciences <strong class="ex-n">18.2%</strong>、art, design, entertainment, sports, and media <strong class="ex-n">15.1%</strong> 最高（reported dermatitis）；受訪現職／近期工作者整體 dermatitis 盛行率 <strong class="ex-n">9.8%</strong>。<span class="ex-ref">p.452</span></li>
+<li>PPE（含 gloves、clothing）常可限制危害暴露，但使用不當反而可能（may）增加刺激物與過敏原的 permeation 與 penetration；PPE 本身也可能刺激或含過敏原（如 latex gloves）。雖一般鼓勵洗手，過度衛生措施與使用肥皂、清潔劑可導致（can lead to）ICD。<span class="ex-ref">p.452–453</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Atopic dermatitis 增加的是 irritant 易感性，不是 allergen；PPE 在 hierarchy of controls 中排最後。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Atopic dermatitis 增加的是 irritant 易感性，不是 allergen；PPE 在 hierarchy of controls 中排最後。<span class="ex-ref">p.452</span></aside>
 </section>
 
-<section class="ex-note" id="risk-assessment" data-w="501">
+<section class="ex-note" id="risk-assessment" data-w="524">
 <h2>15. Health Risk Assessment（健康風險評估）</h2>
 <div class="ex-table-wrap"><table class="ex-table">
 <thead><tr><th scope="col">Component（組成）</th><th scope="col">Key points（重點）</th></tr></thead>
 <tbody>
 <tr><td>1. Hazard identification</td><td>參考類似產業；危險化學物依法需有 <strong>Safety Data Sheets（SDSs，舊稱 MSDSs）</strong>，列出性質、健康危害、所需防護與急救措施；雇主必須讓員工隨時取得</td></tr>
 <tr><td>2. Dose-response relationship</td><td>界定造成危害的相對閾值濃度；atopic dermatitis 等狀況可在較低劑量就發生 ICD</td></tr>
-<tr><td>3. Exposure assessment</td><td>評估暴露途徑、工作時間與頻率（time-dependent）；OSHA 強制 permissible exposure limits（PELs），但 <strong>PELs 不一定代表安全</strong>；NIOSH 與 ACGIH 提供依健康危害訂定的 recommended exposure limits</td></tr>
-<tr><td>4. Risk characterization</td><td>整合前三項評定風險等級（可用 toxicity × probability 的 risk matrix），保留安全邊際；據此建議控制措施（替換化學物、通風、local exhaust、調整工作週期、PPE）</td></tr>
+<tr><td>3. Exposure assessment</td><td>評估暴露途徑、工作時間與頻率（time-dependent）；某些有毒物質有 OSHA 強制的 permissible exposure limits（PELs），但 <strong>PELs 不一定代表安全</strong>；NIOSH 與 ACGIH 提供依健康危害訂定的 recommended exposure limits</td></tr>
+<tr><td>4. Risk characterization</td><td>整合前三項評定風險等級（部分評估者使用結合 toxicity 與 exposure probability 的 risk matrix），保留安全邊際；據此建議控制措施（替換化學物、通風、local exhaust、調整工作週期、PPE）</td></tr>
 </tbody>
 </table></div>
 <p class="ex-cite">p.453。</p>
