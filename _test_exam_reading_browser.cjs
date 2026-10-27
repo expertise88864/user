@@ -281,7 +281,12 @@ module.exports = async function checkExamReading(browser) {
         // the badge follows the link inside the same cell
         assert.equal(await page.locator('#ex-rank tbody tr[data-ch="' + r2 + '"] td:first-child').evaluate(td => td.lastElementChild.className), 'ex-rd-badge');
         // readable in dark mode: text and background differ
-        await page.evaluate(() => document.documentElement.setAttribute('data-theme', 'dark'));
+        // Save the preference too: the deferred shared runtime applies the saved
+        // theme when it initialises, and could otherwise reset a bare attribute.
+        await page.evaluate(() => {
+          localStorage.setItem('dn-theme', 'dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+        });
         const dark = await rankBadge(r2).evaluate(node => { const s = getComputedStyle(node); return [s.color, s.backgroundColor]; });
         assert.deepEqual(dark, ['rgb(220, 252, 231)', 'rgb(20, 83, 45)'], 'dark-mode badge colours');
         // a back-forward restore after another round redraws without duplicates
