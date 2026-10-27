@@ -42,7 +42,10 @@ jobs:
     # fixture origin, so this job needs no Preview URL and sends nothing to Vercel.
     name: Browser fixtures
     if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && startsWith(github.ref, 'refs/heads/codex/')
-    runs-on: ubuntu-latest
+    # The noble (24.04) container borrows the runner's toolcache Python, so the
+    # runner must be the same release: on ubuntu-latest (26.04 since 2026-10-27)
+    # that Python cannot load its SSL library here and every https call fails.
+    runs-on: ubuntu-24.04
     container:
       image: mcr.microsoft.com/playwright:v1.60.0-noble@sha256:9bd26ad900bb5e0f4dee75839e957a89ae89c2b7ab1e76050e559790e946b948
       options: --shm-size=1g
@@ -76,7 +79,10 @@ jobs:
     concurrency:
       group: delivery-preview-${{ github.ref }}
       cancel-in-progress: ${{ startsWith(github.ref, 'refs/heads/codex/') }}
-    runs-on: ubuntu-latest
+    # The noble (24.04) container borrows the runner's toolcache Python, so the
+    # runner must be the same release: on ubuntu-latest (26.04 since 2026-10-27)
+    # that Python cannot load its SSL library here and every https call fails.
+    runs-on: ubuntu-24.04
     # Match the npm version below. The image supplies browser OS dependencies
     # without refreshing unrelated package repositories on the hosted runner.
     container:
