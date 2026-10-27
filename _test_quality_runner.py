@@ -126,6 +126,16 @@ class ParallelChecksTests(unittest.TestCase):
             self.assertEqual(quality.main(["check"]), 0)
             self.assertEqual(runner.call_args_list[0].kwargs, {"parallel": True})
 
+    def test_deploy_builds_only_the_uncommitted_search_index(self):
+        # Vercel serves the CI-verified checkout; only the gitignored Pagefind
+        # index is produced there, with no regeneration and no repeated checks.
+        self.assertEqual(quality.DEPLOY_STEPS, [[quality.PY, "_run_pagefind.py"]])
+        with patch.object(quality, "run_steps") as runner:
+            self.assertEqual(quality.main(["deploy"]), 0)
+        self.assertEqual([call.args[1] for call in runner.call_args_list], [quality.DEPLOY_STEPS])
+        with self.assertRaises(SystemExit), contextlib.redirect_stderr(io.StringIO()):
+            quality.main(["deploy", "--content-date", "2026-10-27"])
+
     def test_serial_classification_names_real_checks(self):
         for command in quality.SERIAL_CHECK_STEPS:
             self.assertIn(command, quality.CHECK_STEPS)

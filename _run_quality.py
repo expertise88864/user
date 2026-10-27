@@ -403,6 +403,18 @@ CHECK_STEPS: list[list[str]] = [
 # before any later check starts, with live output.
 SERIAL_CHECK_STEPS: list[list[str]] = []
 
+# Vercel deploy build (owner request 2026-10-27, Build CPU Minutes): the
+# checkout already holds every generated file. quality.yml's "Canonical
+# generated file consistency" job runs the full `build` on the exact candidate
+# SHA and fails on any `git diff`, and _vercel_gate.cjs only lets production
+# build after that CI passed, so regenerating and re-running every check on
+# Vercel only repeated CI. The one published artifact that is not committed is
+# the gitignored Pagefind index; the Preview census then compares the deployed
+# file list with the checkout (everything except pagefind/).
+DEPLOY_STEPS: list[list[str]] = [
+    [PY, "_run_pagefind.py"],
+]
+
 POST_BUILD_STEPS: list[list[str]] = [
     # _minify.py moved to BUILD_GENERATED_STEPS (see TD-28 note there).
     [NPM, "run", "check-js"],
@@ -521,12 +533,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     from _normalize_date_modified import content_date_argument
 
     parser = argparse.ArgumentParser(description="Generate and validate the complete site.")
-    parser.add_argument("mode", nargs="?", default="build", choices=("regen", "check", "build"))
+    parser.add_argument("mode", nargs="?", default="build", choices=("regen", "check", "build", "deploy"))
     parser.add_argument("--content-date", type=content_date_argument,
                         help="freeze the date for new or changed prose during generation")
     args = parser.parse_args(argv)
-    if args.mode == "check" and args.content_date is not None:
-        parser.error("--content-date requires regen or build; check does not generate files")
+    if args.mode in {"check", "deploy"} and args.content_date is not None:
+        parser.error(f"--content-date requires regen or build; {args.mode} does not regenerate files")
     mode = args.mode
     if mode in {'regen', 'build'}:
         from _cms_patient_review import frozen_content_date
@@ -541,6 +553,8 @@ def main(argv: Sequence[str] | None = None) -> int:
                 run_steps("Regenerate generated site files", regeneration_steps(args.content_date))
         elif mode == "check":
             run_steps("Run quality checks", CHECK_STEPS, parallel=True)
+        elif mode == "deploy":
+            run_steps("Build deploy-only artifacts", DEPLOY_STEPS)
         elif mode == "build":
             with fixed_point_scope():
                 run_steps("Regenerate generated site files", regeneration_steps(args.content_date))

@@ -11,6 +11,7 @@
     "search-index": "python _gen_search_index.py",
     "graph": "python _knowledge_graph.py",
     "build": "python _run_quality.py build",
+    "build:deploy": "python _run_quality.py deploy",
     "check": "python _run_quality.py check",
     "check-meta": "python _check_meta.py",
     "check-meta-fast": "python _check_meta.py --fast",

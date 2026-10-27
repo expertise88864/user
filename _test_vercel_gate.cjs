@@ -331,7 +331,7 @@ for (const overrides of [
 
 test('Vercel validates before and after generating production artifacts', () => {
   const config = require('./vercel.json');
-  assert.equal(config.buildCommand, 'node _vercel_gate.cjs --build && npm run build && node _vercel_gate.cjs --build --post-build' +
+  assert.equal(config.buildCommand, 'node _vercel_gate.cjs --build && npm run build:deploy && node _vercel_gate.cjs --build --post-build' +
     ' && python _site_publish.py --stage dist');
   assert.equal(config.outputDirectory, 'dist', 'Serve only the staged public site, never the repository root');
 });
@@ -350,7 +350,7 @@ function censusLine(files = [...filesManifest.published, 'pagefind/pagefind.js',
     ' search=' + (files.includes('pagefind/pagefind.js') ? 1 : 0);
 }
 function buildEvents(lines = [censusLine()]) {
-  return [{ type: 'command', created: 1, payload: { text: 'Running "npm run build"', date: 1, id: 'e0', serial: '0', deploymentId: 'dpl_Fixture123' } },
+  return [{ type: 'command', created: 1, payload: { text: 'Running "npm run build:deploy"', date: 1, id: 'e0', serial: '0', deploymentId: 'dpl_Fixture123' } },
     ...lines.map((text, index) => ({ type: 'stdout', created: 2 + index,
       payload: { text, date: 2 + index, id: 'e' + (index + 1), serial: String(index + 1), deploymentId: 'dpl_Fixture123' } }))];
 }

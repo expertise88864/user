@@ -33,7 +33,7 @@ from _site_publish import (OUTPUT, PRIVATE_PARTS, PRIVATE_SUFFIXES, PUBLIC_DIRS,
                            is_published, published_files)
 
 
-BUILD_COMMAND = ('node _vercel_gate.cjs --build && npm run build && node _vercel_gate.cjs --build --post-build'
+BUILD_COMMAND = ('node _vercel_gate.cjs --build && npm run build:deploy && node _vercel_gate.cjs --build --post-build'
                  f' && python _site_publish.py --stage {OUTPUT}')
 # Tracked top-level directories that are never static files. api/ holds the
 # serverless functions, which Vercel deploys from the project root.

@@ -141,7 +141,7 @@ const ADMIN_SHELL = /^admin(?:\.html$|\/)/;  // middleware.js matcher: /admin.ht
 const VERCEL_API = 'https://api.vercel.com';
 const VERCEL_PROJECT = 'chendermatologist';
 const VERCEL_TEAM_SLUG = 'expertise88864s-projects';
-const GENERATED = /^pagefind\//;  // built by `npm run build`, absent from the checkout manifest
+const GENERATED = /^pagefind\//;  // built on Vercel (`npm run build:deploy`), absent from the checkout manifest
 
 // The token is only ever placed in the Authorization header. Errors carry fixed
 // labels and the HTTP status, never the request, the response body or the token.

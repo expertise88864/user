@@ -1,6 +1,6 @@
 {
   "installCommand": "npm ci --ignore-scripts --no-audit --no-fund",
-  "buildCommand": "node _vercel_gate.cjs --build && npm run build && node _vercel_gate.cjs --build --post-build && python _site_publish.py --stage dist",
+  "buildCommand": "node _vercel_gate.cjs --build && npm run build:deploy && node _vercel_gate.cjs --build --post-build && python _site_publish.py --stage dist",
   "ignoreCommand": "node _vercel_gate.cjs --build && exit 1; exit 0",
   "outputDirectory": "dist",
   "cleanUrls": true,

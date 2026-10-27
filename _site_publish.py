@@ -134,7 +134,7 @@ def stage(root: Path, output: Path) -> list[str]:
     return files
 
 
-GENERATED_DIR = 'pagefind'  # built by `npm run build`, never part of the checkout
+GENERATED_DIR = 'pagefind'  # built on Vercel by `npm run build:deploy`, never part of the checkout
 
 
 def census(output: Path) -> str:
