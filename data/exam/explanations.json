@@ -8793,7 +8793,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 C。疑義在①③：Fitzpatrick 9e 只寫含 titanium dioxide 的墨水（常為白色或粉紅色）雷射後易立即變深，並稱之為 oxidization reaction；ferric oxide、紅色與膚色墨水都沒有寫到，McKee 5e 也未提及。查 Anderson 等人（Arch Dermatol 1993）的原始報告，白色、膚色、粉紅－紅色化妝刺青在 QS ruby、QS Nd:YAG 與 510 nm pulsed dye 雷射後立即變黑，機轉推測為 ferric oxide（Fe₂O₃）還原成黑色的 ferrous oxide（FeO），與題目觀念一致，現行文獻觀念未變。"
+   "exam": "考試答案：依課本出題本意維持原答案 C。疑義在①③：Fitzpatrick 9e 只寫含 titanium dioxide 的墨水（常為白色或粉紅色）雷射後易立即變深，並稱之為 oxidization reaction；ferric oxide、紅色與膚色墨水都沒有寫到，McKee 5e 也未提及。查 Anderson 等（Arch Dermatol 1993）的原始報告，白色、膚色、粉紅－紅色化妝刺青在 QS ruby、QS Nd:YAG 與 510 nm pulsed dye 雷射後立即變黑，機轉推測為 ferric oxide（Fe₂O₃）還原成黑色的 ferrous oxide（FeO），與題目觀念一致，現行文獻觀念未變。"
   }
  },
  "103-33": {
@@ -14243,7 +14243,7 @@
     "key": "②",
     "label": "錯誤",
     "ok": false,
-    "text": "2015 Cochrane review 顯示 PUVA 達到 >75% 復色的效果劣於 nbUVB，color matching 也比 nbUVB 差，且副作用較多，因此 PUVA 已非第一線。",
+    "text": "Cochrane 2015 review 顯示 PUVA 達到 >75% 復色的效果劣於 nbUVB，color matching 也比 nbUVB 差，且副作用較多，因此 PUVA 已非第一線。",
     "refs": [
      [
       76,
@@ -15593,7 +15593,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 C。Fitzpatrick 9e 已刪除壓瘡專章，ch149 只把 pressure ulcers 列為慢性傷口類型，McKee 5e 也只在鑑別診斷中提及，四個敘述（好發部位、成因、MRI 評估骨髓炎、床頭抬高增加薦骨剪力）兩本都沒有直接寫到；依一般壓瘡照護原則，①②③正確、④錯誤，答案 C 合理。查詢現行指引（2019 EPUAP/NPIAP/PPPIA 國際指引的擺位建議仍為床頭抬高 ≤30° 以減少組織變形與剪力），現行文獻觀念未變。"
+   "exam": "考試答案：依課本出題本意維持原答案 C。Fitzpatrick 9e 已刪除壓瘡專章，ch149 只把 pressure ulcers 列為慢性傷口類型，McKee 5e 也只在鑑別診斷中提及，四個敘述（好發部位、成因、MRI 評估骨髓炎、床頭抬高增加薦骨剪力）兩本都沒有直接寫到；依一般壓瘡照護原則，①②③正確、④錯誤，答案 C 合理。查詢現行指引（EPUAP/NPIAP/PPPIA 2019 國際指引的擺位建議仍為床頭抬高 ≤30° 以減少組織變形與剪力），現行文獻觀念未變。"
   }
  },
  "105-35": {
@@ -18460,7 +18460,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於②（體股癬 2 週、足癬 4 週）與④（症狀消失後至少再塗 1 週）這兩個療程通則，Fitzpatrick 9e 與 McKee 5e 都沒有寫到；9e 只寫外用藥多數每天兩次 2–4 週。①（只塗病灶）與③（nystatin 對 [i]Malassezia[/i] 無效）可由課本判為錯誤，剩下②④正確，故維持 B。查詢文獻（Am Fam Physician 2002 回顧）：體癬、股癬通常治療 2 週，足癬以 azole 治療 4 週，臨床痊癒後應再擦至少 1 週，與②④一致。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於②（體股癬 2 週、足癬 4 週）與④（症狀消失後至少再塗 1 週）這兩個療程通則，Fitzpatrick 9e 與 McKee 5e 都沒有寫到；9e 只寫外用藥多數每天兩次 2–4 週。①（只塗病灶）與③（nystatin 對 [i]Malassezia[/i] 無效）可由課本判為錯誤，剩下②④正確，故維持 B。查詢文獻回顧（Am Fam Physician 2002）：體癬、股癬通常治療 2 週，足癬以 azole 治療 4 週，臨床痊癒後應再擦至少 1 週，與②④一致。"
   }
  },
  "106-26": {
@@ -19015,7 +19015,7 @@
   ],
   "flags": [
    "選項 B「Dexosimethasone」應為 desoximethasone（desoximetasone）之拼寫誤植，不影響作答。",
-   "C 選項的 hydrocortisone acetate 未列於 Fitzpatrick Table 24-6（class A 只列 hydrocortisone valerate 等），依 Coopman 分類屬 class A。另依 Baeck 2011 的三組分類，clobetasol（D1）與 desoximethasone（C）同屬致敏性與交叉反應風險最低的 group 3；本題依 Fitzpatrick 明文「無 patch test 證據時 desoximethasone ointment 最安全」選 B。"
+   "C 選項的 hydrocortisone acetate 未列於 Fitzpatrick Table 24-6（class A 只列 hydrocortisone valerate 等），依 Coopman 分類屬 class A。另依 Baeck（2011）的三組分類，clobetasol（D1）與 desoximethasone（C）同屬致敏性與交叉反應風險最低的 group 3；本題依 Fitzpatrick 明文「無 patch test 證據時 desoximethasone ointment 最安全」選 B。"
   ]
  },
  "106-34": {
@@ -22734,7 +22734,7 @@
    }
   ],
   "flags": [
-   "②的「一半以上在 10 歲以前」，兩本書都沒有直接寫這個比例；Fitzpatrick Ch116 引用的大型回顧中位年齡為 12.6 歲。這裡依 McKee「通常在青春期前」與 Fitzpatrick Ch115「出生後頭幾年就可能發生」判定為正確。Krengel 2006 系統性回顧（6571 例 CMN）中 melanoma 診斷年齡中位數為 7 歲（平均 15.5 歲），亦支持②。"
+   "②的「一半以上在 10 歲以前」，兩本書都沒有直接寫這個比例；Fitzpatrick Ch116 引用的大型回顧中位年齡為 12.6 歲。這裡依 McKee「通常在青春期前」與 Fitzpatrick Ch115「出生後頭幾年就可能發生」判定為正確。Krengel（2006）系統性回顧（6571 例 CMN）中 melanoma 診斷年齡中位數為 7 歲（平均 15.5 歲），亦支持②。"
   ],
   "dispute": {
    "kind": "missing",
@@ -35343,7 +35343,7 @@
    }
   ],
   "flags": [
-   "Fitzpatrick 9e 列出的 PG 診斷標準（2 major + ≥2 minor）未註明是 2004 年 Su 等人提出；且原文是「pathergy 病史或 cribriform scarring」（or），並非一定要做 pathergy test，選項 B 用語與課本略有出入。"
+   "Fitzpatrick 9e 列出的 PG 診斷標準（2 major + ≥2 minor）未註明是 Su 等（2004）提出；且原文是「pathergy 病史或 cribriform scarring」（or），並非一定要做 pathergy test，選項 B 用語與課本略有出入。"
   ]
  },
  "111-35": {
@@ -38156,7 +38156,7 @@
   ],
   "dispute": {
    "kind": "missing",
-   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於④的 JAK inhibitor：Fitzpatrick 9e 的 GA 治療表只列到 TNF-α inhibitors（且註明它們也曾誘發 GA），沒有提到 JAK inhibitor，McKee 5e 也未提及。查 2023 JAAD 與 2025 Australasian Journal of Dermatology 的系統性回顧，都把 JAK inhibitor 列為難治型 GA 的可行選項（證據多為個案與小型系列），與題目觀念一致，所以④仍判為正確。現行文獻觀念與題目相同，只是課本未收錄。"
+   "exam": "考試答案：依課本出題本意維持原答案 B。疑義在於④的 JAK inhibitor：Fitzpatrick 9e 的 GA 治療表只列到 TNF-α inhibitors（且註明它們也曾誘發 GA），沒有提到 JAK inhibitor，McKee 5e 也未提及。查系統性回顧（J Am Acad Dermatol 2023；Australas J Dermatol 2025），都把 JAK inhibitor 列為難治型 GA 的可行選項（證據多為個案與小型系列），與題目觀念一致，所以④仍判為正確。現行文獻觀念與題目相同，只是課本未收錄。"
   }
  },
  "112-29": {
@@ -41213,7 +41213,7 @@
     "key": "B",
     "label": "正確",
     "ok": true,
-    "text": "DeFilippis 等人的系統性回顧中有 JAK2 突變合併 PG 的病例；JAK 突變可造成發炎與骨髓增生疾病，合併 JAK2 突變之 polycythemia vera 的 PG 對 ruxolitinib 有反應。",
+    "text": "DeFilippis 等的系統性回顧中有 JAK2 突變合併 PG 的病例；JAK 突變可造成發炎與骨髓增生疾病，合併 JAK2 突變之 polycythemia vera 的 PG 對 ruxolitinib 有反應。",
     "refs": [
      [
       37,
