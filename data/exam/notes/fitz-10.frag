@@ -159,7 +159,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 10-4，p.135（依原頁圖片核對）。表內所有細胞都不表現 lineage markers（CD3、CD14、CD19、CD20、CD56、glycophorin A），但表現 CD45 與 HLA-DR。</p>
-<aside class="ex-trap"><strong>易錯</strong>Table 10-4 的 DDC marker 欄同時列有 CD1c 與 CD1a，但內文寫 DDC「express CD1c rather than CD1a」。<span class="ex-ref">p.135</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>Table 10-4 的 DDC marker 欄同時列有 CD1c 與 CD1a，但內文寫 DDC「express CD1c rather than CD1a」。<span class="ex-ref">p.135</span>同書 ch11 則寫 CD1a、b、c 表現於 dermal dendritic cells<span class="ex-ref">p.149（ch11）</span>，另一處又寫 CD1a、b、c、d<span class="ex-ref">p.151（ch11）</span>。</aside>
 <h3>Tolerogenic vs. immunostimulatory mode（耐受與活化）</h3>
 <ul>
 <li>原位（in situ）的 skin DCs 處於 antigen uptake 兼 immunoinhibitory mode：resident LCs 的 dendrites 可延伸穿過並超出 stratum corneum 角質細胞間形成的 tight junctions；但 costimulatory molecules 少、IL-1β、IL-6、IL-12、IL-23 產量微不足道 → 有利活化 <strong>regulatory T cells（Tregs）</strong>；以 glucocorticosteroids 維持 resting state 時優先擴增 Treg。<span class="ex-ref">p.135–136</span></li>

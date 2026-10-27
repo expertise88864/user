@@ -281,7 +281,7 @@
 <aside class="ex-trap"><strong>易錯</strong>IP 皮膚病灶四期依序為 vesicular／inflammatory（Stage I）、verrucous（Stage II）、hyperpigmentation（Stage III，通常約 6 個月大出現）、hypopigmentation 與 atrophy（Stage IV）（p.2386）。並非每個 stage 都一定出現，部分 stages 可能（may）重疊（p.2386）。Fitzpatrick 寫 IP 為 X-linked dominant、通常在男性胎兒致死（p.2386）。</aside>
 <h3>Etiology &amp; Pathogenesis（病因與致病機轉）</h3>
 <ul>
-<li><mark data-q="106-46">IP 的基因是 <strong>IKBKG</strong>（也稱 <strong>NEMO</strong>；AT-A-GLANCE 印 Xp28），encoding I-kappa-B kinase gamma subunit（IKK-gamma）</mark>，參與保護細胞免於 apoptosis。<span class="ex-ref">p.2386</span></li>
+<li><mark data-q="106-46">IP 的基因是 <strong>IKBKG</strong>（也稱 <strong>NEMO</strong>；AT-A-GLANCE p.2386 印 Xp28；同章 HED-ID p.2373、p.1352（ch77）為 Xq28；McKee p.708 寫 IP linkage loci 為 Xq11（IP1）與 Xq28（IP2）），encoding I-kappa-B kinase gamma subunit（IKK-gamma）</mark>，參與保護細胞免於 apoptosis。<span class="ex-ref">p.2386</span></li>
 <li>約 <strong class="ex-n">80%</strong> 的 IP 來自 IKBKG 突變；書中寫已報告超過 <strong class="ex-n">50</strong> 種不同的 postzygotic somatic mutation variants。<span class="ex-ref">p.2387</span></li>
 <li><mark data-q="106-46">IKK-gamma 廣泛表現，與 IKK-alpha、IKK-beta 結合以活化 <strong>NF-κB</strong> complex（原文印為 "KF-kappa-B"），此 complex 保護細胞免於 <strong>TNF-induced apoptosis</strong></mark>；IP 的各個 stage 代表無法活化此保護複合體的受影響細胞死亡；推測有 IKBKG 突變的細胞凋亡後被未受影響的細胞取代；晚期復發可能是先前病灶處仍有受影響的 keratinocytes。<span class="ex-ref">p.2387</span></li>
 <li>IKBKG 與 HED-ID 的關係見上方 HED 的 Etiology 段（男性 HED-ID）。<span class="ex-ref">p.2376</span></li>
@@ -311,7 +311,7 @@
 <li>McKee：痛的 <strong>subungual digital verrucous nodules</strong> 是偶見的晚期特徵，通常（usually）多發、手多於腳，可造成指甲破壞與底下 phalanx 的 scalloped resorption；可能誤認為 wart、subungual fibroma、keratoacanthoma 或 SCC；部分病人（some patients）有 late reactivation。眼部最特徵性的變化是 strabismus、microphthalmos、cataract、optic atrophy，最常見的眼內異常是 retinal detachment 伴 fibrovascular retrolental membrane。<span class="ex-ref ex-ref-mckee">McKee p.708</span></li>
 <li>McKee 鑑別：toxic erythema of the neonate 與 IP 要區分——IP 有 eosinophilic spongiosis，toxic erythema 沒有。<mark data-q="103-39">Toxic erythema of the neonate 早期紅斑病灶有明顯的 eosinophils；pustules 特徵上在毛囊內（intrafollicular），有時 subcorneal 或 intraepidermal，含大量 eosinophils 與少數 neutrophils</mark>。Miliaria rubra 的水泡與汗管相關，通常含 mononuclear cells 而非 eosinophils。<span class="ex-ref ex-ref-mckee">McKee p.709</span></li>
 <li><mark data-q="107-31">McKee：IP 臨床上可能與 hypomelanosis of Ito（incontinentia pigmenti achromians）混淆，兩者 CNS 侵犯相似；後者的特徵是皮膚色素改變而沒有 vesicular 或 verrucous 病灶</mark>。<span class="ex-ref ex-ref-mckee">McKee p.709</span></li>
-<li>兩本書差異：Stage II 的持續時間——Fitzpatrick 寫持續數週到數月、有報告達數年；McKee 寫出現於第 2 到 6 週、通常 6 個月前完全消退。Stage III 的起始——Fitzpatrick「約 6 個月大」，McKee「生後第 12 到 26 週」。IKBKG 的 deletion 比例以 Fitzpatrick ch131 所述（約 75%，exons 4–10 的 11.7 kb）為準。</li>
+<li>兩本書差異：Stage II 的持續時間——Fitzpatrick 寫持續數週到數月、有報告達數年；McKee 寫出現於第 2 到 6 週、通常 6 個月前完全消退。Stage III 的起始——Fitzpatrick「約 6 個月大」，McKee「生後第 12 到 26 週」。IKBKG 11.7-kb deletion（exons 4–10）比例同書兩處不同：本章 p.2387 為約 75%（About 75%）；p.1320（ch75）為 80%。</li>
 </ul>
 </section>
 
@@ -358,7 +358,7 @@
 <tr><td>AEC／EEC／Limb–mammary／ADULT／SHFM</td><td>AD</td><td>TP63（3q27），p63</td><td>AEC：collodion-like skin、AFA、cleft；EEC：ectrodactyly、cleft、GU 異常</td></tr>
 <tr><td>OODD／SSPS</td><td>AR（up to 50% heterozygotes 可有表現）</td><td>WNT10A（2q35）</td><td>Hypodontia、dystrophic nails；SSPS 有 eyelid hidrocystomas</td></tr>
 <tr><td>FDH（Goltz）</td><td>XLD</td><td>PORCN（Xp11.23）</td><td>Blaschkoid dermal atrophy、fat herniation、papillomas、skeletal 與 eye 異常</td></tr>
-<tr><td>IP</td><td>XLD</td><td>IKBKG／NEMO（Xp28，AT-A-GLANCE 所印）</td><td>4 stages 皮膚病灶（沿 Blaschko lines）；eye 與 CNS 侵犯</td></tr>
+<tr><td>IP</td><td>XLD</td><td>IKBKG／NEMO（AT-A-GLANCE p.2386 印 Xp28；HED-ID p.2373、p.1352（ch77）為 Xq28；McKee p.708 寫 IP linkage loci 為 Xq11（IP1）與 Xq28（IP2））</td><td>4 stages 皮膚病灶（沿 Blaschko lines）；eye 與 CNS 侵犯</td></tr>
 <tr><td>Tooth and nail（Witkop）</td><td>AD</td><td>MSX1（4p16.1）</td><td>小而易碎的指甲；secondary teeth 未萌出或缺如</td></tr>
 <tr><td>TDO</td><td>AD</td><td>DLX3（17q21.3-q22）</td><td>Kinky hair、enamel hypoplasia、taurodontism、骨密度增加</td></tr>
 <tr><td>ODDD</td><td>AD</td><td>GJA1（6p21-23.2），connexin 43</td><td>Enamel hypoplasia、microcornea、camptodactyly（4、5 指）、glaucoma</td></tr>

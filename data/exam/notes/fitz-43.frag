@@ -5,8 +5,8 @@
 <li><mark data-q="108-30,112-43">依黏膜侵犯程度分類：<strong>EM minus（EMm，又稱 EM minor）</strong>只侵犯 skin 與 lips；<strong>EM majus（EMM，又稱 EM major）</strong>是 mucous membranes 受侵犯時</mark>。<span class="ex-ref">p.723</span></li>
 <li>本章採 Bastuji-Garin 等人 25 年前提出的分類：SJS 與 TEN 是 <strong>epithelial necrolysis（EN）</strong>的嚴重度變異型（見 ch44），與 EM 分開；EM 與 SJS／TEN 的 demographic features、臨床表現、severity 與病因都不同。<span class="ex-ref">p.723</span></li>
 <li>德國研究者把 EMM 再分為 typical EMM（typical targets 在四肢）與 <mark data-q="101-47">atypical EMM（較大的 atypical targets、分布較廣，偶爾侵犯口周與眼周皮膚而呈 clown-like facies）；atypical EMM 病人較年輕，且較常合併 <em>Mycoplasma pneumoniae</em> 感染</mark>。<span class="ex-ref">p.723</span></li>
-<li>黏膜病變合併軀幹 target lesions 的病例，在兒科常被診斷為 SJS 或 <em>M. pneumoniae</em>–associated SJS；本章作者視為 <em>M. pneumoniae</em> 引起的 EMM。其他作者提出 <em>M. pneumoniae</em>-induced rash and mucositis（MIRM）是獨立疾病；本章作者不認為 atypical EMM 是獨立疾病。<span class="ex-ref">p.723–724</span></li>
-<li>Atypical EMM 可以主要表現在皮膚，也可以主要表現在兩處以上黏膜。只有黏膜受侵犯時診斷可能困難；Fuchs syndrome（ectodermosis pluriorificialis）是舊稱，現在偏好用 <strong>mucosal EMM</strong>（atypical EMM 的一個 subset）。<span class="ex-ref">p.724</span></li>
+<li>黏膜病變合併軀幹 target lesions 的病例常被診斷為 SJS 或 <em>M. pneumoniae</em>–associated SJS，尤其在兒科（especially in the pediatric realm）；本章作者視為 <em>M. pneumoniae</em> 引起的 EMM。其他作者提出 <em>M. pneumoniae</em>-induced rash and mucositis（MIRM）是獨立疾病；本章作者不認為 atypical EMM 是獨立疾病。<span class="ex-ref">p.723–724</span></li>
+<li>Atypical EMM 可有多種表現（may present in a variety of forms），有時主要侵犯皮膚，有時主要侵犯兩處以上黏膜。只有黏膜受侵犯時診斷可能困難；Fuchs syndrome（ectodermosis pluriorificialis）是舊稱，現在偏好用 <strong>mucosal EMM</strong>（atypical EMM 的一個 subset）。<span class="ex-ref">p.724</span></li>
 <li>ICD-10 沒有納入這些進展：SJS 與 bullous EM 共用 L51.1，TEN 為 L51.2（歸在 EM 之下）。<span class="ex-ref">p.724</span></li>
 </ul>
 <table class="ex-table">
@@ -39,7 +39,7 @@
 <li>沒有確立的 underlying disease 與 EM 風險的關聯；HIV 感染與 collagen vascular disorders 增加 SJS／TEN 風險，但不增加 EM 風險。可有 clusters（支持感染因子的角色）；incidence 不隨種族或地理位置改變。<span class="ex-ref">p.724</span></li>
 <li>Predisposing gene：<strong class="ex-n">66%</strong> 的 EM 病人帶有 HLA-DQB1*0301，對照組為 <strong class="ex-n">31%</strong>；但這個關聯沒有轉化為有意義的臨床檢測或介入。<span class="ex-ref">p.724</span>此 allele 的 positive predictive value 太低，沒有臨床價值。<span class="ex-ref">p.730</span></li>
 </ul>
-<p><strong>McKee 補充：</strong>EM 主要影響年輕人（particularly second to fourth decades），包括兒童，略偏男性，各種族皆可發生；自限且常復發；偶有 epidemics（例如 military camps）；many patients 在春夏發病（seasonal variation）。<span class="ex-ref ex-ref-mckee">McKee p.262</span></p>
+<p><strong>McKee 補充：</strong>EM 主要影響年輕人（particularly second to fourth decades），包括兒童，略偏男性，各種族皆可發生；自限且常復發；極偶爾（very occasionally）出現 epidemics（例如 military camps）；many patients 在春夏發病（seasonal variation）。<span class="ex-ref ex-ref-mckee">McKee p.262</span></p>
 </section>
 
 <section class="ex-note" id="etiology">
@@ -58,7 +58,7 @@
 <p class="ex-cite">Table 43-2，p.727；細節見 p.727–728。</p>
 <aside class="ex-trap"><strong>易錯</strong>HSV 是最常見病因（principally in recurrent cases）；<em>M. pneumoniae</em> 是第二大病因、兒童則是第一位。藥物有被報告，但 true association 不太可能。<span class="ex-ref">p.727</span></aside>
 <ul>
-<li>藥物相關 EM 的文獻也包含典型 SJS／TEN，尤其用 EMPACT syndrome（EM、phenytoin、cranial radiation therapy）這個名稱；作者認為這類名詞增加混淆並低估藥物反應的嚴重度。<span class="ex-ref">p.728</span></li>
+<li>藥物相關 EM 的文獻也包含典型 SJS／TEN，尤其用 EMPACT syndrome（EM、phenytoin、cranial radiation therapy）這個名稱；作者認為這類名詞增加混淆並低估藥物反應的潛在嚴重度（potential severity）。<span class="ex-ref">p.728</span></li>
 <li><em>M. pneumoniae</em> 的關聯常難以建立：atypical pneumonia 的臨床與影像徵象可能輕微，且通常無法直接偵測到病原。<span class="ex-ref">p.727</span></li>
 <li><mark data-q="104-03">確認 <em>M. pneumoniae</em> 最敏感的方法是對 throat swab（或 bronchopulmonary lavage）做 PCR</mark>；血清學診斷標準：急性期有 <mark data-q="104-03">IgM 或 IgA antibodies，或 paired sera（發病時與 2–3 週後）IgG 上升超過兩倍（more than twofold）</mark>。<span class="ex-ref">p.727</span></li>
 <li>Antidesmoplakin I／II autoantibodies 相關的疑似復發型 EMM：皮膚切片有 acantholysis，提示是臨床像 EM 的 pemphigus 變異型，rituximab 有效也支持此假說；54 例 typical EMM 的血清未發現 antiepidermal antibodies。<span class="ex-ref">p.728</span></li>
@@ -68,18 +68,18 @@
 
 <section class="ex-note" id="pathogenesis">
 <h2>4. Pathogenesis（HSV-associated EM 的致病機轉）</h2>
-<p>HSV-associated EM 的機轉被研究得最多；其他病因是否相同未知。<span class="ex-ref">p.728</span></p>
+<p>HSV-associated EM 的機轉已被廣泛研究（extensively investigated）；其他病因是否適用相似機轉未知。<span class="ex-ref">p.728</span></p>
 <ul>
 <li>HSV 因果關係的證據：臨床經驗、流行病學、病灶中偵測到 HSV DNA、抑制 HSV 復發可預防 EM。<span class="ex-ref">p.727</span></li>
 <li>從未從 HSV-associated EM 病灶分離出完整、具感染性的 HSV；但 PCR 一再在 keratinocytes 找到病毒 DNA 片段，且<strong>一定包含 viral polymerase（<em>Pol</em>）gene</strong>；<em>Pol</em> DNA 位於 basal keratinocytes 與 lower spinous layers，並合成 Pol protein。<span class="ex-ref">p.728</span></li>
 <li>HSV-specific T cells（含 cytotoxic cells）被招募，接著由 autoreactive T cells 做 nonspecific inflammatory amplification；這些細胞的 cytokines 造成切片中 delayed hypersensitivity–like 的表現。</li>
-<li>HSV DNA 並非經病毒血症直接感染 keratinocytes，而是由 monocytes、macrophages 與帶有 skin-homing receptor <strong>cutaneous lymphocyte antigen（CLA）</strong>的 CD34+ Langerhans cell precursors 吞噬、切碎 DNA 後運送到表皮，再把 <em>Pol</em> gene 傳給 keratinocytes。</li>
+<li>HSV DNA 並非經病毒血症直接感染 keratinocytes，而是由 monocytes、macrophages 與帶有 skin-homing receptor <strong>cutaneous lymphocyte antigen（CLA）</strong>的 CD34+ Langerhans cell precursors 吞噬病毒並切碎其 DNA 後運送到表皮，再把 <em>Pol</em> gene 傳給 keratinocytes。</li>
 <li>病毒基因可持續數個月，但 Pol protein 只表現數天，可能解釋病灶的短暫性；效應細胞是 <strong>CD4 T lymphocytes</strong>（restricted Vβ repertoire）。</li>
 <li>復發性 HSV 感染者中只有少數發生 EM，特徵為 viral DNA 不完全 fragmentation、循環 CD34+ cells 增加，或對 Pol protein 的免疫反應增強。</li>
 </ul>
 <p><strong>McKee 補充（免疫與 HLA）：</strong></p>
 <ul>
-<li>HSV 皮膚病灶的培養通常陰性，但 PCR 可在表皮找到病毒 DNA，in situ hybridization 與 immunohistochemistry 常為陽性；痊癒病灶沒有病毒 DNA。McKee 認為沒有 viremia 的證據，病毒 DNA 是由循環 lymphocytes 運送到皮膚。<span class="ex-ref ex-ref-mckee">McKee p.263</span></li>
+<li>EM 皮膚病灶的 HSV 培養通常（generally）陰性，但 PCR 可在 EM 病灶表皮找到病毒 DNA，in situ hybridization 與 immunohistochemistry 常為陽性；痊癒病灶沒有病毒 DNA。McKee 認為沒有 viremia 的證據，病毒 DNA 是由循環 lymphocytes 運送到皮膚。<span class="ex-ref ex-ref-mckee">McKee p.263</span></li>
 <li>推測是對 keratinocyte 表面表現的 herpes viral antigens（包括 DNA polymerase）的 delayed hypersensitivity（及／或 cytotoxic）反應；active lesions 找到 IFN-γ。<span class="ex-ref ex-ref-mckee">McKee p.264</span></li>
 <li>浸潤細胞以 helper（CD4+ Vβ2+）lymphocytes 為主，cytotoxic lymphocytes 較少，另有 macrophages；keratinocytes 表現 ICAM-1 與 HLA-DR；<strong>TNF-α 在 HSV-associated 病灶不表現</strong>；循環 soluble Fas 被認為是 apoptosis 的介質；autoantibodies to desmoplakin 1 and 2 可能在 EMM 扮演角色。<span class="ex-ref ex-ref-mckee">McKee p.265</span></li>
 <li>HLA：McKee 寫 EM（尤其復發型）與 HLA-B15（B62）、HLA-B35、HLA-DR53 的 incidence 增加；黏膜侵犯有限者 HLA-DQB1*0302 較多，黏膜病變為主者較常見 HLA-DQB1*0402。Fitzpatrick 寫的是 HLA-DQB1*0301<span class="ex-ref">p.724</span>，兩本書提到的 allele 不同。<span class="ex-ref ex-ref-mckee">McKee p.264</span></li>
@@ -106,12 +106,12 @@
 <li>較大病灶可有中央 bulla 與周邊 vesicles 構成的環（herpes iris of Bateman）。</li>
 <li>多數 EM 的受侵 BSA 遠低於 <strong class="ex-n">10%</strong>；Severe Cutaneous Adverse Reactions 研究中 88 例住院 EMM 的 median 為 <strong class="ex-n">1%</strong> BSA。單一病灶持續少於 <strong class="ex-n">2 weeks</strong>，殘留色素變化可持續數月；除非有機械性處理，否則沒有 scarring。</li>
 </ul>
-<p><strong>McKee 補充：</strong>對稱分布、固定、離散、1–2 cm 的 erythematous round maculopapules，成批出現在 acral regions；常有一百個以上；單一病灶常持續 up to 7 days，整個發作通常在 6 週內結束；可留下 postinflammatory hyperpigmentation。每年最多可復發約五次，幾乎都是 HSV 所致，特徵包括 Koebner 陽性、photodistribution、肘膝群聚與 nail fold 侵犯；頭皮很少受侵。<span class="ex-ref ex-ref-mckee">McKee p.262</span> McKee 也寫到，罕見情況下（患者通常為女性）EM 可與 discoid 或 systemic lupus erythematosus 併發，稱為 Rowell syndrome。<span class="ex-ref ex-ref-mckee">McKee p.262</span></p>
+<p><strong>McKee 補充：</strong>對稱分布、固定、離散、1–2 cm 的 erythematous round maculopapules，成批出現在 acral regions；常有一百個以上；單一病灶常持續 up to 7 days，整個發作通常在 6 週內結束；可留下 postinflammatory hyperpigmentation。很多病人（in many patients）的 EM 反覆發作，每年可多達五次，這類病例幾乎都是 HSV 所致，特徵包括 Koebner 陽性、photodistribution、肘膝群聚與 nail fold 侵犯；頭皮很少受侵。<span class="ex-ref ex-ref-mckee">McKee p.262</span> McKee 也寫到，罕見情況下（患者通常為女性）EM 可與 discoid 或 systemic lupus erythematosus 併發，稱為 Rowell syndrome。<span class="ex-ref ex-ref-mckee">McKee p.262</span></p>
 <h3>Mucosal and ocular（黏膜與眼）</h3>
 <ul>
 <li>黏膜病灶見於 up to <strong class="ex-n">70%</strong> 病人，最常限於口腔。<span class="ex-ref">p.726</span></li>
 <li><mark data-q="101-47">好發部位：嘴唇（皮膚側與黏膜側皆可）、nonattached gingivae、舌腹（ventral side of tongue）；hard palate 與 attached gingivae 通常不受影響（usually spared）</mark>。唇的皮膚部分可看到可辨識的 target lesions。<span class="ex-ref">p.726</span></li>
-<li><mark data-q="101-47,102-34">兒童與青少年中，嘴唇與口腔黏膜常侵犯得非常嚴重，無論是 <em>M. pneumoniae</em> 或其他不明感染原的呼吸道感染所致</mark>。黏膜上有 fibrinous deposits 的 erosions，偶有完整 vesicles 與 bullae；少數可擴展到 throat、larynx，甚至 trachea 與 bronchi。<span class="ex-ref">p.726</span></li>
+<li><mark data-q="101-47,102-34">兒童與青少年中，嘴唇與口腔黏膜常侵犯得非常嚴重，無論是 <em>M. pneumoniae</em> 或其他不明感染原的呼吸道感染所致</mark>。黏膜上有 fibrinous deposits 的 erosions，偶有完整 vesicles 與 bullae；罕見情況下（may rarely）可擴展到 throat、larynx，甚至 trachea 與 bronchi。<span class="ex-ref">p.726</span></li>
 <li>眼部：始於疼痛與雙側 conjunctivitis，可有 vesicles 與 erosions；<mark data-q="102-34">兒童的眼部病灶在 <em>M. pneumoniae</em>–associated 病例似乎較頻繁、較嚴重</mark>。Nasal、urethral、anal mucosae 也可能發炎與糜爛。<span class="ex-ref">p.726</span></li>
 </ul>
 <p><strong>McKee 補充：</strong>口腔病灶常見且通常輕微，表現為可涵蓋整個口腔、或主要在 buccal mucosa 與舌的多處潰瘍；唇部也可見 target lesions。<span class="ex-ref ex-ref-mckee">McKee p.262</span></p>
@@ -131,7 +131,7 @@
 <li>建議住院：EMM 的口腔病灶嚴重到影響喝水與進食、懷疑 SJS，或有嚴重 constitutional symptoms。</li>
 <li>沒有 EM 特異性的檢驗；較嚴重病例可能有 ESR 上升、moderate leukocytosis、acute-phase proteins 上升與 mildly elevated liver aminotransferases；<strong>antidesmoplakin antibodies 找不到</strong>。<span class="ex-ref">p.728</span></li>
 <li>有呼吸道症狀時做 chest radiograph 評估 pneumonia，PCR 或血清學可幫助偵測 <em>M. pneumoniae</em>。<span class="ex-ref">p.729</span></li>
-<li>復發性 EM 要確認 HSV 關聯：對先前的 herpes labialis 病灶做 HSV PCR、direct fluorescent antibodies 或 viral culture；<strong>用在 target lesions 上沒有用</strong>。從 EM 病灶 biopsy 擴增 HSV <em>Pol</em> gene 並不常規進行；HSV serology 陰性只能用來排除 herpes 關聯。<span class="ex-ref">p.729–730</span></li>
+<li>復發性 EM 要確認 HSV 關聯：對先前的 herpes labialis 病灶做 HSV PCR、direct fluorescent antibodies 或 viral culture；<strong>用在 target lesions 上沒有用</strong>。從 EM 病灶 biopsy 擴增 HSV <em>Pol</em> gene 並不常規進行；HSV serology 陰性可能只有助於排除 herpes 關聯（may be helpful only to exclude）。<span class="ex-ref">p.729–730</span></li>
 <li>HLA-DQB1*0301 的 positive predictive value 太低，沒有臨床價值。<span class="ex-ref">p.730</span></li>
 </ul>
 <table class="ex-table">
@@ -144,7 +144,7 @@
 <p class="ex-cite">Fig. 43-10，p.729。不確定時做 biopsy、direct IF、serum antibodies；鑑別包括 urticaria、drug rash with some EM-like features、autoimmune blisters、SJS。</p>
 <ul>
 <li><mark data-q="104-03">Fig. 43-10：頻繁復發的 EM，若考慮 HSV 相關，給 anti-HSV prophylaxis（即使沒有明確的 HSV 因果）；若為 idiopathic EM，可考慮 azathioprine、thalidomide、mycophenolate mofetil</mark>。<span class="ex-ref">p.729</span></li>
-<li>找原因的流程（Fig. 43-10）：近期復發性 herpes 病史 → HA-EM（herpes-associated EM）；咳嗽、URT infection → MP-related EM；他人感染（例如 Orf virus）→ 其他感染相關 EM；找不到線索 → 若無臨床 herpes，做 HSV serology，陰性則排除 HA-EM。</li>
+<li>找原因的流程（Fig. 43-10）：近期復發性 herpes 病史 → HA-EM（herpes-associated EM）；咳嗽、URT infection → MP-related EM；病人的其他感染（other patient infection，例如 Orf virus）→ HSV 或 MP 以外感染相關的 EM；找不到線索 → 若無臨床 herpes，做 HSV serology，陰性則排除 HA-EM。</li>
 </ul>
 </section>
 
@@ -155,14 +155,14 @@
 <li><strong>Acantholysis 不是 EM 的特徵</strong>。</li>
 <li>Papillary dermis 可水腫，但主要是 moderate 到 dense 的 mononuclear cell infiltrate（老病灶更多）；血管 ectatic、endothelial cells 腫脹，可有 extravasated erythrocytes 與 eosinophils。</li>
 <li><mark data-q="108-08">Advanced lesions 可形成 subepidermal blister</mark>，但 necrosis 很少涉及整層表皮；late lesions 可見明顯 melanophages。Immunofluorescence 陰性或 nonspecific。<span class="ex-ref">p.728</span></li>
-<li>與 EN 不同：EN 的 dermal inflammation 為中等到缺如，epidermal necrosis 明顯得多；但兩者病理有重疊，尤其切片取自病灶 bullous center 時常無法區分。切片的主要目的是排除其他診斷，例如 autoimmune blistering diseases、Sweet syndrome、vasculitis。<span class="ex-ref">p.728–729</span></li>
+<li>與 EN 不同：EN 的 dermal inflammation 為中等到缺如，epidermal necrosis 明顯得多；但兩者病理有部分重疊（somewhat overlapping），常無法區分 EM 與 EN，尤其切片取自病灶 bullous center 時。切片的主要目的是排除其他診斷，例如 autoimmune blistering diseases、Sweet syndrome、vasculitis。<span class="ex-ref">p.728–729</span></li>
 </ul>
 <p><strong>McKee 補充：</strong></p>
 <ul>
 <li>特徵是 basal cell hydropic degeneration 與 keratinocyte apoptosis，伴 mild 到 moderate 的 superficial dermal lymphohistiocytic infiltrate、lymphocytic exocytosis 與 satellite cell necrosis；表皮通常沒有 parakeratosis 或 hyperkeratosis，正常的 stratum corneum 可能是診斷線索。<span class="ex-ref ex-ref-mckee">McKee p.264</span></li>
 <li>Apoptotic keratinocytes 圓形、強嗜伊紅、常無細胞核（可有殘留 pyknotic forms）；分布可為局部（偶發、常在基底），也可涵蓋全層表皮而像 TEN。<mark data-q="108-08">明顯的 basal cell hydropic degeneration 有時造成 subepidermal clefting 或 vesiculation</mark>；也可見表皮內水腫與 spongiotic vesiculation。</li>
-<li>早期病灶可主要在真皮：papillary dermis 明顯水腫、慢性發炎細胞浸潤與紅血球外滲（造成臨床 purpura），<strong>但沒有 vasculitis</strong>。浸潤細胞是 lymphocytes 與 histiocytes，neutrophils 稀少或缺如，eosinophils 有時可見，leukocytoclasis 不是特徵。黏膜病變的組織學與皮膚相似（spongiosis 與 intracellular edema，intraepithelial blisters 有時很明顯）。<span class="ex-ref ex-ref-mckee">McKee p.264–265</span></li>
-<li>鑑別：EM 與 SJS／TEN 有很大重疊，EM 通常有比 SJS／TEN 更明顯的發炎變化（SJS／TEN 以廣泛 apoptosis 為主）；EM 也可能和 fixed drug eruption、acute GVHD、結締組織病（SLE、SCLE、dermatomyositis）混淆。Mucin 與慢性變化（hyperkeratosis、parakeratosis）提示結締組織病；大量 eosinophils 支持藥物反應；局部 interface change 且沒有明顯 eosinophils 與毛囊侵犯，有助於區分 GVHD 與 EM。<span class="ex-ref ex-ref-mckee">McKee p.265</span></li>
+<li>早期病灶可主要在真皮：papillary dermis 明顯水腫、慢性發炎細胞浸潤與紅血球外滲（造成臨床 purpura），<strong>但沒有 vasculitis</strong>。浸潤細胞通常（usually）是 lymphocytes 與 histiocytes，neutrophils 稀少或缺如，eosinophils 有時可見，leukocytoclasis 不是特徵。黏膜病變的組織學與皮膚相似（spongiosis 與 intracellular edema，intraepithelial blisters 有時很明顯）。<span class="ex-ref ex-ref-mckee">McKee p.264–265</span></li>
+<li>鑑別：EM 與 SJS／TEN 有很大重疊，EM 通常有比 SJS／TEN 更明顯的發炎變化（SJS／TEN 以廣泛 apoptosis 為主）；EM 偶爾（on occasion）也可能和 fixed drug eruption、acute GVHD、結締組織病（SLE、SCLE、dermatomyositis）混淆。Mucin 與慢性變化（hyperkeratosis、parakeratosis）提示結締組織病；大量 eosinophils 支持藥物反應；局部 interface change 且沒有明顯 eosinophils 與毛囊侵犯，被認為（is thought）有助於區分 GVHD 與 EM。<span class="ex-ref ex-ref-mckee">McKee p.265</span></li>
 </ul>
 </section>
 
@@ -186,7 +186,7 @@
 <p class="ex-cite">Table 43-3，p.731（對照原頁圖片）。</p>
 <aside class="ex-trap"><strong>易錯</strong>Table 43-3 的 lupus erythematosus（"Rowell syndrome"）列寫 Antinuclear antibodies present；該列同時寫 large targetlike lesions、annular plaques 與 positive DIF（"lupus band"）。<span class="ex-ref">p.731</span></aside>
 <ul>
-<li>只侵犯黏膜的 EM 診斷特別困難，常在後續發作出現少數皮膚病灶時才確診；病史（感染與復發）極為重要。要考慮 pemphigus、cicatricial pemphigoid、allergic 或 toxic contact stomatitis、toxic erosive stomatitis、aphthae、lichen planus。<span class="ex-ref">p.730</span></li>
+<li>罕見的只侵犯黏膜的 EM 病例（rare cases），診斷特別困難，常在後續發作出現少數皮膚病灶時才確診；病史（感染與復發）極為重要。要考慮 pemphigus、cicatricial pemphigoid、allergic 或 toxic contact stomatitis、toxic erosive stomatitis、aphthae、lichen planus。<span class="ex-ref">p.730</span></li>
 <li>誤診為 EM 的疾病還包括 annular urticaria、serum sickness–like eruption、polymorphous maculopapular eruptions、SCLE。<span class="ex-ref">p.724</span></li>
 </ul>
 </section>
@@ -196,8 +196,8 @@
 <ul>
 <li>EMm 多數病例病程輕微，每次發作在 <strong class="ex-n">1–4 weeks</strong> 內消退；完全恢復，通常沒有後遺症（除了暫時的皮膚色素變化）。<span class="ex-ref">p.730</span></li>
 <li>EMM 的眼部糜爛可能造成嚴重的眼部 residual scarring，尤其是在成人與 non–herpes-related 病例；<em>M. pneumoniae</em>–related EMM 可伴有嚴重 erosive bronchitis，罕見留下後遺症。</li>
-<li>不論病因，復發很常見，可能是多數病例的特徵：大型 series 中平均每年 <strong class="ex-n">6</strong> 次（範圍 2–36），病程總長平均 <strong class="ex-n">6–9 years</strong>，<strong class="ex-n">33%</strong> 持續超過 10 年；曾有單一病人復發多達 50 次。</li>
-<li>復發病人每次發作的嚴重度高度變異且不可預測；發作頻率與累積病程長短和發作嚴重度無關。復發的頻率與嚴重度傾向隨時間（2 年或更久之後）自然下降，與 HSV 復發的改善平行；相當比例的復發病例找不到原因。</li>
+<li>不論病因，復發很常見，可能是多數病例的特徵：復發性 EM 病人的大型 series 中，平均每年 <strong class="ex-n">6</strong> 次（範圍 2–36），病程總長平均 <strong class="ex-n">6–9 years</strong>，<strong class="ex-n">33%</strong> 持續超過 10 年；曾有單一病人復發多達 50 次。</li>
+<li>復發病人每次發作的嚴重度高度變異且不可預測；發作頻率與累積病程長短和發作嚴重度無關。復發的頻率與嚴重度傾向隨時間（2 年或更久之後）自然下降，若與 HSV 相關（when associated），則與 HSV 復發的改善平行；相當比例的復發病例找不到原因。</li>
 <li><strong>Continuous／persistent EM</strong>：少數病人有長時間重疊的發作；可能與 HSV 有關，也可能與其他病毒感染、inflammatory bowel diseases 或 malignancy 有關。</li>
 </ul>
 </section>

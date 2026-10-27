@@ -440,7 +440,7 @@
 <aside class="ex-trap"><strong>易錯</strong>可併用的是 quinacrine + HCQ（或 + CQ）；HCQ + CQ 不可併用。Quinacrine 不會造成 retinopathy，但淺膚色者常黃染、在 G6PD deficiency 可致明顯溶血。<span class="ex-ref">p.1054、p.1055–1056</span></aside>
 <h3>Antimalarial-refractory: nonimmunosuppressive（抗瘧藥無效：非免疫抑制）</h3>
 <ul>
-<li><strong>Dapsone</strong>：部分 refractory CLE 病人有反應（SCLE 多於 DLE）；起始 25 mg bid，可增至 200–400 mg/day；dose-related hemolysis、methemoglobinemia（G6PD deficiency 尤甚）→ 定期 CBC、LFT，開始前考慮 G6PD 檢測。<span class="ex-ref">p.1056</span></li>
+<li><strong>Dapsone</strong>：部分 refractory CLE 病人有反應（SCLE 多於 DLE）；起始 25 mg bid，可增至 200–400 mg/day；dose-related hemolysis、methemoglobinemia（G6PD deficiency 尤甚）→ 定期 CBC、LFT，開始前應考慮 G6PD 檢測（should be considered），尤其高風險族群（especially in high-risk populations）。<span class="ex-ref">p.1056</span></li>
 <li>Isotretinoin 0.5–2.0 mg/kg/day、acitretin 10–50 mg/day：療效受限於副作用（teratogenicity、mucocutaneous dryness、hyperlipidemia）；長期使用 retinoids 時 CLE 活性 breakthrough 一直是問題。</li>
 <li><strong>Thalidomide</strong>（50–200 mg/day）：refractory CLE 反應率 <strong class="ex-n">85–100%</strong>；嚴重 teratogenicity；<strong>sensory peripheral neuropathy</strong> <strong class="ex-n">25–75%</strong>（多可逆，似乎與總療程相關，宜短療程）；停藥後常復發；嗜睡、便秘；<strong>thromboembolism</strong>（高凝狀態如 antiphospholipid antibodies）。<span class="ex-ref">p.1056</span></li>
 <li><strong>Lenalidomide</strong>：初步研究中療效似乎與 thalidomide 相近，peripheral neuropathy 少很多，但 thromboembolism（尤其併用類固醇）與 leukopenia 相近。<span class="ex-ref">p.1057</span></li>

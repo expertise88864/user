@@ -115,7 +115,7 @@
 <tr><td><strong>Soles and palms only</strong>：palmoplantar keratoderma、corn、inclusion cyst、palmar pits（Darier disease、Gorlin syndrome）、carcinoma cuniculatum</td><td>—</td><td>—</td></tr>
 </tbody>
 </table>
-<p class="ex-cite">Table 167-2，p.3099（genital warts 欄依原書印為「Condyloma acuminatum (secondary syphilis)」）。</p>
+<p class="ex-cite">Table 167-2，p.3099（genital warts 欄依原書印為「Condyloma acuminatum (secondary syphilis)」；同書 ch170 將 secondary syphilis 的 condyloma 病灶稱為 <strong>condyloma lata</strong>，見 p.3152（ch170），此處疑為原書誤植）。</p>
 </section>
 
 <section class="ex-note" id="treatment">

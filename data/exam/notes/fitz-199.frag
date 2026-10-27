@@ -278,7 +278,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 199-3，p.3675；p.3664，p.3676。</p>
-<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick：PUVA 病人 SCC 風險相較 matched controls 顯著增加，BCC 則沒有顯著增加<span class="ex-ref">p.3676</span>。McKee 在 drug reaction 章則寫長期 PUVA 後 actinic keratosis、BCC、SCC 的發生率增加，較罕見（more rarely）也有 melanoma（<span class="ex-ref ex-ref-mckee">McKee p.639</span>）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>Fitzpatrick：PUVA 病人 SCC 風險相較 matched controls 顯著增加，BCC 則沒有顯著增加<span class="ex-ref">p.3676</span>。同書 ch19 引 Stern 20 年前瞻研究則寫 PUVA 的 BCC 風險 more than 11-fold higher<span class="ex-ref">p.315（ch19）</span>。McKee 在 drug reaction 章則寫長期 PUVA 後 actinic keratosis、BCC、SCC 的發生率增加，較罕見（more rarely）也有 melanoma（<span class="ex-ref ex-ref-mckee">McKee p.639</span>）。</aside>
 <h3>McKee: PUVA keratosis &amp; PUVA-associated SCC（病理補充）</h3>
 <ul>
 <li><strong>PUVA keratosis</strong>：長期 PUVA 後在<strong>非日曬部位</strong>（主要 trunk、thigh）出現多發 warty hyperkeratotic scaly papules（數 mm 到 <strong class="ex-n">1 cm</strong>，寬基底）；是否為前驅病灶不明，但代表其他部位 NMSC 風險較高；也有手腳側緣的型態。<span class="ex-ref ex-ref-mckee">McKee p.1197</span></li>

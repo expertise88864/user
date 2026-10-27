@@ -34,7 +34,7 @@
 <h3>Incontinentia pigmenti（IP，Bloch-Sulzberger syndrome）</h3>
 <ul>
 <li><mark data-q="106-46"><strong>X-linked dominant</strong>；被認為（believed）對多數男性胚胎致死，主要見於女性</mark>（McKee：女：男 <strong class="ex-n">&gt;37:1</strong>；男性病例多數合併 Klinefelter syndrome，正常 XY 男性因 somatic mosaicism 者僅屬極少數 extraordinary cases）。<span class="ex-ref">p.1351–1352</span> <span class="ex-ref ex-ref-mckee">McKee p.706–707</span></li>
-<li><mark data-q="106-46">多數病例（in most cases）致病基因為 <strong>IKBKG</strong>（舊稱 <strong>NEMO</strong>，NF-κB essential modulator），位於 <strong>Xq28</strong>；其產物是 IκB kinase complex 的調節次單元，活化 NF-κB 以保護細胞免於 TNF-α 誘發的 apoptosis</mark>。<span class="ex-ref">p.1352</span></li>
+<li><mark data-q="106-46">多數病例（in most cases）致病基因為 <strong>IKBKG</strong>（舊稱 <strong>NEMO</strong>，NF-κB essential modulator），位於 <strong>Xq28</strong>；其產物是 IκB kinase complex 的調節次單元，活化 NF-κB 以保護細胞免於 TNF-α 誘發的 apoptosis</mark>。<span class="ex-ref">p.1352</span>同書 ch75、ch131 原文則印 Xp28<span class="ex-ref">p.1320（ch75）</span><span class="ex-ref">p.2386（ch131）</span>。</li>
 <li>女性因 lyonization 形成 mosaic，帶突變 IKBKG 的表皮細胞沿 Blaschko lines 出現病灶：stage 1 的 IKBKG 缺陷細胞因無法活化 NF-κB 而凋亡、被正常細胞取代；stage 2 的增生可能（likely）是正常細胞代償性增生；stage 3 為表皮 melanin 失禁進入真皮被巨噬細胞吞噬。</li>
 </ul>
 <table class="ex-table">

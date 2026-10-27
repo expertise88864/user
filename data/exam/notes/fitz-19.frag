@@ -117,7 +117,7 @@
 <li>PUVA（Stern 等人 <strong class="ex-n">20 年</strong>前瞻追蹤）：SCC 風險超過 <strong class="ex-n">100-fold</strong>，BCC 超過 <strong class="ex-n">11-fold</strong>。<span class="ex-ref">p.315</span></li>
 <li>Narrowband UVB 的資料多為回溯性分析，提示沒有增加皮膚癌風險，但追蹤時間較短。<span class="ex-ref">p.315</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>PUVA（Stern 20 年前瞻研究）：SCC 風險 more than 100-fold higher，BCC 風險 more than 11-fold higher，兩個倍數不要記混。<span class="ex-ref">p.315</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>PUVA（Stern 20 年前瞻研究）：SCC 風險 more than 100-fold higher，BCC 風險 more than 11-fold higher，兩個倍數不要記混。<span class="ex-ref">p.315</span>同書 ch199 則寫 PUVA 的 SCC 風險顯著增加，但 BCC 沒有（but not of basal cell carcinoma）顯著增加。<span class="ex-ref">p.3675（ch199）</span></aside>
 </section>
 
 <section class="ex-note" id="dna-damage">

@@ -4,8 +4,8 @@
 <li>Deep fungal infections 分兩大群：<strong>subcutaneous mycoses</strong> 與 <strong>systemic mycoses</strong>；兩者都不常見，subcutaneous mycoses 除少數例外，多侷限於熱帶與亞熱帶。<span class="ex-ref">p.2965</span></li>
 <li>Subcutaneous mycoses（又稱 mycoses of implantation）：真菌經穿刺傷（如 thorn prick）直接進入 dermis 或皮下組織；最常見的是 <strong>sporotrichosis、mycetoma、chromoblastomycosis</strong>，較少見的有 lobomycosis 與 subcutaneous mucormycosis。<span class="ex-ref">p.2965</span></li>
 <li>Subcutaneous mycoses 病人常因皮膚表現就醫；systemic mycoses 只是偶爾有皮膚病灶（皮膚當作入侵門戶，或自深部感染灶散播）。<span class="ex-ref">p.2965</span></li>
-<li>來自流行區的病人，subcutaneous mycoses 可能在相隔很多年後才以輸入性疾病（imported disease）表現。<span class="ex-ref">p.2965</span></li>
-<li>Systemic mycoses 近年成為免疫低下病人（包括 AIDS 與接受惡性腫瘤治療者）的重要伺機性感染；另有一群原發性呼吸道感染（如 histoplasmosis、coccidioidomycosis），也可侵犯原本健康的人。這些致病菌通常是 dimorphic，在生活史不同階段呈現不同型態（yeast 或 mold）。<span class="ex-ref">p.2965</span></li>
+<li>來自流行區的病人，subcutaneous mycoses 可能以輸入性疾病（imported disease）表現，有時（sometimes）在相隔很多年後。<span class="ex-ref">p.2965</span></li>
+<li>Systemic mycoses 近年成為免疫低下病人（包括 AIDS 與接受惡性腫瘤治療者）的重要伺機性感染；另有一群原發性呼吸道感染（如 histoplasmosis、coccidioidomycosis），可能侵犯原本健康的人以及有基礎疾病者（otherwise healthy individuals and those with underlying illness）。這些致病菌通常是 dimorphic，在生活史不同階段呈現不同型態（yeast 或 mold）。<span class="ex-ref">p.2965</span></li>
 </ul>
 <p><strong>AT-A-GLANCE：Subcutaneous mycoses</strong>（<span class="ex-ref">p.2965</span>）</p>
 <ul>
@@ -18,7 +18,7 @@
 <tbody>
 <tr><td>Sporotrichosis</td><td><em>Sporothrix schenckii</em>、<em>S. brasiliensis</em>、<em>S. globosa</em>、<em>S. luriei</em>、<em>S. mexicana</em></td><td>Mixed granulomatous reaction with neutrophilic microabscesses；<strong class="ex-n">3–5 µm</strong> cigar-shaped 或 oval 的 fungus；asteroid body</td><td>Itraconazole 200 mg daily；terbinafine（表中寫 200 mg daily）；SSKI 4–6 mL thrice daily（表中寫 × 3–4 weeks）</td></tr>
 <tr><td>Mycetoma（maduromycosis, Madura foot）</td><td>Fungal（eumycetoma）或 filamentous bacteria（actinomycetoma，<em>Nocardia</em> sp.）；<em>Madurella mycetomatis</em>、<em>Streptomyces somaliensis</em>、<em>Scedosporium apiospermum</em></td><td>Chronic inflammatory reaction with neutrophil abscesses、scattered giant cells、fibrosis；<strong>grains</strong> 位於中心</td><td>Eumycetoma：ketoconazole 200 mg、itraconazole 200 mg、voriconazole 200–400 mg daily × several months；actinomycetoma：dapsone + streptomycin，或 TMP-SMX + rifampin／streptomycin；外科（local dissection，嚴重時 amputation）</td></tr>
-<tr><td>Chromoblastomycosis（chromomycosis）</td><td><em>Phialophora verrucosa</em>、<em>Fonsecaea pedrosoi</em>、<em>Fonsecaea compactum</em>、<em>Wangiella dermatitidis</em>、<em>Cladophialophora carrionii</em></td><td>Mixed granulomatous response、small neutrophilic abscesses、exuberant epidermal hyperplasia；brown-pigmented cells 單顆或小群</td><td>Itraconazole 200 mg daily 或 terbinafine 250 mg daily 或 IV amphotericin B（up to 1 mg/kg/day）；用到臨床痊癒；手術只當輔助，lesions can be spread by surgery</td></tr>
+<tr><td>Chromoblastomycosis（chromomycosis）</td><td><em>Phialophora verrucosa</em>、<em>Fonsecaea pedrosoi</em>、<em>Fonsecaea compactum</em>、<em>Wangiella dermatitidis</em>、<em>Cladophialophora carrionii</em></td><td>Mixed granulomatous response、small neutrophilic abscesses、exuberant epidermal hyperplasia；菌體可能（may）單顆或以小群 brown-pigmented cells 出現</td><td>Itraconazole 200 mg daily 或 terbinafine 250 mg daily 或 IV amphotericin B（up to 1 mg/kg/day）；用到臨床痊癒；手術只當輔助，lesions can be spread by surgery</td></tr>
 <tr><td>Phaeohyphomycosis（phaeomycotic cyst, cystic chromomycosis）</td><td><em>Exophiala jeanselmei</em>、<em>Wangiella dermatitidis</em></td><td>Cyst wall：macrophages 與其他發炎細胞 palisade，外圍纖維包膜；hyphae 可在 macrophage zone</td><td>建議 surgical excision，但可能復發</td></tr>
 <tr><td>Lobomycosis（keloidal blastomycosis, Lobo disease）</td><td><em>Lacazia loboi</em></td><td>Large "pop-bead" organisms 位於 histiocytes 與 multinucleated giant cells 內</td><td>Antifungal therapy not effective；surgical removal 為主要治療</td></tr>
 <tr><td>Subcutaneous mucormycosis</td><td><em>Basidiobolus ranarum</em>（<em>B. haptosporus</em>）；<em>Conidiobolus coronatus</em></td><td>Chronic granulomatous response with many eosinophils；large strap-like hyphae without septa；Splendore-Hoeppli phenomenon</td><td>Ketoconazole 400 mg daily；itraconazole 100–200 mg daily；SSKI（與 sporotrichosis 相似）</td></tr>
@@ -38,14 +38,14 @@
 <li>溫帶與熱帶國家都有；感染率最高的國家是 Mexico、Brazil、South Africa；美國以 midwestern river valleys 最常見；歐洲多數地區現已罕見。自然界生長於腐爛植物（plant debris、leaves、wood）。<span class="ex-ref">p.2965</span></li>
 <li><mark data-q="102-37">通常是散發性，但也可侵犯接觸此菌的工作群體：以 straw 當包裝材料者、gardeners、forestry workers，以及休閒活動會接觸植物殘屑的人</mark>。<span class="ex-ref">p.2965、p.2968</span></li>
 <li>Brazil 近來的疫情（主要由 <em>S. brasiliensis</em> 引起）凸顯了其他感染來源：家貓或野貓。感染被認為經局部外傷進入皮膚。<span class="ex-ref">p.2968</span></li>
-<li>McKee：<mark data-q="102-37">經木刺（wood splinters）、荊棘（thorns）與 sphagnum moss 接種進皮膚，常為職業性感染</mark>；成年男性最常見，兒童也可受影響；少數經 ritual tattooing 或貓傳播。<span class="ex-ref ex-ref-mckee">McKee p.960</span></li>
+<li>McKee：<mark data-q="102-37">常（often）經木刺（wood splinters）、荊棘（thorns）與 sphagnum moss 接種進皮膚，常為職業性感染</mark>；成年男性最常見，兒童也可受影響；少數經 ritual tattooing 或貓傳播。<span class="ex-ref ex-ref-mckee">McKee p.960</span></li>
 </ul>
 <h3>Clinical features（臨床表現）</h3>
 <ul>
 <li><mark data-q="104-09">臨床上有 <strong>subcutaneous</strong> 與 <strong>systemic</strong> 兩型</mark>；<strong>subcutaneous 遠較常見</strong>，又分 (a) lymphangitic 與 (b) fixed。<span class="ex-ref">p.2968</span></li>
 <li><strong>Lymphangitic form</strong>（較常見）：多在手、足等暴露部位；先出現 dermal nodule，破潰成小潰瘍；引流淋巴管發炎腫脹，沿淋巴管出現一串柔軟的次發結節，也可能破潰。<span class="ex-ref">p.2968</span></li>
 <li><strong>Fixed form</strong>：約 <strong class="ex-n">15%</strong> 的病例；感染侷限於一處（如臉部），形成 granuloma 後可能潰瘍；原發病灶周圍可有 satellite nodules 或潰瘍。<span class="ex-ref">p.2968</span></li>
-<li>其他變型可能類似 mycetoma、lupus vulgaris、chronic venous ulceration；深部延伸可侵犯關節或 tendon sheaths。AIDS 病人常有多處皮膚病灶、沒有明顯淋巴管受侵，也有關節炎等深部感染的報告。<span class="ex-ref">p.2968</span></li>
+<li>其他變型可能類似 mycetoma、lupus vulgaris、chronic venous ulceration；某些病例（in some cases）深部延伸可能侵犯關節或 tendon sheaths。AIDS 病人常有多處皮膚病灶、沒有明顯淋巴管受侵，也有關節炎等深部感染的報告。<span class="ex-ref">p.2968</span></li>
 <li><mark data-q="104-09">Systemic form 少見得多：病灶幾乎可出現在任何部位，最常被描述的是慢性 lung nodules（伴 cavitation）、arthritis 與 meningitis</mark>，可與皮膚病灶並存。<span class="ex-ref">p.2968</span></li>
 <li>McKee 把皮膚反應分成三型：lymphocutaneous（最常見）、localized（fixed）與 disseminated cutaneous（罕見，HIV/AIDS 有報告）；fixed form 可能代表高度免疫力。Pulmonary 與 systemic 型多見於免疫抑制者（如酗酒、肺結核、sarcoidosis、DM、長期類固醇）。<span class="ex-ref ex-ref-mckee">McKee p.961</span></li>
 </ul>
@@ -53,9 +53,9 @@
 <ul>
 <li>診斷材料的主要來源：smears、exudates、biopsies。<mark data-q="104-09">直接鏡檢<strong>很少</strong>看到 <em>Sporothrix</em>（yeast 通常數量很少）；但容易在 <strong>Sabouraud agar</strong> 培養分離</mark>。<span class="ex-ref">p.2968</span></li>
 <li>Primary culture 長成 mold：緊密的白色菌落，隨時間變暗；hyphae 產生小的 oval 或 triangular conidia。理想上要在 enriched media（如 brain-heart infusion agar，<strong class="ex-n">37°C</strong>）轉成 yeast phase 才算完成鑑定。<span class="ex-ref">p.2968</span></li>
-<li>Histopathology：mixed granulomatous reaction 伴 neutrophil microabscesses；若看得到菌，多為 <strong class="ex-n">3–5 µm</strong> cigar-shaped 或 oval yeast，偶爾被厚的放射狀 eosinophilic fringe 包圍，形成 <strong>asteroid body</strong>。<mark data-q="104-09">菌量稀少，可能需要掃描多張切片才找到一個 yeast</mark>。<span class="ex-ref">p.2968</span></li>
+<li>Histopathology：mixed granulomatous reaction 伴 neutrophil microabscesses；若看得到菌，多為 <strong class="ex-n">3–5 µm</strong> cigar-shaped 或 oval yeast，偶爾被厚的放射狀 eosinophilic fringe 包圍，形成 <strong>asteroid body</strong>。<mark data-q="104-09">菌體通常（usually）稀疏分布，可能需要掃描多張切片才找到一個 yeast</mark>。<span class="ex-ref">p.2968</span></li>
 <li>Asteroid body 是此菌的特徵，但類似現象也可見於其他感染性病原（如 <em>Schistosoma</em> eggs）。<span class="ex-ref">p.2965</span></li>
-<li>有些國家有 intradermal sporotrichin skin test，可協助決定該做哪些實驗室檢查。<span class="ex-ref">p.2968</span></li>
+<li>有些國家有 intradermal sporotrichin skin test，可能（may）有助於決定該做哪些實驗室檢查。<span class="ex-ref">p.2968</span></li>
 <li>McKee：菌體 <strong class="ex-n">4–6 µm</strong>、round 至 oval，偶為最長 <strong class="ex-n">8 µm</strong> 的 cigar-shaped；常規染色不易見，以 methenamine silver 或 PAS 染色顯示得最清楚；可位於 eosinophilic radiating material 中心（Splendore-Hoeppli phenomenon，即 asteroid body），多位於 intradermal microabscesses 與 suppurative granulomas，常需檢視許多連續切片；表皮 acanthosis 與 pseudoepitheliomatous hyperplasia；淋巴擴散的結節由中央壞死（含 neutrophils）、epithelioid／giant cells、外層 plasma cells／lymphocytes 與纖維化組成。<span class="ex-ref ex-ref-mckee">McKee p.961–962</span></li>
 </ul>
 <h3>Differential diagnosis（鑑別診斷）</h3>
@@ -80,9 +80,9 @@
 <li>疾病以<strong>直接蔓延</strong>進展，遠處轉移性感染灶非常罕見。<span class="ex-ref">p.2969</span></li>
 <li><mark data-q="101-16,105-02">真菌引起者稱 <strong>eumycetoma</strong>；由 <strong>aerobic actinomycetes（filamentous bacteria）</strong>引起者稱 <strong>actinomycetoma</strong></mark>（見 Chap. 158）。致病菌通常是 soil 或 plant saprophytes，只是偶然的人類病原。<span class="ex-ref">p.2969</span></li>
 <li>WHO 已將 mycetoma 列為 neglected tropical disease。<span class="ex-ref">p.2969</span></li>
-<li>主要（但非唯一）見於雨量少的 dry tropics；散發性，即使在流行區也少見；溫帶的非輸入性病例最常見菌種是 <em>Scedosporium apiospermum</em>。<span class="ex-ref">p.2969</span></li>
+<li>主要（但非唯一）見於雨量少的 dry tropics；散發性，即使在流行區也少見；溫帶偶有（occasionally）非輸入性病例報告，這些病例最常見菌種是 <em>Scedosporium apiospermum</em>。<span class="ex-ref">p.2969</span></li>
 <li>Actinomycetoma 由 <em>Nocardia</em> sp. 引起者，最常見於 Central America 與 Mexico；世界其他地區最常見的致病菌是真菌 <em>Madurella mycetomatis</em>；actinomycete <em>Streptomyces somaliensis</em> 最常自來自 Sudan 與 Middle East 的病人分離到。<span class="ex-ref">p.2969</span></li>
-<li>病原體自流行區的土壤或植物（包括 <em>Acacia</em> thorns）中分離或以分子方法偵測到；經穿刺傷後植入皮下。病人通常找不到任何潛在易感因素；病原體能持續存在，似乎與逃避宿主防禦的多種適應有關（如 cell-wall thickening 與 melanin deposition）。<span class="ex-ref">p.2969</span></li>
+<li>病原體自流行區的土壤或植物（包括 <em>Acacia</em> thorns）中分離或以分子方法偵測到；通常（usually）在穿刺傷後植入皮下。病人通常找不到任何潛在易感因素；病原體能持續存在，似乎與逃避宿主防禦的多種適應有關（如 cell-wall thickening 與 melanin deposition）。<span class="ex-ref">p.2969</span></li>
 <li>McKee：多在 15°S 到 30°N 之間的熱帶（"mycetoma belt"）；最常見於足部；需要反覆輕微外傷接種；多見於 <strong class="ex-n">20–50</strong> 歲，明顯男性居多；真菌引起者通常比細菌引起者較不發炎、侵犯也較不深。真菌只佔少數病例，其中 <em>M. mycetomatis</em> 是全球最重要的。<span class="ex-ref ex-ref-mckee">McKee p.952–953</span></li>
 </ul>
 <h3>Clinical features（臨床表現）</h3>
@@ -118,9 +118,9 @@
 <p class="ex-cite">Table 162-2，p.2970（已對照原頁圖片）。</p>
 <h3>Histopathology, Imaging &amp; DDx（病理、影像、鑑別診斷）</h3>
 <ul>
-<li>Histology：chronic inflammatory reaction，含 neutrophil abscesses、scattered giant cells 與 fibrosis；<strong>grains 位於發炎中心</strong>；grains 的大小與形狀可協助鑑定，但 nonpigmented（pale／white grain）eumycetoma 通常不足以靠此鑑定。<span class="ex-ref">p.2970</span></li>
+<li>Histology：chronic inflammatory reaction，含 neutrophil abscesses、scattered giant cells 與 fibrosis；<strong>grains 位於發炎中心</strong>；grains 的大小與形狀可能（may）有助於鑑定，但 nonpigmented（pale／white grain）eumycetoma 通常不足以靠此鑑定。<span class="ex-ref">p.2970</span></li>
 <li>McKee：grains 位於 suppuration 區，周圍有 palisaded histiocytes；grain 是緊密排列的 hyphae 團塊，可附著 neutrophils 或有 crystalline matrix；外側有 multinucleate giant cells，最外圍是水腫的 granulation tissue；有時可見 Splendore-Hoeppli phenomenon。<span class="ex-ref ex-ref-mckee">McKee p.953</span></li>
-<li>Imaging：X-ray 可見 periosteal erosion 與 proliferation，以及骨 lytic lesions；bone scan 或 MRI 能更早發現骨與軟組織變化。<span class="ex-ref">p.2970</span></li>
+<li>Imaging：X-ray 可見 periosteal erosion 與 proliferation，以及骨 lytic lesions；bone scan 或 MRI 可能（may）更早發現骨與軟組織變化。<span class="ex-ref">p.2970</span></li>
 <li>DDx：chronic bacterial 或 tuberculous osteomyelitis；actinomycosis（Chap. 158）類似，但通常發生在口腔或 cecum 附近等致病菌有時為 commensal 的部位。<span class="ex-ref">p.2970</span></li>
 </ul>
 <h3>Course &amp; Management（病程與治療）</h3>
@@ -139,7 +139,7 @@
 <h3>Definition &amp; Epidemiology（定義與流行病學）</h3>
 <ul>
 <li><mark data-q="104-50">Chromoblastomycosis 是皮膚與皮下組織的<strong>慢性</strong>真菌感染，由<strong>色素性（dematiaceous）真菌</strong>自環境植入 dermis 所致</mark>；發炎過程中形成厚壁的單細胞或細胞團（<strong>sclerotic 或 muriform bodies</strong>），可引發明顯的 pseudoepitheliomatous hyperplasia，常伴 transepidermal elimination。<span class="ex-ref">p.2971</span></li>
-<li>致病菌：<em>Phialophora verrucosa</em>、<em>Fonsecaea pedrosoi</em>、<em>Fonsecaea compactum</em>、<em>Wangiella dermatitidis</em>、<em>Cladophialophora carrionii</em>；<mark data-q="104-50">多數感染由 <em>F. pedrosoi</em> 與 <em>C. carrionii</em> 引起</mark>。<span class="ex-ref">p.2971</span></li>
+<li>可由多種色素性真菌引起，最常見的（the most common being）是：<em>Phialophora verrucosa</em>、<em>Fonsecaea pedrosoi</em>、<em>Fonsecaea compactum</em>、<em>Wangiella dermatitidis</em>、<em>Cladophialophora carrionii</em>；<mark data-q="104-50">多數感染由 <em>F. pedrosoi</em> 與 <em>C. carrionii</em> 引起</mark>。<span class="ex-ref">p.2971</span></li>
 <li>McKee：主要五種是 <em>F. pedrosoi</em>、<em>C. carrionii</em>、<em>F. compacta</em>、<em>P. verrucosa</em>、<em>Rhinocladiella aquaspersa</em>（p.950）；<em>F. pedrosoi</em> 在部分報告可佔 <strong class="ex-n">70–90%</strong> 以上；色素是 melanin（p.951）。<span class="ex-ref ex-ref-mckee">McKee p.950–951</span></li>
 <li>真菌可自環境中的 wood、plant debris、soil 分離；經組織外傷植入。散發於 Central 與 South America，北美罕見；也見於 Caribbean、Africa（特別是 Madagascar）、South Asia、Australasia、Japan。<strong>男性鄉村工作者</strong>最常見。<span class="ex-ref">p.2971</span></li>
 <li>McKee：幾乎都是成年男性（部分報告超過 <strong class="ex-n">90%</strong>），特別是農民與農業工人；多數是原本健康者。<span class="ex-ref ex-ref-mckee">McKee p.951</span></li>
@@ -155,7 +155,7 @@
 <h3>Diagnosis &amp; Histopathology（診斷與病理）</h3>
 <ul>
 <li><mark data-q="104-50,109-30">典型的 sclerotic（muriform）fungal cells 可在<strong>病灶表面刮屑</strong>的 <strong>KOH</strong> 檢查中看到，尤其是有小黑點的區域</mark>。<span class="ex-ref">p.2971–2972</span></li>
-<li>培養：菌落黑色、表面絨毛狀；各菌種外觀很像，靠不同型式的 sporulation 鑑定；治療選擇並不依賴精確鑑定。<span class="ex-ref">p.2972</span></li>
+<li>培養：菌落黑色、表面絨毛狀；各菌種外觀很像，靠不同型式的 sporulation 鑑定，精確區分可能困難；目前治療選擇並不關鍵地取決於（does not depend critically on）正確鑑定，不過對 azole 的反應速度可能有差異。<span class="ex-ref">p.2972</span></li>
 <li>病灶<strong>也應切片</strong>，因病理變化與 muriform cells 具典型性：mixed granulomatous response、small neutrophil abscesses，常有 exuberant epidermal hyperplasia；菌體常在 giant cells 或 neutrophil abscesses 內，單顆或小群呈棕色，常有一或兩個 septum 與厚壁。<span class="ex-ref">p.2972</span></li>
 <li>McKee：sclerotic bodies（又稱 Medlar bodies）是圓形或多角形、有色素、厚壁的真菌細胞，直徑 <strong class="ex-n">5–12 µm</strong>；雖名為 "blast"，但並不 blast formation；細胞在兩個平面上有 cross walls；組織反應似 blastomycosis，表皮明顯 acanthosis 且 neutrophil microabscesses，增生常成為 pseudoepitheliomatous；真皮有膿瘍、壞死與肉芽腫性混合浸潤（neutrophils、eosinophils、lymphocytes、plasma cells）；可見 transepidermal elimination 與明顯纖維化。<span class="ex-ref ex-ref-mckee">McKee p.951–952</span></li>
 <li>McKee：neutrophil microabscesses 與 granulomatous inflammation 混合稱為 mixed（mycotic）granuloma，也見於 blastomycosis、sporotrichosis、pheohyphomycosis、coccidioidomycosis、paracoccidioidomycosis。<span class="ex-ref ex-ref-mckee">McKee p.951</span></li>
@@ -194,10 +194,10 @@
 <h3>Subcutaneous mucormycosis（皮下毛黴菌病；basidiobolomycosis 與 conidiobolomycosis）</h3>
 <ul>
 <li>罕見熱帶皮下黴菌病，特徵是慢性、堅硬的皮下腫脹發展與擴展；有兩型：<span class="ex-ref">p.2973</span></li>
-<li><strong><em>Basidiobolus ranarum</em>（<em>B. haptosporus</em>）</strong>：較常見於<strong>兒童</strong>；South America 到 Africa、Indonesia；菌存在於 plant debris 與爬蟲類、兩棲類腸道；病灶多發生在 <strong>limb girdle</strong> 部位，表現為堅實、緩慢擴展的 <strong>woody cellulitis</strong>。</li>
+<li><strong><em>Basidiobolus ranarum</em>（<em>B. haptosporus</em>）</strong>（第一型最常由此菌引起，most often caused by）：較常見於<strong>兒童</strong>；South America 到 Africa、Indonesia；菌存在於 plant debris 與爬蟲類、兩棲類腸道；病灶多發生在 <strong>limb girdle</strong> 部位，表現為堅實、緩慢擴展的 <strong>woody cellulitis</strong>。</li>
 <li><strong><em>Conidiobolus coronatus</em></strong>：見於<strong>成人</strong>；來自 soil、plant debris 與部分昆蟲；早期感染從<strong>鼻下鼻甲（inferior turbinates）</strong>開始，擴及臉中央，腫脹硬而無痛，可造成鼻、唇、頰的嚴重變形。</li>
 <li>Histopathology：chronic granulomatous response 伴<strong>大量 eosinophils</strong>；真菌為<strong>大而呈帶狀（strap-like）、無隔（without cross walls or septa）的 hyphae</strong>，常被折光性 eosinophilic material 包圍（<strong>Splendore-Hoeppli phenomenon</strong>）；在 Sabouraud agar 容易培養。<span class="ex-ref">p.2973</span></li>
-<li>治療：ketoconazole 400 mg daily、itraconazole 100–200 mg daily；也對口服 potassium iodide 有反應（劑量與 sporotrichosis 相似）；經驗僅限少數病例。<span class="ex-ref">p.2973</span></li>
+<li>治療：ketoconazole 400 mg daily、itraconazole 100–200 mg daily 也可能有用（may be useful），但目前經驗僅限少數病例；病灶也對口服 potassium iodide 有反應（劑量與 sporotrichosis 相似）。<span class="ex-ref">p.2973</span></li>
 <li>McKee：Entomophthoramycosis 的 hyphae 為 variably septate、平均直徑 <strong class="ex-n">8–10 µm</strong>，沒有 mucormycosis 那麼寬，且<strong>不傾向 angioinvasion</strong>；有廣泛 granulomatous inflammation、neutrophilic microabscesses 與大量 eosinophils，常伴 Splendore-Hoeppli phenomenon。<span class="ex-ref ex-ref-mckee">McKee p.950</span></li>
 </ul>
 <h3>Rhinosporidiosis</h3>
@@ -252,7 +252,7 @@
 <h3>Clinical features（臨床表現）</h3>
 <ul>
 <li>範圍從無症狀、良性有症狀感染到經血行侵犯多器官的進行性播散型。皮膚病灶可因原發感染的 immune-complex 形成（erythema multiforme）、肺部播散後直接擴散，或罕見的皮膚接種處感染而出現。<span class="ex-ref">p.2975</span></li>
-<li><strong>Asymptomatic</strong>：沒有症狀，但多數 histoplasmin skin test 陽性；流行區陽性比例可為 <strong class="ex-n">5%–90%</strong>。<span class="ex-ref">p.2975</span></li>
+<li><strong>Asymptomatic</strong>：沒有症狀，但受暴露者（those exposed）通常 histoplasmin skin test 陽性；流行區陽性比例可為 <strong class="ex-n">5%–90%</strong>。<span class="ex-ref">p.2975</span></li>
 <li><strong>Acute pulmonary</strong>：常因接觸大量孢子（洞穴、清理鳥類棲地）；cough、chest pain、fever，常伴關節痛與皮疹（toxic erythema、erythema multiforme、erythema nodosum）；皮疹不常見（&lt;<strong class="ex-n">15%</strong> 病人），但可能被急性感染的治療誘發；CXR 常有 diffuse mottling，日後可能鈣化。<span class="ex-ref">p.2975</span></li>
 <li><strong>Chronic pulmonary</strong>：多為成人，表現為肺實質化與 cavitation，很像 tuberculosis；<strong>無皮膚侵犯</strong>。<span class="ex-ref">p.2975</span></li>
 <li><mark data-q="106-37"><strong>Acute progressive disseminated</strong>：廣泛散播至 liver、spleen、lymphoreticular system、bone marrow；進行性體重下降與發燒；此型最可能發生在<strong>未治療的 AIDS 病人</strong>，他們常以皮膚病灶表現播散性感染：papules、small nodules 或 small molluscum-like lesions，之後可發展成淺潰瘍</mark>；皮膚病灶在 HIV 陽性者比其他 disseminated histoplasmosis 病人更常見；也可有 diffuse micronodular pulmonary infiltrates、貧血、hepatosplenomegaly。<span class="ex-ref">p.2976</span></li>
@@ -264,7 +264,7 @@
 <h3>Diagnosis &amp; Histopathology（診斷與病理）</h3>
 <ul>
 <li>診斷靠在 sputum、peripheral blood、bone marrow 或 biopsy 找到 <em>Histoplasma</em> 的小型細胞內 yeast-like cells；要與 <em>T. marneffei</em> 區分（大小相近，但後者有特徵性 septa）。<span class="ex-ref">p.2976</span></li>
-<li>培養：室溫長成 mold（Sabouraud glucose agar 上白色棉絮狀菌落）；產生兩種孢子：較大（<strong class="ex-n">8–15 µm</strong>）圓形、<strong>tuberculate macroconidia</strong> 具典型性；較小的 microconidia 有傳染性；可用 DNA probe 證實 ribosomal RNA。Mycelial-phase 培養<strong>極具傳染性</strong>，要警告實驗室。<span class="ex-ref">p.2976</span></li>
+<li>培養：室溫長成 mold（Sabouraud glucose agar 上白色棉絮狀菌落）；產生兩種孢子：較大（<strong class="ex-n">8–15 µm</strong>）圓形、<strong>tuberculate macroconidia</strong> 具典型性；較小的 microconidia 有傳染性；應（should）以 DNA probe 證實 ribosomal RNA。Mycelial-phase 培養<strong>極具傳染性</strong>，要警告實驗室。<span class="ex-ref">p.2976</span></li>
 <li>Histoplasmin skin test 只是流行病學工具，對診斷無幫助，播散型常為陰性。血清學常有用：complement-fixation titer 上升表示 dissemination；immunodiffusion 的 precipitins（針對 <strong>H 與 M antigens</strong>）與活動性或近期感染相關；<strong>血清或尿液抗原偵測</strong>特別有助於 AIDS 病人；部分中心有 PCR。<span class="ex-ref">p.2976</span></li>
 <li>組織切片：<em>H. capsulatum</em> 是 <strong>intracellular parasite</strong>，常見於 macrophages；細胞小（<strong class="ex-n">2–4 µm</strong>）、oval、帶小芽；mycelial forms 在組織中罕見。<span class="ex-ref">p.2976</span></li>
 <li>McKee：細胞內小 yeast 表現為嗜鹼性小點，周圍有人工假影形成的 halo（pseudocapsule），雖名為 <em>capsulatum</em> 但<strong>沒有 capsule</strong>；形態似 <em>Leishmania</em> 但沒有 kinetoplast；用 PAS 與 methenamine silver 區分；組織反應似結核（chronic tuberculoid granulomatous inflammation）；部分 HIV/AIDS 病例沒有肉芽腫反應，可見局部壞死與 karyorrhexis，可能與 leukocytoclastic vasculitis 混淆。<span class="ex-ref ex-ref-mckee">McKee p.957–958</span></li>
@@ -280,7 +280,7 @@
 <h3>Management（治療）</h3>
 <ul>
 <li>預後依感染部位與類型而定；治療選擇通常依疾病嚴重度。<span class="ex-ref">p.2977</span></li>
-<li>部分 disseminated 或局部型：<strong>oral itraconazole 200–400 mg daily</strong> 非常有效；也用於 AIDS 病人初始治療（itraconazole 或 amphotericin B）後的長期抑制性治療；若 HAART 下 CD4 不下降，可停止抑制性治療。部分 AIDS 病人開始 HAART 後出現 immune reconstitution syndrome（intestinal obstruction、uveitis、arthralgia）。<span class="ex-ref">p.2977</span></li>
+<li>部分 disseminated 或局部型：<strong>oral itraconazole 200–400 mg daily</strong> 非常有效；也用於 AIDS 病人初始治療（itraconazole 或 amphotericin B）後的長期抑制性治療；現有證據顯示（there is now evidence），若 HAART 下 CD4 不下降，可停止抑制性治療。部分接受治療的 AIDS 病人開始 HAART 後曾有（has been reported）immune reconstitution syndrome 的報告（intestinal obstruction、uveitis、arthralgia）。<span class="ex-ref">p.2977</span></li>
 <li>廣泛且嚴重感染：<strong>IV amphotericin B（up to 1 mg/kg daily）</strong>，是主要替代藥；posaconazole 與 voriconazole 在部分病例有效。African histoplasmosis 也以 itraconazole 為首選，重症可用 amphotericin B。<span class="ex-ref">p.2977</span></li>
 </ul>
 </section>
@@ -296,7 +296,7 @@
 <ul>
 <li>與 histoplasmosis 相同，有 subclinical form。<strong>Primary cutaneous blastomycosis</strong> 非常罕見，在皮膚外傷後（如實驗室人員、病理人員）發生：接種後 <strong class="ex-n">1–2 weeks</strong> 出現紅色、硬結區與 chancre，伴 lymphangitis 與 lymphadenopathy。<span class="ex-ref">p.2977</span></li>
 <li><strong>Pulmonary blastomycosis</strong> 臨床表現與 pulmonary tuberculosis 很像：可無症狀，或有低燒、胸痛、咳嗽、咯血；與 histoplasmosis 不同，它常與 disseminated disease 並存。<span class="ex-ref">p.2977–2978</span></li>
-<li><strong>皮膚病灶是 disseminated blastomycosis 常見的表現</strong>：常對稱，多在臉與四肢；早期病灶是 papule 或 nodule，可潰瘍並流膿；之後擴大成 hyperkeratotic 病灶，常伴中央潰瘍和／或疤痕；口腔病灶較少見；播散型常有多處皮膚病灶，且形態各異。<span class="ex-ref">p.2978</span></li>
+<li><strong>皮膚病灶是 disseminated blastomycosis 常見的表現</strong>：常對稱，多在臉與四肢；早期病灶是 papule 或 nodule，可潰瘍並流膿；之後擴大成 hyperkeratotic 病灶，常伴中央潰瘍和／或疤痕；口腔病灶較少見；播散型常有多處皮膚病灶，許多病人（in many patients）同時有不同形態的病灶。<span class="ex-ref">p.2978</span></li>
 <li>非洲病人的皮膚與骨頭侵犯頻率較高；其他常見散播部位：bone、epididymis、adrenal gland；較少見的是快速廣泛散播，可造成 ARDS；廣泛播散的皮膚病灶多為 papules、abscesses 或小潰瘍；AIDS 病人的廣泛 blastomycosis 有報告，但不常見。<span class="ex-ref">p.2978</span></li>
 </ul>
 <h3>Diagnosis &amp; Histopathology（診斷與病理）</h3>
@@ -309,7 +309,7 @@
 </ul>
 <h3>Management（治療）</h3>
 <ul>
-<li>與 histoplasmosis 相似：較輕或局部病例用 <strong>itraconazole 200–400 mg daily</strong>；voriconazole 也有活性；通常至少治療 <strong class="ex-n">6 months</strong>；因可能復發（深部感染或免疫抑制者），需追蹤；廣泛播散型用 <strong>amphotericin B（up to 1 mg/kg daily）</strong>。<span class="ex-ref">p.2979</span></li>
+<li>與 histoplasmosis 相似：較輕或局部病例用 <strong>itraconazole 200–400 mg daily</strong>；voriconazole 也有活性；通常至少治療 <strong class="ex-n">6 months</strong>；因可能復發（特別是 particularly 深部感染或免疫抑制者），需追蹤；廣泛播散型一般（generally）用 <strong>amphotericin B（up to 1 mg/kg daily）</strong>。<span class="ex-ref">p.2979</span></li>
 </ul>
 </section>
 
@@ -319,8 +319,8 @@
 <ul>
 <li>由 <em>Coccidioides immitis</em> 與 <em>C. posadasii</em> 引起；<em>C. posadasii</em> 在表型上與 <em>C. immitis</em> 相同、造成相同疾病，但主要見於 California 以外。兩者都有特殊的 dimorphism：室溫為 mold，在受感染組織中形成 <strong>spherules</strong>（含孢子的大型結構）。<span class="ex-ref">p.2979</span></li>
 <li>與其他 endemic mycoses 相同，有 asymptomatic、acute 與 chronic pulmonary、disseminated 型；可侵犯健康者或易感者（含 AIDS）。<span class="ex-ref">p.2979</span></li>
-<li><em>C. immitis</em> 流行於美國南部與西南部的半沙漠地區；<em>C. posadasii</em> 見於其他地方（Arizona、New Mexico、Texas）及 Mexico、Central 與 South America 的部分地區。流行區特徵：夏季高溫、年雨量低，有仙人掌與 mesquite 灌木。Coccidioidin skin test 顯示流行區暴露率可高達 <strong class="ex-n">95%</strong>。<span class="ex-ref">p.2979</span></li>
-<li>菌存在土壤中，也感染其他動物；短暫造訪流行區即可暴露，當地天氣會決定暴露率（如沙塵暴可使大量個體感染）；通常經呼吸道感染，罕見經皮膚直接植入。<span class="ex-ref">p.2979</span></li>
+<li><em>C. immitis</em> 流行於美國南部與西南部的部分（some）半沙漠地區；<em>C. posadasii</em> 見於其他地方（Arizona、New Mexico、Texas）及 Mexico、Central 與 South America 的部分地區。流行區特徵：夏季高溫、年雨量低，有仙人掌與 mesquite 灌木。Coccidioidin skin test 顯示流行區暴露率可高達 <strong class="ex-n">95%</strong>。<span class="ex-ref">p.2979</span></li>
+<li>菌存在土壤中，也感染其他動物；短暫造訪流行區就可能（may）暴露，當地天氣可（can）決定暴露率（如沙塵暴可使大量個體感染）；通常經呼吸道感染，罕見經皮膚直接植入。<span class="ex-ref">p.2979</span></li>
 <li>McKee：<em>C. immitis</em> 在美國西南沙漠（尤其 California 與 Lower Sonoran Life Zone）；<em>C. posadasii</em> 流行於 northwest Mexico、Central 與 South America 乾旱半乾旱區，以及 Arizona 與 Utah；吸入 arthroconidia 感染。<span class="ex-ref ex-ref-mckee">McKee p.943</span></li>
 </ul>
 <h3>Clinical features（臨床表現）</h3>
@@ -336,7 +336,7 @@
 <h3>Diagnosis &amp; Histopathology（診斷與病理）</h3>
 <ul>
 <li>Spherules 很大（最大 <strong class="ex-n">250 µm</strong>），可在痰、CSF 或膿液的 KOH 看到；培養為 mycelial、生長快、白色棉絮狀；老 mycelium 上可見 arthrospore 鏈；mold phase <strong>具高度傳染性</strong>，培養要小心處理；目前沒有商業分子檢驗。<span class="ex-ref">p.2980</span></li>
-<li>血清學：precipitins 約 <strong class="ex-n">90%</strong> 感染者在 2–6 週內出現但維持不久；complement-fixing antibodies 為較嚴重感染的特徵，活動性感染中最高可在 6 個月後達到；coccidioidin skin test 對診斷價值小；spherulin 是取自 <em>C. immitis</em> spherules 的抗原，偵測致敏可能優於 coccidioidin；嚴重感染常有對兩者的 cutaneous anergy。<span class="ex-ref">p.2980</span></li>
+<li>血清學：precipitins 約 <strong class="ex-n">90%</strong> 感染者在 2–6 週內出現但維持不久；complement-fixing antibodies 為較嚴重感染的特徵，活動性感染中於 6 個月後升到最高；coccidioidin skin test 對診斷價值小；spherulin 是取自 <em>C. immitis</em> spherules 的抗原，偵測致敏可能優於 coccidioidin；嚴重感染常有對兩者的 cutaneous anergy。<span class="ex-ref">p.2980</span></li>
 <li>組織切片：可見含大型 endospores 的 spherules，也有各種不清楚的中間發育階段；endospore 形成前，未成熟 spherule 的細胞質呈嗜鹼性，之後裂解成孢子；mycelium 在切片中罕見。<span class="ex-ref">p.2980</span></li>
 <li>McKee：spherules <strong class="ex-n">10–100 µm</strong>、雙折光，內含多個 endospores（<strong class="ex-n">2–5 µm</strong>）；組織學類似 blastomycosis（化膿 + pseudoepitheliomatous hyperplasia + 真皮血管周圍 neutrophils、eosinophils、plasma cells、histiocytes、giant cells）；以 methenamine silver 技術顯示得最清楚；<strong>endospores PAS 陽性，spherules PAS 陰性</strong>；螢光下有 autofluorescence，也可用 Congo red；通常很難找到，需檢視多張切片。<span class="ex-ref ex-ref-mckee">McKee p.944–945</span></li>
 <li>DDx：流行區醫師應注意 erythema nodosum 與 coccidioidomycosis 的關聯；短暫造訪流行區的人也可能出現。<span class="ex-ref">p.2980</span></li>
@@ -344,7 +344,7 @@
 <h3>Management &amp; Prevention（治療與預防）</h3>
 <ul>
 <li>Primary pulmonary infection 除休息外不需特殊治療，幾乎沒有證據顯示口服 azole 能改善或縮短症狀（雖然是普遍做法）。<span class="ex-ref">p.2980</span></li>
-<li>Disseminated disease：<strong>amphotericin B（1 mg/kg daily）</strong>、<strong>itraconazole（200–400 mg daily）</strong>或 <strong>fluconazole（200–600 mg daily）</strong>都可使用；新藥（voriconazole、posaconazole）經驗有限；復發頻繁，需密切追蹤；meningitis 與多部位進行性播散特別難治；軟組織（skin、joint）coccidioidomycosis 預後較好，死亡率低。<span class="ex-ref">p.2980</span></li>
+<li>Disseminated disease：治療結果仍不一（still variable），但 <strong>amphotericin B（1 mg/kg daily）</strong>、<strong>itraconazole（200–400 mg daily）</strong>或 <strong>fluconazole（200–600 mg daily）</strong>都可使用；新藥（voriconazole、posaconazole）經驗有限；復發頻繁，需密切追蹤；meningitis 與多部位進行性播散特別難治；一般而言（generally）軟組織（skin、joint）coccidioidomycosis 預後較好，死亡率低。<span class="ex-ref">p.2980</span></li>
 <li>Prevention：Spherulin 疫苗曾被研究，但結果不明確，目前沒有免疫接種。<span class="ex-ref">p.2980</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>兩書數字不同：Fitzpatrick 寫 disseminated 發生於 &lt;0.5% 感染者（p.2979），McKee 寫約 5% 病人（McKee p.944）；spherule 大小 Fitzpatrick 為 KOH 下最大 250 µm（p.2980），McKee 為 10–100 µm（McKee p.944）。</aside>
@@ -354,14 +354,14 @@
 <h2>10. Paracoccidioidomycosis（副球黴菌病／南美芽生菌病）</h2>
 <ul>
 <li><em>Paracoccidioides brasiliensis</em> 是 dimorphic fungus，造成呼吸道感染，傾向散播到 <strong>mucous membranes 與 lymph nodes</strong>；僅限於 Central 與 South America。<span class="ex-ref">p.2980</span></li>
-<li>多數拉丁美洲國家都有報告，最常見於 Brazil、Colombia、Argentina；美國沒有，Mexico 有報告。皮膚試驗反應男女相近，流行區陽性者比例很少超過 <strong class="ex-n">25%</strong>；<strong>活動性感染以男性為主</strong>，機轉被認為與真菌有 cytoplasmic <strong>estrogen receptor</strong> 有關，in vitro 中 estradiol 會抑制 mycelium 轉成 yeast；多見於鄉村，暴露與靠近水或高濕度地區有關。<span class="ex-ref">p.2980–2981</span></li>
-<li>McKee：是拉丁美洲最盛行的 systemic mycosis；成年男性遠多於女性，多為鄉村農民；<strong>17β-estradiol</strong> 抑制或延遲轉為病原性 yeast 的 in vitro 研究提供女性罕見的可能解釋。<span class="ex-ref ex-ref-mckee">McKee p.941–942</span></li>
+<li>多數拉丁美洲國家都有報告，最常見於 Brazil、Colombia、Argentina；美國沒有，Mexico 有報告。以皮膚試驗估計的暴露率男女似乎（appear to be）相近，流行區陽性者比例很少超過 <strong class="ex-n">25%</strong>；<strong>活動性感染以男性為主</strong>，機轉被認為與真菌有 cytoplasmic <strong>estrogen receptor</strong> 有關，in vitro 中 estradiol 會抑制 mycelium 轉成 yeast；多見於鄉村，暴露與靠近水或高濕度地區有關。<span class="ex-ref">p.2980–2981</span></li>
+<li>McKee：是拉丁美洲最盛行的 systemic mycosis；成年男性遠多於女性，多為鄉村農民；一項早期（historic）in vitro 研究顯示 <strong>17β-estradiol</strong> 抑制或延遲轉為病原性 yeast，提供女性相對罕見（relative rarity）的可能解釋。<span class="ex-ref ex-ref-mckee">McKee p.941–942</span></li>
 </ul>
 <h3>Clinical features（臨床表現）</h3>
 <ul>
 <li>依主要侵犯部位分：<strong>pulmonary、mucocutaneous、lymphatic</strong> 型；許多病人是混合型。<span class="ex-ref">p.2981</span></li>
 <li>很少呈急性肺部感染；多半為慢性、緩慢進行，有體重下降、慢性咳嗽；肺部病灶可為雙側結節，常有廣泛纖維化。<span class="ex-ref">p.2981</span></li>
-<li>Mucocutaneous：<strong>oral 或 circumoral</strong> 病灶常見，也可在鼻、結膜或肛門周圍；為小肉芽腫或潰瘍，癒合後留疤，可造成明顯變形。頸部淋巴結有時腫大、壓痛、與表皮沾黏，很少化膿；也可侵犯 spleen、intestines、lungs、liver。<span class="ex-ref">p.2981</span></li>
+<li>Mucocutaneous：<strong>oral 或 circumoral</strong> 病灶常見，也可在鼻、結膜或肛門周圍；可為（may be）小肉芽腫或潰瘍，癒合後留疤，可造成明顯變形。頸部淋巴結有時腫大、壓痛、與表皮沾黏，很少化膿；也可侵犯 spleen、intestines、lungs、liver。<span class="ex-ref">p.2981</span></li>
 <li>在 AIDS 病人不常見；另有一種快速進行的廣泛型，發生於沒有明顯易感因素的年輕成人或較大兒童。<span class="ex-ref">p.2981</span></li>
 <li>McKee：鼻與口的 mucocutaneous junction 受侵約 <strong class="ex-n">65%</strong>，其他皮膚部位約 12%；在 HIV 感染者相對少見。<span class="ex-ref ex-ref-mckee">McKee p.942–943</span></li>
 </ul>
@@ -387,7 +387,7 @@
 </ul>
 <h3>Clinical features（臨床表現）</h3>
 <ul>
-<li>病人通常表現為局部肺部或 disseminated disease。<mark data-q="106-37">超過 <strong class="ex-n">50%</strong> 的 AIDS 病人有多處皮膚病灶：<strong>umbilicated papules</strong>，可擴大並潰瘍，通常廣泛分布於臉與軀幹</mark>；其他器官（liver、GI tract、spleen、bone marrow）也可受侵。<span class="ex-ref">p.2982</span></li>
+<li>病人通常表現為局部肺部或 disseminated disease。<mark data-q="106-37">感染本病的 AIDS 病人（AIDS patients with this infection）超過 <strong class="ex-n">50%</strong> 有多處皮膚病灶：<strong>umbilicated papules</strong>，可擴大並潰瘍，通常廣泛分布於臉與軀幹</mark>；其他器官（liver、GI tract、spleen、bone marrow）也可受侵。<span class="ex-ref">p.2982</span></li>
 </ul>
 <h3>Diagnosis &amp; Management（診斷與治療）</h3>
 <ul>
@@ -412,9 +412,9 @@
 <ul>
 <li>可能有 subclinical form（未發病者的 skin test 可呈陽性）；最常見的臨床表現是 <strong>meningoencephalitis</strong>：典型腦膜炎徵象、意識改變、精神狀態改變與腦神經麻痺；AIDS 病人這些徵象可能很輕微。腦膜炎病人中約 <strong class="ex-n">10%</strong> 有肺部感染。<span class="ex-ref">p.2983</span></li>
 <li>AIDS 病人常只表現為 fever 與輕度頭痛。<span class="ex-ref">p.2983</span></li>
-<li><mark data-q="106-37">皮膚病灶約 <strong class="ex-n">10%</strong> 病例出現，但很少具特異性</mark>；acneiform papules 或 pustules 進展為 warty／vegetating crusted plaques、ulcers，以及硬的浸潤性 plaques 或 nodules，是廣泛系統性感染的特徵（Fig. 162-17 為 molluscum contagiosum 樣的 papules 與 nodules）；也可有 cold abscesses、cellulitis 與 nodular lesions。<span class="ex-ref">p.2983</span></li>
+<li><mark data-q="106-37">皮膚病灶可能（may）在約 <strong class="ex-n">10%</strong> 病例出現，但很少具特異性</mark>；acneiform papules 或 pustules 進展為 warty／vegetating crusted plaques、ulcers，以及硬的浸潤性 plaques 或 nodules，是廣泛系統性感染的特徵（Fig. 162-17 為 molluscum contagiosum 樣的 papules 與 nodules）；也可有 cold abscesses、cellulitis 與 nodular lesions。<span class="ex-ref">p.2983</span></li>
 <li>原本健康者與 sarcoidosis 病人，病灶可能是單一，且可能是感染的唯一臨床表現。<span class="ex-ref">p.2983</span></li>
-<li><strong>Primary cutaneous cryptococcosis</strong>（直接接種）：通常為單一結節，破潰後潰瘍，局部 lymphadenopathy；此詞也被寬鬆地用來描述單一病灶，但許多病例其實已播散至內臟；<strong>所有有皮膚病灶的病人都要檢查是否散播</strong>。<span class="ex-ref">p.2983</span></li>
+<li><strong>Primary cutaneous cryptococcosis</strong>（直接接種）：通常為單一結節，破潰後潰瘍，局部 lymphadenopathy；此詞也被寬鬆地用來描述單一病灶，但許多此類病例也有播散至其他內臟的證據（evidence of dissemination）；<strong>所有有皮膚病灶的病人都要檢查是否散播</strong>。<span class="ex-ref">p.2983</span></li>
 </ul>
 <h3>Diagnosis &amp; Histopathology（診斷與病理）</h3>
 <ul>
@@ -434,18 +434,18 @@
 <section class="ex-note" id="opportunistic">
 <h2>13. Cutaneous Aspects of Systemic Opportunistic Mycoses（伺機性系統性黴菌病的皮膚表現）</h2>
 <ul>
-<li>伺機性黴菌感染的皮膚病灶不常見，但在某些易感族群會出現；出現時很有幫助，因為容易切片取得診斷。<span class="ex-ref">p.2984</span></li>
+<li>伺機性黴菌感染的皮膚病灶不常見，但可（can）發生於部分病人，特別是某些易感族群；出現時可能（may）很有幫助，因為容易切片取得診斷。<span class="ex-ref">p.2984</span></li>
 </ul>
 <h3>Systemic candidiasis（系統性念珠菌病）</h3>
 <ul>
 <li><mark data-q="103-22">Systemic candidiasis 由 <em>Candida</em> sp. 自 GI tract 或經血流播散所致</mark>。皮膚病灶特別見於兩種情況：(a) neutropenic 病人常有嚴重的 disseminated disease，伴<strong>廣泛皮膚 nodules 與肌肉痛</strong>；(b) IV drug abusers 可表現為<strong>鬍鬚區與頭皮的毛囊性膿疱疹</strong>。其他病灶：retinal 與 vitreal deposits、costochondral junctions 周圍膿瘍。<span class="ex-ref">p.2984</span></li>
-<li>治療：IV amphotericin B（conventional 或 lipid-associated）、caspofungin 或 fluconazole。某些 non-<em>albicans Candida</em> 對 fluconazole、ketoconazole 等 azoles 的抗藥性較常見，應避免使用這些藥物；新認識的 <em>Candida auris</em> 可造成對 fluconazole 與 amphotericin B 等常用藥抗藥的系統性感染。<span class="ex-ref">p.2984</span></li>
+<li>治療：通常（usually）用 IV amphotericin B（conventional 或 lipid-associated）、caspofungin 或 fluconazole。某些 non-<em>albicans Candida</em> 對 fluconazole、ketoconazole 等 azoles 的抗藥性較常見，應避免使用這些藥物；新認識的 <em>Candida auris</em> 可造成對 fluconazole 與 amphotericin B 等常用藥抗藥的系統性感染。<span class="ex-ref">p.2984</span></li>
 <li>McKee：<em>Candida</em> 假菌絲較細、無隔，並伴 <strong class="ex-n">3–5 µm</strong> 的 yeast forms，可與 hyalohyphomycosis 區分。<span class="ex-ref ex-ref-mckee">McKee p.939</span></li>
 </ul>
 <h3>Mucormycosis（毛黴菌病／phycomycosis、zygomycosis）</h3>
 <ul>
 <li>罕見疾病，由 Mucoromycetes（如 <em>Mucor</em>、<em>Lichtheimia</em>、<em>Rhizopus</em>）引起；<em>Cunninghamella bertholletiae</em> 與 <em>Saksenaea vasiformis</em> 較少見。<span class="ex-ref">p.2984</span></li>
-<li><mark data-q="103-22">發生於 <strong>poorly controlled diabetes、neutropenia 或 renal disease</strong> 的病人</mark>；也可經外傷（如 mudslide、tsunami 等天災）的擦傷直接侵入；可侵犯壞死的燒傷區，或繼發於 paranasal sinuses 侵襲性感染而侵犯臉部皮膚；皮膚與受汙染敷料（<em>Rhizopus rhizopodiformis</em>）或木壓舌板（<em>Rhizopus microsporus</em>）緊貼也曾造成感染。<span class="ex-ref">p.2984</span></li>
+<li><mark data-q="103-22">發生於 <strong>poorly controlled diabetes、neutropenia 或 renal disease</strong> 的病人</mark>；曾有（has been reported）天災（如 mudslide、tsunami）外傷後經擦傷直接侵入的報告；可侵犯壞死的燒傷區，或繼發於 paranasal sinuses 侵襲性感染而侵犯臉部皮膚；皮膚與受汙染敷料（<em>Rhizopus rhizopodiformis</em>）或木壓舌板（<em>Rhizopus microsporus</em>）緊貼也曾造成感染。<span class="ex-ref">p.2984</span></li>
 <li>這些真菌<strong>傾向侵入血管</strong>，造成廣泛梗塞。<mark data-q="109-30">感染可能對 <strong>IV amphotericin</strong> 有反應，近來 <strong>lipid-associated amphotericin B</strong> 製劑的結果令人鼓舞</mark>。<span class="ex-ref">p.2984</span></li>
 <li>McKee：hyphae 寬 <strong class="ex-n">10–20 µm</strong>、帶狀、<strong>無隔（nonseptate）</strong>、呈 <strong>90°</strong> 不規則分支，H&amp;E 即可清楚看到；與 <em>Aspergillus</em> 及 hyalohyphomycosis 病原不同（後者較窄、有隔、較規則二分支）；常侵入血管造成 vasculitis、thrombosis、hemorrhage 與 infarction；皮下脂肪侵犯可酷似 pancreatic panniculitis 或 gouty panniculitis。<span class="ex-ref ex-ref-mckee">McKee p.949</span></li>
 <li>McKee：感染多發生於 immunosuppressed（如 neutropenia、移植）或 diabetic ketoacidosis 病人。<span class="ex-ref ex-ref-mckee">McKee p.948</span></li>
@@ -475,7 +475,7 @@
 <tr><td><em>Paracoccidioides</em></td><td>圓形 yeasts，母細胞被大量較小 buds 包圍（p.2981）</td><td>多個窄基底 buds，「pilot's wheel」；<strong class="ex-n">2–20 µm</strong>，pilot's wheel 最大 60 µm（McKee p.943）</td></tr>
 <tr><td><em>T. marneffei</em></td><td><strong class="ex-n">2–4 µm</strong>，以 septum 分成兩個（p.2982）</td><td><strong class="ex-n">2–8 µm</strong>，fission 分裂、有 septation（McKee p.960）</td></tr>
 <tr><td><em>Cryptococcus</em></td><td><strong class="ex-n">5–15 µm</strong>、有 capsule、budding；mucicarmine 或 Alcian blue 染 capsule（p.2983–2984）</td><td><strong class="ex-n">4–20 µm</strong>、mucoid capsule、窄基底出芽；mucicarmine 陽性（McKee p.946–947）</td></tr>
-<tr><td>Mucormycosis</td><td>會侵入血管造成梗塞（p.2984）</td><td><strong class="ex-n">10–20 µm</strong> 寬、無隔、90° 分支（McKee p.949）</td></tr>
+<tr><td>Mucormycosis</td><td>傾向（tendency）侵入血管造成梗塞（p.2984）</td><td><strong class="ex-n">10–20 µm</strong> 寬、無隔、90° 分支（McKee p.949）</td></tr>
 <tr><td>Subcutaneous mucormycosis（entomophthoramycosis）</td><td>大而帶狀、<strong>無隔</strong> hyphae；Splendore-Hoeppli（p.2973）</td><td><strong>variably septate</strong>，<strong class="ex-n">8–10 µm</strong>，不侵入血管（McKee p.950）</td></tr>
 <tr><td>Lobomycosis</td><td>圓形細胞鏈，以小管相連；"pop-bead"（p.2973、p.2967）</td><td><strong class="ex-n">6–12 µm</strong> 串珠鏈，厚（雙層）壁（McKee p.962）</td></tr>
 </tbody>
@@ -485,13 +485,13 @@
 <thead><tr><th scope="col">Disease（疾病）</th><th scope="col">Drugs named in Fitzpatrick Chap. 162（課本列出的藥物）</th></tr></thead>
 <tbody>
 <tr><td>Histoplasmosis</td><td>Itraconazole <strong class="ex-n">200–400 mg</strong> daily；嚴重或廣泛者 IV amphotericin B（up to 1 mg/kg daily）；部分病例 posaconazole、voriconazole（p.2977）</td></tr>
-<tr><td>Blastomycosis</td><td>Itraconazole <strong class="ex-n">200–400 mg</strong> daily（較輕或局部）；voriconazole 有活性；至少 6 個月；廣泛播散型 amphotericin B（p.2979）</td></tr>
+<tr><td>Blastomycosis</td><td>Itraconazole <strong class="ex-n">200–400 mg</strong> daily（較輕或局部）；voriconazole 有活性；至少 6 個月；廣泛播散型一般用 amphotericin B（p.2979）</td></tr>
 <tr><td>Coccidioidomycosis</td><td>Primary pulmonary 除休息外不需特殊治療；disseminated：amphotericin B 1 mg/kg daily、itraconazole 200–400 mg daily、fluconazole 200–600 mg daily（p.2980）</td></tr>
 <tr><td>Paracoccidioidomycosis</td><td>Itraconazole 為多數病例首選（3–6 個月緩解）；voriconazole 相近；廣泛或重症 IV amphotericin B（p.2981）</td></tr>
 <tr><td><em>T. marneffei</em></td><td>重症 amphotericin B；許多病例 itraconazole 200–400 mg daily；AIDS 病人持續以防復發（p.2982）</td></tr>
 <tr><td>Cryptococcosis</td><td>Non-AIDS：IV amphotericin B + flucytosine；單一皮膚病灶可用 fluconazole 或 itraconazole；AIDS：amphotericin B 10–14 天（± flucytosine）後長期 fluconazole（p.2984）</td></tr>
-<tr><td>Systemic candidiasis</td><td>IV amphotericin B（conventional 或 lipid-associated）、caspofungin、fluconazole（p.2984）</td></tr>
-<tr><td>Mucormycosis</td><td>IV amphotericin B；lipid-associated 製劑結果令人鼓舞（p.2984）</td></tr>
+<tr><td>Systemic candidiasis</td><td>通常 IV amphotericin B（conventional 或 lipid-associated）、caspofungin、fluconazole（p.2984）</td></tr>
+<tr><td>Mucormycosis</td><td>可能對 IV amphotericin B 有反應；lipid-associated 製劑結果令人鼓舞（p.2984）</td></tr>
 <tr><td>Aspergillosis 等其他伺機性黴菌</td><td>通常 amphotericin B；voriconazole 越來越常用於 aspergillosis（p.2984）</td></tr>
 </tbody>
 </table>

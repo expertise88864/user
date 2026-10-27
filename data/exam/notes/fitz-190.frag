@@ -113,7 +113,7 @@
 <ul>
 <li>Psoriasis 病人起始通常先給單次 <strong class="ex-n">2.5–5 mg</strong> <strong>test dose</strong>（腎功能下降或有血液毒性危險因子者特別重要），<strong class="ex-n">1 week</strong> 後複查 labs、皮膚與 review of systems。<span class="ex-ref">p.3466</span></li>
 <li>服藥後 <strong class="ex-n">5–6 days</strong> 內抽血只會看到預期中的 transaminase 上升，可能混淆判讀。</li>
-<li>Test dose 耐受且 labs 無異常後，常用起始 <strong class="ex-n">5–15 mg/wk</strong>（依嚴重度、整體健康、ideal body weight）；每 <strong class="ex-n">4–8 weeks</strong> 加 <strong class="ex-n">2.5–5.0 mg</strong>，最大 <strong class="ex-n">25 mg/wk</strong>。</li>
+<li>Test dose 耐受且 labs 無異常後，常用起始 <strong class="ex-n">5–15 mg/wk</strong>（依嚴重度、整體健康、ideal body weight）；每 <strong class="ex-n">4–8 weeks</strong> 加 <strong class="ex-n">2.5–5.0 mg</strong>，最大 <strong class="ex-n">25 mg/wk</strong>。<span class="ex-ref">p.3466</span>同書 ch28 Table 28-6 則寫 maximum 25–30 mg weekly。<span class="ex-ref">p.484（ch28）</span></li>
 <li>穩定後可以 <strong class="ex-n">2.5-mg</strong> 遞減至疾病穩定的劑量；長期治療目標是接受輕度殘存病灶以降低累積劑量；併用外用藥也可能降低所需 MTX 劑量。</li>
 <li><strong class="ex-n">20–25 mg/wk</strong> 仍改善不足 → 考慮換藥；部分頑固病人改 SC 可能反應較好。</li>
 <li><mark data-q="104-08,104-38">Psoriasis 中 MTX 可合併 UVB phototherapy 或 biologics 以增強療效</mark>。<span class="ex-ref">p.3466</span></li>

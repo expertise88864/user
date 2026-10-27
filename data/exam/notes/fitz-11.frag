@@ -125,7 +125,7 @@
 <h3>Unconventional / innate-like T cells</h3>
 <ul>
 <li>表現 <strong>limited diversity</strong> 的 TCR，辨識 nonclassical MHC-like 分子上的抗原，或完全不依賴 MHC 相關呈現分子。包括 iNKT、MAIT、γδ T cells。<span class="ex-ref">p.149</span></li>
-<li><strong>CD1 family</strong>：構造上與 MHC class I 相關，但 <strong>nonpolymorphic</strong>；呈現 lipid-based antigens。CD1a、b、c 彼此較像，與 CD1d 較不同，且 CD1a/b/c 在小鼠不存在。皮膚中 <strong>Langerhans cells</strong> 表現 CD1a 與 CD1c；<strong>dermal dendritic cells</strong> 表現 CD1a、b、c（p.151 同一主題又寫 CD1a、b、c、d）。<span class="ex-ref">p.149, 151</span></li>
+<li><strong>CD1 family</strong>：構造上與 MHC class I 相關，但 <strong>nonpolymorphic</strong>；呈現 lipid-based antigens。CD1a、b、c 彼此較像，與 CD1d 較不同，且 CD1a/b/c 在小鼠不存在。皮膚中 <strong>Langerhans cells</strong> 表現 CD1a 與 CD1c；<strong>dermal dendritic cells</strong> 表現 CD1a、b、c（p.151 同一主題又寫 CD1a、b、c、d）。<span class="ex-ref">p.149, 151</span>同書 ch10 內文則寫 DDC「express CD1c rather than CD1a」。<span class="ex-ref">p.135（ch10）</span></li>
 <li>CD1a 可呈現 host-derived sulfatides、「headless antigens」、pollen phospholipids、mycobacterium-derived dideoxymycobactin；CD1a-autoreactive T cells 會 home 到皮膚，辨識帶有皮膚脂質的 CD1a。<span class="ex-ref">p.149</span></li>
 <li>Group I CD1-restricted T cells 分泌 TH1 cytokines，對感染標的有 cytolytic 作用（如 mycobacteria），表現 perforin、granzyme B 與 <strong>granulysin</strong>；granulysin 表現與 leprosy 的感染受控相關，在 "tuberculous leprosy"（原文用字）病灶比 lepromatous leprosy 病灶約常見 <strong class="ex-n">6-fold</strong>。<span class="ex-ref">p.151</span></li>
 </ul>

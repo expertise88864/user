@@ -332,7 +332,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 40-9，p.669；at-a-glance p.667；內文 p.667–668。</p>
-<aside class="ex-trap"><strong>易錯</strong>IgE 上升與腎病變「只」見於 KD；KD 腎病變報告發生率 10%–20%（Table 40-9：up to 20%）。Lymphoid follicles（常有 germinal centers）是 KD 的主要特徵，大型 epithelioid endothelial cells 是 ALHE 的關鍵特徵（p.667–669）。</aside>
+<aside class="ex-trap"><strong>易錯</strong>IgE 上升與腎病變「只」見於 KD；KD 腎病變報告發生率 10%–20%（Table 40-9：up to 20%）。Lymphoid follicles（常有 germinal centers）是 KD 的主要特徵，大型 epithelioid endothelial cells 是 ALHE 的關鍵特徵（p.667–669）。同書 ch120 則寫 ALHE 與 KD 兩性皆可、無性別傾向（without sex predominance），多數病人在 third or fourth decade<span class="ex-ref">p.2124（ch120）</span>。</aside>
 <h3>ALHE details（ALHE 細節）</h3>
 <ul>
 <li>Erythematous、violaceous 或 brown 的 papules、plaques、nodules，單發、少數或多發（有時成群）；好發頭頸部含耳朵；多局限於皮膚，但可侵犯黏膜。<span class="ex-ref">p.667</span></li>

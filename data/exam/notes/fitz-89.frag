@@ -91,9 +91,9 @@
 <h3>Course &amp; management（病程與處置）</h3>
 <ul>
 <li>後天性 trichoschisis 在減少機械或化學創傷後預後常（often）良好，毛髮恢復正常。<span class="ex-ref">p.1540</span></li>
-<li>TTD 表現型差異大：從只有毛髮受侵犯的輕症，到嚴重 developmental delay 與高死亡率。Faghri 的 systematic review：10 歲以下兒童死亡率為美國一般人口的 <strong class="ex-n">20-fold</strong>，多數死於嚴重感染的併發症。<span class="ex-ref">p.1540</span></li>
+<li>TTD 表現型差異大：從只有毛髮受侵犯的輕症，到嚴重 developmental delay 與高死亡率。Faghri 的 systematic review：10 歲以下 TTD 兒童的死亡率為美國一般人口的 <strong class="ex-n">20-fold</strong>，多數死於嚴重感染的併發症。<span class="ex-ref">p.1540</span></li>
 <li>同一 review 指出病人一生中任何時點可能（can）出現的併發症：intellectual impairment <strong class="ex-n">86%</strong>、short stature <strong class="ex-n">73%</strong>、ocular abnormalities <strong class="ex-n">51%</strong>、ichthyosis <strong class="ex-n">65%</strong>。<span class="ex-ref">p.1540</span></li>
-<li>後天性 trichoschisis 減少 hair manipulation 可緩解；TTD 無有效治療，須定期監測並採 multidisciplinary approach（皮膚、眼科、聽力、骨骼、發展評估）。<span class="ex-ref">p.1540</span></li>
+<li>後天性 trichoschisis 減少 hair manipulation 可緩解；TTD 無有效治療，可能的併發症可藉定期監測處理（can be managed by regular monitoring）；須採 multidisciplinary approach（皮膚、眼科、聽力、骨骼、發展評估）。<span class="ex-ref">p.1540</span></li>
 </ul>
 <h3>Trichoclasis（McKee 補充）</h3>
 <ul>
@@ -144,7 +144,7 @@
 <tr><td>TTD1，photosensitive type</td><td>AR；19q13；<em>ERCC2/XPD</em></td><td>Ichthyosiform erythroderma、mental delay、short stature、brittle nails、brittle hair（torti pili 或 trichorrhexis nodosa）</td></tr>
 </tbody>
 </table>
-<p class="ex-cite">Table 89-4，p.1541。McKee 另列：Björnstad 為 AR，<em>BCS1L</em>；感覺神經性聽損合併 hypogonadism 稱 Crandall syndrome，p.1118。</p>
+<p class="ex-cite">Table 89-4，p.1541。McKee 另列：Björnstad 為 AR，<em>BCS1L</em>；感覺神經性聽損與 pili torti 再合併 hypogonadism 時稱 Crandall syndrome，p.1118。</p>
 <aside class="ex-trap"><strong>易錯</strong>「Flattened, twisted hair occurring at irregular intervals along the hair shaft」是 pili torti 在 light microscopy 的描述（p.1540–1541）；pili annulati 的描述是 alternating light and dark bands（p.1548，見後）。</aside>
 </section>
 
@@ -186,7 +186,7 @@
 </ul>
 <h3>Course &amp; management（病程與處置）</h3>
 <ul>
-<li>較輕表現型常隨年齡改善，毛髮異常也會消失；較重並有 erythroderma 者病程較持久而嚴重，常見 recurrent infections 與早期死亡。<span class="ex-ref">p.1542</span></li>
+<li>較輕表現型常（often）隨年齡改善，並伴毛髮異常消失；較重並有 erythroderma 者病程較持久而嚴重，常見 recurrent infections 與早期死亡。<span class="ex-ref">p.1542</span></li>
 <li>皮膚處置：emollients、topical steroids、topical immunomodulators（<strong>tacrolimus</strong>、pimecrolimus）；<mark data-q="107-24">Netherton syndrome 病人對外用藥物的吸收增加，使用時須謹慎</mark>。<span class="ex-ref">p.1542–1543</span></li>
 <li>全身治療：low-dose corticosteroids、retinoids、phototherapy。<span class="ex-ref">p.1543</span>；Table 89-1 另寫 IVIG 已成為 treatment of choice。<span class="ex-ref">p.1538</span></li>
 </ul>
@@ -229,7 +229,7 @@
 <ul>
 <li>罕見的頭髮疾病，特徵為 inner 與 outer hair sheath 的結構異常。<span class="ex-ref">p.1543</span></li>
 <li>流行病學：最常在最初數個月內出現，但可到 <strong class="ex-n">12 years</strong> 才發病；男女相等；多數為 AD（完全或不完全 penetrance），也有 sporadic；後天型較常見於深色捲髮者，且傾向（tend to）較晚發生；另有斑片狀、界線清楚的 partial variant，通常（typically）在 frontal 與 occipital。<span class="ex-ref">p.1543</span></li>
-<li>臨床：毛髮 unruly、frizzy、乾，豎立而難以梳平；毛色多為 red-blond 到淡金色，有 spangled 外觀；<strong>沒有</strong>增加的脆弱性，毛量與長度通常正常；眉毛、睫毛、體毛不受影響。可伴 ectodermal dysplasia（Bork syndrome）、multiple epiphyseal dysplasia、type I neurofibromatosis。<span class="ex-ref">p.1544</span></li>
+<li>臨床：家族性（familial）uncombable hair 病人的毛髮 unruly、frizzy、乾，豎立而難以梳平；毛色多為 red-blond 到淡金色，有 spangled 外觀；<strong>沒有</strong>增加的脆弱性，毛量與長度通常正常；眉毛、睫毛、體毛不受影響。可伴 ectodermal dysplasia（Bork syndrome）、multiple epiphyseal dysplasia、type I neurofibromatosis。<span class="ex-ref">p.1544</span></li>
 <li>病因：2016 年有 3 個基因被認為與 AR 型有關：<em>PADI3</em>、<em>TGM3</em>、<em>TCHH</em>；過早角化或毛囊 dermal papillae 的結構異常，可能造成其特有的僵硬形態。<span class="ex-ref">p.1544</span></li>
 <li>診斷：EM 毛髮橫切面呈 <strong>triangular 或 kidney shape</strong>，有淺的縱向溝；此溝被認為造成毛髮外觀（毛幹邊緣出現閃亮）。<span class="ex-ref">p.1544</span></li>
 <li>Differential diagnosis（Table 89-7）：acquired progressive hair kinking、drug-induced kinking、loose anagen syndrome、Marie Unna hypotrichosis、monilethrix、pili torti、Rapp-Hodgkin syndrome、wooly hair。<span class="ex-ref">p.1544</span></li>
@@ -255,7 +255,7 @@
 <ul>
 <li>先天性疾病，毛髮 unruly 且緊密捲曲；罕見，確切發生率未報告；主要見於白人與亞洲人，兒童期或青春期出現；男女相等。<span class="ex-ref">p.1545</span></li>
 <li>遺傳型態：AD 與 AR 都有描述，也可 sporadic。<span class="ex-ref">p.1545</span></li>
-<li>臨床：緊密捲曲，平均直徑 <strong class="ex-n">0.5 cm</strong>；毛髮偶爾可能因 anagen 期較短而稍短，但生長速率與 telogen-to-anagen ratio 常正常；也可見 TN 徵象。<span class="ex-ref">p.1545</span></li>
+<li>臨床：緊密捲曲，平均直徑 <strong class="ex-n">0.5 cm</strong>；毛髮偶爾可能（may occasionally）因 anagen 期較短（briefer anagen phase）而長度較短（shorter），但生長速率與 telogen-to-anagen ratio 常正常；也可見 TN 徵象。<span class="ex-ref">p.1545</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Variant（4 種）</th><th scope="col">Inheritance</th><th scope="col">Key features（重點）</th></tr></thead>

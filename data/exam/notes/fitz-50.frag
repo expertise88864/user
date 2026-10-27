@@ -40,7 +40,7 @@
 <h3>Cutaneous findings（皮膚）</h3>
 <ul>
 <li>Discrete、greasy、yellowish-brown keratotic papules（只有部分在毛囊周圍），好發 seborrheic areas：central chest、upper back、scalp（hair growth 不受影響）、forehead、neck（含 supraclavicular fossae）、ears，以及 skin creases（axillae、groins、perineum）。<span class="ex-ref">p.878</span></li>
-<li><mark data-q="104-49">DD 皮膚病灶主要分布在 seborrheic areas（脂漏區域）</mark>；papules 會融合成 crusted plaques；groin 的 foul-smelling hypertrophic disease 特別致殘。<span class="ex-ref">p.878</span></li>
+<li><mark data-q="104-49">DD 皮膚病灶好發於（predilection for）seborrheic areas（脂漏區域）</mark>；papules 傾向（tend to）融合成 crusted plaques；groin 的 foul-smelling hypertrophic disease 特別致殘。<span class="ex-ref">p.878</span></li>
 <li>McKee：皮疹為 greasy、crusted、keratotic yellow-brown papules 與 plaques，位於 scalp、forehead、ears、nasolabial folds、upper chest、back、supraclavicular fossae；多數病人 flexures 為輕度侵犯，但有時以 flexures 為主；flexure 病灶常 vegetative、malodorous 且常有 secondary infection。<span class="ex-ref ex-ref-mckee">McKee p.190</span><span class="ex-ref ex-ref-mckee">McKee p.191</span></li>
 </ul>
 <h3>Hands and nails（手與指甲）</h3>
@@ -50,7 +50,7 @@
 <li><mark data-q="105-40">DD 可見紅白縱向條紋（red and white longitudinal bands）、V-shaped nicks，以及 hemorrhagic macules</mark>。<span class="ex-ref">p.878–879</span></li>
 <li>Palms（有時 soles）的 <strong>pits 或 keratotic papules</strong> 可幫助確診。<span class="ex-ref">p.878</span></li>
 <li><mark data-q="104-49">許多病人（<strong class="ex-n">50%–70%</strong>）手背、足背（或兩者）有 skin-colored、flat-topped papules，像 acrokeratosis verruciformis of Hopf（AKV）</mark>。<span class="ex-ref">p.878–879</span></li>
-<li><mark data-q="113-36">Hemorrhagic macules with jagged margins（邊緣不規則），可能與 trauma 有關，是 <strong>least common</strong> acral sign，可起水疱</mark>；hemorrhagic DD 在部分 kindreds 與個別病人有報告。<span class="ex-ref">p.879</span></li>
+<li><mark data-q="113-36">Hemorrhagic macules with jagged margins（邊緣不規則），可能與 trauma 有關，是 <strong>least common</strong> acral sign，可能起水疱（may blister）</mark>；hemorrhagic DD 在部分 kindreds 與個別病人有報告。<span class="ex-ref">p.879</span></li>
 <li>McKee：手受侵犯 <strong class="ex-n">96%</strong>；palmar pits 是有幫助的診斷線索；AKV-like lesions 常見於手背；longitudinal white or red streaks（常兩者並存）有些在 free margin 以小缺口（nick）結束；另有 painful splitting 與 subungual hyperkeratoses；toenails 受侵犯較少也較輕。<span class="ex-ref ex-ref-mckee">McKee p.191</span><span class="ex-ref ex-ref-mckee">McKee p.192</span></li>
 </ul>
 <h3>Clinical variants（臨床變異型）</h3>
@@ -62,7 +62,7 @@
 <h3>Noncutaneous findings（非皮膚表現）</h3>
 <ul>
 <li><mark data-q="110-49">Oral、esophageal、rectal、cervical mucosa 可出現 multiple white papules</mark>；有 corneal abnormalities 的紀錄；bone changes（尤其 bone cysts）報告不多。<span class="ex-ref">p.879</span></li>
-<li>McKee：oral lesions 最多 <strong class="ex-n">50%</strong>（hard palate 的 small white papules）；salivary duct 受侵犯可致 salivary gland swelling 與 sialadenitis，parotid 受侵犯最多可達 <strong class="ex-n">30%</strong>；corneal lesions 最多 <strong class="ex-n">76%</strong>，通常無症狀；系統性合併症少見（epilepsy、pulmonary lesions、bone cysts、low intelligence、small stature 等）。<span class="ex-ref ex-ref-mckee">McKee p.192</span></li>
+<li>McKee：oral lesions 最多 <strong class="ex-n">50%</strong>（hard palate 的 small white papules）；salivary duct 受侵犯可致 salivary gland swelling 與 sialadenitis，parotid 受侵犯最多可達 <strong class="ex-n">30%</strong>；ocular lesions（尤其侵犯 cornea）最多見於 <strong class="ex-n">76%</strong> 病人，典型（typically）無症狀；系統性合併症少見（epilepsy、pulmonary lesions、bone cysts、low intelligence、small stature 等）。<span class="ex-ref ex-ref-mckee">McKee p.192</span></li>
 </ul>
 <h3>Neuropsychiatric findings（神經精神）</h3>
 <ul>
@@ -71,7 +71,7 @@
 <li><mark data-q="115-24">Lifetime prevalence：major depression <strong class="ex-n">30%</strong>、suicide attempts <strong class="ex-n">13%</strong>、suicidal thoughts <strong class="ex-n">31%</strong>，似乎高於一般族群，需要仔細評估</mark>。<span class="ex-ref">p.879</span></li>
 <li>部分家族中 DD 與 bipolar disorder 共分離（cosegregation），支持 DD 區域存在 bipolar disorder susceptibility gene，但 ATP2A2 已被排除為 bipolar disease 的 common susceptibility gene。<span class="ex-ref">p.879–880</span></li>
 <li>部分病人的 learning difficulties，可能（至少部分）是毀容造成社交障礙的後果。<span class="ex-ref">p.880</span></li>
-<li>McKee 同樣寫 DD 與 depression、bipolar disorder 等 neuropsychiatric problems 有關，部分病例有 bipolar disorder 與 DD 的 familial cosegregation 證據。<span class="ex-ref ex-ref-mckee">McKee p.192</span></li>
+<li>McKee 同樣寫 DD 與 depression、bipolar disorder 等 neuropsychiatric problems 有關，有些證據提示（some evidence to suggest）至少在部分病例中 bipolar disorder 與 DD 有 familial cosegregation。<span class="ex-ref ex-ref-mckee">McKee p.192</span></li>
 </ul>
 <h3>Complications（併發症）</h3>
 <ul>
@@ -79,9 +79,9 @@
 <li><mark data-q="113-36">病人對 <strong>herpes simplex（eczema herpeticum）</strong>與 herpes zoster viruses 的廣泛感染易感性增加</mark>。<span class="ex-ref">p.880</span></li>
 <li>Salivary glands 阻塞有報告。<span class="ex-ref">p.880</span></li>
 <li><mark data-q="113-36"><strong>Squamous cell carcinoma</strong>（scalp、scrotal、vulval、thigh、subungual）有報告但不常見（infrequently），有時與 <strong>HPV 16</strong> 的存在有關</mark>。<span class="ex-ref">p.880</span></li>
-<li>McKee：病人容易有 bacterial（尤其 <em>S. aureus</em>）、dermatophyte、Candida 與 viral infections；Kaposi varicelliform eruption 為罕見但重要的併發症，常與 herpes simplex virus 有關。<span class="ex-ref ex-ref-mckee">McKee p.191</span></li>
+<li>McKee：病人容易有 bacterial（尤其 <em>S. aureus</em>）、dermatophyte、Candida 與 viral infections；Life-threatening Kaposi varicelliform eruption 為罕見但重要的併發症，見於嚴重受侵犯（severely affected）的病人，通常（usually）與 herpes simplex virus 有關。<span class="ex-ref ex-ref-mckee">McKee p.191</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>DD 的指甲表現是 nail fragility、painful longitudinal splits、紅白縱向（longitudinal）條紋末端 V-shaped nicks。<span class="ex-ref">p.878</span>HHD 的指甲表現則是 longitudinal white lines（fingernails），<span class="ex-ref">p.886</span>而且 HHD 病人沒有 keratotic papules 或 nail fragility。<span class="ex-ref">p.883</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>DD 的指甲表現是 nail fragility、painful longitudinal splits、紅白縱向（longitudinal）條紋末端 V-shaped nicks。<span class="ex-ref">p.878</span>HHD 則是部分病人（some patients）的 fingernails 有 longitudinal white lines，<span class="ex-ref">p.886</span>而且 HHD 病人沒有 keratotic papules 或 nail fragility。<span class="ex-ref">p.883</span></aside>
 <aside class="ex-trap"><strong>易錯</strong>Hemorrhagic macules 是 DD <strong>最少見</strong>（least common）的 acral sign。<span class="ex-ref">p.879</span>Lithium 使 DD 惡化，可能是因為壓低（suppressing）epidermal SERCA2 的量；大鼠實驗中 lithium reduces epidermal expression of SERCA2。<span class="ex-ref">p.879</span><span class="ex-ref">p.883</span></aside>
 </section>
 
@@ -92,21 +92,21 @@
 <li>DD 由 inactivating <strong>一個</strong> ATP2A2 allele 的突變造成。<span class="ex-ref">p.880</span></li>
 <li>ATP2A2 長 <strong class="ex-n">76 kb</strong>、<strong class="ex-n">21 exons</strong>，轉錄後 alternative splicing 成三種 isoforms：SERCA2a、SERCA2b、SERCA2c。<span class="ex-ref">p.880</span></li>
 <li><mark data-q="115-24"><strong>SERCA2a</strong> 表現於 slow-twitch skeletal muscles 與 cardiac muscle，在 DD 不受影響；SERCA2b 與 SERCA2c 為 ubiquitous 表現，但 <strong>SERCA2b</strong> 是人類 epidermis 偵測到的主要 isoform</mark>。<span class="ex-ref">p.880</span></li>
-<li>SERCA3 可讓多數組織補償 SERCA2 缺陷，但 keratinocytes 不表現 SERCA3。<span class="ex-ref">p.880</span></li>
+<li>多數組織可能（may）藉由涉及 SERCA3 的機制補償 SERCA2 缺陷，但 keratinocytes 不表現 SERCA3。<span class="ex-ref">p.880</span></li>
 <li>SERCA pump 水解 ATP，並把 <strong class="ex-n">兩個</strong> Ca2+ 從 cytosol 送入 ER lumen。<span class="ex-ref">p.880</span></li>
 <li>LOVD 資料庫：<strong class="ex-n">279</strong> 種 unique ATP2A2 mutations，其中 <strong class="ex-n">46%</strong> missense、<strong class="ex-n">8%</strong> nonsense、<strong class="ex-n">10%</strong> splice-site；多數為 family specific，沒有一致的 genotype–phenotype correlation，但 missense mutations 似乎較常與 severe forms 相關。<span class="ex-ref">p.880</span></li>
 <li>正常 epidermis 的 Ca2+ 梯度由 basal 往表層遞增，DD 中此梯度受干擾；受影響與未受影響皮膚的 basal cells Ca2+ 都降低。<span class="ex-ref">p.880</span></li>
 <li>最早的 ultrastructural change 是 <strong>desmosomes 崩解</strong>、keratin filaments 聚集在細胞核周圍；dyskeratotic cells（grains、corps ronds）經 <strong>apoptosis</strong> 形成，似乎由失去 adhesion 觸發；Bcl-2 family antiapoptotic proteins 表現降低。<span class="ex-ref">p.880–881</span></li>
-<li>ER Ca2+ store 耗竭被認為在致病機轉扮演核心角色：desmoplakin trafficking 受損；E-cadherin、desmoglein 3、desmocollin 2/3 在 plasma membrane 表現降低並部分滯留細胞內；Miglustat（glucosidase inhibitor／pharmacologic chaperone）在培養細胞可恢復 E-cadherin 與 desmosomal localization。<span class="ex-ref">p.881–882</span></li>
+<li>ER Ca2+ store 耗竭被認為在致病機轉扮演核心角色：在培養的 DD keratinocytes 與 thapsigargin 處理的 human keratinocytes 中，desmoplakin trafficking 受損；E-cadherin、desmoglein 3、desmocollin 2/3 在 plasma membrane 表現降低並部分滯留細胞內；Miglustat（glucosidase inhibitor／pharmacologic chaperone）在培養細胞可恢復 E-cadherin 與 desmosomal localization。<span class="ex-ref">p.881–882</span></li>
 <li>Store-operated calcium entry 異常：TRPC1 在 DD keratinocytes 上調，促進 proliferation、限制 apoptosis，被認為與 dyskeratosis 有關。<span class="ex-ref">p.882–883</span></li>
-<li>多數皮膚可能藉由增加正常 SERCA2 allele 表現或上調 Golgi 的 SPCA1 來代償；UVB 與 friction 等外在因素可能使 ATP2A2 下調而打破平衡。UVB 與 proinflammatory cytokines 降低培養 keratinocytes 的 ATP2A2 mRNA，retinoids 與 corticosteroids 可防止此下降。<span class="ex-ref">p.883</span></li>
+<li>多數皮膚可能藉由增加正常 SERCA2 allele 表現或上調 Golgi 的 SPCA1 來代償；UVB 與 friction 等外在因素可能使 ATP2A2 下調而打破平衡。UVB 與 proinflammatory cytokines 降低培養的正常（normal）keratinocytes 的 ATP2A2 mRNA，retinoids 與 corticosteroids 可防止此下降。<span class="ex-ref">p.883</span></li>
 <li><mark data-q="113-36,115-24">Lithium 是另一個 DD 觸發因子，在大鼠降低 epidermal SERCA2 表現</mark>。<span class="ex-ref">p.883</span></li>
 <li>Serca2 heterozygous knockout 小鼠不發生 DD 樣病灶，而是出現 papillomas 與 SCCs。<span class="ex-ref">p.883</span></li>
 </ul>
 <h3>McKee 補充</h3>
 <ul>
 <li>ATP2A2 編碼 SERCA2，功能是把 cytosolic calcium ions 運進 endoplasmic reticulum；DD 可能是 haploinsufficiency 所致；mutant copy 可能造成 proteasome-mediated degradation 增加及／或 protein dimerization，導致 SERCA2 activity 完全喪失。<span class="ex-ref ex-ref-mckee">McKee p.192</span><span class="ex-ref ex-ref-mckee">McKee p.193</span></li>
-<li>三個基因共編碼 nine isoforms，其中只有 SERCA2b 表現在 keratinocytes，因此功能喪失無法被代償，解釋了多數病人只有皮膚表現而無其他系統侵犯。<span class="ex-ref ex-ref-mckee">McKee p.193</span></li>
+<li>三個基因共編碼 nine isoforms，其中似乎（appears）只有 SERCA2b 表現在 keratinocytes，因此功能喪失無法被代償，解釋了多數病人只有皮膚表現而無其他系統侵犯。<span class="ex-ref ex-ref-mckee">McKee p.193</span></li>
 <li>Intracellular calcium homeostasis 是 desmosome assembly 的重要因素；突變 SERCA2 聚集成 insoluble aggregates 造成 ER stress 並誘發 apoptosis。<span class="ex-ref ex-ref-mckee">McKee p.193</span></li>
 <li>Ultrastructure：foci of acantholysis 中 desmosomes 完全消失，hemidesmosomes 與 lamina densa 通常形態正常；corps ronds 為大型 dense keratohyalin masses、許多 membrane coating granules 與 tonofilament clumps；grains of Darier 為 nuclear remnants 周圍有 dyskeratotic debris。<span class="ex-ref ex-ref-mckee">McKee p.193</span></li>
 </ul>
@@ -123,10 +123,10 @@
 <h3>McKee 補充</h3>
 <ul>
 <li>病理像取決於 acantholysis（suprabasal cleft，罕見 vesicles 或 blisters）與 dyskeratosis（corps ronds 與 grains）的交互作用。<span class="ex-ref ex-ref-mckee">McKee p.193</span></li>
-<li><strong>Corps ronds</strong>：大型結構，常在 granular layer 最明顯，由不規則偏心（有時 pyknotic）的 nucleus、周圍 clear halo，外包嗜鹼或嗜伊紅的「殼」組成。<strong>Grains</strong>：位於角質層，是稍扁的橢圓細胞，有細長 cigar-shaped nuclei 與豐富 keratohyalin granules。<span class="ex-ref ex-ref-mckee">McKee p.193</span></li>
-<li>完整病灶：hyperkeratosis 與常見 parakeratosis（可排成明顯的 tier）；表皮可 acanthotic 或 atrophic；suprabasal cleft 內有被單層上皮覆蓋的 dermal papillae 突入（<strong>villus formation</strong>）；cleft 的頂部有 grains，鄰近上皮有 corps ronds；偶見 pseudoepitheliomatous hyperplasia；淺層真皮可有 perivascular chronic inflammatory cell infiltrate，但不常見。<span class="ex-ref ex-ref-mckee">McKee p.193</span></li>
+<li><strong>Corps ronds</strong>：大型結構，通常（usually）在 granular layer 最明顯，由不規則偏心（有時 pyknotic）的 nucleus、周圍 clear halo，外包嗜鹼或嗜伊紅的「殼」組成。<strong>Grains</strong>：位於角質層，是稍扁的橢圓細胞，有細長 cigar-shaped nuclei 與豐富 keratohyalin granules。<span class="ex-ref ex-ref-mckee">McKee p.193</span></li>
+<li>完整病灶：hyperkeratosis 與常見 parakeratosis（有時 [sometimes] 排成明顯的 tier）；表皮可 acanthotic 或 atrophic；suprabasal cleft 內有被單層上皮覆蓋的 dermal papillae 突入（<strong>villus formation</strong>）；cleft 的頂部有 grains，鄰近上皮有 corps ronds；偶見 pseudoepitheliomatous hyperplasia；淺層真皮可有 perivascular chronic inflammatory cell infiltrate，但不常見。<span class="ex-ref ex-ref-mckee">McKee p.193</span></li>
 <li>Oral、pharyngeal、laryngeal、esophageal 病灶的病理相似，據說（said to）dyskeratosis 較不明顯；corneal lesions 無 acantholysis 與 dyskeratosis。<span class="ex-ref ex-ref-mckee">McKee p.193</span><span class="ex-ref ex-ref-mckee">McKee p.194</span></li>
-<li>Immunofluorescence（immunoglobulin 與 complement）都是陰性，有助於與 immunobullous disorders 區分。<span class="ex-ref ex-ref-mckee">McKee p.189</span></li>
+<li>McKee Table 5.2：DD 的 IMF 為 Negative（pemphigus vulgaris 為 Positive）。<span class="ex-ref ex-ref-mckee">McKee p.176</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Feature（McKee Table 5.2）</th><th scope="col">Pemphigus vulgaris</th><th scope="col">Darier disease</th><th scope="col">Hailey-Hailey disease</th></tr></thead>
@@ -175,21 +175,21 @@
 <ul>
 <li>病程慢性、反覆；嚴重度不可預測，可受 pregnancies 影響；約 <strong class="ex-n">30%</strong> 病人老年時病情減輕，其他人則持續或逐漸惡化。<span class="ex-ref">p.884</span></li>
 <li>McKee：Darier disease 是 long-term illness，remissions 不會發生（但有些病人隨年齡增加而改善）；spontaneous remissions 罕見，多數病人終生持續。<span class="ex-ref ex-ref-mckee">McKee p.190</span><span class="ex-ref ex-ref-mckee">McKee p.192</span></li>
-<li>治療可以控制但<strong>無法治癒</strong> DD。<span class="ex-ref">p.884</span></li>
+<li>這些治療可能（may）控制但<strong>無法治癒</strong> DD。<span class="ex-ref">p.884</span></li>
 <li>評估與諮詢重點（Table 50-2）：family history；malodor 或 pain（pain 可能表示 herpes simplex virus 感染）；heat 或 sun 的加重因素；cold sores 病史（討論 eczema herpeticum 風險）；<mark data-q="115-24">評估疾病影響與情緒變化——DD 與 depression 及 suicidal ideation 有關</mark>。<span class="ex-ref">p.884</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Line</th><th scope="col">Options（Table 50-3）</th></tr></thead>
 <tbody>
 <tr><td>First line</td><td>避免 triggers（heat、sweating、friction）並減少 UVB 加重；antiseptic cleansing products 與 bath additives；topical antimicrobials（antibacterial、antifungal）；含 urea 或 lactic acid 的 emollients；moderate 或 potent topical corticosteroids 加 topical antibiotics；topical retinoids（isotretinoin、tretinoin、tazarotene、adapalene）</td></tr>
-<tr><td>Second line</td><td>Oral acitretin <strong class="ex-n">0.25–0.5 mg/kg/day</strong>（約 <strong class="ex-n">3 months</strong> 達最大效果）；oral isotretinoin <strong class="ex-n">0.5 mg/kg/day</strong> 或 alitretinoin <strong class="ex-n">10 mg 或 30 mg/day</strong>（效果不如 acitretin，但可能適合年輕女性）</td></tr>
+<tr><td>Second line</td><td>Oral acitretin <strong class="ex-n">0.25–0.5 mg/kg/day</strong>（需 <strong class="ex-n">3 months</strong> 達最大效果，Takes 3 months）；oral isotretinoin <strong class="ex-n">0.5 mg/kg/day</strong> 或 alitretinoin <strong class="ex-n">10 mg 或 30 mg/day</strong>（效果不如 acitretin，但可能適合年輕女性）</td></tr>
 <tr><td>Third line（unproven efficacy）</td><td>Topical 5-fluorouracil；oral ciclosporin 治 eczematization（起始 <strong class="ex-n">2.5 mg/kg/day</strong>）；laser surgery、electrosurgery 或 dermabrasion；photodynamic therapy；botulinum toxin（減少 recalcitrant flexural disease 的 sweating）；reduction mammoplasty（severe inframammary disease）</td></tr>
 </tbody>
 </table>
 <p class="ex-cite">Table 50-3，p.884。</p>
 <ul>
-<li>Emollients（urea、lactic acid）可減少 hyperkeratosis；topical antiseptics、antibiotics、antifungals 預防或治療感染；herpes simplex 造成的 painful flares 需要口服 acyclovir 或 valaciclovir；topical corticosteroids 合併 antibiotics 減少發炎。<span class="ex-ref">p.884</span></li>
-<li>局限病灶可用 topical retinoids（tazarotene 或 (iso)tretinoin），並與 topical corticosteroid 併用以減少刺激；adapalene、5-fluorouracil、tacrolimus 在少數病例有效的報告。<span class="ex-ref">p.884</span></li>
+<li>Emollients（urea、lactic acid）可能（may）減少 hyperkeratosis；topical antiseptics、antibiotics、antifungals 預防或治療感染；herpes simplex 造成的 painful flares 需要口服 acyclovir 或 valaciclovir；topical corticosteroids 合併 antibiotics 減少發炎。<span class="ex-ref">p.884</span></li>
+<li>局限病灶可能（may）對 topical retinoids（tazarotene 或 (iso)tretinoin）有反應，並與 topical corticosteroid 併用以減少刺激；adapalene、5-fluorouracil、tacrolimus 在少數病例有效的報告。<span class="ex-ref">p.884</span></li>
 <li><mark data-q="105-40,115-24">Oral retinoids（<strong>acitretin 0.25–0.5 mg/kg</strong>、<strong>isotretinoin 0.5 mg/kg</strong> 或 alitretinoin 10 或 30 mg/day）減少 hyperkeratosis 與 malodor，但需要 <strong class="ex-n">3 到 4 個月</strong>才達最大效果</mark>；劑量需依反應調整並監測副作用。<span class="ex-ref">p.884</span></li>
 <li>孕期禁忌：停 acitretin 後 <strong class="ex-n">2 年</strong>、停 isotretinoin 或 alitretinoin 後 <strong class="ex-n">1 個月</strong>內都禁止懷孕。<span class="ex-ref">p.884</span></li>
 <li>Oral antibiotics 用於病灶廣泛或感染；oral cyclosporin 有人主張用於 eczematization 與嚴重 vulval disease，但缺乏 controlled trials。<span class="ex-ref">p.884</span></li>
@@ -217,7 +217,7 @@
 <h3>Histopathology（病理）</h3>
 <ul>
 <li><mark data-q="105-40,108-27">經典病理是 hyperkeratosis、hypergranulosis、acanthosis 與 papillomatosis；表皮尖狀隆起據說（said to）像 “<strong>church spires</strong>”，表皮<strong>既無 dyskeratosis 也無 acantholysis</strong></mark>。<span class="ex-ref">p.885</span></li>
-<li>McKee：epidermal acanthosis 加明顯 granular cell layer，呈 ‘church spire’ 外觀；中度到明顯 hyperkeratosis；<strong>parakeratosis 不是特徵</strong>；與 Darier disease 合併的病例做 step sections 時有時可見 focal acantholytic dyskeratosis；與 stucco keratosis 的組織學重疊相當大。<span class="ex-ref ex-ref-mckee">McKee p.110</span></li>
+<li>McKee：epidermal acanthosis 加明顯 granular cell layer，典型（typically）呈 ‘church spire’ 外觀；通常（usually）有中度到明顯 hyperkeratosis；<strong>parakeratosis 不是特徵</strong>；與 Darier disease 合併的病例做 step sections 時有時可見 focal acantholytic dyskeratosis；與 stucco keratosis 的組織學重疊相當大。<span class="ex-ref ex-ref-mckee">McKee p.110</span></li>
 <li>McKee 臨床：極罕見的 autosomal dominant dermatosis，嬰兒期或幼兒期出現 dry、rough、brownish 或 skin-colored verrucoid keratotic papules，位於手背、足背、knees 與 elbows；palms 與 soles 有 keratotic punctate pits；病灶在 Darier disease 偶爾也可見到，且臨床與組織學上無法區分。<span class="ex-ref ex-ref-mckee">McKee p.109</span></li>
 </ul>
 <h3>Differential diagnosis、course、management</h3>
@@ -245,13 +245,13 @@
 <li>病灶可局限於一兩處、更廣泛，或罕見地 generalized 伴 erythroderma；即使輕症也降低生活品質；painful malodorous inguinal 或 perineal disease 特別致殘。<span class="ex-ref">p.886</span></li>
 <li>HHD 會 koebnerize 到 inflammatory dermatoses，並曾在 contact dermatitis、removal of adherent patch tests、UV irradiation、cutaneous infections、scabies 後加重（或被診斷出來）。<span class="ex-ref">p.886</span></li>
 <li>Table 50-4（What should I look for?）：young adult 在 neckline、axilla、groin 等 friction 部位的慢性 “eczema” 要想到 HHD；找 family history、exacerbating factors（friction、heat、sweating）、postinflammatory hyperpigmentation（common）、nails 的 longitudinal white bands（uncommon but very helpful if present）。<span class="ex-ref">p.886</span></li>
-<li>McKee：Vesicles 與 bullae 出現在正常或紅斑皮膚上，很快被 erosions、crusting、scaly plaques 取代（有時像 impetigo）；痊癒伴 hyperpigmentation，<strong>無 scarring</strong>；Nikolsky sign 有時為陽性；常癢且 malodorous；有 fissuring 時疼痛明顯；症狀常隨年齡增加而改善。<span class="ex-ref ex-ref-mckee">McKee p.188</span></li>
+<li>McKee：Vesicles 與 bullae 出現在正常或紅斑皮膚上，很快被 erosions、crusting、scaly plaques 取代（有時像 impetigo）；痊癒伴 hyperpigmentation，<strong>無 scarring</strong>；Nikolsky sign 有時為陽性；常癢且 malodorous；有時（sometimes）疼痛是大問題，尤其有 fissuring 時；症狀常隨年齡增加而改善。<span class="ex-ref ex-ref-mckee">McKee p.188</span></li>
 <li>McKee：HHD 的指甲 asymptomatic white longitudinal bands 最多 <strong class="ex-n">70%</strong>，且 Darier disease 的其他指甲變化不存在；mucosal involvement 不常見。<span class="ex-ref ex-ref-mckee">McKee p.188</span></li>
 </ul>
 <h3>Variants（變異型）</h3>
 <ul>
 <li>Segmental disease：Type 1 mosaicism（ATP2C1 postzygotic mutation，沿 Blaschko lines 的 localized streaks）有一位病人報告；Type 2 mosaicism 為 symmetrical HHD 上疊加嚴重 linear involvement（loss of heterozygosity at ATP2C1 locus）。<span class="ex-ref">p.886</span></li>
-<li>PAD：局部、whitish papules，群集於 genitalia 與 inguinal folds；在兩個 unrelated 病例找到 ATP2C1 mutations，且有 PAD 與 HHD 並存於同一家族的報告，顯示 PAD 可為 HHD 譜系的一部分；另有 somatic ATP2A2 mutation 造成 PAD 的報告，因此遇到 PAD 要搜尋 DD 與 HHD 家族史。<span class="ex-ref">p.886–888</span></li>
+<li>PAD：局部、whitish papules，傾向（tend to）群集於 genitalia 與 inguinal folds；在兩個 unrelated 病例找到 ATP2C1 mutations，且有 PAD 與 HHD 並存於同一家族的報告，顯示 PAD 可為 HHD 譜系的一部分；另有 somatic ATP2A2 mutation 造成 PAD 的報告，因此遇到 PAD 要搜尋 DD 與 HHD 家族史。<span class="ex-ref">p.886–888</span></li>
 <li>McKee 的 relapsing linear acantholytic dermatosis（Hailey-Hailey-like epidermal nevus）：極罕見，沿 Blaschko lines 的 erythematous plaques 帶 vesicles 與 erosions；至少部分病人有 ATP2C1 突變，為 type 2 mosaicism；病理與 HHD 無法區分。<span class="ex-ref ex-ref-mckee">McKee p.189</span><span class="ex-ref ex-ref-mckee">McKee p.190</span></li>
 </ul>
 <h3>Noncutaneous findings &amp; complications（非皮膚表現與併發症）</h3>
@@ -276,7 +276,7 @@
 <ul>
 <li>Suprabasal keratinocytes 之間廣泛的<strong>部分</strong> cohesion 喪失（keratinocytes 仍可由 adherens junctions 連在一起），外觀像 <strong>“dilapidated brick wall”</strong>；鬆散相連的細胞群漂浮在 suprabasal clefts 或 bullae 中；dyskeratosis 若有，通常輕微，但變化可能像 DD。<span class="ex-ref">p.888</span></li>
 <li>McKee：早期病灶有 suprabasal lacunae；established disease 有大量 acantholysis 與 suprabasal vesicle 或 bulla；acantholysis 通常不完全；<strong>adnexal epithelium 通常不受影響</strong>，偶見類似 corps ronds 與 grains 的 dyskeratotic cells；ultrastructure 為 desmosomes 數量減少與 tonofilaments clumped。<span class="ex-ref ex-ref-mckee">McKee p.189</span></li>
-<li>McKee：區分 pemphigus 與 HHD 的點是 HHD 鄰近上皮「disintegrating」（pemphigus 為相對完整）且 pemphigus 侵犯 adnexae；DD 有明顯 suprabasal cleft、adnexae 受侵犯且有許多 corps ronds 與 grains；IF 都是陰性（DD 與 HHD）。<span class="ex-ref ex-ref-mckee">McKee p.176</span><span class="ex-ref ex-ref-mckee">McKee p.189</span></li>
+<li>McKee：區分 pemphigus 與 HHD 的點是 HHD 鄰近上皮「disintegrating」（pemphigus 為相對完整）且 pemphigus 侵犯 adnexae；DD 傾向（tends to）有明顯 suprabasal cleft、adnexae 受侵犯，且有許多 corps ronds 與 grains；IF 都是陰性（DD 與 HHD）。<span class="ex-ref ex-ref-mckee">McKee p.176</span><span class="ex-ref ex-ref-mckee">McKee p.189</span></li>
 </ul>
 <h3>Differential diagnosis（鑑別診斷）</h3>
 <ul>
@@ -296,13 +296,13 @@
 <ul>
 <li>病程慢性，有 relapses 與 remissions，可受 pregnancies 影響；部分病人老年時改善。<span class="ex-ref">p.888</span></li>
 <li>治療困難，沒有 controlled trials，文獻建議多來自一兩例（有 citation bias）。<span class="ex-ref">p.889</span></li>
-<li>Nonpharmacologic：減少 heat、sweating、friction；衣物柔軟、寬鬆、涼爽；flexural areas 經常清潔與擦乾；過重者減重；減少會造成 friction 的活動。<span class="ex-ref">p.889</span></li>
-<li>發作期用 antimicrobial cleansers；有感染時做 bacterial 與 yeast culture；若有 herpes 病史或 antibiotic／antifungal 治療後病灶仍持續，應做 herpes simplex PCR；nonadhesive dressings 減少 friction 與疼痛；病灶廣泛且感染時用 oral antibiotics（如 doxycycline），但長期 low-dose systemic antibiotics 的角色未證實。<span class="ex-ref">p.889</span></li>
-<li>Topical gentamicin 可能對帶有 ATP2C1 <strong>nonsense mutation</strong> 的病人有效（aminoglycoside 的 read-through 作用）；<strong class="ex-n">16%</strong> 的 ATP2C1 mutations 是 nonsense mutations；仍需 controlled clinical trials。<span class="ex-ref">p.889</span></li>
+<li>Nonpharmacologic：減少 heat、sweating、friction；衣物柔軟、寬鬆、涼爽；flexural areas 經常清潔與擦乾；過重者減重可能（may）有幫助；減少會造成 friction 的活動。<span class="ex-ref">p.889</span></li>
+<li>發作期用 antimicrobial cleansers；有感染時做 bacterial 與 yeast culture；若有 herpes 病史或 antibiotic／antifungal 治療後病灶仍持續，應做 herpes simplex PCR；nonadhesive dressings 減少 friction 與疼痛；病灶廣泛且感染時 oral antibiotics（如 doxycycline）可能有幫助（can be helpful），但長期 low-dose systemic antibiotics 的角色未證實。<span class="ex-ref">p.889</span></li>
+<li>有人提出（It has been suggested）topical gentamicin 可能對帶有 ATP2C1 <strong>nonsense mutation</strong> 的病人有效（aminoglycoside 的 read-through 作用）；<strong class="ex-n">16%</strong> 的 ATP2C1 mutations 是 nonsense mutations；仍需 controlled clinical trials。<span class="ex-ref">p.889</span></li>
 <li>Topical corticosteroids 常需用來控制發炎，須與 topical antimicrobial agents 併用，且僅限於急性發作；長期使用 potent corticosteroids 易有 superimposed infection，也增加 cutaneous atrophy 風險；很早期（只有 pruritus 或少量 vesiculopapules）使用可顯著減少病灶進展。<span class="ex-ref">p.889</span></li>
 <li>Topical calcineurin inhibitors 是 topical steroids 的有用替代：tacrolimus ointment（0.03% 或 0.1%）在數個個案報告使病灶消退，但在另一些無效；也有人建議 calcitriol、tacalcitol、topical 5-fluorouracil；analgesia 很重要，嚴重病例可能需要 narcotics。<span class="ex-ref">p.889</span></li>
-<li>Systemic corticosteroids 是廣泛疾病的短期選項；其他曾被提出的包括 retinoids、methotrexate、cyclosporin、dapsone、etanercept、alefacept、afamelanotide（phase II pilot 兩位病人）、oral glycopyrrolate <strong class="ex-n">1 mg/day</strong>（減少 hyperhidrosis）、low-dose naltrexone（效果不一）。<span class="ex-ref">p.890</span></li>
-<li>Procedures：excision with 或 without grafting、dermabrasion、laser surgery；breast reduction surgery（inframammary disease）；superficial x-ray therapy（unhelpful）、electron-beam therapy、photodynamic therapy（very painful，結果不一）；botulinum toxin type A 減少出汗，需多處注射、費用高且只是暫時緩解，需每 <strong class="ex-n">4 到 6 個月</strong>重複。<span class="ex-ref">p.890</span></li>
+<li>Systemic corticosteroids 是廣泛疾病的短期選項；其他曾被提出的包括 retinoids、methotrexate、cyclosporin、dapsone、etanercept、alefacept、afamelanotide（phase II pilot 兩位病人）、oral glycopyrrolate <strong class="ex-n">1 mg/day</strong>（減少 hyperhidrosis；在一位長期反覆 HHD 病人報告有效）、low-dose naltrexone（效果不一）。<span class="ex-ref">p.890</span></li>
+<li>Procedures（用於 recalcitrant disease）：excision with 或 without grafting、dermabrasion、laser surgery；其他曾嘗試的有 breast reduction surgery（inframammary disease）、superficial x-ray therapy（unhelpful）、electron-beam therapy、photodynamic therapy（very painful，結果不一）；botulinum toxin type A 可能（may）藉減少出汗幫助 flexural disease，需多處注射、費用高且只是暫時緩解，需每 <strong class="ex-n">4 到 6 個月</strong>重複。<span class="ex-ref">p.890</span></li>
 </ul>
 <table class="ex-table">
 <thead><tr><th scope="col">Line</th><th scope="col">Options（Table 50-6）</th></tr></thead>
@@ -313,7 +313,7 @@
 </tbody>
 </table>
 <p class="ex-cite">Table 50-6，p.889。</p>
-<aside class="ex-trap"><strong>易錯</strong>HHD 的 age at onset 為 third to fourth decade（Fig. 50-21），文字寫 second to fourth decades。<span class="ex-ref">p.886</span><span class="ex-ref">p.892</span>好發部位為 neck、axillae、inframammary、groin、perineum 等 friction sites。<span class="ex-ref">p.886</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>HHD 的 age at onset 為 third to fourth decade（Fig. 50-21），文字寫通常（usually）在 second to fourth decades 出現。<span class="ex-ref">p.886</span><span class="ex-ref">p.892</span>好發部位為 neck、axillae、inframammary、groin、perineum 等 friction sites。<span class="ex-ref">p.886</span></aside>
 <aside class="ex-trap"><strong>易錯</strong>Fitzpatrick 寫「Generally, HHD does not involve mucosa」，且表中 oral retinoids 屬於 third line。<span class="ex-ref">p.887</span><span class="ex-ref">p.889</span></aside>
 </section>
 
@@ -330,7 +330,7 @@
 <li>皮疹為散在 pinkish 或 red-brown papules（variable hyperkeratosis）、papulovesicles（rarely bullae），或較少見的 eczematous plaques；頸部、proximal limbs 或兩者可受侵犯。<span class="ex-ref">p.890</span></li>
 <li><mark data-q="108-27">曾有與廣泛 sun-induced lentigines 合併的報告；深膚色者可見與 DD 類似的 guttate leukoderma</mark>。<span class="ex-ref">p.890</span></li>
 <li>曾有 unilateral GD 的報告，但可能是 segmental DD。<span class="ex-ref">p.890</span></li>
-<li>McKee：皮疹多形，1–3 mm erythematous、red-brown 或 flesh-colored papules、vesicles 與 eczematous plaques，好發 chest、back、thighs；mucous membranes、palms、soles 通常不受侵犯；postinflammatory pigmentary changes 常見；與 leukemia、lymphoma 及某些 carcinomas 有關聯報告，但多數可能是巧合。<span class="ex-ref ex-ref-mckee">McKee p.195</span></li>
+<li>McKee：皮疹通常（usually）多形，1–3 mm erythematous、red-brown 或 flesh-colored papules、vesicles 與 eczematous plaques，好發 chest、back、thighs；mucous membranes、palms、soles 通常不受侵犯；postinflammatory pigmentary changes 常見；與 leukemia、lymphoma 及某些 carcinomas、melanoma 有關聯報告；另有 scabies、renal failure、transplantation、pregnancy 等罕見關聯，但這些關聯多數可能（likely）是巧合。<span class="ex-ref ex-ref-mckee">McKee p.195</span></li>
 </ul>
 <h3>Etiology（病因）</h3>
 <ul>
@@ -348,7 +348,7 @@
 <h3>Differential diagnosis、course、management</h3>
 <ul>
 <li>鑑別：papular eczema 或 prurigo、folliculitis、sun damage with solar lentigines and solar keratoses、scabies、insect bites、miliaria rubra、Darier disease、Hailey-Hailey disease、pemphigus vulgaris（Table 50-7）；需排除 scabies、insect bites、eczema 等其他搔癢原因，並檢查家族史、指甲與黏膜。因 GD 與許多 inflammatory 及 neoplastic 疾病有關，應搜尋併存疾病，包括 hematologic malignancies。<span class="ex-ref">p.891</span></li>
-<li>病程：可在數個月內緩解（transient acantholytic dermatosis），或 itch 以波動強度持續數年（persistent acantholytic dermatosis），尤其老年人。<span class="ex-ref">p.891</span></li>
+<li>病程：可在數個月內緩解（transient acantholytic dermatosis），或 itch 可能（may）以波動強度持續數年（persistent acantholytic dermatosis），尤其老年人。<span class="ex-ref">p.891</span></li>
 <li>治療為症狀性且困難：避免 heat、sweating、sunlight、topical irritants；emollients 與 antipruritics；topical corticosteroids、retinoids、calcipotriol 或 tacalcitol；持續性疾病可考慮 oral retinoids（acitretin）、oral corticosteroids、UVB、PUVA、methotrexate（缺乏 controlled trials）；acitretin 合併 phototherapy 曾報告抑制症狀。<span class="ex-ref">p.891–892</span></li>
 </ul>
 <aside class="ex-trap"><strong>易錯</strong>GD 是 acquired、non-familial，沒有找到 ATP2A2 mutation；DD 是 ATP2A2、HHD 是 ATP2C1。<span class="ex-ref">p.890</span><span class="ex-ref">p.892</span>McKee 也寫 GD 沒有 ATP2A2 mutation 的證據。<span class="ex-ref ex-ref-mckee">McKee p.196</span></aside>
@@ -363,7 +363,7 @@
 <tr><td>Linear Darier disease（acantholytic dyskeratotic epidermal nevus）</td><td>Grouped keratotic yellow-brown papules，沿 <strong>Blaschko lines</strong>，好發 trunk；多數病人在第三或第四個十年；無 Darier disease 家族史。部分病人在 lesional tissue（非正常皮膚）找到 ATP2A2 mutations，支持與 Darier disease 的關係；病理與 Darier disease 無法區分。<span class="ex-ref ex-ref-mckee">McKee p.194</span><span class="ex-ref ex-ref-mckee">McKee p.195</span></td></tr>
 <tr><td>Relapsing linear acantholytic dermatosis</td><td>Hailey-Hailey-like epidermal nevus；沿 Blaschko lines 的 erythematous plaques 伴 vesicles 與 erosions；部分病例有 ATP2C1 突變（type 2 mosaicism）。<span class="ex-ref ex-ref-mckee">McKee p.189</span><span class="ex-ref ex-ref-mckee">McKee p.190</span></td></tr>
 <tr><td>Acantholytic dermatosis of the genitocrural area</td><td>多見於年輕或中年女性的 genitocrural 區白色 papules；家族史對 Darier 與 Hailey-Hailey 皆為陰性；部分病例檢出 somatic ATP2A2 mutations 或 ATP2C1 mutations；病理像 Darier 或 Hailey-Hailey disease。<span class="ex-ref ex-ref-mckee">McKee p.197</span></td></tr>
-<tr><td>Warty dyskeratoma</td><td>Hyperkeratotic、umbilicated、persistent 的孤立結節，常在中年人頭頸部 sun-exposed skin；<strong>與 Darier disease 無關</strong>；多與毛囊相連；病理為寬大 cup-shaped 或 cystic 病灶，內含 corps ronds 與 grains，鄰近與較深的上皮有明顯 acantholysis 與 suprabasal villi。<span class="ex-ref ex-ref-mckee">McKee p.197</span></td></tr>
+<tr><td>Warty dyskeratoma</td><td>Hyperkeratotic、umbilicated、persistent 的結節，通常（usually）在中年人頭頸部 sun-exposed skin；多數（most cases）為孤立，偶有多發；<strong>與 Darier disease 無關</strong>；許多例（many examples）與擴張的毛囊相連；病理為寬大 cup-shaped 或 cystic 病灶，內含 corps ronds 與 grains，鄰近與較深的上皮有明顯 acantholysis 與 suprabasal villi。<span class="ex-ref ex-ref-mckee">McKee p.197</span></td></tr>
 </tbody>
 </table>
 </section>

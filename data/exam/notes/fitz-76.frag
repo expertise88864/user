@@ -379,7 +379,7 @@
 <li><mark data-q="101-08">PUVA 治療 vitiligo 為達最大復色需 <strong class="ex-n">100–200</strong> 次（每週 2–3 次）；約 <strong class="ex-n">70%</strong> 在 12–24 個月後有反應（perifollicular 復色斑）；若 <strong class="ex-n">6 months</strong> 或約 <strong class="ex-n">50</strong> 次治療後仍無反應，應停止</mark>。<span class="ex-ref">p.3673（ch199）</span></li>
 <li><mark data-q="106-32,115-43">PUVA 的難治部位：lips、distal dorsal hands、手指腳趾末端、骨突處、palms、soles、nipples</mark>；約 30% 病人治療數月仍無反應；病程長短不影響反應率。<span class="ex-ref">p.3674（ch199）</span></li>
 <li><mark data-q="101-08">口服 8-MOP：nausea 約 <strong class="ex-n">30%</strong>、vomiting 約 <strong class="ex-n">10%</strong>；5-MOP 即使劑量達 1.8 mg/kg 也很少噁心</mark>。<span class="ex-ref">p.3674（ch199）</span></li>
-<li><mark data-q="101-08">PUVA 長期風險：<strong>SCC</strong> 風險較匹配對照組顯著增加，且增幅似乎與劑量相關，<strong>BCC 沒有</strong></mark>。<span class="ex-ref">p.3675（ch199）</span></li>
+<li><mark data-q="101-08">PUVA 長期風險：<strong>SCC</strong> 風險較匹配對照組顯著增加，且增幅似乎與劑量相關，<strong>BCC 沒有</strong></mark>。<span class="ex-ref">p.3675（ch199）</span>同書 ch19 則寫 PUVA 的 BCC 風險 more than 11-fold higher。<span class="ex-ref">p.315（ch19）</span></li>
 </ul>
 </section>
 

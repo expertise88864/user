@@ -201,7 +201,7 @@
 <li><strong>Acitretin</strong>（psoriasis）：通常（typically）起始低劑量 <strong class="ex-n">10–25 mg/day</strong> 再逐步增加；完全清除可能需要（may require）合併外用類固醇、vitamin D derivatives、dithranol、UVB 或 PUVA。<span class="ex-ref">p.3401</span></li>
 <li><strong>Bexarotene</strong>：起始 <strong class="ex-n">300 mg/m²/day</strong>，單次隨餐口服；依副作用可降至 <strong class="ex-n">100 或 200 mg/m²/day</strong> 或暫停；<strong class="ex-n">8 weeks</strong> 無反應可在密切監測下增至 <strong class="ex-n">400 mg/m²/day</strong>。<span class="ex-ref">p.3402</span></li>
 </ul>
-<aside class="ex-trap"><strong>易錯</strong>Isotretinoin 療程：Table 185-3 寫 4–6 months，內文以累積 120 mg/kg 推算為 6–8 months，兩處皆出自本章。<span class="ex-ref">p.3401</span></aside>
+<aside class="ex-trap"><strong>易錯</strong>Isotretinoin 療程：Table 185-3 寫 4–6 months，內文以累積 120 mg/kg 推算為 6–8 months，兩處皆出自本章。<span class="ex-ref">p.3401</span>同書 ch78 則寫 typical course 為 20 weeks、一個療程總劑量 120–150 mg/kg。<span class="ex-ref">p.1409（ch78）</span></aside>
 </section>
 
 <section class="ex-note" id="ae-topical">

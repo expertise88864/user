@@ -403,7 +403,7 @@
 <li>建議每日劑量 <strong class="ex-n">0.5–1 mg/kg/day</strong>。也可用累積體重劑量公式，一個療程總劑量 <strong class="ex-n">120–150 mg/kg</strong>；此方案尤其適用於劑量變動或治療中斷的病人，因為達到總劑量可確保長期緩解的機會最大。<span class="ex-ref">p.1409</span></li>
 <li>背部與胸部病灶的反應比臉部病灶差，軀幹侵犯非常嚴重的病人可能需要高達 <strong class="ex-n">2 mg/kg/day</strong>。</li>
 <li>嚴重 acne 病人（尤其有 granulomatous lesions 者）開始 isotretinoin 時常出現明顯 flare；因此起始劑量應低，甚至低於 <strong class="ex-n">0.5 mg/kg/day</strong>。這些病人常需先以 prednisone（<strong class="ex-n">40–60 mg/day</strong>）預治療 <strong class="ex-n">1–2 weeks</strong>，且可能需延續到 isotretinoin 治療的頭 2 週。</li>
-<li>典型療程為 <strong class="ex-n">20 weeks</strong>，但療程長度並非絕對，反應不足的病人可延長治療。停藥後 1–2 個月可能還會進一步改善，因此完全清除不一定是決定停藥的必要終點。</li>
+<li>典型療程為 <strong class="ex-n">20 weeks</strong>，但療程長度並非絕對，反應不足的病人可延長治療。停藥後 1–2 個月可能還會進一步改善，因此完全清除不一定是決定停藥的必要終點。<span class="ex-ref">p.1409</span>同書 ch185 則寫累積劑量至少 120 mg/kg「implies 6 to 8 months of therapy」。<span class="ex-ref">p.3401（ch185）</span></li>
 <li>Low-dose 方案（<strong class="ex-n">0.1–0.4 mg/kg/day</strong>）已顯示有效，但此劑量治療後的復發率較高。約 <strong class="ex-n">10%</strong> 接受 isotretinoin 治療的病人需要第二療程；<strong class="ex-n">&lt;16–17 歲</strong>的病人重複治療的可能性增加。兩療程間至少間隔 <strong class="ex-n">2–3 months</strong> 是標準做法。</li>
 </ul>
 </section>
